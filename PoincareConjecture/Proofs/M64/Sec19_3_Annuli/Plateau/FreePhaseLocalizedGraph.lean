@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakScalarCutoffGrap
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakPhaseCutoffGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongGraphPhaseTrace
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -35,10 +23,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem localized_lower_phase_graph
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

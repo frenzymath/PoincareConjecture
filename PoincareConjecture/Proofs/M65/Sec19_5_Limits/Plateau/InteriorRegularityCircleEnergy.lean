@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityACComposition
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityOscillation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem linear_circle_data {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -49,9 +36,6 @@ theorem linear_circle_data {E G : Type*}
     _ = L (∫ θ in s..t, d θ) := congrArg L (hinc s hs t ht)
     _ = _ := (L.intervalIntegral_comp_comm hi).symm
 
-
-
-
 theorem interval_increment_energy_le {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
     {v d : ℝ → E} {a b : ℝ} (hab : a ≤ b)
@@ -73,9 +57,6 @@ theorem interval_increment_energy_le {E : Type*}
       ← mul_assoc, ← sq] using h
   rw [integral_add hvI hdI]
   nlinarith only [hint]
-
-
-
 
 theorem clm_circle_energy_le {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

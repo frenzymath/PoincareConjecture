@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import Mathlib.Order.Filter.AtTopBot.Tendsto
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -42,8 +29,6 @@ private theorem index_mem {t : ℝ} (ht : t < T) :
   simpa only [index, dif_pos ht, mem_Ioo] using
     And.intro (Classical.choose_spec (hcover t ht)) ht
 
-
-
 noncomputable def metric (t : ℝ) : RiemannianMetric n M :=
   (F (index hcover t)).metric t
 
@@ -59,7 +44,6 @@ private theorem metric_eventuallyEq (j : ℕ) {t : ℝ}
     metric F hcover =ᶠ[𝓝 t] (F j).metric := by
   filter_upwards [Ioo_mem_nhds ht.1 ht.2] with s hs
   exact metric_eq F hcover hcompat j hs
-
 
 noncomputable def connection (t : ℝ) : LeviCivitaData (metric F hcover t) :=
   (F (index hcover t)).connection t
@@ -92,9 +76,6 @@ theorem equation (t : ℝ) (ht : t ∈ Iio T) (x : M)
 
 end TimeGluing
 
-
-
-
 noncomputable def glueAncient
     (F : ∀ j, RicciFlow n M (Ioo (a j) T))
     (hcover : ∀ t < T, ∃ j, a j < t)
@@ -116,9 +97,6 @@ theorem glueAncient_metric_eq
     (glueAncient F hcover hcompat).metric t = (F j).metric t :=
   TimeGluing.metric_eq F hcover hcompat j ht
 
-
-
-
 theorem glueAncient_slice_property_at
     (F : ∀ j, RicciFlow n M (Ioo (a j) T))
     (hcover : ∀ t < T, ∃ j, a j < t)
@@ -130,9 +108,6 @@ theorem glueAncient_slice_property_at
     P ((glueAncient F hcover hcompat).metric t)
       ((glueAncient F hcover hcompat).connection t) :=
   hP (TimeGluing.index hcover t) (TimeGluing.index_mem hcover ht)
-
-
-
 
 theorem glueAncient_slice_property
     (F : ∀ j, RicciFlow n M (Ioo (a j) T))
@@ -146,15 +121,10 @@ theorem glueAncient_slice_property
       ((glueAncient F hcover hcompat).connection t) :=
   glueAncient_slice_property_at F hcover hcompat t ht P (fun j ↦ hP j t)
 
-
-
 theorem ancientTimeCover_of_tendsto (ha : Tendsto a atTop atBot) :
     ∀ t < T, ∃ j, a j < t := by
   intro t _
   exact (ha.eventually (eventually_lt_atBot t)).exists
-
-
-
 
 theorem exists_ancient_of_local_metric_realizations
     (g : ℝ → RiemannianMetric n M)

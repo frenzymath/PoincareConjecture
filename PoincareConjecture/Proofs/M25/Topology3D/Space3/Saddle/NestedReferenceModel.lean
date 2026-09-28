@@ -12,25 +12,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 noncomputable def nestedReferenceDiffeomorph (d : ℝ) :
     Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞ := by
@@ -81,8 +68,6 @@ noncomputable def nestedReferenceDiffeomorph (d : ℝ) :
     contMDiff_toFun := hF.contMDiff
     contMDiff_invFun := hG.contMDiff }
 
-
-
 theorem nestedReferenceDiffeomorph_apply_symm (d : ℝ) :
     (∀ y : E3, nestedReferenceDiffeomorph d y =
       !₂[y 0, y 1, y 2 + (y 0) ^ 2 + (y 1) ^ 2 + y 0 / 32 + d]) ∧
@@ -90,16 +75,12 @@ theorem nestedReferenceDiffeomorph_apply_symm (d : ℝ) :
       !₂[y 0, y 1, y 2 - (y 0) ^ 2 - (y 1) ^ 2 - y 0 / 32 - d]) := by
   exact ⟨fun _ => rfl, fun _ => rfl⟩
 
-
-
 noncomputable def nestedReferenceBallChart (d : ℝ) :
     BallNeighborhoodChart E3 E3 where
   chart := (nestedReferenceDiffeomorph d).toHomeomorph.toOpenPartialHomeomorph
   closedBall_subset_source := subset_univ _
   smooth := (nestedReferenceDiffeomorph d).contDiff.contDiffOn
   smooth_symm := (nestedReferenceDiffeomorph d).symm.contDiff.contDiffOn
-
-
 
 theorem nestedReferenceBallChart_regions (d : ℝ) :
     (nestedReferenceBallChart d).chart =
@@ -136,9 +117,6 @@ theorem nestedReferenceBallChart_regions (d : ℝ) :
     mem_sphere_zero_iff_norm, ← hnorm]
   refine ⟨?_, ?_, ?_⟩ <;> constructor <;> intro hy <;>
     nlinarith only [norm_nonneg (F.symm y), hy]
-
-
-
 
 theorem exists_unique_nestedReference_saddle_root :
     ∃! w : ℝ,

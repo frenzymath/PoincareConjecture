@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHalfConeCompetitor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
 
 def boundaryPushField {N : ℕ} (p : ℂ) (z : LoopPlane)
     (d : Fin 2 → EuclideanSpace ℝ (Fin N)) (i : Fin 2) : EuclideanSpace ℝ (Fin N) :=
@@ -40,9 +29,6 @@ private theorem boundary_norm_square {p : ℂ} (hp : ‖p‖ = 1) (z : LoopPlane
   rw [norm_diskBoundaryCoordinate hp] at hh
   exact hh.symm
 
-
-
-
 theorem boundaryPushField_pull {N : ℕ} {p : ℂ} (hp : ‖p‖ = 1)
     (z : LoopPlane) (d : Fin 2 → EuclideanSpace ℝ (Fin N)) (i : Fin 2) :
     boundaryPushField p z (fun k => ∑ l : Fin 2,
@@ -57,10 +43,6 @@ theorem boundaryPushField_pull {N : ℕ} {p : ℂ} (hp : ‖p‖ = 1)
       PiLp.sub_apply, PiLp.smul_apply, smul_eq_mul] <;>
     norm_num [EuclideanSpace.basisFun_apply] <;>
     field_simp <;> rw [← hn] <;> ring
-
-
-
-
 
 theorem boundaryPushField_energy {N : ℕ} {p : ℂ} (hp : ‖p‖ = 1)
     (z : LoopPlane)
@@ -78,9 +60,6 @@ theorem boundaryPushField_energy {N : ℕ} {p : ℂ} (hp : ‖p‖ = 1)
   field_simp
   rw [← hn]
   ring
-
-
-
 
 theorem weakDiskBoundaryField_energy {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -105,9 +84,6 @@ theorem weakDiskBoundaryField_energy {M : Type u} [TopologicalSpace M]
   simpa only [m65EmbeddedEnergyDensity, hD, d] using h.symm
 
 open Classical in
-
-
-
 
 theorem weakDisk_replacement_energy_le {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -138,10 +114,6 @@ theorem weakDisk_replacement_energy_le {M : Type u} [TopologicalSpace M]
   have hGs := setIntegral_sdiff hZ hG hZD
   change (∫ z in Z, EF z) ≤ ∫ z in Z, EG z
   linarith only [hcomparison, houtside, hFs, hGs]
-
-
-
-
 
 theorem boundary_replacement_energy_le {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -221,10 +193,6 @@ private theorem boundaryPushField_weak {M : Type*} {N : ℕ}
   exact boundaryPushField_pull hp z _ i
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem exists_boundary_half_cone_energy_comparison_uniform
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -317,8 +285,6 @@ theorem exists_boundary_half_cone_energy_comparison_uniform
     filter_upwards [ae_restrict_of_ae_restrict_of_subset sdiff_subset (hfields i),
       ae_restrict_mem (measurableSet_closedBall.diff hZ.measurableSet)] with w hw hm
     exact hw.trans (piecewise_eq_of_notMem _ _ _ hm.2)
-
-
 
 theorem exists_boundary_half_cone_energy_comparison
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskBoundaryLin
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,10 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_original_boundary_source_pair_chart
     {V X ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -199,4 +187,3 @@ theorem exists_original_boundary_source_pair_chart
         OpenPartialHomeomorph.trans_assoc] using hinverse
 
 end PoincareConjecture.M76
-

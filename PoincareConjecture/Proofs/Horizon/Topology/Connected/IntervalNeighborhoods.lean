@@ -2,13 +2,6 @@ import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,8 +28,6 @@ private theorem exists_positive_interval_margin {a b : ℝ} (hab : a ≤ b)
   · exact hright ⟨hbw.1.trans hbx, by linarith [hx.2]⟩
   exact hsub ⟨le_of_not_gt hxa, le_of_not_gt hbx⟩
 
-
-
 theorem exists_closed_rectangle_subset_open_of_interval_subset
     {a b : ℝ} (hab : a ≤ b) {W : Set (ℝ × ℝ)} (hW : IsOpen W)
     (hsub : Icc a b ×ˢ ({0} : Set ℝ) ⊆ W) :
@@ -56,8 +47,6 @@ theorem exists_closed_rectangle_subset_open_of_interval_subset
   · apply htV
     exact ⟨by linarith [hx.2.1, min_le_right d t],
       by linarith [hx.2.2, min_le_right d t]⟩
-
-
 
 theorem exists_pairwise_disjoint_open_supersets_of_isCompact
     {I X : Type*} [Finite I] [TopologicalSpace X] [T2Space X]
@@ -87,9 +76,6 @@ theorem exists_pairwise_disjoint_open_supersets_of_isCompact
     apply (hAB i).mono
     · exact fun x hx => hx.1.2
     · exact fun x hx => mem_iInter.mp hx.2 ⟨i, hij⟩
-
-
-
 
 theorem exists_disjoint_closed_interval_rectangles
     {I X : Type*} [Finite I] [TopologicalSpace X] [T2Space X]

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.RadialLift
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem auxiliaryCircle_radial_mfderiv_split
     (P : M62.CircleProductData F circumference) (delta : ℝ)
@@ -63,8 +50,6 @@ theorem auxiliaryCircle_radial_mfderiv_split
     rw [hphi.hasMFDerivAt.mfderiv] at hq
     exact h.symm.trans hq
 
-
-
 theorem auxiliaryCircle_radial_areaGram
     (P : M62.CircleProductData F circumference) (time delta : ℝ)
     {f : LoopPlane → M} {z : LoopPlane} (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z)
@@ -80,8 +65,6 @@ theorem auxiliaryCircle_radial_areaGram
     P.circle.metricOnPoints.inner (P.circle.quotient (delta * z 1)) _ _ = _
   erw [P.circle.metric_quotient]
 
-
-
 theorem auxiliaryCircle_radial_areaGram_det
     (P : M62.CircleProductData F circumference) (time delta : ℝ)
     {f : LoopPlane → M} {z : LoopPlane} (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z) :
@@ -91,8 +74,6 @@ theorem auxiliaryCircle_radial_areaGram_det
   simp only [Matrix.det_fin_two, auxiliaryCircle_radial_areaGram P time delta hf]
   norm_num [EuclideanSpace.basisFun_apply]
   ring
-
-
 
 theorem auxiliaryCircle_radial_density_le
     (P : M62.CircleProductData F circumference) (time delta : ℝ)
@@ -111,8 +92,6 @@ theorem auxiliaryCircle_radial_density_le
   nlinarith [mul_nonneg (Real.sqrt_nonneg ((m60AreaGram (F.metric time) f z).det))
     (mul_nonneg (abs_nonneg delta) (Real.sqrt_nonneg (m60AreaGram (F.metric time) f z 0 0)))]
 
-
-
 theorem m60AreaGram_sqrt_diagonal_le_one_add_energy
     (g : RiemannianMetric n M) (f : LoopPlane → M) (z : LoopPlane) :
     Real.sqrt (m60AreaGram g f z 0 0) ≤ 1 + m60EnergyDensity g f z := by
@@ -120,8 +99,6 @@ theorem m60AreaGram_sqrt_diagonal_le_one_add_energy
   have h11 := m60AreaGram_diagonal_nonneg g f z 1
   rw [m60EnergyDensity, Matrix.trace_fin_two]
   nlinarith [Real.sq_sqrt h00, sq_nonneg (Real.sqrt (m60AreaGram g f z 0 0) - 1)]
-
-
 
 theorem auxiliaryCircle_radial_density_le_energy_error
     (P : M62.CircleProductData F circumference) (time delta : ℝ)

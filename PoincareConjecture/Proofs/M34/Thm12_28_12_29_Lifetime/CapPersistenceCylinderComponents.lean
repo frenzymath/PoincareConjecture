@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capPersistence_component_sq_le (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
     (T : (Fin r → Fin 3) → ℝ) (a : Fin r → Fin 3) :
@@ -41,8 +29,6 @@ theorem capPersistence_component_sq_le (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
     (Finset.single_le_sum (fun b _ =>
       mul_nonneg (Finset.prod_nonneg fun i _ => hd0 (b i)) (sq_nonneg _))
       (Finset.mem_univ a))
-
-
 
 theorem capPersistence_iterated_component_bound {delta : ℝ} {B : RoundCylinderTwoTensor}
     (hB : RoundCylinderClose delta 0 B) (N : ℕ) (hN : N ≤ Nat.floor delta⁻¹)

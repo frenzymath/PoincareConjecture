@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_ScalarComparisonModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ noncomputable local instance capUpperTwoJetNorm : NormedAddCommGroup (MetricTwoJ
 
 noncomputable local instance capUpperTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
 
 theorem exists_actualCap_scalar_upper {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta : ℝ}

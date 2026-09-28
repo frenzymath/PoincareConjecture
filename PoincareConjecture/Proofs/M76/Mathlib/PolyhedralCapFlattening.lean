@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexCapFlattening
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_polyhedral_cap_flattening (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem contDiff_of_contDiffOn_of_tsupport_subset {U : Set E} (hU : IsOpen U)
     {f : E → F} {k : ℕ∞ω} (hf : ContDiffOn ℝ k f U) (hs : tsupport f ⊆ U) :

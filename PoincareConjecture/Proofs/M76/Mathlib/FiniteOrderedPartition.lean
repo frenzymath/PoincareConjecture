@@ -1,24 +1,11 @@
 import Mathlib.Data.Finset.Sort
 import Mathlib.Order.Interval.Set.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Finset
-
-
-
-
 
 theorem exists_ordered_partition {α : Type*} [LinearOrder α]
     (T : Finset α) {l u : α} (hlu : l < u) (hT : (T : Set α) ⊆ Set.Icc l u)
@@ -57,9 +44,6 @@ theorem exists_ordered_partition {α : Type*} [LinearOrder α]
 
 end Finset
 
-
-
-
 theorem Monotone.exists_mem_consecutive_Icc {α : Type*} [LinearOrder α]
     {n : ℕ} {t : Fin (n + 2) → α} (ht : Monotone t) {x : α}
     (hx : x ∈ Icc (t 0) (t (Fin.last (n + 1)))) :
@@ -80,9 +64,6 @@ theorem Monotone.exists_mem_consecutive_Icc {α : Type*} [LinearOrder α]
     have hi' : i = j.castSucc := hj.symm
     rw [hi'] at hle
     exact (not_le_of_gt Fin.castSucc_lt_succ) hle
-
-
-
 
 theorem StrictMono.eq_endpoints_of_mem_consecutive_Icc {α : Type*} [LinearOrder α]
     {n : ℕ} {t : Fin (n + 2) → α} (ht : StrictMono t)

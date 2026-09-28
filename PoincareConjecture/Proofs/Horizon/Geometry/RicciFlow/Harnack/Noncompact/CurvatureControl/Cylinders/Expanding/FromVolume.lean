@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Selection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Volume.Normalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
@@ -20,8 +12,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 set_option backward.isDefEq.respectTransparency false
 open Filter
 open scoped Topology
-
-
 
 theorem exists_positive_volume_ancient_limit_of_unbounded_time_scalar
     {m : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Radius.BallBuffer
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +15,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [ConnectedSpace M]
-
 
 theorem scalarCoreRadius_center_scalar_le (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -43,8 +33,6 @@ theorem scalarCoreRadius_center_scalar_le (g : RiemannianMetric 3 M)
       ENNReal.ofReal_pos.mpr hr.1
   rw [← hr.2]
   exact le_csSup hbdd ⟨⟨p, hp⟩, rfl⟩
-
-
 
 theorem CapCertificate.exists_closedCore_ball_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -78,8 +66,6 @@ theorem CapCertificate.exists_closedCore_ball_threshold :
     apply (closure_mono ?_).trans (hcontain.trans A.boundary_neck_subset)
     intro y hy
     exact hy.trans_le (ENNReal.ofReal_le_ofReal (by linarith [hr.1]))
-
-
 
 theorem CapCertificate.exists_uniform_closedCore_ball_buffer_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

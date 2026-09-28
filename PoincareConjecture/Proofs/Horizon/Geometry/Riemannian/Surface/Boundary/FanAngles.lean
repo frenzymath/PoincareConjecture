@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.No
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Corners
 import Mathlib.Geometry.Euclidean.Angle.Unoriented.TriangleInequality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 noncomputable def cornerAngle (g : RiemannianMetric 2 S) (x : S)
     (v w : TangentSpace (𝓡 2) x) : ℝ :=
@@ -60,8 +50,6 @@ theorem cornerAngle_neg_neg (g : RiemannianMetric 2 S) (x : S)
   rw [g.cornerAngle_neg_left, g.cornerAngle_neg_right]
   ring
 
-
-
 theorem sum_cornerAngle_four_sectors (g : RiemannianMetric 2 S) (x : S)
     (v w : TangentSpace (𝓡 2) x) :
     (∑ i : Bool, ∑ j : Bool,
@@ -70,8 +58,6 @@ theorem sum_cornerAngle_four_sectors (g : RiemannianMetric 2 S) (x : S)
   simp only [Fintype.sum_bool, Bool.false_eq_true, if_false, if_true,
     g.cornerAngle_neg_left, g.cornerAngle_neg_right]
   ring
-
-
 
 theorem cornerAngle_split_of_nonneg_combination (g : RiemannianMetric 2 S) (x : S)
     (v w : TangentSpace (𝓡 2) x) {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)

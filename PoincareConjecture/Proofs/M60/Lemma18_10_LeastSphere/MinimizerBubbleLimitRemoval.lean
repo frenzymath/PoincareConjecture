@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimit
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityRemoval
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalSmooth
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
 
 theorem suFiniteEnergyPlane_removed_weakCoordinate
     (g : RiemannianMetric n M) (f : LoopPlane → M)
@@ -58,10 +53,6 @@ theorem suFiniteEnergyPlane_removed_weakCoordinate
     hum.mono_exponent hq2, fun i => (hVm i).mono_exponent hq2, hweak,
     fun eta he hc hs => (hvar eta he hc hs).1, fun eta he hc hs => (hvar eta he hc hs).2⟩
 
-
-
-
-
 theorem suFiniteEnergyPlane_smooth_sphere
     (g : RiemannianMetric n M)
     (regular : SUAlphaOneSmoothness g)
@@ -88,9 +79,6 @@ theorem suFiniteEnergyPlane_smooth_sphere
   exact ⟨suSphereFromPlane f p, suSphereFromPlane_smooth f p hf hzero,
     suSphereFromPlane_parameter f p, suSphereFromPlane_harmonic g f p hh,
     suSphereFromPlane_energy g f p⟩
-
-
-
 
 theorem suFiniteEnergyPlane_smooth_sphere_of_finite_energy
     (g : RiemannianMetric n M)

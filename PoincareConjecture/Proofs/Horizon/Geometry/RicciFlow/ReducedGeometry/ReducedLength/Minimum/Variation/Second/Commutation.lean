@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

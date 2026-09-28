@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.Geometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Removal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -24,8 +16,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Q" => hamiltonOneHierarchyCoordinates
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
-
-
 
 theorem PairedSourceGeometry.exists_closed_component_removal
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

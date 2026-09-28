@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import PoincareConjecture.Proofs.M04.ConnectionScalar
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -117,4 +110,3 @@ theorem laplacian_comp {g : RiemannianMetric n M} (D : LeviCivitaData g)
     scalarGradientSq, pow_two, mul_assoc]
 
 end PoincareConjecture.M04
-

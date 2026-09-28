@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.OriginalC
 import PoincareConjecture.Proofs.M76.PrimeReduction.AffineContactFiniteness
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -107,10 +96,6 @@ private theorem contact_graph_line_cover_in_chart
   exact ⟨hJs.symm.subset ⟨⟨z, ⟨hzD, hzB⟩, hback.symm⟩,
     interior_subset hxU.2.1⟩, interior_subset hxU.2.2⟩
 
-
-
-
-
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_line_cover_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -135,9 +120,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_line_cover_in_chart
   obtain ⟨i, hye⟩ := hcover y hy.1
   exact contact_graph_line_cover_in_chart (e i) B Q (hB i) (hQ i)
     hye hyB hyQ (S ∩ (g '' convexHull ℝ ({w, p, q} : Set E))) N.space hyN J hJ hJs hJc
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_line_cover_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -178,4 +160,3 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_line_cover_of_affine_
   exact hcover x ⟨⟨z, ⟨⟨hzS, u, hu, huz⟩, hzQ⟩, hzx⟩, hxU⟩
 
 end PoincareConjecture.M76
-

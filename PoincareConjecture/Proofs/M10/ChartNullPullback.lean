@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.CalibratedPushforward
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem ae_calibrated_pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

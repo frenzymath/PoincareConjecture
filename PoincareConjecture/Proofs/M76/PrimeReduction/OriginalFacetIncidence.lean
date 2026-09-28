@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem faceLink_ncard_eq_two_of_original_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -74,9 +63,6 @@ theorem faceLink_ncard_eq_two_of_original_chart
     rw [← K.closedFaceStar_singleton_eq_closedStar]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hlink
-
-
-
 
 theorem faceLink_ncard_eq_one_of_original_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -142,9 +128,6 @@ theorem faceLink_ncard_eq_one_of_original_chart
     rw [← K.closedFaceStar_singleton_eq_closedStar]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hlink
-
-
-
 
 theorem original_chart_stars_facet_incidence
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

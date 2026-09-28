@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Side.Family
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,8 +7,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Side
-
-
 
 theorem coordinate_bound_of_frontier_bound
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -41,7 +32,6 @@ theorem coordinate_bound_of_frontier_bound
     linarith
   exact (hmax hx).trans (hfront p hpfront)
 
-
 theorem coordinate_strict_bound_on_interior
     {X : Type*} [TopologicalSpace X] {K : Set X}
     (f : X → Real) (hfo : IsOpenMap f) {c : Real}
@@ -57,8 +47,6 @@ theorem coordinate_strict_bound_on_interior
   have hle := hbound q (interior_subset hq)
   rw [he] at hle
   linarith
-
-
 
 theorem intersection_eq_frontier_intersection_of_opposite_bounds
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -87,8 +75,6 @@ theorem intersection_eq_frontier_intersection_of_opposite_bounds
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 
-
-
 theorem filled_disk_coordinate_bound
     (B D : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (i : Fin 2) {c : Real}
@@ -107,8 +93,6 @@ theorem filled_disk_coordinate_bound
   rw [frontier_closedBall 0 one_ne_zero] at he
   intro p hp
   exact hboundary p (he.symm ▸ hp)
-
-
 
 theorem filled_disks_inter_eq_boundary_inter_of_opposite_wall_sides
     (A B D : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) {c : Real}
@@ -136,8 +120,6 @@ theorem filled_disks_inter_eq_boundary_inter_of_opposite_wall_sides
   simpa only [hboundary] using he
 
 namespace CircleFamily
-
-
 
 theorem exists_disk_family_with_coordinate_bound
     {a b : Real} (A : CircleFamily a b)

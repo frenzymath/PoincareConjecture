@@ -3,21 +3,10 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
-
-
-
 
 theorem inv_mul_time_sub_le_of_tendsto_atTop
     {f f' : ℝ → ℝ} {a b A : ℝ} (hA : 0 < A)

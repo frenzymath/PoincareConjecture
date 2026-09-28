@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 import PoincareConjecture.Proofs.M01.NormalizationCurvature
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +27,6 @@ noncomputable local instance neckScalarTwoJetNorm :
 
 noncomputable local instance neckScalarTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_roundCylinder_scalar_lower_cutoff :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ ∀ epsilon : ℝ,
@@ -66,9 +54,6 @@ theorem exists_roundCylinder_scalar_lower_cutoff :
   rw [Metric.mem_ball, dist_eq_norm]
   exact (evolving_roundCylinderClose_twoJet_error hepsilon le_rfl zero_lt_one hB
     horder z hz).trans_lt (by linarith)
-
-
-
 
 theorem exists_neck_scalar_ratio_cutoff :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧

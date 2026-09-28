@@ -3,23 +3,11 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.LocallyConvex.WithSeminorms
 import Mathlib.Data.Set.Finite.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem segment_inter_subset_convexHull_of_isExtreme {a b c d : E}
     (hleft : IsExtreme ℝ (segment ℝ a b) (segment ℝ a b ∩ segment ℝ c d))

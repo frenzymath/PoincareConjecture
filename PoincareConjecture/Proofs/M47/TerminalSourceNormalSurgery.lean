@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceNormalMap
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalBuffers
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalSourceNormal_surgery
     {S : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}} {b Q τ : ℝ}

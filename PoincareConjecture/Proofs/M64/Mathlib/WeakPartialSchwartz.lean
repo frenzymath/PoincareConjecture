@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.We
 import Mathlib.Analysis.Distribution.SchwartzSpace.Basic
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -24,10 +11,6 @@ open Set Metric MeasureTheory Filter
 open scoped Topology ContDiff SchwartzMap InnerProductSpace
 
 namespace Poincare.Analysis.Sobolev.Weak
-
-
-
-
 
 theorem HasWeakPartialDeriv.inner_toLp_schwartz {d : ℕ} [NeZero d]
     {i : Fin d} {u v : EuclideanSpace ℝ (Fin d) → ℝ}

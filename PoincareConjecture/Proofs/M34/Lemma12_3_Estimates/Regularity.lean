@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ManifoldCurvatureSmooth
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem continuous_curvatureDerivativeNorm (D : LeviCivitaData g) (k : ℕ) :
     Continuous (D.curvatureDerivativeNorm k) := by
   have hT := D.iteratedCovariantTensorDerivative_isSmooth D.riemannEvaluation_isSmooth_manifold k
@@ -33,16 +21,12 @@ theorem continuous_curvatureDerivativeNorm (D : LeviCivitaData g) (k : ℕ) :
   funext x
   exact (Real.sqrt_sq (Real.sqrt_nonneg _)).symm
 
-
-
 theorem curvatureDerivativeNorm_bounded_on_compact (D : LeviCivitaData g)
     (k : ℕ) {K : Set M} (hK : IsCompact K) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ x ∈ K, D.curvatureDerivativeNorm k x ≤ C := by
   obtain ⟨C, hC⟩ := hK.bddAbove_image (continuous_curvatureDerivativeNorm D k).continuousOn
   refine ⟨max C 0, le_max_right _ _, fun x hx => ?_⟩
   exact (hC ⟨x, hx, rfl⟩).trans (le_max_left _ _)
-
-
 
 theorem contMDiff_scalarCurvature (D : LeviCivitaData g) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ D.scalarCurvature := by
@@ -51,8 +35,6 @@ theorem contMDiff_scalarCurvature (D : LeviCivitaData g) :
   have h := hT.contMDiffAt_apply (x := x) (X := fun i : Fin 0 => Fin.elim0 i)
     (fun i => Fin.elim0 i)
   convert! h using 1
-
-
 
 theorem scalarCurvature_bounds_on_compact (D : LeviCivitaData g)
     {K : Set M} (hK : IsCompact K)

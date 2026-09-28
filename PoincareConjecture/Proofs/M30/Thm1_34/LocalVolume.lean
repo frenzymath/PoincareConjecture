@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,8 +12,6 @@ open RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem volume_upper_of_precompact_ball
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n) {R K r : ℝ}
@@ -44,9 +32,6 @@ theorem volume_upper_of_precompact_ball
   rw [ENNReal.div_mul_cancel (ENNReal.ofReal_pos.mpr hpos).ne'
     ENNReal.ofReal_ne_top, one_mul] at hvol
   exact hvol
-
-
-
 
 theorem local_volume_bounds_of_base_volume
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)

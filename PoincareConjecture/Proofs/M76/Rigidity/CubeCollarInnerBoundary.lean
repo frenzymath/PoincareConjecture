@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +12,6 @@ local notation "Q" => sphere (0 : V3) 1
 local notation "Q0" => sphere (0 : V3) (7 / 8)
 local notation "J" => Icc (0 : ℝ) (1 / 8)
 local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
-
-
 
 theorem exists_finitePL_cube_collar_inner_boundary
     (h : (Q ×ˢ J : Set (V3 × ℝ)) ≃ₜ T) (hh : h.IsFinitePL)

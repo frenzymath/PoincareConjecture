@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH2JetCoordinates
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Product
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -18,9 +9,6 @@ open PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} {ι : Type*} [Fintype ι]
-
-
-
 
 noncomputable def vectorPeriodicH1JetCoordinates :
     State ((ℤ × Fin 2) × ι) →L[ℝ] ((Fin 2 × ι) → lp (fun _ : ℤ => ℂ) 2) :=
@@ -31,9 +19,6 @@ noncomputable def vectorPeriodicH1JetCoordinates :
           (lpFinitePiEquiv ℝ).toContinuousLinearMap)))
 
 variable [Fact (0 < L)]
-
-
-
 
 theorem vectorPeriodicH1JetCoordinates_spec (u : State ((ℤ × Fin 2) × ι)) :
     ‖vectorPeriodicH1JetCoordinates (L := L) u‖ ≤ ‖u‖ ∧
@@ -60,10 +45,6 @@ theorem vectorPeriodicH1JetCoordinates_spec (u : State ((ℤ × Fin 2) × ι)) :
         (complexLpRealEquiv.symm (lpFinitePiEquiv ℝ u p.2))) x).re = _
     rw [(hc p).2]
     rfl
-
-
-
-
 
 theorem exists_vectorPeriodicH1_product :
     let D := periodicSobolevJet (L := L) 0 0 (by omega)

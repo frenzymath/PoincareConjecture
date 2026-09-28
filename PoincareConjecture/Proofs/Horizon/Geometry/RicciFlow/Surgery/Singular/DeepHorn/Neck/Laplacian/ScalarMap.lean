@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.ScalarJe
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
@@ -64,10 +57,8 @@ theorem smoothAt_matrix_inverse (G : Matrix (Fin n) (Fin n) ℝ)
     (smooth_adjugate (n := n)).contDiffAt
   simpa only [Matrix.inv_def, Ring.inverse_eq_inv', Pi.smul_apply, Pi.inv_apply] using hs
 
-
 def scalarChartState (p : ChartState (n := n)) : ℝ :=
   ∑ i, ∑ j, p.1⁻¹ i j * ricciJet (chartStateJet p) i j
-
 
 theorem smoothAt_scalarChartState (p : ChartState (n := n))
     (hdet : p.1.det ≠ 0) : ContDiffAt ℝ ∞ scalarChartState p := by
@@ -109,7 +100,6 @@ theorem smoothAt_scalarChartState (p : ChartState (n := n))
   exact ContDiffAt.sum fun i _ => ContDiffAt.sum fun j _ =>
     (hinvEntry i j).mul (ContDiffAt.sum fun k _ => hmixed k i j k)
 
-
 def euclideanMetricState (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (b : Module.Basis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))
     (x : EuclideanSpace ℝ (Fin n)) : ChartState (n := n) :=
@@ -139,7 +129,6 @@ private theorem scalarCurvature_eq_inverse_gram
     ∑ i, ∑ j, (Matrix.of (fun i j => g.inner x (b i) (b j)))⁻¹ i j * B (b i) (b j) at h
   simpa only [B, LinearMap.sum_apply, LeviCivitaData.curvatureTensor_bilinear_first_third_apply,
     LeviCivitaData.ricci, LeviCivitaData.scalarCurvature] using h
-
 
 theorem scalarCurvature_eq_scalarChartState
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

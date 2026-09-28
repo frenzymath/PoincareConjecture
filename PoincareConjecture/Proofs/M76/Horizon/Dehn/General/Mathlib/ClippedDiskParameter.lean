@@ -2,15 +2,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Analysis.Normed.Group.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

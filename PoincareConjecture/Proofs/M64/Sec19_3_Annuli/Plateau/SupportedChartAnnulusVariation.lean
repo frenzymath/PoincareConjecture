@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SupportedRectangleAdmission
 import PoincareConjecture.Proofs.M60.Mathlib.SupportedChartVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 omit [T2Space M] in
 
-
 theorem m64SupportedChartVariation_eq_of_notMem_tsupport
     (A : M64Annulus g c0 c1) (b : M) {U : Set LoopPlane}
     (hfU : MapsTo A.map U (chartAt (EuclideanSpace ℝ (Fin n)) b).source)
@@ -42,8 +29,6 @@ theorem m64SupportedChartVariation_eq_of_notMem_tsupport
     (Prod.snd ⁻¹' U) (A.map ∘ Prod.snd)
     (fun q : ℝ × LoopPlane => q.1 • V q.2) (fun _ hq => hfU hq)
   simp only [image_eq_zero_of_notMem_tsupport hp, smul_zero]
-
-
 
 theorem m64SupportedChartVariation_exists_admissible_interval
     (A : M64Annulus g c0 c1) (b : M) {U : Set LoopPlane}

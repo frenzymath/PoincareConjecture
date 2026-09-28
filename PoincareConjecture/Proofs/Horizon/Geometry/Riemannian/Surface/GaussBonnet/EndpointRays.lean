@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Parameters
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem mfderiv_curve_reparam_zero_of_eqOn
     {γ η : ℝ → S} {φ : ℝ → ℝ}
@@ -45,7 +36,6 @@ theorem mfderiv_curve_reparam_zero_of_eqOn
   exact hv.trans hc
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem coordinateTriangleVelocity_pos_smul_of_image_eq
     (F G : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -153,8 +143,6 @@ variable (g : RiemannianMetric 2 S)
 
 include hF hFi hG hGi hb hc hij hkl himage hpoint
 
-
-
 theorem coordinateTriangleVelocity_normalize_eq_of_image_eq :
     (Real.sqrt (g.inner (G (c k)) (coordinateTriangleVelocity G c k l)
       (coordinateTriangleVelocity G c k l)))⁻¹ • coordinateTriangleVelocity G c k l =
@@ -166,8 +154,6 @@ theorem coordinateTriangleVelocity_normalize_eq_of_image_eq :
   rw [← hpoint, hv]
   exact g.normalize_smul_pos (F (b i)) (coordinateTriangleVelocity F b i j) ha
 
-
-
 theorem coordinateTriangleSideUnitField_endpoint_eq_of_image_eq :
     coordinateTriangleSideUnitField g G c k l (G (c k)) =
       coordinateTriangleSideUnitField g F b i j (F (b i)) := by
@@ -176,8 +162,6 @@ theorem coordinateTriangleSideUnitField_endpoint_eq_of_image_eq :
   rw [coordinateTriangleVelocity_eq_chartField G c hG hGi hc,
     coordinateTriangleVelocity_eq_chartField F b hF hFi hb] at h
   exact h
-
-
 
 theorem cornerAngle_coordinateTriangleVelocity_eq_of_image_eq
     (w : TangentSpace (𝓡 2) (F (b i))) :
@@ -188,7 +172,6 @@ theorem cornerAngle_coordinateTriangleVelocity_eq_of_image_eq
   dsimp only [TangentSpace] at hv w ⊢
   rw [← hpoint, hv]
   exact g.cornerAngle_smul_pos_left _ _ _ ha
-
 
 theorem cornerAngle_coordinateTriangleVelocity_eq_of_image_eq_right
     (w : TangentSpace (𝓡 2) (F (b i))) :

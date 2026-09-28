@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff NNReal Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_common_radial_evolution
     (r : ℝ) (hr : 0 < r)

@@ -5,23 +5,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

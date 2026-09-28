@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureFrameCoordinate
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Family
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -27,7 +15,6 @@ namespace PoincareConjecture.RicciFlow.Local
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 theorem localFrame_covariant_derivative_coordinate
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x₀ : M)

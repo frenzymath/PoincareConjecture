@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.G
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Bounded
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +21,6 @@ private lemma edist_self_for_global_harnack
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   simp only [RiemannianMetric.edist, Manifold.riemannianEDist_self]
-
 
 theorem dirichletExhaustionKernel_global_harnack_of_ricci_lower
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

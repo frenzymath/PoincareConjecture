@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Annulus
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimParametrization.ExactBoundary
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.ClosedPhaseSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -30,8 +19,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "C32" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem other_source_component_disjoint_old_boundary
     (phi : C(H, H)) (theta : C) (F0 : (ContinuousMap.id H).HomotopyRel phi B)
@@ -51,8 +38,6 @@ theorem other_source_component_disjoint_old_boundary
     rw [hmark, scale.apply_symm_apply, hc] at h
     exact h
   exact hne ((hTcomp x hx).symm.trans (hScomp x hxS))
-
-
 
 theorem exists_finite_source_components_of_model
     {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -120,8 +105,6 @@ theorem exists_finite_source_components_of_model
     exact hdis (fun h => hij (equiv.injective h))
   · intro i
     exact ⟨(htop (equiv i)).1, (htop (equiv i)).2, hTS (equiv i), hcomponent (equiv i)⟩
-
-
 
 theorem exists_compressed_source_phase_classification
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

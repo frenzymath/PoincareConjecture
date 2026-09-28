@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskNormalForm
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Boundary.RectangleExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -34,10 +27,6 @@ private theorem arc_coordinate_injective {cut a b x y : ℝ}
   change J.symm (J x) = J.symm (J y) at h
   rwa [J.left_inv ⟨ha.trans_le hx.1, hx.2.trans_lt hb⟩,
     J.left_inv ⟨ha.trans_le hy.1, hy.2.trans_lt hb⟩] at h
-
-
-
-
 
 theorem exists_hamiltonZero_source_disk_homeomorphic_normal_form
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

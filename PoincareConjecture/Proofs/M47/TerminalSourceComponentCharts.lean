@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourcePhysicalComponent
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace E M] [ChartedSpace E N]
   [IsManifold (𝓡 3) ∞ N] [T3Space N]
 
-
 def terminalSourceComponentMap (g : RiemannianMetric 3 N) (p : N)
     (f : M → N) {B : ℝ} (hball : ∀ x, f x ∈ g.ball p B) :
     M → Poincare.connectedComponentOpens E p :=
@@ -35,7 +25,6 @@ def terminalSourceComponentMap (g : RiemannianMetric 3 N) (p : N)
     mem_connectedComponent ((hball x).trans_le le_top)⟩
 
 omit [T3Space N] in
-
 
 theorem terminalSourceComponentMap_geometry
     (g : RiemannianMetric 3 N) (p : N) (f : M → N) {B : ℝ}
@@ -49,7 +38,6 @@ theorem terminalSourceComponentMap_geometry
   · exact terminalGerms_open_codomain_localDiffeomorph C hsmooth
 
 omit [T3Space N] in
-
 
 theorem terminalSourceComponentMap_metric
     (g : RiemannianMetric 3 N) (p : N) (f : M → N) {B : ℝ}
@@ -79,7 +67,6 @@ theorem terminalSourceComponentMap_metric
     (congrArg (fun A => A v) hchain).symm (congrArg (fun A => A w) hchain).symm
 
 omit [TopologicalSpace M] [ChartedSpace E M] in
-
 
 theorem terminalSourceComponentMap_distances
     (g : RiemannianMetric 3 N) (p : N) (f : M → N) {B : ℝ}

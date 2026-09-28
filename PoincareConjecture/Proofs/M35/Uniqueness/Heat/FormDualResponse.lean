@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormDualCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {V H : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [CompleteSpace V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
   [SeparableSpace H]
-
-
 
 def formDualResponseOperator (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)
@@ -58,9 +47,6 @@ theorem norm_formDualResponseOperator_le (J : V →L[ℝ] H) (hc : IsCompactOper
     ((mul_le_mul (ContinuousLinearMap.norm_compLpL_le _ |>.trans hB)
       (norm_shiftedHighOperator_le hT _) (norm_nonneg _) zero_le_one).trans_eq
         (one_mul _))
-
-
-
 
 theorem formDualResponse_weak_equation (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

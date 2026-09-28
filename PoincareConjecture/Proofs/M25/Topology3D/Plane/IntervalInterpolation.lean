@@ -4,17 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -22,46 +11,36 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 def lineInterpolation (f : ℝ → ℝ) (t x : ℝ) : ℝ :=
   (1 - t) * x + t * f x
-
 
 @[simp] theorem lineInterpolation_zero (f : ℝ → ℝ) (x : ℝ) :
     lineInterpolation f 0 x = x := by
   simp [lineInterpolation]
 
-
 @[simp] theorem lineInterpolation_one (f : ℝ → ℝ) (x : ℝ) :
     lineInterpolation f 1 x = f x := by
   simp [lineInterpolation]
-
-
 
 theorem lineInterpolation_eq_self {f : ℝ → ℝ} {x : ℝ} (hx : f x = x) (t : ℝ) :
     lineInterpolation f t x = x := by
   rw [lineInterpolation, hx]
   ring
 
-
 theorem contDiff_lineInterpolation {f : ℝ → ℝ} {n : ℕ∞ω} (hf : ContDiff ℝ n f) :
     ContDiff ℝ n (fun p : ℝ × ℝ => lineInterpolation f p.1 p.2) := by
   exact ((contDiff_const.sub contDiff_fst).mul contDiff_snd).add
     (contDiff_fst.mul (hf.comp contDiff_snd))
 
-
 theorem contDiff_lineInterpolation_slice {f : ℝ → ℝ} {n : ℕ∞ω}
     (hf : ContDiff ℝ n f) (t : ℝ) : ContDiff ℝ n (lineInterpolation f t) := by
   exact ((contDiff_const.mul contDiff_id).add (contDiff_const.mul hf))
-
 
 theorem hasDerivAt_lineInterpolation {f : ℝ → ℝ} {x d : ℝ}
     (hf : HasDerivAt f d x) (t : ℝ) :
     HasDerivAt (lineInterpolation f t) ((1 - t) + t * d) x := by
   convert! ((hasDerivAt_id x).const_mul (1 - t)).add (hf.const_mul t) using 1
   simp
-
-
 
 theorem lineInterpolation_derivative_pos {d t : ℝ} (hd : 0 < d)
     (ht : t ∈ Icc (0 : ℝ) 1) : 0 < (1 - t) + t * d := by
@@ -70,16 +49,12 @@ theorem lineInterpolation_derivative_pos {d t : ℝ} (hd : 0 < d)
     norm_num
   · exact add_pos_of_nonneg_of_pos (sub_nonneg.mpr ht.2) (mul_pos h hd)
 
-
 theorem strictMono_lineInterpolation {f : ℝ → ℝ}
     (hf : Differentiable ℝ f) (hpos : ∀ x, 0 < deriv f x)
     {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) : StrictMono (lineInterpolation f t) := by
   apply strictMono_of_hasDerivAt_pos
     (fun x => hasDerivAt_lineInterpolation (hf x).hasDerivAt t)
   exact fun x => lineInterpolation_derivative_pos (hpos x) ht
-
-
-
 
 theorem surjective_of_eq_self_outside_interval {f : ℝ → ℝ}
     (hf : Continuous f) (a b : ℝ)
@@ -94,17 +69,12 @@ theorem surjective_of_eq_self_outside_interval {f : ℝ → ℝ}
     ((min_le_right a y).trans (le_max_right b y)) hf.continuousOn hy
   exact ⟨x, hx⟩
 
-
-
 theorem surjective_lineInterpolation {f : ℝ → ℝ} (hf : Continuous f)
     (a b : ℝ) (hfix : ∀ x, x ≤ a ∨ b ≤ x → f x = x) (t : ℝ) :
     Surjective (lineInterpolation f t) := by
   apply surjective_of_eq_self_outside_interval
     ((continuous_const.mul continuous_id).add (continuous_const.mul hf)) a b
   exact fun x hx => lineInterpolation_eq_self (hfix x hx) t
-
-
-
 
 noncomputable def lineInterpolationDiffeomorph {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (hpos : ∀ x, 0 < deriv f x)
@@ -125,8 +95,6 @@ noncomputable def lineInterpolationDiffeomorph {f : ℝ → ℝ}
     (fun x => hasDerivAt_lineInterpolation
       ((hf.differentiable (by simp)) x).hasDerivAt t) he
 
-
-
 @[simp] theorem lineInterpolationDiffeomorph_apply {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (hpos : ∀ x, 0 < deriv f x)
     (a b : ℝ) (hfix : ∀ x, x ≤ a ∨ b ≤ x → f x = x)
@@ -134,12 +102,8 @@ noncomputable def lineInterpolationDiffeomorph {f : ℝ → ℝ}
     lineInterpolationDiffeomorph hf hpos a b hfix t ht x =
       lineInterpolation f t x := rfl
 
-
-
 noncomputable def lineIsotopy (f : ℝ → ℝ) (t x : ℝ) : ℝ :=
   lineInterpolation f (Real.smoothTransition (3 * t - 1)) x
-
-
 
 theorem contDiff_lineIsotopy {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) :
     ContDiff ℝ ∞ (fun p : ℝ × ℝ => lineIsotopy f p.1 p.2) := by
@@ -149,21 +113,15 @@ theorem contDiff_lineIsotopy {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) :
       ((contDiff_const.mul contDiff_fst).sub contDiff_const)
   exact (contDiff_lineInterpolation hf).comp (htime.prodMk contDiff_snd)
 
-
-
 theorem lineIsotopy_eq_self {f : ℝ → ℝ} {t : ℝ} (ht : t ≤ 1 / 3) (x : ℝ) :
     lineIsotopy f t x = x := by
   rw [lineIsotopy, Real.smoothTransition.zero_of_nonpos (by linarith)]
   exact lineInterpolation_zero f x
 
-
-
 theorem lineIsotopy_eq_map {f : ℝ → ℝ} {t : ℝ} (ht : 2 / 3 ≤ t) (x : ℝ) :
     lineIsotopy f t x = f x := by
   rw [lineIsotopy, Real.smoothTransition.one_of_one_le (by linarith)]
   exact lineInterpolation_one f x
-
-
 
 theorem lineIsotopy_diffeomorph {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (hpos : ∀ x, 0 < deriv f x)

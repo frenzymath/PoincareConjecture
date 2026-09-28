@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.Estimate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 
@@ -21,8 +12,6 @@ variable {ι E F G : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem contDiffAt_bilinear_pullback {f : E → F} {A : F → F →L[ℝ] F →L[ℝ] G}
     {x : E} (hf : ContDiffAt ℝ ∞ f x) (hA : ContDiffAt ℝ ∞ A (f x)) :
@@ -39,9 +28,6 @@ theorem contDiffAt_bilinear_pullback {f : E → F} {A : F → F →L[ℝ] F →L
     ContinuousLinearMap.contDiff (𝕜 := ℝ) (E := E →L[ℝ] E →L[ℝ] G)
       (F := E →L[ℝ] E →L[ℝ] G) flip₂
   exact hc₂.contDiffAt.comp x ((hc₁.contDiffAt.comp x hpre).clm_comp hD)
-
-
-
 
 theorem HasUniformJetBoundsAt.bilinear_pullback {n : ℕ}
     {f : ι → E → F} {A : ι → F → F →L[ℝ] F →L[ℝ] G} {x : ι → E}
@@ -81,9 +67,6 @@ theorem HasUniformJetBoundsAt.bilinear_pullback {n : ℕ}
         (fderiv ℝ (f i) y)) (x i) :=
     fun i => (hcflip i).clm_comp (hD i)
   exact hpre'.clm (G := E →L[ℝ] E →L[ℝ] G) hcpre' flip₂
-
-
-
 
 theorem exists_bilinear_pullback_error_bound (n : ℕ)
     {f : ι → E → F} {A : ι → F → F →L[ℝ] F →L[ℝ] G} {x : ι → E}

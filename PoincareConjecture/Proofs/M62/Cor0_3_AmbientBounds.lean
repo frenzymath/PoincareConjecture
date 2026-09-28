@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 import PoincareConjecture.Proofs.M09.TensorEvaluationBound
 import PoincareConjecture.Statements.M62CurveEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem exists_uniform_tensor_bound
     (F : RicciFlow n M (Set.Icc a b)) (hcompact : IsCompact (Set.univ : Set M))
@@ -61,8 +50,6 @@ theorem exists_uniform_tensor_bound
     _ ≤ (F.metric t).tensorNorm (T t) x * 1 :=
       mul_le_mul_of_nonneg_left hprod (hnonneg (t, x))
     _ ≤ max C 0 := by simpa only [mul_one] using hnorm.trans (le_max_left C 0)
-
-
 
 theorem exists_ambient_bounds
     (F : RicciFlow n M (Set.Icc a b)) (hcompact : IsCompact (Set.univ : Set M)) :

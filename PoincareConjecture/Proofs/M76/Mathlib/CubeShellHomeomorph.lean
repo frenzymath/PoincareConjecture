@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellMap
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -33,11 +23,6 @@ private theorem abs_eq_radius_iff {u r : ℝ} (hr : 0 ≤ r) :
       have hn := (abs_of_nonpos hu).symm.trans h
       linarith
   · rintro (rfl | rfl) <;> simp only [abs_neg, abs_of_nonneg hr]
-
-
-
-
-
 
 theorem exists_radius_homeomorph {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :
@@ -129,9 +114,6 @@ theorem exists_radius_homeomorph {a b c d : ℝ}
     rw [hGval]
     change ((_, _), _) = ((_, _), _)
     exact Prod.ext (Prod.ext (hcoords 0) (hcoords 1)) (hcoords 2)
-
-
-
 
 theorem exists_fixed_radius_homeomorph {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :

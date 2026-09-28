@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M09.ExponentialAction
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

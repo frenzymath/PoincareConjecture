@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M08.IntervalSolutionUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 structure DependentIntervalSolutionLocality {X : ℝ → Type*}
     (Sol : ℝ → ℝ → (∀ s, X s) → Prop) : Prop where
@@ -42,9 +30,6 @@ private theorem encoded_locality :
     funext s
     dsimp only
     split_ifs <;> rfl
-
-
-
 
 theorem exists_dependent_interval_solution_of_overlapping_cover
     {a b : ℝ} (hab : a < b) {m : ℕ} (hm : 0 < m)
@@ -72,9 +57,6 @@ theorem exists_dependent_interval_solution_of_overlapping_cover
       exact fun r hr => (e r).injective (heq r hr)) ((e a).symm z₀)
   refine ⟨fun s => e s (f s), hf, ?_⟩
   simpa only [Equiv.apply_symm_apply] using congrArg (e a) hf₀
-
-
-
 
 theorem dependent_interval_solution_unique_of_cover
     {a b : ℝ} {m : ℕ} (hm : 0 < m)

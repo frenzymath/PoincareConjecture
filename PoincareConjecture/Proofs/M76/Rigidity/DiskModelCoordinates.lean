@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.IntrinsicDiskModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
-
-
-
 
 theorem disk_parameter_eq_model_inverse
     {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]

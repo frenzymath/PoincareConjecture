@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.CompactKernelNative
 import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 import Mathlib.MeasureTheory.MeasurableSpace.Embedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -133,7 +125,6 @@ theorem norm_extensionOperator_le {K : Set E} (hK : IsCompact K) :
   (extensionLinearMap hK).mkContinuous_norm_le (by positivity) _
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
-
 
 theorem isCompactOperator_extendedKernel {K : Set E} (hK : IsCompact K)
     [CompactSpace K] (k : C(K, H)) :

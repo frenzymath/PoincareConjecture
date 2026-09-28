@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Energy
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
-
-
-
-
-
-
-

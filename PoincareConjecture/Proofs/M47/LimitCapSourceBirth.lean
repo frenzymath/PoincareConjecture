@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_cap_birth_cylinder_terminal_map
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

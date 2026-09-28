@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFrontierScale
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ProjectionDerivative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -70,8 +59,6 @@ private theorem axial_bounds_of_scalar_metric_ricci
   · by_contra h
     have habs : (1.1 : ℝ) < |Z| := lt_of_not_ge h
     nlinarith [sq_abs Z, abs_nonneg Z]
-
-
 
 theorem exists_axial_transition_bounds_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -151,8 +138,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem transition_axis_hasDerivAt_m28 (N N' : EpsilonNeck g) (q : UnitTwoSphere)
     {s : ℝ} (hs : s ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹)
     (hx : N'.coordinate_map (q, s) ∈ N.carrier) :
@@ -171,8 +156,6 @@ theorem transition_axis_hasDerivAt_m28 (N N' : EpsilonNeck g) (q : UnitTwoSphere
   have hsnd := (hasMFDerivAt_snd (I := 𝓡 2) (I' := 𝓘(ℝ, ℝ))
     (N.coordinate_inverse (N'.coordinate_map (q, s)))).comp s hcomp
   exact hsnd.hasFDerivAt.hasDerivAt
-
-
 
 theorem exists_transition_axis_deriv_bounds_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

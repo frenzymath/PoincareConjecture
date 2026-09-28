@@ -1,23 +1,11 @@
 import PoincareConjecture.Definitions.M54GroupEffects
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem repairedGroupPersistence
     (F : SurgeryFlowData.{u}) (T : ℝ)

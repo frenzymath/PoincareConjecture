@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M15.Thm1_34_VolumeComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 
 namespace PoincareConjecture.Proofs.M46
-
 
 theorem sinh_le_cosh_mul {A z : ℝ} (hz : z ∈ Icc 0 A) :
     Real.sinh z ≤ Real.cosh A * z := by
@@ -26,7 +16,6 @@ theorem sinh_le_cosh_mul {A z : ℝ} (hz : z ∈ Icc 0 A) :
       exact Real.cosh_strictMonoOn.monotoneOn hx.1 (hz.1.trans hz.2) hx.2.le) z hz
   simpa only [Real.sinh_zero, sub_zero, Real.norm_eq_abs,
     abs_of_nonneg (Real.sinh_nonneg_iff.mpr hz.1)] using h
-
 
 theorem modelS_scaled_inv_sq_le {A R t : ℝ} (hA : 0 < A) (hR : 0 < R)
     (ht : t ∈ Icc 0 R) :
@@ -40,7 +29,6 @@ theorem modelS_scaled_inv_sq_le {A R t : ℝ} (hA : 0 < A) (hR : 0 < R)
   rw [RiemannianMetric.modelS, if_neg (pow_ne_zero 2 hQ.ne'), Real.sqrt_sq hQ.le]
   apply (div_le_iff₀ hQ).mpr
   simpa only [mul_left_comm, mul_assoc, mul_comm] using sinh_le_cosh_mul hz
-
 
 theorem modelVolume_scaled_inv_sq_le {A R : ℝ} (hA : 0 < A) (hR : 0 < R) :
     RiemannianMetric.modelVolume 3 ((A / R) ^ 2) R ≤
@@ -61,7 +49,6 @@ theorem modelVolume_scaled_inv_sq_le {A R : ℝ} (hA : 0 < A) (hR : 0 < R) :
       mul_le_mul_of_nonneg_left hintegral
         (mul_nonneg (by norm_num) (RiemannianMetric.euclideanUnitBallVolume_nonneg 3))
     _ = _ := by rw [intervalIntegral.integral_const_mul, integral_pow]; norm_num; ring
-
 
 theorem scaled_smallBallVolumeBound_ge {A R s k : ℝ}
     (hA : 0 < A) (hR : 0 < R) (hs : 0 < s) (hk : 0 < k) :

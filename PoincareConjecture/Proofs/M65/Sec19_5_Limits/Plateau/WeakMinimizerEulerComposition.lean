@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -157,10 +147,6 @@ private theorem coefficientL2_tendsto_varying {N : ℕ}
   simpa only [T, map_sub, sub_add_cancel, zero_add] using hsmall.add hfixed
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem weak_chain {N : ℕ}
     (u d : Lp (EuclideanSpace ℝ (Fin N)) 2 (volume : Measure LoopPlane)) (v : LoopPlane)

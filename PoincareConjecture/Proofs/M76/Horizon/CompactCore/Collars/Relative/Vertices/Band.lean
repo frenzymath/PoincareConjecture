@@ -37,6 +37,4 @@ structure SurfaceVertexBand (P : SurfaceLowerProducts T)
   frontier_image_subset : (T.vertexBlock p).space ∩ (T.marked 1).space ⊆
     map '' ((T.dualRegionRim {(p : E)} ∩ (T.marked 2).space) ×ˢ I)
 
-
 end Geometry.SimplicialComplex
-

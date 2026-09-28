@@ -1,22 +1,9 @@
 import Mathlib.Topology.SeparatedMap
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
-
 
 theorem IsLocallyInjective.isCompact_doubleRelation
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallLocalBackwar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallSourcePacket
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricCurvaturePositivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,11 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
-
-
 
 theorem exists_source_criticalBall_nonnegative_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

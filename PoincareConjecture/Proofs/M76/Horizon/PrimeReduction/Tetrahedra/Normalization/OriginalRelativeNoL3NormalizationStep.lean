@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Sele
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleSurgeryCofaceTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3RelativeFamilyMarkedExchange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 namespace PoincareConjecture.M76

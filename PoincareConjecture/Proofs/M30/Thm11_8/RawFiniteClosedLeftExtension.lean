@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.RadiusDependentLeftCylinders
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteLeftLocalExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem exists_raw_finite_closed_left_extension_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

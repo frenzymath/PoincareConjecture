@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcParameter
 import Mathlib.Data.Nat.Dist
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -87,9 +78,6 @@ private theorem subarc_image_sdiff_endpoints {n : ℕ} {p : Polygon E (n + 2)}
         (hindex a) (ha.trans (polygonLinearParameter_natVertex p a).symm))
     · exact hne.2 (hp.injOn_polygonLinearParameter (hinterval ⟨ht.1.le, ht.2.le⟩)
         (hindex b) (hb.trans (polygonLinearParameter_natVertex p b).symm))
-
-
-
 
 theorem IsSimplePolygonalArc.exists_consecutive_subarc {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

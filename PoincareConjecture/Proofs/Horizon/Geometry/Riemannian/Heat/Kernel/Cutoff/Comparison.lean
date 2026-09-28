@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Supports
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.NoncompactMaximum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem mvfderiv_scalarCurvature_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -55,8 +44,6 @@ theorem mvfderiv_scalarCurvature_of_local_homothety
   rw [div_eq_mul_inv, mul_comm]
   rfl
 
-
-
 theorem mfderiv_gradient_scalarCurvature_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -82,8 +69,6 @@ theorem mfderiv_gradient_scalarCurvature_of_local_homothety
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture
-
-
 
 theorem scalarGradientNorm_eq_of_local_homothety
     {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

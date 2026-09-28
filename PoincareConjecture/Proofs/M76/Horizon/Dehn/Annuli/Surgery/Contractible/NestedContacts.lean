@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Contractible.NestedSource
 
-
-
 set_option autoImplicit false
 open Set Geometry
 open _root_.Dehn

@@ -1,17 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.MetricDuality
 import Mathlib.Analysis.Calculus.ContDiff.Operations
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,7 +32,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 noncomputable def ricciForm (F : RicciFlow n M (Ico a b)) (x : M) (t : ℝ) :
     TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -72,7 +61,6 @@ theorem ricciForm_apply (F : RicciFlow n M (Ico a b))
   rw [← he]
   ring
 
-
 noncomputable def ricciEndomorphism (F : RicciFlow n M (Ico a b)) (x : M) (t : ℝ) :
     TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -93,7 +81,6 @@ theorem inner_ricciEndomorphism (F : RicciFlow n M (Ico a b))
   rw [((F.metric t).inner_isInvertible x).self_apply_inverse]
   exact ricciForm_apply F x ht v w
 
-
 theorem ricciEndomorphism_eq_sum (F : RicciFlow n M (Ico a b)) (x : M)
     {t : ℝ} (ht : t ∈ Ico a b) (v : TangentSpace (𝓡 n) x) :
     ricciEndomorphism F x t v =
@@ -109,7 +96,6 @@ theorem ricciEndomorphism_eq_sum (F : RicciFlow n M (Ico a b)) (x : M)
   congr 1
   rw [OrthonormalBasis.repr_apply_apply, real_inner_comm]
   exact inner_ricciEndomorphism F x ht v (e i)
-
 
 theorem continuousOn_ricciEndomorphism (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Ico a b)) (x : M) :
@@ -141,8 +127,6 @@ theorem continuousOn_ricciEndomorphism (hC : RicciFlowCurvatureTheory.{u})
   intro t ht
   exact ((((F.metric t).inner_isInvertible x).contDiffAt_map_inverse (n := ∞)).continuousAt.comp_continuousWithinAt
     (f := fun s => (F.metric s).inner x) (hg t ht)).clm_comp (hr t ht)
-
-
 
 private theorem exists_ricciTransport_map (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Ico a b)) {T : ℝ} (haT : a < T) (hTb : T < b) (x : M) :
@@ -210,8 +194,6 @@ private theorem exists_ricciTransport_map (hC : RicciFlowCurvatureTheory.{u})
     (fun s hs => (hd s ⟨hs.1, hs.2.le⟩).derivWithin
       (uniqueDiffOn_Icc haT s ⟨hs.1, hs.2.le⟩)) t ht
   simpa only [f, hUa, ContinuousLinearMap.id_apply] using hc
-
-
 
 theorem exists_ricciTransport (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Ico a b)) {T : ℝ} (haT : a < T) (hTb : T < b) (x : M) :

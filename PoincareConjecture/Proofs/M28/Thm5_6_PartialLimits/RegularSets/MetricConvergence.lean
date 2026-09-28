@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.FlowCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 structure RegularPointedMetricConvergence {n : ℕ} {M : ℕ → Type u}
     [∀ k, TopologicalSpace (M k)]
@@ -77,12 +65,9 @@ structure RegularPointedMetricConvergence {n : ℕ} {M : ℕ → Type u}
         (iteratedFDeriv ℝ m (limitMetric.pullbackCoefficients
           (extChartAt (𝓡 n) q).symm)) atTop K
 
-
   regular_component_coverage : ∀ δ : ℝ, 0 < δ → ∃ j : ℕ, ∀ᶠ k in atTop,
     j ≤ k ∧ regularComponent (g (subsequence k)) (p (subsequence k)) δ ⊆
       embedding k '' exhaustion j
-
-
 
 noncomputable def RegularPointedMetricConvergence.reindex
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

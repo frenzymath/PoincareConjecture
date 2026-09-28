@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.RiemannRegularity
 import PoincareConjecture.Proofs.M04.ScalarChainRule
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -279,4 +271,3 @@ theorem laplacian_const_add_mul (D : LeviCivitaData g) (A : ℝ)
   ring
 
 end PoincareConjecture.M04
-

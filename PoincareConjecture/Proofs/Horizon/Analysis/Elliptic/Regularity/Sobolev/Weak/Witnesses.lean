@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Derivatives
-
-
-
-
-
-
 
 noncomputable section
 
@@ -26,13 +11,11 @@ variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
-
 def MemW1p (p : ℝ≥0∞) (f : E → ℝ) (Ω : Set E)
     (μ : Measure E := volume) : Prop :=
   MemLp f p (μ.restrict Ω) ∧
   ∀ i : Fin d, ∃ g : E → ℝ,
     MemLp g p (μ.restrict Ω) ∧ HasWeakPartialDeriv i g f Ω
-
 
 structure MemW1pWitness (p : ℝ≥0∞) (f : E → ℝ) (Ω : Set E)
     (μ : Measure E := volume) where
@@ -46,11 +29,8 @@ structure MemW1pWitness (p : ℝ≥0∞) (f : E → ℝ) (Ω : Set E)
 
   isWeakGrad : HasWeakGrad weakGrad f Ω
 
-
 abbrev MemH1 (f : E → ℝ) (Ω : Set E) (μ : Measure E := volume) :=
   MemW1p 2 f Ω μ
-
-
 
 def MemW01p (p : ℝ≥0∞) (f : E → ℝ) (Ω : Set E)
     (μ : Measure E := volume) : Prop :=
@@ -67,10 +47,8 @@ def MemW01p (p : ℝ≥0∞) (f : E → ℝ) (Ω : Set E)
         p (μ.restrict Ω))
         atTop (nhds 0)
 
-
 abbrev MemH01 (f : E → ℝ) (Ω : Set E) (μ : Measure E := volume) :=
   MemW01p 2 f Ω μ
-
 
 noncomputable def MemW1p.someWitness
     {p : ℝ≥0∞} {Ω : Set E} {f : E → ℝ} {μ : Measure E}
@@ -94,7 +72,6 @@ theorem MemW1pWitness.memW1p
   refine ⟨hw.memLp, ?_⟩
   intro i
   exact ⟨fun x => hw.weakGrad x i, hw.weakGrad_component_memLp i, hw.isWeakGrad i⟩
-
 
 noncomputable def MemW1pWitness.add
     {Ω : Set E} {u v : E → ℝ}
@@ -175,7 +152,6 @@ noncomputable def MemW1pWitness.restrict
     intro i
     exact HasWeakPartialDeriv.restrict hΩ' hsub (hw.isWeakGrad i)
 
-
 noncomputable def MemW1pWitness.smul
     {Ω : Set E} {u : E → ℝ}
     (hu : MemW1pWitness 2 u Ω) (c : ℝ) :
@@ -221,7 +197,6 @@ noncomputable def MemW1pWitness.smul
             ring
       _ = -∫ x in Ω, ((fun x => c • hu.weakGrad x) x i * φ x) := by
             simp [smul_eq_mul]
-
 
 noncomputable def MemW1pWitness.mulSmoothBoundedP
     {p : ℝ≥0∞} (hp : 1 ≤ p)
@@ -289,8 +264,6 @@ noncomputable def MemW1pWitness.mulSmoothBoundedP
       (hw.memLp.locallyIntegrable hp)
       ((hw.weakGrad_component_memLp i).locallyIntegrable hp)
 
-
-
 noncomputable def MemW1pWitness.ofContDiffHasCompactSupport
     {p : ℝ≥0∞} {f : E → ℝ}
     (hf : ContDiff ℝ (⊤ : ℕ∞) f) (hf_supp : HasCompactSupport f) :
@@ -312,7 +285,6 @@ noncomputable def MemW1pWitness.ofContDiffHasCompactSupport
 
 omit [NeZero d] in
 
-
 theorem MemW1pWitness.weakGrad_memLp
     {p : ℝ≥0∞} {Ω : Set E} {f : E → ℝ} {μ : Measure E}
     (hw : MemW1pWitness p f Ω μ) :
@@ -320,7 +292,6 @@ theorem MemW1pWitness.weakGrad_memLp
   refine MemLp.of_eval_piLp ?_
   intro i
   simpa using hw.weakGrad_component_memLp i
-
 
 theorem MemW1pWitness.weakGrad_norm_memLp
     {p : ℝ≥0∞} {Ω : Set E} {f : E → ℝ} {μ : Measure E}
@@ -336,7 +307,6 @@ theorem MemW01p.memW1p
     (hf : MemW01p p f Ω μ) :
     MemW1p p f Ω μ :=
   hf.1
-
 
 theorem MemW01p.add
     {Ω : Set E} {u v : E → ℝ}
@@ -451,7 +421,6 @@ theorem MemW01p.add
       hupper
     simpa using hsum
 
-
 theorem MemW01p.smul
     {Ω : Set E} {u : E → ℝ} (c : ℝ)
     (hu : MemW01p 2 u Ω) :
@@ -530,13 +499,11 @@ theorem MemW01p.smul
     rw [hEq]
     simpa using hscaled
 
-
 theorem MemW01p.sub
     {Ω : Set E} {u v : E → ℝ}
     (hu : MemW01p 2 u Ω) (hv : MemW01p 2 v Ω) :
     MemW01p 2 (fun x => u x - v x) Ω := by
   simpa [sub_eq_add_neg, Pi.smul_apply, smul_eq_mul] using hu.add (hv.smul (-1))
-
 
 theorem memW01p_of_contDiff_hasCompactSupport
     {p : ℝ≥0∞} {f : E → ℝ}
@@ -555,8 +522,6 @@ theorem memW01p_of_contDiff_hasCompactSupport
   · simp
   · intro i
     simp [hw, MemW1pWitness.ofContDiffHasCompactSupport]
-
-
 
 theorem memW01p_of_contDiff_hasCompactSupport_subset
     {p : ℝ≥0∞} {Ω : Set E} (hΩ : IsOpen Ω) {f : E → ℝ}

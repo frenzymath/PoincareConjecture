@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Coordinates
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,25 +12,19 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def hyperbolaRadius (r t : Real) : Real := Real.sqrt (r ^ 2 - t)
-
 
 def positiveLevelArc (t : Real) (i : Fin 2) (s : Real) : E2 :=
   WithLp.toLp 2 ![s, if i = 0 then Real.sqrt (t + s ^ 2) else -Real.sqrt (t + s ^ 2)]
 
-
 def saddleCoordinateSwap (x : E2) : E2 := WithLp.toLp 2 ![x 1, x 0]
-
 
 def negativeLevelArc (t : Real) (i : Fin 2) (s : Real) : E2 :=
   saddleCoordinateSwap (positiveLevelArc t i s)
 
-
 def positiveLevelContact (r t : Real) (i : Fin 2 × Fin 2) : E2 :=
   WithLp.toLp 2 ![if i.2 = 0 then -hyperbolaRadius r t else hyperbolaRadius r t,
     if i.1 = 0 then r else -r]
-
 
 def negativeLevelContact (r t : Real) (i : Fin 2 × Fin 2) : E2 :=
   saddleCoordinateSwap (positiveLevelContact r t i)
@@ -185,8 +177,6 @@ theorem positiveLevelArc_pairwise_disjoint {t : Real} (ht : 0 < t) :
   · norm_num [positiveLevelArc] at hy
     linarith
   · exact hij rfl
-
-
 
 theorem closedSquare_positiveLevel_eq_arcs {r t : Real}
     (hr : 0 < r) (ht : 0 < t) (htr : t < r ^ 2) :

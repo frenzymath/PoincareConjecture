@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConformalInitialGain
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.HalfSpaceChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +9,6 @@ noncomputable section
 open Set Function
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_exists_metric_tangent_frame {n : ℕ}
     (G : EuclideanSpace ℝ (Fin (n + 1)) →L[ℝ]

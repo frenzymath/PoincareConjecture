@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingData
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.CompactIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

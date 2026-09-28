@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import PoincareConjecture.Proofs.M35.RadialGauge.JointSuccessor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

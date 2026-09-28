@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderModelJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capNeckNormalization_modelGram_center_jet_eq
     (u : ℝ) (q q₀ : UnitTwoSphere) (s : ℝ) (j : ℕ) (a b : Fin 3) :
@@ -43,8 +31,6 @@ theorem capNeckNormalization_modelGram_center_jet_eq
     simp only [roundCylinderGram_chosenChart]
   rw [hshift, hcenter]
 
-
-
 theorem capNeckNormalization_exists_modelGram_center_jet_bound (u : ℝ) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (q : UnitTwoSphere) (s : ℝ), ∀ j ≤ m,
       ∀ a b : Fin 3, ‖iteratedFDeriv ℝ j (fun y =>
@@ -61,8 +47,6 @@ theorem capNeckNormalization_exists_modelGram_center_jet_bound (u : ℝ) (m : �
   let i : Fin (m + 1) × Fin 3 × Fin 3 := (⟨j, Nat.lt_succ_of_le hj⟩, a, b)
   exact (hC (mem_range_self i)).trans (le_max_left _ _)
 
-
-
 theorem capNeckNormalization_shift_mem {delta epsilon s : ℝ}
     (hdelta : 0 < delta) (hde : delta ≤ epsilon)
     (hs : s ∈ Ioo (-epsilon⁻¹) epsilon⁻¹) :
@@ -73,8 +57,6 @@ theorem capNeckNormalization_shift_mem {delta epsilon s : ℝ}
 end PoincareConjecture.M34
 
 namespace PoincareConjecture
-
-
 
 theorem RoundCylinderTensorSmoothOn.shift_of_mapsTo {delta epsilon c : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn delta B)
@@ -91,8 +73,6 @@ theorem RoundCylinderTensorSmoothOn.shift_of_mapsTo {delta epsilon c : ℝ}
   rw [heq]
   exact (hB q a b).comp (contDiff_id.add contDiff_const).contDiffOn
     (fun p hp => ⟨by simpa using hp.1, hmap p.2 hp.2⟩)
-
-
 
 theorem RoundCylinderTensorSmoothOn.const_mul {epsilon beta : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B) :

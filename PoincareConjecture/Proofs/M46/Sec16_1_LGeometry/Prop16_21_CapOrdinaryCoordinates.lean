@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_CompactOrdinaryTrace
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_FullAvoidance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem basedCylinder_ordinary_forward
     {F : SurgeryFlowData.{u}} {origin top scale : ℝ} {I : Set ℝ}
@@ -55,9 +43,6 @@ theorem basedCylinder_ordinary_forward
   rw [hinit] at h1
   exact h1.symm.trans h2
 
-
-
-
 theorem CapBarrierOriginData.ordinary_forward
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
     (H : M33RegularHistoryData W) {G : FlowBoxRicciGeometry H.generalized}
@@ -79,9 +64,6 @@ theorem CapBarrierOriginData.ordinary_forward
     ⟨le_rfl, div_pos (sub_pos.mpr (Q.top_gt.trans_le D.top_le_original)) (sq_pos_of_pos hh)⟩
   exact basedCylinder_ordinary_forward D.original hzero D.based htop hJ hNo
     (D.interval_subset hs) (D.interval_subset hs).1 hphysical hx
-
-
-
 
 theorem CapBarrierOriginData.ordinary_coordinate_not_inner
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

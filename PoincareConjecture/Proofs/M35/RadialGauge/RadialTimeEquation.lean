@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaugeEquation
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialEquationBridge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -17,8 +8,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 local notation "V" => EuclideanSpace ℝ (Fin 5)
-
-
 
 theorem invariant_R5_time_equation
     {u : ℝ → V → ℝ} {b : V → V} {G : V → ℝ → ℝ} {t r : ℝ}
@@ -47,9 +36,6 @@ theorem invariant_R5_time_equation
     f f₀ velocity (by simpa only [hnorm] using hb) (by simpa only [hnorm] using hG)
   rw [hnorm] at hoperator
   exact hPDE.congr_deriv hoperator
-
-
-
 
 theorem invariant_R5_radius_time_equation
     {u : ℝ → V → ℝ} {b : V → V} {G : V → ℝ → ℝ} {t r : ℝ}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RelativeTriangleChains
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedIncidenceRanks
 
-
-
 set_option autoImplicit false
 open scoped BigOperators
 open PreAbstractSimplicialComplex.ModTwoCochains

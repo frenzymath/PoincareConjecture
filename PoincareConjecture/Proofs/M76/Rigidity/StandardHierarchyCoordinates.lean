@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroPeriodLattice
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -28,8 +19,6 @@ local notation "H1" => LatticeHandle (Fin 1) (Fin 2) L1
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "C1" => AddCircle (4 * (128 : ℝ))
 
-
-
 noncomputable def hamiltonZeroHierarchyCoordinates : H0 ≃ₜ ((C0 × C0) × C0) where
   toFun z := hamiltonZeroLatticeProductEquiv z.2
   invFun z := (⟨0, mem_closedBall_self zero_le_one⟩,
@@ -40,14 +29,10 @@ noncomputable def hamiltonZeroHierarchyCoordinates : H0 ≃ₜ ((C0 × C0) × C0
   continuous_toFun := hamiltonZeroLatticeProductEquiv.continuous.comp continuous_snd
   continuous_invFun := continuous_const.prodMk hamiltonZeroLatticeProductEquiv.symm.continuous
 
-
-
 theorem hamiltonZeroHierarchyCoordinates_mk (x : Fin 3 → ℝ) :
     hamiltonZeroHierarchyCoordinates
       (⟨0, mem_closedBall_self zero_le_one⟩, QuotientAddGroup.mk x) =
         (((x 0 : C0), (x 1 : C0)), (x 2 : C0)) := rfl
-
-
 
 theorem hamiltonZeroHierarchyCoordinates_symm_coe (s t u : ℝ) :
     hamiltonZeroHierarchyCoordinates.symm (((s : C0), (t : C0)), (u : C0)) =
@@ -57,8 +42,6 @@ theorem hamiltonZeroHierarchyCoordinates_symm_coe (s t u : ℝ) :
     hamiltonZeroHierarchyCoordinates_mk]
   rfl
 
-
-
 theorem hamiltonZeroHandleBoundary_eq_empty :
     latticeHandleBoundary (Fin 0) (Fin 3) L0 = ∅ := by
   ext z
@@ -66,8 +49,6 @@ theorem hamiltonZeroHandleBoundary_eq_empty :
   have hz : (z.1 : V0) = 0 := Subsingleton.elim _ _
   rw [hz, norm_zero]
   norm_num
-
-
 
 noncomputable def hamiltonOneHierarchyCoordinates : H1 ≃ₜ ((D1 × C1) × C1) := by
   let q := hamiltonLowerLatticePiEquiv (Fin 2)
@@ -103,13 +84,9 @@ noncomputable def hamiltonOneHierarchyCoordinates : H1 ≃ₜ ((D1 × C1) × C1)
     · exact continuous_fst.snd
     · exact continuous_snd
 
-
-
 theorem hamiltonOneHierarchyCoordinates_mk (x : D1) (s t : ℝ) :
     hamiltonOneHierarchyCoordinates (x, QuotientAddGroup.mk ![s, t]) =
       ((x, (s : C1)), (t : C1)) := rfl
-
-
 
 theorem hamiltonOneHierarchyCoordinates_symm_coe (x : D1) (s t : ℝ) :
     hamiltonOneHierarchyCoordinates.symm ((x, (s : C1)), (t : C1)) =
@@ -118,12 +95,8 @@ theorem hamiltonOneHierarchyCoordinates_symm_coe (x : D1) (s t : ℝ) :
   rw [hamiltonOneHierarchyCoordinates.apply_symm_apply,
     hamiltonOneHierarchyCoordinates_mk]
 
-
-
 def hamiltonOneAnnulusRim : Set (D1 × C1) :=
   {z | ‖(z.1 : V1)‖ = 1}
-
-
 
 theorem hamiltonOneHierarchyCoordinates_preimage_boundary :
     hamiltonOneHierarchyCoordinates ⁻¹'

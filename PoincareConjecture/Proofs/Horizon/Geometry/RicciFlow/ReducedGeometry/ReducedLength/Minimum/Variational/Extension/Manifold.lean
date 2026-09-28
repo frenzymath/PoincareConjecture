@@ -3,11 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.Basic
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +15,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variational
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem chart_curve_contDiffOn {I : Set ℝ} (x : M) (α : ℝ → M)
     (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) ∞ α I)

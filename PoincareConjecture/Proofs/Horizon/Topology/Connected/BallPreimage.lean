@@ -1,22 +1,10 @@
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Topology
 namespace Poincare.Topology
-
-
 
 theorem frontier_connectedComponentIn_subset_of_isOpen
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
@@ -34,8 +22,6 @@ theorem frontier_connectedComponentIn_subset_of_isOpen
     exact hxV
   exact hx.2 (hO.connectedComponentIn.interior_eq.symm ▸ hxC)
 
-
-
 theorem mapsTo_frontier_connectedComponentIn_preimage_ball
     {X Y : Type*} [TopologicalSpace X] [LocallyConnectedSpace X] [PseudoMetricSpace Y]
     {f : X → Y} (hf : Continuous f) (p : X) (c : Y) (ρ : ℝ) :
@@ -45,8 +31,6 @@ theorem mapsTo_frontier_connectedComponentIn_preimage_ball
   exact Metric.frontier_ball_subset_sphere
     (hf.frontier_preimage_subset _ (frontier_connectedComponentIn_subset_of_isOpen
       (hf.isOpen_preimage _ Metric.isOpen_ball) p hx))
-
-
 
 theorem dist_eq_of_mem_frontier_connectedComponentIn_preimage_ball
     {X Y : Type*} [TopologicalSpace X] [LocallyConnectedSpace X] [PseudoMetricSpace Y]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedCompactImages
 import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedScalarConvergence
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteHarnack
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem generalized_limit_terminal_scalar_le
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ} {B : ℝ}
@@ -53,8 +42,6 @@ theorem generalized_limit_terminal_scalar_le
   have hlow := (abs_lt.mp herror).1
   linarith
 
-
-
 theorem generalized_limit_terminal_scalar_le_of_short_controls
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ} {kappa r0 : ℝ}
     (H : ShortControlledBlowupHypotheses S kappa r0)
@@ -75,8 +62,6 @@ theorem generalized_limit_terminal_scalar_le_of_short_controls
       H.curvature_bound * S.scale k := (le_abs_self _).trans hcurv
   norm_num only [Nat.cast_ofNat, sq] at hscalar
   exact hscalar.trans (by nlinarith [S.base_scalar_pos k])
-
-
 
 theorem finite_limit_scalar_le_of_terminal_bound
     (hC : RicciFlowCurvatureTheory.{u}) (hH : HarnackAncientTheory.{u})

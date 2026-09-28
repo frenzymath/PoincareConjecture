@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Transport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Speed
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem radial_velocity_eq_differential
     {e : EuclideanSpace ℝ (Fin n) → M} (v : EuclideanSpace ℝ (Fin n)) {t : ℝ}
     (he : MDifferentiableAt (𝓡 n) (𝓡 n) e (t • v)) :
@@ -36,7 +33,6 @@ theorem radial_velocity_eq_differential
     mfderiv (𝓡 n) (𝓡 n) e (t • v) (fderiv ℝ (fun s : ℝ => s • v) t 1) at hv
   rw [fderiv_eq_smul_deriv, one_smul, hline.deriv] at hv
   exact hv
-
 
 theorem chartField_velocity_eq_deriv
     {q : ℝ → M} {a : M} {t : ℝ}
@@ -63,7 +59,6 @@ theorem contDiffAt_chartField_velocity
       ((hq.contMDiffAt (hI.mem_nhds hs)).mdifferentiableAt (by simp)) hsa
   exact (((contDiffAt_chart_curve hqt ha).fderiv_right (by simp)).clm_apply
     contDiffAt_const).congr_of_eventuallyEq hrep
-
 
 theorem IsGeodesicOn.manifoldCovDeriv_velocity_eq_zero
     {g : RiemannianMetric n M} {q : ℝ → M} {I : Set ℝ}
@@ -94,7 +89,6 @@ theorem IsGeodesicOn.manifoldCovDeriv_velocity_eq_zero
   erw [hd.2.deriv]
   exact neg_add_cancel _
 
-
 theorem parallel_frame_velocity
     (g : RiemannianMetric n M) {q : ℝ → M} {I : Set ℝ} {a b t : ℝ}
     (hab : a < b) (hI : IsOpen I) (hgeo : g.IsGeodesicOn q I)
@@ -122,7 +116,6 @@ theorem parallel_frame_velocity
     simpa only [zero_mul, norm_le_zero_iff, sub_eq_zero, ← hv,
       (hPi a ha).inverse_apply_self] using heq
   rw [← he, (hPi t ht).self_apply_inverse]
-
 
 theorem exists_isometric_parallel_frame
     (g : RiemannianMetric n M) {q : ℝ → M} {I : Set ℝ} {a b : ℝ}

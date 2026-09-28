@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothCoefficientResponse
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialBranchTranslation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.LocalizedCorrectedSource
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -30,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_ambient_smooth_response (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

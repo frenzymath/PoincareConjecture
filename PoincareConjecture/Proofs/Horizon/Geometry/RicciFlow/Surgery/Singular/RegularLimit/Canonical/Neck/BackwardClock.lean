@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ScalarMonotonicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,16 +10,12 @@ universe u
 
 namespace PoincareConjecture.SingularRegularLimit
 
-
-
 theorem backward_clock_start_lt {t T R S : ℝ}
     (ht : t < T) (hR : 0 < R) (hRS : R < S) :
     t - R⁻¹ < T - S⁻¹ := by
   have hinv : S⁻¹ < R⁻¹ := by
     simpa only [one_div] using one_div_lt_one_div_of_lt hR hRS
   linarith
-
-
 
 theorem backward_clock_cover {t T R S : ℝ}
     (ht : t < T) (hR : 0 < R) (hRS : R < S) :
@@ -38,8 +24,6 @@ theorem backward_clock_cover {t T R S : ℝ}
   by_cases hzt : z ≤ t
   · exact Or.inl ⟨(backward_clock_start_lt ht hR hRS).trans hz.1, hzt⟩
   · exact Or.inr ⟨lt_of_not_ge hzt, hz.2⟩
-
-
 
 theorem backward_clock_reparametrize {t T R S : ℝ}
     (ht : t < T) (hR : 0 < R) (hRS : R < S)
@@ -70,7 +54,6 @@ end PoincareConjecture.SingularRegularLimit
 
 namespace PoincareConjecture.GeneralizedStrongNeck
 
-
 theorem inverse_scale_sq_eq_scalar {F : GeneralizedRicciFlowData.{u}}
     {t ε : ℝ} (N : GeneralizedStrongNeck F t ε) :
     N.scale⁻¹ ^ 2 = (F.connection t).scalarCurvature N.center := by
@@ -88,8 +71,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem neck_backward_clock_of_strictMonoOn (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : H.regularRegion P04)

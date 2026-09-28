@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M08.PathGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem positive_partition_covers {m : ℕ} (t : Fin (m + 1) → ℝ) (ht : Monotone t)
     (hab : t 0 < t (Fin.last m)) {s : ℝ} (hs : s ∈ Icc (t 0) (t (Fin.last m))) :
@@ -36,9 +25,6 @@ theorem positive_partition_covers {m : ℕ} (t : Fin (m + 1) → ℝ) (ht : Mono
     · exact ⟨Fin.last m, (lt_of_not_ge hsc).trans_le hs.2,
         (lt_of_not_ge hsc).le, hs.2⟩
 
-
-
-
 theorem positive_partition_intersection {m : ℕ} (t : Fin (m + 1) → ℝ)
     (ht : Monotone t) {i j : Fin m} (hij : i < j)
     (hi : t i.castSucc < t i.succ) (hj : t j.castSucc < t j.succ)
@@ -55,9 +41,6 @@ theorem positive_partition_intersection {m : ℕ} (t : Fin (m + 1) → ℝ)
     exact (ht (Fin.zero_le _)).trans_lt hi
   · rw [hleft]
     exact hj.trans_le (ht (Fin.le_last _))
-
-
-
 
 theorem partition_node_endpoint {m : ℕ} (t : Fin (m + 1) → ℝ) (ht : Monotone t)
     (k : Fin (m + 1)) (i : Fin m) (hk : t k ∈ Icc (t i.castSucc) (t i.succ)) :

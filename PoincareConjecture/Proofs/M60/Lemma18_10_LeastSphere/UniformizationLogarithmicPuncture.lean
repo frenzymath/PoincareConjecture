@@ -11,12 +11,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 import Mathlib.Analysis.Calculus.Deriv.Support
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter MeasureTheory
@@ -36,7 +30,6 @@ private theorem cutoff_square_hasCompactSupport (chi : ContDiffBump (0 : ℝ))
   apply chi.zero_of_le_dist
   rw [dist_zero_right, Real.norm_eq_abs, abs_of_nonneg (sq_nonneg _)]
   nlinarith [chi.rOut_pos]
-
 
 theorem radial_cutoff_source (chi : ContDiffBump (0 : ℝ)) :
     ContDiff ℝ ∞ (fun x : Plane => 2 * deriv chi (‖x‖ ^ 2)) ∧
@@ -95,8 +88,6 @@ theorem radial_cutoff_source (chi : ContDiffBump (0 : ℝ)) :
         ENNReal.toReal_ofReal (by linarith [Real.pi_pos] : 0 ≤ Real.pi - -Real.pi),
         smul_eq_mul, mul_one]
       ring
-
-
 
 theorem exists_radial_logarithmic_potential (chi : ContDiffBump (0 : ℝ)) :
     ∃ A J : Plane → ℝ, ContDiff ℝ ∞ J ∧
@@ -163,9 +154,6 @@ theorem exists_radial_logarithmic_potential (chi : ContDiffBump (0 : ℝ)) :
     change H (‖x‖ ^ 2) - H chi.rOut = 0
     exact norm_le_zero_iff.mp (by simpa only [zero_mul] using heq)
 
-
-
-
 theorem radial_logarithmic_potential_laplacian
     (chi : ContDiffBump (0 : ℝ)) {A : Plane → ℝ}
     (hA : ∀ x ≠ 0, ∀ v, fderiv ℝ A x v =
@@ -205,9 +193,6 @@ theorem radial_logarithmic_potential_laplacian
   change _ = 2 * deriv chi t
   field_simp
   linear_combination 2 * (deriv chi t * t - chi t) * hs
-
-
-
 
 theorem exists_flat_chart_logarithmic_puncture
     (g : RiemannianMetric 2 UnitTwoSphere) (D : LeviCivitaData g)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FaceInteriorDegree
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.TransverseFaceGraph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Filter Module
 open scoped Topology
@@ -104,4 +97,3 @@ theorem ncard_surface_intersection_neighbors_of_local_disks
     (by simpa only [hGs] using hgerm)
 
 end Geometry.SimplicialComplex
-

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_VolumeBoundary
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_model_volume_ratio_margin {kappa a b q : ℝ}
     (hkappa : 0 ≤ kappa) (ha : 0 < a) (_hq : 0 < q) (hq1 : q < 1) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
 
 theorem exists_two_segment_germ_of_link_vertices_ncard
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -93,8 +82,6 @@ end Geometry.SimplicialComplex
 namespace Set
 
 open Geometry
-
-
 
 theorem IsFinitePLBallPair.exists_two_segment_germ
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M10.WeightedTestIntegrable
 import PoincareConjecture.Proofs.M10.UniformIntegralLimit
 import PoincareConjecture.Proofs.M10.UpperIntegralLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory
@@ -30,7 +21,6 @@ noncomputable local instance weakComparisonBilinearNormedAddCommGroup :
 
 noncomputable local instance weakComparisonBilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
 
 theorem integral_weighted_comparison_of_semiconcave {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ u H ψ : E → ℝ}

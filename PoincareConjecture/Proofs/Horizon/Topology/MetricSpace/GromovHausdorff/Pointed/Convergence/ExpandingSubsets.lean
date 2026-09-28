@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 import Mathlib.Topology.MetricSpace.Closeds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +8,6 @@ open Set Filter Topology
 open TopologicalSpace
 universe u
 namespace Poincare.GromovHausdorff
-
-
 
 theorem exists_subseq_nonempty_compact_limit_of_expanding_bounded_subsets
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.FilledModel.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Physical
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_relative_radial_lower_cap_transport
     {v : E3} (hv : ‖v‖ = 1) (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2)
@@ -88,8 +84,6 @@ theorem exists_relative_radial_lower_cap_transport
       rw [P.apply_symm_apply, hPs, hPq]
     change P (E (P.symm (r₀ p • (p : E3)))) = _
     rw [hpre, hm, hPs, hPq]
-
-
 
 theorem exists_relative_quadratic_lower_profile_transport
     {v : E3} (hv : ‖v‖ = 1) (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2) :

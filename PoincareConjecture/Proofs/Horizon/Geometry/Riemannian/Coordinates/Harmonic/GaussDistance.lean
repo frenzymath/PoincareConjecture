@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Derivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalRadial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalRadius
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
 
 theorem edist_zero_eq_of_gauss
     (hgauss : ∀ x w, g.euclideanCoefficients x x w = inner ℝ x w)
@@ -76,7 +68,6 @@ theorem edist_zero_eq_of_gauss
     rw [← hn]
     apply le_of_tendsto ht
     filter_upwards [self_mem_nhdsWithin] with ε hε using hεbound ε hε
-
 
 theorem ball_zero_eq_of_gauss
     (hgauss : ∀ x w, g.euclideanCoefficients x x w = inner ℝ x w)

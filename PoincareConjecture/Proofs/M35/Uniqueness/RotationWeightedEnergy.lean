@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RotationDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,9 +27,6 @@ private theorem norm_add_sq_le_twice (v w : V) :
     ‖v + w‖ ^ 2 ≤ 2 * ‖v‖ ^ 2 + 2 * ‖w‖ ^ 2 := by
   have h := pow_le_pow_left₀ (norm_nonneg (v + w)) (norm_add_le v w) 2
   nlinarith only [h, sq_nonneg (‖v‖ - ‖w‖)]
-
-
-
 
 theorem rotation_weighted_energy_bound (B : V →L[ℝ] V)
     {n : V} (hn : ‖n‖ = 1) (y : V) {a b l p : ℝ}

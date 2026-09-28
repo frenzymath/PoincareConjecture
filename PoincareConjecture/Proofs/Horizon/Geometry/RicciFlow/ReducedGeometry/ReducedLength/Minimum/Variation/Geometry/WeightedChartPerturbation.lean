@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.ChartCurveExtension
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

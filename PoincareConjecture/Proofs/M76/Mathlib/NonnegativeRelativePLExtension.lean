@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPositivePart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_nonnegative_relative_extension
     {f : E → ℝ} {S U : Set E} (hf : FinitePiecewiseAffineOn f S)

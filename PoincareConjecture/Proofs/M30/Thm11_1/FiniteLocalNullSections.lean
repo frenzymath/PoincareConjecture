@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalRicciKernel
 import PoincareConjecture.Proofs.M30.Thm11_1.FiniteParallelSection
 import PoincareConjecture.Proofs.M30.Thm11_1.NullityTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u v w
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem terminal_nullity_and_local_parallel_sections
     {ι : Type w} {N : ι → Type u} {M : Type v}

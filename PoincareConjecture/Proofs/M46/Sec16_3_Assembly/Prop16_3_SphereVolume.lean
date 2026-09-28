@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Precompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,23 +16,18 @@ namespace PoincareConjecture.Proofs.M46
 
 open Poincare.Geometry.Riemannian.SpaceForm
 
-
 noncomputable def canonicalSphereMetric : RiemannianMetric 2 UnitTwoSphere :=
   rescaledMetric (roundSphereMetric 2) 2 (by norm_num)
-
 
 noncomputable def canonicalSphereConnection : LeviCivitaData canonicalSphereMetric :=
   rescaledMetric_connection (roundSphereMetric 2) (roundSphereMetric 2).leviCivitaData
     2 (by norm_num)
 
-
 noncomputable def canonicalSphereVolumeFloor : ℝ :=
   roundCylinderCrossSectionArea.toReal / (2 * Real.pi + 1) ^ 2
 
-
 theorem canonicalSphereVolumeFloor_pos : 0 < canonicalSphereVolumeFloor :=
   div_pos roundCylinderCrossSectionArea_toReal_pos (sq_pos_of_pos (by positivity))
-
 
 theorem canonicalSphere_ricci_nonneg (x : UnitTwoSphere)
     (v : TangentSpace (𝓡 2) x) : 0 ≤ canonicalSphereConnection.ricci x v v := by
@@ -56,7 +42,6 @@ theorem canonicalSphere_ricci_nonneg (x : UnitTwoSphere)
   change 0 ≤ (rescaledMetric_connection g D 2 (by norm_num)).ricci x v v
   rw [rescaledMetric_ricci]
   exact Finset.sum_nonneg fun i _ => hplane v (g.orthonormalBasis x i)
-
 
 theorem canonicalSphere_large_ball (q : UnitTwoSphere) :
     canonicalSphereMetric.ball q (2 * Real.pi + 1) = univ := by
@@ -74,8 +59,6 @@ theorem canonicalSphere_large_ball (q : UnitTwoSphere) :
   have hmul := mul_le_mul_of_nonneg_left hangle (Real.sqrt_nonneg 2)
   have hpi := mul_le_mul_of_nonneg_right hsqrt Real.pi_pos.le
   linarith
-
-
 
 theorem canonicalSphere_small_ball_volume (q : UnitTwoSphere) {a : ℝ}
     (ha : 0 < a) (ha1 : a ≤ 1) :

@@ -4,26 +4,6 @@ import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Tactic.Choose
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Metric Set
@@ -32,9 +12,6 @@ open scoped Topology
 namespace PoincareConjecture.M32
 
 variable {X : Type*} [MetricSpace X] [ProperSpace X]
-
-
-
 
 theorem exists_isometric_line_of_minimizing_windows_of_bounded_anchor
     {p : X} {B : ℝ} {arc : ℕ → ℝ → X} {radius : ℕ → ℝ}

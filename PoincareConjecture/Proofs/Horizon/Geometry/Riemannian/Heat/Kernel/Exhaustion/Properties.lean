@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Dirichlet
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -43,7 +36,6 @@ theorem semigroup_ambient {s t : ℝ} (hs : 0 < s) (ht : 0 < t) (x y : M) :
   obtain ⟨hi, he⟩ := hK.semigroup s t hs ht x y
   exact ⟨IntegrableOn.integrable_of_forall_notMem_eq_zero hi hz,
     he.trans (setIntegral_eq_integral_of_forall_compl_eq_zero hz)⟩
-
 
 theorem integral_sq_row {t : ℝ} (ht : 0 < t) (x : M) :
     Integrable (fun z => K t x z ^ 2) g.volumeMeasure ∧

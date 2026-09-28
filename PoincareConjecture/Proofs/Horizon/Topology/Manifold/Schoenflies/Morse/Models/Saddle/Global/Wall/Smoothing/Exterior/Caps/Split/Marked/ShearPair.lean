@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.ShearSlices
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -103,7 +101,6 @@ theorem tangentFlatPair_sphere_inter :
     refine ⟨hyl, ?_⟩
     obtain ⟨p, hp, hpy⟩ := hyl
     exact ⟨p, hp, (congrArg tangentWallReflection hpy).trans (tangentWallReflection_fixed hzero)⟩
-
 
 def tangentWallDisk (x : E2) : E3 := vector 0 (x 0 / 2) (x 1 / 2)
 

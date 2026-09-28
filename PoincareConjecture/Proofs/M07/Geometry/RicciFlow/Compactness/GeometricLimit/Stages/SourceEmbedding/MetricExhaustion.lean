@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.MetricConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
@@ -32,7 +22,6 @@ variable {ι : Type*} {n : ℕ}
 include hO hE hEmono hEcover hF in
 omit [∀ k, IsManifold (𝓡 n) ∞ (M k)] in
 
-
 theorem eventually_contMDiffOn_source_exhaustion_chart
     (i : ι) {K : Set (EuclideanSpace ℝ (Fin n))}
     (hK : IsCompact K) (hKU : K ⊆ U i) :
@@ -53,8 +42,6 @@ theorem eventually_contMDiffOn_source_exhaustion_chart
     (fun x hx => hEmono hk (hN (mem_image_of_mem q hx)))
 
 include hO hE hEmono hEcover hF in
-
-
 
 theorem source_exhaustion_pullbackCoefficients_tendsto_jets
     {e : ∀ k i, Piece U i → M k}

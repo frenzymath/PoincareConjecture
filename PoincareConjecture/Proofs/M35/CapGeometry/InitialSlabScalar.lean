@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialNeckScalar
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem exists_initial_slab_scalar_control {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta eta : ℝ}
@@ -40,8 +28,6 @@ theorem exists_initial_slab_scalar_control {g₀ : StandardInitialMetric}
   have hscalar := hcontrol delta hdelta le_rfl t ht (E.flow.metric t)
     (E.flow.connection t) x N q ⟨hsmooth t ht, bound, hbound, hjet t ht⟩
   simpa only [hq] using hscalar
-
-
 
 theorem exists_initial_slab_scalar_bounds {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta : ℝ}

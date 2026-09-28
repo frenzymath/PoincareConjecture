@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_RelativeTriple
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 def integralPairSequenceMap (f : C(X, Y)) {A : Set X} {A' : Set Y}
     (hf : Set.MapsTo f A A') : integralPairSequence A ⟶ integralPairSequence A' where
@@ -41,8 +28,6 @@ def integralPairSequenceMap (f : C(X, Y)) {A : Set X} {A' : Set Y}
     rfl
   comm₂₃ := (integralRelativeMap_projection f hf).symm
 
-
-
 theorem integralRelativeBoundary_naturality
     (f : C(X, Y)) {A : Set X} {A' : Set Y} (hf : Set.MapsTo f A A') (n : Nat) :
     integralRelativeBoundary A n ≫ homologyMap (integralChainsFunctor.map (TopCat.ofHom
@@ -50,9 +35,6 @@ theorem integralRelativeBoundary_naturality
       homologyMap (integralRelativeMap f hf) (n + 1) ≫ integralRelativeBoundary A' n :=
   HomologySequence.δ_naturality (integralPairSequenceMap f hf)
     (integralPairSequence_shortExact A) (integralPairSequence_shortExact A') (n + 1) n rfl
-
-
-
 
 theorem integralTripleBoundary_naturality
     (f : C(X, Y)) {A B : Set X} {A' B' : Set Y}

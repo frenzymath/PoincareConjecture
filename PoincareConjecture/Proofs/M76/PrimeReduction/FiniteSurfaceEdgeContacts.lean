@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.AffineContactFiniteness
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem vertex_avoidance_and_finite_edge_contacts
     (K T : SimplicialComplex ℝ E) (hK : K.faces.Finite)

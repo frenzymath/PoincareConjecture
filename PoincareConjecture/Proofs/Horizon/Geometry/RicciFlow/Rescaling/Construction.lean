@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Connectio
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Geometry.Manifold.Algebra.Monoid
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

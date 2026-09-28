@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialJacobianGram
 import PoincareConjecture.Proofs.M10.InitialJacobianCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem tendsto_exponentialJacobian_normalized_zero
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

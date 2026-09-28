@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.Chapter11Volume
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapLongControls
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedVolumeCollapse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -32,9 +21,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F.base) (F := F.base.flow) R
 
 include P
-
-
-
 
 theorem standardFlow_lifetime_ge_one_of_good_points (E0 : StandardCapEstimate g0)
     (H : StandardFlowNoncollapsingCertificate F) {epsilon0 epsilon C A Rstar : ℝ}

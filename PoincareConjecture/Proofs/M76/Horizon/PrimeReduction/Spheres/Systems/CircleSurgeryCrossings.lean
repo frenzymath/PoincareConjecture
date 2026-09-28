@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleSurgeryCofaceTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

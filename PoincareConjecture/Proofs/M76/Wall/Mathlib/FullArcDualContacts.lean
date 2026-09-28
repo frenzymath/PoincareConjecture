@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FullArcEdgeFaces
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.DualStrictCoface
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem full_arc_dual_contacts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

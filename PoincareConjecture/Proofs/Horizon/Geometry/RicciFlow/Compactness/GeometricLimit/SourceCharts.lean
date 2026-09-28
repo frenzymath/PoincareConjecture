@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.IndexedDistanceBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.DiagonalCovering
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
-
-
-
-
-
-
-

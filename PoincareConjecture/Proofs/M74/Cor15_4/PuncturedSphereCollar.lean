@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ namespace PoincareConjecture.SurgeryBallEmbedding
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
-
-
 
 noncomputable def punctureCollar (p : RoundCylinderSpace) : StandardCapSpace :=
   B.punctureChart d (B.map ((1 + p.2) • p.1.1))
@@ -43,8 +31,6 @@ private theorem radial_ne_zero {p : RoundCylinderSpace}
   rw [radial_norm p.1 hp.2.1]
   linarith [hp.2.1]
 
-
-
 theorem punctureCollar_contMDiffOn :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (B.punctureCollar d)
       (univ ×ˢ Ioo (-1) 1) := by
@@ -58,8 +44,6 @@ theorem punctureCollar_contMDiffOn :
   intro p hp
   exact (B.map_mem_punctureChart_source_iff d (radial_mem_ball hp)).mpr
     (radial_ne_zero hp)
-
-
 
 theorem punctureCollar_injOn :
     InjOn (B.punctureCollar d) (univ ×ˢ Ioo (-1) 1) := by
@@ -75,8 +59,6 @@ theorem punctureCollar_injOn :
   apply Subtype.ext
   rw [hs] at hr
   exact (smul_right_injective _ (by linarith [hq.2.1] : (1 : ℝ) + q.2 ≠ 0)) hr
-
-
 
 theorem punctureCollar_negative_image :
     B.punctureCollar d '' (univ ×ˢ Ioo (-1) 0) =
@@ -108,14 +90,10 @@ theorem punctureCollar_negative_image :
       rw [show 1 + (‖x‖ - 1) = ‖x‖ by ring, smul_smul,
         mul_inv_cancel₀ (ne_of_gt hn), one_smul]
 
-
-
 theorem punctureCollar_negative_unbounded :
     ¬Bornology.IsBounded (B.punctureCollar d '' (univ ×ˢ Ioo (-1) 0)) := by
   rw [B.punctureCollar_negative_image d]
   exact B.punctureChart_image_puncturedBall_unbounded d (by norm_num) (by norm_num)
-
-
 
 theorem punctureCollar_side_eq_neg_one (side : ℝ) (hside : side * side = 1)
     {U : Set StandardCapSpace} (hU : Bornology.IsBounded U)

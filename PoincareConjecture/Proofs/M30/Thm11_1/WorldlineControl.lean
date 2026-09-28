@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.ScalarAlong
 import PoincareConjecture.Proofs.M30.Mathlib.GuardedScalarComparison
 import PoincareConjecture.Proofs.M30.Thm11_1.BoundedDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -26,8 +13,6 @@ namespace PoincareConjecture.M30
 
 variable {S : GeneralizedBlowupSequence.{u}}
   {epsilon canonicalConstant kappa r₀ mu : ℝ}
-
-
 
 theorem Cylinder.scalar_le_double_on_backward_interval
     (hC : RicciFlowCurvatureTheory.{u})
@@ -73,9 +58,6 @@ theorem Cylinder.scalar_le_double_on_backward_interval
   intro s hs
   simpa only [f, scalarAlong_of_mem e x hs, mul_assoc] using hbound s hs
 
-
-
-
 theorem exists_uniform_scalar_controlled_worldlines
     (hC : RicciFlowCurvatureTheory.{u})
     (H : M30CommonBlowupControls S epsilon canonicalConstant kappa r₀ mu)
@@ -116,9 +98,6 @@ theorem exists_uniform_scalar_controlled_worldlines
   refine ⟨e, hzero, ?_⟩
   exact Cylinder.scalar_le_double_on_backward_interval hC H htau.le hD e x
     (mem_singleton x) hterminal htime
-
-
-
 
 theorem exists_common_scalar_controlled_worldlines
     (hC : RicciFlowCurvatureTheory.{u})

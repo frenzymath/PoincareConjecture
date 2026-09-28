@@ -1,16 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,9 +10,6 @@ namespace InnerProductSpace
 
 variable {E F ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F] {l : Filter ι}
-
-
-
 
 theorem tendsto_inner_of_bounded_weak_of_tendsto
     {u v : ι → E} {u0 v0 : E} {C : ℝ}
@@ -41,9 +28,6 @@ theorem tendsto_inner_of_bounded_weak_of_tendsto
   have hsum := hsmall.add (hweak v0)
   simpa only [inner_sub_right, sub_add_cancel, zero_add] using hsum
 
-
-
-
 theorem tendsto_inner_apply_of_adjoint_tendsto [CompleteSpace E] [CompleteSpace F]
     {u : ι → E} {u0 : E} {C : ℝ} {A : ι → E →L[ℝ] F} {A0 : E →L[ℝ] F}
     (hbound : ∀ᶠ i in l, ‖u i‖ ≤ C)
@@ -53,9 +37,6 @@ theorem tendsto_inner_apply_of_adjoint_tendsto [CompleteSpace E] [CompleteSpace 
     Tendsto (fun i => ⟪A i (u i), w⟫_ℝ) l (𝓝 ⟪A0 u0, w⟫_ℝ) := by
   simpa only [ContinuousLinearMap.adjoint_inner_right] using
     tendsto_inner_of_bounded_weak_of_tendsto hbound hweak (hA w)
-
-
-
 
 theorem norm_sq_le_of_tendsto_inner_of_tendsto_norm_sq [NeBot l]
     {u : ι → E} {u0 : E} {energy : ℝ}
@@ -71,10 +52,6 @@ theorem norm_sq_le_of_tendsto_inner_of_tendsto_norm_sq [NeBot l]
     (Eventually.of_forall hle)
   rw [real_inner_self_eq_norm_sq] at hlim
   linarith
-
-
-
-
 
 theorem norm_sq_apply_le_of_adjoint_tendsto [CompleteSpace E] [CompleteSpace F]
     [NeBot l] {u : ι → E} {u0 : E} {C energy : ℝ}

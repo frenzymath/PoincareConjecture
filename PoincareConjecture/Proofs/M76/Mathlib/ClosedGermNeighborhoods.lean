@@ -1,22 +1,10 @@
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] [NormalSpace X]
-
-
-
 
 theorem IsClosed.exists_open_neighborhoods_inter_subset {A B U V W : Set X}
     (hA : IsClosed A) (hB : IsClosed B) (hU : IsOpen U) (hV : IsOpen V)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRealizationCones
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,10 +8,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {A : AbstractSimplicialComplex ι}
-
-
-
-
 
 theorem RadialEmbedding.cone_space (v : A.RadialEmbedding E) :
     v.cone.space = ⋃ s ∈ insert ∅ A.faces,

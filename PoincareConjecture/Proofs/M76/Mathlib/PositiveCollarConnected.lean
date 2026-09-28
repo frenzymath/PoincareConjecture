@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 import Mathlib.Topology.Algebra.Field
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem positive_collar_image_isPreconnected
     {B T s : Set E} {upper : E → ℝ}
@@ -62,10 +48,6 @@ theorem positive_collar_image_isPreconnected
       exact Prod.ext rfl (div_mul_cancel₀ _ (hpos x x.property).ne')
   rw [← himage]
   exact isPreconnected_range hf
-
-
-
-
 
 theorem positive_collar_subset_cut_side
     {B T s s₀ s₁ : Set E} {upper A : E → ℝ}

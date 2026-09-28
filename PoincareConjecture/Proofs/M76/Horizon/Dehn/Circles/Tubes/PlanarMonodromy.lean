@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
 
 theorem disjoint_transverse_strip_images {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)
@@ -85,8 +72,6 @@ theorem disjoint_transverse_strip_images {n : ℕ}
     exact Set.disjoint_left.mp P.disjoint_inside_outside hzI
       (houtside (hcover ⟨hzU, hzI.1⟩))
 
-
-
 theorem strip_closing_sign_eq_true {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)
     (hinjP : Function.Injective P) {r a b : ℝ} (hr : 0 < r) (hab : a < b)
@@ -106,7 +91,6 @@ theorem strip_closing_sign_eq_true {n : ℕ}
     rw [hclose]
     exact mem_image_of_mem f (show (-r, b) ∈ Ico (-r) 0 ×ˢ Icc a b from
       ⟨⟨le_rfl, neg_lt_zero.mpr hr⟩, hab.le, le_rfl⟩)
-
 
 theorem strip_closing_sign_eq_true_in_coordinates
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

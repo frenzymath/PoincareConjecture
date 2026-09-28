@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.CWComplex.Construction.CWHomot
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeHomotopyLifting
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

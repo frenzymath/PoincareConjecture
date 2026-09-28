@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.BoundaryComparisons
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleCoordinates.SourceAnnulus
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -40,4 +38,3 @@ theorem exists_source_chart_comparison_rims
   exact hcq
 
 end PoincareConjecture.M76.Dehn.ProtectedAnnulus
-

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Cancellation
 import Mathlib.Analysis.Normed.Operator.NNNorm
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real

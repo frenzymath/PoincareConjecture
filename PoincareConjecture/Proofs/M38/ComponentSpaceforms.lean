@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ClosedComponentMaps
 import PoincareConjecture.Proofs.M38.ComponentMetrics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def spaceformAlongDiffeomorph (S : GeneralizedSliceCarrier.{u})
     {Q : Type*} [TopologicalSpace Q]
@@ -38,8 +27,6 @@ noncomputable def spaceformAlongDiffeomorph (S : GeneralizedSliceCarrier.{u})
 attribute [local instance] SmoothClosedComponentModel.model_topology
   SmoothClosedComponentModel.model_charted SmoothClosedComponentModel.model_manifold
 
-
-
 noncomputable def sphereSpaceformOnComponent (S : GeneralizedSliceCarrier.{u})
     (x : S.carrier) (C : ClosedComponentCertificate .threeSphere (connectedComponent x)) :
     SurgeryPositiveSpaceform (componentCarrier S x) := by
@@ -50,8 +37,6 @@ noncomputable def sphereSpaceformOnComponent (S : GeneralizedSliceCarrier.{u})
     (threeSphere_constantPositiveSectionalCurvature threeSphereConnection)
   change IsCompact (Set.univ : Set (connectedComponent x))
   exact isCompact_univ_iff.mpr (isCompact_iff_compactSpace.mp C.compact)
-
-
 
 noncomputable def projectiveSpaceformOnComponent (S : GeneralizedSliceCarrier.{u})
     (x : S.carrier)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryBumping
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainIntersection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

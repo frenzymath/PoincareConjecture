@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGr
 import Mathlib.LinearAlgebra.FreeModule.PID
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
@@ -80,8 +70,6 @@ theorem exists_three_character_detectors
 end PoincareConjecture.M76
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
-
-
 
 theorem exists_three_coordinate_evaluation_of_injective
     {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)

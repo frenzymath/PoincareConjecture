@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_CapScalarRate
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem insertedCap_scalarLower_of_persistence
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
@@ -82,10 +69,6 @@ theorem insertedCap_scalarLower_of_persistence
       ⟨le_rfl, surgeryCapDuration_pos htH hh htheta⟩ hidentity y (hcap hy)
   · exact hbirth e initial comparison
       ⟨le_rfl, div_pos (sub_pos.mpr htPlus) (sq_pos_of_pos hh)⟩ hidentity y (hcap hy)
-
-
-
-
 
 theorem exists_insertedCap_scalarLower_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {c theta A : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compress
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.SupportedScalar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

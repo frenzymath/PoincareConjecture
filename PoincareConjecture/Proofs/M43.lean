@@ -1,33 +1,10 @@
 import PoincareConjecture.Statements.M43UnifiedContinuation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedUnifiedContinuation : RepairedUnifiedContinuationTheory.{u} := by
   refine ⟨?_⟩

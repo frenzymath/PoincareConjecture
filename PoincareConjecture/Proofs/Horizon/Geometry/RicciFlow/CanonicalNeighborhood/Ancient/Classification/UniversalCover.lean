@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Coverin
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Covering.Completeness.UniversalCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.AncientKappaSolution
 
 open Poincare.Topology
-
-
 
 theorem exists_simplyConnected_covering_solution
     {M : Type u} [TopologicalSpace M]

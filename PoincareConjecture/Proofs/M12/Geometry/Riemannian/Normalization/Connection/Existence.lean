@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Connectio
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Connection.Smoothness
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -15,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem normalization_exists_leviCivitaData {n : ℕ} {M : Type u}
     [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

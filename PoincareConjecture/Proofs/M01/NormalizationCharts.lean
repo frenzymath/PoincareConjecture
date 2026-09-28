@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M01.NormalizationVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Metric Set Filter
@@ -24,7 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [RiemannianBundle (TangentSpace 𝓘(ℝ, E) : M → Type _)]
   [IsContinuousRiemannianBundle E (TangentSpace 𝓘(ℝ, E) : M → Type _)]
   [∀ z : E, NormedAddCommGroup (TangentSpace 𝓘(ℝ, E) z)]
-
 
 theorem m01_exists_normalizedChart
     [∀ z : E, NormedSpace ℝ (TangentSpace 𝓘(ℝ, E) z)]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Or
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt

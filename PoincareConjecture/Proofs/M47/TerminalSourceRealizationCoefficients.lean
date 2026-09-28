@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceRealization
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoefficientTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSourceRealization_terminal_metric
     {S : SurgeryFlowData.{u}} {b Q : ℝ} {I J : Set ℝ}
@@ -57,9 +46,6 @@ theorem terminalSourceRealization_terminal_metric
   change mfderiv (𝓡 3) (𝓡 3) (fun y : U => e.forward 0 hzero y.val) x = _ at hd
   rw [hd] at hpull
   exact (hmetric x v w).trans (congrArg (fun z : ℝ => Q * z) hpull)
-
-
-
 
 theorem terminalSourceRealization_pullbackCoefficients
     {C : GeneralizedSliceCarrier.{u}} (S : ℝ → GeneralizedSliceCarrier.{u})

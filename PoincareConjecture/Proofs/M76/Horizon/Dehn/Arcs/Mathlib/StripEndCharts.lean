@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripArmCharts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionStripBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
-
 
 def stripEnd (t : ℝ) : Set P2 := {t} ×ˢ Icc (-1 : ℝ) 1
 
@@ -29,7 +20,6 @@ theorem stripEnds_eq_union : stripEnds = stripEnd 0 ∪ stripEnd 1 := by
   ext x
   simp only [stripEnds, stripEnd, mem_prod, mem_insert_iff, mem_singleton_iff, mem_union]
   tauto
-
 
 theorem exists_stripEnd_parameter (t : ℝ) :
     IsFinitePLBallPair ℝ (stripEnd t) {(t, -1), (t, 1)} ∧
@@ -66,7 +56,6 @@ theorem exists_stripEnd_parameter (t : ℝ) :
   obtain ⟨p, hp, hpval⟩ := hparam
   exact ⟨hball, p, hp, hpval⟩
 
-
 theorem exists_embedded_stripEnd_parameter
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (c : P2 → E) (hcPL : FinitePiecewiseAffineOn c source) (hci : InjOn c source)
@@ -94,7 +83,6 @@ theorem exists_embedded_stripEnd_parameter
   intro s
   exact (hjval (q s)).trans (congrArg c (hqval s))
 
-
 theorem embedded_strip_inter_old_rim
     {E : Type*} {Q : Set E} (c : P2 → E)
     (hcQ : ∀ x ∈ source, c x ∈ Q ↔ x.1 = 0 ∨ x.1 = 1) :
@@ -106,7 +94,6 @@ theorem embedded_strip_inter_old_rim
   · rintro ⟨x, hx, rfl⟩
     have hxS := stripEnds_subset_source hx
     exact ⟨⟨x, hxS, rfl⟩, (hcQ x hxS).mpr hx.1⟩
-
 
 theorem embedded_stripEnd_inter_arm
     {E : Type*} (c : P2 → E) (hci : InjOn c source)

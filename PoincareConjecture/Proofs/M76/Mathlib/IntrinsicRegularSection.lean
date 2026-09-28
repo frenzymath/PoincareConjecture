@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,17 +9,11 @@ namespace Set
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def HasDisjointPolygonPresentation (S : Set E) : Prop :=
   ∃ (m : ℕ) (n : Fin m → ℕ) (P : ∀ i, Polygon E (n i + 3)),
     (∀ i, Function.Injective (P i) ∧ (P i).HasSimplicialEdges) ∧
     S = ⋃ i, (P i).boundary ℝ ∧
     Pairwise (fun i j => Disjoint ((P i).boundary ℝ) ((P j).boundary ℝ))
-
-
-
 
 theorem hasDisjointPolygonPresentation_of_family {ι : Type*} [Finite ι]
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -48,9 +32,6 @@ theorem hasDisjointPolygonPresentation_of_family {ι : Type*} [Finite ι]
   · intro i j hij
     exact hpair (fun h => hij (e.injective h))
 
-
-
-
 theorem HasDisjointPolygonPresentation.hasAlexanderCurvePresentation
     {S : Set E} (h : HasDisjointPolygonPresentation S) :
     HasAlexanderCurvePresentation S 0 := by
@@ -60,8 +41,6 @@ theorem HasDisjointPolygonPresentation.hasAlexanderCurvePresentation
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem HasDisjointPolygonPresentation.of_finitePL
     {S : Set E} {T : Set F} (h : HasDisjointPolygonPresentation S)
     (e : S ≃ₜ T) (he : e.IsFinitePL) : HasDisjointPolygonPresentation T := by
@@ -69,9 +48,6 @@ theorem HasDisjointPolygonPresentation.of_finitePL
   obtain ⟨N, Q, hQ, htarget, hQpair⟩ := Polygon.exists_disjoint_finitePL_image_family
     n P (fun i => (hP i).2) (fun i => (hP i).1) hpair hcover e he
   exact ⟨m, N, Q, hQ, htarget, hQpair⟩
-
-
-
 
 theorem HasDisjointPolygonPresentation.closed_cut
     {S T : Set E} (h : HasDisjointPolygonPresentation (S ∪ T))
@@ -84,10 +60,6 @@ theorem HasDisjointPolygonPresentation.closed_cut
       (fun i => P i) (fun i => hP i) hI hpI,
     hasDisjointPolygonPresentation_of_family (fun i : (Iᶜ : Set (Fin m)) => n i)
       (fun i => P i) (fun i => hP i) hIc hpIc⟩
-
-
-
-
 
 theorem HasDisjointPolygonPresentation.finitePL_remainder
     {b X : Set E} {Y : Set F} (h : HasDisjointPolygonPresentation (b ∪ X))

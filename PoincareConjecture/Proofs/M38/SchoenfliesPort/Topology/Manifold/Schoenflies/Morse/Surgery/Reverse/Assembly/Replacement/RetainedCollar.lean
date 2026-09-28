@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Clearance
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -74,7 +66,6 @@ private theorem retained_of_preconnected {K : Set S2}
     hcm.isClosed hcp.isClosed hsub hm hp
   exact disjoint_left.mp S.retained_disjoint hx.1 hx.2
 
-
 theorem tube_mem_retainedMinus (q : S1) {t : Real}
     (ht : -S.ε < t) (hta : t ≤ -S.a) :
     S.T (q, t) ∈ S.eMinus '' closedBall (0 : E2) 1 := by
@@ -99,7 +90,6 @@ theorem tube_mem_retainedMinus (q : S1) {t : Real}
   rcases hsub htk with hm' | hp'
   · exact hm'
   · exact False.elim (S.retained_of_preconnected hK hsub ⟨hm, ⟨_, htk, hp'⟩⟩)
-
 
 theorem tube_mem_retainedPlus (q : S1) {t : Real}
     (ht : t < S.ε) (hta : S.a ≤ t) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 import Mathlib.Analysis.LocallyConvex.Separation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 def frontierSubcomplex (K : SimplicialComplex ℝ E) (s : Set E) :
     SimplicialComplex ℝ E where
@@ -31,14 +21,9 @@ def frontierSubcomplex (K : SimplicialComplex ℝ E) (s : Set E) :
     exact ⟨K.down_closed ht.1 hrt hr, (convexHull_mono hrt).trans ht.2⟩
   inter_subset_convexHull ht hu := K.inter_subset_convexHull ht.1 hu.1
 
-
-
 theorem frontierSubcomplex_finite (K : SimplicialComplex ℝ E) (s : Set E)
     (hK : K.faces.Finite) : (K.frontierSubcomplex s).faces.Finite :=
   hK.subset (fun _ ht => ht.1)
-
-
-
 
 theorem frontierSubcomplex_space (K : SimplicialComplex ℝ E) {s : Set E}
     (hs : IsClosed s) (hcv : Convex ℝ s) (hne : (interior s).Nonempty)

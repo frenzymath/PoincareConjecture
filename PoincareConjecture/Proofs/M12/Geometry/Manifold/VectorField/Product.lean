@@ -2,12 +2,6 @@ import Mathlib.Geometry.Manifold.VectorField.LieBracket
 import Mathlib.Geometry.Manifold.VectorBundle.Tangent
 import PoincareConjecture.Proofs.M12.Geometry.Manifold.VectorField.Product.Coordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -95,7 +89,6 @@ variable {E H M E' H' N : Type*}
   [TopologicalSpace H'] {J : ModelWithCorners ℝ E' H'}
   [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   [TopologicalSpace N] [ChartedSpace H' N] [IsManifold J ∞ N]
-
 
 theorem mlieBracket_prod_snd
     (A : (t : M) → TangentSpace I t)

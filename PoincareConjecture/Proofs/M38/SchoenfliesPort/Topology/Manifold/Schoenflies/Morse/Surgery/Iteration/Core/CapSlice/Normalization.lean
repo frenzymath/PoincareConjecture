@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapSlice.Geometry
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.TruncatedCap
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,9 +25,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
-
 
 theorem exists_normalization_of_bounded_retained_side (D : SphereSurgeryCoreCap v g B)
     (hg : Continuous g) {a : Real} (ha : 0 < a) (ha1 : a < 1)

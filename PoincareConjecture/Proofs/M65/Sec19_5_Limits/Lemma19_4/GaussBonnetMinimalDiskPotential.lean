@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetScalarExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -27,10 +17,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
 
 theorem conformalFactor_complex_contDiffOn (S : M65MinimalDisk g connection gamma) :
     ContDiffOn ℝ ∞ (S.conformalFactor ∘ orthonormalBasisOneI.repr)
@@ -81,11 +67,6 @@ theorem conformalFactor_complex_contDiffOn (S : M65MinimalDisk g connection gamm
   simpa +instances only [Function.comp_id, Function.comp_apply, id_eq, norm_one,
     one_pow, mul_one, H, G, chart, e, conformalFactor, boundaryColumn,
     diskConformalFactor, diskColumn] using! hh
-
-
-
-
-
 
 theorem exists_interior_logarithmic_potential (S : M65MinimalDisk g connection gamma) :
     let e := orthonormalBasisOneI.repr.toContinuousLinearEquiv

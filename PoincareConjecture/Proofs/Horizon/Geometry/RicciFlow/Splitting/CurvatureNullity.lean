@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Reaction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

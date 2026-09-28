@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ShortSectorTemplates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -18,9 +8,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem saddle_nested_short_return_radial_approach
     (kappa : OpenPartialHomeomorph E2 E2)

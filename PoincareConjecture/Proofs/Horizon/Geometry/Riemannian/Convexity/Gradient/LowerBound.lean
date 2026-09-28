@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.Radial
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,8 +40,6 @@ theorem gradient_norm_mul_speed_ge_of_hessian_ge (D : LeviCivitaData g)
   rw [hnegderiv, neg_apply] at hbound
   nlinarith
 
-
-
 theorem gradient_norm_mul_speed_ge_of_boundary_depth_gap [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g)
     {U C : Set M} (hU : IsOpen U) {u : M → ℝ}
@@ -79,8 +66,6 @@ theorem gradient_norm_mul_speed_ge_of_boundary_depth_gap [T3Space M] [Preconnect
   have h₀ := (abs_le.mp he₀).2
   have h₁ := (abs_le.mp he₁).1
   nlinarith
-
-
 
 theorem mfderiv_ne_zero_of_boundary_depth_gap [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g)

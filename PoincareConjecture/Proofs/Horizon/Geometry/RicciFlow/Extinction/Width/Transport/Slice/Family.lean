@@ -13,8 +13,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {W : RepairedEventChildWitness D.flow} {T : ℝ}
   {P : RepairedComponentPath D.flow T W}
 
-
-
 noncomputable def m67SliceFamily
     (S : M59IdentificationSystem.{u})
     (initial : M67InitialClassData S (P.component (m67InitialTime P)) (D.flow.metric 0))

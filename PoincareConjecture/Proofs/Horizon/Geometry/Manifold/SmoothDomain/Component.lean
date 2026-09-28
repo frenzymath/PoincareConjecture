@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Interior
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Interior.LocalPathConnected
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +13,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   {K C : Set M}
   [ChartedSpace (EuclideanHalfSpace (m + 1)) K]
   [IsManifold (𝓡∂ (m + 1)) ∞ K]
-
-
 
 theorem exists_connected_smooth_component
     (hK : IsCompact K)

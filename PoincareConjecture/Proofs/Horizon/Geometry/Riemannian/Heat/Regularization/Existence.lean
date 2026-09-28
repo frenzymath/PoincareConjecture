@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.Line
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ universe u
 namespace PoincareConjecture.RiemannianMetric
 
 open LeviCivitaData
-
-
-
 
 theorem exists_canonical_heat_regularization_unit_bounds_of_contMDiff
     (m : ℕ) (K : ℝ) (hm : 0 < m) (hK : 0 ≤ K) :
@@ -85,8 +72,6 @@ theorem exists_canonical_heat_regularization_unit_bounds_of_contMDiff
     exact ⟨(hb t ht x).trans (le_max_left _ _),
       (hgradient t ht x).trans (le_max_right C₀ C₁)⟩
 
-
-
 theorem exists_canonical_heat_regularization_unit_bounds
     (m : ℕ) (K : ℝ) (hm : 0 < m) (hK : 0 < K) :
     ∃ C : ℝ, 0 < C ∧
@@ -130,8 +115,6 @@ theorem exists_canonical_heat_regularization_unit_bounds
   obtain ⟨hint, hheat, hlim, hb⟩ :=
     hreg M g hc D hsec hRic Ω S hΩmono hcover O f hf happrox hgrad hF
   exact ⟨hint, hF, hheat, hlim, hb⟩
-
-
 
 theorem exists_heat_regularization_unit_bounds
     (n : ℕ) (K : ℝ) (hn : 0 < n) (hK : 0 < K) :

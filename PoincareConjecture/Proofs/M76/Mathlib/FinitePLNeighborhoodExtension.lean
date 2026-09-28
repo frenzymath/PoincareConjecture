@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetract
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePolyhedralPatches
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +10,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_locallyPiecewiseAffine_extension
     {f : E → F} {S : Set E} (hf : FinitePiecewiseAffineOn f S) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Mathlib.IncreasingRadiusChart
 import PoincareConjecture.Proofs.M74.Mathlib.SphereNormalize
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -17,25 +8,17 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M74
 
-
-
 noncomputable def radiusVector (f : ℝ → ℝ) (x : StandardCapSpace) : StandardCapSpace :=
   (f ‖x‖ / ‖x‖) • x
 
-
-
 @[simp] theorem radiusVector_zero (f : ℝ → ℝ) : radiusVector f 0 = 0 := by
   simp [radiusVector]
-
-
 
 theorem radiusVector_norm (f : ℝ → ℝ) {x : StandardCapSpace} (hx : x ≠ 0)
     (hf : 0 < f ‖x‖) : ‖radiusVector f x‖ = f ‖x‖ := by
   have hn : 0 < ‖x‖ := norm_pos_iff.mpr hx
   rw [radiusVector, norm_smul, Real.norm_eq_abs, abs_of_pos (div_pos hf hn)]
   exact div_mul_cancel₀ _ (ne_of_gt hn)
-
-
 
 theorem radiusVector_left (f g : ℝ → ℝ) {x : StandardCapSpace} (hx : x ≠ 0)
     (hf : 0 < f ‖x‖) (hgf : g (f ‖x‖) = ‖x‖) :
@@ -46,8 +29,6 @@ theorem radiusVector_left (f g : ℝ → ℝ) {x : StandardCapSpace} (hx : x ≠
     field_simp [ne_of_gt hf, norm_ne_zero_iff.mpr hx]
   rw [hscalar, one_smul]
 
-
-
 theorem radiusVector_linear {f : ℝ → ℝ} {k ε : ℝ}
     (hlin : ∀ r ∈ Ioo (0 : ℝ) ε, f r = k * r) {x : StandardCapSpace}
     (hx : ‖x‖ < ε) : radiusVector f x = k • x := by
@@ -56,15 +37,11 @@ theorem radiusVector_linear {f : ℝ → ℝ} {k ε : ℝ}
   · rw [radiusVector, hlin _ ⟨norm_pos_iff.mpr hx0, hx⟩,
       mul_div_cancel_right₀ _ (norm_ne_zero_iff.mpr hx0)]
 
-
-
 theorem radiusVector_contDiffAt {f : ℝ → ℝ} {x : StandardCapSpace}
     (hx : x ≠ 0) (hf : ContDiffAt ℝ ∞ f ‖x‖) :
     ContDiffAt ℝ ∞ (radiusVector f) x := by
   have hn : ContDiffAt ℝ ∞ (fun y : StandardCapSpace => ‖y‖) x := contDiffAt_norm ℝ hx
   exact ((hf.comp x hn).div hn (norm_ne_zero_iff.mpr hx)).smul contDiffAt_id
-
-
 
 theorem radiusVector_contDiffAt_zero {f : ℝ → ℝ} {k ε : ℝ} (hε : 0 < ε)
     (hlin : ∀ r ∈ Ioo (0 : ℝ) ε, f r = k * r) :
@@ -88,8 +65,6 @@ private theorem radius_inverse_linear (e : OpenPartialHomeomorph ℝ ℝ) {R ε 
   have h := e.left_inv hsrc
   rw [heq] at h
   simpa only [div_eq_inv_mul] using h
-
-
 
 noncomputable def radialBallDiffeomorph (e : OpenPartialHomeomorph ℝ ℝ) {R ε k : ℝ}
     (hsource : e.source = Ioo 0 R) (htarget : e.target = Ioi 0)
@@ -155,8 +130,6 @@ noncomputable def radialBallDiffeomorph (e : OpenPartialHomeomorph ℝ ℝ) {R �
         (fun r hr => radius_inverse_linear e hsource hεR hk hlin hr)
     · have hyt : ‖y‖ ∈ e.target := by rw [htarget]; exact norm_pos_iff.mpr hy
       exact radiusVector_contDiffAt hy (hi.contDiffAt (e.open_target.mem_nhds hyt))
-
-
 
 theorem radialBallDiffeomorph_apply (e : OpenPartialHomeomorph ℝ ℝ) {R ε k : ℝ}
     (hsource : e.source = Ioo 0 R) (htarget : e.target = Ioi 0)

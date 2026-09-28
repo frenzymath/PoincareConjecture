@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetHalfDiskProjection
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetNormalDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 open M65StrictTrace M65Gauss
-
-
-
-
 
 theorem halfDisk_normalHessian_integrable {n : ℕ} [Nonempty (Fin n)]
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

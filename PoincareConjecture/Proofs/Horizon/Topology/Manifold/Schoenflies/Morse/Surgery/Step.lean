@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.RegularLevelTwoSided
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.ComponentCount
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
-
 
 structure SphereSurgeryStep (f : S2 → E3) (v : E3) (c R : Real) where
   original_embedding : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f
@@ -125,7 +120,6 @@ structure SphereSurgeryStep (f : S2 → E3) (v : E3) (c R : Real) where
     ((fun x : Hemisphere.Plane v => (c + t) • v + (A x : E3)) '' closedBall 0 1) ∩
       range (fun p => D (f p)) = (fun p => D (f p)) '' range (fun q : S1 => T (q, t))
 
-
 theorem nonempty_sphereSurgeryStep_of_smooth
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -230,10 +224,8 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
 theorem prepared_height_eq : (fun p => inner Real v (S.D (f p))) =
     (fun p => inner Real v (f p)) := funext fun p => S.height_preserving (f p)
-
 
 theorem tube_height (q : S1) (t : Real) (ht : t ∈ Ioo (-S.ε) S.ε) :
     inner Real v (f (S.T (q, t))) = c + t := by
@@ -241,20 +233,17 @@ theorem tube_height (q : S1) (t : Real) (ht : t ∈ Ioo (-S.ε) S.ε) :
   simp [inner_add_right, inner_smul_right, S.unit_v,
     Submodule.mem_orthogonal_singleton_iff_inner_right.mp (S.γ q).property]
 
-
 theorem capMinus_avoids (x : E2) : inner Real v (S.gMinus x) ≠ c := by
   intro heq
   have hb := (abs_lt.mp (S.gMinus_width x)).2
   rw [heq] at hb
   linarith [S.a_pos]
 
-
 theorem capPlus_avoids (x : E2) : inner Real v (S.gPlus x) ≠ c := by
   intro heq
   have hb := (abs_lt.mp (S.gPlus_width x)).1
   rw [heq] at hb
   linarith [S.a_pos]
-
 
 theorem central_regular
     (hc : ∀ p, inner Real v (f p) = c →
@@ -273,7 +262,6 @@ theorem central_regular
     regular_level_of_disk_splicing (fun p => S.D (f p)) S.fPlus v c
       S.ePlus S.dPlus S.ePlus_source S.dPlus_closed S.gPlus
       S.capPlus_eq S.retainedPlus_eq (fun x _ => S.capPlus_avoids x) hcD⟩
-
 
 theorem central_card_drop
     [Finite (ConnectedComponents ((fun p => inner Real v (f p)) ⁻¹' {c}))] :

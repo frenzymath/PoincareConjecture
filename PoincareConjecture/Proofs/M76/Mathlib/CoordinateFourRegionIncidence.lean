@@ -1,41 +1,20 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace CoordinateFourRegions
 
-
-
 def weakSign (i : Bool) (r : ℝ) : Prop := if i then r ≤ 0 else 0 ≤ r
-
-
-
-
 
 def arc (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool × Bool) : Set ((ℝ × ℝ) × ℝ) :=
   F ∩ {x | if i.1 then x.2 = 0 ∧ weakSign i.2 x.1.1
     else x.1.1 = 0 ∧ weakSign i.2 x.2}
 
-
-
 def region (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool × Bool) : Set ((ℝ × ℝ) × ℝ) :=
   F ∩ {x | weakSign i.1 x.1.1 ∧ weakSign i.2 x.2}
-
-
 
 def graph (F : Set ((ℝ × ℝ) × ℝ)) : Set ((ℝ × ℝ) × ℝ) :=
   F ∩ ({x | x.1.1 = 0} ∪ {x | x.2 = 0})
@@ -60,9 +39,6 @@ private theorem axis_subset_arc (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool × Boo
   · exact ⟨hx.2.1, hx.2.2 ▸ weakSign_zero j⟩
   · exact ⟨hx.2.2, hx.2.1 ▸ weakSign_zero j⟩
 
-
-
-
 theorem arc_inter_of_ne (F : Set ((ℝ × ℝ) × ℝ)) {i j : Bool × Bool}
     (hij : i ≠ j) : arc F i ∩ arc F j = F ∩ {x | x.1.1 = 0 ∧ x.2 = 0} := by
   apply Subset.antisymm
@@ -79,8 +55,6 @@ theorem arc_inter_of_ne (F : Set ((ℝ × ℝ) × ℝ)) {i j : Bool × Bool}
       exact ⟨zero_of_different_signs hside hx.2.2 hy.2.2, hx.2.1⟩
   · exact fun x hx => ⟨axis_subset_arc F i hx, axis_subset_arc F j hx⟩
 
-
-
 theorem region_inter_graph (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool × Bool) :
     region F i ∩ graph F = arc F (false, i.2) ∪ arc F (true, i.1) := by
   apply Subset.antisymm
@@ -94,8 +68,6 @@ theorem region_inter_graph (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool × Bool) :
     · exact ⟨⟨hx.1, hx.2.2, hx.2.1 ▸ weakSign_zero i.2⟩,
         hx.1, Or.inr hx.2.1⟩
 
-
-
 theorem region_contacts (F : Set ((ℝ × ℝ) × ℝ)) :
     Pairwise (fun i j => region F i ∩ region F j ⊆
       arc F (false, i.2) ∪ arc F (true, i.1)) := by
@@ -106,8 +78,6 @@ theorem region_contacts (F : Set ((ℝ × ℝ) × ℝ)) :
       zero_of_different_signs hsurface hx.1.2.2 hx.2.2.2, hx.1.2.1⟩
   · exact Or.inl ⟨hx.1.1,
       zero_of_different_signs hheight hx.1.2.1 hx.2.2.1, hx.1.2.2⟩
-
-
 
 theorem iUnion_region (F : Set ((ℝ × ℝ) × ℝ)) : (⋃ i, region F i) = F := by
   apply Subset.antisymm
@@ -120,8 +90,6 @@ theorem iUnion_region (F : Set ((ℝ × ℝ) × ℝ)) : (⋃ i, region F i) = F 
     · exact mem_iUnion.mpr ⟨(false, true), hx, ht, hz⟩
     · exact mem_iUnion.mpr ⟨(true, false), hx, ht, hz⟩
     · exact mem_iUnion.mpr ⟨(true, true), hx, ht, hz⟩
-
-
 
 theorem iUnion_arc (F : Set ((ℝ × ℝ) × ℝ)) : (⋃ i, arc F i) = graph F := by
   apply Subset.antisymm
@@ -139,8 +107,6 @@ theorem iUnion_arc (F : Set ((ℝ × ℝ) × ℝ)) : (⋃ i, arc F i) = graph F 
     · rcases le_total 0 x.1.1 with h | h
       · exact mem_iUnion.mpr ⟨(true, false), hx, hz, h⟩
       · exact mem_iUnion.mpr ⟨(true, true), hx, hz, h⟩
-
-
 
 theorem arc_kind_union (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool) :
     arc F (i, false) ∪ arc F (i, true) =
@@ -163,8 +129,6 @@ theorem arc_kind_union (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool) :
       exact (le_total 0 x.1.1).elim
         (fun h => Or.inl ⟨hx.1, hx.2, h⟩) (fun h => Or.inr ⟨hx.1, hx.2, h⟩)
 
-
-
 theorem region_height_union (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool) :
     region F (i, false) ∪ region F (i, true) = F ∩ {x | weakSign i x.1.1} := by
   ext x
@@ -175,8 +139,6 @@ theorem region_height_union (F : Set ((ℝ × ℝ) × ℝ)) (i : Bool) :
   · intro hx
     exact (le_total 0 x.2).elim
       (fun h => Or.inl ⟨hx.1, hx.2, h⟩) (fun h => Or.inr ⟨hx.1, hx.2, h⟩)
-
-
 
 theorem region_transverse_union (F : Set ((ℝ × ℝ) × ℝ)) (j : Bool) :
     region F (false, j) ∪ region F (true, j) = F ∩ {x | weakSign j x.2} := by

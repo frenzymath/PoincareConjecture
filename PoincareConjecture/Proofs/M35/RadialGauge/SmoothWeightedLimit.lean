@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

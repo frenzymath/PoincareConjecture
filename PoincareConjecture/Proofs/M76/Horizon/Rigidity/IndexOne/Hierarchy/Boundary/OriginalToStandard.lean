@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.StandardFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -22,8 +13,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_original_to_standard_frontier_homeomorph
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)

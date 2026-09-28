@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_SequenceJets
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.NativeJetConvergence
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderTimeJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -33,9 +24,6 @@ noncomputable local instance : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
 noncomputable local instance : NormedAddCommGroup (MetricTwoJet 3) := Prod.normedAddCommGroup
 noncomputable local instance : NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem recent_centered_scalar {epsilon beta : ℝ}
     (I : M45NeckGluingInput.{u} epsilon beta)
@@ -62,9 +50,6 @@ theorem recent_centered_scalar {epsilon beta : ℝ}
   rw [(metricTwoJet_eventuallyEq hcoeff).self_of_nhds] at h
   simpa only [A, M45NeckGluingInput.recentCenteredMap, Function.comp_apply,
     centeredCylinderLift_zero] using h
-
-
-
 
 theorem GluingBadSequence.joining_pointJetsConverge {epsilon d : ℝ}
     (S : GluingBadSequence.{u} epsilon) (hepsilon : 0 < epsilon)
@@ -95,9 +80,6 @@ theorem GluingBadSequence.joining_pointJetsConverge {epsilon d : ℝ}
   exact hmodel.of_sub_vanish herror
     (fun n => evolving_centeredCylinderMetric_contDiffAt (hB n) (z n) (hz n))
     (fun n => (evolvingCylinderModelField_contDiff _).contDiffAt)
-
-
-
 
 theorem GluingBadSequence.scale_sq_tendsto {epsilon d : ℝ}
     (S : GluingBadSequence.{u} epsilon) (hepsilon : 0 < epsilon) (hd0 : 0 ≤ d)

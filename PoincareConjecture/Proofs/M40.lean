@@ -2,13 +2,6 @@ import PoincareConjecture.Statements.M40ComparisonHomotopy
 import PoincareConjecture.Proofs.M40.ComparisonTransport
 import PoincareConjecture.Proofs.M40.SmoothApproximants
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,33 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedComparisonHomotopy : RepairedComparisonHomotopyTheory.{u} := by
   constructor

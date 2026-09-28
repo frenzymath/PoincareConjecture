@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleArcOrientation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleChartOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -117,8 +108,6 @@ private theorem morse_disc_membership
       exact hs
     · intro hs
       exact ⟨e p, hs, e.left_inv hp⟩
-
-
 
 theorem saddle_arc_opposite_port_products
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -34,8 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem scaledLeviCivita_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     (u : M → ℝ) (x : M) :
     (M13.scaleLeviCivitaData D Q hQ).gradient u x = Q⁻¹ • D.gradient u x := by
@@ -47,8 +29,6 @@ theorem scaledLeviCivita_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
   field_simp [hQ.ne'] at h ⊢
   nlinarith
-
-
 
 theorem scaledLeviCivita_laplacian (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     {u : M → ℝ} {x : M} (hu : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ u x) :
@@ -76,8 +56,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
 
-
-
 theorem scalarCurvature_eq_of_local_homothety [T2Space N]
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -92,9 +70,6 @@ theorem scalarCurvature_eq_of_local_homothety [T2Space N]
   exact hlocal.trans (M13.homothety_scalarCurvature_eq h (M13.scaleSmoothMetric h Q hQ)
     (Diffeomorph.refl (𝓡 n) N ∞) Q hQ (M13.identity_metricHomothety h Q hQ)
     D' (M13.scaleLeviCivitaData D' Q hQ) (f x))
-
-
-
 
 theorem laplacian_comp_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -130,9 +105,6 @@ theorem laplacian_comp_of_local_homothety
   have hlocal := D.laplacian_comp_of_metric_pullback (M13.scaleLeviCivitaData D' Q hQ)
     ((hf x hx).contMDiffAt (hU.mem_nhds hx)) hinv hm hu
   exact hlocal.trans (scaledLeviCivita_laplacian D' hQ hu)
-
-
-
 
 theorem scalarLaplacian_eq_of_local_homothety [T2Space N]
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)

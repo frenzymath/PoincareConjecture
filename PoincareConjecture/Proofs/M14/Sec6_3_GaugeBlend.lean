@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetShift
 import PoincareConjecture.Proofs.M09.SmoothJoinCutoff
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,16 +22,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
     G.gaugeCover.spatial b)
   (α β : ℝ → G.Point)
 
-
-
-
 noncomputable def gaugeBlend (c d s : ℝ) : G.Point :=
   (G.gaugeCover.cylinder b).toSpacetime ((lift (β s)).1,
     (G.gaugeCover.spatial b).affineShift (lift (α s)).2
       (smoothJoinCutoff ((s - c) / d) • ((lift (β s)).2.val - (lift (α s)).2.val)))
-
-
-
 
 theorem gaugeBlend_time (c d s : ℝ)
     (hβ : (G.gaugeCover.cylinder b).toSpacetime (lift (β s)) = β s) :
@@ -51,8 +35,6 @@ theorem gaugeBlend_time (c d s : ℝ)
   exact ((G.gaugeCover.cylinder b).time_eq (lift (β s))).symm.trans
     (congrArg G.spacetime.timeFunction hβ)
 
-
-
 theorem gaugeBlend_eq_left {c d s : ℝ} (hd : 0 < d) (hs : s ≤ c - d)
     (hα : (G.gaugeCover.cylinder b).toSpacetime (lift (α s)) = α s)
     (htime : (lift (α s)).1 = (lift (β s)).1) :
@@ -61,9 +43,6 @@ theorem gaugeBlend_eq_left {c d s : ℝ} (hd : 0 < d) (hs : s ≤ c - d)
     smoothJoinCutoff_zero ((div_le_iff₀ hd).mpr (by linarith))
   simp only [gaugeBlend, hχ, zero_smul, TopologicalSpace.Opens.affineShift_zero, ← htime,
     Prod.mk.eta, hα]
-
-
-
 
 theorem gaugeBlend_eq_right {c d s : ℝ} (hd : 0 < d) (hs : c + d ≤ s)
     (hβ : (G.gaugeCover.cylinder b).toSpacetime (lift (β s)) = β s) :
@@ -76,9 +55,6 @@ theorem gaugeBlend_eq_right {c d s : ℝ} (hd : 0 < d) (hs : c + d ≤ s)
     rw [(G.gaugeCover.spatial b).affineShift_val (by
       simpa only [add_sub_cancel] using (lift (β s)).2.property), add_sub_cancel]
   simp only [gaugeBlend, hχ, one_smul, hshift, Prod.mk.eta, hβ]
-
-
-
 
 theorem gaugeBlend_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M49.LocalCapVolume
 import PoincareConjecture.Proofs.M49.LocalIsometryVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem event_cap_volume_eq_local
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
@@ -35,8 +24,6 @@ theorem event_cap_volume_eq_local
   exact calibratedMetricVolume_image_eq_of_injective_isometry
     (E.local_result i).metric (metric T) (E.local_embed_smooth i)
     (E.local_embed_injective i) (E.local_metric i) isClosed_closure.measurableSet
-
-
 
 theorem exists_uniform_event_cap_volume_bound (g₀ : StandardInitialMetric) :
     ∃ Ccap : ℝ, 0 < Ccap ∧ ∀ K : MetricSurgeryConstants,

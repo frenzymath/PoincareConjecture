@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockSmoothFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_compact_timeField_extension_away
     {K U : Set (ℝ × E)} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -49,8 +38,6 @@ theorem exists_compact_timeField_extension_away
     fun p hp => ⟨hWU hp, hWaway hp⟩, ?_, hWN⟩
   filter_upwards [hnear] with p hp
   simp only [W, hp, one_smul]
-
-
 
 theorem exists_ambient_evolution_of_localField_away
     {K U : Set (ℝ × E)} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

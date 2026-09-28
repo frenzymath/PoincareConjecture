@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.StandardEndOuterChart
 import PoincareConjecture.Proofs.M25.Mathlib.CompatibleDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
-
 
 theorem exists_standardEnd_of_data
     {W : Type u} [TopologicalSpace W] [ChartedSpace E3 W]

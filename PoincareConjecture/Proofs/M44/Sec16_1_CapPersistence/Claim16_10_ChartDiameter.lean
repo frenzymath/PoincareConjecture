@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.StandardBalls
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem euclidean_lineMap_pathELength (x y : E) :
     (RiemannianMetric.euclideanMetric 3).pathELength
@@ -52,9 +40,6 @@ theorem euclidean_lineMap_pathELength (x y : E) :
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem edist_image_le_of_convex_quadratic
     (g : RiemannianMetric 3 M) {f : E → M} {U : Set E}
@@ -82,9 +67,6 @@ theorem edist_image_le_of_convex_quadratic
     m01RescaledMetric_pathELength, euclidean_lineMap_pathELength,
     Real.sqrt_sq hL.le, edist_dist, dist_eq_norm, ← ENNReal.ofReal_mul hL.le] at hbound
   exact hbound
-
-
-
 
 theorem standard_ball_image_diameter_lt
     (g0 : StandardInitialMetric) (g : RiemannianMetric 3 M)

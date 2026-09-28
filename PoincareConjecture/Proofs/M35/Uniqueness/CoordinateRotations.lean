@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialKilling
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Matrix
 
 namespace PoincareConjecture.M35.Uniqueness
-
 
 noncomputable def coordinateRotation (s : ℝ) :
     Matrix.specialOrthogonalGroup (Fin 3) ℝ :=
@@ -31,20 +21,14 @@ noncomputable def coordinateRotation (s : ℝ) :
     · simp [Matrix.det_fin_three]
       nlinarith [Real.sin_sq_add_cos_sq s]⟩
 
-
-
 theorem coordinateRotation_zero : coordinateRotation 0 = 1 := by
   apply Subtype.ext
   ext i j
   fin_cases i <;> fin_cases j <;> simp [coordinateRotation]
 
-
-
 noncomputable def coordinateRotationGenerator :
     StandardCapSpace →L[ℝ] StandardCapSpace :=
   (Matrix.toEuclideanLin !![(0 : ℝ), -1, 0; 1, 0, 0; 0, 0, 0]).toContinuousLinearMap
-
-
 
 theorem coordinateRotation_hasDerivAt (x : StandardCapSpace) :
     HasDerivAt (fun s => standardRotation (coordinateRotation s) x)
@@ -73,8 +57,6 @@ theorem coordinateRotation_hasDerivAt (x : StandardCapSpace) :
     fin_cases i <;>
       simp [coordinateRotationGenerator, L, Matrix.toEuclideanLin,
         Matrix.mulVec, dotProduct, Fin.sum_univ_succ]
-
-
 
 theorem initial_coordinateRotationGenerator_killing (g₀ : StandardInitialMetric)
     (x u v : StandardCapSpace) :

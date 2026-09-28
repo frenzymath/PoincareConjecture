@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.RadiusSqueeze
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +20,6 @@ namespace PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
 
-
-
 theorem tendsto_riemannianBallVolume
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
     {t r : ℝ} (ht : t ∈ Ioo T' T) (hr : 0 < r)
@@ -47,7 +34,6 @@ theorem tendsto_riemannianBallVolume
   · intro C hC
     exact (G.eventually_ball_volume_bounds hT ht hcomplete hr hC).mono (fun _ h => h.2)
 
-
 theorem ball_volume_lower_bound_of_eventually
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
     {t : ℝ} (ht : t ∈ Ioo T' T)
@@ -60,8 +46,6 @@ theorem ball_volume_lower_bound_of_eventually
       G.limitFlow.riemannianBallVolume t r := by
   intro r hr
   exact ge_of_tendsto (G.tendsto_riemannianBallVolume hT ht hr hcomplete) (hvolume r hr)
-
-
 
 theorem le_asymptoticVolumeRatio_of_eventually
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -82,8 +66,6 @@ theorem le_asymptoticVolumeRatio_of_eventually
   apply (le_div_iff₀ (pow_pos hr n)).mpr
   exact (ENNReal.ofReal_le_iff_le_toReal
     (g.ball_volume_ne_top_of_metricComplete hcomplete G.limitFlow.base r)).mp (hb r hr)
-
-
 
 theorem ball_volume_convergence_of_complete_slices
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

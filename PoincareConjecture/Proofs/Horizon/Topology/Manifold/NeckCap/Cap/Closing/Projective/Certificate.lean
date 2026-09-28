@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Certificate
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.ProjectiveModel
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.StandardProjectiveSmoothCover
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem nonempty_closedComponentCertificate
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]

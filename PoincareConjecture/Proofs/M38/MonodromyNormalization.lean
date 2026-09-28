@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -23,11 +14,9 @@ attribute [local instance] monodromyChartedSpace monodromy_isManifold
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
 theorem monodromy_quotient_deck (n : ℤ) (x : monodromyPunctureOpen) :
     mq (monodromyDeck phi n x) = mq x :=
   (monodromy_quotient_eq_iff phi _ _).mpr ⟨n, rfl⟩
-
 
 theorem monodromy_same_log_eq {x y : monodromyPunctureOpen}
     (hxy : mq x = mq y) (hlog : monodromyLogRadius x = monodromyLogRadius y) : x = y := by
@@ -37,19 +26,14 @@ theorem monodromy_same_log_eq {x y : monodromyPunctureOpen}
   have hnzero : n = 0 := Int.cast_eq_zero.mp (by linarith : (n : ℝ) = 0)
   simpa only [hnzero, monodromyDeck_zero] using hn.symm
 
-
-
 noncomputable def monodromyNormalize (s : ℝ) (q : MonodromyQuotient phi) :
     monodromyPunctureOpen :=
   monodromyDeck phi (⌊s - monodromyLogRadius (monodromyRepresentative phi q)⌋)
     (monodromyRepresentative phi q)
 
-
 theorem monodromyNormalize_quotient (s : ℝ) (q : MonodromyQuotient phi) :
     mq (monodromyNormalize phi s q) = q :=
   (monodromy_quotient_deck phi _ _).trans (monodromyRepresentative_spec phi q)
-
-
 
 theorem monodromyNormalize_logRadius (s : ℝ) (q : MonodromyQuotient phi)
     (hq : monodromyProjection phi q = circlePeriodMap s) :
@@ -64,8 +48,6 @@ theorem monodromyNormalize_logRadius (s : ℝ) (q : MonodromyQuotient phi)
   rw [monodromyNormalize, monodromyDeck_logRadius, hd, Int.floor_intCast]
   linarith
 
-
-
 theorem monodromyNormalize_eq {s : ℝ} {q : MonodromyQuotient phi}
     {x : monodromyPunctureOpen} (hx : mq x = q) (hlog : monodromyLogRadius x = s) :
     monodromyNormalize phi s q = x := by
@@ -75,9 +57,6 @@ theorem monodromyNormalize_eq {s : ℝ} {q : MonodromyQuotient phi}
     exact he.symm
   apply monodromy_same_log_eq phi ((monodromyNormalize_quotient phi s q).trans hx.symm)
   exact (monodromyNormalize_logRadius phi s q hq).trans hlog.symm
-
-
-
 
 theorem monodromyNormalize_smooth {W : Set (MonodromyQuotient phi)}
     (hW : IsOpen W) {s : MonodromyQuotient phi → ℝ}

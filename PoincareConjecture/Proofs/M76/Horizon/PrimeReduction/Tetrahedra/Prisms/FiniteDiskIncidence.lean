@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.DiskIncidenceRefinement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Cutting.FiniteArcComponentCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -64,8 +56,6 @@ theorem exists_finset_disk_partition_with_whole_incidence
       · exact hnew
       · exact hretain (D j) (hD j).isConnected
           (hdis (fun he => his (he ▸ hj))) (howners j hj)
-
-
 
 theorem exists_finite_disk_partition_with_whole_incidence
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

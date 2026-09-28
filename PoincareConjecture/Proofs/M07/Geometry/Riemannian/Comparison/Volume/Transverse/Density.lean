@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Matrix
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacobi.Density
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
-
-
 
 theorem abs_det_transverse_radialDifferential
     (g : RiemannianMetric (m + 1) M)
@@ -62,7 +50,6 @@ theorem abs_det_transverse_radialDifferential
         Fin.succ Fin.succ).det| := by
     simpa [mul_assoc, mul_left_comm, mul_comm] using hd
   exact (mul_left_cancel₀ ht.ne' hdt).symm
-
 
 theorem abs_det_transverse_radialDifferential_of_isInvertible
     (g : RiemannianMetric (m + 1) M)

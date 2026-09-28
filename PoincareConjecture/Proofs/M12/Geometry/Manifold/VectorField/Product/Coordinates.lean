@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

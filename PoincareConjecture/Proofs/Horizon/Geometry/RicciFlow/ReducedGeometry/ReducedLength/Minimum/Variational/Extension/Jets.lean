@@ -2,18 +2,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.SmoothSeries
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,7 +51,6 @@ theorem endpointJetBase_deriv (k m : ℕ) (A : E) :
     iteratedDeriv m (endpointJetBase k A) 0 = if m = k then A else 0 := by
   rw [(endpointJetBase_eventually_eq k A).iteratedDeriv_eq m,
     endpointJetPolynomial_deriv]
-
 
 theorem exists_small_endpointJet (k : ℕ) (A : E) {ε : ℝ} (hε : 0 < ε) :
     ∃ f : ℝ → E, ContDiff ℝ ∞ f ∧ HasCompactSupport f ∧
@@ -136,7 +123,6 @@ theorem exists_small_endpointJet (k : ℕ) (A : E) {ε : ℝ} (hε : 0 < ε) :
     (hnear.iteratedDeriv_eq m).trans (endpointJetPolynomial_deriv k m A)⟩
 
 variable [FiniteDimensional ℝ E]
-
 
 theorem exists_smooth_endpoint_jets (A : ℕ → E) :
     ∃ f : ℝ → E, ContDiff ℝ ∞ f ∧ ∀ m, iteratedDeriv m f 0 = A m := by

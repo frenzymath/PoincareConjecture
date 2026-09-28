@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionEnergyIntegral
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,18 +16,10 @@ variable {n d : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin d)
 local notation "Z" => EuclideanSpace ℝ (Fin (d + 3))
 
-
-
-
-
 def m64BoundaryMotionParameters (e : M → E) (f : LoopPlane → M)
     (sigma0 sigma1 : ℝ → ℝ) (p : LoopPlane) : Z :=
   EuclideanSpace.finAddEquivProd.symm
     (e (f p), !₂[sigma0 (p 0), sigma1 (p 0), p 1])
-
-
-
-
 
 theorem m64BoundaryMotionParameters_contDiffOn {e : M → E}
     (he : ContMDiff (𝓡 n) (𝓡 d) ∞ e) {f : LoopPlane → M}
@@ -55,10 +43,6 @@ theorem m64BoundaryMotionParameters_contDiffOn {e : M → E}
   exact EuclideanSpace.finAddEquivProd.symm.contDiff.comp_contDiffOn
     (hobs.prodMk hlabels.contDiffOn)
 
-
-
-
-
 def m64BoundaryDisplacement (e : M → E) (c0 c1 : ℝ → ℝ → M)
     (w : ℝ × Z) : E :=
   let q := (EuclideanSpace.finAddEquivProd : Z ≃L[ℝ] E × EuclideanSpace ℝ (Fin 3)) w.2
@@ -67,9 +51,6 @@ def m64BoundaryDisplacement (e : M → E) (c0 c1 : ℝ → ℝ → M)
 
 omit [TopologicalSpace M] in
 
-
-
-
 theorem m64BoundaryDisplacement_zero (e : M → E) (c0 c1 : ℝ → ℝ → M) (q : Z) :
     m64BoundaryDisplacement e c0 c1 (0, q) =
       (EuclideanSpace.finAddEquivProd q : E × EuclideanSpace ℝ (Fin 3)).1 := by
@@ -77,19 +58,12 @@ theorem m64BoundaryDisplacement_zero (e : M → E) (c0 c1 : ℝ → ℝ → M) (
 
 omit [TopologicalSpace M] in
 
-
-
-
 theorem m64BoundaryDisplacement_parameters (e : M → E) (c0 c1 : ℝ → ℝ → M)
     (f : LoopPlane → M) (sigma0 sigma1 : ℝ → ℝ) (s : ℝ) (p : LoopPlane) :
     m64BoundaryDisplacement e c0 c1 (s, m64BoundaryMotionParameters e f sigma0 sigma1 p) =
       e (f p) + (1 - p 1) • (e (c0 s (sigma0 (p 0))) - e (c0 0 (sigma0 (p 0)))) +
         p 1 • (e (c1 s (sigma1 (p 0))) - e (c1 0 (sigma1 (p 0)))) := by
   simp [m64BoundaryDisplacement, m64BoundaryMotionParameters]
-
-
-
-
 
 theorem m64BoundaryDisplacement_contDiffOn {e : M → E}
     (he : ContMDiff (𝓡 n) (𝓡 d) ∞ e) {T : Set ℝ} (hzero : (0 : ℝ) ∈ T)

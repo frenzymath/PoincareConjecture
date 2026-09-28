@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.RicciDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Differential
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -25,7 +13,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture
-
 
 lemma double_contraction_second_bianchi {ι E : Type*} [Fintype ι]
     (K : E → E → E → E → E → ℝ) (b : ι → E)
@@ -62,7 +49,6 @@ noncomputable def frameRicciDerivative (D : LeviCivitaData g) (x : M)
 noncomputable def frameScalarDerivative (D : LeviCivitaData g) (x : M)
     (i : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x))) : ℝ :=
   mvfderiv (𝓡 n) (D.scalarCurvature) x (g.orthonormalBasis x i)
-
 
 lemma covariantTensorDerivative_curvature_second_bianchi
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

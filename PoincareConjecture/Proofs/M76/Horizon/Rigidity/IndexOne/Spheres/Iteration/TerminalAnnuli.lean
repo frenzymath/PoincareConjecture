@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.Geometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.Classification
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -24,8 +15,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem PairedSourceGeometry.exists_whole_phase_annuli
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckThinEnd
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckFrontierLevel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphSideAlignment
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_frontier_neck_sphere_sides_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

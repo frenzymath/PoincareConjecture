@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PlanarPLDiskUniqueness
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -139,7 +131,6 @@ private theorem exists_union_compression
     · rw [hFb hx]
       exact Or.inr (hgB hx)
 
-
 theorem exists_proper_arc_pair_compression
     {D q B w W U : Set V} {a b : V}
     (hD : IsFinitePLBallPair V D q) (hB : IsFinitePLBallPair V B (w ∪ W))
@@ -189,8 +180,6 @@ theorem exists_proper_arc_pair_compression
   · intro x hx
     exact (hFF₀ (Or.inr hx)).trans (hF₀id hx)
   · exact subset_union_right.trans (subset_union_left.trans hcover.subset)
-
-
 
 theorem exists_confined_proper_arc_pair_disk
     {W B U : Set V} {a b : V}

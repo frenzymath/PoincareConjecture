@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem limitCanonical_eventually_selected_control_of_ancient_package
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

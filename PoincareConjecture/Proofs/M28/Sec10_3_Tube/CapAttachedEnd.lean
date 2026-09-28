@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapOverlapCompactEnd
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -61,9 +50,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   {X : Set M} {cap : CapCertificate g} {tube : EpsilonTubeCertificate g X}
   {side : Bool}
-
-
-
 
 theorem exists_compact_attached_tail (A : CapTubeAttachment cap tube side)
     {S : Set M} (hS : SmoothSphereIsotopicIn tube.carrier S tube.cylinder.middleSphere)

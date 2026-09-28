@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.CappedFirstExitOpen
 import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,9 +9,6 @@ open Set MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_isClosed_capped_exit_window
     {P X : Type*} [TopologicalSpace P] [TopologicalSpace X]
@@ -45,9 +28,6 @@ theorem m64_isClosed_capped_exit_window
     exact ⟨(s, ⟨t, ht⟩), hout, rfl⟩
   · rintro ⟨⟨s, t⟩, hout, rfl⟩
     exact ⟨t.val, t.property, hout⟩
-
-
-
 
 theorem m64_capped_first_exit_open_measurable
     {P X : Type*} [TopologicalSpace P] [MeasurableSpace P]
@@ -91,9 +71,6 @@ theorem m64_capped_first_exit_open_measurable
     rw [heq]
     exact MeasurableSet.iUnion (fun n =>
       (m64_isClosed_capped_exit_window hu hU (1 / (n + 1 : ℝ)) r).measurableSet)
-
-
-
 
 theorem m64_exists_measurable_capped_first_exit_open
     {P X : Type*} [TopologicalSpace P] [MeasurableSpace P]

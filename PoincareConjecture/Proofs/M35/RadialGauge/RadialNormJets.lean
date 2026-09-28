@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem norm_unit_sphere_jet_bounds (k : ℕ) :
     ∃ D : ℝ, 1 ≤ D ∧ ∀ i ≤ k, ∀ x : E, ‖x‖ = 1 →

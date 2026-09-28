@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Rectang
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ClosedSeamLocalInjectivity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.FirstRectangleFaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -21,8 +13,6 @@ private theorem exists_open_injOn_closed_piece
     {f : X → Y} (hf : IsLocallyInjective (fun x : A => f x)) (x : X) :
     ∃ U : Set X, IsOpen U ∧ x ∈ U ∧ InjOn f (U ∩ A) := by
   exact _root_.Dehn.exists_open_injOn_inter_closed hA hf x
-
-
 
 theorem isLocallyInjective_of_saturated_closed_attachment
     {X Y : Type*} [TopologicalSpace X] {S B C : Set X}
@@ -45,8 +35,6 @@ theorem isLocallyInjective_of_saturated_closed_attachment
   · exact False.elim (hyC (hsat z z.property y y.property hzC heq.symm))
   exact hiU ⟨hy.1, (hcover y.property).resolve_right hyC⟩
     ⟨hz.1, (hcover z.property).resolve_right hzC⟩ heq
-
-
 
 theorem isLocallyInjective_on_finite_disjoint_closed_faces
     {X Y η : Type*} [TopologicalSpace X] [Finite η]
@@ -74,8 +62,6 @@ theorem isLocallyInjective_on_finite_disjoint_closed_faces
   intro y hy z hz heq
   exact Subtype.ext (hiU ⟨hy.1, hsub y hy.2⟩ ⟨hz.1, hsub z hz.2⟩ heq)
 
-
-
 theorem isLocallyInjective_of_finite_saturated_closed_faces
     {X Y η : Type*} [TopologicalSpace X] [Finite η]
     {S B : Set X} (hB : IsClosed B) (M : η → Set X)
@@ -102,8 +88,6 @@ local notation "Disk" => Metric.closedBall (0 : V2) 1
 local notation "Ann" => PLAnnularStrip.squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 theorem hamiltonZero_installed_frontier_locally_injective
     {E : Type*} [TopologicalSpace E] {K : Set E} (hK : IsCompact K)
     {R : Set X0} {r : ℝ} (hr : 0 ≤ r) (c : E × ℝ → X0)
@@ -123,8 +107,6 @@ theorem hamiltonZero_installed_frontier_locally_injective
   refine ⟨U, hU, hx, fun y hy z hz heq => hinj hy hz ?_⟩
   rw [hGval, hGval]
   exact congrArg (fun z : X0 => (Q0 z).1) heq
-
-
 
 private theorem terminal_faces_locally_injective
     {N S : Set X0} {phi psi : C(H0, H0)} {u v : ℝ}
@@ -170,8 +152,6 @@ private theorem terminal_faces_locally_injective
     rcases hxphase with hxphase | hxphase
     · exact Or.inl ⟨hSN hy, hqeq.symm.trans hxphase.2⟩
     · exact Or.inr ⟨hSN hy, hqeq.symm.trans hxphase.2⟩
-
-
 
 theorem hamiltonZero_terminal_frontier_union_locally_injective
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -253,8 +233,6 @@ private theorem annulusTarget_injective
     Function.Injective (hamiltonZeroAnnulusTargetMap delta0 delta1 theta) := by
   exact hamiltonZeroAnnulusTargetMap_injective hwidth h0 h1 hne theta
 
-
-
 theorem hamiltonZero_nonfolded_annulus_locally_injective
     (phi : C(H0, H0)) (j : ℝ × ℝ → X0)
     (hj : Topology.IsEmbedding (fun z : Ann => j z))
@@ -270,8 +248,6 @@ theorem hamiltonZero_nonfolded_annulus_locally_injective
     (annulusTarget_injective hwidth h0 h1 hne theta)
   convert h using 1
   exact funext hformula
-
-
 
 theorem hamiltonZero_second_slab_frontier_locally_injective
     {ι η : Type*} [Finite η] {e : ι → OpenPartialHomeomorph X0 V3}
@@ -304,8 +280,6 @@ theorem hamiltonZero_second_slab_frontier_locally_injective
   rcases hxphase with hxphase | hxphase
   · exact Or.inl ⟨hyR, hqeq.symm.trans hxphase.2⟩
   · exact Or.inr ⟨hyR, hqeq.symm.trans hxphase.2⟩
-
-
 
 theorem HamiltonZeroTerminalHomeomorphicDisks.exists_locally_injective_endpoint
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -345,9 +319,6 @@ theorem HamiltonZeroTerminalHomeomorphicDisks.exists_locally_injective_endpoint
       (fun i => (hprops i).2.2.2.2.1.isClosed) hdis hq hvalue holdPsi
   · exact hamiltonZero_terminal_frontier_locally_injective terminal hthird j q hfamily
       (fun i => (hprops i).2.2.2.2.1.isClosed) hdis hq hvalue holdPsi
-
-
-
 
 theorem HamiltonZeroSourceBoundaryDiskData.exists_locally_injective_terminal_endpoints
     {ι κ E : Type*} [TopologicalSpace E]

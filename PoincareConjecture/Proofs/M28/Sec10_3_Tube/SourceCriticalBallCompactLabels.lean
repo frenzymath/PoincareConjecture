@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallGraphLabels
 import PoincareConjecture.Proofs.M28.Mathlib.CompactComponentLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem eventually_initial_graph_labels_on_compact (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)

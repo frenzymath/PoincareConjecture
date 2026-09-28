@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.EndDisks.Outward.Caps
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.Assembly.LateralCut
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -22,8 +20,6 @@ local notation "J" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R W : Set X}
   {S T C D : Set P2} {f₀ f₁ : P2 → X}
-
-
 
 theorem panel_rim_subset_closure_component_complement
     (U : OriginalIntervalTube e R W S T C D f₀ f₁)

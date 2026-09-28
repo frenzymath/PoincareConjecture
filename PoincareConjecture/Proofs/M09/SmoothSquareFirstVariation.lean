@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 import PoincareConjecture.Proofs.M09.FamilyEulerEquation
 import PoincareConjecture.Statements.Ch06.LGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartGradient
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartBoundary
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartAlgebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
-
 
 theorem positiveStart_time_gradient_identities
     (hCoordinates : M12MetricPredecessors.{0} n)

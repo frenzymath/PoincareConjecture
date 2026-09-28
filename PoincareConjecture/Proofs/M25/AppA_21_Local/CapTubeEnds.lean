@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCuts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem CapCertificate.exists_later_lower_cut_containing_compact
     (C : CapCertificate g) {K : Set M}
@@ -73,8 +61,6 @@ theorem CapCertificate.exists_later_lower_cut_containing_compact
   refine ⟨t, t.property, ?_⟩
   rw [(C.end_neck_lower_cut_topology (hret t)).2.2.2.1]
   exact ht
-
-
 
 theorem CapTubeAttachment.exists_cofinal_overlap_end
     {X : Set M} {C : CapCertificate g}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.StereographicReduction
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -22,7 +13,6 @@ private instance sphereDimensionFact : Fact (Module.finrank ℝ E3 = 2 + 1) := �
 set_option backward.defeqAttrib.useBackward true in
 set_option backward.isDefEq.respectTransparency false in
 
-
 @[simp] theorem spherePlaneChart_neg_apply (p : UnitTwoSphere) :
     spherePlaneChart (-p) p = 0 := by
   have hs : stereographic' 2 (-p) p = 0 := by
@@ -31,17 +21,12 @@ set_option backward.isDefEq.respectTransparency false in
     exact stereographic_neg_apply p
   simp [spherePlaneChart, hs]
 
-
-
 @[simp] theorem spherePlaneChart_neg_symm_zero (p : UnitTwoSphere) :
     (spherePlaneChart (-p)).symm 0 = p := by
   rw [← spherePlaneChart_neg_apply p]
   apply (spherePlaneChart (-p)).left_inv
   simpa only [spherePlaneChart_source, mem_compl_iff, mem_singleton_iff] using
     ne_neg_of_mem_unit_sphere ℝ p
-
-
-
 
 theorem exists_local_sphere_identity_germ (p : UnitTwoSphere)
     (g : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) (Q : E3 → E3)

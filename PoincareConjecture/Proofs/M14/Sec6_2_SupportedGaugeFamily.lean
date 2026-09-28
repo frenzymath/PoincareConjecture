@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetShift
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareVariationConstruction
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,25 +20,17 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
 
-
-
 noncomputable def gaugeShiftFamily (z : ℝ × ℝ) : G.Point :=
   (G.gaugeCover.cylinder b).toSpacetime ((lift (R.curve z.1)).1,
     (G.gaugeCover.spatial b).affineShift (lift (R.curve z.1)).2 (z.2 • η z.1))
-
-
 
 noncomputable def supportedGaugeFamily (z : ℝ × ℝ) : G.Point := by
   classical
   exact if z.1 ∈ tsupport η then gaugeShiftFamily R b lift η z else R.curve z.1
 
-
-
 theorem supportedGaugeFamily_eq_of_not_tsupport {z : ℝ × ℝ} (hz : z.1 ∉ tsupport η) :
     supportedGaugeFamily R b lift η z = R.curve z.1 := by
   simp only [supportedGaugeFamily, if_neg hz]
-
-
 
 theorem supportedGaugeFamily_eq_gauge {z : ℝ × ℝ}
     (hz : (G.gaugeCover.cylinder b).toSpacetime (lift (R.curve z.1)) = R.curve z.1) :
@@ -59,8 +42,6 @@ theorem supportedGaugeFamily_eq_gauge {z : ℝ × ℝ}
       TopologicalSpace.Opens.affineShift_zero, Prod.mk.eta]
     exact hz.symm
 
-
-
 theorem supportedGaugeFamily_at_zero
     (hsrc : ∀ s ∈ tsupport η,
       (G.gaugeCover.cylinder b).toSpacetime (lift (R.curve s)) = R.curve s) (s : ℝ) :
@@ -71,8 +52,6 @@ theorem supportedGaugeFamily_at_zero
       Prod.mk.eta, hsrc s hs]
   · exact supportedGaugeFamily_eq_of_not_tsupport R b lift η hs
 
-
-
 theorem supportedGaugeFamily_time
     (hclock : ∀ s ∈ tsupport η, (lift (R.curve s)).1.val =
       G.spacetime.timeFunction (R.curve s)) {s v : ℝ}
@@ -82,8 +61,6 @@ theorem supportedGaugeFamily_time
   · simp only [supportedGaugeFamily, if_pos hsupport, gaugeShiftFamily,
       (G.gaugeCover.cylinder b).time_eq, hclock s hsupport, R.curve_time s hs]
   · rw [supportedGaugeFamily_eq_of_not_tsupport R b lift η hsupport, R.curve_time s hs]
-
-
 
 theorem gaugeShiftFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -104,8 +81,6 @@ theorem gaugeShiftFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     ((G.gaugeCover.spatial b).affineShift_domain_isOpen.mem_nhds hshift)).comp z
       (hL.snd.prodMk hv)
   exact (G.gaugeCover.cylinder b).smooth.contMDiffAt.comp z (hL.fst.prodMk hS)
-
-
 
 theorem supportedGaugeFamily_contMDiffOn {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

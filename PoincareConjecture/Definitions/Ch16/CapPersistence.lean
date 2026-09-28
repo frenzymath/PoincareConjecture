@@ -33,10 +33,6 @@ structure SurgeryCapInitialComparison (F : SurgeryFlowData.{u})
       ∀ x ∈ F.standard_initial.metric.ball 0 A,
         chart x = (F.event t hT).local_embed i (Q.map x)
 
-
-
-
-
 def SurgeryCapFamilyComparison (F : SurgeryFlowData.{u})
     (S : MaximalStandardCapFlow F.standard_initial) (A eta : ℝ)
     {t : ℝ} {I : Set ℝ} {U : Set (F.slice t).carrier}

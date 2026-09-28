@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyDisplacement
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,9 +9,6 @@ open scoped intervalIntegral
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem integral_momentum_variation_eq_zero {a b : ℝ} (hab : a ≤ b)
     (P Q w : ℝ → E) (hP : ContinuousOn P (Icc a b))

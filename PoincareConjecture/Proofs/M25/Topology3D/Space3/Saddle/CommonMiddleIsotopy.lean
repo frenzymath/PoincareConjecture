@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NativeProjectedFie
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PlanarFamilyHeightLift
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,10 +14,7 @@ namespace PoincareConjecture.M25.Topology3D
 local notation "D2" => Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
 
-
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_saddle_common_middle_isotopy
     (u : UnitTwoSphere) (c rho delta : ℝ)

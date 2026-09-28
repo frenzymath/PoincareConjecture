@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_ContractionContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle Filter
@@ -22,8 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem loop_eq_of_fields {γ δ : C1FreeLoopSpace (M := M)}
     (hvalues : γ.toFun = δ.toFun) (hextension : γ.extension = δ.extension) : γ = δ := by
   cases γ
@@ -31,8 +19,6 @@ theorem loop_eq_of_fields {γ δ : C1FreeLoopSpace (M := M)}
   cases hvalues
   cases hextension
   rfl
-
-
 
 theorem contractionLoop_zero_tangent (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q) (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -50,8 +36,6 @@ theorem contractionLoop_zero_tangent (C : ℝ × (M × M) → M)
         γ.extension ∘ radialNormalization := funext fun w => h0 p _
     rw [hext]
     exact mfderiv_radial_extension γ z
-
-
 
 theorem contractionLoop_one_tangent (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -81,8 +65,6 @@ theorem contractionLoop_one_tangent (C : ℝ × (M × M) → M)
     erw [hext.mfderiv_eq, mfderiv_const]
     rfl
 
-
-
 theorem contractionLoop_constant (C : ℝ × (M × M) → M)
     (hdiag : ∀ t p, C (t, p, p) = p) (t : ℝ) (p : M)
     (hC : ∀ z : LoopCircle,
@@ -95,8 +77,6 @@ theorem contractionLoop_constant (C : ℝ × (M × M) → M)
   · funext w
     exact hdiag t p
 
-
-
 noncomputable def endpointContractionLoop (C : ℝ × (M × M) → M)
     (t : I) (p : M) (γ : C1FreeLoopSpace (M := M))
     (hC : ∀ z : LoopCircle,
@@ -104,8 +84,6 @@ noncomputable def endpointContractionLoop (C : ℝ × (M × M) → M)
     C1FreeLoopSpace (M := M) := by
   classical
   exact if t = 0 then γ else if t = 1 then constantC1Loop p else contractionLoop C t p γ hC
-
-
 
 theorem endpointContractionLoop_values (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q) (t : I) (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -122,8 +100,6 @@ theorem endpointContractionLoop_values (C : ℝ × (M × M) → M)
   · subst t
     exact ((contractionLoop_apply C 1 p γ hC z).trans (h1 z)).symm
   · rfl
-
-
 
 theorem endpointContractionLoop_tangents (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q) (t : I) (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -142,8 +118,6 @@ theorem endpointContractionLoop_tangents (C : ℝ × (M × M) → M)
     exact (contractionLoop_one_tangent C p γ h1 hC z).symm
   · rfl
 
-
-
 theorem endpointContractionLoop_constant (C : ℝ × (M × M) → M)
     (hdiag : ∀ t p, C (t, p, p) = p) (t : I) (p : M)
     (hC : ∀ z : LoopCircle,
@@ -156,8 +130,6 @@ theorem endpointContractionLoop_constant (C : ℝ × (M × M) → M)
   · rfl
   · rfl
   · exact contractionLoop_constant C hdiag t p hC
-
-
 
 theorem continuous_endpointContractionLoop {X : Type v} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) (h0 : ∀ p q, C (0, p, q) = q)

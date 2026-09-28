@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RiemannianVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.Flatness
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem curvatureTensor_eq_zero_of_asymptoticCone_volume_ge_euclidean
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 2 ≤ n)
@@ -60,8 +48,6 @@ theorem curvatureTensor_eq_zero_of_asymptoticCone_volume_ge_euclidean
   have heq := le_antisymm hupper hlower
   exact g.curvatureTensor_eq_zero_of_maximal_volume_growth D hn hc hoperator p
     (heq ▸ hlim)
-
-
 
 theorem asymptoticCone_volume_lt_euclidean_of_scalar_pos
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 2 ≤ n)

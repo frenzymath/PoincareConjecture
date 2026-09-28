@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.S
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.CylinderGluing
-
-
 
 theorem exists_scalar_collar_extension_of_nonzero (h : RoundCylinderSpace → ℝ)
     (hh : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ h)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Differential
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -74,8 +63,6 @@ private theorem invertible_differential_of_smooth_partial_homeomorph
   have hw := congrArg (fun L : E →L[ℝ] E => L w) hleft
   exact hv.symm.trans ((congrArg
     (mfderiv (𝓡 3) (𝓡 3) f.symm (f x)) hvw).trans hw)
-
-
 
 theorem exists_normalized_gauss_parametrization
     (g : RiemannianMetric 3 M) (p : M) :

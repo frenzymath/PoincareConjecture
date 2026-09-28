@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +12,6 @@ namespace PoincareConjecture.M64Uniformization
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarAnnulus_exists_flat_collars
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

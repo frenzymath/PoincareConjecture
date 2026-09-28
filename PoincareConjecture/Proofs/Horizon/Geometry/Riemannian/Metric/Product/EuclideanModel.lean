@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Basi
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Model.LinearRechart
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.FinSucc
 
-
-
-
-
-
-
-
 open Set
 open scoped Manifold ContDiff Bundle
 noncomputable section

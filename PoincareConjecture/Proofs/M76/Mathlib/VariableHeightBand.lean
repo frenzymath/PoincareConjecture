@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHeightBand
 import PoincareConjecture.Proofs.M76.Mathlib.PulledBackHeightBandSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +10,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_uniform_band_lipschitzOnWith
     {f : E × ℝ → F} {B : Set E} {lower upper : E → ℝ}
@@ -43,9 +30,6 @@ theorem FinitePiecewiseAffineOn.exists_uniform_band_lipschitzOnWith
       (x, u) ⟨mem_singleton x, hu⟩ (x, v) ⟨mem_singleton x, hv⟩
   simpa only [Prod.dist_eq, dist_self, max_eq_right (dist_nonneg : 0 ≤ dist u v)] using h
 
-
-
-
 theorem FinitePiecewiseAffineOn.exists_strictMonoOn_band_perturbation
     {g : E × ℝ → ℝ} {B : Set E} {lower upper : E → ℝ}
     (hg : FinitePiecewiseAffineOn g
@@ -58,10 +42,6 @@ theorem FinitePiecewiseAffineOn.exists_strictMonoOn_band_perturbation
   refine ⟨δ, one_div_pos.mpr hden, fun ε hε x hx => (hL x hx).strictMonoOn_id_add_mul ?_⟩
   have hsmall : |ε| * ((L : ℝ) + 1) < 1 := (lt_div_iff₀ hden).mp hε
   nlinarith [abs_nonneg ε]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_variable_heightBand_homeomorph
     {g : E × ℝ → ℝ} {B : Set E} {lower upper : E → ℝ}
@@ -105,10 +85,6 @@ theorem FinitePiecewiseAffineOn.exists_variable_heightBand_homeomorph
   obtain ⟨G, hG, hGval⟩ := (hg.heightChange ε).exists_homeomorph_image hinj
   exact ⟨(Homeomorph.setCongr (rfl : S = S)).trans
     (G.trans (Homeomorph.setCongr himage)), hG.setCongr rfl himage, fun p => hGval p⟩
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_variable_band_level_charts [FiniteDimensional ℝ E]
     {g : E × ℝ → ℝ} {B : Set E} {lower upper : E → ℝ}

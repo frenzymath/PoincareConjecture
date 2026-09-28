@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.OpenTimeCoordinateFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.RicciFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_quotientFlow_of_chart_limits_on_open_time
     {ι : Type u} [Nonempty ι] {n : ℕ}

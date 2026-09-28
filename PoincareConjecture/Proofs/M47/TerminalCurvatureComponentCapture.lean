@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourcePointScalar
 import PoincareConjecture.Proofs.M47.TerminalCurvatureBallCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_compact_of_component_captured
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
@@ -49,8 +39,6 @@ theorem terminalCurvature_compact_of_component_captured
   have hSclopen : IsClopen S := ⟨hScompact.isClosed, hSopen⟩
   have hSuniv : S = univ := hSclopen.eq_univ hSne
   rwa [hSuniv] at hScompact
-
-
 
 theorem terminalCurvature_eventually_compact_of_source_component
     {ι : Type*}

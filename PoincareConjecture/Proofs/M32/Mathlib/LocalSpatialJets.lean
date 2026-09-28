@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M32.Mathlib.AffineWithinJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M32
-
-
 
 theorem iteratedFDeriv_prod_slice_eq_within_of_open_subset
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

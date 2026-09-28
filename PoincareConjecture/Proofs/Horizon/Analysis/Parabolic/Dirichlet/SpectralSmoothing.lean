@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSe
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -72,7 +62,6 @@ private def powerMultiplier (lam : ι → ℝ≥0) (k : ℕ) (t : ℝ) (ht : 0 <
         (y := ((k.factorial : ℝ) / t ^ k) • x) (fun i => by
           simpa [norm_smul, Real.norm_of_nonneg hb] using norm_weight_mul_le lam k ht i (x i))
       simpa [norm_smul, Real.norm_of_nonneg hb] using hn)
-
 
 def heatPower (b : HilbertBasis ι ℝ H) (lam : ι → ℝ≥0) (k : ℕ) (t : ℝ) : H →L[ℝ] H :=
   if ht : 0 < t then

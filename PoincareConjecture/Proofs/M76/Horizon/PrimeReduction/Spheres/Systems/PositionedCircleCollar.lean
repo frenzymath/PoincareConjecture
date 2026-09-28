@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalCircleCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PositionedCircleCaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 
@@ -18,8 +9,6 @@ open Dehn
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 theorem exists_positioned_sphere_system_circle_collar
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

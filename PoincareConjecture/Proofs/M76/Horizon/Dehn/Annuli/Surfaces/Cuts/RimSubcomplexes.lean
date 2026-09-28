@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.RimArcPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.IncidentJointSigns
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -10,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_subcomplexes_of_disjoint_closed_cover
     {ι : Type*} [Finite ι] (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

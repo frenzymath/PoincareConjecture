@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.BoundaryD
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

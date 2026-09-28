@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M30.Mathlib.SameSequenceClosedCompactness
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedCoefficientLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.SpacetimeBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_closed_coefficient_limit_on_retained_chart
     {n : ℕ} {T τ : ℝ} (hτ : 0 < τ) (hτT : τ < T)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.HolomorphicFrameEstimates
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M60
 
 variable {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]
-
-
 
 theorem exists_compactlySupported_c1_extension
     {A : ℂ → W} {O : Set ℂ} (hO : IsOpen O) (hA : ContDiffOn ℝ 1 A O)
@@ -47,8 +36,6 @@ theorem exists_compactlySupported_c1_extension
     change chi z • A z = A z
     rw [chi.one_of_mem_closedBall (ball_subset_closedBall hz), one_smul]
 
-
-
 theorem exists_c1_uniform_bound {A : ℂ → W}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A) :
     ∃ L : ℝ, 0 ≤ L ∧ (∀ z, ‖A z‖ ≤ L) ∧ (∀ z, ‖fderiv ℝ A z‖ ≤ L) := by
@@ -59,8 +46,6 @@ theorem exists_c1_uniform_bound {A : ℂ → W}
     fun z => (hL₀ z).trans ((le_max_left _ _).trans (le_max_right _ _)),
     fun z => (hL₁ z).trans ((le_max_right _ _).trans (le_max_right _ _))⟩
 
-
-
 theorem norm_fderiv_real_smul_le {f : ℂ → ℝ} {g : ℂ → W} {z : ℂ}
     (hf : DifferentiableAt ℝ f z) (hg : DifferentiableAt ℝ g z) :
     ‖fderiv ℝ (fun w => f w • g w) z‖ ≤
@@ -69,13 +54,9 @@ theorem norm_fderiv_real_smul_le {f : ℂ → ℝ} {g : ℂ → W} {z : ℂ}
   exact (norm_add_le _ _).trans_eq
     (by rw [norm_smul, ContinuousLinearMap.norm_smulRight_apply])
 
-
-
 noncomputable def rescaledFrameCoefficient (chi : ℂ → ℝ) (A : ℂ → W)
     (z₀ : ℂ) (r : ℝ) : ℂ → W :=
   fun z => (r * chi z) • A (z₀ + r • z)
-
-
 
 theorem contDiff_rescaledFrameCoefficient {chi : ℂ → ℝ} {A : ℂ → W}
     (hchi : ContDiff ℝ 1 chi) (hA : ContDiff ℝ 1 A) (z₀ : ℂ) (r : ℝ) :
@@ -83,8 +64,6 @@ theorem contDiff_rescaledFrameCoefficient {chi : ℂ → ℝ} {A : ℂ → W}
   have hS : ContDiff ℝ 1 (fun z : ℂ => z₀ + r • z) :=
     contDiff_const.add (contDiff_id.const_smul r)
   exact (contDiff_const.mul hchi).smul (hA.comp hS)
-
-
 
 theorem rescaledFrameCoefficient_bounds {chi : ℂ → ℝ} {A : ℂ → W}
     (hchi : ContDiff ℝ 1 chi) (hA : ContDiff ℝ 1 A)

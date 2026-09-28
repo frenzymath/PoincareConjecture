@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.StandardAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourceAnnulusMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -28,13 +21,10 @@ local notation "Ann" => squareAnnulus 8 1
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 local notation "Q" => hamiltonOneHierarchyCoordinates
 
-
 noncomputable def sourceAnnulusHandleMap (phi : C(H, H)) (theta : C512)
     (A : Ann ≃ₜ sourceSurface phi theta) : C(Ann, H) where
   toFun z := phi ((E) ⟨A z, sourceSurface_subset phi theta (A z).property⟩)
   continuous_toFun := by fun_prop
-
-
 
 theorem exists_original_annulus_winding_correction
     {α : Type*} (e : α → OpenPartialHomeomorph X V3)

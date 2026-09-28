@@ -1,13 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.DerivativeOnFields
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.LocalRegularity
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -107,7 +99,6 @@ private lemma derivative_tail_slot_linear
   congr 1
   funext j
   by_cases h : j = i <;> simp [Y, E, h, Function.update_of_ne]
-
 
 theorem covariantTensorDerivative_isSmooth
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}

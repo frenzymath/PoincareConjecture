@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Bounded
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -15,8 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem exists_dirichletExhaustionKernel_harnack_on_intrinsic_ball
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

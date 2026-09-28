@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

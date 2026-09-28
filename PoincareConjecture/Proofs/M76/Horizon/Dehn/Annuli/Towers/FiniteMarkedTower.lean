@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.InitialOriginalPLTower
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoverTowerCount
 import Mathlib.Order.WellFounded
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe v w z a b
@@ -33,9 +21,6 @@ variable {E : Type v} {M : Type w} {ι : Type z}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ (V1 × V2)}
   {f : (V1 × V2) → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem exists_annulus_terminal_reachable
     {G : Type b} [NormedAddCommGroup G] [NormedSpace ℝ G]
@@ -78,11 +63,6 @@ theorem exists_annulus_terminal_reachable
     exists_annulus_step_of_two_sheet_cover t hS hsource v0 hr hrPL hp htwo negative hnegative
   have hn : n ∈ A := ht.tail ⟨step⟩
   exact Function.not_lt_argminOn m A hn (hdecrease step)
-
-
-
-
-
 
 theorem exists_original_annulus_terminal_stage [T2Space M] [LocallyCompactSpace M]
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineMapSubdivision
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical Topology
@@ -22,7 +13,6 @@ namespace AffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem injOn_convex_of_finite_fibers (a : E →ᵃ[ℝ] F) {s : Set E}
     (hs : Convex ℝ s) (hf : ∀ y, (s ∩ a ⁻¹' {y}).Finite) : InjOn a s := by
@@ -38,8 +28,6 @@ namespace LinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem injOn_starConvex_of_nhds (a : E →ₗ[ℝ] F) {s U : Set E} {c : E}
     (hs : StarConvex ℝ c s) (hU : U ∈ 𝓝 c) (hi : InjOn a (s ∩ U)) : InjOn a s := by
@@ -164,8 +152,6 @@ theorem sourceMap_fiber_finite (x : E) :
     rw [hempty]
     exact finite_empty
 
-
-
 theorem sourceMap_injOn_convex
     {s : Set ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ))}
     (hs : Convex ℝ s) (hscarrier : s ⊆ A.carrier) : InjOn A.sourceMap s := by
@@ -174,8 +160,6 @@ theorem sourceMap_injOn_convex
       (Fin 4 → ℝ))).toAffineMap
   exact a.injOn_convex_of_finite_fibers hs (fun y ↦
     (A.sourceMap_fiber_finite hbound y).subset (inter_subset_inter_left _ hscarrier))
-
-
 
 theorem sourceMap_injOn_starConvex
     {s : Set ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ))}
@@ -205,8 +189,6 @@ theorem sourceMap_injOn_closedFaceStar
     InjOn A.sourceMap (L.closedFaceStar s).space := by
   exact A.sourceMap_injOn_starConvex hbound hc (L.starConvex_closedFaceStar s hcs)
     (fun x hx ↦ hL (SimplicialComplex.space_subset_of_le (L.closedFaceStar_le s) hx))
-
-
 
 theorem sourceMap_comp_injOn_closedFaceStar
     (L : SimplicialComplex ℝ (ℝ × ℝ))
@@ -260,8 +242,6 @@ theorem sourceMap_card_le_owner
     hi.mono (subset_convexHull ℝ _)
   rwa [Finset.card_image_of_injOn hvertex] at hcard
 
-
-
 theorem exists_original_face_refinement :
     ∃ L : SimplicialComplex ℝ
         ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ)),
@@ -295,8 +275,6 @@ theorem exists_original_face_refinement :
     obtain ⟨t, ht⟩ := hfaces s hs
     exact ⟨t.val, t.property, ht⟩
 
-
-
 theorem exists_original_triangle_refinement
     (hpure : ∀ t ∈ K.faces, ∃ u ∈ K.faces, t ⊆ u ∧ u.card = 3) :
     ∃ L : SimplicialComplex ℝ
@@ -318,8 +296,6 @@ theorem exists_original_triangle_refinement
     obtain ⟨t, ht, hst⟩ := howners s hs
     obtain ⟨u, hu, htu, huc⟩ := hpure t ht
     exact ⟨u, hu, huc, fun _ hx ↦ convexHull_mono htu (hst hx)⟩
-
-
 
 theorem exists_marked_planar_original_refinement
     (hpure : ∀ t ∈ K.faces, ∃ u ∈ K.faces, t ⊆ u ∧ u.card = 3) :

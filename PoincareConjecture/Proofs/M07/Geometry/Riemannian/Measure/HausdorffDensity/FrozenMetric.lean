@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 import Mathlib.Analysis.InnerProductSpace.NormDet
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_frozenPullbackEquiv (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -65,7 +56,6 @@ theorem exists_frozenPullbackEquiv (g : RiemannianMetric n M)
     rw [Real.sqrt_sq (abs_nonneg _)]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem eventually_pullbackNorm_bounds (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -127,8 +117,6 @@ theorem eventually_pullbackNorm_bounds (g : RiemannianMetric n M)
   · apply (sq_le_sq₀ hnonneg (mul_nonneg (by linarith) (norm_nonneg _))).mp
     nlinarith [mul_nonneg (sq_nonneg ε) (sq_nonneg ‖A v‖),
       mul_nonneg hε.le (sq_nonneg ‖A v‖)]
-
-
 
 theorem eventually_pullbackNorm_comparison (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}

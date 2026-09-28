@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.DivergenceBounds
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Matrix
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 lemma norm_bilinear_le_of_quadratic {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℝ E] (B : E →L[ℝ] E →L[ℝ] ℝ) {ε : ℝ}
@@ -40,8 +30,6 @@ lemma norm_bilinear_le_of_quadratic {E : Type*} [NormedAddCommGroup E]
   rw [← hpolar, abs_mul, abs_of_pos (by norm_num : (0 : ℝ) < 4)] at hbound
   change |B u v| ≤ ε
   nlinarith
-
-
 
 theorem exists_divergence_coefficient_tolerance {ε : ℝ} (hε : 0 < ε) :
     let B₀ : EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -96,8 +84,6 @@ theorem exists_divergence_coefficient_tolerance {ε : ℝ} (hε : 0 < ε) :
     simpa only [dist_eq_norm, B₀] using hx)
   rw [hA₀, dist_eq_norm] at h
   simpa only [A, hρg, B₀] using h
-
-
 
 theorem exists_divergence_coefficient_tolerance_of_quadratic {ε : ℝ} (hε : 0 < ε) :
     let B₀ : EuclideanSpace ℝ (Fin n) →L[ℝ]

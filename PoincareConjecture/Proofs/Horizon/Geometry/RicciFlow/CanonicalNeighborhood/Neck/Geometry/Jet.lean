@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.TensorNorm
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -17,10 +16,8 @@ namespace EpsilonNeck
 
 variable {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
 noncomputable def normalized_pullback : RoundCylinderTwoTensor :=
   fun z v w ↦ N.scale⁻¹ ^ 2 * roundCylinderPullback g N.coordinate_map z v w
-
 
 theorem normalized_pullback_close :
     RoundCylinderClose N.epsilon 0 N.normalized_pullback := by

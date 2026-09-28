@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.DisjointUnionSum
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.StepLift
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.SourceTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture
-
-
 
 noncomputable def SurgeryTopologyConclusion.substitute
     {A B : GeneralizedSliceCarrier.{u}} {ι : Type v}

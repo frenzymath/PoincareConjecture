@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeCylinder
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeNeckGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {t : ℝ} (ht : t ∈ H.generalized.interval)
 
-
-
 theorem regular_history_terminal_carrier
     {scale a : ℝ} (ha : a < 0) {U : Set (F.slice t).carrier}
     (e : SurgeryFlowCylinder F (F.slice t) t scale (Ioc a 0) U)
@@ -37,8 +26,6 @@ theorem regular_history_terminal_carrier
       ⟨t, x⟩ := Sigma.ext (by simp) (hbase hzero x hx)
   exact (congrArg (fun p : Σ s, (F.slice s).carrier =>
     p.2 ∈ m33RegularRegion F p.1) he).mp (e.regular_image_Ioc hzero ⟨x, hx, rfl⟩)
-
-
 
 theorem exists_regular_history_strong_neck {epsilon : ℝ}
     (N : SurgeryStrongNeck F t epsilon) :
@@ -124,8 +111,6 @@ theorem exists_regular_history_strong_neck {epsilon : ℝ}
   }, rfl, rfl, rfl⟩
   intro x hx
   exact N'.coordinatePartialDiffeomorph.right_inv hx
-
-
 
 theorem regular_history_neck_control {epsilon C : ℝ}
     (x : (H.generalized.slice t).carrier) (N : SurgeryStrongNeck F t epsilon)

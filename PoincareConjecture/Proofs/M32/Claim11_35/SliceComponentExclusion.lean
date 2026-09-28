@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M32.Mathlib.CompactOpenCapture
 import PoincareConjecture.Proofs.M32.Claim11_34.SliceBallCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +16,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
-
 
 theorem exists_blowup_slice_closed_component_exclusion :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

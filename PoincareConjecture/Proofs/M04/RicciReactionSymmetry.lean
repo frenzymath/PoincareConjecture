@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import PoincareConjecture.Definitions.Ch03.CurvatureReaction
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

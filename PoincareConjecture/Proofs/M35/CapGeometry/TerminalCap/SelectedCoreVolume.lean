@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CoreBallVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem exists_selected_core_volume_constant
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

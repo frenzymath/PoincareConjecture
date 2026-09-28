@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NoConjugate
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_jacobi_ratio_monotone
     {R : ℝ} (hR : 0 < R) {J J' J'' M M' M'' : ℝ → ℝ}
@@ -56,9 +45,6 @@ theorem m64Intrinsic_jacobi_ratio_monotone
   intro t ht
   have ht' : t ∈ Icc (0 : ℝ) R := interior_subset ht
   exact div_nonneg (hinitial.trans (hWmono ⟨le_rfl, hR.le⟩ ht' ht'.1)) (sq_nonneg _)
-
-
-
 
 theorem m64Intrinsic_jacobi_ge_positive_model
     {R kappa : ℝ} (hR : 0 < R) {J J' J'' M M' M'' k : ℝ → ℝ}

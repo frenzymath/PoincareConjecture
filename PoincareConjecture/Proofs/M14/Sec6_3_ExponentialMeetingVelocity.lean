@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialPrefixMomentum
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialLineKernel
 import PoincareConjecture.Proofs.M14.Sec6_3_MeetingMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_meetingVelocity_deriv_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Mathlib.FrontierPieceMembership
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace TriangleDiskModel
-
-
 
 theorem open_common_edge_subset_interior : openSegment ℝ ((0, 1) : ℝ × ℝ) (0, 0) ⊆
     interior (convexHull ℝ (range wholeTriangle)) := by
@@ -90,9 +79,6 @@ private theorem left_frontier_subset : frontier (convexHull ℝ (range leftTrian
     exact Or.inl (Or.inl ((convex_segment (𝕜 := ℝ) (-1, 0) (1, 0)).segment_subset
       (left_mem_segment ℝ _ _) origin_mem_base hx))
   · exact common_edge_subset_frontier_union_open (by rwa [segment_symm])
-
-
-
 
 theorem frontier_membership :
     (∀ x ∈ convexHull ℝ (range rightTriangle),

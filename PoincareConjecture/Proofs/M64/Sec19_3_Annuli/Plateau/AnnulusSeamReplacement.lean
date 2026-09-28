@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamPatchIntegration
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,8 +21,6 @@ local notation "O" => m64AnnulusSeamDomain
 local notation "mu" => volume.restrict S
 local notation "v" => m64AnnulusSeamTranslation
 
-
-
 theorem m64RectangleTest_periodic_of_support {phi : LoopPlane → ℝ}
     (hs : tsupport phi ⊆ S) (s : ℝ) :
     phi (annulusPoint curvePeriod s) = phi (annulusPoint 0 s) := by
@@ -46,8 +33,6 @@ theorem m64RectangleTest_periodic_of_support {phi : LoopPlane → ℝ}
       have hlt := ((m64AnnulusInterior_coordinates _).mp (hs h)).1
       simp only [annulusPoint, Matrix.cons_val_zero, lt_self_iff_false] at hlt
   rw [hright, hleft]
-
-
 
 theorem M64ObservedWeakAnnulus.seam_replace
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

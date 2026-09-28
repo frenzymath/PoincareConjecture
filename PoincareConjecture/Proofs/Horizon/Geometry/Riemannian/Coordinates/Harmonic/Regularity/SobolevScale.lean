@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Sobolev
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,8 +10,6 @@ open scoped ContDiff ENNReal NNReal Manifold
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem exists_euclidean_ball_sobolev_scale (hn : 2 ≤ n) :
     ∃ q : ℝ≥0, (q : ℝ) = 2 * n / (n - 1) ∧ 2 < q ∧
@@ -118,9 +108,6 @@ theorem exists_euclidean_ball_sobolev_scale (hn : 2 ≤ n) :
     _ ≤ ((G : ℝ) ^ 2 * A + 1) * R * ∫ x, ‖fderiv ℝ f x‖ ^ 2 := by
       have hi : 0 ≤ ∫ x, ‖fderiv ℝ f x‖ ^ 2 := integral_nonneg fun x => sq_nonneg _
       nlinarith [mul_nonneg hR.le hi]
-
-
-
 
 theorem exists_uniform_coordinate_sobolev_scale (hn : 2 ≤ n)
     {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :

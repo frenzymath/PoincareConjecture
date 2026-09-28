@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Smoot
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem isLocalDiffeomorphOn_of_isInvertible_mfderiv
     {f : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}

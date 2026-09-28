@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.CompactFlowoutBound
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 import Mathlib.Algebra.Order.Archimedean.Real.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +14,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_neck_scalar_and_curvature_bound_of_local_parallel_null_sections :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

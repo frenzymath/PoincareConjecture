@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapScalar
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCutoff
 import PoincareConjecture.Proofs.M47.CanonicalCapComparisonTolerance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_first_failure_search_included_cap_cutoff
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

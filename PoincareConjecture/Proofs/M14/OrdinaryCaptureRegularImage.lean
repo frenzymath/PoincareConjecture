@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.OrdinaryCaptureRegularDomain
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureRegularPoint
 import PoincareConjecture.Proofs.M14.Sec6_3_StableOpenness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -35,9 +25,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hPath : M14PathCalculusConclusion G)
 
 include D hCoordinates hPath
-
-
-
 
 theorem ordinaryCapture_regularImage_mem_stableImage
     (E : M14ExponentialFamily G t₀.val (e.toSpacetime (t₀, c₀)))
@@ -73,9 +60,6 @@ theorem ordinaryCapture_regularImage_mem_stableImage
       simpa only [Real.sq_sqrt H.tau_pos.le] using E.clock _ _ htransport.1.1
     exact hclock.trans q.property.symm
   · exact htransport.2.2.trans hendpoint
-
-
-
 
 theorem ordinaryCapture_regular_point_at_cylinder
     (hDifferential : ReducedLengthDifferentialTheory F t₀.val τmax)

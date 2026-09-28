@@ -7,15 +7,6 @@ import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -266,7 +257,6 @@ theorem contMDiffOn_scalarCurvature :
   filter_upwards [self_mem_nhdsWithin, mem_nhdsWithin_of_mem_nhds hO] with p hp hpt
   exact ⟨hp.1, hpt⟩
 
-
 theorem contMDiff_scalarCurvature (t : ℝ) (ht : t ∈ J) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (F.connection t).scalarCurvature := by
   have hc : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun _ : M ↦ t) := contMDiff_const
@@ -279,7 +269,6 @@ theorem contMDiff_scalarCurvature (t : ℝ) (ht : t ∈ J) :
     F.contMDiffOn_scalarCurvature hslice
     fun x ↦ ⟨ht, Set.mem_univ x⟩
 
-
 theorem contDiffOn_scalarCurvature_timeSlice (x : M) :
     ContDiffOn ℝ ∞ (fun t ↦ (F.connection t).scalarCurvature x) J := by
   have hslice : ContMDiff 𝓘(ℝ, ℝ) (𝓘(ℝ, ℝ).prod (𝓡 n)) ∞
@@ -288,7 +277,6 @@ theorem contDiffOn_scalarCurvature_timeSlice (x : M) :
     (show Set.MapsTo (fun t : ℝ ↦ (t, x)) J (J ×ˢ Set.univ) from
       fun _ ht ↦ ⟨ht, Set.mem_univ x⟩)
   exact h.contDiffOn
-
 
 theorem scalarCurvature_timeDerivative_extend (x : M) (v : ℝ → ℝ)
     (hv : ContinuousOn v J)
@@ -336,4 +324,3 @@ theorem hasDerivWithinAt_scalarCurvature (t : ℝ) (ht : t ∈ J) (x : M) :
     (fun s hs ↦ M04.hasDerivAt_scalarCurvature_evolution (t := s) F hs x) t ht
 
 end PoincareConjecture.RicciFlow
-

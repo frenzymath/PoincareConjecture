@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FramePlaneCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.TransversePlaneDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +9,6 @@ namespace Submodule
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsSecantTransverse.comap_subtype {K V : Submodule ℝ E} {S : Set V}
     (hK : K.IsSecantTransverse (V.subtype '' S)) :
@@ -46,9 +33,6 @@ variable {ι E F : Type*} [Finite ι]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
-
-
-
 theorem isRadialEmbedding_iff_isSecantTransverse_ker_subtype
     (A : AbstractSimplicialComplex ι) (V : Submodule ℝ E)
     (b : Module.Basis ι ℝ V) (Q : E →L[ℝ] F) :
@@ -69,8 +53,6 @@ theorem isRadialEmbedding_iff_isSecantTransverse_ker_subtype
     apply Subtype.ext
     exact h.injOn Q rfl ⟨x, hx, rfl⟩ ⟨y, hy, rfl⟩ he
 
-
-
 theorem disjoint_map_faceSpan_of_isSecantTransverse
     (A : AbstractSimplicialComplex ι) (V : Submodule ℝ E)
     (b : Module.Basis ι ℝ V) {s : Finset ι} (hs : s ∈ A.faces)
@@ -84,9 +66,6 @@ theorem disjoint_map_faceSpan_of_isSecantTransverse
   have hz := Submodule.disjoint_def.mp hd v hv hk
   exact congrArg Subtype.val hz
 
-
-
-
 theorem isRadialEmbedding_iff_injOn_basisCone_subtype
     (A : AbstractSimplicialComplex ι) (V : Submodule ℝ E)
     (b : Module.Basis ι ℝ V) (Q : E →L[ℝ] F) :
@@ -99,9 +78,6 @@ theorem isRadialEmbedding_iff_injOn_basisCone_subtype
     apply A.isRadialEmbedding_of_injOn_basisCone b (Q.comp V.subtypeL)
     intro x hx y hy he
     exact Subtype.ext (h ⟨x, hx, rfl⟩ ⟨y, hy, rfl⟩ he)
-
-
-
 
 noncomputable def frameAmbientBasisPlaneHomeomorph
     (A : AbstractSimplicialComplex ι) (V : Submodule ℝ E)

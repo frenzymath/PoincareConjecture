@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.UniformScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 theorem abs_sub_scalar_sup_le {X : Type*} [Nonempty X] (f g : X → ℝ)
     (hg : BddAbove (range g)) (ε : ℝ) (hfg : ∀ x, |f x - g x| ≤ ε) :
@@ -56,8 +43,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem eventually_scalar_suprema_close_on_subsets
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     {A : Set (H.regularRegion P04)} (hA : IsCompact A) {ε : ℝ} (hε : 0 < ε) :
@@ -83,8 +68,6 @@ theorem eventually_scalar_suprema_close_on_subsets
     hSbounded (ε / 2) (fun x => by
       simpa only [Real.dist_eq, abs_sub_comm] using (ht x (hSA x.property)).le)
   exact h.trans_lt (by linarith)
-
-
 
 theorem tendsto_scalar_sup_on_captured_subset
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

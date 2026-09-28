@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureRicciDerivative
 import PoincareConjecture.Proofs.M03.CurvatureSecondBianchi
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 

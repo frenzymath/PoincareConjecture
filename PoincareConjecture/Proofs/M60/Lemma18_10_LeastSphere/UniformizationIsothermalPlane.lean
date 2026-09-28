@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothermalMetric
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,9 +45,6 @@ private theorem conjugateCoordinateLinear_invertible (g : RiemannianMetric 2 Pla
     by_contra hne
     exact (g.pos x v hne).ne' he
   exact ⟨(LinearEquiv.ofInjectiveEndo L.toLinearMap hinj).toContinuousLinearEquiv, rfl⟩
-
-
-
 
 theorem exists_isothermal_coordinates_of_harmonic
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)

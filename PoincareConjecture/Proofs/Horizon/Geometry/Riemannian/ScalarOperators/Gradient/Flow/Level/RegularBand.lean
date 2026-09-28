@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Manifold.Accumulation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactHessian
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter PoincareConjecture
@@ -40,8 +32,6 @@ theorem exists_gradient_lower_bound_on_compact_regular_set
   · exact ⟨1, zero_lt_one, by simp [hKe]⟩
   · obtain ⟨x, hx, hmin⟩ := hK.exists_isMinOn hKn hnorm.continuousOn
     exact ⟨g.tangentNorm x (D.gradient f x), hpos x hx, hmin⟩
-
-
 
 theorem exists_normalizedGradient_flow_on_compact_regular_band
     (D : LeviCivitaData g) {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

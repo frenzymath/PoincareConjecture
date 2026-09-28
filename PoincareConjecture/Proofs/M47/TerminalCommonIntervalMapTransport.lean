@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCrossTail
 import PoincareConjecture.Proofs.M47.TerminalGermsUniverseMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v w
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_control_reindex
     {M : Type u} [TopologicalSpace M]
@@ -35,8 +25,6 @@ theorem terminalCommonInterval_control_reindex
       (fun n => e (sigma n)) := by
   intro K hK lambda hlambda hlambda_lt
   exact hsigma.eventually (hc K hK lambda hlambda hlambda_lt)
-
-
 
 theorem terminalCommonInterval_control_diffeomorph
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

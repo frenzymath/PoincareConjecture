@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RetainedComponents
 import PoincareConjecture.Proofs.M38.ComponentBoundaryIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,18 +18,14 @@ namespace EventCapCoordinates
 
 variable {i : Fin (F.event T hT).cap_count} (P : EventCapCoordinates F T hT i)
 
-
 noncomputable def retainedAttachmentPoint : eventRetainedInteriorOpen F T hT :=
   ⟨P.collar (capUnitDirection (0 : StandardCapSpace), -(1 / 2)),
     P.negative_interior ⟨(capUnitDirection (0 : StandardCapSpace), -(1 / 2)),
       by norm_num, rfl⟩⟩
 
-
 theorem retainedAttachmentPoint_negative : P.retainedAttachmentPoint.val ∈
     P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 0) :=
   ⟨(capUnitDirection (0 : StandardCapSpace), -(1 / 2)), by norm_num, rfl⟩
-
-
 
 theorem retainedAttachmentPoint_image :
     (F.event T hT).retention.map P.retainedAttachmentPoint.val =
@@ -50,7 +38,6 @@ theorem retainedAttachmentPoint_image :
     P.ball.map ((3 / 2 : ℝ) • (capUnitDirection (0 : StandardCapSpace)).val)
   norm_num
 
-
 theorem negative_collar_connected :
     IsConnected (P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 0)) := by
   let : ConnectedSpace UnitTwoSphere := isConnected_iff_connectedSpace.mp
@@ -58,8 +45,6 @@ theorem negative_collar_connected :
   apply (isConnected_univ.prod (isConnected_Ioo neg_one_lt_zero)).image
   exact P.collarChart.continuousOn_toFun.mono
     (fun z hz => ⟨hz.1, hz.2.1, hz.2.2.trans zero_lt_one⟩)
-
-
 
 theorem collar_retained_inter :
     (P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) ∩
@@ -88,8 +73,6 @@ theorem collar_retained_inter :
       fun z hz => ⟨hz.1, hz.2.1, hz.2.2.trans zero_lt_one⟩
     exact ⟨Set.image_mono hsub hy, P.negative_interior hy⟩
 
-
-
 theorem central_mem_closure_negative (z : UnitTwoSphere) :
     P.collar (z, 0) ∈ closure (P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 0)) := by
   let V : Set RoundCylinderSpace := Set.univ ×ˢ Set.Ioo (-(1 / 2) : ℝ) 0
@@ -110,8 +93,6 @@ theorem central_mem_closure_negative (z : UnitTwoSphere) :
   intro p hp
   exact ⟨hp.1, by linarith [hp.2.1], hp.2.2⟩
 
-
-
 theorem negative_collar_subset_retained_component (x : eventRetainedInteriorOpen F T hT)
     (hlabel : ConnectedComponents.mk P.retainedAttachmentPoint = ConnectedComponents.mk x) :
     P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 0) ⊆
@@ -124,8 +105,6 @@ theorem negative_collar_subset_retained_component (x : eventRetainedInteriorOpen
   rw [connectedComponentIn_eq hp]
   exact P.negative_collar_connected.isPreconnected.subset_connectedComponentIn
     P.retainedAttachmentPoint_negative P.negative_interior
-
-
 
 theorem central_mem_retained_component_closure_iff
     (x : eventRetainedInteriorOpen F T hT) (z : UnitTwoSphere) :
@@ -160,9 +139,6 @@ theorem central_mem_retained_component_closure_iff
 end EventCapCoordinates
 
 variable (F T hT) (P : ∀ i, EventCapCoordinates F T hT i)
-
-
-
 
 theorem event_retained_component_frontier (x : eventRetainedInteriorOpen F T hT) :
     frontier (connectedComponentIn (interior (F.event T hT).retained_pre) x.val) =
@@ -205,7 +181,6 @@ theorem event_retained_component_frontier (x : eventRetainedInteriorOpen F T hT)
     subst s
     exact ((P i).central_mem_retained_component_closure_iff x z).mpr hi
 
-
 theorem event_retained_component_interior_closure (x : eventRetainedInteriorOpen F T hT) :
     interior (closure (connectedComponentIn (interior (F.event T hT).retained_pre) x.val)) =
       connectedComponentIn (interior (F.event T hT).retained_pre) x.val := by
@@ -213,8 +188,6 @@ theorem event_retained_component_interior_closure (x : eventRetainedInteriorOpen
     ChartedSpace.locallyConnectedSpace StandardCapSpace _
   apply componentIn_interior_closure isOpen_interior x.property
   rw [event_retained_closure_interior]
-
-
 
 theorem event_retained_closed_component_frontier (x : eventRetainedInteriorOpen F T hT) :
     frontier (closure (connectedComponentIn (interior (F.event T hT).retained_pre) x.val)) =
@@ -227,8 +200,6 @@ theorem event_retained_closed_component_frontier (x : eventRetainedInteriorOpen 
   rw [componentIn_frontier_closure isOpen_interior x.property
     (by rw [event_retained_closure_interior])]
   exact event_retained_component_frontier F T hT P x
-
-
 
 theorem event_retained_component_boundary_unique (x : eventRetainedInteriorOpen F T hT)
     (y : (F.slice (F.event T hT).tMinus).carrier)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.FamilyGoodGridAssembly
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.FamilyProfileTolerance
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,11 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65Family_pointwise_terminal_alternative
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u})

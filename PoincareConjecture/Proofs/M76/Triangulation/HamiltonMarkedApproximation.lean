@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTorusRigidity
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonRelativePLApproximation
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M76
 
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   (L : Submodule ℤ (κ → ℝ))
-
-
 
 theorem isCompact_latticeHandleDomain [DiscreteTopology L] [IsZLattice ℝ L] :
     IsCompact (latticeHandleDomain ι κ L) := by
@@ -41,8 +30,6 @@ theorem isCompact_latticeHandleDomain [DiscreteTopology L] [IsZLattice ℝ L] :
 
 omit [Fintype κ] in
 
-
-
 theorem latticeHandleDomainEquiv_preimage_boundary :
     (latticeHandleDomainEquiv ι κ L) ⁻¹' latticeHandleBoundary ι κ L =
       (Subtype.val : latticeHandleDomain ι κ L → LatticeHandleAmbient ι κ L) ⁻¹'
@@ -55,9 +42,6 @@ theorem latticeHandleDomainEquiv_preimage_boundary :
   rw [mem_preimage, mem_preimage, hfront]
   change (‖x.val.1‖ = 1 ∧ True) ↔ x.val.1 ∈ sphere (0 : ι → ℝ) 1 ∧ True
   simp only [mem_sphere, dist_zero_right]
-
-
-
 
 theorem exists_hamilton_marked_relative_approximation
     [DiscreteTopology L] [IsZLattice ℝ L]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.PhysicalClock
 import PoincareConjecture.Proofs.M30.Generalized.TerminalMetric
 import PoincareConjecture.Proofs.M13.Volume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -95,8 +86,6 @@ private theorem physical_center_volume_bound
     exact (E.curvature_bound (Q * s) _ y (hball_source hy)).trans hscale
   exact hnon r hr hcutoff hinterval etest hzero hcurvature
 
-
-
 theorem terminal_volume_at_point_of_noncollapsedCylinder
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}
     {A T B eta kappa r₀ rho : ℝ}
@@ -117,7 +106,6 @@ theorem terminal_volume_at_point_of_noncollapsedCylinder
     simpa only [N.zero_identity hzero x hx] using N.noncollapsed 0 hzero x hx
   exact physical_center_volume_bound N.toControlledBlowupCylinder hnon
     hrho hT hB hcutoff hball_source
-
 
 theorem scaled_terminal_volume_at_point_of_noncollapsedCylinder
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}

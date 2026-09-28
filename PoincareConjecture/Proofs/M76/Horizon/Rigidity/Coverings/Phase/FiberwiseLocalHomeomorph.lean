@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.Mathlib.Fiberwise
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.FiberwisePhaseMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -37,9 +28,6 @@ theorem hamiltonZeroAmbientMap_isLocalHomeomorphOn_of_fiberwise_covering
     IsLocalHomeomorphOn (hamiltonZeroAmbientMap psi) (c '' (S ×ˢ Ioo (-r) r)) :=
   PhaseCovering.isLocalHomeomorphOn_of_fiberwise_covering p Q0 c hi hopen
     (hamiltonZeroAmbientMap psi) g hg theta hsigma hproduct
-
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_covering_phase_adjustment
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

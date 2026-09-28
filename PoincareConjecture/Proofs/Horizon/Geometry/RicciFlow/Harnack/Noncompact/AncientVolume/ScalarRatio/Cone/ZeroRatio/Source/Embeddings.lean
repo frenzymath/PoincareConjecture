@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Transitions
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Finite
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem normal_chart_restriction_geometry
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)] [∀ k, T3Space (M k)]
@@ -82,10 +71,6 @@ theorem normal_chart_restriction_geometry
   · intro k i
     let : Nonempty (U i) := ⟨⟨0, Metric.mem_ball_self hr⟩⟩
     exact isLocalDiffeomorph_normal_chart_restrict (Φ k i) (U i) (hU i) (hs k i)
-
-
-
-
 
 theorem exists_local_source_models_of_normal_chart_limits
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)] [∀ k, T3Space (M k)]

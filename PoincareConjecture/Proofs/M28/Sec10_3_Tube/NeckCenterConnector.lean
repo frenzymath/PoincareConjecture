@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 import PoincareConjecture.Proofs.M09.SpeedDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem exists_neck_center_connector (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.carrier) :

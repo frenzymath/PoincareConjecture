@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.SmallPerturbationFamily
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -18,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_small_derivative_germ_extension {U : Set E} (hU : IsOpen U)
     (h0 : (0 : E) ∈ U) {g : E → E} (hg : ContDiffOn ℝ ∞ g U)
@@ -144,9 +133,6 @@ theorem exists_small_derivative_germ_extension {U : Set E} (hU : IsOpen U)
   · intro x hx
     have hz : χ x = 0 := notMem_support.mp (fun hs => hx (hχsupp (subset_tsupport χ hs)))
     simp only [P, hz, zero_smul, add_zero]
-
-
-
 
 theorem exists_compact_germ_isotopy {U : Set E} (hU : IsOpen U) (h0 : (0 : E) ∈ U)
     {g : E → E} (hg : ContDiffOn ℝ ∞ g U) (hg0 : g 0 = 0)

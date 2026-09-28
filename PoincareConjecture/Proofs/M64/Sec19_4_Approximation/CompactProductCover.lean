@@ -1,17 +1,5 @@
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +8,6 @@ open scoped Topology
 universe u v
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_compact_product_cover_vertical_radius
     {X : Type u} {Y : Type v} [TopologicalSpace X] [CompactSpace X]

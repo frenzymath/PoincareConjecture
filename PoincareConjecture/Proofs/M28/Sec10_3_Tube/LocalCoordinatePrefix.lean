@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCompatibleCoordinates
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalGraphRegions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CylinderPasting
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +13,6 @@ universe u
 namespace PoincareConjecture.EpsilonNeck
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 theorem exists_prefix_cylinder_with_retained_half_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -204,8 +188,6 @@ theorem exists_prefix_cylinder_with_retained_half_m28 :
     rw [show (fun q : UnitTwoSphere => (D (q, 0) : M)) =
       (fun q => A.coordinate_map (q, f q)) from funext hzero]
     exact hrange
-
-
 
 theorem exists_prefix_cylinder_of_partition_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ChartSegment
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Manifold
@@ -97,12 +86,9 @@ theorem volumeMeasure_isLocallyFinite (g : RiemannianMetric n M) :
 
 attribute [instance] volumeMeasure_isLocallyFinite
 
-
 theorem volumeMeasure_lt_top_of_isCompact (g : RiemannianMetric n M)
     {s : Set M} (hs : IsCompact s) : volumeMeasure g s < ⊤ :=
   hs.measure_lt_top
-
-
 
 theorem integrable_volumeMeasure_of_hasCompactSupport (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : Continuous f) (hcompact : HasCompactSupport f) :

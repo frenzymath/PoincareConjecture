@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SquareAnn
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -152,8 +145,6 @@ theorem exists_side_complex (i : Fin 4) :
   have hmap := (J.affineOnFaces_affine (sideMap i)).finitePiecewiseAffineOn hJ
   obtain ⟨C, hC, hCs⟩ := hmap.exists_finite_triangulation_image
   exact ⟨C, hC, hCs.trans (congrArg (fun U => sideMap i '' U) hJrect)⟩
-
-
 
 theorem face_card_le_three (K : SimplicialComplex ℝ Ambient)
     (hK : K.space ⊆ carrier) : ∀ s ∈ K.faces, s.card ≤ 3 := by

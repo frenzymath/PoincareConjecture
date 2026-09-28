@@ -1,24 +1,12 @@
 import Mathlib.Topology.FiberBundle.Basic
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem fiberBundle_totalSpace_t2Space {B : Type*} (F : Type*) (E : B → Type*)
     [TopologicalSpace B] [TopologicalSpace F] [∀ b, TopologicalSpace (E b)]

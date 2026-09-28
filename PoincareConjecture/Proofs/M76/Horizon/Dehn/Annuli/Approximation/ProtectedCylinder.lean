@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.General.ControlledRelativeFinitePLApproximation
 import PoincareConjecture.Proofs.M76.RelativeApproximation.Mathlib.CompactRelativeNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -24,9 +12,6 @@ namespace PoincareConjecture.M76.Dehn.ProtectedAnnulus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_finitePL_cylinder
     (h : OpenPartialHomeomorph (V1 × V2) V3)

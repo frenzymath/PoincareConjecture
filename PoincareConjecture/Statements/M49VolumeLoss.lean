@@ -1,41 +1,5 @@
 import PoincareConjecture.Definitions.M49VolumeLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -45,7 +9,6 @@ universe u
 namespace PoincareConjecture
 
 structure RepairedVolumeLossTheory : Prop where
-
 
   calibrated : ∀ (g₀ : StandardInitialMetric) (K : MetricSurgeryConstants),
     ∃ deltaUpper : ℝ, 0 < deltaUpper ∧ deltaUpper ≤ K.delta₀ ∧

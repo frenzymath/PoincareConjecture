@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyApprox
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyFourier
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +10,6 @@ open scoped Topology SchwartzMap ContDiff InnerProductSpace
 
 namespace PoincareConjecture.M65Branch
 
-
-
-
 private theorem integral_test_mul_L2_eq (φ : ℂ → ℂ) (hφ : MemLp φ 2 volume)
     (d : Lp ℂ 2 (volume : Measure ℂ)) :
     (∫ z, φ z * d z) = inner ℂ (star (hφ.toLp φ)) d := by
@@ -32,9 +17,6 @@ private theorem integral_test_mul_L2_eq (φ : ℂ → ℂ) (hφ : MemLp φ 2 vol
   apply integral_congr_ae
   filter_upwards [Lp.coeFn_star (hφ.toLp φ), hφ.coeFn_toLp] with z hz hφz
   simp only [hz, Pi.star_apply, hφz, RCLike.inner_apply', starRingEnd_apply, star_star]
-
-
-
 
 private theorem weak_derivative_of_cauchy_approximation
     (f : ℕ → 𝓢(ℂ, ℂ)) (hs : ∀ n, HasCompactSupport (f n : ℂ → ℂ))
@@ -89,10 +71,6 @@ private theorem weak_derivative_of_cauchy_approximation
         (fun z _ => (hC n).differentiable one_ne_zero z)
   exact tendsto_nhds_unique hleft (hright.neg.congr fun n => (hid n).symm)
 
-
-
-
-
 theorem cauchyOperator_weak_derivatives_C1 {h : ℂ → ℂ} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : MemLp h 2 volume)
     (hs : Function.support h ⊆ Metric.closedBall (0 : ℂ) R)
@@ -127,9 +105,6 @@ theorem cauchyOperator_weak_derivatives_C1 {h : ℂ → ℂ} {R B : ℝ}
       Lp.coeFn_smul I (beurlingL2 (un n) - un n),
       Lp.coeFn_sub (beurlingL2 (un n)) (un n), (f n).coeFn_toLp 2 volume] with z hz hm hs hf
     simpa only [hm, Pi.smul_apply, hs, Pi.sub_apply, smul_eq_mul, un, hf] using hz
-
-
-
 
 theorem cauchyOperator_weak_derivatives {h : ℂ → ℂ} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : MemLp h 2 volume)

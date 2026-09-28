@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceSmooth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SmoothLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Gluing.Smooth
-
-
-
-
-
-
-

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventSlices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,10 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
-
 
 theorem canonical_region
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u}) (t : ℝ)
@@ -80,9 +67,6 @@ theorem canonical_region
       cap_epsilon := fun _ hK => hK.1
       cap_constant_bound := fun _ hK => hK.2 }
   exact ⟨H, rfl, rfl, rfl, rfl, N.a21 (F.metric t) H hepsilon⟩
-
-
-
 
 def roundSpaceform {S : GeneralizedSliceCarrier.{u}}
     {g : RiemannianMetric 3 S.carrier} {epsilon : ℝ}

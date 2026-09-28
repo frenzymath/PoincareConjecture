@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialNormJets
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem even_radial_weighted_jets {f : ℝ → ℝ} {N : ℕ} (hf : ContDiff ℝ ∞ f)
     (he : Function.Even f)
@@ -127,8 +116,6 @@ theorem even_radial_weighted_jets {f : ℝ → ℝ} {N : ℕ} (hf : ContDiff ℝ
       ((hnear x hmem).trans (le_max_left Bnear 0)) (norm_nonneg _)
       (by positivity : 0 ≤ (2 : ℝ) ^ N)
     exact hh.trans (le_add_of_nonneg_left hCfar)
-
-
 
 theorem even_radial_rapid_jets {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (he : Function.Even f)

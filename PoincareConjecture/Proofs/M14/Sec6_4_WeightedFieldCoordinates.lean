@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_FieldGaugeCover
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoordinates
 import PoincareConjecture.Proofs.M14.Mathlib.RelativeCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +22,6 @@ private theorem horizontal_value_of_heq {q r : G.Point} (h : q = r)
     {v : G.Horizontal q} {w : G.Horizontal r} (hv : HEq v w) : v.val = w.val := by
   cases h
   exact congrArg Subtype.val (eq_of_heq hv)
-
-
-
 
 theorem exists_weightedFieldGauge_coordinates (D : SquareFieldGaugePatch R)
     (Y : ∀ s, G.Horizontal (R.curve s))

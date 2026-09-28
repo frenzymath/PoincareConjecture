@@ -1,15 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Frontier
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -24,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {r : M → ℝ} {p : M} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → M} (B : VertexCapFaces P x)
-
 
 theorem carrier_diff_interior_union_subset_chord (i : Bool × Bool) :
     (B.face i).carrier \ interior (⋃ j, (B.face j).carrier) ⊆
@@ -85,7 +73,6 @@ theorem chord_segment_subset_chart_target (i : Bool × Bool) :
 
 omit [T2Space M] in
 
-
 theorem chart_chord_image (i : Bool × Bool) :
     chartAt (EuclideanSpace ℝ (Fin 2)) (x i) ''
       (((B.face i).boundary 0).map '' Icc (0 : ℝ) 1) =
@@ -119,7 +106,6 @@ theorem chord_chart_endpoints_ne (i : Bool × Bool) :
 
 omit [T2Space M] in
 
-
 theorem chart_chord_subset_affine_line (i : Bool × Bool) :
     chartAt (EuclideanSpace ℝ (Fin 2)) (x i) ''
       (((B.face i).boundary 0).map '' Icc (0 : ℝ) 1) ⊆
@@ -143,9 +129,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (B : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
 
-
-
-
 theorem frontier_vertexCapsInRegion_inter_cap_subset
     (hregion : ∀ p i, ((B p).face i).carrier ⊆ closure (connectedComponentIn
       (chartDiskBoundaryUnion D.centers D.radius)ᶜ (region p i)))
@@ -167,8 +150,6 @@ theorem frontier_vertexCapsInRegion_inter_cap_subset
   exact interior_mono (iUnion_subset (fun j => subset_iUnion
     (fun a : D.vertices × (Bool × Bool) => ((B a.1).face a.2).carrier) (p, j))) hlocal
 
-
-
 theorem inter_cap_subset_chord_of_disjoint_vertexCapsInRegion_interior
     (hregion : ∀ p i, ((B p).face i).carrier ⊆ closure (connectedComponentIn
       (chartDiskBoundaryUnion D.centers D.radius)ᶜ (region p i)))
@@ -184,8 +165,6 @@ theorem inter_cap_subset_chord_of_disjoint_vertexCapsInRegion_interior
   exact (D.frontier_vertexCapsInRegion_inter_cap_subset B region hregion R p i
     ⟨hfront, hcap⟩).resolve_left (fun h => disjoint_left.mp hK hqA h)
 
-
-
 theorem inter_cap_subset_chord_of_disjoint_collar_interior
     (hregion : ∀ p i, ((B p).face i).carrier ⊆ closure (connectedComponentIn
       (chartDiskBoundaryUnion D.centers D.radius)ᶜ (region p i)))
@@ -196,8 +175,6 @@ theorem inter_cap_subset_chord_of_disjoint_collar_interior
     A ∩ ((B p).face i).carrier ⊆ (((B p).face i).boundary 0).map '' Icc (0 : ℝ) 1 :=
   D.inter_cap_subset_chord_of_disjoint_vertexCapsInRegion_interior B region hregion hassign
     (hA.mono_right (interior_mono hC)) hK
-
-
 
 theorem chart_inter_cap_subset_segment_of_disjoint_collar_interior
     (hregion : ∀ p i, ((B p).face i).carrier ⊆ closure (connectedComponentIn

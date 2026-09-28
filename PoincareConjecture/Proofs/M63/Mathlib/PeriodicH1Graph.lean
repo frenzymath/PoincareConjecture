@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Coordinates
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH2JetCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
@@ -17,16 +9,10 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
 
-
-
-
 noncomputable def periodicH1DerivativeLp :
     lp (fun _ : ℤ => ℂ) 2 →L[ℂ] Lp ℂ 2 (@haarAddCircle L _) :=
   fourierBasis.repr.symm.toContinuousLinearEquiv.toContinuousLinearMap.comp
     (periodicH2JetCoordinates (L := L) 1 (by omega))
-
-
-
 
 noncomputable def periodicH1GraphReconstruct :
     (Lp ℂ 2 (@haarAddCircle L _) × Lp ℂ 2 (@haarAddCircle L _)) →L[ℂ]
@@ -37,9 +23,6 @@ noncomputable def periodicH1GraphReconstruct :
   ((periodicH2JetCoordinates (L := L) 1 (by omega)).comp
     fourierBasis.repr.toContinuousLinearEquiv.toContinuousLinearMap).comp
       (ContinuousLinearMap.snd ℂ _ _)
-
-
-
 
 theorem periodicH1Graph_spec :
     (∀ f g : Lp ℂ 2 (@haarAddCircle L _),

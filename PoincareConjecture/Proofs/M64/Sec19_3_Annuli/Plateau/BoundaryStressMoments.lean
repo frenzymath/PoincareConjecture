@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakFluxPrimitive
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,14 +14,8 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
-
 def m64HorizontalMoment (theta : ℝ → ℝ) (u : LoopPlane → ℝ) (s : ℝ) : ℝ :=
   ∫ x in Icc (0 : ℝ) curvePeriod, theta x * u (annulusPoint x s)
-
-
-
 
 theorem m64Annulus_continuous_mul_integrable
     {f c : LoopPlane → ℝ} (hf : Integrable f mu) (hc : Continuous c) :
@@ -36,9 +24,6 @@ theorem m64Annulus_continuous_mul_integrable
   exact hf.bdd_mul hc.aestronglyMeasurable (show ∀ᵐ p ∂mu, ‖c p‖ ≤ C from by
     filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hp
     exact hC p (interior_subset hp))
-
-
-
 
 theorem m64HorizontalMoment_integrable
     {theta : ℝ → ℝ} {u : LoopPlane → ℝ} (htheta : Continuous theta)
@@ -49,9 +34,6 @@ theorem m64HorizontalMoment_integrable
   have hi := m64AnnulusPoint_measurePreserving.integrable_comp_of_integrable
     (m64Annulus_continuous_mul_integrable hu hc)
   exact hi.integral_prod_right
-
-
-
 
 theorem m64HorizontalMoment_pairing
     {theta rho : ℝ → ℝ} {u : LoopPlane → ℝ}
@@ -70,9 +52,6 @@ theorem m64HorizontalMoment_pairing
   rw [← integral_const_mul]
   apply integral_congr_ae
   exact Eventually.of_forall fun x => by ring
-
-
-
 
 theorem m64LocalizedStress_zero_boundary_moment
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)

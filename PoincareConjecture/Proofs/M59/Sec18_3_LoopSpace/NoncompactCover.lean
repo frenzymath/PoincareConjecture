@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.IntegralTopSupport
 import PoincareConjecture.Proofs.M02.Topology.IntegralThreeManifoldTop
 import PoincareConjecture.Proofs.M02.HurewiczInjectivity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +16,6 @@ open M02.Topology
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X]
   [ChartedSpace (EuclideanSpace Real (Fin 3)) X] [SimplyConnectedSpace X]
-
-
 
 theorem integralNoncompactSimplyConnectedThreeHomology_isZero
     (x0 : X) (hnoncompact : ¬IsCompact (univ : Set X)) :
@@ -60,8 +46,6 @@ theorem integralNoncompactSimplyConnectedThreeHomology_isZero
     exact he
   exact ModuleCat.isZero_iff_subsingleton.mpr
     ⟨fun a b => (hzero a).trans (hzero b).symm⟩
-
-
 
 theorem noncompactSimplyConnectedThree_piThree_subsingleton
     (x : X) (hnoncompact : ¬IsCompact (univ : Set X))

@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.InducedFo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
-
-
-
-
-
-
-

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Geometry
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Matching
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -31,9 +23,6 @@ open SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_terminal_nested_saddle_geometry_with_matched_planar_chart
     {f : S2 → E3} (M : SphereMorseReduction f)
@@ -178,8 +167,6 @@ theorem exists_terminal_nested_saddle_geometry_with_matched_planar_chart
     rw [hlower, hupper, hseed] at hi
     fin_cases i <;> norm_num [q] at hi <;> nlinarith [hi.1, hi.2]
 
-
-
 theorem exists_terminal_nested_saddle_geometry_with_planar_chart
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -211,8 +198,6 @@ theorem exists_terminal_nested_saddle_geometry_with_planar_chart
   exact ⟨d, hm, hz, hs, a, ε, ha, hε, hsmall, hsource, R, hR,
     fun x hx t ht => (hlevel x hx t ht).1⟩
 
-
-
 theorem exists_terminal_nested_saddle_geometry_with_matching_square
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -235,7 +220,6 @@ theorem exists_terminal_nested_saddle_geometry_with_matching_square
   obtain ⟨d, hmodel, hzero, hsquare, _⟩ := exists_terminal_nested_saddle_geometry_with_planar_chart
     M hg P hP hcaps hp hc e he0 hep he hei hform
   exact ⟨d, hmodel, hzero, hsquare⟩
-
 
 theorem exists_terminal_nested_saddle_geometry
     {f : S2 → E3} (M : SphereMorseReduction f)

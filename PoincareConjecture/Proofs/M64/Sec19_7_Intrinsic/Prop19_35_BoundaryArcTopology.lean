@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanRegion
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,12 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_arc_open_in_real_boundary
     {X : Type*} [TopologicalSpace X]
@@ -75,12 +57,6 @@ theorem m64Intrinsic_arc_open_in_real_boundary
   exact ⟨s, (hlocal (Ioo_subset_Icc_self hs)).1,
     (C.right_inv (hlocal (Ioo_subset_Icc_self hs)).2).symm⟩
 
-
-
-
-
-
-
 theorem m64Intrinsic_arc_regular_closed_in_real_boundary
     {X : Type*} [TopologicalSpace X] [T2Space X]
     (hcharts : ∀ x : X, ∃ C : OpenPartialHomeomorph ℝ X, x ∈ C.target)
@@ -105,13 +81,6 @@ theorem m64Intrinsic_arc_regular_closed_in_real_boundary
     rcases eq_or_lt_of_le ht.2 with h | hb
     · exact Or.inr (congrArg f h)
     exact False.elim (hx.2 (hint ⟨t, ⟨ha, hb⟩, rfl⟩))
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_arc_initial_endpoint_not_interior
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -179,11 +148,6 @@ theorem m64Intrinsic_arc_initial_endpoint_not_interior
     have h := interior_mono hsubset (hopen.interior_eq.symm ▸ hgO)
     simp only [interior_Iic, mem_Iio, lt_self_iff_false] at h
 
-
-
-
-
-
 theorem m64Intrinsic_arc_frontier_eq_endpoints
     {X : Type*} [TopologicalSpace X] [T2Space X]
     (hcharts : ∀ x : X, ∃ C : OpenPartialHomeomorph ℝ X, x ∈ C.target)
@@ -211,12 +175,6 @@ theorem m64Intrinsic_arc_frontier_eq_endpoints
   rintro x (rfl | rfl)
   · exact ⟨subset_closure ⟨a, ⟨le_rfl, hab.le⟩, rfl⟩, ha⟩
   · exact ⟨subset_closure ⟨b, ⟨hab.le, le_rfl⟩, rfl⟩, hb⟩
-
-
-
-
-
-
 
 theorem m64Intrinsic_arc_interior_eq_open_side
     {X : Type*} [TopologicalSpace X] [T2Space X]

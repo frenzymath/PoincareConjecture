@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeGain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,7 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 noncomputable def slabSourceExtension (T : ℝ) (f : ℝ → V → F) (s : ℝ) (x : V) : F :=
   if s ∈ Icc 0 T then f s x else 0
@@ -33,7 +22,6 @@ theorem slabSourceExtension_of_mem {T s : ℝ} (hs : s ∈ Icc 0 T)
   simp only [slabSourceExtension, if_pos hs]
 
 omit [NormedSpace ℝ F] in
-
 
 theorem slabSourceExtension_stronglyMeasurable {T : ℝ} {f : ℝ → V → F}
     (hf : StronglyMeasurable (fun p : Icc (0 : ℝ) T × V => f p.1.1 p.2)) :
@@ -51,8 +39,6 @@ theorem slabSourceExtension_stronglyMeasurable {T : ℝ} {f : ℝ → V → F}
   simp only [Set.mem_ofPred_eq]
   split_ifs <;> rfl
 
-
-
 theorem heatDuhamel_slabSourceExtension {T t : ℝ} (ht : t ∈ Icc 0 T)
     (f : ℝ → V → F) : heatDuhamel (slabSourceExtension T f) t = heatDuhamel f t := by
   funext x
@@ -64,12 +50,10 @@ theorem heatDuhamel_slabSourceExtension {T t : ℝ} (ht : t ∈ Icc 0 T)
     heatAverage (t - s) (f s) x
   rw [slabSourceExtension_of_mem ⟨hs.1, hs.2.trans ht.2⟩]
 
-
 theorem fderiv_heatDuhamel_slabSourceExtension {T t : ℝ} (ht : t ∈ Icc 0 T)
     (f : ℝ → V → F) :
     fderiv ℝ (heatDuhamel (slabSourceExtension T f) t) = fderiv ℝ (heatDuhamel f t) := by
   rw [heatDuhamel_slabSourceExtension ht]
-
 
 theorem heatDuhamelGradient_slabSourceExtension {T t : ℝ} (ht : t ∈ Icc 0 T)
     (f : ℝ → V → F) :

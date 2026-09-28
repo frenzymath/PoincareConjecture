@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Normalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +9,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [CompactSpace M] {g : RiemannianMetric 2 M}
-
-
 
 theorem compactRoundSurface_sectionalCurvature_of_soliton
     (D : LeviCivitaData g) {φ : M → ℝ} {lambda : ℝ}
@@ -34,7 +23,6 @@ theorem compactRoundSurface_sectionalCurvature_of_soliton
     D.scalar_eq_twice_scale_of_compact_round_soliton hφ hsol hround]
   ring
 
-
 theorem compactRoundSurface_ricci_of_soliton
     (D : LeviCivitaData g) {φ : M → ℝ} {lambda : ℝ}
     (hφ : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 φ)
@@ -46,7 +34,6 @@ theorem compactRoundSurface_ricci_of_soliton
   rw [D.ricci_eq_half_scalarCurvature_mul_inner,
     D.scalar_eq_twice_scale_of_compact_round_soliton hφ hsol hround]
   ring
-
 
 theorem compactRoundSurface_hessian_eq_zero_of_soliton
     (D : LeviCivitaData g) {φ : M → ℝ} {lambda : ℝ}

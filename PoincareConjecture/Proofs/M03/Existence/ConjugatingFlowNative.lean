@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckGaugeSign
 import PoincareConjecture.Proofs.M03.Existence.FamilyEquation
 import PoincareConjecture.Proofs.M03.Existence.PullbackMetricDerivativeNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -30,10 +19,6 @@ variable {n : ℕ} {M : Type u}
   [IsManifold (𝓡 n) ∞ M] [CompactSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem hasDerivWithinAt_pullbackMetric_of_jointFDeriv_eq
     (g : ℝ → RiemannianMetric n M)

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 universe u v
-
-
 
 def smoothOpenPartialHomeomorph {n : ℕ} {M : Type u} {N : Type v}
     [TopologicalSpace M] [TopologicalSpace N]

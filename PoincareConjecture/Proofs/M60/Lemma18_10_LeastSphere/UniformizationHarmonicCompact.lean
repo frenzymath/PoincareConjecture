@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T3Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
-
-
 theorem metricComplete_compact_surface (g : RiemannianMetric 2 M) : MetricComplete g := by
   unfold MetricComplete
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 2) : M → Type _) :=
@@ -40,7 +28,6 @@ theorem metricComplete_compact_surface (g : RiemannianMetric 2 M) : MetricComple
   exact complete_of_compact
 
 omit [T3Space M] in
-
 
 theorem exists_sectionalCurvature_bound_compact_surface
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g) :
@@ -60,9 +47,6 @@ theorem exists_sectionalCurvature_bound_compact_surface
     calc
       |D.scalarCurvature x| / 2 ≤ |C| / 2 := div_le_div_of_nonneg_right hb (by norm_num)
       _ ≤ |C| + 1 := by linarith [abs_nonneg C]
-
-
-
 
 theorem exists_harmonic_lift_compact_surface
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g) (p : M) :

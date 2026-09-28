@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,7 +42,6 @@ private theorem axial_mvfderiv {x : M} (hx : x ∈ N.carrier)
     ((contMDiff_snd (n := ∞)).mdifferentiableAt (by simp)) hi, mfderiv_snd]
   rfl
 
-
 theorem axial_mvfderiv_bound {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) :
     N.scale * Real.sqrt (1 - N.epsilon) *
@@ -81,7 +72,6 @@ theorem axial_mvfderiv_bound {x : M} (hx : x ∈ N.carrier)
         Real.sqrt ((N.scale * Real.sqrt (1 - N.epsilon) * |w.2|) ^ 2) :=
       (Real.sqrt_sq hlo).symm
     _ ≤ Real.sqrt (g.inner x v v) := Real.sqrt_le_sqrt (heq.trans_le hsq)
-
 
 theorem axial_gradient_norm_le (D : LeviCivitaData g) {x : M} (hx : x ∈ N.carrier) :
     g.tangentNorm x (D.gradient (fun y => (N.coordinate_inverse y).2) x) ≤

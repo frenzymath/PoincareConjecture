@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Sections.FiniteAffineSectionBound
 import Mathlib.Topology.MetricSpace.Contracting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

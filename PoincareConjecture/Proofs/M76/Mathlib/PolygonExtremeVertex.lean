@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteGenericHeight
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem affineIndependent_of_strict_height_peak {V E : Type*}
     [AddCommGroup V] [Module ℝ V] [AddTorsor V E]
@@ -62,9 +49,6 @@ private theorem rotate_twice_ne_self (i : Fin (n + 3)) :
   rw [Nat.mod_eq_of_lt (by omega)] at hval
   omega
 
-
-
-
 theorem adjacent_edgeSet_inter (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 3)) :
     P.edgeSet ℝ i ∩ P.edgeSet ℝ (finRotate (n + 3) i) = {P (finRotate (n + 3) i)} := by
@@ -87,9 +71,6 @@ theorem adjacent_edgeSet_inter (P : Polygon E (n + 3))
   · rintro x rfl
     exact ⟨right_mem_affineSegment ℝ _ _, left_mem_affineSegment ℝ _ _⟩
 
-
-
-
 theorem affineIndependent_at_strict_height_max (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
     (L : E →ᵃ[ℝ] ℝ) (i : Fin (n + 3))
@@ -104,9 +85,6 @@ theorem affineIndependent_at_strict_height_max (P : Polygon E (n + 3))
     (hmax _ (rotate_ne_self i))
   simpa only [edgeSet, Equiv.apply_symm_apply] using
     (P.adjacent_edgeSet_inter hP hinj ((finRotate (n + 3)).symm i)).subset
-
-
-
 
 theorem exists_nondegenerate_strict_max (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

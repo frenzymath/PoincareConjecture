@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Lineari
 import Mathlib.Analysis.InnerProductSpace.Completion
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -34,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def testFunctions (Ω : Set M) : Submodule ℝ (M → ℝ) where
   carrier := {f | ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f ∧
     HasCompactSupport f ∧ tsupport f ⊆ Ω}
@@ -47,7 +30,6 @@ def testFunctions (Ω : Set M) : Submodule ℝ (M → ℝ) where
     intro c f hf
     refine ⟨contMDiff_const.mul hf.1, hf.2.1.smul_left, ?_⟩
     exact (closure_mono (Function.support_const_smul_subset c f)).trans hf.2.2
-
 
 def EnergyTest (_D : LeviCivitaData g) (Ω : Set M) := ↥(testFunctions (n := n) Ω)
 
@@ -85,7 +67,6 @@ theorem EnergyTest.integrable_mul (f h : EnergyTest D Ω) :
 theorem EnergyTest.integrable_gradient (f h : EnergyTest D Ω) :
     Integrable (fun x => g.inner x (D.gradient f x) (D.gradient h x)) g.volumeMeasure :=
   D.integrable_inner_gradient f.smooth h.smooth f.hasCompactSupport
-
 
 def energyInner (f h : EnergyTest D Ω) : ℝ :=
   (∫ x, f x * h x ∂g.volumeMeasure) +
@@ -150,7 +131,6 @@ instance : InnerProductSpace ℝ (EnergyTest D Ω) := InnerProductSpace.ofCore _
 
 @[simp] theorem EnergyTest.inner_eq (f h : EnergyTest D Ω) :
     ⟪f, h⟫_ℝ = energyInner f h := rfl
-
 
 abbrev H1Zero (D : LeviCivitaData g) (Ω : Set M) := UniformSpace.Completion (EnergyTest D Ω)
 

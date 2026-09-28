@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroTraceApproximation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAbsorption
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +11,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
-
 
 theorem m64WeakBoundaryError_localization
     {m : ℕ} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}

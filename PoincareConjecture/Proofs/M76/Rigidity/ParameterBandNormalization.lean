@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBandCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,11 +12,9 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
 local notation "Io" => Ioo (-(1 / 4 : ℝ)) (1 / 4)
 
-
 noncomputable def originalPrescribedTimeScaling (a : ℝ) : E →ᴬ[ℝ] E :=
   (ContinuousLinearMap.fst ℝ V2 ℝ).toContinuousAffineMap.prod
     ((4 * a) • (ContinuousLinearMap.snd ℝ V2 ℝ).toContinuousAffineMap)
-
 
 theorem originalPrescribedTimeScaling_mapsTo {a : ℝ} (ha : 0 < a) :
     MapsTo (originalPrescribedTimeScaling a) (Q ×ˢ I) (Q ×ˢ Icc (-a) a) := by
@@ -32,8 +22,6 @@ theorem originalPrescribedTimeScaling_mapsTo {a : ℝ} (ha : 0 < a) :
   refine ⟨hz.1, ?_⟩
   change -a ≤ 4 * a * z.2 ∧ 4 * a * z.2 ≤ a
   constructor <;> nlinarith [hz.2.1, hz.2.2]
-
-
 
 theorem originalPrescribedTimeScaling_open_image {a : ℝ} (ha : 0 < a) :
     originalPrescribedTimeScaling a '' (Q ×ˢ Io) = Q ×ˢ Ioo (-a) a := by
@@ -52,8 +40,6 @@ theorem originalPrescribedTimeScaling_open_image {a : ℝ} (ha : 0 < a) :
         linarith [hz.2.2]
     · change (z.1, 4 * a * (z.2 / (4 * a))) = z
       exact Prod.ext rfl (mul_div_cancel₀ z.2 hscale.ne')
-
-
 
 theorem originalNormalizedBand_properties {a : ℝ} (ha : 0 < a) (q : E → E)
     (hq : FinitePiecewiseAffineOn q (Q ×ˢ Icc (-a) a))

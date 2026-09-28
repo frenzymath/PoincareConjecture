@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.MinimizingCurve
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Extension.Manifold
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +21,6 @@ variable {M : Type*} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem exists_spatial_minimizing_sqrtRegularPath (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :

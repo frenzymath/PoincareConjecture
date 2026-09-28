@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -26,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem scalar_eq_box (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (t : ℝ) (ht : t ∈ (F.box b).interval) (y : (F.box b).carrier.carrier) :
@@ -42,22 +26,16 @@ namespace Cylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def scalarAlong (e : GeneralizedFlowCylinder F C origin scale I U)
     (x : C.carrier) (s : ℝ) : ℝ := by
   classical
   exact if hs : s ∈ I then F.scalar (e.pointMap s hs x) else 0
-
-
 
 @[simp] theorem scalarAlong_of_mem (e : GeneralizedFlowCylinder F C origin scale I U)
     (x : C.carrier) {s : ℝ} (hs : s ∈ I) :
     scalarAlong e x s = F.scalar (e.pointMap s hs x) := by
   classical
   exact dif_pos hs
-
-
 
 theorem exists_local_scalarAlong_eq_box
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -76,8 +54,6 @@ theorem exists_local_scalarAlong_eq_box
   change (F.connection (origin + s' / scale)).scalarCurvature (e.forward s' hs' x) = _
   rw [hforward]
   exact scalar_eq_box F b (origin + s' / scale) hb y
-
-
 
 theorem hasDerivWithinAt_scalarAlong_of_local_box
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -108,8 +84,6 @@ theorem hasDerivWithinAt_scalarAlong_of_local_box
     (fun s' hs' => (hlocal s' hs'.1 (hnear s' hs')).2) hsV
   exact hscalar.mono_of_mem_nhdsWithin (inter_mem_nhdsWithin I (Metric.ball_mem_nhds s hδ))
 
-
-
 theorem exists_hasDerivWithinAt_scalarAlong (hC : RicciFlowCurvatureTheory.{u})
     (e : GeneralizedFlowCylinder F C origin scale I U)
     {s : ℝ} (hs : s ∈ I) (x : C.carrier) (hx : x ∈ U) :
@@ -119,10 +93,6 @@ theorem exists_hasDerivWithinAt_scalarAlong (hC : RicciFlowCurvatureTheory.{u})
   exact ⟨_, hasDerivWithinAt_scalarAlong_of_local_box e x hs b y hδ hlocal
     (hC.scalar_evolution 3 (F.box b).carrier.carrier (F.box b).interval
       (F.box b).flow (origin + s / scale) hb y)⟩
-
-
-
-
 
 theorem exists_scalarAlong_deriv_bound
     {S : GeneralizedBlowupSequence.{u}} (hC : RicciFlowCurvatureTheory.{u})

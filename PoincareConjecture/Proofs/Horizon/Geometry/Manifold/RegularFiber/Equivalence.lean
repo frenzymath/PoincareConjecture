@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.UniversalProperty
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,7 +10,6 @@ namespace Poincare.Geometry.Manifold.RegularFiber
 
 variable {k : ℕ} {M : Type*} [TopologicalSpace M]
   {f h : M → Fin k → ℝ} {U V : Opens M} {c d : Fin k → ℝ}
-
 
 def openFiberEquivOfEq
     (he : ∀ x, (x ∈ U ∧ f x = c) ↔ (x ∈ V ∧ h x = d)) :
@@ -36,7 +33,6 @@ variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (hh : ContMDiff 𝓘(ℝ,E) 𝓘(ℝ,Fin k → ℝ) ∞ h)
   (hregf : ∀ x ∈ U, Surjective (mfderiv 𝓘(ℝ,E) 𝓘(ℝ,Fin k → ℝ) f x))
   (hregh : ∀ x ∈ V, Surjective (mfderiv 𝓘(ℝ,E) 𝓘(ℝ,Fin k → ℝ) h x))
-
 
 def openFiberDiffeomorphOfEq
     (he : ∀ x, (x ∈ U ∧ f x = c) ↔ (x ∈ V ∧ h x = d)) :

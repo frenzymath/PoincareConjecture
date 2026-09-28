@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +7,6 @@ open Set
 namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
-
-
-
 
 theorem coe_mem_shortArc_iff {d z : ℝ} (hd : 0 < d) (hdp : d < p)
     (hz : z ∈ Ioo 0 p) :
@@ -42,9 +29,6 @@ theorem coe_mem_shortArc_iff {d z : ℝ} (hd : 0 < d) (hdp : d < p)
     · exact ⟨z, ⟨by linarith [hz.1], hzlo⟩, rfl⟩
     · refine ⟨z - p, ⟨by linarith, by linarith [hz.2]⟩, ?_⟩
       rw [coe_sub, coe_period, sub_zero]
-
-
-
 
 theorem coe_center_mem_shortArc_iff {d s : ℝ} (hd : 0 < d) (hdhalf : d < p / 2)
     (hs : s ∈ Ioo (-p / 2) (p / 2)) :

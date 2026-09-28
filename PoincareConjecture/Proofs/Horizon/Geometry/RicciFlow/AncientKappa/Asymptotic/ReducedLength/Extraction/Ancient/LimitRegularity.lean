@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Extraction.Ancient.Limit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.AncientReselect
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

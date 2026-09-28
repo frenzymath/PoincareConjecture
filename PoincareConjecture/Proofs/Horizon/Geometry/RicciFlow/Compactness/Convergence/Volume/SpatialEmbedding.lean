@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embedding.LocalDiffeomorphism
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle Topology
@@ -15,7 +8,6 @@ namespace PoincareConjecture.SmoothSpacetimeEmbedding
 
 variable {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
   {F : BasedFlow n T' T C} {G : BasedFlow n T' T D} {U : Set C.carrier}
-
 
 noncomputable def spatialHomeomorph
     (e : SmoothSpacetimeEmbedding F G (Ioo T' T ×ˢ U))

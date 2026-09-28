@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.SingleCutRegions
 import PoincareConjecture.Proofs.M38.ReciprocalEnclosingCollar
 import PoincareConjecture.Proofs.M38.EnclosingMonodromyBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,17 +63,14 @@ theorem singleCutOuterCollar_mem_shared {z : RoundCylinderSpace}
   · exact havoid (hB₁ ((Set.image_mono
       (Metric.closedBall_subset_closedBall (by norm_num : (1 : ℝ) ≤ 5 / 4))) hbad))
 
-
 noncomputable def singleCutOuterCollar :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace (X).carrier ∞ :=
   (reciprocalEnclosingCollar C ha ha8).trans
     (regionPartialDiffeomorph E (U).isOpen (V).isOpen)
 
-
 theorem singleCutOuterCollar_apply (z : RoundCylinderSpace) :
     singleCutOuterCollar F T hT P S i C ha ha8 z =
       (E).map (reciprocalEnclosingCollar C ha ha8 z) := rfl
-
 
 theorem singleCutOuterCollar_inverse (x : (X).carrier) :
     (singleCutOuterCollar F T hT P S i C ha ha8).symm x =
@@ -115,14 +102,12 @@ theorem singleCutOuterCollar_target :
     (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) = _
   exact Set.image_comp _ _ _
 
-
 theorem singleCutOuterCollar_central :
     singleCutOuterCollar F T hT P S i C ha ha8 '' (Set.univ ×ˢ ({0} : Set ℝ)) =
       (E).map '' (C.map '' Metric.sphere 0 (3 / 2)) := by
   change ((E).map ∘ reciprocalEnclosingCollar C ha ha8) ''
     (Set.univ ×ˢ ({0} : Set ℝ)) = _
   rw [Set.image_comp, reciprocalEnclosingCollar_central C ha ha8]
-
 
 theorem singleCutOuterCollar_negative (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0) :
@@ -133,7 +118,6 @@ theorem singleCutOuterCollar_negative (z : UnitTwoSphere) {s : ℝ}
 variable (p : sphereCarrier.{u}.carrier)
 
 local notation "WS" => enclosingSphereInnerTwoHoleRegion C p ha ha8 B₀ B₁ hB₀ hB₁
-
 
 theorem singleCutOuterCollar_positive_mem_inner (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -152,7 +136,6 @@ theorem singleCutOuterCollar_positive_mem_inner (z : UnitTwoSphere) {s : ℝ}
   refine ⟨r • z.val, ?_, rfl⟩
   simpa only [Metric.mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs,
     abs_of_pos (zero_lt_one.trans hr.1), show ‖z.val‖ = 1 by simp, mul_one] using hr.2
-
 
 theorem singleCutOuterCollar_positive_comparison (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (0 : ℝ) 1) :

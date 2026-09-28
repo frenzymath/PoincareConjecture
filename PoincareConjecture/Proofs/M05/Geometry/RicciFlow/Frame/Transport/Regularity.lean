@@ -1,21 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 import PoincareConjecture.Proofs.M05.Analysis.Calculus.WithinProduct
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -45,8 +31,6 @@ noncomputable local instance transportEndoEndoNormedAddCommGroup :
 noncomputable local instance transportEndoEndoNormedSpace :
     NormedSpace ℝ ((V →L[ℝ] V) →L[ℝ] V →L[ℝ] V) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem transportCurveOn_contDiffOn
     (A : P → ℝ → V →L[ℝ] V) {a b c d : ℝ} (hab : a ≤ b)
@@ -145,9 +129,6 @@ private theorem cosineClockInv_contDiffOn (a b : ℝ) :
   exact ((Real.contDiffAt_arccos (ne_of_gt h₁) (ne_of_lt h₂)).comp t
     haff.contDiffAt).contDiffWithinAt
 
-
-
-
 private theorem linearODE_cosine_contDiffOn
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
     (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
@@ -205,9 +186,6 @@ private theorem linearODE_cosine_contDiffOn
           (fun p => Φ p a) q.1).symm)
   exact heq hq.2
 
-
-
-
 theorem linearODE_contDiffOn_spatial
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
     (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
@@ -232,8 +210,6 @@ theorem linearODE_contDiffOn_spatial
       harg (fun _ hp => ⟨hp, hs⟩)
   simpa only [hclock] using hh
 
-
-
 theorem transportCurveOn_contDiffOn_spatial
     (A : P → ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
     {U : Set P} (hU : IsOpen U)
@@ -253,8 +229,6 @@ theorem transportCurveOn_contDiffOn_spatial
     rw [transportCurveOn_left]
   · intro p hp s hs
     exact transportCurveOn_hasDerivWithinAt (A p) hab (hcont p) (hK p) hs
-
-
 
 theorem linearODE_continuousOn
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
@@ -282,8 +256,6 @@ theorem linearODE_continuousOn
   exact hc.congr (fun q hq => by
     change Φ q.1 q.2 = Φ q.1 (cosineClock a b (cosineClockInv a b q.2))
     rw [cosineClock_inv hlt hq.2])
-
-
 
 theorem linearODE_continuousOn_fderiv_param
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
@@ -331,7 +303,6 @@ theorem linearODE_continuousOn_fderiv_param
   rw [heq] at hc
   exact hc.fderiv
 
-
 theorem linearODE_contDiffOn_interior
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
     (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
@@ -354,8 +325,6 @@ theorem linearODE_contDiffOn_interior
   intro q hq
   change Φ q.1 q.2 = Φ q.1 (cosineClock a b (cosineClockInv a b q.2))
   rw [cosineClock_inv (hq.2.1.trans hq.2.2) ⟨hq.2.1.le, hq.2.2.le⟩]
-
-
 
 theorem linearODE_contDiffOn_one
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
@@ -401,7 +370,6 @@ theorem linearODE_contDiffOn_one
     ⟨by simp, D, contDiffOn_zero.mpr hD, hder⟩
 
 omit [FiniteDimensional ℝ P] in
-
 
 theorem contDiffOn_fderiv_param_Icc
     {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]

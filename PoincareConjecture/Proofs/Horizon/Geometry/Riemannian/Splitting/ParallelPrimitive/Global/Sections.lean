@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelPrimitive.Global.Uniqueness
 import Mathlib.Topology.Sheaves.LocalPredicate
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace PoincareConjecture.ParallelPrimitive
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def primitivePrelocal (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ) :
     TopCat.PrelocalPredicate (fun _ : TopCat.of M => ℝ) where
   pred {U} f := ∃ k : M → ℝ, ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ k U ∧
@@ -25,14 +22,12 @@ def primitivePrelocal (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ) :
     exact ⟨k, hk.mono i.le, fun x hx => hd x (i.le hx),
       fun x => heq ⟨x, i.le x.property⟩⟩
 
-
 def primitivePredicate (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ) :
     TopCat.LocalPredicate (fun _ : TopCat.of M => ℝ) :=
   (primitivePrelocal α).sheafify
 
 abbrev primitivePresheaf (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ) :=
   (TopCat.subsheafToTypes (primitivePredicate α)).presheaf
-
 
 def sectionExtension (U : Opens (TopCat.of M)) (f : U → ℝ) : M → ℝ := by
   classical
@@ -77,7 +72,6 @@ theorem primitivePredicate_of_map
     (primitivePredicate α).pred (fun x : U => f x) :=
   TopCat.PrelocalPredicate.sheafifyOf ⟨f, hf, hd, fun _ => rfl⟩
 
-
 theorem primitive_germ_eq_of_value_eq
     (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ)
     {U V : Opens (TopCat.of M)} {x : M} (hxU : x ∈ U) (hxV : x ∈ V)
@@ -104,7 +98,6 @@ theorem primitive_germ_eq_of_value_eq
   change s.val ⟨y, iU.le y.property⟩ = t.val ⟨y, iV.le y.property⟩
   simpa only [sectionExtension_apply U s.val (iU.le y.property),
     sectionExtension_apply V t.val (iV.le y.property)] using h y.property
-
 
 theorem primitive_germ_injective
     (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ)

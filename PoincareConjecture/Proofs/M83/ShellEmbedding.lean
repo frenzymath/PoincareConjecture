@@ -4,15 +4,6 @@ import Mathlib.Topology.Algebra.Field
 import Mathlib.Analysis.Normed.Module.Ball.RadialEquiv
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,19 +13,13 @@ open scoped Topology
 
 namespace PoincareConjecture.Proofs.M83
 
-
-
 abbrev Shell := UnitTwoSphere × NormalInterval
-
-
 
 instance shell_locallyCompactSpace : LocallyCompactSpace Shell := by
   let : LocallyCompactSpace NormalInterval := isOpen_Ioo.locallyCompactSpace
   let : CompactSpace UnitTwoSphere :=
     isCompact_iff_compactSpace.mp (isCompact_sphere (0 : E3) 1)
   infer_instance
-
-
 
 instance shell_preconnectedSpace : PreconnectedSpace Shell := by
   let : PreconnectedSpace UnitTwoSphere := isPreconnected_iff_preconnectedSpace.mp
@@ -43,8 +28,6 @@ instance shell_preconnectedSpace : PreconnectedSpace Shell := by
   let : PreconnectedSpace NormalInterval :=
     isPreconnected_iff_preconnectedSpace.mp isPreconnected_Ioo
   infer_instance
-
-
 
 instance shell_nonempty : Nonempty Shell := by
   obtain ⟨x, hx⟩ := NormedSpace.sphere_nonempty (x := (0 : E3)).mpr
@@ -75,15 +58,11 @@ private def radialProduct : C(Shell,
 private def punctureInclusion : C(({0}ᶜ : Set E3), E3) :=
   ⟨Subtype.val, continuous_subtype_val⟩
 
-
-
 def shellEmbedding : C(Shell, E3) := by
   let H := homeomorphSphereProd E3 1 one_pos
   let hrad : C(Shell, ({0}ᶜ : Set E3)) :=
     ⟨fun z => H.symm (radialProduct z), by fun_prop⟩
   exact punctureInclusion.comp hrad
-
-
 
 theorem shellEmbedding_open :
     _root_.Topology.IsOpenEmbedding shellEmbedding := by
@@ -96,12 +75,8 @@ theorem shellEmbedding_open :
     exact H.symm.isOpenEmbedding.comp hprod
   exact isOpen_compl_singleton.isOpenEmbedding_subtypeVal.comp hrad_open
 
-
-
 def shellAntipodal : Shell ≃ₜ Shell :=
   sphereAntipodeHomeomorph.prodCongr (Homeomorph.refl NormalInterval)
-
-
 
 theorem shellEmbedding_antipodal (z : Shell) :
     shellEmbedding (shellAntipodal z) = -shellEmbedding z := by

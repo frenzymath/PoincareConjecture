@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.ChartMinimalGauss
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusStripHarmonic
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.StripLogDensity
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,9 +35,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
   {h : RiemannianMetric 2 LoopPlane}
-
-
-
 
 theorem m64Annulus_induced_gaussian_le
     (D : LeviCivitaData g) (Dh : LeviCivitaData h) (A : M64Annulus g c0 c1)

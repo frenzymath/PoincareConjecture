@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.Complex.Tietze
 import Mathlib.Topology.TietzeExtension
@@ -10,49 +5,15 @@ import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Arcs
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Counting
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Brouwer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.Topology.Plane.Jordan
 
 open Metric Set Function Bornology
 
-
 abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 def BrouwerFPT : Prop :=
   ∀ s : Set Plane, Convex ℝ s → IsCompact s → s.Nonempty →
     ∀ f : C(s, s), ∃ x, f x = x
-
-
-
-
-
-
-
 
 theorem crossing (hbr : BrouwerFPT) {a b c d : ℝ} (_hab : a ≤ b) (_hcd : c ≤ d)
     (h v : ℝ → Plane)
@@ -64,7 +25,6 @@ theorem crossing (hbr : BrouwerFPT) {a b c d : ℝ} (_hab : a ≤ b) (_hcd : c �
     ∃ s ∈ Icc (-1:ℝ) 1, ∃ t ∈ Icc (-1:ℝ) 1, h s = v t := by
   by_contra hcon
   push Not at hcon
-
 
   set Q : Set Plane := {p | p 0 ∈ Icc (-1:ℝ) 1 ∧ p 1 ∈ Icc (-1:ℝ) 1} with hQdef
   have hQ0 : ∀ p ∈ Q, p 0 ∈ Icc (-1:ℝ) 1 := fun p hp => hp.1
@@ -219,26 +179,10 @@ theorem crossing (hbr : BrouwerFPT) {a b c d : ℝ} (_hab : a ≤ b) (_hcd : c �
       have : 0 ≤ p₀ 1 := by rw [hfix1]; exact div_nonneg (by linarith) hN.le
       linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem one_lt_rank_plane : 1 < Module.rank ℝ Plane := by
   have h : Module.rank ℝ Plane = 2 := by
     rw [← Module.finrank_eq_rank, finrank_euclideanSpace_fin]; norm_num
   rw [h]; norm_num
-
-
-
 
 theorem isConnected_compl_closedBall {R : ℝ} (hR : 0 ≤ R) :
     IsConnected {x : Plane | R < ‖x‖} := by
@@ -267,46 +211,32 @@ section JordanCurveData
 
 variable (r : sphere (0 : Plane) 1 → Plane)
 
-
-
 theorem jordanCurve_isCompact (hcont : Continuous r) : IsCompact (range r) :=
   isCompact_range hcont
-
-
 
 theorem jordanCurve_isClosed (hcont : Continuous r) : IsClosed (range r) :=
   (jordanCurve_isCompact r hcont).isClosed
 
-
 theorem isOpen_compl_jordanCurve (hcont : Continuous r) : IsOpen (range r)ᶜ :=
   (jordanCurve_isClosed r hcont).isOpen_compl
-
-
 
 theorem r_isClosedEmbedding (hcont : Continuous r) (hinj : Injective r) :
     Topology.IsClosedEmbedding r :=
   hcont.isClosedEmbedding hinj
 
-
 theorem r_isEmbedding (hcont : Continuous r) (hinj : Injective r) :
     Topology.IsEmbedding r :=
   (r_isClosedEmbedding r hcont hinj).isEmbedding
 
-
 noncomputable def jordanCurveHomeo (hcont : Continuous r) (hinj : Injective r) :
     sphere (0 : Plane) 1 ≃ₜ (range r) :=
   (r_isEmbedding r hcont hinj).toHomeomorph
-
 
 private theorem exists_jordanCurve_bound (hcont : Continuous r) :
     ∃ R : ℝ, 0 ≤ R ∧ range r ⊆ closedBall (0 : Plane) R := by
   obtain ⟨R, hR⟩ := (jordanCurve_isCompact r hcont).isBounded.subset_closedBall 0
   exact ⟨max R 0, le_max_right R 0,
     hR.trans (closedBall_subset_closedBall (le_max_left R 0))⟩
-
-
-
-
 
 theorem exists_unbounded_component (hcont : Continuous r) :
     ∃ x ∈ (range r)ᶜ, ¬ IsBounded (connectedComponentIn (range r)ᶜ x) := by
@@ -330,9 +260,6 @@ theorem exists_unbounded_component (hcont : Continuous r) :
   have hEcomp : {z : Plane | R < ‖z‖} ⊆ connectedComponentIn (range r)ᶜ x :=
     hEconn.isPreconnected.subset_connectedComponentIn hxE hEsub
   exact fun hbdd => hEnb (hbdd.subset hEcomp)
-
-
-
 
 theorem unbounded_component_unique (hcont : Continuous r) {x y : Plane}
     (hxu : ¬ IsBounded (connectedComponentIn (range r)ᶜ x))
@@ -372,13 +299,9 @@ theorem unbounded_component_unique (hcont : Continuous r) {x y : Plane}
     rw [connectedComponentIn_eq hwyc, ← connectedComponentIn_eq (hEcomp hwyE)]
   rw [hx, hy]
 
-
-
 theorem isOpen_component (hcont : Continuous r) (x : Plane) :
     IsOpen (connectedComponentIn (range r)ᶜ x) :=
   (isOpen_compl_jordanCurve r hcont).connectedComponentIn
-
-
 
 theorem isPathConnected_component (hcont : Continuous r) {x : Plane}
     (hx : x ∈ (range r)ᶜ) :
@@ -387,20 +310,6 @@ theorem isPathConnected_component (hcont : Continuous r) {x : Plane}
     (isConnected_connectedComponentIn_iff.mpr hx)
 
 end JordanCurveData
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem arc_not_separates (hbr : BrouwerFPT) {A : Set Plane}
     (φ : A ≃ₜ unitInterval) : IsConnected Aᶜ := by
@@ -454,7 +363,6 @@ theorem arc_not_separates (hbr : BrouwerFPT) {A : Set Plane}
       exact hcon w (not_le.1 hwn) hw
     exact isBounded_closedBall.subset hsubBall
   refine ⟨⟨p, hpAc⟩, ?_⟩
-
 
   by_cases hbdd : ∃ o ∈ Aᶜ, IsBounded (connectedComponentIn Aᶜ o)
   ·
@@ -579,20 +487,6 @@ theorem arc_not_separates (hbr : BrouwerFPT) {A : Set Plane}
     rw [Set.Subset.antisymm hAeq hsup]
     exact (isConnected_connectedComponentIn_iff.mpr hpAc).isPreconnected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem component_boundary_eq (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
     {x : Plane} (hx : x ∈ (range r)ᶜ)
@@ -689,15 +583,6 @@ theorem component_boundary_eq (hbr : BrouwerFPT)
       ⟨x, hxAc, hxU⟩ ⟨r s₀, hq'A, hqV⟩
   exact hwV (subset_closure hwU)
 
-
-
-
-
-
-
-
-
-
 private lemma complexLIE_one : Arcs.complexLIE (1 : ℂ) = !₂[(1:ℝ), 0] := by
   have h := Complex.isometryOfOrthonormal_apply (EuclideanSpace.basisFun (Fin 2) ℝ) (1 : ℂ)
   rw [show Arcs.complexLIE
@@ -707,7 +592,6 @@ private lemma complexLIE_one : Arcs.complexLIE (1 : ℂ) = !₂[(1:ℝ), 0] := b
   ext i; fin_cases i <;>
     simp
 
-
 private lemma complexLIE_negOne : Arcs.complexLIE (-1 : ℂ) = !₂[(-1:ℝ), 0] := by
   have h := Complex.isometryOfOrthonormal_apply (EuclideanSpace.basisFun (Fin 2) ℝ) (-1 : ℂ)
   rw [show Arcs.complexLIE
@@ -716,9 +600,6 @@ private lemma complexLIE_negOne : Arcs.complexLIE (-1 : ℂ) = !₂[(-1:ℝ), 0]
     zero_smul, add_zero, EuclideanSpace.basisFun_apply]
   ext i; fin_cases i <;>
     simp
-
-
-
 
 theorem exists_farthest_pair {r : sphere (0 : Plane) 1 → Plane}
     (hcont : Continuous r) (hinj : Injective r) :
@@ -755,9 +636,6 @@ theorem exists_farthest_pair {r : sphere (0 : Plane) 1 → Plane}
       isMaxOn_iff.mp hmax (r s1, r s2) (mem_prod.mpr ⟨mem_range_self _, mem_range_self _⟩)
     rw [hd0] at hle
     exact hs12 (hinj (eq_of_dist_eq_zero (le_antisymm hle dist_nonneg)))
-
-
-
 
 theorem exists_similarity {a b : Plane} (hab : a ≠ b) :
     ∃ T : Plane ≃ₜ Plane,
@@ -801,8 +679,6 @@ theorem exists_similarity {a b : Plane} (hab : a ≠ b) :
     have hval : α * B + β = 1 := by rw [hα, hβ]; field_simp; ring
     rw [hT_apply, ← hB, hval, hL]; exact complexLIE_one
 
-
-
 theorem isBounded_image_scaling {T : Plane → Plane} {c : ℝ} (hc : 0 < c)
     (hscale : ∀ z w, dist (T z) (T w) = c * dist z w) (K : Set Plane) :
     IsBounded (T '' K) ↔ IsBounded K := by
@@ -819,18 +695,10 @@ theorem isBounded_image_scaling {T : Plane → Plane} {c : ℝ} (hc : 0 < c)
     rw [hscale]
     exact mul_le_mul_of_nonneg_left (hC hx hy) hc.le
 
-
-
-
 private lemma dist_sq_coord (z w : Plane) :
     dist z w ^ 2 = (z 0 - w 0) ^ 2 + (z 1 - w 1) ^ 2 := by
   rw [EuclideanSpace.dist_eq, Real.sq_sqrt (by positivity)]
   simp [Fin.sum_univ_two, Real.dist_eq, sq_abs]
-
-
-
-
-
 
 theorem normalized_subset_rectangle
     {r : sphere (0 : Plane) 1 → Plane}
@@ -858,11 +726,6 @@ theorem normalized_subset_rectangle
   · nlinarith [sq_nonneg (z 0), sq_nonneg (z 1 - 2), sq_nonneg (z 1 + 2)]
   · nlinarith [sq_nonneg (z 0), sq_nonneg (z 1 - 2), sq_nonneg (z 1 + 2)]
 
-
-
-
-
-
 theorem arc_path {S : Set Plane} {a b : Plane} (hj : JoinedIn S a b) :
     ∃ h : ℝ → Plane, ContinuousOn h (Icc (-1:ℝ) 1) ∧ h (-1) = a ∧ h 1 = b ∧
       ∀ t ∈ Icc (-1:ℝ) 1, h t ∈ S := by
@@ -879,13 +742,6 @@ theorem arc_path {S : Set Plane} {a b : Plane} (hj : JoinedIn S a b) :
       Subtype.ext (by rw [Set.coe_projIcc]; norm_num)]
     exact hj.somePath.target
   · intro t _; exact hj.somePath_mem _
-
-
-
-
-
-
-
 
 theorem segment_meets_curve (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (_hinj : Injective r)
@@ -933,10 +789,6 @@ theorem segment_meets_curve (hbr : BrouwerFPT)
   · rw [heq, hv0]
   · rw [heq]; exact (hvE t ht).2
 
-
-
-
-
 theorem exists_ymax_on_axis (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
     (hm : (!₂[(-1:ℝ), 0] : Plane) ∈ range r) (hp : (!₂[(1:ℝ), 0] : Plane) ∈ range r)
@@ -958,11 +810,6 @@ theorem exists_ymax_on_axis (hbr : BrouwerFPT)
   intro p hpr hp0
   exact hlmax (show p ∈ Jax from ⟨hpr, hp0⟩)
 
-
-
-
-
-
 private lemma planar_arc_homeo {K : Set Plane} {A : Set ↥K}
     (e : A ≃ₜ unitInterval) : Nonempty (((↑) '' A : Set Plane) ≃ₜ unitInterval) := by
   haveI : CompactSpace ↥A := e.symm.compactSpace
@@ -976,10 +823,6 @@ private lemma planar_arc_homeo {K : Set Plane} {A : Set ↥K}
     · rintro ⟨a, rfl⟩; exact ⟨a.1, a.2, rfl⟩
     · rintro ⟨x, hx, rfl⟩; exact ⟨⟨x, hx⟩, rfl⟩
   exact ⟨((Homeomorph.setCongr hrange).symm.trans hemb.toHomeomorph.symm).trans e⟩
-
-
-
-
 
 theorem jordan_arcs (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
@@ -1041,14 +884,6 @@ theorem jordan_arcs (hbr : BrouwerFPT)
     · rw [Set.union_comm]; exact hBu
     · rw [Set.inter_comm]; exact hBi
 
-
-
-
-
-
-
-
-
 theorem arc_isPathConnected {J : Set Plane} (e : ↥J ≃ₜ unitInterval) :
     IsPathConnected J := by
   haveI : PathConnectedSpace unitInterval :=
@@ -1067,14 +902,9 @@ theorem arc_isPathConnected {J : Set Plane} (e : ↥J ≃ₜ unitInterval) :
     · intro hp; exact ⟨e ⟨p, hp⟩, by simp⟩
   rwa [hrange] at h2
 
-
 theorem arc_joinedIn {J : Set Plane} (e : ↥J ≃ₜ unitInterval)
     {a b : Plane} (ha : a ∈ J) (hb : b ∈ J) : JoinedIn J a b :=
   (arc_isPathConnected e).joinedIn a ha b hb
-
-
-
-
 
 theorem vertical_meets_arc (hbr : BrouwerFPT) {J : Set Plane}
     (hJsub : J ⊆ {p : Plane | p 0 ∈ Icc (-1:ℝ) 1 ∧ p 1 ∈ Icc (-2:ℝ) 2})
@@ -1091,8 +921,6 @@ theorem vertical_meets_arc (hbr : BrouwerFPT) {J : Set Plane}
   obtain ⟨s, hs, t, ht, heq⟩ := crossing hbr (by norm_num : (-1:ℝ) ≤ 1)
     (by norm_num : (-2:ℝ) ≤ 2) h v hcontOn hvcont hhE hvE hh1' hh2' hv1 hv2
   exact ⟨t, ht, heq ▸ hhmem s hs⟩
-
-
 
 private noncomputable def pathOfPiece {f : ℝ → Plane}
     (hf : ContinuousOn f (Icc (-1:ℝ) 1)) : Path (f (-1)) (f 1) :=
@@ -1115,9 +943,6 @@ private lemma pathOfPiece_range {f : ℝ → Plane}
     refine ⟨⟨(y + 1) / 2, by rw [Set.mem_Icc]; constructor <;> linarith⟩, ?_⟩
     show f (2 * ((y + 1) / 2) - 1) = f y
     congr 1; ring
-
-
-
 
 theorem concatPath2 {f g : ℝ → Plane}
     (hf : ContinuousOn f (Icc (-1:ℝ) 1)) (hg : ContinuousOn g (Icc (-1:ℝ) 1))
@@ -1145,9 +970,6 @@ theorem concatPath2 {f g : ℝ → Plane}
     rw [hr1, hr2] at hmem
     exact hmem
 
-
-
-
 theorem concatPath3 {f g h : ℝ → Plane}
     (hf : ContinuousOn f (Icc (-1:ℝ) 1)) (hg : ContinuousOn g (Icc (-1:ℝ) 1))
     (hh : ContinuousOn h (Icc (-1:ℝ) 1))
@@ -1163,9 +985,6 @@ theorem concatPath3 {f g h : ℝ → Plane}
   · obtain ⟨u, hu, huc⟩ := hin
     exact Set.mem_union_left _ (huc ▸ hc2mem u hu)
   · exact Set.mem_union_right _ hin
-
-
-
 
 theorem concatPath5 {f1 f2 f3 f4 f5 : ℝ → Plane}
     (h1 : ContinuousOn f1 (Icc (-1:ℝ) 1)) (h2 : ContinuousOn f2 (Icc (-1:ℝ) 1))
@@ -1194,8 +1013,6 @@ theorem concatPath5 {f1 f2 f3 f4 f5 : ℝ → Plane}
     · exact Or.inl (Or.inr h)
     · exact Or.inr h
 
-
-
 theorem exists_ymin_Jn_axis {J_n : Set Plane} (hJncl : IsClosed J_n)
     (hcpt : IsCompact J_n) {l : Plane} (hlJn : l ∈ J_n) (hl0 : l 0 = 0) :
     ∃ m ∈ J_n, m 0 = 0 ∧ ∀ p ∈ J_n, p 0 = 0 → m 1 ≤ p 1 := by
@@ -1209,13 +1026,6 @@ theorem exists_ymin_Jn_axis {J_n : Set Plane} (hJncl : IsClosed J_n)
   obtain ⟨m, hmJm, hmmin⟩ :=
     hJmcpt.exists_isMinOn hne (f := fun p : Plane => p 1) hcy.continuousOn
   exact ⟨m, hmJm.1, hmJm.2, fun p hpJn hp0 => hmmin (show p ∈ Jm from ⟨hpJn, hp0⟩)⟩
-
-
-
-
-
-
-
 
 theorem ms_meets_Js (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (_hcont : Continuous r) (_hinj : Injective r)
@@ -1272,7 +1082,6 @@ theorem ms_meets_Js (hbr : BrouwerFPT)
        simp only [hl0, ha0, hb0] at hc; norm_num at hc)
   by_contra hcon
   push Not at hcon
-
 
   set f1 : ℝ → Plane := fun t => s + ((t + 1) / 2) • (m - s) with hf1def
   set f3 : ℝ → Plane := fun t => l + ((t + 1) / 2) • (nn - l) with hf3def
@@ -1344,18 +1153,6 @@ theorem ms_meets_Js (hbr : BrouwerFPT)
       have : l ∈ J_n ∩ J_s := ⟨hlJn, h⟩
       rw [hInter] at this; exact hlab this
     exact hlnJs (hctl ▸ hctJs)
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_construction_points (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
@@ -1435,9 +1232,6 @@ theorem exists_construction_points (hbr : BrouwerFPT)
   · rw [show (!₂[(0:ℝ), (m 1 + p 1) / 2] : Plane) 1 = (m 1 + p 1) / 2 from by simp]
     linarith [hpm]
 
-
-
-
 theorem exists_first_exit {α : ℝ → Plane} {O C : Set Plane}
     (hO : IsOpen O) (hC : IsClosed C) (hOC : O ⊆ C)
     (hcont : ContinuousOn α (Icc (0:ℝ) 1))
@@ -1479,8 +1273,6 @@ theorem exists_first_exit {α : ℝ → Plane} {O C : Set Plane}
     exact this.2
   exact ⟨tw, ⟨htwpos, htw01.2⟩, htwC, htwO, hbelow⟩
 
-
-
 theorem isPathConnected_vertSeg (c : ℝ) {T : Set ℝ} (hT : IsPathConnected T) :
     IsPathConnected {p : Plane | p 0 = c ∧ p 1 ∈ T} := by
   have hfcont : Continuous (fun y : ℝ => (!₂[c, y] : Plane)) := by
@@ -1497,7 +1289,6 @@ theorem isPathConnected_vertSeg (c : ℝ) {T : Set ℝ} (hT : IsPathConnected T)
       exact ⟨p 1, h1, by ext i; fin_cases i <;> simp [h0]⟩
   rwa [hEq] at himg
 
-
 theorem isPathConnected_horizSeg (c : ℝ) {T : Set ℝ} (hT : IsPathConnected T) :
     IsPathConnected {p : Plane | p 1 = c ∧ p 0 ∈ T} := by
   have hfcont : Continuous (fun x : ℝ => (!₂[x, c] : Plane)) := by
@@ -1513,10 +1304,6 @@ theorem isPathConnected_horizSeg (c : ℝ) {T : Set ℝ} (hT : IsPathConnected T
     · rintro ⟨h0, h1⟩
       exact ⟨p 0, h1, by ext i; fin_cases i <;> simp [h0]⟩
   rwa [hEq] at himg
-
-
-
-
 
 theorem curve_boundary_axis
     {r : sphere (0 : Plane) 1 → Plane}
@@ -1537,9 +1324,6 @@ theorem curve_boundary_axis
     exact pow_eq_zero_iff (by norm_num) |>.mp h2
   · exfalso; nlinarith [hza, hzb, sq_nonneg (p 0 + 1), sq_nonneg (p 0 - 1), h, sq_nonneg (p 1 + 2)]
   · exfalso; nlinarith [hza, hzb, sq_nonneg (p 0 + 1), sq_nonneg (p 0 - 1), h, sq_nonneg (p 1 - 2)]
-
-
-
 
 theorem exists_lower_boundary_path
     {r : sphere (0 : Plane) 1 → Plane}
@@ -1591,9 +1375,6 @@ theorem exists_lower_boundary_path
       · exact Or.inl (Or.inr ⟨le_antisymm (not_lt.mp h) hp1.1, hp0⟩)
       · exfalso; linarith [not_lt.mp h]
 
-
-
-
 theorem exists_upper_boundary_path
     {r : sphere (0 : Plane) 1 → Plane}
     (hm : (!₂[(-1:ℝ), 0] : Plane) ∈ range r) (hp : (!₂[(1:ℝ), 0] : Plane) ∈ range r)
@@ -1644,13 +1425,11 @@ theorem exists_upper_boundary_path
       · exfalso; linarith [not_lt.mp h]
       · exact Or.inl (Or.inr ⟨le_antisymm hp1.2 (not_lt.mp h), hp0⟩)
 
-
 private lemma off_axis_endpoints {x : Plane} (hx : x 0 = 0) :
     x ∉ ({!₂[(-1:ℝ), 0], !₂[(1:ℝ), 0]} : Set Plane) := by
   simp only [Set.mem_insert_iff, Set.mem_singleton_iff]
   rintro (h | h) <;>
     (have hc := congrArg (fun w : Plane => w 0) h; simp only [hx] at hc; norm_num at hc)
-
 
 private lemma mul_unit_mem_Icc {tw u : ℝ} (htw : 0 ≤ tw) (h0 : 0 ≤ u) (h1 : u ≤ 1) :
     tw * u ∈ Icc (0:ℝ) tw := by
@@ -1658,7 +1437,6 @@ private lemma mul_unit_mem_Icc {tw u : ℝ} (htw : 0 ≤ tw) (h0 : 0 ≤ u) (h1 
   refine ⟨mul_nonneg htw h0, ?_⟩
   calc tw * u ≤ tw * 1 := mul_le_mul_of_nonneg_left h1 htw
     _ = tw := mul_one tw
-
 
 private lemma axis_segment {x y : Plane} (hx0 : x 0 = 0) (hy0 : y 0 = 0) (hxy : x 1 ≤ y 1) :
     ∃ g : ℝ → Plane, ContinuousOn g (Icc (-1:ℝ) 1) ∧ g (-1) = x ∧ g 1 = y ∧
@@ -1677,7 +1455,6 @@ private lemma axis_segment {x y : Plane} (hx0 : x 0 = 0) (hy0 : y 0 = 0) (hxy : 
   · linarith [mul_nonneg h0 hd]
   · linarith [mul_le_mul_of_nonneg_right h1 hd]
 
-
 private lemma isBounded_rectE :
     IsBounded {w : Plane | w 0 ∈ Icc (-1:ℝ) 1 ∧ w 1 ∈ Icc (-2:ℝ) 2} := by
   apply (Metric.isBounded_closedBall (x := (0:Plane)) (r := 3)).subset
@@ -1689,7 +1466,6 @@ private lemma isBounded_rectE :
     nlinarith [hz1.1, hz1.2, hz2.1, hz2.2]
   nlinarith [dist_nonneg (x := z) (y := (0:Plane)), hsq]
 
-
 private lemma isOpen_rectO :
     IsOpen {w : Plane | w 0 ∈ Ioo (-1:ℝ) 1 ∧ w 1 ∈ Ioo (-2:ℝ) 2} := by
   have hEq : {w : Plane | w 0 ∈ Ioo (-1:ℝ) 1 ∧ w 1 ∈ Ioo (-2:ℝ) 2}
@@ -1698,7 +1474,6 @@ private lemma isOpen_rectO :
   rw [hEq]
   exact (isOpen_Ioo.preimage (by fun_prop)).inter (isOpen_Ioo.preimage (by fun_prop))
 
-
 private lemma isClosed_rectE :
     IsClosed {w : Plane | w 0 ∈ Icc (-1:ℝ) 1 ∧ w 1 ∈ Icc (-2:ℝ) 2} := by
   have hEq : {w : Plane | w 0 ∈ Icc (-1:ℝ) 1 ∧ w 1 ∈ Icc (-2:ℝ) 2}
@@ -1706,8 +1481,6 @@ private lemma isClosed_rectE :
     ext w; simp only [mem_setOf_eq, mem_inter_iff, mem_preimage]
   rw [hEq]
   exact (isClosed_Icc.preimage (by fun_prop)).inter (isClosed_Icc.preimage (by fun_prop))
-
-
 
 private lemma axis_zero_mem_range {r : sphere (0 : Plane) 1 → Plane}
     (hm : (!₂[(-1:ℝ), 0] : Plane) ∈ range r) (hp : (!₂[(1:ℝ), 0] : Plane) ∈ range r)
@@ -1722,10 +1495,6 @@ private lemma axis_zero_mem_range {r : sphere (0 : Plane) 1 → Plane}
     rw [show x = !₂[(-1:ℝ), 0] from by ext i; fin_cases i <;> simp [hx, hx1]]; exact hm
   · have hx : x 0 = 1 := le_antisymm hxIcc.2 (not_lt.mp h)
     rw [show x = !₂[(1:ℝ), 0] from by ext i; fin_cases i <;> simp [hx, hx1]]; exact hp
-
-
-
-
 
 private lemma step_A_case_low (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane}
@@ -1835,9 +1604,6 @@ private lemma step_A_case_low (hbr : BrouwerFPT)
   obtain ⟨t, ht, htJs⟩ := vertical_meets_arc hbr hJsrect hJoinJs hVcont hVE hVm1 hVn1
   exact hVmiss t ht htJs
 
-
-
-
 private lemma step_A_case_high (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane}
     (hm : (!₂[(-1:ℝ), 0] : Plane) ∈ range r) (hp : (!₂[(1:ℝ), 0] : Plane) ∈ range r)
@@ -1943,8 +1709,6 @@ private lemma step_A_case_high (hbr : BrouwerFPT)
   obtain ⟨t, ht, htJn⟩ := vertical_meets_arc hbr hJnrect hJoinJn hVcont hVE hVm1 hVn1
   exact hVmiss t ht htJn
 
-
-
 theorem step_A_normalized (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
     (hm : (!₂[(-1:ℝ), 0] : Plane) ∈ range r) (hp : (!₂[(1:ℝ), 0] : Plane) ∈ range r)
@@ -2039,9 +1803,6 @@ theorem step_A_normalized (hbr : BrouwerFPT)
       hαcont hα0 htw.1.le (fun u hu => hαE u hu) (fun u => hUsub (hαU u))
       hwC.1 hwC.2 hwO hwpos
 
-
-
-
 theorem step_A_exists_bounded (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r) :
     ∃ x ∈ (range r)ᶜ, IsBounded (connectedComponentIn (range r)ᶜ x) := by
@@ -2084,13 +1845,11 @@ theorem step_A_exists_bounded (hbr : BrouwerFPT)
   rw [hcc] at hxb
   exact (isBounded_image_scaling hcpos hscale _).mp hxb
 
-
 private lemma norm_axis_pt (y : ℝ) : ‖(!₂[(0:ℝ), y] : Plane)‖ = |y| := by
   have e0 : (!₂[(0:ℝ), y] : Plane) 0 = 0 := by simp
   have e1 : (!₂[(0:ℝ), y] : Plane) 1 = y := by simp
   rw [EuclideanSpace.norm_eq, Fin.sum_univ_two, e0, e1]
   simp [Real.sqrt_sq_eq_abs]
-
 
 private lemma axis_ray_up_unbounded (c : ℝ) :
     ¬ IsBounded {p : Plane | p 0 = 0 ∧ p 1 ∈ Ioi c} := by
@@ -2104,7 +1863,6 @@ private lemma axis_ray_up_unbounded (c : ℝ) :
   rw [mem_closedBall_zero_iff, norm_axis_pt, abs_of_nonneg (by positivity : (0:ℝ) ≤ |c| + |M| + 1)] at hin
   linarith [le_abs_self M, abs_nonneg c]
 
-
 private lemma axis_ray_down_unbounded (c : ℝ) :
     ¬ IsBounded {p : Plane | p 0 = 0 ∧ p 1 ∈ Iio c} := by
   intro hb
@@ -2117,8 +1875,6 @@ private lemma axis_ray_down_unbounded (c : ℝ) :
   rw [mem_closedBall_zero_iff, norm_axis_pt, abs_neg,
     abs_of_nonneg (by positivity : (0:ℝ) ≤ |c| + |M| + 1)] at hin
   linarith [le_abs_self M, abs_nonneg c]
-
-
 
 private lemma isPreconnected_rect_compl :
     IsPreconnected {v : Plane | ¬(v 0 ∈ Icc (-1:ℝ) 1 ∧ v 1 ∈ Icc (-2:ℝ) 2)} := by
@@ -2159,7 +1915,6 @@ private lemma isPreconnected_rect_compl :
     tauto
   rw [hEq]; exact hADBC
 
-
 private noncomputable def segP (P Q : Plane) : ℝ → Plane := fun t => P + ((t + 1) / 2) • (Q - P)
 
 private lemma segP_cont (P Q : Plane) : Continuous (segP P Q) := by unfold segP; fun_prop
@@ -2196,8 +1951,6 @@ private lemma segP_dist_le' (P Q : Plane) {t : ℝ} (ht : t ∈ Icc (-1:ℝ) 1) 
         mul_le_mul_of_nonneg_right hs dist_nonneg
     _ = dist P Q := one_mul _
 
-
-
 private lemma segP_coord_mem_Icc {P Q : Plane} (i : Fin 2) {lo hi : ℝ}
     (hP : P i ∈ Icc lo hi) (hQ : Q i ∈ Icc lo hi) {t : ℝ} (ht : t ∈ Icc (-1:ℝ) 1) :
     segP P Q t i ∈ Icc lo hi := by
@@ -2210,9 +1963,6 @@ private lemma segP_coord_mem_Icc {P Q : Plane} (i : Fin 2) {lo hi : ℝ}
       mul_nonneg (by linarith [hs1] : (0:ℝ) ≤ 1 - (t + 1) / 2) (by linarith [hP.1] : (0:ℝ) ≤ P i - lo)]
   · nlinarith [mul_nonneg hs0 (by linarith [hQ.2] : (0:ℝ) ≤ hi - Q i),
       mul_nonneg (by linarith [hs1] : (0:ℝ) ≤ 1 - (t + 1) / 2) (by linarith [hP.2] : (0:ℝ) ≤ hi - P i)]
-
-
-
 
 theorem step_B_normalized (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r)
@@ -2546,9 +2296,6 @@ theorem step_B_normalized (hbr : BrouwerFPT)
   intro x hx y hy hxb hyb
   rw [KEY x hx hxb, KEY y hy hyb]
 
-
-
-
 theorem step_B_bounded_unique (hbr : BrouwerFPT)
     {r : sphere (0 : Plane) 1 → Plane} (hcont : Continuous r) (hinj : Injective r) :
     ∀ x ∈ (range r)ᶜ, ∀ y ∈ (range r)ᶜ,
@@ -2598,11 +2345,6 @@ theorem step_B_bounded_unique (hbr : BrouwerFPT)
   rw [hccx, hccy] at hEq
   exact Set.image_injective.mpr T.injective hEq
 
-
-
-
-
-
 theorem jordan_curve_of_brouwer (hbr : BrouwerFPT)
     (r : sphere (0 : Plane) 1 → Plane)
     (hcont : Continuous r) (hinj : Injective r) :
@@ -2632,13 +2374,10 @@ theorem jordan_curve_of_brouwer (hbr : BrouwerFPT)
         (unbounded_component_unique r hcont hzb hx₀u)
   exact Counting.nat_card_connectedComponents_eq_two a b hab hcover
 
-
 theorem jordan_curve
     (r : sphere (0 : EuclideanSpace ℝ (Fin 2)) 1 → EuclideanSpace ℝ (Fin 2))
     (_hcont : Continuous r) (_hinj : Injective r) :
     Nat.card (ConnectedComponents ((range r)ᶜ : Set (EuclideanSpace ℝ (Fin 2)))) = 2 := by
-
-
 
   have hbr : BrouwerFPT := Brouwer.brouwerFPT
   exact jordan_curve_of_brouwer hbr r _hcont _hinj

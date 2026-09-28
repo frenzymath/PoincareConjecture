@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingWeak
 import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory
@@ -106,10 +95,6 @@ private theorem average_derivative_row
     integral_congr_ae (ae_of_all _ fun z => mul_comm _ _)
   rw [heq, hi]
   fin_cases i <;> simp [gradientRow, EuclideanSpace.basisFun_apply]
-
-
-
-
 
 theorem weak_pair_contDiffOn
     (u : Lp ℝ 2 (volume : Measure LoopPlane))

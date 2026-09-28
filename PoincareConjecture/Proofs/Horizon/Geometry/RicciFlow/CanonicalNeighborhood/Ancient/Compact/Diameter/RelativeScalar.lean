@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Length
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -30,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem AncientKappaNormalization.toReal_edist_zero
     (N : AncientKappaNormalization K p 0) (x y : M) :
     ((N.target.flow.metric 0).edist x y).toReal =
@@ -45,8 +33,6 @@ theorem AncientKappaNormalization.toReal_edist_zero
   rw [hdist, ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.sqrt_nonneg _)]
 
 end Normalization
-
-
 
 theorem compact_uniform_scalar_ratio_of_scaled_diameter
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -92,8 +78,6 @@ theorem compact_uniform_scalar_ratio_of_scaled_diameter
   rw [N.scalar_eq 0 le_rfl x, zero_div, zero_add] at hscalar
   have hresult := (div_le_iff₀ N.scale_pos).mp hscalar
   simpa only [L, hscale] using hresult
-
-
 
 theorem compact_uniform_allPoint_diameter_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u})

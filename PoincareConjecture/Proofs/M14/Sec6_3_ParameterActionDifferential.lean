@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_FamilyActionComparison
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionFirstVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {P : Type} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem fderiv_squareFamilyAction_euler_line
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.AmbientSideCollars
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -98,9 +89,6 @@ theorem collarUnion_inter_negative : C.collarUnion ∩ C.negative = C.negativeIm
       exact ⟨C.positiveImage_subset hp, hx⟩
     · exact hm
   · exact subset_inter subset_union_right C.negativeImage_subset
-
-
-
 
 theorem isOpen_collarUnion : IsOpen C.collarUnion := by
   let ip := Set.inclusion C.positive_subset_neighborhood

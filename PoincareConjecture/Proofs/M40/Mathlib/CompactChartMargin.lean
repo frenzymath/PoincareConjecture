@@ -1,14 +1,5 @@
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,10 +12,6 @@ namespace PoincareConjecture.Proofs.M40
 variable {M : Type uM} [TopologicalSpace M]
   {N : Type uN} [PseudoEMetricSpace N]
   {ι : Type uI} [Finite ι]
-
-
-
-
 
 theorem exists_pos_uniform_mapsTo_of_edist_lt
     (K : ι → Set M) (V : ι → Set N) (f₀ : M → N)

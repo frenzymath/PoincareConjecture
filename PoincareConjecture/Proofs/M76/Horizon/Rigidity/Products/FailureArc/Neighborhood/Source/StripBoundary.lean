@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Strips.Exteriors
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Source.SpanningDiskComplement
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

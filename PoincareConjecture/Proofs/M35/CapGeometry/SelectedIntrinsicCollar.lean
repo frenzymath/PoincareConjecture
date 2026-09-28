@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCenterNormalization
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCollarPoint
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCollarJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem blowupSequence_intrinsic_collar_profile_jets
     (P : M35StandardCapPredecessors)

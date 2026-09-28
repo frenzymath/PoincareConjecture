@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e (i : Fin 3) : StandardCapSpace := EuclideanSpace.single i 1
-
-
 
 theorem exists_axis_radial_sectional_plane
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -63,8 +53,6 @@ theorem exists_axis_radial_sectional_plane
     field_simp [hsa, hsb, hb.ne']
     rw [Real.sq_sqrt ha.le, Real.sq_sqrt hb.le]
     ring
-
-
 
 theorem exists_radial_sectional_plane
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

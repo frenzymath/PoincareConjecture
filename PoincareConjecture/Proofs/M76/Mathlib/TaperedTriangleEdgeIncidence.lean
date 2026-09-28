@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroApexTriangleCollar
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevelUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem zeroApexCoordinates_mem_bottom_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hq : A q = 0) (hw : A w = 0) (hv : A v ≠ 0)
@@ -38,9 +27,6 @@ theorem zeroApexCoordinates_mem_bottom_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     have hp0 : p = (p.1, 0) := Prod.ext rfl ht
     rw [hp0, zeroApexCoordinates_bottom]
     exact lineMap_mem_segment ℝ q w hp.1
-
-
-
 
 theorem zeroApexCoordinates_mem_side_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0) (hv : 0 < A v)
@@ -66,9 +52,6 @@ theorem zeroApexCoordinates_mem_side_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
       sub_zero, sub_zero]
     exact lineMap_mem_segment ℝ w v
       ⟨div_nonneg hp.2.1 hv.le, (div_le_one hv).mpr hu⟩
-
-
-
 
 theorem zeroApexCoordinates_mem_far_edge_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0) (hv : 0 < A v)

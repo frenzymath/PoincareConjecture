@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Lines
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set

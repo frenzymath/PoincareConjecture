@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +9,6 @@ open Set Filter MeasureTheory Topology
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64VariableModulus_integral_comparison
     {X : Type*} [MeasurableSpace X] {mu : Measure X} {f0 f1 : X → ℝ}
@@ -66,8 +51,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
 theorem m64VariableModulus_column_integrable
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q)
     {C : ℝ} (hb : ∀ q, ‖Q q‖ ≤ C) {K : Set LoopPlane}
@@ -76,9 +59,6 @@ theorem m64VariableModulus_column_integrable
     IntegrableOn (fun p => Q (f p) (V p) (V p)) K volume := by
   simpa only [add_self_div_two] using
     m64Observed_energyDensity_integrable Q hQ hb f hf (fun _ => V) (fun _ => hV)
-
-
-
 
 theorem m64VariableModulus_replacement_energy
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
@@ -108,9 +88,6 @@ theorem m64VariableModulus_replacement_energy
   exact m64Integral_piecewise_of_subset hK hKS
     (((hi 0).const_mul r).add ((hi 1).const_mul r⁻¹) |>.div_const 2)
     (A.weightedEnergy_integrable Q hQ hei hb r)
-
-
-
 
 theorem M64ObservedWeakAnnulus.weighted_local_energy_le_of_matching_flux
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

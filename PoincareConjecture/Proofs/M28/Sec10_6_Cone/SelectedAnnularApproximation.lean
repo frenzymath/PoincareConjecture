@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.EndRayAnnularDistortion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedMetricEndRayData
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
-
 
 theorem exists_selected_annular_approximation_maps
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

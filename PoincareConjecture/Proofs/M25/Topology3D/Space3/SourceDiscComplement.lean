@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactDiscTopology
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RoundSphereDisc
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,8 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem exists_source_disc_complement (e : OpenPartialHomeomorph E2 UnitTwoSphere)
     (he : closedBall 0 1 ⊆ e.source)

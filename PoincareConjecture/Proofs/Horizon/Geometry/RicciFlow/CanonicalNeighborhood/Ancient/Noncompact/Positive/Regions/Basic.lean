@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Services
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Regions.Selection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 structure SoulNeckRegion (K : AncientKappaSolution 3 M)
     (S : RiemannianMetric.PointSoulData (K.flow.metric 0)) (epsilon D R : ℝ) where
@@ -57,8 +44,6 @@ structure SoulNeckRegion (K : AncientKappaSolution 3 M)
     (K.flow.metric 0).ball S.center ((2 * R) * soulScalar K S.center ^ (-1 / 2 : ℝ))
   strong_outside_core : ∀ x : M, x ∉ interior (inside \ neck.terminal_neck.carrier) →
     ∃ N : StrongEvolvingNeck K 0 epsilon, N.center = x
-
-
 
 theorem exists_soulNeckRegion_of_services
     (P : NoncompactKappaServices.{u}) {epsilon D : ℝ}
@@ -168,8 +153,6 @@ theorem exists_soulNeckRegion_of_services
       rw [hcenter'] at hb
       have := hdist x hx
       nlinarith
-
-
 
 theorem exists_soulNeckRegion
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {epsilon D : ℝ}

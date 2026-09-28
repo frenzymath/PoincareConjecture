@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalLineModel
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,24 +13,15 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
 
 include hP hinj
 
-
-
-
 theorem isConnected_boundary : IsConnected (P.boundary ℝ) := by
   obtain ⟨e⟩ := P.nonempty_boundary_homeomorph_circle hP hinj
   exact isConnected_iff_connectedSpace.mpr
     (e.connectedSpace_iff.mpr inferInstance)
 
-
-
-
 theorem frontier_complement_component {q : ℝ × ℝ} (hq : q ∈ (P.boundary ℝ)ᶜ) :
     frontier (connectedComponentIn (P.boundary ℝ)ᶜ q) = P.boundary ℝ :=
   (P.hasLocalComplementarySides_boundary hP hinj).frontier_component_eq
     P.isClosed_boundary (P.isConnected_boundary hP hinj) hq
-
-
-
 
 theorem exists_two_complement_components :
     ∃ a ∈ (P.boundary ℝ)ᶜ, ∃ b ∈ (P.boundary ℝ)ᶜ,
@@ -54,10 +36,6 @@ theorem exists_two_complement_components :
     · exact Or.inl (heq ▸ mem_connectedComponentIn hq)
     · exact Or.inr (heq ▸ mem_connectedComponentIn hq)
   · exact union_subset (connectedComponentIn_subset _ _) (connectedComponentIn_subset _ _)
-
-
-
-
 
 theorem exists_distinct_two_complement_components_of_nonvertical
     (hnv : P.HasNonverticalEdges) :

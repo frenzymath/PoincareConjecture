@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartPushforwardLpNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanTranslationNative
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -116,7 +107,6 @@ theorem chartScalar_coordinate_memLp (p : M) {f : M → ℝ}
       ((chartScalar_compactSupport p hK hKs hfzero).fderiv_apply ℝ (EuclideanSpace.single i 1))
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M]
-
 
 theorem chartExtension_chartScalar (p : M) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {K : Set M}

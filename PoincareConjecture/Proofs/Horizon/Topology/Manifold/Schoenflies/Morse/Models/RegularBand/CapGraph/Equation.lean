@@ -3,8 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +11,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 def boundedCapEquation (z t : Real) : Real :=
   z + Real.smoothTransition (4 * t ^ 2 / (t ^ 2 + z) - 2) * (t ^ 2 - z)

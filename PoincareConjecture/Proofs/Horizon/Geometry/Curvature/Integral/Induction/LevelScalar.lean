@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.S
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Fields
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M]
   [IsManifold (𝓡 (m + 2)) ∞ M]
   {g : RiemannianMetric (m + 2) M}
-
-
 
 theorem integral_regularLevel_scalarCurvature_posPart_div_speed_le
     (D : LeviCivitaData g)
@@ -97,9 +86,6 @@ theorem integral_regularLevel_scalarCurvature_posPart_div_speed_le
       ∂g.regularLevelVolume hf U (g.regularDomain_regular hf) t)
   simp_rw [hscalar]
   exact hbound
-
-
-
 
 theorem integral_regularLevel_scalarCurvature_posPart_le_of_induction
     (D : LeviCivitaData g)

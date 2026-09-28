@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_PullbackScalar
 import PoincareConjecture.Proofs.M14.Mathlib.IntervalTestFunctions
 import PoincareConjecture.Proofs.M14.Mathlib.SectionThroughVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -27,9 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem jacobiResidual_eq_zero_of_index_pair_stationary
     (Q : M14JacobiFieldData G R.curve (M14SqrtParameterInterval τ₁ τ₂))
@@ -73,9 +60,6 @@ theorem jacobiResidual_eq_zero_of_index_pair_stationary
       (Ioo_subset_Icc_self hr) (Q.field r) (M14JacobiFirstDerivative Q r)
       (M14JacobiSecondDerivative Q r) (A (R.curve r)) (ψ r)).symm
   simpa only [hAs, Pi.zero_apply] using hzero hs
-
-
-
 
 theorem jacobiResidual_eq_zero_of_index_stationary
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

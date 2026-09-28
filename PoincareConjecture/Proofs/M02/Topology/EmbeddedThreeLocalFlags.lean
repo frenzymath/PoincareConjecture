@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeFlagGrid
 import PoincareConjecture.Proofs.M02.Topology.LocalGraphCenters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

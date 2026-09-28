@@ -3,16 +3,6 @@ import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -74,11 +64,6 @@ private theorem exists_disk_filling_of_real_angular_lift
     ‖(A.symm (gamma u)).2‖ • (zeta (ell u) : V2)) = gamma u
   rw [← hangle]
   exact A.apply_symm_apply _
-
-
-
-
-
 
 theorem exists_retracted_disk_filling_of_real_angular_lift
     (A : V ≃ₜ V) (E1 : Set V) (hE1 : E1 ⊆ A '' E)

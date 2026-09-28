@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFrameNormalization
 import Mathlib.Analysis.Complex.Tietze
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap
@@ -19,9 +10,6 @@ namespace ContinuousMap
 variable {X E F : Type*} [TopologicalSpace X] [NormalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_frame_extension {s : Set X} (hs : IsClosed s)
     (f : C(s, E →L[ℝ] F)) (J : F →L[ℝ] E) (Q0 : E →L[ℝ] F)

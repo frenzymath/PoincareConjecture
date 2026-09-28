@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MatchedCollarMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Geometry
 variable {E F X : Type*} [TopologicalSpace X]
   {L : Set E} {K : Set F} {R : Set X}
   {Q : E → F} {c : E × ℝ → X} {d : F × ℝ → X}
-
-
-
 
 theorem matchedCollarMap_side_marks (hR : IsClosed R)
     (hQ : MapsTo Q L K)
@@ -64,9 +53,6 @@ theorem matchedCollarMap_side_marks (hR : IsClosed R)
       ⟨fun _ => htime.le, fun _ => hdT hwn⟩⟩
     intro hzero
     exact False.elim (ht (hzero ▸ le_rfl))
-
-
-
 
 theorem injOn_matchedCollarMap (hR : IsClosed R)
     (hQ : MapsTo Q L K) (hQi : InjOn Q L)

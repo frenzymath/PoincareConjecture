@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_ScalarEvolutionTransport
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexJacobi
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem integral_adaptedPullbackIndex (hM04 : RicciFlowCurvatureTheory.{0})
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

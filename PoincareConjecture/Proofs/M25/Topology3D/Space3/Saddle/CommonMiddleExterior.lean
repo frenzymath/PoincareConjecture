@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff NNReal Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_common_middle_exterior_images
     (u : UnitTwoSphere) (c delta : ℝ) (hdelta : 0 < delta)

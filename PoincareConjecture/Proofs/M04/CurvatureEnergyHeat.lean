@@ -12,13 +12,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -440,4 +433,3 @@ theorem curvatureEnergy_heat_inequality
     (fun s hs => curvatureEnergy_heat_inequality_interior F hs x)
 
 end PoincareConjecture.M04
-

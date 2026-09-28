@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalSurgery
 import PoincareConjecture.Proofs.M47.TerminalSourceIndexedCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_exists_physical_stage
     {A R r K v : ℝ} (hK : 0 ≤ K) (hA : 0 < A) (hr : 0 < r) (hv : 0 < v)

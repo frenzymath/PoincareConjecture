@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreeRa
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.AreaConvergence
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,10 +16,6 @@ namespace PoincareConjecture.M64.RampTransport
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
-
-
 
 structure SeparatedRampMinimum
     (P : M62.CircleProductData F circumference)
@@ -82,23 +65,16 @@ variable {P : M62.CircleProductData F circumference}
   {gamma0 gamma1 : ℝ → P.charts.Point}
   {A : M64Annulus (P.flow.metric time) gamma0 gamma1} {epsilon : ℝ}
 
-
-
 theorem area_le_competitor (R : SeparatedRampMinimum P Q time gamma0 gamma1 A epsilon) :
     R.minimum.area ≤ R.competitor.area := by
   rw [R.area_minimizing]
   exact m64LeastAnnulusArea_le_annulus R.competitor
-
-
 
 theorem area_error (R : SeparatedRampMinimum P Q time gamma0 gamma1 A epsilon) :
     R.minimum.area < A.area + epsilon :=
   R.area_le_competitor.trans_lt R.competitor_area_error
 
 end SeparatedRampMinimum
-
-
-
 
 theorem exists_separated_ramp_minimum [T2Space M] [CompactSpace M]
     (P : M62.CircleProductData F circumference)
@@ -155,10 +131,6 @@ theorem exists_separated_ramp_minimum [T2Space M] [CompactSpace M]
     affine_phase := hphase
     within_immersion := himm }⟩
 
-
-
-
-
 structure StabilizedSmoothRampApproximation
     (P : M62.CircleProductData F circumference)
     (Q : M62.CircleProductData P.flow auxiliary) (time : ℝ)
@@ -175,8 +147,6 @@ variable {P : M62.CircleProductData F circumference}
   {gamma0 gamma1 : ℝ → P.charts.Point}
   {A : M64Annulus (P.flow.metric time) gamma0 gamma1} {r epsilon : ℝ}
 
-
-
 theorem competitor_area_error
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :
     S.separated.competitor.area < A.area + epsilon := by
@@ -184,22 +154,16 @@ theorem competitor_area_error
   have h1 := S.separated.competitor_area_error
   linarith
 
-
-
 theorem minimum_area_error
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :
     S.separated.minimum.area < A.area + epsilon :=
   S.separated.area_le_competitor.trans_lt S.competitor_area_error
-
-
 
 theorem lower_smooth
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :
     ContMDiff 𝓘(ℝ, ℝ) (𝓡 ((n + 1) + 1)) ∞
       (auxiliaryCircleSection Q (Q.circle.quotient 0) ∘ S.approximation.first) :=
   (auxiliaryCircle_section_contMDiff Q _).comp S.approximation.first_smooth
-
-
 
 theorem upper_smooth
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :
@@ -211,10 +175,6 @@ theorem upper_smooth
 end StabilizedSmoothRampApproximation
 
 variable [T2Space M] [CompactSpace M]
-
-
-
-
 
 theorem exists_stabilized_smooth_ramp_approximation
     (P : M62.CircleProductData F circumference)
@@ -241,9 +201,6 @@ theorem exists_stabilized_smooth_ramp_approximation
     S.first_periodic S.second_periodic S.first_ramp S.second_ramp S.annulus
     (half_pos hepsilon)
   exact ⟨⟨S, R⟩⟩
-
-
-
 
 theorem nonempty_auxiliary_unit_product (P : M62.CircleProductData F circumference) :
     Nonempty (M62.CircleProductData P.flow 1) := by

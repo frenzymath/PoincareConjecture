@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_marked_image_homeomorph
     {ι κ α E : Type*} [Fintype ι] [Fintype κ]

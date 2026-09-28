@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Group.CocompactMap
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,10 +11,6 @@ open Filter Set Metric
 open scoped Topology ContDiff SchwartzMap ComplexConjugate
 
 namespace Complex
-
-
-
-
 
 theorem isProperMap_of_fderiv_tendsto_id (f : ℂ → ℂ) (hf : ContDiff ℝ ∞ f)
     (hlim : Tendsto (fderiv ℝ f) (cocompact ℂ) (𝓝 (ContinuousLinearMap.id ℝ ℂ))) :
@@ -83,9 +70,6 @@ theorem isProperMap_of_fderiv_tendsto_id (f : ℂ → ℂ) (hf : ContDiff ℝ �
       _ = ‖f z - (f z - z)‖ := by congr 1; abel
       _ ≤ _ := norm_sub_le _ _
   linarith [herror z hzR]
-
-
-
 
 theorem exists_proper_nondegenerate_beltrami_map (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

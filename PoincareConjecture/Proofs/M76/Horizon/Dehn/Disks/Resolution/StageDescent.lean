@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Resolution.StageProjectionReduction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.CircleTermination
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 open PoincareConjecture.M76.Dehn
@@ -20,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem Step.nonempty_descended_marked_disk
     {M ι : Type*} [TopologicalSpace M]
@@ -53,8 +42,6 @@ theorem Step.nonempty_descended_marked_disk
            whole_boundary_iff := fun x ↦ haFront x x.property
            basepath := path
            outside := hgOut }⟩
-
-
 
 theorem nonempty_folded_stage_marked_disk
     {M ι : Type*} [TopologicalSpace M]

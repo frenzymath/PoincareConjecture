@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Radius
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem exists_partial_pointed_source_exhaustion
     {n : ℕ} (U : ℕ → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))

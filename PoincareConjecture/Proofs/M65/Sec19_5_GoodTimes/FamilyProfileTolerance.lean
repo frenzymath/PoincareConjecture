@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.ProfileTolerance
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.TimeAreaLipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
-
 
 theorem m65FamilyProfileTolerance (hM61 : M61RawWidthCore.{u})
     (hM64 : M64ComparisonTheory.{u}) (compact : IsCompact (univ : Set M))

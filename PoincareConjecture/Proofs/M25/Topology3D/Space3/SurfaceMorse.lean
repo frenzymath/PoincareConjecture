@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.MorseChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.GenericHeight
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +12,6 @@ variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
 variable [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
 
 theorem exists_surface_morse_chart (hdim : Module.finrank ℝ E = 2)
     (f : M → ℝ) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (x : M)
@@ -70,9 +57,6 @@ theorem exists_surface_morse_chart (hdim : Module.finrank ℝ E = 2)
       σ * (e0 (c y)).1 ^ 2 + τ * (e0 (c y)).2 ^ 2 at h
     rw [c.left_inv hy.1, c.left_inv hxc] at h
     exact h
-
-
-
 
 theorem exists_generic_collar_morse_height (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) :

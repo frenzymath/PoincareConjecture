@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.RicciConvergen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -30,7 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem potential_contMDiff (S : GradientShrinkingSolitonData n M) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ S.potential := by

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

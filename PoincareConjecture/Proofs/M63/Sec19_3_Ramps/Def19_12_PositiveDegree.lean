@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CircleLift
 import PoincareConjecture.Proofs.M63.Mathlib.LocalDiffeomorphLift
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.SlopeRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m63CircleLift_contDiff {p : ℝ} (C : M62.CircleGeometry p)
     {f : ℝ → C.Point} (hf : ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) 2 f)
@@ -39,9 +27,6 @@ theorem m63CircleLift_contDiff {p : ℝ} (C : M62.CircleGeometry p)
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63Slope_eq_lift_deriv_div_speed
     {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
@@ -83,8 +68,6 @@ theorem m63Slope_eq_lift_deriv_div_speed
   simp only [m62Slope, spatialUnitTangent, map_smul, smul_apply, smul_eq_mul]
   rw [hpair]
   rw [div_eq_mul_inv, mul_comm]
-
-
 
 theorem m63PositiveDegreeLift_nonempty
     {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}

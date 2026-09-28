@@ -6,20 +6,12 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology ContDiff Interval
 
 namespace PoincareConjecture.Surface
-
 
 theorem arccos_unit_upper {a b : ℝ} (hunit : a ^ 2 + b ^ 2 = 1) (hb : 0 < b) :
     Real.arccos a ∈ Ioo 0 Real.pi ∧
@@ -29,7 +21,6 @@ theorem arccos_unit_upper {a b : ℝ} (hunit : a ^ 2 + b ^ 2 = 1) (hb : 0 < b) :
   refine ⟨⟨Real.arccos_pos.mpr ha₂, Real.arccos_lt_pi.mpr ha₁⟩,
     Real.cos_arccos ha₁.le ha₂.le, ?_⟩
   rw [Real.sin_arccos, show 1 - a ^ 2 = b ^ 2 by linarith, Real.sqrt_sq hb.le]
-
 
 theorem arccos_lt_arccos_of_unit_det_pos {a b c d : ℝ}
     (hab : a ^ 2 + b ^ 2 = 1) (hcd : c ^ 2 + d ^ 2 = 1)
@@ -74,8 +65,6 @@ private theorem contDiffOn_of_exp_eq
     exact sub_add_cancel _ _
   exact (hlog.congr_of_eventuallyEq heq.symm).contDiffWithinAt
 
-
-
 theorem exists_contDiffOn_angle
     {U : Set ℝ} (hU : IsOpen U) (hconv : Convex ℝ U) (hne : U.Nonempty)
     {a b : ℝ → ℝ} (ha : ContDiffOn ℝ ∞ a U) (hb : ContDiffOn ℝ ∞ b U)
@@ -112,8 +101,6 @@ theorem exists_contDiffOn_angle
   have hi := congrArg Complex.im (hexp ht)
   simpa [Complex.exp_re, Complex.exp_im, hre, z] using And.intro hr hi
 
-
-
 theorem exists_contDiffOn_angle_integral
     {U : Set ℝ} (hU : IsOpen U) (hconv : Convex ℝ U) (hne : U.Nonempty)
     {a b : ℝ → ℝ} (ha : ContDiffOn ℝ ∞ a U) (hb : ContDiffOn ℝ ∞ b U)
@@ -140,7 +127,6 @@ theorem exists_contDiffOn_angle_integral
   apply intervalIntegral.integral_deriv_eq_sub
     (fun x hx => (hθ.contDiffAt (hU.mem_nhds (hst hx))).differentiableAt (by simp))
   exact ((hθ.continuousOn_deriv_of_isOpen hU (by simp)).mono hst).intervalIntegrable
-
 
 theorem integral_angularForm_eq_int_mul_two_pi
     {U : Set ℝ} (hU : IsOpen U) (hconv : Convex ℝ U) (hne : U.Nonempty)

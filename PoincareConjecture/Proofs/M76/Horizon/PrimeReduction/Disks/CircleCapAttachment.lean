@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.TaperingCapAnn
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallReplacement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -91,8 +83,6 @@ theorem attach_periodic_annulus
     (_root_.Dehn.isFinitePLBallPair_annulusSquare (by norm_num : 2*(1:ℝ)<8))
     hA hseam hInter hrim c ⟨f,hf,hcf⟩ hmem hcf).1
 
-
-
 theorem attach_tapering_cap_annuli
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {β : ℝ} (hβ : 0 < β) (τ : C3 → E)
@@ -172,8 +162,6 @@ theorem attach_tapering_cap_annuli
       exact hA.1 (hboth.subset ⟨hy,hz⟩)
     · exact fun hy => ⟨Or.inl hy,Or.inl hy⟩
 
-
-
 theorem attached_cap_sphere_intersection
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {β : ℝ} (hβ : 0 < β) (τ : C3 → E)
@@ -201,8 +189,6 @@ theorem attached_cap_sphere_intersection
   · rintro ⟨hy,x,⟨hx,hx0⟩,rfl⟩
     exact ⟨Or.inr hy,(hsphere x hx).mpr
       ((signedTubeSheet_coordinate_iff _ hx.1 1).mpr hx0)⟩
-
-
 
 theorem exists_attached_circle_cap_disks
     {n : ℕ} (L : Polygon V3 (n + 3)) (hL : L.HasSimplicialEdges)

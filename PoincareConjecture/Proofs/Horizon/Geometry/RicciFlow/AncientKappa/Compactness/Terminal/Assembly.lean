@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.CurvatureConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Inheritance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +19,6 @@ namespace AncientKappaSequence
 
 local instance assemblyCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.carrier :=
   connectedSpace_iff_univ.mpr D.connected
-
-
-
 
 theorem closedLimit_metricComplete_of_source_bounds
     (C : ℕ → FlowCarrier.{0} 3)
@@ -84,9 +70,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
-
 theorem closedLimit_complete_at_zero
     (F : RicciFlow 3 G.limitCarrier.carrier (Iic 0))
     (hF : ∀ t : ℝ, t < 0 → F.metric t = G.limitFlow.metric (t + 1))
@@ -109,8 +92,6 @@ theorem closedLimit_complete_at_zero
       hcomplete hA (show (0 : ℝ) ≤ 0 from le_refl 0)
   · exact hcontrol
   · exact S.tendsto_terminal_curvatureTensorNorm G F hF P hcontrol hcomplete
-
-
 
 theorem closedLimit_complete
     (F : RicciFlow 3 G.limitCarrier.carrier (Iic 0))

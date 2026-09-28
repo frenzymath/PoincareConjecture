@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficien
 import PoincareConjecture.Proofs.M28.Mathlib.TimeJetsWithin
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetPostcompose
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.RicciFlow
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_of_bilinear_within_spacetime_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.TerminalInputs
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,13 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.SaddleLevel
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -103,8 +90,6 @@ private theorem reflectedLowerToUpper_region {D : SphereSurgeryCoreCap v g B}
   simp only [neg_neg, LowerAnnularEnd.region]
 
 namespace ReflectedEnds
-
-
 
 theorem exists_reflected_endCaps (A : AnnularEndFamily v g B C) (hv : ‖v‖ = 1) :
     ∃ R : AnnularEndFamily v (heightReflection hv ∘ g) (Neg.neg '' B) C,
@@ -272,8 +257,6 @@ theorem exists_reflected_endCaps (A : AnnularEndFamily v g B C) (hv : ‖v‖ = 
     rw [hloweq]
     rfl
 
-
-
 theorem exists_back
     {v' : E3} {g' : S2 → E3} {B' : Set Real} {C' : Set S2}
     (A : AnnularEndFamily v' g' B' C') (hv' : ‖v'‖ = 1)
@@ -294,7 +277,6 @@ end ReflectedEnds
 
 open PlaneArcs.Terminal.Reflection
 
-
 theorem reflected_critical_values {v : E3} (hv : ‖v‖ = 1) (g : S2 → E3) :
     (fun q => inner Real v (heightReflection hv (g q))) ''
       {q | mfderiv (𝓡 2) 𝓘(Real, Real)
@@ -308,8 +290,6 @@ theorem reflected_critical_values {v : E3} (hv : ‖v‖ = 1) (g : S2 → E3) :
     Set.ext (reflected_height_critical_iff hv g)
   rw [hc, image_image]
   exact image_congr (fun q _ => inner_heightReflection hv _)
-
-
 
 theorem exists_original_ends
     {f : S2 → E3} {p : S2} (s : TerminalInputData f p)

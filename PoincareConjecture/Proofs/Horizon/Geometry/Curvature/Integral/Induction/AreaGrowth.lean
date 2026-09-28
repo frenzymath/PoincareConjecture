@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.AreaDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.AreaBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

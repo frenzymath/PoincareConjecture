@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ShortBandJoinCo
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RetainedCapRadialCoverage
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TrimmedBandCoverage
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +13,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_covered_return_bands
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

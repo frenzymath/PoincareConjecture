@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCurvatureDrop
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single (2 : Fin 3) 1
-
-
-
 
 theorem radialMixedSectional_tendsto_zero_of_slope
     (g : ℕ → RiemannianMetric 3 StandardCapSpace)

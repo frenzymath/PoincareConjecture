@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.LocalFlows
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture.ChartDistance
 variable {ι : Type*} {n : ℕ}
     (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
     [∀ i, Nonempty (Piece U i)]
-
-
 
 theorem exists_ancientRicciFlow_on_coordinate_limit
     {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)]

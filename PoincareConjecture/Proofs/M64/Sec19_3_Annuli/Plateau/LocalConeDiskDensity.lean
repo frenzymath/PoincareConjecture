@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskColumns
 import PoincareConjecture.Proofs.M58.Cor18_28_AreaBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ open Proofs.M58
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m64LocalConeDiskMap_energy_zero_of_inner (g : RiemannianMetric n M)
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)
     (h0 : ∀ x, H (0, center, gamma x) = center)
@@ -38,8 +25,6 @@ theorem m64LocalConeDiskMap_energy_zero_of_inner (g : RiemannianMetric n M)
   have hd := heq.mfderiv_eq (I := 𝓡 2) (I' := 𝓡 n)
   simp only [m60EnergyDensity, Matrix.trace_fin_two, m60AreaGram, hd,
     mfderiv_const, zero_apply, map_zero, add_zero, mul_zero]
-
-
 
 theorem m64LocalConeDiskMap_polar_energy_le (g : RiemannianMetric n M)
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)

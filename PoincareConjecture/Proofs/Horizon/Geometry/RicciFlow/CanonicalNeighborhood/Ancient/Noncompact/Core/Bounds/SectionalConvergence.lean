@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.Uniform
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometrySectional
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem sectionalCurvature_changeBasis (D : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) (a b c d : ℝ) (hdet : a * d - b * c ≠ 0) :
@@ -60,7 +50,6 @@ theorem sectionalCurvature_changeBasis (D : LeviCivitaData g) (x : M)
   rw [hnum, hgram]
   field_simp [hdet]
 
-
 theorem sectionalCurvature_pos_of_independent (D : LeviCivitaData g) (x : M)
     (hsec : ∀ u v, g.inner x u u = 1 → g.inner x v v = 1 →
       g.inner x u v = 0 → 0 < D.sectionalCurvature x u v)
@@ -71,7 +60,6 @@ theorem sectionalCurvature_pos_of_independent (D : LeviCivitaData g) (x : M)
   obtain ⟨a, b, c, d, hdet, hp, hq, hpq⟩ := exists_orthonormal_changeBasis u v huv
   rw [← D.sectionalCurvature_changeBasis x u v a b c d hdet]
   exact hsec _ _ hp hq hpq
-
 
 theorem gramDet_ne_zero_of_independent (_D : LeviCivitaData g) (x : M)
     {u v : TangentSpace (𝓡 n) x} (huv : LinearIndependent ℝ ![u, v]) :
@@ -200,8 +188,6 @@ namespace PoincareConjecture.LeviCivitaData
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem tendsto_sectionalCurvature_of_scalar_metric_jets
     {α : Type*} {l : Filter α} {n : ℕ}
     {gseq : α → RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -246,8 +232,6 @@ theorem tendsto_sectionalCurvature_of_scalar_metric_jets
       (h1.prodMk_nhds hv')
   exact hnum.div (((hinner hu hu).mul (hinner hv hv)).sub ((hinner hu hv).pow 2))
     (D.gramDet_ne_zero_of_independent x hab)
-
-
 
 theorem tendsto_sectionalCurvature_of_moving_scalar_pullback_jets
     {α : Type*} {l : Filter α} [l.NeBot] {n : ℕ}
@@ -349,7 +333,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
 
 set_option maxHeartbeats 3000000 in
-
 
 theorem tendsto_terminal_coordinate_sectionalCurvature
     (hconv : M23TerminalMetricConvergence G e)

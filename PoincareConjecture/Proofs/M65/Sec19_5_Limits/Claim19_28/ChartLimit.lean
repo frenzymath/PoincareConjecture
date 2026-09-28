@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -53,8 +44,6 @@ private theorem m65Slice_second_eq {V : Type*} [NormedAddCommGroup V]
   simpa only [Function.comp_def, iteratedDeriv_succ, iteratedDeriv_zero,
     hfirst, deriv_const, map_zero, add_zero] using h
 
-
-
 noncomputable def m65LimitChartJet {n : ℕ}
     (Y : ℝ × ℝ → M65ProjectedChartStateSpace n) (z : ℝ × ℝ) :
     M65ProjectedChartJetSpace n :=
@@ -65,7 +54,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
 omit [T2Space M] in
-
 
 theorem m65LimitChartJet_eq_actual {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -98,9 +86,6 @@ private theorem m65Value_tendsto {V : Type*} [NormedAddCommGroup V]
     Tendsto (fun k => f k z) atTop (𝓝 (Y z)) := by
   simpa only [iteratedFDeriv_zero_apply] using
     m65JointJet_tendsto hjet hz 0 (fun _ => (0, 0))
-
-
-
 
 theorem m65ProjectedChart_limit_equation
     {circumference : ℕ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))
@@ -144,10 +129,6 @@ theorem m65ProjectedChart_limit_equation
   have h := (hs.hasFDerivAt.comp z.1
     ((hasFDerivAt_id z.1).prodMk (hasFDerivAt_const z.2 z.1))).hasDerivAt
   exact h.congr_deriv hlim
-
-
-
-
 
 theorem m65ProjectedChart_exists_smooth_limit
     {circumference : ℕ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))
@@ -357,8 +338,6 @@ private theorem m65ActualProjection_uniform_modulus {κ : Type*} {circumference 
       add_le_add (htime' k t u ht hu x) (hspace' k u hu x y)
     _ = _ := by rw [← ENNReal.ofReal_add (by positivity) (by positivity), mul_add]
 
-
-
 noncomputable def m65ProjectedContinuousMap {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) {r s : ℝ} (hsub : Icc r s ⊆ Ioo a b) :
@@ -369,9 +348,6 @@ noncomputable def m65ProjectedContinuousMap {circumference : ℝ}
       (continuous_snd.prodMk continuous_fst).continuousOn
       (fun _ hz => ⟨mem_univ _, Ioo_subset_Icc_self (hsub (Ioo_subset_Icc_self hz.1))⟩))
   exact ⟨fun z => (c z.1.2 z.1.1).1, h.domRestrict⟩
-
-
-
 
 theorem m65Projected_exists_continuous_subsequence
     (hcompact : IsCompact (univ : Set M)) {circumference : ℕ → ℝ}

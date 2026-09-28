@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 import Mathlib.Topology.CWComplex.Classical.Subcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,7 +13,6 @@ namespace PoincareConjecture.Proofs.M02.Topology
 noncomputable section
 
 open _root_.Topology.RelCWComplex
-
 
 theorem continuous_of_cw_disks
     {X : Type u} [TopologicalSpace X] [T2Space X]
@@ -76,7 +67,6 @@ theorem continuous_of_cw_disks
     preimage_image_eq _ Subtype.val_injective
   rw [← hpre]
   exact hW.preimage continuous_subtype_val
-
 
 theorem exists_cw_skeleton_extension
     {X : Type u} [TopologicalSpace X] [T2Space X]

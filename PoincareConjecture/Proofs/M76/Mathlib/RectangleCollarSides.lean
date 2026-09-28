@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RectangleCollarNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ namespace Homeomorph
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [NormedSpace ℝ E] in
-
-
 
 theorem rectangle_side_mem_iff
     {α β : ℝ} {T S : Set E}
@@ -42,10 +30,6 @@ theorem rectangle_side_mem_iff
       Subtype.ext (Prod.ext hp rfl)
     rw [heq, hside]
     exact (d t).property
-
-
-
-
 
 theorem IsFinitePL.exists_bottom_normalized_rectangle_chart_with_sides
     [FiniteDimensional ℝ E] {ι : Type*}

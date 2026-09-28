@@ -2,30 +2,6 @@ import PoincareConjecture.Definitions.M65
 import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

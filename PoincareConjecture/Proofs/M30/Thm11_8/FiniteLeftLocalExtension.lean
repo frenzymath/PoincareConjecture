@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteLeftStageLimit
 import PoincareConjecture.Proofs.M30.Thm11_8.ClosedLeftDescent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +35,6 @@ private theorem finiteLeftStage_openCodomain
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
-
-
 
 theorem exists_nonnegative_left_extension_on_stage
     (hShi : LocalCurvatureDerivativeEstimates.{u})
@@ -127,8 +117,6 @@ theorem exists_nonnegative_left_extension_on_stage
       (L.flow.connection t) isOpen_univ hinc.contMDiff.contMDiffOn
       (fun _ _ _ _ => rfl) (mem_univ x)).mpr (L.nonnegative t ht (inc x))
 
-
-
 theorem exists_nonnegative_left_extension_on_terminal_ball
     (hShi : LocalCurvatureDerivativeEstimates.{u})
     {S : GeneralizedBlowupSequence.{u}} {T : ℝ} (hT : 0 < T)
@@ -178,9 +166,6 @@ theorem exists_nonnegative_left_extension_on_terminal_ball
     exact Metric.closure_ball_subset_closedBall.trans (Metric.closedBall_subset_ball (by linarith))
   exact exists_nonnegative_left_extension_on_stage hShi hT G hbranch hcompact hcyl
     Y Yplus hYcompact hYne (hcompactBall (A + 1)) hbuffer
-
-
-
 
 theorem exists_complete_closed_left_extension_of_radius_dependent_cylinders
     (hShi : LocalCurvatureDerivativeEstimates.{u})

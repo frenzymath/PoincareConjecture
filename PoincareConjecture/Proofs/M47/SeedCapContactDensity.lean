@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedCapPersistenceDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_cap_contact_radius {c K h H r R : ℝ}
     (hc : 0 < c) (hK : 0 < K) (hh : 0 < h) (hr : 0 < r)
@@ -50,9 +39,6 @@ theorem seed_cap_contact_radius {c K h H r R : ℝ}
     rw [mul_pow]
     exact hr2.trans (mul_le_mul_of_nonneg_right hsquare (sq_nonneg h))
   nlinarith [mul_pos (show 0 < 1 + 8 * K / c by linarith) hh]
-
-
-
 
 theorem exists_seed_cap_contact_small_density (g0 : StandardInitialMetric)
     {c K : ℝ} (hc : 0 < c) (hK : 0 < K) :
@@ -118,8 +104,6 @@ theorem exists_seed_cap_contact_small_density (g0 : StandardInitialMetric)
       _ < _ := (ENNReal.ofReal_lt_ofReal_iff (mul_pos htip hh)).mpr hstrict
   exact hdensity F hinitial O t hT hn i A eta theta hA heta hetaHalf htheta htH
     hpersist q hnear s hs (hsr.trans hrmax)
-
-
 
 theorem exists_seed_cap_contact_density (g0 : StandardInitialMetric)
     {c K : ℝ} (hc : 0 < c) (hK : 0 < K) :

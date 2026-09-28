@@ -3,16 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.LinearAlgebra.BilinearForm.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped BigOperators
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem abs_inverse_gram_contraction_le (v : Fin 2 → E)
     (B : LinearMap.BilinForm ℝ E) {D : ℝ}

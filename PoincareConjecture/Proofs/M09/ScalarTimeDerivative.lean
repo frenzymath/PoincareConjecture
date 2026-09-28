@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedLength
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

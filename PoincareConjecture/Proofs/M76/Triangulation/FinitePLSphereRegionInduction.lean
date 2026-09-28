@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.AlexanderInitialRegionInducti
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteGenericHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -21,12 +11,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem IsFinitePL.hasAlexanderRegionBalls_of_zero_charge_supplier
     {S : Set E} {D : Set F} {e : S ≃ₜ frontier D} (he : e.IsFinitePL)

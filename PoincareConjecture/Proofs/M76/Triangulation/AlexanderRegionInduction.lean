@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionCertificates
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderPrescribedRegionSplit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -19,12 +9,6 @@ namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem hasAlexanderRegionBalls_of_zero_charge_supplier
     (hdim : Module.finrank ℝ E = 3)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.ChartBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.SmallCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -29,9 +19,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
-
-
-
 
 theorem eventually_referenceChart_estimates_of_small_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

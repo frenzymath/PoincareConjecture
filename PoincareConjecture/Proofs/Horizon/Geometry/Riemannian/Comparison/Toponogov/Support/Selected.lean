@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Tail
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,8 +34,6 @@ private theorem geodesic_open_interval {g : RiemannianMetric n M} {γ : ℝ → 
     rw [Metric.mem_ball, Real.dist_eq, abs_of_pos (sub_pos.mpr h1)]
     linarith [min_le_right r s, ht.2]
   exact hγ t ⟨le_of_not_gt h0, le_of_not_gt h1⟩
-
-
 
 theorem exists_radial_support_on_minimizing_segment
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

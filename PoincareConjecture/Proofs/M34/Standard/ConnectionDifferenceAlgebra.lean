@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteBilinearCoordinates
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxAlgebra
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ noncomputable section
 
 namespace PoincareConjecture.M34.DifferenceEnergy
 
-
-
 def cyclicRicciGradient (n : ℕ) : Gamma n →ₗ[ℝ] Gamma n where
   toFun C i j k := -C i j k - C j k i + C k i j
   map_add' C C' := by
@@ -35,8 +22,6 @@ def cyclicRicciGradient (n : ℕ) : Gamma n →ₗ[ℝ] Gamma n where
     ext i j k
     simp only [Pi.smul_apply, RingHom.id_apply, smul_eq_mul]
     ring
-
-
 
 def ricciGradientCoordinates {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
@@ -53,8 +38,6 @@ def ricciGradientCoordinates {n dS : ℕ}
     intro beta _
     ring
 
-
-
 def ricciGradientCurvature {n : ℕ} (gamma : Gamma n) : FS n →ₗ[ℝ] Gamma n where
   toFun S i j k :=
     -(∑ p : Fin n, gamma i j p * ∑ l : Fin n, raw S l l p k) -
@@ -70,8 +53,6 @@ def ricciGradientCurvature {n : ℕ} (gamma : Gamma n) : FS n →ₗ[ℝ] Gamma 
     simp only [mul_left_comm _ r]
     simp only [mul_neg, mul_sub, Finset.mul_sum]
 
-
-
 def ricciGradientConnection {n : ℕ} (R1 : Raw n) : FA n →ₗ[ℝ] Gamma n where
   toFun A i j k :=
     -(∑ p : Fin n, ag A i j p * ∑ l : Fin n, R1 l l p k) -
@@ -85,9 +66,6 @@ def ricciGradientConnection {n : ℕ} (R1 : Raw n) : FA n →ₗ[ℝ] Gamma n wh
     simp only [ag, map_smul, smul_apply, Pi.smul_apply, RingHom.id_apply,
       smul_eq_mul, Finset.mul_sum, mul_assoc]
     simp only [mul_neg, mul_sub, Finset.mul_sum]
-
-
-
 
 def connectionRaise {n : ℕ} (I0 : Inverse n) : Gamma n →ₗ[ℝ] FA n where
   toFun P := ContinuousLinearMap.piLpBilinearFromCoordinates (p := 2) (q := 2)
@@ -107,9 +85,6 @@ def connectionRaise {n : ℕ} (I0 : Inverse n) : Gamma n →ₗ[ℝ] FA n where
     rw [h, map_smul]
     rfl
 
-
-
-
 def connectionMetricRate {n : ℕ} (I0 : Inverse n) (vp : Fin n → Fin n → V n) :
     FH n →ₗ[ℝ] FA n where
   toFun H := ContinuousLinearMap.piLpBilinearFromCoordinates (p := 2) (q := 2)
@@ -128,30 +103,20 @@ def connectionMetricRate {n : ℕ} (I0 : Inverse n) (vp : Fin n → Fin n → V 
     rw [h, map_smul]
     rfl
 
-
-
 def connectionDerivativeRate {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) (I0 : Inverse n) :
     (Fin dS × Fin n → ℝ) →ₗ[ℝ] FA n :=
   (connectionRaise I0).comp ((cyclicRicciGradient n).comp (ricciGradientCoordinates qS))
 
-
-
 def connectionConnectionRate {n : ℕ} (I0 : Inverse n) (R1 : Raw n) : FA n →ₗ[ℝ] FA n :=
   (connectionRaise I0).comp ((cyclicRicciGradient n).comp (ricciGradientConnection R1))
-
-
 
 def connectionCurvatureRate {n : ℕ} (I0 : Inverse n) (gamma : Gamma n) : FS n →ₗ[ℝ] FA n :=
   (connectionRaise I0).comp ((cyclicRicciGradient n).comp (ricciGradientCurvature gamma))
 
-
-
 def connectionEnergyCoordinates {n dA : ℕ}
     (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA)) : FA n →ₗ[ℝ] (Fin dA → ℝ) :=
   LinearMap.pi fun alpha => (EuclideanSpace.proj alpha).toLinearMap.comp qA.toLinearMap
-
-
 
 def connectionDifferenceRate {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) (I0 : Inverse n)

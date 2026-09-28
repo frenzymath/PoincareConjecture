@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPairParameters
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPairSeparation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgerySmoothReplacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Topology
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_smooth_surgery_pair (P : SurgeryCapProfile)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

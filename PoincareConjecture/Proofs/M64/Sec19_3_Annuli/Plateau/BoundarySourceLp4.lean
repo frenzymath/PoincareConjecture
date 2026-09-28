@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,11 +22,7 @@ local instance m64BoundarySourceLp4_bilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem m64WeightedChart_source_memLp_four
     (g : RiemannianMetric n M) (b : M) (modulus : ℝ)

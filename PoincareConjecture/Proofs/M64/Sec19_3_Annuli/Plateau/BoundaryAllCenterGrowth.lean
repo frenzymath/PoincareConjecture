@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialInterio
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialBallGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyPowerWeakening
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,10 +14,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
-
-
-
-
 
 theorem m64Boundary_window_closedBall {x0 width : ℝ}
     (hw : 0 < width) (hx : width < x0) (hP : x0 + width < curvePeriod) (hw1 : width < 1) :
@@ -42,10 +29,6 @@ theorem m64Boundary_window_closedBall {x0 width : ℝ}
   obtain ⟨h0l, h0r⟩ := abs_le.mp h0
   obtain ⟨h1l, h1r⟩ := abs_le.mp h1
   exact ⟨by linarith, by linarith, by linarith, by linarith⟩
-
-
-
-
 
 theorem m64Boundary_all_center_power
     (F : LoopPlane → ℝ) (hF : IntegrableOn F S) (hFpos : ∀ p, 0 ≤ F p)

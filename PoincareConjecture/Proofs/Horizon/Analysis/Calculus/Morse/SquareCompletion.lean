@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.QuadraticFactor
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Diffeomorphism.LocalInverse
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter
@@ -17,10 +9,8 @@ open scoped ContDiff Topology
 
 namespace Poincare.Analysis.Calculus.Morse
 
-
 def rescalingShearMap (u v w : ℝ × ℝ → ℝ) (x : ℝ × ℝ) : ℝ × ℝ :=
   (u x * (x.1 + v x * x.2), w x * x.2)
-
 
 def rescalingShearLinear (u v w : ℝ) : (ℝ × ℝ) →L[ℝ] ℝ × ℝ :=
   (u • (ContinuousLinearMap.fst ℝ ℝ ℝ + v • ContinuousLinearMap.snd ℝ ℝ ℝ)).prod
@@ -59,8 +49,6 @@ theorem bijective_rescalingShearLinear {u v w : ℝ} (hu : u ≠ 0) (hw : w ≠ 
     · field_simp
       ring
     · exact mul_div_cancel₀ _ hw
-
-
 
 theorem exists_rescalingShear_localInverse {u v w : ℝ × ℝ → ℝ} {U : Set (ℝ × ℝ)}
     (hU : IsOpen U) (h0 : (0 : ℝ × ℝ) ∈ U)
@@ -105,13 +93,11 @@ theorem exists_rescalingShear_localInverse {u v w : ℝ × ℝ → ℝ} {U : Set
     rw [hC]
     exact (hgat.differentiableAt (by simp)).hasFDerivAt
 
-
 theorem binary_quadratic_complete_square {a b c x y : ℝ} (ha : a ≠ 0) :
     a * x ^ 2 + 2 * b * x * y + c * y ^ 2 =
       a * (x + b / a * y) ^ 2 + (c - b ^ 2 / a) * y ^ 2 := by
   field_simp
   ring
-
 
 theorem binary_quadratic_signed_squares {a b c x y s t : ℝ}
     (hs : s ^ 2 = 1) (ht : t ^ 2 = 1)
@@ -133,8 +119,6 @@ private theorem exists_sign_mul_pos {a : ℝ} (ha : a ≠ 0) :
   rcases lt_or_gt_of_ne ha with h | h
   · exact ⟨-1, Or.inl rfl, by norm_num, by nlinarith⟩
   · exact ⟨1, Or.inr rfl, by norm_num, by simpa⟩
-
-
 
 theorem exists_binary_quadratic_normalForm
     {a b c : ℝ × ℝ → ℝ} (ha : ContDiff ℝ ∞ a)

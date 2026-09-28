@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedClosedHorizonVolume
 import PoincareConjecture.Proofs.M47.SeedOldBufferedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_buffered_firstFailure_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

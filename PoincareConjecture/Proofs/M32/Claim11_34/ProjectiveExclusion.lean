@@ -2,23 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.HornOrientation
 import PoincareConjecture.Proofs.M32.Claim11_34.ForwardComparison
 import PoincareConjecture.Proofs.M32.Claim11_32.HornBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -75,12 +58,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
-
-
-
-
 
 theorem terminalBlowupConvergence_no_projective_product
     (hM04 : RicciFlowCurvatureTheory.{u}) {K B : ℝ} {accuracy : ℕ → ℝ}

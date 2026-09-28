@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingRiemannian
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,16 +18,10 @@ variable {E : Type uE} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type uM} [TopologicalSpace M] [ChartedSpace H M]
   {F : Type uF} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def chartNormalizationLinearEquiv (e : OpenPartialHomeomorph M F)
     (he : e.MDifferentiable I 𝓘(ℝ, F)) {x : M} (hx : x ∈ e.source) :
     TangentSpace I x ≃L[ℝ] F :=
   (he.mfderiv hx).trans (NormedSpace.fromTangentSpace (e x))
-
-
-
 
 def normalizedSmoothChart (e : OpenPartialHomeomorph M F)
     (he : e.MDifferentiable I 𝓘(ℝ, F)) {x : M} (hx : x ∈ e.source) :
@@ -50,16 +31,10 @@ def normalizedSmoothChart (e : OpenPartialHomeomorph M F)
 variable (e : OpenPartialHomeomorph M F) (he : e.MDifferentiable I 𝓘(ℝ, F))
   {x : M} (hx : x ∈ e.source)
 
-
-
-
 theorem normalizedSmoothChart_source :
     (normalizedSmoothChart e he hx).source = e.source := by
   change e.source ∩ Set.univ = e.source
   exact Set.inter_univ _
-
-
-
 
 theorem normalizedSmoothChart_target :
     (normalizedSmoothChart e he hx).target =
@@ -67,13 +42,9 @@ theorem normalizedSmoothChart_target :
   change Set.univ ∩ (chartNormalizationLinearEquiv e he hx) ⁻¹' e.target = _
   exact Set.univ_inter _
 
-
-
 theorem normalizedSmoothChart_apply (y : M) :
     normalizedSmoothChart e he hx y =
       (chartNormalizationLinearEquiv e he hx).symm (e y) := rfl
-
-
 
 theorem normalizedSmoothChart_symm_apply (z : TangentSpace I x) :
     (normalizedSmoothChart e he hx).symm z =
@@ -83,8 +54,6 @@ section Riemannian
 
 variable [RiemannianBundle (TangentSpace I : M → Type uE)]
 
-
-
 theorem normalizedSmoothChart_contMDiffOn
     (hs : ContMDiffOn I 𝓘(ℝ, F) ∞ e e.source) :
     ContMDiffOn I 𝓘(ℝ, TangentSpace I x) ∞
@@ -93,8 +62,6 @@ theorem normalizedSmoothChart_contMDiffOn
   exact (chartNormalizationLinearEquiv e he hx).symm.toContinuousLinearMap.contMDiff
     |>.comp_contMDiffOn hs
 
-
-
 theorem normalizedSmoothChart_symm_contMDiffOn
     (hs : ContMDiffOn 𝓘(ℝ, F) I ∞ e.symm e.target) :
     ContMDiffOn 𝓘(ℝ, TangentSpace I x) I ∞
@@ -102,9 +69,6 @@ theorem normalizedSmoothChart_symm_contMDiffOn
   rw [normalizedSmoothChart_target]
   exact hs.comp (chartNormalizationLinearEquiv e he hx).toContinuousLinearMap.contMDiffOn
     (fun _ hz => hz)
-
-
-
 
 theorem normalizedSmoothChart_mfderiv_apply (v : TangentSpace I x) :
     NormedSpace.fromTangentSpace (normalizedSmoothChart e he hx x)
@@ -117,9 +81,6 @@ theorem normalizedSmoothChart_mfderiv_apply (v : TangentSpace I x) :
   change A.symm (A v) = v
   exact A.symm_apply_apply v
 
-
-
-
 theorem normalizedSmoothChart_norm_mfderiv_le :
     ‖mfderiv I 𝓘(ℝ, TangentSpace I x) (normalizedSmoothChart e he hx) x‖ ≤ 1 := by
   apply ContinuousLinearMap.opNorm_le_bound _ zero_le_one
@@ -128,9 +89,6 @@ theorem normalizedSmoothChart_norm_mfderiv_le :
   change ‖NormedSpace.fromTangentSpace (normalizedSmoothChart e he hx x)
     (mfderiv I 𝓘(ℝ, TangentSpace I x) (normalizedSmoothChart e he hx) x v)‖ ≤ ‖v‖
   exact (congrArg norm (normalizedSmoothChart_mfderiv_apply e he hx v)).le
-
-
-
 
 theorem normalizedSmoothChart_symm_norm_mfderiv_le :
     ‖mfderiv 𝓘(ℝ, TangentSpace I x) I (normalizedSmoothChart e he hx).symm
@@ -165,10 +123,6 @@ theorem normalizedSmoothChart_symm_norm_mfderiv_le :
 
 variable [IsManifold I ∞ M]
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type uE)]
-
-
-
-
 
 theorem normalizedSmoothChart_eventually_norm_mfderiv_lt
     (hs : ContMDiffOn I 𝓘(ℝ, F) ∞ e e.source)

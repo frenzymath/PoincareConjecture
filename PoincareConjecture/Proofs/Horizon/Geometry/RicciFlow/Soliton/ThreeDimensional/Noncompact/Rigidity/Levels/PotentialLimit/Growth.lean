@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit.Source
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_potential_oscillation_bound (S : GradientShrinkingSolitonData 3 M) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ p x : M,
@@ -97,8 +85,6 @@ theorem exists_potential_oscillation_bound (S : GradientShrinkingSolitonData 3 M
     L (show L ∈ Icc 0 L from ⟨hL.le, le_rfl⟩)
   simpa only [Real.norm_eq_abs, sub_zero, f, Function.comp_apply, hγ0, hγL] using h
 
-
-
 theorem exists_normalizedPotential_ball_bound (S : GradientShrinkingSolitonData 3 M) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ p : M, 1 ≤ S.potentialGradientScale p →
       ∀ r : ℝ, 0 ≤ r → ∀ x : M, (S.metric.edist p x).toReal ≤ r →
@@ -117,8 +103,6 @@ theorem exists_normalizedPotential_ball_bound (S : GradientShrinkingSolitonData 
   have hadr := mul_le_mul_of_nonneg_left hx ha.le
   have hmul := mul_le_mul_of_nonneg_left hp (mul_nonneg hC (sq_nonneg r))
   nlinarith
-
-
 
 theorem normalizedPotential_eventually_bounded_on_balls
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)

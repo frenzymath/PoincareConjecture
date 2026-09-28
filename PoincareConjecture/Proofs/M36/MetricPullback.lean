@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.MetricCombination
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

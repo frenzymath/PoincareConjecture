@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPoisson
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +26,6 @@ private theorem memLp_on_compact {K : Set (EuclideanSpace ℝ (Fin n))}
   obtain ⟨C, hC⟩ := hK.exists_bound_of_continuousOn hF
   exact MemLp.of_bound (hF.aestronglyMeasurable hK.measurableSet) C
     ((ae_restrict_mem hK.measurableSet).mono fun x hx => hC x hx)
-
-
-
 
 theorem gradient_pairing_compact_coordinates
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -131,8 +118,6 @@ theorem gradient_pairing_compact_coordinates
   simp only [hident] at henergy
   exact tendsto_nhds_unique hsum' henergy
 
-
-
 theorem weakPoisson_divergence_compact
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -160,8 +145,6 @@ theorem weakPoisson_divergence_compact
   intro x hx
   dsimp only
   rw [show h (e x) = phi x from EnergyTest.ofCoordinates_apply e hei phi hphi hc hs (hKs hx)]
-
-
 
 theorem weakPoisson_divergence_local
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

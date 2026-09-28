@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.PrescribedTwoIntervalCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem marked_interval_paths_homotopic
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

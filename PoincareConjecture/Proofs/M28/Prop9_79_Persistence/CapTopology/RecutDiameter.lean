@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory
@@ -24,9 +14,6 @@ variable {M : Type u} {M' : Type v} [TopologicalSpace M] [TopologicalSpace M']
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M']
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ M']
-
-
-
 
 theorem pathELength_comp_le_of_differential_bound
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 M')
@@ -53,9 +40,6 @@ theorem pathELength_comp_le_of_differential_bound
   rw [mfderiv_comp t he hg, ContinuousLinearMap.comp_apply]
   exact (ENNReal.ofReal_le_ofReal (hbound (γ t) hx _)).trans_eq
     (ENNReal.ofReal_mul hL)
-
-
-
 
 theorem intrinsicEDist_le_mul_of_differential_bound
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 M')
@@ -88,9 +72,6 @@ theorem intrinsicEDist_le_mul_of_differential_bound
   simpa only [mul_comm] using
     (ENNReal.div_le_iff hLzero ENNReal.ofReal_ne_top).mp hdiv
 
-
-
-
 theorem intrinsicDiameter_le_mul_of_differential_bound
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 M')
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M M' ∞)
@@ -119,9 +100,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem recut_diameter_bound_of_differential_bound
     (N : CapCertificate g)
@@ -157,9 +135,6 @@ theorem recut_diameter_bound_of_differential_bound
         scalarCurvatureSupOn g N.connection e.target ^ (-1 / 2 : ℝ) := by
       exact mul_le_mul hslack hpower (Real.rpow_nonneg (hpos.le.trans hsup) _)
         (by linarith [N.cap_constant_pos])
-
-
-
 
 theorem exists_quantitative_cap_recut_margins_of_differential_bound
     (N : CapCertificate g)

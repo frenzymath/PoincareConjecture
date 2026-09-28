@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConcreteArcBandChain
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +10,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_small_cap_patch_chain
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T r b delta : ℝ}

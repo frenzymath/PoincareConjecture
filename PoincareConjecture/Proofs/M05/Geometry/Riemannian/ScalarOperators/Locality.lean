@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import PoincareConjecture.Proofs.M05.Geometry.Manifold.PartitionOfUnity.Derivative
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 lemma hessian_eq_of_eventuallyEq (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
     (heq : f =ᶠ[𝓝 x] h) (a b : TangentSpace (𝓡 n) x) :
     D.hessian f x a b = D.hessian h x a b := by
@@ -35,7 +25,6 @@ lemma hessian_eq_of_eventuallyEq (D : LeviCivitaData g) {f h : M → ℝ} {x : M
     rw [Poincare.mvfderiv_eq_of_eventuallyEq hy]
   simp only [hessian, hessianOnFields, Poincare.mvfderiv_eq_of_eventuallyEq hi,
     Poincare.mvfderiv_eq_of_eventuallyEq heq]
-
 
 lemma laplacian_eq_of_eventuallyEq (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
     (heq : f =ᶠ[𝓝 x] h) : D.laplacian f x = D.laplacian h x := by

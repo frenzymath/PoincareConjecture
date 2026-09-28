@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Models
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SUPlaneMeanValue
 import PoincareConjecture.Proofs.M60.Mathlib.SUHeinzPointPicking
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,9 +8,6 @@ open Set MeasureTheory Filter
 open scoped ContDiff
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_positive_heinz_estimate :
     ∃ A : ℝ, 0 < A ∧ ∀ (K R : ℝ), 0 ≤ K → 0 < R → R ≤ 1 →

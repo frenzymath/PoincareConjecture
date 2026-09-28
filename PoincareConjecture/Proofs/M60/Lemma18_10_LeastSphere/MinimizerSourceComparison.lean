@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerDiskComparison
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerEnergyDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem suL4_source_disk_bound {E : Type*} [NormedAddCommGroup E]
     {O : Set Plane} {f : Plane → E} (hf : MemLp f 4 (volume.restrict O))
@@ -65,9 +53,6 @@ theorem suL4_source_disk_bound {E : Type*} [NormedAddCommGroup E]
     _ ≤ Real.sqrt (∫ x in O, ‖f x‖ ^ 4) * (r * Real.sqrt Real.pi) :=
       mul_le_mul_of_nonneg_right (Real.sqrt_le_sqrt hfour) (by positivity)
     _ = _ := by ring
-
-
-
 
 theorem suHessianTrace_le_residual {E : Type*} [NormedAddCommGroup E]
     {O : Set Plane} {H : Fin 2 → Fin 2 → Plane → E} {f : Plane → E}

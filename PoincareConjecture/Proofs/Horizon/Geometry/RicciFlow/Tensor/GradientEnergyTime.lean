@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,7 +70,6 @@ namespace RicciFlow
 
 variable {J : Set ℝ}
 
-
 theorem hasDerivAt_gradient_normSq_of_time_derivative
     (F : RicciFlow n M J) {f : ℝ × M → ℝ} {df : M → ℝ}
     {t : ℝ} (ht : t ∈ interior J)
@@ -121,8 +112,6 @@ theorem hasDerivAt_gradient_normSq_of_time_derivative
     ← ricci_gradient_eq_sum]
   rw [(F.metric t).symm x ((F.connection t).gradient df x)]
   ring
-
-
 
 theorem hasDerivAt_gradient_normSq
     (F : RicciFlow n M J) {f : M × ℝ → ℝ} {t : ℝ}

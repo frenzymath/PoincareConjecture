@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesCanonicalRadius
 import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesExteriorBall
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionRadial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -26,8 +17,6 @@ variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
 
 include d in
-
-
 
 theorem exists_canonicalPuncturedSphereEnd (hS : SchoenfliesService)
     (hD : DiffSphereIsotopyService) :

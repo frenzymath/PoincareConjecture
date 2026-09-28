@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Contradiction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Realization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem ShrinkingSolitonFlow.threeDimensionalSolitonModel
     {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
     (hP : ThreeDimensionalClassificationPredecessors.{u}) :
@@ -37,7 +27,6 @@ theorem ShrinkingSolitonFlow.threeDimensionalSolitonModel
   · obtain ⟨x, v, w, hv, hw, hvw, hzero⟩ := S.exists_null_plane_of_noncompact hP hc
     exact global_model_of_splitting_obligation
       (G.globalSplittingObligation_of_null_plane hP x v w hv hw hvw hzero)
-
 
 theorem GradientShrinkingSolitonData.threeDimensionalClassificationData
     (S : GradientShrinkingSolitonData 3 M)

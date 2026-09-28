@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetTimePair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -23,10 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m63FirstJetSquared_evolution [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeRescaled
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.TwoCircleObservation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +27,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem auxiliaryCircle_free_phase_circle_replacements
     (P : M62.CircleProductData F circumference)

@@ -2,14 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace BigOperators
@@ -18,8 +10,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {ι F : Type*} [Fintype ι]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem norm_principal_contraction_le
     (a : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι)
@@ -53,8 +43,6 @@ theorem norm_principal_contraction_le
       rw [norm_smul]
       exact mul_le_mul (hentry i j) (hD i j) (norm_nonneg _) (norm_nonneg _)
     _ = _ := by simp [Finset.sum_const, nsmul_eq_mul]; ring
-
-
 
 theorem norm_freezing_defect_le
     {a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι}

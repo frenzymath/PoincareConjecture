@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.SphereIntervalSection
 import PoincareConjecture.Statements.M61Width
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +11,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m65FillingArea_continuous_time (hM61 : M61RawWidthCore.{u})
     (g : RiemannianMetric 3 M) (compact : IsCompact (Set.univ : Set M))

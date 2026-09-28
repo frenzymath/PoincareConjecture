@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.Rademacher
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter MeasureTheory
@@ -22,7 +11,6 @@ namespace Poincare.Analysis.WeakDerivative
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
 
-
 theorem ae_differentiableAt_of_lipschitzOn
     (μ : Measure E) [μ.IsAddHaarMeasure] {U : Set E} (hU : IsOpen U)
     {f : E → ℝ} {C : ℝ≥0} (hf : LipschitzOnWith C f U) :
@@ -30,7 +18,6 @@ theorem ae_differentiableAt_of_lipschitzOn
   obtain ⟨F, hF, heq⟩ := hf.extend_real
   filter_upwards [hF.ae_differentiableAt (μ := μ)] with x hx hxU
   exact hx.congr_of_eventuallyEq (heq.eventuallyEq_of_mem (hU.mem_nhds hxU))
-
 
 theorem integral_mul_fderiv_eq_neg
     (μ : Measure E) [μ.IsAddHaarMeasure] {U : Set E} (hU : IsOpen U)
@@ -73,7 +60,6 @@ theorem integral_mul_fderiv_eq_neg
     map_neg, neg_mul, integral_neg] at hibp
   rw [hwp, integral_congr_ae hpair]
   simpa only [mul_comm, neg_neg] using congrArg Neg.neg hibp.symm
-
 
 theorem integral_mul_sum_fderiv_eq_neg
     (μ : Measure E) [μ.IsAddHaarMeasure] {U : Set E} (hU : IsOpen U)

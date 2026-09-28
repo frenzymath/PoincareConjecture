@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayChord
 import PoincareConjecture.Proofs.M28.Mathlib.ChordConeDistance
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,10 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem metricEndRay_chordConeTriangle
     {X : Type u} [MetricSpace X]

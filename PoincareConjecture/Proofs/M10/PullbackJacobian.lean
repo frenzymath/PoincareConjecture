@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.PullbackMetric
 import PoincareConjecture.Proofs.M10.Calibration
 import Mathlib.Analysis.InnerProductSpace.NormDet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def pullbackJacobian (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
@@ -47,7 +38,6 @@ theorem pullbackJacobian_eq_normDet (g : RiemannianMetric n M)
     D.normDet
   rw [← hsq, Real.sqrt_sq D.normDet_nonneg]
 
-
 theorem pullbackJacobian_nonneg (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n)) :
     0 ≤ pullbackJacobian g f x := Real.sqrt_nonneg _
@@ -68,7 +58,6 @@ theorem pullbackJacobian_pos (g : RiemannianMetric n M)
   exact Ne.symm (fun h ↦ LinearMap.normDet_eq_zero_iff_ker_ne_bot.mp h
     (LinearMap.ker_eq_bot.mpr hD))
 
-
 theorem pullbackJacobian_continuousAt (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContMDiffAt (𝓡 n) (𝓡 n) 1 f x) :
@@ -80,7 +69,6 @@ theorem pullbackJacobian_continuousAt (g : RiemannianMetric n M)
       (hB.clm_apply continuousAt_const).clm_apply continuousAt_const
   exact Real.continuous_sqrt.continuousAt.comp
     (continuous_id.matrix_det.continuousAt.comp hmatrix)
-
 
 theorem eventually_pullbackJacobian_comparison (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -97,7 +85,6 @@ theorem eventually_pullbackJacobian_comparison (g : RiemannianMetric n M)
   filter_upwards [hcont (eventually_gt_nhds hlo), hcont (eventually_lt_nhds hhi)]
     with y hylo hyhi
   exact ⟨hylo.le, hyhi.le⟩
-
 
 theorem volume_linear_image_eq_normDet_mul
     (L : EuclideanSpace ℝ (Fin n) →ₗ[ℝ] EuclideanSpace ℝ (Fin n))

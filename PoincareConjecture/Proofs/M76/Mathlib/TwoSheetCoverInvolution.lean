@@ -1,27 +1,11 @@
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace IsCoveringMap
-
-
-
-
-
 
 theorem exists_two_sheet_involution
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

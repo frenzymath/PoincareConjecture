@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LinearImageQuadrantPatches
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry RectangleCornerArcs CoordinateHalfBoxes CoordinateFourRegions
 
 namespace Set
-
-
-
-
 
 theorem mem_marked_arc_iff_of_selected_subset {X ι : Type*}
     (arc : ι → Set X) {d : Set X} {p q : X} (i : ι)
@@ -48,10 +33,6 @@ namespace Geometry
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
-
 theorem SourcePoleQuadrantData.horizontal_axis_subset_signed_arc
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}
     {t z : ℝ} (h : SourcePoleQuadrantData ψ F S g p q A t z)
@@ -72,11 +53,6 @@ theorem SourcePoleQuadrantData.horizontal_axis_subset_signed_arc
     exact hxt.1
   · rw [uIcc_of_ge ht] at hxt
     exact hxt.2
-
-
-
-
-
 
 theorem SourcePoleQuadrantData.vertical_axis_map_data
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}
@@ -126,11 +102,6 @@ theorem SourcePoleQuadrantData.vertical_axis_map_data
     rw [htgt k (e.toHomeomorph.image _ x)]
     change (k = (false, i.2) ∨ e (x : E) = e p) ↔ k = (false, i.2) ∨ (x : E) = p
     exact or_congr Iff.rfl e.injective.eq_iff
-
-
-
-
-
 
 theorem SourcePoleQuadrantData.horizontal_axis_map_data
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}
@@ -185,12 +156,8 @@ end Geometry
 
 namespace RectangleCornerArcs
 
-
-
 def axisInterval (horizontal : Bool) (a : ℝ) : Set (ℝ × ℝ) :=
   if horizontal then uIcc 0 a ×ˢ {0} else {0} ×ˢ uIcc 0 a
-
-
 
 theorem axisInterval_subset_base (horizontal : Bool) {a r : ℝ}
     (hr : 0 ≤ r) (ha : |a| ≤ r) : axisInterval horizontal a ⊆ base r := by
@@ -209,10 +176,6 @@ namespace Geometry
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem disjoint_source_and_target_axis_intervals
     (ψ : Bool → (ℝ × ℝ) → E) (e : Bool → E ≃L[ℝ] F)

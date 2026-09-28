@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureSourceNeck
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourceCap
 import PoincareConjecture.Proofs.M47.TerminalCurvatureRoundCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_readout_of_source_cases
     {ι : Type*}

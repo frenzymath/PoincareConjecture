@@ -1,19 +1,7 @@
-
-
-
 import Mathlib.Analysis.Convex.Between
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 import Mathlib.LinearAlgebra.AffineSpace.Simplex.Basic
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -73,7 +61,6 @@ private theorem frontier_convexHull_affineBasis_fin3
       s.closedInterior_sdiff_interior
     _ = _ := by simp only [Affine.Simplex.convexHull_eq_closedInterior]; rfl
 
-
 theorem frontier_convexHull_affineBasis_fin3_segments
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) :
     frontier (convexHull ℝ (Set.range b)) =
@@ -85,7 +72,6 @@ theorem frontier_convexHull_affineBasis_fin3_segments
   rw [Affine.Simplex.convexHull_eq_closedInterior,
     Affine.Simplex.closedInterior_eq_affineSegment]
   simp [basisTriangle, Affine.Simplex.faceOpposite_point_eq_point_succAbove]
-
 
 theorem frontier_convexHull_affineBasis_fin3_image
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) :

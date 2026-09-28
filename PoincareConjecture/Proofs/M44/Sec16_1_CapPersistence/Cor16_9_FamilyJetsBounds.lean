@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_UniformCoo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +24,6 @@ noncomputable local instance familyJetsCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_uniform_singularMetricJetErrorSquared_bound
     (m : ℕ) {a : ℝ} (ha : 0 < a) (B0 : ℝ) :
@@ -106,8 +94,6 @@ theorem exists_uniform_singularMetricJetErrorSquared_bound
       dsimp [C]
       linarith
 
-
-
 theorem contDiffOn_euclideanCoefficients_within {J : Set ℝ}
     (F : RicciFlow 3 E J) :
     ContDiffOn ℝ ∞ (fun p : ℝ × E => (F.metric p.1).euclideanCoefficients p.2)
@@ -126,8 +112,6 @@ theorem contDiffOn_euclideanCoefficients_within {J : Set ℝ}
   rw [mfderiv_id]
   rfl
 
-
-
 theorem continuousOn_standard_spatialJet {g0 : StandardInitialMetric}
     (S : PartialStandardCapFlow g0) (m : ℕ) :
     ContinuousOn (fun p : ℝ × E =>
@@ -135,9 +119,6 @@ theorem continuousOn_standard_spatialJet {g0 : StandardInitialMetric}
       (Ico 0 S.lifetime ×ˢ univ) :=
   (contDiffOn_spatialJet_within (contDiffOn_euclideanCoefficients_within S.flow)
     (uniqueDiffOn_Ico _ _) isOpen_univ m).continuousOn
-
-
-
 
 theorem exists_standard_family_ellipticity_jet_bound {g0 : StandardInitialMetric}
     (S : PartialStandardCapFlow g0) {H : ℝ} (hH : H < S.lifetime)
@@ -165,9 +146,6 @@ theorem exists_standard_family_ellipticity_jet_bound {g0 : StandardInitialMetric
   dsimp only [B0]
   exact Finset.single_le_sum (fun q _ => abs_nonneg (B q))
     (Finset.mem_univ (⟨j, by omega⟩ : Fin (m + 1)))
-
-
-
 
 theorem exists_standard_family_metricJetError_bound {g0 : StandardInitialMetric}
     (S : MaximalStandardCapFlow g0) {H : ℝ} (hH : H < S.base.lifetime)

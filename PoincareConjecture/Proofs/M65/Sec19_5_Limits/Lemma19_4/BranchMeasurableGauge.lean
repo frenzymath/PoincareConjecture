@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyContin
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeSeries
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -22,9 +11,6 @@ namespace PoincareConjecture.M65Branch
 
 variable {B : Type*} [NormedRing B] [NormedAlgebra ℂ B]
   [CompleteSpace B] [NormOneClass B]
-
-
-
 
 theorem cauchyTerm_continuous_bound {A : ℂ → B} {R B0 : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B0) (hA : AEStronglyMeasurable A volume)
@@ -49,10 +35,6 @@ theorem cauchyTerm_continuous_bound {A : ℂ → B} {R B0 : ℝ}
     intro z
     exact (norm_cauchyOperator_le_of_bound hR (by positivity) hp hps hpb z).trans_eq
       (by dsimp only [q]; rw [pow_succ]; ring)
-
-
-
-
 
 theorem cauchyGauge_measurable_spec {A : ℂ → B} {R B0 : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B0) (hA : AEStronglyMeasurable A volume)

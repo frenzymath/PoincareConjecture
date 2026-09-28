@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCapBufferedDensity
 import PoincareConjecture.Proofs.M47.SeedDensityScaling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_cap_physical_density (g0 : StandardInitialMetric)
     {Rtip Rmax : ℝ} (htip : 0 < Rtip) (hmax : 0 < Rmax) :

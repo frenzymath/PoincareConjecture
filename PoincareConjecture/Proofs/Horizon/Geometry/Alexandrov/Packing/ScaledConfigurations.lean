@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.SmallScale
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.FiniteMovingPoints
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open Poincare.GromovHausdorff
 namespace Poincare.Alexandrov
 
 universe u
-
-
 
 theorem exists_pos_radius_for_scaled_configurations
     {θ β : ℝ} (hθ : 0 < θ) (hθβ : θ < β) (hβpi : β < Real.pi) :

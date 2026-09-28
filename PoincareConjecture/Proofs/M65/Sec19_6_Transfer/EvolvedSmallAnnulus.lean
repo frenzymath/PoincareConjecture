@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.AnnularInfimum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta circumference : ℝ} {h : 0 < circumference}
   {approximation : M63RawApproximation F Gamma zeta}
-
-
 
 theorem m65EvolvedSmallAnnulus
     (S : M63ProductSolutionFamily (G.product circumference h) approximation)

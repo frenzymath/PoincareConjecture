@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.CircleComponents
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function
@@ -11,8 +9,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 
 variable {I J X : Type*} [Finite I] [Finite J] [TopologicalSpace X] [T2Space X]
-
-
 
 theorem finite_circle_ranges_eq_of_common_point
     (C : I → S1 → X) (D : J → S1 → X)
@@ -31,9 +27,6 @@ theorem finite_circle_ranges_eq_of_common_point
     (fun k => range (D k)) (fun k => (isCompact_range (hD k)).isClosed)
     (fun k => isPreconnected_range (hD k)) hDdis hunion.symm hxD
   exact hCi.symm.trans hDj
-
-
-
 
 theorem exists_finite_circle_range_equiv
     (C : I → S1 → X) (D : J → S1 → X)

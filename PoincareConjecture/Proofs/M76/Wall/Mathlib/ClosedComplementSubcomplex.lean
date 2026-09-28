@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_closedComplement_subcomplex
     (K P : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hPK : P ≤ K) :

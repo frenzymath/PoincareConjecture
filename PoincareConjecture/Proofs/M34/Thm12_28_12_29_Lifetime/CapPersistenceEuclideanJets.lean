@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylin
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderCharts
 import PoincareConjecture.Proofs.M34.Mathlib.LinearPrecomposeLocalJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,12 +12,8 @@ namespace PoincareConjecture.M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def capPersistenceProductCoordinates : E₃ →L[ℝ] RoundCylinderCoordinates :=
   cylinderHorizontal.prod (EuclideanSpace.proj 2)
-
-
 
 theorem capPersistenceProductCoordinates_basis (a : Fin 3) :
     capPersistenceProductCoordinates (EuclideanSpace.basisFun (Fin 3) ℝ a) =
@@ -40,8 +26,6 @@ theorem capPersistenceProductCoordinates_basis (a : Fin 3) :
   · fin_cases a <;>
       simp [capPersistenceProductCoordinates, EuclideanSpace.basisFun_apply,
         roundCylinderCoordinateBasis]
-
-
 
 theorem capPersistence_gram_productCoordinates (q : UnitTwoSphere) (s : ℝ)
     (x : E₃) (a b : Fin 3) :
@@ -57,9 +41,6 @@ theorem capPersistence_gram_productCoordinates (q : UnitTwoSphere) (s : ℝ)
     Prod.fst_add, add_zero, hd]
   fin_cases a <;> fin_cases b <;>
     simp [Matrix.diagonal, stereographicCylinderDensity, EuclideanSpace.basisFun_apply]
-
-
-
 
 theorem capPersistence_exists_euclidean_error_jet_bound (N : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (delta : ℝ) (B : RoundCylinderTwoTensor),

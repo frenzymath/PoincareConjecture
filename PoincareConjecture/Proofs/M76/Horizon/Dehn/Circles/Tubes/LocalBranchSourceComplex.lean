@@ -10,7 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
 theorem finitePL_exists_source_complex
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -40,8 +39,6 @@ theorem finitePL_exists_source_complex
     obtain ⟨s, hs, hzs⟩ := SimplicialComplex.mem_space_iff.mp hz.2
     exact mem_iUnion.mpr ⟨⟨s, hs⟩, (hTs ⟨s, hs⟩).symm ▸ ⟨hz.1, hzs⟩⟩
 
-
-
 theorem RawCrossingChart.face_in_one_branch
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X} {x y : V2}
@@ -67,8 +64,6 @@ theorem RawCrossingChart.face_in_one_branch
   rcases hconn.subset_or_subset C.left_open C.right_open hdis hcover with hL | hR
   · exact Or.inl (fun z hz => hL (a := ⟨z, hAD hz⟩) hz)
   · exact Or.inr (fun z hz => hR (a := ⟨z, hAD hz⟩) hz)
-
-
 
 theorem RawCrossingChart.vertexSubcomplex_space
     {X ι : Type*} [TopologicalSpace X]

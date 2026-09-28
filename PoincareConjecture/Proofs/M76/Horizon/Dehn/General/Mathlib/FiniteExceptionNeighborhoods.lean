@@ -1,22 +1,11 @@
 import Mathlib.Topology.Separation.Regular
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
 
 theorem exists_finite_exception_neighborhoods
     {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
@@ -52,8 +41,6 @@ theorem exists_finite_exception_neighborhoods
     exact disjoint_left.mp (hVD hne') (subset_closure (hxV ⟨x, hxB⟩)) hx
   · rintro rfl
     exact ⟨(q k).property, subset_closure (hxV _)⟩
-
-
 
 theorem pairwise_disjoint_exception_preimages
     {X Y α : Type*} [TopologicalSpace Y] (p : X → Y) (V : α → Set Y)

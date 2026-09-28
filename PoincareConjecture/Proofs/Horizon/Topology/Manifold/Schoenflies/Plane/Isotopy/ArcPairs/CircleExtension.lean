@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.Support
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Family
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Plane.Isotopy.ArcPairs
 
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_planar_circle_family_extension
     {a b : Real} (hab : a ≤ b) (c : Real → S1 → E2)
@@ -42,8 +33,6 @@ theorem exists_planar_circle_family_extension
     exists_ambient_isotopy_of_circle_family hab
       (fun (_ : Unit) z => c z.1 z.2) (fun _ => hc) (fun _ => hemb) hinj
   exact ⟨K, hK, Φ, hi, hs, contDiff_family_symm Φ hs, hfix, hmotion ()⟩
-
-
 
 theorem exists_planar_circle_pair_family_extension
     {a b : Real} (hab : a ≤ b) (c : Fin 2 → Real → S1 → E2)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.P
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ComplementaryCircleInterval
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalStripBoundaryTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -33,13 +23,9 @@ variable {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
   {d : β → OpenPartialHomeomorph X V3} {phi : C(H, H)}
   {M : PairedMeridianHierarchy e d phi} {uv : ℝ × ℝ} (m : ExactSlabMeridian M uv)
 
-
-
 noncomputable def frontierCylinderCoordinates :
     (Q × C) ≃ₜ frontier (sourceSlab M.eta uv.1 uv.2) :=
   (standardSlabBoundaryCoordinates uv.1 uv.2 m.ordered m.short).trans m.frontierMap.symm
-
-
 
 noncomputable def retainedCylinderParameter (z : V2 × ℝ) : X := by
   classical
@@ -56,8 +42,6 @@ theorem retainedCylinderParameter_mem_frontier (z : V2) (hz : z ∈ Q) (t : ℝ)
     m.retainedCylinderParameter (z, t) ∈ frontier (sourceSlab M.eta uv.1 uv.2) := by
   rw [m.retainedCylinderParameter_apply z hz t]
   exact (m.frontierCylinderCoordinates (⟨z, hz⟩, (t : C))).property
-
-
 
 theorem mem_retainedCylinderParameter_image_iff (J : Set ℝ)
     (x : frontier (sourceSlab M.eta uv.1 uv.2)) :
@@ -101,8 +85,6 @@ theorem product_marks_retainedCylinder (z : V2) (hz : z ∈ Q) (t : ℝ) (ht : t
     constructor <;> nlinarith [m.width_small]
   exact (m.retainedCylinderParameter_eq_band ⟨(z, m.width * t), hz, hw⟩).symm
 
-
-
 theorem retainedCylinder_strip_trace :
     frontier (sourceSlab M.eta uv.1 uv.2) ∩ m.product.openStrip =
       m.retainedCylinderParameter '' (Q ×ˢ Ioo (-(m.width / 2)) (m.width / 2)) := by
@@ -127,8 +109,6 @@ theorem retainedCylinder_strip_trace :
     rw [m.product_marks_retainedCylinder z.1 hz.1 _ (hI ht),
       mul_div_cancel₀ _ m.width_pos.ne']
 
-
-
 theorem retainedCylinderParameter_injective :
     InjOn m.retainedCylinderParameter (Q ×ˢ Icc (m.width / 2) (p - m.width / 2)) := by
   intro z hz w hw hzw
@@ -138,8 +118,6 @@ theorem retainedCylinderParameter_injective :
   exact Prod.ext (congrArg (fun x : Q × C => (x.1 : V2)) heq)
     (AddCircle.injOn_coe_complementaryInterval (by linarith [m.width_pos]) hz.2 hw.2
       (congrArg Prod.snd heq))
-
-
 
 theorem retainedCylinderParameter_image :
     m.retainedCylinderParameter '' (Q ×ˢ Icc (m.width / 2) (p - m.width / 2)) =

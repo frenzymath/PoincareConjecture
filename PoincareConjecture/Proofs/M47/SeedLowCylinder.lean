@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalarB
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_LowScalarRetained
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SmallCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_seed_low_scalar_cylinder
     (P : M44CapPersistencePredecessors.{u})
@@ -91,8 +81,6 @@ theorem exists_seed_low_scalar_cylinder
   intro s hs x hx
   have h := hcontrol (-duration) ⟨le_rfl, neg_nonpos.mpr hduration⟩ e he x hx s hs
   simpa only [cylinderScalar_of_mem e x s hs] using h
-
-
 
 theorem seed_low_cylinder_curvature
     (P : M46Predecessors.{u}) {F : SurgeryFlowData.{u}}

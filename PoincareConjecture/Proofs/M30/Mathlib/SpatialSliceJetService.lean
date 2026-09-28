@@ -1,20 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,11 +9,6 @@ open scoped ContDiff Topology
 universe uField uTime uSpace uValue uIndex
 
 namespace PoincareConjecture.M30
-
-
-
-
-
 
 def SpatialSliceJetConvergenceService : Prop :=
   ∀ {𝕜 : Type uField} {T : Type uTime} {E : Type uSpace} {F : Type uValue}

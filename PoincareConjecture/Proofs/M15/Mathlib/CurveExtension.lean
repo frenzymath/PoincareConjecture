@@ -1,21 +1,9 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
-
-
-
 
 theorem ContMDiffOn.exists_global_extension_Icc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

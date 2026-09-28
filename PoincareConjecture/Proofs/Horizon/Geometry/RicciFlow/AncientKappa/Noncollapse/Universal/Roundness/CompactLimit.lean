@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Compactness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem isRoundAncientKappaSolution_of_compact_round_limit
     {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)

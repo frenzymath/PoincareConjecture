@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.ChartVectorField
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Topology

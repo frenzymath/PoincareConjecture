@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.CutoffOperatorSmooth
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerBounds
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawPrincipalPerturbation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

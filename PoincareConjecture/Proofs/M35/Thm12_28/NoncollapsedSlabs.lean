@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.BlowupSequence
 import PoincareConjecture.Proofs.M35.Thm12_28.Noncollapsing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,15 +15,11 @@ variable (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
   (hR : Tendsto (fun k => (E.flow.connection (t k)).scalarCurvature (x k)) atTop atTop)
   (N : StandardFlowNoncollapsingCertificate E.flow)
 
-
-
 theorem blowupSequence_noncollapsed_at_zero (A : ℝ) :
     ∀ᶠ k : ℕ in atTop, ∀ y ∈ (blowupSequence P E t x ht hR).baseBall k A,
       GeneralizedKappaNoncollapsedAt ((blowupSequence P E t x ht hR).flow k)
         ⟨((blowupSequence P E t x ht hR).base k).1, y⟩ N.kappa N.radius :=
   Eventually.of_forall (fun k y _ => noncollapsed P E.flow N (ht k) y)
-
-
 
 theorem blowupSequence_noncollapsed_slabs (A T : ℝ) :
     ∀ᶠ k : ℕ in atTop,

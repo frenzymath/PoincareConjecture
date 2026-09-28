@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Theory
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -54,8 +45,6 @@ theorem neck_or_cap_on_end_component (Q : SingularLimitConclusion H)
         rw [N.component_eq] at hcontains ⊢
         exact (connectedComponent_eq hcontains).symm
       exact (hnoncompact (hN.symm.trans hK ▸ N.compact)).elim
-
-
 
 def endRegionCover (Q : SingularLimitConclusion H)
     (A : RepairedNeckCapTopologyTheory.{u})

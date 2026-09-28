@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.RadialGram
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakMinimizer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [CompactSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem auxiliaryCircle_radial_annulus_area_bound
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -68,7 +55,6 @@ theorem auxiliaryCircle_radial_annulus_area_bound
 
 omit [CompactSpace M] in
 
-
 theorem auxiliaryCircle_leastArea_le_lifted_leastArea
     (P : M62.CircleProductData F circumference) (time : ℝ)
     {c0 c1 : ℝ → M} (A : M64Annulus (F.metric time) c0 c1) (delta : ℝ) :
@@ -86,8 +72,6 @@ theorem auxiliaryCircle_leastArea_le_lifted_leastArea
   obtain ⟨-, D, -, -, -, harea⟩ := m64ProjectedAnnulus_of_annulus P time _ _ C
   exact (m64LeastAnnulusArea_le_annulus D).trans harea
 
-
-
 theorem auxiliaryCircle_lifted_leastArea_error
     (P : M62.CircleProductData F circumference) (time : ℝ)
     {c0 c1 : ℝ → M} (A : M64Annulus (F.metric time) c0 c1) (delta : ℝ) :
@@ -98,8 +82,6 @@ theorem auxiliaryCircle_lifted_leastArea_error
         ∫ z in m64AnnulusDomain, m60EnergyDensity (F.metric time) A.map z) := by
   obtain ⟨B, -, harea⟩ := auxiliaryCircle_radial_annulus_area_bound P time A delta
   exact (m64LeastAnnulusArea_le_annulus B).trans harea
-
-
 
 theorem auxiliaryCircle_lifted_leastArea_tendsto
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -129,8 +111,6 @@ theorem auxiliaryCircle_lifted_leastArea_tendsto
   rw [Real.dist_eq, abs_of_nonneg (sub_nonneg.mpr hlower)]
   change _ ≤ C.area + |delta| * K at hupper
   linarith
-
-
 
 theorem auxiliaryCircle_radial_annuli_area_tendsto
     (P : M62.CircleProductData F circumference) (time : ℝ)

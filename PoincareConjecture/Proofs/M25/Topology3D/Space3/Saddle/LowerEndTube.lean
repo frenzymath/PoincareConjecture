@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndAlignedSta
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartUnion
 import Mathlib.Tactic.Tauto
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_lower_end_tube
     (hP : PlanarSchoenfliesService)

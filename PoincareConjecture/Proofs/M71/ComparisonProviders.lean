@@ -4,20 +4,6 @@ import PoincareConjecture.Definitions.M67
 import PoincareConjecture.Proofs.M52.Assembly
 import PoincareConjecture.Proofs.M52.ComparisonCalibration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m71GlobalEpsilonBound
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -45,25 +29,6 @@ theorem m71GlobalEpsilonBound
   have hs : G.schedule.schedule = S := eq_of_heq hS
   rw [hs]
   exact hbound
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m71GlobalFlowWithComparisons
     (A25 : RepairedNeckCapTopologyTheory.{u})

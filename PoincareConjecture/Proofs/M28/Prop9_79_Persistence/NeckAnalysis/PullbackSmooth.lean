@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Metric.Pullback
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold IsManifold
@@ -33,9 +25,6 @@ private theorem contDiffAt_pullback_inner
     (RiemannianMetric.contMDiffAt_mfderiv_const_vector hf w)
   apply contMDiffAt_iff_contDiffAt.mp
   simpa using (Bundle.contMDiffAt_totalSpace.mp h).2
-
-
-
 
 theorem roundCylinderPullback_smooth
     (g : RiemannianMetric 3 M) {epsilon : ℝ} {f : RoundCylinderSpace → M}

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonCapExteriorF
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_common_exterior_half_strip
     (B : Fin 4 → BallNeighborhoodChart E2 E2)

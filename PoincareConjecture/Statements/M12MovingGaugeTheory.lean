@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M12GaugeTransport
 import PoincareConjecture.Definitions.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -25,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
-
-
 
 structure MovingGaugeCalculus (D : LeafwiseLeviCivitaFamily F S)
     (G : MovingSpacetimeGaugeGeometry e) (c : MetricLeviCivitaFamily G.metric) : Prop where

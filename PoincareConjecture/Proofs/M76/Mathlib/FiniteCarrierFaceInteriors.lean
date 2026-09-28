@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_face_intrinsicInterior_of_finite (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {x : E} (hx : x ∈ K.space) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarFourJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -70,8 +61,6 @@ noncomputable local instance timeJetFourJetNormedGroup :
 noncomputable local instance timeJetFourJetNormedSpace :
     NormedSpace ℝ (ScalarMetricFourJet 3) := Prod.normedSpace
 
-
-
 theorem model_evolvingCylinder_iteratedFDeriv (m : ℕ) (t : ℝ) (x : E) :
     iteratedFDeriv ℝ m (evolvingCylinderModelField t) x =
       (1 - t) • iteratedFDeriv ℝ m cylinderModelField x +
@@ -86,14 +75,10 @@ theorem model_evolvingCylinder_iteratedFDeriv (m : ℕ) (t : ℝ) (x : E) :
       iteratedFDeriv_add_apply (hs.const_smul (1 - t)) (hz.const_smul t)
     _ = _ := by rw [iteratedFDeriv_const_smul_apply hs, iteratedFDeriv_const_smul_apply hz]
 
-
-
 theorem continuous_model_evolvingCylinder_iteratedFDeriv (m : ℕ) (x : E) :
     Continuous (fun t : ℝ => iteratedFDeriv ℝ m (evolvingCylinderModelField t) x) := by
   simp_rw [model_evolvingCylinder_iteratedFDeriv]
   fun_prop
-
-
 
 theorem model_evolvingCylinder_twoJet (t : ℝ) (x : E) :
     metricTwoJet (evolvingCylinderModelField t) x =
@@ -103,8 +88,6 @@ theorem model_evolvingCylinder_twoJet (t : ℝ) (x : E) :
     Prod.smul_mk, Prod.mk_add_mk, smul_zero, add_zero]
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem model_evolvingCylinder_twoJet_fderiv (t : ℝ) (x : E) :
     fderiv ℝ (metricTwoJet (evolvingCylinderModelField t)) x =
@@ -128,8 +111,6 @@ set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
 
-
-
 theorem model_evolvingCylinder_twoJet_second_fderiv (t : ℝ) (x : E) :
     fderiv ℝ (fderiv ℝ (metricTwoJet (evolvingCylinderModelField t))) x =
       (1 - t) • fderiv ℝ (fderiv ℝ (metricTwoJet cylinderModelField)) x := by
@@ -144,8 +125,6 @@ theorem model_evolvingCylinder_twoJet_second_fderiv (t : ℝ) (x : E) :
   rw [heq]
   exact (hD.const_smul (1 - t)).fderiv
 
-
-
 theorem model_evolvingCylinder_fourJet (t : ℝ) (x : E) :
     scalarMetricFourJet (evolvingCylinderModelField t) x =
       ((1 - t) • metricTwoJet cylinderModelField x + t • Z₂,
@@ -154,8 +133,6 @@ theorem model_evolvingCylinder_fourJet (t : ℝ) (x : E) :
   simp only [scalarMetricFourJet, model_evolvingCylinder_twoJet,
     model_evolvingCylinder_twoJet_fderiv, model_evolvingCylinder_twoJet_second_fderiv,
     smul_apply]
-
-
 
 theorem continuous_model_evolvingCylinder_fourJet (x : E) :
     Continuous (fun t : ℝ => scalarMetricFourJet (evolvingCylinderModelField t) x) := by

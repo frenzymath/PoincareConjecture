@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Topology.Algebra.Module.Equiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -24,24 +14,17 @@ private noncomputable def planeProductCoordinates : E2 ≃L[ℝ] (ℝ × ℝ) :=
   (PiLp.continuousLinearEquiv 2 ℝ (fun _ : Fin 2 => ℝ)).trans
     (ContinuousLinearEquiv.finTwoArrow ℝ ℝ)
 
-
-
 noncomputable def spherePlaneChart (p : UnitTwoSphere) :
     OpenPartialHomeomorph UnitTwoSphere (ℝ × ℝ) :=
   (stereographic' 2 p).trans planeProductCoordinates.toHomeomorph.toOpenPartialHomeomorph
-
 
 @[simp] theorem spherePlaneChart_source (p : UnitTwoSphere) :
     (spherePlaneChart p).source = {p}ᶜ := by
   simp [spherePlaneChart]
 
-
-
 @[simp] theorem spherePlaneChart_target (p : UnitTwoSphere) :
     (spherePlaneChart p).target = univ := by
   simp [spherePlaneChart]
-
-
 
 theorem contMDiffOn_spherePlaneChart (p : UnitTwoSphere) :
     ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ × ℝ) ∞ (spherePlaneChart p)
@@ -56,8 +39,6 @@ theorem contMDiffOn_spherePlaneChart (p : UnitTwoSphere) :
   simpa [spherePlaneChart] using
     planeProductCoordinates.contDiff.contMDiff.comp_contMDiffOn hS
 
-
-
 theorem contMDiff_spherePlaneChart_symm (p : UnitTwoSphere) :
     ContMDiff 𝓘(ℝ, ℝ × ℝ) (𝓡 2) ∞ (spherePlaneChart p).symm := by
   have heq : chartAt E2 (-p) = stereographic' 2 p := by
@@ -69,9 +50,6 @@ theorem contMDiff_spherePlaneChart_symm (p : UnitTwoSphere) :
   have hI := contMDiffOn_univ.mp hS
   simpa [spherePlaneChart] using
     hI.comp planeProductCoordinates.symm.contDiff.contMDiff
-
-
-
 
 theorem exists_compact_planar_representative (p : UnitTwoSphere)
     (g : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)

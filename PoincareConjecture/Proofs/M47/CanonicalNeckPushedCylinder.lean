@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   (e : SurgeryFlowCylinder F C origin scale I U)
   (hU : IsOpen U) (hzero : 0 ∈ I) (V : Set C.carrier) (hVU : V ⊆ U)
 
-
-
 noncomputable def neckPushedCylinder :
     SurgeryFlowCylinder F (F.slice (origin + 0 / scale)) (origin + 0 / scale)
       scale I (e.forward 0 hzero '' V) := by
@@ -40,7 +30,6 @@ noncomputable def neckPushedCylinder :
     fun _ hx => chart.map_target (hsource hx)
   exact seedCylinderSource shifted chart.symm (e.forward 0 hzero '' V) hsource hmaps
 
-
 theorem neckPushedCylinder_zero_identity (h : 0 ∈ I)
     (x : (F.slice (origin + 0 / scale)).carrier) (hx : x ∈ e.forward 0 hzero '' V) :
     HEq ((neckPushedCylinder e hU hzero V hVU).forward 0 h x) x := by
@@ -53,8 +42,6 @@ theorem neckPushedCylinder_zero_identity (h : 0 ∈ I)
   change HEq ((neckPushedCylinder e hU hzero V hVU).forward 0 h x)
     (e.forward 0 h (chart.symm x)) at he
   exact he.trans (heq_of_eq (chart.right_inv ((image_mono hVU) hx)))
-
-
 
 theorem neckPushedCylinder_pullbackInner
     (s : ℝ) (hs : s ∈ I) {x : C.carrier} (hx : x ∈ V)
@@ -78,8 +65,6 @@ theorem neckPushedCylinder_pullbackInner
     (fun _ ht => ht) (fun _ _ _ _ hst => hst) hclock s hs x v w
   rw [div_self e.scale_pos.ne', one_mul] at hc
   exact h.trans hc
-
-
 
 theorem neckPushedCylinder_cylinderPullback
     (s : ℝ) (hs : s ∈ I) {coordinate : RoundCylinderSpace → C.carrier}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Calibration
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem eventually_captured_cap_terminal_scalar_ratio
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

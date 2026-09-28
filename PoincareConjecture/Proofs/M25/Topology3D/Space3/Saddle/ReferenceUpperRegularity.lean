@@ -3,23 +3,12 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem nonnested_reference_positive_height_regular
     (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d) (hd0 : d 0 = 0)

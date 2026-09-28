@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.StationarySlices
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +15,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
 
 def terminalCenteredFrame (d : TerminalSaddleGeometry M P p e) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
@@ -63,11 +60,9 @@ theorem terminalCenteredFrame_translate (d : TerminalSaddleGeometry M P p e)
   rw [terminal_frame_translate]
   abel
 
-
 def terminalCenteredFlattening (d : TerminalSaddleGeometry M P p e) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ :=
   ((terminalCenteredFrame d).symm.trans d.D).trans (terminalCenteredFrame d)
-
 
 def terminalCenteredModel (d : TerminalSaddleGeometry M P p e) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ := d.filledModel.trans (terminalCenteredFrame d)

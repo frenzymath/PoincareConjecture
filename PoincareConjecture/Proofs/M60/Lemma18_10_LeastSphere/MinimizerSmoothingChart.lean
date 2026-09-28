@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSmoothingDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem suC1_supportedChartSmoothing
     (p : UnitTwoSphere) (b : M) {U : Set UnitTwoSphere} (hU : IsOpen U)
@@ -66,9 +55,6 @@ theorem suC1_supportedChartSmoothing
   · exact (hf x).congr_of_eventuallyEq
       (M40.supportedChartSmoothing_eventuallyEq e h U rho f G hfU
         (fun hs => hx (hsupp hs)))
-
-
-
 
 theorem suC1_exists_chart_smoothing
     (g : RiemannianMetric n M) (p : UnitTwoSphere) (b : M)

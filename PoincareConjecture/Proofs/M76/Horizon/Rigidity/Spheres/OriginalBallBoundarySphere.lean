@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

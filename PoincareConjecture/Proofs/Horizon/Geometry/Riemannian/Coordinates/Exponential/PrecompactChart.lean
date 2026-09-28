@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.PrecompactExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.EndpointAgreement
-
-
-
-
-
-
-

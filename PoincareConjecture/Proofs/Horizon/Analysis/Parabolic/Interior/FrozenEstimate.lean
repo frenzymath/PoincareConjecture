@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactPotential
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.FrozenCoordinates
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -89,8 +83,6 @@ theorem norm_hessian_le_of_matrixHeatResidual
       norm_num only
       gcongr <;> exact hLi _
     _ = _ := by norm_num; ring
-
-
 
 theorem exists_uniform_matrix_heatResidual_hessian_bound
     (lam upper : ℝ) (hlam : 0 < lam) (hupper : lam ≤ upper) :

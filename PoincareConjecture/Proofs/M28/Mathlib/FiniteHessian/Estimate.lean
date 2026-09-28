@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +10,6 @@ namespace PoincareConjecture.Proofs.M28.FiniteHessian
 variable {ι E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem hasUniformJetBoundsAt_fderiv_of_hessian
     (n : ℕ) {f : ι → E → F} {x : ι → E}
@@ -103,9 +89,6 @@ theorem hasUniformJetBoundsAt_fderiv_of_hessian
         ext u v
         exact (hy u v).symm
   exact hsteps (n + 1) le_rfl
-
-
-
 
 theorem exists_uniform_positive_jet_bound_of_hessian
     (n : ℕ) {f : ι → E → F} {x : ι → E}

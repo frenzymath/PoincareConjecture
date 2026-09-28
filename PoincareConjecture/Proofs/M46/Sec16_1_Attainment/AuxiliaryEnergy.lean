@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzDistance
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -66,8 +58,6 @@ private theorem auxiliary_edist_le_energy_closed
         intervalIntegral.integral_add hsigma intervalIntegrable_const,
         intervalIntegral.integral_const]
       simp only [smul_eq_mul]
-
-
 
 theorem auxiliary_edist_le_energy_of_interior_regular
     (F : GeneralizedFlowSpacetime n X time I) {gamma : ℝ → F.Point}

@@ -1,16 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.VertexCoordinates
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -24,7 +12,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
 inductive ChartCircleArrangementVertexPatch (r : M → ℝ) (p : M)
   | single (x : M) (patch : ChartCircleVertexPatch x (r x) p)
   | crossing (x y : M) (distinct : x ≠ y)
@@ -34,41 +21,33 @@ namespace ChartCircleArrangementVertexPatch
 
 variable {r : M → ℝ} {p : M}
 
-
 def centers : ChartCircleArrangementVertexPatch r p → Set M
   | .single x _ => {x}
   | .crossing x y _ _ => {x, y}
 
-
 def circles (P : ChartCircleArrangementVertexPatch r p) : Set M :=
   ⋃ x ∈ P.centers, chartCircle x (r x)
-
 
 def coordinates : ChartCircleArrangementVertexPatch r p →
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M
   | .single _ P => P.coordinates
   | .crossing _ _ _ P => P.coordinates
 
-
 def center : ChartCircleArrangementVertexPatch r p → ℝ × ℝ
   | .single _ _ => (0, 0)
   | .crossing x y _ _ => ((r y) ^ 2, (r x) ^ 2)
-
 
 def width : ChartCircleArrangementVertexPatch r p → ℝ
   | .single _ P => P.width
   | .crossing _ _ _ P => P.width
 
-
 def openCarrier : ChartCircleArrangementVertexPatch r p → Set M
   | .single _ P => P.openCarrier
   | .crossing _ _ _ P => P.openCarrier
 
-
 def carrier : ChartCircleArrangementVertexPatch r p → Set M
   | .single _ P => P.carrier
   | .crossing _ _ _ P => P.carrier
-
 
 def axes : ChartCircleArrangementVertexPatch r p → Set (EuclideanSpace ℝ (Fin 2))
   | .single _ _ => {z | z 0 = 0}
@@ -167,8 +146,6 @@ end ChartCircleArrangementVertexPatch
 
 variable [T2Space M] [IsManifold (𝓡 2) ∞ M]
 
-
-
 theorem exists_chartCircle_arrangement_vertex_patch
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)
     (htarget : ∀ x ∈ s,
@@ -252,8 +229,6 @@ theorem exists_chartCircle_arrangement_vertex_patch
   intro q hq hqx
   exact (hP hq).2 (mem_iUnion₂.mpr
     ⟨x, Finset.mem_filter.mpr ⟨hx, fun hpx => hnot ((hincidence x hx).mp hpx)⟩, hqx⟩)
-
-
 
 theorem exists_disjoint_chartCircle_arrangement_vertex_patches
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)

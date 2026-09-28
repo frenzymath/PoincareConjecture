@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.ProfileCalculus
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.L2
 
-
 noncomputable section
 
 open Set MeasureTheory

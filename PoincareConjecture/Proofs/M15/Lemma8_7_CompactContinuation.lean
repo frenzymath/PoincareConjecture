@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Lemma8_7_SpatialLift
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,9 +22,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
 
 include g
 
-
-
-
 theorem compatibleCylinder_spatialOpen_image_mem_nhdsWithin_timeDomain
     (q : D.Point × C) {U : Set C} (hU : IsOpen U) (hq : q.2 ∈ U) :
     e.toSpacetime '' (Set.univ ×ˢ U) ∈
@@ -52,9 +40,6 @@ theorem compatibleCylinder_spatialOpen_image_mem_nhdsWithin_timeDomain
   refine ⟨z, ?_, rfl⟩
   rw [← hOU]
   exact hpO
-
-
-
 
 theorem compatibleCylinder_lift_of_compact_prefix_trap
     (hK : IsCompact K.domain)

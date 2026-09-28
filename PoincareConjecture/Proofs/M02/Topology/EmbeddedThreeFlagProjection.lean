@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeFlagLocalization
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeNearest
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

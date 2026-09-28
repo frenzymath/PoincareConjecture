@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AnnularExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_smoothTrack_localInverse
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -66,8 +54,6 @@ variable (hc : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 1)) 𝓘(ℝ, E) ∞
 
 include hc
 
-
-
 theorem contDiffAt_curveAnnularExtension_of_regular {p : ℝ × E} (hx : p.2 ≠ 0)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c)
       (p.1, (unitRadialProjection q0 p.2 : E)) ≠ 0) :
@@ -93,9 +79,6 @@ theorem contDiffAt_curveAnnularExtension_of_regular {p : ℝ × E} (hx : p.2 ≠
       (f := fun y : ℝ × E => (y.1, (unitRadialProjection q0 y.2 : E))) p hN hR
   exact hC.add ((((contDiffAt_norm ℝ hx).comp p contDiffAt_snd).sub
     contDiffAt_const).smul hNR)
-
-
-
 
 theorem exists_open_curveAnnularRegularNeighborhood :
     ∃ U : Set (ℝ × E), IsOpen U ∧

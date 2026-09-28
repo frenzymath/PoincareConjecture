@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,7 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
 noncomputable def euclideanGauge (u : V → ℝ) (x : V) : V := Real.exp (u x) • x
-
 
 theorem euclideanGauge_hasFDerivAt {u : V → ℝ} {x : V}
     (hu : DifferentiableAt ℝ u x) :
@@ -45,8 +33,6 @@ theorem euclideanGauge_hasFDerivAt {u : V → ℝ} {x : V}
       (Real.exp (u x) • ContinuousLinearMap.id ℝ V +
         (Real.exp (u x) • fderiv ℝ u x).smulRight x) x
   exact h
-
-
 
 theorem euclideanGauge_sub_id_fderiv_bound {u : V → ℝ} {x : V}
     (hu : DifferentiableAt ℝ u x)
@@ -91,8 +77,6 @@ theorem euclideanGauge_sub_id_fderiv_bound {u : V → ℝ} {x : V}
     simpa only [norm_smul, Real.norm_eq_abs, ContinuousLinearMap.norm_id, mul_one] using he
   exact (norm_add_le _ _).trans (by linarith)
 
-
-
 theorem euclideanGauge_approximates_id {u : V → ℝ} (hu : Differentiable ℝ u)
     (hv : ∀ x, (1 + ‖x‖) * |u x| ≤ 1 / 8)
     (hd : ∀ x, (1 + ‖x‖) * ‖fderiv ℝ u x‖ ≤ 1 / 8) :
@@ -104,8 +88,6 @@ theorem euclideanGauge_approximates_id {u : V → ℝ} (hu : Differentiable ℝ 
       (fun x => by
         exact_mod_cast euclideanGauge_sub_id_fderiv_bound (hu x) (hv x) (hd x))
   exact hl.lipschitzOnWith.approximatesLinearOn
-
-
 
 theorem exists_euclideanGauge_homeomorph {u : V → ℝ} (hu : ContDiff ℝ ∞ u)
     (hv : ∀ x, (1 + ‖x‖) * |u x| ≤ 1 / 8)

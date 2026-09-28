@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -20,9 +10,6 @@ namespace ContinuousLinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_pos_norm_lower_bound_on_cone [FiniteDimensional ℝ E]
     (Q : E →L[ℝ] F) {C : Set E} (hclosed : IsClosed C)
@@ -50,9 +37,6 @@ theorem exists_pos_norm_lower_bound_on_cone [FiniteDimensional ℝ E]
       rw [map_smul, norm_smul, Real.norm_of_nonneg (norm_nonneg x)]
     _ = ‖Q x‖ := by rw [norm_smul_normalize]
 
-
-
-
 theorem norm_lower_bound_of_perturbation (Q R : E →L[ℝ] F) {C : Set E} {c : ℝ}
     (hb : ∀ x ∈ C, c * ‖x‖ ≤ ‖Q x‖) (hR : ‖Q - R‖ ≤ c / 2) :
     ∀ x ∈ C, (c / 2) * ‖x‖ ≤ ‖R x‖ := by
@@ -62,9 +46,6 @@ theorem norm_lower_bound_of_perturbation (Q R : E →L[ℝ] F) {C : Set E} {c : 
       ((Q - R).le_opNorm x |>.trans (mul_le_mul_of_nonneg_right hR (norm_nonneg x)))
   have h := hb x hx
   linarith
-
-
-
 
 theorem norm_lower_bound_le_kernel_distance (Q : E →L[ℝ] F) {C : Set E} {c : ℝ}
     (hb : ∀ x ∈ C, c * ‖x‖ ≤ ‖Q x‖) {x k : E} (hx : x ∈ C) (hk : Q k = 0) :

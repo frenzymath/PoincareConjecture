@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.FlowExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.AmbientScalar
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
-
 
 def nullCoverNegativeFlow
     (hc : IsCoveringMap (unitRicciKernelProjection (G.ancientSourceFlow.connection 0))) :
@@ -85,8 +75,6 @@ theorem nullCoverNegativeFlow_component_inner
       (G.ancientSourceFlow.connection 0) hc).mdifferentiable (by simp) q.1)
     ((Poincare.isLocalDiffeomorph_opensSubtypeVal (𝓡 3) C).mdifferentiable (by simp) q)]
   rfl
-
-
 
 theorem nullCoverNegativeFlow_metric_minus_one
     (hc : IsCoveringMap (unitRicciKernelProjection (G.ancientSourceFlow.connection 0))) :
@@ -188,8 +176,6 @@ theorem nullCoverNegativeFlow_nonnegativeCurvatureOperator_iff
       (G.ancientSourceFlow.connection 0) hc).contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ p)
 
-
-
 theorem nullCoverNegativeFlow_component_inner_eq_transverse_scale
     (hC : RicciFlowCurvatureTheory.{u})
     (hc : IsCoveringMap (unitRicciKernelProjection (G.ancientSourceFlow.connection 0)))
@@ -257,8 +243,6 @@ theorem nullCoverNegativeFlow_component_inner_eq_transverse_scale
       (fun s hs y => (hdim s hs y).trans (hdim (-1) (by norm_num) y).symm)
       hR hrC hu' hz' t ht q a b
 
-
-
 theorem nullCoverComponent_projection_inner_eq_transverse_scale
     (hC : RicciFlowCurvatureTheory.{u})
     (hc : IsCoveringMap (unitRicciKernelProjection (G.ancientSourceFlow.connection 0)))
@@ -293,9 +277,6 @@ theorem nullCoverComponent_projection_inner_eq_transverse_scale
   exact (G.nullCoverNegativeFlow_component_inner hc p t q a b).symm.trans
     (G.nullCoverNegativeFlow_component_inner_eq_transverse_scale hC hc
       x v w hv hw hvw hzero hscalar hcomplete hr hu hz p t ht q a b)
-
-
-
 
 theorem exists_nullCover_allNegative_transverse_scale
     (hP : ThreeDimensionalClassificationPredecessors.{u})

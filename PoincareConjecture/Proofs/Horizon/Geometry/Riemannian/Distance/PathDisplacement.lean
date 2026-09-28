@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,8 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem edist_le_of_tangentNorm_le
     (g : RiemannianMetric n M) {γ : ℝ → M} {I : Set ℝ} {a b C : ℝ}

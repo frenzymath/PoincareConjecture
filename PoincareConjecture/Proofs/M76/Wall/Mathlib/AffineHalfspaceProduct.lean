@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace ContinuousAffineMap
-
-
-
 
 theorem exists_halfspace_product_homeomorph
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

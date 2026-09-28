@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -14,9 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64MemLp_piecewise_of_subset
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
@@ -29,9 +20,6 @@ theorem m64MemLp_piecewise_of_subset
   apply MemLp.piecewise hK
   · rwa [Measure.restrict_restrict hK, inter_eq_left.mpr hKS]
   · exact hg.mono_measure Measure.restrict_le_self
-
-
-
 
 theorem m64Integral_piecewise_of_subset
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -52,16 +40,12 @@ theorem m64Integral_piecewise_of_subset
   rw [hset, setIntegral_sdiff hK hg hKS]
   abel
 
-
-
 theorem m64L2_test_integrable
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]
     {mu : Measure X} {u : X → E} {phi : X → ℝ}
     (hu : MemLp u 2 mu) (hp : MemLp phi 2 mu) :
     Integrable (fun x => phi x • u x) mu :=
   memLp_one_iff_integrable.mp (show MemLp (fun x => phi x • u x) 1 mu from MemLp.smul hu hp)
-
-
 
 theorem m64Annulus_continuous_memLp_two
     {E : Type*} [NormedAddCommGroup E] {f : LoopPlane → E} (hf : Continuous f) :

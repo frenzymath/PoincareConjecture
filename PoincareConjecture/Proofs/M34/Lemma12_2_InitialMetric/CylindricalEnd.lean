@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.CylinderPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 noncomputable def capCylindricalEnd {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (hn : capProfile a Real.pi = Real.sqrt 2) :

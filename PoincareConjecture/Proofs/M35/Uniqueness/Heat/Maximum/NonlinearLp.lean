@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.FieldEmbedding
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.NonlinearCauchy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

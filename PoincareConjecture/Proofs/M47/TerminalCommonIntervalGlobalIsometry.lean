@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalGlobalLimits
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalDistanceLimit
 import Mathlib.Topology.MetricSpace.Isometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ open scoped Topology ENNReal NNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_isometry_of_ball_control
     {M N : Type u} [MetricSpace M] [MetricSpace N]

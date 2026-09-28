@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalVanishingEvents
 import PoincareConjecture.Proofs.M51.EventStageComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {C : RepairedCanonicalInductionData S N}
   {F0 : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F0 k)
-
 
 theorem globalIdentify_compare (n m : ℕ) (t : ℝ)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain)
@@ -44,14 +34,12 @@ theorem globalIdentify_compare (n m : ℕ) (t : ℝ)
         (Q.compare_common n m q hnq hmq t hn hm x)
     _ = _ := Q.globalIdentify_comp n q hnq t hn x
 
-
 theorem globalEvent_old_reference (n : ℕ) (T : ℝ)
     (hT : T ∈ (Q.flow n).surgery_times) (hT' : T ∈ Q.globalSurgeryTimes)
     [Nonempty ((Q.flow n).slice T).carrier] [Nonempty (Q.globalSlice T).carrier] :
     (Q.globalEvent T hT').tMinus = ((Q.flow n).event T hT).tMinus := by
   let := Q.eventStageNonempty T hT'
   exact Q.stageEvent_reference n (Q.representativeIndex T) T hT (Q.eventStageSurgery T hT')
-
 
 theorem globalVanishingEvent_old_reference
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3) (n : ℕ) (T : ℝ)
@@ -62,7 +50,6 @@ theorem globalVanishingEvent_old_reference
   let := Q.eventStageIsEmpty T hT'
   exact Q.stageVanishing_reference n (Q.representativeIndex T) T hT
     (Q.eventStageSurgery T hT')
-
 
 theorem globalEvent_old_retained_post (n : ℕ) (T : ℝ)
     (hT : T ∈ (Q.flow n).surgery_times) (hT' : T ∈ Q.globalSurgeryTimes)
@@ -122,7 +109,6 @@ private theorem globalEvent_pre_coordinate (n : ℕ) (T : ℝ)
   exact (congrArg ((Q.globalEvent T hT').pre_identify ⟨t.1, ht'⟩).symm hpoint).symm.trans
     (((Q.globalEvent T hT').pre_identify ⟨t.1, ht'⟩).symm_apply_apply _)
 
-
 theorem globalEvent_old_retained_pre (n : ℕ) (T : ℝ)
     (hT : T ∈ (Q.flow n).surgery_times) (hT' : T ∈ Q.globalSurgeryTimes)
     [Nonempty ((Q.flow n).slice T).carrier] [Nonempty (Q.globalSlice T).carrier]
@@ -148,7 +134,6 @@ theorem globalEvent_old_retained_pre (n : ℕ) (T : ℝ)
     _ = _ := congrArg (fun A => Q.globalEventInitialMap T hT' '' A)
       (Q.stageEvent_retained_pre n (Q.representativeIndex T) T hT
         (Q.eventStageSurgery T hT') t ht ht')
-
 
 theorem globalEvent_old_retention (n : ℕ) (T : ℝ)
     (hT : T ∈ (Q.flow n).surgery_times) (hT' : T ∈ Q.globalSurgeryTimes)

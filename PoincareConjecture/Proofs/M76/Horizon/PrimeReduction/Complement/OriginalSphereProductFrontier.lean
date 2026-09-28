@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarShellMap
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInterior
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveFiberRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 

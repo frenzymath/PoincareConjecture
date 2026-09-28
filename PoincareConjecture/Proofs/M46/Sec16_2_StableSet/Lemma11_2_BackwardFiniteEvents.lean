@@ -3,22 +3,11 @@ import Mathlib.Order.WellFoundedSet
 import Mathlib.Order.Interval.Set.LinearOrder
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem backward_cylinder_finite_event_induction {a b : ℝ} {events : Set ℝ}
     (hab : a ≤ b) (hfinite : (events ∩ Ioc a b).Finite) (Q : ℝ → Prop)

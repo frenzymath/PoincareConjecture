@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.OriginalRetainedPortComponent
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalExteriorNonspherical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

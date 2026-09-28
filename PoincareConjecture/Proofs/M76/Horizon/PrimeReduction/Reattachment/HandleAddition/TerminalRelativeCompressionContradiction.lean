@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalMarkedMotionContradiction
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalRelativeMarkedDiskMotion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -105,4 +97,3 @@ theorem ChartwisePLSphere.no_returning_disk_in_original_sphere_side_at_minimum
     H hH0 hH1 hHmark
 
 end PoincareConjecture.M76
-

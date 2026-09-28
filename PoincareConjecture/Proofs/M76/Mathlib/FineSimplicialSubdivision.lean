@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.SmallSimplicialStars
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,8 +10,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_subdivision_geometric_mesh (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)
@@ -44,9 +32,6 @@ theorem exists_subdivision_geometric_mesh (K : SimplicialComplex ℝ E)
     have h := L.barycentricSubdivision_diam_le hLN (by positivity) hLd s hs
     simpa only [pow_succ, mul_assoc, mul_left_comm] using h
 
-
-
-
 theorem exists_finite_subdivision_mesh (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)
     {δ : ℝ} (hδ : 0 < δ) :
@@ -66,9 +51,6 @@ theorem exists_finite_subdivision_mesh (K : SimplicialComplex ℝ E)
   obtain ⟨n, hn⟩ := (hlim.eventually (gt_mem_nhds hδ)).exists
   obtain ⟨L, hL, hLK, hLN, hLd⟩ := K.exists_subdivision_geometric_mesh hfinite hN hD hdiam n
   exact ⟨L, hL, hLK, hLN, fun s hs => (hLd s hs).trans hn.le⟩
-
-
-
 
 theorem exists_finite_subdivision_stars [DecidableEq E]
     (K : SimplicialComplex ℝ E) (hfinite : K.faces.Finite)

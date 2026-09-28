@@ -2,12 +2,6 @@ import PoincareConjecture.Definitions.Ch04.Harnack
 import PoincareConjecture.Definitions.Ch04.Pinching
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

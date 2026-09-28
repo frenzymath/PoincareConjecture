@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonMetric
 import PoincareConjecture.Proofs.M36.ComparisonWeightedJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,7 +44,6 @@ theorem exists_comparison_domain_threshold (g₀ : StandardInitialMetric)
   linarith only [hh]
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_surgeryMetric_chart_jets_small (g₀ : StandardInitialMetric)
     (C q : ℝ) {r : ℝ} (hr : 0 < r)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.DerivativeData
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -74,7 +67,6 @@ theorem hasDerivAt_firstVariation {J : Set ℝ} {F : RicciFlow n M J}
   change HasDerivAt (variationSquareAction V) (∫ s in a..b, raw s) 0 at h
   rwa [hvalue] at h
 
-
 theorem exists_firstVariation {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax τ₁ τ₂ : ℝ}
     (hpotential : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞
@@ -99,7 +91,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem hasDerivAt_regularized_firstVariation (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ}
     (V : LVariation K.flow 0 0 τ p) (D : LVariationDerivativeData V) :
@@ -113,7 +104,6 @@ theorem hasDerivAt_regularized_firstVariation (K : AncientKappaSolution 2 M)
     funext (variationSquareAction_eq_regularizedLAction V)
   rw [heq] at h
   exact h
-
 
 theorem exists_regularized_firstVariation (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ}

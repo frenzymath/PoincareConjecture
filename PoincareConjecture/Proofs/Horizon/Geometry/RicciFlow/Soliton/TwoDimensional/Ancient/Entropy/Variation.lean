@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Variation.Global
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,8 +10,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [CompactSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M] {J : Set ℝ}
-
-
 
 theorem hasDerivAt_integral_volumeMeasure_surface_of_hasDerivAt
     (F : RicciFlow 2 M J) {t : ℝ} (ht : t ∈ interior J)

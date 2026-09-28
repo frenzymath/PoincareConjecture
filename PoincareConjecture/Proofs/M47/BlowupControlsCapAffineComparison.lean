@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckRealization
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAxialNormalizedClose
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem cap_neck_affine_pullback (N : EpsilonNeck g) (lambda c : ℝ)
     {z : RoundCylinderSpace}
     (hz : lambda * z.2 + c ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -48,8 +37,6 @@ theorem cap_neck_affine_pullback (N : EpsilonNeck g) (lambda c : ℝ)
   unfold roundCylinderPullback neckAxialTensorPullback
   rw [mfderiv_comp z hN hA]
   simp only [ContinuousLinearMap.comp_apply, neckAxialSpaceMap_mfderiv, Function.comp_apply]
-
-
 
 theorem cap_neck_affine_normalized_comparison (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200)

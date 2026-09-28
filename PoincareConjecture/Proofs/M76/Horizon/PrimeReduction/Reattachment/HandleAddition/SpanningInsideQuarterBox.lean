@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningMarkedInsideBlock
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -16,8 +14,6 @@ local notation "Rim" => sphere (0 : V2) 1
 local notation "Band" => Icc (-1 : ℝ) 1
 local notation "Rect" => Set.prod (Icc (0 : ℝ) 1) (Icc (0 : ℝ) 1)
 local notation "Quarter" => Set.prod (Set.prod (Icc (-1 : ℝ) 0) Band) (Icc (0 : ℝ) 1)
-
-
 
 theorem exists_original_inside_quarter_box
     {X ι V : Type*} [TopologicalSpace X]
@@ -131,8 +127,6 @@ theorem exists_original_inside_quarter_box
     · constructor <;> linarith [hz.1.2.1]
     · linarith [h.1]
     · constructor <;> linarith [hz.1.2.1]
-
-
 
 theorem OriginalDiskProduct.exists_marked_inside_quarter_box
     {X ι V : Type*} [TopologicalSpace X] [T2Space X]

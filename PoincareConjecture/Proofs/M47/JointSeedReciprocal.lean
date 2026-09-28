@@ -2,23 +2,12 @@ import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_first_future_level {u : ℝ → ℝ} {s t L : ℝ}
     (hst : s ≤ t) (hu : ContinuousOn u (Icc s t))
@@ -45,8 +34,6 @@ theorem jointSeed_first_future_level {u : ℝ → ℝ} {s t L : ℝ}
   apply lt_of_not_ge
   intro hwL
   exact not_le_of_gt hw.2 (hmin ⟨⟨hw.1, hw.2.le.trans hr.1.2⟩, hwL⟩)
-
-
 
 theorem jointSeed_backward_scalar_comparison
     {u : ℝ → ℝ} {a b A L : ℝ} (_hab : a ≤ b) (hA : 0 ≤ A) (hL : 0 < L)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.L2Pairing
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.NonnegativeApproximation
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -18,8 +11,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem weakInequality_of_nonneg_compact_memW1p_univ
     {O : Set E} (hO : IsOpen O) {F : Fin d → E → ℝ} {f v : E → ℝ}

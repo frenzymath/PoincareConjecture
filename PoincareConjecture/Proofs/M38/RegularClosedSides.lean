@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventCollars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +11,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
-
 
 theorem event_collar_center_mem_closure_retained
     (i : Fin (F.event T hT).cap_count) (z : UnitTwoSphere) :
@@ -46,7 +36,6 @@ theorem event_collar_center_mem_closure_retained
   intro p hp
   exact ⟨hp.1, by linarith [hp.2.1], hp.2.2⟩
 
-
 theorem event_retained_closure_interior :
     closure (interior (F.event T hT).retained_pre) = (F.event T hT).retained_pre := by
   apply ((F.event T hT).retained_pre_compact.isClosed.closure_interior_subset).antisymm
@@ -64,7 +53,6 @@ theorem event_retained_closure_interior :
   subst s
   exact event_collar_center_mem_closure_retained F T hT i z
 
-
 theorem event_discarded_frontier :
     frontier (interior (F.event T hT).retained_pre)ᶜ =
       frontier (F.event T hT).retained_pre := by
@@ -72,12 +60,9 @@ theorem event_discarded_frontier :
   simp only [frontier, interior_interior, event_retained_closure_interior,
     (F.event T hT).retained_pre_compact.isClosed.closure_eq]
 
-
 theorem event_discarded_interior :
     interior (interior (F.event T hT).retained_pre)ᶜ = (F.event T hT).retained_preᶜ := by
   rw [interior_compl, event_retained_closure_interior]
-
-
 
 theorem event_discarded_closure_interior :
     closure (interior (interior (F.event T hT).retained_pre)ᶜ) =

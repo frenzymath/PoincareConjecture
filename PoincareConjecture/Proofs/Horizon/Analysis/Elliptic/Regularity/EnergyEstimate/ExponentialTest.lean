@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.ComparisonTest
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
 noncomputable section
 
 open Set Filter

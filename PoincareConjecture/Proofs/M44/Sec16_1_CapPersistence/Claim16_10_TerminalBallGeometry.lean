@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_ChartDiam
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalCylinderJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_PhysicalSphereMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +51,6 @@ variable (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
 
 include P hpinch hR hsource htarget hscalar
 
-
-
 theorem terminalBirthBallTransport_diameter
     {K H Z h : ℝ} (hK : 0 ≤ K) (hcH : c ≤ H) (hZ : 0 < Z) (hh : 0 < h)
     (hscale : scale = h⁻¹ ^ 2)
@@ -106,9 +95,6 @@ theorem terminalBirthBallTransport_diameter
   apply hterminal.trans_eq
   rw [hscale, inv_pow, inv_inv, mul_pow, Real.sq_sqrt hB.le]
   ring
-
-
-
 
 theorem terminalBirthBallTransport_sphere_sectional
     {length : ℝ} {center : E} (N : StandardCylinderPatch length center)

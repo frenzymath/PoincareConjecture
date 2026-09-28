@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedTransitions
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,7 +52,6 @@ noncomputable def refinedTransition (b c : refinedBoxIndex F) (t : ℝ)
   metric_eq := fun s hs z hz v w =>
     coordinateTransition_metric F b c t hb hc s hs.1 hs.2 z hz v w
 
-
 noncomputable def flowBoxAtlas : AdaptedMetricAtlas 3 F.point where
   time := Sigma.fst
   interval := flowInterval F
@@ -88,7 +79,6 @@ noncomputable def flowBoxAtlas : AdaptedMetricAtlas 3 F.point where
     intro b c t hb hc x y hxy
     refine ⟨refinedTransition F b c t hb hc x y ?_⟩
     exact eq_of_heq (Sigma.mk.inj_iff.mp hxy).2
-
 
 def flowSliceLabel (t : ℝ) : SpacetimeSliceLabel 3 F.point Sigma.fst t where
   carrier := (F.slice t).carrier

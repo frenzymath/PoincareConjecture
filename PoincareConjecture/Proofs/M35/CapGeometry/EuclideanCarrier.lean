@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CarrierTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.CapModelEquivalence
-
-
 
 theorem exists_euclidean_parametrization
     {M : Type} [TopologicalSpace M]

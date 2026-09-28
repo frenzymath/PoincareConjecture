@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothEuclideanGauge
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -23,15 +14,12 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
 theorem euclideanGauge_hasDerivAt_time
     {u : ℝ → V → ℝ} {t q : ℝ} {x : V}
     (hu : HasDerivAt (fun s => u s x) q t) :
     HasDerivAt (fun s => euclideanGauge (u s) x)
       ((Real.exp (u t x) * q) • x) t := by
   exact hu.exp.smul_const x
-
-
 
 theorem euclideanGauge_fderiv_hasDerivAt_time
     {u : ℝ → V → ℝ} {J : Set ℝ} (hJ : IsOpen J)
@@ -55,8 +43,6 @@ theorem euclideanGauge_fderiv_hasDerivAt_time
   apply (hL.add hR).congr_of_eventuallyEq
   filter_upwards [hJ.mem_nhds ht] with s hs'
   exact (euclideanGauge_hasFDerivAt ((hs s hs').differentiable (by simp) x)).fderiv
-
-
 
 theorem euclideanGauge_fderiv_joint_c1
     {u : ℝ → V → ℝ} {J : Set ℝ}

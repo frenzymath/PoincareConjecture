@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem FinitePiecewiseAffineOn.graph {f : E → F} {s : Set E}
     (hf : FinitePiecewiseAffineOn f s) :
@@ -32,9 +20,6 @@ theorem FinitePiecewiseAffineOn.graph {f : E → F} {s : Set E}
 end Geometry
 
 namespace Set
-
-
-
 
 theorem IsFinitePLBallPair.graph {V E F : Type*}
     [NormedAddCommGroup V] [NormedSpace ℝ V]

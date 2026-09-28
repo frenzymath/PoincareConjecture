@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.QuadraticRicci
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
 
 theorem m66_familyWidth_le_of_metric_le [T2Space M] [SecondCountableTopology M]
     (hM61 : M61RawWidthCore.{u}) (hcompact : IsCompact (univ : Set M))
@@ -41,7 +32,6 @@ theorem m66_familyWidth_le_of_metric_le [T2Space M] [SecondCountableTopology M]
   exact (m66_fillingArea_le_of_metric_le g h hc hbound hd hreverse (F a)).trans
     (mul_le_mul_of_nonneg_left
       (le_csSup (hM61.family g hcompact F hnull).bounded_above ⟨a, rfl⟩) hc.le)
-
 
 theorem m66_freeClassWidth_le_of_metric_le [T2Space M] [SecondCountableTopology M]
     (hM61 : M61RawWidthCore.{u}) (hcompact : IsCompact (univ : Set M))
@@ -64,7 +54,6 @@ theorem m66_freeClassWidth_le_of_metric_le [T2Space M] [SecondCountableTopology 
         m66_familyWidth_le_of_metric_le hM61 hcompact g h hc hbound hd hreverse G hG
       _ = _ := mul_comm _ _
   exact (div_le_iff₀ hc).mp hle |>.trans_eq (mul_comm _ _)
-
 
 theorem m66Width_continuousAt (hM61 : M61RawWidthCore.{u})
     {t₀ t₁ : ℝ} (P : M65RawFlowInput M t₀ t₁) (t : Icc t₀ t₁) :

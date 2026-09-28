@@ -1,25 +1,12 @@
 import Mathlib.Logic.Equiv.Fin.Rotate
 import Mathlib.Tactic.Abel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 private theorem finCongr_rotate {m n : ℕ} (h : m = n) (i : Fin m) :
     finCongr h (finRotate m i) = finRotate n (finCongr h i) := by
   subst n
   rfl
-
-
-
-
 
 theorem Fin.exists_cyclic_diagonal_split {N : ℕ} (a b : Fin (N + 4))
     (hab : a ≠ b) (hba : b ≠ finRotate (N + 4) a)

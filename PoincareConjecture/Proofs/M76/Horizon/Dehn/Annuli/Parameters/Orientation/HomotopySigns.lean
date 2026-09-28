@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleHomeomorphLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set unitInterval
 
@@ -76,8 +68,6 @@ theorem interval_lift_displacement_eq_of_homotopy
   rw [hG₀, hG₀] at hd
   linarith
 
-
-
 theorem signed_interval_formulas_same_sign
     (q₀ q₁ : C(AddCircle p, AddCircle p)) (H : q₀.Homotopy q₁)
     (b₀ b₁ : ℝ) (positive₀ positive₁ : Bool) (e₀ e₁ : C(I, I))
@@ -106,8 +96,6 @@ theorem signed_interval_formulas_same_sign
   · simp only [Bool.false_eq_true, ↓reduceIte] at h
     linarith
   · rfl
-
-
 
 theorem real_homeomorph_lifts_same_orientation_of_homotopy
     (q₀ q₁ : AddCircle p ≃ₜ AddCircle p)

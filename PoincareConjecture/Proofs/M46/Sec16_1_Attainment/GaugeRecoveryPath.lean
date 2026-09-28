@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecoveryDensity
 import PoincareConjecture.Proofs.M08.PathGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem gauge_recovery_path (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} (htau : 0 < tau) {x y : G.Point}

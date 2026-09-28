@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 import Mathlib.Topology.Order.MonotoneConvergence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

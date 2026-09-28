@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.ForcingCompactJets
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingExteriorJets
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingExteriorIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M35.Uniqueness
 
 open SmoothRadial RadialGauge
-
-
 
 theorem raw_intrinsic_gauge_forcing_weighted_jets_bounded
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -179,8 +167,6 @@ theorem raw_intrinsic_gauge_forcing_weighted_jets_bounded
         (xi a) p.1 p.2) (x, sigma)‖ ≤ 2 * C + D
     rw [hjet]
     exact (hDb a x sigma hrad hsigma).trans (le_add_of_nonneg_left (by positivity))
-
-
 
 theorem raw_intrinsic_gauge_forcing_jets_bounded
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

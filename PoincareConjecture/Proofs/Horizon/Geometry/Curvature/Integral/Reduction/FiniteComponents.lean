@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem integral_connectedComponentMetric
     (g : RiemannianMetric n M) (p : M) (f : M → ℝ) :
@@ -34,7 +24,6 @@ theorem integral_connectedComponentMetric
   have he := hi.integral_map (μ := (g.connectedComponentMetric p).volumeMeasure) f
   rw [hmap] at he
   exact he.symm
-
 
 theorem integral_eq_sum_connectedComponentMetric
     [Finite (ConnectedComponents M)]
@@ -66,8 +55,6 @@ theorem integral_eq_sum_connectedComponentMetric
   rw [hcover,setIntegral_univ] at he
   simpa only [integral_connectedComponentMetric] using he
 
-
-
 theorem integral_pos_scalarCurvature_eq_sum_connectedComponentMetric
     [CompactSpace M] (g : RiemannianMetric n M) (D : LeviCivitaData g) :
     letI : LocallyConnectedSpace M :=
@@ -93,7 +80,6 @@ theorem integral_pos_scalarCurvature_eq_sum_connectedComponentMetric
   symm
   exact (g.connectedComponentMetric (Quotient.out c)).leviCivitaData.scalarCurvature_eq_of_local_isometry
     D isOpen_univ contMDiff_subtype_val.contMDiffOn (fun _ _ _ _ => rfl) (mem_univ x)
-
 
 theorem integral_pos_scalarCurvature_le_of_connectedComponent_bounds
     [CompactSpace M] (g : RiemannianMetric n M) (D : LeviCivitaData g)

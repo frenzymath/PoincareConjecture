@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchInnerSup
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryProtectedEdges
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.InteriorBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval
@@ -27,8 +18,6 @@ local notation "Rim" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
 
 theorem OriginalGeneralPositionData.exists_interior_crossed_charts_with_closed_support
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
@@ -217,7 +206,6 @@ theorem OriginalGeneralPositionData.exists_interior_crossed_charts_with_closed_s
         ?_ hzJ T hzT hTz hTs hTPL hTK hheight
       rw [hAs, hKs]
       exact hnewimage
-
 
 theorem OriginalGeneralPositionData.exists_interior_crossed_charts
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}

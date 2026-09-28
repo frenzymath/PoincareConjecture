@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsRadializ
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsRadialCap
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsSupportedCap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackCanonicalCapAlignment
     (E U V : OpenPartialHomeomorph (ℝ × E2) (ℝ × E2))

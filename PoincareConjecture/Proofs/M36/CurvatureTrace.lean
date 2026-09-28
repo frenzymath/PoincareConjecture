@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.ConformalSectional
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

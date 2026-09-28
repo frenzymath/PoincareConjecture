@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SeedCurvature
 import PoincareConjecture.Definitions.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,8 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
 noncomputable def blowupPinchingThreshold (K eta : ℝ) : ℝ :=
   max (Real.exp 4) (Real.exp (4 + K / (2 * eta)) / eta)
-
-
 
 theorem negative_part_le_blowup_error {K eta Q R X t : ℝ}
     (hK : 0 ≤ K) (heta : 0 < eta) (hQ : blowupPinchingThreshold K eta ≤ Q)
@@ -57,8 +45,6 @@ theorem negative_part_le_blowup_error {K eta Q R X t : ℝ}
   rw [hid] at hstrict
   nlinarith [mul_pos heta hQpos]
 
-
-
 theorem pinched_blowup_curvature_bounds (P : M46Predecessors.{u})
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -81,8 +67,6 @@ theorem pinched_blowup_curvature_bounds (P : M46Predecessors.{u})
     simpa only [mul_assoc] using h
   · exact negative_part_le_blowup_error hK heta hQ hPinched.1 hScalar
       (hPinched.2.2 x hx)
-
-
 
 theorem generalized_blowup_curvature_bounds (P : M46Predecessors.{u})
     (G : GeneralizedRicciFlowData.{u}) (hPinched : generalizedHamiltonIveyPinched G)

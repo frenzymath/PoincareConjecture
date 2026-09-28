@@ -2,27 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_compact_PL_regular_superlevel
     {M E ι : Type*} [TopologicalSpace M] [T2Space M]

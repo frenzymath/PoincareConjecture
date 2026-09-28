@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.LocalRegions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.ChainEncounter
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.CrossCores
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.CompactKappa
-
-
-
 
 theorem exists_non_strong_point_threshold
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
@@ -53,9 +38,6 @@ theorem exists_non_strong_point_threshold
   cases shape with
   | twoCaps A B _ _ _ hA _ => exact not_le_of_gt A.one_lt_cap_constant hA
   | doubleCappedTube T _ _ _ _ hA _ => exact not_le_of_gt T.cap₁.one_lt_cap_constant hA
-
-
-
 
 theorem exists_maximal_cap_with_strong_frontier_of_large_diameter_threshold
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

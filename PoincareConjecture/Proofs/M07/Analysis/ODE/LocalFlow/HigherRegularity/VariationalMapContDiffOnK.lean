@@ -1,17 +1,2 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.VariationalMapContDiffOnK
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.HigherRegularity.VariationalMapContDiffOnK.Foundations
-
-
-
-
-
-

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactGeodesic
 import PoincareConjecture.Proofs.M64.Mathlib.SmoothClosedExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +10,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_compact_geodesic_smooth_representative
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialFlowCurvature
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialFlowCompleteness
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.ScalarPositivity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 noncomputable def InteriorCoefficientLimit.partialFlow
     {g0 : StandardInitialMetric} {A : CompactCapApproximation g0}
@@ -36,9 +23,6 @@ noncomputable def InteriorCoefficientLimit.partialFlow
     refine ⟨A.curvature_bound 0, (A.bound_pos 0).le, ?_⟩
     intro t ht x
     exact G.initialFlow_abs_curvature_le P ⟨ht.1, ht.2.trans_lt hT0T⟩ x
-
-
-
 
 theorem completePartialStandardCapFlow_exists (P : M34StandardCapPredecessors)
     (g0 : StandardInitialMetric) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.CenteredNeckMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.ParametrizedCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,8 +58,6 @@ theorem centeredCylinderMetric_scalar_pullback_germ
     (hU.mem_nhds hzero)] with p hp
   exact centeredCylinderMetric_scalar_pullback g Φ c theta s
     ((hΦ.contMDiffAt (hU.mem_nhds hp)).mdifferentiableAt (by simp))
-
-
 
 theorem centeredCylinderError_difference_jet_eq
     {M' : Type*} [TopologicalSpace M'] [ChartedSpace E M']

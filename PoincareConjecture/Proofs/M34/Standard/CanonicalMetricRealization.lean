@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalPullbackCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} (U : Set (EuclideanSpace ℝ (Fin n))) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_connection_of_metric_germ :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -78,8 +66,6 @@ theorem canonicalDomain_connection_of_metric_germ :
         rfl)
   exact (congrArg (fun A => A u) hc).symm.trans ht
 
-
-
 theorem canonicalDomain_curvature_of_metric_germ :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -112,8 +98,6 @@ theorem canonicalDomain_curvature_of_metric_germ :
   have ht := DE.curvature_eq_pullback_euclidean D hr hi hg u v w
   erw [hd, ContinuousLinearMap.inverse_id] at ht
   exact ht
-
-
 
 theorem canonicalDomain_exists_local_realization :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

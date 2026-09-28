@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.CircleParameter
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -17,8 +8,6 @@ open Set Function
 namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem eq_or_endpoints_of_sphereCircleParameter_eq (e : ℂ ≃ₗᵢ[ℝ] E) {a b : ℝ}
     (ha : a ∈ Icc 0 (2 * Real.pi)) (hb : b ∈ Icc 0 (2 * Real.pi))
@@ -45,16 +34,12 @@ theorem eq_or_endpoints_of_sphereCircleParameter_eq (e : ℂ ≃ₗᵢ[ℝ] E) {
       exact Or.inr (Or.inl ⟨hinj ha' h0 haeq, hbt⟩)
     · exact Or.inl (hinj ha' ⟨hb.1, lt_of_le_of_ne hb.2 hbt⟩ heq)
 
-
-
 theorem injOn_sphereCircleParameter_Icc (e : ℂ ≃ₗᵢ[ℝ] E) {a b : ℝ}
     (hab : b - a < 2 * Real.pi) : InjOn (sphereCircleParameter e) (Icc a b) := by
   apply (injOn_sphereCircleParameter_Ico e (a := a) (b := a + 2 * Real.pi)
     (by linarith)).mono
   intro x hx
   exact ⟨hx.1, by linarith [hx.2]⟩
-
-
 
 theorem eq_endpoints_of_mem_adjacent_mesh_intervals {n : ℕ} {s : Fin (n + 1) → ℝ}
     (hs : StrictMono s) {i j : Fin n} (hij : i ≠ j) {x : ℝ}
@@ -73,8 +58,6 @@ theorem eq_endpoints_of_mem_adjacent_mesh_intervals {n : ℕ} {s : Fin (n + 1) �
       exact Nat.succ_le_of_lt hji
     have h := hs.monotone hidx
     exact ⟨Or.inl (by linarith [hj.2, hi.1]), Or.inr (by linarith [hj.2, hi.1])⟩
-
-
 
 theorem exists_mem_adjacent_mesh_interval {n : ℕ} (hn : 0 < n)
     (s : Fin (n + 1) → ℝ) {x : ℝ} (hx : x ∈ Icc (s 0) (s (Fin.last n))) :

@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Local
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric Filter
@@ -16,8 +7,6 @@ open scoped ContDiff Topology
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_global_contDiff_near_interval {f : ℝ → E} {U : Set ℝ}
     (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) {a b : ℝ}

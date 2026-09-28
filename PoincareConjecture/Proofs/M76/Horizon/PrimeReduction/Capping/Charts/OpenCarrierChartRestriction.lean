@@ -1,21 +1,11 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.FinitePLCarrierChartCompatibility
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
 
 theorem exists_open_carrier_restriction
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -62,9 +52,6 @@ theorem exists_open_carrier_restriction
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_compatible_open_carrier_charts
     {T V : Set E} (hVT : V ⊆ T)

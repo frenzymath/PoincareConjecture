@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.CurvatureJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.MovingCoordinates
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

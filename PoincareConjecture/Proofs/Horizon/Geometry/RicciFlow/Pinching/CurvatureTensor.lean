@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureCa
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.TensorRegion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
-
-
-
-
-
-
-

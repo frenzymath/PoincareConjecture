@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeChartMeasureData
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.MeasureTheory.MeasurableSpace.Embedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -45,7 +37,6 @@ theorem measurableSet_chart_image (e : OpenPartialHomeomorph M E)
   rw [heq]
   exact (MeasurableEmbedding.subtype_coe e.open_target.measurableSet).measurableSet_image.mpr
     (hS.preimage hi)
-
 
 def coordinatePushforward (e : OpenPartialHomeomorph M E) (K : Set M) : Measure M :=
   (volume.restrict (e '' K)).map e.symm
@@ -103,7 +94,6 @@ theorem contDiffOn_chartTransition (p q : M) :
     contMDiffOn_chart_symm (I := 𝓡 n) (x := p)
   exact (he.comp (hi.mono inter_subset_left) (fun _ hz => hz.2)).contDiffOn.of_le (by simp)
 
-
 theorem exists_weightedChartMeasure_upper (p q : M) (φ : C(M, ℝ))
     (hcompact : IsCompact (tsupport φ))
     (hsupport : tsupport φ ⊆ (chartAt E q).source) (hbound : ∀ x, φ x ≤ 1)
@@ -158,7 +148,6 @@ theorem exists_weightedChartMeasure_upper (p q : M) (φ : C(M, ℝ))
 namespace FiniteChartData
 
 variable [CompactSpace M] (d : FiniteChartData (n := n) (M := M))
-
 
 theorem exists_measure_restrict_le_chart (p : M) {K : Set M}
     (hK : IsCompact K) (hKs : K ⊆ (chartAt E p).source) :

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothCircleLift
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CircleLiftExtension
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem circle_lift_add_period_of_positive
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -62,9 +51,6 @@ theorem circle_lift_add_period_of_positive
       (hinj u s hsame)
     exact (ne_of_gt hus) hueq
   simpa only [hmexact, Int.cast_one, one_mul] using hm
-
-
-
 
 theorem exists_circle_lift_ambient_extension
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -149,9 +135,6 @@ theorem exists_circle_lift_ambient_extension
     change H z (R (sphereCircleParameter e s : E)) = (sphereCircleParameter e (B (z, s)) : E)
     rw [hR, hHb]
     simp only [C, neg_neg]
-
-
-
 
 theorem exists_unit_curve_ambient_extension
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Volume.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem calibrated_asymptoticVolumeRatio_eq_zero_of_tendsto (g : RiemannianMetric n M)
     (p : M)

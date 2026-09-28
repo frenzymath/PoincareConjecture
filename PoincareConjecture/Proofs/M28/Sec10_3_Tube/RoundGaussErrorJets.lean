@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCenterConnection
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussMetricExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorNaturality
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -141,10 +131,6 @@ private theorem source_tensor_connection_eventually_eq_model
     modelTensorSlotActionLift, hΓ,
     PoincareConjecture.TensorFiber.negativeSlotAction_apply]
 
-
-
-
-
 theorem exists_round_gauss_error_covariant_norm_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -247,9 +233,6 @@ theorem exists_round_gauss_error_covariant_norm_bound
     · exact hA
   have hlt := roundMetricJetNorm_lt N horder (e 0) j hj'
   exact hnormeq ▸ hlt.le
-
-
-
 
 theorem exists_round_gauss_error_first_coordinate_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -421,10 +404,6 @@ private theorem tensorCoordinateSection_norm_eq_of_normalized
   simp only [b0, Module.Basis.coe_toOrthonormalBasis, bb,
     tensorCoordinateSection_apply, tensorCoordinateEvaluation_model]
   rfl
-
-
-
-
 
 theorem exists_round_gauss_error_second_coordinate_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

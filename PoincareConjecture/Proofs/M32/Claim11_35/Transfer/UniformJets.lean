@@ -4,23 +4,6 @@ import PoincareConjecture.Proofs.M32.Mathlib.BilinearPullbackJets
 import PoincareConjecture.Proofs.M32.Claim11_34.Noncompact
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -239,10 +222,6 @@ private theorem locally_uniform_cylinder_errorJets
     _ ≤ C₀ * eta := mul_le_mul_of_nonneg_right
       (Finset.single_le_sum (fun j _ => hC j) (Finset.mem_univ r')) heta.le
     _ < rho := hsmall
-
-
-
-
 
 theorem blowup_uniform_cylinder_coefficientJets
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.Planar.Data
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.Planar.Ends
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ open PlaneArcs.Terminal.Reflection Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 def FourModelPlanarFamily {f : S2 → E3} {p : S2} (s : TerminalInputData f p) : Prop :=
   ∃ data : TerminalSaddleData s.reduction s.path p s.chart,
@@ -45,8 +41,6 @@ private theorem include_fullPlanarFamily
     (h : FullPlanarFamily s) : FourModelPlanarFamily s := by
   obtain ⟨data, Φ, K, χ, hfamily⟩ := h
   exact ⟨includeData data, Φ, K, χ, hfamily⟩
-
-
 
 theorem exists_four_model_planar_family
     {f : S2 → E3} {p : S2} (s : TerminalInputData f p) : FourModelPlanarFamily s := by

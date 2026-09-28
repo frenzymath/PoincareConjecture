@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetNorm
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture
-
-
 
 noncomputable def StandardCylinderPatch.restrict {length : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch length x) {l : ℝ} (hl : 0 < l) (hlL : l ≤ length) :
@@ -50,8 +39,6 @@ noncomputable def StandardCylinderPatch.restrict {length : ℝ} {x : StandardCap
 
 namespace M35
 
-
-
 theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace) {r s : ℕ} (hrs : r ≤ s) :
     roundCylinderJetErrorSquared u B r z ≤ roundCylinderJetErrorSquared u B s z := by
@@ -61,9 +48,6 @@ theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
     (fun k _ _ => roundCylinderTensorNormSquared_nonneg hu z.1 z.2 _)
 
 end M35
-
-
-
 
 theorem RoundCylinderFamilyClose.restrict_bound {delta epsilon : ℝ} {I : Set ℝ}
     {B : ℝ → RoundCylinderTwoTensor} (h : RoundCylinderFamilyClose delta I B)
@@ -80,8 +64,6 @@ theorem RoundCylinderFamilyClose.restrict_bound {delta epsilon : ℝ} {I : Set �
   exact ⟨bound, hb, fun u hu z hz =>
     (M35.roundCylinderJetErrorSquared_mono_order (hI u hu) (B u) z
       (Nat.floor_mono hinv)).trans (hjet u hu z (hsub hz))⟩
-
-
 
 theorem StandardSpacetimeCylinderClose.restrict (A : StandardCylinderAtlas)
     (g : ℝ → RiemannianMetric 3 StandardCapSpace)

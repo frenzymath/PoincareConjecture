@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Polyhedra.Mathlib.Polyhedr
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -66,8 +58,6 @@ private theorem ChartwisePLMap.local_extension_coordinates
       rwa [(e i).right_inv hz.1.1])
     refine ⟨h.1, (hGF hzK).trans ?_⟩
     simpa only [(e i).right_inv hz.1.1] using h.2
-
-
 
 theorem ChartwisePLMap.closed_paste [T2Space Y]
     {P : Set X} (hP : IsClosed P)

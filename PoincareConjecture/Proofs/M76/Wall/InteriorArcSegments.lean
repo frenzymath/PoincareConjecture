@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.InitialArcCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_interior_chart_vectors
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

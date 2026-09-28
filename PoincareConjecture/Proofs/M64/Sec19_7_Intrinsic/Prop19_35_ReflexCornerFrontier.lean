@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerSeams
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReflexCornerCaps
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FittedCornerFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +11,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_reflex_corner_frontier_subset
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) (r : ℝ)
@@ -153,10 +137,6 @@ theorem m64Intrinsic_reflex_corner_frontier_subset
     apply Or.inr
     refine ⟨t, ht, ?_⟩
     simpa [f, idx, sectorParameterEquiv_apply] using (hfirst (true, false) t ht).symm
-
-
-
-
 
 theorem m64Intrinsic_exists_reflex_loop_corner_patch
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

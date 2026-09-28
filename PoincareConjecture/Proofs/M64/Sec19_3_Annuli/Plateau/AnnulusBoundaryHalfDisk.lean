@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusInwardApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +12,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 
-
-
-
 theorem m64Annulus_boundary_disk_sub_mem {x r : ℝ} {p : LoopPlane}
     (hp : p ∈ closedBall (annulusPoint x 0) r ∩ S) :
     p - annulusPoint x 0 ∈ closedBall (0 : LoopPlane) r ∩ {z | 0 ≤ z 1} := by
@@ -36,9 +20,6 @@ theorem m64Annulus_boundary_disk_sub_mem {x r : ℝ} {p : LoopPlane}
   · have hpos := ((m64AnnulusInterior_coordinates p).mp hp.2).2.2.1
     change 0 ≤ (p - annulusPoint x 0) 1
     simpa [annulusPoint] using hpos.le
-
-
-
 
 theorem m64Annulus_boundary_disk_preimage_ae {x r : ℝ}
     (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1) :
@@ -59,10 +40,6 @@ theorem m64Annulus_boundary_disk_preimage_ae {x r : ℝ}
     refine ⟨?_, hz hmem⟩
     simpa only [mem_closedBall, dist_eq_norm, add_sub_cancel_right, sub_zero] using hmem.1
 
-
-
-
-
 theorem m64Annulus_boundary_disk_integral {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] {x r : ℝ}
     (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1) (f : LoopPlane → E) :
@@ -73,9 +50,6 @@ theorem m64Annulus_boundary_disk_integral {E : Type*} [NormedAddCommGroup E]
     (Homeomorph.addRight (annulusPoint x 0)).measurableEmbedding f
     (closedBall (annulusPoint x 0) r ∩ S)
   exact ht.symm.trans (setIntegral_congr_set (m64Annulus_boundary_disk_preimage_ae hx hP hr))
-
-
-
 
 theorem m64Annulus_boundary_disk_memLp {E : Type*} [NormedAddCommGroup E]
     {x r : ℝ} {f : LoopPlane → E}

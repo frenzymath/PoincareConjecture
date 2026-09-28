@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorTemplates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem saddle_nested_raised_return_radial_avoidance
     (kappa : OpenPartialHomeomorph E2 E2)

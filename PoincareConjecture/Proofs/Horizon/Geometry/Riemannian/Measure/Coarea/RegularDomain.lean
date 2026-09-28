@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.LevelVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -16,7 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   (g : RiemannianMetric n M) {f : M → ℝ}
   (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
-
 
 def regularDomain : Opens M :=
   ⟨{x | 0 < g.tangentNorm x (g.gradient f x)},

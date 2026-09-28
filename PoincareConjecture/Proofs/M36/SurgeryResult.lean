@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.RetainedIsometry
 import PoincareConjecture.Proofs.M36.SurgeryDistance
 import PoincareConjecture.Proofs.M36.SurgeryBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +16,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E₃ M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem nonempty_metricSurgeryResult_of_curvature_comparison
     (g₀ : StandardInitialMetric) {K : MetricSurgeryConstants}

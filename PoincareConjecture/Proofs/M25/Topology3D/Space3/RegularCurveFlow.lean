@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import Mathlib.Dynamics.Flow
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
 
 noncomputable def boundedFieldFlow (f : E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
@@ -39,8 +26,6 @@ noncomputable def boundedFieldFlow (f : E → E) {K L : ℝ≥0}
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
 theorem realFlow_component_invariant (φ : Flow ℝ X) (x : X) :
     IsInvariant φ (connectedComponent x) := by
   intro t y hy
@@ -49,8 +34,6 @@ theorem realFlow_component_invariant (φ : Flow ℝ X) (x : X) :
   have hstart : y ∈ range (fun s : ℝ => φ s y) := ⟨0, φ.map_zero_apply y⟩
   rw [connectedComponent_eq hy]
   exact hconn.subset_connectedComponent hstart ⟨t, rfl⟩
-
-
 
 theorem exists_regular_collar_level_flow
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)
@@ -70,8 +53,6 @@ theorem exists_regular_collar_level_flow
     change deriv (boundedFlow g hK hL x.1) s ≠ 0
     rw [(boundedFlow_hasDerivAt g hK hL x.1 s).deriv]
     exact hnonzero _ (hinv K L hK hL x.1 x.2 s)
-
-
 
 theorem exists_regular_collar_component_flow
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

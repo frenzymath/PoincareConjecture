@@ -15,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 theorem localFrame_covariant_derivative_coordinate
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x₀ : M)
     (W : (y : M) → TangentSpace (𝓡 n) y) :

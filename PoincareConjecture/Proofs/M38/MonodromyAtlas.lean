@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyLocalSheets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,22 +12,18 @@ variable (phi : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
 noncomputable def monodromyRepresentative : MonodromyQuotient phi → monodromyPunctureOpen :=
   Function.surjInv (monodromy_open_quotient phi).surjective
-
 
 theorem monodromyRepresentative_spec (p : MonodromyQuotient phi) :
     mq (monodromyRepresentative phi p) = p :=
   Function.surjInv_eq (monodromy_open_quotient phi).surjective p
-
 
 @[instance_reducible]
 noncomputable def monodromyChartedSpace :
     ChartedSpace StandardCapSpace (MonodromyQuotient phi) :=
   (monodromy_quotient_localHomeomorph phi).chartedSpaceOfRightInverse
     (monodromyRepresentative_spec phi)
-
 
 theorem monodromy_chart_transition_smooth (a b : monodromyPunctureOpen) :
     let e := ((monodromy_quotient_localHomeomorph phi).localInverseAt a).trans
@@ -73,7 +61,6 @@ theorem monodromy_chart_transition_smooth (a b : monodromyPunctureOpen) :
     (monodromy_quotient_localHomeomorph phi).localInverseAt_symm, Function.comp_assoc]
     using hcomp
 
-
 theorem monodromy_isManifold :
     letI := monodromyChartedSpace phi
     IsManifold (𝓡 3) ∞ (MonodromyQuotient phi) := by
@@ -88,7 +75,6 @@ theorem monodromy_isManifold :
     (monodromyRepresentative phi p) (monodromyRepresentative phi p')
 
 attribute [local instance] monodromyChartedSpace monodromy_isManifold
-
 
 theorem monodromy_quotient_contMDiff : ContMDiff (𝓡 3) (𝓡 3) ∞ mq := by
   intro x
@@ -107,8 +93,6 @@ theorem monodromy_quotient_contMDiff : ContMDiff (𝓡 3) (𝓡 3) ∞ mq := by
   change ContMDiffAt (𝓡 3) (𝓡 3) ∞ (c ∘ (s ∘ mq)) x
   exact hc.comp x hs
 
-
-
 theorem monodromy_chosen_sheet_contMDiffAt (p : MonodromyQuotient phi) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞
       ((monodromy_quotient_localHomeomorph phi).localInverseAt
@@ -126,7 +110,6 @@ theorem monodromy_chosen_sheet_contMDiffAt (p : MonodromyQuotient phi) :
   apply (hcs.comp p he).congr_of_eventuallyEq
   filter_upwards [e.open_source.mem_nhds hp] with y hy
   exact (c.left_inv hy.2).symm
-
 
 theorem monodromy_sheet_contMDiffOn (a : monodromyPunctureOpen) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞

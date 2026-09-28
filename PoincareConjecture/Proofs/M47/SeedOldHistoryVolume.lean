@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M47.JointSeedBallScales
 import PoincareConjecture.Proofs.M47.JointSeedBallAccess
 import PoincareConjecture.Proofs.M47.SeedM15Physical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_old_history_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

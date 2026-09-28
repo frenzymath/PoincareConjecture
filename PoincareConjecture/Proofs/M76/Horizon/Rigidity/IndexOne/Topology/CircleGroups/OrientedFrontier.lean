@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGr
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.GeometricCofaceSigns
 import PoincareConjecture.Proofs.M76.Wall.OriginalComponentSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ namespace PoincareConjecture.M76.HamiltonIntervalTorus
 local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_hamilton_euclidean_atlas_labels
     {ι : Type*} (e : ι → OpenPartialHomeomorph X E3)
@@ -44,7 +31,6 @@ theorem exists_hamilton_euclidean_atlas_labels
   let : LocallyCompactSpace X := h.isOpenEmbedding.locallyCompactSpace
   obtain ⟨O⟩ := hamiltonIntervalTorusAmbient_localOrientation
   exact exists_plAtlas_labels_of_localOrientation O euclideanLocalOrientation e he
-
 
 theorem exists_hamilton_original_atlas_labels
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3)
@@ -64,8 +50,6 @@ theorem exists_hamilton_original_atlas_labels
   exact h
 
 open PreAbstractSimplicialComplex.ModTwoCochains
-
-
 
 theorem exists_hamilton_frontier_geometric_coface_signs
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -102,8 +86,6 @@ theorem exists_hamilton_frontier_geometric_coface_signs
     exists_frontier_all_edge_signs_of_chart_labels e K A hAK hA g N hgi hfront hstars
       hq labels (fun H D z hH hD => hlabel H D (g z) hH hD)
   exact Dehn.exists_geometric_coface_signs A number sign hsign
-
-
 
 theorem exists_hamilton_frontier_component_sphere_of_isCyclic
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M09.CenteredHessian
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

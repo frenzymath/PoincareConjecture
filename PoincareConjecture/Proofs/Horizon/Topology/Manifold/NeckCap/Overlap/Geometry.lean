@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
 
-
 structure EpsilonNeck.GraphicalSphere
     {g : RiemannianMetric 3 M} (N N' : EpsilonNeck g) where
   map : UnitTwoSphere → M
@@ -42,7 +27,6 @@ structure EpsilonNeck.GraphicalSphere
 namespace EpsilonNeck.GraphicalSphere
 
 variable {g : RiemannianMetric 3 M} {N N' : EpsilonNeck g}
-
 
 def self (N : EpsilonNeck g) : EpsilonNeck.GraphicalSphere N N where
   map := fun p => N.coordinate_map (p, 0)
@@ -59,12 +43,6 @@ omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
 
 end EpsilonNeck.GraphicalSphere
 
-
-
-
-
-
-
 structure EpsilonNeck.SupportedHomeomorph
     {g : RiemannianMetric 3 M} (N N' : EpsilonNeck g) where
   graphical_sphere : EpsilonNeck.GraphicalSphere N N'
@@ -80,7 +58,6 @@ structure EpsilonNeck.SupportedHomeomorph
 namespace EpsilonNeck.SupportedHomeomorph
 
 variable {g : RiemannianMetric 3 M}
-
 
 def refl (N : EpsilonNeck g) : EpsilonNeck.SupportedHomeomorph N N where
   graphical_sphere := EpsilonNeck.GraphicalSphere.self N

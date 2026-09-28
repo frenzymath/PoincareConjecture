@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.JointSuccessor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -25,8 +15,6 @@ open Uniqueness Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem mapTension_family_joint_c1
     {g : ℝ → RiemannianMetric n V} (D : ∀ t, LeviCivitaData (g t))
@@ -71,8 +59,6 @@ theorem mapTension_family_joint_c1
   have h3 := hDF.clm_apply ((hΓ.clm_apply (contDiffOn_const (c := e i))).clm_apply
     (contDiffOn_const (c := e j)))
   exact (h1.add h2).sub h3
-
-
 
 theorem native_harmonic_map_joint_c2
     {g : ℝ → RiemannianMetric n V} (D : ∀ t, LeviCivitaData (g t))

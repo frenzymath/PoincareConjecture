@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.LocalCalculus
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,7 +58,6 @@ private lemma eventually_exists_basis_extend {ι : Type} (x : M)
   rw [Bundle.Trivialization.symm_continuousLinearEquivAt_eq,
     Bundle.Trivialization.symmL_apply _ hy]
   rfl
-
 
 lemma IsSmoothCovariantTensor.tensorTrace {g : RiemannianMetric n M} {k : ℕ}
     {T : CovariantTensorEvaluation n M (k + 2)} (hT : IsSmoothCovariantTensor T) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RetractionHessianIdentity
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M63.Mathlib.RetractionParabolicPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,24 +18,15 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 
-
-
 noncomputable def ambientCurvePrincipal (F : RicciFlow n M (Icc a b))
     (ρ : W → M) (t : ℝ) (z v : W) : ℝ :=
   ((F.metric t).inner (ρ z) (mfderiv 𝓘(ℝ, W) (𝓡 n) ρ z v)
     (mfderiv 𝓘(ℝ, W) (𝓡 n) ρ z v))⁻¹
 
-
-
-
 noncomputable def ambientCurveLower (F : RicciFlow n M (Icc a b))
     (e : M → W) (ρ : W → M) (t : ℝ) (z v : W) : W :=
   -(ambientCurvePrincipal F ρ t z v • coordinateHessian (F.connection t) e (ρ z)
     (mfderiv 𝓘(ℝ, W) (𝓡 n) ρ z v) (mfderiv 𝓘(ℝ, W) (𝓡 n) ρ z v))
-
-
-
-
 
 theorem ambientCurveCoefficients_contDiffOn (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -70,9 +52,6 @@ theorem ambientCurveCoefficients_contDiffOn (F : RicciFlow n M (Icc a b))
   · exact (hA.smul ((flow_coordinateHessian_pullback_contDiffOn F he hU hρ).mono hsub)).neg
   · intro t z _ v hv
     exact inv_pos.mpr ((F.metric t).pos (ρ z) _ hv)
-
-
-
 
 theorem ambientCurveCoefficients_retraction_defect (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakSobolevExtraction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +10,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
-
-
 
 theorem m64WeakPartialDeriv_ae_congr
     {S : Set LoopPlane} {i : Fin 2} {f g f' g' : LoopPlane → ℝ}
@@ -53,8 +41,6 @@ private theorem coordinate_test_apply
   filter_upwards [LpFiniteCoordinatesNative.coordinateLp_coe mu b u] with p hp
   simp only [hp, smul_eq_mul]
 
-
-
 theorem m64Annulus_weak_partial_closed
     {u v : ℕ → Lp E 2 mu} {U V : Lp E 2 mu}
     (hu : WeakConverges u U) (hv : WeakConverges v V) (i : Fin 2) (b : Fin m)
@@ -77,8 +63,6 @@ theorem m64Annulus_weak_partial_closed
   rw [coordinate_test_apply, coordinate_test_apply] at hlim
   simpa only [dphi, mul_comm] using hlim
 
-
-
 theorem m64WeakLimit_affine_identity
     {H F : Type*} [NormedAddCommGroup H] [NormedSpace ℝ H]
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -95,9 +79,6 @@ theorem m64WeakLimit_affine_identity
     rw [heq]
     exact tendsto_const_nhds
   simpa only [ContinuousLinearMap.comp_apply, map_add] using tendsto_nhds_unique ht hconstant
-
-
-
 
 theorem m64Annulus_weak_green_closed
     {u v : ℕ → Lp E 2 mu} {U V : Lp E 2 mu}

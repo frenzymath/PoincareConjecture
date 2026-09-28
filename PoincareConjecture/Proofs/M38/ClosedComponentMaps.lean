@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M38
 
 attribute [local instance] SmoothClosedComponentModel.model_topology
   SmoothClosedComponentModel.model_charted SmoothClosedComponentModel.model_manifold
-
-
 
 noncomputable def componentClosedModelDiffeomorph (S : GeneralizedSliceCarrier.{u})
     (x : S.carrier) {kind : ClosedComponentKind}
@@ -44,8 +34,6 @@ noncomputable def componentClosedModelDiffeomorph (S : GeneralizedSliceCarrier.{
       (fun y _ => y.property)
   · apply (ContMDiff.subtypeVal_comp_iff (componentOpen S x) forward).mp
     exact C.forward_smooth
-
-
 
 noncomputable def projectiveCoverAlongDiffeomorph
     {Q : Type*} [TopologicalSpace Q]

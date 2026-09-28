@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Augmente
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.OppositeValue
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.ProperRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace
@@ -75,8 +66,6 @@ theorem normalized_level_strip_subset_slab {r τ t : ℝ}
   have hτr := mul_pos hτ hr
   constructor <;> nlinarith [hz.1, hz.2]
 end Poincare.CurvatureIntegral
-
-
 
 theorem PoincareConjecture.LeviCivitaData.proper_regular_tilted_slab_on_openFiber
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Eigenfunction
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Filter Topology
@@ -36,8 +24,6 @@ private theorem integrable_mul_compact_test {O : Set E} {u ψ : E → ℝ}
   have hprod := huK.mul_continuousOn hψ.continuousOn hψc
   exact (hprod.integrable_of_forall_notMem_eq_zero
     (fun x hx => by simp [image_eq_zero_of_notMem_tsupport hx])).integrableOn
-
-
 
 theorem weakEquation_of_adjoint [NeZero n]
     {O : Set E} (hO : IsOpen O)
@@ -108,8 +94,6 @@ theorem weakEquation_of_adjoint [NeZero n]
       rw [hsymm x hx j i]
       ring
     _ = 0 := hflux
-
-
 
 theorem contDiffOn_of_continuous_of_adjoint (hn : 0 < n)
     {O : Set E} (hO : IsOpen O) (A : E → Matrix (Fin n) (Fin n) ℝ)

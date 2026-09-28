@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.LocalGraphSection
 import PoincareConjecture.Proofs.M02.Topology.FiniteAffineIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

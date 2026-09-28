@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckOrdinaryCylinder
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
 variable {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {K : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem ordinaryChapter11PushedCylinder_pullbackInner_eq
     (e : GeneralizedFlowCylinder (G) C origin scale K U)
@@ -89,8 +78,6 @@ theorem ordinaryChapter11PushedCylinder_pullbackInner_eq
       (congrArg (fun y : M => (F.metric (origin + s / scale)).inner y
         (mfderiv (𝓡 3) (𝓡 3) f x v) (mfderiv (𝓡 3) (𝓡 3) f x w))
         (congrFun hcomp x))
-
-
 
 theorem ordinaryChapter11PushedCylinder_cylinderPullback_eq
     (e : GeneralizedFlowCylinder (G) C origin scale K U)

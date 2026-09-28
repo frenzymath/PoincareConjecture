@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialNorm
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M47
 open Proofs.M47
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem cap_native_axial_weight_norm_le
     {lambda u : ℝ} (hlambda : 0 ≤ lambda) (hu : u < 1)
@@ -56,8 +46,6 @@ theorem cap_native_axial_weight_norm_le
   have h := mul_le_mul_of_nonneg_left hsquare'
     (mul_nonneg (mul_nonneg hweights0 (sq_nonneg beta)) (sq_nonneg (T a)))
   nlinarith only [h]
-
-
 
 theorem cap_native_sphere_error_norm_sq (q : UnitTwoSphere) (z d : ℝ) :
     roundCylinderTensorNormSquared 0 (chartAt E2 q) (chartAt E2 q q, z)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralHeightBandSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePL.exists_heightBand_level_chart {S : Set (E × ℝ)} {B : Set E}
     {lower upper : E → ℝ} {r : E × ℝ → ℝ}

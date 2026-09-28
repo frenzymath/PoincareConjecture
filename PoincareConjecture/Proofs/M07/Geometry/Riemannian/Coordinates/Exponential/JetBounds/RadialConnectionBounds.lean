@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +26,6 @@ theorem tangentNorm_zero_eq_norm_of_normalized
   unfold RiemannianMetric.tangentNorm
   rw [h0, real_inner_self_eq_norm_sq, Real.sqrt_sq (norm_nonneg v)]
 
-
-
 theorem norm_inverse_radial_transport
     (D : LeviCivitaData g)
     (h0 : ∀ v w : EuclideanSpace ℝ (Fin n), g.inner 0 v w = inner ℝ v w)
@@ -49,8 +39,6 @@ theorem norm_inverse_radial_transport
   have h := tangentNorm_radial_field D x ((T x).inverse v)
   rw [← hTv, (hTi x).self_apply_inverse] at h
   exact h.symm
-
-
 
 theorem tangentNorm_covariantDerivative_radial_field_le
     (D : LeviCivitaData g)

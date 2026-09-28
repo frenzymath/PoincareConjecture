@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Com
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Calculus.Deriv.Support
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,7 +22,6 @@ private theorem exists_heatCutoffProfile_bound :
   intro z
   exact (hB z).trans (le_max_right _ _)
 
-
 noncomputable def heatCutoffConstant : ℝ :=
   Classical.choose exists_heatCutoffProfile_bound
 
@@ -49,8 +37,6 @@ namespace LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [PreconnectedSpace M] {g : RiemannianMetric n M}
-
-
 
 theorem exists_distance_cutoff (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M) {u : M → ℝ}
@@ -124,8 +110,6 @@ theorem exists_distance_cutoff (D : LeviCivitaData g)
         mul_le_mul hbound (hgrad x) (Real.sqrt_nonneg _)
           (div_nonneg (heatCutoffConstant_pos.le) hden.le)
       _ = _ := by field_simp
-
-
 
 theorem exists_intrinsic_ball_cutoff (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M) {R : ℝ} (hR : 1 ≤ R) :

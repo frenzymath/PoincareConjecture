@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedRimRetra
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.OffsetRimEssentiality
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -54,8 +46,6 @@ theorem PairedMarkedBoundary.offset_rim_not_disk
     side hBN hlevel P.radial (P.radial_parametrization b) hTW hdisk.1 hdisk
 
 open Classical in
-
-
 
 theorem PairedMarkedBoundary.offset_rim_count_ne_one
     (P : PairedMarkedBoundary L retained d) [Fintype P.model.boundary.faces]

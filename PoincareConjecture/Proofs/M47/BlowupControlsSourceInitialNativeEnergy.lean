@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceIntri
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderTimeWeights
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ open M34 M44
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem source_initial_native_energy_le_static {u : ℝ} (hu : u ≤ 0)
     (B : RoundCylinderTwoTensor) (m : ℕ) (z : RoundCylinderSpace) :
     roundCylinderJetErrorSquared u B m z ≤
@@ -32,8 +21,6 @@ theorem source_initial_native_energy_le_static {u : ℝ} (hu : u ≤ 0)
   simp only [staticCylinderCorrection_iteratedDerivative (hu.trans_lt zero_lt_one)]
   exact Finset.sum_le_sum fun k _ =>
     M35.roundCylinderTensorNormSquared_mono_time hu zero_lt_one z.1 z.2 _
-
-
 
 theorem exists_source_initial_native_coefficient_bound (m : ℕ) :
     ∃ K : ℝ, 0 ≤ K ∧ ∀ {u : ℝ}, u ≤ 0 →

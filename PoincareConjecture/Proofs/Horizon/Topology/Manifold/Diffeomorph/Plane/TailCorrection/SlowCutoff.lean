@@ -2,8 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,8 +9,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Manifold.PlaneDiffeomorph
-
-
 
 theorem exists_slow_cutoff (a M : ℝ) (hM : 0 ≤ M) :
     ∃ (η : ℝ → ℝ) (b : ℝ), a < b ∧ ContDiff ℝ ∞ η ∧

@@ -1,44 +1,15 @@
-
 import Mathlib.Analysis.ODE.PicardLindelof
 import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped Topology NNReal
 open Set Metric
-
 
 noncomputable section
 
 namespace Poincare.ODE.Linear
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
-
 
 theorem exists_hasDerivWithinAt_of_small {a b : ℝ} (hab : a ≤ b) (A : ℝ → E →L[ℝ] E)
     (x₀ : E) {K : ℝ≥0} (hcont : ContinuousOn A (Icc a b))
@@ -77,9 +48,6 @@ theorem exists_hasDerivWithinAt_of_small {a b : ℝ} (hab : a ≤ b) (A : ℝ �
   exact ⟨V, hV0, hVd⟩
 
 omit [CompleteSpace E] in
-
-
-
 
 theorem exists_hasDerivWithinAt_glue {a c b : ℝ} (hac : a ≤ c) (hcb : c ≤ b)
     (A : ℝ → E →L[ℝ] E) {V₁ V₂ : ℝ → E}
@@ -134,14 +102,6 @@ theorem exists_hasDerivWithinAt_glue {a c b : ℝ} (hac : a ≤ c) (hcb : c ≤ 
       rw [hVval, if_neg (not_le.mpr hx)]
     rw [hVt]
     exact hd.congr_of_eventuallyEq hVeq hVt
-
-
-
-
-
-
-
-
 
 theorem exists_hasDerivWithinAt_Icc {a b : ℝ} (hab : a ≤ b) (A : ℝ → E →L[ℝ] E)
     (x₀ : E) {K : ℝ≥0} (hcont : ContinuousOn A (Icc a b))
@@ -208,14 +168,6 @@ theorem exists_hasDerivWithinAt_Icc {a b : ℝ} (hab : a ≤ b) (A : ℝ → E �
   rw [hsN] at hVd
   exact ⟨V, hV0, hVd⟩
 
-
-
-
-
-
-
-
-
 def IsSolOn (A : ℝ → E →L[ℝ] E) (a b : ℝ) (V : ℝ → E) : Prop :=
   ∀ t ∈ Icc a b, HasDerivWithinAt V (A t (V t)) (Icc a b) t
 
@@ -224,15 +176,10 @@ theorem IsSolOn.continuousOn {A : ℝ → E →L[ℝ] E} {a b : ℝ} {V : ℝ �
     (h : IsSolOn A a b V) : ContinuousOn V (Icc a b) :=
   fun t ht => (h t ht).continuousWithinAt
 
-
-
-
 theorem Icc_mem_nhdsWithin_Ici {a b t : ℝ} (ht : t ∈ Ico a b) : Icc a b ∈ 𝓝[≥] t := by
   refine mem_nhdsWithin.mpr ⟨Iio b, isOpen_Iio, ht.2, ?_⟩
   rintro x ⟨hxb, hxt⟩
   exact ⟨le_trans ht.1 hxt, le_of_lt hxb⟩
-
-
 
 theorem Icc_mem_nhdsWithin_Iic {a b t : ℝ} (ht : t ∈ Ioc a b) : Icc a b ∈ 𝓝[≤] t := by
   refine mem_nhdsWithin.mpr ⟨Ioi a, isOpen_Ioi, ht.1, ?_⟩
@@ -240,9 +187,6 @@ theorem Icc_mem_nhdsWithin_Iic {a b t : ℝ} (ht : t ∈ Ioc a b) : Icc a b ∈ 
   exact ⟨le_of_lt hxa, le_trans hxt ht.2⟩
 
 omit [CompleteSpace E] in
-
-
-
 
 theorem IsSolOn.eqOn_of_left {A : ℝ → E →L[ℝ] E} {a b : ℝ} {K : ℝ≥0}
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) {V W : ℝ → E}
@@ -260,8 +204,6 @@ theorem IsSolOn.eqOn_of_left {A : ℝ → E →L[ℝ] E} {a b : ℝ} {K : ℝ≥
 
 omit [CompleteSpace E] in
 
-
-
 theorem IsSolOn.eqOn_of_right {A : ℝ → E →L[ℝ] E} {a b : ℝ} {K : ℝ≥0}
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) {V W : ℝ → E}
     (hV : IsSolOn A a b V) (hW : IsSolOn A a b W) (hb : V b = W b) :
@@ -278,7 +220,6 @@ theorem IsSolOn.eqOn_of_right {A : ℝ → E →L[ℝ] E} {a b : ℝ} {K : ℝ�
 
 omit [CompleteSpace E] in
 
-
 theorem IsSolOn.add {A : ℝ → E →L[ℝ] E} {a b : ℝ} {V W : ℝ → E}
     (hV : IsSolOn A a b V) (hW : IsSolOn A a b W) : IsSolOn A a b (V + W) := by
   intro t ht
@@ -294,8 +235,6 @@ theorem IsSolOn.const_smul {A : ℝ → E →L[ℝ] E} {a b : ℝ} (c : ℝ) {V 
   simpa only [Pi.smul_apply, ContinuousLinearMap.map_smul] using h
 
 variable {A : ℝ → E →L[ℝ] E} {a b : ℝ} {K : ℝ≥0}
-
-
 
 noncomputable def solOf (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) (x₀ : E) : ℝ → E :=
@@ -329,9 +268,6 @@ theorem solOf_smul (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
     ((solOf_isSolOn hab hcont hK x).const_smul c) hinit ht
   simpa only [Pi.smul_apply] using heq
 
-
-
-
 noncomputable def flowMap (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) : E →ₗ[ℝ] E where
   toFun x₀ := solOf hab hcont hK x₀ b
@@ -354,9 +290,6 @@ noncomputable def flowMap (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
 @[simp] theorem flowMap_apply (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) (x₀ : E) :
     flowMap hab hcont hK x₀ = solOf hab hcont hK x₀ b := rfl
-
-
-
 
 theorem flowMap_injective (hab : a ≤ b) (hcont : ContinuousOn A (Icc a b))
     (hK : ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K) : Function.Injective (flowMap hab hcont hK) := by

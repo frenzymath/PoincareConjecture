@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.CurvedCapSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.NestingCriteria
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,9 +10,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem disjoint_closed_cap_boundaries
     {v : E3} {b : Real} {E F Δ Λ : Set E3}
@@ -34,9 +29,6 @@ theorem disjoint_closed_cap_boundaries
   · exact disjoint_left.mp hEF
       (hΔrim y hyΔ (le_antisymm (hF y hyF) (hΔ y hyΔ))) hyF
   · exact disjoint_left.mp hΔΛ hyΔ hyΛ
-
-
-
 
 theorem closing_ball_subset_of_one_interior_point
     {v : E3} {b : Real} {E F Δ Λ : Set E3}

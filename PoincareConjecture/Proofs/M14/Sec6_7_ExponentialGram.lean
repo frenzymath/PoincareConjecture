@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialJacobiField
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingJacobian
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,21 +15,15 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 noncomputable def exponentialDifferential (E : M14ExponentialFamily G T x)
     (Z : G.Horizontal x) (s : ℝ) : G.Horizontal x →L[ℝ] G.Horizontal (E.gamma Z s) := by
   classical
   exact if hs : (Z, s) ∈ E.domain then E.differential Z s hs else 0
 
-
-
 theorem exponentialDifferential_eq (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hs : (Z, s) ∈ E.domain) :
     exponentialDifferential E Z s = E.differential Z s hs := by
   simp only [exponentialDifferential, dif_pos hs]
-
-
 
 noncomputable def exponentialGram (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) :
@@ -46,19 +31,13 @@ noncomputable def exponentialGram (E : M14ExponentialFamily G T x)
   G.spacetime.horizontalMetric.inner (E.gamma Z s)
     (exponentialDifferential E Z s (v i)) (exponentialDifferential E Z s (v j))
 
-
-
 noncomputable def exponentialJacobian (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) : ℝ :=
   Real.sqrt (max 0 (exponentialGram E v Z s).det)
 
-
-
 theorem exponentialJacobian_nonneg (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) :
     0 ≤ exponentialJacobian E v Z s := Real.sqrt_nonneg _
-
-
 
 theorem exponentialJacobian_eq_sqrt_det (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) :
@@ -75,8 +54,6 @@ private theorem metric_pair_heq {p q : G.Point} (hp : p = q)
   cases hv
   cases hw
   rfl
-
-
 
 theorem exponentialGram_eq_jacobi_pair
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -97,8 +74,6 @@ theorem exponentialGram_eq_jacobi_pair
   exact (metric_pair_heq (exponential_square_curve_eq E Z hb hpos hs)
     (exponentialJacobiField_heq_differential hM04 hM12 E Z (v i) hb hpos hs hsurv)
     (exponentialJacobiField_heq_differential hM04 hM12 E Z (v j) hb hpos hs hsurv)).symm
-
-
 
 theorem measureJacobian_eq_exponentialJacobian {τ : ℝ}
     (E : M14ExponentialFamily G T x) (H : M14StableSet G T τ x E)

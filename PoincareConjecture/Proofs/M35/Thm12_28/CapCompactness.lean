@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M35
-
-
 
 theorem edist_le_intrinsicEDist
     {M : Type u} [TopologicalSpace M]
@@ -48,8 +37,6 @@ private theorem ratio_on_closure {X : Type*} [TopologicalSpace X]
   exact closure_minimal (fun y hy => hleft y hy hx)
     (isClosed_le hf continuous_const)
 
-
-
 theorem isCompact_closure
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -70,9 +57,6 @@ theorem isCompact_closure
   exact (Proofs.M09.isCompact_closure_metric_ball g hcomplete x r).of_isClosed_subset
     isClosed_closure (closure_mono hball)
 
-
-
-
 theorem scalar_ratio_on_closure
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -92,8 +76,6 @@ theorem scalar_ratio_on_closure
     have hself := hratio x hxU x hxU
     nlinarith
   exact ⟨B, hB, hBC, ratio_on_closure hR hratio⟩
-
-
 
 theorem exists_positive_scalar_bounds_on_closure
     {M : Type u} [TopologicalSpace M]

@@ -1,7 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.LaplacianTrace
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

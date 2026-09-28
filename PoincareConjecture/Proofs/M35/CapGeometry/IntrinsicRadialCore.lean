@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialDistance
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +20,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
 
 include hrotation hcomplete P
 
-
-
 theorem closure_ball_zero_eq_radial_closedBall {s : ℝ} (hs : 0 < s) :
     closure (g.ball 0 s) =
       closedBall 0 ((radialArclengthOrderIso g hrotation hcomplete).symm s) := by
@@ -39,8 +27,6 @@ theorem closure_ball_zero_eq_radial_closedBall {s : ℝ} (hs : 0 < s) :
     simpa only [radialArclengthOrderIso_symm_zero] using
       (radialArclengthOrderIso g hrotation hcomplete).symm.strictMono hs
   rw [ball_zero_eq_radial_ball g hrotation hcomplete P, closure_ball 0 hr.ne']
-
-
 
 theorem radial_metric_ball_closed_core_witness {s : ℝ} (hs : 0 < s) :
     ∃ f : StandardCapSpace → StandardCapSpace,
@@ -78,8 +64,6 @@ theorem radial_metric_ball_closed_core_witness {s : ℝ} (hs : 0 < s) :
     simpa only [smul_zero, Real.norm_eq_abs, abs_of_pos hr, mul_one] using
       smul_sphere' hr.ne' (0 : StandardCapSpace) 1
 
-
-
 theorem radial_metric_ball_carrier_witness {s : ℝ} (hs : 0 < s) :
     ∃ f h : StandardCapSpace → StandardCapSpace,
       range f = g.ball 0 s ∧ Function.LeftInverse h f ∧
@@ -106,7 +90,6 @@ theorem radial_metric_ball_carrier_witness {s : ℝ} (hs : 0 < s) :
   · exact OpenPartialHomeomorph.contDiff_univBall.contMDiff
   · rw [hball]
     exact OpenPartialHomeomorph.contDiffOn_univBall_symm.contMDiffOn
-
 
 theorem radial_metric_ball_core_compact {s : ℝ} (hs : 0 < s) :
     IsCompact (closure (g.ball 0 s)) := by

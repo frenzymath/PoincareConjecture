@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedCom
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Isometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem connectedComponentMetric_geometry_diffeomorph
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

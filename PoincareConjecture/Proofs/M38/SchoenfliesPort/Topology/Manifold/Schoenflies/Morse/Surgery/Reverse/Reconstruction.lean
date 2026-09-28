@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Correction.CapBelt
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -47,22 +39,17 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
-
 theorem range_minus_open_capMinus :
     range S.fMinus \ (S.gMinus '' ball (0 : E2) 1) =
       (fun p => S.D (f p)) '' (S.eMinus '' closedBall 0 1) :=
   range_diff_open_cap _ _ _ _ _ S.fMinus_embedding.isEmbedding.injective S.dMinus_open
     S.capMinus_eq S.retainedMinus_eq
 
-
 theorem range_minus_open_capPlus :
     range S.fPlus \ (S.gPlus '' ball (0 : E2) 1) =
       (fun p => S.D (f p)) '' (S.ePlus '' closedBall 0 1) :=
   range_diff_open_cap _ _ _ _ _ S.fPlus_embedding.isEmbedding.injective S.dPlus_open
     S.capPlus_eq S.retainedPlus_eq
-
-
 
 theorem prepared_range_eq_children_and_cylinder :
     range (fun p => S.D (f p)) =
@@ -77,8 +64,6 @@ theorem prepared_range_eq_children_and_cylinder :
   rw [← sub_eq_add_neg] at hmiddle
   rw [hmiddle, ← image_union, ← image_union, S.disk_slab_cover, image_univ]
 
-
-
 theorem prepared_range_eq_filled_boundaries_and_cylinder
     (BMinus BPlus : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hMinus : BMinus '' sphere (0 : E3) 1 = range S.fMinus)
@@ -90,8 +75,6 @@ theorem prepared_range_eq_filled_boundaries_and_cylinder
       ((BPlus '' sphere (0 : E3) 1) \ (S.gPlus '' ball (0 : E2) 1)) := by
   rw [hMinus, hPlus]
   exact S.prepared_range_eq_children_and_cylinder
-
-
 
 theorem child_fillings_disjoint_or_nested
     (BMinus BPlus : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

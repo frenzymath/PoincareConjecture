@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

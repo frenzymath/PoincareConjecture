@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCapCutoff
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCapDisjoint
 import PoincareConjecture.Proofs.M47.PrefixMonotone
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_old_long_search
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

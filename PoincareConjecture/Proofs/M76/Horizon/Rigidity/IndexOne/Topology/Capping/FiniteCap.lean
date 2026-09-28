@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.BoundaryConeCa
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar
 
@@ -22,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem exists_boundaryCircleCap_local_collar (S : Set E) (x : S) :
     ∃ c : OpenPartialHomeomorph (S × Ico (0 : ℝ) 1) (boundaryCircleCap true S),
@@ -91,17 +82,12 @@ theorem exists_boundaryCircleCap_local_collar (S : Set E) (x : S) :
   change ((1 - (0 : ℝ)) • (y : E), (0 : ℝ)) = ((y : E), 0)
   simp only [sub_zero, one_smul]
 
-
-
 theorem boundaryCircleCap_isSimplyConnected
     {S : Set E} (gamma : sphere (0 : Fin 2 → ℝ) 1 ≃ₜ S) (hgamma : gamma.IsFinitePL) :
     IsSimplyConnected (boundaryCircleCap true S) := by
   obtain ⟨_, A, _, hAcv, hAne, H, _, _⟩ := isFinitePLBallPair_boundaryCircleCap true gamma hgamma
   let : ContractibleSpace A := hAcv.contractibleSpace (hAne.mono interior_subset)
   exact H.toHomotopyEquiv.simplyConnectedSpace
-
-
-
 
 theorem isSimplyConnected_finite_boundaryCircleCap
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)

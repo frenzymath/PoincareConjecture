@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvol
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.Spacetime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem ricciNormSq_eq_half_scalarCurvature_sq (D : LeviCivitaData g)
     (x : M) :
@@ -53,7 +44,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {J : Set ℝ}
 
-
 theorem contMDiffAt_scalarCurvature_surface (F : RicciFlow 2 M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M) :
     ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 2)) 𝓘(ℝ, ℝ) ∞
@@ -64,8 +54,6 @@ theorem contMDiffAt_scalarCurvature_surface (F : RicciFlow 2 M J)
     (fun X hX => F.contMDiffAt_ricci_fields ht (hX 0) (hX 1))
     (X := Fin.elim0) (fun i => Fin.elim0 i)
   exact h
-
-
 
 theorem hasDerivAt_scalarCurvature_surface (F : RicciFlow 2 M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M) :

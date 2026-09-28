@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.DiskMetricTransport
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.ClosedTimeFilling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
-
-
 
 theorem m65FillingArea_flowMetric_le {K0 K1 K2 : ℝ}
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -42,9 +33,6 @@ theorem m65FillingArea_flowMetric_le {K0 K1 K2 : ℝ}
         (m65TransportSpanningDisk bounds hs ht D)).trans
         (m65TransportSpanningDisk_area_le bounds hs ht D)).trans_eq (mul_comm _ _)
   exact ((div_le_iff₀ (Real.exp_pos _)).mp hdiv).trans_eq (mul_comm _ _)
-
-
-
 
 theorem m65VaryingMetricFillingArea_le [T2Space M] [SecondCountableTopology M]
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u})

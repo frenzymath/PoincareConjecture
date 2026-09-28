@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceJetsCurvature
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CoordinateEvolution
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -20,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSourceJets_backward_norm_bound
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -48,8 +40,6 @@ theorem terminalSourceJets_backward_norm_bound
     hh hC hZ (by simpa using hinit) hrate' (-t)
     ⟨by linarith [ht.2], by linarith [ht.1]⟩
   simpa only [neg_neg, sub_zero, show (2 * C) * (τ / 2) = C * τ by ring] using h
-
-
 
 theorem terminalSourceJets_spatial (P : RicciFlowCurvatureTheory.{u})
     {τ R H ρ : ℝ} (hτ : 0 < τ) (hH : 0 < H) (hρ : 0 < ρ) (hρR : 2 * ρ < R)

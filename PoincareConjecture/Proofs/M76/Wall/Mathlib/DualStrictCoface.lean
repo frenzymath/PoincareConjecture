@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem barycentricDualBlock_le_link_of_ssubset
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

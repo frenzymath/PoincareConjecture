@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Splice
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Extinction.Flow.Geometry
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

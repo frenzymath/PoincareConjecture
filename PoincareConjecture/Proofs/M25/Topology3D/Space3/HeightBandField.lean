@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_compact_height_band_field {S U : Set E}
     (hS : IsCompact S) (hU : IsOpen U) (hSU : S ⊆ U)

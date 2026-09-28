@@ -5,19 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.S
 import PoincareConjecture.Proofs.Horizon.Analysis.Asymptotics.Harnack
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +18,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem abs_scalarCurvature_le_curvatureTensorNorm
     (D : LeviCivitaData g) (x : M) :
@@ -68,7 +53,6 @@ theorem abs_scalarCurvature_le_curvatureTensorNorm
     _ = _ := by simp [hdim, pow_two, mul_assoc]
 
 set_option maxHeartbeats 800000 in
-
 
 theorem curvatureOperatorBound_scalarCurvature
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -118,8 +102,6 @@ theorem curvatureOperatorBound_scalarCurvature
   simpa only [Fintype.sum_prod_type, curvatureOperatorQuadratic, R, b,
     mul_comm, mul_left_comm, mul_assoc] using hbound
 
-
-
 theorem curvatureTensorNorm_le_scalarCurvature
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (hoperator : D.NonnegativeCurvatureOperator x) :
@@ -130,10 +112,6 @@ theorem curvatureTensorNorm_le_scalarCurvature
 end PoincareConjecture.LeviCivitaData
 
 namespace Poincare.RicciFlow.Harnack
-
-
-
-
 
 theorem exists_uniform_bound_of_local_right_bound_and_harnack
     {X : Type*} (f : X → ℝ → ℝ) {a b : ℝ} (hab : a < b)
@@ -207,8 +185,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
 theorem monotoneOn_time_mul_scalarCurvature_of_harnack
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b : ℝ} (hJ : Icc a b ⊆ J) (x : M)
@@ -236,8 +212,6 @@ theorem monotoneOn_time_mul_scalarCurvature_of_harnack
     have h := mul_nonneg htpos.le (harnack t ht)
     rw [mul_add, mul_div_cancel₀ _ (ne_of_gt htpos)] at h
     linarith
-
-
 
 theorem curvatureTensorNorm_le_of_terminal_scalar_bound
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -267,8 +241,6 @@ theorem curvatureTensorNorm_le_of_terminal_scalar_bound
     (hoperator t ⟨hat, ht.2⟩)).trans
       (mul_le_mul_of_nonneg_left hscalar (sq_nonneg _))
 
-
-
 theorem curvatureTensorNorm_bound_of_initial_and_terminal
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b δ K S : ℝ} (hJ : Icc a b ⊆ J) (hδ : 0 < δ)
@@ -289,9 +261,6 @@ theorem curvatureTensorNorm_bound_of_initial_and_terminal
   · exact (curvatureTensorNorm_le_of_terminal_scalar_bound hC F hJ hδ x
       (fun s hs => hoperator s hs x) (harnack x) (hterminal x)
       ⟨hright, ht.2⟩).trans (le_max_right _ _)
-
-
-
 
 theorem exists_uniform_curvatureTensorNorm_bound_on_set_of_local_right_bound_and_harnack
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (C : Set M)
@@ -360,8 +329,6 @@ theorem exists_uniform_curvatureTensorNorm_bound_on_set_of_local_right_bound_and
   intro t ht x hx
   exact (hnorm_scalar t ht x hx).trans
     ((mul_le_mul_of_nonneg_left (hS t ht ⟨x, hx⟩) (sq_nonneg _)).trans (le_max_right _ _))
-
-
 
 theorem exists_uniform_curvatureTensorNorm_bound_component_of_local_right_bound
     [T3Space M] [SecondCountableTopology M]

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.Rebase
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -8,8 +7,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set Filter Topology
 
 namespace Poincare.GromovHausdorff
-
-
 
 theorem pointedGHConvergesUnbounded_rebase_of_expanding_realizations
     {X : ℕ → BasedMetricSpaceBundle.{0}} {Y : BasedMetricSpaceBundle.{0}}

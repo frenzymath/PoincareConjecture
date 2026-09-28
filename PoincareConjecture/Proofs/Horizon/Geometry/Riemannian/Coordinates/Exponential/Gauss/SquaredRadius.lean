@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Loc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem gradient_squared_radius_of_gauss (g : RiemannianMetric n M) (p : M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -66,8 +58,6 @@ theorem gradient_squared_radius_of_gauss (g : RiemannianMetric n M) (p : M)
   rw [g.inner_gradient, ← hw, map_smul, map_smul, smul_apply, smul_eq_mul, hgauss]
   rw [← hw] at hd
   exact hd
-
-
 
 theorem exists_radial_chart_of_squared_distance_gradient [T3Space M]
     [PreconnectedSpace M] (g : RiemannianMetric n M) (p : M)

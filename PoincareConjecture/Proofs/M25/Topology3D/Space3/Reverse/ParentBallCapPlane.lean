@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] sourceCircle_stereographic_dimension
-
-
 
 theorem exists_sphere_disc_plane_chart
     (e : OpenPartialHomeomorph E2 UnitTwoSphere)

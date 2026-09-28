@@ -4,22 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.RegularTimes
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,8 +19,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
 
-
-
 theorem terminal_box_eventually
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
     (b : E.extended.box_index) (hT : T ∈ (E.extended.box b).interval) :
@@ -49,8 +31,6 @@ theorem terminal_box_eventually
   have htF : t ∈ F.interval := H.interval_exhausts_preterminal ⟨ht0.le, ht⟩
   exact ⟨htF, heq ▸ ⟨E.old_times htF, htU⟩⟩
 
-
-
 theorem box_scalar_pullback (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) (t : ℝ) (ht : t ∈ (G.box b).interval)
     (x : (G.box b).carrier.carrier) :
@@ -60,8 +40,6 @@ theorem box_scalar_pullback (G : GeneralizedRicciFlowData.{u})
     (G.connection t) isOpen_univ ((G.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => ((G.box b).metric_pullback t ht y v w).symm) (mem_univ x)).symm
 
-
-
 theorem box_negativeCurvaturePart_pullback (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) (t : ℝ) (ht : t ∈ (G.box b).interval)
     (x : (G.box b).carrier.carrier) :
@@ -70,8 +48,6 @@ theorem box_negativeCurvaturePart_pullback (G : GeneralizedRicciFlowData.{u})
   exact (negativeCurvaturePart_eq_of_local_isometry ((G.box b).flow.connection t)
     (G.connection t) isOpen_univ ((G.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => ((G.box b).metric_pullback t ht y v w).symm) (mem_univ x)).symm
-
-
 
 theorem terminal_box_hamiltonIvey_pinching
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -117,8 +93,6 @@ theorem terminal_box_hamiltonIvey_pinching
       box_negativeCurvaturePart_pullback] at h
     exact h hnt
 
-
-
 theorem extension_hamiltonIveyPinchedAt_terminal
     (hM04 : RicciFlowCurvatureTheory.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -138,8 +112,6 @@ theorem extension_hamiltonIveyPinchedAt_terminal
     rw [box_scalar_pullback]
     exact (terminal_box_hamiltonIvey_pinching hM04 H E b hb y).2
 
-
-
 theorem extension_hamiltonIveyPinched
     (hM04 : RicciFlowCurvatureTheory.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T) :
@@ -150,8 +122,6 @@ theorem extension_hamiltonIveyPinched
   · have htT' : t = T := mem_singleton_iff.mp htT
     subst t
     exact extension_hamiltonIveyPinchedAt_terminal hM04 H E ht
-
-
 
 theorem extension_pinchedOrNonnegative
     (hM04 : RicciFlowCurvatureTheory.{u})

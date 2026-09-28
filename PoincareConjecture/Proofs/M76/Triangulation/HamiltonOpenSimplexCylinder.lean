@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSimplexCylinder
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 noncomputable def handleCoordinateSplit (J : Finset (Fin 3)) :
     (Fin 3 → ℝ) ≃L[ℝ] ((J → ℝ) × ({i : Fin 3 // i ∉ J} → ℝ)) := by
@@ -35,8 +24,6 @@ noncomputable def handleCoordinateSplit (J : Finset (Fin 3)) :
     map_add' := by intro x y; rfl
     map_smul' := by intro r x; rfl }
   exact e.toContinuousLinearEquiv
-
-
 
 theorem norm_handleCoordinateSplit (J : Finset (Fin 3)) (x : Fin 3 → ℝ) :
     ‖handleCoordinateSplit J x‖ = ‖x‖ := by
@@ -58,10 +45,6 @@ theorem norm_handleCoordinateSplit (J : Finset (Fin 3)) (x : Fin 3 → ℝ) :
   by_cases hi : i ∈ J
   · exact (norm_le_pi_norm (e x).1 ⟨i, hi⟩).trans (le_max_left _ _)
   · exact (norm_le_pi_norm (e x).2 ⟨i, hi⟩).trans (le_max_right _ _)
-
-
-
-
 
 theorem exists_open_simplex_cylinder
     (J : Finset (Fin 3)) {D : Set (J → ℝ)}

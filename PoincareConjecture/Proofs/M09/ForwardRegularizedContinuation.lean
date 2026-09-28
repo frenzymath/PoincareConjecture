@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.UniformIntervalContinuation
 import PoincareConjecture.Proofs.M09.UniformRestartRadius
 import PoincareConjecture.Proofs.M09.RegularizedRestartGluing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

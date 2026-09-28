@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Collars.CollarNormalLabel
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProduct
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -60,8 +58,6 @@ theorem exists_constant_disk_normal_label
     (isPreconnected_disk_between hB hBD)
   let z₀ : B := ⟨0, hB (by simp)⟩
   exact ⟨ν z₀, hn z₀, fun z => (hν.apply_eq_of_preconnectedSpace z z₀) ▸ hgerm z⟩
-
-
 
 theorem exists_constant_disk_normal_label_off_original_frontier
     {X ι κ : Type*} [TopologicalSpace X]

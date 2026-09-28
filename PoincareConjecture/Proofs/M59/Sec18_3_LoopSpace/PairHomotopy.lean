@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.PairInterpolation
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def m59EndpointPairLoop (C : ℝ × (M × M) → M) (t : I)
     (delta gamma : C1FreeLoopSpace (M := M))
     (hC : ∀ z : LoopCircle,
@@ -33,8 +23,6 @@ def m59EndpointPairLoop (C : ℝ × (M × M) → M) (t : I)
   classical
   exact if t = 0 then gamma else if t = 1 then delta
     else m59PairInterpolationLoop C t delta gamma hC
-
-
 
 theorem m59EndpointPairLoop_apply (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q) (t : I)
@@ -53,8 +41,6 @@ theorem m59EndpointPairLoop_apply (C : ℝ × (M × M) → M)
     exact (h1 z).symm
   · exact m59PairInterpolationLoop_apply C t delta gamma hC z
 
-
-
 theorem m59EndpointPairLoop_constant (C : ℝ × (M × M) → M)
     (hdiag : ∀ t p, C (t, p, p) = p) (t : I) (p : M)
     (hC : ∀ z : LoopCircle,
@@ -68,8 +54,6 @@ theorem m59EndpointPairLoop_constant (C : ℝ × (M × M) → M)
   · rfl
   · exact Proofs.M58.loop_eq_of_fields (funext fun _ => hdiag t p)
       (funext fun _ => hdiag t p)
-
-
 
 theorem continuous_m59EndpointPairLoop {X : Type v} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) (h0 : ∀ p q, C (0, p, q) = q)
@@ -85,8 +69,6 @@ theorem continuous_m59EndpointPairLoop {X : Type v} [TopologicalSpace X]
       (continuous_subtype_val.comp ht) hd hg)
     (fun x z => (m59EndpointPairLoop_apply C h0 (t x) (delta x) (gamma x) (h1 x) (hC x) z).trans
       (m59PairInterpolationLoop_apply C (t x) (delta x) (gamma x) (hC x) z).symm)
-
-
 
 def m59PairLoopHomotopy {X : Type v} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) (h0 : ∀ p q, C (0, p, q) = q)
@@ -104,9 +86,6 @@ def m59PairLoopHomotopy {X : Type v} [TopologicalSpace X]
       continuous_fst (G.continuous.comp continuous_snd) (F.continuous.comp continuous_snd)
     map_zero_left := fun _ => by simp [m59EndpointPairLoop]
     map_one_left := fun _ => by simp [m59EndpointPairLoop] }
-
-
-
 
 theorem m59_exists_near_loop_homotopy [T2Space M]
     (hcompact : IsCompact (univ : Set M)) :

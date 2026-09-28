@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
-
 
 theorem frontier_inter_eq_of_inter_eq_open
     {X : Type*} [TopologicalSpace X] {s t U : Set X}
@@ -124,11 +109,6 @@ private theorem exists_open_active_halfspace_germ
     · exact hxH A (Finset.mem_filter.mp hAH).1
     · exact (hxU.2 A hAG).le
 
-
-
-
-
-
 theorem exists_convex_body_separated_halfspace_germs
     (H J : Finset (E →ₗ[ℝ] ℝ)) (a b : E)
     (ha : ∀ A ∈ H, A a ≤ 1) (hb : ∀ A ∈ J, A b ≤ 1)
@@ -214,10 +194,6 @@ theorem exists_convex_body_separated_halfspace_germs
   · exact (hfrontV.symm.subset ⟨mem_frontier_linear_halfspaces_of_active J hb hactiveB,
       hbV⟩).1
 
-
-
-
-
 theorem exists_convex_body_negatively_collinear_halfspace_germs
     (H J : Finset (E →ₗ[ℝ] ℝ)) (a b : E) {r : ℝ}
     (hr : 0 < r) (hab : b = -(r • a))
@@ -242,11 +218,6 @@ theorem exists_convex_body_negatively_collinear_halfspace_germs
     have hnonneg : 0 ≤ A a := zero_le_one.trans (not_lt.mp h)
     have hmul := mul_nonneg hr.le hnonneg
     linarith
-
-
-
-
-
 
 theorem exists_convex_body_opposite_halfspace_germs
     (H J : Finset (E →ₗ[ℝ] ℝ)) (a : E)

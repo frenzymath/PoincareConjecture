@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedObservedSearchVolume
 import PoincareConjecture.Proofs.M47.SeedObservedSearchScales
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_observed_scaled_birth_density
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

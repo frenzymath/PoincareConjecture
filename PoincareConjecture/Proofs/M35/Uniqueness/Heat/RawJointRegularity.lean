@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawTimePrincipal
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerComponents
 import PoincareConjecture.Proofs.M04.FlowTensorRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

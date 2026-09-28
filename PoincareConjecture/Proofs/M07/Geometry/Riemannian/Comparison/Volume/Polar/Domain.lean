@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Coverage
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.CutLocus
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,9 +12,6 @@ namespace Poincare.VolumeComparison
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem volumeMeasure_ball_eq_image_sdiff_terminal
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)

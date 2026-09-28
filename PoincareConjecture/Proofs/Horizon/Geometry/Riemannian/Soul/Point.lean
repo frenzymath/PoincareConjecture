@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.DistanceLevels
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Geodesic
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,9 +15,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [NoncompactSpace M]
 
-
-
-
 theorem exists_pointSoulData_of_strictlyPositiveSectionalCurvature
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g)
@@ -36,7 +27,6 @@ theorem exists_pointSoulData_of_strictlyPositiveSectionalCurvature
   obtain ⟨H⟩ := g.exists_radialHomeomorph_of_singleton_horoball D hcomplete
     (hpos.nonnegative D) hlevel
   exact ⟨⟨p, hp, e, he, H⟩⟩
-
 
 theorem exists_point_soul_euclidean_radial_of_strictlyPositiveSectionalCurvature
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

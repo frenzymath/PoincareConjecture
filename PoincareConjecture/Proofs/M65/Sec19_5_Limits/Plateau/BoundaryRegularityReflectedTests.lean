@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityRepresentative
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -184,11 +174,6 @@ private theorem zero_diameter_test_approximants
     filter_upwards [hnear] with w hw
     rw [htests, show chi n w = 1 from
       Real.smoothTransition.one_of_one_le (by linarith), one_mul]
-
-
-
-
-
 
 theorem halfDisk_equation_zero_diameter_test {R : ℝ}
     (D : Fin 2 → LoopPlane → ℝ) (f : LoopPlane → ℝ)

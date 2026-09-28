@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_relative_polyhedral_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -73,10 +58,6 @@ theorem exists_relative_polyhedral_neighborhood
     exact hLK.space_eq.subset (space_subset_of_le (L.closedFaceStar_le s) hy)
   · rintro _ ⟨y, ⟨z, hz, rfl⟩, rfl⟩
     exact hVS (mem_image_of_mem Subtype.val hz)
-
-
-
-
 
 theorem finitePiecewiseAffineOn_of_relative_local
     [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

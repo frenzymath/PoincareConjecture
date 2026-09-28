@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSmoothGram
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,10 +24,6 @@ private theorem annulus_map_periodic_add (A : M64Annulus g c0 c1) (p : LoopPlane
     ext i
     fin_cases i <;> simp [annulusPoint, add_comm]
   rw [hshift, A.periodic, hp]
-
-
-
-
 
 theorem m64Annulus_energyDensity_periodic_of_mdifferentiable
     (A : M64Annulus g c0 c1) (p : LoopPlane)
@@ -69,10 +54,6 @@ theorem m64Annulus_energyDensity_periodic_of_mdifferentiable
       (mfderiv (𝓡 2) (𝓡 n) A.map p (EuclideanSpace.basisFun (Fin 2) ℝ j)))
       (annulus_map_periodic_add A p)
   exact congrArg (fun B : Matrix (Fin 2) (Fin 2) ℝ => (1 / 2 : ℝ) * B.trace) heq
-
-
-
-
 
 theorem m64Annulus_energy_transform_fderiv_periodic
     (A : M64Annulus g c0 c1) (Phi : ℝ → ℝ) (p : LoopPlane)

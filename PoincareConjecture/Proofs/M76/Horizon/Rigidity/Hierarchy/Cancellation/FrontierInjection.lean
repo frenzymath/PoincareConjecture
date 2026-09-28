@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.Injection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.OriginalDomainInjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -43,9 +34,6 @@ theorem frontier_ambient_injective_of_closed_deletion
   rw [heq, FundamentalGroup.map_comp]
   exact (hinj (inc x)).comp hinc
 
-
-
-
 theorem PLDomain.closed_sides_ambient_injective_of_frontier_ambient
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {R : Set X}
@@ -72,8 +60,6 @@ theorem PLDomain.closed_sides_ambient_injective_of_frontier_ambient
   apply hh
   exact congrArg (FundamentalGroup.map (VanKampen.inclusion T)
     ((ContinuousMap.inclusion hFT) x)) hab
-
-
 
 theorem PLDomain.closed_sides_ambient_injective_of_frontier_deletion
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

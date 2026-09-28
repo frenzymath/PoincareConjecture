@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 lemma sum_covariantTensorDerivative_ricci_divergence
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -41,8 +32,6 @@ lemma sum_covariantTensorDerivative_ricci_divergence
     (D.covariantTensorDerivative_riemannEvaluation_skew_first hD x)
     (D.covariantTensorDerivative_riemannEvaluation_skew_last hD x)
     (D.covariantTensorDerivative_curvature_second_bianchi hD x) v
-
-
 
 lemma sum_secondCovariantTensorDerivative_ricci_divergence
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -71,8 +60,6 @@ lemma sum_secondCovariantTensorDerivative_ricci_divergence
   rw [← h]
   simp [covariantTensorDerivative, hessian, hessianOnFields,
     mvfderiv_const_mul, div_eq_mul_inv, mul_comm, mul_sub]
-
-
 
 lemma sum_secondCovariantTensorDerivative_ricci_swap
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -133,7 +120,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem hamiltonM_eq_divergence_hamiltonP
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.AffineComposition
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseBounds
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ namespace PoincareConjecture.SpacetimeBounds
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_uniform_inverse_metric_jet_bound
     (q : ℕ) {a : ℝ} (ha : 0 < a) (b D : ℝ) (hD : 1 ≤ D) :
@@ -51,8 +47,6 @@ theorem exists_uniform_inverse_metric_jet_bound
   exact Finset.single_le_sum (f := fun i : Fin (q + 1) => (i.val.factorial : ℝ) * K * D ^ i.val)
     (fun i _ => by positivity)
     (Finset.mem_univ (⟨j, by omega⟩ : Fin (q + 1)))
-
-
 
 theorem exists_affine_inverse_metric_jet_bound
     (q : ℕ) {a : ℝ} (ha : 0 < a) (b D : ℝ) (hD : 1 ≤ D) :

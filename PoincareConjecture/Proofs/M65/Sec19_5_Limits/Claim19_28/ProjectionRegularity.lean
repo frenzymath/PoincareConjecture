@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.IntrinsicRecurrences
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65Projection_field_contMDiff (P : M62.CircleProductData F circumference)
     {gamma : ℝ → P.charts.Point}
@@ -40,8 +31,6 @@ theorem m65Projection_field_contMDiff (P : M62.CircleProductData F circumference
   filter_upwards [] with y
   dsimp only [Function.comp_apply, tangentMap]
   rw [TotalSpace.mk_inj, ← P.charts.split_space]
-
-
 
 theorem m65ProjectedTangentJet_spatial_contMDiff [T2Space M]
     (P : M62.CircleProductData F circumference)

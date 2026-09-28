@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AmbientScalar
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ModelMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,8 +13,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem RiemannianMetric.lineModelEquiv_norm_sq {n : ℕ}
     (v : EuclideanSpace ℝ (Fin (n + 1))) :
     ‖v‖ ^ 2 = ‖((lineModelEquiv n).symm v).1‖ ^ 2 +
@@ -34,8 +21,6 @@ theorem RiemannianMetric.lineModelEquiv_norm_sq {n : ℕ}
   simp only [EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_succ,
     Poincare.EuclideanSpace.euclideanTail_apply]
   ring
-
-
 
 theorem roundCylinderEuclideanModelCoefficients_zero
     (v : EuclideanSpace ℝ (Fin 3)) :
@@ -47,8 +32,6 @@ theorem roundCylinderEuclideanModelCoefficients_zero
     map_zero, Prod.fst_zero, norm_zero, real_inner_self_eq_norm_sq]
   norm_num
   ring
-
-
 
 theorem norm_sq_le_roundCylinderEuclideanModelCoefficients
     (v : EuclideanSpace ℝ (Fin 3)) :
@@ -94,8 +77,6 @@ private theorem centeredCoefficients_pullback (N : EpsilonNeck g)
   change N.normalizedCenteredCoefficients q (0, s) v w = B v w
   rw [cylinderCoordinate_decomposition v, cylinderCoordinate_decomposition w]
   simp only [map_add, map_smul, add_apply, smul_apply, hb]
-
-
 
 theorem euclideanParametrization_mfderiv_axial (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -145,8 +126,6 @@ theorem euclideanParametrization_mfderiv_axial (N : EpsilonNeck g)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem normalizedEuclideanCoefficients_quadratic_error (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : EuclideanSpace ℝ (Fin 3)) :
@@ -176,8 +155,6 @@ theorem normalizedEuclideanCoefficients_quadratic_error (N : EpsilonNeck g)
     RiemannianMetric.parameterBilinearEquiv_apply, map_zero, add_zero,
     centeredCoefficients_pullback N q hs, w, u] using h
 
-
-
 theorem euclideanParametrization_mfderiv_bijective (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     Function.Bijective (mfderiv (𝓡 3) (𝓡 3) (N.euclideanParametrization q s) 0) := by
@@ -190,14 +167,10 @@ theorem euclideanParametrization_mfderiv_bijective (N : EpsilonNeck g)
   rw [heq 0 h0, rescaledMetric_inner]
   exact (N.normalizedEuclideanCoefficients_pullback q s (hstrip 0 h0) v w).symm
 
-
-
 noncomputable def normalizedEuclideanFrame (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] TangentSpace (𝓡 3) (N.coordinate_map (q, s)) :=
   N.scale⁻¹ • mfderiv (𝓡 3) (𝓡 3) (N.euclideanParametrization q s) 0
-
-
 
 theorem normalizedEuclideanFrame_bijective (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -217,7 +190,6 @@ theorem normalizedEuclideanFrame_bijective (N : EpsilonNeck g)
     simp only [hv, smul_smul, inv_mul_cancel₀ N.scale_pos.ne', one_smul]
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem normalizedEuclideanFrame_inner (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)

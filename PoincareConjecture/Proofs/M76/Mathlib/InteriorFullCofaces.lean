@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_full_coface_of_hull_meets_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

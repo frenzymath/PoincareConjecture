@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Connection
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.LinearCombination
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem pullbackExtension_metric_pair_contMDiffAt
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)
@@ -67,9 +56,6 @@ theorem pullbackExtension_metric_pair_contMDiffAt
     · exact htest
   simpa only [Bundle.Trivial.fiberBundle_trivializationAt', Bundle.Trivial.trivialization_apply]
     using (Bundle.contMDiffAt_totalSpace.mp h).2
-
-
-
 
 theorem horizontalCovariantDerivative_metric_derivative
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)
@@ -130,9 +116,6 @@ theorem horizontalCovariantDerivative_metric_derivative
     change _ - 2 * clock * horizontalRicci G.leafwise (γ s) (Y s) (W (γ s)) = _
     linear_combination -hspace
   exact hvalue.symm ▸ h
-
-
-
 
 theorem horizontalCovariantDerivative_extension_independent
     (E₁ E₂ : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)

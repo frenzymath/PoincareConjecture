@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +9,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_chartwisePLSphere_image
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

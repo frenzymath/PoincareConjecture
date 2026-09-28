@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ActualNormalCom
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UniformComparisonConstants
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_UniformNormalGeometry
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64IntrinsicAnnulusComparison : M64IntrinsicAnnulusComparison := by
   intro delta r K hdelta hdeltaSmall hr

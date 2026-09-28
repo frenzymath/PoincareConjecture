@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonMatching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.MorseSides
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,10 +39,6 @@ private def horizontalScale (a : Real) (ha : a ≠ 0) :
     fin_cases i
     · exact (EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).contDiff.div_const a
     · exact (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
-
-
-
-
 
 theorem exists_supported_nested_negative_morse_isotopy
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -143,8 +137,6 @@ theorem exists_supported_nested_negative_morse_isotopy
     exact h.symm
   rw [← hf, ← hf, ← hmatch i]
   exact (Phi 1).toHomeomorph.image_frontier _
-
-
 
 theorem closedSquare_subset_negative_ribbon
     {t a rho : Real} (ht : 0 < t) (hrho : 0 ≤ rho)

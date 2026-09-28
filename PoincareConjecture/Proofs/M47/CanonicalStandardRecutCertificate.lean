@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_same_constant_outward_cap (N : CapCertificate g)
     {b epsilon : ℝ} (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹)

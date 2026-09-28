@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Equation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -35,7 +25,6 @@ noncomputable local instance coarseTwoJetNormedGroup (n : ℕ) :
 
 noncomputable local instance coarseTwoJetNormedSpace (n : ℕ) :
     NormedSpace ℝ (MetricTwoJet n) := Prod.normedSpace
-
 
 theorem exists_scalar_bound_of_elliptic_twoJets
     (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
@@ -68,7 +57,6 @@ theorem exists_scalar_bound_of_elliptic_twoJets
   intro J hJ hell
   exact (hC J ⟨hJ, hell⟩).trans (le_max_left _ _)
 
-
 theorem exists_negativeCylinder_scalar_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {epsilon t : ℝ}, 0 < epsilon → epsilon ≤ 1 / 200 →
       t ∈ Icc (-1 : ℝ) 0 → ∀ {B : RoundCylinderTwoTensor},
@@ -82,7 +70,6 @@ theorem exists_negativeCylinder_scalar_bound :
   intro epsilon t hepsilon hsmall ht B hB z hz
   exact hbound _ (hHbound hepsilon hsmall ht hB z hz)
     (negativeCylinder_coefficient_lower hepsilon hsmall ht hB z hz)
-
 
 theorem exists_negativeCylinder_realized_scalar_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {epsilon t : ℝ}, 0 < epsilon → epsilon ≤ 1 / 200 →

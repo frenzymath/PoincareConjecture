@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +8,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem exists_nested_bridge_of_image_chain
     (A Gt Gp K0 F : D3) (S S0 MS MSp : Set E3) (CT CP CU : Fin 3 → Set E3)

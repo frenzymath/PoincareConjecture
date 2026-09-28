@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.BoxTopology
 import PoincareConjecture.Proofs.M11.ManifoldCover
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,7 +47,6 @@ theorem box_targets_cover (A : AdaptedMetricAtlas n X) :
   refine ⟨b, ?_⟩
   rw [boxHomeomorph_target]
   exact ⟨q, rfl⟩
-
 
 noncomputable abbrev adaptedChartedSpace (A : AdaptedMetricAtlas n X) :
     ChartedSpace (ModelProd (EuclideanHalfSpace 1) (EuclideanSpace ℝ (Fin n))) X :=

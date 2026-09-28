@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedImageParameters
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,10 +17,6 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ
 local notation "D" => coordinateCylinder J
 local notation "R" => latticeHandleDomain ι κ L
 local notation "X" => LatticeHandleAmbient ι κ L
-
-
-
-
 
 theorem protected_image_isFinitePL_of_quotient_parameterization
     (e : α → OpenPartialHomeomorph X (Fin 3 → ℝ))

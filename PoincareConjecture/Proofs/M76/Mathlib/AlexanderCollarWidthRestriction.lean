@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +14,6 @@ namespace Geometry.AlexanderCollarSlab
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
 
-
-
-
-
 theorem exists_finite_slab_complex (M : AlexanderCollarSlab S A q β) :
     ∃ K : SimplicialComplex ℝ E, K.faces.Finite ∧
       K.space = S ∩ {x | A x ∈ Icc 0 β} := by
@@ -35,11 +21,6 @@ theorem exists_finite_slab_complex (M : AlexanderCollarSlab S A q β) :
   obtain ⟨K, hK, hKs⟩ := J.exists_finite_triangulation_union
     M.residualComplex hJ M.residual_finite
   exact ⟨K, hK, hKs.trans (by rw [hJs, M.residual_space, M.cover])⟩
-
-
-
-
-
 
 theorem exists_width_restriction (M : AlexanderCollarSlab S A q β)
     {γ : ℝ} (hγ : 0 < γ) (hγβ : γ ≤ β) :

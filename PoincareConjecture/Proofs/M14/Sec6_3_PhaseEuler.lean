@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PhaseMomentum
 import PoincareConjecture.Proofs.M14.Sec6_3_EulerGaugeResidual
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem squareRootEuler_of_gauge_phase
     {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}

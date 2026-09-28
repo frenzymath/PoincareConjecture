@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussMetricExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.MetricJetInduction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace PoincareConjecture.CoordinateExponential
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_uniform_pullback_metric_jet_bounds
     (n : ℕ) {ρ R : ℝ} (hρ : 0 < ρ) (hρR : ρ < R)

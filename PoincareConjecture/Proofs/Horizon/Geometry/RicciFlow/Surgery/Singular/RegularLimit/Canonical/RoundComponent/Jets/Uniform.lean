@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.TimeControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Scale
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -29,9 +27,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
-
 
 theorem exists_uniform_round_coordinate_terminal_bound
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

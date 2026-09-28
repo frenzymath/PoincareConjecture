@@ -59,8 +59,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   (hpost : Nonempty (D.flow.slice S.1).carrier)
   {q : M59SphereQuotient} (slice : M67WidthSlice q (P.component S))
 
-
-
 noncomputable def m67EventPostSlice : M67WidthSlice q (H.event_input S hS hpost).child :=
   m67WidthSliceCast (eq_of_heq (H.event_child_path S hS hpost)) slice
 

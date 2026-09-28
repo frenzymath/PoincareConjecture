@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicGreenIdentity
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantPairing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,10 +54,6 @@ private theorem integral_covariant_pairing_eq_integral_derivative
     (hV.differentiable (by simp) p) (hW.differentiable (by simp) p)
     (hcompat p hp) d).symm
 
-
-
-
-
 theorem m64Annulus_covariant_vertical_green_identity
     (hΓ : Continuous Γ) (hG : ContDiff ℝ 1 G)
     (hV : ContDiff ℝ 1 V) (hW : ContDiff ℝ 1 W)
@@ -85,9 +69,6 @@ theorem m64Annulus_covariant_vertical_green_identity
           G (annulusPoint x 0) (V (annulusPoint x 0)) (W (annulusPoint x 0)) := by
   rw [integral_covariant_pairing_eq_integral_derivative hΓ hG hV hW hcompat]
   exact m64Annulus_integral_vertical_derivative ((hG.clm_apply hV).clm_apply hW)
-
-
-
 
 theorem m64Annulus_covariant_horizontal_green_identity
     (hΓ : Continuous Γ) (hG : ContDiff ℝ 1 G)
@@ -105,11 +86,6 @@ theorem m64Annulus_covariant_horizontal_green_identity
           G (annulusPoint 0 s) (V (annulusPoint 0 s)) (W (annulusPoint 0 s)) := by
   rw [integral_covariant_pairing_eq_integral_derivative hΓ hG hV hW hcompat]
   exact m64Annulus_integral_horizontal_derivative ((hG.clm_apply hV).clm_apply hW)
-
-
-
-
-
 
 theorem m64Annulus_covariant_boundary_flux
     (hΓ : Continuous Γ) (hG : ContDiff ℝ 1 G)

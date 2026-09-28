@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineGraphPartition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricWalkPaths
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GraphWalkConcatenation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -35,10 +25,6 @@ private theorem concat_range_subset {X : Type*} [TopologicalSpace X] {n : ℕ}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
-
-
 
 theorem exists_geometric_walk_homotopic_of_affine
     (hK : K.faces.Finite) (hdim : ∀ s ∈ K.faces, s.card ≤ 2)

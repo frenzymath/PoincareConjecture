@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Koszul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -67,8 +58,6 @@ private theorem projection_bracket_decomposition
   dsimp only [χ]
   abel
 
-
-
 theorem horizontal_torsion_decomposition
     (hCoordinates : M12MetricPredecessors.{0} n)
     (D : LeafwiseLeviCivitaFamily F S) {T : SpacetimeIntervalSystem}
@@ -92,8 +81,6 @@ theorem horizontal_torsion_decomposition
   rw [← rawLeafwiseCovariantDerivative_torsion hCoordinates D cover hO hV hW hp]
   abel
 
-
-
 theorem spacetime_clock_contMDiffAt
     {V : (p : F.Point) → TangentSpace (spacetimeModel n) p} {p : F.Point}
     (hV : ContMDiffAt (spacetimeModel n) (spacetimeModel n).tangent ∞ (T% V) p) :
@@ -103,9 +90,6 @@ theorem spacetime_clock_contMDiffAt
   have hd := ((ht p).mfderiv_const (m := ∞) (by simp)).clm_apply_of_inCoordinates
     (b₁ := id) (b₂ := F.timeFunction) hV (ht p)
   simpa using (contMDiffAt_totalSpace.mp hd).2
-
-
-
 
 theorem horizontalCovariantDerivative_projection_torsion
     (hCoordinates : M12MetricPredecessors.{0} n)

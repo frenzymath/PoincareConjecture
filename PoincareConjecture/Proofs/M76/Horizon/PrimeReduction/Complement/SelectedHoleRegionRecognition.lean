@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedRegionRecognition
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -68,8 +60,6 @@ end PoincareConjecture.M76
 namespace OpenPartialHomeomorph
 
 open PoincareConjecture.M76
-
-
 
 theorem image_complement_eq_alexander_bounded_side
     {X E : Type*} [TopologicalSpace X] [T2Space X]

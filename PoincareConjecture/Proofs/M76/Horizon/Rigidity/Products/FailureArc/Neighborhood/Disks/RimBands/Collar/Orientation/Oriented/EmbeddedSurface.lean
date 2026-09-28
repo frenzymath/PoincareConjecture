@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Charts.PlanarSourceChart
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Charts.OriginalTangentCoordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Topology.Orientation.ProjectivePlane

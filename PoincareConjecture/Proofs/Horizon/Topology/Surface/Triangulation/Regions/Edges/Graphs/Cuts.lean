@@ -1,14 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Data
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.CutChains
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,8 +50,6 @@ omit [T2Space M] in
   have := S.count_pos
   omega
 
-
-
 structure CutChain (dLeft dRight : EuclideanSpace ℝ (Fin 2)) where
   direction : Fin (S.count + 1) → EuclideanSpace ℝ (Fin 2)
   separator : ∀ i j : Fin S.count, i.succ = j.castSucc → EuclideanSpace ℝ (Fin 2) →L[ℝ] ℝ
@@ -88,7 +77,6 @@ structure CutChain (dLeft dRight : EuclideanSpace ℝ (Fin 2)) where
       connectedComponentIn (chartDiskBoundaryUnion D.centers D.radius)ᶜ R
 
 omit [T2Space M] in
-
 
 theorem exists_cutChain
     (hCinv : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C.symm C.target)

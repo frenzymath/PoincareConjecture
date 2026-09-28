@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CircleAngularGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_selected_oriented_exterior_arcs
     (q : Fin 2 → UnitCircle → UnitTwoSphere)

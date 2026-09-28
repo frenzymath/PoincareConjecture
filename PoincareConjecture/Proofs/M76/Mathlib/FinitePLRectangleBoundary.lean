@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRectangleSides
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -33,12 +24,6 @@ private theorem union_disjoint {s u : Set E} {t v : Set F}
     exact (disjoint_left.mp hs hx hu).elim
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
-
-
-
-
-
-
 
 theorem exists_height_preserving_rectangle_boundary
     {α β : ℝ} (hαβ : α < β) {s₀ s₁ l r : Set X}

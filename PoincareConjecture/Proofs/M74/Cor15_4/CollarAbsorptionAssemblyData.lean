@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionRadialCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,30 +11,19 @@ namespace PoincareConjecture.M74
 
 local notation "ICollar" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
-
 def collarReflect (p : RoundCylinderSpace) : RoundCylinderSpace := (p.1, -p.2)
-
-
 
 theorem collarReflect_involutive : Function.Involutive collarReflect := by
   intro p
   simp [collarReflect]
-
-
 
 theorem collarReflect_mem_band (p : RoundCylinderSpace) (a : ℝ) :
     collarReflect p ∈ univ ×ˢ Ioo (-a) a ↔ p ∈ univ ×ˢ Ioo (-a) a := by
   simp only [mem_prod, mem_univ, true_and, mem_Ioo, collarReflect]
   constructor <;> rintro ⟨h₁, h₂⟩ <;> constructor <;> linarith
 
-
-
 theorem collarReflect_contMDiff : ContMDiff ICollar ICollar ∞ collarReflect :=
   contMDiff_fst.prodMk contMDiff_snd.neg
-
-
-
 
 structure CollarEndChartData (Y : GeneralizedSliceCarrier.{u}) where
   first : OpenPartialHomeomorph Y.carrier StandardCapSpace
@@ -72,13 +52,9 @@ namespace CollarEndChartData
 
 variable {Y : GeneralizedSliceCarrier.{u}} (D : CollarEndChartData Y)
 
-
-
 theorem central_mem_source (q : UnitTwoSphere) : (q, 0) ∈ D.neck.source := by
   rw [D.neck_source]
   exact ⟨mem_univ _, neg_neg_of_pos D.width_pos, D.width_pos⟩
-
-
 
 theorem cover_cases (x : Y.carrier) :
     x ∈ D.first.source ∨ x ∈ D.second.source ∨ ∃ q, D.neck (q, 0) = x := by
@@ -91,19 +67,13 @@ theorem cover_cases (x : Y.carrier) :
     subst s
     exact Or.inr (Or.inr ⟨q, hq⟩)
 
-
-
 theorem mem_first_target (z : StandardCapSpace) : z ∈ D.first.target := by
   rw [D.first_target]
   trivial
 
-
-
 theorem mem_second_target (z : StandardCapSpace) : z ∈ D.second.target := by
   rw [D.second_target]
   trivial
-
-
 
 theorem centers_ne : D.first.symm 0 ≠ D.second.symm 0 := by
   intro h
@@ -111,8 +81,6 @@ theorem centers_ne : D.first.symm 0 ≠ D.second.symm 0 := by
   have h₂ := D.second.map_target (D.mem_second_target 0)
   rw [h] at h₁
   exact disjoint_left.mp D.disjoint h₁ h₂
-
-
 
 noncomputable def reflectedNeck : OpenPartialHomeomorph RoundCylinderSpace Y.carrier where
   toFun p := D.neck (collarReflect p)
@@ -144,8 +112,6 @@ noncomputable def reflectedNeck : OpenPartialHomeomorph RoundCylinderSpace Y.car
   continuousOn_invFun :=
     collarReflect_contMDiff.continuous.comp_continuousOn D.neck.continuousOn_symm
 
-
-
 @[simp] theorem reflectedNeck_apply (p : RoundCylinderSpace) :
     D.reflectedNeck p = D.neck (collarReflect p) := rfl
 
@@ -164,8 +130,6 @@ private theorem reflectedNeck_central :
     subst s
     exact ⟨(q, 0), ⟨mem_univ _, mem_singleton 0⟩,
       by simpa only [reflectedNeck_apply, collarReflect, neg_zero] using hx⟩
-
-
 
 noncomputable def swap : CollarEndChartData Y where
   first := D.second

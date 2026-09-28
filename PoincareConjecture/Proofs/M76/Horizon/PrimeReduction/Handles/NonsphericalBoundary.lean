@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.LocallyFlatS
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardSphereLift
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatBoundedRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

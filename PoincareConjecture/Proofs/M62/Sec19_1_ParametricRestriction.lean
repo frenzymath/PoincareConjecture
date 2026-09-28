@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRestriction
 import PoincareConjecture.Definitions.M62Geometry
 import PoincareConjecture.Proofs.M09.ParametricCurveDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasDerivAt_fixedPointTimeDerivative
     (W : ℝ → (p : M) → TangentSpace (𝓡 n) p) (p : M) (x : ℝ)
@@ -51,8 +40,6 @@ theorem hasDerivAt_fixedPointTimeDerivative
     exact e.symmL_continuousLinearMapAt hp _
   rw [hrep] at hlin
   exact hlin
-
-
 
 theorem pullback_parametric_field {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M} {x : ℝ}

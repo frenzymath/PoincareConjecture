@@ -3,22 +3,12 @@ import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare.Topology
-
-
 
 theorem eventually_region_iff_of_transverse_coordinates
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]

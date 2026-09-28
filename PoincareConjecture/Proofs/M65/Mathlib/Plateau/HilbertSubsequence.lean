@@ -1,23 +1,12 @@
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Normed.Module.WeakDual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Metric
 open scoped Topology
 
 namespace InnerProductSpace
-
-
-
 
 theorem exists_subsequence_tendsto_inner_of_norm_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

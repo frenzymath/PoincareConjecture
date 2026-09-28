@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem coface_mem_of_subcomplex_mem_nhds
     (L D : SimplicialComplex ℝ E) (hDL : D.faces ⊆ L.faces)

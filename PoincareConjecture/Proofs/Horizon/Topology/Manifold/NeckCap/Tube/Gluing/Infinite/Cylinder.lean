@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.Reparametrization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Exhaustion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem exists_cylinder_of_relative_extensions (U : ℕ → Opens M)
     (F : ∀ n, Diffeomorph CylModel (𝓡 3) RoundCylinderSpace (U n) ∞)

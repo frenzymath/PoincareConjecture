@@ -4,18 +4,9 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Algebra.Ring.Real
 import Mathlib.Tactic.FunProp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M65
-
-
 
 theorem closedInterval_difference_bound {a b K : ℝ} (hab : a < b)
     (f : Set.Icc a b → ℝ) (hf : Continuous f)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyMajorant
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ private theorem gram_eq_pullback (g : RiemannianMetric n M)
   rw [mfderiv_comp z (hf.mdifferentiable (by simp) _)
     (m60SphereParameter_contMDiff.mdifferentiable (by simp) _)]
   rfl
-
-
 
 theorem m60SphereMajorant_area_tendsto (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -122,8 +111,6 @@ theorem m60SphereMajorant_area_tendsto (g : RiemannianMetric n M)
     exact hdom k z
   · exact Filter.Eventually.of_forall hpoint
 
-
-
 theorem m60Sphere_exists_metric_majorant_area_lt (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
     (eta : ℝ) (heta : 0 < eta) :
@@ -147,9 +134,6 @@ theorem m60Sphere_exists_metric_majorant_area_lt (g : RiemannianMetric n M)
     (gt_mem_nhds (show m60SphereArea g f < m60SphereArea g f + eta by linarith))
   obtain ⟨k, hk⟩ := hevent.exists
   exact ⟨q k, fun p v => (hbound k p v).1, hk⟩
-
-
-
 
 theorem m60SphereAreaToEnergy_of_uniformization
     (huniform : ∀ q : RiemannianMetric 2 UnitTwoSphere,

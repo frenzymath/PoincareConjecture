@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Orientation.LocalProjection
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.AllEdgeSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem exists_hamiltonZero_frontier_all_edge_signs
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

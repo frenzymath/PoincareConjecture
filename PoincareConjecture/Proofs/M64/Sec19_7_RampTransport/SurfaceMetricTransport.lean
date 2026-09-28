@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Section
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +16,6 @@ open Poincare.Geometry.Curvature.Hypersurface
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64_gaussian_eq_of_induced_surface_germ
     {g h : RiemannianMetric 2 (EuclideanSpace ℝ (Fin 2))}

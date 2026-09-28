@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckRicciCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ private theorem abs_three_terms {a b c gamma : ℝ}
       simpa only [sub_eq_add_neg, abs_neg] using abs_add_le (a + b) (-c)
     _ ≤ (|a| + |b|) + |c| := add_le_add (abs_add_le _ _) le_rfl
     _ ≤ _ := by linarith
-
 
 theorem neck_connection_coefficient_bound {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1) (x : E) (e : E ≃L[ℝ] E)
@@ -71,8 +62,6 @@ theorem neck_connection_coefficient_bound {g0 g1 : RiemannianMetric 3 E}
       rw [abs_mul]
       exact mul_le_mul (hA i l) (hS l) (abs_nonneg _) (by norm_num)
     _ = _ := by simp; ring
-
-
 
 theorem neck_connection_derivative_coefficient_bound {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1) (x : E) (e : E ≃L[ℝ] E)

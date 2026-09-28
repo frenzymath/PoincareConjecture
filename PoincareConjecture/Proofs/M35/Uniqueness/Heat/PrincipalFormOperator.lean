@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -45,7 +36,6 @@ theorem norm_dirichletPartial_le_one (K : Set V) (i : Fin n) :
 def dirichletPartialAdjoint (K : Set V) (i : Fin n) : L2 →L[ℝ] dirichletForm K :=
   ContinuousLinearMap.adjoint (𝕜 := ℝ) (E := dirichletForm K) (F := L2)
     (dirichletPartial K i)
-
 
 def principalFormOperator (K : Set V) (A : Fin n → Fin n → 𝓢(V, ℝ)) :
     dirichletForm K →L[ℝ] dirichletForm K :=
@@ -95,8 +85,6 @@ private theorem principal_summand_norm_le (K : Set V)
   exact (ContinuousLinearMap.opNorm_comp_le _ _).trans
     ((mul_le_mul hleft hright (ContinuousLinearMap.opNorm_nonneg _) zero_le_one).trans_eq
       (one_mul _))
-
-
 
 theorem norm_principalFormOperator_le (K : Set V)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ε : ℝ} (hε : 0 ≤ ε)

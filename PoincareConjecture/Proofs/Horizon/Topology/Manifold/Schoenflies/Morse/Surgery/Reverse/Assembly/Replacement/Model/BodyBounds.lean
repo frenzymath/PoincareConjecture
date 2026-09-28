@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Manifold.Schoenflies.Reverse
-
-
 
 theorem norm_le_on_filled_ball_of_boundary_bound
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace Real E] [ProperSpace E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SpatialJetNorms
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +24,6 @@ noncomputable local instance twoJetNormedGroup (n : ℕ) :
 noncomputable local instance twoJetNormedSpace (n : ℕ) :
     NormedSpace ℝ (MetricTwoJet n) := Prod.normedSpace
 
-
-
-
 theorem norm_metricTwoJet_sub_le {n : ℕ} (B A : E n → MetricCoefficient n)
     (x : E n) {L : ℝ}
     (h : ∀ j ≤ 2, ‖iteratedFDeriv ℝ j B x - iteratedFDeriv ℝ j A x‖ ≤ L) :
@@ -50,9 +38,6 @@ theorem norm_metricTwoJet_sub_le {n : ℕ} (B A : E n → MetricCoefficient n)
       exact h 1 (by omega)
     · rw [norm_fderiv_sub_eq_jet, norm_iteratedFDeriv_fderiv_sub]
       exact h 2 le_rfl
-
-
-
 
 theorem metricTwoJet_time_modulus {n : ℕ} (B : ℝ → E n → MetricCoefficient n)
     (x : E n) {s t L : ℝ}

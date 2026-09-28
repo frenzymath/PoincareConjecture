@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Local
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Model
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.RatioLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem euclidean_ball_volume_eq (n : ℕ) {r : ℝ} (hr : 0 < r) :
     volume (Metric.ball (0 : EuclideanSpace ℝ (Fin n)) r) =
       ENNReal.ofReal (euclideanUnitBallVolume n * r ^ n) := by
@@ -34,7 +21,6 @@ theorem euclidean_ball_volume_eq (n : ℕ) {r : ℝ} (hr : 0 < r) :
   rw [ENNReal.ofReal_mul (euclideanUnitBallVolume_nonneg n),
     euclideanUnitBallVolume, ENNReal.ofReal_toReal measure_ball_lt_top.ne]
   exact mul_comm _ _
-
 
 theorem tendsto_volumeMeasure_ball_div_euclidean
     (g : RiemannianMetric n M) (p : M) :
@@ -50,7 +36,6 @@ theorem tendsto_volumeMeasure_ball_div_euclidean
     rw [euclidean_ball_volume_eq n hr]
   · filter_upwards [self_mem_nhdsWithin] with r hr
     exact ⟨(Metric.measure_ball_pos volume _ hr).ne', measure_ball_lt_top.ne⟩
-
 
 theorem tendsto_volumeMeasure_ball_div_modelVolume
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n) {κ : ℝ} (hκ : 0 ≤ κ) :

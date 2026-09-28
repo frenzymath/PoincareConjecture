@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OriginalCorners
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem meshVertexAngleContribution_eq_zero_of_not_mem_support
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) {q : S} (hq : q ∉ F '' M.toPlaneComplex.support) :
@@ -40,8 +30,6 @@ theorem meshVertexAngleContribution_eq_zero_of_not_mem_support
   exact hq ⟨meshTriangleBasis M t k,
     meshTriangleBasis_subset_support M t (subset_convexHull ℝ _ (mem_range_self k)), heq⟩
 
-
-
 theorem single_refineByLines_contribution_eq_zero_of_not_mem
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -49,9 +37,6 @@ theorem single_refineByLines_contribution_eq_zero_of_not_mem
     meshVertexAngleContribution g F ((TriangleMesh.single b b.ind).refineByLines lines) q = 0 := by
   apply meshVertexAngleContribution_eq_zero_of_not_mem_support
   simpa only [TriangleMesh.refineByLines_support, TriangleMesh.single_support] using hq
-
-
-
 
 theorem independently_refined_triangle_contribution_at_used_vertex
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -95,8 +80,6 @@ theorem independently_refined_triangle_contribution_at_used_vertex
     rw [if_neg]
     intro heq
     exact hout ⟨meshTriangleBasis M t k, subset_convexHull ℝ _ (mem_range_self k), heq⟩
-
-
 
 theorem independently_refined_mesh_contribution_at_used_vertex
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

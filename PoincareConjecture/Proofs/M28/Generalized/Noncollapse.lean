@@ -1,21 +1,10 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem GeneralizedKappaNoncollapsedAt.mono_radius
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {κ r₀ r₁ : ℝ}
@@ -23,8 +12,6 @@ theorem GeneralizedKappaNoncollapsedAt.mono_radius
     GeneralizedKappaNoncollapsedAt F p κ r₁ := by
   intro r hpos hle
   exact h r hpos (hle.trans hr)
-
-
 
 theorem GeneralizedKappaNoncollapsedAt.mono_kappa
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {κ κ' r₀ : ℝ}

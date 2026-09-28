@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Endpoint
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,7 +42,6 @@ private theorem eq_terminal_of_hasDerivAt_zero {f : ℝ → ℝ}
     Iio_subset_Iic_self (by rw [closure_Iio])
   exact (hext ht).trans (hext (show (0 : ℝ) ∈ Iic 0 by simp)).symm
 
-
 theorem inv_scalarCurvature_eq_terminal_sub_time_of_round
     (F : RicciFlow 2 M (Iic 0))
     (hround : ∀ t ≤ 0, ConstantPositiveSectionalCurvature (F.metric t) (F.connection t))
@@ -71,8 +62,6 @@ theorem inv_scalarCurvature_eq_terminal_sub_time_of_round
     ((F.continuousOn_scalarCurvature_ancient_surface x).inv₀ hne).add continuousOn_id
   have he := eq_terminal_of_hasDerivAt_zero hd hc ht
   simpa only [add_zero] using eq_sub_iff_add_eq.mpr he
-
-
 
 theorem inner_eq_terminal_scalar_scale_of_round
     (F : RicciFlow 2 M (Iic 0))

@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_1.LocalParallelTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.CoverCoordinate
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_prescribed_parallel_null_section_of_finite_terminal_local_isometry
     {n : ℕ} {N : Type u} {M : Type v}

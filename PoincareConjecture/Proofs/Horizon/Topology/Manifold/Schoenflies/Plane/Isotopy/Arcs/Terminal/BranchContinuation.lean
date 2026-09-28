@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Hyperbola
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +13,6 @@ open SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem negative_morse_branch_mem_circle_of_center_mem
     (C : Fin 2 → S1 → E2) (hC : ∀ i, Continuous (C i))

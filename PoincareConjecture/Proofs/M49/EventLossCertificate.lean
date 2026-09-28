@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M49.DirectLeftLimitVolume
 import PoincareConjecture.Proofs.M49.RetainedVolume
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
-
 
 theorem exists_event_loss_certificate
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

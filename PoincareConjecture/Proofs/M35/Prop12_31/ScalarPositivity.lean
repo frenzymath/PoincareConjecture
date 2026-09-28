@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Proofs.M04.CurvatureAlgebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem LeviCivitaData.scalarCurvature_pos_of_positive_sectional
     {M : Type*} [TopologicalSpace M]
@@ -52,8 +42,6 @@ theorem LeviCivitaData.scalarCurvature_pos_of_positive_sectional
   apply Finset.sum_pos' (fun i _ => Finset.sum_nonneg (fun j _ => hnonneg i j))
   exact ⟨i₀, Finset.mem_univ _, Finset.sum_pos' (fun j _ => hnonneg i₀ j)
     ⟨i₁, Finset.mem_univ _, hoff i₀ i₁ hne⟩⟩
-
-
 
 theorem RepairedStandardCapExistenceData.scalar_pos {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {t : ℝ}

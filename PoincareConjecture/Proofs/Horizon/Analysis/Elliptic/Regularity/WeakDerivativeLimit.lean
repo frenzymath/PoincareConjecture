@@ -6,21 +6,6 @@ import Mathlib.Analysis.Normed.Module.HahnBanach
 import Mathlib.Analysis.Normed.Operator.Extend
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -29,8 +14,6 @@ open scoped ContDiff InnerProductSpace Topology
 namespace Poincare.Analysis.Elliptic
 
 variable {n : ℕ}
-
-
 
 theorem integral_mul_partial_test {Ω : Set (EuclideanSpace ℝ (Fin n))}
     (hΩ : IsOpen Ω) {f : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -68,7 +51,6 @@ theorem integral_mul_partial_test {Ω : Set (EuclideanSpace ℝ (Fin n))}
     exact integral_congr_ae (Eventually.of_forall fun _ => mul_comm _ _)
   rw [hleft, hright, hparts, neg_neg]
 
-
 theorem tendsto_integral_mul_L2 {X : Type*} [MeasurableSpace X] {μ : Measure X}
     {v : ℕ → Lp ℝ 2 μ} {u : Lp ℝ 2 μ} (hv : Tendsto v atTop (𝓝 u))
     {ψ : X → ℝ} (hψ : MemLp ψ 2 μ) :
@@ -82,7 +64,6 @@ theorem tendsto_integral_mul_L2 {X : Type*} [MeasurableSpace X] {μ : Measure X}
     simp [mul_comm]
   simp_rw [heq]
   exact hv.inner tendsto_const_nhds
-
 
 theorem weak_partial_of_tendsto_L2
     {Ω : Set (EuclideanSpace ℝ (Fin n))} (i : Fin n)
@@ -182,9 +163,6 @@ private noncomputable def derivativeTestPairing {Ω : Set (EuclideanSpace ℝ (F
       smul_apply, smul_eq_mul, ← mul_assoc, mul_comm (u _) c, mul_assoc]
     rw [integral_const_mul, mul_neg]
 
-
-
-
 theorem exists_weak_partial_of_test_bound
     {Ω : Set (EuclideanSpace ℝ (Fin n))} {u : EuclideanSpace ℝ (Fin n) → ℝ}
     (hu : MemLp u 2 (volume.restrict Ω)) (v : EuclideanSpace ℝ (Fin n))
@@ -216,10 +194,6 @@ theorem exists_weak_partial_of_test_bound
     simp [mul_comm]
   rw [heq] at h
   exact neg_eq_iff_eq_neg.mp h
-
-
-
-
 
 theorem exists_weak_partial_of_bounded_approximation
     {Ω : Set (EuclideanSpace ℝ (Fin n))}

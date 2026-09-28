@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ZeroChargeLinkDegree
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseLinkSection
 import PoincareConjecture.Proofs.M76.Mathlib.CompactConnectedHeightSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_signed_link_gap_of_isolated_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (L : E →ₗ[ℝ] ℝ)
@@ -51,10 +38,6 @@ theorem exists_signed_link_gap_of_isolated_section
     obtain ⟨y, hy, r, hr, hxy⟩ := exists_linkPoint_smul hx hx0
     rw [hxy, map_smul, smul_eq_mul]
     exact mul_neg_of_pos_of_neg hr.1 ((hnegative y hy).trans_lt (neg_neg_of_pos hη))
-
-
-
-
 
 theorem exists_ball_strict_extremum_of_isolated_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

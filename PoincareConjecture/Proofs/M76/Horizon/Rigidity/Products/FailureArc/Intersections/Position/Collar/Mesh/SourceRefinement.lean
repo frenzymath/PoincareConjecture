@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Mesh.GraphCoordinates
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -33,8 +31,6 @@ theorem finitePL_normalBaseMargin_comp
     rw [Prod.norm_def, norm_zero, max_eq_left (norm_nonneg (f p).1)]
   change max 0 (r - ‖(f p).1‖) = max 0 (r - ‖((f p).1, (0 : ℝ))‖)
   rw [hp]
-
-
 
 theorem exists_normal_graph_source_subdivision
     {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D] [FiniteDimensional ℝ D]
@@ -105,9 +101,6 @@ theorem exists_normal_motion_with_affine_source_cofaces
   change (f v).2 + c * (-normalMargin r ((f v).1, 0)) = 0
   rw [hp]
   ring
-
-
-
 
 theorem exists_normal_graph_source_refinement_family
     {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D] [FiniteDimensional ℝ D]

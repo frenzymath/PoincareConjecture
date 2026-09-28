@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Sequence.LengthBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Identities
 
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +22,6 @@ theorem surface_ricci_nonneg (K : AncientKappaSolution 2 M) {t : ℝ} (ht : t �
     ⟨(K.flow.metric t).toRiemannianMetric⟩
   exact mul_nonneg (div_nonneg hR (by norm_num))
     (show 0 ≤ inner ℝ v v from real_inner_self_nonneg)
-
 
 theorem surface_metric_monotone (K : AncientKappaSolution 2 M) {s t : ℝ}
     (hst : s ≤ t) (ht : t ≤ 0) (x : M) (v : TangentSpace (𝓡 2) x) :

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.Sourc
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimCircles
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimComponents
 
-
-
 set_option autoImplicit false
 open Set Metric BrownCollar
 
@@ -16,8 +14,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "D" => closedBall (0 : Fin 1 → ℝ) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem exists_sourceBoundaryCircle_component_collar
     (phi : C(H, H)) (theta : C) (F : (ContinuousMap.id H).HomotopyRel phi B)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.DerivedCu
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.BoundaryCircleAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.StandardCircleOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry AbstractSimplicialComplex
 
@@ -25,7 +16,6 @@ namespace Geometry.OriginalPLTower
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
 
 variable {X ι : Type} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {g : (V1 × V2) → X}
@@ -74,8 +64,6 @@ theorem MarkedBoundaryPair.derived_collars_disjoint_generic (P : MarkedBoundaryP
     (fun v hvs ↦ P.mark_vertices_generic.symm.subset (hv v hvs))
   exact P.mark_faces.subset hm
 
-
-
 theorem MarkedBoundaryPair.exists_derived_circle_blocks_of_localOrientation
     (P : MarkedBoundaryPair st R F) (O : LocalOrientation st.Carrier) :
     letI : Fintype P.model.boundary.faces := (P.model.finite.subset P.model.boundary_le).fintype
@@ -112,8 +100,6 @@ theorem MarkedBoundaryPair.exists_derived_circle_blocks_of_localOrientation
   · intro v hv
     simpa only [SimplicialComplex.faceLink_singleton_eq_link] using hlinks v (P.rim_le b hv)
 
-
-
 theorem MarkedBoundaryPair.exists_derived_annuli_of_localOrientation (P : MarkedBoundaryPair st R F) (O : LocalOrientation st.Carrier) :
     letI : Fintype P.model.boundary.faces := (P.model.finite.subset P.model.boundary_le).fintype
     ∃ c : ∀ b : Bool, PLAnnularStrip.squareAnnulus 1 (1 / 8) ≃ₜ
@@ -131,4 +117,3 @@ theorem MarkedBoundaryPair.exists_derived_annuli_of_localOrientation (P : Marked
   exact ⟨c, hc, hcore⟩
 
 end Geometry.OriginalPLTower
-

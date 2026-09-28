@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeakTests
 import PoincareConjecture.Proofs.M03.Existence.DeTurckHigherDomainNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Metric
@@ -52,9 +41,6 @@ private theorem weighted_value_bound (a : 𝓢(E, ℝ)) (u : ScalarL2 2) {B : �
   rw [norm_mul]
   exact (mul_le_mul_of_nonneg_right (a.norm_le_seminorm ℝ z) (norm_nonneg _)).trans
     (mul_le_mul_of_nonneg_left hz (apply_nonneg _ _))
-
-
-
 
 theorem weighted_energy_identity (u : ScalarL2 2) (d : Fin 2 → ScalarL2 2)
     (f : E → ℝ) (hf : Integrable f volume) {U : Set E} (hU : IsOpen U)
@@ -109,10 +95,6 @@ theorem weighted_energy_identity (u : ScalarL2 2) (d : Fin 2 → ScalarL2 2)
     ring
   simpa only [dw, inner_add_right, hdiag, hcross, Finset.sum_add_distrib,
     ← Finset.mul_sum, hforcing] using htest
-
-
-
-
 
 theorem caccioppoli {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → E → ℝ)

@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Embedding.Profile
 
-
-
-
 noncomputable section
 
 open MeasureTheory Set Metric
@@ -28,8 +25,6 @@ private theorem exists_cutoff_derivative_bound {χ : E → ℝ}
   exact ((hA j x).trans (le_max_right _ _)).trans
     (Finset.single_le_sum (fun i hi => le_max_left _ _)
       (Finset.mem_range.mpr (Nat.lt_succ_of_le hj)))
-
-
 
 theorem exists_fixed_cutoff_profile_bound {x₀ : E} {R : ℝ} (hR : 0 < R) (k : ℕ) :
     ∃ χ : E → ℝ, ∃ A : ℝ,

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CylinderPasting
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_second_cap_overlap_model_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

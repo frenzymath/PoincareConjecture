@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.Capped.CompactPrefix
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.MixedBoundary
 
-
 set_option autoImplicit false
 
 open Set
@@ -13,8 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem frontier_carrier_subset_closure_positive_region (C : CapCertificate g)
     {b : ℝ} (hb : b < C.epsilon⁻¹) :
@@ -34,8 +31,6 @@ theorem frontier_carrier_subset_closure_positive_region (C : CapCertificate g)
   apply closure_mono _ hpositive
   intro y hy
   exact ⟨hy.1, (lt_of_le_of_lt (le_max_left _ _) ha).trans hy.2.1, hy.2.2⟩
-
-
 
 theorem mixed_boundary_positive_end_contact (C D : CapCertificate g)
     (hmeet : (D.boundary_sphere ∩ C.carrier).Nonempty)

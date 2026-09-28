@@ -4,10 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,11 +16,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem m64Annulus_exists_finite_boundary_motion
     {g : RiemannianMetric n M} (c0 c1 : ℝ → ℝ → M)

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +13,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_nonnegative_directional_isotopy_with_global_finitePL
     {f : E → ℝ} {S U T : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -77,10 +64,6 @@ theorem FinitePiecewiseAffineOn.exists_nonnegative_directional_isotopy_with_glob
   apply (hPL t).homeomorph_on_finite_polyhedron_of_eq_id_off (L := L) (hL := hL)
   intro x hx
   rw [hfullformula, hgK x hx, mul_zero, zero_smul, add_zero]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_nonnegative_directional_isotopy
     {f : E → ℝ} {S U T : Set E} (hf : FinitePiecewiseAffineOn f S)

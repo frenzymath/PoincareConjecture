@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseRetur
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJordanRegions
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,11 +15,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_closed_corner_ray_injOn
     (N : IntrinsicAnnulus) {K : ℝ} (hK : N.GaussianCurvatureBound K)

@@ -2,25 +2,12 @@ import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter MeasureTheory
 open scoped Topology
 
 namespace MeasureTheory
-
-
 
 theorem setIntegral_exp_neg_le_half {α : Type*} [MeasurableSpace α]
     {μ : Measure α} {f : α → ℝ} {s : Set α} {a : ℝ}
@@ -60,8 +47,6 @@ theorem setIntegral_exp_neg_le_half {α : Type*} [MeasurableSpace α]
         (setIntegral_le_integral hint (Filter.Eventually.of_forall
           (fun x => (Real.exp_pos (-f x / 2)).le))) (Real.exp_pos _).le
 
-
-
 theorem setIntegral_exp_neg_norm_sq_le {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
     [MeasurableSpace E] [BorelSpace E]
@@ -94,9 +79,6 @@ theorem setIntegral_exp_neg_norm_sq_le {E : Type*} [NormedAddCommGroup E]
 end MeasureTheory
 
 namespace Real
-
-
-
 
 theorem exists_pos_exp_neg_div_le_rpow (C p : ℝ) {b : ℝ} (hb : 0 < b) :
     ∃ δ : ℝ, 0 < δ ∧ ∀ ε : ℝ, 0 < ε → ε ≤ δ →

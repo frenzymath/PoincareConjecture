@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackConnection
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -24,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem hasDerivAt_flow_metric_pairing (F : RicciFlow n M (Set.Icc a b))
     {γ : ℝ → M} {Y Z : (s : ℝ) → TangentSpace (𝓡 n) (γ s)}

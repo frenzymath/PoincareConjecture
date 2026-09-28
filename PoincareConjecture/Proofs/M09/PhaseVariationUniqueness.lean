@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ExponentialPhaseLinearization
 import PoincareConjecture.Proofs.M09.TangentPhaseZero
 import PoincareConjecture.Proofs.M09.WithinODEUniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 1600000

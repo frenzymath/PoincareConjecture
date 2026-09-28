@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingCurveEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PullbackParameterFirstJet
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64ParameterMotion_timeVelocity_contMDiffAt
     {Phi : ℝ × E → M} {O : Set (ℝ × E)} (hO : IsOpen O)
@@ -49,9 +41,6 @@ theorem m64ParameterMotion_timeVelocity_contMDiffAt
     (⟨Phi w, v⟩ : TangentBundle (𝓡 n) M)) hchain
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem m64ParameterMotion_spatial_velocity
     {Phi : ℝ × E → M} {h : ℝ → E} {t x : ℝ}

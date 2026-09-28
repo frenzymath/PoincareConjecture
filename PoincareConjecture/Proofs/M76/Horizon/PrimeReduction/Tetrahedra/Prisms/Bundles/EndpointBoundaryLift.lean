@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointPathLimit
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology

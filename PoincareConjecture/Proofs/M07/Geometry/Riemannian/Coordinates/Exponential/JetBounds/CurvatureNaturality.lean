@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorNaturality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ManifoldCurvatureSmooth
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +15,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem iteratedCurvature_eq_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -40,8 +32,6 @@ theorem iteratedCurvature_eq_pullback
     ?_ m hx v
   intro y hy w
   exact D.curvatureTensor_eq_of_local_isometry D' hU hf hmetric hy (w 0) (w 1) (w 2) (w 3)
-
-
 
 theorem curvatureDerivativeNorm_eq_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}

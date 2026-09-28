@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M60.Mathlib.NonNullSmoothingChart
 import PoincareConjecture.Proofs.M40.Mathlib.SmoothingCharts
 import Mathlib.Geometry.Manifold.Metrizable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_smooth_homotopic_of_compact
     {E F M N : Type*}

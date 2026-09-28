@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.AngularCoordinate
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.TubeCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -21,13 +12,9 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def curveTubeAngle (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1)
     (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) (p : (ℝ × ℝ) × E) : ℝ :=
   circleAngularCoordinate e (p.1.2, (curveTubeProjection q0 T (p.1.1, p.2) : E))
-
-
 
 noncomputable def curveTubeAngularDomain (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1)
     (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) : Set ((ℝ × ℝ) × E) :=
@@ -35,16 +22,12 @@ noncomputable def curveTubeAngularDomain (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere
     e.symm (curveTubeProjection q0 T (p.1.1, p.2) : E) *
       (Circle.exp (-p.1.2) : ℂ) ∈ Complex.slitPlane}
 
-
-
 theorem sphereCircleParameter_curveTubeAngle (e : ℂ ≃ₗᵢ[ℝ] E)
     (q0 : sphere (0 : E) 1) (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (p : (ℝ × ℝ) × E) :
     sphereCircleParameter e (curveTubeAngle e q0 T p) =
       curveTubeProjection q0 T (p.1.1, p.2) :=
   sphereCircleParameter_circleAngularCoordinate e p.1.2 _
-
-
 
 theorem curveTubeAngle_apply (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1)
     (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) (z a b : ℝ) (y : E)
@@ -54,8 +37,6 @@ theorem curveTubeAngle_apply (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1)
   unfold curveTubeAngle
   rw [hp]
   exact circleAngularCoordinate_sphereCircleParameter e a b hab
-
-
 
 theorem mem_curveTubeAngularDomain_of_projection (e : ℂ ≃ₗᵢ[ℝ] E)
     (q0 : sphere (0 : E) 1) (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
@@ -74,8 +55,6 @@ end Normed
 section InnerProduct
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem curveTubeAngle_regular (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1)
     (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) {k : ℕ∞ω}
@@ -109,8 +88,6 @@ theorem curveTubeAngle_regular (e : ℂ ≃ₗᵢ[ℝ] E) (q0 : sphere (0 : E) 1
   exact (ContDiffAt.comp (g := circleAngularCoordinate e) (f := R) p hA
     (hR p hp.1)).contDiffWithinAt
 
-
-
 theorem contDiffOn_fderiv_curveTubeAngle (e : ℂ ≃ₗᵢ[ℝ] E)
     (q0 : sphere (0 : E) 1) (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (hInv : ContDiffOn ℝ ∞ T.symm T.target)
@@ -129,8 +106,6 @@ theorem contDiffOn_fderiv_curveTubeAngle (e : ℂ ≃ₗᵢ[ℝ] E)
   exact (ContDiffAt.fderiv
     (f := fun p : (ℝ × ℝ) × E => fun y : E => curveTubeAngle e q0 T (p.1, y))
     (g := (Prod.snd : (ℝ × ℝ) × E → E)) hcomp contDiffAt_snd (by simp)).contDiffWithinAt
-
-
 
 theorem fderiv_curveTubeAngle_apply_velocity (e : ℂ ≃ₗᵢ[ℝ] E)
     (q0 : sphere (0 : E) 1) (T : OpenPartialHomeomorph (ℝ × E) (ℝ × E))

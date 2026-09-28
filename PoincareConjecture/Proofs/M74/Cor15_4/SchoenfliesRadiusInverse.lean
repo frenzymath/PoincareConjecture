@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesRadialCoordinate
 import PoincareConjecture.Proofs.M74.Mathlib.IncreasingRadiusChart
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -63,7 +54,6 @@ private theorem inner_radius_interval :
 
 include Ψ hΨ hleft q in
 
-
 theorem shiftedSchoenfliesRadius_image :
     B.shiftedSchoenfliesRadius d D '' Ioo (-1 / 16 : ℝ) (1 / 16) =
       Ioo (B.shiftedSchoenfliesRadius d D (1 / 16))
@@ -75,8 +65,6 @@ theorem shiftedSchoenfliesRadius_image :
   exact hc.image_Ioo_of_strictAntiOn (by norm_num)
     ((B.shiftedSchoenfliesRadius_strictAntiOn d D).mono inner_radius_interval)
 
-
-
 noncomputable def shiftedSchoenfliesRadiusChart : OpenPartialHomeomorph ℝ ℝ :=
   antitoneIntervalChart (B.shiftedSchoenfliesRadius d D) (-1 / 16) (1 / 16)
     (B.shiftedSchoenfliesRadius d D (1 / 16)) (B.shiftedSchoenfliesRadius d D (-1 / 16))
@@ -84,26 +72,18 @@ noncomputable def shiftedSchoenfliesRadiusChart : OpenPartialHomeomorph ℝ ℝ 
       (fun _ hs => inner_radius_interval ⟨hs.1.le, hs.2.le⟩))
     (B.shiftedSchoenfliesRadius_image d D Ψ hΨ hleft q)
 
-
-
 @[simp] theorem shiftedSchoenfliesRadiusChart_source :
     (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).source =
       Ioo (-1 / 16 : ℝ) (1 / 16) := rfl
-
-
 
 @[simp] theorem shiftedSchoenfliesRadiusChart_target :
     (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).target =
       Ioo (B.shiftedSchoenfliesRadius d D (1 / 16))
         (B.shiftedSchoenfliesRadius d D (-1 / 16)) := rfl
 
-
-
 @[simp] theorem shiftedSchoenfliesRadiusChart_apply (s : ℝ) :
     B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q s =
       B.shiftedSchoenfliesRadius d D s := rfl
-
-
 
 theorem shiftedSchoenfliesRadiusChart_symm_contDiffOn :
     ContDiffOn ℝ ∞ (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).symm
@@ -118,8 +98,6 @@ theorem shiftedSchoenfliesRadiusChart_symm_contDiffOn :
     (B.shiftedSchoenfliesRadius_deriv_neg d D Ψ hΨ hleft q hx).ne hr
     (hf.differentiableAt (by simp)).hasDerivAt hf).contDiffWithinAt
 
-
-
 theorem shiftedSchoenfliesRadiusChart_symm_deriv_neg {r : ℝ}
     (hr : r ∈ (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).target) :
     deriv (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).symm r < 0 := by
@@ -132,8 +110,6 @@ theorem shiftedSchoenfliesRadiusChart_symm_deriv_neg {r : ℝ}
   have hi := e.hasDerivAt_symm hr hd.ne (hf.differentiableAt (by simp)).hasDerivAt
   rw [hi.deriv]
   exact inv_lt_zero.mpr hd
-
-
 
 theorem shiftedSchoenfliesRadiusChart_symm_boundary :
     (B.shiftedSchoenfliesRadiusChart d D Ψ hΨ hleft q).symm (D.radial (1 / 2)) = 0 := by

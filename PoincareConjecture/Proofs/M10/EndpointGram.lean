@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.CoordinateGradient
 import PoincareConjecture.Proofs.M10.PreferredHessian
 import PoincareConjecture.Proofs.M10.BackwardMetricDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

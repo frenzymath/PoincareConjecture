@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalRetainedDiskCap
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalExteriorAnnulusDisks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -96,8 +88,6 @@ theorem exists_original_retained_end_cap
     EqOn t.map s.map d ∧ t.map '' (Sphere \ (d \ q)) = P.map '' (Disk ×ˢ {τ})
   rw [←himage Disk]
   exact ⟨t,ht,htb⟩
-
-
 
 theorem exists_original_exterior_retained_caps
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

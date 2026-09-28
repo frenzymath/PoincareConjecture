@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.CapMotion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.Coordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 
 open Poincare.Geometry.Euclidean
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_model_cap_stretch
     {v : E3} (hv : ‖v‖ = 1) (b s : Real) (hs : s ≠ 0)

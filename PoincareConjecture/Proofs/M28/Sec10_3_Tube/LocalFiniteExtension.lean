@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalBandPartition
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCoordinatePrefix
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalSliceIsotopy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -107,8 +96,6 @@ theorem exists_prefix_neck_extension_with_transition_m28 :
   apply hcollar' _ (B.coordinate_map_mem hz)
   · simpa only [B.coordinate_inverse_coordinate_map hz] using hlow
   · simpa only [B.coordinate_inverse_coordinate_map hz] using hhigh
-
-
 
 theorem exists_prefix_neck_extension_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

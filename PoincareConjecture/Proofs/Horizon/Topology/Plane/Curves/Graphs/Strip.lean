@@ -1,23 +1,11 @@
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
 open scoped ContDiff
 
 namespace Poincare.Topology.Plane.Curves
-
-
 
 def graphStripMap (lo hi : ℝ → ℝ) (q : ℝ × ℝ) : ℝ × ℝ :=
   (q.1, lo q.1 + q.2 * (hi q.1 - lo q.1))
@@ -51,8 +39,6 @@ theorem contDiffOn_graphStripInv {lo hi : ℝ → ℝ} {U : Set ℝ}
   exact contDiffOn_fst.prodMk ((contDiffOn_snd.sub hl).div (hh.sub hl)
     (fun q hq => ne_of_gt (sub_pos.mpr (hgap q.1 hq.1))))
 
-
-
 noncomputable def graphStripCoordinates {lo hi : ℝ → ℝ} {U : Set ℝ}
     (hU : IsOpen U) (hlo : ContDiffOn ℝ ∞ lo U) (hhi : ContDiffOn ℝ ∞ hi U)
     (hgap : ∀ t ∈ U, lo t < hi t) : OpenPartialHomeomorph (ℝ × ℝ) (ℝ × ℝ) where
@@ -78,7 +64,6 @@ noncomputable def graphStripCoordinates {lo hi : ℝ → ℝ} {U : Set ℝ}
   open_target := hU.prod isOpen_univ
   continuousOn_toFun := (contDiffOn_graphStripMap hlo hhi).continuousOn
   continuousOn_invFun := (contDiffOn_graphStripInv hlo hhi hgap).continuousOn
-
 
 theorem graphStripMap_image_rectangle {lo hi : ℝ → ℝ} {a b : ℝ}
     (hgap : ∀ t ∈ Icc a b, lo t < hi t) :

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ResidualBandSideAlignment
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ComplementaryAttachments
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

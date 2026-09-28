@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Fourier.AddCircle
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory AddCircle
@@ -17,16 +8,10 @@ open scoped ENNReal
 
 namespace PoincareConjecture.M63
 
-
-
-
 theorem memℓp_fourierCoeffOn {a b : ℝ} (hab : a < b) {f : ℝ → ℂ}
     (hf : MemLp f 2 (volume.restrict (Ioc a b))) : Memℓp (fourierCoeffOn hab f) 2 := by
   rw [memℓp_gen_iff (by norm_num : 0 < (2 : ENNReal).toReal)]
   simpa using (hasSum_sq_fourierCoeffOn hab hf).summable
-
-
-
 
 theorem fourierCoeffOn_derivative {a b : ℝ} (hab : a < b) {f f1 : ℝ → ℂ}
     (hderiv : ∀ x, HasDerivAt f (f1 x) x) (hcont : Continuous f1)
@@ -51,9 +36,6 @@ theorem fourierCoeffOn_derivative {a b : ℝ} (hab : a < b) {f f1 : ℝ → ℂ}
     field_simp [hLC, sub_ne_zero.mpr (by exact_mod_cast hab.ne' : (b : ℂ) ≠ a)]
     field_simp [hnC, hpiC, Complex.I_ne_zero] at h
     linear_combination -h
-
-
-
 
 theorem fourierCoeffOn_second_weight {a b : ℝ} (hab : a < b) {f f1 f2 : ℝ → ℂ}
     (hderiv : ∀ x, HasDerivAt f (f1 x) x) (hderiv1 : ∀ x, HasDerivAt f1 (f2 x) x)
@@ -81,9 +63,6 @@ theorem fourierCoeffOn_second_weight {a b : ℝ} (hab : a < b) {f f1 f2 : ℝ �
     (memℓp_fourierCoeffOn hab (hm f2 hcont2))
   change Memℓp (fun n => fourierCoeffOn hab f n - fourierCoeffOn hab f2 n) 2 at hsub
   simpa only [← hcoeff] using hsub
-
-
-
 
 theorem memℓp_second_weight_of_contDiff_periodic {L : ℝ} (hL : 0 < L) {f : ℝ → ℂ}
     (hf : ContDiff ℝ 2 f) (hperiod : Function.Periodic f L) :

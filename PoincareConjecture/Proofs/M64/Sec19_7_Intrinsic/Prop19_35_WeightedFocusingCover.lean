@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingCover
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TotalTurning
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,9 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology intervalIntegral ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_weighted_focusing_cover
     {f g : ℝ → ℝ} (hf : Continuous f) (hfpos : ∀ x, 0 < f x)
@@ -106,9 +91,6 @@ theorem m64Intrinsic_exists_weighted_focusing_cover
     apply (ENNReal.ofReal_le_ofReal_iff ?_).mp hle
     exact mul_nonneg (by positivity)
       (intervalIntegral.integral_nonneg hP.le (fun x _ => hgnonneg x))
-
-
-
 
 theorem m64Intrinsic_exists_boundary_focusing_cover
     (N : IntrinsicAnnulus) {A τ : ℝ} (hA : 0 ≤ A) (hτ : 3 < τ)

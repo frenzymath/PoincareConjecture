@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M10.Continuity
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
 set_option maxHeartbeats 800000 in
-
 
 theorem reducedLength_time_derivative_measurable
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -54,7 +44,6 @@ theorem reducedLength_time_derivative_measurable
     dsimp only [f, c]
     rw [min_eq_right hs.2.le, max_eq_right hs.1.le]
   simpa only [heq] using hm
-
 
 theorem reducedLength_weak_bound_measurable
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

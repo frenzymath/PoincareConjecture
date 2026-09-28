@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalT
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt

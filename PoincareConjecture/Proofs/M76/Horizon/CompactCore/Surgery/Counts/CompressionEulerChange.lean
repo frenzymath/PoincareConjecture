@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.Compress
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.CompressionCapsEulerCount
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -71,9 +63,6 @@ theorem exists_compression_graph_euler_change
     (hR.subset hRetR) (hR.subset hCapUR) hNfaces
   rw [hGlue] at hold
   exact ⟨Aold, Anew, hR.subset hAR, hR.subset hNR, hAs, hNs, by omega⟩
-
-
-
 
 theorem exists_original_compression_euler_change
     {Eold X ι : Type*} [NormedAddCommGroup Eold] [NormedSpace ℝ Eold]

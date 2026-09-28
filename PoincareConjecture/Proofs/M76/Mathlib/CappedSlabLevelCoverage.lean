@@ -1,22 +1,10 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
 
 variable {E : Type*}
-
-
-
 
 theorem cut_slab_level_eq {S s T R : Set E} {A : E → ℝ} {β c : ℝ}
     (hs : s ⊆ S) (hslab : T ∪ R = S ∩ {x | A x ∈ Icc 0 β})
@@ -29,11 +17,6 @@ theorem cut_slab_level_eq {S s T R : Set E} {A : E → ℝ} {β c : ℝ}
     have hxTR : x ∈ T ∪ R := hslab.symm.subset
       ⟨hs hx.1, by change A x ∈ Icc 0 β; rwa [hx.2]⟩
     exact ⟨hxTR.imp (fun h => ⟨h, hx.1⟩) (fun h => ⟨h, hx.1⟩), hx.2⟩
-
-
-
-
-
 
 theorem image_capped_slab_level_eq {S s d T R : Set E} {A : E → ℝ} {β c : ℝ}
     (hs : s ⊆ S) (hslab : T ∪ R = S ∩ {x | A x ∈ Icc 0 β})

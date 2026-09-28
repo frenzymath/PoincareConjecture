@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutRegions
 import PoincareConjecture.Proofs.M38.CappingRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
 
 theorem partialOldInclusion_eq_cap_iff
     (S : Set (Fin (F.event T hT).cap_count)) (y : eventCutOpen F T hT P S)
@@ -49,7 +40,6 @@ theorem partialOldInclusion_eq_cap_iff
     rwa [partialCappingMap_old_center] at heq
   · rintro ⟨hx, rfl⟩
     exact partialOldInclusion_cap F T hT P S a x hx
-
 
 theorem cappedOldInclusion_eq_cap_iff (y : eventDiscardedOpen F T hT)
     (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :

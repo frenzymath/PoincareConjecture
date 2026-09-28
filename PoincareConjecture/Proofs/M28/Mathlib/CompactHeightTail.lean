@@ -2,22 +2,11 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare
-
-
-
 
 theorem exists_height_tail_disjoint_compact
     {M : Type*} [TopologicalSpace M] {U P : Set M} (h : U → ℝ)

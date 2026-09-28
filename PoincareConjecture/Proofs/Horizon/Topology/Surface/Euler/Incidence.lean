@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Cells
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Incidence
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

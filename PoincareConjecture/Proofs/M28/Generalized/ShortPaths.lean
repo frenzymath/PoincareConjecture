@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M28Providers
 import PoincareConjecture.Proofs.M09.TensorTrace
 import PoincareConjecture.Proofs.M28.Mathlib.LastLevel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem RiemannianMetric.exists_short_path_of_mem_ball
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -33,17 +21,11 @@ theorem RiemannianMetric.exists_short_path_of_mem_ball
     ⟨g.toRiemannianMetric⟩
   exact Manifold.exists_lt_locally_constant_of_riemannianEDist_lt hy zero_lt_one
 
-
-
-
 theorem GeneralizedRicciFlowData.continuous_scalar_slice
     (F : GeneralizedRicciFlowData.{u}) (P : RicciFlowCurvatureTheory.{u}) (t : ℝ) :
     Continuous (fun x : (F.slice t).carrier ↦ F.scalar ⟨t, x⟩) := by
   exact (Proofs.M09.tensorMetricTrace_smooth (F.metric t) (F.connection t).ricciEvaluation
     (P.tensor_calculus 3 (F.slice t).carrier (F.metric t) (F.connection t)).2.1).continuous
-
-
-
 
 theorem generalizedSliceStrongCanonicalNeighborhoods.path_last_level
     {F : GeneralizedRicciFlowData.{u}} (P : RicciFlowCurvatureTheory.{u})

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveL2Trace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SliceStrongCompactness
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,7 +18,6 @@ local notation "mu" => volume.restrict S
 
 omit [CompleteSpace E] [InnerProductSpace ℝ E] in
 
-
 theorem m64Annulus_memLp_two_slices {u : LoopPlane → E} (hu : MemLp u 2 mu) :
     ∀ᵐ s ∂volume.restrict (Icc (0 : ℝ) 1),
       MemLp (fun x => u (annulusPoint x s)) 2 (volume.restrict (Icc (0 : ℝ) curvePeriod)) := by
@@ -37,9 +25,6 @@ theorem m64Annulus_memLp_two_slices {u : LoopPlane → E} (hu : MemLp u 2 mu) :
   have hs := (memLp_two_iff_integrable_sq_norm hp.aestronglyMeasurable).mp hp
   filter_upwards [hp.aestronglyMeasurable.prodMk_right, hs.prod_left_ae] with s hm hi
   exact (memLp_two_iff_integrable_sq_norm hm).mpr hi
-
-
-
 
 theorem m64Annulus_continuous_slices_of_strong_approximation
     (f : ℕ → LoopPlane → E) (hf : ∀ j, ContDiff ℝ 1 (f j))

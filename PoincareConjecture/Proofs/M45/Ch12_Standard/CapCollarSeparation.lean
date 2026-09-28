@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapNeckTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M45
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem neck_exists_collar_avoiding (N : EpsilonNeck g) {H : Set M}
     (hH : IsClosed H) (hNH : Disjoint N.central_sphere H) :
@@ -56,8 +46,6 @@ theorem neck_exists_collar_avoiding (N : EpsilonNeck g) {H : Set M}
   have h := (huv ⟨hsu (mem_univ _), hzv⟩).2
   simpa only [mem_preimage, M36.neck_coordinate_inverse N hx.1] using h
 
-
-
 theorem neck_middle_strip_compact (N : EpsilonNeck g) :
     IsCompact (N.coordinate_map ''
       (univ ×ˢ Icc (-N.epsilon⁻¹ / 2) (N.epsilon⁻¹ / 2))) := by
@@ -67,8 +55,6 @@ theorem neck_middle_strip_compact (N : EpsilonNeck g) :
   intro z hz
   exact ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
 
-
-
 theorem neck_middle_strip_subset (N : EpsilonNeck g) :
     N.coordinate_map '' (univ ×ˢ Icc (-N.epsilon⁻¹ / 2) (N.epsilon⁻¹ / 2)) ⊆
       N.carrier := by
@@ -76,8 +62,6 @@ theorem neck_middle_strip_subset (N : EpsilonNeck g) :
   rintro x ⟨z, hz, rfl⟩
   exact M36.neck_coordinate_mem N z
     ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
-
-
 
 theorem neck_outside_middle (N : EpsilonNeck g) {x : M} (hx : x ∈ N.carrier)
     (hmid : x ∉ N.coordinate_map ''

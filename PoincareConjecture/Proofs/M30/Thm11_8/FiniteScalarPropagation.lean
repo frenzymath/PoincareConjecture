@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M30.Generalized.Restriction
 import PoincareConjecture.Proofs.M30.Mathlib.GuardedScalarComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem generalized_limit_scalar_le_double
     (hC : RicciFlowCurvatureTheory.{u})
@@ -104,10 +93,6 @@ theorem generalized_limit_scalar_le_double
   dsimp only [eta] at herr
   dsimp only [Q] at hfb'
   linarith
-
-
-
-
 
 theorem exists_finite_scalar_bound_of_left_extension
     (hC : RicciFlowCurvatureTheory.{u})

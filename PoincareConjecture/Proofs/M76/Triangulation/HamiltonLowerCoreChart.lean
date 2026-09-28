@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerLatticeImmersion
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardAtlasExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,10 +12,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
 local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ (hamiltonLowerPeriodLattice κ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem HamiltonLowerLatticeImmersion.exists_original_doubled_core_chart
     (I : HamiltonLowerLatticeImmersion κ)

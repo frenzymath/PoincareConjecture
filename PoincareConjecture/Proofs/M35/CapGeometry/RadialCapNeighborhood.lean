@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialBallVolume
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCoreCurvatureBalls
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
-
-
 
 noncomputable def radialCapNeighborhood
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

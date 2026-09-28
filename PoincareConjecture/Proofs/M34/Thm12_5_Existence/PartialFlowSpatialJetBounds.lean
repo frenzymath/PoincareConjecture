@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowFirstJetBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem partialFlow_compactPullback_spatialJet_bounds (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

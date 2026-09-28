@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Rela
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralSupportLocalization
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

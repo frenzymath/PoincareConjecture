@@ -7,20 +7,6 @@ import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -92,8 +78,6 @@ private lemma hasDerivAt_basis_density
   convert hd using 1
   ring
 
-
-
 theorem hasDerivAt_pullbackVolumeDensity
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (hD : (F.connection t).CurvatureTensorCalculus)
@@ -139,7 +123,6 @@ private lemma contDiffAt_pullback_inner_spacetime
   simp +instances only [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hh
   exact hh.contDiffAt
 
-
 lemma contDiffAt_pullbackVolumeDensity_spacetime
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -164,8 +147,6 @@ lemma contDiffAt_pullbackVolumeDensity_spacetime
     exact contDiffAt_prod fun i _ => F.contDiffAt_pullback_inner_spacetime ht hf _ _
   exact hdet.sqrt ((F.metric t).pullback_gram_det_ne_zero (f x)
     (mfderiv (𝓡 n) (𝓡 n) f x).toLinearMap hi)
-
-
 
 theorem hasDerivAt_integral_pullbackVolumeDensity_of_subset
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -229,7 +210,6 @@ theorem hasDerivAt_integral_pullbackVolumeDensity_of_subset
   intro x hx
   exact (hd t ht x (hKL hx)).unique
     (F.hasDerivAt_pullbackVolumeDensity ht hD f x (hi x (hKL hx)))
-
 
 theorem hasDerivAt_integral_pullbackVolumeDensity
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

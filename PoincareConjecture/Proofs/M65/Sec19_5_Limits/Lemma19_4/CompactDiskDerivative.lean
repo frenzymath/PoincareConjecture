@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.EnergyVariation
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65HasDerivAt_integral_loopDisk
     (f : ℝ × LoopPlane → ℝ) {t : ℝ}

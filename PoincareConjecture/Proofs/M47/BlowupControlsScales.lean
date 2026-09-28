@@ -1,18 +1,8 @@
 import PoincareConjecture.Proofs.M47.FirstFailureWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem first_failure_blowup_scale {r Q : ℝ} (hr : 0 < r)
     (hQ : r⁻¹ ^ 2 ≤ Q) :
@@ -28,8 +18,6 @@ theorem first_failure_blowup_scale {r Q : ℝ} (hr : 0 < r)
   refine ⟨hQpos, inv_pos.mpr hprod, (inv_le_one₀ hprod).mpr hbound, ?_, ?_⟩
   · field_simp [hr.ne', hQpos.ne']
   · field_simp [hr.ne', hQpos.ne']
-
-
 
 theorem first_failure_normalized_canonical_threshold {r Q R : ℝ}
     (hr : 0 < r) (hQ : r⁻¹ ^ 2 ≤ Q) (hR : 1 ≤ R / Q) : r⁻¹ ^ 2 ≤ R := by

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialResponseTrace
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.StrictCenteredInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,10 +8,6 @@ open Set Filter MeasureTheory
 namespace PoincareConjecture.M63.CenteredSpectralResidual
 
 open SpectralHeatNative QuasilinearDeTurckNative
-
-
-
-
 
 theorem exists_uncut_response {iota E : Type*} [Countable iota]
     [NormedAddCommGroup E] [NormedSpace ℝ E]

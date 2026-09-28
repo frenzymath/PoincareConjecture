@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Algebra.Ring.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +12,6 @@ open scoped Topology NNReal
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Cover" => ℝ × ℝ
-
-
-
-
 
 theorem scalar_periodic_strip_locallyLipschitz
     {Y : Type*} [PseudoEMetricSpace Y] (f : Cover → Y) {L : ℝ≥0}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projectiv
 import Mathlib.Topology.Homeomorph.Quotient
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -47,8 +37,6 @@ namespace StandardProjectiveSmoothCover
 variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
 
-
-
 def homeomorph (S : StandardProjectiveSmoothCover Q) : Q ≃ₜ RealProjectiveThree := by
   let f : C(UnitThreeSphere, Q) := ⟨S.cover, S.local_diffeomorph.contMDiff.continuous⟩
   have hf : IsQuotientMap f := S.local_diffeomorph.isLocalHomeomorph.isOpenMap.isQuotientMap
@@ -62,8 +50,6 @@ namespace StandardPuncturedProjectiveCover
 variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
-
-
 
 def homeomorph (S : StandardPuncturedProjectiveCover Q p U) :
     U ≃ₜ PuncturedRealProjectiveThree p := by
@@ -95,8 +81,6 @@ namespace SmoothProjectiveDoubleModel
 variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] [T2Space Q]
 
-
-
 def sphereHomeomorph (D : SmoothProjectiveDoubleModel Q) : D.sphere ≃ₜ UnitTwoSphere := by
   have hzero (x : UnitTwoSphere) : (x, (0 : ℝ)) ∈ univ ×ˢ Ioo (-1 : ℝ) 1 :=
     ⟨mem_univ _, by norm_num⟩
@@ -121,8 +105,6 @@ def sphereHomeomorph (D : SmoothProjectiveDoubleModel Q) : D.sphere ≃ₜ UnitT
       subst t
       exact ⟨x, Subtype.ext hxy⟩
   exact ((Equiv.ofBijective f hbij).toHomeomorphOfContinuousClosed hf hf.isClosedMap).symm
-
-
 
 def connectedSumModel (D : SmoothProjectiveDoubleModel Q) :
     RealProjectiveThreeConnectedSumModel Q inferInstance := by

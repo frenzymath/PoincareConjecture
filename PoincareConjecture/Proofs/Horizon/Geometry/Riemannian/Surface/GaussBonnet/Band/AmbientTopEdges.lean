@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.AmbientSectorCoordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -22,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   {G : D.OrientedGraphPiece e R C a b} {ua wa ub wb : ℝ}
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
-
 
 noncomputable def ambientTopPoint (t : ℝ) : Plane :=
   G.frame.symm (B.faces.cuts.coordinates B.faces.open_domain B.faces.smooth_lower

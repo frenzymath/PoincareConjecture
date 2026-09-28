@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_6_RescalingEuler
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerEquation
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEulerReverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -48,7 +40,6 @@ private theorem initialValuePath_iff_data {S : GeneralizedLGeometryTransport n X
 
 include hCoordinates in
 
-
 theorem rescalingInitialValuePath
     {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}
     (P : M14SquareRootInitialValuePath G T τ x y Z) :
@@ -78,7 +69,6 @@ theorem rescalingInitialValuePath
   exact (initialValuePath_iff_data (mul_zero Q)).mpr hdata
 
 include hCoordinates in
-
 
 theorem rescalingInitialValuePath_inverse
     {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}

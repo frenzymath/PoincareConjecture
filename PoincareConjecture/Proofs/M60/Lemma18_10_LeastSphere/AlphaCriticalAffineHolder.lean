@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakClassic
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChain
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,9 +54,6 @@ private theorem affineHolder_ae_rescale (a : Plane) {s : ℝ} (hs : 0 < s)
   rw [suAffine_map_restrict a hs, Measure.ae_ennreal_smul_measure_iff (by positivity :
     ENNReal.ofReal ((s ^ 2)⁻¹) ≠ 0), suAffine_preimage_ball a hs] at h
   exact h
-
-
-
 
 theorem suInitialGain_of_transformed_residual_holder :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (m : ℕ)
@@ -259,9 +246,6 @@ local instance affineHolderOffsetDerivativeNormedSpace {m : ℕ} :
 
 set_option maxHeartbeats 800000 in
 
-
-
-
 theorem suAffineJet_lowerTrace_memLp {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}
     {V : Fin 2 → Plane → EuclideanSpace ℝ (Fin m)} {center : Plane} {R : ℝ}
@@ -331,9 +315,6 @@ theorem suAffineJet_lowerTrace_memLp {m : ℕ}
     (ContinuousLinearMap.apply ℝ ℝ (suColumnBasis a i)).comp_memLp' (hterm i)
   exact hs.add (memLp_finsetSum _ (fun i _ => ht i))
 
-
-
-
 theorem suAffineJet_holder_of_trace :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (m : ℕ)
       {u : Plane → EuclideanSpace ℝ (Fin m)}
@@ -372,10 +353,6 @@ theorem suAffineJet_holder_of_trace :
   have he : C.principalTrace (x, u x) (fun i j => G.hessian i j x) =
       -C.lowerTrace (x, u x) (fun i => V i x) := eq_neg_of_add_eq_zero_left hx
   simpa only [he, map_sub, map_sum, map_neg, f, sub_neg_eq_add, map_add] using hb
-
-
-
-
 
 theorem suAffineQuadraticSystem_holder :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (m : ℕ)

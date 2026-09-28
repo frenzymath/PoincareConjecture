@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem tendstoUniformlyOn_bilinear_jets_of_scalar_entries
     {ι A E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

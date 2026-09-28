@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalGlueRows
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_limit_left_inverse
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
@@ -30,8 +20,6 @@ theorem terminalCommonInterval_limit_left_inverse
   intro x
   exact tendsto_nhds_unique (hcomp x)
     (Filter.Tendsto.congr' (Filter.EventuallyEq.symm (hid x)) tendsto_const_nhds)
-
-
 
 theorem terminalCommonInterval_limit_right_inverse
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

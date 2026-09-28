@@ -2,24 +2,10 @@ import PoincareConjecture.Proofs.M34.Mathlib.TentNeighborEnergy
 import PoincareConjecture.Proofs.M34.Mathlib.InteriorGronwall
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology BigOperators
-
-
-
-
 
 theorem le_geometric_exp_of_bounded_neighbor_energy_rates
     {E : ℕ → ℝ → ℝ} {a b C M : ℝ} (hC : 0 ≤ C)

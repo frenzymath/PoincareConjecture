@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem edist_le_mul_edist_of_derivative_bound (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) 1 f)
@@ -56,8 +45,6 @@ theorem edist_le_mul_edist_of_derivative_bound (g : RiemannianMetric n M)
     ENNReal.ofReal_mul K.coe_nonneg, ENNReal.ofReal_coe_nnreal] at he
   rw [← ofReal_norm, ← ofReal_norm, norm_tangentSpace_vectorSpace]
   exact he
-
-
 
 theorem abs_sub_le_mul_toReal_edist_of_derivative_bound [T3Space M] [PreconnectedSpace M]
     (g : RiemannianMetric n M) {f : M → ℝ}

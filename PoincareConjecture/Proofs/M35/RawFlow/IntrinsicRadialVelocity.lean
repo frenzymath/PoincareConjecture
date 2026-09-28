@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicTip
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialSectionalPlane
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -43,7 +33,6 @@ private theorem warping_second_odd :
       ((intrinsicWarpingRadius_contDiff g hrotation hcomplete).differentiable (by simp))
       (intrinsicWarpingRadius_odd g hrotation hcomplete))
 
-
 noncomputable def intrinsicRadialAcceleration (s : ℝ) : ℝ :=
   2 * axisDivision (deriv (deriv (intrinsicWarpingRadius g hrotation hcomplete))) s /
     intrinsicWarpingQuotient g hrotation hcomplete s
@@ -61,7 +50,6 @@ theorem intrinsicRadialAcceleration_even :
     axisDivision_even_of_odd (warping_second_contDiff g hrotation hcomplete)
       (warping_second_odd g hrotation hcomplete) s,
     intrinsicWarpingQuotient_even g hrotation hcomplete s]
-
 
 theorem intrinsicRadialAcceleration_eq {s : ℝ} (hs : 0 < s) :
     intrinsicRadialAcceleration g hrotation hcomplete s =
@@ -82,7 +70,6 @@ theorem intrinsicRadialAcceleration_eq {s : ℝ} (hs : 0 < s) :
     (mul_intrinsicWarpingQuotient g hrotation hcomplete s).symm]
   ring
 
-
 theorem intrinsicRadialAcceleration_eq_sectional {s : ℝ} (hs : 0 < s) :
     intrinsicRadialAcceleration g hrotation hcomplete s =
       -2 * (radialMixedCurvatureFactor g
@@ -94,7 +81,6 @@ theorem intrinsicRadialAcceleration_eq_sectional {s : ℝ} (hs : 0 < s) :
       (radialArclengthOrderIso_symm_pos g hrotation hcomplete hs)]
   unfold intrinsicWarpingRadius
   ring
-
 
 noncomputable def intrinsicRadialVelocity (s : ℝ) : ℝ :=
   ∫ a in (0 : ℝ)..s, intrinsicRadialAcceleration g hrotation hcomplete a
@@ -133,7 +119,6 @@ theorem intrinsicRadialVelocity_odd :
   change intrinsicRadialVelocity g hrotation hcomplete s =
     -intrinsicRadialVelocity g hrotation hcomplete (-s) at h
   linarith only [h]
-
 
 theorem intrinsicRadialVelocity_quotient_contDiff_norm {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E] :

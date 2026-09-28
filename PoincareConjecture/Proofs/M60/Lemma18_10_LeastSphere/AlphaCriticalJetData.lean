@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalQuadrat
 import PoincareConjecture.Proofs.M60.Mathlib.SecondDerivativeChain
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +13,6 @@ open Poincare.Analysis.Sobolev.Weak
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suWeakDivergence_prolong
     {O : Set LoopPlane} {F DF : Fin 2 → LoopPlane → ℝ}
@@ -87,14 +69,12 @@ theorem suWeakDivergence_prolong
     _ = -(∫ x in O, b x * dphi k x) := by rw [heq _ (hd k) (hdc k) (hds k)]
     _ = _ := by rw [hwb phi hp hc hs, neg_neg]
 
-
 def suFirstJet {m : ℕ} (u : LoopPlane → EuclideanSpace ℝ (Fin m))
     (x : LoopPlane) : EuclideanSpace ℝ (Fin (3 * m)) :=
   WithLp.toLp 2 fun a =>
     let j := (finProdFinEquiv : Fin 3 × Fin m ≃ Fin (3 * m)).symm a
     Fin.cases (u x j.2)
       (fun i : Fin 2 => fderiv ℝ u x (EuclideanSpace.single i 1) j.2) j.1
-
 
 def suFirstJetWeakColumn {m : ℕ}
     (V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m))
@@ -103,9 +83,6 @@ def suFirstJetWeakColumn {m : ℕ}
   WithLp.toLp 2 fun a =>
     let j := (finProdFinEquiv : Fin 3 × Fin m ≃ Fin (3 * m)).symm a
     Fin.cases (V i x j.2) (fun l : Fin 2 => H l i x j.2) j.1
-
-
-
 
 theorem suFirstJet_weak_data {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -192,8 +169,6 @@ theorem suFirstJet_weak_data {m : ℕ}
 
 set_option maxHeartbeats 800000 in
 
-
-
 theorem suAlphaCoordinateFlux_gradientDerivative
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -225,9 +200,6 @@ theorem suAlphaCoordinateFlux_gradientDerivative
     (by norm_num) alpha q).const_smul (suAlphaRoundFactor x)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem suAlphaCoordinateFlux_principal_coercive
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -265,8 +237,6 @@ theorem suAlphaCoordinateFlux_principal_coercive
     _ = suAlphaRoundFactor x * (2 * B v v) := he.symm
     _ ≤ _ := mul_le_mul_of_nonneg_left (hp.trans hlo) hlambda.le
 
-
-
 theorem SUInitialGain.hessian_symm_ae {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {R : ℝ}
@@ -281,8 +251,6 @@ theorem SUInitialGain.hessian_symm_ae {m : ℕ}
   ext a
   exact hx a
 
-
-
 def suJetBlock {k m : ℕ} (j : Fin k) :
     EuclideanSpace ℝ (Fin (k * m)) →L[ℝ] EuclideanSpace ℝ (Fin m) :=
   LinearMap.toContinuousLinearMap {
@@ -290,8 +258,6 @@ def suJetBlock {k m : ℕ} (j : Fin k) :
     map_add' := by intro v w; ext a; rfl
     map_smul' := by intro c v; ext a; rfl
   }
-
-
 
 def suJetBlockPrincipal {k m : ℕ}
     (C : (EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) →L[ℝ]
@@ -301,7 +267,6 @@ def suJetBlockPrincipal {k m : ℕ}
   ∑ j : Fin k, C.bilinearComp ((suJetBlock j).prodMap (suJetBlock j))
     ((suJetBlock j).prodMap (suJetBlock j))
 
-
 theorem suJetBlock_norm_sq {k m : ℕ} (v : EuclideanSpace ℝ (Fin (k * m))) :
     (∑ j : Fin k, ‖suJetBlock j v‖ ^ 2) = ‖v‖ ^ 2 := by
   simp only [EuclideanSpace.real_norm_sq_eq]
@@ -309,8 +274,6 @@ theorem suJetBlock_norm_sq {k m : ℕ} (v : EuclideanSpace ℝ (Fin (k * m))) :
   have he := (finProdFinEquiv : Fin k × Fin m ≃ Fin (k * m)).sum_comp (fun a => v a ^ 2)
   rw [Fintype.sum_prod_type] at he
   exact he
-
-
 
 theorem suJetBlockPrincipal_coercive {k m : ℕ}
     {C : (EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) →L[ℝ]
@@ -362,8 +325,6 @@ local instance affineJetSourceNormedSpace {m : ℕ} : NormedSpace ℝ
       EuclideanSpace ℝ (Fin m) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 structure SUAffineJetCoefficients (m : ℕ) where
   principal : (LoopPlane × EuclideanSpace ℝ (Fin m)) →
     (EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) →L[ℝ]
@@ -380,19 +341,15 @@ namespace SUAffineJetCoefficients
 
 variable {m : ℕ}
 
-
 def flux (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
     (q : EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) :=
   C.principal z q + C.fluxOffset z
 
-
 def source (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
     (q : EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) :=
   C.sourceLinear z q + C.sourceOffset z
-
-
 
 def prolong (C : SUAffineJetCoefficients m) : SUAffineJetCoefficients (3 * m) where
   principal z := suJetBlockPrincipal (k := 3)
@@ -420,15 +377,12 @@ def prolong (C : SUAffineJetCoefficients m) : SUAffineJetCoefficients (3 * m) wh
           fderiv ℝ C.sourceOffset p (EuclideanSpace.single k 1, suJetBlock k.succ z.2)).comp
             (suJetBlock k.succ)
 
-
-
 theorem prolong_coercive (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin (3 * m))) {nu : ℝ} (hnu : 0 ≤ nu)
     (hC : ∀ q, nu * ‖q‖ ^ 2 ≤ C.principal (z.1, suJetBlock (0 : Fin 3) z.2) q q)
     (q : EuclideanSpace ℝ (Fin (3 * m)) × EuclideanSpace ℝ (Fin (3 * m))) :
     nu * ‖q‖ ^ 2 ≤ C.prolong.principal z q q :=
   suJetBlockPrincipal_coercive hnu hC q
-
 
 theorem flux_fderiv (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
@@ -451,8 +405,6 @@ theorem flux_fderiv (C : SUAffineJetCoefficients m)
   have he := ((h1.clm_apply (hasFDerivAt_snd (𝕜 := ℝ) (p := (z, q)))).add h2).fderiv
   rw [show fderiv ℝ (fun p => C.flux p.1 p.2) (z, q) = _ from he]
   rfl
-
-
 
 theorem source_fderiv (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
@@ -478,15 +430,11 @@ theorem source_fderiv (C : SUAffineJetCoefficients m)
 
 end SUAffineJetCoefficients
 
-
 def SUAffineJetCoefficients.principalTrace {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
     (H : Fin 2 → Fin 2 → EuclideanSpace ℝ (Fin m)) : EuclideanSpace ℝ (Fin m) :=
   WithLp.toLp 2 fun a => ∑ i : Fin 2,
     C.principal z (H 0 i, H 1 i) (suColumnBasis a i)
-
-
-
 
 def SUAffineJetCoefficients.lowerTrace {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m)) (q : Fin 2 → EuclideanSpace ℝ (Fin m)) :
@@ -494,10 +442,6 @@ def SUAffineJetCoefficients.lowerTrace {m : ℕ} (C : SUAffineJetCoefficients m)
   WithLp.toLp 2 fun a => C.source z (q 0, q 1) (EuclideanSpace.single a 1) +
     ∑ i : Fin 2, (fderiv ℝ C.principal z (EuclideanSpace.single i 1, q i) (q 0, q 1) +
       fderiv ℝ C.fluxOffset z (EuclideanSpace.single i 1, q i)) (suColumnBasis a i)
-
-
-
-
 
 structure SUAffineJetNormalization {m : ℕ} (C : SUAffineJetCoefficients m)
     (O : Set (LoopPlane × EuclideanSpace ℝ (Fin m))) (delta : ℝ) where

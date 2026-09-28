@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.TimeClamp
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,8 +16,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 local notation "Itime" => ModelWithCorners.prod 𝓘(Real, Real) (𝓡 1)
-
-
 
 theorem Saddle.Caps.exists_jointly_injective_chart_slices
     {ι : Type*} [Finite ι] (T : ι → OpenPartialHomeomorph (S1 × Real) S2)
@@ -74,8 +70,6 @@ theorem Saddle.Caps.exists_jointly_injective_chart_slices
     exact Prod.ext rfl (congrArg Prod.fst ((T i).injOn (h.1 i q) (h.1 i r) heq))
 
 open SphereSurgeryCoreCap.AnnularEndFamily
-
-
 
 theorem Saddle.Caps.exists_projected_terminal_slice_family
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) {g : S2 → E3}
@@ -160,8 +154,6 @@ namespace SphereSurgeryCoreCap.AnnularEndFamily
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
 
-
-
 theorem exists_lower_terminal_projected_slice_family
     (ends : AnnularEndFamily v g B C)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g) (hv : ‖v‖ = 1) :
@@ -182,7 +174,6 @@ theorem exists_lower_terminal_projected_slice_family
     (fun i => (ends.lower i.1.1 i.1.2 i.2).symm_smooth) ends.lowerCut
     (fun i => ends.exists_lower_terminal_physical_height i.1.1 i.1.2 i.2)
     ends.lowerCutCircle_joint_injective
-
 
 theorem exists_upper_terminal_projected_slice_family
     (ends : AnnularEndFamily v g B C)

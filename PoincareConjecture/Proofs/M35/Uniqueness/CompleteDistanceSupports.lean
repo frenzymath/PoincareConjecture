@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceContinuity
 import PoincareConjecture.Proofs.M35.Uniqueness.BasePointDistanceSupport
 import PoincareConjecture.Proofs.M35.Uniqueness.ScalarJetLinearity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
 theorem rawDistanceSquare_self {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) (p : StandardCapSpace) (t : ℝ) :
     rawDistanceSquare G p t p = 1 := by
@@ -28,8 +17,6 @@ theorem rawDistanceSquare_self {g₀ : StandardInitialMetric}
     ⟨(G.flow.metric t).toRiemannianMetric⟩
   have hh : (G.flow.metric t).edist p p = 0 := Manifold.riemannianEDist_self
   simp [rawDistanceSquare, hh]
-
-
 
 theorem exists_complete_distance_square_supports
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialAnnulusPatch
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialCore
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicRadialAnnulusPatch (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length) :
@@ -58,7 +48,6 @@ noncomputable def intrinsicRadialAnnulusPatch (q₀ : UnitTwoSphere) (a b length
   · obtain ⟨q, hq⟩ := N.center_sphere
     exact ⟨q, congrArg F.symm hq⟩
 
-
 theorem intrinsicRadialAnnulusPatch_carrier (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length) :
     (intrinsicRadialAnnulusPatch g hrotation hcomplete q₀ a b length hb hl hinner).carrier =
@@ -69,7 +58,6 @@ theorem intrinsicRadialAnnulusPatch_carrier (q₀ : UnitTwoSphere) (a b length :
     ‖intrinsicSpatialCoordinate g x‖ < a + b * length) ↔ _
   rw [intrinsicSpatialCoordinate_norm]
   rfl
-
 
 theorem intrinsicRadialAnnulusPatch_centralSphere (q₀ : UnitTwoSphere)
     (a b length : ℝ) (hb : 0 < b) (hl : 0 < length)
@@ -95,8 +83,6 @@ theorem intrinsicRadialAnnulusPatch_centralSphere (q₀ : UnitTwoSphere)
     exact (R.symm_apply_apply ‖x‖).symm.trans (congrArg R.symm hx)
   · intro hx
     rw [hx, R.apply_symm_apply]
-
-
 
 theorem intrinsicRadialAnnulusPatch_closed_core_eq (P : M35StandardCapPredecessors)
     (q₀ : UnitTwoSphere) (a b length : ℝ) (hb : 0 < b) (hl : 0 < length)

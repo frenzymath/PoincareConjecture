@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.OpenSlices
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,7 +59,6 @@ namespace MetricSurgeryResult
 variable {g₀ : StandardInitialMetric} {I : MetricSurgeryInput K g}
   (R : MetricSurgeryResult g₀ I)
 
-
 def retainedRegionEquivalence (U : Set M) (hU : U ⊆ I.retainedCollar) :
     SurgeryRegionEquivalence I.sourceCarrier R.output U (R.collapse '' U) where
   map := R.collapse
@@ -94,7 +83,6 @@ theorem retained_image_isOpen (U : Opens M) (hU : (U : Set M) ⊆ I.retainedColl
 
 def retainedImage (U : Opens M) (hU : (U : Set M) ⊆ I.retainedCollar) :
     Opens R.output.carrier := ⟨R.collapse '' (U : Set M), R.retained_image_isOpen U hU⟩
-
 
 def retainedDiffeomorph (U : Opens M) (hU : (U : Set M) ⊆ I.retainedCollar) :
     Diffeomorph (𝓡 3) (𝓡 3) U (R.retainedImage U hU) ∞ where
@@ -189,7 +177,6 @@ omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
 theorem negativeMap_range : range R.negativeMap = R.collapse '' (I.negativeHalf : Set M) :=
   R.retainedMap_range I.negativeHalf I.negativeHalf_subset_retainedCollar
 
-
 theorem negativeMap_metric (x : I.negativeHalf) (v w : TangentSpace (𝓡 3) x) :
     R.metric.inner (R.negativeMap x)
       (mfderiv (𝓡 3) (𝓡 3) R.negativeMap x v)
@@ -226,7 +213,6 @@ theorem negativeMap_pullback_metric :
     cases heq
     rfl
   exact hext _ _ hinner
-
 
 theorem retained_inverse_contMDiffAt_central {x : M} (hx : x ∈ I.neck.central_sphere) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ R.retained_inverse (R.collapse x) :=

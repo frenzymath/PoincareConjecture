@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereChart
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,12 +11,8 @@ namespace PoincareConjecture.M25.Topology3D
 local notation "I2" => (modelWithCornersSelf Real E2)
 local notation "CINF" => ((Top.top : ENat) : WithTop ENat)
 
-
-
 noncomputable def southSpherePoint (x : E2) : UnitTwoSphere :=
   -northSpherePoint (-(HSMul.hSMul (Inv.inv (1 + Real.sqrt (1 - norm x ^ 2))) x))
-
-
 
 theorem southSpherePoint_coordinates (x : E2) (hx : norm x < 1) :
     heightCoordinates (southSpherePoint x : E3) =
@@ -63,8 +49,6 @@ theorem southSpherePoint_coordinates (x : E2) (hx : norm x < 1) :
   · change -((1 - norm w ^ 2) / (1 + norm w ^ 2)) = -s
     rw [hheight]
 
-
-
 theorem southSpherePoint_contMDiffOn :
     ContMDiffOn I2 I2 CINF southSpherePoint (Metric.ball (0 : E2) 1) := by
   let : Fact (Module.finrank Real E3 = 2 + 1) := Fact.mk (by simp [E3])
@@ -85,8 +69,6 @@ theorem southSpherePoint_contMDiffOn :
   exact contMDiff_neg_sphere.comp_contMDiffOn
     (northSpherePoint_contMDiff.comp_contMDiffOn hw.contMDiffOn)
 
-
-
 theorem southSpherePoint_coordinate (q : UnitTwoSphere)
     (hq : (heightCoordinates (q : E3)).2 < 0) :
     And (norm (heightCoordinates (q : E3)).1 < 1)
@@ -102,8 +84,6 @@ theorem southSpherePoint_coordinate (q : UnitTwoSphere)
   have hr : 1 - norm (heightCoordinates (q : E3)).1 ^ 2 =
       (heightCoordinates (q : E3)).2 ^ 2 := by linarith
   rw [hr, Real.sqrt_sq_eq_abs, abs_of_neg hq, neg_neg]
-
-
 
 noncomputable def southSphereChart : OpenPartialHomeomorph E2 UnitTwoSphere where
   toFun := southSpherePoint
@@ -126,8 +106,6 @@ noncomputable def southSphereChart : OpenPartialHomeomorph E2 UnitTwoSphere wher
   continuousOn_toFun := southSpherePoint_contMDiffOn.continuousOn
   continuousOn_invFun :=
     (heightCoordinates.continuous.comp continuous_subtype_val).fst.continuousOn
-
-
 
 theorem southSphereChart_contMDiff :
     And (ContMDiffOn I2 I2 CINF southSphereChart southSphereChart.source)

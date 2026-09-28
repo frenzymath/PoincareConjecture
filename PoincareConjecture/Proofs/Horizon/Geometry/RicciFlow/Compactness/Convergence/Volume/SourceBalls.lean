@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem eventually_source_ball_subset_image_ball
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

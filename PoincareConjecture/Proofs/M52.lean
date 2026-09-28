@@ -1,41 +1,6 @@
 import PoincareConjecture.Statements.M52GlobalFlow
 import PoincareConjecture.Proofs.M52.Assembly
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

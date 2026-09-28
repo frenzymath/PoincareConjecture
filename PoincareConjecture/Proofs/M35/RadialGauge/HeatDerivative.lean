@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.GaussianEuclidean
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatGradient
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem heatAverage_hasFDerivAt_integral {f : V → F} {f' : V → V →L[ℝ] F}
     (hf : Continuous f) (hf' : Continuous f') (hderiv : ∀ x, HasFDerivAt f (f' x) x)
@@ -42,8 +32,6 @@ theorem heatAverage_hasFDerivAt_integral {f : V → F} {f' : V → V →L[ℝ] F
   · refine Eventually.of_forall (fun z y _ => ?_)
     simpa only [Function.comp_def, id_eq, ContinuousLinearMap.comp_id] using
       (hderiv _).comp y ((hasFDerivAt_id y).add_const (Real.sqrt (2 * t) • z))
-
-
 
 theorem heatAverage_derivative_integral_eq_kernel {f : V → F}
     {f' : V → V →L[ℝ] F} (hf : Continuous f) (hf' : Continuous f')
@@ -88,7 +76,6 @@ theorem heatAverage_derivative_integral_eq_kernel {f : V → F}
   simpa only [a, ContinuousLinearMap.smulRight_apply, innerSL_apply_apply,
     EuclideanSpace.inner_single_right, RCLike.conj_to_real, one_mul] using hid
 
-
 theorem heatAverage_hasFDerivAt {f : V → F} {f' : V → V →L[ℝ] F}
     (hf : Continuous f) (hf' : Continuous f') (hderiv : ∀ x, HasFDerivAt f (f' x) x)
     {C D : ℝ} (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)
@@ -96,8 +83,6 @@ theorem heatAverage_hasFDerivAt {f : V → F} {f' : V → V →L[ℝ] F}
     HasFDerivAt (heatAverage t f) (heatGradientKernel t f x) x := by
   rw [← heatAverage_derivative_integral_eq_kernel hf hf' hderiv hbound hdbound ht x]
   exact heatAverage_hasFDerivAt_integral hf hf' hderiv hbound hdbound t x
-
-
 
 theorem heatAverage_fderiv_weighted_norm_le {f : V → F} {f' : V → V →L[ℝ] F}
     (hf : Continuous f) (hf' : Continuous f') (hderiv : ∀ x, HasFDerivAt f (f' x) x)

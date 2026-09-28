@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluing.PairedPLParameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped Topology
@@ -23,9 +15,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
-
 
 theorem chartwisePLMap_of_standard_paired_slabs
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

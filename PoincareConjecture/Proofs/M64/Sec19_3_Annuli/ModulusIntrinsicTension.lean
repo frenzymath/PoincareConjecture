@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceAcceleration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimumHarmonic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +16,6 @@ open Proofs.M09 CoordinateExponential ConnectionVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64Annulus_intrinsic_tension_eq_zero_of_modulus_minimum
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

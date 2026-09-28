@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Mathlib.PositivePolar
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CollarAbsorption
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D.DiffSphereIsotopyData
-
-
-
 
 theorem exists_normPreserving_radialExtension
     {f : UnitTwoSphere → UnitTwoSphere} (D : DiffSphereIsotopyData f)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Diameter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Competitor
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +14,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
-
 
 theorem intrinsicEDist_cylinderCover_le_axial_add
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)

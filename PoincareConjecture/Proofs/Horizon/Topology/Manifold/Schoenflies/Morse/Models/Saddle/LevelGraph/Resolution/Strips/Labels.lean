@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Coordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def stripEndpoint (a b : Fin 2 → Real) (k : Fin 2 × Fin 2) : Real :=
   if k.2 = 0 then a k.1 else b k.1
 
@@ -21,8 +18,6 @@ def stripEndpoint (a b : Fin 2 → Real) (k : Fin 2 × Fin 2) : Real :=
 
 @[simp] theorem stripEndpoint_right (a b : Fin 2 → Real) (i : Fin 2) :
     stripEndpoint a b (i, 1) = b i := rfl
-
-
 
 theorem exists_strip_contact_labels {M : Type*} [TopologicalSpace M]
     (e : OpenPartialHomeomorph E2 M) (r : Real)

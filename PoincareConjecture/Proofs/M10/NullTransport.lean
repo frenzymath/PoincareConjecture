@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.Calibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal NNReal
 universe u
 
 namespace PoincareConjecture.M10
-
 
 theorem euclideanHausdorff_eq_zero_of_volume_eq_zero {n : ℕ}
     {A : Set (EuclideanSpace ℝ (Fin n))} (hA : volume A = 0) :

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.Re
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ClopenIncompressibility
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.Injection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 

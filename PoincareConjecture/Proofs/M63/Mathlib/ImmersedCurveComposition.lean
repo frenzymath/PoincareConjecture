@@ -2,14 +2,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,10 +13,6 @@ namespace PoincareConjecture.M63
 
 variable {A : Type u} [NormedAddCommGroup A] [NormedSpace ℝ A]
   {E : Type v} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
-
 
 theorem contDiffAt_of_comp_immersed_curve
     {k : WithTop ℕ∞} (hk : k ≠ 0) {phi : A → ℝ} {f : ℝ → E} {x : A}

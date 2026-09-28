@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMatchingHighNeck
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialNodeCapture
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem exists_matching_high_neck_separation_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

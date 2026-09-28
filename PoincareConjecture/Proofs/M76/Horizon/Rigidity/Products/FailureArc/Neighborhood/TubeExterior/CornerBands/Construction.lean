@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.CutGeometry
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

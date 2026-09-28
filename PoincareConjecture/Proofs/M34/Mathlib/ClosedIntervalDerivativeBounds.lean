@@ -1,20 +1,9 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem norm_sub_le_of_interior_deriv_bound_Icc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

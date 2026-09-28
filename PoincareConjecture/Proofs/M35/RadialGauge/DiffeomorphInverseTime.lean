@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DiffeomorphFamilyInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem diffeomorph_family_symm_hasDerivAt
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {J : Set ℝ} (hJ : IsOpen J)

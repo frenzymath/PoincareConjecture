@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLInCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,8 +16,6 @@ variable {E F G H X Y Z W ι κ nu μ : Type*}
 namespace PLInCharts
 
 omit [FiniteDimensional ℝ F] [FiniteDimensional ℝ H] in
-
-
 
 theorem prodMap {Q : ι → OpenPartialHomeomorph E X}
     {R : κ → OpenPartialHomeomorph F Y} {S : nu → OpenPartialHomeomorph G Z}
@@ -52,9 +41,6 @@ theorem prodMap {Q : ι → OpenPartialHomeomorph E X}
 
 omit [FiniteDimensional ℝ F] in
 
-
-
-
 theorem locality {Q : ι → OpenPartialHomeomorph E X}
     {R : κ → OpenPartialHomeomorph F Y} {f : X → Y} {U : Set X}
     (hU : IsOpen U)
@@ -78,7 +64,6 @@ theorem locality {Q : ι → OpenPartialHomeomorph E X}
     (fun _ hy => ⟨⟨hy.1.1.1, ⟨hy.1.1.2, hy.2.2⟩⟩, hy.1.2⟩)
 
 omit [FiniteDimensional ℝ F] in
-
 
 theorem union {Q : ι → OpenPartialHomeomorph E X}
     {R : κ → OpenPartialHomeomorph F Y} {f : X → Y} {U V : Set X}

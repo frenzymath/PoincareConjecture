@@ -1,18 +1,7 @@
 import Mathlib.Logic.Equiv.Fin.Rotate
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-
-
 
 theorem finRotate_finProdFinEquiv_castSucc {n m : ℕ} (i : Fin n) (j : Fin m) :
     finRotate (n * (m + 1)) (finProdFinEquiv (i, j.castSucc)) =
@@ -26,9 +15,6 @@ theorem finRotate_finProdFinEquiv_castSucc {n m : ℕ} (i : Fin n) (j : Fin m) :
   change j.val + 1 + (m + 1) * i.val < n * (m + 1) at hb
   rw [Nat.mod_eq_of_lt (by omega)]
   omega
-
-
-
 
 theorem finRotate_finProdFinEquiv_last {n m : ℕ} (i : Fin n) :
     finRotate (n * (m + 1)) (finProdFinEquiv (i, Fin.last m)) =

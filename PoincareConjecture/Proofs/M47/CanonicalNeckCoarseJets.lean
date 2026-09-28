@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderCurvature
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -23,7 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 open M36 M44 M45 SpacetimeBounds
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem negativeCylinder_coefficient_error {epsilon t : ℝ} (hepsilon : 0 < epsilon)
     (ht : t ∈ Icc (-1 : ℝ) 0) {B : RoundCylinderTwoTensor}
@@ -56,7 +46,6 @@ theorem negativeCylinder_coefficient_error {epsilon t : ℝ} (hepsilon : 0 < eps
       Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm i j
     _ = _ := by simp; ring
 
-
 theorem negativeCylinder_coefficient_lower {epsilon t : ℝ} (hepsilon : 0 < epsilon)
     (hsmall : epsilon ≤ 1 / 200) (ht : t ∈ Icc (-1 : ℝ) 0)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose epsilon t B)
@@ -88,7 +77,6 @@ theorem negativeCylinder_coefficient_lower {epsilon t : ℝ} (hepsilon : 0 < eps
   have hlo := (abs_le.mp herr).1
   have hsmall' : 36 * epsilon ≤ 1 / 2 := by linarith
   nlinarith [mul_le_mul_of_nonneg_right hsmall' (sq_nonneg ‖v‖)]
-
 
 theorem exists_negativeCylinder_twoJet_bound :
     ∃ H : ℝ, 0 < H ∧ ∀ {epsilon t : ℝ}, 0 < epsilon → epsilon ≤ 1 / 200 →

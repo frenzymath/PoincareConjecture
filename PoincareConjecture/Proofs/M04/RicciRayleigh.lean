@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M04.TensorEvolution
 import PoincareConjecture.Proofs.M04.FlowTensorRegularity
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -168,4 +164,3 @@ theorem continuousOn_flow_ricciRayleigh_trivialization
   rfl
 
 end PoincareConjecture.M04
-

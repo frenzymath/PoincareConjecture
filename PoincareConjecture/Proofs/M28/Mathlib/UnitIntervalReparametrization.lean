@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +8,6 @@ open Set
 open scoped ContDiff
 
 namespace Poincare
-
-
 
 def unitIntervalReparam (a s : ℝ) : ℝ :=
   a * s / ((1 - a) * (1 - s) + a * s)
@@ -32,9 +22,6 @@ private theorem reparam_mem {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
   refine ⟨div_pos (mul_pos ha.1 hs.1) (denominator_pos ha hs), ?_⟩
   apply (div_lt_one (denominator_pos ha hs)).mpr
   linarith [mul_pos (sub_pos.mpr ha.2) (sub_pos.mpr hs.2)]
-
-
-
 
 theorem unitIntervalReparam_properties {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     ContDiffOn ℝ ∞ (unitIntervalReparam a) (Ioo (0 : ℝ) 1) ∧
@@ -63,8 +50,6 @@ theorem unitIntervalReparam_properties {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     unfold unitIntervalReparam
     rw [lt_div_iff₀ (denominator_pos hb hs)]
     constructor <;> intro h <;> nlinarith
-
-
 
 theorem unitIntervalReparam_strictMonoOn {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     StrictMonoOn (unitIntervalReparam a) (Ioo (0 : ℝ) 1) := by

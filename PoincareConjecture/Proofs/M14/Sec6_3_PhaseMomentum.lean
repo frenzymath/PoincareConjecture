@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerMomentum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 include hC hmap hphase
 
-
-
-
 theorem closedChartPhase_momentum :
     EqOn (fun s => M08.chartMomentumVector (M08.chartActionMetric F T x₀ (s, q s))
       (derivWithin q C s)) P C := by
@@ -46,9 +34,6 @@ theorem closedChartPhase_momentum :
   rw [hq]
   exact congrArg (fun A : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) => A (P s))
     (Ring.mul_inverse_cancel _ (M08.chartMetricOperator_isUnit_of_target F T x₀ (hmap hs)))
-
-
-
 
 theorem closedChartPhase_momentum_equation :
     ∀ s ∈ C, HasDerivWithinAt

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Weak.Harmonic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.LowDimension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +10,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem busemann_distributional_subharmonic
     {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -37,8 +25,6 @@ theorem busemann_distributional_subharmonic
     0 ≤ ∫ x, g.busemann γ x * D.laplacian φ x ∂g.volumeMeasure :=
   g.busemann_distributional_subharmonic_of_distance_comparison D hγ
     (D.integral_distance_mul_laplacian_le hm hcomplete hRic) φ hφ hc hφ0
-
-
 
 theorem busemann_minimizing_line
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -82,8 +68,6 @@ theorem busemann_minimizing_line
           (g.busemann_distributional_subharmonic D (by omega) hcomplete hRic
             (g.minimizing_line_reverse hγ))
       exact ⟨hl, hlr, hs, hsr, hr, hn, hh, hu, hess⟩
-
-
 
 theorem busemann_parallel_unit_gradient
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

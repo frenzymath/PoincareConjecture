@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.PairHomotopy
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [MetricSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m59_exists_uniform_loop_homotopy_radius
     (hcompact : IsCompact (univ : Set M)) :

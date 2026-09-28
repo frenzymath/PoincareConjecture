@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.SurgeryInput
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

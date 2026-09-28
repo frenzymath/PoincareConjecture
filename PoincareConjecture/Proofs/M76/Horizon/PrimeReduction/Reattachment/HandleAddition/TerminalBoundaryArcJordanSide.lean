@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcSides
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.PlanarJordanSimpleConnectivity
 
-
-
 set_option autoImplicit false
 open Set Bornology Metric
 namespace PoincareConjecture.M76

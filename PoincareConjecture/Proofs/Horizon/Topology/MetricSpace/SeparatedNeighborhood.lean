@@ -1,7 +1,6 @@
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Tactic
 
-
 open Set
 namespace Metric
 theorem exists_open_neighborhood_inter_eq_of_separated

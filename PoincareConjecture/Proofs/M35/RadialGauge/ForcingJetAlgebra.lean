@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {A E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem family_jet_bounds_sub {f g : A → E → ℝ} {U S : Set E}
     (hU : IsOpen U) (hS : S ⊆ U)
@@ -41,7 +30,6 @@ theorem family_jet_bounds_sub {f g : A → E → ℝ} {U S : Set E}
     (((hg a x (hS hx)).contDiffAt (hU.mem_nhds (hS hx))).of_le hj)]
   exact (norm_sub_le _ _).trans (add_le_add (hCb a x hx) (hDb a x hx))
 
-
 theorem family_jet_bounds_const_mul {f : A → E → ℝ} {U S : Set E}
     (hU : IsOpen U) (hS : S ⊆ U) (hf : ∀ a, ContDiffOn ℝ ∞ (f a) U)
     (hfb : ∀ j : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ a x, x ∈ S →
@@ -58,8 +46,6 @@ theorem family_jet_bounds_const_mul {f : A → E → ℝ} {U S : Set E}
   simp only [smul_eq_mul] at hd
   rw [hd, norm_smul, Real.norm_eq_abs]
   exact mul_le_mul_of_nonneg_left (hCb a x hx) (abs_nonneg b)
-
-
 
 theorem family_jet_bounds_mul {f g : A → E → ℝ} {U S : Set E}
     (hU : IsOpen U) (hS : S ⊆ U)
@@ -89,9 +75,6 @@ theorem family_jet_bounds_mul {f g : A → E → ℝ} {U S : Set E}
     (hD (j - i) a x hx) (norm_nonneg _)
     (mul_nonneg (Nat.cast_nonneg (j.choose i)) (hB0 i))
 
-
-
-
 theorem norm_jet_comp_linear_le {f : E → ℝ} {U : Set E}
     (L : F →L[ℝ] E) (hL : ‖L‖ ≤ 1) (hU : IsOpen U)
     (hf : ContDiffOn ℝ ∞ f U) {x : F} (hx : L x ∈ U) (j : ℕ) :
@@ -108,8 +91,6 @@ theorem norm_jet_comp_linear_le {f : E → ℝ} {U : Set E}
     simpa only [Finset.prod_const_one] using
       Finset.prod_le_prod (fun _ _ => norm_nonneg L) (fun _ _ => hL)
   simpa only [mul_one] using mul_le_mul_of_nonneg_left hp (norm_nonneg _)
-
-
 
 theorem family_weighted_jet_bounds_sub {f g : A → E → ℝ} {U S : Set E} {w : E → ℝ}
     (hU : IsOpen U) (hS : S ⊆ U) (hw : ∀ x ∈ S, 0 ≤ w x)
@@ -152,8 +133,6 @@ theorem family_weighted_jet_bounds_const_mul {f : A → E → ℝ} {U S : Set E}
   have hm := mul_le_mul_of_nonneg_left (hCb a x hx) (abs_nonneg b)
   convert! hm using 1
   ring
-
-
 
 theorem family_weighted_jet_bounds_mul {f g : A → E → ℝ} {U S : Set E} {w : E → ℝ}
     (hU : IsOpen U) (hS : S ⊆ U) (hw : ∀ x ∈ S, 0 ≤ w x)

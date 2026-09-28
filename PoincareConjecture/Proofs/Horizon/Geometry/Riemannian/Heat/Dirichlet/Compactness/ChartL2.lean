@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Reso
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem integral_sq_eq_chartPullback_density
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -44,8 +35,6 @@ theorem integral_sq_eq_chartPullback_density
     (μ := volume) (fun x hx => by simp [chartPullback, indicator_of_notMem hx])]
   exact setIntegral_congr_fun e.open_source.measurableSet fun x hx => by
     rw [chartPullback_apply e f hx]
-
-
 
 theorem exists_integral_sq_le_chartPullback
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -107,7 +96,6 @@ theorem EnergyTest.chartPullback_memLp
   (contDiff_chartPullback e he f.smooth f.hasCompactSupport hs).continuous.memLp_of_hasCompactSupport
     (hasCompactSupport_chartPullback e f.hasCompactSupport hs)
 
-
 def EnergyTest.chartToL2
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -130,7 +118,6 @@ theorem EnergyTest.norm_chartToL2_sq
     ((f.chartPullback_memLp e he hs).toLp _ x) = _
   rw [hx]
   simp only [real_inner_self_eq_norm_sq, Real.norm_eq_abs, sq_abs]
-
 
 theorem exists_norm_testToL2_le_chartToL2
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -171,8 +158,6 @@ theorem EnergyTest.chartToL2_sub
     ((f.chartPullback_memLp e he hf).sub (h.chartPullback_memLp e he hh))
     (Filter.Eventually.of_forall fun x => congrFun hsub x) |>.trans
       ((f.chartPullback_memLp e he hf).toLp_sub (h.chartPullback_memLp e he hh))
-
-
 
 theorem cauchySeq_testToL2_of_chartToL2
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

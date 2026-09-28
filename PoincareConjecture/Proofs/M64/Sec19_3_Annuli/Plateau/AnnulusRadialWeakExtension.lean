@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialIntegration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTests
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,20 +23,14 @@ local notation "v" => m64AnnulusRadialTranslation
 
 namespace M64ObservedWeakAnnulus
 
-
-
 def lowerExtensionMap (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : LoopPlane → M :=
   m64AnnulusLowerExtend (fun p => c0 (p 0)) A.map
-
-
 
 def lowerExtensionColumn (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (i : Fin 2) :
     LoopPlane → E :=
   m64AnnulusLowerExtend
     (fun p => fderiv ℝ (fun q : LoopPlane => e (c0 (q 0))) p (EuclideanSpace.single i 1))
     (A.column i)
-
-
 
 theorem lower_extension_memLp
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (hc0 : ContDiff ℝ 1 (e ∘ c0)) :
@@ -65,8 +47,6 @@ theorem lower_extension_memLp
     exact m64AnnulusLowerExtend_memLp
       (m64Annulus_continuous_memLp_two
         ((hC.continuous_fderiv (by simp)).clm_apply continuous_const)) (Lp.memLp (A.column i))
-
-
 
 theorem lower_original_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -88,8 +68,6 @@ theorem lower_original_green
         filter_upwards [] with x
         rw [htop, zero_smul, zero_sub]
       _ = _ := integral_neg _
-
-
 
 theorem lower_extension_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (hc0 : ContDiff ℝ 1 (e ∘ c0))
@@ -128,8 +106,6 @@ theorem lower_extension_green
     _ = ((∫ p in S, phi p • A.column i p) + ∫ p in S, dphi p • e (A.map p)) +
         ((∫ p in S, phi (p - v) • D p) + ∫ p in S, dphi (p - v) • C p) := by abel
     _ = 0 := by rw [htop, hbottom]; split_ifs <;> abel
-
-
 
 theorem lower_extension_weak_partial
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (hc0 : ContDiff ℝ 1 (e ∘ c0))

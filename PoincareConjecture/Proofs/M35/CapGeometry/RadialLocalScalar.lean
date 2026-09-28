@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem axisWarpingRadius_sq_le_or_mul_arclength_le
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

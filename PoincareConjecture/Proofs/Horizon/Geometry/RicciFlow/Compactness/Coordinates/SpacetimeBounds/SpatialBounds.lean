@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordina
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Gronwall
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.NormalCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.InteriorDerivativeControl
-
-
-
-
-
-
-

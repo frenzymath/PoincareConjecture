@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.PhaseFamily
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.Removal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -36,9 +27,6 @@ private def EliminationCandidate {α β : Type*}
     ∃ M : Fin n → Set X,
       (⋃ i, M i) = sourceSurface eta (a : C) ∪ sourceSurface eta (b : C) ∧
       ∀ i, IsConnected (M i)
-
-
-
 
 theorem exists_relative_source_phases_without_closed_components
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteGeometricCoordinates
 import PoincareConjecture.Proofs.M02.Topology.FiniteFlagCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

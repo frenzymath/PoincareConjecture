@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.ChartCarrier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.ClippedSphereDisks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -50,10 +41,6 @@ private theorem isOpen_on_finite_disjoint_union
       exact (hmem (hji ▸ hxj)).mp hxO
   rw [heq]
   exact (hO.inter hbad.isOpen_compl).preimage continuous_subtype_val
-
-
-
-
 
 theorem exists_finite_sphere_system_clipped_disk_neighborhood
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

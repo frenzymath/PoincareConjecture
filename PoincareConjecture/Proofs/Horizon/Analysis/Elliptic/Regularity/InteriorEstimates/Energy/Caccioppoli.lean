@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Principal
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set
@@ -59,7 +51,6 @@ theorem principal_hasCompactSupport_right {Ω : Set E}
   simp [SmoothEllipticBilinearForm.principalIntegrand,
     fderiv_of_notMem_tsupport ℝ hnot]
 
-
 theorem gradient_integral_le_cutoff_principal_integral
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)
     (hV : IsOpen V) (hVΩ : V ⊆ Ω) (hW : IsOpen W) (hWV : W ⊆ V)
@@ -105,8 +96,6 @@ theorem gradient_integral_le_cutoff_principal_integral
       (Filter.Eventually.of_forall hWV)
   · simpa only [SmoothEllipticBilinearForm.gradientVec_norm_sq_eq_sum] using
       B.principalIntegrand_self_ge v (hVΩ (hWV hx))
-
-
 
 theorem exists_gradient_integral_le_of_weakEquation
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -211,7 +200,6 @@ theorem exists_gradient_integral_le_of_weakEquation
   rw [div_mul_eq_mul_div]
   apply (le_div_iff₀ B.hlam_pos).mpr
   simpa only [mul_comm B.lam] using hlow.trans hupper
-
 
 theorem exists_gradient_integral_le_on_nested_sets
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)

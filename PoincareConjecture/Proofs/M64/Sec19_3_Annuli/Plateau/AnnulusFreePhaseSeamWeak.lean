@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseSeamTests
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +21,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 
-
-
 theorem phase_seam_extension_memLp
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) :
     MemLp (m64AnnulusAffineSeamExtend A.phase D) 2 (volume.restrict O) ∧
@@ -38,8 +29,6 @@ theorem phase_seam_extension_memLp
           (volume.restrict O) :=
   ⟨m64AnnulusAffineSeamExtend_memLp (Lp.memLp A.phase) D,
     fun i => m64AnnulusSeamExtend_memLp (Lp.memLp (A.phaseColumn i))⟩
-
-
 
 theorem phase_seam_extension_green
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)
@@ -53,8 +42,6 @@ theorem phase_seam_extension_green
   simp only [smul_eq_mul] at hcol
   rw [hcol, m64AnnulusAffineSeam_integral_mul (Lp.memLp A.phase) D ht.2]
   linarith [A.phase_seam_folded_green hp hs i]
-
-
 
 theorem phase_seam_extension_weak_partial
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) (i : Fin 2) :

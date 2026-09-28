@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.Parametric
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.Products
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

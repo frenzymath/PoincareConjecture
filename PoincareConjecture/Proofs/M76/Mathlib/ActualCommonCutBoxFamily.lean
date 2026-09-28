@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SameChartPrismRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCutPrismContact
 import PoincareConjecture.Proofs.M76.Mathlib.RetainedCutAxisImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -22,11 +12,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_actual_common_cut_box_family
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

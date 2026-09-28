@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M01.NormalizationChartDistance
 import PoincareConjecture.Proofs.M01.NormalizationSmallBallMeasure
 import PoincareConjecture.Proofs.M01.NormalizationPinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory Metric Set Filter

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.SpatialEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Gronwall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -45,9 +34,6 @@ private theorem norm_le_exp_of_affine_deriv_bound_at
     (fun s hs => (hg hs).deriv ▸ hbound _ (hmem hs))
     (show t - σ ∈ Icc (l - σ) (r - σ) by constructor <;> linarith [ht.1, ht.2])
   simpa [g] using h
-
-
-
 
 theorem exists_spatialJet_time_lipschitz_constant
     (n d : ℕ) (K Z : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

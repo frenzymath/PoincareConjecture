@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.NormalizedCorners
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Topology.Orientation.ProjectivePlane

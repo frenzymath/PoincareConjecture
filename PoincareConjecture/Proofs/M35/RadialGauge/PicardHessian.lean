@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.PicardRegularity
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
 
 theorem gaugePicard_weighted_hessian_bound
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B B1 L1 C1 : ℝ}

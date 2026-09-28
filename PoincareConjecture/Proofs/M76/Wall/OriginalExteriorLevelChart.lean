@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalHeightRegion
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -20,9 +10,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 open Classical in
-
-
-
 
 theorem exists_original_exterior_level_chart
     {E V X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

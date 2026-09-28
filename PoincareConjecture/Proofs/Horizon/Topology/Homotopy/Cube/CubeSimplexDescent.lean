@@ -2,19 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeSimplexCoord
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace Poincare.Topology
-
 
 theorem exists_stdSimplex_map_of_cube_boundary {X : Type u} [TopologicalSpace X]
     (n : Nat)
@@ -52,7 +44,6 @@ theorem exists_stdSimplex_map_of_cube_boundary {X : Type u} [TopologicalSpace X]
   intro z hz
   obtain ⟨t, rfl⟩ := hsurj z
   exact (DFunLike.congr_fun hg t).trans (hf t ((hb t).mp hz))
-
 
 theorem stdSimplex_cube_coordinates_homotopicRel_iff {X : Type u} [TopologicalSpace X]
     (n : Nat)

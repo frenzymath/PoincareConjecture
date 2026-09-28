@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.CompactEquation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -30,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem compact_kernel_evolution_gradient_bound
     (H : ConservativeHeatKernelData g) (hn : 1 ≤ n) (hc : MetricComplete g)
@@ -99,9 +81,6 @@ theorem compact_kernel_evolution_gradient_bound
     nlinarith [Real.sq_sqrt hq, Real.sqrt_nonneg
       (g.inner x (H.connection.gradient u x) (H.connection.gradient u x))]
 
-
-
-
 theorem kernel_evolution_gradient_bound_of_compact_initial_regularity
     (H : ConservativeHeatKernelData g) (hn : 1 ≤ n) (hc : MetricComplete g)
     {K : ℝ} (hK : 0 ≤ K)
@@ -158,9 +137,6 @@ theorem kernel_evolution_gradient_bound_of_compact_initial_regularity
     hug hG hheat hGrep hzero hqc t ⟨ht.1.le, ht.2⟩
   rw [hGeq] at hGs hb
   exact ⟨hGs.of_le (by simp), hb⟩
-
-
-
 
 theorem compact_initial_regularity_of_exhaustion_integral_heat_equation
     [NeZero n]
@@ -219,8 +195,6 @@ theorem compact_initial_regularity_of_exhaustion_integral_heat_equation
       H.connection hc hk hRic S hΩmono hcover hu huc).mono
         (prod_mono Icc_subset_Ici_self subset_rfl)
 
-
-
 theorem kernel_evolution_gradient_bound_of_exhaustion_integral_heat_equation
     [NeZero n]
     (H : ConservativeHeatKernelData g) (hn : 1 ≤ n) (hc : MetricComplete g)
@@ -251,8 +225,6 @@ theorem kernel_evolution_gradient_bound_of_exhaustion_integral_heat_equation
   exact H.kernel_evolution_gradient_bound_of_compact_initial_regularity hn hc hK hsec O
     hf happrox hgrad (H.compact_initial_regularity_of_exhaustion_integral_heat_equation
       hn hc hK hsec S hΩmono hcover hkernel hheat) hF hrep
-
-
 
 theorem compact_initial_regularity_of_exhaustion_kernel
     [NeZero n]
@@ -291,8 +263,6 @@ theorem compact_initial_regularity_of_exhaustion_kernel
   apply h.congr_of_eventuallyEq
   filter_upwards [isOpen_Ioi.mem_nhds ht] with r hr
   simp_rw [hkernel r hr]
-
-
 
 theorem kernel_evolution_gradient_bound_of_exhaustion_kernel
     [NeZero n]

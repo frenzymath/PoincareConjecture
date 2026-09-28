@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.FiniteRelativeCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -22,10 +10,6 @@ namespace PoincareConjecture.M64Uniformization
 variable {E F N : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [TopologicalSpace F] [MetricSpace N] [ChartedSpace F N]
-
-
-
-
 
 theorem scalar_exists_finite_relative_charts (f : E → N) {K O : Set E}
     (hK : IsCompact K) (hO : IsOpen O) (hKO : K ⊆ O) (hf : ContinuousOn f O) :

@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreTranspor
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.morse_rest_seam_middle_images
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

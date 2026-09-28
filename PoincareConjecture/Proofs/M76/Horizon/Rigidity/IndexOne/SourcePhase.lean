@@ -3,15 +3,6 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Topology.Homotopy.Lifting
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,7 +19,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 
-
 noncomputable def sourcePhase (phi : C(H, H)) : C(H, C) :=
   ⟨fun x => (hamiltonOneHierarchyCoordinates (phi x)).2,
     continuous_snd.comp (hamiltonOneHierarchyCoordinates.continuous.comp phi.continuous)⟩
@@ -40,7 +30,6 @@ theorem sourcePhase_eq_on_boundary (phi : C(H, H))
   change (hamiltonOneHierarchyCoordinates (phi x)).2 = _
   rw [hfix]
 
-
 theorem sourcePhase_boundary_surjective (phi : C(H, H))
     (F : (ContinuousMap.id H).HomotopyRel phi B)
     (b : closedBall (0 : V1) 1) (hb : ‖(b : V1)‖ = 1) (c : C) :
@@ -50,9 +39,6 @@ theorem sourcePhase_boundary_surjective (phi : C(H, H))
   refine ⟨x, hx, rfl, ?_⟩
   rw [sourcePhase_eq_on_boundary phi F x hx]
   exact congrArg Prod.snd (hamiltonOneHierarchyCoordinates.apply_symm_apply ((b, 0), c))
-
-
-
 
 theorem exists_sourcePhase_finite_lift
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

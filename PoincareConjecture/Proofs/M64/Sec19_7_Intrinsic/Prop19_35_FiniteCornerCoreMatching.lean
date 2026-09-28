@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapCoreMatching
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCoreMatching
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CoreContactRefinement
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +12,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_refine_core_to_finite_corners_and_bands
     {I J : Type*} [Finite I] [Finite J]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.AreaDensityMeasurable
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.DistanceTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -22,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {K0 K1 K2 : ℝ}
 
-
-
 theorem m65Disk_newMetric_integrable
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {s t : ℝ} (hs : s ∈ Icc a b) (ht : t ∈ Icc a b)
@@ -34,8 +24,6 @@ theorem m65Disk_newMetric_integrable
   exact (D.area_integrable.const_mul (Real.exp ((2 * K2) * |t - s|))).mono_nonneg hmeas
     (Eventually.of_forall (fun _ => Real.sqrt_nonneg _))
     (Eventually.of_forall (m65FlowAreaDensity_scaling F bounds hs ht D.map))
-
-
 
 noncomputable def m65TransportSpanningDisk
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -59,8 +47,6 @@ noncomputable def m65TransportSpanningDisk
       _ = _ := by rw [ENNReal.ofReal_mul (Real.exp_nonneg _), mul_assoc]
   area_integrable := m65Disk_newMetric_integrable bounds hs ht D
   area_nonnegative := integral_nonneg (fun _ => Real.sqrt_nonneg _)
-
-
 
 theorem m65TransportSpanningDisk_area_le
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)

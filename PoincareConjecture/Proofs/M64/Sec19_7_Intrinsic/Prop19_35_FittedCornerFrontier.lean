@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FittedCornerCap
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Affine.Lines
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +9,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_corner_face_frontier_subset
     {gamma : ℝ → AnnulusCoordinates} {T r : ℝ}
@@ -52,10 +37,6 @@ theorem m64Intrinsic_corner_face_frontier_subset
     rw [hfirst t ht, haxis (t * r)]
     refine ⟨t * r, ?_, rfl⟩
     constructor <;> nlinarith [ht.1, ht.2, hr, hrT]
-
-
-
-
 
 theorem m64Intrinsic_corner_face_chord_line
     {H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates}

@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialIntegra
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTests
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -40,22 +27,13 @@ local notation "T" => m64AnnulusRadialFlip
 local notation "v" => m64AnnulusRadialTranslation
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
 
-
-
-
 def lowerReflectedPhase (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) :
     LoopPlane → ℝ := m64AnnulusLowerExtend (A.phase ∘ T) A.phase
-
-
-
 
 def lowerReflectedPhaseColumn
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) (i : Fin 2) :
     LoopPlane → ℝ := m64AnnulusLowerExtend
       (fun p => (if i = 0 then (1 : ℝ) else -1) * A.phaseColumn i (T p)) (A.phaseColumn i)
-
-
-
 
 theorem lower_reflected_phase_memLp
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) :
@@ -83,10 +61,6 @@ private theorem phase_lower_green
   · simpa [hr] using
       A.phase_seam phi hp (fun s _ => by rw [hl, hr])
   · simpa [ht, integral_neg] using A.phase_boundary phi hp
-
-
-
-
 
 theorem lower_reflected_phase_weak
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) (i : Fin 2) :

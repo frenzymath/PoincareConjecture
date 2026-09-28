@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Charts
 import PoincareConjecture.Proofs.M76.Rigidity.MarkedMixedChartStars
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.OriginalDiskStarNeighborhood
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +14,6 @@ attribute [local instance] Classical.propDecidable
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
 
 theorem exists_cooriented_surface_stars_of_domains
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

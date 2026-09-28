@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12

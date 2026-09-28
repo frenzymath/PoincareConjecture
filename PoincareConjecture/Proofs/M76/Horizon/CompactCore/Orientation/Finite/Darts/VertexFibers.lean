@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.DirectedEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.SourceTerminalBallMaps
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.FiniteBallPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -86,8 +78,6 @@ theorem hamiltonZero_third_slabs_separated
   · exact h01
   · exact h10
 
-
-
 theorem HamiltonZeroTerminalBallMapFamily.exists_paired_components
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
     {d : κ → OpenPartialHomeomorph X0 V3}
@@ -145,8 +135,6 @@ theorem HamiltonZeroTerminalBallMapFamily.exists_paired_components
     ?_, hcover, hdis, fun i => (hprops i.1 i.2).2.2.2.2.2⟩
   intro i j hne x hx
   exact ⟨hoverlap i j hne hx, hoverlap j i hne.symm ⟨hx.2, hx.1⟩⟩
-
-
 
 def HamiltonZeroPastedTerminalBalls {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
@@ -231,9 +219,6 @@ theorem HamiltonZeroTerminalBallMapFamily.exists_relative_pasting
     have hiT := interior_mono hPT hi
     rw [hside'] at hiT
     exact hsep side ((geometry.slabs side).1.closed.frontier_subset hxside) hiT
-
-
-
 
 theorem HamiltonZeroSourceBoundaryDiskData.exists_pasted_terminal_balls
     {ι κ E : Type*} [TopologicalSpace E]

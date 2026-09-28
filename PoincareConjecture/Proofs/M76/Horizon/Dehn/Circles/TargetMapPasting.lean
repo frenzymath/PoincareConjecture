@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Dehn
-
-
 
 theorem exists_circle_attachment_map_union
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Basic
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem exists_local_gradientIntegralCurveAt
     {D : LeviCivitaData g} {f : M → ℝ}

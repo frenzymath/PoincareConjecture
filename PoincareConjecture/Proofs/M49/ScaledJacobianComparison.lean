@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M10.ChartDensitySmooth
 import PoincareConjecture.Proofs.M10.GramNormalization
 import PoincareConjecture.Proofs.M10.MetricTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,9 +11,7 @@ universe u v
 
 namespace PoincareConjecture.M49
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem pullbackJacobian_comparison_of_bilinear_error
     {n : ℕ} {M : Type u} {N : Type v}

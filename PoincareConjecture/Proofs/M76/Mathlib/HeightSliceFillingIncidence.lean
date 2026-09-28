@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffinePlaneRectangleIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.HeightBoxGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -18,9 +9,6 @@ namespace HeightBox
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem filling_inter_slice_eq_side
     {f : ((ℝ × ℝ) × ℝ) → E} {r c t : ℝ} (hr : 0 < r)

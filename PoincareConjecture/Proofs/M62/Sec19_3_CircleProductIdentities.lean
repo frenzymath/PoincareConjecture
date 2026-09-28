@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductRicciDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem circleProduct_identities {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : CircleProductData F circumference) :

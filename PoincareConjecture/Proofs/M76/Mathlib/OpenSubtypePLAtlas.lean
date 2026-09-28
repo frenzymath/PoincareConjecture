@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringPLAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_open_restriction
     {D E M ι : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]

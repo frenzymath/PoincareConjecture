@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Frame.Chart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Orientation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem coordinateFrame_positive_at_zero
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

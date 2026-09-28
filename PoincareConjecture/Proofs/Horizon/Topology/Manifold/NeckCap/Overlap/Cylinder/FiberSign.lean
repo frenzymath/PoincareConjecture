@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylinder.FiberConnected
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.AxialSign
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_axial_overlap_fiber_positive_deriv_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

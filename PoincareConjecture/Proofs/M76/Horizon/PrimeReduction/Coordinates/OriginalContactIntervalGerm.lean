@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.Original
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalGerm
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -21,9 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_two_segment_germs_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -48,9 +35,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_two_segment_germs_in
               a ∈ segment ℝ x u ∪ segment ℝ x v := by
   exact h.exists_surface_contact_two_segment_germs_in_chart sS.chart_source_cover hgi hSV hpq hwp
     hwq ht hy Q hQ hyQ
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_two_segment_germs_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -77,9 +61,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_two_segment_germs_of
               a ∈ segment ℝ x u ∪ segment ℝ x v := by
   exact h.exists_surface_contact_two_segment_germs_of_affine_chart sS.chart_source_cover hgi hSV
     hpq hwp hwq ht hy Q hQ A hmap hA
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_interior_two_segment_germs_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

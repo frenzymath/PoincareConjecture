@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMarkedChartMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartMotionMargin
 import PoincareConjecture.Proofs.M76.Wall.CutDiskProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -27,11 +18,6 @@ variable {U E V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.exists_boundary_surface_face_motion
     {s t : Stage e S f r C} (step : Step s t)

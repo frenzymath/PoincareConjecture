@@ -4,16 +4,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ open Set Metric
 namespace Metric
 
 variable {X : Type*} [PseudoMetricSpace X] {x : X}
-
-
 
 theorem closure_ball_eq_closedBall_of_approximate_radial_projection
     (hproject : ∀ R r ε : ℝ, 0 ≤ r → r ≤ R → 0 < ε →
@@ -42,9 +30,6 @@ theorem closure_ball_eq_closedBall_of_approximate_radial_projection
   linarith
 
 variable [ProperSpace X]
-
-
-
 
 theorem continuousOn_sSup_image_closedBall_of_approximate_radial_projection
     (hproject : ∀ R r ε : ℝ, 0 ≤ r → r ≤ R → 0 < ε →
@@ -100,8 +85,6 @@ theorem continuousOn_sSup_image_closedBall_of_approximate_radial_projection
   apply abs_lt.mpr
   change -ε < S s - S r ∧ S s - S r < ε
   constructor <;> linarith
-
-
 
 theorem sSup_image_ball_eq_closedBall_of_approximate_radial_projection
     (hproject : ∀ R r ε : ℝ, 0 ≤ r → r ≤ R → 0 < ε →

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredHomotopyClass
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -28,11 +19,6 @@ local notation "Q" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Stage.exists_moved_marked_disk (st : Stage e S f r C)
     (G : I → st.Carrier ≃ₜ st.Carrier)

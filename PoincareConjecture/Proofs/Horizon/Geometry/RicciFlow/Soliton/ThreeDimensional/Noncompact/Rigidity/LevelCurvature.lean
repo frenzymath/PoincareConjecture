@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Regular
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.PotentialLevels
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -47,7 +36,6 @@ private theorem scalar_add_laplacian_threeDimensional
   simp only [hnorm, mul_one, Finset.sum_const, Finset.card_univ,
     Fintype.card_fin, hdim, nsmul_eq_mul, Nat.cast_ofNat]
   norm_num
-
 
 theorem levelMeanCurvature_eq_soliton_trace
     (S : GradientShrinkingSolitonData 3 M) (x : M)
@@ -83,8 +71,6 @@ theorem levelMeanCurvature_eq_soliton_trace
   congr 1
   linarith [scalar_add_laplacian_threeDimensional S x]
 
-
-
 theorem levelGaussTerm_le_soliton_trace_sq
     (S : GradientShrinkingSolitonData 3 M) (x : M)
     (hQ : 0 < S.connection.levelQ S.potential x) :
@@ -101,9 +87,6 @@ theorem levelGaussTerm_le_soliton_trace_sq
   rw [S.levelMeanCurvature_eq_soliton_trace x hQ, div_pow,
     Real.sq_sqrt hQ.le] at hle
   exact hle
-
-
-
 
 theorem regularLevel_scalarCurvature_le_soliton_trace_sq
     (S : GradientShrinkingSolitonData 3 M)
@@ -133,8 +116,6 @@ theorem regularLevel_scalarCurvature_le_soliton_trace_sq
       ((S.metric.tangentNorm_gradient_pos_iff S.potential
         (openLevelIncl S.potential U c z)).mpr (hreg _ z.1.2))
   exact add_le_add_right (S.levelGaussTerm_le_soliton_trace_sq _ hQ) _
-
-
 
 theorem regularLevel_scalarCurvature_lt_one
     (S : GradientShrinkingSolitonData 3 M)
@@ -179,8 +160,6 @@ theorem regularLevel_scalarCurvature_lt_one
   dsimp only [x, N] at hb hfrac
   linarith
 
-
-
 theorem regularLevel_scalarCurvature_lt_one_of_gradient_sq_gt_one
     (S : GradientShrinkingSolitonData 3 M)
     (hD : S.connection.CurvatureTensorCalculus)
@@ -218,8 +197,6 @@ theorem regularLevel_scalarCurvature_lt_one_of_gradient_sq_gt_one
   rw [hN, mul_one] at hb
   dsimp only [x] at hb
   linarith
-
-
 
 theorem exists_threshold_regularLevel_scalarCurvature_lt_one
     (S : GradientShrinkingSolitonData 3 M)

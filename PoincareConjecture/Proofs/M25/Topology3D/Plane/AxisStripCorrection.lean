@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.AxisDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportedAxisJet
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ThinStripExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_axis_strip_correction
     (F : ℝ → (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

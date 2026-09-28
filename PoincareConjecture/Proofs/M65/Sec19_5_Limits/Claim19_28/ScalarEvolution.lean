@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.CoordinateEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem m65Slope_joint_contDiffOn (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c) :
     ContDiffOn ℝ ∞ (fun z : ℝ × ℝ => m62Slope P c z.2 z.1) (univ ×ˢ Ioo a b) := by
@@ -35,8 +24,6 @@ theorem m65Slope_joint_contDiffOn (P : M62.CircleProductData F circumference)
   exact M62.metric_pairing_contDiffOn P.flow c hc.joint_smooth _ _
     (M62.unitTangent_joint_contMDiff P.flow c hc)
     (hB.comp_contMDiffOn hc.joint_smooth)
-
-
 
 theorem m65Slope_arcSecond_eq (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -60,8 +47,6 @@ theorem m65Slope_arcSecond_eq (P : M62.CircleProductData F circumference)
   field_simp
   ring
 
-
-
 theorem m65Slope_coordinate_evolution (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
     {t : ℝ} (ht : t ∈ Ioo a b) (x : ℝ) :
@@ -72,9 +57,6 @@ theorem m65Slope_coordinate_evolution (P : M62.CircleProductData F circumference
         (m62CurvatureSquared P.flow c t x + m62TangentRicci P.flow c t x) *
           m62Slope P c t x) t := by
   simpa only [m65Slope_arcSecond_eq P c hc ht x] using M62.hasDerivAt_slope P c hc ht x
-
-
-
 
 theorem m65NormalizationCoefficient_product_split
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

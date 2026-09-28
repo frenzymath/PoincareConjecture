@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Projection
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,13 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -75,8 +62,6 @@ private theorem exists_smooth_time_cutoff {ε : Real} (hε : 0 < ε) :
     rw [χ.one_of_mem_closedBall (by
       simpa only [mem_closedBall, Real.dist_eq, sub_zero] using abs_le.mpr ht), one_mul]
 
-
-
 theorem smoothEmbedding_projected_tube_slice
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {h : S2 -> Real} {v : E3} (hv : ‖v‖ = 1)
@@ -129,9 +114,6 @@ theorem smoothEmbedding_projected_tube_slice
     ((Real ∙ v)ᗮ.orthogonalProjectionOnto.contMDiff.comp hg)
     (injective_projection_of_height_eq hv hgheight (hf.isEmbedding.injective.comp hsinj))
     (injective_mfderiv_projection_of_height_eq hv hg hgheight hgder)
-
-
-
 
 theorem exists_smooth_planar_family_of_regular_level_component_of_smooth
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -189,7 +171,6 @@ theorem exists_smooth_planar_family_of_regular_level_component_of_smooth
     rw [hγeq t ht q]
     exact eq_height_smul_add_projection hv
       (fun q : S1 => (hheight (F (q, t))).trans (hlevel q t htε)) q
-
 
 theorem exists_smooth_planar_family_of_regular_level_component
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

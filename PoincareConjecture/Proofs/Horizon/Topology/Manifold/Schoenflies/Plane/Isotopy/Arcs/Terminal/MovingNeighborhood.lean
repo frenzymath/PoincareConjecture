@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Compactness.Compact
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,8 +29,6 @@ private theorem uniform_compact_image_in_open
   refine ⟨hδT ?_, hCV hx⟩
   simpa only [mem_closedBall, Real.dist_eq, sub_zero] using ht
 
-
-
 theorem exists_uniform_moving_image_subset_open
     (Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (hQ : Continuous (fun z : Real × E2 => Q z.1 z.2))
@@ -45,8 +41,6 @@ theorem exists_uniform_moving_image_subset_open
   intro t ht y hy
   obtain ⟨x, hx, rfl⟩ := hy
   exact hδO t ht x hx
-
-
 
 theorem exists_uniform_compact_subset_moving_image
     (Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -61,8 +55,6 @@ theorem exists_uniform_compact_subset_moving_image
   refine ⟨δ, hδ, ?_⟩
   intro t ht x hx
   exact ⟨(Q t).symm x, hδO t ht x hx, (Q t).apply_symm_apply x⟩
-
-
 
 theorem exists_uniform_moving_square_and_compact_containment
     (Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -82,8 +74,6 @@ theorem exists_uniform_moving_square_and_compact_containment
   refine ⟨min δ₁ δ₂, lt_min hδ₁ hδ₂, ?_⟩
   intro t ht
   exact ⟨hforward t (ht.trans (min_le_left _ _)), hbackward t (ht.trans (min_le_right _ _))⟩
-
-
 
 theorem exists_uniform_moving_square_containment
     (Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

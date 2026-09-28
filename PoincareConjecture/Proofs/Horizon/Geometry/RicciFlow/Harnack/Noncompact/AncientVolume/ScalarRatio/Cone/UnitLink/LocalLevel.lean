@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.ConeTopology
 import Mathlib.Topology.OpenPartialHomeomorph.Defs
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -37,8 +27,6 @@ theorem cone_unit_iff_radial_potential_eq (hcomparison : RayComparison p)
     apply NNReal.coe_injective
     change (asymptoticConeRadius hcomparison (F x) : ℝ) = 1
     nlinarith [(asymptoticConeRadius hcomparison (F x)).coe_nonneg]
-
-
 
 def unitLinkLocalLevelHomeomorph (hcomparison : RayComparison p)
     (F : OpenPartialHomeomorph Y (AsymptoticCone p hcomparison)) (f : Y → ℝ)

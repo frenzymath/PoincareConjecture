@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +16,6 @@ private theorem linear_image_convexHull (Q : E →L[ℝ] F) (s : Set E) :
   simpa only [LinearMap.coe_toAffineMap, ContinuousLinearMap.coe_coe] using
     Q.toLinearMap.toAffineMap.image_convexHull s
 
-
-
 theorem linearIndependent_linear_face_image (Q : E →L[ℝ] F) {s : Finset E}
     (hlin : LinearIndependent ℝ ((↑) : s → E))
     (hQ : InjOn Q (Submodule.span ℝ (s : Set E))) :
@@ -37,9 +25,6 @@ theorem linearIndependent_linear_face_image (Q : E →L[ℝ] F) {s : Finset E}
     (by simpa only [image_id, ContinuousLinearMap.coe_coe] using hQ)
   simpa only [LinearIndepOn, Function.comp_def, id_eq, ContinuousLinearMap.coe_coe]
     using hmap.id_image
-
-
-
 
 noncomputable def linearImage (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -69,8 +54,6 @@ noncomputable def linearImage (K : SimplicialComplex ℝ E)
     rintro _ ⟨u, hu, rfl⟩
     exact ⟨⟨u, hu.1, rfl⟩, ⟨u, hu.2, rfl⟩⟩
 
-
-
 theorem linearImage_faces [DecidableEq F]
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (Q : E →L[ℝ] F) (hspan : ∀ s ∈ K.faces, InjOn Q (Submodule.span ℝ (s : Set E)))
@@ -84,8 +67,6 @@ theorem linearImage_faces [DecidableEq F]
   ext x
   simp only [Finset.mem_image]
 
-
-
 theorem linearIndependent_linearImage_face
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (Q : E →L[ℝ] F) (hspan : ∀ s ∈ K.faces, InjOn Q (Submodule.span ℝ (s : Set E)))
@@ -97,8 +78,6 @@ theorem linearIndependent_linearImage_face
   change LinearIndependent ℝ ((↑) : ↥((s.image Q : Finset F) : Set F) → F)
   rw [Finset.coe_image]
   exact linearIndependent_linear_face_image Q (hlin s hs) (hspan s hs)
-
-
 
 theorem linearImage_space
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))

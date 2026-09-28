@@ -2,25 +2,12 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace Poincare
-
-
-
 
 theorem not_isCompact_closure_of_open_height
     {X : Type*} [TopologicalSpace X] {C : Set X} (hC : IsOpen C)

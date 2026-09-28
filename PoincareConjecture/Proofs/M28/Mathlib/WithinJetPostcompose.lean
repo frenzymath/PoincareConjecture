@@ -1,22 +1,10 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem TendstoUniformlyOn.iteratedFDerivWithin_postcompose
     {𝕜 E F G α : Type*} [NontriviallyNormedField 𝕜]

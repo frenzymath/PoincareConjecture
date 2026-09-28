@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularOperations
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import Mathlib.SetTheory.Cardinal.NatCard
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 open Set Geometry Topology
@@ -515,4 +506,3 @@ theorem exists_spanning_band_contact_graph
   exact ⟨G,hG,hGs.trans hnew,hGs.symm ▸ hpres,hdim,hdeg,hGs.symm ▸ hcount⟩
 
 end PoincareConjecture.M76
-

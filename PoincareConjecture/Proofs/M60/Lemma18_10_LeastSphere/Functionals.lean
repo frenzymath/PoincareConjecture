@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import PoincareConjecture.Statements.M60Area
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m60SphereAreaProperties_of_contMDiff
     {n : ℕ} {M : Type u} [TopologicalSpace M]

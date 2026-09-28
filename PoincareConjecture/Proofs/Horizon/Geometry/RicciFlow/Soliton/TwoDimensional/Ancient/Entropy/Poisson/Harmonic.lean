@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.ClassicalEquation
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 theorem exists_eq_const_of_laplacian_eq_zero_compact (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)

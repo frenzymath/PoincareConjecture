@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.TransverseProjectionInverseBound
 import PoincareConjecture.Proofs.M76.Mathlib.VariableProjectionDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +12,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_variableProjection_chart (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)

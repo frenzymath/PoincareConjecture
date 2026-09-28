@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homo
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralConvexSupport
 import Mathlib.Geometry.Manifold.ChartedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,17 +11,8 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
 noncomputable def m64IntrinsicBasePoint : AnnulusCoordinates :=
   intrinsicAnnulusBoundary 1 0
-
-
-
-
 
 theorem m64Intrinsic_exists_exponential_chart_gauss (N : IntrinsicAnnulus) :
     let E := EuclideanSpace ℝ (Fin 2)
@@ -65,10 +43,6 @@ theorem m64Intrinsic_exists_exponential_chart_gauss (N : IntrinsicAnnulus) :
     (RiemannianMetric.exists_exponential_chart_gauss
       (n := 2) (M := AnnulusCoordinates) N.metric
       (intrinsicAnnulusBoundary 1 0))
-
-
-
-
 
 theorem m64Intrinsic_exists_tangentBall_edist_eq (N : IntrinsicAnnulus) :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) AnnulusCoordinates,

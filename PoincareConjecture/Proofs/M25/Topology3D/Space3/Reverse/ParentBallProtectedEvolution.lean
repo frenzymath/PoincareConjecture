@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockSmoothFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_protected_chart_evolution
     (e : OpenPartialHomeomorph (ℝ × E3) (ℝ × E3))

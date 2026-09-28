@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Thm8_1_StableConfiguration
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_1_Prefix
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem configuration_from_producers (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -70,8 +55,6 @@ theorem configuration_from_producers (P : M46Predecessors.{u})
   obtain ⟨source⟩ := stable_set confinement hbudget region positive_propagation
   exact source.volume P p U
 
-
-
 structure ObservedInputs {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
     (rNext cutoff : ℝ) (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) : Prop where
   next_epoch : SurgeryObservationIsNextEpoch p O
@@ -84,12 +67,6 @@ structure ObservedInputs {K : MetricSurgeryConstants} (p : SurgeryParameterPrefi
   overlap : ∀ t ∈ surgeryObservationInterval O ∩ overlapInterval p,
     F.parameters.delta t ≤ cutoff
 
-
-
-
-
-
-
 def CapAvoidanceProducer {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (rNext cutoff rho A eta theta : ℝ) : Prop :=
   ∀ (F : SurgeryFlowData.{u}) (O : SurgeryObservation F)
@@ -101,10 +78,6 @@ def CapAvoidanceProducer {K : MetricSurgeryConstants}
         D.time (surgeryEpochStart (p.i - 1))
         ((H.spacetime.geometry.sliceIdentification D.time).identification H.center).val,
         C.barrier = actionBudget p
-
-
-
-
 
 def MinimizingRegionProducer {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (rNext cutoff rho : ℝ) : Prop :=
@@ -120,10 +93,6 @@ def MinimizingRegionProducer {K : MetricSurgeryConstants}
           D.time (surgeryEpochStart (p.i - 1))
           ((H.spacetime.geometry.sliceIdentification D.time).identification H.center).val C)
 
-
-
-
-
 def StableSourceProducer {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (taubar l0 V : ℝ) : Prop :=
   ∀ (rNext cutoff : ℝ) (F : SurgeryFlowData.{u}) (O : SurgeryObservation F),
@@ -138,8 +107,6 @@ def StableSourceProducer {K : MetricSurgeryConstants}
           D.time (surgeryEpochStart (p.i - 1))
           ((H.spacetime.geometry.sliceIdentification D.time).identification H.center).val C →
         PositiveAncestorExclusion H → Nonempty (StableSource H taubar l0 V)
-
-
 
 theorem volume_of_stableSourceProducer (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -162,9 +129,6 @@ theorem volume_of_stableSourceProducer (P : M46Predecessors.{u})
   obtain ⟨Q⟩ := produce rNext cutoff F O inputs D H time_new C budget region positive
   exact Q.volume P p U
 
-
-
-
 theorem volume_of_reviewed_producers (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
     {taubar l0 V : ℝ} (U : M15GeneralizedUniformData.{u} 3 taubar l0 V)
@@ -185,9 +149,6 @@ theorem volume_of_reviewed_producers (P : M46Predecessors.{u})
   exact volume_of_stableSourceProducer P p U stable rNext cutoff inputs
     D H time_new C budget region positive
 
-
-
-
 def TestConclusion {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
     {taubar l0 V : ℝ} (U : M15GeneralizedUniformData.{u} 3 taubar l0 V)
     (rNext rho : ℝ) {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -201,10 +162,6 @@ def TestConclusion {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
         calibratedMetricVolume (F.metric D.time)
           ((F.metric D.time).ball D.center D.radius)) ∨
     ∃ H : HalfRadiusHistory D, Nonempty (StableSource H taubar l0 V)
-
-
-
-
 
 theorem induction_of_uniform_sources (P : M46Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

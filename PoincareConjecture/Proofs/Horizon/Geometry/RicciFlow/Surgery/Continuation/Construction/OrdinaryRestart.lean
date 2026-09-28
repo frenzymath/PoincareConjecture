@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Regularity
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,7 +14,6 @@ namespace PoincareConjecture.Surgery.OrdinaryRestart
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 structure Solution (g₀ : RiemannianMetric n M) where
   time : ℝ
   time_pos : 0 < time
@@ -33,7 +22,6 @@ structure Solution (g₀ : RiemannianMetric n M) where
 
 variable {g₀ : RiemannianMetric n M}
 
-
 theorem Solution.metric_eq (hunique : RicciFlowUniqueness n M)
     (A B : Solution g₀) {t : ℝ} (htA : t ∈ Ico 0 A.time)
     (htB : t ∈ Ico 0 B.time) : A.flow.metric t = B.flow.metric t := by
@@ -41,10 +29,8 @@ theorem Solution.metric_eq (hunique : RicciFlowUniqueness n M)
     ⟨⟨le_rfl, B.time_pos⟩, fun _ h => h.1⟩ (A.initial.trans B.initial.symm)
     ⟨htA, htB⟩
 
-
 noncomputable def lifetime (g₀ : RiemannianMetric n M) : ℝ≥0∞ :=
   ⨆ A : Solution g₀, ENNReal.ofReal A.time
-
 
 theorem exists_solution_at {t : ℝ} (ht : 0 ≤ t)
     (h : ENNReal.ofReal t < lifetime g₀) :
@@ -52,21 +38,17 @@ theorem exists_solution_at {t : ℝ} (ht : 0 ≤ t)
   obtain ⟨A, hA⟩ := (lt_iSup_iff).mp h
   exact ⟨A, (ENNReal.ofReal_lt_ofReal_iff_of_nonneg ht).mp hA⟩
 
-
 theorem solution_time_lt (A : Solution g₀) {t : ℝ} (ht : t < A.time) :
     ENNReal.ofReal t < lifetime g₀ := by
   exact ((ENNReal.ofReal_lt_ofReal_iff A.time_pos).mpr ht).trans_le
     (le_iSup (fun B : Solution g₀ => ENNReal.ofReal B.time) A)
 
-
 theorem lifetime_pos (A : Solution g₀) : 0 < lifetime g₀ := by
   simpa only [ENNReal.ofReal_zero] using solution_time_lt A A.time_pos
-
 
 noncomputable def solutionAt (A : Solution g₀) (t : ℝ) : Solution g₀ :=
   if h : 0 ≤ t ∧ ENNReal.ofReal t < lifetime g₀ then
     (exists_solution_at h.1 h.2).choose else A
-
 
 theorem solutionAt_time (A : Solution g₀) {t : ℝ}
     (ht : 0 ≤ t ∧ ENNReal.ofReal t < lifetime g₀) :
@@ -74,20 +56,17 @@ theorem solutionAt_time (A : Solution g₀) {t : ℝ}
   simp only [solutionAt, dif_pos ht]
   exact (exists_solution_at ht.1 ht.2).choose_spec
 
-
 theorem selected_metric_eq (hunique : RicciFlowUniqueness n M)
     (A B : Solution g₀) {t : ℝ} (ht : t ∈ Ico 0 B.time) :
     (solutionAt A t).flow.metric t = B.flow.metric t := by
   exact (solutionAt A t).metric_eq hunique B
     ⟨ht.1, solutionAt_time A ⟨ht.1, solution_time_lt B ht.2⟩⟩ ht
 
-
 theorem solution_interval_mem (B : Solution g₀) {t : ℝ} (ht : t ∈ Ico 0 B.time) :
     Ico 0 B.time ∈ 𝓝[{s : ℝ | 0 ≤ s ∧ ENNReal.ofReal s < lifetime g₀}] t := by
   filter_upwards [self_mem_nhdsWithin,
     mem_nhdsWithin_of_mem_nhds (isOpen_Iio.mem_nhds ht.2)] with s hs hst
   exact ⟨hs.1, hst⟩
-
 
 noncomputable def maximalFlow (hunique : RicciFlowUniqueness n M)
     (A : Solution g₀) :
@@ -125,15 +104,12 @@ noncomputable def maximalFlow (hunique : RicciFlowUniqueness n M)
     filter_upwards [solution_interval_mem B htB] with s hs
     rw [selected_metric_eq hunique A B hs]
 
-
 theorem maximalFlow_initial (hunique : RicciFlowUniqueness n M) (A : Solution g₀) :
     (maximalFlow hunique A).metric 0 = g₀ :=
   (solutionAt A 0).initial
 
-
 theorem time_le_lifetime (A : Solution g₀) : ENNReal.ofReal A.time ≤ lifetime g₀ :=
   le_iSup (fun B : Solution g₀ => ENNReal.ofReal B.time) A
-
 
 theorem finite_domain (hfinite : lifetime g₀ ≠ ⊤) :
     {t : ℝ | 0 ≤ t ∧ ENNReal.ofReal t < lifetime g₀} =
@@ -144,7 +120,6 @@ theorem finite_domain (hfinite : lifetime g₀ ≠ ⊤) :
     exact ⟨ht, (ENNReal.ofReal_lt_iff_lt_toReal ht hfinite).mp he⟩
   · rintro ⟨ht, he⟩
     exact ⟨ht, (ENNReal.ofReal_lt_iff_lt_toReal ht hfinite).mpr he⟩
-
 
 noncomputable def finiteFlow (hunique : RicciFlowUniqueness n M)
     (A : Solution g₀) (hfinite : lifetime g₀ ≠ ⊤) :
@@ -161,7 +136,6 @@ noncomputable def finiteFlow (hunique : RicciFlowUniqueness n M)
   equation := by
     rw [← finite_domain hfinite]
     exact (maximalFlow hunique A).equation
-
 
 theorem finite_curvature_unbounded (hlocal : RicciFlowLocalTheory n M)
     (A : Solution g₀) (hfinite : lifetime g₀ ≠ ⊤) (C : ℝ) :
@@ -181,19 +155,16 @@ theorem finite_curvature_unbounded (hlocal : RicciFlowLocalTheory n M)
     exact (ENNReal.ofReal_lt_ofReal_iff (hpos.trans hb)).mpr hb
   exact (not_lt_of_ge hle) hlt
 
-
 theorem lifetime_eq_top_of_isEmpty [IsEmpty M]
     (hlocal : RicciFlowLocalTheory n M) (A : Solution g₀) : lifetime g₀ = ⊤ := by
   by_contra hfinite
   obtain ⟨_, _, x, _⟩ := finite_curvature_unbounded hlocal A hfinite 0
   exact isEmptyElim x
 
-
 theorem nonempty_solution (hlocal : RicciFlowLocalTheory n M)
     (g₀ : RiemannianMetric n M) : Nonempty (Solution g₀) := by
   obtain ⟨b, hb, F, hF⟩ := hlocal.1 g₀
   exact ⟨⟨b, hb, F, hF⟩⟩
-
 
 theorem curvature_bound_on_compact [CompactSpace M] {J K : Set ℝ}
     (F : RicciFlow n M J) (hK : IsCompact K) (hKJ : K ⊆ J) :
@@ -214,7 +185,6 @@ theorem curvature_bound_on_compact [CompactSpace M] {J K : Set ℝ}
     (hK.prod (isCompact_univ : IsCompact (univ : Set M))).bddAbove_image hN
   exact ⟨C, fun t ht x => hC ⟨(t, x), ⟨ht, mem_univ _⟩, rfl⟩⟩
 
-
 theorem finite_curvature_unbounded_tail [CompactSpace M]
     (hlocal : RicciFlowLocalTheory n M) (A : Solution g₀)
     (hfinite : lifetime g₀ ≠ ⊤) (C s : ℝ) (hs : s < (lifetime g₀).toReal) :
@@ -230,7 +200,6 @@ theorem finite_curvature_unbounded_tail [CompactSpace M]
   refine ⟨t, ⟨?_, ht.2⟩, x, (le_max_left C K).trans_lt hx⟩
   by_contra h
   exact (not_lt_of_ge (hK t ⟨ht.1, le_of_not_gt h⟩ x)) ((le_max_right C K).trans_lt hx)
-
 
 theorem exists_maximal_flow [CompactSpace M] (P : RicciFlowLocalTheory n M)
     (g₀ : RiemannianMetric n M) :

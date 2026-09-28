@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquarePullback
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include p in
 
-
 theorem squarePath_parameter_mem {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     s ^ 2 ∈ Icc τ₁ τ₂ := by
   have hsnonneg := (Real.sqrt_nonneg τ₁).trans hs.1
@@ -38,22 +28,16 @@ theorem squarePath_parameter_mem {s : ℝ} (hs : s ∈ M14SqrtParameterInterval 
   · simpa only [Real.sq_sqrt (p.tau_nonneg.trans p.tau_lt.le)] using
       (sq_le_sq₀ hsnonneg (Real.sqrt_nonneg τ₂)).mpr hs.2
 
-
-
 theorem squarePath_continuousOn : ContinuousOn (fun s => p.curve (s ^ 2))
     (M14SqrtParameterInterval τ₁ τ₂) :=
   p.curve_continuous.comp (continuous_id.pow 2).continuousOn
     (fun _ hs => squarePath_parameter_mem p hs)
-
-
 
 theorem squarePath_contMDiffOn : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) 1
     (fun s => p.curve (s ^ 2)) (Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) :=
   p.curve_regular.comp ((contDiff_id.pow 2).contMDiff.contMDiffOn)
     (fun _ hs => ⟨Real.lt_sq_of_sqrt_lt hs.1,
       (Real.lt_sqrt ((Real.sqrt_nonneg τ₁).trans_lt hs.1).le).mp hs.2⟩)
-
-
 
 theorem squarePath_projectedVelocity {s : ℝ}
     (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) :
@@ -81,8 +65,6 @@ theorem squarePath_projectedVelocity {s : ℝ}
   rw [hchain, map_smul]
   exact congrArg (fun v => (2 * s) • v) (backwardPath_velocity_eq_projected p hτ).symm
 
-
-
 theorem backwardPath_weightedKinetic_intervalIntegrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     IntervalIntegrable (fun t => Real.sqrt t * G.spacetime.horizontalMetric.inner (p.curve t)
@@ -97,8 +79,6 @@ theorem backwardPath_weightedKinetic_intervalIntegrable
   intro t _
   simp only [M14RawLIntegrand]
   ring
-
-
 
 theorem squarePath_kinetic_intervalIntegrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) :

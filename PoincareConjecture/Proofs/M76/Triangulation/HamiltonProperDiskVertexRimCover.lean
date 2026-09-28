@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBoundaryEdges
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
 
 theorem HamiltonProperDiskTriangulation.incident_edge_subset_vertex_rim
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)
@@ -35,8 +25,6 @@ theorem HamiltonProperDiskTriangulation.incident_edge_subset_vertex_rim
   have hsub := T.dualRegion_subset_rim_of_ssubset p.property hs
     ((Finset.singleton_subset_iff.mpr hps).ssubset_of_ne hne)
   exact ⟨fun _ hx => ⟨hsub hx.1, hx.2⟩, hsub⟩
-
-
 
 theorem HamiltonProperDiskTriangulation.vertex_outer_base_eq_iUnion_edges
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
@@ -105,17 +93,12 @@ theorem HamiltonProperDiskTriangulation.vertex_outer_base_eq_iUnion_edges
     exact ⟨(T.diskVertexBlock_eq_inter p).symm.subset ⟨hxN, hx.2⟩,
       T.edge_dual_subset_vertex_link p hs hcard hps hx.1.1⟩
 
-
-
-
 theorem HamiltonProperDiskTriangulation.vertex_base_rim_eq_edges_union_frontier
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
     T.dualRegionRim {(p : E)} ∩ D =
       (⋃ s ∈ T.disk.faces, ⋃ (_ : s.card = 2), ⋃ (_ : (p : E) ∈ s), T.diskDualBase s) ∪
         (T.diskVertexBlock p ∩ frontier R) := by
   rw [T.vertex_base_rim_eq, T.vertex_outer_base_eq_iUnion_edges]
-
-
 
 theorem HamiltonProperDiskTriangulation.nonboundary_base_contact_empty
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapDistance
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem image_ball_subset_of_tangentNorm_upper
     {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

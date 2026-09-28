@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLGraphCover
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPLProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -20,10 +10,6 @@ namespace OpenPartialHomeomorph
 variable {M E : Type*} [TopologicalSpace M] [T2Space M]
   [CompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_locallyPL_closedEmbedding_with_core_coordinates
     {ι : Type*} [Fintype ι] (e : ι → OpenPartialHomeomorph M E)
@@ -54,10 +40,6 @@ theorem exists_locallyPL_closedEmbedding_with_core_coordinates
   exact LocallyPiecewiseAffineOn.pi (e i).open_target
     (fun j => hfPL j (e i) (hcompat i j))
 
-
-
-
-
 theorem exists_locallyPL_closedEmbedding_of_compact_cores
     {ι : Type*} [Fintype ι] (e : ι → OpenPartialHomeomorph M E)
     (Q : ι → Set M)
@@ -77,10 +59,6 @@ namespace ChartedSpace
 variable {M E : Type*} [TopologicalSpace M] [T2Space M]
   [CompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [ChartedSpace E M]
-
-
-
-
 
 theorem exists_finite_locallyPL_embedding_with_chart_projections
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening
@@ -107,9 +85,6 @@ theorem exists_finite_locallyPL_embedding_with_chart_projections
     fun i => interior_subset.trans (hQs i), hcover, ?_⟩
   intro i x hx
   exact congrArg Prod.snd (hFQ i (interior_subset hx))
-
-
-
 
 theorem exists_finite_locallyPL_embedding
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionS
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.AlternateResolutionSources
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -25,8 +15,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
-
-
 
 theorem exists_finitePL_source_copy_comp
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -47,7 +35,6 @@ theorem exists_finitePL_source_copy_comp
   change J (f x) = j _
   rw [← hfn x]
   exact hJval ⟨n x, hUV (n x).property⟩
-
 
 theorem UpperResolutionSources.exists_finitePL_source_extensions
     {EA EC X : Type*}
@@ -73,7 +60,6 @@ theorem UpperResolutionSources.exists_finitePL_source_extensions
   obtain ⟨jC, hjC, hjCval⟩ :=
     exists_finitePL_source_copy_comp s.nC s.pl_nC subset_union_right hbase
   exact ⟨jA, jS, jC, hjA, hjS, hjC, hjAval, hjSval, hjCval⟩
-
 
 theorem AlternateResolutionSources.exists_finitePL_source_extensions
     {EA EM EC X : Type*}
@@ -113,8 +99,6 @@ theorem AlternateResolutionSources.exists_finitePL_source_extensions
   exact ⟨jA, jL, jM, jR, jC, hjA, hjL, hjM, hjR, hjC,
     hjAval, hjLval, hjMval, hjRval, hjCval⟩
 
-
-
 theorem source_copy_image_ballPair
     {E F W : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -138,8 +122,6 @@ theorem source_copy_image_ballPair
   rw [← himage hUS, ← himage (hU.1.trans hUS)]
   exact hU.image_of_subset hJ hUS hinj
 
-
-
 theorem UpperResolutionSources.retained_ballPair_images
     {EA EC X : Type*}
     [NormedAddCommGroup EA] [NormedSpace ℝ EA] [FiniteDimensional ℝ EA]
@@ -159,8 +141,6 @@ theorem UpperResolutionSources.retained_ballPair_images
     s.embeddings.1.injective hU hUS,
     fun hU hUS ↦ source_copy_image_ballPair ⟨jC, hjC, hCval⟩
       s.embeddings.2.2.injective hU hUS⟩
-
-
 
 theorem AlternateResolutionSources.retained_ballPair_images
     {EA EM EC X : Type*}

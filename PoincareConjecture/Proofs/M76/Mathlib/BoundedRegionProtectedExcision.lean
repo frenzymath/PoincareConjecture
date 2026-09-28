@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalExcision
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBoundaryCollar
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionCylinderProtection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +10,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
-
-
 
 theorem IsFinitePLBallPair.excision_of_spherical_balls_in_top_face
     {B O s I b c d q : Set (X × ℝ)} {D : Set X}

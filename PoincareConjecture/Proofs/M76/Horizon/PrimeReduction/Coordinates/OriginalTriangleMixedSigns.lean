@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.PlanePai
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalTriangleEdgeGerm
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.PlaneHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module Filter
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "W3" => ((ℝ × ℝ) × ℝ)
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_mixed_signs_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalM30Map
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundCoefficientJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem terminalCommonInterval_m30_terminal_coefficients
     (n : ℕ) (h0 : (0 : ℝ) ∈ Icc (-G.exhaustion.time n) 0)
@@ -52,8 +41,6 @@ theorem terminalCommonInterval_m30_terminal_coefficients
       ext v w
       rfl
     _ = _ := hcoeff
-
-
 
 theorem terminalCommonInterval_m30_terminal_coefficient_jets
     (P : M47Predecessors.{u}) (q : G.limit.sliceCarrier.carrier)

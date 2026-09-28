@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusBoundaryC1Transfer
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
-
 
 theorem m64AnnulusRadialCompletion_contMDiffOn
     (f : LoopPlane → M) (c0 c1 : ℝ → M)

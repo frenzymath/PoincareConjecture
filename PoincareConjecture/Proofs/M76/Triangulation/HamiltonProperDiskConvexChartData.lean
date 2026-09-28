@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V" => (V2 × ℝ)
 local notation "Cube" => closedBall (0 : V2) 1
 
-
-
 noncomputable def diskChartCoordinates : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] V :=
   ((ContinuousLinearEquiv.finTwoArrow ℝ ℝ).symm.prodCongr
     (ContinuousLinearEquiv.refl ℝ ℝ)).toContinuousAffineEquiv
@@ -31,11 +20,6 @@ noncomputable def diskChartCoordinates : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] V :=
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_convex_chart_restrictions
     (T : HamiltonProperDiskTriangulation R D b) (hb : b.IsFinitePL)

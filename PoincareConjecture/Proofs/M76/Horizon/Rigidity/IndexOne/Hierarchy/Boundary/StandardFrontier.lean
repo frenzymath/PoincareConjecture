@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.StandardAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.Mathlib.ShiftedCircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -25,7 +16,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
 
 noncomputable def standardAmbientCoordinates : X ≃ₜ ((V1 × C) × C) := by
   let q := hamiltonLowerLatticePiEquiv (Fin 2)
@@ -91,8 +81,6 @@ theorem standard_sourceSurface_eq_coordinate_preimage (theta : C) :
   · intro hx
     let xR : R := ⟨x, hx.1.1, mem_univ _⟩
     exact (mem_sourceSurface_iff (ContinuousMap.id H) theta xR).mpr hx.2
-
-
 
 theorem frontier_standard_sourceSlab {c a b : ℝ}
     (ha : c < a) (hab : a ≤ b) (hb : b < c + p) :

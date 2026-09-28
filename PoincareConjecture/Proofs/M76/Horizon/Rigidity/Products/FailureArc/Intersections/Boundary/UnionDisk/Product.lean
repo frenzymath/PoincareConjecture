@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSmallDiskProduct
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

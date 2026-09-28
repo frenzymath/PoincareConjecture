@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedComplementHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem mem_both_height_closures_of_ordinary_terminal_bands
     {S s s' T : Set E} (A : E →ᵃ[ℝ] ℝ) {t β : ℝ}

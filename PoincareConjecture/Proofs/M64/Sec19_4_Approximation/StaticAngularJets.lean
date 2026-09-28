@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependenceAngularJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Hessian.Tensor
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem m64_continuous_hessian_on_tangent_field
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -51,10 +37,6 @@ theorem m64_continuous_hessian_on_tangent_field
   have hi := hcv.inner_bundle hV
   exact hi.congr (fun z => (D.hessian_eq_inner_connection_gradient (hf (gamma z))
     (V z) (V z)).symm)
-
-
-
-
 
 theorem m64_continuous_angular_jets_of_embedded_jets
     (D : LeviCivitaData g)

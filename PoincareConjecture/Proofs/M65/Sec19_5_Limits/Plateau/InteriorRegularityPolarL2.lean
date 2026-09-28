@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarMeasure
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M65Interior
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 def polarPullbackL2 (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε) :
     Lp E 2 (volume : Measure LoopPlane) →L[ℝ]
       Lp E 2 ((volume.restrict (Icc ε R)).prod (volume.restrict (Icc (-Real.pi) Real.pi))) :=
@@ -31,8 +19,6 @@ def polarPullbackL2 (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε) :
     (polarPlane_measurePreserving x).measurable.aemeasurable
     (ENNReal.inv_ne_top.mpr (ne_of_gt (ENNReal.ofReal_pos.mpr hε)))
     (polarPlane_map_strip_le x hε)
-
-
 
 theorem polarPullbackL2_ae (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε)
     (u : Lp E 2 (volume : Measure LoopPlane)) :
@@ -82,9 +68,6 @@ private theorem angularMultiplierL2_ae {ε : ℝ} (R : ℝ) (hε : 0 < ε) (i : 
         fun p => angularCoefficient i p * u p := by
   exact Lp.coefficientL2_ae _ _ _ _ u
 
-
-
-
 def polarAngularL2 (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε) :
     (Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane)) →L[ℝ]
       Lp ℝ 2 ((volume.restrict (Icc ε R)).prod (volume.restrict (Icc (-Real.pi) Real.pi))) :=
@@ -92,9 +75,6 @@ def polarAngularL2 (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε) :
       (ContinuousLinearMap.proj 0) +
     ((angularMultiplierL2 R hε 1).comp (polarPullbackL2 x R hε)).comp
       (ContinuousLinearMap.proj 1)
-
-
-
 
 theorem polarAngularL2_ae (x : LoopPlane) {ε : ℝ} (R : ℝ) (hε : 0 < ε)
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane)) :

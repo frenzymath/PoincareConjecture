@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Kato
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Powers
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem IsSmoothCovariantTensor.scalar_mul {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     {φ : M → ℝ} (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ) :
@@ -35,7 +27,6 @@ theorem IsSmoothCovariantTensor.scalar_mul {k : ℕ}
     exact hφ.contMDiffOn.mul (hT.2 U hU X hX)
 
 namespace LeviCivitaData
-
 
 theorem covariantTensorDerivative_scalar_mul (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
@@ -50,7 +41,6 @@ theorem covariantTensorDerivative_scalar_mul (D : LeviCivitaData g) {k : ℕ}
   simp only [covariantTensorDerivative, hd, add_apply, smul_apply, smul_eq_mul,
     FiberBundle.extend_apply_self, ← Finset.mul_sum]
   ring
-
 
 theorem tensorPairingThree_derivative_scalar_mul_cross (D : LeviCivitaData g)
     (F : CovariantTensorEvaluation n M 3)
@@ -82,7 +72,6 @@ theorem tensorPairingThree_derivative_scalar_mul_cross (D : LeviCivitaData g)
     RiemannianMetric.tensorPairingThree, RiemannianMetric.tensorPairingCovector,
     Matrix.cons_val_zero, e]
 
-
 theorem tensorPairingThree_derivative_scalar_mul (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)
     {φ : M → ℝ} {x : M} (hφ : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) φ x) :
@@ -105,7 +94,6 @@ theorem tensorPairingThree_derivative_scalar_mul (D : LeviCivitaData g)
     ring
   simp_rw [hterm]
   rw [← Finset.mul_sum, D.sum_mvfderiv_mul_eq_inner_gradient]
-
 
 theorem tensorPairingThree_derivative_regularized_power_cross (D : LeviCivitaData g)
     (F : CovariantTensorEvaluation n M 3)
@@ -151,7 +139,6 @@ theorem tensorPairingThree_derivative_regularized_power_cross (D : LeviCivitaDat
   simp_rw [hφder, add_mul, Finset.sum_add_distrib]
   simp only [mul_assoc, ← Finset.mul_sum, φ, w]
   ring
-
 
 theorem tensorPairingThree_derivative_regularized_power (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)

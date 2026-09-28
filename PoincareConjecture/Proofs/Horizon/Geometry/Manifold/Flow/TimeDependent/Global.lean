@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Uniform
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +13,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
-
-
 
 theorem exists_smooth_local_timeDependentFlow_on_interval
     {J : Set ℝ} (hJ : IsOpen J)
@@ -185,8 +177,6 @@ private theorem exists_Ioo_containing_pair {J : Set ℝ} (hJ : IsOpen J)
     ⟨ha.trans_le (min_le_right _ _), (le_max_right _ _).trans_lt hb⟩,
     hcJ.ordConnected.out haJ hbJ⟩
 
-
-
 theorem exists_smooth_timeDependentFlow_from_anchor_of_compact_confinement
     {J : Set ℝ} (hJ : IsOpen J) (hcJ : Convex ℝ J)
     (hX : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) ((𝓡 n).prod (𝓡 n)) ∞
@@ -247,9 +237,6 @@ theorem exists_smooth_timeDependentFlow_from_anchor_of_compact_confinement
     have heval : Φ (t, x) = Ψ ⟨t, ht⟩ x (t, x) := he _ _ ⟨hta _, hxV _ _⟩
     apply (((hΨ ⟨t, ht⟩ x).orbit x (hxV _ _) t (hta _)).congr_of_eventuallyEq hev).congr_mfderiv
     rw [heval]
-
-
-
 
 theorem exists_smooth_global_timeDependentFlow_of_compact_confinement
     {J : Set ℝ} (hJ : IsOpen J) (hcJ : Convex ℝ J)

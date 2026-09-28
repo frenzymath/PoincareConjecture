@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ variable {ι E F G H : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
 
 def HasUniformJetBoundsAt (n : ℕ) (f : ι → E → F) (p : ι → E) : Prop :=
   ∀ m ≤ n, ∃ C : ℝ, ∀ i, ‖iteratedFDeriv ℝ m (f i) (p i)‖ ≤ C

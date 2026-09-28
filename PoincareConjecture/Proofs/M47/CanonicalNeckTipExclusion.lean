@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckTipIsotropy
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNativeBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
 
 theorem standardNeck_tip_not_mem
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)

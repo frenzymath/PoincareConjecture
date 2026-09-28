@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Complex.Conformal
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M60
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem differentiableAt_complex_of_plane_cauchyRiemann
     {a b : E → ℝ} {z : ℂ}

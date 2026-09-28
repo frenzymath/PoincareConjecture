@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M46NoncollapseInduction
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,11 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem SurgeryNoncollapsedOn.toIoc
     {F : SurgeryFlowData.{u}} {J : Set ℝ} {kappa : ℝ}
@@ -72,10 +59,6 @@ theorem SurgeryNoncollapsedOn.testedVolumeOn
   intro t ht htF x hx r hr hre e hzero hcurv
   exact h t ht htF x hx.1 r hr hre e hzero hcurv
 
-
-
-
-
 theorem SurgeryNoncollapsedOn.toAssumptionOn
     {F : SurgeryFlowData.{u}} {J : Set ℝ} {kappa : ℝ}
     (h : SurgeryNoncollapsedOn F J kappa)
@@ -92,8 +75,6 @@ theorem SurgeryPrefixControls.oldTestedVolumeControls
     OldTestedVolumeControls p F O := by
   exact (h.noncollapsed ⟨p.i, Nat.lt_succ_self _⟩ le_rfl).testedVolumeOn
     (p.r ⟨p.i, Nat.lt_succ_self _⟩) 16
-
-
 
 theorem SurgeryNoncollapseExtension.testedVolume
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -138,9 +119,6 @@ theorem SurgeryNoncollapseExtension.testedVolume_maximal
       Q.kappaNew rNext 16 :=
   Q.testedVolume rNext hr hrle F O hmax.1 hprefix hadmissible hpinched
     terminal_policy scales canonical overlap
-
-
-
 
 theorem SurgeryNoncollapseExtension.testedVolume_maximal_domain
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

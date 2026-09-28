@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusLogRegularization
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimumHarmonic
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.TargetChartEstimate
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -71,10 +59,6 @@ private theorem modulus_sectional_sqrt_scale
     _ = _ := by rw [hprod]; simp only [one_mul]; rfl
 
 variable [T2Space M] [CompactSpace M] {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64Annulus_modulus_log_energy_laplacian_lower_bound
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

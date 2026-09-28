@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.FamilyNoL3CocoreStep
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -100,4 +94,3 @@ theorem exists_family_noL3_cocore_free
       · exact Or.inr hx
 
 end PoincareConjecture.M76
-

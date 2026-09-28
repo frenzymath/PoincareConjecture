@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem scaled_terminal_curvatureTensorNorm (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (x : ((S.flow k).slice (S.base k).1).carrier) :
@@ -39,8 +27,6 @@ theorem scaled_terminal_curvatureTensorNorm (S : GeneralizedBlowupSequence.{u})
       (S.scale k) (S.base_scalar_pos k))
     ((S.flow k).connection (S.base k).1) _ x
 
-
-
 theorem terminal_curvature_le_of_controlledCylinder
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T B eta : ℝ}
     (E : ControlledBlowupCylinder S k A T B eta) (hT : 0 ≤ T)
@@ -54,9 +40,6 @@ theorem terminal_curvature_le_of_controlledCylinder
   have hbound := E.curvature_bound 0 hzero x hx
   rw [E.zero_identity hzero x hx] at hbound
   exact (le_abs_self _).trans hbound
-
-
-
 
 theorem eventually_terminal_curvatureTensorNorm_le
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

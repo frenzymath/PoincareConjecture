@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPairCoreCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckFrontierOrientationPair
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFrontierBuffers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,9 +26,6 @@ private theorem core_point_of_neck_choice
   rcases hchoice with hQ | hQ <;>
     simpa only [hQ, reversed_carrier, reversed_coordinate_inverse, reversed_epsilon,
       abs_neg] using h
-
-
-
 
 theorem exists_source_neck_core_buffer_accuracy (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

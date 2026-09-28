@@ -3,24 +3,12 @@ import Mathlib.Topology.UniformSpace.UniformConvergence
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare
-
-
-
 
 theorem uniformly_close_on_moving_initial_intervals
     {X Y : Type*} [PseudoMetricSpace X] [PseudoMetricSpace Y]

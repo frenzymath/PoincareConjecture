@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [T3Space M] [T2Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem terminalCommonInterval_buffered_distance
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

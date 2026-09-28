@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
 
 def variationPathBetween (V : M14LVariationData G p R) {u : ℝ}
     (hu : u ∈ V.parameterDomain) {x' y' : G.Point}

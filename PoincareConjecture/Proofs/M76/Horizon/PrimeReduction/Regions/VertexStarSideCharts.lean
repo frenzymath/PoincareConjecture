@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.EmbeddedHalfspaceStarBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_closedStar_side_chart
     (K P : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hPK : P ≤ K)

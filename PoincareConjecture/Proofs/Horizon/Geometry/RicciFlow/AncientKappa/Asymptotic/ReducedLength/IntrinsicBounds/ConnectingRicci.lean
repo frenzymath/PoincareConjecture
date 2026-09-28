@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

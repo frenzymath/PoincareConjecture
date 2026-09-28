@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarLaplacianJet
 import PoincareConjecture.Proofs.M34.Standard.RicciNormJet
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +13,10 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def scalarEvolutionJet (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 4) : ℝ :=
   scalarLaplacianJet n J + 2 * ricciNormSquaredTwoJet
     (twoJetProjection n (baseProjection 2 2 J))
-
-
 
 theorem continuousOn_scalarEvolutionJet (n : ℕ) :
     ContinuousOn (scalarEvolutionJet n) (curvatureJetDomain n 2) := by
@@ -46,8 +32,6 @@ theorem continuousOn_scalarEvolutionJet (n : ℕ) :
     (continuousAt_ricciNormSquaredTwoJet
       (J := twoJetProjection n (baseProjection 2 2 J)) hJ).comp_of_eq hK rfl
   exact hL.add (hR.const_mul 2)
-
-
 
 theorem scalarEvolutionJet_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

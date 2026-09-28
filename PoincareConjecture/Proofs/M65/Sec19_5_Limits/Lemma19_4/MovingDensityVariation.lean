@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DensityVariation
 import PoincareConjecture.Proofs.M62.Sec19_1_MetricVariation
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b))
-
-
-
 
 noncomputable def m65PlaneMotionDensity (u : ℝ → LoopPlane → M)
     (t : ℝ) (z : LoopPlane) : ℝ :=
@@ -40,9 +28,6 @@ noncomputable def m65PlaneMotionDensity (u : ℝ → LoopPlane → M)
   let G := m60AreaGram (F.metric t) (u t) z
   if G.det = 0 then 0
   else (1 / 2 : ℝ) * Matrix.trace (G⁻¹ * B) * m60AreaDensity (F.metric t) (u t) z
-
-
-
 
 theorem m65MovingAreaDensity_hasDerivAt (u : ℝ → LoopPlane → M)
     (z : LoopPlane) {t : ℝ} (ht : t ∈ Ioo a b)
@@ -87,9 +72,6 @@ theorem m65MovingAreaDensity_hasDerivAt (u : ℝ → LoopPlane → M)
   ring
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem m65MovingAreaDensity_hasDerivAt_of_contMDiffAt
     (u : ℝ → LoopPlane → M) (z : LoopPlane) {t : ℝ} (ht : t ∈ Ioo a b)

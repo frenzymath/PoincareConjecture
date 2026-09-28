@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.FreeLoopAbelian
 import PoincareConjecture.Proofs.M59.Mathlib.CubeBoundaryQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -17,8 +9,6 @@ namespace PoincareConjecture.Proofs.M59.CubeBoundaryQuotient
 
 variable {S X : Type*} [TopologicalSpace S] [T2Space S] [TopologicalSpace X]
   (q : CubeBoundaryQuotient (Fin 1) S) {x : X}
-
-
 
 theorem homotopic_of_descend_homotopic
     (hcomm : ∀ a b : FundamentalGroup X x, a * b = b * a)
@@ -41,8 +31,6 @@ theorem homotopic_of_descend_homotopic
   have he : (⟦f⟧ : HomotopyGroup (Fin 1) X x) = ⟦g⟧ :=
     (homotopyGroupEquivFundamentalGroupOfUnique (Fin 1)).injective (Quotient.sound hp)
   exact Quotient.exact he
-
-
 
 theorem descend_homotopic_iff
     (hcomm : ∀ a b : FundamentalGroup X x, a * b = b * a)

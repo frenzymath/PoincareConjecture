@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlabContinuity
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlopeBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_intrinsic_warping_tail_floor
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

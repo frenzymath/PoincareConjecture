@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedLiftPL
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardSource
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem compactified_protected_image_isFinitePL
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -52,10 +39,6 @@ private theorem unit_cube_three_ball :
   rw [f.apply_symm_apply, frontier_closedBall _ one_ne_zero] at h
   exact h.symm
 
-
-
-
-
 theorem protected_image_three_ball
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
     [FiniteDimensional ℝ V] {P B : Set V} (hBP : B ⊆ P)
@@ -73,9 +56,6 @@ theorem protected_image_three_ball
     rw [← hy]
     exact A.injective.mem_set_image
   exact hmem.trans (huB (f.symm y))
-
-
-
 
 theorem protected_image_disk_pair
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

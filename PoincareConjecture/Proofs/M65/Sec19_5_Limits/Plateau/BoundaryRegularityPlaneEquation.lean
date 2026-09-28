@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityC1
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPotentialContinuity
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Complex Metric
@@ -116,9 +107,6 @@ private theorem complex_flux_transport {K : ℕ} (A : Fin K → LoopPlane → �
     (A i (e z) : ℂ)) = -(∫ z, φ (e.symm (e z)) * (f (e z) : ℂ)) at h
   simpa only [LinearIsometryEquiv.symm_apply_apply] using h
 
-
-
-
 theorem plane_weak_complex_gradient
     (u : Lp ℝ 2 (volume : Measure LoopPlane))
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane))
@@ -186,10 +174,6 @@ theorem plane_weak_complex_gradient
       rw [integral_add (hi 0) (hi 1)]
       exact hθeq
 
-
-
-
-
 theorem plane_weak_gradient_decomposition
     (u : Lp ℝ 2 (volume : Measure LoopPlane))
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane))
@@ -231,11 +215,6 @@ theorem plane_weak_gradient_decomposition
     simpa only [mem_closedBall, dist_zero_right, LinearIsometryEquiv.norm_map] using h
   · change e (e.symm x) ∈ U
     simpa only [LinearIsometryEquiv.apply_symm_apply] using hx
-
-
-
-
-
 
 theorem plane_weak_C1_of_weight
     (u : Lp ℝ 2 (volume : Measure LoopPlane))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M49.DirectSlabVolume
 import PoincareConjecture.Proofs.M49.Mathlib.FiniteJumps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,8 +9,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem volume_growth_of_event_drops_direct
     (F : SurgeryFlowData.{u}) {a b : ℝ} (ha : a ∈ F.time_domain)
@@ -85,8 +73,6 @@ theorem volume_growth_of_event_drops_direct
       rw [← mul_assoc, ← ENNReal.ofReal_mul (Real.exp_pos _).le, ← Real.exp_add]
       have he : 6 * b + -(6 * a) = 6 * (b - a) := by ring
       rw [he]
-
-
 
 theorem volume_growth_of_event_losses_direct
     (F : SurgeryFlowData.{u})

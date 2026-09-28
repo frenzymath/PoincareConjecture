@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Models.OriginalParameter
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.Extension.OriginalModel
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

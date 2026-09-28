@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalRetainedCapReplacement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalBallPairRecognition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76.OriginalDiskProduct

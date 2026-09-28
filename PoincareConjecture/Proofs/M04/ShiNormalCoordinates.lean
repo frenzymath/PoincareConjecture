@@ -11,14 +11,6 @@ import Mathlib.Geometry.Manifold.VectorField.Pullback
 import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -226,7 +218,6 @@ theorem hessian_basis_expansion_on [T2Space M] (D : LeviCivitaData g)
       rw [he v]
       simp only [map_sum, map_smul, smul_eq_mul, Finset.mul_sum, mul_assoc]
     _ = _ := by simp only [← hB, e]
-
 
 noncomputable def shiQuadraticCorrection (C : Fin n → Fin n → Fin n → ℝ) (w : E) : E :=
   w + ∑ i : Fin n,
@@ -700,4 +691,3 @@ theorem shiNormalChart_scalar_operators [T2Space M]
       (EuclideanSpace.basisFun (Fin n) ℝ i) (EuclideanSpace.basisFun (Fin n) ℝ i)
 
 end PoincareConjecture.M04
-

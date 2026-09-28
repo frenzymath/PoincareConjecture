@@ -9,16 +9,6 @@ set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
 
-
-
-
-
-
-
-
-
-
-
 theorem PoincareConjecture.RiemannianMetric.exists_shifted_iterated_openFiber_component_equivalence
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
     [MeasurableSpace M] [BorelSpace M]

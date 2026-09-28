@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CompactSupportIntegralDerivative
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M60
 variable {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   {X : Type*} [TopologicalSpace X] [ChartedSpace H X] [IsManifold I 1 X]
-
-
 
 theorem continuousOn_timeDerivative_of_contMDiffOn
     {F : ℝ × X → ℝ} {J : Set ℝ} (hJ : IsOpen J)
@@ -36,9 +26,6 @@ theorem continuousOn_timeDerivative_of_contMDiffOn
   have hd := hf.mfderiv (m := ∞) f Prod.fst contMDiffAt_fst (by simp)
   simp only [inTangentCoordinates_model_space, mfderiv_eq_fderiv] at hd
   exact (hd.clm_apply contMDiffAt_const).continuousAt.continuousWithinAt
-
-
-
 
 theorem differentiableAt_integral_of_contMDiffOn [T2Space X] [CompactSpace X]
     [MeasurableSpace X] [BorelSpace X] {μ : Measure X} [IsFiniteMeasureOnCompacts μ]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.CylinderGluing
-
-
 
 theorem vertical_mfderiv_bijective_at (h : RoundCylinderSpace → ℝ)
     {p : RoundCylinderSpace}
@@ -59,8 +47,6 @@ theorem vertical_mfderiv_bijective_at (h : RoundCylinderSpace → ℝ)
     mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       (fun z : RoundCylinderSpace => (z.1, h z)) p
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := L.toLinearMap)).mp hinj⟩
-
-
 
 theorem vertical_isLocalDiffeomorphOn (h : RoundCylinderSpace → ℝ)
     {U : Set RoundCylinderSpace} (hU : IsOpen U)

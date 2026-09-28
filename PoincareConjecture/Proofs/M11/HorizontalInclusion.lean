@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.HorizontalBundle
 import PoincareConjecture.Proofs.M11.SpatialTangent
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

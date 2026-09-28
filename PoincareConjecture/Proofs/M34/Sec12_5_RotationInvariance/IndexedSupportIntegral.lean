@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.IndexedEnergy
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.BoundarySupportIntegral
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndNeighborIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g
   (qA : FA 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dA))
   (qS : FS 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
 
-
-
 noncomputable def capDifferenceSupportIntegral {J J' : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (F' : RicciFlow 3 StandardCapSpace J')
     (p : endReferenceRegion e) : ℕ → ℝ → ℝ :=
@@ -45,8 +35,6 @@ noncomputable def capDifferenceSupportIntegral {J J' : Set ℝ}
         (endPullbackFlow e F j (by have := Nat.cast_nonneg (α := ℝ) j; linarith))
         (endPullbackFlow e F' j (by have := Nat.cast_nonneg (α := ℝ) j; linarith)) p t x
 
-
-
 theorem capDifferenceSupportIntegral_nonneg {J J' : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (F' : RicciFlow 3 StandardCapSpace J')
     (p : endReferenceRegion e) (i : ℕ) (t : ℝ) :
@@ -54,8 +42,6 @@ theorem capDifferenceSupportIntegral_nonneg {J J' : Set ℝ}
   cases i with
   | zero => exact integral_nonneg (actualDifferenceEnergyDensity_nonneg qH qA qS _ _)
   | succ j => exact integral_nonneg (canonicalDifferenceDensity_nonneg _ _ qH qA qS _ _ p t)
-
-
 
 theorem exists_capDifferenceSupportIntegral_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ {J J' : Set ℝ}

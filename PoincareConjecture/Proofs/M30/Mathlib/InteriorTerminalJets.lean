@@ -2,25 +2,12 @@ import Mathlib.Analysis.Calculus.ContDiff.FTaylorSeries
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace Poincare.Analysis.Calculus
-
-
-
 
 theorem tendstoUniformlyOn_iteratedFDerivWithin_of_interior_and_terminal
     {X E ι : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

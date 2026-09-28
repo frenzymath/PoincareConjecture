@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalRimWordE
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +13,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 structure OriginalResolutionWordExclusionData
     {X : Type*} [TopologicalSpace X]
@@ -111,8 +102,6 @@ structure OriginalResolutionWordExclusionData
             basedPathWord (p.trans E0.rr) (q.trans E1.rl) β *
             basedPathWord (q.trans E1.rc) (p.trans E0.rc) γ *
             basedPathWord (p.trans E0.rl) (q.trans E1.rr) d ∉ J)
-
-
 
 theorem nonempty_original_resolution_word_exclusion_data
     {X : Type*} [TopologicalSpace X] {Fmark : Set X}
@@ -307,8 +296,6 @@ theorem nonempty_original_resolution_word_exclusion_data
       leftArm1 := hLZ, rightArm1 := hRZ
       H := H, H_finitePL := hH, H_base := hbase, rho := rho, complement := B, rho_val := hrho
       cases := Or.inr ⟨⟨hu, hv⟩, a, β, γ, d, ha, hβ, hγ, hd, hTB.symm, hhom, hout⟩ }⟩
-
-
 
 theorem OriginalResolutionWordExclusionData.nonempty_center_paths
     {X : Type*} [TopologicalSpace X] {Fmark : Set X}

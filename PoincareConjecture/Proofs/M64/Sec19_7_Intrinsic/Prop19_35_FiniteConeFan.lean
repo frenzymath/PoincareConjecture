@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerConeArea
 import Mathlib.Analysis.Convex.Measure
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,11 +26,6 @@ private theorem complex_positive_cone_convex (x y : ℂ) :
       exact ⟨s, t, hs, ht, hz.symm⟩
   rw [heq]
   exact ((convex_Ioi (0 : ℝ)).prod (convex_Ioi (0 : ℝ))).linear_image L.toLinearMap
-
-
-
-
-
 
 theorem m64Intrinsic_complex_fan_angle_sum
     {I : Type*} [Fintype I] (x y : I → ℂ)

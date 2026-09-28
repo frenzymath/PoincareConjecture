@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SumAssembly
 import PoincareConjecture.Proofs.M38.MonodromyModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_residualAssembly_finset {ι : Type v} [DecidableEq ι]
     (stage : Finset ι → GeneralizedSliceCarrier.{u}) (cuts : Finset ι)
@@ -66,7 +55,6 @@ theorem exists_residualAssembly_finset {ι : Type v} [DecidableEq ι]
       rw [hfamily] at R'
       exact ⟨R'⟩
   exact aux cuts le_rfl S
-
 
 theorem exists_residualAssembly {ι : Type v}
     (stage : Set ι → GeneralizedSliceCarrier.{u}) (cuts : Set ι) (hfinite : cuts.Finite)

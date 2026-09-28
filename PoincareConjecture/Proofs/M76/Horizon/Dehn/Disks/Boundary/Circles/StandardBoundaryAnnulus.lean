@@ -11,10 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Ann" => squareAnnulus 1 (1 / 8 : ℝ)
 
-
-
-
-
 theorem exists_standard_boundary_circle_annulus
     {R S : Set V3} (hR : IsCompact R)
     (he : PLDomain (fun _ : Unit => (Homeomorph.refl V3).toOpenPartialHomeomorph) R)

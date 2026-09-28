@@ -12,31 +12,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function MeasureTheory
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_round_profile_native_ball_model (P : SurgeryCapProfile) :
     ∃ J : Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E2 × ℝ) E3 (E2 × ℝ) ∞,

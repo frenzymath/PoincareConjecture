@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -128,7 +121,6 @@ theorem positiveCone_isManifold :
 namespace UnitSliceRadialChartData
 
 variable {hc n}
-
 
 def positiveMap (d : UnitSliceRadialChartData hc n) : d.source → AsymptoticConePositive p hc :=
   fun x => ⟨d.ambientChart x, d.ambientChart_target_positive (d.ambientChart.map_source x.property)⟩

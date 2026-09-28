@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralFrontierRegion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -56,8 +46,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
 
-
-
 theorem exists_polygon_source_complement {n : ℕ} (P : Polygon V2 (n + 3))
     (hP : P.HasSimplicialEdges) (hinjP : Function.Injective P)
     (hPsq : P.boundary ℝ ⊆ ball 0 1) :
@@ -92,9 +80,6 @@ theorem exists_polygon_source_complement {n : ℕ} (P : Polygon V2 (n + 3))
       ((isCompact_closedBall (0 : V2) 1).of_isClosed_subset hclosed sdiff_subset)
       hreg J hJ hfront
   exact ⟨K, hK, hKs⟩
-
-
-
 
 theorem exists_two_polygon_source_complement {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))

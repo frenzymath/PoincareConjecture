@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Extraction
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Separation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
@@ -26,7 +18,6 @@ variable {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]
     (hlower : ∀ k i x y, c i * dist x y ≤ dist (e k i x) (e k i y))
     (hopen : ∀ k i, Topology.IsOpenEmbedding (e k i))
     (hconn : ∀ k (p : M k) r, IsPreconnected (ball p r))
-
 
 noncomputable def overlapSystem : Poincare.Gluing.OverlapSystem X where
   transition := overlapHomeomorph hD L he c hc hlower hopen hconn

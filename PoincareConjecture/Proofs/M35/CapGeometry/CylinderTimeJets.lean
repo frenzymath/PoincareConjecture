@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ private theorem weighted_sum_linear {r : ℕ}
       intro j _
       ring
     _ = _ := by simp only [Finset.sum_sub_distrib, Finset.mul_sum]
-
-
 
 theorem roundCylinderIteratedDerivative_time_affine
     (B : ℝ → RoundCylinderTwoTensor)

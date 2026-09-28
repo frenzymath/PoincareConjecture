@@ -3,7 +3,6 @@ import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Tactic
 
-
 open Set
 theorem IsProperMap.restrictPreimage_shifted_interval
     {X : Type*} [TopologicalSpace X] {f : X → ℝ} {b s : ℝ}

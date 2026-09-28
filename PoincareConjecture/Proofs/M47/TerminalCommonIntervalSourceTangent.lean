@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalUnitTangent
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalExhaustionMap
 import PoincareConjecture.Proofs.M47.TerminalGermsMetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_source_tangent
     (U : ℕ → Set (EuclideanSpace ℝ (Fin 3))) (hU : ∀ i, IsOpen (U i))

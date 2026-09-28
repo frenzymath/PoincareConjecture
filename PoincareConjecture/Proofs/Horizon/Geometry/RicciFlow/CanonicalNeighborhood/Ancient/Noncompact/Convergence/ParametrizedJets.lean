@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Lin
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.DomainChange
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.CoordinateRotations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,19 +36,13 @@ theorem rotation_axis (s r : ℝ) :
   rw [map_smul]
   exact congrArg (r • ·) (rotation_basis_two s)
 
-
-
 noncomputable def axisRadialCoefficient
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   g.inner (r • e 2) (e 2) (e 2)
 
-
-
 noncomputable def axisAngularCoefficient
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   g.inner (r • e 2) (e 0) (e 0)
-
-
 
 theorem rotational_axis_metric
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -117,14 +102,12 @@ theorem rotational_axis_metric
       change _ = g.inner p (e 0) (e 0) * _ + g.inner p (e 2) (e 2) * _
       ring
 
-
 theorem axisRadialCoefficient_pos (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) :
     0 < axisRadialCoefficient g r := by
   apply g.pos
   intro h
   have hh := congrArg (fun v : StandardCapSpace => v 2) h
   simp [e, EuclideanSpace.single] at hh
-
 
 theorem axisAngularCoefficient_pos (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) :
     0 < axisAngularCoefficient g r := by

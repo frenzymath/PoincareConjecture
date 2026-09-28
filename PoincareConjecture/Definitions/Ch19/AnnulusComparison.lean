@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch19.RampEstimates
 import PoincareConjecture.Definitions.Ch01.Curvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
@@ -33,7 +22,6 @@ def standardAnnulusDomain : Set AnnulusCoordinates :=
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 variable {t₀ t₁ : ℝ}
-
 
 noncomputable def rampAnnulusTangent
     (f : AnnulusCoordinates → M × ℝ) (p : AnnulusCoordinates)
@@ -66,8 +54,6 @@ noncomputable def projectedAnnulusArea
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (f : AnnulusCoordinates → M × ℝ) (t : ℝ) : ℝ :=
   ∫ p in rampAnnulusDomain, projectedAnnulusAreaDensity A f t p
-
-
 
 structure LiftedRampAnnulus
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -145,7 +131,6 @@ noncomputable def rampSliceCurvatureIntegral
     {circumference t : ℝ} (c : RampSlice A circumference t) (a b : ℝ) : ℝ :=
   rampArcTotalCurvature A (fun x _ => c.curve x) t a b
 
-
 structure RampAnnulusFlowPair
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (circumference : ℝ) where
@@ -164,12 +149,9 @@ noncomputable def rampAmbientCurvatureSupremum
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁)) (t : ℝ) : ℝ :=
   sSup (Set.range (fun x : M => (A.flow.connection t).curvatureTensorNorm x))
 
-
 def AnnulusForwardDerivativeBound (f : ℝ → ℝ) (b t : ℝ) : Prop :=
   ∀ eta : ℝ, 0 < eta → ∀ᶠ h : ℝ in 𝓝[>] 0,
     (f (t + h) - f t) / h ≤ b + eta
-
-
 
 noncomputable def intrinsicAnnulusBoundary (radius x : ℝ) : AnnulusCoordinates :=
   !₂[radius * Real.cos x, radius * Real.sin x]
@@ -188,7 +170,6 @@ noncomputable def intrinsicBoundaryUnitTangent
     TangentSpace (𝓡 2) (intrinsicAnnulusBoundary radius x) :=
   (intrinsicBoundarySpeed g radius x)⁻¹ •
     curveVelocity (n := 2) (intrinsicAnnulusBoundary radius) x
-
 
 noncomputable def intrinsicGeodesicCurvature
     (g : RiemannianMetric 2 AnnulusCoordinates) (D : LeviCivitaData g)
@@ -231,8 +212,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 variable {t₀ t₁ : ℝ}
 
-
-
 structure NullHomotopicRampProjection
     {A : RampAmbientData (n := 3) (M := M) (t₀ := t₀) (t₁ := t₁)}
     {circumference : ℝ} {initial : RampInitialCurve A circumference}
@@ -243,8 +222,6 @@ structure NullHomotopicRampProjection
   null_homotopic : ∀ t ∈ Set.Icc t₀ t₁, IsNullHomotopicLoop (loop t)
   filling_data : ∀ t ∈ Set.Icc t₀ t₁,
     FillingAreaData (A.flow.metric t) (loop t)
-
-
 
 structure RampFamilyAnnulusNet
     (A : RampAmbientData (n := 3) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -263,8 +240,6 @@ structure RampFamilyAnnulusNet
 noncomputable def rampScalarCurvatureInfimum
     (A : RampAmbientData (n := 3) (M := M) (t₀ := t₀) (t₁ := t₁)) (t : ℝ) : ℝ :=
   sInf (Set.range (fun x : M => (A.flow.connection t).scalarCurvature x))
-
-
 
 noncomputable def rampAreaComparisonProfile
     (A : RampAmbientData (n := 3) (M := M) (t₀ := t₀) (t₁ := t₁))

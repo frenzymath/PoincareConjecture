@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped ContDiff BigOperators
 namespace PoincareConjecture.M35.RadialGauge
 
 variable {A : Type*} [TopologicalSpace A]
-
 
 theorem scalar_jet_continuous_sub {f g : A → ℝ → ℝ} (n : ℕ)
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hg : ∀ a, ContDiff ℝ ∞ (g a))
@@ -29,8 +19,6 @@ theorem scalar_jet_continuous_sub {f g : A → ℝ → ℝ} (n : ℕ)
     (((hf p.1).contDiffAt).of_le (ENat.natCast_le_of_coe_top_le_withTop le_rfl n))
     (((hg p.1).contDiffAt).of_le (ENat.natCast_le_of_coe_top_le_withTop le_rfl n))
   simpa only [heq, Function.comp_def] using continuous_sub.comp (hfc.prodMk hgc)
-
-
 
 theorem scalar_jet_continuous_mul {f g : A → ℝ → ℝ} (n : ℕ)
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hg : ∀ a, ContDiff ℝ ∞ (g a))
@@ -45,8 +33,6 @@ theorem scalar_jet_continuous_mul {f g : A → ℝ → ℝ} (n : ℕ)
   intro i hi
   exact (continuous_const.mul (hfc i (by simpa only
     [Finset.mem_range, Nat.lt_succ_iff] using hi))).mul (hgc (n - i) (Nat.sub_le _ _))
-
-
 
 theorem scalar_jets_continuous_inv {f : A → ℝ → ℝ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hne : ∀ a r, f a r ≠ 0)
@@ -86,8 +72,6 @@ theorem scalar_jets_continuous_inv {f : A → ℝ → ℝ}
           change Continuous (fun p : A × ℝ => iteratedDeriv (n + 1) (q p.1) p.2)
           simpa only [iteratedDeriv_succ', hd] using hm
 
-
-
 theorem scalar_jets_continuous_log {f : A → ℝ → ℝ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hne : ∀ a r, f a r ≠ 0)
     (hfc : ∀ j : ℕ, Continuous (fun p : A × ℝ => iteratedDeriv j (f p.1) p.2)) :
@@ -111,8 +95,6 @@ theorem scalar_jets_continuous_log {f : A → ℝ → ℝ}
         (fun a => (contDiff_infty_iff_deriv.mp (hf a)).2)
         (fun a => (hf a).inv (hne a)) (fun i _ => hdf i) (fun i _ => hi i)
       simpa only [iteratedDeriv_succ', hd, Pi.inv_apply] using hm
-
-
 
 theorem scalar_jets_continuous_exp {f : A → ℝ → ℝ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a))

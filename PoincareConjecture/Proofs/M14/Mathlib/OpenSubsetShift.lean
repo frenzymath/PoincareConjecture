@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M11.SpatialCalculus
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,31 +13,22 @@ namespace TopologicalSpace.Opens
 
 variable {E : Type*} [NormedAddCommGroup E] (U : Opens E)
 
-
-
 noncomputable def affineShift (x : U) (v : E) : U := by
   classical
   exact if h : x.val + v ∈ U then ⟨x.val + v, h⟩ else x
-
-
 
 theorem affineShift_val {x : U} {v : E} (h : x.val + v ∈ U) :
     (U.affineShift x v).val = x.val + v := by
   simp only [affineShift, dif_pos h]
 
-
 theorem affineShift_zero (x : U) : U.affineShift x 0 = x := by
   apply Subtype.ext
   rw [U.affineShift_val (by rw [add_zero]; exact x.property), add_zero]
-
-
 
 theorem affineShift_domain_isOpen : IsOpen {z : U × E | z.1.val + z.2 ∈ U} :=
   U.isOpen.preimage ((continuous_subtype_val.comp continuous_fst).add continuous_snd)
 
 variable [NormedSpace ℝ E]
-
-
 
 theorem affineShift_contMDiffOn :
     ContMDiffOn ((𝓘(ℝ, E)).prod (𝓘(ℝ, E))) (𝓘(ℝ, E)) ∞
@@ -61,9 +43,6 @@ theorem affineShift_contMDiffOn :
   intro z hz
   exact (ContMDiffWithinAt.subtypeVal_comp_iff U _ _ z).mp (hval z hz)
 
-
-
-
 theorem affineShift_parameter_contMDiffAt (x : U) (v : E) :
     ContMDiffAt (𝓘(ℝ, ℝ)) (𝓘(ℝ, E)) ∞ (fun r : ℝ => U.affineShift x (r • v)) 0 := by
   have hmem : (x, (0 : ℝ) • v) ∈ {z : U × E | z.1.val + z.2 ∈ U} := by
@@ -74,8 +53,6 @@ theorem affineShift_parameter_contMDiffAt (x : U) (v : E) :
     contMDiff_const.prodMk (contDiff_id.smul contDiff_const).contMDiff
   exact ((U.affineShift_contMDiffOn _ hmem).contMDiffAt
     (U.affineShift_domain_isOpen.mem_nhds hmem)).comp 0 hi.contMDiffAt
-
-
 
 theorem affineShift_parameter_mfderiv (x : U) (v : E) :
     mfderiv (𝓘(ℝ, ℝ)) (𝓘(ℝ, E)) (fun r : ℝ => U.affineShift x (r • v)) 0 (1 : ℝ) = v := by

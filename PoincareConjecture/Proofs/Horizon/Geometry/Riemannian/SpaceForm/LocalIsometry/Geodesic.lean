@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continuation.ChangeCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -136,8 +130,6 @@ private theorem hasDerivAt_geodesic_isometry_in_charts
       ((isOpen_extChartAt_target (I := 𝓡 n) r).mem_nhds hrTarget)).differentiableAt (by simp))
     hinv (h.isInvertible_chartCoefficients r hrTarget) (fun u v => h.symm _ _ _)
     (contDiffAt_isometry_chart_map hU hf p r htp htU htr) hsurj hm hq hw
-
-
 
 theorem IsGeodesicOn.comp_local_isometry_manifold
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)

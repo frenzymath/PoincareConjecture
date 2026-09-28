@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M61.Def18_17_Width.FamilyMaximum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,7 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 theorem m61FreeClassWidthRange_eq_of_homotopic (g : RiemannianMetric 3 M)
     {F G : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
     (hFG : F.Homotopic G) :
@@ -31,8 +21,6 @@ theorem m61FreeClassWidthRange_eq_of_homotopic (g : RiemannianMetric 3 M)
     exact ⟨H, hnull, hFG.symm.trans hFH, hwidth⟩
   · rintro ⟨H, hnull, hGH, hwidth⟩
     exact ⟨H, hnull, hFG.trans hGH, hwidth⟩
-
-
 
 theorem m61FreeClassWidth_from_M60 (g : RiemannianMetric 3 M)
     (P60 : M60FillingAreaProperties g)

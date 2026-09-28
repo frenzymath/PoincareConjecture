@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import PoincareConjecture.Proofs.M76.Mathlib.AffineNormalIndependence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AbstractSimplicialComplex
@@ -18,18 +10,12 @@ namespace Submodule
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 noncomputable def normalAffineProjection (L : Submodule ℝ E) (p : E) : E →ᵃ[ℝ] ↥(Lᗮ) :=
   Lᗮ.orthogonalProjectionOnto.toLinearMap.toAffineMap.comp
     (AffineEquiv.vaddConst ℝ p).symm.toAffineMap
 
-
-
 theorem normalAffineProjection_apply (L : Submodule ℝ E) (p x : E) :
     L.normalAffineProjection p x = Lᗮ.orthogonalProjectionOnto (x - p) := rfl
-
-
 
 theorem normalAffineProjection_eq_zero (L : Submodule ℝ E) (p : E) {x : E}
     (hx : x - p ∈ L) : L.normalAffineProjection p x = 0 :=
@@ -41,9 +27,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem linearIndependent_faceLink_normal (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))
@@ -79,9 +62,6 @@ theorem linearIndependent_faceLink_normal (K : SimplicialComplex ℝ E)
       (fun z : {v : K.vertices // v ∉ central} => z.val.val) hvw)
   exact hnormal.comp outer houter
 
-
-
-
 noncomputable def faceNormalRadialEmbedding (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))
     {s : Finset E} (hs : s ∈ K.faces) {p : E}
@@ -90,9 +70,6 @@ noncomputable def faceNormalRadialEmbedding (K : SimplicialComplex ℝ E)
       ↥((affineSpan ℝ (s : Set E)).directionᗮ) :=
   ⟨_, (K.faceLink s).vertexAbstractComplex.isRadialEmbedding_of_linearIndependent
     (K.linearIndependent_faceLink_normal hv hs hp)⟩
-
-
-
 
 theorem normal_image_closedFaceStar (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))

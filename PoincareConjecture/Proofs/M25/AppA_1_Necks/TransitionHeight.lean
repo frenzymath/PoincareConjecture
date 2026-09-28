@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialOrientation
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.GraphHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
-
 theorem contMDiff_transition_height_slice (N N' : EpsilonNeck g)
     {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (hsub : ∀ q : UnitTwoSphere, N.coordinate_map (q, s) ∈ N'.carrier) :
@@ -41,9 +28,6 @@ theorem contMDiff_transition_height_slice (N N' : EpsilonNeck g)
   have hp : ContMDiffAt (𝓡 2) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞
       (fun p : UnitTwoSphere => (p, s)) q := contMDiffAt_id.prodMk contMDiffAt_const
   exact contMDiffAt_snd.comp q (hi.comp q (hm.comp q hp))
-
-
-
 
 theorem transition_height_horizontal_deriv (N N' : EpsilonNeck g)
     {q : UnitTwoSphere} {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -81,9 +65,6 @@ theorem transition_height_horizontal_deriv (N N' : EpsilonNeck g)
   rw [hd, map_smul, smul_eq_mul]
   field_simp [N.scale_pos.ne', N'.scale_pos.ne']
 
-
-
-
 theorem transition_height_axial_error (N N' : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain)
     (hx' : N.coordinate_map z ∈ N'.carrier) {σ τ : ℝ}
@@ -120,9 +101,6 @@ theorem transition_height_axial_error (N N' : EpsilonNeck g)
       rw [abs_mul, abs_mul, abs_of_pos hrpos, habsσ, mul_one]
     _ ≤ r * τ + τ := add_le_add (mul_le_mul_of_nonneg_left hb hrpos.le) hratio
     _ ≤ 3 * τ := by nlinarith
-
-
-
 
 theorem exists_intersecting_transition_height_horizontal_bound {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.InverseEstimate
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +16,6 @@ private theorem cylinder_tail_norm_le (v : EuclideanSpace ℝ (Fin 3)) :
       Fin.sum_univ_zero, add_zero, Poincare.EuclideanSpace.euclideanTail_apply]
     nlinarith [sq_nonneg (v 0)]
   nlinarith [norm_nonneg v, norm_nonneg (Poincare.EuclideanSpace.euclideanTail v)]
-
 
 theorem roundCylinderEuclideanCoefficients_norm_zero_le :
     ‖roundCylinderEuclideanCoefficients 0‖ ≤ 2 := by
@@ -59,13 +48,11 @@ theorem roundCylinderEuclideanCoefficients_norm_zero_le :
             (norm_nonneg _) (norm_nonneg _)))
     _ = _ := by ring
 
-
 theorem roundCylinderEuclideanCoefficients_inverse_norm_zero_le :
     ‖(roundCylinderEuclideanCoefficients 0).inverse‖ ≤ 1 := by
   simpa using CoordinateExponential.norm_inverse_le_of_ellipticity
     (B := roundCylinderEuclideanCoefficients 0) (a := 1) zero_lt_one
     (fun v => by simpa using roundCylinderEuclideanMetric_norm_sq_le v)
-
 
 theorem roundCylinderEuclideanCoefficients_perturbation_lower
     {B : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ}
@@ -79,7 +66,6 @@ theorem roundCylinderEuclideanCoefficients_perturbation_lower
   have hlow := neg_abs_le (B v v - roundCylinderEuclideanCoefficients 0 v v)
   nlinarith
 
-
 theorem roundCylinderEuclideanCoefficients_perturbation_inverse_norm_le
     {B : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ}
     (hB : ‖B - roundCylinderEuclideanCoefficients 0‖ ≤ 1 / 2) :
@@ -87,7 +73,6 @@ theorem roundCylinderEuclideanCoefficients_perturbation_inverse_norm_le
   simpa using CoordinateExponential.norm_inverse_le_of_ellipticity
     (a := (1 / 2 : ℝ)) (by norm_num)
     (roundCylinderEuclideanCoefficients_perturbation_lower hB)
-
 
 theorem roundCylinderEuclideanCoefficients_perturbation_inverse_sub_norm_le
     {B : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ}

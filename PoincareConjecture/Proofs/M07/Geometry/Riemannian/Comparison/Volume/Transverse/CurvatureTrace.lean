@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBoun
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Matrix
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem ricci_eq_sum_frame_curvature
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 n) x)
@@ -57,8 +45,6 @@ theorem ricci_eq_sum_frame_curvature
       simp
     _ = ∑ i, D.curvatureTensor x (P (b i)) v (P (b i)) v := htrace
     _ = _ := rfl
-
-
 
 theorem ricci_eq_transverse_curvature_trace
     {m : ℕ} {N : Type*} [TopologicalSpace N]

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -210,10 +201,6 @@ private theorem isOpen_proper_product_standard {R : Set V3} {w : ℝ}
     exact hinside hx
   have hopen := isOpen_relative_sdiff_of_frontier_subset hR hBreg hBR hZ.isClosed hfront
   rwa [← hTimage] at hopen
-
-
-
-
 
 theorem isOpen_image_proper_finitePL_product {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

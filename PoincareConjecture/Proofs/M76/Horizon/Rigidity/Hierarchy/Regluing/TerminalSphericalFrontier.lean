@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Rectang
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalCoordinatePL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.FiniteClosedPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_open_two_coface_carrier_germ
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

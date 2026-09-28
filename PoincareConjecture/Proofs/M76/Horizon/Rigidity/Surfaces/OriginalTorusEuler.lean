@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +7,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 structure OriginalTorusEulerCandidate
     {X ι : Type*} [TopologicalSpace X]
@@ -83,8 +69,6 @@ theorem nonempty : C.surface.Nonempty := by
   exact (C.model.component C.component).2.1.nonempty
 
 end OriginalTorusEulerCandidate
-
-
 
 theorem FrontierResidualModel.original_torus_euler_candidate
     {X ι : Type*} [TopologicalSpace X]

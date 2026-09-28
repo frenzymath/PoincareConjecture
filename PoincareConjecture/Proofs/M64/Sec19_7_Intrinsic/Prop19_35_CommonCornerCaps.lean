@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FittedCornerCap
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +11,6 @@ open Poincare.Topology.Plane.Triangles PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_corner_faces_at_scale
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -117,10 +101,6 @@ theorem m64Intrinsic_exists_corner_faces_at_scale
       (hsource ⟨le_rfl, hr.le, by simp⟩)
       ((hfirst r hsmall).trans (heq.trans (hsecond r hsmall).symm))
     exact hr.ne' (congrArg Prod.fst heq')
-
-
-
-
 
 theorem m64Intrinsic_exists_four_corner_faces
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

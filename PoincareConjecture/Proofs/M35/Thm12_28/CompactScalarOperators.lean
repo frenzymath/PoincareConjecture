@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import PoincareConjecture.Proofs.M04.ScalarEvolutionCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem continuous_scalarGradientNorm
     {M : Type*} [TopologicalSpace M] [ChartedSpace V M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -32,8 +22,6 @@ theorem continuous_scalarGradientNorm
   convert h using 1
   ext x
   exact scalarGradientNorm_eq_gradient_norm D x
-
-
 
 theorem continuous_scalar_evolution_slice
     {M : Type} [TopologicalSpace M] [ChartedSpace V M] [IsManifold (𝓡 3) ∞ M]
@@ -58,8 +46,6 @@ theorem continuous_scalar_evolution_slice
       (continuous_const.mul hric)
 
 namespace OrdinaryRealization
-
-
 
 theorem blowupSequence_terminal_scalar_operators_uniform_chart (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -125,8 +111,6 @@ theorem blowupSequence_terminal_scalar_operators_uniform_chart (P : M35StandardC
   have hNgk : Ng ≤ k := (le_max_left Ng Ne).trans ((le_max_right _ _).trans hk)
   have hNek : Ne ≤ k := (le_max_right Ng Ne).trans ((le_max_right _ _).trans hk)
   exact ⟨hNg k hNgk p hp, hNe k hNek p hp⟩
-
-
 
 theorem blowupSequence_terminal_scalar_operators_uniform_compact (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonLength
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,11 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
-
-
-
-
-
 
 theorem m64PolygonLength_eq_sampled_chord_sum
     (polygon : M63GeodesicPolygon g D N) (hN : 0 < N)

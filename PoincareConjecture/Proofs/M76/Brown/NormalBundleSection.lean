@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.NormalBundleCore
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -18,9 +11,6 @@ variable {X P ι : Type*} [TopologicalSpace X] [NormedAddCommGroup P]
   [NormedSpace ℝ P] {S : Set X} (A : FlatteningAtlas P S ι)
   [SimplyConnectedSpace S] [LocallyPathConnectedSpace S] [Nonempty S]
 
-
-
-
 theorem exists_normalBundle_section :
     ∃ sigma : C(S, A.normalBundleCore.TotalSpace),
       ∀ x, A.normalBundleCore.proj (sigma x) = x := by
@@ -30,9 +20,6 @@ theorem exists_normalBundle_section :
     A.normalBundle_isCoveringMap.existsUnique_continuousMap_lifts
       (ContinuousMap.id S) x0 e0 rfl
   exact ⟨sigma, fun x => congrFun hsigma x⟩
-
-
-
 
 theorem exists_coherent_normal_units :
     ∃ a : ι → S → SignTypeˣ,

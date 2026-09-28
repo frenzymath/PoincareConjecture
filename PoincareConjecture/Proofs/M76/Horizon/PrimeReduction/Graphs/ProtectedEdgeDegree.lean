@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoCofaceCarrierGerm
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -21,8 +12,6 @@ open scoped Topology
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
 
 theorem convexHull_insert_zero_base_inter_zero
     (A : E →ᵃ[ℝ] ℝ) (s : Finset E) {a : E}
@@ -60,8 +49,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_signed_edge_cofaces_of_local_disk
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -131,9 +118,6 @@ theorem exists_signed_edge_cofaces_of_local_disk
       hpositive.resolve_right (not_lt_of_ge hb.le), ?_⟩
     simpa only [union_comm] using hlocal'
 
-
-
-
 theorem eventually_moved_section_eq_fixed_edge_of_local_disk
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 3) {s : Finset E}
@@ -186,8 +170,6 @@ theorem eventually_moved_section_eq_fixed_edge_of_local_disk
   · intro hxbase
     refine ⟨⟨x, K.convexHull_subset_space hs hxbase, hfix hxbase⟩, ?_⟩
     exact convexHull_min hsA ((convex_singleton (0 : ℝ)).affine_preimage A) hxbase
-
-
 
 theorem ncard_graph_degree_after_face_affine_motion_at_fixed_edge
     (K G : SimplicialComplex ℝ E) (hK : K.faces.Finite)

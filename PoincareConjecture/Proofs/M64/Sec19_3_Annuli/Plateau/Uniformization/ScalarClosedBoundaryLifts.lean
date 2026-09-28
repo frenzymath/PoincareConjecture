@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarActualBoundaryCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -82,10 +70,6 @@ private theorem scalarClosedCover_inverse_boundary
   simpa only [hH, hangle] using hid
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem exists_scalarClosedCover_boundary_lifts
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedLimitContractedTest
 import PoincareConjecture.Proofs.M47.LimitNoncollapseVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem seedLimit_noncollapsed_of_buffered_physical_volume
     (P : M47Predecessors.{u})

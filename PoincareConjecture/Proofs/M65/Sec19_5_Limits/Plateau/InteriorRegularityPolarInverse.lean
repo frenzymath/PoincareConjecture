@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarMeasure
 import Mathlib.MeasureTheory.Function.SpecialFunctions.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,12 +10,8 @@ open scoped Topology ENNReal
 
 namespace PoincareConjecture.M65Interior
 
-
-
 def polarCoordinates (x z : LoopPlane) : ℝ × ℝ :=
   polarCoord (Proofs.M58.loopPlaneEquivProd (z - x))
-
-
 
 theorem polarCoordinates_measurable (x : LoopPlane) :
     Measurable (polarCoordinates x) := by
@@ -37,8 +22,6 @@ theorem polarCoordinates_measurable (x : LoopPlane) :
     ((measurable_fst.pow_const 2).add (measurable_snd.pow_const 2))).prodMk
     (Complex.measurable_arg.comp Complex.equivRealProdCLM.symm.continuous.measurable)).comp h
 
-
-
 theorem polarCoordinates_radius (x z : LoopPlane) :
     (polarCoordinates x z).1 = ‖z - x‖ := by
   change Real.sqrt ((z - x) 0 ^ 2 + (z - x) 1 ^ 2) = ‖z - x‖
@@ -46,13 +29,9 @@ theorem polarCoordinates_radius (x z : LoopPlane) :
   rw [Fin.sum_univ_two] at h
   rw [← h, Real.sqrt_sq (norm_nonneg _)]
 
-
-
 theorem polarCoordinates_angle (x z : LoopPlane) :
     (polarCoordinates x z).2 ∈ Icc (-Real.pi) Real.pi :=
   ⟨(Complex.neg_pi_lt_arg _).le, Complex.arg_le_pi _⟩
-
-
 
 theorem polarCoordinates_polarPlane (x : LoopPlane) {p : ℝ × ℝ}
     (hp : p ∈ polarCoord.target) : polarCoordinates x (polarPlane x p) = p := by
@@ -60,8 +39,6 @@ theorem polarCoordinates_polarPlane (x : LoopPlane) {p : ℝ × ℝ}
   rw [add_sub_cancel_left, ← Proofs.M58.loopPlaneEquivProd_symm_polar,
     MeasurableEquiv.apply_symm_apply]
   exact polarCoord.right_inv hp
-
-
 
 theorem polarCoordinates_measurePreserving (x : LoopPlane) :
     MeasurePreserving (polarCoordinates x) volume polarMeasure := by
@@ -76,9 +53,6 @@ theorem polarCoordinates_measurePreserving (x : LoopPlane) :
     Measure.map_map (polarCoordinates_measurable x) (polarPlane_measurePreserving x).measurable,
     Measure.map_congr heq, Measure.map_id]
 
-
-
-
 theorem polarCoordinates_preimage_rectangle (x : LoopPlane) (r : ℝ) :
     polarCoordinates x ⁻¹' (Icc (0 : ℝ) r ×ˢ Icc (-Real.pi) Real.pi) =
       closedBall x r := by
@@ -87,8 +61,6 @@ theorem polarCoordinates_preimage_rectangle (x : LoopPlane) (r : ℝ) :
     norm_nonneg, true_and, mem_closedBall, dist_eq_norm]
   exact and_iff_left (polarCoordinates_angle x z)
 
-
-
 theorem polarCoordinates_disk_measurePreserving (x : LoopPlane) (r : ℝ) :
     MeasurePreserving (polarCoordinates x) (volume.restrict (closedBall x r))
       (polarMeasure.restrict (Icc (0 : ℝ) r ×ˢ Icc (-Real.pi) Real.pi)) := by
@@ -96,8 +68,6 @@ theorem polarCoordinates_disk_measurePreserving (x : LoopPlane) (r : ℝ) :
     (polarCoordinates_measurePreserving x).restrict_preimage
       (s := Icc (0 : ℝ) r ×ˢ Icc (-Real.pi) Real.pi)
       (measurableSet_Icc.prod measurableSet_Icc)
-
-
 
 theorem polar_rectangle_measure_le (r : ℝ) :
     polarMeasure.restrict (Icc (0 : ℝ) r ×ˢ Icc (-Real.pi) Real.pi) ≤
@@ -115,8 +85,6 @@ theorem polar_rectangle_measure_le (r : ℝ) :
     _ = ENNReal.ofReal r • (volume.restrict polarCoord.target).restrict S :=
       withDensity_const _
     _ ≤ _ := smul_le_smul_left _ (Measure.restrict_mono_measure Measure.restrict_le_self S)
-
-
 
 theorem memLp_polarCoordinates {E : Type*} [NormedAddCommGroup E]
     {f : ℝ × ℝ → E} {p : ℝ≥0∞} {r : ℝ}

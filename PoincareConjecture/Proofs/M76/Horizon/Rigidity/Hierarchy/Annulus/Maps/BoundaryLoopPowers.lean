@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.FailureArcRegionGroups
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
@@ -59,7 +52,6 @@ theorem exists_boundary_loop_power_homotopy
     ((Path.Homotopic.Quotient.map (Path.Homotopic.Quotient.mk beta) i₁).trans
       (Path.Homotopic.Quotient.mk k.symm)) = _
   rw [Path.symm_symm, Path.Homotopic.Quotient.mk_symm]
-
 
 local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0

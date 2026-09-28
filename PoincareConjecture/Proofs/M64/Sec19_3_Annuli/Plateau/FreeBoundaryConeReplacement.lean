@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryParamete
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseTargetSemicircle
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseRealSemicircle
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,10 +16,6 @@ namespace PoincareConjecture.M64FreeWeakPhaseAnnulus
 open Proofs.M58 M64BoundaryCone
 
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
-
 
 theorem lower_halfDisk_cone_replacement {n m N : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

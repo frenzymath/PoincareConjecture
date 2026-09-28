@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryCrossings
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TwoRayStraightening
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology
@@ -23,7 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem exists_zero_edge_crossing_of_signed_cofaces
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
@@ -272,7 +261,6 @@ theorem exists_zero_edge_crossing_of_signed_cofaces
 
 set_option maxHeartbeats 800000 in
 
-
 theorem exists_signed_zero_edge_cofaces
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
     (q : V3 → ℝ × ℝ) (hq : K.AffineOnFaces q) (hi : InjOn q K.space)
@@ -369,11 +357,8 @@ theorem exists_signed_zero_edge_cofaces
     intro face hf hef
     simpa only [hua, hvb] using (hexhaust face hf hef).symm
 
-
 set_option maxHeartbeats 800000 in
 open Classical in
-
-
 
 theorem exists_moved_zero_edge_crossing
     (K N : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
@@ -435,6 +420,5 @@ theorem exists_moved_zero_edge_crossing
   exact exists_zero_edge_crossing_of_signed_cofaces N hNfinite (edge.image H) heN heN2
     ell hnewzero (insert (H u) (edge.image H)) (insert (H v) (edge.image H))
     (H u) (H v) haN hbN rfl rfl huN hvN hnewcofaces p hp O hO hpO
-
 
 end Geometry.OriginalPLTower

@@ -5,13 +5,6 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

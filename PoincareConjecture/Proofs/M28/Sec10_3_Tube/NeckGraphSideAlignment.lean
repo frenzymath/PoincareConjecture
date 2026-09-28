@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphSides
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSignedRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem neck_graph_side_alignment (N N' : EpsilonNeck g)
     {sigma lo a hi : ℝ} (hsigma : sigma = 1 ∨ sigma = -1)

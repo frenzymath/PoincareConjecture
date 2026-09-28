@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.ComponentBand
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 private instance : ConnectedSpace S1 :=
   isConnected_iff_connectedSpace.mp
     (isConnected_sphere (by simp [← Module.finrank_eq_rank, E2]) (0 : E2) zero_le_one)
-
-
 
 theorem exists_smooth_regular_band_component_through_point
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

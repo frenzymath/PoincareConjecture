@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_complementary_scalar_form (hdim : Module.finrank ℝ E = 2)
     (D : E →L[ℝ] ℝ) (hD : D ≠ 0) :
@@ -56,8 +43,6 @@ theorem exists_complementary_scalar_form (hdim : Module.finrank ℝ E = 2)
   exact ⟨l, hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (by simpa using hdim)).mp hinj⟩
 
-
-
 theorem exists_regular_function_chart (hdim : Module.finrank ℝ E = 2)
     (f : E → ℝ) {U : Set E} (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U)
     (x : E) (hx : x ∈ U) (hD : fderiv ℝ f x ≠ 0) :
@@ -80,8 +65,6 @@ theorem exists_regular_function_chart (hdim : Module.finrank ℝ E = 2)
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
 variable [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
 
 theorem exists_surface_regular_chart (hdim : Module.finrank ℝ E = 2)
     (f : M → ℝ) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (x : M)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
 def m64HorizontalSource (tau : ℝ ≃ₜ ℝ) : LoopPlane ≃ₜ LoopPlane where
   toFun p := annulusPoint (tau (p 0)) (p 1)
   invFun p := annulusPoint (tau.symm (p 0)) (p 1)
@@ -36,18 +23,12 @@ def m64HorizontalSource (tau : ℝ ≃ₜ ℝ) : LoopPlane ≃ₜ LoopPlane wher
   continuous_toFun := by unfold annulusPoint; fun_prop
   continuous_invFun := by unfold annulusPoint; fun_prop
 
-
-
 theorem m64HorizontalSource_point (tau : ℝ ≃ₜ ℝ) (x s : ℝ) :
     m64HorizontalSource tau (annulusPoint x s) = annulusPoint (tau x) s := by
   simp [m64HorizontalSource, annulusPoint]
 
-
-
 theorem m64HorizontalSource_symm (tau : ℝ ≃ₜ ℝ) :
     (m64HorizontalSource tau).symm = m64HorizontalSource tau.symm := rfl
-
-
 
 theorem m64HorizontalSource_contDiff {tau : ℝ ≃ₜ ℝ} {q : WithTop ℕ∞}
     (ht : ContDiff ℝ q tau) : ContDiff ℝ q (m64HorizontalSource tau) := by
@@ -62,9 +43,6 @@ theorem m64HorizontalSource_contDiff {tau : ℝ ≃ₜ ℝ} {q : WithTop ℕ∞}
     ((EuclideanSpace.proj (1 : Fin 2) : LoopPlane →L[ℝ] ℝ).contDiff.smul
       (contDiff_const : ContDiff ℝ q (fun _ : LoopPlane => e1)))
 
-
-
-
 theorem m64HorizontalSource_preimage_interior {tau : ℝ ≃ₜ ℝ}
     (ht : StrictMono tau) (h0 : tau 0 = 0) (hP : tau curvePeriod = curvePeriod) :
     m64HorizontalSource tau ⁻¹' S = S := by
@@ -77,9 +55,6 @@ theorem m64HorizontalSource_preimage_interior {tau : ℝ ≃ₜ ℝ}
     simpa only [hP] using (ht.lt_iff_lt (a := p 0) (b := curvePeriod))
   rw [hlo, hhi]
 
-
-
-
 theorem m64HorizontalSource_image_interior {tau : ℝ ≃ₜ ℝ}
     (ht : StrictMono tau) (h0 : tau 0 = 0) (hP : tau curvePeriod = curvePeriod) :
     m64HorizontalSource tau '' S = S := by
@@ -89,19 +64,13 @@ theorem m64HorizontalSource_image_interior {tau : ℝ ≃ₜ ℝ}
         (m64HorizontalSource_preimage_interior ht h0 hP).symm
     _ = S := image_preimage_eq _ (m64HorizontalSource tau).surjective
 
-
-
 def m64HorizontalSourceDerivative (a : ℝ) : LoopPlane →L[ℝ] LoopPlane :=
   (a • (EuclideanSpace.proj 0)).smulRight e0 + (EuclideanSpace.proj 1).smulRight e1
-
-
 
 theorem m64HorizontalSourceDerivative_apply (a : ℝ) (v : LoopPlane) :
     m64HorizontalSourceDerivative a v = annulusPoint (a * v 0) (v 1) := by
   ext i
   fin_cases i <;> simp [m64HorizontalSourceDerivative, annulusPoint]
-
-
 
 theorem m64HorizontalSource_hasFDerivAt {tau : ℝ ≃ₜ ℝ} {p : LoopPlane}
     (ht : DifferentiableAt ℝ tau (p 0)) :
@@ -116,8 +85,6 @@ theorem m64HorizontalSource_hasFDerivAt {tau : ℝ ≃ₜ ℝ} {p : LoopPlane}
     ext i
     fin_cases i <;> simp [m64HorizontalSource, annulusPoint]
 
-
-
 theorem m64HorizontalSourceDerivative_det (a : ℝ) :
     (m64HorizontalSourceDerivative a).det = a := by
   change LinearMap.det (m64HorizontalSourceDerivative a).toLinearMap = a
@@ -126,14 +93,10 @@ theorem m64HorizontalSourceDerivative_det (a : ℝ) :
   simp [LinearMap.toMatrix_apply, EuclideanSpace.basisFun_repr,
     EuclideanSpace.basisFun_apply, m64HorizontalSourceDerivative_apply, annulusPoint]
 
-
-
 theorem m64HorizontalSource_det {tau : ℝ ≃ₜ ℝ} {p : LoopPlane}
     (ht : DifferentiableAt ℝ tau (p 0)) :
     (fderiv ℝ (m64HorizontalSource tau) p).det = deriv tau (p 0) := by
   rw [(m64HorizontalSource_hasFDerivAt ht).fderiv, m64HorizontalSourceDerivative_det]
-
-
 
 theorem m64HorizontalSource_fderiv_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -150,8 +113,6 @@ theorem m64HorizontalSource_fderiv_comp
     fin_cases i <;> fin_cases j <;>
       simp [m64HorizontalSourceDerivative_apply, annulusPoint]
   rw [hb, map_smul]
-
-
 
 theorem m64HorizontalSource_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

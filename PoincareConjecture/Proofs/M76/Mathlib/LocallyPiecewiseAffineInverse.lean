@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -19,9 +11,6 @@ namespace OpenPartialHomeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem locallyPiecewiseAffineOn_symm (e : OpenPartialHomeomorph E F)
     (he : LocallyPiecewiseAffineOn e e.source) :
@@ -45,9 +34,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem mem_piecewiseAffineGroupoid_iff_forward (e : OpenPartialHomeomorph E E) :
     e ∈ piecewiseAffineGroupoid E ↔ LocallyPiecewiseAffineOn e e.source := by

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteConvexDomain
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PLAtlasTransport
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyParameterPL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

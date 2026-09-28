@@ -1,15 +1,5 @@
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +15,6 @@ variable {E H M F : Type*}
   [TopologicalSpace M] [ChartedSpace H M]
   [RiemannianBundle (TangentSpace I : M → Type _)]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
-
-
 
 theorem mfderiv_enorm_le_vector_target {f : M → F} {y : M} {C : ℝ≥0}
     (h : ‖mfderiv I 𝓘(ℝ, F) f y‖ ≤ (C : ℝ)) :
@@ -52,9 +39,6 @@ theorem mfderiv_enorm_le_vector_target {f : M → F} {y : M} {C : ℝ≥0}
     ContinuousLinearMap.opNorm_le_bound _ C.coe_nonneg hp
   rw [← ofReal_norm]
   exact (ENNReal.ofReal_le_ofReal hb).trans_eq (by simp)
-
-
-
 
 theorem mfderiv_enorm_le_vector_source {f : F → M} {z : F} {C : ℝ≥0}
     (h : ‖mfderiv 𝓘(ℝ, F) I f z‖ ≤ (C : ℝ)) :

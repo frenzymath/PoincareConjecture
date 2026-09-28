@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarMetric
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_hasFDerivAt_norm_radial
     (theta : AnnulusCoordinates) (htheta : ‖theta‖ = 1)
@@ -43,9 +29,6 @@ theorem m64Intrinsic_hasFDerivAt_norm_radial
       hnorm, Real.sqrt_sq hr.le]
     field_simp
     ring
-
-
-
 
 theorem m64Intrinsic_radial_field_pairing
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}
@@ -109,9 +92,6 @@ theorem m64Intrinsic_radial_field_pairing
   simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul,
     hmetric, hconn, hrow]
   ring
-
-
-
 
 theorem m64Intrinsic_focusing_pairing_ge_of_log_derivative
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}
@@ -183,10 +163,6 @@ theorem m64Intrinsic_focusing_pairing_ge_of_log_derivative
   have h := mul_le_mul_of_nonneg_right hcomp
     (mul_nonneg (sq_nonneg (ρ r)) (sq_nonneg (inner ℝ (b 1) w)))
   simpa only [ρ, mul_assoc] using h
-
-
-
-
 
 theorem m64Intrinsic_focusing_pairing_ge_of_gaussian_upper
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

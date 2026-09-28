@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.ParabolicNoncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private theorem norm_eq_of_metric_eq
     D.curvatureTensorNorm x = E.curvatureTensorNorm x := by
   subst h
   exact D.horizon_curvatureTensorNorm_eq E x
-
-
 
 theorem closedLimit_noncollapsed
     (P : M23NormalizedKappaCompactnessPredecessors)

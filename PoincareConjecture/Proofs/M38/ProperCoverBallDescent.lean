@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallCoverDescent
 import Mathlib.Topology.Algebra.ConstMulAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_open_disjoint_translates_of_compact
     {X G : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
@@ -46,8 +35,6 @@ theorem exists_open_disjoint_translates_of_compact
     rintro z hz ⟨x, hx, hzx⟩
     exact hs ⟨hg, z, ⟨x, interior_subset hx.2, hzx⟩, interior_subset hz.2⟩
 
-
-
 theorem exists_surgeryBall_with_disjoint_translates
     {A : GeneralizedSliceCarrier.{u}}
     {G : Type*} [Group G] [MulAction G A.carrier]
@@ -64,8 +51,6 @@ theorem exists_surgeryBall_with_disjoint_translates
     (surgeryBall_closedImage_compact B 1 (by norm_num)) hdisjoint
   obtain ⟨D, hD, hcenter, hDU⟩ := exists_surgeryBall_with_image_in_open B hU hBU
   exact ⟨D, hD, hcenter, fun g hg => (hsep g hg).mono hDU (image_mono hDU)⟩
-
-
 
 theorem exists_surgeryBall_descend_proper_fibers
     {A Q : GeneralizedSliceCarrier.{u}}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.LinearPath
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.OrthogonalCharts
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace Poincare.Manifold.SphereIsotopy
 private abbrev E2 := EuclideanSpace ℝ (Fin 2)
 private abbrev E3 := EuclideanSpace ℝ (Fin 3)
 private abbrev S2 := PoincareConjecture.UnitTwoSphere
-
-
 
 theorem exists_orthogonal_germ
     (d : Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞) (p : S2) :

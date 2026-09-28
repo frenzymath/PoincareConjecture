@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEs
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.ProfileCalculus
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.L2
 
-
-
-
 noncomputable section
 
 open Set MeasureTheory Metric
@@ -26,8 +23,6 @@ theorem derivativeProfile_ne_top_on_precompact {V : Set E}
       (hu.continuous_iteratedFDeriv (by exact_mod_cast le_top)).norm hVc).mono_measure
         (Measure.restrict_mono subset_closure le_rfl)
   exact hm.eLpNorm_ne_top
-
-
 
 theorem smooth_jet_le_l2_derivativeProfile_on_compact
     {K V : Set E} (hK : IsCompact K) (hV : IsOpen V)

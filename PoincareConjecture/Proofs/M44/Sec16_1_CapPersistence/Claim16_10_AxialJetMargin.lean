@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +27,6 @@ noncomputable local instance axialTwoJetNormedGroup :
 noncomputable local instance axialTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
-
 theorem continuousAt_jetChristoffel_family {X : Type*} [TopologicalSpace X]
     {J : X → MetricTwoJet 3} {u v : X → E} {p : X}
     (hJ : ContinuousAt J p) (hinv : (J p).1.IsInvertible)
@@ -56,9 +43,6 @@ theorem continuousAt_jetChristoffel_family {X : Type*} [TopologicalSpace X]
   unfold jetChristoffel metricKoszulCovector
   fun_prop
 
-
-
-
 theorem continuousAt_jetCurvature_family {X : Type*} [TopologicalSpace X]
     {J : X → MetricTwoJet 3} {u w v z : X → E} {p : X}
     (hJ : ContinuousAt J p) (hinv : (J p).1.IsInvertible)
@@ -71,8 +55,6 @@ theorem continuousAt_jetCurvature_family {X : Type*} [TopologicalSpace X]
   have hΓ4 := continuousAt_jetChristoffel_family hJ hinv hw hΓ2
   unfold jetCurvature
   fun_prop
-
-
 
 theorem cylinderModelJet_axialGram {u : E} (hu : ‖u‖ = 1)
     (hh : cylinderHeightCovector u = 0) :
@@ -106,8 +88,6 @@ theorem cylinderModelJet_axialGram {u : E} (hu : ‖u‖ = 1)
     hH0, hH1, hH2, hh, hheight]
   norm_num
 
-
-
 theorem cylinderModelJet_axialCurvature (u : E) :
     jetCurvature (evolvingCylinderModelJet 0) (e 2) u (e 2) u = 0 := by
   have hP : (cylinderEuclideanEquiv (e 2)).1 = 0 := by
@@ -115,9 +95,6 @@ theorem cylinderModelJet_axialCurvature (u : E) :
     rfl
   rw [jetCurvature_evolvingCylinderModelJet]
   simp only [cylinderHorizontalForm_apply, hP, inner_zero_left, zero_mul, sub_self, mul_zero]
-
-
-
 
 theorem exists_cylinder_axial_jet_tolerance {epsilon : ℝ} (hepsilon : 0 < epsilon) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ J : MetricTwoJet 3,
@@ -160,9 +137,6 @@ theorem exists_cylinder_axial_jet_tolerance {epsilon : ℝ} (hepsilon : 0 < epsi
     u ⟨by simpa only [Metric.mem_sphere, dist_zero_right] using hu, hh⟩
   rw [Metric.mem_ball, dist_eq_norm]
   exact hJ.trans_lt (half_lt_self hdelta)
-
-
-
 
 theorem exists_roundCylinder_axial_tolerance {k : ℝ} (hk : 0 < k) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ ∀ epsilon : ℝ,

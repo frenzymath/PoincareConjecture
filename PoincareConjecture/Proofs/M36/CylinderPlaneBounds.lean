@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderModelField
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

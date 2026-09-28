@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem globalExponential_eq_radial_exponential
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) {R : ℝ}
@@ -44,7 +35,6 @@ theorem globalExponential_eq_radial_exponential
 
 omit [T3Space M] in
 
-
 theorem tangentNorm_orthonormal_frame (g : RiemannianMetric n M) (p : M)
     (L : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n))
     (hL : ∀ v w, g.pullbackCoefficients (extChartAt (𝓡 n) p).symm
@@ -53,8 +43,6 @@ theorem tangentNorm_orthonormal_frame (g : RiemannianMetric n M) (p : M)
   have h := hL v v
   rw [g.chartCoefficients_self] at h
   simp only [tangentNorm, h, real_inner_self_eq_norm_sq, Real.sqrt_sq (norm_nonneg v)]
-
-
 
 theorem le_truncatedInjectivityRadius_of_radial_exponential
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) {R C r : ℝ}
@@ -85,8 +73,6 @@ theorem le_truncatedInjectivityRadius_of_radial_exponential
     (Metric.ball_subset_ball hrR hw')
   rw [L.apply_symm_apply] at hev hew
   exact hev.symm.trans (heq.trans hew)
-
-
 
 theorem injOn_radial_exponential_of_le_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) {R C r : ℝ}

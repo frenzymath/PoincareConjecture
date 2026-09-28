@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRadialArc
 import PoincareConjecture.Proofs.M76.Smoothing.CircleSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,21 +9,14 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {n : ℕ} {theta : ℝ}
 
-
-
 noncomputable def planarGapVertices (w : shortArcGapSpace n theta) (i : Fin (n + 3)) : ℂ :=
   Circle.exp (gapAngle w i)
-
-
 
 theorem planarGapVertices_eq_circle (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     planarGapVertices w i = (AddCircle.homeomorphCircle' (circleGapVertices w i) : ℂ) := rfl
 
-
 theorem norm_planarGapVertices (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     ‖planarGapVertices w i‖ = 1 := Circle.norm_coe _
-
-
 
 theorem injective_planarGapVertices (w : shortArcGapSpace n theta) :
     Function.Injective (planarGapVertices w) := by
@@ -41,8 +25,6 @@ theorem injective_planarGapVertices (w : shortArcGapSpace n theta) :
   apply AddCircle.homeomorphCircle'.injective
   exact Subtype.ext hij
 
-
-
 theorem continuous_planarGapVertices :
     Continuous (planarGapVertices : shortArcGapSpace n theta → Fin (n + 3) → ℂ) := by
   apply continuous_pi
@@ -50,14 +32,10 @@ theorem continuous_planarGapVertices :
   exact continuous_subtype_val.comp (Circle.exp.continuous.comp
     ((continuous_gapAngle i).comp continuous_subtype_val))
 
-
-
 theorem planarGapVertices_endpoint (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     (Circle.exp (gapAngle w i + w.val i) : ℂ) = planarGapVertices w (i + 1) :=
   congrArg (fun z : AddCircle (2 * Real.pi) => (AddCircle.homeomorphCircle' z : ℂ))
     (circleGapArc_endpoint w i)
-
-
 
 theorem linearIndependent_planarGapEdge (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     LinearIndependent ℝ
@@ -68,19 +46,13 @@ theorem linearIndependent_planarGapEdge (w : shortArcGapSpace n theta) (i : Fin 
   rw [planarGapVertices_endpoint] at h
   exact h
 
-
-
 def planarGapEdge (w : shortArcGapSpace n theta) (i : Fin (n + 3)) : Set ℂ :=
   segment ℝ (planarGapVertices w i) (planarGapVertices w (i + 1))
-
-
 
 theorem injOn_normalize_planarGapEdge (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     InjOn (NormedSpace.normalize : ℂ → ℂ) (planarGapEdge w i) := by
   simpa only [convexHull_pair, planarGapEdge] using
     (linearIndependent_planarGapEdge w i).injOn_normalize_convexHull
-
-
 
 theorem normalize_image_planarGapEdge (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     NormedSpace.normalize '' planarGapEdge w i =
@@ -113,9 +85,6 @@ private theorem planar_endpoint_mem_edge (w : shortArcGapSpace n theta) (i : Fin
   rw [planarGapEdge, ← convexHull_pair]
   exact subset_convexHull ℝ _ hz
 
-
-
-
 theorem planarGapEdges_common_direction (w : shortArcGapSpace n theta)
     {i j : Fin (n + 3)} (hij : i ≠ j) {x y : ℂ}
     (hx : x ∈ planarGapEdge w i) (hy : y ∈ planarGapEdge w j)
@@ -141,8 +110,6 @@ theorem planarGapEdges_common_direction (w : shortArcGapSpace n theta)
       (hzy.symm.trans hunit.symm)
   exact ⟨hxe.trans hye.symm, hxe ▸ ⟨he_i, he_j⟩⟩
 
-
-
 theorem injOn_normalize_iUnion_planarGapEdge (w : shortArcGapSpace n theta) :
     InjOn (NormedSpace.normalize : ℂ → ℂ) (⋃ i, planarGapEdge w i) := by
   intro x hx y hy hxy
@@ -152,8 +119,6 @@ theorem injOn_normalize_iUnion_planarGapEdge (w : shortArcGapSpace n theta) :
   · subst j
     exact injOn_normalize_planarGapEdge w i hxi hyj hxy
   · exact (planarGapEdges_common_direction w hij hxi hyj hxy).1
-
-
 
 theorem planarGapEdge_inter_subset (w : shortArcGapSpace n theta) (i j : Fin (n + 3)) :
     planarGapEdge w i ∩ planarGapEdge w j ⊆
@@ -165,8 +130,6 @@ theorem planarGapEdge_inter_subset (w : shortArcGapSpace n theta) (i j : Fin (n 
     exact Subset.rfl
   · intro x hx
     exact subset_convexHull ℝ _ (planarGapEdges_common_direction w hij hx.1 hx.2 rfl).2
-
-
 
 theorem normalize_image_iUnion_planarGapEdge (w : shortArcGapSpace n theta) :
     NormedSpace.normalize '' (⋃ i, planarGapEdge w i) = Metric.sphere (0 : ℂ) 1 := by

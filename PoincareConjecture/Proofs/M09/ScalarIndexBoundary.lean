@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ScalarIndexForm
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology intervalIntegral

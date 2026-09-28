@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicPlanarCap
 import PoincareConjecture.Proofs.M76.Triangulation.PLSpherePolygonCut
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -21,11 +11,6 @@ namespace Polygon
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [Finite ι] [Nonempty ι]
-
-
-
-
-
 
 theorem exists_intrinsic_capped_spheres
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)

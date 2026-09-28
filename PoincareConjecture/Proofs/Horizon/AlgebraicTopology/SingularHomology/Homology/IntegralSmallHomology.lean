@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chai
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 import Mathlib.Algebra.Homology.QuasiIso
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -86,7 +78,6 @@ private theorem integralSmall_boundary
 
 variable {X : Type u} [TopologicalSpace X] {I : Type v}
 
-
 theorem integralSmallChainInclusion_homology_isIso
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))
     (hcover : (⋃ i, U i) = Set.univ) (n : Nat) :
@@ -159,7 +150,6 @@ theorem integralSmallChainInclusion_homology_isIso
   let : Epi (HomologicalComplex.homologyMap f n) :=
     (ModuleCat.epi_iff_surjective _).mpr hsurj
   exact isIso_of_mono_of_epi _
-
 
 theorem integralSmallChainInclusion_quasiIso
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

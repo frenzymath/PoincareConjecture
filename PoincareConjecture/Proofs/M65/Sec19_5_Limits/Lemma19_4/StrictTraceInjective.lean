@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceCircleArc
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M65StrictTrace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem parameter_injective_of_finite_branches
     {f : LoopPlane → M}

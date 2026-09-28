@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M09.PullbackExtension
 import PoincareConjecture.Proofs.M09.SquareChartPairing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateOpen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarLocal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
 
 def scalarConjugateNormalization (P c : ℝ) (hP : P ≠ 0) : Plane ≃ₜ Cover where
   toFun x := (x 0, (x 1 + c) / P)
@@ -44,10 +29,6 @@ def scalarConjugateNormalization (P c : ℝ) (hP : P ≠ 0) : Plane ≃ₜ Cover
     (((continuous_const.mul continuous_snd).sub continuous_const).smul continuous_const)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarNormalizedCoverMap_open_and_discrete {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)
@@ -104,9 +85,6 @@ theorem scalarNormalizedCoverMap_open_and_discrete {H : Plane → ℝ} {V : Cove
     rw [← hyEq, ← heq.self_of_nhds]
     exact hsame
 
-
-
-
 theorem scalarNormalizedCoverMap_nhds_le_map {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -117,10 +95,6 @@ theorem scalarNormalizedCoverMap_nhds_le_map {H : Plane → ℝ} {V : Cover → 
     {P : ℝ} (hP : P ≠ 0) {z : Cover} (hz : z ∈ scalarCoverStrip) :
     𝓝 (scalarNormalizedCoverMap H V P z) ≤ map (scalarNormalizedCoverMap H V P) (𝓝 z) :=
   (scalarNormalizedCoverMap_open_and_discrete D hHc hHs hlap hinner houter hdV hP hz).1
-
-
-
-
 
 theorem scalarNormalizedCover_isOpenMap {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)

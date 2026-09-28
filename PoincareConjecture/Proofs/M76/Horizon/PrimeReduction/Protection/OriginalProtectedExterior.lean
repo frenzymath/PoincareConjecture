@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_LengthBarr
 import PoincareConjecture.Proofs.M44.Mathlib.PartialHomeomorphCompact
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y]
-
-
-
 
 theorem inverse_pullback_eq
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
@@ -52,9 +40,6 @@ theorem inverse_pullback_eq
   rw [hv, hw] at hm
   have hright : C.toPartialEquiv (C.symm.toPartialEquiv y) = y := C.right_inv hy
   exact hm.symm.trans (congrArg (fun q : Y => h.inner q v w) hright)
-
-
-
 
 theorem image_ball_of_precompact_partialDiffeomorph
     [RegularSpace X] [T2Space Y]
@@ -109,9 +94,6 @@ theorem image_ball_of_precompact_partialDiffeomorph
       rw [hleft p, hleft x]
       have hnot : x ∉ g.ball p r := by simpa only [hgs.interior_eq] using hx.2
       exact le_of_not_gt hnot
-
-
-
 
 theorem image_ball_of_precompact_pullback
     [RegularSpace X] [T2Space Y] [Nonempty X]

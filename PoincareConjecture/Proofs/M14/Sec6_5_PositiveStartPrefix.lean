@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquarePathPrefix
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareDensity
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem positiveStart_reducedLengthAt_square_prefix
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hp : M14IsMinimizing p)
@@ -54,9 +43,6 @@ theorem positiveStart_reducedLengthAt_square_prefix
     unfold M14ReducedLengthAt
     rw [R.curve_time _ hsC, Real.sq_sqrt hb.le, sub_sub_cancel, hpoint,
       reducedLengthValue_eq_of_minimizing p hp, integral_squareRootLIntegrand_eq_action R]
-
-
-
 
 theorem positiveStart_reducedLengthAt_square_hasDerivWithinAt
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hp : M14IsMinimizing p)

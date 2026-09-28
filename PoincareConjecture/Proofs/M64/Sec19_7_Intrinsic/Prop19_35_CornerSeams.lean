@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CommonCornerCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,10 +33,6 @@ private theorem signed_quadrant_interior_disjoint {i j : Bool × Bool} (hij : i 
     simp [sectorParameterEquiv_apply] at hij heq1 heq2 <;>
     linarith [hp.1, hp.2, hq.1, hq.2]
 
-
-
-
-
 theorem m64Intrinsic_corner_carriers_inter_subset_frontier
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
     {A B : Set AnnulusCoordinates} (hA : IsClosed A) {i j : Bool × Bool} (hij : i ≠ j)
@@ -73,10 +57,6 @@ theorem m64Intrinsic_corner_carriers_inter_subset_frontier
     exact hmem
   exact disjoint_left.mp (signed_quadrant_interior_disjoint hij)
     (interior_mono hpre hqint) hqj
-
-
-
-
 
 theorem m64Intrinsic_corner_shared_edge_mem_interior
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

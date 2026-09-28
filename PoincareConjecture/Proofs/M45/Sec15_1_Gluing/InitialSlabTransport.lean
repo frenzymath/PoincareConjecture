@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderEv
 import PoincareConjecture.Proofs.M13.Volume
 import PoincareConjecture.Proofs.M08.ActionBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem initialSlab_metric_eq (F : SurgeryFlowData.{u})
     (hunique : RicciFlowUniqueness 3 (F.slice 0).carrier)
@@ -34,8 +24,6 @@ theorem initialSlab_metric_eq (F : SurgeryFlowData.{u})
     ((M44.regularSlab_initial_metric F S).trans hG.symm)
   intro t ht
   exact heq ⟨ht, ht.1, ht.2.trans hb⟩
-
-
 
 theorem initialSlab_curvature_eq (F : SurgeryFlowData.{u})
     (hunique : RicciFlowUniqueness 3 (F.slice 0).carrier)
@@ -52,8 +40,6 @@ theorem initialSlab_curvature_eq (F : SurgeryFlowData.{u})
   simpa only [div_one,
     curvatureNorm_eq_of_metric_eq (S.flow.connection t.1) (G.connection t.1)
       (initialSlab_metric_eq F hunique G hG hb S t.2)] using htransport
-
-
 
 theorem initialSlab_ball_volume_eq (F : SurgeryFlowData.{u})
     (hunique : RicciFlowUniqueness 3 (F.slice 0).carrier)
@@ -73,8 +59,6 @@ theorem initialSlab_ball_volume_eq (F : SurgeryFlowData.{u})
   rw [hscale, ENNReal.ofReal_one, one_mul] at hvolume
   simpa only [Real.sqrt_one, one_mul,
     initialSlab_metric_eq F hunique G hG hb S t.2] using hvolume
-
-
 
 theorem scalar_le_eighteen_of_curvature_le_two
     {M : Type u} [TopologicalSpace M]

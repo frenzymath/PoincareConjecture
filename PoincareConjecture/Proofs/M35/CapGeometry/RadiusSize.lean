@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CoreBallVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M35
-
-
 
 theorem scalar_curvature_radius_sq_mul_scalar_le_one
     {M : Type u} [TopologicalSpace M]
@@ -43,8 +32,6 @@ theorem scalar_curvature_radius_sq_mul_scalar_le_one
   have h := mul_le_mul_of_nonneg_left hcenter (sq_nonneg r)
   rwa [← mul_pow, mul_inv_cancel₀ hr.ne', one_pow] at h
 
-
-
 theorem scalar_curvature_radius_le_of_center_lower
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -66,9 +53,6 @@ theorem scalar_curvature_radius_le_of_center_lower
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
-
 
 theorem scalar_curvature_ball_volume_lower_of_large_scalar
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

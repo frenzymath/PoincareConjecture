@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularInnermostDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularHorizontalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_regular_collar_level_family
     (hP : PlanarSchoenfliesService)
@@ -103,7 +93,6 @@ theorem exists_regular_collar_level_family
     have hzL := z.2
     simp only [collarHeightLevel_eq_central_height] at hzL
     simpa only [heq] using hzL.1
-
 
 theorem exists_regular_collar_band_family
     (hP : PlanarSchoenfliesService)

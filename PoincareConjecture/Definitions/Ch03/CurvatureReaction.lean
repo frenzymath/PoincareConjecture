@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.TensorOperators
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,13 +12,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 noncomputable def curvatureB (D : LeviCivitaData g) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) : ℝ :=
   let b := g.orthonormalBasis x
   ∑ i, ∑ j, D.curvatureTensor x u (b i) v (b j) *
     D.curvatureTensor x w (b i) z (b j)
-
 
 noncomputable def curvatureReaction (D : LeviCivitaData g) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) : ℝ :=
@@ -37,7 +27,6 @@ noncomputable def curvatureReaction (D : LeviCivitaData g) (x : M)
       D.ricci x v (b i) * D.curvatureTensor x u (b i) w z +
       D.ricci x w (b i) * D.curvatureTensor x u v (b i) z +
       D.ricci x z (b i) * D.curvatureTensor x u v w (b i))
-
 
 noncomputable def ricciReaction (D : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) : ℝ :=

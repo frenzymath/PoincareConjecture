@@ -1,22 +1,11 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Projection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Module
 
 namespace ContinuousAffineEquiv
-
-
-
 
 theorem exists_normalized_edge_coordinates
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

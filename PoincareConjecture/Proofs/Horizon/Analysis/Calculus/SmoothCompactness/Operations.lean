@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Diffeomorphism.Perturbation
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Topology.MetricSpace.Thickening
-
-
-
-
-
-
-

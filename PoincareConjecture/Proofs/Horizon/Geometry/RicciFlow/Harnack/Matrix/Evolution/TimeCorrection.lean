@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.TimeScaling
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Ricci
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

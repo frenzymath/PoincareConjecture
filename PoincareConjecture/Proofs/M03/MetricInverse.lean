@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.MetricCompactBounds
 import PoincareConjecture.Proofs.M03.CurvatureFrameCoordinate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 200000
@@ -178,7 +169,6 @@ theorem contMDiffOn_family_metric_frame_inverse
   intro q hq
   exact ContMDiffAt.comp_contMDiffWithinAt q
     ((hGi q hq.2).contDiffAt_map_inverse.contMDiffAt) (hG q hq)
-
 
 theorem metric_inverse_covariant_derivative_coordinates
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 : M) :
@@ -381,7 +371,6 @@ theorem metric_inverse_covariant_derivative_coordinates
   change fderiv ℝ (fun w => a (c.symm w) j k) z (EuclideanSpace.single i 1) = _
   rw [Finset.sum_add_distrib]
   linarith
-
 
 theorem metric_inverse_eq_sum_orthonormal_coordinates
     (g : RiemannianMetric n M) (x0 : M) :
@@ -888,7 +877,6 @@ theorem curvature_derivative_metric_rate_le
     (2 * (n : ℝ) + 8 * (n : ℝ) ^ 2) * A * q
   rw [hall]
   nlinarith only [houtputBound, hallBound]
-
 
 theorem curvature_all_rank_gram_contraction
     {σ ι κ V : Type*} [Fintype σ] [DecidableEq σ] [Fintype ι] [Fintype κ]

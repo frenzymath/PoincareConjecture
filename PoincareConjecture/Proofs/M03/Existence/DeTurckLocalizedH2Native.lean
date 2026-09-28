@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeLocalizedEllipticEquationNa
 import PoincareConjecture.Proofs.M03.Existence.CoordinateEllipticityNative
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -90,7 +83,6 @@ theorem localizedSchwartz_support (ab : d.ProbeIndex) (h : SmoothTensor (n := n)
   by_contra hxK
   apply hx
   rw [hprod, image_eq_zero_of_notMem_tsupport hxK, zero_mul]
-
 
 theorem exists_principal_coefficient_extensions :
     ∃ r : ℝ, 0 < r ∧ cthickening (r + r) (tsupport (L.scalarCutoff a)) ⊆ (L.chart a).target ∧
@@ -192,7 +184,6 @@ theorem generatorGraph_extended_divergence_equation
     ← schwartzMultiplier_selfAdjoint] at h
   simpa only [divergenceSource, inner_sub_left, sum_inner] using h
 
-
 def divergenceGraphSource (A : Fin n → Fin n → 𝓢(E, ℝ)) (ab : d.ProbeIndex) :
     d.Value × d.Form →L[ℝ] ScalarL2 n :=
   ((L.localizationL2 a).comp (d.valueCoefficient ab)).comp
@@ -211,7 +202,6 @@ theorem divergenceGraphSource_apply (A : Fin n → Fin n → 𝓢(E, ℝ)) (ab :
   abel
 
 set_option synthInstance.maxHeartbeats 200000 in
-
 
 theorem generatorGraph_localized_H2_schwartz :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ u b : d.Value, d.GeneratorGraph u b →
@@ -295,7 +285,6 @@ theorem generatorGraph_localized_H2_schwartz :
     _ = c ab * (‖u‖ + ‖b‖) := by dsimp only [c]; ring
     _ ≤ C * (‖u‖ + ‖b‖) := mul_le_mul_of_nonneg_right
       (Finset.single_le_sum (fun cd _ => hc cd) (Finset.mem_univ ab)) (by positivity)
-
 
 theorem generatorGraph_localized_H2 :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ u b : d.Value, d.GeneratorGraph u b →

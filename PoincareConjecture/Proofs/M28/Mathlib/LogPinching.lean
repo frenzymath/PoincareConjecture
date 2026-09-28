@@ -1,24 +1,12 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Real
 
 open Filter
 open scoped Topology
-
-
-
-
 
 theorem lt_mul_of_log_pinching {R v Q eta B : ℝ}
     (heta : 0 < eta) (hB : 0 ≤ B)
@@ -49,9 +37,6 @@ theorem lt_mul_of_log_pinching {R v Q eta B : ℝ}
     (mul_le_mul_of_nonneg_left hv (by norm_num : (0 : ℝ) ≤ 2)) hlognonneg
   have hscaled := mul_le_mul_of_nonneg_right hlogbound hQpos.le
   nlinarith
-
-
-
 
 theorem tendsto_zero_of_log_pinching {α : Type*} {l : Filter α}
     {R v Q : α → ℝ} {B : ℝ} (hB : 0 ≤ B)

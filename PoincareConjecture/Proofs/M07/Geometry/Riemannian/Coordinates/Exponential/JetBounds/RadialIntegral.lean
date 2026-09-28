@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter MeasureTheory intervalIntegral Metric
 open scoped Topology ContDiff
 

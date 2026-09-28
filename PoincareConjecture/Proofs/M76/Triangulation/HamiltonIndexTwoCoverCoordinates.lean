@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoTargetPlacement
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedParameterLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,16 +21,11 @@ private def coverLinear : W ≃ₗ[ℝ] V where
   map_add' x y := by funext i; fin_cases i <;> rfl
   map_smul' r x := by funext i; fin_cases i <;> rfl
 
-
-
 noncomputable def coverCoordinates : W ≃ᴬ[ℝ] V :=
   coverLinear.toContinuousLinearEquiv.toContinuousAffineEquiv
 
-
 theorem coverCoordinates_apply (x : W) :
     coverCoordinates x = ![x (Sum.inl 0), x (Sum.inl 1), x (Sum.inr 0)] := rfl
-
-
 
 theorem coverCoordinates_norm (x : W) : ‖coverCoordinates x‖ = ‖x‖ := by
   apply le_antisymm
@@ -58,8 +44,6 @@ theorem coverCoordinates_norm (x : W) : ‖coverCoordinates x‖ = ‖x‖ := by
     · fin_cases i
       exact norm_le_pi_norm (coverCoordinates x) 2
 
-
-
 theorem coverCoordinates_mem_cylinder (x : W) :
     x ∈ coordinateCylinder J ↔
       coverCoordinates x ∈ coordinateCylinder ({0, 1} : Finset (Fin 3)) := by
@@ -74,8 +58,6 @@ theorem coverCoordinates_mem_cylinder (x : W) :
     fin_cases j
     · exact hx 0 (by simp)
     · exact hx 1 (by simp)
-
-
 
 theorem coverCoordinates_closedBall (r : ℝ) :
     coverCoordinates '' closedBall (0 : W) r = closedBall (0 : V) r := by

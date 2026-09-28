@@ -5,12 +5,4 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedSegmentRayLimits
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.MissingEndComparison
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.ChordDefectLimits
 
-
-
-
-
-
-
-
 set_option autoImplicit false
-

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.EdgeFaceI
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.NormalArcEdgeContacts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

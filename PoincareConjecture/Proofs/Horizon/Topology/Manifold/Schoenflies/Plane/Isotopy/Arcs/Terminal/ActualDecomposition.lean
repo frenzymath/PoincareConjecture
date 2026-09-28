@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualEndDisk
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,8 +75,6 @@ theorem terminal_height_band_eq_middleRegion (d : TerminalSaddleGeometry M P p e
 theorem terminal_actualBand_eq_image_middleRegion (d : TerminalSaddleGeometry M P p e) :
     d.actualBand = (d.flatten ∘ g) '' d.ends.middleRegion := by
   rw [terminal_actualBand_eq_image_height_band, terminal_height_band_eq_middleRegion]
-
-
 
 theorem terminal_actual_decomposition (d : TerminalSaddleGeometry M P p e) :
     d.flatten '' range g = d.actualBand ∪ ⋃ i, d.C i := by
@@ -169,8 +165,6 @@ theorem terminal_endCap_inter_height_band (d : TerminalSaddleGeometry M P p e)
       · change inner Real (M.v : E3) (g (A.chart (x, d.ends.upperCut))) ∈ d.I
         rw [A.actual_height x _ ⟨le_rfl, j.2.le⟩]
         exact ⟨d.ends.cuts_lt.le, le_rfl⟩
-
-
 
 theorem exists_terminal_actual_disks_with_band_boundary
     (d : TerminalSaddleGeometry M P p e) (hg : g ∈ M.tree.leaves) :

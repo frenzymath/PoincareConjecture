@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.Cone
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -40,7 +29,6 @@ instance asymptoticCone_properSpace [ProperSpace X] (hcomparison : RayComparison
 theorem asymptoticCone_completeSpace [ProperSpace X] (hcomparison : RayComparison p) :
     CompleteSpace (AsymptoticCone p hcomparison) := inferInstance
 
-
 def AsymptoticConeUnitSlice (p : X) (hcomparison : RayComparison p) :=
   {a : AsymptoticCone p hcomparison // asymptoticConeRadius hcomparison a = 1}
 
@@ -67,8 +55,6 @@ theorem surjective_asymptoticConeUnitProjection (hcomparison : RayComparison p) 
     simpa only [asymptoticConeRadius_projection, ha] using h
   subst r
   exact ⟨l, Subtype.ext hr⟩
-
-
 
 def asymptoticConeUnitIsometry (hcomparison : RayComparison p) :
     AsymptoticLink p hcomparison ≃ᵢ AsymptoticConeUnitSlice p hcomparison :=
@@ -124,8 +110,6 @@ theorem dist_asymptoticConeDilation_le (hcomparison : RayComparison p) (c d : �
     dist_triangle (asymptoticConeDilation hcomparison c a)
       (asymptoticConeDilation hcomparison c b) (asymptoticConeDilation hcomparison d b)
 
-
-
 theorem continuous_asymptoticConeDilation (hcomparison : RayComparison p) :
     Continuous (fun q : ℝ≥0 × AsymptoticCone p hcomparison =>
       asymptoticConeDilation hcomparison q.1 q.2) := by
@@ -145,7 +129,6 @@ theorem continuous_asymptoticConeDilation (hcomparison : RayComparison p) :
         (asymptoticConeDilation hcomparison q.1 q.2) from dist_nonneg)
     (fun a => dist_asymptoticConeDilation_le hcomparison a.1 q.1 a.2 q.2) hboundlim
 
-
 abbrev AsymptoticConePositive (p : X) (hcomparison : RayComparison p) :=
   {a : AsymptoticCone p hcomparison // 0 < asymptoticConeRadius hcomparison a}
 
@@ -158,7 +141,6 @@ theorem continuous_asymptoticConePositiveProjection (hcomparison : RayComparison
   apply Continuous.subtype_mk
   exact (continuous_asymptoticConeProjection hcomparison).comp
     ((continuous_subtype_val.comp continuous_fst).prodMk continuous_snd)
-
 
 def asymptoticConeNormalize (hcomparison : RayComparison p)
     (a : AsymptoticConePositive p hcomparison) : AsymptoticConeUnitSlice p hcomparison :=
@@ -190,8 +172,6 @@ theorem asymptoticConeNormalize_projection (hcomparison : RayComparison p)
     asymptoticConeProjection hcomparison (1, l)
   rw [asymptoticConeRadius_projection, asymptoticConeDilation_projection,
     inv_mul_cancel₀ r.property.ne']
-
-
 
 def asymptoticConeAngle (hcomparison : RayComparison p)
     (a : AsymptoticConePositive p hcomparison) : AsymptoticLink p hcomparison :=
@@ -232,8 +212,6 @@ theorem asymptoticConePositiveProjection_radius_angle (hcomparison : RayComparis
       change asymptoticConeDilation hcomparison (asymptoticConeRadius hcomparison a.1)
         (asymptoticConeDilation hcomparison (asymptoticConeRadius hcomparison a.1)⁻¹ a.1) = a.1
       rw [asymptoticConeDilation_mul, mul_inv_cancel₀ a.property.ne', asymptoticConeDilation_one]
-
-
 
 def asymptoticConePositiveHomeomorph (hcomparison : RayComparison p) :
     (Ioi (0 : ℝ≥0) × AsymptoticLink p hcomparison) ≃ₜ AsymptoticConePositive p hcomparison where

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRectangleSides
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePL.exists_bottom_normalized_rectangle_chart
     {α β : ℝ} (hαβ : α < β) {T : Set E}

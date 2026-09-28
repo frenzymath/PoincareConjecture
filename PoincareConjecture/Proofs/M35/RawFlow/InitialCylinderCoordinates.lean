@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderContractions
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarOperatorPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,8 +63,6 @@ theorem initialEndChart_mfderiv_invertible (q : UnitTwoSphere) {p : StandardCapS
     apply hzero
     rw [map_sub, hvw, sub_self]
   exact ⟨(LinearEquiv.ofInjectiveEndo L.toLinearMap hi).toContinuousLinearEquiv, rfl⟩
-
-
 
 theorem initialEnd_scalar_norm (D : LeviCivitaData g) (q : UnitTwoSphere)
     {s : ℝ} (hs : 0 < s) :

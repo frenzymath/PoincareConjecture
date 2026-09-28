@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.KernelTransport
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter
@@ -39,8 +31,6 @@ lemma eventually_finrank_kernel_le
   change A q v + K.starProjection v = A q w + K.starProjection w
   rw [show A q v = 0 from v.property, show A q w = 0 from w.property, zero_add, zero_add]
   exact congrArg Subtype.val hvw
-
-
 
 theorem kernel_antitone_of_derivative_annihilates
     {A D : ℝ → E →L[ℝ] E} {a b : ℝ}

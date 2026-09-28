@@ -8,16 +8,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.FiniteCappedChainAmbientChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapDispatch
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +16,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M25
-
-
 
 theorem finiteCappedLocalInput_of_services
     (hS : PoincareConjecture.M25.Topology3D.SchoenfliesService)

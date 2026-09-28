@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.MetricRowFrame
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,11 +14,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
-
 
 theorem connectionCoefficient_eq_of_metric_germ
     {g : RiemannianMetric n E} (D : LeviCivitaData g)

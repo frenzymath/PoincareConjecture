@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenFieldExtension
 import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
 
-
-
-
 theorem backwardPath_contMDiffOn_of_square (R : M14SquareRootPath G p) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ p.curve (Ioo a b) := by
   apply (sqrtPullback_contMDiffOn p.tau_nonneg (R.smooth.mono R.interval_subset)).congr
@@ -41,9 +28,6 @@ theorem backwardPath_contMDiffOn_of_square (R : M14SquareRootPath G p) :
   have hs : Real.sqrt t ∈ M14SqrtParameterInterval a b :=
     ⟨Real.sqrt_le_sqrt ht.1.le, Real.sqrt_le_sqrt ht.2.le⟩
   simpa only [Real.sq_sqrt ht₀] using (R.agrees (Real.sqrt t) hs).symm
-
-
-
 
 theorem exists_backwardVelocity_extension_of_square (R : M14SquareRootPath G p) :
     Nonempty (M14PullbackExtension G p.curve (Ioo a b) p.horizontal_velocity) := by
@@ -69,9 +53,6 @@ private theorem squareResidual_pair_heq {x y : G.Point} (h : x = y)
   cases hV
   cases hW
   rfl
-
-
-
 
 theorem squareRootEulerResidual_eq_scaled
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -103,9 +84,6 @@ theorem squareRootEulerResidual_eq_scaled
     (heq_of_eq hrestrict).trans (hcongr.trans (heq_of_eq hind))
   exact (squareResidual_pair_heq (G := G) (heq hs) hD (hvel s hs) hW s).trans
     (squarePullback_eulerResidual p hM12 F hs W')
-
-
-
 
 theorem eulerEquation_of_squareRootEuler
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)

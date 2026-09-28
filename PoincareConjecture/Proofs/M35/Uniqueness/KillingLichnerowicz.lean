@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingGradientEvolution
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectTensor
 import PoincareConjecture.Proofs.M35.Uniqueness.LichnerowiczEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem killingDefectTensor_heat_hasDerivAt_of_eventually_heat
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

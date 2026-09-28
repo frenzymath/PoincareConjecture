@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,9 +9,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64LogRadius_ae {rho : ℝ} (hrho : 0 < rho) {q : ℝ → Prop}
     (hq : ∀ᵐ r ∂volume.restrict (Icc (rho * Real.exp (-1)) rho), q r) :

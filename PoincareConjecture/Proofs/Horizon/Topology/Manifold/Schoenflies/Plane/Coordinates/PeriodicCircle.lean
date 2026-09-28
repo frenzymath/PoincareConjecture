@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.AngularCoordinate
 import Mathlib.Algebra.Order.Floor.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,13 +12,9 @@ section Pointwise
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {F : Type*}
 
-
-
 noncomputable def periodicCircleCurve (T : ℝ) (e : ℂ ≃ₗᵢ[ℝ] E)
     (γ : ℝ → F) (q : sphere (0 : E) 1) : F :=
   γ ((T / (2 * Real.pi)) * circleAngularCoordinate e (0, (q : E)))
-
-
 
 theorem periodicCircleCurve_sphereCircleParameter {T : ℝ} (hT : 0 < T)
     (e : ℂ ≃ₗᵢ[ℝ] E) {γ : ℝ → F} (hγ : Periodic γ T) (s : ℝ) :
@@ -49,8 +36,6 @@ theorem periodicCircleCurve_sphereCircleParameter {T : ℝ} (hT : 0 < T)
   rw [hscale]
   exact hγ.int_mul m _
 
-
-
 theorem periodicCircleCurve_eq_branch {T : ℝ} (hT : 0 < T)
     (e : ℂ ≃ₗᵢ[ℝ] E) {γ : ℝ → F} (hγ : Periodic γ T)
     (a : ℝ) (q : sphere (0 : E) 1) :
@@ -59,8 +44,6 @@ theorem periodicCircleCurve_eq_branch {T : ℝ} (hT : 0 < T)
   have h := periodicCircleCurve_sphereCircleParameter hT e hγ
     (circleAngularCoordinate e (a, (q : E)))
   rwa [sphereCircleParameter_circleAngularCoordinate] at h
-
-
 
 theorem injective_periodicCircleCurve {T : ℝ} (hT : 0 < T)
     (e : ℂ ≃ₗᵢ[ℝ] E) {γ : ℝ → F} (hγ : Periodic γ T)
@@ -92,8 +75,6 @@ theorem injective_periodicCircleCurve {T : ℝ} (hT : 0 < T)
   have hst : s = t := mul_left_cancel₀ hc.ne' (hinj (hscaled hs) (hscaled ht) heq)
   exact hsq.symm.trans ((congrArg (sphereCircleParameter e) hst).trans htr)
 
-
-
 theorem range_periodicCircleCurve {T : ℝ} (hT : 0 < T)
     (e : ℂ ≃ₗᵢ[ℝ] E) {γ : ℝ → F} (hγ : Periodic γ T) :
     range (periodicCircleCurve T e γ) = range γ := by
@@ -113,8 +94,6 @@ section Smooth
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [Fact (Module.finrank ℝ E = 2)]
 
-
-
 theorem contMDiffAt_circleAngularCoordinate_sphere (e : ℂ ≃ₗᵢ[ℝ] E)
     (a : ℝ) (q : sphere (0 : E) 1)
     (hq : e.symm (q : E) * (Circle.exp (-a) : ℂ) ∈ Complex.slitPlane) :
@@ -127,8 +106,6 @@ theorem contMDiffAt_circleAngularCoordinate_sphere (e : ℂ ≃ₗᵢ[ℝ] E)
       (contMDiff_coe_sphere (E := E) (n := 1) (m := ∞)).contMDiffAt)
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem contMDiff_periodicCircleCurve_family {V : Type*} [NormedAddCommGroup V]
     [NormedSpace ℝ V] {T : ℝ} (hT : 0 < T) (e : ℂ ≃ₗᵢ[ℝ] E)
@@ -151,8 +128,6 @@ theorem contMDiff_periodicCircleCurve_family {V : Type*} [NormedAddCommGroup V]
     contMDiffAt_fst.prodMk_space (hbranch.comp x contMDiffAt_snd)
   apply (hγ.contMDiff.contMDiffAt.comp x hpair).congr_of_eventuallyEq
   exact Filter.Eventually.of_forall (fun y => periodicCircleCurve_eq_branch hT e (hper y.1) a y.2)
-
-
 
 theorem mfderiv_periodicCircleCurve_injective {T : ℝ} (hT : 0 < T)
     (e : ℂ ≃ₗᵢ[ℝ] E) {γ : ℝ → F} (hper : Periodic γ T)

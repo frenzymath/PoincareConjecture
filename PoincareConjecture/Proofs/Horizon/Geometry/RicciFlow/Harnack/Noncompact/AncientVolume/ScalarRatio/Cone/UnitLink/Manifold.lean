@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.OpenConeModel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 abbrev UnitSliceAmbient (n : ℕ) := EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 structure UnitSliceRadialChartData {X : Type*} [MetricSpace X] {p : X}
     (hcomparison : RayComparison p) (n : ℕ) where
@@ -84,8 +71,6 @@ def levelHomeomorph : d.Level ≃ₜ d.target :=
 theorem levelHomeomorph_val (z : d.Level) :
     (d.levelHomeomorph z).1.1 = d.ambientChart (openLevelIncl d.potential d.source (1 / 2) z) := rfl
 
-
-
 def levelEmbedding (z₀ : d.Level) :
     OpenPartialHomeomorph d.Level (AsymptoticConeUnitSlice p hcomparison) :=
   d.levelHomeomorph.toOpenPartialHomeomorph.trans
@@ -99,8 +84,6 @@ def levelEmbedding (z₀ : d.Level) :
 
 theorem levelEmbedding_apply (z₀ z : d.Level) :
     d.levelEmbedding z₀ z = (d.levelHomeomorph z).1 := rfl
-
-
 
 def chart (z : d.Level) :
     OpenPartialHomeomorph (AsymptoticConeUnitSlice p hcomparison) (EuclideanSpace ℝ (Fin n)) :=
@@ -129,13 +112,10 @@ theorem chart_source_subset_target (z : d.Level) : (d.chart z).source ⊆ d.targ
 
 end UnitSliceRadialChartData
 
-
 def unitSliceRadialAtlas {X : Type*} [MetricSpace X] {p : X}
     (hcomparison : RayComparison p) (n : ℕ) :
     Set (OpenPartialHomeomorph (AsymptoticConeUnitSlice p hcomparison) (EuclideanSpace ℝ (Fin n))) :=
   {C | ∃ (d : UnitSliceRadialChartData hcomparison n) (z : d.Level), C = d.chart z}
-
-
 
 theorem exists_unitSliceRadialChartData_of_local_model
     {X : Type*} [MetricSpace X] {p : X} (hcomparison : RayComparison p)
@@ -189,8 +169,6 @@ theorem exists_unitSliceRadialChartData_of_local_model
     distance := fun y hy z hz => hdistance y (hVH (hH'source ▸ hy)) z (hVH (hH'source ▸ hz)) }
   exact ⟨d, by change x ∈ H'.source; rwa [hH'source], heqnear.self_of_nhds, rfl⟩
 
-
-
 @[instance_reducible] def unitSliceChartedSpace {X : Type*} [MetricSpace X] {p : X}
     (hcomparison : RayComparison p) (n : ℕ)
     (hcover : ∀ x : AsymptoticConeUnitSlice p hcomparison,
@@ -240,8 +218,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
 
 include hC hK hbound hκ hnoncollapse hzero
 
-
-
 theorem unitSliceRadialAtlas_covers_of_zero_ratio :
     letI := (F.metric t₀).toMetricSpace
     let hsec : (F.connection t₀).NonnegativeSectionalCurvature := fun x v w =>
@@ -283,8 +259,6 @@ theorem unitSliceRadialAtlas_covers_of_zero_ratio :
   rw [d.levelHomeomorph_val]
   exact hdH0.trans (hH0.trans hxcone)
 
-
-
 @[instance_reducible] def unitSliceChartedSpace_of_zero_ratio :
     letI := (F.metric t₀).toMetricSpace
     let hsec : (F.connection t₀).NonnegativeSectionalCurvature := fun x v w =>
@@ -297,8 +271,6 @@ theorem unitSliceRadialAtlas_covers_of_zero_ratio :
   exact unitSliceChartedSpace _ n
     (F.unitSliceRadialAtlas_covers_of_zero_ratio hC hcomplete hoperator
       hK hbound hκ hnoncollapse t₀ ht₀ p hzero)
-
-
 
 theorem unitSlice_topology_of_zero_ratio :
     letI := (F.metric t₀).toMetricSpace

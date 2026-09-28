@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.PositiveFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_positive_frontier_quarter_control_at_sphere :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

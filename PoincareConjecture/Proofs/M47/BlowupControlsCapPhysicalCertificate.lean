@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapTangent
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScaling
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_actualCap_physical_certificate_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.Ter
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.InstalledGeometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.InstalledSlabInjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

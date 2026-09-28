@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.Retaine
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.AtlasRange
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.RetainedProtectedBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SeparatedSphereCaps
 namespace PoincareConjecture.M76

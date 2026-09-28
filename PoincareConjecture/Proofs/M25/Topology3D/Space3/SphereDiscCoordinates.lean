@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ComplementaryStereographic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +9,6 @@ open scoped InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem sphereStereo_image_closedBall (v : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     (stereographic' 2 v).symm '' closedBall 0 r =
@@ -50,8 +37,6 @@ theorem sphereStereo_image_closedBall (v : UnitTwoSphere) {r : ℝ} (hr : 0 < r)
     obtain ⟨x, hx, heq⟩ := hm
     exact ⟨x, hx, Subtype.ext heq⟩
 
-
-
 theorem sphereStereo_image_sphere (v : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     (stereographic' 2 v).symm '' sphere 0 r =
       {q : UnitTwoSphere | stereographicCapHeight r = ⟪-(v : E3), (q : E3)⟫_ℝ} := by
@@ -78,8 +63,6 @@ theorem sphereStereo_image_sphere (v : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
       exact ⟨norm_eq_of_mem_sphere q, hq⟩
     obtain ⟨x, hx, heq⟩ := hm
     exact ⟨x, hx, Subtype.ext heq⟩
-
-
 
 theorem sphereStereo_complementary_discs (v : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     ((stereographic' 2 v).symm '' closedBall 0 r) ∪

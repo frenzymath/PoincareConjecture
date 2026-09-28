@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.FinitePL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PLSurfaceCount
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

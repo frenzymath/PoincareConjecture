@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.BundleContact
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,8 +15,6 @@ open Poincare.Riemannian.RadialTransport
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem second_fderiv_metric_pairing
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
@@ -64,8 +54,6 @@ theorem second_fderiv_metric_pairing
     fderiv_metric_pairing (hGp.differentiableAt (by simp))
       (hYp.differentiableAt (by simp)) (hDZ.differentiableAt (by simp)) (hcompat p hp)]
   ring
-
-
 
 theorem second_fderiv_metric_self
     {Γ : E → E →L[ℝ] F →L[ℝ] F}

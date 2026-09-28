@@ -9,18 +9,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineSectionFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -31,9 +19,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
 open Classical in
-
-
-
 
 theorem exists_original_signed_tube_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

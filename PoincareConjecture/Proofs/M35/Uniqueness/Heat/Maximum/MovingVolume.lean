@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarMetricJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +17,11 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
 theorem raw_volumeDensity_eq (g : RiemannianMetric n V) (x : V) :
     g.pullbackVolumeDensity id x = Real.sqrt (rawCoordinateGram g x).det := by
   simp only [RiemannianMetric.pullbackVolumeDensity, mfderiv_id,
     ContinuousLinearMap.id_apply, id_eq, EuclideanSpace.basisFun_apply]
   rfl
-
 
 theorem raw_scalar_eq_inverse_gram {g : RiemannianMetric n V}
     (D : LeviCivitaData g) (x : V) :
@@ -75,8 +65,6 @@ private theorem sqrt_det_hasDerivWithinAt
   rw [Poincare.Matrix.fderiv_sqrt_det hentry hpos B] at h
   simpa only [heval, Matrix.of_apply, Function.comp_def] using! h
 
-
-
 theorem raw_volumeDensity_hasDerivWithinAt {J : Set ℝ} (F : RicciFlow n V J)
     {t : ℝ} (ht : t ∈ J) (x : V) :
     HasDerivWithinAt (fun s => (F.metric s).pullbackVolumeDensity id x)
@@ -100,7 +88,6 @@ theorem raw_volumeDensity_hasDerivWithinAt {J : Set ℝ} (F : RicciFlow n V J)
   simp only [htrace, ← raw_volumeDensity_eq] at h
   convert h using 1
   ring
-
 
 theorem raw_volumeDensity_continuousOn {J : Set ℝ} (F : RicciFlow n V J) :
     ContinuousOn (fun p : ℝ × V => (F.metric p.1).pullbackVolumeDensity id p.2)

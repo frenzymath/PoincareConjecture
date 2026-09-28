@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,8 +14,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem disk_edist_le_of_derivative_bound (g : RiemannianMetric 3 M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 3) 1 F) {K : ℝ}
@@ -64,8 +52,6 @@ theorem disk_edist_le_of_derivative_bound (g : RiemannianMetric 3 M)
       hdist.trans (ENNReal.ofReal_le_ofReal hint)
     _ = ENNReal.ofReal K * ENNReal.ofReal ‖x - y‖ := by
       rw [ENNReal.ofReal_mul' (norm_nonneg _), norm_sub_rev]
-
-
 
 theorem exists_disk_lipschitz_constant (g : RiemannianMetric 3 M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 3) 1 F) :

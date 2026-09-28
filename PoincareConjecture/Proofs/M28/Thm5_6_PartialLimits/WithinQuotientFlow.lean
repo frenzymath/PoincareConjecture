@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinLocalFlows
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricFamilies
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.RicciFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +9,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
-
-
 
 theorem exists_quotientRicciFlow_of_within_spacetime_bounds
     {n : ℕ} (U : ℕ → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))

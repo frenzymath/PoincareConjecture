@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -28,8 +19,6 @@ private theorem fderiv_eq_id_off_compact (f : (ℝ × ℝ) → ℝ × ℝ)
     exact hfix y hy
   rw [heq.fderiv_eq, fderiv_id]
 
-
-
 theorem fderiv_fixed_axis_horizontal (f : (ℝ × ℝ) → ℝ × ℝ)
     (hf : Differentiable ℝ f) (hfix : ∀ u, f (u, 0) = (u, 0)) (u : ℝ) :
     fderiv ℝ f (u, 0) (1, 0) = (1, 0) := by
@@ -40,8 +29,6 @@ theorem fderiv_fixed_axis_horizontal (f : (ℝ × ℝ) → ℝ × ℝ)
     funext hfix
   rw [heq] at hd
   exact hd.unique hline
-
-
 
 theorem normal_fderiv_pos_of_fixed_axis (F : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))
     {K : Set (ℝ × ℝ)} (hK : IsCompact K)
@@ -95,9 +82,6 @@ theorem normal_fderiv_pos_of_fixed_axis (F : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × �
   have hzero : (0 : ℝ) ∈ Icc (c u) (c v) := ⟨le_of_not_gt hn, by rw [hcv]; norm_num⟩
   obtain ⟨w, _, hw⟩ := intermediate_value_Icc huv.le hc.continuous.continuousOn hzero
   exact hne w hw
-
-
-
 
 theorem exists_fixed_axis_derivative_coefficients
     (F : ℝ → (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

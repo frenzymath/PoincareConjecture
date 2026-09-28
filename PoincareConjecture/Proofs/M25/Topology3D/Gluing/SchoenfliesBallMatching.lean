@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Mathlib.MonotoneIntervalChart
 import PoincareConjecture.Proofs.M25.Mathlib.InwardRadialExtension
 import PoincareConjecture.Proofs.M25.Mathlib.RadialBallChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
 
 theorem exists_sameHeight_ball_chart
     (hD : DiffSphereIsotopyService)

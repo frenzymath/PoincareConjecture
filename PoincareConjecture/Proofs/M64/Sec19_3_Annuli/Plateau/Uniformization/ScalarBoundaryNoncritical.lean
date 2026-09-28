@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundarySeparation
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,12 +69,6 @@ private theorem chart_differential_ne_zero_of_linear_curve
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 theorem annular_boundary_differential_ne_zero
     {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -149,13 +132,6 @@ theorem annular_boundary_differential_ne_zero
         rw [houter x hnorm]
         have h := neg_le_abs (H (b t) - 1)
         linarith
-
-
-
-
-
-
-
 
 theorem exists_annular_harmonic_potential_noncritical_boundary :
     ∃ H : Plane → ℝ,

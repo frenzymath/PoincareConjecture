@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Ordinary
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Interval.Transport
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

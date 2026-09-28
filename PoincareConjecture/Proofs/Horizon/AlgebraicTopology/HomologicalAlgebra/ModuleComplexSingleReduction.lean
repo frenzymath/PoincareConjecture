@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.IntegralCohomologyExcision
 import Mathlib.Algebra.Homology.SingleHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

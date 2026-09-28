@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Coordinates.TorusCrossingPatch
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.CoordinateRimIntersection
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -243,6 +231,5 @@ theorem shiChart_density_second_jet [T2Space M] (D : LeviCivitaData g)
     change 2 * (G x (P v) (P v) + G x Q T) = _
     rw [hcurv]
     rfl
-
 
 end PoincareConjecture.RicciFlowAnalysis

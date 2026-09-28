@@ -1,20 +1,12 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_eq_local_inverse_of_injOn_closure
     {X Y : Type*} [TopologicalSpace X] [T2Space X] [TopologicalSpace Y]

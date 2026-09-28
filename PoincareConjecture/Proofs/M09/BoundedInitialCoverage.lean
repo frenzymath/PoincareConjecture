@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmallTimeExponential
 import PoincareConjecture.Proofs.M09.SmallTimeActionBound
 import PoincareConjecture.Proofs.M09.UniqueMinimizingVectors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

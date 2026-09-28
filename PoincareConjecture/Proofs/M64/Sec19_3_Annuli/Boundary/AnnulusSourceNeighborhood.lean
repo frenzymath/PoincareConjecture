@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusSourceCoordinates
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -12,11 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
-
 
 theorem annulusBoundarySource_radius {r x : ℝ} (hr : 0 < r)
     (hx : x ∈ Ioo 0 curvePeriod) (upper : Bool) {O : Set LoopPlane}

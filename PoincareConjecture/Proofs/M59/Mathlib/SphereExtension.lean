@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,8 +9,6 @@ open Metric Set
 namespace PoincareConjecture.Proofs.M59
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 def closedUnitBallRetraction : C(E, closedBall (0 : E) 1) where
   toFun z := ⟨(max 1 ‖z‖)⁻¹ • z, by
@@ -31,14 +21,10 @@ def closedUnitBallRetraction : C(E, closedBall (0 : E) 1) where
     exact ((continuous_const.max continuous_norm).inv₀
       (fun z => ne_of_gt (lt_of_lt_of_le zero_lt_one (le_max_left 1 ‖z‖)))).smul continuous_id
 
-
-
 theorem closedUnitBallRetraction_sphere (z : sphere (0 : E) 1) :
     closedUnitBallRetraction z.val = ⟨z.val, sphere_subset_closedBall z.property⟩ := by
   apply Subtype.ext
   simp [closedUnitBallRetraction, mem_sphere_zero_iff_norm.mp z.property]
-
-
 
 theorem exists_extension_of_sphere_nullhomotopic [FiniteDimensional ℝ E] [Nontrivial E]
     {Y : Type*} [TopologicalSpace Y] (f : C(sphere (0 : E) 1, Y))

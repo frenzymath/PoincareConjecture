@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPicardEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M14
 
 variable {P F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F] {a b : ℝ}
-
-
-
 
 theorem closedPath_eq_const_add_primitive (t₀ : Icc a b) (φ ψ : C(Icc a b, F))
     (hd : ∀ r : Icc a b, HasDerivWithinAt
@@ -40,8 +28,6 @@ theorem closedPath_eq_const_add_primitive (t₀ : Icc a b) (φ ψ : C(Icc a b, F
     exact hd r)
   rwa [hpost] at h
 
-
-
 theorem closedPath_hasDerivWithinAt_of_primitive (t₀ : Icc a b)
     (φ ψ : C(Icc a b, F)) (c : F)
     (heq : φ = ContinuousMap.const _ c + closedPathPrimitive t₀ ψ) (r : Icc a b) :
@@ -55,9 +41,6 @@ theorem closedPath_hasDerivWithinAt_of_primitive (t₀ : Icc a b)
   intro s _
   exact congrArg (fun v : C(Icc a b, F) =>
     v (projIcc a b (t₀.property.1.trans t₀.property.2) s)) heq
-
-
-
 
 theorem closedPath_parameter_time_derivative (t₀ : Icc a b) {U : Set P} (hU : IsOpen U)
     (Φ Ψ : P → C(Icc a b, F)) (hΦ : DifferentiableOn ℝ Φ U)

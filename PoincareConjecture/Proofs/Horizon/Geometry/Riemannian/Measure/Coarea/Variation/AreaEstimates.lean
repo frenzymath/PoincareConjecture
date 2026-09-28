@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Area
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.AreaEstimates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   (hreg : ∀ x, f x ∈ I → mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
 
 include hI hproper hreg
-
-
 
 theorem regularLevelArea_error_le_of_power_bound
     {a b α : ℝ} (ha : 0 < a) (hab : a ≤ b) (hb : b ≤ 1)
@@ -69,8 +60,6 @@ theorem regularLevelArea_error_le_of_power_bound
     dsimp only
     rw [(hderiv t (hslab ht)).deriv]
   rwa [heq] at hbound
-
-
 
 theorem regularLevelArea_le_mul_one_add_of_forall_le_sub_meanCurvature
     {b α C K S : ℝ} (hb : 0 < b) (hb1 : b ≤ 1) (hn : 1 ≤ n)

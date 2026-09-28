@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetEstimates
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
 
 theorem iteratedFDeriv_cylinderCoordinateEquiv
     (f : RoundCylinderCoordinates → ℝ) (p : EuclideanSpace ℝ (Fin 3))
@@ -45,8 +34,6 @@ private theorem second_derivative_evaluation
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RoundCylinderClose
-
-
 
 theorem iterated_error_component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (he : 0 < epsilon)

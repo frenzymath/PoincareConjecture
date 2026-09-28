@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedCarrierRefinement
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedFiniteComplexPosition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_protected_finite_polyhedron_position
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

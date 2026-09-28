@@ -1,9 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

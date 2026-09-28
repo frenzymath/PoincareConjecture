@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFinitePLBallImage
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

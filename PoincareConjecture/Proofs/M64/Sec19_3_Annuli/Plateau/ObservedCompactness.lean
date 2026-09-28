@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongCompactness
 import PoincareConjecture.Proofs.M03.Existence.LpFiniteCoordinatesNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteLocalizationCompactnessNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
-
 
 theorem m64Annulus_scalar_observed_l2_isCompact
     (g : RiemannianMetric n M) (e : M → ℝ)
@@ -64,9 +51,6 @@ theorem m64Annulus_scalar_observed_l2_isCompact
       _ ≤ B * C := mul_le_mul_of_nonneg_left (hC j) hB0
   exact m64Annulus_l2_isCompact (fun j => e ∘ f j) hu
     (fun _ _ => hA _ (mem_range_self _)) hder
-
-
-
 
 theorem m64Annulus_observed_l2_isCompact {m : ℕ}
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))
@@ -110,9 +94,6 @@ theorem m64Annulus_observed_l2_isCompact {m : ℕ}
     exact subset_closure ⟨j, (heq i j).symm⟩
   · intro v _
     exact LpFiniteCoordinatesNative.sum_insertion_coordinate volume v
-
-
-
 
 theorem m64Annulus_observed_strong_subsequence {m : ℕ}
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))

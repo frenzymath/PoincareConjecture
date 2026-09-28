@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckCompletedOutputNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckJetAffineNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteChartCommonTimeNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -51,7 +45,6 @@ theorem nativeCoordinateSupport_subset_core (a : L.patches) :
     interior {x | (nativeCutoffs d L a).eta x = 1}
   rw [(L.chart a).left_inv (L.weight_support_source a hx)]
   exact mem_interior_iff_mem_nhds.mpr ((nativeCutoffs d L a).eta_one x hx)
-
 
 theorem exists_common_patch_radius :
     ∃ r : ℝ, 0 < r ∧ ∀ a : L.patches,
@@ -138,7 +131,6 @@ theorem patchExtensionMeasureBound (a : L.patches) :
     (isClosed_tsupport (nativeCutoffs d L a).eta).isCompact
     (nativeCutoffs d L a).eta_support).choose_spec.2
 
-
 def patchExtensionL2 (a : L.patches) : ScalarL2 n →L[ℝ] Lp ℝ 2 d.charts.measure :=
   chartExtensionL2 (L.chart a) (isClosed_tsupport (nativeCutoffs d L a).eta).measurableSet
     (nativeCutoffs d L a).eta_support (patchExtensionConstant_ne_top d L a)
@@ -222,7 +214,6 @@ theorem patchExtension_localization_smooth (a : L.patches) (f : M → ℝ)
     (isClosed_tsupport (nativeCutoffs d L a).eta).isCompact
     (nativeCutoffs d L a).eta_support hzero (L.globalProduct_memLp a hf)
     (patchExtensionConstant_ne_top d L a) (patchExtensionMeasureBound d L a)
-
 
 theorem patchExtension_localization (a : L.patches) (q : Lp ℝ 2 d.charts.measure) :
     patchExtensionL2 d L a (L.localizationL2 a q) =
@@ -592,7 +583,6 @@ theorem nativeProbeTupleL2_eq_smoothProbeTuples (k : ℕ)
       (⟨directionalWord d.fields (List.ofFn w.2) (scalarProbe d.fields h b),
         (directionalWord_contMDiff d.fields (List.ofFn w.2)
           (scalarProbe_contMDiff d.fields h b)).continuous⟩ : C(M, ℝ))).symm
-
 
 theorem evenOutput_nativeProbeTupleL2 (r : ℕ)
     (z : SpectralHeatNative.State d.SymmetricIndex) :

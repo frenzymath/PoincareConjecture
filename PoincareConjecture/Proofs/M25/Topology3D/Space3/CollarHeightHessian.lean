@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightHessian
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem collar_height_hessian_injective (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (N : UnitTwoSphere → UnitTwoSphere)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.BallTransport
 import PoincareConjecture.Proofs.M38.PairBallShrinking
 import PoincareConjecture.Proofs.M38.TwoBallCenters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,11 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
-
-
 
 theorem exists_two_ball_neighborhood {A : GeneralizedSliceCarrier.{u}}
     (B D : SurgeryBallEmbedding A)

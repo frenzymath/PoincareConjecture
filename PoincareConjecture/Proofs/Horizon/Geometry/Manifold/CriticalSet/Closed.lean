@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +12,6 @@ namespace Poincare.Geometry.Manifold
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [TopologicalSpace H] {I : ModelWithCorners Real E H}
   [TopologicalSpace M] [ChartedSpace H M] [IsManifold I 1 M]
-
-
 
 theorem isClosed_setOf_mfderiv_eq_zero {h : M → Real}
     (hh : ContMDiff I 𝓘(Real, Real) 1 h) :
@@ -48,13 +39,10 @@ theorem isClosed_setOf_mfderiv_eq_zero {h : M → Real}
   apply hq
   simp [A, inTangentCoordinates, ContinuousLinearMap.inCoordinates, hzero]
 
-
-
 theorem isCompact_critical_values [CompactSpace M] {h : M → Real}
     (hh : ContMDiff I 𝓘(Real, Real) 1 h) :
     IsCompact (h '' {p : M | mfderiv I 𝓘(Real, Real) h p = 0}) :=
   (isClosed_setOf_mfderiv_eq_zero hh).isCompact.image hh.continuous
-
 
 theorem isClosed_critical_values [CompactSpace M] {h : M → Real}
     (hh : ContMDiff I 𝓘(Real, Real) 1 h) :

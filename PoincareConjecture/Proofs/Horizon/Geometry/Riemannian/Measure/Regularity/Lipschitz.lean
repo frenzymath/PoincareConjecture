@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Lipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_intrinsic_lipschitz_chart_ball (g : RiemannianMetric n M) (a : M) :
     ∃ C : ℝ≥0, ∃ r : ℝ, 0 < r ∧
@@ -52,8 +43,6 @@ theorem exists_intrinsic_lipschitz_chart_ball (g : RiemannianMetric n M) (a : M)
     simpa only [modelWithCornersSelf_coe, range_id, contMDiffWithinAt_univ] using
       contMDiffWithinAt_extChartAt_symm_range (I := 𝓡 n) (n := 1) a (hball hy).1
   · exact fun y hy ↦ (hball hy).2.le
-
-
 
 theorem exists_chart_weakPartials_of_distance_lipschitz
     (g : RiemannianMetric n M) {f : M → ℝ}

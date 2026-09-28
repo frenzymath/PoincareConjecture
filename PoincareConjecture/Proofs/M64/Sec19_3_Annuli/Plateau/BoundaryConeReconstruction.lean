@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Mathlib.HalfDiskStrongGraph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,9 +14,6 @@ open M65Interior
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
   [CompleteSpace C] [ProperSpace C]
-
-
-
 
 theorem cone_reconstruction_angular {v d : ℝ → C}
     {v0 : C} {g : C → ℝ}

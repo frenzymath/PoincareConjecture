@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineLevelComplexPosition
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -108,11 +93,6 @@ private theorem nonzero_of_plane_face_position
       simp only [image_singleton, convexHull_singleton, intrinsicInterior_singleton,
         mem_singleton_iff]
     exact Set.disjoint_left.mp hdisjoint hv hvt
-
-
-
-
-
 
 theorem exists_protected_branch_repair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -234,13 +214,6 @@ theorem exists_protected_branch_repair
   refine ⟨hKaff.embeddedImage hinj, hKaff.embeddedImage_finite hinj (hR.subset hK),
     ?_, hKaff.protected_le_embeddedImage hinj hK₀ (fun x hx => hHfixed 1 x hx)⟩
   rw [hKaff.embeddedImage_space hinj, hKs]
-
-
-
-
-
-
-
 
 theorem exists_protected_boundary_branch_repair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

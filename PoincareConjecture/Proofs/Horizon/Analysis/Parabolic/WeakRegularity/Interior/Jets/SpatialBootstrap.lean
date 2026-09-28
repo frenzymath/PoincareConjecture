@@ -1,20 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.LocalForcedSecondJets
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJetAlgebra
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakDifferentiatedEquation
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open scoped ContDiff Topology
@@ -164,6 +150,5 @@ theorem exists_local_forced_spatial_jet
     refine ⟨hu.mono_measure (Measure.restrict_mono hsU le_rfl), g, hgS, ?_⟩
     intro i φ hφ hφc hφs
     exact weak_identity_restrict hsU (spatialDirection i) (hweak i) φ hφ hφc hφs
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

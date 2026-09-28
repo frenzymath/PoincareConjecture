@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.RegularSpacetime
 import PoincareConjecture.Proofs.M15.RawBallCylinder
 import PoincareConjecture.Proofs.M33.HistoryMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

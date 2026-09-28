@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 noncomputable def coordinateHomeomorph {epsilon : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) : NeckDomain epsilon ≃ₜ N.carrier where

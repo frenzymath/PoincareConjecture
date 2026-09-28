@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.FixedMetricSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem pullbackCoefficients_chart_cancel
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -55,8 +45,6 @@ theorem pullbackCoefficients_chart_cancel
     (congrArg f hinv)
   exact (congrArg₂ (fun a b : EuclideanSpace ℝ (Fin n) => g.inner (f (c.symm (c y))) a b)
     (hv v) (hv w)).trans hpoint
-
-
 
 theorem chartCoefficients_cancel
     {n : ℕ} {M : Type*} [TopologicalSpace M]

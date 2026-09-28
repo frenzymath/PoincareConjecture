@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.OneBoundaryIncidence
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -18,7 +16,6 @@ variable (K L : SimplicialComplex ℝ E) (J : SimplicialComplex ℝ (E × ℝ))
       ∃ t ∈ L.faces, s = insert a (t.image z))
 
 include hfaces
-
 
 theorem one_boundary_cap_base_cofaces_count_of_not_mem
     (s : Finset E) (hsc : s.card = 2) (hs : s ∉ L.faces) :

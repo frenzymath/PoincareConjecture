@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport n X time I)
-
-
-
-
 
 theorem isCompact_horizontalDisk {K : Set G.Point} (hK : IsCompact K) (R : ℝ) :
     IsCompact {z : Bundle.TotalSpace (EuclideanSpace ℝ (Fin n)) G.Horizontal |

@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Dual
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralOpenCapPropertyHomeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

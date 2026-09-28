@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {tau : ℝ} {R : AncientRescaling K tau}
   {L : AncientLimitFlow n} {J : Set ℝ} {U : Set L.carrier.carrier}
-
 
 theorem spatialMap_contMDiffAt
     (e : AncientSpacetimeEmbedding (K := K) (R := R) L (J ×ˢ U))
@@ -41,7 +33,6 @@ theorem spatialMap_contMDiffAt
   have hs := ((e.smooth_on (t, x) ⟨ht, hx⟩).comp x hslice
     (fun y hy => ⟨ht, hy⟩)).snd
   exact hs.contMDiffAt (hU.mem_nhds hx)
-
 
 theorem spatialMap_mfderiv_injective
     (e : AncientSpacetimeEmbedding (K := K) (R := R) L (J ×ˢ U))
@@ -83,7 +74,6 @@ theorem spatialMap_mfderiv_injective
   have h := congrArg (mfderivWithin (𝓡 n) (𝓡 n) g (f '' U) (f x)) hvw
   rw [← ContinuousLinearMap.comp_apply, ← ContinuousLinearMap.comp_apply, ← hcomp] at h
   exact h
-
 
 theorem spatialMap_mfderiv_bijective
     (e : AncientSpacetimeEmbedding (K := K) (R := R) L (J ×ˢ U))

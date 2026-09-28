@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.OriginalSlabCompressionRim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopImage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
@@ -22,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem injective_or_exists_marked_proper_disk
     {X α : Type*} [TopologicalSpace X] [T2Space X]
@@ -52,9 +39,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_hamiltonZero_slab_proper_disk_alternative {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

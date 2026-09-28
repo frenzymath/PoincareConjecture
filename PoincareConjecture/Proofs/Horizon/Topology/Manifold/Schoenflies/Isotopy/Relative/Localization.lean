@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Flow
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_relative_family_localization_preserving_linear
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
@@ -122,8 +118,6 @@ theorem exists_supported_relative_family_localization_preserving_linear
         exact (hpath t x).hasDerivWithinAt)
       ((hi 0 x).trans (hinit hx).symm)
     exact heq (by simp)
-
-
 
 theorem exists_supported_relative_family_localization
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

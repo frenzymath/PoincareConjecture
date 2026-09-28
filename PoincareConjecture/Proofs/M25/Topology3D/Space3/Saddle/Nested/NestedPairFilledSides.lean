@@ -8,9 +8,6 @@ open scoped ContDiff Manifold Topology
 set_option linter.unusedVariables false in
 set_option maxHeartbeats 3000000 in
 
-
-
-
 theorem exists_saddle_nested_pair_filled_sides
     (kappa : OpenPartialHomeomorph E2 E2)
     (hkappaSource : closedBall (0 : E2) 2 ⊆ kappa.source)

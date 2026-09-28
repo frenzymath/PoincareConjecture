@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonGeometry
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b))
-
-
 
 theorem m63FlattenedPolygon_length (t : ℝ) {N : ℕ}
     (polygon : M63GeodesicPolygon (F.metric t) (F.connection t) N) (hN : 0 < N) :

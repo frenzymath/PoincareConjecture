@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.InnermostReturn
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -69,9 +59,6 @@ theorem isFinitePLBallPair_independent_triangle
       rwa [hRF y] at hh
   rw [htarget, hrim] at hmodel
   exact hmodel
-
-
-
 
 theorem exists_normal_arc_cut_with_allocation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -143,8 +130,6 @@ theorem exists_normal_arc_cut_with_allocation
     · exact hcb rfl
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem InCircleFreeNonreturningTriangleGraphPosition.exists_normal_arc_cuts
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

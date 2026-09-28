@@ -1,11 +1,4 @@
-
-
-
-
-
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
-
-
 
 open Set Filter MeasureTheory ContinuousLinearMap
 open scoped ContDiff Topology Convolution
@@ -16,8 +9,6 @@ namespace Poincare.Analysis.Convolution
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem tendstoUniformly_normed_convolution
     (mu : Measure E) [mu.IsAddHaarMeasure] {f : E → ℝ} (hf : UniformContinuous f)

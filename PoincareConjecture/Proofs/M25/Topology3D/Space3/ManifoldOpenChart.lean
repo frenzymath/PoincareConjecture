@@ -3,16 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +14,6 @@ variable {E F M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
 
 theorem exists_manifold_source_local_inverse (f : M → F) {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn 𝓘(ℝ, E) 𝓘(ℝ, F) ∞ f U)
@@ -82,8 +70,6 @@ variable (hb : ∀ x ∈ U, Function.Bijective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, F
 
 include hU hf hb
 
-
-
 theorem manifold_isOpen_image {T : Set M} (hT : IsOpen T) (hTU : T ⊆ U) :
     IsOpen (f '' T) := by
   apply isOpen_iff_mem_nhds.mpr
@@ -97,7 +83,6 @@ theorem manifold_isOpen_image {T : Set M} (hT : IsOpen T) (hTU : T ⊆ U) :
   rintro z ⟨v, hv, rfl⟩
   exact ⟨v, hv.2, (he hv.1).symm⟩
 
-
 theorem manifold_isOpenMap_restrict : IsOpenMap (U.domRestrict f) := by
   intro T hT
   have hopen : IsOpen (Subtype.val '' T : Set M) :=
@@ -110,24 +95,17 @@ theorem manifold_isOpenMap_restrict : IsOpenMap (U.domRestrict f) := by
 
 variable [Nonempty M] (hi : InjOn f U)
 
-
-
 noncomputable def manifoldOpenChart : OpenPartialHomeomorph M F :=
   OpenPartialHomeomorph.ofContinuousOpenRestrict (hi.toPartialEquiv f U)
     hf.continuousOn (manifold_isOpenMap_restrict f hU hf hb) hU
 
-
 @[simp] theorem manifoldOpenChart_apply (x : M) :
     manifoldOpenChart f hU hf hb hi x = f x := rfl
 
-
 @[simp] theorem manifoldOpenChart_source : (manifoldOpenChart f hU hf hb hi).source = U := rfl
-
 
 @[simp] theorem manifoldOpenChart_target :
     (manifoldOpenChart f hU hf hb hi).target = f '' U := rfl
-
-
 
 theorem manifoldOpenChart_symm_contMDiffOn :
     ContMDiffOn 𝓘(ℝ, F) 𝓘(ℝ, E) ∞ (manifoldOpenChart f hU hf hb hi).symm (f '' U) := by

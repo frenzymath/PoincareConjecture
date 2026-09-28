@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakSobolevExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +14,6 @@ open Poincare.Analysis.Sobolev.Weak EuclideanTranslationNative
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem m64WeakSobolev_localized_l2_isCompact
     {S : Set E} (hS : IsOpen S) (u : ℕ → E → ℝ)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ambient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -64,8 +54,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem not_meets_both_halves_of_isSeparating (hN : N.IsSeparating)
     {U : Set M} (hU : IsPreconnected U)

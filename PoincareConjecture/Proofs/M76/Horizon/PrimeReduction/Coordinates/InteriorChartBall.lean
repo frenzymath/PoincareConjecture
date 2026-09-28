@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

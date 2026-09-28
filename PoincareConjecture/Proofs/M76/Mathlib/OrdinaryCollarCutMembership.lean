@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
-
 
 theorem collar_complement_map_mem_cut_iff
     {E : Type*} [TopologicalSpace E]
@@ -66,10 +52,6 @@ theorem collar_complement_map_mem_cut_iff
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePL.exists_cut_image_restriction
     {X Y s : Set E} {F : X ≃ₜ Y} (hF : F.IsFinitePL) (H : E ≃ₜ E)

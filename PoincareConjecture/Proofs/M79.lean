@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M79TopologicalPoincare
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -15,12 +7,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m79TopologicalPoincare : M79TopologicalPoincareStatement.{u} := by
   intro h76 h77 h75 h78 M _ _ _ _ _ _

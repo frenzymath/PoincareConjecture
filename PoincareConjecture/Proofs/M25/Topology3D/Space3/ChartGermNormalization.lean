@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_normalized_chart_correction (e : OpenPartialHomeomorph E E)
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)

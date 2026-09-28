@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.HarnackIntegrability
 import PoincareConjecture.Proofs.M09.ExponentialAction
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.FiniteSubcoverTraces
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.TerminalEnd
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,7 +58,6 @@ theorem exists_finite_cover_modulo_compact {ι : Type v}
   · exact Or.inl ⟨⟨x, hx⟩, hxL, rfl⟩
   · obtain ⟨i, hi, hxi⟩ := mem_iUnion₂.mp hxV
     exact Or.inr (mem_iUnion₂.mpr ⟨i, hi, hxi⟩)
-
 
 theorem exists_finite_isCompact_diff_of_end_tail_cover {ι : Type v}
     (V : ι → Set (E.extended.slice T).carrier) (hV : ∀ i, IsOpen (V i))

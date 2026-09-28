@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterStrictSigns
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterComplementAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialDiskGre
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeAffine
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ open Proofs.M58 Poincare.Analysis.Sobolev.Weak
 
 local notation "S" => ball (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64ContinuousScalarH1Disk_green
     {u : LoopPlane → ℝ} {V : Fin 2 → LoopPlane → ℝ}
@@ -66,8 +57,6 @@ theorem m64ContinuousScalarH1Disk_green
     ← T.integral_comp_comm hIR] at hproj
   simpa +instances only [T, Function.comp_apply, map_smul, EuclideanSpace.coe_proj,
     U, W, smul_eq_mul] using! hproj
-
-
 
 theorem m64ContinuousScalarH1Disk_affine_green
     {u : LoopPlane → ℝ} {V : Fin 2 → LoopPlane → ℝ}

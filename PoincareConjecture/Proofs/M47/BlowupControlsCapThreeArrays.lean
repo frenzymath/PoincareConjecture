@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapArrayContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -56,7 +47,6 @@ theorem cap_threeTensor_trace_norm_le (T : Tensor) :
   change _ ≤ Real.sqrt 3 * ‖capThreeTensorComponents (fun j i k => T i k j)‖ at h
   rwa [cap_threeTensor_cyclic_norm] at h
 
-
 theorem cap_threeTensor_traced_contraction_abs_le
     (A : I → I → ℝ) (U S : Tensor) :
     |∑ i, ∑ j, ∑ k, ∑ l, A i j * U k k l * S l i j| ≤
@@ -92,7 +82,6 @@ theorem cap_threeTensor_traced_contraction_abs_le
       mul_le_mul_of_nonneg_left
         (mul_le_mul_of_nonneg_right ht (norm_nonneg _)) (norm_nonneg _)
     _ = _ := by ring
-
 
 theorem cap_threeTensor_cross_contraction_abs_le
     (A : I → I → ℝ) (U S : Tensor) :

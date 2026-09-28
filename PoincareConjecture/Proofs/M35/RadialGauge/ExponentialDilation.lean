@@ -2,15 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Normed.Operator.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
@@ -49,8 +40,6 @@ private theorem exp_snd_jet_bound (j : ℕ) (p : E × ℝ) :
     rw [one_pow]
     exact (linear_positive_jet_bound (ContinuousLinearMap.snd ℝ E ℝ) i hi p).trans
       (ContinuousLinearMap.norm_snd_le ℝ E ℝ)
-
-
 
 theorem exponential_dilation_jet_bound (eta : ℝ) (j : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ x : E, ∀ sigma : ℝ, |sigma| ≤ eta →

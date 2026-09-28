@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.OpenSlices
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Retention
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,7 +16,6 @@ namespace GeneralizedSliceCarrier
 
 variable (S : GeneralizedSliceCarrier.{u}) (U : Opens S.carrier)
     {J : Set ℝ} (F : RicciFlow 3 S.carrier J)
-
 
 def openSubsetFlow : RicciFlow 3 (S.openSubset U).carrier J := F.restrictToOpen U
 
@@ -73,7 +62,6 @@ namespace SurgeryRegionEquivalence
 variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
     (e : SurgeryRegionEquivalence A B U V)
 
-
 def interiorMap : sourceInterior (U := U) → B.carrier := fun x => e.map x
 
 theorem interiorMap_isLocalDiffeomorph :
@@ -82,7 +70,6 @@ theorem interiorMap_isLocalDiffeomorph :
   exact (e.interiorDiffeomorph.isLocalDiffeomorph x).comp (𝓡 3) B.carrier
     (Poincare.isLocalDiffeomorph_opensSubtypeVal (𝓡 3)
       (targetInterior (V := V)) (e.interiorDiffeomorph x))
-
 
 def pullbackInteriorFlow {J : Set ℝ} (F : RicciFlow 3 B.carrier J) :
     RicciFlow 3 (A.openSubset (sourceInterior (U := U))).carrier J :=
@@ -153,7 +140,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
     (E : SurgeryEventData g₀ K P slice metric T)
 
-
 def continuingPreFlow :
     RicciFlow 3 ((slice E.tMinus).openSubset
       (SurgeryRegionEquivalence.sourceInterior (U := E.retained_pre))).carrier
@@ -161,12 +147,10 @@ def continuingPreFlow :
   (slice E.tMinus).openSubsetFlow
     (SurgeryRegionEquivalence.sourceInterior (U := E.retained_pre)) E.pre_flow
 
-
 def continuingPostFlow {J : Set ℝ} (F : RicciFlow 3 (slice T).carrier J) :
     RicciFlow 3 ((slice E.tMinus).openSubset
       (SurgeryRegionEquivalence.sourceInterior (U := E.retained_pre))).carrier J :=
   E.retention.pullbackInteriorFlow F
-
 
 theorem continuingPostFlow_initial {J : Set ℝ} (F : RicciFlow 3 (slice T).carrier J)
     (hF : F.metric T = metric T)

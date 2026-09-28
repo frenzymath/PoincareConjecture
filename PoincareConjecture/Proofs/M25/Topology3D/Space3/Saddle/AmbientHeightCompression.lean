@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ScalarHeightCompre
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HorizontalTimeFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,11 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "D1" => Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
-
-
 
 theorem exists_compact_ambient_height_compression
     (u : UnitTwoSphere) (c : ℝ)

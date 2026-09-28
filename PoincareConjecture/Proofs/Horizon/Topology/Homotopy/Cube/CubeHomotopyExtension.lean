@@ -1,19 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Extension.BallHomotopyExtension
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeSphere
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
 
 theorem exists_cube_homotopy_extension
     {N X : Type*} [Finite N] [TopologicalSpace X]
@@ -59,7 +52,6 @@ theorem exists_cube_homotopy_extension
     have hside := hFS t spherePoint
     change F (t, inclusion spherePoint) = h (t, boundaryMap spherePoint) at hside
     simpa only [hi, hboundary] using hside
-
 
 theorem exists_cube_cylinder_homeomorph (N : Type*) :
     ∃ e : (unitInterval × (I^N)) ≃ₜ (I^(Option N)),

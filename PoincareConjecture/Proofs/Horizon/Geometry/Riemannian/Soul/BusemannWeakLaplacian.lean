@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Ray
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Weak.Integral
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -54,8 +41,6 @@ private theorem tendsto_integral_ray_busemannApprox_mul_compact_test
         (norm_nonneg _)
   · exact (hd.mul hψ.norm).integrable_of_hasCompactSupport hc.norm.mul_left
   · exact Eventually.of_forall fun x => (Soul.tendsto_busemannApprox hray x).mul_const (ψ x)
-
-
 
 theorem ray_busemann_distributional_superharmonic
     {m : ℕ} {M : Type*} [MetricSpace M] [T3Space M] [PreconnectedSpace M]
@@ -120,8 +105,6 @@ theorem ray_busemann_distributional_superharmonic
         (m : ℝ) * (∫ x, φ x ∂g.volumeMeasure) := div_mul_cancel₀ _ hε.ne'
     nlinarith
   simpa only [zero_add] using (hbound A hA).trans hquot
-
-
 
 theorem ray_busemann_integral_differential_nonneg
     {m : ℕ} {M : Type*} [MetricSpace M] [T3Space M] [PreconnectedSpace M]

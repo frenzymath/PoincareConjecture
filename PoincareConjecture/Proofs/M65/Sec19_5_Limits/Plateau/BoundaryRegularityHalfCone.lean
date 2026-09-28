@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeGreenDisk
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -19,8 +9,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
 
 theorem polarCoordinates_preimage_halfRectangle (x : LoopPlane) (r : ℝ) :
     polarCoordinates x ⁻¹' (Icc (0 : ℝ) r ×ˢ Icc (0 : ℝ) Real.pi) =
@@ -35,9 +23,6 @@ theorem polarCoordinates_preimage_halfRectangle (x : LoopPlane) (r : ℝ) :
   simp only [mem_preimage, mem_prod, mem_Icc, polarCoordinates_radius,
     norm_nonneg, true_and, mem_inter_iff, mem_closedBall, dist_eq_norm, mem_ofPred_eq]
   rw [and_iff_left (polarCoordinates_angle x z).2, harg]
-
-
-
 
 theorem memLp_halfPolarCoordinates {E : Type*} [NormedAddCommGroup E]
     {f : ℝ × ℝ → E} {p : ℝ≥0∞} {r : ℝ}
@@ -61,9 +46,6 @@ theorem memLp_halfPolarCoordinates {E : Type*} [NormedAddCommGroup E]
   have hpull := (polarCoordinates_measurePreserving x).restrict_preimage hS
   rw [polarCoordinates_preimage_halfRectangle] at hpull
   exact (hf.of_measure_le_smul ENNReal.ofReal_ne_top hmeasure).comp_measurePreserving hpull
-
-
-
 
 theorem halfCone_memLp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {g : EuclideanSpace ℝ (Fin 3) → E}
@@ -92,8 +74,6 @@ theorem halfCone_memLp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     exact hB p hp
   exact ⟨memLp_halfPolarCoordinates hm x, fun i => memLp_halfPolarCoordinates
     (coneCartesianField_memLp hr hρ hK hv hg h0 hvb hd hD i) x⟩
-
-
 
 theorem halfDisk_integral_polar (f : LoopPlane → ℝ) (x : LoopPlane) (r : ℝ) :
     (∫ z in closedBall x r ∩ {z | x 1 ≤ z 1}, f z) =
@@ -140,10 +120,6 @@ theorem halfDisk_integral_polar (f : LoopPlane → ℝ) (x : LoopPlane) (r : ℝ
     _ = _ := setIntegral_congr_set (Measure.set_prod_ae_eq
       (Ioc_ae_eq_Icc (α := ℝ) (μ := volume))
       (Ico_ae_eq_Icc (α := ℝ) (μ := volume)))
-
-
-
-
 
 theorem halfCone_green_rectangle {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
@@ -243,10 +219,6 @@ theorem halfCone_green_rectangle {g : EuclideanSpace ℝ (Fin 3) → ℝ}
   change (∫ p in S, _) = _
   rw [integral_congr_ae heq, integral_add hR hQ, hrad, hang]
 
-
-
-
-
 theorem halfCone_green {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
     {r ρ K : ℝ} (hr : 0 < r) (hρ : 0 < ρ) (hK : 0 ≤ K)
@@ -314,9 +286,6 @@ theorem halfCone_green {g : EuclideanSpace ℝ (Fin 3) → ℝ}
             fderiv ℝ test (polarPlane x p) (EuclideanSpace.basisFun (Fin 2) ℝ i)) :=
       setIntegral_congr_set he.symm
     _ = _ := halfCone_green_rectangle hr hρ hK hv hg h0 hvb hd hinc hD x test ht i
-
-
-
 
 theorem halfCone_derivativeEnergy_le {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E]

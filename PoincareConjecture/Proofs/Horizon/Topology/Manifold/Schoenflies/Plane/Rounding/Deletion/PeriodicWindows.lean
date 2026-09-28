@@ -4,14 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Tactic.Convert
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SimplyCon
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoComponentBoundaryPieces
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.CompactSphereBoundaryRecognition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -29,8 +20,6 @@ local notation "Sphere" => sphere (0 : V3) 1
 local notation "I" => Icc (-1 : ℝ) 1
 local notation "Half" => Icc (-(1 / 2) : ℝ) (1 / 2)
 local notation "atlas" => (fun _ : Unit => OpenPartialHomeomorph.refl V3)
-
-
 
 theorem _root_.Set.IsFinitePLBallPair.three_coordinate_model
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

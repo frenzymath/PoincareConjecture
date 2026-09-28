@@ -8,14 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTriangleReturningBigons
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_innermost_face_circle_disk_in_slice
     (G : SimplicialComplex ℝ V3) (hG : G.faces.Finite)
@@ -168,8 +158,6 @@ theorem exists_innermost_face_circle_disk_in_slice
     rw [hwhole]
     exact mem_iUnion.mpr ⟨i.val, (hFPB i).subset hx⟩
 
-
-
 theorem exists_original_triangle_innermost_circle_disk
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -250,8 +238,6 @@ theorem exists_original_triangle_innermost_circle_disk
       (by simpa only [Finset.coe_image] using hcircle)
   exact ⟨F, R, C, n, P, hRF, hi, hP, hPB, hball, hcompact,
     by simpa only [Finset.coe_image] using hinter, hexact⟩
-
-
 
 theorem exists_original_face_circle_cap
     {E X κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -364,9 +350,6 @@ theorem exists_original_face_circle_cap
   · rwa [hLC]
   · intro j hj
     exact hiunique j (by rwa [← hLC])
-
-
-
 
 theorem exists_original_sphere_system_innermost_circle_disk
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

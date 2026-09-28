@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem exists_uniform_normal_chart_metric_jet_bound
     (n m : ℕ) {rho R : ℝ} (hrho : 0 < rho) (hrhoR : rho < R)

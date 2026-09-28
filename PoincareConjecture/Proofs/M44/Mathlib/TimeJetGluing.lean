@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Partial
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ open scoped ContDiff Topology
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem hasDerivAt_of_eventually_hasDerivAt_of_ne
     {f g : ℝ → E} {t : ℝ} (hf : ContinuousAt f t) (hg : ContinuousAt g t)
@@ -46,9 +34,6 @@ theorem hasDerivAt_of_eventually_hasDerivAt_of_ne
       hright ((hg.mono_left inf_le_left).congr' (hright.mono fun _ hs => hs.deriv.symm))
   simpa only [Iic_union_Ici, hasDerivWithinAt_univ] using hL.union hR
 
-
-
-
 theorem hasDerivAt_of_hasDerivAt_off_finite
     {f g : ℝ → E} {J S : Set ℝ} (hJ : IsOpen J) (hS : S.Finite)
     (hf : ContinuousOn f J) (hg : ContinuousOn g J)
@@ -60,11 +45,6 @@ theorem hasDerivAt_of_hasDerivAt_off_finite
     hS.sdiff.isClosed.isOpen_compl.mem_nhds (by simp)
   filter_upwards [hJ.mem_nhds ht, hnear] with s hs houtside hne
   exact hderiv s hs (fun hmem => houtside ⟨hmem, hne⟩)
-
-
-
-
-
 
 theorem contDiffOn_of_finite_jet_evolution
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

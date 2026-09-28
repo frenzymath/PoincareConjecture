@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapBandSectorGerms
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +39,6 @@ variable {S : Type*} [TopologicalSpace S]
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
-
-
 theorem first_outward_direction_eq_pos_smul :
     ∃ r : ℝ, 0 < r ∧ B.ambientOutwardDirection 0 = r • G.frame.symm (ua, wa) := by
   let Q := B.faces.cuts.coordinates B.faces.open_domain B.faces.smooth_lower
@@ -77,8 +69,6 @@ theorem first_outward_direction_eq_pos_smul :
   dsimp only [ambientOutwardDirection]
   rw [B.faces.cut_first, B.faces.interface.height_first, ← B.faces.height_zero]
   rw [hd, map_smul]
-
-
 
 theorem last_outward_direction_eq_pos_smul :
     ∃ r : ℝ, 0 < r ∧ B.ambientOutwardDirection (Fin.last B.faces.interface.count) =
@@ -112,8 +102,6 @@ theorem last_outward_direction_eq_pos_smul :
   rw [B.faces.cut_last, B.faces.interface.height_last, ← B.faces.height_one]
   rw [hd, map_smul]
 
-
-
 theorem first_top_cut_determinant_pos :
     0 < wa - (B.faces.interface.piece B.faces.firstCell).linear 1 * ua := by
   have h := B.ambientTopFunctional_outward_pos B.faces.firstCell 0 (Or.inl rfl)
@@ -121,8 +109,6 @@ theorem first_top_cut_determinant_pos :
   rw [he, map_smul] at h
   have hp := (mul_pos_iff_of_pos_left hr).mp h
   simpa only [B.ambientTopFunctional_linear, G.frame.apply_symm_apply] using hp
-
-
 
 theorem last_top_cut_determinant_pos :
     0 < wb - (B.faces.interface.piece B.faces.lastCell).linear 1 * ub := by
@@ -137,8 +123,6 @@ theorem last_top_cut_determinant_pos :
   rw [he, map_smul] at h
   have hp := (mul_pos_iff_of_pos_left hr).mp h
   simpa only [B.ambientTopFunctional_linear, G.frame.apply_symm_apply] using hp
-
-
 
 theorem first_complementary_positive_rays (c : AffineBasis (Fin 3) ℝ Plane)
     (hc1 : c.coord 1 = -B.ambientEndpointCut false)
@@ -181,8 +165,6 @@ theorem first_complementary_positive_rays (c : AffineBasis (Fin 3) ℝ Plane)
   refine ⟨(c.coord 1).linear v, (c.coord 2).linear d, hv, hd, ?_, ?_⟩
   · simpa only [hv2, zero_smul, add_zero] using affineBasis_direction_expansion c v
   · simpa only [hd1, zero_smul, zero_add] using affineBasis_direction_expansion c d
-
-
 
 theorem last_complementary_positive_rays (c : AffineBasis (Fin 3) ℝ Plane)
     (hc1 : c.coord 1 = -B.ambientEndpointCut true)
@@ -238,8 +220,6 @@ theorem chart_last_top_eq_physical (hab : a ≤ b) :
   have h := congrArg (fun z => G.frame.symm (collarParameterEquiv z)) (B.ambient_last_vertex hab)
   simpa only [collarParameterEquiv.apply_symm_apply, G.frame.symm_apply_apply,
     ObliqueBandFaces.planarTopVertex, chartTopVertex] using h.symm
-
-
 
 theorem first_downward_velocity_pos_smul_chart_differential
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -305,8 +285,6 @@ theorem first_downward_velocity_pos_smul_chart_differential
   rw [he, map_smul, smul_smul] at hv
   exact hv
 
-
-
 theorem first_refined_fan_add_complementary_angle
     (g : RiemannianMetric 2 S)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -356,8 +334,6 @@ theorem first_refined_fan_add_complementary_angle
   change _ + g.cornerAngle (C (c 0)) (L (c 1 - c 0)) (L (c 2 - c 0)) = _
   rw [hfan]
   ring
-
-
 
 theorem last_refined_fan_add_complementary_angle
     (g : RiemannianMetric 2 S)
@@ -421,8 +397,6 @@ theorem last_refined_fan_add_complementary_angle
   rw [hfan]
   ring
 
-
-
 theorem first_actual_fan_add_complementary_angle
     (g : RiemannianMetric 2 S)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -442,8 +416,6 @@ theorem first_actual_fan_add_complementary_angle
       (B.faces.faceBasis p).ind).refineByLines (lines p) := funext hM
   subst M
   exact B.first_refined_fan_add_complementary_angle g hC hCi hab lines c hc0 hc1 hc2
-
-
 
 theorem last_actual_fan_add_complementary_angle
     (g : RiemannianMetric 2 S)
@@ -465,8 +437,6 @@ theorem last_actual_fan_add_complementary_angle
       (B.faces.faceBasis p).ind).refineByLines (lines p) := funext hM
   subst M
   exact B.last_refined_fan_add_complementary_angle g hC hCi lines c hc0 hc1 hc2
-
-
 
 theorem first_refined_fan_add_physical_angle
     (g : RiemannianMetric 2 S)
@@ -501,8 +471,6 @@ theorem first_refined_fan_add_physical_angle
     (L (G.frame.symm (ua, wa))) = _
   rw [hfan]
   ring
-
-
 
 theorem last_refined_fan_add_physical_angle
     (g : RiemannianMetric 2 S)

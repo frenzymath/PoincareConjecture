@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.NormalizedCoefficients
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.MinimizingGeodesicSide
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem curvature_density_of_parallel_frame (F : RicciFlow n M (Set.Icc a b)) (t : ℝ)
     {gamma : ℝ → M} {X Y : (s : ℝ) → TangentSpace (𝓡 n) (gamma s)}

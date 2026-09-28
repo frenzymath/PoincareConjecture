@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Cir
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Side
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Reparametrization
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies.CircleAttachmentGerm
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_disk_diffeomorph_of_boundary_germ
     (P : PartialDiffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (p : S1)

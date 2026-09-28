@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerComposition
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,11 +68,6 @@ private theorem integral_test_fderiv_zero (φ : 𝓢(LoopPlane, ℝ)) (v : LoopP
 
 set_option maxHeartbeats 1600000 in
 
-
-
-
-
-
 theorem weak_chain_ball {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {S : Set LoopPlane}
     (F : M65LocalWeakMap e S) (hS : IsOpen S) (x : LoopPlane) {R : ℝ}
@@ -142,10 +127,6 @@ theorem weak_chain_ball {M : Type u} {N : ℕ}
   rw [integral_congr_ae hleft, integral_congr_ae hright] at hwφ
   rw [hrestore]
   exact hwφ
-
-
-
-
 
 def compose_on_ball {M : Type u} {N K : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {S : Set LoopPlane}

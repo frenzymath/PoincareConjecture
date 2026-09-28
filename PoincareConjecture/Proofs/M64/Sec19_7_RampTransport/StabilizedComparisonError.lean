@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.TrimmedComparison
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StabilizedTrimmedBoundaries
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
 
 omit [CompactSpace M] in
 
-
 theorem stabilized_minimum_area_minimizing
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :
     S.separated.minimum.area = m64LeastAnnulusArea (Q.flow.metric time)
@@ -39,10 +34,6 @@ theorem stabilized_minimum_area_minimizing
       (auxiliaryCircleSection Q (Q.circle.quotient S.separated.offset)))
     S.separated.first_label S.separated.second_label]
   exact S.separated.area_minimizing
-
-
-
-
 
 theorem stabilized_comparison_with_error
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon)

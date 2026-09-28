@@ -1,24 +1,12 @@
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem finite_of_locally_mem_or_isolated
     {X : Type*} [TopologicalSpace X] [CompactSpace X] [PreconnectedSpace X]

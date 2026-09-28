@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SliceInverse
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_68_UniqueBranch
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_69_StableNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -26,9 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
 
 theorem stable_image_contains_regular_point
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -81,10 +67,6 @@ theorem stable_image_contains_regular_point
     exact (H.endpoint_slice_map_val Z hcarrier).trans
       ((H.endpoint_map_eq Z hcarrier).trans (survivalSliceMap_val E H.tau_pos.le q0 hZD).symm)
   exact heq.trans hpoint
-
-
-
-
 
 theorem stable_image_full_measure_of_compact_capture
     (hM04 : RicciFlowCurvatureTheory.{0})

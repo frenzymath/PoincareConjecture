@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.SecondDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.Nirenberg
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -117,9 +107,6 @@ theorem classicalGradient_integral_sq_le_of_integral_diffQuot_bound
         classicalPartial_integral_sq_le_of_integral_diffQuot_bound
           hV hVc hp hp_smooth hh₀ hC hbound i k)
     _ = _ := by simp [Finset.mul_sum]
-
-
-
 
 theorem classicalPartial_integral_sq_le_nirenberg
     [NeZero d] {Ω V : Set E} (B : NirenbergEuclidean.SmoothEllipticBilinearForm d Ω)

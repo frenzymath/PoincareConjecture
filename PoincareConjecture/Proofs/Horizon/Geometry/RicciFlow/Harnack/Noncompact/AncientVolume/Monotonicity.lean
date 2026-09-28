@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ open Poincare.Geometry.RicciFlow.Harnack
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem scalarEvolution_nonneg_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -50,8 +39,6 @@ theorem scalarEvolution_nonneg_of_bounded_ancient
     rw [(F.connection t).ricci_eq_sum_frame x 0 0]
     simp
   simpa only [hzero, map_zero, mul_zero, add_zero] using hineq
-
-
 
 theorem scalarCurvature_monotoneOn_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalProtectedExterior
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnularRealization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

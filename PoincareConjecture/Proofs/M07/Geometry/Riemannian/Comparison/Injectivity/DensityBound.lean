@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 import Mathlib.LinearAlgebra.Matrix.AbsoluteValue
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullbackVolumeDensity_le_of_differential_bound
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -52,8 +40,6 @@ theorem pullbackVolumeDensity_le_of_differential_bound
   change |A.toContinuousLinearMap.det| ≤ _ at h
   rw [hdet] at h
   simpa only [Fintype.card_fin, nsmul_eq_mul] using h
-
-
 
 theorem mul_volumeMeasure_le_of_differential_bound_of_finite_fibers
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

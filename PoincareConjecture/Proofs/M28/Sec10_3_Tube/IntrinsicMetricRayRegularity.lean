@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMetricSpace
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizingGeodesicAssembly
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,9 +36,6 @@ private theorem intrinsicEDist_univ_eq_riemannian
     rintro l ⟨eta, heta, h0, h1, _hregion, rfl⟩
     exact Manifold.riemannianEDist_le_pathELength heta h0 h1 zero_le_one
 
-
-
-
 theorem exists_geodesic_eq_intrinsic_metric_segment_real
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (hfinite : ∀ p q : U, intrinsicEDist g (U : Set M) (p : M) (q : M) ≠ ⊤) :
@@ -80,9 +66,6 @@ theorem exists_geodesic_eq_intrinsic_metric_segment_real
   refine ⟨zeta, hzeta, heq, ?_, hspeed⟩
   intro t ht
   exact (Conjugate.Realization.contMDiffAt_of_isGeodesicOn hzeta ht).contMDiffWithinAt
-
-
-
 
 theorem exists_geodesic_eq_intrinsic_unit_metric_segment
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -136,9 +119,6 @@ theorem exists_geodesic_eq_intrinsic_unit_metric_segment
     · intro s hs
       exact (Conjugate.Realization.contMDiffAt_of_isGeodesicOn hnu hs).contMDiffWithinAt
 
-
-
-
 theorem exists_geodesic_eq_intrinsic_metric_ray_prefix
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (hfinite : ∀ p q : U, intrinsicEDist g (U : Set M) (p : M) (q : M) ≠ ⊤) :
@@ -179,9 +159,6 @@ theorem exists_geodesic_eq_intrinsic_metric_ray_prefix
   refine ⟨zeta, hzeta, heq, ?_, hspeed⟩
   intro t ht
   exact (Conjugate.Realization.contMDiffAt_of_isGeodesicOn hzeta ht).contMDiffWithinAt
-
-
-
 
 theorem intrinsic_metric_ray_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

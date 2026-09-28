@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.InteriorSphereLinks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

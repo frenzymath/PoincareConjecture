@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Calcul
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Choice
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -81,8 +72,6 @@ theorem spacetimeGaugeTheory_of_moving_calculus
         (G b).toMovingSpacetimeGaugeGeometry (c b))
       (fun b => compatibleMovingGaugeDrift_zero (e b) (G b)) hc hp
 
-
-
 theorem spacetimeGaugeTheory
     (hMetric : M12MetricPredecessors.{v} n)
     (D : LeafwiseLeviCivitaFamily F S) (T : SpacetimeIntervalSystem) :
@@ -142,8 +131,6 @@ def ricciGeometry (P : OrdinaryProductSpacetimeConclusion g I)
 
 end OrdinaryProductSpacetimeConclusion
 
-
-
 theorem exists_ordinaryProductRicciGeometry
     (hGeometry : GeneralizedSpacetimeGeometryTheory.{u} n)
     (hMetric : M12MetricPredecessors.{u} n)
@@ -156,8 +143,6 @@ theorem exists_ordinaryProductRicciGeometry
   obtain ⟨P⟩ := hGeometry.ordinary_product M g I hg
   obtain ⟨D⟩ := hMetric.exists_leafwiseLeviCivitaFamily P.slices
   exact ⟨P.ricciGeometry D (spacetimeGaugeTheory hMetric D P.timeIntervals)⟩
-
-
 
 theorem generalizedRicciGaugeTheory_of_calculus
     (hGeometry : GeneralizedSpacetimeGeometryTheory.{u} n)
@@ -195,8 +180,6 @@ theorem generalizedRicciGaugeTheory_of_calculus
       (hGauges (I.domain × M) (fun p => p.1.val) I P.spacetime
         P.slices P.timeIntervals P.gaugeCover D)⟩
 
-
-
 theorem generalizedRicciGaugeTheory_of_horizontal_calculus
     (hGeometry : GeneralizedSpacetimeGeometryTheory.{u} n)
     (hMetric : M12MetricPredecessors.{u} n)
@@ -211,8 +194,6 @@ theorem generalizedRicciGaugeTheory_of_horizontal_calculus
     exact spacetimeGaugeTheory hMetric D T
   · intro X _ time I F S T cover D
     exact spacetimeGaugeTheory hCoordinates D T
-
-
 
 theorem generalizedRicciGaugeGeometry_proof (n : ℕ)
     (hGeometry : GeneralizedSpacetimeGeometryTheory.{u} n)

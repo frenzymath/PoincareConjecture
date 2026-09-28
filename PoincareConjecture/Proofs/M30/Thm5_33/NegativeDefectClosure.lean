@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Curvature.Conformal.ConformalPinching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Sectional
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -24,10 +12,7 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.M30
 
-
 set_option linter.unusedFintypeInType false in
-
-
 
 theorem nonnegativeCurvatureOperator_of_scalar_metric_jets_of_vanishing_defect
     {alpha : Type*} {l : Filter alpha} [l.NeBot]

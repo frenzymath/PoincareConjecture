@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundarySeparation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCylinderMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
-
-
-
-
 theorem scalarInverseCylinderMap_potential {H : Plane → ℝ} {V : Cover → ℝ} {P : ℝ}
     (e : OpenPartialHomeomorph Cover Cover)
     (htarget : e.target = scalarPotentialStrip)
@@ -40,10 +25,6 @@ theorem scalarInverseCylinderMap_potential {H : Plane → ℝ} {V : Cover → �
   have h := congrArg Prod.fst (e.right_inv hy)
   rw [he] at h
   exact h
-
-
-
-
 
 theorem scalarInverseCylinderMap_boundary_approach
     {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
@@ -74,11 +55,6 @@ theorem scalarInverseCylinderMap_boundary_approach
     simpa only [← mul_assoc, inv_mul_cancel₀ hc.ne', one_mul] using h0
   · have h1 := mul_le_mul_of_nonneg_left h.2 (inv_nonneg.mpr hc.le)
     simpa only [← mul_assoc, inv_mul_cancel₀ hc.ne', one_mul] using h1
-
-
-
-
-
 
 theorem exists_smooth_modulus_cylinder_with_boundary_approach
     (g : RiemannianMetric 2 Plane) :

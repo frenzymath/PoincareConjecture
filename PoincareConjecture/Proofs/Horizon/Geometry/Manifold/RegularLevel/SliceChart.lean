@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.FinSucc
 
-
-
-
-
-
-
 open Set Function TopologicalSpace Poincare.EuclideanSpace
 open scoped Manifold ContDiff Topology
 

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularDerivative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +15,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 
-
-
 theorem m64Source_image_interior (T : LoopPlane ≃ₜ LoopPlane) (hpre : T ⁻¹' S = S) :
     T '' S = S := by
   ext p
@@ -32,9 +24,6 @@ theorem m64Source_image_interior (T : LoopPlane ≃ₜ LoopPlane) (hpre : T ⁻�
   · intro hp
     refine ⟨T.symm p, ?_, T.apply_symm_apply p⟩
     exact (congrArg (fun U => T.symm p ∈ U) hpre).mp (by simpa using hp)
-
-
-
 
 theorem m64TriangularSource_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -47,8 +36,6 @@ theorem m64TriangularSource_integral
     T.injective.injOn f
   rw [m64Source_image_interior T hpre] at h
   simpa only [m64TriangularSource_det hT hsecond, abs_of_pos (hpos _)] using h.symm
-
-
 
 theorem m64Source_quasiMeasurePreserving
     (T : LoopPlane ≃ₜ LoopPlane) (hi : Differentiable ℝ T.symm) (hpre : T ⁻¹' S = S) :
@@ -70,8 +57,6 @@ theorem m64Source_quasiMeasurePreserving
   apply hq.restrict
   intro p hp
   exact (congrArg (fun U => p ∈ U) hpre).mpr hp
-
-
 
 theorem m64TriangularSource_memLp_two
     {E : Type*} [NormedAddCommGroup E] {f : LoopPlane → E}

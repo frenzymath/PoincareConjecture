@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.ProjectedDoubleLocus
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology Metric
@@ -27,9 +16,6 @@ variable {U E V M ι : Type*}
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_protected_boundary_projection (step : Step s t)
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

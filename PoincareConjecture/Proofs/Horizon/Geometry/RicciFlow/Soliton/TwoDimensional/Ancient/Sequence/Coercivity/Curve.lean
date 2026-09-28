@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +43,6 @@ theorem continuousOn_speed_of_contMDiffOn_one (g : RiemannianMetric n M)
   have hh := (contMDiffAt_totalSpace.mp h).2
   exact Real.continuous_sqrt.continuousAt.comp_continuousWithinAt
     hh.continuousAt.continuousWithinAt
-
 
 theorem toReal_edist_endpoints_le_of_interior_bound [T3Space M] [PreconnectedSpace M]
     (g : RiemannianMetric n M) {γ : ℝ → M} {τ B : ℝ} (hτ : 0 < τ)

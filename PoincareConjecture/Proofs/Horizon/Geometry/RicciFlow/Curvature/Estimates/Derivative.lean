@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison.LocalCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Cutoff.Geometric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Carrier.Recentered
-
-
-
-
-
-
-

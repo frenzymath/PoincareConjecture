@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTheoremOne
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonHandleBoundaryGluing
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_supported_chart_handle_step
     {X E : Type*} [TopologicalSpace X] [T2Space X]

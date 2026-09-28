@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.MinimizerLifts
 import PoincareConjecture.Proofs.M09.HarnackIntegral
 import PoincareConjecture.Proofs.M09.HarnackCongruence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

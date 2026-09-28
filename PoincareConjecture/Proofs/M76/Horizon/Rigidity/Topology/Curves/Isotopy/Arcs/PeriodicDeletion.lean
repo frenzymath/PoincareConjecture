@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Ar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bigons.FlattenedDeletion
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bigons.PeriodicContacts
 
-
-
 set_option autoImplicit false
 open Set Geometry unitInterval
 

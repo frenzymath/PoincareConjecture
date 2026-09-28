@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Strips
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Restrictions
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (G : D.OrientedGraphPiece e R C a b)
   {ua wa ub wb : ℝ}
   (P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb)
-
-
 
 structure FixedStripBandFaces (δ ra rb : ℝ) where
   faces : ObliqueBandFaces (linearGraphCoordinates C G.frame) G.lower
@@ -114,8 +102,6 @@ theorem carrier_subset_strip :
   exact ⟨hq.1, hq.2.1, hq.2.2.trans_lt (B.height_bounds hq.1).2⟩
 
 end FixedStripBandFaces
-
-
 
 theorem exists_fixedStripBandFaces
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)

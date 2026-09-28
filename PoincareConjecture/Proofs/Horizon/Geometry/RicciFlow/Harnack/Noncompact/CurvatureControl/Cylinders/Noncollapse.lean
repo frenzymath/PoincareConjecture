@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem asymptoticVolumeRatio_le_ball_volume_div_pow
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)
     (hc : MetricComplete g)
@@ -35,8 +25,6 @@ theorem asymptoticVolumeRatio_le_ball_volume_div_pow
   apply le_of_tendsto (g.tendsto_asymptoticVolumeRatio D hn hc hRic p)
   filter_upwards [eventually_ge_atTop r] with s hs
   exact g.antitoneOn_ball_volume_div_pow D hn hc hRic p hr (hr.trans_le hs) hs
-
-
 
 theorem ball_volume_lower_bound_of_asymptoticVolumeRatio
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)
@@ -64,8 +52,6 @@ theorem ball_volume_lower_bound_of_asymptoticVolumeRatio
     hκ hyR hbase
 
 end PoincareConjecture.RiemannianMetric
-
-
 
 theorem PoincareConjecture.RicciFlow.ball_volume_lower_bound_of_terminal_asymptoticVolumeRatio
     {m : ℕ} {M : Type u} [TopologicalSpace M]

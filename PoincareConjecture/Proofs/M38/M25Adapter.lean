@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -59,11 +49,6 @@ theorem repaired_a21_doubleCappedTube
     Nonempty (ClosedComponentCertificate kind tube.carrier) ∧
       H.X ⊆ tube.carrier := by
   exact ⟨⟨C⟩, hX⟩
-
-
-
-
-
 
 theorem repaired_a21_region_cases
     {M : Type u} [TopologicalSpace M]

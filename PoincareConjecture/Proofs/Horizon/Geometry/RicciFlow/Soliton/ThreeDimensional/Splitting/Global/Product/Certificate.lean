@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Product.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -119,9 +109,6 @@ private theorem lineProduct_inner_components (h : RiemannianMetric 2 N)
 variable {P : Type u} [TopologicalSpace P]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) P] [IsManifold (𝓡 3) ∞ P]
 
-
-
-
 def sphereLineProductDataOfSurface
     (s : N ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)
     (h : ℝ → RiemannianMetric 2 N) (D : ∀ t, LeviCivitaData (h t))
@@ -160,8 +147,6 @@ def sphereLineProductDataOfSurface
   tangent_components_surjective := productTangentComponents_surjective
   product_inner_formula t _ := lineProduct_inner_components (h t)
 
-
-
 @[simp] theorem sphereLineProductDataOfSurface_equiv_apply
     (s : N ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)
     (h : ℝ → RiemannianMetric 2 N) (D : ∀ t, LeviCivitaData (h t))
@@ -176,8 +161,6 @@ def sphereLineProductDataOfSurface
 
 variable [MeasurableSpace P] [BorelSpace P] [T2Space P] [T3Space P]
   [SecondCountableTopology P] [ConnectedSpace P]
-
-
 
 def sphereLineProductCertificateOfSurface
     {S : GradientShrinkingSolitonData 3 P} (G : ShrinkingSolitonFlow S)

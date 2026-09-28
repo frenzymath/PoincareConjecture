@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,8 +11,6 @@ variable {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
   {F : BasedFlow n T' T C} {G : BasedFlow n T' T D}
   {U : Set C.carrier}
 
-
-
 theorem spatial_velocity_eq_zero
     (e : SmoothSpacetimeEmbedding F G (Ioo T' T ×ˢ U)) (t : ℝ) (x : C.carrier) :
     letI : TopologicalSpace D.carrier := D.topologicalSpace
@@ -29,8 +18,6 @@ theorem spatial_velocity_eq_zero
     mfderiv (𝓘(ℝ, ℝ)) (𝓡 n) (fun s ↦ (e.toFun (s, x)).2) t 1 = 0 := by
   simpa only [F.spacetimeVectorField_spatial_zero, G.spacetimeVectorField_spatial_zero,
     map_zero, add_zero] using e.vector_field_compatible t x
-
-
 
 theorem spatial_eq_of_mem
     (e : SmoothSpacetimeEmbedding F G (Ioo T' T ×ˢ U))
@@ -70,7 +57,6 @@ theorem spatial_eq_of_mem
 end PoincareConjecture.SmoothSpacetimeEmbedding
 
 namespace PoincareConjecture.PointedGeometricConvergence
-
 
 theorem base_preserving_at_time
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

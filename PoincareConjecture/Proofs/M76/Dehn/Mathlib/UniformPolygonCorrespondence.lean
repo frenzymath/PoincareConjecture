@@ -1,27 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.UniformPolygonSimplicity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
 
-
-
 noncomputable def uniformEdgeParameters (m : ℕ) (i : Fin (m + 2)) : ℝ :=
   (i : ℝ) / (m + 1 : ℝ)
-
-
 
 theorem strictMono_uniformEdgeParameters (m : ℕ) :
     StrictMono (uniformEdgeParameters m) := by
@@ -29,12 +16,8 @@ theorem strictMono_uniformEdgeParameters (m : ℕ) :
   exact (div_lt_div_iff_of_pos_right (by positivity : (0 : ℝ) < m + 1)).mpr
     (by exact_mod_cast hij)
 
-
-
 theorem uniformEdgeParameters_zero (m : ℕ) : uniformEdgeParameters m 0 = 0 := by
   simp [uniformEdgeParameters]
-
-
 
 theorem uniformEdgeParameters_last (m : ℕ) :
     uniformEdgeParameters m (Fin.last (m + 1)) = 1 := by
@@ -42,8 +25,6 @@ theorem uniformEdgeParameters_last (m : ℕ) :
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem subdivide_uniform_zero {n : ℕ} (P : Polygon E (n + 3)) (m : ℕ) :
     P.subdivide (uniformEdgeParameters m) 0 = P 0 := by
@@ -53,9 +34,6 @@ theorem subdivide_uniform_zero {n : ℕ} (P : Polygon E (n + 3)) (m : ℕ) :
       simp only [Fin.val_zero, finProdFinEquiv_apply_val, mul_zero, zero_add]]
   rw [P.subdivide_apply]
   simp [uniformEdgeParameters]
-
-
-
 
 theorem exists_finitePL_boundary_edge_coordinates_of_size_eq
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] {n m : ℕ}

@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M09

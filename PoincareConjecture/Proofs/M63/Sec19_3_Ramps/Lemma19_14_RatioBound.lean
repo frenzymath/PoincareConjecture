@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Lemma19_14_RatioEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63SmoothRampRatio_bound
     {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
@@ -89,9 +76,6 @@ theorem m63SmoothRampRatio_bound
     (fun x t ht => (m63SmoothRampRatio_evolution P c hc hBounds hE hu (by norm_num) ht x).trans
       (add_le_add le_rfl (hforcing t (Ioo_subset_Icc_self ht) x))) hR
   exact fun t ht x => h x t ht
-
-
-
 
 theorem m63SmoothRampCurvature_bound
     {F : RicciFlow n M (Icc a b)} {circumference : ℝ}

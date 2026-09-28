@@ -9,14 +9,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Po
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RankGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.AnnularStability
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option autoImplicit false

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TerminalMetricConvergence
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricComparison
 import PoincareConjecture.Proofs.M03.MetricCompactBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -34,9 +26,6 @@ private theorem chartCoefficients_pos
     mfderiv (𝓡 3) (𝓡 3) (extChartAt (𝓡 3) q)
       ((extChartAt (𝓡 3) q).symm p) w) hzero
   exact hv (hleft.symm.trans (hmap.trans (map_zero _)))
-
-
-
 
 theorem blowupSequence_terminal_metric_comparison (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

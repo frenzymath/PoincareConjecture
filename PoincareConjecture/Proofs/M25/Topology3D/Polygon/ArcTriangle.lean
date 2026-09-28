@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleEntry
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleBaseContact
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   {p : Polygon E (n + 2)}
-
-
 
 theorem IsSimplePolygonalArc.normalized_nonincident_edge_inter_corner_subset
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -71,8 +60,6 @@ theorem IsSimplePolygonalArc.normalized_nonincident_edge_inter_corner_subset
     change f w = (0, 1)
     rw [hh.resolve_left hwk, hfs]
 
-
-
 theorem IsSimplePolygonalArc.normalized_triangle_vertex_pos
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -115,8 +102,6 @@ theorem IsSimplePolygonalArc.normalized_triangle_vertex_pos
     have heq : (f (p j)).2 = 0 := le_antisymm h hjT.2.1
     exact hjC ((mem_unitCorner_iff _).mpr
       (Or.inl ⟨hjT.1, by linarith [hjT.2.2], heq⟩))
-
-
 
 theorem IsSimplePolygonalArc.normalized_low_triangle_disjoint_arcBoundary
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -184,8 +169,6 @@ theorem IsSimplePolygonalArc.normalized_low_triangle_disjoint_arcBoundary
     exact (lt_irrefl 0) hcoords.1
   exact (not_lt_of_ge (hmin l hlk hlp hls (interior_subset hcT))) (hcH.trans_lt hwH)
 
-
-
 theorem IsSimplePolygonalArc.openSegment_disjoint_arcBoundary_of_minimal_triangle_vertex
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -217,8 +200,6 @@ theorem IsSimplePolygonalArc.openSegment_disjoint_arcBoundary_of_minimal_triangl
   refine ⟨mul_pos ht.1 hpos.1, mul_pos ht.1 hpos.2, ?_⟩
   dsimp only
   nlinarith [mul_pos (sub_pos.mpr ht.2) (add_pos hpos.1 hpos.2)]
-
-
 
 theorem IsSimplePolygonalArc.normalized_triangle_inter_arcBoundary_eq_corner
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -350,8 +331,6 @@ theorem IsSimplePolygonalArc.normalized_triangle_inter_arcBoundary_eq_corner
     · rcases hw with hw | hw
       · exact image_mono (polygon_arcEdge_subset_boundary p a) (hpred.symm ▸ hw)
       · exact image_mono (polygon_arcEdge_subset_boundary p b) (hsucc.symm ▸ hw)
-
-
 
 theorem IsSimplePolygonalArc.exists_minimal_triangle_vertex_of_not_admissible
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))

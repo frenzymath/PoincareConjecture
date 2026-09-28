@@ -1,23 +1,8 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ProductCellComplement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
-
-
-
-
 
 theorem Metric.thickening_prod {E F : Type*} [PseudoMetricSpace E]
     [PseudoMetricSpace F] (δ : ℝ) (s : Set E) (t : Set F) :
@@ -34,9 +19,6 @@ theorem Metric.thickening_prod {E F : Type*} [PseudoMetricSpace E]
     obtain ⟨v, hv, hdv⟩ := mem_thickening_iff.mp hy
     exact mem_thickening_iff.mpr ⟨(u, v), ⟨hu, hv⟩, max_lt_iff.mpr ⟨hdu, hdv⟩⟩
 
-
-
-
 theorem isSimplyConnected_thickening_sdiff_product_cell
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -48,11 +30,6 @@ theorem isSimplyConnected_thickening_sdiff_product_cell
   exact isSimplyConnected_product_cell_tube hdim hr hδ
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_simplyConnected_deleted_cell_neighborhood
     {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -89,11 +66,6 @@ theorem exists_simplyConnected_deleted_cell_neighborhood
     rw [← (Q.injOn.mono hthick).image_sdiff_subset (self_subset_thickening hδ C)]
     exact Q.isSimplyConnected_image_of_subset_source (sdiff_subset.trans hthick)
       (isSimplyConnected_thickening_sdiff_product_cell hdim hr hδ)
-
-
-
-
-
 
 theorem exists_compact_core_simplyConnected_deleted_cell_complement
     {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,24 +2,11 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M25.Mathlib.ProductBoundaryTransition
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.M25
-
-
-
 
 theorem exists_signed_collars_of_three_product_charts
     {M : Type u} [TopologicalSpace M]

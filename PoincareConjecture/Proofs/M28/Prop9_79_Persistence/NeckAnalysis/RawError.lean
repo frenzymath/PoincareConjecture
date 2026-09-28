@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.AffineDif
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.CovariantJetBounds
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.TensorNorms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
 open FiniteHessian
-
-
-
-
 
 theorem exists_cylinderJetDifferenceSquared_bound
     {ι : Type*} (m : ℕ) (epsilon : ι → ℝ)
@@ -145,10 +131,6 @@ private structure RawErrorDatum (m : ℕ) where
           (chartAt (EuclideanSpace ℝ (Fin 2)) z.1) p a b)
       (0, z.2)‖ ≤ error
 
-
-
-
-
 theorem exists_uniform_cylinderJetDifferenceSquared_bound (m : ℕ) :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ (epsilon : ℝ) (B C : RoundCylinderTwoTensor),
       RoundCylinderTensorSmoothOn epsilon B →
@@ -170,9 +152,6 @@ theorem exists_uniform_cylinderJetDifferenceSquared_bound (m : ℕ) :
   refine ⟨L, hL, ?_⟩
   intro epsilon B C hB hC z hz error herror hraw
   exact hbound ⟨epsilon, B, C, z, error, hB, hC, hz, herror, hraw⟩
-
-
-
 
 theorem exists_cylinder_raw_error_tolerance (m : ℕ) {delta : ℝ}
     (hdelta : 0 < delta) :
@@ -204,10 +183,6 @@ theorem exists_cylinder_raw_error_tolerance (m : ℕ) {delta : ℝ}
     L * rho ^ 2 ≤ L * rho := mul_le_mul_of_nonneg_left hsquare hL
     _ ≤ (L + 1) * rho := by nlinarith
     _ ≤ delta := hbudget
-
-
-
-
 
 theorem eventually_cylinderJetDifferenceSquared_of_raw_bounds
     {ι : Type*} (l : Filter ι) (m : ℕ)

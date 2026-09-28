@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientCompactJetBounds
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicJets
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter PoincareConjecture.SpectralHeatNative
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
 
 theorem exists_compact_spectral_family_jet_domain
     (F : RicciFlow n M (Icc a b))

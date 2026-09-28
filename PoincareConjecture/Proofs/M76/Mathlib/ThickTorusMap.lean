@@ -2,43 +2,22 @@ import PoincareConjecture.Proofs.M76.Mathlib.StableAnnulusMap
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 
 namespace ThickTorus
 
-
-
 abbrev Circle := AddCircle (4 * (16 : ℝ))
-
-
-
 
 noncomputable def map (z : (ℝ × Circle) × Circle) : CubeShell.Ambient :=
   let u := centeredAnnulusMap 16 (by norm_num) (z.1.2, z.1.1 / 64)
   let v := centeredAnnulusMap 16 (by norm_num) (z.2, u.2 / 64)
   ((4096 * v.2, u.1), v.1)
 
-
-
-
 theorem first_height_mem_unit {r : ℝ} (hr : |r| < 32) : r / 64 ∈ Ioo (-1) 1 := by
   have h := abs_lt.mp hr
   constructor <;> linarith [h.1, h.2]
-
-
-
 
 theorem second_height_mem_unit {r : ℝ} (hr : |r| < 32) (z : Circle) :
     (centeredAnnulusMap 16 (by norm_num) (z, r / 64)).2 / 64 ∈ Ioo (-1) 1 := by
@@ -46,9 +25,6 @@ theorem second_height_mem_unit {r : ℝ} (hr : |r| < 32) (z : Circle) :
   have h := centeredAnnulusMap_snd_mem (L := (16 : ℝ)) (d := 1)
     (by norm_num) (by norm_num) (by norm_num) z ⟨hfirst.1.le, hfirst.2.le⟩
   constructor <;> linarith [h.1, h.2]
-
-
-
 
 theorem map_core {r s t : ℝ} (hr : |r| ≤ 1 / 4) (hs : |s| ≤ 1 / 4)
     (ht : |t| ≤ 1 / 4) :
@@ -69,10 +45,6 @@ theorem map_core {r s t : ℝ} (hr : |r| ≤ 1 / 4) (hs : |s| ≤ 1 / 4)
   apply Prod.ext
   · exact Prod.ext (by dsimp; ring) rfl
   · rfl
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_map_lift :
     LocallyPiecewiseAffineOn

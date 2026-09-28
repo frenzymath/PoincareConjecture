@@ -3,20 +3,11 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M13
-
 
 theorem exists_smooth_euclidean_cutoff {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℝ E] (c : E) (R : ℝ) (hR : 0 < R) :
@@ -42,7 +33,6 @@ theorem exists_smooth_euclidean_cutoff {E : Type*} [NormedAddCommGroup E]
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M]
-
 
 theorem exists_smooth_cutoff (U : Set M) (hU : IsOpen U) (x : M) (hx : x ∈ U) :
     ∃ b : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ) ∞ b ∧ tsupport b ⊆ U ∧

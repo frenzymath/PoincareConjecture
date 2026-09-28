@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialStar
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem Set.exists_pos_smul_mem_of_mem_nhds {U : Set E}
     (hU : U ∈ 𝓝 (0 : E)) (x : E) :
@@ -37,8 +25,6 @@ theorem Set.exists_pos_smul_mem_of_mem_nhds {U : Set E}
 
 namespace NormedSpace
 
-
-
 theorem normalize_eq_of_mem_segment_zero {x u : E}
     (hx : x ∈ segment ℝ 0 u) (hx0 : x ≠ 0) : normalize x = normalize u := by
   obtain ⟨a, b, _, hb, _, heq⟩ := hx
@@ -48,9 +34,6 @@ theorem normalize_eq_of_mem_segment_zero {x u : E}
     exact hx0 (by simpa only [h, zero_smul] using heq.symm)
   rw [← heq]
   exact normalize_smul_of_pos (lt_of_le_of_ne hb hb0.symm) u
-
-
-
 
 theorem normalize_ne_of_segment_inter {u v : E} (hu : u ≠ 0) (hv : v ≠ 0)
     (hinter : segment ℝ 0 u ∩ segment ℝ 0 v ⊆ {0}) :
@@ -79,9 +62,6 @@ end NormedSpace
 namespace Geometry.SimplicialComplex
 
 variable [DecidableEq E]
-
-
-
 
 theorem normalize_image_link_zero_of_local_segments
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -140,9 +120,6 @@ theorem normalize_image_link_zero_of_local_segments
     rcases hz with rfl | rfl
     · exact hdir u hu subset_union_left
     · exact hdir v hv subset_union_right
-
-
-
 
 theorem ncard_link_zero_of_local_segments
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

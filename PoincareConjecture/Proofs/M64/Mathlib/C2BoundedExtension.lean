@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Const
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -76,9 +67,6 @@ private theorem compact_C2_derivative_bounds
   constructor
   · exact (hC1 y).trans (by linarith [le_max_left C1 C2, le_max_left (max C1 C2) 0])
   · exact (hC2 y).trans (by linarith [le_max_right C1 C2, le_max_left (max C1 C2) 0])
-
-
-
 
 theorem m64C2_exists_bounded_extension {N K : ℕ}
     {h : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin K)}

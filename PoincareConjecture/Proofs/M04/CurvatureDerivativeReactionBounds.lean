@@ -419,5 +419,4 @@ theorem tensorNorm_curvatureDerivativeReaction_le (D : LeviCivitaData g)
   have h := tensorNorm_reactionListEvaluation_le D L x
   simpa [hlen, mul_assoc] using h
 
-
 end PoincareConjecture.M04

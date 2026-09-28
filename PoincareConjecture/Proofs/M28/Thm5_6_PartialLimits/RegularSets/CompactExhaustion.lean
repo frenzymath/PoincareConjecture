@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_connected_open_exhaustion_capturing_compacts
     {X : Type*} [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]

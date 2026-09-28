@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.M02.CubeHomotopyExtension
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem exists_cube_homotopy_of_boundary_homotopy
     {N Z : Type*} [Finite N] [TopologicalSpace Z]
@@ -132,7 +124,6 @@ theorem exists_cube_homotopy_of_boundary_homotopy
   · intro t z
     exact (hFe 1 ⟨(t, z), Or.inr (Or.inr z.property)⟩).trans
       (hgside (1, ⟨(t, z), Or.inr (Or.inr z.property)⟩) z.property)
-
 
 theorem cube_homotopicRel_of_homotopies_with_same_boundary
     {N Z : Type*} [Finite N] [TopologicalSpace Z]

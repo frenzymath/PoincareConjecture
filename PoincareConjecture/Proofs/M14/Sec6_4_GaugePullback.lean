@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.VectorGraphDerivative
 import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Statements.M12MovingGaugeTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (e : MovingSpacetimeGauge G.spacetime T U) (g : MovingSpacetimeGaugeGeometry e)
   {b : ℝ → T.Point × U} {J : Set ℝ}
   {Y : ∀ r, G.Horizontal (e.toSpacetime (b r))}
-
-
-
 
 theorem pullbackExtension_gauge_coordinates_contMDiffAt
     (E : M14PullbackExtension G (fun r => e.toSpacetime (b r)) J Y)
@@ -54,10 +42,6 @@ theorem pullbackExtension_gauge_coordinates_contMDiffAt
     (hfield.comp (s, b s) hmap).contMDiffWithinAt
   exact (U.tangentBundle_snd_contMDiff.contMDiffAt.comp_contMDiffWithinAt
     (s, b s) hpull).contMDiffAt univ_mem
-
-
-
-
 
 theorem horizontalCovariantDerivative_gauge_coordinates
     {c : MetricLeviCivitaFamily g.metric} (H : MovingGaugeCalculus G.leafwise g c)

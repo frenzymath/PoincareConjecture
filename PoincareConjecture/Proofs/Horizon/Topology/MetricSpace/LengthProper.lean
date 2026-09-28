@@ -2,22 +2,11 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare
-
-
 
 theorem properSpace_of_approximate_split {X : Type*} [MetricSpace X]
     [CompleteSpace X] [LocallyCompactSpace X]

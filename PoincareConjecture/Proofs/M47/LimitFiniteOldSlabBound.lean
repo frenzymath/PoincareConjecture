@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapsePhysicalTime
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoherence
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ private local instance oldSlabCharts :
   G.limit.carrier.chartedSpace
 private local instance oldSlabManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_preserved_future_bound_of_controlled
     (k : ℕ) {c Told R Bold eta : ℝ} (hTold : 0 < Told) (_hR : 0 < R)

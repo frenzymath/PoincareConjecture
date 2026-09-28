@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Jacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Manifold
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_parallel_spherical_jacobi
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ} {b : ℝ}

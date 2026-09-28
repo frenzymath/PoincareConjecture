@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayChord
 import PoincareConjecture.Proofs.M28.Mathlib.ChordConeDistance
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M28.MetricEndRay
 
 variable {X : Type u} [MetricSpace X]
   {E : UniformSpace.Completion X} {alpha : ℝ}
-
-
-
 
 theorem dist_sq_le_of_chordDefect_le (P Q : MetricEndRay E alpha) {K : ℝ}
     (hupper : ∀ s ∈ Ioo (0 : ℝ) P.length, ∀ t ∈ Ioo (0 : ℝ) Q.length,
@@ -78,9 +65,6 @@ theorem dist_sq_le_of_chordDefect_le (P Q : MetricEndRay E alpha) {K : ℝ}
   have hmul := (div_le_iff₀
     (mul_pos (hparameter hs hv).1 (hparameter ht hv).1)).mp hdefect
   nlinarith only [hmul]
-
-
-
 
 theorem dist_le_chordConeDistance [PseudoMetricSpace (MetricEndRay E alpha)]
     (P Q : MetricEndRay E alpha)

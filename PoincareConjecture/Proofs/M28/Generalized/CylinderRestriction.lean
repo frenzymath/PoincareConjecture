@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -20,16 +12,11 @@ namespace GeneralizedFlowCylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 theorem time_mem_interval (e : GeneralizedFlowCylinder F C origin scale I U)
     (s : ℝ) (hs : s ∈ I) (x : C.carrier) : origin + s / scale ∈ F.interval :=
   (F.slice_nonempty_iff _).mp ⟨e.forward s hs x⟩
 
 end GeneralizedFlowCylinder
-
-
-
 
 theorem GeneralizedStrongNeck.backward_time_mem
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
@@ -37,10 +24,6 @@ theorem GeneralizedStrongNeck.backward_time_mem
     {s : ℝ} (hs : s ∈ Set.Ioc (-1 : ℝ) 0) :
     t + s / (N.scale⁻¹ ^ 2) ∈ F.interval :=
   N.time_cylinder.time_mem_interval s hs N.center
-
-
-
-
 
 theorem GeneralizedStrongNeck.not_minimum
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.NonnegativeEnergyBound
 import PoincareConjecture.Proofs.M14.Sec6_5_SquareScalarEnergy
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontalScalar_abs_le_of_ricci_bound (q : G.Point) {C : ℝ}
     (hRic : ∀ v w : G.Horizontal q, |horizontalRicci G.leafwise q v w| ≤
@@ -61,9 +49,6 @@ theorem horizontalScalar_abs_le_of_ricci_bound (q : G.Point) {C : ℝ}
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
 
 variable {T b : ℝ} {x y : G.Point} {p : M14BackwardPath G T 0 b x y}
-
-
-
 
 theorem squareRoot_energy_action_bound
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -131,10 +116,6 @@ theorem squareRoot_energy_action_bound
     simpa only [Real.sqrt_zero, squareRootLIntegrand, e] using
       integral_squareRootLIntegrand_eq_action R
   rwa [haction] at h
-
-
-
-
 
 theorem squareRoot_energy_uniform_bound
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)

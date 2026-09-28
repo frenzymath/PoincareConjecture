@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalDensityIntegral
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndOriginalDensity
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndCompactSlabs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_coreImage_integral_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronChainCoordinates
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {α β : Type*}
-
-
 
 theorem dual_restrict_injective (i : α ↪ β) :
     Function.Injective (LinearMap.funLeft (ZMod 2) (ZMod 2) i).dualMap :=
@@ -24,7 +13,6 @@ theorem dual_restrict_injective (i : α ↪ β) :
     (LinearMap.funLeft_surjective_of_injective _ _ i i.injective)
 
 open Classical in
-
 
 theorem dual_restrict_single_image (i : α ↪ β)
     (c : Module.Dual (ZMod 2) (α → ZMod 2)) (a : α) :
@@ -37,7 +25,6 @@ theorem dual_restrict_single_image (i : α ↪ β)
 
 open Classical in
 
-
 theorem dual_restrict_single_off_range (i : α ↪ β)
     (c : Module.Dual (ZMod 2) (α → ZMod 2)) {b : β} (hb : b ∉ Set.range i) :
     (LinearMap.funLeft (ZMod 2) (ZMod 2) i).dualMap c (Pi.single b 1) = 0 := by
@@ -49,8 +36,6 @@ theorem dual_restrict_single_off_range (i : α ↪ β)
   rw [hzero, map_zero]
 
 open Classical in
-
-
 
 theorem dual_restrict_range_iff [Finite β] (i : α ↪ β)
     (c : Module.Dual (ZMod 2) (β → ZMod 2)) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.ComponentBranchM
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SelfPairedPhysicalPolygon
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicModelOrder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -23,7 +15,6 @@ local notation "Q2" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
 
 theorem ComponentBranchModel.exists_selfpaired_axis_order
     (D : ComponentBranchModel old i)
@@ -46,8 +37,6 @@ theorem ComponentBranchModel.exists_selfpaired_axis_order
     exact (old.connected i).image (D.graph ∘ f) D.selected_PL.continuousOn
   exact D.axis.exists_exact_cyclic_polygon_of_polygon_carrier
     (D.complex_finite.subset D.axis_le) hconn P hP hPi (hPs.trans D.axis_space.symm)
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_selfpaired_circle_model
     (old : OrdinaryDoubleCurveModel e f R)

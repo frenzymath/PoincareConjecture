@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Energy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +17,6 @@ open Geometry Variational
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def variationPath {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -60,7 +49,6 @@ def variationPath {J : Set ℝ} {F : RicciFlow n M J}
     exact ((V.square_smooth.of_le (by simp)).comp
       (hsqrt.prodMk contMDiffOn_const) (hmaps.mono_left Ioo_subset_Icc_self)).congr
         (fun t ht ↦ (hagrees t (Ioo_subset_Icc_self ht)).symm)
-
 
 theorem variationSquareAction_eq_variationLLength {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -95,7 +83,6 @@ theorem variationSquareAction_eq_variationLLength {J : Set ℝ} {F : RicciFlow n
   simp only [hvel, map_smul, smul_apply, smul_eq_mul]
   rw [hbase]
   ring
-
 
 theorem isLocalMin_variationSquareAction {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -153,7 +140,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem secondVariation_nonneg (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ}

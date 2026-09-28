@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +37,6 @@ theorem contMDiff_space (a s : ℝ) :
 theorem contMDiff_inverseSpace (a s : ℝ) :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (inverseSpace a s) :=
   contMDiff_fst.prodMk ((contMDiff_snd.sub contMDiff_const).div_const a)
-
 
 theorem metric_pullback_affine
     {M : Type u} [TopologicalSpace M]
@@ -143,7 +140,6 @@ variable (h : RiemannianMetric 3 M) (D : LeviCivitaData h)
   (hclose : RoundCylinderClose δ 0 (fun z v w =>
     D.scalarCurvature (N.coordinate_map (q, s)) *
       roundCylinderPullback h (N.coordinate_map ∘ space a s) z v w))
-
 
 def affineWithMetric : EpsilonNeck h := by
   let e := N.affineCoordinate ha s hsub

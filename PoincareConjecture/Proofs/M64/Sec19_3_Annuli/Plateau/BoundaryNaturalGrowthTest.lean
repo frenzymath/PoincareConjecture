@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroTraceApp
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamSobolevTests
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalWeakTest
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,10 +15,6 @@ open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.Euclidean
 open Poincare.Analysis.Sobolev.NirenbergDiffQuotTestFunction
 
 set_option maxHeartbeats 900000 in
-
-
-
-
 
 theorem m64NaturalGrowth_zero_boundary_test
     {O : Set LoopPlane} (hO : IsOpen O)

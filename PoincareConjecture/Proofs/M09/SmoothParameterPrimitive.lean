@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.PathSpaceCalculus
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology intervalIntegral

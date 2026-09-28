@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualVertexFaceContainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem image_vertex_dual_subset_original_star_and_mark
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

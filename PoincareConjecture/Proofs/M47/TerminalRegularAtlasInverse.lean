@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_atlas_actual_inverse
     {X : Type u} {Y : Type v} {M : Type w}

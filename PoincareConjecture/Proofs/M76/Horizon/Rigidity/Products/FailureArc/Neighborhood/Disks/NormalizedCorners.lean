@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.NormalizedRectangle
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.CornerMatching
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

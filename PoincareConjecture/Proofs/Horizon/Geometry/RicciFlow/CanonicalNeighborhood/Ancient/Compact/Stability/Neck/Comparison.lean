@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.UniformJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Terminal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 open Poincare.Analysis.Calculus
 
 namespace PoincareConjecture.TerminalNeck
-
-
 
 theorem exists_staticCylinder_comparison_tolerance
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε) :
@@ -81,8 +70,6 @@ theorem exists_staticCylinder_comparison_tolerance
   have hηnonneg : 0 ≤ η ^ 2 := sq_nonneg _
   nlinarith
 
-
-
 theorem eventually_roundCylinderClose_of_coefficientJets
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)
     {B₀ : RoundCylinderTwoTensor} {B : ℕ → RoundCylinderTwoTensor}
@@ -113,8 +100,6 @@ private theorem constant_jets_tendsto
   | succ m =>
     simp_rw [iteratedFDeriv_succ_const]
     exact tendsto_const_nhds.tendstoUniformlyOn_const K
-
-
 
 theorem smooth_zero_convergence_scalar_errors
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -200,8 +185,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
 
 include hconv hfixed
 
-
-
 theorem smooth_zero_convergence_terminal_normalized_parametrized
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (d : E ≃L[ℝ] EuclideanSpace ℝ (Fin 3))
@@ -242,7 +225,6 @@ theorem smooth_zero_convergence_terminal_normalized_parametrized
   · intro m K hK hKU
     exact (hc.2 m K hK hKU).congr (Eventually.of_forall fun k x _ =>
       congrArg (fun f => iteratedFDeriv ℝ m f x) (heq k))
-
 
 theorem smooth_zero_convergence_terminal_normalized_changing_parametrized
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -315,8 +297,6 @@ theorem smooth_zero_convergence_terminal_normalized_changing_parametrized
     apply (hDjet m K hK hKV).congr
     filter_upwards [heq] with k hk x hx
     exact (eqOn_iteratedFDeriv_of_isOpen hW hk m) (hKW hx)
-
-
 
 theorem smooth_zero_convergence_terminal_normalized_cylinder_parametrizations
     {δ : ℝ} {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
@@ -409,8 +389,6 @@ theorem smooth_zero_convergence_terminal_normalized_cylinder_parametrizations
     exact (hDjet m K hK hKV).congr (Eventually.of_forall fun i x hx =>
       (eqOn_iteratedFDeriv_of_isOpen hV (heq i) m) (hKV hx))
 
-
-
 theorem smooth_zero_convergence_terminal_normalized_cylinder_coefficients
     {δ : ℝ} {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
     (hΦ : ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ Φ
@@ -499,8 +477,6 @@ theorem smooth_zero_convergence_terminal_normalized_cylinder_coefficients
     filter_upwards [heq] with i hi x hx
     exact (eqOn_iteratedFDeriv_of_isOpen hW hi m) (hKW hx)
 
-
-
 theorem eventually_terminalCylinder_normalized_coefficientJets
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)
     {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
@@ -537,8 +513,6 @@ theorem eventually_terminalCylinder_normalized_coefficientJets
     exact ⟨Metric.mem_ball_self (by norm_num : (0 : ℝ) < 1 / 2),
       (neg_lt_neg hinv).trans_le hz.1, hz.2.trans_lt hinv⟩
 
-
-
 theorem eventually_terminalCylinder_normalizedClose
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)
     {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
@@ -558,8 +532,6 @@ theorem eventually_terminalCylinder_normalizedClose
   · intro η hη
     exact (hconv.eventually_terminalCylinder_normalized_coefficientJets hfixed hδ hδε hΦ hs
       ⌊ε⁻¹⌋₊ hη).mono fun k hk z hz => hk z ⟨hz.1.le, hz.2.le⟩
-
-
 
 theorem eventually_terminalCylinder_scalarClose
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)

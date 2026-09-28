@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Extension.Ref
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.ExponentIteration
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.WeakDerivatives
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -47,7 +40,6 @@ private theorem memLp_subcritical {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
   apply (hvq.restrict (halfSpace d)).ae_eq
   filter_upwards [ae_restrict_mem isOpen_halfSpace.measurableSet] with x hx
   exact evenReflect_eq_on_halfSpace u hx
-
 
 theorem memWkp_subcritical (k : ℕ) {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
     {u : E → ℝ} (hc : HasCompactSupport u)

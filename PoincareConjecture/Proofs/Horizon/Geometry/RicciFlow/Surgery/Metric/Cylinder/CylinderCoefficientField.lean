@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylinder.CylinderEuclidean
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

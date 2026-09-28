@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.EventTransportPolicy
 import PoincareConjecture.Proofs.M51.VanishingTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {g₀ g₁ : StandardInitialMetric} {K₀ K₁ : MetricSurgeryConstants
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K₀ P₀ slice metric T)
   (hg : g₀ = g₁) (hK : K₀ = K₁) (hP : P₀ = P₁)
-
-
 
 def castMetadata : SurgeryEventData g₁ K₁ P₁ slice metric T where
   tMinus := E.tMinus
@@ -85,13 +74,11 @@ def castMetadata : SurgeryEventData g₁ K₁ P₁ slice metric T where
   disappearing_curvature := by subst P₁; exact E.disappearing_curvature
   disappearing_cover := by subst P₁; exact E.disappearing_cover
 
-
 theorem castMetadata_heq : HEq (E.castMetadata hg hK hP) E := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 @[simp] theorem castMetadata_tMinus :
     (E.castMetadata hg hK hP).tMinus = E.tMinus := by
@@ -100,14 +87,12 @@ theorem castMetadata_heq : HEq (E.castMetadata hg hK hP) E := by
   subst P₁
   rfl
 
-
 @[simp] theorem castMetadata_terminal :
     (E.castMetadata hg hK hP).terminal = E.terminal := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 @[simp] theorem castMetadata_cap_count :
     (E.castMetadata hg hK hP).cap_count = E.cap_count := by
@@ -116,7 +101,6 @@ theorem castMetadata_heq : HEq (E.castMetadata hg hK hP) E := by
   subst P₁
   rfl
 
-
 @[simp] theorem castMetadata_disappearing_start :
     (E.castMetadata hg hK hP).disappearing_start = E.disappearing_start := by
   subst g₁
@@ -124,13 +108,11 @@ theorem castMetadata_heq : HEq (E.castMetadata hg hK hP) E := by
   subst P₁
   rfl
 
-
 theorem castMetadata_pre_flow : HEq (E.castMetadata hg hK hP).pre_flow E.pre_flow := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 theorem castMetadata_pre_identify :
     HEq (E.castMetadata hg hK hP).pre_identify E.pre_identify := by
@@ -139,14 +121,12 @@ theorem castMetadata_pre_identify :
   subst P₁
   rfl
 
-
 theorem castMetadata_regular_limit :
     HEq (E.castMetadata hg hK hP).regular_limit E.regular_limit := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 theorem castMetadata_retained_pre :
     HEq (E.castMetadata hg hK hP).retained_pre E.retained_pre := by
@@ -155,14 +135,12 @@ theorem castMetadata_retained_pre :
   subst P₁
   rfl
 
-
 @[simp] theorem castMetadata_retained_post :
     (E.castMetadata hg hK hP).retained_post = E.retained_post := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 theorem castMetadata_retention :
     HEq (E.castMetadata hg hK hP).retention E.retention := by
@@ -171,14 +149,12 @@ theorem castMetadata_retention :
   subst P₁
   rfl
 
-
 theorem castMetadata_limit_identify :
     HEq (E.castMetadata hg hK hP).limit_identify E.limit_identify := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 theorem castMetadata_limit_metric :
     HEq (E.castMetadata hg hK hP).limit_metric E.limit_metric := by
@@ -187,7 +163,6 @@ theorem castMetadata_limit_metric :
   subst P₁
   rfl
 
-
 theorem castMetadata_limit_connection :
     HEq (E.castMetadata hg hK hP).limit_connection E.limit_connection := by
   subst g₁
@@ -195,17 +170,14 @@ theorem castMetadata_limit_connection :
   subst P₁
   rfl
 
-
 theorem castMetadata_necks : HEq (E.castMetadata hg hK hP).necks E.necks := by
   subst g₁
   subst K₁
   subst P₁
   rfl
 
-
 @[simp] theorem castMetadata_neck (i : Fin E.cap_count) :
     ((E.castMetadata hg hK hP).necks i).neck = (E.necks i).neck := rfl
-
 
 theorem castMetadata_local_result :
     HEq (E.castMetadata hg hK hP).local_result E.local_result := by
@@ -214,14 +186,12 @@ theorem castMetadata_local_result :
   subst P₁
   rfl
 
-
 theorem castMetadata_local_embed :
     HEq (E.castMetadata hg hK hP).local_embed E.local_embed := by
   subst g₁
   subst K₁
   subst P₁
   rfl
-
 
 theorem castMetadata_policy (hE : Nonempty (SurgeryEventTerminalPolicy E)) :
     Nonempty (SurgeryEventTerminalPolicy (E.castMetadata hg hK hP)) := by
@@ -239,7 +209,6 @@ variable {P₀ P₁ : SurgeryParameters}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryVanishingEventData P₀ slice metric T) (hP : P₀ = P₁)
 
-
 def castParameters : SurgeryVanishingEventData P₁ slice metric T where
   tMinus := E.tMinus
   tMinus_nonnegative := E.tMinus_nonnegative
@@ -256,40 +225,33 @@ def castParameters : SurgeryVanishingEventData P₁ slice metric T where
   disappearing_curvature := by subst P₁; exact E.disappearing_curvature
   disappearing_cover := by subst P₁; exact E.disappearing_cover
 
-
 theorem castParameters_heq : HEq (E.castParameters hP) E := by
   subst P₁
   rfl
-
 
 @[simp] theorem castParameters_tMinus :
     (E.castParameters hP).tMinus = E.tMinus := by
   subst P₁
   rfl
 
-
 @[simp] theorem castParameters_disappearing_start :
     (E.castParameters hP).disappearing_start = E.disappearing_start := by
   subst P₁
   rfl
-
 
 @[simp] theorem castParameters_left_limit_volume :
     (E.castParameters hP).left_limit_volume = E.left_limit_volume := by
   subst P₁
   rfl
 
-
 theorem castParameters_pre_flow : HEq (E.castParameters hP).pre_flow E.pre_flow := by
   subst P₁
   rfl
-
 
 theorem castParameters_pre_identify :
     HEq (E.castParameters hP).pre_identify E.pre_identify := by
   subst P₁
   rfl
-
 
 theorem castParameters_policy
     (hE : SurgeryVanishingEventTerminalPolicy E) :

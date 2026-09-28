@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.TransverseSphereCollar
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem contMDiffOn_sphere_time_velocity
     (A : UnitTwoSphere × ℝ → E3) {V : Set UnitTwoSphere} (hV : IsOpen V)
@@ -46,9 +32,6 @@ theorem contMDiffOn_sphere_time_velocity
     simpa only [inTangentCoordinates_model_space, mfderiv_eq_fderiv,
       fderiv_apply_one_eq_deriv] using hd
   exact hvel.contMDiffWithinAt
-
-
-
 
 theorem exists_sphere_candidate_time_sign
     (j N : UnitTwoSphere → E3) (A : UnitTwoSphere × ℝ → E3)

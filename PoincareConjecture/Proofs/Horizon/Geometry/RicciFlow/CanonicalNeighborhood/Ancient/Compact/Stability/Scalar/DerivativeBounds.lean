@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Normalized
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Normalization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem uniformKappaCapDerivativeBounds
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
@@ -48,9 +34,6 @@ theorem uniformKappaCapDerivativeBounds
   obtain ⟨hgradient, hevolution⟩ := hbound N.target x N.normalized_scalar
   exact ⟨N.scalarGradientNorm_le hB.le hgradient,
     N.scalarEvolution_bound P.scalarDerivativeServices ht hevolution⟩
-
-
-
 
 theorem uniformKappaCapDerivativeFields
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

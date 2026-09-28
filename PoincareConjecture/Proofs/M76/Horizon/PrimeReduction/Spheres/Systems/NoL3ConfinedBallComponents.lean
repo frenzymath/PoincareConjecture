@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalBallPuncturedModel
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphericalComponentSubregions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

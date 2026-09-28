@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem preconnected_positive_vertex_graph_of_isPreconnected
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

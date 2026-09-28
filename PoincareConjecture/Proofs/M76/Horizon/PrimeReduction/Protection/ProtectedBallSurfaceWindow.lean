@@ -10,14 +10,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.ClosedSetPro
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfaceMotion
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Coordinate.IntersectionGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.LowerAnnulus
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Reflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +27,6 @@ private def negateTime : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Real
   contMDiff_invFun := contMDiff_id.neg
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_upper_annular_end
     (L : List (SphereSurgeryCoreCap v g B))

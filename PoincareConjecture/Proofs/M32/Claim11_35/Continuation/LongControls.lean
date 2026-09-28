@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Stages
 import PoincareConjecture.Proofs.M32.Claim11_35.FiniteSlabs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +18,6 @@ local macro "stage[" S:term "," T:term "," M:term "," B:term "]" : term =>
         (($S).flow k).scalar (e.embedding.pointMap s hs y) ≤ $M * ($S).scale k) ∧
       (∀ s hs y, y ∈ ($S).baseBall k A → GeneralizedKappaNoncollapsedAt
         (($S).flow k) (e.embedding.pointMap s hs y) neckNoncollapseConstant 1))
-
-
-
 
 theorem terminalBlowupSequence_longControls_after_initial_limit
     (P : RepairedHornSelectionPredecessors.{u}) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedTube
 import PoincareConjecture.Proofs.M47.SeedPathChain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_old_prefix_crossing_transport (P : M47Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

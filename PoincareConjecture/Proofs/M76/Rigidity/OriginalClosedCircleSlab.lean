@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleLifts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteCircleRegularValues
 import PoincareConjecture.Proofs.M76.Rigidity.CircleSlabInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +16,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
-
 
 theorem exists_hamiltonZero_regular_circle_slab {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

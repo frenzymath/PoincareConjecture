@@ -6,13 +6,6 @@ import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Logic.Equiv.Option
 import Mathlib.Logic.Equiv.Prod
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -394,6 +387,5 @@ theorem tensorNorm_curvaturePairContraction_le (D : LeviCivitaData g)
     g.tensorNorm (curvaturePairContraction D i j σ) x ≤
         (d : ℝ) * g.tensorNorm (curvaturePairProduct D i j σ) x := hnorm
     _ = _ := by rw [tensorNorm_curvaturePairProduct]; ring
-
 
 end PoincareConjecture.M04

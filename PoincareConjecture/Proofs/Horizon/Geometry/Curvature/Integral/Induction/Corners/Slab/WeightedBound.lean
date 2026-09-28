@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.ComponentSlab
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Slab.Coefficients
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory PoincareConjecture
@@ -142,7 +141,6 @@ theorem PoincareConjecture.LeviCivitaData.exists_uniform_weighted_component_slab
     _ ≤ B * (r ^ m + J) := by
       dsimp [B]
       nlinarith [mul_nonneg hT hJ, mul_nonneg hQ hrpow]
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_uniform_weighted_component_slab_bound
     (m : ℕ) (hm : 1 ≤ m) {ℓ V H C L : ℝ}

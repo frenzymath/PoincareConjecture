@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAtt
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalAnnulusRimModels
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentSurfaceModel
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry BrownCollar PLAnnularStrip
@@ -68,9 +62,6 @@ theorem HamiltonMarkedProtectedBall.exists_original_attachment_annulus
   refine ⟨A, hA, ?_, ?_⟩
   · simpa only [(hC false).2.2.2, Bool.false_eq_true, if_false] using hlo
   · simpa only [(hC true).2.2.2, if_true] using hhi
-
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_original_attachment_annulus_model
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

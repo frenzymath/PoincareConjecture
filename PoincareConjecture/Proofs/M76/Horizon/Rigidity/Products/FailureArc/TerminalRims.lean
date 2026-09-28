@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Essent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalRegion
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.EssentialBoundaryComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -69,8 +60,6 @@ theorem originalProjection_singularBoundaryRim (P : MarkedTerminalRegion st R)
   rw [heq, P.homeomorph.symm_apply_apply]
   exact st.annulusRim_projection hS b u
 
-
-
 theorem singularBoundaryRim_not_nullhomotopic (P : MarkedTerminalRegion st R)
     (hS : S.space = ProtectedAnnulus.source)
     (hfront : ∀ (b : Bool) (u : Q2), g (ProtectedAnnulus.endpoint b, u) ∈ frontier R)
@@ -89,8 +78,6 @@ theorem singularBoundaryRim_not_nullhomotopic (P : MarkedTerminalRegion st R)
         sphere_subset_closedBall (ProtectedAnnulus.endpoint_mem_sphere b), u.property⟩)
   exact hessential b (heq ▸ hn.comp_right P.originalProjection)
 
-
-
 theorem singularBoundaryRim_ranges_disjoint (P : MarkedTerminalRegion st R)
     (hS : S.space = ProtectedAnnulus.source)
     (hfront : ∀ (b : Bool) (u : Q2), g (ProtectedAnnulus.endpoint b, u) ∈ frontier R)
@@ -104,8 +91,6 @@ theorem singularBoundaryRim_ranges_disjoint (P : MarkedTerminalRegion st R)
   rw [P.originalProjection_singularBoundaryRim,
     P.originalProjection_singularBoundaryRim] at hp
   exact disjoint_left.mp hF (hmark false u) (hp ▸ hmark true v)
-
-
 
 theorem original_surface_incidence (P : MarkedTerminalRegion st R) :
     (∀ s ∈ P.boundary.faces, ∃ t ∈ P.boundary.faces, s ⊆ t ∧ t.card = 3) ∧

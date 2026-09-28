@@ -5,10 +5,3 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.MeasureTheory.Function.LpSpace.Complete
 import Mathlib.Tactic
-
-
-
-
-
-
-

@@ -2,19 +2,9 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Submersion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
-
-
 
 theorem PoincareConjecture.LeviCivitaData.augmented_strainer_pair_bounds
     {n k : ℕ} {M : Type*} [TopologicalSpace M]
@@ -222,9 +212,6 @@ theorem PoincareConjecture.LeviCivitaData.augmented_strainer_pair_bounds
     funext i
     rw [Poincare.Geometry.Manifold.mfderiv_pi_apply f' hf' x w i]
     exact congrFun hw i
-
-
-
 
 theorem PoincareConjecture.LeviCivitaData.augmented_strainer_pair_full_bounds
     {n k : ℕ} {M : Type*} [TopologicalSpace M]

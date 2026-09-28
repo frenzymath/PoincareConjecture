@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChildCompatibility
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,10 +9,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_mesh_subdivision_triangle_parent
     {S T : TriangleMesh} (hST : S.toPlaneComplex.Subdivides T.toPlaneComplex)
@@ -34,11 +23,6 @@ theorem m64Intrinsic_mesh_subdivision_triangle_parent
   refine ⟨⟨t, ht⟩, ?_⟩
   rw [range_meshTriangleBasis, range_meshTriangleBasis]
   exact hsq.trans (convexHull_mono (image_mono hqt))
-
-
-
-
-
 
 theorem m64Intrinsic_mesh_subdivision_preserves_boundary_contact
     {S T : TriangleMesh} (hST : S.toPlaneComplex.Subdivides T.toPlaneComplex)

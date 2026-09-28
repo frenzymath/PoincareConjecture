@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.DisjointUnionBicollar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.InstalledSecondSlabs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology Poincare.Topology
 

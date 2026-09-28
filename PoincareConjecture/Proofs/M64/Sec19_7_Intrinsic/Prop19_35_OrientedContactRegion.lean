@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContactBaseOrientation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LastContactRegion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +9,6 @@ open Set
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_oriented_last_contact_region
     {base alpha beta eta : ℝ → AnnulusCoordinates}

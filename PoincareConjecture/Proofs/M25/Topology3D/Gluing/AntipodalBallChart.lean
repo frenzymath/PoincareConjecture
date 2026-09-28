@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCollarStereographic
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesCompactSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric IsManifold
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_antipodal_buffered_ball_chart_of_collar
     (hS : SchoenfliesService)

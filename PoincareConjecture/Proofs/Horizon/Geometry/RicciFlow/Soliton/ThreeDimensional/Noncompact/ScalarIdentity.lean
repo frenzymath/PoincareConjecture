@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Contracte
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +18,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem mvfderiv_scalarCurvature_of_C2_gradient_soliton
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -94,7 +82,6 @@ theorem mvfderiv_scalarCurvature_of_C2_gradient_soliton
   rw [Finset.mul_sum]
   exact Finset.sum_congr rfl (fun i _ => by rw [hB]; ring)
 
-
 theorem exists_hamilton_conservation_of_C2_gradient_soliton [PreconnectedSpace M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) 2 f)
@@ -140,7 +127,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem mvfderiv_scalarCurvature_threeDimensional
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)
     (x : M) (v : TangentSpace (𝓡 3) x) :
@@ -148,7 +134,6 @@ theorem mvfderiv_scalarCurvature_threeDimensional
       2 * S.connection.ricci x (S.connection.gradient S.potential x) v :=
   S.connection.mvfderiv_scalarCurvature_of_C2_gradient_soliton hD
     S.potential_C2 S.soliton_equation x v
-
 
 theorem exists_hamilton_conservation_threeDimensional
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus) :

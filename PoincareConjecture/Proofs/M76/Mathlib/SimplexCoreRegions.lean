@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexCoreBoxCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.StdSimplexCoreBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,13 +9,8 @@ namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι]
 
-
-
-
 def faceRegion (s : Finset ι) (η : ℝ) : Set (ι → ℝ) :=
   {q | q ∈ stdSimplex ℝ ι ∧ (∀ i ∈ s, η ≤ q i) ∧ ∀ i ∉ s, q i ≤ η}
-
-
 
 theorem isClosed_faceRegion (s : Finset ι) (η : ℝ) : IsClosed (faceRegion s η) := by
   have he : faceRegion s η = stdSimplex ℝ ι ∩
@@ -38,13 +23,8 @@ theorem isClosed_faceRegion (s : Finset ι) (η : ℝ) : IsClosed (faceRegion s 
       (isClosed_iInter fun i => isClosed_iInter fun _ =>
         isClosed_le (continuous_apply i) continuous_const)
 
-
-
 theorem isCompact_faceRegion (s : Finset ι) (η : ℝ) : IsCompact (faceRegion s η) :=
   (isCompact_stdSimplex ℝ ι).of_isClosed_subset (isClosed_faceRegion s η) (fun _ h => h.1)
-
-
-
 
 theorem exists_mem_faceRegion {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) {q : ι → ℝ}
@@ -69,16 +49,10 @@ theorem exists_mem_faceRegion {η : ℝ} (hη : 0 ≤ η)
   · intro i hi
     exact le_of_not_gt (fun h => hi (Finset.mem_filter.mpr ⟨Finset.mem_univ i, h⟩))
 
-
-
-
 theorem coordinate_eq_of_mem_faceRegions {s t : Finset ι} {η : ℝ} {q : ι → ℝ}
     (hs : q ∈ faceRegion s η) (ht : q ∈ faceRegion t η)
     {i : ι} (hi : i ∈ s) (hit : i ∉ t) : q i = η :=
   le_antisymm (ht.2.2 i hit) (hs.2.1 i hi)
-
-
-
 
 theorem exists_threshold_of_mem_faceRegions {s t : Finset ι} {η : ℝ} {q : ι → ℝ}
     (hs : q ∈ faceRegion s η) (ht : q ∈ faceRegion t η)
@@ -88,9 +62,6 @@ theorem exists_threshold_of_mem_faceRegions {s t : Finset ι} {η : ℝ} {q : ι
   exact ⟨i, hi, hit, coordinate_eq_of_mem_faceRegions hs ht hi hit⟩
 
 variable [DecidableEq ι]
-
-
-
 
 noncomputable def faceRegionBoxHomeomorph (s : Finset ι) {η : ℝ} (hη : 0 ≤ η) :
     faceRegion s η ≃ₜ boxRegion s {i // i ∉ s} η := by
@@ -117,8 +88,6 @@ noncomputable def faceRegionBoxHomeomorph (s : Finset ι) {η : ℝ} (hη : 0 �
     by_cases his : i ∈ s
     · exact hη.trans (hi ⟨i, his⟩)
     · exact hv.1 ⟨i, his⟩
-
-
 
 noncomputable def faceRegionProductHomeomorph (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) :

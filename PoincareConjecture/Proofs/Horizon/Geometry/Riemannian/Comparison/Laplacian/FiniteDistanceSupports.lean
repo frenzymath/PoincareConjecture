@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Support
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.TailSupport
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +29,6 @@ private theorem toReal_edist_triangle_of_finite
   rw [← ENNReal.toReal_add hpq hqy]
   exact ENNReal.toReal_mono (ENNReal.add_ne_top.mpr ⟨hpq, hqy⟩) htriangle
 
-
-
 theorem inverse_branch_distance_majorant_of_finite
     (g : RiemannianMetric (m + 1) M) (p q : M)
     {e : EuclideanSpace ℝ (Fin (m + 1)) → M} {R : ℝ}
@@ -59,7 +50,6 @@ theorem inverse_branch_distance_majorant_of_finite
   rw [hleft] at htriangle
   linarith
 
-
 theorem inverse_branch_touches_distance_of_finite
     (g : RiemannianMetric (m + 1) M) {p x : M}
     {e : EuclideanSpace ℝ (Fin (m + 1)) → M}
@@ -71,7 +61,6 @@ theorem inverse_branch_touches_distance_of_finite
   have hxB : B v = x := (heB hv).symm.trans hx
   rw [← hxB, B.left_inv hv]
   exact hxB ▸ hsplit
-
 
 theorem upper_support_of_inverse_branch_of_finite
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (p q x : M)
@@ -120,7 +109,6 @@ theorem upper_support_of_inverse_branch_of_finite
     exact g.inner_gradient_inverse_branch D B heB hB hBi hv hv0 hgauss
   · rw [D.laplacian_const_add_at hradx]
     exact hlap.trans (radius_comparison_of_half_le (Nat.cast_nonneg m) hr hhalf)
-
 
 theorem upper_support_of_regular_minimizing_tail_of_finite
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

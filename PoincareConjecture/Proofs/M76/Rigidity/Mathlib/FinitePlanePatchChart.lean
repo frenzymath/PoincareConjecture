@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76.HamiltonIndexOne
-
-
-
-
-
 
 theorem exists_pair_chart_of_finitePL_plane_patch {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SliceLift
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSlices
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
-
 noncomputable def exponentialSliceMap (E : M14ExponentialFamily G T x)
     (τ : ℝ) (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point) (Z : G.Horizontal x) :
     (G.slices (T - τ)).Point := by
@@ -35,15 +22,11 @@ noncomputable def exponentialSliceMap (E : M14ExponentialFamily G T x)
     ⟨E.gamma Z (Real.sqrt τ), by simpa only [Real.sq_sqrt hτ] using E.clock Z _ hZ⟩
   else q₀
 
-
-
 theorem exponentialSliceMap_val (E : M14ExponentialFamily G T x)
     {τ : ℝ} (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point)
     {Z : G.Horizontal x} (hZ : (Z, Real.sqrt τ) ∈ E.domain) :
     (exponentialSliceMap E τ hτ q₀ Z).val = E.gamma Z (Real.sqrt τ) := by
   simp only [exponentialSliceMap, dif_pos hZ]
-
-
 
 theorem exponentialSliceMap_contMDiffAt (E : M14ExponentialFamily G T x)
     {τ : ℝ} (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point)
@@ -58,9 +41,6 @@ theorem exponentialSliceMap_contMDiffAt (E : M14ExponentialFamily G T x)
   filter_upwards [(exponentialFamily_domain_slice_isOpen E (Real.sqrt τ)).mem_nhds hZ]
     with A hA
   exact exponentialSliceMap_val E hτ q₀ hA
-
-
-
 
 theorem exponentialSliceMap_differential_val (E : M14ExponentialFamily G T x)
     {τ : ℝ} (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.Orig
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.CutIrreducibility
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Slab
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +33,6 @@ private theorem kernel_assoc {E : Type*}
       hcψ.norm.convolutionExists_left (mul ℝ ℝ) hψ.norm huNorm y)
     (hcφ.norm.convolutionExists_left (mul ℝ ℝ) hφ.norm hnorm.locallyIntegrable x)).symm
 
-
-
 theorem suConvolution_kernel_commute {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     {φ ψ : Plane → ℝ} (hφ : Continuous φ) (hcφ : HasCompactSupport φ)
@@ -59,9 +47,6 @@ theorem suConvolution_kernel_commute {E : Type*}
     apply integral_congr_ae
     exact Eventually.of_forall fun t => mul_comm _ _
   rw [hcomm]
-
-
-
 
 theorem suMollifier_successive_bound {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

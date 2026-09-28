@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M14Exponential
 import Mathlib.Algebra.Module.Torsion.Free
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -29,8 +21,6 @@ private theorem tangent_transport {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem exponential_square_curve_eq (E : M14ExponentialFamily G T x)
     (Z : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
     {r : ℝ} (hr : r ∈ M14SqrtParameterInterval 0 (s ^ 2)) :
@@ -47,8 +37,6 @@ theorem exponential_square_curve_eq (E : M14ExponentialFamily G T x)
     _ = E.gamma Z (Real.sqrt (r ^ 2)) := E.path_coherent Z s hs hpos _ hsq
     _ = E.gamma Z r := by rw [Real.sqrt_sq hr0]
 
-
-
 theorem exponential_initial_derivative (E : M14ExponentialFamily G T x)
     (Z : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s) :
     (show SpacetimeModelVector n from
@@ -60,8 +48,6 @@ theorem exponential_initial_derivative (E : M14ExponentialFamily G T x)
     (fun v : TangentSpace (spacetimeModel n) x =>
       (show SpacetimeModelVector n from v)) hderiv
   simpa only [tangent_transport] using hmodel
-
-
 
 theorem initialVector_eq_of_square_branches_eqOn (E : M14ExponentialFamily G T x)
     {Z W : G.Horizontal x} {s : ℝ}
@@ -84,8 +70,6 @@ theorem initialVector_eq_of_square_branches_eqOn (E : M14ExponentialFamily G T x
   apply Subtype.ext
   exact smul_right_injective (SpacetimeModelVector n)
     (by norm_num : (2 : ℝ) ≠ 0) hvectors
-
-
 
 theorem initialVector_eq_of_backward_branches_eqOn
     (E : M14ExponentialFamily G T x) {Z W : G.Horizontal x} {s : ℝ}

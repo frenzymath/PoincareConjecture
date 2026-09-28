@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M04.CurvatureCalculus
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem curvatureTensorNorm_le_scalar_of_nonnegative_sectional
     {M : Type*} [TopologicalSpace M]

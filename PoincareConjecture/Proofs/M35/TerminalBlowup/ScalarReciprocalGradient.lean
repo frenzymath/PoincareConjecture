@@ -1,23 +1,12 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem scalar_directional_bound_of_unit_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -45,8 +34,6 @@ theorem scalar_directional_bound_of_unit_bound
     rw [norm_eq_sqrt_real_inner]
     rfl
   simpa only [hnorm_eq, mul_comm] using hmul
-
-
 
 theorem scalar_radius_directional_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]

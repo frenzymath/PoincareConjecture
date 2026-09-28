@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalBoundaryGraph
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ActualFaceComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u v
 open Set Geometry

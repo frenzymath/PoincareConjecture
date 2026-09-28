@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackAlgebra
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64Pullback_covariantDerivative_eq_affine_parameter
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

@@ -3,18 +3,7 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-
-
 
 theorem HasDerivAt.div_sqrt_sq_mul_sq_add_sq {f : ℝ → ℝ} {f' x A B : ℝ}
     (hf : HasDerivAt f f' x) (hB : B ≠ 0) :
@@ -38,8 +27,6 @@ theorem HasDerivAt.div_sqrt_sq_mul_sq_add_sq {f : ℝ → ℝ} {f' x A B : ℝ}
   field_simp
   rw [hs]
   ring
-
-
 
 theorem HasDerivAt.const_div_sqrt_sq_mul_sq_add_sq {f : ℝ → ℝ} {f' x A B : ℝ}
     (hf : HasDerivAt f f' x) (hB : B ≠ 0) :

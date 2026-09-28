@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.VertexPatches
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
@@ -63,7 +53,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 variable (P : ChartCircleArrangementVertexPatch r p)
 
-
 noncomputable def productCoordinates : OpenPartialHomeomorph (ℝ × ℝ) M :=
   collarParameterEquiv.symm.toHomeomorph.toOpenPartialHomeomorph.trans P.coordinates
 
@@ -74,9 +63,7 @@ def closedSectorBox (i : Bool × Bool) : Set (ℝ × ℝ) :=
   closedSectorInterval P.center.1 P.width i.1 ×ˢ
     closedSectorInterval P.center.2 P.width i.2
 
-
 def sector (i : Bool × Bool) : Set M := P.productCoordinates '' P.sectorBox i
-
 
 def closedSector (i : Bool × Bool) : Set M := P.productCoordinates '' P.closedSectorBox i
 

@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Locality
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem eqOn_Icc_of_forward_agreement
     {X Y : Type*} [TopologicalSpace Y] [T2Space Y]
@@ -49,10 +36,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
-
 
 theorem unique_half_open_of_unique_closed
     (hclosed : ∀ T : ℝ, a < T → T ≤ b → ∀ c d : ℝ → ℝ → M,

@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.RegularizedMinimum.AbsoluteValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace Poincare
-
 
 noncomputable def regularizedMin (δ : ℝ) (hδ : 0 < δ) (x y : ℝ) : ℝ :=
   (x + y - regularizedAbs δ hδ (x - y)) / 2

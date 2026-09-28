@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.NestedPhysicalPair
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_nested_pair_of_three_relative_packets
     (hP : PlanarSchoenfliesService)

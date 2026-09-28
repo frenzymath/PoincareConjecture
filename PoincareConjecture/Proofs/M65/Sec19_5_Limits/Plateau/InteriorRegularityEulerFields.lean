@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerVariation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerFields
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,15 +10,10 @@ open scoped Topology ContDiff SchwartzMap
 
 namespace PoincareConjecture.M65Euler
 
-
-
 def variationValue {N : ℕ} (X : LoopPlane → EuclideanSpace ℝ (Fin N))
     (V : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin N))
     (φ : 𝓢(LoopPlane, ℝ)) (t : ℝ) (z : LoopPlane) : EuclideanSpace ℝ (Fin N) :=
   X z + t • (φ z • V (X z))
-
-
-
 
 def variationField {N : ℕ} (X : LoopPlane → EuclideanSpace ℝ (Fin N))
     (A : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin N))
@@ -36,10 +22,6 @@ def variationField {N : ℕ} (X : LoopPlane → EuclideanSpace ℝ (Fin N))
     EuclideanSpace ℝ (Fin N) :=
   A i z + t • (φ z • fderiv ℝ V (X z) (A i z) +
     fderiv ℝ φ z (EuclideanSpace.basisFun (Fin 2) ℝ i) • V (X z))
-
-
-
-
 
 def weak_variation_on_ball {N : ℕ} {S : Set LoopPlane}
     (X : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) S)
@@ -51,10 +33,6 @@ def weak_variation_on_ball {N : ℕ} {S : Set LoopPlane}
     (t : ℝ) : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) (ball x R) :=
   compact_variation (restrict_map X (ball_subset_closedBall.trans hRS))
     (compose_on_ball X hS x hR hRS V hV C hC) φ hc hs t
-
-
-
-
 
 theorem exists_variation_capture {N : ℕ} {S : Set LoopPlane}
     (X : LoopPlane → EuclideanSpace ℝ (Fin N))

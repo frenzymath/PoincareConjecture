@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Cutoffs
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +11,6 @@ namespace Poincare.Manifold.SmoothDomain
 variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {Ω : Set M}
-
 
 theorem exists_flattening_parametrization_cutoff (S : SmoothDomain n Ω) (x : closure Ω) :
     ∃ (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M) (χ : M → ℝ),

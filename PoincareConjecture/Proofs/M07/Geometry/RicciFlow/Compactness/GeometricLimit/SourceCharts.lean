@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.DiagonalCovering
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
@@ -42,14 +30,10 @@ private def stageUnitBallMap (k j : ℕ) (hjk : j ≤ k) (l : ℕ)
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : (S.carrier k).carrier :=
   (cover k j hjk).unitBallMap ⟨l % (N j + 1), Nat.mod_lt _ (Nat.succ_pos _)⟩ x
 
-
-
 def diagonalUnitBallMap (k i : ℕ)
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : (S.carrier k).carrier :=
   stageUnitBallMap cover k (min (Nat.unpair i).1 k) (min_le_right _ _)
     (Nat.unpair i).2 x
-
-
 
 theorem diagonalUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
     diagonalUnitBallMap cover k i =
@@ -59,14 +43,11 @@ theorem diagonalUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
   simp only [diagonalUnitBallMap, min_eq_left hik]
   rfl
 
-
-
 theorem diagonalUnitBallMap_pair (k j : ℕ) (hjk : j ≤ k) (l : Fin (N j + 1)) :
     diagonalUnitBallMap cover k (Nat.pair j l) = (cover k j hjk).unitBallMap l := by
   funext x
   simp only [diagonalUnitBallMap, Nat.unpair_pair, min_eq_left hjk]
   simp only [stageUnitBallMap, Nat.mod_eq_of_lt l.isLt]
-
 
 theorem diagonalUnitBallMap_zero (k : ℕ) :
     diagonalUnitBallMap cover k 0 ⟨0, by simp⟩ = (S.flow k).base := by
@@ -76,8 +57,6 @@ theorem diagonalUnitBallMap_zero (k : ℕ) :
   exact ((cover k 0 (Nat.zero_le k)).map_zero 0).trans
     (cover k 0 (Nat.zero_le k)).centre_zero
 
-
-
 theorem diagonalUnitBallMap_isLocalDiffeomorph
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
     letI : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
@@ -85,13 +64,10 @@ theorem diagonalUnitBallMap_isLocalDiffeomorph
     IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (diagonalUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isLocalDiffeomorph (hρ _) (hρR _) _
 
-
 theorem diagonalUnitBallMap_isOpenEmbedding
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
     Topology.IsOpenEmbedding (diagonalUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isOpenEmbedding (hρ _) (hρR _) _
-
-
 
 theorem diagonalUnitBallMap_distance_bounds
     (hρ : ∀ j, 0 < ρ j) (ha : ∀ j, 0 < a j) (i : ℕ) :
@@ -133,8 +109,6 @@ theorem diagonalUnitBallMap_distance_bounds
     exact (mul_le_mul_of_nonneg_right (Finset.inf'_le lower hj) dist_nonneg).trans
       ((cover k _ (min_le_right _ _)).unitBallMap_lower_distance_of_flow
         _ (hρ _) (ha _) x y)
-
-
 
 theorem diagonalUnitBallMap_pairwise_bounded
     (L : ℕ → ℝ≥0) (hL : ∀ k i, LipschitzWith (L i) (diagonalUnitBallMap cover k i))
@@ -179,8 +153,6 @@ theorem diagonalUnitBallMap_pairwise_bounded
         dist (S.flow k).base (diagonalUnitBallMap cover k i x) +
           dist (S.flow k).base (diagonalUnitBallMap cover k j y) := dist_triangle_left _ _ _
     _ ≤ _ := add_le_add (hbase i k x) (hbase j k y)
-
-
 
 theorem diagonalUnitBallMap_compact_cover (hρ : ∀ j, 0 < ρ j) :
     ∀ A : ℝ, 0 < A → ∃ s : Finset ℕ,

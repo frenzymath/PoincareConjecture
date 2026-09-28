@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryVertexModel
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
 
 theorem exists_protected_boundary_product
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

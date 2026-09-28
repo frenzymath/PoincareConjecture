@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem ancientKappaNoncollapsed_restrict_of_metricKappaNoncollapsed
     {n : ℕ} {M : Type u} [TopologicalSpace M]

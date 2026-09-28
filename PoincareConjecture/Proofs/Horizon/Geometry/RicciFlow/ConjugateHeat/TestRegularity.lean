@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.WeakPa
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.Laplacian
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

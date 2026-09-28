@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeRicciPairing
 import PoincareConjecture.Proofs.M62.Sec19_1_MetricVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ}
 
 namespace SpacetimeCharts
-
-
 
 theorem mfderiv_time_slice (C : SpacetimeCharts n M a b)
     (p : M) (t : OpenTime a b) (r : ℝ) :
@@ -49,8 +38,6 @@ theorem mfderiv_time_slice (C : SpacetimeCharts n M a b)
   erw [C.split_mfderiv_from_product]
   simp [timeVector, mfderiv_id, mfderiv_const]
   rfl
-
-
 
 theorem mvfderiv_time_slice (C : SpacetimeCharts n M a b)
     (f : C.Point → ℝ) (g : ℝ → ℝ) (q : C.Point) (d : ℝ)
@@ -84,8 +71,6 @@ theorem mvfderiv_time_slice (C : SpacetimeCharts n M a b)
   rw [hfun] at h
   exact h.symm.trans hg'
 
-
-
 theorem liftSpatialField_time_smooth (C : SpacetimeCharts n M a b)
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p)
     (hB : C.IsSmoothField (C.liftSpatialField B))
@@ -99,8 +84,6 @@ theorem liftSpatialField_time_smooth (C : SpacetimeCharts n M a b)
 end SpacetimeCharts
 
 namespace SpacetimeData
-
-
 
 theorem time_spatial_pairing {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)

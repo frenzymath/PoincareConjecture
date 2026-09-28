@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,8 +58,6 @@ private theorem toReal_edist_le_exp_of_linear_speed_unit
   rw [Real.norm_eq_abs, abs_of_nonneg (hq 1 (by simp)), gronwallBound_ε0,
     sub_zero, mul_one] at hg
   linarith [hmajor 1 (by simp)]
-
-
 
 theorem toReal_edist_le_exp_of_linear_speed
     (g : RiemannianMetric n M) (p : M) {γ : ℝ → M} {I : Set ℝ}
@@ -130,8 +119,6 @@ theorem toReal_edist_le_exp_of_linear_speed
   have h := g.toReal_edist_le_exp_of_linear_speed_unit p hJ h01 hδ
     (mul_nonneg hA (abs_nonneg _)) hδspeed
   simpa only [δ, Function.comp_apply, l, mul_one, sub_add_cancel, mul_zero, zero_add] using h
-
-
 
 theorem exists_compact_confinement_of_linear_growth
     (g : RiemannianMetric n M) (hg : MetricComplete g) (p x : M)

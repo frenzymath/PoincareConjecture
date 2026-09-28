@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeRims
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeWitnesses
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSignedDiskCut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,9 +16,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.edge_region_ball
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)

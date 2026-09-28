@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ThreeComponentNoModelChoice
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoPortComponentCarriers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

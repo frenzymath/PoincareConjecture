@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveAtlas
 import PoincareConjecture.Proofs.M38.ProjectiveCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,8 +14,6 @@ private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
 attribute [local instance] projectiveChartedSpace projective_isManifold
-
-
 
 theorem projective_quotient_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞
@@ -45,14 +35,11 @@ theorem projective_quotient_localDiffeomorph :
   · intro y _
     exact (congrFun (projective_quotient_localHomeomorph.localInverseAt_symm x) y).symm
 
-
-
 noncomputable def literalProjectiveCover : StandardProjectiveSmoothCover RealProjectiveThree where
   cover := Quotient.mk'
   surjective := Quotient.mk_surjective
   fibers := fun _ _ => Quotient.eq
   local_diffeomorph := projective_quotient_localDiffeomorph
-
 
 @[instance_reducible]
 noncomputable def projectiveLiftChartedSpace :
@@ -69,7 +56,6 @@ noncomputable def projectiveLiftChartedSpace :
     change p.down ∈ (chartAt (EuclideanSpace ℝ (Fin 3)) p.down).source
     exact mem_chart_source _ p.down
   chart_mem_atlas p := ⟨p.down, rfl⟩
-
 
 theorem projective_lift_isManifold :
     letI := projectiveLiftChartedSpace.{u}
@@ -90,7 +76,6 @@ theorem projective_lift_isManifold :
 
 attribute [local instance] projectiveLiftChartedSpace projective_lift_isManifold
 
-
 theorem projective_down_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞
       (ULift.down : ULift.{u} RealProjectiveThree → RealProjectiveThree) := by
@@ -98,7 +83,6 @@ theorem projective_down_contMDiff :
   apply contMDiffAt_iff_target.mpr
   refine ⟨continuous_uliftDown.continuousAt, ?_⟩
   exact contMDiffAt_extChartAt (I := 𝓡 3) (x := p)
-
 
 theorem projective_up_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞
@@ -108,13 +92,11 @@ theorem projective_up_contMDiff :
   refine ⟨continuous_uliftUp.continuousAt, ?_⟩
   exact contMDiffAt_extChartAt (I := 𝓡 3) (x := p)
 
-
 noncomputable def projectiveLiftDiffeomorph :
     (ULift.{u} RealProjectiveThree) ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ RealProjectiveThree where
   toEquiv := Equiv.ulift
   contMDiff_toFun := projective_down_contMDiff
   contMDiff_invFun := projective_up_contMDiff
-
 
 noncomputable def liftedProjectiveCover :
     StandardProjectiveSmoothCover (ULift.{u} RealProjectiveThree) where
@@ -136,24 +118,19 @@ noncomputable def liftedProjectiveCover :
       (𝓡 3) (ULift.{u} RealProjectiveThree)
       (projectiveLiftDiffeomorph.symm.isLocalDiffeomorph (Quotient.mk' x))
 
-
 theorem projective_compactSpace : CompactSpace RealProjectiveThree := by
   infer_instance
-
 
 theorem projective_connectedSpace : ConnectedSpace RealProjectiveThree := by
   letI : ConnectedSpace UnitThreeSphere := isConnected_iff_connectedSpace.mp
     (isConnected_sphere (Module.one_lt_rank_of_one_lt_finrank (by simp)) _ zero_le_one)
   infer_instance
 
-
 theorem projective_secondCountable : SecondCountableTopology RealProjectiveThree :=
   isQuotientMap_quotient_mk'.secondCountableTopology projective_open_quotient.isOpenMap
 
 attribute [local instance] projective_t2 projective_compactSpace projective_connectedSpace
   projective_secondCountable
-
-
 
 noncomputable def projectiveCarrier : GeneralizedSliceCarrier.{u} := by
   letI : MeasurableSpace (ULift.{u} RealProjectiveThree) :=
@@ -168,8 +145,6 @@ noncomputable def projectiveCarrier : GeneralizedSliceCarrier.{u} := by
     t2Space := inferInstance
     t3Space := inferInstance
     secondCountable := Homeomorph.ulift.secondCountableTopology }
-
-
 
 noncomputable def projectiveSpaceform : SurgeryPositiveSpaceform projectiveCarrier.{u} where
   metric := projectiveMetric liftedProjectiveCover

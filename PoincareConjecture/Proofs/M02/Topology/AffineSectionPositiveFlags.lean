@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.AffineSectionFlags
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

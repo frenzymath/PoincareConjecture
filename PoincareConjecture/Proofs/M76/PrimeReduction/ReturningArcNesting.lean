@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcBigon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionNesting
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace Polygon
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
 
-
-
 theorem segment_subset_returning_axis {u v : V} (hu : u ∈ Z) (hv : v ∈ Z) :
     segment ℝ u v ⊆ Z := by
   have hZ : Convex ℝ Z := by
@@ -28,8 +18,6 @@ theorem segment_subset_returning_axis {u v : V} (hu : u ∈ Z) (hv : v ∈ Z) :
     change a * x.2 + b * y.2 = 0
     rw [show x.2 = 0 from hx, show y.2 = 0 from hy, mul_zero, mul_zero, add_zero]
   exact hZ.segment_subset hu hv
-
-
 
 theorem returning_closed_inside_axis {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
@@ -50,16 +38,11 @@ theorem returning_closed_inside_axis {n : ℕ} (P : Polygon V (n + 3))
     · exact left_mem_segment ℝ _ _
     · exact right_mem_segment ℝ _ _)
 
-
-
 theorem inside_disjoint_returning_axis {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
     (hup : ∀ i, 0 ≤ (P i).2) : Disjoint P.inside Z := by
   exact disjoint_left.mpr fun _ hx hz =>
     hx.1 (((P.closed_inside_axis_contact hP hi hup).subset ⟨subset_closure hx, hz⟩).1)
-
-
-
 
 theorem returning_inside_subset_or_disjoint {m n : ℕ}
     (P : Polygon V (m + 3)) (Q : Polygon V (n + 3))

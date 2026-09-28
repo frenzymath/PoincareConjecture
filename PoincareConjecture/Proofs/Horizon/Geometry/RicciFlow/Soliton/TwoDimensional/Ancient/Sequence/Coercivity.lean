@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Sequence.AdmissiblePaths
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -68,7 +56,6 @@ theorem distance_le_backwardLLength_young (K : AncientKappaSolution 2 M)
   change g.inner _ _ _ ≤ _
   linarith
 
-
 theorem distance_sq_div_sqrt_le_backwardLLength (K : AncientKappaSolution 2 M)
     {τ : ℝ} (path : BackwardTimePath K.flow 0 0 τ) :
     ((K.flow.metric 0).edist (path.curve 0) (path.curve τ)).toReal ^ 2 /
@@ -95,7 +82,6 @@ theorem distance_sq_div_sqrt_le_backwardLLength (K : AncientKappaSolution 2 M)
     _ ≤ backwardLLength K.flow 0 0 τ path.curve * (2 * Real.sqrt τ) :=
       mul_le_mul_of_nonneg_right hmid (by positivity)
 
-
 theorem distance_sq_div_le_reducedLength (K : AncientKappaSolution 2 M)
     (p q : M) {τ : ℝ} (hτ : 0 < τ) :
     ((K.flow.metric 0).edist p q).toReal ^ 2 / (4 * τ) ≤ reducedLength K.flow 0 p q τ := by
@@ -119,7 +105,6 @@ theorem distance_sq_div_le_reducedLength (K : AncientKappaSolution 2 M)
   rw [heq]
   exact div_le_div_of_nonneg_right hbound (by positivity)
 
-
 theorem reducedLength_sublevel_subset_closedBall (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) (A : ℝ) :
     {q | reducedLength K.flow 0 p q τ ≤ A} ⊆
@@ -131,7 +116,6 @@ theorem reducedLength_sublevel_subset_closedBall (K : AncientKappaSolution 2 M)
     Real.le_sqrt_of_sq_le (by simpa only [mul_comm A] using hsq)
   exact (ENNReal.ofReal_toReal ((K.flow.metric 0).edist_ne_top p q)).symm.le.trans
     (ENNReal.ofReal_le_ofReal hd)
-
 
 theorem isCompact_closure_reducedLength_sublevel (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) (A : ℝ) :

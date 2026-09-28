@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalRepresentatives
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F₀ : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F₀ k)
 
-
 theorem global_slices_compact (t : ℝ) (ht : 0 ≤ t) :
     IsCompact (univ : Set (Q.globalSlice t).carrier) := by
   have hflow : Q.representativeFlow t = Q.flow (Q.representativeIndex t) := if_pos ht
@@ -34,17 +23,14 @@ theorem global_slices_compact (t : ℝ) (ht : 0 ≤ t) :
     (fun F : SurgeryFlowData.{u} => IsCompact (univ : Set (F.slice t).carrier)) hflow)
     ((Q.flow (Q.representativeIndex t)).slices_compact t (Q.representative_time t ht))
 
-
 theorem global_no_two_sided_projective_plane (t : ℝ) (ht : 0 ≤ t) :
     SurgeryNoTwoSidedProjectivePlane (Q.globalSlice t) := by
   simpa only [globalSlice, representativeFlow, if_pos ht] using
     (Q.flow (Q.representativeIndex t)).no_two_sided_projective_plane t
       (Q.representative_time t ht)
 
-
 theorem global_initial_nonempty : Nonempty (Q.globalSlice 0).carrier :=
   (Q.representativeFlow 0).initial_nonempty
-
 
 theorem global_initial_normalized (x : (Q.globalSlice 0).carrier) :
     (Q.globalConnection 0).curvatureTensorNorm x ≤ 1 ∧
@@ -53,14 +39,12 @@ theorem global_initial_normalized (x : (Q.globalSlice 0).carrier) :
           calibratedMetricVolume (Q.globalMetric 0) ((Q.globalMetric 0).ball x r) :=
   (Q.representativeFlow 0).initial_normalized x
 
-
 theorem global_pinched (t : ℝ) (ht : 0 ≤ t) :
     SurgeryPinchedAt (Q.globalConnection t) t := by
   have hflow : Q.representativeFlow t = Q.flow (Q.representativeIndex t) := if_pos ht
   exact Eq.mpr (congrArg
     (fun F : SurgeryFlowData.{u} => SurgeryPinchedAt (F.connection t) t) hflow)
     (Q.pinched (Q.representativeIndex t) t (Q.representative_time t ht))
-
 
 theorem global_maximal_intervals
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -100,7 +84,6 @@ theorem global_maximal_intervals
   refine ⟨t, ht, Q.globalIdentify n t htF x, ?_⟩
   rw [H.curvature_norm_eq ((Q.flow n).connection t) (Q.globalConnection t), div_one]
   exact hx
-
 
 theorem global_extinction_permanent (s t : ℝ)
     (hs : s ∈ Ici (0 : ℝ)) (ht : t ∈ Ici (0 : ℝ)) (hst : s ≤ t)

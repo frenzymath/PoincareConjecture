@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.PicardThirdBound
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardLimitEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothWeightedLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

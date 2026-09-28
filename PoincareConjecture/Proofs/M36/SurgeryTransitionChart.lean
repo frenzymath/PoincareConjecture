@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.CenteredNeckChart
 import PoincareConjecture.Proofs.M36.CollapseMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

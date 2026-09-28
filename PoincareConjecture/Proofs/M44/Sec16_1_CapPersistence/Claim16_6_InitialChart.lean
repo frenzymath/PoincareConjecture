@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem initial_cap_chart_of_comparison
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)

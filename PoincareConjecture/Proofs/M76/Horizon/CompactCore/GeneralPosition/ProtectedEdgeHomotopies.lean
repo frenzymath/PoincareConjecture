@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.GeneralPosition.FiniteCh
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleNormalCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval

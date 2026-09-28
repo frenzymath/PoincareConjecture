@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem exists_oriented_boundary_vertex_strip
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [DecidableEq E] (A L : SimplicialComplex ℝ E) [Fintype A.faces] [Fintype L.faces]

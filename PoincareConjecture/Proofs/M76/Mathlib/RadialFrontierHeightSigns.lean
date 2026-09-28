@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem LinearMap.normalize_eq_zero_iff (A : E →ₗ[ℝ] ℝ) (x : E) :
     A (NormedSpace.normalize x) = 0 ↔ A x = 0 := by
@@ -29,18 +17,12 @@ theorem LinearMap.normalize_eq_zero_iff (A : E →ₗ[ℝ] ℝ) (x : E) :
   · intro h
     simp only [NormedSpace.normalize, map_smul, h, smul_zero]
 
-
-
-
 theorem LinearMap.normalize_pos_iff (A : E →ₗ[ℝ] ℝ) (x : E) :
     0 < A (NormedSpace.normalize x) ↔ 0 < A x := by
   by_cases hx : x = 0
   · simp only [hx, normalize_zero_eq_zero, map_zero]
   · rw [NormedSpace.normalize, map_smul, smul_eq_mul]
     exact mul_pos_iff_of_pos_left (inv_pos.mpr (norm_pos_iff.mpr hx))
-
-
-
 
 theorem LinearMap.height_tests_of_normalize_eq (A : E →ₗ[ℝ] ℝ)
     {x y : E} (hxy : NormedSpace.normalize x = NormedSpace.normalize y) :
@@ -51,11 +33,6 @@ theorem LinearMap.height_tests_of_normalize_eq (A : E →ₗ[ℝ] ℝ)
   · have h : 0 < (-A) x ↔ 0 < (-A) y := by
       rw [← (-A).normalize_pos_iff x, ← (-A).normalize_pos_iff y, hxy]
     simpa only [LinearMap.neg_apply, neg_pos] using h
-
-
-
-
-
 
 theorem IsCompact.normalize_image_radial_frontier_section_inter
     {C S R : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)
@@ -75,11 +52,6 @@ theorem IsCompact.normalize_image_radial_frontier_section_inter
       (fun he => hSzero (he ▸ hy.1))
     exact ⟨x, ⟨hR.symm.subset ⟨hxC, y, hy.1, hxy.symm⟩,
       (hP hxy).mpr hy.2⟩, hxy⟩
-
-
-
-
-
 
 theorem IsCompact.radial_frontier_section_height_data
     {C S R : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

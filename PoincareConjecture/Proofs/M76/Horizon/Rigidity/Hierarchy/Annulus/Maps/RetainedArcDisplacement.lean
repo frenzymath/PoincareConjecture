@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPLProduct
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

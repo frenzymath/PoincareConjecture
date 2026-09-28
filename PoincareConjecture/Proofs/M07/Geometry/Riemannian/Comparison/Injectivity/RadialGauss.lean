@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CovariantPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +33,6 @@ private theorem chartField_velocity_eq_deriv {q : ℝ → M} {a : M} {t : ℝ}
   rw [fderiv_eq_smul_deriv, one_smul] at hd1
   exact hd1.symm
 
-
-
 theorem contDiffAt_chartField_velocity_at {q : ℝ → M} {a : M} {t : ℝ}
     (hq : ContMDiffAt 𝓘(ℝ, ℝ) (𝓡 n) ∞ q t)
     (ha : q t ∈ (extChartAt (𝓡 n) a).source) :
@@ -60,7 +48,6 @@ theorem contDiffAt_chartField_velocity_at {q : ℝ → M} {a : M} {t : ℝ}
     ((isOpen_extChartAt_source a).mem_nhds ha)] with s hs hsa
   rw [chartField_velocity_eq_deriv (hs.mdifferentiableAt (by simp)) hsa,
     fderiv_eq_smul_deriv, one_smul]
-
 
 theorem IsGeodesicOn.manifoldCovDerivAlong_velocity_eq_zero
     {g : RiemannianMetric n M} {q : ℝ → M} {I : Set ℝ}
@@ -93,8 +80,6 @@ theorem IsGeodesicOn.manifoldCovDerivAlong_velocity_eq_zero
       (fderiv ℝ (c ∘ q) t 1) (deriv (c ∘ q) t) = 0
   rw [fderiv_eq_smul_deriv, one_smul]
   exact add_eq_zero_iff_eq_neg.mpr hd.2.deriv
-
-
 
 theorem inner_velocity_jacobi_eq_mul_initial
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -148,7 +133,6 @@ theorem inner_velocity_jacobi_eq_mul_initial
     (fun u hu => (hB u hu).deriv.trans (hlinear u).deriv.symm) h0
     (show B 0 = (0 : ℝ) * A 0 by simp [B, hJ0])
   exact heq ht
-
 
 theorem radial_gauss_identity
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

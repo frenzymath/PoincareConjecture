@@ -1,18 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.StageMetric
-
-
-
-
-
-
-
-
 
 open Set Metric
 
@@ -21,7 +7,6 @@ noncomputable section
 namespace Poincare.GromovHausdorff
 
 universe u
-
 
 theorem IsDeltaNet.image_isometryEquiv
     {X Y : Type*} [MetricSpace X] [MetricSpace Y]
@@ -51,8 +36,6 @@ theorem IsDeltaNet.image_isometryEquiv
 
 namespace CompatiblePointedCompactSystem
 
-
-
 def stageClosedBallMap
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ) :
     Metric.closedBall (S.stage k).base R →
@@ -61,15 +44,12 @@ def stageClosedBallMap
     ⟨S.stageEmbedding k x,
       (S.mem_closedBall_stageEmbedding_iff k x R).2 x.property⟩
 
-
 theorem stageClosedBallMap_isometry
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ) :
     Isometry (S.stageClosedBallMap k R) := by
   intro x y
   change edist (S.stageEmbedding k x) (S.stageEmbedding k y) = edist x y
   exact (S.stageEmbedding_isometry k).edist_eq _ _
-
-
 
 theorem stageClosedBallMap_surjective_of_coverage
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ)
@@ -88,8 +68,6 @@ theorem stageClosedBallMap_surjective_of_coverage
   apply Subtype.ext
   exact hx
 
-
-
 noncomputable def stageClosedBallEquiv_of_coverage
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ)
     (hcover : Metric.closedBall S.completedLimit.base R ⊆
@@ -102,7 +80,6 @@ noncomputable def stageClosedBallEquiv_of_coverage
       (S.stageClosedBallMap_surjective_of_coverage k R hcover))
     (S.stageClosedBallMap_isometry k R)
 
-
 theorem stageClosedBallEquiv_of_coverage_base
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ)
     (hR : 0 ≤ R)
@@ -114,8 +91,6 @@ theorem stageClosedBallEquiv_of_coverage_base
   apply Subtype.ext
   change S.stageEmbedding k (S.stage k).base = S.completedLimit.base
   exact S.stageEmbedding_base k
-
-
 
 theorem image_stageEmbedding_closedBall_eq_of_coverage
     (S : CompatiblePointedCompactSystem.{u}) (k : ℕ) (R : ℝ)
@@ -142,4 +117,3 @@ end CompatiblePointedCompactSystem
 end Poincare.GromovHausdorff
 
 end
-

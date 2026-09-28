@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderJetErrorBound
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderParametrizedJets
 import PoincareConjecture.Proofs.M34.Mathlib.LinearPostcomposeGermJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +14,6 @@ open Poincare.Geometry.Riemannian.SpaceForm
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem exists_roundCylinderJetErrorSquared_bound_on_Icc {T : ℝ} (hT : T < 1)
     {J : Set ℝ} (hJ : IsCompact J) (m : ℕ) :
@@ -133,9 +122,6 @@ private theorem exists_parameter_coefficient_jet_bound (m : ℕ) :
     (parameter_coefficient_error_eventuallyEq g hU hf u z.1 hx a b)
     m zero_le_one (norm_parameterCoefficientEvaluation_le a b) hjet
   exact ⟨fun a b => (hevalJets a b).1, fun j hj a b => (hevalJets a b).2 j hj⟩
-
-
-
 
 theorem exists_roundCylinderJetErrorSquared_bound_of_parametrizedJets_on_Icc
     {T : ℝ} (hT : T < 1) {J : Set ℝ} (hJ : IsCompact J) (m : ℕ) :

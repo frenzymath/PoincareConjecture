@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPeriodicBand
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundarySelection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,12 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
-
-
-
 
 theorem scalarCover_differential_energy_integrable {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -72,12 +54,6 @@ theorem scalarCover_differential_energy_integrable {H : Plane → ℝ}
       dsimp only [Q]
       field_simp
 
-
-
-
-
-
-
 theorem scalarCover_circle_energy_integrable {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hE : IntegrableOn (fun x => ‖fderiv ℝ H x‖ ^ 2) scalarAnnulus) :
@@ -86,12 +62,6 @@ theorem scalarCover_circle_energy_integrable {H : Plane → ℝ}
   have hi := scalarCover_differential_energy_integrable hHs hE
   rw [IntegrableOn, Measure.volume_eq_prod, ← Measure.prod_restrict] at hi
   exact hi.integral_prod_left
-
-
-
-
-
-
 
 theorem scalarCover_exists_small_energy_circles {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

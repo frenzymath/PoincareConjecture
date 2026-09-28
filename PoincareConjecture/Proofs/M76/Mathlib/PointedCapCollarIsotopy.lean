@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GeometricBandLevelCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PointedDiskHeight
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLevelImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,13 +11,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals_global_finitePL_and_signs
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
@@ -150,9 +133,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals_global_f
       obtain ⟨p, hpbase, hpval, hplo, hphi⟩ := hLp ⟨x, hdomain.symm ▸ x.property⟩
       exact ⟨p, hpbase, hpval, by simpa only [zero_add] using hplo, hphi⟩
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals_with_global_finitePL
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     {C : {p : E × ℝ | p.1 ∈ B ∧ p.2 ∈ Icc 0 (upper p.1)} ≃ₜ T}
@@ -203,9 +183,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals_with_glo
       hupper A hheight hd hdplane q hcap v hv Q hQ hQd hU hdU
   exact ⟨f, hfval, r, hr, hmin, hmax, hrest⟩
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     {C : {p : E × ℝ | p.1 ∈ B ∧ p.2 ∈ Icc 0 (upper p.1)} ≃ₜ T}
@@ -255,12 +232,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_with_rim_intervals
       hupper A hheight hd hdplane q hcap v hv Q hQ hQd hU hdU
   exact ⟨f, hf, r, hr, hmin, hmax, hrsub, hrsuper, g, hgT, hgn, hgr, hgQ, hgU,
     ε, hε, H, hrest⟩
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

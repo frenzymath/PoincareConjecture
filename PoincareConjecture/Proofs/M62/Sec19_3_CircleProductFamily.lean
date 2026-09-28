@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductMetric
 import PoincareConjecture.Proofs.M62.Mathlib.InducedMetricFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem circleProductMetric_isSmoothFamilyOn
     (F : RicciFlow n M (Set.Icc a b)) {p : ℝ} (C : CircleGeometry p)

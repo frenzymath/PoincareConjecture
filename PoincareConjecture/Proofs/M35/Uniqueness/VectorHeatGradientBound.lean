@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatQuadratic
 import PoincareConjecture.Proofs.M35.Uniqueness.RawQuadraticBound
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,9 +28,6 @@ theorem vector_heat_product_quadratic_bound {B q Q L : ℝ}
     nlinarith only [hsq]
   change L * F - Q ^ 2 ≤ -(1 / (2 * C ^ 2)) * F ^ 2 + (L * C) ^ 2 / 2
   nlinarith only [hLF, hfrac, sq_nonneg (Q - L * C)]
-
-
-
 
 theorem bounded_vector_heat_gradient_weighted
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

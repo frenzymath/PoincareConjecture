@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityGr
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Boundary
-
-
-
 
 theorem contDiffOn_halfDisk_of_continuous_differential {R : ℝ} (hR : 0 < R)
     (X : LoopPlane → LoopAmbient)

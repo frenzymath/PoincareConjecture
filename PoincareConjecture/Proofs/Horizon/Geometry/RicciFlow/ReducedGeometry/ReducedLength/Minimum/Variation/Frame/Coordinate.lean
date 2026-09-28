@@ -6,19 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SecondBia
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity.Metric
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,8 +38,6 @@ theorem fderiv_bilinear_symm
     hsym.mono fun _ h ↦ h v w
   have h := (hfirst.congr_of_eventuallyEq heq.symm).unique hsecond
   simpa using congrArg (fun L : A →L[ℝ] V ↦ L d) h
-
-
 
 noncomputable def chartConnectionCovector
     (G : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ)

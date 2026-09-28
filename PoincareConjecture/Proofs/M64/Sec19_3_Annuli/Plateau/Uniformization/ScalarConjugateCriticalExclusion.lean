@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConformalInverseRemoval
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateLocalInjective
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
 
 theorem scalarPotential_gradient_ne_zero_of_local_conjugate_injective
     {H W : Plane → ℝ} (hHc : Continuous H)

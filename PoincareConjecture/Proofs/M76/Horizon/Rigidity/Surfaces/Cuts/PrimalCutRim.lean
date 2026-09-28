@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalSector
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ExteriorBridgeGapContacts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutFibers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -101,8 +94,6 @@ variable [DecidableEq E]
   {hP : P ≤ K.vertexAbstractComplex.edgeGraph}
   [Fintype (ResidualComplementaryEdge K P D)]
   {labels : ResidualComplementaryEdge K P D ≃ Fin 2}
-
-
 
 theorem OriginalPrimalCutDiskData.rim_eq_bridges_union_spokes
     (A : OriginalPrimalCutDiskData K P D hD hcofaces hP labels) :

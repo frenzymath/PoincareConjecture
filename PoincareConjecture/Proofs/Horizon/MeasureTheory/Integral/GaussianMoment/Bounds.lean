@@ -3,14 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Function Filter

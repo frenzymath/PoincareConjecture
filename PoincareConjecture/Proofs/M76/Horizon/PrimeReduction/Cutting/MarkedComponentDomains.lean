@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

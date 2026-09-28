@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Definitions.Ch09.ShrinkingSoliton
 import Mathlib.Logic.Relation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure SurgeryBallEmbedding (A : GeneralizedSliceCarrier.{u}) where
   map : StandardCapSpace → A.carrier
@@ -33,8 +23,6 @@ structure SurgeryBallEmbedding (A : GeneralizedSliceCarrier.{u}) where
 def SurgeryBallEmbedding.closedBall {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) : Set A.carrier :=
   B.map '' Metric.closedBall 0 1
-
-
 
 structure SmoothConnectedSumData (A B C : GeneralizedSliceCarrier.{u}) where
   first_ball : SurgeryBallEmbedding A
@@ -78,8 +66,6 @@ structure SmoothDisjointUnionData {n : ℕ}
   pairwise_disjoint : ∀ i j, i ≠ j → Disjoint (region i) (region j)
   cover : (⋃ i, region i) = Set.univ
 
-
-
 def SmoothConnectedSumStep (A C : GeneralizedSliceCarrier.{u}) : Prop :=
   ∃ B D : GeneralizedSliceCarrier.{u},
     Nonempty (SmoothDisjointUnionData ![B, D] A) ∧
@@ -91,8 +77,6 @@ structure SmoothFiniteConnectedSumAssembly {n : ℕ}
   initial : GeneralizedSliceCarrier.{u}
   disjoint_union : SmoothDisjointUnionData pieces initial
   operations : Relation.ReflTransGen SmoothConnectedSumStep initial C
-
-
 
 structure SurgerySphereBundle (C : GeneralizedSliceCarrier.{u}) where
   projection : C.carrier → UnitCircle
@@ -122,9 +106,6 @@ inductive SurgerySummandKind
   | sphereBundle
   | spaceform
 deriving DecidableEq
-
-
-
 
 structure SurgeryTopologyConclusion (A B : GeneralizedSliceCarrier.{u}) where
   piece_count : ℕ

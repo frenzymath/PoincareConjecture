@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hes
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularLevelScalar
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -35,8 +25,6 @@ private theorem tendsto_clm_apply
 variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem tendsto_gradient_of_metric_coefficients
     {ι : Type*} {l : Filter ι} {gseq : ι → RiemannianMetric n E}
     {g : RiemannianMetric n E} (Dseq : ∀ i, LeviCivitaData (gseq i))
@@ -59,8 +47,6 @@ theorem tendsto_gradient_of_metric_coefficients
     rfl
   simpa only [heq, Function.comp_apply] using h
 
-
-
 theorem tendsto_levelQ_of_metric_coefficients
     {ι : Type*} {l : Filter ι} {gseq : ι → RiemannianMetric n E}
     {g : RiemannianMetric n E} (Dseq : ∀ i, LeviCivitaData (gseq i))
@@ -71,8 +57,6 @@ theorem tendsto_levelQ_of_metric_coefficients
     Tendsto (fun i => (Dseq i).levelQ f (xseq i)) l (𝓝 (D.levelQ f x)) := by
   have hgrad := tendsto_gradient_of_metric_coefficients Dseq D hf hx hmetric
   exact tendsto_clm_apply (tendsto_clm_apply hmetric hgrad) hgrad
-
-
 
 theorem tendsto_hessian_of_metric_coefficients
     {ι : Type*} {l : Filter ι} {gseq : ι → RiemannianMetric n E}
@@ -109,8 +93,6 @@ theorem tendsto_hessian_of_metric_coefficients
   have h := (tendsto_clm_apply (tendsto_clm_apply hdd hv) hw).sub
     (tendsto_clm_apply hd hchrist)
   simpa only [hessian_eq_fderiv_sub_christoffel _ hf.contDiffAt, Function.comp_apply] using h
-
-
 
 theorem tendsto_levelShapeRatio_of_metric_coefficients
     {ι : Type*} {l : Filter ι} {gseq : ι → RiemannianMetric n E}
@@ -157,8 +139,6 @@ private theorem eventually_forall_compact_of_moving_points
   obtain ⟨k, hk⟩ := (hstable _ hind (points ∘ σ) (fun k => hpoints (σ k)) x hx hlim).exists
   exact hbad (σ k) hk
 
-
-
 theorem eventually_levelQ_pos_of_uniform_metric_coefficients
     {gseq : ℕ → RiemannianMetric n E} {g : RiemannianMetric n E}
     (Dseq : ∀ k, LeviCivitaData (gseq k)) (D : LeviCivitaData g)
@@ -176,9 +156,6 @@ theorem eventually_levelQ_pos_of_uniform_metric_coefficients
   have h := tendsto_levelQ_of_metric_coefficients (fun k => Dseq (indices k)) D hf hlim hm
   rw [hQ x hx] at h
   exact tendsto_const_nhds.eventually_lt h zero_lt_one
-
-
-
 
 theorem eventually_levelShapeRatio_on_unit_vectors
     {gseq : ℕ → RiemannianMetric n E} {g : RiemannianMetric n E}
@@ -229,9 +206,6 @@ private theorem hessian_smul_same {g : RiemannianMetric n E} (D : LeviCivitaData
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
 
-
-
-
 theorem eventually_levelShape_quadratic_bounds
     {gseq : ℕ → RiemannianMetric n E} {g : RiemannianMetric n E}
     (Dseq : ∀ k, LeviCivitaData (gseq k)) (D : LeviCivitaData g)
@@ -281,9 +255,6 @@ variable {m : ℕ}
 local notation "A" => EuclideanSpace ℝ (Fin (m + 1))
 local notation "H" => EuclideanSpace ℝ (Fin m)
 
-
-
-
 theorem inner_shapeOperator_neg_levelUnitNormal_of_level
     {g : RiemannianMetric (m + 1) A} {h : RiemannianMetric m H}
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -325,8 +296,6 @@ theorem inner_shapeOperator_neg_levelUnitNormal_of_level
     simp only [map_neg, neg_apply]
   rw [hneg, hshape, neg_div, neg_neg]
 
-
-
 theorem shapeOperator_eigenvalue_mem_Ioo_of_levelShape_bounds
     {g : RiemannianMetric (m + 1) A} {h : RiemannianMetric m H}
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -357,10 +326,6 @@ theorem shapeOperator_eigenvalue_mem_Ioo_of_levelShape_bounds
   rw [← hpair] at hpinch
   exact ⟨(mul_lt_mul_iff_left₀ hvpos).mp hpinch.1,
     (mul_lt_mul_iff_left₀ hvpos).mp hpinch.2⟩
-
-
-
-
 
 theorem eventually_principalCurvatures_near_one
     {gseq : ℕ → RiemannianMetric (m + 1) A} {g : RiemannianMetric (m + 1) A}

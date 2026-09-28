@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Moment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 lemma volumeMeasure_ball_growth_of_ricci
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -66,9 +57,6 @@ lemma volumeMeasure_ball_growth_of_ricci
     exact (le_div_iff₀ hvr).mpr (by simpa only [Measure.real, mul_comm] using h)
   exact hratio.trans (mul_le_mul_of_nonneg_right (modelVolume_div_le hn hκ hr hR.le)
     ENNReal.toReal_nonneg)
-
-
-
 
 theorem exists_first_moment_bound_of_ricci_gaussian
     (n : ℕ) (κ A c : ℝ) (hn : 0 < n) (hκ : 0 ≤ κ) (hA : 1 ≤ A) (hc : 0 < c) :

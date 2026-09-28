@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.Saddle.Level
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ConnectedMiddle
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -86,9 +78,6 @@ variable {f : S2 → E3} (M : SphereMorseReduction f)
 
 include hg hP hcaps hp hc
 
-
-
-
 theorem exists_connected_physical_critical_bands :
     ∃ ε : Real, 0 < ε ∧ ∀ η : Real, 0 < η → η ≤ ε →
       IsConnected ((fun q => inner Real (M.v : E3) (g q)) ⁻¹'
@@ -121,8 +110,6 @@ theorem exists_connected_physical_critical_bands :
   · exact ⟨by linarith, by linarith⟩
   · rw [← hmiddle]
     exact A.isPreconnected_middleRegion (P.isConnected_core hcaps).isPreconnected P.isClosed_core
-
-
 
 theorem isConnected_physical_critical_level :
     IsConnected {q | inner Real (M.v : E3) (g q) = inner Real (M.v : E3) (g p)} := by

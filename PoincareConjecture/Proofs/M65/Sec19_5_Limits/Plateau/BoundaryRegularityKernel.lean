@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPo
 import Mathlib.Analysis.SpecialFunctions.Pow.Integral
 import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Complex
@@ -151,11 +141,6 @@ private theorem complex_mul_change (f : ℂ → ℝ) {c : ℂ} (hc : c ≠ 0) :
       _ = _ := by
         simpa only [finrank_real_complex, smul_eq_mul] using
           (Measure.integral_comp_smul_of_nonneg volume f ‖c‖ (hR := hr.le))
-
-
-
-
-
 
 theorem weighted_inverse_kernel {b : ℝ} (hb : 1 < b) (hb2 : b < 2) :
     ∃ C > 0, ∀ x w : ℂ, x ≠ w →

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,19 +9,13 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 noncomputable def seedAnalyticConstant (S : RepairedControlledSchedulesData.{u}) : ℝ :=
   max S.setup.C (max S.calibration.model_analytics.neck_constant
     S.calibration.model_analytics.round_constant)
 
-
 theorem seedAnalyticConstant_pos (S : RepairedControlledSchedulesData.{u}) :
     0 < seedAnalyticConstant S :=
   S.setup.C_pos.trans_le (le_max_left _ _)
-
-
-
 
 theorem canonical_analytic_on_nonpositive (S : RepairedControlledSchedulesData.{u})
     (F : SurgeryFlowData.{u}) (t : ℝ) (x : (F.slice t).carrier)
@@ -87,8 +72,6 @@ theorem canonical_analytic_on_nonpositive (S : RepairedControlledSchedulesData.{
       exact hmono hround
         (S.calibration.model_analytics.round (F.metric t) (F.connection t)
           F.parameters.epsilon N F.parameters.epsilon_le x hx)
-
-
 
 theorem old_prefix_analytic_on_nonpositive (S : RepairedControlledSchedulesData.{u})
     (p : SurgeryParameterPrefix S.constants) (compatible : S.SeedCompatible p)

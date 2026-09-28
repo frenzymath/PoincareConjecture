@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_SupportedIndexTest
 import PoincareConjecture.Proofs.M14.Mathlib.IntervalTestFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +24,6 @@ variable (hCoordinates : M12MetricPredecessors.{0} n)
   (hzero : M14SecondVariationIndexForm V D = 0)
 
 include hCoordinates hM04 hM12 hmin hfix hzero
-
-
-
 
 theorem jacobiResidual_supportedGauge_eq_zero
     (b : G.gaugeCover.index)
@@ -93,9 +81,6 @@ theorem jacobiResidual_supportedGauge_eq_zero
   exact (horizontalJacobiPairResidual_smul_right R hM04 hM12 (Ioo_subset_Icc_self hs)
     (Q.field s) (M14JacobiFirstDerivative Q s) (M14JacobiSecondDerivative Q s)
       (M14VariationField Z s) (ψ s)).symm
-
-
-
 
 theorem jacobiResidual_eq_zero_of_index_zero_interior
     {s : ℝ} (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂))

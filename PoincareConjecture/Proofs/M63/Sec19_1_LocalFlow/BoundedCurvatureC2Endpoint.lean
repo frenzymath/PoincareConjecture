@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingScalars
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem exists_closed_c2_endpoint_of_intrinsic_bounded_curvature
     [T2Space M] (F : RicciFlow n M (Icc a b))

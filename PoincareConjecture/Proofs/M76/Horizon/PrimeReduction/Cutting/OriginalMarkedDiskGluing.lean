@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SelectedBoundaryLabels
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedSphereDiskPortGluingOriginal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.CubicalThreeSphere
 

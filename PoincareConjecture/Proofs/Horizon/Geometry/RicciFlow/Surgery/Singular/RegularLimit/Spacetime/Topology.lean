@@ -1,15 +1,6 @@
 import Mathlib.Topology.Bases
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function TopologicalSpace Topology
@@ -22,10 +13,8 @@ variable {X : Type u} {Y : Type v} {Z : Type w}
   [TopologicalSpace X] [TopologicalSpace Y]
   (f : X → Z) (g : Y → Z)
 
-
 @[instance_reducible] def topology : TopologicalSpace Z :=
   TopologicalSpace.coinduced (Sum.elim f g) inferInstance
-
 
 theorem isOpen_iff (U : Set Z) :
     @IsOpen Z (topology f g) U ↔ IsOpen (f ⁻¹' U) ∧ IsOpen (g ⁻¹' U) := Iff.rfl
@@ -36,7 +25,6 @@ theorem continuous_left : @Continuous X Z _ (topology f g) f :=
 theorem continuous_right : @Continuous Y Z _ (topology f g) g :=
   continuous_def.mpr fun U hU => ((isOpen_iff f g U).mp hU).2
 
-
 theorem isOpenEmbedding_left (hf : Injective f)
     (hgf : ∀ U : Set X, IsOpen U → IsOpen (g ⁻¹' (f '' U))) :
     @IsOpenEmbedding X Z _ (topology f g) f := by
@@ -46,7 +34,6 @@ theorem isOpenEmbedding_left (hf : Injective f)
   apply (isOpen_iff f g (f '' U)).mpr
   exact ⟨by simpa only [preimage_image_eq U hf] using hU, hgf U hU⟩
 
-
 theorem isOpenEmbedding_right (hg : Injective g)
     (hfg : ∀ V : Set Y, IsOpen V → IsOpen (f ⁻¹' (g '' V))) :
     @IsOpenEmbedding Y Z _ (topology f g) g := by
@@ -55,7 +42,6 @@ theorem isOpenEmbedding_right (hg : Injective g)
   intro V hV
   apply (isOpen_iff f g (g '' V)).mpr
   exact ⟨hfg V hV, by simpa only [preimage_image_eq V hg] using hV⟩
-
 
 theorem continuous_iff {W : Type z} [TopologicalSpace W] (h : Z → W) :
     @Continuous Z W (topology f g) _ h ↔
@@ -68,7 +54,6 @@ theorem continuous_iff {W : Type z} [TopologicalSpace W] (h : Z → W) :
     apply continuous_def.mpr
     intro U hU
     exact (isOpen_iff f g (h ⁻¹' U)).mpr ⟨hU.preimage hf, hU.preimage hg⟩
-
 
 theorem secondCountableTopology [SecondCountableTopology X] [SecondCountableTopology Y]
     (hf : Injective f) (hg : Injective g)
@@ -86,7 +71,6 @@ theorem secondCountableTopology [SecondCountableTopology X] [SecondCountableTopo
   exact hquot.secondCountableTopology
     ((isOpenEmbedding_left f g hf hgf).isOpenMap.sumElim
       (isOpenEmbedding_right f g hg hfg).isOpenMap)
-
 
 theorem t2Space [T2Space X] [T2Space Y]
     (hf : Injective f) (hg : Injective g)

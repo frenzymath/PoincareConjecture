@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

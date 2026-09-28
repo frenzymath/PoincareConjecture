@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.OriginalChart.ClippedCarrier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ConvexCarrierWindow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -52,9 +42,6 @@ private theorem original_subedge_contact_line_cover
     h.exists_surface_contact_line_cover_of_affine_chart hAtlas hgi hSV hpq hwp hwq
       hs hy' Q hQ A hmap hA
   exact ⟨U, L, hU, hyU, hL, hcover⟩
-
-
-
 
 theorem exists_original_planar_triangle_protected_cover
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

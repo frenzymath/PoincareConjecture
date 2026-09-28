@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Time
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,7 +71,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {Ω : Set M}
   (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
 
-
 def heatKernelContinuousTime (t : ℝ) (x y : M) : ℝ :=
   inner ℝ (evaluationRow (Boundary.heatPowerContinuousTime D S 0 (t / 2)) x)
     (evaluationRow (Boundary.heatPowerContinuousTime D S 0 (t / 2)) y)
@@ -87,8 +79,6 @@ theorem heatKernelContinuousTime_of_pos {t : ℝ} (ht : 0 < t) (x y : M) :
     heatKernelContinuousTime D S t x y = heatKernelContinuous D S t ht x y := by
   simp only [heatKernelContinuousTime, heatKernelContinuous,
     Boundary.heatPowerContinuousTime_of_pos D S 0 (half_pos ht)]
-
-
 
 theorem continuous_heatKernelContinuous_joint :
     Continuous (fun p : (M × M) × Ioi (0 : ℝ) =>
@@ -105,7 +95,6 @@ theorem continuous_heatKernelContinuous_joint :
     exact Boundary.heatPowerContinuousTime_of_pos D S 0 (half_pos t.2)
   exact continuous_rowGram_family T hT (fun t =>
     Boundary.isCompactOperator_heatPowerContinuous D S 0 (t / 2) (half_pos t.2))
-
 
 theorem contDiffOn_heatKernelContinuousTime (x y : M) :
     ContDiffOn ℝ ∞ (fun t : ℝ => heatKernelContinuousTime D S t x y) (Ioi 0) := by

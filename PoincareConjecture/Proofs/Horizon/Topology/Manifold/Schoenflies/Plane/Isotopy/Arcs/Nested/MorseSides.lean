@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonRegion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Ribbon
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.Nested
 open SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
-
 
 theorem exists_filled_coincidence_of_nested_negative_morse_arcs
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

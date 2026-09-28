@@ -2,16 +2,6 @@ import Mathlib.Topology.Subpath
 import Mathlib.Topology.Homotopy.Affine
 import Mathlib.Analysis.Normed.Module.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace Path
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def segmentIn (s : Set E) (a b : s)
     (hseg : segment ℝ (a : E) (b : E) ⊆ s) : Path a b where
   toFun t := ⟨Path.segment (a : E) (b : E) t,
@@ -31,15 +19,9 @@ noncomputable def segmentIn (s : Set E) (a b : s)
   source' := by apply Subtype.ext; simp
   target' := by apply Subtype.ext; simp
 
-
-
 theorem segmentIn_apply (s : Set E) (a b : s)
     (hseg : segment ℝ (a : E) (b : E) ⊆ s) (t : unitInterval) :
     (segmentIn s a b hseg t : E) = AffineMap.lineMap (a : E) (b : E) (t : ℝ) := rfl
-
-
-
-
 
 theorem homotopic_of_convex_range {U s : Set E} (hs : Convex ℝ s) (hsub : s ⊆ U)
     {a b : U} (p q : Path a b)
@@ -63,10 +45,6 @@ theorem homotopic_of_convex_range {U s : Set E} (hs : Convex ℝ s) (hsub : s �
   · intro t x hx
     rcases hx with rfl | rfl <;> apply Subtype.ext <;> simp
 
-
-
-
-
 theorem segmentIn_mem_convex {U s : Set E} (hs : Convex ℝ s)
     (a b : U) (hseg : segment ℝ (a : E) (b : E) ⊆ U)
     (ha : (a : E) ∈ s) (hb : (b : E) ∈ s) (t : unitInterval) :
@@ -76,10 +54,6 @@ theorem segmentIn_mem_convex {U s : Set E} (hs : Convex ℝ s)
 end Path
 
 namespace Path.Homotopic
-
-
-
-
 
 theorem concat_radial {X : Type*} [TopologicalSpace X] {n : ℕ}
     (a : Fin (n + 1) → X) (y : X)

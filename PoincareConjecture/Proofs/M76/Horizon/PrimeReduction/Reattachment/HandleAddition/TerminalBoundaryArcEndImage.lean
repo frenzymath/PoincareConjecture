@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcEnd
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcRadialImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

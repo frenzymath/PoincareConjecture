@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorCoordinates
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.SpanningDiskReparameterization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m65SpanningDisk_isothermal_reparameterize
     {g : RiemannianMetric 3 M} {γ : C1FreeLoopSpace (M := M)}

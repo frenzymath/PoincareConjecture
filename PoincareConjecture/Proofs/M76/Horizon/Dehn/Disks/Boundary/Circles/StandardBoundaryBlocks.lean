@@ -13,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
 
-
-
-
 theorem exists_standard_boundary_circle_blocks
     {R S : Set V3} (hR : IsCompact R)
     (he : PLDomain (fun _ : Unit => (Homeomorph.refl V3).toOpenPartialHomeomorph) R)

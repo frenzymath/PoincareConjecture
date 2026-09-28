@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonChordLength
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,12 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
-
-
-
-
-
 
 structure M64UniformCompactPackage where
   chord : ∀ X : Set (C1FreeLoopSpace (M := M)), IsCompact X →
@@ -55,9 +37,6 @@ structure M64UniformCompactPackage where
           ∃ A : M64Annulus g (periodicFreeLoop gamma) polygon.map,
             M64PiecewiseC1Annulus A ∧ M64GeodesicAnnulus D A ∧
               0 ≤ A.area ∧ A.area < zeta
-
-
-
 
 theorem M64UniformCompactPackage.uniform_compact
     (P : M64UniformCompactPackage (M := M) (g := g) (D := D)) :

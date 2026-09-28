@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcSelectedRegion
 
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

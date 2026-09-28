@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Posi
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleCollarRegionIncidence
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76

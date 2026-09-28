@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedronApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -25,12 +12,6 @@ variable {E F M ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M]
-
-
-
-
-
-
 
 theorem exists_relative_polyhedralPL_approximation
     (e : ι → OpenPartialHomeomorph M F)

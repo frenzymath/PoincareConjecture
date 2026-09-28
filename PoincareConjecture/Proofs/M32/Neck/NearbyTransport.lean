@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ProjectionDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem neckScale_sq_mul_scalar_center_of_connection (N : EpsilonNeck g)
     (D : LeviCivitaData g) : N.scale ^ 2 * D.scalarCurvature N.center = 1 := by
   have hscalar : D.scalarCurvature N.center = N.connection.scalarCurvature N.center := by
@@ -45,8 +27,6 @@ theorem neckScale_sq_mul_scalar_center_of_connection (N : EpsilonNeck g)
     simp_rw [D.curvatureTensor_eq N.connection N.center]
   rw [hscalar]
   exact neckScale_sq_mul_scalar_center N
-
-
 
 theorem neckScale_le_two_mul_of_normalized_scalar_ge (N N' : EpsilonNeck g)
     (hscalar : (1 / 2 : ℝ) ≤ N.scale ^ 2 * N.connection.scalarCurvature N'.center) :
@@ -61,8 +41,6 @@ theorem neckScale_le_two_mul_of_normalized_scalar_ge (N N' : EpsilonNeck g)
   rw [hprod] at hmul
   nlinarith [N.scale_pos, N'.scale_pos]
 
-
-
 theorem neckScale_le_two_mul_of_normalized_scalar_close (N N' : EpsilonNeck g)
     (hscalar : |N.scale ^ 2 * N.connection.scalarCurvature N'.center - 1| < 1 / 2) :
     N'.scale ≤ 2 * N.scale :=
@@ -70,8 +48,6 @@ theorem neckScale_le_two_mul_of_normalized_scalar_close (N N' : EpsilonNeck g)
     (by linarith [(abs_lt.mp hscalar).1])
 
 end Scale
-
-
 
 theorem exists_nearby_scale_and_containment :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -92,8 +68,6 @@ theorem exists_nearby_scale_and_containment :
   have hscale := neckScale_le_two_mul_of_normalized_scalar_close N N'
     (hscalar N (he.trans (min_le_left _ _)) N'.center hcenter.1)
   exact ⟨hscale, hcontain N N' (he.trans (min_le_right _ _)) hscale hcenter⟩
-
-
 
 theorem exists_nearby_graphical_sphere :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -121,9 +95,6 @@ theorem exists_nearby_graphical_sphere :
     (hsubset (N'.centralSphere_range ▸ mem_range_self q)) hscale
     (hricci N N.connection (hN ▸ he.trans (min_le_right _ _)))
     (hricci N' N.connection (hN' ▸ he.trans (min_le_right _ _)))
-
-
-
 
 theorem exists_nearby_compact_transport :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

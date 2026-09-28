@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Comparison.Jets.ComparisonCovariantJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComparison.LocalTransport
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -20,8 +18,6 @@ namespace PoincareConjecture.SingularRegularLimit.RoundComparison
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilin" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem exists_intrinsic_metric_error_bound
     {g₀ : RiemannianMetric 3 E} (D₀ : LeviCivitaData g₀) (p : E) (m : ℕ) :

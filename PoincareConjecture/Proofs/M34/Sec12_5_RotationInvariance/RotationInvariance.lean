@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.Uniqueness
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.RotatedFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialStandardCapFlow_rotation_invariant (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

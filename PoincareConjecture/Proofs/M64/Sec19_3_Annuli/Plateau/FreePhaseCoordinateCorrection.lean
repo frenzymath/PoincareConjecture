@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAff
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityInverseChart
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.Euclidean
-
-
-
 
 theorem m64WeakCoordinates_scalar_memW1p {n : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin n)}
@@ -59,9 +48,6 @@ theorem m64WeakCoordinates_scalar_memW1p {n : ℕ}
   exact ⟨V i, (hVfull i).mono_measure (Measure.restrict_mono hsub le_rfl),
     M60.suWeakPartial_comp_on_compact hr hrR
       (m64MemLp_on_ball_of_continuous_closedBall hu 4) hW hw hO hK hKO hrange hF i⟩
-
-
-
 
 theorem m64Coordinate_compact_phase_change {n : ℕ}
     {u phi : LoopPlane → EuclideanSpace ℝ (Fin n)}

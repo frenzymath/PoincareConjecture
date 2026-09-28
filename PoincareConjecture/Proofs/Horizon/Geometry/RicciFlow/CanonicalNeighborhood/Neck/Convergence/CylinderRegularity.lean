@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphere
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +46,6 @@ private theorem roundCylinderGram_eq_spherePullback
         (roundCylinderCoordinateBasis a).2 * (roundCylinderCoordinateBasis b).2 := by
   rfl
 
-
 theorem contDiff_roundCylinderGram (u : ℝ) (q : UnitTwoSphere) (a b : Fin 3) :
     ContDiff ℝ ∞ (fun p =>
       roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b) := by
@@ -67,7 +59,6 @@ theorem contDiff_roundCylinderGram (u : ℝ) (q : UnitTwoSphere) (a b : Fin 3) :
       (sphereChart_symm_smooth q x) v w
   simp_rw [roundCylinderGram_eq_spherePullback]
   exact (contDiff_const.mul ((h _ _).comp contDiff_fst)).add contDiff_const
-
 
 theorem roundCylinderGram_det_ne_zero {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
@@ -117,15 +108,12 @@ private theorem contDiff_matrix_inv
         ContDiff ℝ ∞ (fun _ : E => (Pi.single a (1 : ℝ) : ι → ℝ) j))
   · simpa only [Matrix.updateRow_ne hi] using hA i j
 
-
 theorem contDiff_roundCylinderGram_inv {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (a b : Fin 3) :
     ContDiff ℝ ∞ (fun p =>
       (roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p)⁻¹ a b) :=
   contDiff_matrix_inv (contDiff_roundCylinderGram u q)
     (roundCylinderGram_det_ne_zero hu q) a b
-
-
 
 theorem contDiff_roundCylinderChristoffel {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (a b d : Fin 3) :

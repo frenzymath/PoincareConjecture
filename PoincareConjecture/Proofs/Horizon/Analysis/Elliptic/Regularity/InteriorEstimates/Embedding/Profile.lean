@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.MorreyHigherOrder
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
 noncomputable section
 
 set_option maxHeartbeats 800000
@@ -17,7 +13,6 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 def derivativeProfile (p : ℝ≥0∞) (Ω : Set E) (k : ℕ) (u : E → ℝ) : ℝ≥0∞ :=
   ∑ j ∈ Finset.range (k + 1),
@@ -56,8 +51,6 @@ theorem norm_iteratedFDeriv_iterClassicalPartial_le (n : ℕ) :
       exact h.trans_eq (congrArg (fun r => ‖iteratedFDeriv ℝ r u x‖)
         (Nat.add_assoc j n 1))
 
-
-
 theorem wkpNorm_le_derivativeProfile {Ω : Set E} (hΩ : IsOpen Ω)
     {p : ℝ≥0∞} (hp : 1 ≤ p) (k : ℕ)
     {u : E → ℝ} (hu : ContDiff ℝ (⊤ : ℕ∞) u)
@@ -93,7 +86,6 @@ theorem wkpNorm_le_derivativeProfile {Ω : Set E} (hΩ : IsOpen Ω)
     _ = (Fintype.card (Fin j → Fin d) : ℝ≥0∞) * derivativeProfile p Ω k u := by
       simp [nsmul_eq_mul]
 
-
 theorem derivativeProfile_mono_exponent {Ω : Set E} {p q : ℝ≥0∞}
     (hpq : p ≤ q) (k : ℕ) {u : E → ℝ}
     (hu : ContDiff ℝ (⊤ : ℕ∞) u) :
@@ -106,7 +98,6 @@ theorem derivativeProfile_mono_exponent {Ω : Set E} {p q : ℝ≥0∞}
       (hu.continuous_iteratedFDeriv
         (by exact_mod_cast (le_top : (j : ℕ∞) ≤ ⊤))).norm.aestronglyMeasurable
 
-
 def cutoffMultiplier (k : ℕ) (A : ℝ) : ℝ :=
   ∑ j ∈ Finset.range (k + 1), ∑ i ∈ Finset.range (j + 1), (j.choose i : ℝ) * A
 
@@ -114,8 +105,6 @@ theorem cutoffMultiplier_nonneg (k : ℕ) {A : ℝ} (hA : 0 ≤ A) :
     0 ≤ cutoffMultiplier k A := by
   exact Finset.sum_nonneg fun j hj => Finset.sum_nonneg fun i hi =>
     mul_nonneg (Nat.cast_nonneg _) hA
-
-
 
 theorem derivativeProfile_mul_le {Ω : Set E} (hΩ : IsOpen Ω)
     {p : ℝ≥0∞} (hp : 1 ≤ p)

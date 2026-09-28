@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalGlueRows
 import Mathlib.Topology.UniformSpace.CompactConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology NNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_glue_convergent_rows
     {M N : Type u} [MetricSpace M] [MetricSpace N]
@@ -52,8 +42,6 @@ theorem terminalCommonInterval_glue_convergent_rows
     funext (hread j)
   rw [heq]
   exact huniform j
-
-
 
 theorem terminalCommonInterval_global_paired_limits
     {M N : Type u} [MetricSpace M] [MetricSpace N]

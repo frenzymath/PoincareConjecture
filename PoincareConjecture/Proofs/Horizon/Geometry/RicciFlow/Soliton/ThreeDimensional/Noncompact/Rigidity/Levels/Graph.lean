@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph.Implicit
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Equivalence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +14,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
 
-
 def graphSlab (ε : ℝ) : Opens (ℝ × N) :=
   ⟨Ioo (-ε) ε ×ˢ univ, isOpen_Ioo.prod isOpen_univ⟩
 
@@ -30,8 +21,6 @@ variable {F : ℝ × N → ℝ}
   (hF : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F)
 
 include hF
-
-
 
 theorem exists_unique_smooth_level_height
     {ε : ℝ} (hε : 0 < ε)
@@ -72,7 +61,6 @@ theorem exists_unique_smooth_level_height
 
 omit [IsManifold (𝓡 n) ∞ N] in
 
-
 theorem graphSlab_regular {ε : ℝ}
     (hpos : ∀ y : N, ∀ s ∈ Ioo (-ε) ε, 0 < deriv (fun r ↦ F (r, y)) s) :
     ∀ p ∈ graphSlab (N := N) ε,
@@ -89,9 +77,6 @@ theorem graphSlab_regular {ε : ℝ}
 
 local instance : Fact (Module.finrank ℝ (ℝ × EuclideanSpace ℝ (Fin n)) = n + 1) :=
   ⟨by simp [Module.finrank_prod, Nat.add_comm]⟩
-
-
-
 
 theorem exists_levelGraphDiffeomorph
     {ε : ℝ} (hε : 0 < ε)

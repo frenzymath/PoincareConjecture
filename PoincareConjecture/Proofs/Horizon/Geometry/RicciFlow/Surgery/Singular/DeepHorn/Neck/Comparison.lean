@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.TensorNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +45,6 @@ theorem neckInterval_subset {epsilon delta : ℝ} (he : 0 < epsilon)
     Set.Ioo (-delta⁻¹) delta⁻¹ ⊆ Set.Ioo (-epsilon⁻¹) epsilon⁻¹ := by
   have hInv : delta⁻¹ ≤ epsilon⁻¹ := (inv_le_inv₀ (he.trans_le hed) he).2 hed
   exact Set.Ioo_subset_Ioo (neg_le_neg hInv) hInv
-
 
 theorem roundCylinderFamilyClose_mono {epsilon delta : ℝ}
     {I : Set ℝ} {B : ℝ → RoundCylinderTwoTensor}

@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoMarkedBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_hamilton_indexTwo_marked_target
     {ι : Type*} [Fintype ι] (F : HamiltonIndexTwoFrame ι)

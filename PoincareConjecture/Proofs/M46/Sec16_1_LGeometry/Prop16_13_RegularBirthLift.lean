@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_capCylinder_regular_birth_lift
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

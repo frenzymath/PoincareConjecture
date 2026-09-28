@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalTensorFamilyDerivatives
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +29,6 @@ private theorem contMDiffOn_fixedFrameVector (c : M) (v : EuclideanSpace ℝ (Fi
   change e.symmL ℝ y v = e.symm y (e ⟨c, e.symmL ℝ c v⟩).2
   rw [← Bundle.Trivialization.continuousLinearMapAt_apply_of_mem (R := ℝ) e hc,
     e.continuousLinearMapAt_symmL hc, e.symmL_apply hy]
-
-
 
 theorem continuousOn_fixed_frameInverseGram (g : RiemannianMetric n M)
     (c : M) (i j : Fin n) :
@@ -73,8 +63,6 @@ theorem continuousOn_fixed_frameInverseGram (g : RiemannianMetric n M)
   have hAi : ContinuousWithinAt (fun z ↦ (A z).inverse) e.baseSet y :=
     (hInv.contDiffAt_map_inverse (n := ∞)).continuousAt.comp_continuousWithinAt (hA y hy)
   exact continuousWithinAt_const.inner (hAi.clm_apply continuousWithinAt_const)
-
-
 
 theorem continuousOn_fixed_tensorNorm_sq (g : RiemannianMetric n M) {r : ℕ}
     (T : ℝ → CovariantTensorEvaluation n M r)
@@ -134,8 +122,6 @@ theorem continuousOn_fixed_tensorNorm_sq (g : RiemannianMetric n M) {r : ℕ}
   apply (hnorm p0 ⟨hp0.1, hc⟩).mono_of_mem_nhdsWithin
   exact nhdsWithin_prod self_mem_nhdsWithin
     (mem_nhdsWithin_of_mem_nhds (e.open_baseSet.mem_nhds hc))
-
-
 
 theorem continuousOn_fixed_tensorJetEnergy (g : RiemannianMetric n M)
     (D : LeviCivitaData g) {r : ℕ} (T : ℝ → CovariantTensorEvaluation n M r)

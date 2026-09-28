@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicConnection
 import PoincareConjecture.Proofs.M09.LocalFixedChartHessian
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem hessian_eq_chart_christoffel {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -50,9 +38,6 @@ theorem hessian_eq_chart_christoffel {g : RiemannianMetric n M}
     ((chartAt E p).map_source hq) u w
   rw [(chartAt E p).left_inv hq] at h
   exact h.symm
-
-
-
 
 theorem flow_hessian_chart_contDiffOn {a b : ℝ} (F : RicciFlow n M (Icc a b))
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (p : M) :

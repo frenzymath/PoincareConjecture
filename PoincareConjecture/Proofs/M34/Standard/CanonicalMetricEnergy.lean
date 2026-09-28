@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.MetricDifferenceEnergyRate
 import PoincareConjecture.Proofs.M34.Standard.CanonicalFlowCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_canonicalDomain_metric_energy_bound
     {n dH dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

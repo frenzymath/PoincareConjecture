@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.TensorHilbertNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -32,7 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 def densityTest (φ : 𝓢(E, ℝ)) (x : M) : ℝ :=
   L.weight a x * (φ (L.chart a x) / d.charts.chartDensity a.val.1.val (L.chart a x))
 
@@ -51,7 +42,6 @@ theorem densityTest_contMDiff (φ : 𝓢(E, ℝ)) :
 theorem densityTest_zero_off_weight (φ : 𝓢(E, ℝ)) {x : M}
     (hx : x ∉ tsupport (L.weight a)) : densityTest d L a φ x = 0 := by
   rw [densityTest, image_eq_zero_of_notMem_tsupport hx, zero_mul]
-
 
 theorem densityTest_pairing_smooth (ab : d.ProbeIndex) (φ : 𝓢(E, ℝ))
     (h : SmoothTensor (n := n) (M := M)) :
@@ -105,7 +95,6 @@ theorem densityTest_pairing_smooth (ab : d.ProbeIndex) (φ : 𝓢(E, ℝ))
         φ.coeFn_toLp 2 volume] with x hr hphi
       rw [hr, hphi, Real.inner_apply]
 
-
 theorem densityTest_pairing (ab : d.ProbeIndex) (φ : 𝓢(E, ℝ)) (v : d.Value) :
     inner ℝ (d.scalarLp (densityTest d L a φ) (densityTest_contMDiff d L a φ))
       (d.valueCoefficient ab v) =
@@ -156,7 +145,6 @@ theorem principalCoefficient_contDiffOn (g : RiemannianMetric n M) (p : M) (i j 
     (s := (chartAt E p).target)
   change ContDiffWithinAt ℝ ∞ (principalCoefficient g p i j) (chartAt E p).target z at hentry
   exact hentry
-
 
 def driftCoefficient (p : M) (j : Fin n) (z : E) : ℝ :=
   ∑ r : Fin d.fieldCount,
@@ -213,7 +201,6 @@ theorem cutoff_compactSupport : HasCompactSupport (L.scalarCutoff a) :=
 theorem cutoff_support_target :
     tsupport (L.scalarCutoff a) ⊆ (chartAt E a.val.1.val).target :=
   (L.scalarCutoff_tsupport_subset a).trans (L.region_subset_target a)
-
 
 def cutoffCoefficient (θ : 𝓢(E, ℝ))
     (hθ : tsupport θ ⊆ tsupport (L.scalarCutoff a)) (b : E → ℝ)
@@ -355,7 +342,6 @@ theorem cutoffCoefficient_lineDeriv_apply (θ : 𝓢(E, ℝ))
   exact fderiv_cutoff_mul θ (L.chart a).open_target
     (hθ.trans (cutoff_support_target d L a)) hf x v
 
-
 theorem cutoffCoefficient_secondLineDeriv_apply (θ : 𝓢(E, ℝ))
     (hθ : tsupport θ ⊆ tsupport (L.scalarCutoff a)) (f : E → ℝ)
     (hf : ContDiffOn ℝ ∞ f (L.chart a).target) {x : E}
@@ -493,7 +479,6 @@ theorem firstOrderCutoff_pairing {f : M → ℝ}
     dsimp only [C, D]
     ring
 
-
 theorem localizedSchwartz_principal (ab : d.ProbeIndex)
     (h : SmoothTensor (n := n) (M := M)) (x : E) :
     -(∑ i : Fin n, ∑ j : Fin n, principalCoefficient g a.val.1.val i j x *
@@ -541,7 +526,6 @@ theorem localizedSchwartz_principal (ab : d.ProbeIndex)
             (SchwartzMap.tsupport_lineDerivOp_subset _ _ ht))))
     simp only [hz, hzero, hfirst, hsecond, mul_zero, zero_mul, Finset.sum_const_zero,
       neg_zero, add_zero, zero_add]
-
 
 def lowerSource (ab : d.ProbeIndex) : d.Form →L[ℝ] Lp ℝ 2 (volume : Measure E) :=
   (L.localizationL2 a).comp (d.lowerSource ab) +
@@ -612,7 +596,6 @@ theorem generatorSource_into_coe (ab : d.ProbeIndex)
   change _ = L.scalarCutoff a x * (scalarProbe d.fields
     (smoothTensorLaplacian d.fields d.charts g h) ab ((L.chart a).symm x) + _) + _ + _
   ring
-
 
 def principalAdjointTest (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
     (hφU : tsupport φ ⊆ (L.chart a).target) : 𝓢(E, ℝ) :=
@@ -686,7 +669,6 @@ theorem localized_principal_pairing_smooth (ab : d.ProbeIndex)
     with x hsource htest
   rw [hsource, htest, Real.inner_apply]
 
-
 theorem localized_principal_pairing_form (ab : d.ProbeIndex) (z : d.Form)
     (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
     (hφU : tsupport φ ⊆ (L.chart a).target) :
@@ -726,8 +708,6 @@ theorem localized_principal_pairing_form (ab : d.ProbeIndex) (z : d.Form)
     linarith only [hform]
   exact congrFun heq z
 
-
-
 theorem generatorGraph_localized_equation {u b : d.Value} (hb : d.GeneratorGraph u b) :
     ∃ z : d.Form, d.inclusion z = u ∧ ‖z‖ ≤ ‖u‖ + ‖b‖ ∧
       ∀ (ab : d.ProbeIndex) (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
@@ -752,7 +732,6 @@ theorem generatorGraph_localized_equation {u b : d.Value} (hb : d.GeneratorGraph
     ← inner_add_left] at hid
   exact hid
 
-
 theorem localizedDerivative_pairing (ab : d.ProbeIndex) (z : d.Form)
     (i : Fin n) (φ : 𝓢(E, ℝ)) :
     inner ℝ (d.localizedValue L a ab z)
@@ -771,7 +750,6 @@ theorem localizedDerivative_pairing (ab : d.ProbeIndex) (z : d.Form)
     simpa only [PiLp.basisFun_apply] using
       inner_schwartzLineDeriv (d.localizedSchwartz L a ab h) φ (EuclideanSpace.single i 1)
   exact congrFun heq z
-
 
 theorem principalAdjointTest_firstOrder_pairing (ab : d.ProbeIndex) (z : d.Form)
     (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
@@ -794,7 +772,6 @@ theorem principalAdjointTest_firstOrder_pairing (ab : d.ProbeIndex) (z : d.Form)
   simp only [map_neg, map_sum, inner_neg_right, inner_sum,
     SchwartzMap.toLpCLM_apply, localizedDerivative_pairing,
     Finset.sum_neg_distrib, neg_neg]
-
 
 theorem generatorGraph_firstOrder_equation {u b : d.Value} (hb : d.GeneratorGraph u b) :
     ∃ z : d.Form, d.inclusion z = u ∧ ‖z‖ ≤ ‖u‖ + ‖b‖ ∧
@@ -837,7 +814,6 @@ def principalGradientTest (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
       ((PiLp.basisFun 2 ℝ (Fin n)) j))
     (principalCoefficientDerivative_contDiffOn d L a i j)
 
-
 theorem principalProduct_deriv (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
     (hφU : tsupport φ ⊆ (L.chart a).target) (i j : Fin n) :
     (∂_{(PiLp.basisFun 2 ℝ (Fin n)) j}
@@ -869,7 +845,6 @@ theorem principalProduct_deriv_toLp (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport
   rw [principalProduct_deriv, map_add]
   rfl
 
-
 theorem generatorGraph_divergence_equation {u b : d.Value} (hb : d.GeneratorGraph u b) :
     ∃ z : d.Form, d.inclusion z = u ∧ ‖z‖ ≤ ‖u‖ + ‖b‖ ∧
       ∀ (ab : d.ProbeIndex) (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ)
@@ -887,7 +862,6 @@ theorem generatorGraph_divergence_equation {u b : d.Value} (hb : d.GeneratorGrap
   simp only [principalProduct_deriv_toLp, inner_add_right, Finset.sum_add_distrib] at h
   exact eq_sub_iff_add_eq.mpr h
 
-
 theorem localizedSchwartz_support_cutoff (ab : d.ProbeIndex)
     (h : SmoothTensor (n := n) (M := M)) :
     tsupport (d.localizedSchwartz L a ab h) ⊆ tsupport (L.scalarCutoff a) := by
@@ -901,7 +875,6 @@ theorem localizedSchwartz_support_cutoff (ab : d.ProbeIndex)
     · rw [chartScalar_of_notMem _ _ hx, chartScalar_of_notMem _ _ hx, zero_mul]
   rw [hprod]
   exact tsupport_mul_subset_left
-
 
 theorem schwartzMultiplier_localizedDerivative (ab : d.ProbeIndex) (i : Fin n)
     (η : 𝓢(E, ℝ)) (hη : ∀ x ∈ tsupport (L.scalarCutoff a), η x = 1) (z : d.Form) :
@@ -930,8 +903,6 @@ theorem schwartzMultiplier_localizedDerivative (ab : d.ProbeIndex) (i : Fin n)
             (SchwartzMap.tsupport_lineDerivOp_subset _ _ hmem)))
       rw [hz, mul_zero]
   exact congrFun heq z
-
-
 
 theorem integrable_localizedDerivative (ab : d.ProbeIndex) (i : Fin n)
     (η : 𝓢(E, ℝ)) (hη : ∀ x ∈ tsupport (L.scalarCutoff a), η x = 1) (z : d.Form) :

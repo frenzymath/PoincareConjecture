@@ -2,8 +2,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
 set_option autoImplicit false
 
 open Set ChartedSpace
@@ -14,8 +12,6 @@ namespace Poincare.Manifold
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H} [I.Boundaryless]
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] [IsManifold I 1 M]
-
-
 
 theorem isLocallyConstant_of_mvfderiv_eq_zero {f : M → ℝ}
     (hf : MDifferentiable I 𝓘(ℝ, ℝ) f)
@@ -44,14 +40,10 @@ theorem isLocallyConstant_of_mvfderiv_eq_zero {f : M → ℝ}
     refine ⟨hx', e.map_source hx', ?_⟩
     simpa only [mem_preimage, Function.comp_apply, e.left_inv hx'] using hx
 
-
-
 theorem eq_of_mvfderiv_eq_zero [PreconnectedSpace M] {f : M → ℝ}
     (hf : MDifferentiable I 𝓘(ℝ, ℝ) f)
     (hdf : ∀ x v, mvfderiv I f x v = 0) (x y : M) : f x = f y :=
   (isLocallyConstant_of_mvfderiv_eq_zero hf hdf).apply_eq_of_preconnectedSpace x y
-
-
 
 theorem exists_eq_const_of_mvfderiv_eq_zero [PreconnectedSpace M] {f : M → ℝ}
     (hf : MDifferentiable I 𝓘(ℝ, ℝ) f)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Mathlib.PointJetBounds
 import PoincareConjecture.Proofs.M35.Thm12_28.FiniteIsometryJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -24,8 +15,6 @@ open CoordinateTransition
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 theorem finite_inverse_metric_jets_at {ι : Type*} {n : ℕ}
     {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {p : ι → E}
     (hA : ∀ i, ContDiffAt ℝ ∞ (A i) (p i))
@@ -37,8 +26,6 @@ theorem finite_inverse_metric_jets_at {ι : Type*} {n : ℕ}
     (fun B hB => (isInvertible_of_uniformEllipticity ha hB.2).contDiffAt_map_inverse)
   intro i
   exact ⟨by simpa only [norm_iteratedFDeriv_zero] using hC i, hell i⟩
-
-
 
 theorem finite_christoffel_jets_at {ι : Type*} {n : ℕ}
     {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {p : ι → E}
@@ -59,7 +46,6 @@ theorem finite_christoffel_jets_at {ι : Type*} {n : ℕ}
   exact hjI.bilinear hjK hI hK finiteChristoffelContraction
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem finite_jets_at_of_christoffel_hessian {ι : Type*} {r : ℕ}
     {f : ι → E → E} {A B : ι → E → E →L[ℝ] E →L[ℝ] E} {p : ι → E}
@@ -124,9 +110,6 @@ theorem finite_jets_at_of_christoffel_hessian {ι : Type*} {r : ℕ}
       ext u v
       exact congrArg (fun L : E →L[ℝ] E →L[ℝ] E => L u v) hy.symm
   exact HasUniformJetBoundsAt.succ_of_fderiv hzero (hDj (r + 1) le_rfl)
-
-
-
 
 theorem finite_local_isometry_jets_at {ι : Type*} {n : ℕ}
     {A B : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {f : ι → E → E} {p : ι → E}

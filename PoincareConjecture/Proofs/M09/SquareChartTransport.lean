@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.CoordinateTransport
 import PoincareConjecture.Proofs.M09.SquareChartConnection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

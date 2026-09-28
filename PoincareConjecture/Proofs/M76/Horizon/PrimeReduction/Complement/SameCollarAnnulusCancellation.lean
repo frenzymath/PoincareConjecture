@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalE
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalCollarSphereCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFinitePLBallImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel PLAnnularStrip
 

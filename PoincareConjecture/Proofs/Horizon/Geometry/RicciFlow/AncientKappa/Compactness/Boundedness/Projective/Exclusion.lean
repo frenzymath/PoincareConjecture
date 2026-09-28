@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Escape
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Scale
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {M : Type} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {b κ : ℝ} {F : RicciFlow 3 M (Iic b)} {p : M}
   (S : SelectedAncientRescalings F κ p)
-
-
 
 theorem exists_no_eventual_projective_necks
     (hc : MetricComplete (F.metric b))

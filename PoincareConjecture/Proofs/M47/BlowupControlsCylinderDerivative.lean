@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +13,10 @@ namespace PoincareConjecture.M47
 variable {G : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def normalizedCylinderScalar
     (e : GeneralizedFlowCylinder G C origin scale I U) (x : C.carrier) (s : ℝ) : ℝ := by
   classical
   exact if hs : s ∈ I then G.scalar (e.pointMap s hs x) / scale else 0
-
-
 
 theorem normalizedCylinderScalar_hasDerivWithinAt
     (h04 : RicciFlowCurvatureTheory.{u})

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusMinimalLogCurvature
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusEnergyPeriodicity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLaplacianBoundary
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64Annulus_log_energy_boundary_lower_bound_of_conformal_minimum
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1)

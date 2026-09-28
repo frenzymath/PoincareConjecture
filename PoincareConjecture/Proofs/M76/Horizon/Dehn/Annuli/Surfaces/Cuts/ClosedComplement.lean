@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -19,7 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K N : SimplicialComplex ℝ E)
-
 
 def closedFaceComplement : SimplicialComplex ℝ E where
   faces := {s | s ∈ K.faces ∧ ∃ t ∈ K.faces, t ∉ N.faces ∧ s ⊆ t}
@@ -77,8 +65,6 @@ theorem closedFaceComplement_space_cover (hNK : N ≤ K) :
     · exact Or.inl (N.convexHull_subset_space hs hxs)
     · exact Or.inr ((K.closedFaceComplement N).convexHull_subset_space hs hxs)
 
-
-
 theorem closedFaceComplement_euler (hK : K.faces.Finite) (hNK : N ≤ K) :
     K.surfaceEulerCount + (N ⊓ K.closedFaceComplement N).surfaceEulerCount =
       N.surfaceEulerCount + (K.closedFaceComplement N).surfaceEulerCount :=
@@ -115,7 +101,6 @@ theorem closedFaceComplement_inter_dim
   exact ((K.closedFaceComplement_triangle_iff N hdim hthree).mp hs.2).2 hs.1
 
 open Classical in
-
 
 theorem closedFaceComplement_edge_coface_count
     (hK : K.faces.Finite) (hNK : N ≤ K)
@@ -167,8 +152,6 @@ theorem closedFaceComplement_edge_coface_count
         hsN (N.down_closed htN ht.2.2 (K.nonempty_of_mem_faces hs.1))
       exact ⟨(K.closedFaceComplement_triangle_iff N hdim ht.2.1).mpr ⟨ht.1, htN⟩, ht.2⟩
     exact hTS ▸ hcount
-
-
 
 theorem closedFaceComplement_barycentric_disjoint [Fintype K.faces]
     (L : SimplicialComplex ℝ E) [Finite L.faces] (hLK : L ≤ K) :

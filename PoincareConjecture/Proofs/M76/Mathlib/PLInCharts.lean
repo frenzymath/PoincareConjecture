@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,15 +12,12 @@ variable {E F G X Y Z ι κ nu : Type*}
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
 
-
-
 def chartMapDomain (Q : OpenPartialHomeomorph E X) (R : OpenPartialHomeomorph F Y)
     (f : X → Y) (U : Set X) : Set E :=
   (Q.source ∩ Q ⁻¹' U) ∩ (f ∘ Q) ⁻¹' R.target
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedSpace ℝ F] [FiniteDimensional ℝ F] in
-
 
 theorem isOpen_chartMapDomain
     (Q : OpenPartialHomeomorph E X) (R : OpenPartialHomeomorph F Y)
@@ -41,10 +28,6 @@ theorem isOpen_chartMapDomain
   have hcomp : ContinuousOn (f ∘ Q) (Q.source ∩ Q ⁻¹' U) :=
     hf.comp (Q.continuousOn_toFun.mono inter_subset_left) (fun _ hx => hx.2)
   exact hcomp.isOpen_inter_preimage hbase R.open_target
-
-
-
-
 
 structure PLInCharts (Q : ι → OpenPartialHomeomorph E X)
     (R : κ → OpenPartialHomeomorph F Y) (f : X → Y) (U : Set X) : Prop where
@@ -61,7 +44,6 @@ variable {Q : ι → OpenPartialHomeomorph E X}
 
 omit [FiniteDimensional ℝ F] in
 
-
 theorem mono (hf : PLInCharts Q R f U) (hU' : IsOpen U') (hsub : U' ⊆ U) :
     PLInCharts Q R f U' where
   isOpen := hU'
@@ -71,7 +53,6 @@ theorem mono (hf : PLInCharts Q R f U) (hU' : IsOpen U') (hsub : U' ⊆ U) :
       (fun _ hx => ⟨⟨hx.1.1, hsub hx.1.2⟩, hx.2⟩)
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
 
 theorem congr (hf : PLInCharts Q R f U) (heq : EqOn f f' U) :
     PLInCharts Q R f' U := by
@@ -94,9 +75,6 @@ theorem congr (hf : PLInCharts Q R f U) (heq : EqOn f f' U) :
   exact congrArg (R j).symm (heq hx.1.2)
 
 omit [FiniteDimensional ℝ G] in
-
-
-
 
 theorem comp (hg : PLInCharts R S g V) (hf : PLInCharts Q R f U)
     (hcover : ∀ y : Y, ∃ j, y ∈ (R j).target) :
@@ -134,7 +112,6 @@ theorem comp (hg : PLInCharts R S g V) (hf : PLInCharts Q R f U)
   exact congrArg (fun z => (S k).symm (g z)) ((R j).right_inv hy.2.2)
 
 omit [FiniteDimensional ℝ G] in
-
 
 theorem comp_mapsTo (hg : PLInCharts R S g V) (hf : PLInCharts Q R f U)
     (hcover : ∀ y : Y, ∃ j, y ∈ (R j).target) (hmap : MapsTo f U V) :

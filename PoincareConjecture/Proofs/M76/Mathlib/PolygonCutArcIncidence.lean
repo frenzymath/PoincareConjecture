@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
@@ -17,18 +8,12 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 theorem cutArc_endpoints_subset (P : Polygon E n) (t : Fin n → ℝ)
     (ht : ∀ i, t i ∈ Icc (0 : ℝ) 1) (i : Fin n) :
     {P.edgeCut t i, P.edgeCut t (finRotate n i)} ⊆ P.cutArc t i := by
   rintro x (rfl | rfl)
   · exact Or.inl ⟨t i, ⟨le_rfl, (ht i).2⟩, rfl⟩
   · exact Or.inr ⟨t (finRotate n i), ⟨(ht _).1, le_rfl⟩, rfl⟩
-
-
-
-
 
 theorem vertex_mem_cutArc_iff (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -62,10 +47,6 @@ theorem vertex_mem_cutArc_iff (P : Polygon E (n + 3))
         exact False.elim ((not_le_of_gt (ht _).2) (hr1 ▸ hr.2))
   · rintro rfl
     exact Or.inl ⟨1, ⟨(ht i).2.le, le_rfl⟩, lineMap_apply_one _ _⟩
-
-
-
-
 
 theorem cutArc_inter_of_ne (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

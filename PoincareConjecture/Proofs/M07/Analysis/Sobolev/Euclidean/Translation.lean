@@ -5,16 +5,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.MeasureTheory.Function.LpSpace.Complete
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

@@ -3,22 +3,11 @@ import Mathlib.Algebra.Module.ZLattice.Basic
 import Mathlib.LinearAlgebra.Basis.SMul
 import Mathlib.LinearAlgebra.Quotient.Pi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 namespace PoincareConjecture.M76
-
-
 
 def hamiltonLowerPeriodLattice (κ : Type*) : Submodule ℤ (κ → ℝ) :=
   Submodule.pi univ fun _ =>
@@ -59,21 +48,15 @@ private theorem lowerPeriodLattice_eq_span :
 
 omit [Fintype κ] in
 
-
 instance [Finite κ] : DiscreteTopology (hamiltonLowerPeriodLattice κ) := by
   let : Fintype κ := Fintype.ofFinite κ
   rw [lowerPeriodLattice_eq_span]
   infer_instance
 
-
-
 instance : IsZLattice ℝ (hamiltonLowerPeriodLattice κ) := by
   refine ⟨?_⟩
   rw [lowerPeriodLattice_eq_span]
   exact ZSpan.span_top (lowerPeriodBasis κ)
-
-
-
 
 noncomputable def hamiltonLowerLatticePiEquiv :
     ((κ → ℝ) ⧸ (hamiltonLowerPeriodLattice κ).toAddSubgroup) ≃ₜ
@@ -107,8 +90,6 @@ noncomputable def hamiltonLowerLatticePiEquiv :
       exact e.symm_apply_apply ((hamiltonLowerPeriodLattice κ).mkQ x)
     rw [he]
     exact QuotientAddGroup.continuous_mk
-
-
 
 theorem hamiltonLowerLatticePiEquiv_mk (x : κ → ℝ) :
     hamiltonLowerLatticePiEquiv κ (QuotientAddGroup.mk x) =

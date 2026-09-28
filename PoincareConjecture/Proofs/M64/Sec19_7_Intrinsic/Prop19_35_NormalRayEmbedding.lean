@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularLoop
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 import PoincareConjecture.Proofs.M64.Mathlib.InjectiveDomainClosure
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_normal_ray_injOn_of_local_prefix_separation
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)

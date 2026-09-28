@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalCurvatureNorms
 import PoincareConjecture.Proofs.M34.Standard.CurvatureRepresentative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_canonicalDomain_actualCurvature_norm_bound
     (n : ℕ) {a : ℝ} (ha : 0 < a) (M : ℝ) :

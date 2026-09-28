@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakAverages
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.NonnegativeApproximation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +14,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.DifferenceQuotient
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem suEuclidean_Lp_tendsto_componentwise {X : Type*} [MeasurableSpace X]
     {μ : Measure X} {m : ℕ} {p : ℝ≥0∞} (hp : 1 ≤ p)
@@ -57,9 +47,6 @@ theorem suEuclidean_Lp_tendsto_componentwise {X : Type*} [MeasurableSpace X]
     simpa using tendsto_finsetSum Finset.univ (fun a _ => hlim a)
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hz
     (fun _ => bot_le) hb
-
-
-
 
 theorem suVectorMollifier_Lp_tendsto {m : ℕ} {p : ℝ≥0∞} (hp : 1 ≤ p) (hpf : p ≠ ⊤)
     {g : Plane → EuclideanSpace ℝ (Fin m)} (hg : MemLp g p volume)

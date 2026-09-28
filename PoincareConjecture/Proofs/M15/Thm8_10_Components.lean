@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Definitions.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem compact_completeBoundedCurvatureOn
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -51,10 +39,6 @@ theorem compact_completeBoundedCurvatureOn
     rw [abs_of_nonneg (show 0 ≤ (F.connection t).curvatureTensorNorm q from Real.sqrt_nonneg _)]
     exact (hK (mem_image_of_mem _ (show (t, q) ∈ S ×ˢ univ from
       ⟨ht, mem_univ q⟩))).trans (le_max_left _ _)
-
-
-
-
 
 theorem compact_estimate_of_connected {omega T0 kappa : ℝ}
     (hconnected : ∀ (M : Type u) [TopologicalSpace M]

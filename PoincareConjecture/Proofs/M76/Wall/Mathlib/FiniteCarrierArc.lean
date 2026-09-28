@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearChain
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_finitePL_arc_in_carrier
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

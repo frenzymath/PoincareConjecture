@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.GlobalPulledBackAtlas
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

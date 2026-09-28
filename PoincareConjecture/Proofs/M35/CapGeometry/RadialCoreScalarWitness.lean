@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCenterNormalization
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem radial_core_scalar_witness
     (P : M35StandardCapPredecessors) (g : RiemannianMetric 3 StandardCapSpace)

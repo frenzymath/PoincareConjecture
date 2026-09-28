@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,7 +22,6 @@ theorem isCompact_axial_sphere (Q : OpenCylinderModel U)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     IsCompact (Q.coordinate '' (univ ×ˢ ({a} : Set ℝ))) := by
   simpa only [Icc_self] using Q.isCompact_coordinate_slab ha.1 ha.2
-
 
 theorem exists_side_of_connected (Q : OpenCylinderModel U) {S : Set M}
     (hS : IsConnected S) (hSU : S ⊆ U) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1)
@@ -63,8 +54,6 @@ namespace TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_tube_direction (e : TerminalEnd K) (n : ℕ)
     (tube : EpsilonTubeCertificate (E.extended.metric T) (Subtype.val '' e.tail n)) :

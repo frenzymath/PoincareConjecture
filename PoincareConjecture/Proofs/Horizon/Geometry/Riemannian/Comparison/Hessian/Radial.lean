@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.RadialJacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Radial
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 1200000 in
-
-
 
 theorem radial_pairing_le_of_sectional_lower_bound [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -103,8 +95,6 @@ theorem radial_pairing_le_of_sectional_lower_bound [T2Space M]
     (show EuclideanSpace ℝ (Fin n) from mfderiv (𝓡 n) (𝓡 n) e v w))
       (one_smul ℝ v)
   exact hbound.trans_eq (congrArg (fun a : ℝ => (1 + K * ‖v‖ ^ 2 / 3) * a) hpair)
-
-
 
 theorem deriv2_norm_sq_le_of_minimizing_radial_sectional_lower_bound [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

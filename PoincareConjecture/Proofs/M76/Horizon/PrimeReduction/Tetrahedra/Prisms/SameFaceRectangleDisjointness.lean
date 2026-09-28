@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Re
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.RectangleCutDiskContacts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.SphereDiskContactSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt

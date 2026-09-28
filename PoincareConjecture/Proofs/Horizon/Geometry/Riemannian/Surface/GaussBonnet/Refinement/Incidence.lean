@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Global
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem mesh_usedVertex_mem_triangle_of_mem_hull (M : TriangleMesh)
     (t u : M.Triangle) {v : M.Vertex} (hv : v ∈ u.1)
@@ -48,8 +38,6 @@ theorem mesh_usedVertex_mem_triangle_of_mem_hull (M : TriangleMesh)
     simp [hnot]
   simp [hempty] at hmem
 
-
-
 theorem localRefinementBoundaryCuts_ne_usedVertex (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -65,8 +53,6 @@ theorem localRefinementBoundaryCuts_ne_usedVertex (M : TriangleMesh)
   rw [range_meshTriangleBasis, heq]
   exact ⟨v, hvt, rfl⟩
 
-
-
 theorem affineCutPoint_mem_openSegment_of_mul_neg (f : Plane →ᵃ[ℝ] ℝ)
     (a b : Plane) (hcross : f a * f b < 0) :
     affineCutPoint f a b ∈ openSegment ℝ a b := by
@@ -81,7 +67,6 @@ theorem affineCutPoint_mem_openSegment_of_mul_neg (f : Plane →ᵃ[ℝ] ℝ)
       ⟨affineCutPoint.parameter_pos (-f) a b (neg_pos.mpr ha) (neg_neg_of_pos hb),
         affineCutPoint.parameter_lt_one (-f) a b (neg_pos.mpr ha) (neg_neg_of_pos hb)⟩,
       rfl⟩
-
 
 theorem localRefinementBoundaryCuts_crossed_edge (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
@@ -116,8 +101,6 @@ theorem localRefinementBoundaryCuts_crossed_edge (M : TriangleMesh)
     exact ⟨_, M.orderedVertex_mem t _, _, M.orderedVertex_mem t _,
       mul_neg_of_neg_of_pos o.negative o.positive, rfl⟩
   · exact False.elim (List.not_mem_nil hq)
-
-
 
 theorem mesh_edge_endpoints_mem_of_openSegment_mem_hull (M : TriangleMesh)
     (t u : M.Triangle) {a b : M.Vertex} (ha : a ∈ t.1) (hb : b ∈ t.1)
@@ -172,8 +155,6 @@ theorem mesh_edge_endpoints_mem_of_openSegment_mem_hull (M : TriangleMesh)
     rw [hright hnot, left_mem_openSegment_iff] at hq
     exact hab (M.position_injective hq)
 
-
-
 theorem localRefinementBoundaryCuts_incident_edge (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t) :
@@ -198,9 +179,6 @@ theorem localRefinementBoundaryCuts_incident_edge (M : TriangleMesh)
         exact ⟨⟨a, hau, rfl⟩, ⟨b, hbu, rfl⟩⟩)
     rw [convexHull_pair]
     exact openSegment_subset_segment ℝ _ _ hsegment
-
-
-
 
 theorem localRefinementBoundaryCuts_exists_other_parent (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
@@ -234,7 +212,6 @@ theorem localRefinementBoundaryCuts_exists_other_parent (M : TriangleMesh)
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem meshVertexAngleContribution_eq_zero_at_new_cut
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
@@ -256,8 +233,6 @@ theorem meshVertexAngleContribution_eq_zero_at_new_cut
   have hpoint := F.injOn hsource hqsource heq
   exact localRefinementBoundaryCuts_ne_usedVertex M f t hq u (M.orderedVertex u k)
     (M.orderedVertex_mem u k) hpoint.symm
-
-
 
 theorem lineRefinementMesh_vertex_contribution_new_cut
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.LowerProducts
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.Blocks
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {T : CoorientedSurfaceStars E}
 
 open Classical in
-
-
 
 structure SurfaceFrontierProduct (P : SurfaceLowerProducts T)
     (p : (T.marked 2).vertices) where
@@ -44,4 +40,3 @@ structure SurfaceFrontierProduct (P : SurfaceLowerProducts T)
       map (s.centroid ℝ id, t) = P.map s (s.centroid ℝ id, t)
 
 end Geometry.SimplicialComplex
-

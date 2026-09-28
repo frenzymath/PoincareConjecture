@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing.Frontier
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Filter
@@ -23,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 omit [T2Space M] in
-
 
 theorem SmoothEdge.mem_interior_union_of_local_frontiers
     (e : SmoothEdge M) (p : M)
@@ -64,8 +53,6 @@ namespace ObliqueBandFaces
 variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
 
 theorem closure_interior_carrier : closure (interior B.carrier) = B.carrier := by
   apply subset_antisymm (closure_minimal interior_subset B.isClosed_carrier)
@@ -113,7 +100,6 @@ theorem closure_interior_carrier : closure (interior B.carrier) = B.carrier := b
   have hz : B.coordinates q ∈ (B.coordinates ∘ H) '' closure S :=
     ⟨w, hclosure.symm ▸ hw, by simp only [Function.comp_apply, hHw]⟩
   exact closure_mono hmapS ((hclosure ▸ hmap).image_closure hz)
-
 
 noncomputable def endpointEdge (right : Bool) : SmoothEdge M :=
   if right then (B.pair B.lastCell).lower.boundary 0
@@ -260,8 +246,6 @@ private theorem endpointEdge_avoids_other_boundaries (right : Bool) {t : ℝ}
     have hx := congrArg (fun q => (collarParameterEquiv q).1) hq
     cases right <;> norm_num [endpoint] at hx
 
-
-
 theorem exists_endpoint_frontier_neighborhood (right : Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :
     ∃ N : Set M, IsOpen N ∧ (B.endpointEdge right).map t ∈ N ∧
@@ -304,8 +288,6 @@ variable {F' : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo' : ℝ → ℝ} {a' b' ua' wa' ub' wb' ra' rb' : ℝ}
   (B' : ObliqueBandFaces F' lo' a' b' ua' wa' ub' wb' ra' rb')
 
-
-
 theorem mem_interior_union_of_shared_endpointCut (right right' : Bool)
     {t s : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) (hs : s ∈ Ioo (0 : ℝ) 1)
     (hpoint : (B.endpointEdge right).map t = (B'.endpointEdge right').map s)
@@ -334,8 +316,6 @@ theorem mem_interior_union_of_shared_endpointCut (right right' : Bool)
   · intro q hq
     rw [hshared]
     exact hfrontN' ⟨hq.1.2, hq.2⟩
-
-
 
 theorem shared_endpointCut_subset_interior_union (right right' : Bool)
     (hshared : (B.endpointEdge right).map '' Icc (0 : ℝ) 1 =

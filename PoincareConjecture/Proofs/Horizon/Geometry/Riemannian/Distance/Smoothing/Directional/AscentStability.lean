@@ -1,15 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.AscentWitness
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.AscentWitness
 
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem eventually_exists_arbitrarily_close_distance_ascent_of_tendsto
     {n : ℕ} {M : ℕ → Type*} [∀ j, TopologicalSpace (M j)]
@@ -55,8 +52,6 @@ theorem eventually_exists_arbitrarily_close_distance_ascent_of_tendsto
   let : ConnectedSpace (M j) := { toNonempty := ⟨p j⟩ }
   exact (g j).exists_arbitrarily_close_distance_ascent_of_increment
     (D j) (hc j) hK (hsec j) (p j) (y j) (q j) hlj (sub_pos.mp hawayj) hincj
-
-
 
 theorem eventually_exists_arbitrarily_close_distance_ascent_of_local_ascent
     {X : Type*} [MetricSpace X] {n : ℕ} {M : ℕ → Type*}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Assembly
 import PoincareConjecture.Proofs.M76.Smoothing.SmoothAtlasOfNormalPosition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {E : Type v} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem smoothingConclusion_of_finite_brouwer_triangulation
     (P : SmoothingBridgeInput (M := M)) (K : SimplicialComplex ℝ E)

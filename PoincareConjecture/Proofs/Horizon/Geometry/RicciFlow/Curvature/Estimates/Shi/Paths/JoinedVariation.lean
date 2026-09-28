@@ -5,18 +5,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Bilinear
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Topology

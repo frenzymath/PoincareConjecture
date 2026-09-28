@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneRetraction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval Geometry
@@ -30,9 +23,6 @@ private theorem radial_interpolate_mem (t : I) (z : V2) (hz : z ∈ D) (hzero : 
   exact (convex_closedBall (0 : V2) 1) hz
     (sphere_subset_closedBall (radial_unit_mem z hzero))
     (sub_nonneg.mpr t.property.2) t.property.1 (by ring)
-
-
-
 
 theorem exists_disk_block_frontier_deformation
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -157,9 +147,6 @@ theorem exists_disk_block_frontier_deformation
         (hfull (show (‖z.1‖⁻¹ • z.1, z.2) ∈ D ×ˢ J from
           ⟨sphere_subset_closedBall (radial_unit_mem z.1 hzero), hz.2⟩))).mpr
         (radial_unit_mem z.1 hzero)
-
-
-
 
 theorem exists_disk_block_frontier_retraction
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

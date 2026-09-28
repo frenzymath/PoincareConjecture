@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 import Mathlib.Topology.MetricSpace.Algebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +40,6 @@ private theorem uniformlyOn_finset_sum_zero {X ι : Type*} {K : Set X}
       (fun _ => (0 : ℝ) + 0) atTop K at h
     simpa only [Finset.sum_insert ha, add_zero] using h
 
-
-
 theorem tendstoUniformlyOn_roundCylinderTensorNormSquared
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) {r : ℕ}
     {T : ℕ → RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ}
@@ -73,8 +63,6 @@ theorem tendstoUniformlyOn_roundCylinderTensorNormSquared
       (uniformlyOn_constant W K) (hT a) hW.continuousOn continuousOn_const
   simpa only [zero_mul] using uniformlyOn_mul_compact hK hfirst (hT b)
     continuousOn_const continuousOn_const
-
-
 
 theorem tendstoUniformlyOn_roundCylinderIteratedDerivative_normSquared
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
@@ -104,7 +92,6 @@ theorem tendstoUniformlyOn_roundCylinderIteratedDerivative_normSquared
     (fun a b => (contDiff_roundCylinderGram u q a b).contDiffOn)
     hlocal hjet k a hK hKU
 
-
 theorem tendstoUniformlyOn_roundCylinder_fixedChart_jetSum
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
     {U : Set RoundCylinderCoordinates} (hU : IsOpen U)
@@ -129,8 +116,6 @@ theorem tendstoUniformlyOn_roundCylinder_fixedChart_jetSum
   intro k _
   exact tendstoUniformlyOn_roundCylinderIteratedDerivative_normSquared hu q hU
     hlocal hjet k hK hKU
-
-
 
 theorem tendstoUniformlyOn_roundCylinder_changingChart_normSquared
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (qseq : ℕ → UnitTwoSphere)
@@ -168,7 +153,6 @@ theorem tendstoUniformlyOn_roundCylinder_changingChart_normSquared
     (ContinuousMultilinearMap.uniformContinuous_eval_const
       (0 : Fin 0 → RoundCylinderCoordinates)).comp_tendstoUniformlyOn h
 
-
 theorem tendstoUniformlyOn_roundCylinder_changingChart_jetSum
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (qseq : ℕ → UnitTwoSphere)
     {U : Set RoundCylinderCoordinates} (hU : IsOpen U)
@@ -193,9 +177,6 @@ theorem tendstoUniformlyOn_roundCylinder_changingChart_jetSum
   intro k _
   exact tendstoUniformlyOn_roundCylinder_changingChart_normSquared hu q qseq hU
     hlocal hjet k hK hKU
-
-
-
 
 theorem tendstoUniformlyOn_roundCylinder_changingChart_error_jetSum
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (qseq : ℕ → UnitTwoSphere)

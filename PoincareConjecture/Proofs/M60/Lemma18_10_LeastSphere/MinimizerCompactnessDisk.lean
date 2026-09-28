@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessLocalEstimate
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessNormalization
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +21,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
-
 
 theorem suNormalized_local_equations
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

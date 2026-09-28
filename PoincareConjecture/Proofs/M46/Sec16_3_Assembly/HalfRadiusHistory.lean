@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M33.HistoryCylinderSource
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +21,6 @@ private theorem metric_center_mem {n : ℕ} {M : Type u} [TopologicalSpace M]
     ⟨g.toRiemannianMetric⟩
   change Manifold.riemannianEDist (𝓡 n) x x < ENNReal.ofReal r
   simpa only [Manifold.riemannianEDist_self] using ENNReal.ofReal_pos.mpr hr
-
-
 
 theorem history_halfBall_compact {F : SurgeryFlowData.{u}}
     {W : M33RegularHistoryWindow F} (H : M33RegularHistoryData W)
@@ -69,8 +56,6 @@ private theorem history_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
 
 theorem halfRadiusHistory (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}

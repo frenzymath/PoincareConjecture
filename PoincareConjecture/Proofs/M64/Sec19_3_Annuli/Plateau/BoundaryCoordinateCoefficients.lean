@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedCoordinateVariation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,9 +28,6 @@ local instance m64BoundaryCoefficients_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem m64ChartCoordinate_coefficient_bounds
     (g : RiemannianMetric n M) (b : M) {u : LoopPlane → E} {a : LoopPlane} {R : ℝ}
     (hu : ContinuousOn u (closedBall a R))
@@ -67,10 +53,6 @@ theorem m64ChartCoordinate_coefficient_bounds
   exact (hD (mem_image_of_mem _ hpK)).trans (by have := le_max_left D 0; linarith)
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64WeightedChart_flux_source_memLp
     (g : RiemannianMetric n M) (b : M) (modulus : ℝ)

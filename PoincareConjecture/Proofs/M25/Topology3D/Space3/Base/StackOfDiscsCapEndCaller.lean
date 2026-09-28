@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsEndLabel
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonicalNormalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereNormalSign
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -18,7 +10,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
 
 theorem exists_stackCapEndFamily
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -188,7 +179,6 @@ theorem exists_stackCapEndFamily
       (N.closedBall_subset_source (ball_subset_closedBall hv)) hx.1 he
     rw [hvx] at hv
     exact (not_lt_of_ge hxnorm) (mem_ball_zero_iff.mp hv)
-
 
 theorem stackCanonicalEndpoint_capEndChart
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

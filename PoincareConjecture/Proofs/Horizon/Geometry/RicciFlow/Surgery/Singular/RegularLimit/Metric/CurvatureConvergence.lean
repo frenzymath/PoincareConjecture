@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.FlowRiemannRegularity
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +40,6 @@ theorem terminalFlow_curvatureTensor_at_terminal
       (H.terminalConnection P04).curvatureTensor x u v w z :=
   congrArg (fun g : RiemannianMetric 3 (H.regularRegion P04) =>
     g.leviCivitaData.curvatureTensor x u v w z) (H.terminalMetricFamily_at_terminal P04)
-
-
 
 theorem tendsto_terminal_curvatureTensor
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

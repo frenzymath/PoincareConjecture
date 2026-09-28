@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Assembly
 import PoincareConjecture.Statements.Ch04.Pinching
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Preservation
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 

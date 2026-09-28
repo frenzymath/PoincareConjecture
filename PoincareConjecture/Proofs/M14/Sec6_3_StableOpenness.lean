@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSliceInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point}
-
-
-
 
 theorem isOpen_stableInitialVectors (E : M14ExponentialFamily G T x) (hτ : 0 ≤ τ) :
     IsOpen {Z | M14StableInitialVector G T τ x E Z} := by
@@ -43,16 +30,11 @@ theorem isOpen_stableInitialVectors (E : M14ExponentialFamily G T x) (hτ : 0 �
   obtain ⟨hWD, hbijW⟩ := hbij_e W hW
   exact ⟨hWD, hbijW, U, hU, (heS hW).1, hmin⟩
 
-
-
 theorem stableInitialVector_unique_branch (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} (hZ : M14StableInitialVector G T τ x E Z) :
     M14UniqueMinimizingBranch G T τ x E Z := by
   obtain ⟨_, _, U, _, hZU, hmin⟩ := hZ
   exact hmin Z hZU
-
-
-
 
 theorem stableInitialVector_open_neighborhood (E : M14ExponentialFamily G T x)
     (hτ : 0 ≤ τ) {Z : G.Horizontal x} (hZ : M14StableInitialVector G T τ x E Z) :

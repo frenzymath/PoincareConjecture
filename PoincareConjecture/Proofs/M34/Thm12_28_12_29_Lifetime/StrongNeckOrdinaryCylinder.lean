@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinder
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinderPullback
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckSpatialMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +23,6 @@ local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 variable {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {K : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def ordinaryChapter11PushedCylinder
     (e : GeneralizedFlowCylinder (G) C origin scale K U)
     (base : C.carrier) (hzero : 0 ∈ K) (V : Set C.carrier)
@@ -49,8 +37,6 @@ noncomputable def ordinaryChapter11PushedCylinder
       change origin + s / scale ∈ I.domain at h
       simpa only [zero_div, add_zero] using h)
 
-
-
 theorem ordinaryChapter11PushedCylinder_zero_identity
     (e : GeneralizedFlowCylinder (G) C origin scale K U)
     (base : C.carrier) (hzero : 0 ∈ K) (V : Set C.carrier)
@@ -61,8 +47,6 @@ theorem ordinaryChapter11PushedCylinder_zero_identity
   unfold ordinaryChapter11PushedCylinder
   exact ordinaryChapter11Cylinder_zero_identity R (e.pointMap 0 hzero base)
     scale e.scale_pos K' (e.forward 0 hzero '' V) _ hzero' x
-
-
 
 theorem ordinaryChapter11PushedCylinder_spatialMap_comp
     (e : GeneralizedFlowCylinder (G) C origin scale K U)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.Refined
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.OriginalChartTriangleHeights
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.MarkedConeFans
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -21,8 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E V X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [TopologicalSpace X]
-
-
 
 theorem exists_original_marked_fan_heights
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

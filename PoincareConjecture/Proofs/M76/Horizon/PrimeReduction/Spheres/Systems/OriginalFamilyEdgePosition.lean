@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfacePosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteSegmentCorrespondence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

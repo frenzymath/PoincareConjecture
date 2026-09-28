@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Minimizing.ExponentialChord
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -67,7 +57,6 @@ theorem tangentNorm_eq_of_mem_Icc
 
 omit [T2Space M] in
 
-
 theorem edist_le_of_geodesic_speed_Icc
     (g : PoincareConjecture.RiemannianMetric n M) {γ : ℝ → M} {a b C s t : ℝ}
     (hγ : g.IsGeodesicOn γ (Icc a b))
@@ -91,8 +80,6 @@ theorem edist_le_of_geodesic_speed_Icc
   · simpa only [abs_of_nonpos (sub_nonpos.mpr hst), neg_sub] using hforward s hs t ht hst
   · simpa only [PoincareConjecture.RiemannianMetric.edist, Manifold.riemannianEDist_comm,
       abs_of_nonneg (sub_nonneg.mpr hts)] using hforward t ht s hs hts
-
-
 
 theorem eq_nhds_of_common_minimizing_continuation
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)
@@ -138,8 +125,6 @@ private theorem tangentNorm_smul (g : PoincareConjecture.RiemannianMetric n M)
     g.tangentNorm p (a • v) = |a| * g.tangentNorm p v := by
   simp only [PoincareConjecture.RiemannianMetric.tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg a), Real.sqrt_sq_eq_abs]
-
-
 
 theorem eq_nhds_of_minimizing_extension
     (g : PoincareConjecture.RiemannianMetric n M) {γ η : ℝ → M} {q C : ℝ}

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -90,8 +79,6 @@ open Geometry.CubicalThreeSphere
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 theorem IsFinitePLBallPair.exists_marked_double_sphere_extension
     {b d q : Set E} (hb : IsFinitePLBallPair (Fin 3 → ℝ) b q)
     (hinter : b ∩ d = q) (e : d ≃ₜ upper) (he : e.IsFinitePL)
@@ -111,9 +98,6 @@ theorem IsFinitePLBallPair.exists_marked_double_sphere_extension
   · intro x
     rw [← hinter, ← lower_inter_upper]
     exact and_congr (hbH x) (hdH x)
-
-
-
 
 theorem IsFinitePLBallPair.exists_sphere_model_of_three_ball_union
     {b d q : Set E} (hb : IsFinitePLBallPair (Fin 3 → ℝ) b q)

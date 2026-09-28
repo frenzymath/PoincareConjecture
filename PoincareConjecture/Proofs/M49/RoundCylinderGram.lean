@@ -3,22 +3,11 @@ import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Analysis.InnerProductSpace.ProdL2
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators
 
 namespace PoincareConjecture.M49
-
-
 
 theorem roundCylinderCoordinateBasis_linearIndependent :
     LinearIndependent ℝ roundCylinderCoordinateBasis := by
@@ -33,8 +22,6 @@ theorem roundCylinderCoordinateBasis_linearIndependent :
       congrArg (fun x : RoundCylinderCoordinates => x.1 1) ha
   · simpa [Fin.sum_univ_three, roundCylinderCoordinateBasis] using
       congrArg (fun x : RoundCylinderCoordinates => x.2) ha
-
-
 
 theorem roundCylinderGram_posDef (u : ℝ) (hu : u < 1) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates)
@@ -86,8 +73,6 @@ theorem roundCylinderGram_posDef (u : ℝ) (hu : u < 1) (q : UnitTwoSphere)
     simp only [← mul_assoc, hs2]
   rw [hgram]
   exact Matrix.posDef_gram_of_linearIndependent hli
-
-
 
 theorem roundCylinder_zeroth_le_jetErrorSquared_of_lt_one (u : ℝ) (hu : u < 1)
     (B : RoundCylinderTwoTensor) (k : ℕ) (z : RoundCylinderSpace) :

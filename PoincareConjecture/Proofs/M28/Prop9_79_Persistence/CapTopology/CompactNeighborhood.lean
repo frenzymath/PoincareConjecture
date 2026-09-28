@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_compact_collar_neighborhood (N : CapCertificate g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :

@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_unit_interval_path (g : RiemannianMetric 3 M)
     {U : Set M} {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -64,8 +51,6 @@ theorem exists_unit_interval_path (g : RiemannianMetric 3 M)
       Manifold.pathELength (𝓡 3) γ a b
     simpa [η, ContinuousAffineMap.coe_lineMap_eq] using heq
 
-
-
 theorem intrinsicEDist_le_pathELength (g : RiemannianMetric 3 M)
     {U : Set M} {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 3) 1 γ (Icc a b))
@@ -79,8 +64,6 @@ theorem intrinsicEDist_le_pathELength (g : RiemannianMetric 3 M)
   rintro x ⟨t, ht, rfl⟩
   exact hσU ht
 
-
-
 theorem exists_intrinsic_competitor (g : RiemannianMetric 3 M)
     {U : Set M} {p q : M} {l : ℝ≥0∞}
     (hl : intrinsicEDist g U p q < l) :
@@ -90,9 +73,6 @@ theorem exists_intrinsic_competitor (g : RiemannianMetric 3 M)
   rw [intrinsicEDist] at hl
   obtain ⟨L, ⟨γ, hγ, h0, h1, hU, rfl⟩, hL⟩ := sInf_lt_iff.mp hl
   exact ⟨γ, h0, h1, hγ, fun t ht => hU ⟨t, ht, rfl⟩, hL⟩
-
-
-
 
 theorem exists_intrinsic_minimizing_sequence_of_path (g : RiemannianMetric 3 M)
     {U : Set M} {γ : ℝ → M} {a b L : ℝ} (hab : a ≤ b)

@@ -1,16 +1,5 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,10 +13,6 @@ variable {E : Type uE} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {H : Type uH} [TopologicalSpace H]
   {I : ModelWithCorners ℝ E H} {M : Type uM} [TopologicalSpace M]
   [T2Space M] [ChartedSpace H M] [IsManifold I ∞ M]
-
-
-
-
 
 theorem exists_finite_bump_partition_of_isCompact {K : Set M} (hK : IsCompact K)
     {α : Type uA} (U : α → Set M) (hU : ∀ i, IsOpen (U i))

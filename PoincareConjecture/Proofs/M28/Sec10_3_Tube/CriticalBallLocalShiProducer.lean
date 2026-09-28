@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCenteredNecks
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckDerivativeTransfer
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -158,9 +147,6 @@ theorem exists_criticalBallLocalShi_accuracy
     (g := H.normalizedSliceMetric k) (V := (T k).carrierOpen)
     (DU := H.tubeConnection T k) (D := D) l x] using hglobal
 
-
-
-
 theorem exists_criticalBallPointwiseShi_uniform_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -292,9 +278,6 @@ theorem exists_criticalBallPointwiseShi_uniform_accuracy
   simpa only [intrinsicOpenMetric_curvatureDerivativeNorm
     (g := H.normalizedSliceMetric k) (V := (T k).carrierOpen)
     (DU := H.tubeConnection T k) (D := D) l x] using hglobal
-
-
-
 
 theorem exists_criticalBallLocalShi_uniform_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

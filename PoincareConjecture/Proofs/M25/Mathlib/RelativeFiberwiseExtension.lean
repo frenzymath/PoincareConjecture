@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -29,10 +18,6 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {I : ModelWithCorners ℝ E H} [I.Boundaryless]
   {K : Type w} [TopologicalSpace K] [ChartedSpace H K]
   [IsManifold I ∞ K]
-
-
-
-
 
 theorem exists_relative_fiberwise_extension
     (A : Diffeomorph I I K K ∞) (h : K × ℝ → ℝ)

@@ -5,19 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Di
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,7 +20,6 @@ private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨finrank_euclideanSpace_fin⟩
 
 open Poincare.LinearAlgebra
-
 
 theorem contDiff_cofactorNormal {G : E3 -> E3} (hG : ContDiff Real ∞ G) :
     ContDiff Real ∞ (fun x => euclideanCofactorNormal (fderiv Real G x) x) := by
@@ -72,8 +58,6 @@ theorem contDiff_cofactorNormal {G : E3 -> E3} (hG : ContDiff Real ∞ G) :
       exact hA (σ k) k
   · exact (contDiff_apply Real Real j).comp (EuclideanSpace.equiv (Fin 3) Real).contDiff
 
-
-
 theorem exists_nonsingular_sphere_extension
     (f : S2 -> E3) (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f) :
     ∃ F : E3 -> E3, ContDiff Real ∞ F ∧
@@ -105,8 +89,6 @@ theorem exists_nonsingular_sphere_extension
   refine ⟨F, hF, fun p => (correctNormal_sphere G N (by simp)).trans (hrestrict p), ?_⟩
   intro p
   exact hlocal ⟨p, ContinuousLinearMap.isUnit_iff_bijective.mpr (hbij p)⟩
-
-
 
 theorem exists_sphere_neighborhood
     (f : S2 -> E3) (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f) :

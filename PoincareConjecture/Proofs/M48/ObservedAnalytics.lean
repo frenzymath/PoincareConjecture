@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M48.CanonicalAnalytics
 import PoincareConjecture.Proofs.M48.AnalyticWindow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,14 +68,12 @@ theorem pointwise {r : ℝ} (hr : 0 < r) (hre : r ≤ S.setup.epsilon)
     · intro s hs _
       exact (old.delta_le_initial hp s (hwindow hs).1).trans A.delta_le_component
 
-
 theorem observed {r : ℝ} (hr : 0 < r) (hre : r ≤ S.setup.epsilon)
     (canonical : SurgeryCanonicalOn F (surgeryObservationInterval O) r) :
     SurgeryHighCurvatureAnalyticOn F (surgeryObservationInterval O)
       (A.limitRadius r) S.calibration.analytic_constant := by
   intro t ht _ x hQ
   exact (A.pointwise hp old hr hre canonical t ht x hQ).2
-
 
 theorem continuation
     {Q : SurgeryNoncollapseExtension.{u} p} {R : SurgeryCanonicalExtension p Q}
@@ -95,8 +83,6 @@ theorem continuation
   apply A.observed hp old R.r_pos _ controls.canonical
   exact R.r_le_last.trans ((p.r_le_epsilon _).trans_eq
     (congrArg SurgeryControlSetup.epsilon hp.setup_eq))
-
-
 
 theorem frontier_scale
     {Q : SurgeryNoncollapseExtension.{u} p} {R : SurgeryCanonicalExtension p Q}

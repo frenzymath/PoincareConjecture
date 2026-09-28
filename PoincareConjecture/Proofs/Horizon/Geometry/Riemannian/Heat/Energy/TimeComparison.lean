@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.TimeIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
   {g : RiemannianMetric n M}
-
 
 theorem integrated_weighted_subsolution_cutoff_estimate (D : LeviCivitaData g)
     {u ξ : ℝ × M → ℝ} {a b : ℝ} (hab : a ≤ b)

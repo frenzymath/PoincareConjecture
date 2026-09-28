@@ -2,17 +2,6 @@ import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,15 +13,11 @@ namespace IsCoveringMap
 variable {E : Type u} {X : Type v} [TopologicalSpace E] [TopologicalSpace X]
   {p : E → X}
 
-
-
 theorem deck_eq_id_of_fixed [PreconnectedSpace E] (hp : IsCoveringMap p)
     (d : C(E, E)) (hd : p ∘ d = p) (x : E) (hx : d x = x) :
     d = ContinuousMap.id E := by
   apply ContinuousMap.ext
   exact congrFun (hp.eq_of_comp_eq d.continuous continuous_id hd x hx)
-
-
 
 theorem deck_fixedPointFree_of_ne_id [PreconnectedSpace E] (hp : IsCoveringMap p)
     (d : C(E, E)) (hd : p ∘ d = p) (hne : d ≠ ContinuousMap.id E) :
@@ -43,8 +28,6 @@ end IsCoveringMap
 
 namespace ContinuousMap
 
-
-
 theorem exists_open_disjoint_image_of_fixedPointFree
     {X : Type u} [TopologicalSpace X] [T2Space X]
     (f : C(X, X)) (hfree : ∀ x, f x ≠ x) (x : X) :
@@ -54,9 +37,6 @@ theorem exists_open_disjoint_image_of_fixedPointFree
   apply hUV.mono inter_subset_left
   rintro _ ⟨z, hz, rfl⟩
   exact hz.2
-
-
-
 
 theorem exists_finite_open_cover_disjoint_image_of_fixedPointFree
     {X : Type u} [TopologicalSpace X] [T2Space X] [CompactSpace X]

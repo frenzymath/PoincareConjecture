@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Curvature
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -76,8 +68,6 @@ private theorem exists_shifted_pullback_realization
       rfl) h0V
   simpa only [zero_add] using hh
 
-
-
 theorem tendsto_curvatureTensorNorm_of_moving_pullback_jets
     {α : Type*} {l : Filter α} [l.NeBot] {n : ℕ}
     {M : α → Type*} [∀ k, TopologicalSpace (M k)]
@@ -136,8 +126,6 @@ theorem tendsto_curvatureTensorNorm_of_moving_pullback_jets
   have ht := tendsto_curvatureTensorNorm_of_scalar_metric_jets (fun k => (gd k).2) hd.2 0 b hs
   rw [hnorm] at ht
   exact ht.congr' (hgd.mono fun _ hk => hk.2)
-
-
 
 theorem exists_local_curvatureTensorNorm_lt_of_flat_pullback_jets
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)]
@@ -227,9 +215,6 @@ private theorem isLocalDiffeomorphAt_source_parametrization
   rw [show y = (⟨y, hy⟩ : Piece U i).val from rfl,
     chartParametrization_apply, quotientChart_symm_apply U hU O i hy]
   rfl
-
-
-
 
 theorem eventually_curvatureTensorNorm_lt_on_compact_of_local_metric_jets
     {ι : Type*} {n : ℕ}

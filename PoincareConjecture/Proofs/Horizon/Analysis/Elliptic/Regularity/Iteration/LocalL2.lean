@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalInteg
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Topology
@@ -38,7 +30,6 @@ theorem memLp_two_restrict_finset_biUnion {ι : Type*} {u : E → ℝ}
     exact memLp_two_restrict_union (h i (Finset.mem_insert_self i s))
       (ih (fun j hj => h j (Finset.mem_insert_of_mem hj)))
 
-
 theorem compact_memLp_of_local_memLp {O : Set E} {u : E → ℝ}
     (hu : ∀ x ∈ O, ∃ V : Set E, IsOpen V ∧ x ∈ V ∧ V ⊆ O ∧
       MemLp u 2 (volume.restrict V)) :
@@ -50,7 +41,6 @@ theorem compact_memLp_of_local_memLp {O : Set E} {u : E → ℝ}
     mem_iUnion.mpr ⟨⟨x, hx⟩, hxV ⟨x, hx⟩⟩)
   exact (memLp_two_restrict_finset_biUnion s V (fun x _ => huV x)).mono_measure
     (Measure.restrict_mono hs le_rfl)
-
 
 theorem local_memLp_of_compact_memLp {O : Set E} {u : E → ℝ} (hO : IsOpen O)
     (hu : ∀ K, IsCompact K → K ⊆ O → MemLp u 2 (volume.restrict K)) :
@@ -69,7 +59,6 @@ theorem local_memLp_iff_compact_memLp {O : Set E} {u : E → ℝ} (hO : IsOpen O
     ∀ K, IsCompact K → K ⊆ O → MemLp u 2 (volume.restrict K) :=
   ⟨compact_memLp_of_local_memLp, local_memLp_of_compact_memLp hO⟩
 
-
 theorem local_memLp_mul_continuousOn {O : Set E} {u c : E → ℝ} (hO : IsOpen O)
     (hc : ContinuousOn c O)
     (hu : ∀ x ∈ O, ∃ V : Set E, IsOpen V ∧ x ∈ V ∧ V ⊆ O ∧
@@ -79,7 +68,6 @@ theorem local_memLp_mul_continuousOn {O : Set E} {u c : E → ℝ} (hO : IsOpen 
   apply local_memLp_of_compact_memLp hO
   intro K hK hKO
   exact compact_memLp_mul_continuousOn hc (compact_memLp_of_local_memLp hu) hK hKO
-
 
 theorem compact_memLp_mul_contDiffOn {O : Set E} {u c : E → ℝ} {k : WithTop ℕ∞}
     (hc : ContDiffOn ℝ k c O)

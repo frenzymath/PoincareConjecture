@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PartialFDeriv
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 import PoincareConjecture.Proofs.M09.InverseChartVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 3
@@ -27,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem RiemannianMetric.IsSmoothFamilyOn.contDiffWithinAt_spacetime_pullbackCoefficients_m63
     {g : ℝ → RiemannianMetric n M} {J : Set ℝ}
@@ -51,9 +38,6 @@ namespace M63
 
 variable {a b : ℝ}
 
-
-
-
 theorem chart_metric_coefficients_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
     ContDiffOn ℝ ∞
       (fun z : ℝ × E => (F.metric z.1).pullbackCoefficients (chartAt E p).symm z.2)
@@ -63,9 +47,6 @@ theorem chart_metric_coefficients_contDiffOn (F : RicciFlow n M (Icc a b)) (p : 
     (contMDiffOn_chart_symm.contMDiffAt ((chartAt E p).open_target.mem_nhds hz.2))
     hz.1).mono (fun _ hw => ⟨hw.1, mem_univ _⟩)
 
-
-
-
 theorem chart_metric_spatial_derivative_contDiffOn
     (F : RicciFlow n M (Icc a b)) (p : M) :
     ContDiffOn ℝ ∞
@@ -74,9 +55,6 @@ theorem chart_metric_spatial_derivative_contDiffOn
       (Icc a b ×ˢ (chartAt E p).target) :=
   (chart_metric_coefficients_contDiffOn F p).fderiv_snd_of_isOpen_m63
     (m := ∞) (chartAt E p).open_target (by simp)
-
-
-
 
 theorem chart_metric_pairing_pos (F : RicciFlow n M (Icc a b)) (p : M)
     (t : ℝ) {y V : E} (hy : y ∈ (chartAt E p).target) (hV : V ≠ 0) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitRP2Charts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ variable {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def limitCanonicalPhysicalChart
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -32,8 +22,6 @@ noncomputable def limitCanonicalPhysicalChart
   (limitRP2CylinderSliceChart e hU s hs).trans
     (limitRP2HistorySliceChart R (origin + s / scale) ht)
 
-
-
 theorem limitCanonicalPhysicalChart_source
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -41,8 +29,6 @@ theorem limitCanonicalPhysicalChart_source
     (limitCanonicalPhysicalChart e hU R s hs ht).source = U := by
   change U ∩ (e.forward s hs) ⁻¹' univ = U
   simp
-
-
 
 theorem limitCanonicalPhysicalChart_target
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -53,8 +39,6 @@ theorem limitCanonicalPhysicalChart_target
   have h := (limitCanonicalPhysicalChart e hU R s hs ht).toPartialEquiv.image_source_eq_target
   rw [limitCanonicalPhysicalChart_source] at h
   exact h.symm
-
-
 
 theorem limitCanonicalPhysicalChart_metric
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -78,8 +62,6 @@ theorem limitCanonicalPhysicalChart_metric
   exact congrArg (scale * ·) (R.metric_pullback _ ht (e.forward s hs x)
     (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x v)
     (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x w))
-
-
 
 theorem limitCanonicalPhysicalChart_point_identity
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)

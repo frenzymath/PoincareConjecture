@@ -8,16 +8,6 @@ import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import PoincareConjecture.Proofs.M76.Mathlib.SubdivisionVertices
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Domains
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -246,4 +236,3 @@ theorem exists_simplyConnected_jordan_domains
       hdis hcover hVf, hVc, hUb, hVb, hdis, hcover, hUf, hVf, hK⟩
 
 end PoincareConjecture.M76
-

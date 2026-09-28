@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfine
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.PathVariation
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.CompactMetricMinimizer
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_intrinsic_metric_segment_of_precompact_ball
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)

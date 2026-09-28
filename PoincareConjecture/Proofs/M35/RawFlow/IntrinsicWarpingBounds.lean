@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 import PoincareConjecture.Proofs.M35.RawFlow.ScalarFloor
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_intrinsic_warping_controls
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

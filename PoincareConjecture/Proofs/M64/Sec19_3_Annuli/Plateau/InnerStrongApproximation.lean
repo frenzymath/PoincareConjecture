@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerVectorMolli
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageDerivative
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -59,9 +48,6 @@ private theorem integral_square_tendsto
       (hf j).coeFn_toLp, hu.coeFn_toLp] with x hx hxf hxu
     simp only [hx, Pi.sub_apply, hxf, hxu]
   simpa only [heq, sub_self, norm_zero, zero_pow (by decide : 2 ≠ 0)] using hs
-
-
-
 
 theorem m64WeakMap_inner_strong_approximation
     {O K : Set Plane} (hO : IsOpen O) (hK : IsCompact K) (hKO : K ⊆ O)

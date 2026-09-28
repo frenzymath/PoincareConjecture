@@ -3,19 +3,6 @@ import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Analysis.Distribution.SchwartzSpace.Basic
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,8 +11,6 @@ open Set Filter MeasureTheory Metric ContinuousLinearMap
 open scoped Topology ContDiff SchwartzMap Convolution
 
 namespace PoincareConjecture
-
-
 
 theorem m64C1_schwartz_approximation {K : Set LoopPlane} (hK : IsCompact K)
     {f : LoopPlane → ℝ} (hf : ContDiff ℝ 1 f) {epsilon : ℝ} (hepsilon : 0 < epsilon) :

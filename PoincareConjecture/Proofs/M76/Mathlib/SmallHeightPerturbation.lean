@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UniformConvexPLLipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 open scoped NNReal
-
-
-
 
 theorem LipschitzOnWith.strictMonoOn_id_add_mul {f : ℝ → ℝ} {s : Set ℝ}
     {L : ℝ≥0} (hf : LipschitzOnWith L f s) {ε : ℝ} (hε : |ε| * (L : ℝ) < 1) :
@@ -34,10 +22,6 @@ theorem LipschitzOnWith.strictMonoOn_id_add_mul {f : ℝ → ℝ} {s : Set ℝ}
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_strictMonoOn_vertical_perturbation
     {g : E × ℝ → ℝ} {B : Set E} {α β : ℝ}

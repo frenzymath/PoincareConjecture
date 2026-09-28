@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialMetricFamily
 import PoincareConjecture.Proofs.M34.Standard.RicciOperatorEvaluation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -26,8 +16,6 @@ variable {g0 : StandardInitialMetric} {A : CompactCapApproximation g0}
   (G : InteriorCoefficientLimit A)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem limitMetric_equation (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x u v : StandardCapSpace) :
@@ -47,8 +35,6 @@ theorem limitMetric_equation (P : RicciFlowCurvatureTheory.{0})
   rw [hfunction]
   simpa only [map_zero, add_zero, zero_add, hop] using h
 
-
-
 noncomputable def initialFlow (P : RicciFlowCurvatureTheory.{0}) :
     RicciFlow 3 StandardCapSpace (Ico 0 A.time) where
   metric := G.limitMetric P
@@ -59,12 +45,8 @@ noncomputable def initialFlow (P : RicciFlowCurvatureTheory.{0}) :
   smooth := G.limitMetric_smooth P
   equation t ht x u v := G.limitMetric_equation P (t := t) ht x u v
 
-
-
 theorem initialFlow_metric_zero (P : RicciFlowCurvatureTheory.{0}) :
     (G.initialFlow P).metric 0 = g0.metric := G.limitMetric_zero P
-
-
 
 theorem initialFlow_connection_zero (P : RicciFlowCurvatureTheory.{0}) :
     HEq ((G.initialFlow P).connection 0) g0.connection := G.limitConnection_zero P

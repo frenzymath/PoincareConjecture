@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFinitePLBallImage
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76

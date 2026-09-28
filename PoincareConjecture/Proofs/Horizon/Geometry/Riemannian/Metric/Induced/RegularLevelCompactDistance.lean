@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevelDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.CompactRetraction
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -270,7 +264,6 @@ private theorem paired_retractions
     apply mul_le_mul_of_nonneg_right _ (Real.sqrt_nonneg _)
     norm_num
     nlinarith [mul_le_mul_of_nonneg_left (show f z-t≤2*r by linarith [hzf.2]) hH]
-
 
 end PoincareConjecture.LeviCivitaData
 

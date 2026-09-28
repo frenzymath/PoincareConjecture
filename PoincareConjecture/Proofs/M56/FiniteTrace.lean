@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M56.RegularTrace
 import PoincareConjecture.Proofs.M56.EventTrace
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m56Trace_zero (F : SurgeryFlowData.{u}) (x : (F.slice 0).carrier) :
     M56ComponentTrace F 0 where
@@ -37,8 +27,6 @@ noncomputable def m56Trace_zero (F : SurgeryFlowData.{u}) (x : (F.slice 0).carri
   inherited := by
     intro s hs _
     exact False.elim (F.zero_not_surgery ((le_antisymm s.2.2 s.2.1) ▸ hs))
-
-
 
 theorem m56Trace_exists (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.time_domain)
     (x : (F.slice T).carrier) :

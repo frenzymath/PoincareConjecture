@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Spectral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.GlobalHarnack
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 

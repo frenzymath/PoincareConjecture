@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem frameQuarterTurn_change
     (g : RiemannianMetric 2 S) (x : S)
@@ -41,7 +32,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
 
-
 theorem surfaceTurningForm_change_frame
     (D : LeviCivitaData g) (e₁ e₂ f₁ f₂ T V : (x : S) → TangentSpace (𝓡 2) x)
     (x : S) (he₁ : g.inner x (e₁ x) (e₁ x) = 1)
@@ -52,7 +42,6 @@ theorem surfaceTurningForm_change_frame
           D.surfaceTurningForm e₁ e₂ T V x := by
   unfold surfaceTurningForm
   rw [g.frameQuarterTurn_change x he₁ he₂ ho, map_smul, smul_eq_mul]
-
 
 theorem surfaceTurningForm_eq_of_frameDet_pos
     (D : LeviCivitaData g) (e₁ e₂ f₁ f₂ T V : (x : S) → TangentSpace (𝓡 2) x)
@@ -69,7 +58,6 @@ theorem surfaceTurningForm_eq_of_frameDet_pos
       g.inner x (f₁ x) (e₂ x) * g.inner x (f₂ x) (e₁ x) = 1 := by nlinarith
   rw [D.surfaceTurningForm_change_frame e₁ e₂ f₁ f₂ T V x he₁ he₂ he, hd, one_mul]
 
-
 theorem surfaceTurningForm_eq_neg_of_frameDet_neg
     (D : LeviCivitaData g) (e₁ e₂ f₁ f₂ T V : (x : S) → TangentSpace (𝓡 2) x)
     (x : S) (he₁ : g.inner x (e₁ x) (e₁ x) = 1)
@@ -85,7 +73,6 @@ theorem surfaceTurningForm_eq_neg_of_frameDet_neg
       g.inner x (f₁ x) (e₂ x) * g.inner x (f₂ x) (e₁ x) = -1 := by nlinarith
   rw [D.surfaceTurningForm_change_frame e₁ e₂ f₁ f₂ T V x he₁ he₂ he, hd, neg_one_mul]
 
-
 theorem surfaceTurningForm_neg_field
     (D : LeviCivitaData g) (e₁ e₂ T V : (x : S) → TangentSpace (𝓡 2) x)
     (x : S) (hT : MDifferentiableAt (𝓡 2) ((𝓡 2).prod (𝓡 2)) (T% T) x) :
@@ -95,7 +82,6 @@ theorem surfaceTurningForm_neg_field
   simp only [surfaceTurningForm, hneg, Pi.neg_apply, neg_apply, map_neg, neg_smul,
     neg_neg, map_add, map_smul, smul_eq_mul]
   ring
-
 
 theorem surfaceTurningForm_neg_direction
     (D : LeviCivitaData g) (e₁ e₂ T V : (x : S) → TangentSpace (𝓡 2) x) (x : S) :

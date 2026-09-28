@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarSmoothDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.H3
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -114,13 +102,6 @@ private theorem localized_smooth_forcing_data
     BoundaryLocalization.memWkp_mul_smooth_of_tsupport_subset 2 hH hU hu2 hψ hψc hψs,
     _, hloc.1.memW1p, hloc.2⟩
 
-
-
-
-
-
-
-
 theorem exists_local_memWkp_three_of_smooth_forcing (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain 2 Ω) (x : closure Ω) :
     ∃ (e : OpenPartialHomeomorph Plane Plane) (χ : Plane → ℝ) (V : Set Plane),
@@ -163,13 +144,6 @@ theorem exists_local_memWkp_three_of_smooth_forcing (D : LeviCivitaData g)
   apply (Euclidean.MemWkp_congr_ae (by norm_num) (hT.inter hH) _).mp hu3
   filter_upwards [ae_restrict_mem (hT.inter hH).measurableSet] with z hz
   simp only [hψone z (subset_closure hz.1), one_mul]
-
-
-
-
-
-
-
 
 theorem exists_annular_boundary_H3_correction (D : LeviCivitaData g) :
     ∃ u : H1Zero D scalarAnnulus,

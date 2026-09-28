@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Variation.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
-
-
-
-
-
-
-

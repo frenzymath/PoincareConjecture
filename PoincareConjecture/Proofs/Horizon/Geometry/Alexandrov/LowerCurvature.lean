@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.ComparisonAngle
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.FiniteApproximation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace Poincare.Alexandrov
-
 
 def CurvatureGEnegOne (X : Type*) [MetricSpace X] : Prop :=
   ∀ q : Fin 4 → X, Function.Injective q →
@@ -25,14 +15,11 @@ def CurvatureGEnegOne (X : Type*) [MetricSpace X] : Prop :=
       comparisonAngle (dist (q 0) (q 2)) (dist (q 0) (q 3)) (dist (q 2) (q 3)) ≤
       2 * Real.pi
 
-
 theorem CurvatureGEnegOne.of_isometry {X Y : Type*} [MetricSpace X] [MetricSpace Y]
     (hY : CurvatureGEnegOne Y) {f : X → Y} (hf : Isometry f) :
     CurvatureGEnegOne X := by
   intro q hq
   simpa only [Function.comp_apply, hf.dist_eq] using hY (f ∘ q) (hf.injective.comp hq)
-
-
 
 theorem fourPoint_comparison_of_tendsto_dist
     {X : ℕ → Type*} [∀ j, MetricSpace (X j)]

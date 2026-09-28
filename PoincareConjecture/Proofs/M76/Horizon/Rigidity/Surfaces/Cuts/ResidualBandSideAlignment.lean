@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ResidualBandCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -33,8 +25,6 @@ private theorem preconnected_subset_one_closed_piece
     obtain ⟨z, hzS, hzUV⟩ := (isPreconnected_closed_iff.mp hS) U V hU hV hcover
       ⟨y, hy, hyU⟩ ⟨x, hx, hxV⟩
     exact disjoint_left.mp havoid hzS hzUV
-
-
 
 theorem closed_rim_halves_side_alignment
     {X : Type*} [TopologicalSpace X] {U V Pa Pb T W : Set X} {a b : X}
@@ -149,9 +139,6 @@ theorem residualBand_bridge_cut_side_alignment
     (primalEdgeMark_not_mem_cofaceContact K hbound e b hvb ht htc het)
     (primalEdgeMark_not_mem_cofaceContact K hbound e a hva hu huc heu)
     (primalEdgeMark_not_mem_cofaceContact K hbound e b hvb hu huc heu)
-
-
-
 
 theorem exists_residualBand_bridge_cut_aligned
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

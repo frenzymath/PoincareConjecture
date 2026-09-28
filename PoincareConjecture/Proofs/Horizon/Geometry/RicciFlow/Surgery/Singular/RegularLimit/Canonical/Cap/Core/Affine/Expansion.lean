@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Affine.Comparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ theorem tensorWeight_le_pow {a : ℝ} (ha : 1 ≤ a)
         simp only [axisWeight]
         split <;> linarith
     _ = a ^ r := by simp
-
-
 
 theorem tensorNorm_expansion {a u : ℝ} (ha : 1 ≤ a) (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) {r : ℕ}
@@ -72,8 +62,6 @@ theorem normalized_rank_expansion_cost {c a : ℝ} (hca : c * a ^ 2 = 1) (k : �
       ring
     _ = (a ^ 2) ^ k := by rw [hca]; simp
 
-
-
 theorem retained_scalar_power_lower {ε c : ℝ} (hε : 0 < ε) (hc : 0 < c)
     (hcε : 1 - c ≤ ε / 4) {k : ℕ} (hk : k ≤ ⌊(2 * ε)⁻¹⌋₊) :
     (7 / 8 : ℝ) ≤ c ^ k := by
@@ -96,8 +84,6 @@ theorem retained_normalized_expansion_cost_le {ε c a : ℝ}
   have heq : c ^ k * (a ^ 2) ^ k = 1 := by rw [← mul_pow, hca, one_pow]
   have hn : 0 ≤ (a ^ 2) ^ k := pow_nonneg (sq_nonneg a) k
   nlinarith
-
-
 
 theorem normalized_expansion_cost_le_of_order_deficit {c a b : ℝ}
     (hc : 0 < c) (hb : 0 < b) (hca : c * a ^ 2 = 1) (k : ℕ)
@@ -126,8 +112,6 @@ theorem retained_normalized_expansion_cost_le_half {ε c a : ℝ}
   have hdeficit : (3 / 4 : ℝ) ≤ 1 - (k : ℝ) * (1 - c) := by nlinarith
   simpa using normalized_expansion_cost_le_of_order_deficit hc
     (by norm_num : (0 : ℝ) < 3 / 4) hca k hdeficit
-
-
 
 theorem errorPullback_jetError_expansion_le {ε c a : ℝ}
     (hε : 0 < ε) (hc : 0 < c) (hcε : 1 - c ≤ ε / 2)
@@ -200,8 +184,6 @@ theorem normalized_jetError_expansion_weighted_le {ε δ c a : ℝ}
     (errorPullback_jetError_expansion_le hε hc hcε ha hca s B hbilinear order horder z)
     (show 0 ≤ 1 + θ by linarith)
 
-
-
 theorem close_normalized_expanding_pullback {ε c a : ℝ} (hε : 0 < ε)
     (hc : 0 < c) (hcone : c ≤ 1) (hcε : 1 - c ≤ ε / 2)
     (ha : 1 ≤ a) (hca : c * a ^ 2 = 1) (s : ℝ)
@@ -223,9 +205,6 @@ theorem close_normalized_expanding_pullback {ε c a : ℝ} (hε : 0 < ε)
     B hB.1 hbilinear hsub ⌊(2 * ε)⁻¹⌋₊ le_rfl z hz (by norm_num : (0 : ℝ) < 2)
   have hsmall : (c - 1) ^ 2 ≤ (ε / 2) ^ 2 := by nlinarith
   nlinarith
-
-
-
 
 theorem close_normalized_pullback_of_abs {ε c a : ℝ}
     (hε : 0 < ε) (hεsmall : ε ≤ 1 / 200) (hc : 0 < c)

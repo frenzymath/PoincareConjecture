@@ -2,46 +2,11 @@ import PoincareConjecture.Statements.M51GlobalSchedule
 import PoincareConjecture.Proofs.M51.InductionPreparation
 import PoincareConjecture.Proofs.M51.GlobalAssembly
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem repairedGlobalSchedule : RepairedGlobalScheduleTheory.{u} := by
   constructor

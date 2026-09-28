@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.CompactConvexComplement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -57,9 +46,6 @@ private theorem clippedScale_one (d : ℝ) : clippedScale d 1 = 1 := by
   rw [clippedScale, max_eq_left]
   exact (inv_le_one₀ (zero_lt_one.trans_le (le_max_right _ _))).mpr (le_max_right _ _)
 
-
-
-
 def halfSpaceExpansionScale (c R : ℝ) (hR : 0 < R) :
     C(({((0 : E), c)}ᶜ : Set (E × ℝ)), ℝ) := by
   let q : E × ℝ := (0, c)
@@ -74,15 +60,11 @@ def halfSpaceExpansionScale (c R : ℝ) (hR : 0 < R) :
   · intro y
     exact (hd y |>.trans_le (le_max_left _ _)).ne'
 
-
-
 theorem halfSpaceExpansionScale_ge_one (c R : ℝ) (hR : 0 < R)
     (y : ({((0 : E), c)}ᶜ : Set (E × ℝ))) :
     1 ≤ halfSpaceExpansionScale c R hR y := clippedScale_ge_one _ _
 
 variable [NormedSpace ℝ E]
-
-
 
 def halfSpaceExpansion (c R : ℝ) (hR : 0 < R) :
     C(unitInterval × ({((0 : E), c)}ᶜ : Set (E × ℝ)), E × ℝ) :=
@@ -105,8 +87,6 @@ private theorem halfSpaceExpansion_scale_bounds (c R : ℝ) (hR : 0 < R)
     ⟨halfSpaceExpansionScale_ge_one c R hR y, le_rfl⟩
     ⟨le_rfl, halfSpaceExpansionScale_ge_one c R hR y⟩ s.property
 
-
-
 theorem halfSpaceExpansion_ne_center (c R : ℝ) (hR : 0 < R)
     (s : unitInterval) (y : ({((0 : E), c)}ᶜ : Set (E × ℝ))) :
     halfSpaceExpansion c R hR (s, y) ≠ (0, c) := by
@@ -117,16 +97,12 @@ theorem halfSpaceExpansion_ne_center (c R : ℝ) (hR : 0 < R)
     exact add_left_cancel (h.trans (add_zero ((0 : E), c)).symm)
   exact (sub_ne_zero.mpr y.property) ((smul_eq_zero.mp hzero).resolve_left ha.ne')
 
-
-
 theorem halfSpaceExpansion_one (c R : ℝ) (hR : 0 < R)
     (y : ({((0 : E), c)}ᶜ : Set (E × ℝ))) :
     halfSpaceExpansion c R hR (1, y) = y.val := by
   change (0, c) + AffineMap.lineMap (halfSpaceExpansionScale c R hR y) 1 (1 : ℝ) •
     (y.val - (0, c)) = y.val
   rw [AffineMap.lineMap_apply_one, one_smul, add_sub_cancel]
-
-
 
 theorem halfSpaceExpansion_plane (c R : ℝ) (hR : 0 < R)
     (s : unitInterval) (y : ({((0 : E), c)}ᶜ : Set (E × ℝ))) (hy : y.val.2 = 0) :
@@ -137,9 +113,6 @@ theorem halfSpaceExpansion_plane (c R : ℝ) (hR : 0 < R)
   change (0, c) + AffineMap.lineMap (halfSpaceExpansionScale c R hR y) 1 (s : ℝ) •
     (y.val - (0, c)) = y.val
   rw [hs, AffineMap.lineMap_same, AffineMap.const_apply, one_smul, add_sub_cancel]
-
-
-
 
 theorem halfSpaceExpansion_height (c R : ℝ) (hc : c ≠ 0) (hR : 0 < R)
     (s : unitInterval) (y : ({((0 : E), c)}ᶜ : Set (E × ℝ)))
@@ -164,8 +137,6 @@ theorem halfSpaceExpansion_height (c R : ℝ) (hc : c ≠ 0) (hR : 0 < R)
   rw [he]
   linarith
 
-
-
 theorem halfSpaceExpansion_zero_mem (c R : ℝ) (hc : c ≠ 0) (hR : 0 < R)
     (y : ({((0 : E), c)}ᶜ : Set (E × ℝ))) (hy : 0 ≤ y.val.2 / c) :
     (halfSpaceExpansion c R hR (0, y)).2 = 0 ∨
@@ -188,8 +159,6 @@ theorem halfSpaceExpansion_zero_mem (c R : ℝ) (hc : c ≠ 0) (hR : 0 < R)
     have hz' : a * (1 - y.val.2 / c) = 1 := hz
     field_simp [hc] at hz'
     nlinarith
-
-
 
 theorem halfSpaceExpansion_not_mem (c R : ℝ) (hR : 0 < R)
     (K : Set (E × ℝ)) (hK : Convex ℝ K) (hq : ((0 : E), c) ∈ K)

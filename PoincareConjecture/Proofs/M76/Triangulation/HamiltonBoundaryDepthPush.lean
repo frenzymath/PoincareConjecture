@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -38,16 +29,11 @@ private theorem inwardDepth_zero {h t : ℝ} (hh : h ∈ I) (ht : t ∈ I) :
   · rintro ⟨rfl, rfl⟩
     norm_num [inwardDepth]
 
-
-
 noncomputable def inwardBoundaryDepthMap {E : Type*} (h : E → ℝ)
     (p : E × ℝ) : E × ℝ := (p.1, inwardDepth (h p.1) p.2)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {S : Set E}
-
-
-
 
 theorem inwardBoundaryDepthMap_properties (h : E → ℝ)
     (hPL : FinitePiecewiseAffineOn h S) (hbound : MapsTo h S I) :

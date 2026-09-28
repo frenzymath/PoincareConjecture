@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.RadialMapJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

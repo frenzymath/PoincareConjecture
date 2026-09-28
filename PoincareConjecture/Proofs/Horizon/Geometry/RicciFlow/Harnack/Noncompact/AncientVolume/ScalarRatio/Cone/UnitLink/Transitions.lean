@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Universa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +18,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 namespace PoincareConjecture.RiemannianMetric
 
 private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
-
-
 
 theorem edist_eq_on_isometric_chart_transition
     {n m : ℕ} {Y : Type*} [MetricSpace Y]
@@ -48,8 +35,6 @@ theorem edist_eq_on_isometric_chart_transition
   rw [← hG _ (G.map_target hx.2) _ (G.map_target hy.2),
     G.right_inv hx.2, G.right_inv hy.2, hF x hx.1 y hy.1]
 
-
-
 theorem contDiffOn_isometric_chart_transition
     {n m : ℕ} {Y : Type*} [MetricSpace Y]
     (g : RiemannianMetric n (E n)) (h : RiemannianMetric m (E m))
@@ -59,9 +44,6 @@ theorem contDiffOn_isometric_chart_transition
     ContDiffOn ℝ ∞ (F.trans G.symm) (F.trans G.symm).source :=
   g.contDiffOn_of_edist_eq h (F.trans G.symm).open_source
     (g.edist_eq_on_isometric_chart_transition h F G hF hG)
-
-
-
 
 theorem contMDiffOn_regularLevel_transition_of_isometric_charts
     {n : ℕ} {Y : Type*} [MetricSpace Y]
@@ -107,9 +89,6 @@ theorem contMDiffOn_regularLevel_transition_of_isometric_charts
   change openLevelIncl f₂ U₂ c (T z) = G.symm (F (openLevelIncl f₁ U₁ c z))
   rw [← hT z hz]
   exact (G.left_inv (T z).1.2).symm
-
-
-
 
 theorem regularLevelMetric_transition_of_isometric_charts
     {n : ℕ} {Y : Type*} [MetricSpace Y]
@@ -198,8 +177,6 @@ theorem levelEmbedding_val (d : UnitSliceRadialChartData hcomparison n)
     (z x : d.Level) :
     (d.levelEmbedding z x).1 = d.ambientChart (openLevelIncl d.potential d.source (1 / 2) x) := rfl
 
-
-
 def levelTransition (d₁ d₂ : UnitSliceRadialChartData hcomparison n)
     (z₁ : d₁.Level) (z₂ : d₂.Level) : OpenPartialHomeomorph d₁.Level d₂.Level :=
   (d₁.levelEmbedding z₁).trans (d₂.levelEmbedding z₂).symm
@@ -223,8 +200,6 @@ theorem contMDiffOn_levelTransition (d₁ d₂ : UnitSliceRadialChartData hcompa
     d₁.potential d₂.potential d₁.smooth d₂.smooth d₁.regular d₂.regular (1 / 2)
     (d₁.levelTransition d₂ z₁ z₂) (fun _ hx => d₁.levelTransition_ambient d₂ z₁ z₂ hx)
 
-
-
 theorem regularLevelMetric_levelTransition
     (d₁ d₂ : UnitSliceRadialChartData hcomparison n)
     (z₁ : d₁.Level) (z₂ : d₂.Level) {x : d₁.Level}
@@ -242,8 +217,6 @@ theorem regularLevelMetric_levelTransition
     d₁.potential d₂.potential d₁.smooth d₂.smooth d₁.regular d₂.regular (1 / 2)
     (d₁.levelTransition d₂ z₁ z₂) (fun _ hx => d₁.levelTransition_ambient d₂ z₁ z₂ hx)
     x hx v w
-
-
 
 theorem contDiffOn_chart_transition (d₁ d₂ : UnitSliceRadialChartData hcomparison n)
     (z₁ : d₁.Level) (z₂ : d₂.Level) :

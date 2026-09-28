@@ -1,31 +1,12 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Attachment.ClosingCapTail
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Boundary
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 open _root_.PoincareConjecture.CapCertificate
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -40,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem closing_sides_accumulate_outside_tube (C D : CapCertificate g)
     {U K : Set M} (hU : IsOpen U) (hend : C.end_neck.carrier ⊆ U)
@@ -87,8 +66,6 @@ theorem closing_sides_accumulate_outside_tube (C D : CapCertificate g)
       (hV.inter hK.isOpen_compl) ⟨hcV, hcK⟩
     exact ⟨y, hy.1, hyU, hy.2⟩
   exact ⟨⟨x, hxside, hxout⟩, ⟨C.boundary_neck.center, hcside, hcout⟩⟩
-
-
 
 theorem exists_second_cap_essential_slice_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

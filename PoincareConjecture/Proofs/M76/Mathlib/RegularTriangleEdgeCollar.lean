@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RegularSlabTriangleLabels
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeSlab
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPreservingEdgeIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLStrip
@@ -20,9 +11,6 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_triangle_segment_edge_collar (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ}
     (hi : AffineIndependent ℝ ![v, u, w]) (hαβ : α < β)

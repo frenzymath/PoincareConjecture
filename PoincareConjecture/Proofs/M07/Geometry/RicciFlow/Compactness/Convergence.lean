@@ -1,8 +1,6 @@
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Pointed
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

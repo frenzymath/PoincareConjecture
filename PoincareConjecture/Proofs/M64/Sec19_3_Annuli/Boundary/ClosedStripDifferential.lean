@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.PeriodicStripEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteConformality
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,10 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M64
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem annulusClosedStrip_uniqueDiffOn : UniqueDiffOn ℝ S := by
   have hc : Convex ℝ S := (convex_Icc (0 : ℝ) 1).linear_preimage
@@ -37,10 +28,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
-
-
 theorem annulus_within_derivative_restrict {f : LoopPlane → M}
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f S) {p : LoopPlane} (hp : p ∈ m64AnnulusDomain) :
     mfderivWithin (𝓡 2) (𝓡 n) f m64AnnulusDomain p =
@@ -50,10 +37,6 @@ theorem annulus_within_derivative_restrict {f : LoopPlane → M}
     ((hf p hp.2.2).mdifferentiableWithinAt one_ne_zero)
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
-
 
 theorem annulus_strip_derivative_translate {f : LoopPlane → M}
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f S) (T : LoopPlane) (hT : T 1 = 0)
@@ -83,11 +66,6 @@ theorem annulus_strip_derivative_translate {f : LoopPlane → M}
   intro v
   exact congrArg (fun L => L v) hall
 
-
-
-
-
-
 theorem annulus_strip_derivative_representative (A : M64Annulus g c0 c1)
     (hA : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S) {p : LoopPlane} (hp : p ∈ S) :
     ∃ q ∈ m64AnnulusDomain, A.map q = A.map p ∧
@@ -101,10 +79,6 @@ theorem annulus_strip_derivative_representative (A : M64Annulus g c0 c1)
   rw [hpoint] at hder hvalue
   exact ⟨q, hq, hvalue, (annulus_within_derivative_restrict hA hq).trans hder⟩
 
-
-
-
-
 theorem annulus_strip_within_injective (A : M64Annulus g c0 c1)
     (hA : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S)
     (hinj : ∀ p ∈ m64AnnulusDomain,
@@ -113,10 +87,6 @@ theorem annulus_strip_within_injective (A : M64Annulus g c0 c1)
   intro p hp
   obtain ⟨q, hq, -, hd⟩ := annulus_strip_derivative_representative A hA hp
   simpa +instances only [hd] using! hinj q hq
-
-
-
-
 
 theorem annulus_strip_within_conformal (A : M64Annulus g c0 c1) (r : ℝ)
     (hA : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S)

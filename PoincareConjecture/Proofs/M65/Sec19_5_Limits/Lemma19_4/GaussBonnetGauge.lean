@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeRegularity
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set Filter Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem cauchyGauge_weak_derivatives_projection {B : Type*} [NormedRing B]
     [NormedAlgebra ℂ B] [CompleteSpace B] [NormOneClass B]
@@ -124,11 +111,6 @@ private theorem actual_derivative_eq_L2_of_weak_identity {F : ℂ → ℂ} {U : 
       _ = 0 := by rw [integral_sub hiD hid, hibp, hweak φ hφ hφs, sub_self]
   filter_upwards [ae_restrict_of_ae hzero, ae_restrict_mem hU.measurableSet] with z hz hzU
   exact sub_eq_zero.mp (hz hzU)
-
-
-
-
-
 
 theorem cauchyGauge_projection_derivatives_memLp {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B0 : ℝ} {U : Set ℂ}

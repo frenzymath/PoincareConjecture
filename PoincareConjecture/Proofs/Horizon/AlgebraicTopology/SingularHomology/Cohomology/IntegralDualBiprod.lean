@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.IntegralCochains
 import Mathlib.Algebra.Homology.HomologicalComplexBiprod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

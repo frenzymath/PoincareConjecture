@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ namespace PoincareConjecture.M63
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
-
 
 theorem curveVelocity_moving_labels (q : ℝ → ℝ → M) {psi : ℝ → ℝ} {t w : ℝ}
     (hq : MDifferentiableAt ((𝓘(ℝ, ℝ)).prod 𝓘(ℝ, ℝ)) (𝓡 n)
@@ -63,9 +49,6 @@ theorem curveVelocity_moving_labels (q : ℝ → ℝ → M) {psi : ℝ → ℝ} 
 
 variable [IsManifold (𝓡 n) ∞ M] {a b : ℝ}
 
-
-
-
 theorem curvatureVector_eq_acceleration_sub_tangent
     (F : RicciFlow n M (Set.Icc a b)) (q : ℝ → ℝ → M) {t x v' : ℝ}
     (hX : MDifferentiableAt 𝓘(ℝ, ℝ) ((𝓡 n).prod (𝓡 n))
@@ -89,10 +72,6 @@ theorem curvatureVector_eq_acceleration_sub_tangent
       (curveSpeed F q t x ^ 2)⁻¹ := by
     rw [pow_two, mul_inv]
   rw [hcoeff, hsquare, neg_smul, sub_eq_add_neg, add_comm]
-
-
-
-
 
 theorem normal_equation_of_parabolic_gauge
     (F : RicciFlow n M (Set.Icc a b)) (q : ℝ → ℝ → M) (psi : ℝ → ℝ → ℝ)

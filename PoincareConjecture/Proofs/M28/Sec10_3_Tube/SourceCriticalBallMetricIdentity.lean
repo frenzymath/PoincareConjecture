@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
 
 theorem intrinsicOpenMetric_pullbackCoefficients (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M)
@@ -51,7 +42,6 @@ namespace CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
 
 theorem tubeCriticalMetric_pullbackCoefficients (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (Acrit : ℝ) (k : ℕ)

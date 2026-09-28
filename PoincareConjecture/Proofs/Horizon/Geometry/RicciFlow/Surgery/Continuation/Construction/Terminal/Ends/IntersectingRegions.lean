@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckBoundary
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

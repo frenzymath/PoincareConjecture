@@ -1,31 +1,16 @@
 import PoincareConjecture.Proofs.M04.CompactParabolic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Real
 
-
-
 noncomputable def quadraticGrowthBarrier (c B t : ℝ) : ℝ := B / (1 - c * B * t)
-
-
 
 theorem quadraticGrowthBarrier_zero (c B : ℝ) : quadraticGrowthBarrier c B 0 = B := by
   simp [quadraticGrowthBarrier]
-
-
 
 theorem hasDerivAt_quadraticGrowthBarrier (c B t : ℝ) (ht : 1 - c * B * t ≠ 0) :
     HasDerivAt (quadraticGrowthBarrier c B)
@@ -37,8 +22,6 @@ theorem hasDerivAt_quadraticGrowthBarrier (c B t : ℝ) (ht : 1 - c * B * t ≠ 
   field_simp
   ring
 
-
-
 theorem quadraticGrowthBarrier_le_twice {c B t : ℝ} (hB : 0 ≤ B)
     (ht : c * B * t ≤ 1 / 2) : quadraticGrowthBarrier c B t ≤ 2 * B := by
   have hden : 0 < 1 - c * B * t := by linarith
@@ -46,9 +29,6 @@ theorem quadraticGrowthBarrier_le_twice {c B t : ℝ} (hB : 0 ≤ B)
   nlinarith [mul_le_mul_of_nonneg_left ht hB]
 
 end Real
-
-
-
 
 theorem compact_nonnegative_norm_le_quadraticGrowthBarrier
     {X : Type*} [TopologicalSpace X] [CompactSpace X] {T B c : ℝ}

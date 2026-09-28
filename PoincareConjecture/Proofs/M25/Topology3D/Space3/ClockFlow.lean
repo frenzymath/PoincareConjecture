@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowAlgebra
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped NNReal
@@ -19,13 +9,10 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
-
 def clockField (V : ℝ × E → E) (p : ℝ × E) : ℝ × E := (1, V p)
 
 variable (V : ℝ × E → E) {K L : ℝ≥0}
 variable (hK : LipschitzWith K (clockField V)) (hL : ∀ p, ‖clockField V p‖ ≤ L)
-
 
 theorem boundedClockFlow_fst (p : ℝ × E) (t : ℝ) :
     (boundedFlow (clockField V) hK hL p t).1 = p.1 + t := by
@@ -43,10 +30,8 @@ theorem boundedClockFlow_fst (p : ℝ × E) (t : ℝ) :
   simp only [boundedFlow_zero, sub_zero] at hconst
   linarith
 
-
 noncomputable def clockEvolution (s t : ℝ) (x : E) : E :=
   (boundedFlow (clockField V) hK hL (s, x) (t - s)).2
-
 
 theorem boundedClockFlow_eq (s t : ℝ) (x : E) :
     boundedFlow (clockField V) hK hL (s, x) (t - s) =
@@ -57,11 +42,9 @@ theorem boundedClockFlow_eq (s t : ℝ) (x : E) :
     ring
   · rfl
 
-
 @[simp] theorem clockEvolution_self (s : ℝ) (x : E) :
     clockEvolution V hK hL s s x = x := by
   simp only [clockEvolution, sub_self, boundedFlow_zero]
-
 
 theorem clockEvolution_hasDerivAt (s t : ℝ) (x : E) :
     HasDerivAt (fun r => clockEvolution V hK hL s r x)
@@ -76,7 +59,6 @@ theorem clockEvolution_hasDerivAt (s t : ℝ) (x : E) :
   rw [boundedClockFlow_eq] at hproj'
   exact hproj'
 
-
 theorem clockEvolution_trans (s t u : ℝ) (x : E) :
     clockEvolution V hK hL t u (clockEvolution V hK hL s t x) =
       clockEvolution V hK hL s u x := by
@@ -87,12 +69,9 @@ theorem clockEvolution_trans (s t u : ℝ) (x : E) :
   rw [htime]
   rfl
 
-
 @[simp] theorem clockEvolution_reverse (s t : ℝ) (x : E) :
     clockEvolution V hK hL t s (clockEvolution V hK hL s t x) = x := by
   rw [clockEvolution_trans, clockEvolution_self]
-
-
 
 noncomputable def clockEvolutionEquiv (s t : ℝ) : E ≃ E where
   toFun := clockEvolution V hK hL s t

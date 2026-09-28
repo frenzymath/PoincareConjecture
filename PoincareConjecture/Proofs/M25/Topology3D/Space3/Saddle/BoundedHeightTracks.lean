@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockFlow
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open scoped NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem boundedFlow_norm_sub_le (F : E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K F) (hL : ∀ y, ‖F y‖ ≤ L) (y : E) (t : ℝ) :
@@ -31,10 +19,6 @@ theorem boundedFlow_norm_sub_le (F : E → E) {K L : ℝ≥0}
     (fun s _ => hL (boundedFlow F hK hL y s)) (convex_univ : Convex ℝ (univ : Set ℝ))
     (mem_univ (0 : ℝ)) (mem_univ t)
   simpa only [boundedFlow_zero, sub_zero, Real.norm_eq_abs] using h
-
-
-
-
 
 theorem exists_boundedFlow_unit_height_interval (F : E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K F) (hL : ∀ y, ‖F y‖ ≤ L)
@@ -81,8 +65,6 @@ theorem exists_boundedFlow_unit_height_interval (F : E → E) {K L : ℝ≥0}
   have heq := sub_eq_zero.mp (norm_le_zero_iff.mp hzero)
   simp only [boundedFlow_zero, sub_zero] at heq
   linarith
-
-
 
 theorem clockEvolution_norm_sub_le (V : ℝ × E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K (clockField V)) (hL : ∀ p, ‖clockField V p‖ ≤ L)

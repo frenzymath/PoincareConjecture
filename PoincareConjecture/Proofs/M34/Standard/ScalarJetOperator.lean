@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarMetricJets
 import PoincareConjecture.Proofs.M34.Standard.CurvatureJetRealization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem RiemannianMetric.inverseCoefficients_eq_inverse_gram {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -53,14 +42,10 @@ namespace M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def scalarTwoJet {n : ℕ} (J : MetricTwoJet n) : ℝ :=
   ∑ i, ∑ j, EuclideanSpace.proj j (J.1.inverse (EuclideanSpace.proj i)) *
     jetRicci J (EuclideanSpace.basisFun (Fin n) ℝ i)
       (EuclideanSpace.basisFun (Fin n) ℝ j)
-
-
 
 theorem contDiffAt_scalarTwoJet {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) : ContDiffAt ℝ ∞ scalarTwoJet J := by
@@ -73,8 +58,6 @@ theorem contDiffAt_scalarTwoJet {n : ℕ} {J : MetricTwoJet n}
   intro j _
   exact ((EuclideanSpace.proj (𝕜 := ℝ) j).contDiff.contDiffAt.comp J
     (hI.clm_apply contDiffAt_const)).mul (contDiffAt_jetRicci hJ _ _)
-
-
 
 theorem scalarTwoJet_metricTwoJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -89,14 +72,10 @@ theorem scalarTwoJet_metricTwoJet {n : ℕ}
   congr 1
   exact g.inverseCoefficients_eq_inverse_gram x i j
 
-
-
 noncomputable def scalarJetOperator (n m : ℕ) :
     Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + m) →
       (EuclideanSpace ℝ (Fin n)) [×m]→L[ℝ] ℝ :=
   operator 2 (scalarTwoJet ∘ twoJetProjection n) m
-
-
 
 theorem contDiffOn_scalarJetOperator (n m : ℕ) :
     ContDiffOn ℝ ∞ (scalarJetOperator n m) (curvatureJetDomain n m) := by
@@ -104,8 +83,6 @@ theorem contDiffOn_scalarJetOperator (n m : ℕ) :
   intro J hJ
   exact ((contDiffAt_scalarTwoJet hJ).comp J
     (twoJetProjection n).contDiff.contDiffAt).contDiffWithinAt
-
-
 
 theorem scalarJetOperator_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

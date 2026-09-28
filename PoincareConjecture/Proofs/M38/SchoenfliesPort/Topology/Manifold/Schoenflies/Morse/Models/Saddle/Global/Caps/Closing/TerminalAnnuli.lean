@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.TerminalObstacles
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,13 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -94,8 +81,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
-
 theorem exists_actual_terminal_outer_annulus
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves) (i : Fin 3) :
     ∃ r : Real, 1 < r ∧ closedBall 0 r ⊆ (data.actualDisk i).source ∧
@@ -119,8 +104,6 @@ theorem exists_actual_terminal_outer_annulus
       sphere (0 : E2) 1 ⊆ _
     rw [← data.actual_boundary j]
     exact inter_subset_right
-
-
 
 theorem exists_model_terminal_outer_annulus
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.CWRelativeHomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

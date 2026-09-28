@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCover
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerResidual
 import PoincareConjecture.Proofs.M08.IndexPairAlgebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -52,9 +43,6 @@ private theorem cast_equiv_coordinates {q r : G.Point} (h : q = r)
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem horizontalIndexPairDensity_gauge (b : G.gaugeCover.index)
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -154,8 +142,6 @@ private theorem indexPair_coordinate_forms
       (cast_equiv_coordinates (hrec s (hsub' hs')) e DY)
       (cast_equiv_coordinates (hrec s (hsub' hs')) e DZ)
 
-
-
 theorem horizontalIndexPairDensity_symm
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
@@ -163,9 +149,6 @@ theorem horizontalIndexPairDensity_symm
     horizontalIndexPairDensity R s Y Z DY DZ = horizontalIndexPairDensity R s Z Y DZ DY := by
   obtain ⟨j, B, C, hB, hC, h⟩ := indexPair_coordinate_forms R hM04 hM12 hs
   rw [h, h, hB, hC]
-
-
-
 
 theorem horizontalIndexPairDensity_smul_right
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -176,9 +159,6 @@ theorem horizontalIndexPairDensity_smul_right
   obtain ⟨j, B, C, hB, hC, h⟩ := indexPair_coordinate_forms R hM04 hM12 hs
   simp only [h, map_smul, smul_eq_mul]
   ring
-
-
-
 
 theorem horizontalIndexPairDensity_quadratic
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -193,8 +173,6 @@ theorem horizontalIndexPairDensity_quadratic
   simp only [h] at hsym ⊢
   simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul]
   linear_combination -c * hsym
-
-
 
 theorem horizontalJacobiPairResidual_smul_right
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

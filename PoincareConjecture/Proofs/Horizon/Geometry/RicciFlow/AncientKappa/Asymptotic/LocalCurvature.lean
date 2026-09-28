@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TimeBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.SpatialCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem uniform_curvature_on_two_time_balls {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) (P : AncientAsymptoticSolitonPredecessors K)

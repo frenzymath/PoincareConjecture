@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +13,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem subset_tail_image_of_isPreconnected (e : TerminalEnd K) (k : ℕ)
     {S : Set (E.extended.slice T).carrier} (hS : IsPreconnected S)
@@ -47,8 +38,6 @@ theorem subset_tail_image_of_isPreconnected (e : TerminalEnd K) (k : ℕ)
   refine ⟨⟨y, hSK hy⟩, ?_, rfl⟩
   rw [heq]
   exact hpre.subset_connectedComponentIn hxS hpreavoid hy
-
-
 
 theorem exists_tail_caps_subset_tail (e : TerminalEnd K)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)
@@ -82,8 +71,6 @@ theorem exists_tail_caps_subset_tail (e : TerminalEnd K)
     (mul_le_mul_of_nonneg_right hNC hzpos.le).trans
       (mul_le_mul_of_nonneg_left hzB hC.le)
   exact (hnx.trans (hratio.trans_le hbound)).false
-
-
 
 theorem exists_tail_caps_subset_of_contains_tail (e : TerminalEnd K)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)

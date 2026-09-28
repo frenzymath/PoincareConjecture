@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
 omit [T2Space M] in
-
 
 theorem axial_displacement_le_pathELength {γ : ℝ → M} {a b : ℝ}
     (hab : a ≤ b) (hγ : ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 γ)
@@ -83,8 +72,6 @@ theorem axial_displacement_le_pathELength {γ : ℝ → M} {a b : ℝ}
       lintegral_mono_ae (ae_restrict_mem measurableSet_Icc |>.mono hpoint)
     _ = g.pathELength γ a b := (pathELength_eq_lintegral_mfderiv_Icc).symm
 
-
-
 theorem edist_center_lower_of_not_mem_carrier {x : M} (hx : x ∉ N.carrier) :
     ENNReal.ofReal (N.scale * Real.sqrt (1 - N.epsilon) * N.epsilon⁻¹) ≤
       g.edist N.center x := by
@@ -130,8 +117,6 @@ theorem edist_center_lower_of_not_mem_carrier {x : M} (hx : x ∉ N.carrier) :
         g.edist N.center x} from hradius)
   rw [closure_Ioo hε.ne] at hclosure
   exact hclosure ⟨hε.le, le_rfl⟩
-
-
 
 theorem balanced_edist_lower_of_not_mem_carrier (hε : N.epsilon ≤ 1 / 1000)
     {x : M} (hx : x ∉ N.carrier) :

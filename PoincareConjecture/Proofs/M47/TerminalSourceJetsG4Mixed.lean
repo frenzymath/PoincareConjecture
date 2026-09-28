@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsG4
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsMixed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -29,8 +19,6 @@ variable {α : Type v} (l : Filter α) (M : α → Type u)
   [∀ k, TopologicalSpace (M k)] [∀ k, ChartedSpace E (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)] [∀ k, T2Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
-
-
 
 theorem terminalSourceJetsG4_same_chart_mixed
     (P : RicciFlowCurvatureTheory.{u})

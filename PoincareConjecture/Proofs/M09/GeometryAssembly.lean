@@ -10,13 +10,6 @@ import PoincareConjecture.Proofs.M09.RegularPointConstruction
 import PoincareConjecture.Proofs.M09.BackwardNesting
 import PoincareConjecture.Proofs.M09.BoundedInitialCoverage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 1200000

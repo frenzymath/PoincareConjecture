@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_33.NegativeDefect
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ControlledSource
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem eventually_retained_source_negativeDefect_le
     (S : GeneralizedBlowupSequence.{u})

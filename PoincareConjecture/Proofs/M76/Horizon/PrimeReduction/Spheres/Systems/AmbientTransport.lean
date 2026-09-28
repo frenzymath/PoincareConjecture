@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem original_PL_motion_trans_both
     {X ι : Type*} [TopologicalSpace X]
@@ -39,8 +29,6 @@ theorem original_PL_motion_trans_both
   exact ⟨original_PL_motion_trans e hcover F G hF hG,
     original_PL_motion_trans e hcover G.symm F.symm hGinv hFinv⟩
 
-
-
 theorem protected_ambient_trans_neighborhood
     {X : Type*} [TopologicalSpace X]
     (F G : X ≃ₜ X) {Z W V : Set X}
@@ -57,8 +45,6 @@ theorem protected_ambient_trans_neighborhood
   intro x hx
   apply (F.trans G).injective
   simpa only [Homeomorph.apply_symm_apply, id_eq] using (hfix hx).symm
-
-
 
 theorem protected_sphere_system_ambient_image
     {X ι κ : Type*} [TopologicalSpace X]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualEdgeDisk
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
 
 theorem barycentricDualBlock_space_eq_singleton_of_maximal
     {s : Finset E} (hs : s ∈ K.faces)

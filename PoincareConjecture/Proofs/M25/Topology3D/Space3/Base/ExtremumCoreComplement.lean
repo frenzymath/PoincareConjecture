@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutSides
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCoreGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.seam_height_gaps_of_buffer_avoidance
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -59,7 +48,6 @@ theorem FamilyCutState.seam_height_gaps_of_buffer_avoidance
     rw [← S.cap_cut a, abs_of_neg (sub_neg.mpr hside)] at hg
     simp only [hs, neg_one_mul]
     linarith only [hg, S.cap_removal a]
-
 
 theorem FamilyCutState.morse_disc_complement_geometry
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

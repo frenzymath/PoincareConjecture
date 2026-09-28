@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,15 +21,11 @@ variable (j : ℕ) (M : {k : ℕ // j ≤ k} → Type u)
   (F : ∀ a, RicciFlow 3 (M a) (Icc (-tau) 0))
   (C : ∀ a, TerminalSourceChart ((F a).metric 0) R)
 
-
-
 noncomputable def terminalSourceCountableNegative
     (f0 : ℕ → E → V) (k : ℕ) : ℝ × E → V :=
   if hjk : j ≤ k then fun p =>
     ((F ⟨k, hjk⟩).metric p.1).pullbackCoefficients (C ⟨k, hjk⟩).chart p.2
   else fun p => f0 k p.2
-
-
 
 theorem terminalSourceCountableNegative_good (f0 : ℕ → E → V)
     {k : ℕ} (hjk : j ≤ k) :
@@ -47,8 +33,6 @@ theorem terminalSourceCountableNegative_good (f0 : ℕ → E → V)
       fun p : ℝ × E =>
         ((F ⟨k, hjk⟩).metric p.1).pullbackCoefficients (C ⟨k, hjk⟩).chart p.2 := by
   simp only [terminalSourceCountableNegative, dif_pos hjk]
-
-
 
 theorem terminalSourceCountableNegative_smooth
     (U : Opens E) (hUR : (U : Set E) ⊆ Metric.ball 0 R)
@@ -64,8 +48,6 @@ theorem terminalSourceCountableNegative_smooth
   · simp only [terminalSourceCountableNegative, dif_neg hjk]
     exact (hf0 k).comp contDiffOn_snd (fun _ hp => hp.2)
 
-
-
 theorem terminalSourceCountableNegative_zero
     (U : Opens E) (f0 : ℕ → E → V)
     (hread : ∀ a, EqOn (f0 a.val)
@@ -78,8 +60,6 @@ theorem terminalSourceCountableNegative_zero
     exact (hread ⟨k, hjk⟩ hx).symm
   · simp only [terminalSourceCountableNegative, dif_neg hjk]
 
-
-
 theorem terminalSourceCountableNegative_eventually_good (f0 : ℕ → E → V) :
     ∀ᶠ k in atTop, ∃ hjk : j ≤ k,
       terminalSourceCountableNegative j M F C f0 k =
@@ -87,8 +67,6 @@ theorem terminalSourceCountableNegative_eventually_good (f0 : ℕ → E → V) :
           ((F ⟨k, hjk⟩).metric p.1).pullbackCoefficients (C ⟨k, hjk⟩).chart p.2 := by
   filter_upwards [eventually_ge_atTop j] with k hk
   exact ⟨hk, terminalSourceCountableNegative_good j M F C f0 hk⟩
-
-
 
 theorem terminalSourceCountableNegative_good_jets (f0 : ℕ → E → V)
     {k : ℕ} (hjk : j ≤ k) (m : ℕ) (p : ℝ × E) :

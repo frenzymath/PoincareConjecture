@@ -1,13 +1,5 @@
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -15,8 +7,6 @@ open Set Metric
 namespace PoincareConjecture.M47
 
 variable {M : Type*} [MetricSpace M] [ConnectedSpace M]
-
-
 
 theorem terminalCurvature_compact_saturation_eq_univ
     (Phi : ℝ → M → M) (hzero : ∀ x, Phi 0 x = x)
@@ -43,8 +33,6 @@ theorem terminalCurvature_compact_saturation_eq_univ
     refine ⟨t + s, q, hq, ?_⟩
     rw [hadd, he, ← hadd, add_neg_cancel, hzero]
   exact (IsClopen.of_thickening_subset_self hepsilon hSS).eq_univ (hne.mono hKS)
-
-
 
 theorem terminalCurvature_invariant_bounded_of_compact_saturation
     (Phi : ℝ → M → M) (hzero : ∀ x, Phi 0 x = x)

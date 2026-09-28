@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JetCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false
@@ -78,8 +69,6 @@ theorem forcing_partial_fderiv_norm_le {G : V → ℝ → ℝ}
         (norm_nonneg (fderiv ℝ (fderiv ℝ f) (x, z))))
   · simpa only [forcingScalarDeriv, f, Prod.norm_def, norm_zero, norm_one,
       max_eq_right zero_le_one, mul_one, hnorm] using hz
-
-
 
 theorem forcing_second_partials_norm_le {G : V → ℝ → ℝ}
     (hG : ContDiff ℝ ∞ (fun p : V × ℝ => G p.1 p.2)) (x : V) (z : ℝ) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckCenterConnector
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem exists_neck_region_center_connector (N : EpsilonNeck g)
     {a b : ℝ} (ha : a < 0) (hb : 0 < b) {p : M}

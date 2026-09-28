@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Trace
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,8 +13,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
   {g : RiemannianMetric (m + 1) M}
-
-
 
 theorem two_mul_ricci_unit_le_scalarCurvature_add
     (D : LeviCivitaData g) (x : M) (K : ℝ) (hK : 0 ≤ K)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityBoundedChart
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,10 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
-
-
-
-
 
 theorem m65Embedding_uniform_cone_charts (e : M → EuclideanSpace ℝ (Fin N))
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Cal
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +15,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
-
-
 
 theorem exists_spherical_marking_on_closedBall
     (G : E2 → E3) (hG : ContDiff Real ∞ G)

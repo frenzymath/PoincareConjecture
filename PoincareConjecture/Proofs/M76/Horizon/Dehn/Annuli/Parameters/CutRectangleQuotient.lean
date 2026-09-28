@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusPLLift
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000

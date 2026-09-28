@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Topology.Selection.Encounter
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.FiniteChain
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.CompactKappa
-
-
-
-
 
 theorem exists_two_maximal_caps_with_chain_core_obstruction_threshold_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointFiberMap
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointCollarUniformSide
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

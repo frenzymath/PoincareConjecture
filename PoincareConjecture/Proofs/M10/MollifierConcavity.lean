@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.MollifierBasics
 import PoincareConjecture.Proofs.M10.ContactSemiconcavity
 import Mathlib.Analysis.Convex.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory ContinuousLinearMap
@@ -32,7 +23,6 @@ theorem sub_mem_double_ball {x z x₀ : E} {r : ℝ}
     _ ≤ ‖x - x₀‖ + ‖z‖ := norm_sub_le _ _
     _ < r + r := add_lt_add_of_lt_of_le hx hz
     _ = 2 * r := by ring
-
 
 theorem concaveOn_normed_convolution (κ : ContDiffBump (0 : E))
     {f : E → ℝ} (hf : Continuous f) {x₀ : E} {r : ℝ}

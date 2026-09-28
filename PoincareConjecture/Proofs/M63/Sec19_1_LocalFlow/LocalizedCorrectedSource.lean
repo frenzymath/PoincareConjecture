@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicLaplacian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem vectorPeriodic_correctedSource_at_trace
     {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]

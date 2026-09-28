@@ -6,8 +6,6 @@ open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn
 
-
-
 structure SignedJointCross (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E] where
   disk : Set E
   rim : Set E

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SpatialPartial
 import PoincareConjecture.Proofs.M09.CenteredHessian
 import PoincareConjecture.Proofs.M09.SquareChartConnectionTime
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

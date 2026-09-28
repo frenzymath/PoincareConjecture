@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Line
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.GaussianSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology NNReal
 open Poincare.Analysis.Heat
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_heat_regularization_dim_one
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -75,8 +64,6 @@ theorem exists_heat_regularization_dim_one
       simp only [tangentNorm, map_smul, smul_apply, smul_eq_mul, hunit, mul_one]
       rw [Real.sqrt_mul_self_eq_abs]
       exact abs_deriv_gaussianAverage_le hLip t (e x)
-
-
 
 theorem exists_heat_regularization_unit_bounds_dim_one
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

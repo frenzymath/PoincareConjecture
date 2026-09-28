@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartImageIntersection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.EdgeCofaces
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +8,6 @@ open Set Metric
 namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [MetricSpace X]
-
-
-
 
 theorem exists_nested_ballPairs_of_cofinal {A : Set X} (hA : IsClosed A)
     (hAne : A.Nonempty)

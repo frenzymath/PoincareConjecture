@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.CapAttachmentCharts
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereDisks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -40,8 +31,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
 
-
-
 theorem exists_boundary_disk_neighborhood
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {D B : Set E} (hD : IsFinitePLBallPair V3 D B) {p : E} (hp : p ∈ B) :
@@ -55,9 +44,6 @@ theorem exists_boundary_disk_neighborhood
   exact hB.exists_local_ball_pairs_of_convex_frontier (isCompact_closedBall _ _)
     (convex_closedBall _ _) ⟨0, ball_subset_interior_closedBall (mem_ball_self zero_lt_one)⟩
     (by simp) ⟨p, hp⟩
-
-
-
 
 theorem exists_local_ball_of_attachment_product
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

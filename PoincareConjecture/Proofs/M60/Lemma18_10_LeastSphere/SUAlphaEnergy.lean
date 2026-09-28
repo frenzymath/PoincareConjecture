@@ -15,15 +15,6 @@ import Mathlib.Analysis.MeanInequalitiesPow
 import Mathlib.Topology.ContinuousMap.Compact
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,12 +30,10 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def m60SphereAlphaEnergy (g : RiemannianMetric n M) (alpha : ℝ)
     (f : UnitTwoSphere → M) : ℝ :=
   ∫ p, (1 + 2 * m60SphereIntrinsicEnergy g f p) ^ alpha
     ∂m60RoundSphereMetric.volumeMeasure
-
 
 theorem m60SphereIntrinsicEnergy_nonneg (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) :
@@ -70,7 +59,6 @@ theorem m60SphereAlphaEnergy_integrable (g : RiemannianMetric n M)
       positivity)
   exact hcont.integrable_of_hasCompactSupport (HasCompactSupport.of_compactSpace _)
 
-
 theorem m60SphereAlphaEnergy_nonneg (g : RiemannianMetric n M)
     (alpha : ℝ) (f : UnitTwoSphere → M) : 0 ≤ m60SphereAlphaEnergy g alpha f := by
   apply integral_nonneg
@@ -92,9 +80,6 @@ theorem m60SphereAlphaEnergy_one (g : RiemannianMetric n M)
     m60SphereEnergy_eq_intrinsic_integral g f hf]
   simp
 
-
-
-
 theorem m60SphereEnergy_le_alphaEnergy (g : RiemannianMetric n M)
     {alpha : ℝ} (halpha : 1 ≤ alpha)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
@@ -106,8 +91,6 @@ theorem m60SphereEnergy_le_alphaEnergy (g : RiemannianMetric n M)
   exact Real.rpow_le_rpow_of_exponent_le (by
     have := m60SphereIntrinsicEnergy_nonneg g f p
     linarith) halpha
-
-
 
 theorem m60SphereAlphaEnergy_uniform_competitor_bound (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
@@ -123,8 +106,6 @@ theorem m60SphereAlphaEnergy_uniform_competitor_bound (g : RiemannianMetric n M)
     (by have := m60SphereIntrinsicEnergy_nonneg g f p; linarith) htwo
 
 namespace M60
-
-
 
 theorem suAlpha_coordinate_metric_bounds
     (g : RiemannianMetric n M) (b : M) {K : Set (EuclideanSpace ℝ (Fin n))}
@@ -183,9 +164,6 @@ theorem plane_opNorm_sq_le {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F
   nlinarith [sq_nonneg (‖L (EuclideanSpace.basisFun (Fin 2) ℝ 0)‖ -
     ‖L (EuclideanSpace.basisFun (Fin 2) ℝ 1)‖)]
 
-
-
-
 theorem exists_uniform_mfderiv_bound [CompactSpace M]
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
     (g : RiemannianMetric n M) (e : M → F)
@@ -207,9 +185,6 @@ theorem exists_uniform_mfderiv_bound [CompactSpace M]
   obtain ⟨B, hB⟩ := (hupper.upperSemicontinuousOn univ).bddAbove_of_isCompact isCompact_univ
   refine ⟨max B 0, le_max_right _ _, fun x => ?_⟩
   exact (hB ⟨x, mem_univ _, rfl⟩).trans (le_max_left _ _)
-
-
-
 
 theorem exists_observed_derivative_energy_bound [CompactSpace M]
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
@@ -249,7 +224,6 @@ theorem exists_observed_derivative_energy_bound [CompactSpace M]
   have hsquare := mul_self_le_mul_self (norm_nonneg _) hnorm
   nlinarith [mul_le_mul_of_nonneg_left hcolumn (sq_nonneg B)]
 
-
 theorem suAlpha_coercivity_rpow {r B a E alpha : ℝ}
     (hr : 0 ≤ r) (hB : 0 ≤ B) (ha0 : 0 ≤ a) (ha1 : a ≤ 1)
     (hE : 0 ≤ E) (halpha : 1 ≤ alpha) (hder : r ^ 2 ≤ B * (E * a)) :
@@ -269,7 +243,6 @@ theorem suAlpha_coercivity_rpow {r B a E alpha : ℝ}
       mul_le_mul_of_nonneg_left (Real.rpow_le_self_of_le_one ha0 ha1 halpha) (by positivity)
 
 end M60
-
 
 def m60NonNullAlphaEnergyValues (g : RiemannianMetric n M) (alpha : ℝ) : Set ℝ :=
   {r | ∃ f : UnitTwoSphere → M, ContMDiff (𝓡 2) (𝓡 n) ∞ f ∧

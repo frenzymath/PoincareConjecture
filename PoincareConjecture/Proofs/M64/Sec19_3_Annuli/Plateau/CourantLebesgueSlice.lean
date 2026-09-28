@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveOscillation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +13,6 @@ namespace PoincareConjecture
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
-
 
 theorem m64CourantLebesgue_cylinder_slice
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))

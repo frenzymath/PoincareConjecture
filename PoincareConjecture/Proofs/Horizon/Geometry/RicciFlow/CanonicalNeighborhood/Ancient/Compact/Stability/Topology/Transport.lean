@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,12 +14,10 @@ namespace PoincareConjecture.CompactCapTransport
 variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
   (e : OpenPartialHomeomorph M N)
 
-
 theorem isImage_of_subset {S : Set M} (hS : S ⊆ e.source) : e.IsImage S (e '' S) := by
   apply OpenPartialHomeomorph.IsImage.of_image_eq
   rw [inter_eq_right.mpr hS,
     inter_eq_right.mpr ((image_mono hS).trans e.image_source_subset)]
-
 
 theorem image_interior {S : Set M} (hS : S ⊆ e.source) :
     e '' interior S = interior (e '' S) := by
@@ -37,8 +25,6 @@ theorem image_interior {S : Set M} (hS : S ⊆ e.source) :
   rwa [inter_eq_right.mpr (interior_subset.trans hS),
     inter_eq_right.mpr (interior_subset.trans
       ((image_mono hS).trans e.image_source_subset))] at h
-
-
 
 theorem image_closure [T2Space N] {S : Set M} (hS : IsCompact (closure S))
     (hsource : closure S ⊆ e.source) :
@@ -50,7 +36,6 @@ theorem image_closure [T2Space N] {S : Set M} (hS : IsCompact (closure S))
   rwa [inter_eq_right.mpr hsource,
     inter_eq_right.mpr (hsubset.trans
       ((image_mono hsource).trans e.image_source_subset))] at h
-
 
 theorem image_frontier [T2Space N] {S : Set M} (hS : IsCompact (closure S))
     (hsource : closure S ⊆ e.source) :
@@ -74,27 +59,22 @@ variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
 
 include hA
 
-
 theorem image_carrier_open : IsOpen (e '' A.carrier) :=
   e.isOpen_image_of_subset_source A.carrier_open hA
-
 
 theorem image_closed_core_compact : IsCompact (e '' A.closed_core) :=
   A.closed_core_compact.image_of_continuousOn
     (e.continuousOn.mono (A.closed_core_subset_carrier.trans hA))
-
 
 theorem image_core_eq_interior :
     e '' A.core = interior (e '' A.closed_core) := by
   rw [A.core_eq_interior_closed_core]
   exact CompactCapTransport.image_interior e (A.closed_core_subset_carrier.trans hA)
 
-
 theorem image_closed_core_eq_complement_end :
     e '' A.closed_core = e '' A.carrier \ e '' A.end_neck.carrier := by
   rw [A.closed_core_eq_complement_end]
   exact (e.injOn.mono hA).image_sdiff_subset A.end_neck_subset
-
 
 theorem image_boundary_eq_end_frontier :
     e '' A.boundary_sphere = e '' A.carrier ∩ frontier (e '' A.end_neck.carrier) := by
@@ -110,7 +90,6 @@ theorem image_boundary_eq_end_frontier :
     rw [A.boundary_eq_end_frontier]
     exact ⟨hx, (hend.frontier.apply_mem_iff (hA hx)).mp hfront⟩
 
-
 theorem image_boundary_subset_negative_end_closure :
     e '' A.boundary_sphere ⊆
       closure (e '' A.end_neck.region (-A.epsilon⁻¹) (-A.epsilon⁻¹ / 2)) := by
@@ -123,7 +102,6 @@ theorem image_boundary_subset_negative_end_closure :
 
 variable [T2Space N]
 
-
 theorem image_core_frontier_eq_boundary :
     frontier (e '' A.closed_core) = e '' A.boundary_sphere := by
   have : T2Space M := @T25Space.t2Space M _ (@T3Space.t25Space M _ ‹T3Space M›)
@@ -133,8 +111,6 @@ theorem image_core_frontier_eq_boundary :
       A.closed_core_subset_carrier.trans hA), A.core_frontier_eq_boundary]
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
-
-
 
 noncomputable def imageModelEquivalence
     (he : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)
@@ -168,7 +144,6 @@ noncomputable def imageModelEquivalence
   · exact he.comp F.inverse_smooth (fun y _ ↦ hA (F.inverse_mem y))
 
 omit [T2Space N] [IsManifold (𝓡 3) ∞ N] in
-
 
 theorem horizon_image_boundary_local_defining_function
     (he : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)

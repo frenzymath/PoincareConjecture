@@ -444,7 +444,6 @@ private theorem trace_curvature_component_le {g : RiemannianMetric n M}
   simpa only [Real.sqrt_sq_eq_abs, LeviCivitaData.curvatureTensorNorm, A] using
     Real.sqrt_le_sqrt hs
 
-
 theorem scalarCurvature_differential_abs_le {g : RiemannianMetric n M}
     (hM04 : RicciFlowCurvatureTheory.{u}) (D : LeviCivitaData g) (x : M)
     (W : TangentSpace (𝓡 n) x) :
@@ -500,7 +499,6 @@ theorem scalarCurvature_differential_abs_le {g : RiemannianMetric n M}
       have hnorm : ‖W‖ = Real.sqrt (g.inner x W W) := norm_eq_sqrt_real_inner W
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul, hnorm]
       ring
-
 
 theorem ricci_quadratic_abs_le {g : RiemannianMetric n M}
     (hM04 : RicciFlowCurvatureTheory.{u}) (D : LeviCivitaData g) (x : M)

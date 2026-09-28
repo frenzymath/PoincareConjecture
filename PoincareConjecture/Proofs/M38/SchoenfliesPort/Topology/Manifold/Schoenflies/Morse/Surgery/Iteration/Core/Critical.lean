@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Path
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.MorseReduction
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ private abbrev S2 := sphere (0 : E3) 1
 namespace SphereSurgeryPath
 
 variable {v : E3} {f g : S2 -> E3} (P : SphereSurgeryPath v f g)
-
-
 
 theorem critical_mem_interior_core
     (hP : P.Protects ((fun p => inner Real v (f p)) ''
@@ -63,8 +53,6 @@ namespace SphereMorseReduction
 
 variable {f : S2 -> E3} (M : SphereMorseReduction f)
 
-
-
 theorem subsingleton_critical_core {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g) :
     {p ∈ P.core | mfderiv (𝓡 2) 𝓘(Real, Real)
@@ -82,8 +70,6 @@ theorem subsingleton_critical_core {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
       P.height_eq_on_core hq.1
     rw [← heq]
     exact hband ⟨q, rfl⟩
-
-
 
 theorem exists_morse_chart_in_core {g : S2 -> E3}
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)
@@ -114,8 +100,6 @@ theorem exists_morse_chart_in_core {g : S2 -> E3}
       inner Real (M.v : E3) (M.D (f p)) := P.height_eq_on_core hp
   change inner Real (M.v : E3) (g (e x)) = _
   rw [hheight, hform x hx.1, hheightp]
-
-
 
 theorem exists_terminal_core {g : S2 -> E3} (hg : g ∈ M.tree.leaves) :
     ∃ P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g,

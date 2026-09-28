@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderRealization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 namespace FlowCarrier
-
-
 
 theorem exists_local_isometry_of_coordinate_germ
     {n : ℕ} (C : FlowCarrier n) (gM : C.metric)
@@ -71,9 +59,6 @@ theorem exists_local_isometry_of_coordinate_germ
 end FlowCarrier
 
 namespace GeneralizedFlowCylinder
-
-
-
 
 theorem exists_local_homothety_of_coordinate_germ
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

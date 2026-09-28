@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLEqualityLoci
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompatibleInverseChart
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Metric Geometry
@@ -245,4 +235,3 @@ theorem ChartwisePLSphere.exists_planar_exterior_model_or_subset
     exact Or.inr (s.exists_finite_planar_exterior_model hR he hSR hE heE hne pole hpS hpE)
 
 end PoincareConjecture.M76
-

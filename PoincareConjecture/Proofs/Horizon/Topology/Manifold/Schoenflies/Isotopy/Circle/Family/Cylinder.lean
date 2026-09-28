@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +18,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev P2 := Real × E2
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_supported_cylinder_family_parametrization_within
     {ι : Type*} [Finite ι] {r R : Real} (hr : 0 < r) (hrR : r < R)
@@ -69,7 +60,6 @@ theorem exists_supported_cylinder_family_parametrization_within
     rw [← hmotion i 0 (by constructor <;> linarith) p, (Phi 0).symm_apply_apply]
     exact hmotion i t ht p
 
-
 theorem exists_supported_cylinder_family_parametrization
     {ι : Type*} [Finite ι] {r : Real} (hr : 0 < r) (f : ι → Real × S1 → E2)
     (hf : ∀ i, ContMDiff (𝓘(Real, Real).prod (𝓡 1)) (𝓡 2) ∞ (f i))
@@ -86,8 +76,6 @@ theorem exists_supported_cylinder_family_parametrization
     exists_supported_cylinder_family_parametrization_within hr (lt_add_one r) f hf hemb hdisjoint
   exact ⟨F, hheight, ⟨closedBall (0 : Real) (r + 1) ×ˢ K,
     (isCompact_closedBall _ _).prod hK, hfix⟩, hF⟩
-
-
 
 theorem exists_supported_ambient_cylinder_family_within
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) (c : Real)
@@ -181,7 +169,6 @@ theorem exists_supported_ambient_cylinder_family_within
     rw [← hDg 0]
     change D (G (D.symm (D (t, g i (0, p))))) = _
     rw [D.symm_apply_apply, hG i t ht p, hDg t]
-
 
 theorem exists_supported_ambient_cylinder_family
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) (c : Real)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Smoothing.PlanarCycleCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,18 +8,12 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {n : ℕ} {theta : ℝ}
 
-
-
 def normalizedUnitCycleSpace (n : ℕ) (theta : ℝ) :
     Set ((cyclicEdgeComplex n).UnitRadialEmbedding ℂ) :=
   {v | unitCycleVertex v 0 = 1 ∧ unitCycleVertex v 1 = Circle.exp theta}
 
-
-
 theorem unitCycleVertex_planarGapEmbedding (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     unitCycleVertex (planarGapEmbedding w) i = Circle.exp (gapAngle w i) := rfl
-
-
 
 noncomputable def normalizedGapEmbedding (w : shortArcGapSpace n theta) :
     normalizedUnitCycleSpace n theta :=
@@ -37,9 +21,6 @@ noncomputable def normalizedGapEmbedding (w : shortArcGapSpace n theta) :
     constructor
     · rw [unitCycleVertex_planarGapEmbedding, gapAngle_zero, Circle.exp_zero]
     · rw [unitCycleVertex_planarGapEmbedding, gapAngle_one w.property]⟩
-
-
-
 
 theorem cycleIncrement_planarGapEmbedding (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     cycleIncrement (planarGapEmbedding w) i = w.val i := by
@@ -53,14 +34,9 @@ theorem cycleIncrement_planarGapEmbedding (w : shortArcGapSpace n theta) (i : Fi
   rw [hend, mul_div_cancel_left]
   exact Circle.arg_exp (by linarith [Real.pi_pos, (w.property.1 i).1]) (w.property.1 i).2.le
 
-
-
 theorem continuous_unitCycleVertex (i : Fin (n + 3)) :
     Continuous (fun v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ => unitCycleVertex v i) :=
   ((continuous_apply i).comp (continuous_subtype_val.comp continuous_subtype_val)).subtype_mk _
-
-
-
 
 theorem continuous_cycleIncrement :
     Continuous (cycleIncrement : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ →
@@ -81,10 +57,6 @@ theorem continuous_cycleIncrement :
     (f := fun v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ =>
       ((unitCycleVertex v (i + 1) / unitCycleVertex v i : Circle) : ℂ)) hc.continuousAt
 
-
-
-
-
 noncomputable def gapUnitCycleHomeomorph (n : ℕ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :
     shortArcGapSpace n theta ≃ₜ normalizedUnitCycleSpace n theta where
@@ -99,9 +71,6 @@ noncomputable def gapUnitCycleHomeomorph (n : ℕ) {theta : ℝ}
     exact planarGapVertices_cycleIncrement v.val htheta v.property.1 v.property.2
   continuous_toFun := continuous_planarGapEmbedding.subtype_mk _
   continuous_invFun := (continuous_cycleIncrement.comp continuous_subtype_val).subtype_mk _
-
-
-
 
 theorem contractible_normalizedUnitCycleSpace (n : ℕ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :

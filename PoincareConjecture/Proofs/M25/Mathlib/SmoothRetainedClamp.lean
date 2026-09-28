@@ -3,26 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff Interval
 
 namespace Real
-
-
-
-
 
 theorem exists_smooth_retained_clamp {a₀ a b b₀ : ℝ}
     (hleft : a₀ < a) (hab : a < b) (hright : b < b₀) :

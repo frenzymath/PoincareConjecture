@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.HolderAssembly
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem generalized_slice_coefficient_eq
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -56,9 +43,6 @@ theorem generalized_slice_coefficient_eq
       (mfderiv (𝓡 3) (𝓡 3) (e ∘ c.symm) x (EuclideanSpace.basisFun (Fin 3) ℝ b)) = _
   rw [hderiv]
   rfl
-
-
-
 
 theorem tendstoUniformlyOn_generalized_slice_coefficients
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

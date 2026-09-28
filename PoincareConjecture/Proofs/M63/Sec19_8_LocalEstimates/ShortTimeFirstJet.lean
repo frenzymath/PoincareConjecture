@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.BoundedCurvatureFirstJet
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -24,8 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem m63FirstJetSquared_dissipation_split [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -181,9 +169,6 @@ theorem m63FirstJetSquared_dissipation_split [T2Space M]
     dsimp only [A, G]
     nlinarith only [hraw, hYoung, hq3, hcoef, hlinear, hconstant, hlinearYoung]
   exact hbound
-
-
-
 
 theorem m63FirstJetSquared_short_time_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

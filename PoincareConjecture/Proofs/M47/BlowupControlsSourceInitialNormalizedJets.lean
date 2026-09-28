@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -21,8 +13,6 @@ open Proofs.M47 M36 M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilinear" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem source_initial_normalized_jet_identity {k : ℝ} (hk : k ≠ 0)
     (u c : ℝ) (B : RoundCylinderTwoTensor) (theta : UnitTwoSphere) (r : ℝ)
@@ -47,8 +37,6 @@ theorem source_initial_normalized_jet_identity {k : ℝ} (hk : k ≠ 0)
   rw [source_initial_centered_translation,
     iteratedFDeriv_const_smul_apply' (hB.of_le (by exact_mod_cast le_top)), ← hmodel]
   module
-
-
 
 theorem exists_source_initial_normalized_native_bound (m : ℕ) :
     ∃ Z K : ℝ, 0 ≤ Z ∧ 0 ≤ K ∧

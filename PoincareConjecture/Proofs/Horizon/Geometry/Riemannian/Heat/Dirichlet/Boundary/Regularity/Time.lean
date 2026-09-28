@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ContinuousOperator
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {Ω : Set M}
   (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
-
-
 
 def heatPowerContinuousTime (k : ℕ) (t : ℝ) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] (M →ᵇ ℝ) :=
@@ -76,8 +67,6 @@ private theorem heatPowerContinuous_zero_comp (k : ℕ) (s t : ℝ)
     exact h
   · exact heatPowerContinuous_zero_outside D S 0 s hs _
 
-
-
 theorem hasDerivAt_heatPowerContinuousTime (k : ℕ) {t : ℝ} (ht : 0 < t) :
     HasDerivAt (heatPowerContinuousTime D S k)
       (-heatPowerContinuousTime D S (k + 1) t) t := by
@@ -110,7 +99,6 @@ theorem hasDerivAt_heatPowerContinuousTime (k : ℕ) {t : ℝ} (ht : 0 < t) :
     have hsum : a + (s - a) = s := by ring
     simpa only [hsum] using hfactor.symm
   convert! hd.congr_of_eventuallyEq heq using 1
-
 
 theorem contDiffOn_heatPowerContinuousTime (k : ℕ) :
     ContDiffOn ℝ ∞ (heatPowerContinuousTime D S k) (Ioi 0) := by

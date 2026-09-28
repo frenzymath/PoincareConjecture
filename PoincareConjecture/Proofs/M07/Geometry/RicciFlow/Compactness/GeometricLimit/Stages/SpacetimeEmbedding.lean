@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +12,6 @@ namespace PoincareConjecture.SmoothSpacetimeEmbedding
 variable {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
     (F : BasedFlow n T' T C) (G : BasedFlow n T' T D)
     {U : Set C.carrier}
-
 
 noncomputable def of_spatial
     (hU : @IsOpen C.carrier C.topologicalSpace U) (f : C.carrier → D.carrier)

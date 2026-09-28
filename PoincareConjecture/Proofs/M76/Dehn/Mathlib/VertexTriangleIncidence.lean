@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleAdjacency
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTetrahedronAdjacency
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -17,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E)
-
-
 
 theorem vertex_triangleGraph_connected
     (hconn : (triangleGraph K.toPreAbstractSimplicialComplex).Connected) :
@@ -42,9 +33,6 @@ theorem vertex_triangleGraph_connected
         rw [K.vertexFaceEquiv_symm_map, K.vertexFaceEquiv_symm_map]
         exact htr }
   exact hconn.map f e.symm.surjective
-
-
-
 
 theorem triangleCofaces_card_eq_original [Fintype K.vertices]
     (e : Edge K.vertexAbstractComplex.toPreAbstractSimplicialComplex) :

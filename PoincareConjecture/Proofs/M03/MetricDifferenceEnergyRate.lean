@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.CurvatureHom
 import PoincareConjecture.Proofs.M03.FiniteBundleFamilyEnergy
 import PoincareConjecture.Proofs.M03.ConnectionDifferenceEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 8000000
 set_option synthInstance.maxHeartbeats 200000
@@ -349,8 +341,6 @@ theorem exists_metric_difference_energy_rate_bound
 section TerminalMetric
 
 open Manifold Filter
-
-
 
 theorem exists_ricciFlow_endpoint_metric_of_curvature_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]

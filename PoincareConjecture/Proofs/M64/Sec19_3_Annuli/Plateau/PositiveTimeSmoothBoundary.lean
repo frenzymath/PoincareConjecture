@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ArbitraryC2IntrinsicRegularity
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedLabelSpatialSmoothness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem exists_smooth_positive_time_relabeling
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

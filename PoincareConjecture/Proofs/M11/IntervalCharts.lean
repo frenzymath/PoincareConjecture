@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M11.IntervalTopology
 import PoincareConjecture.Definitions.M11TimeInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,7 +26,6 @@ theorem exists_intervalSegmentNeighborhood (I : SpacetimeInterval) (t : I.domain
 namespace IntervalSegmentNeighborhood
 
 variable {I : SpacetimeInterval} (D : IntervalSegmentNeighborhood I)
-
 
 noncomputable def toSegment : OpenPartialHomeomorph I.domain (Icc D.left D.right) where
   toFun t := projIcc D.left D.right D.lt.le t.val
@@ -78,7 +69,6 @@ theorem intervalSegmentAt_mem (I : SpacetimeInterval) (t : I.domain) :
     t.val ∈ (intervalSegmentAt I t).window :=
   Classical.choose_spec (exists_intervalSegmentNeighborhood I t)
 
-
 noncomputable def intervalChartAt (I : SpacetimeInterval) (t : I.domain) :
     OpenPartialHomeomorph I.domain (EuclideanHalfSpace 1) :=
   let D := intervalSegmentAt I t
@@ -92,14 +82,12 @@ theorem mem_intervalChartAt_source (I : SpacetimeInterval) (t : I.domain) :
   refine ⟨intervalSegmentAt_mem I t, ?_⟩
   exact mem_chart_source _ _
 
-
 noncomputable abbrev intervalChartedSpace (I : SpacetimeInterval) :
     ChartedSpace (EuclideanHalfSpace 1) I.domain where
   atlas := Set.range (intervalChartAt I)
   chartAt := intervalChartAt I
   mem_chart_source := mem_intervalChartAt_source I
   chart_mem_atlas := fun t ↦ Set.mem_range_self t
-
 
 theorem intervalSegment_transition_smooth {I : SpacetimeInterval}
     (D E : IntervalSegmentNeighborhood I) :

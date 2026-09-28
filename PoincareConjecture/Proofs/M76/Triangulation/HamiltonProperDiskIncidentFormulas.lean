@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskConvexChartData
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskForwardSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -74,11 +66,6 @@ private theorem actual_full_chart_formula
   change a.toAffineMap (c x) = f (c x) at h
   rw [← hAa] at h
   simpa only [f, H, AffineEquiv.coe_toAffineMap, c.symm_apply_apply] using h
-
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_incident_affine_chart_formulas
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

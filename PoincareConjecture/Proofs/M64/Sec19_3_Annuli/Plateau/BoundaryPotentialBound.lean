@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthTest
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAbsorption
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +11,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
-
-
 
 theorem m64NaturalGrowth_boundary_cutoff_test
     {O : Set LoopPlane} (hO : IsOpen O)
@@ -69,10 +54,6 @@ theorem m64NaturalGrowth_boundary_cutoff_test
   simpa only [eta, hdeta, Pi.add_apply, Pi.mul_apply] using ht
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64NaturalGrowth_boundary_potential_bound
     {n : ℕ} {O : Set LoopPlane} (hO : IsOpen O)

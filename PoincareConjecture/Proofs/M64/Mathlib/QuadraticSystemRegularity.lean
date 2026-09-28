@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTomiRegularity
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -23,10 +12,6 @@ open scoped ContDiff SchwartzMap LineDeriv InnerProductSpace
 namespace PoincareConjecture
 
 open EuclideanTranslationNative
-
-
-
-
 
 theorem m64QuadraticSystem_contDiffOn {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → LoopPlane → ℝ)

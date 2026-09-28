@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.ReflectionComponentComparison
 import PoincareConjecture.Proofs.M38.CylinderCarrier
 import PoincareConjecture.Proofs.M38.SphereBundleCutChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem dihedral_cut_component_precompact
     {Q : Type*} (q : RoundCylinderSpace → Q)
@@ -42,9 +30,6 @@ theorem dihedral_cut_component_precompact
   have hout := connectedComponentIn_subset
     (q ⁻¹' (range (fun z : UnitTwoSphere => q (D (z, 0))))ᶜ) a hy
   exact hout ⟨z, (htranslation n (D (z, 0))).symm⟩
-
-
-
 
 theorem dihedral_cut_connected_standard_chart
     {Q : GeneralizedSliceCarrier.{u}}

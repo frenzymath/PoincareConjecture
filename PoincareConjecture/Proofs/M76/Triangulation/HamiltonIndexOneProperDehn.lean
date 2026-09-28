@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneActualMeridia
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneComplementDomain
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,12 +14,6 @@ local notation "V" => (ℝ × V2)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "Q" => sphere (0 : V2) 1
 local notation "Param" => Set.prod (Icc (-1 : ℝ) 1) Q
-
-
-
-
-
-
 
 theorem exists_actual_marked_proper_dehn_disk
     (hDehn : HasHamiltonStandardProperDehnDisks)

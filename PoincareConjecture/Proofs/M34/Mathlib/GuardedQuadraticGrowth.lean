@@ -4,22 +4,9 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem ContinuousOn.lt_two_mul_of_guarded_quadratic_deriv
     {f : ℝ → ℝ} {a b A B R : ℝ}

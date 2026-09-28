@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SpherePoleNormalization
 import PoincareConjecture.Proofs.M38.AnnulusReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isMa
 
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
-
 
 noncomputable def sphereScaledPoleBall (p : sphereCarrier.{u}.carrier)
     (r : ℝ) (hr : 0 < r) : SurgeryBallEmbedding sphereCarrier.{u} := by
@@ -67,18 +57,15 @@ noncomputable def sphereScaledPoleBall (p : sphereCarrier.{u}.carrier)
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball
       hf.contMDiffOn hg hleft }
 
-
 theorem sphereScaledPoleBall_map (p : sphereCarrier.{u}.carrier) {r : ℝ} (hr : 0 < r)
     (x : StandardCapSpace) :
     (sphereScaledPoleBall p r hr).map x =
       spherePunctureInverse (ULift.up (-p.down)) (ULift.up (r • x)) := rfl
 
-
 theorem sphereScaledPoleBall_inverse (p y : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) :
     (sphereScaledPoleBall p r hr).inverse y =
       r⁻¹ • (spherePunctureMap (ULift.up (-p.down)) y).down := rfl
-
 
 theorem spherePunctureInverse_zero (p : sphereCarrier.{u}.carrier) :
     spherePunctureInverse p (ULift.up 0) = ULift.up (-p.down) := by
@@ -86,13 +73,11 @@ theorem spherePunctureInverse_zero (p : sphereCarrier.{u}.carrier) :
   change threeSphereStereoInverse p.down 0 = -p.down
   simpa only [neg_neg] using threeSphereStereoInverse_opposite_zero (-p.down)
 
-
 theorem sphereScaledPoleBall_center (p : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) : (sphereScaledPoleBall p r hr).map 0 = p := by
   rw [sphereScaledPoleBall_map, smul_zero, spherePunctureInverse_zero]
   apply ULift.ext
   exact neg_neg p.down
-
 
 theorem sphereScaledPoleBall_right_inverse (p y : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) (hy : y ≠ ULift.up (-p.down)) :
@@ -100,7 +85,6 @@ theorem sphereScaledPoleBall_right_inverse (p y : sphereCarrier.{u}.carrier)
   rw [sphereScaledPoleBall_map, sphereScaledPoleBall_inverse, smul_smul,
     mul_inv_cancel₀ hr.ne', one_smul]
   exact spherePuncture_left_inverse (ULift.up (-p.down)) hy
-
 
 theorem sphereScaledPoleBall_mem_closed_iff (p y : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) :
@@ -125,7 +109,6 @@ theorem sphereScaledPoleBall_mem_closed_iff (p y : sphereCarrier.{u}.carrier)
         mul_le_mul_of_nonneg_left hnorm (inv_pos.mpr hr).le
       _ = 1 := inv_mul_cancel₀ hr.ne'
 
-
 theorem spherePuncture_opposite_norm (p : sphereCarrier.{u}.carrier)
     (x : StandardCapSpace) (hx : x ≠ 0) :
     ‖(spherePunctureMap (ULift.up (-p.down)) (spherePunctureInverse p (ULift.up x))).down‖ =
@@ -137,7 +120,6 @@ theorem spherePuncture_opposite_norm (p : sphereCarrier.{u}.carrier)
     (sq_pos_of_ne_zero (norm_ne_zero_iff.mpr hx))),
     (threeSphereStereoOppositeIsometry (-p.down)).norm_map]
   field_simp [norm_ne_zero_iff.mpr hx]
-
 
 theorem sphereScaledPoleBall_opposite_mem (p : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) (x : StandardCapSpace) :
@@ -159,7 +141,6 @@ theorem sphereScaledPoleBall_opposite_mem (p : sphereCarrier.{u}.carrier)
     have hn : 0 < ‖x‖ := norm_pos_iff.mpr hx
     rw [div_le_iff₀ hn, div_le_iff₀ hr]
     exact by rw [mul_comm]
-
 
 theorem sphereScaledPoleBall_complement (p : sphereCarrier.{u}.carrier)
     {r : ℝ} (hr : 0 < r) :
@@ -183,13 +164,10 @@ theorem sphereScaledPoleBall_complement (p : sphereCarrier.{u}.carrier)
     rw [Set.mem_compl_iff, sphereScaledPoleBall_opposite_mem]
     exact not_le.mpr (by simpa only [Metric.mem_ball, dist_zero_right] using hx)
 
-
-
 noncomputable def sphereOuterBall (p : sphereCarrier.{u}.carrier) :
     SurgeryBallEmbedding sphereCarrier.{u} :=
   annulusReparametrizedBall (a := 1 / 8) (by norm_num) (by norm_num)
     (sphereScaledPoleBall (ULift.up (-p.down)) (8 / 3) (by norm_num))
-
 
 theorem sphereOuterBall_complement (p : sphereCarrier.{u}.carrier) :
     (sphereOuterBall p).closedBallᶜ =
@@ -197,7 +175,6 @@ theorem sphereOuterBall_complement (p : sphereCarrier.{u}.carrier) :
   rw [sphereOuterBall, annulusReparametrizedBall_closedBall,
     sphereScaledPoleBall_complement]
   norm_num <;> rfl
-
 
 theorem sphereOuterBall_full_disjoint (p : sphereCarrier.{u}.carrier) :
     Disjoint ((sphereOuterBall p).map '' Metric.ball 0 2)

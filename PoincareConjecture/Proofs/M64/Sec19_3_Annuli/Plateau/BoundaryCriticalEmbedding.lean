@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Embedding.Subcritical
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,10 +15,6 @@ open Poincare.Analysis.Sobolev.BoundaryTangential
 namespace PoincareConjecture
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem m64HalfSpace_H1_memLp {u : Plane → ℝ}
     (hc : HasCompactSupport u) (hu : MemW1p 2 u (halfSpace 2))

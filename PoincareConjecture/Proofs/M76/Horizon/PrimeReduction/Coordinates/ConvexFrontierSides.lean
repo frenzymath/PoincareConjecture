@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocalRegionSideIncidence
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

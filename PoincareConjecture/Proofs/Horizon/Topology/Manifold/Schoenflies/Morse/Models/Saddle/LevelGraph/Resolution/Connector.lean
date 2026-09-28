@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Planar.Clearance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.Connector
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +16,8 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
-
 def positiveLevelConnector (t s : Real) : E2 :=
   WithLp.toLp 2 ![0, (2 * s - 1) * Real.sqrt t]
-
 
 def negativeLevelConnector (t s : Real) : E2 :=
   saddleCoordinateSwap (positiveLevelConnector t s)
@@ -195,14 +186,11 @@ theorem negativeLevelConnector_disjoint_level {t : Real} (ht : 0 < t) :
   rintro x ⟨s, hs, rfl⟩ he
   exact (ne_of_gt (negativeLevelConnector_height_gt ht hs)) he
 
-
 private theorem connector_graph_height {v : E3} (hv : ‖v‖ = 1)
     (J : E2 ≃ₗᵢ[Real] (Real ∙ v)ᗮ) (x : E2) (t : Real) :
     inner Real v ((J x : E3) + t • v) = t := by
   have h := Submodule.mem_orthogonal_singleton_iff_inner_right.mp (J x).property
   simp [inner_add_right, inner_smul_right, h, hv]
-
-
 
 theorem exists_uniform_planar_clearance
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -285,8 +273,6 @@ theorem exists_uniform_planar_clearance
   obtain ⟨x, hx, rfl⟩ := hlocal
   change e x = e (planarProjection J (F (e x)))
   rw [hproj x (ball_subset_closedBall hx)]
-
-
 
 theorem exists_saddle_level_connectors
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -381,10 +367,6 @@ theorem exists_saddle_level_connectors
     have hlt := negativeLevelConnector_height_gt ht hs
     change inner Real v (f q) = inner Real v (f p) - t at hq
     linarith
-
-
-
-
 
 theorem exists_saddle_circle_pair_connector_regions
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

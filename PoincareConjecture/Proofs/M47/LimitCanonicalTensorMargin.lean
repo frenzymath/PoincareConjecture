@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,8 +24,6 @@ private theorem weighted_square {theta : ℝ} (htheta : 0 < theta) (a b : ℝ) :
   have hnonnegative := nonneg_of_mul_nonneg_right h htheta
   linarith
 
-
-
 theorem limitCanonical_tensorNorm_weighted
     (g : RiemannianMetric n M) {r : ℕ}
     (T S : CovariantTensorEvaluation n M r) (x : M)
@@ -46,8 +35,6 @@ theorem limitCanonical_tensorNorm_weighted
     Real.sq_sqrt (by positivity), Finset.mul_sum, Finset.mul_sum,
     ← Finset.sum_add_distrib]
   exact Finset.sum_le_sum fun _ _ => weighted_square htheta _ _
-
-
 
 theorem limitCanonical_iterated_covariant_sub {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {r : ℕ} {T S : CovariantTensorEvaluation n M r}
@@ -66,8 +53,6 @@ theorem limitCanonical_iterated_covariant_sub {g : RiemannianMetric n M}
     exact D.covariantTensorDerivative_sub
       (D.iteratedCovariantTensorDerivative_isSmooth hT m)
       (D.iteratedCovariantTensorDerivative_isSmooth hS m)
-
-
 
 theorem limitCanonical_tensorJetEnergy_weighted {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {r : ℕ} {T S : CovariantTensorEvaluation n M r}
@@ -90,8 +75,6 @@ section Comparison
 variable {X : Type u} [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
 
-
-
 theorem limitCanonical_comparisonEnergy_weighted
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
     {B C : CovariantTensorEvaluation 3 X 2}
@@ -110,9 +93,6 @@ theorem limitCanonical_comparisonEnergy_weighted
     ring
   rw [heq] at h
   exact h
-
-
-
 
 theorem limitCanonical_exists_strict_comparison_margin
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)

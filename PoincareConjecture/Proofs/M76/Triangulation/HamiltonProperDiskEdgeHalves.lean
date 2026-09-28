@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeRegion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,10 +12,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_edge_signed_halves
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfileBase
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open Set
 open scoped Manifold ContDiff intervalIntegral BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem m63PeriodicLoop_cell_finish {X : Type*} {gamma : ℝ → X}
     (hperiodic : Function.Periodic gamma curvePeriod) {N : ℕ} (hN : 0 < N) (j : Fin N) :
@@ -43,8 +32,6 @@ theorem m63PeriodicLoop_cell_finish {X : Type*} {gamma : ℝ → X}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem M63MinimizingGeodesicSide.edist_eq_length {g : RiemannianMetric n M}
     {D : LeviCivitaData g} {ell : ℝ} {p q : M}
     (side : M63MinimizingGeodesicSide g D ell p q) (hell : 0 ≤ ell) :
@@ -56,9 +43,6 @@ theorem M63MinimizingGeodesicSide.edist_eq_length {g : RiemannianMetric n M}
     _ = ENNReal.ofReal (side.speed * ell) :=
       hlength.trans (ENNReal.ofReal_mul' hell).symm
     _ = _ := congrArg ENNReal.ofReal (mul_comm _ _)
-
-
-
 
 theorem m63SampledPolygonLengthComparison {a b : ℝ} (F : RicciFlow n M (Icc a b)) :
     M63SampledPolygonLengthComparison F := by

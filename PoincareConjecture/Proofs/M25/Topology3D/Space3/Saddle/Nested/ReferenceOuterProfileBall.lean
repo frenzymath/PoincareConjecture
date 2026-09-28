@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceNo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ContainedProfileBall
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,9 +11,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_outer_reference_profile_ball_family :
     let C := heightCoordinates

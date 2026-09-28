@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Shear
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
-
 def vector (x y z : Real) : E3 := WithLp.toLp 2 ![x, y, z]
 
 @[simp] theorem vector_zero (x y z : Real) : vector x y z 0 = x := rfl
@@ -25,10 +22,7 @@ def vector (x y z : Real) : E3 := WithLp.toLp 2 ![x, y, z]
 theorem norm_sq_two (q : E2) : ‖q‖ ^ 2 = (q 0) ^ 2 + (q 1) ^ 2 := by
   simp [EuclideanSpace.norm_sq_eq, Fin.sum_univ_two, Real.norm_eq_abs, sq_abs]
 
-
 def lowerDomain : Set E2 := {q | (q 0) ^ 2 + (q 1 - 1 / 2) ^ 2 < 1}
-
-
 
 def lowerCap (σ : Real) (q : E2) : E3 :=
   vector (σ * Real.sqrt (1 - (q 0) ^ 2 - (q 1 - 1 / 2) ^ 2))
@@ -93,8 +87,6 @@ theorem lowerCap_injOn {σ : Real} (hσ : σ ^ 2 = 1) : InjOn (lowerCap σ) lowe
   ext i
   fin_cases i <;> assumption
 
-
-
 theorem lower_closedBall_subset_domain :
     closedBall (0 : E2) (Real.sqrt (1 / 8)) ⊆ lowerDomain := by
   intro q hq
@@ -107,12 +99,10 @@ theorem lower_closedBall_subset_domain :
   have hy : -(1/2 : Real) < q 1 := by nlinarith [sq_nonneg (q 0)]
   nlinarith
 
-
 theorem lowerCap_boundary_height (σ : Real) {q : E2}
     (hq : q ∈ sphere (0 : E2) (Real.sqrt (1/8))) : lowerCap σ q 2 = -9/8 := by
   rw [lowerCap_height, mem_sphere_zero_iff_norm.mp hq, Real.sq_sqrt (by norm_num)]
   norm_num
-
 
 def lowerCoordinates (p : E3) : E2 := WithLp.toLp 2 ![p 1, p 2 + (p 0)^2 + 1/2]
 
@@ -131,7 +121,6 @@ theorem lowerCoordinates_lowerCap {σ : Real} (hσ : σ^2 = 1) {q : E2}
   fin_cases i
   · rfl
   · exact lowerCap_inverse_coordinate hσ hq
-
 
 theorem lowerCap_fderiv_injective {σ : Real} (hσ : σ^2 = 1) {q : E2}
     (hq : q ∈ lowerDomain) : Injective (fderiv Real (lowerCap σ) q) := by
@@ -156,7 +145,6 @@ theorem lowerCoordinates_norm_sq {p : E3} (hp : polynomial p = 1) :
   change (p 1)^2 + (p 2 + (p 0)^2 + 1/2)^2 = _
   unfold polynomial at hp
   nlinarith
-
 
 theorem lowerCap_image_closedBall {σ : Real} (hσ : σ ^ 2 = 1) :
     lowerCap σ '' closedBall (0 : E2) (Real.sqrt (1/8)) =
@@ -202,8 +190,6 @@ theorem lowerCap_image_closedBall {σ : Real} (hσ : σ ^ 2 = 1) :
     · change lowerCap σ q 2 = p 2
       rw [lowerCap_height, lowerCoordinates_norm_sq hp.1]
       ring
-
-
 
 theorem lowerCaps_disjoint :
     Disjoint (lowerCap 1 '' closedBall (0 : E2) (Real.sqrt (1/8)))

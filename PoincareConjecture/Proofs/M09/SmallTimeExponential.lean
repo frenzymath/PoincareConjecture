@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmallTimeInjectivity
 import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

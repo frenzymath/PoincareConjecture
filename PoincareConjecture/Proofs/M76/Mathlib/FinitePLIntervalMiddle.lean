@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +8,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.eq_image_Icc_of_subset
     {f : ℝ → E} {a b α β : ℝ} {d : Set E}
@@ -56,11 +43,6 @@ theorem IsFinitePLBallPair.eq_image_Icc_of_subset
       (isFinitePLBallPair_Icc hαβ).image_of_subset hf hsub hi
   have hend : f α ≠ f β := fun h => hαβ.ne (hi hα hβ h)
   exact (hball.eq_of_subset_with_same_endpoints hd himage hend).symm
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_middle_between_disjoint_ends
     {s d₀ d₁ : Set E} {a b c₀ c₁ : E}

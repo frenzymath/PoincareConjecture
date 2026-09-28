@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableI
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,12 +13,8 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 def m64MorreyPolarStrip (a : LoopPlane) (rho : ℝ) (p : LoopPlane) : LoopPlane :=
   a + (rho * Real.exp (-p 1)) • angularPoint (p 0 - Real.pi)
-
-
 
 theorem m64MorreyPolarStrip_contDiff (a : LoopPlane) (rho : ℝ) :
     ContDiff ℝ ∞ (m64MorreyPolarStrip a rho) := by
@@ -37,8 +22,6 @@ theorem m64MorreyPolarStrip_contDiff (a : LoopPlane) (rho : ℝ) :
   have h1 : ContDiff ℝ ∞ (fun p : LoopPlane => p 1) := by fun_prop
   exact contDiff_const.add ((contDiff_const.mul h1.neg.exp).smul
     (contDiff_angularPoint.comp (h0.sub contDiff_const)))
-
-
 
 theorem m64MorreyPolarStrip_fderiv (a : LoopPlane) (rho : ℝ) (p v : LoopPlane) :
     fderiv ℝ (m64MorreyPolarStrip a rho) p v =
@@ -56,8 +39,6 @@ theorem m64MorreyPolarStrip_fderiv (a : LoopPlane) (rho : ℝ) (p v : LoopPlane)
     EuclideanSpace.coe_proj, Function.comp_apply, Pi.neg_apply, smul_smul, zero_add]
   module
 
-
-
 theorem m64MorreyPolarStrip_det (a : LoopPlane) (rho : ℝ) (p : LoopPlane) :
     (fderiv ℝ (m64MorreyPolarStrip a rho) p).det = (rho * Real.exp (-p 1)) ^ 2 := by
   change LinearMap.det (fderiv ℝ (m64MorreyPolarStrip a rho) p).toLinearMap = _
@@ -74,8 +55,6 @@ theorem m64MorreyPolarStrip_det (a : LoopPlane) (rho : ℝ) (p : LoopPlane) :
   nlinarith [congrArg (fun t : ℝ => (rho * Real.exp (-p 1)) ^ 2 * t)
     (Real.sin_sq_add_cos_sq (p 0))]
 
-
-
 theorem m64MorreyPolarStrip_mapsTo_closedBall (a : LoopPlane) {rho : ℝ} (hrho : 0 ≤ rho) :
     MapsTo (m64MorreyPolarStrip a rho) m64AnnulusDomain (Metric.closedBall a rho) := by
   intro p hp
@@ -85,16 +64,12 @@ theorem m64MorreyPolarStrip_mapsTo_closedBall (a : LoopPlane) {rho : ℝ} (hrho 
     abs_of_nonneg (mul_nonneg hrho (Real.exp_pos _).le), norm_angularPoint, mul_one]
   exact mul_le_of_le_one_right hrho (Real.exp_le_one_iff.mpr (neg_nonpos.mpr hp.2.2.1))
 
-
-
 theorem m64MorreyPolarStrip_jacobian_lower (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho)
     {p : LoopPlane} (hp : p ∈ m64AnnulusDomain) :
     (rho * Real.exp (-1)) ^ 2 ≤ |(fderiv ℝ (m64MorreyPolarStrip a rho) p).det| := by
   rw [m64MorreyPolarStrip_det, abs_of_nonneg (sq_nonneg _)]
   apply (sq_le_sq₀ (by positivity) (by positivity)).mpr
   exact mul_le_mul_of_nonneg_left (Real.exp_le_exp.mpr (by linarith [hp.2.2.2])) hrho.le
-
-
 
 theorem m64MorreyPolarStrip_injOn (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) :
     InjOn (m64MorreyPolarStrip a rho) {p : LoopPlane | 0 < p 0 ∧ p 0 < curvePeriod} := by
@@ -126,8 +101,6 @@ theorem m64MorreyPolarStrip_injOn (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) :
     change p 0 = q 0
     linarith
   · exact hheight
-
-
 
 theorem m64MorreyPolarStrip_periodic (a : LoopPlane) (rho x s : ℝ) :
     m64MorreyPolarStrip a rho (annulusPoint (x + curvePeriod) s) =

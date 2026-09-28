@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.Boundary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.ExactDiskParametrization
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -41,8 +30,6 @@ theorem annulusChartImage_middle_circle
     refine ⟨p, ?_, hp⟩
     exact (_root_.Dehn.mem_frontier_annulusSquare_iff L 0 p).mpr
       ((hcore p).mp (hp.symm ▸ hx))
-
-
 
 theorem exists_standard_proper_disk
     {R S : Set V3} (hR : IsCompact R)
@@ -82,8 +69,6 @@ theorem exists_standard_proper_disk
 end PoincareConjecture.M76.Dehn
 
 namespace PoincareConjecture.M76
-
-
 
 theorem hasHamiltonStandardProperDehnDisks : HasHamiltonStandardProperDehnDisks := by
   intro R hR he S hS gamma hgamma f hboundary

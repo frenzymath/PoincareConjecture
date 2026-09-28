@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.CenterDensity
 import Mathlib.MeasureTheory.Integral.Lebesgue.Markov
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
-
 
 theorem pullbackVolumeDensity_le_one_on_regular_ray
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)
@@ -76,7 +65,6 @@ theorem pullbackVolumeDensity_le_one_on_regular_ray
   have hprod : 0 < s ^ m * t ^ m := mul_pos (pow_pos hs.1 m) (pow_pos htpos m)
   nlinarith
 
-
 theorem pullbackVolumeDensity_le_one_on_normal_ball
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)
     {e : EuclideanSpace ℝ (Fin (m + 1)) → M} {R : ℝ} (hR : 0 < R)
@@ -113,7 +101,6 @@ theorem pullbackVolumeDensity_le_one_on_normal_ball
   simpa only [hback] using H
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem pullbackVolumeDensity_eq_one_of_ball_volume_eq
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

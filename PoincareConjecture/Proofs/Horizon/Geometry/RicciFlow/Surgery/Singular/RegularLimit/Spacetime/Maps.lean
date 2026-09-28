@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.SliceIdentifications
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.ReferenceEmbedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 abbrev extendedPoint (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :=
   Σ t : ℝ, (H.extendedSliceGeometry P04 t).slice.carrier
@@ -39,7 +31,6 @@ theorem oldPoint_time_ne_terminal (H : SingularTimeAssumptions F T M) (p : F.poi
     p.1 ≠ T := by
   intro ht
   exact H.terminal_not_in_interval (ht ▸ H.oldPoint_time_mem p)
-
 
 def oldSpacetimeForward (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (p : F.point) : H.extendedPoint P04 :=
@@ -65,7 +56,6 @@ theorem oldSpacetimeForward_injective (H : SingularTimeAssumptions F T M)
     exact (H.oldSliceHomeomorph P04 (H.oldPoint_time_ne_terminal ⟨t, x⟩)).injective
       (eq_of_heq (Sigma.mk.inj_iff.mp hxy).2)
 
-
 theorem oldSpacetimeForward_range (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :
     range (H.oldSpacetimeForward P04) = {p : H.extendedPoint P04 | p.1 ∈ F.interval} := by
@@ -79,7 +69,6 @@ theorem oldSpacetimeForward_range (H : SingularTimeAssumptions F T M)
     rw [H.oldSpacetimeForward_eq P04 ht]
     exact Sigma.ext rfl (heq_of_eq ((H.oldSliceHomeomorph P04 ht).apply_symm_apply p.2))
 
-
 theorem mem_range_oldSpacetimeForward_iff (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (p : H.extendedPoint P04) :
     p ∈ range (H.oldSpacetimeForward P04) ↔ p.1 ≠ T := by
@@ -90,8 +79,6 @@ theorem mem_range_oldSpacetimeForward_iff (H : SingularTimeAssumptions F T M)
     refine ⟨⟨p.1, (H.oldSliceHomeomorph P04 ht).symm p.2⟩, ?_⟩
     rw [H.oldSpacetimeForward_eq P04 ht]
     exact Sigma.ext rfl (heq_of_eq ((H.oldSliceHomeomorph P04 ht).apply_symm_apply p.2))
-
-
 
 def regularSpacetimeForward (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u})
@@ -111,14 +98,12 @@ def regularSpacetimeForward (H : SingularTimeAssumptions F T M)
   · exact ht.symm
   · rfl
 
-
 theorem regularSpacetimeForward_old (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) (ht : t ∈ Ioc H.reference.tMinus T)
     (hlt : t < T) (x : H.regularRegion P04) :
     H.regularSpacetimeForward P04 (⟨t, ht⟩, x) =
       H.oldSpacetimeForward P04 ⟨t, H.reference.forward t ⟨ht.1.le, hlt⟩ x⟩ := by
   simp only [regularSpacetimeForward, dif_neg hlt.ne]
-
 
 @[simp] theorem regularSpacetimeForward_terminal (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : H.regularRegion P04) :
@@ -147,7 +132,6 @@ theorem regularSpacetimeForward_injective (H : SingularTimeAssumptions F T M)
     have h_old := H.oldSpacetimeForward_injective P04 hxy
     exact Subtype.ext ((H.reference.forward_openEmbedding t ⟨ht.1.le, hlt⟩).injective
       (eq_of_heq (Sigma.mk.inj_iff.mp h_old).2))
-
 
 theorem old_regular_spacetime_cover (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (p : H.extendedPoint P04) :

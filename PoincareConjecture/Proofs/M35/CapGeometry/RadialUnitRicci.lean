@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialShapeDerivative
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e (i : Fin 3) : StandardCapSpace := EuclideanSpace.single i 1
-
-
 
 theorem rotational_axis_radial_ricci
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -67,8 +57,6 @@ theorem rotational_axis_radial_ricci
   field_simp [(axisAngularCoefficient_pos g r).ne']
   ring
 
-
-
 theorem radialUnitField_axis
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
     radialUnitField g (r • e 2) = (axisRadialSpeed g r)⁻¹ • e 2 := by
@@ -77,8 +65,6 @@ theorem radialUnitField_axis
   simp only [radialUnitField, hn, smul_smul]
   congr 1
   field_simp [hr.ne']
-
-
 
 theorem radialUnitField_ricci
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

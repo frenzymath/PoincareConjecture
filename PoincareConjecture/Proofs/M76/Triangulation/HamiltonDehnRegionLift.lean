@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonDehnProtectedBall
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +15,6 @@ local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "X" => LatticeHandleAmbient ι κ L
 local notation "C2" => Set.prod (closedBall (0 : ι → ℝ) 1) (closedBall (0 : κ → ℝ) 2)
 local notation "pi" => hamiltonMarkedProjection ι κ L
-
-
-
 
 theorem HamiltonRetainedBlockChart.exists_lifted_compact_subset
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}
@@ -60,10 +47,6 @@ theorem HamiltonRetainedBlockChart.exists_lifted_compact_subset
   let q : P ≃ₜ S :=
     (hqcont.isClosedEmbedding hqinj).isEmbedding.toHomeomorphOfSurjective hqsurj
   exact ⟨P, rfl, hP, q, fun _ => rfl⟩
-
-
-
-
 
 theorem HamiltonRetainedBlockChart.exists_lifted_enclosing_region
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}

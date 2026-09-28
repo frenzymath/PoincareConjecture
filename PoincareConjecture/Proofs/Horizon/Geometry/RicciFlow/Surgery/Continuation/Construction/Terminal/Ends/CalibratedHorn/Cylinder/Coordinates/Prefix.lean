@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Partition.GraphRegions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CylinderPasting
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +14,6 @@ universe u
 namespace PoincareConjecture.EpsilonNeck
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 theorem prefix_cylinder_with_retained_half_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

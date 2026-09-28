@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.FamilyAdapters
 import PoincareConjecture.Statements.M64Approximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {G : M63AmbientGeometry F}
-
-
-
-
 
 theorem m64FamilyApproximationTheory_from_static_raw
     (hM63 : M63RampEstimatesTheory.{u})

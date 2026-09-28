@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -30,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem curvatureTensorNorm_eq_of_local_homothety
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N] [T2Space N]
@@ -208,9 +188,6 @@ private theorem strongNeck_realization_curvature_norm
   rw [hnorm]
   field_simp
 
-
-
-
 theorem exists_strongNeck_backward_curvature_bound :
     ∃ epsilon₀ K : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧ 0 < K ∧
       ∀ {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ},
@@ -248,9 +225,6 @@ theorem exists_strongNeck_backward_curvature_bound :
     abs_of_pos hQ] at hnorm
   have hh := (div_lt_iff₀ hQ).mp hnorm
   nlinarith [abs_nonneg (F.curvatureNorm (N.time_cylinder.pointMap tau htau x))]
-
-
-
 
 theorem negativeCurvaturePart_le_of_pinched_scalar_bound
     {F : GeneralizedRicciFlowData.{u}} (hbranch : generalizedPinchedOrNonnegative F)

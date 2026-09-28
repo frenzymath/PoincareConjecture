@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M38.SmoothCoverLift
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
 
 theorem closure_componentIn_inter_subset
     {A : Type*} [TopologicalSpace A] {V : Set A} {a : A} (ha : a ∈ V) :
@@ -30,8 +20,6 @@ theorem closure_componentIn_inter_subset
     exact hx.1
   rw [connectedComponentIn_eq_image ha]
   exact ⟨⟨x, hx.2⟩, hsub, rfl⟩
-
-
 
 theorem connected_subset_image_precompact_component
     {A Q : Type*} [TopologicalSpace A] [LocallyConnectedSpace A]
@@ -51,8 +39,6 @@ theorem connected_subset_image_precompact_component
   obtain ⟨x, hx, rfl⟩ := hy'
   exact mem_image_of_mem q (closure_componentIn_inter_subset
     (show a ∈ q ⁻¹' U from ha) ⟨hx, hKU hyK⟩)
-
-
 
 theorem localDiffeomorph_injective_open_sheet_generic
     {E E' H H' M M' : Type*}
@@ -89,7 +75,6 @@ theorem localDiffeomorph_injective_open_sheet_generic
     open_target := p.open_target
     contMDiffOn_toFun := hq.contMDiff.contMDiffOn
     contMDiffOn_invFun := hps }, rfl, rfl, rfl⟩
-
 
 theorem localDiffeomorph_injective_open_sheet
     {A Q : GeneralizedSliceCarrier} [Nonempty A.carrier]

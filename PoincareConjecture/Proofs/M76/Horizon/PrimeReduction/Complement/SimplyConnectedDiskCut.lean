@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalDiskCutComponents
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

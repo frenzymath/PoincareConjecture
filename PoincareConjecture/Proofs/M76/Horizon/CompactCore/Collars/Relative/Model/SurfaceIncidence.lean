@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.SurfaceStars
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSphereIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -112,7 +104,6 @@ theorem surface_vertex_mem_rim_iff_boundary (p : (T.marked 2).vertices) :
     · exact T.surface_boundary_inter.subset
         ⟨(T.marked 2).vertices_subset_space p.property, hp⟩
 
-
 theorem surface_face_mem_boundary_iff {s : Finset E} (hs : s ∈ (T.marked 2).faces) :
     s ∈ (T.marked 1).faces ↔ s ∈ (T.marked 3).faces := by
   refine ⟨?_, fun h ↦ T.rim_le_boundary h⟩
@@ -140,7 +131,6 @@ theorem surface_vertex_mem_star (p : (T.marked 2).vertices) :
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem surface_star_planar (p : (T.marked 2).vertices) :
     ((T.marked 2).closedStar p).AffineOnFaces (fun x ↦ (T.chart p x).1) ∧
       InjOn (fun x ↦ (T.chart p x).1) ((T.marked 2).closedStar p).space := by
@@ -156,7 +146,6 @@ theorem surface_star_planar (p : (T.marked 2).vertices) :
   apply T.star_injective p hx'.1 hy'.1
   exact Prod.ext hxy (((T.surface_eq p x hx'.1).mp hx'.2).2.trans
     ((T.surface_eq p y hy'.1).mp hy'.2).2.symm)
-
 
 theorem surface_face_card_le_three {s : Finset E} (hs : s ∈ (T.marked 2).faces) :
     s.card ≤ 3 := by
@@ -179,7 +168,6 @@ theorem boundary_chart_model (p : (T.marked 2).vertices)
   rcases T.chart_model p with h | h
   · exact False.elim (Set.disjoint_left.mp h.2 (T.surface_vertex_mem_star p) hp)
   · exact h
-
 
 theorem rim_face_card_le_two {s : Finset E} (hs : s ∈ (T.marked 3).faces) :
     s.card ≤ 2 := by
@@ -226,7 +214,6 @@ theorem exists_surface_planar_star (p : (T.marked 2).vertices)
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem exists_surface_halfPlane_star (p : (T.marked 2).vertices)
     (hregion : ∀ x ∈ (T.ambient.closedStar p).space,
       x ∈ (T.marked 0).space ↔ 0 ≤ (T.chart p x).1.1) :
@@ -242,7 +229,6 @@ theorem exists_surface_halfPlane_star (p : (T.marked 2).vertices)
   intro x hx
   rw [T.surface_eq p x hx, hregion x hx]
 
-
 theorem surface_exists_triangle_coface {s : Finset E} (hs : s ∈ (T.marked 2).faces) :
     ∃ t ∈ (T.marked 2).faces, s ⊆ t ∧ t.card = 3 := by
   obtain ⟨p, hps⟩ := (T.marked 2).nonempty_of_mem_faces hs
@@ -257,7 +243,6 @@ theorem surface_exists_triangle_coface {s : Finset E} (hs : s ∈ (T.marked 2).f
       T.exists_surface_halfPlane_star ⟨p, hp⟩ h.1
     exact (T.marked 2).exists_triangle_coface_of_halfPlane_star (T.marked_finite 2)
       hs hps a ha hai hU hpU hhalf hUS
-
 
 theorem surface_edge_faceLink_ncard_eq_one {s : Finset E}
     (hs : s ∈ (T.marked 3).faces) (hs2 : s.card = 2) :
@@ -279,7 +264,6 @@ theorem surface_edge_faceLink_ncard_eq_one {s : Finset E}
     ⟨T.marked_le 3 hs, by simpa [Finset.insert_eq_of_mem hps] using T.marked_le 3 hs⟩
   exact (hmodel.2 x ((T.ambient.closedStar p).subset_space hsA hxs)).mp
     ((T.marked 1).subset_space (T.rim_le_boundary hs) hxs)
-
 
 theorem surface_edge_faceLink_ncard_eq_two {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hs2 : s.card = 2)
@@ -312,7 +296,6 @@ theorem surface_edge_faceLink_ncard_eq_two {s : Finset E}
       exact hpR ((T.surface_vertex_mem_rim_iff_boundary pS).mpr
         ((h.2 p (T.surface_vertex_mem_star pS)).mpr hz))
     exact lt_of_le_of_ne hnonneg hne.symm
-
 
 theorem surface_edge_faceLink_ncard {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hs2 : s.card = 2) :

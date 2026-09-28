@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedLowerEndReplacement
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.UpperEndReplacementProtected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem exists_saddle_nonnested_three_end_replacement
     (hP : PlanarSchoenfliesService)

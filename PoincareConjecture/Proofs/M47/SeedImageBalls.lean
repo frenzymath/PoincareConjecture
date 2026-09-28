@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_AmbientBal
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeImage
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +38,6 @@ private theorem inverse_metric_le_four
   rw [hv] at hm
   have hright : C.toPartialEquiv (C.symm.toPartialEquiv y) = y := C.right_inv hy
   exact hm.trans_eq (congrArg (fun q : Y => 4 * h.inner q v v) hright)
-
-
 
 theorem seed_ball_subset_image [RegularSpace X] [T2Space Y]
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
@@ -110,8 +100,6 @@ theorem seed_ball_subset_image [RegularSpace X] [T2Space Y]
         congr 1
         ring
       _ ≤ _ := mul_le_mul_right hdist _
-
-
 
 theorem seed_image_ball_subset
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)

@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem mem_vertices_of_finite_subcomplex_intersection
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

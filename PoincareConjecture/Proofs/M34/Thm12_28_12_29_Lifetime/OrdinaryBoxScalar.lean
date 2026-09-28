@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -17,8 +7,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem ordinaryChapter11_box_scalar_eq
     {M : Type u} [TopologicalSpace M]

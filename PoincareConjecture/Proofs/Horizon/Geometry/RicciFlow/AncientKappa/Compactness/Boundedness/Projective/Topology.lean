@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Projective
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
-
 
 theorem exists_projectiveCentralSection_homeomorph
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -61,8 +51,6 @@ namespace AncientPointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
 
 theorem eventually_projectiveCentralSection_homeomorph
     {C : ℕ → FlowCarrier.{0} 3} {g : ∀ k, ℝ → (C k).metric}

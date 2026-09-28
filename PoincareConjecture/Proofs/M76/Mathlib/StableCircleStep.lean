@@ -3,27 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.StableCylinderSpatialPL
 import PoincareConjecture.Proofs.M76.Mathlib.StablePLProductCompletion
 import PoincareConjecture.Proofs.M76.Mathlib.CompactCylinderHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableCylinder
-
-
-
-
-
-
 
 theorem exists_stable_circle_step
     {E F X Y ι κ : Type*}

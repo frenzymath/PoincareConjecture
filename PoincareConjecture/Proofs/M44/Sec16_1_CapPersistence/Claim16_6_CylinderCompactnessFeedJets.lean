@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedEstimates
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +25,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   {a : ℕ → ℝ} {ha : ∀ k, a k ∈ (F k).surgery_times}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
-
-
-
 
 theorem eventually_cylinder_spacetime_jet_bound
     (P : M44CapPersistencePredecessors.{u})
@@ -86,9 +73,6 @@ theorem eventually_cylinder_spacetime_jet_bound
   intro p hp
   exact hk p ⟨hp, ⟨⟨hp.1.1, hp.1.2.trans hklife⟩, hsource hp.2⟩⟩
 
-
-
-
 theorem eventually_cylinder_coefficients_elliptic
     (P : M44CapPersistencePredecessors.{u})
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
@@ -108,8 +92,6 @@ theorem eventually_cylinder_coefficients_elliptic
   exact ⟨alpha, halpha, hbound.mono fun _ hk =>
     (hk p.2 (hpoint (mem_singleton p.2))).1 p.1 ⟨hp.1.1.le, hp.1.2.le⟩⟩
 
-
-
 theorem eventually_cylinder_coefficients_evolution
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
     (hR : Tendsto (fun k => (D k).radius) atTop atTop)
@@ -122,9 +104,6 @@ theorem eventually_cylinder_coefficients_evolution
     with k hklife hsource
   exact (D k).coefficients_evolution ⟨hp.1.1, hp.1.2.trans hklife⟩
     (hsource (mem_singleton p.2))
-
-
-
 
 theorem eventually_cylinder_coefficient_curvature_bound
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))

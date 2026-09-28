@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCapSumSquare
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenUnionMayerVietoris
 import PoincareConjecture.Proofs.M02.IntegralOpenCapData
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRelativeAttachedDiskExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension_of_proper_arc_fix_boundary
     {s q w W : Set E} {a b : E}

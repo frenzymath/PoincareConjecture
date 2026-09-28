@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,10 +7,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_finitePL_segment_height_chart
     (A : E →ᵃ[ℝ] ℝ) {x y : E} {α β : ℝ}

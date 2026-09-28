@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.CompactPro
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,9 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {C : Type*} [TopologicalSpace C] [CompactSpace C] [Nonempty C]
 
-
-
-
 theorem not_strictlyPositiveSectionalCurvature_of_compact_prod_real
     (e : (C × ℝ) ≃ₜ M) (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) :
@@ -40,9 +25,6 @@ theorem not_strictlyPositiveSectionalCurvature_of_compact_prod_real
     D hcomplete hpos
   exact Poincare.Topology.not_nonempty_homeomorph_compact_prod_real_euclidean_three
     ⟨e.trans P.euclidean.symm.toHomeomorph⟩
-
-
-
 
 theorem exists_null_plane_of_compact_prod_real
     (e : (C × ℝ) ≃ₜ M) (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -58,8 +40,6 @@ theorem exists_null_plane_of_compact_prod_real
   refine ⟨x, v, w, hv, hw, hvw, le_antisymm ?_ (hsec x v w)⟩
   simpa only [LeviCivitaData.sectionalCurvature, hv, hw, hvw, one_mul,
     zero_pow (by norm_num : (2 : ℕ) ≠ 0), sub_zero, div_one] using hnonpos
-
-
 
 theorem exists_null_plane_of_compact_prod_real_local_isometry
     {N : Type*} [TopologicalSpace N]

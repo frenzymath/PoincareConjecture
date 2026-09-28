@@ -4,18 +4,6 @@ import Mathlib.Topology.MetricSpace.Completion
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +14,6 @@ universe u v
 namespace UniformSpace.Completion
 
 variable {X : Type u} [MetricSpace X]
-
-
-
 
 theorem tendsto_of_uniform_height_tail
     {h : X → ℝ} {E : Completion X}
@@ -41,11 +26,6 @@ theorem tendsto_of_uniform_height_tail
   intro eta heta
   obtain ⟨a, ha, hclose⟩ := htail eta heta
   exact (hq.eventually (lt_mem_nhds ha)).mono fun i hi => hclose (q i) hi
-
-
-
-
-
 
 theorem exists_unique_of_vanishing_height_tails
     (h : X → ℝ) (hcontinuous : Continuous h)

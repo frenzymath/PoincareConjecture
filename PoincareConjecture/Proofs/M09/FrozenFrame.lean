@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.TensorOperators
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Topology

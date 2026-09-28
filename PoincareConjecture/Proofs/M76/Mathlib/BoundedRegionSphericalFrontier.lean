@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionNested
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
-
 theorem prod_singleton_one_subset_frontier_cylinder {U C : Set X} (hUC : U ⊆ C) :
     U ×ˢ {(1 : ℝ)} ⊆ frontier (C ×ˢ Icc (-1 : ℝ) 1) := by
   rw [frontier_prod_eq, frontier_Icc (by norm_num : (-1 : ℝ) ≤ 1)]
@@ -28,9 +15,6 @@ theorem prod_singleton_one_subset_frontier_cylinder {U C : Set X} (hUC : U ⊆ C
   have ht' : t = 1 := ht
   subst t
   exact Or.inl ⟨subset_closure (hUC hx), by simp⟩
-
-
-
 
 theorem preimage_top_face_eq_preimage_positive_band {U C : Set X}
     (hUC : U ⊆ interior C) :
@@ -56,18 +40,12 @@ theorem preimage_top_face_eq_preimage_positive_band {U C : Set X}
       · exact ht
     · exact (hside.1.2 (hUC hx.1)).elim
 
-
-
-
 theorem isOpen_preimage_top_face {U C : Set X} (hU : IsOpen U)
     (hUC : U ⊆ interior C) :
     IsOpen ((Subtype.val : frontier (C ×ˢ Icc (-1 : ℝ) 1) → X × ℝ) ⁻¹'
       (U ×ˢ {1})) := by
   rw [preimage_top_face_eq_preimage_positive_band hUC]
   exact (hU.prod isOpen_Ioi).preimage continuous_subtype_val
-
-
-
 
 theorem closure_preimage_top_face {U C : Set X} (hUC : U ⊆ C) :
     closure ((Subtype.val : frontier (C ×ˢ Icc (-1 : ℝ) 1) → X × ℝ) ⁻¹'
@@ -78,10 +56,6 @@ theorem closure_preimage_top_face {U C : Set X} (hUC : U ⊆ C) :
     image_preimage_eq_of_subset (by
       simpa using prod_singleton_one_subset_frontier_cylinder hUC),
     closure_prod_eq, isClosed_singleton.closure_eq]
-
-
-
-
 
 theorem frontier_preimage_top_face {U C : Set X} (hU : IsOpen U)
     (hUC : U ⊆ interior C) :
@@ -101,9 +75,6 @@ theorem frontier_preimage_top_face {U C : Set X} (hU : IsOpen U)
   simp only [mem_sdiff, mem_prod]
   tauto
 
-
-
-
 theorem isCompact_cylinderExterior [T2Space X] {U C : Set X}
     (hC : IsCompact C) (hU : IsOpen U) (hUC : U ⊆ interior C) :
     IsCompact (frontier (C ×ˢ Icc (-1 : ℝ) 1) \ U ×ˢ {1}) := by
@@ -122,10 +93,6 @@ theorem isCompact_cylinderExterior [T2Space X] {U C : Set X}
     (hC.prod isCompact_Icc).of_isClosed_subset isClosed_frontier
       (hC.isClosed.prod isClosed_Icc).frontier_subset
   exact hfront.inter_right (hU.prod isOpen_Ioi).isClosed_compl
-
-
-
-
 
 theorem alexander_nested_region_inter_cylinderExterior {U V C b c d q : Set X}
     (hV : IsOpen V) (hUV : U ⊆ V) (hUC : closure U ⊆ C)

@@ -2,24 +2,11 @@ import Mathlib.Data.Set.Function
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem original_exterior_frontier_images
     {X E : Type*} [TopologicalSpace X] {C L R : Set X}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakPhaseTra
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFluxTraceBound
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +16,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem m64WeakPhase_rotated_test_identity
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b : ℝ → ℝ)
@@ -72,10 +57,6 @@ theorem m64WeakPhase_rotated_test_identity
   change (∫ x in Icc (0 : ℝ) curvePeriod, d 0 (annulusPoint x 0) * b x) =
     (∫ p in S, d 1 p * V 0 p) - ∫ p in S, d 0 p * V 1 p
   linarith
-
-
-
-
 
 theorem m64WeakPhase_rotated_test_sq_le
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b : ℝ → ℝ)

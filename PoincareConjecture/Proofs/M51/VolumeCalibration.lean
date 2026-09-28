@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M45InitialPrefix
 import PoincareConjecture.Statements.M49VolumeLoss
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,11 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m51VolumeCalibration_from_M49
     (B : RepairedControlledSchedulesData.{u}) (V49 : RepairedVolumeLossTheory.{u}) :

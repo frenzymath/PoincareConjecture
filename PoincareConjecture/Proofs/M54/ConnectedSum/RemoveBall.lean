@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenGeneral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,16 +11,11 @@ namespace PoincareConjecture.SurgeryBallEmbedding
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
-
 noncomputable def inclusionMulEquiv (x : (B.closedBallᶜ : Set A.carrier)) :
     FundamentalGroup (B.closedBallᶜ : Set A.carrier) x ≃* FundamentalGroup A.carrier x.1 :=
   VanKampen.inclusionMulEquivAt B.closedBallᶜ B.chartRegion x
     B.closedBall_closed.isOpen_compl B.chartRegion_open B.complement_union_chart
     B.chart_simplyConnected B.overlap_simplyConnected
-
-
-
 
 theorem exists_complement_group_equiv (x : A.carrier) :
     ∃ y : (B.closedBallᶜ : Set A.carrier),

@@ -3,20 +3,11 @@ import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Sequences
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 namespace Poincare.ODE
-
 
 theorem exists_late_small_decay {q a : ℝ → ℝ} {B : ℝ}
     (hder : ∀ t, 0 ≤ t → HasDerivAt q (-a t) t)
@@ -48,8 +39,6 @@ theorem exists_late_small_decay {q a : ℝ → ℝ} {B : ℝ}
     ring
   rw [heq] at hbound
   linarith
-
-
 
 theorem tendsto_of_strict_min_accumulation
     {X : Type*} [TopologicalSpace X] [RegularSpace X]
@@ -99,7 +88,6 @@ theorem tendsto_of_strict_min_accumulation
     have hum := hanti hi0 (hi0.trans hu.1) hu.1
     exact (not_le_of_gt hic) (huc.trans hum)
   exact (hVU (interior_subset (hpathV (mem_image_of_mem _ ⟨ht, le_rfl⟩)))).1
-
 
 theorem eventually_eq_of_strict_max_accumulation
     {X : Type*} [TopologicalSpace X] [T3Space X] {K : Set X}

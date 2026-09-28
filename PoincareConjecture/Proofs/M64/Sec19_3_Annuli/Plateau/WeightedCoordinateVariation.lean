@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakQuadraticVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityInverseChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +23,6 @@ local instance m64WeightedCoordinateVariation_bilinearGroup :
 local instance m64WeightedCoordinateVariation_bilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem m64ChartQuadratic_integrable
     (g : RiemannianMetric n M) (b : M)
@@ -62,9 +50,6 @@ theorem m64ChartQuadratic_integrable
     _ = _ := by ring
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem m64WeightedCoordinate_integral_firstVariation
     (g : RiemannianMetric n M) (b : M) (modulus : ℝ)

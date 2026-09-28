@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LinearPatchConeChart
 import PoincareConjecture.Proofs.M76.Mathlib.SignedQuadrantPatchRetention
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes RectangleCornerArcs
@@ -23,13 +11,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_height_plane_cone_chart_with_cut_boxes
     {S P surface : Set E} {D : Set ((ℝ × ℝ) × ℝ)}

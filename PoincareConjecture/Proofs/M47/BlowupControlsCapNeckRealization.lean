@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckScalarComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem cap_neck_normalized_metric_realization (N : EpsilonNeck g)
     (q : UnitTwoSphere) {c : ℝ}

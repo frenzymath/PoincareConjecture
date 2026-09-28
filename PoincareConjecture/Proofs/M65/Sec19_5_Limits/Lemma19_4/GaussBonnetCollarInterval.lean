@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCollarFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -66,10 +56,6 @@ private theorem interval_flux_integration_by_parts {T U N : ℝ → E} {a b : �
         ((hU t htc).differentiableAt one_ne_zero), inner_sub_left]
   dsimp only [f] at hFTC hdiff
   linarith only [hFTC, hdiff]
-
-
-
-
 
 theorem collar_interval_flux_sq_bound {T U N : ℝ → E} {a b C L delta : ℝ}
     (hab : a ≤ b) (hC : 0 ≤ C) (_hL : 0 ≤ L) (hd : 0 ≤ delta)
@@ -156,10 +142,6 @@ private theorem interval_inner_uniform_error {u v w : ℝ → E} {a b K eta : �
       exact (norm_inner_le_norm _ _).trans
         (mul_le_mul (hub t ht) (he t ht) (norm_nonneg _) hK)
     _ = _ := by rw [intervalIntegral.integral_const, smul_eq_mul]; ring
-
-
-
-
 
 theorem collar_interval_flux_tendsto {T N : ℕ → ℝ → E} {U V : ℝ → E}
     {delta eta : ℕ → ℝ} {a b C L : ℝ}

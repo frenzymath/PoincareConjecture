@@ -1,18 +1,8 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem IsPreconnected.subset_interior_or_compl_closure
     {X : Type*} [TopologicalSpace X] {U V : Set X}
@@ -26,8 +16,6 @@ theorem IsPreconnected.subset_interior_or_compl_closure
     · right
       intro hclosure
       exact Set.disjoint_left.mp hboundary hx ⟨hclosure, hin⟩
-
-
 
 theorem IsPreconnected.subset_compl_interior_of_disjoint_frontier
     {X : Type*} [TopologicalSpace X] {U V : Set X}

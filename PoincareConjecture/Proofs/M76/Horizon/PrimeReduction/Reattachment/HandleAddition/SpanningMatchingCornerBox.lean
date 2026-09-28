@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningProtectedCorner
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningJoinedSectorCharts
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

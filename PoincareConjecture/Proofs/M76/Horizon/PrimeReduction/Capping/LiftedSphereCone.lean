@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierConeBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeAffine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem IsFinitePL.isFinitePLBallPair_lifted_sphere_cone
     {S : Set E} {T : Set F} {e : S ≃ₜ frontier T} (he : e.IsFinitePL)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarC1MetricMajorant
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +15,6 @@ local notation "Form" => Plane →L[ℝ] Plane →L[ℝ] ℝ
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem scalarLocalC1_exists_smooth_metric_majorant
     (g : RiemannianMetric n M) (f : Plane → M)

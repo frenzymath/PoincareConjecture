@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spec
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralAnalytic
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -194,7 +184,6 @@ private theorem analyticAt_heatKernelContinuousTime (t₀ : ℝ) (ht₀ : 0 < t�
         (heatKernelContinuous_add_eq_heatPowerContinuous D S (t - a) a hsa ha x y).symm
     _ = heatKernelContinuousTime D S t x y :=
       (heatKernelContinuousTime_of_pos D S htpos x y).symm
-
 
 private theorem heatKernelContinuous_zero_of_lt (s t : ℝ) (hs : 0 < s) (hst : s < t)
     (x y : M) (hy : y ∈ Ω)

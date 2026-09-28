@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.Cylindrical
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +25,6 @@ private theorem exists_uniform_positive_lt {ι : Type*} [Finite ι]
   refine ⟨r / 2, half_pos hr, hsub ?_⟩
   rw [mem_ball, Real.dist_eq, sub_zero, abs_of_pos (half_pos hr)]
   linarith
-
-
-
 
 theorem exists_finite_common_cylindrical_preparation_of_surface_germs
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) {s t : S2 → E3}

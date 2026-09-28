@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,7 +42,6 @@ def universalNoncollapseModelPoint : RoundCylinderSpace :=
     obtain ⟨x, hx⟩ := (NormedSpace.sphere_nonempty (E := EuclideanSpace ℝ (Fin 3))
       (x := 0) (r := 1)).mpr zero_le_one
     exact ⟨⟨x, hx⟩⟩), 0)
-
 
 def universalNoncollapseModelVolume : ℝ :=
   (roundCylinderMetric.volumeMeasure

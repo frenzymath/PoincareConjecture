@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalHolder
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory TopologicalSpace
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M65LocalWeakMap
-
-
-
-
 
 theorem exists_embedded_holder_representative
     {M : Type*} [TopologicalSpace M]
@@ -103,10 +89,6 @@ theorem exists_embedded_holder_representative
   intro x hx y hy
   rw [heq q hx, heq q hy]
   exact hholder q x hx y hy
-
-
-
-
 
 theorem exists_holder_representative
     {M : Type*} [TopologicalSpace M]

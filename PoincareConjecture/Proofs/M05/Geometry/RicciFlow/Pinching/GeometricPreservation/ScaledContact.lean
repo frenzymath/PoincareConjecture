@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.TimeEvolution
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.TransportedContact
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Laplacian.Linearity
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Real
@@ -21,19 +11,13 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m65PolarRadialFlux (X : LoopPlane → LoopPlane)
     (r t : ℝ) : ℝ :=
   r * inner ℝ (X (r • Proofs.M58.angularPoint t)) (Proofs.M58.angularPoint t)
 
-
-
 noncomputable def m65PolarAngularFlux (X : LoopPlane → LoopPlane)
     (r t : ℝ) : ℝ :=
   inner ℝ (X (r • Proofs.M58.angularPoint t)) (Proofs.M58.angularVector t)
-
-
 
 theorem m65AngularVector_hasDerivAt (t : ℝ) :
     HasDerivAt Proofs.M58.angularVector (-Proofs.M58.angularPoint t) t := by
@@ -47,9 +31,6 @@ theorem m65AngularVector_hasDerivAt (t : ℝ) :
   convert! L.hasFDerivAt.comp_hasDerivAt t h using 1
   ext i
   fin_cases i <;> rfl
-
-
-
 
 theorem m65PolarDivergencePointwise
     (X : LoopPlane → LoopPlane) {r t : ℝ}
@@ -95,8 +76,6 @@ theorem m65PolarDivergencePointwise
   change inner ℝ (X p) e + r * inner ℝ ((fderiv ℝ X p) e) e +
       (r * inner ℝ ((fderiv ℝ X p) τ) τ - inner ℝ (X p) e) = _
   ring
-
-
 
 theorem m65PolarTrace_eq (A : LoopPlane →L[ℝ] LoopPlane) (t : ℝ) :
     inner ℝ (A (Proofs.M58.angularPoint t)) (Proofs.M58.angularPoint t) +

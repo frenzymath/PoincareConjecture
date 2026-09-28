@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem strip_center_is_proper_arc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -49,9 +38,6 @@ theorem strip_center_is_proper_arc
       exact hnot (by simp only [heq, mem_insert_iff, mem_singleton_iff, true_or])
     · have heq : x = (1, 0) := Prod.ext hright hx0
       exact hnot (by simp only [heq, mem_insert_iff, mem_singleton_iff, or_true])
-
-
-
 
 theorem exists_three_disks_of_disjoint_strips
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

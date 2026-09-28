@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.ChartComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,8 +35,6 @@ private theorem eventually_intrinsic_edist_lt
       (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨⟨g.inner, g.toContinuousRiemannianMetric.continuous, fun _ _ _ ↦ rfl⟩⟩
   exact eventually_riemannianEDist_lt (𝓡 n) p hc
-
-
 
 theorem continuousOn_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -80,8 +72,6 @@ private theorem exists_frozen_distance_comparison
     e he hei (show p ∈ e.source from mem_univ _) A (K := 2) (by norm_num)
       (g.eventually_pullbackNorm_comparison contMDiffAt_id A hA (by norm_num))
   exact ⟨A, U, hU, hp, by simpa [e] using hcomp⟩
-
-
 
 theorem exists_lipschitzOn_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

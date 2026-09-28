@@ -1,17 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Tightening
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open scoped InnerProductSpace
 namespace Poincare.CurvatureIntegral
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem norm_add_le_of_opposite
     (u v : E) {η : ℝ} (hη : 0 ≤ η) (hu : ‖u‖ ≤ 1) (hv : ‖v‖ ≤ 1)
@@ -24,7 +17,6 @@ theorem norm_add_le_of_opposite
   have hnonneg := Real.sqrt_nonneg η
   nlinarith [norm_nonneg (u + v)]
 
-
 theorem abs_inner_opposite_le
     (u v w : E) {ε η : ℝ} (hη : 0 ≤ η)
     (hu : ‖u‖ ≤ 1) (hv : ‖v‖ ≤ 1) (hw : ‖w‖ ≤ 1)
@@ -34,7 +26,6 @@ theorem abs_inner_opposite_le
   apply abs_inner_le_of_strainer_perturbation (-u) v w hw
   · simpa only [sub_neg_eq_add, add_comm] using norm_add_le_of_opposite u v hη hu hv hpair
   · simpa only [inner_neg_left, abs_neg] using hcross
-
 
 theorem abs_inner_opposite_le_of_square_error
     (u v w : E) {ε : ℝ} (hε : 0 ≤ ε)
@@ -51,7 +42,6 @@ theorem abs_inner_opposite_le_of_square_error
     (by simpa only [sub_neg_eq_add, add_comm] using hsum)
     (by simpa only [inner_neg_left, abs_neg] using hcross)
   linarith
-
 
 theorem abs_inner_opposite_le_of_annular_error
     (u v w : E) {ε η : ℝ} (hε : 0 ≤ ε)

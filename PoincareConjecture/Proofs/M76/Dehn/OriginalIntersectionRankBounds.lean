@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalFaceMotionData
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,9 +16,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
-
-
-
 theorem FaceMotionData.finrank_plane
     {s t : Stage e S f r C} {step : Step s t}
     {K K₀ K₁ : SimplicialComplex ℝ V2} {j : V2 → t.Carrier}
@@ -38,12 +25,6 @@ theorem FaceMotionData.finrank_plane
     (motion : FaceMotionData step K K₀ K₁ j Q B J U R Fmark boundary) :
     Module.finrank ℝ motion.plane.direction = if boundary = true then 2 else 3 := by
   exact MarkedSurfaceMotionData.finrank_plane motion
-
-
-
-
-
-
 
 theorem FaceMotionData.original_intersection_rank_bounds
     {s t : Stage e S f r C} {step : Step s t}

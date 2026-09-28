@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.CoordinateCurvePrimitive
 import PoincareConjecture.Proofs.M64.Mathlib.AbsoluteContinuityCongruence
 import PoincareConjecture.Proofs.M64.Mathlib.HalfDiskC1Green
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -38,10 +25,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "S" => interior m64AnnulusDomain
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
 local notation "nu" => volume.restrict (Icc (0 : ℝ) Real.pi)
-
-
-
-
 
 theorem lower_halfDisk_target_semicircle
     (A : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)

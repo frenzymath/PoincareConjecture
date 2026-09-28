@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Graph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem convexHull_inter_triangleZeroSet (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)
@@ -29,8 +19,6 @@ theorem convexHull_inter_triangleZeroSet (K : SimplicialComplex ℝ E)
     exact ⟨hxt, (hA s hs hsc t ht htc x hxs hxt).mp hz⟩
   · rintro ⟨hxt, hz⟩
     exact ⟨hxt, t, ht, htc, hxt, hz⟩
-
-
 
 theorem triangleZeroSet_eq_preimage (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) {F : Type*} (f : E → F) (N : Set F)

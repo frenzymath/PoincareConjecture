@@ -5,21 +5,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalBallBicoll
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalBallBoundarySphere
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace AddCircle
-
-
-
 
 theorem exists_closed_arc_of_compact_connected
     {X : Type*} [TopologicalSpace X] (period : ℝ) [Fact (0 < period)]
@@ -76,10 +65,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
-
-
 
 theorem exists_closed_source_component_boundary_arc_ball
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

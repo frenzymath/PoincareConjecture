@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Weak.RadialIntegral
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
 
 theorem exists_contDiff_radial_test {R r : ℝ} (hr : 0 < r) (hrR : r < R)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -78,8 +66,6 @@ open Poincare.VolumeComparison
 variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
-
-
 
 theorem radial_integral_laplacian_comparison_test
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_PositiveAction
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 import PoincareConjecture.Proofs.M14.Sec6_1_PathPrefix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem prefix_action_le_scalar_floor_correction {T S tau : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 S x y) (htau : 0 < tau) (htauS : tau ≤ S)
@@ -67,8 +57,6 @@ theorem prefix_action_le_scalar_floor_correction {T S tau : ℝ} {x y : G.Point}
     change M14BackwardLAction G p + 6 * ((2 / 3 : ℝ) * S * Real.sqrt S) = _
     ring
   exact hprefix.trans (hvalue ▸ hwhole)
-
-
 
 theorem prefix_action_budget_margin {K : MetricSurgeryConstants}
     (prefixData : SurgeryParameterPrefix K) {T S tau : ℝ} {x y : G.Point}

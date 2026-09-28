@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M38.CollarMotion
 import PoincareConjecture.Proofs.M38.LowerEndReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_supported_negative_shift {R : ℝ} (hR : 0 < R) :
     ∃ e : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞,
@@ -70,8 +60,6 @@ theorem exists_supported_negative_shift {R : ℝ} (hR : 0 < R) :
     rw [hformula, lowerEndProfile_outer (1 / 4) hout]
     field_simp
     ring
-
-
 
 theorem exists_negative_collar_motion
     {Q : Type*} [TopologicalSpace Q] [ChartedSpace StandardCapSpace Q] [T2Space Q]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.ContinuationInput
 import PoincareConjecture.Proofs.M48.TerminalReference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
 
 def m48TerminalCore {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -50,8 +41,6 @@ variable {S : RepairedControlledSchedulesData.{u}} (A : M48AnalyticCalibration S
   (hA : H.analytic_constant = S.calibration.analytic_constant)
   (limit : RepairedSingularRegularLimitData H) (horn : RepairedHornSelectionData H)
   (hlimit : horn.limit = limit)
-
-
 
 noncomputable def terminalBridge :
     RepairedContinuationLimitBridge H limit horn

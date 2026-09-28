@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -14,10 +10,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_metric_eq_nhds_of_isClosed
     {n : ℕ} {S U : Set (EuclideanSpace ℝ (Fin n))}

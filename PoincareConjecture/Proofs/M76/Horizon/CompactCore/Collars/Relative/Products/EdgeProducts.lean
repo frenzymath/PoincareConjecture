@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Produc
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.EdgeGeometry
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedProduct
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -15,8 +13,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {T : CoorientedSurfaceStars E}
-
-
 
 theorem SurfaceTriangleFibers.exists_edge_product (F : SurfaceTriangleFibers T)
     {s : Finset E} (hs : s ∈ (T.marked 2).faces)

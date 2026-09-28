@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalFiniteSourceEdgePairs
 import PoincareConjecture.Proofs.M76.Dehn.OriginalFaceDiskState
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FaceOrderIntersections
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,11 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.finite_history_original_edge_pairs
     {s t : Stage e S f r C} (step : Step s t)

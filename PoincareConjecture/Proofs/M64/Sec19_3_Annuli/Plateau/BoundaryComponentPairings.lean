@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,17 +10,10 @@ variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
 theorem m64Trilinear_first_pairing (T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
     (v a b : E) :
     (∑ j : Fin n, T (EuclideanSpace.single j 1) a b * v j) = T v a b :=
   M60.suCoordinateDual_pairing ((T.flip a).flip b) v
-
-
-
-
 
 theorem m64WeightedBoundary_principal_pairing
     (G : E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V D : Fin 2 → E) :
@@ -41,9 +24,6 @@ theorem m64WeightedBoundary_principal_pairing
   apply Finset.sum_congr rfl
   intro i _
   simp_rw [mul_assoc, ← Finset.mul_sum, M60.suCoordinateDual_pairing]
-
-
-
 
 theorem m64WeightedBoundary_source_pairing
     (T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V : Fin 2 → E) (v : E) :
@@ -60,9 +40,6 @@ theorem m64WeightedBoundary_source_pairing
   apply Finset.sum_congr rfl
   intro i _
   simp_rw [mul_assoc, ← Finset.mul_sum, m64Trilinear_first_pairing]
-
-
-
 
 theorem m64WeightedBoundary_cross_pairing
     (G : E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V : Fin 2 → E) (v : E)

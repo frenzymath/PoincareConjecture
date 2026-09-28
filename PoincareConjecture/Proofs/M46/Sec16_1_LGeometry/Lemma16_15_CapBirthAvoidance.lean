@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_BirthApproach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,17 +18,12 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (Q : CapBarrierWindow G (F.slice origin) (F.metric origin) center
     origin T A h c mu theta)
 
-
-
 def CapBarrierWindow.earlyInnerTrace : Set G.toLGeometry.Point :=
   {v | ∃ w : (G.realization.timeIntervals.interval
       (cylinderPhysicalInterval origin (h⁻¹ ^ 2) Q.cylinder.scale_pos Q.interval)).Point ×
         Q.source,
     w.2.val ∈ (F.metric origin).ball center (A * h / 2) ∧
     (w.1.val - origin) / h ^ 2 ≤ 1 / 2 ∧ rawCylinderMap G.realization Q.cylinder w = v}
-
-
-
 
 theorem CapBarrierOriginData.birth_capture
     (D : CapBarrierOriginData H Q) (hA : 0 < A) (hh : 0 < h)
@@ -98,9 +84,6 @@ theorem CapBarrierOriginData.birth_capture
     exact mul_div_cancel_right₀ s hsq.ne'
   rw [hclock]
   exact hs.2.trans hdhalf
-
-
-
 
 theorem CapBarrierOriginData.avoids_birth
     [CompactSpace (F.slice origin).carrier]

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Extension
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +25,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 def regularNeckSourceMap {t : ℝ} (ht : t ∈ Ico H.reference.tMinus T) :
     H.regularRegion P04 → (F.slice t).carrier := H.reference.forward t ht ∘ Subtype.val
-
-
 
 def regularNeckOldCylinder {t : ℝ} (ht : t ∈ Ico H.reference.tMinus T)
     (N : GeneralizedStrongNeck F t H.epsilon) (x₀ : H.regularRegion P04) :
@@ -60,8 +56,6 @@ theorem regularNeckOldCylinder_pointMap {t : ℝ} (ht : t ∈ Ico H.reference.tM
     (H.regularNeckOldCylinder P04 ht N x₀).pointMap s hs x =
       N.time_cylinder.pointMap s hs (H.reference.forward t ht x) := rfl
 
-
-
 def regularNeckExtendedCylinder (hΩ : H.reference.regularLimitSet.Nonempty)
     {t : ℝ} (ht : t ∈ Ico H.reference.tMinus T)
     (N : GeneralizedStrongNeck F t H.epsilon) (x₀ : H.regularRegion P04) :
@@ -77,8 +71,6 @@ theorem regularNeckExtendedCylinder_pointMap (hΩ : H.reference.regularLimitSet.
       H.oldSpacetimeForward P04 (N.time_cylinder.pointMap s hs (H.reference.forward t ht x)) := by
   exact (H.nonemptyExtension P04 hΩ).pushCylinder_pointMap
     (H.regularNeckOldCylinder P04 ht N x₀) ⟨x₀⟩ s hs x
-
-
 
 theorem regularNeckExtendedCylinder_eq_regularBox
     (hΩ : H.reference.regularLimitSet.Nonempty) {t : ℝ}

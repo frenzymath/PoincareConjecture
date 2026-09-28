@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.C1Regularity.ContDiffOnOne
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.C1Regularity.JointFrechetDerivative
-
-
-
-
-
-
-

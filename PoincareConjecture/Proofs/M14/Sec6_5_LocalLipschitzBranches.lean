@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_StablePrefix
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +19,6 @@ private theorem initialValuePath_cast_curve {c : ℝ} {Z : G.Horizontal x}
     (h ▸ P : M14SquareRootInitialValuePath G T c x y Z).path.curve = P.path.curve := by
   cases h
   rfl
-
-
-
 
 theorem exists_exponential_branch_of_square_euler (E : M14ExponentialFamily G T x)
     {p : M14BackwardPath G T 0 b x y} (R : M14SquareRootPath G p)
@@ -75,9 +62,6 @@ private theorem minimizing_curves_eqOn_of_endpoint_eq {z w : G.Point}
   cases h
   exact hunique q hq
 
-
-
-
 theorem initialVector_eq_of_minimizing_stable_prefix
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
     (H : M14StableSet G T τ x E) {Z W : G.Horizontal x} (hZ : Z ∈ H.carrier)
@@ -98,9 +82,6 @@ theorem initialVector_eq_of_minimizing_stable_prefix
   intro t ht
   exact (hcurve ⟨ht.1, ht.2.trans hτb.le⟩).symm.trans
     ((heq ht).trans (hqcurve ht))
-
-
-
 
 theorem exponentialPath_minimizing_of_stable_prefix
     (hCoordinates : M12MetricPredecessors.{0} n)

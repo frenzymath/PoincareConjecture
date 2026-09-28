@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.AxisTimeCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e (i : Fin 3) : StandardCapSpace := EuclideanSpace.single i 1
-
-
 
 theorem rotational_axis_angular_ricci
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -64,8 +53,6 @@ theorem rotational_axis_angular_ricci
   simp only [D.curvatureTensor_zero_first, mul_zero, zero_add, add_zero,
     w, Matrix.cons_val_zero, Matrix.cons_val_succ]
   field_simp [(axisAngularCoefficient_pos g r).ne', (axisRadialCoefficient_pos g r).ne']
-
-
 
 theorem raw_axisWarpingRadius_hasDerivWithinAt_intrinsic
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

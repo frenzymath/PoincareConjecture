@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteDistanceDyadic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +20,6 @@ private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     T3Space L.carrier.carrier := L.carrier.t3Space
 private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     ConnectedSpace L.carrier.carrier := L.connectedSpace
-
-
 
 theorem limitFinite_compact_diameter (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)

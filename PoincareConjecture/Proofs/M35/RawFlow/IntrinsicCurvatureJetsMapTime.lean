@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsCoordinateTim
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicEvolution
 import PoincareConjecture.Proofs.M35.RadialGauge.MovingRadiusEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +11,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M35.Uniqueness
 
 open RadialGauge
-
 
 noncomputable def rawIntrinsicGaugeMap {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) (t₀ : ℝ) (w : ℝ → ℝ → ℝ)
@@ -35,7 +23,6 @@ theorem rawIntrinsicGaugeMap_zero {g₀ : StandardInitialMetric}
     rawIntrinsicGaugeMap G t₀ w t 0 = 0 := by
   simp only [rawIntrinsicGaugeMap, intrinsicSpatialCoordinate_zero, smul_zero]
 
-
 theorem rawIntrinsicGaugeMap_eq_radius {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) (t₀ : ℝ) (w : ℝ → ℝ → ℝ) (t : ℝ)
     {x : StandardCapSpace} (hx : x ≠ 0) :
@@ -46,8 +33,6 @@ theorem rawIntrinsicGaugeMap_eq_radius {g₀ : StandardInitialMetric}
   congr 1
   unfold mapRadius
   ring
-
-
 
 theorem rawIntrinsicGaugeMap_hasDerivAt_of_radius_equation
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

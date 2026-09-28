@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_GaugeEndpointFamily
 import PoincareConjecture.Proofs.M14.Sec6_2_LocalTestField
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +22,6 @@ private theorem horizontal_transport_val {q r : G.Point} (h : q = r)
     (v : G.Horizontal q) : (h.symm ▸ v : G.Horizontal r).val = v.val := by
   cases h
   rfl
-
-
-
 
 theorem variationField_gauge_germ (V : M14LVariationData G p R) {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval a b) (j : G.gaugeCover.index)
@@ -58,9 +46,6 @@ variable {f : ℝ × ℝ → G.Point} {U : Set ℝ} {B c : ℝ}
     G.gaugeCover.spatial j}
   (D : GaugeEndpointFamily f U T 0 B c 0 j lift)
 
-
-
-
 theorem variationField_line_marked (V : M14LVariationData G p R)
     (hc : c ∈ M14SqrtParameterInterval a b)
     (z d : ℝ × EuclideanSpace ℝ (Fin n)) (hz : z ∈ D.parameters)
@@ -83,8 +68,6 @@ theorem variationField_line_marked (V : M14LVariationData G p R)
       (x := ⟨z.2, hy⟩) (v := u • d.2) hyu).symm
   exact (hV u).trans (hmark.trans
     (congrArg (fun q => (G.gaugeCover.cylinder j).toSpacetime ((lift (f (c, 0))).1, q)) hshift))
-
-
 
 theorem variationField_line_initial_zero (V : M14LVariationData G p R)
     (z d : ℝ × EuclideanSpace ℝ (Fin n))

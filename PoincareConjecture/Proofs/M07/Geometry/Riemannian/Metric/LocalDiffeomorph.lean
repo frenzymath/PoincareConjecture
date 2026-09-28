@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.InducedForm
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Bundle Poincare.Gluing

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.MeasureTheory.Measure.Hausdorff
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ open Set MeasureTheory Filter Metric Complex
 open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65SmoothDisk_map_bound (φ ψ : LoopPlane → LoopPlane)
     (hφ : ∀ z ∈ loopDiskSet, ContDiffAt ℝ 1 φ z)
@@ -200,10 +185,6 @@ private theorem m65Boundary_hausdorff_upper (A : Set LoopPlane) (hA : Measurable
       add_le_add (m65Angular_half_measure_le _ _ (by linarith) B)
         (m65Angular_half_measure_le _ _ (by linarith) B)
     _ = _ := by rw [ENNReal.ofReal_mul (by norm_num), ENNReal.ofReal_ofNat]; ring
-
-
-
-
 
 theorem m65SmoothCircle_map_bound (φ ψ : LoopPlane → LoopPlane)
     (hφ : Continuous φ) (hψ : ∀ z ∈ loopDiskSet, ContDiffAt ℝ 1 ψ z)

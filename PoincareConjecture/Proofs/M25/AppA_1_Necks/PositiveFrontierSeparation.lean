@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SaturatedHeight
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.GraphSides
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_positive_frontier_separation :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

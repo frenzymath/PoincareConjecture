@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialCorrectionWeak
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture
 
-
-
 theorem m64PlaneReflection_preimage_ball {a : LoopPlane} (ha : a 1 = 0) (r : ℝ) :
     m60PlaneReflection ⁻¹' ball a r = ball a r := by
   ext p
@@ -30,8 +17,6 @@ theorem m64PlaneReflection_preimage_ball {a : LoopPlane} (ha : a 1 = 0) (r : ℝ
   have hd := m60PlaneReflection.dist_map p a
   rw [m64PlaneReflection_fixed ha] at hd
   rw [hd]
-
-
 
 theorem m64PlaneReflection_measurePreserving_ball {a : LoopPlane} (ha : a 1 = 0) (r : ℝ) :
     MeasurePreserving m60PlaneReflection (volume.restrict (ball a r))
@@ -42,8 +27,6 @@ theorem m64PlaneReflection_measurePreserving_ball {a : LoopPlane} (ha : a 1 = 0)
 
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64RadialCorrect_column_energy_le
     {f h : LoopPlane → E} (hf : ContDiff ℝ 1 f) (hh : ContDiff ℝ 1 h)

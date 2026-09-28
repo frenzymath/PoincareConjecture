@@ -4,26 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_triangle_interior_crossing_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

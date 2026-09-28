@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.TimeDependentFlow
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

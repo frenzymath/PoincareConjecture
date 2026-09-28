@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.AscendingSlope
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Set Filter Topology
 universe u
 
 namespace Poincare.GromovHausdorff
-
-
 
 theorem VaryingRealizationSequence.exists_sphere_distance_increment_of_pointConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}
@@ -64,9 +54,6 @@ theorem VaryingRealizationSequence.exists_sphere_distance_increment_of_pointConv
     ((Sφ.tendsto_dist_of_pointConverges hpφ hqφ).sub
       (Sφ.tendsto_dist_of_pointConverges hpφ hxφ))
     (Eventually.of_forall (fun j => hgain (φ j)))
-
-
-
 
 theorem VaryingRealizationSequence.local_distance_ascent_of_eventually_annular_ascent
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}

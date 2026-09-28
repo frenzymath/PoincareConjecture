@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.Nonnegative
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactBalls
 import PoincareConjecture.Proofs.M35.Thm12_28.NoncollapsedSlabs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem exists_ancient_extraction_threshold (P : M35StandardCapPredecessors) :
     ∃ delta : ℝ, 0 < delta ∧

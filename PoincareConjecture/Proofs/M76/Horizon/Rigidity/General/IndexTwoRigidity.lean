@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.SourceProperMeridian
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleRigidityTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -37,8 +28,6 @@ theorem exists_fixed_indexTwo_rigidity
   obtain ⟨j, hj, hi, hjR, hproper, hrim⟩ :=
     exists_source_proper_meridian hI.1 hd phi hphi F
   exact exists_source_meridian_rigidity hI hd phi hphi F j hj hi hjR hproper hrim
-
-
 
 theorem exists_indexTwo_lattice_rigidity
     {ι κ α β : Type*} [Fintype ι] [Fintype κ]

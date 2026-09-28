@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.StripSourceNeighbor
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ActualFrameConnection
 import PoincareConjecture.Proofs.M64.Mathlib.LogScaledAffineDerivative
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,11 +18,6 @@ open M65Branch M65StrictTrace M65Gauss
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem annulus_chart_connection_log (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (x : ℝ) (upper : Bool)

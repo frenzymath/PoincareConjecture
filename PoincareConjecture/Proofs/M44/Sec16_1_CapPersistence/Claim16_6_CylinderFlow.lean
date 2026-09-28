@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderLocalFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoordinateFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale B : ℝ} {U : Set C.carrier}
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem cylinderTimeCoefficients_smooth_ricci
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -73,10 +61,6 @@ theorem cylinderTimeCoefficients_smooth_ricci
     obtain ⟨K, hK, htK, _, hevol⟩ := hlocal t ht
     apply (hasDerivWithinAt_inter hK).mp
     exact hevol t ⟨ht, htK⟩ x hx
-
-
-
-
 
 theorem exists_cylinder_coordinate_flow
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

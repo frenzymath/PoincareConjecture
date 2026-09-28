@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M47.NoncollapseHorizonBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_horizon_earlier_parameter {a T r q C : ℝ}
     (haT : a < T) (hr : 0 < r) (hq : 0 < q) (hqr : q < r) (hC : 1 < C) :
@@ -40,8 +30,6 @@ theorem exists_horizon_earlier_parameter {a T r q C : ℝ}
   have htime : q ^ 2 - r ^ 2 < s := (le_max_right _ _).trans_lt hlo
   exact ⟨s, ⟨by linarith only [htime, sq_nonneg q], hs⟩,
     by linarith only [hstart], by linarith only [htime], hbound.le⟩
-
-
 
 theorem horizon_volume_of_contracted_densities {kappa r : ℝ} {V : ℝ≥0∞}
     (hvolume : ∀ theta ∈ Ioo (0 : ℝ) 1,

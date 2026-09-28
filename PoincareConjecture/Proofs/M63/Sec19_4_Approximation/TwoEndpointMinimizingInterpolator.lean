@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.LocalSmoothMinimizingInterpolator
 import PoincareConjecture.Proofs.M58.Sec18_4_UniformRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_smooth_minimizing_interpolator
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

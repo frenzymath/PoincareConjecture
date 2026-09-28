@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Connection
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Connections
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -112,7 +101,6 @@ private theorem rawLeafwiseCovariantDerivative_torsion_on_gauge
 
 end Gauge
 
-
 theorem rawLeafwiseCovariantDerivative_torsion
     (hCoordinates : M12MetricPredecessors.{0} n)
     (D : LeafwiseLeviCivitaFamily F S) {T : SpacetimeIntervalSystem}
@@ -128,8 +116,6 @@ theorem rawLeafwiseCovariantDerivative_torsion
     (cover.metric b).toMovingSpacetimeGaugeGeometry
   exact rawLeafwiseCovariantDerivative_torsion_on_gauge D
     (cover.metric b).toMovingSpacetimeGaugeGeometry c hO hV hW q.1 q.2 hp
-
-
 
 theorem rawLeafwiseCovariantDerivative_koszul
     (hCoordinates : M12MetricPredecessors.{0} n)

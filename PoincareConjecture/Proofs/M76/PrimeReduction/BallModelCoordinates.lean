@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +10,6 @@ variable {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
 
 theorem IsFinitePLBallPair.model_equiv {s b : Set X}
     (hs : IsFinitePLBallPair E s b) (a : E ≃L[ℝ] F) : IsFinitePLBallPair F s b := by

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M56.ComponentTrace
 import PoincareConjecture.Proofs.M56.EqualRangeDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m56TraceComponents {F : SurgeryFlowData.{u}} {T : ℝ}
     (P : M56ComponentTrace F T) (C0 : SurgerySelectedComponent (F.slice 0))
     (s : Icc (0 : ℝ) T) : SurgerySelectedComponent (F.slice s.1) := by
@@ -27,14 +17,10 @@ noncomputable def m56TraceComponents {F : SurgeryFlowData.{u}} {T : ℝ}
   exact if h : s.1 = 0 then h.symm ▸ C0
     else m56SelectedComponent (F.slices_compact s.1 (P.time_subset s.2)) (P.point s)
 
-
-
 theorem m56TraceComponents_zero {F : SurgeryFlowData.{u}} {T : ℝ}
     (P : M56ComponentTrace F T) (C0 : SurgerySelectedComponent (F.slice 0)) (hT : 0 ≤ T) :
     m56TraceComponents P C0 ⟨0, le_rfl, hT⟩ = C0 := by
   simp only [m56TraceComponents, ↓reduceDIte]
-
-
 
 theorem m56TraceComponents_range {F : SurgeryFlowData.{u}} {T : ℝ}
     (P : M56ComponentTrace F T) (C0 : SurgerySelectedComponent (F.slice 0))
@@ -51,8 +37,6 @@ theorem m56TraceComponents_range {F : SurgeryFlowData.{u}} {T : ℝ}
     exact (PreconnectedSpace.connectedComponent_eq_univ _).symm
   · rw [m56TraceComponents, dif_neg hs]
     exact m56SelectedComponent_range (F.slices_compact s.1 (P.time_subset s.2)) (P.point s)
-
-
 
 theorem m56ComponentDiffeomorph_exists {A B : GeneralizedSliceCarrier.{u}}
     (P : SurgerySelectedComponent A) (Q : SurgerySelectedComponent B)
@@ -79,8 +63,6 @@ theorem m56ComponentDiffeomorph_exists {A B : GeneralizedSliceCarrier.{u}}
         hback)
   exact ⟨m56EqualRangeDiffeomorph P Q d hf hg,
     m56EqualRangeDiffeomorph_inclusion P Q d hf hg⟩
-
-
 
 theorem m56Trace_regularDiffeomorph {F : SurgeryFlowData.{u}} {T : ℝ}
     (P : M56ComponentTrace F T)

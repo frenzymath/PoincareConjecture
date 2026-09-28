@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.Smooth
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +11,6 @@ namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem exists_smooth_coordinate_geodesic_flow
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} (hU : IsOpen U)
@@ -63,8 +55,6 @@ end PoincareConjecture
 namespace PoincareConjecture.RiemannianMetric
 
 open scoped Manifold
-
-
 
 theorem exists_smooth_chart_geodesic_flow
     {n : ℕ} {M : Type*} [TopologicalSpace M]

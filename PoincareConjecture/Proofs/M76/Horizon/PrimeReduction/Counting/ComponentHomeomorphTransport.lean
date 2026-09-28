@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.PhysicalInt
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHomologyTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointComponentAlternatives
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

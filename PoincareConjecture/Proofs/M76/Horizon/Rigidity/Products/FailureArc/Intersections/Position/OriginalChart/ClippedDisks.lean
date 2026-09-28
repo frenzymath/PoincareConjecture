@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexNeighborhood
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

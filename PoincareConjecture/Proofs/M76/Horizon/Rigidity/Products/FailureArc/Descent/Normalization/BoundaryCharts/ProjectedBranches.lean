@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryCharts.AtlasAnnulus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology Geometry PLAnnularStrip
@@ -29,9 +19,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_original_annulus_boundary_double_branch_chart
     (step : Step s t) {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)

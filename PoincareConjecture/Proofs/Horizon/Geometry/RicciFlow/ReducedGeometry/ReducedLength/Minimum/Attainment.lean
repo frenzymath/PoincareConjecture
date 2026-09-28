@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.AncientAction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.Ancient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem exists_reducedLength_eq_spatialInfimum (K : AncientKappaSolution 2 M)
     (p : M) {tau : ℝ} (htau : 0 < tau) :
@@ -41,7 +32,6 @@ theorem exists_reducedLength_eq_spatialInfimum (K : AncientKappaSolution 2 M)
     apply (mul_le_mul_iff_right₀ (show 0 < 2 * Real.sqrt tau by positivity)).mp
     simpa only [hγ0] using hle.trans hbound
   exact ⟨γ (Real.sqrt tau), le_antisymm hmin (K.spatialReducedLengthInfimum_le p _ tau)⟩
-
 
 theorem exists_reducedLength_minimizer (K : AncientKappaSolution 2 M)
     (p : M) {tau : ℝ} (htau : 0 < tau) :

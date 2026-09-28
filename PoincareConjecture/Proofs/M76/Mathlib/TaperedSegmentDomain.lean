@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TaperedTriangleDomain
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentStripProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
@@ -18,13 +9,8 @@ namespace TaperedStrip
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 def segmentDomain (q w : E) (β : ℝ) : Set (E × ℝ) :=
   convexHull ℝ (insert (q, 0) ({(w, 0), (w, β)} : Set (E × ℝ)))
-
-
 
 theorem segmentProductCoordinates_image (q w : E) {β : ℝ} (hβ : 0 < β) :
     PLStrip.segmentProductCoordinates q w 0 1 '' domain β = segmentDomain q w β := by
@@ -37,10 +23,6 @@ theorem segmentProductCoordinates_image (q w : E) {β : ℝ} (hβ : 0 < β) :
   simp only [F, PLStrip.segmentProductCoordinates_apply, lineMap_apply_zero,
     lineMap_apply_one, sub_zero, one_mul, zero_add]
   rfl
-
-
-
-
 
 theorem exists_segmentDomain_homeomorph {q w : E} (hqw : q ≠ w)
     {β : ℝ} (hβ : 0 < β) :

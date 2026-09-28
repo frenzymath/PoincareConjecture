@@ -3,23 +3,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.LinearAlgebra.Multilinear.Basis
 import Mathlib.LinearAlgebra.Multilinear.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_cylinder_component_norm_bound (r : ℕ) :
     ∃ K : ℝ, 0 < K ∧ ∀ T : RoundCylinderCoordinates [×r]→L[ℝ] ℝ,
@@ -50,8 +39,6 @@ theorem exists_cylinder_component_norm_bound (r : ℕ) :
   exact (hanti.le_mul_norm (map_zero ev) T).trans
     (mul_le_mul_of_nonneg_left hnorm K.coe_nonneg)
 
-
-
 theorem norm_iteratedFDeriv_mul_le_at
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
     {f g : V → ℝ} {p : V} (r : ℕ)
@@ -67,8 +54,6 @@ theorem norm_iteratedFDeriv_mul_le_at
     (hfs.mono (hUsub.trans inter_subset_left))
     (hgs.mono (hUsub.trans inter_subset_right)) hU.uniqueDiffOn hpU (le_refl (r : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hU hpU] using h
-
-
 
 theorem iteratedFDeriv_directional_apply
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

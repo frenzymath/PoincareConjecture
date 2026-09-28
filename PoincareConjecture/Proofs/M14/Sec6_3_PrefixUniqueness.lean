@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EulerUnique
 import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerEuler
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b c : ℝ} {x y : G.Point}
-
-
-
 
 theorem minimizing_prefix_eqOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hCoordinates : M12MetricPredecessors.{0} n)

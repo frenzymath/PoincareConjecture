@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.TangentialTests
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Substitution.WeakEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,7 +54,6 @@ private theorem weakPartial_indicator {u : E → ℝ} {p : Fin d → E → ℝ}
       isWeakGrad := hw }
   have hu' : MemW01p (ENNReal.ofReal (2 : ℝ)) u (halfSpace d) := by simpa using hu
   exact (zeroExtendMemW1pWitnessP isOpen_halfSpace (by norm_num : (1 : ℝ) < 2) hu' w).isWeakGrad i
-
 
 theorem tangential_nirenberg_identity
     {u f : E → ℝ} {p F : Fin d → E → ℝ}

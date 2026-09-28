@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundModel
 import PoincareConjecture.Proofs.M34.Standard.CompactCompleteness
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal BigOperators
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem terminalCurvature_ricci_of_sectional_one
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -49,8 +40,6 @@ theorem terminalCurvature_ricci_of_sectional_one
       rw [hsum]
       simp [hdim]
     _ = 2 * g.inner x v v := by ring
-
-
 
 theorem terminalCurvature_round_model_distance
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

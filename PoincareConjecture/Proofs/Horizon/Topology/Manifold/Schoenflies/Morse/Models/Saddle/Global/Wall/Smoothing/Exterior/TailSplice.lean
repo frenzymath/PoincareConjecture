@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Slices
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Planar.Normalization
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Smoothing.Exterior
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem sliceParam_eq_of_left_tail
     (H : Real ≃ₘ[Real] Real) {ρ : Real → Real} {δ : Real} (hδ : 0 < δ)
@@ -44,7 +33,6 @@ theorem sliceParam_eq_of_left_tail
     rw [hinv, profileX_of_le hδ htail hu]
   · rfl
 
-
 def roundedPatch {v : E3}
     (D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (J : E2 ≃ₗᵢ[Real] (Real ∙ v)ᗮ) (c : Real)
@@ -61,8 +49,6 @@ theorem contDiff_roundedPatch {v : E3}
       (J.contDiff.comp (contDiff_sliceParam H x hx))).add
       ((contDiff_const.add contDiff_fst).smul contDiff_const))
 
-
-
 theorem roundedPatch_eq_actual_of_left_tail
     {g : S2 → E3} (e : OpenPartialHomeomorph E2 S2) {v : E3} {c : Real}
     (D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -77,9 +63,6 @@ theorem roundedPatch_eq_actual_of_left_tail
   rw [sliceParam_eq_of_left_tail H hδ htail hH hu rfl]
   have hh : c + (-(u 0)^2 + (u 1)^2) = c - (u 0)^2 + (u 1)^2 := by ring
   rw [hh, ← hgraph, D.symm_apply_apply]
-
-
-
 
 theorem exists_actual_rounded_patch_splice
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

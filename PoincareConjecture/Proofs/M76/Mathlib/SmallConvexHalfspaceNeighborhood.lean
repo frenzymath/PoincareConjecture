@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {ι : Type*} [Finite ι]
-
-
-
-
-
 
 theorem IsOpen.exists_small_convex_halfspace_frontier
     {U : Set E} (hU : IsOpen U) (hzero : (0 : E) ∈ U)

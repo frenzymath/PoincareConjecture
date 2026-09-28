@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionBallChart
 import PoincareConjecture.Proofs.M74.Mathlib.SphereNormalize
 import Mathlib.Geometry.Euclidean.Inversion.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,15 +11,9 @@ namespace PoincareConjecture.M74
 
 local notation "ICollar" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
-
 noncomputable def collarRadius (s : ℝ) : ℝ := 2 * (Real.sqrt (1 + s ^ 2) + s)
 
-
-
 noncomputable def collarHeight (r : ℝ) : ℝ := r / 4 - r⁻¹
-
-
 
 theorem collarRadius_pos (s : ℝ) : 0 < collarRadius s := by
   have hs : |s| < Real.sqrt (1 + s ^ 2) := by
@@ -39,21 +24,13 @@ theorem collarRadius_pos (s : ℝ) : 0 < collarRadius s := by
   unfold collarRadius
   linarith
 
-
-
 theorem collarRadius_mul_neg (s : ℝ) : collarRadius s * collarRadius (-s) = 4 := by
   simp only [collarRadius, neg_sq]
   nlinarith [Real.sq_sqrt (show 0 ≤ 1 + s ^ 2 by positivity)]
 
-
-
 @[simp] theorem collarRadius_zero : collarRadius 0 = 2 := by norm_num [collarRadius]
 
-
-
 @[simp] theorem collarHeight_two : collarHeight 2 = 0 := by norm_num [collarHeight]
-
-
 
 @[simp] theorem collarHeight_radius (s : ℝ) : collarHeight (collarRadius s) = s := by
   have hn : collarRadius s ≠ 0 := (collarRadius_pos s).ne'
@@ -70,14 +47,10 @@ private theorem collarHeight_strictMonoOn : StrictMonoOn collarHeight (Ioi (0 : 
   unfold collarHeight
   linarith
 
-
-
 @[simp] theorem collarRadius_height {r : ℝ} (hr : 0 < r) :
     collarRadius (collarHeight r) = r := by
   apply collarHeight_strictMonoOn.injOn (collarRadius_pos _) hr
   rw [collarHeight_radius]
-
-
 
 theorem collarRadius_strictMono : StrictMono collarRadius := by
   intro s t hst
@@ -87,56 +60,38 @@ theorem collarRadius_strictMono : StrictMono collarRadius := by
   rw [collarHeight_radius, collarHeight_radius] at hh
   exact (not_le.mpr hst) hh
 
-
-
 theorem collarRadius_lt_two_iff (s : ℝ) : collarRadius s < 2 ↔ s < 0 := by
   rw [← collarRadius_zero]
   exact collarRadius_strictMono.lt_iff_lt
 
-
-
 theorem collarRadius_two_lt_iff (s : ℝ) : 2 < collarRadius s ↔ 0 < s := by
   rw [← collarRadius_zero]
   exact collarRadius_strictMono.lt_iff_lt
-
-
 
 theorem contDiff_collarRadius : ContDiff ℝ ∞ collarRadius := by
   have hs : ContDiff ℝ ∞ (fun s : ℝ => Real.sqrt (1 + s ^ 2)) :=
     (contDiff_const.add (contDiff_id.pow 2)).sqrt (by intro s; positivity)
   exact contDiff_const.mul (hs.add contDiff_id)
 
-
-
 theorem contDiffAt_collarHeight {r : ℝ} (hr : r ≠ 0) :
     ContDiffAt ℝ ∞ collarHeight r :=
   (contDiffAt_id.div_const 4).sub (contDiffAt_id.inv hr)
 
-
-
 noncomputable def collarRadialMap (p : RoundCylinderSpace) : StandardCapSpace :=
   collarRadius p.2 • p.1.1
 
-
-
 noncomputable def collarRadialInverse (q0 : UnitTwoSphere) (z : StandardCapSpace) :
     RoundCylinderSpace := (sphereNormalize q0 z, collarHeight ‖z‖)
-
-
 
 theorem collarRadialMap_norm (p : RoundCylinderSpace) :
     ‖collarRadialMap p‖ = collarRadius p.2 := by
   rw [collarRadialMap, norm_smul, Real.norm_eq_abs, abs_of_pos (collarRadius_pos p.2),
     mem_sphere_zero_iff_norm.mp p.1.2, mul_one]
 
-
-
 theorem collarRadialMap_ne_zero (p : RoundCylinderSpace) : collarRadialMap p ≠ 0 := by
   apply norm_pos_iff.mp
   rw [collarRadialMap_norm]
   exact collarRadius_pos p.2
-
-
 
 theorem collarRadialInverse_map (q0 : UnitTwoSphere) (p : RoundCylinderSpace) :
     collarRadialInverse q0 (collarRadialMap p) = p := by
@@ -145,8 +100,6 @@ theorem collarRadialInverse_map (q0 : UnitTwoSphere) (p : RoundCylinderSpace) :
   rw [sphereNormalize_pos_smul q0 p.1 (collarRadius_pos p.2),
     collarRadialMap_norm, collarHeight_radius]
 
-
-
 theorem collarRadialMap_inverse (q0 : UnitTwoSphere) {z : StandardCapSpace} (hz : z ≠ 0) :
     collarRadialMap (collarRadialInverse q0 z) = z := by
   change collarRadius (collarHeight ‖z‖) • (sphereNormalize q0 z).1 = z
@@ -154,15 +107,11 @@ theorem collarRadialMap_inverse (q0 : UnitTwoSphere) {z : StandardCapSpace} (hz 
   simp only [sphereNormalize, dif_neg hz]
   rw [smul_smul, mul_inv_cancel₀ (norm_ne_zero_iff.mpr hz), one_smul]
 
-
-
 theorem collarRadialMap_contMDiff :
     ContMDiff ICollar (𝓡 3) ∞ collarRadialMap := by
   let : Fact (Module.finrank ℝ StandardCapSpace = 2 + 1) := ⟨by simp [StandardCapSpace]⟩
   exact (contDiff_collarRadius.contMDiff.comp contMDiff_snd).smul
     (contMDiff_coe_sphere.comp contMDiff_fst)
-
-
 
 theorem collarRadialInverse_contMDiffOn (q0 : UnitTwoSphere) :
     ContMDiffOn (𝓡 3) ICollar ∞ (collarRadialInverse q0) {0}ᶜ := by
@@ -171,8 +120,6 @@ theorem collarRadialInverse_contMDiffOn (q0 : UnitTwoSphere) :
   exact (sphereNormalize_contMDiffAt q0 hz).prodMk
     ((contDiffAt_collarHeight (norm_ne_zero_iff.mpr hz)).contMDiffAt.comp z
       (contDiffAt_norm ℝ hz).contMDiffAt)
-
-
 
 noncomputable def collarRadialChart (q0 : UnitTwoSphere) :
     OpenPartialHomeomorph RoundCylinderSpace StandardCapSpace where
@@ -189,22 +136,14 @@ noncomputable def collarRadialChart (q0 : UnitTwoSphere) :
   continuousOn_toFun := collarRadialMap_contMDiff.continuous.continuousOn
   continuousOn_invFun := (collarRadialInverse_contMDiffOn q0).continuousOn
 
-
-
 @[simp] theorem collarRadialChart_source (q0 : UnitTwoSphere) :
     (collarRadialChart q0).source = univ := rfl
-
-
 
 @[simp] theorem collarRadialChart_target (q0 : UnitTwoSphere) :
     (collarRadialChart q0).target = {0}ᶜ := rfl
 
-
-
 @[simp] theorem collarRadialChart_apply (q0 : UnitTwoSphere) (p : RoundCylinderSpace) :
     collarRadialChart q0 p = collarRadialMap p := rfl
-
-
 
 @[simp] theorem collarRadialChart_symm_apply (q0 : UnitTwoSphere) (z : StandardCapSpace) :
     (collarRadialChart q0).symm z = collarRadialInverse q0 z := rfl
@@ -223,8 +162,6 @@ private theorem collarBallMap_inv_smul (q : UnitTwoSphere) {s : ℝ} (hs : 0 < s
   congr 1
   field_simp
 
-
-
 theorem collarBallMap_negative_end (q : UnitTwoSphere) {s : ℝ} (hs : s < 0) :
     collarBallMap ((-1 / s) • q.1) = collarRadialMap (q, s) := by
   have hi : -1 / s = (-s)⁻¹ := by simp [div_eq_mul_inv]
@@ -237,8 +174,6 @@ theorem collarBallMap_negative_end (q : UnitTwoSphere) {s : ℝ} (hs : s < 0) :
     linarith [Real.sqrt_nonneg (1 + s ^ 2)]
   apply (div_eq_iff hd.ne').mpr
   nlinarith [Real.sq_sqrt (show 0 ≤ 1 + s ^ 2 by positivity)]
-
-
 
 theorem collarBallMap_positive_end (q : UnitTwoSphere) {s : ℝ} (hs : 0 < s) :
     EuclideanGeometry.inversion (0 : StandardCapSpace) 2

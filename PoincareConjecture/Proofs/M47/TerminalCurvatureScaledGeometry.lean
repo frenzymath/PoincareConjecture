@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureCapLocalization
 import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import PoincareConjecture.Proofs.M01.NormalizationMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.M47
 
-
-
 theorem terminalCurvature_rescaledMetric_eq_m01
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -29,14 +19,10 @@ theorem terminalCurvature_rescaledMetric_eq_m01
     rescaledMetric g Q hQ = m01RescaledMetric g Q hQ := by
   rfl
 
-
-
 theorem terminalCurvature_scaled_scalar_radius {Q H : ℝ} (hQ : 0 < Q) (hH : 0 < H) :
     Real.sqrt Q * (Q * H) ^ (-1 / 2 : ℝ) = H ^ (-1 / 2 : ℝ) := by
   rw [Real.mul_rpow hQ.le hH.le, Real.sqrt_eq_rpow, ← mul_assoc, ← Real.rpow_add hQ]
   norm_num
-
-
 
 theorem terminalCurvature_scaled_ball_contains
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -55,8 +41,6 @@ theorem terminalCurvature_scaled_ball_contains
     rw [mul_left_comm, terminalCurvature_scaled_scalar_radius hQ hH]
   rwa [hr] at hm
 
-
-
 theorem terminalCurvature_scaled_cap_carrier_subset_ball
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -72,8 +56,6 @@ theorem terminalCurvature_scaled_cap_carrier_subset_ball
     simpa only [mul_comm] using hh
   exact (terminalCurvature_cap_carrier_subset_ball N hC (mul_pos hQ hH) hx hphysical).trans
     (terminalCurvature_scaled_ball_contains g hQ hH x)
-
-
 
 theorem terminalCurvature_scaled_component_subset_ball
     {M : Type*} [TopologicalSpace M]

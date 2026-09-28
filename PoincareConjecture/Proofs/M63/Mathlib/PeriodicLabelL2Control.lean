@@ -5,25 +5,12 @@ import Mathlib.Analysis.Fourier.AddCircle
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory AddCircle
 open scoped Topology ContDiff intervalIntegral
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_periodicLabel_displacement_L2_control
     {P a b : ℝ} [Fact (0 < P)] (hab : a < b)

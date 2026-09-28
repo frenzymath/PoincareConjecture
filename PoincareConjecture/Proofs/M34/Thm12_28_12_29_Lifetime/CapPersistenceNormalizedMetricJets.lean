@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceUnifo
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTensorError
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,9 +29,6 @@ private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
-
 
 theorem ordinaryChapter11_eventually_normalized_neck_error
     (p : ℕ → (G).point) (hp : ∀ k, 0 < (G).scalar (p k))

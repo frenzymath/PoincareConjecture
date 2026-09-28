@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphSide
 import PoincareConjecture.Proofs.M28.Mathlib.LastClosedVisit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M28.SourceTubeData
 variable {epsilon C A D0 D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D0 D}
   {S : CounterexampleNeckSegment E}
-
-
-
-
 
 theorem exists_final_initial_graph_subarc (T : SourceTubeData S)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)

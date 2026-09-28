@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellRotations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
-
-
-
-
 
 theorem rotation_mem_rotatedSector_iff {a b : ℝ} (ha : 0 < a)
     {p : ℝ × ℝ} (hp : p ∈ sector a b) (i j : Fin 4) :
@@ -56,9 +42,6 @@ theorem rotation_mem_rotatedSector_iff {a b : ℝ} (ha : 0 < a)
       | contradiction
       | exact ⟨⟨by linarith, by linarith⟩, by linarith, by linarith⟩
 
-
-
-
 theorem rotation_mem_transport_iff {a b c d : ℝ} (ha : 0 < a) (hc : 0 < c)
     {p q : ℝ × ℝ} (hp : p ∈ sector a b) (hq : q ∈ sector c d)
     (hleft : p.1 = -p.2 ↔ q.1 = -q.2) (hright : p.1 = p.2 ↔ q.1 = q.2)
@@ -66,10 +49,6 @@ theorem rotation_mem_transport_iff {a b c d : ℝ} (ha : 0 < a) (hc : 0 < c)
     rotation i p ∈ rotatedSector a b j ↔ rotation i q ∈ rotatedSector c d j := by
   rw [rotation_mem_rotatedSector_iff ha hp, rotation_mem_rotatedSector_iff hc hq]
   rw [propext hleft, propext hright]
-
-
-
-
 
 theorem rotation_transport_eq {a b : ℝ} (ha : 0 < a)
     (e : sector a b → ℝ × ℝ) (R : ℝ → ℝ)

@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsPhysicalAlignment
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsOriginalProfileAlignment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_stackOriginalCapAlignment_in_height_band
     (P : SurgeryCapProfile) (U V : OpenPartialHomeomorph (E2 × ℝ) E3)
@@ -112,8 +98,6 @@ theorem exists_stackOriginalCapAlignment_in_height_band
       · obtain ⟨⟨q, z⟩, hqz, rfl⟩ := hcircle
         exact (hCircle 1 z hqz.2 q hqz.1).1
     exact hprotected y hfixed hprofile
-
-
 
 theorem exists_stackOriginalCapAlignment
     (P : SurgeryCapProfile) (U V : OpenPartialHomeomorph (E2 × ℝ) E3)

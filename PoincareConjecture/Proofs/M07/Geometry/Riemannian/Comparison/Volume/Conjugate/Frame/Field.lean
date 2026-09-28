@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Index.Negative
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Partition.Sides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ClippedDiskPar
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.PlanarParameterLink
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.MovedVertexCrossing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval

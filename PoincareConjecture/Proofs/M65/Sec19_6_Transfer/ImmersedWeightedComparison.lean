@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedFiniteExceptions
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.AreaWeight
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -92,10 +83,6 @@ private theorem weighted_upperRight (F : RicciFlow 3 M (Icc a b))
     _ ≤ G h := by dsimp only [G]; linarith
     _ ≤ epsilon := hGh.le
 
-
-
-
-
 theorem weighted_comparison_finite (F : RicciFlow 3 M (Icc a b))
     (compact : IsCompact (univ : Set M)) (A : ℝ → ℝ) (eta : ℝ) (E : Finset ℝ)
     {s t : ℝ} (hst : s ≤ t) (hsub : Icc s t ⊆ Ioo a b)
@@ -115,8 +102,6 @@ theorem weighted_comparison_finite (F : RicciFlow 3 M (Icc a b))
     ((hw.mul hA).add (continuousOn_const.mul hIp)).sub (continuousOn_const.mul hIp)
   exact nonincrease_of_upperRight_finite Z E hst hZ (fun q hq hnot =>
     weighted_upperRight F compact A eta (hsub (Ioo_subset_Icc_self hq)) (hupper q hq hnot))
-
-
 
 theorem weighted_difference_profile (F : RicciFlow 3 M (Icc a b))
     (A : ℝ → ℝ) (s t : ℝ) :

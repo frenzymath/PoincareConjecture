@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,8 +30,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
 local notation "Nimage" =>
   N.imageShift e hf hi hepsilon hepsilon' hdom hsource D q₀ hr hscalar hscale hclose
 
-
-
 theorem imageShift_data :
     (Nimage).epsilon = epsilon ∧ (Nimage).scale = r ∧
       (Nimage).center = e (N.coordinate_map (q₀, c)) ∧ (Nimage).connection = D ∧
@@ -47,9 +37,6 @@ theorem imageShift_data :
       (Nimage).central_sphere = e '' (N.coordinate_map '' (univ ×ˢ ({c} : Set ℝ))) ∧
       (Nimage).coordinate_map = fun z => e (N.coordinate_map (z.1, z.2 + c)) :=
   ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
-
-
-
 
 theorem imageShift_region (a b : ℝ) (ha : -epsilon⁻¹ ≤ a) (hb : b ≤ epsilon⁻¹) :
     (Nimage).region a b = e '' N.region (a + c) (b + c) := by
@@ -68,8 +55,6 @@ theorem imageShift_region (a b : ℝ) (ha : -epsilon⁻¹ ≤ a) (hb : b ≤ eps
     rw [e.left_inv (hsource hwindow)]
     constructor <;> linarith [hy.2.1, hy.2.2]
 
-
-
 theorem imageShift_carrier_leftAnchored (hc : c = epsilon⁻¹ - N.epsilon⁻¹) :
     (Nimage).carrier = e '' N.region (-N.epsilon⁻¹) (2 / epsilon - N.epsilon⁻¹) := by
   change e '' N.region (-epsilon⁻¹ + c) (epsilon⁻¹ + c) = _
@@ -78,8 +63,6 @@ theorem imageShift_carrier_leftAnchored (hc : c = epsilon⁻¹ - N.epsilon⁻¹)
   all_goals
     try simp only [div_eq_mul_inv]
     ring
-
-
 
 theorem imageShift_negative_leftAnchored (hc : c = epsilon⁻¹ - N.epsilon⁻¹) :
     (Nimage).region (-epsilon⁻¹) (-epsilon⁻¹ / 2) =
@@ -92,9 +75,6 @@ theorem imageShift_negative_leftAnchored (hc : c = epsilon⁻¹ - N.epsilon⁻¹
   all_goals
     try simp only [div_eq_mul_inv, mul_inv_rev]
     ring
-
-
-
 
 theorem imageShift_zero_sets (hc : c = 0) (he : epsilon = N.epsilon) :
     (Nimage).carrier = e '' N.carrier ∧

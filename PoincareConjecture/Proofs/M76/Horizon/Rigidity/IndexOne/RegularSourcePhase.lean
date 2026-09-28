@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhaseCover
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.PhaseChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleRegularLevel
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,8 +20,6 @@ local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
 theorem exists_phase_between_avoiding {Z : Set C} (hZ : Z.Finite)
     {lo hi : ℝ} (hlo : 0 ≤ lo) (hhi : hi ≤ p) (hlt : lo < hi) :
     ∃ t ∈ Ioo lo hi, (t : C) ∉ Z := by
@@ -45,9 +31,6 @@ theorem exists_phase_between_avoiding {Z : Set C} (hZ : Z.Finite)
     exact hxy
   obtain ⟨c, ⟨t, ht, rfl⟩, hc⟩ := ((Ioo_infinite hlt).image hinj).exists_notMem_finite hZ
   exact ⟨t, ht, hc⟩
-
-
-
 
 theorem exists_sourcePhase_regular_level_between
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)
@@ -134,7 +117,6 @@ theorem exists_sourcePhase_regular_level_between
       hzero, hpsi, hT, hTR, hTB, hformula, ?_⟩
     intro y hy
     simpa only [hxt] using hlevel y hy
-
 
 theorem exists_sourcePhase_regular_level
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

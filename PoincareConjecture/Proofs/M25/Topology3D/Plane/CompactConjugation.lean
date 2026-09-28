@@ -2,24 +2,12 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Algebra.Support
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_compact_tube_conjugate
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

@@ -1,20 +1,5 @@
 import PoincareConjecture.Statements.M69
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -69,7 +54,6 @@ structure M70NegativeProfileConclusion
     {HX : M67Conclusion X}
     {C69 : M69FinitePieceConclusion L I HX}
     (J : M70NegativeProfileInput D W P L I HX C69) where
-
 
   contradiction : False
 

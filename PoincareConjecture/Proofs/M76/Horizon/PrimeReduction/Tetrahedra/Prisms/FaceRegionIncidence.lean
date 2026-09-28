@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.MarkedDiskIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -38,8 +30,6 @@ theorem exists_face_arc_disk_owners
   · intro j i hi
     exact (hdis (Ne.symm hi)).mono_left (howner j)
 
-
-
 theorem exists_unique_face_region_boundary_owner
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [Finite κ] {S Q T F : Set E}
@@ -63,8 +53,6 @@ theorem exists_unique_face_region_boundary_owner
   refine ⟨k, fun y hy => (hR k).symm.subset ⟨hcB hy, Or.inl (hcQ hy)⟩, ?_⟩
   intro l hl
   exact hunique l (subset_closure.trans (hl.trans (hB l).1))
-
-
 
 theorem exists_disk_cut_face_region_incidence
     {E ι γ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

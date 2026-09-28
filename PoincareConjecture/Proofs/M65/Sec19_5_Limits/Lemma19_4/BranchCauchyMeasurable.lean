@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -19,9 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem integrable_cauchyOperator_of_bound {h : ℂ → E} {R B : ℝ}
     (hh : AEStronglyMeasurable h volume)
@@ -43,9 +29,6 @@ theorem integrable_cauchyOperator_of_bound {h : ℂ → E} {R B : ℝ}
   by_contra hzero
   have hhzero : h w = 0 := Function.notMem_support.mp hzero
   exact hw (by simp only [hhzero, smul_zero])
-
-
-
 
 theorem norm_cauchyOperator_le_of_bound [CompleteSpace E] {h : ℂ → E} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : AEStronglyMeasurable h volume)
@@ -82,8 +65,6 @@ theorem norm_cauchyOperator_le_of_bound [CompleteSpace E] {h : ℂ → E} {R B :
     _ ≤ Real.pi⁻¹ * ((8 * Real.pi * R) * B) :=
       mul_le_mul_of_nonneg_left hint (inv_nonneg.mpr Real.pi_pos.le)
     _ = 8 * R * B := by field_simp
-
-
 
 theorem cauchyOperator_sub_of_bound {h k : ℂ → E} {R B C : ℝ}
     (hh : AEStronglyMeasurable h volume) (hk : AEStronglyMeasurable k volume)

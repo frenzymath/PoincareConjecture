@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 import PoincareConjecture.Proofs.M76.Mathlib.CubeCornerSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry
 
 variable {ι : Type*} [Fintype ι] [Nonempty ι]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem isFinitePLBallPair_cube_frontier_cut {r : ℝ}
     (hrlo : -(Fintype.card ι : ℝ) < r) (hrhi : r < Fintype.card ι)
@@ -72,8 +60,6 @@ theorem isFinitePLBallPair_cube_frontier_cut {r : ℝ}
     (convex_closedBall _ _) hKT A hneg hplane (by simpa using hdim)
   simpa only [heval, sub_nonneg, sub_eq_zero, eq_comm] using hpair
 
-
-
 theorem exists_cube_frontier_disk_of_compact_with_open_interior {s : Set (ι → ℝ)}
     (hs : IsCompact s) (hsub : s ⊆ frontier (Metric.closedBall (0 : ι → ℝ) 1))
     (hp : (fun _ : ι => (1 : ℝ)) ∉ s)
@@ -103,9 +89,6 @@ theorem exists_cube_frontier_disk_of_compact_with_open_interior {s : Set (ι →
     rw [heq]
     exact isOpen_lt (continuous_finsetSum _ fun i _ =>
       (continuous_apply i).comp continuous_subtype_val) continuous_const
-
-
-
 
 theorem exists_cube_frontier_disk_of_compact {s : Set (ι → ℝ)}
     (hs : IsCompact s) (hsub : s ⊆ frontier (Metric.closedBall (0 : ι → ℝ) 1))

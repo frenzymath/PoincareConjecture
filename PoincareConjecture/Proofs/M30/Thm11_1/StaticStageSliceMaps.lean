@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.CylinderSpatialHomeomorph
 import PoincareConjecture.Proofs.M30.Generalized.PullbackCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.PartialCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
 
 theorem exists_static_stage_slice_partialDiffeomorph
     (S : GeneralizedBlowupSequence.{u})

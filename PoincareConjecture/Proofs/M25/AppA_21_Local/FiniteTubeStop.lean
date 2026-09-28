@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicChainTube
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_epsilonTubeCertificate_of_preconnected_frontier_disjoint :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

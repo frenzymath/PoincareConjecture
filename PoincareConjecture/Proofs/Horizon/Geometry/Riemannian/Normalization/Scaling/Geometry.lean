@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 import Mathlib.Topology.MetricSpace.Antilipschitz
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem rescaledMetric_sectionalCurvature
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -40,8 +29,6 @@ theorem rescaledMetric_sectionalCurvature
   rw [hden, mul_div_mul_left _ _ hc.ne']
   simp only [div_eq_mul_inv, mul_inv_rev]
   ring
-
-
 
 theorem metricComplete_rescaledMetric [T3Space M]
     (g : RiemannianMetric n M) (c : ℝ) (hc : 0 < c)
@@ -82,7 +69,6 @@ theorem metricComplete_rescaledMetric [T3Space M]
         m₂.toPseudoEMetricSpace C id hLip)
   exact (@IsUniformInducing.completeSpace_congr M M m₁.toUniformSpace
     m₂.toUniformSpace id hui Function.surjective_id).mp hcomplete
-
 
 theorem rescaledMetric_sectionalCurvature_lower_bound
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

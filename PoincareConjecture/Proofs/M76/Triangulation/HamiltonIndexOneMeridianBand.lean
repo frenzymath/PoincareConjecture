@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
-
-
 
 noncomputable def standardMeridianBandMap (p : V2 × ℝ) : W :=
   (p.1 0, -((7 / 4 : ℝ), (7 / 4 : ℝ)) +
@@ -133,10 +122,6 @@ private noncomputable def meridianCoordinates : (V2 × ℝ) ≃ₗ[ℝ] W where
       · rfl
       · change -(a * p.1 1) / 4 = a * (-p.1 1 / 4)
         ring
-
-
-
-
 
 private theorem exists_standard_meridian_band_with_formula :
     ∃ F : (V2 × ℝ) → W, F = standardMeridianBandMap ∧
@@ -250,9 +235,6 @@ private theorem exists_standard_meridian_band_with_formula :
     rw [heq']
     exact hU.preimage continuous_subtype_val
 
-
-
-
 theorem standardMeridianBandMap_properties :
     FinitePiecewiseAffineOn standardMeridianBandMap (Q ×ˢ I) ∧
       InjOn standardMeridianBandMap (Q ×ˢ I) ∧
@@ -265,9 +247,6 @@ theorem standardMeridianBandMap_properties :
     exists_standard_meridian_band_with_formula
   exact ⟨hPL, hinj, hmap, hzero, hopen⟩
 
-
-
-
 theorem exists_standard_meridian_band :
     ∃ F : (V2 × ℝ) → W, FinitePiecewiseAffineOn F (Q ×ˢ I) ∧ InjOn F (Q ×ˢ I) ∧
       MapsTo F (Q ×ˢ I) (frontier squareShell) ∧
@@ -276,9 +255,6 @@ theorem exists_standard_meridian_band :
       IsOpen ((Subtype.val : frontier squareShell → W) ⁻¹'
         (F '' (Q ×ˢ Ioo (-(1 / 4 : ℝ)) (1 / 4)))) :=
   ⟨standardMeridianBandMap, standardMeridianBandMap_properties⟩
-
-
-
 
 theorem exists_standard_meridian_ambient_chart :
     ∃ H : OpenPartialHomeomorph (V2 × ℝ) W,

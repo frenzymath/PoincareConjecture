@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderParameterJets
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderIntrinsicJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M34
 
 open DifferenceEnergy
 
-
-
 theorem endAxialTranslation_comp_coordinate_contMDiffOn
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g) (j : ℕ) :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞
@@ -31,8 +20,6 @@ theorem endAxialTranslation_comp_coordinate_contMDiffOn
   have hs := endAxialTranslation_contMDiffAt e (j : ℝ) hz.2
     (add_pos_of_pos_of_nonneg hz.2 (Nat.cast_nonneg j))
   exact (hs.comp z (end_coordinate_contMDiffAt e hz.2)).contMDiffWithinAt
-
-
 
 theorem partialFlow_endCylinder_intrinsicJetError_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

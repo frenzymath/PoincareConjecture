@@ -1,16 +1,5 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,13 +8,9 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
 def HasLocalTwoSides (C : Set X) : Prop :=
   ∀ q ∈ C, ∃ W A B : Set X, IsOpen W ∧ q ∈ W ∧ IsConnected A ∧ IsConnected B ∧
     A ∪ B = W \ C ∧ C ∩ W ⊆ closure A ∧ C ∩ W ⊆ closure B
-
-
 
 theorem closure_connectedComponentIn_inter_subset [LocallyConnectedSpace X]
     {U : Set X} (hU : IsOpen U) (x : X) :
@@ -38,8 +23,6 @@ theorem closure_connectedComponentIn_inter_subset [LocallyConnectedSpace X]
   rw [← he]
   exact mem_connectedComponentIn hzU
 
-
-
 theorem frontier_connectedComponentIn_subset_compl [LocallyConnectedSpace X]
     {U : Set X} (hU : IsOpen U) (x : X) :
     frontier (connectedComponentIn U x) ⊆ Uᶜ := by
@@ -48,8 +31,6 @@ theorem frontier_connectedComponentIn_subset_compl [LocallyConnectedSpace X]
   exact hz.2 (closure_connectedComponentIn_inter_subset hU x ⟨hz.1, hzU⟩)
 
 variable [PreconnectedSpace X] [LocallyConnectedSpace X] {C : Set X}
-
-
 
 theorem HasLocalTwoSides.frontier_compl_component_eq (hloc : HasLocalTwoSides C)
     (hC : IsClosed C) (hconn : IsConnected C) {x : X} (hx : x ∉ C) :
@@ -111,8 +92,6 @@ theorem HasLocalTwoSides.frontier_compl_component_eq (hloc : HasLocalTwoSides C)
     exact mem_univ _
   exact hmem
 
-
-
 theorem HasLocalTwoSides.exists_two_compl_components_cover (hloc : HasLocalTwoSides C)
     (hC : IsClosed C) (hconn : IsConnected C) :
     ∃ a ∈ Cᶜ, ∃ b ∈ Cᶜ, ∀ x ∈ Cᶜ,
@@ -143,8 +122,6 @@ theorem HasLocalTwoSides.exists_two_compl_components_cover (hloc : HasLocalTwoSi
       (habsorb hA.isPreconnected (subset_union_left.trans hABsub) hzA ha))
   · exact Or.inr (connectedComponentIn_eq
       (habsorb hB.isPreconnected (subset_union_right.trans hABsub) hzB hb))
-
-
 
 theorem HasLocalTwoSides.exists_two_distinct_compl_components (hloc : HasLocalTwoSides C)
     (hC : IsClosed C) (hconn : IsConnected C) (hsep : ¬ IsPreconnected Cᶜ) :

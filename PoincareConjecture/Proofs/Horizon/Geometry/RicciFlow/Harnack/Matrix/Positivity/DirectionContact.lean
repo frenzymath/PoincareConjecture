@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.DirectionEvaluation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.StrictContact
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +16,6 @@ open PoincareConjecture Poincare.VectorBundle
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 lemma differentiableAt_perturbedHamiltonDirectionQuadratic
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ : ℝ)

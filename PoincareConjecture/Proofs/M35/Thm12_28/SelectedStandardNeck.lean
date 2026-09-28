@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SelectedNeckComparison
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem blowupSequence_standard_evolving_neck (P : M35StandardCapPredecessors)
     (atlas : StandardCylinderAtlas) {g₀ : StandardInitialMetric}

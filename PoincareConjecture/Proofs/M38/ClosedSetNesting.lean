@@ -1,13 +1,5 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -15,8 +7,6 @@ open Set Topology
 namespace PoincareConjecture.M38
 
 variable {X : Type*} [TopologicalSpace X] {B C S : Set X}
-
-
 
 theorem preconnected_subset_interior_or_compl
     (hB : IsClosed B) (hS : IsPreconnected S)
@@ -30,9 +20,6 @@ theorem preconnected_subset_interior_or_compl
     by_contra hxI
     exact Set.disjoint_left.mp hdisjoint hx (hB.frontier_eq ▸ ⟨hxB, hxI⟩)
   · exact Or.inr hxB
-
-
-
 
 theorem closed_regions_nested_or_disjoint_or_cover
     (hB : IsClosed B) (hC : IsClosed C)
@@ -65,8 +52,6 @@ theorem closed_regions_nested_or_disjoint_or_cover
     · exact Or.inr (Or.inl (hsubset.trans interior_subset))
     · exact Or.inl (Set.disjoint_left.mpr (fun _ hx hy => hsep hx hy))
 
-
-
 theorem closed_regions_nested_or_disjoint
     (hB : IsClosed B) (hC : IsClosed C)
     (hBin : IsPreconnected B) (hBout : IsPreconnected Bᶜ)
@@ -81,8 +66,6 @@ theorem closed_regions_nested_or_disjoint
   · exact Or.inr (Or.inr h)
   · have hp : p ∈ B ∪ C := h.symm ▸ Set.mem_univ p
     exact (hp.elim hpB hpC).elim
-
-
 
 theorem subset_interior_of_subset_of_disjoint_frontiers
     (hB : IsClosed B) (hsubset : B ⊆ C)

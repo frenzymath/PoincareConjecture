@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteActualExtraction
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointStageFlow
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointStageAgreement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +47,6 @@ private local instance actualGermsManifold : IsManifold (𝓡 3) ∞ G.limit.car
 
 local notation "U" => (fun j : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j))
-
-
 
 theorem limitFinite_actual_endpoint_germs
     (d K : ℕ → ℝ) (hd : ∀ j, 0 < d j)

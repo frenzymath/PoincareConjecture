@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.FTaylorSeries
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ variable {𝕜 T E F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup T] [NormedSpace 𝕜 T]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
-
-
 
 theorem iteratedFDeriv_spatial_slice_eq_within
     {J : Set T} {U : Set E} {f : T × E → F} {n : ℕ∞ω}
@@ -66,8 +54,6 @@ theorem iteratedFDeriv_spatial_slice_eq_within
   rw [hpre, iteratedFDerivWithin_of_isOpen _ hU hx,
     iteratedFDerivWithin_comp_add_left, htranslate] at hcomp
   simpa [a, ι, Function.comp_def] using hcomp
-
-
 
 theorem TendstoUniformlyOn.iteratedFDeriv_spatial_slice
     {α : Type*} {l : Filter α} {J : Set T} {U : Set E} {K : Set (T × E)}

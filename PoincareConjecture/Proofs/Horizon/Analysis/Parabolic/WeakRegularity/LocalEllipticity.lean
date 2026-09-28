@@ -1,20 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 import Mathlib.Topology.Order.Compact
-
-
-
-
-
-
-
-
-
-
 
 open Set Metric
 open scoped ContDiff Topology

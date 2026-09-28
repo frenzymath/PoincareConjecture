@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTangentFrame
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
-
 
 theorem m64_exists_smooth_metric_normal_coordinates
     {c : ℝ → E} {I : Set ℝ} (hI : IsOpen I) (h0 : 0 ∈ I)

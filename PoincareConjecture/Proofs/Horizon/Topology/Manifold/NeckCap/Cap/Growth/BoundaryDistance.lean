@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
-
-
 
 theorem boundary_edist_lower_of_not_mem_carrier {x y : M}
     (hx : x ∈ C.boundary_sphere) (hy : y ∉ C.carrier) :
@@ -74,8 +63,6 @@ theorem boundary_edist_lower_of_not_mem_carrier {x y : M}
     _ ≤ ENNReal.ofReal ((2 * Real.pi) * N.scale) + g.edist x y :=
       add_le_add hdiam le_rfl
 
-
-
 theorem uniform_boundary_edist_lower (D : LeviCivitaData g) {B : ℝ}
     (hB : C.cap_constant ≤ B) {p x y : M} (hp : p ∈ C.carrier)
     (hx : x ∈ C.boundary_sphere) (hy : y ∉ C.carrier) :
@@ -87,8 +74,6 @@ theorem uniform_boundary_edist_lower (D : LeviCivitaData g) {B : ℝ}
   exact mul_le_mul_of_nonneg_right
     (mul_le_mul_of_nonneg_left hscale.le (by norm_num))
     (inv_pos.mpr C.epsilon_pos).le
-
-
 
 theorem closed_core_edist_lower_of_not_mem_carrier {x y : M}
     (hx : x ∈ C.closed_core) (hy : y ∉ C.carrier) :
@@ -115,9 +100,6 @@ theorem closed_core_edist_lower_of_not_mem_carrier {x y : M}
           (hγ.mono (Icc_subset_Icc_left ht.1)) rfl h1 ht.2)
     exact (not_lt_of_ge (hright.trans (Manifold.pathELength_mono ht.1 le_rfl))) hlength
   · exact C.boundary_edist_lower_of_not_mem_carrier hx hy
-
-
-
 
 theorem complement_distance_gain_of_carrier_subset_core (A : CapCertificate g)
     (hAC : A.carrier ⊆ C.core) {p : M} (hp : p ∈ A.carrier) :

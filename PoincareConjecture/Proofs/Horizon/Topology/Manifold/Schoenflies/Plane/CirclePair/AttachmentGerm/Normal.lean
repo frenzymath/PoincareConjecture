@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.CollarExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ namespace Poincare.Manifold.Schoenflies.CircleAttachmentGerm
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
-
 
 theorem exists_disk_diffeomorph_of_circle_fixing_germ
     (k : E2 → E2) (hk : ContDiff Real ∞ k) (p : S1)

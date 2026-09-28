@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianBand
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.SourceMeridianBandDisk
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -27,8 +18,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "I" => Icc (-1 : ℝ) 1
-
-
 
 theorem exists_source_meridian_finite_band_disk
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.FullCutSides
 import PoincareConjecture.Proofs.M38.EventBallSeparation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
 
 noncomputable def postBallPatchHomeomorph (i : Fin (F.event T hT).cap_count) :
     capDoubleBall ≃ₜ retainedPatch F T hT P (some i) :=
@@ -36,11 +27,9 @@ noncomputable def postBallPatchHomeomorph (i : Fin (F.event T hT).cap_count) :
     · rintro ⟨x, hx, rfl⟩
       exact ⟨⟨x, hx⟩, rfl⟩))
 
-
 @[simp] theorem postBallPatchHomeomorph_val (i : Fin (F.event T hT).cap_count)
     (x : capDoubleBall) :
     (postBallPatchHomeomorph F T hT P i x).val = (P i).ball.map x.val := rfl
-
 
 noncomputable def fullCutPostPatch (j : Option (Fin (F.event T hT).cap_count)) :
     retainedPatch F T hT P j → PartialCappedSpace F T hT P Set.univ :=
@@ -49,17 +38,14 @@ noncomputable def fullCutPostPatch (j : Option (Fin (F.event T hT).cap_count)) :
   | some i => partialCappingInclude F T hT P Set.univ
       (.inr (⟨i, Set.mem_univ i⟩, false)) ∘ (postBallPatchHomeomorph F T hT P i).symm
 
-
 theorem fullCutPostPatch_old (y : eventCapComplementOpen F T hT) :
     fullCutPostPatch F T hT P none y =
       partialOldInclusion F T hT P Set.univ (fullCutPostOld F T hT P y) := rfl
-
 
 theorem fullCutPostPatch_cap (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
     fullCutPostPatch F T hT P (some i) (postBallPatchHomeomorph F T hT P i x) =
       partialCappingInclude F T hT P Set.univ (.inr (⟨i, Set.mem_univ i⟩, false)) x := by
   simp only [fullCutPostPatch, Function.comp_apply, Homeomorph.symm_apply_apply]
-
 
 theorem fullCutPostPatch_openEmbedding (j : Option (Fin (F.event T hT).cap_count)) :
     IsOpenEmbedding (fullCutPostPatch F T hT P j) := by
@@ -70,7 +56,6 @@ theorem fullCutPostPatch_openEmbedding (j : Option (Fin (F.event T hT).cap_count
   | some i =>
       exact (partialCappingInclude_openEmbedding F T hT P Set.univ _).comp
         (postBallPatchHomeomorph F T hT P i).symm.isOpenEmbedding
-
 
 theorem fullCutPost_old_cap_iff (y : eventCapComplementOpen F T hT)
     (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
@@ -88,7 +73,6 @@ theorem fullCutPost_old_cap_iff (y : eventCapComplementOpen F T hT)
     refine ⟨hx, ?_⟩
     rw [fullCut_negative_attachment F T hT P i x hx]
     exact congrArg (fullCutPostOld F T hT P) (Subtype.ext heq)
-
 
 theorem fullCutPostPatch_eq_iff (j k : Option (Fin (F.event T hT).cap_count))
     (x : retainedPatch F T hT P j) (y : retainedPatch F T hT P k) :
@@ -131,7 +115,6 @@ theorem fullCutPostPatch_eq_iff (j k : Option (Fin (F.event T hT).cap_count))
               exact Set.disjoint_left.mp (retained_ball_patches_disjoint F T hT P i k hik)
                 ⟨a.val, a.property, rfl⟩ ⟨b.val, b.property, h.symm⟩
 
-
 theorem fullCutPostPatch_cover :
     (⋃ j, Set.range (Subtype.val : retainedPatch F T hT P j → (F.slice T).carrier)) =
       Set.univ := by
@@ -139,7 +122,6 @@ theorem fullCutPostPatch_cover :
   intro x
   obtain ⟨j, hj⟩ := retainedPatch_cover F T hT P x
   exact Set.mem_iUnion.mpr ⟨j, ⟨x, mem_of_mem_nhds hj⟩, rfl⟩
-
 
 theorem exists_fullCutPostInclusion :
     ∃ f : (F.slice T).carrier → PartialCappedSpace F T hT P Set.univ,
@@ -160,27 +142,22 @@ theorem exists_fullCutPostInclusion :
   rw [Function.comp_apply, hH]
   exact hGq j x
 
-
 noncomputable def fullCutPostInclusion :
     (F.slice T).carrier → PartialCappedSpace F T hT P Set.univ :=
   Classical.choose (exists_fullCutPostInclusion F T hT P)
 
-
 theorem fullCutPostInclusion_openEmbedding : IsOpenEmbedding (fullCutPostInclusion F T hT P) :=
   (Classical.choose_spec (exists_fullCutPostInclusion F T hT P)).1
-
 
 theorem fullCutPostInclusion_patch (j : Option (Fin (F.event T hT).cap_count))
     (x : retainedPatch F T hT P j) :
     fullCutPostInclusion F T hT P x.val = fullCutPostPatch F T hT P j x :=
   (Classical.choose_spec (exists_fullCutPostInclusion F T hT P)).2 j x
 
-
 theorem fullCutPostInclusion_old (y : eventCapComplementOpen F T hT) :
     fullCutPostInclusion F T hT P y.val =
       partialOldInclusion F T hT P Set.univ (fullCutPostOld F T hT P y) :=
   fullCutPostInclusion_patch F T hT P none y
-
 
 theorem fullCutPostInclusion_cap (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
     fullCutPostInclusion F T hT P ((P i).ball.map x.val) =

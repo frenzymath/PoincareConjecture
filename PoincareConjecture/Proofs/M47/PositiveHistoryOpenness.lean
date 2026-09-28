@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSectionalContinuation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open PoincareConjecture.M04 Proofs.M46
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [CompactSpace M] {J : Set ℝ}
-
-
 
 theorem sectional_positive_eventually (F : RicciFlow 3 M J)
     {t : ℝ} (ht : t ∈ J)
@@ -64,8 +54,6 @@ theorem sectional_positive_eventually (F : RicciFlow 3 M J)
   have hcurv := (half_pos hc).trans_le hcuv
   simpa [LeviCivitaData.sectionalCurvature, huv.1, huv.2.1, huv.2.2] using hcurv
 
-
-
 theorem sectional_positive_at_later_time [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow 3 M J) {s t : ℝ} (hs : s ∈ J) (ht : t ∈ J) (hst : s ≤ t)
     (hpos : ∀ x : M, ∀ u v : TangentSpace (𝓡 3) x,
@@ -85,8 +73,6 @@ theorem sectional_positive_at_later_time [T2Space M] [SecondCountableTopology M]
     have hcurv := hc.trans_le hcuv
     simpa [LeviCivitaData.sectionalCurvature, huv.1, huv.2.1, huv.2.2] using hcurv
   · exact hpos
-
-
 
 theorem exists_earlier_positive_time {a b t : ℝ}
     (F : RicciFlow 3 M (Icc a b)) (hat : a < t) (htb : t ≤ b)

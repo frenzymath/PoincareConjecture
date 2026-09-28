@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InteriorMetricSegment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.MetricArc
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +9,6 @@ open Set
 open scoped Topology ENNReal Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_interior_geodesic
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}
@@ -53,11 +37,6 @@ theorem m64Intrinsic_constrained_minimizer_interior_geodesic
     exact hgeo u hu'
   exact ⟨fun u hu => (hpoint u hu.1 hu.2).1 u rfl,
     fun u hu hKu => (hpoint u hu hKu).2⟩
-
-
-
-
-
 
 theorem m64Intrinsic_exists_region_minimizer_geodesic_interior
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

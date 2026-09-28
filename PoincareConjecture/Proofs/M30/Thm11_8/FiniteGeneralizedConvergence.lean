@@ -13,18 +13,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Parametrized.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,9 +30,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_finite_generalizedBlowupConvergence
     (hShi : LocalCurvatureDerivativeEstimates.{0})

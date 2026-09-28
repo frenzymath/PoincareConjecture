@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompactNormalExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +8,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem IsFinitePLBallPair.exists_actual_width_normal_extension
     {s q : Set E} (hs : IsFinitePLBallPair (ℝ × ℝ) s q)

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transitions
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} {G : ShrinkingSolitonFlow S}
-
 
 theorem quotient_map_localDiffeomorph (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology
@@ -51,7 +44,6 @@ theorem quotient_map_localDiffeomorph (q : QuotientSphereLineCertificate G) :
     (q.quotient_metric (-1)) p
     (fun v w ↦ (q.quotient_metric_pullback (-1) (by norm_num) p v w).symm)
 
-
 theorem quotient_map_isOpenQuotientMap (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology
     letI := q.cover_charted
@@ -74,9 +66,6 @@ theorem quotient_map_isOpenQuotientMap (q : QuotientSphereLineCertificate G) :
   let := q.quotient_manifold
   exact ⟨q.quotient_map_surjective, q.quotient_map_smooth.continuous,
     q.quotient_map_localDiffeomorph.isOpenMap⟩
-
-
-
 
 theorem exists_projectivePlaneCoordinates (r : Setoid UnitTwoSphere)
     (hr : ∀ x y, r x y ↔ x = y ∨ x = -y)

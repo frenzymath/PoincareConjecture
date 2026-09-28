@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExten
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.BoundaryLift
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,8 +22,6 @@ local notation "S3" => UnitThreeSphere
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]
   {p : RealProjectiveThree} {U : Set M}
   (S : StandardPuncturedProjectiveCover M p U)
-
-
 
 theorem exists_projected_ball_neighborhood
     (b : OpenPartialHomeomorph E3 S3) (hbs : closedBall 0 1 ⊆ b.source)
@@ -72,8 +61,6 @@ theorem exists_projected_ball_neighborhood
     _ = S.cover '' (b '' closedBall 0 1) := image_comp _ _ _
 
 include S in
-
-
 
 theorem compact_sphere_region_model
     {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U)

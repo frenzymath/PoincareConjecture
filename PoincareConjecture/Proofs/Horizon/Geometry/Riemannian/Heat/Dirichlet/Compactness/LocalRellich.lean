@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Comp
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Rellich
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SequentialCompactness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem exists_cauchySeq_testToL2_of_chart_support
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -52,8 +43,6 @@ theorem exists_cauchySeq_testToL2_of_chart_support
     (fun k => (hBb (f k) (hf k)).trans (mul_le_mul_of_nonneg_left (hn k) hB))
   exact ⟨φ, hφ, cauchySeq_testToL2_of_chartToL2 e he hei hK hKs
     (fun k => f (φ k)) (fun k => hf (φ k)) hc⟩
-
-
 
 theorem isCompactOperator_testToL2_mulSmooth
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

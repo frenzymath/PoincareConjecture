@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,13 +12,11 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
 theorem heatAverage_sub {f g : V → F} (hf : Continuous f) (hg : Continuous g)
     {C D : ℝ} (hfb : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)
     (hgb : ∀ x, (1 + ‖x‖) * ‖g x‖ ≤ D) (t : ℝ) (x : V) :
     heatAverage t (fun y => f y - g y) x = heatAverage t f x - heatAverage t g x :=
   integral_sub (heatAverage_integrable hf hfb t x) (heatAverage_integrable hg hgb t x)
-
 
 theorem heatGradientKernel_sub {f g : V → F} (hf : Continuous f) (hg : Continuous g)
     {C D : ℝ} (hfb : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)
@@ -39,8 +30,6 @@ theorem heatGradientKernel_sub {f g : V → F} (hf : Continuous f) (hg : Continu
     (heatGradientKernel_integrable hg hgb t x)]
   apply integral_congr_ae
   exact Eventually.of_forall (fun z => by ext v; simp [smul_sub])
-
-
 
 theorem heatDuhamel_intervalIntegrable {f : ℝ → V → F} {C t : ℝ} (ht : 0 ≤ t)
     (hfm : StronglyMeasurable (Function.uncurry f))
@@ -60,8 +49,6 @@ theorem heatDuhamel_intervalIntegrable {f : ℝ → V → F} {C t : ℝ} (ht : 0
       (norm_nonneg (f s (x + Real.sqrt (2 * (t - s)) • z)))]
   simpa [heatAverage] using
     norm_integral_le_of_norm_le_const (μ := stdGaussian V) (Eventually.of_forall hb)
-
-
 
 theorem heatDuhamelGradient_intervalIntegrable {f : ℝ → V → F} {C t : ℝ}
     (hC : 0 ≤ C) (ht : 0 ≤ t)
@@ -86,8 +73,6 @@ theorem heatDuhamelGradient_intervalIntegrable {f : ℝ → V → F} {C t : ℝ}
   nlinarith [h, mul_nonneg (norm_nonneg x)
     (norm_nonneg (heatGradientKernel (t - s) (f s) x))]
 
-
-
 theorem heatDuhamel_sub {f g : ℝ → V → F} {C D t : ℝ} (ht : 0 ≤ t)
     (hfm : StronglyMeasurable (Function.uncurry f))
     (hgm : StronglyMeasurable (Function.uncurry g))
@@ -102,7 +87,6 @@ theorem heatDuhamel_sub {f g : ℝ → V → F} {C D t : ℝ} (ht : 0 ≤ t)
   intro s hs
   rw [uIcc_of_le ht] at hs
   exact heatAverage_sub (hf s hs) (hg s hs) (hfb s hs) (hgb s hs) (t - s) x
-
 
 theorem heatDuhamelGradient_sub {f g : ℝ → V → F} {C D t : ℝ}
     (hC : 0 ≤ C) (hD : 0 ≤ D) (ht : 0 ≤ t)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M04.ShiNormalCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {V : Type w} [NormedAddCommGroup V] [NormedSpace ℝ V]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem flow_coordinateHessian_mixed_pullback_contDiffOn {a b : ℝ}
     (F : RicciFlow n M (Icc a b)) {e : M → W}

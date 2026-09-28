@@ -3,16 +3,6 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.UnitInterval
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval
@@ -20,8 +10,6 @@ open Set Metric unitInterval
 namespace NormedSpace
 
 variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 noncomputable def unitSphereRadialMap : C(I × sphere (0 : E) 1, closedBall (0 : E) 1) := by
   refine ⟨fun z => ⟨(z.1 : ℝ) • (z.2 : E), ?_⟩, ?_⟩
@@ -31,15 +19,10 @@ noncomputable def unitSphereRadialMap : C(I × sphere (0 : E) 1, closedBall (0 :
     exact z.1.property.2
   · fun_prop
 
-
-
 theorem norm_unitSphereRadialMap (z : I × sphere (0 : E) 1) :
     ‖(unitSphereRadialMap E z : E)‖ = (z.1 : ℝ) := by
   change ‖(z.1 : ℝ) • (z.2 : E)‖ = (z.1 : ℝ)
   rw [norm_smul, Real.norm_of_nonneg z.1.property.1, norm_eq_of_mem_sphere z.2, mul_one]
-
-
-
 
 theorem unitSphereRadialMap_eq_iff (z w : I × sphere (0 : E) 1) :
     unitSphereRadialMap E z = unitSphereRadialMap E w ↔
@@ -68,9 +51,6 @@ theorem unitSphereRadialMap_eq_iff (z w : I × sphere (0 : E) 1) :
 
 variable [Nontrivial E]
 
-
-
-
 theorem surjective_unitSphereRadialMap : Function.Surjective (unitSphereRadialMap E) := by
   intro x
   by_cases hx : (x : E) = 0
@@ -88,9 +68,6 @@ theorem surjective_unitSphereRadialMap : Function.Surjective (unitSphereRadialMa
     rw [smul_smul, mul_inv_cancel₀ hn, one_smul]
 
 variable [ProperSpace E]
-
-
-
 
 theorem isQuotientMap_unitSphereRadialMap : Topology.IsQuotientMap (unitSphereRadialMap E) :=
   Topology.IsQuotientMap.of_surjective_continuous (surjective_unitSphereRadialMap E)

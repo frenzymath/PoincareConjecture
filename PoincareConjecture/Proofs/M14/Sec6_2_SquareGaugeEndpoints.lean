@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquareCoordinateMomentum
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareGaugeEnergy
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteQuadraticMomentum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -57,9 +48,6 @@ private noncomputable local instance trilinearNormedSpace :
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem squareGauge_spatial_contDiffOn
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)
@@ -84,8 +72,6 @@ theorem squareGauge_spatial_contDiffOn
     hB hV (fun z hz v hv => squareMetricCoefficient_pos (G.gaugeCover.spatial b)
       (G.gaugeCover.metric b).metric T x₀ z.1 hz.2 v hv) u (deriv u) hu
         (fun s _ => (lift (p.curve (s ^ 2))).2.property) hud hd hPd).1
-
-
 
 theorem squareGauge_curve_contMDiffOn
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -2,26 +2,10 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LocalControl
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
-
-
 
 theorem exists_uniform_ball_containment
     {n : ℕ} {T' T : ℝ}
@@ -67,8 +51,6 @@ theorem exists_uniform_ball_containment
     (mul_le_mul_of_nonneg_right
       (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_left htime hL)) hA.le))
 
-
-
 theorem eventually_all_time_ball_compact
     {n : ℕ} {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -86,8 +68,6 @@ theorem eventually_all_time_ball_compact
   intro t ht
   apply hcompact.of_isClosed_subset isClosed_closure
   exact closure_mono (hk t ht 0 ⟨H.time_bounds.1, H.time_bounds.2⟩)
-
-
 
 theorem exists_uniform_interior_local_control
     {n : ℕ} {T' T : ℝ}

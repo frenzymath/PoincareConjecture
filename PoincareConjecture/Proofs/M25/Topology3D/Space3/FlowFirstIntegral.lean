@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowAlgebra
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable (f : E → E) {K L : ℝ≥0}
 variable (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
 
-
-
 theorem boundedFlow_mapsTo_set {U : Set E} (hz : ∀ x ∉ U, f x = 0) (t : ℝ) :
     MapsTo (fun x => boundedFlow f hK hL x t) U U := by
   intro x hx
@@ -35,8 +23,6 @@ theorem boundedFlow_mapsTo_set {U : Set E} (hz : ∀ x ∉ U, f x = 0) (t : ℝ)
   apply hflow
   change boundedFlow f hK hL x t ∈ U
   rwa [← heq]
-
-
 
 theorem boundedFlow_preserves_firstIntegral {U : Set E} (hz : ∀ x ∉ U, f x = 0)
     (A : E → F) (hA : ∀ x ∈ U, DifferentiableAt ℝ A x)
@@ -50,9 +36,6 @@ theorem boundedFlow_preserves_firstIntegral {U : Set E} (hz : ∀ x ∉ U, f x =
   simpa only [boundedFlow_zero] using
     is_const_of_deriv_eq_zero (fun u => (hd u).differentiableAt)
       (fun u => (hd u).deriv) t 0
-
-
-
 
 theorem boundedFlow_intertwines_on [CompleteSpace F]
     (g : F → F) {K' L' : ℝ≥0} (hgK : LipschitzWith K' g) (hgL : ∀ y, ‖g y‖ ≤ L')

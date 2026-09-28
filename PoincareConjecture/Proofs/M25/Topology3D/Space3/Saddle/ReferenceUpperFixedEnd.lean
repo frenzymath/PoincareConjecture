@@ -12,14 +12,6 @@ import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -28,8 +20,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace Matrix Pointwise NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_nonnested_reference_upper_fixed_end
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitMetricJets
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_target_eq_connectedComponent
     {C : GeneralizedSliceCarrier.{u}} {D : GeneralizedSliceCarrier.{v}}
@@ -42,8 +31,6 @@ theorem limitCanonical_target_eq_connectedComponent
   exact (hconnected.subset_connectedComponent hx).antisymm
     ((show IsClopen f.target from ⟨hclosed, f.open_target⟩).connectedComponent_subset hx)
 
-
-
 theorem limitCanonical_eventually_exhaustion_univ
     {V : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence V J)
@@ -52,9 +39,6 @@ theorem limitCanonical_eventually_exhaustion_univ
   obtain ⟨j, hj⟩ := G.exists_exhaustion_superset hcompact
   filter_upwards [eventually_ge_atTop j] with k hk
   exact eq_univ_of_univ_subset (hj.trans (G.exhaustion.space_increasing hk))
-
-
-
 
 theorem limitCanonical_eventually_physical_component_image
     {V : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

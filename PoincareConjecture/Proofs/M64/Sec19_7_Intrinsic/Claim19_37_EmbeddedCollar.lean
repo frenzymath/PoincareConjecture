@@ -4,19 +4,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +12,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_boundary_injOn_short_arc {a b : ℝ}
     (hab : b - a < rampPeriod) :
@@ -61,9 +46,6 @@ private theorem normal_map_locally_injective
   refine ⟨F.source, F.open_source.mem_nhds
     (hu.contDiffAt.mem_toOpenPartialHomeomorph_source hd (by simp)), ?_⟩
   exact F.injOn
-
-
-
 
 theorem m64Intrinsic_normal_arc_has_embedded_collar
     (N : IntrinsicAnnulus)
@@ -105,9 +87,6 @@ theorem m64Intrinsic_normal_arc_has_embedded_collar
   apply Metric.mem_cthickening_of_dist_le (x, t) (x, 0) r K ⟨hx, rfl⟩
   simp only [Prod.dist_eq, dist_self, Real.dist_eq, sub_zero]
   exact max_le hr.le (abs_le.mpr ht)
-
-
-
 
 theorem m64Intrinsic_exists_embedded_normal_arc_collars (N : IntrinsicAnnulus) :
     ∃ (G : RiemannianMetric 2 AnnulusCoordinates)

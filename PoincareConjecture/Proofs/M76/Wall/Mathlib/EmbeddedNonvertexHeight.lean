@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageReparameterization
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem AffineOnFaces.exists_embedded_nonvertex_height_chart
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

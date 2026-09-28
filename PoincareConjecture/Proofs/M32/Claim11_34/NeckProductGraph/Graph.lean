@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.NeckProductGraph.Projection
 import PoincareConjecture.Proofs.M32.Mathlib.OrderedProductGraph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,11 +30,6 @@ private theorem neck_graph_lift_smooth
   exact (Phi.symm.contMDiff _).comp q
     ((hEi.contMDiffAt (E.open_target.mem_nhds (htarget q))).comp q
       ((N.sphereSlice_contMDiff ha) q))
-
-
-
-
-
 
 theorem exists_neckSlice_product_projection_localDiffeomorph :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -96,12 +79,6 @@ theorem exists_neckSlice_product_projection_localDiffeomorph :
   exact neckSlice_product_projection_mfderiv_bijective gC gL DL DM Phi hproduct E hE hEi
     N ha q (htarget q) hQ hLambda hdelta hscale herror
     (hmetric _ (hpreimage q)) (hricci _ (hpreimage q)) (hcontrol N DM hN)
-
-
-
-
-
-
 
 theorem exists_neckSlice_product_graph :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

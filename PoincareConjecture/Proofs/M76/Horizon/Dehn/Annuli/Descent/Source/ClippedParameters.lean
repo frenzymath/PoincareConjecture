@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.Parameters
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_clipped_planar_source_parameter
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

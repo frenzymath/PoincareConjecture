@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OriginalCorners
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,8 @@ variable {S : Type*} [TopologicalSpace S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
 
-
 noncomputable def firstOuterTip (i : Bool) : S :=
   B.coordinates (i, true) (rightTriangleBasis B.scale_pos 1)
-
 
 noncomputable def secondOuterTip (i : Bool) : S :=
   B.coordinates (true, i) (rightTriangleBasis B.scale_pos 2)
@@ -72,32 +61,24 @@ theorem coordinate_second_outer_tip (i : Bool) (j : Bool) :
   rw [B.boundary_map, B.boundary_map] at h
   simpa [affineChartSegment, secondOuterTip] using h
 
-
-
 theorem first_outer_inward_velocity_eq (i : Bool) (j : Bool) :
     coordinateTriangleVelocity (B.coordinates (i, j)) (rightTriangleBasis B.scale_pos) 1 0 =
       coordinateTriangleVelocity (B.coordinates (i, true)) (rightTriangleBasis B.scale_pos) 1 0 :=
   B.reversed_radial_velocity_eq 2 (B.first_boundary_agreement rfl)
-
-
 
 theorem second_outer_inward_velocity_eq (i : Bool) (j : Bool) :
     coordinateTriangleVelocity (B.coordinates (j, i)) (rightTriangleBasis B.scale_pos) 2 0 =
       coordinateTriangleVelocity (B.coordinates (true, i)) (rightTriangleBasis B.scale_pos) 2 0 :=
   B.reversed_radial_velocity_eq 1 (B.second_boundary_agreement rfl)
 
-
 noncomputable def firstOuterSpoke (i : Bool) : TangentSpace (𝓡 2) (B.firstOuterTip i) :=
   -coordinateTriangleVelocity (B.coordinates (i, true)) (rightTriangleBasis B.scale_pos) 1 0
-
 
 noncomputable def secondOuterSpoke (i : Bool) : TangentSpace (𝓡 2) (B.secondOuterTip i) :=
   -coordinateTriangleVelocity (B.coordinates (true, i)) (rightTriangleBasis B.scale_pos) 2 0
 
-
 noncomputable def firstOuterChord (i j : Bool) : TangentSpace (𝓡 2) (B.firstOuterTip i) :=
   coordinateTriangleVelocity (B.coordinates (i, j)) (rightTriangleBasis B.scale_pos) 1 2
-
 
 noncomputable def secondOuterChord (i j : Bool) : TangentSpace (𝓡 2) (B.secondOuterTip i) :=
   coordinateTriangleVelocity (B.coordinates (j, i)) (rightTriangleBasis B.scale_pos) 2 1
@@ -127,8 +108,6 @@ private theorem reverse_velocity_eq_neg_endpoint (i : Bool × Bool) (k : Fin 3)
   convert h' using 1 <;> first | rfl | simp only [neg_smul, one_smul]
   congr 2
 
-
-
 theorem firstOuterSpoke_eq_boundary_velocity (i : Bool) :
     B.firstOuterSpoke i = mfderiv 𝓘(ℝ, ℝ) (𝓡 2)
       ((B.face (i, true)).boundary 2).map 1 1 := by
@@ -138,7 +117,6 @@ theorem firstOuterSpoke_eq_boundary_velocity (i : Bool) :
     (rightTriangleBasis B.scale_pos) 1 0 = _ at h
   rw [firstOuterSpoke, h, neg_neg]
 
-
 theorem secondOuterSpoke_eq_boundary_velocity (i : Bool) :
     B.secondOuterSpoke i = mfderiv 𝓘(ℝ, ℝ) (𝓡 2)
       ((B.face (true, i)).boundary 1).map 1 1 := by
@@ -147,8 +125,6 @@ theorem secondOuterSpoke_eq_boundary_velocity (i : Bool) :
   change coordinateTriangleVelocity (B.coordinates (true, i))
     (rightTriangleBasis B.scale_pos) 2 0 = _ at h
   rw [secondOuterSpoke, h, neg_neg]
-
-
 
 theorem first_outer_corner_supplement (g : RiemannianMetric 2 S) (i j : Bool) :
     coordinateTriangleAngle g (B.coordinates (i, j)) (rightTriangleBasis B.scale_pos) 1 +
@@ -163,7 +139,6 @@ theorem first_outer_corner_supplement (g : RiemannianMetric 2 S) (i j : Bool) :
     g.cornerAngle_neg_left]
   ring
 
-
 theorem second_outer_corner_supplement (g : RiemannianMetric 2 S) (i j : Bool) :
     coordinateTriangleAngle g (B.coordinates (j, i)) (rightTriangleBasis B.scale_pos) 2 +
       g.cornerAngle (B.secondOuterTip i) (B.secondOuterSpoke i) (B.secondOuterChord i j) =
@@ -176,8 +151,6 @@ theorem second_outer_corner_supplement (g : RiemannianMetric 2 S) (i j : Bool) :
   rw [B.coordinate_second_outer_tip, B.second_outer_inward_velocity_eq,
     g.cornerAngle_neg_left]
   ring
-
-
 
 theorem first_outer_corner_pair (g : RiemannianMetric 2 S) (i : Bool) :
     (∑ j : Bool, coordinateTriangleAngle g (B.coordinates (i, j))
@@ -197,8 +170,6 @@ theorem second_outer_corner_pair (g : RiemannianMetric 2 S) (i : Bool) :
   simp_rw [B.second_outer_corner_supplement]
   simp [two_mul]
 
-
-
 theorem first_outer_refined_corner_pair (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool → List (Plane →ᵃ[ℝ] ℝ)) :
     (∑ j : Bool, meshVertexAngleContribution g (B.coordinates (i, j))
@@ -212,8 +183,6 @@ theorem first_outer_refined_corner_pair (g : RiemannianMetric 2 S) (i : Bool)
   simp only [B.coordinate_first_outer_tip] at h
   simp_rw [h]
   exact B.first_outer_corner_pair g i
-
-
 
 theorem second_outer_refined_corner_pair (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool → List (Plane →ᵃ[ℝ] ℝ)) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenInclusionDiffeomorph
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.EmbeddingInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
 
 noncomputable def regularRawStageDiffeomorph (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)
@@ -48,8 +37,6 @@ noncomputable def regularRawStageDiffeomorph (H : CounterexampleNeckFamily E)
   let e₂ := openSubtypePartialDiffeomorph (T i).carrierOpen ⟨H.tubeBase T i⟩
   exact ((G.stageDiffeomorph k).trans e₁).trans e₂
 
-
-
 @[simp] theorem regularRawStageDiffeomorph_source (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)
     (phi : ℕ → ℕ)
@@ -61,8 +48,6 @@ noncomputable def regularRawStageDiffeomorph (H : CounterexampleNeckFamily E)
     (fun x => (G.embedding k x).val) ⁻¹' (univ : Set _)) = G.exhaustion k
   simp only [preimage_univ, inter_univ]
 
-
-
 @[simp] theorem regularRawStageDiffeomorph_apply (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)
     (phi : ℕ → ℕ)
@@ -73,8 +58,6 @@ noncomputable def regularRawStageDiffeomorph (H : CounterexampleNeckFamily E)
     H.regularRawStageDiffeomorph T A1 hA1 phi G k x = (G.embedding k x).val.val := rfl
 
 set_option maxHeartbeats 2400000 in
-
-
 
 @[simp] theorem regularRawStageDiffeomorph_target (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)
@@ -92,8 +75,6 @@ set_option maxHeartbeats 2400000 in
   rfl
 
 set_option maxHeartbeats 2400000 in
-
-
 
 @[simp] theorem regularRawStageDiffeomorph_base (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)

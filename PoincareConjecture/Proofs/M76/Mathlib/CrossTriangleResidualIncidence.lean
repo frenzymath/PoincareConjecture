@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexSlabCommonEdge
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +7,6 @@ open Set Geometry
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem eq_vertex_of_collar_trivial_section_intersection (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} {β : ℝ}
@@ -41,10 +26,6 @@ theorem eq_vertex_of_collar_trivial_section_intersection (K : SimplicialComplex 
   have hbe : b ∈ convexHull ℝ (e : Set E) := hedge e he hes hxe
   have hbq : b = q := mem_singleton_iff.mp (hsection ⟨convexHull_mono het hbe, hbA⟩)
   exact (hbottom (hcollapse hbq)).trans hbq
-
-
-
-
 
 theorem eq_vertex_or_top_of_collar_residual_intersection (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0) {β : ℝ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.CollarEnlargement
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.RetainedSlab
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

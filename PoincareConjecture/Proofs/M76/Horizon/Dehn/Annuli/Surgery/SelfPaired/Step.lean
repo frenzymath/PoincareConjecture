@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.SelfPaired.Ordinary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.SourceAnnuli.OriginalReflection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

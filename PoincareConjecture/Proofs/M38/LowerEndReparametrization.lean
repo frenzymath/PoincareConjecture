@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallShrinking
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,14 +9,11 @@ open scoped ContDiff
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def lowerEndCutoff (t : ℝ) : ℝ :=
   Real.smoothTransition (32 * t ^ 2 - 1)
 
-
 noncomputable def lowerEndProfile (k t : ℝ) : ℝ :=
   lowerEndCutoff t * t + (1 - lowerEndCutoff t) * (k * t / (1 - t))
-
 
 theorem lowerEndCutoff_zero {t : ℝ} (ht : |t| ≤ 1 / 8) : lowerEndCutoff t = 0 := by
   apply Real.smoothTransition.zero_of_nonpos
@@ -32,28 +21,23 @@ theorem lowerEndCutoff_zero {t : ℝ} (ht : |t| ≤ 1 / 8) : lowerEndCutoff t = 
   nlinarith [mul_nonneg (by linarith : 0 ≤ 1 / 8 - t)
     (by linarith : 0 ≤ 1 / 8 + t)]
 
-
 theorem lowerEndCutoff_one {t : ℝ} (ht : 1 / 4 ≤ |t|) : lowerEndCutoff t = 1 := by
   apply Real.smoothTransition.one_of_one_le
   nlinarith [sq_abs t, sq_nonneg (|t| - 1 / 4)]
-
 
 theorem lowerEndProfile_inner (k : ℝ) {t : ℝ} (ht : |t| ≤ 1 / 8) :
     lowerEndProfile k t = k * t / (1 - t) := by
   rw [lowerEndProfile, lowerEndCutoff_zero ht]
   ring
 
-
 theorem lowerEndProfile_outer (k : ℝ) {t : ℝ} (ht : 1 / 4 ≤ |t|) :
     lowerEndProfile k t = t := by
   rw [lowerEndProfile, lowerEndCutoff_one ht]
   ring
 
-
 theorem lowerEndCutoff_smooth : ContDiff ℝ ∞ lowerEndCutoff :=
   Real.smoothTransition.contDiff.comp
     ((contDiff_const.mul (contDiff_id.pow 2)).sub contDiff_const)
-
 
 theorem lowerEndProfile_smooth (k : ℝ) : ContDiff ℝ ∞ (lowerEndProfile k) := by
   apply contDiff_iff_contDiffAt.mpr
@@ -68,7 +52,6 @@ theorem lowerEndProfile_smooth (k : ℝ) : ContDiff ℝ ∞ (lowerEndProfile k) 
     filter_upwards [isOpen_Ioi.mem_nhds (show 1 / 4 < t by linarith)] with s hs
     exact lowerEndProfile_outer k (le_trans (le_of_lt hs) (le_abs_self s))
 
-
 theorem lowerEndCutoff_hasDerivAt (t : ℝ) :
     HasDerivAt lowerEndCutoff
       (64 * t * deriv Real.smoothTransition (32 * t ^ 2 - 1)) t := by
@@ -77,7 +60,6 @@ theorem lowerEndCutoff_hasDerivAt (t : ℝ) :
     (32 * t ^ 2 - 1)).hasDerivAt.comp t
       ((((hasDerivAt_id t).pow 2).const_mul 32).sub_const 1)
   convert h using 1 <;> first | rfl | (simp only [id_eq, Pi.pow_apply]; ring)
-
 
 theorem lowerEndProfile_deriv_formula (k : ℝ) {t : ℝ} (ht : t < 1 / 2) :
     deriv (lowerEndProfile k) t =
@@ -97,7 +79,6 @@ theorem lowerEndProfile_deriv_formula (k : ℝ) {t : ℝ} (ht : t < 1 / 2) :
   simp only [id_eq, Pi.sub_apply, mul_one, zero_sub]
   field_simp [hne]
   ring
-
 
 theorem lowerEndProfile_deriv_pos {k : ℝ} (hk : 0 < k) (hk2 : k ≤ 1 / 2) (t : ℝ) :
     0 < deriv (lowerEndProfile k) t := by
@@ -129,11 +110,9 @@ theorem lowerEndProfile_deriv_pos {k : ℝ} (hk : 0 < k) (hk2 : k ≤ 1 / 2) (t 
     rw [h.deriv]
     norm_num
 
-
 theorem lowerEndProfile_strictMono {k : ℝ} (hk : 0 < k) (hk2 : k ≤ 1 / 2) :
     StrictMono (lowerEndProfile k) :=
   strictMono_of_deriv_pos (lowerEndProfile_deriv_pos hk hk2)
-
 
 theorem lowerEndProfile_surjective (k : ℝ) : Function.Surjective (lowerEndProfile k) := by
   intro y
@@ -156,14 +135,11 @@ theorem lowerEndProfile_surjective (k : ℝ) : Function.Surjective (lowerEndProf
         exact ⟨hay, hyb⟩)
   exact ⟨t, hty⟩
 
-
 noncomputable def lowerEndOrderIso (k : ℝ) (hk : 0 < k) (hk2 : k ≤ 1 / 2) : ℝ ≃o ℝ :=
   (lowerEndProfile_strictMono hk hk2).orderIsoOfSurjective _ (lowerEndProfile_surjective k)
 
-
 @[simp] theorem lowerEndOrderIso_apply (k : ℝ) (hk : 0 < k) (hk2 : k ≤ 1 / 2) (t : ℝ) :
     lowerEndOrderIso k hk hk2 t = lowerEndProfile k t := rfl
-
 
 theorem lowerEndOrderIso_symm_smooth {k : ℝ} (hk : 0 < k) (hk2 : k ≤ 1 / 2) :
     ContDiff ℝ ∞ (lowerEndOrderIso k hk hk2).symm := by
@@ -172,12 +148,10 @@ theorem lowerEndOrderIso_symm_smooth {k : ℝ} (hk : 0 < k) (hk2 : k ≤ 1 / 2) 
     (fun t => ((lowerEndProfile_smooth k).differentiable (by simp) t).hasDerivAt)
     (lowerEndProfile_smooth k)
 
-
 @[simp] theorem lowerEndOrderIso_zero (k : ℝ) (hk : 0 < k) (hk2 : k ≤ 1 / 2) :
     lowerEndOrderIso k hk hk2 0 = 0 := by
   rw [lowerEndOrderIso_apply, lowerEndProfile_inner k (by norm_num : |(0 : ℝ)| ≤ 1 / 8)]
   norm_num
-
 
 @[simp] theorem lowerEndOrderIso_one (k : ℝ) (hk : 0 < k) (hk2 : k ≤ 1 / 2) :
     lowerEndOrderIso k hk hk2 1 = 1 :=

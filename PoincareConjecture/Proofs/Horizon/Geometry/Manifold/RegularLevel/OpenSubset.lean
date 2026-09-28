@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.ChartedSpace
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
 open Set Function TopologicalSpace
 open scoped Manifold Topology ContDiff
 
@@ -24,10 +16,8 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {I : ModelWithCorners ℝ E H} {M : Type*} [TopologicalSpace M]
   [ChartedSpace H M] [IsManifold I ∞ M] [I.Boundaryless]
 
-
 abbrev openLevelSet (f : M → ℝ) (U : Opens M) (c : ℝ) :=
   ((fun y : U => f (y : M)) ⁻¹' {c} : Set U)
-
 
 def openLevelIncl (f : M → ℝ) (U : Opens M) (c : ℝ)
     (z : openLevelSet f U c) : M := ((z : U) : M)
@@ -54,7 +44,6 @@ theorem openLevelRestrict_regular (x : U) :
     mfderiv I 𝓘(ℝ, ℝ) (fun y : U => f (y : M)) x ≠ 0 := by
   rw [mfderiv_opens_restrict U f ((hf (x : M)).mdifferentiableAt (by simp))]
   exact hreg (x : M) x.2
-
 
 @[reducible] def openLevelSetChartedSpace :
     ChartedSpace (EuclideanSpace ℝ (Fin n)) (openLevelSet f U c) :=

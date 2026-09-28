@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenLocal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,7 @@ namespace VanKampen
 
 variable {X : Type*} [TopologicalSpace X] (U V : Set X)
 
-
-
 def inclusion : C(U, X) := ⟨Subtype.val, continuous_subtype_val⟩
-
-
 
 theorem cover_open (hU : IsOpen U) (hV : IsOpen V) : ∀ i, IsOpen (cover U V i) := by
   intro i
@@ -32,7 +18,6 @@ theorem cover_open (hU : IsOpen U) (hV : IsOpen V) : ∀ i, IsOpen (cover U V i)
   · exact hV
 
 omit [TopologicalSpace X] in
-
 
 theorem cover_covers (hcover : U ∪ V = univ) : univ ⊆ ⋃ i, cover U V i := by
   intro x _
@@ -44,19 +29,14 @@ theorem cover_covers (hcover : U ∪ V = univ) : univ ⊆ ⋃ i, cover U V i := 
 variable (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hUV : IsSimplyConnected (U ∩ V)) (b : U) (hb : b.1 ∈ V)
 
-
-
 noncomputable def preliminaryRetraction : FundamentalGroup X b.1 →* FundamentalGroup U b :=
   ((localTransport U V hUV b hb).global (cover_open U V hU hV)
     (cover_covers U V hcover)).toMonoidHom b.1
-
-
 
 noncomputable def basepointLoop : FundamentalGroup U b :=
   overlapTails U V hUV b hb b (Joined.refl b)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem preliminaryRetraction_comp_inclusion :
     (preliminaryRetraction U V hU hV hcover hUV b hb).comp
@@ -81,13 +61,9 @@ theorem preliminaryRetraction_comp_inclusion :
     simp only [MulEquiv.coe_toMonoidHom, MulAut.conj_apply, inv_inv]
     rfl
 
-
-
 noncomputable def retraction : FundamentalGroup X b.1 →* FundamentalGroup U b :=
   (MulAut.conj (G := FundamentalGroup U b) (basepointLoop U V hUV b hb)⁻¹).symm.toMonoidHom.comp
       (preliminaryRetraction U V hU hV hcover hUV b hb)
-
-
 
 theorem retraction_comp_inclusion :
     (retraction U V hU hV hcover hUV b hb).comp
@@ -102,7 +78,6 @@ theorem retraction_comp_inclusion :
   exact MulEquiv.symm_apply_apply _ q
 
 include hU hV hcover hUV hb in
-
 
 theorem inclusion_injective : Function.Injective (FundamentalGroup.map (inclusion U) b) := by
   have h : Function.LeftInverse (retraction U V hU hV hcover hUV b hb)

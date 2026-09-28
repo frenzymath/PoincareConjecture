@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.Bilinear
 import Mathlib.Analysis.InnerProductSpace.ProdL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem circleProduct_ricci
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialPatch
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialAnnulusMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
-
 
 theorem intrinsicRadialAnnulusPatch_pullback (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length)

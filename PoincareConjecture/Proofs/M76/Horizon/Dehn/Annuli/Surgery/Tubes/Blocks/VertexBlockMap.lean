@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalVertexBlockMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Blocks.SectorMaps
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -140,4 +138,3 @@ theorem ComponentBranchModel.exists_local_vertex_block_map
     exact signed_prism_end_preimage (by cases b <;> simp) map (G b) (hEnd b) z
 
 end PoincareConjecture.M76.Dehn.Annuli
-

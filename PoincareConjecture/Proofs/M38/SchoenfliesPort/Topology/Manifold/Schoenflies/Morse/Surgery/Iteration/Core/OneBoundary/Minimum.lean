@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapSlice.Normalization
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Extremum.Filling.Minimum
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,9 +28,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_filling_of_positive_cap_complement
     {v : E3} {g : S2 → E3}
@@ -204,8 +193,6 @@ namespace SphereMorseReduction
 variable {f : S2 → E3} (M : SphereMorseReduction f)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_filling_of_one_positive_cap {g : S2 → E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)

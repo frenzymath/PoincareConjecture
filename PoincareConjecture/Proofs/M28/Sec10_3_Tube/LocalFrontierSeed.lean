@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalReciprocalStrip
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_frontier_axial_seed_threshold_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSubdivision
 import Mathlib.Algebra.Homology.Refinements
 import Mathlib.Algebra.Category.ModuleCat.EpiMono
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -24,9 +16,6 @@ open PoincareConjecture.Proofs.M02.Topology
 noncomputable section
 
 variable {X : Type u} [TopologicalSpace X]
-
-
-
 
 theorem integral_cycle_boundary_of_zero_homology_class
     (n : Nat)

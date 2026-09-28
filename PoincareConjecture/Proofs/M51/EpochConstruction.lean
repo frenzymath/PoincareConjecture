@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.FiniteEpoch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ universe u
 namespace PoincareConjecture.M51
 
 open M51Numerical
-
-
 
 theorem EpochStage.complete
     {S : RepairedControlledSchedulesData.{u}}
@@ -58,8 +48,6 @@ namespace PoincareConjecture.M51Initial
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [CompactSpace M] [Nonempty M]
-
-
 
 theorem exists_first_stage (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)

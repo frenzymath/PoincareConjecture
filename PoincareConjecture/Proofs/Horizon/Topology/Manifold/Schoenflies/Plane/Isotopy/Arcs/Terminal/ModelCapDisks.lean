@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapSlice.Region
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BallPreimage
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 
 private instance : LocallyConnectedSpace S2 := ChartedSpace.locallyConnectedSpace E2 S2
-
-
 
 theorem exists_open_region_disk_of_frontier_subset_circle
     {C : S1 → S2} (hC : ContMDiff (𝓡 1) (𝓡 2) ∞ C)
@@ -69,8 +65,6 @@ private theorem sublevel_component_closure
     ((connectedComponentIn_subset _ _).trans (fun _ hx => le_of_lt (show h _ < b from hx)))
     (isClosed_Iic.preimage hh)
 
-
-
 theorem exists_sublevel_component_disk_of_circle_level
     {h : S2 → Real} (hh : Continuous h) {b : Real}
     {C : S1 → S2} (hC : ContMDiff (𝓡 1) (𝓡 2) ∞ C)
@@ -95,8 +89,6 @@ theorem exists_sublevel_component_disk_of_circle_level
     intro hpC
     have := hlevel.symm ▸ hpC
     exact (ne_of_lt hp) this
-
-
 
 theorem exists_sublevel_component_disk_of_separated_circle_pair
     {h : S2 → Real} (hh : Continuous h) {b : Real}
@@ -159,8 +151,6 @@ theorem exists_sublevel_component_disk_of_separated_circle_pair
     · exact (not_le_of_gt (hneg z) (hclosed hq.1)).elim
     · exact hq1
 
-
-
 theorem outside_height_band_component_eq_sublevel
     {X : Type*} [TopologicalSpace X] {h : X → Real} (hh : Continuous h)
     {a b : Real} (hab : a ≤ b) {p : X} (hp : h p < a) :
@@ -181,7 +171,6 @@ theorem outside_height_band_component_eq_sublevel
   · apply connectedComponentIn_mono
     exact fun x hx hi => hx.not_ge hi.1
 
-
 theorem outside_height_band_component_eq_superlevel
     {X : Type*} [TopologicalSpace X] {h : X → Real} (hh : Continuous h)
     {a b : Real} (hab : a ≤ b) {p : X} (hp : b < h p) :
@@ -193,8 +182,6 @@ theorem outside_height_band_component_eq_superlevel
   rw [heq]
   simpa only [preimage, Pi.neg_apply, mem_Iio, mem_Ioi, neg_lt_neg_iff] using
     outside_height_band_component_eq_sublevel hh.neg (neg_le_neg hab) (neg_lt_neg hp)
-
-
 
 theorem exists_superlevel_component_disk_of_circle_level
     {h : S2 → Real} (hh : Continuous h) {b : Real}

@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M53SphereSeparation
 import PoincareConjecture.Proofs.M60.Mathlib.NonNullSphere
 import PoincareConjecture.Proofs.M60.Mathlib.NonNullSmoothing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology Manifold ContDiff
@@ -18,9 +9,6 @@ open scoped Topology Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60_exists_smooth_nonNull_sphere_of_nontrivial_pi2
     {n : ℕ} {M : Type u} [TopologicalSpace M]

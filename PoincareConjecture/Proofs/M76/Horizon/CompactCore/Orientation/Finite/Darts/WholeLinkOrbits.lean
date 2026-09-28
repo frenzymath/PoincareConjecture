@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.CommonEdgeOrbits
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexCycleConstancy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains AbstractSimplicialComplex

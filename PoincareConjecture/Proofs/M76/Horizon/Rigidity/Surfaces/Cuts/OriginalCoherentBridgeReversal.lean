@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBrid
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBridgeScalarDirections
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBridgeScalarCharts
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical AbstractSimplicialComplex
@@ -30,7 +28,6 @@ theorem scalar_product_neg_of_parity
     norm_num [orientationSignParity] at hp
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem OriginalRefinementCoherentSigns.paired_edge_scalar_product_neg
     {K : SimplicialComplex ℝ E} {number : E → ℕ} {sourceSign : Finset E → ZMod 2}
@@ -100,8 +97,6 @@ local notation "CutSpace" => (E × (ResidualHalfBandIndex K P D → ℝ)) × (Fi
 local notation "sm" => A.sourceMap K P D hD hcofaces hP labels
 local notation "Sq" => PeriodicSquare.squareCarrier 1
 
-
-
 theorem exists_refined_bridge_edge_sample
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (hL : L.faces.Finite) (hLs : L.space = Sq)
@@ -163,9 +158,6 @@ theorem exists_refined_bridge_edge_sample
       Function.comp_apply, v, w, B] using hend.1
   · simpa only [Finset.coe_insert, Finset.coe_singleton, convexHull_pair,
       Function.comp_apply, v, w, B] using hend.2
-
-
-
 
 theorem bridge_endpoint_scalar_parity
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

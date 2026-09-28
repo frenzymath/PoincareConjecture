@@ -6,21 +6,9 @@ import PoincareConjecture.Proofs.M27.Providers
 import PoincareConjecture.Proofs.M30.Providers
 import PoincareConjecture.Proofs.M35
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
 
 theorem m35StandardCapPredecessorsFromMilestones : M35StandardCapPredecessors := by
   obtain ⟨epsilon₀, hpos, hsmall, _short, long⟩ :=
@@ -37,12 +25,9 @@ theorem m35StandardCapPredecessorsFromMilestones : M35StandardCapPredecessors :=
   intro M _ _ _ _ _ _
   exact (ricciFlowLocalTheory (n := 2) (M := M)).2.1
 
-
-
 theorem m35StandardCapUniquenessFromMilestones :
     RepairedStandardCapUniquenessTheory :=
   repairedStandardCapUniqueness m35StandardCapPredecessorsFromMilestones
-
 
 theorem m35StandardScalarRateFromMilestones (g₀ : StandardInitialMetric)
     (E : RepairedStandardCapExistenceData g₀) :

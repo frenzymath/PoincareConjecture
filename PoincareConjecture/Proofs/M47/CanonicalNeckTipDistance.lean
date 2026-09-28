@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M13.Length
 import PoincareConjecture.Proofs.M34.Standard.NeckRestriction
 import PoincareConjecture.Definitions.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
 
 theorem standardNeck_tip_distance_calibrated
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)
@@ -45,8 +35,6 @@ theorem standardNeck_tip_distance_calibrated
     exact Manifold.riemannianEDist_comm
   rw [hsymm] at hnot
   exact (ENNReal.ofReal_le_iff_le_toReal (g.edist_ne_top 0 x)).mp (le_of_not_gt hnot)
-
-
 
 theorem standardStaticNeck_tip_distance_calibrated
     (A : StandardCylinderAtlas) (g : RiemannianMetric 3 StandardCapSpace)
@@ -83,8 +71,6 @@ theorem standardStaticNeck_tip_distance_calibrated
   rw [hscale, ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.sqrt_nonneg _)] at hd
   simpa only [mul_comm] using hd
 
-
-
 theorem standardEvolvingNeck_tip_distance_calibrated
     {g0 : StandardInitialMetric} (E : RepairedStandardCapExistenceData g0)
     {t epsilon : ℝ} {x : StandardCapSpace} {I : Set ℝ}
@@ -105,8 +91,6 @@ theorem standardEvolvingNeck_tip_distance_calibrated
       simpa only [zero_div, add_zero] using h }
   exact standardStaticNeck_tip_distance_calibrated E.atlas (E.flow.metric t)
     (E.flow.connection t) (E.rotation_invariant t N.time_mem) N0 hsmall
-
-
 
 theorem standardCanonical_cap_of_tip_distance
     {g0 : StandardInitialMetric} (E : RepairedStandardCapExistenceData g0)

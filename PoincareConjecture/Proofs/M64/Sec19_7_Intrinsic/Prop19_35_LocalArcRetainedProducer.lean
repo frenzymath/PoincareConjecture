@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalArcRetaine
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalArcRetainedBaseLength
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InjectiveStripArea
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +10,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle Matrix ENNReal
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_local_arc_retained_strip
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

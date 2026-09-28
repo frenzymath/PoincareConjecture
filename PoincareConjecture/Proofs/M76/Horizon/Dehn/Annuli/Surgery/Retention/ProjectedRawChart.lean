@@ -6,8 +6,6 @@ open Set Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem nonempty_rawSourceCrossing_of_projected
     {E X Y ι : Type*} [TopologicalSpace E] [TopologicalSpace X] [TopologicalSpace Y]
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {S : Set E}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.min {f g : E → ℝ} {S : Set E}
     (hf : FinitePiecewiseAffineOn f S) (hg : FinitePiecewiseAffineOn g S) :

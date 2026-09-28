@@ -3,15 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

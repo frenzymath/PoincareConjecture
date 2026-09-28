@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_PointJetBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M45
 open CoordinateTransition
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem finitePointJetBounded_of_christoffel_hessian
     {ι : Type*} {l : Filter ι} {x : ι → E} {f : ι → E → E}

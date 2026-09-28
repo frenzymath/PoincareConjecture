@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteLiftChains
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.HomologyTrace
 import PoincareConjecture.Proofs.M76.Mathlib.OrderComplexMapImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,7 +19,6 @@ namespace PoincareConjecture.M76.FiniteComplexHomology
 open PoincareConjecture.Proofs.M02.Topology PoincareConjecture.Proofs.M59
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem finite_modTwo_homology_of_order_complex_cover
     {J : Type u} [PartialOrder J] [Fintype J]
@@ -48,8 +39,6 @@ theorem finite_modTwo_homology_of_order_complex_cover
     (singularLiftProjection p (nerve J) (orderComplexSingular J))
     (orderComplexSingularLift_quasiIso p hp)
   exact Module.Finite.equiv (asIso (homologyMap e.hom n)).toLinearEquiv
-
-
 
 theorem finite_modTwo_homology
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

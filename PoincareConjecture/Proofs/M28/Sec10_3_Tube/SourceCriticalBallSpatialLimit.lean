@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeNoncollapse
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallSourcePacket
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.GeometryLimit
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
 
 theorem exists_source_criticalBall_subsequence_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
@@ -89,9 +75,6 @@ theorem exists_source_criticalBall_subsequence_limit_accuracy
       (hepsilon.trans (min_le_left _ _)) hA1 D hcrit delta hdelta l
     exact ⟨B, hB, hphi.tendsto_atTop.eventually hbound⟩
 
-
-
-
 theorem exists_source_criticalBall_spatial_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧
@@ -112,9 +95,6 @@ theorem exists_source_criticalBall_spatial_limit_accuracy
   refine ⟨epsilon₀, hpos, hsmall, ?_⟩
   intro epsilon C A E H T hepsilon A1 hA1 hbase hcrit
   exact hgeometry H T hepsilon hA1 hbase hcrit id strictMono_id
-
-
-
 
 theorem exists_actual_source_criticalBall_spatial_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
@@ -139,9 +119,6 @@ theorem exists_actual_source_criticalBall_spatial_limit_accuracy
     W.radius_pos W.radius_lower W.radius_bound⟩
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_actual_source_criticalBall_retained_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
@@ -180,9 +157,6 @@ theorem exists_actual_source_criticalBall_retained_limit_accuracy
 end PoincareConjecture.M28.CounterexampleNeckFamily
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_counterexample_criticalBall_spatial_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :

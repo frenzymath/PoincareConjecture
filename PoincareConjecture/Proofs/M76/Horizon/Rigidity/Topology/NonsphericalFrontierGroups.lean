@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Loops.OriginalComponentAlternative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

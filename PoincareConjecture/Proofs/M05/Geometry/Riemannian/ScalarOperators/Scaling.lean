@@ -1,7 +1,4 @@
-
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,7 +39,6 @@ lemma LeviCivitaData.hessian_const_mul {g : RiemannianMetric n M}
     D.hessian (fun y => c * f y) x u v = c * D.hessian f x u v := by
   simp only [LeviCivitaData.hessian, LeviCivitaData.hessianOnFields, mvfderiv_const_mul]
   ring
-
 
 lemma LeviCivitaData.laplacian_const_mul {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (c : ℝ) (f : M → ℝ) (x : M) :

@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutContacts
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,9 +9,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_band_endpoint_cuts_disjoint
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
@@ -40,10 +34,6 @@ theorem m64Intrinsic_band_endpoint_cuts_disjoint
     ⟨mul_nonneg ht.1 hh1.le, by nlinarith [ht.2]⟩
   have h := congrArg (fun q => (collarParameterEquiv q).1) (B.coordinates.injOn hs' ht' heq)
   norm_num only [collarParameterEquiv.apply_symm_apply, Prod.fst] at h
-
-
-
-
 
 theorem m64Intrinsic_nested_patch_obstacle_contacts
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.GraphTransport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.CompactConjugation
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_supported_radial_graph_flattening_within
     (m : OpenPartialHomeomorph E2 S2)
@@ -95,8 +85,6 @@ theorem exists_supported_radial_graph_flattening_within
     have h := hGcoord (y, a y) hsource
     rw [hFmap y hy] at h
     simpa only [c, radialDiskChart_apply, add_zero, one_smul] using h
-
-
 
 theorem exists_supported_radial_graph_flattening
     (m : OpenPartialHomeomorph E2 S2)

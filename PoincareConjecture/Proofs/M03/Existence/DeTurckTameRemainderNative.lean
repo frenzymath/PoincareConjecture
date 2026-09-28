@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Matrix.Normed
 import Mathlib.MeasureTheory.Function.LpSeminorm.LpNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -94,7 +84,6 @@ theorem contDiffAt_lowerJetSource (background : MetricJet2 (n := n))
   exact (contDiffAt_chartStateSource background (lowerJetState p 0) hp i j).comp p
     contDiff_lowerJetState_zero.contDiffAt
 
-
 theorem exists_lowerJet_coefficient_bounds (background : MetricJet2 (n := n))
     (K : Set (MetricLowerJet n)) (hconv : Convex ℝ K) (hcompact : IsCompact K)
     (hpos : ∀ p ∈ K, p.1.PosDef) :
@@ -118,7 +107,6 @@ theorem exists_lowerJet_coefficient_bounds (background : MetricJet2 (n := n))
     simpa only [dist_eq_norm] using hLI.dist_le_mul p hp q hq
   · intro p hp q hq
     simpa only [dist_eq_norm] using hL0.dist_le_mul p hp q hq
-
 
 def fixedPrincipalRemainder (background : MetricJet2 (n := n))
     (p : MetricLowerJet n) (Q : MetricSecondJet n) : Matrix (Fin n) (Fin n) ℝ :=
@@ -188,7 +176,6 @@ theorem norm_fixedPrincipalRemainder_sub_le (background : MetricJet2 (n := n))
           (norm_nonneg S))
     _ = _ := by ring
 
-
 theorem exists_fixedPrincipalRemainder_tame (background : MetricJet2 (n := n))
     (K : Set (MetricLowerJet n)) (hconv : Convex ℝ K) (hcompact : IsCompact K)
     (hpos : ∀ p ∈ K, p.1.PosDef) :
@@ -206,7 +193,6 @@ theorem exists_fixedPrincipalRemainder_tame (background : MetricJet2 (n := n))
   intro p hp q hq Q S hQm hQd hSm hSd
   exact norm_fixedPrincipalRemainder_sub_le background p q Q S (hpos p hp) (hpos q hq)
     hQm hQd hSm hSd (hI p hp q hq) (hL p hp q hq)
-
 
 theorem exists_centered_fixedPrincipalRemainder_tame (background : MetricJet2 (n := n))
     (K : Set (MetricLowerJet n)) (hconv : Convex ℝ K) (hcompact : IsCompact K)
@@ -239,7 +225,6 @@ theorem exists_centered_fixedPrincipalRemainder_tame (background : MetricJet2 (n
 def backgroundLowerJet (background : MetricJet2 (n := n)) : MetricLowerJet n :=
   (background.value, background.first)
 
-
 def perturbationRemainder (background : MetricJet2 (n := n))
     (dp : MetricLowerJet n) (DQ : MetricSecondJet n) : Matrix (Fin n) (Fin n) ℝ :=
   fun i j => chartStateSource background
@@ -264,7 +249,6 @@ theorem perturbationRemainder_sub (background : MetricJet2 (n := n))
       fixedPrincipalRemainder background (backgroundLowerJet background + dq)
         (background.second + DS) := by
   rw [perturbationRemainder_eq, perturbationRemainder_eq, add_sub_add_right_eq_sub]
-
 
 theorem exists_perturbationRemainder_tame (background : MetricJet2 (n := n))
     (K : Set (MetricLowerJet n)) (hconv : Convex ℝ K) (hcompact : IsCompact K)
@@ -306,7 +290,6 @@ theorem exists_perturbationRemainder_tame (background : MetricJet2 (n := n))
     htame (backgroundLowerJet background + dp) hdp (backgroundLowerJet background + dq) hdq
       (background.second + DQ) (background.second + DS) hsumQm hsumQd hsumSm hsumSd
 
-
 def symmetricLowerJetBall (p0 : MetricLowerJet n) (r : ℝ) : Set (MetricLowerJet n) :=
   {p | p.1.IsSymm} ∩ Metric.closedBall p0 r
 
@@ -327,7 +310,6 @@ theorem mem_symmetricLowerJetBall_center (p0 : MetricLowerJet n) {r : ℝ}
     (h0 : p0.1.IsSymm) (hr : 0 ≤ r) : p0 ∈ symmetricLowerJetBall p0 r :=
   ⟨h0, Metric.mem_closedBall_self hr⟩
 
-
 theorem exists_positive_symmetricLowerJetBall (background : MetricJet2 (n := n))
     (hbackground : background.value.PosDef) :
     ∃ r : ℝ, 0 < r ∧
@@ -341,7 +323,6 @@ theorem exists_positive_symmetricLowerJetBall (background : MetricJet2 (n := n))
   apply hpos () (mem_singleton ()) p.1 hp.1
   exact (norm_fst_le (p - backgroundLowerJet background)).trans
     (by simpa only [Metric.mem_closedBall, dist_eq_norm] using hp.2)
-
 
 theorem exists_local_perturbationRemainder_tame (background : MetricJet2 (n := n))
     (hbackground : background.value.PosDef)
@@ -381,7 +362,6 @@ theorem exists_local_perturbationRemainder_tame (background : MetricJet2 (n := n
     exact hpos _ (hmem dp hsymm hsmall)
   · intro dp dq hdp hdq hp hq DQ DS hQm hQd hSm hSd
     exact htame dp dq (hmem dp hdp hp) (hmem dq hdq hq) DQ DS hQm hQd hSm hSd
-
 
 theorem exists_small_principal_perturbationRemainder (background : MetricJet2 (n := n))
     (hbackground : background.value.PosDef)
@@ -432,7 +412,6 @@ theorem continuous_lowerJetContraction :
       lowerJetContraction q.1 q.2) := by
   unfold lowerJetContraction
   fun_prop
-
 
 theorem aestronglyMeasurable_fixedPrincipalRemainder
     (background : MetricJet2 (n := n)) {p : X → MetricLowerJet n}
@@ -532,7 +511,6 @@ theorem memLp_lpNorm_le_three
         rw [lpNorm_const_mul_norm μ h₁.aestronglyMeasurable hc₁,
           lpNorm_const_mul_norm μ h₂.aestronglyMeasurable hc₂,
           lpNorm_const_mul_norm μ h₃.aestronglyMeasurable hc₃]
-
 
 theorem exists_small_principal_L2_remainder (background : MetricJet2 (n := n))
     (hbackground : background.value.PosDef)

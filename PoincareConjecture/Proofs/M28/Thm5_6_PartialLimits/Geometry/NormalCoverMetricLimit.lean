@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CurvatureJets
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.ControlledCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +22,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
       T' T (r j) (R j) (ρ j) (a j) (b j) (N j))
 
 local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
-
-
-
 
 theorem exists_partial_metric_limit_of_normal_covers
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (ha : ∀ j, 0 < a j)
@@ -85,8 +71,6 @@ theorem exists_partial_metric_limit_of_normal_covers
   simpa only [partialUnitBallMap_zero] using hlimit
 
 include cover in
-
-
 
 theorem exists_partial_metric_limit_of_curvature_and_normal_covers
     (D : ∀ k, LeviCivitaData (g k 0))

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalChartPairs
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalChartGlobalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem terminalCommonInterval_diffeomorph_of_actual_jets
     {M : Type u} {N : Type v} {X : ℕ → Type w}

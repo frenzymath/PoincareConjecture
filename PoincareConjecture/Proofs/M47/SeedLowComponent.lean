@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedPhysical
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem seed_earlier_component_scalar_lt
     (P : M47ScalarPersistencePredecessors.{u}) [CompactSpace M]
@@ -49,8 +38,6 @@ theorem seed_earlier_component_scalar_lt
   rw [← hread]
   exact mul_le_mul_of_nonneg_left hp (div_nonneg N.constant_pos.le (by norm_num))
 
-
-
 theorem seed_future_reference_gap
     (P : M47ScalarPersistencePredecessors.{u}) [CompactSpace M]
     {J : Set ℝ} (G : RicciFlow 3 M J)
@@ -76,8 +63,6 @@ theorem seed_future_reference_gap
     _ ≤ L := hlevel
     _ ≤ _ := hhigh
 
-
-
 theorem exists_seed_future_reference_analytic_bound (C : ℝ) :
     ∃ A : ℝ, 1 ≤ A ∧ C ≤ A ∧
       ∀ (_P : M47ScalarPersistencePredecessors.{u})
@@ -101,8 +86,6 @@ theorem exists_seed_future_reference_analytic_bound (C : ℝ) :
   obtain ⟨p, hp, hgap⟩ := seed_future_reference_gap P G F q z phi himage hread
     hst hJ hC hQ hfuture hlevel hhigh
   exact hmodel F s p (phi z) hp hgap hcanonical
-
-
 
 theorem exists_seed_low_center_ball_bound (C : ℝ) :
     ∃ B : ℝ, 1 ≤ B ∧ C ≤ B ∧

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.LevelVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory TopologicalSpace
@@ -14,8 +8,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem hasCompactSupport_openLevelIncl
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -45,8 +37,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local instance levelSupport_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem integrable_regularLevelVolume_of_hasCompactSupport
     {h : M → ℝ} (hh : Continuous h) (hcompact : HasCompactSupport h)

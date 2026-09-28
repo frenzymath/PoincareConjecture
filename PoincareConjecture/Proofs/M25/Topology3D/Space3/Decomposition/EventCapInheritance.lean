@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.RetainedCapPlacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.RegularSurgeryEvent
-
 
 theorem exists_inherited_cap
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -55,7 +44,6 @@ theorem exists_inherited_cap
   · exact C.pullback_cap (E.retainedChart i) he hei (E.retainedTime i) hgamma hcap heq
   · exact C.pullback_seam (E.retainedChart i) he hei (E.retainedTime i) hgamma hcap heq
 
-
 theorem inherited_cap_disjoint_new
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (C : SurgeryCapTag parent u)
@@ -71,7 +59,6 @@ theorem inherited_cap_disjoint_new
   · intro y hy
     rw [hcut]
     exact havoid y hy
-
 
 theorem exists_inherited_cap_family
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SumRegionLifting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def sumConnectedSumData {A B C : GeneralizedSliceCarrier.{u}}
     (S : SmoothConnectedSumData A B C) (D : GeneralizedSliceCarrier.{u}) :
@@ -107,7 +97,6 @@ noncomputable def sumConnectedSumData {A B C : GeneralizedSliceCarrier.{u}}
         · exact Or.inr ⟨z, hz, rfl⟩
     | inr x => exact Or.inl (Or.inl (Or.inr (Set.mem_range_self x)))
 
-
 noncomputable def sumTwoPieceUnion {A B C : GeneralizedSliceCarrier.{u}}
     (U : SmoothDisjointUnionData ![A, B] C) (D : GeneralizedSliceCarrier.{u})
     (hC : Nonempty C.carrier) :
@@ -166,14 +155,12 @@ noncomputable def sumTwoPieceUnion {A B C : GeneralizedSliceCarrier.{u}}
         · exact Set.mem_iUnion.mpr ⟨1, ⟨x, hi, rfl⟩⟩
     | inr x => exact Set.mem_iUnion.mpr ⟨0, Or.inr (Set.mem_range_self x)⟩
 
-
 theorem sumConnectedSumStep {A C : GeneralizedSliceCarrier.{u}}
     (h : SmoothConnectedSumStep A C) (D : GeneralizedSliceCarrier.{u}) :
     SmoothConnectedSumStep (sumCarrier A D) (sumCarrier C D) := by
   obtain ⟨B, E, ⟨U⟩, ⟨S⟩⟩ := h
   have hA : Nonempty A.carrier := ⟨(U.identify 0).map (S.first_ball.map 0)⟩
   exact ⟨sumCarrier B D, E, ⟨sumTwoPieceUnion U D hA⟩, ⟨sumConnectedSumData S D⟩⟩
-
 
 theorem sumConnectedSumChain {A C : GeneralizedSliceCarrier.{u}}
     (h : Relation.ReflTransGen SmoothConnectedSumStep A C) (D : GeneralizedSliceCarrier.{u}) :

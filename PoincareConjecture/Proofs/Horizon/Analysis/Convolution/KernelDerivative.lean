@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
@@ -15,8 +10,6 @@ namespace Poincare.Analysis.Convolution
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem fderiv_convolution_eq_kernel_derivative
     (mu : Measure E) [mu.IsAddHaarMeasure] [mu.IsNegInvariant]

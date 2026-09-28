@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzMetric
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,15 +16,11 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
-
 noncomputable def auxiliarySpacetimeEDist (F : GeneralizedFlowSpacetime n X time I)
     (q z : F.Point) : ℝ≥0∞ :=
   let : Bundle.RiemannianBundle (TangentSpace (spacetimeModel n) : F.Point → Type _) :=
     ⟨(auxiliarySpacetimeMetric F).toRiemannianMetric⟩
   riemannianEDist (spacetimeModel n) q z
-
-
 
 theorem auxiliarySpacetimeEDist_self (F : GeneralizedFlowSpacetime n X time I)
     (q : F.Point) : auxiliarySpacetimeEDist F q q = 0 := by
@@ -42,15 +28,11 @@ theorem auxiliarySpacetimeEDist_self (F : GeneralizedFlowSpacetime n X time I)
     ⟨(auxiliarySpacetimeMetric F).toRiemannianMetric⟩
   exact riemannianEDist_self
 
-
-
 theorem auxiliarySpacetimeEDist_comm (F : GeneralizedFlowSpacetime n X time I)
     (q z : F.Point) : auxiliarySpacetimeEDist F q z = auxiliarySpacetimeEDist F z q := by
   let : Bundle.RiemannianBundle (TangentSpace (spacetimeModel n) : F.Point → Type _) :=
     ⟨(auxiliarySpacetimeMetric F).toRiemannianMetric⟩
   exact riemannianEDist_comm
-
-
 
 theorem auxiliarySpacetimeEDist_triangle (F : GeneralizedFlowSpacetime n X time I)
     (q z w : F.Point) : auxiliarySpacetimeEDist F q w ≤
@@ -59,17 +41,12 @@ theorem auxiliarySpacetimeEDist_triangle (F : GeneralizedFlowSpacetime n X time 
     ⟨(auxiliarySpacetimeMetric F).toRiemannianMetric⟩
   exact riemannianEDist_triangle
 
-
-
 theorem auxiliarySpacetimeEDist_continuous (F : GeneralizedFlowSpacetime n X time I)
     (q : F.Point) : Continuous (auxiliarySpacetimeEDist F q) := by
   let : Bundle.RiemannianBundle (TangentSpace (spacetimeModel n) : F.Point → Type _) :=
     ⟨(auxiliarySpacetimeMetric F).toRiemannianMetric⟩
   let : EMetricSpace F.Point := .ofRiemannianMetric (spacetimeModel n) F.Point
   exact continuous_const.edist continuous_id
-
-
-
 
 theorem auxiliarySpacetimeEDist_ball_subset (F : GeneralizedFlowSpacetime n X time I)
     {q : F.Point} {U : Set F.Point} (hU : U ∈ 𝓝 q) :
@@ -80,8 +57,6 @@ theorem auxiliarySpacetimeEDist_ball_subset (F : GeneralizedFlowSpacetime n X ti
     (spacetimeModel n) hU
   refine ⟨ε, hε, ?_⟩
   simpa only [auxiliarySpacetimeEDist, ENNReal.ofReal_coe_nnreal] using hsub
-
-
 
 theorem auxiliarySpacetimeEDist_le_of_velocity_bound
     (F : GeneralizedFlowSpacetime n X time I) {γ : ℝ → F.Point} {a b C : ℝ}
@@ -116,8 +91,6 @@ theorem auxiliarySpacetimeEDist_le_of_velocity_bound
 variable {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
 
-
-
 theorem auxiliarySpacetimeForm_squareRoot_velocity (R : M14SquareRootPath G p)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval a b) :
     auxiliarySpacetimeForm G.spacetime (R.curve s)
@@ -130,8 +103,6 @@ theorem auxiliarySpacetimeForm_squareRoot_velocity (R : M14SquareRootPath G p)
   rw [auxiliarySpacetimeForm_apply, ← squareRoot_horizontalVelocity_eq_projection R hs,
     squareRoot_velocity_clock R hs]
   ring
-
-
 
 theorem auxiliarySpacetimeEDist_squareRoot_le (R : M14SquareRootPath G p)
     {r t C : ℝ} (hr : Real.sqrt a ≤ r) (ht : t ≤ Real.sqrt b)

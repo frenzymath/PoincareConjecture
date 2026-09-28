@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRetention
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,13 +13,10 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
   [Nonempty (F.slice t).carrier] {i : Fin (F.event t hT).cap_count} {A : ℝ}
 
-
 def sourceInitialOldMap (initial : SurgeryCapInitialComparison F t hT i A) :
     StandardCapSpace → (F.event t hT).terminal.carrier :=
   fun x => (F.event t hT).limit_identify.map
     ((F.event t hT).retention.inverse (initial.chart x))
-
-
 
 theorem source_initial_old_map_properties
     (initial : SurgeryCapInitialComparison F t hT i A) {U : Set StandardCapSpace}
@@ -68,8 +55,6 @@ theorem source_initial_old_map_properties
     E.retention.right_inverse (interior_subset (hret y hy).1)] at hchart
   have hinv := congrArg initial.inverse hchart
   rwa [initial.left_inverse (hsource hx), initial.left_inverse (hsource hy)] at hinv
-
-
 
 theorem source_initial_old_map_metric
     (initial : SurgeryCapInitialComparison F t hT i A) {U : Set StandardCapSpace}

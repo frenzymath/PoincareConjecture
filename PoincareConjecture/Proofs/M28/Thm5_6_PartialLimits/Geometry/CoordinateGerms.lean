@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +7,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem pullbackCoefficients_eq_of_eventuallyEq
     {n : ℕ} {M : Type*} [TopologicalSpace M]

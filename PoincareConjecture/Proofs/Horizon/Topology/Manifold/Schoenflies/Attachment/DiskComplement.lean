@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.MarkedBall
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere.Caps
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,8 +36,6 @@ private theorem exists_sphere_restriction
     contMDiff_toFun := (F.contMDiff.comp contMDiff_coe_sphere).codRestrict_sphere _
     contMDiff_invFun := (F.symm.contMDiff.comp contMDiff_coe_sphere).codRestrict_sphere _ },
     fun _ => rfl⟩
-
-
 
 theorem exists_complementary_disk_neighborhood
     {r : Real} (hr : 0 < r) (f : E2 -> S2)

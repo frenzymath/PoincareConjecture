@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullSections
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullSectionEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_local_smooth_unit_ricci_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) {x : M}
@@ -72,8 +59,6 @@ theorem exists_local_smooth_unit_ricci_null_section
       rw [map_smul, LinearMap.smul_apply]
       rw [ricciBilinear_apply, hnull y hy.1 w, smul_zero]
 
-
-
 theorem connection_eq_zero_of_terminal_unit_null
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -115,8 +100,6 @@ theorem connection_eq_zero_of_terminal_unit_null
   rw [hunit.self_of_nhds] at h
   have hc0 : c = 0 := by linarith
   simpa only [hc0, zero_smul] using hc'.symm
-
-
 
 theorem exists_local_parallel_unit_ricci_null_section
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

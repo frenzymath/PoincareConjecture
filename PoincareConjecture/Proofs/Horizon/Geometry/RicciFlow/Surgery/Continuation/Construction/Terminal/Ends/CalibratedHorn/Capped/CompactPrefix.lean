@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
-
 
 theorem boundary_subset_closure_negative_region {a : ℝ}
     (ha : -C.epsilon⁻¹ < a) :
@@ -57,7 +47,6 @@ theorem boundary_subset_closure_negative_region {a : ℝ}
     rw [closure_union, hK.isClosed.closure_eq] at h
     exact h.resolve_right fun hxK => disjoint_left.mp C.disjoint_closed_core_end
       (C.boundary_subset_closed_core hx) (hKend hxK)
-
 
 theorem exists_compact_negative_region :
     ∃ a ∈ Ioo (-C.epsilon⁻¹) C.epsilon⁻¹,
@@ -104,7 +93,6 @@ theorem exists_compact_negative_region :
   have hclosure := closure_minimal (hsub.trans interior_subset) hK.isClosed
   exact ⟨a, ha, hK.of_isClosed_subset isClosed_closure hclosure,
     hclosure.trans hKC⟩
-
 
 theorem isCompact_truncated_core {b : ℝ} (hb : b < C.epsilon⁻¹) :
     IsCompact (C.closed_core ∪ closure (C.end_neck.region (-C.epsilon⁻¹) b)) ∧

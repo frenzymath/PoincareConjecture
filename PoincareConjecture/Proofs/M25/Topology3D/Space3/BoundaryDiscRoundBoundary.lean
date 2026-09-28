@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryEllipsoidRounding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.EllipsoidBoundaryImage
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereRegionChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_boundary_disc_round_boundary (v : E) (hv : ‖v‖ = 1)
     (D : BallNeighborhoodChart ((ℝ ∙ v)ᗮ) ((ℝ ∙ v)ᗮ)) :

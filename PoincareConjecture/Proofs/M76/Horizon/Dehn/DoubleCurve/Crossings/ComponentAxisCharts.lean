@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.PairedComponentNeighborhoods
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.RawCrossingCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -41,8 +33,6 @@ theorem RawCrossingChart.double_image_axis
       exact disjoint_left.mp C.disjoint ha hb
   rw [hpair, C.left_image z hz, C.right_image z hz]
   tauto
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_isolated_component_target
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -83,9 +73,6 @@ theorem OrdinaryDoubleCurveModel.exists_isolated_component_target
     · exact (hzO.2 ⟨x, mem_iUnion.mpr ⟨⟨j, hji, hjm⟩, hj⟩, hxz⟩).elim
   · intro z hz
     exact ⟨hAO hz, image_mono (M.piece_subset_double i) hz⟩
-
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_component_axis_charts
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

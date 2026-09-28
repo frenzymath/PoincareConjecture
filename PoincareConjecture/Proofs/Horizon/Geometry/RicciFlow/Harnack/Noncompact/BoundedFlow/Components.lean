@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.B
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
 theorem restrictComponent_ricci (F : RicciFlow n M J) (p : M) (t : ℝ)
     (x : Poincare.connectedComponentOpens (EuclideanSpace ℝ (Fin n)) p)
     (v w : TangentSpace (𝓡 n) x) :
@@ -35,7 +26,6 @@ theorem restrictComponent_ricci (F : RicciFlow n M J) (p : M) (t : ℝ)
   apply ((F.restrictComponent p).connection t).ricci_eq_of_local_isometry
     (F.connection t) isOpen_univ contMDiff_subtype_val.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
-
 
 theorem restrictComponent_scalarCurvature_mvfderiv
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (p : M) (t : ℝ)
@@ -63,9 +53,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem finite_differential_of_component_curvature_slab_bounds
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

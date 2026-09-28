@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60AreaGram_comp_smul (g : RiemannianMetric n M)
     (f : LoopPlane → M) (c : ℝ) (z : LoopPlane) :
     m60AreaGram g (fun x => f (c • x)) z = c ^ 2 • m60AreaGram g f (c • z) := by
@@ -38,8 +25,6 @@ theorem m60AreaGram_comp_smul (g : RiemannianMetric n M)
     Matrix.smul_apply, smul_eq_mul, map_smul]
   ring_nf
   rfl
-
-
 
 theorem m60AreaDensity_comp_smul (g : RiemannianMetric n M)
     (f : LoopPlane → M) (c : ℝ) (z : LoopPlane) :
@@ -51,8 +36,6 @@ theorem m60AreaDensity_comp_smul (g : RiemannianMetric n M)
     max_eq_right (m60AreaGram_det_nonneg g f (c • z)),
     Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq_eq_abs, abs_of_nonneg (sq_nonneg c)]
 
-
-
 theorem m60AreaIntegral_comp_smul (g : RiemannianMetric n M)
     (f : LoopPlane → M) {c : ℝ} (hc : 0 < c) (S : Set LoopPlane) :
     (∫ z in S, m60AreaDensity g (fun x => f (c • x)) z ∂volume) =
@@ -61,8 +44,6 @@ theorem m60AreaIntegral_comp_smul (g : RiemannianMetric n M)
   rw [integral_const_mul, Measure.setIntegral_comp_smul_of_pos volume _ S hc]
   have hdim : Module.finrank ℝ LoopPlane = 2 := by simp [LoopPlane]
   rw [hdim, smul_eq_mul, ← mul_assoc, mul_inv_cancel₀ (pow_ne_zero 2 hc.ne'), one_mul]
-
-
 
 theorem m60AreaIntegral_rescaled_disk (g : RiemannianMetric n M)
     (f : LoopPlane → M) {r : ℝ} (hr : 0 < r) :
@@ -75,15 +56,11 @@ theorem m60AreaIntegral_rescaled_disk (g : RiemannianMetric n M)
     abs_of_pos (inv_pos.mpr hr), inv_mul_cancel₀ hr.ne']
   rfl
 
-
-
 theorem m60_inv_smul_closedBall {r : ℝ} (hr : 0 < r) :
     r⁻¹ • Metric.closedBall (0 : LoopPlane) r = loopDiskSet := by
   rw [smul_closedBall' (inv_ne_zero hr.ne'), smul_zero, Real.norm_eq_abs,
     abs_of_pos (inv_pos.mpr hr), inv_mul_cancel₀ hr.ne']
   rfl
-
-
 
 theorem m60AreaDensity_integrableOn_comp_smul (g : RiemannianMetric n M)
     (f : LoopPlane → M) {c : ℝ} (hc : c ≠ 0) (S : Set LoopPlane)
@@ -95,8 +72,6 @@ theorem m60AreaDensity_integrableOn_comp_smul (g : RiemannianMetric n M)
   exact hi.const_mul (c ^ 2)
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem m60_ae_mdifferentiable_comp_smul (f : LoopPlane → M)
     {c : ℝ} (hc : c ≠ 0) (S : Set LoopPlane)

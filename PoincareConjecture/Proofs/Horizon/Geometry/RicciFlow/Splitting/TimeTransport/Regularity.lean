@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.BoundaryR
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Frame.Transport.HigherRegularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

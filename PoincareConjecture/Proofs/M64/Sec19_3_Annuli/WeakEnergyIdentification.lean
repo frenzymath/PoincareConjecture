@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DouglasMorreyPipeline
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -27,10 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {f : LoopPlane → M}
 
-
-
-
-
 theorem m64WeakEnergyDensity_eq_classical_of_gram_eq
     (V : M64AnnulusWeakGradient g f)
     {p : LoopPlane}
@@ -44,10 +28,6 @@ theorem m64WeakEnergyDensity_eq_classical_of_gram_eq
   rw [Matrix.trace_fin_two]
   rw [Fin.sum_univ_two]
   rw [hgram 0 0, hgram 1 1]
-
-
-
-
 
 theorem m64WeakEnergy_integral_eq_classical_of_ae_gram_eq
     (V : M64AnnulusWeakGradient g f)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.CWCellPasting
 import PoincareConjecture.Proofs.M02.Topology.DiskRelativeHomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

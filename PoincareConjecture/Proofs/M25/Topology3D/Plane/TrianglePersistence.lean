@@ -6,15 +6,6 @@ import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -45,8 +36,6 @@ private theorem triangle_eq_simplex_image (a b c : E) :
     · simp [Fin.sum_univ_three]
 
 variable {Z : Type*} [TopologicalSpace Z] {z0 : Z}
-
-
 
 theorem eventually_disjoint_triangle_segment {a b c d e : Z → E}
     (ha : ContinuousAt a z0) (hb : ContinuousAt b z0) (hc : ContinuousAt c z0)
@@ -131,8 +120,6 @@ private theorem pointed_triangle_relation_ne_zero (a b c d : E)
   apply ha
   refine ⟨w 0, w 1, hw.1 0, hw.1 1, by linarith, ?_⟩
   simpa only [hw2, zero_smul, zero_add, hxa] using hx.symm
-
-
 
 theorem eventually_triangle_inter_attached_segment_subset {a b c d : Z → E}
     (ha : ContinuousAt a z0) (hb : ContinuousAt b z0)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Nonflatness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ local instance solutionCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.c
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem exists_ancientKappaSolution_on_closedPast
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -87,8 +76,6 @@ theorem exists_ancientKappaSolution_on_closedPast
       exact hcurv t ⟨by nlinarith [sq_pos_of_pos hr], le_rfl⟩ y hy
   }
   exact ⟨K, rfl, rfl⟩
-
-
 
 theorem exists_bounded_ancientKappaSolution_limit
     (P : M23NormalizedKappaCompactnessPredecessors)

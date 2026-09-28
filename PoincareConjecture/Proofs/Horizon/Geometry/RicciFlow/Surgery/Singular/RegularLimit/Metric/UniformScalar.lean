@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Within
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem tendstoUniformlyOn_scalarCurvature
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -62,7 +58,6 @@ theorem terminalFlow_scalar_at_terminal
       (H.terminalConnection P04).scalarCurvature x :=
   congrArg (fun g : RiemannianMetric 3 (H.regularRegion P04) =>
     g.leviCivitaData.scalarCurvature x) (H.terminalMetricFamily_at_terminal P04)
-
 
 theorem tendstoUniformlyOn_terminal_scalarCurvature
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

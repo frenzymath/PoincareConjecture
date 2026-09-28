@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Metric.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory

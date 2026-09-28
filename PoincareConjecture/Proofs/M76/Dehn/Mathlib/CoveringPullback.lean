@@ -1,17 +1,6 @@
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,22 +10,14 @@ namespace CoveringPullback
 variable {E X Y : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [TopologicalSpace Y]
 
-
-
 abbrev Total (p : E → X) (f : Y → X) := {z : Y × E // f z.1 = p z.2}
-
-
 
 def proj (p : E → X) (f : Y → X) : Total p f → Y := fun z => z.1.1
 
 omit [TopologicalSpace X] in
 
-
-
 theorem continuous_proj (p : E → X) (f : Y → X) : Continuous (proj p f) :=
   continuous_fst.comp continuous_subtype_val
-
-
 
 def fiberHomeomorph (p : E → X) (f : Y → X) (y : Y) :
     (proj p f ⁻¹' {y}) ≃ₜ (p ⁻¹' {f y}) where
@@ -54,13 +35,9 @@ def fiberHomeomorph (p : E → X) (f : Y → X) (y : Y) :
 
 omit [TopologicalSpace X] in
 
-
 theorem fiber_ncard (p : E → X) (f : Y → X) (y : Y) :
     (proj p f ⁻¹' {y}).ncard = (p ⁻¹' {f y}).ncard :=
   ncard_congr' (fiberHomeomorph p f y).toEquiv
-
-
-
 
 theorem isCoveringMap {p : E → X} (hp : IsCoveringMap p)
     {f : Y → X} (hf : Continuous f) : IsCoveringMap (proj p f) := by

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.AllEdgeSigns
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.CompatibleChartLabels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -19,8 +9,6 @@ open AbstractSimplicialComplex
 namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_chart_labels_of_global_chart
     {X E ι : Type*} [TopologicalSpace X]
@@ -48,8 +36,6 @@ theorem exists_chart_labels_of_global_chart
   refine ⟨label, ?_⟩
   intro j k z hj hk
   exact (plAtlasTransitionSign_cocycle e hcompat i j k z (hi' z) hj hk).symm
-
-
 
 theorem exists_standard_frontier_all_edge_signs
     (K A : SimplicialComplex ℝ V3) (hAK : A ≤ K) (hA : A.faces.Finite)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,13 +13,10 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
 def cylinderDomainOpen : Opens RoundCylinderSpace :=
   ⟨N.cylinderDomain, N.cylinderDomain_open⟩
 
-
 def carrierOpen : Opens M := ⟨N.carrier, N.carrier_open⟩
-
 
 def coordinateDiffeomorph : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
     N.cylinderDomainOpen N.carrierOpen ∞ where

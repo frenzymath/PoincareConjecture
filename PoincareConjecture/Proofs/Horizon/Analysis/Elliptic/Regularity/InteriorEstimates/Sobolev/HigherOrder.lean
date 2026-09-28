@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.H2Profile
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Operators.Commutator
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology
@@ -78,9 +71,6 @@ private theorem weakEquation_partial {V : Set E} (hV : IsOpen V)
     change A x i j * partialDeriv k (partialDeriv j u) x =
       A x i j * partialDeriv j (partialDeriv k u) x
     exact congrArg (fun v : E → ℝ => A x i j * v x) (partial_comm hu k j)
-
-
-
 
 theorem exists_derivativeProfile_add_two_le_source
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω) (k : ℕ)

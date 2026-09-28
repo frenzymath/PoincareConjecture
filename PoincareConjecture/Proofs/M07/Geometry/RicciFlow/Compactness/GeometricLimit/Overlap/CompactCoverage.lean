@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Gluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal

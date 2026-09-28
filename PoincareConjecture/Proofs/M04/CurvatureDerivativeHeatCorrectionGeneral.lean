@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureDerivativeCorrectionGeneral
 import PoincareConjecture.Proofs.M04.CurvatureDerivativeHeatGeneral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

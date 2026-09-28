@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalEnergyBound
 import PoincareConjecture.Proofs.M34.Standard.CanonicalEnergyRate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
 
 theorem exists_uniformFamily_energy_bounds
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

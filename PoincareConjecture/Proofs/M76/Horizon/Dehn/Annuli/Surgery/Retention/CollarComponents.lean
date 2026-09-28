@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem oriented_collar_middle_separated
     {A : Set P2} {l r : ℝ} (B : OrientedPolygonCollar l r A) (hr : 0 < r)
     (p : squareAnnulus l r) (hp : depth l p = 0) :
@@ -30,7 +28,6 @@ theorem oriented_collar_middle_separated
     have hz := (B.inner_depth p).mp (hi.symm.subset ⟨hh, hx.2⟩)
     linarith
 
-
 theorem SourceCircleDecomposition.component_avoids_collar
     {X : Type*} {f : P2 → X} {S A : Set P2} (M : SourceCircleDecomposition f S)
     (i k : M.Index) (hki : k ≠ i)
@@ -39,8 +36,6 @@ theorem SourceCircleDecomposition.component_avoids_collar
   apply disjoint_left.mpr
   intro x hx hA
   exact disjoint_left.mp (M.disjoint hki) hx (htrace x hA (M.piece_subset_double k hx))
-
-
 
 theorem SourceCircleDecomposition.nested_essential_component_retention
     {X : Type*} {f : P2 → X} {A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ L d : ℝ}

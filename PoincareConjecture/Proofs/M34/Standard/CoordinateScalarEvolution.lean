@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateGermHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.FlowCarrier
-
-
 
 theorem scalarEvolution_eq_of_coordinate_germ
     {n : ℕ} (C : FlowCarrier n) (gM : C.metric)
@@ -54,9 +43,6 @@ theorem scalarEvolution_eq_of_coordinate_germ
 end PoincareConjecture.FlowCarrier
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
-
 
 theorem scalarEvolution_eq_of_coordinate_germ
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

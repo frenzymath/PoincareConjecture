@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.Geo
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPLStage
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology AbstractSimplicialComplex
@@ -19,8 +11,6 @@ open PreAbstractSimplicialComplex.ModTwoCochains
 namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_frontier_coface_signs_of_common_projection
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -67,8 +57,6 @@ end PoincareConjecture.M76.Dehn
 namespace Geometry.OriginalPLTower
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem Stage.exists_standard_region_boundary_signs
     {U E M : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]

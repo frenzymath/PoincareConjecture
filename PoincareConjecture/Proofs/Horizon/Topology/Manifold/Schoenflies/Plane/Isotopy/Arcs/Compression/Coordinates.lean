@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemispher
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.LinearBall
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Reparametrization
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +16,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.Compression
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_marked_disk_normalization
     (v : EuclideanSpace Real (Fin 2)) (hv : ‖v‖ = 1)
@@ -95,8 +82,6 @@ theorem exists_marked_disk_normalization
       L.symm_apply_apply]
     rfl
 
-
-
 theorem exists_marked_arc_round_coordinates
     {r : Real} (hr : 0 < r)
     (f : EuclideanSpace Real (Fin 1) -> S1)
@@ -130,8 +115,6 @@ namespace Normalization
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_ambient_disk_normalization
     (b : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

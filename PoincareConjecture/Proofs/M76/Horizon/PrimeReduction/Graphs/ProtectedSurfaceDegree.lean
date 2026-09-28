@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.SignedTri
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.MovedLocalDisk
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -23,9 +13,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ncard_graph_degree_after_face_affine_motion_on_protected_subcomplex
     (K K₀ G : SimplicialComplex ℝ V3) (hK : K.faces.Finite)

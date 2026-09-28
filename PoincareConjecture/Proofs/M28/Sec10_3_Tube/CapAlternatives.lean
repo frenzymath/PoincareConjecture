@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapRatio
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
-
 def regionHasTubeOrFibration {X : Set M} (R : NeckCapRegion g X) : Prop :=
   match R with
   | .twoCaps _ _ _ _ _ _ => False
@@ -35,9 +23,6 @@ def regionHasTubeOrFibration {X : Set M} (R : NeckCapRegion g X) : Prop :=
   | .cappedTube _ _ => True
   | .tube _ => True
   | .fibration _ => True
-
-
-
 
 theorem regionHasTubeOrFibration_of_scalar_ratio
     (H : ConnectedNeckCapCover g) (D : LeviCivitaData g)
@@ -68,10 +53,6 @@ theorem regionHasTubeOrFibration_of_scalar_ratio
   | cappedTube _ _ => trivial
   | tube _ => trivial
   | fibration _ => trivial
-
-
-
-
 
 theorem exists_tube_or_fibration_region (P : RepairedNeckCapTopologyTheory.{u})
     (H : ConnectedNeckCapCover g) (hsmall : H.epsilon ≤ P.epsilon₀)

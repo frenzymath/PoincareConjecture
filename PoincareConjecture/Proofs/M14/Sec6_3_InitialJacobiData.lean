@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialDifferentialSmooth
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexJacobi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,16 +21,12 @@ private theorem transport_zero {q r : G.Point} (h : q = r) :
   cases h
   rfl
 
-
-
 noncomputable def initialValuePath_differentialField (r : ℝ) :
     G.Horizontal (P.square_path.curve r) := by
   classical
   exact if hr : r ∈ M14SqrtParameterInterval 0 τ then
     (initialValueCurve_eqOn_square hM04 hM12 P hr) ▸ initialValueDifferential G T x Z r W
   else 0
-
-
 
 theorem initialValuePath_differentialField_heq {r : ℝ}
     (hr : r ∈ M14SqrtParameterInterval 0 τ) :
@@ -48,8 +35,6 @@ theorem initialValuePath_differentialField_heq {r : ℝ}
   unfold initialValuePath_differentialField
   rw [dif_pos hr]
   exact eqRec_heq _ _
-
-
 
 theorem initialValuePath_differentialField_contMDiffOn :
     ContMDiffOn (𝓘(ℝ, ℝ)) ((spacetimeModel n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
@@ -73,8 +58,6 @@ theorem initialValuePath_differentialField_contMDiffOn :
   exact Bundle.TotalSpace.ext (initialValueCurve_eqOn_square hM04 hM12 P hr).symm
     (initialValuePath_differentialField_heq hM04 hM12 P W hr)
 
-
-
 theorem initialValuePath_differentialField_zero :
     initialValuePath_differentialField hM04 hM12 P W 0 = 0 := by
   have h0 : (0 : ℝ) ∈ M14SqrtParameterInterval 0 τ := by
@@ -88,9 +71,6 @@ theorem initialValuePath_differentialField_zero :
   unfold initialValuePath_differentialField
   rw [dif_pos h0, hz]
   exact transport_zero _
-
-
-
 
 noncomputable def initialValuePath_differentialData :
     M14JacobiFieldData G P.square_path.curve (M14SqrtParameterInterval 0 τ) := by

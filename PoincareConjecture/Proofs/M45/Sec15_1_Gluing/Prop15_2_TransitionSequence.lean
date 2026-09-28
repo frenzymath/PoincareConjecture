@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_ScaleConvergence
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_TransitionControl
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.ActualTransitionData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -36,17 +27,12 @@ noncomputable local instance transitionSequenceCoefficientNormedSpace :
 
 variable {epsilon : ℝ} (S : GluingBadSequence.{u} epsilon)
 
-
-
 noncomputable def GluingBadSequence.transitionData (hepsilon : 0 < epsilon) (n : ℕ) :
     (S.input n).ActualTransitionData (mul_pos (S.beta_pos n) hepsilon)
       (S.tolerance_lt_half n) (S.point n) :=
   Classical.choice ((S.input n).exists_actualTransitionData
     (mul_pos (S.beta_pos n) hepsilon) (S.tolerance_lt_half n)
     (S.point n) (S.recent_point_mem hepsilon n))
-
-
-
 
 theorem GluingBadSequence.joining_error_pointJetsVanish (hepsilon : 0 < epsilon) :
     PointJetsVanish (fun n p =>
@@ -64,9 +50,6 @@ theorem GluingBadSequence.joining_error_pointJetsVanish (hepsilon : 0 < epsilon)
   have ht : -(S.input n).recent_duration ∈ Icc (-(S.input n).recent_duration) (0 : ℝ) :=
     ⟨le_rfl, neg_nonpos.mpr (S.input n).recent_duration_pos.le⟩
   exact ⟨hs _ ht, bound, hbound, hjets _ ht⟩
-
-
-
 
 theorem GluingBadSequence.transition_jets_bounded (hepsilon : 0 < epsilon)
     {d : ℝ} (hd : d ∈ Icc (0 : ℝ) 1)

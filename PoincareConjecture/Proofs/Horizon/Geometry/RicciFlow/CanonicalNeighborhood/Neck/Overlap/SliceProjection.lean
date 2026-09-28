@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.AxialTransition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.GraphProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem coordinate_inverse_mfderiv_map_prod (N : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain) (v : RoundCylinderTangent z) :
@@ -70,8 +57,6 @@ private theorem coordinateSlice_projection_mfderiv (N N' : EpsilonNeck g)
   have hfst := (hasMFDerivAt_fst (I := 𝓡 2) (I' := 𝓘(ℝ, ℝ))
     (N.coordinate_inverse (N'.coordinate_map (q, a)))).comp q hcomp
   exact congrArg (fun L => L v) hfst.mfderiv
-
-
 
 theorem exists_contained_coordinate_slice_graph :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

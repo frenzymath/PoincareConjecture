@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDomainCharts
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexSphereLargeDisks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +8,6 @@ open Set Geometry
 namespace Geometry.SimplicialComplex
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem plDomain_convex_of_frontier_points
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite) {C : Set V3}

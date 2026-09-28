@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M50FinitePrefix
 import PoincareConjecture.Statements.M49VolumeLoss
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,20 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedFinitePrefixTheory : Prop where
   finite_prefix : ∀ F : SurgeryFlowData.{u},

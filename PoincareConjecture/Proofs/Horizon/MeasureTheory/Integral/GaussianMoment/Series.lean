@@ -1,14 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Tactic
 
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.MeasureTheory.GaussianMoment
-
 
 theorem summable_weight (k : ℕ) (B : ℝ) {c : ℝ} (hc : 0 < c) :
     Summable (fun j : ℕ ↦ ((j : ℝ) + 1) ^ k *

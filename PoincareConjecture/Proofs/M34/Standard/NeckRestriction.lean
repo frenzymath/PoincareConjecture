@@ -1,19 +1,8 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
 
 theorem RoundCylinderFamilyClose.mono_time
     {epsilon : ℝ} {I J : Set ℝ} {B : ℝ → RoundCylinderTwoTensor}
@@ -23,16 +12,12 @@ theorem RoundCylinderFamilyClose.mono_time
   exact ⟨fun u hu => hsmooth u (hJI hu), bound, hbound,
     fun u hu => hjet u (hJI hu)⟩
 
-
-
 theorem RoundCylinderFamilyClose.at_time
     {epsilon : ℝ} {I : Set ℝ} {B : ℝ → RoundCylinderTwoTensor}
     (h : RoundCylinderFamilyClose epsilon I B) {u : ℝ} (hu : u ∈ I) :
     RoundCylinderClose epsilon u (B u) := by
   obtain ⟨hsmooth, bound, hbound, hjet⟩ := h
   exact ⟨hsmooth u hu, bound, hbound, hjet u hu⟩
-
-
 
 theorem roundCylinderFamilyClose_singleton_iff
     {epsilon u : ℝ} {B : ℝ → RoundCylinderTwoTensor} :
@@ -50,8 +35,6 @@ theorem roundCylinderFamilyClose_singleton_iff
       rcases Set.mem_singleton_iff.mp hv with rfl
       exact hjet
 
-
-
 theorem StandardSpacetimeCylinderClose.mono_time
     {A : StandardCylinderAtlas} {g : ℝ → RiemannianMetric 3 StandardCapSpace}
     {epsilon origin scale : ℝ} {I J : Set ℝ} {x : StandardCapSpace}
@@ -60,8 +43,6 @@ theorem StandardSpacetimeCylinderClose.mono_time
     (hJI : J ⊆ I) :
     StandardSpacetimeCylinderClose A g epsilon origin scale J N :=
   RoundCylinderFamilyClose.mono_time h hJI
-
-
 
 def StandardEvolvingNeck.restrict
     {A : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
@@ -75,8 +56,6 @@ def StandardEvolvingNeck.restrict
   patch := N.patch
   interval_survival := fun u hu => N.interval_survival u (hJI hu)
   close := N.close.mono_time hJI
-
-
 
 def StandardFlowAsymptoticCertificate.restrict
     {A : StandardCylinderAtlas} {g₀ : StandardInitialMetric}

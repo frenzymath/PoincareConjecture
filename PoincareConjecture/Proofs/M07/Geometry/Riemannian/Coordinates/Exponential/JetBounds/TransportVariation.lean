@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ParallelFrame
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,8 +15,6 @@ open ConnectionVariation
 variable {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem covDerivAlong_variation_of_parallel
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {q V : P → E} {p : P}
     (hq : ContDiffAt ℝ 2 q p) (hV : ContDiffAt ℝ 2 V p)
@@ -38,8 +25,6 @@ theorem covDerivAlong_variation_of_parallel
   have h := covDerivAlong_comm hq hV hΓ t s
   rw [covDerivAlong_congr Γ q hpar s, covDerivAlong_zero, sub_zero] at h
   exact h
-
-
 
 theorem fderiv_inverse_transport_apply [CompleteSpace E]
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {q V : P → E}
@@ -72,8 +57,6 @@ theorem fderiv_inverse_transport_apply [CompleteSpace E]
   rw [covDerivAlong, hval]
   abel
 
-
-
 theorem fderiv_inverse_transport_variation [CompleteSpace E]
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {q V : P → E}
     {T : P → E →L[ℝ] E} {p : P}
@@ -92,8 +75,6 @@ theorem fderiv_inverse_transport_variation [CompleteSpace E]
     (hq.of_le (ENat.natCast_le_of_coe_top_le_withTop le_rfl 2))
     (hV.of_le (ENat.natCast_le_of_coe_top_le_withTop le_rfl 2))
     (hΓ.differentiableAt (by simp)) t s hparV]
-
-
 
 theorem fderiv_inverse_metric_transport_variation [CompleteSpace E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q V : P → E}

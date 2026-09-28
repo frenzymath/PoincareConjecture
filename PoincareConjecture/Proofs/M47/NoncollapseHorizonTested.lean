@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.NoncollapseHorizonScales
 import PoincareConjecture.Proofs.M47.SeedCylinderRecenter
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem horizon_tested_volume_of_interior
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {a T kappa r : ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingGradientEvolution
 import PoincareConjecture.Proofs.M35.Uniqueness.LichnerowiczEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem killingCovectorGradient_lichnerowicz_hasDerivAt_of_eventually_heat
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -102,8 +91,6 @@ theorem killingCovectorGradient_lichnerowicz_hasDerivAt
     (hJoint.mono (prod_mono Ioo_subset_Ico_self Subset.rfl)) x v
     (Eventually.of_forall hheat)
 
-
-
 theorem killingCovectorGradient_normSq {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g)
@@ -133,8 +120,6 @@ theorem killingCovectorGradient_normSq {n : ℕ}
     g.inner x (b j) (D.connection X x (b i))) =
       g.inner x (D.connection X x (b i)) (D.connection X x (b i)) at hp
   simpa only [g.symm x (b _) (D.connection X x (b i)), pow_two] using hp
-
-
 
 theorem vector_heat_normSq_dissipation
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Cuts.FrontierPL
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundarySphere
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +14,6 @@ local notation "Q" => sphere (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {N : Set X} {j : V2 → X}
-
-
 
 theorem exists_marked_cut_frontier_sphere (P : OriginalDiskProduct e N j)
     (he : PLDomain e N) (hN : IsCompact N)

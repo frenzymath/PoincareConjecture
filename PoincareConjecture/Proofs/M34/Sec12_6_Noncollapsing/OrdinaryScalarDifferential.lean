@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProductCurvature
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M34
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
-
-
 
 theorem ordinaryProduct_scalar_smooth (R : OrdinaryProductRicciGeometry F.metric I) :
     ContMDiff (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞
@@ -44,8 +32,6 @@ theorem ordinaryProduct_scalar_smooth (R : OrdinaryProductRicciGeometry F.metric
   exact heq.symm
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinaryProduct_scalarDifferential
     (R : OrdinaryProductRicciGeometry F.metric I)

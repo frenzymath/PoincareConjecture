@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskEdgeCofaces
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDualRegion
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricBoundaryFacetInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -47,10 +38,6 @@ private theorem rim_edge_dualBlock_space
   · rintro x rfl
     exact ((T.marked 3).barycentricDualBlock s).vertices_subset_space
       ((T.marked 3).faceCentroid_mem_barycentricDualBlock_vertices hs)
-
-
-
-
 
 theorem exists_edge_zero_arc
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

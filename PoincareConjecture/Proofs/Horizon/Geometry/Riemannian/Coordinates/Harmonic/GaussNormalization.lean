@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidean
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,7 +13,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
 
 theorem euclideanCoefficients_zero_eq_of_gauss
     (hgauss : ∀ x w, g.euclideanCoefficients x x w = inner ℝ x w)

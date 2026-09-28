@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.CompactDeck.Homology
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.CompactDeck.HurewiczAction
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.HomologyTrace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -33,8 +22,6 @@ variable (P02 : RepairedClosedTopologyProvider.{u})
   [CompactSpace M] [SimplyConnectedSpace M]
 
 include P02
-
-
 
 theorem compactThree_homology_trace_sum (f : C(M, M)) (N : ℕ) (hN : 3 ≤ N) :
     (∑ i ∈ Finset.range (N + 1), (-1 : ℤ) ^ i *
@@ -64,9 +51,6 @@ theorem compactThree_homology_trace_sum (f : C(M, M)) (N : ℕ) (hN : 3 ≤ N) :
   simp only [Finset.sum_ite_eq', Finset.mem_range, Nat.lt_add_one_iff,
     Nat.zero_le, hN, ↓reduceIte, sub_eq_add_neg]
 
-
-
-
 theorem compactThree_homologyMap_eq_id_of_finite_model
     (f : C(M, M)) (C : ChainComplex (ModuleCat.{u} ℤ) ℕ)
     [∀ i, Module.Free ℤ (C.X i)] [∀ i, Module.Finite ℤ (C.X i)]
@@ -88,8 +72,6 @@ theorem compactThree_homologyMap_eq_id_of_finite_model
   apply compactThree_homologyMap_eq_id_of_trace_one f
   exact (sub_eq_zero.mp hsum.symm).symm
 
-
-
 theorem compactThree_homologyMap_eq_id_of_zero_diagonal_model
     (f : C(M, M)) (C : ChainComplex (ModuleCat.{u} ℤ) ℕ)
     [∀ i, Module.Free ℤ (C.X i)] [∀ i, Module.Finite ℤ (C.X i)]
@@ -102,9 +84,6 @@ theorem compactThree_homologyMap_eq_id_of_zero_diagonal_model
     surgeryThirdHomologyMap f = LinearMap.id := by
   apply compactThree_homologyMap_eq_id_of_finite_model P02 f C F e he N hN htop
   exact ChainComplex.alternatingTrace_eq_zero_of_diagonal_eq_zero F N ι b hdiag
-
-
-
 
 theorem compactThree_piThreeMap_eq_transport_of_zero_diagonal_model
     (f : C(M, M)) (x : M) (p : Path x (f x))

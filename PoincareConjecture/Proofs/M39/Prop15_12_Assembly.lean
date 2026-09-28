@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M39.Prop15_12_MapConstruction
 import PoincareConjecture.Proofs.M39.Prop15_12_LocalLipschitz
 import PoincareConjecture.Proofs.M39.Prop15_12_LocalEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,16 +19,12 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
 
 local notation "E" => D.flow.event T hT
 
-
-
 theorem comparisonLimit_contMDiffAt {x : I.parent.carrier.carrier}
     (hx : I.parent.inclusion x ∈ (E).regular_limit) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞
       ((E).limit_identify.map ∘ I.parent.inclusion) x := by
   exact (((E).limit_identify.map_smooth _ hx).contMDiffAt
     ((E).regular_limit_open.mem_nhds hx)).comp x (I.parent.inclusion_smooth x)
-
-
 
 theorem comparisonLimit_metric_le
     (t : Set.Ico (E).tMinus T) {C : ℝ} {K : Set (D.flow.slice (E).tMinus).carrier}
@@ -66,10 +52,6 @@ theorem comparisonLimit_metric_le
       (mfderiv (𝓡 3) (𝓡 3) I.parent.inclusion x v)) ≤ _
   have hb := hmetric _ hx (mfderiv (𝓡 3) (𝓡 3) I.parent.inclusion x v)
   rwa [I.parent_pullback t] at hb
-
-
-
-
 
 theorem comparisonExtension_edist_le (G : ComparisonExtension I)
     (t : Set.Ico (E).tMinus T) {C : ℝ} (hC : 0 < C)
@@ -108,9 +90,6 @@ theorem comparisonExtension_edist_le (G : ComparisonExtension I)
       (fun z hz w hw => localChildCollapse_edist_le E i I.child hchild
         I.child_metric I.child_pullback z hz w hw) hab hγ hγU
 
-
-
-
 theorem comparisonExtension_late_lipschitz (G : ComparisonExtension I)
     (eta : ℝ) (heta : 0 < eta) :
     ∃ d : ℝ, 0 < d ∧ d ≤ T - (E).tMinus ∧
@@ -131,9 +110,6 @@ theorem comparisonExtension_late_lipschitz (G : ComparisonExtension I)
   have htpre : (E).tMinus ≤ t := by linarith
   have hts : s < t := by linarith
   exact comparisonExtension_edist_le I G ⟨t, htpre, htT⟩ hC (hbound ⟨hts, htT⟩) x y
-
-
-
 
 noncomputable def comparisonConclusionOfExtension (G : ComparisonExtension I) :
     RepairedComparisonMapConclusion I where

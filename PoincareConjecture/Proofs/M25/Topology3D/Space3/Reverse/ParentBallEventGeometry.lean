@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryDiscIntersection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapEmbedding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def RegularSurgeryEvent.reunionTube
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -28,7 +17,6 @@ noncomputable def RegularSurgeryEvent.reunionTube
   (surgeryCapPlacementDiffeomorph E.cutHeight (![1, -1] i) 0 1
     (by fin_cases i <;> norm_num) (by norm_num)).toHomeomorph.toOpenPartialHomeomorph.trans
       E.data.tube
-
 
 theorem RegularSurgeryEvent.reunionTube_spec
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -83,7 +71,6 @@ theorem RegularSurgeryEvent.reunionTube_spec
   · intro p
     rw [happ, E.data.tube_height]
 
-
 theorem RegularSurgeryEvent.reunion_core_isCompact
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (i : Fin 2) :
@@ -100,7 +87,6 @@ theorem RegularSurgeryEvent.reunion_core_isCompact
   exact ((isCompact_closedBall (0 : E2) E.radius).image_of_continuousOn
     (e.continuousOn.mono her)).image
       (collar_central_contMDiff parent E.parent_embedding).continuous
-
 
 theorem RegularSurgeryEvent.reunion_core_disjoint_strip
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -179,7 +165,6 @@ theorem RegularSurgeryEvent.reunion_core_disjoint_strip
         (le_of_not_gt hneg) hp.2.2.le).mp hretained
     exact hp.2.2.ne heq
 
-
 theorem RegularSurgeryEvent.reunionTube_capMap
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (i : Fin 2)
@@ -195,7 +180,6 @@ theorem RegularSurgeryEvent.reunionTube_capMap
   apply Prod.ext
   · rfl
   · ring
-
 
 theorem RegularSurgeryEvent.reunion_region_identities
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.Topology.Path
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

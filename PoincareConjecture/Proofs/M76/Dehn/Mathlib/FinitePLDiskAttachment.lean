@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.BoundaryUnionMembership
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TriangleDiskModel
@@ -21,10 +12,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.union_of_interval_attachment {s u b c d q : Set X}
     (hs : IsFinitePLBallPair (ℝ × ℝ) s (b ∪ d))
@@ -78,10 +65,6 @@ theorem IsFinitePLBallPair.union_of_interval_attachment {s u b c d q : Set X}
     exact (mem_union_iff_of_intersections hbs hc.1 hus hbd hxu).trans
       ((hGc ⟨x, hxu⟩).trans
         (mem_union_iff_of_intersections hBR hC.1 hLR hBI (G ⟨x, hxu⟩).property).symm)
-
-
-
-
 
 theorem IsFinitePLBallPair.union_of_boundary_interval {s u b c d : Set X} {a z : X}
     (hs : IsFinitePLBallPair (ℝ × ℝ) s b)

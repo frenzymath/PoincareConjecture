@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_FamilyDensity
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,17 +14,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {P : Type} [NormedAddCommGroup P] [NormedSpace ℝ P]
 
-
-
-
 noncomputable def squareFamilyAction (G : GeneralizedLGeometryTransport n X time I)
     (γ : ℝ × P → G.Point) (C : Set ℝ) (a b : ℝ) (p : P) : ℝ :=
   ∫ s in a..b, squareCurveDensity G (fun r => γ (r, p)) C s
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem squareFamilyAction_contDiffOn [FiniteDimensional ℝ P]
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {a b c : ℝ} (hab : a < b)

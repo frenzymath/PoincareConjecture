@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CanonicalAxisArcMaps
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes RectangleCornerArcs
@@ -20,14 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
 
 theorem exists_paired_source_pole_quadrant_patches
     {C S : Set E} (H : Finset (E →ₗ[ℝ] ℝ))

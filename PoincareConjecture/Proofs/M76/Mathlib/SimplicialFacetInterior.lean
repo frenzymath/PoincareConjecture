@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexOppositeApices
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexRelativeInteriorCoordinates
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 theorem mem_interior_space_of_full_face (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (hcard : s.card = Module.finrank ℝ E + 1)
     {x : E} (hx : x ∈ intrinsicInterior ℝ (convexHull ℝ (s : Set E))) :
@@ -30,9 +20,6 @@ theorem mem_interior_space_of_full_face (K : SimplicialComplex ℝ E)
   have h : x ∈ interior (convexHull ℝ (range b)) :=
     b.mem_interior_convexHull_of_mem_intrinsicInterior (by simpa [b] using hx)
   exact interior_mono (by simpa [b] using K.convexHull_subset_space hs) h
-
-
-
 
 theorem mem_interior_union_of_paired_facet (K : SimplicialComplex ℝ E)
     {f t u : Finset E} (hfcard : f.card = Module.finrank ℝ E)
@@ -115,9 +102,6 @@ theorem mem_interior_union_of_paired_facet (K : SimplicialComplex ℝ E)
   have hxint := b.mem_interior_union_of_common_facet_intersection i q x hfull hxi hxpos hinter
   rw [hrange, hrangeq] at hxint
   exact hxint
-
-
-
 
 theorem mem_interior_space_of_paired_facet (K : SimplicialComplex ℝ E)
     {f t u : Finset E} (hfcard : f.card = Module.finrank ℝ E)

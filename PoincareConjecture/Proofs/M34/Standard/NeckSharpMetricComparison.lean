@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControl
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem pullback_inner_comparison_sharp (he : N.epsilon ≤ 1 / 8)
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -41,8 +31,6 @@ theorem pullback_inner_comparison_sharp (he : N.epsilon ≤ 1 / 8)
     nlinarith [sq_nonneg v.2]
   have hsmall := mul_le_mul_of_nonneg_right he hmodel
   constructor <;> nlinarith [(abs_le.mp herr).1, (abs_le.mp herr).2]
-
-
 
 theorem coordinate_inverse_axial_le_tangentNorm_sharp (he : N.epsilon ≤ 1 / 8)
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x) :
@@ -80,8 +68,6 @@ theorem coordinate_inverse_axial_le_tangentNorm_sharp (he : N.epsilon ≤ 1 / 8)
     rw [heq]
     nlinarith [mul_nonneg (sq_nonneg N.scale⁻¹) hinner]
   exact (sq_le_sq₀ (abs_nonneg _) hproduct).mp hsq
-
-
 
 theorem coordinate_map_axial_tangentNorm_le_sharp (he : N.epsilon ≤ 1 / 8)
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (a : ℝ) :

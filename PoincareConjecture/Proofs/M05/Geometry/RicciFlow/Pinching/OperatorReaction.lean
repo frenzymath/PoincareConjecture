@@ -1,18 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Endomorphism
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Scalar
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Spectral
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -31,8 +19,6 @@ theorem operatorReaction_diagonal (lam mu nu : ℝ) :
         (2 * (mu ^ 2 + lam * nu))
         (2 * (nu ^ 2 + lam * mu)) :=
   operatorReaction_diagonal_entries ![lam, mu, nu]
-
-
 
 theorem operator_reaction_invariance
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

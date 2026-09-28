@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedWallNoBypa
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SourceCircleCut
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_selected_two_exterior_arcs
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

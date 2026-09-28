@@ -1,16 +1,5 @@
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
 variable [TopologicalSpace M] [ChartedSpace H M]
-
-
 
 theorem exists_ne_of_regular_difference (f g : M → ℝ) {W V : Set M}
     (hV : IsOpen V) (hVne : V.Nonempty) (hVW : V ⊆ W)
@@ -41,8 +28,6 @@ theorem exists_ne_of_regular_difference (f g : M → ℝ) {W V : Set M}
   apply hregular x (hVW hx) (heq x hx)
   rw [hevent.mfderiv_eq, mfderiv_const]
   rfl
-
-
 
 theorem exists_injective_values_of_regular_differences {ι : Type*} [Finite ι]
     (f : ι → M → ℝ) {W : Set M} (hW : IsOpen W) (hWne : W.Nonempty)

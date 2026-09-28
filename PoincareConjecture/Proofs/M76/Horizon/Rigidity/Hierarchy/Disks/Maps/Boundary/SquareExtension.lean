@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSquareCircle
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -13,8 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_finitePL_square_extension_of_injective_rim
     (f : V2 → V2) (hf : FinitePiecewiseAffineOn f Q)

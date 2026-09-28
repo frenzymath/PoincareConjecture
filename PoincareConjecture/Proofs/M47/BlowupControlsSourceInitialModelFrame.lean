@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNormal
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderContractions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
 
 noncomputable def sourceInitialModelFrame (u : ℝ) (hu : u < 1) : E ≃L[ℝ] E :=
   M35.cylinderCoordinateEquiv.trans
@@ -37,14 +28,12 @@ theorem sourceInitialModelFrame_coordinate (u : ℝ) (hu : u < 1) (v : E) :
     ContinuousLinearEquiv.refl_apply]
   rfl
 
-
 theorem sourceInitialModelFrame_axial (u : ℝ) (hu : u < 1) :
     sourceInitialModelFrame u hu (EuclideanSpace.basisFun (Fin 3) ℝ 2) =
       EuclideanSpace.basisFun (Fin 3) ℝ 2 := by
   apply M35.cylinderCoordinateEquiv.injective
   rw [sourceInitialModelFrame_coordinate, M35.cylinderCoordinateEquiv_basis]
   simp [roundCylinderCoordinateBasis]
-
 
 theorem sourceInitialModelFrame_isometry (u : ℝ) (hu : u < 1)
     (s : ℝ) (v w : E) :
@@ -78,7 +67,6 @@ theorem sourceInitialModelFrame_isometry (u : ℝ) (hu : u < 1)
         inner ℝ (M35.cylinderCoordinateEquiv v).1 (M35.cylinderCoordinateEquiv w).1 +
         (M35.cylinderCoordinateEquiv v).2 * (M35.cylinderCoordinateEquiv w).2 := by ring
     _ = _ := by rw [hcancel, one_mul]; exact hsplit
-
 
 theorem sourceInitialModelFrame_axial_ricci (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (M35.cylinderEuclideanMetric u hu))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceEquation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchHarmonicEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M65StrictTrace
 open M65Branch
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
-
 
 theorem harmonicMatrix_comp_holomorphic (D : LeviCivitaData g)
     {G : ℂ → EuclideanSpace ℝ (Fin n)} {psi : ℂ → ℂ} {z p : ℂ}
@@ -50,10 +38,6 @@ theorem harmonicMatrix_comp_holomorphic (D : LeviCivitaData g)
   change (-(2 : ℂ)⁻¹) • (L p + I • L (I * p)) =
     star p • ((-(2 : ℂ)⁻¹) • (L 1 + I • L I))
   rw [hlin, smul_comm]
-
-
-
-
 
 theorem harmonic_matrix_equation_comp_holomorphic (D : LeviCivitaData g)
     {G : ℂ → EuclideanSpace ℝ (Fin n)} {U W : Set ℂ} {psi : ℂ → ℂ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Manifold
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem contDiffAt_chartField_radialVariation
     {e : EuclideanSpace ℝ (Fin n) → M} (v w : EuclideanSpace ℝ (Fin n))

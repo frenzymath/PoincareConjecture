@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleConnected
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCocycleOfClosed
 import PoincareConjecture.Proofs.M54.Mathlib.PathSubdivision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -48,8 +38,6 @@ noncomputable def loopCharacter (c : A.ModTwoEdgeCocycle) (x : A.barycentricSpac
   map_mul' p q := by
     change c.quotientValue (q.trans p) = c.quotientValue p + c.quotientValue q
     rw [c.quotientValue_trans, add_comm]
-
-
 
 theorem pathValue_of_mem_openVertexStar (c : A.ModTwoEdgeCocycle)
     {x y : A.barycentricSpace} (p : Path x y) (i : ι)

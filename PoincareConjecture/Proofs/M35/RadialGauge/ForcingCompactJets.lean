@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.ForcingContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingJetAlgebra
 import PoincareConjecture.Proofs.M35.RadialGauge.EvenRadialCompactJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +40,6 @@ private theorem compact_profile_jets {f : A → ℝ → ℝ}
     (ContinuousLinearMap.norm_fst_le ℝ E ℝ) isOpen_univ
     (contDiff_even_norm (hf a) (he a)).contDiffOn (mem_univ p.1) j
   exact hl.trans (hCb a p.1 hp)
-
-
 
 theorem smoothGaugeForcing_compact_jets
     {h xi : A → ℝ → ℝ} {f₀ : ℝ → ℝ} {eta : ℝ}

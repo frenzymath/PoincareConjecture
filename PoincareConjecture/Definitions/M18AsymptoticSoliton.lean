@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.AsymptoticSoliton
 import PoincareConjecture.Definitions.M17BlowupSetup
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -26,16 +14,8 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
-
 def ancientM18TimeWindow (j : ℕ) : Set ℝ :=
   Set.Icc (-((j : ℝ) + 1)) (-((j : ℝ) + 1)⁻¹)
-
-
-
-
-
 
 structure AncientCompactTimeConvergence {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) where
@@ -88,11 +68,6 @@ structure AncientCompactTimeConvergence {K : AncientKappaSolution n M}
               (FlowCarrier.coordinateCoefficient limit.carrier q
                 (fun t x v w ↦ (limit.flow.metric t).inner x v w)
                 a b) Kc p‖ < ε
-
-
-
-
-
 
 structure AncientAsymptoticSolitonLimitData
     {K : AncientKappaSolution n M} (S : AncientRescalingSequence K) where

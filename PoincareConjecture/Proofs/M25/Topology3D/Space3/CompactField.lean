@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundedFlow
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff NNReal
@@ -19,8 +9,6 @@ open scoped ContDiff NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem compactField_bounds (f : E → E) (hf : ContDiff ℝ ∞ f)
     (hs : HasCompactSupport f) :
@@ -34,8 +22,6 @@ theorem compactField_bounds (f : E → E) (hf : ContDiff ℝ ∞ f)
   apply lipschitzWith_of_nnnorm_fderiv_le (hf.differentiable (by simp))
   intro x
   exact_mod_cast hS x
-
-
 
 theorem compactField_globalSolution [CompleteSpace E] (f : E → E)
     (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f) (x : E) :

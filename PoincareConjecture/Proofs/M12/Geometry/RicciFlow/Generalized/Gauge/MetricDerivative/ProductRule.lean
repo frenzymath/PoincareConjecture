@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000

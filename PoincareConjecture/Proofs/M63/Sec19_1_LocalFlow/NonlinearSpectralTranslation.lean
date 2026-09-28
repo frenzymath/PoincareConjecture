@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorSpectralTranslation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicH1Coefficients
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PoincareConjecture.SpectralHeatNative
@@ -20,9 +12,6 @@ variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
 
 local notation "S" => State ((ℤ × Fin 2) × ι)
 local notation "H" => lp (fun _ : ℤ => ℂ) 2
-
-
-
 
 theorem vectorPeriodicH1_product_spectralTranslation
     (M : H →L[ℝ] S →L[ℝ] S)
@@ -47,10 +36,6 @@ theorem vectorPeriodicH1_product_spectralTranslation
     (realPeriodicSpectralTranslation_spec s _).1,
     periodicSobolevJet_periodicSpectralTranslation]
   rfl
-
-
-
-
 
 theorem local_periodicH1_coefficients_spectralTranslation
     (G : ℝ × S → H) (Q : ℝ × S → S)

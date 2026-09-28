@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Powers
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Cauchy
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +41,6 @@ private theorem tensor_power_metric_nonneg (x : M) (v : TangentSpace (𝓡 n) x)
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
-
 
 theorem regularized_tensor_power_test_lower (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)

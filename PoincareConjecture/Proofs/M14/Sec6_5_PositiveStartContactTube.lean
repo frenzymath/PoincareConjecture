@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_GaugePerturbation
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point}
-
-
-
 
 theorem exists_sameEndpointPath_through_gaugeShift
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (p : M14BackwardPath G T a b x y)
@@ -78,9 +66,6 @@ theorem exists_sameEndpointPath_through_gaugeShift
       (lift (p.curve c)).2 ((1 : ℝ) • η c)) = q
   rw [htime, hpoint]
   exact hrec q hq
-
-
-
 
 theorem exists_pastTube_sameEndpointPaths
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (p : M14BackwardPath G T a b x y) :

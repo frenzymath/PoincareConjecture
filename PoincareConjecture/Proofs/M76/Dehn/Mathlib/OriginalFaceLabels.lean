@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BarycentricEdgeLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E)
-
-
 
 noncomputable def allVertexFacesEquiv : K.vertexAbstractComplex.faces ≃ K.faces :=
   Equiv.ofBijective
@@ -32,18 +21,12 @@ noncomputable def allVertexFacesEquiv : K.vertexAbstractComplex.faces ≃ K.face
       apply Finset.coe_injective
       simpa only [Finset.coe_map, Function.Embedding.coe_subtype] using he.symm⟩
 
-
-
 theorem allVertexFacesEquiv_apply_val (s : K.vertexAbstractComplex.faces) :
     (K.allVertexFacesEquiv s).val = s.val.map (Function.Embedding.subtype _) := rfl
-
-
 
 theorem allVertexFacesEquiv_subset_iff (s t : K.vertexAbstractComplex.faces) :
     (K.allVertexFacesEquiv s).val ⊆ (K.allVertexFacesEquiv t).val ↔ s.val ⊆ t.val :=
   Finset.map_subset_map
-
-
 
 noncomputable def vertexFaceGraphIso :
     K.vertexAbstractComplex.toPreAbstractSimplicialComplex.faceInclusionGraph ≃g
@@ -59,8 +42,6 @@ noncomputable def vertexFaceGraphIso :
       K.allVertexFacesEquiv_subset_iff]
 
 variable [Fintype K.faces] [DecidableEq E]
-
-
 
 noncomputable def vertexFaceCentroidGraphIso :
     K.vertexAbstractComplex.toPreAbstractSimplicialComplex.faceInclusionGraph ≃g

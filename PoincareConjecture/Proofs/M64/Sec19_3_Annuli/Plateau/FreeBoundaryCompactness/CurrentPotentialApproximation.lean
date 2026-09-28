@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.SmoothedCurrentPotential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,9 +18,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
-
-
-
 
 theorem observedWeakAnnulus_local_current_potential_approximation
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

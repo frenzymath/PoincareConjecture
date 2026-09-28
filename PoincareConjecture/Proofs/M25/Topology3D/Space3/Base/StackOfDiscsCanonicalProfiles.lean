@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,11 +10,9 @@ open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def stackCanonicalFactor (lo hi s : ℝ) : ℝ :=
   1 + (1 - Real.smoothTransition ((s - lo) / (hi - lo))) *
     ((Real.sqrt (1 - s))⁻¹ - 1)
-
 
 theorem stackCanonicalFactor_spec (lo hi : ℝ)
     (hlohi : lo < hi) (hhi : hi < 1) :
@@ -104,20 +95,16 @@ theorem stackCanonicalFactor_spec (lo hi : ℝ)
     · exact (hbounds s hs h).1
     · rw [hfarF s (hhi.le.trans (le_of_not_gt h))]
 
-
 noncomputable def stackCanonicalHorizontal (v0 v1 v : ℝ) : ℝ :=
   stackCanonicalFactor (v0 ^ 2) (v1 ^ 2) (v ^ 2)
 
-
 noncomputable def stackCanonicalVertical (rFlat rOne : ℝ) (x : E2) : ℝ :=
   stackCanonicalFactor (rFlat ^ 2) (rOne ^ 2) (‖x‖ ^ 2)
-
 
 noncomputable def stackCanonicalMeridian
     (rFlat rOne v0 v1 v : ℝ) : ℝ × ℝ :=
   let R := stackCanonicalHorizontal v0 v1 v * Real.sqrt (1 - v ^ 2)
   (R, stackCanonicalFactor (rFlat ^ 2) (rOne ^ 2) (R ^ 2) * v)
-
 
 theorem stackCanonicalHorizontal_spec (v0 v1 : ℝ)
     (hv0 : 0 < v0) (hv01 : v0 < v1) (hv1 : v1 < 1) :
@@ -149,7 +136,6 @@ theorem stackCanonicalHorizontal_spec (v0 v1 : ℝ)
     simpa only [sq_abs] using (sq_le_sq₀ hv1pos.le (abs_nonneg v)).mpr hv
   · intro v
     simp only [stackCanonicalHorizontal, neg_sq]
-
 
 theorem stackCanonicalVertical_spec (rFlat rOne : ℝ)
     (hrFlat : 0 < rFlat) (hradii : rFlat < rOne) (hrOne : rOne < 1) :

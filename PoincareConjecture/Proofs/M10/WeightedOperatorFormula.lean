@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.WeightedMetricDual
 import PoincareConjecture.Proofs.M10.WeightedTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem trace_weightedMetricDual_eq {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ f : E → ℝ} {x : E}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.TangentTestMap
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64ObservedMetric_tangent_diagonal
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -57,8 +45,6 @@ theorem m64ObservedMetric_tangent_diagonal
     (mfderiv (𝓡 2) (𝓡 n) f 0 (EuclideanSpace.basisFun (Fin 2) ℝ 0)) at h
   erw [hw, h0] at h
   exact h
-
-
 
 theorem m64ObservedMetric_tangent_coercivity [CompactSpace M]
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

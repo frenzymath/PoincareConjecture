@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Diagonal
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_regular_metric_limit_of_normal_covers
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
@@ -126,8 +113,6 @@ theorem exists_regular_metric_limit_of_normal_covers
     obtain ⟨a, ha, hbound⟩ := helliptic i {x} isCompact_singleton
       (singleton_subset_iff.mpr hx)
     exact ⟨a, ha, hbound.mono fun _ hk => hk x (mem_singleton x)⟩
-
-
 
 theorem exists_regular_metric_limit_of_eventual_normal_covers
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

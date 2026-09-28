@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryReflectedQuadraticGrowth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -21,10 +10,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64BoundaryReflect_sq {epsilon : ℝ} (he : epsilon ^ 2 = 1)
     (u : LoopPlane → ℝ) (p : LoopPlane) :
@@ -39,11 +24,6 @@ theorem m64BoundaryReflect_sq {epsilon : ℝ} (he : epsilon ^ 2 = 1)
       zero_pow (by norm_num : (2 : ℕ) ≠ 0)]
   · simp only [m64BoundaryReflect, indicator_of_notMem hp, zero_add,
       zero_pow (by norm_num : (2 : ℕ) ≠ 0), mul_pow, he, one_mul]
-
-
-
-
-
 
 theorem m64BoundaryReflect_integral_sq {epsilon : ℝ} (he : epsilon ^ 2 = 1)
     {u : LoopPlane → ℝ} (hu : MemLp u 2 (volume.restrict (halfSpace 2)))
@@ -67,11 +47,6 @@ theorem m64BoundaryReflect_integral_sq {epsilon : ℝ} (he : epsilon ^ 2 = 1)
   exact (measurePreserving_reflect (d := 2)).setIntegral_preimage_emb
     reflect.toHomeomorph.measurableEmbedding
     (fun p : LoopPlane => (halfSpace 2).indicator u p ^ 2) (closedBall (reflect x) r)
-
-
-
-
-
 
 theorem m64BoundaryReflect_integral_energy {N : ℕ}
     (epsilon : Fin N → ℝ) (he : ∀ j, epsilon j ^ 2 = 1)

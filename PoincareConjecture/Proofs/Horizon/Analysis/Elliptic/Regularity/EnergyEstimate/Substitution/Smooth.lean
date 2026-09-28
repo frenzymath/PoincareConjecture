@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Smooth
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

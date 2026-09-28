@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Wall.FiniteBicollarSelection
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteClosedPieces
 import PoincareConjecture.Proofs.M76.Wall.FilledPLDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set BrownCollar
@@ -21,11 +12,6 @@ open Set BrownCollar
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_original_finite_frontier_filling
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

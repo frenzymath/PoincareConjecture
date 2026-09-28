@@ -10,14 +10,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Reaction.P
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatGradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -124,8 +116,6 @@ private lemma hasDerivAt_ricci_moving_right
   simpa only [hs, ricci_evolution_symm hC F ht x (V t) w] using
     hasDerivAt_ricci_moving_left hC F ht x hV w
 
-
-
 lemma hasDerivAt_covariantRicciDerivative
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -174,8 +164,6 @@ lemma hasDerivAt_covariantRicciDerivative
       Fin.sum_univ_two]
   · simp [LeviCivitaData.covariantTensorDerivative, Fin.sum_univ_two, heval, hup0, hup1, X]
     ring
-
-
 
 lemma hasDerivAt_hamiltonP_connection_corrected
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -250,8 +238,6 @@ private lemma ricci_deriv_connection_eq_sum
   rw [F.inner_deriv_connection_extend ht hD]
   ring
 
-
-
 lemma hasDerivAt_hamiltonP_connection_contractions
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -277,7 +263,6 @@ lemma hasDerivAt_hamiltonP_connection_contractions
   dsimp only at h ⊢
   rwa [ricci_deriv_connection_eq_sum hC F ht x u v w,
     ricci_deriv_connection_eq_sum hC F ht x v u w] at h
-
 
 lemma tensorLaplacian_hamiltonP
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -364,8 +349,6 @@ private lemma covariantRicciDerivative_heat_reaction
   simp_rw [hmul] at hc ⊢
   linear_combination hc
 
-
-
 lemma hasDerivAt_covariantRicciDerivative_evolution
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -392,12 +375,6 @@ lemma hasDerivAt_covariantRicciDerivative_evolution
   rw [hs, ricci_deriv_connection_eq_sum hC F ht x u w v,
     ricci_deriv_connection_eq_sum hC F ht x u v w] at h
   exact h.congr_deriv (covariantRicciDerivative_heat_reaction D hD x u v w)
-
-
-
-
-
-
 
 theorem hasDerivAt_hamiltonP_evolution
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -448,9 +425,6 @@ theorem hasDerivAt_hamiltonP_evolution
   dsimp only [D, b] at hpre hslots
   linear_combination -hpre + hslots
 
-
-
-
 theorem hamiltonP_covariant_evolution
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -470,7 +444,6 @@ theorem hamiltonP_covariant_evolution
   have h := (hasDerivAt_hamiltonP_evolution hC F ht x u v w).deriv
   dsimp only at h ⊢
   linarith only [h]
-
 
 lemma tensorHeatOperator_hamiltonP
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

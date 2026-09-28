@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedBallIsotopy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
@@ -21,11 +10,6 @@ namespace Homeomorph
 variable {ι : Type*} [Fintype ι]
   {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_finitePL_cube_straightening {t b : Set E}
     (h : closedBall (0 : ι → ℝ) 1 ≃ₜ t) (ht : IsFinitePLBallPair F t b)

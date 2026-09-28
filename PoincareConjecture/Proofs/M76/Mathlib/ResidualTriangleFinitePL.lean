@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricResidualTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TaperedStrip
-
-
-
 
 theorem exists_residual_finite_triangulation {β γ : ℝ} (hβ : 0 < β) (hβγ : β < γ) :
     ∃ K : SimplicialComplex ℝ (ℝ × ℝ), K.faces.Finite ∧ K.space = residualDomain β γ := by
@@ -48,9 +35,6 @@ end TaperedStrip
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_zeroApex_residual_chart (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0)

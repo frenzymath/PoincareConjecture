@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M09.LocalFixedChartHessian
 import PoincareConjecture.Proofs.M09.SquareChartConnection
 import PoincareConjecture.Proofs.M09.CoordinateConnectionBilinear
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

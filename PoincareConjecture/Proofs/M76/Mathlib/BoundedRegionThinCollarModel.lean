@@ -1,30 +1,13 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularHalfBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
-
 def thinCollar (t : ℝ) : Set ((ℝ × ℝ) × ℝ) :=
   {p | 0 ≤ p.2 ∧ p.2 ≤ t * roof p.1}
-
-
-
-
 
 theorem isFinitePLBallPair_thinCollar {t : ℝ} (ht : 0 < t) :
     IsFinitePLBallPair ((ℝ × ℝ) × ℝ) (thinCollar t) (cap t ∪ disk) := by
@@ -74,8 +57,6 @@ theorem isFinitePLBallPair_thinCollar {t : ℝ} (ht : 0 < t) :
   have hpair := (isFinitePLBallPair_halfBall (h := 1) (Or.inl rfl)).affine_image a hinj
   rwa [image_union, hcarrier, hcap, hdisk] at hpair
 
-
-
 theorem thinCollar_subset_halfBall {t : ℝ} (ht : 0 < t) (htone : t ≤ 1) :
     thinCollar t ⊆ halfBall 1 := by
   intro p hp
@@ -84,9 +65,6 @@ theorem thinCollar_subset_halfBall {t : ℝ} (ht : 0 < t) (htone : t ≤ 1) :
   simp only [one_mul]
   have hr : 0 ≤ roof p.1 := by nlinarith [hp.1, hp.2]
   exact ⟨hp.1, hp.2.trans (by nlinarith)⟩
-
-
-
 
 theorem thinCollar_inter_cap {t : ℝ} (htone : t < 1) :
     thinCollar t ∩ cap 1 = rim := by

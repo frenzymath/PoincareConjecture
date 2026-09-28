@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Producer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Construction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +11,6 @@ universe u
 namespace PoincareConjecture.CompactKappa
 
 open NoncompactKappa.Positive
-
-
 
 theorem uniform_positive_caps_with_fine_strong_exterior
     (P : NoncompactKappaServices.{u}) :

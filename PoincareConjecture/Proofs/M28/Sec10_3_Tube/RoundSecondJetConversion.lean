@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundMetricDerivatives
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.BundleContact
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Radial
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -38,9 +27,6 @@ private lemma covDer_contDiffAt
     ContDiffAt ℝ ∞ (fun y => covDer Γ S y v) x := by
   exact ((hS.fderiv_right (by simp)).clm_apply contDiffAt_const).add
     ((hΓ.clm_apply contDiffAt_const).clm_apply hS)
-
-
-
 
 omit [FiniteDimensional ℝ E] [CompleteSpace F] in
 omit [FiniteDimensional ℝ E] [CompleteSpace F] in
@@ -82,9 +68,6 @@ theorem second_fderiv_eq_covariant_sub_connectionJet
     simp only [hzero, zero_apply, add_zero]
   rw [hcov, hAder, hprod]
   abel
-
-
-
 
 omit [FiniteDimensional ℝ E] [CompleteSpace F] in
 theorem norm_second_fderiv_le_of_zero_connection

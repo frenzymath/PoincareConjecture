@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.OpenRecut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem frontier_innerRecut (N : CapCertificate g) {q : ℝ}
     (hq : -N.epsilon⁻¹ < q) (hq' : q < N.epsilon⁻¹) :
@@ -94,9 +82,6 @@ theorem frontier_innerRecut (N : CapCertificate g) {q : ℝ}
         rw [N.end_neck.coordinate_inverse_coordinate_map_of_axial z hzN, hzq] at hlt
         exact (lt_irrefl q) hlt
     exact hWopen.frontier_eq.symm ▸ And.intro hxcl hxnot
-
-
-
 
 theorem path_from_core_crosses_recut_sphere (N : CapCertificate g) {q : ℝ}
     (hq : -N.epsilon⁻¹ < q) (hq' : q < N.epsilon⁻¹)

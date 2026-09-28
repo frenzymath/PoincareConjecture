@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceGaugeCurvatureLp
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 
-
-
-
 theorem observed_velocity_reconstruction
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
     {U : Set W} (hU : IsOpen U) (heU : range e ⊆ U) {rho : W → M}
@@ -48,10 +32,6 @@ theorem observed_velocity_reconstruction
     mfderiv (𝓡 n) 𝓘(ℝ, W) e (gamma x) (curveVelocity gamma x) at hd
   rw [hd]
   exact (M63.smooth_retraction_differentials he hU heU hrho hre).2.2 _ _
-
-
-
-
 
 theorem exists_continuous_curve_jet_densities
     (F : RicciFlow n M (Icc a b))
@@ -161,9 +141,6 @@ theorem exists_continuous_curve_jet_densities
     (m62CurvatureVector F (fun y (_ : ℝ) => gamma y) time x) = _
   rw [hre]
   rfl
-
-
-
 
 theorem actual_curve_densities_continuous
     (F : RicciFlow n M (Icc a b))

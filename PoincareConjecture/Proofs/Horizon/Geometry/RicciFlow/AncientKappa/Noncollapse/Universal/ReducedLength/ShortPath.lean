@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.ReducedLength.TerminalBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ShortSegment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

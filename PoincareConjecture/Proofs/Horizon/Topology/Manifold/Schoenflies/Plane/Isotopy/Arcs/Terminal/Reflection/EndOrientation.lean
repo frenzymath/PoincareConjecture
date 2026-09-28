@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.OrientationChoice
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.AnnularEnds
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +34,6 @@ theorem lower_level_connected_of_one_annular_end
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem one_lower_end_of_one_lower_annular_family
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
@@ -76,8 +72,6 @@ theorem one_lower_end_of_one_lower_annular_family
       (show IsConnected ((fun q => -h q) ⁻¹' {-A.lowerCut}) by
         simpa only [preimage, mem_singleton_iff, neg_inj] using hbottom)
     simpa only [preimage, mem_singleton_iff, neg_inj] using hn
-
-
 
 theorem no_terminal_matching_choice_of_one_lower_annular_family
     (hg : g ∈ M.tree.leaves)

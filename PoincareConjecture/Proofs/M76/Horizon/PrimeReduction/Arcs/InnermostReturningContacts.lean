@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -19,9 +11,6 @@ namespace Polygon
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
 
 theorem interval_trapped_of_returning_base_contact {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
@@ -79,10 +68,6 @@ theorem interval_trapped_of_returning_base_contact {n : ℕ} (P : Polygon V (n +
     · exact (disjoint_left.mp hAB hxA hxB).elim
     · exact hxseg
   exact ⟨hinside, hBcl, hends a (by simp), hends b (by simp)⟩
-
-
-
-
 
 theorem innermost_returning_base_contacts
     {κ : Type*} (B : κ → Set V) {D : Set V}
@@ -188,8 +173,6 @@ private theorem right_axis_frontier : Δ ∩ Z ⊆ frontier Δ := by
   refine ⟨(0 : Fin 3), ?_⟩
   simpa [Polygon.edgeSet, Polygon.edgeVertices, rightTriangle, affineSegment_eq_segment] using hx
 
-
-
 theorem affine_triangle_frontier_coordinates
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E]
@@ -204,10 +187,6 @@ theorem affine_triangle_frontier_coordinates
   obtain ⟨z, hz, rfl⟩ := hface.symm.subset hx
   rw [hRF z, hfront]
   exact (hRF.injective.mem_set_image).symm
-
-
-
-
 
 theorem actual_innermost_returning_base_contacts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

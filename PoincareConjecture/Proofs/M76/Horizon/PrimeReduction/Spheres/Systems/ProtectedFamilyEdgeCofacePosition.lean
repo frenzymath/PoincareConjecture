@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Orig
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.FiniteSphereSystemCofaceCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.ProtectedFamilyVertexPosition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_protected_sphere_system_finite_edge_coface_position
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
@@ -166,4 +152,3 @@ theorem exists_protected_sphere_system_finite_edge_coface_position
     and_self])
 
 end PoincareConjecture.M76
-

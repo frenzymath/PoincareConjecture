@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakSobolevGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +14,6 @@ open Poincare.Analysis.Sobolev.Weak
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
-
 
 theorem m64WeakSobolev_extend_supported
     {S : Set E} (hS : IsOpen S) {u : E → ℝ}

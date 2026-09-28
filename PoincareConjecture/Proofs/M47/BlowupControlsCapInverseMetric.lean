@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 import PoincareConjecture.Proofs.M04.ConnectionDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -31,8 +22,6 @@ theorem cap_frameGram_inner (g : RiemannianMetric n M) (x : M)
     ((InnerProductSpace.toDual ℝ (EuclideanSpace ℝ (Fin n))).symm
       (((g.inner x).bilinearComp L L) v)) w = _
   exact InnerProductSpace.toDual_symm_apply
-
-
 
 theorem cap_frameInverseGram_coordinate (g : RiemannianMetric n M) (x : M)
     (e : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
@@ -65,8 +54,6 @@ theorem cap_frameInverseGram_coordinate (g : RiemannianMetric n M) (x : M)
       simp only [map_smul, inner_smul_right]
       change g.inner x V (e (b j)) * M04.frameInverseGram g x e.toContinuousLinearMap i j = _
       ring
-
-
 
 theorem cap_frameInverseGram_norm_le (g : RiemannianMetric n M) (x : M)
     (e : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
@@ -103,7 +90,6 @@ theorem cap_frameInverseGram_norm_le (g : RiemannianMetric n M) (x : M)
     rw [← div_eq_inv_mul]
     exact (le_div_iff₀ hpos).mpr (by nlinarith only [hmul])
 
-
 theorem cap_frameInverseGram_sub_identity (g : RiemannianMetric n M) (x : M)
     (e : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x) :
     let A := M04.frameGramOperator g x e.toContinuousLinearMap
@@ -118,7 +104,6 @@ theorem cap_frameInverseGram_sub_identity (g : RiemannianMetric n M) (x : M)
   abel
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem cap_connection_difference_components
     {g0 g1 : RiemannianMetric n M} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

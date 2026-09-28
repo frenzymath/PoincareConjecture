@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def GeneralizedSliceCarrier.opens (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) : GeneralizedSliceCarrier.{u} where
@@ -31,21 +21,15 @@ noncomputable def GeneralizedSliceCarrier.opens (A : GeneralizedSliceCarrier.{u}
   t3Space := inferInstance
   secondCountable := inferInstance
 
-
-
 theorem GeneralizedSliceCarrier.opens_val_smooth (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) :
     ContMDiff (𝓡 3) (𝓡 3) ∞
       (fun x : (A.opens U).carrier => x.val) :=
   contMDiff_subtype_val
 
-
-
 instance GeneralizedSliceCarrier.locallyConnectedSpace (A : GeneralizedSliceCarrier.{u}) :
     LocallyConnectedSpace A.carrier :=
   ChartedSpace.locallyConnectedSpace (EuclideanSpace ℝ (Fin 3)) A.carrier
-
-
 
 noncomputable def SurgeryRegionEquivalence.restrictOpenTarget
     {A B : GeneralizedSliceCarrier.{u}} {V : Set B.carrier}

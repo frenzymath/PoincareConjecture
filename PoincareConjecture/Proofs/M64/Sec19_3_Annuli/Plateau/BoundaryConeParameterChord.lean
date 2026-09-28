@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeTarget
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +8,6 @@ open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture.M64BoundaryCone
-
-
-
 
 theorem halfConeDiameter_parameter {N : ℕ} (r a b p s : ℝ) :
     halfConeDiameter r (EuclideanSpace.single (0 : Fin (N + 1)) (a - p))
@@ -35,9 +20,6 @@ theorem halfConeDiameter_parameter {N : ℕ} (r a b p s : ℝ) :
     simp
     ring
   · simp [hj]
-
-
-
 
 theorem halfConeDiameter_reconstruct_parameter {N : ℕ} {M : Type*}
     {P : EuclideanSpace ℝ (Fin (N + 1)) → M} {c : ℝ → M}

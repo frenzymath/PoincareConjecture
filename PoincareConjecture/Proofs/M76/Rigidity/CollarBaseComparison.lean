@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ variable {E F X ι : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3} {S : Set X}
-
-
-
-
 
 theorem exists_finitePL_collar_base_comparison
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid V3)
@@ -69,9 +56,6 @@ theorem exists_finitePL_collar_base_comparison
       exact hc0 ⟨x, hx⟩)
   exact ⟨Q, hdbase.finitePiecewiseAffineOn_lift hcompat hdInj L hL
     hQcont hQmap hcomposite, hQval⟩
-
-
-
 
 theorem isFinitePL_collar_base_transition
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid V3)

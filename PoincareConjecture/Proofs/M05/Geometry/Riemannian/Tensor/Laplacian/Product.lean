@@ -1,8 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.ProductDerivative
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Laplacian.Linearity
-
-
 
 set_option autoImplicit false
 

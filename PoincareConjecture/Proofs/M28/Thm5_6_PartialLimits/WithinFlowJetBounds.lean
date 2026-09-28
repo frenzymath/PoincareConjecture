@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinRicciJetBounds
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Topology Bundle
 namespace PoincareConjecture.RicciFlow
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
 
 theorem deriv_pullbackCoefficients_eq_ricciFlowOperator_of_mem_interior
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -45,11 +32,6 @@ theorem deriv_pullbackCoefficients_eq_ricciFlowOperator_of_mem_interior
   exact deriv_pullbackCoefficients_eq_ricciFlowOperator F' isOpen_Ioo hU he hi htab hx
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
-
-
 
 theorem eventuallyBounded_within_pullbackCoefficients_of_spatial_bounds
     {n : ℕ} {α : Type*} {M : α → Type*}

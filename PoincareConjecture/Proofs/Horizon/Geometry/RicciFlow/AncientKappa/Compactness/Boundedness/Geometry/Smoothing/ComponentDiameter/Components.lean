@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.ComponentDiameter.Collars
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +33,6 @@ private theorem locallyConnectedSpace_regular_level
       continuous_toFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
       continuous_invFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _ }
   exact e.locallyConnectedSpace
-
-
-
 
 theorem exists_uniform_regular_level_component_diameter
     {M : Type*} [MetricSpace M] [ChartedSpace CoordinateThree M]

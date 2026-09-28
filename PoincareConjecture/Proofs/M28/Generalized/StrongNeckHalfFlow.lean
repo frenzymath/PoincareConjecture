@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceNeck
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (U := strongNeckOpen S) (J := strongNeckBackwardInterval)
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
 
-
-
 noncomputable def GeneralizedStrongNeck.rescaled_half_flow :
     RicciFlow 3 (strongNeckOpen S) (Icc (-(1 / 2 : ℝ)) 0) := by
   let q : ℝ := S.scale⁻¹ ^ 2
@@ -43,67 +32,52 @@ noncomputable def GeneralizedStrongNeck.rescaled_half_flow :
     hsub ordConnected_Icc
     ⟨-(1 / 2 : ℝ), by norm_num, 0, by norm_num, by norm_num⟩
 
-
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_flow_metric (s : ℝ) :
     (GeneralizedStrongNeck.rescaled_half_flow S H).metric s =
       H.rescaling.flow.metric s := rfl
 
-
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_flow_connection (s : ℝ) :
     (GeneralizedStrongNeck.rescaled_half_flow S H).connection s =
       H.rescaling.flow.connection s := rfl
-
-
 
 noncomputable def GeneralizedStrongNeck.rescaled_half_source_neck
     (hepsilon : epsilon < 1 / 2) :
     EpsilonNeck ((GeneralizedStrongNeck.rescaled_half_flow S H).metric 0) :=
   GeneralizedStrongNeck.rescaled_source_neck S hepsilon H
 
-
 theorem GeneralizedStrongNeck.rescaled_half_source_neck_eq
     (hepsilon : epsilon < 1 / 2) :
     GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon =
       GeneralizedStrongNeck.rescaled_source_neck S hepsilon H := rfl
-
 
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_epsilon
     (hepsilon : epsilon < 1 / 2) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).epsilon =
       epsilon := rfl
 
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_scale
     (hepsilon : epsilon < 1 / 2) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).scale = 1 := rfl
-
 
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_center
     (hepsilon : epsilon < 1 / 2) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).center =
       strongNeckSourceCenter S := rfl
 
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_center_val
     (hepsilon : epsilon < 1 / 2) :
     ((GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).center :
       (F.slice t).carrier) = S.center := rfl
-
 
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_connection
     (hepsilon : epsilon < 1 / 2) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).connection =
       (GeneralizedStrongNeck.rescaled_half_flow S H).connection 0 := rfl
 
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_half_source_neck_carrier
     (hepsilon : epsilon < 1 / 2) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).carrier =
       univ := rfl
-
-
 
 theorem GeneralizedStrongNeck.rescaled_half_source_neck_coordinate_map_val
     (hepsilon : epsilon < 1 / 2) (z : RoundCylinderSpace)
@@ -112,14 +86,10 @@ theorem GeneralizedStrongNeck.rescaled_half_source_neck_coordinate_map_val
       (F.slice t).carrier) = S.coordinate_map z := by
   exact strongNeckSourceMap_val_on_strip S z hz
 
-
-
 theorem GeneralizedStrongNeck.rescaled_half_source_neck_coordinate_inverse
     (hepsilon : epsilon < 1 / 2) (x : strongNeckOpen S) :
     (GeneralizedStrongNeck.rescaled_half_source_neck S H hepsilon).coordinate_inverse x =
       S.coordinate_inverse (x : (F.slice t).carrier) := rfl
-
-
 
 theorem GeneralizedStrongNeck.rescaled_half_scalar_at_center :
     ((GeneralizedStrongNeck.rescaled_half_flow S H).connection 0).scalarCurvature
@@ -127,10 +97,6 @@ theorem GeneralizedStrongNeck.rescaled_half_scalar_at_center :
   simpa only [GeneralizedStrongNeck.rescaled_half_flow_connection,
     strongNeckSourceCenter] using
     GeneralizedStrongNeck.rescaled_scalar_at_center S H
-
-
-
-
 
 theorem GeneralizedStrongNeck.rescaled_half_center_ball_capture
     (hepsilon : epsilon < 1 / 2) :

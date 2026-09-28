@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InteriorJacobi
 import PoincareConjecture.Proofs.M14.Mathlib.ParameterPhaseLinearization
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedParameterDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,10 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (p : M)
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem closedCoordinateJacobi_of_parameterFamily
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ} (hC : UniqueDiffOn ℝ C)

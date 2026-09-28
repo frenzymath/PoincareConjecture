@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundaryMap
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M65StrictTrace
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem complex_parameter_within_chart
     (p : M) {f : LoopPlane → M} {psi : ℂ → ℂ} {K : Set ℂ} {z d : ℂ}
@@ -69,9 +56,6 @@ theorem complex_parameter_within_chart
   rw [hPd] at hh
   exact hh
 
-
-
-
 theorem complex_parameter_within_zero_iff
     (p : M) {f : LoopPlane → M} {psi : ℂ → ℂ} {K : Set ℂ} {z d : ℂ}
     (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
@@ -107,9 +91,6 @@ theorem complex_parameter_within_zero_iff
     rw [complex_parameter_within_chart p hf hK hz hpsi hmap hsource, hzero,
       zero_apply, map_zero]
     rfl
-
-
-
 
 theorem complex_parameter_within_conformal_norm
     (g : RiemannianMetric 3 M) (gE : RiemannianMetric 3 LoopAmbient) (p : M)

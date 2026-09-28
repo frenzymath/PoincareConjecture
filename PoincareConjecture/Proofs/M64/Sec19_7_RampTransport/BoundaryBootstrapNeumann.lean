@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroTraceApp
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Regularity.Tangential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -57,11 +47,6 @@ private theorem zeroExtension_memW01p_of_continuous
   exact m64MemW01p_of_halfspace_support hw.someWitness hzc 0 (fun z hz => by
     apply indicator_of_notMem
     exact not_lt.mpr hz.le)
-
-
-
-
-
 
 theorem local_memWkp_add_two_of_continuous_zero_trace
     (k : ℕ) (B : SmoothEllipticBilinearForm 2 univ)
@@ -129,11 +114,6 @@ theorem local_memWkp_add_two_of_continuous_zero_trace
   simp only [zext, indicator_of_mem hz.2, w,
     hone z (subset_closure (hVU (subset_closure hz.1))), one_mul]
 
-
-
-
-
-
 theorem normalDerivative_memWkp_two_of_weak_equation
     (B : SmoothEllipticBilinearForm 2 univ)
     {W V : Set Plane} (hW : IsOpen W) (hWc : IsCompact (closure W))
@@ -165,11 +145,6 @@ theorem normalDerivative_memWkp_two_of_weak_equation
     hWH hv i
   filter_upwards [eventually_all.mpr hp] with z hz
   simp only [hz]
-
-
-
-
-
 
 theorem normalDerivative_memWkp_two
     (B : SmoothEllipticBilinearForm 2 univ)

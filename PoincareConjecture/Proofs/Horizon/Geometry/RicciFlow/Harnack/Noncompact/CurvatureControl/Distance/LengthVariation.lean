@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.TimeDerivati
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Curve.Velocity
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -48,9 +42,6 @@ private lemma contMDiffAt_speed_sq
     (F₃ := ℝ) (E₃ := fun _ : M => ℝ) hv hv
   exact (contMDiffAt_totalSpace.mp h).2
 
-
-
-
 theorem continuousAt_curve_speed
     (F : RicciFlow n M J) {γ : ℝ → M} {I : Set ℝ}
     (hI : IsOpen I) (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ γ I)
@@ -59,8 +50,6 @@ theorem continuousAt_curve_speed
       (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ p.2 1)) (s, u) :=
   Real.continuous_sqrt.continuousAt.comp
     (contMDiffAt_speed_sq F hI hγ hs hu).continuousAt
-
-
 
 theorem hasDerivAt_integral_speed
     (F : RicciFlow n M J) {γ : ℝ → M} {I : Set ℝ} {a b t : ℝ}

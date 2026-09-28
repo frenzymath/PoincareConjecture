@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.WeightedAreaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,10 +52,6 @@ private theorem m64_weighted_density_eq_area_of_conformal
   rw [← hscale]
   ring
 
-
-
-
-
 theorem m64_weightedEnergy_eq_area_of_ae_modulus_conformal
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)
@@ -81,9 +63,6 @@ theorem m64_weightedEnergy_eq_area_of_ae_modulus_conformal
   apply integral_congr_ae
   filter_upwards [hconf] with p hp
   exact m64_weighted_density_eq_area_of_conformal g A.map hr p hp.1 hp.2
-
-
-
 
 theorem m64_weightedGram_integrable_of_ae_modulus_conformal
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

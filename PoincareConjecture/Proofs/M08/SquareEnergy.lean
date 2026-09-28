@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M08.ReferenceEnergy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,7 +47,6 @@ theorem squarePath_referenceSpeedSq {J : Set ℝ} {F : RicciFlow n M J}
   rw [hv, Real.sqrt_sq hpos.le]
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
-
 
 theorem squarePath_referenceEnergy {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂) (g : RiemannianMetric n M)
@@ -114,7 +106,6 @@ theorem squarePath_regularizedIntegrand {J : Set ℝ} {F : RicciFlow n M J}
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
 
-
 theorem squarePath_action {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂) :
     IntervalIntegrable (regularizedLIntegrand F T (squareReparameterizedCurve p.curve))
@@ -143,8 +134,6 @@ theorem squarePath_action {J : Set ℝ} {F : RicciFlow n M J}
   · rw [backwardLLength_eq_transformed p]
     exact intervalIntegral.integral_congr_Ioo_of_le hle
       (fun s hs ↦ squarePath_regularizedIntegrand p hs)
-
-
 
 theorem intervalIntegrable_of_square_transform {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
     {g r : ℝ → ℝ}

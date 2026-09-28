@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Transport
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.ObliqueProjection
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

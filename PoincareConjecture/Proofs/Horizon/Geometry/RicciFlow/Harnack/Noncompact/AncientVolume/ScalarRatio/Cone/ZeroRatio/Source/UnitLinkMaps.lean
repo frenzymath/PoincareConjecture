@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.Global
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceSmooth
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +13,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p)
-
 
 def unitSlicePositiveInclusion (z : AsymptoticConeUnitSlice p hc) :
     AsymptoticConePositive p hc :=
@@ -38,8 +28,6 @@ variable {hc} {n : ℕ}
   (hne : Nonempty (AsymptoticConePositive p hc))
   (hcover : ∀ z : AsymptoticConeUnitSlice p hc,
     ∃ (d : UnitSliceRadialChartData hc n) (x : d.Level), (d.levelHomeomorph x).1 = z)
-
-
 
 theorem unitSlicePositiveInclusion_smooth_immersion :
     letI := unitSliceChartedSpace hc n hcover
@@ -80,8 +68,6 @@ theorem unitSlicePositiveInclusion_smooth_immersion :
 variable (hc) {Q : Type*} (f : Q → AsymptoticConePositive p hc)
   (hunit : {a : AsymptoticConePositive p hc | asymptoticConeRadius hc a.val = 1} ⊆ range f)
 
-
-
 def unitSlicePreimage (z : AsymptoticConeUnitSlice p hc) : Q :=
   Classical.choose (hunit (show asymptoticConeRadius hc (unitSlicePositiveInclusion hc z).val = 1
     from z.property))
@@ -110,8 +96,6 @@ theorem range_unitSlicePreimage (hf : Function.Injective f) :
     rw [apply_unitSlicePreimage hc f hunit]
     rfl
 
-
-
 def sourceUnitSliceMap {M : Type*} (A : Q → M) : AsymptoticConeUnitSlice p hc → M :=
   A ∘ unitSlicePreimage hc f hunit
 
@@ -119,9 +103,6 @@ theorem range_sourceUnitSliceMap {M : Type*} (A : Q → M) (hf : Function.Inject
     range (sourceUnitSliceMap hc f hunit A) =
       A '' (f ⁻¹' {a : AsymptoticConePositive p hc | asymptoticConeRadius hc a.val = 1}) := by
   rw [sourceUnitSliceMap, range_comp, range_unitSlicePreimage hc f hunit hf]
-
-
-
 
 theorem unitSlicePreimage_smooth_immersion
     [TopologicalSpace Q] [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) Q]
@@ -164,9 +145,6 @@ theorem unitSlicePreimage_smooth_immersion
   apply hinj
   exact congrArg (mfderiv (𝓡 (n + 1)) (𝓡 (n + 1)) f
     (unitSlicePreimage hc f hunit z)) huv
-
-
-
 
 theorem eventually_sourceUnitSliceMap_smooth_embedding
     [ProperSpace X] [TopologicalSpace Q]

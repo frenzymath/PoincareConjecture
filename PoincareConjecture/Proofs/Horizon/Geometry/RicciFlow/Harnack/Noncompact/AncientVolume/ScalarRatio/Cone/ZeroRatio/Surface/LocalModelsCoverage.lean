@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Surface.SourceCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.LocalModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem HasLocalSourceModels.eventually_ball_subset_image
     {ι : Type*} {n : ℕ}

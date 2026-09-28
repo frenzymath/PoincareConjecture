@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutSi
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreProtection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem FamilySourceAtlas.exists_saddle_piece_data
     {original : UnitTwoSphere × ℝ → E3}

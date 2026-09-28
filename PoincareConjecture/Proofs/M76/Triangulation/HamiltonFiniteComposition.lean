@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAtlasHandleStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_finite_supported_atlas_composition
     {X E ι : Type*} [TopologicalSpace X]

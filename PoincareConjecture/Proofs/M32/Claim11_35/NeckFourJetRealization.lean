@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.NeckFourJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_normalizedEuclideanCoefficients_realization_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -59,10 +43,6 @@ theorem exists_normalizedEuclideanCoefficients_realization_fourJet_bound :
     ((roundCylinderEuclideanMetric.contDiffAt_euclideanCoefficients 0).of_le
       (by exact_mod_cast le_top))]
   exact ((herr.iteratedFDeriv ℝ r).self_of_nhds ▸ hbound N hε q hs r hr)
-
-
-
-
 
 theorem exists_normalizedEuclideanCoefficients_realization_fourJet_control
     {δ : ℝ} (hδ : 0 < δ) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarShellMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +15,6 @@ local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] {K : Set X}
-
-
-
 
 theorem original_collar_shell_boundary
     (L : SimplicialComplex ℝ E) (c : E × ℝ → X)

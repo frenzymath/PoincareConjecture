@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarMaximum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +15,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
 
 theorem annular_harmonic_comparison {H K : Plane → ℝ}
     (hHc : Continuous H) (hKc : Continuous K)
@@ -55,12 +39,6 @@ theorem annular_harmonic_comparison {H K : Plane → ℝ}
     (fun x hx => sub_nonpos.mpr (hboundary x hx))
   intro x hx
   exact sub_nonpos.mp (h x hx)
-
-
-
-
-
-
 
 theorem annular_harmonic_eq_on_closed {H K : Plane → ℝ}
     (hHc : Continuous H) (hKc : Continuous K)

@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.FullDomainStatic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.TransportedScalarFamily
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +21,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
-
 
 theorem exists_open_eventually_transported_strongNeck_centers
     (hconv : M23TerminalMetricConvergence G e)

@@ -5,23 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallShrinking
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_planar_ball_chart_extension
     (B : BallNeighborhoodChart E2 E2) :

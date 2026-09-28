@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
   {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
-
-
-
 
 theorem m64Annulus_observed_weak_subsequence
     (g : RiemannianMetric n M) (e : M → F)

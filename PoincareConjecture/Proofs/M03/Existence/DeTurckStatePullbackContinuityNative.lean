@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckParameterBackgroundNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralLpOperatorNative
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -73,7 +67,6 @@ theorem contMDiffOn_transportCoefficient {U : Set P}
     (b := Prod.snd) (ψ := fun q : P × M => g0.inner q.2) hg hF hG
   intro q hq
   exact (Bundle.contMDiffWithinAt_totalSpace.mp (hpair q hq)).2
-
 
 structure CoefficientFamily (U : Set P) where
   toFun : P × M → ℝ
@@ -230,7 +223,6 @@ theorem continuousOn_coefficientL2 {U : Set P} (hU : IsOpen U)
     simpa only [heq] using hc
   exact ((ContinuousLinearMap.mul ℝ ℝ).holderL d.charts.measure (⊤ : ENNReal) 2 2).continuous.comp_continuousOn
     ((ContinuousMap.toLp (⊤ : ENNReal) d.charts.measure ℝ).continuous.comp_continuousOn hs)
-
 
 theorem continuousOn_termsAtL2 {U : Set P} (hU : IsOpen U)
     (ts : List (PullbackTermFamily d U)) {k : ℕ}
@@ -417,7 +409,6 @@ theorem exists_locally_uniform_coefficient_bound {U : Set P} (hU : IsOpen U) (hz
   filter_upwards [hc.norm (Iio_mem_nhds hlt)] with p hp
   exact hp.le.trans (hbB ab w)
 
-
 theorem exists_locally_uniform_evenPullback (L : FiniteChartLocalizationData d.charts)
     {U : Set P} (hU : IsOpen U) (hzero : (0 : P) ∈ U)
     (Phi : P → Diffeomorph I I M M ∞) (hidentity : Phi 0 = Diffeomorph.refl I M ∞)
@@ -453,7 +444,6 @@ theorem exists_locally_uniform_evenPullback (L : FiniteChartLocalizationData d.c
   · intro p
     exact norm_evenPullback_le d L (Phi p) hC (hdom p p.property) r hB
       (hVsub p.property).2.2
-
 
 theorem continuous_evenPullback_timeL2 (L : FiniteChartLocalizationData d.charts)
     (Phi : P → Diffeomorph I I M M ∞) {C : ℝ≥0∞} (hC : C ≠ ⊤) {V : Set P}

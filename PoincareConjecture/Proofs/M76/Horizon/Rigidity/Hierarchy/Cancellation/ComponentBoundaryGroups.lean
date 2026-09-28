@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.InstalledBoundaryCoverings
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.BoundaryLoopPowers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -114,9 +104,6 @@ theorem FrontierResidualModel.installed_component_group_finiteIndex
   exact boundary_group_finiteIndex_of_covering_composite
     (ContinuousMap.inclusion hsub) (hamiltonZeroRetainedTangentialMap phi R) hc x
     (hamiltonZeroRetainedTangentialMap_pi1_injective phi F ha hab hb hR _ hinj)
-
-
-
 
 theorem hamiltonZero_installed_component_boundary_groups
     {E₀ E₁ ι : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexGradient
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,9 +11,6 @@ open scoped Topology ContDiff BigOperators
 namespace PoincareConjecture.M65Branch
 
 variable {n : ℕ}
-
-
-
 
 def complexifyOperator :
     (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)) →L[ℝ]
@@ -45,9 +32,6 @@ def complexifyOperator :
         ContinuousLinearMap.proj_apply, PiLp.smul_apply, Pi.smul_apply, smul_eq_mul, ofReal_mul,
         RingHom.id_apply, Complex.real_smul, Finset.mul_sum, mul_assoc]
       }
-
-
-
 
 theorem complexifyOperator_real
     (L : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -72,16 +56,11 @@ theorem complexifyOperator_real
 
 variable {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
-
 def harmonicMatrix (D : LeviCivitaData g) (H : ℂ → EuclideanSpace ℝ (Fin n))
     (z : ℂ) : (Fin n → ℂ) →L[ℂ] (Fin n → ℂ) :=
   (-(2 : ℂ)⁻¹) •
     (complexifyOperator (M65Gauss.connectionCoefficient D (H z) (fderiv ℝ H z 1)) +
       I • complexifyOperator (M65Gauss.connectionCoefficient D (H z) (fderiv ℝ H z I)))
-
-
 
 theorem contDiffOn_harmonicMatrix (D : LeviCivitaData g)
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {s : Set ℂ}
@@ -96,9 +75,6 @@ theorem contDiffOn_harmonicMatrix (D : LeviCivitaData g)
       complexifyOperator (M65Gauss.connectionCoefficient D (H z) (fderiv ℝ H z v))) s :=
     complexifyOperator.contDiff.comp_contDiffOn (hC.clm_apply (hD.clm_apply contDiffOn_const))
   exact ((hpart 1).add ((hpart I).const_smul I)).const_smul (-(2 : ℂ)⁻¹)
-
-
-
 
 theorem harmonicMatrix_apply_gradient (D : LeviCivitaData g)
     (H : ℂ → EuclideanSpace ℝ (Fin n)) (z : ℂ) :

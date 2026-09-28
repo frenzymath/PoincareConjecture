@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileC
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,10 +11,8 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
 
-
 noncomputable def stackCapScale (l0 lambda t : ℝ) : ℝ :=
   (1 - Real.smoothTransition t) * l0 + Real.smoothTransition t * lambda
-
 
 theorem stackCapScale_spec (l0 lambda : ℝ) (hlambda : 0 < lambda)
     (hsmall : lambda < l0) :
@@ -56,7 +43,6 @@ theorem stackCapScale_spec (l0 lambda : ℝ) (hlambda : 0 < lambda)
   · intro t ht
     simp only [stackCapScale, Real.smoothTransition.one_of_one_le ht,
       sub_self, zero_mul, one_mul, zero_add]
-
 
 noncomputable def stackCapScalePlacementDiffeomorph
     (s l0 lambda : ℝ) (hl0 : 0 < l0) (hlambda : 0 < lambda) :
@@ -94,7 +80,6 @@ noncomputable def stackCapScalePlacementDiffeomorph
         (fun p => (hLpos p.1).ne')).mul
           (contDiff_snd.snd.sub contDiff_const))))).contMDiff
 
-
 theorem stackCapScalePlacementDiffeomorph_spec
     (s l0 lambda : ℝ) (hl0 : 0 < l0) (hlambda : 0 < lambda) :
     let D := stackCapScalePlacementDiffeomorph s l0 lambda hl0 hlambda
@@ -104,7 +89,6 @@ theorem stackCapScalePlacementDiffeomorph_spec
       (t, x, s + (l0 / stackCapScale l0 lambda t) * (z - s))) := by
   exact ⟨fun _ _ _ => rfl, fun _ _ _ => rfl⟩
 
-
 noncomputable def stackCapScaleChart (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) :
     OpenPartialHomeomorph (ℝ × E3) (ℝ × E3) :=
@@ -113,7 +97,6 @@ noncomputable def stackCapScaleChart (C : SurgeryCapTag psi u)
   (((Homeomorph.refl ℝ).prodCongr heightCoordinates.toHomeomorph).trans
     D.toHomeomorph).toOpenPartialHomeomorph.trans
       ((OpenPartialHomeomorph.refl ℝ).prod C.tube)
-
 
 theorem stackCapScaleChart_spec (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) :
@@ -170,12 +153,10 @@ theorem stackCapScaleChart_spec (C : SurgeryCapTag psi u)
     contDiff_fst.contDiffOn.prodMk
       (heightCoordinates.symm.contDiff.comp_contDiffOn hDi.snd), fun _ => rfl⟩
 
-
 noncomputable def stackCapScaleCap (C : SurgeryCapTag psi u)
     (lambda t : ℝ) (q : UnitTwoSphere) : E3 :=
   C.profile.capMap C.tube C.cutHeight C.sign C.removal
     (stackCapScale C.scale lambda t) q
-
 
 theorem stackCapScaleCap_spec (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (hsmall : lambda < C.scale) :
@@ -318,7 +299,6 @@ theorem stackCapScaleCap_spec (C : SurgeryCapTag psi u)
         (C.profile.model q).2))
     rw [hz]
     simp only [mul_zero]
-
 
 theorem stackCapScaleChart_field_tube (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (t : ℝ) (x : E2) (z : ℝ)

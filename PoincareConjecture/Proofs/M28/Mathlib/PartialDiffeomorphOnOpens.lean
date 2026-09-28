@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {I : ModelWithCorners 𝕜 E H} {J : ModelWithCorners 𝕜 F H'}
   {M : Type u} [TopologicalSpace M] [ChartedSpace H M]
   {N : Type v} [TopologicalSpace N] [ChartedSpace H' N]
-
-
 
 def diffeomorphOnOpens
     (e : PartialDiffeomorph I J M N ∞)
@@ -60,14 +49,12 @@ def diffeomorphOnOpens
       (e.open_target.mem_nhds (htarget y.property))).comp y
         (contMDiff_subtype_val (I := J) (U := W) (n := ∞)).contMDiffAt
 
-
 @[simp] theorem diffeomorphOnOpens_apply
     (e : PartialDiffeomorph I J M N ∞)
     (V : TopologicalSpace.Opens M) (W : TopologicalSpace.Opens N)
     (hV : (V : Set M) ⊆ e.source)
     (hW : e '' (V : Set M) = (W : Set N)) (x : V) :
     ((diffeomorphOnOpens e V W hV hW x : W) : N) = e (x : M) := rfl
-
 
 @[simp] theorem diffeomorphOnOpens_symm_apply
     (e : PartialDiffeomorph I J M N ∞)
@@ -76,8 +63,6 @@ def diffeomorphOnOpens
     (hW : e '' (V : Set M) = (W : Set N)) (y : W) :
     (((diffeomorphOnOpens e V W hV hW).symm y : V) : M) =
       e.symm (y : N) := rfl
-
-
 
 def diffeomorphOnCanonicalSource
     (e : PartialDiffeomorph I J H N ∞)
@@ -115,7 +100,6 @@ def diffeomorphOnCanonicalSource
           (contMDiff_subtype_val (I := J) (U := W) (n := ∞)).contMDiffAt
     exact ContMDiff.of_comp_isOpenEmbedding
       V.isOpen.isOpenEmbedding_subtypeVal hraw
-
 
 @[simp] theorem diffeomorphOnCanonicalSource_apply
     (e : PartialDiffeomorph I J H N ∞)

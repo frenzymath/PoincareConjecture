@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.LeastSectional
 import PoincareConjecture.Proofs.M34.Standard.SectionalHeatComparison
 import PoincareConjecture.Proofs.M04.LocalScalarBarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open M04
-
-
-
 
 theorem sectional_compact_moving_barrier
     {J : Set ℝ} {a b : ℝ} (hab : a < b)

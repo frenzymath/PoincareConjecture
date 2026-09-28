@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Descent
 open PoincareConjecture Bundle
 open scoped ContDiff Manifold Topology
 
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 

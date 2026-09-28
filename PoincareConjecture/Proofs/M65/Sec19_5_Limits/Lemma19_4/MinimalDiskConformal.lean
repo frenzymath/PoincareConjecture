@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,21 +13,15 @@ variable {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {γ : C1FreeLoopSpace (M := M)}
 
-
-
 noncomputable def conformalFactor (S : M65MinimalDisk g connection γ)
     (z : LoopPlane) : ℝ :=
   g.inner (S.disk.map z) (S.boundaryColumn z 0) (S.boundaryColumn z 0)
-
-
 
 theorem conformalFactor_continuousOn (S : M65MinimalDisk g connection γ) :
     ContinuousOn S.conformalFactor loopDiskSet :=
   m65Metric_pairing_continuousOn g S.disk.map (fun z => S.boundaryColumn z 0)
     (fun z => S.boundaryColumn z 0) (S.boundaryColumn_continuousOn 0)
     (S.boundaryColumn_continuousOn 0)
-
-
 
 theorem boundaryColumn_inner (S : M65MinimalDisk g connection γ)
     {z : LoopPlane} (hz : z ∈ loopDiskSet) (i j : Fin 2) :
@@ -70,15 +56,11 @@ theorem boundaryColumn_inner (S : M65MinimalDisk g connection γ)
     rw [closure_ball (0 : LoopPlane) one_ne_zero]
     exact Subset.rfl) hz
 
-
-
 theorem conformalFactor_nonneg (S : M65MinimalDisk g connection γ) (z : LoopPlane) :
     0 ≤ S.conformalFactor z := by
   by_cases h : S.boundaryColumn z 0 = 0
   · simp [conformalFactor, h]
   · exact (g.pos (S.disk.map z) (S.boundaryColumn z 0) h).le
-
-
 
 theorem withinDifferential_inner_self (S : M65MinimalDisk g connection γ)
     {z : LoopPlane} (hz : z ∈ loopDiskSet) (v : LoopPlane) :
@@ -101,8 +83,6 @@ theorem withinDifferential_inner_self (S : M65MinimalDisk g connection γ)
     add_zero, zero_add, EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_two]
   ring
 
-
-
 theorem conformalFactor_eq_zero_iff (S : M65MinimalDisk g connection γ)
     {z : LoopPlane} (hz : z ∈ loopDiskSet) :
     S.conformalFactor z = 0 ↔
@@ -119,15 +99,11 @@ theorem conformalFactor_eq_zero_iff (S : M65MinimalDisk g connection γ)
   · intro hd
     simp [conformalFactor, boundaryColumn, hd]
 
-
-
 theorem conformalFactor_finite_zeros (S : M65MinimalDisk g connection γ) :
     {z : LoopPlane | z ∈ loopDiskSet ∧ S.conformalFactor z = 0}.Finite := by
   convert S.finite_branches using 1
   ext z
   exact and_congr_right fun hz => S.conformalFactor_eq_zero_iff hz
-
-
 
 theorem withinDifferential_injective (S : M65MinimalDisk g connection γ)
     {z : LoopPlane} (hz : z ∈ loopDiskSet) (hc : S.conformalFactor z ≠ 0) :

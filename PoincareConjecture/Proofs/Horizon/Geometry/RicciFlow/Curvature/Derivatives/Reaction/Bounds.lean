@@ -7,10 +7,6 @@ import Mathlib.Topology.Neighborhoods
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -422,6 +418,5 @@ theorem tensorNorm_curvatureDerivativeReaction_le (D : LeviCivitaData g)
   rw [hrep]
   have h := tensorNorm_reactionListEvaluation_le D L x
   simpa [hlen, mul_assoc] using h
-
 
 end PoincareConjecture.RicciFlowAnalysis

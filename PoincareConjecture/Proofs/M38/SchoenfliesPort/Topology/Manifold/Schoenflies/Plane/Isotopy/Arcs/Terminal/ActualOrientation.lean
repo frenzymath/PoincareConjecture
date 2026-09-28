@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Band
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ComponentCount
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -85,8 +77,6 @@ private theorem actual_lower_level_connected_of_one_end
   let q : sphere (0 : E2) 1 := ⟨EuclideanSpace.single 0 1, by simp⟩
   exact ⟨d.ends.lowerCutCircle i q, d.ends.lowerCutCircle_height i q⟩
 
-
-
 theorem actual_lower_band_slice_preconnected_of_one_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
     (hunique : ∀ q ∈ P.core,
@@ -113,8 +103,6 @@ theorem actual_lower_band_slice_preconnected_of_one_end
   exact (connected_top_of_regular_band hh hz.1 hregular
     (actual_lower_level_connected_of_one_end hg d hcount)).isPreconnected
 
-
-
 theorem actual_negative_slices_preconnected_of_one_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
     (hunique : ∀ q ∈ P.core,
@@ -125,8 +113,6 @@ theorem actual_negative_slices_preconnected_of_one_end
   apply actual_lower_band_slice_preconnected_of_one_end hg d hunique hcount
   rw [d.lowerCut_eq]
   constructor <;> linarith [ht.1, ht.2]
-
-
 
 theorem one_lower_end_independent_of_terminal_geometry
     (hg : g ∈ M.tree.leaves) (d d' : TerminalSaddleGeometry M P p e)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,8 +50,6 @@ private theorem exists_local_chart_realization
 end RiemannianMetric
 
 namespace LeviCivitaData
-
-
 
 theorem tendsto_ricci_of_coordinate_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

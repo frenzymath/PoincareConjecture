@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedIntrinsicCollar
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicAnnulusClose
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem blowupSequence_intrinsic_annulus_eventually_close
     (P : M35StandardCapPredecessors)

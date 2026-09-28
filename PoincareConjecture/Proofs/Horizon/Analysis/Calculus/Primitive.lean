@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Compact
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,8 @@ namespace Poincare.Analysis
 
 variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
 
-
 def radialPrimitive (α : E → E →L[ℝ] ℝ) (a x : E) : ℝ :=
   ∫ t in (0 : ℝ)..1, α (a + t • (x - a)) (x - a)
-
 
 theorem contDiff_radialPrimitive {α : E → E →L[ℝ] ℝ}
     (hα : ContDiff ℝ ∞ α) (a : E) : ContDiff ℝ ∞ (radialPrimitive α a) := by
@@ -34,8 +23,6 @@ theorem contDiff_radialPrimitive {α : E → E →L[ℝ] ℝ}
   exact (hα.comp (contDiff_const.add
     (contDiff_snd.smul (contDiff_fst.sub contDiff_const)))).clm_apply
       (contDiff_fst.sub contDiff_const)
-
-
 
 theorem hasFDerivAt_radialPrimitive {α : E → E →L[ℝ] ℝ}
     (hα : ContDiff ℝ ∞ α) (a x : E)
@@ -98,7 +85,6 @@ theorem hasFDerivAt_radialPrimitive {α : E → E →L[ℝ] ℝ}
     ((hL.clm_apply continuous_const).intervalIntegrable 0 1)
   simpa using hcalc.symm
 
-
 theorem fderiv_radialPrimitive_eqOn {α : E → E →L[ℝ] ℝ}
     (hα : ContDiff ℝ ∞ α) {U : Set E} (hU : Convex ℝ U) {a : E} (ha : a ∈ U)
     (hclosed : ∀ x ∈ U, ∀ u v : E, fderiv ℝ α x u v = fderiv ℝ α x v u) :
@@ -108,8 +94,6 @@ theorem fderiv_radialPrimitive_eqOn {α : E → E →L[ℝ] ℝ}
   intro t ht u v
   exact hclosed (a + t • (x - a))
     (hU.add_smul_sub_mem ha hx ht) u v
-
-
 
 theorem exists_local_primitive_of_fderiv_symmetric {α : E → E →L[ℝ] ℝ}
     {U : Set E} (hU : IsOpen U) (hα : ContDiffOn ℝ ∞ α U)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,8 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64MorreyPolarStrip_ae (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho)
     {q : LoopPlane → Prop} (hq : ∀ᵐ p ∂volume.restrict (Metric.closedBall a rho), q p) :

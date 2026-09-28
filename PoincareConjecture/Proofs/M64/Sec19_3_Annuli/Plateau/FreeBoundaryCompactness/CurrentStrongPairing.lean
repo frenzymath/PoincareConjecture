@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.CircleCurrentLimit
 import Mathlib.MeasureTheory.Function.Holder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,11 +18,7 @@ private def rotation : E →L[ℝ] E :=
     (ContinuousLinearMap.toSpanSingleton ℝ (EuclideanSpace.single (0 : Fin 2) 1)).comp
       (EuclideanSpace.proj 1)
 
-
-
 def planarCurrentBilinear : E →L[ℝ] E →L[ℝ] ℝ := (innerSL ℝ).comp rotation
-
-
 
 theorem planarCurrentBilinear_apply (u v : E) :
     planarCurrentBilinear u v = planarCircleCurrent u v := by
@@ -37,9 +26,6 @@ theorem planarCurrentBilinear_apply (u v : E) :
     EuclideanSpace.inner_single_left]
 
 variable {X : Type*} [MeasurableSpace X] {mu : Measure X}
-
-
-
 
 theorem strongSquare_toLp_tendsto
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
@@ -58,9 +44,6 @@ theorem strongSquare_toLp_tendsto
   have hs : Tendsto (fun j => ‖(hf j).toLp (f j) - hu.toLp u‖ ^ 2) atTop (𝓝 0) := by
     simpa only [hn] using hlim
   simpa only [Real.sqrt_sq_eq_abs, abs_norm, Real.sqrt_zero] using hs.sqrt
-
-
-
 
 theorem strongSquare_planarCurrent_pairing_tendsto
     (f g : ℕ → X → E) (u v : X → E)

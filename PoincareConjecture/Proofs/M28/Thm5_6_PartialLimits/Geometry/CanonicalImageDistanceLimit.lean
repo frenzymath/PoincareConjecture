@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.OpenMetricSca
 import PoincareConjecture.Proofs.M28.Mathlib.RelativeBilinearLimits
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMetricSpace
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,11 +15,6 @@ namespace PoincareConjecture.M28
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilin" => E →L[ℝ] E →L[ℝ] ℝ
-
-
-
-
-
 
 theorem exists_canonicalImageMetric_source_distance_limit
     {N : Type*} [TopologicalSpace N] [T2Space N] [ChartedSpace E N]

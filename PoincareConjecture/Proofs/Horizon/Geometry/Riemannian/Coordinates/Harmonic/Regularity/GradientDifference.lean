@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.ReferenceFieldBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.EnergyMeanValue
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +10,6 @@ open Set MeasureTheory Filter
 open scoped Manifold ContDiff Topology Bundle ENNReal NNReal BigOperators
 
 namespace PoincareConjecture.HarmonicCoordinates
-
-
-
 
 theorem exists_uniform_gradient_difference_mean_value {n : ℕ} (hn : 2 ≤ n)
     {a b K : ℝ} (ha : 0 < a) (hb : 0 ≤ b) (hK : 0 ≤ K) :

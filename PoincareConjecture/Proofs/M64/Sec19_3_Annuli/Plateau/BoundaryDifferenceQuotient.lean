@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthTest
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +11,6 @@ open Poincare.Analysis.Sobolev.DifferenceQuotient
 open Poincare.Analysis.Sobolev.Euclidean Poincare.Analysis.Sobolev.NirenbergStandardTest
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64DiffQuot_integral_pairing
     {p q : ℝ≥0∞} [ENNReal.HolderConjugate q p]
@@ -56,9 +41,6 @@ theorem m64DiffQuot_integral_pairing
   rw [hL, hR, integral_div, integral_div, integral_sub htv hfv,
     integral_sub hft hfv, ht, div_neg, neg_neg]
 
-
-
-
 theorem m64DiffQuot_tangent_zero_below
     {u : LoopPlane → ℝ} (hu : ∀ p : LoopPlane, p 1 < 0 → u p = 0)
     (h : ℝ) : ∀ p : LoopPlane, p 1 < 0 → diffQuot 0 h u p = 0 := by
@@ -69,10 +51,6 @@ theorem m64DiffQuot_tangent_zero_below
     simp
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64NaturalGrowth_boundary_nirenberg_identity
     {O : Set LoopPlane} (hO : IsOpen O)

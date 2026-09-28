@@ -3,24 +3,11 @@ import Mathlib.Topology.IsLocalHomeomorph
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddMonoidHom
-
-
-
-
 
 theorem exists_piecewiseAffine_quotient_cover
     {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

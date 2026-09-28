@@ -3,15 +3,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
@@ -21,8 +12,6 @@ private theorem normalization_three_term_cauchy (a b c x y z : ℝ) :
       (a ^ 2 + b ^ 2 + c ^ 2) * (x ^ 2 + y ^ 2 + z ^ 2) := by
   nlinarith only [sq_nonneg (a * y - b * x), sq_nonneg (a * z - c * x),
     sq_nonneg (b * z - c * y)]
-
-
 
 theorem cap_normalization_factor_bounds {gamma x y z E d : ℝ}
     (hgamma : 0 ≤ gamma) (hsmall : gamma ≤ 1 / 1200)
@@ -41,9 +30,6 @@ theorem cap_normalization_factor_bounds {gamma x y z E d : ℝ}
   calc
     |1 + d| ≤ 1 + |d| := by simpa using abs_add_le (1 : ℝ) d
     _ ≤ 301 / 300 := by linarith
-
-
-
 
 theorem cap_normalization_energy_le {gamma x y z E d : ℝ}
     (hgamma : 0 ≤ gamma) (hsmall : gamma ≤ 1 / 1200)
@@ -81,8 +67,6 @@ theorem cap_normalization_energy_le {gamma x y z E d : ℝ}
       add_le_add hzero (mul_le_mul_of_nonneg_right hfactorSq htail)
     _ ≤ (C + (301 / 300 : ℝ) ^ 2) * E := by nlinarith [sq_nonneg x]
     _ ≤ 36 * E := mul_le_mul_of_nonneg_right (by norm_num [C]) hE0
-
-
 
 theorem cap_normalization_strict_witness {gamma epsilon bound : ℝ}
     (hgamma : 0 ≤ gamma) (hscale : 6 * gamma ≤ epsilon) (hbound : bound < gamma ^ 2) :

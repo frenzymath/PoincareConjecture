@@ -6,24 +6,11 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.ClopenCircleCertificate
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.LastSliceIsotopy
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.GraphIsotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_circle_certificate_of_local_negative_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

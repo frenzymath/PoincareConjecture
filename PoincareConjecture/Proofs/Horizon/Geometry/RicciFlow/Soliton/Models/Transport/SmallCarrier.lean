@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Transport.Canonical
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Models
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff Bundle Topology
 
 universe u
-
 
 namespace PoincareConjecture
 open RicciFlow.Splitting
@@ -168,7 +159,6 @@ def QuotientSphereLineCertificate.toSmallCarrier (C : QuotientSphereLineCertific
     C.product.canonicalProductDiffeomorph_inner t ht]
   rfl
 
-
 include e hmetric in
 theorem CompactRoundShrinkingModel.toSmallCarrier (C : CompactRoundShrinkingModel H) :
     CompactRoundShrinkingModel G := by
@@ -186,9 +176,6 @@ theorem CompactRoundShrinkingModel.toSmallCarrier (C : CompactRoundShrinkingMode
     ((hmetric t ht x v v).symm.trans hv) ((hmetric t ht x w w).symm.trans hw)
     ((hmetric t ht x v w).symm.trans hvw)
   simpa only [LeviCivitaData.sectionalCurvature, hmetric t ht, hcurv] using hr
-
-
-
 
 def ThreeDimensionalSolitonModel.toSmallCarrier (C : ThreeDimensionalSolitonModel T H) :
     ThreeDimensionalSolitonModel S G :=

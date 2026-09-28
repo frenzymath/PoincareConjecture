@@ -4,14 +4,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -32,7 +24,6 @@ private theorem compact_fiber_neighborhood {A X ι : Type*}
   intro s hs i
   exact Metric.mem_cthickening_of_dist_le _ (f i t) _ _
     (subset_closure (Set.mem_range_self i)) (by simpa only [dist_comm] using (hs i).le)
-
 
 theorem totallyBounded_fibers_of_anchored {A X ι : Type*}
     [TopologicalSpace A] [PreconnectedSpace A]
@@ -74,7 +65,6 @@ theorem totallyBounded_fibers_of_anchored {A X ι : Type*}
   rw [hP]
   exact Set.mem_univ t
 
-
 theorem exists_compact_range_of_anchored {A X ι : Type*}
     [TopologicalSpace A] [CompactSpace A] [PreconnectedSpace A]
     [MetricSpace X] [CompleteSpace X] [LocallyCompactSpace X]
@@ -89,7 +79,6 @@ theorem exists_compact_range_of_anchored {A X ι : Type*}
   have ht : t ∈ ⋃ s ∈ S, U s := hS.symm ▸ Set.mem_univ t
   obtain ⟨s, hs, hts⟩ := Set.mem_iUnion₂.mp ht
   exact Set.mem_iUnion₂.mpr ⟨s, hs, hUK s t hts i⟩
-
 
 theorem exists_uniform_subsequence_of_anchored {A X : Type*}
     [TopologicalSpace A] [CompactSpace A] [PreconnectedSpace A]

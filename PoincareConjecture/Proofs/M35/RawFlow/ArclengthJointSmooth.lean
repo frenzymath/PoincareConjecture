@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.AxisTimeCoefficients
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricProducerNative
 import PoincareConjecture.Proofs.M03.Existence.ImplicitLocalFlowNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -37,8 +28,6 @@ private theorem axisParameterPath_contDiff : ContDiff ℝ ∞ axisParameterPath 
     (hc.comp contDiff_fst)).add
     (((ContinuousLinearMap.inr ℝ ℝ ℝ).compLeftContinuous ℝ UnitInterval).contDiff.comp
       (contDiff_snd.smul contDiff_const))
-
-
 
 theorem raw_radialArclength_contDiffAt {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) {p : ℝ × ℝ} (hp : p.1 ∈ Ioo 0 G.lifetime) :

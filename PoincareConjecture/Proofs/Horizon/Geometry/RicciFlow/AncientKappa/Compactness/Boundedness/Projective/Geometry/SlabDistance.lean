@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 omit [ConnectedSpace M] in
-
 
 theorem toReal_edist_center_le
     (g : RiemannianMetric 3 M) (Φ : RoundCylinderSpace → M)

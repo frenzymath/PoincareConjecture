@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.UniformConnectionDifference
 import PoincareConjecture.Proofs.M34.Standard.ConnectionVelocityJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,17 +13,12 @@ namespace PoincareConjecture.M34.DifferenceEnergy
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def connectionDifferenceRateFromJets {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
     (J0 J1 : Jet (V n) (MetricCoefficient n) 3)
     (d : Fin dS × Fin n → ℝ) (H : FH n) (A : FA n) (S : FS n) : FA n :=
   connectionDifferenceRate qS (inverseMetricThreeJet n J0) (connectionThreeJet n J0)
     (curvatureThreeJet n J1) (connectionVelocityThreeJet n J1) d H A S
-
-
-
 
 theorem exists_uniform_connectionJetRate_bound
     {n dH dA dS : ℕ}

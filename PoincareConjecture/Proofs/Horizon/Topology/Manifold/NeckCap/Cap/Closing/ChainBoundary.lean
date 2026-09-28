@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.SliceIsotopy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem boundary_inter_nonempty_of_frontier_core_contact (C D : CapCertificate g)
     {U : Set M} (hU : IsPreconnected U) (hC : C.carrier ⊆ U)
     (hdis : Disjoint D.closed_core C.carrier)
@@ -45,8 +31,6 @@ theorem boundary_inter_nonempty_of_frontier_core_contact (C D : CapCertificate g
     ⟨c, hC hc, fun h => disjoint_left.mp hdis h hc⟩
   have hmeet := D.boundary_inter_nonempty_of_crossing hU ⟨y, hyU, hyD⟩ hout
   rwa [inter_comm] at hmeet
-
-
 
 theorem outgoing_chain_boundary_inter_nonempty (C D : CapCertificate g)
     (H : ConnectedNeckCapCover g) (T : BalancedNeckChain g C.epsilon)
@@ -81,9 +65,6 @@ private theorem frontier_inter_boundary_of_mixed_open (D : CapCertificate g)
     rw [hfull]
     exact mem_univ _
   exact hmem
-
-
-
 
 theorem exists_outgoing_chain_mixed_boundary_shifted_slice_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.RecutGeometry
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCutGeometry
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -61,8 +53,6 @@ def ModelCutCircleData.of_same_filledModel
     intro q hq
     rw [hh]
     exact a.upper_regular q (by simpa only [hF] using hq) }
-
-
 
 theorem exists_terminal_geometry_with_model_cut_circles
     (M : SphereMorseReduction f) (hg : g ∈ M.tree.leaves)

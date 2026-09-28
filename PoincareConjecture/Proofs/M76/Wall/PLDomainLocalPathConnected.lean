@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +12,6 @@ namespace OpenPartialHomeomorph
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_relative_path_connected_nhds_of_affine_nonneg
     (H : OpenPartialHomeomorph X E) {R : Set X} (ell : E →ᴬ[ℝ] ℝ)
@@ -78,10 +66,6 @@ end OpenPartialHomeomorph
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.locallyPathConnectedSpace
     {X ι : Type*} [TopologicalSpace X]

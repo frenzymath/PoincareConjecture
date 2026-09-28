@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.RadiusReparametrization
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,9 +8,6 @@ open Set
 namespace Poincare.Topology
 
 variable {M : Type*} [TopologicalSpace M]
-
-
-
 
 theorem exists_trajectory_level_homeomorph
     (Φ : ℝ → M → M) (hΦ : Continuous (fun z : ℝ × M => Φ z.1 z.2))

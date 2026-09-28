@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 import PoincareConjecture.Proofs.M76.Wall.WeakEndNoncompact
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenProtectedFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

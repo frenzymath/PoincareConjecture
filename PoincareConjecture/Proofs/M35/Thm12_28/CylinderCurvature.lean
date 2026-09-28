@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLeviCivita
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem fderiv_cylinder_connection_component (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)
@@ -49,8 +38,6 @@ theorem fderiv_cylinder_connection_component (u : ℝ) (hu : u < 1)
     roundCylinderChristoffel u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b d)
       (cylinderCoordinateEquiv p)) (cylinderCoordinateEquiv_basis i).symm
 
-
-
 theorem cylinder_connection_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)
     (s : ℝ) (b d : Fin 3) :
@@ -60,9 +47,6 @@ theorem cylinder_connection_center (u : ℝ) (hu : u < 1)
   change (D.euclideanConnection _ _ _) a = 0
   rw [cylinder_connection_component u hu D q, ContinuousLinearEquiv.apply_symm_apply,
     roundCylinderChristoffel_center]
-
-
-
 
 theorem cylinder_curvature_component_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)
@@ -92,9 +76,6 @@ theorem cylinder_curvature_component_center (u : ℝ) (hu : u < 1)
     fderiv_roundCylinderChristoffel_center hu]
   simp only [real_inner_comm]
   ring
-
-
-
 
 theorem cylinder_curvatureTensor_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)

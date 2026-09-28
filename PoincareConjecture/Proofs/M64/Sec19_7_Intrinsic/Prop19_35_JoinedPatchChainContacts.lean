@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JoinedPatchData
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChainNestedPatch
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,10 +10,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_joined_patch_chain_contacts
     {gamma : Bool → ℝ → AnnulusCoordinates} {T b : Bool → ℝ}

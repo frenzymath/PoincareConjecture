@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M02.SimplexFaceHomotopy
 import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w
@@ -25,7 +9,6 @@ open Set Topology CategoryTheory
 open scoped unitInterval Simplicial
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem stdSimplex_face_map_apply (n : ℕ) (i : Fin (n + 2))
     (z : stdSimplex ℝ (Fin (n + 1))) (j : Fin (n + 1)) :
@@ -39,7 +22,6 @@ theorem stdSimplex_face_map_apply (n : ℕ) (i : Fin (n + 2))
   · intro hj
     exact (hj (Finset.mem_filter.mpr ⟨Finset.mem_univ j, rfl⟩)).elim
 
-
 theorem stdSimplex_face_map_injective (n : ℕ) (i : Fin (n + 2)) :
     Function.Injective (stdSimplex.map (S := ℝ) i.succAbove) := by
   intro z w heq
@@ -47,7 +29,6 @@ theorem stdSimplex_face_map_injective (n : ℕ) (i : Fin (n + 2)) :
   funext j
   have h := congrArg (fun y : stdSimplex ℝ (Fin (n + 2)) => y (i.succAbove j)) heq
   simpa only [stdSimplex_face_map_apply] using h
-
 
 theorem stdSimplex_face_map_comp (n : ℕ) (i : Fin (n + 3)) (j : Fin (n + 2))
     (z : stdSimplex ℝ (Fin (n + 1))) :
@@ -57,8 +38,6 @@ theorem stdSimplex_face_map_comp (n : ℕ) (i : Fin (n + 3)) (j : Fin (n + 2))
   apply congrArg (fun a : Fin (n + 1) → Fin (n + 3) => stdSimplex.map a z)
   funext k
   exact (Fin.succAbove_succAbove_succAbove_predAbove i j k).symm
-
-
 
 theorem exists_stdSimplex_face_intersection (n : ℕ) (i : Fin (n + 3)) (j : Fin (n + 2))
     (z w : stdSimplex ℝ (Fin (n + 2)))
@@ -94,8 +73,6 @@ theorem exists_stdSimplex_face_intersection (n : ℕ) (i : Fin (n + 3)) (j : Fin
       ((congrArg (stdSimplex.map i.succAbove) hu).trans heq)
   exact ⟨u, hu.symm, ((stdSimplex_face_map_injective (n + 1) (i.succAbove j)) hw).symm⟩
 
-
-
 theorem stdSimplex_face_homotopies_agree_of_double_faces
     (n : ℕ) {X : Type*} [TopologicalSpace X]
     (h : Fin (n + 3) → C(unitInterval × stdSimplex ℝ (Fin (n + 2)), X))
@@ -114,8 +91,6 @@ theorem stdSimplex_face_homotopies_agree_of_double_faces
   · obtain ⟨j, rfl⟩ := Fin.exists_succAbove_eq (Ne.symm hik)
     obtain ⟨u, rfl, rfl⟩ := exists_stdSimplex_face_intersection n i j z w heq
     exact hdouble i j t u
-
-
 
 theorem stdSimplex_interval_face_homotopies_agree
     {X : Type*} [TopologicalSpace X]
@@ -139,7 +114,6 @@ theorem stdSimplex_interval_face_homotopies_agree
     exact (zero_ne_one (hleft.symm.trans
       ((congrArg (fun y : stdSimplex ℝ (Fin 2) => y i) heq).trans hright))).elim
 
-
 theorem singularSimplex_double_face (X : TopCat.{w}) (n : ℕ)
     (s : (TopCat.toSSet.obj X) _⦋n + 2⦌) (i : Fin (n + 3)) (j : Fin (n + 2)) :
     (TopCat.toSSet.obj X).δ j ((TopCat.toSSet.obj X).δ i s) =
@@ -148,8 +122,6 @@ theorem singularSimplex_double_face (X : TopCat.{w}) (n : ℕ)
   ext z
   simp only [TopCat.toSSetObjEquiv_δ_apply]
   exact congrArg (X.toSSetObjEquiv _ s) (stdSimplex_face_map_comp n i j z)
-
-
 
 theorem exists_stdSimplex_homotopy_extension (n : ℕ) {X : Type*} [TopologicalSpace X]
     (f : C(stdSimplex ℝ (Fin (n + 1)), X))

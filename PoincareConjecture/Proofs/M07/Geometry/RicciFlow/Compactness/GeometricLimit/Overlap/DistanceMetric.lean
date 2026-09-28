@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Radius
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Coverage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
@@ -130,7 +122,6 @@ theorem isOpen_iff_quotientDistance
       (isOpen_lt (quotientDistance_continuous_right hD O hrel q) continuous_const).mem_nhds
         (by simpa only [mem_ofPred_eq, quotientDistance_self] using hε)
     exact mem_of_superset hball hsub
-
 
 @[instance_reducible] noncomputable def quotientMetricSpace
     [∀ i, LocallyCompactSpace (X i)]

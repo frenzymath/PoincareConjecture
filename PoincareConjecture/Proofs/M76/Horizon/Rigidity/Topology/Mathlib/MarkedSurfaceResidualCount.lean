@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CountTwoS
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleIncidenceRanks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponentConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 

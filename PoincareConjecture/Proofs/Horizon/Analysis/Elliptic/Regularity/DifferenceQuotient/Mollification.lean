@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Convolution
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

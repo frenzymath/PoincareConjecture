@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.FilledModel.Scaling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.TwoCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,9 +63,6 @@ private theorem image_south_radial_cap_of_lift
     change 0 ≤ inner Real v (p : E3) at hp
     exact ⟨β (ρ p), ⟨ρ p, by change inner Real v (ρ p : E3) ≤ 0; rw [hρh]; linarith, rfl⟩,
       hpoint p⟩
-
-
-
 
 theorem exists_relative_scaled_quadratic_lower_transport
     {v : E3} (hv : ‖v‖ = 1) (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2)

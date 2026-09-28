@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietorisExcision
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,13 +13,9 @@ namespace PoincareConjecture.Proofs.M53
 
 variable {X : Type u} [TopologicalSpace X] (A B : Set X) (h : B ⊆ A)
 
-
-
 def integralTripleBoundary (n : Nat) : integralRelativeHomology A (n + 1) ⟶
     integralRelativeHomology ((Subtype.val : A → X) ⁻¹' B) n :=
   (integralNestedRelativePairSequence_shortExact B A h).δ (n + 1) n rfl
-
-
 
 def integralPairToTriple :
     integralPairSequence A ⟶ integralNestedRelativePairSequence B A h where
@@ -42,8 +27,6 @@ def integralPairToTriple :
     change integralRelativeProjection B ≫ integralRelativeRestriction h =
       integralRelativeProjection A ≫ 𝟙 _
     rw [integralRelativeRestriction_projection, Category.comp_id]
-
-
 
 theorem integralTripleBoundary_eq_pair (n : Nat) :
     integralTripleBoundary A B h n = integralRelativeBoundary A n ≫

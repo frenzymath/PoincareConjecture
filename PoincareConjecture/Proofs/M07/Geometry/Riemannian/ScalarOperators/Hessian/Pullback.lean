@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
   {f : M → N} {x : M} {u : N → ℝ}
-
 
 theorem hessian_comp_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -64,8 +54,6 @@ theorem hessian_comp_of_metric_pullback
       ((D'.contMDiffAt_gradient hu).mdifferentiableAt (by simp)),
     hmetric.self_of_nhds]
   simp only [hinv.self_of_nhds.self_apply_inverse]
-
-
 
 theorem abs_hessian_le_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

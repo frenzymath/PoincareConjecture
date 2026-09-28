@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CoordinateGaugeEquation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem secondDeriv_embedding_eq_hessian_add_acceleration
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {e : M → W}
@@ -91,10 +77,6 @@ theorem secondDeriv_embedding_eq_hessian_add_acceleration
   abel
 
 variable {a b : ℝ}
-
-
-
-
 
 theorem embedded_curvature_eq_acceleration_sub_tangent
     (F : RicciFlow n M (Icc a b)) {e : M → W}

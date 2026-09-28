@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDomination
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
-
-
-
 
 theorem PLDomain.exists_le_pos_mul (he : PLDomain e R) (hR : IsCompact R)
     {f g : X → ℝ}

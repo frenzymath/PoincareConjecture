@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusEnergyDensity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusCurrent
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64MovingAnnulusCurrent_along_slice_hasDerivAt
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}
@@ -70,10 +55,6 @@ theorem m64MovingAnnulusCurrent_along_slice_hasDerivAt
 
 variable [T2Space M] [CompactSpace M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64MovingAnnulus_energyDensity_eq_current_divergence
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1)

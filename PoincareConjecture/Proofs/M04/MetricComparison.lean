@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.TensorNormBounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +13,6 @@ namespace PoincareConjecture.RicciFlow
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem metric_comparison_of_curvature_bound {J : Set ℝ}
     (F : RicciFlow n M J) {s t K : ℝ} (hs : s ∈ J) (ht : t ∈ J)
@@ -106,4 +97,3 @@ theorem metric_comparison_of_curvature_bound {J : Set ℝ}
     exact h
 
 end PoincareConjecture.RicciFlow
-

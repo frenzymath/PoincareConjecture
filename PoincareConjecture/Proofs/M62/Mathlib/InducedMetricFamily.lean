@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.InducedForm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +7,6 @@ open Set Filter Topology Bundle
 open scoped Manifold ContDiff
 
 namespace Poincare.Gluing
-
-
-
 
 theorem inducedForm_family_contMDiffOn
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

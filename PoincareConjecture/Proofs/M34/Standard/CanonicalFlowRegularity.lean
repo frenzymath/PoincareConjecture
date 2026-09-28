@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.ConnectionDifference
 import PoincareConjecture.Proofs.M34.Standard.CanonicalFlowCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy Proofs.M03
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_inner_eq_pullbackCoefficients :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -42,8 +30,6 @@ theorem canonicalDomain_inner_eq_pullbackCoefficients :
   exact (RiemannianMetric.pullbackCoefficients_canonicalChart U hU g p ⟨x, hx⟩).symm
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem canonicalDomain_contDiffOn_flow_metric
     {dH : ℕ} (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH)) :
@@ -71,8 +57,6 @@ theorem canonicalDomain_contDiffOn_flow_metric
     qH.symm.contDiff.comp_contDiffOn hf
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem canonicalDomain_contDiffOn_connection_difference
     {dA : ℕ} (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA)) :

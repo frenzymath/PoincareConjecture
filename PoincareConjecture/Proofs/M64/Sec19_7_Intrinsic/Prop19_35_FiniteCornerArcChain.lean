@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCap
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConcreteArcBandChain
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBandOppositeNeighborhood
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open scoped Topology ContDiff
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_finite_corner_arc_chain
     {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}

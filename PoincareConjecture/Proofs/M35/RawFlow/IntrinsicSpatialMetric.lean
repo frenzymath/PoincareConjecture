@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicTip
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialMetricForm
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.GaugePullbackMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,7 +37,6 @@ theorem rotational_rescale_form {x : StandardCapSpace} (hx : x ≠ 0)
 
 variable (hcomplete : MetricComplete g)
 
-
 noncomputable def intrinsicSpatialMetric : RiemannianMetric 3 StandardCapSpace :=
   gaugePullbackMetric g (intrinsicSpatialDiffeomorph g hrotation hcomplete).symm
 
@@ -57,7 +47,6 @@ theorem intrinsicSpatialMetric_pullback (x u v : StandardCapSpace) :
         (fderiv ℝ (intrinsicSpatialInverse g hrotation hcomplete) x v) := by
   rw [intrinsicSpatialMetric, gaugePullbackMetric_inner]
   rfl
-
 
 theorem intrinsicSpatialMetric_inner {x : StandardCapSpace} (hx : x ≠ 0)
     (u v : StandardCapSpace) :
@@ -109,7 +98,6 @@ private theorem rotational_metric_origin (u v : StandardCapSpace) :
   rw [h]
   simp [EuclideanSpace.inner_eq_star_dotProduct, dotProduct, Fin.sum_univ_succ]
   ring
-
 
 theorem intrinsicSpatialMetric_inner_zero (u v : StandardCapSpace) :
     (intrinsicSpatialMetric g hrotation hcomplete).inner 0 u v = inner ℝ u v := by

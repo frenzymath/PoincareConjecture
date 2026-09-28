@@ -1,24 +1,12 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Analysis.Normed.Group.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 variable {X Y Z : Type*} [TopologicalSpace X] [NormedAddCommGroup Y] [TopologicalSpace Z]
-
-
-
 
 theorem Continuous.exists_pos_closedBall_thickening {f : X × Y → Z} (hf : Continuous f)
     {C : Set X} (hC : IsCompact C) {U : Set Z} (hU : IsOpen U)

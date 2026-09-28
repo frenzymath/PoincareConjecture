@@ -63,4 +63,3 @@ theorem HamiltonMarkedProtectedBall.core_disjoint_lateral
     exact hxLat.1.2 (mem_interior_of_relative_interior_at_interior ⟨x,hxR⟩ hxRel hxIntR)
 
 end PoincareConjecture.M76
-

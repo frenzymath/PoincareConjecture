@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit.JetBounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12

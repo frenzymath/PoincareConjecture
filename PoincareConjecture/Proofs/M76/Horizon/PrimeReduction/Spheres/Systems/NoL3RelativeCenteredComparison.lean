@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3SelectedCapCutComparison
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3RelativeMovedSubregions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

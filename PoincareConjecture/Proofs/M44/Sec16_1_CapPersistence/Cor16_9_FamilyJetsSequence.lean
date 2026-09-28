@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_MovingJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,10 +27,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   {a : ℕ → ℝ} {ha : ∀ k, a k ∈ (F k).surgery_times}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
-
-
-
-
 
 theorem tendstoUniformlyOn_cylinder_standard_spatial_jets
     (P : M44CapPersistencePredecessors.{u})
@@ -82,10 +67,6 @@ theorem tendstoUniformlyOn_cylinder_standard_spatial_jets
   exact ⟨⟨hp.1.1, hp.1.2.trans_lt (hbc.trans_le hc1)⟩,
     by rw [hG]; exact hp.1.2.trans_lt hbT⟩
 
-
-
-
-
 theorem eventually_cylinder_standard_spatial_jets
     (P : M44CapPersistencePredecessors.{u})
     (standard : RepairedStandardCapExistenceData g0)
@@ -107,10 +88,6 @@ theorem eventually_cylinder_standard_spatial_jets
     hlife hlim hK hcurv m hC (fun _ hb hbc =>
       tendstoUniformlyOn_cylinder_standard_spatial_jets P standard unique D hR heta
         (hcH.trans hH1.le) hlim hK hcurv hb hbc m hC)
-
-
-
-
 
 theorem eventually_cylinder_standard_metricJetError_le
     (P : M44CapPersistencePredecessors.{u})

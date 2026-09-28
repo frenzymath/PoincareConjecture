@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.ProjectiveBallCollarCover
 import PoincareConjecture.Proofs.M38.ProjectiveDoubleConnectedSum
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_projectiveDouble_side_covers
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :

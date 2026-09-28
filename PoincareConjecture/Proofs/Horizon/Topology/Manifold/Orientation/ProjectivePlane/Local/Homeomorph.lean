@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Local.Gluing
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +37,6 @@ private theorem localOrientation_pullback_eq_of_eq
     (O.pullback f hf).atPoint x = (O.pullback g hg).atPoint x := by
   subst g
   rfl
-
-
 
 def IsLocalOrientationLift
     {X : Type u} {Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
@@ -123,10 +112,6 @@ private theorem chart_overlap_compat
       hw₂ e₂.isOpenEmbedding_restrict z
     exact hleft.trans (hsame.trans hright.symm)
   exact hlocal
-
-
-
-
 
 theorem exists_localOrientation_of_isLocalHomeomorph
     {X : Type u} {Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
@@ -237,8 +222,6 @@ theorem exists_localOrientation_of_isLocalHomeomorph
   rw [hinv]
   exact hmap
 
-
-
 theorem exists_localOrientation_lift_of_isLocalHomeomorph
     {X : Type u} {Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
     [T2Space X] [T2Space Y] [LocallyCompactSpace X] [LocallyCompactSpace Y]
@@ -339,10 +322,6 @@ theorem exists_localOrientation_lift_of_isLocalHomeomorph
     rfl
   rw [hinv]
   exact hmap
-
-
-
-
 
 theorem localHomologyMap_eq_of_lift
     {X Y : Type} [TopologicalSpace X] [TopologicalSpace Y]

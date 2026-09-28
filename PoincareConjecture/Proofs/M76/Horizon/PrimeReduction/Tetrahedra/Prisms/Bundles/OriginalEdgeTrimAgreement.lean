@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.OriginalEdgeFiberAgreement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.AffineEdgeTrimAgreement
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -40,4 +38,3 @@ theorem original_edge_contact_prism_trims_agree
     heq t u hpoint
 
 end PoincareConjecture.M76.PrismBelt
-

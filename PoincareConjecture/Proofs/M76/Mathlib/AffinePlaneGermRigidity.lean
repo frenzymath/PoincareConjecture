@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import Mathlib.Topology.Algebra.ContinuousAffineMap
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap CoordinateHalfBoxes
@@ -21,9 +10,6 @@ open Set AffineMap CoordinateHalfBoxes
 namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem le_of_inter_subset_open (P Q : AffineSubspace ℝ E)
     {U : Set E} (hU : IsOpen U) {a : E} (haP : a ∈ P) (haU : a ∈ U)
@@ -43,9 +29,6 @@ theorem le_of_inter_subset_open (P Q : AffineSubspace ℝ E)
   have hxQ := lineMap_mem t⁻¹ haQ htQ
   simpa only [lineMap_lineMap_right, inv_mul_cancel₀ ht.1.ne', lineMap_apply_one] using hxQ
 
-
-
-
 theorem eq_of_inter_eq_open (P Q : AffineSubspace ℝ E)
     {U : Set E} (hU : IsOpen U) {a : E} (haP : a ∈ P) (haU : a ∈ U)
     (hPQ : (P : Set E) ∩ U = (Q : Set E) ∩ U) : P = Q := by
@@ -59,10 +42,6 @@ end AffineSubspace
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem mem_triangle_affineSpan_iff_last_eq_zero_of_cut_box
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -116,10 +95,6 @@ theorem mem_triangle_affineSpan_iff_last_eq_zero_of_cut_box
   exact hQ x
 
 variable [DecidableEq E]
-
-
-
-
 
 theorem exists_open_surface_eq_last_at_radial_frontier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

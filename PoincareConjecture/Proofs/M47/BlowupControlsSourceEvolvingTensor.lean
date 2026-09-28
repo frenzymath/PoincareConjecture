@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingError
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingAffine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +33,6 @@ variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
   (sigma : ℝ → ℝ) (hclock : MapsTo sigma (Icc (-1 : ℝ) 0) J)
   (rho lambda c : ℝ)
 
-
-
 noncomputable def sourceCapNeckTensor : ℝ → RoundCylinderTwoTensor :=
   fun u => if hu : u ∈ Icc (-1 : ℝ) 0 then
     let hs := hclock hu
@@ -53,8 +43,6 @@ noncomputable def sourceCapNeckTensor : ℝ → RoundCylinderTwoTensor :=
     fun z v w => rho * neckAxialTensorPullback lambda c
       (roundCylinderPullback g' (phi ∘ N.coordinate_map)) z v w
   else fun _ _ _ => 0
-
-
 
 theorem sourceCapNeckTensor_smooth
     (hsource : N.carrier ⊆ F.standard_initial.metric.ball 0 A)
@@ -85,8 +73,6 @@ theorem sourceCapNeckTensor_smooth
     (fun z v w => rho * neckAxialTensorPullback lambda c (fun z v w => B z v w) z v w)
   exact (roundCylinderTensorSmoothOn_neckAxialTensorPullback
     N.epsilon_pos hlambda hc B hB).const_mul
-
-
 
 theorem sourceCapNeckTensor_coefficient_error_le
     (hsource : N.carrier ⊆ F.standard_initial.metric.ball 0 A)

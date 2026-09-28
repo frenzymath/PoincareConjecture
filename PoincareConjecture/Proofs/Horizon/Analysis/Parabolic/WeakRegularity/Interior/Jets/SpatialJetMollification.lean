@@ -1,22 +1,7 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJetAlgebra
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakConvolution
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.KernelBuffer
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.MollifiedL2Energy
-
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open Poincare.Analysis.Convolution
@@ -42,7 +27,6 @@ theorem HasSpatialL2Jet.congr_ae
     congr 1
     exact integral_congr_ae (huv.mono fun y hy =>
       congrArg (fun a => spatialDeriv i φ y * a) hy)
-
 
 def iteratedSpatialDeriv {n : ℕ} :
     (k : ℕ) → (Fin k → Fin n) → (Spacetime n → ℝ) → Spacetime n → ℝ

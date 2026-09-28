@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -21,8 +11,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_edge_graph_neighborhood (e : D.EdgeIndex)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -133,8 +121,6 @@ theorem exists_edge_graph_neighborhood (e : D.EdgeIndex)
         rw [hcoord, collarParameterEquiv.symm_apply_apply, F.right_inv hz.1.1]
       rw [hzt, ← D.boundary_cover]
       exact mem_iUnion.mpr ⟨e, t, ⟨hc0.le.trans ht.1, ht.2.trans hd1.le⟩, rfl⟩
-
-
 
 theorem exists_edge_graph_tube (e : D.EdgeIndex)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

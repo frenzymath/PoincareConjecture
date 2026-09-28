@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.NativeRadiusTension
 import PoincareConjecture.Proofs.M35.RadialGauge.NativeGaugeVelocity
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionTip
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M35.Uniqueness
 
 open RadialGauge
-
-
 
 theorem rawIntrinsicGaugeMap_solves_native_harmonic
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

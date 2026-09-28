@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCollarBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcBandCompatibility
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,10 +9,6 @@ open Set
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture.M64IntrinsicTriangleCollar
-
-
-
-
 
 theorem band_faces_canonical
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}

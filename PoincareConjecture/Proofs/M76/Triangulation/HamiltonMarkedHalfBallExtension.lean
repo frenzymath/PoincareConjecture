@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedBallBoundaryPus
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ variable {V X Y : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_inward_extension_of_boundary_disk
     {s b d c : Set X} {C S G q : Set Y}

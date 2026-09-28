@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_busemann_calibrated_point (g : RiemannianMetric n M)
     (hcomplete : MetricComplete g) {γ : ℝ → M}

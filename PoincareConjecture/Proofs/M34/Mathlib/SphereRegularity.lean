@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ F H}
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M]
   {m : WithTop ℕ∞} {f : M → sphere (0 : E) 1} {x : M}
-
-
-
 
 theorem ContMDiffAt.of_coe_sphere
     (hf : ContMDiffAt I 𝓘(ℝ, E) m (fun y => (f y : E)) x) :

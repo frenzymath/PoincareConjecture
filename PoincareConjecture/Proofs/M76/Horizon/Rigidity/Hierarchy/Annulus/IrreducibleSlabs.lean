@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.IncompressibleCutIrreducibility
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.SlabExcision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

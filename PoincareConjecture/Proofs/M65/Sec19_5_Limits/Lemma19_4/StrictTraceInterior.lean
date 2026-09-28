@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchHarmonicEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ open M65Branch
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem complex_chart_gradient_zero_iff (p : M) {f : LoopPlane → M} {z : ℂ}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 3) f (orthonormalBasisOneI.repr z))
@@ -59,10 +47,6 @@ theorem complex_chart_gradient_zero_iff (p : M) {f : LoopPlane → M} {z : ℂ}
     rw [mfderiv_eq_fderiv, hzero, ContinuousLinearMap.comp_zero] at hc
     change fderiv ℝ G (e z) = 0 at hc
     rw [hd.fderiv, hc, ContinuousLinearMap.zero_comp]
-
-
-
-
 
 theorem interior_differential_zero_alternative (D : LeviCivitaData g)
     {f : LoopPlane → M}

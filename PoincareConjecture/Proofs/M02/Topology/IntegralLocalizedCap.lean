@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCapBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

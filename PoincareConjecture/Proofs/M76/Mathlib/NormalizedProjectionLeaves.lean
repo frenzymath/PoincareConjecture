@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,10 +10,6 @@ open scoped Topology
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem ContinuousOn.exists_normalizedProjection_leaf_neighborhood
     {Q : E → E →L[ℝ] F} {U : Set E} (hQ : ContinuousOn Q U)
@@ -57,9 +44,6 @@ theorem ContinuousOn.exists_normalizedProjection_leaf_neighborhood
 namespace ContinuousLinearMap
 
 variable [FiniteDimensional ℝ F]
-
-
-
 
 theorem isInvertible_comp_of_ker_eq (Q R : E →L[ℝ] F) (J : F →L[ℝ] E)
     (hker : Q.ker = R.ker) (hJ : Function.RightInverse J R) :

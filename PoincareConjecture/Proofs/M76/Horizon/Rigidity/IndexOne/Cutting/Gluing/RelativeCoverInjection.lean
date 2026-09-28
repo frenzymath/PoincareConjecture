@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.ClosedCoverInjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
@@ -22,9 +14,6 @@ private def relativeSetHomeomorph
   right_inv _ := rfl
   continuous_toFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
   continuous_invFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
-
-
-
 
 theorem relative_closed_cover_sides_pi1_injective
     {X : Type*} [MetricSpace X] {R N M : Set X}

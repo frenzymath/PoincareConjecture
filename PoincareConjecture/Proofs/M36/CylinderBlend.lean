@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.JetProductBounds
 import PoincareConjecture.Proofs.M36.SmoothProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

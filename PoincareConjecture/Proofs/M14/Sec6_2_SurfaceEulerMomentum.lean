@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenSurfaceDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {α : ℝ × ℝ → G.Point} {J P : Set ℝ} {T s v d : ℝ}
-
-
-
 
 theorem surfaceEulerPair_eq_zero (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hJ : IsOpen J) (hP : IsOpen P)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityLevels
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCharge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
 
 theorem exists_nonzero_cut_level_charge_bound
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

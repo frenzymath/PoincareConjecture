@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationFlatDevelopment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ noncomputable section
 namespace PoincareConjecture.M60
 
 private abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem metricComplete_of_proper_exhaustion
     {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -52,9 +41,6 @@ theorem metricComplete_of_proper_exhaustion
     exact abs_le.mp hb
   obtain ⟨x, -, phi, hphi, hx⟩ := (hproper r).tendsto_subseq huin
   exact ⟨x, tendsto_nhds_of_cauchySeq_of_subseq hu hphi.tendsto_atTop hx⟩
-
-
-
 
 theorem exists_sphere_compactification (F : Plane ≃ₘ[ℝ] Plane) :
     ∃ H : UnitTwoSphere ≃ₜ UnitTwoSphere,
@@ -181,9 +167,6 @@ private theorem complex_punctured_ball_preconnected (c : ℂ) {r : ℝ} (hr : 0 
     (by rw [← Module.finrank_eq_rank]; norm_num) (0 : ℂ)).isConnected.isPreconnected.image
   exact (OpenPartialHomeomorph.continuous_univBall c r).continuousOn
 
-
-
-
 theorem contDiffAt_of_conformal_punctured
     {f : ℂ → ℂ} {c : ℂ} (hc : ContinuousAt f c)
     (hf : ∀ᶠ z in 𝓝[≠] c, ContDiffAt ℝ ∞ f z ∧ IsConformalMap (fderiv ℝ f z)) :
@@ -239,8 +222,6 @@ private theorem plane_conformal_removal {f : Plane → Plane} {a : Plane}
     (hFs.comp a C.symm.toContinuousLinearEquiv.contDiff.contDiffAt)
   change ContDiffAt ℝ ∞ (fun x => C (C.symm (f (C (C.symm x))))) a at h
   simpa only [C.apply_symm_apply] using h
-
-
 
 theorem contMDiffAt_conformal_sphere_puncture
     (g q : RiemannianMetric 2 UnitTwoSphere) (H : UnitTwoSphere ≃ₜ UnitTwoSphere)
@@ -322,8 +303,6 @@ theorem contMDiffAt_conformal_sphere_puncture
     H.continuous.continuousAt (d.open_target.mem_nhds hHt)] with x hx hHx
   change H x = d (d.symm (H (e (e.symm x))))
   rw [e.right_inv hx, d.right_inv hHx]
-
-
 
 theorem diffeomorph_of_conformal_sphere_puncture
     (g q : RiemannianMetric 2 UnitTwoSphere) (H : UnitTwoSphere ≃ₜ UnitTwoSphere)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.AnnulusOverlap
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.ScalarAnnuli
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -103,8 +94,6 @@ theorem integral_scalarCurvature_posPart_outside_ball_le_of_weighted_scale_annul
   rw [← g.toMetricSpace_ball, ← g.toMetricSpace_ball] at hx
   exact ⟨Metric.ball_subset_closedBall hx.1, hx.2⟩
 
-
-
 theorem integral_scalarCurvature_posPart_ball_le_of_all_weighted_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]
@@ -138,8 +127,6 @@ theorem integral_scalarCurvature_posPart_ball_le_of_all_weighted_scale_annuli
   rw [show 4 * (a / 4) = a by ring, ← g.toMetricSpace_ball p a] at hb
   exact hb
 
-
-
 theorem integral_scalarCurvature_posPart_outside_ball_le_of_nonneg_weighted_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]
@@ -168,7 +155,6 @@ theorem integral_scalarCurvature_posPart_outside_ball_le_of_nonneg_weighted_scal
     simpa only [mul_zero, ← g.toMetricSpace_ball p 0, Metric.ball_zero, sdiff_empty] using hb
   · exact D.integral_scalarCurvature_posPart_outside_ball_le_of_weighted_scale_annuli
       hcomplete p hW hKint hKn ha hr₀ hR hC hm hL hbuffer (fun r hr hr' => hbound r (by linarith) hr hr')
-
 
 theorem integral_scalarCurvature_posPart_outside_iUnion_ball_le_of_weighted_mixed_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]

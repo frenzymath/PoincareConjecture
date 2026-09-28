@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerArcChain
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,9 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 structure M64IntrinsicCornerArcCollar
     {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}
@@ -40,19 +34,10 @@ variable {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J �
   {corner : Bool → J} {sigma : ℝ → AnnulusCoordinates} {T : ℝ}
   (D : M64IntrinsicCornerArcCollar C corner sigma T)
 
-
-
-
 abbrev bands : Set AnnulusCoordinates := ⋃ i, (D.chain.band i).carrier
-
-
-
 
 theorem bands_closed : IsClosed D.bands :=
   isClosed_iUnion_of_finite (fun i => (D.chain.band i).isClosed_carrier)
-
-
-
 
 theorem bands_occupied : D.bands ⊆ closure U := iUnion_subset D.chain.occupied
 

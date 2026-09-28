@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 import Mathlib.Order.Lattice.Nat
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem isFinitePLBallPair_finite_ball_chain
     (B T J Q : ℕ → Set E) (n : ℕ) {F₀ F₁ : Set E}

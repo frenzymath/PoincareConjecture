@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3CutBallObstruction
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RelativeComponentBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

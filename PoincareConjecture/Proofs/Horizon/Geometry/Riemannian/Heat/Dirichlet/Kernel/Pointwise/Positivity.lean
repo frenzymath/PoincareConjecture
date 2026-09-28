@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.TestOrder
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Order
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,7 +14,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {Ω : Set M}
-
 
 theorem heatKernelContinuous_nonneg (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω)

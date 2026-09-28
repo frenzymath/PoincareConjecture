@@ -1,21 +1,12 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64_isCompact_distinct_lift_fibers
     {X Y Z : Type*} [TopologicalSpace X] [TopologicalSpace Y]

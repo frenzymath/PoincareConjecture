@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_component_scalar
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
@@ -48,8 +37,6 @@ theorem terminalSource_regular_component_scalar
   exact hscalar.trans (M13.homothety_scalarCurvature_eq g h
     (Diffeomorph.refl (𝓡 3) M ∞) Q hQ
     (M13.identity_metricHomothety g Q hQ) D DH z.val)
-
-
 
 theorem terminalSource_regular_physical_chart
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]

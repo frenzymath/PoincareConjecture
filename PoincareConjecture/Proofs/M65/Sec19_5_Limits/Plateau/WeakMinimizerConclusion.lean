@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerLipschitzClass
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCompetitors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -56,14 +46,6 @@ private theorem m65NormalizedWeak_energy_competitor
     · have hi : D'.reparameterization.inverse c = im := Subtype.ext hc
       exact Or.inr (by
         simpa only [hi, ContinuousMap.coe_mk] using D'.reparameterization.right_inverse c)
-
-
-
-
-
-
-
-
 
 theorem m65Plateau_weak_minimum (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.AscendingSlope
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

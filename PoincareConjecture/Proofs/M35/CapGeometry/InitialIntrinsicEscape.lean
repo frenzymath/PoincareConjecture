@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialSlabScalar
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthSlabContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem initial_intrinsic_axis_escapes_compact
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -56,8 +45,6 @@ theorem initial_intrinsic_axis_escapes_compact
   have hlarge := (le_max_right 1 (C + 1)).trans hs
   linarith only [h, hlarge]
 
-
-
 theorem exists_initial_intrinsic_scalar_control
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta eta : ℝ}
@@ -69,8 +56,6 @@ theorem exists_initial_intrinsic_scalar_control
   obtain ⟨K, hK, hscalar⟩ := exists_initial_slab_scalar_control E htheta heta
   obtain ⟨R, hR, hescape⟩ := initial_intrinsic_axis_escapes_compact P E htheta hK
   exact ⟨R, hR, fun t ht s hs => hscalar _ (hescape t ht s hs) t ht⟩
-
-
 
 theorem initial_intrinsic_axis_scalar_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace PoincareConjecture.Proofs.M15
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_stableSet_of_minimizing
     (H : GeneralizedLGeometryConclusion G)

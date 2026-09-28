@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.RegularCylinderTransport
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

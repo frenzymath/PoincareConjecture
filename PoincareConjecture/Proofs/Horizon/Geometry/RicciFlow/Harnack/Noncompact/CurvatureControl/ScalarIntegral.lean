@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_uniform_unitBall_volume_lower_bound (n : ℕ) :
     ∃ C : ℝ, 0 < C ∧
@@ -46,7 +36,6 @@ theorem exists_uniform_unitBall_volume_lower_bound (n : ℕ) :
   exact (by norm_num : (-1 : ℝ) ≤ 0).trans
     ((F.connection t).sectionalCurvature_nonneg_of_nonnegative_curvatureOperator
       x (hoperator t ht' x) v w)
-
 
 theorem exists_uniform_unitBall_volume_lower_bound_three :
     ∃ C : ℝ, 0 < C ∧

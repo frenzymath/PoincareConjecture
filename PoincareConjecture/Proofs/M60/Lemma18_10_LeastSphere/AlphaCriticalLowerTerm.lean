@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalNormalizedEquation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalMetricNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,7 +31,6 @@ local instance suLowerTermTrilinearSpace {n : ℕ} :
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
 def suWeakAlphaLowerTerm
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -57,8 +46,6 @@ def suWeakAlphaLowerTerm
     (fun i => fderiv ℝ suAlphaRoundFactor x (EuclideanSpace.single i 1)) d (alpha - 1)
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem SUInitialGain.alpha_lowerTerm_memLp
     {n : ℕ} {M : Type*} [TopologicalSpace M]

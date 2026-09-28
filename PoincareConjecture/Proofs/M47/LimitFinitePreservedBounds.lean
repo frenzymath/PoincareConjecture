@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFinitePreservedSearch
 import PoincareConjecture.Proofs.M47.LimitNoncollapseShiftedSearchExistence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +27,6 @@ private theorem preserved_readout_eq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   exact ⟨rfl, rfl, rfl⟩
-
-
 
 theorem limitFinite_exists_preserved_bounded_search
     (S : RepairedControlledSchedulesData.{u})

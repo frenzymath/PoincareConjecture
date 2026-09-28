@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M38.CutBallSides
 import PoincareConjecture.Proofs.M38.BallCoordinatePatch
 import PoincareConjecture.Proofs.M38.UnionRefinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   (S : Set (Fin (F.event T hT).cap_count))
   (i : Fin (F.event T hT).cap_count)
 
-
-
 noncomputable def singleCutSideIdentify
     (B : SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)))
     (U : TopologicalSpace.Opens (partialCappedCarrier F T hT P (insert i S)).carrier)
@@ -42,7 +31,6 @@ noncomputable def singleCutSideIdentify
   composeRegions (openCarrierBallPuncture B U hBU)
     (restrictRegions (singleCutRegionEquivalence F T hT P S i) _ hW)
 
-
 theorem singleCutSideIdentify_map
     (B : SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)))
     (U : TopologicalSpace.Opens (partialCappedCarrier F T hT P (insert i S)).carrier)
@@ -52,7 +40,6 @@ theorem singleCutSideIdentify_map
     (y : (openCarrier (partialCappedCarrier F T hT P (insert i S)) U).carrier) :
     (singleCutSideIdentify F T hT P S i B U hBU hW).map y =
       (singleCutRegionEquivalence F T hT P S i).map y.val := rfl
-
 
 theorem singleCutSideRegion_open
     (B : SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)))
@@ -68,8 +55,6 @@ theorem singleCutSideRegion_open
     (U.isOpen.inter (surgeryBall_closedImage_compact B 1 (by norm_num)).isClosed.isOpen_compl) hW
 
 variable (hi : i ∉ S)
-
-
 
 theorem singleCutRegionEquivalence_collar (positive : Bool) (z : UnitTwoSphere)
     (s : ℝ) (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -99,9 +84,6 @@ theorem singleCutRegionEquivalence_collar (positive : Bool) (z : UnitTwoSphere)
   rw [capAttachCoordinates_vector hz]
 
 include hi in
-
-
-
 
 theorem singleCut_separating_step
     (hsep : ConnectedComponents.mk ((singleCutBall F T hT P S i false).map 0) ≠

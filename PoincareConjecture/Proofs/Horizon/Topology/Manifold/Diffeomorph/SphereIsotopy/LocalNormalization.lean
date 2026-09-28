@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.ChartLinearization
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +14,6 @@ namespace Poincare.Manifold.SphereIsotopy
 private abbrev E2 := EuclideanSpace ℝ (Fin 2)
 private abbrev E3 := EuclideanSpace ℝ (Fin 3)
 private abbrev S2 := PoincareConjecture.UnitTwoSphere
-
 
 def centeredChart (p : S2) : OpenPartialHomeomorph S2 E2 := by
   let : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
@@ -53,8 +42,6 @@ theorem centeredChart_mem_maximalAtlas (p : S2) :
   have hp : p ∈ (centeredChart p).source := by
     simpa using ne_neg_of_mem_unit_sphere ℝ p
   simpa only [centeredChart_apply_center] using (centeredChart p).left_inv hp
-
-
 
 theorem exists_local_linearization
     (d : Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞) (p : S2) :

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedG
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +17,6 @@ namespace M14StableSet
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport n X time I)
   {T τ : ℝ} {x : G.Point}
-
 
 noncomputable def empty_of_no_survivor
     (E : M14ExponentialFamily G T x) (hτ : 0 < τ)
@@ -106,7 +94,6 @@ theorem exists_survivor_of_capture
     q (show (0 : ℝ) < 1 by norm_num)
   rw [← calibratedMetricVolume_eq_volumeMeasure] at hpositive
   exact (ne_of_gt hpositive) (measure_mono_null (subset_univ _) hnull')
-
 
 theorem exists_stable_of_capture
     (O : M14OrdinaryProviders.{u} n)

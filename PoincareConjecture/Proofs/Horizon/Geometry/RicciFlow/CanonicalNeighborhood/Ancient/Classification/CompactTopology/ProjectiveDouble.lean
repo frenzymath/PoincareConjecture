@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactTopology.Covering
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.ProjectiveDouble.Infinite
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [CompactSpace M] [ConnectedSpace M]
-
-
 
 theorem not_nonempty_smoothProjectiveDoubleModel_of_compact_positive_sectional
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -42,8 +32,6 @@ namespace PoincareConjecture.ClosedComponentCertificate
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [CompactSpace M] [ConnectedSpace M]
-
-
 
 theorem not_univ_of_projectiveDouble_of_compact_positive_sectional
     {Y : Set M} (C : ClosedComponentCertificate .realProjectiveThreeConnectedSum Y)

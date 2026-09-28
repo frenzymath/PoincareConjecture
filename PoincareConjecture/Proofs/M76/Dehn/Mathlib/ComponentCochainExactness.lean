@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponent
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,9 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "KA" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 local notation "AA" => A.vertexAbstractComplex.toPreAbstractSimplicialComplex
-
-
-
 
 theorem edgeCoboundary_zeroExtend_of_closed_cofaces (hAK : A ≤ K)
     (hcoface : ∀ {s t : Finset E}, s ∈ A.faces → t ∈ K.faces → s ⊆ t → t ∈ A.faces)
@@ -63,9 +50,6 @@ theorem edgeCoboundary_zeroExtend_of_closed_cofaces (hAK : A ≤ K)
     exact Function.extend_apply' (f := (i2 : Edge AA → Edge KA))
       z (0 : Edge KA → ZMod 2) e hne
 
-
-
-
 theorem edge_incidence_exact_of_closed_cofaces (hAK : A ≤ K)
     (hcoface : ∀ {s t : Finset E}, s ∈ A.faces → t ∈ K.faces → s ⊆ t → t ∈ A.faces)
     (hexact : LinearMap.ker (edgeCoboundary KA) = LinearMap.range (vertexCoboundary KA)) :
@@ -87,9 +71,6 @@ theorem edge_incidence_exact_of_closed_cofaces (hAK : A ≤ K)
     exact edgeCoboundary_vertexCoboundary AA a
 
 variable [DecidableEq E]
-
-
-
 
 theorem edgeComponentComplex_edge_exactness
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)

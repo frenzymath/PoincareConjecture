@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.SourceSla
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.ComplementarySlabContraction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ClopenIncompressibility
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

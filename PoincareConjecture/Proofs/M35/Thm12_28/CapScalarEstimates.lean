@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem abs_scalar_directional_le_scalarGradientNorm
     {M : Type u} [TopologicalSpace M]
@@ -41,8 +31,6 @@ end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.StandardCapNeighborhood
 
-
-
 theorem scalar_analytic_bounds {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
     {F : MaximalStandardCapFlow g₀} {t epsilon C : ℝ} {x : StandardCapSpace}
     (N : StandardCapNeighborhood atlas F t epsilon C x) :
@@ -63,9 +51,6 @@ theorem scalar_analytic_bounds {atlas : StandardCylinderAtlas} {g₀ : StandardI
 end PoincareConjecture.StandardCapNeighborhood
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem capCertificate_scalar_analytic_bounds
     {M : Type u} [TopologicalSpace M]

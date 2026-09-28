@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPuncturedMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ noncomputable section
 namespace PoincareConjecture.M60
 
 private abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem sphere_uniformization (q : RiemannianMetric 2 UnitTwoSphere) :
     ∃ phi : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere, M60WeaklyConformal q phi := by

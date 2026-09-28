@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCochainIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,39 +9,30 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
 
-
 abbrev Tetrahedron := {s : Finset ι // s ∈ A.faces ∧ s.card = 4}
 
 variable [Fintype ι]
 
 open Classical in
 
-
 noncomputable def tetrahedronTriangles (q : Tetrahedron A) : Finset (Triangle A) :=
   Finset.univ.filter (fun t => t.val ⊆ q.val)
 
 open Classical in
 
-
 noncomputable def edgeTetrahedronTriangles (e : Edge A) (q : Tetrahedron A) :
     Finset (Triangle A) :=
   Finset.univ.filter (fun t => e.val ⊆ t.val ∧ t.val ⊆ q.val)
 
-
-
 noncomputable def triangleCoboundary :
     (Triangle A → ZMod 2) →ₗ[ZMod 2] (Tetrahedron A → ZMod 2) :=
   LinearMap.pi fun q => ∑ t ∈ tetrahedronTriangles A q, LinearMap.proj t
-
-
 
 theorem triangleCoboundary_apply (c : Triangle A → ZMod 2) (q : Tetrahedron A) :
     triangleCoboundary A c q = ∑ t ∈ tetrahedronTriangles A q, c t := by
   simp [triangleCoboundary]
 
 open Classical in
-
-
 
 theorem edgeTetrahedronTriangles_card (e : Edge A) (q : Tetrahedron A) :
     (edgeTetrahedronTriangles A e q).card = if e.val ⊆ q.val then 2 else 0 := by
@@ -103,8 +85,6 @@ theorem edgeTetrahedronTriangles_card (e : Edge A) (q : Tetrahedron A) :
     intro t ht
     exact heq ((Finset.mem_filter.mp ht).2.1.trans (Finset.mem_filter.mp ht).2.2)
 
-
-
 theorem triangleCoboundary_edgeCoboundary (z : Edge A → ZMod 2) :
     triangleCoboundary A (edgeCoboundary A z) = 0 := by
   classical
@@ -130,8 +110,6 @@ theorem triangleCoboundary_edgeCoboundary (z : Edge A → ZMod 2) :
       · rw [if_pos heq]
         exact CharTwo.two_nsmul (z e)
       · rw [if_neg heq, zero_nsmul]
-
-
 
 theorem boundary2_boundary3
     (z : Module.Dual (ZMod 2) (Tetrahedron A → ZMod 2)) :

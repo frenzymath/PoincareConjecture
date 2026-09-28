@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyMV
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomology
 import Mathlib.Algebra.Homology.HomologySequenceLemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

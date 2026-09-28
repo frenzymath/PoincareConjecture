@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.SphereApproximation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.ConeTopology
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open scoped Topology NNReal ENNReal Manifold ContDiff
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] [ProperSpace X] {p : X}
-
-
 
 theorem exists_dense_based_ray_sequence (hc : RayComparison p)
     (hne : Nonempty (basedMinimizingRays p)) :
@@ -38,7 +27,6 @@ theorem exists_dense_based_ray_sequence (hc : RayComparison p)
   refine ⟨η, hd, ?_⟩
   exact (surjective_asymptoticConeUnitProjection hc).denseRange.comp hd
     (isometry_asymptoticConeUnitProjection hc).continuous
-
 
 theorem exists_finite_ray_net_of_dense (hc : RayComparison p)
     (η : ℕ → basedMinimizingRays p)
@@ -66,8 +54,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem exists_dense_ray_sequence_with_source_sphere_nets
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

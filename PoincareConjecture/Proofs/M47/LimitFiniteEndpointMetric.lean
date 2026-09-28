@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointStageAgreement
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointStageFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +25,6 @@ private local instance finiteEndpointMetricManifold :
 
 local notation "U" => (fun m : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m))
-
-
 
 theorem limitFinite_exists_endpoint_metric (d : ℕ → ℝ) (hd : ∀ m, 0 < d m)
     (A : ∀ m, RicciFlow 3 (U m) (Ioo (-H.toReal - d m / 8) (-H.toReal + d m / 4)))

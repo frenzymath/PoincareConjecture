@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalPrincipalRegularity
 import PoincareConjecture.Proofs.M34.Standard.UniformCanonicalPrincipal
 import PoincareConjecture.Proofs.M34.Standard.UniformCanonicalReaction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_uniform_actual_curvature_integral_energy_bound
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

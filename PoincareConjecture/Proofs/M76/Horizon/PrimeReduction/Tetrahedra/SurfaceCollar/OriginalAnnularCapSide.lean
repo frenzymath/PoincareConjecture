@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalCapAnnulusDisk
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

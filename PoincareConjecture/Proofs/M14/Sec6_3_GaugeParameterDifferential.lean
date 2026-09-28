@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {β : E → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b} {z : E}
-
-
-
 
 theorem gaugeMap_projectedDifferential
     (hβ : MDifferentiableAt (𝓘(ℝ, E)) (spacetimeModel n) β z) (v : E) :
@@ -59,9 +47,6 @@ private theorem projected_tangent_heq {q r : G.Point} (h : q = r)
   cases h
   cases hv
   rfl
-
-
-
 
 theorem gaugeMap_projectedDifferential_congr {γ : E → G.Point}
     (hβ : MDifferentiableAt (𝓘(ℝ, E)) (spacetimeModel n) β z)

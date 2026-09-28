@@ -1,7 +1,5 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

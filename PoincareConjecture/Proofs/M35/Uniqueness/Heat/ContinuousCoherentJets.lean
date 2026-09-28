@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ContinuousWeakJets
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.InteriorCoherentJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

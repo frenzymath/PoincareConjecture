@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalFiniteEdgeIntersections
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Intersections.Cover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,11 +15,6 @@ variable {U V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem MarkedSurfaceMotionData.finite_edge_comparison_intersection
     {s t : Stage e S f r C} {step : Step s t}

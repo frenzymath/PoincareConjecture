@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularSpatialDerivative
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -25,8 +17,6 @@ private theorem horizontal_t2Space {q : G.Point} : T2Space (G.Horizontal q) :=
 
 attribute [local instance] horizontal_t2Space
 
-
-
 theorem horizontal_inner_sum_sq (q : G.Point)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal q))
     (hb : ∀ i j, G.spacetime.horizontalMetric.inner q (b i) (b j) = if i = j then 1 else 0)
@@ -39,8 +29,6 @@ theorem horizontal_inner_sum_sq (q : G.Point)
   have h := (b.toOrthonormalBasis hbo).sum_sq_inner_left A
   change (∑ i, (inner ℝ A (b i)) ^ 2) = inner ℝ A A
   simpa only [Module.Basis.coe_toOrthonormalBasis, real_inner_self_eq_norm_sq] using h
-
-
 
 theorem reducedLengthGradientNormSq_eq_of_differential
     {T τ₁ : ℝ} (x q : G.Point) (b : Module.Basis (Fin n) ℝ (G.Horizontal q))
@@ -60,8 +48,6 @@ private theorem inner_transport {q r : G.Point} (h : q = r) (A : G.Horizontal q)
       G.spacetime.horizontalMetric.inner q A A := by
   cases h
   rfl
-
-
 
 theorem reducedLengthGradientNormSq_eq_squareEnergy
     (hCoordinates : M12MetricPredecessors.{0} n)

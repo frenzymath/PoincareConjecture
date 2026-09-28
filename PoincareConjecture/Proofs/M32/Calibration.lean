@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M31
 import PoincareConjecture.Proofs.M32.Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m31M32UniformCalibration
     (L31 : RepairedSingularRegularLimitTheory.{u})
@@ -49,8 +37,6 @@ theorem m31M32UniformCalibration
     exact (mul_le_mul_of_nonneg_left
       (he0.trans (min_le_left e31 e32)) terminalAccuracyFactor_pos.le).trans hA
 
-
-
 theorem m31M32CalibrationFromMilestones
     (A : RepairedNeckCapTopologyTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ terminalAccuracyFactor * epsilon₀ ≤ A.epsilon₀ ∧
@@ -65,8 +51,6 @@ theorem m31M32CalibrationFromMilestones
         0 < epsilon → epsilon ≤ epsilon₀ → 0 < C → 0 < analyticConstant →
         Nonempty (M32DeepHornScaleSelection.{u} epsilon C analyticConstant)) :=
   m31M32UniformCalibration m31SingularRegularLimitTheory m32HornSelectionFromMilestones A
-
-
 
 noncomputable def M32DeepHornScaleSelection.restrictHeight
     {epsilon C analyticConstant : ℝ}
@@ -91,7 +75,6 @@ noncomputable def M32DeepHornScaleSelection.restrictHeight
     intro rho delta a hr hd ha hle
     exact S.deep_horn rho delta a hr hd ha (hle.trans (min_le_left _ _))
 
-
 theorem M32DeepHornScaleSelection.restrictHeight_le_radius
     {epsilon C analyticConstant : ℝ}
     (S : M32DeepHornScaleSelection.{u} epsilon C analyticConstant)
@@ -99,7 +82,6 @@ theorem M32DeepHornScaleSelection.restrictHeight_le_radius
     (rho delta : ℝ) :
     (S.restrictHeight factor bound hfactor hbound).h rho delta ≤ factor * rho :=
   (min_le_right _ _).trans (min_le_left _ _)
-
 
 theorem M32DeepHornScaleSelection.restrictHeight_le_bound
     {epsilon C analyticConstant : ℝ}

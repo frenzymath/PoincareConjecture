@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedInteriorSmooth
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitStrongEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem exists_rescaled_harmonic_chart_of_weighted_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

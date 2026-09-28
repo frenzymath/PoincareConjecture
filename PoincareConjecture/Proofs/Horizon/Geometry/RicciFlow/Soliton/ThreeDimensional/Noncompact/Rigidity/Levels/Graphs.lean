@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit.Factor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.AtInfinity.Normalized
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
     (fun _ => G.unscaledSourceFlow.shrink.metric)
     (fun k => equivShrink M (q k)) 1)
   (B : G.NormalizedPotentialLimit L)
-
-
 
 theorem exists_zeroLevel_potentialLevelGraphs
     (hP : ThreeDimensionalClassificationPredecessors.{u})

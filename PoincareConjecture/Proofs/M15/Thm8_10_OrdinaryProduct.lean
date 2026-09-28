@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval}
 
-
-
 noncomputable def ordinaryProductTransport
     (F : RicciFlow n M I.domain)
     (P : OrdinaryProductRicciGeometry F.metric I) :
@@ -35,9 +24,6 @@ noncomputable def ordinaryProductTransport
   gaugeCover := P.cover
   leafwise := P.leafwiseConnection
   ricciEquation := (P.equation_iff F.connection).mpr F.equation
-
-
-
 
 noncomputable def ordinaryProductCylinderMetric
     (F : RicciFlow n M I.domain)
@@ -51,9 +37,6 @@ noncomputable def ordinaryProductCylinderMetric
     have h := P.product.productMetric.metric_eq t x v w
     simpa only [P.product.productMetric_eq] using h
 
-
-
-
 theorem ordinaryProduct_moving_calculus
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (F : RicciFlow n M I.domain)
@@ -65,8 +48,6 @@ theorem ordinaryProduct_moving_calculus
   exact H.moving_calculus M I P.product.productCylinder.toMovingSpacetimeGauge
     (ordinaryProductCylinderMetric F P).toMovingSpacetimeGaugeGeometry F.connection
 
-
-
 theorem ordinaryProductCylinder_range
     (F : RicciFlow n M I.domain)
     (P : OrdinaryProductRicciGeometry F.metric I) :
@@ -74,9 +55,6 @@ theorem ordinaryProductCylinder_range
   apply range_eq_univ.mpr
   intro q
   exact ⟨q, P.product.productCylinder_eq q⟩
-
-
-
 
 theorem ordinaryProduct_spatial_smooth
     (F : RicciFlow n M I.domain)

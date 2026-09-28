@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapt
 import PoincareConjecture.Proofs.M60.Mathlib.MetricPullbackForm
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64AreaGram_entry_contDiffAt
     {f : LoopPlane → M} {p : LoopPlane}
@@ -47,9 +33,6 @@ theorem m64AreaGram_entry_contDiffAt
       (Bundle.contMDiffAt_totalSpace.mp h).2
   exact contMDiffAt_iff_contDiffAt.mp hg
 
-
-
-
 theorem m64EnergyDensity_contDiffOn
     {f : LoopPlane → M} {O : Set LoopPlane} (hO : IsOpen O)
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) ∞ f O) :
@@ -63,10 +46,6 @@ theorem m64EnergyDensity_contDiffOn
     (fun q => (1 / 2 : ℝ) * Matrix.trace (m60AreaGram g f q)) O p
   simp_rw [Matrix.trace_fin_two]
   exact h.contDiffWithinAt
-
-
-
-
 
 theorem m64Annulus_conformal_on_interior_of_ae
     {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

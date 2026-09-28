@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.style.haveILetI false

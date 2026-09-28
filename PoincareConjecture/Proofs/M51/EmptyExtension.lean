@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyRawFlow
 import PoincareConjecture.Proofs.M51.EmptyRetained
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

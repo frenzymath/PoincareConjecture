@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.F
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.SliceIsotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Partition.Sides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +20,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem disjoint_of_opposite_ends_of_isSeparating (N : EpsilonNeck g)
     (hN : N.IsSeparating) {T V : Set M} (hT : IsPreconnected T) (hV : IsPreconnected V)
@@ -111,9 +98,6 @@ theorem disjoint_of_opposite_ends_of_isSeparating (N : EpsilonNeck g)
 end EpsilonNeck
 
 namespace BalancedNeckChain
-
-
-
 
 theorem exists_prepend_no_return_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -208,9 +192,6 @@ theorem exists_prepend_no_return_threshold :
     rw [P.coordinate_inverse_coordinate_map hz] at hlow
     exact hx.2.2.trans hlow
   exact hTV.mono (fun x hx => mem_iUnion₂.mpr ⟨j, ⟨haj, le_rfl⟩, hx⟩) hquarter
-
-
-
 
 theorem exists_uniform_negative_end_exclusion_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

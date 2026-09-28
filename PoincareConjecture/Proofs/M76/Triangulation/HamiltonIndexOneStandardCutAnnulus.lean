@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMeridianBand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -200,8 +191,6 @@ private theorem band_finitePL_interval {a b : ℝ} (hab : a < b) :
   rw [show -(1 / 4 : ℝ) * p.1 1 = -p.1 1 / 4 by ring]
   rfl
 
-
-
 theorem standardMeridianBandMap_period_endpoint (x : V2) (delta : ℝ) :
     standardMeridianBandMap (x, 14 - delta) =
       standardMeridianBandMap (x, -delta) := by
@@ -209,9 +198,6 @@ theorem standardMeridianBandMap_period_endpoint (x : V2) (delta : ℝ) :
     rw [show (14 - delta : ℝ) = -delta + 4 * (7 / 2 : ℝ) by ring]
     exact AddCircle.coe_add_period _ _
   simp only [standardMeridianBandMap, h]
-
-
-
 
 theorem exists_standard_cut_annulus {delta : ℝ} (hdelta : 0 < delta)
     (hsmall : delta ≤ (1 / 4 : ℝ)) :

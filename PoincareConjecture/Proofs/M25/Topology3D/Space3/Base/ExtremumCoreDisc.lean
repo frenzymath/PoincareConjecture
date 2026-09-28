@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreProtecti
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorseProduct
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem nativeDiscChart_geometry
     (F : OpenPartialHomeomorph E2 UnitTwoSphere)
@@ -75,7 +63,6 @@ theorem nativeDiscChart_geometry
   · rintro _ ⟨x, hx, rfl⟩
     exact F.map_source (hsource hx)
   · rw [hopen.frontier_eq, hclosure, hdiff]
-
 
 theorem FamilySourceAtlas.exists_extremum_core_disc
     {original : UnitTwoSphere × ℝ → E3}

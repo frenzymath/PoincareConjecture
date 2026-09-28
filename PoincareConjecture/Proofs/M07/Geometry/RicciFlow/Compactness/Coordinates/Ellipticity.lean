@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactDifferential
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem tangentNorm_radial_of_normalized_exponential
     (g : RiemannianMetric n M) (p : M)
@@ -63,8 +50,6 @@ theorem tangentNorm_radial_of_normalized_exponential
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
-
-
 
 theorem eventually_uniform_elliptic_exponential_charts
     {n : ℕ} {T' T : ℝ}

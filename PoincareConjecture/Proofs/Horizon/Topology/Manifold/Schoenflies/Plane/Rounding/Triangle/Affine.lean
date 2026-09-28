@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ open Set Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
 
 theorem roundedVertexPath_affine {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] (L : E →L[ℝ] F) (b : F)
@@ -50,8 +41,6 @@ private theorem planeDet_basis_injective {a b : EuclideanSpace ℝ (Fin 2)}
   apply Complex.ext <;> simp only [Complex.zero_re, Complex.zero_im]
   · exact (mul_eq_zero.mp hre).resolve_right h
   · exact (mul_eq_zero.mp him).resolve_right h
-
-
 
 theorem exists_affine_diffeomorph_rounded_triangle
     (e : ℂ ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 2))

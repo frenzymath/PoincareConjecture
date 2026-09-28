@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentStripProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap PLStrip
@@ -17,9 +8,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePL.exists_segment_collar {S : Set E} {e : square ≃ₜ S}
     (he : e.IsFinitePL) (A : E → ℝ) {l r : E} (hlr : l ≠ r)

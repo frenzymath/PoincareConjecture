@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem projKer_affineLeafMap_sub_zero (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
@@ -34,8 +23,6 @@ theorem projKer_affineLeafMap_sub_zero (a : F →ᴬ[ℝ] E) (Q : F → E →L[�
   rw [he, map_add, a.projKer_affineLeafMap_sub Q x0 h0,
     ContinuousLinearMap.projKerOfRightInverse_comp_inv, add_zero]
 
-
-
 theorem apply_affineLeafMap_sub_zero (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
     (z : F × (Q x0).ker) :
@@ -48,10 +35,6 @@ theorem apply_affineLeafMap_sub_zero (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ
     abel
   have hz : Q x0 (z.2 : E) = 0 := z.2.property
   rw [he, map_sub, map_add, ha, h0, h0, hz, add_zero]
-
-
-
-
 
 theorem injOn_affineLeafMap_of_lipschitz (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
@@ -80,9 +63,6 @@ theorem injOn_affineLeafMap_of_lipschitz (a : F →ᴬ[ℝ] E) (Q : F → E →L
     nlinarith [norm_nonneg (u.1 - v.1)]
   exact Prod.ext (sub_eq_zero.mp (norm_eq_zero.mp hzbase)) hz
 
-
-
-
 theorem exists_pos_injOn_affineLeafMap (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
     {C : Set F} {K : ℝ≥0} (hQ : LipschitzOnWith K Q C) :
@@ -98,9 +78,6 @@ theorem exists_pos_injOn_affineLeafMap (a : F →ᴬ[ℝ] E) (Q : F → E →L[�
   rintro ⟨x, z⟩ ⟨hx, hz⟩
   refine ⟨hx, lt_of_le_of_lt ?_ hKε⟩
   exact mul_le_mul_of_nonneg_left (mem_ball_zero_iff.mp hz).le K.coe_nonneg
-
-
-
 
 theorem exists_pos_injOn_affineLeafMap_of_compact (a : F →ᴬ[ℝ] E)
     (Q : F → E →L[ℝ] F) (x0 : F)

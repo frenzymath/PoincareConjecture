@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricBoundaryFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MaximalFaceDual
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -54,8 +52,6 @@ theorem rim_edge_dualBlock_space {s : Finset E} (hs : s ∈ (T.marked 3).faces)
   exact (Finset.eq_of_subset_of_card_le hst (by
     rw [hscard]
     exact T.rim_face_card_le_two ht)).symm
-
-
 
 theorem exists_edge_zero_arc {s : Finset E} (hs : s ∈ (T.marked 2).faces)
     (hscard : s.card = 2) :

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedSurfaceEdgePosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.TransverseSurfaceEdgeCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_protected_surface_edge_charts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

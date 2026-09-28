@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Collars.Placement
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Collars.Restriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {delta D R : ℝ}
-
 
 structure SoulCapGeometry (G : SoulNeckRegion K S delta D R) (epsilon : ℝ) where
   epsilon_pos : 0 < epsilon
@@ -113,8 +102,6 @@ theorem strong_outside_core (hle : delta ≤ epsilon) (hhalf : epsilon < 1 / 2)
   exact ⟨restrictStrongNeck N hle hhalf, hN⟩
 
 end SoulCapGeometry
-
-
 
 theorem exists_soulCapGeometry_threshold {epsilon : ℝ}
     (he : 0 < epsilon) (hesmall : epsilon ≤ 1 / 200) :

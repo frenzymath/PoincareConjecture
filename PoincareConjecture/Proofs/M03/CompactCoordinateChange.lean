@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

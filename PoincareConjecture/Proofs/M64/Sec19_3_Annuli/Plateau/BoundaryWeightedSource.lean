@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedOperators
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,10 +31,6 @@ local instance m64WeightedSource_pairGroup : NormedAddCommGroup (P →L[ℝ] P �
 local instance m64WeightedSource_pairSpace : NormedSpace ℝ (P →L[ℝ] P →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
 def m64WeightedPairMetricDerivative
     (w : Fin 2 → ℝ) (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) : P →L[ℝ] P →L[ℝ] E →L[ℝ] ℝ :=
   let T := (ContinuousLinearMap.flipₗᵢ ℝ E E ℝ).toContinuousLinearEquiv.toContinuousLinearMap.comp
@@ -53,18 +38,10 @@ def m64WeightedPairMetricDerivative
   w 0 • T.bilinearComp (ContinuousLinearMap.fst ℝ E E) (ContinuousLinearMap.fst ℝ E E) +
     w 1 • T.bilinearComp (ContinuousLinearMap.snd ℝ E E) (ContinuousLinearMap.snd ℝ E E)
 
-
-
-
-
 theorem m64WeightedPairMetricDerivative_apply
     (w : Fin 2 → ℝ) (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (v z : P) (a : E) :
     m64WeightedPairMetricDerivative w D v z a =
       w 0 * D a v.1 z.1 + w 1 * D a v.2 z.2 := rfl
-
-
-
-
 
 theorem m64Trilinear_mixed_norm_bound (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
     {C : ℝ} (hD : ‖D‖ ≤ C) (a v z : E) : |D a v z| ≤ C * ‖a‖ * ‖v‖ * ‖z‖ := by
@@ -72,10 +49,6 @@ theorem m64Trilinear_mixed_norm_bound (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] �
     _ ≤ ‖D a‖ * ‖v‖ * ‖z‖ := (D a).le_opNorm₂ v z
     _ ≤ (‖D‖ * ‖a‖) * ‖v‖ * ‖z‖ := by gcongr; exact D.le_opNorm a
     _ ≤ _ := by gcongr
-
-
-
-
 
 theorem m64WeightedPairMetricDerivative_norm_le
     (w : Fin 2 → ℝ) (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
@@ -107,9 +80,6 @@ theorem m64WeightedPairMetricDerivative_norm_le
       · exact norm_snd_le _
     _ = _ := by ring
 
-
-
-
 theorem m64WeightedPairMetricDerivative_sub
     (w : Fin 2 → ℝ) (D T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :
     m64WeightedPairMetricDerivative w (D - T) =
@@ -123,16 +93,9 @@ theorem m64WeightedPairMetricDerivative_sub
   simp only [sub_apply, m64WeightedPairMetricDerivative_apply]
   ring
 
-
-
-
-
 def m64WeightedQuadraticSource
     (w : Fin 2 → ℝ) (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (v : P) : E →L[ℝ] ℝ :=
   (-1 / 2 : ℝ) • m64WeightedPairMetricDerivative w D v v
-
-
-
 
 theorem m64WeightedQuadraticSource_gradient_bound
     (w : Fin 2 → ℝ) (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
@@ -156,10 +119,6 @@ theorem m64WeightedQuadraticSource_gradient_bound
   norm_num only [abs_div, abs_neg, abs_one]
   exact (mul_le_mul_of_nonneg_left hbound (by norm_num : (0 : ℝ) ≤ 1 / 2)).trans_eq
     (by ring)
-
-
-
-
 
 theorem m64WeightedQuadraticSource_base_bound
     (w : Fin 2 → ℝ) (D T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)

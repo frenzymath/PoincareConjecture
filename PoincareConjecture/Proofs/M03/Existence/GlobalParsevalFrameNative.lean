@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.LocalOrthonormalFrameNative
 import PoincareConjecture.Proofs.M03.Existence.TensorProbeL2Native
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option backward.isDefEq.respectTransparency false
@@ -141,7 +133,6 @@ theorem normalizedChartField_sum_repr (g : RiemannianMetric n M) (p : iota → M
       Finset.sum_congr rfl (fun i _ => hlocal i)
     _ = (∑ i, (partitionNormalizer phi x * phi i x) ^ 2) • v := (Finset.sum_smul).symm
     _ = v := by rw [partitionNormalizer_sum_sq phi hsum x, one_smul]
-
 
 theorem exists_finite_smooth_parseval_fields [T2Space M] [CompactSpace M]
     (g : RiemannianMetric n M) :

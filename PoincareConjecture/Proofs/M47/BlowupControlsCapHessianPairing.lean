@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapHessianContraction
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTensorAction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -31,8 +23,6 @@ theorem cap_sum_four_tuple (f : Idx → ℝ) :
     _ = _ := by
       simp only [Fintype.sum_prod_type]
       rfl
-
-
 
 theorem cap_hessian_scalar_pairing_le
     (A : I → I → ℝ) (hA : ∀ i j, A i j = A j i)

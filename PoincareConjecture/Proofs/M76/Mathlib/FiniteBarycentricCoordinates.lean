@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricRealization
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +11,6 @@ namespace StdSimplexCore
 variable {ι E F : Type*} [Fintype ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem map_barycentricMap (A : E →ᵃ[ℝ] F) (v : ι → E)
     {q : ι → ℝ} (hq : ∑ i, q i = 1) :
@@ -38,10 +28,6 @@ open StdSimplexCore
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_barycentric_leftInverse (K : SimplicialComplex ℝ E)
     [Fintype K.vertices] :
@@ -79,19 +65,12 @@ theorem exists_barycentric_leftInverse (K : SimplicialComplex ℝ E)
   ext i
   simp [Pi.single_apply, Pi.smul_apply, Finset.sum_apply]
 
-
-
-
 theorem injOn_barycentricMap_vertexComplex (K : SimplicialComplex ℝ E)
     [Fintype K.vertices] :
     InjOn (barycentricMap ((↑) : K.vertices → E))
       K.vertexAbstractComplex.toPreAbstractSimplicialComplex.barycentricSpace := by
   obtain ⟨_, _, hleft⟩ := K.exists_barycentric_leftInverse
   exact hleft.injOn
-
-
-
-
 
 noncomputable def finiteBarycentricHomeomorph (K : SimplicialComplex ℝ E)
     [Fintype K.vertices] :
@@ -106,8 +85,6 @@ noncomputable def finiteBarycentricHomeomorph (K : SimplicialComplex ℝ E)
         K.injOn_barycentricMap_vertexComplex)
       (((barycentricMap v).continuous.comp continuous_subtype_val).subtype_mk _)
   exact e.trans (Homeomorph.setCongr K.image_barycentricSpace)
-
-
 
 theorem finiteBarycentricHomeomorph_apply (K : SimplicialComplex ℝ E)
     [Fintype K.vertices]

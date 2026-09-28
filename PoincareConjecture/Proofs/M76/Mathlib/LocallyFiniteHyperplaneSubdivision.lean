@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedLocalFiniteness
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open scoped BigOperators
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_locallyFinite_subdivision_respectsAffineHyperplane
     (K : SimplicialComplex ℝ E)
@@ -89,9 +76,6 @@ theorem exists_locallyFinite_subdivision_respectsAffineHyperplane
     intro x hx
     obtain ⟨s, hs, rfl⟩ := Finset.mem_image.mp hx
     exact le_of_not_gt (fun h => hpos ⟨s, hs, h⟩)
-
-
-
 
 theorem exists_locallyFinite_subdivision_respectsAffineHyperplanes
     (K : SimplicialComplex ℝ E)

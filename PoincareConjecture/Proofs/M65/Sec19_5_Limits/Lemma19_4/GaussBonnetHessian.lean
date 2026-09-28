@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetProject
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussMapConnection
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,18 +17,12 @@ open M65Branch
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {h : RiemannianMetric 2 LoopPlane}
 
-
-
-
 def conformalTangentProjection (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (F : LoopPlane → EuclideanSpace ℝ (Fin n)) (x : LoopPlane) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   twoPlaneProjection (g.euclideanCoefficients (F x))
     (fderiv ℝ F x (EuclideanSpace.basisFun (Fin 2) ℝ 0))
     (fderiv ℝ F x (EuclideanSpace.basisFun (Fin 2) ℝ 1))
-
-
-
 
 theorem conformalTangentProjection_fixes
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {x : LoopPlane} {c : ℝ}
@@ -68,9 +53,6 @@ theorem conformalTangentProjection_fixes
   simp only [map_sum, map_smul, hcol]
   simpa only [map_sum, map_smul] using congrArg (fderiv ℝ F x) (e.sum_repr v)
 
-
-
-
 theorem differentiableAt_conformalTangentProjection
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {x : LoopPlane}
     (hF : ContDiffAt ℝ ∞ F x)
@@ -87,9 +69,6 @@ theorem differentiableAt_conformalTangentProjection
   have hP := ((hGa.clm_apply ha).inv hne).smul
     ((hGa.smulRight ha).add (hGb.smulRight hb))
   exact hP.differentiableAt (by simp)
-
-
-
 
 theorem secondFundamentalForm_eq_projection_hessian
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)
@@ -117,9 +96,6 @@ theorem secondFundamentalForm_eq_projection_hessian
   have he := sub_eq_zero.mp hPB
   change covariantHessianMap D F x u v - fderiv ℝ F x (connectionCoefficient Ds x u v) = _
   rw [← he]
-
-
-
 
 theorem secondFundamentalForm_eq_projection_derivative
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)
@@ -153,10 +129,6 @@ theorem secondFundamentalForm_eq_projection_derivative
     covariantHessianMap, map_add]
   rw [← hn]
   abel
-
-
-
-
 
 theorem norm_secondFundamentalForm_le_projection_derivative
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)

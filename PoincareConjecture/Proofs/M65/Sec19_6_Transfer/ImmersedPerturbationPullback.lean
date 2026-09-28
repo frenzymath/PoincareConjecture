@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 theorem angular_slice_hasDerivAt (f : P × (ℝ × ℝ) → E) (z : P × (ℝ × ℝ))
     (hf : DifferentiableAt ℝ f z) :
     HasDerivAt (fun x => f (z.1, (x, z.2.2)))
@@ -36,9 +23,6 @@ theorem angular_slice_hasDerivAt (f : P × (ℝ × ℝ) → E) (z : P × (ℝ ×
   simpa only [Function.comp_def, Prod.eta] using
     hf.hasFDerivAt.comp_hasDerivAt z.2.1 hline
 
-
-
-
 theorem angular_partial_contDiffOn (f : P × (ℝ × ℝ) → E)
     (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) :
     ContDiffOn ℝ ∞ (fun z => fderiv ℝ f z (0, (1, 0))) U :=
@@ -46,10 +30,6 @@ theorem angular_partial_contDiffOn (f : P × (ℝ × ℝ) → E)
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {a b : ℝ}
-
-
-
-
 
 theorem pullback_angular_contMDiffOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)

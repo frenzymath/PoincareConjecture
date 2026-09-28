@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeEndpointFamily
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVectorVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 theorem GaugeEndpointFamily.diagonal_eventually_mem
     {P : Type v} [NormedAddCommGroup P] [NormedSpace ℝ P]
     {f : ℝ × P → G.Point} {U : Set P} {T a b c : ℝ} {p₀ : P}
@@ -34,9 +23,6 @@ theorem GaugeEndpointFamily.diagonal_eventually_mem
     ∀ᶠ r in 𝓝 p₀, (r, (lift (f (c, r))).2.val) ∈ D.parameters :=
   (continuousAt_id.prodMk D.coordinate_smooth.continuousAt).preimage_mem_nhds
     (D.parameters_open.mem_nhds D.center_mem)
-
-
-
 
 theorem exists_exponentialLine_endpointFamily
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

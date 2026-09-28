@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.SphereTwoFiberCellularity
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.RegionCellularCancellation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ namespace ContinuousMap
 
 variable {X Y : Type*} [MetricSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y] [RegularSpace Y]
-
-
-
 
 theorem exists_region_marked_sphere_quotient_cancellation (q : C(X, Y))
     (hq : Function.Surjective q) (a b : Y) (hab : a ≠ b)

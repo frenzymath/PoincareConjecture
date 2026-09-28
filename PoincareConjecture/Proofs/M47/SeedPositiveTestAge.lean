@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedPositiveTestHistory
 import PoincareConjecture.Proofs.M47.SeedPositiveOnset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_component_birth_le_positive_test
     (hC : RicciFlowCurvatureTheory.{u}) {F : SurgeryFlowData.{u}} {J : Set ℝ}
@@ -65,8 +55,6 @@ theorem seed_component_birth_le_positive_test
     exact ⟨by linarith, by linarith⟩)
   exact seed_search_nonpositive_of_cap_endpoint hC hpolicy test hx
     (hI ⟨le_rfl, hs0⟩) hbtest hs0b hbJ hbirthTime hi hpositive
-
-
 
 theorem seed_component_onset_le_positive_test
     {F : SurgeryFlowData.{u}} {T s0 a b : ℝ}

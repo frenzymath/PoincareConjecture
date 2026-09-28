@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakSobolevExtension
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,10 +12,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
-
-
 
 theorem m64WeakScalar_cutoff_strong_graph
     {O : Set LoopPlane} (hO : IsOpen O) (u : LoopPlane → ℝ)

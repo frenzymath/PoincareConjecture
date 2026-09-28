@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.PositivePinchingPointwise
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.Preservation
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSectionalContinuation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +17,6 @@ open PoincareConjecture.M04
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [CompactSpace M]
-
-
-
-
 
 theorem exists_initial_complement_pinching
     {J : Set ℝ} (F : RicciFlow 3 M J) {a : ℝ} (ha : a ∈ J)
@@ -76,9 +62,6 @@ theorem exists_initial_complement_pinching
     _ ≤ c * (F.connection a).ricciComplementEvaluation x ![w, w] :=
       mul_le_mul_of_nonneg_left (hmin w hw) (by linarith)
 
-
-
-
 theorem complement_pinching_preserved
     (hC : RicciFlowCurvatureTheory.{u}) {T c : ℝ}
     (F : RicciFlow 3 M (Ico 0 T)) (hc : 1 ≤ c)
@@ -97,10 +80,6 @@ theorem complement_pinching_preserved
     (fun s => hC.tensor_calculus 3 M (F.metric s) (F.connection s))
     (hC.scalar_regular 3 M (Ico 0 T) F)
     (hC.curvature_evolution 3 M (Ico 0 T) F) hc hinit ht x
-
-
-
-
 
 theorem exists_uniform_ricci_pinching
     (hC : RicciFlowCurvatureTheory.{u}) {T : ℝ} (hT : 0 < T)
@@ -124,10 +103,6 @@ theorem exists_uniform_ricci_pinching
     have h := ricci_lower_of_complement_pinching (F.connection t)
       (hC.tensor_calculus 3 M (F.metric t) (F.connection t)) x hc hpinch v hv
     simpa only [one_div, div_eq_mul_inv, one_mul, mul_comm] using h
-
-
-
-
 
 theorem exists_uniform_positive_scalar_lower [SecondCountableTopology M]
     {T : ℝ} (hT : 0 < T) (F : RicciFlow 3 M (Ico 0 T))

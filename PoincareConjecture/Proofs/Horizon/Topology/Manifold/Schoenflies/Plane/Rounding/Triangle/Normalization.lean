@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Triangle.Affine
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Graph.Radial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 private instance : Fact (Module.finrank ℝ ℂ = 2) := ⟨by simp⟩
 private instance : Fact (Module.finrank ℝ ℂ = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_ambient_diffeomorph_rounded_triangle
     (e : ℂ ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 2))

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -28,14 +19,11 @@ local notation "I01" => Icc (0 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
 
-
 theorem OrdinaryDoubleCurveModel.piece_subset_double
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) :
     M.pieces i ⊆ doubleLocusOn f D2 := by
   rw [← M.cover]
   exact subset_iUnion _ i
-
-
 
 theorem OrdinaryDoubleCurveModel.partner_component_iff
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) (x : doubleLocusOn f D2) :
@@ -45,9 +33,6 @@ theorem OrdinaryDoubleCurveModel.partner_component_iff
   · intro hx
     have h := M.partner_component (M.mate i) (M.partner x) hx
     simpa only [M.partner_involutive x, M.mate_involutive i] using h
-
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_interval_arc_parameters
     [T2Space X] (M : OrdinaryDoubleCurveModel e f R)

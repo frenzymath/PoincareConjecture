@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaries
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

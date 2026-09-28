@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorDecodeNative
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 400000
@@ -38,7 +29,6 @@ theorem parseval_sum_sq (F : iota → V)
       simp only [sum_inner, real_inner_smul_left, pow_two]
     _ = inner ℝ v v := by rw [hF v]
     _ = ‖v‖ ^ 2 := real_inner_self_eq_norm_sq v
-
 
 theorem decode_abs_le (F : iota → V)
     (hF : ∀ v : V, (∑ a, inner ℝ (F a) v • F a) = v)
@@ -77,7 +67,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {iota : Type v} [Fintype iota]
 
-
 theorem nativeDecode_diagonal_bound (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M))
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ a, g.inner x (F a x) v • F a x) = v)
@@ -107,7 +96,6 @@ theorem nativeDecode_zero (g : RiemannianMetric n M)
   ext v w
   simp only [nativeDecode_apply, PiLp.zero_apply, zero_mul, Finset.sum_const_zero,
     ContinuousLinearMap.zero_apply]
-
 
 theorem nativeDecode_hasDerivWithinAt (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M))

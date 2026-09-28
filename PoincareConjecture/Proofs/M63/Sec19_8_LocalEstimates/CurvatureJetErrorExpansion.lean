@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetErrorExp
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.MarkedTensorDerivative
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetErrorIdentities
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem m63CurvatureJet_diffusionError_expansion_pair [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

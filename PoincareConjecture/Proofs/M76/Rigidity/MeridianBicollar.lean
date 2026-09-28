@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.StandardMeridian
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,20 +17,13 @@ local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
-
 noncomputable def hamiltonSolidTorusCircleEquiv : T ≃ₜ AddCircle p :=
   (hamiltonLowerLatticePiEquiv (Fin 1)).trans
     (Homeomorph.funUnique (Fin 1) (AddCircle p))
 
-
-
 theorem hamiltonSolidTorusCircleEquiv_mk (t : ℝ) :
     hamiltonSolidTorusCircleEquiv (QuotientAddGroup.mk (fun _ : Fin 1 => t)) =
       (t : AddCircle p) := rfl
-
-
 
 theorem hamiltonSolidTorusCircleEquiv_symm_coe (t : ℝ) :
     hamiltonSolidTorusCircleEquiv.symm (t : AddCircle p) =
@@ -51,15 +32,10 @@ theorem hamiltonSolidTorusCircleEquiv_symm_coe (t : ℝ) :
   rw [hamiltonSolidTorusCircleEquiv.apply_symm_apply,
     hamiltonSolidTorusCircleEquiv_mk]
 
-
-
-
 noncomputable def hamiltonMeridianBicollar : OpenPartialHomeomorph (D × ℝ) H :=
   (OpenPartialHomeomorph.refl D).prod
     ((AddCircle.shortArcQuotient p 1).trans
       hamiltonSolidTorusCircleEquiv.symm.toOpenPartialHomeomorph)
-
-
 
 theorem hamiltonMeridianBicollar_source :
     hamiltonMeridianBicollar.source = univ ×ˢ Ioo (-1) 1 := by
@@ -71,9 +47,6 @@ theorem hamiltonMeridianBicollar_source :
   rw [preimage_univ, inter_univ,
     AddCircle.shortArcQuotient_source p (by norm_num)]
 
-
-
-
 theorem hamiltonMeridianBicollar_target :
     hamiltonMeridianBicollar.target =
       {z : H | hamiltonSolidTorusCircleEquiv z.2 ∈
@@ -84,23 +57,16 @@ theorem hamiltonMeridianBicollar_target :
   rw [AddCircle.shortArcQuotient_target p (by norm_num)]
   simp
 
-
-
 theorem hamiltonMeridianBicollar_apply (x : D) (t : ℝ) :
     hamiltonMeridianBicollar (x, t) =
       (x, QuotientAddGroup.mk (fun _ : Fin 1 => t)) := by
   change (x, hamiltonSolidTorusCircleEquiv.symm (t : AddCircle p)) = _
   rw [hamiltonSolidTorusCircleEquiv_symm_coe]
 
-
-
 theorem hamiltonMeridianBicollar_zero (x : D) :
     hamiltonMeridianBicollar (x, 0) = hamiltonStandardMeridian L x := by
   rw [hamiltonMeridianBicollar_apply]
   rfl
-
-
-
 
 theorem hamiltonMeridianBicollar_mem_boundary (x : D) (t : ℝ) :
     hamiltonMeridianBicollar (x, t) ∈ latticeHandleBoundary (Fin 2) (Fin 1) L ↔
@@ -109,9 +75,6 @@ theorem hamiltonMeridianBicollar_mem_boundary (x : D) (t : ℝ) :
   change (‖(x : V2)‖ = 1 ∧ True) ↔ ‖(x : V2)‖ = 1
   exact ⟨And.left, fun hx => ⟨hx, trivial⟩⟩
 
-
-
-
 theorem hamiltonMeridianBicollar_ambient_apply (x : D) (t : ℝ) :
     (((hamiltonMeridianBicollar (x, t)).1 : V2),
       (hamiltonMeridianBicollar (x, t)).2) =
@@ -119,9 +82,6 @@ theorem hamiltonMeridianBicollar_ambient_apply (x : D) (t : ℝ) :
           (Sum.elim (x : V2) (fun _ : Fin 1 => t)) := by
   rw [hamiltonMeridianBicollar_apply]
   rfl
-
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_meridianBox
     {β : Type*}

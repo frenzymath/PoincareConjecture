@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Pointed
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem contDiffAt_spatialPullback_coordinateCoefficient
     {n : ℕ} (L C : FlowCarrier.{0} n) {g : ℝ → C.metric} {J : Set ℝ}
@@ -67,8 +53,6 @@ theorem contDiffAt_spatialPullback_coordinateCoefficient
   rw [hderiv]
   rfl
 
-
-
 theorem contDiffAt_coordinateCoefficient_of_smoothFamily
     {n : ℕ} (C : FlowCarrier.{0} n) {g : ℝ → C.metric} {J : Set ℝ}
     (hg : RiemannianMetric.IsSmoothFamilyOn g J) (hJ : IsOpen J)
@@ -86,8 +70,6 @@ namespace AncientPointedGeometricConvergence
 variable {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {g : ∀ k, ℝ → (C k).metric}
   {p : ∀ k, (C k).carrier} {T : ℝ}
   (G : AncientPointedGeometricConvergence C g p T)
-
-
 
 theorem pullback_metric_CInfinity_within_Icc
     (hg : ∀ k, RiemannianMetric.IsSmoothFamilyOn (g k) (Iio T))

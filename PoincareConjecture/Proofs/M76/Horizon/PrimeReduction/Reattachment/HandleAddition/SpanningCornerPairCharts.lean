@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.AffineUnionCorner
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningPatchClosure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_union_corner_map_preserving_third_coordinate :
     ∃ H : C3 ≃ₜ C3, H.toOpenPartialHomeomorph ∈ piecewiseAffineGroupoid C3 ∧
@@ -50,8 +40,6 @@ theorem exists_union_corner_map_preserving_third_coordinate :
     linarith
   · intro z
     simpa [a,b,H] using hzero z.1
-
-
 
 theorem exists_original_corner_pair_chart
     {X ι : Type*} [TopologicalSpace X]
@@ -100,8 +88,6 @@ theorem exists_original_corner_pair_chart
   · intro y hy
     rw [hcoord,hthird]
     exact hF y (hPs.subset hy)
-
-
 
 theorem ChartwisePLSphere.exists_original_ball_patch_corner_pair_chart
     {X V ι : Type*} [TopologicalSpace X] [T2Space X]

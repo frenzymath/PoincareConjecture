@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CentroidComplementaryTrees
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTreeDiskHalves
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -20,9 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Finite K.faces]
-
-
-
 
 theorem exists_disk_halves_of_primal_complementary_trees
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -51,10 +38,6 @@ theorem exists_disk_halves_of_primal_complementary_trees
       S hS hSc
   exact ⟨D₀, D₁, Q, hcover.trans K.barycentricSubdivision_isSubdivision.space_eq,
     hinter, hD₀, hD₁⟩
-
-
-
-
 
 theorem exists_sphere_model_of_primal_complementary_trees
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

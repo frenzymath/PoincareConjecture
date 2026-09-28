@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.TimeWindows
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,7 +12,6 @@ namespace PoincareConjecture.Surgery.RegularHistory
 
 variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
   {T : ℝ} (hT : T ∈ F.surgery_times) (hTW : T ∈ W.interval)
-
 
 structure EventTimeWindow where
   left : ℝ
@@ -89,12 +77,10 @@ theorem post_surgery_free (hr : A.right ∈ W.interval) :
   have hsW := A.post_subset hr ⟨hsI.1.le, hsI.2⟩
   exact hsI.1.ne' (A.events_unique s hsW (A.left_lt.trans hsI.1).le hsI.2 hs)
 
-
 def postSlab (hr : A.right ∈ W.interval) :
     SurgeryRegularSlab F.slice F.metric T A.right :=
   F.regular_slabs T A.right A.right_gt ((A.post_subset hr).trans W.time_subset)
     (A.post_surgery_free hr)
-
 
 theorem interval_eq_Ioc_of_terminal (hterminal : ∀ s ∈ W.interval, s ≤ T) :
     A.interval = Ioc A.left T := by
@@ -106,7 +92,6 @@ theorem interval_eq_Ioc_of_terminal (hterminal : ∀ s ∈ W.interval, s ≤ T) 
     exact ⟨W.interval_connected.out A.left_mem hTW ⟨hs.1.le, hs.2⟩,
       hs.1, hs.2.trans_lt A.right_gt⟩
 
-
 theorem interval_eq_Ioo_of_right_mem (hr : A.right ∈ W.interval) :
     A.interval = Ioo A.left A.right := by
   apply inter_eq_right.mpr
@@ -116,7 +101,6 @@ theorem interval_eq_Ioo_of_right_mem (hr : A.right ∈ W.interval) :
 end EventTimeWindow
 
 variable (W hT hTW)
-
 
 theorem exists_eventTimeWindow : Nonempty (EventTimeWindow W hT hTW) := by
   have hfinite : ((F.surgery_times ∩ W.interval) \ {T}).Finite := W.events_finite.sdiff

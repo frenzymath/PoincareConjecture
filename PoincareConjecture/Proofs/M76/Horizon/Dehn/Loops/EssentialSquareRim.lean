@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.CircleRimReparametrization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology
 open scoped unitInterval
@@ -21,8 +11,6 @@ open PoincareConjecture Poincare.Manifold.Schoenflies
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem squareRimLoop_class_ne_one :
     FundamentalGroup.fromPath (Path.Homotopic.Quotient.mk squareRimLoop) ≠ 1 := by
@@ -62,8 +50,6 @@ theorem squareRimLoop_class_ne_one :
     isCoveringMap_unitCircleExp.liftPath_const rfl
   rw [← hpLift, hcLift] at hlift
   exact one_ne_zero hlift
-
-
 
 theorem squareRimLoop_map_class_ne_one_of_retraction
     {Y : Type*} [TopologicalSpace Y]

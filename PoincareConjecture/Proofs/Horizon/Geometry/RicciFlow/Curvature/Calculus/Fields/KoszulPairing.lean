@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,7 +12,6 @@ namespace PoincareConjecture.RicciFlowAnalysis
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem metric_derivative_pairing (D : LeviCivitaData g)
     (X : (x : M) → TangentSpace (𝓡 n) x)
@@ -41,7 +27,6 @@ theorem metric_derivative_pairing (D : LeviCivitaData g)
     ⟨g.toRiemannianMetric⟩
   exact D.metricCompatible.mvfderiv_inner_eq X hY hZ
 
-
 theorem connection_commutator (D : LeviCivitaData g)
     {X Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hX : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n)))
@@ -51,7 +36,6 @@ theorem connection_commutator (D : LeviCivitaData g)
     D.connection Y x (X x) - D.connection X x (Y x) =
       VectorField.mlieBracket (𝓡 n) X Y x :=
   D.connection.torsion_eq_zero_iff.mp D.torsion_eq_zero hX hY
-
 
 theorem koszul_pairing (D : LeviCivitaData g)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}

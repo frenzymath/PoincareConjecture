@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Compact
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,8 +7,6 @@ open Set Metric
 open scoped ContDiff
 
 namespace Poincare.Analysis
-
-
 
 theorem exists_contDiff_compactSupport_extension_on_compact
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

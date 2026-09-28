@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.OriginalFaceEdgeGapFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -49,8 +40,6 @@ theorem original_face_edge_gap_to_physical_cut
     hmaps (mem_image_of_mem e ⟨ha0.trans ht.1.le,ht.2.le.trans hb1⟩)
   have htT := (original_face_cut_mem_iff K g hgi hs hsub hphysical htface).mpr htS
   exact disjoint_left.mp hgap (mem_image_of_mem e ht) htT
-
-
 
 theorem original_physical_face_edge_gaps_match
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

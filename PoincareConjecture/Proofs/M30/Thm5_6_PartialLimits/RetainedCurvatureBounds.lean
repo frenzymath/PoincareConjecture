@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embeddin
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.secondCountable
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_eventually_retained_curvature_derivative_bound
     (hShi : LocalCurvatureDerivativeEstimates.{0})

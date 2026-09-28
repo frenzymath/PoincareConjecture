@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicApplication
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.MixedBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.style.haveILetI false
@@ -22,12 +12,6 @@ open PoincareConjecture.ChartDistance
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
-
-
 
 structure SelectedParabolicApplicationBase
     {M : ℕ → Type u} [∀ k : ℕ, MetricSpace (M k)]
@@ -76,7 +60,6 @@ structure SelectedParabolicApplicationBase
     edist x y = ((flow k).metric 0).edist x y
 
 set_option synthInstance.maxHeartbeats 100000 in
-
 
 theorem SelectedParabolicApplicationBase.partial_flow_of_compact_spatial_bounds
     {A tau : ℝ} (hA : 0 < A)

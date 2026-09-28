@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalEndpoint
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -119,8 +109,6 @@ private theorem halfInterval_endpoint_in_chart
   filter_upwards [hU.mem_nhds hyU, hlocal] with x hx hxlocal
   exact (hfull x hx).trans hxlocal
 
-
-
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_segment_germ_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -143,8 +131,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_segment_germ_in_chart
   obtain ⟨i, hye⟩ := hAtlas y hy.1
   exact halfInterval_endpoint_in_chart (e i) B Q (hB i) (hQ i) hye hyB hyQ
     (S ∩ (g '' convexHull ℝ ({w, p, q} : Set E))) hzy hr hsection hemb
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_segment_germ_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -194,9 +180,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_segment_germ_of_affin
       exact ⟨z, ⟨⟨hzS, v, hv, hvz⟩, hzQ⟩, hzx⟩
   simpa only [hfull] using hphysical
 
-
-
-
 theorem HasOriginalEdgeCofaceCharts.ncard_surface_contact_neighborSet_eq_one_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -222,4 +205,3 @@ theorem HasOriginalEdgeCofaceCharts.ncard_surface_contact_neighborSet_eq_one_of_
   exact hx.trans hxg
 
 end PoincareConjecture.M76
-

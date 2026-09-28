@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Triangle.TriangleBase
 import Mathlib.Analysis.Convex.Between
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {p : Polygon E 3}
-
 
 theorem IsSimplePolygon.triangle_affineIndependent (hp : IsSimplePolygon p) :
     AffineIndependent ℝ p := by
@@ -42,7 +30,6 @@ theorem IsSimplePolygon.triangle_affineIndependent (hp : IsSimplePolygon p) :
 
 variable [FiniteDimensional ℝ E]
 
-
 def IsSimplePolygon.triangleAffineBasis (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) : AffineBasis (Fin 3) ℝ E where
   toFun := p
@@ -50,13 +37,10 @@ def IsSimplePolygon.triangleAffineBasis (hp : IsSimplePolygon p)
   tot' := hp.triangle_affineIndependent.affineSpan_eq_top_iff_card_eq_finrank_add_one.mpr
     (by simp [hdim])
 
-
 theorem IsSimplePolygon.triangle_boundary_eq_frontier (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
     p.boundary ℝ = frontier (convexHull ℝ (range p)) :=
   affineBasisTriangle_boundary_eq_frontier (hp.triangleAffineBasis hdim)
-
-
 
 theorem IsSimplePolygon.triangle_homeomorph (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :

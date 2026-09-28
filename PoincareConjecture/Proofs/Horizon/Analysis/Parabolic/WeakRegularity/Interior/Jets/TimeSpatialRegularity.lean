@@ -1,19 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.TimeBootstrap
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialRegularity
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Metric
 open scoped ContDiff Topology
@@ -59,6 +45,5 @@ theorem exists_local_time_spatial_weak_jets
     filter_upwards [ae_restrict_mem measurableSet_ball] with y hy
     exact huEq (hballV hy)
   exact ⟨r, hr, hrV.trans hVU, htime.congr_ae hueq⟩
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

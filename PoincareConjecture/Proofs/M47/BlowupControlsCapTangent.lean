@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSliceMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,8 +44,6 @@ private theorem cap_sqrt_quadratic_comparison {A B eta Lambda : ℝ}
   · apply Real.sqrt_le_iff.mpr
     refine ⟨mul_nonneg hLambda.le (Real.sqrt_nonneg A), ?_⟩
     simpa only [mul_pow, Real.sq_sqrt hA] using hbackward
-
-
 
 theorem actualCapSliceChart_tangent_bounds
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

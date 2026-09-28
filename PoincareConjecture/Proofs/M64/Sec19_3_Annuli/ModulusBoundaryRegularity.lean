@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusBoundaryImmersion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64Annulus_slice_contMDiff
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
@@ -66,10 +50,6 @@ theorem m64Annulus_slice_contMDiff
     funext q
     simpa only [T, add_comm] using hper.zsmul z q
   simpa only [heq] using hcomp
-
-
-
-
 
 theorem m64Annulus_modulusEnergyDensity_pos_of_horizontal_immersed
     (g : RiemannianMetric n M) {r : ℝ} (hr : 0 < r)

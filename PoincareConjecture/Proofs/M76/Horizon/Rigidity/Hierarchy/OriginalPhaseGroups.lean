@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.OriginalIrreducibleSlab
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalPhaseMapGroups
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,8 +13,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
-
-
 
 theorem hamiltonZero_phase_injections_of_frontier
     (psi : C(H0, H0)) (Fpsi : (ContinuousMap.id H0).HomotopyRel psi B0)
@@ -74,11 +60,6 @@ theorem hamiltonZero_phase_injections_of_frontier
     · exact phaseInjection hA hB hAB hsplit x
     · exact phaseInjection hB hA hAB.symm (hsplit.trans (union_comm A B)) x
   exact ⟨hi, hamiltonZeroPhaseMap_pi1_injective psi Fpsi theta x hi⟩
-
-
-
-
-
 
 theorem exists_hamiltonZero_injective_phase_maps {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

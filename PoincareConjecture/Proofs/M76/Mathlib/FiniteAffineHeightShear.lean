@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlope
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
-
 
 theorem LocallyPiecewiseAffineOn.height_shear
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -41,11 +26,6 @@ theorem LocallyPiecewiseAffineOn.height_shear
 end Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_finite_affine_height_shear
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

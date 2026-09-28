@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceCompactCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirth
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthCenter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

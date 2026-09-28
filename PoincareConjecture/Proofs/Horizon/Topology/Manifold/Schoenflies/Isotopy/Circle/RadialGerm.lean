@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCir
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.CollarExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ namespace Poincare.Manifold.Schoenflies
 open CircleCollar
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_radial_ambient_diffeomorph_of_circle_diffeomorph
     (q : Diffeomorph (𝓡 1) (𝓡 1) S1 S1 ∞) :

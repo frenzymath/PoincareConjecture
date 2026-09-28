@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.Assembly.PanelFamily
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.AnnularParameter.PanelCylinderPeriod
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry Topology
@@ -23,11 +21,6 @@ local notation "Rim" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R W Q : Set X}
   {S T C D : Set P2} {f₀ f₁ : P2 → X} {j : Bool → V2 → X}
-
-
-
-
-
 
 theorem exists_tube_side_base_map
     (U : OriginalIntervalTube e R W S T C D f₀ f₁)

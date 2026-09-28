@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J)
   (hc : IsCoveringMap (unitRicciKernelProjection (F.connection 0)))
-
 
 def unitRicciKernelFlow :
     letI := unitRicciKernelChartedSpace (F.connection 0) hc
@@ -65,7 +54,6 @@ def unitRicciKernelFlow :
     (unitRicciKernelFlow F hc).connection 0 =
       (unitRicciKernelMetric (F.connection 0) hc).leviCivitaData := rfl
 
-
 theorem unitRicciKernelFlow_metricComplete [T3Space M]
     (hcard : ∀ x, Nat.card (unitRicciKernelProjection (F.connection 0) ⁻¹' {x}) = 2)
     (t : ℝ) (hcomplete : MetricComplete (F.metric t)) :
@@ -97,7 +85,6 @@ theorem unitRicciKernelFlow_ricci (t : ℝ)
     (F.connection t) isOpen_univ
     (unitRicciKernelProjection_isLocalDiffeomorph (F.connection 0) hc).contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ p) v w
-
 
 @[simp] theorem unitRicciKernelFlow_ricciNullity (t : ℝ)
     (p : UnitRicciKernel (F.connection 0)) :
@@ -155,7 +142,6 @@ theorem unitRicciKernelFlow_ricci (t : ℝ)
     (unitRicciKernelProjection_isLocalDiffeomorph (F.connection 0) hc).contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ p)
 
-
 theorem unitRicciKernelFlow_nonnegativeCurvatureOperator_iff (t : ℝ)
     (p : UnitRicciKernel (F.connection 0)) :
     letI := unitRicciKernelChartedSpace (F.connection 0) hc
@@ -170,7 +156,6 @@ theorem unitRicciKernelFlow_nonnegativeCurvatureOperator_iff (t : ℝ)
     (unitRicciKernelProjection_isLocalDiffeomorph (F.connection 0) hc).contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ p)
 
-
 theorem unitRicciKernelFlow_curvatureTensorNorm_bound
     (hbound : ∀ t ∈ J, ∃ C : ℝ, ∀ x, (F.connection t).curvatureTensorNorm x ≤ C) :
     letI := unitRicciKernelChartedSpace (F.connection 0) hc
@@ -184,7 +169,6 @@ theorem unitRicciKernelFlow_curvatureTensorNorm_bound
   refine ⟨C, fun p => ?_⟩
   rw [unitRicciKernelFlow_curvatureTensorNorm]
   exact hC _
-
 
 theorem unitRicciKernelFlow_reverse_preserves_metric (t : ℝ) :
     letI := unitRicciKernelChartedSpace (F.connection 0) hc

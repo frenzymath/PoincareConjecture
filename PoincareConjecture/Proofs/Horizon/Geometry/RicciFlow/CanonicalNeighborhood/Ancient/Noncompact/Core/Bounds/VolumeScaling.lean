@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Volume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M} {p : M}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem AncientKappaNormalization.core_volume_zero
     (N : AncientKappaNormalization K p 0) (D : ℝ) :
@@ -58,7 +47,6 @@ theorem AncientKappaNormalization.core_volume_zero
     ((K.flow.metric 0).ball p (D * N.scale ^ (-1 / 2 : ℝ)))
   simpa only [Diffeomorph.coe_refl, Set.image_id, hball, Nat.cast_ofNat,
     Real.rpow_eq_pow] using hvolume
-
 
 theorem AncientKappaNormalization.core_volume_bounds_zero
     (N : AncientKappaNormalization K p 0) {D v V : ℝ}
@@ -91,8 +79,6 @@ theorem AncientKappaNormalization.core_volume_bounds_zero
     exact hvolume.2
 
 end Normalization
-
-
 
 theorem noncompact_core_uniform_scaled_volume_bounds_of_services
     (P : NoncompactKappaServices.{u})

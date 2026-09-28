@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_TopAction
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_ActualPositiveAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,9 +9,6 @@ open scoped intervalIntegral
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem capPhysicalScalarIntegral_eq {c offset q a b : ℝ} (hq : q ≠ 0) :
     (∫ t in a..b, c / (2 * (1 - (offset - t) / q) * q)) =
@@ -33,9 +21,6 @@ theorem capPhysicalScalarIntegral_eq {c offset q a b : ℝ} (hq : q ≠ 0) :
     intervalIntegral.integral_comp_sub_div (fun s : ℝ => c / (2 * (1 - s))) hq]
   simp only [smul_eq_mul, ← sub_div]
   exact mul_div_cancel_left₀ _ hq
-
-
-
 
 theorem capPhysicalTopAction_gt {c ell theta offset q a b : ℝ}
     (hc : 0 < c) (hthetaOne : theta < 1)
@@ -68,9 +53,6 @@ theorem capPhysicalTopAction_gt {c ell theta offset q a b : ℝ}
     exact hbudget.trans_le hnormalized
   exact hphysical.trans_le
     (intervalIntegral.integral_mono_on_of_le_Ioo hab hbarrier hint hscalar)
-
-
-
 
 theorem actualCapTopEntry_action_gt
     {X : Type u} [TopologicalSpace X] {time : X → ℝ}

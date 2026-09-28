@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.RadialConjugacy
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.RadialExtension
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_diffeomorph_of_centered_radial_flow
     (g : RiemannianMetric n M) (p : M)

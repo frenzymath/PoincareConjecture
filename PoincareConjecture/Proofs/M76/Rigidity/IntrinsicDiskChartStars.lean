@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MarkedMixedChartStars
 import PoincareConjecture.Proofs.M76.Rigidity.DiskModelCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.OriginalDiskStarNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_intrinsic_proper_disk_chart_stars
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

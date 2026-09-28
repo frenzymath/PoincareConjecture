@@ -1,15 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.RegularizedMinimum.Finite.Basic
 import Mathlib.Analysis.Calculus.Deriv.Pi
 
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace Poincare
-
 
 noncomputable def finiteRegularizedMinWeight (δ : ℝ) (hδ : 0 < δ) :
     (n : ℕ) → (Fin (n + 1) → ℝ) → Fin (n + 1) → ℝ
@@ -95,7 +92,6 @@ theorem finiteRegularizedMinWeight_eq_fderiv (δ : ℝ) (hδ : 0 < δ) (n : ℕ)
       fderiv ℝ (finiteRegularizedMin δ hδ n) f (Pi.single i 1) := by
   rw [fderiv_finiteRegularizedMin_apply]
   simp [Pi.single_apply]
-
 
 theorem fderiv2_finiteRegularizedMin_nonpos (δ : ℝ) (hδ : 0 < δ) (n : ℕ)
     (f v : Fin (n + 1) → ℝ) :

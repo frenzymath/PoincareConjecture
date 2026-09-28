@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundaryVertices
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +29,6 @@ variable {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)
 include hsource hboundary in
 omit [Finite I] in
 
-
-
-
 theorem m64Intrinsic_coordinate_boundary_injective (i : I) (k : Fin 3) :
     InjOn ((face i).boundary k).map (Icc (0 : ℝ) 1) := by
   intro s hs t ht hst
@@ -60,10 +45,6 @@ theorem m64Intrinsic_coordinate_boundary_injective (i : I) (k : Fin 3) :
   norm_num at h01
 
 include hsource hcarrier hboundary hinter in
-
-
-
-
 
 theorem m64Intrinsic_region_frontier_eq_one_face_edges
     (hfront : ∀ i j, i ≠ j →
@@ -101,10 +82,6 @@ theorem m64Intrinsic_region_frontier_eq_one_face_edges
 
 include hsource hcarrier hboundary hinter in
 omit [Finite I] in
-
-
-
-
 
 theorem m64Intrinsic_vertex_on_one_face_edge_iff_endpoint
     (e : FaceBoundaryEdge face)

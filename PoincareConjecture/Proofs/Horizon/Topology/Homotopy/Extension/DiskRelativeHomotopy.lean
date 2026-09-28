@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereDiskExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

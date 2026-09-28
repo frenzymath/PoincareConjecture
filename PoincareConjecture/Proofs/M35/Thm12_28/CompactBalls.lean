@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.BlowupSequence
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem isCompact_closure_ball (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -27,8 +17,6 @@ theorem isCompact_closure_ball (P : M35StandardCapPredecessors)
     (sliceDiffeomorph ht).toHomeomorph.connectedSpace_iff.mpr inferInstance
   exact Proofs.M09.isCompact_closure_metric_ball (metric E.flow.base.flow t)
     ((complete_iff P E.flow.base.flow ht).mpr (E.complete t ht)) p r
-
-
 
 theorem blowupSequence_balls_compact (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -86,8 +76,6 @@ theorem edist_lt_at_point {B : ℝ} (hB : C.cap_constant ≤ B)
   exact ((g.edist_le_intrinsicEDist C.carrier x y).trans hdiam).trans_lt
     (C.intrinsic_diameter_lt_of_constant_le hB hx)
 
-
-
 theorem edist_le_of_mem_closure [T2Space M] {B : ℝ} (hB : C.cap_constant ≤ B)
     {x y : M} (hx : x ∈ C.carrier) (hy : y ∈ closure C.carrier) :
     g.edist x y ≤
@@ -121,8 +109,6 @@ theorem boundary_scale_lower_at_point {x : M} (hx : x ∈ C.carrier) :
     (C.scalar_pos _ hc) (C.scalar_lt_constant_mul hx hc)
   norm_num
 
-
-
 theorem neck_scales_lower_of_constant_le {B : ℝ} (hB : C.cap_constant ≤ B)
     {x : M} (hx : x ∈ C.carrier) :
     (B * C.connection.scalarCurvature x) ^ (-1 / 2 : ℝ) < C.end_neck.scale ∧
@@ -133,8 +119,6 @@ theorem neck_scales_lower_of_constant_le {B : ℝ} (hB : C.cap_constant ≤ B)
     (by norm_num : (-1 / 2 : ℝ) ≤ 0)
   exact ⟨hpow.trans_lt (C.end_scale_lower_at_point hx),
     hpow.trans_lt (C.boundary_scale_lower_at_point hx)⟩
-
-
 
 theorem uniform_bounds_at_point (D : LeviCivitaData g) {B : ℝ}
     (hB : C.cap_constant ≤ B) {x : M} (hx : x ∈ C.carrier) :

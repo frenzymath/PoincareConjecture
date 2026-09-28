@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem free_source_inside_half_carrier
     {U X E : Type*} [TopologicalSpace X]

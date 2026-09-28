@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTensorNormAlgebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -56,7 +47,6 @@ private def scalarFirstPermutation : Equiv.Perm (Fin 4) where
   left_inv i := by fin_cases i <;> rfl
   right_inv i := by fin_cases i <;> rfl
 
-
 noncomputable def capScalarHessianComponents (K : Mat) : Arr :=
   WithLp.toLp 2 (fun a =>
     (K (a 0, a 3) * K (a 1, a 2) + K (a 0, a 2) * K (a 1, a 3)) / 2 -
@@ -88,7 +78,6 @@ theorem cap_scalarHessianComponents_difference_le (K L : Mat) :
   linarith
 
 set_option maxRecDepth 4096 in
-
 
 theorem cap_scalarHessianComponents_identity_norm :
     ‖capScalarHessianComponents (capOperatorComponents (ContinuousLinearMap.id ℝ E₃))‖ = 3 := by
@@ -122,8 +111,6 @@ theorem cap_scalarHessianComponents_identity_norm :
         norm_num [Fin.sum_univ_succ, h02, h12, h21]
   change ‖T‖ = 3
   nlinarith [norm_nonneg T]
-
-
 
 theorem cap_scalarHessianComponents_norm_le (K : Mat) :
     ‖capScalarHessianComponents K‖ ≤ 3 +

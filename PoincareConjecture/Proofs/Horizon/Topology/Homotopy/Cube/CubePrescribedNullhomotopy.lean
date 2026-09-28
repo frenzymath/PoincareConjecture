@@ -1,18 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeBoundaryAdjustment
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
 
 theorem exists_cube_nullhomotopy_with_prescribed_boundary
     (n : ℕ) {X : Type*} [TopologicalSpace X] (x : X)

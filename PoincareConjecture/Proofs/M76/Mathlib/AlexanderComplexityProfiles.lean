@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityLevelCharge
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexitySum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,14 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
 
 theorem exists_decreasing_cut_level_charge_profiles_of_regular_alternatives_with_level_bounds
     {s₀ s₁ T₀ T₁ : Set E} (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)
@@ -96,11 +79,6 @@ theorem exists_decreasing_cut_level_charge_profiles_of_regular_alternatives_with
   exact ⟨a, b, ha, hb, hfa, hfb, hsum, hsum₀, hsum₁,
     (hzeroValues 0 rfl).1, (hzeroValues 0 rfl).2, hbound⟩
 
-
-
-
-
-
 theorem exists_decreasing_cut_level_charge_profiles_of_regular_alternatives
     {s₀ s₁ T₀ T₁ : Set E} (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)
     (A : E →ᵃ[ℝ] ℝ) (hcut : s₀ ∩ s₁ ⊆ {x | A x = 0})
@@ -136,10 +114,6 @@ theorem exists_decreasing_cut_level_charge_profiles_of_regular_alternatives
     exists_decreasing_cut_level_charge_profiles_of_regular_alternatives_with_level_bounds
       hs₀ hs₁ A hcut m n P r hP hr hcover hpair hfinite hlevels a₀ a₁ hzero₀ hzero₁ hzero
   exact ⟨a, b, hpa, hpb, ha, hb, hsum, hsum₀, hsum₁⟩
-
-
-
-
 
 theorem exists_decreasing_cut_level_charge_profiles
     {s₀ s₁ T₀ T₁ : Set E} (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)

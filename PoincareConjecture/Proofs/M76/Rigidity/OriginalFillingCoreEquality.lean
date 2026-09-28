@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PlanarRegionSideTransport
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,9 +14,6 @@ local notation "I" => Icc (0 : ℝ) 1
 
 variable {E X ι : Type*} [TopologicalSpace E] [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {K Db : Set X} {A : Set E}
-
-
-
 
 theorem eq_core_of_positive_collar (c : E × ℝ → X)
     (hA : IsConnected A) (hc : ContinuousOn c (A ×ˢ I)) (hi : InjOn c (A ×ˢ I))

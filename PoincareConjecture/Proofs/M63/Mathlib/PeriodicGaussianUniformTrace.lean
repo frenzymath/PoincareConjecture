@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M63.Mathlib.CompactParameterNeighborhood
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicGaussianDuhamel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem periodicGaussianHeat_uniform_initial_trace
     {L : ℝ} [Fact (0 < L)] {E : Type*} [NormedAddCommGroup E]

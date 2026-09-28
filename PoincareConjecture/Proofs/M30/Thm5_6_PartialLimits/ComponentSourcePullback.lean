@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.BasedComponent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem exists_component_source_pullback
     (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)

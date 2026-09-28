@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M14MeasureTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M14
-
-
 
 theorem exists_orthonormal_tangentBasis {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -31,8 +20,6 @@ theorem exists_orthonormal_tangentBasis {n : ℕ} {M : Type u} [TopologicalSpace
     simp
   let b := (g.orthonormalBasis p).reindex (finCongr hdim)
   exact ⟨b.toBasis, fun i j => b.inner_eq_ite i j⟩
-
-
 
 theorem exists_orthonormal_horizontalBasis {n : ℕ} {X : Type u}
     [TopologicalSpace X] {time : X → ℝ} {I : SpacetimeInterval}

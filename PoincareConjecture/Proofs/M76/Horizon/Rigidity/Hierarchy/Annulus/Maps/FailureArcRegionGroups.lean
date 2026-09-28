@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.FailureArcBoundaryGroups
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -20,8 +12,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem hamiltonZero_region_boundary_groups_commensurable_of_failure_arc
     {E₀ E₁ : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]

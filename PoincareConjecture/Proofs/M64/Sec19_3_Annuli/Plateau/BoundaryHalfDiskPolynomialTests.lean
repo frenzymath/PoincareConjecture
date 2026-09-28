@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreenGeometry
 import PoincareConjecture.Definitions.Ch19.AnnulusComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,42 +15,18 @@ open Proofs.M58
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 
-
-
-
-
 def m64HalfDiskJ (q : LoopPlane) : LoopPlane := !₂[-q 1, q 0]
 
-
-
-
-
 def m64HalfDiskQuadratic (q : LoopPlane) : ℝ := q 0 ^ 2 + q 1 ^ 2
-
-
-
-
 
 def m64HalfDiskPolynomialTestZero (psi : ℝ → ℝ) (q : LoopPlane) : LoopPlane :=
   psi (m64HalfDiskQuadratic q) • m64HalfDiskJ q
 
-
-
-
-
 def m64HalfDiskPolynomialTestOne (psi : ℝ → ℝ) (q : LoopPlane) : LoopPlane :=
   (psi (m64HalfDiskQuadratic q) * q 0) • m64HalfDiskJ q
 
-
-
-
-
 def m64HalfDiskPolynomialTestZeroAt (x : ℝ) (psi : ℝ → ℝ) (p : LoopPlane) : LoopPlane :=
   m64HalfDiskPolynomialTestZero psi (p - !₂[x, 0])
-
-
-
-
 
 def m64HalfDiskPolynomialTestOneAt (x : ℝ) (psi : ℝ → ℝ) (p : LoopPlane) : LoopPlane :=
   m64HalfDiskPolynomialTestOne psi (p - !₂[x, 0])
@@ -83,10 +48,6 @@ private theorem m64HalfDisk_contDiff_quadratic :
     ContDiff ℝ ∞ m64HalfDiskQuadratic := by
   exact ((m64HalfDisk_contDiff_coord 0).pow 2).add
     ((m64HalfDisk_contDiff_coord 1).pow 2)
-
-
-
-
 
 theorem m64HalfDisk_polynomialTest_contDiff
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) :
@@ -111,10 +72,6 @@ private theorem m64HalfDisk_quadratic_hasFDerivAt (q : LoopPlane) :
   ext v
   simp only [smul_apply, smul_eq_mul, add_apply, EuclideanSpace.coe_proj]
   ring
-
-
-
-
 
 theorem m64HalfDisk_polynomialTestZero_divergence
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (q : LoopPlane) :
@@ -150,10 +107,6 @@ theorem m64HalfDisk_polynomialTestZero_divergence
     congrArg (fun f => fderiv ℝ f q) hfun1, h0.fderiv, h1.fderiv]
   simp [ContinuousLinearMap.comp_apply]
   ring
-
-
-
-
 
 theorem m64HalfDisk_polynomialTestOne_divergence
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (q : LoopPlane) :
@@ -192,11 +145,6 @@ theorem m64HalfDisk_polynomialTestOne_divergence
   simp [ContinuousLinearMap.comp_apply]
   ring
 
-
-
-
-
-
 theorem m64HalfDisk_polynomialTest_polar
     {psi : ℝ → ℝ} (r theta : ℝ) :
     m64HalfDiskPolynomialTestZero psi (r • angularPoint theta) =
@@ -216,10 +164,6 @@ theorem m64HalfDisk_polynomialTest_polar
     change psi (r ^ 2) * (r * Real.cos theta) * r = _
     ring
 
-
-
-
-
 theorem m64HalfDisk_polynomialTest_axis
     {psi : ℝ → ℝ} (x : ℝ) :
     (m64HalfDiskPolynomialTestZero psi (!₂[x, 0] : LoopPlane)) 1 = psi (x ^ 2) * x ∧
@@ -232,10 +176,6 @@ theorem m64HalfDisk_polynomialTest_axis
       smul_eq_mul]
     ring
 
-
-
-
-
 theorem m64HalfDisk_polynomialTestAt_contDiff
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (x : ℝ) :
     ContDiff ℝ 1 (m64HalfDiskPolynomialTestZeroAt x psi) ∧
@@ -244,10 +184,6 @@ theorem m64HalfDisk_polynomialTestAt_contDiff
     fun_prop
   obtain ⟨hzero, hone⟩ := m64HalfDisk_polynomialTest_contDiff hpsi
   exact ⟨hzero.comp hshift, hone.comp hshift⟩
-
-
-
-
 
 theorem m64HalfDisk_polynomialTestAt_divergence_zero
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (x : ℝ) (p : LoopPlane) :
@@ -269,10 +205,6 @@ theorem m64HalfDisk_polynomialTestAt_divergence_zero
     (!₂[x, 0] : LoopPlane) (x := p)
   rw [h0, h1]
   exact m64HalfDisk_polynomialTestZero_divergence hpsi (p - !₂[x, 0])
-
-
-
-
 
 theorem m64HalfDisk_polynomialTestAt_divergence_one
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (x : ℝ) (p : LoopPlane) :
@@ -296,10 +228,6 @@ theorem m64HalfDisk_polynomialTestAt_divergence_one
   rw [h0, h1]
   exact m64HalfDisk_polynomialTestOne_divergence hpsi (p - !₂[x, 0])
 
-
-
-
-
 theorem m64HalfDisk_polynomialTestAt_axis
     {psi : ℝ → ℝ} (x r : ℝ) :
     (m64HalfDiskPolynomialTestZeroAt x psi (annulusPoint (x + r) 0)) 1 =
@@ -311,11 +239,6 @@ theorem m64HalfDisk_polynomialTestAt_axis
     fin_cases i <;> simp [annulusPoint]
   rw [m64HalfDiskPolynomialTestZeroAt, m64HalfDiskPolynomialTestOneAt, hpoint]
   exact m64HalfDisk_polynomialTest_axis (psi := psi) r
-
-
-
-
-
 
 theorem m64HalfDisk_polynomialTest_eq_zero
     {psi : ℝ → ℝ} {s : Set ℝ} (hs : Function.support psi ⊆ s)

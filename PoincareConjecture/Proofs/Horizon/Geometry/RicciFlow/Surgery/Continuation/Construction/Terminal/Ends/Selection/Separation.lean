@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Topology.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,7 +58,6 @@ private theorem eq_component_of_frontier {A S : Set M} (hA : IsOpen A)
   · exact disjoint_left.mpr fun _ hx hs => connectedComponentIn_subset _ _ hx (hf ▸ hs)
   · exact ⟨p, mem_connectedComponentIn (hAS hp), hA.interior_eq.symm ▸ hp⟩
 
-
 theorem retained_isConnected :
     IsConnected (connectedComponent N.center \ closure C.tail) := by
   obtain ⟨A, B, hAo, hBo, hAc, hBc, hdis, hab, hfA, hfB, _⟩ :=
@@ -107,7 +99,6 @@ theorem retained_isConnected :
         exact ⟨(hh.mp (Or.inl hx)).1, fun h => h.elim (hd hx)
           (hh.mp (Or.inl hx)).2⟩
     exact hret.symm ▸ hAc
-
 
 theorem retained_eq_component {p : M}
     (hp : p ∈ connectedComponent N.center \ closure C.tail) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateVolumeBounds
 import PoincareConjecture.Proofs.M10.SegmentDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M34
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem tangentNorm_mfderiv_le_of_pullbackMetricForm_norm_le
     (g : RiemannianMetric n M) (f : EuclideanSpace ℝ (Fin n) → M)
@@ -37,8 +27,6 @@ theorem tangentNorm_mfderiv_le_of_pullbackMetricForm_norm_le
     _ = (Real.sqrt b * ‖v‖) ^ 2 := by
       rw [mul_pow, Real.sq_sqrt hb]
       ring
-
-
 
 theorem coordinate_ball_subset_metric_ball (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) {delta c r : ℝ}

@@ -1,12 +1,5 @@
 import Mathlib.Topology.Separation.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76
@@ -80,4 +73,3 @@ theorem sphere_family_open_germ_after_exchange
       · exact mem_iUnion_of_mem j (by simpa only [Function.update_of_ne hji] using hj)
 
 end PoincareConjecture.M76
-

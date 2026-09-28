@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightJoinCoveredBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandEndpointGeometry
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,10 +10,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M64IntrinsicJoinedBandPatch (gamma : Bool → ℝ → AnnulusCoordinates)
     (T b : Bool → ℝ) (U : Set AnnulusCoordinates) where
@@ -55,21 +47,12 @@ namespace M64IntrinsicJoinedBandPatch
 variable {gamma : Bool → ℝ → AnnulusCoordinates} {T b : Bool → ℝ}
   {U : Set AnnulusCoordinates} (P : M64IntrinsicJoinedBandPatch gamma T b U)
 
-
-
-
 theorem outer_length_pos (e : Bool) : 0 < (if e then P.right_length else P.left_length) := by
   cases e
   · exact (P.band false).left_length_pos
   · exact (P.band true).right_length_pos
 
-
-
-
 theorem middle_length_pos : 0 < P.middle_length := (P.band false).right_length_pos
-
-
-
 
 theorem outer_base (e : Bool) :
     P.frame e (if e then P.right e else P.left e,
@@ -77,9 +60,6 @@ theorem outer_base (e : Bool) :
   cases e
   · exact P.left_base false
   · exact P.right_base true
-
-
-
 
 theorem outer_cut (e : Bool) : (if e then (P.band e).rightCut else (P.band e).leftCut) =
     segment ℝ (gamma e (b e))
@@ -92,9 +72,6 @@ theorem outer_cut (e : Bool) : (if e then (P.band e).rightCut else (P.band e).le
     rw [m64Intrinsic_band_right_cut (P.frame true) (P.band true), P.right_base]
     simp only [if_true, Prod.eta, ContinuousLinearEquiv.apply_symm_apply]
 
-
-
-
 theorem inner_cut (e : Bool) : (if e then (P.band e).leftCut else (P.band e).rightCut) =
     segment ℝ (gamma false (T false))
       (gamma false (T false) + P.middle_length • P.direction) := by
@@ -105,9 +82,6 @@ theorem inner_cut (e : Bool) : (if e then (P.band e).leftCut else (P.band e).rig
   · change (P.band true).leftCut = _
     rw [m64Intrinsic_band_left_cut (P.frame true) (P.band true), P.left_base]
     simp only [if_true, Prod.eta, ContinuousLinearEquiv.apply_symm_apply]
-
-
-
 
 theorem outer_endpoint_zero (e : Bool) :
     ((P.band e).endpointEdge e).map 0 = gamma e (b e) := by

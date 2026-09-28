@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.SupportedSphereVar
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.SupportedEnergyDerivative
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ChartEnergyFirstVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open CoordinateExponential ConnectionVariation
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60EnergyStationary_test_integral_eq_zero (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

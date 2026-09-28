@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -76,9 +65,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
-
 
 theorem exists_projective_cover_of_matching_exterior_ball
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture)

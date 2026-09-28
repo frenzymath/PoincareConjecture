@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem exists_three_points_at_small_edist
     (g : RiemannianMetric 3 M) (p : M) {R : ℝ} (hR : 0 < R) :

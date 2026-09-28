@@ -3,14 +3,6 @@ import PoincareConjecture.Statements.M60Area
 import PoincareConjecture.Statements.M61Width
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
 
 theorem m61FamilyWidth_from_M60
     {M : Type u} [TopologicalSpace M]

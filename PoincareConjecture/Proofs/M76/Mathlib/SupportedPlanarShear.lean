@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.SmallLipschitzHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 open scoped NNReal
 
 namespace Geometry
-
-
 
 theorem FinitePiecewiseAffineOn.max {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -41,18 +27,11 @@ end Geometry
 
 namespace SupportedPlanarShear
 
-
-
 noncomputable def margin (R : ℝ) (z : ℝ × ℝ) : ℝ :=
   max 0 (R - ‖z‖)
 
-
-
-
 noncomputable def clippedCoordinate (R : ℝ) (z : ℝ × ℝ) : ℝ :=
   max (-margin R z) (min z.2 (margin R z))
-
-
 
 theorem lipschitzWith_margin (R : ℝ) : LipschitzWith 1 (margin R) := by
   have h : LipschitzWith 1 (fun z : ℝ × ℝ => R - ‖z‖) := by
@@ -60,23 +39,17 @@ theorem lipschitzWith_margin (R : ℝ) : LipschitzWith 1 (margin R) := by
       (lipschitzWith_one_norm : LipschitzWith 1 (norm : (ℝ × ℝ) → ℝ))
   exact h.const_max 0
 
-
-
 theorem lipschitzWith_clippedCoordinate (R : ℝ) :
     LipschitzWith 1 (clippedCoordinate R) := by
   have h := lipschitzWith_margin R
   change LipschitzWith 1 (fun z => max (-margin R z) (min z.2 (margin R z)))
   simpa only [Pi.neg_apply, max_self] using h.neg.max (LipschitzWith.prod_snd.min h)
 
-
-
 theorem clippedCoordinate_eq_zero {R : ℝ} {z : ℝ × ℝ} (hz : R ≤ ‖z‖) :
     clippedCoordinate R z = 0 := by
   have hw : margin R z = 0 := max_eq_left (sub_nonpos.mpr hz)
   simp only [clippedCoordinate, hw, neg_zero]
   exact max_eq_left (min_le_right _ _)
-
-
 
 theorem clippedCoordinate_eq_snd {R : ℝ} {z : ℝ × ℝ} (hz : 2 * ‖z‖ ≤ R) :
     clippedCoordinate R z = z.2 := by
@@ -85,9 +58,6 @@ theorem clippedCoordinate_eq_snd {R : ℝ} {z : ℝ × ℝ} (hz : 2 * ‖z‖ �
     exact (show |z.2| ≤ R - ‖z‖ by linarith).trans (le_max_right _ _)
   rw [clippedCoordinate, min_eq_left (le_abs_self z.2 |>.trans hw),
     max_eq_right (by linarith [(abs_le.mp hw).1])]
-
-
-
 
 theorem finitePiecewiseAffineOn_clippedCoordinate (R : ℝ)
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite) :
@@ -110,12 +80,8 @@ theorem finitePiecewiseAffineOn_clippedCoordinate (R : ℝ)
     exact (hw.postcomp (-ContinuousAffineMap.id ℝ ℝ)).congr (fun _ _ => rfl)
   exact hnw.max (hb.min hw)
 
-
-
 noncomputable def shearMap (R c : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
   (z.1 + c * clippedCoordinate R z, z.2)
-
-
 
 theorem finitePiecewiseAffineOn_shearMap (R c : ℝ)
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite) :
@@ -128,10 +94,6 @@ theorem finitePiecewiseAffineOn_shearMap (R c : ℝ)
     exact ((finitePiecewiseAffineOn_clippedCoordinate R K hK).postcomp
       (c • ContinuousAffineMap.id ℝ ℝ)).congr (fun _ _ => rfl)
   exact (ha.add hv).prod_mk hb
-
-
-
-
 
 theorem exists_shear_homeomorph (R c : ℝ) (hc : |c| < 1) :
     ∃ H : (ℝ × ℝ) ≃ₜ (ℝ × ℝ),

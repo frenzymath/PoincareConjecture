@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierSphere
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianRetainedCylinder
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCutDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,9 +21,6 @@ local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 
 private instance : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_source_meridian_cut_sphere
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

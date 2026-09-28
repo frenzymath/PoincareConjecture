@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverse
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,12 +8,8 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
-
 noncomputable def mapRadiusInverse (w : ℝ → ℝ → ℝ) (t : ℝ) : ℝ → ℝ :=
   Function.invFun (mapRadius (w t))
-
-
 
 theorem mapRadius_inverse_properties {w : ℝ → ℝ → ℝ} {t : ℝ}
     (hw : ContDiff ℝ ∞ (w t))
@@ -47,8 +33,6 @@ theorem mapRadius_inverse_properties {w : ℝ → ℝ → ℝ} {t : ℝ}
   refine ⟨?_, hl, hr, hinj⟩
   rw [heq]
   exact hqs
-
-
 
 theorem mapRadiusInverse_contDiffAt
     {w : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)

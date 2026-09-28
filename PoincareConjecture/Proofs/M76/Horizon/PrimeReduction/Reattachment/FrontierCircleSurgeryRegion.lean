@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.CocoreP
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.PairedCrossingChartChange
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.NestedFiniteSphereCut
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -14,8 +12,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Rim" => sphere (0 : V2) 1
-
-
 
 theorem exists_disk_contact_neighborhood
     {X : Type*} [TopologicalSpace X] {D L S T U : Set X}
@@ -44,8 +40,6 @@ theorem exists_disk_contact_neighborhood
     · rintro ⟨hxS, hxT⟩
       apply (hmem x hxS hxT).mp
       exact hx.1.resolve_right (fun h => h hxS)
-
-
 
 theorem ChartwisePLSphere.exists_frontier_disk_crossing_scene
     {X E ι : Type*} [MetricSpace X]
@@ -259,8 +253,6 @@ theorem ChartwisePLSphere.exists_frontier_disk_surgery_product
   exact t.exists_frontier_disk_surgery_product_of_rim_chart s hP he hTP
     hd p hp hpi hpT hcontact pole hpoleT hpole hU hpU hrOpen Q₀ hQ₀
     ((image_mono hd.1).trans (hpT.trans hTQ₀)) hcross
-
-
 
 theorem ChartwisePLSphere.exists_original_frontier_disk_surgery_product
     {X E ι : Type*} [MetricSpace X]

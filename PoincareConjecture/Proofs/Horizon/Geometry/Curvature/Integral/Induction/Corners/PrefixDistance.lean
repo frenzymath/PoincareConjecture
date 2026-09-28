@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Pref
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberCompact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevelCompactDistance
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularL
 open scoped Manifold ContDiff Topology Bundle
 
 set_option maxHeartbeats 600000 in
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_prefix_edist_le_of_ambient_closedBall
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

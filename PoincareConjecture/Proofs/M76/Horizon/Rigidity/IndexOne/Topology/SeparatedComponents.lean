@@ -1,8 +1,5 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
 set_option autoImplicit false
 open Set
 

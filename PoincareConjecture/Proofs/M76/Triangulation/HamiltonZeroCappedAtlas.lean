@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroLatticeBrownCap
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCappedAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76
 local notation "W" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 local notation "Y" => ((Set.singleton hamiltonZeroHandlePuncture)ᶜ : Set W)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_zero_lattice_capped_PL_domain
     (h : OpenPartialHomeomorph CubeShell.Ambient V3) (hsource : h.source = univ)

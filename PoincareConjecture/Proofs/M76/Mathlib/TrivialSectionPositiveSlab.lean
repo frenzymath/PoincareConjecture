@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StrictCrossingPointIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualLevelScaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem vertex_and_positive_others_of_trivial_section_slab_point
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices)
@@ -58,10 +44,6 @@ theorem vertex_and_positive_others_of_trivial_section_slab_point
   have hxabove : β < A x :=
     convexHull_min hverts ((convex_Ioi β).affine_preimage A) hxs
   exact hxabove.not_ge hxA.2
-
-
-
-
 
 theorem trivial_section_triangle_level_homothety
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) {q : E}

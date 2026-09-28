@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivativeDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ theorem gaugeSource_weighted_fderiv_tame_bound
   change (1 + ‖x‖) * _ ≤ _ at hmain
   dsimp only [forcingSpaceDeriv, forcingScalarDeriv] at h3 ⊢
   nlinarith
-
-
 
 theorem gaugeSource_weighted_fderiv_vanishes_uniformly
     {A : Type*} {b : A → V → V} {G : A → V → ℝ → ℝ} {u : A → V → ℝ}

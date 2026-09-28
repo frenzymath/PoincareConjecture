@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.LevelSet
 
-
-
-
-
-
-
-
 open MeasureTheory Set Function
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis
-
-
 
 theorem scalarCriticalImage_null_coordinate
     {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) :
@@ -28,8 +19,6 @@ theorem scalarCriticalImage_null_coordinate
       apply hdet
       simp [ContinuousLinearMap.det, hz]
     exact hx (LinearMap.surjective hnonzero)
-
-
 
 theorem scalarCriticalImage_null_residual
     {m : ℕ} {s : Set (EuclideanSpace ℝ (Fin m))}
@@ -49,9 +38,6 @@ theorem scalarCriticalImage_null_residual
     μ (f '' s) = 0 := by
   apply measure_zero_image_of_locallyHolderOnWith_of_finrank_div_lt
     (μ := μ) hr hholder hdim
-
-
-
 
 theorem scalarCriticalImage_null_of_three_branches
     {α : Type*} [MeasurableSpace α]

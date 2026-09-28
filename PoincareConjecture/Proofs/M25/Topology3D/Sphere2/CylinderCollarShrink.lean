@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.CylinderCollarProfile
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CylinderCoordinates
 
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Topology

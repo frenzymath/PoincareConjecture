@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Nonflatness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +19,6 @@ local instance auxiliaryCarrierConnected (C : FlowCarrier 3) : ConnectedSpace C.
   connectedSpace_iff_univ.mpr C.connected
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
-
-
 
 theorem false_of_eventually_bounded_curvature_and_positive_volume_ratio
     (P : M23NormalizedKappaCompactnessPredecessors) {B ν : ℝ}

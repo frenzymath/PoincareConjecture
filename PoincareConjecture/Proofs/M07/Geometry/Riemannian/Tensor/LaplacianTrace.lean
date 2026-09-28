@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -26,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma sum_secondCovariantTensorDerivative_eq_hessian_trace
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M 2}
@@ -73,8 +59,6 @@ lemma sum_secondCovariantTensorDerivative_eq_hessian_trace
   rw [← h]
   simp [covariantTensorDerivative, hessian, hessianOnFields, f]
 
-
-
 lemma sum_tensorLaplacian_eq_laplacian_trace
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M 2}
     (hT : IsSmoothCovariantTensor T)
@@ -88,7 +72,6 @@ lemma sum_tensorLaplacian_eq_laplacian_trace
   intro i _
   exact D.sum_secondCovariantTensorDerivative_eq_hessian_trace hT hDT x
     (g.orthonormalBasis x i) (g.orthonormalBasis x i)
-
 
 lemma sum_tensorLaplacian_ricci_eq_laplacian_scalar
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

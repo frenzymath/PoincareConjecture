@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.FlowTensorRegularity
 import PoincareConjecture.Proofs.M04.RiemannRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -127,4 +120,3 @@ theorem contDiffOn_curvatureTensor_timeSlice (F : RicciFlow n M J)
   exact ht.contDiffOn
 
 end PoincareConjecture.M04
-

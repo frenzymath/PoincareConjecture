@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,7 +80,6 @@ theorem isManifold [IsManifold I r M] :
     chartAt H (f y) ((chartAt H (f x)).symm z)
   rw [localChart_apply, projection_localChart_symm hf x hz.1]
 
-
 theorem isLocalDiffeomorph [IsManifold I r M] :
     letI := chartedSpace (H := H) hf
     IsLocalDiffeomorph I I r f := by
@@ -125,7 +116,6 @@ theorem isLocalDiffeomorph [IsManifold I r M] :
     have h := hy.1.2
     change (hf.localInverseAt x).symm y ∈ (chartAt H (f x)).source at h
     simpa only [hf.localInverseAt_symm] using h
-
 
 theorem contMDiff_of_continuous_projection [IsManifold I r M] {g : X → X}
     (hg : Continuous g) :

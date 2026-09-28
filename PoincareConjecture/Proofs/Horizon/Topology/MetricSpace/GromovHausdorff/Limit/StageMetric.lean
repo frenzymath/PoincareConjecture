@@ -1,17 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.CompactStage
-
-
-
-
-
-
-
 
 open Set Metric
 
@@ -23,7 +10,6 @@ universe u
 
 namespace CompatiblePointedCompactSystem
 
-
 theorem dist_stageEmbedding_base
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ)
     (x : (S.stage n).carrier) :
@@ -31,8 +17,6 @@ theorem dist_stageEmbedding_base
       dist x (S.stage n).base := by
   rw [← S.stageEmbedding_base n]
   exact (S.stageEmbedding_isometry n).dist_eq _ _
-
-
 
 theorem mem_closedBall_stageEmbedding_iff
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ)
@@ -47,4 +31,3 @@ end CompatiblePointedCompactSystem
 end Poincare.GromovHausdorff
 
 end
-

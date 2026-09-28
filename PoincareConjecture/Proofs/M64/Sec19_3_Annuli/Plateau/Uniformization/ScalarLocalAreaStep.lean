@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarChartLocalLipschitz
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {n : ℕ} {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem scalar_exists_local_area_step
     (g : RiemannianMetric n M) (e : OpenPartialHomeomorph M E)

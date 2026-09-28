@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SourceCircleCut
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedOrientedExteriorArcs
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CircleRadialChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_native_source_exterior_arcs
     (q : Fin 2 → UnitCircle → UnitTwoSphere)

@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.Induction
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sard.ChartReduction
 
-
-
-
-
-
-
-
 open MeasureTheory Set Function
 open scoped ContDiff Manifold Topology
 
 namespace Poincare.Manifold
 
 open Poincare.Analysis
-
 
 theorem scalarCriticalImage_null_manifold
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -36,8 +28,6 @@ theorem scalarCriticalImage_null_manifold
   apply hn
   ext v
   exact congrArg (fun L => L v) hz
-
-
 
 theorem exists_regular_value_in_interval_of_smooth
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

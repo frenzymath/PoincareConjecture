@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.SingularHomotopyClasses
 import PoincareConjecture.Proofs.M02.Topology.HomotopyAddition
 import PoincareConjecture.Proofs.M02.Topology.SingularKan
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -17,7 +10,6 @@ open scoped BigOperators
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem singularPointedSimplex_relStruct_of_class_eq
     (X : TopCat.{u}) (n : Nat)
@@ -229,7 +221,6 @@ theorem singularPointedSimplex_relStruct_of_class_eq
         exact (H.eq_fst t ⟨k.succ, hw0⟩).trans
           (singular_pointedSimplex_boundary X n x a w ⟨k.succ, hw0⟩)
 
-
 theorem exists_kan_simplex_face_zero_replacement
     (Y : SSet.{u}) [SSet.KanComplex Y] (n : Nat)
     (x : Y.obj (Opposite.op (SimplexCategory.mk 0)))
@@ -359,7 +350,6 @@ theorem exists_kan_simplex_face_zero_replacement
   · intro j hj
     have hjv : j.val ≠ 0 := fun h => hj (Fin.ext h)
     simpa only [if_neg hjv] using G_faces j
-
 
 theorem singular_pointed_simplex_boundary_extension_iff
     (X : TopCat.{u}) (n : Nat)

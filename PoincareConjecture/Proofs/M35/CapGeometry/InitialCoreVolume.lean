@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialBallVolumeLower
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCoreCurvatureBalls
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTailFloor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem exists_initial_radial_ball_volume_floor
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
@@ -56,8 +45,6 @@ theorem exists_initial_radial_ball_volume_floor
   exact radial_ambient_ball_volume_lower (E.flow.metric t) (E.flow.connection t)
     (E.rotation_invariant t htime) (E.complete t htime) (E.nonnegative_sectional t htime)
     P hR hm hr hratio y (subset_closure.trans hinside)
-
-
 
 theorem exists_initial_radial_ball_strict_volume
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

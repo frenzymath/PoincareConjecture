@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamSobolevTests
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +10,6 @@ open scoped Topology ContDiff NNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem m64Integral_smul_indicator
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,8 +22,6 @@ theorem m64Integral_smul_indicator
   by_cases hp : p ∈ K
   · simp only [indicator_of_mem hp]
   · simp only [indicator_of_notMem hp, smul_zero]
-
-
 
 theorem m64ZeroGreen_indicator_weak_partial
     {m : ℕ} {K : Set LoopPlane} (hK : MeasurableSet K)
@@ -67,8 +52,6 @@ theorem m64ZeroGreen_indicator_weak_partial
     Measure.restrict_univ] at hs ⊢
   linarith
 
-
-
 theorem m64ZeroGreen_compact_lipschitz
     {m : ℕ} {K : Set LoopPlane} (hK : MeasurableSet K)
     {u W : LoopPlane → EuclideanSpace ℝ (Fin m)} {i : Fin 2}
@@ -84,8 +67,6 @@ theorem m64ZeroGreen_compact_lipschitz
     ((memLp_indicator_iff_restrict hK).mpr hu) ((memLp_indicator_iff_restrict hK).mpr hW)
     (m64ZeroGreen_indicator_weak_partial hK hu hW hgreen) hp hc
   rwa [m64Integral_smul_indicator hK, m64Integral_smul_indicator hK] at h
-
-
 
 theorem m64MatchingGreen_compact_lipschitz
     {m : ℕ} {K : Set LoopPlane} (hK : IsCompact K)

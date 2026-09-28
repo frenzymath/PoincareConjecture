@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedClosedLeftRelatedNecks
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteLeftGlobalBound
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteScalarPropagation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
   FlowCarrier.measurableSpace FlowCarrier.borelSpace FlowCarrier.secondCountable
-
-
 
 theorem exists_raw_finite_scalar_bound_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

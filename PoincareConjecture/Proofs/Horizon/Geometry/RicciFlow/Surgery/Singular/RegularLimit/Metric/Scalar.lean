@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +22,9 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def terminalConnection (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : LeviCivitaData (H.terminalMetric P04) :=
   (H.terminalMetric P04).leviCivitaData
-
-
 
 theorem tendsto_terminal_scalarCurvature
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -54,7 +43,6 @@ theorem tendsto_terminal_scalarCurvature
   have hM : (extChartAt (𝓡 3) (x : M)).symm p = (x : M) := extChartAt_to_inv (x : M)
   have hX : (extChartAt (𝓡 3) x).symm p = x := extChartAt_to_inv x
   simpa only [hM, hX, SingularTimeReference.scalar] using h
-
 
 theorem terminal_scalarCurvature_proper_and_bounded_below
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u}) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularRegularity
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRescaling
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Topology Pointwise
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60_exists_collar_lipschitz_of_matching_disk
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

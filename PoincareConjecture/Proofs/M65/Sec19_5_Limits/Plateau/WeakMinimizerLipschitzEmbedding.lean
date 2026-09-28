@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerExisten
 import PoincareConjecture.Proofs.M40.Mathlib.RiemannianVectorNorm
 import PoincareConjecture.Proofs.M01.NormalizationLocalDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {N : ℕ}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem m65Embedding_edist_bound (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
@@ -84,11 +67,6 @@ theorem m65Embedding_edist_bound (g : RiemannianMetric 3 M)
     (fun y _ => M40.mfderiv_enorm_le_vector_target (hnorm y)) hcomp
     (fun _ _ => mem_univ _)
   simpa using hh
-
-
-
-
-
 
 theorem m65SpanningDisk_embedded_lipschitz
     (g : RiemannianMetric 3 M) (e : M → EuclideanSpace ℝ (Fin N))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarGradientConvergence
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35
 
 variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem scalarGradientNorm_eq_sqrt_scalarGradientSq
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g) (x : M) :
@@ -34,8 +23,6 @@ theorem scalarGradientNorm_eq_sqrt_scalarGradientSq
   change inner ℝ (D.gradient D.scalarCurvature x) (D.gradient D.scalarCurvature x) =
     ∑ i, (inner ℝ (D.gradient D.scalarCurvature x) (g.orthonormalBasis x i)) ^ 2
   rw [real_inner_self_eq_norm_sq, OrthonormalBasis.sum_sq_inner_left]
-
-
 
 theorem continuousOn_flow_scalarGradientNorm {J : Set ℝ} (F : RicciFlow 3 M J) :
     ContinuousOn (fun p : ℝ × M => scalarGradientNorm (F.metric p.1)
@@ -65,8 +52,6 @@ theorem continuousOn_flow_scalarGradientNorm {J : Set ℝ} (F : RicciFlow 3 M J)
   convert! hsquare.sqrt using 1
   ext p
   exact scalarGradientNorm_eq_sqrt_scalarGradientSq (F.connection p.1) p.2
-
-
 
 theorem continuousOn_flow_scalar_evolution [T2Space M]
     {J : Set ℝ} (F : RicciFlow 3 M J) :

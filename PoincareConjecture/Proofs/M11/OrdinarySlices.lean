@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.OrdinaryProductMetric
 import PoincareConjecture.Proofs.M11.SliceGeometry
 import PoincareConjecture.Proofs.M11.SliceMaps
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.HorizontalGerm
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.CoreSeparation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -38,9 +30,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
-
 
 theorem exists_horizontal_terminal_separation_neighborhood
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -120,9 +109,6 @@ theorem exists_horizontal_terminal_separation_neighborhood
     rintro z hz ⟨q, hq, rfl⟩
     have hh : a < inner Real (M.v : E3) (g q) ∧ inner Real (M.v : E3) (g q) < b := hz.2
     rcases hcores D hD q hq with hl | hu <;> linarith
-
-
-
 
 theorem exists_separated_horizontal_terminal_surface_germ_within
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -212,9 +198,6 @@ private theorem cap_germ_of_decompositions
       by_cases hji : j = i
       · exact ⟨hji ▸ hj, hxU⟩
       · exact False.elim (disjoint_left.mp (hother j hji).1 hxU hj)
-
-
-
 
 theorem exists_separated_horizontal_terminal_cap_germ_within
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

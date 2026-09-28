@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.NeckCoordinates
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} {g0 : StandardInitialMetric}
   {K : MetricSurgeryConstants} {I : MetricSurgeryInput K g}
 
-
-
 theorem retained_neck_scalar_eq (R : MetricSurgeryResult g0 I)
     {x : M} (hx : x ∈ I.neck.region (-I.neck.epsilon⁻¹) 0) :
     R.connection.scalarCurvature (R.collapse x) = I.neck.connection.scalarCurvature x := by
@@ -36,9 +25,6 @@ theorem retained_neck_scalar_eq (R : MetricSurgeryResult g0 I)
   exact (I.neck.connection.scalarCurvature_eq_of_local_isometry R.connection
     (M36.neck_region_isOpen I.neck _ _) (R.retained_smooth.mono hsub)
     (fun y hy v w => (R.retained_metric y (Or.inl hy) v w).symm) hx).symm
-
-
-
 
 theorem retained_central_coordinate_scalar_eq (R : MetricSurgeryResult g0 I)
     (q : UnitTwoSphere) :
@@ -79,8 +65,6 @@ theorem retained_central_coordinate_scalar_eq (R : MetricSurgeryResult g0 I)
     exact hs.2
   exact heq.of_subset_closure hpost hpre Ioo_subset_Icc_self
     (by rw [closure_Ioo (by norm_num : (-1 : ℝ) ≠ 0)]) (by norm_num : (0 : ℝ) ∈ Icc (-1) 0)
-
-
 
 theorem retained_neck_center_scalar (R : MetricSurgeryResult g0 I) :
     R.connection.scalarCurvature (R.collapse I.neck.center) = I.neck.scale⁻¹ ^ 2 := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
   {J Q : SimplicialComplex ℝ E} {f g : E → E}
-
-
-
 
 theorem AffineOnFaces.protected_le_embeddedImage
     (hf : J.AffineOnFaces f) (hinj : InjOn f J.space)
@@ -37,8 +25,6 @@ theorem AffineOnFaces.protected_le_embeddedImage
       intro x hx
       exact hfix (Q.subset_space hs hx)
     _ = s := Finset.image_id
-
-
 
 theorem AffineOnFaces.comp_on_embeddedImage
     (hf : J.AffineOnFaces f) (hinj : InjOn f J.space)

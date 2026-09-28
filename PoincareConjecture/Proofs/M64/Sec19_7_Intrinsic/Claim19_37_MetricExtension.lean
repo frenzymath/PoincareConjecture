@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalRays
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +11,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_uniformly_positive_extension (N : IntrinsicAnnulus) :
     ∃ (G : RiemannianMetric 2 AnnulusCoordinates) (c : ℝ), 0 < c ∧

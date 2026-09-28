@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ private theorem cylinderChart_zero (q : UnitTwoSphere) : cylinderChart q 0 = (q,
       (mem_chart_source (EuclideanSpace ℝ (Fin 2)) q)
     simpa only [sphere_chart_center, Prod.fst_zero] using h
   · rfl
-
-
-
 
 theorem exists_cylinder_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -74,8 +62,6 @@ theorem exists_cylinder_curvature_bound :
   have hge := hlarge n
   rw [← hnorm n] at hge
   linarith
-
-
 
 theorem exists_neck_center_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

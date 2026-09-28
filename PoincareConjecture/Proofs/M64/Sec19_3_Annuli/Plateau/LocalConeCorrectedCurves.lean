@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeChartCorrec
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeCircleEnergy
 import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64_corrected_curve_speed_le
     (g : RiemannianMetric n M) (T : E → M) (w : ℝ → E) {B : ℝ} (x : ℝ)
@@ -41,8 +28,6 @@ theorem m64_corrected_curve_speed_le
   unfold curveVelocity
   erw [mfderiv_comp_apply x hT hw.mdifferentiableAt (1 : ℝ), hd]
   exact hbound _
-
-
 
 theorem m64_periodic_approximation_eventually_in_ball
     (w : ℕ → ℝ → E) (u : ℝ → E)
@@ -67,8 +52,6 @@ theorem m64_periodic_approximation_eventually_in_ball
   have htriangle := dist_triangle (w j y) (u y) c
   rw [dist_comm (w j y) (u y)] at htriangle
   linarith [hu y hy]
-
-
 
 theorem m64ChartReadable_local_circle_approximation_uniform
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -140,8 +123,6 @@ theorem m64ChartReadable_local_circle_approximation_uniform
     exact m64_corrected_curve_speed_le g T (w (j + k)) x
       ((hT _ (hmem j x)).mdifferentiableAt one_ne_zero)
       ((hw (j + k)).differentiable (by simp) x) (hbound _ (hmem j x))
-
-
 
 theorem m64ChartReadable_local_circle_approximation
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

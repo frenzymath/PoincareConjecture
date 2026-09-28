@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Tube
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,13 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -131,8 +118,6 @@ private theorem image_closed_strip_eq_component
   rw [connectedComponentIn_eq_image (hKB hpK)]
   rintro y ⟨x, hx, rfl⟩
   exact hclopen.connectedComponent_subset hpK hx
-
-
 
 theorem exists_smooth_regular_band_component_in_open
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -272,8 +257,6 @@ theorem exists_smooth_regular_band_component_in_open
     rw [← hFG, F.right_inv hy] at hGU
     exact hGU
 
-
-
 theorem exists_smooth_regular_band_component_of_smooth
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     {a b : Real} (hab : a < b)
@@ -295,7 +278,6 @@ theorem exists_smooth_regular_band_component_of_smooth
   obtain ⟨ε, hε, F, hFs, hF, hFi, hheight, hcenter, hband, _⟩ :=
     exists_smooth_regular_band_component_in_open hh U hreg hab hδ hcompact p hpU hp
   exact ⟨ε, hε, F, hFs, hF, hFi, hheight, hcenter, hband⟩
-
 
 theorem exists_smooth_regular_band_component
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
-
-
-
-
-
-
-

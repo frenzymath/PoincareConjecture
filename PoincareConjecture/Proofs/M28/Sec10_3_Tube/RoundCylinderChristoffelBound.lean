@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.ModelChristoffel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
 namespace PoincareConjecture.M28.tube
 
 open PoincareConjecture.Proofs.M28.NeckAnalysis
-
-
 
 theorem exists_bound_roundCylinderChristoffel_fderiv :
     ∃ C : ℝ, 0 ≤ C ∧

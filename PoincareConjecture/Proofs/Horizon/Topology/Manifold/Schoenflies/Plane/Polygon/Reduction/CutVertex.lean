@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Cyclic.CyclicCut
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.RegionNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +8,6 @@ open Set
 namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {n : ℕ}
-
 
 theorem cyclicArcIndex_rotate (a : Fin n) (m : ℕ) (j : Fin (m + 1))
     (hj : j ≠ Fin.last m) :
@@ -31,7 +20,6 @@ theorem cyclicArcIndex_rotate (a : Fin n) (m : ℕ) (j : Fin (m + 1))
     rw [show finRotate (m + 1) i.castSucc = i.succ from finRotate_of_lt i.isLt,
       cyclicArcIndex_succ]
 
-
 theorem cyclicArcIndex_rotate_symm (a : Fin n) (m : ℕ) (j : Fin (m + 1)) (hj : j ≠ 0) :
     cyclicArcIndex a m ((finRotate (m + 1)).symm j) =
       (finRotate n).symm (cyclicArcIndex a m j) := by
@@ -43,8 +31,6 @@ theorem cyclicArcIndex_rotate_symm (a : Fin n) (m : ℕ) (j : Fin (m + 1)) (hj :
   have h := cyclicArcIndex_rotate a m ((finRotate (m + 1)).symm j) hlast
   rw [Equiv.apply_symm_apply] at h
   simpa only [Equiv.symm_apply_apply] using (congrArg (finRotate n).symm h).symm
-
-
 
 theorem cyclicArcIndex_internal_ne_other_edge (a b : Fin n) (hab : b ≠ a)
     (j : Fin (cyclicDistance a b + 1)) (hj0 : j ≠ 0)
@@ -75,8 +61,6 @@ theorem cyclicArcIndex_internal_ne_other_edge (a b : Fin n) (hab : b ≠ a)
     refine ⟨t.succ, ?_⟩
     rw [cyclicArcIndex_succ, ht]
   exact ⟨fun h => hout (h.symm ▸ hiA), fun h => hout (h.symm ▸ hrA)⟩
-
-
 
 theorem IsSimplePolygon.polygonCut_regions_subset {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

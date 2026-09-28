@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.PuncturedProjectiveModel
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.SmoothProjectiveDoubleModel
-
-
-
 
 theorem exists_connected_sum_model
     {Q : Type u} [TopologicalSpace Q]

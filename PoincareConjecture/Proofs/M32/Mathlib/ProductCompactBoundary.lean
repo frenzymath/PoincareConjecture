@@ -3,15 +3,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Topology
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem isCompact_subset_fiber_of_frontier_subset
     {X : Type u} [TopologicalSpace X] {K : Set (X × ℝ)} (hK : IsCompact K)
@@ -64,9 +52,6 @@ theorem isCompact_subset_fiber_of_frontier_subset
   change z.2 ≤ hi.2 at hupp
   change z.2 = a
   linarith
-
-
-
 
 theorem not_isCompact_of_product_chart_frontier
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

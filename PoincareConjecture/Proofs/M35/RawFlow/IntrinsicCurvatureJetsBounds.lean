@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarpingBounds
 import PoincareConjecture.Proofs.M35.RawFlow.InitialDerivativeBounds
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,8 +66,6 @@ private theorem scalar_ode_jet_bounds {A : Type*} {f K : A → ℝ → ℝ}
           isClosed_le hcont.abs continuous_const
         exact closure_minimal (s := Ioi (0 : ℝ)) (fun s hs => hpos a s hs)
           hclosed (by rwa [closure_Ioi])
-
-
 
 theorem raw_intrinsic_warping_jets_bounded_on_slab
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

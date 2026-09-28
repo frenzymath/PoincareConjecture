@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.BandFlattening
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -86,9 +84,6 @@ private theorem projected_annulus_slice_embedding
   change Injective (mfderiv (𝓡 1) (𝓡 2) (L ∘ k) q)
   rw [mfderiv_comp q (L.contMDiff.mdifferentiable (by simp) _) (hk.mdifferentiable (by simp) _)]
   exact (L.mfderivToContinuousLinearEquiv (by simp) (k q)).injective.comp (hkder q)
-
-
-
 
 theorem exists_actual_band_flattening_with_constant_ends
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

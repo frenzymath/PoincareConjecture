@@ -1,19 +1,8 @@
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem isOpen_union_of_closed_cover
     {X : Type*} [TopologicalSpace X] {R T A B : Set X}

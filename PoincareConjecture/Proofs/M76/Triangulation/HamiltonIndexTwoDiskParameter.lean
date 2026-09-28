@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoCoverCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -62,9 +53,6 @@ private theorem diskAffine_finitePL (b : Bool) :
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKC, _⟩, _⟩, _⟩ :=
     isFinitePLBallPair_unit_cube (ι := Fin 2)
   exact ⟨K, hK, hKC, K.affineOnFaces_affine (diskAffine b)⟩
-
-
-
 
 theorem exists_standard_disk_parameter (b : Bool) :
     ∃ e : closedBall (0 : V2) 1 ≃ₜ source.disk b,

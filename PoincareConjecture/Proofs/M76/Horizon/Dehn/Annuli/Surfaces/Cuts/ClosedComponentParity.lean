@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Dart
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.GeometricCofaceSigns
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.BoundaryEulerBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
 open AbstractSimplicialComplex

@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open scoped ContDiff BigOperators
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem norm_iteratedFDeriv_smul_le_of_local_bounds
     {U : Set E} (hU : IsOpen U) {f : E → ℝ} {g : E → F}
@@ -48,9 +37,6 @@ theorem norm_iteratedFDeriv_smul_le_of_local_bounds
       (Nat.cast_nonneg _))
     (hgbound (m - i) (Nat.sub_le _ _)) (norm_nonneg _)
     (mul_nonneg (Nat.cast_nonneg _) hA)
-
-
-
 
 theorem norm_iteratedFDeriv_blend_le_of_local_bounds
     {U : Set E} (hU : IsOpen U) {θ : E → ℝ} {f g : E → F}

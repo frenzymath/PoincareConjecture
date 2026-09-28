@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalRetainedDiskCap
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76.OriginalDiskProduct

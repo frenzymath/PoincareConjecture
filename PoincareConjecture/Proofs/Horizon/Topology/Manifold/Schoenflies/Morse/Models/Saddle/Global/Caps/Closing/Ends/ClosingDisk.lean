@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.TransportedCap
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +15,6 @@ open Poincare.Geometry.Euclidean
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem exists_common_enlarged_curved_closing_disk
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1)

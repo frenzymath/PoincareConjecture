@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.HarmonicBranchFinite
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -65,10 +52,6 @@ variable {n : ℕ}
 
 include hO hconnected hu hΓ hsym hτ hnonconstant
 
-
-
-
-
 theorem m64PlaneHarmonicDifferential_zeroSet_not_mem_nhds
     {z : ℂ} (hz : z ∈ O) :
     m64PlaneDifferentialZeroSet u ∉ 𝓝 z := by
@@ -104,8 +87,6 @@ theorem m64PlaneHarmonicDifferential_zeroSet_not_mem_nhds
   rw [hempty] at hmem
   exact hmem
 
-
-
 theorem m64PlaneHarmonicDifferential_eventually_ne_zero
     {z : ℂ} (hz : z ∈ O) :
     ∀ᶠ w in 𝓝[≠] z, fderiv ℝ u w ≠ 0 := by
@@ -113,10 +94,6 @@ theorem m64PlaneHarmonicDifferential_eventually_ne_zero
     hO hu hΓ hsym hτ hz).resolve_left
       (m64PlaneHarmonicDifferential_zeroSet_not_mem_nhds
         hO hconnected hu hΓ hsym hτ hnonconstant hz)
-
-
-
-
 
 theorem m64PlaneHarmonicDifferential_zeroSet_finite_on_compact
     {K : Set ℂ} (hK : IsCompact K) (hKO : K ⊆ O) :

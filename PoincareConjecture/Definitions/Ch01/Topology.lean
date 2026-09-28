@@ -1,15 +1,5 @@
 import Mathlib
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -17,7 +7,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure OrientationCompatibleAtlas (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]

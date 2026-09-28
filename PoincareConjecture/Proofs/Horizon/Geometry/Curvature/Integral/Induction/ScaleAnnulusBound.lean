@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Intermediate
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.AreaScaleEstimates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -18,8 +10,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
 
 universe u
-
-
 
 theorem PoincareConjecture.LeviCivitaData.integral_scalarCurvature_posPart_inner_slab_le_of_scaled_level_induction
     {m : ℕ} {M : Type u} [TopologicalSpace M]

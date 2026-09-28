@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -30,9 +23,6 @@ private theorem bilinear_jet_bound
     (hfs.mono (fun _ hy => (hv hy).1)) (hgt.mono (fun _ hy => (hv hy).2))
     hvo.uniqueDiffOn hxv (le_refl (m : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
-
 
 theorem smooth_convergence_zero_bilinear_on_open
     {E F G H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

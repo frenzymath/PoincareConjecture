@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SphereExteriorFiniteModel
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderSectionDimension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

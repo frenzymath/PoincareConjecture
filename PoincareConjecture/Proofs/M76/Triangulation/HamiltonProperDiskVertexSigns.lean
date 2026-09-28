@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskIncidentFormulas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -87,11 +78,6 @@ private theorem original_triangle_values
     rw [← T.inverse_affine.image_convexHull hs] at hx
     obtain ⟨y, hy, rfl⟩ := hx
     exact ⟨(hP y hy).trans (hvalue y hy).2.symm, by rwa [hP y hy]⟩
-
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.normal_product_equation_at_vertex
     (T : HamiltonProperDiskTriangulation R D b) (hb : b.IsFinitePL)
@@ -207,9 +193,6 @@ theorem HamiltonProperDiskTriangulation.normal_product_equation_at_vertex
       rw [h1, h2]
       ring
     _ = _ := by rw [hA w hw, hC z hz]; rfl
-
-
-
 
 theorem HamiltonProperDiskTriangulation.normal_mul_pos_at_vertex
     (T : HamiltonProperDiskTriangulation R D b) (hb : b.IsFinitePL)

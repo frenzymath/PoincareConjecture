@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M04.ScalarEvolution
 import PoincareConjecture.Proofs.M04.ScalarStrongMaximum
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -33,10 +16,6 @@ namespace PoincareConjecture.M32
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M] [CompactSpace M] [ConnectedSpace M]
-
-
-
-
 
 theorem compact_surface_scalar_positive_on_Ioc
     {a b : ℝ} (hab : a < b) (H : RicciFlow 2 M (Icc a b))
@@ -85,10 +64,6 @@ theorem compact_surface_scalar_positive_on_Ioc
     (fun tau htau => H.contMDiff_scalarCurvature tau (hsub htau))
     (fun tau htau y => hnonneg tau (hsub htau) y)
     (fun tau _ y => hevol tau y) q hq x
-
-
-
-
 
 theorem compact_surface_scalar_uniform_lower_on_Icc
     {a b : ℝ} (hab : a < b) (H : RicciFlow 2 M (Icc a b))

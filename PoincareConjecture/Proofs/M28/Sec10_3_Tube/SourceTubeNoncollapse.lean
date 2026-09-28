@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckScaledVolume
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.OpenRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_source_tubeCritical_noncollapse_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.SectionalBarrierDiffusion
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalPlanes
 import PoincareConjecture.Proofs.M04.SectionalNullReaction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

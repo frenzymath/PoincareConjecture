@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedLeftNeighborhood
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem exists_open_closed_family_neighborhood {E : Type*} [TopologicalSpace E]
     {U : Set E} (hU : IsOpen U) {x : E} (hx : x ∈ U)

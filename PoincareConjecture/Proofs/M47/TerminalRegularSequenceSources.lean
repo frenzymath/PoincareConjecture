@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedRegularSequence
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalSource_exists_regular_sequence_sources
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

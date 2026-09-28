@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -27,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem CapCertificate.boundary_subset_closure_end_region
     (C : CapCertificate g) {t : ℝ}
@@ -74,8 +61,6 @@ theorem CapCertificate.boundary_subset_closure_end_region
     have hcl := closure_mono hcover (C.boundary_subset_negative_end_closure hx)
     rw [closure_union, hD.isClosed.closure_eq] at hcl
     exact hcl.resolve_right (fun hxD => disjoint_left.mp havoid hx (hDN hxD))
-
-
 
 theorem CapCertificate.isCompact_end_neck_lower_cut
     (C : CapCertificate g) {t : ℝ}
@@ -195,9 +180,6 @@ theorem CapCertificate.isCompact_end_neck_lower_cut
   change IsCompact (C.carrier \ N.region t L)
   rw [heq]
   exact (hV.union hD).diff (N.isOpen_region t L)
-
-
-
 
 theorem CapCertificate.end_neck_lower_cut_topology
     (C : CapCertificate g) {t : ℝ}

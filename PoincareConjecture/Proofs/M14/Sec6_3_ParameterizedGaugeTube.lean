@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ParameterizedGaugeFamily
 import PoincareConjecture.Proofs.M14.Mathlib.CompactFamilyTube
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,13 +15,9 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point ×
     G.gaugeCover.spatial j) (χ : ℝ → ℝ) (d : P → EuclideanSpace ℝ (Fin n))
 
-
-
 theorem supportedGaugeTranslateFamily_eq_of_not_tsupport {z : ℝ × P}
     (hs : z.1 ∉ tsupport χ) : supportedGaugeTranslateFamily f j lift χ d z = f z := by
   simp only [supportedGaugeTranslateFamily, if_neg hs]
-
-
 
 theorem supportedGaugeTranslateFamily_eq_of_zero {z : ℝ × P}
     (hz : (G.gaugeCover.cylinder j).toSpacetime (lift (f z)) = f z) (hd : d z.2 = 0) :
@@ -38,8 +25,6 @@ theorem supportedGaugeTranslateFamily_eq_of_zero {z : ℝ × P}
   rw [supportedGaugeTranslateFamily_eq_gauge f j lift χ d hz]
   simp only [gaugeTranslateFamily, hd, smul_zero,
     TopologicalSpace.Opens.affineShift_zero, Prod.mk.eta, hz]
-
-
 
 theorem supportedGaugeTranslateFamily_time {z : ℝ × P}
     (hz : z.1 ∈ tsupport χ → (G.gaugeCover.cylinder j).toSpacetime (lift (f z)) = f z) :
@@ -51,8 +36,6 @@ theorem supportedGaugeTranslateFamily_time {z : ℝ × P}
     exact ((G.gaugeCover.cylinder j).time_eq (lift (f z))).symm.trans
       (congrArg G.spacetime.timeFunction (hz hs))
   · rw [supportedGaugeTranslateFamily_eq_of_not_tsupport f j lift χ d hs]
-
-
 
 theorem supportedGaugeTranslateFamily_eq_target {z : ℝ × P}
     (hz : (G.gaugeCover.cylinder j).toSpacetime (lift (f z)) = f z)
@@ -71,9 +54,6 @@ theorem supportedGaugeTranslateFamily_eq_target {z : ℝ × P}
   simp only [gaugeTranslateFamily, hpoint]
 
 variable [TopologicalSpace P]
-
-
-
 
 theorem exists_supportedGaugeTranslate_tube {C : Set ℝ} {U : Set P} {V : Set G.Point}
     (hC : IsCompact C) (hU : IsOpen U) (hf : ContinuousOn f (C ×ˢ U))

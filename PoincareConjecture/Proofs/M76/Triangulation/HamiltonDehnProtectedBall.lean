@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOriginalChartBall
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "R" => latticeHandleDomain ι κ L
 local notation "V3" => (Fin 3 → ℝ)
 
 omit [DiscreteTopology L] in
-
-
 
 theorem HamiltonDehnEnclosingRegion.interior_nonempty
     {e : α → OpenPartialHomeomorph X V3} {T : Set X}
@@ -57,10 +46,6 @@ theorem HamiltonDehnEnclosingRegion.interior_nonempty
     exact (interior_subset hxRel :
       (⟨x, interior_subset hx.2⟩ : R) ∈ (Subtype.val : R → X) ⁻¹' region.region)
   exact ⟨z, interior_mono hOD ((hO.inter isOpen_interior).interior_eq.symm ▸ ⟨hzO, hzIntR⟩)⟩
-
-
-
-
 
 theorem HamiltonDehnEnclosingRegion.markedProtectedBall
     {e : α → OpenPartialHomeomorph X V3} {T : Set X}

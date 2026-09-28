@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.SimplexFaceHomotopy
 import PoincareConjecture.Proofs.M02.Topology.SimplexCubeConcatenation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -16,7 +8,6 @@ open CategoryTheory Simplicial
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem singular_pointedSimplex_boundary (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))
@@ -32,7 +23,6 @@ theorem singular_pointedSimplex_boundary (X : TopCat.{u}) (n : Nat)
     singular_const_apply] at h
   exact h
 
-
 theorem exists_singular_pointedSimplex_genLoop (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))
     (a : (TopCat.toSSet.obj X).PtSimplex (n + 1) x)
@@ -43,7 +33,6 @@ theorem exists_singular_pointedSimplex_genLoop (X : TopCat.{u}) (n : Nat)
       f.val = (X.toSSetObjEquiv _ (SSet.yonedaEquiv a.map)).comp q := by
   exact ⟨⟨(X.toSSetObjEquiv _ (SSet.yonedaEquiv a.map)).comp q,
     fun t ht => singular_pointedSimplex_boundary X n x a (q t) (hq t ht)⟩, rfl⟩
-
 
 theorem singular_relStruct_genLoop_homotopic (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))
@@ -61,7 +50,6 @@ theorem singular_relStruct_genLoop_homotopic (X : TopCat.{u}) (n : Nat)
   rw [hf, hg]
   exact ⟨{ toHomotopy := H.toHomotopy.compContinuousMap q
            prop' := fun s t ht => H.eq_fst s (hq t ht) }⟩
-
 
 theorem singular_mulStruct_genLoop_mul (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))

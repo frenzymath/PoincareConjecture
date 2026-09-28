@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem affine_height_le_on_boundary {E : Type*} [AddCommGroup E] [Module ℝ E]
     {n : ℕ} (P : Polygon E n) (L : E →ᵃ[ℝ] ℝ) {c : ℝ}
@@ -25,9 +14,6 @@ theorem affine_height_le_on_boundary {E : Type*} [AddCommGroup E] [Module ℝ E]
   have himg := mem_image_of_mem L hi
   rw [edgeSet, affineSegment_eq_segment, image_segment, segment_eq_uIcc] at himg
   exact himg.2.trans (max_le (hL i) (hL (finRotate n i)))
-
-
-
 
 theorem negative_diagonal_mem_outside {n : ℕ} (P : Polygon (ℝ × ℝ) n)
     (L : (ℝ × ℝ) →ₗ[ℝ] ℝ) (hL : ∀ i, L (P i) ≤ 0)

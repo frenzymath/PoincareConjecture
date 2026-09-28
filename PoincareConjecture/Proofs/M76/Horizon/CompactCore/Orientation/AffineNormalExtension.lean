@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.BoundarySign
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

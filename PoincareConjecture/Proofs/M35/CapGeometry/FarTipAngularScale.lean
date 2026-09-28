@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.ActualFarTipRadialCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single (2 : Fin 3) 1
-
-
 
 theorem blowupSequence_far_tip_normalized_orbit_sq_tendsto_two
     (P : M35StandardCapPredecessors)

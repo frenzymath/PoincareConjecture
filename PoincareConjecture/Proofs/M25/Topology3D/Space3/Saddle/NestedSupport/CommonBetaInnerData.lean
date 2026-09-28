@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.CommonBetaPackets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -18,8 +8,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 noncomputable section
-
-
 
 def saddleNestedInnerSx : Fin 4 → ℝ := ![1, -1, -1, 1]
 
@@ -30,8 +18,6 @@ def saddleNestedInnerEp : Fin 2 × Fin 2 ≃ Fin 4 := finProdFinEquiv
 def saddleNestedInnerPort (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (i e : Fin 2) : E2 :=
   J2.symm (saddleNestedInnerSx (saddleNestedInnerEp (i, e)) / Real.sqrt 2,
     saddleNestedInnerSy (saddleNestedInnerEp (i, e)) / Real.sqrt 2)
-
-
 
 structure CommonBetaInnerShortData
     (kappa : OpenPartialHomeomorph E2 E2)
@@ -84,9 +70,6 @@ structure CommonBetaInnerShortData
   hNform : ∀ p ∈ N.source,
     N p = gamma p.1 + p.2 •
       (J2.symm (-(J2 (deriv gamma p.1)).2, (J2 (deriv gamma p.1)).1))
-
-
-
 
 structure CommonBetaInnerFilledData
     (kappa : OpenPartialHomeomorph E2 E2)

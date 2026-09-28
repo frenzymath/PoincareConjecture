@@ -3,14 +3,6 @@ import PoincareConjecture.Statements.M31SingularRegularLimit
 import PoincareConjecture.Proofs.M04
 import PoincareConjecture.Proofs.M31.RegularCanonical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,50 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m31SingularRegularLimit (P04 : RicciFlowCurvatureTheory.{u}) :
     ∀ A : RepairedNeckCapTopologyTheory.{u},
@@ -75,8 +23,6 @@ theorem m31SingularRegularLimit (P04 : RicciFlowCurvatureTheory.{u}) :
             H.epsilon ≤ epsilon₀ →
               Nonempty (RepairedSingularRegularLimitData H) :=
   (horizon_m31SingularRegularLimit P04).limit
-
-
 
 theorem m31SingularRegularLimitTheory : RepairedSingularRegularLimitTheory.{u} := by
   exact ⟨m31SingularRegularLimit ricciFlowCurvatureTheory⟩

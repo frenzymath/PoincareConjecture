@@ -1,23 +1,11 @@
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem isPreconnected_compl_of_neighborhood
     {X : Type*} [TopologicalSpace X] [PreconnectedSpace X]
@@ -58,8 +46,6 @@ theorem isPreconnected_compl_of_neighborhood
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem isConnected_unitAnnulus (hdim : 1 < Module.rank ℝ E) {R : ℝ} (hR : 1 < R) :
     IsConnected (ball (0 : E) R \ closedBall 0 1) := by
   have himage : (fun p : E × ℝ => p.2 • p.1) ''
@@ -83,9 +69,6 @@ theorem isConnected_unitAnnulus (hdim : 1 < Module.rank ℝ E) {R : ℝ} (hR : 1
   rw [← himage]
   exact ((isConnected_sphere hdim 0 zero_le_one).prod (isConnected_Ioo hR)).image
     (fun p : E × ℝ => p.2 • p.1) (continuous_snd.smul continuous_fst).continuousOn
-
-
-
 
 theorem compactChart_exterior_connected [ProperSpace E]
     {X : Type*} [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]

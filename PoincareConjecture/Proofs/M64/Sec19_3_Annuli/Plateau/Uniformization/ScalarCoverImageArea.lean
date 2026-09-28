@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarAngularCuts
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ local notation "Band" => Set.prod (Ioo (1 : ℝ) 2) (Ioo (0 : ℝ) 1)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
 theorem scalarNormalizedCoverMap_differentiableAt {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hdV : ∀ z ∈ scalarCoverStrip, HasFDerivAt V (scalarCoverForm D H z) z)
@@ -45,10 +28,6 @@ theorem scalarNormalizedCoverMap_differentiableAt {H : Plane → ℝ} {V : Cover
     ext y
     simp [div_eq_mul_inv, mul_comm]
   exact hU.prodMk hVnorm
-
-
-
-
 
 theorem scalarNormalizedCoverMap_integer_cover {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)
@@ -93,10 +72,6 @@ theorem scalarNormalizedCoverMap_integer_cover {H : Plane → ℝ} {V : Cover �
   change F y = z + (0, ((-n : ℤ) : ℝ))
   rw [hshift, hxval]
   ext <;> simp [sub_eq_add_neg]
-
-
-
-
 
 theorem scalarNormalizedCoverMap_image_area_ge_one {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)

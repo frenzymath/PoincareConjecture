@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Family.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +16,6 @@ include hr in
 private theorem smallBall_subset_coordinateBall :
     Metric.ball (0 : EuclideanSpace ℝ (Fin n)) (r / 4) ⊆ Metric.closedBall 0 r :=
   (Metric.ball_subset_ball (by linarith : r / 4 ≤ r)).trans Metric.ball_subset_closedBall
-
-
 
 def uniformBallRestriction {B : Type*} (e : MetricCoordinateBall g r → B) :
     Metric.ball (0 : EuclideanSpace ℝ (Fin n)) (r / 4) → B :=
@@ -61,8 +49,6 @@ private theorem coordinateBall_dist_bounds
   · simpa only [MetricCoordinateBall.dist_eq,
       ENNReal.toReal_ofReal (by positivity : 0 ≤ 3 * ‖y.val - x.val‖ / 2)] using
       ENNReal.toReal_mono ENNReal.ofReal_ne_top hhi
-
-
 
 theorem isOpenEmbedding_uniformBallRestriction {B : Type*} [MetricSpace B]
     (hbound : ∀ x v : EuclideanSpace ℝ (Fin n),
@@ -107,8 +93,6 @@ theorem isOpenEmbedding_uniformBallRestriction {B : Type*} [MetricSpace B]
   refine ⟨⟨y.val, ?_⟩, ?_⟩
   · simpa only [Metric.mem_ball, dist_zero_right] using hynorm
   · exact hy
-
-
 
 theorem ball_subset_range_uniformBallRestriction {B : Type*} [MetricSpace B]
     (hbound : ∀ x v : EuclideanSpace ℝ (Fin n),

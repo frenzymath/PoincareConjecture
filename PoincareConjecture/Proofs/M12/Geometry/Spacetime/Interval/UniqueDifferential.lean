@@ -1,14 +1,11 @@
 import PoincareConjecture.Definitions.M11TimeInterval
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
 
 theorem uniqueDiffWithinAt_of_spacetimeInterval
     (I : SpacetimeInterval) (t : I.domain) :

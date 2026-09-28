@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Loops.OriginalFrontierEssentialRim
 import PoincareConjecture.Proofs.M76.Wall.OriginalComponentSphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains

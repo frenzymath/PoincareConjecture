@@ -1,24 +1,8 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
-
-
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set
 open scoped ContDiff Topology
@@ -37,7 +21,6 @@ def spatialDeriv (i : Fin n) (u : Spacetime n → ℝ) (z : Spacetime n) : ℝ :
 
 def timeDeriv (u : Spacetime n → ℝ) (z : Spacetime n) : ℝ :=
   fderiv ℝ u z (0, 1)
-
 
 structure Coefficients (n : ℕ) where
   principal : Fin n → Fin n → Spacetime n → ℝ
@@ -63,8 +46,6 @@ def Coefficients.adjoint (C : Coefficients n) (φ : Spacetime n → ℝ)
   -timeDeriv φ z - (∑ i, ∑ j,
     spatialDeriv j (spatialDeriv i (fun y => C.principal i j y * φ y)) z) -
     (∑ i, spatialDeriv i (fun y => C.drift i y * φ y) z) + C.zeroth z * φ z
-
-
 
 def WeakSolutionOn (C : Coefficients n) (u : Spacetime n → ℝ)
     (U : Set (Spacetime n)) : Prop :=

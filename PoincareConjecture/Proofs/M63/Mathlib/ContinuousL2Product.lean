@@ -2,24 +2,11 @@ import Mathlib.MeasureTheory.Function.LpSpace.Basic
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_continuousL2_product
     {K E F G : Type*} [TopologicalSpace K] [CompactSpace K]

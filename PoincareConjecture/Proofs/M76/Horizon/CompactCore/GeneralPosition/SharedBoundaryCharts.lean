@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Coordinates.SimultaneousMarkedFormulas
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.CompatibleChartFormula
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

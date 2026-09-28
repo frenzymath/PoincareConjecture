@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Tria
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Ambient.AmbientGridPerturbation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Embedded.EmbeddedThreeTangent
 
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

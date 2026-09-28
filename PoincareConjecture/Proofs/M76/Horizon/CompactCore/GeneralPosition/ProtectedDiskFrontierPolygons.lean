@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.OriginalDiskFrontierPolygons
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76

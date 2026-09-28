@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedComponent
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,7 +33,6 @@ private theorem contMDiff_curve_lift {F : M → N}
   filter_upwards [hΓ.continuousAt.preimage_mem_nhds
     (ht.localInverse.open_target.mem_nhds ht.localInverse_mem_target)] with s hs
   exact (ht.localInverse_left_inv hs).symm
-
 
 theorem RiemannianMetric.image_ball_of_covering
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) {F : M → N}
@@ -78,7 +66,6 @@ theorem RiemannianMetric.image_ball_of_covering
 variable [T3Space M] [T3Space N] [MeasurableSpace M] [BorelSpace M]
   [MeasurableSpace N] [BorelSpace N]
 
-
 theorem calibratedMetricVolume_image_le_of_metric_pullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) {F : M → N}
     (hF : ContMDiff (𝓡 n) (𝓡 n) ∞ F)
@@ -107,8 +94,6 @@ theorem calibratedMetricVolume_image_le_of_metric_pullback
     simpa using hLip.hausdorffMeasure_image_le (show 0 ≤ (n : ℝ) by positivity) s
   exact mul_le_mul' le_rfl hmeasure
 
-
-
 theorem MetricKappaNoncollapsed.of_covering
     {g : RiemannianMetric n M} {h : RiemannianMetric n N}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {F : M → N}
@@ -130,8 +115,6 @@ theorem MetricKappaNoncollapsed.of_covering
     g h hF.contMDiff hinner (g.ball p r)
   rw [hball] at hvol
   exact (hκ.2 (F p) r hr hbase).trans hvol
-
-
 
 theorem MetricKappaNoncollapsed.connectedComponentMetric
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -160,8 +143,6 @@ theorem MetricKappaNoncollapsed.connectedComponentMetric
   exact (hκ.2 (incl x) r hr hbase).trans hvol
 
 namespace RicciFlow.Splitting
-
-
 
 theorem unitRicciKernelMetric_kappaNoncollapsed
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

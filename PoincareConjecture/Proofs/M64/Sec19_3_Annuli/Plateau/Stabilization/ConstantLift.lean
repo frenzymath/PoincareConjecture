@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionComplete
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,20 +15,14 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 def auxiliaryCircleSection (P : M62.CircleProductData F circumference)
     (q : P.circle.Point) : M → P.charts.Point := fun x => (x, q)
-
-
 
 theorem auxiliaryCircle_section_contMDiff
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) :
     ContMDiff (𝓡 n) (𝓡 (n + 1)) ∞ (auxiliaryCircleSection P q) := by
   let := P.charts.chartedSpace
   exact P.charts.from_product_smooth.comp (contMDiff_id.prodMk contMDiff_const)
-
-
 
 theorem auxiliaryCircle_section_mfderiv_split
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
@@ -70,8 +53,6 @@ theorem auxiliaryCircle_section_mfderiv_split
     rw [hc, mfderiv_const] at h
     exact h.symm
 
-
-
 theorem auxiliaryCircle_section_metric
     (P : M62.CircleProductData F circumference) (t : ℝ) (q : P.circle.Point)
     (x : M) (v w : TangentSpace (𝓡 n) x) :
@@ -82,8 +63,6 @@ theorem auxiliaryCircle_section_metric
   rw [P.metric_eq, auxiliaryCircle_section_mfderiv_split,
     auxiliaryCircle_section_mfderiv_split]
   simp
-
-
 
 theorem auxiliaryCircle_section_edist
     (P : M62.CircleProductData F circumference) (t : ℝ) (q : P.circle.Point)
@@ -102,8 +81,6 @@ theorem auxiliaryCircle_section_edist
     simpa only [auxiliaryCircleSection, ENNReal.ofReal_one, one_mul] using h
   · simpa using m64Projection_edist_le P t (x, q) (y, q)
 
-
-
 theorem auxiliaryCircle_section_areaGram
     (P : M62.CircleProductData F circumference) (t : ℝ) (q : P.circle.Point)
     {f : LoopPlane → M} {z : LoopPlane} (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z) :
@@ -117,8 +94,6 @@ theorem auxiliaryCircle_section_areaGram
   dsimp only [m60AreaGram]
   erw [hcomp i, hcomp j]
   exact auxiliaryCircle_section_metric P t q _ _ _
-
-
 
 theorem auxiliaryCircle_lift_annulus
     (P : M62.CircleProductData F circumference) (t : ℝ) (q : P.circle.Point)

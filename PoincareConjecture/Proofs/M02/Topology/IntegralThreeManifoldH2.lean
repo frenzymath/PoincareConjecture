@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralManifoldOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralManifoldSupport
 import PoincareConjecture.Proofs.M02.Topology.ThreeManifoldTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

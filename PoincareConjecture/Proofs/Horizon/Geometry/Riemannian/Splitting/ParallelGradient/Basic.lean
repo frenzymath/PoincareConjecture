@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -24,10 +17,8 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def HasUnitGradient (D : LeviCivitaData g) (f : M → ℝ) : Prop :=
   ∀ x, g.inner x (D.gradient f x) (D.gradient f x) = 1
-
 
 def HasZeroHessian (D : LeviCivitaData g) (f : M → ℝ) : Prop :=
   ∀ x u v, D.hessian f x u v = 0

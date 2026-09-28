@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSurgeryMetric
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_LocalScalarTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem retained_scalar_eq_terminal
     (event : SurgeryEventData g0 K P slice metric T)
@@ -64,9 +53,6 @@ theorem retained_scalar_eq_terminal
   have h := (M44.scalar_ricciNormSq_eq_of_local_isometry
     event.limit_connection D hU hf hi hm hy).1
   simpa only [Function.comp_apply, hleft] using h
-
-
-
 
 theorem tendsto_preterminal_scalar_retained
     (event : SurgeryEventData g0 K P slice metric T)

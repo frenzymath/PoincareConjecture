@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalStar
 
-
-
 set_option autoImplicit false
 open Set
 
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
 
 theorem mem_coneAtZero_faces_cases (K : SimplicialComplex ℝ E)
     (hlin : ∀ t ∈ K.faces, LinearIndependent ℝ ((↑) : t → E))

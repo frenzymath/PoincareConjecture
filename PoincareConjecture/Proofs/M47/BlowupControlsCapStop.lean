@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapClock
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   (O : SurgeryObservation F) {Q a : ℝ} {U : Set C.carrier}
 
 local notation "birth" => O.H + a / Q
-
-
 
 theorem cap_stop_elapsed_lt_comparison_margin
     (e : SurgeryFlowCylinder F C O.H Q (Icc a 0) U)

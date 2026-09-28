@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.Jordan
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,19 +10,13 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 def polygonInterior (p : Polygon E n) : Set E :=
   {x | x ∉ p.boundary ℝ ∧ Bornology.IsBounded (connectedComponentIn (p.boundary ℝ)ᶜ x)}
-
-
 
 def polygonExterior (p : Polygon E n) : Set E :=
   {x | x ∉ p.boundary ℝ ∧ ¬ Bornology.IsBounded (connectedComponentIn (p.boundary ℝ)ᶜ x)}
 
 variable [FiniteDimensional ℝ E] {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.polygonRegions_spec (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
@@ -78,15 +62,11 @@ theorem IsSimplePolygon.polygonRegions_spec (hp : IsSimplePolygon p)
   rw [hI, hO]
   exact ⟨hU, hV, hUp, hVp, hdis, hcover, hUb, hVb, hUf, hVf⟩
 
-
-
 theorem IsSimplePolygon.closure_polygonInterior (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
     closure (polygonInterior p) = polygonInterior p ∪ p.boundary ℝ := by
   rw [closure_eq_self_union_frontier,
     (hp.polygonRegions_spec hdim).2.2.2.2.2.2.2.2.1]
-
-
 
 theorem IsSimplePolygon.polygonExterior_eq_compl_closure_interior (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
@@ -103,8 +83,6 @@ theorem IsSimplePolygon.polygonExterior_eq_compl_closure_interior (hp : IsSimple
     have hxC : x ∉ p.boundary ℝ := fun hz => hx (Or.inr hz)
     have hxcover : x ∈ polygonInterior p ∪ polygonExterior p := hcover.symm ▸ hxC
     exact hxcover.resolve_left fun hz => hx (Or.inl hz)
-
-
 
 theorem IsSimplePolygon.isCompact_closure_polygonInterior (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) : IsCompact (closure (polygonInterior p)) :=

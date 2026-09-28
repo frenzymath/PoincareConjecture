@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.Region
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapSlice.Region
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -44,9 +36,6 @@ theorem mem_source_of_mem_height_interval (A : LowerAnnularEnd D C h a b)
   rw [A.source]
   exact ⟨mem_univ _, by linarith [ht.1, A.delta_pos],
     by linarith [ht.2, A.delta_pos]⟩
-
-
-
 
 theorem below_rim_subset_cap (A : LowerAnnularEnd D C h a b)
     (haD : a ≤ D.center) (hDb : D.center < b) :
@@ -180,8 +169,6 @@ theorem slice_geometry (A : LowerAnnularEnd D C h a b)
   intro x y hxy
   have hh := congrArg (mfderiv (𝓡 2) (𝓡 1) j (f q)) hxy
   exact (congrArg (fun L => L x) hd).trans (hh.trans (congrArg (fun L => L y) hd).symm)
-
-
 
 theorem exists_cappedRegion_disk (A : LowerAnnularEnd D C h a b)
     (haD : a ≤ D.center) {c : Real} (hDc : D.center < c) (hcb : c < b) :

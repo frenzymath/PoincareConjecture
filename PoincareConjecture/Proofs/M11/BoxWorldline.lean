@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M11.SpacetimeGeometry
 import PoincareConjecture.Proofs.M11.BoxInverseDifferential
 import PoincareConjecture.Proofs.M11.IntervalConstant
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.BoundaryD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OutermostSurfaceCompression
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -175,4 +166,3 @@ theorem ChartwisePLSphere.exists_terminal_loop_quotient_region
   exact ⟨G,hG,exists_null_lattice_circle_region_in_filling hk L G (q.comp gamma) hgi hG⟩
 
 end PoincareConjecture.M76
-

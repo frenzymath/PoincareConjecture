@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedPatchImage
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FinitePlanePatchAt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_original_interior_disk_pair_chart
     {X ι : Type*} [TopologicalSpace X]

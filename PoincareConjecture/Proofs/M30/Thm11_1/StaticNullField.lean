@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def unitRicciKernelField (D : LeviCivitaData g)
     (hc : IsCoveringMap (unitRicciKernelProjection D)) :
     letI := unitRicciKernelChartedSpace D hc
@@ -38,8 +25,6 @@ noncomputable def unitRicciKernelField (D : LeviCivitaData g)
   letI := unitRicciKernelIsManifold D hc
   exact fun p =>
     (mfderiv (𝓡 n) (𝓡 n) (unitRicciKernelProjection D) p).inverse p.1.snd
-
-
 
 theorem unitRicciKernelField_projection (D : LeviCivitaData g)
     (hc : IsCoveringMap (unitRicciKernelProjection D)) (p : UnitRicciKernel D) :
@@ -53,9 +38,6 @@ theorem unitRicciKernelField_projection (D : LeviCivitaData g)
     ⟨(unitRicciKernelProjection_isLocalDiffeomorph D hc).mfderivToContinuousLinearEquiv
       (by simp) p, rfl⟩
   exact hinv.self_apply_inverse _
-
-
-
 
 theorem unitRicciKernelField_geometry_of_local_parallel_sections
     (D : LeviCivitaData g) (hc : IsCoveringMap (unitRicciKernelProjection D))

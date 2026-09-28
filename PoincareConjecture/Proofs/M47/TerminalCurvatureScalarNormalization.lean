@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureStaticGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -25,8 +17,6 @@ private theorem neck_scale_normalization (N : EpsilonNeck g) :
     Real.rpow_neg N.scalar_center_pos.le, ← Real.sqrt_eq_rpow, inv_pow,
     Real.sq_sqrt N.scalar_center_pos.le, inv_mul_cancel₀ N.scalar_center_pos.ne']
 
-
-
 theorem terminalCurvature_neck_scale_window
     (N : EpsilonNeck g) {L H : ℝ} (hL : 0 < L)
     (hlo : L ≤ N.connection.scalarCurvature N.center)
@@ -43,8 +33,6 @@ theorem terminalCurvature_neck_scale_window
     N.scale ^ 2 * L ≤ N.scale ^ 2 * N.connection.scalarCurvature N.center :=
       mul_le_mul_of_nonneg_left hlo (sq_nonneg _)
     _ = 1 := hnormal
-
-
 
 theorem terminalCurvature_neck_normalization_error
     (N : EpsilonNeck g) {L sigma R : ℝ} (hsigma : 0 ≤ sigma)

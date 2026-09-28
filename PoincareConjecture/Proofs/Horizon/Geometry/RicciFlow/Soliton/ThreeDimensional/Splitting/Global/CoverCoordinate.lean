@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hes
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def unitRicciKernelCoordinate (D : LeviCivitaData g) (f : M → ℝ)
     (p : UnitRicciKernel D) : ℝ :=
   2 * g.inner p.1.proj (D.gradient f p.1.proj) p.1.snd
@@ -38,7 +28,6 @@ def unitRicciKernelCoordinate (D : LeviCivitaData g) (f : M → ℝ)
     unitRicciKernelCoordinate D f (unitRicciKernelReverse D p) =
       -unitRicciKernelCoordinate D f p := by
   simp [unitRicciKernelCoordinate, unitRicciKernelReverse]
-
 
 theorem unitRicciKernel_eventually_eq_section (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)
@@ -72,7 +61,6 @@ theorem unitRicciKernel_eventually_eq_section (D : LeviCivitaData g)
     change 0 < g.inner q.1.proj q.1.snd (V q.1.proj) at hpos
     rw [he, map_neg, neg_apply, hunit _ hq] at hpos
     norm_num at hpos
-
 
 theorem exists_local_parallel_unit_ricci_null_section_through
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
@@ -160,8 +148,6 @@ theorem unitRicciKernelCoordinate_local_geometry (D : LeviCivitaData g)
       D'.hessian_comp_of_metric_pullback D (hπ.contMDiff p)
         (Eventually.of_forall hinv) (Eventually.of_forall hmetric) hcsm]
     exact hessian_nullCoordinate D hU hf hV hparallel hsol hp _ _
-
-
 
 theorem unitRicciKernelCoordinate_geometry_of_terminal_soliton
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

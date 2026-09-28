@@ -3,18 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function

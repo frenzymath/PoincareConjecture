@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckBilinearR
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderParametrizedJets
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem mfderiv_comp_chosen_cylinder_chart
     {M : Type*} [TopologicalSpace M] [ChartedSpace E₃ M]
@@ -59,9 +49,6 @@ variable {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
 private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
-
 
 theorem cylinder_coefficient_difference_fixed_chart
     {G : GeneralizedRicciFlowData.{u}} {origin scale : ℝ} {K : Set ℝ}

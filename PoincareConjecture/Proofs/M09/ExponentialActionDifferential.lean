@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.ExponentialAction
 import PoincareConjecture.Proofs.M09.FamilyEulerEquation
 import PoincareConjecture.Proofs.M09.InitialVariationBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

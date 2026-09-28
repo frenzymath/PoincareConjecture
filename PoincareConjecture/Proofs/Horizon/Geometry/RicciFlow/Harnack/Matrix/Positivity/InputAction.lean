@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Reaction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -23,7 +13,6 @@ variable {I : Type*} [Fintype I] [DecidableEq I]
 
 omit [DecidableEq I] in
 
-
 lemma quadratic_input_action_zero {A : Matrix I I ℝ} (hA : A.PosSemidef)
     (z : I → ℝ) (hz : z ⬝ᵥ (A *ᵥ z) = 0) (L : Matrix I I ℝ) :
     z ⬝ᵥ ((L * A + A * L.transpose) *ᵥ z) = 0 := by
@@ -35,8 +24,6 @@ lemma quadratic_input_action_zero {A : Matrix I I ℝ} (hA : A.PosSemidef)
     simpa only [vecMul, mulVec, dotProduct, hs, mul_comm] using congrFun hzero i
   rw [add_mulVec, dotProduct_add, ← mulVec_mulVec, hzero, mulVec_zero, dotProduct_zero,
     zero_add, ← mulVec_mulVec, dotProduct_mulVec, hleft, zero_dotProduct]
-
-
 
 lemma hamiltonBlock_input_action_zero
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)

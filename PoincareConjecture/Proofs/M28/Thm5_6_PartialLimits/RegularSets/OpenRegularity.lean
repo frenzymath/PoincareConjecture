@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.OpenCapture
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem regularPoints_of_intrinsicOpenMetric
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)
@@ -39,9 +26,6 @@ theorem regularPoints_of_intrinsicOpenMetric
     rintro _ ⟨x, hx, rfl⟩
     exact ⟨x, subset_closure hx, rfl⟩
   exact hK.of_isClosed_subset isClosed_closure (closure_minimal hball hK.isClosed)
-
-
-
 
 theorem nested_intrinsicOpenMetric_ball_image_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -62,8 +46,6 @@ theorem nested_intrinsicOpenMetric_ball_image_of_regular
         (regularPoints_of_intrinsicOpenMetric (intrinsicOpenMetric g U) V p hp)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem nested_intrinsicOpenMetric_ball_volume_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

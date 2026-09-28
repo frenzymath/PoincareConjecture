@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
-
 theorem squareRoot_projectedVelocityWithin_subset
     {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
     (R : M14SquareRootPath G p) {J : Set ℝ}
@@ -35,9 +23,6 @@ theorem squareRoot_projectedVelocityWithin_subset
   rw [mfderivWithin_subset hsub hJ.uniqueMDiffWithinAt
     ((R.smooth.mono R.interval_subset s (hsub hs)).mdifferentiableWithinAt (by simp))]
   exact (squareRoot_horizontalVelocity_eq_projection R (hsub hs)).symm
-
-
-
 
 theorem squareRoot_horizontalVelocity_heq_on_subset
     {T₁ T₂ τ₁ τ₂ σ₁ σ₂ : ℝ} {x₁ y₁ x₂ y₂ : G.Point}

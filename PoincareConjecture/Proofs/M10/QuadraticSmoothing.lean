@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.MollifierConcavity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -17,13 +9,10 @@ namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 noncomputable def euclideanQuadratic (K : ℝ) (x : E) : ℝ := K * ‖x‖ ^ 2 / 2
-
 
 theorem euclideanQuadratic_contDiff (K : ℝ) : ContDiff ℝ ∞ (euclideanQuadratic (E := E) K) :=
   (contDiff_const.mul (contDiff_norm_sq ℝ)).div_const 2
-
 
 theorem euclideanQuadratic_fderiv (K : ℝ) (x : E) :
     fderiv ℝ (euclideanQuadratic K) x = K • innerSL ℝ x := by
@@ -39,7 +28,6 @@ theorem euclideanQuadratic_fderiv (K : ℝ) (x : E) :
     smul_eq_mul]
   ring
 
-
 theorem second_fderiv_add_at {f g : E → ℝ} {x : E}
     (hf : ContDiffAt ℝ 2 f x) (hg : ContDiffAt ℝ 2 g x) :
     fderiv ℝ (fderiv ℝ (fun y ↦ f y + g y)) x =
@@ -51,7 +39,6 @@ theorem second_fderiv_add_at {f g : E → ℝ} {x : E}
   rw [heq.fderiv_eq]
   exact fderiv_fun_add ((hf.fderiv_right (by norm_num)).differentiableAt one_ne_zero)
     ((hg.fderiv_right (by norm_num)).differentiableAt one_ne_zero)
-
 
 theorem norm_fderiv_add_quadratic_le {f : E → ℝ} {L : ℝ≥0} (hf : LipschitzWith L f)
     (hfd : Differentiable ℝ f) {K : ℝ} (hK : 0 ≤ K) {x x₀ : E} {r : ℝ}
@@ -71,7 +58,6 @@ theorem norm_fderiv_add_quadratic_le {f : E → ℝ} {L : ℝ≥0} (hf : Lipschi
       rw [norm_smul, Real.norm_of_nonneg hK, innerSL_apply_norm]
     _ ≤ L + K * (‖x₀‖ + r) := add_le_add (norm_fderiv_le_of_lipschitz ℝ hf)
       (mul_le_mul_of_nonneg_left hnorm hK)
-
 
 theorem second_fderiv_add_quadratic_le {f : E → ℝ} {U : Set E}
     (hU : IsOpen U) (hf : ContDiff ℝ 2 f) (hconc : ConcaveOn ℝ U f)

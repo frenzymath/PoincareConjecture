@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.RawCrossingCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
 
 theorem RawCrossingChart.exists_ordered
     {X ι : Type*} [TopologicalSpace X]

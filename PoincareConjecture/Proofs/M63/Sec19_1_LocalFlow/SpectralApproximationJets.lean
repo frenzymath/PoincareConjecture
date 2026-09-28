@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorSecondDerivativeLp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Filter MeasureTheory PoincareConjecture.SpectralHeatNative
@@ -23,10 +14,6 @@ variable {L : ℝ} [Fact (0 < L)] {ι : Type u} [Fintype ι]
 
 local notation "S" => State ((ℤ × Fin 2) × ι)
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_spectral_approximation_jets
     (Vn : ℕ → C(Z, S)) (V : C(Z, S))

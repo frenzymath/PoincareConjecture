@@ -3,15 +3,6 @@ import Mathlib.AlgebraicTopology.SimplicialSet.Homology.Basic
 import Mathlib.AlgebraicTopology.SimplicialObject.ChainHomotopy
 import Mathlib.Algebra.Homology.QuasiIso
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +17,6 @@ variable {C : Type v} [Category.{w} C] [Preadditive C]
   [HasCoproducts.{u} C] [CategoryWithHomology C]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem chainComplexMap_quasiIso_of_extraDegeneracy
     (A : SimplicialObject.Augmented (Type u))

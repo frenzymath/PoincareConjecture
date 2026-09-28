@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapBoundaryCompatibil
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOriginalAtlasGluing
 import PoincareConjecture.Proofs.M76.Mathlib.AffineChartInclusion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,11 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "M" => (ℝ × (Fin 2 → ℝ))
 
 variable {X : Type*} [TopologicalSpace X] {Y : Set X} {ι : Type*}
-
-
-
-
-
 
 theorem PLDomain.marked_cap_charts_compatible
     {e : ι → OpenPartialHomeomorph Y V3} {K : Set Y} (hKD : PLDomain e K)

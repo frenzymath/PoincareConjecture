@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateTransportDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -19,9 +9,6 @@ open scoped BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_reverse_coordinate_transport_density_bound {n dH dA dS : ℕ}
     (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))

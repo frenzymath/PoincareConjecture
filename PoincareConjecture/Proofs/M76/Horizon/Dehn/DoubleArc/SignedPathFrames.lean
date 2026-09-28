@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondReflection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
@@ -35,8 +27,6 @@ theorem signedTubeDiamondReflection_comp (a b : Fin 2 → Bool) (x : signedTubeD
       signedTubeDiamondReflection (fun i => signedTubeReindex (a i) (b i)) x :=
   Subtype.ext (signedTubeReflection_comp a b x)
 
-
-
 theorem signedTubeDiamondReflection_incident_agreement
     {E : Type*} [TopologicalSpace E] {J : Set E}
     (G : signedTubeDiamond ≃ₜ J) (left right frameLeft frameRight : Fin 2 → Bool)
@@ -46,8 +36,6 @@ theorem signedTubeDiamondReflection_incident_agreement
       G (signedTubeDiamondReflection right (signedTubeDiamondReflection frameRight x)) := by
   rw [signedTubeDiamondReflection_comp, signedTubeDiamondReflection_comp]
   rw [funext h]
-
-
 
 theorem exists_signed_path_frames (n : ℕ)
     (left right : Fin (n + 1) → Fin 2 → Bool) (initial : Fin 2 → Bool) :

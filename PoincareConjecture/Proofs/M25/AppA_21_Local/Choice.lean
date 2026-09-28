@@ -6,17 +6,6 @@ import Mathlib.Order.Lattice.Nat
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,11 +20,9 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
 noncomputable def CapCertificate.exteriorEDepth (C : CapCertificate g) (x : M) :
     ℝ≥0∞ :=
   ⨅ y ∈ C.carrierᶜ, g.edist x y
-
 
 theorem CapCertificate.m25_core_subset_carrier (C : CapCertificate g) :
     C.core ⊆ C.carrier := by
@@ -48,8 +35,6 @@ private theorem scalarCurvature_eq_of_metric
     D.scalarCurvature x = D'.scalarCurvature x := by
   unfold LeviCivitaData.scalarCurvature LeviCivitaData.ricci
   simp_rw [D.horizon_curvatureTensor_eq D' x]
-
-
 
 theorem CapCertificate.scalarCurvatureSupOn_bounds (C : CapCertificate g)
     {x : M} (hx : x ∈ C.carrier) :
@@ -67,8 +52,6 @@ theorem CapCertificate.scalarCurvatureSupOn_bounds (C : CapCertificate g)
   refine ⟨le_csSup ⟨_, hbound⟩ hxS, (csSup_le ⟨_, hxS⟩ hbound).trans_lt ?_⟩
   exact mul_lt_mul_of_pos_right hb (C.scalar_pos x hx)
 
-
-
 theorem CapCertificate.intrinsicDiameter_lt_of_mem (C : CapCertificate g)
     {x : M} (hx : x ∈ C.carrier) {B : ℝ} (hCB : C.cap_constant ≤ B) :
     intrinsicDiameter g C.carrier <
@@ -79,9 +62,6 @@ theorem CapCertificate.intrinsicDiameter_lt_of_mem (C : CapCertificate g)
   refine C.intrinsic_diameter_bound.trans_le (ENNReal.ofReal_le_ofReal ?_)
   exact (mul_le_mul_of_nonneg_left hpow C.cap_constant_pos.le).trans
     (mul_le_mul_of_nonneg_right hCB (Real.rpow_pos_of_pos hQ _).le)
-
-
-
 
 theorem CapCertificate.exteriorEDepth_pos_le_intrinsicDiameter
     (C : CapCertificate g) {x : M} (hx : x ∈ C.carrier)
@@ -116,8 +96,6 @@ theorem CapCertificate.exteriorEDepth_pos_le_intrinsicDiameter
   rw [C.carrier_open.isClosed_compl.closure_eq]
   exact fun h => h hx
 
-
-
 theorem ConnectedNeckCapCover.singleCap_of_component_subset
     (H : ConnectedNeckCapCover g) {x : M} (hx : x ∈ H.X)
     {C : CapCertificate g} (hC : C ∈ H.caps)
@@ -125,9 +103,6 @@ theorem ConnectedNeckCapCover.singleCap_of_component_subset
     ∃ hX : H.X ⊆ C.carrier, NeckCapRegionCompatible g H (.singleCap C hX) := by
   refine ⟨(H.connected_X.subset_connectedComponent hx).trans hK, ?_⟩
   exact ⟨H.cap_epsilon C hC, H.cap_constant_bound C hC⟩
-
-
-
 
 theorem ConnectedNeckCapCover.exists_core_cap_exteriorEDepth_near_max
     (H : ConnectedNeckCapCover g) {x : M}
@@ -180,9 +155,6 @@ theorem ConnectedNeckCapCover.exists_core_cap_exteriorEDepth_near_max
       linarith
     apply (div_lt_div_iff_of_pos_right hδ).mp
     simpa only [add_div, div_self hδ.ne'] using hquot
-
-
-
 
 theorem ConnectedNeckCapCover.singleCap_or_exists_core_cap_exteriorEDepth_near_max
     (H : ConnectedNeckCapCover g) {x : M} (hx : x ∈ H.X)

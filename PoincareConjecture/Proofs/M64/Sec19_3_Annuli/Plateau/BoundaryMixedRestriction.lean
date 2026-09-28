@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMixedMetricPotential
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -14,10 +8,6 @@ open Set Filter MeasureTheory
 open scoped ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64MixedBoundary_indicator_restrict
     {O W S : Set LoopPlane} (hWO : W ⊆ O) {dirichlet : Prop}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallChartCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallChartCoefficients
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +17,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 structure CriticalBallBackwardChartData
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))
@@ -88,9 +76,6 @@ structure CriticalBallBackwardChartData
           (neck k).center ((neck k).scale * (epsilon⁻¹ / 16))
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 theorem exists_source_criticalBall_backward_chart_data_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

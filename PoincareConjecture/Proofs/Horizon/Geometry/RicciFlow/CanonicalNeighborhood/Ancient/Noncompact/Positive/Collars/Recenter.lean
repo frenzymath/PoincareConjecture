@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Boundary.Reparameterization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.NoncompactKappa.Positive
-
-
 
 theorem exists_recentered_neck_threshold {epsilon : ℝ}
     (he : 0 < epsilon) (hesmall : epsilon ≤ 1 / 200) :

@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryCollar
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,11 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 open M65Branch M65StrictTrace M65Gauss
-
-
-
-
-
 
 theorem halfDisk_actual_frame_connection_log {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

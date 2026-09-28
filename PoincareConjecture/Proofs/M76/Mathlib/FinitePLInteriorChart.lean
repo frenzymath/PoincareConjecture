@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_interior_chart {C : Set E} {T : Set F}
     {e : C ≃ₜ T} (he : e.IsFinitePL)

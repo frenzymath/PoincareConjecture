@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.CommonCollar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -27,12 +17,6 @@ variable {M : ℕ → Type u}
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {tau : ℝ} {F : ∀ k, RicciFlow 3 (M k) (Icc (-tau) 0)}
   {p : ∀ k, M k} {A : ℝ}
-
-
-
-
-
-
 
 theorem PartialLimitWindowExport.exists_eventual_compact_cover_of_chart_family
     (E : PartialLimitWindowExport F p A)

@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateGer
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +18,6 @@ universe u
 namespace PoincareConjecture.M28
 
 set_option synthInstance.maxHeartbeats 200000 in
-
-
-
-
 
 theorem exists_fixedCoordinateFlowLimit_of_normal_charts
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

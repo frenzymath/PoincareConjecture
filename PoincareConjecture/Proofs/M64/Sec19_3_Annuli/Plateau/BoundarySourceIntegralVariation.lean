@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceCoefficients
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,11 +13,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
-
-
 
 theorem m64HorizontalSource_integral_firstVariation
     (tau : ℝ → ℝ ≃ₜ ℝ) {theta : ℝ → ℝ} (htheta : ContDiff ℝ ∞ theta)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem faceLink_ncard_eq_one_of_halfspace
     (K : SimplicialComplex ℝ E) {s t : Finset E}

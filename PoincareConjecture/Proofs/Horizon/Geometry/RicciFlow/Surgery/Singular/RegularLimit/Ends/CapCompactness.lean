@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Topology
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem isCompact_closure_of_scalar_proper (N : CapCertificate g)
     (D : LeviCivitaData g)
@@ -52,7 +44,6 @@ namespace TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
 
 theorem exists_tail_disjoint_compact (e : TerminalEnd K)
     {L : Set (E.extended.slice T).carrier} (hL : IsCompact L) :

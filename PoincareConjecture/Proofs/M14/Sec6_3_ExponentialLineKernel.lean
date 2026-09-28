@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialLineRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 theorem exponentialLine_mfderiv (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) :
@@ -55,9 +43,6 @@ theorem exponentialLine_mfderiv (E : M14ExponentialFamily G T x)
     hline.differentiableAt.mdifferentiableAt (by simp only [zero_smul, add_zero]) (1 : ℝ)
   rw [hlineM] at hchain
   exact hchain.trans (E.differential_pointwise_mfderiv Z s hs W).symm
-
-
-
 
 theorem exponentialLine_coordinate_deriv_eq_zero (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {b c : ℝ} {U : Set ℝ} (hU : IsOpen U) (hzero : 0 ∈ U)

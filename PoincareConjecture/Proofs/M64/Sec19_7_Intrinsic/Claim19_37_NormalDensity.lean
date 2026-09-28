@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaDensity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalStrip
 import Mathlib.Analysis.Calculus.FDeriv.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_normal_map_density_lower
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -55,9 +40,6 @@ theorem m64Intrinsic_normal_map_density_lower
   intro v
   rw [hd]
   exact hbound (v 0, v 1)
-
-
-
 
 theorem m64Intrinsic_exists_uniform_normal_density
     (K : ℝ) {delta alpha : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1)

@@ -24,9 +24,6 @@ theorem reflectedTubeCoordinates_diagonal (closing : SignedAxisPermutation)
       SignedAxisPermutation.linear_apply, signedSquareToDiamond_apply,
       signedSheetStripMap_apply, hs, smul_eq_mul, div_eq_inv_mul] <;> ring
 
-
-
-
 theorem exists_reflected_source_annulus_of_cut_strips
     {X E : Type*} (f : V2 → X) (inverse : E → X) (sigma : P2 × ℝ → E)
     (closing : SignedAxisPermutation) (hswap : closing.swap = true)

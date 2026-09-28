@@ -4,19 +4,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +11,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Morrey_energy_le_power_of_contraction
     {E : ℝ → ℝ} {rho q D : ℝ} (hrho : 0 < rho) (hq : 0 < q) (hq1 : q < 1)
@@ -72,9 +56,6 @@ theorem m64Morrey_energy_le_power_of_contraction
     rw [pow_succ] at hh
     exact (by simpa only [mul_assoc] using hh.le)
   exact hupper.trans ((mul_le_mul_of_nonneg_left hqbound hD).trans_eq (by ring))
-
-
-
 
 theorem m64Morrey_exists_uniform_power_of_contraction
     {rho q D : ℝ} (hrho : 0 < rho) (hq : 0 < q) (hq1 : q < 1) (hD : 0 ≤ D) :

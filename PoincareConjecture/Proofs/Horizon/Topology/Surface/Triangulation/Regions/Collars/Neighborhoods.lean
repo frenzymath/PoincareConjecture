@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Coverage
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.CutNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Neighborhoods
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set

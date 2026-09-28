@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.IntrinsicEnergy
 import PoincareConjecture.Proofs.M60.Mathlib.CompactManifoldIntegralDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem m60SphereVariation_contMDiff_slice {v : ℝ × UnitTwoSphere → M}
     {ε s : ℝ} (hv : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓡 2)) (𝓡 n) ∞ v
       (Ioo (-ε) ε ×ˢ univ)) (hs : s ∈ Ioo (-ε) ε) :
@@ -33,9 +24,6 @@ theorem m60SphereVariation_contMDiff_slice {v : ℝ × UnitTwoSphere → M}
   have h : ContMDiffAt ((𝓘(ℝ, ℝ)).prod (𝓡 2)) (𝓡 n) ∞ v (s, p) :=
     hv.contMDiffAt ((isOpen_Ioo.prod isOpen_univ).mem_nhds ⟨hs, mem_univ p⟩)
   exact h.comp p (contMDiffAt_const.prodMk contMDiffAt_id)
-
-
-
 
 theorem m60SphereEnergy_differentiableAt_of_variation (g : RiemannianMetric n M)
     {v : ℝ × UnitTwoSphere → M} {ε : ℝ} (hε : 0 < ε)

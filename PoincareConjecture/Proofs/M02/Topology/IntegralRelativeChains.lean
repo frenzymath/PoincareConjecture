@@ -8,14 +8,6 @@ import Mathlib.AlgebraicTopology.SingularHomology.HomotopyInvariance
 import Mathlib.Topology.Category.TopCat.EpiMono
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

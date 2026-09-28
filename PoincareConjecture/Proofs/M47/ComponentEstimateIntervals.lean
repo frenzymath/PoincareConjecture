@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalInter
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.CompactCurvatureBound
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem component_event_preterminal_surgery_free
     (F : SurgeryFlowData.{u}) {T : ℝ} (hT : T ∈ F.surgery_times)

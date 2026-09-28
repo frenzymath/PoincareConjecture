@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyEventSlabs
 import PoincareConjecture.Proofs.M51.EmptyMaximality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

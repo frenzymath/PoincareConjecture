@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoordinateTargetCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale B : ℝ} {U : Set C.carrier}
-
-
-
-
-
 
 theorem exists_normalized_cylinder_physical_flow
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

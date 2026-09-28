@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M36.CollapseMetric
 import PoincareConjecture.Proofs.M36.PolarContraction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

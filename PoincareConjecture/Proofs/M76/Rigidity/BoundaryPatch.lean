@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
-
-
-
-
 
 theorem PLDomain.exists_polyhedral_boundary_patch (he : PLDomain e R)
     {x : X} (hx : x ∈ frontier R) :

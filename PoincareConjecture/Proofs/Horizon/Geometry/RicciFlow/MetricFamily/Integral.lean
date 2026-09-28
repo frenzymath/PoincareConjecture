@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Relativ
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

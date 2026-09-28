@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedCrossingTransport
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_first_seed_scalar_level {f : ℝ → ℝ} {H : ℝ}
     (hf : ContinuousOn f (Icc 0 1)) (hzero : f 0 ≤ H) (hone : H ≤ f 1) :
@@ -46,8 +34,6 @@ theorem exists_first_seed_scalar_level {f : ℝ → ℝ} {H : ℝ}
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_reversed_seed_crossing_path
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -91,10 +77,6 @@ theorem exists_reversed_seed_crossing_path
     rw [hdiff] at h
     exact h.trans (ENNReal.ofReal_le_ofReal
       (mul_le_mul_of_nonneg_left (mul_le_of_le_one_left (abs_nonneg _) hb.2) hL))
-
-
-
-
 
 theorem exists_old_prefix_high_point_volume (P : M47Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.GenLoopTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -19,8 +10,6 @@ namespace GenLoop
 
 variable {N P X : Type*} [TopologicalSpace X] (x : X)
   [DecidableEq N] [DecidableEq P]
-
-
 
 theorem genLoopGenLoopEquiv_transAt (i : N)
     (f g : GenLoop N (GenLoop P X x) const) :
@@ -41,8 +30,6 @@ theorem genLoopGenLoopEquiv_transAt (i : N)
       (hr (Set.projIcc 0 1 zero_le_one (2 * y (Sum.inl i)))).symm
   · exact congrArg₂ (fun a b => g a b) (hl _).symm
       (hr (Set.projIcc 0 1 zero_le_one (2 * y (Sum.inl i) - 1))).symm
-
-
 
 theorem congr_transAt (e : N ≃ P) (i : N) (f g : GenLoop N X x) :
     congr x e (transAt i f g) = transAt (e i) (congr x e f) (congr x e g) := by
@@ -67,8 +54,6 @@ namespace HomotopyGroup
 variable {N P X : Type*} [TopologicalSpace X] (x : X)
   [DecidableEq N] [DecidableEq P] [Nonempty N]
 
-
-
 def cubicalAdjunction :
     HomotopyGroup N (GenLoop P X x) GenLoop.const ≃*
       HomotopyGroup (N ⊕ P) X x where
@@ -80,8 +65,6 @@ def cubicalAdjunction :
       ((congrArg (fun z => (⟦z⟧ : HomotopyGroup (N ⊕ P) X x))
         (GenLoop.genLoopGenLoopEquiv_transAt x i g f)).trans
         (HomotopyGroup.mul_spec (i := Sum.inl i)).symm)
-
-
 
 def reindex [Nonempty P] (e : N ≃ P) :
     HomotopyGroup N X x ≃* HomotopyGroup P X x where
@@ -96,7 +79,6 @@ def reindex [Nonempty P] (e : N ≃ P) :
 
 omit [DecidableEq N] in
 
-
 theorem fundamentalGroup_genLoop_mul_comm
     (a b : FundamentalGroup (GenLoop N X x) GenLoop.const) : a * b = b * a := by
   classical
@@ -107,8 +89,6 @@ theorem fundamentalGroup_genLoop_mul_comm
       (cubicalAdjunction (N := Fin 1) (P := N) x)
   apply e.injective
   simpa only [map_mul] using mul_comm (e a) (e b)
-
-
 
 def squareFundamentalGroupEquivPiThree {X : Type*} [TopologicalSpace X] (x : X) :
     FundamentalGroup (GenLoop (Fin 2) X x) GenLoop.const ≃* HomotopyGroup.Pi 3 X x :=

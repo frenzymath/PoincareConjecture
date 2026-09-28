@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.Lower.Limit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Unlift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,8 +42,6 @@ private theorem ulift_down_metric (K : AncientKappaSolution 3 M)
   rw [mfderiv_comp p (d.mdifferentiable (by simp) (f p)) (hf.mdifferentiable (by simp) p)]
   rfl
 
-
-
 def M27SphereLineFlowCertificate.ofUlift
     (C : M27SphereLineFlowCertificate (K.ulift : AncientKappaSolution 3 (ULift.{u} M))) :
     M27SphereLineFlowCertificate K where
@@ -68,8 +54,6 @@ def M27SphereLineFlowCertificate.ofUlift
       (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) (ULift.down ∘ C.identification) p b) = _
     rw [ulift_down_metric K C.identification C.identification.contMDiff]
     exact C.metric_transport t ht p a b
-
-
 
 def M27ProjectivePlaneLineFlowCertificate.ofUlift
     (C : M27ProjectivePlaneLineFlowCertificate
@@ -96,8 +80,6 @@ def M27ProjectivePlaneLineFlowCertificate.ofUlift
       (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) (ULift.down ∘ C.cover) p b) = _
     rw [ulift_down_metric K C.cover C.cover_local_diffeomorph.contMDiff]
     exact C.metric_transport t ht p a b
-
-
 
 def M27TwistedSphereLineFlowCertificate.ofUlift
     (C : M27TwistedSphereLineFlowCertificate
@@ -134,7 +116,6 @@ def M27TwistedSphereLineFlowCertificate.ofUlift
   · rw [image_comp, C.projective_smooth_cover.image_eq]
     exact image_univ_of_surjective d.surjective
 
-
 theorem positiveSectionalCurvature_of_ulift
     {t : ℝ} (hpos : M27PositiveSectionalCurvature
       (K.ulift : AncientKappaSolution 3 (ULift.{u} M)) t) :
@@ -161,8 +142,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
-
-
 
 theorem coreNormalizedCurvatureTrichotomy_of_originalFlow
     (hclassify : ∀ {M : Type u} [TopologicalSpace M]

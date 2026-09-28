@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.ShiftedRoundedSampling
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenLineChords
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -56,9 +46,6 @@ private theorem rounded_affine_grid_axis_of_nearby
     (c (a0 + h * ((j + 1 : ℤ) : ℝ)) - c B) ((u - a0) / h - j) = (u, 0)
   rw [hprev, hnext, hc0, hcm, hcp]
   ext <;> dsimp [roundedCorner, B] <;> field_simp <;> ring
-
-
-
 
 theorem exists_uniform_rounded_openLine_tube_certificate
     (C : (ℝ × ℝ) × ℝ → ℝ × ℝ) (hC : ContDiff ℝ ∞ C)

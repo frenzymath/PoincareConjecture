@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckExcursionSubarcs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ open Proofs.M28.NeckLengthComparison
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem coordinate_axial_speed_lower_sharp (N : EpsilonNeck g)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -60,7 +48,6 @@ theorem coordinate_axial_speed_lower_sharp (N : EpsilonNeck g)
   rw [mul_pow, mul_pow, Real.sq_sqrt hfactor, sq_abs, Real.sq_sqrt hP]
   nlinarith only [haxial, hbound]
 
-
 theorem path_axial_displacement_le_sharp (N : EpsilonNeck g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 3) 1 γ (Icc a b))
@@ -71,8 +58,6 @@ theorem path_axial_displacement_le_sharp (N : EpsilonNeck g)
   M28.path_axial_displacement_le_of_speed N
     (mul_nonneg N.scale_pos.le (Real.sqrt_nonneg _))
     N.coordinate_axial_speed_lower_sharp hab hγ hγN
-
-
 
 theorem edist_central_lower_of_not_mem_region [T2Space M]
     (N : EpsilonNeck g) {r : ℝ} (hr : 0 < r) (hrA : r < N.epsilon⁻¹)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 import PoincareConjecture.Proofs.M02.HomotopyMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology unitInterval
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem constant_loops_homotopic_const (x : M)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 M x))
     (p : GenLoop (Fin 2) M x) :
@@ -31,8 +20,6 @@ theorem constant_loops_homotopic_const (x : M)
   have hp : GenLoop.Homotopic p (GenLoop.const : GenLoop (Fin 2) M x) :=
     Quotient.exact (hpi.elim (⟦p⟧ : HomotopyGroup.Pi 2 M x) ⟦GenLoop.const⟧)
   exact M02.mapGenLoop_homotopic constantLoopMap rfl hp
-
-
 
 theorem loop_class_eq_one_of_based_contraction (x : M)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 M x)) (z : LoopCircle)
@@ -44,9 +31,6 @@ theorem loop_class_eq_one_of_based_contraction (x : M)
   let p : GenLoop (Fin 2) M x := M02.mapGenLoop (loopEvaluation z) rfl r
   apply Quotient.sound
   exact H.trans (constant_loops_homotopic_const x hpi p)
-
-
-
 
 theorem family_class_eq_one_of_contraction
     (source : FreeTwoSphereFamily (M := M))

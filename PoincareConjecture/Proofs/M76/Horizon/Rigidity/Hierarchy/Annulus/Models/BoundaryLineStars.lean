@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.L
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FullSubcomplexStars
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

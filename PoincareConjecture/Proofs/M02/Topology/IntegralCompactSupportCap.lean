@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCapNaturality
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

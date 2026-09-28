@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryOpenness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ open PoincareConjecture.M04 Proofs.M46
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [CompactSpace M] [T2Space M] [SecondCountableTopology M]
-
-
-
 
 theorem exists_positive_history_onset {b T : ℝ} (hbT : b < T)
     (F : RicciFlow 3 M (Icc b T))

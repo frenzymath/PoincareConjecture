@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SphereUnionInvariant
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -18,10 +7,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M74
-
-
-
-
 
 theorem SphereUnion.of_finite_regions {ι : Type v} [Finite ι]
     (pieces : ι → GeneralizedSliceCarrier.{u}) {C : GeneralizedSliceCarrier.{u}}

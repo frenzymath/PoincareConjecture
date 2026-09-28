@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M49.WeightedEventVolume
 import PoincareConjecture.Proofs.M49.FlowEventCounts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,8 +9,6 @@ open scoped ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem exists_uniform_cap_count_bound
     (c d B : ℝ) (V₀ : ℝ≥0∞) (hMin : ℝ)

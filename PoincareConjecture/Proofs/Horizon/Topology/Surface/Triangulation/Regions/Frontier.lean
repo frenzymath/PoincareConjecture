@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Regions
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions
 import Mathlib.Topology.Connected.LocallyConnected
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,7 +8,6 @@ open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Topology
-
 
 theorem frontier_connectedComponentIn_compl_subset
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
@@ -96,7 +84,6 @@ theorem isClosed_chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ) :
     IsClosed (chartDiskBoundaryUnion s r) :=
   isClosed_biUnion_finset (fun _ _ => isClosed_frontier)
 
-
 theorem isCompact_chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ)
     (htarget : ∀ p ∈ s,
       closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) p p) (r p) ⊆
@@ -106,8 +93,6 @@ theorem isCompact_chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ)
   intro p hp
   have hcompact := isCompact_chart_closedBall p (htarget p hp)
   exact hcompact.of_isClosed_subset isClosed_frontier hcompact.isClosed.frontier_subset
-
-
 
 theorem exists_nonvertex_mem_frontier_complementary_component
     (s : Finset M) (r : M → ℝ) (hpos : ∀ p ∈ s, 0 < r p)
@@ -130,8 +115,6 @@ theorem exists_nonvertex_mem_frontier_complementary_component
     fun h => hi (hV.subset h)
   obtain ⟨y, hy, hyV⟩ := Set.not_subset.mp hnsub
   exact ⟨y, hy, Poincare.Topology.frontier_connectedComponentIn_compl_subset hclosed x hy, hyV⟩
-
-
 
 theorem exists_interior_edge_mem_frontier_complementary_component
     {I : Type*} [Finite I] (s : Finset M) (r : M → ℝ)

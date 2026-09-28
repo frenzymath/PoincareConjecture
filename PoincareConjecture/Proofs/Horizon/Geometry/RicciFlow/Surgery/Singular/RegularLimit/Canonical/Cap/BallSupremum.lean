@@ -1,14 +1,6 @@
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +8,6 @@ open Set Filter
 open scoped Topology ENNReal
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
-
 
 theorem continuousAt_sSup_ennreal_sublevel
     {X : Type*} [TopologicalSpace X] (d : X → ℝ≥0∞) (f : X → ℝ)

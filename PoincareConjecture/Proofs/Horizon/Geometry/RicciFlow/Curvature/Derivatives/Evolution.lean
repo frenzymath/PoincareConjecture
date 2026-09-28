@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.I
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.FlowRiemannRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.RiemannEvolutionInterior
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -182,6 +171,5 @@ theorem hasDerivAt_iteratedRiemann_evolution (F : RicciFlow n M J)
     simp only [tensorHeatCorrection, Fin.cons_zero, Fin.cons_succ]
     dsimp only [D, U, S, L] at hsub hspace ⊢
     linarith only [hsub, hspace]
-
 
 end PoincareConjecture.RicciFlowAnalysis

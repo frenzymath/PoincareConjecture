@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointCurvature
 import PoincareConjecture.Proofs.M47.LimitFiniteCompactBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ private local instance finiteEndpointCompactManifold :
 
 local notation "U" => (fun m : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m))
-
-
 
 theorem limitFinite_compact_endpoint_curvature_bound
     (P : M47Predecessors.{u}) (schedules : RepairedControlledSchedulesData.{u})

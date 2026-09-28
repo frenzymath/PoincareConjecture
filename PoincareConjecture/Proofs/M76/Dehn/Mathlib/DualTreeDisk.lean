@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualLeafAttachment
 import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,10 +29,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem isFinitePLBallPair_vertexDualUnion_of_induced_tree
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

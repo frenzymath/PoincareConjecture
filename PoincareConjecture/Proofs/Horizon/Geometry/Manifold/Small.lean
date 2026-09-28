@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Transport
 import PoincareConjecture.Proofs.Horizon.Topology.SecondCountable.Small
 
-
-
-
-
-
-
-
-
 open scoped Manifold ContDiff
 
 universe u
 
 namespace Poincare.Manifold
-
 
 @[instance_reducible]
 noncomputable def shrinkChartedSpace (H : Type*) [TopologicalSpace H]
@@ -31,7 +22,6 @@ variable {𝕜 E H : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E
   (M : Type u) [TopologicalSpace M] [T0Space M] [SecondCountableTopology M]
   [ChartedSpace H M] [IsManifold I ∞ M]
 
-
 theorem shrinkIsManifold :
     letI : Small.{0} M := Poincare.Topology.SecondCountable.small M
     letI := shrinkChartedSpace H M
@@ -41,7 +31,6 @@ theorem shrinkIsManifold :
   exact HomeomorphTransport.isManifold
     (Poincare.Topology.SecondCountable.homeomorphShrink M) I ∞
 
-
 noncomputable def shrinkDiffeomorph :
     letI : Small.{0} M := Poincare.Topology.SecondCountable.small M
     letI := shrinkChartedSpace H M
@@ -50,7 +39,6 @@ noncomputable def shrinkDiffeomorph :
   letI := shrinkChartedSpace H M
   exact HomeomorphTransport.diffeomorph
     (Poincare.Topology.SecondCountable.homeomorphShrink M) I ∞
-
 
 theorem shrinkDiffeomorph_toEquiv :
     letI : Small.{0} M := Poincare.Topology.SecondCountable.small M

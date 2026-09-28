@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +41,6 @@ private theorem initial_birth_scalar_factors
   rw [div_eq_mul_inv, ← one_mul R⁻¹] at hscaled
   simpa only [div_eq_mul_inv] using
     (show (1 + d) * R⁻¹ ≤ (101 / 100 : ℝ) by linarith)
-
-
 
 theorem standard_initial_neck_birth_scale_bounds
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

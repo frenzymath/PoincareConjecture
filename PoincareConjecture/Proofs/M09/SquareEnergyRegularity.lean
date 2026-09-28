@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.IntrinsicEnergy
 import PoincareConjecture.Proofs.M09.CurvePhase
 import PoincareConjecture.Proofs.M09.SquareTimeFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

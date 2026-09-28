@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.CompactBand
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.LevelEvolution
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -134,8 +127,6 @@ private theorem smooth_integralCurve_piecewise
     convert! (hd.hasMFDerivWithinAt (s := J)) using 1
     rw [heq.self_of_nhds]
 end PoincareConjecture.LeviCivitaData
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_normalizedGradient_curve_ending_at_of_isCompact_closedBall
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

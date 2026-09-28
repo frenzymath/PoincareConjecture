@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartJetSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

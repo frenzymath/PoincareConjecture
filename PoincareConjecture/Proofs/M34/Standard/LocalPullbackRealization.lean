@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,7 +12,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_local_immersive_pullback_realization
     {n : ℕ} {M : Type*} [TopologicalSpace M]

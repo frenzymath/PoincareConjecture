@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff BigOperators
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_same_epsilon_neck_family_perturbation_tolerance
     {epsilon : ℝ} (_hepsilon : 0 < epsilon) {I : Set ℝ}

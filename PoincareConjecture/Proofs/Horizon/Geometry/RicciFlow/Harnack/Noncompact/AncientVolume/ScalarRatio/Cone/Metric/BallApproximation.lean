@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.AnnulusApproximation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.ConeTopology
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +12,6 @@ open scoped Topology NNReal ENNReal Manifold ContDiff
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem annulusConeRelation_distortion_of_uniform_ray_bound
     (hcomparison : RayComparison p) {L τ δ R : ℝ} (hL : 0 < L)
@@ -56,9 +47,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem exists_closedBallConeRelation_approximation_of_metricComplete
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

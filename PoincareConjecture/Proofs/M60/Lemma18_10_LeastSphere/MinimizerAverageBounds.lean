@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakAverages
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Mollifier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem suL2_disk_L1_bound {E : Type*} [NormedAddCommGroup E]
     {f : Plane → E} (a : Plane) {r : ℝ} (hr : 0 < r)
@@ -49,9 +38,6 @@ theorem suL2_disk_L1_bound {E : Type*} [NormedAddCommGroup E]
   rw [hvol, Real.sqrt_mul (sq_nonneg r), Real.sqrt_sq hr.le] at h'
   exact h'.trans_eq (by ring)
 
-
-
-
 theorem suPlaneOperator_norm_le {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (L : Plane →L[ℝ] E) {C : ℝ} (hC : 0 ≤ C)
     (hcol : ∀ i : Fin 2, ‖L (EuclideanSpace.single i 1)‖ ≤ C) : ‖L‖ ≤ 2 * C := by
@@ -75,8 +61,6 @@ theorem suPlaneOperator_norm_le {E : Type*} [NormedAddCommGroup E] [NormedSpace 
       (mul_le_mul (PiLp.norm_apply_le x 1) (hcol 1) (norm_nonneg _) (norm_nonneg _))
     _ = _ := by ring
 
-
-
 theorem suMollifier_plane_bound {r : ℝ} (hr : 0 < r) (x : Plane) :
     mollifierEps (d := 2) hr x ≤ 4 / (r ^ 2 * Real.pi) := by
   have h := (mollifierBumpEps (d := 2) hr).normed_le_div_measure_closedBall_rOut
@@ -88,8 +72,6 @@ theorem suMollifier_plane_bound {r : ℝ} (hr : 0 < r) (x : Plane) :
   have hdim : Module.finrank ℝ Plane = 2 := by simp
   simpa only [mollifierEps, mollifierBumpEps, hdim,
     hvol, show (2 : ℝ) ^ 2 = 4 by norm_num] using h
-
-
 
 theorem suMollifier_convolution_norm_le {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

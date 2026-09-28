@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M49VolumeLoss
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M02.IntegralChains
 import PoincareConjecture.Proofs.M02.Topology.IntegralSubdivision
 
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -16,8 +12,6 @@ namespace PoincareConjecture.Proofs.M02
 open PoincareConjecture.Proofs.M02.Topology
 
 noncomputable section
-
-
 
 theorem exists_integral_homology_cycle
     (K : ChainComplex (ModuleCat.{u} Int) Nat) (n : Nat)

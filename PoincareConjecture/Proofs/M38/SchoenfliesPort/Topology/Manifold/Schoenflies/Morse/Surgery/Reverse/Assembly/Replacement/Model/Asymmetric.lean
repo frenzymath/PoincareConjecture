@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Model.CollarGeometry
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Model.CapComplement
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,16 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Reverse
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -41,8 +25,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 
 open Poincare.Geometry.Euclidean
-
-
 
 theorem exists_asymmetric_cap_lens
     {v : E3} (hv : ‖v‖ = 1) (b s : Real) (hs : s ≠ 0)

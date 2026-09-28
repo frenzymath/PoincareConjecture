@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.CoordinateTriangleEndpointCrossing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

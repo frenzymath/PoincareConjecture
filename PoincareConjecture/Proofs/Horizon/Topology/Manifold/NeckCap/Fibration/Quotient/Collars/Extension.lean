@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quotient.Collars.Angular
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +25,6 @@ private theorem tangentCoordChange_bijective {x y z : UnitTwoSphere}
     intro v
     rw [tangentCoordChange_comp ⟨⟨hy, hx⟩, hy⟩, tangentCoordChange_self hy]
   exact ⟨hleft.injective, hright.surjective⟩
-
-
 
 theorem eventually_bijective_slice_mfderiv
     (f : RoundCylinderSpace → UnitTwoSphere) (p : RoundCylinderSpace)
@@ -92,9 +82,6 @@ theorem eventually_bijective_slice_mfderiv
       exact congrArg (tangentCoordChange (𝓡 2) (f z) (f p) (f z)) hvw
     exact congrArg _ (hzbij.1 heq)
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := (D z).toLinearMap)).mp hinj⟩
-
-
-
 
 theorem exists_supported_angular_germ_extension
     (f : RoundCylinderSpace → UnitTwoSphere) (U : Set RoundCylinderSpace)
@@ -197,8 +184,6 @@ theorem exists_supported_angular_germ_extension
   · intro p hp
     rw [hD, hE, hσfar p.2 hp, hzero]
 
-
-
 theorem axial_deriv_comp_height_preserving
     (h : RoundCylinderSpace → ℝ)
     (D : Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞)
@@ -239,8 +224,6 @@ theorem axial_deriv_comp_height_preserving
     (fderiv ℝ (fun t : ℝ => h ((D (q, 0)).1, t)) (D (q, 0)).2) 1 at hv
   rw [fderiv_apply_one_eq_deriv, fderiv_apply_one_eq_deriv, hheight] at hv
   exact hv
-
-
 
 theorem exists_supported_collar_germ_extension
     (F : RoundCylinderSpace → RoundCylinderSpace) (U : Set RoundCylinderSpace)
@@ -334,8 +317,6 @@ theorem exists_supported_collar_germ_extension
     change K (D p) = (e p.1, p.2)
     rw [hKout (D p) (by simpa only [hDheight] using hp), hDout p hp]
 
-
-
 theorem axial_deriv_ne_zero_of_zero_sphere_localDiffeomorph
     (F : RoundCylinderSpace → RoundCylinderSpace)
     (hzero : ∀ q : UnitTwoSphere, (F (q, 0)).2 = 0) (q : UnitTwoSphere)
@@ -365,8 +346,6 @@ theorem axial_deriv_ne_zero_of_zero_sphere_localDiffeomorph
     rw [hv]
   rw [hderiv] at hc'
   exact (zero_ne_one : (0 : ℝ) ≠ 1) hc'
-
-
 
 theorem axial_deriv_pos_of_zero_sphere_localDiffeomorph
     (F : RoundCylinderSpace → RoundCylinderSpace)

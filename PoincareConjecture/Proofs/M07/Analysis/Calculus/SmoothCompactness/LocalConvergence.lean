@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -31,7 +22,6 @@ variable {d : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : ℕ → EuclideanSpace ℝ (Fin d) → F}
     {F₀ : EuclideanSpace ℝ (Fin d) → F}
 
-
 theorem tendstoUniformlyOn_iteratedFDeriv_of_local_convergence
     (hU : IsOpen U)
     (hlocal : ∀ x ∈ U, ∃ V : Set (EuclideanSpace ℝ (Fin d)),
@@ -50,8 +40,6 @@ theorem tendstoUniformlyOn_iteratedFDeriv_of_local_convergence
   obtain ⟨C, ⟨hCn, hC⟩, hCV⟩ :=
     (compact_basis_nhds x).mem_iff.mp (hV.mem_nhds hxV)
   exact ⟨C, nhdsWithin_le_nhds hCn, hjet m C hC hCV⟩
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_of_local_models
     (hU : IsOpen U)

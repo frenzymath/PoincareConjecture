@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Selection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -44,8 +36,6 @@ theorem integral_le_sum_of_finset_cover
   intro q hq
   exact integral_indicator (hB q hq)
 
-
-
 theorem integral_le_complement_add_sum
     {X ι : Type*} [MeasurableSpace X] [Fintype ι] {μ : Measure X}
     {U : Set X} (hU : MeasurableSet U) (V : ι → Set X)
@@ -71,9 +61,6 @@ theorem integral_le_complement_add_sum
     · exact mem_iUnion₂.mpr ⟨none, Finset.mem_univ _, hx, hv⟩
   simpa [B, Fintype.sum_option, add_comm] using integral_le_sum_of_finset_cover
     hU Finset.univ B (fun i _ => hB i) hhn hUi (fun i _ => hiB i) hcover
-
-
-
 
 theorem exists_subseq_fixed_member_integral_tendsto_atTop
     {X : ℕ → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*} [Fintype ι]

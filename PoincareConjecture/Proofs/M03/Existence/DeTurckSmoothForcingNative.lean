@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckResidualNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +19,6 @@ section Forcing
 variable {iota : Type*} [Countable iota] {T : ℝ}
   (lambda : iota → NNReal)
   (A : C(State iota, State iota →L[ℝ] State iota)) (b : C(State iota, State iota))
-
 
 def uncutForcing (hT : 0 ≤ T) (F : ForcingSpace iota T) : ForcingSpace iota T :=
   productOperator hT (ContinuousLinearMap.id ℝ (State iota →L[ℝ] State iota))
@@ -61,7 +53,6 @@ theorem uncutForcing_contDiff (hT : 0 ≤ T)
       (A.comp (shiftedTraceOperator hT lambda F)) (shiftedHighOperator hT lambda F) +
     tracePathL2 (E := State iota) hT (b.comp (shiftedTraceOperator hT lambda F)))
   exact htop.add hlower
-
 
 theorem uncutForcing_coe (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     uncutForcing lambda A b hT F =ᵐ[timeMeasure T] fun t =>

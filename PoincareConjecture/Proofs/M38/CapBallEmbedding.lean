@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M38.LocalEmbedding
 import PoincareConjecture.Proofs.M38.SmoothChart
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 theorem standard_cap_ball_extended (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r)
     (hball : g₀.metric.ball 0 (g₀.cylindrical_end.radius + 4) = Metric.ball 0 r) :
@@ -37,7 +27,6 @@ theorem standard_cap_ball_extended (g₀ : StandardInitialMetric) {r : ℝ} (hr 
   exact (hclosed hx).trans_lt ((ENNReal.ofReal_lt_ofReal_iff (by
     linarith [g₀.cylindrical_end.radius_pos])).mpr (by linarith))
 
-
 theorem exists_cap_ball_width {r : ℝ} (hr : 0 < r) {U : Set StandardCapSpace}
     (hU : IsOpen U) (hsub : Metric.closedBall 0 r ⊆ U) :
     ∃ c : ℝ, 0 < c ∧ c < r ∧ Metric.ball 0 (r + c) ⊆ U := by
@@ -51,7 +40,6 @@ theorem exists_cap_ball_width {r : ℝ} (hr : 0 < r) {U : Set StandardCapSpace}
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
-
 
 noncomputable def eventCapBall (r c : ℝ) (hc : 0 < c) (hcr : c < r)
     (hdom : Metric.ball (0 : StandardCapSpace) (r + c) ⊆
@@ -100,7 +88,6 @@ noncomputable def eventCapBall (r c : ℝ) (hc : 0 < c) (hcr : c < r)
       exact congrArg f (hleft hx)
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball hf hg hleft }
 
-
 theorem eventCapBall_map (r c : ℝ) (hc : 0 < c) (hcr : c < r)
     (hdom : Metric.ball (0 : StandardCapSpace) (r + c) ⊆
       F.standard_initial.metric.ball 0 (F.standard_initial.cylindrical_end.radius + 5))
@@ -108,7 +95,6 @@ theorem eventCapBall_map (r c : ℝ) (hc : 0 < c) (hcr : c < r)
     (eventCapBall F T hT i r c hc hcr hdom).map x =
       (F.event T hT).local_embed i (((F.event T hT).local_result i).cap_map
         (capRadialDiffeomorph r c hc hcr x)) := rfl
-
 
 theorem eventCapBall_closedBall (r c : ℝ) (hc : 0 < c) (hcr : c < r)
     (hdom : Metric.ball (0 : StandardCapSpace) (r + c) ⊆
@@ -122,8 +108,6 @@ theorem eventCapBall_closedBall (r c : ℝ) (hc : 0 < c) (hcr : c < r)
     capRadialDiffeomorph r c hc hcr) '' Metric.closedBall 0 1 = _
   rw [Set.image_comp, Set.image_comp, capRadialDiffeomorph_closedBall hc hcr]
   exact hcap
-
-
 
 theorem exists_event_cap_ball : ∃ B : SurgeryBallEmbedding (F.slice T),
     B.closedBall = ((F.event T hT).caps i).carrier ∧ B.map 0 = ((F.event T hT).caps i).tip := by

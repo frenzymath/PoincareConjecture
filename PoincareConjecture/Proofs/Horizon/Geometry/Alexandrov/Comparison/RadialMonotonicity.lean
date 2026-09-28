@@ -1,18 +1,8 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.DistanceChord
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.Alexandrov
-
-
 
 theorem CurvatureGEnegOne.comparisonAngle_le_of_radial_shortening
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X)
@@ -41,7 +31,6 @@ theorem CurvatureGEnegOne.comparisonAngle_le_of_radial_shortening
   apply (div_le_div_iff₀ (Real.sinh_pos_iff.mpr hpz)
     (Real.sinh_pos_iff.mpr hpq)).mpr
   nlinarith only [hchord, hscaled]
-
 
 theorem CurvatureGEnegOne.comparisonAngle_le_of_two_radial_shortenings
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X)

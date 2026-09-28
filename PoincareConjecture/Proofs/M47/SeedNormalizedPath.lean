@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch06.LGeometry
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +54,6 @@ private theorem normalized_path_integrand (hd : 0 < d)
   rw [hsqrt]
   ring
 
-
-
 noncomputable def seedNormalizedPath (hd : 0 < d) (hsigma : 0 < sigma)
     (hwindow : Icc (U - sigma) U ⊆ K)
     (hmetric : ∀ s ∈ Icc (0 : ℝ) sigma, ∀ x (v w : TangentSpace (𝓡 n) x),
@@ -91,7 +81,6 @@ noncomputable def seedNormalizedPath (hd : 0 < d) (hsigma : 0 < sigma)
       ⟨mul_pos hd hs.1, mul_lt_mul_of_pos_left hs.2 hd⟩
     exact (normalized_path_integrand hd hmetric hscalar ⟨hs.1.le, hs.2.le⟩
       ((p.regular.contMDiffAt (isOpen_Ioo.mem_nhds hs')).mdifferentiableAt one_ne_zero)).symm
-
 
 theorem seedNormalizedPath_length (hd : 0 < d) (hsigma : 0 < sigma)
     (hwindow : Icc (U - sigma) U ⊆ K)

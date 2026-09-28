@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularThreshold
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_finite_superlevel_intervals
     {f : ℝ → ℝ} (hf : Continuous f) {P alpha : ℝ} (hP : 0 < P)
@@ -117,9 +100,6 @@ theorem m64Intrinsic_finite_superlevel_intervals
       obtain ⟨hp, htp⟩ := mem_iUnion.mp ht
       have hpB := hTB p hp
       exact ⟨⟨hpB.1.trans_lt htp.1, htp.2.trans_le hpB.2.2.1⟩, hp.2.2.2.2 t htp⟩
-
-
-
 
 theorem m64Intrinsic_exists_finite_high_curvature_intervals
     (N : IntrinsicAnnulus) {delta r : ℝ} (hdelta : 0 < delta) (hr : 0 < r)

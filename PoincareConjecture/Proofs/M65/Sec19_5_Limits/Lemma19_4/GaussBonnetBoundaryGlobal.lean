@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetInteriorLog
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ open scoped Topology ContDiff Manifold Laplacian
 namespace PoincareConjecture.M65Gauss
 
 open M65StrictTrace
-
-
-
 
 def logarithmicGaussDensity (lambda : LoopPlane → ℝ) (z : LoopPlane) : ℝ :=
   -(∑ i : Fin 2, fderiv ℝ (fun y => fderiv ℝ (fun w => Real.log (lambda w)) y
@@ -54,11 +40,6 @@ private theorem density_complex_parameter (lambda : LoopPlane → ℝ) {z : ℂ}
       (EuclideanSpace.basisFun (Fin 2) ℝ i)) (e z)
         (EuclideanSpace.basisFun (Fin 2) ℝ i)) / 2 = -Δ (f ∘ e) z / 2
   rw [hh]
-
-
-
-
-
 
 theorem boundary_density_integrable_relative
     {lambda localFactor : LoopPlane → ℝ} {p : ℂ} (hp : ‖p‖ = 1)
@@ -214,11 +195,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
 
-
-
-
-
-
 theorem boundary_original_logarithmicDensity_integrable
     (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))
@@ -252,11 +228,6 @@ theorem boundary_original_logarithmicDensity_integrable
   change ∃ V : Set LoopPlane, V ∈ 𝓝[loopDiskSet] (e p) ∧
     IntegrableOn (logarithmicGaussDensity S.conformalFactor) V volume at hh
   simpa only [p, e.apply_symm_apply] using hh
-
-
-
-
-
 
 theorem logarithmicGaussDensity_integrable (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

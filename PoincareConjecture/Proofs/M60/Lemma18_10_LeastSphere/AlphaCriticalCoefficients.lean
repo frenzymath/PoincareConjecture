@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterface
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +36,6 @@ local instance : NormedSpace ℝ
     (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem coefficient_bounds (S : SUWeakAlphaCoordinate g b alpha f V center R) :
     let G := g.pullbackCoefficients (chartAt (EuclideanSpace ℝ (Fin n)) b).symm
@@ -98,7 +87,6 @@ private theorem coefficient_memLp_top (S : SUWeakAlphaCoordinate g b alpha f V c
   · filter_upwards [ae_restrict_mem measurableSet_ball] with z hz
     exact (hb z (Metric.ball_subset_closedBall hz)).2.1
 
-
 def flux (_S : SUWeakAlphaCoordinate g b alpha f V center R) (a : Fin n) (i : Fin 2)
     (z : LoopPlane) : ℝ :=
   let G := g.pullbackCoefficients (chartAt (EuclideanSpace ℝ (Fin n)) b).symm
@@ -106,7 +94,6 @@ def flux (_S : SUWeakAlphaCoordinate g b alpha f V center R) (a : Fin n) (i : Fi
   let Q := ∑ j : Fin 2, G (u z) (V j z) (V j z)
   2 * alpha * (1 + Q / suAlphaRoundFactor z) ^ (alpha - 1) *
     G (u z) (V i z) (EuclideanSpace.single a 1)
-
 
 def sourceTerm (_S : SUWeakAlphaCoordinate g b alpha f V center R)
     (a : Fin n) (z : LoopPlane) : ℝ :=
@@ -118,8 +105,6 @@ def sourceTerm (_S : SUWeakAlphaCoordinate g b alpha f V center R)
       (V i z) (V i z)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem flux_source_memLp (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha : 1 < alpha) :
     let mu := volume.restrict (Metric.ball center R)
@@ -227,7 +212,6 @@ theorem flux_source_memLp (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha
 
 set_option maxHeartbeats 800000 in
 
-
 theorem flux_source_memLp_one (S : SUWeakAlphaCoordinate g b 1 f V center R) :
     let mu := volume.restrict (Metric.ball center R)
     (∀ a i, MemLp (S.flux a i) 2 mu) ∧ ∀ a, Integrable (S.sourceTerm a) mu := by
@@ -282,8 +266,6 @@ private theorem component_variation (S : SUWeakAlphaCoordinate g b alpha f V cen
   simp only [Fin.sum_univ_two]
   ring
 
-
-
 theorem scalar_variation (S : SUWeakAlphaCoordinate g b alpha f V center R) (a : Fin n)
     {phi : LoopPlane → ℝ} (hphi : ContDiff ℝ ∞ phi) (hc : HasCompactSupport phi)
     (hO : tsupport phi ⊆ Metric.ball center R) :
@@ -306,7 +288,6 @@ theorem scalar_variation (S : SUWeakAlphaCoordinate g b alpha f V center R) (a :
   exact ⟨heq ▸ S.variation_integrable eta heta hetac hetaO,
     heq ▸ S.variation_zero eta heta hetac hetaO⟩
 
-
 theorem flux_source_memLp_of_one_le (S : SUWeakAlphaCoordinate g b alpha f V center R)
     (ha : 1 ≤ alpha) :
     let mu := volume.restrict (Metric.ball center R)
@@ -317,8 +298,6 @@ theorem flux_source_memLp_of_one_le (S : SUWeakAlphaCoordinate g b alpha f V cen
     simpa only [mul_one, sub_self, div_one, ENNReal.ofReal_ofNat, show (2 : ℝ) - 1 = 1 by
       norm_num] using S.flux_source_memLp_one
   · exact S.flux_source_memLp he
-
-
 
 theorem scalar_equation (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha : 1 ≤ alpha)
     (a : Fin n) {phi : LoopPlane → ℝ} (hphi : ContDiff ℝ ∞ phi)
@@ -350,7 +329,6 @@ theorem scalar_equation (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha :
   have heq := (S.scalar_variation a hphi hc hO).2
   rw [integral_sub hleft hright, sub_eq_zero] at heq
   exact heq
-
 
 def naturalWeight (_S : SUWeakAlphaCoordinate g b alpha f V center R) (z : LoopPlane) : ℝ :=
   let G := g.pullbackCoefficients (chartAt (EuclideanSpace ℝ (Fin n)) b).symm
@@ -406,8 +384,6 @@ theorem source_pairing (S : SUWeakAlphaCoordinate g b alpha f V center R) (z : L
   rw [Finset.sum_comm]
   simp only [hi]
   rfl
-
-
 
 theorem natural_coercivity_source (S : SUWeakAlphaCoordinate g b alpha f V center R)
     (ha : 1 ≤ alpha) :
@@ -468,8 +444,6 @@ theorem natural_coercivity_source (S : SUWeakAlphaCoordinate g b alpha f V cente
     rw [abs_mul, abs_neg, abs_of_nonneg (mul_nonneg (by linarith) hw0)]
     exact (mul_le_mul_of_nonneg_left hsum (mul_nonneg (by linarith) hw0)).trans_eq (by ring)
 
-
-
 theorem natural_cross_bound (S : SUWeakAlphaCoordinate g b alpha f V center R) (z : LoopPlane)
     {C : ℝ}
     (hG : ‖g.pullbackCoefficients
@@ -507,8 +481,6 @@ theorem natural_cross_bound (S : SUWeakAlphaCoordinate g b alpha f V center R) (
   exact (mul_le_mul_of_nonneg_left hcs' (sq_nonneg _)).trans_eq (by ring)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem natural_integrability (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha : 1 ≤ alpha) :
     let mu := volume.restrict (Metric.ball center R)
@@ -588,9 +560,6 @@ theorem natural_integrability (S : SUWeakAlphaCoordinate g b alpha f V center R)
     simpa only [pow_two] using (hcol i).norm.mul' (hcol i).norm
   exact memLp_one_iff_integrable.mp ((memLp_finsetSum _ (fun i _ => hnormsq i)).mul' hW)
 
-
-
-
 theorem coefficient_neighborhood (S : SUWeakAlphaCoordinate g b alpha f V center R) :
     let G := g.pullbackCoefficients (chartAt (EuclideanSpace ℝ (Fin n)) b).symm
     let u := f
@@ -646,9 +615,6 @@ theorem coefficient_neighborhood (S : SUWeakAlphaCoordinate g b alpha f V center
     exact fun x hx => hball ((Metric.closedBall_subset_ball
       ((min_le_left _ _).trans_lt (by linarith : s / 2 < s))) hx)
 
-
-
-
 theorem canonical_integrability (S : SUWeakAlphaCoordinate g b alpha f V center R)
     (ha : 1 ≤ alpha) :
     let mu := volume.restrict (Metric.ball center R)
@@ -687,8 +653,6 @@ theorem canonical_integrability (S : SUWeakAlphaCoordinate g b alpha f V center 
     simp only [aa, ENNReal.toReal_ofReal ha0.le, Real.norm_eq_abs,
       abs_of_nonneg (show 0 ≤ Q z by dsimp [Q]; positivity)]
     rfl
-
-
 
 theorem indicator_equation (S : SUWeakAlphaCoordinate g b alpha f V center R) (ha : 1 ≤ alpha)
     {r : ℝ} (hrR : r ≤ R) (a : Fin n)

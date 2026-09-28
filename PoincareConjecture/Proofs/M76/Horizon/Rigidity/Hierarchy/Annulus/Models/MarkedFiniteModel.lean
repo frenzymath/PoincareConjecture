@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -203,6 +194,5 @@ theorem exists_original_marked_surface_finite_incidence
     exists_original_marked_surface_finite_incidence_with_rim_polygons e hX he hS hlocal
   exact ⟨s, F, K, B, g, hFc, hFi, hF, hK, hBK, hfull, hKs, hBs,
     hPL, hgi, hfg, hgs, hpure, hcounts, hlinks⟩
-
 
 end PoincareConjecture.M76

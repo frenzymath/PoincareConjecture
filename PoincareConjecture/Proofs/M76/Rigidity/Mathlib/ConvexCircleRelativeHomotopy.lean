@@ -4,25 +4,12 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {C : Set E} {A : Set C}
-
-
-
-
 
 theorem Convex.exists_circle_difference_lift (hC : Convex ℝ C)
     (hA : IsPreconnected A) (b : C) (hb : b ∈ A)
@@ -80,10 +67,6 @@ theorem Convex.exists_circle_difference_lift (hC : Convex ℝ C)
   have hconst := cov.constOn_of_comp hA hcont.continuousOn
     (fun a ha a' ha' => by rw [hl, hl, hf a ha, hf a' ha']) hx hb
   exact hconst.trans (hTb 1 y)
-
-
-
-
 
 theorem Convex.exists_homotopyRel_circle_product (hC : Convex ℝ C)
     (hA : IsPreconnected A) (b : C) (hb : b ∈ A)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.Se
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.CylinderReversal
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.ThreeCylinders
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Cutoff.Profile
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Cutoff.SpatialSupport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

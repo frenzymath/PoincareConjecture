@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapt
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ScalarFactorArea
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.AnnulusJoinArea
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 n) ∞ M]
 
 local notation "S" => m64AnnulusInterior
-
-
-
-
 
 theorem m64_zero_area_boundary_collar
     (g : RiemannianMetric n M) (c : ℝ → M) (sigma : ℝ → ℝ)
@@ -264,10 +246,6 @@ theorem m64_zero_area_boundary_collar
   change (∫ z in m64AnnulusDomain, m60AreaDensity g A.map z) = 0
   rw [hmap]
   exact harea_zero
-
-
-
-
 
 theorem m64_zero_area_boundary_collar_join
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

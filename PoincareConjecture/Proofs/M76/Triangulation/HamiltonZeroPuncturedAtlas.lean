@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PuncturedThreeTorusImmersion
 import PoincareConjecture.Proofs.M76.Mathlib.ImmersionPLAtlas
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M76
 local notation "T" => ((StableTorus.Circle × StableTorus.Circle) × StableTorus.Circle)
 local notation "V" => CubeShell.Ambient
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_zero_punctured_torus_PL_domain
     (h : OpenPartialHomeomorph V V3) (hsource : h.source = univ) :

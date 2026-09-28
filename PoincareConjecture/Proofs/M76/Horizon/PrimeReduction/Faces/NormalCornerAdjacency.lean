@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcComponents
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
 
 namespace PoincareConjecture.M76.TriangleCorner
-
-
 
 theorem pair_subset_edgeIntervals
     {a b c d : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : c ≤ 1) (hd : d ≤ 1)
@@ -45,8 +34,6 @@ theorem pair_subset_edgeIntervals
     rintro x (rfl | rfl)
     · exact ⟨⟨ha.trans hp.1.1, hp.1.2.trans hc⟩, hp.2⟩
     · exact ⟨⟨ha.trans hq.1.1, hq.1.2.trans hc⟩, hq.2⟩
-
-
 
 theorem boundary_adjacency_of_no_intermediate_pair
     {ι : Type*} (D : ι → Set (ℝ × ℝ)) (p q : ι → ℝ × ℝ)
@@ -77,9 +64,6 @@ theorem boundary_adjacency_of_no_intermediate_pair
     y ⟨hb.1.trans_le hy.1, hy.2.trans_lt hd.2⟩ heq
     ⟨lt_of_le_of_ne hx.1 hxa.symm, lt_of_le_of_ne hx.2 hxc⟩
 
-
-
-
 noncomputable def horizontalEndpoint (p q : ℝ × ℝ) : ℝ :=
   if p.2 = 0 then p.1 else q.1
 
@@ -97,9 +81,6 @@ theorem horizontalEndpoint_eq {p q : ℝ × ℝ} {x y : ℝ} (hy : y ≠ 0)
     simp only [horizontalEndpoint, hpe, hy, if_false, hq]
   · have hpe : p = (x, 0) := mem_singleton_iff.mp hp
     simp only [horizontalEndpoint, hpe, if_true]
-
-
-
 
 theorem exists_next_corner_pair
     {ι : Type*} [Finite ι] (p q : ι → ℝ × ℝ) (a : ℝ)

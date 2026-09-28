@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.EndpointPL
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteCollarPhaseProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -207,4 +199,3 @@ theorem exists_hamiltonZero_adjusted_phase_products {ι κ : Type*}
   · exact hpreB
 
 end PoincareConjecture.M76.PrescribedSlab
-

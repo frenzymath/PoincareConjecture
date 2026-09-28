@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M48.ReferenceSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure M48RegularReferenceData {F : SurgeryFlowData.{u}} {T : ℝ}
     (L : RepairedPreterminalSlab F T) (H : M33RegularHistoryData L.regularHistoryWindow) where
@@ -36,9 +26,6 @@ variable (P : M48Predecessors.{u}) {F : SurgeryFlowData.{u}} {T : ℝ}
   {L : RepairedPreterminalSlab F T} (R : M48RegularSpacetimeData L)
 
 include P
-
-
-
 
 theorem regular_reference (a : ℝ) (ha : L.start < a) (haT : a < T) :
     ∃ D : M48RegularReferenceData L R.history, D.reference.tMinus = a := by
@@ -159,7 +146,6 @@ theorem regular_reference (a : ℝ) (ha : L.start < a) (haT : a < T) :
       exact (congrArg (fun q : J => ∃ hb : q.1 ∈ (H.generalized.box b).interval,
         f q.1 q.2 x = (H.generalized.box b).forward q.1 hb y) htimeEq).mp h' }
   exact ⟨⟨reference, ha, rfl, HEq.rfl, hcommute⟩, rfl⟩
-
 
 theorem regular_reference_exists : Nonempty (M48RegularReferenceData L R.history) := by
   obtain ⟨a, ha, haT⟩ := exists_between L.start_lt

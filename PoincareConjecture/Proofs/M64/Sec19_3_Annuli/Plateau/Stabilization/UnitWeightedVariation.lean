@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.UnitRicciControl
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusProductMovingEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_modulusEnergyRicci_abs_le_of_unit_bound
     (P : M62.CircleProductData F circumference)
@@ -67,8 +54,6 @@ theorem auxiliaryCircle_modulusEnergyRicci_abs_le_of_unit_bound
           ((r * (Q.flow.metric t).inner (f p) (u 0) (u 0) +
             r⁻¹ * (Q.flow.metric t).inner (f p) (u 1) (u 1)) / 2)
       ring
-
-
 
 theorem auxiliaryCircle_annulus_modulusEnergy_derivative_le_of_ambient_bounds
     (P : M62.CircleProductData F circumference)

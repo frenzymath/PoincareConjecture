@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODEUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ open scoped ContDiff NNReal
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem exists_closedPicard_solution_in_ball
     {f : ℝ → E → E} {a b : ℝ} {t₀ : Icc a b} {x₀ x : E} {A r L K : ℝ≥0}
@@ -36,10 +24,6 @@ theorem exists_closedPicard_solution_in_ball
     intro t' ht'
     nth_rw 1 [← hα]
     rw [ODE.FunSpace.compProj_of_mem ht', ODE.FunSpace.next_apply]
-
-
-
-
 
 theorem exists_closedPicard_family_in_domain
     {f : ℝ → E → E} {a b : ℝ} (hab : a < b) {t₀ : Icc a b}

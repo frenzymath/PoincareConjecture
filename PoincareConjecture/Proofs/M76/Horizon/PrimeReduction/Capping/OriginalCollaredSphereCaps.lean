@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.FiniteSphere
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalDomainCaps
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.OriginalCollarModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_original_collared_sphere_caps
     {X ι κ : Type*} [MetricSpace X] [Fintype κ] [DecidableEq κ]

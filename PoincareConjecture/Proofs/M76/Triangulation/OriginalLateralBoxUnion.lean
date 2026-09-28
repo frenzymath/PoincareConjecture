@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,12 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem union_original_lateral_box_ballPair
     (F₀ F₁ : ((ℝ × ℝ) × ℝ) → E)

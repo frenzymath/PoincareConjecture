@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem scalarCurvature_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -40,8 +28,6 @@ theorem scalarCurvature_eq_of_local_homothety
   exact hlocal.trans (M13.homothety_scalarCurvature_eq h (M13.scaleSmoothMetric h Q hQ)
     (Diffeomorph.refl (𝓡 n) N ∞) Q hQ (M13.identity_metricHomothety h Q hQ)
     D' (M13.scaleLeviCivitaData D' Q hQ) (f x))
-
-
 
 theorem curvatureTensorNorm_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)

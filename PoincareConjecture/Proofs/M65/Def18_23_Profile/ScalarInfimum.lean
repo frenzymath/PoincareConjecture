@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.AreaComparisonProfile
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -21,9 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {t₀ t₁ : ℝ} (F : RicciFlow 3 M (Set.Icc t₀ t₁))
-
-
-
 
 theorem flowScalarCurvatureInfimum_continuousOn
     (compact : IsCompact (Set.univ : Set M)) :
@@ -43,8 +31,6 @@ theorem flowScalarCurvatureInfimum_continuousOn
   simpa only [Set.image_univ] using
     compact.continuous_sInf (f := fun t : Set.Icc t₀ t₁ =>
       fun x : M => (F.connection t.1).scalarCurvature x) hscalar
-
-
 
 theorem flowScalarCurvatureInfimum_intervalIntegrable
     (compact : IsCompact (Set.univ : Set M))

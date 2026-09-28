@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralManifoldOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactGluing
 import Mathlib.Topology.Sets.Compacts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

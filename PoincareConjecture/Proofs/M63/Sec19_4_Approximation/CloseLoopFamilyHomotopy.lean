@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.PeriodicC1LoopFamily
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.RawLoopLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ universe u v
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
 
 theorem exists_uniform_close_loop_family_homotopy
     {M : Type u} [TopologicalSpace M] [T2Space M]

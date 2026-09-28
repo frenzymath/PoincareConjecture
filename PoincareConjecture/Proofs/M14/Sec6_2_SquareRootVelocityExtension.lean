@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.WithinVelocitySmooth
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
-
-
 
 theorem horizontalProjection_timeVector_eq_zero (q : G.Point) :
     G.spacetime.horizontalProjection q (G.spacetime.timeVector q) = 0 := by
@@ -36,8 +25,6 @@ theorem horizontalProjection_timeVector_eq_zero (q : G.Point) :
       (G.spacetime.timeVector q)) • G.spacetime.timeVector q = 0
   rw [htime, one_smul, sub_self]
 
-
-
 theorem squareRoot_horizontalVelocity_eq_projection (R : M14SquareRootPath G p)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     R.horizontal_velocity s = G.spacetime.horizontalProjection (R.curve s)
@@ -47,8 +34,6 @@ theorem squareRoot_horizontalVelocity_eq_projection (R : M14SquareRootPath G p)
     horizontalProjection_timeVector_eq_zero, smul_zero, zero_add]
   exact (G.spacetime.horizontalProjection_identity (R.curve s)
     (R.horizontal_velocity s)).symm
-
-
 
 theorem squareRoot_horizontalVelocity_smooth (R : M14SquareRootPath G p) :
     ContMDiffOn (𝓘(ℝ, ℝ))
@@ -73,9 +58,6 @@ theorem squareRoot_horizontalVelocity_smooth (R : M14SquareRootPath G p) :
   exact congrArg (fun v : G.Horizontal (R.curve s) =>
     Bundle.TotalSpace.mk' (EuclideanSpace ℝ (Fin n)) (R.curve s) v)
       (squareRoot_horizontalVelocity_eq_projection R hs)
-
-
-
 
 theorem exists_squareRoot_velocity_extension (R : M14SquareRootPath G p) :
     Nonempty (M14PullbackExtension G R.curve

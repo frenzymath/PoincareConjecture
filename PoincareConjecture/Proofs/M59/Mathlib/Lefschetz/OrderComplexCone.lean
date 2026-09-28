@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,14 +16,11 @@ variable {J : Type u} [PartialOrder J] [Fintype J]
 
 open scoped Classical in
 
-
 def orderComplexVertex (v : J) : (finiteOrderComplex J).space := by
   refine ⟨fun i => if i = v then 1 else 0, ?_⟩
   have h := (orderComplexStar_barycenter_mem ({v} : Finset J)
     (Finset.singleton_nonempty v) (by simp)).1
   simpa only [Finset.card_singleton, Nat.cast_one, inv_one, Finset.mem_singleton] using h
-
-
 
 def orderComplexConePoint (s : Finset J) (v : J) (hv : v ∈ s) :
     orderComplexNeighborhood s := by
@@ -46,8 +34,6 @@ variable (s : Finset J) (v : J) (hv : v ∈ s) (hmin : ∀ j ∈ s, v ≤ j)
 include hv hmin
 
 open scoped Classical in
-
-
 
 theorem orderComplexConeSegment_mem (z : orderComplexNeighborhood s) (t : I) :
     let w := fun i => (1 - (t : ℝ)) * orderComplexRestrictionCoord s z.val.val i +
@@ -86,8 +72,6 @@ theorem orderComplexConeSegment_mem (z : orderComplexNeighborhood s) (t : I) :
       · exact hr.2.2 i j (hri i hi hiv) (hri j hj hjv)
   exact ⟨hmem, orderComplexRestrictionWeight_eq_one s ⟨w, hmem⟩ hsupp⟩
 
-
-
 def orderComplexConeSecondHomotopy : (orderComplexRestriction s).Homotopy
     (ContinuousMap.const _ (orderComplexConePoint s v hv)) := by
   classical
@@ -124,14 +108,10 @@ def orderComplexConeSecondHomotopy : (orderComplexRestriction s).Homotopy
       1 * (orderComplexVertex v).val i = (orderComplexVertex v).val i
     ring
 
-
-
 def orderComplexConeHomotopy :
     (ContinuousMap.id (orderComplexNeighborhood s)).Homotopy
       (ContinuousMap.const _ (orderComplexConePoint s v hv)) :=
   (orderComplexRestrictionHomotopy s).trans (orderComplexConeSecondHomotopy s v hv hmin)
-
-
 
 theorem orderComplexConeHomotopy_fixed (t : I) :
     orderComplexConeHomotopy s v hv hmin (t, orderComplexConePoint s v hv) =

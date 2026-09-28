@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.Transport.IntegralCompactSupportRangeMapZero
 
-
 set_option autoImplicit false
 
 noncomputable section

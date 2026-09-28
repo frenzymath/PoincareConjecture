@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialFieldSystem
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ private theorem norm_hasFDerivAt {x : V} (hx : x ≠ 0) :
   field_simp [norm_ne_zero_iff.mpr hx]
   ring
 
-
-
 theorem radialArclength_norm_radial_derivative
     (g : RiemannianMetric 3 V) {x : V} (hx : x ≠ 0) :
     fderiv ℝ (fun y : V => radialArclength g ‖y‖) x (radialUnitField g x) = 1 := by
@@ -47,8 +36,6 @@ theorem radialArclength_norm_radial_derivative
   unfold axisRadialSpeed
   field_simp [norm_ne_zero_iff.mpr hx,
     (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g ‖x‖)).ne']
-
-
 
 theorem intrinsic_profile_pullback_directional
     (g : RiemannianMetric 3 V) {f : V → V} {x : V}
@@ -77,7 +64,6 @@ variable (g : RiemannianMetric 3 V)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicRadialShape (s : ℝ) : ℝ :=
   deriv (intrinsicWarpingRadius g hrotation hcomplete) s /
@@ -117,7 +103,6 @@ private theorem intrinsicRadialShape_iterated_contDiffAt (m : ℕ) {s : ℝ} (hs
       (fun y => fderiv ℝ (iteratedDeriv m (intrinsicRadialShape g hrotation hcomplete)) y 1) s
     exact (hm.fderiv_right (m := ∞) (by simp)).clm_apply contDiffAt_const
 
-
 noncomputable def intrinsicShapeDerivativePullback (f : V → V) (m : ℕ) (x : V) : ℝ :=
   iteratedDeriv m (intrinsicRadialShape g hrotation hcomplete)
     (radialArclength g ‖f x‖)
@@ -135,8 +120,6 @@ theorem intrinsicShapeDerivativePullback_zero {f : V → V} {x : V} (hx : f x �
     intrinsicShapeDerivativePullback g hrotation hcomplete f 0 x =
       axisWarpingSlope g ‖f x‖ / axisWarpingRadius g ‖f x‖ := by
   exact intrinsicRadialShape_eq g hrotation hcomplete (norm_pos_iff.mpr hx)
-
-
 
 theorem intrinsicShapeDerivativePullback_succ {f : V → V} {x : V}
     (hf : DifferentiableAt ℝ f x) (hi : (fderiv ℝ f x).IsInvertible)

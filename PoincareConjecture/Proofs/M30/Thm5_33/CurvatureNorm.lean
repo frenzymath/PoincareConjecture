@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Bounds
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M30.Thm5_33.NegativeDefect
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem curvatureTensorNorm_le_of_scalar_negativeDefect_le
     {M : Type u} [TopologicalSpace M]
@@ -47,8 +31,6 @@ theorem curvatureTensorNorm_le_of_scalar_negativeDefect_le
   exact Poincare.fullNorm_le_of_orderedSpectrum (R₀ := K)
     h12 h23 hscalar hnorm hR le_rfl hK (by linarith)
 
-
-
 theorem generalized_curvatureNorm_le_of_scalar_negativeDefect_le
     (hC : RicciFlowCurvatureTheory.{u})
     (F : GeneralizedRicciFlowData.{u}) (p : F.point)
@@ -59,9 +41,6 @@ theorem generalized_curvatureNorm_le_of_scalar_negativeDefect_le
   exact curvatureTensorNorm_le_of_scalar_negativeDefect_le (F.connection p.1)
     (hC.tensor_calculus 3 (F.slice p.1).carrier (F.metric p.1) (F.connection p.1))
     p.2 hK hR hX
-
-
-
 
 theorem eventually_curvatureNorm_and_negativeDefect_le
     (hC : RicciFlowCurvatureTheory.{u}) (S : GeneralizedBlowupSequence.{u})

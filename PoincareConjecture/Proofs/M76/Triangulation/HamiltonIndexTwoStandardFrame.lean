@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardPrism
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoMarkedBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -28,35 +19,23 @@ private def coordinateLinear : P ≃ₗ[ℝ] V where
   map_add' p q := by ext i; fin_cases i <;> rfl
   map_smul' r p := by ext i; fin_cases i <;> rfl
 
-
-
 noncomputable def coordinates : P ≃ᴬ[ℝ] V :=
   coordinateLinear.toContinuousLinearEquiv.toContinuousAffineEquiv
 
-
 theorem coordinates_apply (p : P) : coordinates p = ![p.1.1, p.1.2, p.2] := rfl
-
-
 
 noncomputable def endHeight (j : Bool) : ℝ := if j then 3 / 2 else -(3 / 2)
 
-
 def lowerBound : V := ![-1, -1, -2]
-
 
 def upperBound : V := ![1, 1, 2]
 
-
 def side : Set V := coordinates '' band (-(3 / 2)) (3 / 2)
-
 
 def outer (j : Bool) : Set V := coordinates ''
   if j then upperOuter (3 / 2) 2 else lowerOuter (-2) (-(3 / 2))
 
-
 def rim (j : Bool) : Set V := coordinates '' endRim (endHeight j)
-
-
 
 theorem box_image : coordinates '' prism (-2) 2 = Icc lowerBound upperBound := by
   ext x
@@ -119,9 +98,6 @@ private theorem standard_boundary_partition :
     · rcases hp with hp | hp
       · exact Or.inl (Or.inl ⟨hp.1, by linarith [hp.2.1], hp.2.2⟩)
       · exact Or.inr hp
-
-
-
 
 noncomputable def frame : HamiltonIndexTwoFrame (Fin 3) := by
   have hbox := (prism_ballPair (by norm_num : (-2 : ℝ) < 2)).affine_image

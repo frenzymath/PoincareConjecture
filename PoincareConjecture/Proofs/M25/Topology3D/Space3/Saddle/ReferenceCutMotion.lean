@@ -7,25 +7,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarRadialCoordinates
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Matrix Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_nonnested_reference_cut_motion
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

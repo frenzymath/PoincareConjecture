@@ -7,21 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +20,6 @@ namespace PoincareConjecture.ReducedLengthMinimum
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def referenceSpeedSq (g : RiemannianMetric n M)
     (γ : ℝ → M) (s : ℝ) : ℝ :=
@@ -95,7 +79,6 @@ private theorem squarePath_speed {J : Set ℝ} {F : RicciFlow n M J}
   rw [hv, Real.sqrt_sq hs.1.le]
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
-
 
 theorem squarePath_referenceEnergy {J : Set ℝ} {F : RicciFlow n M J}
     {T τ : ℝ} (p : BackwardTimePath F T 0 τ) (g : RiemannianMetric n M)
@@ -157,7 +140,6 @@ private theorem sqrt_integral_bound {q : ℝ → ℝ} {s t : ℝ}
     ← intervalIntegral.integral_of_le hst] using h
 
 variable [ConnectedSpace M] [T3Space M]
-
 
 theorem toReal_edist_le_sqrt_energy (g : RiemannianMetric n M) {α : ℝ → M}
     {a b C : ℝ} (hab : a < b) (hα : ContinuousOn α (Icc a b))
@@ -232,8 +214,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem surface_referenceWeightedEnergy_bound (K : AncientKappaSolution 2 M)
     {τ : ℝ} (p : BackwardTimePath K.flow 0 0 τ) :
     IntervalIntegrable (fun s ↦ Real.sqrt s *
@@ -266,7 +246,6 @@ theorem surface_referenceWeightedEnergy_bound (K : AncientKappaSolution 2 M)
     simpa only [uIcc_of_le p.ordered.le] using uIoc_subset_uIcc hs
   exact ⟨hW, intervalIntegral.integral_mono_on p.ordered.le hW p.l_integrable hWbound⟩
 
-
 theorem surface_squarePath_modulus (K : AncientKappaSolution 2 M)
     {τ C : ℝ} (p : BackwardTimePath K.flow 0 0 τ)
     (hC : backwardLLength K.flow 0 0 τ p.curve ≤ C) :
@@ -289,9 +268,6 @@ theorem surface_squarePath_modulus (K : AncientKappaSolution 2 M)
     (Real.sqrt_pos.mpr p.ordered) hcont hreg henergy.1
   rw [henergy.2]
   exact mul_le_mul_of_nonneg_left (hweighted.2.trans hC) (by norm_num)
-
-
-
 
 theorem exists_uniform_subsequence_of_surface_action_bound (K : AncientKappaSolution 2 M)
     (p : M) {τ C : ℝ}
@@ -361,8 +337,6 @@ theorem exists_uniform_subsequence_of_surface_action_bound (K : AncientKappaSolu
     obtain ⟨N, hN⟩ := Metric.tendsto_atTop.mp hlim ε hε
     refine ⟨N, fun k hk s ↦ ?_⟩
     exact (BoundedContinuousFunction.dist_coe_le_dist s).trans_lt (hN k hk)
-
-
 
 theorem exists_uniformly_convergent_spatial_minimizing_paths (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :

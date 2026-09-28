@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CyclicArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,12 +8,9 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {n : ℕ}
 
-
 def cyclicDistance (a b : Fin n) : ℕ := (b - a).val
 
-
 theorem cyclicDistance_lt (a b : Fin n) : cyclicDistance a b < n := (b - a).isLt
-
 
 theorem iterate_cyclicDistance (a b : Fin n) :
     (finRotate n)^[cyclicDistance a b] a = b := by
@@ -34,7 +21,6 @@ theorem iterate_cyclicDistance (a b : Fin n) :
         (congrFun (finCycle_eq_finRotate_iterate (k := b - a)) a).symm
     _ = b := by abel
 
-
 theorem cyclicDistance_iterate (a : Fin n) (t : ℕ) (ht : t < n) :
     cyclicDistance a ((finRotate n)^[t] a) = t := by
   let : NeZero n := a.neZero
@@ -43,11 +29,9 @@ theorem cyclicDistance_iterate (a : Fin n) (t : ℕ) (ht : t < n) :
       (congrFun (finCycle_eq_finRotate_iterate (k := (⟨t, ht⟩ : Fin n))) a).symm
   simp only [cyclicDistance, hrot, add_sub_cancel_left]
 
-
 theorem cyclicDistance_self (a : Fin n) : cyclicDistance a a = 0 := by
   let : NeZero n := a.neZero
   simp [cyclicDistance]
-
 
 theorem cyclicDistance_add_reverse (a b : Fin n) (hab : b ≠ a) :
     cyclicDistance a b + cyclicDistance b a = n := by
@@ -58,7 +42,6 @@ theorem cyclicDistance_add_reverse (a b : Fin n) (hab : b ≠ a) :
   rw [hneg, Fin.val_neg, if_neg hne]
   have := (b - a).isLt
   omega
-
 
 theorem cyclicDistance_change_start (a b i : Fin n) :
     cyclicDistance b i = if cyclicDistance a i < cyclicDistance a b then
@@ -71,7 +54,6 @@ theorem cyclicDistance_change_start (a b i : Fin n) :
   split_ifs with h
   · exact Fin.coe_sub_iff_lt.mpr h
   · exact Fin.sub_val_of_le (not_lt.mp h)
-
 
 theorem cyclicDistance_nonadjacent_bounds (a b : Fin n) (hab : b ≠ a)
     (hs : b ≠ finRotate n a) (hp : b ≠ (finRotate n).symm a) :
@@ -94,7 +76,6 @@ theorem cyclicDistance_nonadjacent_bounds (a b : Fin n) (hab : b ≠ a)
   have hsum := cyclicDistance_add_reverse a b hab
   exact ⟨hforward, by omega⟩
 
-
 theorem mem_range_cyclicArcIndex_iff (a : Fin n) (m : ℕ) (hm : m < n) (i : Fin n) :
     i ∈ range (cyclicArcIndex a m) ↔ cyclicDistance a i ≤ m := by
   constructor
@@ -105,7 +86,6 @@ theorem mem_range_cyclicArcIndex_iff (a : Fin n) (m : ℕ) (hm : m < n) (i : Fin
   · intro hi
     exact ⟨⟨cyclicDistance a i, by omega⟩, iterate_cyclicDistance a i⟩
 
-
 theorem mem_range_cyclicArcEdgeIndex_iff (a : Fin n) (m : ℕ) (hm : m < n) (i : Fin n) :
     i ∈ range (fun j : Fin m => cyclicArcIndex a m j.castSucc) ↔ cyclicDistance a i < m := by
   constructor
@@ -115,7 +95,6 @@ theorem mem_range_cyclicArcEdgeIndex_iff (a : Fin n) (m : ℕ) (hm : m < n) (i :
     exact j.isLt
   · intro hi
     exact ⟨⟨cyclicDistance a i, hi⟩, iterate_cyclicDistance a i⟩
-
 
 theorem cyclicArc_edgeIndex_partition (a b : Fin n) (hab : b ≠ a) :
     Disjoint
@@ -146,7 +125,6 @@ theorem cyclicArc_edgeIndex_partition (a b : Fin n) (hab : b ≠ a) :
       rw [if_neg hi] at hchange
       have := cyclicDistance_lt a i
       omega
-
 
 theorem cyclicArc_vertexIndex_inter (a b : Fin n) (hab : b ≠ a) :
     range (cyclicArcIndex a (cyclicDistance a b)) ∩

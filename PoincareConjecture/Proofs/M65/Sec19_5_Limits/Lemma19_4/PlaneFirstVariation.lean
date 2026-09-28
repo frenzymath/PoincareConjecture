@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PlaneTorsion
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PlaneTimeField
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def m65PlaneTension {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (f : LoopPlane → M) (z : LoopPlane) :
     TangentSpace (𝓡 n) (f z) :=
@@ -35,8 +23,6 @@ noncomputable def m65PlaneTension {g : RiemannianMetric n M}
     (fun r => f (z + r • EuclideanSpace.basisFun (Fin 2) ℝ i))
     (fun r => mfderiv (𝓡 2) (𝓡 n) f (z + r • EuclideanSpace.basisFun (Fin 2) ℝ i)
       (EuclideanSpace.basisFun (Fin 2) ℝ i)) 0
-
-
 
 noncomputable def m65PlaneVariationFlux (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) (t : ℝ) (i : Fin 2) (z : LoopPlane) : ℝ :=
@@ -46,8 +32,6 @@ noncomputable def m65PlaneVariationFlux (g : RiemannianMetric n M)
 variable {a b : ℝ} (F : RicciFlow n M (Icc a b))
 
 set_option maxHeartbeats 1500000 in
-
-
 
 theorem m65PlaneMotionDensity_eq_divergence_sub_tension
     (u : ℝ → LoopPlane → M) {U : Set (ℝ × LoopPlane)} (hU : IsOpen U)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCapRegularCore
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.InnerAttachment
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -49,8 +40,6 @@ theorem boundary_neck_inter_end_nonempty_m28 :
     (C.boundary_eq_neck_sphere.symm ▸ C.boundary_neck.center_on_central_sphere)))
     _ C.boundary_neck.carrier_open
   exact C.boundary_neck.central_sphere_subset C.boundary_neck.center_on_central_sphere
-
-
 
 theorem boundary_neck_isSeparating_m28 : C.boundary_neck.IsSeparating := by
   refine ⟨C.boundary_neck.component_diff_central_sphere_nonempty, ?_⟩

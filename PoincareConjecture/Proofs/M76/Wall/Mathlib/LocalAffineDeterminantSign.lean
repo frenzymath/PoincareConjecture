@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ConvexFullFacetConnectivity
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PairedFacetOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -54,10 +45,6 @@ private theorem eq_of_eqOn_full_face
   apply AffineMap.ext_on hspan
   intro x hx
   exact (hA (subset_convexHull ℝ _ hx)).symm.trans (hB (subset_convexHull ℝ _ hx))
-
-
-
-
 
 theorem AffineOnFaces.det_mul_pos_on_convex_open
     (hf : K.AffineOnFaces f) (hi : InjOn f K.space) (hK : K.faces.Finite)

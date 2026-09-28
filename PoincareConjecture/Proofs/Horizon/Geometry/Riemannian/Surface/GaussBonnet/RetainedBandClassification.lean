@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedLowerBoundaryFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandCutFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -25,8 +18,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
 
 theorem canonical_vertex_fan_on_band_lowerArc_of_not_mem_caps
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
@@ -56,8 +47,6 @@ theorem canonical_vertex_fan_on_band_lowerArc_of_not_mem_caps
     exact hpoint ▸ hs
   exact T.canonical_vertex_fan_on_open_trimmed_edge_of_not_mem_caps g p.1.2 q
     ⟨lt_of_le_of_ne htrim.1 (Ne.symm hleft), lt_of_le_of_ne htrim.2 hright⟩ hq hcap
-
-
 
 theorem canonical_vertex_fan_in_band_off_endpoint_cuts_of_not_mem_caps
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
@@ -96,8 +85,6 @@ theorem canonical_vertex_fan_in_band_off_endpoint_cuts_of_not_mem_caps
   · exact False.elim (hleft hl)
   · exact False.elim (hright hr)
 
-
-
 theorem exists_internal_band_cut_of_endpoint_cut_not_mem_caps
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     {q : S} (hcap : ∀ v s, q ∉ ((T.caps v).face s).carrier)
@@ -128,8 +115,6 @@ theorem exists_internal_band_cut_of_endpoint_cut_not_mem_caps
     refine ⟨i, j, Fin.ext rfl, ?_⟩
     rw [← (T.chains p).rightCut_eq_cutRay (T.bands p) i]
     exact hr
-
-
 
 theorem canonical_vertex_fan_on_half_open_band_cut_of_not_mem_caps
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

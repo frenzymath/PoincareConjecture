@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.IntervalU
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

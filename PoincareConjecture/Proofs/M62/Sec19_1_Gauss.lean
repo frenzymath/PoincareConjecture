@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_CurvaturePairing
 import PoincareConjecture.Proofs.M62.Sec19_1_SpatialConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem gauss {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)

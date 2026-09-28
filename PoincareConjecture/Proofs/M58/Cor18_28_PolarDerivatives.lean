@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Real
@@ -18,11 +9,7 @@ universe u
 
 namespace PoincareConjecture.Proofs.M58
 
-
-
 noncomputable def angularVector (t : ℝ) : LoopPlane := !₂[-sin t, cos t]
-
-
 
 theorem hasDerivAt_angularPoint (t : ℝ) : HasDerivAt angularPoint (angularVector t) t := by
   have h : HasDerivAt (fun s : ℝ => ![cos s, sin s]) ![-sin t, cos t] t := by
@@ -36,8 +23,6 @@ theorem hasDerivAt_angularPoint (t : ℝ) : HasDerivAt angularPoint (angularVect
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem contractionDiskMap_polar (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ) :
@@ -53,8 +38,6 @@ theorem contractionDiskMap_polar (C : ℝ × (M × M) → M)
     rw [radialNormalization, hnorm, smul_smul, inv_mul_cancel₀ hr.ne', one_smul]
   rw [contractionDiskMap, if_neg hz, hnorm, hrad]
   rfl
-
-
 
 theorem mfderiv_contractionDiskMap_radial (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ)
@@ -102,8 +85,6 @@ theorem mfderiv_contractionDiskMap_radial (C : ℝ × (M × M) → M)
   have hv : (deriv diskTimeProfile r, 0, 0) = deriv diskTimeProfile r •
       ((1, 0, 0) : ℝ × (LoopAmbient × LoopAmbient)) := by simp
   erw [hv, map_smul]
-
-
 
 theorem mfderiv_contractionDiskMap_angular (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ)

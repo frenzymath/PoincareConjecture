@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.CommonDisk
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Reverse
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem filled_ball_subset_or_inter_eq_boundary
     (B F : E3 ≃ₜ E3)
@@ -65,8 +61,6 @@ theorem filled_ball_subset_or_inter_eq_boundary
         ⟨x, mem_ball_zero_iff.mpr h, rfl⟩ hsB)
   · exact inter_subset_inter (image_mono sphere_subset_closedBall)
       (image_mono sphere_subset_closedBall)
-
-
 
 theorem projection_mem_open_disk_of_mem_open_body
     {v : E3}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicInitialCoordinates
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -18,9 +10,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
 
-
-
-
 noncomputable def realPeriodicH2Encode :
     (C(AddCircle L, ℝ) × C(AddCircle L, ℝ)) →L[ℝ] State (ℤ × Fin 2) :=
   complexLpRealEquiv.toContinuousLinearEquiv.toContinuousLinearMap.comp
@@ -28,10 +17,6 @@ noncomputable def realPeriodicH2Encode :
       ((ContinuousMap.toLp 2 haarAddCircle ℂ).restrictScalars ℝ |>.comp
         ((Complex.ofRealCLM.compLeftContinuous ℝ (AddCircle L)).comp
           (ContinuousLinearMap.fst ℝ _ _ - ContinuousLinearMap.snd ℝ _ _))))
-
-
-
-
 
 theorem realPeriodicH2Encode_spec (f f1 f2 : C(AddCircle L, ℝ))
     (h1 : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x)

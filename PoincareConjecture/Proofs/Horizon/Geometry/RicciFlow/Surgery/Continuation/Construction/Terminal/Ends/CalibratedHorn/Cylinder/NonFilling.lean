@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.ChainTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.CylinderFilling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem no_compact_filling_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

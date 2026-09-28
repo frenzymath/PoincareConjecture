@@ -1,19 +1,8 @@
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem fderiv_bilinear_evaluation_bilinear
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

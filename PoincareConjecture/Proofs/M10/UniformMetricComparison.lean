@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.StaticEndpoints
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
 
 theorem exists_uniform_backward_metric_comparison
     (hmax : 0 < τmax) (hwindow : Icc (T - τmax) T ⊆ J)

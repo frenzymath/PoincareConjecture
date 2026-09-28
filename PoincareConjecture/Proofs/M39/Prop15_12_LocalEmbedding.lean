@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import PoincareConjecture.Proofs.M39.Prop15_12_PathBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,13 +15,9 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count)
   (C : SurgerySelectedComponent (slice T))
 
-
-
 noncomputable def localChildEmbedding :
     (E.local_result i).output.carrier → C.carrier.carrier :=
   C.inverse ∘ E.local_embed i
-
-
 
 theorem inclusion_localChildEmbedding
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion)
@@ -40,17 +27,12 @@ theorem inclusion_localChildEmbedding
   change C.inclusion (C.inverse (E.local_embed i x)) = E.local_embed i x
   rw [← hy, C.left_inverse]
 
-
-
 theorem localChildEmbedding_smooth
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (localChildEmbedding E i C) := by
   apply contMDiffOn_univ.mp
   exact C.inverse_smooth.comp (E.local_embed_smooth i).contMDiffOn
     (fun x _ => hC (Set.mem_range_self x))
-
-
-
 
 theorem localChildEmbedding_metric
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion)
@@ -76,8 +58,6 @@ theorem localChildEmbedding_metric
       rw [heq]
       exact E.local_metric i x v w
 
-
-
 theorem localChildEmbedding_edist_le
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion)
     (gC : RiemannianMetric 3 C.carrier.carrier)
@@ -93,9 +73,6 @@ theorem localChildEmbedding_edist_le
       rw [localChildEmbedding_metric E i C hC gC hpull]
       simp) x y
   simpa using hb
-
-
-
 
 theorem localChildCollapse_edist_le
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion)

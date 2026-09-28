@@ -4,23 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +13,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.M30.PartialPointedFlowConvergence
-
-
-
-
 
 theorem tendstoUniformlyOn_scalar_metric_jets
     {n : ℕ} {M : ℕ → Type u}

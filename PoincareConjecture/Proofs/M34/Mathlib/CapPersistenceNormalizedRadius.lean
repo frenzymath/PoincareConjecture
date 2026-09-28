@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M34.Mathlib.CapPersistenceBallSupremum
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Metric
-
-
-
 
 theorem exists_pos_sSup_image_ball_eq_inv_sq_of_approximate_radial_projection
     {X : Type*} [PseudoMetricSpace X] [ProperSpace X] (x : X)

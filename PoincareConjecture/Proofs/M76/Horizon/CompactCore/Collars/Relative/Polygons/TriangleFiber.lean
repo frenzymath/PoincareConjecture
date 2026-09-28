@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MaximalFaceDual
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PairedSignedFiber
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetChartSigns
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,8 +43,6 @@ theorem triangle_dualRegion_inter_boundary {s : Finset E}
   let : Fintype T.ambient.faces := T.finite.fintype
   have h := T.nonboundary_dual_inter_boundary hs (T.surface_triangle_not_boundary hs hcard)
   exact eq_empty_iff_forall_notMem.mpr (fun _ hx => h.subset ⟨hx.1.1, hx.2⟩)
-
-
 
 theorem exists_triangle_fiber {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 3) :

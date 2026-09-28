@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnerg
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem observedWeakAnnulus_modulus_stationarity_of_interior_minimum
     {e : M → E} {c0 c1 : ℝ → M}

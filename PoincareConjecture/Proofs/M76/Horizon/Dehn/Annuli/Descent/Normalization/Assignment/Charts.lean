@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPairedRegionCharts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +13,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M] {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
 
 structure RelativeChartBox (step : Step s t) (R : Set M) (x : t.Carrier) where
   upper : OpenPartialHomeomorph t.Carrier V3
@@ -46,8 +36,6 @@ structure RelativeChartBox (step : Step s t) (R : Set M) (x : t.Carrier) where
   large_support : closure (ball (upper x) (2 * radius)) ⊆ interior support.space
   interior_source : x ∈ interior (t.projection ⁻¹' R) →
     upper.source ⊆ interior (t.projection ⁻¹' R)
-
-
 
 theorem Step.nonempty_relative_chart_box (step : Step s t) {R : Set M}
     (he : PoincareConjecture.M76.PLDomain e R) {x : t.Carrier}
@@ -77,7 +65,6 @@ theorem Step.nonempty_relative_chart_box (step : Step s t) {R : Set M}
 namespace RelativeChartBox
 
 variable {step : Step s t} {R : Set M} {x : t.Carrier}
-
 
 def neighborhood (b : RelativeChartBox step R x) : Set t.Carrier :=
   b.upper.source ∩ b.upper ⁻¹' ball (b.upper x) (2 * b.radius)

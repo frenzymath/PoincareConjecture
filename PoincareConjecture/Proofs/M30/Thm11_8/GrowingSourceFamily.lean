@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.IntrinsicBalls
 import PoincareConjecture.Proofs.M30.Generalized.OrdinaryCurvature
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_growing_ordinary_source_family
     (S : GeneralizedBlowupSequence.{u}) (rho v T B : ℝ)

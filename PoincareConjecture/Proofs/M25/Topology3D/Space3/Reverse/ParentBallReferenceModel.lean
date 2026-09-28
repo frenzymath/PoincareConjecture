@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReferenceProfile
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,17 +8,14 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def referenceCapHeight (a : ℝ) (X : E2) : ℝ :=
   ((referenceCapScale a) ^ 2 - ‖X‖ ^ 2) /
     ((referenceCapScale a) ^ 2 + ‖X‖ ^ 2)
-
 
 noncomputable def referenceCapPoint (a : ℝ) (X : E2) : E3 :=
   heightCoordinates.symm
     ((2 * referenceCapScale a / ((referenceCapScale a) ^ 2 + ‖X‖ ^ 2)) • X,
       referenceCapHeight a X)
-
 
 theorem referenceCapHeight_contDiff (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
     ContDiff ℝ ∞ (referenceCapHeight a) := by
@@ -63,7 +48,6 @@ private theorem reference_cap_point_eq_north
     field_simp [hc.ne', hd]
   · field_simp [hc.ne', hd]
 
-
 theorem referenceCapPoint_contDiff (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
     ContDiff ℝ ∞ (referenceCapPoint a) := by
   have heq : referenceCapPoint a =
@@ -74,13 +58,11 @@ theorem referenceCapPoint_contDiff (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
     contDiff_const_smul _
   exact northSphereVector_contDiff.comp hscale
 
-
 theorem referenceCapPoint_mem_sphere
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) (X : E2) :
     referenceCapPoint a X ∈ sphere (0 : E3) 1 := by
   rw [mem_sphere_zero_iff_norm, reference_cap_point_eq_north a ha]
   exact northSphereVector_norm _
-
 
 theorem referenceCapPoint_cap_iff
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) (X : E2) :
@@ -98,7 +80,6 @@ theorem referenceCapPoint_cap_iff
   rw [le_div_iff₀ hd, ← sub_nonneg, heq,
     mul_nonneg_iff_of_pos_left hnum, sub_nonneg]
   simpa only [one_pow] using (sq_le_sq₀ (norm_nonneg X) zero_le_one)
-
 
 theorem referenceCapPoint_rim_iff
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) (X : E2) :
@@ -120,7 +101,6 @@ theorem referenceCapPoint_rim_iff
   · intro h
     rw [h, one_pow]
     nlinarith only [hscale]
-
 
 theorem referenceCapPoint_image_closedBall
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
@@ -150,7 +130,6 @@ theorem referenceCapPoint_image_closedBall
     apply (referenceCapPoint_cap_iff a ha X).mp
     rwa [hXeq]
 
-
 noncomputable def referenceFlatteningDiffeomorph
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
     (α : ℝ → ℝ) (hα : ContDiff ℝ ∞ α) (hpos : ∀ z, 0 < α z) :
@@ -171,13 +150,11 @@ noncomputable def referenceFlatteningDiffeomorph
       (contDiff_snd.add ((referenceCapHeight_contDiff a ha).comp contDiff_fst))).contMDiff }
   exact H.trans V
 
-
 @[simp] theorem referenceFlatteningDiffeomorph_apply
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
     (α : ℝ → ℝ) (hα : ContDiff ℝ ∞ α) (hpos : ∀ z, 0 < α z) (p : E2 × ℝ) :
     referenceFlatteningDiffeomorph a ha α hα hpos p =
       (α p.2 • p.1, p.2 - referenceCapHeight a (α p.2 • p.1)) := rfl
-
 
 @[simp] theorem referenceFlatteningDiffeomorph_symm_apply
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
@@ -208,7 +185,6 @@ private theorem reference_model_comparison
     have hrstrict : r ^ 2 < (1 + z) * (1 - z) := by nlinarith only [hstrict]
     have hfirst := mul_lt_mul_of_pos_left hrstrict hweight
     nlinarith only [hfirst, hsecond]
-
 
 theorem referenceFlattening_snd_mem_Icc
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
@@ -252,7 +228,6 @@ theorem referenceFlattening_snd_mem_Icc
     rw [hXzero, hhzero, hzneg]
     norm_num
 
-
 theorem referenceFlattening_snd_neg
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
     (α : ℝ → ℝ) (hα : ContDiff ℝ ∞ α) (hpos : ∀ z, 0 < α z)
@@ -276,7 +251,6 @@ theorem referenceFlattening_snd_neg
     nlinarith only [hcomp]
   rw [referenceFlatteningDiffeomorph_apply]
   exact sub_neg.mpr hlt
-
 
 theorem referenceFlattening_capPoint
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)

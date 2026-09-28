@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ChartHessianCoefficients
 import PoincareConjecture.Proofs.M09.CompactFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {V : Type v} [NormedAddCommGroup V] [NormedSpace ℝ V]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem flow_pullback_metric_hessian_contDiffOn {a b : ℝ} (F : RicciFlow n M (Icc a b))
     {U : Set V} (hU : IsOpen U) {ρ : V → M}

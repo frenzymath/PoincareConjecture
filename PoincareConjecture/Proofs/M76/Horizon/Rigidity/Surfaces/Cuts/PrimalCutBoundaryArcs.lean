@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalDiskSp
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.JoinedPLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -177,8 +169,6 @@ theorem gapCenters_injective : Function.Injective A.gapCenter := by
   change A.gapCenter i ∈ A.sectorCopy (A.matching j) '' A.sectors.sector (A.matching j)
   rw [he]
   exact mem_image_of_mem _ (A.sectors.center_mem_sector (A.matching j))
-
-
 
 structure GapSpokePair (i : Fin 4) where
   left : Set ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ))

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.JointSeedPoint
 import PoincareConjecture.Proofs.M47.JointSeedBallScales
 import PoincareConjecture.Proofs.M47.JointSeedBallAccess
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_old_young_joint_buffer
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

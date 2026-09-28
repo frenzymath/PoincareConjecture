@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Unnormalized.Flatness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Convergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +20,6 @@ local instance volumeCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.car
 variable (C : ℕ → FlowCarrier.{0} 3)
   (K : ∀ k, AncientKappaSolution 3 (C k).carrier) (p : ∀ k, (C k).carrier)
   (G : AncientPointedGeometricConvergence C (fun k t => (K k).flow.metric (t - 1)) p 1)
-
-
 
 theorem interiorLimit_ball_volume_le
     {s r : ℝ} (hs : s < 1) (hr : 0 < r)
@@ -58,8 +46,6 @@ theorem interiorLimit_ball_volume_le
   apply le_of_tendsto hconv
   filter_upwards [G.subsequence_strictMono.tendsto_atTop.eventually hvolume] with k hk
   simpa only [Nat.add_zero, calibratedMetricVolume_eq_volumeMeasure] using hk
-
-
 
 theorem interiorLimit_ball_volume_ge_of_base_scalar_tendsto_zero
     (P : M23NormalizedKappaCompactnessPredecessors)

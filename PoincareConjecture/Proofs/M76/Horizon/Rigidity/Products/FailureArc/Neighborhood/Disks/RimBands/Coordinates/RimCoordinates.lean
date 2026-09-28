@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Coordinates.ArmIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry Topology

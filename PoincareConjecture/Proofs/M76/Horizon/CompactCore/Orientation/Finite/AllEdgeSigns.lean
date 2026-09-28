@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Adja
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.NumberedTriangleParity
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.SignParity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

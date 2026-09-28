@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M04.RicciRegularity
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -329,4 +321,3 @@ theorem contMDiffOn_flow_ricciEvaluation (F : RicciFlow n M J) (hU : IsOpen U)
   ring
 
 end PoincareConjecture.M04
-

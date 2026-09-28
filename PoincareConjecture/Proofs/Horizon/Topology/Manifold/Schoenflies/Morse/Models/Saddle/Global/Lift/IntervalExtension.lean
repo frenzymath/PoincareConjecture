@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Lift.Cutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.CompactCutoff
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -51,9 +41,6 @@ private theorem contDiff_localized_height_family
     by_cases hqU : q.1 ∈ U
     · rw [hg q.1 hqU, hq, f0 q.1 hqU]
     · exact hg0 q.1 hqU q.2
-
-
-
 
 theorem exists_interval_supported_planar_family
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -144,9 +131,6 @@ theorem exists_interval_supported_planar_family
     apply (Ψ q.1).injective
     change Ψ q.1 ((Ψ q.1).symm q.2) = Ψ q.1 q.2
     rw [Diffeomorph.apply_symm_apply, houtside q hq]
-
-
-
 
 theorem exists_interval_supported_height_lift
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

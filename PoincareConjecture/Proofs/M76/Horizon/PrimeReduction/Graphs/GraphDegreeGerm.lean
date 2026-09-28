@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.PlaneHeight
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Mathlib.MaximalFaceAffineGerm
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_two_segment_germ_of_degree_two
     (G : SimplicialComplex ℝ E) (hG : G.faces.Finite)

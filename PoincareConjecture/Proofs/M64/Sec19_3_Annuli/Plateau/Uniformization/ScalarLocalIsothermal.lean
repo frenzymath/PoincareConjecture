@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarLocalHarmonic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem exists_local_annular_isothermal_chart (g : RiemannianMetric 2 Plane) (p : Plane) :
     ∃ (e : OpenPartialHomeomorph Plane Plane) (a : Plane) (lambda : Plane → ℝ),

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Tria
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.GeometricFlagBounds
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Sections.NormalFiberContraction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

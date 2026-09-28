@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.NormalForm
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +28,6 @@ theorem shear_sphere_smoothEmbedding :
     ((hc p).mdifferentiableAt (by simp))]
   apply (shear.mfderivToContinuousLinearEquiv (by simp) (p : E3)).injective.comp
   convert! injective_mvfderiv_subtypeVal_sphere p
-
-
 
 theorem exists_height_preserving_quadratic_model :
     ∃ e : OpenPartialHomeomorph E2 S2,
@@ -85,8 +77,6 @@ theorem exists_height_preserving_quadratic_model :
     congr 2
     simp [Fin.sum_univ_two]
     ring
-
-
 
 theorem exists_height_preserving_filled_quadratic_model :
     ∃ e : OpenPartialHomeomorph E2 S2,

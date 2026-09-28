@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Transport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.CurvatureOperator
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasDerivAt_inverse_parallel_jacobi_operator
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M11GeneralizedFlow
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport.TimeBracket
 import PoincareConjecture.Proofs.M34.Mathlib.ModelTangentSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -26,8 +16,6 @@ noncomputable section
 variable {n : ℕ} {I : SpacetimeInterval}
   {g : ℝ → RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 def ordinaryProductHorizontalLift (R : OrdinaryProductSpacetimeConclusion g I)
     (z : R.spacetime.Point) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] R.spacetime.Horizontal z :=
@@ -37,7 +25,6 @@ def ordinaryProductHorizontalLift (R : OrdinaryProductSpacetimeConclusion g I)
       (ContinuousLinearMap.inr ℝ (EuclideanSpace ℝ (Fin 1)) (EuclideanSpace ℝ (Fin n))))
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProductHorizontalLift_cylinder
     (R : OrdinaryProductSpacetimeConclusion g I)
@@ -65,8 +52,6 @@ theorem ordinaryProductHorizontalLift_cylinder
     (R.spacetime.horizontalProjection_identity _ _)
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinaryProductHorizontalLift_contMDiff
     (R : OrdinaryProductSpacetimeConclusion g I)
@@ -110,8 +95,6 @@ theorem ordinaryProductHorizontalLift_contMDiff
           (R.productIdentification.symm (z r)) (0, a r)))
   rw [R.productIdentification.apply_symm_apply]
 
-
-
 theorem ordinaryProductHorizontalLift_contMDiffOn
     (R : OrdinaryProductSpacetimeConclusion g I)
     {E H A : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -128,15 +111,11 @@ theorem ordinaryProductHorizontalLift_contMDiffOn
     (a := fun p => p.2) contMDiff_fst contMDiff_snd
   exact h.comp_contMDiffOn (hz.prodMk ha)
 
-
-
 theorem ordinaryProductHorizontalLift_smooth (R : OrdinaryProductSpacetimeConclusion g I)
     (v : EuclideanSpace ℝ (Fin n)) :
     IsSmoothHorizontalSectionOn R.spacetime
       (fun z => ordinaryProductHorizontalLift R z v) univ :=
   (ordinaryProductHorizontalLift_contMDiff R contMDiff_id contMDiff_const).contMDiffOn
-
-
 
 theorem ordinaryProductHorizontalLift_pullback (R : OrdinaryProductSpacetimeConclusion g I)
     (v : EuclideanSpace ℝ (Fin n)) (t : (R.timeIntervals.interval I).Point)

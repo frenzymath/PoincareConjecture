@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.CenteredBilinearCoefficients
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredCoefficientResidual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,10 +8,6 @@ open Set Filter MeasureTheory
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative
-
-
-
-
 
 theorem exists_centeredRealCoefficientSource
     {iota E : Type*} [Countable iota]

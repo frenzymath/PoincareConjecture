@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Initial.Cofaces
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Initial.Vertices
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_protected_planar_finite_edge_coface_position
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

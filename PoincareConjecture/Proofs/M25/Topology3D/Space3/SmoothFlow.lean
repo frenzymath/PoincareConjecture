@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.LocalFlowRegularity
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable (f : E → E) {K L : ℝ≥0}
 variable (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
-
-
 
 theorem boundedFlow_smooth_multiple {d : ℝ}
     (hstrip : ContDiffOn ℝ ∞ (fun p : E × ℝ => boundedFlow f hK hL p.1 p.2)
@@ -40,8 +28,6 @@ theorem boundedFlow_smooth_multiple {d : ℝ}
     have hcomp := houter.comp p (ih.prodMk contDiffAt_snd)
     simpa only [Function.comp_def, Nat.cast_add, Nat.cast_one, add_mul, one_mul,
       boundedFlow_add] using hcomp
-
-
 
 theorem boundedFlow_contDiff_of_smooth_strip {d : ℝ} (hd : 0 < d)
     (hstrip : ContDiffOn ℝ ∞ (fun p : E × ℝ => boundedFlow f hK hL p.1 p.2)
@@ -62,14 +48,10 @@ theorem boundedFlow_contDiff_of_smooth_strip {d : ℝ} (hd : 0 < d)
     rw [← mul_div_assoc, mul_div_cancel_left₀ q.2 hn0.ne']
   simpa only [Function.comp_def, hscale] using hcomp
 
-
-
 theorem boundedFlow_contDiff (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f) :
     ContDiff ℝ ∞ (fun p : E × ℝ => boundedFlow f hK hL p.1 p.2) := by
   obtain ⟨d, hd, hstrip⟩ := boundedFlow_smooth_strip f hK hL hf hs
   exact boundedFlow_contDiff_of_smooth_strip f hK hL hd hstrip
-
-
 
 noncomputable def boundedFlowDiffeomorph (hf : ContDiff ℝ ∞ f)
     (hs : HasCompactSupport f) (t : ℝ) :

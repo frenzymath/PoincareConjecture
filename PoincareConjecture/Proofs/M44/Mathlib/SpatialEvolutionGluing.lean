@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.CompactTimeLimit
 import PoincareConjecture.Proofs.M44.Mathlib.SpatialJetsWithin
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Prolongation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ open SpacetimeBounds.Bootstrap
 
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
-
 
 theorem contDiffOn_of_spatial_evolution_off_finite
     {J S : Set ℝ} {U : Set E} (hJ : IsOpen J) (hU : IsOpen U) (hS : S.Finite)
@@ -76,9 +61,6 @@ theorem contDiffOn_of_spatial_evolution_off_finite
         (hevol t ht hnot) m hx
   exact (continuousMultilinearCurryFin0 ℝ E V).toContinuousLinearEquiv.contDiff.comp_contDiffOn
     (hfields 0)
-
-
-
 
 theorem continuousOn_spatialJets_of_compact_uniform
     [ProperSpace E] {f : ℝ × E → V} {U : Set E} {a T b : ℝ}

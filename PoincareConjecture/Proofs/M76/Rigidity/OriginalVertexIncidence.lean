@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +17,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
 
-
-
 theorem vertexBlock_subset_ambient (p : (T.marked 2).vertices) :
     (T.vertexBlock p).space ⊆ T.ambient.space := by
   classical
@@ -34,9 +24,6 @@ theorem vertexBlock_subset_ambient (p : (T.marked 2).vertices) :
   exact (SimplicialComplex.space_subset_of_le
     (T.ambient.barycentricDualBlock_le {p.val})).trans
       T.ambient.barycentricSubdivision_isSubdivision.space_eq.subset
-
-
-
 
 theorem vertexBlock_subset_original_interior [T2Space X]
     (p : (T.marked 2).vertices) (hpfront : (T.inverse p : X) ∉ frontier R) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedPeriodSpectralApprox
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CommonAmbientSpectralFamily
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PrescribedNormalApproximationSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "StateV" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_common_normal_approximants
     (F : RicciFlow n M (Icc a b)) {e : M → W}

@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -28,8 +19,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M₃ : Type*} [TopologicalSpace M₃] [ChartedSpace H₃ M₃]
   {n : ℕ∞ω}
 
-
-
 theorem mfderiv_comp (e : Diffeomorph I₂ I₃ M₂ M₃ n) (hn : n ≠ 0)
     (f : M₁ → M₂) (x : M₁) :
     mfderiv I₁ I₃ (e ∘ f) x =
@@ -44,9 +33,6 @@ theorem mfderiv_comp (e : Diffeomorph I₂ I₃ M₂ M₃ n) (hn : n ≠ 0)
       exact hf hback
     rw [mfderiv_zero_of_not_mdifferentiableAt hcomp,
       mfderiv_zero_of_not_mdifferentiableAt hf, ContinuousLinearMap.comp_zero]
-
-
-
 
 theorem mfderiv_cancel_left (e : Diffeomorph I₂ I₃ M₂ M₃ n) (hn : n ≠ 0)
     (f : M₁ → M₃) (x : M₁) :

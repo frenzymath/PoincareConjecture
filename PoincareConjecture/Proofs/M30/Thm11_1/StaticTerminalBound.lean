@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 set_option maxHeartbeats 800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_static_limit_terminal_curvature_bound_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

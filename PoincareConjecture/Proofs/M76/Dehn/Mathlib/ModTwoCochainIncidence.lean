@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleCover
 import Mathlib.LinearAlgebra.Pi
 import Mathlib.Algebra.CharP.Two
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,16 +11,11 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
 
-
-
 abbrev Edge := {s : Finset ι // s ∈ A.faces ∧ s.card = 2}
-
-
 
 abbrev Triangle := {s : Finset ι // s ∈ A.faces ∧ s.card = 3}
 
 open Classical in
-
 
 theorem pair_mem_faces {s : Finset ι} (hs : s ∈ A.faces)
     {i j : ι} (hi : i ∈ s) (hj : j ∈ s) : {i, j} ∈ A.faces :=
@@ -38,23 +24,17 @@ theorem pair_mem_faces {s : Finset ι} (hs : s ∈ A.faces)
 
 open Classical in
 
-
 noncomputable def pairEdge (i j : ι) (hface : {i, j} ∈ A.faces) (hne : i ≠ j) : Edge A :=
   ⟨{i, j}, hface, Finset.card_pair hne⟩
 
-
-
 noncomputable def vertexCoboundary : (ι → ZMod 2) →ₗ[ZMod 2] (Edge A → ZMod 2) :=
   LinearMap.pi fun e => ∑ i ∈ e.val, LinearMap.proj i
-
-
 
 theorem vertexCoboundary_apply (a : ι → ZMod 2) (e : Edge A) :
     vertexCoboundary A a e = ∑ i ∈ e.val, a i := by
   simp [vertexCoboundary]
 
 open Classical in
-
 
 theorem vertexCoboundary_pair (a : ι → ZMod 2) (i j : ι)
     (hface : {i, j} ∈ A.faces) (hne : i ≠ j) :
@@ -66,16 +46,11 @@ variable [Fintype ι]
 
 open Classical in
 
-
 noncomputable def triangleEdges (t : Triangle A) : Finset (Edge A) :=
   Finset.univ.filter (fun e => e.val ⊆ t.val)
 
-
-
 noncomputable def edgeCoboundary : (Edge A → ZMod 2) →ₗ[ZMod 2] (Triangle A → ZMod 2) :=
   LinearMap.pi fun t => ∑ e ∈ triangleEdges A t, LinearMap.proj e
-
-
 
 theorem edgeCoboundary_apply (z : Edge A → ZMod 2) (t : Triangle A) :
     edgeCoboundary A z t = ∑ e ∈ triangleEdges A t, z e := by
@@ -105,7 +80,6 @@ private theorem pair_subset_triple_cases {s : Finset ι} {i j k : ι}
     · exact (hab rfl).elim
 
 open Classical in
-
 
 theorem triangleEdges_eq_three (t : Triangle A) {i j k : ι}
     (ht : t.val = {i, j, k}) (eij ejk eik : Edge A)
@@ -137,8 +111,6 @@ theorem triangleEdges_eq_three (t : Triangle A) {i j k : ι}
 
 open Classical in
 
-
-
 theorem edgeCoboundary_triangle (z : Edge A → ZMod 2) (t : Triangle A) {i j k : ι}
     (ht : t.val = {i, j, k}) (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k)
     (eij ejk eik : Edge A)
@@ -160,9 +132,6 @@ theorem edgeCoboundary_triangle (z : Edge A → ZMod 2) (t : Triangle A) {i j k 
   have he0 : eij ∉ ({ejk, eik} : Finset (Edge A)) := by simp [h01, h02]
   have he1 : ejk ∉ ({eik} : Finset (Edge A)) := by simp [h12]
   rw [Finset.sum_insert he0, Finset.sum_insert he1, Finset.sum_singleton, add_assoc]
-
-
-
 
 theorem edgeCoboundary_vertexCoboundary (a : ι → ZMod 2) :
     edgeCoboundary A (vertexCoboundary A a) = 0 := by

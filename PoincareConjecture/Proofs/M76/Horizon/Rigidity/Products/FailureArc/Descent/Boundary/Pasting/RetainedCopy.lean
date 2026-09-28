@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Pasting.SourceCopies
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

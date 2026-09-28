@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.LowerComponentDisks
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.UpperComponentDisk
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -19,8 +13,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -41,7 +33,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
 
 structure ModelCutCircleData (d : TerminalSaddleGeometry M P p e) (η : Real) where
   cut_pos : 0 < η
@@ -76,8 +67,6 @@ structure ModelCutCircleData (d : TerminalSaddleGeometry M P p e) (η : Real) wh
     mfderiv (𝓡 2) 𝓘(Real, Real)
       (fun y : S2 => inner Real (M.v : E3) (d.filledModel y)) q ≠ 0
 
-
-
 theorem exists_terminal_model_cut_circle_data
     (d : TerminalSaddleGeometry M P p e)
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -111,11 +100,8 @@ theorem exists_terminal_model_cut_circle_data
   · intro q hq
     exact hregular η ⟨by linarith [hεᵣ, hη.1], hηr⟩ hη.1.ne' q hq
 
-
 def ModelCutCircleData.boundaryCircle {d : TerminalSaddleGeometry M P p e} {η : Real}
     (a : ModelCutCircleData d η) : Fin 3 → S1 → S2 := ![a.lower 0, a.lower 1, a.upper]
-
-
 
 structure ModelCutDiskData (d : TerminalSaddleGeometry M P p e) (η : Real)
     (a : ModelCutCircleData d η) where
@@ -139,8 +125,6 @@ structure ModelCutDiskData (d : TerminalSaddleGeometry M P p e) (η : Real)
   cover : (⋃ i, chart i '' ball 0 1) =
     {q : S2 | inner Real (M.v : E3) (d.filledModel q) ∉
       Icc (inner Real (M.v : E3) (g p) - η) (inner Real (M.v : E3) (g p) + η)}
-
-
 
 theorem ModelCutCircleData.exists_disks {d : TerminalSaddleGeometry M P p e} {η : Real}
     (a : ModelCutCircleData d η) : Nonempty (ModelCutDiskData d η a) := by
@@ -235,8 +219,6 @@ theorem ModelCutCircleData.exists_disks {d : TerminalSaddleGeometry M P p e} {η
     rw [hunion, hopen, hbu]
     ext q
     simp only [mem_union, mem_preimage, mem_Iio, mem_ofPred_eq, mem_Icc, not_and_or, not_le]
-
-
 
 theorem exists_terminal_model_cut_disks
     (d : TerminalSaddleGeometry M P p e)

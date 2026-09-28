@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_6_Curvature.Nonnegative
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M34
-
-
 
 theorem partialFlow_edist_le_initial {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : RicciFlowCurvatureTheory.{0})
@@ -41,9 +29,6 @@ theorem partialFlow_edist_le_initial {g0 : StandardInitialMetric}
     simpa only [one_mul] using Real.sqrt_le_sqrt hi
   simpa only [ENNReal.ofReal_one, one_mul] using
     edist_le_of_tangentNorm_le g0.metric (F.flow.metric t) zero_lt_one hnorm x y
-
-
-
 
 theorem partialFlow_exists_compact_center_ball_radius {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : RicciFlowCurvatureTheory.{0})

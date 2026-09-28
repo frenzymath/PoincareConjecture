@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.FirstEvent
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.ReverseInduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [T3Space M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
-
-
 
 noncomputable def m72ReconstructionConclusion (I : M72ReconstructionInput N) :
     M72ReconstructionConclusion I := by

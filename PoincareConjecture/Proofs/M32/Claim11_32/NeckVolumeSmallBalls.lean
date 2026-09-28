@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.NeckVolumeModelCaps
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,9 +11,7 @@ universe u
 
 namespace PoincareConjecture.M32
 
-
 def neckNoncollapseConstant : ℝ := neckModelDiskArea / 512
-
 
 theorem neckNoncollapseConstant_pos : 0 < neckNoncollapseConstant :=
   div_pos neckModelDiskArea_pos (by norm_num)
@@ -41,8 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem neck_edist_coordinate_cap_le (q : UnitTwoSphere)
     (x : EuclideanSpace ℝ (Fin 2)) :
@@ -110,8 +90,6 @@ theorem neck_edist_coordinate_cap_le (q : UnitTwoSphere)
     ENNReal.ofReal_mul (mul_nonneg (by norm_num : (0 : ℝ) ≤ 2) N.scale_pos.le)]
       using hdist
 
-
-
 theorem neck_cap_interval_subset_ball (q : UnitTwoSphere) {a : ℝ}
     (ha : 0 < a) (ha1 : a ≤ 1) :
     N.coordinate_map '' (neckModelCap q a ×ˢ Ioo (-a) a) ⊆
@@ -149,8 +127,6 @@ theorem neck_cap_interval_subset_ball (q : UnitTwoSphere) {a : ℝ}
   apply (ENNReal.ofReal_lt_ofReal_iff (by positivity : 0 < 4 * N.scale * a)).mpr
   nlinarith [mul_pos N.scale_pos (sub_pos.mpr hxnorm),
     mul_pos N.scale_pos (sub_pos.mpr htabs)]
-
-
 
 theorem neck_volume_center_ball_lower_of_le_two_scale {r : ℝ} (hr : 0 < r)
     (hrscale : r ≤ 2 * N.scale) :

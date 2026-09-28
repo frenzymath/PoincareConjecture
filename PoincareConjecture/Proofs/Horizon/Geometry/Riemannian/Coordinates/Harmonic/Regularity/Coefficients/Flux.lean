@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.Forcing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.HolderProduct
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +10,6 @@ open scoped ContDiff NNReal Topology
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem holderWith_half_of_norm_fderiv_le
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -30,7 +21,6 @@ theorem holderWith_half_of_norm_fderiv_le
     exact_mod_cast hL x)
   exact (Poincare.Parabolic.Interior.holderWith_zero_of_norm_le hM).of_le_of_le
     hlip.holderWith (by positivity) (by norm_num)
-
 
 theorem holderWith_euclidean_gradient {u : EuclideanSpace ℝ (Fin n) → ℝ}
     {H α : ℝ≥0} (hu : HolderWith H α (fderiv ℝ u)) :
@@ -44,7 +34,6 @@ theorem holderWith_euclidean_gradient {u : EuclideanSpace ℝ (Fin n) → ℝ}
     funext x
     rfl
   simpa only [hgrad] using h
-
 
 def coordinateErrorFlux
     (E : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -68,8 +57,6 @@ theorem hasCompactSupport_coordinateErrorFlux
   by_contra hd
   have hd' : fderiv ℝ u x = 0 := Function.notMem_support.mp hd
   exact hx (by simp [coordinateErrorFlux, gradient, hd'])
-
-
 
 theorem holderWith_coordinateErrorFlux
     {E : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)}

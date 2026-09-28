@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceWholeNeckBackwardMaps
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +28,6 @@ variable {epsilon C A : ℝ}
 
 variable (D : WholeNeckBackwardData H W G sigma V)
 
-
-
-
 def fixedFlow (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -56,8 +44,6 @@ def fixedFlow (k : ℕ) :
       (((D.sourceFlow k).metric s).pullbackOfLocalDiffeomorph
         (D.neckMap k) (D.neckMap_localDiffeomorph k))))
 
-
-
 theorem fixedFlow_metric (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -70,8 +56,6 @@ theorem fixedFlow_metric (k : ℕ) :
   let := G.limitCarrier.isManifold
   intro s
   rfl
-
-
 
 theorem fixedFlow_curvatureTensorNorm (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -88,8 +72,6 @@ theorem fixedFlow_curvatureTensorNorm (k : ℕ) :
     ((D.sourceFlow k).connection s) isOpen_univ
     (D.neckMap_localDiffeomorph k).contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
-
-
 
 theorem fixedFlow_curvatureDerivativeNorm (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -110,9 +92,6 @@ theorem fixedFlow_curvatureDerivativeNorm (k : ℕ) :
     (fun _ _ _ _ => rfl) m (mem_univ x)
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem fixedFlow_metric_at_zero_original (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -151,9 +130,6 @@ theorem fixedFlow_metric_at_zero_original (k : ℕ) :
         (hderiv v) (hderiv w))
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem fixedFlow_metric_at_zero (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace

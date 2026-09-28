@@ -2,17 +2,6 @@ import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem AncientKappaSolution.scalar_range_ball_bddAbove
     (K : AncientKappaSolution 3 M) {t : ℝ} (ht : t ≤ 0) (p : M) (r : ℝ) :
     BddAbove (range (fun x : (K.flow.metric t).ball p r =>
@@ -37,7 +25,6 @@ theorem AncientKappaSolution.scalar_range_ball_bddAbove
   apply (hcompact.image (K.flow.connection t).continuous_scalarCurvature).bddAbove.mono
   rintro _ ⟨x, rfl⟩
   exact ⟨x, subset_closure x.property, rfl⟩
-
 
 theorem scalar_radius_volume_lower
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -55,8 +42,6 @@ theorem scalar_radius_volume_lower
   apply (P.past_norm_le_scalar M K s t hs.2 ht q).trans
   apply le_trans ?_ hscalar
   exact le_csSup (K.scalar_range_ball_bddAbove ht p r) ⟨⟨q, hq⟩, rfl⟩
-
-
 
 theorem scalar_radius_core_volume_lower
     (P : M26CanonicalNeighborhoodPredecessors.{u})

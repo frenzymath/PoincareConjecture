@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.NestedAnnulusSource
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.DisjointSourceDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,12 +11,10 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
 
-
 def exchangedCircleHomeomorph {A : Bool → Type*} [∀ i, TopologicalSpace (A i)]
     (e : A false ≃ₜ A true) : (i : Bool) → A (!i) ≃ₜ A i
   | false => e.symm
   | true => e
-
 
 theorem disjoint_annulus_source_partition {m n : Bool → ℕ}
     (P : (i : Bool) → Polygon V2 (m i + 3)) (I : (i : Bool) → Polygon V2 (n i + 3))

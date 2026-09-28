@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.CoreRadius
-
 
 theorem eq_univ_of_open_propagation
     {X : Type*} [TopologicalSpace X] [PreconnectedSpace X]
@@ -40,7 +29,6 @@ namespace PoincareConjecture.RiemannianMetric.PointSoulData
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 theorem isPreconnected_exterior (S : PointSoulData g) {D : ℝ} (hD : 0 ≤ D) :
     IsPreconnected {x : M | D < (g.edist S.center x).toReal} := by

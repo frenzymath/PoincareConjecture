@@ -4,8 +4,6 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 import Mathlib.Analysis.Normed.Lp.MeasurableSpace
 import Mathlib.Tactic.Linarith
 
-
-
 noncomputable section
 
 open Set MeasureTheory

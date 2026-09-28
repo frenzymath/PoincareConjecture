@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -135,7 +128,6 @@ theorem cover_localDiffeomorph [∀ i, IsManifold J ∞ (Y i)]
   change y ∈ (e i).source
   rw [hsource]
   trivial
-
 
 theorem cover_smooth_iff [∀ i, IsManifold J ∞ (Y i)]
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

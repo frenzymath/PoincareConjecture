@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EuclideanPlaneTopology
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedConeProjectionBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,15 +10,9 @@ namespace Submodule
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def IsSecantTransverse (K : Submodule ℝ E) (S : Set E) : Prop :=
   ∃ c : ℝ, 0 < c ∧ ∀ x ∈ S, ∀ y ∈ S,
     c * ‖x - y‖ ≤ ‖(x - y) - K.starProjection (x - y)‖
-
-
-
 
 theorem isSecantTransverse_ker_of_lower_bound (Q : E →L[ℝ] F) {S : Set E}
     {c : ℝ} (hc : 0 < c)
@@ -50,8 +35,6 @@ theorem isSecantTransverse_ker_of_lower_bound (Q : E →L[ℝ] F) {S : Set E}
       have hxy := hb x hx y hy
       nlinarith
 
-
-
 theorem IsSecantTransverse.injOn {K : Submodule ℝ E} {S : Set E}
     (hK : K.IsSecantTransverse S) (Q : E →L[ℝ] F) (hker : Q.ker = K) :
     InjOn Q S := by
@@ -66,14 +49,10 @@ theorem IsSecantTransverse.injOn {K : Submodule ℝ E} {S : Set E}
   have hz : ‖x - y‖ = 0 := by nlinarith [norm_nonneg (x - y)]
   exact sub_eq_zero.mp (norm_eq_zero.mp hz)
 
-
-
 theorem IsSecantTransverse.mono {K : Submodule ℝ E} {S T : Set E}
     (hK : K.IsSecantTransverse T) (hST : S ⊆ T) : K.IsSecantTransverse S := by
   obtain ⟨c, hc, hb⟩ := hK
   exact ⟨c, hc, fun x hx y hy => hb x (hST hx) y (hST hy)⟩
-
-
 
 theorem isSecantTransverse_of_projector_dist_le {K L : Submodule ℝ E} {S : Set E}
     {c : ℝ} (hc : 0 < c)
@@ -99,8 +78,6 @@ namespace Geometry.EuclideanSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem isOpen_isSecantTransverse (S : Set E) :
     IsOpen {K : EuclideanSubspace E | K.subspace.IsSecantTransverse S} := by

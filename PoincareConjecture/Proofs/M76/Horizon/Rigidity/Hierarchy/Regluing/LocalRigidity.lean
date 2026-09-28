@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.OneSheet.Origina
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalHandleHomotopy
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedAmbient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

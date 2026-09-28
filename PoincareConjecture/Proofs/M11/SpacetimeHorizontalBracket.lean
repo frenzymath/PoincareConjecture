@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.ScalarBracket
 import PoincareConjecture.Definitions.M11GeneralizedFlow
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

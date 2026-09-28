@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCalibratedDistance
 import PoincareConjecture.Proofs.M47.CanonicalNeckTipDistance
 import PoincareConjecture.Proofs.M47.CanonicalNeckOrdinaryBridge
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem strongNeck_bottom_tip_distance_calibrated
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T epsilon : ℝ}
@@ -95,8 +85,6 @@ theorem strongNeck_bottom_tip_distance_calibrated
         (5 / 2 : ℝ) * epsilon⁻¹ * N.neck.scale := by
     positivity
   exact ENNReal.toReal_le_of_le_ofReal htotal hdist
-
-
 
 theorem exists_exposed_neck_standard_cap_locus_tolerance
     (P : M47Predecessors.{u}) {g0 : StandardInitialMetric}
@@ -229,8 +217,6 @@ theorem exists_exposed_neck_standard_cap_locus_tolerance
     nlinarith only [h]
   exact ⟨z, hz, hzy, hlocus, standardCanonical_cap_of_tip_distance cap.standard_cap hgamma
     (hcanonical d htime z) htip⟩
-
-
 
 theorem exists_exposed_neck_standard_cap_tolerance
     (P : M47Predecessors.{u}) {g0 : StandardInitialMetric}

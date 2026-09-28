@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalOriginalGermLimit
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalChartGlobalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +35,6 @@ private local instance originalGlobalCharts : ChartedSpace E G.limit.carrier.car
   G.limit.carrier.chartedSpace
 private local instance originalGlobalManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
-
 
 theorem terminalCommonInterval_original_germ_identification
     (P : M47Predecessors.{u}) (rho : ℕ → ℕ) (hrho : StrictMono rho)

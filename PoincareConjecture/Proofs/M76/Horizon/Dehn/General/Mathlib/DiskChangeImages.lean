@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ScheduledBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Geometry
 
 variable {X Y α T : Type*} [TopologicalSpace X]
-
-
 
 theorem homeomorph_disk_branch_image_off_change
     (p : X → Y) (H : X ≃ₜ X) (A S : Set X)
@@ -35,15 +24,11 @@ theorem homeomorph_disk_branch_image_off_change
     have heq : H x = x := hfix ⟨hx, hxS⟩
     exact ⟨⟨x, ⟨⟨x, hx, heq⟩, hxB⟩, rfl⟩, hy⟩
 
-
-
 theorem homeomorph_disk_fixed_of_output_off_change
     (p : X → Y) (H : X ≃ₜ X) (A S : Set X)
     (hfix : EqOn H id (A \ S)) {x : X} (hx : x ∈ A)
     (hy : p (H x) ∉ p '' (S ∪ H '' S)) : H x = x := by
   exact hfix ⟨hx, fun hs ↦ hy ⟨H x, Or.inr ⟨x, hs, rfl⟩, rfl⟩⟩
-
-
 
 theorem composeSupportedMotions_agree_of_output_mem
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
@@ -62,8 +47,6 @@ theorem composeSupportedMotions_agree_of_output_mem
     have hv : F a t x = x := hfix a t hn
     exact hn (hv ▸ hx)
   · exact homeomorph_eq_of_image_mem_support _ _ heq (hfix a t) hx
-
-
 
 theorem composeSupportedMotions_change_image
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
@@ -86,8 +69,6 @@ theorem composeSupportedMotions_change_image
     obtain ⟨a, ha, z, hzS, rfl⟩ := mem_iUnion₂.mp hx
     exact ⟨z, mem_iUnion₂.mpr ⟨a, ha, hzS⟩, heq a ha (hSV a hzS)⟩
 
-
-
 theorem composeSupportedMotions_disk_fixed
     (F : α → T → X ≃ₜ X) (A : Set X) (S : α → Set X)
     (hfix : ∀ a t, EqOn (F a t) id (A \ S a)) (l : List α) (t : T) :
@@ -105,8 +86,6 @@ theorem composeSupportedMotions_disk_fixed
     rw [ih ⟨hx.1, hxl⟩]
     exact hfix a t ⟨hx.1, hxS⟩
 
-
-
 theorem composeSupportedMotions_disk_branch_image_off_change
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
     (hfix : ∀ a t, EqOn (F a t) id (p ⁻¹' V a)ᶜ)
@@ -121,8 +100,6 @@ theorem composeSupportedMotions_disk_branch_image_off_change
     A (⋃ a ∈ l, S a) (composeSupportedMotions_disk_fixed F A S hdisk l t) B
   rw [composeSupportedMotions_change_image p F V hfix hdis S hSV l hl t] at h
   simpa only [image_union, image_iUnion, iUnion_union_distrib] using h
-
-
 
 theorem composeSupportedMotions_disk_agree_off_change
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
@@ -145,8 +122,6 @@ theorem composeSupportedMotions_disk_agree_off_change
       (mem_iUnion₂.mpr ⟨a, ha, hxA⟩))
     obtain ⟨b, hb, hz⟩ := mem_iUnion₂.mp hm
     exact hy (mem_iUnion₂.mpr ⟨b, hb, _, Or.inr hz, rfl⟩)
-
-
 
 theorem isClosed_finite_disk_change [TopologicalSpace Y] [T2Space Y]
     (p : X → Y) (hp : Continuous p) (F : α → T → X ≃ₜ X)

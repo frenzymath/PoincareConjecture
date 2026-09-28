@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +29,6 @@ theorem cap_metricTensor_smooth (g : RiemannianMetric n M) :
       ⟨g.toRiemannianMetric⟩
     exact (hX 0).inner_bundle (hX 1)
 
-
-
 theorem cap_covariant_metricTensor_zero {g : RiemannianMetric n M}
     (D : LeviCivitaData g) :
     D.covariantTensorDerivative (fun x (v : Fin 2 → TangentSpace (𝓡 n) x) =>
@@ -62,8 +52,6 @@ theorem cap_covariant_metricTensor_zero {g : RiemannianMetric n M}
   dsimp only [X]
   rw [hmetric]
   simp [Fin.sum_univ_succ, Function.update]
-
-
 
 theorem cap_native_modelGram_derivative_zero
     (u : ℝ) (hu : u < 1) (q : UnitTwoSphere) (p : RoundCylinderCoordinates)

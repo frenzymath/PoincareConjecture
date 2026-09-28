@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicStepFlow
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTimeExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter Manifold
 open scoped ContDiff Topology Bundle
-
-
-
-
 
 theorem exists_smooth_periodic_label_flow {L T0 : ℝ}
     (hL : 0 < L) (hT0 : 0 < T0) (v : ℝ → ℝ → ℝ)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Basic
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -30,8 +21,6 @@ private theorem continuous_mul_of_continuousAt_on_tsupport
   · apply (continuousAt_const (y := (0 : ℝ))).congr_of_eventuallyEq
     filter_upwards [notMem_tsupport_iff_eventuallyEq.mp hx] with y hy
     simp only [hy, Pi.zero_apply, zero_mul]
-
-
 
 theorem integral_mul_coordinate_divergence {n : ℕ}
     {u : EuclideanSpace ℝ (Fin n) → ℝ}

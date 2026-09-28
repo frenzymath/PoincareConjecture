@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 import Mathlib.Analysis.Convex.Star
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,20 +13,13 @@ namespace PoincareConjecture.M60
 
 variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
 
-
-
 def radialPrimitive (omega : E → E →L[ℝ] ℝ) (x : E) : ℝ :=
   ∫ t in (0 : ℝ)..1, omega (t • x) x
-
-
 
 theorem radialPrimitive_contDiff {omega : E → E →L[ℝ] ℝ}
     (homega : ContDiff ℝ ∞ omega) : ContDiff ℝ ∞ (radialPrimitive omega) := by
   exact Poincare.Analysis.contDiff_parameter_intervalIntegral_of_contDiff
     ((homega.comp (contDiff_snd.smul contDiff_fst)).clm_apply contDiff_fst) 0 1
-
-
-
 
 theorem hasFDerivAt_radialPrimitive {omega : E → E →L[ℝ] ℝ}
     (homega : ContDiff ℝ ∞ omega) {S : Set E} (hS : StarConvex ℝ 0 S)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityMe
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,15 +15,10 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
   {α : Type v}
 
-
-
-
 noncomputable def m65EmbeddedEnergyDensity (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (q : α → M)
     (d : Fin 2 → α → EuclideanSpace ℝ (Fin N)) (z : α) : ℝ :=
   (1 / 2 : ℝ) * ∑ i, m65EmbeddingMetric g e (q z) (d i z) (d i z)
-
-
 
 theorem m65EmbeddingMetric_nonneg (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (p : M) (v : EuclideanSpace ℝ (Fin N)) :
@@ -41,9 +26,6 @@ theorem m65EmbeddingMetric_nonneg (g : RiemannianMetric 3 M)
   by_cases hv : v = 0
   · simp [hv]
   exact (m65EmbeddingMetric_pos g e p hv).le
-
-
-
 
 theorem m65EmbeddedEnergyDensity_bounds (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) {c C : ℝ}
@@ -65,10 +47,6 @@ theorem m65EmbeddedEnergyDensity_bounds (g : RiemannianMetric 3 M)
     nlinarith only [hu]
 
 variable [MeasurableSpace α]
-
-
-
-
 
 theorem m65EmbeddedEnergyDensity_integrable (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

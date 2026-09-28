@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedBoxMetric
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M12
 
 variable (F : GeneralizedRicciFlowData.{u})
-
 
 structure FlowBoxRicciGeometry where
   realization : GeneralizedFlowCarrierConclusion (flowBoxAtlas F)
@@ -40,8 +29,6 @@ theorem originalBoxes_cover (R : GeneralizedFlowCarrierConclusion (flowBoxAtlas 
   obtain ⟨b, ht, y, hy⟩ := F.box_covers t x
   exact ⟨b, (⟨t, ht⟩, y), congrArg (fun z => (⟨t, z⟩ : F.point)) hy⟩
 
-
-
 theorem originalBoxes_ricciEquation
     (R : GeneralizedFlowCarrierConclusion (flowBoxAtlas F))
     (D : LeafwiseLeviCivitaFamily R.spacetime R.slices)
@@ -54,8 +41,6 @@ theorem originalBoxes_ricciEquation
     (fun b => (F.box b).flow.connection) (originalBoxes_cover F R)
     (fun b => (F.box b).flow.equation)
 
-
-
 theorem flowBoxRicciGeometry
     (hM11 : GeneralizedSpacetimeGeometryTheory.{u} 3)
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) : Nonempty (FlowBoxRicciGeometry F) := by
@@ -65,7 +50,6 @@ theorem flowBoxRicciGeometry
     R.spacetime R.slices R.timeIntervals R.gaugeCover).1
   exact ⟨⟨R, fun t => Classical.choice (flowSlice_identification F R t), D,
     originalBoxes_ricciEquation F R D hM12⟩⟩
-
 
 noncomputable def FlowBoxRicciGeometry.toLGeometry (G : FlowBoxRicciGeometry F) :
     GeneralizedLGeometryTransport 3 F.point Sigma.fst (flowInterval F) where

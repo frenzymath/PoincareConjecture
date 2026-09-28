@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem LocallyPiecewiseAffineOn.prod_mk {f : E → F} {g : E → G} {U : Set E}
     (hf : LocallyPiecewiseAffineOn f U) (hg : LocallyPiecewiseAffineOn g U) :
@@ -50,8 +37,6 @@ variable [FiniteDimensional ℝ F]
 
 variable {H : Type*} [NormedAddCommGroup H] [NormedSpace ℝ H]
 
-
-
 theorem LocallyPiecewiseAffineOn.prodMap {f : E → G} {g : F → H}
     {U : Set E} {V : Set F}
     (hf : LocallyPiecewiseAffineOn f U) (hg : LocallyPiecewiseAffineOn g V) :
@@ -64,9 +49,6 @@ theorem LocallyPiecewiseAffineOn.prodMap {f : E → G} {g : F → H}
   have hb := (hg.comp (locallyPiecewiseAffineOn_affine b isOpen_univ)).mono hUV
     (fun p hp => ⟨mem_univ _, hp.2⟩)
   exact ha.prod_mk hb
-
-
-
 
 theorem piecewiseAffineGroupoid_prod
     (e : OpenPartialHomeomorph E E) (f : OpenPartialHomeomorph F F)

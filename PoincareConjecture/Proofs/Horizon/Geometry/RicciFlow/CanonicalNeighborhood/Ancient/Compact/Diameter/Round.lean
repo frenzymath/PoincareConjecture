@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [ConnectedSpace M]
-
-
 
 theorem round_metricDiameter_mul_sqrt_scalar_le
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

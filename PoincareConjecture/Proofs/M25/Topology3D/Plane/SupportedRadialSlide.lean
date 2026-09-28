@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.BumpFiber
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialFiberDiffeomorph
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_interval_cutoff (a b : ℝ) {ε : ℝ} (hε : 0 < ε) :
     ∃ τ : ℝ → ℝ, ContDiff ℝ ∞ τ ∧
@@ -53,8 +42,6 @@ theorem exists_smooth_interval_cutoff (a b : ℝ) {ε : ℝ} (hε : 0 < ε) :
     · have h : (b + ε - z) / ε ≤ 0 := div_nonpos_of_nonpos_of_nonneg (by linarith) hε.le
       simp only [τ, Real.smoothTransition.zero_of_nonpos h, mul_zero]
 
-
-
 theorem isCompact_time_closedAnnulus
     {E : Type*} [NormedAddCommGroup E] [ProperSpace E] (l u w : ℝ) :
     IsCompact (Icc l u ×ˢ {x : E | |‖x‖ - 1| ≤ w}) := by
@@ -66,8 +53,6 @@ theorem isCompact_time_closedAnnulus
     change |‖x‖ - 1| ≤ w at hx
     linarith [le_abs_self (‖x‖ - 1)]
   exact isCompact_Icc.prod ((isCompact_closedBall 0 (1 + w)).of_isClosed_subset hs hsub)
-
-
 
 theorem exists_supported_radial_bump_slide
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]

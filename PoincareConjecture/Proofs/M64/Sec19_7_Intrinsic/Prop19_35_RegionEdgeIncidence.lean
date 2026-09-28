@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionEdgeGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,12 +22,6 @@ variable {I : Type*} (face : I → SmoothFace AnnulusCoordinates)
   (hfront : ∀ i j, i ≠ j → (face i).carrier ∩ (face j).carrier ⊆ frontier (face i).carrier)
 
 include hsource hcarrier hboundary hfront
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_edge_has_at_most_two_slots
     (p q r : I × Fin 3)
@@ -89,12 +70,6 @@ theorem m64Intrinsic_region_edge_has_at_most_two_slots
   rw [hreg] at hclosed
   exact disjoint_left.mp hclosed hxr hxint
 
-
-
-
-
-
-
 theorem m64Intrinsic_region_edge_fiber_card_one_or_two [Finite I]
     (e : FaceBoundaryEdge face) :
     Nat.card {p : I × Fin 3 // faceBoundaryIndex face p.1 p.2 = e} = 1 ∨
@@ -125,12 +100,6 @@ theorem m64Intrinsic_region_edge_fiber_card_one_or_two [Finite I]
     left
     change Nat.card A = 1
     rw [Nat.card_eq_fintype_card, Fintype.card, huniv, Finset.card_singleton]
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_edge_slot_count [Finite I] :
     3 * Nat.card I + Nat.card {e : FaceBoundaryEdge face //

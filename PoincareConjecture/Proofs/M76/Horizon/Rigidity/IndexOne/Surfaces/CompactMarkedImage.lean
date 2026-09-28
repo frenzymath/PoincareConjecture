@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.LocalPolyhedralImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_compact_marked_polyhedral_image
     {M E G ι : Type*} [TopologicalSpace M]

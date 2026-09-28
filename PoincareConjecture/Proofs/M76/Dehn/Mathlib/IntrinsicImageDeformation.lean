@@ -1,22 +1,10 @@
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace ContinuousMap
-
-
-
 
 theorem exists_intrinsic_image_homotopy
     {X : Type*} [TopologicalSpace X] {N A : Set X}

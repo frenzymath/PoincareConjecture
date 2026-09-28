@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipLongerNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.UnitTimeCanonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem exists_far_tip_prescribed_window_threshold
     (P : M35StandardCapPredecessors)

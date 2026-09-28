@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingSquareInverse
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +23,6 @@ private theorem horizontal_cast_val (S : GeneralizedFlowSpacetime n X time I)
     (show SpacetimeModelVector n from (h ▸ v : S.Horizontal q).val) = v.val := by
   cases h
   rfl
-
-
 
 theorem rescalingSquare_initial_vector
     {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}
@@ -59,8 +49,6 @@ theorem rescalingSquare_initial_vector
   change (R.horizontal_velocity 0).val =
     (2 : ℝ) • ((Real.sqrt Q)⁻¹ • (show SpacetimeModelVector n from Z.val))
   simpa only [Submodule.coe_smul, smul_smul, mul_comm] using hid
-
-
 
 theorem rescalingSquareInverse_initial_vector
     {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}

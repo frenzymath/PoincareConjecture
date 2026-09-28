@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Cube" => closedBall (0 : V2) 1
-
-
-
-
 
 theorem exists_proper_disk_interior_pair_chart {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

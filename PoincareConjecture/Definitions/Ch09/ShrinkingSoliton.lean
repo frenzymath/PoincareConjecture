@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -26,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
-
 def MetricKappaNoncollapsed (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (κ : ℝ) : Prop :=
   0 < κ ∧ ∀ p : M, ∀ r : ℝ, 0 < r →
@@ -36,13 +24,11 @@ def MetricKappaNoncollapsed (g : RiemannianMetric n M)
       ENNReal.ofReal (κ * r ^ n) ≤
         calibratedMetricVolume g (g.ball p r)
 
-
 def ConstantPositiveSectionalCurvature (g : RiemannianMetric n M)
     (D : LeviCivitaData g) : Prop :=
   ∃ c : ℝ, 0 < c ∧ ∀ x : M, ∀ u v : TangentSpace (𝓡 n) x,
     g.inner x u u = 1 → g.inner x v v = 1 → g.inner x u v = 0 →
       D.sectionalCurvature x u v = c
-
 
 structure GradientShrinkingSolitonData (n : ℕ) (M : Type u)
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -66,7 +52,6 @@ structure GradientShrinkingSolitonData (n : ℕ) (M : Type u)
     connection.ricci x u v + connection.hessian potential x u v =
       (1 / 2 : ℝ) * metric.inner x u v
 
-
 structure HomotheticMetricSlice {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
     [IsManifold (𝓡 n) ∞ M]
@@ -77,7 +62,6 @@ structure HomotheticMetricSlice {n : ℕ} {M : Type u}
       (mfderiv (𝓡 n) (𝓡 n) map x u)
       (mfderiv (𝓡 n) (𝓡 n) map x v)
 
-
 structure ShrinkingSolitonFlow {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
     [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
@@ -87,9 +71,6 @@ structure ShrinkingSolitonFlow {n : ℕ} {M : Type u}
   at_minus_one : flow.metric (-1) = S.metric
   self_similar : ∀ t : ℝ, t < 0 →
     Nonempty (HomotheticMetricSlice S.metric (flow.metric t) |t|)
-
-
-
 
 structure CompactRoundShrinkingModel {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -109,7 +90,6 @@ variable {M₃ : Type u} [TopologicalSpace M₃]
   [T2Space M₃] [T3Space M₃] [SecondCountableTopology M₃]
   [ConnectedSpace M₃]
 
-
 structure SmoothOrientation3 {P : Type u}
     [TopologicalSpace P] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) P]
     [IsManifold (𝓡 3) ∞ P] where
@@ -125,8 +105,6 @@ structure SmoothOrientation3 {P : Type u}
         p (X i p))) →
     ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞
       (fun p => form p (fun i => X i p))
-
-
 
 structure SphereLineProductData {P : Type u}
     [TopologicalSpace P] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) P]
@@ -230,7 +208,6 @@ structure SphereLineProductData {P : Type u}
           (tangent_surface_component p v) +
         tangent_line_component p u * tangent_line_component p v
 
-
 structure SphereLineProductCertificate {S : GradientShrinkingSolitonData 3 M₃}
     (G : ShrinkingSolitonFlow S) extends SphereLineProductData (P := M₃) where
   flow_isometric_to_product : ∀ t : ℝ, t < 0 →
@@ -242,8 +219,6 @@ structure SphereLineProductCertificate {S : GradientShrinkingSolitonData 3 M₃}
         (product_metric t).inner (product_equiv p)
           (mfderiv (𝓡 3) (𝓡 3) product_equiv p u)
           (mfderiv (𝓡 3) (𝓡 3) product_equiv p v)
-
-
 
 structure QuotientSphereLineCertificate {S : GradientShrinkingSolitonData 3 M₃}
     (G : ShrinkingSolitonFlow S) where
@@ -340,7 +315,6 @@ structure QuotientSphereLineCertificate {S : GradientShrinkingSolitonData 3 M₃
       (quotient_metric t)
   quotient_flow_metric : ∀ t : ℝ, t < 0 →
     quotient_flow.metric t = quotient_metric t
-
 
   quotient_flow_connection : ∀ t : ℝ, t < 0 →
     HEq (quotient_flow.connection t) (quotient_connection t)

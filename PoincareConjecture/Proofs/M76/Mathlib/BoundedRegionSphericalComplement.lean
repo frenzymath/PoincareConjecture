@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem interior_preimage_top_face {A D : Set X} (hAD : A ⊆ interior D) :
     interior ((Subtype.val : frontier (D ×ˢ Icc (-1 : ℝ) 1) → X × ℝ) ⁻¹'
@@ -49,9 +37,6 @@ theorem interior_preimage_top_face {A D : Set X} (hAD : A ⊆ interior D) :
       (preimage_mono (prod_mono interior_subset Subset.rfl))
       (isOpen_preimage_top_face isOpen_interior (interior_subset.trans hAD))
 
-
-
-
 theorem closure_sdiff_eq_closure_interior_sdiff {B s : Set X}
     (hB : closure (interior B) = B) (hs : IsClosed s) :
     closure (B \ s) = closure (interior B \ s) := by
@@ -62,9 +47,6 @@ theorem closure_sdiff_eq_closure_interior_sdiff {B s : Set X}
     exact hs.isOpen_compl.closure_inter ⟨hB.symm ▸ hx.1, hx.2⟩
   · exact closure_mono (fun _ hx => ⟨interior_subset hx.1, hx.2⟩)
 
-
-
-
 theorem closure_compl_sdiff_of_interior_closure_eq {u v : Set X}
     (hu : interior (closure u) = u) (hv : IsClosed v) :
     closure (uᶜ \ v) = (interior (closure u ∪ v))ᶜ := by
@@ -72,10 +54,6 @@ theorem closure_compl_sdiff_of_interior_closure_eq {u v : Set X}
     rw [interior_compl, closure_compl, hu]
   rw [closure_sdiff_eq_closure_interior_sdiff hreg hv, interior_compl,
     sdiff_eq, ← compl_union, closure_compl]
-
-
-
-
 
 theorem closure_cylinderExterior_sdiff_top_face {U V D : Set X}
     (hU : interior (closure U) = U)

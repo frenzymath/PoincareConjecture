@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.SmallCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.secondCountable
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
-
-
 
 theorem ancient_limit_properties_of_small_expanding_cylinders
     {n : ℕ} (hC : RicciFlowCurvatureTheory.{u})

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessAmbientAccelera
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {Z : Type w} [TopologicalSpace Z] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem continuous_embedded_initial_jets
     (F : RicciFlow n M (Icc a b)) {tau : ℝ} (htau : tau ∈ Icc a b)

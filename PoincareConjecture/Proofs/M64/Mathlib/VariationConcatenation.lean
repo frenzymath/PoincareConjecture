@@ -1,9 +1,6 @@
 import Mathlib.Topology.EMetricSpace.BoundedVariation
 import Mathlib.Topology.Piecewise
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -12,9 +9,6 @@ open Set
 open scoped ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_exists_join_with_variation
     {X : Type*} [PseudoEMetricSpace X] {f g : ℝ → X}

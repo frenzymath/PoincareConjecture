@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.EuclideanCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -18,7 +8,6 @@ set_option maxSynthPendingDepth 12
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
 
 theorem roundCylinderEuclideanModelCoefficients_symm
     (x v w : EuclideanSpace ℝ (Fin 3)) :
@@ -29,8 +18,6 @@ theorem roundCylinderEuclideanModelCoefficients_symm
   rw [real_inner_comm]
   congr 1
   exact mul_comm _ _
-
-
 
 theorem roundCylinderEuclideanModelCoefficients_pos
     (x v : EuclideanSpace ℝ (Fin 3)) (hv : v ≠ 0) :
@@ -50,15 +37,11 @@ theorem roundCylinderEuclideanModelCoefficients_pos
   · exact add_pos_of_pos_of_nonneg
       (mul_pos ha (real_inner_self_pos.mpr hh)) (mul_self_nonneg _)
 
-
-
 noncomputable def roundCylinderEuclideanModelMetric :
     RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=
   RiemannianMetric.ofEuclideanCoefficients roundCylinderEuclideanModelCoefficients
     contDiff_roundCylinderEuclideanModelCoefficients
     roundCylinderEuclideanModelCoefficients_symm roundCylinderEuclideanModelCoefficients_pos
-
-
 
 noncomputable def roundCylinderEuclideanModelConnection :
     LeviCivitaData roundCylinderEuclideanModelMetric :=

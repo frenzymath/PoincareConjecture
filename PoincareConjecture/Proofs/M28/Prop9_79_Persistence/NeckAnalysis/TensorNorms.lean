@@ -1,32 +1,19 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.SphereGram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
 noncomputable def cylinderTensorWeight (u : ℝ) {r : ℕ} (a : Fin r → Fin 3) : ℝ :=
   ∏ i : Fin r, (cylinderGramDiagonal u (a i))⁻¹
-
 
 theorem cylinderTensorWeight_pos {u : ℝ} (hu : u < 1) {r : ℕ}
     (a : Fin r → Fin 3) : 0 < cylinderTensorWeight u a := by
   apply Finset.prod_pos
   intro i _
   exact inv_pos.mpr (cylinderGramDiagonal_pos hu (a i))
-
-
 
 theorem roundCylinderTensorNormSquared_eq_sum {u : ℝ} (hu : u < 1)
     (z : RoundCylinderSpace) {r : ℕ} (T : (Fin r → Fin 3) → ℝ) :
@@ -49,8 +36,6 @@ theorem roundCylinderTensorNormSquared_eq_sum {u : ℝ} (hu : u < 1)
     simp only [Fintype.prod_ite_zero, if_neg hab, zero_mul]
   · simp
 
-
-
 theorem roundCylinderTensorNormSquared_nonneg {u : ℝ} (hu : u < 1)
     (z : RoundCylinderSpace) {r : ℕ} (T : (Fin r → Fin 3) → ℝ) :
     0 ≤ roundCylinderTensorNormSquared u (chartAt (EuclideanSpace ℝ (Fin 2)) z.1)
@@ -58,7 +43,6 @@ theorem roundCylinderTensorNormSquared_nonneg {u : ℝ} (hu : u < 1)
   rw [roundCylinderTensorNormSquared_eq_sum hu]
   exact Finset.sum_nonneg fun a _ =>
     mul_nonneg (cylinderTensorWeight_pos hu a).le (sq_nonneg _)
-
 
 theorem square_le_weighted_square_sub {theta : ℝ} (htheta : 0 < theta)
     (x y : ℝ) : x ^ 2 ≤ (1 + theta) * y ^ 2 +
@@ -69,8 +53,6 @@ theorem square_le_weighted_square_sub {theta : ℝ} (htheta : 0 < theta)
     field_simp [ne_of_gt htheta]
     ring
   exact (mul_le_mul_iff_right₀ htheta).mp (by nlinarith [hs, hid])
-
-
 
 theorem roundCylinderTensorNormSquared_perturbation {u : ℝ} (hu : u < 1)
     (z : RoundCylinderSpace) {r : ℕ} (T S : (Fin r → Fin 3) → ℝ)
@@ -90,14 +72,12 @@ theorem roundCylinderTensorNormSquared_perturbation {u : ℝ} (hu : u < 1)
     (cylinderTensorWeight_pos hu a).le
   nlinarith [h]
 
-
 theorem roundCylinderJetErrorSquared_nonneg {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace) :
     0 ≤ roundCylinderJetErrorSquared u B order z := by
   apply Finset.sum_nonneg
   intro k _
   exact roundCylinderTensorNormSquared_nonneg hu z _
-
 
 theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) {m n : ℕ} (hmn : m ≤ n)
@@ -107,8 +87,6 @@ theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
   intro k _ _
   exact roundCylinderTensorNormSquared_nonneg hu z _
 
-
-
 noncomputable def cylinderJetDifferenceSquared (u : ℝ) (B C : RoundCylinderTwoTensor)
     (order : ℕ) (z : RoundCylinderSpace) : ℝ :=
   let c := chartAt (EuclideanSpace ℝ (Fin 2)) z.1
@@ -116,7 +94,6 @@ noncomputable def cylinderJetDifferenceSquared (u : ℝ) (B C : RoundCylinderTwo
   ∑ k ∈ Finset.range (order + 1), roundCylinderTensorNormSquared u c p
     (fun a => roundCylinderIteratedDerivative u c B k p a -
       roundCylinderIteratedDerivative u c C k p a)
-
 
 theorem roundCylinderJetErrorSquared_perturbation {u : ℝ} (hu : u < 1)
     (B C : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace)

@@ -4,10 +4,3 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.Real
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
-
-
-
-
-
-
-

@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem exists_smooth_local_chart_factorization
     {n : ℕ} {M : Type*} [TopologicalSpace M] [ChartedSpace (E n) M]

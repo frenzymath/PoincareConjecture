@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,9 +11,6 @@ variable {𝕜 E F E' H M : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace H] {I : ModelWithCorners 𝕜 E' H}
   [TopologicalSpace M] [ChartedSpace H M]
   {U : Set E} {C : Set F} {α : E × F → M} {m k : ℕ∞ω}
-
-
-
 
 theorem ContMDiffOn.contMDiffOn_partialTangent_fst_prod
     [IsManifold I 1 M]

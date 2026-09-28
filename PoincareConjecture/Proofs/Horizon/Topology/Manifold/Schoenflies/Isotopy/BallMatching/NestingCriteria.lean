@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,8 +9,6 @@ open scoped Topology
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem closedBall_image_subset_openBall_of_disjoint_boundaries
     (A B : E3 ≃ₜ E3)
@@ -31,8 +27,6 @@ theorem closedBall_image_subset_openBall_of_disjoint_boundaries
     · exact ⟨p, hpA, hpB⟩
   exact B.image_closedBall_subset_image_ball_of_sphere_subset A
     (by rw [← Module.finrank_eq_rank]; norm_num [E3]) hboundary
-
-
 
 theorem disjoint_closedBall_images_of_exterior_boundary_points
     (A B : E3 ≃ₜ E3)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.LocalLevel
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.ComponentBand
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem exists_annular_continuation_of_minimum
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

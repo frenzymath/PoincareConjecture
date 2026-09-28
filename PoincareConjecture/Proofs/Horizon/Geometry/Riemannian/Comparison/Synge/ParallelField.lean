@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 import Mathlib.Analysis.InnerProductSpace.NormDet
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,10 +21,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_parallel_normal_field_of_negative_holonomy
     {q : ℝ → M} {I : Set ℝ} {a b : ℝ}

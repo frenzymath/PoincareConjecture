@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Coordinates.Cylinder
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Corner.PlanarLift
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

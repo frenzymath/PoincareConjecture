@@ -4,26 +4,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartRegion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.InteriorCarrierBoundaryFix
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.PLCarrierMotion
-
-
-
-
-
 
 theorem exists_interior_chart_motion {E X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

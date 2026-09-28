@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedHalfspaceGraph
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem isPreconnected_positive_space_of_vertex_graph
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
@@ -77,9 +64,6 @@ theorem isPreconnected_positive_space_of_vertex_graph
     exact hpath.isConnected.isPreconnected
   · rw [not_nonempty_iff_eq_empty.mp hne]
     exact isPreconnected_empty
-
-
-
 
 theorem isPreconnected_strict_sides_of_vertex_graphs
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (c : ℝ)

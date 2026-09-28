@@ -12,15 +12,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.Chartwis
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoPortRegionProduct
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76
@@ -216,7 +207,6 @@ theorem ChartwisePLSphere.exists_witness_protected_cocore_region_of_disk_of_pair
     chartwisePLBall_of_finitePLBallPair_in_chart e Q (fun x _ => hcover x) hQ
       (ContinuousLinearEquiv.ofFinrankEq (by simp) : P3 ≃L[ℝ] V3) hRegion hRegionQ,
     by simpa only [band,image_image] using hinc,hint,C,hC,hCcaps⟩
-
 
 theorem ChartwisePLSphere.exists_witness_protected_cocore_region_of_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

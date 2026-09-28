@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicGaussianLipschitz
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicL2Heat
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory AddCircle Filter
 open scoped NNReal ENNReal Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem cauchySeq_of_cauchySeq_L2_of_lipschitz
     {L : ℝ} [Fact (0 < L)]

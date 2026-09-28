@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -31,8 +21,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem norm_fderiv_pullback_ricci_le (D : LeviCivitaData g)
     (hM04 : RicciFlowCurvatureTheory.{0})

@@ -6,20 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.InitialVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.RightBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +19,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem false_of_positive_volume_small_ancient_limit
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -106,8 +90,6 @@ theorem false_of_positive_volume_small_ancient_limit
       2 ^ (m + 1)) hκ hnoncollapse ⟨ULift.up p, hscalar⟩
   exact hAVR.ne' ((hz 0 le_rfl (ULift.up p)).1)
 
-
-
 theorem exists_time_mul_scalarCurvature_bound_of_unit_ball_volume
     {m : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [T3Space M] [SecondCountableTopology M]
@@ -131,9 +113,6 @@ theorem exists_time_mul_scalarCurvature_bound_of_unit_ball_volume
       hcomplete hoperator hν hvolume hnot
   exact false_of_positive_volume_small_ancient_limit hC hm C hδ G p
     hc hn hb hop (by positivity) hv
-
-
-
 
 theorem exists_right_curvatureTensorNorm_bound_on_component_of_bounded_ancient_zero_volume
     {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

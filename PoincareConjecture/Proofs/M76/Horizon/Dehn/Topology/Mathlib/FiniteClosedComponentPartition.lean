@@ -1,21 +1,11 @@
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem isClopen_of_finite_disjoint_closed_cover
     {X I : Type*} [TopologicalSpace X] [Finite I] (U : I → Set X)
@@ -28,8 +18,6 @@ theorem isClopen_of_finite_disjoint_closed_cover
   rcases eq_or_ne j i with rfl | hji
   · simp
   · simpa only [(hdisj hji).sdiff_eq_left] using hclosed j
-
-
 
 theorem exists_connected_components_equiv_of_finite_closed_partition
     {X I : Type*} [TopologicalSpace X] [Finite I] (U : I → Set X)
@@ -49,8 +37,6 @@ theorem exists_connected_components_equiv_of_finite_closed_partition
     exact (hj'.symm.trans h) ▸ hj
   · intro hx
     exact ConnectedComponents.equivOfIsClopenOfIsConnected_mk hc hdisj hcover hconn x hx
-
-
 
 theorem connected_components_mark_counts_of_finite_closed_partition
     {X I : Type*} [TopologicalSpace X] [Finite I] (U : I → Set X)
@@ -75,8 +61,6 @@ theorem connected_components_mark_counts_of_finite_closed_partition
       simp only [mem_compl_iff, mem_ofPred_eq, Set.not_nonempty_iff_eq_empty,
         disjoint_iff_inter_eq_empty]
     rw [← hcompl, Set.ncard_image_of_injective _ e.injective]
-
-
 
 theorem connected_components_mark_counts_of_ambient_partition
     {X I : Type*} [TopologicalSpace X] [Finite I] {S : Set X} (U : I → Set X)

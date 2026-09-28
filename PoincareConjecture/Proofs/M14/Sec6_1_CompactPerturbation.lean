@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,9 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point}
 
-
-
-
 theorem rawLIntegrand_eq_backward_of_eventuallyEq
     (p : M14BackwardPath G T τ₁ τ₂ x y) {γ : ℝ → G.Point} {s : ℝ}
     (hs : s ∈ Ioo τ₁ τ₂) (h : γ =ᶠ[𝓝 s] p.curve) :
@@ -34,8 +21,6 @@ theorem rawLIntegrand_eq_backward_of_eventuallyEq
   unfold M14BackwardLIntegrand M14RawLIntegrand
   rw [backwardPath_velocity_eq_projected p hs]
 
-
-
 theorem rawLIntegrand_eq_outside_compact (p : M14BackwardPath G T τ₁ τ₂ x y)
     {γ : ℝ → G.Point} {a b : ℝ} (houtside : ∀ t ∉ Icc a b, γ t = p.curve t)
     {s : ℝ} (hs : s ∈ Ioo τ₁ τ₂) (hsab : s ∉ Icc a b) :
@@ -43,9 +28,6 @@ theorem rawLIntegrand_eq_outside_compact (p : M14BackwardPath G T τ₁ τ₂ x 
   apply rawLIntegrand_eq_backward_of_eventuallyEq p hs
   filter_upwards [isClosed_Icc.isOpen_compl.mem_nhds hsab] with t ht
   exact houtside t ht
-
-
-
 
 theorem compactPerturbation_action_integrable (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ τ₂ x y) (γ : ℝ → G.Point) {a b : ℝ}
@@ -78,8 +60,6 @@ theorem compactPerturbation_action_integrable (hM12 : GeneralizedRicciGaugeTheor
       ⟨(ha.trans hab).trans hs.1, hs.2⟩ (fun h => (not_le_of_gt hs.1) h.2)).symm)
   exact hleft.trans (hmiddle.trans hright)
 
-
-
 noncomputable def pathOfCompactPerturbation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ τ₂ x y) (γ : ℝ → G.Point) {a b : ℝ}
     (ha : τ₁ < a) (hab : a < b) (hb : b < τ₂)
@@ -105,8 +85,6 @@ noncomputable def pathOfCompactPerturbation (hM12 : GeneralizedRicciGaugeTheory.
     filter_upwards [isOpen_Ioo.mem_nhds hs] with t ht
     exact hclock t (Ioo_subset_Icc_self ht)
   action_integrable := compactPerturbation_action_integrable hM12 p γ ha hab hb hγ houtside
-
-
 
 theorem action_pathOfCompactPerturbation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ τ₂ x y) (γ : ℝ → G.Point) {a b : ℝ}
@@ -141,8 +119,6 @@ theorem action_pathOfCompactPerturbation (hM12 : GeneralizedRicciGaugeTheory.{u}
   change (∫ t in τ₁..τ₂, f t) = _
   rw [← intervalIntegral.integral_add_adjacent_intervals (hleft.trans hmiddle) hright,
     ← intervalIntegral.integral_add_adjacent_intervals hleft hmiddle, hleftEq, hrightEq]
-
-
 
 theorem middleAction_le_compactPerturbation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ τ₂ x y) (hmin : M14IsMinimizing p)

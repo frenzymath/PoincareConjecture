@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusLimin
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedMetric
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,9 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem m64ObservedWeakAnnulus_weightedEnergy_attained
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) (hei : IsClosedEmbedding e)
@@ -89,9 +74,6 @@ theorem m64ObservedWeakAnnulus_weightedEnergy_attained
   rw [henergy.liminf_eq] at hlsc
   refine ⟨r0, hr0, L, fun s hs A => hlsc.trans (csInf_le hlower ?_)⟩
   exact ⟨(⟨s, hs⟩, A), rfl⟩
-
-
-
 
 theorem m64ObservedWeakAnnulus_exists_modulus_minimizer
     (g : RiemannianMetric n M) (e : M → E)

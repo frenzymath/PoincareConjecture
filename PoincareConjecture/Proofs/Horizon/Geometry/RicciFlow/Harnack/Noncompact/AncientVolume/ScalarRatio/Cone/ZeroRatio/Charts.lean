@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.ZeroRatioDecay
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem eventually_distance_normalized_charts_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

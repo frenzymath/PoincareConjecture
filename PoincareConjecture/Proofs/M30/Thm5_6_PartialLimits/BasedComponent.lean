@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedCom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 noncomputable def basedSliceCarrier (C : GeneralizedSliceCarrier.{u}) (p : C.carrier) :
     FlowCarrier.{u} 3 where
@@ -40,13 +29,9 @@ noncomputable def basedSliceCarrier (C : GeneralizedSliceCarrier.{u}) (p : C.car
   secondCountable := inferInstance
   connected := isConnected_univ
 
-
-
 noncomputable def basedSliceMetric (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
     (g : RiemannianMetric 3 C.carrier) : (basedSliceCarrier C p).metric :=
   g.connectedComponentMetric p
-
-
 
 theorem basedSliceMetric_inner (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
     (g : RiemannianMetric 3 C.carrier) (x : (basedSliceCarrier C p).carrier)
@@ -56,15 +41,11 @@ theorem basedSliceMetric_inner (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
       (mfderiv (𝓡 3) (𝓡 3) (Subtype.val : (basedSliceCarrier C p).carrier → C.carrier) x w) :=
   rfl
 
-
-
 theorem basedSliceMetric_edist (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
     (g : RiemannianMetric 3 C.carrier) (x y : (basedSliceCarrier C p).carrier) :
     (basedSliceMetric C p g).edist x y = g.edist x.val y.val :=
   g.edist_subtype_val isClosed_connectedComponent (basedSliceMetric C p g)
     (basedSliceMetric_inner C p g) x y
-
-
 
 theorem basedSliceMetric_image_ball (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
     (g : RiemannianMetric 3 C.carrier) (x : (basedSliceCarrier C p).carrier) (r : ℝ) :
@@ -72,16 +53,12 @@ theorem basedSliceMetric_image_ball (C : GeneralizedSliceCarrier.{u}) (p : C.car
   g.image_ball_subtype_val isClosed_connectedComponent (basedSliceMetric C p g)
     (basedSliceMetric_inner C p g) x r
 
-
-
 theorem basedSliceMetric_volume_ball (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
     (g : RiemannianMetric 3 C.carrier) (x : (basedSliceCarrier C p).carrier) (r : ℝ) :
     (basedSliceMetric C p g).volumeMeasure ((basedSliceMetric C p g).ball x r) =
       g.volumeMeasure (g.ball x.val r) :=
   g.volumeMeasure_ball_subtype_val isClosed_connectedComponent (basedSliceMetric C p g)
     (basedSliceMetric_inner C p g) x r
-
-
 
 theorem basedSliceMetric_isCompact_closure_ball
     (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)
@@ -97,8 +74,6 @@ theorem basedSliceMetric_isCompact_closure_ball
   apply subset_closure
   change g.edist x.val y.val < ENNReal.ofReal r
   exact (basedSliceMetric_edist C p g x y).symm.trans_lt hy
-
-
 
 theorem basedSliceMetric_curvatureDerivativeNorm
     (C : GeneralizedSliceCarrier.{u}) (p : C.carrier)

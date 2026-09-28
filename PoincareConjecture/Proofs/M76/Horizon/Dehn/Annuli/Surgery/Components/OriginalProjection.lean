@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.OrdinaryProject
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.ProjectedRawChart
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Decomposition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -27,8 +20,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ A}
   {f : A → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
 
 theorem Step.exists_ordinary_annulus_circle_components (step : Step s t)
     {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)
@@ -94,4 +85,3 @@ theorem Step.exists_ordinary_annulus_circle_components (step : Step s t)
     hdisG, O, δ, hO, hRO, hδ, hcollar, hpre, hsingle⟩
 
 end Geometry.OriginalPLTower
-

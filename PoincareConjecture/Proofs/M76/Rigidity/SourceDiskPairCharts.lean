@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
-
 
 theorem exists_original_proper_disk_pair_chart
     {X ι : Type*} [TopologicalSpace X]

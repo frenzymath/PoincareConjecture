@@ -4,23 +4,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
 
 theorem edist_eq_of_metric_line_coordinate (g : RiemannianMetric 1 M)
     (e : M ≃ ℝ) (he : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) 1 e)

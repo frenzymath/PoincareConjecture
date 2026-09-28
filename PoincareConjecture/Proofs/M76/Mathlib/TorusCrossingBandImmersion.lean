@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCrossingBandCharts
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_union_localHomeomorph {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y]
@@ -45,18 +31,9 @@ end OpenPartialHomeomorph
 
 namespace PLAnnularStrip
 
-
-
-
 def crossingBandRegion (L d : ℝ) : Set (AddCircle (4 * L) × AddCircle (4 * L)) :=
   let arc := ((↑) : ℝ → AddCircle (4 * L)) '' Ioo (-d) d
   (univ ×ˢ arc) ∪ (arc ×ˢ univ)
-
-
-
-
-
-
 
 theorem exists_crossingBand_immersion {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) (hcore : 6 * d ≤ L) :

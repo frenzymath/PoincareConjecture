@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.CompactRepresentatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
-
-
-
-
-
-
-

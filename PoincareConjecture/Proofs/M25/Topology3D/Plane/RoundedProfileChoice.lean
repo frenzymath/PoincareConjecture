@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_rounded_polygon_family_threshold
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

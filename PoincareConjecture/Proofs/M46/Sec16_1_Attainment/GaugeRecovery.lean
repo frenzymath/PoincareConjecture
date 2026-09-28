@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M08.PathRecovery
 import PoincareConjecture.Proofs.M14.Sec6_2_IntervalLift
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
-
 
 theorem gauge_spatial_recovery (e : AttainmentGauge G) {a b : ℝ} (hab : a ≤ b)
     (gamma : ℝ → G.Point) (hgamma : ContinuousOn gamma (Icc a b))
@@ -73,9 +60,6 @@ theorem gauge_spatial_recovery (e : AttainmentGauge G) {a b : ℝ} (hab : a ≤ 
   rw [Function.comp_apply, extChartAt_coe]
   rfl
 
-
-
-
 theorem gauge_square_clock_smooth (e : AttainmentGauge G) (gamma : ℝ → G.Point)
     (T : ℝ) {C : Set ℝ} (hsrc : MapsTo gamma C e.source)
     (hclock : ∀ s ∈ C, G.spacetime.timeFunction (gamma s) = T - s ^ 2) :
@@ -85,9 +69,6 @@ theorem gauge_square_clock_smooth (e : AttainmentGauge G) (gamma : ℝ → G.Poi
   have heq (s : ℝ) (hs : s ∈ C) : (e.lift (gamma s)).1.val = T - s ^ 2 :=
     (e.clock (gamma s) (hsrc hs)).trans (hclock s hs)
   exact ((contDiff_const.sub (contDiff_id.pow 2)).contMDiff.contMDiffOn).congr heq
-
-
-
 
 theorem gauge_recovery_lift (e : AttainmentGauge G) {a b : ℝ} (hab : a ≤ b)
     (gamma : ℝ → G.Point) (T : ℝ) (hsrc : MapsTo gamma (Icc a b) e.source)

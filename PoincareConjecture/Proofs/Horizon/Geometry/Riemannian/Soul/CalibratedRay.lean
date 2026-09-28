@@ -3,16 +3,6 @@ import Mathlib.Order.Filter.AtTopBot.Archimedean
 import Mathlib.Topology.Algebra.Group.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Metric

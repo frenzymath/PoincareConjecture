@@ -1,27 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryReplacement
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem northSphereCoordinate_circleDirection {q : UnitTwoSphere}
     (hq : q ∈ northSphereDomain) (hx : (heightCoordinates (q : E3)).1 ≠ 0) :
@@ -37,8 +22,6 @@ theorem northSphereCoordinate_circleDirection {q : UnitTwoSphere}
   rw [smul_smul]
   exact circleDirection_smul (circleDirection x)
     (mul_pos (inv_pos.mpr hz) (norm_pos_iff.mpr hx))
-
-
 
 theorem exists_surgery_replacement_overlap
     (a : ℝ → ℝ) (b : E2 → ℝ)

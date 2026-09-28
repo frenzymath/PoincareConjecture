@@ -5,8 +5,6 @@ open Set Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem retained_source_transport_branch
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y] [TopologicalSpace X]
     {f : E → X} {g : Y → X} {S U A : Set E} {T V : Set Y}
@@ -59,7 +57,6 @@ theorem retained_source_transport_branch
       exact ⟨x, ⟨x.property, hx⟩, (hkeep x).symm⟩
     · rintro ⟨x, ⟨hxU, hxA⟩, rfl⟩
       exact ⟨H ⟨x, hxU⟩, ⟨⟨x, hxU⟩, hxA, rfl⟩, hkeep ⟨x, hxU⟩⟩
-
 
 theorem isCompact_source_sdiff_of_relative_open
     {E : Type*} [TopologicalSpace E] {S U : Set E} (hS : IsCompact S)

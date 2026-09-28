@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeSimplexDesce
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.Singular.SimplexFaceHomotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.SingularComplex.PointedHorn
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -15,7 +9,6 @@ open CategoryTheory Simplicial
 universe u
 
 namespace Poincare.Topology
-
 
 theorem exists_singular_pointedSimplex_of_genLoop (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Supports
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.Radial
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology Bundle
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem liYau_bound_of_distance_upper_supports
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

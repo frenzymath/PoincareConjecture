@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_FirstVariation
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 import PoincareConjecture.Proofs.M08.IndexPositivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -27,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 theorem secondDerivative_variationAction_nonneg (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (V : M14LVariationData G p R) (hmin : M14IsMinimizing p)
     (hfix : M14BothEndpointsFixed V) {d : ℝ}
@@ -39,17 +27,12 @@ theorem secondDerivative_variationAction_nonneg (hM12 : GeneralizedRicciGaugeThe
   exact M08.secondDerivative_nonneg_of_localMin (isLocalMin_variationAction V hmin hfix)
     (hasDerivAt_variationAction_integral hM12 V hz).continuousAt hd
 
-
-
-
 theorem firstVariationResidualIntegral_eq_zero_of_identity (V : M14LVariationData G p R)
     (D : M14VariationDerivativeData V) (hmin : M14IsMinimizing p)
     (hfix : M14BothEndpointsFixed V) (hid : M14FirstVariationIdentity V D) :
     M14FirstVariationResidualIntegral V D = 0 := by
   have h := hasDerivAt_variationAction_eq_zero V hmin hfix hid
   simpa only [firstVariationBoundaryTerm_eq_zero V hfix, zero_add] using h
-
-
 
 theorem firstVariationResidualIntegral_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -59,9 +42,6 @@ theorem firstVariationResidualIntegral_eq_zero
     M14FirstVariationResidualIntegral V D = 0 :=
   firstVariationResidualIntegral_eq_zero_of_identity V D hmin hfix
     (firstVariationIdentity hCoordinates hM12 V D)
-
-
-
 
 theorem secondVariationIndexForm_nonneg_of_identity (V : M14LVariationData G p R)
     (D : M14VariationDerivativeData V) (hmin : M14IsMinimizing p)

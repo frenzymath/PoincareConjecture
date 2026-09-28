@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenLineHomotopyTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_openArc_tube_homotopy_transport
     (D : (ℝ × ℝ) × ℝ → ℝ × ℝ) {R : ℝ} (hR : 0 < R)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.MetricConv
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +26,6 @@ private theorem tendsto_values_of_uniform_zero_jets
   exact ((ContinuousMultilinearMap.uniformContinuous_eval_const
     (0 : Fin 0 → E)).comp_tendstoUniformlyOn h).tendsto_at hx
 
-
-
 theorem tendsto_metricTwoJet_of_uniform_bilinear_jets
     {n : ℕ} {B : ℕ → EuclideanSpace ℝ (Fin n) → MetricCoefficient n}
     {B₀ : EuclideanSpace ℝ (Fin n) → MetricCoefficient n}
@@ -57,9 +47,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {g : ∀ k, RiemannianMetric 3 (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem tendsto_scalarCurvature
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :
@@ -124,8 +111,6 @@ theorem tendsto_scalarCurvature
   simpa only [Function.comp_apply, hc] using
     tube.jetScalarCurvature_metricTwoJet_pullback (D (G.subsequence k))
       hU hsmooth hinvertible hxU
-
-
 
 theorem scalarCurvature_lower_bound
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :

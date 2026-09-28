@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +16,6 @@ variable {d : ℕ} {M E F : Type*}
   [IsManifold (𝓡 d) ∞ M]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem contMDiffOn_fderiv_parameter {U : Set E} (hU : IsOpen U)
     {f : E × M → F}
@@ -62,7 +51,6 @@ theorem contMDiffOn_fderiv_parameter {U : Set E} (hU : IsOpen U)
   filter_upwards [(continuous_snd.tendsto p) (c.open_source.mem_nhds hc)] with q hq
   simp only [Function.comp_def, c.left_inv hq]
 
-
 theorem contMDiffOn_iteratedFDeriv_parameter {U : Set E} (hU : IsOpen U)
     {f : E × M → F}
     (hf : ContMDiffOn (𝓘(ℝ, E).prod (𝓡 d)) 𝓘(ℝ, F) ∞ f (U ×ˢ univ))
@@ -77,7 +65,6 @@ theorem contMDiffOn_iteratedFDeriv_parameter {U : Set E} (hU : IsOpen U)
     have h := contMDiffOn_fderiv_parameter hU ih
     convert (continuousMultilinearCurryLeftEquiv ℝ (fun _ : Fin (m + 1) => E) F).symm.toContinuousLinearEquiv.contDiff.contMDiff.comp_contMDiffOn h using 1
     all_goals rfl
-
 
 theorem contDiffOn_integral_compact [MeasurableSpace M] [BorelSpace M] [T2Space M]
     [SecondCountableTopology M]
@@ -121,8 +108,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem contMDiffOn_dirichletExhaustionKernel_integral
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

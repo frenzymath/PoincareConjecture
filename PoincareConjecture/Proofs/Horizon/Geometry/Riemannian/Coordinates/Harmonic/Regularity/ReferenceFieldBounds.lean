@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.RicciContraction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
-
 
 theorem ricci_reference_lower_bound (D : LeviCivitaData g)
     (x U X : EuclideanSpace ℝ (Fin n)) {K B r s : ℝ}
@@ -78,8 +67,6 @@ theorem ricci_reference_lower_bound (D : LeviCivitaData g)
       _ ≤ (n : ℝ) * K * w ^ 2 + (r ^ 2)⁻¹ * w ^ 2 := add_le_add hdiag hsource
       _ = _ := by ring
   exact (abs_le.mp habs).1
-
-
 
 theorem reference_connection_energy_le (D : LeviCivitaData g)
     (X : (x : EuclideanSpace ℝ (Fin n)) → TangentSpace (𝓡 n) x)

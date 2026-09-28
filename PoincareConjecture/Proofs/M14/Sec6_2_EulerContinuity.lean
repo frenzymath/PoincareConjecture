@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerResidual
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem rawHorizontalCovariantDerivative_contMDiff
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (W : HorizontalSection G.spacetime)
@@ -47,8 +33,6 @@ theorem rawHorizontalCovariantDerivative_contMDiff
   apply (contMDiffOn_univ.mp hCW).congr
   intro q
   rw [C.raw_eq univ isOpen_univ W hW.contMDiffOn q (mem_univ q)]
-
-
 
 theorem horizontalScalarDifferential_contMDiff
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (W : HorizontalSection G.spacetime)
@@ -88,9 +72,6 @@ private theorem horizontalMetric_pair_contDiffOn {γ : ℝ → G.Point} {J : Set
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem squareRootEulerResidual_stationary_continuousOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

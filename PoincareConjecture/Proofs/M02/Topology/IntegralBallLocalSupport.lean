@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralBallSupport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Metric HomologicalComplex

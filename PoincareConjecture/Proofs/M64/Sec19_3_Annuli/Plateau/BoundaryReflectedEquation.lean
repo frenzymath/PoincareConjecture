@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateSwap
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,15 +12,8 @@ open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
 
-
-
-
-
 def m64BoundaryReflect (epsilon : ℝ) (u : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   (halfSpace 2).indicator u p + epsilon * (halfSpace 2).indicator u (reflect p)
-
-
-
 
 theorem m64BoundaryReflect_memLp {u : LoopPlane → ℝ} {p : ℝ≥0∞}
     (hu : MemLp u p (volume.restrict (halfSpace 2))) (epsilon : ℝ) :
@@ -45,11 +27,6 @@ private theorem integral_indicator_pair (u q : LoopPlane → ℝ) :
   apply integral_congr_ae
   exact Eventually.of_forall fun x => by
     by_cases hx : x ∈ halfSpace 2 <;> simp [hx]
-
-
-
-
-
 
 theorem m64BoundaryReflect_integral_of_one_le {u q : LoopPlane → ℝ} {p : ℝ≥0∞}
     (hp : 1 ≤ p) (hu : MemLp u p (volume.restrict (halfSpace 2)))
@@ -90,20 +67,12 @@ theorem m64BoundaryReflect_integral_of_one_le {u q : LoopPlane → ℝ} {p : ℝ
       apply integral_congr_ae
       exact Eventually.of_forall fun x => by ring
 
-
-
-
-
 theorem m64BoundaryReflect_integral {u q : LoopPlane → ℝ}
     (hu : MemLp u 2 (volume.restrict (halfSpace 2)))
     (hq : Continuous q) (hc : HasCompactSupport q) (epsilon : ℝ) :
     (∫ x, m64BoundaryReflect epsilon u x * q x) =
       ∫ x in halfSpace 2, u x * (q x + epsilon * q (reflect x)) :=
   m64BoundaryReflect_integral_of_one_le (by norm_num) hu hq hc epsilon
-
-
-
-
 
 theorem m64BoundaryReflect_integrable {u : LoopPlane → ℝ}
     (hu : IntegrableOn u (halfSpace 2)) (epsilon : ℝ) :
@@ -118,9 +87,6 @@ private theorem reflect_basis (i : Fin 2) :
   · subst j
     simp [reflect]
   · simp [reflect, hj]
-
-
-
 
 theorem m64Boundary_reflected_test_partial {phi : LoopPlane → ℝ}
     (hp : ContDiff ℝ ∞ phi) (epsilon : ℝ) (p : LoopPlane) (i : Fin 2) :
@@ -142,11 +108,6 @@ theorem m64Boundary_reflected_test_partial {phi : LoopPlane → ℝ}
   change fderiv ℝ phi p (EuclideanSpace.single i 1) +
     epsilon * (coordinateSign i * fderiv ℝ phi (reflect p) (EuclideanSpace.single i 1)) = _
   ring
-
-
-
-
-
 
 theorem m64HalfSpace_mixed_equation_reflect_of_one_le
     {F : Fin 2 → LoopPlane → ℝ} {b : LoopPlane → ℝ} {R epsilon : ℝ} {p : ℝ≥0∞}
@@ -220,9 +181,6 @@ theorem m64HalfSpace_mixed_equation_reflect_of_one_le
         F i p * fderiv ℝ psi p (EuclideanSpace.single i 1) :=
       (integral_finsetSum _ (fun i _ => hIpsi i)).symm
     _ = _ := heq psi hpsi hpc hps hpface
-
-
-
 
 theorem m64HalfSpace_mixed_equation_reflect
     {F : Fin 2 → LoopPlane → ℝ} {b : LoopPlane → ℝ} {R epsilon : ℝ}

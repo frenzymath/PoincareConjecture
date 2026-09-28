@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.CurvatureTrace
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,7 +42,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem curvature_cyclic_eq_zero
     (D : LeviCivitaData g) (x : M) (u v w : TangentSpace (𝓡 n) x) :
     D.curvature x u v w + D.curvature x v w u + D.curvature x w u v = 0 := by
@@ -79,7 +68,6 @@ theorem curvature_cyclic_eq_zero
   change L (D.curvature x u v w + D.curvature x v w u + D.curvature x w u v) = L 0
   rw [map_add, map_add, map_zero]
   simpa only [L, B, c, ConnectionVariation.coordinateCurvature_in_chart g D x hx] using hc
-
 
 theorem inner_radial_curvature_symm
     (D : LeviCivitaData g) (x : M) (u v w : TangentSpace (𝓡 n) x) :

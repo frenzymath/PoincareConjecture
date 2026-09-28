@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +8,6 @@ open PoincareConjecture
 open scoped Manifold ContDiff ENNReal
 
 namespace Poincare.Geometry.Riemannian.SpaceForm
-
-
-
 
 theorem roundSphereMetric_tangentNorm_eq_inclusion_norm {n : ℕ}
     (x : UnitSphere n) (v : TangentSpace (𝓡 n) x) :
@@ -31,9 +17,6 @@ theorem roundSphereMetric_tangentNorm_eq_inclusion_norm {n : ℕ}
   change Real.sqrt ((roundSphereMetric n).inner x v v) = _
   rw [roundSphereMetric_inner, RiemannianMetric.euclideanMetric_inner]
   exact (norm_eq_sqrt_real_inner _).symm
-
-
-
 
 theorem roundSphereMetric_edist_eq_vector_angle {n : ℕ} (hn : 1 ≤ n)
     (x y : UnitSphere n) :
@@ -48,10 +31,6 @@ theorem roundSphereMetric_edist_eq_vector_angle {n : ℕ} (hn : 1 ≤ n)
     hnorm, hnorm, one_mul, div_one]
   congr 2
   linarith
-
-
-
-
 
 theorem sphere_inner_distortion_of_diffeomorph_tangent_bounds
     {n : ℕ} (hn : 1 ≤ n)

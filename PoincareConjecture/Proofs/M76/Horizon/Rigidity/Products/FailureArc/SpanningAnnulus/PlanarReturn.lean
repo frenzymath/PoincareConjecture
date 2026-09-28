@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.Original
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric Topology PLAnnularStrip
 

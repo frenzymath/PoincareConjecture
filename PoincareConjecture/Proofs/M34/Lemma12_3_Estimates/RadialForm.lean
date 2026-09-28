@@ -2,36 +2,19 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.AxisForm
 import PoincareConjecture.Proofs.M34.Standard.RotationOrbit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def initialRadialCoefficient (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   g₀.metric.inner (EuclideanSpace.single (0 : Fin 3) r)
     (EuclideanSpace.single (0 : Fin 3) (1 : ℝ)) (EuclideanSpace.single (0 : Fin 3) (1 : ℝ))
 
-
-
 noncomputable def initialAngularCoefficient (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   g₀.metric.inner (EuclideanSpace.single (0 : Fin 3) r)
     (EuclideanSpace.single (1 : Fin 3) (1 : ℝ)) (EuclideanSpace.single (1 : Fin 3) (1 : ℝ))
-
-
 
 theorem initialAxisCoefficient_contDiff (g₀ : StandardInitialMetric) (i : Fin 3) :
     ContDiff ℝ ∞ (fun r : ℝ => g₀.metric.inner (EuclideanSpace.single (0 : Fin 3) r)
@@ -46,17 +29,11 @@ theorem initialAxisCoefficient_contDiff (g₀ : StandardInitialMetric) (i : Fin 
     simp
   exact ((hmetric.comp haxis).clm_apply contDiff_const).clm_apply contDiff_const
 
-
-
 theorem initialRadialCoefficient_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (initialRadialCoefficient g₀) := initialAxisCoefficient_contDiff g₀ 0
 
-
-
 theorem initialAngularCoefficient_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (initialAngularCoefficient g₀) := initialAxisCoefficient_contDiff g₀ 1
-
-
 
 theorem initialCoefficients_pos (g₀ : StandardInitialMetric) (r : ℝ) :
     0 < initialRadialCoefficient g₀ r ∧ 0 < initialAngularCoefficient g₀ r := by
@@ -67,7 +44,6 @@ theorem initialCoefficients_pos (g₀ : StandardInitialMetric) (r : ℝ) :
       (0 : StandardCapSpace) by simp)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialCoefficients_zero (g₀ : StandardInitialMetric) :
     initialRadialCoefficient g₀ 0 = initialAngularCoefficient g₀ 0 := by
@@ -82,7 +58,6 @@ theorem initialCoefficients_zero (g₀ : StandardInitialMetric) :
   exact h.symm
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialMetric_radial_inner (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (u v : StandardCapSpace) :

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenSubset
 
-
-
-
-
-
-
 open Set Function TopologicalSpace
 open scoped Manifold ContDiff Topology
 

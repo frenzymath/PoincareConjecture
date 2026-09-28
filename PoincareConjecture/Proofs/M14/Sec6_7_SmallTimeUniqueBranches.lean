@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeCoefficients
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeMinimality
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exists_uniform_uniqueMinimizing_of_candidate_bounds
     (hCoordinates : M12MetricPredecessors.{0} n)

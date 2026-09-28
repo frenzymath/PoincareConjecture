@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicInverseFamily
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthTimeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
       (G.flow.metric t).inner (standardRotation A x)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = (G.flow.metric t).inner x u v)
-
-
 
 theorem rawInverseRadius_hasDerivAt_time {t s : ℝ}
     (ht : t ∈ Ioo 0 G.lifetime) (hs : 0 < s) :

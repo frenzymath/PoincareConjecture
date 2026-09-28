@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SingleBoundaryPiece
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

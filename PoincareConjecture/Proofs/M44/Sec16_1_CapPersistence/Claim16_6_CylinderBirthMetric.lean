@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderRicciFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_PhysicalBirthChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ variable {F : SurgeryFlowData.{u}} {origin scale : ℝ} {I : Set ℝ}
   {U : Set (F.slice origin).carrier}
   {e : SurgeryFlowCylinder F (F.slice origin) origin scale I U}
   {f : PartialDiffeomorph (𝓡 3) (𝓡 3) E (F.slice origin).carrier ∞}
-
-
-
 
 theorem CylinderRicciFlow.initial_metric_link
     (G : CylinderRicciFlow e f) (hzero : (0 : ℝ) ∈ I) (hmap : f.target ⊆ U)
@@ -59,9 +47,6 @@ theorem CylinderRicciFlow.initial_metric_link
     subst k
     exact hm y v w
   exact htransport _ (by simp) _ hf hm
-
-
-
 
 theorem CylinderRicciFlow.initial_pullback_eq
     (G : CylinderRicciFlow e f) (hzero : (0 : ℝ) ∈ I) (hmap : f.target ⊆ U)

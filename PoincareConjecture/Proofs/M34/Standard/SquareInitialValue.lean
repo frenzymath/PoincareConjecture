@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M34
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_squareInitialValue_of_euler {T tau : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 tau x y) (S : M14SquareRootPath G p)

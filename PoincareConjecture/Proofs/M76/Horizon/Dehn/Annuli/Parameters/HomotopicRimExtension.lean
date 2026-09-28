@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.WholeCircleA
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.SignedIntervalRim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.HomotopySigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

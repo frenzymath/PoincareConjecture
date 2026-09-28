@@ -1,20 +1,9 @@
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.DSlope
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,8 +15,6 @@ namespace Poincare.Analysis
 universe u v
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasDerivAt_intervalIntegral_of_contDiff
     {F : ℝ × ℝ → E} (hF : ContDiff ℝ ∞ F) (a b x : ℝ) :
@@ -52,8 +39,6 @@ theorem hasDerivAt_intervalIntegral_of_contDiff
       ⟨ball_subset_closedBall hy, uIoc_subset_uIcc ht⟩
   · exact Eventually.of_forall fun t _ y _ => hd y t
 
-
-
 theorem contDiff_intervalIntegral_of_contDiff
     {F : ℝ × ℝ → E} (hF : ContDiff ℝ ∞ F) (a b : ℝ) :
     ContDiff ℝ ∞ (fun x => ∫ t in a..b, F (x, t)) := by
@@ -74,8 +59,6 @@ theorem contDiff_intervalIntegral_of_contDiff
         exact (hasDerivAt_intervalIntegral_of_contDiff hF a b x).deriv
       rw [hderiv]
       exact ih ((hF.fderiv_right (by simp)).clm_apply contDiff_const)
-
-
 
 theorem hasFDerivAt_parameter_intervalIntegral_of_contDiff
     {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [FiniteDimensional ℝ P]
@@ -101,9 +84,6 @@ theorem hasFDerivAt_parameter_intervalIntegral_of_contDiff
       ⟨ball_subset_closedBall hy, uIoc_subset_uIcc ht⟩
   · exact intervalIntegrable_const
   · exact Eventually.of_forall fun t _ y _ => hd y t
-
-
-
 
 theorem contDiff_parameter_intervalIntegral_of_contDiff
     {P : Type v} [NormedAddCommGroup P] [NormedSpace ℝ P] [FiniteDimensional ℝ P]
@@ -133,8 +113,6 @@ theorem contDiff_parameter_intervalIntegral_of_contDiff
 
 variable [CompleteSpace E]
 
-
-
 theorem dslope_eq_integral_deriv
     {f : ℝ → E} (hf : ContDiff ℝ ∞ f) (a b : ℝ) :
     dslope f a b = ∫ t in (0 : ℝ)..1, deriv f (a + t * (b - a)) := by
@@ -157,8 +135,6 @@ theorem dslope_eq_integral_deriv
     intervalIntegral.integral_eq_sub_of_hasDerivAt (fun t _ => hd t)
       (hc.intervalIntegrable 0 1)
 
-
-
 theorem contDiff_dslope {f : ℝ → E} (hf : ContDiff ℝ ∞ f) (a : ℝ) :
     ContDiff ℝ ∞ (dslope f a) := by
   have hF : ContDiff ℝ ∞ (fun q : ℝ × ℝ => deriv f (a + q.2 * (q.1 - a))) :=
@@ -169,8 +145,6 @@ theorem contDiff_dslope {f : ℝ → E} (hf : ContDiff ℝ ∞ f) (a : ℝ) :
     funext (dslope_eq_integral_deriv hf a)
   rw [heq]
   exact h
-
-
 
 theorem contDiff_dslope_uncurry {f : ℝ → E} (hf : ContDiff ℝ ∞ f) :
     ContDiff ℝ ∞ (fun p : ℝ × ℝ => dslope f p.1 p.2) := by
@@ -186,7 +160,6 @@ theorem contDiff_dslope_uncurry {f : ℝ → E} (hf : ContDiff ℝ ∞ f) :
     exact dslope_eq_integral_deriv hf p.1 p.2
   rw [heq]
   exact h
-
 
 theorem exists_smooth_increment_factor
     {f : ℝ → E} (hf : ContDiff ℝ ∞ f) (a : ℝ) :

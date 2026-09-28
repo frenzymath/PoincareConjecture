@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarAlignedBall
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Nontrivial E] [DecidableEq E]
   {ι κ : Type*} [Finite ι] [Nonempty ι] [Finite κ]
-
-
-
-
 
 theorem isFinitePLBallPair_closedStar_inter_halfspaces
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

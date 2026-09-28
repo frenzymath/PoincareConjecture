@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.OrientedFlatteningCharts
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -72,7 +65,6 @@ private theorem exists_scalar_positive_sign {U : Set (B × ℝ)}
     (mem_image_of_mem _ (show r / 2 ∈ Ioo (0 : ℝ) r from ⟨by linarith, by linarith⟩))
   exact heq.trans hq.2
 
-
 def PositiveCollarSignAt (E : ι → OpenPartialHomeomorph X (P × ℝ))
     (F : B × ℝ → X) (p : B) (s : SignType) : Prop :=
   s ≠ 0 ∧ ∃ i : ι, ∃ W : Set B, IsOpen W ∧ p ∈ W ∧ ∃ r : ℝ, 0 < r ∧
@@ -107,8 +99,6 @@ theorem PositiveCollarSignAt.exists_open
   obtain ⟨hs, i, W, hW, hpW, r, hr, hbase, hsign⟩ := hs
   exact ⟨W, hW, hpW, fun q hq => ⟨hs, i, W, hW, hq, r, hr, hbase, hsign⟩⟩
 
-
-
 theorem PositiveCollarSignAt.unique
     {S : Set X} {E : ι → OpenPartialHomeomorph X (P × ℝ)} {F : B × ℝ → X}
     (hcompat : ∀ i j (x : S), (x : X) ∈ (E i).source ∩ (E j).source →
@@ -136,8 +126,6 @@ theorem PositiveCollarSignAt.unique
     simpa only [Metric.mem_ball, Real.dist_eq, sub_zero, abs_of_pos ha] using had)
   exact (hs p hpW a ⟨ha, har⟩).symm.trans
     ((heq hpoint).trans (ht p hpW' a ⟨ha, har'⟩))
-
-
 
 theorem PositiveCollarSignAt.in_chart
     {S : Set X} {U : Set (B × ℝ)} (hU : IsOpen U)
@@ -168,9 +156,6 @@ theorem PositiveCollarSignAt.in_chart
     have htV : F (q, t) ∈ V :=
       (hsub ⟨hq.2, lt_trans (neg_lt_zero.mpr hr') ht.1, htr'⟩).2.1
     exact (heq htV).symm.trans (hsign q hq.1 t ⟨ht.1, htr⟩)
-
-
-
 
 theorem exists_collar_positive_normal_label
     {S : Set X} {U : Set (B × ℝ)} (hU : IsOpen U)

@@ -4,21 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedInverse
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,11 +12,6 @@ namespace CollarCollapse
 
 variable {E X : Type*} [TopologicalSpace E] [Zero E]
   [TopologicalSpace X] [T2Space X]
-
-
-
-
-
 
 theorem exists_supported_source_family {B : Set E} (hB : IsCompact B)
     {delta r : ℝ} (hr : 0 < r) (hwidth : 2 * r < delta)

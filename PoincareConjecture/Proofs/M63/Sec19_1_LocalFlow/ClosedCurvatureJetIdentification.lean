@@ -7,15 +7,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +25,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem curvatureJet_identification_of_embedded_recurrences
     [T2Space M] (F : RicciFlow n M (Icc a b)) {tau s : ℝ}

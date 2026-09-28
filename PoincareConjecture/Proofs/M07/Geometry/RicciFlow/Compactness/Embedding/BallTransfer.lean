@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.SpatialRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,7 +21,6 @@ theorem exists_exhaustion_superset (G : PointedGeometricConvergence S)
   let : TopologicalSpace G.limitCarrier.carrier := G.limitCarrier.topologicalSpace
   exact hK.elim_directed_cover G.exhaustion G.exhaustion_open
     (by rw [G.exhaustion_covers]; exact subset_univ _) G.exhaustion_monotone.directed_le
-
 
 theorem eventually_pathELength_le (G : PointedGeometricConvergence S)
     {s : ℝ} (hs : s ∈ Ioo T' T) {γ : ℝ → G.limitCarrier.carrier}
@@ -87,8 +76,6 @@ theorem eventually_pathELength_le (G : PointedGeometricConvergence S)
   apply Real.sqrt_le_sqrt
   rw [hchain]
   exact hsq
-
-
 
 theorem eventually_mem_ballAt (G : PointedGeometricConvergence S)
     (hT : T' < 0 ∧ 0 < T) {s A : ℝ} (hs : s ∈ Ioo T' T)

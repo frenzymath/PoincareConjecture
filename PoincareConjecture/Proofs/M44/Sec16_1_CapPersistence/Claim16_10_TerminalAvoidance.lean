@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalStopping
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c : ℝ} {U : Set C.carrier}
-
-
-
 
 theorem preterminal_neck_avoidance_of_terminal
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -58,9 +46,6 @@ theorem preterminal_neck_avoidance_of_terminal
     exact (F.event (origin + c / scale) hT).limit_identify.right_inverse (mem_univ y)
   apply disjoint_left.mp (havoid i) (mem_image_of_mem _ hx)
   rwa [hterminal]
-
-
-
 
 theorem disappears_of_terminal_neck_avoidance
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

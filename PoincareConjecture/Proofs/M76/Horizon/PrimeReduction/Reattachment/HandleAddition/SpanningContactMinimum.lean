@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningContactCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningContactChart
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -15,9 +13,6 @@ local notation "Rect" => (Icc (0 : ℝ) 1 ×ˢ Icc (-1 : ℝ) 1)
 local notation "Ends" => (({0,1} : Set ℝ) ×ˢ Icc (-1 : ℝ) 1)
 local notation "Corners" => (({0,1} : Set ℝ) ×ˢ ({-1,1} : Set ℝ))
 local notation "Sides" => (Icc (0 : ℝ) 1 ×ˢ ({-1,1} : Set ℝ))
-
-
-
 
 theorem not_spanning_replacement_of_minimal_position
     {X α I : Type*} [TopologicalSpace X] [T2Space X] [Finite I]
@@ -93,5 +88,3 @@ theorem not_spanning_replacement_of_minimal_position
     fun w hw => hcoord w (hGs.subset hw)⟩
 
 end PoincareConjecture.M76
-
-

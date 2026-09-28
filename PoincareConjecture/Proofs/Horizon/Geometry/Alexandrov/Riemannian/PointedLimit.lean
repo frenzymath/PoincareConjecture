@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.LowerCur
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.PointedLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Packing
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

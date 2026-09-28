@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.MeanCurvature
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,8 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M}
 
-
-
 def levelSectionalError (D : LeviCivitaData g) (f K : M → ℝ) (β : ℝ) (x : M) : ℝ :=
   K x + (max 0 (-D.levelMeanCurvature f x) + (n : ℝ) * β) * β
 
@@ -46,8 +36,6 @@ theorem continuousOn_levelSectionalError_regularDomain (D : LeviCivitaData g)
   exact (((continuousOn_const (c := (0 : ℝ))).sup
     (D.continuousOn_levelMeanCurvature_regularDomain hf).neg).add
       continuousOn_const).mul continuousOn_const
-
-
 
 theorem levelMeanCurvature_le_of_tangentialHessian (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hreg : 0 < D.levelQ f x) (β : ℝ)
@@ -99,7 +87,6 @@ theorem levelMeanCurvature_le_of_tangentialHessian (D : LeviCivitaData g)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
 theorem integral_levelSectionalError_eq
     (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)
@@ -129,8 +116,6 @@ theorem integral_levelSectionalError_eq
   rw [hsplit, integral_mul_const, integral_add hiH hiC, integral_const]
   simp only [RiemannianMetric.regularLevelArea, smul_eq_mul,
     mul_comm _ ((n : ℝ) * β)]
-
-
 
 theorem integral_levelSectionalError_le
     (D : LeviCivitaData g)
@@ -171,9 +156,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M]
   [IsManifold (𝓡 (m + 2)) ∞ M]
   {g : RiemannianMetric (m + 2) M}
-
-
-
 
 theorem regularLevel_sectionalError_integral_le
     (D : LeviCivitaData g)

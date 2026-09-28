@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeMetric
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_MinimizingSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
     G.gaugeCover.spatial j) (x0 : G.gaugeCover.spatial j)
 
 include x0 in
-
-
 
 theorem compact_gauge_square_velocity_bound {U K : Set G.Point}
     (hlift : ContMDiffOn (spacetimeModel 3) (spacetimeModel 3) ∞ lift U)
@@ -92,8 +81,6 @@ theorem compact_gauge_square_velocity_bound {U K : Set G.Point}
         (ae_of_all _ (pathSquareKinetic_nonneg p)) henergy).trans hbound) (inv_pos.mpr hc).le
 
 omit x0 in
-
-
 
 theorem squarePath_gauge_coordinates_regular {T tau : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 tau x y) {U : Set G.Point}

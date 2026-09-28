@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import Mathlib.Topology.Algebra.Module.PerfectSpace
 import Mathlib.Topology.Connected.PathConnected
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -62,8 +54,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
 
-
-
 theorem pathConnectedSpace_asymptoticConeUnitSlice_of_chartedSpace
     {n k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
     [ConnectedSpace M] [NoncompactSpace M]
@@ -104,8 +94,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem unitSlice_pathConnected_of_zero_ratio
     {n : ℕ} (hn : 1 ≤ n) {M : Type u} [TopologicalSpace M] [T3Space M]

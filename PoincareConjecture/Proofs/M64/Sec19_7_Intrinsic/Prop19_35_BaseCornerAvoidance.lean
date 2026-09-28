@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AnnularCornerChart
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LipschitzCorner
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,12 +10,6 @@ open scoped Topology ContDiff Matrix ENNReal
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_avoids_annular_base_corner
     (G : RiemannianMetric 2 AnnulusCoordinates)

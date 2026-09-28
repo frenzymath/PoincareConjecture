@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.ScalarComparison
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem radial_logarithmic_derivative_le_of_cross
     {m : ℕ} (hm : 0 < m) {κ b t : ℝ} (hκ : 0 ≤ κ)
@@ -62,8 +52,6 @@ theorem radial_logarithmic_derivative_le_of_cross
   have hd := hanti.derivWithin_nonpos (x := t)
   rw [derivWithin_of_isOpen isOpen_Ioo ht, hq.deriv] at hd
   exact sub_nonpos.mp ((mul_nonpos_iff_pos_imp_nonpos.mp hd).1 (div_pos hFpos hGpos))
-
-
 
 theorem model_logarithmic_derivative_le {k t : ℝ} (hk : 0 ≤ k) (ht : 0 < t) :
     Real.cosh (Real.sqrt (k ^ 2) * t) / modelS (k ^ 2) t ≤ 1 / t + k := by

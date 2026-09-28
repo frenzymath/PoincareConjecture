@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.En
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.WeakDirichlet
 import Mathlib.Analysis.Calculus.BumpFunction.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,12 +18,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 theorem exists_testPoincare_of_subset_ball {Ω : Set Plane} {R : ℝ}
     (hR : 0 < R) (hΩ : Ω ⊆ Metric.ball 0 R) :
     ∃ P : ℝ, 0 ≤ P ∧ HasTestPoincare D Ω P := by
@@ -48,28 +29,16 @@ theorem exists_testPoincare_of_subset_ball {Ω : Set Plane} {R : ℝ}
   rw [← real_inner_self_eq_norm_sq, testToL2_inner] at h ⊢
   exact h
 
-
-
 def boundaryLaplacianL2 (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q) :
     Lp ℝ 2 g.volumeMeasure :=
   ((D.continuous_laplacian hq).memLp_of_hasCompactSupport
     (D.hasCompactSupport_laplacian hqc)).toLp (D.laplacian q)
 
-
-
-
-
-
 def boundaryForcing (Ω : Set Plane) (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q) :
     H1Zero D Ω →L[ℝ] ℝ :=
   (innerSL ℝ (boundaryLaplacianL2 D q hq hqc)).comp (toL2 D Ω)
-
-
-
-
-
 
 theorem boundaryForcing_coe (Ω : Set Plane) (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
@@ -87,11 +56,6 @@ theorem boundaryForcing_coe (Ω : Set Plane) (q : Plane → ℝ)
     show (testToL2 D Ω f) x = f x from hfx]
   simp
 
-
-
-
-
-
 theorem boundaryForcing_eq_neg_gradient (Ω : Set Plane) (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
     (f : EnergyTest D Ω) :
@@ -99,9 +63,6 @@ theorem boundaryForcing_eq_neg_gradient (Ω : Set Plane) (q : Plane → ℝ)
       -(∫ x, g.inner x (D.gradient f x) (D.gradient q x) ∂g.volumeMeasure) := by
   rw [boundaryForcing_coe]
   exact D.integral_mul_laplacian f.smooth hq f.hasCompactSupport
-
-
-
 
 theorem existsUnique_harmonic_correction {Ω : Set Plane} {R : ℝ}
     (hR : 0 < R) (hΩ : Ω ⊆ Metric.ball 0 R) (q : Plane → ℝ)
@@ -124,21 +85,10 @@ theorem existsUnique_harmonic_correction {Ω : Set Plane} {R : ℝ}
     rw [boundaryForcing_eq_neg_gradient]
     exact eq_neg_of_add_eq_zero_left (hv f)
 
-
-
-
-
-
 def affineDirichletEnergy (Ω : Set Plane) (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
     (v : H1Zero D Ω) : ℝ :=
   gradientEnergy D Ω v v - 2 * boundaryForcing D Ω q hq hqc v
-
-
-
-
-
-
 
 theorem exists_harmonic_correction_minimum {Ω : Set Plane} {R : ℝ}
     (hR : 0 < R) (hΩ : Ω ⊆ Metric.ball 0 R) (q : Plane → ℝ)
@@ -174,11 +124,6 @@ theorem exists_harmonic_correction_minimum {Ω : Set Plane} {R : ℝ}
     rw [add_sub_cancel] at h
     exact sub_nonneg.mp (h.symm ▸ gradientEnergy_self_nonneg (v - w))
 
-
-
-
-
-
 def scalarAnnulus : Set Plane := {x | 1 < ‖x‖ ∧ ‖x‖ < 2}
 
 private def outerBoundaryBump : ContDiffBump (0 : Plane) :=
@@ -187,37 +132,16 @@ private def outerBoundaryBump : ContDiffBump (0 : Plane) :=
 private def innerBoundaryBump : ContDiffBump (0 : Plane) :=
   ⟨1, 3 / 2, by norm_num, by norm_num⟩
 
-
-
-
-
-
-
 def annularBoundaryExtension (x : Plane) : ℝ :=
   outerBoundaryBump x - innerBoundaryBump x
-
-
-
-
-
 
 theorem annularBoundaryExtension_smooth :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ annularBoundaryExtension := by
   apply contMDiff_iff_contDiff.mpr
   exact outerBoundaryBump.contDiff.sub innerBoundaryBump.contDiff
 
-
-
-
-
-
 theorem annularBoundaryExtension_compact : HasCompactSupport annularBoundaryExtension :=
   outerBoundaryBump.hasCompactSupport.sub innerBoundaryBump.hasCompactSupport
-
-
-
-
-
 
 theorem annularBoundaryExtension_inner {x : Plane} (hx : ‖x‖ = 1) :
     annularBoundaryExtension x = 0 := by
@@ -227,11 +151,6 @@ theorem annularBoundaryExtension_inner {x : Plane} (hx : ‖x‖ = 1) :
     simp [innerBoundaryBump, hx])
   simp [annularBoundaryExtension, ho, hi]
 
-
-
-
-
-
 theorem annularBoundaryExtension_outer {x : Plane} (hx : ‖x‖ = 2) :
     annularBoundaryExtension x = 1 := by
   have ho : outerBoundaryBump x = 1 := outerBoundaryBump.one_of_mem_closedBall (by
@@ -239,10 +158,6 @@ theorem annularBoundaryExtension_outer {x : Plane} (hx : ‖x‖ = 2) :
   have hi : innerBoundaryBump x = 0 := innerBoundaryBump.zero_of_le_dist (by
     norm_num [innerBoundaryBump, hx])
   simp [annularBoundaryExtension, ho, hi]
-
-
-
-
 
 theorem exists_annular_harmonic_potential :
     ∃ w : H1Zero D scalarAnnulus,

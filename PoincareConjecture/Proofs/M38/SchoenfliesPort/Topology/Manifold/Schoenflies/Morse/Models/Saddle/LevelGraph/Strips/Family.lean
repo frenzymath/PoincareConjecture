@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Intervals.Family
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.IntervalNeighborhoods
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.SaddleLevel
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -47,10 +39,6 @@ private theorem class_eq_of_component_eq {K : Set S2} {x y : K}
   obtain ⟨z, hz, heq⟩ := hx
   have hzx : z = x := Subtype.ext heq
   exact hzx ▸ hz
-
-
-
-
 
 theorem exists_disjoint_actual_exterior_strips
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

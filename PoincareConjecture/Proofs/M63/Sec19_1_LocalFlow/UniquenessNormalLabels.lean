@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 import PoincareConjecture.Definitions.M63Ramp
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
-
 
 theorem normal_relabeling_derivative_eq_zero
     {c : ℝ → ℝ → M} {psi : ℝ → ℝ → ℝ} {J : Set ℝ}
@@ -55,10 +42,6 @@ theorem normal_relabeling_derivative_eq_zero
   have hzero : w • curveVelocity (n := n) (fun y => c y t) (psi x t) = 0 :=
     add_eq_right.mp hchain.symm
   exact (smul_eq_zero.mp hzero).resolve_right (hc.immersed t htJ (psi x t))
-
-
-
-
 
 theorem normal_relabeling_eq_initial_labels
     {c : ℝ → ℝ → M} {psi : ℝ → ℝ → ℝ} {s T : ℝ}

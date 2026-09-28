@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M13.DomainMaps
 import PoincareConjecture.Proofs.M13.Time
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

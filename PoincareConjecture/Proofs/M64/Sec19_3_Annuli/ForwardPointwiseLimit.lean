@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusZeroAreaForward
 
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -11,10 +7,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.exponential_comparison_of_pointwise_limit
     {I : Type*} {l : Filter I} [NeBot l] {f : I → ℝ → ℝ} {g k : ℝ → ℝ}
@@ -36,9 +28,6 @@ theorem m64AnnulusForwardDerivativeBound.exponential_comparison_of_pointwise_lim
   filter_upwards [hi.2.2 x hxab eta heta] with h hh
   exact hh.trans (add_le_add
     (mul_le_mul_of_nonneg_right (hK x hx) (hi.2.1 x (Ioo_subset_Icc_self hxab))) le_rfl)
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.of_exponential_comparisons
     {g k : ℝ → ℝ} {a b t : ℝ} (ht : t ∈ Ioo a b)
@@ -72,10 +61,6 @@ theorem m64AnnulusForwardDerivativeBound.of_exponential_comparisons
     (by linarith [hh.1]) K (fun x hx ↦ (hkc ⟨hx.1, by linarith [hx.2, hh.2]⟩).le)
   rw [add_sub_cancel_left] at hbound
   exact (div_le_div_of_nonneg_right (sub_le_sub_right hbound (g t)) hh.1.le).trans hq.le
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.of_pointwise_limit
     {I : Type*} {l : Filter I} [NeBot l] {f : I → ℝ → ℝ} {g k : ℝ → ℝ}

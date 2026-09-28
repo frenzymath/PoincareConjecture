@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartMeasureUpperNative
 import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +20,6 @@ open ChartMeasureNative ChartLpNative EuclideanDerivativeNative
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def measurableChart (e : OpenPartialHomeomorph M E) : M → E := e.source.indicator e
 
@@ -65,7 +56,6 @@ theorem map_restrict_le_smul_volume (e : OpenPartialHomeomorph M E)
   exact hm.trans (smul_le_smul_left C Measure.restrict_le_self)
 
 variable {V : Type v} [NormedAddCommGroup V] [NormedSpace ℝ V]
-
 
 def chartExtensionL2 (e : OpenPartialHomeomorph M E)
     {K : Set M} (hK : MeasurableSet K) (hKs : K ⊆ e.source)

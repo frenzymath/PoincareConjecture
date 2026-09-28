@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Global
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory TopologicalSpace
@@ -92,7 +85,6 @@ theorem continuous_regularLevelIntegral_of_chart_support
   · simp [F, chartPullback, hy]
 
 include hf hreg in
-
 
 theorem continuous_regularLevelIntegral
     {h : M → ℝ} (hh : Continuous h) (hc : HasCompactSupport h)

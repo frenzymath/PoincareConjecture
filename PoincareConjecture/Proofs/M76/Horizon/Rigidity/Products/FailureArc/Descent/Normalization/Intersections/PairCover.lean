@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartPairAffineCover
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartFaceImage
 import PoincareConjecture.Proofs.M76.Wall.CutDiskProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -28,11 +18,6 @@ variable {U V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem MarkedSurfaceMotionData.exists_finite_original_pair_affine_cover
     {s t : Stage e S f r C} {step : Step s t}

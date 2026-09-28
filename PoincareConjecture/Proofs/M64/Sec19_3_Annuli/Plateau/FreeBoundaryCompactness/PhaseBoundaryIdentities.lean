@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.ClosedRectanglePhase
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -15,9 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem closed_rectangle_phase_upper_integer {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)
@@ -40,9 +30,6 @@ theorem closed_rectangle_phase_upper_integer {circumference : ℝ}
   refine ⟨k, fun x hx => ?_⟩
   rw [hdiff x hx, ← hk]
   simp only [zsmul_eq_mul]
-
-
-
 
 theorem closed_rectangle_phase_affine_seam {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)

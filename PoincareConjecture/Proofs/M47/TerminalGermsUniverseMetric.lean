@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_lifted_complete_metric
     {n : ℕ} {Q : Type u} [TopologicalSpace Q] [T3Space Q]
@@ -43,8 +32,6 @@ theorem terminalGerms_lifted_complete_metric
     (fun _ _ _ => rfl)).mpr hg, ?_⟩
   intro x y
   exact RiemannianMetric.edist_diffeomorph gL g d (fun _ _ _ => rfl) x y
-
-
 
 theorem terminalGerms_lifted_chart_cover
     {n : ℕ} {ι : Type*} {P : ι → Type*} {Q : Type u}

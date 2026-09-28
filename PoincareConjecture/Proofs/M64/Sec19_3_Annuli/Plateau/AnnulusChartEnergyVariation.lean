@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 import PoincareConjecture.Proofs.M60.Mathlib.CoordinateEnergyVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64EnergyDensity_hasDerivAt_of_affine_chart
     (g : RiemannianMetric n M) (b : M) (f : LoopPlane → M)

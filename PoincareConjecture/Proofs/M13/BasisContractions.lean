@@ -2,14 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Topology.Algebra.Module.FiniteDimensionBilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators RealInnerProductSpace
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M13
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] {ι κ : Type*} [Fintype ι] [Fintype κ]
-
 
 theorem sum_sq_linear_basis_eq (L : E →ₗ[ℝ] ℝ)
     (b : OrthonormalBasis ι ℝ E) (c : OrthonormalBasis κ ℝ E) :
@@ -30,7 +21,6 @@ theorem sum_sq_linear_basis_eq (L : E →ₗ[ℝ] ℝ)
       simpa only [hv] using b.sum_sq_inner_left v
     _ = ∑ j, (L (c j)) ^ 2 := by
       simpa only [hv] using (c.sum_sq_inner_left v).symm
-
 
 theorem sum_bilinear_diagonal_basis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     (b : OrthonormalBasis ι ℝ E) (c : OrthonormalBasis κ ℝ E) :
@@ -61,7 +51,6 @@ theorem sum_bilinear_diagonal_basis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
         _ = inner ℝ (c j) (v j) := b.sum_inner_mul_inner _ _
         _ = B (c j) (c j) := (real_inner_comm _ _).trans (hv j (c j))
 
-
 theorem sum_sq_bilinear_basis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     (b : OrthonormalBasis ι ℝ E) (c : OrthonormalBasis κ ℝ E) :
     (∑ i, ∑ j, (B (b i) (b j)) ^ 2) = ∑ i, ∑ j, (B (c i) (c j)) ^ 2 := by
@@ -72,7 +61,6 @@ theorem sum_sq_bilinear_basis_eq (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     _ = ∑ j, ∑ i, (B (c i) (c j)) ^ 2 :=
       Finset.sum_congr rfl (fun j _ ↦ sum_sq_linear_basis_eq (B.flip (c j)) b c)
     _ = ∑ i, ∑ j, (B (c i) (c j)) ^ 2 := Finset.sum_comm
-
 
 def fourLinearFirstTwo (T : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ) (w z : E) :
     E →ₗ[ℝ] E →ₗ[ℝ] ℝ :=
@@ -86,7 +74,6 @@ omit [FiniteDimensional ℝ E] in
 theorem fourLinearFirstTwo_apply (T : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
     (u v w z : E) : fourLinearFirstTwo T w z u v = T u v w z := rfl
 
-
 theorem sum_four_swap_pairs {μ ν : Type*} [Fintype μ] [Fintype ν]
     (F : ι → κ → μ → ν → ℝ) :
     (∑ i, ∑ j, ∑ k, ∑ l, F i j k l) = ∑ k, ∑ l, ∑ i, ∑ j, F i j k l := by
@@ -98,7 +85,6 @@ theorem sum_four_swap_pairs {μ ν : Type*} [Fintype μ] [Fintype ν]
       Finset.sum_congr rfl (fun _ _ ↦ Finset.sum_congr rfl (fun _ _ ↦ Finset.sum_comm))
     _ = ∑ k, ∑ l, ∑ i, ∑ j, F i j k l :=
       Finset.sum_congr rfl (fun _ _ ↦ Finset.sum_comm)
-
 
 theorem sum_sq_fourlinear_basis_eq
     (T : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

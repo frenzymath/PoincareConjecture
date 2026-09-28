@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCylinderDerivative
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ local notation "Q" => H.generalized.scalar (Sigma.mk base x)
 local notation "U" => (TopologicalSpace.Opens.mk
   (RiemannianMetric.ball (F.metric base) (H.history.forward base hbase x) (A / Real.sqrt Q))
   (M04.initial_ball_isOpen _ _ _))
-
-
 
 theorem terminalSource_realize_regular_stage
     (P : M47Predecessors.{u}) (hA : 0 < A) (htau : 0 < tau) (htt : tau < tau0)

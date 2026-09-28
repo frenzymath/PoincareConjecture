@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.TerminalStrip
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.WindingCorrection
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology unitInterval
 
@@ -11,7 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
-
 
 def HasJointPLRadialStraightening (gamma : C(I, Ann)) : Prop :=
   ∃ (H : I → Ann ≃ₜ Ann) (F Fi : (ℝ × P2) → P2),

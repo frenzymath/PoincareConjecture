@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +21,6 @@ private theorem euclideanHausdorffMeasure_congr {X : Type*} [MeasurableSpace X]
       @Measure.euclideanHausdorffMeasure X m' inferInstance hb' n := by
   subst m'
   rfl
-
 
 @[simp] theorem euclideanMetric_volumeMeasure (n : ℕ) :
     (euclideanMetric n).volumeMeasure =

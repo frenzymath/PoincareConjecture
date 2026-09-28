@@ -1,21 +1,12 @@
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem fderiv_horizontal_eq {f : X × ℝ → Y} {z : X × ℝ}
     (hf : DifferentiableAt ℝ f z) (h : X) :
@@ -25,7 +16,6 @@ theorem fderiv_horizontal_eq {f : X × ℝ → Y} {z : X × ℝ}
   change fderiv ℝ f z (h, 0) = fderiv ℝ (f ∘ fun x : X ↦ (x, z.2)) z.1 h
   rw [hc.fderiv]
   rfl
-
 
 theorem hasDerivAt_time_slice {f : X × ℝ → Y} {z : X × ℝ}
     (hf : DifferentiableAt ℝ f z) :

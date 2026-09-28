@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.SphereMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,15 +7,11 @@ open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
-
 theorem contDiff_sphereChartConformalFactor :
     ContDiff ℝ ∞ sphereChartConformalFactor := by
   unfold sphereChartConformalFactor
   exact contDiff_const.div (((contDiff_norm_sq ℝ).add contDiff_const).pow 2)
     (fun _ => by positivity)
-
-
 
 theorem hasFDerivAt_sphereChartConformalFactor (x : EuclideanSpace ℝ (Fin 2)) :
     HasFDerivAt sphereChartConformalFactor
@@ -41,15 +29,12 @@ theorem hasFDerivAt_sphereChartConformalFactor (x : EuclideanSpace ℝ (Fin 2)) 
     field_simp [hd]
     ring
 
-
 theorem fderiv_sphereChartConformalFactor_fst (p h : RoundCylinderCoordinates) :
     fderiv ℝ (fun y : RoundCylinderCoordinates => sphereChartConformalFactor y.1) p h =
       (-64 / (‖p.1‖ ^ 2 + 4) ^ 3) * inner ℝ p.1 h.1 := by
   have hh := ((hasFDerivAt_sphereChartConformalFactor p.1).comp p
     (ContinuousLinearMap.fst ℝ (EuclideanSpace ℝ (Fin 2)) ℝ).hasFDerivAt).fderiv
   exact congrArg (fun L : RoundCylinderCoordinates →L[ℝ] ℝ => L h) hh
-
-
 
 theorem roundCylinderGram_inverse_chosen_chart {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
@@ -74,8 +59,6 @@ theorem roundCylinderGram_inverse_chosen_chart {u : ℝ} (hu : u < 1)
       exact mul_inv_cancel₀ hnonzero
     · norm_num [Matrix.diagonal]
   · simp [Matrix.diagonal, hab]
-
-
 
 theorem fderiv_roundCylinderGram_chosen_chart (u : ℝ) (q : UnitTwoSphere)
     (p h : RoundCylinderCoordinates) (a b : Fin 3) :

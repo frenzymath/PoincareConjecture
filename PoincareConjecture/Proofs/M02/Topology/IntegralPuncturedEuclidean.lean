@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralAmbientRelative
 import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyEquiv
 import PoincareConjecture.Proofs.M02.Topology.SphereOpenCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

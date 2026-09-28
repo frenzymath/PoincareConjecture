@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.CalibratedVolume
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem ball_subset_connectedComponent {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -35,16 +24,12 @@ theorem ball_subset_connectedComponent {n : ℕ} {M : Type u} [TopologicalSpace 
     isPreconnected_Icc.image γ hγ.continuousOn
   exact hc.subset_connectedComponent ⟨0, by norm_num, hγx⟩ ⟨1, by norm_num, hγy⟩
 
-
-
 theorem slice_components_finite (F : SurgeryFlowData.{u}) {t : ℝ}
     (ht : t ∈ F.time_domain) : Finite (ConnectedComponents (F.slice t).carrier) := by
   let : CompactSpace (F.slice t).carrier := isCompact_univ_iff.mp (F.slices_compact t ht)
   let : LocallyConnectedSpace (F.slice t).carrier :=
     ChartedSpace.locallyConnectedSpace (EuclideanSpace ℝ (Fin 3)) (F.slice t).carrier
   infer_instance
-
-
 
 theorem initial_component_unit_volume_pos :
     0 < euclideanUnitBallLebesgueVolume.toReal / 2 := by
@@ -54,8 +39,6 @@ theorem initial_component_unit_volume_pos :
       (by norm_num : (0 : ℝ) < 1)).ne'
   · exact measure_ball_lt_top.ne
 
-
-
 theorem initial_component_volume_lower_bound (F : SurgeryFlowData.{u})
     (x : (F.slice 0).carrier) :
     ENNReal.ofReal (euclideanUnitBallLebesgueVolume.toReal / 2) ≤
@@ -63,8 +46,6 @@ theorem initial_component_volume_lower_bound (F : SurgeryFlowData.{u})
   have hball := (F.initial_normalized x).2 1 (by norm_num) le_rfl
   simp only [one_pow, mul_one] at hball
   exact hball.trans (measure_mono (ball_subset_connectedComponent (F.metric 0) x 1))
-
-
 
 theorem initial_components_volume_bound (F : SurgeryFlowData.{u}) :
     (Nat.card (ConnectedComponents (F.slice 0).carrier) : ℝ≥0∞) *
@@ -99,8 +80,6 @@ theorem initial_components_volume_bound (F : SurgeryFlowData.{u}) :
     _ ≤ _ := sum_measure_le_measure_univ
       (fun c _ => by rw [hA]; exact isClosed_connectedComponent.measurableSet.nullMeasurableSet)
       (fun _ _ _ _ hcd => (hd hcd).aedisjoint)
-
-
 
 theorem exists_uniform_initial_component_bound (V₀ : ℝ≥0∞) (hV₀ : V₀ ≠ ⊤) :
     ∃ n : ℕ, ∀ F : SurgeryFlowData.{u},

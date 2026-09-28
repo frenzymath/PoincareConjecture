@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2SlopeRegularity
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RelabelingSlope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem c2_slope_laws_of_local (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) {K0 K1 K2 : ℝ}

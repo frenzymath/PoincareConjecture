@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardSpatialJets
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedClosedCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem tendsto_backward_curvature
     (hSlice : SpatialSliceJetConvergenceService.{0, 0, 0, 0, 0})

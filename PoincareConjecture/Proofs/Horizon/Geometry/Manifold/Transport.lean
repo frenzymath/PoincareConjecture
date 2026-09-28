@@ -1,7 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
 open Set
 open scoped Manifold ContDiff
 
@@ -9,7 +7,6 @@ namespace Poincare.Manifold.HomeomorphTransport
 
 variable {H M N : Type*} [TopologicalSpace H] [TopologicalSpace M]
   [TopologicalSpace N] [ChartedSpace H M] (e : M ≃ₜ N)
-
 
 @[reducible] def chartedSpace : ChartedSpace H N where
   atlas := (fun c => e.symm.toOpenPartialHomeomorph.trans c) '' atlas H M
@@ -31,7 +28,6 @@ theorem chart_transition (c c' : OpenPartialHomeomorph M H) :
 variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E]
   [NormedSpace 𝕜 E] (I : ModelWithCorners 𝕜 E H) (r : ℕ∞ω)
 
-
 theorem isManifold [IsManifold I r M] :
     letI := chartedSpace (H := H) e
     IsManifold I r N := by
@@ -40,7 +36,6 @@ theorem isManifold [IsManifold I r M] :
   rintro _ _ ⟨c, hc, rfl⟩ ⟨c', hc', rfl⟩
   rw [chart_transition]
   exact StructureGroupoid.compatible (contDiffGroupoid r I) hc hc'
-
 
 theorem contMDiff [IsManifold I r M] :
     letI := chartedSpace (H := H) e
@@ -53,7 +48,6 @@ theorem contMDiff [IsManifold I r M] :
     ((contMDiff_id (I := I) (n := r)).contMDiffAt (x := x))).2
   simpa [extChartAt_coe, extChartAt_coe_symm, chartAt_eq e, Function.comp_def] using hid
 
-
 theorem contMDiff_symm [IsManifold I r M] :
     letI := chartedSpace (H := H) e
     ContMDiff I I r e.symm := by
@@ -64,7 +58,6 @@ theorem contMDiff_symm [IsManifold I r M] :
   have hid := (contMDiffAt_iff.mp
     ((contMDiff_id (I := I) (n := r)).contMDiffAt (x := e.symm y))).2
   simpa [extChartAt_coe, extChartAt_coe_symm, chartAt_eq e, Function.comp_def] using hid
-
 
 def diffeomorph [IsManifold I r M] :
     letI := chartedSpace (H := H) e

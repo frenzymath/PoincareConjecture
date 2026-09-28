@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N] [Nonempty M]
-
-
 
 noncomputable def partialDiffeomorphOfInjOn
     {U : Set M} (hU : IsOpen U) (f : M → N) (hinj : InjOn f U)
@@ -81,8 +69,6 @@ variable {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
   {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
   (G : AncientPointedGeometricConvergence C g p T)
 
-
-
 def embeddingChartSource (q : G.limitCarrier.carrier) (k : ℕ) :
     Set (EuclideanSpace ℝ (Fin n)) :=
   (extChartAt (𝓡 n) q).target ∩ (extChartAt (𝓡 n) q).symm ⁻¹' G.exhaustion k
@@ -123,8 +109,6 @@ theorem embeddingChart_isLocalDiffeomorphOn (q : G.limitCarrier.carrier) (k : �
   exact (G.partialChart_reference_isLocalDiffeomorphAt q x.property.1).comp
     (𝓡 n) (C (G.subsequence k)).carrier (G.embedding_smooth k ⟨_, x.property.2⟩)
 
-
-
 noncomputable def embeddingChartPartialDiffeomorph (q : G.limitCarrier.carrier) (k : ℕ) :
     PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n))
       (C (G.subsequence k)).carrier ∞ :=
@@ -140,8 +124,6 @@ noncomputable def embeddingChartPartialDiffeomorph (q : G.limitCarrier.carrier) 
       EuclideanSpace ℝ (Fin n) → (C (G.subsequence k)).carrier) =
       G.embedding k ∘ (extChartAt (𝓡 n) q).symm := rfl
 
-
-
 theorem eventually_subset_embeddingChartPartialDiffeomorph_source
     (q : G.limitCarrier.carrier) {K : Set (EuclideanSpace ℝ (Fin n))}
     (hK : IsCompact K) (hKc : K ⊆ (extChartAt (𝓡 n) q).target) :
@@ -153,18 +135,13 @@ theorem eventually_subset_embeddingChartPartialDiffeomorph_source
   filter_upwards [eventually_ge_atTop j] with k hk x hx
   exact ⟨hKc hx, hmono hk (hj (mem_image_of_mem _ hx))⟩
 
-
-
 def referenceChartBall (q : G.limitCarrier.carrier) (r : ℝ) :
     TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)) :=
   ⟨Metric.ball (extChartAt (𝓡 n) q q) r, Metric.isOpen_ball⟩
 
-
 noncomputable def referenceChartBallMap (q : G.limitCarrier.carrier) (r : ℝ) :
     G.referenceChartBall q r → G.limitCarrier.carrier :=
   fun x => (extChartAt (𝓡 n) q).symm x
-
-
 
 theorem exists_pos_referenceChartBall_radius (q : G.limitCarrier.carrier) :
     ∃ r : ℝ, 0 < r ∧
@@ -174,8 +151,6 @@ theorem exists_pos_referenceChartBall_radius (q : G.limitCarrier.carrier) :
   refine ⟨ε / 4, by positivity, ?_⟩
   exact (Metric.closedBall_subset_ball (by linarith : 2 * (ε / 4) < ε)).trans hεc
 
-
-
 theorem referenceChartBallMap_isLocalDiffeomorph
     (q : G.limitCarrier.carrier) (r : ℝ)
     (hsource : Metric.ball (extChartAt (𝓡 n) q q) r ⊆ (extChartAt (𝓡 n) q).target) :
@@ -184,8 +159,6 @@ theorem referenceChartBallMap_isLocalDiffeomorph
   exact (Poincare.isLocalDiffeomorph_opensSubtypeVal
     (𝓡 n) (G.referenceChartBall q r) x).comp (𝓡 n) G.limitCarrier.carrier
       (G.partialChart_reference_isLocalDiffeomorphAt q (hsource x.property))
-
-
 
 theorem referenceChartBallMap_covers
     (r : G.limitCarrier.carrier → ℝ) (hr : ∀ q, 0 < r q) :

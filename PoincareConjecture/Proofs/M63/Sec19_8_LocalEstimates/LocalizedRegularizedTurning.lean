@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ArcCutoffBoundary
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ArcCutoffIntegral
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ArcGreenIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -27,9 +17,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
-
-
-
 
 theorem m63ArcCutoff_regularizedIntegral_deriv_le (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (h0 : 0 ≤ K0) (h1 : 0 ≤ K1) (h2 : 0 ≤ K2)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.WeightedCauchySchwarz
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -36,9 +26,6 @@ private theorem periodic_inner_deriv_integral {f g : ℝ → E} {a b : ℝ}
         (hg.differentiable one_ne_zero t).hasDerivAt) (hi1.add hi2)
   rw [intervalIntegral.integral_add hi1 hi2, hfp, hgp, sub_self] at hFTC
   linarith only [hFTC]
-
-
-
 
 theorem collar_flux_sq_bound {T U N : ℝ → E} {a b C delta : ℝ}
     (hab : a ≤ b) (hd : 0 ≤ delta)
@@ -120,10 +107,6 @@ private theorem integral_inner_uniform_error {u v w : ℝ → E} {a b K eta : �
       exact (norm_inner_le_norm _ _).trans
         (mul_le_mul (hub t ht) (he t ht) (norm_nonneg _) hK)
     _ = _ := by rw [intervalIntegral.integral_const, smul_eq_mul]; ring
-
-
-
-
 
 theorem collar_flux_tendsto {T N : ℕ → ℝ → E} {U V : ℝ → E}
     {delta eta : ℕ → ℝ} {a b C : ℝ}

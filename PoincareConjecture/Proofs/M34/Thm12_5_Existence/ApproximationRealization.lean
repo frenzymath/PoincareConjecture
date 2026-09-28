@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ApproximationEvolution
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -25,17 +15,12 @@ open SpacetimeBounds
 
 variable {g0 : StandardInitialMetric} (A : CompactCapApproximation g0)
 
-
-
 theorem contDiffOn_coefficients_slice (k : ℕ) (t : ℝ) :
     ContDiffOn ℝ ∞ (A.coefficients k t) (compactCapSource g0 k) := by
   intro x hx
   exact (((A.flow k).metric t).contDiffAt_pullbackCoefficients
     ((compactCapChart_contMDiffOn g0 k).contMDiffAt
       ((compactCapSource_isOpen g0 k).mem_nhds hx))).contDiffWithinAt
-
-
-
 
 theorem exists_metric_twoJet_realization (k : ℕ) {t : ℝ} (ht : t ∈ Icc 0 A.time)
     {x : StandardCapSpace} (hx : x ∈ compactCapSource g0 k) :

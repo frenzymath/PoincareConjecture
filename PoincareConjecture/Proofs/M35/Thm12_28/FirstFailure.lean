@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CanonicalScalarEstimates
 import Mathlib.Order.Filter.AtTopBot.Archimedean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_bad_point_with_earlier_control {g₀ : StandardInitialMetric}
     (F : MaximalStandardCapFlow g₀) (Good : ℝ → StandardCapSpace → Prop)
@@ -62,9 +51,6 @@ theorem exists_bad_point_with_earlier_control {g₀ : StandardInitialMetric}
     ⟨s, ⟨hs.1, hst.trans ht.2⟩, y, rfl, hbad_y⟩
   have hupper := le_csSup hbounded hmem
   linarith
-
-
-
 
 theorem exists_first_failure_sequence {g₀ : StandardInitialMetric}
     (F : MaximalStandardCapFlow g₀) (Good : ℝ → StandardCapSpace → Prop)

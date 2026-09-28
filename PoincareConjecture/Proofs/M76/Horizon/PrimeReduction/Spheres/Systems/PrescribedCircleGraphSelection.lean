@@ -10,14 +10,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.SelectedCircl
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.SelectedCircleContactCounts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.SelectedCircleGraphPosition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_neck_balanced_scale_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

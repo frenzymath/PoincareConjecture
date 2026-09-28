@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Tails.TotalMass
 import PoincareConjecture.Proofs.Horizon.Analysis.Asymptotics.MultiplicativeBounds
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

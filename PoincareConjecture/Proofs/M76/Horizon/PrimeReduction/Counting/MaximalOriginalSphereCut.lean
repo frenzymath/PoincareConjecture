@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.MaximalCutE
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedExtensionPorts
 import Mathlib.Data.Nat.Find
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

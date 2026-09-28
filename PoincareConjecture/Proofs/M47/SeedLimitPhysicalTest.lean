@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedCylinderRecenter
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ open PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {C : GeneralizedSliceCarrier.{u}}
   {origin Q : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem seedLimit_physical_recentered_test
     (e : GeneralizedFlowCylinder H.generalized C origin Q I U)
@@ -59,8 +49,6 @@ theorem seedLimit_physical_recentered_test
   · intro s hs y hy
     rw [hmap s hs y hy, H.curvature_norm_pullback]
     exact hK s hs y hy
-
-
 
 theorem seedLimit_volume_of_physical_test
     (e : GeneralizedFlowCylinder H.generalized C origin Q I U)

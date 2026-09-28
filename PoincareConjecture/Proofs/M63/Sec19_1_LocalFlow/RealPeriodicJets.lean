@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSobolevJets
 import PoincareConjecture.Proofs.M63.Mathlib.ComplexLpRealification
 import PoincareConjecture.Proofs.M03.Existence.SpectralScaleNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -17,24 +9,16 @@ open scoped ENNReal
 
 namespace PoincareConjecture.M63
 
-
-
-
 noncomputable def periodicSpectrum (L : ℝ) (p : ℤ × Fin 2) : NNReal :=
   ⟨(2 * Real.pi * (p.1 : ℝ) / L) ^ 2, sq_nonneg _⟩
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 noncomputable def realPeriodicJet (k j : ℕ) (hj : j ≤ k) :
     State (ℤ × Fin 2) →L[ℝ] C(AddCircle L, ℝ) :=
   (Complex.reCLM.compLeftContinuous ℝ (AddCircle L)).comp
     (((periodicSobolevJet (L := L) k j hj).restrictScalars ℝ).comp
       complexLpRealEquiv.symm.toContinuousLinearEquiv.toContinuousLinearMap)
-
-
 
 theorem norm_realPeriodicJet_le (k j : ℕ) (hj : j ≤ k) (u : State (ℤ × Fin 2)) :
     ‖realPeriodicJet (L := L) k j hj u‖ ≤
@@ -48,17 +32,12 @@ theorem norm_realPeriodicJet_le (k j : ℕ) (hj : j ≤ k) (u : State (ℤ × Fi
   exact hnorm.trans (by simpa using
     norm_periodicSobolevJet_le (L := L) k j hj (complexLpRealEquiv.symm u))
 
-
-
 theorem hasDerivAt_realPeriodicJet {k j : ℕ} (hj : j < k)
     (u : State (ℤ × Fin 2)) (x : ℝ) :
     HasDerivAt (fun y : ℝ => realPeriodicJet (L := L) k j hj.le u (y : AddCircle L))
       (realPeriodicJet (L := L) k (j + 1) hj u (x : AddCircle L)) x := by
   exact Complex.reCLM.hasFDerivAt.comp_hasDerivAt x
     (hasDerivAt_periodicSobolevJet hj (complexLpRealEquiv.symm u) x)
-
-
-
 
 theorem realPeriodicJet_regular (k : ℕ) (u : State (ℤ × Fin 2)) :
     let U := fun x : ℝ => realPeriodicJet (L := L) k 0 (Nat.zero_le k) u (x : AddCircle L)
@@ -93,8 +72,6 @@ theorem realPeriodicJet_regular (k : ℕ) (u : State (ℤ × Fin 2)) :
 
 omit [Fact (0 < L)] in
 
-
-
 theorem complexLpRealEquiv_scaleDecode (l : ℕ) (u : State (ℤ × Fin 2)) (n : ℤ) :
     complexLpRealEquiv.symm (scaleDecode (periodicSpectrum L) l u) n =
       (((Real.sqrt (1 + (2 * Real.pi * (n : ℝ) / L) ^ 2) ^ l)⁻¹ : ℝ) : ℂ) *
@@ -105,9 +82,6 @@ theorem complexLpRealEquiv_scaleDecode (l : ℕ) (u : State (ℤ × Fin 2)) (n :
     (a : ℂ) * ((u (n, 0) : ℂ) + Complex.I * (u (n, 1) : ℂ))
   simp only [Complex.ofReal_mul]
   ring
-
-
-
 
 theorem realPeriodicJet_scaleDecode (k j l : ℕ) (hj : j ≤ k)
     (u : State (ℤ × Fin 2)) :

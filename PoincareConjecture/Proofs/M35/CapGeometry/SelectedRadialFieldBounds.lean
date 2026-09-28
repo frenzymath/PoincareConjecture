@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCoordinateMetric
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCurvatureDerivativeRealization
 import PoincareConjecture.Proofs.M35.CapGeometry.RetainedRadialFieldJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ local instance selectedRadialBoundDualNormedGroup : NormedAddCommGroup (V →L[�
 local instance selectedRadialBoundDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) := inferInstance
 local instance selectedRadialBoundMetricNormedGroup : NormedAddCommGroup B := inferInstance
 local instance selectedRadialBoundMetricNormedSpace : NormedSpace ℝ B := inferInstance
-
-
 
 theorem blowupSequence_coordinate_radial_projected_jets_bounded
     {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]
@@ -187,8 +176,6 @@ theorem blowupSequence_coordinate_radial_projected_jets_bounded
   change (tau (mu n) : ℝ) <
     ‖iteratedFDeriv ℝ m (Z (idx (mu n))) (pseq (mu n))‖ at hlower
   exact (hn.trans_le hnat').not_ge (hlower.le.trans hupper)
-
-
 
 theorem blowupSequence_coordinate_radial_jets_bounded
     (P : M35StandardCapPredecessors)

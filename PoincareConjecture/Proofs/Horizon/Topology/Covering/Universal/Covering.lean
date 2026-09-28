@@ -1,37 +1,8 @@
-
-
-
-
-
 module
 
 public import Mathlib.Topology.Homotopy.Lifting
 public import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.Basic
 public import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.LocalPathConnected
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public section
 noncomputable section
@@ -44,8 +15,6 @@ variable {X : Type*} [TopologicalSpace X]
 namespace Poincare.Topology.UniversalCover
 
 variable {x₀ x : X}
-
-
 
 theorem isCoveringMap [LocallyPathConnectedSpace X] [PathConnectedSpace X]
     [SemilocallySimplyConnectedSpace X] (x₀ : X) :
@@ -75,13 +44,10 @@ theorem isCoveringMap [LocallyPathConnectedSpace X] [PathConnectedSpace X]
   rw [IsOpen.trivializationDiscrete_baseSet]
   exact hxU
 
-
 instance discreteTopology_fiber [LocallyPathConnectedSpace X] [PathConnectedSpace X]
     [SemilocallySimplyConnectedSpace X] (x₀ x : X) :
     DiscreteTopology (proj (x₀ := x₀) ⁻¹' {x}) :=
   (isCoveringMap x₀ x).discreteTopology_fiber
-
-
 
 theorem joined_basepoint_ofBasedPath (α : BasedPath x₀) :
     Joined (ofBasedPath x₀ (BasedPath.ofPath (Path.refl x₀))) (ofBasedPath x₀ α) :=
@@ -98,7 +64,6 @@ theorem joined_basepoint_ofBasedPath (α : BasedPath x₀) :
         apply Path.Homotopic.hpath_hext
         intro t
 
-
         rfl
       target' := by
         rw [Path.initialSegmentFamily_one, ofBasedPath_def]
@@ -109,15 +74,12 @@ theorem joined_basepoint_ofBasedPath (α : BasedPath x₀) :
 
         rfl }⟩
 
-
 instance pathConnectedSpace (x₀ : X) :
     PathConnectedSpace (Poincare.Topology.UniversalCover x₀) := by
   refine ⟨⟨ofBasedPath x₀ (BasedPath.ofPath (Path.refl x₀))⟩, fun z₁ z₂ ↦ ?_⟩
   obtain ⟨α₁, rfl⟩ := surjective_ofBasedPath x₀ z₁
   obtain ⟨α₂, rfl⟩ := surjective_ofBasedPath x₀ z₂
   exact (joined_basepoint_ofBasedPath α₁).symm.trans (joined_basepoint_ofBasedPath α₂)
-
-
 
 private theorem ofBasedPath_append_initialSegmentFamily_zero {α : BasedPath x₀} {y : X}
     (γ : Path (BasedPath.endpoint α) y) :
@@ -135,8 +97,6 @@ private theorem ofBasedPath_append_initialSegmentFamily_zero {α : BasedPath x�
     simp
   exact ofBasedPath_eq_of_homotopic_toPath (x₀ := x₀) h0_end h0_hom
 
-
-
 private theorem ofBasedPath_append_initialSegmentFamily_one {α : BasedPath x₀} {y : X}
     (γ : Path (BasedPath.endpoint α) y) :
     ofBasedPath x₀ (BasedPath.append α (Path.initialSegmentFamily γ 1)) =
@@ -149,8 +109,6 @@ private theorem ofBasedPath_append_initialSegmentFamily_one {α : BasedPath x₀
   change (α.toPath.trans (γ.cast _ _)) t = (α.toPath.trans γ) t
   rw [Path.trans_apply, Path.trans_apply]
   split_ifs <;> simp only [Path.cast_coe]
-
-
 
 theorem liftPath_apply_one_eq_ofBasedPath_append
     [LocallyPathConnectedSpace X] [PathConnectedSpace X]
@@ -184,9 +142,6 @@ theorem liftPath_apply_one_eq_ofBasedPath_append
     ofBasedPath x₀ (BasedPath.append α γ)
   exact ofBasedPath_append_initialSegmentFamily_one γ
 
-
-
-
 private theorem quotient_mk_eq_refl_of_ofBasedPath_append_eq {α : BasedPath x₀}
     (γ : Path (BasedPath.endpoint α) (BasedPath.endpoint α))
     (h_end : ofBasedPath x₀ (BasedPath.append α γ) = ofBasedPath x₀ α) :
@@ -202,7 +157,6 @@ private theorem quotient_mk_eq_refl_of_ofBasedPath_append_eq {α : BasedPath x�
     ext t
     rfl
   exact h'.trans (Path.Homotopic.trans_refl α.toPath).symm
-
 
 instance simplyConnectedSpace [LocallyPathConnectedSpace X] [PathConnectedSpace X]
     [SemilocallySimplyConnectedSpace X] (x₀ : X) :
@@ -235,8 +189,6 @@ instance simplyConnectedSpace [LocallyPathConnectedSpace X] [PathConnectedSpace 
       hγ_null
   simpa [γ, ← Path.Homotopic.Quotient.mk_map] using! hcast
 
-
-
 theorem existsUnique_continuousMap_lifts {A : Type*} [TopologicalSpace A]
     [SimplyConnectedSpace A] [LocallyPathConnectedSpace A]
     [LocallyPathConnectedSpace X] [PathConnectedSpace X]
@@ -245,12 +197,10 @@ theorem existsUnique_continuousMap_lifts {A : Type*} [TopologicalSpace A]
     ∃! F : C(A, Poincare.Topology.UniversalCover x₀), F a₀ = e₀ ∧ proj ∘ F = f :=
   (isCoveringMap x₀).existsUnique_continuousMap_lifts f a₀ e₀ he
 
-
 theorem surjective_proj [PathConnectedSpace X] (x₀ : X) :
     Function.Surjective (proj (x₀ := x₀)) := by
   intro x
   exact ⟨⟨x, Path.Homotopic.Quotient.mk (PathConnectedSpace.somePath x₀ x)⟩, rfl⟩
-
 
 instance locallyPathConnectedSpace [LocallyPathConnectedSpace X] [PathConnectedSpace X]
     [SemilocallySimplyConnectedSpace X] (x₀ : X) :
@@ -262,9 +212,6 @@ end Poincare.Topology.UniversalCover
 universe u
 
 namespace Poincare.Topology
-
-
-
 
 theorem exists_simplyConnected_cover (X : Type u) [TopologicalSpace X]
     [PathConnectedSpace X] [LocallyPathConnectedSpace X]

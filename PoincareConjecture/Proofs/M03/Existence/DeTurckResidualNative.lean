@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricDomainNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckCompletedOutputNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckTraceCutoffNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -117,7 +110,6 @@ theorem probeDifference_eq_scalarProbe (g : RiemannianMetric n M)
     g0.inner x (d.fields ab.1 x) (d.fields ab.2 x) = h x (d.fields ab.1 x) (d.fields ab.2 x)
   rw [hmetric]
   ring
-
 
 def chartCorrection (r : ℕ) :
     NativeProbeL2 (iota := Fin d.fieldCount) d.charts.measure (2 * r + 1) →L[ℝ]
@@ -269,7 +261,6 @@ theorem correctedEntry_word (g : RiemannianMetric n M)
         ((directionalWord_contMDiff d.fields w
           (generatorCorrection_contMDiff d.fields d.charts g0 (A.cutoffs a) h ij.1 ij.2)).mdifferentiable
           (by simp) x))
-
 
 theorem correctedEntry_reconstruction {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (B : LeviCivitaData g0)

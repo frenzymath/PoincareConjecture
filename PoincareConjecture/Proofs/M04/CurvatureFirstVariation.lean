@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.ConnectionVariation
 import PoincareConjecture.Proofs.M04.SpacetimePairings
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -427,4 +420,3 @@ theorem hasDerivAt_curvatureTensor_first_variation (F : RicciFlow n M J)
   ring
 
 end PoincareConjecture.M04
-

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -28,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem EpsilonNeck.axial_width_le_pathELength
     (N : EpsilonNeck g) {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -71,9 +57,6 @@ theorem EpsilonNeck.axial_width_le_pathELength
       exact (houter.hasMFDerivAt.comp t hinner.hasMFDerivAt).hasFDerivAt.hasDerivAt
   rw [(hd.const_mul k).deriv, Real.enorm_eq_ofReal_abs, abs_mul, abs_of_nonneg hk]
   exact ENNReal.ofReal_le_ofReal (N.axial_mvfderiv_bound (hcarrier ht') _)
-
-
-
 
 theorem CapCertificate.end_width_le_pathELength
     (C : CapCertificate g) {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -225,9 +208,6 @@ theorem CapCertificate.end_width_le_pathELength
     rw [closure_Ioo (ne_of_lt hL)]
     exact ⟨hL.le, le_rfl⟩
   exact closure_minimal hwidth hclosed hLmem
-
-
-
 
 theorem CapCertificate.exteriorEDepth_add_end_width_le
     (C : CapCertificate g) {D : Set M} {x : M} (hx : x ∈ interior D)

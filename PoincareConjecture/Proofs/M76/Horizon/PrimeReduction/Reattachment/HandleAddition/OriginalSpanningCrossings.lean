@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningPatchCrossings
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningSideProvenance
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option quotPrecheck false
 set_option maxHeartbeats 1200000

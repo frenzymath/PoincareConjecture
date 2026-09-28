@@ -2,34 +2,11 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRegul
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema.FiniteRegularity
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.PoincareConjecture
 open _root_.PoincareConjecture.CapCertificate
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 

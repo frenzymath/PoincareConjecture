@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionDeformedAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,11 +7,6 @@ open Set Geometry
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 def HasAlexanderRegionBalls (S C : Set E) : Prop :=
   ∃ U : Set E, IsOpen U ∧ IsConnected U ∧ frontier U = S ∧
@@ -30,10 +16,6 @@ def HasAlexanderRegionBalls (S C : Set E) : Prop :=
       (frontier (C ×ˢ Icc (-1 : ℝ) 1) \ U ×ˢ {1}) (S ×ˢ {1})
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem HasAlexanderRegionBalls.of_deformed_caps {b c d rim C : Set E}
     (hdim : Module.finrank ℝ E = 3)

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HyperbolaDiscArcs
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Matrix
 
 namespace PoincareConjecture.M25.Topology3D.SaddleOrientation
-
-
 
 theorem port_sign_product_neg_of_scaled
     (a b sx0 sy0 sx1 sy1 : ℝ)
@@ -30,8 +20,6 @@ theorem port_sign_product_neg_of_scaled
   have hnonneg := mul_nonneg (le_of_not_gt hn) (sq_nonneg (a * b))
   rw [← heq] at hnonneg
   exact (not_lt_of_ge hnonneg) h
-
-
 
 theorem exists_upper_arc_matching
     (ends : Fin 2 × Fin 2 ≃ Fin 4) :

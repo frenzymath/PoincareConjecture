@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CompatibleCylinderDifferential
 import PoincareConjecture.Proofs.M34.Standard.IntervalClockDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem compatibleCylinder_curve_mfderivWithin_one (e : CompatibleSpacetimeCylinder S D M)
     (g : SpacetimeCylinderMetric e) {A : Set ℝ} {clock : ℝ → ℝ} {gamma : ℝ → M}

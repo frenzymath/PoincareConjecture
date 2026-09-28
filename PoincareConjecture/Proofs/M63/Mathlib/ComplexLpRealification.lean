@@ -4,16 +4,6 @@ import Mathlib.Analysis.Normed.Operator.LinearIsometry
 import Mathlib.Topology.Algebra.InfiniteSum.Real
 import Mathlib.Data.Fin.VecNotation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -21,9 +11,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {ι : Type*}
-
-
-
 
 theorem memℓp_complex_coords_iff (f : ι → ℂ) :
     Memℓp (fun p : ι × Fin 2 => ![(f p.1).re, (f p.1).im] p.2) 2 ↔ Memℓp f 2 := by
@@ -38,9 +25,6 @@ theorem memℓp_complex_coords_iff (f : ι → ℂ) :
     ring
   simp_rw [hsq]
   exact ⟨And.right, fun h => ⟨fun _ => (hasSum_fintype _).summable, h⟩⟩
-
-
-
 
 noncomputable def complexLpRealEquiv :
     lp (fun _ : ι => ℂ) 2 ≃ₗᵢ[ℝ] lp (fun _ : ι × Fin 2 => ℝ) 2 := by
@@ -99,22 +83,13 @@ noncomputable def complexLpRealEquiv :
       ring
     nlinarith [norm_nonneg (R z), norm_nonneg z]
 
-
-
 theorem complexLpRealEquiv_apply (z : lp (fun _ : ι => ℂ) 2) (p : ι × Fin 2) :
     complexLpRealEquiv z p = ![(z p.1).re, (z p.1).im] p.2 := rfl
-
-
-
 
 theorem complexLpRealEquiv_symm_apply (u : lp (fun _ : ι × Fin 2 => ℝ) 2) (i : ι) :
     complexLpRealEquiv.symm u i = (u (i, 0) : ℂ) + Complex.I * (u (i, 1) : ℂ) := by
   change (⟨u (i, 0), u (i, 1)⟩ : ℂ) = _
   apply Complex.ext <;> simp
-
-
-
-
 
 theorem complexLpRealEquiv_real_weight_iff (m : ι → ℝ)
     (u v : lp (fun _ : ι => ℂ) 2) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M25NeckCapTopology
 import PoincareConjecture.Statements.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -29,14 +21,6 @@ structure RepairedNeckCapTopologyTheory where
     ∀ g : RiemannianMetric 3 M,
       ∀ H : NeckOnlyCover g, H.epsilon ≤ epsilon₀ →
         ∀ hsep, AppendixA19Theory g H hsep
-
-
-
-
-
-
-
-
 
   a20 : ∀ {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]

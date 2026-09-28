@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactPLDomainImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.HamiltonIntervalTorus
 variable {M E G : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem exists_local_polyhedral_image_pair
     {S B : Set M} {F : M → G} (hinj : InjOn F S)

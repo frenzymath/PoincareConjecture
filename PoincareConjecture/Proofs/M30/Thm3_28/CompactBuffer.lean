@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem isCompact_closure_initial_ball_of_terminal_buffer
     {n : ℕ} {M : Type u} [TopologicalSpace M]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [Fintype K.faces] [Fintype L.faces] {T : BoundaryTriangleFibers K L}
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 structure BoundaryVertexFamily (P : BoundaryEdgeFamily T) where
   chart : ∀ p : L.vertices,
@@ -37,9 +27,6 @@ structure BoundaryVertexFamily (P : BoundaryEdgeFamily T) where
     ∀ (x : E × ℝ) (hx : x ∈ (L.barycentricDualBlock s).space ×ˢ I),
       (chart p ⟨x, ⟨space_subset_of_le (L.barycentricDualBlock_antitone
         (Finset.singleton_subset_iff.mpr hps)) hx.1, hx.2⟩⟩ : E) = P.map s x
-
-
-
 
 theorem BoundaryEdgeFamily.exists_vertex_family [FiniteDimensional ℝ E]
     (P : BoundaryEdgeFamily T) (hLK : L ≤ K)

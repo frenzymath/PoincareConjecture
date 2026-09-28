@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalSphereSimp
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
 
 theorem not_chartwisePLSphere_of_essential_rim
     {X ι : Type*} [TopologicalSpace X]
@@ -34,9 +24,6 @@ theorem not_chartwisePLSphere_of_essential_rim
   rintro ⟨sph⟩
   let : SimplyConnectedSpace S := sph.simplyConnectedSpace
   exact hessential (Subsingleton.elim _ _)
-
-
-
 
 theorem exists_whole_component_essential_rim
     {X ι σ : Type*} [TopologicalSpace X]
@@ -80,8 +67,6 @@ theorem exists_whole_component_essential_rim
     exact hessential (Path.Homotopic.Quotient.eq.mpr hnullF)
   exact ⟨i, gammaS, hvalues, fun _ => rfl, hessentialS,
     not_chartwisePLSphere_of_essential_rim e gammaS hessentialS⟩
-
-
 
 theorem original_component_genus_pos_of_essential_rim
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

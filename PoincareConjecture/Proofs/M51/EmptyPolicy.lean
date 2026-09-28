@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyExtension
 import PoincareConjecture.Proofs.M33.OldEventPolicy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ universe u
 namespace PoincareConjecture
 
 namespace SurgeryEventData
-
 
 theorem reindexPast_preservation
     {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
@@ -43,7 +34,6 @@ end SurgeryEventData
 
 namespace SurgeryVanishingEventData
 
-
 theorem reindexPast_preservation
     {P : SurgeryParameters} {slice : Real -> GeneralizedSliceCarrier.{u}}
     {metric : forall t, RiemannianMetric 3 (slice t).carrier} {T : Real}
@@ -61,7 +51,6 @@ namespace M51Empty
 variable (F : SurgeryFlowData.{u}) {a : Real} (ha : a ∈ F.time_domain)
     [IsEmpty (F.slice a).carrier]
 
-
 theorem oldEventDataPreservation :
     M33OldEventDataPreservation (extension F ha) := by
   constructor
@@ -78,8 +67,6 @@ theorem oldEventDataPreservation :
     cases Subsingleton.elim hT' hT
     exact (F.vanishing_event T hT).reindexPast_preservation
       (fun t => min t a) (event_clock F ha T hT)
-
-
 
 theorem terminalPolicy
     (policy : SurgeryFlowTerminalPolicyOn F F.time_domain) :

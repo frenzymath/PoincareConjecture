@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpTangent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +8,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_tangent_of_unit_error
     {M : Type u} [TopologicalSpace M]

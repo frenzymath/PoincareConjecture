@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeMidpoint
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -28,9 +14,6 @@ open M65Interior M65Boundary
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
 
-
-
-
 theorem coneCartesianField_clm {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup G] [NormedSpace ℝ G]
@@ -42,11 +25,6 @@ theorem coneCartesianField_clm {E G : Type*}
       L (coneCartesianField g r v0 v d s θ i) := by
   have h := L.hasFDerivAt.comp (coneCoordinates r v0 v s θ) hg.hasFDerivAt
   simp only [coneCartesianField, h.fderiv, ContinuousLinearMap.comp_apply, map_smul, map_add]
-
-
-
-
-
 
 theorem midpoint_halfCone_green_clm [CompleteSpace C] [ProperSpace C] {N : ℕ}
     {g : C → EuclideanSpace ℝ (Fin N)}

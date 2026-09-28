@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalCapNearbyErrors
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,8 +23,6 @@ noncomputable local instance capNearbyNeckCoefficientNorm :
 
 noncomputable local instance capNearbyNeckCoefficientSpace : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_actualCap_nearby_neck_coefficient_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v nu : ℝ}
@@ -144,8 +133,6 @@ theorem exists_actualCap_nearby_neck_coefficient_tolerance {g0 : StandardInitial
   dsimp only [tau]
   field_simp [hC.ne', halpha.ne']
 
-
-
 theorem exists_actualCap_nearby_neck_normalized_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}
     (htheta : theta < 1) (hA : 0 < A) (hv : v ∈ Icc 0 theta)
@@ -242,8 +229,6 @@ theorem exists_actualCap_nearby_neck_normalized_tolerance {g0 : StandardInitialM
       roundCylinderPullback (F.metric (t + s / Q)) (phi ∘ N.coordinate_map) z u u')) =
     R * roundCylinderPullback (F.metric (t + s / Q)) (phi ∘ N.coordinate_map) z u u'
   field_simp [N.scale_pos.ne', hh.ne']
-
-
 
 theorem exists_actualCap_nearby_image_neck_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

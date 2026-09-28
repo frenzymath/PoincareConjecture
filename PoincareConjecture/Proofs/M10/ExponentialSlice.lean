@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M10.TimeSliceHomeomorph
 import PoincareConjecture.Proofs.M10.MetricCoordinates
 import PoincareConjecture.Statements.Ch06.ReducedLength
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,7 +26,6 @@ noncomputable def exponentialSliceChart (G : LExponentialGeometry F T τmax p) (
     (timeSliceHomeomorph G.regular_chart
       (fun z ↦ congrArg Prod.snd (G.regular_forward z)) G.regular_inverse_time τ)
 
-
 theorem exponentialSliceChart_apply (G : LExponentialGeometry F T τmax p) (τ : ℝ)
     (z : EuclideanSpace ℝ (Fin n)) :
     exponentialSliceChart G τ z = G.gamma (metricCoordinates (F.metric T) p z) τ := by
@@ -43,12 +35,10 @@ theorem exponentialSliceChart_apply (G : LExponentialGeometry F T τmax p) (τ :
   change (G.regular_chart (metricCoordinates (F.metric T) p z, τ)).1 = _
   rw [G.regular_forward]
 
-
 theorem exponentialSliceChart_source (G : LExponentialGeometry F T τmax p) (τ : ℝ) :
     (exponentialSliceChart G τ).source =
       {z | (metricCoordinates (F.metric T) p z, τ) ∈ G.toLExponentialFamily.regularDomain} := by
   simp [exponentialSliceChart, timeSliceHomeomorph, G.regular_source]
-
 
 theorem exponentialSliceChart_target (G : LExponentialGeometry F T τmax p) (τ : ℝ) :
     (exponentialSliceChart G τ).target = {q | (q, τ) ∈ G.regularImage} := by

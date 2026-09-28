@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetNorm
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -31,8 +22,6 @@ private theorem cylinder_gram_center (u : ℝ) (hu : u < 1)
   simp only [ContinuousLinearEquiv.apply_symm_apply] at h
   simp only [sphere_chart_center]
   exact h
-
-
 
 theorem cylinder_ricci_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)
@@ -60,8 +49,6 @@ theorem cylinder_ricci_center (u : ℝ) (hu : u < 1)
   fin_cases i <;> fin_cases j <;>
     norm_num [Fin.sum_univ_succ, roundCylinderCoordinateBasis,
       EuclideanSpace.inner_single_left] <;> field_simp [ht]
-
-
 
 theorem cylinder_scalarCurvature_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)
@@ -117,8 +104,6 @@ private theorem sum_four_tuple (f : (Fin 4 → Fin 3) → ℝ) :
   apply Finset.sum_congr rfl
   intro l _
   congr 1
-
-
 
 theorem cylinder_curvatureTensorNorm_center (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)

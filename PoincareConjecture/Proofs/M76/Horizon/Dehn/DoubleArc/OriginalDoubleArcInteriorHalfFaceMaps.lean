@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalInteriorVert
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondCoordinateRadii
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedEndpointHalfFaceMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -21,7 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
 open Classical in
-
 
 theorem exists_original_interior_axis_parameter
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTriangleC
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -18,7 +9,6 @@ open Set Geometry TriangleDiskModel
 namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 noncomputable def leafTriangleMap (a b c : E) : (ℝ × ℝ) →ᴬ[ℝ] E × ℝ :=
   (((ContinuousAffineMap.lineMap a b).comp
@@ -46,7 +36,6 @@ theorem leafTriangleMap_common_edge (a b c : E) :
     _ = segment ℝ (inclusion (E := E) 0 b) (inclusion (E := E) 0 a) := by simp [inclusion]
     _ = _ := (image_segment ℝ (inclusion (E := E) 0).toAffineMap _ _).symm
 
-
 theorem leafTriangleMap_inter_zero_carrier (a b c : E) {s : Set E}
     (hbase : segment ℝ b a ⊆ s) :
     (inclusion (E := E) 0 '' s) ∩
@@ -70,7 +59,6 @@ theorem leafTriangleMap_inter_zero_carrier (a b c : E) {s : Set E}
     obtain ⟨hx0, hy, hy1⟩ := (mem_common_edge_iff x).mp hx
     exact (mem_right_region_iff x).mpr ⟨by simp [hx0], hy, by simpa [hx0]⟩
 
-
 theorem projection_leafTriangleMap_image (a b c : E) :
     Prod.fst '' (leafTriangleMap a b c '' convexHull ℝ (range rightTriangle)) =
       convexHull ℝ ({a, c, b} : Set E) := by
@@ -82,7 +70,6 @@ theorem projection_leafTriangleMap_image (a b c : E) :
     _ = F '' convexHull ℝ (range rightTriangle) := by rw [image_image]; rfl
     _ = convexHull ℝ (F '' range rightTriangle) := F.image_convexHull _
     _ = _ := by rw [hvertices]
-
 
 def leafOuterSides (a b c : E) : Set (E × ℝ) :=
   segment ℝ (a, 0) (c, 1) ∪ segment ℝ (c, 1) (b, 0)
@@ -122,7 +109,6 @@ theorem leafOuterSides_zero_height {a b c : E} {x : E × ℝ}
     left
     simpa [hu0, hv1] using hx.symm
 
-
 def freshLeafRim (r : Set E) (a b c : E) : Set (E × ℝ) :=
   ((inclusion (E := E) 0 '' r) ∪
     (leafOuterSides a b c ∪ inclusion (E := E) 0 '' segment ℝ b a)) \
@@ -136,7 +122,6 @@ theorem leafOuterSides_subset_freshLeafRim (r : Set E) (a b c : E) :
   apply hne
   apply leafOuterSides_zero_height hx
   exact (congrArg Prod.snd hwx).symm
-
 
 theorem retained_subset_freshLeafRim {r t : Set E} (a b c : E)
     (htr : t ⊆ r) (htbase : Disjoint t (segment ℝ b a \ {b, a})) :
@@ -153,7 +138,6 @@ theorem retained_subset_freshLeafRim {r t : Set E} (a b c : E)
   · exact hne (Or.inr rfl)
 
 variable [FiniteDimensional ℝ E]
-
 
 theorem fresh_leaf_disk_attachment {s r : Set E}
     (hs : IsFinitePLBallPair (ℝ × ℝ) s r)

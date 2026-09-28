@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.OrthogonalAction
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 private instance sphereDimensionFact : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 noncomputable def linearSphereDiffeomorph (q0 : UnitTwoSphere) (L : E3 ≃L[ℝ] E3) :
     UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere := by
@@ -48,18 +37,12 @@ noncomputable def linearSphereDiffeomorph (q0 : UnitTwoSphere) (L : E3 ≃L[ℝ]
       contMDiff_toFun := hs L
       contMDiff_invFun := hs L.symm }
 
-
-
 @[simp] theorem linearSphereDiffeomorph_apply (q0 q : UnitTwoSphere) (L : E3 ≃L[ℝ] E3) :
     linearSphereDiffeomorph q0 L q = unitRadialProjection q0 (L (q : E3)) := rfl
-
-
 
 @[simp] theorem linearSphereDiffeomorph_symm_apply (q0 q : UnitTwoSphere)
     (L : E3 ≃L[ℝ] E3) :
     (linearSphereDiffeomorph q0 L).symm q = unitRadialProjection q0 (L.symm (q : E3)) := rfl
-
-
 
 theorem linearSphereDiffeomorph_isometry_apply (q0 q : UnitTwoSphere)
     (A : E3 ≃ₗᵢ[ℝ] E3) :
@@ -70,8 +53,6 @@ theorem linearSphereDiffeomorph_isometry_apply (q0 q : UnitTwoSphere)
     A.injective.ne (ne_zero_of_mem_unit_sphere q) |>.trans_eq (map_zero A)
   rw [unitRadialProjection_coe_of_ne_zero q0 hn, A.norm_map,
     norm_eq_of_mem_sphere q, inv_one, one_smul]
-
-
 
 theorem contMDiff_linearSphereDiffeomorph_family (q0 : UnitTwoSphere)
     (L : ℝ → E3 ≃L[ℝ] E3)

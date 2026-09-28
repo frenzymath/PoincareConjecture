@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

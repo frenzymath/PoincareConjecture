@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.PointSelection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Rescaling.Closed
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem AncientKappaNoncollapsed.of_terminalHomothety
     {b κ Q : ℝ} {F : RicciFlow 3 M (Iic b)} {G : RicciFlow 3 M (Iic 0)}
@@ -84,8 +71,6 @@ theorem AncientKappaNoncollapsed.of_terminalHomothety
 namespace RicciFlow
 
 variable {b κ : ℝ} (F : RicciFlow 3 M (Iic b))
-
-
 
 theorem exists_normalized_controlled_ancient_rescaling
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -146,9 +131,6 @@ theorem exists_normalized_controlled_ancient_rescaling
   · intro s hs x hx
     rw [hnorm, abs_div, abs_of_pos hQ]
     exact (div_le_iff₀ hQ).mpr (hcontrol _ (htime s hs) x (hball.symm ▸ hx))
-
-
-
 
 theorem exists_escaping_normalized_ancient_rescaling_sequence
     (P : M23NormalizedKappaCompactnessPredecessors)

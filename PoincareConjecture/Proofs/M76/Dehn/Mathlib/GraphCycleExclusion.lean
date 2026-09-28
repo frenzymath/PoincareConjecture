@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GraphWalkPaths
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredLoopSplit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace SimpleGraph.Walk
 
 variable {V X : Type*} [TopologicalSpace X] {G : SimpleGraph V}
-
-
-
-
-
 
 theorem exists_excluded_realized_cycle (a : V → X)
     (edge : ∀ {u v : V}, G.Adj u v → _root_.Path (a u) (a v))

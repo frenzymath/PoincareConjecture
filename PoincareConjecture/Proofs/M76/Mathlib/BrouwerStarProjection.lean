@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.TransversePlaneDimension
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem nonempty_vertexStarPlanes_of_affineOnFaces (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) {p : E} (hp : {p} ∈ K.faces)

@@ -1,22 +1,11 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_contDiffOn_spatial_jets
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

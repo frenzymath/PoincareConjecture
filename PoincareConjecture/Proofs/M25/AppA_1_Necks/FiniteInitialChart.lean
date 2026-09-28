@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedChainCuts
 import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseUpperStretch
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem BalancedNeckChain.exists_finite_initial_carrier_chart :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

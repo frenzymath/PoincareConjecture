@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.PicardNeighborhood
 import PoincareConjecture.Proofs.M09.PathRescale
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

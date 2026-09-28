@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.LocalGradientDifference
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.RepresentativeEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -80,8 +72,6 @@ private theorem differential_sub_linear_sq_le {n : ℕ}
   change ‖fderiv ℝ f x - ℓ‖ ^ 2 ≤ 2 * b * (g.inner x u u + δ ^ 2)
   exact h.trans (by nlinarith only [mul_le_mul_of_nonneg_left hsub hb,
     mul_le_mul_of_nonneg_left hv hb])
-
-
 
 theorem exists_uniform_weakHarmonicCoordinate_differential_close
     {n : ℕ} (hn : 2 ≤ n) {R K τ : ℝ} (hR : 0 < R) (hK : 0 ≤ K) (hτ : 0 < τ) :

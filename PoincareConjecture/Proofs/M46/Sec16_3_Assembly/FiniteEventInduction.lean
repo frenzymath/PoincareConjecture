@@ -3,13 +3,6 @@ import Mathlib.Order.WellFoundedSet
 import Mathlib.Order.Interval.Set.LinearOrder
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,8 +25,6 @@ private theorem propagation_from_event_values {a b : ℝ} {S : Set ℝ}
   · apply hordinary a ⟨le_rfl, hab⟩ b ⟨hab, le_rfl⟩ hab
     · exact Set.disjoint_left.mpr (fun t ht htab => hn ⟨t, ht, htab⟩)
     · exact ha
-
-
 
 theorem finite_event_forward_induction {a b : ℝ} {S : Set ℝ}
     (hab : a ≤ b) (hfinite : (S ∩ Ioc a b).Finite) (Q : ℝ → Prop) (ha : Q a)

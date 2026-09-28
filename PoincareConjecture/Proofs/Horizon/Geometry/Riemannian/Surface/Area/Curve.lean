@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity
 import Mathlib.Topology.MetricSpace.HausdorffDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,8 +45,6 @@ private theorem volumeMeasure_curve_image_eq_zero_in_chart
     (by rintro _ ⟨t, ht, rfl⟩; exact e.map_source (hchart ht)),
     Measure.restrict_eq_zero.mpr hnull, lintegral_zero_measure]
 
-
-
 theorem volumeMeasure_image_curve_eq_zero
     (g : RiemannianMetric 2 S) {γ : ℝ → S} {a b : ℝ}
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 2) ∞ γ (Icc a b)) :
@@ -87,7 +76,6 @@ theorem volumeMeasure_image_curve_eq_zero
     obtain ⟨u, hu, htu⟩ := mem_iUnion₂.mp (hT ht)
     exact mem_iUnion₂.mpr ⟨u, hu, ⟨t, ⟨ht, htu⟩, rfl⟩⟩
   · exact (measure_biUnion_null_iff T.countable_toSet).mpr fun t _ => hzero t
-
 
 theorem volumeMeasure_singleton_eq_zero (g : RiemannianMetric 2 S) (p : S) :
     g.volumeMeasure {p} = 0 := by

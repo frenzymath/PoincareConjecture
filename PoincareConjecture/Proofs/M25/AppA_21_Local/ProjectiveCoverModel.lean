@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -19,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.StandardProjectiveSmoothCover
-
-
 
 theorem exists_projective_homeomorph
     {Q : Type u} [TopologicalSpace Q]

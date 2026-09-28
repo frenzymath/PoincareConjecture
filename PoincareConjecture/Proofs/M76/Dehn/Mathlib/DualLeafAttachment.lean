@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SurfaceDualEdgeGeometry
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SurfaceVertexDualDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,9 +21,6 @@ private theorem face_of_mem_vertex_dualBlocks {p q x : E}
     at hx
   exact hx
 
-
-
-
 theorem vertexDualUnion_inter_leaf_block
     {S : Set K.vertices} {p q : K.vertices} (hq : q ∈ S)
     (hleaf : ∀ r ∈ S, ({p.val, r.val} : Finset E) ∈ K.faces → r = q) :
@@ -52,11 +38,6 @@ theorem vertexDualUnion_inter_leaf_block
     exact ⟨mem_iUnion₂.mpr ⟨q, hq, hpair.2⟩, hpair.1⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem isFinitePLBallPair_vertexDualUnion_insert_of_leaf
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

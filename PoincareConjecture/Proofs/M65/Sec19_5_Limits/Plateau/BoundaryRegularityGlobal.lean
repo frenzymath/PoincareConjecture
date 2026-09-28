@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.AttainmentIdentities
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularitySemicircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -219,10 +209,6 @@ private theorem diskTraceExtension_local {N : ℕ}
   exact hcomp'.congr_of_eventuallyEq_of_mem hlocal (by
     change ‖z - 0‖ ≤ 1
     simp only [sub_zero, hz, le_refl])
-
-
-
-
 
 theorem exists_global_boundary_extension {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}

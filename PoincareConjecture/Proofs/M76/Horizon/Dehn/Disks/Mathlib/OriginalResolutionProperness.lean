@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalNormalizedResolutionFibers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +18,6 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Topologica
   {f : V2 → X} {Z : Set X} {base : Z} {G : Subgroup (FundamentalGroup Z base)}
   {c : Bool → P2 → V2} {τ : C3 → X}
   {D : OriginalResolutionWordExclusionData f Z base G c τ (1 / 4)}
-
-
 
 theorem OriginalNormalizedResolutionPairData.images_subset_original
     (P : OriginalNormalizedResolutionPairData e D) :
@@ -53,8 +43,6 @@ theorem OriginalNormalizedResolutionPairData.images_subset_original
       ((image_mono hMS).trans subset_union_left)) (hreplace true true))
       ((image_mono hCS).trans subset_union_left)
 
-
-
 theorem OriginalNormalizedResolutionPairData.region_properness
     (P : OriginalNormalizedResolutionPairData e D) {R : Set X}
     (hfR : MapsTo f D2 R) (hτR : MapsTo τ tube R)
@@ -77,8 +65,6 @@ theorem OriginalNormalizedResolutionPairData.region_properness
   exact ⟨fun x hx ↦ (hU x hx).1, fun x hx ↦ (hV x hx).1,
     fun x hx ↦ (hU x hx).2.trans (P.properU x hx),
     fun x hx ↦ (hV x hx).2.trans (P.properV x hx)⟩
-
-
 
 theorem RetainedSquareMapFacts.unique_other_point
     {Y : Type*} {f g : V2 → Y} {S : Set V2} {j : S → V2}
@@ -106,8 +92,6 @@ theorem RetainedSquareMapFacts.unique_other_point
   have hbd : (b : V2) = d := hold a (facts.old_subset a.property)
     b (facts.old_subset b.property) d (facts.old_subset d.property) hab had hnab hnad
   exact hjb.symm.trans ((congrArg j (Subtype.ext hbd)).trans hjd)
-
-
 
 theorem OriginalNormalizedResolutionPairData.unique_other_points
     (P : OriginalNormalizedResolutionPairData e D)

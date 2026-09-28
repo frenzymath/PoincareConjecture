@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
-
 
 theorem deriv2_polarDensityRoot_le_radialRicci
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)
@@ -107,7 +105,6 @@ theorem deriv2_polarDensityRoot_le_radialRicci
   rw [hval] at hcomp
   simpa only [κ, hrad t ht'] using hcomp
 
-
 theorem radialRicci_le_zero_of_pullbackVolumeDensity_eq_one
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)
     {e : EuclideanSpace ℝ (Fin (m + 1)) → M}
@@ -176,7 +173,6 @@ private theorem continuousAt_ricci_curve
   simp only [Function.comp_apply, TensorFiber.continuousMultilinear_apply, S,
     c.left_inv hs, LeviCivitaData.tensorCoordinateSection_apply,
     LeviCivitaData.tensorCoordinateEvaluation, LeviCivitaData.ricciEvaluation, hrec]
-
 
 theorem ricci_center_unit_eq_zero_of_pullbackVolumeDensity_eq_one
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

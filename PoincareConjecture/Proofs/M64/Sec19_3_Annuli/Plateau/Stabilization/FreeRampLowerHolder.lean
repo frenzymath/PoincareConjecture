@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreeRampAllCenterGrowth
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeLowerHolder
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,9 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space 
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem auxiliaryCircle_free_ramp_lower_holder
     (P : M62.CircleProductData F circumference)

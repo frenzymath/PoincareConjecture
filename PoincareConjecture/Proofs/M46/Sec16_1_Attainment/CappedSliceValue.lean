@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.SliceMinimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,15 +13,11 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
 
-
-
 noncomputable def cappedSliceAction
     (G : GeneralizedLGeometryTransport 3 X time I) (T : ℝ) (x : G.Point)
     (barrier b : ℝ) : ℝ :=
   sInf (insert barrier {a | ∃ y : G.Point,
     ∃ p : M14BackwardPath G T 0 (b ^ 2) x y, M14BackwardLAction G p = a})
-
-
 
 theorem cappedSliceAction_eq_of_minimum {barrier b : ℝ} {y : G.Point}
     (p : M14BackwardPath G T 0 (b ^ 2) x y)
@@ -45,8 +32,6 @@ theorem cappedSliceAction_eq_of_minimum {barrier b : ℝ} {y : G.Point}
   · exact hpB
   · exact hmin z q
 
-
-
 theorem cappedSliceAction_eq_barrier {barrier b : ℝ}
     (hmin : ∀ z : G.Point, ∀ q : M14BackwardPath G T 0 (b ^ 2) x z,
       barrier ≤ M14BackwardLAction G q) :
@@ -57,9 +42,6 @@ theorem cappedSliceAction_eq_barrier {barrier b : ℝ}
   rcases ha with rfl | ⟨z, q, rfl⟩
   · exact le_rfl
   · exact hmin z q
-
-
-
 
 theorem cappedSliceAction_alternative
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -92,8 +74,6 @@ theorem cappedSliceAction_alternative
       le_of_not_gt (fun hq => hreach ⟨z, q, hq⟩)
     have heq := cappedSliceAction_eq_barrier hmin
     exact ⟨heq.le, fun z q => heq.le.trans (hmin z q), Or.inl heq⟩
-
-
 
 theorem cappedSliceAction_exponential
     (hM04 : RicciFlowCurvatureTheory.{0})

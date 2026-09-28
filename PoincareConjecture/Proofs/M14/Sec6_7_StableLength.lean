@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_StablePrefix
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionSmooth
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
 
 theorem reducedLengthValue_stableEndpoint_eq_action (H : M14StableSet G T τ x E)
     {Z : G.Horizontal x} (hZ : Z ∈ H.carrier) :
@@ -41,9 +30,6 @@ theorem reducedLengthValue_stableEndpoint_eq_action (H : M14StableSet G T τ x E
   rw [H.endpoint_slice_map_val Z hZ, H.endpoint_map_eq Z hZ, ← hglobal]
   exact E.reduced_length_eq Z (Real.sqrt τ) (H.survivor Z hZ) hs
 
-
-
-
 theorem stable_normalizedAction_smooth
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (H : M14StableSet G T τ x E) :
@@ -58,9 +44,6 @@ theorem stable_normalizedAction_smooth
     (fun Z hZ => ⟨H.survivor Z hZ, Real.sqrt_pos.mpr H.tau_pos⟩)
   exact ha.div₀ (contMDiffOn_const (c := 2 * Real.sqrt τ))
     (fun _ _ => (mul_pos zero_lt_two (Real.sqrt_pos.mpr H.tau_pos)).ne')
-
-
-
 
 theorem reducedLengthValue_contMDiffOn_stableImage
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

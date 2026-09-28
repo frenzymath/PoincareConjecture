@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DoubleRelationProjection
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProjectedEmbedding
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -28,11 +17,6 @@ variable {U V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.exists_finite_surface_double_source_polyhedron
     {s t : Stage e S f r C} (step : Step s t)

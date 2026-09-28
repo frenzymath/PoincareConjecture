@@ -2,14 +2,6 @@ import Mathlib.Analysis.Convex.Continuous
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,7 +10,6 @@ open scoped NNReal
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 theorem exists_lipschitz_extension_of_concave {f : E → ℝ} {x : E} {r : ℝ}
     (hr : 0 < r) (hf : ContinuousOn f (ball x (4 * r)))

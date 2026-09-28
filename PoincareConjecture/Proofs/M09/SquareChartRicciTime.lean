@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CenteredCoordinateDifferential
 import PoincareConjecture.Proofs.M09.SquareChartPairing
 import PoincareConjecture.Proofs.M09.TimeSpaceDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

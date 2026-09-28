@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BasisFaceSpanProjection
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialLinearImage
 import PoincareConjecture.Proofs.M76.Mathlib.UniformSecantProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace
@@ -19,10 +10,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι E F : Type*} [Finite ι] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem isRadialEmbedding_of_injOn_basisCone (A : AbstractSimplicialComplex ι)
     (b : Module.Basis ι ℝ E) (Q : E →L[ℝ] F)
@@ -112,9 +99,6 @@ theorem isRadialEmbedding_of_injOn_basisCone (A : AbstractSimplicialComplex ι)
       _ = normalize (‖Q w‖⁻¹ • w) := congrArg NormedSpace.normalize hdir
       _ = normalize w := normalize_smul_of_pos hrw w
   exact congrArg Q (v.complex_injOn_normalize hu hw hnorm)
-
-
-
 
 theorem isRadialEmbedding_iff_injOn_basisCone [FiniteDimensional ℝ F]
     (A : AbstractSimplicialComplex ι) (b : Module.Basis ι ℝ E) (Q : E →L[ℝ] F) :

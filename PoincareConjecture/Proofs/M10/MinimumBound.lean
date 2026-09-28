@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.MinimumAttainment
 import PoincareConjecture.Proofs.M10.MinimumBarrierComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
 
 theorem reducedLength_minimum_bound
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

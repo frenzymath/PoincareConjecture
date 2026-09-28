@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.LevelComponents
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -86,9 +84,6 @@ private theorem component_equiv_of_two_open_pieces
       (show x.val ∈ W true from x.property)]
     rfl
 
-
-
-
 theorem other_level_components_of_parallel_disks
     {h : S2 → Real} {c ε a k : Real} (haε : a < ε) (hk : a < |k - c|)
     (T : OpenPartialHomeomorph (S1 × Real) S2)
@@ -146,8 +141,6 @@ theorem other_level_components_of_parallel_disks
     · exact Or.inl ⟨hx, hu⟩
     · exact Or.inr ⟨hx, hv⟩
   · rintro (⟨hx, _⟩ | ⟨hx, _⟩) <;> exact hx
-
-
 
 theorem card_other_level_components_of_parallel_disks
     {h : S2 → Real} {c ε a k : Real} (haε : a < ε) (hk : a < |k - c|)

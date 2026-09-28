@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCapTangent
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_initial_cap_contact_path
     {F : SurgeryFlowData.{u}} (standard : RepairedStandardCapExistenceData F.standard_initial)

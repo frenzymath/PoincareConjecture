@@ -3,21 +3,6 @@ import PoincareConjecture.Statements.M63RampEstimates
 import PoincareConjecture.Statements.M64Approximation
 import PoincareConjecture.Statements.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,12 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 def M64IntrinsicAnnulusComparison : Prop :=
   ∀ delta r K : ℝ, 0 < delta → delta < 1 / 100 → 0 < r →
@@ -47,13 +26,6 @@ section Ramps
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
-
-
-
-
-
 
 def M64RampSmallAnnulusComparison (G : M63AmbientGeometry F) : Prop :=
   3 ≤ n → ∀ r : ℝ, 0 < r → ∃ mu : ℝ, 0 < mu ∧
@@ -82,11 +54,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
 
-
-
-
-
-
 structure M64FamilyAnnulusNet (G : M63AmbientGeometry F)
     (Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)))
     (mu : ℝ) where
@@ -101,17 +68,11 @@ structure M64FamilyAnnulusNet (G : M63AmbientGeometry F)
         (m63CanonicalRamp (G.product circumference h)
           (periodicFreeLoop (Gamma (nodes i)))), A.area < mu
 
-
-
-
-
 def M64FamilyAnnulusNets (G : M63AmbientGeometry F) : Prop :=
   ∀ Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)),
     ∀ mu : ℝ, 0 < mu → Nonempty (M64FamilyAnnulusNet G Gamma mu)
 
 end Families
-
-
 
 structure M64FlowConclusion {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -122,9 +83,6 @@ structure M64FlowConclusion {n : ℕ} {M : Type u} [TopologicalSpace M]
   projection : ∀ circumference (h : 0 < circumference), ∀ t ∈ Set.Icc a b,
     M64AnnulusProjection (geometry.product circumference h) t
 
-
-
-
 structure M64ThreeDimensionalFlowConclusion {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
     {a b : ℝ} (F : RicciFlow 3 M (Set.Icc a b)) where
@@ -133,11 +91,6 @@ structure M64ThreeDimensionalFlowConclusion {M : Type u} [TopologicalSpace M]
   disks : ∀ circumference (h : 0 < circumference), ∀ t ∈ Set.Icc a b,
     M64DiskAreaComparison (flow.geometry.product circumference h) t
   finite_nets : M64FamilyAnnulusNets flow.geometry
-
-
-
-
-
 
 def M64ComparisonTheory : Prop :=
   M64IntrinsicAnnulusComparison ∧

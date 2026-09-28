@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Fisher
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Logarithm
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +20,6 @@ theorem contMDiff_log_scalarCurvature (D : LeviCivitaData g)
     (hR : ∀ x, 0 < D.scalarCurvature x) :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ (fun x => Real.log (D.scalarCurvature x)) :=
   fun x => (Real.contDiffAt_log.mpr (hR x).ne').comp_contMDiffAt (D.contMDiff_scalarCurvature x)
-
 
 theorem integral_log_scalar_mul_laplacian (D : LeviCivitaData g)
     (hR : ∀ x, 0 < D.scalarCurvature x) :

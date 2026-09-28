@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseCurvature
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderCurvature
 import PoincareConjecture.Proofs.M34.Standard.CoordinateScalarGerm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
 local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.topologicalSpace
 local instance : ChartedSpace E C.limit.carrier.carrier := C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
 
 theorem limitNoncollapse_tendsto_moving_coordinate_curvature
     (P : M47Predecessors.{u}) (q : C.limit.sliceCarrier.carrier)

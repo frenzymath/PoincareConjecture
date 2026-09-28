@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SmallHeightPerturbation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +8,6 @@ open Set Geometry
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.heightChange {g : E × ℝ → ℝ} {S : Set (E × ℝ)}
     (hg : FinitePiecewiseAffineOn g S) (ε : ℝ) :
@@ -33,11 +20,6 @@ theorem FinitePiecewiseAffineOn.heightChange {g : E × ℝ → ℝ} {S : Set (E 
   intro p hp
   change (p.1, p.2 + ε * g p) = (p.1, p.2 + ε * a p)
   rw [ha hp]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_heightBand_homeomorph
     {g : E × ℝ → ℝ} {B : Set E} {α β : ℝ} (hαβ : α ≤ β)

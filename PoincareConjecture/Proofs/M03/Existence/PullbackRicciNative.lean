@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import PoincareConjecture.Proofs.M03.CurvatureTrace
 import PoincareConjecture.Proofs.M03.Existence.PullbackConnectionNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -22,8 +11,6 @@ noncomputable section
 namespace PoincareConjecture
 
 universe u
-
-
 
 theorem sum_fourTensor_naturality_of_basis_map
     {V W : Type*}
@@ -42,9 +29,6 @@ theorem sum_fourTensor_naturality_of_basis_map
   rw [hframe i]
   exact (hB x (b i) y (b i)).symm
 
-
-
-
 theorem ricci_naturality_of_basis_map
     {V W : Type*}
     [NormedAddCommGroup V] [InnerProductSpace ℝ V]
@@ -58,10 +42,6 @@ theorem ricci_naturality_of_basis_map
     (x y : V) :
     ∑ i, RV x (b i) y (b i) = ∑ i, RW (L x) (b' i) (L y) (b' i) := by
   exact sum_fourTensor_naturality_of_basis_map b b' L hframe RV RW hB x y
-
-
-
-
 
 theorem basis_repr_map
     {V W : Type*} [AddCommGroup V] [Module ℝ V]
@@ -98,10 +78,6 @@ theorem ricci_repr_naturality_of_basis_map
   apply Finset.sum_congr rfl
   intro i hi
   rw [hframe i, hR, basis_repr_map b b' L hframe]
-
-
-
-
 
 theorem ricci_pullback
     {n : ℕ} {M : Type u} [TopologicalSpace M]

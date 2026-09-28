@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.ComparisonRadius
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +9,6 @@ open Set
 namespace Poincare.ODE.Jacobi
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem inner_ge_half_of_remainders {u z w : E} {t : ℝ} (ht : 0 ≤ t)
     (hu : ‖u - w‖ ≤ ‖w‖ / 8) (hz : ‖z - t • w‖ ≤ t * ‖w‖ / 8) :
@@ -44,8 +32,6 @@ namespace IsJacobiSolOn
 variable [CompleteSpace E]
 variable {R : ℝ → E →L[ℝ] E} {b C : ℝ} {y v : ℝ → E}
 
-
-
 theorem half_inner_lower_bound (h : IsJacobiSolOn R 0 b y v)
     (hR : ContinuousOn R (Icc 0 b)) (hC : ∀ s ∈ Icc 0 b, ‖R s‖ ≤ C)
     (hy0 : y 0 = 0) {t : ℝ} (ht : t ∈ Icc 0 b)
@@ -59,8 +45,6 @@ theorem half_inner_lower_bound (h : IsJacobiSolOn R 0 b y v)
   · nlinarith only [hv, hvsmall]
   · nlinarith [hy, hysmall, mul_nonneg ht.1 (norm_nonneg (v 0))]
 
-
-
 theorem inner_pos (h : IsJacobiSolOn R 0 b y v)
     (hR : ContinuousOn R (Icc 0 b)) (hC : ∀ s ∈ Icc 0 b, ‖R s‖ ≤ C)
     (hy0 : y 0 = 0) {t : ℝ} (ht : t ∈ Icc 0 b) (htpos : 0 < t)
@@ -71,8 +55,6 @@ theorem inner_pos (h : IsJacobiSolOn R 0 b y v)
   exact lt_of_lt_of_le (by positivity) hbound
 
 end IsJacobiSolOn
-
-
 
 theorem quarter_comparisonRadius_pairing_smallness {K c t : ℝ} (hK : 0 ≤ K)
     (hc : 0 ≤ c) (hcr : c ≤ comparisonRadius K / 4)
@@ -94,8 +76,6 @@ namespace IsJacobiSolOn
 variable [CompleteSpace E]
 variable {R : ℝ → E →L[ℝ] E} {y v : ℝ → E} {K c : ℝ}
 
-
-
 theorem half_inner_lower_bound_of_speed_le_quarter_comparisonRadius
     (h : IsJacobiSolOn R 0 1 y v) (hR : ContinuousOn R (Icc 0 1))
     (hK : 0 ≤ K) (hc : 0 ≤ c) (hcr : c ≤ comparisonRadius K / 4)
@@ -104,7 +84,6 @@ theorem half_inner_lower_bound_of_speed_le_quarter_comparisonRadius
     t * ‖v 0‖ ^ 2 / 2 ≤ inner ℝ (v t) (y t) := by
   apply h.half_inner_lower_bound hR hbound hy0 ht
   simpa only [mul_one] using quarter_comparisonRadius_pairing_smallness hK hc hcr ht
-
 
 theorem half_inner_one_lower_bound_of_speed_le_quarter_comparisonRadius
     (h : IsJacobiSolOn R 0 1 y v) (hR : ContinuousOn R (Icc 0 1))

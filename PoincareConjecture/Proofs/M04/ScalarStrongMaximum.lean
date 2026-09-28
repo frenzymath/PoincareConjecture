@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.ChartScalarBarrier
 import PoincareConjecture.Proofs.M04.LocalScalarBarrier
 import PoincareConjecture.Proofs.M04.ConnectedPropagation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -171,4 +164,3 @@ theorem ricciFlow_supersolution_positive_at_later_time [T2Space M] [ConnectedSpa
     (ricciFlow_local_positive_transfer hab F hJ f v hf hderiv hsmooth hnonneg hevol) p hp
 
 end PoincareConjecture.M04
-

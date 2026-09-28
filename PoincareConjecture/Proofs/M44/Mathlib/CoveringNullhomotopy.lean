@@ -1,23 +1,11 @@
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContinuousMap
 
 namespace IsCoveringMap
-
-
-
 
 theorem contractibleSpace_of_nullhomotopic
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.CovariantSmooth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,12 +7,9 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
-
 noncomputable def cylinderModelPlusDifference (u a : ℝ)
     (B C : RoundCylinderTwoTensor) : RoundCylinderTwoTensor :=
   fun z v w => EvolvingRoundCylinderMetric u z v w + a * (B z v w - C z v w)
-
 
 theorem cylinderModelPlusDifference_coefficient (u a : ℝ)
     (B C : RoundCylinderTwoTensor)
@@ -32,7 +19,6 @@ theorem cylinderModelPlusDifference_coefficient (u a : ℝ)
       roundCylinderGram u c p i j + a *
         (roundCylinderTensorCoefficient B c p i j - roundCylinderTensorCoefficient C c p i j) :=
   rfl
-
 
 theorem cylinderModelPlusDifference_smooth {epsilon : ℝ} (u a : ℝ)
     {B C : RoundCylinderTwoTensor}
@@ -54,7 +40,6 @@ theorem cylinderModelPlusDifference_smooth {epsilon : ℝ} (u a : ℝ)
   exact (contDiff_roundCylinderGram u q i j).contDiffOn.add
     hscaled
 
-
 theorem cylinderModelPlusDifference_error_zero (u a : ℝ)
     (B C : RoundCylinderTwoTensor)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -65,8 +50,6 @@ theorem cylinderModelPlusDifference_error_zero (u a : ℝ)
   change roundCylinderTensorCoefficient _ c p (v 0) (v 1) - _ = _
   rw [cylinderModelPlusDifference_coefficient]
   ring
-
-
 
 theorem cylinderModelPlusDifference_iterated {epsilon u : ℝ} (hu : u < 1)
     (a : ℝ) {B C : RoundCylinderTwoTensor}

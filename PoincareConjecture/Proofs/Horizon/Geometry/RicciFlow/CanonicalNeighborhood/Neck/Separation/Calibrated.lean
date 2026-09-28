@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.BusemannGradient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [MetricSpace M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_long_outward_calibrated_segment (N : EpsilonNeck g)
     (D : LeviCivitaData g) (hc : MetricComplete g)

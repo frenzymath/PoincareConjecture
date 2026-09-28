@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowJetLimits
 import PoincareConjecture.Proofs.M34.Mathlib.CompactUniformJetLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds
 
-
-
 structure PartialFlowTerminalJets {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (S : ℝ) where
 
@@ -32,8 +21,6 @@ structure PartialFlowTerminalJets {g0 : StandardInitialMetric}
   jet_tendsto : ∀ m x,
     Tendsto (fun t => iteratedFDeriv ℝ m (F.flow.metric t).euclideanCoefficients x)
       (𝓝[<] S) (𝓝 (jet m x))
-
-
 
 theorem partialFlowTerminalJets_nonempty (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)
@@ -50,8 +37,6 @@ namespace PartialFlowTerminalJets
 
 variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (L : PartialFlowTerminalJets F S)
-
-
 
 theorem exists_compact_terminal_modulus (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)
@@ -70,8 +55,6 @@ theorem exists_compact_terminal_modulus (P : RicciFlowCurvatureTheory.{0})
   have heq : z = L.jet m x := tendsto_nhds_unique hz (L.jet_tendsto m x)
   simpa only [heq] using hmod t ht
 
-
-
 theorem tendstoUniformlyOn_jet (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)
     (hSF : S ≤ F.lifetime) (hB : 0 < B)
@@ -83,12 +66,8 @@ theorem tendstoUniformlyOn_jet (P : RicciFlowCurvatureTheory.{0})
   obtain ⟨D, _hD, hmod⟩ := L.exists_compact_terminal_modulus P E0 hS hSF hB hfull hK m
   exact tendstoUniformlyOn_of_terminal_norm_bound hS hmod
 
-
-
 noncomputable def coefficients (x : StandardCapSpace) : MetricCoefficient 3 :=
   (L.jet 0 x).curry0
-
-
 
 theorem hasFTaylorSeriesUpTo (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)
@@ -103,8 +82,6 @@ theorem hasFTaylorSeriesUpTo (P : RicciFlowCurvatureTheory.{0})
     exact contDiff_iff_contDiffAt.mpr (F.flow.metric t).contDiffAt_euclideanCoefficients
   · exact fun m _K hK => L.tendstoUniformlyOn_jet P E0 hS hSF hB hfull m hK
 
-
-
 theorem contDiff_coefficients (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)
     (hSF : S ≤ F.lifetime) (hB : 0 < B)
@@ -112,8 +89,6 @@ theorem contDiff_coefficients (P : RicciFlowCurvatureTheory.{0})
       (F.flow.connection t).curvatureTensorNorm x ≤ B) :
     ContDiff ℝ ∞ L.coefficients :=
   (L.hasFTaylorSeriesUpTo P E0 hS hSF hB hfull).contDiff
-
-
 
 theorem jet_eq_iteratedFDeriv (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)

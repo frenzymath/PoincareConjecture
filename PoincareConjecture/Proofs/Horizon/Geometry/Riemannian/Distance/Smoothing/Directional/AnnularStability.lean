@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Packing
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +13,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem eventually_annular_distance_ascent_of_pointedGHConvergesUnbounded
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarFourJet
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RicciJetNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +14,6 @@ namespace PoincareConjecture.M44
 open PoincareConjecture.SpacetimeBounds
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
-
 
 noncomputable local instance finiteCoefficientNormedGroup (n : ℕ) :
     NormedAddCommGroup (MetricCoefficient n) := ContinuousLinearMap.toNormedAddCommGroup
@@ -53,10 +42,6 @@ noncomputable local instance finiteFourJetNormedSpace (n : ℕ) :
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_scalar_evolution_bound_of_fourJet
     (n : ℕ) {a : ℝ} (ha : 0 < a) (B : ℝ) :
@@ -116,9 +101,6 @@ theorem exists_scalar_evolution_bound_of_fourJet
     _ ≤ C := hC _ ⟨hnorm, hell⟩
     _ ≤ max C 1 := le_max_left _ _
 
-
-
-
 theorem norm_iteratedFDeriv_metricTwoJet_le {n m : ℕ}
     {B : E n → MetricCoefficient n} {x : E n} (hB : ContDiffAt ℝ ∞ B x)
     {C : ℝ} (hbound : ∀ j ≤ m + 2, ‖iteratedFDeriv ℝ j B x‖ ≤ C) :
@@ -137,9 +119,6 @@ theorem norm_iteratedFDeriv_metricTwoJet_le {n m : ℕ}
 
 set_option maxHeartbeats 800000 in
 
-
-
-
 theorem norm_scalarMetricFourJet_le {n : ℕ}
     {B : E n → MetricCoefficient n} {x : E n} (hB : ContDiffAt ℝ ∞ B x)
     {C : ℝ} (hbound : ∀ j ≤ 4, ‖iteratedFDeriv ℝ j B x‖ ≤ C) :
@@ -157,10 +136,6 @@ theorem norm_scalarMetricFourJet_le {n : ℕ}
   exact norm_coordinateDerivativeArray_le (EuclideanSpace.basisFun (Fin n) ℝ)
     (fun i => (EuclideanSpace.basisFun (Fin n) ℝ).norm_eq_one i |>.le)
     _ _ _ hzero hone (hsecond.le.trans htwo)
-
-
-
-
 
 theorem exists_scalar_evolution_bound_of_coordinate_jets
     (n : ℕ) {a : ℝ} (ha : 0 < a) (B : ℝ) :

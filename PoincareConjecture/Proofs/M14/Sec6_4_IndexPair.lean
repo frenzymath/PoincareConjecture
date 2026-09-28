@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPair
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeFirstDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
 
-
-
-
 noncomputable def horizontalIndexPairDensity (s : ℝ)
     (Y Z DY DZ : G.Horizontal (R.curve s)) : ℝ :=
   let q := R.curve s
@@ -36,9 +24,6 @@ noncomputable def horizontalIndexPairDensity (s : ℝ)
     2 * s ^ 2 * M14HorizontalHessianPairing G q Y Z -
     4 * s * M14HorizontalRicciDerivativePairing G q Y A Z
 
-
-
-
 noncomputable def pullbackIndexPairDensity {Y Z : ∀ s, G.Horizontal (R.curve s)}
     (EY : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂) Y)
     (EZ : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂) Z) (s : ℝ) : ℝ :=
@@ -46,16 +31,12 @@ noncomputable def pullbackIndexPairDensity {Y Z : ∀ s, G.Horizontal (R.curve s
     (M14HorizontalCovariantDerivative G R.curve (M14SqrtParameterInterval τ₁ τ₂) Y EY s)
     (M14HorizontalCovariantDerivative G R.curve (M14SqrtParameterInterval τ₁ τ₂) Z EZ s)
 
-
-
 noncomputable def pullbackIndexBoundaryPair {Y : ∀ s, G.Horizontal (R.curve s)}
     (EY : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂) Y)
     (Z : ∀ s, G.Horizontal (R.curve s)) (s : ℝ) : ℝ :=
   G.spacetime.horizontalMetric.inner (R.curve s)
     (M14HorizontalCovariantDerivative G R.curve (M14SqrtParameterInterval τ₁ τ₂) Y EY s)
     (Z s)
-
-
 
 theorem horizontalIndexPairDensity_green_value (s : ℝ)
     (Y Z DY DZ DDY : G.Horizontal (R.curve s)) :
@@ -66,9 +47,6 @@ theorem horizontalIndexPairDensity_green_value (s : ℝ)
         4 * s * horizontalRicci G.leafwise (R.curve s) DY Z := by
   unfold horizontalIndexPairDensity horizontalJacobiPairResidual
   ring
-
-
-
 
 theorem secondVariationIndexDensity_eq_pair
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V) (s : ℝ) :

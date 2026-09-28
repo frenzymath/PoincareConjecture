@@ -4,16 +4,6 @@ import Mathlib.AlgebraicTopology.SimplicialSet.NerveNondegenerate
 import Mathlib.LinearAlgebra.Finsupp.VectorSpace
 import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,17 +17,12 @@ namespace PoincareConjecture.Proofs.M59
 
 open M02.Topology
 
-
-
-
 def normalizedIntegralChainCoordinates (X : SSet.{u}) (n : ℕ) :
     (X.normalizedChainComplex integralCoefficient).X n ≃ₗ[ℤ]
       (X.nonDegenerate n →₀ ℤ) :=
   let e := (X.isColimitCofanNormalizedChainComplex integralCoefficient n).coconePointUniqueUpToIso
       (ModuleCat.finsuppCoconeIsColimit ℤ (ULift.{u} ℤ) (X.nonDegenerate n))
   e.toLinearEquiv.trans (Finsupp.mapRange.linearEquiv ULift.moduleEquiv)
-
-
 
 theorem normalizedIntegralChainCoordinates_generator (X : SSet.{u}) (n : ℕ)
     (s : X.nonDegenerate n) (a : ℤ) :
@@ -59,14 +44,10 @@ theorem normalizedIntegralChainCoordinates_generator (X : SSet.{u}) (n : ℕ)
   simp only [Finsupp.mapRange.linearEquiv_apply, Finsupp.mapRange_single]
   rfl
 
-
-
 def normalizedIntegralChainBasis (X : SSet.{u}) (n : ℕ) :
     Module.Basis (X.nonDegenerate n) ℤ
       ((X.normalizedChainComplex integralCoefficient).X n) :=
   Finsupp.basisSingleOne.map (normalizedIntegralChainCoordinates X n).symm
-
-
 
 theorem normalizedIntegralChainBasis_apply (X : SSet.{u}) (n : ℕ)
     (s : X.nonDegenerate n) :
@@ -77,22 +58,15 @@ theorem normalizedIntegralChainBasis_apply (X : SSet.{u}) (n : ℕ)
   simp only [normalizedIntegralChainBasis, Module.Basis.map_apply,
     LinearEquiv.apply_symm_apply, Finsupp.coe_basisSingleOne]
 
-
-
 theorem normalizedIntegralChain_finite (X : SSet.{u}) (n : ℕ)
     [Finite (X.nonDegenerate n)] :
     Module.Finite ℤ ((X.normalizedChainComplex integralCoefficient.{u}).X n) := by
   let := Fintype.ofFinite (X.nonDegenerate n)
   exact Module.Finite.of_basis (normalizedIntegralChainBasis X n)
 
-
-
 theorem normalizedIntegralChain_free (X : SSet.{u}) (n : ℕ) :
     Module.Free ℤ ((X.normalizedChainComplex integralCoefficient.{u}).X n) :=
   Module.Free.of_basis (normalizedIntegralChainBasis X n)
-
-
-
 
 theorem finite_nerve_nonDegenerate (J : Type u) [PartialOrder J] [Finite J] (n : ℕ) :
     Finite ((nerve J).nonDegenerate n) := by
@@ -101,15 +75,11 @@ theorem finite_nerve_nonDegenerate (J : Type u) [PartialOrder J] [Finite J] (n :
   apply Subtype.ext
   exact nerve.ext_of_isThin h
 
-
-
 theorem nerve_nonDegenerate_dim_lt (J : Type u) [PartialOrder J] [Fintype J]
     {n : ℕ} (s : (nerve J).nonDegenerate n) : n < Fintype.card J := by
   have hi := (PartialOrder.mem_nerve_nonDegenerate_iff_injective s.val).mp s.property
   have h := Fintype.card_le_of_injective s.val.obj hi
   simpa only [Fintype.card_fin, Nat.succ_le_iff] using h
-
-
 
 theorem finite_nerve_normalizedChain_isZero (J : Type u) [PartialOrder J] [Fintype J]
     (n : ℕ) (hn : Fintype.card J ≤ n) :

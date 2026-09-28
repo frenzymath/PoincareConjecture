@@ -3,20 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularLevelScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set MeasureTheory
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
-
-
 
 theorem PoincareConjecture.LeviCivitaData.integral_scalarCurvature_posPart_le_regularLevels
     {m : ℕ} {M : Type*} [TopologicalSpace M]

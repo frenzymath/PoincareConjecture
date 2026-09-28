@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.FiniteRatioSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem false_of_positive_finite_scalar_ratio
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -56,8 +45,6 @@ theorem false_of_positive_finite_scalar_ratio
     (F.connection t₀) (hcomplete t₀ ht₀)
     (fun x v w => (F.connection t₀).curvatureTensor_self_nonneg_of_nonnegative_curvatureOperator
       x (hoperator t₀ ht₀ x) v w) ha hb hα0 hβ0 hα hβ
-
-
 
 theorem quadratic_decay_of_finite_scalar_ratio
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))

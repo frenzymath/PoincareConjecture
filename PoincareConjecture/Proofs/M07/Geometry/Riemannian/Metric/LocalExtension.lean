@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanConstruction
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 open Set Filter
@@ -48,7 +41,6 @@ private theorem positive_bilinear_lower_bound
       rw [heq] at hm
       simpa [mul_comm] using hm
 
-
 noncomputable def ofEuclideanCoefficients
     {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -77,7 +69,6 @@ noncomputable def ofEuclideanCoefficients
     convert! hB.contDiffAt.contMDiffAt using 1
     ext y v w
     simp [hom_trivializationAt_apply, ContinuousLinearMap.inCoordinates, TangentSpace]
-
 
 theorem exists_local_extension
     {n : ℕ} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -137,8 +128,6 @@ theorem exists_local_extension
     ring
   obtain ⟨V, hV, hVo, hpV⟩ := mem_nhds_iff.mp (inter_mem (hU.mem_nhds hp) heq)
   exact ⟨g, V, hVo, hpV, fun x hx => (hV hx).1, fun x hx => (hV hx).2⟩
-
-
 
 theorem exists_local_realization
     {n : ℕ} {U : Set (EuclideanSpace ℝ (Fin n))}

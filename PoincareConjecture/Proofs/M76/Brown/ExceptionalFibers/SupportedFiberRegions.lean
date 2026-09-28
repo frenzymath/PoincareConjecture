@@ -1,14 +1,5 @@
 import Mathlib.Data.Set.Function
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Function
 
 variable {X : Type*}
-
-
-
 
 theorem mem_set_iff_of_exceptional_fiber_fixed_compl (g : X → X)
     {A D : Set X} (hAD : A ⊆ D)

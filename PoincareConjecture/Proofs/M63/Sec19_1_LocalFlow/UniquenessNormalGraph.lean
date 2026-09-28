@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -19,9 +11,6 @@ open scoped ContDiff Topology RealInnerProductSpace
 namespace PoincareConjecture.M63
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem selectedCurveLabel_hasDerivAt {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     {m M B rho eps : ℝ}
@@ -80,10 +69,6 @@ theorem selectedCurveLabel_hasDerivAt {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     rw [inner_sub_left, real_inner_self_eq_norm_sq] at hlo
     nlinarith [sq_pos_of_pos hm]
   exact ⟨hdf, hdf.deriv.symm ▸ div_pos hnum hD⟩
-
-
-
-
 
 theorem exists_curveNormalGraph_orderIso {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     {m M B rho eps : ℝ}

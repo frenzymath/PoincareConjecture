@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.Restriction
 import Mathlib.Order.Filter.Finite
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_diagonal_controlled_cylinders
     (S : GeneralizedBlowupSequence.{u}) (T B : ℕ → ℝ)
@@ -87,8 +71,6 @@ theorem exists_diagonal_controlled_cylinders
   intro s hs x hx
   exact (E.negative_curvature_bound s hs x (hball hx)).trans
     (mul_le_mul_of_nonneg_right hek (S.base_scalar_pos (sigma k)).le)
-
-
 
 theorem exists_reindexed_diagonal_controlled_cylinders
     (S : GeneralizedBlowupSequence.{u}) (T B : ℕ → ℝ)

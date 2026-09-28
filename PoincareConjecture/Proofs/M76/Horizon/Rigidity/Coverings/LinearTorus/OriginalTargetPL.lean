@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Target.AffineQuotient
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleMap
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,7 +15,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 local notation "pi" => latticeCoordinateProjection (Fin 0) (Fin 3) L0
-
 
 noncomputable def hamiltonZeroTargetAffine (A : Matrix (Fin 2) (Fin 2) ℤ)
     (c : C0 × C0) : C(X0, X0) :=
@@ -61,7 +58,6 @@ theorem hamiltonZeroTargetAffine_mk (A : Matrix (Fin 2) (Fin 2) ℤ)
         ((((t + (A 1 0 : ℝ) * v 0 + (A 1 1 : ℝ) * v 1) : ℝ) : C0))), (v 2 : C0))
   simp [affineIntegerMatrixMap_apply, integerMatrixMap_apply, ← zsmul_eq_mul, add_assoc]
 
-
 private def targetAffineLift (A : Matrix (Fin 2) (Fin 2) ℤ) (s t : ℝ) : V0 →ᴬ[ℝ] V0 :=
   let P (i : Fin 3) : V0 →L[ℝ] ℝ := ContinuousLinearMap.proj (Sum.inr i)
   let B : V0 →L[ℝ] V0 := ContinuousLinearMap.pi fun j =>
@@ -95,7 +91,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroTargetAffine
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

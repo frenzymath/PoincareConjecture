@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeCutoff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +19,6 @@ private theorem dbar_translate {F : ℂ → E} {z0 z : ℂ}
 
 variable [CompleteSpace E] [Nontrivial E]
 
-
-
-
-
 theorem exists_power_factor_zero_of_local_matrix_equation
     {A : ℂ → E →L[ℂ] E} {F : ℂ → E} {s : Set ℂ}
     (hs : IsOpen s) (h0 : (0 : ℂ) ∈ s) (hA : ContDiffOn ℝ 1 A s)
@@ -51,9 +36,6 @@ theorem exists_power_factor_zero_of_local_matrix_equation
   simpa only [sub_zero] using exists_power_factor_of_matrix_field
     (hs.inter htopen) ⟨h0, h0t⟩ hP.1 hP.2.2.2 hP.2.1
       (hF.mono inter_subset_left) hFeq0 hnot
-
-
-
 
 theorem exists_power_factor_of_local_matrix_equation
     {A : ℂ → E →L[ℂ] E} {F : ℂ → E} {s : Set ℂ} {z0 : ℂ}

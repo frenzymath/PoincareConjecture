@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
-
-
 
 theorem sectional_positive_iff_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -63,8 +53,6 @@ theorem sectional_positive_iff_of_local_isometry
     rw [hcurv]
     exact hpos _ _ ((hpair u v).mp huv)
 
-
-
 theorem sectional_positive_iff_connection
     (D D' : LeviCivitaData g) (x : M) :
     (∀ u v : TangentSpace (𝓡 3) x,
@@ -77,8 +65,6 @@ theorem sectional_positive_iff_connection
     (f := id) isOpen_univ contMDiff_id.contMDiffOn
     (fun y _ u v => by rw [mfderiv_id]; rfl)
     (mem_univ x)
-
-
 
 theorem component_positive_iff_of_diffeomorph
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

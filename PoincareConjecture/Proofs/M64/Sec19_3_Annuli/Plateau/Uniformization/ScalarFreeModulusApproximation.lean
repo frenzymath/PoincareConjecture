@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarLocalFreeApproximation
 import Mathlib.Topology.Metrizable.Uniformity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +17,6 @@ local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem exists_free_annulus_energy_lt_area
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
@@ -75,10 +57,6 @@ theorem exists_free_annulus_energy_lt_area
   rw [hzero, hone] at hcandidate
   obtain ⟨r, hr, sigma0, sigma1, hs0, hs1, hm0, hm1, hd0, hd1, B, hB, hBI, hBE⟩ := hcandidate
   exact ⟨r, hr, sigma0, sigma1, hs0, hs1, hm0, hm1, hd0, hd1, B, hB, hBI, by linarith⟩
-
-
-
-
 
 theorem m64FreeConformalModulusApproximation_of_C1
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}

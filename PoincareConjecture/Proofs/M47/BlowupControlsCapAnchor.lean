@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineFactor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,7 +38,6 @@ private theorem anchor_interval_bounds {gamma epsilon : ℝ}
   constructor
   · nlinarith
   · nlinarith
-
 
 theorem exists_cap_right_anchor (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200)

@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.CrossingCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Locality
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,10 +8,8 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.Topology.Surface
 
-
 def crossingOpenRectangle (a b e : ℝ) : Set (EuclideanSpace ℝ (Fin 2)) :=
   collarParameterEquiv ⁻¹' ball (a, b) e
-
 
 def crossingClosedRectangle (a b e : ℝ) : Set (EuclideanSpace ℝ (Fin 2)) :=
   collarParameterEquiv ⁻¹' closedBall (a, b) e
@@ -65,8 +52,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 structure ChartCircleCrossingPatch (x y : M) (rx ry : ℝ) (p : M) where
   coordinates : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M
   width : ℝ
@@ -91,10 +76,8 @@ namespace ChartCircleCrossingPatch
 
 variable {x y p : M} {rx ry : ℝ} (P : ChartCircleCrossingPatch x y rx ry p)
 
-
 def openCarrier : Set M :=
   P.coordinates '' crossingOpenRectangle (ry ^ 2) (rx ^ 2) P.width
-
 
 def carrier : Set M :=
   P.coordinates '' crossingClosedRectangle (ry ^ 2) (rx ^ 2) P.width
@@ -139,8 +122,6 @@ theorem isCompact_closure_openCarrier : IsCompact (closure P.openCarrier) := by
 end ChartCircleCrossingPatch
 
 variable [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_chartCircle_crossing_patch (x y : M) {rx ry : ℝ}
     (hrx : 0 < rx) (hry : 0 < ry)
@@ -195,7 +176,6 @@ theorem exists_chartCircle_crossing_patch (x y : M) {rx ry : ℝ}
   rintro _ ⟨z, hz, rfl⟩
   exact (hrectangle hz).2
 
-
 def chartCircleCrossings (s : Finset M) (r : M → ℝ) : Set M :=
   {p | ∃ x ∈ s, ∃ y ∈ s, x ≠ y ∧ p ∈ chartCircle x (r x) ∩ chartCircle y (r y)}
 
@@ -220,10 +200,6 @@ theorem finite_chartCircleCrossings (s : Finset M) (r : M → ℝ)
   exact mem_iUnion₂.mpr ⟨x, hx, mem_iUnion₂.mpr ⟨y, hy, by simpa only [hxy, ↓reduceIte] using hp⟩⟩
 
 variable [T2Space M]
-
-
-
-
 
 theorem exists_disjoint_chartCircle_crossing_patches
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)

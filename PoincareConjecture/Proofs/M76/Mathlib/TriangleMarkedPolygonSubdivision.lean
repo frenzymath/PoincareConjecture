@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedTriangleSections
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteMarkedPolygonSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ open Set Geometry
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
 
 theorem open_edge_subset_original_triangle (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -46,11 +34,6 @@ theorem open_edge_subset_original_triangle (P : Polygon E (n + 3))
   rintro x ⟨r, hr, rfl⟩ hx
   exact P.edgeCut_notMem_range hP hinj (fun _ => r) hr
     (hmarks ⟨hx, hTP ⟨r, hr, rfl⟩⟩)
-
-
-
-
-
 
 theorem exists_subdivision_with_original_triangle_edges (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

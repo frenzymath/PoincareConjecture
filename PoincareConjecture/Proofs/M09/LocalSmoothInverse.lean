@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff

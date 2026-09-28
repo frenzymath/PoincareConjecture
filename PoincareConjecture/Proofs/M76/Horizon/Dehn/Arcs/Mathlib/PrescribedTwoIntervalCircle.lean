@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ private theorem interval_parameter_mem_endpoints
     (p t : E) ∈ ({a, b} : Set E) ↔ t = 0 ∨ t = 1 := by
   rw [← hp0, ← hp1]
   simp only [mem_insert_iff, mem_singleton_iff, Subtype.coe_inj, p.injective.eq_iff]
-
-
-
 
 theorem exists_prescribed_two_interval_homeomorph
     {E F : Type*}
@@ -82,9 +70,6 @@ theorem exists_prescribed_two_interval_homeomorph
     simpa only [e, Homeomorph.trans_apply, p0.symm_apply_apply] using h0 (p0 t)
   · intro t
     simpa only [f, Homeomorph.trans_apply, p1.symm_apply_apply] using h1 (p1 t)
-
-
-
 
 theorem homotopic_of_interval_chart
     {X : Type*} [TopologicalSpace X] (e : I01 ≃ₜ X)

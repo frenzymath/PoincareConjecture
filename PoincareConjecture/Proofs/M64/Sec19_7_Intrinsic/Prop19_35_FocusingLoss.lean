@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,9 +8,6 @@ open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_sum_disjoint_turning_le
     (N : IntrinsicAnnulus) (T : Finset (ℝ × ℝ))
@@ -74,9 +56,6 @@ theorem m64Intrinsic_sum_disjoint_turning_le
     _ = intrinsicGeodesicCurvatureIntegral N.metric N.connection 1 0 rampPeriod := by
       exact (intervalIntegral.integral_of_le Real.two_pi_pos.le).symm
 
-
-
-
 theorem m64Intrinsic_sine_focusing_length_le_twice_radius_turning
     {R kappa L T : ℝ} (hR : 0 < R) (hkappa : 0 < kappa)
     (hangle : kappa * R ≤ Real.pi / 4) (hL : 0 ≤ L) (hT : 0 ≤ T)
@@ -98,10 +77,6 @@ theorem m64Intrinsic_sine_focusing_length_le_twice_radius_turning
   have hleft := mul_le_mul_of_nonneg_right hcos hL
   have hright := mul_le_mul_of_nonneg_right hsin hT
   nlinarith only [hleft, hendpoint, hright]
-
-
-
-
 
 theorem m64Intrinsic_focusing_interval_length_lt_three_fiftieths
     (N : IntrinsicAnnulus) {delta r R kappa : ℝ}

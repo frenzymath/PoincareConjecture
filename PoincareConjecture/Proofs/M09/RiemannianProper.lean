@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch04.Harnack
 import PoincareConjecture.Proofs.M09.CompactRadial
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

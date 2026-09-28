@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.Normalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 noncomputable def normalizedCover (C : M27TwistedSphereLineFlowCertificate K)
     (a : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)
@@ -59,7 +48,6 @@ theorem normalizedCover_injOn (C : M27TwistedSphereLineFlowCertificate K)
     have hzpos := hpos z hz
     have hwpos := hpos w hw
     linarith
-
 
 noncomputable def normalizedSlab (C : M27TwistedSphereLineFlowCertificate K)
     (a : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)

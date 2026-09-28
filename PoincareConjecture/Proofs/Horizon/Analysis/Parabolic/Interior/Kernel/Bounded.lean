@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Gaussian
 import Mathlib.Topology.ContinuousMap.Bounded.Normed
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real

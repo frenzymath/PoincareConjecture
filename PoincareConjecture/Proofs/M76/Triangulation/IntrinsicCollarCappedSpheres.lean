@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.IntrinsicCappedSpheres
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCutSide
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,10 +10,6 @@ namespace Geometry
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [Finite ι] [Nonempty ι]
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_intrinsic_capped_spheres
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

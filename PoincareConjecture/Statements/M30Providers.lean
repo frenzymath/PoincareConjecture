@@ -3,16 +3,6 @@ import PoincareConjecture.Statements.Ch04.Harnack
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Statements.M29GeneralizedDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

@@ -1,28 +1,15 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredLoopSplit
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OldWordNormalSubgroup
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
 
 variable {X : Type*} [TopologicalSpace X] {b x y z : X}
 
-
-
 noncomputable def basedPathWord (p : Path b x) (q : Path b y) (a : Path x y) :
     FundamentalGroup X b :=
   (FundamentalGroup.fromPath (Path.Homotopic.Quotient.mk ((p.trans a).trans q.symm)))⁻¹
-
 
 theorem basedPathWord_trans (p : Path b x) (q : Path b y) (r : Path b z)
     (a : Path x y) (c : Path y z) :
@@ -36,19 +23,16 @@ theorem basedPathWord_trans (p : Path b x) (q : Path b y) (r : Path b z)
       (Path.Homotopic.Quotient.mk q).symm (Path.Homotopic.Quotient.mk q),
     Path.Homotopic.Quotient.symm_trans, Path.Homotopic.Quotient.refl_trans]
 
-
 theorem basedPathWord_refl (p : Path b x) :
     basedPathWord p p (Path.refl x) = 1 := by
   change (p.whiskeredLoopClass (Path.refl x))⁻¹ = 1
   rw [Path.whiskeredLoopClass_refl, inv_one]
-
 
 theorem basedPathWord_congr (p : Path b x) (q : Path b y)
     {a c : Path x y} (h : a.Homotopic c) :
     basedPathWord p q a = basedPathWord p q c := by
   unfold basedPathWord
   simp only [Path.Homotopic.Quotient.mk_trans, Path.Homotopic.Quotient.eq.mpr h]
-
 
 theorem basedPathWord_symm (p : Path b x) (q : Path b y) (a : Path x y) :
     basedPathWord q p a.symm = (basedPathWord p q a)⁻¹ := by
@@ -58,10 +42,8 @@ theorem basedPathWord_symm (p : Path b x) (q : Path b y) (a : Path x y) :
       (basedPathWord_refl p)
   exact eq_inv_of_mul_eq_one_right h
 
-
 theorem basedPathWord_loop (p : Path b x) (a : Path x x) :
     basedPathWord p p a = (p.whiskeredLoopClass a)⁻¹ := rfl
-
 
 theorem basedPathWord_extend (p : Path b x) (a : Path x y) :
     basedPathWord p (p.trans a) a = 1 := by
@@ -72,8 +54,6 @@ theorem basedPathWord_extend (p : Path b x) (a : Path x y) :
   rw [Path.Homotopic.Quotient.trans_symm]
   rfl
 
-
-
 theorem basedPathWord_radial {x' y' : X}
     (p : Path b x) (q : Path b y) (r : Path x x') (s : Path y y') (a : Path x' y') :
     basedPathWord (p.trans r) (q.trans s) a =
@@ -83,17 +63,12 @@ theorem basedPathWord_radial {x' y' : X}
     basedPathWord_symm, basedPathWord_extend, basedPathWord_extend,
     inv_one, one_mul, mul_one]
 
-
-
-
 theorem basedPathWord_end_path {x' y' : X}
     (p : Path b x) (r : Path x x') (s : Path x y') (a : Path x' y')
     (ha : a.Homotopic (r.symm.trans s)) :
     basedPathWord (p.trans r) (p.trans s) a = 1 := by
   rw [basedPathWord_congr _ _ ha, basedPathWord_trans (p.trans r) p (p.trans s),
     basedPathWord_symm, basedPathWord_extend, basedPathWord_extend, inv_one, one_mul]
-
-
 
 theorem resolution_words_case_a (p : Path b x) (q : Path b y)
     (a : Path x y) (c : Path y x) (d : Path x x) (β : Path y y) :
@@ -109,8 +84,6 @@ theorem resolution_words_case_a (p : Path b x) (q : Path b y)
   simp only [basedPathWord_trans p p p, basedPathWord_trans p q p,
     basedPathWord_trans p q q, basedPathWord_symm, true_and]
 
-
-
 theorem resolution_words_case_b (p : Path b x) (q : Path b y)
     (a c : Path x y) (β d : Path y x) :
     let A := basedPathWord p q a
@@ -123,8 +96,6 @@ theorem resolution_words_case_b (p : Path b x) (q : Path b y)
   dsimp only
   simp only [basedPathWord_trans p q p, basedPathWord_trans p p q,
     basedPathWord_symm, true_and]
-
-
 
 theorem resolution_excluded_case_a
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -146,7 +117,6 @@ theorem resolution_excluded_case_a
     exact J.inv_mem h.1
   · rw [← hSecond, basedPathWord_loop]
     exact J.inv_mem h.2
-
 
 theorem resolution_excluded_case_b
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]

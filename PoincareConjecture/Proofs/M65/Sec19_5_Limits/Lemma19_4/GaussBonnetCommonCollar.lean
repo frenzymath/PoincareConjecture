@@ -3,16 +3,6 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -50,9 +40,6 @@ private theorem rectangular_slice_energy_integrable
     apply Complex.ext <;> simp [p]
   simpa only [heq, IntegrableOn] using hp.integral_prod_right
 
-
-
-
 theorem actual_slice_derivative_energy_integrable
     {N : ℂ → E} {a b delta : ℝ} (hab : a ≤ b)
     (hN : ∀ h ∈ Ioo (0 : ℝ) delta, ∀ t ∈ Icc a b,
@@ -73,10 +60,6 @@ theorem actual_slice_derivative_energy_integrable
   have hd := ((hN h hh t ht).hasFDerivAt.comp_hasDerivAt t hs).deriv
   change deriv (fun s : ℝ => N ((s : ℂ) + (h : ℂ) * I)) t = _ at hd
   rw [hd]
-
-
-
-
 
 theorem exists_common_collar_heights {ι : Type*} [Finite ι]
     (N : ι → ℂ → E) (a b : ι → ℝ) {delta : ℝ} (hd : 0 < delta)

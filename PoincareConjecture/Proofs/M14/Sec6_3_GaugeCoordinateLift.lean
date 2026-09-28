@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_IntervalLift
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_smooth_gaugeLift_of_coordinates (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

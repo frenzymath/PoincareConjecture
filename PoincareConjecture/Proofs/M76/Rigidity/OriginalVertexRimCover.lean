@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalIncidentEdgeLink
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,7 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
 
 theorem vertex_outer_base_eq_iUnion_edges (p : (T.marked 2).vertices) :
     T.diskDualBase {(p : T.index → ℝ × V3)} ∩ ((T.vertexBlock p).link p).space =
@@ -97,7 +88,6 @@ theorem vertex_outer_base_eq_iUnion_edges (p : (T.marked 2).vertices) :
       T.edge_dual_subset_vertex_link p hs hcard hps hx.1.1⟩
 
 open Classical in
-
 
 theorem vertex_base_rim_eq_edges_union_frontier (p : (T.marked 2).vertices) :
     T.dualRegionRim {(p : T.index → ℝ × V3)} ∩ (T.marked 2).space =

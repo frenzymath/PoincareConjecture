@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappedTubeExclusion
 import PoincareConjecture.Proofs.M38.ProjectiveTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M38
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
 
-
-
 theorem projective_cap_connected {p : RealProjectiveThree} {U : Set M}
     (C : CapModelEquivalence .puncturedProjective p U) : IsConnected U := by
   let := C.model_topology
@@ -33,8 +22,6 @@ theorem projective_cap_connected {p : RealProjectiveThree} {U : Set M}
     isConnected_iff_connectedSpace.mp (punctured_projective_connected p)
   let : ConnectedSpace U := e.connectedSpace_iff.mpr inferInstance
   exact isConnected_iff_connectedSpace.mpr inferInstance
-
-
 
 theorem projective_cap_not_compact {p : RealProjectiveThree} {U : Set M}
     (C : CapModelEquivalence .puncturedProjective p U) : ¬ IsCompact U := by
@@ -64,7 +51,6 @@ theorem cap_not_compact (C : CapCertificate g) : ¬ IsCompact C.carrier := by
   | euclidean => exact euclidean_cap_not_compact (hkind ▸ C.model_equivalence)
   | puncturedProjective => exact projective_cap_not_compact (hkind ▸ C.model_equivalence)
 
-
 theorem no_cap_containing_compact_component
     (x : M) (hx : IsCompact (connectedComponent x)) (C : CapCertificate g) :
     ¬ connectedComponent x ⊆ C.carrier := by
@@ -74,10 +60,8 @@ theorem no_cap_containing_compact_component
       ((cap_connected C).subset_connectedComponent (hsub mem_connectedComponent)) hsub
   exact cap_not_compact C (heq.symm ▸ hx)
 
-
 theorem capped_tube_not_compact_of_model (C : CappedTubeCertificate g) :
     ¬ IsCompact C.carrier := capped_tube_not_compact C (cap_not_compact C.cap)
-
 
 theorem no_capped_tube_model_containing_compact_component
     (x : M) (hx : IsCompact (connectedComponent x)) (C : CappedTubeCertificate g) :

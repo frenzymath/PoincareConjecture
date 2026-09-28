@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCurvatureDifference
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ private noncomputable def modelConnectionBilinear
     (fun c u v => congrFun (D.euclideanConnection_smul_left c u v) x)
     (fun u v w => congrFun (D.euclideanConnection_add_right u v w) x)
     (fun c u v => congrFun (D.euclideanConnection_smul_right c u v) x)
-
-
 
 theorem cap_model_connection_normal (t : ℝ) (ht : t < 1)
     (D : LeviCivitaData (M35.cylinderEuclideanMetric t ht))

@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Triangle.UnitTriangle
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_openSegment_mem_interior_unitTriangle {z a : ℝ × ℝ}
     (hzpos : 0 < z.1 ∧ 0 < z.2) (hzH : z.1 + z.2 ≤ 1) (haH : a.1 + a.2 < 1) :
@@ -46,8 +32,6 @@ theorem exists_openSegment_mem_interior_unitTriangle {z a : ℝ × ℝ}
   nlinarith [mul_nonneg (sub_nonneg.mpr ht1.le) (sub_nonneg.mpr hzH),
     mul_pos htpos (sub_pos.mpr haH)]
 
-
-
 theorem sum_eq_one_of_openSegment_base_hit {a b z : ℝ × ℝ}
     (hz : z ∈ openSegment ℝ a b) (hzpos : 0 < z.1 ∧ 0 < z.2)
     (hzH : z.1 + z.2 = 1) (hdis : Disjoint (segment ℝ a b) (interior unitTriangle)) :
@@ -73,8 +57,6 @@ theorem sum_eq_one_of_openSegment_base_hit {a b z : ℝ × ℝ}
   obtain ⟨haeq, hbeq⟩ := (add_eq_zero_iff_of_nonneg ha0 hb0).mp hsum
   exact ⟨sub_eq_zero.mp ((mul_eq_zero.mp haeq).resolve_left (ne_of_gt (sub_pos.mpr ht.2))),
     sub_eq_zero.mp ((mul_eq_zero.mp hbeq).resolve_left ht.1.ne')⟩
-
-
 
 theorem unit_base_endpoints_of_segment_base_hit {a b z : ℝ × ℝ}
     (hz : z ∈ segment ℝ a b) (hzpos : 0 < z.1 ∧ 0 < z.2) (hzH : z.1 + z.2 = 1)

@@ -3,19 +3,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.LevelLocalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_proper_regular_slab_of_prescribed_approximation
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

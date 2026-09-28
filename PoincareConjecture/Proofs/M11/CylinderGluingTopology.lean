@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.CylinderTimeCover
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

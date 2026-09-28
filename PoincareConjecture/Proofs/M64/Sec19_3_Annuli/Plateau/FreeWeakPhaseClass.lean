@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryObservedPhaseEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRealTwoTraceCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +21,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
 
 structure M64FreeWeakPhaseAnnulus (e : M → E) (R : E →L[ℝ] LoopPlane)
     (c0 c1 : ℝ → M) (H0 H1 : ℝ ≃o ℝ) (k D : ℝ) where
@@ -70,9 +55,6 @@ namespace M64FreeWeakPhaseAnnulus
 variable {e : M → EuclideanSpace ℝ (Fin m)}
   {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {c0 c1 : ℝ → M}
   {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
-
-
-
 
 theorem labels_continuous
     (A : M64FreeWeakPhaseAnnulus (n := n) (m := m) e R c0 c1 H0 H1 k D)

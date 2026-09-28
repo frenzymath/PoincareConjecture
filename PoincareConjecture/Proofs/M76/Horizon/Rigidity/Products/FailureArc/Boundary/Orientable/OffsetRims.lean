@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Bounda
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.OffsetEssentiality
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn
@@ -47,4 +45,3 @@ theorem MarkedBoundaryPair.offset_rim_not_disk_generic
     hSN hNW hcore side hBN hlevel P.model.originalProjection (P.essential b) hTW hdisk.1 hdisk
 
 end Geometry.OriginalPLTower
-

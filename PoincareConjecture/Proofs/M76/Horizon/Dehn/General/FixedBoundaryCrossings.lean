@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositionData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval
@@ -35,11 +25,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem OriginalGeneralPositionData.exists_boundary_crossed_charts_with_history
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}
@@ -546,8 +531,6 @@ theorem OriginalGeneralPositionData.exists_boundary_crossed_charts_with_history
         exact hxy
     rw [hright, hvalue]
     exact hlocal (Q y) hy.2.2
-
-
 
 theorem OriginalGeneralPositionData.exists_boundary_crossed_charts
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourcePhysicalMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_normal_maps
     {F : SurgeryFlowData.{u}} {base Q tau : ℝ}

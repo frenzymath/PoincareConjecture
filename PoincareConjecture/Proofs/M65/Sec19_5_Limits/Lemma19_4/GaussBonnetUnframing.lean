@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetResidual
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetProjection
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,9 +9,6 @@ open Set Filter Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem compact_within_derivative_memLp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -41,11 +28,6 @@ theorem compact_within_derivative_memLp
   apply hmem.ae_eq
   filter_upwards [ae_restrict_mem hmeas] with z hz
   rw [fderivWithin_of_mem_nhds (mem_of_superset (hU.mem_nhds hz.2) hUK)]
-
-
-
-
-
 
 theorem inverse_frame_residual_derivative_memLp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]

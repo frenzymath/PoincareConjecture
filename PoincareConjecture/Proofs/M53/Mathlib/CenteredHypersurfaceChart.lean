@@ -3,16 +3,6 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.Topology.Algebra.Group.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +17,6 @@ variable {E E' : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M N : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [TopologicalSpace N] [ChartedSpace E' N]
   {n : ℕ∞ω} {f : M → N}
-
-
-
 
 theorem IsImmersionAtOfComplement.exists_centered_zero_slice_chart
     {x : M} (h : IsImmersionAtOfComplement ℝ 𝓘(ℝ, E) 𝓘(ℝ, E') n f x)
@@ -46,10 +33,6 @@ theorem IsImmersionAtOfComplement.exists_centered_zero_slice_chart
   · intro y hy
     change y ∈ range f ↔ (h.equiv.symm (h.codChart y)).2 - (0 : ℝ) = 0
     simpa only [sub_zero] using hslice y hy.2
-
-
-
-
 
 theorem IsSmoothEmbedding.exists_centered_zero_slice_chart
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ E']

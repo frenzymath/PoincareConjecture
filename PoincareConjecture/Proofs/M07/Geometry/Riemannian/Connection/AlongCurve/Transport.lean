@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.ODE.Linear
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Metric
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace PoincareConjecture.ConnectionAlongCurve
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [CompleteSpace E]
-
-
 
 theorem exists_invertible_solution {a b : ℝ} (hab : a ≤ b)
     (A : ℝ → E →L[ℝ] E) (hA : ContinuousOn A (Icc a b)) :
@@ -118,7 +108,6 @@ theorem contDiffOn_solution {a b : ℝ} (hab : a < b)
 
 open CoordinateExponential
 
-
 def parallelCoefficient (B : E → E →L[ℝ] E →L[ℝ] ℝ) (q : ℝ → E)
     (t : ℝ) : E →L[ℝ] E :=
   -christoffelBilinear B (q t) (deriv q t)
@@ -138,8 +127,6 @@ theorem contDiffOn_parallelCoefficient
   have hd : ContDiffAt ℝ ∞ (deriv q) t :=
     (hqt.fderiv_right (by simp)).clm_apply contDiffAt_const
   exact (((hc.comp t hqt).clm_apply hd).neg).contDiffWithinAt
-
-
 
 theorem exists_parallel_transport
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {I : Set ℝ} {q : ℝ → E}

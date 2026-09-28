@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.Capping.Motion
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.ClosedCoverInjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem simplyConnectedSpace_of_closed_cover_capping
     {X : Type*} [MetricSpace X] {N M : Set X}

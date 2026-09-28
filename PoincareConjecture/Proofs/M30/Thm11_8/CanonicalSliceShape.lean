@@ -15,15 +15,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -146,10 +137,6 @@ private theorem shape_compact_target
 set_option maxHeartbeats 1000000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
-
 
 theorem exists_canonical_slice_shape_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

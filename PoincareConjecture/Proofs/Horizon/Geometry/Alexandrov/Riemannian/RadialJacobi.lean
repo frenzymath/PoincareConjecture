@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Operations
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -2,17 +2,6 @@ import Mathlib.MeasureTheory.Function.LocallyIntegrable
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,9 +13,6 @@ variable {X : Type*} [TopologicalSpace X] [MeasurableSpace X] [OpensMeasurableSp
   {μ : Measure X} [IsFiniteMeasureOnCompacts μ]
   {U : Set X} {w f : X → ℝ}
 
-
-
-
 theorem integrable_cutoff_mul (hU : IsOpen U) (hw : ContinuousOn w U)
     (hwc : HasCompactSupport w) (hwU : tsupport w ⊆ U) (hf : ContinuousOn f U) :
     Integrable (fun x => w x * f x) μ := by
@@ -34,9 +20,6 @@ theorem integrable_cutoff_mul (hU : IsOpen U) (hw : ContinuousOn w U)
     (hw.mul hf).continuous_of_tsupport_subset hU
       (tsupport_mul_subset_left.trans hwU)
   exact hc.integrable_of_hasCompactSupport (hwc.mul_right (f' := f))
-
-
-
 
 theorem integral_cutoff_mul_finsetSum_le {I : Type*} (s : Finset I)
     (hU : IsOpen U) (hw : ContinuousOn w U) (hwc : HasCompactSupport w)

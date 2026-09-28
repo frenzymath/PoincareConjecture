@@ -4,13 +4,6 @@ import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

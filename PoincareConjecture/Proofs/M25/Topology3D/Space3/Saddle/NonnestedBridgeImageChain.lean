@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedEndComposition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,12 +8,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
-
-
-
 
 theorem exists_nonnested_bridge_of_image_chain
     (S Sref Rref Cref Rtarget Ctarget : Set E3)

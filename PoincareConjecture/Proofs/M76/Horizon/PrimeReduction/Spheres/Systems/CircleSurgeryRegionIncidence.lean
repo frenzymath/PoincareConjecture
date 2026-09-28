@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleSurgeryWitnesses
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -18,9 +8,6 @@ namespace PoincareConjecture.M76
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
-
-
-
 
 theorem ChartwisePLSphere.circle_surgery_region_incidence_of_cut_witnesses
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

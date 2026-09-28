@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.ProperEnds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.WeakFrontier
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
-
-
 
 theorem exists_closed_cylinder_half_at_cappedTube_neck (Q : SingularLimitConclusion H)
     (K : TerminalComponentPath Q.extension) (e : TerminalEnd K)
@@ -62,8 +59,6 @@ theorem exists_closed_cylinder_half_at_cappedTube_neck (Q : SingularLimitConclus
       fun hcap => disjoint_left.mp (hm (max n m) (le_max_right n m)) hx hcap⟩
   exact e.exists_closed_cylinder_half_at_neck tube hZclosed hZfront
     (max n m) hZtail N hepsilon hNU
-
-
 
 theorem exists_end_region_in_tube_of_low_neck (Q : SingularLimitConclusion H)
     (K : TerminalComponentPath Q.extension) (e : TerminalEnd K)

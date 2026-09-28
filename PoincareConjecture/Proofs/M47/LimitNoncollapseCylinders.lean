@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseRecenter
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
-
 theorem limitNoncollapse_shrunk_closed_time_subset {t r rho : ℝ}
     (hrho : 0 < rho) (hsmall : rho < r) :
     Icc (t - rho ^ 2) t ⊆ Ioc (t - r ^ 2) t := by
@@ -30,13 +18,10 @@ theorem limitNoncollapse_shrunk_closed_time_subset {t r rho : ℝ}
   intro s hs
   exact ⟨by linarith [hs.1], hs.2⟩
 
-
 theorem limitNoncollapse_physical_radius_sq {scale : ℝ} (hscale : 0 < scale)
     (rho : ℝ) : scale * (rho / Real.sqrt scale) ^ 2 = rho ^ 2 := by
   rw [div_pow, Real.sq_sqrt hscale.le]
   field_simp
-
-
 
 theorem limitNoncollapse_physical_time_range {scale : ℝ} (hscale : 0 < scale)
     (a rho : ℝ) :
@@ -48,14 +33,10 @@ theorem limitNoncollapse_physical_time_range {scale : ℝ} (hscale : 0 < scale)
   have hsq := limitNoncollapse_physical_radius_sq hscale rho
   constructor <;> nlinarith
 
-
-
 theorem limitNoncollapse_physical_curvature_threshold {scale : ℝ}
     (hscale : 0 < scale) (rho : ℝ) :
     scale * rho⁻¹ ^ 2 = (rho / Real.sqrt scale)⁻¹ ^ 2 := by
   rw [inv_div, div_eq_mul_inv, mul_pow, Real.sq_sqrt hscale.le]
-
-
 
 theorem limitNoncollapse_physical_curvature_bound {scale rho K : ℝ}
     (hscale : 0 < scale) (hK : |K| / scale ≤ rho⁻¹ ^ 2) :
@@ -66,10 +47,6 @@ theorem limitNoncollapse_physical_curvature_bound {scale rho K : ℝ}
 
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
-
 
 theorem limitNoncollapse_volume_of_recentered_test
     (e : GeneralizedFlowCylinder F C origin scale I U) (hU : IsOpen U)

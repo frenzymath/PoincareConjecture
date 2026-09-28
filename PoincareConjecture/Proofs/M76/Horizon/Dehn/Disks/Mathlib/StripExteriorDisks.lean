@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripCutDecomposition
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MiddleStripDiskComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -31,9 +21,6 @@ private theorem whole_strip_contact
   · intro x hxF
     obtain ⟨hxH, hxT⟩ := hHT.symm.subset hxF
     exact ⟨hcover.subset (Or.inl hxH), hxT⟩
-
-
-
 
 theorem exists_strip_exterior_disks
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

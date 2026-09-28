@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Euclidean
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -116,8 +107,6 @@ private theorem covariant_components_contDiffAt
         (contDiff_roundCylinderChristoffel (by norm_num) q j (a 0) (a i.succ)).contDiffAt.mul
           (ih (Function.update (fun l => a l.succ) i j)))
 
-
-
 theorem exists_covariant_coordinate_jets_center_bound (K m : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
       [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -221,8 +210,6 @@ end PoincareConjecture.DeepHorn
 
 namespace PoincareConjecture.EpsilonNeck
 
-
-
 theorem exists_normalized_pullback_scalar_jet_bound (K : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
       [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -240,7 +227,6 @@ theorem exists_normalized_pullback_scalar_jet_bound (K : ℕ) :
   refine ⟨C, hC, ?_⟩
   intro M _ _ _ _ _ _ _ g N hK q s hs r hr i j
   exact hbound N hK r hr 0 (by simpa using hr) q hs ![i, j]
-
 
 theorem exists_normalizedEuclideanCoefficients_scalar_jet_bound (K : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -284,8 +270,6 @@ theorem exists_normalizedEuclideanCoefficients_scalar_jet_bound (K : ℕ) :
       (pow_le_pow_right₀ hA hr)
   exact h.trans ((mul_le_mul (hbound N hK q hs r hr i j) hpow
     (pow_nonneg (norm_nonneg _) _) (by positivity)).trans_eq (by ring))
-
-
 
 theorem exists_normalizedEuclideanCoefficients_scalar_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

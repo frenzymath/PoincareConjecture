@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M28
 
-
-
 theorem cylinderCoefficient_eq_of_strip
     {B C : RoundCylinderTwoTensor} {a b : ℝ}
     (h : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo a b → ∀ v w, B z v w = C z v w)
@@ -26,8 +15,6 @@ theorem cylinderCoefficient_eq_of_strip
     {p : RoundCylinderCoordinates} (hp : p.2 ∈ Ioo a b) (i j : Fin 3) :
     roundCylinderTensorCoefficient B c p i j = roundCylinderTensorCoefficient C c p i j :=
   h (c.symm p.1, p.2) hp _ _
-
-
 
 theorem cylinderIteratedDerivative_eq_of_strip
     {B C : RoundCylinderTwoTensor} {a b : ℝ}
@@ -54,8 +41,6 @@ theorem cylinderIteratedDerivative_eq_of_strip
       exact congrArg (fun L : RoundCylinderCoordinates →L[ℝ] ℝ =>
         L (roundCylinderCoordinateBasis (v 0))) hd
 
-
-
 theorem cylinderJetErrorSquared_eq_of_strip
     {B C : RoundCylinderTwoTensor} {a b : ℝ}
     (h : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo a b → ∀ v w, B z v w = C z v w)
@@ -66,8 +51,6 @@ theorem cylinderJetErrorSquared_eq_of_strip
   intro j _
   rw [cylinderIteratedDerivative_eq_of_strip h u _ j hz]
 
-
-
 theorem cylinderTensorSmoothOn_of_eqOn_strip {epsilon : ℝ}
     {B C : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B)
     (h : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
@@ -75,8 +58,6 @@ theorem cylinderTensorSmoothOn_of_eqOn_strip {epsilon : ℝ}
   intro q i j
   exact (hB q i j).congr (fun p hp =>
     (cylinderCoefficient_eq_of_strip h _ hp.2 i j).symm)
-
-
 
 theorem cylinderClose_of_eqOn_strip {epsilon u : ℝ} {B C : RoundCylinderTwoTensor}
     (hB : RoundCylinderClose epsilon u B)

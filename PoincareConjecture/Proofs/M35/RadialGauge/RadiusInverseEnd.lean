@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
 
 theorem mapRadius_sub_self_bound {u : ℝ → ℝ} {r eta : ℝ}
     (heta : eta ≤ 1) (hu : (1 + |r|) * |u r| ≤ eta) :
@@ -31,7 +21,6 @@ theorem mapRadius_sub_self_bound {u : ℝ → ℝ} {r eta : ℝ}
     _ ≤ |r| * (2 * |u r|) := mul_le_mul_of_nonneg_left he (abs_nonneg _)
     _ ≤ 2 * eta := by nlinarith only [hweight]
 
-
 theorem inverse_mapRadius_sub_self_bound {u q : ℝ → ℝ} {eta : ℝ}
     (heta : eta ≤ 1) (hu : ∀ r, (1 + |r|) * |u r| ≤ eta)
     (hinv : ∀ z, mapRadius u (q z) = z) (z : ℝ) :
@@ -39,8 +28,6 @@ theorem inverse_mapRadius_sub_self_bound {u q : ℝ → ℝ} {eta : ℝ}
   have h := mapRadius_sub_self_bound heta (hu (q z))
   rw [hinv z, abs_sub_comm] at h
   exact h
-
-
 
 theorem inverse_mapRadius_tendsto_atTop
     {A : Type*} {l : Filter A} {u q : A → ℝ → ℝ} {z : A → ℝ} {eta : ℝ}
@@ -54,8 +41,6 @@ theorem inverse_mapRadius_tendsto_atTop
   filter_upwards [(tendsto_atTop.1 hz) (R + 2 * eta)] with a ha
   have hb := inverse_mapRadius_sub_self_bound heta (hu a) (hinv a) (z a)
   linarith only [ha, neg_le_of_abs_le hb]
-
-
 
 theorem inverse_mapRadius_pos {u q : ℝ → ℝ}
     (hinv : ∀ z, mapRadius u (q z) = z) {z : ℝ} (hz : 0 < z) : 0 < q z := by

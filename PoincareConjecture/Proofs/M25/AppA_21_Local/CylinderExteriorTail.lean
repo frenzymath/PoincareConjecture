@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapChainAttachment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem OpenCylinderModel.exists_tail_subset_of_compact_frontier
     {M : Type u} [TopologicalSpace M]

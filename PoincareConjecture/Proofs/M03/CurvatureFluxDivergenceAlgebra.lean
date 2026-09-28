@@ -10,8 +10,6 @@ namespace PoincareConjecture.Proofs.M03
 
 universe u
 
-
-
 theorem curvature_flux_divergence_sum_reassociate
     {ι : Type u} [Fintype ι] [DecidableEq ι]
     (d : ι → ℝ) (Gamma : ι → ι → ι → ℝ)

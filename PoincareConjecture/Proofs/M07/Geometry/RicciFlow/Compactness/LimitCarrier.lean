@@ -2,30 +2,11 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Producer
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Exhaustion
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
 
 structure PointedGeometricConvergenceCore
     {n : ℕ} {T' T : ℝ} (S : PointedFlowSequence n T' T)
@@ -77,8 +58,6 @@ structure PointedGeometricConvergenceCore
                 (fun t x v w ↦ L.metricInner (F.metricAt t) x v w)
                 a b) K p‖ < ε
 
-
-
 def PointedGeometricConvergenceCore.toGeometricLimit
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     {L : FlowCarrier n} {F : BasedFlow n T' T L} {φ : ℕ → ℕ}
@@ -102,7 +81,6 @@ def PointedGeometricConvergenceCore.toGeometricLimit
       pullback_metric_converges := C.pullback_metric_converges
       pullback_metric_CInfinity := C.pullback_metric_CInfinity }
 
-
 def PointedGeometricConvergenceCore.toProducer
     {n : ℕ} {T' T : ℝ} {H : PointedRicciFlowCompactnessHypotheses n T' T}
     {L : FlowCarrier n} {F : BasedFlow n T' T L} {φ : ℕ → ℕ}
@@ -113,7 +91,6 @@ def PointedGeometricConvergenceCore.toProducer
 end PoincareConjecture
 
 namespace Poincare
-
 
 theorem exists_diagonal_stage_selection
     {P : ℕ → ℕ → Prop} (hP : ∀ j, ∀ᶠ k in Filter.atTop, P j k) :

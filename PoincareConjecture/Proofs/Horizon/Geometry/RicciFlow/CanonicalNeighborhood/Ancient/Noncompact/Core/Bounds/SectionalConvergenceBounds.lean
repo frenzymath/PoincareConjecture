@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.SectionalConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Escaping.Metric
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -89,8 +82,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
 
-
-
 theorem exists_pos_eventually_coordinate_sectional_lower_bound
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (t : ℝ), t ≤ 0 → ∀ x ∈ G.exhaustion k,
@@ -144,8 +135,6 @@ theorem exists_pos_eventually_coordinate_sectional_lower_bound
   simp only [map_add, map_smul] at hbnd
   rw [LeviCivitaData.sectionalCurvature_changeBasis _ _ _ _ _ _ _ _ hdet] at hbnd
   exact hbnd
-
-
 
 theorem exists_pos_eventually_terminal_sectional_lower_bound_at
     (hconv : M23TerminalMetricConvergence G e)
@@ -212,10 +201,6 @@ theorem exists_pos_eventually_terminal_sectional_lower_bound_at
   rw [c.left_inv hzs] at hz
   exact hz
 
-
-
-
-
 theorem exists_pos_eventually_terminal_sectional_lower_bound_on_compact
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (t : ℝ), t ≤ 0 → ∀ x ∈ G.exhaustion k,
@@ -262,9 +247,6 @@ theorem exists_pos_eventually_terminal_sectional_lower_bound_on_compact
     exact (hse ⟨p, hp⟩).elim
 
 end M23TerminalMetricConvergence
-
-
-
 
 theorem M23TerminalExtension.exists_pos_eventually_source_ball_sectional_lower_bound
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

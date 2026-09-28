@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Injectivity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Injectivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ENNReal Bundle
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff ENNReal Bundle
 namespace PoincareConjecture.RiemannianMetric
 
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_uniform_unit_ball_volume_lower_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]

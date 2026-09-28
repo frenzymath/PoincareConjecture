@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexStrictHalfspaceClosure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePL.closedExtension_finite_on_polyhedron
     {C : Set E} {e : C ≃ₜ C} (he : e.IsFinitePL) (hC : IsClosed C)

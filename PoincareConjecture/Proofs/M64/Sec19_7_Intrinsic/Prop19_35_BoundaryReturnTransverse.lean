@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnTransverse
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_boundary_return_velocity_ne
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ}
@@ -54,11 +39,6 @@ theorem m64Intrinsic_boundary_return_velocity_ne
     mul_neg_of_neg_of_pos (inv_lt_zero'.mpr hh.2) hdiff
   change 0 < h⁻¹ * (‖gamma (T + h)‖ ^ 2 - ‖gamma T‖ ^ 2) at hs
   exact (not_lt_of_ge hs.le) hnegative
-
-
-
-
-
 
 theorem m64Intrinsic_unit_boundary_return_transverse
     (G : RiemannianMetric 2 AnnulusCoordinates)

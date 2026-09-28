@@ -3,39 +3,25 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set Metric
 open scoped ContDiff
 
 namespace PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple.ChartChain
 
-
 def timeCut (a b : ℝ) (n k : ℕ) : ℝ := a + (k : ℝ) / n * (b - a)
-
 
 theorem timeCut_zero (a b : ℝ) (n : ℕ) : timeCut a b n 0 = a := by
   simp [timeCut]
-
 
 theorem timeCut_last (a b : ℝ) {n : ℕ} (hn : 0 < n) : timeCut a b n n = b := by
   have hn' : (n : ℝ) ≠ 0 := by exact_mod_cast hn.ne'
   simp [timeCut, hn']
 
-
 theorem timeCut_sub (a b : ℝ) (n k : ℕ) :
     timeCut a b n (k + 1) - timeCut a b n k = (b - a) / n := by
   simp only [timeCut, Nat.cast_add, Nat.cast_one]
   ring
-
 
 theorem timeCut_lt {a b : ℝ} (hab : a < b) {n : ℕ} (hn : 0 < n) (k : ℕ) :
     timeCut a b n k < timeCut a b n (k + 1) := by
@@ -43,7 +29,6 @@ theorem timeCut_lt {a b : ℝ} (hab : a < b) {n : ℕ} (hn : 0 < n) (k : ℕ) :
   have h := div_pos (sub_pos.mpr hab) hn'
   rw [← timeCut_sub a b n k] at h
   exact sub_pos.mp h
-
 
 theorem timeCut_mem {a b : ℝ} (hab : a < b) {n : ℕ} (hn : 0 < n)
     {k : ℕ} (hk : k ≤ n) : timeCut a b n k ∈ Icc a b := by
@@ -56,7 +41,6 @@ theorem timeCut_mem {a b : ℝ} (hab : a < b) {n : ℕ} (hn : 0 < n)
   · exact le_add_of_nonneg_right (mul_nonneg hnonneg (sub_nonneg.mpr hab.le))
   · nlinarith [mul_le_mul_of_nonneg_right hratio (sub_nonneg.mpr hab.le)]
 
-
 theorem timeCut_elapsed_sum (a b : ℝ) {n : ℕ} (hn : 0 < n) :
     ∑ i : Fin n, (timeCut a b n (i + 1) - timeCut a b n i) = b - a := by
   have hn' : (n : ℝ) ≠ 0 := by exact_mod_cast hn.ne'
@@ -67,15 +51,12 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M]
 
-
 def coordinateSegment (x y : E) (a b t : ℝ) : E :=
   x + ((t - a) / (b - a)) • (y - x)
-
 
 theorem coordinateSegment_smooth (x y : E) (a b : ℝ) :
     ContDiff ℝ ∞ (coordinateSegment x y a b) :=
   contDiff_const.add (((contDiff_id.sub contDiff_const).div_const _).smul contDiff_const)
-
 
 theorem coordinateSegment_hasDerivAt (x y : E) (a b t : ℝ) :
     HasDerivAt (coordinateSegment x y a b) ((b - a)⁻¹ • (y - x)) t := by
@@ -83,21 +64,16 @@ theorem coordinateSegment_hasDerivAt (x y : E) (a b t : ℝ) :
   simpa only [one_div, sub_zero, id_eq] using
     ((((hasDerivAt_id t).sub_const a).div_const (b - a)).smul_const (y - x)).const_add x
 
-
 theorem coordinateSegment_speed_bound (x y : E) (a b t : ℝ) :
     ‖deriv (coordinateSegment x y a b) t‖ ≤ ‖(b - a)⁻¹ • (y - x)‖ := by
   rw [(coordinateSegment_hasDerivAt x y a b t).deriv]
 
-
 theorem coordinateSegment_start (x y : E) (a b : ℝ) :
     coordinateSegment x y a b a = x := by simp [coordinateSegment]
-
 
 theorem coordinateSegment_end (x y : E) {a b : ℝ} (hab : a < b) :
     coordinateSegment x y a b b = y := by
   simp [coordinateSegment, ne_of_gt (sub_pos.mpr hab)]
-
-
 
 theorem coordinateSegment_mem_ball {x y c : E} {r a b t : ℝ}
     (hx : x ∈ ball c r) (hy : y ∈ ball c r) (hab : a < b) (ht : t ∈ Icc a b) :
@@ -112,8 +88,6 @@ theorem coordinateSegment_mem_ball {x y c : E} {r a b t : ℝ}
   module
 
 namespace ChartBall
-
-
 
 theorem segment_interior {U : Set M} (B : ChartBall I U) {p q : M}
     (hp : p ∈ B.core) (hq : q ∈ B.core) {a b : ℝ} (hab : a < b) :
@@ -132,21 +106,17 @@ namespace Subdivision
 
 variable {U : Set M} {p q : M} {γ : Path p q} (S : Subdivision (I := I) (U := U) γ)
 
-
 theorem left_mem (i : Fin S.count) : γ (S.cut i) ∈ (S.ball i).core :=
   S.subordinate i _ ⟨le_rfl, S.monotone_cut (Nat.le_succ _)⟩
 
-
 theorem right_mem (i : Fin S.count) : γ (S.cut (i + 1)) ∈ (S.ball i).core :=
   S.subordinate i _ ⟨S.monotone_cut (Nat.le_succ _), le_rfl⟩
-
 
 theorem overlap (i j : Fin S.count) (hij : (i : ℕ) + 1 = j) :
     γ (S.cut (i + 1)) ∈ interior (S.ball i).domain ∩ interior (S.ball j).domain := by
   refine ⟨(S.ball i).core_subset_interior (S.right_mem i), ?_⟩
   rw [hij]
   exact (S.ball j).core_subset_interior (S.left_mem j)
-
 
 theorem range_subset_cores : range γ ⊆ ⋃ i : Fin S.count, (S.ball i).core := by
   have hcover : ∀ k : ℕ, k < S.count → ∀ t ∈ Icc (S.cut 0) (S.cut (k + 1)),
@@ -171,7 +141,6 @@ theorem range_subset_cores : range γ ⊆ ⋃ i : Fin S.count, (S.ball i).core :
 
 include S in
 
-
 theorem compact_neighborhood [FiniteDimensional ℝ E] :
     ∃ K : Set M, IsCompact K ∧ K ⊆ U ∧ range γ ⊆ interior K := by
   refine ⟨⋃ i : Fin S.count, (S.ball i).domain,
@@ -181,8 +150,6 @@ theorem compact_neighborhood [FiniteDimensional ℝ E] :
   obtain ⟨i, hi⟩ := mem_iUnion.mp (S.range_subset_cores hx)
   exact interior_mono (subset_iUnion (fun i : Fin S.count => (S.ball i).domain) i)
     ((S.ball i).core_subset_interior hi)
-
-
 
 theorem scheduled_segment {a b : ℝ} (hab : a < b) (i : Fin S.count) :
     let l := timeCut a b S.count i

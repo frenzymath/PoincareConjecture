@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Cuts.Spanning
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Strips.Sides
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

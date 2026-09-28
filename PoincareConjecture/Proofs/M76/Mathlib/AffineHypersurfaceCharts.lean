@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +12,6 @@ namespace OpenPartialHomeomorph
 variable {X E F : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem isImage_frontier_of_affine_nonneg (H : OpenPartialHomeomorph X E)
     {K : Set X} (ell : E →ᴬ[ℝ] ℝ) (hell : ell.toAffineMap.linear ≠ 0)
@@ -39,10 +26,6 @@ theorem isImage_frontier_of_affine_nonneg (H : OpenPartialHomeomorph X E)
   simpa only [hfront] using himage.frontier
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
-
-
-
 
 theorem exists_affine_hypersurface_chart (H : OpenPartialHomeomorph X E)
     {B : Set X} (ell : E →ᴬ[ℝ] ℝ) (himage : H.IsImage B {z | ell z = 0})
@@ -100,10 +83,6 @@ theorem exists_affine_hypersurface_chart (H : OpenPartialHomeomorph X E)
       continuousOn_toFun := hf
       continuousOn_invFun := hgc }
   exact ⟨q, rfl, rfl, fun _ => rfl, hg⟩
-
-
-
-
 
 theorem affine_hypersurface_transition_mem
     {B : Set X} (H H' : OpenPartialHomeomorph X E)

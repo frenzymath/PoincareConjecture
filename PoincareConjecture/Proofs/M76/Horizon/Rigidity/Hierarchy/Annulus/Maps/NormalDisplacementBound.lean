@@ -4,15 +4,6 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedCurvatureJets
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetReadout
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -97,8 +88,6 @@ private theorem affine_second_derivative
     (hf.fderiv_right (m := ∞) (by simp)).clm_apply contDiffAt_const
   exact affine_first_derivative s (hdf.differentiableAt (by simp)) j
 
-
-
 theorem exists_buffered_cylinder_model_curvature_bound :
     ∃ eta : ℝ, 0 < eta ∧ ∃ K : ℝ, 0 < K ∧
       ∀ u ∈ Icc (-(3 / 4 : ℝ)) 0, ∀ J : MetricTwoJet 3,
@@ -121,9 +110,6 @@ theorem exists_buffered_cylinder_model_curvature_bound :
   have hbound : jetCurvatureNorm (evolvingCylinderModelTwoJet u) ≤ C := by
     exact (le_abs_self _).trans (by simpa only [Real.norm_eq_abs] using hC _ hmodel)
   linarith [le_max_left C 0]
-
-
-
 
 theorem exists_buffered_cylinder_metricTwoJet_bound :
     ∃ L : ℝ, 0 < L ∧ ∀ (epsilon u : ℝ), 0 < epsilon →
@@ -192,8 +178,6 @@ theorem exists_buffered_cylinder_metricTwoJet_bound :
     metricTwoJet_sub_of_smooth hF (contDiff_evolvingCylinderModelCoefficient u).contDiffAt
   rw [dist_eq_norm, ← hdiff]
   simpa only [mul_assoc] using hn
-
-
 
 theorem exists_buffered_cylinder_curvature_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

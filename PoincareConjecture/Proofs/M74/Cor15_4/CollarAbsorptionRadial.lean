@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorption
 import PoincareConjecture.Proofs.M74.Mathlib.SphereNormalize
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -105,8 +96,6 @@ private theorem radialLift_collar_eq_isometry {f : UnitTwoSphere → UnitTwoSphe
   change ‖x‖ • D.isometry (sphereNormalize q0 x).1 = D.isometry x
   rw [← D.isometry.map_smul, norm_smul_sphereNormalize]
 
-
-
 noncomputable def radialDiffeomorph {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) :
@@ -142,36 +131,26 @@ noncomputable def radialDiffeomorph {f : UnitTwoSphere → UnitTwoSphere}
       exact hinv (mem_ball_zero_iff.mp hy).le
     · exact radialLift_contMDiffAt q0 K.symm hx
 
-
-
 @[simp] theorem radialDiffeomorph_apply {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) (x : StandardCapSpace) :
     radialDiffeomorph D q0 ha hab x =
       ‖x‖ • (D.isotopy (collarCutoff a b ‖x‖) (sphereNormalize q0 x)).1 := rfl
 
-
-
 @[simp] theorem radialDiffeomorph_zero {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) :
     radialDiffeomorph D q0 ha hab 0 = 0 := radialLift_zero q0 _
-
-
 
 @[simp] theorem radialDiffeomorph_norm {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) (x : StandardCapSpace) :
     ‖radialDiffeomorph D q0 ha hab x‖ = ‖x‖ := radialLift_norm q0 _ x
 
-
-
 @[simp] theorem radialDiffeomorph_symm_norm {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) (x : StandardCapSpace) :
     ‖(radialDiffeomorph D q0 ha hab).symm x‖ = ‖x‖ := radialLift_norm q0 _ x
-
-
 
 theorem radialDiffeomorph_eq_isometry {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
@@ -179,16 +158,11 @@ theorem radialDiffeomorph_eq_isometry {f : UnitTwoSphere → UnitTwoSphere}
     radialDiffeomorph D q0 ha hab x = D.isometry x :=
   radialLift_collar_eq_isometry D q0 hab hx
 
-
-
 theorem radialDiffeomorph_eq_map {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 : UnitTwoSphere) {a b : ℝ}
     (ha : 0 < a) (hab : a < b) {x : StandardCapSpace} (hx : b ≤ ‖x‖) :
     radialDiffeomorph D q0 ha hab x = ‖x‖ • (f (sphereNormalize q0 x)).1 := by
   rw [radialDiffeomorph_apply, collarCutoff_eq_one hab hx, D.isotopy_one]
-
-
-
 
 theorem radialDiffeomorph_pos_smul {f : UnitTwoSphere → UnitTwoSphere}
     (D : DiffSphereIsotopyData f) (q0 q : UnitTwoSphere) {a b r : ℝ}

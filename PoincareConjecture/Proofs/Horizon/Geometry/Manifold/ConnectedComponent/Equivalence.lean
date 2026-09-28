@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ConnectedComponent
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set
@@ -14,7 +12,6 @@ namespace Poincare
 variable {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) N]
-
 
 def connectedComponentDiffeomorph (e : M ≃ₘ⟮𝓡 n, 𝓡 m⟯ N) (p : M) :
     connectedComponentOpens (EuclideanSpace ℝ (Fin n)) p ≃ₘ⟮𝓡 n, 𝓡 m⟯

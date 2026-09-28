@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
   {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace E M] [ChartedSpace F N]
-
-
 
 theorem map_nhds_eq_of_contMDiffAt_bijective_mfderiv_modelSpaces
     {f : M → N} {x : M} (hf : ContMDiffAt 𝓘(ℝ, E) 𝓘(ℝ, F) ∞ f x)
@@ -63,8 +54,6 @@ theorem map_nhds_eq_of_contMDiffAt_bijective_mfderiv_modelSpaces
     _ = 𝓝 (f x) := by rw [hAx, hdmap]
 
 variable [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
 
 theorem contMDiffAt_of_local_left_inverse_modelSpaces
     {f : M → N} {g : N → M} {x : M}

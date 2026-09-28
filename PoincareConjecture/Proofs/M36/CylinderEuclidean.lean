@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Add
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8

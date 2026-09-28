@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.NormalDerivat
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.DifferentiatedEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +29,6 @@ private theorem memWkp_sum {O : Set E} (hO : IsOpen O) (k : ℕ)
     simpa only [Finset.sum_insert ha] using
       MemWkp.add (by norm_num) hO (hv a (Finset.mem_insert_self a s))
         (ih (fun i hi => hv i (Finset.mem_insert_of_mem hi)))
-
-
 
 theorem exists_weak_divergence_chosenWeakPartial_sobolev
     (k : ℕ) (B : SmoothEllipticBilinearForm d univ)
@@ -80,8 +72,6 @@ theorem exists_weak_divergence_chosenWeakPartial_sobolev
     (fun j => (hp j).memLp) (fun i j => (hq i j).memLp) hw hf.memLp
     (hf.chosenWeakPartial_mem ell).memLp
     (chosenWeakPartial'_isWeakPartial_of_mem hf.memW1p ell) heq).2
-
-
 
 theorem memWkp_add_two_of_tangential_memWkp_succ
     (k : ℕ) (B : SmoothEllipticBilinearForm d univ)

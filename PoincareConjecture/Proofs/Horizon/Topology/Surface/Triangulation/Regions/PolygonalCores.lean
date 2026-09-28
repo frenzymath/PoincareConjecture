@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Decomposition
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.PolygonalDomains
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -24,8 +13,6 @@ universe u v
 
 variable {X : Type u} [TopologicalSpace X] {U K A : Set X}
 
-
-
 theorem closure_diff_disjoint_of_local_cover
     (hcover : ∀ p ∈ closure U ∩ K,
       ∃ V : Set X, IsOpen V ∧ p ∈ V ∧ V ∩ closure U ⊆ A) :
@@ -35,8 +22,6 @@ theorem closure_diff_disjoint_of_local_cover
   obtain ⟨V, hV, hpV, hVA⟩ := hcover p ⟨closure_mono sdiff_subset hp, hpK⟩
   obtain ⟨q, hqV, hq⟩ := mem_closure_iff.mp hp V hV hpV
   exact hq.2 (hVA ⟨hqV, subset_closure hq.1⟩)
-
-
 
 theorem closure_diff_subset_of_local_frontier_cover (hU : IsOpen U)
     (hfront : frontier U ⊆ K)
@@ -51,7 +36,6 @@ theorem closure_diff_subset_of_local_frontier_cover (hU : IsOpen U)
   rw [hU.frontier_eq]
   exact ⟨hpc, hpU⟩
 
-
 theorem closure_diff_inter_subset_frontier (hAU : A ⊆ K) :
     closure (U \ K) ∩ A ⊆ frontier A := by
   rintro p ⟨hp, hpA⟩
@@ -59,7 +43,6 @@ theorem closure_diff_inter_subset_frontier (hAU : A ⊆ K) :
   intro hpint
   obtain ⟨q, hqint, hq⟩ := mem_closure_iff.mp hp (interior A) isOpen_interior hpint
   exact hq.2 (hAU (interior_subset hqint))
-
 
 theorem frontier_diff_iUnion_subset_of_local_cover
     {I : Type v} [Finite I] (pieces interfaces : I → Set X)
@@ -85,8 +68,6 @@ theorem frontier_diff_iUnion_subset_of_local_cover
     closure_diff_inter_subset_frontier (subset_iUnion pieces i) ⟨hpcl, hpi⟩
   exact mem_iUnion.mpr ⟨i, (hpieces i hpfront).resolve_left hpnotK⟩
 
-
-
 theorem closure_eq_iUnion_union_closure_diff
     {I : Type v} [Finite I] (pieces : I → Set X)
     (hclosed : ∀ i, IsClosed (pieces i)) (hsub : ∀ i, pieces i ⊆ closure U) :
@@ -110,8 +91,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 omit [T2Space M] [IsManifold (𝓡 2) ∞ M] in
-
-
 
 theorem exists_exact_polygonal_remainder_mesh_with_refinement
     {I : Type v} [Finite I] (p : M) {U K : Set M}
@@ -227,9 +206,6 @@ theorem exists_exact_polygonal_remainder_mesh
   exact ⟨T, hs, ht, hb, hu, hc, hf⟩
 
 namespace FiniteChartRegionDecomposition
-
-
-
 
 theorem exists_exact_region_remainder_mesh
     (D : FiniteChartRegionDecomposition (M := M)) {I : Type v} [Finite I]

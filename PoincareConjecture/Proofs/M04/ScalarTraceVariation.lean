@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -256,4 +249,3 @@ theorem hasDerivAt_scalarCurvature_of_ricci_derivative (F : RicciFlow n M J)
   rw [(F.metric t).symm, hC'pair]
 
 end PoincareConjecture.M04
-

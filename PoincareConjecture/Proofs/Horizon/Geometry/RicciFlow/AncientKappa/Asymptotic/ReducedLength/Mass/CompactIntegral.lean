@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import Mathlib.MeasureTheory.Integral.Lebesgue.DominatedConvergence
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

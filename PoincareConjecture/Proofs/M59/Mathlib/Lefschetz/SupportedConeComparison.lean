@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.TrivialLiftComparison
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexCone
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ContractibleCovering
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -34,8 +24,6 @@ variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
 include hfixed in
 set_option backward.isDefEq.respectTransparency false in
 
-
-
 theorem coveringFiberRetraction_chainMap_quasiIso :
     QuasiIso (SSet.chainComplexMap (TopCat.toSSet.map
       (TopCat.ofHom (coveringFiberRetraction p hp H hzero x₀ hone)))
@@ -54,8 +42,6 @@ theorem coveringFiberRetraction_chainMap_quasiIso :
 variable {J : Type u} [PartialOrder J] [Fintype J]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem supportedSingularComparison_cone_quasiIso
     (p : C(E, (finiteOrderComplex J).space)) (hp : IsCoveringMap p)

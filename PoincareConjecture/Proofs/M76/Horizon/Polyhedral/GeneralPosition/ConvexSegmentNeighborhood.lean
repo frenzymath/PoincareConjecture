@@ -2,14 +2,6 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

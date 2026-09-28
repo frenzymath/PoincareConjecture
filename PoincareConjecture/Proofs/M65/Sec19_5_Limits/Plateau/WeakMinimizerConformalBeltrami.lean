@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalNormalization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -113,10 +103,6 @@ private theorem m65Beltrami_metric_symm (g : RiemannianMetric 3 M)
   unfold m65EmbeddingMetric
   exact M65Interior.ambientMetric_symmetric _ v w
 
-
-
-
-
 def M65WeakDisk.beltramiEnergyDensity (F : M65WeakDisk e gamma)
     (g : RiemannianMetric 3 M) (mu : LoopPlane → ℂ) (z : LoopPlane) : ℝ :=
   let H := m65EmbeddingMetric g e (F.value z)
@@ -127,11 +113,6 @@ def M65WeakDisk.beltramiEnergyDensity (F : M65WeakDisk e gamma)
     2 * (mu z).im * b) / (1 - ‖mu z‖ ^ 2)
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65WeakDisk_beltrami_change (g : RiemannianMetric 3 M)
     (he : Continuous e) (hgamma : Continuous gamma) (F : M65WeakDisk e gamma)

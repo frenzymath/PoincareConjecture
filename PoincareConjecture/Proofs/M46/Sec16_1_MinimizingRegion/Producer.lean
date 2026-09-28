@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.Configuration
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem actualHistory_minimizingRegion_of_slice_comparison
     (P : M46Predecessors.{u}) {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -52,9 +40,6 @@ theorem actualHistory_minimizingRegion_of_slice_comparison
   obtain ⟨E⟩ := LG.exponential.family D.time x hbase
   exact minimizingRegion_nonempty_of_slice_comparison ricciFlowCurvatureTheory.{0}
     P.m12 LG E C hstrip hcontinuous hbound
-
-
-
 
 theorem minimizingRegionProducer_of_slice_comparison
     (P : M46Predecessors.{u}) {K : MetricSurgeryConstants}

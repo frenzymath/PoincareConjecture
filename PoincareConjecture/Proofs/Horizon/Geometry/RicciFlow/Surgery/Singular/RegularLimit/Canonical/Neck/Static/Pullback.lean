@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 10
@@ -70,8 +68,6 @@ theorem pullbackOpen_metric (z : RoundCylinderSpace)
   exact congrArg (fun y : Y => h.inner y
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) N.coordinate_map z v)
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) N.coordinate_map z w)) hlocal.self_of_nhds
-
-
 
 def pullbackOpen : EpsilonNeck g := by
   let eU := N.pullbackOpenCarrierHomeomorph he hright

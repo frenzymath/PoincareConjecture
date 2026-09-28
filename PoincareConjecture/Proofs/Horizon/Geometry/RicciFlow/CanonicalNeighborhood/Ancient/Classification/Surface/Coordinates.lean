@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometrySectional
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 2 M}
-
-
 
 theorem exists_evolving_sphere_cover_at_terminal_scale
     (R : TwoDimensionalAncientRoundCertificate K) (p : M) :
@@ -63,8 +51,6 @@ theorem exists_evolving_sphere_cover_at_terminal_scale
   rw [K.flow.inner_eq_terminal_scalar_scale_of_round R.round_at_all_times t ht,
     hscalar, hm]
   field_simp
-
-
 
 theorem exists_calibrated_roundSphereFamily_cover
     (R : TwoDimensionalAncientRoundCertificate K) :
@@ -119,7 +105,6 @@ theorem exists_calibrated_roundSphereFamily_cover
     antipodal_isometry := hanti
   }, q, hq, hsurj, hlocal, hcover, (fun _ _ _ _ _ => rfl), hmetric⟩
 
-
 theorem exists_roundSphereFamily_cover
     (R : TwoDimensionalAncientRoundCertificate K) :
     ∃ (F : M27RoundSphereFamily) (q : UnitTwoSphere → M),
@@ -130,8 +115,6 @@ theorem exists_roundSphereFamily_cover
           (mfderiv (𝓡 2) (𝓡 2) q x w) = (F.metric t).inner x v w := by
   obtain ⟨_, _, F, q, hq, hs, hl, hc, hm, _⟩ := R.exists_calibrated_roundSphereFamily_cover
   exact ⟨F, q, hq, hs, hl, hc, hm⟩
-
-
 
 theorem exists_calibrated_roundSphereFamily_diffeomorph [SimplyConnectedSpace M]
     (R : TwoDimensionalAncientRoundCertificate K) :
@@ -152,8 +135,6 @@ theorem exists_calibrated_roundSphereFamily_diffeomorph [SimplyConnectedSpace M]
     norm_num
   exact ⟨c, hc, F, hlocal.diffeomorphOfBijective
     (Poincare.Topology.bijective_of_isCoveringMap_of_simplyConnected hcover), hmetric, hscale⟩
-
-
 
 theorem exists_roundSphereFamily_diffeomorph [SimplyConnectedSpace M]
     (R : TwoDimensionalAncientRoundCertificate K) :

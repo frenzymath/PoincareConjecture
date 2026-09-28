@@ -10,18 +10,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.MetricTransport
 import PoincareConjecture.Proofs.M04.CurvatureCalculus
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,10 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 noncomputable def m64AnnulusRicciTraceDensity
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     (f : LoopPlane → M) (z : LoopPlane) : ℝ :=
@@ -51,20 +35,12 @@ noncomputable def m64AnnulusRicciTraceDensity
     (∑ i : Fin 2, ∑ j : Fin 2, (G⁻¹) i j * D.ricci (f z) (e j) (e i)) *
       m60AreaDensity g f z
 
-
-
-
-
 theorem m64AnnulusRicciTraceDensity_eq_zero
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     (f : LoopPlane → M) (z : LoopPlane)
     (hz : Matrix.det (m60AreaGram g f z) = 0) :
     m64AnnulusRicciTraceDensity D f z = 0 := by
   simp only [m64AnnulusRicciTraceDensity, hz, if_true]
-
-
-
-
 
 theorem m64AnnulusDensity_variation {J : Set ℝ}
     (F : RicciFlow n M J) (f : LoopPlane → M) (z : LoopPlane)
@@ -107,10 +83,6 @@ theorem m64AnnulusDensity_variation {J : Set ℝ}
     simp only [Fin.sum_univ_two]
     dsimp only [G, R, e]
     ring
-
-
-
-
 
 theorem m64AnnulusRicciTraceDensity_abs_le
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -159,10 +131,6 @@ theorem m64AnnulusRicciTraceDensity_abs_le
   rw [if_neg hdeg, abs_mul, abs_of_nonneg harea]
   exact (mul_le_mul_of_nonneg_right htrace harea).trans_eq (by ring)
 
-
-
-
-
 theorem m64AnnulusRicciTraceIntegral_abs_le
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {C : ℝ} (hC : 0 ≤ C)
@@ -184,11 +152,6 @@ theorem m64AnnulusRicciTraceIntegral_abs_le
         simpa only [Real.norm_eq_abs] using
           m64AnnulusRicciTraceDensity_abs_le D hC hcurv f z)
     _ = _ := integral_const_mul _ _
-
-
-
-
-
 
 theorem m64AnnulusArea_variation_of_curvature_bound
     {a b : ℝ} (hab : a < b) (F : RicciFlow n M (Icc a b))
@@ -249,10 +212,6 @@ theorem m64AnnulusArea_variation_of_curvature_bound
   refine ⟨htrace, ?_, m64AnnulusRicciTraceIntegral_abs_le
     (F.connection t) hC (hcurv t ht) f (harea t) htrace⟩
   simpa only [A, V, m64AnnulusArea, integral_neg] using hintegral.2
-
-
-
-
 
 theorem m64AnnulusArea_variation_on_compact
     {a b : ℝ} (hab : a < b) (F : RicciFlow n M (Icc a b))

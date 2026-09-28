@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventCo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventReunion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallBoundaryParametrization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.exists_parent_ball_of_children
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

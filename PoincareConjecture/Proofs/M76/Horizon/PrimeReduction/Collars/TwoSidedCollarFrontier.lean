@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TwoSidedCollarStrips
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

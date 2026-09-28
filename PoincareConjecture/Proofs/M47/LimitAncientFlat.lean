@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem limitAncient_scalar_reaction_bound [T2Space M]
     (h04 : RicciFlowCurvatureTheory.{u}) {T : ℝ} (F : RicciFlow 3 M (Icc 0 T))
@@ -44,8 +31,6 @@ theorem limitAncient_scalar_reaction_bound [T2Space M]
   have hsq := (F.connection t).ricciNormSq_le_scalarCurvature_sq_of_ricci_nonneg hD x hRic
   have hlinear := mul_le_mul_of_nonneg_right (hbound t ht x) hscalar
   nlinarith
-
-
 
 theorem limitAncient_scalar_nonpos_of_compact [T2Space M] [CompactSpace M]
     (h04 : RicciFlowCurvatureTheory.{u}) {T : ℝ} (F : RicciFlow 3 M (Icc 0 T))
@@ -69,8 +54,6 @@ theorem limitAncient_scalar_nonpos_of_compact [T2Space M] [CompactSpace M]
       (Filter.Eventually.of_forall hmax)
     linarith [limitAncient_scalar_reaction_bound h04 F hoperator hbound t ht' x]
   · exact hinit
-
-
 
 theorem limitAncient_scalar_nonpos_of_exhaustion [T2Space M]
     (h04 : RicciFlowCurvatureTheory.{u}) {T : ℝ} (F : RicciFlow 3 M (Icc 0 T))
@@ -99,9 +82,6 @@ theorem limitAncient_scalar_nonpos_of_exhaustion [T2Space M]
     simpa only [add_sub_cancel_left] using
       limitAncient_scalar_reaction_bound h04 F hoperator hbound t ⟨ht.1.le, ht.2⟩ x
   · exact hinit
-
-
-
 
 theorem limitAncient_forward_flat_on_buffered_slab
     [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]

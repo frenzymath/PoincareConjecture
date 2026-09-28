@@ -2,13 +2,6 @@ import Mathlib.Topology.Path
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -54,7 +47,6 @@ theorem isEmbedding_trans_of_range_inter_subset
   ((p.trans q).continuous.isClosedEmbedding
     (p.injective_trans_of_range_inter_subset q hp.injective hq.injective hmeet)).isEmbedding
 
-
 theorem isEmbedding_trans_trans_of_range_inter_subset
     {X : Type*} [TopologicalSpace X] [T2Space X] {a b c d : X}
     (p : Path a b) (q : Path b c) (r : Path c d)
@@ -70,8 +62,6 @@ theorem isEmbedding_trans_trans_of_range_inter_subset
   rcases hx with hxp | hxq
   · exact False.elim (Set.disjoint_left.mp hpr hxp hxr)
   · exact hqr ⟨hxq, hxr⟩
-
-
 
 theorem range_inter_subset_endpoint_of_frontier
     {X : Type*} [TopologicalSpace X] {R : Set X} {a b c : X}

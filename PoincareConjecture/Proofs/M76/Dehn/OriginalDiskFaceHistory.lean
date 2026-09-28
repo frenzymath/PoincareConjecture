@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalFaceDiskState
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Construction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -26,12 +15,6 @@ local notation "Qrim" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
-
 
 theorem Step.exists_original_disk_face_history
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

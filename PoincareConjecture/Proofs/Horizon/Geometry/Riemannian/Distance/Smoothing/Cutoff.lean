@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Fini
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Locality
 
-
 noncomputable section
 
 set_option autoImplicit false
@@ -14,8 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture
 
 universe u
-
-
 
 def biasedCutoff {M : Type u} (θ ψ f : M → ℝ) (Q a : ℝ) : M → ℝ :=
   fun x => θ x * f x + (1 - θ x) * Q + a * (1 - ψ x)
@@ -48,7 +45,6 @@ theorem biasedCutoff_eventuallyEq_of_ne_zero {θ ψ f : M → ℝ} {Q a : ℝ}
     (f := f) (Q := Q) hθone hx] with y hy
   exact congrArg (fun z => z + a * (1 - ψ y)) hy
 
-
 theorem cutoff_extension_lower_bound {θ f d : M → ℝ} {U : Set M} {Q ξ : ℝ}
     (hθbounds : ∀ y, 0 ≤ θ y ∧ θ y ≤ 1) (hθU : tsupport θ ⊆ U)
     (hξ : 0 ≤ ξ) (happrox : ∀ y ∈ U, |f y - d y| ≤ ξ)
@@ -63,7 +59,6 @@ theorem cutoff_extension_lower_bound {θ f d : M → ℝ} {U : Set M} {Q ξ : �
     have hQ' := mul_le_mul_of_nonneg_left
       (show d x - ξ ≤ Q by linarith) (show 0 ≤ 1 - θ x by linarith)
     nlinarith
-
 
 theorem biasedCutoff_lower_bound {θ ψ f d : M → ℝ} {U : Set M} {Q a ξ : ℝ}
     (hθbounds : ∀ y, 0 ≤ θ y ∧ θ y ≤ 1) (hθU : tsupport θ ⊆ U)
@@ -101,8 +96,6 @@ theorem contMDiff_biasedCutoff {U : Set M} (hU : IsOpen U)
 namespace LeviCivitaData
 
 variable [IsManifold (𝓡 n) ∞ M] {g : RiemannianMetric n M}
-
-
 
 theorem biasedCutoff_derivative_bounds_at (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U) {θ ψ f : M → ℝ}
@@ -166,8 +159,6 @@ theorem biasedCutoff_derivative_bounds_at (D : LeviCivitaData g)
     have hmul := mul_le_mul_of_nonneg_left
       (show -D.hessian ψ x v v ≤ B * g.inner x v v by linarith) ha
     nlinarith [hhess v]
-
-
 
 theorem biasedCutoff_derivative_bounds (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U) {θ ψ f : M → ℝ}

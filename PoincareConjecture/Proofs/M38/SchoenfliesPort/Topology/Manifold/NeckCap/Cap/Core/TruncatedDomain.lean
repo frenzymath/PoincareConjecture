@@ -3,29 +3,12 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Noncompact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.FrontierHeight
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 open _root_.PoincareConjecture.CapCertificate
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -49,8 +32,6 @@ private theorem core_disjoint_closure_end (C : CapCertificate g) :
   obtain ⟨y, hycore, hyend⟩ := mem_closure_iff.mp hcl C.core (CapCertificate.isOpen_core C) hx
   exact disjoint_left.mp (CapCertificate.disjoint_closed_core_end C)
     ((CapCertificate.core_subset_closed_core C) hycore) hyend
-
-
 
 theorem exists_closed_core_disjoint_positive_end_closure_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -184,8 +165,6 @@ private theorem boundary_mem_closure_truncated_end (C : CapCertificate g)
     (b := -a) (by rw [EpsilonNeck.reversed_epsilon, C.end_neck_epsilon]; linarith)
   simpa only [EpsilonNeck.reversed_epsilon, EpsilonNeck.reversed_region,
     C.end_neck_epsilon, neg_neg] using h
-
-
 
 theorem exists_truncated_core_domain_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalComponentPlaneReadout
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentJetMargin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarFourJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ noncomputable local instance componentToleranceTwoJetNormedGroup :
     NormedAddCommGroup (MetricTwoJet 3) := Prod.normedAddCommGroup
 noncomputable local instance componentToleranceTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
 
 theorem limitCanonical_component_sectional_jet_tolerance
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.ComponentBand
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.ComponentRegion
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +24,6 @@ private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
 namespace SphereMorseReduction
 
 variable {f : S2 → E3} (M : SphereMorseReduction f)
-
-
 
 theorem exists_minimum_core_region
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)

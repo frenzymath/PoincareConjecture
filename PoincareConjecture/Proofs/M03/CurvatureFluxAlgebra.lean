@@ -4,22 +4,11 @@ import PoincareConjecture.Proofs.M03.CurvatureHom
 import PoincareConjecture.Proofs.M03.CurvatureVectorTime
 import PoincareConjecture.Proofs.M03.ScalarMixedDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture.Proofs.M03
-
 
 theorem smul_sub_smul_decompose
     {R V : Type*} [Ring R] [AddCommGroup V] [Module R V]
@@ -54,7 +43,6 @@ theorem sum_smul_sub_sum_smul_decompose
 
 end PoincareConjecture.Proofs.M03
 
-
 open scoped Manifold ContDiff Bundle Topology
 open Bundle Manifold Set
 
@@ -69,7 +57,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 set_option maxHeartbeats 2400000
 set_option synthInstance.maxHeartbeats 200000
-
 
 theorem abs_ricciFlow_iteratedCurvature_lowered_residual_le
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -159,7 +146,6 @@ theorem abs_ricciFlow_iteratedCurvature_lowered_residual_le
       ((CurvatureResidualPattern.residualPatterns k).map bound).sum
   rw [heq]
   exact hlist _
-
 
 theorem abs_ricciFlow_iteratedCurvature_residual_pairing_le
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -407,7 +393,6 @@ theorem abs_ricciFlow_iteratedCurvature_residual_pairing_le
         hdim, nsmul_eq_mul, Nat.cast_pow]
       ring
 
-
 theorem ricciFlow_iteratedCurvature_energy_max_deriv_le
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (k : ℕ) (hk : 0 < k) (H : ℝ) (hH : 1 ≤ H) (x : M) :
@@ -597,7 +582,6 @@ theorem ricciFlow_iteratedCurvature_energy_max_deriv_le
     _ ≤ L * Q k t x + L := add_le_add (mul_le_mul_of_nonneg_right hcoef hQ.1) hconst
     _ = L * (Q k t x + 1) := by ring
 
-
 theorem ricciFlow_iteratedCurvature_terminal_bound
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]
     {T C a : ℝ} (_hT : 0 < T) (F : RicciFlow n M (Ico 0 T))
@@ -710,7 +694,6 @@ theorem ricciFlow_iteratedCurvature_terminal_bound
         change Q k b x + 1 ≤ B at hh
         linarith only [hh]
       exact Real.sqrt_le_sqrt hB
-
 
 theorem ricciFlow_connection_frame_terminal_control
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]

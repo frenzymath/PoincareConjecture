@@ -1,13 +1,9 @@
 import Mathlib.Topology.Order.MonotoneConvergence
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 open Set Filter
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_strictMono_above_thresholds_family
     (a : ℕ → ℕ → ℝ) (b : ℕ → ℝ)
@@ -28,8 +24,6 @@ theorem exists_strictMono_above_thresholds_family
   cases k with
   | zero => exact hvalue 0 0
   | succ k => exact hvalue (phi k) (k + 1)
-
-
 
 theorem exists_strictMono_above_thresholds
     (a b : ℕ → ℝ) (hlarge : ∀ C : ℝ, ∃ j : ℕ, C < a j) :

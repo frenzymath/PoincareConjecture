@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,12 +12,8 @@ variable {ι : Type*} {n : ℕ}
   (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
   [∀ i, Nonempty (Piece U i)] (O : OverlapSystem (fun i => Piece U i))
 
-
-
 theorem quotientChart_symm_eq_chartParametrization (i : ι) :
     ⇑(quotientChart U hU O i).symm = chartParametrization U hU (O.include i) := rfl
-
-
 
 theorem exists_quotient_chartAt (q : Quotient O.setoid) :
     letI := quotientChartedSpace U hU O
@@ -35,8 +23,6 @@ theorem exists_quotient_chartAt (q : Quotient O.setoid) :
   change ∃ i, quotientChart U hU O i = chartAt (EuclideanSpace ℝ (Fin n)) q at h
   obtain ⟨i, hi⟩ := h
   exact ⟨i, hi.symm⟩
-
-
 
 theorem exists_chosen_quotient_chart (q : Quotient O.setoid) :
     letI := quotientChartedSpace U hU O
@@ -54,8 +40,6 @@ theorem exists_chosen_quotient_chart (q : Quotient O.setoid) :
   · rw [he]
     exact quotientChart_symm_eq_chartParametrization U hU O i
 
-
-
 theorem comp_chartParametrization_include {M : Type*}
     (f : Quotient O.setoid → M) (i : ι) :
     f ∘ chartParametrization U hU (O.include i) =
@@ -63,8 +47,6 @@ theorem comp_chartParametrization_include {M : Type*}
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem chosenChart_spacetime_pullbackCoefficients_eq
     (q : Quotient O.setoid) (i : ι)
@@ -79,8 +61,6 @@ theorem chosenChart_spacetime_pullbackCoefficients_eq
         (chartParametrization U hU (f z.1 ∘ O.include i)) z.2) := by
   let := quotientChartedSpace U hU O
   simp only [hi, comp_chartParametrization_include U hU O]
-
-
 
 theorem chosenChart_spacetime_pullbackCoefficients_iteratedFDeriv_eq
     (q : Quotient O.setoid) (i : ι)

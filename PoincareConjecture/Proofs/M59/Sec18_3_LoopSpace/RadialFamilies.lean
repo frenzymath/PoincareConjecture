@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RadialHomotopy
 import PoincareConjecture.Definitions.M59LoopIdentification
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,14 +14,10 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 theorem m59Annulus_ne_zero {z : LoopPlane} (hz : z ∈ loopAnnulus) : z ≠ 0 := by
   intro h
   have hpos := hz.1
   norm_num [h] at hpos
-
-
 
 def m59AnnulusToCircle : C(loopAnnulus, LoopCircle) where
   toFun z := ⟨radialNormalization z.val, norm_radialNormalization (m59Annulus_ne_zero z.property)⟩
@@ -43,8 +30,6 @@ def m59AnnulusToCircle : C(loopAnnulus, LoopCircle) where
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59RadialFamily_joint_extension {B : Type v} [TopologicalSpace B]
     (F : B → C1FreeLoopSpace (M := M)) (hF : Continuous F) :
@@ -69,14 +54,10 @@ theorem m59RadialFamily_joint_extension {B : Type v} [TopologicalSpace B]
   rw [heq]
   exact h
 
-
-
 theorem m59RadialLoop_null {gamma : C1FreeLoopSpace (M := M)}
     (hgamma : IsNullHomotopicLoop gamma) : IsNullHomotopicLoop (m59RadialLoop gamma) := by
   obtain ⟨F, hF, hboundary⟩ := hgamma
   exact ⟨F, hF, fun z => (hboundary z).trans (m59RadialLoop_apply gamma z).symm⟩
-
-
 
 def m59RadialSphereFamily (q : M59SphereQuotient) (x : M)
     (F : C(LoopTwoSphere, C1FreeLoopSpace (M := M)))
@@ -103,8 +84,6 @@ def m59RadialSphereFamily (q : M59SphereQuotient) (x : M)
     derivative_continuous := continuous_m59RadialLoop_derivative F F.continuous
     null_homotopic := fun c => m59RadialLoop_null (hnull c)
     joint_extension := m59RadialFamily_joint_extension F F.continuous }
-
-
 
 theorem m59RadialSphereFamily_normalized (q : M59SphereQuotient) (x : M)
     (F : C(LoopTwoSphere, C1FreeLoopSpace (M := M)))

@@ -4,25 +4,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_chart_image_intersection
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

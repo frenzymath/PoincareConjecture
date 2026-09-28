@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.NormalFieldC2Reconstructi
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ClosedSpeedGradientPath
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceEmbeddedJetLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +24,6 @@ local notation "StateV" => State ((ℤ × Fin 2) × ι)
 local notation "X" => C(AddCircle L, W)
 local notation "Y" => C(AddCircle curvePeriod, W)
 local notation "YR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem exists_spectral_sequence_c2_threeJet_limit
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

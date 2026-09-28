@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCoverHomology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSectionalContinuat
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMetricJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_PullbackPlane
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +37,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
 set_option maxHeartbeats 1800000 in
-
-
 
 theorem terminal_sectional_lower_of_preterminal
     (event : SurgeryEventData g0 K P slice metric T)
@@ -140,8 +130,6 @@ theorem terminal_sectional_lower_of_preterminal
     simpa only [ha, hb] using h
   have hfq : f (c q) = event.limit_identify.map q := congrArg event.limit_identify.map hcx
   exact hfq ▸ hall
-
-
 
 theorem terminal_sectional_positive_of_preterminal
     (event : SurgeryEventData g0 K P slice metric T)

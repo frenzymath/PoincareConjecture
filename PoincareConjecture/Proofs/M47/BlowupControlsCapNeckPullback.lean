@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckJets
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSliceMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +17,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem cap_neck_image_tensor_difference {X : Type u} [TopologicalSpace X]
     [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]
@@ -52,8 +43,6 @@ theorem cap_neck_image_tensor_difference {X : Type u} [TopologicalSpace X]
   simp only [Function.comp_apply, ContinuousLinearMap.comp_apply, sub_apply]
   rw [hA _ hx]
   rfl
-
-
 
 theorem cap_neck_image_coefficient_difference {X : Type u} [TopologicalSpace X]
     [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]

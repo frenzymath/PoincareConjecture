@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.NeckTransfer
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +24,6 @@ theorem zero_mem_cylinder (G : GeneralizedBlowupConvergence S J) (k : ℕ) :
     (0 : ℝ) ∈ Icc (-G.exhaustion.time k) 0 :=
   ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩
 
-
-
 noncomputable def zeroPullbackForm (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) (x : G.limit.carrier.carrier) :
     TangentSpace (𝓡 3) x →L[ℝ] TangentSpace (𝓡 3) x →L[ℝ] ℝ := by
@@ -52,7 +43,6 @@ noncomputable def zeroPullbackForm (G : GeneralizedBlowupConvergence S J)
     (E' := TangentSpace (𝓡 3) x) (F' := TangentSpace (𝓡 3) x)
     (((S.flow (G.subsequence k)).metric ((S.base (G.subsequence k)).1 +
       0 / S.scale (G.subsequence k))).inner (e.forward 0 h0 x)) A A
-
 
 noncomputable def zeroChartPullbackForm (G : GeneralizedBlowupConvergence S J)
     (q : G.limit.carrier.carrier) (k : ℕ) (y : EuclideanSpace ℝ (Fin 3)) :
@@ -77,8 +67,6 @@ theorem zeroChartPullbackForm_basis (G : GeneralizedBlowupConvergence S J)
       blowupPullbackCoefficient (G.embedding k) q a b (0, y) := by
   simp only [blowupPullbackCoefficient, G.zero_mem_cylinder k, dif_pos]
   rfl
-
-
 
 theorem tendstoUniformlyOn_zeroChartPullbackForm
     (G : GeneralizedBlowupConvergence S J) (q : G.limit.carrier.carrier)
@@ -157,8 +145,6 @@ private theorem eventually_zeroPullbackForm_error_on_chart
     (mfderiv (𝓡 3) (𝓡 3) c.symm (c x) (A w)) - g.inner x v w| < ε at h
   erw [hi v, hi w, c.left_inv hx] at h
   exact h
-
-
 
 theorem eventually_zeroPullbackForm_error
     (G : GeneralizedBlowupConvergence S J)

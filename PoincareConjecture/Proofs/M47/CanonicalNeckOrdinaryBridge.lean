@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalAssembly
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M47
 
-
-
 theorem neck_scale_inverse_square
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -28,8 +18,6 @@ theorem neck_scale_inverse_square
   rw [N.scale_eq_scalar, inv_pow,
     ← Real.rpow_mul_natCast N.scalar_center_pos.le (-1 / 2) 2]
   norm_num [Real.rpow_neg_one]
-
-
 
 theorem exists_strong_neck_of_ordinary_family
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Proofs.M01.NormalizationVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,10 +11,8 @@ namespace PoincareConjecture
 
 namespace SurgeryFlowData
 
-
 theorem initialVolume_eq (F : SurgeryFlowData.{u}) :
     calibratedMetricVolume (F.metric 0) = normalizedMetricVolume (F.metric 0) := rfl
-
 
 noncomputable def normalizedInitialData (F : SurgeryFlowData.{u}) :
     NormalizedInitialMetric (M := (F.slice 0).carrier) := by
@@ -60,7 +50,6 @@ end SurgeryFlowData
 
 namespace RepairedControlledSchedulesData
 
-
 theorem initialOrdinaryFlow (S : RepairedControlledSchedulesData.{u})
     (F : SurgeryFlowData.{u}) :
     ∃ G : RicciFlow 3 (F.slice 0).carrier (Set.Icc 0 (1 / 16 : ℝ)),
@@ -74,7 +63,6 @@ theorem initialOrdinaryFlow (S : RepairedControlledSchedulesData.{u})
   let : CompactSpace (F.slice 0).carrier :=
     isCompact_univ_iff.mp (F.slices_compact 0 F.zero_mem)
   exact S.calibration.claim151 F.normalizedInitialData
-
 
 theorem initialFrontier_lt (S : RepairedControlledSchedulesData.{u})
     (F : SurgeryFlowData.{u}) (H : ℝ) (hH : 0 < H)
@@ -95,7 +83,6 @@ theorem initialFrontier_lt (S : RepairedControlledSchedulesData.{u})
   have hBound := ((S.calibration.initial_capture F).2 t
     (hJ ⟨ht0.le, ht.2⟩) (ht.2.le.trans hHle) x).1
   exact (not_lt_of_ge hBound) hx
-
 
 theorem initialAnalyticControl (S : RepairedControlledSchedulesData.{u})
     (F : SurgeryFlowData.{u}) (A : ℝ) :

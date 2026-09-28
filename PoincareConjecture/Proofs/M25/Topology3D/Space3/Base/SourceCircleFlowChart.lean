@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceTubeChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimitives
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_source_circle_flow_chart
     (P : ℝ × UnitTwoSphere → UnitTwoSphere)

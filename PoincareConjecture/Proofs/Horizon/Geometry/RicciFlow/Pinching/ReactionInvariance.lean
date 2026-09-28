@@ -6,10 +6,3 @@ import Mathlib.Tactic.Ring
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Nonnegative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Barrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Reaction
-
-
-
-
-
-
-

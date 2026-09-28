@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set PLAnnularStrip
 namespace PoincareConjecture.M76

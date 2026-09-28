@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerLaplacianComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open Poincare.Analysis.Elliptic.Iteration
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suWeakEquation_of_hessian {O : Set Plane}
     {p : Fin 2 → Plane → ℝ} {H : Fin 2 → Fin 2 → Plane → ℝ}
     (hp : ∀ i, MemLp (p i) 2 (volume.restrict O))
@@ -40,9 +29,6 @@ theorem suWeakEquation_of_hessian {O : Set Plane}
   simp_rw [neg_mul, Finset.sum_mul]
   rw [integral_neg, integral_finsetSum _ (fun i _ => hj i), ← Finset.sum_neg_distrib]
   exact Finset.sum_congr rfl fun i _ => hw i φ hφ hφc hφO
-
-
-
 
 theorem suWeakHessian_unit_comparison :
     ∃ A B : ℝ, 0 < A ∧ 0 ≤ B ∧
@@ -98,9 +84,6 @@ theorem suWeakHessian_unit_comparison :
   exact h.trans (add_le_add (mul_le_mul_of_nonneg_left
     (suHessianEnergy_mono hhalf hH) (show 0 ≤ A * r ^ 2 by positivity)) le_rfl)
 
-
-
-
 theorem suHessianEnergy_components {m : ℕ} {S : Set Plane}
     {H : Fin 2 → Fin 2 → Plane → EuclideanSpace ℝ (Fin m)}
     (hH : ∀ i j, MemLp (H i j) 2 (volume.restrict S)) :
@@ -120,9 +103,6 @@ theorem suHessianEnergy_components {m : ℕ} {S : Set Plane}
     _ = ∑ i : Fin 2, ∑ a : Fin m, ∑ j : Fin 2, H i j x a ^ 2 :=
       Finset.sum_congr rfl fun _ _ => Finset.sum_comm
     _ = _ := Finset.sum_comm
-
-
-
 
 theorem suWeakHessian_vector_unit_comparison :
     ∃ A B : ℝ, 0 < A ∧ 0 ≤ B ∧ ∀ (m : ℕ)

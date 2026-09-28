@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedCappedHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
-
 
 theorem nonisolated_height_signs_of_supported_capped_cut
     {S s s' d F : Set E} (H : E ≃ₜ E) (A : E → ℝ) (hA : Continuous A)

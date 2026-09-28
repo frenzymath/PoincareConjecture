@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.VertexStarChartRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E X V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X] [TopologicalSpace V]
-
-
-
 
 theorem exists_original_open_neighborhood_of_closedStar
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

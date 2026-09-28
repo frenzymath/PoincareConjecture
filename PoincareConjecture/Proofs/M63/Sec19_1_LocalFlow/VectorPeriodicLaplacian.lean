@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicH1Coefficients
 import PoincareConjecture.Proofs.M03.Existence.SpectralShiftedNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -16,9 +8,6 @@ open AddCircle PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
-
-
-
 
 theorem vectorPeriodicJet_laplacian (H : State ((ℤ × Fin 2) × ι)) :
     vectorPeriodicJet (L := L) 2 2 (by omega) H =
@@ -67,9 +56,6 @@ theorem vectorPeriodicJet_laplacian (H : State ((ℤ × Fin 2) × ι)) :
     (hscalar (complexLpRealEquiv.symm (lpFinitePiEquiv ℝ H i)))
   simpa only [ContinuousMap.neg_apply, ContinuousMap.sub_apply, Complex.neg_re, Complex.sub_re]
     using h
-
-
-
 
 theorem vectorPeriodic_correctedSource {P : Type*}
     (A : P → ((Fin 2 × ι) → ℝ) → ℝ) (R : P → ((Fin 2 × ι) → ℝ) → (ι → ℝ))

@@ -2,26 +2,11 @@ import Mathlib.Topology.SeparatedMap
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace IsLocallyInjective
-
-
-
-
 
 theorem comp {A B C : Type*} [TopologicalSpace A] [TopologicalSpace B]
     {p : B → C} {q : A → B} (hp : IsLocallyInjective p) (hq : IsLocallyInjective q)
@@ -32,12 +17,6 @@ theorem comp {A B C : Type*} [TopologicalSpace A] [TopologicalSpace B]
   refine ⟨W ∩ q ⁻¹' U, hW.inter (hU.preimage hcont), ⟨hxW, hxU⟩, ?_⟩
   intro a ha b hb heq
   exact hinjW ha.1 hb.1 (hinjU ha.2 hb.2 heq)
-
-
-
-
-
-
 
 theorem exists_factorization_of_preconnected_fibers
     {A B E X : Type*} [TopologicalSpace A] [TopologicalSpace B]

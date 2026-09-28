@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartFacePosition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierInteriorChartMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartMotionMargin
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology unitInterval
@@ -28,9 +17,6 @@ variable {U E V M ι : Type*}
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_relative_interior_face_motion (step : Step s t)
     (K K₀ K₁ : SimplicialComplex ℝ V) (hK : K.faces.Finite)

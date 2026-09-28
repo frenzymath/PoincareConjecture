@@ -1,13 +1,6 @@
 import PoincareConjecture.Statements.M75SmoothPoincare
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -15,13 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m75SmoothPoincare : M75SmoothPoincareStatement.{u} := by
   intro hService M _ _ _ _ _ _ _

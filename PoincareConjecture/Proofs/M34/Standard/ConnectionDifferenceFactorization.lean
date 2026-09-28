@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ConnectionDifferenceAlgebra
 import PoincareConjecture.Proofs.M34.Standard.CanonicalRicciGradient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ set_option maxSynthPendingDepth 8
 open scoped BigOperators
 
 namespace PoincareConjecture.M34.DifferenceEnergy
-
-
 
 theorem curvatureAction_trace_difference {n : ℕ}
     (gamma0 gamma1 : Gamma n) (R0 R1 : Raw n) (A : FA n) (S : FS n)
@@ -34,9 +22,6 @@ theorem curvatureAction_trace_difference {n : ℕ}
   rw [hA, hS]
   simp only [Pi.sub_apply, Finset.sum_sub_distrib, mul_sub, sub_mul]
   ring
-
-
-
 
 theorem connectionRaise_difference {n : ℕ} (G0 G1 : FH n)
     (hG0 : G0.IsInvertible) (hG1 : G1.IsInvertible) (P0 P1 : Gamma n) :
@@ -58,9 +43,6 @@ theorem connectionRaise_difference {n : ℕ} (G0 G1 : FH n)
   simp only [Pi.sub_apply, Pi.add_apply, sub_smul, Finset.sum_sub_distrib,
     sub_apply, map_sub, hG0.inverse_apply_self, hG1.self_apply_inverse]
   abel
-
-
-
 
 theorem connectionDifferenceRate_factorization {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))

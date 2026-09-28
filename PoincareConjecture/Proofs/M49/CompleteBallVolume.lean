@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M49.CalibratedVolume
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem calibratedMetricVolume_ball_lt_top {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

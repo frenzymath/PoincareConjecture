@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConeSimplex
 import PoincareConjecture.Proofs.M76.Mathlib.RadialStar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -98,9 +90,6 @@ private theorem cone_faces_inter_subset
       (convexHull_subset_space hsK hy) hyx.symm
     simpa only [hxy] using hybase
 
-
-
-
 def coneAtZero (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space) : SimplicialComplex ℝ E where
@@ -122,23 +111,17 @@ def coneAtZero (K : SimplicialComplex ℝ E)
           (Finset.nonempty_iff_ne_empty.mpr he)
   inter_subset_convexHull hs ht := cone_faces_inter_subset hlin hinj hs.2 ht.2
 
-
-
 theorem mem_coneAtZero_faces
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space) (s : Finset E) :
     s ∈ (K.coneAtZero hlin hinj).faces ↔
       s.Nonempty ∧ (s.erase 0 = ∅ ∨ s.erase 0 ∈ K.faces) := Iff.rfl
 
-
-
 theorem zero_mem_coneAtZero_vertices
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space) :
     (0 : E) ∈ (K.coneAtZero hlin hinj).vertices :=
   ⟨Finset.singleton_nonempty _, Or.inl (by simp)⟩
-
-
 
 theorem le_coneAtZero
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -147,8 +130,6 @@ theorem le_coneAtZero
   have hs0 : (0 : E) ∉ s := fun h =>
     (hlin s hs).zero_notMem_convexHull (subset_convexHull ℝ _ h)
   exact ⟨K.nonempty_of_mem_faces hs, Or.inr (by rwa [Finset.erase_eq_of_notMem hs0])⟩
-
-
 
 theorem link_coneAtZero
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -165,8 +146,6 @@ theorem link_coneAtZero
       (hlin s hs).zero_notMem_convexHull (subset_convexHull ℝ _ h)
     exact ⟨le_coneAtZero hlin hinj hs, hs0, Finset.insert_nonempty _ _,
       Or.inr (by rwa [Finset.erase_insert hs0])⟩
-
-
 
 theorem closedStar_coneAtZero
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))

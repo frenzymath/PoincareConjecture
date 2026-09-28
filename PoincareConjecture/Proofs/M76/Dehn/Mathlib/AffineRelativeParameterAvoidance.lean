@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineParameterAvoidance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AffineSubspace
-
-
-
-
 
 theorem exists_relative_direction_parameters
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

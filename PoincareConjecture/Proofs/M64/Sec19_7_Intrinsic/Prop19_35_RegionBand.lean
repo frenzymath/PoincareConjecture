@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FittedRectangle
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Polygonal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +11,6 @@ open Poincare.Topology.Plane.Curves
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_region_band
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

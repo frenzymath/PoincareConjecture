@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +21,6 @@ local instance uliftChartedSpace :
 
 local instance uliftIsManifold : IsManifold (𝓡 n) ∞ (ULift.{v} M) :=
   Poincare.Manifold.uliftIsManifold (𝓡 n) M
-
 
 noncomputable def ulift (F : RicciFlow n M J) : RicciFlow n (ULift.{v} M) J :=
   F.pullbackDiffeomorph (Poincare.Manifold.uliftDiffeomorph (𝓡 n) M)

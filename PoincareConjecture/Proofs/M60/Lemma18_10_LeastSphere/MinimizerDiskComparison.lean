@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ private theorem weakPartial_const_mul {O : Set Plane} {u p : Plane → ℝ} {i :
   simp only [mul_assoc]
   rw [integral_const_mul, integral_const_mul, hw φ hφ hφc hφO, mul_neg]
 
-
-
-
 theorem suAffine_degree_four_integral (f : Plane → ℝ) (a : Plane)
     {s : ℝ} (hs : 0 < s) (r : ℝ) :
     (∫ x in Metric.ball 0 r, s ^ 4 * f (a + s • x)) =
@@ -43,8 +31,6 @@ theorem suAffine_degree_four_integral (f : Plane → ℝ) (a : Plane)
       apply integral_congr_ae
       exact Eventually.of_forall fun x => by dsimp only; ring
     _ = _ := by rw [suRescale_integral f a hs, suAffine_image_ball a hs]
-
-
 
 theorem suHessianEnergy_rescale {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (H : Fin 2 → Fin 2 → Plane → E) (a : Plane) {s : ℝ} (hs : 0 < s) (r : ℝ) :
@@ -58,8 +44,6 @@ theorem suHessianEnergy_rescale {E : Type*} [NormedAddCommGroup E] [NormedSpace 
   simp_rw [heq]
   exact suAffine_degree_four_integral (fun x => ∑ i : Fin 2, ∑ j : Fin 2, ‖H i j x‖ ^ 2) a hs r
 
-
-
 theorem suHessianTrace_rescale {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (H : Fin 2 → Fin 2 → Plane → E) (a : Plane) {s : ℝ} (hs : 0 < s) (r : ℝ) :
     (∫ x in Metric.ball 0 r, ‖∑ i : Fin 2, s ^ 2 • H i i (a + s • x)‖ ^ 2) =
@@ -67,9 +51,6 @@ theorem suHessianTrace_rescale {E : Type*} [NormedAddCommGroup E] [NormedSpace �
   simp only [← Finset.smul_sum, norm_smul, Real.norm_of_nonneg (sq_nonneg s), mul_pow,
     ← pow_mul]
   exact suAffine_degree_four_integral (fun x => ‖∑ i : Fin 2, H i i x‖ ^ 2) a hs r
-
-
-
 
 theorem suWeakHessian_disk_comparison :
     ∃ A B : ℝ, 0 < A ∧ 0 ≤ B ∧ ∀ (m : ℕ) (a : Plane) {R : ℝ}, 0 < R →

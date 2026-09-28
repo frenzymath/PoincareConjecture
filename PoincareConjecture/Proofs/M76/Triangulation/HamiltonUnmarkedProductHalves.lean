@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 noncomputable def diskTimeReflection : (V2 × ℝ) ≃L[ℝ] (V2 × ℝ) :=
   (ContinuousLinearEquiv.refl ℝ V2).prodCongr
@@ -44,8 +34,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : D2 ≃ₜ D}
 
 namespace HamiltonUnmarkedDiskProduct
-
-
 
 noncomputable def reflected (P : HamiltonUnmarkedDiskProduct R b) :
     HamiltonUnmarkedDiskProduct R b where
@@ -75,8 +63,6 @@ noncomputable def reflected (P : HamiltonUnmarkedDiskProduct R b) :
     rw [neg_zero]
     exact P.central x
 
-
-
 theorem reflected_positive_image (P : HamiltonUnmarkedDiskProduct R b) :
     P.reflected.map '' (D2 ×ˢ Icc (0 : ℝ) 1) =
       P.map '' (D2 ×ˢ Icc (-1 : ℝ) 0) := by
@@ -89,8 +75,6 @@ theorem reflected_positive_image (P : HamiltonUnmarkedDiskProduct R b) :
     · change P.map (p.1, - -p.2) = P.map p
       simp only [neg_neg, Prod.eta]
 
-
-
 theorem reflected_open_image (P : HamiltonUnmarkedDiskProduct R b) :
     P.reflected.map '' (D2 ×ˢ Ioo (-1 : ℝ) 1) =
       P.map '' (D2 ×ˢ Ioo (-1 : ℝ) 1) := by
@@ -102,8 +86,6 @@ theorem reflected_open_image (P : HamiltonUnmarkedDiskProduct R b) :
     · constructor <;> linarith [hp.2.1, hp.2.2]
     · change P.map (p.1, - -p.2) = P.map p
       simp only [neg_neg, Prod.eta]
-
-
 
 theorem central_image (P : HamiltonUnmarkedDiskProduct R b) :
     P.map '' (D2 ×ˢ ({0} : Set ℝ)) = D := by
@@ -118,8 +100,6 @@ theorem central_image (P : HamiltonUnmarkedDiskProduct R b) :
     refine ⟨((x : V2), 0), ⟨x.property, rfl⟩, ?_⟩
     rw [P.central]
     exact congrArg Subtype.val (b.apply_symm_apply ⟨y, hy⟩)
-
-
 
 theorem half_images_inter (P : HamiltonUnmarkedDiskProduct R b) :
     (P.map '' (D2 ×ˢ Icc (0 : ℝ) 1)) ∩
@@ -145,9 +125,6 @@ theorem half_images_inter (P : HamiltonUnmarkedDiskProduct R b) :
 
 variable [FiniteDimensional ℝ E]
 
-
-
-
 theorem half_ballPair (P : HamiltonUnmarkedDiskProduct R b)
     {u v : ℝ} (huv : u < v) (hu : -1 ≤ u) (hv : v ≤ 1) :
     IsFinitePLBallPair (V2 × ℝ) (P.map '' (D2 ×ˢ Icc u v))
@@ -158,8 +135,6 @@ theorem half_ballPair (P : HamiltonUnmarkedDiskProduct R b)
 
 omit [FiniteDimensional ℝ E] in
 
-
-
 theorem half_frontier_contact (P : HamiltonUnmarkedDiskProduct R b)
     {u v : ℝ} (hu : -1 ≤ u) (hv : v ≤ 1) :
     (P.map '' (D2 ×ˢ Icc u v)) ∩ frontier R ⊆
@@ -169,8 +144,6 @@ theorem half_frontier_contact (P : HamiltonUnmarkedDiskProduct R b)
   exact ⟨p, Or.inl ⟨(P.proper p hpc).mp hy, hp.2⟩, rfl⟩
 
 end HamiltonUnmarkedDiskProduct
-
-
 
 theorem positive_source_half_ballPair {w : ℝ} (hw : 0 < w) :
     IsFinitePLBallPair (V2 × ℝ) (D2 ×ˢ Icc 0 w)

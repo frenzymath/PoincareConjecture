@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Neighborhood
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.NoBranching
 
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ContDiff Manifold Bundle
 
@@ -126,10 +116,6 @@ private theorem squared_distance_support_at_base_point
     exact (hasDerivAt_const_mul (2 * c ^ 2)).deriv
   refine ⟨H, hH2, by simp [H], hmajor, ?_⟩
   simpa only [hD2, hc2] using le_refl (2 * g.inner (β 0) w w)
-
-
-
-
 
 theorem exists_squared_distance_upper_support_of_metric_segment
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPositiveMarkedExtensi
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedProductPasting
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductBandReflection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +16,6 @@ local notation "Io" => Ioo (-(1 / 4 : ℝ)) (1 / 4)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_prescribed_product_correction {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b) (hb : b.IsFinitePL)

@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.TaperingCapAnn
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalSphereChartCarrier
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -23,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
 local notation "Annulus" => squareAnnulus 8 1
-
-
-
 
 theorem exists_unitCube_sphere_annulus_retained_disks
     {B : Set V3} (c : Annulus ≃ₜ B) (hc : c.IsFinitePL)
@@ -273,9 +261,6 @@ private theorem sphereStripQuarterCoordinates_apply (β : ℝ) (z : P2) :
     sphereStripQuarterCoordinates β z = (z.2 / 4, β / 32 * z.1) := by
   ext <;> simp [sphereStripQuarterCoordinates] <;> ring
 
-
-
-
 theorem exists_retained_disks_of_sphere_strip {β : ℝ} (hβ : 0 < β)
     (φ : P2 → V3)
     (hφ : FinitePiecewiseAffineOn φ (Icc (-1 : ℝ) 1 ×ˢ Icc 0 β))
@@ -411,10 +396,6 @@ theorem exists_retained_disks_of_sphere_strip {β : ℝ} (hβ : 0 < β)
     cases b <;> norm_num at he
   · change (k true ∪ k false) ∪ ((φ ∘ Cβ) '' (Icc 0 (4 * 8) ×ˢ Icc (-1) 1)) = _ at hwhole
     rwa [hBimage] at hwhole
-
-
-
-
 
 theorem ChartwisePLSphere.exists_circle_collar_retained_disks
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

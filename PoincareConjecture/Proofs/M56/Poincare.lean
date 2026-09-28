@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M55
 import PoincareConjecture.Proofs.M56
 import PoincareConjecture.Proofs.M52.Assembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M] [CompactSpace M] [SimplyConnectedSpace M]
   {N : NormalizedInitialMetric (M := M)}
 
-
-
-
 theorem m56PoincareAncestryFromTheories
     (G56 : RepairedAncestryTheory.{u})
     (G54 : RepairedGroupEffectsTheory.{u})
@@ -39,10 +26,6 @@ theorem m56PoincareAncestryFromTheories
     Nonempty {P : M56PoincareAncestryData (m52CoreFlowData G).flow L //
       M56PoincareProviderRealization G54 G55 P} :=
   G56.poincare G54 G55 N G L
-
-
-
-
 
 theorem m56PoincareAncestryFromMilestones
     (G : RepairedGlobalFlowData N)

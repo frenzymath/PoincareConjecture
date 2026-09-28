@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveGradientEvolution
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientNorm
 import PoincareConjecture.Proofs.M04.ScalarEvolutionCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem continuous_scalarEvolution_timeSubtype (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) :
@@ -38,8 +27,6 @@ theorem continuous_scalarEvolution_timeSubtype (hC : RicciFlowCurvatureTheory.{u
   have hE := hL.add ((M04.continuousOn_flow_ricciNormSq F).const_mul 2)
   have h := hE.comp_continuous hmap (fun z => ⟨z.1.property, mem_univ z.2⟩)
   exact h
-
-
 
 theorem continuous_scalarGradientNorm_timeSubtype (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) :
@@ -101,8 +88,6 @@ private theorem cap_bound_persists (hC : RicciFlowCurvatureTheory.{u})
   dsimp only [G] at hmargin hchange
   linarith
 
-
-
 theorem cap_gradient_bound_persists (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) (t : J)
     (N : CapCertificate (F.metric t.val)) (hconnection : N.connection = F.connection t.val) :
@@ -114,8 +99,6 @@ theorem cap_gradient_bound_persists (hC : RicciFlowCurvatureTheory.{u})
     (fun z => scalarGradientNorm (F.metric z.1.val) (F.connection z.1.val) z.2)
     (continuous_scalarGradientNorm_timeSubtype hC F) (3 / 2) (by norm_num)
   simpa only [hconnection] using N.gradient_bound
-
-
 
 theorem cap_evolution_bound_persists (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) (t : J)

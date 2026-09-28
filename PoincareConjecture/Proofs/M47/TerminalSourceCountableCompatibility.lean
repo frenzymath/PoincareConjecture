@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsMetricOverlap
 import PoincareConjecture.Proofs.M47.TerminalGermsFiberCompatibility
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +37,6 @@ local instance chartsLocallyCompact : ∀ n, LocallyCompactSpace (Piece Uset n) 
 
 local instance opensLocallyCompact : ∀ n, LocallyCompactSpace (U n) :=
   fun n => (U n).isOpen.locallyCompactSpace
-
-
 
 theorem terminalSourceCountable_limit_fibre_compatibility
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)] [∀ k, ChartedSpace E (M k)]

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.Tube
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.UniformRoundedSamples
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PositiveTubeGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_rounded_inscribed_curve_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

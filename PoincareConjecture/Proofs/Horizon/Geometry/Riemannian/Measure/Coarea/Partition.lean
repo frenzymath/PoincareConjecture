@@ -1,15 +1,6 @@
 import Mathlib.Topology.PartitionOfUnity
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped BigOperators
 namespace Poincare.Coarea
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
-
-
 
 theorem exists_continuous_decomposition_of_finite_cover
     {ι : Type*} [Fintype ι] (U : ι → Set X) (hU : ∀ i, IsOpen (U i))
@@ -45,8 +34,6 @@ theorem exists_continuous_decomposition_of_finite_cover
         simpa only [finsum_eq_sum_of_fintype] using ρ.sum_eq_one hx
       rw [hsum, one_mul]
     · rw [image_eq_zero_of_notMem_tsupport hx, mul_zero]
-
-
 
 theorem exists_finite_continuous_decomposition
     {ι : Type*} (U : ι → Set X) (hU : ∀ i, IsOpen (U i))

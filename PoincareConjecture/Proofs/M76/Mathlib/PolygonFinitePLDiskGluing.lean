@@ -5,23 +5,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SegmentParameterMembership
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TriangleDiskModel
 
 namespace Polygon
-
-
-
 
 theorem isFinitePLBallPair_of_split {m n : ℕ} (u : Fin (m + 2) → ℝ × ℝ)
     (v : Fin (n + 2) → ℝ × ℝ)

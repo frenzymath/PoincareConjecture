@@ -1,25 +1,6 @@
 import PoincareConjecture.Proofs.M03.CurvatureTrilinear
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Curvature.Calculus.CurvatureExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

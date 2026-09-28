@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionStripB
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalResolutionPairAlignment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +17,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "D2" => closedBall (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 structure OriginalNormalizedResolutionPairData
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace X]
@@ -65,8 +56,6 @@ structure OriginalNormalizedResolutionPairData
   rimV : ∀ t : I01, (RV t : X) = gV (squareRimLoop t)
   whisker : Path base D.E0.c
   outside : whisker.whiskeredLoopClass RU ∉ G ∨ whisker.whiskeredLoopClass RV ∉ G
-
-
 
 theorem nonempty_original_normalized_resolution_pair_data
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -167,9 +156,6 @@ theorem nonempty_original_normalized_resolution_pair_data
     properU := hproperU, properV := hproperV, RU := RU, RV := RV, rimU := hRU, rimV := hRV
     whisker := p.trans D.E0.rc, outside := hout }⟩
 
-
-
-
 theorem OriginalNormalizedResolutionPairData.exists_selected
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X F}
@@ -185,9 +171,6 @@ theorem OriginalNormalizedResolutionPairData.exists_selected
   rcases P.outside with hU | hV
   · exact ⟨P.gU, P.RU, P.plU, P.properU, P.rimU, hU, Or.inl ⟨rfl, rfl⟩⟩
   · exact ⟨P.gV, P.RV, P.plV, P.properV, P.rimV, hV, Or.inr ⟨rfl, rfl⟩⟩
-
-
-
 
 theorem exists_original_selected_normalized_resolution
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

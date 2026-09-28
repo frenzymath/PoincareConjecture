@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingSquare
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPathInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
 
 include hQ in
 
-
 theorem rescalingSquareInverseParameter_mapsTo (τ₁ τ₂ : ℝ) :
     MapsTo (fun s : ℝ => Real.sqrt Q * s)
       (M14SqrtParameterInterval τ₁ τ₂) (M14SqrtParameterInterval (Q * τ₁) (Q * τ₂)) := by
@@ -36,8 +27,6 @@ theorem rescalingSquareInverseParameter_mapsTo (τ₁ τ₂ : ℝ) :
   rw [M14SqrtParameterInterval, Real.sqrt_mul hQ.le, Real.sqrt_mul hQ.le]
   exact ⟨mul_le_mul_of_nonneg_left hs.1 (Real.sqrt_nonneg Q),
     mul_le_mul_of_nonneg_left hs.2 (Real.sqrt_nonneg Q)⟩
-
-
 
 theorem rescalingSquareInverseCurve_eqOn
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -53,8 +42,6 @@ theorem rescalingSquareInverseCurve_eqOn
   change p.curve (Q * s ^ 2) = p.curve ((Real.sqrt Q * s) ^ 2)
   rw [mul_pow, Real.sq_sqrt hQ.le]
 
-
-
 noncomputable def rescalingSquarePathInverse
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath (rescalingTransport hM12 hM13 G Q hQ a)
@@ -66,8 +53,6 @@ noncomputable def rescalingSquarePathInverse
     (contDiff_const.mul contDiff_id).contMDiff.contMDiffOn
     (rescalingSquareInverseParameter_mapsTo Q hQ τ₁ τ₂)
   exact h.congr (fun _ hs => rescalingSquareInverseCurve_eqOn hM12 hM13 G Q hQ a R hs)
-
-
 
 theorem rescalingSquareInverse_initial_velocity
     {T τ : ℝ} {x y : G.Point}

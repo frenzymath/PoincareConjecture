@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chai
 import Mathlib.Algebra.Category.ModuleCat.Projective
 import Mathlib.LinearAlgebra.FreeModule.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

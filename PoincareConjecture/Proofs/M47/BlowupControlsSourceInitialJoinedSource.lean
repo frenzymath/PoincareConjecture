@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCylinderJoin
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 import PoincareConjecture.Proofs.M47.SeedCylinderSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem exists_source_initial_joined_source
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

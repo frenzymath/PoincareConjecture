@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M51.EventTransportMetricJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -26,8 +15,6 @@ local notation "V3" => EuclideanSpace ℝ (Fin 3)
 
 variable {A C : GeneralizedSliceCarrier.{u}}
 
-
-
 theorem pullbackCoefficients_congr
     (g : RiemannianMetric 3 A.carrier)
     {f h : V3 → A.carrier} {x : V3} (heq : f =ᶠ[𝓝 x] h) :
@@ -38,8 +25,6 @@ theorem pullbackCoefficients_congr
     g.inner (h x) (mfderiv (𝓡 3) (𝓡 3) h x v)
       (mfderiv (𝓡 3) (𝓡 3) h x w)
   rw [heq.eq_of_nhds, heq.mfderiv_eq]
-
-
 
 theorem pullbackCoefficients_comp
     (g : RiemannianMetric 3 A.carrier)
@@ -61,8 +46,6 @@ theorem pullbackCoefficients_comp
   rw [hderiv]
   rfl
 
-
-
 theorem pullbackCoefficients_metric_pullback
     (g : RiemannianMetric 3 A.carrier)
     (e : Diffeomorph (𝓡 3) (𝓡 3) C.carrier A.carrier ∞)
@@ -79,8 +62,6 @@ theorem pullbackCoefficients_metric_pullback
       (mfderiv (𝓡 3) (𝓡 3) (e ∘ h) x w)
   rw [RiemannianMetric.pullbackOfLocalDiffeomorph_inner, hderiv]
   rfl
-
-
 
 theorem chart_factor_eventuallyEq
     (q : A.carrier) {h : V3 → A.carrier} {x : V3}

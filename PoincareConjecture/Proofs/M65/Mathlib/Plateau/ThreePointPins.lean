@@ -1,22 +1,8 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.DiskNormalization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Complex
-
-
-
 
 theorem plateauCayley_eq_re {z : ℂ} (hz : ‖z‖ = 1) :
     I * (1 + z) / (1 - z) = ((I * (1 + z) / (1 - z)).re : ℂ) := by
@@ -33,9 +19,6 @@ theorem plateauCayley_eq_re {z : ℂ} (hz : ‖z‖ = 1) :
     have hzero : (1 + z.re) * (1 - z.re) - z.im * z.im = 0 := by nlinarith
     rw [hzero, zero_div]
 
-
-
-
 theorem plateauCayley_injective {z w : ℂ} (hz : z ≠ 1) (hw : w ≠ 1)
     (heq : I * (1 + z) / (1 - z) = I * (1 + w) / (1 - w)) : z = w := by
   have h := (div_eq_div_iff (sub_ne_zero.mpr hz.symm) (sub_ne_zero.mpr hw.symm)).mp heq
@@ -43,9 +26,6 @@ theorem plateauCayley_injective {z w : ℂ} (hz : z ≠ 1) (hw : w ≠ 1)
     apply mul_left_cancel₀ I_ne_zero
     simpa only [mul_assoc] using h
   linear_combination (1 / 2 : ℂ) * hcross
-
-
-
 
 theorem plateauDiskMap_pin (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z w value : ℂ} (hz : ‖z‖ ≤ 1) (hz1 : z ≠ 1)
@@ -71,11 +51,6 @@ theorem plateauDiskMap_pin (b : ℝ) {c : ℝ} (hc : 0 < c)
       ring_nf
       simp [I_sq]
       ring
-
-
-
-
-
 
 theorem exists_plateauDiskMap_pins {q r : ℂ} (hq : ‖q‖ = 1) (hr : ‖r‖ = 1)
     (hq1 : q ≠ 1) (hr1 : r ≠ 1) (hqr : q ≠ r) :

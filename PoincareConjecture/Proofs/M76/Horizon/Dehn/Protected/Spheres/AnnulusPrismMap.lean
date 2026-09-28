@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -108,7 +99,6 @@ theorem prismMap_cap_old_boundary (b : Bool) {x : E} (hx : x ∈ prismCap b) :
     frontier_closedBall _ one_ne_zero]
   exact ⟨capLift_old_boundary b hx, mem_univ _⟩
 
-
 theorem prismMap_injOn {h : OpenPartialHomeomorph (V1 × V2) V3}
     (retained : HamiltonRetainedBlockChart (Fin 1) (Fin 2) L e h) :
     InjOn T.prismMap (cubePrismBoundary (-1 : ℝ) 1) := by
@@ -164,8 +154,6 @@ theorem prismMap_injOn {h : OpenPartialHomeomorph (V1 × V2) V3}
   · exact (hcross false hy hx hxy.symm).symm
   · exact (hcross true hy hx hxy.symm).symm
   · exact hside hx hy hxy
-
-
 
 theorem prismMap_image :
     T.prismMap '' cubePrismBoundary (-1 : ℝ) 1 =

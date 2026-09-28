@@ -6,20 +6,6 @@ import PoincareConjecture.Statements.M29GeneralizedDistance
 import PoincareConjecture.Statements.M30ControlledBlowupLimits
 import PoincareConjecture.Statements.M31SingularRegularLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,7 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure RepairedHornSelectionPredecessors : Prop where
   m04 : RicciFlowCurvatureTheory.{u}
@@ -44,7 +29,6 @@ structure RepairedHornSelectionPredecessors : Prop where
 structure RepairedHornSelectionTheory : Prop where
 
   providers : RepairedHornSelectionPredecessors.{u}
-
 
   deep_horn : ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
     ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ epsilon₀ →
@@ -68,15 +52,11 @@ structure RepairedHornSelectionTheory : Prop where
                       Nonempty (DeepHornNeckConclusion Q.extension
                         (terminalAccuracyFactor * H'.epsilon) H'.constant rho delta horn h)
 
-
-
   scale_selection : ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
     ∀ epsilon C analyticConstant : ℝ,
       0 < epsilon → epsilon ≤ epsilon₀ → 0 < C → 0 < analyticConstant →
       ∀ A : RepairedNeckCapTopologyTheory.{u}, terminalAccuracyFactor * epsilon ≤ A.epsilon₀ →
         Nonempty (M32DeepHornScaleSelection.{u} epsilon C analyticConstant)
-
-
 
   selection : ∀ L31 : RepairedSingularRegularLimitTheory.{u},
     ∀ {M : Type u} [TopologicalSpace M]

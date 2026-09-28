@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M38.CompactCoverSheet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_partialDiffeomorph_of_matching_local_covers
     {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

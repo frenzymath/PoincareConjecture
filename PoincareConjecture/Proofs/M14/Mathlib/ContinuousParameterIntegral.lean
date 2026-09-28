@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,9 +10,6 @@ namespace intervalIntegral
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {μ : Measure ℝ} [IsLocallyFiniteMeasure μ]
-
-
-
 
 theorem hasDerivAt_integral_of_continuousOn_parameter {a b : ℝ} (hab : a ≤ b)
     {P : Set ℝ} (hP : IsOpen P) (L L' : ℝ × ℝ → E)

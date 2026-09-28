@@ -9,17 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
-
-
 theorem m64_two_column_norm_sq_le_liminf
     {E : Type u} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     [CompleteSpace E]
@@ -48,10 +37,6 @@ theorem m64_two_column_norm_sq_le_liminf
     isBoundedUnder_of ⟨B1, hB1⟩
   exact (add_le_add h0' h1').trans
     (le_liminf_add h0lower h0upper h1lower h1upper.isCoboundedUnder_ge)
-
-
-
-
 
 theorem m64_two_column_dirichlet_energy_le_liminf
     {E : Type u} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -95,10 +80,6 @@ theorem m64_two_column_dirichlet_energy_le_liminf
     _ = liminf (fun k => (‖u0 k‖ ^ 2 + ‖u1 k‖ ^ 2) / 2) atTop := by
       rfl
 
-
-
-
-
 theorem m64_weighted_column_energy_le_liminf
     {E : Type u} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     [CompleteSpace E]
@@ -119,10 +100,6 @@ theorem m64_weighted_column_energy_le_liminf
     _ = liminf energies atTop := by
       apply liminf_congr
       exact Eventually.of_forall (fun k => (he k).symm)
-
-
-
-
 
 theorem m64_integral_energy_le_liminf_of_weighted_columns
     {E : Type u} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

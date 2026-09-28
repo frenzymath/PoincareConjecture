@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalJacobi
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +9,6 @@ open Set
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_normal_jacobi_ge_model
     {R kappa alpha : ℝ} (hR : 0 < R) (hkappa : 0 < kappa)
@@ -71,9 +57,6 @@ theorem m64Intrinsic_normal_jacobi_ge_model
     ring
   · exact hk
 
-
-
-
 theorem m64Intrinsic_exists_normal_model_radius
     {delta kappa alpha : ℝ} (hdelta : 0 < delta)
     (hkappa : 0 < kappa) (halpha : 0 ≤ alpha) :
@@ -100,9 +83,6 @@ theorem m64Intrinsic_exists_normal_model_radius
   dsimp only [D] at htD
   nlinarith [mul_nonneg halpha ht.1, mul_nonneg (sq_nonneg kappa) ht.1]
 
-
-
-
 theorem m64Intrinsic_exists_uniform_normal_jacobi_radius
     {delta kappa alpha : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1)
     (hkappa : 0 < kappa) (halpha : 0 ≤ alpha) :
@@ -122,9 +102,6 @@ theorem m64Intrinsic_exists_uniform_normal_jacobi_radius
   have hcomp := m64Intrinsic_normal_jacobi_ge_model hR hkappa hJ hJ' hJ'' hzero hinitial
     hjac hk (fun t ht => (sub_pos.mpr hdelta1).trans_le (hmodel t ht))
   exact fun t ht => (hmodel t ht).trans (hcomp t ht)
-
-
-
 
 theorem m64Intrinsic_exists_uniform_normal_jacobi_subinterval_radius
     {delta kappa alpha : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1)

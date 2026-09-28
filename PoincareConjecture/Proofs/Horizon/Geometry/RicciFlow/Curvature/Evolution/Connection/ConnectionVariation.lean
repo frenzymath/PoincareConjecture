@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.T
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

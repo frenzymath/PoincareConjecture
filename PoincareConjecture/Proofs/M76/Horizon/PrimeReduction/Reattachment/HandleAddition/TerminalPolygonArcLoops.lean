@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalTwoArcLoop
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedPolygonArcs
 
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

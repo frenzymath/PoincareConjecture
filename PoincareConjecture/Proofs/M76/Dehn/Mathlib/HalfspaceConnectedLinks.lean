@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspacePunctureConnected
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem isConnected_faceLink_of_halfspace_patch
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

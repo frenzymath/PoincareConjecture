@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.UniformNormalCover
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.EventualNormalCovers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_partial_metric_limit_of_local_geometry
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

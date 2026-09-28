@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitRP2Charts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,15 +13,12 @@ namespace PoincareConjecture.M47
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
 noncomputable def limitNoncollapseChartForm
     (e : GeneralizedFlowCylinder F C origin scale I U)
     (q : C.carrier) (t : ℝ) (ht : t ∈ I) (z : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   scale • (F.metric (origin + t / scale)).pullbackCoefficients
     (e.forward t ht ∘ (extChartAt (𝓡 3) q).symm) z
-
-
 
 theorem limitNoncollapseChartForm_apply
     (e : GeneralizedFlowCylinder F C origin scale I U) (hU : IsOpen U)
@@ -53,8 +39,6 @@ theorem limitNoncollapseChartForm_apply
       (mfderiv (𝓡 3) (𝓡 3) (e.forward t ht ∘ (extChartAt (𝓡 3) q).symm) z w) = _
   rw [mfderiv_comp z he hc]
   rfl
-
-
 
 theorem limitNoncollapseChartForm_coefficient {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
     {U : Set L.sliceCarrier.carrier}

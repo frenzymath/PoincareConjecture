@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Interval
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
 
 theorem exists_ambient_isotopy_of_interval_isotopy_within_of_contDiffOn
     {a b l u : Real} {U : Set E2} (hU : IsOpen U)

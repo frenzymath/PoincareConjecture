@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ variable {E F G X Y Z ι κ nu : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
-
-
-
 
 theorem plInCharts_prodAssoc
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}
@@ -46,8 +34,6 @@ theorem plInCharts_prodAssoc
     ⟨⟨⟨hz.1.1.1.2, mem_univ _⟩, hz.2.2.1⟩,
       ⟨⟨hz.1.1.2, mem_univ _⟩, hz.2.2.2⟩⟩⟩⟩
 
-
-
 theorem plInCharts_prodAssoc_symm
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}
     {S : nu → OpenPartialHomeomorph G Z}
@@ -70,9 +56,6 @@ theorem plInCharts_prodAssoc_symm
     ⟨⟨hz.1.1.2.1, mem_univ _⟩, hz.2.1.2⟩⟩,
       ⟨⟨hz.1.1.2.2, mem_univ _⟩, hz.2.2⟩⟩⟩
 
-
-
-
 theorem plInCharts_prodComm
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}
     (hQ : PLInCharts Q Q id univ) (hR : PLInCharts R R id univ) :
@@ -89,9 +72,6 @@ theorem plInCharts_prodComm
   intro z hz
   exact ⟨mem_univ _, ⟨⟨⟨hz.1.1.2, mem_univ _⟩, hz.2.1⟩,
     ⟨⟨hz.1.1.1, mem_univ _⟩, hz.2.2⟩⟩⟩
-
-
-
 
 theorem plInCharts_swapLast
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}

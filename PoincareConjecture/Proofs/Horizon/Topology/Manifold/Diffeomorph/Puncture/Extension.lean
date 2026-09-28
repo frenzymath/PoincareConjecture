@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ namespace Poincare
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 local notation "S2" => Metric.sphere (0 : E3) 1
-
-
 
 theorem exists_euclidean_extension_of_punctured_identity
     (H : Diffeomorph (𝓡 3) (𝓡 3) puncturedThreeSpace puncturedThreeSpace ∞)
@@ -79,8 +68,6 @@ theorem exists_euclidean_extension_of_punctured_identity
     contMDiff_invFun := extend_smooth H.symm hfixi }
   exact ⟨F, extend_coe H, extend_fix H hfix⟩
 
-
-
 theorem exists_euclidean_extension_of_cylinder_negative_tail
     (K : Diffeomorph CylModel CylModel (S2 × ℝ) (S2 × ℝ) ∞)
     (R : ℝ) (hfix : ∀ p : S2 × ℝ, p.2 < -R → K p = p) :
@@ -110,8 +97,6 @@ theorem exists_euclidean_extension_of_cylinder_negative_tail
   change F (Real.exp p.2 • (p.1 : E3)) = (J (K (J.symm (J p))) : E3) at hp
   rw [J.symm_apply_apply] at hp
   exact hp
-
-
 
 theorem image_closedBall_of_fixing_zero_and_sphere
     (F : E3 ≃ₜ E3) (hzero : F 0 = 0)
@@ -151,8 +136,6 @@ theorem image_closedBall_of_fixing_zero_and_sphere
     F.injective (by rw [F.apply_symm_apply, hsphere q])
   exact ⟨F.symm x, hclosed F.symm hzi hsi (mem_image_of_mem F.symm hx),
     F.apply_symm_apply x⟩
-
-
 
 theorem exists_ball_preserving_extension_of_cylinder_negative_tail
     (K : Diffeomorph CylModel CylModel (S2 × ℝ) (S2 × ℝ) ∞)

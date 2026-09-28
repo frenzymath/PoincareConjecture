@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroCorePlacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -41,11 +31,6 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ
 local notation "D" => coordinateCylinder J
 local notation "C" => closedBall (0 : V) 1
 local notation "R" => latticeHandleDomain ι κ L
-
-
-
-
-
 
 theorem exists_hamiltonProtectedCoreData_of_fixed_region_marked
     (h : V → E)
@@ -120,9 +105,6 @@ theorem exists_hamiltonProtectedCoreData_of_fixed_region_marked
     quotient_PL := hqPL
   }, rfl⟩
 
-
-
-
 theorem exists_hamiltonProtectedCoreData_of_fixed_region
     (h : V → E)
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ))
@@ -144,9 +126,6 @@ theorem exists_hamiltonProtectedCoreData_of_fixed_region
     h e d hd p hps hpiPL A G hA P hPfixed hPD i b hchart hformula
       Q hQPL hQout hQrel hplace
   exact ⟨data⟩
-
-
-
 
 theorem exists_hamiltonProtectedCoreData
     (h : V → E)
@@ -170,10 +149,6 @@ theorem exists_hamiltonProtectedCoreData
     A G hA P ?_ hPD i b hchart hformula Q hQPL hQout hQrel hplace
   intro y hy
   exact hpcore y (mem_closedBall_zero_iff.mp (hPC hy))
-
-
-
-
 
 theorem exists_hamiltonProtectedCoreData_zero [IsEmpty ι]
     (h : V → E)

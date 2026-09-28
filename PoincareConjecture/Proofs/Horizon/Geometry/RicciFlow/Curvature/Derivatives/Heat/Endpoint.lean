@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

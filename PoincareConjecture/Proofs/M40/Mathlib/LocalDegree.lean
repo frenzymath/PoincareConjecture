@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralLocalHomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralThreeManifoldTop
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,9 +14,6 @@ namespace PoincareConjecture.Proofs.M40
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
-
 theorem integralToRelativeHomology_map_naturality
     (f : C(X, Y)) {A : Set X} {B : Set Y} (hf : MapsTo f A B) (n : Nat) :
     integralToRelativeHomology A n ≫ homologyMap (integralRelativeMap f hf) n =
@@ -38,10 +21,6 @@ theorem integralToRelativeHomology_map_naturality
         integralToRelativeHomology B n := by
   simpa only [integralToRelativeHomology, homologyMap_comp] using
     congrArg (fun k => homologyMap k n) (integralRelativeMap_projection f hf)
-
-
-
-
 
 theorem integralLocalHomologyMap_isIso
     [T1Space X] [T1Space Y] (f : C(X, Y)) (x : X)
@@ -112,9 +91,6 @@ theorem integralLocalHomologyMap_isIso
   rw [hhom]
   infer_instance
 
-
-
-
 theorem integralLocalHomologyMap_isIso_of_unique_preimage
     [T1Space X] [T1Space Y] (f : C(X, Y)) (x : X)
     (e : OpenPartialHomeomorph X Y) (hx : x ∈ e.source)
@@ -124,9 +100,6 @@ theorem integralLocalHomologyMap_isIso_of_unique_preimage
       (integralRelativeMap f (A := ({x}ᶜ : Set X)) (B := ({f x}ᶜ : Set Y))
         (fun z hz hzx => hz (hunique z hzx))) n) :=
   integralLocalHomologyMap_isIso f x e hx he _ n
-
-
-
 
 theorem integralSupportHomologyRestriction_point_bijective
     [T2Space X] [RegularSpace X] [CompactSpace X] [PreconnectedSpace X]
@@ -159,9 +132,6 @@ theorem integralSupportHomologyRestriction_point_bijective
     simpa only [zsmul_eq_mul, Int.cast_id, mul_one] using
       (basis x).apply_symm_apply b
 
-
-
-
 theorem integralThirdHomology_toLocal_isIso
     [T2Space X] [CompactSpace X]
     [ChartedSpace (EuclideanSpace Real (Fin 3)) X]
@@ -188,10 +158,6 @@ theorem integralThirdHomology_toLocal_isIso
     rw [← homologyMap_comp, integralSupportRestriction_projection]
   rw [← hfactor]
   infer_instance
-
-
-
-
 
 theorem integralThirdHomologyMap_bijective_of_unique_preimage
     [T2Space X] [T2Space Y] [CompactSpace X] [CompactSpace Y]
@@ -222,4 +188,3 @@ theorem integralThirdHomologyMap_bijective_of_unique_preimage
   exact ConcreteCategory.bijective_of_isIso _
 
 end PoincareConjecture.Proofs.M40
-

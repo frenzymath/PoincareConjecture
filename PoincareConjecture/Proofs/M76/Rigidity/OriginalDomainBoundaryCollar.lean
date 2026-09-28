@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalChartBall
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
 
 theorem PLDomain.exists_small_boundary_collar_of_interior_nonempty
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

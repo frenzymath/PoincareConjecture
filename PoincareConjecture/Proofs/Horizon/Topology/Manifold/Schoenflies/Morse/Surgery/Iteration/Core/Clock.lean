@@ -1,8 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,8 +8,6 @@ open Set
 open scoped ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 def capStretchClock (K t : Real) : Real :=
   t + K * Real.smoothTransition (4 * t - 1)
@@ -39,7 +35,6 @@ theorem deriv_capStretchClock_pos {K : Real} (hK : 0 ≤ K) (t : Real) :
   change HasDerivAt (capStretchClock K) (1 + K * deriv w t) t at hd
   rw [hd.deriv]
   linarith [mul_nonneg hK (hwm.deriv_nonneg (x := t))]
-
 
 def capPhysicalClock (c s K h : Real) : Real :=
   c + s * capStretchClock K ((h - c) / s)
@@ -72,8 +67,6 @@ theorem deriv_capPhysicalClock_pos (c : Real) {s K : Real} (hs : s ≠ 0)
       deriv (capStretchClock K) ((h - c) / s) := by field_simp
   rw [heq]
   exact deriv_capStretchClock_pos hK _
-
-
 
 theorem exists_cap_clock_avoiding_band (a b c : Real) {s : Real} (hs : s ≠ 0) :
     ∃ K : Real, 0 ≤ K ∧ ∀ t : Real, 1 / 2 ≤ t →

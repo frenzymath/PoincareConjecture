@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedAssembly
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapTipFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +17,10 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
 
-
-
 abbrev incidentSide (e : T.decomposition.EdgeIndex) (side : Bool) :
     T.decomposition.IncidentEdgeIndex :=
   ⟨(if side then T.decomposition.regionLeft e else T.decomposition.regionRight e, e),
     by cases side <;> simp⟩
-
-
 
 theorem first_cap_tip_contribution (g : RiemannianMetric 2 S)
     (e : T.decomposition.EdgeIndex) :
@@ -69,8 +59,6 @@ theorem first_cap_tip_contribution (g : RiemannianMetric 2 S)
     (fun s => (T.refinement.subdivision (.inl (T.decomposition.edgeEndpoint e false, s))).refinement_lines)
     (fun side p => (T.refinement.subdivision (.inr (.inl
       ⟨⟨T.incidentSide e side, (T.graphs (T.incidentSide e side)).firstPiece⟩, p⟩))).refinement_lines)
-
-
 
 theorem last_cap_tip_contribution (g : RiemannianMetric 2 S)
     (e : T.decomposition.EdgeIndex) :

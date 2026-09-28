@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleFlows
 import PoincareConjecture.Proofs.M34.Standard.CompactDerivativeBounds
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Approximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,12 +11,8 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 theorem terminalCutoffRadius_ge_three (k : ℕ) : (3 : ℝ) ≤ (k : ℝ) + 5 := by
   linarith [Nat.cast_nonneg (α := ℝ) k]
-
-
 
 abbrev TerminalCutoffDouble (g0 : StandardInitialMetric) (k : ℕ) :=
   CutoffDouble g0.cylindrical_end (terminalCutoffRadius_ge_three k)
@@ -39,8 +25,6 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (hfull : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
 
-
-
 theorem cutoffDouble_curvatureDerivative_bound (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (R : ℝ) (hR : 3 ≤ R),
       ∀ D : LeviCivitaData (cutoffDoubleMetric g0.cylindrical_end
@@ -52,8 +36,6 @@ theorem cutoffDouble_curvatureDerivative_bound (m : ℕ) :
   let h := L.metric P.curvature E0 hS hSF hB hfull
   let Dh := (cutoffMetric g0.cylindrical_end h R).euclideanLeviCivitaData
   exact cutoffDouble_curvatureDerivative_le g0.cylindrical_end h hR Dh m (hbound R Dh) D q
-
-
 
 theorem cutoffDouble_initialDerivative_bounds_upto (k : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (R : ℝ) (hR : 3 ≤ R),
@@ -76,8 +58,6 @@ theorem cutoffDouble_initialDerivative_bounds_upto (k : ℕ) :
       · have hjs : j = k + 1 := by omega
         subst j
         exact (ha R hR D q).trans (le_max_right _ _)
-
-
 
 theorem cutoffDouble_flows_exist :
     ∃ τ K : ℝ, 0 < τ ∧ 0 < K ∧ ∀ (R : ℝ) (hR : 3 ≤ R),
@@ -106,8 +86,6 @@ theorem cutoffDouble_flows_exist :
       exact (hbound R hR D q).trans (by dsimp [C]; linarith))
   exact ⟨H, hH, hnorm⟩
 
-
-
 theorem cutoffDouble_flow_derivative_bounds {T K : ℝ} (hT : 0 < T) (hK : 0 < K) (k : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ (R : ℝ) (hR : 3 ≤ R)
       (H : RicciFlow 3 (CutoffDouble g0.cylindrical_end hR) (Icc 0 T)),
@@ -128,9 +106,6 @@ theorem cutoffDouble_flow_derivative_bounds {T K : ℝ} (hT : 0 < T) (hK : 0 < K
       rw [hH]
       exact hA R hR
     exact fun j hj q => (hinit (H.connection 0) j hj q).trans (le_max_right _ _)
-
-
-
 
 theorem metricFlowApproximation_exists :
     Nonempty (MetricFlowApproximation (L.metric P.curvature E0 hS hSF hB hfull)

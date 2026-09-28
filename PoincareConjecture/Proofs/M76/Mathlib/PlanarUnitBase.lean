@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarCapTopEdge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PlanarSegment
-
-
-
 
 theorem unit_base_subset_of_inter {a b q : ℝ × ℝ}
     (ha : a.1 + a.2 = 1) (hb : b.1 + b.2 = 1)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_HarnackIntegrability
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,22 +15,16 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
 
-
-
 noncomputable def squareHarnackPrimitive (R : M14SquareRootPath G p) (s : ℝ) : ℝ :=
   s ^ 3 * horizontalScalarCurvature G.leafwise (R.curve s) +
     s * G.spacetime.horizontalMetric.inner (R.curve s)
       (R.horizontal_velocity s) (R.horizontal_velocity s) / 4
-
-
 
 theorem squareHarnackPrimitive_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p) :
     ContDiffOn ℝ ∞ (squareHarnackPrimitive R) (M14SqrtParameterInterval τ₁ τ₂) :=
   ((contDiffOn_id.pow 3).mul (squareRoot_scalar_contDiffOn hM12 R)).add
     ((contDiffOn_id.mul (squareRoot_energy_contDiffOn R)).div_const 4)
-
-
 
 theorem squareHarnackPrimitive_derivWithin
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -63,8 +49,6 @@ theorem squareHarnackPrimitive_derivWithin
     r * G.spacetime.horizontalMetric.inner (R.curve r)
       (R.horizontal_velocity r) (R.horizontal_velocity r) / 4) _ s = _
   simpa only [Pi.add_def, Pi.mul_def, Nat.cast_ofNat, Nat.reduceSub, one_mul, id_eq] using h
-
-
 
 theorem squareRoot_harnackIntegral_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -122,8 +106,6 @@ theorem squareRoot_harnackIntegral_eq
       rw [intervalIntegral.integral_sub ((squareRootLIntegrand_intervalIntegrable R).div_const 2)
         hPi, intervalIntegral.integral_div, integral_squareRootLIntegrand_eq_action R, hFTC]
       ring
-
-
 
 theorem squareRoot_harnackIntegral_zero_start
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {p : M14BackwardPath G T 0 τ₂ x y}

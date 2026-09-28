@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CollarOverl
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalCutHomologyRetract
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarCoverHomotopyEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set CategoryTheory Limits HomologicalComplex

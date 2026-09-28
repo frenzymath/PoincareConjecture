@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Definitions.M62Curve
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
-
-
-
-
 
 theorem exists_closed_normalization_coefficient_limit
     (F : RicciFlow n M (Icc a b)) {e : M → W}

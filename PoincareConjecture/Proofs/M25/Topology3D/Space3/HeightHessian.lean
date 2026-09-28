@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.NormalPlane
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,15 +13,11 @@ variable {V W E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
 variable [NormedAddCommGroup W] [NormedSpace ℝ W]
 variable [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem fderiv_apply_fixedVector (A : V → W →L[ℝ] E) {x : V}
     (hA : DifferentiableAt ℝ A x) (a : V) (b : W) :
     fderiv ℝ (fun y => A y b) x a = fderiv ℝ A x a b := by
   rw [fderiv_clm_apply hA (differentiableAt_const b)]
   simp
-
-
 
 theorem unit_normal_fderiv_orthogonal (n : V → E) {U : Set V}
     (hU : IsOpen U) (hn : ContDiffOn ℝ ∞ n U)
@@ -47,8 +32,6 @@ theorem unit_normal_fderiv_orthogonal (n : V → E) {U : Set V}
   rw [fderiv_inner_apply ℝ hd hd a] at hzero
   change ⟪n x, fderiv ℝ n x a⟫_ℝ + ⟪fderiv ℝ n x a, n x⟫_ℝ = 0 at hzero
   linarith [real_inner_comm (n x) (fderiv ℝ n x a)]
-
-
 
 theorem normal_second_fderiv (e n : V → E) {U : Set V}
     (hU : IsOpen U) (he : ContDiffOn ℝ ∞ e U) (hn : ContDiffOn ℝ ∞ n U)
@@ -69,8 +52,6 @@ theorem normal_second_fderiv (e n : V → E) {U : Set V}
   change ⟪n x, fderiv ℝ (fderiv ℝ e) x a b⟫_ℝ +
     ⟪fderiv ℝ n x a, fderiv ℝ e x b⟫_ℝ = 0 at hzero
   linarith
-
-
 
 theorem height_second_fderiv (e : V → E) {U : Set V}
     (hU : IsOpen U) (he : ContDiffOn ℝ ∞ e U) (u : E)
@@ -98,8 +79,6 @@ theorem height_second_fderiv (e : V → E) {U : Set V}
   simpa using hdiff
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem height_hessian_kernel_iff (e n : V → E) {U : Set V}
     (hU : IsOpen U) (he : ContDiffOn ℝ ∞ e U) (hn : ContDiffOn ℝ ∞ n U)
@@ -140,8 +119,6 @@ theorem height_hessian_kernel_iff (e n : V → E) {U : Set V}
     apply ContinuousLinearMap.ext
     intro b
     rw [hformula, ha, inner_zero_left, mul_zero, zero_apply]
-
-
 
 theorem height_hessian_injective (e n : V → E) {U : Set V}
     (hU : IsOpen U) (he : ContDiffOn ℝ ∞ e U) (hn : ContDiffOn ℝ ∞ n U)

@@ -9,18 +9,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.Interior
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -38,8 +26,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 open HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem exists_uniform_harmonic_radius (hn : 2 ≤ n)
     {R K : ℝ} (hR : 0 < R) (hK : 0 ≤ K) :

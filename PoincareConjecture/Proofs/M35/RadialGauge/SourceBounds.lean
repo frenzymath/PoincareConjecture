@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceSmoothness
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -148,9 +139,6 @@ private theorem bounded_forcing_composition
       ContinuousMultilinearMap.opNorm_prod]
     exact (max_le ((norm_iteratedFDeriv_id_le_one j hj x).trans hD)
       ((hU j a x).trans (hUle hjk))).trans (le_self_pow₀ hD (by omega))
-
-
-
 
 theorem gaugeSource_uniform_bounded_derivatives
     {b : A → V → V} {G : A → V → ℝ → ℝ} {u : A → V → ℝ}

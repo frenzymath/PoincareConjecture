@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.PrefixDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.EmptyFiberDistance
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -160,8 +154,6 @@ private theorem PoincareConjecture.RiemannianMetric.strainer_distance_iterate
           g.edist (openFiberIncl F U c x) (openFiberIncl F U c y)) := hmul
     rw [← mul_assoc, ← ENNReal.ofReal_mul (by linarith : 0≤A), ← pow_succ'] at hm
     exact hm
-
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_openFiber_edist_le_of_ambient_closedBall
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

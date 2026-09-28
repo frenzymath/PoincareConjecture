@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M72FiniteReconstruction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -18,7 +7,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def m72RegionPostcompose {P Q R : GeneralizedSliceCarrier.{u}}
     {U : Set Q.carrier} (E : SurgeryRegionEquivalence P Q Set.univ U)
@@ -47,7 +35,6 @@ noncomputable def m72RegionPostcompose {P Q R : GeneralizedSliceCarrier.{u}}
   inverse_smooth := E.inverse_smooth.comp d.symm.contMDiff.contMDiffOn (by
     rintro _ ⟨y, hy, rfl⟩
     simpa using hy)
-
 
 noncomputable def M72SuccessorTransport.component_transport
     {F : SurgeryFlowData.{u}} {H T T' : ℝ}
@@ -89,13 +76,11 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
 
-
 noncomputable def m72ReconstructionLedger (I : M72ReconstructionInput N) :
     M72ReconstructionLedger I where
   event_times := (I.global.certificate.local_finite
     (Set.Icc 0 I.extinction.extinction_time) isCompact_Icc).toFinset
   event_times_eq := Set.Finite.coe_toFinset _
-
 
 theorem m72SuccessorTargetInLedger (I : M72ReconstructionInput N)
     (L : M72ReconstructionLedger I) (e : M72EventIndex I L)

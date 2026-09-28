@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.PartialStandardCapFlow
-
-
 
 theorem exists_metric_comparison
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

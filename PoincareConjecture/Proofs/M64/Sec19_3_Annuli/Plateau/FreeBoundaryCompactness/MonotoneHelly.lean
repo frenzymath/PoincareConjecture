@@ -3,18 +3,6 @@ import Mathlib.Topology.Algebra.Order.LiminfLimsup
 import Mathlib.Topology.Order.Monotone
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +11,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem monotone_sequence_subsequence_ae
     (f : ℕ → ℝ → ℝ) (hmono : ∀ j, Monotone (f j))
@@ -78,9 +62,6 @@ theorem monotone_sequence_subsequence_ae
     exact hL.countable_not_continuousAt.measure_zero volume
   filter_upwards [hcontinuous] with x hx
   exact hconverges x hx
-
-
-
 
 theorem liminf_period_shift
     (f : ℕ → ℝ → ℝ) {P : ℝ}

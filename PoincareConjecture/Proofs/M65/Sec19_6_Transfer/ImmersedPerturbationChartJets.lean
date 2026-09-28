@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationJets
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {N : ℕ} {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b : ℝ} {J : Set ℝ}
-
-
-
-
 
 theorem exists_chart_jet_control (F : RicciFlow 3 M (Icc a b)) (hJ : IsOpen J)
     (C : M65SmoothFilledLoopFamily F J)

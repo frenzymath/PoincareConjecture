@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveFlowPieces
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem positive_component_cylinder_line
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

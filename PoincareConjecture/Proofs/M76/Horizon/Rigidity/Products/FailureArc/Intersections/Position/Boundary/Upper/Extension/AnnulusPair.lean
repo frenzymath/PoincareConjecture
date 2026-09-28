@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.CommonCollar.RegionMapExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Collars.EmbeddedMapTransport
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric Topology
 
@@ -14,7 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 
 open Dehn.ProtectedAnnulus
-
 
 theorem exists_original_moved_annulus_pair
     {X ι : Type*} [TopologicalSpace X]

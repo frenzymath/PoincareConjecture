@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_PullbackCurvature
 import PoincareConjecture.Proofs.M04.FlowTensorRegularity
 import PoincareConjecture.Proofs.M04.ConnectionVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem flow_chartChristoffel_smooth [T2Space M]
     (F : RicciFlow n M J) (p : M) :
@@ -84,8 +73,6 @@ theorem flow_chartChristoffel_smooth [T2Space M]
   rw [M04.shiChartChristoffel_connection (F.connection z.1) he hi hz.2,
     ← M04.shiChartField_at_inverse he hi hz.2]
   rfl
-
-
 
 theorem hasDerivAt_flow_chartChristoffel_pair [T2Space M]
     (F : RicciFlow n M J) (p : M) {t : ℝ} {y : M}

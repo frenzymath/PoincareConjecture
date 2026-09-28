@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
 
 structure MetricSurgeryConstants where
   C₀ : ℝ
@@ -38,7 +28,6 @@ structure MetricSurgeryConstants where
   delta₀_lt : delta₀ < 1 / 200
   comparison_delta : ℝ → ℝ
   comparison_delta_pos : ∀ eta : ℝ, 0 < eta → 0 < comparison_delta eta
-
 
 def SurgeryPinchedOn {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (t : ℝ) (U : Set M) : Prop :=
@@ -60,16 +49,11 @@ structure MetricSurgeryInput (K : MetricSurgeryConstants)
   scalar_large : K.R₀ ≤ neck.connection.scalarCurvature neck.center
   pinched : SurgeryPinchedOn neck.connection time neck.carrier
 
-
-
-
-
 def SurgeryProfileLargeQ (g₀ : StandardInitialMetric)
     (K : MetricSurgeryConstants) : Prop :=
   100 * (4 + g₀.cylindrical_end.radius) ^ 2 < K.q ∧
     ∀ s : ℝ, 0 < s → s ≤ 4 + g₀.cylindrical_end.radius →
       (K.q ^ 2 / s ^ 4) * Real.exp (-K.q / s) < 1 / 100
-
 
 noncomputable def surgeryMetricCoefficient {N : Type v}
     [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
@@ -88,8 +72,6 @@ noncomputable def surgeryCapPullback {N : Type v}
   fun x v => g.inner (f x)
     (mfderiv (𝓡 3) (𝓡 3) f x (v 0))
     (mfderiv (𝓡 3) (𝓡 3) f x (v 1))
-
-
 
 structure SurgeryCapClose (g₀ : StandardInitialMetric)
     (S : GeneralizedSliceCarrier.{u}) (g : RiemannianMetric 3 S.carrier)
@@ -116,12 +98,9 @@ structure SurgeryCapClose (g₀ : StandardInitialMetric)
         (fun x v => scale⁻¹ ^ 2 * surgeryCapPullback g map x v)
         ⌊eta⁻¹⌋₊ p ≤ bound
 
-
-
 structure MetricSurgeryResult (g₀ : StandardInitialMetric)
     {K : MetricSurgeryConstants} {g : RiemannianMetric 3 M}
     (I : MetricSurgeryInput K g) where
-
 
   q_profile : SurgeryProfileLargeQ g₀ K
   output : GeneralizedSliceCarrier.{u}
@@ -132,7 +111,6 @@ structure MetricSurgeryResult (g₀ : StandardInitialMetric)
   collapse : M → output.carrier
   collapse_continuous : ContinuousOn collapse I.neck.carrier
   retained_inverse : output.carrier → M
-
 
   retained_smooth : ContMDiffOn (𝓡 3) (𝓡 3) ∞ collapse
     (I.neck.region (-I.neck.epsilon⁻¹) 1)
@@ -145,7 +123,6 @@ structure MetricSurgeryResult (g₀ : StandardInitialMetric)
       metric.inner (collapse x)
         (mfderiv (𝓡 3) (𝓡 3) collapse x v)
         (mfderiv (𝓡 3) (𝓡 3) collapse x w) = g.inner x v w
-
 
   retained_closed_isometry :
     ∀ x ∈ I.neck.region (-I.neck.epsilon⁻¹) 0 ∪ I.neck.central_sphere,
@@ -161,8 +138,6 @@ structure MetricSurgeryResult (g₀ : StandardInitialMetric)
   cap_map : StandardCapSpace → output.carrier
   cap_inverse : output.carrier → StandardCapSpace
   cap_map_tip : cap_map 0 = tip
-
-
 
   cap_map_smooth : ContMDiffOn (𝓡 3) (𝓡 3) ∞ cap_map
     (g₀.metric.ball 0 (g₀.cylindrical_end.radius + 5))
@@ -199,8 +174,6 @@ structure MetricSurgeryResult (g₀ : StandardInitialMetric)
     I.neck.epsilon ≤ K.comparison_delta eta →
       Nonempty (SurgeryCapClose g₀ output metric tip I.neck.scale eta)
 
-
-
   positive_sectional_preserved :
     (∀ x ∈ I.neck.carrier, ∀ v w : TangentSpace (𝓡 3) x,
       LeviCivitaData.IsOrthonormalPair g x v w →
@@ -211,7 +184,6 @@ structure MetricSurgeryResult (g₀ : StandardInitialMetric)
 
   retained_inverse_smooth : ContMDiffOn (𝓡 3) (𝓡 3) ∞ retained_inverse
     (collapse '' I.neck.region (-I.neck.epsilon⁻¹) 1)
-
 
   cap_closed_image : cap_map ''
       {x | g₀.metric.edist 0 x ≤ ENNReal.ofReal (g₀.cylindrical_end.radius + 4)} =

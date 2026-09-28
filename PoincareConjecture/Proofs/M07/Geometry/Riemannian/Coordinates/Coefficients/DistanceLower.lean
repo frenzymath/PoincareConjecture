@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem edist_le_mul_edist_of_normal_pullback_lower
     (g : RiemannianMetric n M) (p : M)
@@ -106,8 +95,6 @@ theorem edist_le_mul_edist_of_normal_pullback_lower
   change EDist.edist x y ≤ ENNReal.ofReal (K : ℝ) * g.edist (Φ x) (Φ y)
   rw [ENNReal.ofReal_coe_nnreal]
   exact hh
-
-
 
 theorem toReal_edist_bounds_of_normal_pullback_bounds [T3Space M] [PreconnectedSpace M]
     (g : RiemannianMetric n M) (p : M)

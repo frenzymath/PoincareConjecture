@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CurvatureSupremum
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64CurvatureFields_of_M63
     {n : ℕ} {M : Type u} [TopologicalSpace M]

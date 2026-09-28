@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -24,13 +14,6 @@ variable {n : ℕ} {M : Type u}
   [CompactSpace M]
 
 namespace GaugeRecovery
-
-
-
-
-
-
-
 
 structure Certificate (g0 : RiemannianMetric n M) where
   T : ℝ
@@ -52,7 +35,6 @@ structure Certificate (g0 : RiemannianMetric n M) where
       (u v : TangentSpace (𝓡 n) x),
       source t x u v - gaugeCorrection t x u v = -2 * D.ricci x u v
 
-
 theorem Certificate.equation
     {g0 : RiemannianMetric n M} (C : Certificate (n := n) (M := M) g0)
     (t : ℝ) (ht : t ∈ Set.Ico 0 C.T)
@@ -62,8 +44,6 @@ theorem Certificate.equation
       (-2 * D.ricci x u v) (Set.Ico 0 C.T) t := by
   rw [← C.cancellation t ht D x u v]
   exact C.transportedEquation t ht x u v
-
-
 
 theorem Certificate.exists_metricFamily
     {g0 : RiemannianMetric n M} (C : Certificate (n := n) (M := M) g0) :

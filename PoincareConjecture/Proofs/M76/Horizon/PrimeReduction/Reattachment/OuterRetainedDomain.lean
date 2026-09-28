@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.RetainedPLDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.RetainedPortCore
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

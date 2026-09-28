@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Compactnes
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_TwoJetModulus
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +28,6 @@ noncomputable local instance rescaledLimitEquationTwoJetNorm :
 noncomputable local instance rescaledLimitEquationTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
 
-
-
 theorem tendsto_metricTwoJet_of_spatialJets
     {fseq : ℕ → E → V} {f : E → V} {x : E}
     (h : ∀ m : ℕ, m ≤ 2 → Tendsto
@@ -61,9 +48,6 @@ theorem tendsto_metricTwoJet_of_spatialJets
   · exact h1.le
   · exact h2.le
 
-
-
-
 theorem tendsto_metricTwoJet_of_compactSmooth
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}
     (h : CompactSmoothConvergenceOn fseq f atTop U)
@@ -71,9 +55,6 @@ theorem tendsto_metricTwoJet_of_compactSmooth
     Tendsto (fun k => metricTwoJet (fun x => fseq k (p.1, x)) p.2) atTop
       (𝓝 (metricTwoJet (fun x => f (p.1, x)) p.2)) :=
   tendsto_metricTwoJet_of_spatialJets (fun m _ => tendsto_spatialJet_of_compactSmooth h hp m)
-
-
-
 
 theorem rescaled_limit_coefficients_symmetric
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}
@@ -88,9 +69,6 @@ theorem rescaled_limit_coefficients_symmetric
   apply tendsto_nhds_unique hleft
   exact hright.congr' ((hsymm p hp).mono fun k hk => hk w v)
 
-
-
-
 theorem rescaled_limit_coefficients_elliptic
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}
     (h : CompactSmoothConvergenceOn fseq f atTop U)
@@ -103,9 +81,6 @@ theorem rescaled_limit_coefficients_elliptic
   exact ge_of_tendsto (heval.continuousAt.tendsto.comp hpoint)
     (hell.mono fun k hk => hk v)
 
-
-
-
 theorem rescaled_limit_coefficients_positive
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}
     (h : CompactSmoothConvergenceOn fseq f atTop U)
@@ -114,11 +89,6 @@ theorem rescaled_limit_coefficients_positive
     (v : E) (hv : v ≠ 0) : 0 < f p v v :=
   (mul_pos ha (sq_pos_of_pos (norm_pos_iff.mpr hv))).trans_le
     (rescaled_limit_coefficients_elliptic h hp hell v)
-
-
-
-
-
 
 theorem hasDerivAt_rescaled_limit_ricci_coefficients
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}

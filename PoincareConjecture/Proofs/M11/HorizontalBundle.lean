@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SpatialTransitions
 import PoincareConjecture.Proofs.M11.VectorCover
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

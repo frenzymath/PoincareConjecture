@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M13.CurvatureTensorial
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,7 +9,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem connection_sub (D : LeviCivitaData g)
     (V W : (p : M) → TangentSpace (𝓡 n) p) (x : M)
@@ -30,7 +22,6 @@ theorem connection_sub (D : LeviCivitaData g)
   rw [sub_eq_add_neg, D.connection.isCovariantDerivativeOn.add hV
     (mdifferentiableAt_neg_section hW), hneg, sub_eq_add_neg]
 
-
 theorem smooth_mlieBracket_at (X Y : (p : M) → TangentSpace (𝓡 n) p) (x : M)
     (hX : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X) x)
     (hY : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% Y) x) :
@@ -43,7 +34,6 @@ theorem smooth_mlieBracket_at (X Y : (p : M) → TangentSpace (𝓡 n) p) (x : M
     simpa using (inferInstance : IsManifold (𝓡 n) ∞ M)
   exact hX.mlieBracket_vectorField hY
     (by simp only [minSmoothness_of_isRCLikeNormedField]; decide)
-
 
 theorem mlieBracket_cyclic (X Y Z : (p : M) → TangentSpace (𝓡 n) p) (x : M)
     (hX : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X) x)
@@ -73,7 +63,6 @@ theorem mlieBracket_cyclic (X Y Z : (p : M) → TangentSpace (𝓡 n) p) (x : M)
 
 variable [T2Space M]
 
-
 theorem connection_mlieBracket (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U)
     (Y Z : (p : M) → TangentSpace (𝓡 n) p)
     (hY : ContMDiffOn (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% Y) U)
@@ -98,7 +87,6 @@ theorem connection_mlieBracket (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U
     (mdifferentiableAt_sub_section hYZ hZY) hB Filter.univ_mem heq
   rw [← H, connection_sub D _ _ x hYZ hZY]
   rfl
-
 
 theorem curvatureOnFields_bianchi (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U)
     (X Y Z : (p : M) → TangentSpace (𝓡 n) p)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorption
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,12 +9,8 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M74
 
-
-
 noncomputable def positiveRadiusSplice (g : ℝ → ℝ) (a0 a b k r : ℝ) : ℝ :=
   if r ≤ a0 then k * r else k * r + collarCutoff a b r * (g r - k * r)
-
-
 
 theorem positiveRadiusSplice_linear (g : ℝ → ℝ) {a0 a b k r : ℝ}
     (hab : a < b) (hr : r ≤ a) : positiveRadiusSplice g a0 a b k r = k * r := by
@@ -33,15 +20,11 @@ theorem positiveRadiusSplice_linear (g : ℝ → ℝ) {a0 a b k r : ℝ}
   · rw [collarCutoff_eq_zero hab hr]
     ring
 
-
-
 theorem positiveRadiusSplice_outer (g : ℝ → ℝ) {a0 a b k r : ℝ}
     (ha : a0 < a) (hab : a < b) (hr : b ≤ r) :
     positiveRadiusSplice g a0 a b k r = g r := by
   rw [positiveRadiusSplice, if_neg (by linarith), collarCutoff_eq_one hab hr]
   ring
-
-
 
 theorem collarCutoff_deriv_nonneg {a b : ℝ} (hab : a < b) (r : ℝ) :
     0 ≤ deriv (collarCutoff a b) r := by
@@ -50,8 +33,6 @@ theorem collarCutoff_deriv_nonneg {a b : ℝ} (hab : a < b) (r : ℝ) :
     apply Real.smoothTransition.monotone
     exact div_le_div_of_nonneg_right (sub_le_sub_right hxy a) (sub_pos.mpr hab).le
   exact hm.deriv_nonneg
-
-
 
 theorem positiveRadiusSplice_contDiffAt {g : ℝ → ℝ} {a0 a b k R r : ℝ}
     (ha : a0 < a) (hab : a < b) (hg : ContDiffOn ℝ ∞ g (Ioo a0 R)) (hr : r < R) :
@@ -72,8 +53,6 @@ theorem positiveRadiusSplice_contDiffAt {g : ℝ → ℝ} {a0 a b k R r : ℝ}
     apply hsmooth.congr_of_eventuallyEq
     filter_upwards [isOpen_Ioi.mem_nhds hrg.1] with t ht
     exact if_neg (not_le_of_gt ht)
-
-
 
 theorem positiveRadiusSplice_deriv_pos {g : ℝ → ℝ} {a0 a b k R r : ℝ}
     (ha : a0 < a) (hab : a < b) (hk : 0 < k)
@@ -113,8 +92,6 @@ theorem positiveRadiusSplice_deriv_pos {g : ℝ → ℝ} {a0 a b k R r : ℝ}
           (mul_nonneg hchi0 (hgd r hrI).le)
     have hcorr := mul_nonneg (collarCutoff_deriv_nonneg hab r) (sub_nonneg.mpr (hbound r hrI))
     nlinarith
-
-
 
 theorem positiveRadiusSplice_strictMonoOn {g : ℝ → ℝ} {a0 a b k R : ℝ}
     (ha : a0 < a) (hab : a < b) (hk : 0 < k)

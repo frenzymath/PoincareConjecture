@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Producer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Construction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace RicciFlow.uliftChartedSpace RicciFlow.uliftIsManifold
   AncientKappaSolution.uliftSecondCountable AncientKappaSolution.uliftConnectedSpace
-
-
 
 theorem compact_large_diameter_neighborhoods
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

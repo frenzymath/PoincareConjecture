@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem suC1_coefficient_compact_extension {m : ℕ}
     {O K : Set (EuclideanSpace ℝ (Fin m))} (hO : IsOpen O) (hK : IsCompact K) (hKO : K ⊆ O)
@@ -58,10 +46,6 @@ theorem suC1_coefficient_compact_extension {m : ℕ}
     filter_upwards [Metric.isOpen_thickening.mem_nhds (Metric.self_subset_thickening hδ K hy)]
       with z hz
     simp only [G, hχone z (Metric.thickening_subset_cthickening δ K hz), one_mul]
-
-
-
-
 
 theorem suWeakPartial_comp_on_compact {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

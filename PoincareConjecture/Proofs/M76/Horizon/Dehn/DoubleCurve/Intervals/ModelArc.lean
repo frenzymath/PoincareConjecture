@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.MarkedModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.ModelParameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -51,8 +43,6 @@ theorem OrdinaryIntervalMarkedModel.selected_clip (D : OrdinaryIntervalMarkedMod
   rw [(D.clips_data 2).2.1, D.selected_source]
   exact inter_eq_left.mpr (fun x hx ↦ show f x ∈ D.core from
     interior_subset (D.core_neighborhood ⟨x, hx, rfl⟩))
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_arc_parameters
     (D : OrdinaryIntervalMarkedModel old i) (hf : PolyhedralPLInCharts e f D2)

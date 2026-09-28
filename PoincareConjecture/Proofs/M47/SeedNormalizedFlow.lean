@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_normalized_flow
     (P : GeneralizedParabolicRescalingTheory.{u} 3)

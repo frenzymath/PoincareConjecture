@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchDiskChangeSupport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology unitInterval

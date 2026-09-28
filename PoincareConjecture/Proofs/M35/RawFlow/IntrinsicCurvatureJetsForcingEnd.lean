@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsForcing
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsForcingDecay
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingSpatialDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,7 +28,6 @@ local notation "F" => fun t₀ t (x : V) sigma => smoothGaugeForcing
   (fun r => Real.log (axisDivision (f t) r)) (f t₀) (axisDivision (v t)) x sigma
 
 include hTlt in
-
 
 theorem raw_intrinsic_gauge_forcing_radial_eq {t t₀ : ℝ}
     (ht : t ∈ Icc 0 T) (ht₀ : t₀ ∈ Icc 0 T) {x : V} (hx : x ≠ 0) (sigma : ℝ) :
@@ -97,8 +86,6 @@ theorem raw_intrinsic_gauge_forcing_radial_eq {t t₀ : ℝ}
 
 include H hT hTlt
 
-
-
 theorem raw_intrinsic_gauge_forcing_weighted_bound {t₀ : ℝ} (ht₀ : t₀ ∈ Icc 0 T) :
     ∃ C : ℝ, 0 < C ∧ ∀ t ∈ Icc 0 T, ∀ x : V,
       (1 + ‖x‖) * |F t₀ t x 0| ≤ C := by
@@ -110,8 +97,6 @@ theorem raw_intrinsic_gauge_forcing_weighted_bound {t₀ : ℝ} (ht₀ : t₀ �
     simpa only [norm_iteratedFDeriv_zero, Real.norm_eq_abs] using
       hCb t ht x 0 (by norm_num)
   exact hv.trans (le_add_of_nonneg_right zero_le_one)
-
-
 
 theorem raw_intrinsic_gauge_forcing_space_vanishes {eta t₀ : ℝ}
     (ht₀ : t₀ ∈ Icc 0 T) :

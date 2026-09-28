@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanCorner
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.TwoSidedUnion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,10 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_product_line_relative_cover
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)

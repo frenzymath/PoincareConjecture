@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,7 +50,6 @@ private theorem compact_einstein_zero_of_negative
   exact heq.of_subset_closure hRic ((hR.div_const 3).mul hg) Iio_subset_Iic_self
     (by rw [closure_Iio]) (by simp)
 
-
 theorem compact_isRound_of_early_pinching [CompactSpace M]
     (P : M26CanonicalNeighborhoodPredecessors.{u}) (K : AncientKappaSolution 3 M)
     (hearly : ∀ c : ℝ, 1 < c → ∀ t : ℝ, t < 0 → ∃ a : ℝ, a < t ∧
@@ -94,7 +84,6 @@ theorem compact_isRound_of_early_pinching [CompactSpace M]
   rcases lt_or_eq_of_le ht with hlt | rfl
   · exact hnegative t hlt
   · exact hzero
-
 
 theorem compact_isRound_of_compact_round_limit
     (P : M26CanonicalNeighborhoodPredecessors.{u})

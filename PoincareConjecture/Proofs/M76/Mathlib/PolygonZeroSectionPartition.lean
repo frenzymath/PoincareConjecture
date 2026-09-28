@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CircularSubsetTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,11 +12,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
 
 theorem exists_zero_section_cut_partition (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
     (hPe : ∀ i, (P i).HasSimplicialEdges) (hPi : ∀ i, Function.Injective (P i))

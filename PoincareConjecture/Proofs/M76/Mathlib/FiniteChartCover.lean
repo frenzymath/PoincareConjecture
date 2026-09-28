@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.ChartedSpace
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,15 +11,11 @@ namespace ChartedSpace
 variable (H : Type*) {M : Type*} [TopologicalSpace H] [TopologicalSpace M]
   [ChartedSpace H M] [CompactSpace M]
 
-
-
 theorem exists_finite_chart_cover :
     ∃ t : Finset M, ⋃ x ∈ t, (chartAt H x).source = univ :=
   finite_cover_nhds (chart_source_mem_nhds H)
 
 variable [T2Space M]
-
-
 
 theorem exists_finite_shrunk_chart_cover :
     ∃ t : Finset M, ∃ V : M → Set M,
@@ -42,9 +29,6 @@ theorem exists_finite_shrunk_chart_cover :
   obtain ⟨t, ht⟩ := finite_cover_nhds (fun x => (hV x).2.mem_nhds (hV x).1)
   exact ⟨t, V, fun x => (hV x).1, fun x => (hV x).2, hVs,
     fun _ => isClosed_closure.isCompact, ht⟩
-
-
-
 
 theorem exists_finite_nested_chart_cover :
     ∃ t : Finset M, ∃ V W : M → Set M,
@@ -60,7 +44,6 @@ theorem exists_finite_nested_chart_cover :
   exact ⟨t, V, W, fun x => (hW x).1, hVo, fun x => (hW x).2, hWV, hVs, hVc, ht⟩
 
 omit [T2Space M] in
-
 
 theorem isCompact_chart_image_closure (x : M) {V : Set M}
     (hV : closure V ⊆ (chartAt H x).source) :

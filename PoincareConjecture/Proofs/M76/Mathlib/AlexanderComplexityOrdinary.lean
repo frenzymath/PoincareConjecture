@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryFamilies
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Set
 
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [Finite ι]
-
-
-
 
 theorem hasAlexanderCurvePresentation_zero_of_disjoint_family
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -35,8 +23,6 @@ theorem hasAlexanderCurvePresentation_zero_of_disjoint_family
   intro i j hij
   rw [(hpair hij).inter_eq]
   exact empty_subset r
-
-
 
 theorem hasAlexanderCurvePresentation_zero_union_polygon
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -74,9 +60,6 @@ theorem hasAlexanderCurvePresentation_zero_union_polygon
     (r := ∅) subsingleton_empty
   rw [empty_union, iUnion_option, hcover]
 
-
-
-
 theorem hasAlexanderCurvePresentation_zero_union_cap [FiniteDimensional ℝ E]
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
     (hP : ∀ i, Function.Injective (P i) ∧ (P i).HasSimplicialEdges)
@@ -90,10 +73,6 @@ theorem hasAlexanderCurvePresentation_zero_union_cap [FiniteDimensional ℝ E]
   · obtain ⟨m, Q, hQi, hQe, hQb⟩ := hd.exists_polygon_boundary
     rw [← hQb] at hsep ⊢
     exact hasAlexanderCurvePresentation_zero_union_polygon n P hP hpair hcover Q hQi hQe hsep
-
-
-
-
 
 theorem hasAlexanderCurvePresentation_zero_of_ordinary_level
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]

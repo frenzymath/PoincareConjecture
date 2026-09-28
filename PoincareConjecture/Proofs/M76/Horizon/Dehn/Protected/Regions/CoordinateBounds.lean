@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -32,7 +23,6 @@ theorem affine_lt_on_closure_of_lt_frontier
     A.continuous_of_finiteDimensional.continuousOn
   exact (hU.affine_le_on_closure_of_le_frontier hbounded A v hv hmax x hx).trans_lt
     (hfront y hy)
-
 
 theorem closure_subset_product_cube_of_frontier_subset
     {ι κ : Type*} [Fintype ι] [Fintype κ]
@@ -79,8 +69,6 @@ theorem closure_subset_product_cube_of_frontier_subset
         change -(y.2 i) ≤ b
         linarith) x hx
     exact abs_le.mpr ⟨by change -(x.2 i) ≤ b at hneg; linarith, hpos⟩
-
-
 
 theorem closure_subset_transverse_ball_of_frontier_subset
     {ι κ : Type*} [Fintype ι] [Fintype κ]

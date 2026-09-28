@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Control
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -34,7 +27,6 @@ theorem past_norm_le_scalar (hM04 : RicciFlowCurvatureTheory.{u})
     (hM04.tensor_calculus n M _ _) x
     (K.nonnegative_curvature_operator t (htb.trans hb) x)).trans
       (K.scalar_monotone hM04 hM06 t b htb hb x)
-
 
 noncomputable def structuralData (hM04 : RicciFlowCurvatureTheory.{u})
     (hM06 : HarnackAncientTheory.{u})
@@ -76,8 +68,6 @@ noncomputable def structuralData (hM04 : RicciFlowCurvatureTheory.{u})
     (K.scalar_pos hM04 hM06 b hb p)
 
 end AncientKappaSolution
-
-
 
 theorem horizon_ancientKappaStructuralConsequences
     (n : ℕ)

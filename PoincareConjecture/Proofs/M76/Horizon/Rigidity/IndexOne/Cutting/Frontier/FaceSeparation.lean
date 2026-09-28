@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Frontier.BoundaryPL
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

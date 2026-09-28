@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M11SpacetimeSlices
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

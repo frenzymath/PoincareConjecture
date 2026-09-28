@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalExteriorMarks
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ComplementaryRimProjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -86,8 +78,6 @@ private theorem selectedDual_inter_primal_subset_rim {x : E}
   rw [complementaryCentroid_range_eq_compl_primal K P hP hbound hcofaces] at hcomp
   exact hcomp hp
 
-
-
 theorem complementaryCut_over_primalRim_subset_rim
     (hz : ∀ i x, x ∈ (B i.1).piece i.2 →
       (h i x = 0 ↔ x ∈ (B i.1).attachment i.2)) :
@@ -149,8 +139,6 @@ private theorem copiedBridge_over_primalRim_is_endpoint
   rcases hm with he | he
   · exact Or.inl (congrArg (separatedSheet h (exteriorFourIndex K P D labels k)) he)
   · exact Or.inr (congrArg (separatedSheet h (exteriorFourIndex K P D labels k)) he)
-
-
 
 theorem complementaryCut_over_primalRim_eq_gaps
     (hz : ∀ i x, x ∈ (B i.1).piece i.2 →

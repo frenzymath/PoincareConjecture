@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarComplexHarmonic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarPotential_local_critical_alternative {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

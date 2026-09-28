@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.MapMetricBochner
 import PoincareConjecture.Proofs.M60.Mathlib.DifferentiatedConformality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Metric
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,8 +17,6 @@ open ConnectionVariation CoordinateExponential
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem conformal_harmonic_map_estimate
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P → E}
@@ -80,9 +69,6 @@ theorem conformal_harmonic_map_estimate
   linarith
 
 variable [CompleteSpace E]
-
-
-
 
 theorem christoffel_conformal_harmonic_estimate
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {u : P → E} {a : P → ℝ}

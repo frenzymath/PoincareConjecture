@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.NetAssembly
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.PointwiseConclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65CommonTerminalAlternative_proved
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u})

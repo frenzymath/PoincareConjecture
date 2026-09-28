@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereSmoothRestriction
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,12 +10,9 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def northSphereVector (w : E2) : E3 :=
   heightCoordinates.symm ((2 / (1 + ‖w‖ ^ 2)) • w,
     (1 - ‖w‖ ^ 2) / (1 + ‖w‖ ^ 2))
-
 
 theorem northSphereVector_norm (w : E2) : ‖northSphereVector w‖ = 1 := by
   have hD : 1 + ‖w‖ ^ 2 ≠ 0 := ne_of_gt (by positivity)
@@ -38,25 +23,19 @@ theorem northSphereVector_norm (w : E2) : ‖northSphereVector w‖ = 1 := by
     ring
   nlinarith [norm_nonneg (northSphereVector w)]
 
-
 noncomputable def northSpherePoint (w : E2) : UnitTwoSphere :=
   ⟨northSphereVector w, mem_sphere_zero_iff_norm.mpr (northSphereVector_norm w)⟩
-
 
 theorem northSpherePoint_coordinates (w : E2) :
     heightCoordinates (northSpherePoint w : E3) =
       ((2 / (1 + ‖w‖ ^ 2)) • w, (1 - ‖w‖ ^ 2) / (1 + ‖w‖ ^ 2)) :=
   heightCoordinates.apply_symm_apply _
 
-
-
 noncomputable def northSphereCoordinate (q : UnitTwoSphere) : E2 :=
   (1 + (heightCoordinates (q : E3)).2)⁻¹ • (heightCoordinates (q : E3)).1
 
-
 def northSphereDomain : Set UnitTwoSphere :=
   {q | -1 < (heightCoordinates (q : E3)).2}
-
 
 theorem northSpherePoint_mem_domain (w : E2) : northSpherePoint w ∈ northSphereDomain := by
   change -1 < (heightCoordinates (northSpherePoint w : E3)).2
@@ -64,7 +43,6 @@ theorem northSpherePoint_mem_domain (w : E2) : northSpherePoint w ∈ northSpher
   have hD : 0 < 1 + ‖w‖ ^ 2 := by positivity
   apply (lt_div_iff₀ hD).mpr
   linarith
-
 
 theorem northSphereCoordinate_point (w : E2) :
     northSphereCoordinate (northSpherePoint w) = w := by
@@ -77,11 +55,9 @@ theorem northSphereCoordinate_point (w : E2) :
     ring
   rw [he, inv_mul_cancel₀ (div_ne_zero (by norm_num) hD), one_smul]
 
-
 theorem sphere_height_coordinates_sq (q : UnitTwoSphere) :
     ‖(heightCoordinates (q : E3)).1‖ ^ 2 + (heightCoordinates (q : E3)).2 ^ 2 = 1 := by
   rw [← heightCoordinates_norm_sq, norm_eq_of_mem_sphere q, one_pow]
-
 
 theorem northSpherePoint_coordinate {q : UnitTwoSphere} (hq : q ∈ northSphereDomain) :
     northSpherePoint (northSphereCoordinate q) = q := by
@@ -111,7 +87,6 @@ theorem northSpherePoint_coordinate {q : UnitTwoSphere} (hq : q ∈ northSphereD
     field_simp [hz.ne']
     nlinarith
 
-
 theorem northSphereVector_contDiff : ContDiff ℝ ∞ northSphereVector := by
   have hD : ContDiff ℝ ∞ (fun w : E2 => 1 + ‖w‖ ^ 2) :=
     contDiff_const.add (contDiff_id.norm_sq ℝ)
@@ -121,17 +96,14 @@ theorem northSphereVector_contDiff : ContDiff ℝ ∞ northSphereVector := by
     ((contDiff_const.div hD (fun w => ne_of_gt (by positivity))).smul contDiff_id
       |>.prodMk (hn.div hD (fun w => ne_of_gt (by positivity))))
 
-
 theorem northSpherePoint_contMDiff : ContMDiff 𝓘(ℝ, E2) (𝓡 2) ∞ northSpherePoint := by
   let : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp [E3]⟩
   exact northSphereVector_contDiff.contMDiff.codRestrict_sphere
     (fun w => mem_sphere_zero_iff_norm.mpr (northSphereVector_norm w))
 
-
 theorem northSphereDomain_isOpen : IsOpen northSphereDomain :=
   isOpen_lt continuous_const
     ((heightCoordinates.continuous.comp continuous_subtype_val).snd)
-
 
 theorem northSphereCoordinate_contMDiffOn :
     ContMDiffOn (𝓡 2) 𝓘(ℝ, E2) ∞ northSphereCoordinate northSphereDomain := by

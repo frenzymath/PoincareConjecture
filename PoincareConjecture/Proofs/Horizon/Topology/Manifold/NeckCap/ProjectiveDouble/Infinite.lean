@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.ProjectiveDou
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.VanKampen.Extension
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.VanKampen.Collar
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +36,6 @@ private theorem not_finite_of_dihedral_reflections {G : Type*} [Group G]
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem exists_infinite_fundamentalGroup (D : SmoothProjectiveDoubleModel M) :
     ∃ b : M, Infinite (FundamentalGroup M b) := by

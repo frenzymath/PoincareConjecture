@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Comp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalTriangleBoundaryDegree
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.AffineTriangleComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Module Filter
 open scoped Topology
@@ -89,9 +81,6 @@ theorem ncard_sphere_system_triangle_boundary_neighborSet_eq_one
       ⟨hyi, hyedge⟩ Q hQ A hmap hA G hG hmarked
       (by simpa only [Q.right_inv hwQ] using hmember)
   simpa only [Q.right_inv hwQ] using hdegree
-
-
-
 
 theorem exists_original_sphere_system_face_graph_components_with_crossings_with_other_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -227,7 +216,6 @@ theorem exists_original_sphere_system_face_graph_components_with_crossings_with_
     hphysical, hPhiQ, hPhiout, hPhiPL, hPhiinv, hPhiS, hW, hDW,
     hfacesW, hPhiW, hagree, hcofaces', hdisjoint', hdegree, hcrossings,
     hboundary, hfinite, hne, hmembers, hcomponents⟩
-
 
 theorem exists_original_sphere_system_face_graph_components_with_crossings
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -8,12 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundedRegions
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Topology.Mathlib.FiniteClosedComponentPartition
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

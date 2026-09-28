@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.BadAscent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 
 namespace Poincare.Alexandrov
-
-
 
 theorem eventually_comparisonAngle_gt_of_not_local_ascent
     {ι : Type*} {l : Filter ι} {X : ι → Type*} [∀ j, MetricSpace (X j)]

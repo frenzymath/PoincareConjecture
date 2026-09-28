@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.SelectedComponent
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SelfPairedSourceCircle
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -12,9 +10,6 @@ variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {f : E → X} {S : Set E}
 
 local notation "I01" => Icc (0 : ℝ) 1
-
-
-
 
 theorem SourceCircleDecomposition.exists_selfpaired_twofold_source_arcs
     (M : SourceCircleDecomposition f S)

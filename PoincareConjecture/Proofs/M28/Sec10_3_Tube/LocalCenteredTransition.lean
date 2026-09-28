@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalNormalizedCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.CenteredScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +24,6 @@ private theorem deriv_nonneg_of_right_positive {h : ℝ → ℝ}
   have hht : 0 ≤ h t := (hp t ht0 htr).le
   simpa only [zero_add, hz, sub_zero, smul_eq_mul] using
     mul_nonneg (inv_nonneg.mpr ht0.le) hht
-
-
 
 theorem exists_centered_transition_extension_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

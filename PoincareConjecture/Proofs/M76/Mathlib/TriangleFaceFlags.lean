@@ -1,23 +1,11 @@
 import Mathlib.Data.Finset.Card
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Finset
 
 variable {V : Type*}
-
-
-
 
 theorem exists_triangle_flag {a : Finset (Finset V)} (ha : a.Nonempty)
     (hchain : ∀ s ∈ a, ∀ u ∈ a, s ⊆ u ∨ u ⊆ s)

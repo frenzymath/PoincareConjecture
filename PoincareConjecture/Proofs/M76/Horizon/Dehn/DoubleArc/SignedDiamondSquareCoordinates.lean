@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalCrossingResolution
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_RecentNeck
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_scalar_one_patch_neck
     {C : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 C.carrier}

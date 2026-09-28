@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.AnnulusProjecti
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

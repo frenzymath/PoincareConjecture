@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.FrameAngle
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem triangle_corner_angles
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ Y : TangentSpace (𝓡 2) x}

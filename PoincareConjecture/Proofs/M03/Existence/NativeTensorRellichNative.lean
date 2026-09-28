@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeScalarRellichNative
 import PoincareConjecture.Proofs.M03.Existence.LpFiniteCoordinatesNative
 import PoincareConjecture.Proofs.M03.Existence.TensorFirstOrderGraphNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -61,7 +51,6 @@ theorem coordinate_derivativeToLp_eq (h : SmoothTensor (n := n) (M := M)) (i j k
     derivativeToLp_coe F μ h, hf.coeFn_toLp] with x hc ht hfval
   simp only [hc, ht, hfval, derivativeProbes_apply, scalarDirectional]
 
-
 theorem pairing_firstOrderEnergy_le (h : SmoothTensor (n := n) (M := M)) (j k : iota)
     (hf : MemLp (fun x => h x (F j x) (F k x)) 2 μ)
     (hDf : ∀ i, MemLp (scalarDirectional (F i) (fun x => h x (F j x) (F k x))) 2 μ) :
@@ -85,7 +74,6 @@ variable [T2Space M] (g : RiemannianMetric n M)
   {d : FiniteChartData (n := n) (M := M)} (L : FiniteChartLocalizationData d)
 
 include g hF L
-
 
 theorem totallyBounded_tensorToLp {S : Set (Lp (Coefficients iota) 2 d.measure)}
     {R : ℝ} (hR : 0 ≤ R)
@@ -128,7 +116,6 @@ theorem totallyBounded_firstOrderImage_value {R : ℝ} (hR : 0 ≤ R) :
   refine ⟨h, rfl, ?_⟩
   exact (show ‖firstOrderImage F d.measure h‖ < R by
     simpa only [Metric.mem_ball, dist_zero_right] using hyR).le
-
 
 theorem totallyBounded_graphValue_closedBall {R : ℝ} (hR : 0 ≤ R) :
     TotallyBounded (graphValue F d.measure '' Metric.closedBall 0 R) := by

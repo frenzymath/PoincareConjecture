@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricConnectionJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -39,8 +31,6 @@ private theorem connectionRightFormula_smooth {n : ℕ}
       ((A, B), v) by fun_prop)
   exact hI.clm_apply hK.contDiffAt
 
-
-
 theorem euclideanConnection_field_contDiffAt {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g)
     (x u : E n) {Y : E n → E n} (hY : ContDiffAt ℝ ∞ Y x) :
@@ -53,8 +43,6 @@ theorem euclideanConnection_field_contDiffAt {n : ℕ}
   convert h using 1
   funext y
   exact D.connection_const_eq_inverse y u (Y y)
-
-
 
 theorem euclideanConnection_field_jets_tendsto {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -113,7 +101,6 @@ theorem euclideanConnection_field_jets_tendsto {n : ℕ}
   exact h.congr' (Eventually.of_forall fun k => congrArg
     (fun f => iteratedFDeriv ℝ r f (pseq k)) (heq (gseq k) (Dseq k) (Yseq k)))
 
-
 theorem curvature_contDiffAt_euclidean {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x u v w : E n) :
     ContDiffAt ℝ ∞ (fun y => D.curvature y u v w) x := by
@@ -125,8 +112,6 @@ theorem curvature_contDiffAt_euclidean {n : ℕ}
   have hc (a b c : E n) := euclideanConnection_field_contDiffAt D x a
     (D.contDiffAt_euclideanConnection x b c)
   exact ((hd v w u).add (hc u v w)).sub ((hd u w v).add (hc v u w))
-
-
 
 theorem curvature_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -171,14 +156,11 @@ theorem curvature_jets_tendsto_of_metric_jets {n : ℕ}
   simp_rw [heq]
   exact ((hd v w u).add (hn u v w)).sub ((hd u w v).add (hn v u w))
 
-
 theorem curvatureTensor_contDiffAt_euclidean {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x u v w z : E n) :
     ContDiffAt ℝ ∞ (fun y => D.curvatureTensor y u v w z) x :=
   ((g.contDiffAt_euclideanCoefficients x).clm_apply
     (curvature_contDiffAt_euclidean D x u v z)).clm_apply contDiffAt_const
-
-
 
 theorem curvatureTensor_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

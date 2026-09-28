@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M60
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem second_fderiv_congr {f g : E → F} {p : E}
     (h : f =ᶠ[𝓝 p] g) (u v : E) :
     fderiv ℝ (fun q => fderiv ℝ f q u) p v =
@@ -29,8 +19,6 @@ theorem second_fderiv_congr {f g : E → F} {p : E}
   have heq : (fun q => fderiv ℝ f q u) =ᶠ[𝓝 p] (fun q => fderiv ℝ g q u) :=
     h'.mono fun q hq => congrArg (fun L => L u) hq
   rw [heq.fderiv_eq]
-
-
 
 theorem second_fderiv_sub {f g : E → F} {p : E}
     (hf : ContDiffAt ℝ 2 f p) (hg : ContDiffAt ℝ 2 g p) (u v : E) :

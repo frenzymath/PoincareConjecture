@@ -1,21 +1,10 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Filter Set Function
 open scoped ContDiff Topology
 namespace Poincare.Analysis
-
-
 
 theorem exists_contDiff_extension_near_compact
     {X E : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

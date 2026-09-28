@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates.Critical
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Filter

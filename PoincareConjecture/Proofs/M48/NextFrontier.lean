@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M48.TerminalContinuation
 import PoincareConjecture.Proofs.M33.MaximalRestart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M48AnalyticCalibration
-
-
-
 
 theorem singular_frontier
     {S : RepairedControlledSchedulesData.{u}} (A : M48AnalyticCalibration S)

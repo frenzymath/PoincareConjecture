@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.Cylinders
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem roundCylinderFamilyClose_congr_axial {epsilon : ℝ} {J : Set ℝ}
     {B B' : ℝ → RoundCylinderTwoTensor}
@@ -44,8 +26,6 @@ theorem roundCylinderFamilyClose_congr_axial {epsilon : ℝ} {J : Set ℝ}
     exact hjet s hs z hz
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ} (E : GeneralizedFlowExtension F T)
-
-
 
 noncomputable def extension_strongNeck (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) : GeneralizedStrongNeck E.extended t epsilon := by
@@ -157,19 +137,13 @@ noncomputable def extension_strongNeck (t : ℝ) (ht : t ∈ F.interval) {epsilo
     cylinder_identity := hzero
     metric_comparison := hcomparison }
 
-
-
 @[simp] theorem extension_strongNeck_center (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) :
     (extension_strongNeck E t ht N).center = E.forward t ht N.center := rfl
 
-
-
 @[simp] theorem extension_strongNeck_scale (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) :
     (extension_strongNeck E t ht N).scale = N.scale := rfl
-
-
 
 theorem extension_strongNeck_carrier (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) :
@@ -182,8 +156,6 @@ theorem extension_strongNeck_carrier (t : ℝ) (ht : t ∈ F.interval) {epsilon 
   · rintro ⟨y, hy, rfl⟩
     simpa only [E.left_inverse t ht y] using hy
 
-
-
 theorem extension_strongNeck_central_sphere (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) :
     (extension_strongNeck E t ht N).central_sphere = E.forward t ht '' N.central_sphere := by
@@ -194,8 +166,6 @@ theorem extension_strongNeck_central_sphere (t : ℝ) (ht : t ∈ F.interval) {e
     exact ⟨E.inverse t ht x, hx, E.right_inverse t ht x⟩
   · rintro ⟨y, hy, rfl⟩
     simpa only [E.left_inverse t ht y] using hy
-
-
 
 theorem extension_strongNeck_pointMap (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0)

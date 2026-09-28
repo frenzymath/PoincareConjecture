@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.RicciContractions
 import PoincareConjecture.Proofs.M09.HessianTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

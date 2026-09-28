@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Proofs.M14.Mathlib.WithinVelocitySmooth
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,13 +16,10 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
 noncomputable def projectedCurveVelocity (G : GeneralizedLGeometryTransport n X time I)
     (γ : ℝ → G.Point) (s : ℝ) : G.Horizontal (γ s) :=
   G.spacetime.horizontalProjection (γ s)
     (mfderiv (𝓘(ℝ, ℝ)) (spacetimeModel n) γ s (1 : ℝ))
-
-
 
 noncomputable def projectedCurveVelocityWithin (G : GeneralizedLGeometryTransport n X time I)
     (γ : ℝ → G.Point) (J : Set ℝ) (s : ℝ) : G.Horizontal (γ s) :=
@@ -39,8 +27,6 @@ noncomputable def projectedCurveVelocityWithin (G : GeneralizedLGeometryTranspor
     (mfderivWithin (𝓘(ℝ, ℝ)) (spacetimeModel n) γ J s (1 : ℝ))
 
 variable {G : GeneralizedLGeometryTransport n X time I} {γ β : ℝ → G.Point} {J : Set ℝ}
-
-
 
 theorem projectedCurveVelocityWithin_smooth (hJ : UniqueDiffOn ℝ J)
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ γ J) :
@@ -55,8 +41,6 @@ theorem projectedCurveVelocityWithin_smooth (hJ : UniqueDiffOn ℝ J)
           (E := G.Horizontal) v.proj (G.spacetime.horizontalProjection v.proj v.2)) :=
     G.spacetime.horizontalProjection_smooth
   exact hproj.comp_contMDiffOn htan
-
-
 
 theorem projectedCurveVelocity_derivative_eq {T s : ℝ}
     (hγ : MDifferentiableAt (𝓘(ℝ, ℝ)) (spacetimeModel n) γ s)
@@ -81,8 +65,6 @@ theorem projectedCurveVelocity_derivative_eq {T s : ℝ}
           G.spacetime.timeVector (γ s))
   rw [hv, neg_smul, one_smul, sub_neg_eq_add]
   abel
-
-
 
 theorem rawLIntegrand_projectedVelocity_congr {s : ℝ} (h : γ =ᶠ[𝓝 s] β) :
     M14RawLIntegrand G γ (projectedCurveVelocity G γ) s =

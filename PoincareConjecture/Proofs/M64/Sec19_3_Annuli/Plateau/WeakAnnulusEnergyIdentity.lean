@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusLipschitzSeed
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64ObservedMetric_diagonal_of_mDifferentiableAt
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -48,8 +35,6 @@ theorem m64ObservedMetric_diagonal_of_mDifferentiableAt
   erw [hc, hdiag]
   simp only [m60AreaGram, EuclideanSpace.basisFun_apply]
 
-
-
 theorem m64ObservedWeakAnnulus_seed_energyDensity_eq_ae
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -69,8 +54,6 @@ theorem m64ObservedWeakAnnulus_seed_energyDensity_eq_ae
   simp only [m60EnergyDensity, Matrix.trace_fin_two]
   ring
 
-
-
 theorem m64ObservedWeakAnnulus_seed_energy_eq
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -82,8 +65,6 @@ theorem m64ObservedWeakAnnulus_seed_energy_eq
       fderiv ℝ (e ∘ A.map) p (EuclideanSpace.single i 1)) :
     W.energy B = ∫ p in S, m60EnergyDensity g A.map p :=
   integral_congr_ae (m64ObservedWeakAnnulus_seed_energyDensity_eq_ae A e he B hdiag W hmap hcol)
-
-
 
 theorem m64ObservedWeakAnnulus_exists_seed_with_energy [CompactSpace M]
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

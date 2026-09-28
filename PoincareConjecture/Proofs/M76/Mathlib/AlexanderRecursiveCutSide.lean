@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonCollarCutSide
 import PoincareConjecture.Proofs.M76.Mathlib.SelectedCapNegativeSide
 import PoincareConjecture.Proofs.M76.Mathlib.CollarBottomClosure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem AlexanderCollarSlab.exists_unit_height_direction {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
@@ -39,10 +28,6 @@ theorem AlexanderCollarSlab.exists_unit_height_direction {S : Set E}
     rw [hz, LinearMap.zero_apply, M.apex_height, sub_zero, M.height] at h
     exact (M.upper_pos x hx hxq).ne' h.symm
   exact LinearMap.surjective hnonzero 1
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_cut_side {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
@@ -108,15 +93,11 @@ theorem AlexanderCollarSlab.exists_selected_cut_side {S : Set E}
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem AlexanderHalfSlab.exists_unit_height_direction {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderHalfSlab S A q β)
     {x : E} (hx : x ∈ S ∩ {z | A z = 0}) (hxq : x ≠ q) :
     ∃ v : E, A.linear v = 1 :=
   M.toCollarSlab.exists_unit_height_direction hx hxq
-
-
-
 
 theorem AlexanderHalfSlab.exists_selected_cut_side {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderHalfSlab S A q β)

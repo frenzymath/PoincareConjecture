@@ -3,16 +3,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.Algebra.SMul
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,24 +16,17 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def radialUnitPoint (x : ({0}ᶜ : Set E)) : sphere (0 : E) 1 :=
   ⟨‖(x : E)‖⁻¹ • (x : E), by
     have hx : (x : E) ≠ 0 := x.property
     simp [norm_smul, norm_ne_zero_iff.mpr hx]⟩
 
-
-
 noncomputable def radialSphereCoordinates (x : ({0}ᶜ : Set E)) :
     sphere (0 : E) 1 × ℝ :=
   (radialUnitPoint x, ‖(x : E)‖ - 1)
 
-
-
 def radialSphereReconstruct (p : sphere (0 : E) 1 × ℝ) : E :=
   (p.2 + 1) • (p.1 : E)
-
 
 theorem radialSphereReconstruct_coordinates (x : ({0}ᶜ : Set E)) :
     radialSphereReconstruct (radialSphereCoordinates x) = (x : E) := by
@@ -66,8 +49,6 @@ local instance : IsManifold 𝓘(ℝ, E) ω ({0}ᶜ : Set E) :=
 
 variable {m : ℕ∞ω}
 
-
-
 theorem contMDiff_radialNorm :
     ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) m (fun x : ({0}ᶜ : Set E) => ‖(x : E)‖) := by
   have hcoe : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, E) m
@@ -75,7 +56,6 @@ theorem contMDiff_radialNorm :
     contMDiff_isOpenEmbedding isOpen_compl_singleton.isOpenEmbedding_subtypeVal
   intro x
   exact (contDiffAt_norm ℝ (show (x : E) ≠ 0 from x.property)).contMDiffAt.comp x (hcoe x)
-
 
 theorem contMDiff_radialUnitPoint :
     ContMDiff 𝓘(ℝ, E) (𝓡 n) m (radialUnitPoint (E := E)) := by
@@ -86,7 +66,6 @@ theorem contMDiff_radialUnitPoint :
   have hi := hn.inv₀ (fun x => norm_ne_zero_iff.mpr (show (x : E) ≠ 0 from x.property))
   exact (hi.smul hcoe).codRestrict_sphere (fun x => (radialUnitPoint x).property)
 
-
 theorem contMDiff_radialSphereCoordinates :
     ContMDiff 𝓘(ℝ, E) ((𝓡 n).prod 𝓘(ℝ, ℝ)) m
       (radialSphereCoordinates (E := E)) :=
@@ -94,13 +73,10 @@ theorem contMDiff_radialSphereCoordinates :
 
 omit [Nonempty ({0}ᶜ : Set E)] in
 
-
 theorem contMDiff_radialSphereReconstruct :
     ContMDiff ((𝓡 n).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, E) m
       (radialSphereReconstruct (E := E)) :=
   (contMDiff_snd.add contMDiff_const).smul (contMDiff_coe_sphere.comp contMDiff_fst)
-
-
 
 theorem radialSphereCoordinates_mfderiv_injective (x : ({0}ᶜ : Set E)) :
     Function.Injective

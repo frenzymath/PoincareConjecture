@@ -1,40 +1,21 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
 
-
-
-
 def subdividedTriangle (n : ℕ) : Polygon (ℝ × ℝ) (n + 3) :=
   ⟨Fin.snoc (fun i : Fin (n + 2) => ((i : ℝ), 0)) (0, 1)⟩
-
-
 
 theorem subdividedTriangle_castSucc (n : ℕ) (i : Fin (n + 2)) :
     subdividedTriangle n i.castSucc = ((i : ℝ), 0) := by
   simp [subdividedTriangle]
 
-
-
 theorem subdividedTriangle_last (n : ℕ) :
     subdividedTriangle n (Fin.last (n + 2)) = (0, 1) := by
   simp [subdividedTriangle]
-
-
 
 theorem injective_subdividedTriangle (n : ℕ) :
     Function.Injective (subdividedTriangle n) := by
@@ -49,8 +30,6 @@ theorem injective_subdividedTriangle (n : ℕ) :
     have := congrArg Prod.snd hi
     norm_num at this
 
-
-
 theorem subdividedTriangle_edge_base (n : ℕ) (i : Fin (n + 1)) :
     (subdividedTriangle n).edgeSet ℝ i.castSucc.castSucc =
       segment ℝ ((i : ℝ), 0) ((i : ℝ) + 1, 0) := by
@@ -60,16 +39,12 @@ theorem subdividedTriangle_edge_base (n : ℕ) (i : Fin (n + 1)) :
   simp only [edgeSet, hr, hi, subdividedTriangle_castSucc,
     Fin.val_castSucc, Fin.val_succ, Nat.cast_add, Nat.cast_one, affineSegment_eq_segment]
 
-
-
 theorem subdividedTriangle_edge_slope (n : ℕ) :
     (subdividedTriangle n).edgeSet ℝ (Fin.last (n + 1)).castSucc =
       segment ℝ ((n : ℝ) + 1, 0) (0, 1) := by
   have hr : finRotate (n + 3) (Fin.last (n + 1)).castSucc = Fin.last (n + 2) := by simp
   simp only [edgeSet, hr, subdividedTriangle_castSucc, subdividedTriangle_last,
     Fin.val_last, Nat.cast_add, Nat.cast_one, affineSegment_eq_segment]
-
-
 
 theorem subdividedTriangle_edge_last (n : ℕ) :
     (subdividedTriangle n).edgeSet ℝ (Fin.last (n + 2)) =
@@ -151,9 +126,6 @@ private theorem slope_vertical_inter {r : ℝ} (hr : 0 < r) :
   have hx0 := vertical_coords hx.2
   have hxc : x = (0, 1) := Prod.ext hx0 (by rw [hx0] at he; nlinarith)
   exact subset_convexHull ℝ _ ⟨by simp [hxc], by simp [hxc]⟩
-
-
-
 
 theorem hasSimplicialEdges_subdividedTriangle (n : ℕ) :
     (subdividedTriangle n).HasSimplicialEdges := by

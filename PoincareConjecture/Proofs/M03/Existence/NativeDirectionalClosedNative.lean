@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureDetectionNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanSmoothCoefficientClosedNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -32,7 +23,6 @@ local notation "ModelE" => EuclideanSpace ℝ (Fin n)
 
 def scalarDirectional (V : SmoothField (n := n) (M := M)) (f : M → ℝ) (x : M) : ℝ :=
   mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f x (V x)
-
 
 theorem chart_directional_limit_zero
     (p : M) (V : SmoothField (n := n) (M := M)) {μ : Measure M}
@@ -88,7 +78,6 @@ theorem chart_directional_limit_zero
     g hg hgLp hAgLp (L w) hglim hAglim
 
 variable {iota : Type v} [Finite iota]
-
 
 theorem scalarDirectional_limit_zero
     (p : iota → M) (φ : iota → C(M, ℝ))

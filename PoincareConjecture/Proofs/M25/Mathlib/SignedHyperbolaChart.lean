@@ -2,24 +2,12 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M25
-
-
-
 
 theorem exists_signed_hyperbola_chart
     (rho sx sy : ℝ) (hrho : 0 < rho)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_CompactPhaseContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
 
 theorem exponential_survival_of_confined_open_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -81,9 +70,6 @@ theorem exponential_survival_of_confined_open_phase
   have hSuniv : S = univ := (show IsClopen S from ⟨hclosed, hopen⟩).eq_univ
     ⟨⟨0, le_rfl, hb.le⟩, E.domain_zero Z⟩
   exact (Set.ext_iff.mp hSuniv ⟨b, hb.le, le_rfl⟩).mpr (mem_univ _)
-
-
-
 
 theorem exponential_survival_of_varying_phase_limit
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

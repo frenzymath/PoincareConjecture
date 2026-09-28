@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem Subsingleton.hasAlexanderCurvePresentation {s : Set E} (hs : s.Subsingleton) :
     HasAlexanderCurvePresentation s 0 := by
@@ -32,8 +21,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 theorem hasDisjointPolygonPresentation (P : Polygon E (n + 3))
     (hinj : Function.Injective P) (hP : P.HasSimplicialEdges) :
     HasDisjointPolygonPresentation (P.boundary ℝ) := by
@@ -42,8 +29,6 @@ theorem hasDisjointPolygonPresentation (P : Polygon E (n + 3))
   · simp only [iUnion_const]
   · intro i j hij
     exact (hij (Subsingleton.elim i j)).elim
-
-
 
 theorem hasAlexanderCurvePresentation (P : Polygon E (n + 3))
     (hinj : Function.Injective P) (hP : P.HasSimplicialEdges) :

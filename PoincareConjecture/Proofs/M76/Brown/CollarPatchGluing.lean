@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CollarPatchAlignment
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCrossingBandImmersion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,11 +33,6 @@ private theorem exists_injective_union {Z X : Type*}
 
 variable {B X : Type*} [MetricSpace B] [LocallyCompactSpace B] [Nonempty B]
   [MetricSpace X]
-
-
-
-
-
 
 theorem exists_collar_patch_union
     (c1 c2 : OpenPartialHomeomorph (B × Ico (0 : ℝ) 1) X)

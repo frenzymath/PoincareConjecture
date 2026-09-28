@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import PoincareConjecture.Proofs.M01.NormalizationMetric
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bornology Bundle Manifold
@@ -108,10 +100,6 @@ private theorem m39ComponentForm_smooth
   simp only [← Trivialization.symmL_apply (R := ℝ) _ hy,
     Trivialization.symmL_continuousLinearMapAt (R := ℝ) _ hy,
     Trivialization.symmL_apply (R := ℝ) _ hx]
-
-
-
-
 
 theorem m39ComponentMetric
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)

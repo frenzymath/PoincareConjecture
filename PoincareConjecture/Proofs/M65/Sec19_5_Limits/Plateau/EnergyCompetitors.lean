@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorEnergyTransport
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiMetricApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +10,6 @@ open scoped Topology ContDiff Manifold Matrix.Norms.Elementwise
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65SpanningDisk_exists_energy_competitor
     {M : Type u} [TopologicalSpace M] [T2Space M]

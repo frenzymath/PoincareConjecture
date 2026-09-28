@@ -3,16 +3,6 @@ import PoincareConjecture.Statements.M14GeneralizedLGeometry
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.CurvatureTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval} {g : ℝ → RiemannianMetric n M}
 
-
-
 noncomputable def ordinaryProductLGeometry (R : OrdinaryProductRicciGeometry g I)
     (hRicci : IntrinsicGeneralizedRicciEquation R.leafwiseConnection) :
     GeneralizedLGeometryTransport n (I.domain × M) (fun p => p.1.val) I where
@@ -38,12 +26,8 @@ noncomputable def ordinaryProductLGeometry (R : OrdinaryProductRicciGeometry g I
   leafwise := R.leafwiseConnection
   ricciEquation := hRicci
 
-
-
 noncomputable def ordinaryProductProjection (R : OrdinaryProductSpacetimeConclusion g I) :
     R.spacetime.Point → M := fun z => (R.productIdentification.symm z).2
-
-
 
 theorem ordinaryProductProjection_eq (R : OrdinaryProductSpacetimeConclusion g I)
     (z : R.spacetime.Point) : ordinaryProductProjection R z = z.2 := by
@@ -51,20 +35,14 @@ theorem ordinaryProductProjection_eq (R : OrdinaryProductSpacetimeConclusion g I
   rw [R.productIdentification_eq] at h
   exact congrArg Prod.snd h
 
-
-
 theorem ordinaryProductProjection_cylinder (R : OrdinaryProductSpacetimeConclusion g I)
     (t : (R.timeIntervals.interval I).Point) (x : M) :
     ordinaryProductProjection R (R.productCylinder.toSpacetime (t, x)) = x := by
   rw [ordinaryProductProjection_eq, R.productCylinder_eq]
 
-
-
 theorem ordinaryProductProjection_contMDiff (R : OrdinaryProductSpacetimeConclusion g I) :
     ContMDiff (spacetimeModel n) (𝓡 n) ∞ (ordinaryProductProjection R) :=
   contMDiff_snd.comp R.productIdentification.symm.contMDiff
-
-
 
 theorem ordinaryProductCylinder_range (R : OrdinaryProductSpacetimeConclusion g I) :
     range R.productCylinder.toSpacetime = univ := by
@@ -73,7 +51,6 @@ theorem ordinaryProductCylinder_range (R : OrdinaryProductSpacetimeConclusion g 
   exact ⟨z, R.productCylinder_eq z⟩
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProductProjection_timeVector (R : OrdinaryProductSpacetimeConclusion g I)
     (t : (R.timeIntervals.interval I).Point) (x : M) :
@@ -101,7 +78,6 @@ theorem ordinaryProductProjection_timeVector (R : OrdinaryProductSpacetimeConclu
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem ordinaryProductProjection_spatialTangent (R : OrdinaryProductSpacetimeConclusion g I)
     (t : (R.timeIntervals.interval I).Point) (x : M) (v : TangentSpace (𝓡 n) x) :
     mfderiv (spacetimeModel n) (𝓡 n) (ordinaryProductProjection R)
@@ -123,7 +99,6 @@ theorem ordinaryProductProjection_spatialTangent (R : OrdinaryProductSpacetimeCo
   exact hv.symm
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProductProjection_timeVector_at (R : OrdinaryProductSpacetimeConclusion g I)
     (z : R.spacetime.Point) :

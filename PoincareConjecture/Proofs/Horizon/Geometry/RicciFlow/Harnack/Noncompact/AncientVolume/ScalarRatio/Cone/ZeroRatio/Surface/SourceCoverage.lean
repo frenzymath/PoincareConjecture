@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Coverage
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem ball_subset_image_of_uniform_approximation
     {X M : Type*} [MetricSpace X] [MetricSpace M]
@@ -49,8 +36,6 @@ theorem ball_subset_image_of_uniform_approximation
       have hzdist : dist (f y) (e x) < c * r / 2 := hzball
       linarith [hlower y hy]
     exact (mul_lt_mul_iff_right₀ hc).mp hdist
-
-
 
 theorem eventually_ball_subset_image_of_uniform_approximation
     {X : Type*} [MetricSpace X] {M : ℕ → Type*} [∀ k, MetricSpace (M k)]

@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 7
 
@@ -25,12 +22,9 @@ namespace LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 noncomputable def euclideanConnection (D : LeviCivitaData g) (u v : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) :=
   fun x => D.connection (fun _ : EuclideanSpace ℝ (Fin n) => v) x u
-
-
 
 theorem tendsto_fderiv_connection_const_of_metric_jets
     {ι : Type*} {l : Filter ι}

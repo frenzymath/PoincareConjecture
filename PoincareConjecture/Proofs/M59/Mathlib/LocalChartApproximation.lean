@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.ChartPatch
 import PoincareConjecture.Proofs.M59.Mathlib.CompactMapControl
 import PoincareConjecture.Proofs.M59.Mathlib.CoordinateApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -27,9 +17,6 @@ variable {E H X F K M : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace K]
   (J : ModelWithCorners ℝ F K) [J.Boundaryless]
   [MetricSpace M] [ChartedSpace K M] [IsManifold J ∞ M]
-
-
-
 
 theorem exists_local_chart_approximation
     (c : M) (b : X → ℝ) (hb : ContMDiff I 𝓘(ℝ, ℝ) ∞ b)

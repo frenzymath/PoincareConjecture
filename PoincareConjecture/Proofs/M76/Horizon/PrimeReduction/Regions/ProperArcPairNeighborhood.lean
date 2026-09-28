@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentHeight
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -59,11 +50,6 @@ private theorem exists_returning_support_slope
     constructor <;> linarith) hcv hxs
   change a.1 - x.1 - C * x.2 ≤ 0 ∧ x.1 - b.1 - C * x.2 ≤ 0 at hh
   constructor <;> linarith
-
-
-
-
-
 
 theorem exists_convex_proper_arc_pair_disk {W : Set V} {a b : V}
     (hW : IsFinitePLBallPair ℝ W {a, b}) (hab : a.1 < b.1)
@@ -224,6 +210,5 @@ theorem exists_convex_proper_arc_pair_disk {W : Set V} {a b : V}
       · simp [PlanarSegment.height, ha, hb, hx0]
     · intro hx
       exact ⟨hseg hx, hseg0 x hx⟩
-
 
 end PoincareConjecture.M76

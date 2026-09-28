@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Conserv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.GlobalBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

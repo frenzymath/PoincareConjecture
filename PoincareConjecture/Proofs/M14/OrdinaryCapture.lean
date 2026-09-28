@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureFullMeasure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -44,9 +34,6 @@ private theorem capture_regular_base_cast {a b q : C} {τ : ℝ} (h : a = b)
 
 include D hCoordinates hPath
 
-
-
-
 theorem ordinaryCapture_regular_locus
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     {τ : ℝ} {x : G.Point} (E : M14ExponentialFamily G T x)
@@ -66,9 +53,6 @@ theorem ordinaryCapture_regular_locus
   let hbase := (D.point_map_on_cylinder t₀ c₀).symm
   exact ⟨hbase ▸ r, (capture_regular_base_cast hbase r).trans hr⟩
 
-
-
-
 theorem ordinaryCapture_stable_full_measure
     (hL : LGeodesicTheory F T τmax)
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -84,10 +68,6 @@ theorem ordinaryCapture_stable_full_measure
     hL hDifferential hwindow E H hmax
 
 end Capture
-
-
-
-
 
 theorem ordinaryCaptureStatement
     (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals)

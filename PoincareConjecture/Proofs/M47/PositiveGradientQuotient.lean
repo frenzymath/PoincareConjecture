@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveGradientEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -50,10 +41,6 @@ private theorem quotient_parabolic_bound {R G S H K V Lr Lg Lq W dq : ℝ}
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalar_gradient_quotient_evolution_le
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)

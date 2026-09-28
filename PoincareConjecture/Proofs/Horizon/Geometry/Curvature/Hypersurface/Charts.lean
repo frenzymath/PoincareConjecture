@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ManifoldCurvatureSmooth
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +38,6 @@ variable {m n : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) L] [IsManifold (𝓡 m) ∞ L]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def immersionInCharts (f : L → M) (x : L) :
     EuclideanSpace ℝ (Fin m) → EuclideanSpace ℝ (Fin n) :=
   fun y => extChartAt (𝓡 n) (f x) (f ((extChartAt (𝓡 m) x).symm y))
@@ -73,8 +66,6 @@ theorem immersionInCharts_eventually_contDiffAt
   have hdy : ContMDiffAt (𝓡 n) (𝓡 n) ∞ d (f (c.symm y)) :=
     contMDiffAt_extChartAt' (by simpa only [d, extChartAt_source] using hfy)
   exact contMDiffAt_iff_contDiffAt.mp (hdy.comp y (hf.contMDiffAt.comp y hcy))
-
-
 
 theorem induced_metric_in_commuting_charts
     (g : RiemannianMetric n M) (h : RiemannianMetric m L)
@@ -116,8 +107,6 @@ theorem induced_metric_in_commuting_charts
     exact hea
   exact congrArg₂ (fun a b : EuclideanSpace ℝ (Fin n) => g.inner (f (c y)) a b)
     (he' u).symm (he' v).symm
-
-
 
 theorem exists_induced_metric_in_charts
     (g : RiemannianMetric n M) (h : RiemannianMetric m L)

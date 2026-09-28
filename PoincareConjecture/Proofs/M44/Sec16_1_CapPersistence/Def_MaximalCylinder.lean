@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderUnion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_maximal_based_cylinder
     {F : SurgeryFlowData.{u}} {origin scale b0 B : ℝ}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeEndpointImageFace
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineIntersectionRanks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,12 +16,6 @@ variable {U E V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
-
 
 theorem MarkedSurfaceMotionData.exists_position_faces_at_intersection
     {s t : Stage e S f r C} {step : Step s t}

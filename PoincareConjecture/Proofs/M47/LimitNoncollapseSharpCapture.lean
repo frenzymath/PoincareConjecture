@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseCapture
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpTangent
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_physical_capture_and_volume
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

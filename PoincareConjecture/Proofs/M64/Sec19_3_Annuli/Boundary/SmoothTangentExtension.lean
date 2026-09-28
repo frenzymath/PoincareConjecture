@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.MetricRowFrame
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,11 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
-
 
 theorem exists_smooth_tangent_extension {c : ℝ → E} {I : Set ℝ} {s : ℝ}
     (hI : IsOpen I) (hs : s ∈ I) (hc : ContDiffOn ℝ ∞ c I)

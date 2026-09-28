@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.MetricTransport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_curve_edist_le_speed_Icc (g : RiemannianMetric n M)
     {c : ℝ → M} {s t K : ℝ} (hst : s ≤ t)
@@ -43,9 +30,6 @@ theorem m64_curve_edist_le_speed_Icc (g : RiemannianMetric n M)
       intro x hx
       exact ENNReal.ofReal_le_ofReal (hbound x hx)
     _ = _ := by simp [Real.volume_Icc]
-
-
-
 
 theorem m64_curve_edist_le_speed_closed [T2Space M]
     (g : RiemannianMetric n M) {c : ℝ → M} {a b K : ℝ} (hK : 0 ≤ K)

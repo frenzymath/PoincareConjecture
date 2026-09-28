@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapBallEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {A : GeneralizedSliceCarrier.{u}}
   (hbi : ContMDiffOn (𝓡 3) (𝓡 3) ∞ b.symm b.target)
   {a : ℝ} (ha : 0 < a) (ha1 : a < 1)
   (hdom : Metric.ball (0 : StandardCapSpace) (1 + a) ⊆ b.source)
-
-
 
 noncomputable def ballNeighborhoodSurgeryBall : SurgeryBallEmbedding A := by
   let e := capRadialDiffeomorph 1 a ha ha1
@@ -59,21 +47,17 @@ noncomputable def ballNeighborhoodSurgeryBall : SurgeryBallEmbedding A := by
       exact congrArg f (hleft hx)
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball hf hg hleft }
 
-
 theorem ballNeighborhoodSurgeryBall_closedBall :
     (ballNeighborhoodSurgeryBall b hb hbi ha ha1 hdom).closedBall =
       b '' Metric.closedBall 0 1 := by
   change (b ∘ capRadialDiffeomorph 1 a ha ha1) '' Metric.closedBall 0 1 = _
   rw [image_comp, capRadialDiffeomorph_closedBall ha ha1]
 
-
 theorem ballNeighborhoodSurgeryBall_image :
     (ballNeighborhoodSurgeryBall b hb hbi ha ha1 hdom).map '' Metric.ball 0 2 =
       b '' Metric.ball 0 (1 + a) := by
   change (b ∘ capRadialDiffeomorph 1 a ha ha1) '' Metric.ball 0 2 = _
   rw [image_comp, capRadialDiffeomorph_ball_two ha ha1]
-
-
 
 theorem ballNeighborhoodSurgeryBall_radial (z : UnitTwoSphere) {t : ℝ}
     (ht : 1 / 2 ≤ t) :
@@ -83,7 +67,6 @@ theorem ballNeighborhoodSurgeryBall_radial (z : UnitTwoSphere) {t : ℝ}
   rw [capRadialDiffeomorph_smul ha ha1 z t ht]
 
 include hb hbi in
-
 
 theorem exists_surgeryBall_of_ballNeighborhood
     (hbs : Metric.closedBall 0 1 ⊆ b.source) :

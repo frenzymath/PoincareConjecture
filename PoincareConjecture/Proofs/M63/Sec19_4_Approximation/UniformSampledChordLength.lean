@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +18,6 @@ universe u
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
 
 theorem exists_uniform_sampled_chord_length
     {M : Type u} [TopologicalSpace M] [T2Space M]

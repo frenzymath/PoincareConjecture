@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.CappedSliceValue
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.JointSublevel
 import Mathlib.Topology.Semicontinuity.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem cappedSliceAction_sublevel_compact
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -83,8 +72,6 @@ theorem cappedSliceAction_sublevel_compact
       exact ⟨hs.1.1, hm.trans hs.2⟩
   rw [heq]
   exact hA.image continuous_snd
-
-
 
 theorem cappedSliceAction_lowerSemicontinuousOn
     (hM04 : RicciFlowCurvatureTheory.{0})

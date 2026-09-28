@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeHalves
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
-
-
-
-
 
 theorem HamiltonProperDiskNormalLabels.half_eq_on_edge_dual
     (O : HamiltonProperDiskNormalLabels T c)

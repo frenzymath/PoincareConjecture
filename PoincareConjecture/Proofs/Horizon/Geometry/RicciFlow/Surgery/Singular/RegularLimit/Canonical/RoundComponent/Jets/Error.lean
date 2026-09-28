@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -44,7 +42,6 @@ theorem tensorNorm_add_sq_le {k : ℕ} (S T : CovariantTensorEvaluation n M k) (
       nlinarith [sq_nonneg (S x (fun i => g.orthonormalBasis x (a i)) -
         T x (fun i => g.orthonormalBasis x (a i)))]
     _ = _ := by simp only [Finset.sum_add_distrib, Finset.mul_sum]
-
 
 theorem sum_iterated_tensorNorm_add_sq_le (D : LeviCivitaData g) {k : ℕ}
     {S T : CovariantTensorEvaluation n M k}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCompactBuffers
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_compact_atlas_image_radius
     {ι : Type u} {X : Type v} [TopologicalSpace X] [ChartedSpace E X]

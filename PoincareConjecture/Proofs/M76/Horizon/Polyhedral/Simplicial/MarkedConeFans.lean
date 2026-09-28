@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.InteriorSkele
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarConeFans
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.TriangleRefinementOwners
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

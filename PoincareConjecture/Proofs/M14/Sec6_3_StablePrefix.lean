@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PrefixNonconjugacy
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialPrefix
 import PoincareConjecture.Proofs.M14.Sec6_3_StableDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem exponentialPath_minimizing_of_uniqueBranch (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {b : ℝ} (hb : 0 < b) (hZ : (Z, b) ∈ E.domain)
     (hbranch : M14UniqueMinimizingBranch G T (b ^ 2) x E Z) :
@@ -36,9 +25,6 @@ theorem exponentialPath_minimizing_of_uniqueBranch (E : M14ExponentialFamily G T
   intro t ht
   exact (E.path_coherent Z b hZ hb t (Ioo_subset_Icc_self ht)).trans
     (hcurve (Ioo_subset_Icc_self ht)).symm
-
-
-
 
 theorem stableInitialVector_prefix
     (hCoordinates : M12MetricPredecessors.{0} n)

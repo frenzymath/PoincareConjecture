@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SphericalBoundaryRegionRecognition
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedSphereSubregionFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

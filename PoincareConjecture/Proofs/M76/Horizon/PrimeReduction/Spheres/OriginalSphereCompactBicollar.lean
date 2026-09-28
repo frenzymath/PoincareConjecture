@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Barycentric.TwoSideNeighborhood
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Products.TwoSideProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem ChartwisePLSphere.exists_original_compact_bicollar
     {X ι : Type*} [MetricSpace X]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialInverse
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoining
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Axial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open Proofs.M46
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_joining_height_derivative
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

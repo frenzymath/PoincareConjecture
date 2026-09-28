@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.LocalInverse
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.ReturnedLoop
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_first_collision_with_opposite_velocities
     (g : RiemannianMetric n M)
@@ -74,8 +59,6 @@ theorem exists_first_collision_with_opposite_velocities
   refine ⟨v, w, ?_, hvle, hnorm.symm, hne, heq, ?_⟩
   · simpa only [hnorm, max_self] using hpos
   · exact (hevd v).symm.trans (hreturn.trans (congrArg Neg.neg (hewd w)))
-
-
 
 theorem exists_returning_radial_vector_of_not_injOn
     (g : RiemannianMetric n M)

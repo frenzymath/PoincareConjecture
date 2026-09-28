@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing.ExponentialChord
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.GeodesicLength
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -24,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem isGeodesicOn_and_contMDiffAt_zero_of_edist_affine_segment
     (g : RiemannianMetric n M) {γ : ℝ → M} {ε c : ℝ}
@@ -207,7 +198,6 @@ theorem isGeodesicOn_and_contMDiffAt_zero_of_edist_affine_segment
       simpa only [zero_smul] using he.contMDiffAt (e.open_source.mem_nhds h0)
     exact (hex.comp 0 hlin).congr_of_eventuallyEq hsame
 
-
 theorem contMDiffAt_zero_of_edist_affine_segment
     (g : RiemannianMetric n M) {γ : ℝ → M} {ε c : ℝ}
     (hε : 0 < ε) (hc : 0 < c)
@@ -215,8 +205,6 @@ theorem contMDiffAt_zero_of_edist_affine_segment
       g.edist (γ s) (γ t) = ENNReal.ofReal (c * |s - t|)) :
     ContMDiffAt 𝓘(ℝ, ℝ) (𝓡 n) ∞ γ 0 :=
   (g.isGeodesicOn_and_contMDiffAt_zero_of_edist_affine_segment hε hc hmetric).2
-
-
 
 theorem isGeodesicOn_and_contMDiffOn_of_edist_affine_segment
     (g : RiemannianMetric n M) {γ : ℝ → M} {a b c : ℝ} (hc : 0 ≤ c)

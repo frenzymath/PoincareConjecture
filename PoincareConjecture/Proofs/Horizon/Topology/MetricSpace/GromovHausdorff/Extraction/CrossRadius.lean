@@ -1,22 +1,6 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Compatible
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.ClosedBall
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Extraction.Packing
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology Metric
 open scoped Topology
@@ -72,10 +56,6 @@ private theorem exists_basedApproximation_toLeft
     rw [R.left_base, R.right_base, dist_self]
     exact hepsilon
   · simpa [f', hy] using hf y
-
-
-
-
 
 theorem exists_basedIsometricEmbedding_of_pointedGHConverges
     (source target : Nat -> FiniteDiameterBasedMetricSpace.{u})
@@ -318,11 +298,6 @@ theorem exists_basedIsometricEmbedding_of_pointedGHConverges
     exact tendsto_nhds_unique
       (happroximation_tendsto sourceLimit.base) hbase_tendsto
   exact ⟨limitEmbedding, Isometry.of_dist_eq hlimit_dist, hlimit_base⟩
-
-
-
-
-
 
 theorem exists_basedIsometricEmbedding_with_inner_ball_range
     (source target : Nat -> FiniteDiameterBasedMetricSpace.{u})
@@ -793,10 +768,6 @@ theorem exists_basedIsometricEmbedding_with_inner_ball_range
       (by simpa [dist_comm] using hdist_y)
   exact ⟨limitPreimage y, (tendsto_nhds_unique hpreimage_pair_y hpreimage_pair).symm⟩
 
-
-
-
-
 theorem exists_basedIsometricEmbedding_between_marked_closedBall_limits_with_inner_ball_range
     (X : Nat -> BasedMetricSpaceBundle.{0})
     [forall k, CompleteSpace (X k).carrier]
@@ -860,10 +831,6 @@ theorem exists_basedIsometricEmbedding_between_marked_closedBall_limits_with_inn
     (hconv i) (hconv (i + 1)) inclusion hinclusion_isometry hinclusion_base
     (i : Real) hinclusion_preimage
 
-
-
-
-
 theorem exists_basedIsometricEmbedding_between_marked_closedBall_limits
     (X : Nat -> BasedMetricSpaceBundle.{0})
     [forall k, CompleteSpace (X k).carrier]
@@ -908,9 +875,6 @@ theorem exists_basedIsometricEmbedding_between_marked_closedBall_limits
     (Y (i + 1)).toFiniteDiameterBasedMetricSpace
     (hconv i) (hconv (i + 1)) inclusion hinclusion_isometry hinclusion_base
 
-
-
-
 noncomputable def compatibleSystemOfMarkedClosedBallLimits
     (X : Nat -> BasedMetricSpaceBundle.{0})
     [forall k, CompleteSpace (X k).carrier]
@@ -933,11 +897,6 @@ noncomputable def compatibleSystemOfMarkedClosedBallLimits
       transition := transition
       transition_isometry := transition_isometry
       transition_base := transition_base }
-
-
-
-
-
 
 theorem exists_subseq_compatible_marked_closedBall_limits_of_uniform_packing_bounds
     (X : Nat -> BasedMetricSpaceBundle.{0})
@@ -989,4 +948,3 @@ theorem exists_subseq_compatible_marked_closedBall_limits_of_uniform_packing_bou
 end Poincare.GromovHausdorff
 
 end
-

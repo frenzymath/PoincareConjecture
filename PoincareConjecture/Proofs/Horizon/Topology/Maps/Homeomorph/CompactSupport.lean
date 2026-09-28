@@ -1,14 +1,6 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open Set
 namespace Continuous
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X] {K : Set X} {f : X → X}
-
 
 theorem isClosedMap_of_eqOn_compl_isCompact (hf : Continuous f) (hK : IsCompact K)
     (hfix : ∀ x, x ∉ K → f x = x) : IsClosedMap f := by
@@ -37,8 +28,6 @@ theorem isClosedMap_of_eqOn_compl_isCompact (hf : Continuous f) (hK : IsCompact 
   rw [himage]
   exact ((hK.inter_left hF).image hf).isClosed.union (hF.inter hfixed)
 
-
-
 theorem isHomeomorph_of_bijective_eqOn_compl_isCompact (hf : Continuous f)
     (hbij : Function.Bijective f) (hK : IsCompact K)
     (hfix : ∀ x, x ∉ K → f x = x) : IsHomeomorph f :=
@@ -50,8 +39,6 @@ end Continuous
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X] {U K : Set X}
-
-
 
 theorem image_connectedComponent_eq_of_eqOn_compl (e : X ≃ₜ X)
     (hU : IsPreconnected U) (hfix : ∀ x, x ∉ U → e x = x) (x : X) :
@@ -110,8 +97,6 @@ private theorem continuous_extendEquiv (e : U ≃ₜ U) (hU : IsOpen U)
   rw [← continuousOn_univ, ← hcover]
   exact hinside.union_of_isOpen houtside hU hK.isOpen_compl
 
-
-
 noncomputable def extendOfIsClosed (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)
     (hfix : ∀ x : U, (x : X) ∉ K → e x = x) : X ≃ₜ X where
@@ -130,13 +115,11 @@ noncomputable def extendOfIsClosed (e : U ≃ₜ U) (hU : IsOpen U)
     e.extendOfIsClosed hU hK hKU hfix x = (e x : X) :=
   extendEquiv_apply e x
 
-
 theorem extendOfIsClosed_apply_of_notMem (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)
     (hfix : ∀ x : U, (x : X) ∉ K → e x = x) {x : X} (hx : x ∉ K) :
     e.extendOfIsClosed hU hK hKU hfix x = x :=
   extendEquiv_fixed e hfix hx
-
 
 theorem extendOfIsClosed_image (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsClosed K) (hKU : K ⊆ U)
@@ -147,8 +130,6 @@ theorem extendOfIsClosed_image (e : U ≃ₜ U) (hU : IsOpen U)
   congr 1
   funext x
   exact extendOfIsClosed_apply e hU hK hKU hfix x
-
-
 
 noncomputable def extendOfIsCompact [T2Space X] (e : U ≃ₜ U) (hU : IsOpen U)
     (hK : IsCompact K) (hKU : K ⊆ U)
@@ -173,8 +154,6 @@ theorem extendOfIsCompact_image [T2Space X] (e : U ≃ₜ U) (hU : IsOpen U)
     e.extendOfIsCompact hU hK hKU hfix '' (Subtype.val '' S) =
       Subtype.val '' (e '' S) :=
   extendOfIsClosed_image e hU hK.isClosed hKU hfix S
-
-
 
 theorem extendOfIsCompact_image_connectedComponent [T2Space X] (e : U ≃ₜ U)
     (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)

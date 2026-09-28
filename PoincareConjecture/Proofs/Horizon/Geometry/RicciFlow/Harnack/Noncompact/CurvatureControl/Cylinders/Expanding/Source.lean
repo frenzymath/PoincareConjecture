@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Windows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
 
 def bufferedExpandingFlow {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -45,8 +35,6 @@ def bufferedExpandingFlow {n : ℕ} {M : Type*} [TopologicalSpace M]
     {J : Set ℝ} (F : RicciFlow n M J) (δ t : ℝ) :
     (F.bufferedExpandingFlow δ).connection t = F.connection (t - δ) := rfl
 
-
-
 theorem eventually_buffered_time_window
     (J : ℕ → Set ℝ) (A : ℕ → ℝ) (hA : Tendsto A atTop atTop)
     (hJ : ∀ k, Icc (-A k) 0 ⊆ interior (J k)) (δ a b : ℝ) (hb : b < δ) :
@@ -58,8 +46,6 @@ theorem eventually_buffered_time_window
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_scalar_buffer_of_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

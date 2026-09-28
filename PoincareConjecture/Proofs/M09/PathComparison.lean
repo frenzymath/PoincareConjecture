@@ -1,12 +1,5 @@
 import PoincareConjecture.Statements.Ch06.LGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

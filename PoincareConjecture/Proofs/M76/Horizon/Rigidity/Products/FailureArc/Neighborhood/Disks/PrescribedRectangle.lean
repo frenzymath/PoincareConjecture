@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.BoundaryParts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Source.PrescribedArmParameter
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

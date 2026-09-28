@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalFlowOn
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

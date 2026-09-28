@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.HomotopicRimExtension
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -108,8 +100,6 @@ theorem annulusTargetReflection_involutive (reverse : Bool) (x : I × C64) :
   cases reverse <;> simp [annulusTargetReflection]
   rcases x with ⟨t, z⟩
   exact Prod.ext (unitInterval.symm_symm t) rfl
-
-
 
 theorem exists_relative_annulus_covering_of_opposite_rims
     (f : C(Ann, I × C64)) (g : C(C32, C64)) (hg : IsCoveringMap g)

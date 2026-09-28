@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitRP2Collar
 import PoincareConjecture.Proofs.M47.LimitRP2Charts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,14 +17,11 @@ variable {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
   {K : AncientKappaSolution 3 C.carrier}
 
-
-
 theorem limitRP2_cover_eq (D : M27ProjectivePlaneLineFlowCertificate K)
     (p : UnitTwoSphere × ℝ) :
     D.cover p = D.product_homeomorph.symm (Quotient.mk' p.1, p.2) := by
   exact (D.product_homeomorph.symm_apply_apply (D.cover p)).symm.trans
     (congrArg D.product_homeomorph.symm (D.product_coordinates p))
-
 
 theorem limitRP2_cover_mem_compact (D : M27ProjectivePlaneLineFlowCertificate K)
     (p : UnitTwoSphere × ℝ) (hp : p.2 ∈ Ioo (-1 : ℝ) 1) :
@@ -43,8 +29,6 @@ theorem limitRP2_cover_mem_compact (D : M27ProjectivePlaneLineFlowCertificate K)
   rw [limitRP2_cover_eq D p]
   exact limitRP2InnerCollar_mem_compact D.product_homeomorph
     (Quotient.mk' p.1, ⟨p.2, hp⟩)
-
-
 
 noncomputable def limitRP2PhysicalCollar
     (e : GeneralizedFlowCylinder G C origin scale I U)
@@ -54,8 +38,6 @@ noncomputable def limitRP2PhysicalCollar
     RealProjectiveTwo × Ioo (-1 : ℝ) 1 → (F.slice (origin + s / scale)).carrier :=
   limitRP2PhysicalMap e R s hs ht ∘ limitRP2InnerCollar D.product_homeomorph
 
-
-
 noncomputable def limitRP2PhysicalCover
     (e : GeneralizedFlowCylinder G C origin scale I U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -63,8 +45,6 @@ noncomputable def limitRP2PhysicalCover
     (D : M27ProjectivePlaneLineFlowCertificate K) :
     UnitTwoSphere × ℝ → (F.slice (origin + s / scale)).carrier :=
   limitRP2PhysicalMap e R s hs ht ∘ D.cover
-
-
 
 theorem limitRP2PhysicalCollar_isOpenEmbedding
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -76,8 +56,6 @@ theorem limitRP2PhysicalCollar_isOpenEmbedding
   exact (limitRP2PhysicalMap_isOpenEmbedding e hU R s hs ht).comp
     (limitRP2InnerCollar_isOpenEmbedding_codRestrict D.product_homeomorph hU hcover)
 
-
-
 theorem limitRP2PhysicalCover_quotient
     (e : GeneralizedFlowCylinder G C origin scale I U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -87,8 +65,6 @@ theorem limitRP2PhysicalCover_quotient
     limitRP2PhysicalCover e R s hs ht D p =
       limitRP2PhysicalCollar e R s hs ht D (Quotient.mk' p.1, ⟨p.2, hp⟩) := by
   exact congrArg (limitRP2PhysicalMap e R s hs ht) (limitRP2_cover_eq D p)
-
-
 
 theorem limitRP2PhysicalCover_isLocalDiffeomorphOn
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -104,7 +80,6 @@ theorem limitRP2PhysicalCover_isLocalDiffeomorphOn
     (limitRP2PhysicalMap_isLocalDiffeomorphAt e hU R s hs ht
       (hcover (limitRP2_cover_mem_compact D p p.property.2)))
 
-
 theorem limitRP2PhysicalCover_contMDiffOn
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -115,8 +90,6 @@ theorem limitRP2PhysicalCover_contMDiffOn
       (limitRP2PhysicalCover e R s hs ht D)
       ((univ : Set UnitTwoSphere) ×ˢ Ioo (-1 : ℝ) 1) :=
   (limitRP2PhysicalCover_isLocalDiffeomorphOn e hU R s hs ht D hcover).contMDiffOn
-
-
 
 theorem limitRP2PhysicalCover_fibers
     (e : GeneralizedFlowCylinder G C origin scale I U)
@@ -136,8 +109,6 @@ theorem limitRP2PhysicalCover_fibers
   · intro hpq
     exact congrArg (limitRP2PhysicalMap e R s hs ht) ((D.cover_fibers p q).mpr hpq)
 
-
-
 theorem limitRP2PhysicalCover_antipodal
     (e : GeneralizedFlowCylinder G C origin scale I U)
     (R : M33RegularHistoryRealization G F) (s : ℝ) (hs : s ∈ I)
@@ -147,7 +118,6 @@ theorem limitRP2PhysicalCover_antipodal
       limitRP2PhysicalCover e R s hs ht D (z, r) := by
   exact congrArg (limitRP2PhysicalMap e R s hs ht)
     ((D.cover_fibers (z, r) (-z, r)).mpr (Or.inr rfl)).symm
-
 
 theorem limitRP2PhysicalCover_mfderiv_bijective
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -160,8 +130,6 @@ theorem limitRP2PhysicalCover_mfderiv_bijective
       (limitRP2PhysicalCover e R s hs ht D) p) := by
   exact ((limitRP2PhysicalCover_isLocalDiffeomorphOn e hU R s hs ht D hcover
     ⟨p, ⟨mem_univ _, hp⟩⟩).mfderivToContinuousLinearEquiv (by simp)).bijective
-
-
 
 theorem limitRP2PhysicalCover_normal_ne_tangent
     (e : GeneralizedFlowCylinder G C origin scale I U) (hU : IsOpen U)
@@ -180,9 +148,6 @@ theorem limitRP2PhysicalCover_normal_ne_tangent
   exact one_ne_zero (congrArg Prod.snd hv)
 
 end Transfer
-
-
-
 
 theorem limitRP2_no_projectivePlaneLine
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

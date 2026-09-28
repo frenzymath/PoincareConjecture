@@ -3,17 +3,9 @@ import Mathlib.LinearAlgebra.Matrix.Adjugate
 import Mathlib.LinearAlgebra.Matrix.DotProduct
 import Mathlib.LinearAlgebra.Matrix.ToLin
 
-
-
-
-
-
-
-
 open Matrix
 
 namespace Poincare.LinearAlgebra
-
 
 theorem adjugate_transpose_mulVec_crossProduct
     (A : Matrix (Fin 3) (Fin 3) ℝ) (u v : Fin 3 → ℝ) :
@@ -23,11 +15,9 @@ theorem adjugate_transpose_mulVec_crossProduct
   fin_cases i <;>
     simp [cross_apply, mulVec, vec3_dotProduct, transpose_apply] <;> ring
 
-
 noncomputable def cofactorNormal
     (A : (Fin 3 → ℝ) →ₗ[ℝ] (Fin 3 → ℝ)) (p : Fin 3 → ℝ) : Fin 3 → ℝ :=
   (LinearMap.toMatrix' A).adjugate.transpose *ᵥ p
-
 
 theorem cofactorNormal_dot_apply_eq_zero
     (A : (Fin 3 → ℝ) →ₗ[ℝ] (Fin 3 → ℝ)) (p v : Fin 3 → ℝ)
@@ -35,7 +25,6 @@ theorem cofactorNormal_dot_apply_eq_zero
   rw [cofactorNormal, dotProduct_comm, dotProduct_transpose_mulVec,
     ← LinearMap.toMatrix'_mulVec A v, mulVec_mulVec, adjugate_mul,
     smul_mulVec, one_mulVec, dotProduct_smul, hv, smul_zero]
-
 
 theorem cofactorNormal_ne_zero
     (A : (Fin 3 → ℝ) →ₗ[ℝ] (Fin 3 → ℝ)) (p : Fin 3 → ℝ)
@@ -60,7 +49,6 @@ theorem cofactorNormal_ne_zero
   have hvu : v ⬝ᵥ u = 0 := by rwa [dotProduct_comm]
   simpa [dotProduct_add, dotProduct_smul, hu, hv, huv, hvu] using And.intro ha hb
 
-
 theorem injective_tangent_add_cofactorNormal
     (A : (Fin 3 → ℝ) →ₗ[ℝ] (Fin 3 → ℝ)) (p : Fin 3 → ℝ)
     (hp : p ⬝ᵥ p = 1)
@@ -84,7 +72,6 @@ theorem injective_tangent_add_cofactorNormal
     exact add_right_cancel (huv.trans (by rw [huv']))
   rwa [huv', sub_left_inj] at hproj_eq
 
-
 noncomputable def euclideanCoordinateLinearMap
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3)) :
     (Fin 3 → ℝ) →ₗ[ℝ] (Fin 3 → ℝ) :=
@@ -96,7 +83,6 @@ theorem euclideanCoordinateLinearMap_apply
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3)) (v : Fin 3 → ℝ) :
     euclideanCoordinateLinearMap A v = (A (WithLp.toLp 2 v)).ofLp := rfl
 
-
 noncomputable def euclideanCofactorNormal
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
     (p : EuclideanSpace ℝ (Fin 3)) : EuclideanSpace ℝ (Fin 3) :=
@@ -106,14 +92,12 @@ private theorem inner_eq_dotProduct (p v : EuclideanSpace ℝ (Fin 3)) :
     inner ℝ p v = p ⬝ᵥ v := by
   rw [EuclideanSpace.inner_eq_star_dotProduct, star_trivial, dotProduct_comm]
 
-
 theorem inner_euclideanCofactorNormal_apply_eq_zero
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
     (p v : EuclideanSpace ℝ (Fin 3)) (hv : inner ℝ p v = 0) :
     inner ℝ (euclideanCofactorNormal A p) (A v) = 0 := by
   simp only [inner_eq_dotProduct] at hv ⊢
   exact cofactorNormal_dot_apply_eq_zero (euclideanCoordinateLinearMap A) p v hv
-
 
 theorem euclideanCofactorNormal_ne_zero
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
@@ -130,7 +114,6 @@ theorem euclideanCofactorNormal_ne_zero
     simpa only [inner_eq_dotProduct] using hp
   intro h
   exact cofactorNormal_ne_zero _ _ hpc hAc (congrArg WithLp.ofLp h)
-
 
 theorem injective_tangent_add_euclideanCofactorNormal
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
@@ -154,8 +137,6 @@ theorem injective_tangent_add_euclideanCofactorNormal
     WithLp.ofLp_add, WithLp.ofLp_smul,
     WithLp.toLp_sub, WithLp.toLp_smul, WithLp.toLp_ofLp, WithLp.ofLp_toLp] using
     congrArg WithLp.ofLp huv
-
-
 
 theorem orthogonal_tangent_iff_smul_euclideanCofactorNormal
     (A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))

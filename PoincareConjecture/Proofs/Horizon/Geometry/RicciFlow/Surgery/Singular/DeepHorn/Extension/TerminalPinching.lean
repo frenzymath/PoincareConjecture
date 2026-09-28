@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -147,8 +138,6 @@ private theorem sectional_values_eq_model_image (D : LeviCivitaData g) (x : X)
     rw [hu, hv, huv]
     norm_num
 
-
-
 theorem flow_leastSectionalCurvature_continuousOn {J : Set ℝ}
     (G : RicciFlow 3 X J) (x : X) :
     ContinuousOn (fun t => (G.connection t).leastSectionalCurvature x) J := by
@@ -183,8 +172,6 @@ theorem flow_leastSectionalCurvature_continuousOn {J : Set ℝ}
   intro t
   rw [himage]
   exact congrArg sInf (sectional_values_eq_model_image (G.connection t) x L).symm
-
-
 
 theorem flow_negativeCurvaturePart_continuousOn {J : Set ℝ}
     (G : RicciFlow 3 X J) (x : X) :
@@ -231,8 +218,6 @@ private theorem box_negativeCurvaturePart_pullback (G : GeneralizedRicciFlowData
     (G.connection t) isOpen_univ ((G.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => ((G.box b).metric_pullback t ht y v w).symm) (mem_univ x)).symm
 
-
-
 theorem terminal_box_hamiltonIvey_pinching
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -277,8 +262,6 @@ theorem terminal_box_hamiltonIvey_pinching
       box_negativeCurvaturePart_pullback] at h
     exact h hnt
 
-
-
 theorem extension_hamiltonIveyPinchedAt_terminal
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -299,8 +282,6 @@ theorem extension_hamiltonIveyPinchedAt_terminal
       _ ≤ (E.extended.connection T).scalarCurvature _
     rw [box_scalar_pullback]
     exact (terminal_box_hamiltonIvey_pinching hM04 H E b hb y).2
-
-
 
 theorem extension_hamiltonIveyPinched
     (hM04 : RicciFlowCurvatureCalculus.{u})

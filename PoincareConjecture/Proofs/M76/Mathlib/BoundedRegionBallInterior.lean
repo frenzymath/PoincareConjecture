@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +10,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.interior_eq_sdiff_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)
@@ -50,9 +35,6 @@ theorem IsFinitePLBallPair.interior_eq_sdiff_of_finrank_eq
   rw [hfv] at hboundary
   exact hboundary.2 hfx
 
-
-
-
 theorem IsFinitePLBallPair.frontier_eq_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ X) : frontier s = b := by
@@ -66,26 +48,17 @@ theorem IsFinitePLBallPair.frontier_eq_of_finrank_eq
   · intro hx
     exact ⟨hs.1 hx, fun h => h.2 hx⟩
 
-
-
-
 theorem IsFinitePLBallPair.closure_interior_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ X) : closure (interior s) = s := by
   rw [hs.interior_eq_sdiff_of_finrank_eq hdim]
   exact hs.closure_sdiff
 
-
-
-
 theorem IsFinitePLBallPair.isConnected_interior_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ X) : IsConnected (interior s) := by
   rw [hs.interior_eq_sdiff_of_finrank_eq hdim]
   exact hs.isConnected_sdiff
-
-
-
 
 theorem IsFinitePLBallPair.frontier_interior_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)

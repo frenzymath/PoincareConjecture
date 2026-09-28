@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.CanonicalDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSourceCountable_radial_smallness_mono
     {H K rho : ℝ} (hH : 0 ≤ H) (hHK : H ≤ K)
@@ -48,8 +36,6 @@ theorem terminalSourceCountable_radial_smallness_mono
 variable (U : ℕ → Opens E) [∀ i, Nonempty (U i)]
   {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
 
-
-
 theorem terminalSourceCountable_parametrization_smooth {i : ℕ}
     {e : U i → M} (he : ContMDiff (𝓡 3) (𝓡 3) ∞ e) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞
@@ -58,8 +44,6 @@ theorem terminalSourceCountable_parametrization_smooth {i : ℕ}
   apply ChartDistance.contMDiffOn_chartParametrization
   rw [canonicalDomain_chartedSpace_eq_opens]
   exact he
-
-
 
 theorem terminalSourceCountable_parametrization_mfderiv {i : ℕ}
     {e : U i → M} (he : ContMDiff (𝓡 3) (𝓡 3) ∞ e) (x : U i) :
@@ -78,7 +62,6 @@ theorem terminalSourceCountable_parametrization_mfderiv {i : ℕ}
 
 variable [IsManifold (𝓡 3) ∞ M]
 
-
 theorem terminalSourceCountable_pullback_smooth (g : RiemannianMetric 3 M)
     {i : ℕ} {e : U i → M} (he : ContMDiff (𝓡 3) (𝓡 3) ∞ e) :
     ContDiffOn ℝ ∞
@@ -92,8 +75,6 @@ theorem terminalSourceCountable_pullback_smooth (g : RiemannianMetric 3 M)
 
 variable {N : Type v} [TopologicalSpace N] [ChartedSpace E N]
   [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem terminalSourceCountable_pullback_readout
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -135,7 +116,6 @@ theorem terminalSourceCountable_pullback_readout
   convert! hr using 1
 
 omit [∀ i, Nonempty (U i)] in
-
 
 theorem terminalSourceCountable_coefficient_jets {i : ℕ}
     {f g : E → E →L[ℝ] E →L[ℝ] ℝ} (heq : EqOn f g (U i))

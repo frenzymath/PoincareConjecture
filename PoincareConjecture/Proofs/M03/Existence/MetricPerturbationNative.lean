@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option synthInstance.maxHeartbeats 100000
@@ -30,8 +21,6 @@ variable {n : ℕ} {M : Type u}
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "FiberBilin" =>
   fun x : M => TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ
-
-
 
 structure SmallMetricPerturbation (g₀ : RiemannianMetric n M) where
   tensor : ∀ x : M, FiberBilin x
@@ -56,7 +45,6 @@ theorem lower_bound (x : M) (v : TangentSpace (𝓡 n) x) :
 theorem positive (x : M) (v : TangentSpace (𝓡 n) x) (hv : v ≠ 0) :
     0 < g₀.inner x v v + P.tensor x v v := by
   exact (mul_pos (by norm_num) (g₀.pos x v hv)).trans_le (P.lower_bound x v)
-
 
 noncomputable def metric : RiemannianMetric n M where
   inner x := g₀.inner x + P.tensor x
@@ -94,7 +82,6 @@ theorem metric_positive (x : M) (v : TangentSpace (𝓡 n) x) (hv : v ≠ 0) :
 
 end SmallMetricPerturbation
 
-
 noncomputable def SmallMetricPerturbation.zero (g₀ : RiemannianMetric n M) :
     SmallMetricPerturbation g₀ where
   tensor := fun _ => 0
@@ -128,9 +115,6 @@ noncomputable def SmallMetricPerturbation.zero (g₀ : RiemannianMetric n M) :
   apply ContinuousLinearMap.ext
   intro w
   simpa only [h₁, h₂] using hinner x v w
-
-
-
 
 structure SmallMetricPath (g₀ : RiemannianMetric n M) (J : Set ℝ) where
   tensor : ℝ → ∀ x : M, FiberBilin x

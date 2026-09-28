@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLTriangleBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDiskModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
-
 
 theorem exists_finitePL_triangle_filling {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

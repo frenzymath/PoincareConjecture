@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.It
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Multiply
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.LocalL2
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric
@@ -20,7 +13,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 def MemWkpLocally (k : ℕ) (u : E → ℝ) (O : Set E) : Prop :=
   ∀ x ∈ O, ∃ V, IsOpen V ∧ x ∈ V ∧ V ⊆ O ∧ MemWkp k 2 u V
@@ -110,7 +102,6 @@ theorem MemWkpLocally.smooth_mul {O : Set E} {k : ℕ} {u a : E → ℝ}
     (fun j hj y hy => hC j hj y (ball_subset_closedBall hy.2))
     (huV.mono_set (by norm_num) hW inter_subset_left)
 
-
 theorem MemWkpLocally.weakPartial {O : Set E} {k : ℕ} {u g : E → ℝ}
     (hu : MemWkpLocally (k + 1) u O) (hg : MemWkpLocally 0 g O)
     {i : Fin d} (hweak : Weak.HasWeakPartialDeriv i g u O) :
@@ -130,7 +121,6 @@ theorem MemWkpLocally.weakPartial {O : Set E} {k : ℕ} {u g : E → ℝ}
       (hgW.memLp.locallyIntegrable (by norm_num))
   exact ⟨W, hW, ⟨hxU, hxV⟩, hWO,
     (MemWkp_congr_ae (by norm_num) hW hae).mp (huW.chosenWeakPartial_mem i)⟩
-
 
 theorem memWkpLocally_succ_of_weakDerivatives {O : Set E} (hO : IsOpen O)
     {k : ℕ} {u : E → ℝ} {p : Fin d → E → ℝ}

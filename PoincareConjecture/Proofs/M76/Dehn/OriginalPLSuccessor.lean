@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoSheetCoverModel
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringPLSuccessor
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z a
@@ -27,9 +17,6 @@ variable {U : Type u} {E : Type v} {M : Type w} {ι : Type z}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 structure Step (s t : Stage e S f r C) where
   Cover : Type w
@@ -54,8 +41,6 @@ structure Step (s t : Stage e S f r C) where
 
 attribute [instance] Step.topology Step.t2 Step.connected
 
-
-
 theorem Step.chart_source {s t : Stage e S f r C} (step : Step s t) (k : t.Index) :
     MapsTo (step.projection ∘ step.inclusion) (t.charts k).source
       (s.charts (step.chartIndex k)).source := by
@@ -69,14 +54,8 @@ theorem Step.chart_source {s t : Stage e S f r C} (step : Step s t) (k : t.Index
   change step.projection (step.inclusion x) ∈ (s.charts (step.chartIndex k)).source
   exact hi.symm ▸ he
 
-
-
 def Reaches (s t : Stage e S f r C) : Prop :=
   Relation.ReflTransGen (fun a b => Nonempty (Step a b)) s t
-
-
-
-
 
 theorem exists_step_of_two_sheet_cover [FiniteDimensional ℝ U]
     (s : Stage e S f r C) (hS : S.faces.Finite)

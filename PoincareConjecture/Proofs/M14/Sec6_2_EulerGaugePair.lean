@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_ExtendedPathRegularity
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeMomentumPair
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -53,9 +43,6 @@ variable {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
-
 
 theorem hasDerivAt_supportedBackwardGauge_pair_of_euler (x₀ : G.gaugeCover.spatial b)
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

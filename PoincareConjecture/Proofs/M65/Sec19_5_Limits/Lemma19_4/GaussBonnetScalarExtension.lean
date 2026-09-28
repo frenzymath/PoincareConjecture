@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetScalarResidual
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,11 +19,6 @@ private theorem contDiffAt_sum_log_norm (B : Finset ℂ) (m : ℂ → ℕ)
   have hsub : ContDiffAt ℝ 1 (fun z : ℂ => z - a) x := contDiffAt_id.sub contDiffAt_const
   exact contDiffAt_const.mul
     ((hsub.norm ℝ hxa).log (norm_ne_zero_iff.mpr hxa))
-
-
-
-
-
 
 theorem exists_scalar_residual_extension (B : Finset ℂ) (m : ℂ → ℕ)
     (lambda : ℂ → ℝ) (rho : ℂ → ℂ → ℝ) {U : Set ℂ} (hU : IsOpen U)

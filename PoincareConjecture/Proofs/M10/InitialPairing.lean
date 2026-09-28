@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.InitialGram
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +13,6 @@ section Bilinear
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {ι : Type*}
-
 
 theorem bilinear_apply_eq_basis_sum [Fintype ι] (b : Module.Basis ι ℝ E)
     (B : E →L[ℝ] E →L[ℝ] ℝ) (u v : E) :
@@ -38,7 +29,6 @@ theorem bilinear_apply_eq_basis_sum [Fintype ι] (b : Module.Basis ι ℝ E)
       apply Finset.sum_congr rfl
       intro j _
       ring
-
 
 theorem tendsto_bilinear_apply_of_basis [Finite ι] {α : Type*} {l : Filter α}
     (b : Module.Basis ι ℝ E) {B : α → E →L[ℝ] E →L[ℝ] ℝ} {B₀ : E →L[ℝ] E →L[ℝ] ℝ}
@@ -58,7 +48,6 @@ end Bilinear
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem exponential_scaled_pairing_tendsto (G : LExponentialGeometry F T τmax p)
     (hmax : 0 < τmax) (hT : T ∈ J) (hwindow : Icc (T - τmax) T ⊆ J)

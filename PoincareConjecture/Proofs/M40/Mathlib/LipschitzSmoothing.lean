@@ -1,20 +1,6 @@
 import Mathlib.Analysis.Calculus.BumpFunction.SmoothApprox
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Metric MeasureTheory ContinuousLinearMap
@@ -28,17 +14,11 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
   {μ : Measure E} [μ.IsAddHaarMeasure]
 
-
-
-
 noncomputable def normalizedConvolution (μ : Measure E)
     (φ : ContDiffBump (0 : E)) (f : E → F) : E → F :=
   fun x => (φ.normed μ ⋆[lsmul ℝ ℝ, μ] f : E → F) x
 
 omit [CompleteSpace F] in
-
-
-
 
 theorem normalizedConvolution_contDiff (φ : ContDiffBump (0 : E))
     {f : E → F} (hf : LocallyIntegrable f μ) :
@@ -47,18 +27,11 @@ theorem normalizedConvolution_contDiff (φ : ContDiffBump (0 : E))
 
 omit [CompleteSpace F] in
 
-
-
 private theorem normalizedConvolution_integrable (φ : ContDiffBump (0 : E))
     {f : E → F} (hf : LocallyIntegrable f μ) (x : E) :
     Integrable (fun t => φ.normed μ t • f (x - t)) μ := by
   exact ((φ.hasCompactSupport_normed.convolutionExists_left
     (lsmul ℝ ℝ) φ.continuous_normed hf) x).integrable
-
-
-
-
-
 
 theorem normalizedConvolution_lipschitzOn (φ : ContDiffBump (0 : E))
     {f : E → F} {U s : Set E} {L : ℝ≥0}
@@ -89,21 +62,12 @@ theorem normalizedConvolution_lipschitzOn (φ : ContDiffBump (0 : E))
     _ = (L : ℝ) * dist x y := by
       rw [integral_mul_const, φ.integral_normed, one_mul]
 
-
-
-
-
 theorem normalizedConvolution_lipschitz (φ : ContDiffBump (0 : E))
     {f : E → F} {L : ℝ≥0} (hf : LipschitzWith L f) :
     LipschitzWith L (normalizedConvolution μ φ f) := by
   rw [← lipschitzOnWith_univ]
   exact normalizedConvolution_lipschitzOn (U := univ) φ hf.continuous.locallyIntegrable
     hf.lipschitzOnWith (by simp)
-
-
-
-
-
 
 theorem normalizedConvolution_dist_le (φ : ContDiffBump (0 : E))
     {f : E → F} {L : ℝ≥0} (hf : LipschitzWith L f) (x : E) :
@@ -113,18 +77,10 @@ theorem normalizedConvolution_dist_le (φ : ContDiffBump (0 : E))
   exact (hf.dist_le_mul y x).trans
     (mul_le_mul_of_nonneg_left hy.le L.coe_nonneg)
 
-
-
-
-
 theorem normalizedConvolution_norm_fderiv_le (φ : ContDiffBump (0 : E))
     {f : E → F} {L : ℝ≥0} (hf : LipschitzWith L f) (x : E) :
     ‖fderiv ℝ (normalizedConvolution μ φ f) x‖ ≤ L :=
   norm_fderiv_le_of_lipschitz ℝ (normalizedConvolution_lipschitz φ hf)
-
-
-
-
 
 theorem exists_contDiff_lipschitz_approx (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → F} {L : ℝ≥0} (hf : LipschitzWith L f) {ε : ℝ} (hε : 0 < ε) :

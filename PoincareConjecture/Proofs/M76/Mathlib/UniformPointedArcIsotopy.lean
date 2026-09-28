@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedResidualPointedIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.PointedArcResidualContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,16 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts_with_global_finitePL_and_signs
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
@@ -189,9 +169,6 @@ theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts_with_global_fi
   refine ⟨p, hpbase, hptop, ?_⟩
   exact (hfval _).symm.trans (hpval.trans (hfix _ hpR))
 
-
-
-
 theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts_with_global_finitePL
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -270,9 +247,6 @@ theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts_with_global_fi
       Q hQ hQd J hJ hJR hRzero hresidual hU hdU
   exact ⟨r, g, hr, hmin, hmax, hrest⟩
 
-
-
-
 theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -350,12 +324,6 @@ theorem IsFinitePL.exists_uniform_pointed_arc_isotopy_with_charts
       Q hQ hQd J hJ hJR hRzero hresidual hU hdU
   exact ⟨r, g, hr, hmin, hmax, hgT, hgn, hgr, hgQ, hgR, hgU,
     ε, hε, H, hrest⟩
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_uniform_pointed_arc_isotopy
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

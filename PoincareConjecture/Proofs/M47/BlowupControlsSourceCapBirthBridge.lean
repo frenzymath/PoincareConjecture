@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCapStop
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthFactory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
 
 structure SourceSearchCapBirthComparison
     (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) (t : ℝ)
@@ -35,9 +25,6 @@ structure SourceSearchCapBirthComparison
   based : ∀ hs z,
     z ∈ (F.metric t).ball ((F.event t hT).caps i).tip (A * F.parameters.h t) →
       HEq (e.forward 0 hs z) z
-
-
-
 
 theorem source_search_cap_birth_comparison_of_positive_age
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
@@ -95,9 +82,6 @@ theorem source_search_cap_birth_comparison_of_positive_age
     comparison := hcomparison
     based := hclosedBased
   }, rfl⟩
-
-
-
 
 theorem exists_zero_age_search_cap_birth_comparison_cutoff
     (S : RepairedControlledSchedulesData.{u}) {Asearch : ℝ} (hAsearch : 0 < Asearch) :

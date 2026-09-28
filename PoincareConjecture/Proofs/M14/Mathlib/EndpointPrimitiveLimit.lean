@@ -1,13 +1,5 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -16,9 +8,6 @@ open scoped Topology intervalIntegral
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem tendsto_integral_upper_from_left {F : ℝ → E} {a b k : ℝ}
     (hab : a < b) (hF : IntervalIntegrable F volume a b) (hk : 0 < k) :
@@ -41,8 +30,6 @@ theorem tendsto_integral_upper_from_left {F : ℝ → E} {a b k : ℝ}
       have hsmall := (lt_div_iff₀ hk).mp hd.2
       exact ⟨by nlinarith, by nlinarith [mul_pos hk hd.1]⟩
   exact (hcont b ⟨hab.le, le_rfl⟩).tendsto.comp hmap
-
-
 
 theorem tendsto_integral_lower_at_interior {F : ℝ → E} {a b c : ℝ}
     (hF : IntervalIntegrable F volume a b) (hc : c ∈ Ioo a b) (k : ℝ) :

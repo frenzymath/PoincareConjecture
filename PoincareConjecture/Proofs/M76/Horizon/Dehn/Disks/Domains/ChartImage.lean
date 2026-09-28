@@ -11,8 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
 
-
-
 theorem chart_inverse_isOpenEmbedding
     (a : OpenPartialHomeomorph X V3) (U : TopologicalSpace.Opens V3)
     (hU : Nonempty U) (hUT : (U : Set V3) ⊆ a.target) :
@@ -26,8 +24,6 @@ theorem chart_inverse_isOpenEmbedding
     exact iff_of_true (hUT y.property) (mem_univ y)
   exact C.isOpenEmbedding hsource
 
-
-
 theorem frontier_chart_image_eq
     (a : OpenPartialHomeomorph X V3) (U : TopologicalSpace.Opens V3)
     (hU : Nonempty U) (hUT : (U : Set V3) ⊆ a.target) (R : Set X) :
@@ -35,9 +31,6 @@ theorem frontier_chart_image_eq
       {y : U | a.symm (y : V3) ∈ frontier R} := by
   have hj := chart_inverse_isOpenEmbedding a U hU hUT
   exact (hj.isOpenMap.preimage_frontier_eq_frontier_preimage hj.continuous R).symm
-
-
-
 
 theorem PLDomain.chart_image
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X} (he : PLDomain e R)

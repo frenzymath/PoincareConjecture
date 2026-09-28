@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.Bounded
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Classification.Static
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,9 +24,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 namespace AncientAsymptoticSolitonLimitData
 
-
-
-
 theorem classificationCertificate_of_compact_or_bound
     (hP : ThreeDimensionalClassificationPredecessors.{u})
     {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
@@ -50,8 +40,6 @@ theorem classificationCertificate_of_compact_or_bound
 
 end AncientAsymptoticSolitonLimitData
 
-
-
 theorem AncientKappaSolution.threeDimensionalAsymptoticClassification
     (hP : ThreeDimensionalClassificationPredecessors.{u})
     (K : AncientKappaSolution 3 M)
@@ -66,8 +54,6 @@ theorem AncientKappaSolution.threeDimensionalAsymptoticClassification
   obtain ⟨L⟩ := hP.m18.limits M K S
   exact ⟨L, L.classificationCertificate_of_compact_or_bound hP (hbound S L)⟩
 
-
-
 theorem threeDimensionalClassificationTheory_of_asymptotic
     (hP : ThreeDimensionalClassificationPredecessors.{u})
     (hasymptotic : ∀ K : AncientKappaSolution 3 M,
@@ -76,8 +62,6 @@ theorem threeDimensionalClassificationTheory_of_asymptotic
   refine { classify := ?_, asymptotic_classify := hasymptotic }
   intro S
   exact GradientShrinkingSolitonData.threeDimensionalClassificationData (M := M) S hP
-
-
 
 theorem horizon_threeDimensionalAncientAndShrinkingSolitonClassification
     (P : ThreeDimensionalClassificationPredecessors.{u}) :

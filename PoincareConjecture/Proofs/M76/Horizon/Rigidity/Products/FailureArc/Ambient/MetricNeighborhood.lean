@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspaceBoundaryPullback
 import PoincareConjecture.Proofs.M76.Wall.ActualCutDomains
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Local.Homeomorph
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 open Poincare.Topology.Orientation.ProjectivePlane
@@ -12,8 +10,6 @@ open Poincare.Topology.Orientation.ProjectivePlane
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem PLDomain.exists_oriented_metrizable_neighborhood
     {X : Type} {ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -60,8 +56,6 @@ theorem PLDomain.exists_oriented_metrizable_neighborhood
     (Subtype.val : N → X) hv O
   exact ⟨N, hN, hRN, hmetric, d, hd, hdcenter, hdsource, hdtarget,
     hdval, hdinv, hfront, hint, hcompact, O', hO'⟩
-
-
 
 theorem exists_original_parameter_in_neighborhood
     {X E ι : Type*} [TopologicalSpace X]

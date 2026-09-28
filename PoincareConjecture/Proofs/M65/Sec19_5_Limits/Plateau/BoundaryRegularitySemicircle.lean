@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerClass
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityACComposition
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,15 +15,10 @@ namespace PoincareConjecture.M65Boundary
 
 open M65Interior
 
-
-
 def boundaryCirclePoint {p : ℂ} (hp : ‖p‖ = 1) (s : ℝ) : LoopCircle :=
   ⟨diskBoundaryCoordinate p (s • EuclideanSpace.basisFun (Fin 2) ℝ 0), by
     rw [norm_diskBoundaryCoordinate hp]
     simp [EuclideanSpace.basisFun_apply]⟩
-
-
-
 
 theorem halfDisk_ae_semicircle {H ε R : ℝ} (hε : 0 < ε) (hRH : R ≤ H)
     {Q : LoopPlane → Prop}
@@ -221,8 +206,6 @@ private theorem scalar_original_semicircle_uniform :
     filter_upwards [ae_restrict_of_ae_restrict_of_subset hsub hB0] with s hs
     rw [hs]
 
-
-
 def weakDiskBoundaryField {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
     (F : M65WeakDisk e γ) (p : ℂ) (i : Fin 2) (z : LoopPlane) :
@@ -241,11 +224,6 @@ private theorem closedTarget_of_ae {N : ℕ} {S : Set (EuclideanSpace ℝ (Fin N
     ((continuous_infDist_pt S).comp_continuousOn hv) continuousOn_const
     (closure_interior_Icc Real.pi_pos.ne).symm.subset
   exact fun θ hθ => (hS.mem_iff_infDist_zero hne).mpr (heq hθ)
-
-
-
-
-
 
 theorem weakDisk_boundary_semicircle_uniform {M : Type*} [TopologicalSpace M] {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
@@ -324,8 +302,6 @@ theorem weakDisk_boundary_semicircle_uniform {M : Type*} [TopologicalSpace M] {N
     exact hvi j s hs t ht
   · intro test i j
     exact hgr j test i
-
-
 
 theorem weakDisk_boundary_semicircle {M : Type*} [TopologicalSpace M] {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}

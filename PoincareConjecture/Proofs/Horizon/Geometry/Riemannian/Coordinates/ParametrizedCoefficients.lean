@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.LinearMap
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

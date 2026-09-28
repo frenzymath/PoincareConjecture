@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.LocalNormalization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.ParametricInverse
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.SphereIsotopy
 
 private abbrev E2 := EuclideanSpace ℝ (Fin 2)
 private abbrev S2 := PoincareConjecture.UnitTwoSphere
-
-
 
 theorem exists_plane_diffeomorph
     (d : Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞) (p : S2)
@@ -89,8 +78,6 @@ theorem exists_plane_diffeomorph
   change c (d (c.symm x)) = x
   rw [hdU hxU]
   exact c.right_inv (hx x)
-
-
 
 theorem exists_sphere_isotopy_of_plane_isotopy
     (d : Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞) (p : S2) (hp : d p = p)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.DiameterLimit
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 def terminalCComponent (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : H.regularRegion P04)
@@ -59,8 +49,6 @@ def terminalCComponent (H : SingularTimeAssumptions F T M)
         H.reference.forward t ht x ∈ N.carrier)
     (hpos : 0 < (H.terminalConnection P04).scalarCurvature x) :
     (H.terminalCComponent P04 x hfreq hpos).carrier = connectedComponent x := rfl
-
-
 
 theorem exists_terminal_cComponent_of_frequently
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

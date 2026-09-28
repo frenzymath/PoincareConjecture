@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeSections
 import PoincareConjecture.Proofs.M02.Topology.FiniteSectionCenters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

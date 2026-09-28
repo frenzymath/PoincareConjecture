@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StoppedCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ noncomputable local instance restartCollarTwoJetNorm :
 
 noncomputable local instance restartCollarTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_stopped_local_collar_restart (P : M44CapPersistencePredecessors.{u})
     (C : ℝ) (u v : E) {model : Set (MetricTwoJet 3)} (hmodel : IsCompact model)

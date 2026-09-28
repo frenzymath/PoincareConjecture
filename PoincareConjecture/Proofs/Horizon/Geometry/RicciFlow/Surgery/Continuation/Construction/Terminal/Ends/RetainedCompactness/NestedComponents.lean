@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.FiniteComponents
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +8,6 @@ namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
   [LocallyConnectedSpace X] [PreconnectedSpace X]
-
-
 
 theorem exists_nested_unbounded_component_traces (K : CompactExhaustion X)
     {A : Set X} (hA : ∀ L : Set X, IsCompact L → ¬ A ⊆ L) :

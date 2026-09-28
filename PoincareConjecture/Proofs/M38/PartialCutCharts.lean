@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutPatches
 import PoincareConjecture.Proofs.M38.CappingCharts
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,15 +15,12 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
 
-
 abbrev PartialCappingIndex := eventCutOpen F T hT P S ⊕ (S × Bool)
-
 
 abbrev partialCappingDomain :
     PartialCappingIndex F T hT P S → TopologicalSpace.Opens StandardCapSpace
   | .inl x => ⟨(chartAt StandardCapSpace x).target, (chartAt StandardCapSpace x).open_target⟩
   | .inr _ => capDoubleBall
-
 
 instance partialCappingDomain_nonempty (j : PartialCappingIndex F T hT P S) :
     Nonempty (partialCappingDomain F T hT P S j) := by
@@ -39,11 +29,9 @@ instance partialCappingDomain_nonempty (j : PartialCappingIndex F T hT P S) :
       (chartAt StandardCapSpace x).map_source (mem_chart_source _ x)⟩⟩
   | inr a => exact capDoubleBall_nonempty
 
-
 instance partialCappingDomain_set_nonempty (j : PartialCappingIndex F T hT P S) :
     Nonempty ↥(partialCappingDomain F T hT P S j : Set StandardCapSpace) :=
   partialCappingDomain_nonempty F T hT P S j
-
 
 noncomputable def partialCappingMap (j : PartialCappingIndex F T hT P S) :
     OpenPartialHomeomorph (partialCappingDomain F T hT P S j) (eventCutOpen F T hT P S) :=
@@ -51,7 +39,6 @@ noncomputable def partialCappingMap (j : PartialCappingIndex F T hT P S) :
   | .inl x => (chartAt StandardCapSpace x).symm.subtypeRestr
       (partialCappingDomain_nonempty F T hT P S (.inl x))
   | .inr a => cutAttachmentChart F T hT P S a
-
 
 theorem partialCappingMap_old_source (x : eventCutOpen F T hT P S) :
     (partialCappingMap F T hT P S (.inl x)).source = Set.univ := by
@@ -61,12 +48,10 @@ theorem partialCappingMap_old_source (x : eventCutOpen F T hT P S) :
   ext z
   exact iff_of_true z.property (Set.mem_univ _)
 
-
 theorem partialCappingMap_old_openEmbedding (x : eventCutOpen F T hT P S) :
     IsOpenEmbedding (partialCappingMap F T hT P S (.inl x)) :=
   (partialCappingMap F T hT P S (.inl x)).isOpenEmbedding
     (partialCappingMap_old_source F T hT P S x)
-
 
 theorem partialCappingMap_smooth (j : PartialCappingIndex F T hT P S) :
     letI := (partialCappingDomain F T hT P S j).isOpen.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -81,7 +66,6 @@ theorem partialCappingMap_smooth (j : PartialCappingIndex F T hT P S) :
         (partialCappingDomain_nonempty F T hT P S (.inl x))
         contMDiffOn_chart_symm contMDiffOn_chart
   | inr a => exact cutAttachmentChart_smooth F T hT P S a
-
 
 theorem partialCappingMap_graph_closed (j k : PartialCappingIndex F T hT P S) (hjk : j ≠ k) :
     IsClosed {q : partialCappingDomain F T hT P S j × partialCappingDomain F T hT P S k |
@@ -133,17 +117,13 @@ theorem partialCappingMap_graph_closed (j k : PartialCappingIndex F T hT P S) (h
           rw [hempty]
           exact isClosed_empty
 
-
 noncomputable def partialCappingOverlap := cappingOverlap (partialCappingMap F T hT P S)
 
-
 abbrev PartialCappedSpace := Quotient (partialCappingOverlap F T hT P S).setoid
-
 
 theorem partialCappedSpace_t2 : T2Space (PartialCappedSpace F T hT P S) :=
   cappingOverlap_t2 (fun j => (partialCappingDomain F T hT P S j : Set StandardCapSpace))
     (partialCappingMap F T hT P S) (partialCappingMap_graph_closed F T hT P S)
-
 
 @[implicit_reducible]
 noncomputable def partialCappedChartedSpace :
@@ -151,7 +131,6 @@ noncomputable def partialCappedChartedSpace :
   Poincare.Gluing.quotientChartedSpace
     (fun j => (partialCappingDomain F T hT P S j : Set StandardCapSpace))
     (fun j => (partialCappingDomain F T hT P S j).isOpen) (partialCappingOverlap F T hT P S)
-
 
 theorem partialCappedSpace_isManifold :
     letI := partialCappedChartedSpace F T hT P S

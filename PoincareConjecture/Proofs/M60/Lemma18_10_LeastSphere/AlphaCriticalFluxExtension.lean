@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalGrowth
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactWeakChain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
 
 local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem suNormalizedCoefficient_full_bound
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -68,9 +56,6 @@ theorem suNormalizedCoefficient_full_bound
       (mul_le_mul hC hL (norm_nonneg L) ((norm_nonneg _).trans hC))
       (Real.rpow_nonneg ht.le _)
     _ = _ := by ring
-
-
-
 
 theorem suHomogeneous_base_extension
     {p : ℕ} {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -145,10 +130,6 @@ theorem suHomogeneous_base_extension
     filter_upwards [continuousAt_fst.preimage_mem_nhds
       (Metric.isOpen_thickening.mem_nhds (Metric.self_subset_thickening hδ K hx))] with z hz
     simp only [G, hχone z.1 (Metric.thickening_subset_cthickening δ K hz), one_smul]
-
-
-
-
 
 theorem suAlphaFlux_supported_extension
     {p : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

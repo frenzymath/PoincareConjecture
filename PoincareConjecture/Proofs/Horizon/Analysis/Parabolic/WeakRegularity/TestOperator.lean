@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.ForwardEquation
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +10,6 @@ open scoped ContDiff
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 variable {n : ℕ}
-
-
 
 def diffusionTest
     (a : Fin n → Fin n → Spacetime n → ℝ) (b : Fin n → Spacetime n → ℝ)

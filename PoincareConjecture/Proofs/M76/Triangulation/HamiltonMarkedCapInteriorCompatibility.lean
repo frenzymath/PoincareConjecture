@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedCapCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapInteriorTransition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +13,6 @@ local notation "M" => (ℝ × V2)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {D S : Set X} {eps : ℝ} {g : S × Ico (0 : ℝ) eps → X}
-
-
-
 
 theorem interior_compatible (c : HamiltonMarkedCapCoordinates (E := V2) (D := D) g)
     {e : ι → OpenPartialHomeomorph X V3} (s : ChartwisePLSphere e S)

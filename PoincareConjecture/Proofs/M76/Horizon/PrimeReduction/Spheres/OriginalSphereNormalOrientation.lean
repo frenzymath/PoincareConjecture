@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -39,7 +29,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
 
 omit [T2Space X] in
 
-
 theorem ChartwisePLSphere.lifting_connectedness (s : ChartwisePLSphere e S) :
     SimplyConnectedSpace S ∧ LocallyPathConnectedSpace S := by
   let c : V3 ≃L[ℝ] EuclideanSpace ℝ (Fin 3) :=
@@ -53,8 +42,6 @@ theorem ChartwisePLSphere.lifting_connectedness (s : ChartwisePLSphere e S) :
       (M := sphere (0 : EuclideanSpace ℝ (Fin 3)) 1)
   exact ⟨H.toHomotopyEquiv.simplyConnectedSpace,
     H.isOpenEmbedding.locallyPathConnectedSpace⟩
-
-
 
 theorem ChartwisePLSphere.exists_normal_flattening_atlas
     (s : ChartwisePLSphere e S)
@@ -187,9 +174,6 @@ private theorem exists_oriented_charts_with_pl
       _ = (A.transitionSign (I i) (I j) x * A.transitionSign (I i) (I j) x) *
           ((u i : SignType) * sign (A.chart (I i) y).2) := by rw [hsq, one_mul]
       _ = _ := by ac_rfl
-
-
-
 
 theorem ChartwisePLSphere.exists_coherently_oriented_pair_charts
     (s : ChartwisePLSphere e S)

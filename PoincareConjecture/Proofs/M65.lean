@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M65
 import PoincareConjecture.Proofs.M65.Construction
 import PoincareConjecture.Proofs.M64
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,11 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m65LoopFamilyDeformation
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u}) :
@@ -34,9 +20,6 @@ theorem m65LoopFamilyDeformation
     exact m65Construction hM61 hM64
   intro M _ _ _ t₀ t₁ P
   exact construction M P (m65PredecessorsFromServices hM61 hM64 P)
-
-
-
 
 theorem m65LoopFamilyDeformation_from_predecessors :
     ∃ hM61 : M61RawWidthCore.{u}, ∃ hM64 : M64ComparisonTheory.{u},

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceHorizontalTrace
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +12,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem m64HorizontalSource_column_memLp_two
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {V : LoopPlane → E}
@@ -51,9 +42,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem exists_horizontalSource
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

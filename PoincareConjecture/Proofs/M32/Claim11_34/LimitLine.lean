@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.MinimizingWindows
 import PoincareConjecture.Proofs.M32.Mathlib.BoundedAnchorLine
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -104,10 +88,6 @@ private theorem window_truncation_not_joined
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
-
 
 theorem blowup_exists_minimizing_line_and_compact_separator
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

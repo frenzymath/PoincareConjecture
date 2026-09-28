@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Planar.Original
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.OriginalParameters
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRegionBranchCharts
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -26,8 +24,6 @@ variable (L : Submodule ℤ V2) {α : Type*}
   (s t : Geometry.OriginalPLTower.Stage (fun _ : Unit ↦
     TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe
       (chartShell L retained) (chartShell_nonempty L retained)) S f r C)
-
-
 
 theorem exists_lower_stage_annulus (step : Geometry.OriginalPLTower.Step s t)
     (hS : S.space = source) (hSf : S.faces.Finite)

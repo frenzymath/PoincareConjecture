@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedSearchAncestors
 import PoincareConjecture.Proofs.M47.SeedSearchBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_search_before_birth_nonpositive
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {J : Set ℝ}
@@ -63,8 +53,6 @@ theorem seed_search_before_birth_nonpositive
     obtain ⟨i, hi⟩ := hcap
     exact seed_search_nonpositive_of_cap_endpoint P.m04 hpolicy e hx hs hzero hs0
       (by simpa only [zero_div, add_zero] using horigin) hT hi
-
-
 
 theorem seed_search_bounds_of_birth
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

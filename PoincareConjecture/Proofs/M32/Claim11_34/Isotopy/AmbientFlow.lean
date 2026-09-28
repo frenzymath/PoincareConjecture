@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.Isotopy.Family
 import PoincareConjecture.Proofs.M32.Claim11_34.Isotopy.CompactVelocity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Global
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,10 +13,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem timeDependent_curve_mem_of_zero_off
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -52,10 +38,6 @@ theorem timeDependent_curve_mem_of_zero_off
     have heq := Poincare.Manifold.timeDependent_integralCurve_eqOn
       hI hcI hX hgamma hconst ht rfl hs
     exact Or.inr (mem_singleton_iff.mpr heq.symm)
-
-
-
-
 
 theorem exists_compactly_supported_homeomorph_of_sphere_isotopic
     {M : Type u} [TopologicalSpace M] [T2Space M]

@@ -4,23 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.Extension.StaticComponents
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.TerminalPinching
 import PoincareConjecture.Proofs.M32.Claim11_32.Sequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -34,8 +17,6 @@ section Extension
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ} (E : GeneralizedFlowExtension F T)
 
-
-
 theorem extension_oldSlice_metric_homothety (t : ℝ) (ht : t ∈ F.interval) :
     MetricHomothety (F.metric t) (E.extended.metric t)
       (extension_oldSliceDiffeomorph E t ht) 1 := by
@@ -44,8 +25,6 @@ theorem extension_oldSlice_metric_homothety (t : ℝ) (ht : t ∈ F.interval) :
     (mfderiv (𝓡 3) (𝓡 3) (E.forward t ht) x v)
     (mfderiv (𝓡 3) (𝓡 3) (E.forward t ht) x w) = 1 * (F.metric t).inner x v w
   simpa only [one_mul] using E.metric_pullback t ht x v w
-
-
 
 theorem extension_oldSlice_metric_homothety_symm (t : ℝ) (ht : t ∈ F.interval) :
     MetricHomothety (E.extended.metric t) (F.metric t)
@@ -70,15 +49,11 @@ theorem extension_oldSlice_metric_homothety_symm (t : ℝ) (ht : t ∈ F.interva
   rw [hv v, hv w, e.apply_symm_apply] at hm
   simpa only [one_mul] using hm.symm
 
-
-
 theorem extension_oldSlice_metric_calculus_symm (t : ℝ) (ht : t ∈ F.interval) :
     MetricHomothetyCalculus (E.extended.metric t) (F.metric t)
       (extension_oldSliceDiffeomorph E t ht).symm 1 :=
   Homothety.metricHomothetyCalculus _ _ _ 1 (by norm_num)
     (extension_oldSlice_metric_homothety_symm E t ht)
-
-
 
 theorem extension_canonical_control (t : ℝ) (ht : t ∈ F.interval)
     (x : (F.slice t).carrier) (epsilon C : ℝ)
@@ -107,8 +82,6 @@ theorem extension_canonical_control (t : ℝ) (ht : t ∈ F.interval)
     change E.inverse t ht (E.forward t ht x) ∈ N.carrier
     simpa only [E.left_inverse t ht x] using hmem
 
-
-
 theorem extension_slice_canonical (s : ℝ) (hs : s ∈ F.interval) (epsilon C cutoff : ℝ)
     (h : generalizedSliceStrongCanonicalNeighborhoods F epsilon C cutoff s) :
     generalizedSliceStrongCanonicalNeighborhoods E.extended epsilon C cutoff s := by
@@ -125,8 +98,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem extension_earlier_dense_canonical (H : SingularTimeAssumptions F T M)
     {t : ℝ} (htT : t ≤ T) (x : (E.extended.slice t).carrier)
@@ -157,8 +128,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
   {F : ℕ → GeneralizedRicciFlowData.{u}} {T : ℕ → ℝ}
-
-
 
 theorem terminalBlowupSequence_boundedDistance_hypotheses
     (H : ∀ k, SingularTimeAssumptions (F k) (T k) (M k))

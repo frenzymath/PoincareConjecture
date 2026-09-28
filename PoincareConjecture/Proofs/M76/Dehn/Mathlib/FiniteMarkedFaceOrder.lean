@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSimplexOrder
 import Mathlib.Data.Finset.Lattice.Fold
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_marked_face_order
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

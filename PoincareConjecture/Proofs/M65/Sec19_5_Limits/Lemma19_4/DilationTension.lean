@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskDilation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65PlaneTension_diskDilation {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (f : LoopPlane → M) (r : ℝ) (z : LoopPlane)

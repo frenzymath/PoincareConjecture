@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfacePosition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteSegmentCorrespondence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -119,4 +112,3 @@ theorem exists_planar_surface_whole_edge_position
     exact ⟨V, F, hV, hxV, hVB, hF, hFs, by simpa only [hpairHull] using hFe⟩
 
 end PoincareConjecture.M76
-

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Domain.CompatibleTheory
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

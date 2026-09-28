@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.MorseReduction
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.Paths
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -29,8 +21,6 @@ open Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 structure TerminalInputData (f : S2 → E3) (p : S2) where
   reduction : SphereMorseReduction f
@@ -57,8 +47,6 @@ structure TerminalInputData (f : S2 → E3) (p : S2) where
     inner Real (reduction.v : E3) (leaf p) - x 0 ^ 2 + x 1 ^ 2
 
 namespace TerminalInputData
-
-
 
 theorem exists_reflected {f : S2 → E3} {p : S2} (s : TerminalInputData f p) :
     ∃ s' : TerminalInputData s.reduction.reflectedOriginal p,

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.NullReaction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem curvatureTensorNorm_eq_zero_of_terminal_homothetic_field
     {n : ℕ} {M : Type u} [TopologicalSpace M]

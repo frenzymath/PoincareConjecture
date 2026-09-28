@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroCrossing
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Algebra.BigOperators.Field
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,10 +23,6 @@ private theorem weighted_zeroCrossing (A : E →ᵃ[ℝ] ℝ) {u v : E} (w : ℝ
     ring
   · congr 1
     field_simp [hgap, hv.ne']
-
-
-
-
 
 theorem convexHull_insert_inter_zero (A : E →ᵃ[ℝ] ℝ) (s : Finset E) {v : E}
     (hs : ∀ u ∈ s, A u < 0) (hv : 0 < A v) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M04.ShiShiftedHeat
 import PoincareConjecture.Proofs.M04.ShiCutoffConsumer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

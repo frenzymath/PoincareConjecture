@@ -4,23 +4,12 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.sourceCore_mem_nhds_of_not_seam
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -54,7 +43,6 @@ theorem FamilyCutState.sourceCore_mem_nhds_of_not_seam
     obtain ⟨a, ha⟩ := mem_iUnion.mp hi
     exact hx (mem_iUnion.mpr ⟨a, (S.cap a.1).sourceCapInterior_subset ha⟩)
   exact mem_of_superset (hU.mem_nhds hqU) hsub
-
 
 theorem FamilyCutState.sourceCore_extremum_on_seam
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -138,7 +126,6 @@ theorem FamilyCutState.sourceCore_extremum_on_seam
   have hheight : ⟪(u : E3), psi (S.owner a) (y, 0)⟫_ℝ = z := by
     rw [← heq, C.tube_height _ hsource]
   simpa only [ha] using hheight.trans hz'
-
 
 theorem FamilyCutState.exists_sourceCore_height_ends
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

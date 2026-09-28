@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Projection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.ScalarGraph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {M : Type*} [TopologicalSpace M]
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 2 + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem exists_smooth_level_graph
     (N : EpsilonNeck g) {f : M → ℝ}

@@ -4,19 +4,6 @@ import PoincareConjecture.Statement
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal unitInterval ContinuousMap
@@ -30,8 +17,6 @@ section Cover
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 structure M59PointedFiniteSmoothUniversalCover (x : M) where
   space : GeneralizedSliceCarrier.{u}
@@ -52,7 +37,6 @@ structure M59PointedFiniteSmoothUniversalCover (x : M) where
   projection_pi_three_eq : ∀ alpha,
     projection_pi_three alpha = surgeryHomotopyMap (n := 3) projection based alpha
 
-
 noncomputable def M59PointedFiniteSmoothUniversalCover.basePiThreeInteger {x : M}
     (U : M59PointedFiniteSmoothUniversalCover x) :
     HomotopyGroup.Pi 3 M x ≃* Multiplicative ℤ :=
@@ -69,8 +53,6 @@ variable {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
       (constantC1Loop C.basepoint) ≃*
         HomotopyGroup.Pi 3 C.carrier.carrier C.basepoint)
   (xi : HomotopyGroup.Pi 3 C.carrier.carrier C.basepoint)
-
-
 
 structure M59WidthCarrierRepresentative where
   family : FreeTwoSphereFamily (M := C.carrier.carrier)
@@ -98,8 +80,6 @@ variable (R : M59WidthCarrierRepresentative C sphere_parameter loop_pi_three xi)
   (pi_two_trivial : Subsingleton (HomotopyGroup.Pi 2 C.carrier.carrier C.basepoint))
   (pi_three_integer : HomotopyGroup.Pi 3 C.carrier.carrier C.basepoint ≃*
     Multiplicative ℤ)
-
-
 
 def toLegacy : WidthComponentSlice.{u} :=
   { ambient := A
@@ -158,8 +138,6 @@ def toLegacy : WidthComponentSlice.{u} :=
 @[simp] theorem toLegacy_family :
     (R.toLegacy ambient_metric metric connection metric_pullback orientation
       pi_two_trivial pi_three_integer).family = R.family := rfl
-
-
 
 theorem toLegacy_class :
     (⟨R.family.basepoint,

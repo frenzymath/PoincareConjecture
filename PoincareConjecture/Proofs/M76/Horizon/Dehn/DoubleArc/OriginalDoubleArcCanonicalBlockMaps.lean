@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcInt
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcPrescribedEndpointBlock
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.PrescribedPrismInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -172,7 +164,6 @@ theorem exists_original_canonical_interior_block_map
     bArc hbArc inter_subset_right γ δ hγδ hsub axis haxis htimes
 
 open Classical in
-
 
 theorem exists_original_local_interior_block_map
     (v : (M arc).vertices) (hvFr : (g v : X) ∉ frontier R)

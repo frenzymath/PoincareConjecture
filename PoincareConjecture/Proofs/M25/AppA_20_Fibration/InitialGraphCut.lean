@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicCuts
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RetainedFiniteChainCore
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem BalancedNeckChain.exists_compact_cut_between_initial_graph_and_last_slice :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

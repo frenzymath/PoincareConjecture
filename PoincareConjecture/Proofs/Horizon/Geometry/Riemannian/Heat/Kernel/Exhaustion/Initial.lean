@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Properties
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Monotone
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -106,8 +99,6 @@ private theorem tendsto_integral_of_dominating_dirichletKernel
   · filter_upwards [self_mem_nhdsWithin] with t ht
     exact (hbounds t ht).2
 
-
-
 theorem tendsto_integral_iSup_dirichletHeatKernel_initial_of_bounded
     {Ω : ℕ → Set M} {K : ℕ → ℝ → M → M → ℝ}
     (hK : ∀ j, Dirichlet.IsDirichletHeatKernel D (Ω j) (K j))
@@ -127,8 +118,6 @@ theorem tendsto_integral_iSup_dirichletHeatKernel_initial_of_bounded
   exact tendsto_integral_of_dominating_dirichletKernel (hK j) hxj
     (fun t ht => (hmass t ht).1) (fun t ht => (hmass t ht).2)
     (fun t ht y => le_ciSup (hbdd t ht x y) j) hφ hB
-
-
 
 theorem tendsto_integral_iSup_dirichletHeatKernel_initial
     {Ω : ℕ → Set M} {K : ℕ → ℝ → M → M → ℝ}

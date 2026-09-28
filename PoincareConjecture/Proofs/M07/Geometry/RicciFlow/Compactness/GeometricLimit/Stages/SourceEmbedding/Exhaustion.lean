@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Finite
 import PoincareConjecture.Proofs.M07.Topology.Sequences.UniformDiagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff

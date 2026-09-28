@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationSeparation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +27,6 @@ private theorem angular_open_quotient : IsOpenQuotientMap ang := by
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem continuousOn_circle_family
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (V : Set P) (J : Set ℝ)
@@ -72,9 +59,6 @@ variable [T2Space M]
 
 omit [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] in
 
-
-
-
 theorem compact_separated_double_points
     (c : ℝ → LoopCircle → M) (K : Set ℝ) (hK : IsCompact K)
     (hc : ContinuousOn (fun z : LoopCircle × ℝ => c z.2 z.1) (univ ×ˢ K))
@@ -99,9 +83,6 @@ theorem compact_separated_double_points
   tauto
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_double_point_capture
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (V : Set P) (J K : Set ℝ)

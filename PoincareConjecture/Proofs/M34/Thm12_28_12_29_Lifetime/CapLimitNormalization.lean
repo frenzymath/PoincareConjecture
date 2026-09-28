@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Definitions.M27CanonicalGeometry
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Topology ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem sectional_nonneg_of_nonnegative_operator
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -64,8 +52,6 @@ private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
 private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     ConnectedSpace L.carrier.carrier := L.connectedSpace
 
-
-
 theorem blowupLimit_zero_geometry {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     MetricComplete (L.flow.metric 0) ∧
       (∀ x : L.carrier.carrier, ∀ v : TangentSpace (𝓡 3) x,
@@ -76,9 +62,6 @@ theorem blowupLimit_zero_geometry {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
   exact M04.nonneg_ricci_of_nonnegativeSectionalAt (L.flow.connection 0) x
     ((L.flow.connection 0).sectional_nonneg_of_nonnegative_operator x
       (L.nonnegative_curvature_operator 0 L.zero_mem x)) v
-
-
-
 
 theorem exists_normalized_limit_cap_of_ancient
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval ⊤)) {kappa delta C : ℝ}

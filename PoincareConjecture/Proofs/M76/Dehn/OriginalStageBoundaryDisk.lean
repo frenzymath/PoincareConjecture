@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalStagePolygonDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.MarkedPolygonDiskNormalization
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe v w z
@@ -33,11 +22,6 @@ variable {G : Type v} {M : Type w} {ι : Type z}
   [DecidableEq G] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Stage.exists_marked_terminal_boundary_disk (st : Stage e S f r C)
     (hSD : S.space = D) {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.NonlinearSchwartz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +46,6 @@ theorem nonlinearTestSchwartz_value_cauchy
   have hs := (lt_div_iff₀ (show 0 < C + 1 by positivity)).mp hd
   have hn := norm_nonneg ((X i).toLp 2 volume - (X j).toLp 2 volume)
   nlinarith only [hb, hs, hn]
-
-
 
 theorem nonlinearTestSchwartz_partial_cauchy
     (T : V × Z → ℝ) (hT : ContDiff ℝ ∞ T) (hT0 : ∀ x, T (x, 0) = 0)

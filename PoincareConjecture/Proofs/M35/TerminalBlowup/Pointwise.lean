@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M35.TerminalBlowup.AngularCollapse
 import PoincareConjecture.Proofs.M35.TerminalBlowup.TipPropagation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
-
 
 theorem scalar_tendsto_of_guarded_gradient
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

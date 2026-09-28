@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.DistinctRayStraightening
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
 
 theorem exists_two_ray_straightening_preserving_plane
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -49,7 +39,6 @@ theorem exists_two_ray_straightening_preserving_plane
   · intro t ht
     have hs : 0 ≤ ell (t • v) := by simpa [hellv] using ht
     rw [hH,min_eq_right hs,zero_smul,sub_zero,smul_zero,sub_zero]
-
 
 theorem exists_plane_line_functionals
     (A : (Fin 3 → ℝ) →ₗ[ℝ] ℝ) (hA : A ≠ 0)
@@ -110,7 +99,6 @@ theorem exists_plane_line_functionals
     rw [←heq,Submodule.mem_span_singleton]
     exact exists_congr (fun t => eq_comm)
 
-
 theorem exists_compatible_plane_rim_chart_of_rays
     {X ι : Type*} [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))
@@ -169,6 +157,4 @@ theorem exists_compatible_plane_rim_chart_of_rays
       · have ht : 0 ≤ r := (lt_of_not_ge hr0).le
         exact Or.inr ⟨r,ht,H.injective (hr.trans (hHv r ht).symm)⟩
 
-
 end PoincareConjecture.M76
-

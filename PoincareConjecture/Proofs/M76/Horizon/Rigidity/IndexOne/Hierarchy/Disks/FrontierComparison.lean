@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.F
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopImage
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_square_filling_of_homotopic_boundary
     {X : Type*} [TopologicalSpace X] (gamma : C(Q, X)) (disk : C(D, X))
@@ -36,9 +25,6 @@ theorem exists_square_filling_of_homotopic_boundary
     simpa only [ContinuousMap.comp_id] using (id_nullhomotopic D).comp_right disk
   obtain ⟨x, hx⟩ := hdisk.comp_left inc
   exact (show gamma.Nullhomotopic from ⟨x, hom.trans hx⟩).exists_closedBall_extension gamma
-
-
-
 
 theorem exists_proper_marked_disk_of_frontier_comparison
     {X α : Type*} [TopologicalSpace X] [T2Space X]
@@ -104,8 +90,6 @@ theorem exists_proper_marked_disk_of_frontier_comparison
     exact Dehn.squareRimLoop_class_ne_one hunit
   exact Dehn.exists_marked_boundary_disk_with_essential_image e N hN F
     hF hFopen f gamma (fun x => congrArg Subtype.val (hf x)) u hess
-
-
 
 theorem exists_proper_disk_of_frontier_comparison
     {X α : Type*} [TopologicalSpace X] [T2Space X]

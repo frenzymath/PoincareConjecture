@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,8 +20,6 @@ private theorem norm_toLp_sq_integral {f : X → E} (hf : MemLp f 2 mu) :
   apply integral_congr_ae
   filter_upwards [hf.coeFn_toLp] with x hx
   simp only [hx, real_inner_self_eq_norm_sq]
-
-
 
 theorem m64Metric_test_columns_strong
     (B : ℕ → X → E →L[ℝ] E →L[ℝ] ℝ) (B0 : X → E →L[ℝ] E →L[ℝ] ℝ)

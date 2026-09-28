@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Family
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Extrema
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_lower_end_through_point
     (L : List (SphereSurgeryCoreCap v g B))
@@ -91,8 +87,6 @@ theorem exists_lower_end_through_point
   refine ⟨D, hD, hDb, ⟨(z, t), ⟨mem_univ _, ?_, ht.2⟩, hzp⟩⟩
   rw [← hpt, ← hDheight]
   exact hmin ⟨hpF, hpC⟩
-
-
 
 theorem exists_lower_annular_end_family
     (L : List (SphereSurgeryCoreCap v g B))

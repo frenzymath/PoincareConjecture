@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroHandleStraighteni
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTheoremOne
 import Mathlib.Logic.Equiv.Sum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -50,11 +41,6 @@ private def zeroProductLinear : CubeShell.Ambient ≃ₗ[ℝ] V3 where
 
 private noncomputable def zeroProductCoordinates : CubeShell.Ambient ≃ᴬ[ℝ] V3 :=
   zeroProductLinear.toContinuousLinearEquiv.toContinuousAffineEquiv
-
-
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_zero_of_named_inputs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ variable {E V W X ι : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup W] [NormedSpace ℝ W]
   [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V}
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_mixed_chart_patch
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

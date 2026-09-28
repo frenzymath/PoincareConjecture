@@ -2,24 +2,11 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem IsPreconnected.mem_closed_cut_iff {X : Type*} [TopologicalSpace X]
     {S s₀ s₁ : Set X} (hS : IsPreconnected S) (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)
@@ -40,10 +27,6 @@ end Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem collar_fiber_mem_cut_iff
     {B T b s₀ s₁ : Set E} {upper A : E → ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCoreCurvatureBalls
 import PoincareConjecture.Proofs.M35.CapGeometry.CoreBallVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem radial_core_ball_volume
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

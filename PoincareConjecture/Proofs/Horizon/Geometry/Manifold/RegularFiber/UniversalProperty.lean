@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +19,6 @@ variable {m k : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) ∞ f) (c : Fin k → ℝ)
   (hreg : ∀ x : M, f x = c → Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) f x))
 
-
 theorem contMDiffAt_into_fiber_iff (F : N → (f ⁻¹' {c} : Set M)) (x : N) :
     let := fiberChartedSpace (m := m) hf c hreg
     ContMDiffAt J (𝓡 m) ∞ F x ↔
@@ -43,7 +36,6 @@ theorem contMDiffAt_into_fiber_iff (F : N → (f ⁻¹' {c} : Set M)) (x : N) :
     have hproj := contDiff_snd.contDiffAt.contMDiffAt.comp x (hc.comp x hF)
     convert! hproj using 1
 
-
 theorem contMDiffAt_into_openFiber_iff (U : Opens M)
     (hregU : ∀ x ∈ U, Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) f x))
     (F : N → openFiber f U c) (x : N) :
@@ -55,7 +47,6 @@ theorem contMDiffAt_into_openFiber_iff (U : Opens M)
     (hf.comp contMDiff_subtype_val) c
     (fun y _ => openFiberRestrict_regular hf U hregU y) F x
   exact h.trans (ContMDiffAt.subtypeVal_comp_iff U (fun y => (F y : U)) x).symm
-
 
 theorem contMDiffOn_into_openFiber_iff (U : Opens M)
     (hregU : ∀ x ∈ U, Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) f x))

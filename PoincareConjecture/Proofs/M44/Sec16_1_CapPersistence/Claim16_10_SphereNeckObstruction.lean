@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_AngularProjection
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereNullhomotopy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
-
 def neckTransportAngularMap
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
@@ -35,10 +21,6 @@ def neckTransportAngularMap
   ⟨fun x => (N.coordinate_inverse (f x)).1, continuous_iff_continuousAt.mpr
     (fun x => (neck_inverse_contMDiffAt N (hmem x)).continuousAt.fst.comp
       f.continuous.continuousAt)⟩
-
-
-
-
 
 theorem exists_sphere_neck_obstruction_cutoff {k : ℝ} (hk : 0 < k) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧
@@ -69,9 +51,6 @@ theorem exists_sphere_neck_obstruction_cutoff {k : ℝ} (hk : 0 < k) :
   simpa only [neckTransportAngularMap, neckSphereAngularMap,
     ContinuousMap.coe_mk, ContinuousMap.coe_comp, Function.comp_def] using hlocal
 
-
-
-
 theorem normalizedNeck_gram_pos_iff
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) (x : M)
@@ -87,9 +66,6 @@ theorem normalizedNeck_gram_pos_iff
         (g.inner x u u * g.inner x v v - (g.inner x u v) ^ 2) by ring]
   exact mul_pos_iff_of_pos_left (sq_pos_of_pos N.scalar_center_pos)
 
-
-
-
 theorem normalizedNeck_sectional_lower
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
@@ -100,9 +76,6 @@ theorem normalizedNeck_sectional_lower
   rw [normalizedNeck_sectional]
   exact (div_le_div_of_nonneg_left hk N.scalar_center_pos hQ).trans_lt
     ((div_lt_div_iff_of_pos_right N.scalar_center_pos).mpr hlower)
-
-
-
 
 theorem exists_physical_sphere_neck_obstruction_cutoff {k Q : ℝ}
     (hk : 0 < k) (hQ : 0 < Q) :

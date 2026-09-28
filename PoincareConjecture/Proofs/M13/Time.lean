@@ -3,15 +3,6 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Order.Interval.Set.OrderIso
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -19,7 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M13
-
 
 theorem relative_time_open_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (K L : SpacetimeInterval) :
@@ -30,7 +20,6 @@ theorem relative_time_open_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
   change IsOpen {t : K.domain |
     parabolicTime Q a t.val ∈ (parabolicInterval Q hQ a L).domain} ↔ _
   simp only [parabolicTime_mem_parabolicInterval_iff]
-
 
 theorem time_cover_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (K : SpacetimeInterval) (B : Type u) (J : B → SpacetimeInterval) :
@@ -45,7 +34,6 @@ theorem time_cover_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     obtain ⟨b, hb⟩ := h ((timeHomeomorph Q hQ a K).symm s)
     exact ⟨b, (mem_parabolicInterval_iff Q hQ a (J b) s.val).2 hb⟩
 
-
 theorem closed_time_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (K : SpacetimeInterval) (b c : ℝ) :
     (parabolicInterval Q hQ a K).domain =
@@ -55,7 +43,6 @@ theorem closed_time_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     Set.Icc ((parabolicTimeOrderIso Q hQ a) b) ((parabolicTimeOrderIso Q hQ a) c) ↔ _
   rw [← (parabolicTimeOrderIso Q hQ a).image_Icc b c]
   exact (Set.image_injective.mpr (parabolicTimeOrderIso Q hQ a).injective).eq_iff
-
 
 theorem backward_parabolic_time_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (K : SpacetimeInterval) (t r : ℝ) :

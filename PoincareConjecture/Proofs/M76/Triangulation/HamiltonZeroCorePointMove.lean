@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedBallIsotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -105,9 +95,6 @@ private theorem exists_radius_two_cube_complex {ι : Type*} [Fintype ι] :
       have hn : -x i ≤ 2 := hb (.inr i)
       exact abs_le.mpr ⟨by linarith, hp⟩
   exact (isCompact_closedBall _ _).exists_finite_triangulation_of_halfspaces H hrep
-
-
-
 
 theorem exists_supported_finitePL_cube_point_move {ι : Type*} [Fintype ι]
     (z : ι → ℝ) (hz : ‖z‖ < 2) :

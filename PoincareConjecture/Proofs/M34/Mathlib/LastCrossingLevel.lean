@@ -1,18 +1,8 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitLevel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem ContinuousOn.exists_last_eq_of_lt
     {A B : Type*} [ConditionallyCompleteLinearOrder A] [DenselyOrdered A]

@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Inverse
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,7 +43,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
 
 include hrotation
 
-
 theorem axisRadialCoefficient_even : Function.Even (axisRadialCoefficient g) := by
   intro r
   change g.euclideanCoefficients ((-r) • e 2) (e 2) (e 2) =
@@ -65,7 +55,6 @@ theorem axisRadialCoefficient_even : Function.Even (axisRadialCoefficient g) := 
     (standardRotation radialHalfTurn (e 2)) (standardRotation radialHalfTurn (e 2)) =
       g.euclideanCoefficients (r • e 2) (e 2) (e 2) at h
   simpa only [radialHalfTurn_axis, radialHalfTurn_radial, map_neg, neg_apply, neg_neg] using h
-
 
 theorem axisAngularCoefficient_even : Function.Even (axisAngularCoefficient g) := by
   intro r
@@ -90,7 +79,6 @@ theorem radialArclength_contDiff : ContDiff ℝ ∞ (radialArclength g) := by
   rw [hd]
   exact (axisRadialCoefficient_contDiff g).sqrt (fun r => (axisRadialCoefficient_pos g r).ne')
 
-
 theorem radialArclength_odd : Function.Odd (radialArclength g) := by
   intro r
   have h := intervalIntegral.integral_comp_neg
@@ -103,7 +91,6 @@ theorem radialArclength_odd : Function.Odd (radialArclength g) := by
   change radialArclength g r = -radialArclength g (-r) at h
   linarith only [h]
 
-
 theorem radialArclength_surjective (hcomplete : MetricComplete g) :
     Function.Surjective (radialArclength g) := by
   intro s
@@ -113,7 +100,6 @@ theorem radialArclength_surjective (hcomplete : MetricComplete g) :
   · obtain ⟨r, _, hr⟩ := exists_radialArclength_eq g hcomplete (neg_nonneg.mpr (le_of_not_ge hs))
     exact ⟨-r, by rw [radialArclength_odd g hrotation, hr, neg_neg]⟩
 
-
 noncomputable def radialArclengthOrderIso (hcomplete : MetricComplete g) : ℝ ≃o ℝ :=
   (radialArclength_strictMono g).orderIsoOfSurjective (radialArclength g)
     (radialArclength_surjective g hrotation hcomplete)
@@ -121,14 +107,12 @@ noncomputable def radialArclengthOrderIso (hcomplete : MetricComplete g) : ℝ �
 theorem radialArclengthOrderIso_apply (hcomplete : MetricComplete g) (r : ℝ) :
     radialArclengthOrderIso g hrotation hcomplete r = radialArclength g r := rfl
 
-
 theorem radialArclengthOrderIso_symm_contDiff (hcomplete : MetricComplete g) :
     ContDiff ℝ ∞ ((radialArclengthOrderIso g hrotation hcomplete).symm : ℝ → ℝ) := by
   let Φ := (radialArclengthOrderIso g hrotation hcomplete).toHomeomorph
   exact Φ.contDiff_symm_deriv
     (fun r => (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g r)).ne')
     (radialArclength_hasDerivAt g) (radialArclength_contDiff g)
-
 
 noncomputable def radialArclengthDiffeomorph (hcomplete : MetricComplete g) :
     Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞ where
@@ -141,7 +125,6 @@ theorem radialArclengthOrderIso_symm_zero (hcomplete : MetricComplete g) :
   apply (radialArclengthOrderIso g hrotation hcomplete).injective
   rw [OrderIso.apply_symm_apply, radialArclengthOrderIso_apply, radialArclength_zero]
 
-
 theorem radialArclengthOrderIso_symm_odd (hcomplete : MetricComplete g) :
     Function.Odd ((radialArclengthOrderIso g hrotation hcomplete).symm : ℝ → ℝ) := by
   intro s
@@ -151,7 +134,6 @@ theorem radialArclengthOrderIso_symm_odd (hcomplete : MetricComplete g) :
   change -s = -(radialArclengthOrderIso g hrotation hcomplete
     ((radialArclengthOrderIso g hrotation hcomplete).symm s))
   rw [OrderIso.apply_symm_apply]
-
 
 theorem radialArclengthOrderIso_symm_hasDerivAt (hcomplete : MetricComplete g) (s : ℝ) :
     HasDerivAt (radialArclengthOrderIso g hrotation hcomplete).symm

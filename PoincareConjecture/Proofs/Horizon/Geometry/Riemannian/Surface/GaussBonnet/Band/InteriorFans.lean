@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.InitialFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,7 +56,6 @@ theorem vertex_mem_frontier (v : Fin (B.interface.count + 1) × Bool) :
     cases v.2 <;> simp
 
 omit [T2Space S] in
-
 
 theorem incident_face_same_side_eq {q : S}
     (hnew : ∀ v, q ≠ B.vertex v) (s : Bool) {i j : Fin B.interface.count}
@@ -146,7 +137,6 @@ private theorem face_coordinate_image_mem_interior {p : Fin B.interface.count ×
 
 omit [T2Space S] in
 
-
 theorem refined_face_contribution_of_band_interior
     (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -186,8 +176,6 @@ theorem refined_face_contribution_of_band_interior
         (B.face_corner_eq_vertex p k).symm.trans (congrArg (B.faceCoordinates p) hk |>.trans heq)
       exact (hvq ▸ B.vertex_mem_frontier (B.cornerVertexIndex p k)).2 hq
   · exact B.refined_contribution_eq_zero_of_not_mem_carrier g p lines hp
-
-
 
 theorem interior_refined_vertex_fan
     (g : RiemannianMetric 2 S)

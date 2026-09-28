@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Finite
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Comparison
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -46,8 +45,6 @@ theorem differentialHarnackAncientTheory_of_hamilton_diagonal
   apply finite_differential_of_hamilton_diagonal hM04 T₀ T₁ F
   intro t ht x v
   exact hdiag n M T₀ T₁ hT F hcomplete hcurv hbound t ht x v
-
-
 
 theorem differentialHarnackAncientTheory_of_hamilton_block
     (hM04 : RicciFlowCurvatureTheory.{u})

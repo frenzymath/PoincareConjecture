@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionTangent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusClosedConformality
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 def m64AnnulusWithinGram (g : RiemannianMetric n M) (f : LoopPlane → M)
     (p : LoopPlane) (i j : Fin 2) : ℝ :=
   g.inner (f p)
@@ -28,10 +21,6 @@ def m64AnnulusWithinGram (g : RiemannianMetric n M) (f : LoopPlane → M)
       (EuclideanSpace.basisFun (Fin 2) ℝ i))
     (mfderivWithin (𝓡 2) (𝓡 n) f m64AnnulusDomain p
       (EuclideanSpace.basisFun (Fin 2) ℝ j))
-
-
-
-
 
 theorem m64AnnulusWithinGram_continuousOn (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f m64AnnulusDomain)
@@ -42,10 +31,6 @@ theorem m64AnnulusWithinGram_continuousOn (g : RiemannianMetric n M)
   exact (m64AnnulusWithinColumn_continuousOn hf i).inner_bundle
     (m64AnnulusWithinColumn_continuousOn hf j)
 
-
-
-
-
 theorem m64AnnulusWithinGram_eq_gram (g : RiemannianMetric n M)
     (f : LoopPlane → M) {p : LoopPlane} (hp : p ∈ m64AnnulusInterior) (i j : Fin 2) :
     m64AnnulusWithinGram g f p i j = m60AreaGram g f p i j := by
@@ -55,10 +40,6 @@ theorem m64AnnulusWithinGram_eq_gram (g : RiemannianMetric n M)
   have hpi := (interior_maximal hsub isOpen_m64AnnulusInterior) hp
   unfold m64AnnulusWithinGram m60AreaGram
   rw [mfderivWithin_of_mem_nhds (mem_interior_iff_mem_nhds.mp hpi)]
-
-
-
-
 
 theorem m64AnnulusWithinGram_modulus_conformal
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) (r : ℝ)

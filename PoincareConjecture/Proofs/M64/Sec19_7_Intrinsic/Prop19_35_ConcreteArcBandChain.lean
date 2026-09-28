@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapPatchArcBands
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,10 +8,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M64IntrinsicArcBandChain (gamma : ℝ → AnnulusCoordinates)
     (a b : ℝ) (U : Set AnnulusCoordinates) where
@@ -51,9 +43,6 @@ structure M64IntrinsicArcBandChain (gamma : ℝ → AnnulusCoordinates)
       (gamma (cut i.succ) + length • direction (cut i.succ))
 
 namespace M64IntrinsicArcBandChain
-
-
-
 
 theorem lower_subset {gamma : ℝ → AnnulusCoordinates} {a b : ℝ}
     {U : Set AnnulusCoordinates} (C : M64IntrinsicArcBandChain gamma a b U)

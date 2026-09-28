@@ -7,13 +7,6 @@ import Mathlib.Topology.Connected.PathConnected
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped unitInterval Matrix

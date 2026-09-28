@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckAxialMetric
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_backward_cylinder_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -61,8 +50,6 @@ theorem exists_backward_cylinder_curvature_bound :
   have hge := hlarge (phi n)
   rw [← hnorm (phi n)] at hge
   linarith
-
-
 
 theorem exists_backward_neck_carrier_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

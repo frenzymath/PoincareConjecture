@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.KineticLagrangian
 import PoincareConjecture.Proofs.M10.MetricInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -18,14 +10,12 @@ namespace PoincareConjecture.M10
 variable {Y : Type*} [NormedAddCommGroup Y] [InnerProductSpace ℝ Y]
   [FiniteDimensional ℝ Y]
 
-
 noncomputable def phaseField (B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ) (R : Y × ℝ → ℝ)
     (a : ℝ × Y × (Y →L[ℝ] ℝ)) : ℝ × Y × (Y →L[ℝ] ℝ) :=
   (1, phaseVelocity B a,
     (fderiv ℝ (kineticLagrangian B R) (a.1, a.2.1, phaseVelocity B a)).comp
       ((0 : Y →L[ℝ] ℝ).prod
         ((ContinuousLinearMap.id ℝ Y).prod (0 : Y →L[ℝ] Y))))
-
 
 theorem phaseField_contDiffAt {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ} {R : Y × ℝ → ℝ}
     {a : ℝ × Y × (Y →L[ℝ] ℝ)}

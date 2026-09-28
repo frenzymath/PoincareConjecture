@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcBranchLinks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapCoreFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandCutFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -24,8 +17,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
 
 theorem vertex_contribution_eq_cap_add_band
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)
@@ -61,8 +52,6 @@ theorem vertex_contribution_eq_cap_add_band
       convexHull ℝ (range (rightTriangleBasis (T.caps p).scale_pos))) ∪ _)
     rwa [← (T.caps p).carrier_eq s]
 
-
-
 theorem canonical_vertex_fan_on_open_cap_band_edge
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)
     (a : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs a).count)
@@ -84,7 +73,6 @@ theorem canonical_vertex_fan_on_open_cap_band_edge
 
 omit [T2Space S] in
 
-
 theorem open_left_attachment_subset_endpointEdge (a : T.decomposition.IncidentEdgeIndex) :
     (T.leftCap a).openChordSegment T.length ⊆
       ((T.bands a (T.graphs a).firstPiece).faces.endpointEdge false).map '' Ioo (0 : ℝ) 1 := by
@@ -98,7 +86,6 @@ theorem open_left_attachment_subset_endpointEdge (a : T.decomposition.IncidentEd
 
 omit [T2Space S] in
 
-
 theorem open_right_attachment_subset_endpointEdge (a : T.decomposition.IncidentEdgeIndex) :
     (T.rightCap a).openChordSegment T.length ⊆
       ((T.bands a (T.graphs a).lastPiece).faces.endpointEdge true).map '' Ioo (0 : ℝ) 1 := by
@@ -109,8 +96,6 @@ theorem open_right_attachment_subset_endpointEdge (a : T.decomposition.IncidentE
     FiniteChartRegionDecomposition.edgeFromEndpoint, ite_true] using
     (T.bands a (T.graphs a).lastPiece).open_right_ray_subset_endpointEdge
       ((T.graphs a).cut_lt (T.graphs a).lastPiece).le
-
-
 
 theorem canonical_vertex_fan_on_open_left_attachment
     (g : RiemannianMetric 2 S) (a : T.decomposition.IncidentEdgeIndex)
@@ -126,8 +111,6 @@ theorem canonical_vertex_fan_on_open_left_attachment
   rw [(T.bands a (T.graphs a).firstPiece).faces.endpointEdge_image]
   simpa only [Bool.false_eq_true, ite_false, T.first_band_leftCut_eq_chordSegment] using
     (T.leftCap a).chordSegment_subset_chord T.length_le_one
-
-
 
 theorem canonical_vertex_fan_on_open_right_attachment
     (g : RiemannianMetric 2 S) (a : T.decomposition.IncidentEdgeIndex)

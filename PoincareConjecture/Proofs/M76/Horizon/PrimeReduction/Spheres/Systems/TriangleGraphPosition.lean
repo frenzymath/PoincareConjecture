@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.FaceGraphTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -31,7 +24,6 @@ def InTriangleGraphPosition {X : Type*} [TopologicalSpace X]
           LocallyPiecewiseAffineOn B.symm B.target ∧
           (∀ x ∈ B.source, Q.symm x ∈ S ↔ (B x).2 = 0) ∧
           ∀ x ∈ B.source, x ∈ T ↔ (B x).1.1 = 0
-
 
 theorem InTriangleGraphPosition.image_of_fixed
     {X : Type*} [TopologicalSpace X]

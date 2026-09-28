@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.MovedDiskAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

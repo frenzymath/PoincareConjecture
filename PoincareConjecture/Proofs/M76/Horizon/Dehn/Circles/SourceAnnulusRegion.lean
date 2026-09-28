@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSides
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -56,9 +44,6 @@ private theorem polygon_annulus_region_of_inner_depth
   exact polygon_annulus_region_of_cap hball
     (isFinitePLBallPair_annulusSquare (by linarith : 2 * d < L)) hseam hrim
     P Q hP hinjP hQ hinjQ hdis c ⟨f, hf, hcf⟩ hmem hcap hcf himage
-
-
-
 
 theorem exists_polygon_collar_of_square_annulus
     {T : Set P2} {L d : ℝ} (hd : 0 < d) (hwidth : 4 * d < L)
@@ -115,8 +100,6 @@ theorem exists_polygon_collar_of_square_annulus
       Q P hQ hinjQ hP hinjP hdis.symm c' (hr.trans hc) hi ho hPT hcap
     exact ⟨m, n, P, Q, true, hP, hinjP, hQ, hinjQ, hnest, hregion,
       hinner, houter, htransport hregion⟩
-
-
 
 theorem exists_polygon_collar_of_square_annulus_in_plane
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

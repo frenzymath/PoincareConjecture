@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MarkedAttachment
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.StripSourceEndPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionSources
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -27,8 +18,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
-
-
 
 theorem exists_normalized_upper_resolution_disk_map_with_sources
     {EA EC F X ι : Type*}
@@ -268,8 +257,6 @@ theorem exists_normalized_upper_resolution_disk_map_with_sources
     rfl
   · rw [him, himAS]
     simp only [image_image, Function.comp_def]
-
-
 
 theorem exists_normalized_upper_resolution_disk_map
     {EA EC F X ι : Type*}

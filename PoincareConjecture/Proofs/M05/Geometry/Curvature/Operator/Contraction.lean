@@ -1,20 +1,9 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Reaction
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.ThreeDimensional
-
-
-
-
-
-
-
-
-
 
 open scoped BigOperators
 
 namespace Poincare.Geometry.Curvature.Operator
-
 
 theorem cyclic_curvature_contraction_eq
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NormalizedKappaCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,10 +12,6 @@ structure NormalizedKappaCompactnessData where
   kappa : ℝ
   kappa_pos : 0 < kappa
   sequence : NormalizedKappaSolutionSequence kappa
-
-
-
-
 
 structure M23InteriorConvergence
     {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa) where
@@ -48,7 +35,6 @@ structure M23InteriorConvergence
   exhaustion_covers : ⋃ j, exhaustion j = Set.univ
   time_window : ℕ → Set ℝ
 
-
   time_window_interval : ∀ j, ∃ a b : ℝ,
     a < b ∧ time_window j = Set.Icc a b
   time_window_compact : ∀ j, IsCompact (time_window j)
@@ -63,7 +49,6 @@ structure M23InteriorConvergence
   base_preserving : ∀ j t, t ∈ time_window j →
     (embedding j).toFun (t, limit.base) =
       (t, (S.term (subsequence j)).base)
-
 
   pullback_metric_CInfinity :
     let C := limit.carrier

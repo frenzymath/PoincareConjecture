@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem eventually_positive_bilinear
     {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -41,9 +29,6 @@ theorem eventually_positive_bilinear
     mul_lt_mul_of_pos_right hy hnorm
   have hbase := hbound x (mem_singleton x) v
   nlinarith
-
-
-
 
 theorem tendsto_bilinear_of_quadratic_bounds
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

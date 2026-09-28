@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Collar
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,9 +9,6 @@ open Set Topology
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
-
-
-
 
 theorem closure_connectedComponentIn_compl_subset {S : Set X} (hS : IsClosed S)
     (a : X) :
@@ -34,10 +22,6 @@ theorem closure_connectedComponentIn_compl_subset {S : Set X} (hS : IsClosed S)
       (mem_connectedComponentIn hxS)
     rw [connectedComponentIn_eq hyA, ← connectedComponentIn_eq hyC]
     exact mem_connectedComponentIn hxS
-
-
-
-
 
 theorem opposite_collar_components
     {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [ConnectedSpace Y]

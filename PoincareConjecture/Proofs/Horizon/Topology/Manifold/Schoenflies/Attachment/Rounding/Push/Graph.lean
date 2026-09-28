@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Push
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -39,8 +31,6 @@ theorem image_upperHalfSpace_eq_supergraph
     change 0 ≤ q.2
     apply (strictMono_vertical_of_compact_support F hfirst hK hfix q.1).le_iff_le.mp
     simpa only [Set.mem_ofPred_eq, hzero, hfirst, Prod.eta] using hp
-
-
 
 theorem exists_graph_push_within
     (b : E → Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b)

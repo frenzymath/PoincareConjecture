@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_SequenceJets
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.ActualCoefficientFields
 import PoincareConjecture.Proofs.M45.Ch9_Models.ModelJetConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,15 +17,10 @@ open M36 M44
 
 variable {epsilon : ℝ} (S : GluingBadSequence.{u} epsilon)
 
-
-
 theorem GluingBadSequence.recent_point_mem (hepsilon : 0 < epsilon) (n : ℕ) :
     (S.point n).2 ∈ Ioo (-(S.beta n * epsilon)⁻¹) (S.beta n * epsilon)⁻¹ := by
   apply cylinderDomain_mono (mul_pos (S.beta_pos n) hepsilon) _ (S.point_mem n)
   nlinarith [S.beta_le_quarter n]
-
-
-
 
 theorem GluingBadSequence.older_point_mem (hepsilon : 0 < epsilon) (n : ℕ) :
     ((S.input n).olderCenteredCoordinate (S.point n)).2 ∈
@@ -48,12 +34,8 @@ theorem GluingBadSequence.older_point_mem (hepsilon : 0 < epsilon) (n : ℕ) :
   have h := (I.older_neck.neck.coordinate_inverse_mem _ ho).2
   simpa only [I.older_neck.epsilon_eq, M45NeckGluingInput.olderCenteredCoordinate, I] using h
 
-
-
 noncomputable def GluingBadSequence.normalizedOlderTime (n : ℕ) : ℝ :=
   (S.time n + (S.input n).recent_duration) / (S.input n).older_neck.neck.scale ^ 2
-
-
 
 theorem GluingBadSequence.normalizedOlderTime_mem (n : ℕ) :
     S.normalizedOlderTime n ∈ Ioc (-1 : ℝ) 0 := by
@@ -65,8 +47,6 @@ theorem GluingBadSequence.normalizedOlderTime_mem (n : ℕ) :
   · apply div_nonpos_of_nonpos_of_nonneg _ hr.le
     linarith [S.time_older n]
 
-
-
 theorem GluingBadSequence.normalizedOlderTime_eq (n : ℕ) :
     -(S.input n).recent_duration + S.normalizedOlderTime n *
       (S.input n).older_neck.neck.scale ^ 2 = S.time n := by
@@ -75,9 +55,6 @@ theorem GluingBadSequence.normalizedOlderTime_eq (n : ℕ) :
   dsimp only [GluingBadSequence.normalizedOlderTime]
   rw [div_mul_cancel₀ _ hr]
   ring
-
-
-
 
 theorem GluingBadSequence.older_error_pointJetsVanish (hepsilon : 0 < epsilon)
     (tau : ℕ → ℝ) (htau : ∀ n, tau n ∈ Ioc (-1 : ℝ) 0) :
@@ -92,9 +69,6 @@ theorem GluingBadSequence.older_error_pointJetsVanish (hepsilon : 0 < epsilon)
     (fun n => ?_) (S.older_point_mem hepsilon)
   obtain ⟨hs, bound, hbound, hjets⟩ := (S.input n).older_neck.comparison
   exact ⟨hs _ (htau n), bound, hbound, hjets _ (htau n)⟩
-
-
-
 
 theorem GluingBadSequence.older_zero_pointJetsConverge (hepsilon : 0 < epsilon) :
     PointJetsConverge (fun n => (S.input n).olderCenteredField (S.point n) 0)

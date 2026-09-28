@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureStaticGeometry
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem terminalCurvature_cap_carrier_subset_ball (N : CapCertificate g)
     {C H : ℝ} (hC : N.cap_constant ≤ C) (hH : 0 < H)
@@ -45,8 +35,6 @@ theorem terminalCurvature_cap_carrier_subset_ball (N : CapCertificate g)
   exact ((edist_le_intrinsicEDist N.carrier x z).trans
     (intrinsicEDist_le_intrinsicDiameter hxN hz)).trans_lt
       (N.intrinsic_diameter_bound.trans_le (ENNReal.ofReal_le_ofReal hradius))
-
-
 
 theorem terminalCurvature_cap_end_scalar_bounds (N : CapCertificate g)
     {C H J : ℝ} (hC : N.cap_constant ≤ C) {x : M} (hx : x ∈ N.core)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.MetricTransport
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,12 +12,8 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m64RadialDouble (d : ℝ) (p : LoopPlane) : LoopPlane :=
   annulusPoint (p 0) (2 * p 1 - d)
-
-
 
 theorem m64RadialDouble_norm_sub_le (d : ℝ) (p q : LoopPlane) :
     ‖m64RadialDouble d p - m64RadialDouble d q‖ ≤ 2 * ‖p - q‖ := by
@@ -46,15 +31,11 @@ theorem m64RadialDouble_norm_sub_le (d : ℝ) (p q : LoopPlane) :
       rw [norm_smul, Real.norm_eq_abs, OrthonormalBasis.norm_eq_one, mul_one]
     _ ≤ 2 * ‖p - q‖ := by linarith
 
-
-
 noncomputable def m64AnnulusJoinMap {M : Type u} (f h : LoopPlane → M) (p : LoopPlane) : M :=
   if p 1 ≤ (1 / 2 : ℝ) then f (m64RadialDouble 0 p) else h (m64RadialDouble 1 p)
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64AnnulusJoinMap_lipschitz
     {g : RiemannianMetric n M} {c0 c1 c2 : ℝ → M}
@@ -124,8 +105,6 @@ theorem m64AnnulusJoinMap_lipschitz
   change g.edist _ _ ≤ _ at h
   simpa only [m64AnnulusJoinMap, Set.piecewise, mem_ofPred_eq, edist_dist, dist_eq_norm] using
     h
-
-
 
 theorem m64Annulus_join
     {g : RiemannianMetric n M} {c0 c1 c2 : ℝ → M}

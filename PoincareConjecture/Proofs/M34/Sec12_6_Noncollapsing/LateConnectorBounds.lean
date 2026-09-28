@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.EarlyCoordinatePacket
 import PoincareConjecture.Proofs.M34.Standard.ReducedLengthConnector
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff intervalIntegral
 namespace PoincareConjecture.M34
 
 open Proofs.M09
-
-
 
 theorem late_square_time_gap {L t : ℝ} (hL : 0 < L) (ht : t ∈ Ico (L / 2) L) :
     (L / 8) / (2 * Real.sqrt L) ≤ Real.sqrt (t - L / 8) - Real.sqrt (t - L / 4) := by
@@ -37,8 +25,6 @@ theorem late_square_time_gap {L t : ℝ} (hL : 0 < L) (ht : t ∈ Ico (L / 2) L)
   have hprod := mul_le_mul_of_nonneg_left hsum hgap
   nlinarith [Real.sq_sqrt h0.le, Real.sq_sqrt h1.le]
 
-
-
 theorem late_connector_time_mem {L t s : ℝ} (hL : 0 < L) (ht : t ∈ Ico (L / 2) L)
     (hs : s ∈ Icc (Real.sqrt (t - L / 4)) (Real.sqrt (t - L / 8))) :
     t - s ^ 2 ∈ Icc (L / 8) (L / 4) ∧ s ^ 2 ≤ L := by
@@ -52,9 +38,6 @@ theorem late_connector_time_mem {L t s : ℝ} (hL : 0 < L) (ht : t ∈ Ico (L / 
   constructor
   · constructor <;> linarith
   · linarith [ht.2]
-
-
-
 
 theorem late_coordinate_connector_action_le {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : RicciFlowCurvatureTheory.{0})

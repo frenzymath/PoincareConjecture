@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M15.Lemma8_7_TerminalLiftSpeed
 import PoincareConjecture.Proofs.M15.Lemma8_7_ExitConstants
 import PoincareConjecture.Proofs.M15.Lemma8_7_SpatialDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_actualBallCylinder_prefix_displacement_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

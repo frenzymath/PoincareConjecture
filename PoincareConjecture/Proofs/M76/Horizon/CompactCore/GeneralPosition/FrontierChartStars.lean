@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalDomainCharts
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.FrontierChartSign
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

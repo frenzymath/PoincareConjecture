@@ -4,12 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped NNReal ContDiff Topology
@@ -17,7 +11,6 @@ open scoped NNReal ContDiff Topology
 namespace Poincare.Topology
 
 set_option maxHeartbeats 400000 in
-
 
 theorem exists_uniform_local_three_graphs {N : Nat}
     (F : EuclideanSpace Real (Fin 3) → EuclideanSpace Real (Fin N))

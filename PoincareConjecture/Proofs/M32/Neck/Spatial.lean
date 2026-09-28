@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.CanonicalNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -22,8 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem roundCylinderIteratedDerivative_congr_axial
     {J : Set ℝ} (hJ : IsOpen J) {B B' : RoundCylinderTwoTensor}
@@ -50,8 +33,6 @@ theorem roundCylinderIteratedDerivative_congr_axial
       exact congrArg (fun L : RoundCylinderCoordinates →L[ℝ] ℝ =>
         L (roundCylinderCoordinateBasis (a 0))) (heq.fderiv_eq (𝕜 := ℝ))
 
-
-
 theorem roundCylinderJetErrorSquared_congr_axial
     {J : Set ℝ} (hJ : IsOpen J) {B B' : RoundCylinderTwoTensor}
     (hB : ∀ z : RoundCylinderSpace, z.2 ∈ J → ∀ v w, B z v w = B' z v w)
@@ -61,8 +42,6 @@ theorem roundCylinderJetErrorSquared_congr_axial
   apply Finset.sum_congr rfl
   intro i _
   rw [roundCylinderIteratedDerivative_congr_axial hJ hB s _ i _ hz]
-
-
 
 theorem roundCylinderClose_congr_axial
     {epsilon s : ℝ} {B B' : RoundCylinderTwoTensor}
@@ -100,8 +79,6 @@ section StrongNeck
 
 variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
 
-
-
 theorem strongNeck_pullbackInner_zero (N : GeneralizedStrongNeck F t epsilon)
     (hzero : (0 : ℝ) ∈ Set.Ioc (-1 : ℝ) 0)
     {x : (F.slice t).carrier} (hx : x ∈ N.carrier)
@@ -113,8 +90,6 @@ theorem strongNeck_pullbackInner_zero (N : GeneralizedStrongNeck F t epsilon)
   exact slicePullback_eq_of_identity N.carrier_open
     (N.time_cylinder.forward 0 hzero) (by simp)
     (N.cylinder_identity hzero) hx v w
-
-
 
 theorem strongNeck_pullback_zero (N : GeneralizedStrongNeck F t epsilon)
     {z : RoundCylinderSpace} (hz : z.2 ∈ Set.Ioo (-epsilon⁻¹) epsilon⁻¹)
@@ -128,8 +103,6 @@ theorem strongNeck_pullback_zero (N : GeneralizedStrongNeck F t epsilon)
   simp only [generalizedCylinderPullback, dif_pos hzero]
   exact strongNeck_pullbackInner_zero N hzero hx _ _
 
-
-
 theorem strongNeck_spatialMetricComparison (N : GeneralizedStrongNeck F t epsilon) :
     RoundCylinderClose epsilon 0 (fun z v w =>
       N.scale⁻¹ ^ 2 * roundCylinderPullback (F.metric t) N.coordinate_map z v w) := by
@@ -137,8 +110,6 @@ theorem strongNeck_spatialMetricComparison (N : GeneralizedStrongNeck F t epsilo
   have hzero : (0 : ℝ) ∈ Set.Ioc (-1 : ℝ) 0 := by constructor <;> norm_num
   obtain ⟨hsmooth, bound, hbound, hjet⟩ := N.metric_comparison
   exact ⟨hsmooth 0 hzero, bound, hbound, hjet 0 hzero⟩
-
-
 
 noncomputable def spatialNeck (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : EpsilonNeck (F.metric t) where
@@ -171,31 +142,24 @@ noncomputable def spatialNeck (N : GeneralizedStrongNeck F t epsilon)
   central_sphere_subset := N.central_sphere_subset
   metric_comparison := ⟨strongNeck_spatialMetricComparison N⟩
 
-
 @[simp] theorem spatialNeck_epsilon (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : (spatialNeck N hepsilon).epsilon = epsilon := rfl
-
 
 @[simp] theorem spatialNeck_center (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : (spatialNeck N hepsilon).center = N.center := rfl
 
-
 @[simp] theorem spatialNeck_scale (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : (spatialNeck N hepsilon).scale = N.scale := rfl
-
 
 @[simp] theorem spatialNeck_connection (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : (spatialNeck N hepsilon).connection = F.connection t := rfl
 
-
 @[simp] theorem spatialNeck_carrier (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : (spatialNeck N hepsilon).carrier = N.carrier := rfl
-
 
 @[simp] theorem spatialNeck_coordinate_map (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) :
     (spatialNeck N hepsilon).coordinate_map = N.coordinate_map := rfl
-
 
 @[simp] theorem spatialNeck_central_sphere (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) :

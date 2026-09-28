@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseEnd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -65,8 +55,6 @@ private theorem weighted_littleO_tendsto_zero
     filter_upwards [hsmall epsilon hepsilon] with a ha
     simpa only [Real.dist_eq, sub_zero] using ha.2
 
-
-
 theorem mapRadius_end_of_uniform_weighted
     {A : Type*} {l : Filter A} {r : A → ℝ} {u : A → ℝ → ℝ} {C : ℝ}
     (hs : ∀ a, ContDiff ℝ ∞ (u a)) (hr : Tendsto r l atTop)
@@ -86,8 +74,6 @@ theorem mapRadius_end_of_uniform_weighted
     mapRadius_second_deriv_tendsto hs hvalue hfirst.1 hfirst.2 hsecond.2⟩
   filter_upwards [(tendsto_atTop.1 hr) 1] with a ha
   linarith only [ha]
-
-
 
 theorem inverse_mapRadius_end_of_uniform_weighted
     {A : Type*} {l : Filter A} {z : A → ℝ} {u q : A → ℝ → ℝ} {eta : ℝ}

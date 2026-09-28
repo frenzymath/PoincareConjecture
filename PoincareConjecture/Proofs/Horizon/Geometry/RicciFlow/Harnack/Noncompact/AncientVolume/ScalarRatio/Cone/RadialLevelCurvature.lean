@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construc
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +14,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace Poincare.Geometry.Curvature.Hypersurface
 
 private abbrev E (k : ℕ) := EuclideanSpace ℝ (Fin k)
-
-
 
 theorem curvatureTensor_eq_one_of_radial_level_immersion
     {n : ℕ} {g : RiemannianMetric (n + 1) (E (n + 1))}
@@ -107,7 +92,6 @@ variable {n : ℕ} {g : RiemannianMetric (n + 1) (E (n + 1))}
   (hreg : ∀ x ∈ U, mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
 
 set_option maxHeartbeats 400000 in
-
 
 theorem regularLevel_curvatureTensor_eq_one (c : ℝ) :
     letI : Fact (Module.finrank ℝ (E (n + 1)) = n + 1) :=
@@ -195,8 +179,6 @@ theorem regularLevel_curvatureTensor_eq_one (c : ℝ) :
   erw [hback, hback, hback, hback, hp, hinner, hinner, hinner, hinner] at ht
   exact ht
 
-
-
 theorem radialLevel_curvatureTensor_eq_one
     (hH : ∀ x ∈ U, ∀ u v, D.hessian f x u v = g.inner x u v)
     (hQ : ∀ x ∈ U, D.levelQ f x = 2 * f x)
@@ -221,8 +203,6 @@ theorem radialLevel_curvatureTensor_eq_one
       norm_num)
     (hH _ z.1.property) (hflat _ z.1.property) u v w a
 
-
-
 theorem radialLevel_sectionalCurvature_eq_one
     (hH : ∀ x ∈ U, ∀ u v, D.hessian f x u v = g.inner x u v)
     (hQ : ∀ x ∈ U, D.levelQ f x = 2 * f x)
@@ -244,10 +224,6 @@ theorem radialLevel_sectionalCurvature_eq_one
   rw [D.radialLevel_curvatureTensor_eq_one hf U hreg hH hQ hflat z u v u v,
     h.symm z v u, ← pow_two]
   exact div_self hplane
-
-
-
-
 
 theorem exists_radialLevel_curvatureTensor_eq_one_of_local
     (hfLocal : ContMDiffOn (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f U)

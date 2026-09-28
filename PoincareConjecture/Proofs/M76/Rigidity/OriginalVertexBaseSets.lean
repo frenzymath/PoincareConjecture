@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalLowerProducts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,7 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
 
-
 theorem vertex_base_eq_inter (p : (T.marked 2).vertices) :
     T.diskDualBase {(p : T.index → ℝ × V3)} =
       (T.vertexBlock p).space ∩ (T.marked 2).space := by
@@ -36,7 +27,6 @@ theorem vertex_base_eq_inter (p : (T.marked 2).vertices) :
     fun h => ⟨⟨h.1, T.disk_space_subset_region h.2⟩, h.2⟩⟩)
 
 open Classical in
-
 
 theorem vertex_base_rim_eq (p : (T.marked 2).vertices) :
     T.dualRegionRim {(p : T.index → ℝ × V3)} ∩ (T.marked 2).space =

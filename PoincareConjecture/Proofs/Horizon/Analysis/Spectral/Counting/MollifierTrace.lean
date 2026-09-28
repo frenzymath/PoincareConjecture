@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.KernelTrace
 import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.Mollification
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric
@@ -25,7 +18,6 @@ theorem mollifierKernel_memLp {ε : ℝ} (hε : 0 < ε) (x : E) :
   exact ((mollifierEps_continuous hε).memLp_of_hasCompactSupport
     (mollifierEps_compactSupport hε)).comp_measurePreserving
       (Measure.measurePreserving_sub_left volume x)
-
 
 def mollifierKernel {ε : ℝ} (hε : 0 < ε) (x : E) : Lp ℝ 2 (volume : Measure E) :=
   (mollifierKernel_memLp hε x).toLp _
@@ -61,7 +53,6 @@ theorem norm_mollifierKernel_le {ε : ℝ} (hε : 0 < ε) (x : E) :
     (div_nonneg (le_of_lt mollifierEps_sq_bound_constant_pos) (by positivity))).mpr
   exact norm_mollifierKernel_sq_le hε x
 
-
 def mollifyOn (S : Set E) (hS : MeasurableSet S) (hvol : volume S ≠ ∞)
     {ε : ℝ} (hε : 0 < ε) :
     Lp ℝ 2 (volume : Measure E) →L[ℝ] Lp ℝ 2 (volume : Measure E) :=
@@ -87,8 +78,6 @@ theorem mollifyOn_toLp_coeFn (S : Set E) (hS : MeasurableSet S) (hvol : volume S
   have h := mollifyOn_coeFn S hS hvol hε (hu.toLp u)
   rwa [convolution_congr (ContinuousLinearMap.lsmul ℝ ℝ)
     Filter.EventuallyEq.rfl hu.coeFn_toLp] at h
-
-
 
 theorem sum_norm_mollifyOn_map_sq_le
     {H ι : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]

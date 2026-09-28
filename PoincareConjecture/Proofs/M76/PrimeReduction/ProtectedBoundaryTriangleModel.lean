@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryDomainModel
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryTriangleProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,10 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_protected_boundary_triangle_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

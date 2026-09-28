@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M57.PoincareInputs
 import PoincareConjecture.Proofs.M71.InitialClass
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m71ContinuationFromPoincareAncestry
     (P02 : RepairedClosedTopologyProvider.{u})
@@ -45,9 +33,6 @@ theorem m71ContinuationFromPoincareAncestry
   exact m71ContinuationFromInitialTopology P02 hM59 D L P hM61 hM64 hM65
     hM58 hM66 hM57 G40 C hC hcomparison hscalar inputs
 
-
-
-
 theorem m71ScalarLowerBoundFromGlobalFlow
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -58,19 +43,6 @@ theorem m71ScalarLowerBoundFromGlobalFlow
     M67ScalarLowerBound G.certificate.flow Set.univ := by
   intro t _ ht x
   exact (G.certificate.pinched t ht).2.1 x (Set.mem_univ x)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m71GlobalInputFromTheories
     (P02 : RepairedClosedTopologyProvider.{u})

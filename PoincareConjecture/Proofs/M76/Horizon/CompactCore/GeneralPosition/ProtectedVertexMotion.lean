@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.FrontierChartStars
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval

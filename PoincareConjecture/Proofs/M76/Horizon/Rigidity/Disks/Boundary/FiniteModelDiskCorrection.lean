@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.MarkedCollarCorrection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology
 open PoincareConjecture.M76.Dehn

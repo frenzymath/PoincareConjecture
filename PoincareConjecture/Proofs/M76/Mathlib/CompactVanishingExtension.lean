@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VanishingDisplacementExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] {U : Set E}
-
-
-
-
 
 theorem exists_extension_of_compact_vanishing_bound (e : U ≃ₜ U)
     (hU : IsOpen U) (hcompact : IsCompact (closure U))

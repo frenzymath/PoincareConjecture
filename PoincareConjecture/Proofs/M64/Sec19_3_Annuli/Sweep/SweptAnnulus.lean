@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.C2Bounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,19 +10,12 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m64SweepTime (s t u : ℝ) : ℝ :=
   s + (t - s) * max 0 (min 1 u)
-
-
 
 theorem m64SweepTime_eq_of_mem {s t u : ℝ} (hu : u ∈ Icc (0 : ℝ) 1) :
     m64SweepTime s t u = s + (t - s) * u := by
   simp only [m64SweepTime, min_eq_right hu.2, max_eq_right hu.1]
-
-
 
 theorem m64SweepTime_mem {a b s t : ℝ}
     (hs : s ∈ Icc a b) (ht : t ∈ Icc a b) (u : ℝ) :
@@ -57,16 +38,12 @@ theorem m64SweepTime_mem {a b s t : ℝ}
         (mul_le_mul_of_nonneg_left hs.2 hv) (mul_le_mul_of_nonneg_left ht.2 hv0)
       _ = b := by ring
 
-
-
 noncomputable def m64SweptMap {M : Type u} (c : ℝ → ℝ → M) (s t : ℝ)
     (p : LoopPlane) : M := c (p 0) (m64SweepTime s t (p 1))
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}
-
-
 
 theorem m64SweptMap_lipschitz
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (g : RiemannianMetric n M)
@@ -116,8 +93,6 @@ theorem m64SweptMap_lipschitz
       rw [ENNReal.ofReal_add hS (mul_nonneg hH (abs_nonneg _)),
         ENNReal.ofReal_mul hH, ENNReal.ofReal_mul (abs_nonneg _)]
       ring
-
-
 
 theorem m64Annulus_of_c2_sweep
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (g : RiemannianMetric n M)

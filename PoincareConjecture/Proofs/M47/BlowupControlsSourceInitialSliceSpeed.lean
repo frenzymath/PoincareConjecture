@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapModelEnergy
 import PoincareConjecture.Proofs.M47.BlowupControlsCapMetricError
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,7 +24,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 C.carrier} (N : EpsilonNeck g)
   {origin scale : ℝ} {I : Set ℝ}
   (e : SurgeryFlowCylinder F C origin scale I N.carrier)
-
 
 theorem source_neck_slice_native_lower
     (hsmall : N.epsilon ≤ 1 / 2) (s : ℝ) (hs : s ∈ I) (hs0 : s ≤ 0)
@@ -68,8 +59,6 @@ theorem source_neck_slice_native_lower
     linarith only [(abs_le.mp herror).1, hsmall', hmodel]
   rw [source_neck_slice_metric_of_coefficients N e s hs q g1 hp (hcoeff p hpW) v v] at hmetric
   exact hmetric
-
-
 
 theorem source_neck_slice_axial_derivative
     (hsmall : N.epsilon ≤ 1 / 2) (s : ℝ) (hs : s ∈ I) (hs0 : s ≤ 0)

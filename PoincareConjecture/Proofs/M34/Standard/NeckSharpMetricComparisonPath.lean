@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckSharpMetricComparison
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlPath
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem height_displacement_le_pathELength_of_axial_speed
     {A : ℝ} (hA : 0 ≤ A)
@@ -57,8 +46,6 @@ theorem height_displacement_le_pathELength_of_axial_speed
   rw [mfderiv_comp_apply t hid hγd]
   exact hspeed (γ t) (hmem ht') _
 
-
-
 theorem axialPath_height_mem {z t : ℝ}
     (hz : z ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (ht : t ∈ Icc (0 : ℝ) 1) :
     t * z ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ := by
@@ -67,8 +54,6 @@ theorem axialPath_height_mem {z t : ℝ}
   have h := convex_Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ hzero hz
     (sub_nonneg.mpr ht.2) ht.1 (by ring : 1 - t + t = 1)
   simpa only [smul_eq_mul, mul_zero, zero_add] using h
-
-
 
 theorem axialPath_contMDiffOn (q : UnitTwoSphere) {z : ℝ}
     (hz : z ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -79,8 +64,6 @@ theorem axialPath_contMDiffOn (q : UnitTwoSphere) {z : ℝ}
     ((contMDiff_const.prodMk hs.contMDiff).contMDiffOn)
   intro t ht
   exact ⟨mem_univ _, N.axialPath_height_mem hz ht⟩
-
-
 
 theorem axialPath_pathELength_le_sharp (he : N.epsilon ≤ 1 / 8)
     (q : UnitTwoSphere) {z : ℝ} (hz : z ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :

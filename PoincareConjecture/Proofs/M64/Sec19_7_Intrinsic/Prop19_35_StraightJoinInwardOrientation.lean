@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JoinedInwardSign
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,11 +41,6 @@ private theorem reverse_arc_data
     exact neg_ne_zero.mpr (hregular _ (ht' t ht))
   · intro t ht
     simpa only [g, deriv_comp_const_sub, map_neg, neg_one_smul] using hray _ (ht' t ht)
-
-
-
-
-
 
 theorem m64Intrinsic_exists_straight_join_inward_orientation
     {alpha beta : ℝ → AnnulusCoordinates}

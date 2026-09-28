@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCylinderRadialGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsCompact.exists_positive_height_cut_frontier
     {Q : Set E} (hQ : IsCompact Q) (hcv : Convex ℝ Q)

@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,9 +15,6 @@ variable {P E : Type*}
   [MeasurableSpace P] [BorelSpace P]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   {μ : Measure P} [IsLocallyFiniteMeasure μ] [Measure.IsOpenPosMeasure μ]
-
-
-
 
 theorem eqOn_zero_of_integral_contDiff_smul_eq_zero
     {T : P → E} {O : Set P} (hO : IsOpen O) (hT : ContinuousOn T O)

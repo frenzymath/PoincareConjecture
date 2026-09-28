@@ -1,14 +1,6 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

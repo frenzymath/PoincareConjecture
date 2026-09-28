@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricFullSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,29 +10,18 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
-
-
-
 noncomputable def barycentricNeighborhood (L : SimplicialComplex ℝ E) :
     SimplicialComplex ℝ E :=
   K.barycentricSubdivision.vertexSubcomplex
     {x | ∃ s ∈ K.faces, (∃ v ∈ s, v ∈ L.vertices) ∧ s.centroid ℝ id = x}
 
-
-
-
 theorem barycentricNeighborhood_finite (L : SimplicialComplex ℝ E) :
     (K.barycentricNeighborhood L).faces.Finite :=
   K.barycentricSubdivision.vertexSubcomplex_finite _ K.barycentricSubdivision_finite
 
-
-
 theorem barycentricNeighborhood_le (L : SimplicialComplex ℝ E) :
     K.barycentricNeighborhood L ≤ K.barycentricSubdivision :=
   K.barycentricSubdivision.vertexSubcomplex_le _
-
-
-
 
 theorem mem_barycentricNeighborhood_of_inter_nonempty
     {L : SimplicialComplex ℝ E} [Finite L.faces] (hLK : L ≤ K)
@@ -80,9 +59,6 @@ theorem mem_barycentricNeighborhood_of_inter_nonempty
     exact ⟨v, hts hv, L.down_closed htauL (Finset.singleton_subset_iff.mpr hv)
       (Finset.singleton_nonempty v)⟩
 
-
-
-
 theorem space_subset_barycentricNeighborhood
     {L : SimplicialComplex ℝ E} [Finite L.faces] (hLK : L ≤ K) :
     L.space ⊆ (K.barycentricNeighborhood L).space := by
@@ -95,10 +71,6 @@ theorem space_subset_barycentricNeighborhood
   obtain ⟨t, ht, hxt⟩ := mem_space_iff.mp hxK'
   exact (K.barycentricNeighborhood L).convexHull_subset_space
     (K.mem_barycentricNeighborhood_of_inter_nonempty hLK ht ⟨x, hxt, hx⟩) hxt
-
-
-
-
 
 theorem exists_open_barycentricNeighborhood
     {L : SimplicialComplex ℝ E} [Finite L.faces] (hLK : L ≤ K) :

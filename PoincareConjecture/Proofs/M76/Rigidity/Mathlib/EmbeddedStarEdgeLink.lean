@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorEdgeLinkPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +13,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_polygon_faceLink_of_embedded_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

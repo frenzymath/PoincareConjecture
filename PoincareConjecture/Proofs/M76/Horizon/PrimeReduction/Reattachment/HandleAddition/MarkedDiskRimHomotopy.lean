@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.DiskBoundaryHomotopy
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -81,4 +79,3 @@ theorem exists_simple_rim_loops_of_marked_disk_homotopy
       map_one_left := fun _ => rfl }⟩
 
 end PoincareConjecture.M76
-

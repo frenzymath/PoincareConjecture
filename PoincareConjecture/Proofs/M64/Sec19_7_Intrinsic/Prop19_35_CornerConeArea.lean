@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerRayNormalization
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +8,6 @@ open Set MeasureTheory InnerProductGeometry
 open scoped ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_complex_corner_cone_volume
     {R : ℝ} (hR : 0 < R) {x y : ℂ} (hx : x ≠ 0) (hy : y ≠ 0)

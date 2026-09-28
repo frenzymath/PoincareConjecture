@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.CircleMod
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Joints.DiamondMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Blocks.VertexBlockMap
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -18,7 +16,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {old : SourceCircleDecomposition f S} {i : old.Index}
 
 open Classical in
-
 
 theorem ComponentBranchModel.exists_component_circle_blocks
     (D : ComponentBranchModel (e := e) (R := R) old i) (hcore : D.core ⊆ interior R)
@@ -114,9 +111,6 @@ theorem ComponentBranchModel.exists_component_circle_blocks
     sheets := hmaps
     axis := hmapa }⟩
 
-
-
-
 theorem ComponentBranchModel.exists_circle_blocks
     (D : ComponentBranchModel (e := e) (R := R) old i) (hcore : D.core ⊆ interior R) :
     letI : Fintype D.complex.faces := D.complex_finite.fintype
@@ -131,4 +125,3 @@ theorem ComponentBranchModel.exists_circle_blocks
     D.exists_component_circle_blocks hcore p hpi hpv hpf⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

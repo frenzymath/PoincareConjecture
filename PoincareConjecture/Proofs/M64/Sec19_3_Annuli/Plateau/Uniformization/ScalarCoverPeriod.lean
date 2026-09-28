@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverConjugate
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,23 +15,12 @@ local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 theorem scalarCirclePoint_hasDerivAt (r t : ℝ) :
     HasDerivAt (scalarCirclePoint r)
       (fderiv ℝ scalarCoverMap (r, t) (0, 1)) t := by
   have h := (scalarCoverMap_smooth.differentiable (by simp) (r, t)).hasFDerivAt.comp_hasDerivAt
     t ((hasDerivAt_const t r).prodMk (hasDerivAt_id t))
   simpa only [Function.comp_def, scalarCoverMap] using h
-
-
-
-
-
-
 
 theorem scalarFluxPeriod_eq_cover_integral (H : Plane → ℝ) (r : ℝ) :
     scalarFluxPeriod D H r =
@@ -62,12 +38,6 @@ theorem scalarFluxPeriod_eq_cover_integral (H : Plane → ℝ) (r : ℝ) :
     (scalarCirclePoint_hasDerivAt r t).hasDerivWithinAt.derivWithin
       (uniqueDiffOn_Icc zero_lt_one t ht)]
   rfl
-
-
-
-
-
-
 
 theorem scalarCoverConjugate_increment_eq_period {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -89,12 +59,6 @@ theorem scalarCoverConjugate_increment_eq_period {H : Plane → ℝ}
   rw [scalarFluxPeriod_eq_cover_integral]
   exact (intervalIntegral.integral_eq_sub_of_hasDerivAt (fun t _ => hd t)
     (hc.intervalIntegrable 0 1)).symm
-
-
-
-
-
-
 
 theorem exists_annular_cover_conjugate_with_period {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

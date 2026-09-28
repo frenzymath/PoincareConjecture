@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_1_BarrierParameters
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_PositiveSquareEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped intervalIntegral
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem actionBudget_large {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T : ℝ}
@@ -33,9 +22,6 @@ theorem actionBudget_large {K : MetricSurgeryConstants}
     surgeryEpochStart (p.i + 1) by linarith)
   unfold actionBudget
   nlinarith [mul_nonneg hH.le hroot.le]
-
-
-
 
 theorem observed_path_positiveAction_le (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -65,9 +51,6 @@ theorem observed_path_positiveAction_le (P : M46Predecessors.{u})
     (Real.sqrt_nonneg tau) hH
   unfold positiveActionBudget
   nlinarith
-
-
-
 
 theorem observed_path_squareEnergy_le (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

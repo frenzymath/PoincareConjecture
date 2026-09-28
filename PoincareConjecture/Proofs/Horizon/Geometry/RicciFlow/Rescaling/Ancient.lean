@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Flow
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,7 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
 
 def RicciFlow.openAncientRescaleAt
     {n : ℕ} {N : Type*} [TopologicalSpace N]

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteConvexDomain
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -82,10 +74,6 @@ private theorem exists_cube_boundary_collar_model :
       fun x => (hc0 x).symm⟩
   exact ⟨s, L, HB, c, hL, hHB, hcf, hci, hcD, hc0, hczero,
     δ, hδ, hδsmall, hopen⟩
-
-
-
-
 
 theorem _root_.Set.IsFinitePLBallPair.exists_finitePL_boundary_collar
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

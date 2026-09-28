@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarInverse
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_confined_radial_differential_injective
     (N : IntrinsicAnnulus) {K kappa : ℝ} (hK : N.GaussianCurvatureBound K)
@@ -71,9 +64,6 @@ theorem m64Intrinsic_confined_radial_differential_injective
     simpa only [TangentSpace, mfderiv_eq_fderiv] using hi (t * ‖v‖) htl
   rw [hscale, mul_div_cancel_right₀ _ hell.ne'] at hi'
   simpa only [TangentSpace, mfderiv_eq_fderiv] using hi'
-
-
-
 
 theorem m64Intrinsic_exists_short_confined_radial_inverse
     (N : IntrinsicAnnulus) {K kappa : ℝ} (hK : N.GaussianCurvatureBound K)

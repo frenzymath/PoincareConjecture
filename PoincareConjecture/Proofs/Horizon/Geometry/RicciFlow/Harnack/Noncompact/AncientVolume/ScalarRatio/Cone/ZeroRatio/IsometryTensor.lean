@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.IsometryRegularity
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -47,8 +41,6 @@ private theorem minimizing_speed
   rw [ENNReal.toReal_ofReal (show 0 ≤ g.tangentNorm (γ 0) (deriv γ 0) from
     Real.sqrt_nonneg _)] at hs'
   exact (hnorm t ht).trans ((hnorm 0 h0).symm.trans hs')
-
-
 
 theorem tangentNorm_fderiv_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -111,8 +103,6 @@ theorem tangentNorm_fderiv_of_edist_eq
     hdist _ (hηU (by norm_num)) _ (hηU (by norm_num))] at hs'
   exact (mul_left_cancel₀ (by positivity : (2 * δ : ℝ) ≠ 0)) (hs'.trans hs.symm)
 
-
-
 theorem inner_fderiv_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (h : RiemannianMetric m (EuclideanSpace ℝ (Fin m)))
@@ -137,8 +127,6 @@ theorem inner_fderiv_of_edist_eq
   simp only [map_add, add_apply] at hh
   rw [h.symm (f p) (fderiv ℝ f p w) (fderiv ℝ f p v), g.symm p w v] at hh
   linarith [hdiag v, hdiag w]
-
-
 
 theorem smooth_isometric_charts_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

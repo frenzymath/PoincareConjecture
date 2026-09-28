@@ -5,10 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedRelabelingAssembly
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64DegreeOneLift_of_contDiff {phi : ℝ → ℝ} (hphi : ContDiff ℝ 1 phi)
     (hm : Monotone phi)
@@ -38,11 +30,6 @@ theorem m64DegreeOneLift_of_contDiff {phi : ℝ → ℝ} (hphi : ContDiff ℝ 1 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64C2ShrinkingCurve_exists_finite_reference
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

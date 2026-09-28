@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Maximal
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {C : CapCertificate g} {H : ConnectedNeckCapCover g}
   {T : BalancedNeckChain g C.epsilon}
-
 
 theorem shape_eq_finite_or_forward (hT : C.IsOutgoingChain H T) :
     (∃ b, T.shape = .finite 0 b) ∨ T.shape = .forward 0 := by
@@ -42,7 +34,6 @@ theorem shape_eq_finite_or_forward (hT : C.IsOutgoingChain H T) :
   | biInfinite =>
     have hn := hT.nonnegative (-1) (by simp [hs, ChainShape.active])
     omega
-
 
 theorem shape_eq_finite_of_right_endpoint (hT : C.IsOutgoingChain H T)
     {b : ℤ} (hb : b ∈ T.shape.active) (hnext : b + 1 ∉ T.shape.active) :

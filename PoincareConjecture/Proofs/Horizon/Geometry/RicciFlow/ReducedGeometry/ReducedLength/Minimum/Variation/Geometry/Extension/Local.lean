@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,7 +11,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def parametricExtensionInChart
     {I U : Set ℝ} {γ : ℝ → M}

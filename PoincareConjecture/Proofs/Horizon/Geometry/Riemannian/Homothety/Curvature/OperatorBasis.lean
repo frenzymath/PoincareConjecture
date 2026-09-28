@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.BasisContractions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators RealInnerProductSpace
@@ -19,7 +8,6 @@ namespace PoincareConjecture.Homothety
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] {ι κ : Type*} [Fintype ι] [Fintype κ]
-
 
 theorem sum_fourlinear_mul_basis_eq
     (T U : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
@@ -32,7 +20,6 @@ theorem sum_fourlinear_mul_basis_eq
   rw [sum_sq_fourlinear_basis_eq T b c, sum_sq_fourlinear_basis_eq U b c] at H
   linarith
 
-
 def bilinearSquare (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) :
     E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ :=
   LinearMap.mk₂ ℝ (fun u v ↦ B u v • B)
@@ -44,7 +31,6 @@ def bilinearSquare (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) :
 omit [FiniteDimensional ℝ E] in
 theorem bilinearSquare_apply (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) (u v w z : E) :
     bilinearSquare B u v w z = B u v * B w z := rfl
-
 
 noncomputable def coefficientBilinear (b : OrthonormalBasis ι ℝ E) (A : ι → ι → ℝ) :
     E →ₗ[ℝ] E →ₗ[ℝ] ℝ :=
@@ -70,7 +56,6 @@ theorem coefficientBilinear_skew (b : OrthonormalBasis ι ℝ E) (A : ι → ι 
     exact hA i j
   exact congrArg (fun B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ ↦ B u v) H
 
-
 noncomputable def basisCoefficientChange (b : OrthonormalBasis ι ℝ E)
     (c : OrthonormalBasis κ ℝ E) (A : ι → ι → ℝ) : κ → κ → ℝ :=
   fun i j ↦ coefficientBilinear b A (c i) (c j)
@@ -86,7 +71,6 @@ theorem basisCoefficientChange_norm_sq (b : OrthonormalBasis ι ℝ E)
     (∑ i, ∑ j, (A i j) ^ 2) = ∑ i, ∑ j, (basisCoefficientChange b c A i j) ^ 2 := by
   simpa only [basisCoefficientChange, coefficientBilinear_apply_basis] using
     sum_sq_bilinear_basis_eq (coefficientBilinear b A) b c
-
 
 noncomputable def fourLinearQuadratic
     (T : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

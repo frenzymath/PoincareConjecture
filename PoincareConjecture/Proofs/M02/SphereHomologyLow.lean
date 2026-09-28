@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M02.HurewiczRepresentatives
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Statement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -30,7 +21,6 @@ private noncomputable abbrev threeSphereBasepoint : TopCat :=
 private noncomputable abbrev threeSpherePoint : threeSphereType :=
   Classical.choice (NormedSpace.sphere_nonempty.mpr zero_le_one).coe_sort
 
-
 theorem isZero_integral_threeSphere_homology_one :
       IsZero ((TopCat.toSSet.obj threeSphereBasepoint).homology
       (ModuleCat.of ℤ (ULift ℤ)) 1) := by
@@ -43,7 +33,6 @@ theorem isZero_integral_threeSphere_homology_one :
       subst k
       exact sphere_homotopyGroup_subsingleton_of_dim_lt
         (N := Fin 1) (E := EuclideanSpace ℝ (Fin 4)) (by simp) threeSpherePoint)
-
 
 theorem isZero_integral_threeSphere_homology_two :
       IsZero ((TopCat.toSSet.obj threeSphereBasepoint).homology

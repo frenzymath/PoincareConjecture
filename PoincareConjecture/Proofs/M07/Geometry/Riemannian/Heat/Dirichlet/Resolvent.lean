@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Heat.Dirichlet.Energy
 import PoincareConjecture.Proofs.M07.Analysis.Parabolic.Dirichlet.Variational
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 theorem EnergyTest.memLp (f : EnergyTest D Ω) : MemLp (f : M → ℝ) 2 g.volumeMeasure :=
   f.smooth.continuous.memLp_of_hasCompactSupport f.hasCompactSupport
-
 
 def testToL2 (D : LeviCivitaData g) (Ω : Set M) :
     EnergyTest D Ω →ₗ[ℝ] Lp ℝ 2 g.volumeMeasure where
@@ -58,11 +44,9 @@ theorem norm_testToL2_le (f : EnergyTest D Ω) : ‖testToL2 D Ω f‖ ≤ ‖f�
     exact le_add_of_nonneg_right (integral_gradient_self_nonneg f)
   exact (sq_le_sq₀ (norm_nonneg _) (norm_nonneg _)).mp hsq
 
-
 def testToL2CLM (D : LeviCivitaData g) (Ω : Set M) :
     EnergyTest D Ω →L[ℝ] Lp ℝ 2 g.volumeMeasure :=
   (testToL2 D Ω).mkContinuous 1 (fun f => by simpa using norm_testToL2_le f)
-
 
 def toL2 (D : LeviCivitaData g) (Ω : Set M) :
     H1Zero D Ω →L[ℝ] Lp ℝ 2 g.volumeMeasure :=
@@ -75,7 +59,6 @@ theorem norm_toL2_le (u : H1Zero D Ω) : ‖toL2 D Ω u‖ ≤ ‖u‖ := by
   exact (Poincare.Analysis.Dirichlet.norm_completionMap_apply_le
     (testToL2CLM D Ω) (C := 1) (fun f => by simpa [testToL2CLM] using norm_testToL2_le f) u).trans_eq
       (one_mul _)
-
 
 def resolvent (D : LeviCivitaData g) (Ω : Set M) :
     Lp ℝ 2 g.volumeMeasure →L[ℝ] H1Zero D Ω :=
@@ -99,7 +82,6 @@ theorem EnergyTest.oneSubLaplacian_memLp (f : EnergyTest D Ω) :
   (f.smooth.continuous.sub (D.continuous_laplacian f.smooth)).memLp_of_hasCompactSupport
     (f.hasCompactSupport.sub (D.hasCompactSupport_laplacian f.hasCompactSupport))
 
-
 def EnergyTest.oneSubLaplacian (f : EnergyTest D Ω) : Lp ℝ 2 g.volumeMeasure :=
   f.oneSubLaplacian_memLp.toLp _
 
@@ -116,13 +98,11 @@ theorem EnergyTest.inner_oneSubLaplacian [PreconnectedSpace M] (f h : EnergyTest
     show (testToL2 D Ω h) x = h x from hhx]
   simp [mul_comm]
 
-
 theorem resolvent_oneSubLaplacian [PreconnectedSpace M] (f : EnergyTest D Ω) :
     resolvent D Ω f.oneSubLaplacian = (f : H1Zero D Ω) := by
   symm
   exact Poincare.Analysis.Dirichlet.resolvent_unique_of_test
     (testToL2CLM D Ω) f.oneSubLaplacian f f.inner_oneSubLaplacian
-
 
 theorem toL2_injective [PreconnectedSpace M] : Function.Injective (toL2 D Ω) := by
   suffices hzero : ∀ u : H1Zero D Ω, toL2 D Ω u = 0 → u = 0 from
@@ -136,12 +116,10 @@ theorem toL2_injective [PreconnectedSpace M] : Function.Injective (toL2 D Ω) :=
     | ih v => exact htest v
   exact (inner_self_eq_zero (𝕜 := ℝ)).mp (hall u)
 
-
 theorem denseRange_resolvent [PreconnectedSpace M] : DenseRange (resolvent D Ω) := by
   apply Completion.denseRange_coe.mono
   rintro _ ⟨f, rfl⟩
   exact ⟨f.oneSubLaplacian, resolvent_oneSubLaplacian f⟩
-
 
 def l2Resolvent (D : LeviCivitaData g) (Ω : Set M) :
     Lp ℝ 2 g.volumeMeasure →L[ℝ] Lp ℝ 2 g.volumeMeasure :=

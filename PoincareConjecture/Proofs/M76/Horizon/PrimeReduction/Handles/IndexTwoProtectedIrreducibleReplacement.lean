@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.OriginalProtectedIndexTwoCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.ProtectedAtlasFromCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -50,4 +41,3 @@ theorem hasHamiltonProtectedIrreducibleReplacement_of_card_eq_two
     hnoD hmax havoid
 
 end PoincareConjecture.M76
-

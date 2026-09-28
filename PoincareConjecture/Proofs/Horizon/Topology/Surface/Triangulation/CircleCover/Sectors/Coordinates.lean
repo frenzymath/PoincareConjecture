@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -19,7 +9,6 @@ namespace ChartCircleArrangementVertexPatch
 
 private noncomputable def signEquiv (i : Bool) : ℝ ≃L[ℝ] ℝ :=
   if i then ContinuousLinearEquiv.refl ℝ ℝ else ContinuousLinearEquiv.neg ℝ
-
 
 noncomputable def sectorParameterEquiv (c : ℝ × ℝ) (i : Bool × Bool) :
     (ℝ × ℝ) ≃ₜ (ℝ × ℝ) :=
@@ -77,7 +66,6 @@ theorem sectorParameterEquiv_image_square (i : Bool × Bool) :
       (m₁ := fun x => (if i.1 then x else -x) + P.center.1)
       (m₂ := fun x => (if i.2 then x else -x) + P.center.2)).symm
 
-
 noncomputable def sectorCoordinates (i : Bool × Bool) : OpenPartialHomeomorph (ℝ × ℝ) M :=
   (sectorParameterEquiv P.center i).toOpenPartialHomeomorph.trans P.productCoordinates
 
@@ -118,7 +106,6 @@ theorem sectorCoordinates_smooth_symm (i : Bool × Bool) :
   have hA := ((contDiff_sectorParameterEquiv_symm P.center i).comp
     collarParameterEquiv.contDiff).contMDiff
   exact hA.comp_contMDiffOn (P.smooth_symm.mono (fun _ hq => hq.1.1))
-
 
 noncomputable def chartSectorCoordinates (x : M) (i : Bool × Bool) :
     OpenPartialHomeomorph (ℝ × ℝ) (EuclideanSpace ℝ (Fin 2)) :=

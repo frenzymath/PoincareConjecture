@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionRimWords
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
 
 variable {X : Type*} [TopologicalSpace X]
   {b z0 z1 a0 a1 c0 c1 l0 l1 r0 r1 : X}
-
-
-
 
 theorem resolution_end_words_case_a
     (p : Path b z0) (q : Path b z1)
@@ -62,8 +50,6 @@ theorem resolution_end_words_case_a
       basedPathWord_trans (p.trans ra0) (q.trans ra1) (q.trans rl1)]
     simp only [basedPathWord_symm, hl0, hr0, hl1, hr1, inv_one, mul_one]
 
-
-
 theorem resolution_end_words_case_b
     (p : Path b z0) (q : Path b z1)
     (ra0 : Path z0 a0) (rc0 : Path z0 c0) (rl0 : Path z0 l0) (rr0 : Path z0 r0)
@@ -107,9 +93,6 @@ theorem resolution_end_words_case_b
       basedPathWord_trans (q.trans ra1) (p.trans ra0) (p.trans rl0)]
     simp only [basedPathWord_symm, hl0, hr0, hl1, hr1, inv_one, mul_one]
 
-
-
-
 theorem resolution_end_excluded_case_a
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
     (p : Path b z0) (q : Path b z1)
@@ -151,8 +134,6 @@ theorem resolution_end_excluded_case_a
     exact J.inv_mem h.1
   · rw [← hSecond, basedPathWord_loop]
     exact J.inv_mem h.2
-
-
 
 theorem resolution_end_excluded_case_b
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]

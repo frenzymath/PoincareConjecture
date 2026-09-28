@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   {K : SimplicialComplex ℝ E} {f : E → F} {g : E → G} {u : F → E}
-
-
-
-
 
 theorem AffineOnFaces.comp_inverse_on_embeddedImage
     (hf : K.AffineOnFaces f) (hg : K.AffineOnFaces g)
@@ -42,8 +29,6 @@ theorem AffineOnFaces.comp_inverse_on_embeddedImage
 
 omit [FiniteDimensional ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G] in
 
-
-
 theorem AffineOnFaces.injOn_comp_inverse_on_embeddedImage
     (hf : K.AffineOnFaces f) (hinjf : InjOn f K.space)
     (hinjg : InjOn g K.space) (hleft : LeftInvOn u f K.space) :
@@ -53,10 +38,6 @@ theorem AffineOnFaces.injOn_comp_inverse_on_embeddedImage
   change g (u (f x)) = g (u (f y)) at hxy
   rw [hleft hx, hleft hy] at hxy
   exact congrArg f (hinjg hx hy hxy)
-
-
-
-
 
 theorem AffineOnFaces.embeddedImage_comp_inverse
     (hf : K.AffineOnFaces f) (hg : K.AffineOnFaces g)

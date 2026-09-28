@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetUnframi
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCauchyHolder
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHalfDisk
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,10 +10,6 @@ open Set Filter Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
-
 
 theorem gauged_halfDisk_unframed_residual_holder
     {n : ℕ} [Nonempty (Fin n)]
@@ -127,10 +114,6 @@ theorem gauged_halfDisk_unframed_residual_holder
   exact cauchyGauge_unframed_halfDisk_holder hR hB hA hs hb hsmall hd
     (huC.mono (inter_subset_left.trans (closedBall_subset_ball hds)))
     (hL.mono hKr) (fun z hz => hunit z (hKr hz))
-
-
-
-
 
 theorem gauged_halfDisk_unframed_residual
     {n : ℕ} [Nonempty (Fin n)]

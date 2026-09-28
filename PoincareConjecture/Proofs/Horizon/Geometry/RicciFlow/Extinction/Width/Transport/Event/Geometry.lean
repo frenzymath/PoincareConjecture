@@ -16,7 +16,6 @@ variable {M N : Type u}
   [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
 
-
 noncomputable def m67PostcomposeDisk [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (f : ContinuousMap M N) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
@@ -56,7 +55,6 @@ noncomputable def m67PostcomposeDisk [T2Space M] [T2Space N]
       (mul_nonneg hL D.lipschitz_nonnegative) hLip
     area_nonnegative := integral_nonneg (fun _ => Real.sqrt_nonneg _) }
 
-
 theorem m67PostcomposeDisk_area_le [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (f : ContinuousMap M N) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
@@ -74,7 +72,6 @@ theorem m67PostcomposeDisk_area_le [T2Space M] [T2Space N]
     ae_restrict_mem (show MeasurableSet loopDiskSet from Metric.isClosed_closedBall.measurableSet)] with z hz hzd
   exact m67_area_density_comp_le g h (hf.mdifferentiable (by simp)) hL hbound (hz hzd)
 
-
 theorem m67_filling_transport_of_lipschitz [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (f : ContinuousMap M N) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
@@ -85,7 +82,6 @@ theorem m67_filling_transport_of_lipschitz [T2Space M] [T2Space N]
     ∃ E : LipschitzSpanningDisk h (post.map gamma), E.area ≤ L ^ 2 * D.area :=
   ⟨m67PostcomposeDisk g h f hf post hL hbound D,
     m67PostcomposeDisk_area_le g h f hf post hL hbound D⟩
-
 
 theorem m67_filling_transport_of_distance_bound [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -99,7 +95,6 @@ theorem m67_filling_transport_of_distance_bound [T2Space M] [T2Space N]
   have hL : 0 ≤ 1 + eta := by linarith
   exact ⟨m67PostcomposeDisk g h f hf post hL hbound D,
     m67PostcomposeDisk_area_le g h f hf post hL hbound D⟩
-
 
 theorem m67_null_transport_of_postcomposition
     (f : ContinuousMap M N) (post : M59LoopPostcomposition f)

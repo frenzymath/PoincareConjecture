@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.DisjointMarks
 
-
-
 set_option autoImplicit false
 open Set Topology unitInterval
 open scoped unitInterval

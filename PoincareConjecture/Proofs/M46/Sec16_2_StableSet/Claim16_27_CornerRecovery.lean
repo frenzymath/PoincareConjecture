@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CornerAction
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecoverySequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem oneCorner_admissible_recovery (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau c : ℝ} (htau : 0 < tau) (hc : c ∈ Icc 0 (Real.sqrt tau))

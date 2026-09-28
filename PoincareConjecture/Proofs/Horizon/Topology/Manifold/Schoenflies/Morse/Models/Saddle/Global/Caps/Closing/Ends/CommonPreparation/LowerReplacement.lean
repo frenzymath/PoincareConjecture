@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.RelativeAlignment
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.AxisReversal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +21,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IP" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
-
 
 theorem exists_buffered_relative_lower_end_replacement_of_surface_germ
     {v : E3} {g f : S2 → E3} {Z : Set Real}
@@ -189,7 +184,6 @@ theorem exists_buffered_relative_lower_end_replacement_of_surface_germ
     (hcompact Na Ka hKa hNafix) (hcompact Nm Km hKm hNmfix) hw
     (fun y hy => (hFa y hy).trans (hFm y hy).symm)
     (fun y hy => by rw [hFa y hy, hQheight]) hFaimage hFmimage
-
 
 theorem exists_relative_lower_end_replacement_of_surface_germ
     {v : E3} {g f : S2 → E3} {Z : Set Real}

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Suspension
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +14,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
-
 
 theorem exists_upper_collar_normalization
     (P : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

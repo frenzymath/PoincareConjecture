@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RelativeT
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CircleIncidence
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexFaceInclusion
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open PreAbstractSimplicialComplex.ModTwoCochains

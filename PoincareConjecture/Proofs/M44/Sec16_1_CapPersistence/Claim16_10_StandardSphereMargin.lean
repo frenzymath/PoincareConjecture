@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereOpe
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereNullhomotopy
 import PoincareConjecture.Proofs.M36.NeckMetricBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +32,6 @@ noncomputable local instance standardSphereTwoJetNorm : NormedAddCommGroup
 noncomputable local instance standardSphereTwoJetSpace : NormedSpace ℝ
     (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 theorem StandardCylinderPatch.sphere_mfderiv {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (z : UnitTwoSphere)
     (v : TangentSpace (𝓡 2) z) :
@@ -65,8 +53,6 @@ theorem StandardCylinderPatch.sphere_mfderiv {length : ℝ} {center : StandardCa
   rw [mfderiv_comp z hN hinc, hd]
   rfl
 
-
-
 theorem StandardCylinderPatch.sphere_immersion {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (z : UnitTwoSphere) :
     Function.Injective (mfderiv (𝓡 2) (𝓡 3) (StandardCylinderPatch.sphereMap N) z) := by
@@ -79,8 +65,6 @@ theorem StandardCylinderPatch.sphere_immersion {length : ℝ} {center : Standard
   rw [StandardCylinderPatch.sphere_mfderiv, StandardCylinderPatch.sphere_mfderiv] at h
   exact congrArg Prod.fst (hinv.injective h)
 
-
-
 theorem StandardCylinderPatch.sphereCoordinateDifferential_center
     {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (z : UnitTwoSphere) (v : E2) :
@@ -92,8 +76,6 @@ theorem StandardCylinderPatch.sphereCoordinateDifferential_center
     (mem_chart_source E2 z),
     M36.sphere_chart_inverse_mfderiv]
   exact StandardCylinderPatch.sphere_mfderiv N z v
-
-
 
 theorem centeredStandardPatchChart_mfderiv_zero
     {length : ℝ} {center : StandardCapSpace}
@@ -115,8 +97,6 @@ theorem centeredStandardPatchChart_mfderiv_zero
   rw [centeredCylinderLift_mfderiv, centeredCylinderLift_zero, map_zero,
     ← sphere_chart_center_zero z, M36.sphere_chart_inverse_mfderiv]
   rfl
-
-
 
 theorem sphereSectionalJetRegion_of_centered_margin
     {length : ℝ} {center : StandardCapSpace}
@@ -153,9 +133,6 @@ theorem sphereSectionalJetRegion_of_centered_margin
   rw [jetCurvature_metricTwoJet D]
   exact (lt_div_iff₀ h.1).mp h.2
 
-
-
-
 theorem continuousOn_euclidean_twoJet {J : Set ℝ} (hJ : UniqueDiffOn ℝ J)
     (F : RicciFlow 3 E J) :
     ContinuousOn (fun p : ℝ × E => metricTwoJet
@@ -172,9 +149,6 @@ theorem continuousOn_euclidean_twoJet {J : Set ℝ} (hJ : UniqueDiffOn ℝ J)
   have h1 := contDiffOn_spatialFDeriv_within h0 hJ isOpen_univ
   have h2 := contDiffOn_spatialFDeriv_within h1 hJ isOpen_univ
   exact h0.continuousOn.prodMk (h1.continuousOn.prodMk h2.continuousOn)
-
-
-
 
 theorem exists_standard_sphere_margin {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {theta : ℝ}

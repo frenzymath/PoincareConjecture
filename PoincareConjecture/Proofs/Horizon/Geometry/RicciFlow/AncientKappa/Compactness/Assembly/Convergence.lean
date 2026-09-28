@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Embeddings
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.TimeWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -34,7 +25,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
 def compactnessTimeWindow (j : ℕ) : Set ℝ := ancientM18TimeWindow (j + 1)
 
 theorem compactnessTimeWindow_interval (j : ℕ) :
@@ -55,8 +45,6 @@ theorem compactnessTimeWindow_covers : ⋃ j, compactnessTimeWindow j = Iio 0 :=
     rw [← ancientM18TimeWindow_covers] at ht
     obtain ⟨j, hj⟩ := mem_iUnion.mp ht
     exact mem_iUnion.mpr ⟨j, ancientM18TimeWindow_increasing j hj⟩
-
-
 
 theorem interiorLimit_pullback_metric_CInfinity_within_Icc
     (F : RicciFlow 3 G.limitCarrier.carrier (Iic 0))
@@ -107,7 +95,6 @@ variable (K : AncientKappaSolution 3 G.limitCarrier.carrier)
   (hκ : K.kappa = κ)
   (hnormalized : (K.flow.connection 0).scalarCurvature G.base = 1)
 
-
 def retainedBasedLimit : BasedKappaSolution κ where
   carrier := G.limitCarrier
   connectedSpace := inferInstance
@@ -115,8 +102,6 @@ def retainedBasedLimit : BasedKappaSolution κ where
   base := G.base
   kappa_eq := hκ
   scalar_normalized := hnormalized
-
-
 
 noncomputable def retainedSpacetimeEmbedding (j : ℕ) (J : Set ℝ) :
     NormalizedKappaSpacetimeEmbedding
@@ -128,8 +113,6 @@ noncomputable def retainedSpacetimeEmbedding (j : ℕ) (J : Set ℝ) :
       have hxy' : (⟨x, hx⟩ : G.exhaustion j) = ⟨y, hy⟩ :=
         (G.embedding_open j).injective hxy
       exact congrArg Subtype.val hxy') (G.embedding_smooth j) J
-
-
 
 noncomputable def retainedInteriorConvergence
     (hK : ∀ t : ℝ, t < 0 → K.flow.metric t = G.limitFlow.metric (t + 1)) :
@@ -170,8 +153,6 @@ noncomputable def retainedInteriorConvergence
     rw [hwindow]
     exact hN k hk a b z hz
 
-
-
 theorem retainedInteriorConvergence_terminalExtension
     (hK : ∀ t : ℝ, t < 0 → K.flow.metric t = G.limitFlow.metric (t + 1))
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -204,7 +185,6 @@ theorem retainedInteriorConvergence_terminalExtension
       (by simpa only [zero_sub, retainedInteriorConvergence, retainedBasedLimit] using hbound)
 
 include hκ hnormalized in
-
 
 theorem exists_interiorConvergence_terminalExtension_of_ancient_limit
     (hK : ∀ t : ℝ, t < 0 → K.flow.metric t = G.limitFlow.metric (t + 1))

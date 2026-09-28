@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Convex.UpperSupport
 import Mathlib.Analysis.Convex.Deriv
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +9,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem squared_distance_defect_concave_of_second_deriv_nonpos
     {F : ℝ → ℝ} {b : ℝ}
@@ -34,9 +19,6 @@ theorem squared_distance_defect_concave_of_second_deriv_nonpos
     ConcaveOn ℝ (Icc 0 b) (fun t => F t - t ^ 2) := by
   exact concaveOn_of_deriv2_nonpos' (convex_Icc 0 b) hF hF' hF''
 
-
-
-
 theorem squared_distance_defect_concave_of_upper_supports
     {F : ℝ → ℝ} {b : ℝ} (hF : ContinuousOn F (Icc 0 b))
     (hsupport : ∀ t ∈ Ioo 0 b, ∀ ε : ℝ, 0 < ε →
@@ -46,8 +28,6 @@ theorem squared_distance_defect_concave_of_upper_supports
   simpa only [one_mul] using
     Poincare.Analysis.concaveOn_sub_quadratic_of_approximate_upper_support
       (C := 1) hF (by simpa only [mul_one] using hsupport)
-
-
 
 theorem hinge_upper_of_squared_distance_upper_supports
     {F u : ℝ → ℝ} {a b q : ℝ} (hb : 0 < b)

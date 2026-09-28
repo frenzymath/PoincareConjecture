@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ClosedSpatialJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem exists_eventually_retained_closed_spatial_bounds
     {T : ℝ} (hT : 0 < T) (hT1 : T ≤ 1)

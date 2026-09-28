@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.SmoothRampArcs
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -28,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
 
 theorem exists_immersed_curve_density_tolerance
     (F : RicciFlow n M (Icc a b))
@@ -109,8 +95,6 @@ theorem exists_immersed_curve_density_tolerance
   · intro x
     simpa only [c, (hactual sigma hsigma htargetImm x).2.2,
       (hactual gamma hgamma himm x).2.2] using hk x
-
-
 
 theorem exists_immersed_curve_subarc_tolerance
     (F : RicciFlow n M (Icc a b))

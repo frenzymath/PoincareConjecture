@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTangenc
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusCircleTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMapCircleGreen
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,9 +21,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
-
 
 theorem m64ObservedWeakMap_local_circle_traces
     (hei : IsClosedEmbedding e) {O : Set LoopPlane} (hO : IsOpen O)
@@ -134,8 +120,6 @@ theorem m64ObservedWeakMap_local_circle_traces
   · simpa only [hdw] using hds
 
 variable {c0 c1 : ℝ → M}
-
-
 
 theorem M64ObservedWeakAnnulus.lower_local_circle_traces
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

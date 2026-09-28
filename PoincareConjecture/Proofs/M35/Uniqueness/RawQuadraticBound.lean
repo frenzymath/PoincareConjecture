@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceExhaustion
 import PoincareConjecture.Proofs.M04.ShiGeometricCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem raw_quadratic_heat_weighted_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -89,8 +77,6 @@ theorem raw_quadratic_heat_weighted_bound
     (fun s hs y _ => by simpa only [one_mul] using! hheat s hs y)
     (by simpa only [M04.shiPhysicalCutoffSupports, one_mul] using hsupport)
   simpa only [hηp t ht, mul_one, C] using hestimate t ht p hp
-
-
 
 theorem raw_quadratic_heat_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

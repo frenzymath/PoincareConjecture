@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundar
 import PoincareConjecture.Proofs.M76.Rigidity.EmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.Periodicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped Topology
@@ -69,8 +61,6 @@ private theorem exists_standard_relative_parameter
   exact ⟨K, q, z, hK, hq, hiq, hqz,
     Filter.mem_of_superset (hV.mem_nhds hxV) hVrange, hqPL⟩
 
-
-
 theorem exists_standard_parameter_avoiding_phase
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d) (x : R) (c : ℝ)
@@ -108,8 +98,6 @@ theorem exists_standard_parameter_avoiding_phase
     hqPL.restrict_finite N hN hNK, ?_⟩
   intro u hu
   exact hNO (show (⟨u, hNK hu⟩ : K.space) ∈ Subtype.val ⁻¹' N.space from hu)
-
-
 
 theorem exists_finite_standard_slab_parameter_cover
     {V β : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]

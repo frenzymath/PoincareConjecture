@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.IntrinsicHullAffineExclusion
 import Mathlib.Data.List.Nodup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace List
-
-
-
 
 theorem exists_split_last_mem_set {α : Type*} (l : List α) (s : Set α)
     (h : ∃ v ∈ l, v ∈ s) :
@@ -42,10 +30,6 @@ theorem exists_split_last_mem_set {α : Type*} (l : List α) (s : Set α)
 end List
 
 namespace Geometry
-
-
-
-
 
 theorem affine_span_eq_top_or_disjoint_of_ordered_vertex_avoidance
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

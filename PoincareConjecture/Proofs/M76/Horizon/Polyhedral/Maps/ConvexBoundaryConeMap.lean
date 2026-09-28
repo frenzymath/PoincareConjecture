@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalPlaneExtension
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem AffineOnFaces.exists_convex_boundary_cone
     {K : SimplicialComplex ℝ E} {b : E → F} (hb : K.AffineOnFaces b)

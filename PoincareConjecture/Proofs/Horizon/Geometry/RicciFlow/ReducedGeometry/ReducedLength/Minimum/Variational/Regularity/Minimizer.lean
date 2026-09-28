@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity.Velocity
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

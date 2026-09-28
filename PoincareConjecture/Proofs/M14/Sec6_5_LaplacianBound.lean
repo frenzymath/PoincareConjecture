@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedIndexIntegral
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularHessian
 import PoincareConjecture.Proofs.M14.Sec6_5_HorizontalHessianTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem exponential_weightedHarnack_intervalIntegrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s) :
@@ -37,8 +27,6 @@ theorem exponential_weightedHarnack_intervalIntegrable
   intro r hr
   apply E.square_euler Z s hs hpos r
   simpa only [M14SqrtParameterInterval, Real.sqrt_zero] using Ioo_subset_Icc_self hr
-
-
 
 theorem reducedLengthLaplacian_joint_bound
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Extension
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +43,6 @@ private theorem exists_open_circle_patch
     obtain ⟨y, ⟨hye, hyr⟩, hey⟩ := hxV
     exact ⟨y, ball_subset_closedBall hyr,
       congrArg Subtype.val ((heq hye).symm.trans hey)⟩
-
-
 
 theorem exists_disk_matching_fixing_common_arc_neighborhood
     (A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

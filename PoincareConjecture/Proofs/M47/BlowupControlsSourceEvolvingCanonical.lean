@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingNearby
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingBuffer
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_source_standard_evolving_neck_canonical_neighborhood
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

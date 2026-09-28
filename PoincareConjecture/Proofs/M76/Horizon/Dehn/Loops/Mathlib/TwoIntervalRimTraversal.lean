@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.SquareTwoInterval
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.MarkedIntervalHomotopy
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_marked_two_interval_rim_traversal
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawCoefficients
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.FiniteChartBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ variable {epsilon C A : ℝ}
     (fun k => H.tubeCriticalMetric T A1 (phi k))
     (fun k => H.tubeCriticalBase T A1 hA1 (phi k)))
   {ι : Type*} [Finite ι]
-
-
-
 
 theorem exists_eventual_regularRawStage_finite_chart_bounds :
     letI := G.limitCarrier.topologicalSpace
@@ -76,10 +63,6 @@ theorem exists_eventual_regularRawStage_finite_chart_bounds :
   · intro r hr
     rw [(heq.iteratedFDeriv ℝ r).eq_of_nhds]
     exact (hk i y hy).2 r hr
-
-
-
-
 
 theorem eventually_regularRawStage_finite_chart_jet_error :
     letI := G.limitCarrier.topologicalSpace

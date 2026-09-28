@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeCoordinateAction
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.WeakSmoothness
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxSize 2048
@@ -25,9 +17,6 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem gauge_cylinder_minimum_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (j : G.gaugeCover.index)

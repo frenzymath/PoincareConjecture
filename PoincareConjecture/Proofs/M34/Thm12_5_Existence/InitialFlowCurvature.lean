@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialLimitJetConvergenc
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ApproximationRealization
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -24,8 +15,6 @@ open SpacetimeBounds
 
 variable {g0 : StandardInitialMetric} {A : CompactCapApproximation g0}
   (G : InteriorCoefficientLimit A)
-
-
 
 theorem initialFlow_curvature_le (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :
@@ -59,8 +48,6 @@ theorem initialFlow_curvature_le (P : RicciFlowCurvatureTheory.{0})
   apply le_of_tendsto hnorm
   filter_upwards [hsource] with k hk
   exact (hdata k hk).2
-
-
 
 theorem initialFlow_abs_curvature_le (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :

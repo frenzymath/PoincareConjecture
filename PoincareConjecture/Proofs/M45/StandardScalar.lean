@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Proofs.M44.StandardScalar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

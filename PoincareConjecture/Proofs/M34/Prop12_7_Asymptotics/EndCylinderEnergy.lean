@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderCompatibili
 import PoincareConjecture.Proofs.M34.Standard.EqualMetricDifferenceEnergy
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.CompatibleEndNeighbors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -29,9 +19,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g
   (qS : FS 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
   {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (p : endReferenceRegion e)
 
-
-
-
 noncomputable def endCylinderDifferenceEnergy (j : ℕ) : ℝ → ℝ :=
   letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
   letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.isManifold_singleton
@@ -40,8 +27,6 @@ noncomputable def endCylinderDifferenceEnergy (j : ℕ) : ℝ → ℝ :=
     qH qA qS (endEnergyCutoff e)
     (endPullbackFlow e F j (by have := Nat.cast_nonneg (α := ℝ) j; linarith))
     (endCylinderFlow e) p
-
-
 
 noncomputable def endCylinderDifferenceSupportIntegral (j : ℕ) (t : ℝ) : ℝ :=
   letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -54,13 +39,9 @@ noncomputable def endCylinderDifferenceSupportIntegral (j : ℕ) (t : ℝ) : ℝ
     (endPullbackFlow e F j (by have := Nat.cast_nonneg (α := ℝ) j; linarith))
     (endCylinderFlow e) p t x
 
-
-
 theorem endCylinderDifferenceEnergy_nonneg (j : ℕ) (t : ℝ) :
     0 ≤ endCylinderDifferenceEnergy e qH qA qS F p j t :=
   canonicalDifferenceEnergy_nonneg _ _ qH qA qS _ _ _ _ t
-
-
 
 theorem endCylinderDifferenceEnergy_continuousOn {K : Set ℝ} (hK : IsCompact K)
     (hKJ : K ⊆ J ∩ Ico 0 1) (j : ℕ) :
@@ -70,8 +51,6 @@ theorem endCylinderDifferenceEnergy_continuousOn {K : Set ℝ} (hK : IsCompact K
     (energyCutoffs_contDiff e).1.continuous (energyCutoffs_hasCompactSupport e).1
     (endEnergyCutoff_tsupport_subset_region e) _ _ _ hK hKJ
 
-
-
 theorem endCylinderDifferenceEnergy_differentiableAt {t : ℝ}
     (ht : t ∈ interior (J ∩ Ico 0 1)) (j : ℕ) :
     DifferentiableAt ℝ (endCylinderDifferenceEnergy e qH qA qS F p j) t :=
@@ -79,8 +58,6 @@ theorem endCylinderDifferenceEnergy_differentiableAt {t : ℝ}
     (endReferenceRegion e) (endReferenceRegion_isOpen e) qH qA qS
     (energyCutoffs_contDiff e).1.continuous (energyCutoffs_hasCompactSupport e).1
     (endEnergyCutoff_tsupport_subset_region e) _ _ _ ht
-
-
 
 theorem endCylinderDifferenceEnergy_zero (hinit : F.metric 0 = g) (j : ℕ) :
     endCylinderDifferenceEnergy e qH qA qS F p j 0 = 0 :=
@@ -90,8 +67,6 @@ theorem endCylinderDifferenceEnergy_zero (hinit : F.metric 0 = g) (j : ℕ) :
       (by have := Nat.cast_nonneg (α := ℝ) j; linarith))
 
 omit F p in
-
-
 
 theorem exists_endCylinderDifferenceSupportIntegral_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)

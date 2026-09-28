@@ -2,15 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ExteriorProj
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPrimalSectors
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.OriginalTriangleCopies
-
-
 
 theorem connected_subset_unique_closed_piece
     {X ι : Type*} [TopologicalSpace X] [Finite ι]
@@ -147,8 +143,6 @@ theorem complementary_gap_projection_avoids_marks
     · exact mem_iUnion.mpr ⟨s, mem_iUnion.mpr ⟨0, p.1, hbridge, hp0.symm⟩⟩
     · exact mem_iUnion.mpr ⟨s, mem_iUnion.mpr ⟨1, p.1, hbridge, hp1.symm⟩⟩
   exact Set.disjoint_left.mp havoid hp hcopy
-
-
 
 theorem complementary_connected_gap_unique_original_rim
     (hP : P ≤ K.vertexAbstractComplex.edgeGraph)

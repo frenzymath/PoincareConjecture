@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedEmptyComparison
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedComparisonGluing
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,7 +20,6 @@ variable {J : Type u} [PartialOrder J] [Fintype J]
   (p : C(E, (finiteOrderComplex J).space)) (hp : IsCoveringMap p)
 
 include hp in
-
 
 theorem supportedSingularComparison_quasiIso (s : Finset J) :
     QuasiIso (SSet.chainComplexMap (supportedSingularComparison p s)
@@ -60,8 +47,6 @@ theorem supportedSingularComparison_quasiIso (s : Finset J) :
       (fun _ hj => (Finset.mem_filter.mp hj).2))
     (ih _ hl)
 
-
-
 theorem supportedSingularLift_univ :
     supportedSingularLift p (orderComplexSingular J) (Finset.univ : Finset J) = ⊤ := by
   ext n z
@@ -70,9 +55,6 @@ theorem supportedSingularLift_univ :
 
 omit hp in
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem orderComplexSingularLift_quasiIso (hp : IsCoveringMap p) :
     QuasiIso (SSet.chainComplexMap

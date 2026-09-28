@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverTotalEnergy
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,12 +20,6 @@ private theorem periodic_integral_Ioo {f : ℝ → ℝ} (hf : Function.Periodic 
   simpa only [intervalIntegral.integral_of_le (show a ≤ a + 1 by linarith),
     intervalIntegral.integral_of_le (show b ≤ b + 1 by linarith),
     integral_Ioc_eq_integral_Ioo] using h
-
-
-
-
-
-
 
 theorem scalar_periodic_band_transfer {Q : Cover → ℝ}
     (hQc : ContinuousOn Q scalarCoverStrip)
@@ -83,12 +64,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarPotential_unitCover_energy (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

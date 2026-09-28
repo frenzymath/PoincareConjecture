@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +19,6 @@ private lemma curvatureTensor_diagonal_swap (D : LeviCivitaData g) (x : S)
     D.curvatureTensor x v w v w = D.curvatureTensor x w v w v := by
   rw [D.curvatureTensor_swap_first x v w v w,
     D.curvatureTensor_swap_last x w v v w, neg_neg]
-
 
 lemma scalarCurvature_eq_sum_frame (D : LeviCivitaData g) (x : S)
     (b : letI : Bundle.RiemannianBundle (TangentSpace (𝓡 2) : S → Type _) :=
@@ -58,7 +47,6 @@ lemma scalarCurvature_eq_sum_frame (D : LeviCivitaData g) (x : S)
       exact bilinear_sum_orthonormalBasis_eq
         (D.curvatureTensor_bilinear_first_third x (b i) (b i)) c b
 
-
 theorem scalarCurvature_eq_twice_curvatureTensor (D : LeviCivitaData g) (x : S)
     (b : letI : Bundle.RiemannianBundle (TangentSpace (𝓡 2) : S → Type _) :=
       ⟨g.toRiemannianMetric⟩
@@ -71,7 +59,6 @@ theorem scalarCurvature_eq_twice_curvatureTensor (D : LeviCivitaData g) (x : S)
   simp only [Fin.sum_univ_two, hzero, zero_add, add_zero]
   rw [curvatureTensor_diagonal_swap D x (b 1) (b 0)]
   ring
-
 
 theorem scalarCurvature_eq_twice_sectionalCurvature (D : LeviCivitaData g) (x : S)
     (b : letI : Bundle.RiemannianBundle (TangentSpace (𝓡 2) : S → Type _) :=
@@ -104,7 +91,6 @@ private lemma curvatureTensor_frame_expansion (D : LeviCivitaData g) (x : S)
     D.curvatureTensor_swap_last x v w w v,
     curvatureTensor_diagonal_swap D x w v]
   ring
-
 
 theorem curvatureTensor_eq_half_scalarCurvature (D : LeviCivitaData g) (x : S)
     (u v w z : TangentSpace (𝓡 2) x) :
@@ -141,7 +127,6 @@ theorem curvatureTensor_eq_half_scalarCurvature (D : LeviCivitaData g) (x : S)
     _ = _ := by
       rw [hR, hinner u w, hinner v z, hinner u z, hinner v w]
       ring
-
 
 theorem sectionalCurvature_eq_half_scalarCurvature (D : LeviCivitaData g) (x : S)
     (u v : TangentSpace (𝓡 2) x)

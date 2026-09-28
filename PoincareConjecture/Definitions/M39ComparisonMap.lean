@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import PoincareConjecture.Definitions.M38LocalTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure RepairedComparisonMapInput
     {g₀ : StandardInitialMetric}
@@ -48,7 +38,6 @@ structure RepairedComparisonMapInput
       (parent.inclusion ⁻¹' ((D.flow.event T hT).limit_identify.inverse ''
         ((D.flow.event T hT).necks i).neck.central_sphere))
   retained : Set parent.carrier.carrier
-
 
   retained_eq : retained =
     {x | parent.inclusion x ∈ interior (D.flow.event T hT).retained_pre ∧

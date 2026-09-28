@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.LocalEmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ChartwiseRestriction
 import Mathlib.RingTheory.Finiteness.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,13 +16,9 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "R0" => latticeHandleDomain (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 
-
-
 def hamiltonZeroAmbientMapInDomain (g : C(X0, X0)) : C(R0, R0) :=
   ⟨fun x => ⟨g x, hamiltonZeroDomain_eq_univ.symm.subset (mem_univ _)⟩,
     (g.continuous.comp continuous_subtype_val).subtype_mk _⟩
-
-
 
 theorem hamiltonZeroAmbientMapInDomain_original (phi : C(H0, H0)) :
     hamiltonZeroAmbientMapInDomain (hamiltonZeroAmbientMap phi) =
@@ -41,11 +27,6 @@ theorem hamiltonZeroAmbientMapInDomain_original (phi : C(H0, H0)) :
   intro x
   apply Subtype.ext
   rfl
-
-
-
-
-
 
 theorem chartwisePL_hamiltonZero_of_collar
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

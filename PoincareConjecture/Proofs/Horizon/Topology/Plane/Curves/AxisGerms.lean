@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Coordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -17,15 +7,11 @@ open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
 
-
 def axisCoordinate (horizontal : Bool) (z : ℝ × ℝ) : ℝ :=
   if horizontal then z.1 else z.2
 
-
 def signedAxis (horizontal : Bool) (sign u : ℝ) : ℝ × ℝ :=
   if horizontal then (sign * u, 0) else (0, sign * u)
-
-
 
 theorem exists_smooth_increasing_inverse
     {g : ℝ → ℝ} (hg : ∀ᶠ t in 𝓝 0, ContDiffAt ℝ ∞ g t)
@@ -79,8 +65,6 @@ theorem exists_smooth_increasing_inverse
   · intro t ht
     exact (hWg t ht).contDiffWithinAt
 
-
-
 theorem exists_axis_of_regular_germ
     {f : ℝ → ℝ × ℝ} (hf : DifferentiableAt ℝ f 0) (hfzero : f 0 = 0)
     (hreg : deriv f 0 ≠ 0)
@@ -116,9 +100,6 @@ theorem exists_axis_of_regular_germ
       ext <;> simp [signedAxis, axisCoordinate, ht.resolve_right hc]
     · simp only [axisCoordinate, ite_true] at hc
       ext <;> simp [signedAxis, axisCoordinate, ht.resolve_left hc]
-
-
-
 
 theorem exists_smooth_signed_axis_parametrization
     {f : ℝ → ℝ × ℝ} {U : Set ℝ} (hU : IsOpen U) (hzero : (0 : ℝ) ∈ U)

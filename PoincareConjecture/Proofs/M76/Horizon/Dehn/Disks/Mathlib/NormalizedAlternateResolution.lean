@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MiddleRimInterva
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.StripSourceEndPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.AlternateResolutionSources
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -30,9 +21,6 @@ local notation "i1" => (1 : unitInterval)
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
-
-
-
 
 theorem exists_normalized_alternate_resolution_disk_map_with_sources
     {EA EM EC F X ι : Type*}
@@ -415,9 +403,6 @@ theorem exists_normalized_alternate_resolution_disk_map_with_sources
       apply Path.Homotopic.Quotient.eq.mp
       simp only [UAL, Path.trans_symm, Path.symm_symm,
         Path.Homotopic.Quotient.mk_trans, Path.Homotopic.Quotient.trans_assoc]
-
-
-
 
 theorem exists_normalized_alternate_resolution_disk_map
     {EA EM EC F X ι : Type*}

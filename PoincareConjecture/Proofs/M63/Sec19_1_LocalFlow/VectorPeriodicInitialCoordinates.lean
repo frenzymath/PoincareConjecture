@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicJets
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicInitialCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_vectorPeriodic_initialCoordinates {L : ℝ} [Fact (0 < L)]
     {ι : Type*} [Fintype ι] (f : C(AddCircle L, ι → ℝ))

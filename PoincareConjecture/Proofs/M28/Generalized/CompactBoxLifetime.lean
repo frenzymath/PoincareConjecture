@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import Mathlib.Topology.MetricSpace.Pseudo.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem GeneralizedRicciFlowData.exists_common_box_lifetime
     (F : GeneralizedRicciFlowData.{u}) (t : ℝ)

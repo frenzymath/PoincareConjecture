@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.TriangleRotation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AbstractSimplicialComplex

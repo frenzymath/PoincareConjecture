@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareFamilyAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {P : Type} [NormedAddCommGroup P] [NormedSpace ℝ P] [FiniteDimensional ℝ P]
-
-
-
 
 theorem squareFamilyAction_interval_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {a b l r : ℝ} (hab : a < b)

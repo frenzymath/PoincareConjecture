@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryFaceTests
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactWeakChain
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +10,6 @@ open scoped Topology ENNReal ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64NaturalGrowth_compact_coefficient_face_test
     {n : ℕ} (dirichlet : Prop) {O S : Set LoopPlane} (hO : IsOpen O)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCone
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ include hlin in
 omit [DecidableEq E] in
 private theorem zero_not_mem_base {s : Finset E} (hs : s ∈ K.faces) : (0 : E) ∉ s :=
   fun h => (hlin s hs).zero_notMem_convexHull (subset_convexHull ℝ _ h)
-
 
 noncomputable def coneFaceEquiv {n : ℕ} (hn : 0 < n) :
     K.FaceOfCard (n + 1) ⊕ K.FaceOfCard n ≃ (K.coneAtZero hlin hinj).FaceOfCard (n + 1) := by
@@ -100,7 +90,6 @@ theorem card_cone_vertices (hK : K.faces.Finite) :
   have hzero : (0 : E) ∉ K.vertices := fun h =>
     zero_not_mem_base K hlin h (Finset.mem_singleton_self 0)
   exact Set.ncard_insert_of_notMem hzero (K.finite_vertices_of_finite_faces hK)
-
 
 theorem surfaceEulerCount_cone_eq_one (hK : K.faces.Finite)
     (hdim : ∀ s ∈ K.faces, s.card ≤ 2) :

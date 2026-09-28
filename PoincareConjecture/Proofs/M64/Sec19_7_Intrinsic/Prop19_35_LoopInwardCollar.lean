@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopNormalNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -72,9 +60,6 @@ private theorem occupied_strip_of_germ
       exact hclosed q hq hp)
   exact fun t ht s hs => hsub ⟨(t, s), ⟨ht, hs⟩, rfl⟩
 
-
-
-
 theorem m64Intrinsic_normal_strip_occupied_side
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)
     (hdisj : Disjoint U V) (hfrontUV : frontier U = frontier V)
@@ -94,10 +79,6 @@ theorem m64Intrinsic_normal_strip_occupied_side
       hsource hfront (by simpa only [one_mul] using h)⟩
   · exact ⟨-1, Or.inr rfl, occupied_strip_of_germ hU H hab hdelta (Or.inr rfl)
       hsource hfront (by simpa only [neg_one_mul, neg_nonneg] using h)⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_inward_normal_collar
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T a b : ℝ}

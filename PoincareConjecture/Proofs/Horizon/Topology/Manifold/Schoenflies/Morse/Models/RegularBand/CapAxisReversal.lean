@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.AxisReversal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapCollar
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -34,8 +32,6 @@ theorem image_neg_boundedCylinderNorthernCap (v : E3) :
   · intro y hy
     refine ⟨-y, ?_, neg_neg y⟩
     simpa only [neg_neg] using neg_mem_boundedCylinderNorthernCap hy
-
-
 
 theorem image_liftPlaneDiffeomorph_axis_neg {v : E3} (hv : ‖v‖ = 1)
     (c s : Real) (hs : s ≠ 0) (A : (Hemisphere.Plane v) ≃ₘ[Real] (Hemisphere.Plane v)) :

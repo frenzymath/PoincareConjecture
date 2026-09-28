@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +9,6 @@ open scoped Topology SchwartzMap InnerProductSpace ContDiff intervalIntegral
 namespace PoincareConjecture
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem m65C1_disk_trace_bound (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f) :
     (∫ t in (-Real.pi)..Real.pi, f (Proofs.M58.angularPoint t) ^ 2) ≤

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalComponentSurfaceCounts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrimalDualTrees
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.vertices]
-
-
-
-
 
 theorem edgeComponentComplex_primal_dual_trees
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)

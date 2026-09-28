@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.CocoreFamilyCount
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

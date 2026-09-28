@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.Reflection
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.TerminalData
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,17 +10,6 @@ open _root_.PoincareConjecture
 
 namespace M38Schoenflies
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function
@@ -35,9 +18,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel.OrientationReview
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 def reflectedPlanarFamily
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) :

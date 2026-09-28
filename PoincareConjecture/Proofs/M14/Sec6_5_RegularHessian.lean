@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_HessianIndexComparison
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularSpatialDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
 
 theorem jointImage_finiteValueDomain (E : M14ExponentialFamily G T x) {q : G.Point}
     (hq : q ∈ range (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2)) :
@@ -52,9 +40,6 @@ private theorem hessian_pair_parameter_congr (γ : ℝ → G.Point)
       M14ReducedLengthHessianPairing G ⟨γ s, hs⟩ f (Y s) (Y s) := by
   subst s
   rfl
-
-
-
 
 theorem reducedLengthHessian_joint_le_index
     (hCoordinates : M12MetricPredecessors.{0} n)

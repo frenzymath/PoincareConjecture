@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTriangleC
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusLeafCutDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualFaceGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +13,6 @@ open Classical
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_complementary_triangle_owner
     {V : Type*} [Fintype V] {A : AbstractSimplicialComplex V} (T : SimpleGraph V)
@@ -55,9 +43,6 @@ theorem complementary_owner_edge_subset
         (complementaryTriangleEdgeEquiv A.toPreAbstractSimplicialComplex T
           hcofaces s).val.val ⊆ q.val :=
   exists_complementary_triangle_owner T hcofaces s
-
-
-
 
 theorem exists_complementary_triangle_owner_pair
     {V : Type*} [Fintype V] {A : AbstractSimplicialComplex V} (T : SimpleGraph V)
@@ -131,10 +116,6 @@ theorem complementary_edge_vertex_not_selected
     rw [congrArg Subtype.val hsub]
     exact x.property
 
-
-
-
-
 theorem complementary_edge_owner_selected_unselected
     {K : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype K.vertices]
     [Fintype K.barycentricSubdivision.faces]
@@ -177,9 +158,6 @@ theorem complementary_edge_owner_selected_unselected
   have hsS : r (Sum.inr s) ∉ S :=
     complementary_edge_vertex_not_selected P D hD r hS s hs
   exact ⟨q, hq, hsub, hqS, hsS⟩
-
-
-
 
 theorem copied_owner_interval_subset
     (K : SimplicialComplex ℝ E)
@@ -265,8 +243,6 @@ theorem complementary_edge_owner_copied_data
     copied_owner_interval_subset K label qK e he,
     copied_owner_interval_zero K label qK e he,
     copied_owner_interval_one K label qK e he⟩
-
-
 
 theorem complementary_edge_owner_copied_pair_data
     {K : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype K.vertices]

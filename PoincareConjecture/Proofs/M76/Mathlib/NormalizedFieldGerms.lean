@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NormalizedFieldExtension
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap
@@ -18,9 +9,6 @@ open scoped Topology
 variable {X E F : Type*} [TopologicalSpace X] [NormalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem ContinuousOn.exists_frame_extension_eventuallyEq
     {f : X → E →L[ℝ] F} {S V : Set X} (hf : ContinuousOn f V)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MarkedFinitePLBallCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,10 +11,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_pointed_height_with_rim_intervals_and_signs {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) (q : b) :
@@ -160,9 +147,6 @@ theorem IsFinitePLBallPair.exists_pointed_height_with_rim_intervals_and_signs {d
         fun hx => ⟨hd.1 hx.1, (hboundary x (hd.1 hx.1)).mpr hx.1, hx.2⟩⟩
     rwa [hsource, hrim] at h
 
-
-
-
 theorem IsFinitePLBallPair.exists_pointed_height_with_rim_intervals {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) (q : b) :
     ∃ r : E → ℝ, FinitePiecewiseAffineOn r d ∧
@@ -178,9 +162,6 @@ theorem IsFinitePLBallPair.exists_pointed_height_with_rim_intervals {d b : Set E
     hd.exists_pointed_height_with_rim_intervals_and_signs q
   exact ⟨r, hr, hmin, hmax, hrest⟩
 
-
-
-
 theorem IsFinitePLBallPair.exists_pointed_height_with_rim_sublevels {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) (q : b) :
     ∃ r : E → ℝ, FinitePiecewiseAffineOn r d ∧
@@ -192,11 +173,6 @@ theorem IsFinitePLBallPair.exists_pointed_height_with_rim_sublevels {d b : Set E
         IsFinitePLBallPair ℝ (b ∩ {x | r x ≤ t}) (b ∩ {x | r x = t}) := by
   obtain ⟨r, hr, hmin, hmax, hlevels, hrsub, _⟩ := hd.exists_pointed_height_with_rim_intervals q
   exact ⟨r, hr, hmin, hmax, hlevels, hrsub⟩
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_pointed_height {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) (q : b) :

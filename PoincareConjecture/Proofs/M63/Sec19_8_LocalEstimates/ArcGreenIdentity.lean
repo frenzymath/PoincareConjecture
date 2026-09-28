@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,9 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
-
 
 theorem m63ArcSecond_green_identity (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) (phi h : ℝ → ℝ)
@@ -66,9 +54,6 @@ theorem m63ArcSecond_green_identity (hc : M62ShrinkingCurve F c)
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ => hW x)
     ((((hphi.continuous.mul (hsecond hh)).sub
       (hh.continuous.mul (hsecond hphi))).mul hv.continuous).intervalIntegrable alpha beta)
-
-
-
 
 theorem m63ArcSecond_integral_transfer (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) (phi h : ℝ → ℝ)

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAv
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
 
 theorem averagingKernel_fderiv (r : ℝ) (z v : LoopPlane) :
     fderiv ℝ (averagingKernel r) z v =
@@ -37,8 +25,6 @@ theorem averagingKernel_fderiv (r : ℝ) (z v : LoopPlane) :
     ContinuousLinearMap.id_apply, map_smul, smul_eq_mul]
   ring
 
-
-
 theorem averagingKernel_radius_hasDerivAt {r : ℝ} (hr : r ≠ 0) (z : LoopPlane) :
     HasDerivAt (fun s => averagingKernel s z)
       (-2 * r⁻¹ * averagingKernel r z - r⁻¹ * fderiv ℝ (averagingKernel r) z z) r := by
@@ -54,10 +40,6 @@ theorem averagingKernel_radius_hasDerivAt {r : ℝ} (hr : r ≠ 0) (z : LoopPlan
   simp only [averagingKernel_fderiv, averagingKernel, map_smul, smul_eq_mul,
     Nat.cast_ofNat, Nat.add_one_sub_one, pow_one, Function.comp_apply, Pi.pow_apply]
   ring
-
-
-
-
 
 theorem averagingKernel_radius_weak_test {r : ℝ} (hr : r ≠ 0) (x z : LoopPlane) :
     HasDerivAt (fun s => averagingKernel s (x - z))

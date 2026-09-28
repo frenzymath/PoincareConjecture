@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiniteCover
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped BigOperators
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_fixed_member_integral_unbounded_all_scales
     {X : ℕ → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*} [Fintype ι]
@@ -44,8 +35,6 @@ theorem exists_fixed_member_integral_unbounded_all_scales
     (hhn j) (hUi j) (hVi j K)
   exact (not_le_of_gt hj) (hcover.trans (add_le_add (houtside K j)
     (Finset.sum_le_sum (fun i _ => hmono i))))
-
-
 
 theorem exists_subseq_fixed_member_integral_tendsto_atTop_at_scales
     {X : ℕ → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*} [Fintype ι]

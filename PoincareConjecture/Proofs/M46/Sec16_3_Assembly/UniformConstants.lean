@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 def restrictUniformConstant {n : ℕ} {taubar l0 V : ℝ}
     (U : M15GeneralizedUniformData.{u} n taubar l0 V)
@@ -34,15 +24,12 @@ def restrictUniformConstant {n : ℕ} {taubar l0 V : ℝ}
       (mul_le_mul_of_nonneg_right hkU (pow_nonneg B.radius_pos.le n))).trans
         (U.estimate X time I G T x E r J C B Q)
 
-
-
 noncomputable def canonicalUniformData {taubar l0 V : ℝ}
     (U : M15GeneralizedUniformData.{u} 3 taubar l0 V)
     (kCan : ℝ) (hkCan : 0 < kCan) :
     M15GeneralizedUniformData.{u} 3 taubar l0 V :=
   restrictUniformConstant U (min U.kappa (8 * kCan))
     (lt_min U.kappa_pos (mul_pos (by norm_num) hkCan)) (min_le_left _ _)
-
 
 theorem configurationKappa_le_canonical {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {taubar l0 V : ℝ}

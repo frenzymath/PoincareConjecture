@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidea
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -28,7 +18,6 @@ section Differential
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 lemma isInvertible_mfderiv_of_positive_pullback
     {M : Type*} [TopologicalSpace M]
@@ -80,8 +69,6 @@ private def ofUniformlyPositiveCoefficients
     convert! hB.contDiffAt.contMDiffAt using 1
     ext y v w
     simp [hom_trivializationAt_apply, ContinuousLinearMap.inCoordinates, TangentSpace]
-
-
 
 lemma exists_extension_on_ball
     {r R a b : ℝ} (hr : 0 < r) (hrR : r < R)

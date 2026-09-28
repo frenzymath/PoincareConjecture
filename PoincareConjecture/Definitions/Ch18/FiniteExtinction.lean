@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.Ch17.GlobalSurgery
 import PoincareConjecture.Definitions.Ch01.Topology
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure FlowComponentPath (F : SurgeryFlowData.{u}) (T : ℝ) where
   terminal_mem : T ∈ F.time_domain
@@ -41,9 +30,6 @@ def FlowComponentPath.inclusion {F : SurgeryFlowData.{u}} {T : ℝ}
     (P.path.slice s).carrier.carrier → (F.slice s.1).carrier :=
   fun x => cast (congrArg GeneralizedSliceCarrier.carrier (P.ambient_eq s))
     ((P.path.slice s).inclusion x)
-
-
-
 
 structure SurgeryFlowAncestry (F : SurgeryFlowData.{u}) where
   initial_family : FreeTwoSphereFamily (M := (F.slice 0).carrier)
@@ -77,17 +63,14 @@ structure SurgeryFlowAncestry (F : SurgeryFlowData.{u}) where
           ⟨0, ⟨le_rfl, F.time_domain_nonnegative hT⟩⟩ ≤
         classWidth (F.metric 0) initial_family
 
-
 structure FiniteExtinctionConclusion (F : SurgeryFlowData.{u}) where
   extinction_time : ℝ
   extinction_mem : extinction_time ∈ F.time_domain
   extinct : IsEmpty (F.slice extinction_time).carrier
 
-
   extinction_surgery_mem : extinction_time ∈ F.surgery_times
   permanent_empty : ∀ t : ℝ, ∀ _ht : t ∈ F.time_domain,
     extinction_time ≤ t → IsEmpty (F.slice t).carrier
-
 
 def FiniteExtinctionConclusion.terminal_vanishing_event
     {F : SurgeryFlowData.{u}} (E : FiniteExtinctionConclusion F) :

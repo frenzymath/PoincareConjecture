@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.SubsetChart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularDistance
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ open Set Filter Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem ball_subset_image_closedBall_of_normal_chart
     {n : ℕ} {M : Type*} [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -53,9 +40,6 @@ theorem ball_subset_image_closedBall_of_normal_chart
 end PoincareConjecture.RiemannianMetric
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem cone_ball_subset_range_of_annulus_ball_coverage
     {X A : Type*} [MetricSpace X] [MetricSpace A] {p : X}
@@ -86,10 +70,6 @@ theorem cone_ball_subset_range_of_annulus_ball_coverage
 end Poincare.AncientVolume.ScalarRatio
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
-
 
 theorem cone_ball_subset_range_of_normal_chart_limit
     {n : ℕ} {M ι : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -175,9 +155,6 @@ theorem cone_ball_subset_range_of_normal_chart_limit
     apply tendsto_nhds_unique hradiallim
     simpa only [g₀.toMetricSpace_dist, hcenter, ← hscale] using hcenterlim
   exact cone_ball_subset_range_of_annulus_ball_coverage hcomparison e o hradius hcovered
-
-
-
 
 theorem exists_open_cone_chart_of_normal_chart_limit
     {n : ℕ} {M ι : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

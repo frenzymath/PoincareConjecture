@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Lipschitz
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -74,8 +73,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem locally_lipschitz_coordinates_comp
     {f : M → ℝ} {F : ℝ → ℝ} (hF : LocallyLipschitz F)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPush
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TrianglePersistence
 import Mathlib.Order.Filter.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E Z : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace Z] {n : ℕ} {p : Z → Polygon E (n + 2)} {z0 : Z}
-
-
 
 theorem IsSimplePolygonalArc.eventually_isAdmissibleArcVertex
     (hp : IsSimplePolygonalArc (p z0)) (k : Fin (n + 2))

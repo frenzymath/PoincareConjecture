@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureAction
 import PoincareConjecture.Proofs.M08.PathCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,8 +23,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include hCoordinates
 
-
-
 theorem ordinaryCapture_lift_action {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hx : x ∈ range e.toSpacetime) (hy : y ∈ range e.toSpacetime)
     (htx : G.spacetime.timeFunction x = T - τ₁)
@@ -45,8 +34,6 @@ theorem ordinaryCapture_lift_action {τ₁ τ₂ : ℝ} {x y : G.Point}
   obtain ⟨p, hc, hp⟩ := ordinaryCapture_exists_mapped_lift D hx hy htx hty q hq₁ hq₂
   exact ⟨p, (M08.backwardLLength_congr F T q.ordered.le hp).symm.trans
     (ordinaryCapture_action_transport D hCoordinates p hc)⟩
-
-
 
 theorem ordinaryCapture_actionSet_transport {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hmax : τ₂ ≤ τmax) (hx : x ∈ range e.toSpacetime)
@@ -68,8 +55,6 @@ theorem ordinaryCapture_actionSet_transport {τ₁ τ₂ : ℝ} {x y : G.Point}
     obtain ⟨p, hp⟩ := ordinaryCapture_lift_action D hCoordinates hx hy htx hty q hq₁ hq₂
     exact ⟨p, hp.symm.trans ha.symm⟩
 
-
-
 theorem ordinaryCapture_reducedLength_transport {τ : ℝ} {x y : G.Point}
     (hτ : 0 < τ) (hmax : τ ≤ τmax)
     (htx : G.spacetime.timeFunction x = T)
@@ -81,9 +66,6 @@ theorem ordinaryCapture_reducedLength_transport {τ : ℝ} {x y : G.Point}
   unfold M14ReducedLengthValue M14ActionValue
   rw [ordinaryCapture_actionSet_transport D hCoordinates hmax hx hy htx' hty]
   simp only [reducedLength, dif_pos hτ]
-
-
-
 
 theorem ordinaryCapture_minimizing_transport {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hmax : τ₂ ≤ τmax) (hx : x ∈ range e.toSpacetime)

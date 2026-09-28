@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   {S P : Set 𝕜} {q : 𝕜 × 𝕜 → E} {m k : ℕ∞ω}
-
-
 
 theorem ContDiffOn.contDiffOn_derivWithin_fst_prod (hq : ContDiffOn 𝕜 m q (S ×ˢ P))
     (hS : UniqueDiffOn 𝕜 S) (hP : UniqueDiffOn 𝕜 P) (hkm : k + 1 ≤ m) :
@@ -33,9 +23,6 @@ theorem ContDiffOn.contDiffOn_derivWithin_fst_prod (hq : ContDiffOn 𝕜 m q (S 
   funext z
   simp only [Function.comp_def, mfderivWithin_eq_fderivWithin, derivWithin]
   rfl
-
-
-
 
 theorem ContDiffOn.contDiffOn_deriv_snd_prod (hq : ContDiffOn 𝕜 m q (S ×ˢ P))
     (hS : UniqueDiffOn 𝕜 S) (hP : IsOpen P) (hkm : k + 1 ≤ m) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeImage
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem seedM15_subtype_ball_image
     (U : TopologicalSpace.Opens M) (g : RiemannianMetric 3 U) (h : RiemannianMetric 3 M)
@@ -42,9 +31,6 @@ theorem seedM15_subtype_ball_image
   exact hnorm.symm.le
 
 variable [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
-
-
-
 
 theorem seedM15_subtype_ball_volume
     (U : TopologicalSpace.Opens M) (g : RiemannianMetric 3 U) (h : RiemannianMetric 3 M)

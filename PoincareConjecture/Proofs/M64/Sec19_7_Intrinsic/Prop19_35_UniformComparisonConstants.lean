@@ -1,22 +1,9 @@
 import PoincareConjecture.Statements.M64Comparison
 import Mathlib.Analysis.Real.Pi.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_comparison_base_scale
     (K : ℝ) {delta r : ℝ} (hdelta : 0 < delta)
@@ -43,9 +30,6 @@ theorem m64Intrinsic_exists_comparison_base_scale
   · nlinarith only [halphaq, hdelta100]
   · apply (le_div_iff₀ (by positivity : 0 < 1600 * delta)).mpr
     nlinarith only [mul_lt_mul_of_pos_right hdelta100 hq, hq]
-
-
-
 
 theorem m64Intrinsic_exists_comparison_area_cutoff
     (K : ℝ) {delta q R0 : ℝ} (hdelta100 : delta < 1 / 100)

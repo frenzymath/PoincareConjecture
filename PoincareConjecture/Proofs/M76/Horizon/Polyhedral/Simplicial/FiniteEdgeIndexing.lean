@@ -2,14 +2,6 @@ import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry.SimplicialComplex

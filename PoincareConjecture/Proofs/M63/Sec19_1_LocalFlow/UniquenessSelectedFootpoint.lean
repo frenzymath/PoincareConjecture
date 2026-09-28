@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFootpointQuanti
 import Mathlib.Analysis.Calculus.Deriv.Shift
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -19,18 +11,12 @@ namespace PoincareConjecture.M63
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
-
 noncomputable def selectedCurveFootpoint (r : ℝ → E) (rho eps : ℝ)
     (p : ℝ × E) : ℝ := by
   classical
   exact if h : ‖p.2 - r p.1‖ < eps ∧
       ∃ y, |y - p.1| < rho ∧ curveFootpointResidual r (p.2, y) = 0
   then Classical.choose h.2 else p.1
-
-
-
 
 theorem selectedCurveFootpoint_spec {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     {m M B rho eps : ℝ}
@@ -82,10 +68,6 @@ theorem selectedCurveFootpoint_spec {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
         exact (hroot (x, z) hp).2
     · have htranslated : ¬‖z - r (x + P)‖ < eps := by simpa only [hperiod x] using hp
       simp only [selectedCurveFootpoint, hp, htranslated, false_and, dite_false]
-
-
-
-
 
 theorem selectedCurveFootpoint_contDiffAt [CompleteSpace E]
     {r : ℝ → E} (hr : ContDiff ℝ ∞ r) {m M B rho eps : ℝ}

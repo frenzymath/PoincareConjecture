@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.LimitPacking
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.LimitSlabs
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

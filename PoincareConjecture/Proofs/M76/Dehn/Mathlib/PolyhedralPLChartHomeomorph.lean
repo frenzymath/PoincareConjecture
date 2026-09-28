@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.comp_chart_homeomorph {E F X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

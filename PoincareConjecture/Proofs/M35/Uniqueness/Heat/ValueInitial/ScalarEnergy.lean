@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralParabolicNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

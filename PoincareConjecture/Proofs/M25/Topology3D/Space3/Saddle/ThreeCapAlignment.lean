@@ -5,23 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsPairedAl
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsFullCapAlignment
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_three_cap_alignment
     (P : SurgeryCapProfile) (u : UnitTwoSphere)

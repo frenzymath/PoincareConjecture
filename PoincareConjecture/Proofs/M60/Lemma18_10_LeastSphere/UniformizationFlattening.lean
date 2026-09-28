@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationConfor
 import Mathlib.Geometry.Manifold.BumpFunction
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +22,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [CompactSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_conformal_euclidean_near_point
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g) (p : M) :

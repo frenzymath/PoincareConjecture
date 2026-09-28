@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.ModelProduct
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (T : CoorientedSurfaceStars E)
 
 local notation "I" => Icc (-1 : ℝ) 1
-
-
-
 
 theorem exists_homeomorph_of_model_product {g : E × ℝ → E}
     (hg : FinitePiecewiseAffineOn g ((T.marked 2).space ×ˢ I))
@@ -35,9 +26,6 @@ theorem exists_homeomorph_of_model_product {g : E × ℝ → E}
   rw [himage] at hex
   obtain ⟨H, hH, hval⟩ := hex
   exact ⟨H, hH, hH.symm, hval⟩
-
-
-
 
 theorem exists_model_product_homeomorph :
     ∃ (g : E × ℝ → E)

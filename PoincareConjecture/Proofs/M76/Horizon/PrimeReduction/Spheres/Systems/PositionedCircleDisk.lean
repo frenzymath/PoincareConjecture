@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.InnermostCircleDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NonreturningTriangleGraphPosition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -159,6 +152,4 @@ theorem exists_positioned_sphere_system_face_circle_cap
   · intro j hj
     exact hiunique j (by rwa [← hLC])
 
-
 end PoincareConjecture.M76
-

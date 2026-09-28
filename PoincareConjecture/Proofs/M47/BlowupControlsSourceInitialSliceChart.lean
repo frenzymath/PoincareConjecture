@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSliceMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +23,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ}
   (e : SurgeryFlowCylinder F C origin scale I N.carrier)
 
-
 theorem source_neck_native_center (q : UnitTwoSphere) (c : ℝ) :
     centeredNeckLift N q 0 (M35.cylinderCoordinateEquiv.symm (0, c)) =
       N.coordinate_map (q, c) := by
@@ -47,7 +38,6 @@ theorem source_neck_native_center (q : UnitTwoSphere) (c : ℝ) :
     · rfl
   exact congrArg N.coordinate_map hchart
 
-
 theorem source_neck_slice_axial_smooth (s : ℝ) (hs : s ∈ I)
     {x : (F.slice (origin + s / scale)).carrier}
     (hx : x ∈ e.forward s hs '' N.carrier) :
@@ -57,7 +47,6 @@ theorem source_neck_slice_axial_smooth (s : ℝ) (hs : s ∈ I)
   have hi := (e.inverse_smooth s hs).contMDiffAt (chart.open_target.mem_nhds hx)
   have hmem : e.inverse s hs x ∈ N.carrier := chart.map_target hx
   exact (neck_inverse_contMDiffAt N hmem).snd.comp x hi
-
 
 theorem source_neck_slice_native_invertible (s : ℝ) (hs : s ∈ I)
     (q : UnitTwoSphere) {p : E} (hp : p ∈ centeredNeckDomain N 0) :
@@ -72,8 +61,6 @@ theorem source_neck_slice_native_invertible (s : ℝ) (hs : s ∈ I)
   rw [mfderiv_comp p (hforward.mdifferentiableAt (by simp))
     (hnative.mdifferentiableAt (by simp))]
   exact hi.comp (centeredNeckLift_mfderiv_isInvertible N q 0 hp)
-
-
 
 theorem source_neck_slice_axial_mfderiv (s : ℝ) (hs : s ∈ I)
     (q : UnitTwoSphere) {p : E} (hp : p ∈ centeredNeckDomain N 0) (v : E) :

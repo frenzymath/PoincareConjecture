@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.CompactCurvatureDerivative
 import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureRadius
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_curvature_derivative_bounded_ball_of_chart
     (P : M35StandardCapPredecessors)
@@ -111,8 +100,6 @@ theorem blowupSequence_curvature_derivative_bounded_ball_of_chart
     Q hQ).curvatureDerivativeNorm 1 (phi (c.symm p)) ≤ B at h
   change phi z = y at hzy
   rwa [hpz, hzy] at h
-
-
 
 theorem blowupSequence_exists_curvature_derivative_ball_bound
     (P : M35StandardCapPredecessors)

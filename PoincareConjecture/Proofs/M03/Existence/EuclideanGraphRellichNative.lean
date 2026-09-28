@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanRellichNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +18,6 @@ variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
 abbrev GraphAmbient (n : ℕ) := ScalarL2 n × (Fin n → ScalarL2 n)
-
 
 def derivativeGraphSet (K : Set E) : Set (GraphAmbient n) :=
   {u | ∃ f : E → ℝ, ∃ hf : ContDiff ℝ 1 f, ∃ hfL2 : MemLp f 2 volume,
@@ -68,7 +58,6 @@ theorem gradientEnergy_le_of_graph_norm {u : GraphAmbient n}
       nlinarith [sq_nonneg (n : ℝ)]
     _ = _ := (mul_pow ((n : ℝ) + 1) R 2).symm
 
-
 theorem totallyBounded_rawGraph_value {K : Set E} (hK : IsCompact K)
     {R : ℝ} (hR : 0 ≤ R) :
     TotallyBounded (Prod.fst '' (derivativeGraphSet K ∩ Metric.ball 0 R)) := by
@@ -83,13 +72,11 @@ theorem totallyBounded_rawGraph_value {K : Set E} (hK : IsCompact K)
     apply gradientEnergy_le_of_graph_norm hcoord hderiv hR
     exact (show ‖u‖ < R by simpa only [Metric.mem_ball, dist_zero_right] using huR).le
 
-
 theorem totallyBounded_completedGraph_value {K : Set E} (hK : IsCompact K)
     {R : ℝ} (hR : 0 ≤ R) :
     TotallyBounded (Prod.fst '' (closure (derivativeGraphSet K) ∩ Metric.closedBall 0 R)) :=
   totallyBounded_bounded_graph_closure Prod.fst continuous_fst
     (totallyBounded_rawGraph_value hK (by linarith : 0 ≤ R + 1))
-
 
 theorem isCompact_closure_completedGraph_value {K : Set E} (hK : IsCompact K)
     {R : ℝ} (hR : 0 ≤ R) :

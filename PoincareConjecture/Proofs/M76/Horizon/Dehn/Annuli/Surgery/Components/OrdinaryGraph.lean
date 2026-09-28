@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Doub
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.InteriorInterval
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.GraphIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology Filter
 open scoped Topology
@@ -59,4 +52,3 @@ theorem exists_finite_interior_double_graph
   exact ⟨G, partner, hG, hGs, hp, hpinv, hp2, hfree, hvalue, hmate, hcard, hdegree⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

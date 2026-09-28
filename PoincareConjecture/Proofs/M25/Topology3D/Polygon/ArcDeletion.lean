@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPush
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SegmentSubdivision
 import Mathlib.Data.Fin.SuccPred
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,12 +10,8 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {n : ℕ}
 
-
-
 def polygonArcDeleteVertex {E : Type*} (p : Polygon E (n + 3)) (k : Fin (n + 3)) :
     Polygon E (n + 2) := ⟨fun j => p (k.succAbove j)⟩
-
-
 
 theorem polygonArcDeleteVertex_endpoints {E : Type*} (p : Polygon E (n + 3))
     (k : Fin (n + 3)) (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 2)) :
@@ -117,8 +104,6 @@ private theorem arcDelete_retained_indices (k : Fin (n + 3))
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem isAdmissibleArcVertex_of_mem_segment (p : Polygon E (n + 2))
     (k : Fin (n + 2)) (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1))
     (hstraight : p k ∈ segment ℝ (p ((finRotate (n + 2)).symm k))
@@ -134,8 +119,6 @@ theorem isAdmissibleArcVertex_of_mem_segment (p : Polygon E (n + 2))
     · exact hz.symm ▸ right_mem_segment ℝ _ _
   rintro z ⟨hz, _⟩
   exact (segment_split_at_point hstraight).1.symm ▸ hT hz
-
-
 
 theorem polygonArcDeleteVertex_boundary (p : Polygon E (n + 3)) (k : Fin (n + 3))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 2))
@@ -186,8 +169,6 @@ theorem polygonArcDeleteVertex_boundary (p : Polygon E (n + 3)) (k : Fin (n + 3)
         obtain ⟨i, hi0, hi1⟩ := arcDelete_retained_indices k hkl j hjk hjs
         exact polygon_arcEdge_subset_boundary (polygonArcDeleteVertex p k) i
           ((heq i j hi0 hi1).symm ▸ hj)
-
-
 
 theorem IsSimplePolygonalArc.isSimple_polygonArcDeleteVertex {p : Polygon E (n + 3)}
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 3))

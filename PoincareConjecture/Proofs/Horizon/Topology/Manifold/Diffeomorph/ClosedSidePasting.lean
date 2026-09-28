@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ namespace Poincare
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M]
   {I : ModelWithCorners ℝ E H}
-
-
 
 theorem exists_diffeomorph_of_closed_side_replacement
     (U V : Opens M) {K : Set M} (hK : IsClosed K)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem Convex.mem_both_height_closures_of_intrinsicInterior
     {C : Set E} (hC : Convex ℝ C) (L : E →ᵃ[ℝ] ℝ)
@@ -46,8 +35,6 @@ theorem Convex.mem_both_height_closures_of_intrinsicInterior
   have hneg := hC.mem_closure_lower_affine_height L hpC hx (by simpa only [hpzero] using hxL)
   have hpos := hC.mem_closure_upper_affine_height L hpC hy (by simpa only [hpzero] using hyL)
   simpa only [hpzero] using And.intro hneg hpos
-
-
 
 theorem Set.mem_both_height_closures_of_intrinsicInterior_convexHull
     (s : Finset E) (L : E →ᵃ[ℝ] ℝ) {p : E}

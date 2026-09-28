@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SignedCoordinateCorner
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

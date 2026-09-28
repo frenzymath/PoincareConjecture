@@ -1,20 +1,10 @@
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem preconnected_subset_interior_or_compl_of_disjoint_frontier
     {X : Type*} [TopologicalSpace X] {U K : Set X}
@@ -28,8 +18,6 @@ theorem preconnected_subset_interior_or_compl_of_disjoint_frontier
       by_contra hn
       exact disjoint_left.mp hfront hx ⟨subset_closure hmem, hn⟩
     · exact Or.inr hmem
-
-
 
 theorem mem_closed_iff_of_preconnected_avoiding_frontier
     {X : Type*} [TopologicalSpace X] {U K : Set X}

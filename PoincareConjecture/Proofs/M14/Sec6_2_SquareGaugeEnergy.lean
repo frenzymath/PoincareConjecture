@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCurve
 import PoincareConjecture.Proofs.M14.Sec6_2_SpatialMetricCoefficients
 import PoincareConjecture.Proofs.M14.Mathlib.CompactQuadraticEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -47,9 +38,6 @@ private noncomputable local instance bilinearNormedSpace :
     NormedSpace ℝ
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem squarePath_gauge_derivative_memLp (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {U : Set G.Point} (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

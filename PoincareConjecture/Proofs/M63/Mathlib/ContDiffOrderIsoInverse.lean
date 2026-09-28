@@ -3,25 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem contDiffAt_inverse_orderIso_family
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -78,9 +65,6 @@ theorem contDiffAt_inverse_orderIso_family
     have hroot : phi p.1 (q p) - p.2 = 0 := hp.trans hzero
     exact (sub_eq_zero.mp hroot).symm
   exact (hH.contDiffAt_implicitFunction hk hinv).congr_of_eventuallyEq heq
-
-
-
 
 theorem hasDerivAt_time_inverse_orderIso_family
     (phi : ℝ → (ℝ ≃o ℝ)) {t y dx dt : ℝ}

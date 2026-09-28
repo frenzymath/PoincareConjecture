@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Measure
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,31 +15,22 @@ namespace PoincareConjecture.M32
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 def neckModelCap (q : UnitTwoSphere) (a : ℝ) : Set UnitTwoSphere :=
   (chartAt (EuclideanSpace ℝ (Fin 2)) q).symm '' Metric.ball 0 a
 
-
-
 def neckModelDiskArea : ℝ :=
   (volume (Metric.ball (0 : EuclideanSpace ℝ (Fin 2)) 1)).toReal
-
 
 theorem neckModelDiskArea_pos : 0 < neckModelDiskArea := by
   exact ENNReal.toReal_pos
     (Metric.measure_ball_pos volume _ (by norm_num : (0 : ℝ) < 1)).ne'
     measure_ball_lt_top.ne
 
-
-
 theorem neckModelCap_open (q : UnitTwoSphere) (a : ℝ) : IsOpen (neckModelCap q a) := by
   apply (chartAt (EuclideanSpace ℝ (Fin 2)) q).symm.isOpen_image_of_subset_source
     Metric.isOpen_ball
   simpa only [OpenPartialHomeomorph.symm_source, sphere_chart_target] using
     (subset_univ (Metric.ball (0 : EuclideanSpace ℝ (Fin 2)) a))
-
-
 
 theorem neckModelCap_area_lower (q : UnitTwoSphere) {a : ℝ} (ha : 0 < a) (ha1 : a ≤ 1) :
     ENNReal.ofReal (neckModelDiskArea * a ^ 2 / 2) ≤

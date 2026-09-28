@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000

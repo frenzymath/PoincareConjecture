@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.LevelComponents
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem level_eq_and_eventuallyEq_of_disk_splicing
     (f f' : S2 -> E3) (v : E3) (c : Real)
@@ -56,8 +51,6 @@ theorem level_eq_and_eventuallyEq_of_disk_splicing
   filter_upwards [(e.isOpen_image_of_subset_source isOpen_ball
     (ball_subset_closedBall.trans hesource)).mem_nhds (hretained p hp)] with q hq
   rw [hoff q (image_mono ball_subset_closedBall hq)]
-
-
 
 theorem regular_level_of_disk_splicing
     (f f' : S2 -> E3) (v : E3) (c : Real)

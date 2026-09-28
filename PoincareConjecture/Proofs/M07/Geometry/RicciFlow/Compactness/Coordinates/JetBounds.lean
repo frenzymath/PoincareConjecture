@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.DerivativeCo
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -23,8 +11,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
-
-
 
 theorem eventually_uniform_zero_time_exponential_metric_jet_bound_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ}
@@ -93,7 +79,6 @@ theorem eventually_uniform_zero_time_exponential_metric_jet_bound_of_local_deriv
     change g.edist F.base (Φ x) < ENNReal.ofReal (A + R)
     rw [ENNReal.ofReal_add hA.le hR.le]
     exact Manifold.riemannianEDist_triangle.trans_lt (ENNReal.add_lt_add hp hxp)
-
 
 theorem eventually_uniform_zero_time_exponential_metric_jet_bound
     {n : ℕ} {T' T : ℝ}

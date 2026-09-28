@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.SpherePunctureCoordinates
 import PoincareConjecture.Proofs.M38.TwoBallAffineNormalization
 import PoincareConjecture.Proofs.M38.StereographicOpposite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +17,11 @@ attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isMa
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 theorem threeSphereStereo_opposite_center (a : UnitThreeSphere) :
     stereographic' 3 (-a) a = 0 := by
   change threeSphereStereoFrame (-a)
     (stereographic (norm_eq_of_mem_sphere (-a)) a) = 0
   rw [stereographic_neg_apply, map_zero]
-
 
 theorem threeSphereStereoInverse_opposite_zero (a : UnitThreeSphere) :
     threeSphereStereoInverse (-a) 0 = a := by
@@ -39,7 +29,6 @@ theorem threeSphereStereoInverse_opposite_zero (a : UnitThreeSphere) :
   exact (stereographic' 3 (-a)).left_inv (by
     simpa only [stereographic'_source, Set.mem_compl_iff, Set.mem_singleton_iff] using
       ne_neg_of_mem_unit_sphere ℝ a)
-
 
 noncomputable def spherePoleReferenceBall (p : sphereCarrier.{u}.carrier) :
     SurgeryBallEmbedding sphereCarrier.{u} := by
@@ -74,25 +63,18 @@ noncomputable def spherePoleReferenceBall (p : sphereCarrier.{u}.carrier) :
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball
       hf.contMDiffOn hg hleft }
 
-
 theorem spherePoleReferenceBall_map (p : sphereCarrier.{u}.carrier)
     (x : StandardCapSpace) :
     (spherePoleReferenceBall p).map x =
       ULift.up (threeSphereStereoInverse (-p.down) x) := rfl
 
-
 theorem spherePoleReferenceBall_inverse (p y : sphereCarrier.{u}.carrier) :
     (spherePoleReferenceBall p).inverse y = stereographic' 3 (-p.down) y.down := rfl
-
 
 theorem spherePoleReferenceBall_center (p : sphereCarrier.{u}.carrier) :
     (spherePoleReferenceBall p).map 0 = p := by
   apply ULift.ext
   exact threeSphereStereoInverse_opposite_zero p.down
-
-
-
-
 
 theorem exists_sphereBallPoleNormalization
     (B : SurgeryBallEmbedding sphereCarrier.{u}) :
@@ -123,7 +105,6 @@ theorem exists_sphereBallPoleNormalization
   rw [hformula 0 (by norm_num), smul_zero, map_zero,
     threeSphereStereoInverse_opposite_zero]
   rfl
-
 
 theorem sphereBallPoleNormalization_fixes_disjoint
     (B D : SurgeryBallEmbedding sphereCarrier.{u})

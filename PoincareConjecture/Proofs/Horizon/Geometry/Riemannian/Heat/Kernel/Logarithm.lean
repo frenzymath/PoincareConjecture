@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -35,8 +21,6 @@ lemma contMDiffAt_log_of_pos {u : ℝ × M → ℝ} {t : ℝ} {x : M}
     ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞
       (fun p => Real.log (u p)) (t, x) :=
   (Real.contDiffAt_log.mpr hpos.ne').comp_contMDiffAt hu
-
-
 
 theorem hasDerivAt_log_heat (D : LeviCivitaData g)
     {u : ℝ × M → ℝ} {t : ℝ}

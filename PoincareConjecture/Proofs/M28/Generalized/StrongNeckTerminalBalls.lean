@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckHalfFlow
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem GeneralizedStrongNeck.rescaled_half_ball_eq_preimage
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}

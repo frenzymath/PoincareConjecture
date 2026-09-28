@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSegmentHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_finitePL_corner_height_chart
     (A : E →ᵃ[ℝ] ℝ) {u q v : E} (hu : A u < 0) (hq : A q = 0) (hv : 0 < A v) :

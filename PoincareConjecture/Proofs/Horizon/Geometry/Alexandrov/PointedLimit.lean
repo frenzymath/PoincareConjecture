@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.LowerCurvature
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +8,6 @@ open Poincare.GromovHausdorff
 
 namespace Poincare.Alexandrov
 
-
 theorem curvatureGEnegOne_of_pointedGHConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace} {Y : FiniteDiameterBasedMetricSpace}
     (hX : ∀ j, CurvatureGEnegOne (X j).carrier) (h : PointedGHConverges X Y) :
@@ -25,8 +15,6 @@ theorem curvatureGEnegOne_of_pointedGHConverges
   obtain ⟨f, hf⟩ := exists_approximating_maps_of_pointedGHConverges h
   intro q hq
   exact fourPoint_comparison_of_tendsto_dist hX hq (fun a b => hf (q a) (q b))
-
-
 
 theorem curvatureGEnegOne_of_pointedGHConvergesUnbounded
     {X : ℕ → BasedMetricSpaceBundle} {Y : BasedMetricSpaceBundle}

@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteLabelSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_finite_label_homeomorph
     {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M38LocalTopology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,7 +8,6 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 theorem no_survivor_of_isEmpty
     {A B : GeneralizedSliceCarrier.{u}} [IsEmpty B.carrier]
     (C : SurgeryTopologyConclusion A B) (i : Fin C.piece_count) :
@@ -23,9 +15,6 @@ theorem no_survivor_of_isEmpty
   intro hi
   obtain ⟨x, _⟩ := C.survivor_component i hi
   exact isEmptyElim x
-
-
-
 
 theorem exists_survivor_containing
     {A B : GeneralizedSliceCarrier.{u}} (C : SurgeryTopologyConclusion A B)
@@ -41,8 +30,6 @@ theorem exists_survivor_containing
   rw [hy] at hi ⊢
   rw [connectedComponent_eq hi]
   exact hU.subset_connectedComponent hx
-
-
 
 def vanishingWitness
     {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}

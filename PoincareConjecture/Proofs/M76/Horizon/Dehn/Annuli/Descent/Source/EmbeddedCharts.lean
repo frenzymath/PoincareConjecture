@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.Parameters
 import PoincareConjecture.Proofs.M76.Rigidity.SourceInteriorPairChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_embedded_source_plane_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -128,9 +118,6 @@ theorem exists_embedded_source_plane_chart
 namespace ProtectedAnnulus
 
 local notation "V1" => (Fin 1 → ℝ)
-
-
-
 
 theorem exists_embedded_interior_chart
     {X ι : Type*} [TopologicalSpace X]

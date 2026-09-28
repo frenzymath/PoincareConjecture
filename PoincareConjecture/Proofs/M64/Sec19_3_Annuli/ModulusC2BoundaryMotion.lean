@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedRelabelingAssembly
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothUpgradeFixedLabels
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m64C2ShrinkingCurve_smooth_near_smooth_slice
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}
@@ -61,11 +44,6 @@ theorem m64C2ShrinkingCurve_smooth_near_smooth_slice
       F he hU heU hrho hrhoe hanchor (M63.c2_restrict hc hslab) hd
         hct (hdslices t hanchor) hphi.continuous hrel
   exact ⟨tau, s, hat, htt, hts, hsb, hsmooth⟩
-
-
-
-
-
 
 theorem m64C2ShrinkingCurve_exists_centered_motion_of_smooth_slice
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

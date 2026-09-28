@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Input
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 

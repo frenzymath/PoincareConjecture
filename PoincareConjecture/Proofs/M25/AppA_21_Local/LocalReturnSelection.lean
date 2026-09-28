@@ -4,23 +4,11 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialSignComposition
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff ENNReal
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_local_return_center_alternative :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

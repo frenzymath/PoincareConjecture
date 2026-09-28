@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleCover
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -80,8 +70,6 @@ private theorem existsUnique_false_of_count_one (f : ZMod 2 → Bool)
     · cases h0.symm.trans hb
     · rfl
 
-
-
 noncomputable def sheet (c : A.ModTwoEdgeCocycle) (i : ι) (b : ZMod 2) :
     C(A.openVertexStar i, c.bundle.TotalSpace) where
   toFun q := (c.bundle.localTriv i).toOpenPartialHomeomorph.symm (q, b)
@@ -139,11 +127,6 @@ private theorem fiberFalseCount_eq_one (c : A.ModTwoEdgeCocycle)
       ((hconstant y.1 q).trans htwo) y.2
     exact (hne (hx.trans hy.symm)).elim
 
-
-
-
-
-
 theorem isCoboundary_of_nonconstant_labeling (c : A.ModTwoEdgeCocycle)
     (hvertex : ∀ i : ι, {i} ∈ A.faces) [ConnectedSpace A.barycentricSpace]
     {h : c.bundle.TotalSpace → Bool} (hh : Continuous h)
@@ -191,10 +174,6 @@ theorem isCoboundary_of_nonconstant_labeling (c : A.ModTwoEdgeCocycle)
     · rw [hunit]
       decide
   simpa only [← add_assoc, hdouble, zero_add] using congrArg (a i + ·) heq
-
-
-
-
 
 theorem connectedSpace_of_not_isCoboundary (c : A.ModTwoEdgeCocycle)
     (hvertex : ∀ i : ι, {i} ∈ A.faces) [ConnectedSpace A.barycentricSpace]

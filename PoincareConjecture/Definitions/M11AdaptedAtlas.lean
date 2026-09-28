@@ -3,16 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Order.Interval.Set.OrdConnected
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology
@@ -21,12 +11,10 @@ universe u
 
 namespace PoincareConjecture
 
-
 structure SpacetimeInterval where
   domain : Set ℝ
   ordConnected : domain.OrdConnected
   nontrivial : domain.Nontrivial
-
 
 structure AdaptedMetricBox (n : ℕ) (X : Type u) [TopologicalSpace X]
     (time : X → ℝ) (I : SpacetimeInterval) where
@@ -47,15 +35,12 @@ structure AdaptedMetricBox (n : ℕ) (X : Type u) [TopologicalSpace X]
   metric_pos : ∀ t ∈ interval.domain, ∀ x ∈ spatial, ∀ v, v ≠ 0 →
     0 < metric (t, x) v v
 
-
 theorem AdaptedMetricBox.interval_subset {n : ℕ} {X : Type u}
     [TopologicalSpace X] {time : X → ℝ} {I : SpacetimeInterval}
     (b : AdaptedMetricBox n X time I) : b.interval.domain ⊆ I.domain := by
   rcases b.interval_relatively_open with ⟨U, _, hU⟩
   rw [hU]
   exact Set.inter_subset_left
-
-
 
 structure AdaptedMetricTransition {n : ℕ} {X : Type u} [TopologicalSpace X]
     {time : X → ℝ} {I : SpacetimeInterval}
@@ -86,8 +71,6 @@ structure AdaptedMetricTransition {n : ℕ} {X : Type u} [TopologicalSpace X]
     b.metric (s, z) v w =
       c.metric (s, coordinateChange z)
         (fderiv ℝ coordinateChange z v) (fderiv ℝ coordinateChange z w)
-
-
 
 structure AdaptedMetricAtlas (n : ℕ) (X : Type u) [TopologicalSpace X] where
   time : X → ℝ

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ClosedInterv
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
 
 theorem finitePL_interval_projection_image
     {φ : ℝ → F} {t : Set F} {a b : F}
@@ -68,8 +58,6 @@ theorem finitePL_interval_projection_image
     simpa only [image_pair] using (isFinitePLBallPair_Icc zero_lt_one).image hφ hclosed
   refine ⟨hclosed, hne, himage.eq_of_subset_with_same_endpoints ?_ hmap.image_subset hne⟩
   simpa only [hends] using ht
-
-
 
 theorem exists_finitePL_gap_projection_homeomorph
     {g : ℝ → E} {f : E → F} {t : Set F} {a b : F}

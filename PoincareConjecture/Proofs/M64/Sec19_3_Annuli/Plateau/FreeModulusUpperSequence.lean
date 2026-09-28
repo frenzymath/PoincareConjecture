@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusPhaseEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFreeModulusApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
-
-
-
 
 theorem free_ramp_minimizing_sequence_with_upper_modulus
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -105,8 +90,6 @@ theorem free_ramp_minimizing_sequence_with_upper_modulus
       (tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ))
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hlim
     hlower (fun j => (hE j).le)
-
-
 
 theorem free_ramp_minimizing_sequence_with_convergent_modulus
     (P : M62.CircleProductData F circumference) (t : ℝ)

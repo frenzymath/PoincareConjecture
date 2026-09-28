@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Nearb
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_connected_center_compact_transport :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

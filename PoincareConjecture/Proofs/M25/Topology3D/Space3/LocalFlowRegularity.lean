@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowAlgebra
 import PoincareConjecture.Proofs.M09.LocalSmoothFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable (f : E → E) {K L : ℝ≥0}
 variable (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
-
-
 
 theorem boundedFlow_local_smooth (hf : ContDiff ℝ ∞ f) (x : E) :
     ∃ (U : Set E) (d : ℝ), IsOpen U ∧ x ∈ U ∧ 0 < d ∧
@@ -41,8 +30,6 @@ theorem boundedFlow_local_smooth (hf : ContDiff ℝ ∞ f) (x : E) :
     · exact fun t ht => ⟨hαode y hy t ht, mem_univ _⟩
     · rw [boundedFlow_zero, hα0 y hy]
   exact ⟨U, d, hU, hx, hd, hα.congr (fun p hp => heq p.1 hp.1 hp.2)⟩
-
-
 
 theorem boundedFlow_smooth_strip (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f) :
     ∃ d > (0 : ℝ),

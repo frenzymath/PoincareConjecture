@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.ScalarUpperContacts
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,7 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem second_deriv_affine_line {f : E → ℝ} {x : E}
     (hf : ContDiffAt ℝ 2 f x) (v : E) :
@@ -42,7 +33,6 @@ theorem second_deriv_affine_line {f : E → ℝ} {x : E}
   have hD' : DifferentiableAt ℝ (fderiv ℝ f) (L 0) := by rwa [hL0]
   have hd := (hD'.hasFDerivAt.comp_hasDerivAt 0 (hL 0)).clm_apply (hasDerivAt_const 0 v)
   simpa only [hL0, map_zero, add_zero, Function.comp_def] using hd.deriv
-
 
 theorem second_fderiv_nonneg_of_isLocalMin {f : E → ℝ} {x : E}
     (hf : ContDiffAt ℝ 2 f x) (hmin : IsLocalMin f x) (v : E) :

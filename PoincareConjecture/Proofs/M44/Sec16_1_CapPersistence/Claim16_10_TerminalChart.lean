@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalTransport
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c : ℝ} {U : Set C.carrier}
-
-
-
 
 theorem cylinder_preterminal_mem_regular_limit
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -74,9 +61,6 @@ theorem cylinder_preterminal_mem_regular_limit
   rw [Diffeomorph.apply_symm_apply, div_one, hp] at heq
   exact heq.symm.trans_le (hK s hs)
 
-
-
-
 noncomputable def cylinderTerminalChart
     (e : SurgeryFlowCylinder F C origin scale (Ico 0 c) U) (hU : IsOpen U)
     (hT : origin + c / scale ∈ F.surgery_times)
@@ -90,9 +74,6 @@ noncomputable def cylinderTerminalChart
     ((F.event (origin + c / scale) hT).pre_identify
       ⟨origin + r / scale, hr'⟩).symm.toPartialDiffeomorph).trans
       (regionEquivalenceInteriorChart (F.event (origin + c / scale) hT).limit_identify)
-
-
-
 
 theorem cylinderTerminalChart_source
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

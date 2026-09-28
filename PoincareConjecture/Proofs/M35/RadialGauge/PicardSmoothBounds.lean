@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelHigherGain
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardRegularity
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
 
 theorem exists_common_smooth_gauge_time {eta S K H T : ℝ}
     (heta : 0 < eta) (hS : 0 ≤ S) (hK : 0 ≤ K) (hH : 0 ≤ H) (hT : 0 < T) :
@@ -46,9 +34,6 @@ theorem exists_common_smooth_gauge_time {eta S K H T : ℝ}
   refine ⟨t, ht, htT, hball, ?_, ?_⟩
   · nlinarith only [hk, hsmall]
   · exact (mul_le_mul_of_nonneg_left hgain hH).trans (hh.trans hsmall)
-
-
-
 
 theorem gaugePicard_uniform_all_order_bounds
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B : ℝ}
@@ -153,8 +138,6 @@ theorem gaugePicard_uniform_all_order_bounds
               apply mul_le_mul_of_nonneg_left _ (by positivity)
               exact mul_le_mul_of_nonneg_left (Real.sqrt_le_sqrt ht.2)
                 (mul_nonneg (by norm_num) gaussianFirstMoment_nonneg)
-
-
 
 theorem gaugePicard_limit_contDiff_infty
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta : ℝ}

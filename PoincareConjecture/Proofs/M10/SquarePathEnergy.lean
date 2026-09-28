@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M10.ActionLowerBound
 import PoincareConjecture.Proofs.M10.UniformMetricComparison
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,7 +15,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def terminalSquareEnergy (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) (s : ℝ) : ℝ :=
@@ -42,7 +32,6 @@ theorem squareFamily_contMDiffOn (G : LExponentialGeometry F T τmax p)
   exact G.square_smooth.comp (contMDiff_const.prodMk contMDiff_id).contMDiffOn
     (fun _ hs ↦ hs)
 
-
 theorem terminalSquareEnergy_continuousOn (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :
     ContinuousOn (terminalSquareEnergy G Z) (Icc 0 (Real.sqrt τ)) := by
@@ -53,7 +42,6 @@ theorem terminalSquareEnergy_continuousOn (G : LExponentialGeometry F T τmax p)
   intro s hs
   apply G.square_contains
   exact ⟨mem_univ _, hs.1, hs.2.trans_lt (Real.sqrt_lt_sqrt hτ.le hmax)⟩
-
 
 theorem terminalSquareEnergy_eq_speed (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) {s : ℝ} (hs : s ∈ Ioo 0 (Real.sqrt τmax)) :

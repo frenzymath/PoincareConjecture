@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CompactLimitExclusi
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.FixedFlowSequence
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryRealization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,13 +16,10 @@ variable {I : SpacetimeInterval}
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
-
-
 theorem ordinaryChapter11_euclidean_slice (t : ℝ) (ht : t ∈ (G).interval) :
     Nonempty (Diffeomorph (𝓡 3) (𝓡 3) ((G).slice t).carrier
       (EuclideanSpace ℝ (Fin 3)) ∞) :=
   ⟨(R.product.sliceIdentification ⟨t, ht⟩).symm⟩
-
 
 theorem ordinaryChapter11_limit_not_compact
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))
@@ -43,8 +30,6 @@ theorem ordinaryChapter11_limit_not_compact
   apply generalizedBlowupConvergence_not_compact C
   intro k t ht
   exact ordinaryChapter11_euclidean_slice (I := I) (F := F) R t ht
-
-
 
 theorem ordinaryChapter11_limit_not_projectivePlaneLine
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

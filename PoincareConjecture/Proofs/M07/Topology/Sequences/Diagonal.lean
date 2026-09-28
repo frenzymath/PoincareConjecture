@@ -1,23 +1,10 @@
 import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare
 
 open Filter Set
 open scoped Topology
-
-
 
 theorem exists_strictMono_forall_le_of_eventually
     {P : ℕ → ℕ → Prop} (hP : ∀ j, ∀ᶠ k in atTop, P j k) :
@@ -32,8 +19,6 @@ theorem exists_strictMono_forall_le_of_eventually
     | zero => exact le_rfl
     | succ k => exact le_max_right _ _
   exact ⟨φ, hφ, fun k j hjk => hN j (φ k) ((hNφ j).trans (hφ.monotone hjk))⟩
-
-
 
 theorem exists_strictMono_tendsto_of_eventually_mem_isCompact
     {X : ℕ → Type*} [∀ j, TopologicalSpace (X j)]
@@ -52,8 +37,6 @@ theorem exists_strictMono_tendsto_of_eventually_mem_isCompact
   apply ((tendsto_pi_nhds.mp hlim) j).congr'
   filter_upwards [hφ.tendsto_atTop.eventually (eventually_ge_atTop (N j))] with k hk
   simp only [v, Function.comp_apply, max_eq_left hk]
-
-
 
 theorem exists_strictMono_tendsto_forall_le_of_eventually
     {X : ℕ → Type*} [∀ j, TopologicalSpace (X j)]

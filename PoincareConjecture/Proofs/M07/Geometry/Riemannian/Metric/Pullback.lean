@@ -3,13 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology
 open Bundle
@@ -18,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem contMDiffAt_mfderiv_const_vector
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -38,7 +29,6 @@ theorem contMDiffAt_mfderiv_const_vector
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem mfderiv_slice_apply
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {f : ℝ × E → M} {t : ℝ} {x : E}
@@ -51,8 +41,6 @@ theorem mfderiv_slice_apply
   have h := mfderiv_comp x hf hi.differentiableAt.mdifferentiableAt
   rw [mfderiv_eq_fderiv, hi.fderiv] at h
   exact congrArg (fun A => A v) h
-
-
 
 theorem contDiffAt_pullback_inner
     (g : RiemannianMetric n M)
@@ -68,7 +56,6 @@ theorem contDiffAt_pullback_inner
   have hh := (Bundle.contMDiffAt_totalSpace.mp h).2
   simp at hh
   convert! contMDiffAt_iff_contDiffAt.mp hh using 1
-
 
 theorem pullback_gram_det_ne_zero (g : RiemannianMetric n M) (x : M)
     (A : EuclideanSpace ℝ (Fin n) →ₗ[ℝ] TangentSpace (𝓡 n) x)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.RotationTransitivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace

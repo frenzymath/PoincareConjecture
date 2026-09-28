@@ -1,19 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -66,8 +52,6 @@ theorem quartic_eq_gaps (a b c : ℝ) :
 theorem quartic_nonneg (a b c : ℝ) : 0 ≤ quartic a b c := by
   rw [quartic_eq_gaps]
   positivity
-
-
 
 theorem quartic_ge_least_sq_mul_traceFree
     {a b c : ℝ} (hab : b ≤ a) (hbc : c ≤ b) (hc : 0 ≤ c) :

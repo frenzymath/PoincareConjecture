@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.CompactLimit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +7,6 @@ open Set Filter
 open scoped Topology
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem exists_common_isometric_limits_preserving_cross_distances
     {ι : Type*} {A : ι → Type*} [∀ i, MetricSpace (A i)] [∀ i, CompactSpace (A i)]

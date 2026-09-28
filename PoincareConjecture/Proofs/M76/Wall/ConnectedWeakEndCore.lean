@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.ConnectedPLNeighborhood
 import PoincareConjecture.Proofs.M76.Wall.WeakEndProtectedCore
 import PoincareConjecture.Proofs.M76.Wall.WeakEndNoncompact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_connected_weak_end_protected_PL_core
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

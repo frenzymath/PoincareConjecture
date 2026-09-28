@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.ProductDerivatives
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def endpointCoordinates (G : LExponentialGeometry F T τmax p)
     (q₀ : M) (z : TangentSpace (𝓡 n) p × ℝ) : EuclideanSpace ℝ (Fin n) :=

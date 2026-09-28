@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embedding.TimeIndependent
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ namespace PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
   (G : PointedGeometricConvergence S)
-
-
 
 theorem eventually_source_parabolic_curvature_bound
     {t r ρ : ℝ} (htime : Icc (t - r ^ 2) t ⊆ Ioo T' T)
@@ -86,8 +75,6 @@ theorem eventually_source_parabolic_curvature_bound
     ((G.embedding k).toFun (s, y)).2 from Real.sqrt_nonneg _)]
   exact (hk (s, y) ⟨hs', hyA⟩).le
 
-
-
 theorem ball_volume_lower_bound_of_eventually_parabolic_noncollapse
     {t r : ℝ} (htime : Icc (t - r ^ 2) t ⊆ Ioo T' T)
     (hcomplete : G.limitCarrier.metricComplete (G.limitFlow.metricAt t))
@@ -129,8 +116,6 @@ local instance parabolicFlowCarrierConnected (C : FlowCarrier 3) : ConnectedSpac
   connectedSpace_iff_univ.mpr C.connected
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
-
-
 
 theorem interiorLimit_noncollapsed_ball
     (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)

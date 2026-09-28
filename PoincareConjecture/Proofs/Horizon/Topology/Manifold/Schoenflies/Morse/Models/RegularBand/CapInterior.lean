@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Representation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Transport
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem exists_upper_cap_interior_normalization
     {v : E3} (hv : ‖v‖ = 1)

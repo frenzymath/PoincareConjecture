@@ -10,18 +10,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -40,10 +28,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 open Classical in
-
-
-
-
 
 theorem Step.exists_original_ordinary_double_components
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

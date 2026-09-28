@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.FinitePLBallCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.ControlledBoundaryPush
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

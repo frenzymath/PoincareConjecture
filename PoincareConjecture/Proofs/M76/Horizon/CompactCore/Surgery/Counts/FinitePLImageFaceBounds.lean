@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

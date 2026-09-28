@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem interior_finite_linear_unit_halfspaces [FiniteDimensional ℝ E]
     {ι : Type*} [Finite ι]
@@ -32,9 +19,6 @@ theorem interior_finite_linear_unit_halfspaces [FiniteDimensional ℝ E]
     AffineMap.const_apply, sub_nonpos, sub_neg] using
       interior_finite_affine_halfspaces A hA
 
-
-
-
 theorem exists_unit_le_of_not_mem_interior [FiniteDimensional ℝ E]
     {ι : Type*} [Finite ι]
     (L : ι → E →ₗ[ℝ] ℝ) (hL : ∀ i, L i ≠ 0) {Q : Set E}
@@ -43,9 +27,6 @@ theorem exists_unit_le_of_not_mem_interior [FiniteDimensional ℝ E]
   rw [hQ, interior_finite_linear_unit_halfspaces L hL] at hx
   obtain ⟨i, hi⟩ := not_forall.mp hx
   exact ⟨i, not_lt.mp hi⟩
-
-
-
 
 theorem Convex.one_le_of_smul_top_mem_frontier_cylinder {Q : Set E}
     (hcv : Convex ℝ Q) (h0 : (0 : E) ∈ interior Q) {x : E} (hx : x ∈ Q)
@@ -64,9 +45,6 @@ theorem Convex.one_le_of_smul_top_mem_frontier_cylinder {Q : Set E}
   · change r * 1 < 2
     linarith
 
-
-
-
 theorem LinearMap.mul_height_le_one_of_unit_le (L : E →ₗ[ℝ] ℝ)
     {x : E} {r t : ℝ} (hr : 0 ≤ r) (ht : t ≤ 1)
     (hx : 1 ≤ L x) (himage : L (r • x) ≤ 1) : r * t ≤ 1 := by
@@ -78,10 +56,6 @@ theorem LinearMap.mul_height_le_one_of_unit_le (L : E →ₗ[ℝ] ℝ)
     r * t ≤ r * 1 := mul_le_mul_of_nonneg_left ht hr
     _ = r := mul_one r
     _ ≤ 1 := hr1
-
-
-
-
 
 theorem Set.bottom_or_not_mem_inner_of_mem_cylinderExterior {Q C : Set E}
     (hQC : Q ⊆ interior C) {q : E × ℝ}
@@ -101,16 +75,11 @@ theorem Set.bottom_or_not_mem_inner_of_mem_cylinderExterior {Q C : Set E}
 
 namespace LinearMap
 
-
-
-
 noncomputable def cylinderUnitForms {ι : Type*} (L : ι → E →ₗ[ℝ] ℝ) :
     ι ⊕ Bool → (E × ℝ) →ₗ[ℝ] ℝ
   | Sum.inl i => (L i).comp (LinearMap.fst ℝ E ℝ)
   | Sum.inr false => -(LinearMap.snd ℝ E ℝ)
   | Sum.inr true => (1 / 2 : ℝ) • (LinearMap.snd ℝ E ℝ)
-
-
 
 theorem cylinderUnitForms_ne_zero {ι : Type*} (L : ι → E →ₗ[ℝ] ℝ)
     (hL : ∀ i, L i ≠ 0) (i : ι ⊕ Bool) : cylinderUnitForms L i ≠ 0 := by
@@ -124,8 +93,6 @@ theorem cylinderUnitForms_ne_zero {ι : Type*} (L : ι → E →ₗ[ℝ] ℝ)
     cases i <;>
       have he := congrArg (fun M : (E × ℝ) →ₗ[ℝ] ℝ => M (0, 2)) h <;>
       norm_num [cylinderUnitForms] at he
-
-
 
 theorem cylinderUnitForms_region {ι : Type*} (L : ι → E →ₗ[ℝ] ℝ)
     {Q : Set E} (hQ : Q = {x | ∀ i, L i x ≤ 1}) :

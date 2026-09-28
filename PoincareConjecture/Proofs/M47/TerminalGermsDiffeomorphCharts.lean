@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsUniverseMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ variable {n : ℕ} {M P Q L : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) L]
 
 omit [TopologicalSpace P] [ChartedSpace (EuclideanSpace ℝ (Fin n)) P] in
-
 
 theorem terminalGerms_diffeomorph_chart_differential
     (d : Diffeomorph (𝓡 n) (𝓡 n) L Q ∞)
@@ -43,7 +33,6 @@ variable [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ P]
 
 omit [TopologicalSpace P] [ChartedSpace (EuclideanSpace ℝ (Fin n)) P]
   [IsManifold (𝓡 n) ∞ P] in
-
 
 theorem terminalGerms_diffeomorph_chart_metric
     (d : Diffeomorph (𝓡 n) (𝓡 n) L Q ∞)
@@ -65,7 +54,6 @@ theorem terminalGerms_diffeomorph_chart_metric
       (congrArg (fun A => A a) hd).symm (congrArg (fun A => A b) hd).symm)
 
 omit [IsManifold (𝓡 n) ∞ Q] [IsManifold (𝓡 n) ∞ L] in
-
 
 theorem terminalGerms_diffeomorph_fibre_compatibility
     (d : Diffeomorph (𝓡 n) (𝓡 n) L Q ∞)

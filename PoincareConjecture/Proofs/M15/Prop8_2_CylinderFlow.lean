@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M15Noncollapsing
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
-
-
-
 
 theorem actualBallCylinder_exists_flow
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -56,18 +44,12 @@ theorem actualBallCylinder_exists_flow
     B.metric.toMovingSpacetimeGaugeGeometry c
   exact ⟨F, rfl, hcalc.curvature_norm_eq, hcalc.scalar_eq⟩
 
-
-
-
 theorem actualBallCylinder_terminal_sliceMap_eq
     (B : M15ActualBallCylinder G T x r K C) :
     movingGaugeSliceMap B.embedding.toMovingSpacetimeGauge G.slices
       ⟨T, B.base_mem⟩ = B.source_map := by
   funext c
   exact Subtype.ext (B.based c)
-
-
-
 
 theorem actualBallCylinder_terminal_metric_pullback
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

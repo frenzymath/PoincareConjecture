@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.EdgeChainFaces
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem pair_mem_faces_iff_of_full_edge_chain
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

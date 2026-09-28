@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.SmoothApprox
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -22,9 +13,6 @@ variable {E H X F : Type*}
   [TopologicalSpace X] [ChartedSpace H X] [IsManifold I ∞ X]
   [T2Space X] [NormalSpace X] [SigmaCompactSpace X]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_coordinate_approximation_preserving_value
     {K U : Set X} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

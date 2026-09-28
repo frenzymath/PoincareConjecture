@@ -4,14 +4,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.Parabolic.Interior

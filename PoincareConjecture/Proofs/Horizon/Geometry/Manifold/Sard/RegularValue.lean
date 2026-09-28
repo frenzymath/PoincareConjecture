@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.Basic
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
 open MeasureTheory Set Function
 open scoped ContDiff Manifold Topology
 
@@ -21,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {M : Type*} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
   [T2Space M] [SecondCountableTopology M]
-
-
 
 theorem dense_regular_values_of_manifold_critical_image_null
     {f : M → ℝ} (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f)
@@ -46,8 +37,6 @@ theorem dense_regular_values_of_manifold_critical_image_null
   rw [hregular]
   exact hC
 
-
-
 theorem exists_regular_value_in_interval_of_manifold_critical_image_null
     {f : M → ℝ} (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f)
     (hcrit : volume (f '' {x | ¬ Function.Surjective
@@ -59,8 +48,6 @@ theorem exists_regular_value_in_interval_of_manifold_critical_image_null
     (dense_regular_values_of_manifold_critical_image_null hf hcrit) I hI hIn) with
     ⟨c, hcI, hc⟩
   exact ⟨c, hcI, hc⟩
-
-
 
 theorem exists_regular_value_unit_interval_of_manifold_critical_image_null
     {f : M → ℝ} (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f)

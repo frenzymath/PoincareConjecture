@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Blowup.Worldlines
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Restriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.GeneralizedStrongNeck
-
-
 
 theorem maximalBackwardFlowLine {F : GeneralizedRicciFlowData.{u}}
     {t epsilon : ℝ} (N : GeneralizedStrongNeck F t epsilon)
@@ -55,8 +46,6 @@ theorem maximalBackwardFlowLine {F : GeneralizedRicciFlowData.{u}}
 end PoincareConjecture.GeneralizedStrongNeck
 
 namespace PoincareConjecture.DeepHorn
-
-
 
 theorem maximalBackwardFlowLine_contains_neck_interval
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {q duration epsilon s : ℝ}
@@ -116,8 +105,6 @@ theorem maximalBackwardFlowLine_contains_neck_interval
   exact maximalBackwardFlowLine_contains_overlapping_cylinder L e'
     (hI ▸ ordConnected_Ioc) hinter (interior_subset hs) hsI hmeet
 
-
-
 theorem maximalBackwardFlowLine_contains_interval_of_bounded_necks
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {q duration epsilon T B : ℝ}
     (L : GeneralizedMaximalBackwardFlowLine F p q duration)
@@ -138,8 +125,6 @@ theorem maximalBackwardFlowLine_contains_interval_of_bounded_necks
     div_le_div_of_nonneg_left hq.le N.scalar_center_pos hbound
   exact (Ioc_subset_Ioc_left (sub_le_sub_left htime s)).trans
     (maximalBackwardFlowLine_contains_neck_interval L hs N hcenter)
-
-
 
 theorem maximalBackwardFlowLineSurvival_of_strongNecks
     (S : GeneralizedBlowupSequence.{u}) {mu epsilon : ℝ}

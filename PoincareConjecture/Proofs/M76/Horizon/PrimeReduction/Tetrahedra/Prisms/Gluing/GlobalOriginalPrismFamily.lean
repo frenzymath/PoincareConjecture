@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Gluing.GlobalActualCutBallPrism
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Gluing.GlobalFaceChartFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe v
 open Set Geometry

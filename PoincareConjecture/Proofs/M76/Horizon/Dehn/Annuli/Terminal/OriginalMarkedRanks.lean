@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.GeometricRestr
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.MarkedRims
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe v w z
@@ -32,9 +24,6 @@ variable {M : Type w} {ι : Type z} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {f : (V1 × V2) → M}
   {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem Stage.exists_marked_terminal_rank_refinement (st : Stage e S f r C)
     (hS : S.space = ProtectedAnnulus.source)

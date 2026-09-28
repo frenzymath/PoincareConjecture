@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBigonExclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 namespace PoincareConjecture.M76
@@ -190,4 +182,3 @@ theorem HamiltonMarkedProtectedBall.exists_circle_free_minimal_essential_disk_wi
     hAq,hUC,hAS,hAF,hAI,i,j,c,d,hc,hd,hcd,h0,h1,hspan,hproduct⟩
 
 end PoincareConjecture.M76
-

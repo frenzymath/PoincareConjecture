@@ -1,19 +1,8 @@
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_cap_comparison_time_margin {c T D : ℝ}
     (hc : 0 < c) (hT : 0 ≤ T) (hD : 0 ≤ D) :
@@ -32,8 +21,6 @@ theorem exists_cap_comparison_time_margin {c T D : ℝ}
     by linarith, by linarith, by linarith, ?_⟩
   apply (lt_div_iff₀ (show 0 < 2 * (1 - (2 * (1 - eps) - 1)) by linarith)).mpr
   nlinarith [mul_nonneg heps.le hTD]
-
-
 
 theorem cap_elapsed_lt_time_margin {c T D H ell theta : ℝ}
     (hD : 0 ≤ D) (hH : 0 < H)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationApprox
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFilling
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationAreaContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,10 +14,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b circumference : ℝ} {J : Set ℝ} {s t : ℝ}
-
-
-
-
 
 theorem m65Exists_generic_filled_approximations (F : RicciFlow 3 M (Icc a b))
     (P : M62.CircleProductData F circumference)

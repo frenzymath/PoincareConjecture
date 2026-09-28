@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.EndNecks
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Cap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -29,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 theorem exists_strongCappedTube (C : M27TwistedSphereLineFlowCertificate K)
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -50,8 +38,6 @@ theorem exists_strongCappedTube (C : M27TwistedSphereLineFlowCertificate K)
     (C.cover (q, 0)) x hx
 
 end M27TwistedSphereLineFlowCertificate
-
-
 
 theorem twistedCylinder_strongCappedTube
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

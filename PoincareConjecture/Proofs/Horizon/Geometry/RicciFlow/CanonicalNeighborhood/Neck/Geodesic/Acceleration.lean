@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Geodesi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.InverseEstimate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -22,7 +14,6 @@ namespace PoincareConjecture.CoordinateExponential
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 lemma norm_coordinateChristoffel_le_of_ellipticity
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E} {a G : ℝ}
     (ha : 0 < a)
@@ -31,9 +22,6 @@ lemma norm_coordinateChristoffel_le_of_ellipticity
     ‖christoffelBilinear B x‖ ≤ (3 / (2 * a)) * G := by
   exact (norm_christoffelBilinear_le_of_ellipticity B x ha hell).trans
     (mul_le_mul_of_nonneg_left hmetric (by positivity))
-
-
-
 
 theorem christoffel_difference_apply
     {B G : E → E →L[ℝ] E →L[ℝ] ℝ} {x u v : E} :
@@ -140,7 +128,6 @@ theorem norm_christoffel_difference_le
     _ = ((3 / (2 * a)) * DB + (H / a ^ 2) * ((3 / 2 : ℝ) * DG)) *
         ‖u‖ * ‖v‖ := by ring
 
-
 lemma norm_geodesic_acceleration_le
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q w : ℝ → E} {t : ℝ}
     {a G V : ℝ}
@@ -168,7 +155,6 @@ lemma norm_geodesic_acceleration_le
       exact mul_le_mul (mul_le_mul_of_nonneg_left hvel hG) hvel
         (norm_nonneg (w t)) (mul_nonneg hG ((norm_nonneg (w t)).trans hvel))
     _ = (3 / (2 * a)) * G * V ^ 2 := by ring
-
 
 theorem abs_coordinate_component_acceleration_le
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q w : ℝ → E} {I : Set ℝ} {t : ℝ}

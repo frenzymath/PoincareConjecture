@@ -2,17 +2,6 @@ import Mathlib.Topology.Covering.Quotient
 import Mathlib.Topology.Compactness.LocallyFinite
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +10,6 @@ variable {E X G : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [Group G] [MulAction G E] {p : E → X}
 
 namespace IsQuotientCoveringMap
-
-
 
 theorem locallyFinite_graph [T2Space X] (hp : IsQuotientCoveringMap p G) :
     LocallyFinite (fun g : G => {z : E × E | g • z.1 = z.2}) := by
@@ -51,8 +38,6 @@ theorem locallyFinite_graph [T2Space X] (hp : IsQuotientCoveringMap p G) :
     change p b ∈ V at hb
     exact (Set.disjoint_left.mp hdis ha (by
       simpa only [← hab, hp.map_smul] using hb)).elim
-
-
 
 theorem properlyDiscontinuousSMul [T2Space X] (hp : IsQuotientCoveringMap p G) :
     ProperlyDiscontinuousSMul G E := by

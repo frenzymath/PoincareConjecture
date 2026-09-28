@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +11,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {origin scale c d B : ℝ}
   {U V : Set (F.slice origin).carrier}
-
-
-
-
 
 theorem not_disappears_of_surviving_subcylinder
     (outer : SurgeryFlowCylinder F (F.slice origin) origin scale (Ico 0 c) U)
@@ -60,10 +45,6 @@ theorem not_disappears_of_surviving_subcylinder
     rw [heq] at hout
     exact hout (inner.pre_retained_at_surgery c ⟨hc.le, hcd⟩ hT s hsin ht x hx)
 
-
-
-
-
 theorem duration_ge_of_removal_before_bound
     (outer : SurgeryFlowCylinder F (F.slice origin) origin scale (Ico 0 c) U)
     (inner : SurgeryFlowCylinder F (F.slice origin) origin scale (Ico 0 d) V)
@@ -75,10 +56,6 @@ theorem duration_ge_of_removal_before_bound
   have hcd : c < d := lt_of_not_ge hnot
   exact not_disappears_of_surviving_subcylinder outer inner hc hcd hVU hV hinitial
     (hremove (hcd.trans_le hdB))
-
-
-
-
 
 theorem stopped_outer_duration_ge_inner
     (outer : SurgeryFlowCylinder F (F.slice origin) origin scale (Ico 0 c) U)

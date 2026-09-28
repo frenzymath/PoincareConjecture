@@ -3,13 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff

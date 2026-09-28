@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Speed
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem isGeodesicOn_const (g : RiemannianMetric n M) (p : M) (s : Set ℝ) :
     g.IsGeodesicOn (fun _ : ℝ => p) s := by
@@ -33,7 +25,6 @@ theorem isGeodesicOn_const (g : RiemannianMetric n M) (p : M) (s : Set ℝ) :
     simp only [map_zero, zero_add, zero_sub, smul_zero, neg_zero]
   rw [hz, neg_zero]
   exact hasDerivAt_const u (0 : EuclideanSpace ℝ (Fin n))
-
 
 theorem pathELength_eq_of_tangentNorm_eq
     (g : RiemannianMetric n M) {γ : ℝ → M} {a b C : ℝ}

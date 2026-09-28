@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ArcCutoffTime
 import PoincareConjecture.Proofs.M62.Cor0_3_RegularizedEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -24,8 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem m63RegularizedDensity_time_derivative_bound (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (h0 : 0 ≤ K0) (h1 : 0 ≤ K1) (h2 : 0 ≤ K2)
@@ -77,8 +65,6 @@ theorem m63RegularizedDensity_time_derivative_bound (hc : M62ShrinkingCurve F c)
     nlinarith only [hb, hcubic, hRicmul]
   rw [hD.deriv]
   exact mul_le_mul_of_nonneg_right hscalar (speed_nonneg F c t x)
-
-
 
 theorem m63ArcCutoff_regularizedDensity_deriv_le (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (h0 : 0 ≤ K0) (h1 : 0 ≤ K1) (h2 : 0 ≤ K2)

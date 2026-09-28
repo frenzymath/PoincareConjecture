@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.M72FiniteReconstruction
 import PoincareConjecture.Proofs.M73.Cor15_4.SliceSimplyConnected
 import PoincareConjecture.Proofs.M73.Cor15_4.PieceSimplyConnected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -22,8 +11,6 @@ universe u
 namespace PoincareConjecture
 
 set_option linter.style.haveILetI false in
-
-
 
 theorem m73_factor_kind
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

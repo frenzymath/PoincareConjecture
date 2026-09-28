@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_endpoint_source_diagonal
     {C : GeneralizedSliceCarrier.{u}} (F : ℕ → SurgeryFlowData.{u})
@@ -44,8 +33,6 @@ theorem limitFinite_endpoint_source_diagonal
     Poincare.exists_strictMono_forall_le_of_eventually havailable
   choose b hb E hE using hrows
   exact ⟨eta, heta, b, hb, E, hE⟩
-
-
 
 theorem limitFinite_endpoint_physical_maps
     {C : GeneralizedSliceCarrier.{u}} (F : ℕ → SurgeryFlowData.{u})

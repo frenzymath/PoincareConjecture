@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SpatialEvolutionGluing
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M44
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
-
 
 theorem contDiffOn_ricci_coefficients_off_finite
     {n : ℕ} {J S : Set ℝ} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -52,9 +38,6 @@ theorem contDiffOn_ricci_coefficients_off_finite
       using hevol t ht hnot x hx
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem hasDerivAt_ricci_coefficients_off_finite
     {n : ℕ} {J S : Set ℝ} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -85,9 +68,6 @@ theorem hasDerivAt_ricci_coefficients_off_finite
   exact Poincare.hasDerivAt_of_hasDerivAt_off_finite hJ hS
     (hB.comp (continuousOn_id.prodMk continuousOn_const) (fun _ hs => ⟨hs, hx⟩))
     htime (fun s hs hnot => hevol s hs hnot x hx) ht
-
-
-
 
 theorem hasDerivAt_pullbackCoefficients_ricci
     {n : ℕ} {M : Type*} [TopologicalSpace M]

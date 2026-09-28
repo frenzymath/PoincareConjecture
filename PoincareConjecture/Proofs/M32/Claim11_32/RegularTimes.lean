@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M31.RegularCanonical
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,13 +14,9 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem terminalTime_pos (H : SingularTimeAssumptions F T M) : 0 < T := by
   obtain ⟨s, hs⟩ := F.interval_nontrivial.nonempty
   exact (H.interval_preterminal hs).1.trans_lt (H.interval_preterminal hs).2
-
-
 
 theorem existsRegularTimeAbove (H : SingularTimeAssumptions F T M)
     {s a : ℝ} (hs0 : 0 ≤ s) (hsT : s ≤ T) (has : a < s) :
@@ -49,13 +32,9 @@ theorem existsRegularTimeAbove (H : SingularTimeAssumptions F T M)
     H.regularTimes_left_dense hbF a ((le_max_left a 0).trans_lt hb)
   exact ⟨r, hr, har, hrb.trans hbs.le, hregular⟩
 
-
-
 theorem terminalAccuracy_pos (H : SingularTimeAssumptions F T M) :
     0 < terminalAccuracyFactor * H.epsilon :=
   mul_pos terminalAccuracyFactor_pos H.epsilon_pos
-
-
 
 theorem terminalAccuracy_lt_half (H : SingularTimeAssumptions F T M) :
     terminalAccuracyFactor * H.epsilon < 1 / 2 :=

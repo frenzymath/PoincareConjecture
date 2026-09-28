@@ -1,14 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.RicciTransport
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem exists_ricciTransport_on (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Ico a b)) (hab : a < b) (x : M) :

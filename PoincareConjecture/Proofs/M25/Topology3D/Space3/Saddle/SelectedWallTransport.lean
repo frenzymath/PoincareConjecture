@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ExteriorFlowBarrie
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import Mathlib.Tactic.Tauto
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_selected_wall_transport
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

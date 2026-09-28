@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.GuardedQuadraticGrowth
 import PoincareConjecture.Proofs.M34.Standard.NonnegativeCurvatureNorm
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M34
-
-
-
-
 
 theorem partialFlow_exists_exterior_scalar_bound_of_good_points
     {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)

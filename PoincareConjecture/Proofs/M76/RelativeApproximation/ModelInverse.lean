@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M76
 variable {X E ι : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {R C : Set X}
-
-
-
 
 theorem exists_polyhedral_PL_model_inverse
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))

@@ -2,23 +2,9 @@ import PoincareConjecture.Proofs.M07
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.NormalCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
 
 theorem pointedRicciFlowCompactness_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

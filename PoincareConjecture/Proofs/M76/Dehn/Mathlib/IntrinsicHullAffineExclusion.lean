@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 import Mathlib.Analysis.Convex.Join
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AffineSubspace
-
-
-
 
 theorem disjoint_intrinsicInterior_convexHull_of_insert
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -55,10 +42,6 @@ theorem disjoint_intrinsicInterior_convexHull_of_insert
   apply hvA
   simpa only [vsub_eq_sub, vadd_eq_add, sub_add_cancel] using
     A.vadd_mem_of_mem_direction hvdir hxA
-
-
-
-
 
 theorem disjoint_intrinsicInterior_convexHulls_of_excluded_vertex
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

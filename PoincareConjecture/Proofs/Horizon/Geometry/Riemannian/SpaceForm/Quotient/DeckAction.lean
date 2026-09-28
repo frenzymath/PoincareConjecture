@@ -4,14 +4,6 @@ import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +24,6 @@ private instance : ConnectedSpace (UnitSphere 3) := by
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_orthogonal_deck_transformation
     (g : RiemannianMetric 3 M) (q : UnitSphere 3 → M)
@@ -122,7 +112,6 @@ private theorem sphereMotion_injective :
     _ = K (‖v‖ • (x : EuclideanSpace ℝ (Fin 4))) := (K.map_smul _ _).symm
     _ = K v := congrArg K hscale
 
-
 def orthogonalDeckGroup (q : UnitSphere 3 → M) :
     Subgroup (EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) where
   carrier := {L | ∀ x, q (sphereMotion L x) = q x}
@@ -135,7 +124,6 @@ def orthogonalDeckGroup (q : UnitSphere 3 → M) :
     have h := hL (sphereMotion L⁻¹ x)
     rw [sphereMotion_inv] at h
     exact h.symm
-
 
 instance orthogonalDeckGroup_mulAction (q : UnitSphere 3 → M) :
     MulAction (orthogonalDeckGroup q) (UnitSphere 3) where
@@ -191,7 +179,6 @@ theorem orthogonalDeckGroup_finite (q : UnitSphere 3 → M)
   intro L K h
   exact orthogonalDeckGroup_eval_injective q hq x (congrArg Subtype.val h)
 
-
 theorem orthogonalDeckGroup_orbit_iff
     (g : RiemannianMetric 3 M) (q : UnitSphere 3 → M)
     (hq : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ q)
@@ -205,7 +192,6 @@ theorem orthogonalDeckGroup_orbit_iff
     exact ⟨⟨L, hL⟩, hLxy⟩
   · rintro ⟨L, rfl⟩
     exact (orthogonalDeckGroup_map_smul q L x).symm
-
 
 def sphereMotionMatrix
     (L : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) :

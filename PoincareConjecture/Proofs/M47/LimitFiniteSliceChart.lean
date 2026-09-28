@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M47.LimitNoncollapsePhysicalTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,10 +21,8 @@ private local instance sliceChartCharts :
 private local instance sliceChartManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
 
-
 noncomputable def limitFiniteSliceTime (t : ℝ) (k : ℕ) : ℝ :=
   if t ∈ Icc (-G.exhaustion.time k) 0 then t else 0
-
 
 theorem limitFinite_slice_time_mem (t : ℝ) (k : ℕ) :
     limitFiniteSliceTime G t k ∈ Icc (-G.exhaustion.time k) 0 := by
@@ -42,24 +32,19 @@ theorem limitFinite_slice_time_mem (t : ℝ) (k : ℕ) :
   · exact ht
   · exact ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩
 
-
 theorem limitFinite_slice_time_eventually_eq (t : ℝ) (ht : t ∈ J) :
     ∀ᶠ k : ℕ in atTop, limitFiniteSliceTime G t k = t := by
   filter_upwards [G.exhaustion.time_cofinal {t} isCompact_singleton
     (singleton_subset_iff.mpr ht)] with k hk
   exact if_pos (hk (mem_singleton t))
 
-
 noncomputable def limitFinitePhysicalSliceTime (t : ℝ) (k : ℕ) : ℝ :=
   (V.base (G.subsequence k)).1 + limitFiniteSliceTime G t k / V.scale (G.subsequence k)
-
 
 theorem limitFinite_physical_slice_time_mem (t : ℝ) (k : ℕ) :
     limitFinitePhysicalSliceTime G t k ∈ (V.flow (G.subsequence k)).interval :=
   limitNoncollapse_physical_time_mem G k (limitFiniteSliceTime G t k)
     (limitFinite_slice_time_mem G t k)
-
-
 
 noncomputable def limitFinitePhysicalSliceChart
     (F : ℕ → SurgeryFlowData.{u})
@@ -69,7 +54,6 @@ noncomputable def limitFinitePhysicalSliceChart
   limitCanonicalPhysicalChart (G.embedding k) (G.exhaustion.space_open k)
     (R (G.subsequence k)) (limitFiniteSliceTime G t k)
     (limitFinite_slice_time_mem G t k) (limitFinite_physical_slice_time_mem G t k)
-
 
 theorem limitFinite_physical_slice_chart_source
     (F : ℕ → SurgeryFlowData.{u})

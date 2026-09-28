@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingQuadraticLiminf
 import Mathlib.Analysis.Normed.Operator.BanachSteinhaus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -39,8 +28,6 @@ private theorem weak_norm_bounded
 variable {X E : Type*} [MeasurableSpace X] {mu : Measure X}
   [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem m64MovingKernel_weak_closed
     (R : ℕ → X → E →L[ℝ] E) (R0 : X → E →L[ℝ] E)

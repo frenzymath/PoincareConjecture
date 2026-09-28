@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.HalfSpaceChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
-
 
 theorem exists_boundary_halfspace_chart (a : M) (ha : a ∈ C.boundary_sphere) :
     ∃ e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)),
@@ -68,7 +57,6 @@ theorem exists_boundary_halfspace_chart (a : M) (ha : a ∈ C.boundary_sphere) :
   have hxV := hVU hx.2
   have hFx : F x = f x := hxV.2
   simpa only [Pi.neg_apply, sub_zero, neg_nonneg, hFx] using (hdef x hxV.1).symm
-
 
 theorem exists_closed_core_halfspace_chart (a : C.closed_core) :
     ∃ e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)),

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +24,6 @@ private theorem scalar_mvfderiv_comp {f : M → ℝ} {F : ℝ → ℝ} {x : M}
   rw [hF.hasDerivAt.hasFDerivAt.fderiv]
   change mvfderiv (𝓡 n) f x v * deriv F (f x) = _
   exact mul_comm _ _
-
-
 
 theorem hessian_one_sub_exp_neg (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -79,8 +64,6 @@ theorem hessian_one_sub_exp_neg (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     ((hF.deriv' (n := ∞)).differentiable (by simp) (f x)), hFd, hdexp]
   ring
 
-
-
 theorem hessian_one_sub_exp_neg_le_of_transverse_bound
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -99,8 +82,6 @@ theorem hessian_one_sub_exp_neg_le_of_transverse_bound
     _ ≤ Real.exp (-f x) * (-a * g.inner x w w) :=
       mul_le_mul_of_nonneg_left hquad (Real.exp_pos _).le
     _ = _ := by ring
-
-
 
 theorem hessian_one_sub_exp_neg_neg_of_transverse_bound
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.StationaryCompleteness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.EuclideanModel
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M30
-
-
 
 theorem metricComplete_flowout_pullback
     {n : ℕ} {S : Type u} {N : Type v}

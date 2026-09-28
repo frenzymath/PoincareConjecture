@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalStar
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [DecidableEq F]
   {K : SimplicialComplex ℝ E} {L : SimplicialComplex ℝ F}
-
-
 
 theorem coneAtZero_face_images
     (hlinK : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -48,9 +38,6 @@ theorem coneAtZero_face_images
     · exact Finset.mem_insert_of_mem (hst ⟨x, Finset.mem_erase.mpr ⟨hx0, hx⟩, rfl⟩)
 
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_cone_homeomorph_of_vertex_maps (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (hK : K.faces.Finite)

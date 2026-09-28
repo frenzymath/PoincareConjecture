@@ -5,39 +5,21 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PLStrip
 
-
-
 def bend (a b x : ℝ) : ℝ := a * min x 0 + b * max x 0
-
-
 
 theorem bend_of_nonpos (a b : ℝ) {x : ℝ} (hx : x ≤ 0) : bend a b x = a * x := by
   simp [bend, min_eq_left hx, max_eq_right hx]
 
-
-
 theorem bend_of_nonneg (a b : ℝ) {x : ℝ} (hx : 0 ≤ x) : bend a b x = b * x := by
   simp [bend, min_eq_right hx, max_eq_left hx]
-
-
 
 theorem continuous_bend (a b : ℝ) : Continuous (bend a b) :=
   (continuous_const.mul (continuous_id.min continuous_const)).add
     (continuous_const.mul (continuous_id.max continuous_const))
-
-
 
 theorem strictMono_bend {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     StrictMono (bend a b) := by
@@ -52,8 +34,6 @@ theorem strictMono_bend {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
       exact lt_trans (mul_neg_of_pos_of_neg ha (lt_of_not_ge hx))
         (mul_pos hb (lt_of_not_ge hy))
 
-
-
 theorem bend_inv_bend {a b : ℝ} (ha : 0 < a) (hb : 0 < b) (x : ℝ) :
     bend a⁻¹ b⁻¹ (bend a b x) = x := by
   by_cases hx : x ≤ 0
@@ -63,9 +43,6 @@ theorem bend_inv_bend {a b : ℝ} (ha : 0 < a) (hb : 0 < b) (x : ℝ) :
   · have hx' : 0 ≤ x := le_of_not_ge hx
     rw [bend_of_nonneg a b hx', bend_of_nonneg a⁻¹ b⁻¹ (mul_nonneg hb.le hx')]
     simp [hb.ne']
-
-
-
 
 noncomputable def bendHomeomorph {a b : ℝ} (ha : 0 < a) (hb : 0 < b) : ℝ ≃ₜ ℝ where
   toFun := bend a b

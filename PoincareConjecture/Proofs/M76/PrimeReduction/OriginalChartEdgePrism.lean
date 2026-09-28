@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteBaseIntervalProducts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -29,11 +20,6 @@ private theorem exists_finite_original_edge_prism {l u r : ℝ}
   obtain ⟨L, hL, hLs⟩ := I.exists_finite_interval_product hI hrr
   obtain ⟨K, hK, hKs⟩ := L.exists_finite_interval_product hL hlu
   exact ⟨K, hK, by simpa only [hLs, hIs, originalEdgePrism] using hKs⟩
-
-
-
-
-
 
 theorem exists_original_chart_edge_prism
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

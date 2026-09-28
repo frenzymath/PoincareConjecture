@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ConformalMinimumChar
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByParts
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByPartsTests
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -32,8 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
 
 theorem m64Annulus_chart_harmonic_of_conformal_minimum
     (A : M64Annulus g c0 c1)

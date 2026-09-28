@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedIntrinsicAnnulusClose
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialStaticNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipReflectedExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open Uniqueness
 
 local notation "V" => StandardCapSpace
 
-
-
 def RadialAnnulusComparison {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) (t : ℝ)
     (ht : t ∈ Ico 0 E.flow.base.lifetime) (x : V) (epsilon : ℝ) : Prop :=
@@ -36,8 +25,6 @@ def RadialAnnulusComparison {g₀ : StandardInitialMetric}
   let a := radialArclength G ‖x‖
   0 < a - epsilon⁻¹ ∧ RoundCylinderClose epsilon 0
     (radialCylinderTensor (fun u => intrinsicWarpingRadius G hrot hc (a + u) ^ 2) 1)
-
-
 
 noncomputable def RadialAnnulusComparison.staticNeck
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
@@ -56,8 +43,6 @@ noncomputable def RadialAnnulusComparison.staticNeck
     (scalar_intrinsic_radial_center (E.flow.metric t) (E.rotation_invariant t ht)
       P (E.flow.connection t) Q hQ (E.complete t ht) q x)
     (by simpa only [one_mul] using h.2)
-
-
 
 theorem blowupSequence_radial_annulus_comparison
     (P : M35StandardCapPredecessors)

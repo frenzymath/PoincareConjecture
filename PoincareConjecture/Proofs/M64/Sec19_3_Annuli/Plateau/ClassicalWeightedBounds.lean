@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakPhaseDegreeEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedAnnulusEnergyIdentity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,7 +22,6 @@ namespace M64ObservedWeakAnnulus
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem weightedEnergy_ge_vertical_boundary_mul_inv
     {e : M → E} {c0 c1 : ℝ → M}
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -54,7 +40,6 @@ theorem weightedEnergy_ge_vertical_boundary_mul_inv
   convert h using 1; ring
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem weightedEnergy_ge_phase_lift_mul
     {e : M → E} {c0 c1 : ℝ → M}
@@ -75,8 +60,6 @@ theorem weightedEnergy_ge_phase_lift_mul
   convert h using 1; ring
 
 end M64ObservedWeakAnnulus
-
-
 
 theorem m64ClassicalWeightedGramEnergy_lower_of_observed
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

@@ -2,19 +2,9 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M14
-
-
 
 theorem reducedLength_delta_identities {t : ℝ} (ht : 0 < t)
     (n L R K A B C : ℝ)

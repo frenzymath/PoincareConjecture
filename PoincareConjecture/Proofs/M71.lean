@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M71.Thm18_1_NegativeProfile
 import PoincareConjecture.Proofs.M71.Thm18_1_EmptySlice
 import PoincareConjecture.Statements.M71FiniteExtinction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,14 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
 
 theorem m71GlobalFiniteExtinction
     : M71GlobalFiniteExtinctionStatement.{u} := by

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.ScalarNormalized
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -30,8 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem eventually_movingTime_scalarNormalized_centeredNeck_jets_full_domain
     (F : RicciFlow 3 M (Iic 0)) (N : EpsilonNeck (F.metric 0))
@@ -92,8 +79,6 @@ theorem eventually_movingTime_scalarNormalized_centeredNeck_jets_full_domain
     subset_closure (neck_coordinate_mem N z ⟨mem_univ _, hz⟩)
   obtain ⟨q, hqt, hzq⟩ := mem_iUnion₂.mp (ht hzcarrier)
   exact hk q hqt z hz hzq j hj
-
-
 
 theorem eventually_scalarNormalized_centeredNeck_jets_full_domain_uniform_time
     (F : RicciFlow 3 M (Iic 0)) (N : EpsilonNeck (F.metric 0))

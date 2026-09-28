@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Coho
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralExcision
 import Mathlib.Algebra.Homology.DerivedCategory.KProjective
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

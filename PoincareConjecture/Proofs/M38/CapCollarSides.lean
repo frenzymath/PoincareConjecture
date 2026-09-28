@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapCollarGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 theorem capShell_central {r : ℝ} (hr : 0 < r) (c : ℝ) :
     capShellMap r c '' (Set.univ ×ˢ ({0} : Set ℝ)) = Metric.sphere 0 r := by
@@ -36,8 +26,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem neck_mem_central_of_coordinate_zero (N : EpsilonNeck g) {x : M}
     (hx : x ∈ N.carrier) (hzero : (N.coordinate_inverse x).2 = 0) :
     x ∈ N.central_sphere := by
@@ -48,7 +36,6 @@ theorem neck_mem_central_of_coordinate_zero (N : EpsilonNeck g) {x : M}
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {I : MetricSurgeryInput K g} (R : MetricSurgeryResult g₀ I)
 
-
 theorem local_cap_collar_central {r : ℝ} (hr : 0 < r) (c : ℝ)
     (hball : g₀.metric.ball 0 (g₀.cylindrical_end.radius + 4) = Metric.ball 0 r) :
     localCapCollar R r c '' (Set.univ ×ˢ ({0} : Set ℝ)) = I.neck.central_sphere := by
@@ -56,8 +43,6 @@ theorem local_cap_collar_central {r : ℝ} (hr : 0 < r) (c : ℝ)
   rw [Set.image_comp, Set.image_comp, capShell_central hr c,
     local_cap_sphere_eq_collapse R hr hball (standard_cap_ball_extended _ hr hball)]
   exact R.retained_left_inverse.image_image' (neck_central_extended I.neck)
-
-
 
 theorem local_cap_interior_inverse_positive {r : ℝ} (hr : 0 < r)
     (hball : g₀.metric.ball 0 (g₀.cylindrical_end.radius + 4) = Metric.ball 0 r)
@@ -92,7 +77,6 @@ theorem local_cap_interior_inverse_positive {r : ℝ} (hr : 0 < r)
   exact ⟨hq.1, lt_of_le_of_ne (le_of_not_gt hnneg) (Ne.symm hnzero),
     (I.neck.coordinate_inverse_mem _ hq.1).2.2⟩
 
-
 theorem local_cap_collar_positive {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (hdom : {x : StandardCapSpace | r - c < ‖x‖ ∧ ‖x‖ < r + c} ⊆
       g₀.metric.ball 0 (g₀.cylindrical_end.radius + 5) ∩
@@ -112,7 +96,6 @@ theorem local_cap_collar_positive {r c : ℝ} (hc : 0 < c) (hcr : c < r)
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
 
-
 theorem event_cap_collar_central {r : ℝ} (hr : 0 < r) (c : ℝ)
     (hball : F.standard_initial.metric.ball 0
       (F.standard_initial.cylindrical_end.radius + 4) = Metric.ball 0 r) :
@@ -120,7 +103,6 @@ theorem event_cap_collar_central {r : ℝ} (hr : 0 < r) (c : ℝ)
       (F.event T hT).limit_identify.inverse '' ((F.event T hT).necks i).neck.central_sphere := by
   change ((F.event T hT).limit_identify.inverse ∘ localCapCollar _ r c) '' _ = _
   rw [Set.image_comp, local_cap_collar_central _ hr c hball]
-
 
 theorem event_cap_collar_positive_discarded {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (hdom : {x : StandardCapSpace | r - c < ‖x‖ ∧ ‖x‖ < r + c} ⊆

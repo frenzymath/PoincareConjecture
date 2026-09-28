@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.BoundedSpeed
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Continuation
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE
@@ -18,8 +10,6 @@ open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_open_solution_extension
     {U : Set E} (hU : IsOpen U) {F : E → E} (hF : ContDiffOn ℝ ∞ F U)
@@ -92,9 +82,6 @@ theorem exists_open_solution_extension
   · intro t ht
     exact ⟨(hγ t (Ioo_subset_Icc_self ht)).1,
       (hγ t (Ioo_subset_Icc_self ht)).2.hasDerivAt (Icc_mem_nhds ht.1 ht.2)⟩
-
-
-
 
 theorem exists_smooth_flow_of_bounded_speed
     {U : Set E} (hU : IsOpen U) {F : E → E} (hF : ContDiffOn ℝ ∞ F U)

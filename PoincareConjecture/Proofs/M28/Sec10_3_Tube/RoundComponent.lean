@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.Scalar.Trace
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem SingularRoundComponent.model_scalar_eq_six
     {M : Type u} [TopologicalSpace M]

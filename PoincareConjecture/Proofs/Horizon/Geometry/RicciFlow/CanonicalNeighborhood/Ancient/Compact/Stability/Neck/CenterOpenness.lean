@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Boundary.Reparameterization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +18,6 @@ universe u
 namespace PoincareConjecture
 
 namespace RoundCylinderTranslation
-
-
 
 theorem familyClose_pullback {δ ε : ℝ} {I : Set ℝ}
     (s : ℝ) {B : ℝ → RoundCylinderTwoTensor}
@@ -56,8 +43,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_strongNeck_of_translated_scalarFamily
     (K : AncientKappaSolution 3 M) (N : EpsilonNeck (K.flow.metric 0))
@@ -123,8 +108,6 @@ theorem exists_strongNeck_of_translated_scalarFamily
     metric_comparison := by simpa only [zero_add, hmap, R] using hactual }
   exact ⟨Q, rfl, rfl, rfl, rfl⟩
 
-
-
 theorem eventually_strongNeck_centers_of_scalarFamily
     (K : AncientKappaSolution 3 M) {δ ε : ℝ} (N : StrongEvolvingNeck K 0 δ)
     (hδε : δ < ε) (hεhalf : ε < 1 / 2)
@@ -174,9 +157,6 @@ theorem eventually_strongNeck_centers_of_scalarFamily
     (by rwa [hmap]) (by simpa only [hmap] using hfamilyx)
   exact ⟨Q, hQ.trans hmap⟩
 
-
-
-
 theorem eventually_strongNeck_centers_of_lt
     (K : AncientKappaSolution 3 M) {δ ε : ℝ} (N : StrongEvolvingNeck K 0 δ)
     (hδε : δ < ε) (hεsmall : ε < 1 / 200) :
@@ -199,8 +179,6 @@ theorem eventually_strongNeck_centers_of_lt
     N.terminal_neck hcompact hsmall hR hclose
     (K.flow.connection 0).continuous_scalarCurvature.continuousAt.tendsto
   simpa only [N.terminal_epsilon] using hpersist
-
-
 
 theorem exists_open_strongNeck_center_neighborhood
     (K : AncientKappaSolution 3 M) {δ ε : ℝ} (N : StrongEvolvingNeck K 0 δ)

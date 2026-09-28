@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCalibratedAxial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -49,8 +40,6 @@ section CoordinateNorm
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem standard_initial_patch_pullback_lower {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)
@@ -93,8 +82,6 @@ theorem standard_initial_patch_pullback_lower {epsilon u : ℝ} {x : StandardCap
   have hlo := (abs_le.mp (herr.trans herror)).1
   change ‖v‖ ^ 2 ≤ C v v at hmodel
   linarith
-
-
 
 theorem standard_initial_patch_axial_derivative {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

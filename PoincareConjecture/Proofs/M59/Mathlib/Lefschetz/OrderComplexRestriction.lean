@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexStars
 import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,17 +16,11 @@ open M02.Topology
 
 variable {J : Type u} [PartialOrder J] [Fintype J]
 
-
-
 def orderComplexRestrictionWeight (s : Finset J) (z : J → ℝ) : ℝ :=
   ∑ i ∈ s, z i
 
-
-
 def orderComplexNeighborhood (s : Finset J) : Set (finiteOrderComplex J).space :=
   {z | 0 < orderComplexRestrictionWeight s z.val}
-
-
 
 theorem isOpen_orderComplexNeighborhood (s : Finset J) :
     IsOpen (orderComplexNeighborhood s) := by
@@ -47,12 +30,10 @@ theorem isOpen_orderComplexNeighborhood (s : Finset J) :
 
 open scoped Classical in
 
-
 def orderComplexRestrictionCoord (s : Finset J) (z : J → ℝ) (i : J) : ℝ :=
   if i ∈ s then z i / orderComplexRestrictionWeight s z else 0
 
 omit [PartialOrder J] [Fintype J] in
-
 
 theorem orderComplexRestrictionCoord_weight (s : Finset J) (z : J → ℝ)
     (hz : orderComplexRestrictionWeight s z ≠ 0) :
@@ -62,8 +43,6 @@ theorem orderComplexRestrictionCoord_weight (s : Finset J) (z : J → ℝ)
     Finset.sum_ite_mem, Finset.inter_self]
   rw [← Finset.sum_div]
   exact div_self hz
-
-
 
 theorem orderComplexRestrictionCoord_mem (s : Finset J)
     (z : orderComplexNeighborhood s) :
@@ -90,8 +69,6 @@ theorem orderComplexRestrictionCoord_mem (s : Finset J)
       simp only [orderComplexRestrictionCoord, h, zero_div, ite_self] at hj
       exact hj rfl
 
-
-
 theorem continuous_orderComplexRestrictionCoord (s : Finset J) :
     Continuous (fun z : orderComplexNeighborhood s =>
       orderComplexRestrictionCoord s z.val.val) := by
@@ -107,8 +84,6 @@ theorem continuous_orderComplexRestrictionCoord (s : Finset J) :
       (fun z => ne_of_gt z.property)
   · exact continuous_const
 
-
-
 def orderComplexRestriction (s : Finset J) :
     C(orderComplexNeighborhood s, orderComplexNeighborhood s) := by
   classical
@@ -119,8 +94,6 @@ def orderComplexRestriction (s : Finset J) :
     exact zero_lt_one
   · exact ((continuous_orderComplexRestrictionCoord s).subtype_mk _).subtype_mk _
 
-
-
 theorem orderComplexRestrictionWeight_eq_one (s : Finset J)
     (z : (finiteOrderComplex J).space) (hz : ∀ i ∉ s, z.val i = 0) :
     orderComplexRestrictionWeight s z.val = 1 := by
@@ -128,8 +101,6 @@ theorem orderComplexRestrictionWeight_eq_one (s : Finset J)
   rw [orderComplexRestrictionWeight,
     Finset.sum_subset (Finset.subset_univ s) (fun i _ hi => hz i hi)]
   exact ((finiteOrderComplex_space J z.val).mp z.property).2.1
-
-
 
 theorem orderComplexRestrictionCoord_eq_self (s : Finset J)
     (z : (finiteOrderComplex J).space) (hz : ∀ i ∉ s, z.val i = 0) :
@@ -141,9 +112,6 @@ theorem orderComplexRestrictionCoord_eq_self (s : Finset J)
   split_ifs with hi
   · rfl
   · exact (hz i hi).symm
-
-
-
 
 theorem orderComplexRestrictionSegment_mem (s : Finset J)
     (z : orderComplexNeighborhood s) (t : I) :
@@ -184,8 +152,6 @@ theorem orderComplexRestrictionSegment_mem (s : Finset J)
     · rw [ht]
       norm_num
 
-
-
 def orderComplexRestrictionHomotopy (s : Finset J) :
     (ContinuousMap.id (orderComplexNeighborhood s)).Homotopy (orderComplexRestriction s) where
   toFun q := ⟨⟨fun i => (1 - (q.1 : ℝ)) * q.2.val.val i +
@@ -217,9 +183,6 @@ def orderComplexRestrictionHomotopy (s : Finset J) :
       1 * orderComplexRestrictionCoord s z.val.val i =
         orderComplexRestrictionCoord s z.val.val i
     ring
-
-
-
 
 theorem orderComplexRestrictionHomotopy_fixed (s : Finset J)
     (z : orderComplexNeighborhood s) (hz : ∀ i ∉ s, z.val.val i = 0) (t : I) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ExteriorHalfspaceChart
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_high_exterior_chart
     {X ι : Type*} [TopologicalSpace X]

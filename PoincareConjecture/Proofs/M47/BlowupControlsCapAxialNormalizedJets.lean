@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open Proofs.M47
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem cap_native_axial_normalized_zero
     (beta lambda c u : ℝ) (hscale : beta * lambda ^ 2 = 1)
@@ -50,8 +39,6 @@ theorem cap_native_axial_normalized_zero
   · simp only [if_pos hax]
     nlinarith only [hscale]
   · simp only [if_neg hax, mul_zero, add_zero, sub_zero]
-
-
 
 theorem cap_native_axial_normalized_succ
     (beta lambda c : ℝ) {u : ℝ} (hu : u < 1)

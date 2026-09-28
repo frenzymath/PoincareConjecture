@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.GeodesicJacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.RadialGauss
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem normalExponential_inner_self
     (D : LeviCivitaData g)
@@ -99,7 +88,6 @@ theorem normalExponential_inner_self
   erw [zero_smul, hmetric] at h
   nlinarith only [h]
 
-
 theorem normalExponential_inner
     (D : LeviCivitaData g)
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -128,7 +116,6 @@ theorem normalExponential_inner
       (mfderiv (𝓡 n) (𝓡 n) e (t • θ) w)] at h
   rw [real_inner_comm w z] at h
   nlinarith only [h, hw', hz']
-
 
 theorem sphericalExponential_inner
     (D : LeviCivitaData g) {e : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}
@@ -178,8 +165,6 @@ theorem sphericalExponential_inner
     hrw, hrad, hθ] at h
   rw [real_inner_comm z θ] at h
   nlinarith only [h]
-
-
 
 theorem exists_spherical_exponential [T2Space M] [CompactSpace M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

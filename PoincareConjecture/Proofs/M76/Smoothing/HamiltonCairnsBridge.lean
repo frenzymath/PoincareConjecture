@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonAffineStars
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarPurity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,11 +14,6 @@ namespace PoincareConjecture.M76
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [SecondCountableTopology M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
-
-
-
 
 theorem smoothingConclusion_of_supportedPLOverlapStraightening
     (P : SmoothingBridgeInput (M := M))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.LocalInverse
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Compact
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_spacetime_neighborhood_of_codimZero_isotopy
     {a b : Real} {K : Set E} (hK : IsCompact K)
@@ -78,8 +66,6 @@ theorem exists_spacetime_neighborhood_of_codimZero_isotopy
       (fun z hz => localDiffeomorphAt_of_smooth_bijective_derivative hH
         (hHbij z.1 hz.1 z.2 hz.2))
   exact ⟨e, he, heq, hes, hei⟩
-
-
 
 theorem exists_ambient_isotopy_of_codimZero_isotopy
     {a b : Real} {K : Set E} (hK : IsCompact K)

@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ExposedEdgeVert
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilySeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing.Subsegments
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -61,11 +48,6 @@ private theorem regional_parent_vertex_used
     (fun a => (R a.1).boundary_injective a.2) (fun a d h => (hcompat a d h).1) q i
   rwa [(R i).support]
 
-
-
-
-
-
 theorem m64Intrinsic_regional_parent_intersection_frontier (i j : I) (hij : i ≠ j) :
     (F i '' convexHull ℝ (range (b i))) ∩ (F j '' convexHull ℝ (range (b j))) ⊆
       frontier (F i '' convexHull ℝ (range (b i))) := by
@@ -84,10 +66,6 @@ theorem m64Intrinsic_regional_parent_intersection_frontier (i j : I) (hij : i �
 include hF hFi
 
 open Classical in
-
-
-
-
 
 theorem m64Intrinsic_regional_parent_contribution
     (g : RiemannianMetric 2 AnnulusCoordinates)
@@ -109,11 +87,6 @@ theorem m64Intrinsic_regional_parent_contribution
   · rw [if_neg hq]
     apply meshVertexAngleContribution_eq_zero_of_not_mem_support
     rwa [(R i).support]
-
-
-
-
-
 
 theorem m64Intrinsic_regional_parent_interior_fan
     [Fintype I]
@@ -146,10 +119,6 @@ theorem m64Intrinsic_regional_parent_interior_fan
     exact meshVertexAngleContribution_eq_zero_of_not_mem_support g (F j) (R j).mesh (hother j hji)
   · simp
 
-
-
-
-
 theorem m64Intrinsic_regional_parent_open_edge_fan
     (g : RiemannianMetric 2 AnnulusCoordinates)
     (q : Euler.CoordinateVertex (fun a : (i : I) × (R i).mesh.Triangle => F a.1)
@@ -163,11 +132,6 @@ theorem m64Intrinsic_regional_parent_open_edge_fan
   exact m64Intrinsic_subdivision_open_edge_fan g (F i) (b i) (S i) (R i)
     (hF i) (hFi i) (hsource i)
     (regional_parent_vertex_used F b S R hsource hcompat q i hqparent) k hq
-
-
-
-
-
 
 theorem m64Intrinsic_regional_parent_pair_fan [Fintype I]
     (g : RiemannianMetric 2 AnnulusCoordinates)
@@ -226,11 +190,6 @@ theorem m64Intrinsic_regional_parent_pair_fan [Fintype I]
     m64Intrinsic_regional_parent_open_edge_fan F b S R hF hFi hsource hcompat g q i ki hqi,
     m64Intrinsic_regional_parent_open_edge_fan F b S R hF hFi hsource hcompat g q j kj hqj]
   ring
-
-
-
-
-
 
 theorem m64Intrinsic_regional_shared_subsegment_fan [Fintype I]
     (g : RiemannianMetric 2 AnnulusCoordinates)

@@ -3,15 +3,6 @@ import Mathlib.Topology.Compactness.LocallyFinite
 import Mathlib.Data.Finset.Max
 import Mathlib.Data.Int.Interval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,7 +13,6 @@ universe u
 namespace PoincareConjecture
 
 open Classical in
-
 
 theorem BalancedNeckChain.intrinsic_trimmed_cut_cover
     {M : Type u} [TopologicalSpace M]

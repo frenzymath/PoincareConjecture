@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsComponent
 import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Definitions.M47ComponentAnalytics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,20 +11,14 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
-
 noncomputable def blowupAnalyticConstant (S : RepairedControlledSchedulesData.{u})
     (B : M47ComponentAnalyticBounds.{u} S.setup.C) : ℝ :=
   max 1 (max (2 * S.setup.C) (max S.calibration.model_analytics.neck_constant
     (max S.calibration.model_analytics.round_constant B.constant)))
 
-
 theorem blowupAnalyticConstant_pos (S : RepairedControlledSchedulesData.{u})
     (B : M47ComponentAnalyticBounds.{u} S.setup.C) : 0 < blowupAnalyticConstant S B :=
   zero_lt_one.trans_le (le_max_left _ _)
-
-
-
 
 theorem canonical_blowup_analytic_estimate
     (S : RepairedControlledSchedulesData.{u})

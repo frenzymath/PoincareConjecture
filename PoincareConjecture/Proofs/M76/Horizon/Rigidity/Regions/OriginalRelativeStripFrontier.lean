@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalRelativeCutFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,7 +14,6 @@ omit [T2Space X] in
 theorem closedStrip_subset (P : OriginalDiskProduct e R j) : P.closedStrip ⊆ R := by
   rintro _ ⟨z, hz, rfl⟩
   exact P.inside ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
-
 
 theorem relative_interior_closedStrip (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (he : PLDomain e R)
@@ -43,8 +33,6 @@ theorem relative_interior_closedStrip (P : OriginalDiskProduct e R j)
   rw [hcut, interior_compl, closure_compl] at hreg
   exact compl_injective (by rwa [hclosure] at hreg)
 
-
-
 theorem relative_frontier_closedStrip (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (he : PLDomain e R)
     (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip)) :
@@ -56,7 +44,6 @@ theorem relative_frontier_closedStrip (P : OriginalDiskProduct e R j)
   rw [hC.frontier_eq,
     P.relative_interior_closedStrip hR he hopen, ← preimage_sdiff,
     P.closedStrip_sdiff_openStrip]
-
 
 theorem relative_regular_closed_closedStrip (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (he : PLDomain e R)

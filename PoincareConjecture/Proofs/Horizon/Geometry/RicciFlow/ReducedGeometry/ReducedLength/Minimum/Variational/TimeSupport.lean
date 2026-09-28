@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.AncientAction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.Ancient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Topology
 open scoped Manifold ContDiff Bundle intervalIntegral
 
 namespace PoincareConjecture.ReducedLengthMinimum.Variational
-
 
 noncomputable def stationaryTimeSupport (R : ℝ → ℝ) (τ m u : ℝ) : ℝ :=
   (2 * Real.sqrt τ * m + ∫ r in τ..u, Real.sqrt r * R r) / (2 * Real.sqrt u)
@@ -24,8 +15,6 @@ theorem stationaryTimeSupport_self (R : ℝ → ℝ) {τ : ℝ} (hτ : 0 < τ) (
     stationaryTimeSupport R τ m τ = m := by
   simp only [stationaryTimeSupport, intervalIntegral.integral_same, add_zero]
   exact mul_div_cancel_left₀ m (by positivity)
-
-
 
 theorem hasDerivAt_stationaryTimeSupport (R : ℝ → ℝ)
     (hR : ContinuousOn R (Ioi 0)) {τ : ℝ} (hτ : 0 < τ) (m : ℝ) :
@@ -68,8 +57,6 @@ variable {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem stationary_tail_square_integral (K : AncientKappaSolution 2 M) (q : M)
     {τ u : ℝ} (hτ : 0 ≤ τ) (hu : τ ≤ u) :
     (∫ s in Real.sqrt τ..Real.sqrt u,
@@ -91,8 +78,6 @@ theorem stationary_tail_square_integral (K : AncientKappaSolution 2 M) (q : M)
   intro s hs
   simp only [Function.comp_apply, Real.sqrt_sq ((Real.sqrt_nonneg τ).trans hs.1.le)]
   ring
-
-
 
 theorem reducedLength_le_stationary_extension (K : AncientKappaSolution 2 M)
     {τ u : ℝ} (hτ : 0 < τ) (hu : τ ≤ u)
@@ -240,8 +225,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem exists_stationary_time_comparison (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :
     ∃ q : M, reducedLength K.flow 0 p q τ = K.spatialReducedLengthInfimum p τ ∧
@@ -273,9 +256,6 @@ theorem exists_stationary_time_comparison (K : AncientKappaSolution 2 M)
   have hle := hinf.trans (by simpa only [hγ0] using hext)
   simpa only [stationaryTimeSupport, mul_comm] using
     hle.trans (_root_.add_le_add hbound le_rfl)
-
-
-
 
 theorem exists_right_time_upper_support (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :

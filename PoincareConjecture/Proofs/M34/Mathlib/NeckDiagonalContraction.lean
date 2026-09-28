@@ -4,14 +4,6 @@ import Mathlib.Data.Fintype.Pi
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M34
 
 variable {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ]
 variable {R : Type*}
-
-
 
 theorem diagonal_tensor_contraction [CommSemiring R] (d : κ → R) (T : (ι → κ) → R) :
     (∑ a : ι → κ, ∑ b : ι → κ,
@@ -46,7 +36,6 @@ theorem diagonal_tensor_contraction [CommSemiring R] (d : κ → R) (T : (ι →
     rw [hzero, zero_mul, zero_mul]
   · simp
 
-
 theorem diagonal_tensor_contraction_nonneg [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
     (d : κ → R) (hd : ∀ i, 0 ≤ d i) (T : (ι → κ) → R) :
     0 ≤ ∑ a : ι → κ, ∑ b : ι → κ,
@@ -54,8 +43,6 @@ theorem diagonal_tensor_contraction_nonneg [CommRing R] [LinearOrder R] [IsStric
   rw [diagonal_tensor_contraction]
   exact Finset.sum_nonneg fun a _ =>
     mul_nonneg (Finset.prod_nonneg fun i _ => hd (a i)) (sq_nonneg _)
-
-
 
 theorem diagonal_tensor_contraction_le [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
     (d : κ → R) (hd : ∀ i, 0 ≤ d i) (T S : (ι → κ) → R) :

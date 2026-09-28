@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.DeckOrbit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem injective_loop_powers_of_no_deck_period
     {f : EuclideanSpace ℝ (Fin n) → M} {R a : ℝ}
@@ -70,10 +58,7 @@ theorem injective_loop_powers_of_no_deck_period
   · exact hij
   · exact (hcollision j i hij (Subtype.ext heq.symm)).elim
 
-
 def loopOrbitRadius (s : ℝ) (N : ℕ) : ℝ := s / (16 * (2 : ℝ) ^ N)
-
-
 
 def loopPowerThreshold (s : ℝ) (N : ℕ) : ℝ :=
   s / (1024 * ((N : ℝ) + 1) ^ 4 * (4 : ℝ) ^ N)
@@ -87,8 +72,6 @@ theorem loopPowerThreshold_pos {s : ℝ} (hs : 0 < s) (N : ℕ) :
     0 < loopPowerThreshold s N := by
   unfold loopPowerThreshold
   positivity
-
-
 
 theorem loopPowerThreshold_margins {s ell : ℝ} (hs : 0 < s) (hell : 0 ≤ ell)
     (N : ℕ) (hshort : ell ≤ loopPowerThreshold s N) :

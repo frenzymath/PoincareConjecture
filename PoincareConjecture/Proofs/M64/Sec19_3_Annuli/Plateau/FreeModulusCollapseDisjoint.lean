@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusCollapseTrace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +8,6 @@ open Set MeasureTheory
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
 
 theorem not_ae_common_trace_of_disjoint_periodic_images
     {X : Type*} {P : ℝ} (hP : 0 < P)

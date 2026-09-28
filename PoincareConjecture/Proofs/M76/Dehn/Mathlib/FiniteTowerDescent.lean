@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.MarkedBoundaryPLLoopDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteDoubleArcSurgery
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredLoopSplit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -32,9 +21,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
-
-
-
 structure StageMarkedDisk
     (st : Stage e S f r C) (R Fmark : Set M) (base : Fmark)
     (J : Subgroup (FundamentalGroup Fmark base)) where
@@ -48,11 +34,6 @@ structure StageMarkedDisk
     map x.val ∈ frontier (st.projection ⁻¹' R) ↔ (x : V2) ∈ Q
   basepath : Path base (rim squareRimBase)
   outside : basepath.whiskeredLoopClass (squareRimLoop.map rim.continuous) ∉ J
-
-
-
-
-
 
 def stageMarkedDiskOfCandidate
     {st : Stage e S f r C} {R Fmark : Set M} {base : Fmark}
@@ -93,9 +74,6 @@ def stageMarkedDiskOfCandidate
     rw [hnormal, hword]
     exact J.inv_mem h
 
-
-
-
 theorem backward_fold_reaches
     {α : Type u} {rel : α → α → Prop} {P : α → Prop}
     (back : ∀ {a b}, rel a b → P b → P a)
@@ -103,10 +81,6 @@ theorem backward_fold_reaches
   induction h using Relation.ReflTransGen.head_induction_on with
   | refl => exact hb
   | head hab htail ih => exact back hab ih
-
-
-
-
 
 theorem nonempty_stage_marked_disk_of_reaches
     {s0 st : Stage e S f r C} {R Fmark : Set M} {base : Fmark}

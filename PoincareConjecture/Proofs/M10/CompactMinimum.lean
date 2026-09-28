@@ -1,21 +1,11 @@
 import Mathlib.Topology.Semicontinuity.Basic
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem lowerSemicontinuousAt_of_compact_lifts
     {X Y : Type*} [TopologicalSpace X] [T2Space X] [TopologicalSpace Y]

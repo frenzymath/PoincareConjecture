@@ -2,20 +2,9 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem exists_last_eq_of_continuousOn {f : ℝ → ℝ} {a b c : ℝ}
     (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))

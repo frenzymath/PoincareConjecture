@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapForcing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -42,10 +32,6 @@ local instance : NormedAddCommGroup
 local instance : NormedSpace ℝ
     (Target →L[ℝ] Target →L[ℝ] Target →L[ℝ] Target →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 def quadraticForcingSecondPartial
     (B : Target → Target →L[ℝ] Target →L[ℝ] ℝ)
@@ -93,10 +79,6 @@ private theorem trilinear_term_fderiv_apply
   rw [h.fderiv]
   simp only [add_apply, ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply]
   ring
-
-
-
-
 
 theorem quadraticForcingPartial_fderiv_apply
     {B : Target → Target →L[ℝ] Target →L[ℝ] ℝ}
@@ -214,12 +196,6 @@ private theorem weak_partial_of_contDiffOn_eq
   rw [heq] at h
   simp only [mul_comm (fderiv ℝ phi _ _)] at h
   linarith
-
-
-
-
-
-
 
 theorem quadraticForcing_memWkp_two
     {U : Set Plane} {O : Set Target} (hU : IsOpen U)

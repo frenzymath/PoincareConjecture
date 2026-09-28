@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step.CapHeights
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.CutNeighborhoods
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +19,6 @@ namespace SphereSurgeryTree
 
 variable {v : E3} {A : Finset Real}
 
-
-
 def PreservesCaps : {f : S2 -> E3} -> SphereSurgeryTree v A f -> Prop
   | _, .leaf _ _ => True
   | _, .branch _ _ S minus plus =>
@@ -38,9 +34,6 @@ theorem Protects.mono {B C : Set Real} {f : S2 -> E3}
     exact ⟨fun k hk => h.1 k (hCB hk), ihM h.2.1, ihP h.2.2⟩
 
 end SphereSurgeryTree
-
-
-
 
 theorem exists_sphereSurgeryTree_preserving_caps
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

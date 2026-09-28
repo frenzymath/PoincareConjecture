@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalForwardTransfer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,9 +13,6 @@ universe v
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_uniform_oriented_forward_reciprocal_sign :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ (1 / 10000 : ℝ) ∧

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Models.TorusGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.GroupRank.FiniteSurface
 
-
-
 set_option autoImplicit false
 open Set Geometry
 open Poincare.Topology.Orientation.ProjectivePlane

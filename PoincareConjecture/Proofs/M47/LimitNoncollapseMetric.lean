@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedReverseBall
 import PoincareConjecture.Proofs.M34.Standard.QuadraticTangentComparison
 import PoincareConjecture.Proofs.M34.Standard.ScaledTangentComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,8 +21,6 @@ private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carri
   C.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
 
-
-
 theorem limitNoncollapse_compact_inner_zero
     {K : Set C.limit.sliceCarrier.carrier} (hK : IsCompact K) :
     let h0 : ∀ k, 0 ∈ Icc (-C.exhaustion.time k) 0 :=
@@ -43,8 +32,6 @@ theorem limitNoncollapse_compact_inner_zero
         (C.embedding k).pullbackInner 0 (h0 k) x v v ≤
           2 * (C.limit.flow.metric 0).inner x v v := by
   exact C.eventually_pullback_inner_comparison_zero hK
-
-
 
 theorem limitNoncollapse_chart_inner_zero
     (q : C.limit.sliceCarrier.carrier)
@@ -66,8 +53,6 @@ theorem limitNoncollapse_chart_inner_zero
             ((extChartAt (𝓡 3) q).symm y) (A v) (A v) := by
   exact C.eventually_chart_pullback_inner_comparison_zero q hH hHt
 
-
-
 theorem limitNoncollapse_forward_tangent_bound
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -81,8 +66,6 @@ theorem limitNoncollapse_forward_tangent_bound
   exact RiemannianMetric.tangentNorm_le_two_div_sqrt_mul_of_scaled_inner_le
     g h v w hQ hbound
 
-
-
 theorem limitNoncollapse_inverse_tangent_bound
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -95,8 +78,6 @@ theorem limitNoncollapse_inverse_tangent_bound
     g.tangentNorm x v ≤ 2 * Real.sqrt Q * h.tangentNorm y w := by
   exact RiemannianMetric.tangentNorm_le_two_sqrt_mul_of_half_inner_le
     g h v w hQ hbound
-
-
 
 theorem limitNoncollapse_reverse_ball_zero
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

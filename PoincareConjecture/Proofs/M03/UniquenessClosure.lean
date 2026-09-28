@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M03.CoupledDifferenceEnergy
 import PoincareConjecture.Proofs.M03.MetricDifferenceEnergyRate
 import PoincareConjecture.Statements.Ch03.ShortTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option synthInstance.maxHeartbeats 200000
@@ -24,7 +16,6 @@ open Bundle MeasureTheory Set
 universe u
 
 namespace PoincareConjecture.Proofs.M03
-
 
 theorem exists_connection_difference_integral_rate_bound
     {n dH dA dS : ℕ} {M : Type u} [TopologicalSpace M]
@@ -332,7 +323,6 @@ theorem exists_connection_difference_integral_rate_bound
   rw [integral_indicator (f := fun z : V => density a (t, z))
     (μ := volume) (isClosed_tsupport (φ a)).measurableSet] at hineq
   exact hineq
-
 
 theorem exists_curvature_difference_integral_rate_bound
     {n dH dA dS : ℕ} {M : Type u} [TopologicalSpace M]
@@ -748,7 +738,6 @@ theorem eqOn_of_compact_slab_rates
     (fun s hs => hnonneg s (by simpa [K] using hs))
     (fun s hs => hrate s (by simpa [K] using hs))
   exact hzero ⟨htpos.le, le_rfl⟩
-
 
 theorem ricciFlowUniqueness_of_difference_energy
     {n : ℕ} {M : Type u}

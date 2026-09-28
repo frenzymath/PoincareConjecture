@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CounterexamplePath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,8 +30,6 @@ private theorem exists_first_scalar_level {f : ℝ → ℝ} {a b c : ℝ}
   obtain ⟨v, hv, heq⟩ := intermediate_value_Icc ht.1 (hf.mono hsubset) ⟨ha.le, hft⟩
   have hsv : s ≤ v := hleast ⟨hsubset hv, heq⟩
   exact (not_lt_of_ge hsv) (hv.2.trans_lt ht.2)
-
-
 
 theorem exists_scalar_band_subinterval {f : ℝ → ℝ} {a b low high : ℝ}
     (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))
@@ -78,8 +67,6 @@ theorem exists_scalar_band_subinterval {f : ℝ → ℝ} {a b low high : ℝ}
     · simpa only [hvt] using htval.le
     · exact (hbefore v ⟨hs.1.trans hv.1, hvt⟩).le
 
-
-
 theorem exists_claim10_4_scalar_band {f : ℝ → ℝ} {a b B Q : ℝ}
     (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))
     (hB : 2 ≤ B) (hQ : 0 < Q) (ha : f a ≤ 8 * Q)
@@ -100,9 +87,6 @@ theorem exists_claim10_4_scalar_band {f : ℝ → ℝ} {a b B Q : ℝ}
   have hend : f b / (2 * B) < f b :=
     div_lt_self hfb (by linarith only [hB])
   exact exists_scalar_band_subinterval hab hf hstart hlevels hend
-
-
-
 
 theorem CounterexamplePathSegment.exists_trimmed_scalar_band
     (P : RicciFlowCurvatureTheory.{u}) {epsilon C A D₀ D : ℝ}

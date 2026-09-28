@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalResoluti
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalOldEndPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.SquareRimReparametrization
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -14,7 +12,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 
-
 def MarkedPLIntervalPath.sourcePath
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     {F : Set X} {f : E → X} {W : Set E} {a b : E}
@@ -23,7 +20,6 @@ def MarkedPLIntervalPath.sourcePath
   continuous_toFun := continuous_subtype_val.comp p.chart.continuous
   source' := p.chart_zero
   target' := p.chart_one
-
 
 theorem path_trans_target_values
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] {F : Set X}
@@ -36,8 +32,6 @@ theorem path_trans_target_values
   split_ifs
   · exact ha _
   · exact hb _
-
-
 
 theorem original_square_rim_excluded_of_values
     {X : Type*} [TopologicalSpace X] {F : Set X}
@@ -62,8 +56,6 @@ theorem original_square_rim_excluded_of_values
   have hnew := squareRimLoop_homeomorph_excluded H rim J basepath (p.cast rfl hx) hout
   rw [he] at hnew
   exact hnew
-
-
 
 theorem original_square_rim_nonempty_whisker
     {X : Type*} [TopologicalSpace X] {F : Set X} {base : F}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M32.Thm11_31.PointwiseHeight
 import PoincareConjecture.Proofs.M32.Thm11_31.SelectedLevel
 import PoincareConjecture.Proofs.M32.Cor11_36.Selector
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_uniform_deepHornHeight
     (P : RepairedHornSelectionPredecessors.{u}) :

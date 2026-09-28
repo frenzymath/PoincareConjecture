@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonTransportedExteriorCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
-
-
-
 
 theorem exists_innermost_frontier_polygon_disk_with_collar
     {S : Set (Set V2)} (hS : S.Finite) (hne : S.Nonempty)
@@ -164,8 +153,6 @@ theorem exists_innermost_frontier_polygon_disk
   obtain ⟨s, B, a, d, hs, hball, hB, hf, ha, hd, hv, hi, himg, hrimg, hrim,
     hinter, hdis, _⟩ := exists_innermost_frontier_polygon_disk_with_collar hS hne hpoly hdisj hsub
   exact ⟨s, B, a, d, hs, hball, hB, hf, ha, hd, hv, hi, himg, hrimg, hrim, hinter, hdis⟩
-
-
 
 theorem innermost_polygon_disk_frontier_preimage
     {X : Type*} {F : Set X} {g : V2 → X} {S : Set (Set V2)}

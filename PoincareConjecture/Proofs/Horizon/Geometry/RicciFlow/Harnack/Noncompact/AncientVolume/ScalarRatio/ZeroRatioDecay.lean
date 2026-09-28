@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.Control
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,8 +8,6 @@ open scoped Topology Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem eventually_ancientRescaleAt_annular_curvature_lt_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

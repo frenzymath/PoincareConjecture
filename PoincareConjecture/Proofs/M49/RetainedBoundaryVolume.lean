@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M49.NeckBoundaryVolume
 import PoincareConjecture.Definitions.M49VolumeLoss
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M49
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem event_terminal_boundary_volume_eq_zero
     (E : SurgeryEventData g₀ K P slice metric T) :
@@ -38,8 +27,6 @@ theorem event_terminal_boundary_volume_eq_zero
   apply measure_mono_null _ hnull
   rintro _ ⟨_, ⟨z, hz, rfl⟩, rfl⟩
   simpa only [E.limit_identify.right_inverse (mem_univ z)] using hz
-
-
 
 theorem event_post_boundary_volume_eq_zero
     (E : SurgeryEventData g₀ K P slice metric T) :

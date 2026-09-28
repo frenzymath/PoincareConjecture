@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapData
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JoinedPatchChainContacts
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +11,6 @@ open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
 
-
-
-
 abbrev m64IntrinsicJoinedBandUnion
     {gamma : Bool → ℝ → AnnulusCoordinates} {T r b : Bool → ℝ}
     {U : Set AnnulusCoordinates}
@@ -25,10 +18,6 @@ abbrev m64IntrinsicJoinedBandUnion
       (if e then b e else r e) (if e then T e - r e else b e) U)
     (P : M64IntrinsicJoinedBandPatch gamma T b U) : Set AnnulusCoordinates :=
   ⋃ e, (⋃ i, ((E e).band i).carrier) ∪ (P.band e).carrier
-
-
-
-
 
 structure M64IntrinsicJoinedArcCollar
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
@@ -73,18 +62,11 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {C : M64IntrinsicThreeArcCaps gamma sigma T S U}
   (J : M64IntrinsicJoinedArcCollar C b)
 
-
-
-
-
 theorem bands_closed : IsClosed (m64IntrinsicJoinedBandUnion J.chain J.patch) := by
   apply isClosed_iUnion_of_finite
   intro e
   exact (isClosed_iUnion_of_finite fun i => ((J.chain e).band i).isClosed_carrier).union
     (J.patch.band e).isClosed_carrier
-
-
-
 
 theorem occupied : (C.carrier false ∪ C.carrier true) ∪
     m64IntrinsicJoinedBandUnion J.chain J.patch ⊆ closure U := by

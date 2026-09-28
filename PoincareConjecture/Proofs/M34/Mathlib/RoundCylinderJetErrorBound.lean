@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 import PoincareConjecture.Proofs.M34.Mathlib.SphereChartMetric
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem sphere_chart_center_zero (q : UnitTwoSphere) :
     chartAt E₂ q q = 0 := by
   let : Fact (Module.finrank ℝ E₃ = 2 + 1) := ⟨by simp⟩
@@ -32,8 +20,6 @@ theorem sphere_chart_center_zero (q : UnitTwoSphere) :
     (ne_zero_of_mem_unit_sphere (-q))).repr
       (stereographic (norm_eq_of_mem_sphere (-q)) q) = 0
   rw [stereographic_neg_apply, map_zero]
-
-
 
 theorem roundCylinderGram_chart_center (u : ℝ) (q : UnitTwoSphere) (r : ℝ) :
     roundCylinderGram u (chartAt E₂ q) (chartAt E₂ q q, r) =
@@ -59,8 +45,6 @@ theorem roundCylinderGram_chart_center (u : ℝ) (q : UnitTwoSphere) (r : ℝ) :
     norm_num [roundCylinderCoordinateBasis, Matrix.diagonal,
       EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
 
-
-
 theorem roundCylinderGram_chart_center_inv {u : ℝ} (hu : u ≠ 1)
     (q : UnitTwoSphere) (r : ℝ) :
     (roundCylinderGram u (chartAt E₂ q) (chartAt E₂ q q, r))⁻¹ =
@@ -83,8 +67,6 @@ theorem roundCylinderGram_chart_center_inv {u : ℝ} (hu : u ≠ 1)
         ![(2 * (1 - u))⁻¹, (2 * (1 - u))⁻¹, 1]) = 1
   rw [hvec]
   exact Matrix.diagonal_one
-
-
 
 theorem roundCylinderGram_chart_center_inv_le {T : ℝ} (hT : T < 1)
     {u : ℝ} (hu : u ∈ Set.Icc (0 : ℝ) T) (q : UnitTwoSphere) (r : ℝ)
@@ -113,8 +95,6 @@ theorem roundCylinderGram_chart_center_inv_le {T : ℝ} (hT : T < 1)
       exact le_max_left _ _
   · rw [abs_zero]
     exact zero_le_one.trans (le_max_left _ _)
-
-
 
 theorem roundCylinderTensorNormSquared_le {u : ℝ}
     (c : OpenPartialHomeomorph UnitTwoSphere E₂)
@@ -164,9 +144,6 @@ theorem roundCylinderTensorNormSquared_le {u : ℝ}
   simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fun,
     Fintype.card_fin, nsmul_eq_mul, Nat.cast_pow, Nat.cast_ofNat]
   exact le_of_eq (by ring)
-
-
-
 
 theorem roundCylinderJetErrorSquared_le {u : ℝ} {B : RoundCylinderTwoTensor}
     {order : ℕ} {z : RoundCylinderSpace} {M δ : ℝ} (hM : 0 ≤ M)

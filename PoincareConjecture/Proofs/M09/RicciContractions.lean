@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.BasisContractions
 import PoincareConjecture.Proofs.M09.ContractedBianchi
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

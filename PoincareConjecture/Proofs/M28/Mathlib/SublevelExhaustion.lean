@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
-
-
 
 theorem IsOpen.frontier_connectedComponentIn_subset
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
@@ -33,8 +21,6 @@ theorem IsOpen.frontier_connectedComponentIn_subset
   apply hq.2
   rw [hV.connectedComponentIn.interior_eq]
   exact heq ▸ hqC
-
-
 
 theorem Continuous.exists_connected_sublevel_exhaustion
     {X α : Type*} [TopologicalSpace X] [PreconnectedSpace X]

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackMorseGraphDisplacement
     (rho r0 : ℝ) (hr0 : 0 < r0) (hr0rho : r0 < rho)
@@ -79,8 +68,6 @@ theorem exists_stackMorseGraphDisplacement
   rw [hformula x hx]
   obtain ⟨hlo, hhi⟩ := hbound x hx
   constructor <;> linarith only [hlo, hhi]
-
-
 
 theorem exists_stackMorseGraphShear
     (A : OpenPartialHomeomorph (E2 × ℝ) E3)

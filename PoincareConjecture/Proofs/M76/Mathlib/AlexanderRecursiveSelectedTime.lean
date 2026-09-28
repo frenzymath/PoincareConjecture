@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBaseRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveHeightCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRemainderTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_successor_time_with_remainder
     {S s s' b d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -181,9 +166,6 @@ theorem AlexanderCollarSlab.exists_selected_successor_time_with_remainder
       (fun p => (hDheight p).trans (hCheight p).symm)
   exact ⟨t, ht, hsuccessor, TX, TY, hTX, hTY, hXs, hYs, hsplit,
     hCX, hCYb, F, hF, hFA, hFR, hFT, hFRmem⟩
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_successor_time
     {S s s' b d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsPinching
 import PoincareConjecture.Proofs.M47.LimitFiniteOriginalInterior
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_source_sectional_of_pinching
     {F : SurgeryFlowData.{u}} (hPinched : SurgeryFlowPinched F)
@@ -71,8 +61,6 @@ theorem limitFinite_source_sectional_of_pinching
   exact terminalCurvature_sectional_lower_of_scaled_negative
     (A.connection s) (F.connection (base + s / Q)) E.scale_pos
     isOpen_univ hf.contMDiffOn hm (mem_univ x) hnegative v w
-
-
 
 theorem limitFinite_eventually_preserved_source_sectional
     (F : ℕ → SurgeryFlowData.{u}) (hPinched : ∀ k, SurgeryFlowPinched (F k))

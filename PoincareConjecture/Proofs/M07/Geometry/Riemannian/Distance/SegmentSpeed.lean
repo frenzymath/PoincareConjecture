@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem geodesic_endpoint_eq_of_initial_data
     {g : RiemannianMetric n M} {p : M} {γ η : ℝ → M}
@@ -53,7 +38,6 @@ private theorem tangentNorm_smul_nonneg (g : RiemannianMetric n M)
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg t), Real.sqrt_sq ht]
 
 omit [T2Space M] in
-
 
 theorem IsGeodesicOn.pathELength_eq_initial_tangentNorm
     {g : RiemannianMetric n M} {p : M} {γ : ℝ → M} {ε : ℝ}
@@ -121,8 +105,6 @@ private theorem initial_tangentNorm_eq_of_local_exponential
   exact (ENNReal.mul_right_inj (by positivity : ENNReal.ofReal t ≠ 0)
     ENNReal.ofReal_ne_top).mp hdist
 
-
-
 theorem IsGeodesicOn.initial_tangentNorm_eq_of_edist_segment
     {g : RiemannianMetric n M} {p q : M} {γ : ℝ → M} {ε : ℝ}
     (hγ : g.IsGeodesicOn γ (Ioo (-ε) (1 + ε))) (hε : 0 < ε)
@@ -152,8 +134,6 @@ theorem IsGeodesicOn.initial_tangentNorm_eq_of_edist_segment
     intro t ht
     exact hη t ⟨by linarith [ht.1], by linarith [ht.2]⟩
   · exact hedist
-
-
 
 theorem IsGeodesicOn.pathELength_eq_of_edist_segment
     {g : RiemannianMetric n M} {p q : M} {γ : ℝ → M} {ε : ℝ}

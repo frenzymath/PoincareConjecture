@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeBasisQuotient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_marked_lattice_handle_coordinates
     {ι ι' κ κ' : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']

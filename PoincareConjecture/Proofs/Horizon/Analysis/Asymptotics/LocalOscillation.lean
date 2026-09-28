@@ -3,13 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

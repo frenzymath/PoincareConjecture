@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem LocallyPiecewiseAffineOn.pi
     {ι : Type*} [Fintype ι] {F : ι → Type*}

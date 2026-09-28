@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.Caps.Conjugation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Review.Orientation.Caps.ReflectedData
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function

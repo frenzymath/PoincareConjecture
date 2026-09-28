@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedNegativeCutHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
-
 
 theorem mem_both_height_closures_of_raising_capped_image
     {S s s' d F : Set E} (H : E ≃ₜ E) (A : E → ℝ) (hA : Continuous A)

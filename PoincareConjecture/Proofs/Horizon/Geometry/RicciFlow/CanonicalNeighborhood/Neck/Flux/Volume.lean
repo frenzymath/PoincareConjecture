@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.ModelVolume
 import Mathlib.MeasureTheory.Integral.Lebesgue.Map
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +17,6 @@ variable {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
 omit [T2Space M] in
-
 
 theorem map_coordinate_inverse_volumeMeasure_apply
     {A : Set RoundCylinderSpace} (hA : MeasurableSet A) :
@@ -47,8 +35,6 @@ theorem map_coordinate_inverse_volumeMeasure_apply
   · rintro ⟨z, hz, rfl⟩
     exact ⟨by simpa only [mem_preimage, N.coordinate_inverse_coordinate_map hz.2] using hz.1,
       N.coordinate_map_mem hz.2⟩
-
-
 
 theorem map_coordinate_inverse_volumeMeasure_bounds :
     ENNReal.ofReal (N.scale * Real.sqrt (1 - N.epsilon)) ^ 3 •
@@ -71,8 +57,6 @@ theorem map_coordinate_inverse_volumeMeasure_bounds :
     exact (N.volumeMeasure_image_bounds
       (hA.inter N.cylinderDomain_open.measurableSet) inter_subset_right).2
 
-
-
 theorem lintegral_coordinate_inverse_bounds
     {F : RoundCylinderSpace → ℝ≥0∞} (hF : Measurable F) :
     ENNReal.ofReal (N.scale * Real.sqrt (1 - N.epsilon)) ^ 3 *
@@ -90,8 +74,6 @@ theorem lintegral_coordinate_inverse_bounds
     simpa only [lintegral_smul_measure, smul_eq_mul, hmap] using h
   · have h := lintegral_mono' hupper (f := F) (g := F) (fun _ => le_rfl)
     simpa only [lintegral_smul_measure, smul_eq_mul, hmap] using h
-
-
 
 theorem lintegral_axial_profile_bounds
     {F : ℝ → ℝ≥0∞} (hF : Measurable F) :

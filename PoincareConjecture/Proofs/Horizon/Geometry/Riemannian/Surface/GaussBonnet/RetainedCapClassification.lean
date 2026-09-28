@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapInteriorFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapTipExclusion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -26,15 +19,12 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
 
-
 def IsTrimTip (q : S) : Prop :=
   ∃ (e : T.decomposition.EdgeIndex) (terminal : Bool),
     q = T.decomposition.edgeFromEndpoint e terminal (T.cut e terminal)
 
-
 def IsCapOuterTip (p : T.decomposition.vertices) (q : S) : Prop :=
   (∃ i, q = (T.caps p).firstOuterTip i) ∨ ∃ i, q = (T.caps p).secondOuterTip i
-
 
 def capBandAttachmentTop (a : T.decomposition.IncidentEdgeIndex) (terminal : Bool) : S :=
   (chartAt Plane (T.chart a.1.1 : S)).symm
@@ -43,7 +33,6 @@ def capBandAttachmentTop (a : T.decomposition.IncidentEdgeIndex) (terminal : Boo
         T.length • (if terminal then (T.rightCap a).direction else (T.leftCap a).direction))
 
 omit [T2Space S] in
-
 
 theorem cap_band_region_eq_of_not_mem_arrangement
     (p : T.decomposition.vertices) (s : Bool × Bool)
@@ -59,7 +48,6 @@ theorem cap_band_region_eq_of_not_mem_arrangement
     hregion (T.cap_regions p s hc)
 
 omit [T2Space S] in
-
 
 theorem cap_band_contact_mem_attachment_of_not_mem_arrangement
     (p : T.decomposition.vertices) (s : Bool × Bool)
@@ -83,7 +71,6 @@ theorem cap_band_contact_mem_attachment_of_not_mem_arrangement
     · exact False.elim h
 
 omit [T2Space S] in
-
 
 theorem cap_band_arrangement_contact_isTrimTip
     (p : T.decomposition.vertices) (s : Bool × Bool)
@@ -115,8 +102,6 @@ theorem cap_band_arrangement_contact_isTrimTip
   exact False.elim (disjoint_left.mp (htrim a.1.2) hc
     ⟨t, ⟨lt_of_le_of_ne hlo (Ne.symm hleft), lt_of_le_of_ne hhi hright⟩, htq⟩)
 
-
-
 theorem left_attachment_point_cases (a : T.decomposition.IncidentEdgeIndex)
     {q : S} (hq : q ∈ (T.leftCap a).chordSegment T.length) :
     T.IsTrimTip q ∨ q ∈ (T.leftCap a).openChordSegment T.length ∨
@@ -137,7 +122,6 @@ theorem left_attachment_point_cases (a : T.decomposition.IncidentEdgeIndex)
     simpa only [htop, capBandAttachmentTop, Bool.false_eq_true, ite_false] using huq.symm
   · exact Or.inr (Or.inl ⟨u,
       ⟨lt_of_le_of_ne hu.1 (Ne.symm hzero), lt_of_le_of_ne hu.2 htop⟩, huq⟩)
-
 
 theorem right_attachment_point_cases (a : T.decomposition.IncidentEdgeIndex)
     {q : S} (hq : q ∈ (T.rightCap a).chordSegment T.length) :
@@ -177,8 +161,6 @@ theorem cap_chord_endpoint_isOuterTip (p : T.decomposition.vertices) (s : Bool �
     simpa [affineChartSegment, Fin.succAbove] using
       (T.caps p).coordinate_second_outer_tip s.2 s.1
 
-
-
 theorem cap_point_open_chord_of_not_interior_not_tip
     (p : T.decomposition.vertices) {q : S}
     (hq : ∃ s, q ∈ ((T.caps p).face s).carrier)
@@ -201,8 +183,6 @@ theorem cap_point_open_chord_of_not_interior_not_tip
     exact htq ▸ T.cap_chord_endpoint_isOuterTip p s true
   exact ⟨s, t, ⟨lt_of_le_of_ne ht.1 (Ne.symm hzero), lt_of_le_of_ne ht.2 hone⟩, htq⟩
 
-
-
 theorem cap_outer_tip_not_mem_open_chord (p : T.decomposition.vertices) {q : S}
     (hq : T.IsCapOuterTip p q) (v : T.decomposition.vertices) (s : Bool × Bool) :
     q ∉ (((T.caps v).face s).boundary 0).map '' Ioo (0 : ℝ) 1 := by
@@ -224,8 +204,6 @@ theorem cap_outer_tip_not_mem_open_chord (p : T.decomposition.vertices) {q : S}
       exact ((T.caps p).secondOuterTip_mem_carrier_iff i (false, i)).mpr rfl)
     have he := congrArg Prod.fst (htrue.2.trans hfalse.2.symm)
     exact Bool.noConfusion he
-
-
 
 theorem cap_outer_tip_not_mem_bands (p : T.decomposition.vertices)
     (hr : T.length < 1)
@@ -264,8 +242,6 @@ theorem cap_outer_tip_not_mem_bands (p : T.decomposition.vertices)
       apply (T.rightCap a.1).openChordSegment_subset_open_chord (r := 1) le_rfl
       exact ⟨T.length, ⟨T.length_pos, hr⟩, by simpa only [capBandAttachmentTop,
         ite_true] using h.symm⟩
-
-
 
 theorem exists_core_of_cap_union_boundary_not_mem_bands
     (p : T.decomposition.vertices) {q : S}
@@ -333,8 +309,6 @@ theorem exists_core_of_cap_union_boundary_not_mem_bands
   exact disjoint_left.mp (T.decomposition.region_disjoint_closure (Ne.symm hne))
     (T.refined.in_region R hR) (T.cap_regions p s hs)
 
-
-
 theorem unmatched_cap_outer_tip_core_incidence (p : T.decomposition.vertices)
     (hr : T.length < 1)
     (htrim : ∀ (s : Bool × Bool) (e : T.decomposition.EdgeIndex),
@@ -356,9 +330,6 @@ theorem unmatched_cap_outer_tip_core_incidence (p : T.decomposition.vertices)
     · exact ⟨(true, i), hi ▸ ((T.caps p).secondOuterTip_mem_carrier_iff i (true, i)).mpr rfl⟩
   obtain ⟨R, hR, hregions⟩ := T.exists_core_of_cap_union_boundary_not_mem_bands p hc hint hb
   exact ⟨R, hR, T.refined.in_region R hR, hregions, hb⟩
-
-
-
 
 theorem cap_point_cases (p : T.decomposition.vertices)
     (htrim : ∀ (s : Bool × Bool) (e : T.decomposition.EdgeIndex),

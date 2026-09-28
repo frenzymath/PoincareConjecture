@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetScalar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetContraction
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +13,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture
 
 universe u
-
-
-
-
-
 
 theorem m65SuppliedDiskGaussBonnet {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

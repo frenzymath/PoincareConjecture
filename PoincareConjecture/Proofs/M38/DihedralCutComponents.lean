@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M38.ProjectivePolarCover
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M38
-
 
 def cylinderIntegerTranslation (n : ℤ) : RoundCylinderSpace ≃ₜ RoundCylinderSpace where
   toFun p := (p.1, p.2 + n)
@@ -26,7 +15,6 @@ def cylinderIntegerTranslation (n : ℤ) : RoundCylinderSpace ≃ₜ RoundCylind
   right_inv _p := Prod.ext rfl (sub_add_cancel _ _)
   continuous_toFun := continuous_fst.prodMk (continuous_snd.add continuous_const)
   continuous_invFun := continuous_fst.prodMk (continuous_snd.sub continuous_const)
-
 
 noncomputable def cylinderIntegerReflection (n : ℤ) : RoundCylinderSpace ≃ₜ RoundCylinderSpace where
   toFun p := (-p.1, (n : ℝ) - p.2)
@@ -37,8 +25,6 @@ noncomputable def cylinderIntegerReflection (n : ℤ) : RoundCylinderSpace ≃�
     (continuous_const.sub continuous_snd)
   continuous_invFun := (continuous_neg.comp continuous_fst).prodMk
     (continuous_const.sub continuous_snd)
-
-
 
 theorem componentIn_map_subset_of_meets
     {A : Type*} [TopologicalSpace A] {V : Set A} {a : A}
@@ -53,7 +39,6 @@ theorem componentIn_map_subset_of_meets
     isPreconnected_connectedComponentIn.image f hf.continuousOn
   exact (hc.subset_connectedComponentIn (mem_image_of_mem f hx) hs).trans_eq
     (connectedComponentIn_eq hfx).symm
-
 
 theorem cylinder_precompact_translation_eq_zero
     {C : Set RoundCylinderSpace} (hC : IsCompact (closure C)) (hne : C.Nonempty)
@@ -70,8 +55,6 @@ theorem cylinder_precompact_translation_eq_zero
   change q.2 ≤ q.2 + (n : ℝ) at hge
   have hn : (n : ℝ) = 0 := by linarith
   exact_mod_cast hn
-
-
 
 theorem dihedral_precompact_component_fibers
     {Q : Type*} (q : RoundCylinderSpace → Q)

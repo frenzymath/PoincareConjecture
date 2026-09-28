@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_GeodesicFi
 import PoincareConjecture.Proofs.M44.Mathlib.ODEFirstVariation
 import PoincareConjecture.Proofs.M44.Mathlib.UniformLinearEvaluation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,14 +22,9 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
 
-
-
 theorem phase_position_mem (D : NormalizedCapExponential Q R) {v : E} {t : ℝ}
     (ht : t • v ∈ ball 0 R) : (D.phase (v, t)).1 ∈ g₀.metric.ball 0 eta⁻¹ :=
   Q.toPartialDiffeomorph.map_target (D.map_mem _ ht)
-
-
-
 
 theorem field_contDiffAt_phase (D : NormalizedCapExponential Q R) {v : E} {t : ℝ}
     (ht : t • v ∈ ball 0 R) :
@@ -49,9 +34,6 @@ theorem field_contDiffAt_phase (D : NormalizedCapExponential Q R) {v : E} {t : �
     (Q.contDiffOn_normalizedCoefficients.contDiffAt
       (Q.toPartialDiffeomorph.open_source.mem_nhds hx))
     (Q.normalizedCoefficients_isInvertible hx)
-
-
-
 
 theorem firstVariation_initial (D : NormalizedCapExponential Q R) (p v : E) :
     firstVariation D.phase (p, v) 0 =
@@ -66,8 +48,6 @@ theorem firstVariation_initial (D : NormalizedCapExponential Q R) (p v : E) :
   rfl
 
 end NormalizedCapExponential
-
-
 
 theorem standardFramePhase_firstVariation_initial
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (p v : E) :
@@ -98,9 +78,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
 
-
-
-
 theorem tendstoUniformlyOn_initial_exponential_variations
     (L : E ≃L[ℝ] E)
     (hL : Tendsto (fun n => fderiv ℝ (D n).coordinateMap 0) atTop
@@ -121,10 +98,6 @@ theorem tendstoUniformlyOn_initial_exponential_variations
   rw [(D n).firstVariation_initial z.1 z.2,
     standardFramePhase_firstVariation_initial g₀ L z.1 z.2]
   exact hn z hz
-
-
-
-
 
 theorem tendstoUniformlyOn_exponential_firstVariations
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

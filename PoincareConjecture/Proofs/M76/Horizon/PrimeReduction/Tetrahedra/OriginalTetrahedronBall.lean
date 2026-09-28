@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.ScaleSplit
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactPotential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +14,6 @@ variable {V F : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V] [Nontrivial V]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem heatD2Duh_sub_integrable_and_norm_le_halfHolder {t : ℝ} (ht : 0 < t)
     {K : ℝ≥0} (f : ℝ → V → F)
@@ -99,7 +88,6 @@ variable {V F : Type*}
 
 omit [CompleteSpace F] in
 
-
 theorem aestronglyMeasurable_heatD2Conv_compactSlice {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) (v w x : V) :
     AEStronglyMeasurable
@@ -128,8 +116,6 @@ theorem aestronglyMeasurable_heatD2Conv_compactSlice {f : V × ℝ → F}
       ((contDiff_spatialDerivative hf).differentiable (by simp)) y s) x,
     Kernel.heatSupHessian_apply hpos]
   rfl
-
-
 
 theorem norm_fderiv_fderiv_heatDuh_compactSlice_sub_le {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) {K : ℝ≥0}

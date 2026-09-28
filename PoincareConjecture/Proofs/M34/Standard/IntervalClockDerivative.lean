@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem realParam_comp_mfderivWithin_one {I : SpacetimeInterval}
     (D : SmoothSpacetimeInterval I) {A : Set ℝ} {c : ℝ → ℝ} {s v : ℝ}
@@ -44,8 +34,6 @@ theorem realParam_comp_mfderivWithin_one {I : SpacetimeInterval}
       simpa only [smul_eq_mul, mul_one] using
         (D.inclusionDerivative (D.realParam (c s))).symm.map_smul v (1 : ℝ)
 
-
-
 theorem realParam_backward_contMDiffOn {I : SpacetimeInterval}
     (D : SmoothSpacetimeInterval I) (T : ℝ) {A : Set ℝ}
     (hmap : MapsTo (fun s => T - s) A I.domain) :
@@ -53,7 +41,6 @@ theorem realParam_backward_contMDiffOn {I : SpacetimeInterval}
   D.realParam_smoothOn.comp (contDiff_const.sub contDiff_id).contMDiff.contMDiffOn hmap
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem realParam_backward_mfderiv_one {I : SpacetimeInterval}
     (D : SmoothSpacetimeInterval I) (T : ℝ) {a b s : ℝ} (hs : s ∈ Ioo a b)

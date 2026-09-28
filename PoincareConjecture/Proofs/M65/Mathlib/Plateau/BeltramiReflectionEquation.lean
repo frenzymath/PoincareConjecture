@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiReflectionLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -43,10 +34,6 @@ private theorem reflected_fderiv_apply (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
   change fderiv ℝ (beltramiCircleInversion ∘ f ∘ beltramiCircleInversion) z v = _
   rw [hd.fderiv]
   rfl
-
-
-
-
 
 theorem beltramiReflectedHomeomorph_equation (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
     (hf : ContDiff ℝ ∞ (f : ℂ → ℂ)) (μ : ℂ → ℂ)

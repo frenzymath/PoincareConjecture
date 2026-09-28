@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyContinuity
 import Mathlib.Analysis.Normed.Field.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem tendsto_cauchyOperator_cocompact {h : ℂ → E} {R B : ℝ}
     (hh : AEStronglyMeasurable h volume)

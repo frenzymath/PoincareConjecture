@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.LowDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_uniform_scalarCurvature_bound_of_reciprocal_time_bound
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -64,8 +51,6 @@ theorem exists_uniform_scalarCurvature_bound_of_reciprocal_time_bound
     (fun s hs y _ => (htime s hs y).trans
       (div_le_div_of_nonneg_right (le_max_left _ _) (sub_nonneg.mpr hs.1.le))) t ht x hx
   simpa only [hself, ENNReal.toReal_zero, sub_zero] using h
-
-
 
 theorem exists_uniform_curvatureTensorNorm_bound_on_component_of_reciprocal_time_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

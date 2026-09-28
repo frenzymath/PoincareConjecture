@@ -2,27 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLEqualityLoci
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLCompatibleChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_double_pair_patch
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Tra
 import PoincareConjecture.Statements.M59LoopIdentification
 import PoincareConjecture.Definitions.M61Width
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology unitInterval
@@ -51,8 +41,6 @@ theorem m67_normalized_family_class
   intro z
   change Gamma.family (q.map z) = Gamma.class_certificate.cube_representative z
   rw [Gamma.class_certificate.family_agreement, h.2]
-
-
 
 theorem m67_represents_rebase
     (B : M59HigherBasepointTransportService.{u}) (q : M59SphereQuotient)
@@ -101,8 +89,6 @@ theorem m67_represents_postcomposition
   refine ⟨Delta, ⟨hbase, hparameter.trans hGamma.2⟩, hclass, ?_⟩
   rw [hmap]
   exact (ContinuousMap.Homotopic.refl L.map).comp hFGamma
-
-
 
 theorem m67_represents_postcomposition_rebase
     (S : M59IdentificationSystem.{u}) (B : M59HigherBasepointTransportService.{u})

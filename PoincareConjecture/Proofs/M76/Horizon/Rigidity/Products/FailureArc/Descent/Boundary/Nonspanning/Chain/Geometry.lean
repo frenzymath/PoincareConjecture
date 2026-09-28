@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Nonspanning.Chain.Boundary.Data
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -22,7 +13,6 @@ local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 local notation "Strip" => PolygonalCrossingResolution.source
-
 
 structure NonspanningChainGeometry (SA SM SC : Set P2)
     (pA pL pR pC : I01 → P2) where
@@ -67,8 +57,6 @@ private theorem constant_auxiliary_charts
     exact z.property
   · exact fun _ _ => mem_univ _
   · exact ⟨K, hK, rfl, K.affineOnFaces_affine (ContinuousAffineMap.const ℝ E 0)⟩
-
-
 
 theorem nonempty_nonspanningChainGeometry
     {SA QA WA SM QM LM RM SC QC WC : Set P2}

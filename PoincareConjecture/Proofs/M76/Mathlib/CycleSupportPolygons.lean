@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricCyclePolygons
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,12 +8,8 @@ namespace SimpleGraph
 
 variable {V E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 def edgeComponents (G : SimpleGraph V) : Set G.ConnectedComponent :=
   {C | ∃ v ∈ C.supp, v ∈ G.support}
-
-
 
 theorem mem_support_of_mem_edgeComponent (G : SimpleGraph V)
     (C : G.edgeComponents) (v : C.val) : v.val ∈ G.support := by
@@ -31,16 +18,11 @@ theorem mem_support_of_mem_edgeComponent (G : SimpleGraph V)
   · exact h ▸ has
   · exact mem_support_of_reachable h (C.val.reachable_of_mem_supp v.property ha)
 
-
-
 theorem IsCycles.edgeComponent_two_neighbors {G : SimpleGraph V} (hG : G.IsCycles)
     (C : G.edgeComponents) (v : C.val) :
     (C.val.toSimpleGraph.neighborSet v).ncard = 2 := by
   rw [C.val.ncard_neighborSet]
   exact hG (G.mem_support.mp (G.mem_support_of_mem_edgeComponent C v))
-
-
-
 
 theorem segmentCarrier_eq_iUnion_edgeComponents (G : SimpleGraph V) (p : V → E) :
     G.segmentCarrier p = ⋃ C : G.edgeComponents,
@@ -56,9 +38,6 @@ theorem segmentCarrier_eq_iUnion_edgeComponents (G : SimpleGraph V) (p : V → E
   · intro hx
     obtain ⟨C, v, w, hvw, hx⟩ := mem_iUnion.mp hx
     exact ⟨v.val, w.val, hvw, hx⟩
-
-
-
 
 theorem IsCycles.exists_edgeComponent_polygons [Finite V] {G : SimpleGraph V}
     (hG : G.IsCycles) (p : V → E) (hinj : Function.Injective p)

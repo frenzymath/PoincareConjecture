@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSemigroup
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,10 +20,8 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 variable (D : LeviCivitaData g) (Ω : Set M) (hn : 0 < n)
   (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
 
-
 def eigenvalueNN (i : EigenIndex D Ω) : ℝ≥0 :=
   ⟨eigenvalue D Ω i, eigenvalue_nonneg D Ω hn hΩ hc i⟩
-
 
 def heatSemigroup (t : ℝ≥0) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=

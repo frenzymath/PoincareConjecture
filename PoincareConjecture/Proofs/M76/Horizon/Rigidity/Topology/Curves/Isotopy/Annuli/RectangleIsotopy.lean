@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Disks.BodyIsotopy
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.CutIsotopy
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -111,9 +109,6 @@ theorem exists_cut_rectangle_joint_PL_isotopy
   · intro t x
     change a.symm (Fic ((t : ℝ), a x)) = a.symm ((Hc t).symm (A x))
     exact congrArg a.symm (hiv t (A x))
-
-
-
 
 theorem exists_joint_PL_annulus_isotopy_of_cut_rectangle
     (e : Rect ≃ₜ Rect) (he : e.IsFinitePL)

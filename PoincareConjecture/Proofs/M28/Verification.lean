@@ -141,24 +141,11 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicAppli
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicProducer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.longLine false
-
 
 set_option linter.hashCommand false
 
 open PoincareConjecture.Proofs.M28.NeckTransfer
 open PoincareConjecture.Proofs.M28.NeckAnalysis
 open PoincareConjecture.M28.NeckGeometry
-
-
-
-

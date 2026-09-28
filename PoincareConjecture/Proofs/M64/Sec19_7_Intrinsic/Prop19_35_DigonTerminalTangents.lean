@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_OppositeGeodesi
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ClosedCornerRayInjectivity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalMetric
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +11,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_digon_terminal_velocity_ne
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -46,11 +39,6 @@ theorem m64Intrinsic_digon_terminal_velocity_ne
   intro he
   apply hne
   simpa only [deriv_comp_const_sub, sub_zero] using congrArg Neg.neg he
-
-
-
-
-
 
 theorem m64Intrinsic_digon_terminal_transverse_at_convex_corner
     (N : IntrinsicAnnulus) {K : ℝ} (hK : N.GaussianCurvatureBound K)

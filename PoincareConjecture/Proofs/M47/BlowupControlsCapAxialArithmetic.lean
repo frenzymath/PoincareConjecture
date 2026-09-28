@@ -1,20 +1,9 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarArithmetic
 import Mathlib.Algebra.Order.Ring.Pow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem cap_axial_normalization_order_factor
     {gamma beta lambda : ℝ}
@@ -41,8 +30,6 @@ theorem cap_axial_normalization_order_factor
       mul_nonneg (sq_nonneg beta) (pow_nonneg hlambda _)
     nlinarith only [hpower, hid, hf]
 
-
-
 theorem cap_axial_normalization_zero_factor
     {beta lambda : ℝ} (hbeta : 0 ≤ beta) (hupper : beta ≤ 301 / 300)
     (hscale : beta * lambda ^ 2 = 1) :
@@ -57,8 +44,6 @@ theorem cap_axial_normalization_zero_factor
         _ = 1 := by rw [hscale]; norm_num
     rw [hid]
     norm_num
-
-
 
 theorem cap_axial_normalization_uniform_energy
     {E0 E bound d : ℝ}

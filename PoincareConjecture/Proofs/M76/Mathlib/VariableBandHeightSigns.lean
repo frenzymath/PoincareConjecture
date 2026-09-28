@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarBottomClosure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E F : Type*} [TopologicalSpace E] [TopologicalSpace F]
-
-
-
-
 
 theorem mem_height_closures_of_variableBand
     {B : Set E} {T : Set F} {lower upper : E → ℝ}

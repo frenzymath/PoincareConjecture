@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOpenInclusion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.LocalParallel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open RicciFlow.Splitting Poincare.Geometry.Manifold.RegularLevel
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem terminalCurvature_parallel_from_open_germ
     (D : LeviCivitaData g) (hC : RicciFlowCurvatureTheory.{u})
@@ -64,8 +52,6 @@ theorem terminalCurvature_parallel_from_open_germ
   have he := terminalCurvature_open_connection D U (F.connection 0) hmetric V x
     (hV.mdifferentiableAt (by simp)) v
   exact he.symm.trans hz
-
-
 
 theorem terminalCurvature_ambient_local_parallel
     (D : LeviCivitaData g) (hC : RicciFlowCurvatureTheory.{u})

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCenterCharts
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.NormalChartFlowLimit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M28
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
 def GeneralizedStrongNeck.rescaled_eighth_flow
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (S : GeneralizedStrongNeck F t epsilon)
@@ -37,11 +25,6 @@ def GeneralizedStrongNeck.rescaled_eighth_flow
     (GeneralizedStrongNeck.rescaled_half_flow S H)
     (fun _ hs => ⟨by linarith [hs.1], hs.2⟩) ordConnected_Icc
     ⟨-(1 / 8 : ℝ), by norm_num, 0, by norm_num, by norm_num⟩
-
-
-
-
-
 
 theorem exists_strongNeck_source_center_limit_accuracy
     (hShi : LocalCurvatureDerivativeEstimates.{u}) :

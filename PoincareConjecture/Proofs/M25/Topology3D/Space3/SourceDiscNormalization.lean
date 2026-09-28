@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscRounding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereDiffeomorphRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +10,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem sourceDisc_round_of_planarData {c : UnitCircle → E2}
     (D : PlanarSchoenfliesData c) (v : UnitTwoSphere) :

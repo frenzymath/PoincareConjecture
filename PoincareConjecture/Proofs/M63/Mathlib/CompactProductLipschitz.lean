@@ -1,24 +1,12 @@
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_lipschitzOnWith_compact_product
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

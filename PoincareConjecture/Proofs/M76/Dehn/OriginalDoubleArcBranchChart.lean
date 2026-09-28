@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 import PoincareConjecture.Proofs.M76.Rigidity.SourceDiskPairCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology Geometry
@@ -63,12 +51,6 @@ theorem inverse_branch_chart_PL (step : Step s t)
   change H ((t.charts k).symm ((t.charts k) (B.symm ((s.charts l).symm z)))) =
     H (B.symm ((s.charts l).symm z))
   exact congrArg H ((t.charts k).left_inv (hHk hz.2.2))
-
-
-
-
-
-
 
 theorem Step.exists_original_double_branch_chart
     (step : Step s t) {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)

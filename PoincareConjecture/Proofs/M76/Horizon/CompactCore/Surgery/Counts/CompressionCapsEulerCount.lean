@@ -6,21 +6,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.FinitePLImageFaceBounds
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.SquareRimEulerCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem surfaceEulerCount_eq_add_of_disjoint_subcomplex_cover
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -70,8 +60,6 @@ private theorem capDisk_subset_closedStrip (P : OriginalDiskProduct e L j) (b : 
   | false => exact Or.inl hy
   | true => exact Or.inr hy
 
-
-
 theorem cap_image_surfaceEulerCount
     (P : OriginalDiskProduct e L j) (phi : X → E)
     (hphiPL : ∀ i, LocallyPiecewiseAffineOn (phi ∘ (e i).symm) (e i).target)
@@ -110,8 +98,6 @@ theorem cap_image_surfaceEulerCount
   have hdim := hf.face_card_le_of_image hDisk hdimD Cap himage.symm.subset
   exact (hf.surfaceEulerCount_eq_of_injOn hDisk hCap hdimD hdim hinj himage).symm.trans hcount
 
-
-
 theorem cap_rim_image_surfaceEulerCount
     (P : OriginalDiskProduct e L j) (phi : X → E)
     (hphiPL : ∀ i, LocallyPiecewiseAffineOn (phi ∘ (e i).symm) (e i).target)
@@ -147,8 +133,6 @@ theorem cap_rim_image_surfaceEulerCount
   exact (hf.surfaceEulerCount_eq_of_injOn hSquare hRim hdimS hdim hinj himage).symm.trans
     (CompressionCylinder.square_rim_surfaceEulerCount Square hSquare hSquares)
 
-
-
 theorem caps_image_surfaceEulerCount
     (P : OriginalDiskProduct e L j) (phi : X → E)
     (hphiPL : ∀ i, LocallyPiecewiseAffineOn (phi ∘ (e i).symm) (e i).target)
@@ -173,8 +157,6 @@ theorem caps_image_surfaceEulerCount
     P.cap_image_surfaceEulerCount phi hphiPL hphi hstrip true
       (Caps true) (hCaps true) (hspace true)]
   norm_num
-
-
 
 theorem cap_rims_image_surfaceEulerCount
     (P : OriginalDiskProduct e L j) (phi : X → E)

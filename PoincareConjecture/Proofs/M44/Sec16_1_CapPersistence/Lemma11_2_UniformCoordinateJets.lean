@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoordinateJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Connection.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open M36 SpacetimeBounds CoordinateExponential
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "e" => EuclideanSpace.basisFun (Fin 3) ℝ
-
-
-
 
 theorem exists_uniform_comparisonChristoffel_bound
     (q : ℕ) {a : ℝ} (ha : 0 < a) (B : ℝ) :
@@ -52,9 +40,6 @@ theorem exists_uniform_comparisonChristoffel_bound
       (g.inner_isInvertible x)).clm_apply contDiffAt_const).clm_apply contDiffAt_const
   have hcomp := norm_iteratedFDeriv_inner_le hcoeff j (le_of_eq ((e).norm_eq_one b))
   exact hcomp.trans (by simpa only [(e).norm_eq_one, mul_one] using h)
-
-
-
 
 theorem exists_uniform_bilinear_error_jet_bound
     (j : ℕ) {a L : ℝ} (ha : 0 < a) (hL : 0 < L) (B : ℝ) :

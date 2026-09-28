@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 import Mathlib.Analysis.Convex.Join
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -19,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K : SimplicialComplex ℝ E}
-
-
 
 theorem linearIndependent_of_mem_link_zero {s : Finset E} (hs : s ∈ (K.link 0).faces) :
     LinearIndependent ℝ ((↑) : s → E) := by
@@ -34,14 +24,10 @@ theorem linearIndependent_of_mem_link_zero {s : Finset E} (hs : s ∈ (K.link 0)
     ⟨f, fun x y hxy => Subtype.ext
       (congrArg (fun z : ↥(insert (0 : E) s) => (z : E)) hxy)⟩
 
-
 theorem zero_notMem_link_space (K : SimplicialComplex ℝ E) : (0 : E) ∉ (K.link 0).space := by
   intro hzero
   obtain ⟨s, hs, hx⟩ := mem_space_iff.mp hzero
   exact (linearIndependent_of_mem_link_zero hs).zero_notMem_convexHull hx
-
-
-
 
 theorem eq_of_normalize_eq_of_norm_le_on_link {x y : E}
     (hx : x ∈ (K.link 0).space) (hy : y ∈ (K.link 0).space)
@@ -68,16 +54,12 @@ theorem eq_of_normalize_eq_of_norm_le_on_link {x y : E}
   have hxt : x ∈ convexHull ℝ (t : Set E) := convexHull_mono inter_subset_right hinter
   exact (linearIndependent_of_mem_link_zero ht).injOn_normalize_convexHull hxt hyt hxy
 
-
-
 theorem injOn_normalize_link (K : SimplicialComplex ℝ E) :
     InjOn (NormedSpace.normalize : E → E) (K.link 0).space := by
   intro x hx y hy hxy
   rcases le_total ‖x‖ ‖y‖ with hle | hle
   · exact eq_of_normalize_eq_of_norm_le_on_link hx hy hxy hle
   · exact (eq_of_normalize_eq_of_norm_le_on_link hy hx hxy.symm hle).symm
-
-
 
 noncomputable def radialLinkHomeomorph (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) :
     (K.link 0).space ≃ₜ NormedSpace.normalize '' (K.link 0).space := by
@@ -91,14 +73,9 @@ noncomputable def radialLinkHomeomorph (K : SimplicialComplex ℝ E) (hK : K.fac
     exact (continuousAt_normalize_of_ne_zero hx0).continuousWithinAt
   exact hc.domRestrict.subtype_mk _
 
-
-
 theorem radialLinkHomeomorph_apply (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (x : (K.link 0).space) :
     (K.radialLinkHomeomorph hK x : E) = NormedSpace.normalize x.val := rfl
-
-
-
 
 theorem exists_linkPoint_smul {x : E} (hx : x ∈ (K.closedStar 0).space) (hx0 : x ≠ 0) :
     ∃ y ∈ (K.link 0).space, ∃ r ∈ Ioc (0 : ℝ) 1, x = r • y := by
@@ -127,8 +104,6 @@ theorem exists_linkPoint_smul {x : E} (hx : x ∈ (K.closedStar 0).space) (hx0 :
   exact ⟨y, convexHull_subset_space hulink hy, b, ⟨lt_of_le_of_ne hb hb0.symm, by linarith⟩,
     heq.symm⟩
 
-
-
 theorem normalize_image_link_eq_sphere (K : SimplicialComplex ℝ E)
     (hzero : (0 : E) ∈ interior (K.closedStar 0).space) :
     NormedSpace.normalize '' (K.link 0).space = Metric.sphere (0 : E) 1 := by
@@ -155,15 +130,10 @@ theorem normalize_image_link_eq_sphere (K : SimplicialComplex ℝ E)
       _ = NormedSpace.normalize z := normalize_smul_of_pos (by positivity) z
       _ = z := normalize_eq_self_of_norm_eq_one hznorm
 
-
-
-
 noncomputable def radialLinkSphereHomeomorph (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hzero : (0 : E) ∈ interior (K.closedStar 0).space) :
     (K.link 0).space ≃ₜ Metric.sphere (0 : E) 1 :=
   (K.radialLinkHomeomorph hK).trans (Homeomorph.setCongr (K.normalize_image_link_eq_sphere hzero))
-
-
 
 theorem radialLinkSphereHomeomorph_apply (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hzero : (0 : E) ∈ interior (K.closedStar 0).space)

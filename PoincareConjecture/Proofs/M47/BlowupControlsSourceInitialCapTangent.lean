@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapTipDistance
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_standard_tangent_le
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)
@@ -41,8 +30,6 @@ theorem source_initial_standard_tangent_le
   have hinitial : standard.flow.metric 0 = g0.metric := standard.flow.base.initial_metric
   rw [hinitial] at hinner
   exact Real.sqrt_le_sqrt hinner
-
-
 
 theorem source_initial_cap_chart_tangent_le
     {F : SurgeryFlowData.{u}} (standard : RepairedStandardCapExistenceData F.standard_initial)

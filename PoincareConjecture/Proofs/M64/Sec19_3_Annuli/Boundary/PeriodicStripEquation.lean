@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PeriodicHarmonicMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SupportedRectangleAdmission
 
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -13,10 +8,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem annulus_periodic_integer_translate {Y : Type*} {f : LoopPlane → Y}
     (hperiod : ∀ x s, f (annulusPoint (x + curvePeriod) s) = f (annulusPoint x s))
@@ -31,11 +22,6 @@ theorem annulus_periodic_integer_translate {Y : Type*} {f : LoopPlane → Y}
   rw [hshift]
   exact (hper.zsmul k (p 0)).trans (congrArg f hp)
 
-
-
-
-
-
 theorem annulus_periodic_representative (p : LoopPlane) (hp : p 1 ∈ Icc (0 : ℝ) 1) :
     ∃ (k : ℤ) (q : LoopPlane), q ∈ m64AnnulusDomain ∧ q 0 < curvePeriod ∧
       q 1 = p 1 ∧ annulusPoint (k • curvePeriod) 0 + p = q := by
@@ -46,11 +32,6 @@ theorem annulus_periodic_representative (p : LoopPlane) (hp : p 1 ∈ Icc (0 : �
   refine ⟨k, q, ⟨hx.1, hx.2.le, hp.1, hp.2⟩, hx.2, rfl, ?_⟩
   ext i
   fin_cases i <;> simp [q, k, annulusPoint, toIcoMod, neg_smul, sub_eq_add_neg, add_comm]
-
-
-
-
-
 
 theorem annulus_periodic_zero_on_strip
     {E Y : Type*} [TopologicalSpace E] [T2Space E] [Zero E]

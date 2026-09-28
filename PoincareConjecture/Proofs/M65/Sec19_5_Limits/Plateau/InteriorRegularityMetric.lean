@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCoordinates
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,9 +21,6 @@ private theorem inverseChart_bijective (p : M) {x : EuclideanSpace ℝ (Fin 3)}
   simp only [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at hleft hright
   have hi := ContinuousLinearMap.IsInvertible.of_inverse hright hleft
   exact hi.bijective
-
-
-
 
 theorem m65EmbeddingMetric_coordinate (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (psi : EuclideanSpace ℝ (Fin 3) → M)
@@ -68,9 +56,6 @@ theorem m65EmbeddingMetric_coordinate (g : RiemannianMetric 3 M)
   rw [hdf, hmetric]
   exact M65Interior.ambientMetric_eq_coordinateMetric A hinj J
 
-
-
-
 theorem m65EmbeddingMetric_contDiffOn_chart (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 3) (𝓡 N) e p)) (p : M) :
@@ -99,9 +84,6 @@ theorem m65EmbeddingMetric_contDiffOn_chart (g : RiemannianMetric 3 M)
       (he.contMDiffAt.mdifferentiableAt (by simp)) ((hpsi y hy).mdifferentiableAt (by simp))
       (hinj _) (inverseChart_bijective p hy)
   exact (hcoordinate.congr_of_eventuallyEq hsame).contDiffWithinAt
-
-
-
 
 theorem m65EmbeddingMetric_contMDiff (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

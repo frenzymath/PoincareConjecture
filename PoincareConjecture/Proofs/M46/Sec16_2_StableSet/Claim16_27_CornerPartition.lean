@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CornerPrimitiv
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePrimitivePartition
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeOverlapPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 theorem attainmentGauge_spatial_contDiffOn (e : AttainmentGauge G)
     {gamma : ℝ → G.Point} {J : Set ℝ}
     (hgamma : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel 3) 1 gamma J)
@@ -38,9 +27,6 @@ theorem attainmentGauge_spatial_contDiffOn (e : AttainmentGauge G)
       (Subtype.val : G.gaugeCover.spatial e.index → EuclideanSpace ℝ (Fin 3)) :=
     contMDiff_subtype_val
   exact (hval.comp_contMDiffOn hspatial).contDiffOn
-
-
-
 
 theorem oneCorner_gauge_primitive_partition {a c b : ℝ}
     (hab : a < b) (_hac : a ≤ c) (_hcb : c ≤ b)

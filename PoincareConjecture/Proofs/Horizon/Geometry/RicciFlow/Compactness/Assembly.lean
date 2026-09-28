@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Producer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.CurvatureBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature
-
-
-
-
-
-
-

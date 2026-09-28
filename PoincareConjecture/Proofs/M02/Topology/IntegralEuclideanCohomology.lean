@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralEuclideanRelativeHomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralCohomologyEvaluation
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false

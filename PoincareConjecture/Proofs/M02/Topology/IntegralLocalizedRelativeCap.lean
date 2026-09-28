@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCapMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCapMap
 import PoincareConjecture.Proofs.M02.Topology.IntegralChartSupport
 
-
-
 set_option autoImplicit false
 
 noncomputable section

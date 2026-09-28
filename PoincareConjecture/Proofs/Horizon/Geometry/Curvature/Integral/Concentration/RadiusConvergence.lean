@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RadiusSelection
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.AnnularStability
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem tendsto_badAscentRadius_zero_of_pointedGHConvergesUnbounded
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoherence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_physical_pullback_eq
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

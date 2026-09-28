@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerHandleCorrection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardLiftPL
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,10 +18,6 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ
 local notation "D" => coordinateCylinder J
 local notation "R" => latticeHandleDomain ι κ L
 local notation "W" => LatticeHandleAmbient ι κ L
-
-
-
-
 
 theorem finitePL_compactified_protected_parameterization
     (e : α → OpenPartialHomeomorph W (Fin 3 → ℝ))

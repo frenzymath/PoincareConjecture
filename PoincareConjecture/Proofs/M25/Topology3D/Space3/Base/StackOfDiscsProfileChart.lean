@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapEmbedding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartTimeField
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -32,7 +23,6 @@ local notation "D" => stackCapProfilePathDiffeomorph a0 a1 b0 b1
   ha0 ha1 hb0 hb1 hapos0 hapos1 hbpos0 hbpos1
 local notation "P" => surgeryCapPlacementDiffeomorph m sigma c lambda hsigma hlambda
 
-
 noncomputable def stackPlacedProfileChart :
     OpenPartialHomeomorph (ℝ × E3) (ℝ × E3) :=
   let chart := (((Homeomorph.refl ℝ).prodCongr heightCoordinates.toHomeomorph).trans
@@ -42,10 +32,8 @@ noncomputable def stackPlacedProfileChart :
 local notation "e" => stackPlacedProfileChart a0 a1 b0 b1
   ha0 ha1 hb0 hb1 hapos0 hapos1 hbpos0 hbpos1 T m sigma c lambda hsigma hlambda
 
-
 @[simp] theorem stackPlacedProfileChart_apply (t : ℝ) (x : E3) :
     e (t, x) = (t, T (P (M t (heightCoordinates x)))) := rfl
-
 
 theorem stackPlacedProfileChart_source :
     (e).source = {p : ℝ × E3 | P (M p.1 (heightCoordinates p.2)) ∈ T.source} := by
@@ -53,17 +41,14 @@ theorem stackPlacedProfileChart_source :
   change (True ∧ (True ∧ P (M p.1 (heightCoordinates p.2)) ∈ T.source)) ↔ _
   simp only [true_and, mem_ofPred_eq]
 
-
 theorem stackPlacedProfileChart_target : (e).target = univ ×ˢ T.target := by
   ext p
   change ((True ∧ p.2 ∈ T.target) ∧ True) ↔ (True ∧ p.2 ∈ T.target)
   simp only [and_true]
 
-
 @[simp] theorem stackPlacedProfileChart_symm_apply (t : ℝ) (y : E3) :
     (e).symm (t, y) =
       (t, heightCoordinates.symm (((D).symm (t, (P).symm (T.symm y))).2)) := rfl
-
 
 theorem stackPlacedProfileChart_contDiffOn
     (hT : ContDiffOn ℝ ∞ T T.source)
@@ -93,9 +78,7 @@ theorem stackPlacedProfileChart_contDiffOn
     contDiff_fst.contDiffOn.prodMk
       (heightCoordinates.symm.contDiff.comp_contDiffOn hProfileInv.snd)⟩
 
-
 theorem stackPlacedProfileChart_time (p : ℝ × E3) : (e p).1 = p.1 := rfl
-
 
 noncomputable def stackPlacedProfileCap (t : ℝ) (q : UnitTwoSphere) : E3 :=
   let p := M t (heightCoordinates (q : E3))
@@ -139,7 +122,6 @@ theorem stackPlacedProfileCap_contMDiff
       hapos0 hapos1 hbpos0 hbpos1 T m sigma c lambda
       habound0 habound1 hsource p.1 p.2)
 
-
 theorem stackPlacedProfileCap_hasDerivAt
     (habound0 : ∀ v, |v| < 1 → a0 v ≤ (Real.sqrt (1 - v ^ 2))⁻¹)
     (habound1 : ∀ v, |v| < 1 → a1 v ≤ (Real.sqrt (1 - v ^ 2))⁻¹)
@@ -159,7 +141,6 @@ theorem stackPlacedProfileCap_hasDerivAt
       hapos0 hapos1 hbpos0 hbpos1 T m sigma c lambda hsigma hlambda p)
     t (q : E3) hp
 
-
 theorem stackPlacedProfileCap_endpoints (q : UnitTwoSphere) :
     cap 0 q = surgeryCapMap a0 b0 ha0 hb0 (fun v => (hapos0 v).ne')
       (fun x => (hbpos0 x).ne') T m sigma c lambda q ∧
@@ -174,7 +155,6 @@ theorem stackPlacedProfileCap_endpoints (q : UnitTwoSphere) :
       stackProfileBlend_of_one_le a0 a1 1 le_rfl,
       stackProfileBlend_of_one_le b0 b1 1 le_rfl, surgeryCapMap,
       surgeryCapCoordinates, surgeryCapModel, flatCapDiffeomorph_apply]
-
 
 theorem stackPlacedProfileCap_isCompact_track
     (habound0 : ∀ v, |v| < 1 → a0 v ≤ (Real.sqrt (1 - v ^ 2))⁻¹)
@@ -200,8 +180,6 @@ theorem stackPlacedProfileCap_isCompact_track
     (stackPlacedProfileCoordinates_mem_source a0 a1 b0 b1 ha0 ha1 hb0 hb1
       hapos0 hapos1 hbpos0 hbpos1 T m sigma c lambda
       habound0 habound1 hsource t q)⟩
-
-
 
 theorem exists_stackPlacedProfileChart_common_germ
     (hsource : closedBall (0 : E2) 1 ×ˢ (univ : Set ℝ) ⊆ T.source)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSliceCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open M45
-
-
 
 theorem source_neck_slice_cap_length_capture
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

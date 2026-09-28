@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M83.Mathlib.OpenCoverSwap
 import PoincareConjecture.Proofs.M02.Topology.SphereOpenCover
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +18,6 @@ open PoincareConjecture.Proofs.M02.Topology
 variable {E : Type u} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E]
 
-
-
 def sphereIsometryMap (R : E ≃ₗᵢ[Real] E) : C(sphere (0 : E) 1, sphere (0 : E) 1) := by
   have hR (x : sphere (0 : E) 1) : R x.val ∈ sphere (0 : E) 1 := by
     rw [mem_sphere_zero_iff_norm, R.norm_map]
@@ -37,20 +25,16 @@ def sphereIsometryMap (R : E ≃ₗᵢ[Real] E) : C(sphere (0 : E) 1, sphere (0 
   exact ⟨fun x => ⟨R x.val, hR x⟩,
     (R.continuous.comp continuous_subtype_val).subtype_mk hR⟩
 
-
-
 def poleReflection (p : sphere (0 : E) 1) : E ≃ₗᵢ[Real] E :=
   (Real ∙ p.val)ᗮ.reflection
 
 omit [FiniteDimensional Real E] in
-
 
 @[simp]
 theorem poleReflection_pole (p : sphere (0 : E) 1) : poleReflection p p.val = -p.val :=
   Submodule.reflection_orthogonalComplement_singleton_eq_neg p.val
 
 omit [FiniteDimensional Real E] in
-
 
 theorem poleReflection_mapsTo (p : sphere (0 : E) 1) :
     MapsTo (sphereIsometryMap (poleReflection p)) ({p}ᶜ : Set (sphere (0 : E) 1))
@@ -62,7 +46,6 @@ theorem poleReflection_mapsTo (p : sphere (0 : E) 1) :
   exact (congrArg Subtype.val he).trans (poleReflection_pole p).symm
 
 omit [FiniteDimensional Real E] in
-
 
 theorem poleReflection_mapsTo_reverse (p : sphere (0 : E) 1) :
     MapsTo (sphereIsometryMap (poleReflection p)) ({-p}ᶜ : Set (sphere (0 : E) 1))
@@ -76,7 +59,6 @@ theorem poleReflection_mapsTo_reverse (p : sphere (0 : E) 1) :
   exact (congrArg Subtype.val he).trans hRneg.symm
 
 omit [FiniteDimensional Real E] in
-
 
 theorem equatorialProjection_ne_zero_iff (p x : sphere (0 : E) 1) :
     (Real ∙ p.val)ᗮ.starProjection x.val ≠ 0 ↔ x ≠ p ∧ x ≠ -p := by
@@ -108,8 +90,6 @@ theorem equatorialProjection_ne_zero_iff (p x : sphere (0 : E) 1) :
       simpa only [ha1, neg_one_smul, coe_neg_sphere] using ha.symm
 
 omit [FiniteDimensional Real E] in
-
-
 
 theorem sphereReflection_overlap_homotopic (p : sphere (0 : E) 1) :
     (ContinuousMap.id (↥(({p}ᶜ : Set (sphere (0 : E) 1)) ∩ {-p}ᶜ))).Homotopic

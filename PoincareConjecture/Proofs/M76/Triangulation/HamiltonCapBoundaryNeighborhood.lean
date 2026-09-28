@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapBoundaryChart
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAffineHeightStep
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
-
-
-
 
 theorem exists_cap_affine_normal_coordinates (ell : V3 →ᴬ[ℝ] ℝ)
     (hell : ell.toAffineMap.linear ≠ 0) :
@@ -38,10 +26,6 @@ theorem exists_cap_affine_normal_coordinates (ell : V3 →ᴬ[ℝ] ℝ)
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_cap_boundary_restriction
     {K : Set X} (B : OpenPartialHomeomorph X (ℝ × E))
@@ -85,8 +69,6 @@ theorem exists_cap_boundary_restriction
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E] in
 
-
-
 theorem exists_cap_chart_rectangle {V : Set (ℝ × E)} (hV : IsOpen V)
     {z : E} (hz : (0, z) ∈ V) {eps : ℝ} (heps : 0 < eps) :
     ∃ (r : ℝ) (O : Set E), 0 < r ∧ r ≤ eps ∧ IsOpen O ∧ z ∈ O ∧
@@ -103,10 +85,6 @@ theorem exists_cap_chart_rectangle {V : Set (ℝ × E)} (hV : IsOpen V)
   constructor
   · linarith [hp.1.1, min_le_left r0 eps]
   · exact hp.1.2.trans_le (min_le_left _ _)
-
-
-
-
 
 theorem exists_marked_cap_chart_at_frontier
     {K : Set X} (hK : IsClosed K) (B : OpenPartialHomeomorph X (ℝ × E))

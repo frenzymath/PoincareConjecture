@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M38.TubeExclusion
 import Mathlib.Topology.Maps.OpenQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Metric
 
 namespace PoincareConjecture.M38
-
 
 theorem projective_quotient_saturation (U : Set UnitThreeSphere) :
     (Quotient.mk' : UnitThreeSphere → RealProjectiveThree) ⁻¹'
@@ -31,7 +21,6 @@ theorem projective_quotient_saturation (U : Set UnitThreeSphere) :
     · exact ⟨x, hx, rfl⟩
     · exact ⟨-x, hx, Quotient.sound (Or.inr rfl)⟩
 
-
 theorem projective_open_quotient :
     IsOpenQuotientMap (Quotient.mk' : UnitThreeSphere → RealProjectiveThree) := by
   refine ⟨Quotient.mk_surjective, continuous_quotient_mk', ?_⟩
@@ -39,7 +28,6 @@ theorem projective_open_quotient :
   apply isQuotientMap_quotient_mk'.isOpen_preimage.mp
   rw [projective_quotient_saturation]
   exact hU.union (hU.preimage continuous_neg)
-
 
 theorem projective_t2 : T2Space RealProjectiveThree := by
   apply (t2Space_iff_of_isOpenQuotientMap projective_open_quotient).mpr
@@ -52,7 +40,6 @@ theorem projective_t2 : T2Space RealProjectiveThree := by
   exact (isClosed_eq continuous_fst continuous_snd).union
     (isClosed_eq continuous_fst (continuous_neg.comp continuous_snd))
 
-
 theorem three_sphere_neg_ne (a : UnitThreeSphere) : -a ≠ a := by
   intro h
   have ha : (a : EuclideanSpace ℝ (Fin 4)) = 0 := by
@@ -62,8 +49,6 @@ theorem three_sphere_neg_ne (a : UnitThreeSphere) : -a ≠ a := by
     change a.val i = 0
     linarith
   exact ne_zero_of_mem_unit_sphere a ha
-
-
 
 theorem three_sphere_antipodal_compl_connected (a : UnitThreeSphere) :
     IsConnected {x : UnitThreeSphere | x ≠ a ∧ x ≠ -a} := by
@@ -99,7 +84,6 @@ theorem three_sphere_antipodal_compl_connected (a : UnitThreeSphere) :
   exact (isConnected_compl_singleton_of_one_lt_rank
     (Module.one_lt_rank_of_one_lt_finrank (by simp)) (e (-a))).image e.symm hcont.continuousOn
 
-
 theorem projective_puncture_preimage (a : UnitThreeSphere) :
     (Quotient.mk' : UnitThreeSphere → RealProjectiveThree) ⁻¹'
       {q | q ≠ Quotient.mk' a} = {x | x ≠ a ∧ x ≠ -a} := by
@@ -111,8 +95,6 @@ theorem projective_puncture_preimage (a : UnitThreeSphere) :
       fun hx => h (Quotient.sound (Or.inr hx))⟩
   · rintro ⟨h₁, h₂⟩ h
     exact (Quotient.exact h : x = a ∨ x = -a).elim h₁ h₂
-
-
 
 theorem punctured_projective_connected (p : RealProjectiveThree) :
     IsConnected {q : RealProjectiveThree | q ≠ p} := by
@@ -126,8 +108,6 @@ theorem punctured_projective_connected (p : RealProjectiveThree) :
     continuous_quotient_mk'.continuousOn
   rw [Set.image_preimage_eq _ projective_open_quotient.surjective] at himage
   exact himage
-
-
 
 theorem punctured_projective_not_compact (p : RealProjectiveThree) :
     ¬ IsCompact {q : RealProjectiveThree | q ≠ p} := by

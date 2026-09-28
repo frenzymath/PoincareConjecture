@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarShellBoundary
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCubeShellGluing
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCollarStrip
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,10 +17,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {K : Set X}
-
-
-
-
 
 theorem ChartwisePLBall.attach_collar (he : PLDomain e K)
     (L : SimplicialComplex ℝ E) (hL : L.faces.Finite)

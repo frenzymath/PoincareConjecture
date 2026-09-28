@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamContinuity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCharts
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +14,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64SeamRepresentative_eq_extend {M : Type*} (F : LoopPlane → M)
     (hshift : ∀ p ∈ m64AnnulusSeamLeft, F (v + p) = F p) :
@@ -37,8 +29,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem M64ObservedWeakAnnulus.exists_seam_local_chart_columns
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

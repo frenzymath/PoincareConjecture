@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ParameterizedGaugeTube
 import PoincareConjecture.Proofs.M14.Mathlib.FamilyCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 structure EndpointDisplacementFamily (gamma : ℝ → G.Point) (T b c : ℝ)
     (j : G.gaugeCover.index)
@@ -46,9 +34,6 @@ structure EndpointDisplacementFamily (gamma : ℝ → G.Point) (T b c : ℝ)
   target : ∀ s ∈ Icc 0 b, gamma s ∈ U → cutoff s ≠ 0 → ∀ q ∈ U,
     G.spacetime.timeFunction q = T - s ^ 2 →
     family (s, (cutoff s)⁻¹ • ((lift q).2.val - (lift (gamma s)).2.val)) = q
-
-
-
 
 theorem endpointDisplacementFamily_nonempty {T b c : ℝ}
     (gamma : ℝ → G.Point) (hc : c ∈ Ioc 0 b)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Reaction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -14,8 +7,6 @@ open scoped BigOperators
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
-
-
 
 lemma curvature_bianchi_skew_contraction
     (R : I → I → I → I → ℝ) (P : I → I → ℝ)
@@ -42,8 +33,6 @@ lemma curvature_bianchi_skew_contraction
     ring
   simp only [hpoint, sub_mul, Finset.sum_sub_distrib, hswap]
   ring
-
-
 
 lemma hamiltonP_reaction_quadratic_contraction
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -112,8 +101,6 @@ lemma hamiltonP_reaction_quadratic_contraction
   rw [← horder]
   linarith only [hcross]
 
-
-
 lemma curvatureB_quadratic_eq_square
     (R : I → I → I → I → ℝ) (U : I → I → ℝ)
     (hfirst : ∀ a b c d, R a b c d = -R b a c d)
@@ -155,8 +142,6 @@ lemma curvatureB_quadratic_eq_square
   intro f _
   rw [← hlocal]
   ring
-
-
 
 lemma curvature_reaction_quadratic_contraction
     (R : I → I → I → I → ℝ) (U : I → I → ℝ)
@@ -209,9 +194,6 @@ lemma curvature_reaction_quadratic_contraction
   rw [hs₁, hs₂, horder]
   dsimp only [B]
   linarith only [hsquare]
-
-
-
 
 lemma hamilton_reaction_collected_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SecondCoordinateLifts
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

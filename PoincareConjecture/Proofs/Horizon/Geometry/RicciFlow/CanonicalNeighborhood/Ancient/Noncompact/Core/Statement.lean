@@ -3,18 +3,6 @@ import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Services
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Neck
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,18 +16,12 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
 noncomputable def soulScalar (K : AncientKappaSolution 3 M) (p : M) : ℝ :=
   (K.flow.connection 0).scalarCurvature p
 
 section PointSoul
 
 variable [NoncompactSpace M]
-
-
-
-
-
 
 structure SoulCenteredCoreEstimate (K : AncientKappaSolution 3 M)
     (S : RiemannianMetric.PointSoulData (K.flow.metric 0))
@@ -76,8 +58,6 @@ structure SoulCenteredCoreEstimate (K : AncientKappaSolution 3 M)
 
 end PointSoul
 
-
-
 def UniformSoulCenteredCoreConclusionOfServices : Prop :=
   ∃ epsilonStar : ℝ, 0 < epsilonStar ∧
     ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ epsilonStar →
@@ -95,7 +75,6 @@ def UniformSoulCenteredCoreConclusionOfServices : Prop :=
                 hnoncompact (isCompact_univ_iff.mpr hcompact))
             ∀ S : RiemannianMetric.PointSoulData (K.flow.metric 0),
               SoulCenteredCoreEstimate K S epsilon D D₁
-
 
 def UniformSoulCenteredCoreConclusion (_P : M26CanonicalNeighborhoodPredecessors.{u}) : Prop :=
   UniformSoulCenteredCoreConclusionOfServices.{u}

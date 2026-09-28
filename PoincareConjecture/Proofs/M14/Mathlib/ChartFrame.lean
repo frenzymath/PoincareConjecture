@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,12 +13,8 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 namespace VectorField
 
-
-
 noncomputable def chartFrame (x : M) (v : E) (y : M) : TangentSpace I y :=
   (trivializationAt E (TangentSpace I) x).symmL ℝ y v
-
-
 
 theorem chartFrame_contMDiffOn (x : M) (v : E) :
     ContMDiffOn I I.tangent ∞ (T% (chartFrame I x v)) (chartAt H x).source := by
@@ -39,8 +26,6 @@ theorem chartFrame_contMDiffOn (x : M) (v : E) :
   rw [show chartFrame I x v y = e.symm y v from Trivialization.symmL_apply e hy v]
   exact e.mk_symm hy v
 
-
-
 theorem chartFrame_eq_mpullback {x y : M} (hy : y ∈ (chartAt H x).source) (v : E) :
     chartFrame I x v y = mpullback I 𝓘(ℝ, E) (extChartAt I x) (fun _ => v) y := by
   symm
@@ -51,8 +36,6 @@ theorem chartFrame_eq_mpullback {x y : M} (hy : y ∈ (chartAt H x).source) (v :
     (R := ℝ) hy v).symm
 
 variable [CompleteSpace E]
-
-
 
 theorem chartFrame_mlieBracket {x y : M} (hy : y ∈ (chartAt H x).source) (v w : E) :
     mlieBracket I (chartFrame I x v) (chartFrame I x w) y = 0 := by
@@ -82,7 +65,6 @@ theorem chartFrame_mlieBracket {x y : M} (hy : y ∈ (chartAt H x).source) (v w 
 
 omit [CompleteSpace E] in
 
-
 theorem chartFrame_mfderiv_extChartAt {x y : M} (hy : y ∈ (chartAt H x).source)
     (v : TangentSpace I y) :
     chartFrame I x (mfderiv I 𝓘(ℝ, E) (extChartAt I x) y v) y = v := by
@@ -90,7 +72,6 @@ theorem chartFrame_mfderiv_extChartAt {x y : M} (hy : y ∈ (chartAt H x).source
   exact (trivializationAt E (TangentSpace I) x).symmL_continuousLinearMapAt hy v
 
 omit [CompleteSpace E] in
-
 
 theorem chartFrame_curve_deriv {γ : ℝ → M} {x : M} {s : ℝ}
     (hx : γ s ∈ (chartAt H x).source)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.AxialOrientation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceOscillation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem mem_closure_positive_tail (N : EpsilonNeck g) {x : M}
     (hx : x ∈ closure (N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹))
@@ -122,9 +110,6 @@ private theorem frontier_height_bounds_of_signed_displacement
   change -(1.1 : ℝ) * (N.epsilon⁻¹ - a) - 5 * Real.pi ≤ c ∧
     c ≤ -(0.9 : ℝ) * (N.epsilon⁻¹ - a) + 5 * Real.pi
   constructor <;> linarith
-
-
-
 
 theorem exists_frontier_transition_height_bounds :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Manifold ContDiff Topology ENNReal NNReal Bundle
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_local_smooth_minimizing_interpolator
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

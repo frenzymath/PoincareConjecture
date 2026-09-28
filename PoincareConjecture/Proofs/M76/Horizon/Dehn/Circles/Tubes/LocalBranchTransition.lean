@@ -12,8 +12,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X} {x y : V2}
 
-
-
 theorem RawCrossingChart.connected_lift_in_one_branch
     (C : RawCrossingChart e f R x y) {A : Set V2}
     (hA : IsPreconnected A) (hAD : A ⊆ D2) (hAC : MapsTo f A C.chart.source) :
@@ -32,9 +30,6 @@ theorem RawCrossingChart.connected_lift_in_one_branch
       (C.disjoint.preimage Subtype.val) hcover with hL | hR
   · exact Or.inl (fun z hz => hL (a := ⟨z, hAD hz⟩) hz)
   · exact Or.inr (fun z hz => hR (a := ⟨z, hAD hz⟩) hz)
-
-
-
 
 theorem RawCrossingChart.exists_connected_lift_swap
     (C : RawCrossingChart e f R x y) {A B : Set V2}

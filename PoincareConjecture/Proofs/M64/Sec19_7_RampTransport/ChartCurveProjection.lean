@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.ImmersionCurveProject
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +20,6 @@ variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
-
-
 theorem m64_chart_field_norm (g : RiemannianMetric n M) (p : M)
     {q : M} (hq : q ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).source)
     (v : EuclideanSpace ℝ (Fin n)) :
@@ -44,10 +36,6 @@ theorem m64_chart_field_norm (g : RiemannianMetric n M) (p : M)
       ((chartAt (EuclideanSpace ℝ (Fin n)) p) q)) _ _)
   rw [(chartAt (EuclideanSpace ℝ (Fin n)) p).left_inv hq]
   rfl
-
-
-
-
 
 theorem m64_pullback_norm_chart_metric
     (D : LeviCivitaData g) (p : M)
@@ -79,10 +67,6 @@ theorem m64_pullback_norm_chart_metric
       ((chartAt (EuclideanSpace ℝ (Fin n)) p) (c x)) _ _) =
     Real.sqrt (gE.euclideanCoefficients _ _ _)
   rw [hmetric.self_of_nhds]
-
-
-
-
 
 theorem m64_induced_manifold_curve_connection_norm_le
     (D : LeviCivitaData g)

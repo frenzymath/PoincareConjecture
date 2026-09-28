@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.ConnectionForm
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
 
-
-
 theorem scalarCurvature_mul_frameDet_eq_neg_two_curvatureTensor
     (D : LeviCivitaData g) (x : S)
     {e₁ e₂ : TangentSpace (𝓡 2) x}
@@ -34,8 +23,6 @@ theorem scalarCurvature_mul_frameDet_eq_neg_two_curvatureTensor
       -2 * D.curvatureTensor x u v e₂ e₁ := by
   have h := D.curvatureTensor_eq_half_scalarCurvature x u v e₂ e₁
   nlinarith [h]
-
-
 
 theorem gramDet_eq_frameDet_sq
     (g : RiemannianMetric 2 S) (x : S)
@@ -94,8 +81,6 @@ theorem gramDet_eq_frameDet_sq
   rw [hu₁, hu₂, hv₁, hv₂]
   ring_nf
 
-
-
 theorem pullbackVolumeDensity_eq_abs_frameDet
     (g : RiemannianMetric 2 S)
     {f : EuclideanSpace ℝ (Fin 2) → S} {x : EuclideanSpace ℝ (Fin 2)}
@@ -130,8 +115,6 @@ theorem pullbackVolumeDensity_eq_abs_frameDet
     simp [Matrix.det_fin_two, u, v, g.symm]
     ring]
   rw [hgram, Real.sqrt_sq_eq_abs]
-
-
 
 theorem scalarCurvature_mul_frameDet_eq_connectionForm
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U) {x : S} (hx : x ∈ U)

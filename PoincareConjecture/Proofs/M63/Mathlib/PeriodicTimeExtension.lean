@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M03.Existence.TangentHalfSpaceExtensionNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open PoincareConjecture.HalfSpaceExtensionNative
 open PoincareConjecture.TangentHalfSpaceExtensionNative
 open scoped ContDiff Topology BigOperators
-
-
-
-
 
 theorem exists_periodic_initialSlab_extension
     {L T : ℝ} (_hL : 0 < L) (hT : 0 < T) (k : ℕ)

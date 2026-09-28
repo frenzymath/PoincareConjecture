@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M51.GlobalProfileControls
 import PoincareConjecture.Proofs.M51.GlobalVolumeAssembly
 import PoincareConjecture.Definitions.M51GlobalSchedule
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,7 +33,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
       (delta t * F₀.parameters.r t) (delta t))
   (hcut : ∀ j t, t ∈ surgeryEpochEntry j → 0 ≤ t →
     delta t ≤ (M51Numerical.schedule S N C).Delta j)
-
 
 noncomputable def controlledExtension :
     RepairedGlobalControlledExtension (M51Numerical.schedule S N C) F₀ := by
@@ -104,11 +93,9 @@ noncomputable def controlledExtension :
     local_finite := finite.local_finite
     no_finite_accumulation := fun T _ => finite.no_finite_accumulation T }
 
-
 theorem controlledExtension_extension :
     (Q.controlledExtension m13 F50 d hd losses delta hdelta hprofiles hcut).extension =
       Q.inputExtension m13 := rfl
-
 
 theorem controlledExtension_extended :
     (Q.controlledExtension m13 F50 d hd losses delta hdelta hprofiles hcut).extension.extended =

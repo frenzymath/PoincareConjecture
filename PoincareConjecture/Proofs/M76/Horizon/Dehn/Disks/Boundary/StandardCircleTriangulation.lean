@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalDomainCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -23,7 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 
 open Classical in
-
 
 theorem exists_standard_boundary_circle_triangulation
     {R S : Set V3} (hR : IsCompact R)

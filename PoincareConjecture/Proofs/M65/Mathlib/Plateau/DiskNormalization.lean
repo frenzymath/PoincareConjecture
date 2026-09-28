@@ -2,16 +2,6 @@ import Mathlib.Analysis.Complex.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,24 +9,14 @@ open scoped Topology ContDiff
 
 namespace Complex
 
-
-
 def plateauDiskNumerator (b c : ℝ) (z : ℂ) : ℂ :=
   (z + 1) - c * (1 - z) + I * b * (1 - z)
-
-
-
 
 def plateauDiskDenominator (b c : ℝ) (z : ℂ) : ℂ :=
   (z + 1) + c * (1 - z) + I * b * (1 - z)
 
-
-
-
 noncomputable def plateauDiskMap (b c : ℝ) (z : ℂ) : ℂ :=
   plateauDiskNumerator b c z / plateauDiskDenominator b c z
-
-
 
 theorem plateauDisk_normSq_difference (b c : ℝ) (z : ℂ) :
     normSq (plateauDiskDenominator b c z) - normSq (plateauDiskNumerator b c z) =
@@ -45,9 +25,6 @@ theorem plateauDisk_normSq_difference (b c : ℝ) (z : ℂ) :
     add_re, add_im, sub_re, sub_im, mul_re, mul_im, ofReal_re, ofReal_im,
     one_re, one_im, I_re, I_im]
   ring
-
-
-
 
 theorem plateauDiskDenominator_ne_zero (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z : ℂ} (hz : ‖z‖ ≤ 1) : plateauDiskDenominator b c z ≠ 0 := by
@@ -71,9 +48,6 @@ theorem plateauDiskDenominator_ne_zero (b : ℝ) {c : ℝ} (hc : 0 < c)
   simp only [plateauDiskDenominator, hz1, sub_self, mul_zero, add_zero,
     one_add_one_eq_two, OfNat.ofNat_ne_zero] at hzero
 
-
-
-
 theorem plateauDiskMap_norm_le_one (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z : ℂ} (hz : ‖z‖ ≤ 1) : ‖plateauDiskMap b c z‖ ≤ 1 := by
   have hD := plateauDiskDenominator_ne_zero b hc hz
@@ -86,9 +60,6 @@ theorem plateauDiskMap_norm_le_one (b : ℝ) {c : ℝ} (hc : 0 < c)
   rw [plateauDiskMap, norm_div]
   exact (div_le_one (norm_pos_iff.mpr hD)).mpr hnorm
 
-
-
-
 theorem plateauDiskMap_norm_eq_one (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z : ℂ} (hz : ‖z‖ = 1) : ‖plateauDiskMap b c z‖ = 1 := by
   have hD := plateauDiskDenominator_ne_zero b hc hz.le
@@ -98,9 +69,6 @@ theorem plateauDiskMap_norm_eq_one (b : ℝ) {c : ℝ} (hc : 0 < c)
     nlinarith [norm_nonneg (plateauDiskNumerator b c z),
       norm_pos_iff.mpr hD]
   rw [plateauDiskMap, norm_div, heq, div_self (norm_ne_zero_iff.mpr hD)]
-
-
-
 
 theorem plateauDiskMap_left_inverse (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z : ℂ} (hz : ‖z‖ ≤ 1) :
@@ -120,18 +88,11 @@ theorem plateauDiskMap_left_inverse (b : ℝ) {c : ℝ} (hc : 0 < c)
   dsimp only [N, D, plateauDiskNumerator, plateauDiskDenominator]
   ring
 
-
-
-
-
 theorem plateauDiskMap_contDiffAt (b : ℝ) {c : ℝ} (hc : 0 < c)
     {z : ℂ} (hz : ‖z‖ ≤ 1) : ContDiffAt ℂ ∞ (plateauDiskMap b c) z := by
   have hD := plateauDiskDenominator_ne_zero b hc hz
   unfold plateauDiskMap plateauDiskNumerator plateauDiskDenominator
   fun_prop (disch := exact hD)
-
-
-
 
 noncomputable def plateauDiskHomeomorph (b : ℝ) {c : ℝ} (hc : 0 < c) :
     closedBall (0 : ℂ) 1 ≃ₜ closedBall (0 : ℂ) 1 where

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,7 +32,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem ricci_eq_inverse_gram (D : LeviCivitaData g) (x : M)
     {ι : Type*} [Fintype ι] [DecidableEq ι]
     (b : Module.Basis ι ℝ (TangentSpace (𝓡 n) x))
@@ -58,7 +49,6 @@ theorem ricci_eq_inverse_gram (D : LeviCivitaData g) (x : M)
     ∑ i, ∑ j, (Matrix.of (fun i j => g.inner x (b i) (b j)))⁻¹ i j *
       A ![u, b i, v, b j] at h
   simpa [← hA, ricci] using h
-
 
 theorem ricci_eq_of_linearEquiv
     {N : Type*} [TopologicalSpace N]
@@ -88,7 +78,6 @@ theorem ricci_eq_of_linearEquiv
 end Manifold
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem tendsto_ricci_of_scalar_metric_jets
     {α : Type*} {l : Filter α}
@@ -135,7 +124,6 @@ theorem tendsto_ricci_of_scalar_metric_jets
   intro j _
   exact ((tendsto_pi_nhds.mp (tendsto_pi_nhds.mp hinv i)) j).mul
     (tendsto_curvatureTensor_of_metric_jets Dseq D x u (b i) v (b j) hzero hone htwo)
-
 
 theorem ricci_eq_pullback_euclidean
     {N : Type*} [TopologicalSpace N]

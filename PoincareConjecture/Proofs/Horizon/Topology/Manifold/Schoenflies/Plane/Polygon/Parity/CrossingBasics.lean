@@ -2,38 +2,23 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import Mathlib.Algebra.CharP.Two
 import Mathlib.Data.ZMod.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Manifold.Schoenflies.Plane
 
-
 noncomputable def heightStep (a y : ℝ) : ZMod 2 := by
   classical
   exact if a ≤ y then 1 else 0
 
-
 def heightCrossing (a b y : ℝ) : Prop :=
   min a b ≤ y ∧ y < max a b
-
 
 theorem heightCrossing_ne {a b y : ℝ} (h : heightCrossing a b y) : a ≠ b := by
   rintro rfl
   simp only [heightCrossing, min_self, max_self] at h
   exact not_lt_of_ge h.1 h.2
-
 
 theorem heightCrossing_iff (a b y : ℝ) :
     heightCrossing a b y ↔ (a ≤ y ∧ y < b) ∨ (b ≤ y ∧ y < a) := by
@@ -53,7 +38,6 @@ theorem heightCrossing_iff (a b y : ℝ) :
 
 open Classical in
 
-
 theorem heightCrossing_indicator (a b y : ℝ) :
     (if heightCrossing a b y then 1 else 0 : ZMod 2) = heightStep a y + heightStep b y := by
   rcases le_or_gt a y with ha | ha <;> rcases le_or_gt b y with hb | hb
@@ -65,23 +49,16 @@ theorem heightCrossing_indicator (a b y : ℝ) :
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 def segmentCrossesRay (X H : E →ₗ[ℝ] ℝ) (a b q : E) : Prop :=
   heightCrossing (H a) (H b) (H q) ∧ X q < X (lineLevelPoint H a b (H q))
-
 
 noncomputable def segmentRayParity (X H : E →ₗ[ℝ] ℝ) (a b q : E) : ZMod 2 := by
   classical
   exact if segmentCrossesRay X H a b q then 1 else 0
 
-
-
 theorem segmentCrossesRay_point_mem_segment (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (h : segmentCrossesRay X H a b q) : lineLevelPoint H a b (H q) ∈ segment ℝ a b :=
   (lineLevelPoint_mem_segment_iff H (heightCrossing_ne h.1) (H q)).mpr ⟨h.1.1, h.1.2.le⟩
-
-
 
 theorem segmentCrossesRay_iff_exists (X H : E →ₗ[ℝ] ℝ) {a b q : E} (hab : H a ≠ H b) :
     segmentCrossesRay X H a b q ↔ H q < max (H a) (H b) ∧
@@ -98,8 +75,6 @@ theorem segmentCrossesRay_iff_exists (X H : E →ₗ[ℝ] ℝ) {a b q : E} (hab 
     have hi := (lineLevelPoint_mem_segment_iff H hab (H q)).mp hm
     exact ⟨⟨hi.1, hy⟩, by simpa only [hmx] using hxX⟩
 
-
-
 theorem not_segmentCrossesRay_of_right_endpoints (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (ha : X a ≤ X q) (hb : X b ≤ X q) : ¬segmentCrossesRay X H a b q := by
   intro h
@@ -109,13 +84,9 @@ theorem not_segmentCrossesRay_of_right_endpoints (X H : E →ₗ[ℝ] ℝ) {a b 
   have hi := himage ▸ mem_image_of_mem X (segmentCrossesRay_point_mem_segment X H h)
   exact not_lt_of_ge (hi.2.trans (max_le ha hb)) h.2
 
-
-
 theorem segmentRayParity_eq_zero_of_right_endpoints (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (ha : X a ≤ X q) (hb : X b ≤ X q) : segmentRayParity X H a b q = 0 := by
   exact if_neg (not_segmentCrossesRay_of_right_endpoints X H ha hb)
-
-
 
 theorem segmentRayParity_eq_heightStep_of_left (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (hX : X q < X (lineLevelPoint H a b (H q))) :
@@ -124,13 +95,9 @@ theorem segmentRayParity_eq_heightStep_of_left (X H : E →ₗ[ℝ] ℝ) {a b q 
   simpa only [segmentRayParity, segmentCrossesRay, hX, and_true] using
     heightCrossing_indicator (H a) (H b) (H q)
 
-
-
 theorem segmentRayParity_eq_zero_of_right (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (hX : X (lineLevelPoint H a b (H q)) ≤ X q) : segmentRayParity X H a b q = 0 := by
   simp [segmentRayParity, segmentCrossesRay, not_lt_of_ge hX]
-
-
 
 theorem segmentRayParity_eq_heightStep_of_left_endpoints (X H : E →ₗ[ℝ] ℝ) {a b q : E}
     (ha : X q < X a) (hb : X q < X b) :
@@ -147,13 +114,9 @@ theorem segmentRayParity_eq_heightStep_of_left_endpoints (X H : E →ₗ[ℝ] �
   · rw [← heightCrossing_indicator]
     simp [segmentRayParity, segmentCrossesRay, hh]
 
-
-
 theorem segmentCrossesRay_left_height (X H : E →ₗ[ℝ] ℝ) {a b q : E} (hq : H q = H a) :
     segmentCrossesRay X H a b q ↔ H a < H b ∧ X q < X a := by
   simp [segmentCrossesRay, hq, heightCrossing_iff, lineLevelPoint_left]
-
-
 
 theorem segmentCrossesRay_right_height (X H : E →ₗ[ℝ] ℝ) {a b q : E} (hq : H q = H b) :
     segmentCrossesRay X H a b q ↔ H b < H a ∧ X q < X b := by

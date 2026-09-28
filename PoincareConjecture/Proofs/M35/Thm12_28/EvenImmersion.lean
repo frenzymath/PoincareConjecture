@@ -4,24 +4,12 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_singular_derivative_of_even
     (f : EuclideanSpace ℝ (Fin 3) → EuclideanSpace ℝ (Fin 3))

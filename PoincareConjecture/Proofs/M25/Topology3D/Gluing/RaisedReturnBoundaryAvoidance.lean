@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorTemplates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -60,10 +50,6 @@ private theorem raised_return_outer_port_polar
       Real.sin_pi_sub, Real.sin_pi_div_four, hsqrt]
   fin_cases outer <;> fin_cases e <;>
     simp [finProdFinEquiv, raisedReturnSign, hc0, hs0, hc1, hs1] <;> ring
-
-
-
-
 
 theorem saddle_nested_raised_return_active_geometry
     (kappa : OpenPartialHomeomorph E2 E2)

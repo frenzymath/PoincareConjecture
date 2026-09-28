@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.Selection.Separation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -66,8 +59,6 @@ private theorem not_mutual_carrier_tail {p : M}
     ⟨N.carrier_subset_connectedComponent hq.1,
       disjoint_left.mp C.negative_disjoint_closure hq⟩
   exact (hret hqret).2 (subset_closure (hN hq.1))
-
-
 
 theorem tails_disjoint_or_subset_or_subset
     (hneck : Disjoint N.carrier P.carrier) {p : M}

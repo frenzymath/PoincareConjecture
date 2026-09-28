@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxChart
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxMeasure
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ChartSegment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem capHalfBox_segment_subset (N : EpsilonNeck g) {z a : ℝ}
     (hz : -N.epsilon⁻¹ < z) (hright : z + 1 < N.epsilon⁻¹)
     (ha : 0 ≤ a) (haSmall : a ≤ 1 / 3) {p : E} (hp : p ∈ capHalfBox a) :
@@ -38,8 +28,6 @@ theorem capHalfBox_segment_subset (N : EpsilonNeck g) {z a : ℝ}
   simpa only [AffineMap.lineMap_apply, vsub_eq_sub, sub_zero, vadd_eq_add, add_zero,
     capBoxDomain, mem_inter_iff, mem_ofPred_eq] using
     capHalfBox_segment_domain N hz hright ha haSmall hp ht
-
-
 
 theorem capHalfBox_image_edist_le (N : EpsilonNeck g) (q : UnitTwoSphere) {z a : ℝ}
     (hz : -N.epsilon⁻¹ < z) (hright : z + 1 < N.epsilon⁻¹)
@@ -74,8 +62,6 @@ theorem capHalfBox_image_edist_le (N : EpsilonNeck g) (q : UnitTwoSphere) {z a :
     ENNReal.ofReal (2 * N.scale) * ENNReal.ofReal ‖p‖ at hdist
   rw [← ENNReal.ofReal_mul (by positivity : 0 ≤ 2 * N.scale)] at hdist
   exact hdist
-
-
 
 theorem capHalfBox_image_subset_ball (N : EpsilonNeck g) (q : UnitTwoSphere) {z r : ℝ}
     (hz : -N.epsilon⁻¹ < z) (hright : z + 1 < N.epsilon⁻¹)

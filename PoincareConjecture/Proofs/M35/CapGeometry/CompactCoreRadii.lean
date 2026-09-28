@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.LocalCoreRadius
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCoreRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_core_curvature_balls_compact (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

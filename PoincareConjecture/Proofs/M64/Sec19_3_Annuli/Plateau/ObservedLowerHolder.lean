@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedLowerReflect
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LowerReflectionEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalRescaling
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -30,9 +21,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
-
-
-
 
 theorem lower_reflected_column_closed_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -74,8 +62,6 @@ theorem lower_reflected_column_closed_growth
       (hone i _ hRb r hr)
     _ = _ := by ring
 
-
-
 theorem lower_reflected_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     {x0 rho K beta : ℝ}
@@ -93,8 +79,6 @@ theorem lower_reflected_column_power_growth
   exact (setIntegral_mono_set hi (Eventually.of_forall fun p => sq_nonneg _)
     (Eventually.of_forall fun p hp => ball_subset_closedBall hp)).trans
     (A.lower_reflected_column_closed_growth hsub henergy i b hb r hr)
-
-
 
 theorem lower_reflected_energy_closed_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -117,9 +101,6 @@ theorem lower_reflected_energy_closed_growth
     _ ≤ ∑ _i : Fin 2, (2 * K) * r ^ beta :=
       Finset.sum_le_sum fun i _ => A.lower_reflected_column_closed_growth hsub henergy i b hb r hr
     _ = _ := by simp; ring
-
-
-
 
 theorem lower_holder_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

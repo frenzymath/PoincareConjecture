@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.HeatSmoothness
 import PoincareConjecture.Proofs.M35.RadialGauge.SpatialMeasurability
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeGain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -143,9 +133,6 @@ private theorem heatFamily_stronglyMeasurable
       (q.1.1, q.1.2 + Real.sqrt (2 * elapsed q.1.1) • q.2)) (by fun_prop)
   exact h.integral_prod_right'
 
-
-
-
 theorem heatDuhamel_contDiff_and_iterated_bound
     {F : Type u} [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : ℝ → V → F} {t : ℝ} (ht : 0 ≤ t)
@@ -198,8 +185,6 @@ theorem heatDuhamel_contDiff_and_iterated_bound
   exact heatAverage_iteratedFDeriv_norm_le k (hf s.1 (hHs s)) (fun j => by
     obtain ⟨B, hB⟩ := hbound j
     exact ⟨B, hB s.1 (hHs s)⟩) (hC s.1 (hHs s)) _ y
-
-
 
 theorem heatDuhamel_slab_bounded_derivatives
     {F : Type u} [NormedAddCommGroup F] [NormedSpace ℝ F]

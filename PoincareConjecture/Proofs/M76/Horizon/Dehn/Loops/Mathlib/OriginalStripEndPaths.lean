@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.StripEndCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -15,7 +7,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
-
 
 def originalStripEndParameter (sign : Bool) (s : unitInterval) : ℝ :=
   (1 - (s : ℝ)) * farArmParameter (!sign) + (s : ℝ) * farArmParameter sign
@@ -33,7 +24,6 @@ theorem originalStripEndParameter_mem (sign : Bool) (s : unitInterval) :
 @[simp] theorem originalStripEndParameter_one (sign : Bool) :
     originalStripEndParameter sign 1 = farArmParameter sign := by
   simp [originalStripEndParameter]
-
 
 def originalStripEndPath {E : Type*} [TopologicalSpace E]
     (c : P2 → E) (hc : ContinuousOn c source) (t : unitInterval) (sign : Bool) :

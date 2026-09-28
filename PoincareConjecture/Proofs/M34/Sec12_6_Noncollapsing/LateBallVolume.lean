@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.PartialFlowCapture
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.LateReducedLengthVolume
 import PoincareConjecture.Proofs.M34.Standard.ClosedCylinderCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem partialFlow_late_small_ball_volume {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors) :

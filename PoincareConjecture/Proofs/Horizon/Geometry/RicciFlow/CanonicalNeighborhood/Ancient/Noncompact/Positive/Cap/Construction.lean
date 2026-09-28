@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Certificate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -61,8 +50,6 @@ theorem uniform_caps_of_core_of_services
   refine ⟨cap, rfl, rfl, rfl, ?_⟩
   intro x hx
   exact SoulCapGeometry.strong_outside_core (G := G) hde (by linarith) x hx
-
-
 
 theorem uniform_caps_of_core
     (P : M26CanonicalNeighborhoodPredecessors.{u}) (hcore : UniformSoulCenteredCoreConclusion P) :

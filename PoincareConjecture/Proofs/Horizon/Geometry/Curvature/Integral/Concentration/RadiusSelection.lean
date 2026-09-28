@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.CompactLocal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,12 +12,9 @@ namespace Poincare.CurvatureIntegral
 
 variable {X : Type*} [MetricSpace X]
 
-
 def HasLocalDistanceAscent (c : ℝ) (p y : X) : Prop :=
   ∀ s : ℝ, 0 < s → ∃ z : X,
     dist y z < s ∧ c * dist y z < dist p z - dist p y
-
-
 
 def badAscentRadius (c b : ℝ) (p : X) : ℝ :=
   sSup (insert 0 ((fun y : X => dist p y) ''
@@ -59,16 +46,12 @@ theorem dist_le_badAscentRadius {c b : ℝ} {p y : X}
   le_csSup (badAscentRadii_bddAbove c b p)
     (mem_insert_of_mem _ ⟨y, ⟨hpos, hcap, hbad⟩, rfl⟩)
 
-
-
 theorem hasLocalDistanceAscent_of_badAscentRadius_lt {c b : ℝ} {p y : X}
     (hinner : badAscentRadius c b p < dist p y) (houter : dist p y ≤ b) :
     HasLocalDistanceAscent c p y := by
   by_contra hbad
   exact (not_le_of_gt hinner) (dist_le_badAscentRadius
     ((badAscentRadius_nonneg c b p).trans_lt hinner) houter hbad)
-
-
 
 theorem exists_bad_point_of_lt_badAscentRadius {c b r : ℝ} {p : X}
     (hr : 0 ≤ r) (hsmall : r < badAscentRadius c b p) :
@@ -110,8 +93,6 @@ open Poincare.CurvatureIntegral
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem exists_pos_le_badAscentRadius_of_pos_on_isCompact
     (g : RiemannianMetric n M) (hc : MetricComplete g) {c b : ℝ}
     (hc1 : c < 1) {K : Set M} (hK : IsCompact K) :
@@ -132,8 +113,6 @@ theorem exists_pos_le_badAscentRadius_of_pos_on_isCompact
     exact g.exists_local_distance_ascent_of_lt_truncatedInjectivityRadius hc
       (by norm_num : (0 : ℝ) ≤ 1) hc1 p y hypos (hlt.trans_le (hbound p hp))
   exact hrle.trans hybound
-
-
 
 theorem exists_near_min_badAscentRadius_on_isCompact
     (g : RiemannianMetric n M) (hc : MetricComplete g)

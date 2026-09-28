@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.TerminalJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.Terminal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,8 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem exists_terminal_cylinderCover_closeness_threshold
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -111,8 +100,6 @@ theorem exists_terminal_cylinderCover_closeness_threshold
     rwa [zero_add] at h
   · intro j hj
     exact ht z.1 z.2 hzJ j hj
-
-
 
 theorem exists_terminal_projectiveNeck_threshold
     (P : M23NormalizedKappaCompactnessPredecessors)

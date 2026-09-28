@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PlaneFirstVariation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BoundaryAngularTrace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,11 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
-
 
 structure M65MinimalDisk (g : RiemannianMetric 3 M) (connection : LeviCivitaData g)
     (γ : C1FreeLoopSpace (M := M)) where

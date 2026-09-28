@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.HarmonicTensionPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -23,8 +13,6 @@ open Uniqueness
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem hessian_comp_apply {F H : V → V}
     (hF : ContDiff ℝ ∞ F) (hH : ContDiff ℝ ∞ H) (x u v : V) :
@@ -49,8 +37,6 @@ theorem hessian_comp_apply {F H : V → V}
   simpa only [add_apply, ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply,
     zero_apply, map_zero, zero_add, Function.comp_apply, add_comm] using h
 
-
-
 theorem mapCovariantHessian_domain_pullback
     (k b : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)
     (K : LeviCivitaData k) (B : LeviCivitaData b)
@@ -65,8 +51,6 @@ theorem mapCovariantHessian_domain_pullback
   simp only [Function.comp_apply, ContinuousLinearMap.comp_apply]
   rw [euclideanConnection_pullback k Φ K D, map_add]
   abel
-
-
 
 theorem mapTension_domain_pullback
     (k b : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)

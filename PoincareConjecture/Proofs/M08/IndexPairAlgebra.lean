@@ -120,4 +120,3 @@ theorem regularizedIndexPairDensity_symm {J : Set ℝ} (F : RicciFlow n M J)
     (deriv ((extChartAt (𝓡 n) x) ∘ α) s) (coord Y) (coord W)
 
 end PoincareConjecture.M08
-

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveHistoryPaths
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_component_box_image
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}

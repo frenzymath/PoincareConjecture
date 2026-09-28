@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RescaledRankGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.ScalarScaling
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Poincare.GromovHausdorff Poincare.Alexandrov Poincare.CurvatureIntegral
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_rescaled_pointed_limit_with_scalar_divergence_and_rank_growth_at_scaled_spire
     (n : ℕ) (hn : 2 ≤ n) (θ : ℝ) (hθ : 0 < θ) (hθpi : θ < Real.pi / 2) :
@@ -125,7 +115,6 @@ theorem exists_rescaled_pointed_limit_with_scalar_divergence_and_rank_growth_at_
     (fun j => 4 * a (φ j)) hn
     (fun j => mul_pos (by norm_num) (hpos (ξ j)))
     (Eventually.of_forall hsmall) (hdiv.comp hφ.tendsto_atTop)
-
 
 theorem exists_rescaled_pointed_limit_with_scalar_divergence_and_rank_growth
     (n : ℕ) (hn : 2 ≤ n) (θ : ℝ) (hθ : 0 < θ) (hθpi : θ < Real.pi / 2) :

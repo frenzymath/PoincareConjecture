@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.SweptDensity
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.RectangleIntegral
 import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -22,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
-
 
 theorem m65InteriorSweptAnnulus_area_le {K0 K1 K2 : ℝ}
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2) (hK2 : 0 ≤ K2)

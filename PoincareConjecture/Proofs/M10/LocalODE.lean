@@ -1,14 +1,6 @@
 import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,7 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem eventuallyEq_of_contDiffAt_vectorField {V : E → E} {f g : ℝ → E} {t₀ : ℝ}
     (hV : ContDiffAt ℝ 1 V (f t₀))

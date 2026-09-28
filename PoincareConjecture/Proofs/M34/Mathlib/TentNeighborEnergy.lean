@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteNeighborEnergy
 import Mathlib.Data.Nat.Dist
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
 
 theorem dyadic_nat_dist_adjacent_bounds (j i : ℕ) :
     (1 / 2 : ℝ) ^ Nat.dist (i + 1) j ≤ 2 * (1 / 2 : ℝ) ^ Nat.dist i j ∧
@@ -28,9 +16,6 @@ theorem dyadic_nat_dist_adjacent_bounds (j i : ℕ) :
     (by norm_num : (1 / 2 : ℝ) ≤ 1) h₁
   simp only [pow_succ] at hq₀ hq₁
   constructor <;> linarith
-
-
-
 
 theorem weighted_neighbor_sum_range_le_nine {E R w : ℕ → ℝ} {C : ℝ}
     (hn : ∀ i, 0 ≤ E i) (hw : ∀ i, 0 ≤ w i)

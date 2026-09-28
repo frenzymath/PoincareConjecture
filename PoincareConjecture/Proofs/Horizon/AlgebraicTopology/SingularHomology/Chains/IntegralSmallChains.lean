@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chains.IntegralChainCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

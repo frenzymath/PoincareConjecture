@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveHistoryInitialSlab
 import PoincareConjecture.Proofs.M47.ComponentEstimateStrictHistory
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
 
 theorem exists_component_closed_ordinary_history
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

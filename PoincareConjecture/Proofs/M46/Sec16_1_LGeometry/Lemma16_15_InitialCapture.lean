@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_SafeExitEnergy
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_CylinderFirstExit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem actualSafeCylinder_confines_initial_prefix
     {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)

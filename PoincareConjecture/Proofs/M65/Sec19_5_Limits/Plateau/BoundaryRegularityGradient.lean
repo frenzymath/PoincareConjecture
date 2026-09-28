@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeightedPotential
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Complex Filter
@@ -39,10 +29,6 @@ private theorem complex_test_mixed (φ : 𝓢(ℂ, ℂ)) (v w : ℂ) :
 private theorem test_derivative_support (φ : 𝓢(ℂ, ℂ)) (v : ℂ)
     (hφ : HasCompactSupport φ) : HasCompactSupport (∂_{v} φ : 𝓢(ℂ, ℂ)) :=
   hφ.of_isClosed_subset (isClosed_tsupport _) (SchwartzMap.tsupport_lineDerivOp_subset v φ)
-
-
-
-
 
 theorem weak_laplacian_complex_gradient {u dx dy f : ℂ → ℂ} {U : Set ℂ}
     (hx : LocallyIntegrable dx volume) (hy : LocallyIntegrable dy volume)
@@ -98,9 +84,6 @@ theorem weak_laplacian_complex_gradient {u dx dy f : ℂ → ℂ} {U : Set ℂ}
       apply integral_congr_ae
       filter_upwards [] with z
       ring
-
-
-
 
 theorem weak_gradient_cauchy_decomposition {u dx dy f : ℂ → ℂ} {U : Set ℂ} {R : ℝ}
     (hx : LocallyIntegrable dx volume) (hy : LocallyIntegrable dy volume)
@@ -158,10 +141,6 @@ private theorem translated_weight_ball {b R : ℝ} (hb : b < 2) (x : ℂ) :
     calc
       _ = ∫ z, k (x - z) := integral_congr_ae (ae_of_all _ fun z => (hsame z).symm)
       _ = ∫ z, k z := integral_sub_left_eq_self k volume x
-
-
-
-
 
 theorem weak_gradient_weighted_estimate {b : ℝ} (hb : 1 < b) (hb2 : b < 2)
     {W h : ℂ → ℂ} {U : Set ℂ} {R : ℝ}

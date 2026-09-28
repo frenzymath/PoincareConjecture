@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundaryHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem exists_finitePL_boundary_edge_coordinates {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

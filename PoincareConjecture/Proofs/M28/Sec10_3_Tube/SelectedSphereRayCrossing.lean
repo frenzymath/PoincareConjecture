@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Isotopy.Compo
 import Mathlib.Topology.MetricSpace.Completion
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
 
 theorem exists_completion_radius_threshold_for_cylinder_height
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
@@ -82,9 +70,6 @@ theorem exists_completion_radius_threshold_for_cylinder_height
     intro hhi
     exact (not_le_of_gt hradius) (hmin (hmem x hlo hhi))
 
-
-
-
 theorem cylinder_height_ge_threeQuarter_of_radius_barrier
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
     (U : TopologicalSpace.Opens M) (f : M → ℝ)
@@ -105,10 +90,6 @@ theorem cylinder_height_ge_threeQuarter_of_radius_barrier
   obtain ⟨mu, h0, _h1, _hcontinuous, hlower, _hmetric⟩ :=
     hsegments x x (hbarrier x hx) (hbarrier x hx)
   simpa only [h0] using hlower 0
-
-
-
-
 
 theorem exists_inward_ray_crossing_selected_sphere
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

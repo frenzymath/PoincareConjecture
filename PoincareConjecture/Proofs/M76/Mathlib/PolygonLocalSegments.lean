@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem Wbtw.segment_inter_eq_endpoint {a q b : E} (h : Wbtw ℝ a q b) :
     segment ℝ a q ∩ segment ℝ q b = {q} := by
@@ -46,9 +35,6 @@ theorem Wbtw.segment_inter_eq_endpoint {a q b : E} (h : Wbtw ℝ a q b) :
 namespace Polygon
 
 variable {n : ℕ}
-
-
-
 
 theorem exists_local_segment_pair (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

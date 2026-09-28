@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.FlatResidual
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.HigherDerivativeWitness
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 open MeasureTheory Set Function
 open scoped ContDiff Topology
 
 universe u
 
 namespace Poincare.Analysis
-
 
 theorem scalarCriticalImage_null_on
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

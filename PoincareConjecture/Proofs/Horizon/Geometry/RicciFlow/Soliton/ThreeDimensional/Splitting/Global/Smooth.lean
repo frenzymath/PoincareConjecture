@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.SmoothCover
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 theorem nullOrientationCover_smooth_data
     {D : LeviCivitaData g} (C : NullOrientationCover D) :

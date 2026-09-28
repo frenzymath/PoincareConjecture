@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Retaine
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem joinSourceCopies_exists_finitePL_extension
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -52,13 +41,10 @@ theorem joinSourceCopies_exists_finitePL_extension
     have hxA : (x : E) ∉ A := fun ha ↦ disjoint_left.mp hAB ha hx
     simpa [J, hxA] using hJBval ⟨x, hx⟩
 
-
 def HasRetainedComponentModel (U : Set V2) : Prop :=
   IsFinitePLBallPair ℝ U (U ∩ Q2) ∨
     ∃ (n : ℕ) (P : Polygon V2 (n + 3)), Function.Injective P ∧
       P.HasSimplicialEdges ∧ P.boundary ℝ = U ∧ Disjoint U Q2
-
-
 
 theorem retained_interval_image
     {S U : Set V2} {j : S → V2}
@@ -76,8 +62,6 @@ theorem retained_interval_image
     · rintro ⟨⟨x, hx, rfl⟩, hq⟩
       exact ⟨x, ⟨hx, (hboundary x).mp hq⟩, rfl⟩
   exact hbd ▸ source_copy_image_ballPair hPL hj hU hUS
-
-
 
 theorem retained_polygon_image
     {S U : Set V2} {j : S → V2}
@@ -109,8 +93,6 @@ theorem retained_polygon_image
   rintro y ⟨x, hx, rfl⟩ hq
   exact disjoint_left.mp hdisj hx ((hboundary x).mp hq)
 
-
-
 theorem retained_component_model_image
     {S U : Set V2} {j : S → V2}
     (hPL : ∃ J : V2 → V2, FinitePiecewiseAffineOn J S ∧ ∀ x : S, J x = j x)
@@ -133,8 +115,6 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Topologica
   {c : Bool → P2 → V2} {τ : C3 → X}
   {D : OriginalResolutionWordExclusionData f Z base G c τ (1 / 4)}
 
-
-
 theorem OriginalNormalizedResolutionPairData.retained_finitePL_extensions
     (P : OriginalNormalizedResolutionPairData e D) :
     (∃ J : V2 → V2, FinitePiecewiseAffineOn J (D.A ∪ D.C) ∧
@@ -151,8 +131,6 @@ theorem OriginalNormalizedResolutionPairData.retained_finitePL_extensions
       (disjoint_union_left.mpr ⟨D.disjointAC, D.disjointMC⟩) _ _
       (joinSourceCopies_exists_finitePL_extension D.disjointAM _ _
         ⟨kA, hkA, hkAval⟩ ⟨kM, hkM, hkMval⟩) ⟨kC, hkC, hkCval⟩⟩
-
-
 
 theorem OriginalNormalizedResolutionPairData.retained_component_models
     (P : OriginalNormalizedResolutionPairData e D)
@@ -173,7 +151,6 @@ theorem OriginalNormalizedResolutionPairData.retained_component_models
       factsV.boundary hUS hU⟩
 
 omit [TopologicalSpace X] in
-
 
 theorem RetainedSquareMapFacts.component_model_partition
     {I : Type*} {g : V2 → X} {K : Set V2} {j : K → V2}
@@ -211,9 +188,6 @@ theorem RetainedSquareMapFacts.component_model_partition
       U (fun i ↦ U i ⊆ K ∧ U (mate i) ⊆ K) j facts.injective facts.continuous
       hcompact hconn hpairwise (fun _ h ↦ h.1) facts.boundary
     exact ⟨hcompact', hdisj'⟩
-
-
-
 
 theorem OriginalNormalizedResolutionPairData.retained_component_partitions
     {I : Type*} (P : OriginalNormalizedResolutionPairData e D)

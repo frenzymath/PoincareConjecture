@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Homothety
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Model.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curvature
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ namespace PoincareConjecture
 variable {C : Type*} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) C] [IsManifold (𝓡 2) ∞ C]
   [T2Space C] [T3Space C] [ConnectedSpace C] [CompactSpace C]
-
-
 
 theorem exists_scalarNormalized_roundSurface_cover
     (g : RiemannianMetric 2 C) (D : LeviCivitaData g)
@@ -77,8 +68,6 @@ theorem exists_scalarNormalized_roundSurface_cover
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem roundCylinder_or_antipodal_cover_of_round_surface_product
     (g : RiemannianMetric 2 C) (G : RiemannianMetric 3 M)

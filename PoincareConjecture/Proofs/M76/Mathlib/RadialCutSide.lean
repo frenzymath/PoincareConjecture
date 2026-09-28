@@ -3,16 +3,6 @@ import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ open Set
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem IsPreconnected.homothety_levels_subset_cut_side
     {D s₀ s₁ : Set E} (hD : IsPreconnected D) (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)
@@ -65,10 +51,6 @@ end Set
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem fixed_level_inter_image_cap (H : X ≃ₜ X) {R s d : Set X} {A : X → ℝ}
     (hfix : ∀ x ∈ R, H x = x) (hd : d ⊆ {x | A x = 0}) {c : ℝ} (hc : c ≠ 0) :

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHa
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PolarDivergence
 import Mathlib.MeasureTheory.Integral.DivergenceTheorem
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff intervalIntegral
 
 namespace PoincareConjecture.M65Boundary
-
-
-
 
 theorem integral_divergence_halfDisk (X : LoopPlane → LoopPlane)
     (hX : ContDiff ℝ 1 X) {r : ℝ} (hr : 0 < r) :
@@ -112,9 +99,6 @@ theorem integral_divergence_halfDisk (X : LoopPlane → LoopPlane)
     (hQ.continuous.comp (continuous_id.prodMk continuous_const)).intervalIntegrable _ _
   rw [← intervalIntegral.integral_sub (hqI Real.pi) (hqI 0)]
   ring
-
-
-
 
 theorem smooth_halfDisk_green (f test : LoopPlane → ℝ)
     (hf : ContDiff ℝ 1 f) (ht : ContDiff ℝ 1 test) (i : Fin 2)

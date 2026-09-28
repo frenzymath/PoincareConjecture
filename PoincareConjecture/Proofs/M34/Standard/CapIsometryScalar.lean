@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,16 +18,12 @@ variable {n : ℕ} {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
 
 include hf
 
-
-
 theorem metricIsometry_scalar (x : M) : D'.scalarCurvature (f x) = D.scalarCurvature x := by
   symm
   simpa only [div_one] using
     D.scalarCurvature_eq_of_local_homothety D' (by norm_num : (0 : ℝ) < 1)
       isOpen_univ f.contMDiff.contMDiffOn
       (fun y _ v w => by simpa only [one_mul] using (hf y v w).symm) (mem_univ x)
-
-
 
 theorem metricIsometry_scalarEvolution (x : M) :
     D'.laplacian D'.scalarCurvature (f x) + 2 * D'.ricciNormSq (f x) =
@@ -60,8 +48,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
 
 include hf
 
-
-
 theorem metricIsometry_scalarGradient (x : M) :
     scalarGradientNorm h D' (f x) = scalarGradientNorm g D x := by
   symm
@@ -69,8 +55,6 @@ theorem metricIsometry_scalarGradient (x : M) :
     scalarGradientNorm_eq_of_local_homothety D D' (by norm_num : (0 : ℝ) < 1)
       isOpen_univ f.contMDiff.contMDiffOn
       (fun y _ v w => by simpa only [one_mul] using (hf y v w).symm) (mem_univ x)
-
-
 
 theorem metricIsometry_scalarSup (U : Set M) :
     scalarCurvatureSupOn h D' (f '' U) = scalarCurvatureSupOn g D U := by

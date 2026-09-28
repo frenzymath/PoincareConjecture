@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OldWordNormalSubgroup
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -19,10 +8,6 @@ open Set
 namespace PoincareConjecture.M76.Dehn
 
 universe u v w
-
-
-
-
 
 structure DoubleArcContext (X : Type u) (Y : Type v) (G : Type w)
     [Group G] where
@@ -43,10 +28,6 @@ structure DoubleArcContext (X : Type u) (Y : Type v) (G : Type w)
   old_outside : oldWord ∉ normal
   old_word : oldWord = alpha * beta * gamma * delta
 
-
-
-
-
 structure DoubleArcCandidate {X : Type u} {Y : Type v} {G : Type w}
     [Group G] (C : DoubleArcContext X Y G) where
   map : X → Y
@@ -65,8 +46,6 @@ structure DoubleArcCandidate {X : Type u} {Y : Type v} {G : Type w}
   no_new_triples : Prop
   unchanged_off_tube : Prop
 
-
-
 structure CaseAResolutionFamily {X : Type u} {Y : Type v} {G : Type w}
     [Group G] (C : DoubleArcContext X Y G) where
   first : DoubleArcCandidate C
@@ -74,18 +53,12 @@ structure CaseAResolutionFamily {X : Type u} {Y : Type v} {G : Type w}
   first_word : first.word = C.alpha * C.gamma
   second_word : second.word = C.alpha * C.beta⁻¹ * C.gamma * C.delta⁻¹
 
-
-
 structure CaseBResolutionFamily {X : Type u} {Y : Type v} {G : Type w}
     [Group G] (C : DoubleArcContext X Y G) where
   first : DoubleArcCandidate C
   second : DoubleArcCandidate C
   first_word : first.word = C.alpha * C.gamma⁻¹
   second_word : second.word = C.alpha * C.delta * C.gamma * C.beta
-
-
-
-
 
 theorem exists_selected_case_a_resolution
     {X : Type u} {Y : Type v} {G : Type w} [Group G]
@@ -107,9 +80,6 @@ theorem exists_selected_case_a_resolution
       · exact F.second_word ▸ hsecond
     exact ⟨F.second, Or.inr rfl, hsecond⟩
   · exact ⟨F.first, Or.inl rfl, hfirst⟩
-
-
-
 
 theorem exists_selected_case_b_resolution
     {X : Type u} {Y : Type v} {G : Type w} [Group G]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +15,6 @@ local notation "Q3" => sphere (0 : V3) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {C S : Set X} {B : Set E}
-
-
-
 
 theorem ChartwisePLBall.exists_finitePL_boundary_parameter
     (b : ChartwisePLBall e C S)

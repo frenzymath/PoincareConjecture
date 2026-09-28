@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -38,8 +29,6 @@ private noncomputable def intervalHomeomorph :
       · exact N.affine_mem_interval
       · rintro ⟨hlo, hhi⟩
         constructor <;> nlinarith)
-
-
 
 noncomputable def m25_openCylinderModel : OpenCylinderModel N.carrier where
   homeomorph := ((Homeomorph.refl UnitTwoSphere).prodCongr N.intervalHomeomorph).trans
@@ -89,8 +78,6 @@ noncomputable def m25_openCylinderModel : OpenCylinderModel N.carrier where
     intro x hx
     exact (N.coordinate_inverse_smooth x hx).fst.prodMk
       (h.contMDiffAt.comp_contMDiffWithinAt x (N.coordinate_inverse_smooth x hx).snd)
-
-
 
 theorem m25_openCylinderModel_middleSphere :
     N.m25_openCylinderModel.middleSphere = N.central_sphere := by

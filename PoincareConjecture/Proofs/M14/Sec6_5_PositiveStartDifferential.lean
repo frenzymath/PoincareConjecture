@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_FieldRealization
 import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedScale
 import PoincareConjecture.Proofs.M14.Mathlib.SectionThroughVector
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +28,6 @@ private theorem scalar_transport {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
-
 theorem positiveStart_variationEndpoint_hasDerivAt
     (V : M14LVariationData G p R) {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval a b) {f : G.Point → ℝ}
@@ -61,8 +49,6 @@ theorem positiveStart_variationEndpoint_hasDerivAt
   rw [← endpointVariationField_val_eq_tangent V hs hzero] at h
   exact (scalar_transport (V.square_base s) f (M14EndpointVariationField V s 0)) ▸ h
 
-
-
 theorem positiveStart_exists_terminalVariation
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (W : G.Horizontal (R.curve (Real.sqrt b))) :
@@ -83,9 +69,6 @@ theorem positiveStart_exists_terminalVariation
     exists_initialFixed_variation_of_smooth_horizontalField R hM12 Y hY hend.1
   refine ⟨V, hfix, (hfield _ ⟨le_rfl, hab.le⟩).trans hend.1, ?_⟩
   exact (hfield _ ⟨hab.le, le_rfl⟩).trans (hend.2.trans hZend)
-
-
-
 
 theorem positiveStart_horizontal_differential
     (hCoordinates : M12MetricPredecessors.{0} n)

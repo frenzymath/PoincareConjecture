@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem contMDiff_inner_connection (D : LeviCivitaData g)
     {V Z : (x : M) → TangentSpace (𝓡 n) x}
@@ -64,7 +56,6 @@ theorem contMDiff_inner_connection (D : LeviCivitaData g)
   simpa only [contMDiffOn_univ, RiemannianMetric.tensorTrace, T,
     Fin.cons_zero, Fin.cons_one] using h
 
-
 theorem connection_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
     {Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hZ : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n)))
@@ -73,7 +64,6 @@ theorem connection_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
     (mdifferentiableAt_zeroSection ..) (by simp)
     (notMem_tsupport_iff_eventuallyEq.mp hx)
   exact h.trans (D.connection.isCovariantDerivativeOnUniv.zero (x := x))
-
 
 theorem hasCompactSupport_inner_connection [R1Space M] (D : LeviCivitaData g)
     (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -90,7 +80,6 @@ theorem hasCompactSupport_inner_connection [R1Space M] (D : LeviCivitaData g)
     ((hZ x).mdifferentiableAt (by simp)) hx'])
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem integrable_inner_connection (D : LeviCivitaData g)
     {V Z : (x : M) → TangentSpace (𝓡 n) x}

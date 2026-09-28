@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexSpherePolygonDisk
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionInPLChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem isFinitePLBallPair_convex_sphere_complement (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)
@@ -81,10 +69,6 @@ theorem isFinitePLBallPair_convex_sphere_complement (K : SimplicialComplex ℝ E
       hAintS]
     rfl
   exact hd.of_polygon_region P hP hinj hAc hAd hUcl hAintd hbound hout
-
-
-
-
 
 theorem exists_convex_sphere_polygon_cut (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

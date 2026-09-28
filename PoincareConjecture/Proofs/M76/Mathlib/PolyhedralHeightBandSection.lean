@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_heightBand_section_chart (K : SimplicialComplex ℝ (E × ℝ))
     (hK : K.faces.Finite) {B : Set E} {lower upper : E → ℝ}

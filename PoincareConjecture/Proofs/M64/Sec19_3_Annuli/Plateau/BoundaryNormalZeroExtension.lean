@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroExtension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +28,6 @@ private theorem swap_indicator (u : LoopPlane → ℝ) :
   · simp only [comp_apply, indicator_of_notMem (not_congr hh |>.mpr hp),
       indicator_of_notMem (show p ∉ {p : LoopPlane | 0 < p 1} from hp)]
 
-
-
-
 theorem m64Continuous_normalZeroExtension_continuous {u : LoopPlane → ℝ}
     (hu : Continuous u) (hzero : ∀ p : LoopPlane, p 1 = 0 → u p = 0) :
     Continuous ({p : LoopPlane | 0 < p 1}.indicator u) := by
@@ -50,10 +37,6 @@ theorem m64Continuous_normalZeroExtension_continuous {u : LoopPlane → ℝ}
   have hh := (m64Continuous_zeroExtension_continuous
     (hu.comp m64BoundaryCoordinateSwap.continuous) hz).comp m64BoundaryCoordinateSwap.continuous
   rwa [swap_indicator] at hh
-
-
-
-
 
 theorem m64Continuous_normalZeroExtension_weak {u v : LoopPlane → ℝ} (i : Fin 2)
     (hu : Continuous u) (hzero : ∀ p : LoopPlane, p 1 = 0 → u p = 0)

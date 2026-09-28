@@ -1,13 +1,9 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.Capping.OpenCover
 
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_inclusion_homotopyEquiv_of_motion
     {X : Type*} [TopologicalSpace X] {S U : Set X} (hSU : S ⊆ U)
@@ -32,8 +28,6 @@ theorem exists_inclusion_homotopyEquiv_of_motion
     map_zero_left := fun x => Subtype.ext (hzero x)
     map_one_left := fun _ => rfl }
   exact ⟨⟨i, r, ⟨HS.symm⟩, ⟨HU.symm⟩⟩, rfl⟩
-
-
 
 theorem pathConnectedSpace_of_homotopyEquiv
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

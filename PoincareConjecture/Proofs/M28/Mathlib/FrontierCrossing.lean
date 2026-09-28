@@ -1,15 +1,6 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 universe u
 
 variable {X : Type u} [TopologicalSpace X]
-
-
 
 theorem IsPreconnected.exists_mem_frontier_of_mem_of_notMem
     {A C : Set X} (hA : IsPreconnected A) {x y : X}
@@ -38,8 +27,6 @@ theorem IsPreconnected.exists_mem_frontier_of_mem_of_notMem
   · exact hyC (interior_subset (h hy))
   · exact (interior_subset (h hx)) hxC
 
-
-
 theorem ContinuousOn.exists_frontier_crossing_before
     {C : Set X} (hC : IsClosed C) {γ : ℝ → X} {a b : ℝ}
     (hγ : ContinuousOn γ (Icc a b)) (hab : a ≤ b)
@@ -54,8 +41,6 @@ theorem ContinuousOn.exists_frontier_crossing_before
     exact hb (hC.frontier_subset hf))
   exact ⟨t, ⟨ht.1, htb⟩, hf⟩
 
-
-
 theorem ContinuousOn.exists_frontier_crossing_after
     {C : Set X} (hC : IsClosed C) {γ : ℝ → X} {a b : ℝ}
     (hγ : ContinuousOn γ (Icc a b)) (hab : a ≤ b)
@@ -69,9 +54,6 @@ theorem ContinuousOn.exists_frontier_crossing_after
     subst t
     exact ha (hC.frontier_subset hf))
   exact ⟨t, ⟨hat, ht.2⟩, hf⟩
-
-
-
 
 theorem ContinuousOn.exists_first_frontier_before_endpoint
     {V : Set X} (hV : IsOpen V) {γ : ℝ → X} {a b : ℝ}

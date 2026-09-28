@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.AnnulusApproximation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,8 +9,6 @@ open scoped Topology NNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X ι : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem tendsto_normalized_radius_of_annulusConeRelation (hcomparison : RayComparison p)
     {l : Filter ι} {L τ : ι → ℝ} {x : ι → X}
@@ -36,8 +25,6 @@ theorem tendsto_normalized_radius_of_annulusConeRelation (hcomparison : RayCompa
   filter_upwards [hL, hrel] with k hk hr
   exact annulusConeRelation_radius hcomparison hk hr
 
-
-
 theorem cone_radial_potential_eq_of_annulusConeRelation (hcomparison : RayComparison p)
     {l : Filter ι} [l.NeBot] {L τ : ι → ℝ} {x : ι → X}
     {z : ι → AsymptoticCone p hcomparison} {z₀ : AsymptoticCone p hcomparison} {v : ℝ}
@@ -49,8 +36,6 @@ theorem cone_radial_potential_eq_of_annulusConeRelation (hcomparison : RayCompar
   tendsto_nhds_unique
     ((tendsto_normalized_radius_of_annulusConeRelation hcomparison hL hrel hz).pow 2 |>.div_const 2)
     hpotential
-
-
 
 theorem dist_unit_cone_lt_of_annulusConeRelation_ray (hcomparison : RayComparison p)
     (η : basedMinimizingRays p) {L τ : ℝ} (hL : 0 < L)
@@ -67,8 +52,6 @@ theorem dist_unit_cone_lt_of_annulusConeRelation_ray (hcomparison : RayCompariso
   have hbound := cone_distance_le_rescaled_ray_distance hcomparison γ η 1 1 hL
   simp only [NNReal.coe_one, one_mul] at hbound
   exact hbound.trans_lt (by simpa only [dist_comm] using hnear)
-
-
 
 theorem tendsto_unit_cone_of_annulusConeRelation_ray (hcomparison : RayComparison p)
     (η : basedMinimizingRays p) {l : Filter ι} {L τ : ι → ℝ}

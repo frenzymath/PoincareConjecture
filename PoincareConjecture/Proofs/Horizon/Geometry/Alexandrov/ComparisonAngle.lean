@@ -1,24 +1,12 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace Poincare.Alexandrov
-
-
 
 def comparisonAngle (r s t : ℝ) : ℝ :=
   Real.arccos ((Real.cosh r * Real.cosh s - Real.cosh t) /
@@ -33,8 +21,6 @@ theorem comparisonAngle_le_pi (r s t : ℝ) : comparisonAngle r s t ≤ Real.pi 
 theorem comparisonAngle_comm (r s t : ℝ) :
     comparisonAngle r s t = comparisonAngle s r t := by
   simp only [comparisonAngle, mul_comm]
-
-
 
 theorem comparisonCos_mem_Icc {r s t : ℝ}
     (hr : 0 < r) (hs : 0 < s) (ht : 0 ≤ t)
@@ -56,8 +42,6 @@ theorem comparisonCos_mem_Icc {r s t : ℝ}
   · apply (div_le_iff₀ hden).mpr
     linarith
 
-
-
 theorem cos_comparisonAngle {r s t : ℝ}
     (hr : 0 < r) (hs : 0 < s) (ht : 0 ≤ t)
     (hrs : |r - s| ≤ t) (htop : t ≤ r + s) :
@@ -65,8 +49,6 @@ theorem cos_comparisonAngle {r s t : ℝ}
       (Real.cosh r * Real.cosh s - Real.cosh t) / (Real.sinh r * Real.sinh s) := by
   exact Real.cos_arccos (comparisonCos_mem_Icc hr hs ht hrs htop).1
     (comparisonCos_mem_Icc hr hs ht hrs htop).2
-
-
 
 theorem tendsto_comparisonAngle {ι : Type*} {l : Filter ι}
     {r s t : ι → ℝ} {r₀ s₀ t₀ : ℝ}

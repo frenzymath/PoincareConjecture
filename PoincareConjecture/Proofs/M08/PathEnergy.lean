@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M08.MetricCompactness
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,7 +50,6 @@ private theorem sqrt_integral_bound {q : ℝ → ℝ} {s t : ℝ}
     ← Real.sqrt_eq_rpow, setIntegral_const, smul_eq_mul, mul_one,
     Real.volume_real_Icc_of_le hst, integral_Icc_eq_integral_Ioc,
     ← intervalIntegral.integral_of_le hst] using h
-
 
 theorem dist_le_sqrt_energy (g : RiemannianMetric n M) {α : ℝ → M}
     {a b C : ℝ} (hab : a < b) (hα : ContinuousOn α (Icc a b))

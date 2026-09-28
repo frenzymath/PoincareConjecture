@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M48.ExtensionPrefix
 import PoincareConjecture.Proofs.M47.CanonicalControls
 import PoincareConjecture.Definitions.M48EpochExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ private theorem epochStart_mono : Monotone surgeryEpochStart := by
   intro i j hij
   exact div_le_div_of_nonneg_right
     (pow_le_pow_right₀ (by norm_num : (1 : ℝ) ≤ 2) hij) (by norm_num)
-
-
-
 
 theorem RepairedBranchContinuationData.observedControls
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

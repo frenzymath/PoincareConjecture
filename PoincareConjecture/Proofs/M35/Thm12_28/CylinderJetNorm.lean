@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem roundCylinderTensorNormSquared_center {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ} (T : (Fin r → Fin 3) → ℝ) :
@@ -42,13 +31,9 @@ theorem roundCylinderTensorNormSquared_center {u : ℝ} (hu : u < 1)
     simp
   · simp
 
-
-
 theorem roundCylinderInverseWeight_pos {u : ℝ} (hu : u < 1) (a : Fin 3) :
     0 < ![(2 * (1 - u))⁻¹, (2 * (1 - u))⁻¹, 1] a := by
   fin_cases a <;> norm_num <;> linarith
-
-
 
 theorem roundCylinderTensorNormSquared_nonneg {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ} (T : (Fin r → Fin 3) → ℝ) :
@@ -58,8 +43,6 @@ theorem roundCylinderTensorNormSquared_nonneg {u : ℝ} (hu : u < 1)
   exact Finset.sum_nonneg (fun a _ => mul_nonneg
     (Finset.prod_nonneg (fun i _ => (roundCylinderInverseWeight_pos hu (a i)).le))
     (sq_nonneg _))
-
-
 
 theorem roundCylinder_component_sq_le {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ} (T : (Fin r → Fin 3) → ℝ)
@@ -71,8 +54,6 @@ theorem roundCylinder_component_sq_le {u : ℝ} (hu : u < 1)
   exact Finset.single_le_sum (fun b _ => mul_nonneg
     (Finset.prod_nonneg (fun i _ => (roundCylinderInverseWeight_pos hu (b i)).le))
     (sq_nonneg _)) (Finset.mem_univ a)
-
-
 
 theorem roundCylinder_derivative_norm_le_jet {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace) {k order : ℕ}
@@ -94,8 +75,6 @@ theorem roundCylinder_derivative_norm_le_jet {u : ℝ} (hu : u < 1)
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RoundCylinderClose
-
-
 
 theorem component_sq_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (hu : u < 1)

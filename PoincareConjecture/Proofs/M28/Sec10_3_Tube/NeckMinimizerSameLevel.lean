@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckMinimizerTraversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -77,9 +68,6 @@ private theorem exists_two_contained_collar_levels_same_level (W : EpsilonNeck g
   · simpa only [htzero, sub_zero] using hdlevel
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem exists_neck_minimizer_same_level (W : EpsilonNeck g)
     (hε : W.epsilon ≤ (1 / 1000 : ℝ)) {U : Set M} (hWU : W.carrier ⊆ U)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.ChangeOfVariables
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Integral
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem continuousAt_pullbackVolumeDensity_of_contMDiffAt
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -44,7 +33,6 @@ theorem continuousAt_pullbackVolumeDensity_of_contMDiffAt
     (continuous_id.matrix_det.continuousAt.comp hG)
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem measurable_indicator_pullbackVolumeDensity
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -67,8 +55,6 @@ theorem measurable_indicator_pullbackVolumeDensity
   · simp only [indicator_of_mem hx, piecewise_eq_of_mem _ _ _ (hsU hx)]
     rfl
   · simp only [indicator_of_notMem hx]
-
-
 
 theorem volumeMeasure_image_inter_ball_eq_polar
     (g : RiemannianMetric n M) (hn : 1 ≤ n)

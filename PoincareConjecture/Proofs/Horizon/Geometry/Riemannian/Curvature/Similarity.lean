@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set
@@ -44,7 +38,6 @@ theorem sectionalCurvature_eq_of_metric_similarity
         ← hm x (mem_univ x) v w]
     _ = _ := rescaledMetric_sectionalCurvature g D a ha x v w
 end PoincareConjecture.LeviCivitaData
-
 
 theorem PoincareConjecture.LeviCivitaData.sectionalCurvature_lower_bound_of_metric_similarity
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

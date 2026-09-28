@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingEstimating
 import PoincareConjecture.Proofs.M40.Mathlib.SupportedChartSmoothing
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -37,10 +24,6 @@ variable {E F M N : Type*}
   [RiemannianBundle (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) N]
-
-
-
-
 
 theorem exists_supported_smooth_approximation
     (μ : Measure E) [μ.IsAddHaarMeasure]

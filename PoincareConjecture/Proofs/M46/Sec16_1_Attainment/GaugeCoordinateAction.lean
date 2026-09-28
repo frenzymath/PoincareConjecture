@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecoveryAction
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +24,6 @@ private noncomputable local instance :
 private noncomputable local instance :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem gaugeCylinderAction_eq_coordinate_integral
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (j : G.gaugeCover.index)

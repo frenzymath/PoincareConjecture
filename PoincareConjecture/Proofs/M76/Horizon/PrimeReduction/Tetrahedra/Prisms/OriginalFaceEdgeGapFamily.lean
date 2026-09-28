@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.OriginalRectangleEdgeParameters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangularRoofModel
 namespace PoincareConjecture.M76.PrismBelt

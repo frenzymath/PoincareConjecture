@@ -2,25 +2,12 @@ import Mathlib.Analysis.Normed.Group.Continuity
 import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem continuous_uncurry_of_dense_bounded_lipschitz
     {P E F : Type*} [TopologicalSpace P] [NormedAddCommGroup E] [NormedAddCommGroup F]

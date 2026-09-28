@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterfa
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUConformality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Topology
@@ -28,8 +17,6 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def SUSphereWeightedEuler (g : RiemannianMetric n M) (alpha : ℝ)
     (f : UnitTwoSphere → M) : Prop :=
   ∀ (p : UnitTwoSphere) (b : M) (z : LoopPlane),
@@ -42,8 +29,6 @@ def SUSphereWeightedEuler (g : RiemannianMetric n M) (alpha : ℝ)
     ∑ i : Fin 2, ConnectionVariation.covDerivAlong Gamma u
       (fun y => w y • fderiv ℝ u y (EuclideanSpace.basisFun (Fin 2) ℝ i))
       (EuclideanSpace.basisFun (Fin 2) ℝ i) z = 0
-
-
 
 structure SUMaxGradientLimit (g : RiemannianMetric n M)
     (f : ℕ → UnitTwoSphere → M) where
@@ -70,9 +55,6 @@ structure SUMaxGradientLimit (g : RiemannianMetric n M)
       ∀ R : ℝ, 0 < R →
         Tendsto (fun j => ∫ z in Metric.ball (0 : LoopPlane) R, m60AreaDensity g (v j) z)
           atTop (𝓝 (∫ z in Metric.ball (0 : LoopPlane) R, m60SphereAreaDensity g sphere z))
-
-
-
 
 def SUMaxGradientCompactnessProducer (g : RiemannianMetric n M) : Prop :=
   ∀ (alpha : ℕ → ℝ) (f : ℕ → UnitTwoSphere → M),

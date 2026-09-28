@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {m n : ℕ}
-
-
-
 
 theorem hasSimplicialEdges_ofPaths_of_intersections
     (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)

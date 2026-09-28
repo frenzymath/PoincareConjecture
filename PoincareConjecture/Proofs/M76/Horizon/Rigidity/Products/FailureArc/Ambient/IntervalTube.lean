@@ -10,7 +10,6 @@ open PolygonalCrossingResolution
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
 def OriginalIntervalTube.neighborhood_inclusion
     {X ι : Type*} [TopologicalSpace X] {N R W : Set X}
     {e : ι → OpenPartialHomeomorph X V3}

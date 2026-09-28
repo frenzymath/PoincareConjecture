@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.BoundaryR
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Frame.RicciTransport
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.TangentCone.Real
-
-
-
-
-
-
-

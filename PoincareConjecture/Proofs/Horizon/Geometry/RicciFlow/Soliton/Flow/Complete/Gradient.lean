@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Complete.Global
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Speed
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_complete_gradientFlow_of_bounded_hessian
     (D : LeviCivitaData g) (hc : MetricComplete g) {f : M → ℝ}

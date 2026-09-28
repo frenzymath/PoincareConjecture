@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapIntersection
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionRefinement
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -60,11 +47,6 @@ private theorem cap_compatible_of_full_shared_edge
     (by simp) (by simp) (by simp) (by simp)
   · simpa only [uIcc_of_le zero_le_one, ← hC, ← hD, ← hk] using hinter
   · simpa only [uIcc_of_le zero_le_one, ← hC, ← hD, ← hl] using hinter.trans hshared
-
-
-
-
-
 
 theorem m64Intrinsic_retained_caps_canonical_compatibility
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 < r)

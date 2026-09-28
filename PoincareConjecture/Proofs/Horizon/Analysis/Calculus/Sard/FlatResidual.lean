@@ -4,7 +4,6 @@ open scoped ContDiff
 
 namespace Poincare.Analysis
 
-
 theorem scalarCriticalImage_null_flat_residual
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] {V : Set E} (hV : IsOpen V)

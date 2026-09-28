@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.FixedChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.Variation
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -28,7 +21,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem manifoldVariation_jacobi
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -163,14 +155,6 @@ theorem manifoldVariation_jacobi
   rw [map_add, map_zero, hDDJ]
   rw [← coordinateCurvature_in_chart g D a (hmem h0' ht'), hJ ht', hvelocity]
   exact hG
-
-
-
-
-
-
-
-
 
 noncomputable def manifoldRadialVariation
     (g : RiemannianMetric n M) (a : M)
@@ -320,6 +304,5 @@ theorem manifoldRadialVariation_endpoint
   rw [fderiv_eq_smul_deriv, one_smul, hr.deriv]
   exact congrArg (fun y => mfderiv (𝓡 n) (𝓡 n) c.symm y
     (fderiv ℝ D.exponential v w)) (by simp [r])
-
 
 end PoincareConjecture.ConnectionVariation

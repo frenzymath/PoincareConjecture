@@ -2,25 +2,12 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology
 
 namespace Poincare.Parabolic.Interior
-
 
 theorem nonpos_of_le_mul_succ_of_bounded
     {u : ℕ → ℝ} {θ M : ℝ} (hθ0 : 0 ≤ θ) (hθ1 : θ < 1)
@@ -45,9 +32,6 @@ theorem nonpos_of_le_mul_succ_of_bounded
   have hlim : Tendsto (fun j : ℕ => θ ^ j * M) atTop (𝓝 0) := by
     simpa using (tendsto_pow_atTop_nhds_zero_of_lt_one hθ0 hθ1).mul_const M
   exact le_of_tendsto_of_tendsto tendsto_const_nhds hlim (Eventually.of_forall hle)
-
-
-
 
 theorem le_geometric_bound_of_le_add_mul_succ
     {u : ℕ → ℝ} {A b θ M : ℝ} (hA : 0 ≤ A) (hb : 1 ≤ b)

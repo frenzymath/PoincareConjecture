@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
@@ -28,8 +19,6 @@ theorem sphere_chart_center (q : UnitTwoSphere) :
   dsimp [stereographic']
   simp only [EmbeddingLike.map_eq_zero_iff]
   exact stereographic_neg_apply q
-
-
 
 theorem sphere_chart_inverse_inner (q : UnitTwoSphere)
     (v w : EuclideanSpace ℝ (Fin 2)) :
@@ -73,11 +62,8 @@ theorem sphere_chart_inverse_inner (q : UnitTwoSphere)
   rw [hcomp]
   exact U.symm.inner_map_map v w
 
-
 def cylinderGramDiagonal (u : ℝ) : Fin 3 → ℝ :=
   ![2 * (1 - u), 2 * (1 - u), 1]
-
-
 
 theorem roundCylinderGram_chosen_center (u : ℝ) (z : RoundCylinderSpace) :
     roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) z.1)
@@ -90,12 +76,9 @@ theorem roundCylinderGram_chosen_center (u : ℝ) (z : RoundCylinderSpace) :
     simp [roundCylinderCoordinateBasis, cylinderGramDiagonal, Matrix.diagonal,
       EuclideanSpace.inner_single_left]
 
-
 theorem cylinderGramDiagonal_pos {u : ℝ} (hu : u < 1) (a : Fin 3) :
     0 < cylinderGramDiagonal u a := by
   fin_cases a <;> simp [cylinderGramDiagonal] <;> linarith
-
-
 
 theorem roundCylinderGram_inverse_chosen_center {u : ℝ} (hu : u < 1)
     (z : RoundCylinderSpace) :

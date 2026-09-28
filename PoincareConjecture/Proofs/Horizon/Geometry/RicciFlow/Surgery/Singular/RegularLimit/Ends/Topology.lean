@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.ScalarEscape
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -66,14 +58,12 @@ theorem not_mem_compact_component (e : TerminalEnd K)
     exact (connectedComponent_eq hy).trans (connectedComponent_eq hx).symm
   simpa only [hxy] using e.component_not_compact
 
-
 theorem not_mem_cComponent (e : TerminalEnd K) {C : ℝ}
     (N : SingularCComponent (E.extended.metric T) (E.extended.connection T) C)
     {x : (E.extended.slice T).carrier} (hx : x ∈ K.component) : x ∉ N.carrier := by
   intro hxN
   exact e.not_mem_compact_component hx (N.component_eq ▸ hxN)
     (N.component_eq ▸ N.compact)
-
 
 theorem not_mem_roundComponent (e : TerminalEnd K) {epsilon : ℝ}
     (N : SingularRoundComponent (E.extended.metric T) epsilon)

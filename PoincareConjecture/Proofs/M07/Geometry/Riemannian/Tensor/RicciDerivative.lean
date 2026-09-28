@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Calculus
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Symmetry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 lemma covariantTensorDerivative_ricciEvaluation_symm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u v w : TangentSpace (𝓡 n) x) :
@@ -31,7 +23,6 @@ lemma covariantTensorDerivative_ricciEvaluation_symm
     (hD.2.2.2.1 y a b a b).2.2.2
   simp only [covariantTensorDerivative, ricciEvaluation, Fin.sum_univ_two]
   simp [hsymm, add_comm]
-
 
 lemma tensorLaplacian_ricciEvaluation_symm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +18,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 lemma contMDiffAt_hessian_scalarCurvature_fields
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -76,8 +66,6 @@ lemma contMDiffAt_hessian_scalarCurvature_fields
   ext i
   fin_cases i <;> rfl
 
-
-
 lemma contMDiffAt_ricciSquare_fields
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) {x : M}
@@ -101,8 +89,6 @@ lemma contMDiffAt_ricciSquare_fields
     (fun Y hY => (F.contMDiffAt_ricci_fields ht (hY (σ 0)) (hY (σ 1))).mul
       (F.contMDiffAt_ricci_fields ht (hY (σ 2)) (hY (σ 3)))) hX
   exact h
-
-
 
 lemma contMDiffAt_hamiltonM_fields
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

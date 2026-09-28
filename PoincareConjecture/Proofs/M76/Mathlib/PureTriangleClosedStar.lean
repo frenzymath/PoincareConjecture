@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup E] [Module 𝕜 E] [DecidableEq E]
-
-
-
 
 theorem mem_closedStar_space_iff_triangle (K : SimplicialComplex 𝕜 E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t) (q x : E) :
@@ -32,9 +21,6 @@ theorem mem_closedStar_space_iff_triangle (K : SimplicialComplex 𝕜 E)
       convexHull_mono ((Finset.subset_insert q s).trans hst) hxs⟩
   · rintro ⟨s, hs, _, hqs, hxs⟩
     exact mem_space_iff.mpr ⟨s, ⟨hs, by simpa only [Finset.insert_eq_of_mem hqs] using hs⟩, hxs⟩
-
-
-
 
 theorem mem_link_space_iff_triangle (K : SimplicialComplex 𝕜 E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t) (q x : E) :

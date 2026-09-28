@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteChartJets
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsMixed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +27,6 @@ variable {α : Type v} (l : Filter α) (M : α → Type u)
   [∀ k, TopologicalSpace (M k)] [∀ k, ChartedSpace E (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)] [∀ k, T2Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
-
-
 
 theorem limitFinite_chart_mixed_jets (P : RicciFlowCurvatureTheory.{u})
     {τ R K ρ a0 b0 : ℝ} (hτ : 0 < τ) (hK : 0 < K)
@@ -106,8 +96,6 @@ theorem limitFinite_chart_mixed_jets (P : RicciFlowCurvatureTheory.{u})
   intro m
   obtain ⟨B, hB, hbound⟩ := h m
   exact ⟨B, hB, hbound.mono fun k hk t ht x hx => hk (t, x) ⟨ht, hx⟩⟩
-
-
 
 theorem limitFinite_chart_mixed_readout (P : RicciFlowCurvatureTheory.{u})
     {τ R K ρ a0 b0 : ℝ} (hτ : 0 < τ) (hK : 0 < K)

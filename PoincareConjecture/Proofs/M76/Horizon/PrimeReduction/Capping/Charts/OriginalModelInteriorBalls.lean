@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.FinitePLBallInteriorChart
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -79,8 +71,6 @@ theorem exists_original_model_interior_ball
       exact hKR (interior_subset hx)
     · exact (Q.symm.isOpen_image_of_subset_source isOpen_interior
         (interior_subset.trans hKQ)).preimage continuous_subtype_val
-
-
 
 theorem exists_original_model_interior_chart
     {X E ι : Type*} [TopologicalSpace X]

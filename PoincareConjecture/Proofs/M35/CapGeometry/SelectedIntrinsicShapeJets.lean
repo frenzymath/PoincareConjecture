@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedRadialShapeConvergence
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicShapeJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
 
 noncomputable def selectedCoordinateIntrinsicShapeDerivative
     (P : M35StandardCapPredecessors)
@@ -43,8 +32,6 @@ noncomputable def selectedCoordinateIntrinsicShapeDerivative
   let f : V → V := fun y => ((L.embedding k).forward 0
     ⟨neg_nonpos.mpr (L.exhaustion.time_pos k).le, le_rfl⟩ (coordinate y)).val
   intrinsicShapeDerivativePullback G hrot hc f m
-
-
 
 theorem blowupSequence_intrinsic_shape_jets_zero
     (P : M35StandardCapPredecessors)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.ExponentIteration
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set
@@ -18,8 +11,6 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem quantitative_sobolev_tower {Ω : Set E} (hΩ : IsOpen Ω) (m s : ℕ)
     {p : ℝ} (hp : 1 ≤ p)

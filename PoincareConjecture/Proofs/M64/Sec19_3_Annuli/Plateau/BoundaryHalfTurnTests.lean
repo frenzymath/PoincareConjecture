@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnCutoff
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,27 +15,16 @@ local notation "K" => m64AnnulusDomain
 local notation "a" => curvePeriod / 2
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
 
-
-
-
 def m64HalfTurnBlend (j : ℕ) (f g : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   f p + m64HalfTurnCutoff j p * (g p - f p)
 
-
-
-
 def m64HalfTurnPiece (f g : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   if p 0 < curvePeriod / 2 then f p else g p
-
-
 
 theorem m64HalfTurnBlend_contDiff {f g : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g) (j : ℕ) :
     ContDiff ℝ 1 (m64HalfTurnBlend j f g) :=
   hf.add (((m64HalfTurnCutoff_contDiff j).of_le (by simp)).mul (hg.sub hf))
-
-
-
 
 theorem m64HalfTurnBlend_fderiv {f g : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g) (j : ℕ) (p : LoopPlane) (i : Fin 2) :
@@ -61,9 +44,6 @@ theorem m64HalfTurnBlend_fderiv {f g : LoopPlane → ℝ}
   simp only [add_apply, sub_apply, smul_apply, smul_eq_mul]
   ring
 
-
-
-
 theorem m64HalfTurnBlend_eventually {f g : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g) {p : LoopPlane}
     (hp : p 0 ≠ a) (i : Fin 2) :
@@ -78,18 +58,12 @@ theorem m64HalfTurnBlend_eventually {f g : LoopPlane → ℝ}
   simp only [m64HalfTurnBlend, hj, hd, zero_mul, add_zero, m64HalfTurnPiece]
   split_ifs <;> constructor <;> ring
 
-
-
-
 theorem m64HalfTurnBlend_endpoints {f g : LoopPlane → ℝ} (j : ℕ) (s : ℝ) :
     m64HalfTurnBlend j f g (annulusPoint 0 s) = f (annulusPoint 0 s) ∧
       m64HalfTurnBlend j f g (annulusPoint curvePeriod s) =
         g (annulusPoint curvePeriod s) := by
   simp [m64HalfTurnBlend, (m64HalfTurnCutoff_endpoints j s).1,
     (m64HalfTurnCutoff_endpoints j s).2]
-
-
-
 
 theorem m64HalfTurnBlend_bound {f g : LoopPlane → ℝ}
     (hf : Continuous f) (hg : Continuous g) :
@@ -109,9 +83,6 @@ theorem m64HalfTurnBlend_bound {f g : LoopPlane → ℝ}
     exact (mul_le_of_le_one_left (abs_nonneg _) hχ.2).trans (abs_sub _ _)
   exact ((abs_add_le _ _).trans (by linarith [hprod, abs_nonneg (f p), abs_nonneg (g p)])).trans
     (le_max_left _ _)
-
-
-
 
 theorem m64HalfTurn_matching_gap {f g : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g)
@@ -135,9 +106,6 @@ theorem m64HalfTurn_matching_gap {f g : LoopPlane → ℝ}
   have h := hL.dist_le_mul p hp (annulusPoint a (p 1)) hq
   simpa only [Pi.sub_apply, hmatch (p 1) hp.2.2, sub_self, Real.dist_eq,
     sub_zero, dist_eq_norm, hnorm, Real.norm_eq_abs] using h
-
-
-
 
 theorem m64HalfTurnBlend_derivative_bound {f g : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g) (i : Fin 2)

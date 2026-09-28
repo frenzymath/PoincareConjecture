@@ -3,8 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +13,6 @@ namespace Poincare.Analysis
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 lemma hasDerivAt_fderiv_time_of_eventually
     {f : ℝ × E → F} {df : E → F} {t : ℝ} {x : E}
@@ -63,8 +59,6 @@ lemma hasDerivAt_fderiv_time_of_eventually
     (1, 0) (0, v)
   apply (hl.congr_of_eventuallyEq he).congr_deriv
   simpa only [Function.comp_def] using hsym.trans hr'.symm
-
-
 
 lemma hasDerivAt_fderiv_time
     {f : ℝ × E → ℝ} {df : E → ℝ} {t : ℝ} {x : E}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.Approximation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.CompactEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,8 +14,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hasDerivAt_integral_test_mul_kernel_integral_of_exhaustion
     (H : ConservativeHeatKernelData g) (D : LeviCivitaData g)
@@ -74,8 +62,6 @@ theorem hasDerivAt_integral_test_mul_kernel_integral_of_exhaustion
     simpa only [hkernel] using
       Dirichlet.hasDerivAt_dirichletExhaustionKernel_integral_laplacian
         D hc hk hRic S hΩmono hcover (hu j) (huc j) hr x
-
-
 
 theorem hasDerivAt_kernel_integral_of_exhaustion_of_contMDiff
     (H : ConservativeHeatKernelData g) (D : LeviCivitaData g)

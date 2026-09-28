@@ -2,14 +2,6 @@ import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -44,7 +36,6 @@ theorem sum_coordinates (v : EuclideanSpace ℝ ι) :
     (∑ i, v i • EuclideanSpace.basisFun ι ℝ i) = v :=
   (EuclideanSpace.basisFun ι ℝ).sum_repr v
 
-
 theorem sum_insertion_coordinate (F : Lp (EuclideanSpace ℝ ι) 2 μ) :
     (∑ i, insertionLp μ i (coordinateLp μ i F)) = F := by
   classical
@@ -75,7 +66,6 @@ theorem coordinateLp_norm_sq (i : ι) (F : Lp (EuclideanSpace ℝ ι) 2 μ) :
   filter_upwards [coordinateLp_coe μ i F] with x hx
   rw [hx, Real.norm_eq_abs, sq_abs]
 
-
 theorem sum_coordinateLp_norm_sq (F : Lp (EuclideanSpace ℝ ι) 2 μ) :
     (∑ i, ‖coordinateLp μ i F‖ ^ 2) = ‖F‖ ^ 2 := by
   simp_rw [coordinateLp_norm_sq]
@@ -89,7 +79,6 @@ theorem coordinateLp_norm_sq_le (i : ι) (F : Lp (EuclideanSpace ℝ ι) 2 μ) :
   rw [← sum_coordinateLp_norm_sq μ F]
   exact Finset.single_le_sum (f := fun j : ι => ‖coordinateLp μ j F‖ ^ 2)
     (fun _ _ => sq_nonneg _) (Finset.mem_univ i)
-
 
 theorem sum_fiber_coordinateLp_norm_sq_le {κ : Type*} [Fintype κ]
     (j : κ) (F : Lp (EuclideanSpace ℝ (ι × κ)) 2 μ) :

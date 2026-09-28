@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedLowerHolder
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakClassical
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,9 +9,6 @@ open Set Filter MeasureTheory
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture.M64ObservedWeakAnnulus
-
-
-
 
 theorem lower_representative_weak_data {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceBoundaryAlternative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -114,8 +105,6 @@ theorem not_hamiltonZero_boundary_failure_of_marked_product
     (hamiltonZeroAmbientMap phi (k 0)) F
   exact ⟨bF, ⟨G.compContinuousMap (⟨Subtype.val, continuous_subtype_val⟩ : C(R, X0))⟩⟩
 
-
-
 theorem not_hamiltonZero_boundary_failure_of_product_with_original_marks
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
     (phi : C(H0, H0))
@@ -154,9 +143,6 @@ theorem not_hamiltonZero_boundary_failure_of_product_with_original_marks
     have heq : H ((H.symm z).1, 1) = z := by
       rw [← hz, Prod.mk.eta, H.apply_symm_apply]
     exact congrArg Subtype.val heq
-
-
-
 
 theorem not_hamiltonZero_boundary_failure_of_component_products
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}

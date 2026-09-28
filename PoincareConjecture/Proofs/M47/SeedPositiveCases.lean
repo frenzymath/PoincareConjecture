@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedComponentBirth
 import PoincareConjecture.Proofs.M47.SeedPositiveOnset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_positive_seed_cases
     (P : M47Predecessors.{u}) (F : SurgeryFlowData.{u}) {T : ℝ}

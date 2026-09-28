@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ComponentBalls
 import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +15,8 @@ variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (U : TopologicalSpace.Opens A.carrier)
   (hBU : B.map '' Metric.ball (0 : StandardCapSpace) 2 ⊆ U)
 
-
 noncomputable def openCarrierBallCenter : U :=
   ⟨B.map 0, hBU ⟨0, by simp, rfl⟩⟩
-
-
 
 noncomputable def openCarrierBall : SurgeryBallEmbedding (openCarrier A U) := by
   let E := openRegionEquivalence A U (openCarrierBallCenter B U hBU)
@@ -62,16 +51,13 @@ noncomputable def openCarrierBall : SurgeryBallEmbedding (openCarrier A U) := by
     rw [hfun]
     exact B.open_embedding
 
-
 theorem openCarrierBall_map_val {z : StandardCapSpace}
     (hz : z ∈ Metric.ball (0 : StandardCapSpace) 2) :
     ((openCarrierBall B U hBU).map z).val = B.map z :=
   (openRegionEquivalence A U (openCarrierBallCenter B U hBU)).right_inverse (hBU ⟨z, hz, rfl⟩)
 
-
 theorem openCarrierBall_inverse (z : (openCarrier A U).carrier) :
     (openCarrierBall B U hBU).inverse z = B.inverse z.val := rfl
-
 
 theorem openCarrierBall_closedBall_image :
     Subtype.val '' (openCarrierBall B U hBU).closedBall = B.closedBall := by
@@ -83,7 +69,6 @@ theorem openCarrierBall_closedBall_image :
   exact openCarrierBall_map_val B U hBU
     (Metric.closedBall_subset_ball (by norm_num : (1 : ℝ) < 2) hz)
 
-
 theorem openCarrierBall_mem_closedBall (y : (openCarrier A U).carrier) :
     y ∈ (openCarrierBall B U hBU).closedBall ↔ y.val ∈ B.closedBall := by
   rw [← openCarrierBall_closedBall_image B U hBU]
@@ -93,7 +78,6 @@ theorem openCarrierBall_mem_closedBall (y : (openCarrier A U).carrier) :
   · rintro ⟨z, hz, he⟩
     exact (Subtype.ext he : z = y) ▸ hz
 
-
 theorem openCarrierBall_puncture_image :
     Subtype.val '' (openCarrierBall B U hBU).closedBallᶜ =
       (U : Set A.carrier) ∩ B.closedBallᶜ := by
@@ -102,7 +86,6 @@ theorem openCarrierBall_puncture_image :
     exact ⟨z.property, fun h => hz ((openCarrierBall_mem_closedBall B U hBU z).mpr h)⟩
   · intro y hy
     exact ⟨⟨y, hy.1⟩, fun h => hy.2 ((openCarrierBall_mem_closedBall B U hBU _).mp h), rfl⟩
-
 
 noncomputable def openCarrierBallPuncture :
     SurgeryRegionEquivalence (openCarrier A U) A (openCarrierBall B U hBU).closedBallᶜ
@@ -120,16 +103,12 @@ noncomputable def openCarrierBallPuncture :
   rw [← openCarrierBall_puncture_image B U hBU]
   exact E.left_inverse.image_image' (Set.subset_univ _)
 
-
 theorem openCarrierBallPuncture_map (y : (openCarrier A U).carrier) :
     (openCarrierBallPuncture B U hBU).map y = y.val := rfl
-
 
 def cutSideComplement (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) (hU : IsClosed (U : Set A.carrier)) :
     TopologicalSpace.Opens A.carrier := ⟨(U : Set A.carrier)ᶜ, hU.isOpen_compl⟩
-
-
 
 noncomputable def cutSidesDisjointUnion (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) (hU : IsClosed (U : Set A.carrier))
@@ -163,8 +142,6 @@ noncomputable def cutSidesDisjointUnion (A : GeneralizedSliceCarrier.{u})
     by_cases hz : z ∈ U
     · exact Set.mem_iUnion.mpr ⟨0, hz⟩
     · exact Set.mem_iUnion.mpr ⟨1, hz⟩
-
-
 
 theorem surgeryBall_image_subset_other_complement {A : GeneralizedSliceCarrier.{u}}
     (B₀ B₁ : SurgeryBallEmbedding A)

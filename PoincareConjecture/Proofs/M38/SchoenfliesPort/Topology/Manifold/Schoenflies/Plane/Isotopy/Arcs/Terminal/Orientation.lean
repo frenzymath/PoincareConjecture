@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,13 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -83,13 +70,11 @@ private theorem flatten_height (d : TerminalSaddleGeometry M P p e) (y : E3) :
     d.flatten y 2 = inner Real (M.v : E3) y :=
   (d.frame_height (d.D y)).trans (d.D_height y)
 
-
 theorem actual_slice_image_eq_height_level
     (d : TerminalSaddleGeometry M P p e) (z : Real) :
     (fun x => Saddle.toE3 x z) '' d.A z =
       (d.flatten ∘ g) '' {q | inner Real (M.v : E3) (g q) = z} :=
   image_slice_eq_height_level d.flatten M.v (flatten_height d) g z
-
 
 theorem model_slice_image_eq_height_level
     (d : TerminalSaddleGeometry M P p e) (z : Real) :
@@ -103,14 +88,12 @@ theorem model_slice_image_eq_height_level
     image_slice_eq_height_level d.flatten M.v (flatten_height d)
     (fun q : S2 => d.filledModel q) z
 
-
 theorem actual_slice_preconnected_iff
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e) (z : Real) :
     IsPreconnected (d.A z) ↔
       IsPreconnected {q : S2 | inner Real (M.v : E3) (g q) = z} :=
   preconnected_slice_iff_height_level d.flatten M.v (flatten_height d) g
     (M.tree.embedding_of_mem_leaves hg).isEmbedding z
-
 
 theorem model_slice_preconnected_iff
     (d : TerminalSaddleGeometry M P p e) (z : Real) :
@@ -121,7 +104,6 @@ theorem model_slice_preconnected_iff
   simpa only [hr, TerminalSaddleGeometry.B] using preconnected_slice_iff_height_level d.flatten M.v
     (flatten_height d) (fun q : S2 => d.filledModel q)
     (d.filledModel.toHomeomorph.isEmbedding.comp Topology.IsEmbedding.subtypeVal) z
-
 
 theorem actual_lower_slice_preconnected_of_one_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
@@ -142,8 +124,6 @@ theorem actual_lower_slice_preconnected_of_one_end
     (isConnected_sphere (by simp [← Module.finrank_eq_rank, E2]) (0 : E2) zero_le_one)
   exact (isConnected_range (d.ends.lowerCutCircle_geometry i).1.continuous).isPreconnected
 
-
-
 theorem height_level_preconnected_iff_of_terminal_slice_matching
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e) (z : Real)
     (Q : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (hQ : Q '' d.A z = d.B z) :
@@ -154,8 +134,6 @@ theorem height_level_preconnected_iff_of_terminal_slice_matching
   rw [hQ] at h
   exact (actual_slice_preconnected_iff hg d z).symm.trans
     (h.symm.trans (model_slice_preconnected_iff d z))
-
-
 
 theorem no_terminal_slice_matching_of_height_level_mismatch
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e) (z : Real)

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TracePeriodicCurvature
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem embeddedCurvature_time_derivative_bound
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -108,9 +96,6 @@ theorem embeddedCurvature_time_derivative_bound
     _ ≤ E2 * k * k + E1 * (u2 + Q) :=
       add_le_add (hE H H) ((hde DtH).trans (mul_le_mul_of_nonneg_left hnorm hE1))
     _ = _ := by dsimp only [Q]; ring
-
-
-
 
 theorem exists_uniform_embeddedCurvature_time_lipschitz
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M)) (hab : a < b)

@@ -1,17 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.EdgeIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.IncidentCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.EndpointBarriers
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -104,7 +94,6 @@ variable
       (fun s => chart (region p s))) (R : D.regions)
     (L : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] (ℝ × ℝ))
 
-
 def graphCapObstacle : Set (ℝ × ℝ) :=
   L '' ((chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)) '' D.vertexCapsInRegion B region R)
 
@@ -127,7 +116,6 @@ theorem graphCapObstacle_subset_source :
 
 omit [T2Space M] in
 
-
 theorem graphCapObstacle_surface_image :
     (fun z : ℝ × ℝ => linearGraphCoordinates
       (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm L (collarParameterEquiv.symm z)) ''
@@ -146,7 +134,6 @@ theorem graphCapObstacle_surface_image :
     exact ⟨L (c q), ⟨c q, ⟨q, hq, rfl⟩, rfl⟩, hmap q hq⟩
 
 omit [T2Space M] in
-
 
 theorem graph_piece_avoids_caps (a : D.EdgeIndex)
     (cut : D.EdgeIndex → Bool → ℝ)
@@ -182,7 +169,6 @@ theorem graph_piece_avoids_caps (a : D.EdgeIndex)
 
 omit [T2Space M] in
 
-
 theorem edge_graph_point_avoids_caps (a : D.EdgeIndex)
     (cut : D.EdgeIndex → Bool → ℝ)
     (havoid : Disjoint (⋃ p, ⋃ s, ((B p).face s).carrier)
@@ -205,7 +191,6 @@ theorem edge_graph_point_avoids_caps (a : D.EdgeIndex)
 
 omit [T2Space M] in
 
-
 theorem exists_internal_graph_cap_barrier (a : D.EdgeIndex)
     (cut : D.EdgeIndex → Bool → ℝ)
     (havoid : Disjoint (⋃ p, ⋃ s, ((B p).face s).carrier)
@@ -226,9 +211,6 @@ theorem exists_internal_graph_cap_barrier (a : D.EdgeIndex)
   exists_transverse_barrier_off_closed_set (D.isClosed_graphCapObstacle region chart B R L)
     (D.edge_graph_point_avoids_caps region chart B R L a cut havoid G hsource hgraph ht htcut)
     htrans terminal
-
-
-
 
 theorem exists_incident_graph_cap_separator
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)
@@ -310,9 +292,6 @@ theorem exists_incident_graph_cap_separator
     have hvW : v ∈ W := L.injective hwv ▸ hw
     rw [← hbase, ← map_sub, hm]
     exact hsep v ⟨hv, hvW⟩
-
-
-
 
 theorem exists_graph_cap_avoiding_strip
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)

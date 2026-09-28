@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.M04.CompactParabolic
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -207,4 +200,3 @@ theorem nonnegativeRicciCurvature_preserved_compact
   simpa only [zero_mul] using hcomplete t 0 (hpres t ht)
 
 end PoincareConjecture.M04
-

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Manifold
@@ -21,7 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_open_distortion_of_tangentNorm_comparison
     (g : RiemannianMetric n M)

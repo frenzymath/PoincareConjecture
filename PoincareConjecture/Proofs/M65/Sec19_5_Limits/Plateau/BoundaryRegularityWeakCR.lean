@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchWeakCRRegularity
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchWeakCRMultiplier
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory Complex
@@ -105,10 +93,6 @@ private theorem smooth_convolution_commute {k j F : ℂ → ℂ}
   rw [← assoc k j hk hks hj hjs x, hcomm, assoc j k hj hjs hk hks x]
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem exists_holomorphic_representative {F : ℂ → ℂ} {U : Set ℂ}
     (hF : Integrable F volume) (hU : IsOpen U)

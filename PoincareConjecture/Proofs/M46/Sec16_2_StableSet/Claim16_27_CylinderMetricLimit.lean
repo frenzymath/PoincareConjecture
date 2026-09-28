@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetric
 import Mathlib.Algebra.Order.GroupWithZero.OrderIso
 import Mathlib.Algebra.Order.Group.OrderIso
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem cylinderQuadratic_tendsto_left_at_surgery
     (P : M44CapPersistencePredecessors.{u})

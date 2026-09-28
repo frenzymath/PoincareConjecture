@@ -1,44 +1,22 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentStripProduct
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
 
-
-
 noncomputable def coordinate (a b s r : ℝ) : ℝ :=
   min (2 * b * s - r) (2 * a * s + r - 2 * a)
 
-
-
 def parameterRectangle (a b : ℝ) : Set (ℝ × ℝ) := Icc 0 1 ×ˢ Icc a b
-
-
 
 def sector (a b : ℝ) : Set (ℝ × ℝ) :=
   {p | p.2 ∈ Icc a b ∧ p.1 ∈ Icc (-p.2) p.2}
 
-
-
 noncomputable def sectorMap (a b : ℝ) (p : ℝ × ℝ) : ℝ × ℝ :=
   (coordinate a b p.1 p.2, p.2)
-
-
-
 
 theorem strictMono_coordinate {a b : ℝ} (ha : 0 < a) (hb : 0 < b) (r : ℝ) :
     StrictMono (fun s => coordinate a b s r) := by
@@ -46,8 +24,6 @@ theorem strictMono_coordinate {a b : ℝ} (ha : 0 < a) (hb : 0 < b) (r : ℝ) :
   apply lt_min
   · exact lt_of_le_of_lt (min_le_left _ _) (by nlinarith)
   · exact lt_of_le_of_lt (min_le_right _ _) (by nlinarith)
-
-
 
 theorem coordinate_endpoints {a b r : ℝ} (hr : r ∈ Icc a b) :
     coordinate a b 0 r = -r ∧ coordinate a b 1 r = r := by
@@ -61,8 +37,6 @@ theorem coordinate_endpoints {a b r : ℝ} (hr : r ∈ Icc a b) :
     rw [h]
     exact min_eq_right (by linarith [hr.2])
 
-
-
 theorem coordinate_image_Icc {a b r : ℝ} (ha : 0 < a) (hb : 0 < b)
     (hr : r ∈ Icc a b) :
     (fun s => coordinate a b s r) '' Icc 0 1 = Icc (-r) r := by
@@ -71,17 +45,11 @@ theorem coordinate_image_Icc {a b r : ℝ} (ha : 0 < a) (hb : 0 < b)
     ((strictMono_coordinate ha hb r).monotone.monotoneOn _),
     (coordinate_endpoints hr).1, (coordinate_endpoints hr).2]
 
-
-
-
 theorem coordinate_inner {a b s : ℝ} (hab : a ≤ b) (hs : s ∈ Icc 0 1) :
     coordinate a b s a = a * (2 * s - 1) := by
   unfold coordinate
   rw [min_eq_right (by nlinarith [mul_nonneg (sub_nonneg.mpr hab) hs.1])]
   ring
-
-
-
 
 theorem coordinate_outer {a b s : ℝ} (hab : a ≤ b) (hs : s ∈ Icc 0 1) :
     coordinate a b s b = b * (2 * s - 1) := by
@@ -90,9 +58,6 @@ theorem coordinate_outer {a b s : ℝ} (hab : a ≤ b) (hs : s ∈ Icc 0 1) :
   unfold coordinate
   rw [min_eq_left (by nlinarith)]
   ring
-
-
-
 
 theorem sectorMap_injective {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     Function.Injective (sectorMap a b) := by
@@ -103,8 +68,6 @@ theorem sectorMap_injective {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
   change coordinate a b p.1 p.2 = coordinate a b q.1 q.2 at hs
   rw [← hr] at hs
   exact Prod.ext ((strictMono_coordinate ha hb p.2).injective hs) hr
-
-
 
 theorem sectorMap_image {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     sectorMap a b '' parameterRectangle a b = sector a b := by
@@ -120,9 +83,6 @@ theorem sectorMap_image {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     obtain ⟨s, hs, he⟩ := hs
     exact ⟨(s, p.2), ⟨hs, hr⟩, Prod.ext he rfl⟩
 
-
-
-
 theorem finitePiecewiseAffineOn_sectorMap
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite) (a b : ℝ) :
     FinitePiecewiseAffineOn (sectorMap a b) K.space := by
@@ -134,9 +94,6 @@ theorem finitePiecewiseAffineOn_sectorMap
   have hB := (K.affineOnFaces_affine B).finitePiecewiseAffineOn hK
   have hy := (K.affineOnFaces_affine y).finitePiecewiseAffineOn hK
   exact (hA.min hB).prod_mk hy
-
-
-
 
 theorem exists_sector_homeomorph {a b : ℝ} (ha : 0 < a) (hab : a < b) :
     ∃ e : parameterRectangle a b ≃ₜ sector a b, e.IsFinitePL ∧

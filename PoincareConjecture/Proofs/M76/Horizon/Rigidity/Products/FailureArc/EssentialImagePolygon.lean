@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricCyclePolygon
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonCycleLoopComparison
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.LoopClassTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +14,6 @@ open Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_essential_polygon_in_marked_rim
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

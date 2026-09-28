@@ -1,16 +1,6 @@
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,27 +15,19 @@ variable {E : Type u} {X : Type v} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (hp : IsCoveringMap p) (H : C(I × X, X))
   (hzero : ∀ x, H (0, x) = x)
 
-
-
 def coveringLiftedDeformation : C(I × E, E) :=
   hp.liftHomotopy
     ⟨fun q => H (q.1, p q.2), H.continuous.comp
       (continuous_fst.prodMk (p.continuous.comp continuous_snd))⟩
     (ContinuousMap.id E) (fun e => hzero (p e))
 
-
-
 theorem coveringLiftedDeformation_projection (t : I) (e : E) :
     p (coveringLiftedDeformation p hp H hzero (t, e)) = H (t, p e) :=
   congrFun (hp.liftHomotopy_lifts _ _ _) (t, e)
 
-
-
 theorem coveringLiftedDeformation_zero (e : E) :
     coveringLiftedDeformation p hp H hzero (0, e) = e :=
   hp.liftHomotopy_zero _ _ _ e
-
-
 
 theorem coveringLiftedDeformation_fixed (e : E) (he : ∀ t, H (t, p e) = p e) (t : I) :
     coveringLiftedDeformation p hp H hzero (t, e) = e := by
@@ -59,8 +41,6 @@ theorem coveringLiftedDeformation_fixed (e : E) (he : ∀ t, H (t, p e) = p e) (
 variable (S : Set X) (hone : ∀ x, H (1, x) ∈ S)
   (hfixed : ∀ x ∈ S, ∀ t, H (t, x) = x)
 
-
-
 def coveringDeformationRetraction : C(E, p ⁻¹' S) := by
   refine ⟨fun e => ⟨coveringLiftedDeformation p hp H hzero (1, e), ?_⟩, ?_⟩
   · change p (coveringLiftedDeformation p hp H hzero (1, e)) ∈ S
@@ -68,9 +48,6 @@ def coveringDeformationRetraction : C(E, p ⁻¹' S) := by
     exact hone (p e)
   · exact ((coveringLiftedDeformation p hp H hzero).continuous.comp
       (continuous_const.prodMk continuous_id)).subtype_mk _
-
-
-
 
 def coveringDeformationEquiv : ContinuousMap.HomotopyEquiv (p ⁻¹' S) E where
   toFun := ⟨Subtype.val, continuous_subtype_val⟩

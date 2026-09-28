@@ -3,21 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Topology.MetricSpace.Isometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -26,8 +11,6 @@ open scoped Topology
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X]
-
-
 
 theorem radial_sq_eq_of_minimizing_between
     (o x z y : X) (dilate : ℝ → X → X)
@@ -78,8 +61,6 @@ theorem radial_sq_eq_of_minimizing_between
   rw [hbetween]
   nlinarith [hcancel]
 
-
-
 theorem radial_sq_interpolation_of_minimizing_segment
     (o x y z : X) (dilate : ℝ → X → X)
     (hcone : ∀ a : ℝ, 0 < a → ∀ p q : X,
@@ -115,9 +96,6 @@ theorem radial_sq_interpolation_of_minimizing_segment
   apply mul_left_cancel₀ hxy
   nlinarith [h]
 
-
-
-
 theorem radial_potential_on_minimizing_segment
     (o : X) (dilate : ℝ → X → X)
     (hcone : ∀ a : ℝ, 0 < a → ∀ p q : X,
@@ -136,8 +114,6 @@ theorem radial_potential_on_minimizing_segment
   have h := radial_sq_interpolation_of_minimizing_segment o (γ 0) (γ 1) (γ t)
     dilate hcone ht hxz hzy
   linarith
-
-
 
 theorem radial_potential_on_isometric_segment
     (o : X) (dilate : ℝ → X → X)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Composition
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1CoordinateContinuity
 import PoincareConjecture.Proofs.M63.Mathlib.DenseParameterContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Set
@@ -18,10 +9,6 @@ open AddCircle Set
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem exists_periodicH1_parametric_composition
     {P ι : Type*} [TopologicalSpace P] [Fintype ι]

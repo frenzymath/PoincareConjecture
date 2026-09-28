@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M10.SquarePathCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem exists_compact_reducedLength_sublevel
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

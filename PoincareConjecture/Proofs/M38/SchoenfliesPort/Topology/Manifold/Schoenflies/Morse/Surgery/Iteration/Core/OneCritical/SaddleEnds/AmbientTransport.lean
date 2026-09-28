@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.UpperFamily
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -27,16 +19,12 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 variable {v : E3} {g g' : S2 → E3} {B : Set Real}
 
-
-
 def congrEmbedding (D : SphereSurgeryCoreCap v g B)
     (heq : EqOn g' g (D.chart '' closedBall (0 : E2) 1)) :
     SphereSurgeryCoreCap v g' B :=
   { D with
     parametrization_eq := fun x hx =>
       (heq (mem_image_of_mem D.chart hx)).trans (D.parametrization_eq x hx) }
-
-
 
 def LowerAnnularEnd.congrEmbedding
     {D : SphereSurgeryCoreCap v g B} {C : Set S2} {h : S2 → Real} {a b : Real}

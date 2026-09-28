@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCornerStraightening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousAffineMap
-
-
-
-
-
 
 theorem exists_union_corner_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

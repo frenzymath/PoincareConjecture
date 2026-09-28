@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import Mathlib.Order.RelSeries
 import Mathlib.Order.Fin.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter Topology
 
 namespace PoincareConjecture.ReducedLengthMinimum
-
-
 
 theorem exists_first_strict_segment {m : ℕ} (t : Fin (m + 1) → ℝ)
     (ht : Monotone t) (hab : t 0 < t (Fin.last m)) :
@@ -26,7 +16,6 @@ theorem exists_first_strict_segment {m : ℕ} (t : Fin (m + 1) → ℝ)
   have heq : ∀ i : Fin (m + 1), t i = t 0 :=
     Fin.induction rfl (fun j hj => le_antisymm (h j hj) (ht (Fin.zero_le _)))
   exact hab.ne (heq (Fin.last m)).symm
-
 
 theorem exists_last_strict_segment {m : ℕ} (t : Fin (m + 1) → ℝ)
     (ht : Monotone t) (hab : t 0 < t (Fin.last m)) :

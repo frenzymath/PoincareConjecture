@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.OuterRe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.ClopenCapSelection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.InteriorReplacement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

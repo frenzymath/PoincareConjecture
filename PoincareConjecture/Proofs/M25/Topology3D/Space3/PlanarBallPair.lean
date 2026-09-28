@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryCap
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallChartReparametrization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem ballPair_cap_of_planar (hP : PlanarSchoenfliesService)
     (B : BallNeighborhoodChart E3 F)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Continuity
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.SmallParametrizedCollars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m63_exists_uniform_filling_area_comparison
     {M : Type u} [TopologicalSpace M] [T2Space M]

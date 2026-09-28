@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceDifferential
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64TwoParameter_second_velocity_contMDiffAt
     {c : ℝ → ℝ → M} {O : Set (ℝ × ℝ)} (hO : IsOpen O)
@@ -58,10 +43,6 @@ theorem m64TwoParameter_second_velocity_contMDiffAt
   exact congrArg (fun v : TangentSpace (𝓡 n) (c q.1 q.2) =>
     (⟨c q.1 q.2, v⟩ : TangentBundle (𝓡 n) M)) hchain
 
-
-
-
-
 theorem m64MovingCurve_half_energy_hasDerivAt
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {c : ℝ → ℝ → M} {O : Set (ℝ × ℝ)} (hO : IsOpen O)
@@ -87,9 +68,6 @@ theorem m64MovingCurve_half_energy_hasDerivAt
   rw [← htor, g.symm (c t x) (curveVelocity (c t) x)]
   ring
 
-
-
-
 theorem m64TwoParameter_first_velocity_contMDiffAt
     {c : ℝ → ℝ → M} {O : Set (ℝ × ℝ)} (hO : IsOpen O)
     (hc : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 n) ∞
@@ -108,10 +86,6 @@ theorem m64TwoParameter_first_velocity_contMDiffAt
   have h := (m64TwoParameter_second_velocity_contMDiffAt
     (c := fun r s => c s r) hswapO hc' hp').comp p (hswap p)
   simpa only [Function.comp_def, Prod.swap] using! h
-
-
-
-
 
 theorem m64MovingCurve_energy_derivative_eq_divergence
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

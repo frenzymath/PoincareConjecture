@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ComponentCount
 import Mathlib.Data.Finset.Card
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +18,6 @@ variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
 theorem card_endIndex_eq_sum (A : AnnularEndFamily v g B C) :
     Nat.card A.EndIndex = Nat.card A.LowerCutIndex + Nat.card A.UpperCutIndex :=
   Nat.card_sum
-
-
 
 def endCapEquiv (A : AnnularEndFamily v g B C) : A.EndIndex ≃ {D // D ∈ A.caps} := by
   let f : A.EndIndex → {D // D ∈ A.caps} := Sum.elim Subtype.val Subtype.val
@@ -56,7 +52,6 @@ theorem caps_nodup (A : AnnularEndFamily v g B C) : A.caps.Nodup := by
   have hzero : D.chart 0 ∈ D.chart '' closedBall (0 : E2) 1 :=
     mem_image_of_mem D.chart (by simp)
   exact disjoint_left.mp hDE hzero hzero
-
 
 theorem card_endIndex_eq_caps_length (A : AnnularEndFamily v g B C) :
     Nat.card A.EndIndex = A.caps.length := by

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Tria
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

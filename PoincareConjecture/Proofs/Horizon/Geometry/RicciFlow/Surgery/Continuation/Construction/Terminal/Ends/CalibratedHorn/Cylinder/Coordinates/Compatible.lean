@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.CenteredTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 private theorem compatible_neck_cut_charts_of_transition
     (A B : EpsilonNeck g)
@@ -103,9 +90,6 @@ private theorem compatible_neck_cut_charts_of_transition
   · intro q
     simpa using hDAaff (q, 0) (by simpa using hrA)
   · exact hDAside
-
-
-
 
 theorem compatible_neck_cut_charts_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

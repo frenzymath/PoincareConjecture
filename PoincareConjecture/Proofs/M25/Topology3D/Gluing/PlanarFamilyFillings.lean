@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.PlanarFamilyNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_planarFamilyGraphCharts_of_initial_nested_fillings
     (hP : PlanarSchoenfliesService)

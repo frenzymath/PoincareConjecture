@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiJoinedDensity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -40,4 +33,3 @@ theorem shiJoinedDensity_eq_actual_derivWithin
   rw [hpos z, hvel z]
 
 end PoincareConjecture.M04
-

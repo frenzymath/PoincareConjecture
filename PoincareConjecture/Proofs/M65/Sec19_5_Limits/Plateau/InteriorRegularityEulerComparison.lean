@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerCompetitor
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,19 +13,12 @@ universe u
 
 namespace PoincareConjecture.M65Euler
 
-
-
-
 def coordinateHalfEnergy {N : ℕ} (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (X : LoopPlane → EuclideanSpace ℝ (Fin N))
     (A : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin N)) (z : LoopPlane) : ℝ :=
   (1 / 2 : ℝ) * ∑ i, g.inner (X z) (A i z) (A i z)
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem captured_energy_comparison {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

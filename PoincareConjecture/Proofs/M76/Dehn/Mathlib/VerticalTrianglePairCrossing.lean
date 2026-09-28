@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoRayCrossingCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
 
 theorem distinct_rays_of_vertical_triangle_intersection
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -43,10 +31,6 @@ theorem distinct_rays_of_vertical_triangle_intersection
 
 local notation "V2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_vertical_triangle_pair_crossing_chart
     {u v : V2} (hu : u ≠ 0) (hv : v ≠ 0) {a b : ℝ}

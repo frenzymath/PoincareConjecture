@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -29,9 +20,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {N : Type*} [TopologicalSpace N] [ChartedSpace H' N]
   {P : Type*} [TopologicalSpace P] [ChartedSpace H'' P]
   {r : ℕ∞ω}
-
-
-
 
 theorem IsLocalDiffeomorphAt.of_comp_left
     {f : M → N} {g : N → P} {x : M}

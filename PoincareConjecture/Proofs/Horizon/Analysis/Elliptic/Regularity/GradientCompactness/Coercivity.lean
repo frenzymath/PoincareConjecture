@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.FluxComparison
 
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -15,8 +9,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 
-
-
 theorem abs_partial_le_of_lipschitzOn
     {O : Set (EuclideanSpace ℝ (Fin d))} (hO : IsOpen O)
     {u : EuclideanSpace ℝ (Fin d) → ℝ} {L : ℝ≥0}
@@ -25,8 +17,6 @@ theorem abs_partial_le_of_lipschitzOn
   have h := (fderiv ℝ u x).le_opNorm (EuclideanSpace.single i 1)
   simp only [PiLp.norm_single, norm_one, mul_one, Real.norm_eq_abs] at h
   exact h.trans (norm_fderiv_le_of_lipschitzOn ℝ (hO.mem_nhds hx) hu)
-
-
 
 theorem matrix_flux_coercivity
     {A B : Fin d → Fin d → ℝ} {a b : Fin d → ℝ} {c L δ : ℝ}
@@ -70,8 +60,6 @@ theorem matrix_flux_coercivity
     ring
   have h := hell (fun i => a i - b i)
   linarith
-
-
 
 theorem flux_comparison_remainder_le
     {F G p : Fin d → ℝ} {f g φ w z ε C D : ℝ}

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.RibbonMarking
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.PairRegion
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +37,6 @@ private def flipRibbon : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
     fin_cases i
     · exact (EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).contDiff
     · exact contDiff_const.sub (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
-
-
 
 theorem exists_disk_pair_isotopy_fixing_prescribed_compact_shared_ribbon
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

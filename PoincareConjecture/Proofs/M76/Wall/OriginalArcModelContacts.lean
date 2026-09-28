@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteSubcomplexContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem original_arc_model_contacts
     {X E : Type*} [TopologicalSpace X]

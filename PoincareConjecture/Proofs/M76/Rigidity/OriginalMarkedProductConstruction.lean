@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalMarkedProductCorrection
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSmallDiskProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem exists_small_original_marked_disk_product
     (hR : IsCompact R) (he : PLDomain e R)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 import PoincareConjecture.Proofs.M76.Mathlib.RadialStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem exists_positive_link_point_of_surface_accumulation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -39,9 +26,6 @@ theorem exists_positive_link_point_of_surface_accumulation
   refine ⟨y, hy, ?_⟩
   rw [hxy, map_smul, smul_eq_mul] at hxL
   exact (mul_pos_iff_of_pos_left hr.1).mp hxL
-
-
-
 
 theorem exists_both_link_signs_of_surface_accumulation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

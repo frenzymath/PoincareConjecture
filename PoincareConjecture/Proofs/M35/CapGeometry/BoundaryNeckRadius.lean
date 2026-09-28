@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.CapGeometry.NeckBufferedBall
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckScalarFloor
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem scaled_central_sphere_ball_subset_carrier_of_axial_cutoff
     {epsilon ell : ℝ} {x : StandardCapSpace}
@@ -43,9 +32,6 @@ theorem scaled_central_sphere_ball_subset_carrier_of_axial_cutoff
   rw [hball]
   exact N.central_sphere_ball_subset_carrier_of_axial_cutoff G he hesmall
     (by norm_num) hell hlong hscaled q
-
-
-
 
 theorem exists_curvature_radius_near_central_sphere
     {epsilon : ℝ} {x : StandardCapSpace}

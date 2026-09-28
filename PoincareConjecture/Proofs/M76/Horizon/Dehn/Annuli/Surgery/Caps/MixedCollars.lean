@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Collars.Retaine
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.RetainedExteriors
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.RimCircleCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip Topology
 open _root_.Dehn

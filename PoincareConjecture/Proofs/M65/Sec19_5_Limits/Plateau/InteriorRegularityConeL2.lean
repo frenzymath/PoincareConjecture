@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeFields
 import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -58,9 +48,6 @@ private theorem cone_field_norm_le
       exact add_le_add ((hA _).trans (mul_le_mul_of_nonneg_left hsub hK)) (hA _)
     _ = _ := by ring
 
-
-
-
 theorem cone_reconstruction_continuous
     {g : EuclideanSpace ℝ (Fin 3) → E}
     {v : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
@@ -85,10 +72,6 @@ theorem cone_reconstruction_continuous
       (coneCoordinates_mem_closedBall hr h0 (hvb hp.2) hp.1)
   exact ⟨hg.continuousOn.comp hc hmaps,
     (hg.continuousOn_fderiv_of_isOpen isOpen_ball le_rfl).comp hc hmaps⟩
-
-
-
-
 
 theorem coneCartesianField_memLp
     {g : EuclideanSpace ℝ (Fin 3) → E}

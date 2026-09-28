@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.ComparisonHessian
 import PoincareConjecture.Proofs.M09.AdaptedVariationIndex
 import PoincareConjecture.Proofs.M09.LocalHessianTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

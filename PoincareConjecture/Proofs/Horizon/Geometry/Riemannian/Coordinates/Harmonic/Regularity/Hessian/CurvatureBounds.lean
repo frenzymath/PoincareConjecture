@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +36,6 @@ private lemma intrinsic_basis_norm (x : EuclideanSpace ℝ (Fin n))
   rw [real_inner_self_eq_norm_sq, OrthonormalBasis.norm_eq_one]
   norm_num
 
-
-
 theorem abs_hessian_curvature_flux_le (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x a b c : EuclideanSpace ℝ (Fin n)) :
     |g.inner x a b * D.ricci x (D.gradient f x) c -
@@ -75,7 +66,6 @@ theorem abs_hessian_curvature_flux_le (D : LeviCivitaData g)
           g.tangentNorm x c) := add_le_add hfirst hsecond
     _ = _ := by ring
 
-
 theorem sum_sq_hessian_curvature_flux_le (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n)) :
     let e := g.orthonormalBasis x
@@ -105,8 +95,6 @@ theorem sum_sq_hessian_curvature_flux_le (D : LeviCivitaData g)
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul, hdim]
       dsimp [L]
       ring
-
-
 
 theorem abs_two_tensor_curvature_trace_le (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}
@@ -157,7 +145,6 @@ theorem abs_two_tensor_curvature_trace_le (D : LeviCivitaData g)
     _ = _ := by
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul, hdim]
       ring
-
 
 theorem sum_sq_two_tensor_curvature_trace_le (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}

@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,18 +16,15 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def regularizedLIntegrand {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (α : ℝ → M) (s : ℝ) : ℝ :=
   2 * s ^ 2 * (F.connection (T - s ^ 2)).scalarCurvature (α s) +
     (1 / 2 : ℝ) * (F.metric (T - s ^ 2)).inner (α s)
       (curveVelocity (n := n) α s) (curveVelocity (n := n) α s)
 
-
 noncomputable def regularizedLAction {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (α : ℝ → M) : ℝ :=
   ∫ s in Real.sqrt τ₁..Real.sqrt τ₂, regularizedLIntegrand F T α s
-
 
 theorem sq_mem_backward_interior {τ₁ τ₂ s : ℝ} (hτ₁ : 0 ≤ τ₁)
     (hs : s ∈ Set.Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) :
@@ -43,7 +32,6 @@ theorem sq_mem_backward_interior {τ₁ τ₂ s : ℝ} (hτ₁ : 0 ≤ τ₁)
   have hpos : 0 < s := (Real.sqrt_nonneg τ₁).trans_lt hs.1
   refine ⟨hpos, Real.lt_sq_of_sqrt_lt hs.1, ?_⟩
   exact (Real.lt_sqrt hpos.le).mp hs.2
-
 
 theorem curveVelocity_comp_sq {γ : ℝ → M} {s : ℝ}
     (hγ : MDifferentiableAt (𝓘(ℝ, ℝ)) (𝓡 n) γ (s ^ 2)) :
@@ -70,7 +58,6 @@ theorem curveVelocity_comp_sq {γ : ℝ → M} {s : ℝ}
   rw [hinput, map_smul] at hchain
   simpa only [curveVelocity, Function.comp_apply] using hchain
 
-
 theorem sqrtRegularPath_velocity {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (R : SqrtRegularPath p) {s : ℝ}
@@ -91,7 +78,6 @@ theorem sqrtRegularPath_velocity {J : Set ℝ} {F : RicciFlow n M J}
     rfl
   exact hvel.trans (curveVelocity_comp_sq (hγ.mdifferentiableAt one_ne_zero))
 
-
 theorem regularizedLIntegrand_eq_transformed {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (R : SqrtRegularPath p) {s : ℝ}
@@ -106,7 +92,6 @@ theorem regularizedLIntegrand_eq_transformed {J : Set ℝ} {F : RicciFlow n M J}
   rw [hbase]
   simp only [hvel, map_smul, smul_apply, smul_eq_mul]
   ring
-
 
 theorem backwardLLength_eq_transformed {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂) :
@@ -126,7 +111,6 @@ theorem backwardLLength_eq_transformed {J : Set ℝ} {F : RicciFlow n M J}
     Real.sq_sqrt (p.nonnegative.trans p.ordered.le), Function.comp_def,
     backwardLLength] using hsub.symm
 
-
 theorem regularizedLAction_eq_backwardLLength {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (R : SqrtRegularPath p) :
@@ -134,7 +118,6 @@ theorem regularizedLAction_eq_backwardLLength {J : Set ℝ} {F : RicciFlow n M J
   rw [backwardLLength_eq_transformed p]
   exact intervalIntegral.integral_congr_Ioo_of_le (Real.sqrt_le_sqrt p.ordered.le)
     (fun _ hs ↦ regularizedLIntegrand_eq_transformed R hs)
-
 
 theorem regularizedLIntegrand_intervalIntegrable {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}

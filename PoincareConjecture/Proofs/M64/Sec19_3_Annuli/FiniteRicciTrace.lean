@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionTangent
 import PoincareConjecture.Proofs.M09.FrameForms
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64RicciQuadratic_continuousOn (D : LeviCivitaData g)
     {X : Type*} [TopologicalSpace X] {S : Set X} {v : X → TangentBundle (𝓡 n) M}
@@ -57,10 +49,6 @@ theorem m64RicciQuadratic_continuousOn (D : LeviCivitaData g)
     exact e.symm_apply_apply_mk hy (v y).snd
   rw [Function.comp_apply, Proofs.M09.frameTensorForm_apply, hreconstruct]
   rfl
-
-
-
-
 
 theorem m64Annulus_modulusRicci_integrable (D : LeviCivitaData g) (r : ℝ)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f m64AnnulusDomain) :

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.LimitTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_source_ball_subset_terminal_image
     (hconv : M23TerminalMetricConvergence G e)
@@ -74,8 +63,6 @@ theorem eventually_source_ball_subset_terminal_image
     hcompact hsource (fun x hx => hEi.contMDiffAt (E.open_target.mem_nhds hx)) hinverse
   have hp : E G.limit.base = (S.term (G.subsequence k)).base := congrArg Prod.snd (hbase k)
   rwa [hp] at hcover
-
-
 
 theorem eventually_terminal_inverse_edist_bounds
     (hconv : M23TerminalMetricConvergence G e)
@@ -148,8 +135,6 @@ theorem eventually_terminal_inverse_edist_bounds
       simpa only [show 3 * (2 * A) = 6 * A by ring] using hz)) v).1) hxL hyL
   rwa [hxE, hyE] at hforward
 
-
-
 theorem eventually_terminal_inverse_distance_error
     (hconv : M23TerminalMetricConvergence G e)
     (hbase : ∀ k, (e k).toFun (0, G.limit.base) =
@@ -201,8 +186,6 @@ theorem eventually_terminal_inverse_distance_error
       nlinarith
     · linarith
   · nlinarith
-
-
 
 theorem tendsto_terminal_inverse_distance
     (hconv : M23TerminalMetricConvergence G e)

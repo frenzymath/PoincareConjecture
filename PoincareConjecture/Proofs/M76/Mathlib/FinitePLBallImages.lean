@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem FinitePiecewiseAffineOn.exists_homeomorph_image {f : E → F} {s : Set E}
     (hf : FinitePiecewiseAffineOn f s) (hinj : InjOn f s) :
@@ -35,9 +24,6 @@ variable {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
 
-
-
-
 theorem IsFinitePLBallPair.image {s b : Set X} (hs : IsFinitePLBallPair E s b)
     {f : X → Y} (hf : FinitePiecewiseAffineOn f s) (hinj : InjOn f s) :
     IsFinitePLBallPair E (f '' s) (f '' b) := by
@@ -53,9 +39,6 @@ theorem IsFinitePLBallPair.image {s b : Set X} (hs : IsFinitePLBallPair E s b)
   · intro hx
     exact ⟨e.symm y, hx, hy⟩
 
-
-
-
 theorem IsFinitePLBallPair.image_of_subset {s b t : Set X}
     (hs : IsFinitePLBallPair E s b) {f : X → Y}
     (hf : FinitePiecewiseAffineOn f t) (hst : s ⊆ t) (hinj : InjOn f t) :
@@ -66,9 +49,6 @@ theorem IsFinitePLBallPair.image_of_subset {s b t : Set X}
     rw [← hKs]
     exact hf.restrict K hK (hKs.subset.trans hst)
   exact hs.image hfs (hinj.mono hst)
-
-
-
 
 theorem IsFinitePLBallPair.affine_image {s b : Set X}
     (hs : IsFinitePLBallPair E s b) (a : X →ᴬ[ℝ] Y) (ha : InjOn a s) :

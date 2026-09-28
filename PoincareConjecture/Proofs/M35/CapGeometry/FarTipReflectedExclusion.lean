@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.ReflectedPullbackComposition
 import PoincareConjecture.Proofs.M35.CapGeometry.ReflectedChartPair
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipModelAlternatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_far_tip_not_twisted
     (P : M35StandardCapPredecessors)
@@ -114,8 +103,6 @@ theorem blowupSequence_far_tip_not_twisted
   exact twistedChartLift_parallel_limit_false N q W hΩ (convex_ball (0 : V) R).isPreconnected
     hZ (fun z hz => (hparallel z hz).2) ha hb (hparallel a ha).1 hab
     (hvalue a ha) (hvalue b hb)
-
-
 
 theorem blowupSequence_far_tip_sphere_line
     (P : M35StandardCapPredecessors)

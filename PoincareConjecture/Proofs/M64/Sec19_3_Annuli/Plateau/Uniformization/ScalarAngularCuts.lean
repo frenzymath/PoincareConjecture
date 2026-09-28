@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarIntegerCoverArea
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,36 +13,20 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
 def scalarAngularCuts : Set Cover := ⋃ n : ℤ, Ioo (1 : ℝ) 2 ×ˢ {(n : ℝ)}
-
-
-
 
 theorem scalarAngularCuts_measurable : MeasurableSet scalarAngularCuts :=
   MeasurableSet.iUnion fun n => measurableSet_Ioo.prod (measurableSet_singleton (n : ℝ))
 
-
-
-
 theorem scalarAngularCuts_subset : scalarAngularCuts ⊆ scalarCoverStrip := by
   rintro z ⟨_, ⟨n, rfl⟩, hz⟩
   exact hz.1
-
-
-
 
 theorem scalarAngularCuts_measure_zero : volume scalarAngularCuts = 0 := by
   apply measure_iUnion_null
   intro n
   rw [Measure.volume_eq_prod, Measure.prod_prod]
   simp
-
-
-
-
 
 theorem scalarAngularCuts_image_measure_zero {f : Cover → Cover}
     (hd : ∀ z ∈ scalarCoverStrip, DifferentiableAt ℝ f z) :
@@ -65,9 +37,6 @@ theorem scalarAngularCuts_image_measure_zero {f : Cover → Cover}
     Measure.restrict_eq_zero.mpr scalarAngularCuts_measure_zero
   rw [hzero, lintegral_zero_measure] at h
   exact le_antisymm h zero_le
-
-
-
 
 theorem scalarNormalizedCoverMap_sub_int {H : Plane → ℝ} {V : Cover → ℝ}
     {P : ℝ} (hP : P ≠ 0)

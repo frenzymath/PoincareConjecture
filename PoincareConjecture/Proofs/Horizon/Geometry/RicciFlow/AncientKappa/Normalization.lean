@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Structu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -92,7 +85,6 @@ private theorem noncollapsed_of_rescaling
       have hcoeff : 0 ≤ Real.rpow Q ((n : ℝ) / 2) := Real.rpow_nonneg hQ.le _
       rw [← ENNReal.ofReal_mul hcoeff, hscale]
     _ ≤ _ := by gcongr
-
 
 noncomputable def ancientKappaNormalization
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n)

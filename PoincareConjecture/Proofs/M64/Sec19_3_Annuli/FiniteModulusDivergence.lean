@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteCurrentSlices
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteParameterEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusIntrinsicTension
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,11 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64ParameterAnnulus_modulusEnergyDensity_eq_current_divergence
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

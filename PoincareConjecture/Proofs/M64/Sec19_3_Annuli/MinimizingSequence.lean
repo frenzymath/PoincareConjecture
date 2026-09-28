@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimalAnnulusInterface
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,11 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {c0 c1 : ℝ → M}
 
-
-
-
-
-
 theorem m64Annulus_exists_minimizing_sequence
     (A : M64Annulus g c0 c1) :
     ∃ seq : ℕ → M64Annulus g c0 c1,
@@ -47,19 +29,11 @@ theorem m64Annulus_exists_minimizing_sequence
   · simpa only [hseq] using huanti
   · simpa only [hseq, m64LeastAnnulusArea] using hlim
 
-
-
-
-
 structure M64AnnulusRegularityCertificate
     (A : M64Annulus g c0 c1) : Prop where
   piecewise_c1 : M64PiecewiseC1Annulus A
   interior_smooth : ContMDiffOn (𝓡 2) (𝓡 n) ∞ A.map
     (interior m64AnnulusDomain)
-
-
-
-
 
 def m64MinimalAnnulusData_of_certificates
     (A : M64Annulus g c0 c1)
@@ -70,10 +44,6 @@ def m64MinimalAnnulusData_of_certificates
     area_minimal := hmin
     piecewise_c1 := regularity.piecewise_c1
     interior_smooth := regularity.interior_smooth }
-
-
-
-
 
 def m64MinimalAnnulusData_of_isLeast
     (B : M64Annulus g c0 c1)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.TimeDerivati
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +24,6 @@ private lemma positive_time_germ {F : ℝ × M → ℝ}
     {t : ℝ} (ht : 0 < t) (x : M) :
     ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x) :=
   hF.contMDiffAt ((isOpen_Ioi.prod isOpen_univ).mem_nhds ⟨ht, mem_univ x⟩)
-
-
 
 theorem hasDerivAt_integral_test_mul
     {F : ℝ × M → ℝ}
@@ -90,8 +77,6 @@ theorem hasDerivAt_integral_test_mul
       (contMDiffAt_id.prodMk contMDiffAt_const)).contDiffAt.differentiableAt (by simp)
     exact hd.hasDerivAt.const_mul (φ x)
 
-
-
 theorem hasDerivAt_integral_test_mul_of_heatEquation_on_tsupport [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ}
     (hF : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (Ioi 0 ×ˢ univ))
@@ -115,8 +100,6 @@ theorem hasDerivAt_integral_test_mul_of_heatEquation_on_tsupport [PreconnectedSp
   rw [D.integral_mul_laplacian_comm_of_hasCompactSupport_left hφ hs hφc] at h
   exact h
 
-
-
 theorem hasDerivAt_integral_test_mul_of_heatEquation [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ}
     (hF : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (Ioi 0 ×ˢ univ))
@@ -128,8 +111,6 @@ theorem hasDerivAt_integral_test_mul_of_heatEquation [PreconnectedSpace M]
       (∫ x, F (t, x) * D.laplacian φ x ∂g.volumeMeasure) t :=
   D.hasDerivAt_integral_test_mul_of_heatEquation_on_tsupport hF hφ hφc ht
     (fun x _ => hheat t ht x)
-
-
 
 theorem integral_test_mul_heat_sub_on_tsupport [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ}
@@ -154,8 +135,6 @@ theorem integral_test_mul_heat_sub_on_tsupport [PreconnectedSpace M]
   rw [uIcc_of_le hab] at ht
   exact D.hasDerivAt_integral_test_mul_of_heatEquation_on_tsupport hF hφ hφc
     (ha.trans_le ht.1) (hheat t ht)
-
-
 
 theorem integral_test_mul_heat_sub [PreconnectedSpace M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ}

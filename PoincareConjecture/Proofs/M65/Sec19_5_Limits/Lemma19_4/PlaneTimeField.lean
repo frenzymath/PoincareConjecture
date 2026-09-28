@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MovingDensityVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem m65PlaneTimeVelocity_contMDiffAt (u : ℝ → LoopPlane → M)
     {t : ℝ} {z : LoopPlane}

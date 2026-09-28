@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeMarks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

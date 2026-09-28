@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.Barrier.MovingBump
 
-
-
-
-
-
-
-
 noncomputable section
 open scoped InnerProductSpace ContDiff
 
@@ -14,24 +7,20 @@ namespace PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple.Barrier
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 def timeJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x velocity : E) : ℝ :=
   Real.exp (-C * (t - a)) *
     (-C * expNegInvGlue (ballGap rho (gamma t) x) +
       profileFirst (ballGap rho (gamma t) x) * (2 * ⟪x - gamma t, velocity⟫_ℝ))
 
-
 def spaceJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x u : E) : ℝ :=
   Real.exp (-C * (t - a)) *
     (profileFirst (ballGap rho (gamma t) x) * (-2 * ⟪x - gamma t, u⟫_ℝ))
-
 
 def secondSpaceJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x u w : E) : ℝ :=
   Real.exp (-C * (t - a)) *
     (4 * profileSecond (ballGap rho (gamma t) x) *
         ⟪x - gamma t, u⟫_ℝ * ⟪x - gamma t, w⟫_ℝ -
       2 * profileFirst (ballGap rho (gamma t) x) * ⟪w, u⟫_ℝ)
-
 
 theorem hasDerivAt_ballGap_time (rho : ℝ) {gamma : ℝ → E}
     {t : ℝ} {velocity : E} (hg : HasDerivAt gamma velocity t) (x : E) :
@@ -40,7 +29,6 @@ theorem hasDerivAt_ballGap_time (rho : ℝ) {gamma : ℝ → E}
   have h := (hasDerivAt_const t (rho ^ 2)).sub
     (((hasDerivAt_const t x).sub hg).norm_sq)
   simpa [ballGap] using! h
-
 
 theorem hasDerivAt_movingBump_time (rho C a : ℝ) {gamma : ℝ → E}
     {t : ℝ} {velocity : E} (hg : HasDerivAt gamma velocity t) (x : E) :
@@ -55,7 +43,6 @@ theorem hasDerivAt_movingBump_time (rho C a : ℝ) {gamma : ℝ → E}
   dsimp [timeJet]
   ring
 
-
 theorem hasDerivAt_movingBump_along (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ)
     {eta : ℝ → E} {r : ℝ} {u : E} (he : HasDerivAt eta u r) :
     HasDerivAt (fun s => movingBump rho C a gamma t (eta s))
@@ -66,7 +53,6 @@ theorem hasDerivAt_movingBump_along (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ
       ((he.sub_const (gamma t)).norm_sq)
   have hp := (hasDerivAt_profile (ballGap rho (gamma t) (eta r))).comp r hq
   exact hp.const_mul (Real.exp (-C * (t - a)))
-
 
 theorem hasDerivAt_spaceJet_along (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ)
     (u : E) {eta : ℝ → E} {r : ℝ} {w : E} (he : HasDerivAt eta w r) :
@@ -82,7 +68,6 @@ theorem hasDerivAt_spaceJet_along (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ)
   simp only [secondSpaceJet, inner_zero_right, Function.comp_apply, zero_add]
   ring
 
-
 theorem fderiv_movingBump (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x u : E) :
     fderiv ℝ (movingBump rho C a gamma t) x u = spaceJet rho C a gamma t x u := by
   have hl : HasDerivAt (fun s : ℝ => x + s • u) u 0 := by
@@ -94,7 +79,6 @@ theorem fderiv_movingBump (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x u : E
   have hexplicit := hasDerivAt_movingBump_along rho C a gamma t hl
   simpa using hcompose.unique hexplicit
 
-
 theorem contDiff_spaceJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (u : E) :
     ContDiff ℝ ∞ (fun x => spaceJet rho C a gamma t x u) := by
   have heq : (fun x => spaceJet rho C a gamma t x u) =
@@ -104,7 +88,6 @@ theorem contDiff_spaceJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (u : E) 
   rw [heq]
   exact ((contDiff_movingBump_space rho C a gamma t).fderiv_right
     (by simp)).clm_apply contDiff_const
-
 
 theorem fderiv_spaceJet (rho C a : ℝ) (gamma : ℝ → E) (t : ℝ) (x u w : E) :
     fderiv ℝ (fun y => fderiv ℝ (movingBump rho C a gamma t) y u) x w =

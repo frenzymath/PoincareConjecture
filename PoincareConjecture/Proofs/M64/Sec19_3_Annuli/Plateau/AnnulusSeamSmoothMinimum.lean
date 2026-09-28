@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamWeakCriti
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamContinuousMinimum
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalSmooth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,8 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusSeamDomain
-
-
 
 theorem M64ObservedWeakAnnulus.seam_contMDiffOn_of_energy_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -82,8 +69,6 @@ theorem M64ObservedWeakAnnulus.seam_contMDiffOn_of_energy_minimum
     exact (hmap hp).symm
   exact hlocal.contMDiffWithinAt
 
-
-
 theorem M64ObservedWeakAnnulus.contMDiffOn_seam_of_translation
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (g : RiemannianMetric n M) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -101,9 +86,6 @@ theorem M64ObservedWeakAnnulus.contMDiffOn_seam_of_translation
   have hraw : ContinuousOn (m64AnnulusSeamExtend A.map) O := hA.congr heq
   have hsmooth := A.seam_contMDiffOn_of_energy_minimum g he hei hread Q hQ hb hdiag hmin hraw
   exact hsmooth.congr heq.symm
-
-
-
 
 theorem m64Annulus_exists_seam_smooth_weak_energy_minimizer
     [CompactSpace M] [T2Space M]

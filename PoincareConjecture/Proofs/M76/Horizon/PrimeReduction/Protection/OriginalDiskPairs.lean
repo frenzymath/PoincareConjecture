@@ -4,9 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.FiniteSimp
 import PoincareConjecture.Proofs.M76.Mathlib.SinglePolygonPresentation
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry

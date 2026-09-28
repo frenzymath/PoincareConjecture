@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M58.Lemma18_27_FamilyContraction
 import PoincareConjecture.Proofs.M58.Lemma18_27_ShortFamilies
 import PoincareConjecture.Proofs.M58.BasedCone
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem short_loop_family_trivial (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) (basepoint : M)
@@ -38,9 +27,6 @@ theorem short_loop_family_trivial (g : RiemannianMetric 3 M)
     hcontract ⟨source.family, source.continuous⟩ hlength
   exact family_class_eq_one_of_contraction source (by simpa only [hbase] using hpi)
     loopCircleBasepoint H h0 h1 (fun t c hc => hfixed t c source.basepoint hc)
-
-
-
 
 theorem raw_short_loop_family_trivial (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) (hconnected : IsConnected (univ : Set M))

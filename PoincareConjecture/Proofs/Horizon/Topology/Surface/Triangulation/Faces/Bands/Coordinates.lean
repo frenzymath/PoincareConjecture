@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Oblique
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -30,7 +20,6 @@ variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {U : Set ℝ} (hU : IsOpen U)
   (hlo : ContDiffOn ℝ ∞ lo U) (hhi : ContDiffOn ℝ ∞ hi U)
 
-
 noncomputable def faceCoordinates (_B : SmoothGraphBandPair F lo hi hab)
     (hU : IsOpen U) (hlo : ContDiffOn ℝ ∞ lo U) (hhi : ContDiffOn ℝ ∞ hi U) :
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M :=
@@ -39,7 +28,6 @@ noncomputable def faceCoordinates (_B : SmoothGraphBandPair F lo hi hab)
       (hlo.mono inter_subset_left) (hhi.mono inter_subset_left)
       (fun t ht => show t ∈ {t | lo t < hi t} from interior_subset ht.2))).trans
     collarParameterEquiv.symm.toHomeomorph.toOpenPartialHomeomorph).trans F)
-
 
 noncomputable def faceBasis (_B : SmoothGraphBandPair F lo hi hab) :
     Bool → AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))
@@ -254,7 +242,6 @@ variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
 noncomputable def faceCoordinates (i : Fin B.interface.count × Bool) :
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M :=
   (B.pair i.1).faceCoordinates
@@ -262,7 +249,6 @@ noncomputable def faceCoordinates (i : Fin B.interface.count × Bool) :
     contDiffOn_const
     ((B.interface.pieceCoordinates B.open_domain B.smooth_lower i.1).smooth_upperGraph
       B.smooth_lower)
-
 
 noncomputable def faceBasis (i : Fin B.interface.count × Bool) :
     AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)) := (B.pair i.1).faceBasis i.2

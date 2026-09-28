@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.HalfOpenSlabData
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -54,7 +46,6 @@ theorem equation (t : ℝ) (ht : t ∈ Ico a H) (x : (F.slice a).carrier)
     metric_eq_closed F haH hI hS s hs _
       (cutoff_bounds haH t).1 (cutoff_bounds haH t).2 hsc.2
   rw [hm]
-
 
 noncomputable def flow : RicciFlow 3 (F.slice a).carrier (Ico a H) where
   metric := metric F haH hI hS

@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M11.SpatialCalculus
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

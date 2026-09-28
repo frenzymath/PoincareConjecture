@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 
-
-
 set_option autoImplicit false
 open CategoryTheory
 

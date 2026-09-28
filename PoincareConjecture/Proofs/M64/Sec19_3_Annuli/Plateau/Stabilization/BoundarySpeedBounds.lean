@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorEndpointBound
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem boundary_motion_speed_bound
     (g : RiemannianMetric n M) {f : ℝ × ℝ → M}

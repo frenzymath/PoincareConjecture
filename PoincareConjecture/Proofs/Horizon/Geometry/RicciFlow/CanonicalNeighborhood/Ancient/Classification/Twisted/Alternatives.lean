@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.Twisted
 import PoincareConjecture.Definitions.M27KappaAlternatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -27,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 theorem AncientKappaCapServices.exists_strongCappedTube_coverage
     (P : AncientKappaCapServices.{u}) (model : M27TwistedSphereLineFlowCertificate K)
@@ -56,8 +44,6 @@ theorem AncientKappaCapServices.exists_strongCappedTube_coverage
   · exact Or.inl hx
   · exact Or.inr (model.strong_necks_outside_interior_slabCore ht hε
       (by linarith) (model.cover (q, 0)) x hx)
-
-
 
 theorem m27TwistedAlternatives (P : M27KappaAlternativePredecessors.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

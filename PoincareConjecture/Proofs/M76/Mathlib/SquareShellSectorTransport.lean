@@ -1,28 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
 
-
-
 theorem sectorMap_mem {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     {p : ℝ × ℝ} (hp : p ∈ parameterRectangle a b) : sectorMap a b p ∈ sector a b :=
   (sectorMap_image ha hb).subset (mem_image_of_mem _ hp)
-
-
 
 theorem coordinate_eq_neg_radius_iff {a b r s : ℝ}
     (ha : 0 < a) (hb : 0 < b) (hr : r ∈ Icc a b) :
@@ -34,8 +20,6 @@ theorem coordinate_eq_neg_radius_iff {a b r s : ℝ}
   · rintro rfl
     exact (coordinate_endpoints hr).1
 
-
-
 theorem coordinate_eq_radius_iff {a b r s : ℝ}
     (ha : 0 < a) (hb : 0 < b) (hr : r ∈ Icc a b) :
     coordinate a b s r = r ↔ s = 1 := by
@@ -45,9 +29,6 @@ theorem coordinate_eq_radius_iff {a b r s : ℝ}
     exact h.trans (coordinate_endpoints hr).2.symm
   · rintro rfl
     exact (coordinate_endpoints hr).2
-
-
-
 
 theorem exists_sector_transport_with_parameters {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :
@@ -67,10 +48,6 @@ theorem exists_sector_transport_with_parameters {a b c d : ℝ}
   rw [hinput]
   change (B (D (A.symm (A p))) : ℝ × ℝ) = _
   rw [A.symm_apply_apply, hBval, hDval]
-
-
-
-
 
 theorem exists_sector_radius_homeomorph {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :

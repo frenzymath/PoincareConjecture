@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,7 +67,6 @@ private theorem exists_smooth_local_right_inverse {e : E → M} {x : E}
     rw [c.left_inv hzc]
   change e (c.symm (i (d (e z)))) = e z
   rw [← hqz, hzi, c.left_inv hzc]
-
 
 theorem contMDiffAt_of_contDiffAt_pullback
     {g : RiemannianMetric n M} {O : M} {r C A : ℝ}

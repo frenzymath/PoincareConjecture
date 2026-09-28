@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.RicciFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -25,8 +16,6 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)]
   {A : MetricFlowApproximation ginit Mfamily}
   (G : MetricInteriorCoefficientLimit A) (Dinit : LeviCivitaData ginit)
-
-
 
 theorem closedSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
     (x : StandardCapSpace) :
@@ -45,8 +34,6 @@ theorem closedSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem closedFiniteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
     (x : StandardCapSpace) :
     Tendsto (fun k => spatialJet m
@@ -57,8 +44,6 @@ theorem closedFiniteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.t
   exact G.closedSpatialJet_tendsto j ht x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem metricTwoJet_tendsto (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :

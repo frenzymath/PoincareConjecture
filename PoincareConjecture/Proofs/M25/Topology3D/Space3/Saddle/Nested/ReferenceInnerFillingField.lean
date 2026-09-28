@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
-
 
 theorem exists_inner_reference_filling_field :
     let U : E2 → ℝ := fun v =>

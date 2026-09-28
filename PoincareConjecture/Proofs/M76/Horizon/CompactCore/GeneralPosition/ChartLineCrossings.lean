@@ -3,22 +3,11 @@ import Mathlib.Topology.Algebra.ContinuousAffineMap
 import Mathlib.Topology.UnitInterval
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace AffineMap
-
-
 
 theorem lineMap_zero_alternative {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) :
     (∀ t : I, lineMap a b (t : ℝ) ≠ 0) ∨
@@ -84,9 +73,6 @@ theorem lineMap_zero_alternative {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) :
 end AffineMap
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem chart_line_frontier_alternative
     {X V : Type*} [TopologicalSpace X] [TopologicalSpace V] [AddCommGroup V] [Module ℝ V]

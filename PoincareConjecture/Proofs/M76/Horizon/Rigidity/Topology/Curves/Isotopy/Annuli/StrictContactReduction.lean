@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Ar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.MovedGeometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.LiftGeometry
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

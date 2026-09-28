@@ -1,23 +1,12 @@
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem integral_sqrt_nonneg_endpoint {tau : ℝ} (htau : 0 ≤ tau) :
     (∫ s in (0 : ℝ)..tau, Real.sqrt s) = (2 / 3 : ℝ) * tau * Real.sqrt tau := by
@@ -27,9 +16,6 @@ theorem integral_sqrt_nonneg_endpoint {tau : ℝ} (htau : 0 ≤ tau) :
   rw [integral_rpow (Or.inl (by norm_num)), Real.rpow_add htau]
   norm_num
   ring
-
-
-
 
 theorem positiveAction_le_action_add {R kinetic : ℝ → ℝ} {tau K : ℝ}
     (htau : 0 ≤ tau) (hK : 0 ≤ K)
@@ -55,8 +41,6 @@ theorem positiveAction_le_action_add {R kinetic : ℝ → ℝ} {tau K : ℝ}
   convert hbound using 1
   ring
 
-
-
 theorem weightedAction_ge_tail {density : ℝ → ℝ} {a b tau : ℝ}
     (ha : 0 ≤ a) (hab : a ≤ b) (hbtau : b ≤ tau)
     (hnonneg : ∀ s, 0 ≤ density s)
@@ -74,8 +58,6 @@ theorem weightedAction_ge_tail {density : ℝ → ℝ} {a b tau : ℝ}
   exact hlocal.trans (intervalIntegral.integral_mono_interval ha hab hbtau
     (Filter.Eventually.of_forall (fun s => mul_nonneg (Real.sqrt_nonneg s) (hnonneg s)))
     hweighted)
-
-
 
 theorem weightedAction_gt_of_tail {density : ℝ → ℝ} {a b tau budget : ℝ}
     (ha : 0 < a) (hab : a ≤ b) (hbtau : b ≤ tau)

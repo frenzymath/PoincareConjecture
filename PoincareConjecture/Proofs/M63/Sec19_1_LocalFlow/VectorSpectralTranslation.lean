@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealSpectralTranslation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -17,17 +9,11 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} {ι : Type*} [Fintype ι]
 
-
-
-
 noncomputable def vectorPeriodicSpectralTranslation (a : ℝ) :
     State ((ℤ × Fin 2) × ι) →L[ℝ] State ((ℤ × Fin 2) × ι) :=
   (lpFinitePiEquiv ℝ).symm.toContinuousLinearMap.comp
     ((ContinuousLinearMap.piMap (fun _ : ι => realPeriodicSpectralTranslation (L := L) a)).comp
       (lpFinitePiEquiv ℝ).toContinuousLinearMap)
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_spec (a : ℝ) (u : State ((ℤ × Fin 2) × ι)) :
     (∀ i, lpFinitePiEquiv ℝ (vectorPeriodicSpectralTranslation (L := L) a u) i =
@@ -47,9 +33,6 @@ theorem vectorPeriodicSpectralTranslation_spec (a : ℝ) (u : State ((ℤ × Fin
   refine ⟨hs, ?_⟩
   nlinarith [norm_nonneg u, norm_nonneg (vectorPeriodicSpectralTranslation (L := L) a u)]
 
-
-
-
 theorem continuous_vectorPeriodicSpectralTranslation :
     Continuous (fun p : ℝ × State ((ℤ × Fin 2) × ι) =>
       vectorPeriodicSpectralTranslation (L := L) p.1 p.2) := by
@@ -59,10 +42,6 @@ theorem continuous_vectorPeriodicSpectralTranslation :
     continuous_fst.prodMk ((continuous_apply i).comp (S.continuous.comp continuous_snd))
   have h (i : ι) := (continuous_realPeriodicSpectralTranslation (L := L)).comp (harg i)
   exact S.symm.continuous.comp (continuous_pi h)
-
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_real_weight (m : ℤ × ι → ℝ)
     (u v : State ((ℤ × Fin 2) × ι))
@@ -80,9 +59,6 @@ theorem vectorPeriodicSpectralTranslation_real_weight (m : ℤ × ι → ℝ)
   exact realPeriodicSpectralTranslation_real_weight (fun n => m (n, p.2))
     (lpFinitePiEquiv ℝ u p.2) (lpFinitePiEquiv ℝ v p.2) (hs p.2) a p.1
 
-
-
-
 theorem vectorPeriodicJet_spectralTranslation [Fact (0 < L)]
     (k j : ℕ) (hj : j ≤ k) (u : State ((ℤ × Fin 2) × ι)) (a : ℝ) :
     vectorPeriodicJet (L := L) k j hj (vectorPeriodicSpectralTranslation (L := L) a u) =
@@ -93,9 +69,6 @@ theorem vectorPeriodicJet_spectralTranslation [Fact (0 < L)]
       realPeriodicJet (L := L) k j hj (lpFinitePiEquiv ℝ u i) (x - (a : AddCircle L))
   rw [(vectorPeriodicSpectralTranslation_spec a u).1 i, realPeriodicJet_spectralTranslation]
   rfl
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_zero :
     vectorPeriodicSpectralTranslation (L := L) (ι := ι) 0 = ContinuousLinearMap.id ℝ _ := by

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Comparison.Topology.HomotopyExtension
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Groups.HomotopyPostcomposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -20,8 +12,6 @@ namespace PoincareConjecture.SurgeryComparison.Topology
 noncomputable section
 
 open Poincare.Topology
-
-
 
 structure GenLoopBoundaryHomotopy
     {X : Type u} [TopologicalSpace X] {n : ℕ} {x y : X}
@@ -39,12 +29,10 @@ variable {X : Type u} [TopologicalSpace X] {n : ℕ} {x y z : X}
 variable {a : GenLoop (Fin n) X x} {b : GenLoop (Fin n) X y}
 variable {c : GenLoop (Fin n) X z}
 
-
 def symm (H : GenLoopBoundaryHomotopy a b) : GenLoopBoundaryHomotopy b a where
   toHomotopy := H.toHomotopy.symm
   trace := H.trace.symm
   boundary_eq _t q := H.boundary_eq _ q
-
 
 def trans (H : GenLoopBoundaryHomotopy a b) (K : GenLoopBoundaryHomotopy b c) :
     GenLoopBoundaryHomotopy a c where
@@ -56,21 +44,15 @@ def trans (H : GenLoopBoundaryHomotopy a b) (K : GenLoopBoundaryHomotopy b c) :
     · exact H.boundary_eq _ q
     · exact K.boundary_eq _ q
 
-
-
 def ofHomotopyRel {b : GenLoop (Fin n) X x} (H : a.val.HomotopyRel b.val
     (Cube.boundary (Fin n))) : GenLoopBoundaryHomotopy a b where
   toHomotopy := H.toHomotopy
   trace := Path.refl x
   boundary_eq t q := (H.eq_fst t q.property).trans (a.property q.val q.property)
 
-
-
 theorem homotopic [SimplyConnectedSpace X] {b : GenLoop (Fin n) X x}
     (H : GenLoopBoundaryHomotopy a b) : GenLoop.Homotopic a b :=
   homotopicRel_of_uniform_boundary_trace a b H.toHomotopy H.trace H.boundary_eq
-
-
 
 def postcomp {Y : Type v} [TopologicalSpace Y]
     {a : GenLoop (Fin (n + 1)) X x} {b : GenLoop (Fin (n + 1)) X y}
@@ -79,8 +61,6 @@ def postcomp {Y : Type v} [TopologicalSpace Y]
   toHomotopy := (ContinuousMap.Homotopy.refl f).comp H.toHomotopy
   trace := H.trace.map f.continuous
   boundary_eq t q := congrArg f (H.boundary_eq t q)
-
-
 
 def ofMapHomotopy {Y : Type v} [TopologicalSpace Y]
     {f g : C(X, Y)} (H : f.Homotopy g) (x : X)
@@ -93,8 +73,6 @@ def ofMapHomotopy {Y : Type v} [TopologicalSpace Y]
       source' := H.apply_zero x
       target' := H.apply_one x }
   boundary_eq t q := congrArg (fun w => H (t, w)) (a.property q.val q.property)
-
-
 
 theorem exists_of_path (a : GenLoop (Fin n) X x) (p : Path x y) :
     ∃ b : GenLoop (Fin n) X y, Nonempty (GenLoopBoundaryHomotopy a b) := by
@@ -115,9 +93,6 @@ theorem exists_of_path (a : GenLoop (Fin n) X x) (p : Path x y) :
     boundary_eq := hFs }⟩⟩
 
 end GenLoopBoundaryHomotopy
-
-
-
 
 theorem homotopyGroupPostcomp_bijective_of_homotopyEquiv
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

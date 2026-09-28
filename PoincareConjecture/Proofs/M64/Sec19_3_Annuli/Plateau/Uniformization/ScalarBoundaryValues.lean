@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryContinuous
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,13 +15,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
-
 
 theorem exists_annular_continuous_harmonic_potential :
     ∃ (H : Plane → ℝ) (u : H1Zero D scalarAnnulus),

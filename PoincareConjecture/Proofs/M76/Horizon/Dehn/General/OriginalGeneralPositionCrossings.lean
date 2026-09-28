@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositio
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcCrossedStar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInteriorChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval
@@ -29,7 +21,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem OriginalGeneralPositionData.exists_protected_crossed_charts_with_closed_support
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
@@ -421,7 +412,6 @@ theorem OriginalGeneralPositionData.exists_protected_crossed_charts_with_closed_
         exact hxy
     rw [hright, hvalue]
     exact (hlocal (Q y) hy.2.1).2.2
-
 
 theorem OriginalGeneralPositionData.exists_protected_crossed_charts
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}

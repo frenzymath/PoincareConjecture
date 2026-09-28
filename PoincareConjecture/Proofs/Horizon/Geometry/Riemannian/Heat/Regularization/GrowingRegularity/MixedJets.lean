@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtens
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.TimeDerivatives.Equation
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -106,8 +97,6 @@ theorem iterate_timeDerivative_spatialDerivative {f : E × ℝ → F}
       timeDerivative_spatialDerivative (contDiff_iterate_timeDerivative hf j),
       Function.iterate_succ_apply']
 
-
-
 theorem norm_iteratedFDeriv_le_of_mixed_bounds
     {f : E × ℝ → F} (hf : ContDiff ℝ ∞ f) (m : ℕ) (p : E × ℝ)
     {B : ℝ}
@@ -139,8 +128,6 @@ theorem norm_iteratedFDeriv_le_of_mixed_bounds
       _ ≤ 2 ^ m * B + 2 ^ m * B := add_le_add hs ht
       _ = 2 ^ (m + 1) * B := by ring
 
-
-
 theorem norm_iteratedFDeriv_le_of_mixed_bounds_on [FiniteDimensional ℝ E]
     {U : Set (E × ℝ)} (hU : IsOpen U) {f : E × ℝ → F}
     (hf : ContDiffOn ℝ ∞ f U) (m : ℕ) (p : E × ℝ) (hp : p ∈ U)
@@ -160,8 +147,6 @@ theorem norm_iteratedFDeriv_le_of_mixed_bounds_on [FiniteDimensional ℝ E]
       (continuousAt_id.prodMk continuousAt_const)
   rw [(hslice.iteratedFDeriv ℝ i).eq_of_nhds]
   exact hbound i j hij
-
-
 
 theorem norm_iteratedFDeriv_le_mixed_sum_on [FiniteDimensional ℝ E]
     {U : Set (E × ℝ)} (hU : IsOpen U) {f : E × ℝ → F}
@@ -189,8 +174,6 @@ theorem iterate_timeDerivative_eq_iteratedDeriv {f : E × ℝ → F}
     have h := (hasDerivAt_timeSlice
       ((contDiff_iterate_timeDerivative hf j).differentiable (by simp)) x t).deriv
     simpa only [ih] using h.symm
-
-
 
 theorem norm_iteratedFDeriv_le_of_iteratedDeriv_bounds_on [FiniteDimensional ℝ E]
     {U : Set (E × ℝ)} (hU : IsOpen U) {f : E × ℝ → F}

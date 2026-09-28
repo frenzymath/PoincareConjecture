@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Normalization
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -9,8 +7,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_smooth_disk_of_smooth_circle
     (f : sphere (0 : EuclideanSpace Real (Fin 2)) 1 -> EuclideanSpace Real (Fin 2))

@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineLevelVertexMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineLevelFacePosition
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_protected_affine_level_complex_position
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

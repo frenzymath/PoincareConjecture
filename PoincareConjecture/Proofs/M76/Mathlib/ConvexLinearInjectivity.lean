@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineIndependentLocalMap
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarInjectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace LinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [AddCommGroup F] [Module ℝ F]
-
-
 
 theorem injOn_affineSpan_of_injOn_convex (Q : E →ₗ[ℝ] F) {C : Set E}
     (hC : Convex ℝ C) (hne : C.Nonempty) (hQ : InjOn Q C) :
@@ -33,9 +23,6 @@ theorem injOn_affineSpan_of_injOn_convex (Q : E →ₗ[ℝ] F) {C : Set E}
   refine ⟨p, hpC, x - p,
     (affineSpan ℝ C).vsub_mem_direction hx (subset_affineSpan ℝ C hpC), ?_⟩
   abel_nf
-
-
-
 
 theorem affineIndependent_comp_of_injOn_convexHull {ι : Type*} (Q : E →ₗ[ℝ] F)
     {p : ι → E} (hp : AffineIndependent ℝ p)

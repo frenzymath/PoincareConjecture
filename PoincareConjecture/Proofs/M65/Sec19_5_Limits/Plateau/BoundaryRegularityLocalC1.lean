@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTomiRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,11 +10,6 @@ open scoped Topology ContDiff SchwartzMap LineDeriv InnerProductSpace
 namespace PoincareConjecture.M65Boundary
 
 set_option maxHeartbeats 2000000 in
-
-
-
-
-
 
 theorem local_quadratic_contDiffOn {N : ℕ} (p : LoopPlane) {R : ℝ} (hR : 0 < R)
     (Y : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) (ball p (8 * R)))

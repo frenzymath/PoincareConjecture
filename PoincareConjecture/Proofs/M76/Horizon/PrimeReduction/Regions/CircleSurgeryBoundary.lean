@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.CircleCapAttachment
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -27,8 +18,6 @@ private noncomputable def circleSphereBandCoordinates (β : ℝ) : P2 →ᴬ[ℝ
 private theorem circleSphereBandCoordinates_apply (β : ℝ) (z : P2) :
     circleSphereBandCoordinates β z = ((z.2/4,0),β/32*z.1) := by
   ext <;> simp [circleSphereBandCoordinates] <;> ring
-
-
 
 theorem exists_circle_sphere_band_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -113,9 +102,6 @@ theorem exists_circle_sphere_band_annulus
   refine ⟨c',hc.setCongr rfl himage,(hc.setCongr rfl himage).symm,?_⟩
   intro s hs u
   exact (hperiod s hs u).trans (congrArg τ (hCval (s,u)))
-
-
-
 
 theorem exists_circle_surgery_boundary
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M56Ancestry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,9 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m56LiteralPathCover
     {F : SurgeryFlowData.{u}} {W : RepairedEventChildWitness F}
@@ -51,17 +38,7 @@ theorem m56LiteralPathCover
     exact (connectedComponent_eq hpoint).symm
   exact hrange ▸ hi
 
-
 set_option linter.style.haveILetI false in
-
-
-
-
-
-
-
-
-
 
 theorem finiteFreeProductCyclic_of_subsingleton
     {G : Type u} [Group G] (hG : Subsingleton G) :
@@ -99,9 +76,6 @@ theorem finiteFreeProductCyclic_of_subsingleton
       exact ⟨1, hy.symm⟩
   refine ⟨0, F, ?_⟩
   exact ⟨MulEquiv.ofBijective hom hbijective⟩
-
-
-
 
 theorem finiteFreeProductCyclic_of_simplyConnected
     {M : Type u} [TopologicalSpace M] [SimplyConnectedSpace M] :

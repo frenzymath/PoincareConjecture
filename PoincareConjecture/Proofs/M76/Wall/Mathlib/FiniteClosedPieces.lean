@@ -1,21 +1,10 @@
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem isOpen_preimage_iUnion_piece
     {X ι : Type*} [TopologicalSpace X] [Finite ι]

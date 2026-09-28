@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ThreeDiskChainMap
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -60,12 +50,6 @@ private theorem transport_arm
       exact ⟨⟨x, hWS hx⟩, hx, hval ⟨x, hWS hx⟩⟩
     · rintro ⟨x, hx, rfl⟩
       exact ⟨x, hx, (hval x).symm⟩
-
-
-
-
-
-
 
 theorem exists_alternate_resolution_disk_map
     {EA EM EC F X ι : Type*}

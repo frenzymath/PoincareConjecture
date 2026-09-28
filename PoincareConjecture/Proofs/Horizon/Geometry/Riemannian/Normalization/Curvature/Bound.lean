@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Norm
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Filter Set
@@ -34,7 +27,6 @@ theorem normalization_continuousAt_riemannEvaluation_extend (D : LeviCivitaData 
     (hsmooth i).mono (hUS.trans (Set.iInter_subset S i))
   exact (D.riemannEvaluation_smooth hUopen _ hsmoothU).continuousOn.continuousAt
     (hUopen.mem_nhds hxU)
-
 
 theorem normalization_riemannEvaluation_locally_bounded (D : LeviCivitaData g) (x : M) :
     ∃ B > 0, ∀ᶠ y in 𝓝 x, ∀ v : Fin 4 → TangentSpace (𝓡 n) y,

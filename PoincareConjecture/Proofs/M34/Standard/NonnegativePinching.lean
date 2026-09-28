@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem negativeCurvaturePart_eq_zero_of_nonnegativeSectionalAt
     {M : Type u} [TopologicalSpace M]

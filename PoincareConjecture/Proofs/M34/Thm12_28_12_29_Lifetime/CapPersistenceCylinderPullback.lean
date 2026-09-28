@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceEucli
 import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,17 +16,13 @@ local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 noncomputable def capPersistenceSphereChart (q : UnitTwoSphere) (s : ℝ)
     (x : E₃) : RoundCylinderSpace :=
   cylinderAxialTranslation s (sphereCylinderChart q x)
 
-
 theorem capPersistenceSphereChart_contMDiff (q : UnitTwoSphere) (s : ℝ) :
     ContMDiff (𝓡 3) Ic ∞ (capPersistenceSphereChart q s) :=
   (cylinderAxialTranslation_contMDiff s).comp (sphereCylinderChart_contMDiff q)
-
-
 
 theorem capPersistenceSphereChart_mfderiv (q : UnitTwoSphere) (s : ℝ) (x v : E₃) :
     mfderiv (𝓡 3) Ic (capPersistenceSphereChart q s) x v =
@@ -53,15 +39,12 @@ theorem capPersistenceSphereChart_mfderiv (q : UnitTwoSphere) (s : ℝ) (x v : E
     sphereCylinderChart_mfderiv] at he
   exact he
 
-
 theorem capPersistenceSphereChart_zero (q : UnitTwoSphere) (s : ℝ) :
     capPersistenceSphereChart q s 0 = (q, s) := by
   have hq : (chartAt E₂ q).symm 0 = q := by
     rw [← sphere_chart_center_zero q]
     exact (chartAt E₂ q).left_inv (mem_chart_source E₂ q)
   simp [capPersistenceSphereChart, sphereCylinderChart, cylinderAxialTranslation, hq]
-
-
 
 theorem capPersistenceSphereChart_model (q : UnitTwoSphere) (s : ℝ) (x v w : E₃) :
     EvolvingRoundCylinderMetric 0 (capPersistenceSphereChart q s x)
@@ -91,11 +74,8 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
 noncomputable def capPersistenceEuclideanMap (q : UnitTwoSphere) (s : ℝ) : E₃ → M :=
   N.coordinate_map ∘ capPersistenceSphereChart q s
-
-
 
 theorem capPersistenceEuclideanMap_contMDiffAt (q : UnitTwoSphere) (s : ℝ)
     {x : E₃} (hx : x 2 + s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -105,8 +85,6 @@ theorem capPersistenceEuclideanMap_contMDiffAt (q : UnitTwoSphere) (s : ℝ)
   exact ((N.coordinate_map_smooth _ hz).contMDiffAt
     ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)).comp x
       (capPersistenceSphereChart_contMDiff q s x)
-
-
 
 theorem capPersistenceEuclideanMap_mfderiv (q : UnitTwoSphere) (s : ℝ)
     {x : E₃} (hx : x 2 + s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (v : E₃) :
@@ -119,8 +97,6 @@ theorem capPersistenceEuclideanMap_mfderiv (q : UnitTwoSphere) (s : ℝ)
     (((N.coordinate_map_smooth _ hz).contMDiffAt
       ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)).mdifferentiableAt (by simp))
     ((capPersistenceSphereChart_contMDiff q s x).mdifferentiableAt (by simp)))
-
-
 
 theorem capPersistenceEuclideanMap_coefficient (q : UnitTwoSphere) (s : ℝ)
     {x : E₃} (hx : x 2 + s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (a b : Fin 3) :

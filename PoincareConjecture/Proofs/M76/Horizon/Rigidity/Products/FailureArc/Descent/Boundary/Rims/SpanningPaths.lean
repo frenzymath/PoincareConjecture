@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Rims.SpanningComplement
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalStripEndPaths
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

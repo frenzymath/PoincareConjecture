@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalVertexMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +11,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E
   {K : SimplicialComplex ℝ E} {L : SimplicialComplex ℝ F}
 
 omit [DecidableEq E] in
-
 
 theorem vertices_image_of_faces {v : E → F}
     (hfaces : L.faces = (fun s : Finset E => s.image v) '' K.faces) :
@@ -42,9 +32,6 @@ theorem vertices_image_of_faces {v : E → F}
     exact ⟨{x}, hx, by simp⟩
 
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_cone_homeomorph_of_linear_map (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (hK : K.faces.Finite)
@@ -98,8 +85,6 @@ theorem exists_cone_homeomorph_of_linear_map (K : SimplicialComplex ℝ E)
     hf.eqOn_of_eqOn_vertices
       ((K.coneAtZero hlinK hinjK).affineOnFaces_affine Q.toContinuousAffineMap) hfv
   exact ⟨g, e, hg, fun x => (hef x).trans (hfQ x.property), heg⟩
-
-
 
 theorem linear_injOn_cone_of_face_images (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (hK : K.faces.Finite)

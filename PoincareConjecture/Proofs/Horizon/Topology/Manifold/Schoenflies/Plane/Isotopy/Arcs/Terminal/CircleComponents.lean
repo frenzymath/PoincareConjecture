@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Connected.FourContacts.Resolut
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -41,8 +39,6 @@ private theorem circle_ranges_eq_of_common_point
     (fun k => isPreconnected_range (hD k)) (pairwise_disjoint_ranges D hDdis) hunion.symm hxD
   exact hCi.symm.trans hDj
 
-
-
 theorem circle_pair_ranges_eq_of_union_eq_of_inter_nonempty
     (C D : Fin 2 → S1 → E2) (hC : ∀ i, Continuous (C i)) (hD : ∀ i, Continuous (D i))
     (hCdis : Disjoint (range (C 0)) (range (C 1)))
@@ -53,8 +49,6 @@ theorem circle_pair_ranges_eq_of_union_eq_of_inter_nonempty
   intro i
   obtain ⟨x, hxC, hxD⟩ := hmeet i
   exact circle_ranges_eq_of_common_point C D hC hD hCdis hDdis hunion hxC hxD
-
-
 
 theorem exists_circle_pair_range_permutation
     (C D : Fin 2 → S1 → E2) (hC : ∀ i, Continuous (C i)) (hD : ∀ i, Continuous (D i))

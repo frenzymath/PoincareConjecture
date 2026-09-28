@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Conne
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -40,7 +30,6 @@ theorem diffeomorph_mfderiv_mpullback
     mfderiv (𝓡 n) (𝓡 n) f x (VectorField.mpullback (𝓡 n) (𝓡 n) f V x) = V (f x) :=
   (diffeomorph_mfderiv_isInvertible f x).self_apply_inverse _
 
-
 theorem mdifferentiableAt_mpullback
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)
     (V : (y : N) → TangentSpace (𝓡 n) y) (x : M)
@@ -49,7 +38,6 @@ theorem mdifferentiableAt_mpullback
     MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n)))
       (T% (VectorField.mpullback (𝓡 n) (𝓡 n) f V)) x :=
   hV.mpullback_vectorField f.contMDiffAt (diffeomorph_mfderiv_isInvertible f x) (by decide)
-
 
 theorem diffeomorph_mpullback_mlieBracket
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)
@@ -70,7 +58,6 @@ theorem diffeomorph_mpullback_mlieBracket
   exact VectorField.mpullback_mlieBracket hV hW f.contMDiffAt
     (by simp only [minSmoothness_of_isRCLikeNormedField]; decide)
 
-
 theorem homothety_inner_mpullback (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hf : MetricHomothety g h f Q)
     (V W : (y : N) → TangentSpace (𝓡 n) y) (x : M) :
@@ -80,7 +67,6 @@ theorem homothety_inner_mpullback (g : RiemannianMetric n M) (h : RiemannianMetr
   have H := hf x (VectorField.mpullback (𝓡 n) (𝓡 n) f V x)
     (VectorField.mpullback (𝓡 n) (𝓡 n) f W x)
   simpa only [diffeomorph_mfderiv_mpullback] using H
-
 
 theorem homothety_mvfderiv_inner_mpullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -107,7 +93,6 @@ theorem homothety_mvfderiv_inner_mpullback
   rw [heq]
   exact mvfderiv_const_mul_metric_inner g Q _ _ x
     (mdifferentiableAt_mpullback f Y x hY) (mdifferentiableAt_mpullback f Z x hZ) _
-
 
 theorem homothety_connection_pairing_mpullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -143,7 +128,6 @@ theorem homothety_connection_pairing_mpullback
     diffeomorph_mpullback_mlieBracket f Y Z x hY hZ] at hK'
   linear_combination (hK' - Q * hK) / 2
 
-
 theorem homothety_connection_mpullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hf : MetricHomothety g h f Q)
@@ -171,7 +155,6 @@ theorem homothety_connection_mpullback
     (FiberBundle.mdifferentiableAt_extend ..) hW (FiberBundle.mdifferentiableAt_extend ..)
   simp only [FiberBundle.extend_apply_self, hX] at H
   rw [H, ← hf, diffeomorph_mfderiv_mpullback, FiberBundle.extend_apply_self]
-
 
 theorem homothety_connection_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

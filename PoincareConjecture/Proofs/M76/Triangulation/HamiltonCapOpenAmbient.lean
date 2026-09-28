@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapBoundaryNeighborho
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedCapCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,11 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 
 variable {X : Type*} [TopologicalSpace X] {Y : Set X} {ι : Type*}
-
-
-
-
-
 
 theorem PLDomain.exists_normalized_cap_chart_in_open_ambient
     (hY : IsOpen Y) {e : ι → OpenPartialHomeomorph Y V3} {K : Set Y}
@@ -124,9 +110,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimension
 
 omit [FiniteDimensional ℝ E] in
 
-
-
-
 theorem exists_marked_cap_coordinates_of_closed_sides
     {K D S : Set X} (hK : IsClosed K) (hD : IsClosed D)
     (hcover : K ∪ D = univ) (hS : S = K ∩ D)
@@ -222,10 +205,6 @@ theorem exists_marked_cap_coordinates_of_closed_sides
     positive := hHpos
     negative := hnegative }
   exact ⟨c, rfl, hxH⟩
-
-
-
-
 
 theorem PLDomain.exists_marked_cap_coordinates_in_open_ambient
     (hY : IsOpen Y) {e : ι → OpenPartialHomeomorph Y V3} {K : Set Y}

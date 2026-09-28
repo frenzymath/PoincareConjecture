@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependenceAngul
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.LocalCurveTheory
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem continuous_family_embedded_threeJets_of_curvature_bound
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

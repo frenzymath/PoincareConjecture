@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.CountableCover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.Topology
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -102,7 +93,6 @@ theorem atlasBox_covers (t : ℝ) (x : (slice W t).carrier) :
   · obtain ⟨a, ha, ht, y, hy⟩ :=
       (Classical.choose_spec (exists_countable_ordinary_boxes W)).2 t htW htS x
     exact ⟨Sum.inl ⟨⟨a, ha⟩⟩, ht, y, hy⟩
-
 
 def generalized : GeneralizedRicciFlowData.{u} where
   slice := slice W

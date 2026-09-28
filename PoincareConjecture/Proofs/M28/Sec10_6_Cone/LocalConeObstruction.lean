@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_6_Cone.TerminalQuadratic
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,10 +18,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {L : Type v} [MetricSpace L]
-
-
-
-
 
 theorem no_positive_terminal_scalar_of_chord_annulus_embedding
     (P : RicciFlowCurvatureTheory.{u}) {t0 t1 : ℝ} (htime : t0 < t1)

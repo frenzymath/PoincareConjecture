@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +19,6 @@ theorem coordinate_slab_subset_carrier {a b : ℝ}
   rintro x ⟨z, hz, rfl⟩
   exact N.coordinate_map_mem ⟨mem_univ _, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
 
-
 theorem carrier_subset_ends_union_slab (a b : ℝ) :
     N.carrier ⊆ N.region (-N.epsilon⁻¹) a ∪
       N.coordinate_map '' (univ ×ˢ Icc a b) ∪ N.region b N.epsilon⁻¹ := by
@@ -44,8 +34,6 @@ theorem carrier_subset_ends_union_slab (a b : ℝ) :
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
 
-
-
 theorem frontier_subset_closure_ends {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :
     frontier N.carrier ⊆ closure (N.region (-N.epsilon⁻¹) a) ∪
@@ -60,7 +48,6 @@ theorem frontier_subset_closure_ends {a b : ℝ}
   · exact False.elim ((N.carrier_open.frontier_eq ▸ hx).2
       (N.coordinate_slab_subset_carrier ha hb hmid))
   · exact Or.inr hpos
-
 
 theorem frontier_center_overlap_end (N' : EpsilonNeck g)
     (hx : N'.center ∈ frontier N.carrier) {a b : ℝ}

@@ -1,19 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Connection.BoundaryRegularity
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.RicciTransport
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.TangentCone.Real
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,7 +34,6 @@ private lemma contDiffWithinAt_clm_of_apply
   exact e₂.symm.contDiff.contDiffAt.comp_contDiffWithinAt t
     (contDiffWithinAt_pi.mpr fun i => hf _)
 
-
 theorem contDiffOn_metricBilin (F : RicciFlow n M (Ico a b)) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
       ⟨(F.metric a).toRiemannianMetric⟩
@@ -64,11 +51,9 @@ theorem contDiffOn_metricBilin (F : RicciFlow n M (Ico a b)) (x : M) :
   exact contDiffWithinAt_clm_of_apply fun v => contDiffWithinAt_clm_of_apply fun w =>
     F.contDiffWithinAt_inner_time ht x v w
 
-
 def ricciBilin (F : RicciFlow n M (Ico a b)) (x : M) (t : ℝ) :
     TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ :=
   ricciForm F x t
-
 
 theorem metricBilin_hasDerivWithinAt (F : RicciFlow n M (Ico a b)) (x : M)
     {t : ℝ} (ht : t ∈ Ico a b) :
@@ -88,7 +73,6 @@ theorem metricBilin_hasDerivWithinAt (F : RicciFlow n M (Ico a b)) (x : M)
     (by simp)).hasDerivWithinAt
   simpa only [ricciBilin, ricciForm, smul_smul, show (-2 : ℝ) * -(1 / 2) = 1 by norm_num,
     one_smul] using hd
-
 
 theorem ricciBilin_apply (F : RicciFlow n M (Ico a b)) (x : M)
     {t : ℝ} (ht : t ∈ Ico a b) (v w : TangentSpace (𝓡 n) x) :
@@ -123,7 +107,6 @@ theorem metric_ricciEndomorphism_right (F : RicciFlow n M (Ico a b)) (x : M)
     (F.metric t).inner x v (ricciEndomorphism F x t w) = ricciBilin F x t v w := by
   rw [(F.metric t).symm, metric_ricciEndomorphism_left, ricciBilin_symm F x ht]
 
-
 theorem contDiffOn_ricciBilin (F : RicciFlow n M (Ico a b)) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
       ⟨(F.metric a).toRiemannianMetric⟩
@@ -137,7 +120,6 @@ theorem contDiffOn_ricciBilin (F : RicciFlow n M (Ico a b)) (x : M) :
   let : NormedAddCommGroup (TangentSpace (𝓡 n) x →L[ℝ] ℝ) := inferInstance
   let : NormedSpace ℝ (TangentSpace (𝓡 n) x →L[ℝ] ℝ) := inferInstance
   exact ((contDiffOn_metricBilin F x).derivWithin (uniqueDiffOn_Ico a b) (by simp)).const_smul _
-
 
 theorem contDiffOn_ricciEndomorphism (F : RicciFlow n M (Ico a b)) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

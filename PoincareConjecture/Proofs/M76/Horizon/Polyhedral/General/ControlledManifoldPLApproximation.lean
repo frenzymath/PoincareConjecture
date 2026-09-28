@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeManifoldPLApproximation
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polyhedra.ControlledPolyhedronApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval

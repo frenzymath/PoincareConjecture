@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.NormalChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.ChartComparison
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -29,8 +18,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_exponential_chord_bound
     (g : RiemannianMetric n M) (p : M)
@@ -86,8 +73,6 @@ theorem exists_exponential_chord_bound
   rw [edist_dist, dist_eq_norm', ← map_sub, hAnorm] at hh
   rw [← ENNReal.ofReal_coe_nnreal, ← ENNReal.ofReal_mul K.coe_nonneg] at hh
   exact hh
-
-
 
 theorem normalized_initial_eq_neg_of_minimizing_broken_geodesics
     (g : RiemannianMetric n M) (p : M)

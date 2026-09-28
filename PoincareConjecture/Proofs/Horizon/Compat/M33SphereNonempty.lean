@@ -1,7 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 
-
-
 namespace PoincareConjecture
 
 instance m33UnitTwoSphereNonempty : Nonempty UnitTwoSphere :=

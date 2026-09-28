@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Mathlib.OppositeCollarComponents
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -67,9 +58,6 @@ private noncomputable def levelCollar (N : EpsilonNeck g) {s r : ℝ}
       N.coordinate_inverse_smooth.continuousOn.comp_continuous continuous_subtype_val
         (fun x => x.property.1)
     exact hc.fst.prodMk ((hc.snd.sub continuous_const).subtype_mk _)
-
-
-
 
 theorem opposite_level_components
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

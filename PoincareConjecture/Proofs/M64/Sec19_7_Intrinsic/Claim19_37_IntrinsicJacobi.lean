@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_TransverseEquation
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,17 +15,12 @@ open ConnectionVariation
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_curveVelocity_comp_add_const
     (gamma : ℝ → AnnulusCoordinates) (a t : ℝ) :
     curveVelocity (n := 2) (fun s => gamma (s + a)) t =
       curveVelocity (n := 2) gamma (t + a) := by
   rw [m64Intrinsic_curveVelocity_eq_deriv, m64Intrinsic_curveVelocity_eq_deriv,
     deriv_comp_add_const]
-
-
-
 
 theorem m64Intrinsic_variation_intrinsic_jacobi
     (N : IntrinsicAnnulus) {u : ℝ × ℝ → AnnulusCoordinates}
@@ -80,8 +63,6 @@ theorem m64Intrinsic_variation_intrinsic_jacobi
   erw [zero_add, hfield] at h
   erw [congrFun hfield t] at h
   exact eq_neg_of_add_eq_zero_left h
-
-
 
 theorem m64Intrinsic_contDiff_variation_field
     {u : ℝ × ℝ → AnnulusCoordinates} {S I : Set ℝ}

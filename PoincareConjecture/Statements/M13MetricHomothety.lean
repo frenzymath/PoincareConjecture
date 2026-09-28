@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.M13MetricHomothety
 import PoincareConjecture.Definitions.Ch04.Harnack
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,9 +17,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [IsManifold (𝓡 n) ∞ N]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
   [T3Space N] [MeasurableSpace N] [BorelSpace N]
-
-
-
 
 structure MetricHomothetyCalculus (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)

@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m65Plateau_minimizingSequence (g : RiemannianMetric 3 M)
     (gamma : C1FreeLoopSpace (M := M)) (hfill : Nonempty (LipschitzSpanningDisk g gamma)) :

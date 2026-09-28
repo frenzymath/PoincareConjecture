@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalAffineExtension
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E}
-
-
-
 
 theorem AffineOnFaces.smul_on_cone
     {hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E)}
@@ -52,11 +39,6 @@ theorem AffineOnFaces.smul_on_cone
 
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] [DecidableEq F]
   {f : E → F}
-
-
-
-
-
 
 theorem AffineOnFaces.exists_height_plane_preserving_cone_extension_affine
     (hf : K.AffineOnFaces f) (hinj : InjOn f K.space) (hK : K.faces.Finite)
@@ -110,11 +92,6 @@ theorem AffineOnFaces.exists_height_plane_preserving_cone_extension_affine
       rw [hxy, hray y (hPK hy) r hr, map_smul, (hplane y (hPK hy)).mpr hy, smul_zero]
   · intro x
     exact (he _).trans (hbase x.property)
-
-
-
-
-
 
 theorem AffineOnFaces.exists_height_plane_preserving_cone_extension
     (hf : K.AffineOnFaces f) (hinj : InjOn f K.space) (hK : K.faces.Finite)

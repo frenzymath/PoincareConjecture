@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.FilledModel
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,10 +10,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
-
 
 theorem exists_ambient_ball_of_global_saddle_matching
     {g : S2 → E3}

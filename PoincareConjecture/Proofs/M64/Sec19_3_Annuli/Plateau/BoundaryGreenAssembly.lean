@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryGreenTranspo
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryGreenPairings
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSlice
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,9 +15,6 @@ namespace PoincareConjecture
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
 local notation "S" => interior m64AnnulusDomain
 local notation "I" => Icc (0 : ℝ) curvePeriod
-
-
-
 
 theorem m64Annulus_boundary_vector_green {N : ℕ} {x r : ℝ}
     (hr0 : 0 ≤ r) (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1)
@@ -93,9 +79,6 @@ theorem m64Annulus_boundary_vector_green {N : ℕ} {x r : ℝ}
   rw [hphysical]
   congr 1
   fin_cases i <;> simp [EuclideanSpace.basisFun_apply, hflux]
-
-
-
 
 theorem m64Annulus_boundary_scalar_green {x r : ℝ}
     (hr0 : 0 ≤ r) (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1)

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.WeakDerivatives
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory

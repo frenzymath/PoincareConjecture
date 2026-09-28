@@ -3,10 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -108,4 +104,3 @@ theorem chart_closedBall_properties [T2Space M]
     hx, mem_ball_iff_norm.mpr hnorm⟩
 
 end PoincareConjecture.M04
-

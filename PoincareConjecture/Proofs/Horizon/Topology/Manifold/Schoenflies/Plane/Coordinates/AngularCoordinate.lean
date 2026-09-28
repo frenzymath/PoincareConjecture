@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.CircleParameter
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -19,19 +10,14 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def circleAngularCoordinate (e : ℂ ≃ₗᵢ[ℝ] E) (p : ℝ × E) : ℝ :=
   p.1 + Complex.arg (e.symm p.2 * (Circle.exp (-p.1) : ℂ))
-
 
 theorem isOpen_circleAngularCoordinate_domain (e : ℂ ≃ₗᵢ[ℝ] E) :
     IsOpen {p : ℝ × E | e.symm p.2 * (Circle.exp (-p.1) : ℂ) ∈ Complex.slitPlane} := by
   apply Complex.isOpen_slitPlane.preimage
   simp only [Circle.coe_exp]
   fun_prop
-
-
 
 theorem contDiffOn_circleAngularCoordinate (e : ℂ ≃ₗᵢ[ℝ] E) {k : ℕ∞ω} :
     ContDiffOn ℝ k (circleAngularCoordinate e)
@@ -50,8 +36,6 @@ theorem contDiffOn_circleAngularCoordinate (e : ℂ ≃ₗᵢ[ℝ] E) {k : ℕ�
     Complex.log_im] using
     (contDiffAt_fst.add hi).contDiffWithinAt
 
-
-
 theorem sphereCircleParameter_circleAngularCoordinate (e : ℂ ≃ₗᵢ[ℝ] E)
     (a : ℝ) (q : sphere (0 : E) 1) :
     sphereCircleParameter e (circleAngularCoordinate e (a, (q : E))) = q := by
@@ -69,8 +53,6 @@ theorem sphereCircleParameter_circleAngularCoordinate (e : ℂ ≃ₗᵢ[ℝ] E)
   rw [hcancel]
   exact e.apply_symm_apply _
 
-
-
 theorem circleAngularCoordinate_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E)
     (a b : ℝ) (hab : b - a ∈ Ioc (-Real.pi) Real.pi) :
     circleAngularCoordinate e (a, (sphereCircleParameter e b : E)) = b := by
@@ -78,8 +60,6 @@ theorem circleAngularCoordinate_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E)
   rw [e.symm_apply_apply, ← Circle.coe_mul, ← Circle.exp_add,
     show b + -a = b - a by ring, Circle.arg_exp hab.1 hab.2]
   ring
-
-
 
 theorem sphereCircleParameter_mem_angularDomain (e : ℂ ≃ₗᵢ[ℝ] E)
     (a b : ℝ) (hab : b - a ∈ Ioo (-Real.pi) Real.pi) :

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Coordinates.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.SelfSimilar.Variation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -78,8 +71,6 @@ private theorem metric_pullback_in_charts
   exact chartCoefficients_apply_chartDifferential g a ha _ _
 
 variable {J : Set ℝ} (F : RicciFlow n M J)
-
-
 
 theorem hasDerivAt_negativeGradient_pullback_metric
     (hJ : IsOpen J) {f : ℝ × M → ℝ} {Φ : ℝ → M → M}

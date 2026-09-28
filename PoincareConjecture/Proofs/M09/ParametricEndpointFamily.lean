@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M09.EndpointFamily
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Preco
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.FiniteCover
 import PoincareConjecture.Proofs.M07.MeasureTheory.Measure.Packing
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -34,7 +24,6 @@ private theorem ball_subset_ball_add (g : RiemannianMetric n M)
   change g.edist p y < ENNReal.ofReal (R + r)
   rw [ENNReal.ofReal_add hR hr]
   exact lt_of_le_of_lt Manifold.riemannianEDist_triangle (ENNReal.add_lt_add hx hy)
-
 
 theorem volumeMeasure_ball_pos (g : RiemannianMetric n M) (p : M)
     {R : ℝ} (hR : 0 < R) : 0 < g.volumeMeasure (g.ball p R) := by
@@ -121,8 +110,6 @@ private theorem separated_card_le_model_ratio
   · intro x hx
     rw [hball, ENNReal.ofReal_div_of_pos hlarge]
     exact small_ball_volume_fraction g p hn hR hδ hδR hκ hcompact D hRic (hS hx)
-
-
 
 theorem exists_finset_cover_of_precompact_ball
     [SecondCountableTopology M]

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSmallEndpointLevels
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
-
-
-
 
 theorem frontier_base_eq_edges : frontier base =
     (segment ℝ (0, 0) (1, 0) ∪ segment ℝ (0, 0) (0, 1)) ∪
@@ -32,11 +20,6 @@ theorem frontier_base_eq_edges : frontier base =
       Fin.exists_fin_succ, affineSegment_eq_segment, or_assoc]
   rw [h, segment_symm ℝ ((0, 1) : ℝ × ℝ) (0, 0)]
   ac_rfl
-
-
-
-
-
 
 theorem exists_small_corner_level_comparisons {f : (ℝ × ℝ) → ℝ}
     (hf : FinitePiecewiseAffineOn f (frontier base)) (hzero : f (0, 0) = 0)

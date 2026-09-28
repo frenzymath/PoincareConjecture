@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.DirectedSimplicialUnion
 import PoincareConjecture.Proofs.M02.Topology.AmbientSimplicialGrid
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -20,15 +11,9 @@ namespace Geometry.SimplicialComplex
 
 variable {N : ℕ}
 
-
-
 def fullEuclideanGridFaces (h : ℝ) : Set (Finset (EuclideanSpace ℝ (Fin N))) :=
   {s | s.Nonempty ∧ ∃ (z : Fin N → ℤ) (p : Equiv.Perm (Fin N)),
     s ⊆ ambientGridSimplex h z p}
-
-
-
-
 
 theorem exists_fullEuclideanGrid (h : ℝ) (hh : 0 < h) :
     ∃ K : SimplicialComplex ℝ (EuclideanSpace ℝ (Fin N)),

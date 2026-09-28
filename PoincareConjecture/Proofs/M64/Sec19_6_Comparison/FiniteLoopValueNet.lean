@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LoopNeighborhoods
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_finite_loop_value_net
     {M : Type u} [TopologicalSpace M] [T2Space M]

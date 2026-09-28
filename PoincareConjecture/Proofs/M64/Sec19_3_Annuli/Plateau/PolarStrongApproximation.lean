@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.InnerStrongApproxima
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarPullback
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongSquareOperations
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +15,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 def m64MorreyPolarAngularColumn {E : Type*} [AddCommMonoid E] [Module ℝ E]
     (a : LoopPlane) (rho : ℝ) (V : Fin 2 → LoopPlane → E) (p : LoopPlane) : E :=
@@ -45,8 +32,6 @@ private theorem plane_apply_basis {E : Type*} [NormedAddCommGroup E] [NormedSpac
     ext i
     fin_cases i <;> simp
   conv_lhs => rw [hw, map_add, map_smul, map_smul]
-
-
 
 theorem m64Polar_strong_transfer
     {m : ℕ} (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho)
@@ -137,9 +122,6 @@ theorem m64Polar_strong_transfer
       ‖fderiv ℝ (f j ∘ P) p v0 - m64MorreyPolarAngularColumn a rho V p‖ ^ 2) atTop (𝓝 0)
     simp_rw [herr]
     exact hl
-
-
-
 
 theorem m64WeakMap_polar_strong_approximation
     {m : ℕ} {O : Set LoopPlane} (hO : IsOpen O)

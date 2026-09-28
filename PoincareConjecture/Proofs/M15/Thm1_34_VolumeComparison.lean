@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Noncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem euclidean_modelVolume_le_modelVolume
     {n : ℕ} (hn : 1 ≤ n) {K r : ℝ} (hK : 0 ≤ K) (hr : 0 ≤ r) :
@@ -44,9 +32,6 @@ theorem euclidean_modelVolume_le_modelVolume
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem calibrated_small_ball_lower_bound_of_unit_volume
     {n : ℕ} {M : Type u} [TopologicalSpace M]

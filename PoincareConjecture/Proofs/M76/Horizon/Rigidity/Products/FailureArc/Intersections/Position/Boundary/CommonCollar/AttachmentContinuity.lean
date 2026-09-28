@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.ContinuousOn
 
-
-
 set_option autoImplicit false
 open Set
 

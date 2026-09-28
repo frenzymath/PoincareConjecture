@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +32,6 @@ local instance jetWeakSystemMixedNormedGroup {n : ℕ} :
 local instance jetWeakSystemMixedNormedSpace {n : ℕ} :
     NormedSpace ℝ (Grad n →L[ℝ] E n →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem suFirstJet_coefficient_chain
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -97,8 +87,6 @@ theorem suFirstJet_coefficient_chain
   · exact suWeakPartial_source_comp_on_compact hr hrH (suContinuous_memLp_ball hJ) hW hw
       hO hK hKO (fun x hx => mem_image_of_mem U hx) hF k
 
-
-
 theorem suFirstJet_scalar_fderiv {n : ℕ} {P : Type*}
     [NormedAddCommGroup P] [NormedSpace ℝ P]
     {F : Point n → P →L[ℝ] ℝ} {z : LoopPlane × Jet n}
@@ -111,9 +99,6 @@ theorem suFirstJet_scalar_fderiv {n : ℕ} {P : Type*}
     (hF.hasFDerivAt.comp z hp.hasFDerivAt)
   simpa only [Function.comp_def, ContinuousLinearMap.comp_apply, ContinuousLinearMap.apply_apply,
     suAlphaFirstJetPoint_fderiv] using congrArg (fun L => L w) hd.fderiv
-
-
-
 
 theorem suWeakAlphaCoordinate_first_jet_equation
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -302,8 +287,6 @@ theorem suWeakAlphaCoordinate_first_jet_equation
           (fun i => ((hFd a i).2 k).2) ((hBd a).2 k).2 (heq a) hp hc hs
       _ = _ := integral_congr_ae (hright.mono fun x hx => by rw [hx])
 
-
-
 theorem suWeakAlphaCoordinate_first_jet_system_coefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -374,8 +357,6 @@ theorem suWeakAlphaCoordinate_first_jet_system_coefficients
     (fun a phi hp hc hs => suWeakAlphaCoordinate_first_jet_equation S ha G H hr hrrho a hp hc hs)
   exact ⟨r, hr, hrrho, T, hF, hB⟩
 
-
-
 theorem suWeakAlphaCoordinate_first_jet_system
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -388,9 +369,6 @@ theorem suWeakAlphaCoordinate_first_jet_system
         (suFirstJet u) (suFirstJetWeakColumn V G.hessian) center r) := by
   obtain ⟨r, hr, hrH, T, _, _⟩ := suWeakAlphaCoordinate_first_jet_system_coefficients S ha G H
   exact ⟨r, hr, hrH, ⟨T⟩⟩
-
-
-
 
 theorem suWeakAlphaCoordinate_first_jet_gain
     {n : ℕ} {M : Type*} [TopologicalSpace M]

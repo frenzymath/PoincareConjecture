@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.WeakEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem integral_target_eq_integral_pullback_density_of_measurable
     (g : RiemannianMetric n M)
@@ -65,7 +56,6 @@ theorem integral_target_eq_integral_pullback_density_of_measurable
   simp [pullbackVolumeDensity, ENNReal.toReal_ofReal, Real.sqrt_nonneg,
     smul_eq_mul, mul_comm]
 
-
 theorem memLp_pullback_density
     (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -86,8 +76,6 @@ theorem memLp_pullback_density
   apply MemLp.ae_eq (hf_Lp := (Lp.memLp v).restrict e.target)
   filter_upwards [ae_restrict_mem e.open_target.measurableSet] with y hy
   simp only [Function.comp_apply, e.right_inv hy]
-
-
 
 theorem memLp_pullback_on_compact
     (g : RiemannianMetric n M)
@@ -135,8 +123,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem weakEigen_integral_laplacian_coordinates
     (u : H1Zero D Ω) (lambda : ℝ)

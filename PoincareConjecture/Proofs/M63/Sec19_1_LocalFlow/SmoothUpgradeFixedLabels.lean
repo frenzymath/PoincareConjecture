@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.ImmersedCurveComposition
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessEmbeddedCurve
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem smoothShrinkingCurve_of_fixed_relabeling_and_smooth_slice
     (F : RicciFlow n M (Icc a b))

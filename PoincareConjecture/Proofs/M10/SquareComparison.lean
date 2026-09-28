@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.SquareCoordinates
 import PoincareConjecture.Proofs.M10.ExponentialDifferential
 import PoincareConjecture.Proofs.M10.EndpointMetricContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

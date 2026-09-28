@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalAdaptedField
 import PoincareConjecture.Proofs.M09.PullbackCoordinate
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

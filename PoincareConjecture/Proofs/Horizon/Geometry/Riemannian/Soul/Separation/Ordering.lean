@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Sur
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.EscapeCarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ordering
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,9 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [Nonempty M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem PointSoulData.exists_arbitrarily_small_outer_neck_regions
     (P : PointSoulData g) (D : LeviCivitaData g) (hc : MetricComplete g)

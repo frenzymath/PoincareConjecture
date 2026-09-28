@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
 set_option autoImplicit false
 open Set Topology
 

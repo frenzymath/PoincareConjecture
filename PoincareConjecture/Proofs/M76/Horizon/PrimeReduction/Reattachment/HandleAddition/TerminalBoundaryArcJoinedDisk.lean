@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -119,4 +117,3 @@ theorem exists_original_terminal_joined_disk
     exact hAj.symm.subset.trans inter_subset_right
 
 end PoincareConjecture.M76
-

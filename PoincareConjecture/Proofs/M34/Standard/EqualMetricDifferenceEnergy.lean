@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceEnergy
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 universe u
-
-
 
 theorem actualDifferenceEnergyDensity_eq_zero_of_metric_eq
     {n dH dA dS : ℕ} {M : Type u} [TopologicalSpace M]
@@ -43,9 +31,6 @@ theorem actualDifferenceEnergyDensity_eq_zero_of_metric_eq
       ((D.curvature_eq D' x u v w).trans (curvatureTrilinearMap_apply D' x u v w).symm)
   simp only [actualDifferenceEnergyDensity, sub_self, Proofs.M03.connection_difference_eq_zero,
     hR, map_zero, PiLp.zero_apply, sq, zero_mul, Finset.sum_const_zero, add_zero]
-
-
-
 
 theorem canonicalDifferenceEnergy_eq_zero_of_metric_eq
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

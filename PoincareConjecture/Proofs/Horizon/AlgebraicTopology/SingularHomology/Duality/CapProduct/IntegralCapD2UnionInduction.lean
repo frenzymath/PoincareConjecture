@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.HomologicalAlgebra.ModuleExactDiagram
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ThreeDimensionalSliceDisk
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace Set
 
 variable {X ι : Type*} [TopologicalSpace X] [Finite ι]
-
-
-
 
 theorem IsConnected.eq_member_of_finite_disjoint_closed_cover {S : Set X}
     (hS : IsConnected S) (D : ι → Set X) (hD : ∀ i, IsClosed (D i))
@@ -59,10 +47,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_disk_of_connected_regularSlice (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)

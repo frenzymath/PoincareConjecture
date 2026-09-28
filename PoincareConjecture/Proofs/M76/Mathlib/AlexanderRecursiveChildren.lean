@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveInduction
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityProfiles
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,13 +9,6 @@ namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem exists_decreasing_children_with_level_bounds (P : AlexanderSectionProfile E)
     {s₀ s₁ T₀ T₁ : Set E} (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)
@@ -84,11 +68,6 @@ theorem exists_decreasing_children_with_level_bounds (P : AlexanderSectionProfil
     have h := hpoint c
     rw [hz] at h
     exact hc (by omega)
-
-
-
-
-
 
 theorem exists_decreasing_children (P : AlexanderSectionProfile E)
     {s₀ s₁ T₀ T₁ : Set E} (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁)

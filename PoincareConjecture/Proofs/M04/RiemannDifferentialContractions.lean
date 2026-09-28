@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -297,4 +290,3 @@ theorem riemann_secondCovariantDerivative_divergence (D : LeviCivitaData g) (x :
   linarith only [h0]
 
 end PoincareConjecture.M04
-

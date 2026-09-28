@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureOperator
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderModelJet
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,14 +24,11 @@ private abbrev CSecond := CE →L[ℝ] CFirst
 local instance : NormedAddCommGroup CSecond := ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ CSecond := ContinuousLinearMap.toNormedSpace
 
-
 def cylinderAxialMetricCoefficient : MetricCoefficient 3 :=
   (innerSL ℝ).bilinearComp cylinderAxisProjection cylinderAxisProjection
 
-
 def evolvingCylinderModelCoefficient (u : ℝ) (x : CE) : MetricCoefficient 3 :=
   (1 - u) • cylinderModelMetricCoefficient x + u • cylinderAxialMetricCoefficient
-
 
 theorem evolvingCylinderModelCoefficient_apply (u : ℝ) (x v w : CE) :
     evolvingCylinderModelCoefficient u x v w =
@@ -55,7 +43,6 @@ theorem evolvingCylinderModelCoefficient_apply (u : ℝ) (x v w : CE) :
     cylinderModelMetricCoefficient_apply, haxis]
   ring
 
-
 theorem evolvingCylinderModelCoefficient_basis
     (u : ℝ) (q : UnitTwoSphere) (s : ℝ) (x : CE) (a b : Fin 3) :
     evolvingCylinderModelCoefficient u x
@@ -69,11 +56,9 @@ theorem evolvingCylinderModelCoefficient_basis
     simp [roundCylinderCoordinateBasis, cylinderScalarCoordinates, Matrix.diagonal,
       EuclideanSpace.inner_single_left, mul_comm]
 
-
 theorem contDiff_evolvingCylinderModelCoefficient (u : ℝ) :
     ContDiff ℝ ∞ (evolvingCylinderModelCoefficient u) :=
   (contDiff_cylinderModelMetricCoefficient.const_smul (1 - u)).add contDiff_const
-
 
 theorem evolvingCylinderModelCoefficient_zero_isInvertible
     {u : ℝ} (hu : u < 1) : (evolvingCylinderModelCoefficient u 0).IsInvertible := by
@@ -100,10 +85,8 @@ theorem evolvingCylinderModelCoefficient_zero_isInvertible
   · have hp := sq_pos_of_ne_zero ha
     nlinarith [mul_nonneg htime.le (sq_nonneg ‖(cylinderScalarCoordinateEquiv v).1‖)]
 
-
 def evolvingCylinderModelTwoJet (u : ℝ) : MetricTwoJet 3 :=
   metricTwoJet (evolvingCylinderModelCoefficient u) 0
-
 
 theorem evolvingCylinderModelTwoJet_eq (u : ℝ) :
     evolvingCylinderModelTwoJet u =
@@ -122,14 +105,10 @@ theorem evolvingCylinderModelTwoJet_eq (u : ℝ) :
       (m := ∞) (by simp)).differentiableAt (by simp)).hasFDerivAt.const_smul (1 - u)).fderiv
   exact Prod.ext rfl (Prod.ext (hfirst 0) hsecond)
 
-
-
 theorem continuous_evolvingCylinderModelTwoJet : Continuous evolvingCylinderModelTwoJet := by
   change Continuous (fun u : ℝ => evolvingCylinderModelTwoJet u)
   simp_rw [evolvingCylinderModelTwoJet_eq]
   fun_prop
-
-
 
 theorem exists_half_cylinder_model_curvature_bound :
     ∃ eta : ℝ, 0 < eta ∧ ∃ K : ℝ, 0 < K ∧

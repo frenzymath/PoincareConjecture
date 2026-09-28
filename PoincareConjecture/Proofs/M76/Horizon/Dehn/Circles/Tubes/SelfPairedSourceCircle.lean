@@ -11,7 +11,6 @@ namespace PoincareConjecture.M76.Dehn
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 theorem finitePLInterval_exists_fixedPoint {U : Set E} {a b : E}
     (hU : IsFinitePLBallPair ℝ U {a, b}) (hab : a ≠ b)
     {p : E → E} (hp : ContinuousOn p U) (hpU : MapsTo p U U) :
@@ -42,8 +41,6 @@ theorem finitePLInterval_exists_fixedPoint {U : Set E} {a b : E}
   have h := congrArg (fun z => (alpha z : E)) hqt
   change (alpha (alpha.symm _) : E) = _ at h
   simpa only [alpha.apply_symm_apply] using h
-
-
 
 theorem freeInvolution_exchanges_circle_arcs
     {U V : Set E} {a b : E} (hU : IsFinitePLBallPair ℝ U {a, b})
@@ -110,9 +107,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
-
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_selfpaired_twofold_source_arcs
     [T2Space X] (M : OrdinaryDoubleCurveModel e f R)

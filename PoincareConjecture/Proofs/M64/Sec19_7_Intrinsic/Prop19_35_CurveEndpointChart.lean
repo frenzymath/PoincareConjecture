@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurveEndpointMeasure
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,14 +12,10 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 def m64IntrinsicCurveEndpointParameters
     (e : AnnulusCoordinates → AnnulusCoordinates) (height : ℝ → ℝ)
     (S : Set ℝ) (target : ℝ → AnnulusCoordinates) (T : Set ℝ) : Set ℝ :=
   {t | t ∈ T ∧ ∃ a ∈ S, e !₂[a, height a] = target t}
-
-
 
 theorem m64Intrinsic_curve_endpoint_chart_measure_le
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

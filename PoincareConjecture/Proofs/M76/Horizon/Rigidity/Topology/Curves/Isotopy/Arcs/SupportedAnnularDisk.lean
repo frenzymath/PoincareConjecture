@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Disks.SupportedExtension
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology unitInterval
 

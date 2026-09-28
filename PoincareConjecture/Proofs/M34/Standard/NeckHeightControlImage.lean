@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlBalls
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.M34.Mathlib.CompactPartialImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +16,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {m : ℕ} [ChartedSpace (EuclideanSpace ℝ (Fin m)) X] [IsManifold (𝓡 m) ∞ X]
   [T3Space X] {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem ball_subset_image_recutCarrier_of_tangentNorm_le
     (h : RiemannianMetric m X) (e : OpenPartialHomeomorph M X)

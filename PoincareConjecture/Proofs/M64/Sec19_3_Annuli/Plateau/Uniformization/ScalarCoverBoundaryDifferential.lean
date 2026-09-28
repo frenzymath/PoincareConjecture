@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateClosed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,19 +13,8 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
-
 def scalarCoverPotentialDifferential (J : Plane → Plane →L[ℝ] ℝ) (z : Cover) :
     Cover →L[ℝ] ℝ := (J (scalarCoverMap z)).comp (fderiv ℝ scalarCoverMap z)
-
-
-
-
-
-
 
 theorem scalarCoverPotential_hasFDerivWithinAt_closure
     {H : Plane → ℝ} {J : Plane → Plane →L[ℝ] ℝ} (hHc : Continuous H)
@@ -69,12 +46,6 @@ theorem scalarCoverPotential_hasFDerivWithinAt_closure
   filter_upwards [self_mem_nhdsWithin] with y hy
   exact (hdiff y hy).fderiv.symm
 
-
-
-
-
-
-
 theorem scalar_closed_strip_hasDerivAt_angle
     {W : Cover → ℝ} {B : Cover → Cover →L[ℝ] ℝ}
     (hdW : ∀ z ∈ closure scalarCoverStrip,
@@ -86,12 +57,6 @@ theorem scalar_closed_strip_hasDerivAt_angle
     exact hr
   exact (hdW (r, t) (hline t)).comp_hasDerivAt t
     ((hasDerivAt_const t r).prodMk (hasDerivAt_id t)) (Eventually.of_forall hline)
-
-
-
-
-
-
 
 theorem scalarCoverPotential_boundary_angular_zero
     {H : Plane → ℝ} {J : Plane → Plane →L[ℝ] ℝ} (hHc : Continuous H)

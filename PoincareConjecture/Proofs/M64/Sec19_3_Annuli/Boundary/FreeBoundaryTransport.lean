@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ScalarInterpolation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -38,10 +26,6 @@ private theorem m64PeriodicDegreeOneLift_continuous
     rw [ENNReal.ofReal_mul sigma.lipschitz_nonnegative] at hE
     simpa only [edist_dist, Real.dist_eq, ENNReal.coe_nnreal_eq, NNReal.coe_mk] using hE
   exact hLip.continuous
-
-
-
-
 
 theorem m64FreeBoundaryAreaTransport_of_collars
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

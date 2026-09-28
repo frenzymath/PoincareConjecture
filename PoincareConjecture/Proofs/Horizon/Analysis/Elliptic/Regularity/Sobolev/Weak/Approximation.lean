@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Witnesses
-
-
-
-
-
-
 
 noncomputable section
 
@@ -98,8 +83,6 @@ theorem fderiv_apply_zero_outside_of_tsupport_subset
     (f := fun y => (fderiv ℝ f y) (EuclideanSpace.single i 1))
   · exact (tsupport_fderiv_apply_subset ℝ (EuclideanSpace.single i (1 : ℝ))).trans hsub
   · exact hx
-
-
 
 noncomputable def zeroExtendMemW1pWitnessP
     {Ω : Set E} (hΩ : IsOpen Ω)
@@ -956,8 +939,6 @@ private theorem tendsto_eLpNorm_normedConvolution_sub
           ← ENNReal.ofReal_add (by positivity : 0 ≤ εr / 3 + εr / 3) (by positivity : 0 ≤ εr / 3)]
         simp [hsum, εr, hε_top]
 
-
-
 theorem MemW1pWitness.ae_eq_p
     {Ω : Set E} (hΩ : IsOpen Ω) {p : ℝ} (hp : 1 ≤ p) {f : E → ℝ}
     (hw₁ hw₂ : MemW1pWitness (ENNReal.ofReal p) f Ω) :
@@ -975,7 +956,6 @@ theorem MemW1pWitness.ae_eq_p
   filter_upwards [ae_all_iff.2 hcomp] with x hx
   ext i
   exact hx i
-
 
 theorem MemW1pWitness.ae_eq
     {Ω : Set E} (hΩ : IsOpen Ω) {f : E → ℝ}
@@ -1080,8 +1060,6 @@ private theorem convolution_fderiv_eq_convolution_weakPartial_univ
           simpa [ψ, T, Function.comp, sub_eq_add_neg, add_comm, add_left_comm, add_assoc,
             smul_eq_mul, mul_comm] using
             (MeasureTheory.convolution_lsmul_swap (f := φ) (g := g) (x := x) (μ := volume)).symm
-
-
 
 theorem exists_smooth_compactSupport_W1p_approx_univ
     {p : ℝ} (hp : 1 < p)
@@ -1285,8 +1263,6 @@ private theorem tsupport_mul_smooth_bounded_p_weakGrad_component_subset
       (fun x => η x * hw.weakGrad x i)
       (fun x => (fderiv ℝ η x) (EuclideanSpace.single i 1) * u x)).trans
       (union_subset hfirst hsecond)
-
-
 
 theorem exists_smooth_W1p_approx_of_supportedWitness
     {Ω K : Set E} (hΩ : IsOpen Ω)
@@ -1497,8 +1473,6 @@ theorem exists_smooth_W1p_approx_of_supportedWitness
     exact tendsto_of_tendsto_of_tendsto_of_le_of_le
       tendsto_const_nhds hψ_grad_global hψ_grad_nonneg hψ_grad_bound
 
-
-
 theorem memW01p_of_memW1p_of_tsupport_subset
     {Ω : Set E} (hΩ : IsOpen Ω)
     {p : ℝ} (hp : 1 < p) {u : E → ℝ}
@@ -1564,8 +1538,6 @@ theorem memW01p_of_memW1p_of_tsupport_subset
   simpa [v, hv_eq_u] using
     memW01p_of_global_approx_supported hwCut φ hφ_smooth hφ_compact hφ_sub hφ_fun hφ_grad
 
-
-
 theorem sobolev_of_memW01p_univ
     {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
     {u : E → ℝ}
@@ -1596,6 +1568,5 @@ theorem sobolev_of_memW01p_univ
   simpa [eLpNorm_norm] using
     sobolev_of_approx hp hpd hu_aesm hG_comp_aesm φ
       hφ_smooth hφ_cpt hφ_fun_univ hφ_grad_univ
-
 
 end Poincare.Analysis.Sobolev.Weak

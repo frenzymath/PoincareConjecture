@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Connectedness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology NNReal
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem quotient_preconnected_of_local_source_ball_covers
     {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]

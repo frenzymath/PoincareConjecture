@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereAlphaEnergy_continuous (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
@@ -41,8 +30,6 @@ theorem m60SphereAlphaEnergy_continuous (g : RiemannianMetric n M)
       (f := fun alpha p => (1 + 2 * m60SphereIntrinsicEnergy g f p) ^ alpha)
       (μ := m60RoundSphereMetric.volumeMeasure) hc (s := univ) isCompact_univ)
 
-
-
 theorem m60SphereAlphaEnergy_normalized_tendsto (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     {alpha : ℕ → ℝ} (ha : Tendsto alpha atTop (𝓝 1)) :
@@ -56,10 +43,6 @@ theorem m60SphereAlphaEnergy_normalized_tendsto (g : RiemannianMetric n M)
       m60SphereEnergy g f := by ring
   rw [heq] at h'
   exact h'
-
-
-
-
 
 theorem m60PerturbedMinimizers_energy_tendsto (g : RiemannianMetric n M)
     (alpha : ℕ → ℝ) (f : ℕ → UnitTwoSphere → M)

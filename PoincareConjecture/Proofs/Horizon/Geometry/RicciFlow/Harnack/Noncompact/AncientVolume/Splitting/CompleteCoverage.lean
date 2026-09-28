@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.GeometricLine
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,8 +63,6 @@ private theorem pathELength_comp_le_on_interval
     mfderiv_comp_apply t (hf t ht) (hγ.mdifferentiable (by simp) t) 1
   exact (ENNReal.ofReal_le_ofReal (by rw [hchain]; exact hbound t ht _)).trans_eq
     (ENNReal.ofReal_mul hC)
-
-
 
 theorem source_ball_coverage_of_metricComplete_zero
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -201,9 +190,6 @@ theorem source_ball_coverage_of_metricComplete_zero
   obtain ⟨x, hx, heq⟩ := htK
   rw [← heq, hleft x hx] at hsmall
   exact ⟨x, hsmall, heq⟩
-
-
-
 
 theorem exists_isometric_line_of_opposite_segments_of_metricComplete_zero
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

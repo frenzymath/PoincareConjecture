@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.TangentChartPhase
 import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M09.SmoothPartials
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

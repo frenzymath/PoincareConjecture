@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.NeckInnerBall
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckTipExclusion
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialAxialPatch
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_initial_neck_margin (A epsilon : ℝ) (hA : 0 ≤ A)
     (he : 0 < epsilon) :

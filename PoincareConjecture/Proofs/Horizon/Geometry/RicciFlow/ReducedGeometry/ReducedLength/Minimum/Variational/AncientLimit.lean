@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.ChartH1
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +16,6 @@ namespace PoincareConjecture.ReducedLengthMinimum
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
-
 
 noncomputable abbrev referenceMetricSpace (g : RiemannianMetric n M) : MetricSpace M :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -49,8 +37,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_spatial_minimizing_uniform_limit (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :
@@ -96,8 +82,6 @@ theorem exists_spatial_minimizing_uniform_limit (K : AncientKappaSolution 2 M)
   rw [henergy.2]
   exact mul_le_mul_of_nonneg_left
     (hweighted.2.trans (hanti (Nat.zero_le k))) (by norm_num)
-
-
 
 theorem exists_spatial_minimizing_chart_limit (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :

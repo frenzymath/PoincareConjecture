@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.End.Attachment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Positive.Attachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,12 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem positiveCurvatureStrongCappedTubes_of_services
     (P : NoncompactKappaServices.{u}) :
@@ -58,7 +43,6 @@ theorem positiveCurvatureStrongCappedTubes_of_services
     htubes K cap he hconstant.le (hest.trans (min_le_right _ _)) hstrong
   exact ⟨T, hcoverage⟩
 
-
 theorem positiveCurvatureStrongCappedTubes
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧
@@ -82,7 +66,6 @@ theorem positiveCurvatureStrongCappedTubes
   intro M _ _ _ _ _ _ _ _ _ K hnoncompact hpositive
   obtain ⟨T, _⟩ := hconstructed K hnoncompact hpositive
   exact ⟨T⟩
-
 
 theorem positiveCurvatureCappedEuclidean_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Polygons.TriangleFiber
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.EdgeGeometry
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -14,8 +12,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
-
-
 
 theorem exists_boundary_edge_fiber
     {s : Finset E} (hs : s ∈ (T.marked 2).faces)

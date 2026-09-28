@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 noncomputable def liftFlowCarrier {n : ℕ} (C : FlowCarrier.{0} n) :
     FlowCarrier.{u} n := by
@@ -52,9 +40,6 @@ noncomputable def liftFlowCarrier {n : ℕ} (C : FlowCarrier.{0} n) :
     t3Space := inferInstance
     secondCountable := Homeomorph.ulift.secondCountableTopology
     connected := isConnected_univ }
-
-
-
 
 noncomputable def liftBlowupLimit {J : Set ℝ}
     (L : BlowupLimitFlow.{0} J) : BlowupLimitFlow.{u} J := by
@@ -97,9 +82,6 @@ noncomputable def liftBlowupLimit {J : Set ℝ}
       intro t ht x
       rw [L.flow.ulift_curvatureTensorNorm t x]
       exact hbound t ht x.down }
-
-
-
 
 theorem liftBlowupLimit_noncollapsed {J : Set ℝ}
     (L : BlowupLimitFlow.{0} J) {kappa : ℝ}

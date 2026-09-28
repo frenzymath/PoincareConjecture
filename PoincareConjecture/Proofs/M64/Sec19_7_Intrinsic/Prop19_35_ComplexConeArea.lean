@@ -3,18 +3,6 @@ import Mathlib.Analysis.Complex.Angle
 import Mathlib.Analysis.Complex.Isometry
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +11,6 @@ open Set MeasureTheory InnerProductGeometry
 open scoped ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_complex_reference_angle
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) Real.pi) :
@@ -43,10 +27,6 @@ theorem m64Intrinsic_complex_reference_angle
     simpa only [Complex.ofReal_cos, Complex.ofReal_sin] using
       (Complex.arg_cos_add_sin_mul_I ⟨by linarith [Real.pi_pos, ha.1], ha.2.le⟩)
   rw [Complex.angle_one_left hne, harg, abs_of_pos ha.1]
-
-
-
-
 
 theorem m64Intrinsic_complex_reference_cone_volume
     {R a : ℝ} (hR : 0 < R) (ha : a ∈ Ioo (0 : ℝ) Real.pi) :

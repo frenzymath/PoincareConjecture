@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactPotential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -30,7 +21,6 @@ private theorem continuous_heatScaled_time {f : ℝ → BoundedContinuousFunctio
   exact tendsto_heatScaled_of_tendsto
     (continuous_const.sub continuous_id).continuousAt hf.continuousAt x
 
-
 theorem heatDuh_sub_of_continuous {t : ℝ} (ht : 0 < t)
     (f q : ℝ → BoundedContinuousFunction V F) (hf : Continuous f) (hq : Continuous q)
     (x : V) :
@@ -48,7 +38,6 @@ private theorem heatScaled_sum {ι : Type*} (s : Finset ι) (t : ℝ)
   | empty => simp [heatScaled]
   | @insert i s hi ih => simp only [Finset.sum_insert hi, heatScaled_add, ih]
 
-
 theorem heatDuh_sum_of_continuous {ι : Type*} {t : ℝ} (ht : 0 < t) (s : Finset ι)
     (f : ι → ℝ → BoundedContinuousFunction V F) (hf : ∀ i ∈ s, Continuous (f i))
     (x : V) :
@@ -56,7 +45,6 @@ theorem heatDuh_sum_of_continuous {ι : Type*} {t : ℝ} (ht : 0 < t) (s : Finse
   simp only [heatDuh_eq_integral_heatScaled ht, heatScaled_sum]
   exact intervalIntegral.integral_finsetSum
     (fun i hi => (continuous_heatScaled_time (hf i hi) t x).intervalIntegrable 0 t)
-
 
 theorem heatDuh_map_of_continuous [CompleteSpace F] {G : Type*}
     [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
@@ -92,8 +80,6 @@ theorem hasCompactSupport_spatialDirectional {f : V × ℝ → F}
     HasCompactSupport (fun p => spatialDerivative f p v) :=
   (hasCompactSupport_spatialDerivative hc).comp_left (g := fun L : V →L[ℝ] F => L v) (by simp)
 
-
-
 theorem heatDuh_compactSlice_spatialDirectional {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) (x v : V) :
     Kernel.heatDuh t
@@ -109,9 +95,6 @@ theorem heatDuh_compactSlice_spatialDirectional {f : V × ℝ → F}
   rw [Kernel.heatDuh_map_of_continuous ht L du
     (continuous_compactSlice (contDiff_spatialDerivative hf) (hasCompactSupport_spatialDerivative hc))]
   congr 1
-
-
-
 
 theorem eq_heatDuh_sub_sum_fderiv_of_residual_divergence {ι : Type*} [Fintype ι]
     {w f : V × ℝ → F} (q : ι → V × ℝ → F) (e : ι → V)

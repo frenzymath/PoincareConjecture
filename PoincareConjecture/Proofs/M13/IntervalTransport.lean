@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.M13IntervalGeometry
 import PoincareConjecture.Proofs.M13.IntervalSmooth
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

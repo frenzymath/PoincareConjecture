@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Lift
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceModelTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {M : Type u} {X : Type (max u v)}
   [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
-
-
-
 
 noncomputable def capModel_transport_lift
     {kind : CapModelKind} {p : RealProjectiveThree}
@@ -98,8 +86,6 @@ noncomputable def capModel_transport_lift
     exact fun y _ => K.inverse_mem (d y)
 
 variable [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem nonempty_cap_image_model {g : RiemannianMetric 3 M} (N : CapCertificate g)
     (e : OpenPartialHomeomorph M X)

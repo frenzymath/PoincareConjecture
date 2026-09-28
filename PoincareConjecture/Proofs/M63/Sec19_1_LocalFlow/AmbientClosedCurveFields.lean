@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientLabelVelocity
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessAmbientAcceleration
 import PoincareConjecture.Proofs.M63.Mathlib.RetractionTangentContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem ambientCurve_embeddedCurvature_eq (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -80,9 +68,6 @@ theorem ambientCurve_embeddedCurvature_eq (F : RicciFlow n M (Icc a b))
     A x • deriv (deriv f) x + B x + (deriv A x / 2) • deriv f x
   rw [hcurv, hB, hlabel, smul_sub, neg_smul]
   abel
-
-
-
 
 theorem ambientCurve_closed_fields (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

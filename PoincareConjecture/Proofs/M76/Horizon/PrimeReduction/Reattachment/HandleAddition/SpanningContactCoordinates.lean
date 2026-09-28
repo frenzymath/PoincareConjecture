@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SphereExteriorSurfaceGerms
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.CompatibleChartLabels
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -60,6 +58,4 @@ theorem coordinate_crossings_of_original_paired_charts
   · intro y hy
     exact hHF (Q.symm y) hy.1.1.2
 
-
 end PoincareConjecture.M76
-

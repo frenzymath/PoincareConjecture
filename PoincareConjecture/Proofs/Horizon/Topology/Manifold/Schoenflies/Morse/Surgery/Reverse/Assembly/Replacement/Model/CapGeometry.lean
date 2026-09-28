@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.CapTruncation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -84,8 +82,6 @@ theorem transported_cap_zero_projection
   rw [projection_liftPlaneDiffeomorph]
   exact mem_image_of_mem A (mem_sphere_zero_iff_norm.mpr
     (norm_boundedCylinder_projection_eq_one_of_height_belt v hv p (by rw [ht]; norm_num)))
-
-
 
 theorem exists_ambient_two_caps_of_opposite_scales
     {v : E3} (hv : ‖v‖ = 1) (b s d : Real) (hs : s ≠ 0) (hd : d ≠ 0)

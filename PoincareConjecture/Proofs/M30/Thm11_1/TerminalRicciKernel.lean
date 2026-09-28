@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_1.TerminalNullPlane
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Rank
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ universe u
 namespace PoincareConjecture.M30
 
 open RicciFlow.Splitting
-
-
-
 
 theorem ricciNullity_eq_one_of_finite_terminal_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]

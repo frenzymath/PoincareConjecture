@@ -1,13 +1,6 @@
 import Mathlib.Order.Preorder.Finite
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

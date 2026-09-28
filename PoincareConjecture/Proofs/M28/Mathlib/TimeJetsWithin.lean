@@ -2,23 +2,10 @@ import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem derivWithin_time_slice_eq_within
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -37,9 +24,6 @@ theorem derivWithin_time_slice_eq_within
   change derivWithin (f ∘ fun s => (s, x)) J t = _
   rw [h.derivWithin (hJ t ht)]
   rw [iteratedFDerivWithin_one_apply ((hJ.prod hU.uniqueDiffOn) (t, x) ⟨ht, hx⟩)]
-
-
-
 
 theorem TendstoUniformlyOn.derivWithin_time_slice
     {E F α : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

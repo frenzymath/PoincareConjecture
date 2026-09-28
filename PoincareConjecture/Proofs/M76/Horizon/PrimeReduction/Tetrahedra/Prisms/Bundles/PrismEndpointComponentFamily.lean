@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.RawPrismRescalingInjection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointInwardComponent
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

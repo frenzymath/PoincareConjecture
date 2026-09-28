@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Polygons.FinitePLRet
 import PoincareConjecture.Proofs.M76.PrimeReduction.InnermostReturningBigon
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.InnermostReturningContacts
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

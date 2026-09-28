@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarCutCarrier
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainIntersection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem PLDomain.nested_collar_cut
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

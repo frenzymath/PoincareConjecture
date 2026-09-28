@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.NoncompactMaximum
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +23,6 @@ private lemma quadratic_bound_nonpos {N C k T s Y : ℝ}
   apply (mul_le_mul_iff_right₀ (show 0 < 2 * N by positivity)).mp
   field_simp
   nlinarith [mul_nonneg (mul_nonneg hk hs) hY0.le]
-
-
 
 theorem weighted_quadratic_bound_on_interval
     {X : Type*} [TopologicalSpace X] {q qt : X → ℝ → ℝ} {η : X → ℝ}
@@ -82,8 +78,6 @@ theorem weighted_quadratic_bound_on_interval
     dsimp [F', F]
     have hweight : 0 < (t - a) * η x := mul_pos hs hηpos
     nlinarith
-
-
 
 theorem weighted_quadratic_bound
     {X : Type*} [TopologicalSpace X] {q qt : X → ℝ → ℝ} {η : X → ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.SpaceformIncidentAssembly
 import PoincareConjecture.Proofs.M38.LateSphericalIncident
 import PoincareConjecture.Proofs.M38.RoundComponentSpaceforms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (x : eventDiscardedOpen F T hT) (t : Ico (F.event T hT).tMinus T)
-
-
 
 theorem spaceform_incident_assembly_of_late_chart
     (Q : GeneralizedSliceCarrier.{u}) (S : SurgeryPositiveSpaceform Q)
@@ -50,8 +39,6 @@ theorem spaceform_incident_assembly_of_late_chart
   intro y hy
   exact ⟨mem_univ _, hsource ⟨y, hy, rfl⟩⟩
 
-
-
 theorem spaceform_incident_assembly_of_closed_projective
     {U : Set (F.slice t.val).carrier}
     (C : ClosedComponentCertificate .realProjectiveThree U)
@@ -71,8 +58,6 @@ theorem spaceform_incident_assembly_of_closed_projective
     d.toOpenPartialHomeomorph d.contMDiffOn_toFun d.contMDiffOn_invFun
   exact hsource.trans hU.subset
 
-
-
 theorem spaceform_incident_assembly_of_round_component
     (C : SingularRoundComponent (F.metric t.val) F.parameters.epsilon)
     (hsource : (F.event T hT).pre_identify t ''
@@ -89,8 +74,6 @@ theorem spaceform_incident_assembly_of_round_component
   apply spaceform_incident_assembly_of_late_chart F T hT P x t Q S
     d.toOpenPartialHomeomorph d.contMDiffOn_toFun d.contMDiffOn_invFun
   exact hsource.trans C.component_eq.subset
-
-
 
 theorem spaceform_incident_assembly_of_c_component
     (C : SingularCComponent (F.metric t.val) (F.connection t.val) F.parameters.C)

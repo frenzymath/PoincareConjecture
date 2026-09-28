@@ -6,13 +6,6 @@ import Mathlib.MeasureTheory.Measure.SeparableMeasure
 import Mathlib.Analysis.Normed.Lp.SmoothApprox
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ open MeasureTheory Set Filter Topology
 open scoped intervalIntegral ContDiff
 
 namespace PoincareConjecture.M08
-
 
 theorem exists_finite_weak_subsequence {ι : Type*} [Fintype ι] {H : ι → Type*}
     [∀ i, NormedAddCommGroup (H i)] [∀ i, InnerProductSpace ℝ (H i)]
@@ -128,7 +120,6 @@ private theorem chart_integral_as_setIntegral {a b t : ℝ} (ht : t ∈ Icc a b)
   rw [Measure.restrict_restrict_of_subset (Icc_subset_Icc_right ht.2),
     integral_Icc_eq_integral_Ioc, intervalIntegral.integral_of_le ht.1]
 
-
 theorem chart_primitive_of_weak_limit {a b : ℝ}
     (u : ℕ → ℝ → E) (g : ℝ → E) (v : ℕ → ChartL2 E a b) (w : ChartL2 E a b)
     (hprimitive : ∀ k t, t ∈ Icc a b → u k t = u k a + ∫ s in a..t, v k s)
@@ -156,7 +147,6 @@ theorem chart_primitive_of_weak_limit {a b : ℝ}
     simpa only [inner_add_right, hprimitive _ _ ht] using hsum
   exact tendsto_nhds_unique
     (Filter.Tendsto.inner (𝕜 := ℝ) tendsto_const_nhds (hpoint t ht)) hsum'
-
 
 theorem chart_primitive_ae_hasDerivAt {a b : ℝ} (hab : a ≤ b)
     (u : ℝ → E) (w : ChartL2 E a b)

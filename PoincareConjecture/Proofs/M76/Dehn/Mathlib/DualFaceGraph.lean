@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrimalFaceGraph
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTriangleEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
@@ -17,8 +8,6 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 variable {V : Type*} [Fintype V] (A : PreAbstractSimplicialComplex V)
   (T : SimpleGraph V)
   (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)
-
-
 
 theorem complementaryTriangleEdgeEquiv_subset
     (s : (complementaryTriangleGraph A T).edgeSet) (q : Triangle A) (hq : q ∈ s.val) :
@@ -29,7 +18,6 @@ theorem complementaryTriangleEdgeEquiv_subset
 
 open Classical in
 
-
 theorem complementaryTriangleEdgeEquiv_cofaces
     (s : (complementaryTriangleGraph A T).edgeSet) :
     triangleCofaces A (complementaryTriangleEdgeEquiv A T hcofaces s).val =
@@ -37,27 +25,18 @@ theorem complementaryTriangleEdgeEquiv_cofaces
   complementary_edge_cofaces A T hcofaces s _
     (complementaryTriangleEdgeEquiv_subset A T hcofaces s)
 
-
-
-
 noncomputable def dualFaceLabel :
     Triangle A ⊕ (complementaryTriangleGraph A T).edgeSet → A.faces
   | Sum.inl q => ⟨q.val, q.property.1⟩
   | Sum.inr s => ⟨(complementaryTriangleEdgeEquiv A T hcofaces s).val.val,
       (complementaryTriangleEdgeEquiv A T hcofaces s).val.property.1⟩
 
-
-
 theorem dualFaceLabel_triangle_card (q : Triangle A) :
     (dualFaceLabel A T hcofaces (Sum.inl q)).val.card = 3 := q.property.2
-
-
 
 theorem dualFaceLabel_edge_card (s : (complementaryTriangleGraph A T).edgeSet) :
     (dualFaceLabel A T hcofaces (Sum.inr s)).val.card = 2 :=
   (complementaryTriangleEdgeEquiv A T hcofaces s).val.property.2
-
-
 
 theorem dualFaceLabel_injective : Function.Injective (dualFaceLabel A T hcofaces) := by
   intro x y h
@@ -88,9 +67,6 @@ private theorem dualFaceLabel_mixed_adj
       simp only [triangleCofaces, Finset.mem_filter, Finset.mem_univ, true_and]
     _ ↔ q ∈ s.val := by rw [h, Sym2.mem_toFinset]
 
-
-
-
 noncomputable def dualFaceGraphEmbedding :
     (complementaryTriangleGraph A T).incidenceSubdivision ↪g A.faceInclusionGraph where
   toFun := dualFaceLabel A T hcofaces
@@ -109,8 +85,6 @@ noncomputable def dualFaceGraphEmbedding :
         change (dualFaceLabel A T hcofaces (Sum.inr s)).val.card =
           (dualFaceLabel A T hcofaces (Sum.inr t)).val.card
         rw [dualFaceLabel_edge_card, dualFaceLabel_edge_card]))
-
-
 
 theorem isTree_induce_dualFaceLabels (htree : (complementaryTriangleGraph A T).IsTree) :
     (A.faceInclusionGraph.induce (Set.range (dualFaceLabel A T hcofaces))).IsTree :=

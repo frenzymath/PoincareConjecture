@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryLiftAlgebra
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,8 +7,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture.M64
-
-
 
 def normalizedDegreeOneLift (sigma : M64PeriodicDegreeOneLift) :
     M64PeriodicDegreeOneLift where
@@ -35,8 +21,6 @@ def normalizedDegreeOneLift (sigma : M64PeriodicDegreeOneLift) :
     congr 1
     ring
 
-
-
 theorem normalizedDegreeOneLift_zero (sigma : M64PeriodicDegreeOneLift) :
     (normalizedDegreeOneLift sigma).map 0 ∈ Ico (0 : ℝ) curvePeriod := by
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
@@ -45,16 +29,11 @@ theorem normalizedDegreeOneLift_zero (sigma : M64PeriodicDegreeOneLift) :
   change 0 ≤ sigma.map 0 - _ ∧ sigma.map 0 - _ < curvePeriod
   constructor <;> linarith
 
-
-
 theorem normalizedDegreeOneLift_trace {X : Type*} {c : ℝ → X}
     (hc : Function.Periodic c curvePeriod) (sigma : M64PeriodicDegreeOneLift) :
     c ∘ (normalizedDegreeOneLift sigma).map = c ∘ sigma.map := by
   funext x
   exact hc.sub_int_mul_eq ⌊sigma.map 0 / curvePeriod⌋
-
-
-
 
 theorem monotone_period_shift_bounds
     {f : ℝ → ℝ} {P : ℝ} (hP : 0 < P) (hm : Monotone f)
@@ -79,8 +58,6 @@ theorem monotone_period_shift_bounds
     simpa only [Int.cast_add, Int.cast_one] using hz (z + 1)
   rw [hznext] at hright
   exact ⟨by linarith [hzero.1], by linarith [hzero.2]⟩
-
-
 
 theorem normalizedDegreeOneLift_bounds (sigma : M64PeriodicDegreeOneLift) (x : ℝ) :
     (normalizedDegreeOneLift sigma).map x ∈ Icc (x - curvePeriod) (x + 2 * curvePeriod) :=

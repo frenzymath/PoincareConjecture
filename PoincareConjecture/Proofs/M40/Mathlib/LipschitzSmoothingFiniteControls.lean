@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingLocal
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingPatchEstimate
 import PoincareConjecture.Proofs.M40.Mathlib.CompactChartMargin
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Metric MeasureTheory
@@ -28,10 +17,6 @@ variable {ι X N E F : Type*} [Finite ι]
   {V : ι → Type*} [∀ i, NormedAddCommGroup (V i)]
   [∀ i, NormedSpace ℝ (V i)] [∀ i, CompleteSpace (V i)]
   {μ : Measure E} [μ.IsAddHaarMeasure]
-
-
-
-
 
 theorem exists_convolution_finite_chart_controls
     (K : ι → Set X) (hK : ∀ i, IsCompact (K i))
@@ -120,9 +105,6 @@ theorem exists_convolution_finite_chart_controls
     hHrange 1 ⟨zero_le_one, le_rfl⟩ i hx
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
-
-
-
 
 theorem exists_finite_chart_translation_radius
     (e : OpenPartialHomeomorph X E) (K O : ι → Set X)

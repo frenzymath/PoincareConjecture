@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMovingModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +25,6 @@ noncomputable local instance capSphereTwoJetNorm : NormedAddCommGroup (MetricTwo
 noncomputable local instance capSphereTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
 
-
-
 theorem exists_cap_sphere_buffer {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta : ℝ}
     (htheta0 : 0 ≤ theta) (htheta : theta < 1) (A0 : ℝ) :
@@ -51,8 +40,6 @@ theorem exists_cap_sphere_buffer {g0 : StandardInitialMetric}
     M44.exists_standard_sphere_margin standard htheta0 htheta
   obtain ⟨A, hA, hA0, hball⟩ := M44.StandardCylinderPatch.exists_sphere_ball N g0 A0
   exact ⟨A, hA, hA0, length, center, N, delta, hdelta, hball, hmargin⟩
-
-
 
 theorem exists_actualCap_sphere_twoJet_tail {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A : ℝ}

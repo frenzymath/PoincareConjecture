@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +27,6 @@ theorem cap_tensorEvaluation_contDiff {r : ℕ}
     (fun i => normal_constant_field_smooth (v i))
   exact contMDiff_iff_contDiff.mp (contMDiffOn_univ.mp h)
 
-
 theorem cap_covariantTensorDerivative_normal
     {g : RiemannianMetric n V} (D : LeviCivitaData g) {r : ℕ}
     (T : CovariantTensorEvaluation n V r) (hT : IsSmoothCovariantTensor T)
@@ -58,8 +48,6 @@ theorem cap_covariantTensorDerivative_normal
   obtain ⟨A, hA⟩ := hT.1 x
   simp only [hA, A.map_update_zero, Finset.sum_const_zero, sub_zero]
   rfl
-
-
 
 theorem cap_metric_fderiv_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0)
@@ -92,9 +80,6 @@ theorem cap_metric_fderiv_normal
     x hzero]
   change _ = fderiv ℝ (fun y => g1.inner y v w - g0.inner y v w) x u
   rw [fderiv_fun_sub (hmetric g1) (hmetric g0), sub_apply, hpair, sub_zero]
-
-
-
 
 theorem cap_secondCovariantTensorDerivative_normal
     {g : RiemannianMetric n V} (D : LeviCivitaData g) {r : ℕ}

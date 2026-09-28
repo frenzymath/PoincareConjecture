@@ -3,25 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Evolu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Analysis.ExponentialComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.CalibratedTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -34,7 +15,6 @@ namespace PoincareConjecture.SurgeryVolume
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J)
-
 
 theorem pullbackJacobian_le_exp_mul
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n))
@@ -55,8 +35,6 @@ theorem pullbackJacobian_le_exp_mul
     linarith [hscalar t ⟨ht.1.le, ht.2.le⟩]
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem calibratedMetricVolume_image_le_exp_mul
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -83,8 +61,6 @@ theorem calibratedMetricVolume_image_le_exp_mul
     _ = _ := lintegral_const_mul' _ _ ENNReal.ofReal_ne_top
 
 variable [SecondCountableTopology M]
-
-
 
 theorem calibratedMetricVolume_le_exp_mul
     {a b k : ℝ} (hab : a ≤ b) (hJ : Icc a b ⊆ J)

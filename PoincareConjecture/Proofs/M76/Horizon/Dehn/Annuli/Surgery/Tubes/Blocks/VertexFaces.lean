@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalVertexFaces
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Joints.IncidentJoints
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -40,7 +38,6 @@ theorem ComponentBranchModel.vertex_dual_subset_star
 
 open Classical in
 set_option maxHeartbeats 800000 in
-
 
 theorem ComponentBranchModel.local_vertex_faces
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

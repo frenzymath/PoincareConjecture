@@ -13,7 +13,6 @@ local notation "P2" => (ℝ × ℝ)
 
 open Classical in
 
-
 theorem ComponentBranchModel.exists_local_vertex_block_map
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -141,4 +140,3 @@ theorem ComponentBranchModel.exists_local_vertex_block_map
     exact signed_prism_end_preimage (by cases b <;> simp) map (G b) (hEnd b) z
 
 end PoincareConjecture.M76.Dehn
-

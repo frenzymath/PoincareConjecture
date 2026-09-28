@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M04.SecondBianchi
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -446,4 +440,3 @@ theorem ricci_secondCovariantDerivative_contracted {g : RiemannianMetric n M}
   simpa only [hterm, K, LeviCivitaData.iteratedCovariantTensorDerivative] using ht.symm
 
 end PoincareConjecture.M04
-

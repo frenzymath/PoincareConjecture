@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_interval_breakpoints {f : ℝ → F} {l u : ℝ}
     (hf : FinitePiecewiseAffineOn f (Icc l u)) (hlu : l ≤ u) :
@@ -65,10 +52,6 @@ theorem FinitePiecewiseAffineOn.exists_interval_breakpoints {f : ℝ → F} {l u
     rw [segment_eq_Icc (Finset.min'_le t _ hmax)] at hsegment
     obtain ⟨A, hA⟩ := hfaces t ht
     exact ⟨A, hA.mono (fun z hz => hsegment ⟨hleft.trans hz.1, hz.2.trans hright⟩)⟩
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_affine_segment_breakpoints [FiniteDimensional ℝ E]
     {f : E → F} {s : Set E} (hf : FinitePiecewiseAffineOn f s)

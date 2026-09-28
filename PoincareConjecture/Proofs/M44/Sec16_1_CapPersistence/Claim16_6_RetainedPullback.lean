@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedRi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_GeodesicTransport
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothLocalFactorization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,17 +25,12 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T b : ℝ}
 
-
-
 noncomputable def retainedPullbackCoefficients
     (event : SurgeryEventData g0 K P slice metric T)
     (G : RicciFlow 3 (slice T).carrier (Icc T b))
     (A : E → (slice event.tMinus).carrier) (p : ℝ × E) : Bilin :=
   if p.1 < T then (event.pre_flow.metric p.1).pullbackCoefficients A p.2
   else (G.metric p.1).pullbackCoefficients (event.retention.map ∘ A) p.2
-
-
-
 
 theorem retainedPullbackCoefficients_smooth_of_factorization
     (event : SurgeryEventData g0 K P slice metric T)
@@ -100,11 +86,6 @@ theorem retainedPullbackCoefficients_smooth_of_factorization
       ContinuousLinearMap.bilinearComp_apply] using
       (G.metric p.1).pullbackCoefficients_eq_of_comp_germ
         (he.mdifferentiableAt (by simp)) hkx heq' v w
-
-
-
-
-
 
 theorem retainedPullbackCoefficients_smooth
     (event : SurgeryEventData g0 K P slice metric T)

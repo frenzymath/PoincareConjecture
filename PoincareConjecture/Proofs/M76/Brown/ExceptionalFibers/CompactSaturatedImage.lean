@@ -1,14 +1,5 @@
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
-
-
-
 
 theorem isOpen_image_inside_compact (g : C(X, Y)) {Q U : Set X}
     (hQ : IsCompact Q) (hU : IsOpen U) (hUQ : U ⊆ interior Q)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_JointBranches
 import PoincareConjecture.Proofs.M14.Sec6_7_MetricBases
 import PoincareConjecture.Proofs.M14.Mathlib.GramDeterminantSourceEquiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem exponentialJacobian_source_equiv (E : M14ExponentialFamily G T x)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
     (C : G.Horizontal x ≃ₗ[ℝ] G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) :
@@ -37,14 +25,9 @@ theorem exponentialJacobian_source_equiv (E : M14ExponentialFamily G T x)
   let B := ((G.spacetime.horizontalMetric.inner (E.gamma Z s)).toBilinForm).comp A A
   exact sqrt_max_det_bilin_source_equiv b B C
 
-
-
 theorem exponentialJacobian_source_factor_ne_zero
     (C : G.Horizontal x ≃ₗ[ℝ] G.Horizontal x) : |LinearMap.det C.toLinearMap| ≠ 0 :=
   abs_ne_zero.mpr C.isUnit_det'.ne_zero
-
-
-
 
 theorem exists_exponentialJacobian_source_normalization
     (E : M14ExponentialFamily G T x) (b : Module.Basis (Fin n) ℝ (G.Horizontal x))

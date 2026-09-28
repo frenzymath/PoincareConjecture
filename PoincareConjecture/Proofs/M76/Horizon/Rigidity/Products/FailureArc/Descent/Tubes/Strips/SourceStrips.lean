@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalTubeSourceStrips
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.OriginalStripDoubleLocus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

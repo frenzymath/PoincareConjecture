@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   (g : RiemannianMetric n M) {γ : ℝ → M}
 
-
-
 theorem abs_busemannApprox_le_base_distance
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|)
     {t : ℝ} (ht : 0 ≤ t) (x : M) :
@@ -40,14 +25,11 @@ theorem abs_busemannApprox_le_base_distance
 
 variable [MeasurableSpace M] [BorelSpace M]
 
-
 theorem integrable_busemann_mul_compact_test
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|)
     {ψ : M → ℝ} (hψ : Continuous ψ) (hc : HasCompactSupport ψ) :
     Integrable (fun x => g.busemann γ x * ψ x) g.volumeMeasure :=
   ((g.continuous_busemann hγ).mul hψ).integrable_of_hasCompactSupport hc.mul_left
-
-
 
 theorem tendsto_integral_busemannApprox_mul_compact_test
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|)
@@ -66,7 +48,6 @@ theorem tendsto_integral_busemannApprox_mul_compact_test
   · exact ((g.continuous_toReal_edist (γ 0)).mul hψ.norm).integrable_of_hasCompactSupport
       hc.norm.mul_left
   · exact Eventually.of_forall fun x => (g.tendsto_busemannApprox hγ x).mul_const (ψ x)
-
 
 theorem tendsto_integral_busemannApprox_mul_laplacian
     (D : LeviCivitaData g)

@@ -2,8 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
 set_option autoImplicit false
 
 open Manifold Set Filter

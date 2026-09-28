@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicArclength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,10 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff NNReal
 
 namespace PoincareConjecture.M64Uniformization
-
-
-
-
 
 theorem exists_scalar_degree_one_boundary_inverse
     {v : ℝ → ℝ} (hv : ContDiff ℝ 1 v)
@@ -45,11 +29,6 @@ theorem exists_scalar_degree_one_boundary_inverse
     exact (hder x).2
   · intro y
     exact (hderinv y).2
-
-
-
-
-
 
 theorem exists_scalar_periodic_degree_one_lift
     {v : ℝ → ℝ} (hv : ContDiff ℝ 1 v)

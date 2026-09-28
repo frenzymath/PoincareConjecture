@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialBoundaryEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -21,16 +10,12 @@ namespace PoincareConjecture
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 theorem m64Periodic_contDiff_lipschitz {c : ℝ → E}
     (hc : ContDiff ℝ 1 c) (hP : Function.Periodic c curvePeriod) :
     ∃ D : ℝ≥0, LipschitzWith D c := by
   obtain ⟨D, hD, hbound⟩ := m64Periodic_contDiff_deriv_bound hc hP
   exact ⟨⟨D, hD⟩, lipschitzWith_of_nnnorm_deriv_le (hc.differentiable (by simp))
     (fun x => hbound x)⟩
-
-
 
 theorem m64RadialBoundaryPlane_radius {c : ℝ → E}
     (hc : ContDiff ℝ 1 c) (hP : Function.Periodic c curvePeriod) :

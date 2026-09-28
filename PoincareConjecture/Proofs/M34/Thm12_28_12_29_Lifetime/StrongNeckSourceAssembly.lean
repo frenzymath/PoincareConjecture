@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckOrdinaryP
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestriction
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11_exists_sourceStrongNeck
     {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}

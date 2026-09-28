@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianComplementCylinder
 import PoincareConjecture.Proofs.M76.Rigidity.SourceBoundaryCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
 
 theorem polyhedralPL_source_hamiltonComplementCylinder
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hypersurface.Umbili
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +16,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_metric_preserving_sphere_diffeomorph_of_unit_umbilic
     {n : ℕ} (hn : 1 ≤ n) {S : Type*} [TopologicalSpace S]
@@ -96,8 +87,6 @@ theorem exists_metric_preserving_sphere_diffeomorph_of_unit_umbilic
   rw [hdf]
   exact hmetric z v w
 
-
-
 theorem nonempty_chordal_sphere_isometry_of_unit_umbilic
     {n : ℕ} (hn : 1 ≤ n) {S : Type*} [MetricSpace S]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) S] [IsManifold (𝓡 n) ∞ S]
@@ -148,9 +137,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem nonempty_asymptoticLink_chordal_isometry_of_unit_umbilic
     {m n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

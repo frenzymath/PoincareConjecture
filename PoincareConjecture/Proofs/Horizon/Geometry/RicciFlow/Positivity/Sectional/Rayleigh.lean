@@ -4,17 +4,6 @@ import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -109,7 +98,6 @@ theorem isCompact_modelOrthonormalPairs (n : ℕ) :
   intro p hp
   exact ⟨by simpa only [Metric.mem_sphere, dist_zero_right] using hp.1,
     by simpa only [Metric.mem_sphere, dist_zero_right] using hp.2.1⟩
-
 
 set_option maxHeartbeats 2000000 in
 

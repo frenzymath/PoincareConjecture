@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CanonicalDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.BilinearJets
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LocalConvergence
-
-
-
-
-
-
-

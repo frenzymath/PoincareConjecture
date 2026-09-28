@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem exists_potential_gradient_sq_lower_bound
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus) :
@@ -42,8 +30,6 @@ theorem exists_potential_gradient_sq_lower_bound
       (mul_le_mul_of_nonneg_left ((le_abs_self _).trans (hK x)) (by norm_num))
   linarith [hH x]
 
-
-
 theorem exists_gradient_sq_gt_on_superlevel
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)
     (B : ℝ) :
@@ -54,7 +40,6 @@ theorem exists_gradient_sq_gt_on_superlevel
   refine ⟨A + B + 1, ?_⟩
   intro x hx
   linarith [hA x]
-
 
 theorem exists_regular_potential_superlevel
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus) :
@@ -68,7 +53,6 @@ theorem exists_regular_potential_superlevel
   have hp := ha x hx
   simp [hg] at hp
 
-
 theorem exists_potential_minimum (S : GradientShrinkingSolitonData 3 M) :
     ∃ p : M, ∀ x : M, S.potential p ≤ S.potential x := by
   let q : M := Classical.choice (inferInstance : Nonempty M)
@@ -80,7 +64,6 @@ theorem exists_potential_minimum (S : GradientShrinkingSolitonData 3 M) :
   by_cases hx : S.potential x ≤ S.potential q
   · exact hmin hx
   · exact hp.trans (le_of_not_ge hx)
-
 
 theorem exists_potential_gt_of_noncompact
     (S : GradientShrinkingSolitonData 3 M) (hM : ¬ CompactSpace M) (a : ℝ) :
@@ -94,8 +77,6 @@ theorem exists_potential_gt_of_noncompact
     exact h x
   exact isCompact_univ_iff.mp (heq ▸ S.isCompact_potential_sublevel a)
 
-
-
 theorem potential_level_nonempty_of_noncompact
     (S : GradientShrinkingSolitonData 3 M) (hM : ¬ CompactSpace M)
     (p : M) {a : ℝ} (ha : S.potential p ≤ a) :
@@ -104,15 +85,12 @@ theorem potential_level_nonempty_of_noncompact
   obtain ⟨x, hx⟩ := intermediate_value_univ p q S.potential_C2.continuous ⟨ha, hq.le⟩
   exact ⟨x, hx⟩
 
-
 theorem isCompact_potential_level (S : GradientShrinkingSolitonData 3 M) (a : ℝ) :
     IsCompact (S.potential ⁻¹' {a}) := by
   apply (S.isCompact_potential_sublevel a).of_isClosed_subset
     (isClosed_singleton.preimage S.potential_C2.continuous)
   intro x hx
   exact le_of_eq hx
-
-
 
 theorem exists_nonempty_compact_regular_potential_level_of_noncompact
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)
@@ -134,8 +112,6 @@ theorem exists_nonempty_compact_regular_potential_level_of_noncompact
   intro y hy
   apply ha₀ y
   exact (le_max_left _ _).trans (by dsimp [a] at hy ⊢; linarith)
-
-
 
 theorem exists_high_nonempty_compact_regular_potential_levels
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)

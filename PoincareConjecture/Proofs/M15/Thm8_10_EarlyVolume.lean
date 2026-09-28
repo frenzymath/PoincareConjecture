@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Thm1_34_VolumeComparison
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem calibrated_ball_lower_bound_of_tangentNorm_comparison
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -86,9 +74,6 @@ theorem calibrated_ball_lower_bound_of_tangentNorm_comparison
     _ ≤ calibratedMetricVolume g (g.ball p (r / C)) := hvolume _ hsmall hsmall1
     _ ≤ ENNReal.ofReal C ^ n * calibratedMetricVolume h (g.ball p (r / C)) := hmeasure
     _ ≤ _ := mul_le_mul_right (measure_mono hball) _
-
-
-
 
 theorem exists_compact_initial_volume_bound
     (n : ℕ) (hn : 0 < n) (omega : ℝ) (homega : 0 < omega) :

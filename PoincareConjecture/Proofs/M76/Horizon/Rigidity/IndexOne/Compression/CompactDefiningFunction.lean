@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalRelativeDefiningFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -18,8 +9,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X α : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   {e : α → OpenPartialHomeomorph X V3} {N : Set X}
-
-
 
 theorem exists_compact_domain_signed_defining_function
     (he : PLDomain e N) (hN : IsCompact N) :
@@ -60,8 +49,6 @@ theorem exists_compact_domain_signed_defining_function
         iff_of_false (fun h => hx (he.closed.frontier_subset h)) hn.ne,
         iff_of_false (fun h => hx (interior_subset h)) (not_lt_of_ge hn.le),
         iff_of_true hx hn⟩
-
-
 
 theorem exists_compact_domain_relative_defining_function
     (he : PLDomain e N) (hN : IsCompact N) {A U : Set X}

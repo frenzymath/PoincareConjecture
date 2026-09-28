@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelMarkedCircles
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.StandardCriticalLevel
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -37,8 +29,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem exists_physical_model_morse_chart
     (d : TerminalSaddleGeometry M P p e)
@@ -136,8 +126,6 @@ private theorem raw_model_central_level_facts
       exact ⟨hqh.1.le, by linarith [hqh.2]⟩
     · rw [hmodel]
       exact (Saddle.Nested.isConnected_critical_level_of_saddle_latitude hc hz).isPreconnected
-
-
 
 theorem terminal_physical_model_central_level_facts
     (d : TerminalSaddleGeometry M P p e)

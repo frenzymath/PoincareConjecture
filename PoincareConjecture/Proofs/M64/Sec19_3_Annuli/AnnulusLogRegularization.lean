@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.IntegralRegularization
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,11 +27,6 @@ private theorem annulus_second_fderiv_log_add
     ((ha.differentiableAt (by norm_num)).hasFDerivAt.add_const ε).fderiv
   rw [M60.second_fderiv_log (ha.add contDiffAt_const) hpos v,
     hfirst.fderiv_eq, hfirstp]
-
-
-
-
-
 
 theorem m64Annulus_log_add_laplacian_lower_bound
     {a : LoopPlane → ℝ} {O : Set LoopPlane} {p : LoopPlane} {K ε : ℝ}

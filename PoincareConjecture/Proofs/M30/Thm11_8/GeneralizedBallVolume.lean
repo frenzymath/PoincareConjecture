@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedMetricComparison
 import PoincareConjecture.Proofs.M30.Thm11_8.LocalEmbeddingVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem generalized_limit_ball_volume_lower_bound
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

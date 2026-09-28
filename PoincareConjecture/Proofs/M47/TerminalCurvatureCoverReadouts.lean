@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureOrientationCover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.ComponentCover
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting Poincare.Geometry.Manifold.RegularLevel
-
-
 
 theorem terminalCurvature_connected_cover_readouts
     {M : Type*} [TopologicalSpace M]

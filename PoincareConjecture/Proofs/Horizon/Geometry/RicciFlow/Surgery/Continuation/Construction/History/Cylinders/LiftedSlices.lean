@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.RegularSlices
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +16,8 @@ variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
   (e : SurgeryFlowCylinder F C origin scale J U)
   (htime : ∀ s ∈ J, origin + s / scale ∈ W.interval)
 
-
 def liftedForward (s : ℝ) (hs : s ∈ J) : C.carrier → (slice W (origin + s / scale)).carrier :=
   inverse W (origin + s / scale) (htime s hs) ∘ e.forward s hs
-
 
 def liftedInverse (s : ℝ) (hs : s ∈ J) : (slice W (origin + s / scale)).carrier → C.carrier :=
   e.inverse s hs ∘ forward W (origin + s / scale)
@@ -72,7 +61,6 @@ theorem lifted_right_inverse (s : ℝ) (hs : s ∈ J) :
   rintro _ ⟨x, hx, rfl⟩
   rw [lifted_left_inverse W e htime hguard s hs hx]
 
-
 theorem liftedForward_isEmbedding (s : ℝ) (hs : s ∈ J) :
     IsEmbedding (fun x : U => liftedForward W e htime s hs x.val) := by
   have hinv (y : liftedForward W e htime s hs '' U) : liftedInverse W e s hs y.val ∈ U := by
@@ -96,7 +84,6 @@ theorem liftedForward_isEmbedding (s : ℝ) (hs : s ∈ J) :
       continuous_invFun :=
         (liftedInverse_smooth W e htime hguard s hs).continuousOn.domRestrict.subtype_mk hinv }
   exact IsEmbedding.subtypeVal.comp H.isEmbedding
-
 
 theorem lifted_pullbackInner (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)
     (x : C.carrier) (hx : x ∈ U) (v w : TangentSpace (𝓡 3) x) :

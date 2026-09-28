@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.ContinuousLoopComparison
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalMapNaturality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -20,16 +11,12 @@ namespace PoincareConjecture.Proofs.M59
 
 open PoincareConjecture.Proofs.M02
 
-
-
 def basedLoopAdjunction {X : Type*} [TopologicalSpace X]
     (n : Nat) [Nonempty (Fin n)] (x : X) :
     HomotopyGroup.Pi n (GenLoop (Fin 1) X x) GenLoop.const ≃*
       HomotopyGroup.Pi (n + 1) X x :=
   (HomotopyGroup.cubicalAdjunction x).trans
     (HomotopyGroup.reindex x (finSumFinEquiv : Fin n ⊕ Fin 1 ≃ Fin (n + 1)))
-
-
 
 theorem basedLoopAdjunction_naturality
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -51,18 +38,12 @@ namespace CubeBoundaryQuotient
 variable {S : Type*} [TopologicalSpace S] [T2Space S] [LocallyCompactSpace S]
   (q : CubeBoundaryQuotient (Fin 1) S)
 
-
-
-
 def loopHomotopyEquiv {X : Type*} [TopologicalSpace X]
     (n : Nat) [Nonempty (Fin n)] (x : X)
     (hpi : Subsingleton (HomotopyGroup.Pi n X x)) :
     HomotopyGroup.Pi n C(S, X) (ContinuousMap.const S x) ≃*
       HomotopyGroup.Pi (n + 1) X x :=
   (q.continuousLoopEquiv x hpi).symm.trans (basedLoopAdjunction n x)
-
-
-
 
 theorem loopHomotopyEquiv_naturality
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

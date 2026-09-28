@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M27ProductModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -28,7 +20,6 @@ def M27PositiveSectionalCurvature (K : AncientKappaSolution 3 M) (t : ℝ) : Pro
     (K.flow.metric t).inner x a b = 0 →
       0 < (K.flow.connection t).sectionalCurvature x a b
 
-
 structure M27CanonicalCap (K : AncientKappaSolution 3 M)
     (t : ℝ) (x : M) (epsilon C : ℝ) where
   time_mem : t ≤ 0
@@ -37,8 +28,6 @@ structure M27CanonicalCap (K : AncientKappaSolution 3 M)
   constant_le : cap.cap_constant ≤ C
   connection_eq : cap.connection = K.flow.connection t
   contains : x ∈ cap.core
-
-
 
 structure M27CanonicalComponent (K : AncientKappaSolution 3 M) (t C : ℝ) where
   time_mem : t ≤ 0
@@ -65,7 +54,6 @@ structure M27CanonicalComponent (K : AncientKappaSolution 3 M) (t C : ℝ) where
       C * sInf (Set.range (fun x : M =>
         (K.flow.connection t).scalarCurvature x ^ (-1 / 2 : ℝ)))
 
-
 noncomputable def m27RescaledPullbackMetric
     {Z : Type v} [TopologicalSpace Z]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Z] [IsManifold (𝓡 3) ∞ Z]
@@ -73,8 +61,6 @@ noncomputable def m27RescaledPullbackMetric
     (f : Diffeomorph (𝓡 3) (𝓡 3) Z M ∞) : CovariantTensorEvaluation 3 Z 2 :=
   fun z a => scale * g.inner (f z)
     (mfderiv (𝓡 3) (𝓡 3) f z (a 0)) (mfderiv (𝓡 3) (𝓡 3) f z (a 1))
-
-
 
 structure M27EpsilonRoundComponent (K : AncientKappaSolution 3 M)
     (t epsilon : ℝ) where
@@ -105,8 +91,6 @@ structure M27EpsilonRoundComponent (K : AncientKappaSolution 3 M)
           (reference_connection.iteratedCovariantTensorDerivative
             (m27RescaledPullbackMetric (K.flow.metric t) scale identification) (j + 1)) z ^ 2)
       ≤ B
-
-
 
 inductive M27StrongCanonicalNeighborhood (K : AncientKappaSolution 3 M)
     (t : ℝ) (x : M) (epsilon C : ℝ) : Prop where

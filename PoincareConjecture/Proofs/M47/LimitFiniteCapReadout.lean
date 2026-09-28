@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteCapDistance
 import PoincareConjecture.Proofs.M47.TerminalCurvatureScaledSourceCap
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierTangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +29,6 @@ private theorem half_scalar_radius_le {R C : ℝ} (hR : 0 < R) (hC : 0 < C) :
     2 * C * (Real.sqrt 2 * R ^ (-1 / 2 : ℝ)) ≤
         2 * C * (2 * R ^ (-1 / 2 : ℝ)) := hm'
     _ = 4 * C * R ^ (-1 / 2 : ℝ) := by ring
-
-
 
 theorem limitFinite_eventually_scaled_cap_nearby_readout
     {ι : Type*}

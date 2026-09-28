@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_standard_finite_boundary_collar
     {R : Set V3} (hR : IsCompact R) (hRne : R.Nonempty)

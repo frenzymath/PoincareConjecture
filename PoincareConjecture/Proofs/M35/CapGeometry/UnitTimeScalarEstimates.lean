@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.UnitTimeCanonical
 import PoincareConjecture.Proofs.M35.Thm12_28.StrongCanonicalScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem scalar_directional_pullback_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -33,8 +22,6 @@ theorem scalar_directional_pullback_eq (P : M35StandardCapPredecessors)
     ((Proofs.M09.scalarCurvature_contMDiff P.curvature (connection F t)).mdifferentiable
       (by simp) _)
     ((sliceDiffeomorph ht).symm.contMDiff.mdifferentiable (by simp) _) v
-
-
 
 theorem exists_unit_time_scalar_estimates (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀) :

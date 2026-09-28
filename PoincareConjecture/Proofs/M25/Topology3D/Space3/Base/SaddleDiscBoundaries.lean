@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem SaddleLowerLevelData.disc_boundaries_disjoint
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

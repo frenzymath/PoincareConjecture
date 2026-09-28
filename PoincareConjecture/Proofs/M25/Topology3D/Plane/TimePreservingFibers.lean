@@ -1,23 +1,12 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_time_preserving_diffeomorph_fibers
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -3,15 +3,6 @@ import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter LineDeriv
@@ -32,7 +23,6 @@ def zeroExtendL2Fun (f : Lp E 2 (μ.restrict U)) : Lp E 2 μ :=
 
 theorem zeroExtendL2Fun_coe (f : Lp E 2 (μ.restrict U)) :
     zeroExtendL2Fun hU f =ᵐ[μ] U.indicator f := MemLp.coeFn_toLp _
-
 
 def zeroExtendL2 : Lp E 2 (μ.restrict U) →ₗᵢ[ℝ] Lp E 2 μ where
   toFun := zeroExtendL2Fun hU
@@ -83,7 +73,6 @@ theorem contDiff_cutoff_mul (η : 𝓢(ModelE, ℝ)) {U : Set ModelE}
     filter_upwards [notMem_tsupport_iff_eventuallyEq.mp hx] with y hy
     simp only [hy, Pi.zero_apply, zero_mul]
 
-
 def cutoffSchwartz (η : 𝓢(ModelE, ℝ)) (hη : HasCompactSupport η) {U : Set ModelE}
     (hU : IsOpen U) (hηU : tsupport η ⊆ U) (f : ModelE → ℝ)
     (hf : ContDiffOn ℝ ∞ f U) : 𝓢(ModelE, ℝ) :=
@@ -93,7 +82,6 @@ def cutoffSchwartz (η : 𝓢(ModelE, ℝ)) (hη : HasCompactSupport η) {U : Se
     {U : Set ModelE} (hU : IsOpen U) (hηU : tsupport η ⊆ U) (f : ModelE → ℝ)
     (hf : ContDiffOn ℝ ∞ f U) (x : ModelE) :
     cutoffSchwartz η hη hU hηU f hf x = η x * f x := rfl
-
 
 theorem fderiv_cutoff_mul (η : 𝓢(ModelE, ℝ)) {U : Set ModelE}
     (hU : IsOpen U) (hηU : tsupport η ⊆ U) {f : ModelE → ℝ}
@@ -130,7 +118,6 @@ theorem tsupport_firstOrderSchwartz_subset {iota : Type*} [Fintype iota]
   rw [firstOrderSchwartz_apply, fderiv_of_notMem_tsupport ℝ hxf]
   simp
 
-
 theorem firstOrder_cutoffSchwartz {iota : Type*} [Fintype iota]
     (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE)
     (η : 𝓢(ModelE, ℝ)) (hη : HasCompactSupport η) {U : Set ModelE}
@@ -146,7 +133,6 @@ theorem firstOrder_cutoffSchwartz {iota : Type*} [Fintype iota]
   apply Finset.sum_congr rfl
   intro i _
   ring
-
 
 def schwartzMultiplier (η : 𝓢(ModelE, ℝ)) : Lp ℝ 2 (volume : Measure ModelE) →L[ℝ]
     Lp ℝ 2 (volume : Measure ModelE) :=

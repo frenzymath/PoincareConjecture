@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalGraphSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_local_two_sides_within_of_straightening
     {X : Type*} [TopologicalSpace X] {C U V : Set X} {q : X}

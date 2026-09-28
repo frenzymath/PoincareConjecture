@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipSlope
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem nonpos_tendsto_zero_of_nonneg_controlled_drop
     {f q : ℕ → ℝ}
@@ -47,9 +30,6 @@ theorem nonpos_tendsto_zero_of_nonneg_controlled_drop
     filter_upwards [Eventually.of_forall hq_nonpos] with k hk
     linarith
 
-
-
-
 theorem radialMixedCurvatureFactor_tendsto_zero_of_second
     {g : ℕ → RiemannianMetric 3 StandardCapSpace}
     {r : ℕ → ℝ} {ρ : ℝ}
@@ -70,9 +50,6 @@ theorem radialMixedCurvatureFactor_tendsto_zero_of_second
   rw [heq]
   convert! hsecond.neg.div hradius (ne_of_gt hρ) using 1
   simp
-
-
-
 
 theorem intrinsic_second_tendsto_zero_of_lipschitz
     {f q : ℝ → ℝ} {s : ℕ → ℝ} {L : ℝ}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.StereographicIntegral
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem m60RoundSphereMetric_pullbackVolumeDensity (z : LoopPlane) :
     m60RoundSphereMetric.pullbackVolumeDensity m60SphereParameter z =
@@ -36,8 +26,6 @@ theorem m60RoundSphereMetric_pullbackVolumeDensity (z : LoopPlane) :
       simp [EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
   rw [hgram, Matrix.det_diagonal, Fin.prod_univ_two, Real.sqrt_mul_self (by positivity)]
 
-
-
 theorem m60RoundSphereMetric_volume_singleton (p : UnitTwoSphere) :
     m60RoundSphereMetric.volumeMeasure {p} = 0 := by
   let g := m60RoundSphereMetric
@@ -52,8 +40,6 @@ theorem m60RoundSphereMetric_volume_singleton (p : UnitTwoSphere) :
   change (Measure.euclideanHausdorffMeasure 2 : Measure UnitTwoSphere) {p} = 0
   rw [Measure.euclideanHausdorffMeasure_def]
   simp
-
-
 
 theorem m60RoundSphereMetric_integral (φ : UnitTwoSphere → ℝ) (hφ : Continuous φ) :
     (∫ p, φ p ∂m60RoundSphereMetric.volumeMeasure) =
@@ -77,8 +63,6 @@ theorem m60RoundSphereMetric_integral (φ : UnitTwoSphere → ℝ) (hφ : Contin
   rw [← integral_eq_setIntegral hae φ, ht,
     setIntegral_univ] at hi
   simpa only [m60RoundSphereMetric_pullbackVolumeDensity] using hi
-
-
 
 theorem m60RoundSphereMetric_volume_univ :
     m60RoundSphereMetric.volumeMeasure.real univ = 4 * Real.pi := by

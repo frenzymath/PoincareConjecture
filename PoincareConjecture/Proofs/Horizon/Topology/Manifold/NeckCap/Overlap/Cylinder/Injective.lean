@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylinder.Proper
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylinder.FiberSign
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem overlapBarrierMap_injective_of_axial_strictMono (N Q : EpsilonNeck g)
     (hmono : ∀ q : UnitTwoSphere,
@@ -69,8 +58,6 @@ theorem overlapBarrierMap_injective_of_axial_strictMono (N Q : EpsilonNeck g)
   apply Subtype.ext
   rw [← Q.coordinate_map_coordinate_inverse x.property.2,
     ← Q.coordinate_map_coordinate_inverse y.property.2, Prod.ext hang haxis]
-
-
 
 theorem exists_overlapBarrierMap_injective_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

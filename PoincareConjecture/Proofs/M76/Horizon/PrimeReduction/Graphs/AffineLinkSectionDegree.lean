@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.LinkSectionDegree
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_two_segment_germ_of_affine_link_section_ncard
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -81,8 +71,6 @@ theorem exists_two_segment_germ_of_affine_link_section_ncard
     rw [hRs, ← hseg u, ← hseg v, mem_union, hmem, hmem,
       mem_inter_iff, hmem, mem_ofPred_eq, hheight] at hx
     exact hx
-
-
 
 theorem ncard_graph_degree_of_affine_link_section_ncard
     (K G : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hG : G.faces.Finite)

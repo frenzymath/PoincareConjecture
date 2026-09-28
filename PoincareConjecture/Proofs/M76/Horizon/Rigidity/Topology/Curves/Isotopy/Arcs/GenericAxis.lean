@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.Contacts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteCircleRegularValues
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

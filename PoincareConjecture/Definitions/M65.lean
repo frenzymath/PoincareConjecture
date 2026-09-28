@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.M61Width
 import PoincareConjecture.Definitions.Ch18.Deformation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral

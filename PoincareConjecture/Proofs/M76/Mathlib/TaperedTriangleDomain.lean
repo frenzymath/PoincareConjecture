@@ -1,27 +1,13 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TaperedStrip
 
-
-
-
 def domain (β : ℝ) : Set (ℝ × ℝ) :=
   {p | p.1 ∈ Icc 0 1 ∧ p.2 ∈ Icc 0 (β * p.1)}
-
-
 
 theorem convex_domain (β : ℝ) : Convex ℝ (domain β) := by
   let X := LinearMap.fst ℝ ℝ ℝ
@@ -37,9 +23,6 @@ theorem convex_domain (β : ℝ) : Convex ℝ (domain β) := by
     rw [sub_nonpos]
   rw [hset]
   exact h
-
-
-
 
 theorem domain_eq_convexHull {β : ℝ} (hβ : 0 < β) :
     domain β = convexHull ℝ (range ![((0, 0) : ℝ × ℝ), (1, 0), (1, β)]) := by
@@ -62,9 +45,6 @@ theorem domain_eq_convexHull {β : ℝ} (hβ : 0 < β) :
   · apply convexHull_min ?_ (convex_domain β)
     rintro p ⟨i, rfl⟩
     fin_cases i <;> simp [domain, hβ.le]
-
-
-
 
 theorem exists_finite_triangulation {β : ℝ} (hβ : 0 < β) :
     ∃ K : SimplicialComplex ℝ (ℝ × ℝ), K.faces.Finite ∧ K.space = domain β := by

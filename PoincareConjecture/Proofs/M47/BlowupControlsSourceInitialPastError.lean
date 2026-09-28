@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialChartModulus
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialModelJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M47
 open M36 M44 M45
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem source_initial_chart_past_error (P : RicciFlowCurvatureTheory.{u})
     {zeta R K rho a b : ℝ} (hzeta : 0 < zeta) (hzetaSmall : zeta ≤ 1 / 8)

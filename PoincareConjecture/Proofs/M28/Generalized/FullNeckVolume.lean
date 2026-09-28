@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Cente
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Data.Int.Interval
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,9 +37,6 @@ private theorem full_neck_axis_count {A : ℝ} (hA : 2 < A) :
       (⌈A⌉ : ℝ) + 1 - (-(⌈A⌉ : ℝ)) := by exact_mod_cast hcard
   have hceil : (⌈A⌉ : ℝ) < A + 1 := Int.ceil_lt_add_one A
   linarith only [hreal, hceil, hA]
-
-
-
 
 theorem exists_full_neck_volume_upper_constant :
     ∃ cvol : ℝ, 0 < cvol ∧

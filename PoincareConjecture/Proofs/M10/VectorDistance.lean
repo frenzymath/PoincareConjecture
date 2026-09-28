@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.IntrinsicLipschitz
 import Mathlib.Analysis.Normed.Module.HahnBanach
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

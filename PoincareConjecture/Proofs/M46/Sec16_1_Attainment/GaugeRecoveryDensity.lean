@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecoveryAction
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCurve
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem square_density_gauge_germ (j : G.gaugeCover.index)
     (theta : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point)
@@ -49,10 +39,6 @@ theorem square_density_gauge_germ (j : G.gaugeCover.index)
         (fun r => (G.gaugeCover.cylinder j).toSpacetime (theta r, alpha r)) s) = _
   rw [M14.gaugeCurve_projectedVelocity j theta alpha htheta halpha,
     ← (G.gaugeCover.metric j).metric_eq]
-
-
-
-
 
 theorem gauge_recovery_piece_action (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     (j : G.gaugeCover.index) {a b : ℝ} (hab : a ≤ b)

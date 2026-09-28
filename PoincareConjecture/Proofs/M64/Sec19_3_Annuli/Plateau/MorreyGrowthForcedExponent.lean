@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyGrowthPower
 
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -12,8 +7,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
 
 theorem m64Morrey_exists_uniform_power_of_forced_contraction_le
     {rho q D0 D : ℝ} (hrho : 0 < rho) (hq : 0 < q) (hq1 : q < 1)

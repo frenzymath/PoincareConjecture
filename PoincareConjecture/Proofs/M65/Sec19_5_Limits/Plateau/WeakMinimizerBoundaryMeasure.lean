@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.Topology.TietzeExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,14 +11,8 @@ open scoped Topology SchwartzMap ContDiff InnerProductSpace
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m65CircleBoundaryMeasure : Measure LoopPlane :=
   (volume.restrict (Icc (-Real.pi) Real.pi)).map Proofs.M58.angularPoint
-
-
-
 
 noncomputable def m65CircleBoundaryPullback :
     Lp ℝ 2 m65CircleBoundaryMeasure →ₗᵢ[ℝ]
@@ -36,22 +20,13 @@ noncomputable def m65CircleBoundaryPullback :
   ChartLpNative.mapPullbackL2 Proofs.M58.angularPoint
     Proofs.M58.contDiff_angularPoint.continuous.measurable.aemeasurable
 
-
-
-
 theorem m65CircleBoundaryPullback_coe (b : Lp ℝ 2 m65CircleBoundaryMeasure) :
     m65CircleBoundaryPullback b =ᵐ[volume.restrict (Icc (-Real.pi) Real.pi)]
       fun t => b (Proofs.M58.angularPoint t) :=
   ChartLpNative.mapPullbackL2_coe _ _ b
 
-
-
-
 theorem m65CircleBoundaryPullback_closed : IsClosed (range m65CircleBoundaryPullback) :=
   m65CircleBoundaryPullback.isometry.isClosedEmbedding.isClosed_range
-
-
-
 
 theorem m65CircleBoundary_continuous_class (b : C(LoopCircle, ℝ)) :
     ∃ B : Lp ℝ 2 m65CircleBoundaryMeasure,
@@ -99,10 +74,6 @@ private theorem m65CircleBoundary_pairing (b : Lp ℝ 2 m65CircleBoundaryMeasure
       simp only [ht, m65DiskBoundaryTest]
     _ = _ := (integral_map
       Proofs.M58.contDiff_angularPoint.continuous.measurable.aemeasurable hm).symm
-
-
-
-
 
 theorem m65CircleBoundary_trace_unique
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

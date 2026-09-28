@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,7 +19,6 @@ private instance : ConnectedSpace UnitTwoSphere := by
   exact isConnected_sphere
     (by rw [← Module.finrank_eq_rank]; norm_num) 0 (by norm_num)
 
-
 theorem isConnected_central_sphere : IsConnected N.central_sphere := by
   rw [N.central_sphere_eq]
   apply (isConnected_univ.prod (isConnected_singleton : IsConnected ({0} : Set ℝ))).image
@@ -39,7 +28,6 @@ theorem isConnected_central_sphere : IsConnected N.central_sphere := by
   subst s
   exact ⟨Set.mem_univ _, neg_lt_zero.mpr (inv_pos.mpr N.epsilon_pos),
     inv_pos.mpr N.epsilon_pos⟩
-
 
 theorem isConnected_carrier : IsConnected N.carrier := by
   have heq : N.coordinate_map ''
@@ -58,8 +46,6 @@ theorem isConnected_carrier : IsConnected N.carrier := by
       have h := inv_pos.mpr N.epsilon_pos
       linarith))).image
   exact N.coordinate_map_smooth.continuousOn
-
-
 
 theorem subset_one_side_of_isPreconnected {S : Set M} (hS : IsPreconnected S)
     (hcarrier : S ⊆ N.carrier) (havoid : Disjoint S N.central_sphere) :

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedStarFaces
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
-
-
 
 theorem exists_common_face_of_mem_subcomplexes
     (K S T : SimplicialComplex ℝ E) (hS : S ≤ K) (hT : T ≤ K)
@@ -43,9 +30,6 @@ variable (K : SimplicialComplex ℝ E) [Fintype K.faces]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
-
 
 theorem mem_inter_derived_closedStars_iff
     {p q x : E} (hp : {p} ∈ K.faces) (hq : {q} ∈ K.faces) :
@@ -78,8 +62,6 @@ theorem mem_inter_derived_closedStars_iff
       ((K.derivedSubdivision_closedStar_faces c hc hq _).mpr
         ⟨a, ha, hchain, rfl, fun s hs => (hall s hs).2⟩) hx⟩
 
-
-
 theorem pair_mem_faces_of_derivedStars_inter_nonempty
     {p q : E} (hp : {p} ∈ K.faces) (hq : {q} ∈ K.faces)
     (hne : (((K.derivedSubdivision c hc).closedStar p).space ∩
@@ -92,10 +74,6 @@ theorem pair_mem_faces_of_derivedStars_inter_nonempty
     (Finset.insert_subset_iff.mpr
       ⟨(hall s hs).1, Finset.singleton_subset_iff.mpr (hall s hs).2⟩)
     (Finset.insert_nonempty p {q})
-
-
-
-
 
 theorem derived_closedStars_inter_eq_dual_edge
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

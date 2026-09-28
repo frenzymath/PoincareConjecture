@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +11,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_finite_chart_carrier
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -70,8 +59,6 @@ theorem ChartwisePLSphere.exists_finite_chart_carrier
   · intro hxP
     obtain ⟨⟨y, ⟨hyS, hyQ⟩, rfl⟩, _⟩ := hwhole.subset hxP
     simpa only [Q.left_inv hyQ] using hyS
-
-
 
 theorem ChartwisePLSphere.chart_source_cover
     {X ι : Type*} [TopologicalSpace X]

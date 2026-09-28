@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.CutoffIntegralComparison
 import PoincareConjecture.Proofs.M34.Standard.ActualConnectionSpacetimeEnergy
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem exists_uniform_actual_connection_integral_energy_bound
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

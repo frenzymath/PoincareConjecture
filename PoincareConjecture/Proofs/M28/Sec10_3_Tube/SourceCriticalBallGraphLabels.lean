@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialSphereSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem initial_graph_opposite_labels (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)
@@ -70,10 +58,6 @@ theorem initial_graph_opposite_labels (H : CounterexampleNeckFamily E)
       f hf hheight).2.2 hx₀ hx₁
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem eventually_initial_graph_labels_along_path (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)

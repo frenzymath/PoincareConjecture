@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Geometry.Base
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Geometry.SliceData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SliceLabelDifferential
 import PoincareConjecture.Proofs.M11.SliceCharts
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

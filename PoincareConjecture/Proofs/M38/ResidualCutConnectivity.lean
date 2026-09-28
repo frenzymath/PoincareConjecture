@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.PartialCutConnectivity
 import PoincareConjecture.Proofs.M38.EventForest
 import PoincareConjecture.Proofs.M38.SingleCutNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +19,8 @@ variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
 
 include hS
 
-
 theorem selected_not_mem_residual_selection (e : H.graph.edgeSet) : H.capEdge e ∉ S :=
   fun hi => hS hi (Set.mem_range_self e)
-
 
 theorem residual_vertexComponent_adj {x y : EventCutVertex F T hT}
     (hxy : H.graph.Adj x y) :
@@ -45,14 +35,12 @@ theorem residual_vertexComponent_adj {x y : EventCutVertex F T hT}
   · exact (congrArg (partialCutVertexComponent F T hT P S) hx).trans
       (h.symm.trans (congrArg (partialCutVertexComponent F T hT P S) hy).symm)
 
-
 theorem residual_vertexComponent_walk {x y : EventCutVertex F T hT}
     (p : H.graph.Walk x y) :
     partialCutVertexComponent F T hT P S x = partialCutVertexComponent F T hT P S y := by
   induction p with
   | nil => rfl
   | cons hxy p ih => exact (H.residual_vertexComponent_adj S hS hxy).trans ih
-
 
 theorem residual_centers_connected (i : S) :
     ConnectedComponents.mk ((partialCapBall F T hT P S (i, false)).map 0) =
@@ -61,14 +49,12 @@ theorem residual_centers_connected (i : S) :
   obtain ⟨p, _⟩ := H.exists_capPath i.val
   exact H.residual_vertexComponent_walk S hS p
 
-
 theorem residual_singleCut_centers (i : Fin (F.event T hT).cap_count)
     (hi : i ∈ H.residualCaps) :
     ConnectedComponents.mk ((singleCutBall F T hT P S i false).map 0) =
       ConnectedComponents.mk ((singleCutBall F T hT P S i true).map 0) := by
   have hsub : insert i S ⊆ H.residualCaps := Set.insert_subset hi hS
   exact H.residual_centers_connected (insert i S) hsub ⟨i, Set.mem_insert i S⟩
-
 
 theorem residual_singleCut_enclosing_ball (i : Fin (F.event T hT).cap_count)
     (hi : i ∈ H.residualCaps) :

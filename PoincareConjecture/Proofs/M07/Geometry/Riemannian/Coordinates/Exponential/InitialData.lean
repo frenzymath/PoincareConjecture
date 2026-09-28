@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Precompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ theorem isGeodesicOn_chart_curve (g : RiemannianMetric n M) (p : M)
   refine ⟨p, q, w, ?_⟩
   filter_upwards [hs.mem_nhds ht] with u hu
   exact ⟨rfl, hq u hu⟩
-
-
 
 theorem exists_geodesic_initial_data (g : RiemannianMetric n M)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) :
@@ -62,8 +52,6 @@ theorem exists_geodesic_initial_data (g : RiemannianMetric n M)
     rw [hw0] at hd
     exact hd.congr_of_eventuallyEq hq
 
-
-
 theorem IsGeodesicOn.tangentNorm_initial
     {γ : ℝ → M} {s : Set ℝ} (hγ : g.IsGeodesicOn γ s) (h0 : (0 : ℝ) ∈ s)
     {p : M} (hp : γ 0 = p) {v : EuclideanSpace ℝ (Fin n)}
@@ -89,8 +77,6 @@ theorem IsGeodesicOn.tangentNorm_initial
     rw [hp]
     exact mem_extChartAt_target p)
   simpa only [hp] using h
-
-
 
 theorem IsGeodesicOn.edist_le_initial_speed
     {γ : ℝ → M} {a b : ℝ} (hγ : g.IsGeodesicOn γ (Ioo a b))

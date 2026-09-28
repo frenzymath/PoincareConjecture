@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveIncidentAssembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M38
 
 attribute [local instance] SmoothClosedComponentModel.model_topology
   SmoothClosedComponentModel.model_charted SmoothClosedComponentModel.model_manifold
-
-
 
 theorem projectiveDouble_incident_assembly_of_closed_double
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

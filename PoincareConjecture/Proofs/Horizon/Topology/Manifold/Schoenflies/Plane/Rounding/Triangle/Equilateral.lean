@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Triangle
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.AngularCoordinate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +8,6 @@ open Set Function Filter
 open scoped Topology ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
 
 noncomputable def equilateralVertex (j : ℤ) : ℂ :=
   Circle.exp ((2 * Real.pi / 3) * j)
@@ -51,10 +42,8 @@ theorem equilateralVertex_neg_one :
   push_cast
   ring
 
-
 noncomputable def equilateralCorner (ρ : ℝ → ℝ) (s : ℝ) : ℂ :=
   ((1 - 3 * ρ s / 2 : ℝ) : ℂ) + ((Real.sqrt 3 * s / 2 : ℝ) : ℂ) * Complex.I
-
 
 theorem roundedCorner_equilateral_eq (ρ : ℝ → ℝ) (j : ℤ) (s : ℝ) :
     roundedCorner ρ (equilateralVertex j)
@@ -68,12 +57,10 @@ theorem roundedCorner_equilateral_eq (ρ : ℝ → ℝ) (j : ℤ) (s : ℝ) :
     Complex.ofReal_ofNat, Complex.ofReal_neg, Complex.ofReal_one]
   ring
 
-
 theorem roundedVertexPath_equilateral_eq (ρ : ℝ → ℝ) (t : ℝ) :
     roundedVertexPath ρ equilateralVertex t =
       equilateralVertex ⌊t + 1 / 2⌋ * equilateralCorner ρ (t - ⌊t + 1 / 2⌋) :=
   roundedCorner_equilateral_eq ρ _ _
-
 
 theorem smoothAbsolute_le_half_on_corner {ρ : ℝ → ℝ} {δ s : ℝ}
     (hδ : δ < 1 / 4) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)
@@ -84,7 +71,6 @@ theorem smoothAbsolute_le_half_on_corner {ρ : ℝ → ℝ} {δ s : ℝ}
   · have h' : |s| < δ := lt_of_not_ge h
     linarith [(hbound s).2]
 
-
 theorem equilateralCorner_re_pos {ρ : ℝ → ℝ} {δ s : ℝ}
     (hδ : δ < 1 / 4) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)
     (hbound : ∀ t, |t| ≤ ρ t ∧ ρ t ≤ |t| + δ) (hs : |s| ≤ 1 / 2) :
@@ -93,7 +79,6 @@ theorem equilateralCorner_re_pos {ρ : ℝ → ℝ} {δ s : ℝ}
   simp only [equilateralCorner, Complex.add_re, Complex.ofReal_re,
     Complex.mul_re, Complex.ofReal_im, Complex.I_re, Complex.I_im]
   linarith
-
 
 theorem equilateralCorner_rotating_re_pos {ρ : ℝ → ℝ} {δ s : ℝ}
     (hδ : δ < 1 / 4) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)
@@ -120,8 +105,6 @@ theorem equilateralCorner_rotating_re_pos {ρ : ℝ → ℝ} {δ s : ℝ}
   simpa only [Complex.mul_re, Circle.coe_exp, Complex.exp_ofReal_mul_I_re,
     Complex.exp_ofReal_mul_I_im, Real.cos_neg, Real.sin_neg, mul_neg, sub_neg_eq_add]
     using add_pos_of_pos_of_nonneg (mul_pos hreal hcos) him
-
-
 
 theorem roundedEquilateral_rotating_re_pos {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : δ < 1 / 4) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)
@@ -157,7 +140,6 @@ theorem periodic_equilateralVertex : Periodic equilateralVertex 3 := by
       (2 * Real.pi / 3) * j + 2 * Real.pi := by push_cast; ring
   simp only [equilateralVertex, he]
   exact congrArg Subtype.val (Circle.periodic_exp _)
-
 
 noncomputable def roundedEquilateralAngle (ρ : ℝ → ℝ) (t : ℝ) : ℝ :=
   circleAngularCoordinate (LinearIsometryEquiv.refl ℝ ℂ)
@@ -200,7 +182,6 @@ theorem roundedEquilateralAngle_add_three (ρ : ℝ → ℝ) (t : ℝ) :
   simp only [roundedEquilateralAngle, circleAngularCoordinate,
     periodic_roundedEquilateral ρ t, hphase]
   ring
-
 
 theorem norm_roundedEquilateral_mem_Icc {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : δ < 1 / 4) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)

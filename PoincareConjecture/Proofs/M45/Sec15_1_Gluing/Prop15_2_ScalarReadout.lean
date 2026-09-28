@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarFour
 import PoincareConjecture.Proofs.M45.Ch9_Models.LocalScalar
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_CylinderCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -40,25 +32,17 @@ noncomputable local instance scalarReadoutFirstSpace :
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem metricTwoJet_eventuallyEq {A B : E → MetricCoefficient 3} {x : E}
     (h : A =ᶠ[𝓝 x] B) : metricTwoJet A =ᶠ[𝓝 x] metricTwoJet B := by
   filter_upwards [h, h.fderiv (𝕜 := ℝ), (h.fderiv (𝕜 := ℝ)).fderiv (𝕜 := ℝ)]
     with y h0 h1 h2
   simp only [metricTwoJet, h0, h1, h2]
 
-
-
 theorem scalarMetricFourJet_congr {A B : E → MetricCoefficient 3} {x : E}
     (h : A =ᶠ[𝓝 x] B) : scalarMetricFourJet A x = scalarMetricFourJet B x := by
   have hJ := metricTwoJet_eventuallyEq h
   simp only [scalarMetricFourJet, hJ.self_of_nhds, hJ.fderiv_eq,
     (hJ.fderiv (𝕜 := ℝ)).fderiv_eq]
-
-
-
-
 
 theorem jetScalarLaplacian_pullbackCoefficients
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]

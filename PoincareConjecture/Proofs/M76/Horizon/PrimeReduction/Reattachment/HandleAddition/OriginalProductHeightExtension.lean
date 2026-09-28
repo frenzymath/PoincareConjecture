@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.InducedOpenImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 namespace PoincareConjecture.M76
@@ -129,4 +121,3 @@ theorem OriginalDiskProduct.exists_local_height_extension
     exact congrArg Prod.snd (hright w hw hwO)
 
 end PoincareConjecture.M76
-

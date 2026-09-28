@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EpochIndex
 import PoincareConjecture.Proofs.M51.NumericalSchedule
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -17,8 +9,6 @@ namespace PoincareConjecture
 namespace GlobalSurgerySchedule
 
 variable {K : MetricSurgeryConstants} (S : GlobalSurgerySchedule K)
-
-
 
 noncomputable def parameters (delta : ℝ → ℝ)
     (hmono : AntitoneOn delta (Set.Ici 0))
@@ -87,8 +77,6 @@ theorem parameters_kappa {t : ℝ} {j : ℕ} (ht : t ∈ surgeryEpochEntry j) :
   change S.r (M51Numerical.epochIndex 0) = S.setup.epsilon
   rw [M51Numerical.epochIndex_zero, S.r_zero]
 
-
-
 theorem parameters_agreement
     (hcut : ∀ j t, t ∈ surgeryEpochEntry j → 0 ≤ t → delta t ≤ S.Delta j)
     {t : ℝ} {j : ℕ} (ht : t ∈ surgeryEpochEntry j) (ht0 : 0 ≤ t) :
@@ -101,8 +89,6 @@ theorem parameters_agreement
 end GlobalSurgerySchedule
 
 namespace M51Numerical
-
-
 
 theorem parameters_initial_height (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)

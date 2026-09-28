@@ -2,24 +2,11 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem compact_collar_cut_geometry
     {X : Type*} [TopologicalSpace X] [T2Space X] {R U : Set X}
@@ -65,8 +52,6 @@ theorem compact_collar_cut_geometry
     intro x hxR hxU
     exact hxR.2 (hUR (frontier_subset_closure hxU))
 
-
-
 theorem exists_collar_level_homeomorph
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [T2Space X]
     {A : Set E} (hA : IsCompact A) (c : E × ℝ → X)
@@ -104,8 +89,6 @@ theorem exists_collar_level_homeomorph
   refine ⟨H, fun _ => rfl, ?_⟩
   rw [← hrange]
   exact isCompact_range hf
-
-
 
 theorem disjoint_collar_level_images
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

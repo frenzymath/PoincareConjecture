@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_ObservedCylinder
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_5_OverlapCaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_overlapCapCutoff_with_lowCylinders
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

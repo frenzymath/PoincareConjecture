@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Gaussia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Gaussian.Decay
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,8 +14,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M} {Ω : Set M}
-
-
 
 theorem setIntegral_setIntegral_heatKernelContinuousTime_ball_le
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)

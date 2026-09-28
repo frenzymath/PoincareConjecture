@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Reconstruction
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -42,8 +40,6 @@ theorem isCompact_prepared_annulus :
   exact ((isCompact_univ.prod isCompact_Icc).image_of_continuousOn
     (S.T.continuousOn.mono hs)).image S.prepared_embedding.contMDiff.continuous
 
-
-
 theorem image_prepared_range_of_lower_replacement
     (F L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hchild : F '' range S.fMinus = L '' sphere (0 : E3) 1)
@@ -80,7 +76,6 @@ theorem image_prepared_range_of_lower_replacement
   rw [S.prepared_range_eq_children_and_cylinder, image_union, image_union,
     image_sdiff (f := (F : E3 → E3)) F.injective, hchild, hcapImage, hcircleImage, hotherImage,
     S.range_minus_open_capPlus]
-
 
 theorem image_prepared_range_of_upper_replacement
     (F L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

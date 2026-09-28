@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +16,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 
-
-
 def openLevelSetHomeomorphLocalLevel {n : ℕ} (f : E n → ℝ) (U : Opens (E n)) (c : ℝ) :
     openLevelSet f U c ≃ₜ {x : E n // x ∈ U ∧ f x = c} where
   toFun x := ⟨x.1.1, x.1.2, x.2⟩
@@ -37,8 +24,6 @@ def openLevelSetHomeomorphLocalLevel {n : ℕ} (f : E n → ℝ) (U : Opens (E n
   right_inv _ := rfl
   continuous_toFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
   continuous_invFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
-
-
 
 theorem exists_unitSlice_chart_of_regular_potential
     {X : Type*} [MetricSpace X] {p : X} (hcomparison : RayComparison p)
@@ -86,9 +71,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.LeviCivitaData
 
 private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem exists_unitSlice_chart_of_local_radial_potential
     {X : Type*} [MetricSpace X] {p : X}

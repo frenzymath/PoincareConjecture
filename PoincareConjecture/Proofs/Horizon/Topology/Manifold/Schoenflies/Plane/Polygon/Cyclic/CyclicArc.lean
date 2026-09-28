@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.SimplePolygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,22 +8,17 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {n : ℕ}
 
-
 def cyclicArcIndex (k : Fin n) (m : ℕ) : Fin (m + 1) → Fin n :=
   fun i => (finRotate n)^[i.val] k
 
-
 theorem cyclicArcIndex_zero (k : Fin n) (m : ℕ) : cyclicArcIndex k m 0 = k := rfl
-
 
 theorem cyclicArcIndex_last (k : Fin n) (m : ℕ) :
     cyclicArcIndex k m (Fin.last m) = (finRotate n)^[m] k := rfl
 
-
 theorem cyclicArcIndex_succ (k : Fin n) (m : ℕ) (i : Fin m) :
     cyclicArcIndex k m i.succ = finRotate n (cyclicArcIndex k m i.castSucc) := by
   exact Function.iterate_succ_apply' _ _ _
-
 
 theorem cyclicArcIndex_injective (k : Fin n) {m : ℕ} (hm : m < n) :
     Function.Injective (cyclicArcIndex k m) := by
@@ -47,14 +32,12 @@ theorem cyclicArcIndex_injective (k : Fin n) {m : ℕ} (hm : m < n) :
   have hval : (⟨i.val, by omega⟩ : Fin n) = ⟨j.val, by omega⟩ := add_left_cancel hij
   exact Fin.ext (congrArg (fun x : Fin n => x.val) hval)
 
-
 def polygonArc {E : Type*} (p : Polygon E n) (k : Fin n) (m : ℕ) : Polygon E (m + 1) :=
   ⟨fun i => p (cyclicArcIndex k m i)⟩
 
 section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem polygonArc_edgeSet_castSucc (p : Polygon E n) (k : Fin n) (m : ℕ) (i : Fin m) :
     (polygonArc p k m).edgeSet ℝ i.castSucc =
@@ -65,7 +48,6 @@ theorem polygonArc_edgeSet_castSucc (p : Polygon E n) (k : Fin n) (m : ℕ) (i :
   rw [show finRotate (m + 1) i.castSucc = i.succ from finRotate_of_lt i.isLt,
     cyclicArcIndex_succ]
 
-
 theorem polygonArc_edgeSet_last (p : Polygon E n) (k : Fin n) (m : ℕ) :
     (polygonArc p k m).edgeSet ℝ (Fin.last m) =
       segment ℝ (p ((finRotate n)^[m] k)) (p k) := by
@@ -73,7 +55,6 @@ theorem polygonArc_edgeSet_last (p : Polygon E n) (k : Fin n) (m : ℕ) :
   change segment ℝ (p (cyclicArcIndex k m (Fin.last m)))
     (p (cyclicArcIndex k m (finRotate (m + 1) (Fin.last m)))) = _
   rw [finRotate_last, cyclicArcIndex_zero, cyclicArcIndex_last]
-
 
 theorem polygonArc_boundary (p : Polygon E n) (k : Fin n) (m : ℕ) :
     (polygonArc p k m).boundary ℝ =
@@ -96,7 +77,6 @@ theorem polygonArc_boundary (p : Polygon E n) (k : Fin n) (m : ℕ) :
     · exact polygon_edgeSet_subset_boundary _ (Fin.last m)
         ((polygonArc_edgeSet_last p k m).symm ▸ hx)
 
-
 theorem IsSimplePolygon.segment_inter_edge_subset_endpoints {p : Polygon E n}
     (hp : IsSimplePolygon p) (a b : Fin n)
     (hdiag : Disjoint (openSegment ℝ (p a) (p b)) (p.boundary ℝ)) (i : Fin n) :
@@ -118,7 +98,6 @@ theorem IsSimplePolygon.segment_inter_edge_subset_endpoints {p : Polygon E n}
   · rcases (hp.vertex_mem_edgeSet_iff b i).mp hedge with rfl | rfl
     · exact Or.inl rfl
     · exact Or.inr rfl
-
 
 theorem IsSimplePolygon.isSimple_polygonArc {p : Polygon E n} (hp : IsSimplePolygon p)
     (k : Fin n) (m : ℕ) (hm2 : 2 ≤ m) (hm : m < n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.RestrictedRays
 import PoincareConjecture.Proofs.M10.VolumeTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -39,7 +31,6 @@ theorem restrictedWeightedJacobian_integrable
   intro x
   rw [Real.norm_eq_abs, abs_of_nonneg (restrictedWeightedJacobian_nonneg G A hτ x)]
   exact restrictedWeightedJacobian_le_regular G A hτ x
-
 
 theorem lintegral_reducedVolumeDensityOn_eq_restrictedWeight
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -80,7 +71,6 @@ theorem lintegral_reducedVolumeDensityOn_eq_restrictedWeight
     simp only [restrictedWeightedJacobian, indicator_of_notMem hs, indicator_of_notMem ht,
       ENNReal.ofReal_zero]
 
-
 theorem reducedVolumeOn_eq_integral_restrictedWeight
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
@@ -105,7 +95,6 @@ theorem reducedVolumeOn_eq_integral_restrictedWeight
           hτ hτmax)
     _ = _ := (integral_eq_lintegral_of_nonneg_ae
       (ae_of_all _ (restrictedWeightedJacobian_nonneg G A hτ)) hsource.aestronglyMeasurable).symm
-
 
 theorem reducedVolumeOn_antitoneOn
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

@@ -1,20 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,14 +12,10 @@ namespace PoincareConjecture.M32
 variable {F : GeneralizedRicciFlowData.{u}}
   {C C' : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
 
-
-
 theorem cylinder_time_mem_of_nonempty_source
     (d : GeneralizedFlowCylinder F C a q J U) (hC : Nonempty C.carrier)
     (s : ℝ) (hs : s ∈ J) : a + s / q ∈ F.interval :=
   (F.slice_nonempty_iff _).mp (hC.map (d.forward s hs))
-
-
 
 noncomputable def rebaseCylinderSource (d : GeneralizedFlowCylinder F C a q J U)
     (f : Diffeomorph (𝓡 3) (𝓡 3) C'.carrier C.carrier ∞) :
@@ -64,8 +45,6 @@ noncomputable def rebaseCylinderSource (d : GeneralizedFlowCylinder F C a q J U)
     dsimp only [Function.comp_apply]
     rw [d.left_inverse s hs hx, f.apply_symm_apply]
 
-
-
 theorem rebaseCylinderSource_pullbackInner
     (d : GeneralizedFlowCylinder F C a q J U)
     (f : Diffeomorph (𝓡 3) (𝓡 3) C'.carrier C.carrier ∞)
@@ -83,8 +62,6 @@ theorem rebaseCylinderSource_pullbackInner
 
 variable {T : ℝ} (E : GeneralizedFlowExtension F T)
 
-
-
 noncomputable def extension_oldSliceDiffeomorph (t : ℝ) (ht : t ∈ F.interval) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice t).carrier (E.extended.slice t).carrier ∞ where
   toFun := E.forward t ht
@@ -93,8 +70,6 @@ noncomputable def extension_oldSliceDiffeomorph (t : ℝ) (ht : t ∈ F.interval
   right_inv := E.right_inverse t ht
   contMDiff_toFun := E.forward_smooth t ht
   contMDiff_invFun := E.inverse_smooth t ht
-
-
 
 noncomputable def extension_pushCylinder (d : GeneralizedFlowCylinder F C a q J U)
     (hC : Nonempty C.carrier) : GeneralizedFlowCylinder E.extended C a q J U := by
@@ -148,15 +123,11 @@ noncomputable def extension_pushCylinder (d : GeneralizedFlowCylinder F C a q J 
     rw [hby']
     exact eq_of_heq (Sigma.mk.inj hcz).2
 
-
-
 theorem extension_pushCylinder_pointMap (d : GeneralizedFlowCylinder F C a q J U)
     (hC : Nonempty C.carrier) (s : ℝ) (hs : s ∈ J) (x : C.carrier) :
     (extension_pushCylinder E d hC).pointMap s hs x =
       E.spacetime_forward (d.pointMap s hs x) :=
   (E.spacetime_slices _ (cylinder_time_mem_of_nonempty_source d hC s hs) _).symm
-
-
 
 theorem extension_pushCylinder_pullbackInner (d : GeneralizedFlowCylinder F C a q J U)
     (hC : Nonempty C.carrier) (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)

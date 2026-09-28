@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.Pullback.Congruence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.Extension.Section
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -126,6 +119,5 @@ theorem pullbackCovariantDerivative_chart_formula_local {J C U : Set ℝ}
   rw [pullbackCovariantDerivative_restrict F time inter_subset_left E hC hD hα]
   exact pullbackCovariantDerivative_chart_formula F time hU inter_subset_right x α c hc
     hsrc Y hY (restrictParametricSectionExtension inter_subset_left E) ⟨hs, hsU⟩ hD hα
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

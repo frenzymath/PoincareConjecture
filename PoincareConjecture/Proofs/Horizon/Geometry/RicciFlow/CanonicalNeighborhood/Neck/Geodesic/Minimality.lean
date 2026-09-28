@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Distance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

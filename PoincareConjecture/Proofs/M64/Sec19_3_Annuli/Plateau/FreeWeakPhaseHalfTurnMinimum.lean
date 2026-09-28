@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseHalfTurn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -35,9 +24,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "T" => m64AnnulusHalfTurn
 
-
-
-
 theorem weightedEnergy_eq_of_halfTurn
     (A B : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)
     (hmap : B.annulus.map = A.annulus.map ∘ T)
@@ -52,9 +38,6 @@ theorem weightedEnergy_eq_of_halfTurn
   filter_upwards [hcol 0, hcol 1] with p h0 h1
   rw [hmap, h0, h1]
   rfl
-
-
-
 
 theorem exists_halfTurn_minimum
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

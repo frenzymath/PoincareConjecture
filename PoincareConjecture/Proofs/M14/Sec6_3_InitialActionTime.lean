@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_SquareDensity
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialValueContinuation
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,10 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem initialValueAction_hasDerivWithinAt
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

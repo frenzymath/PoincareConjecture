@@ -5,7 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Adjoi
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.FiniteDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -104,8 +103,6 @@ theorem forward_operator_density_mul
   simp only [weightedPrincipal_eq] at hdiv
   rw [htime, timeDeriv_density F e he hei (hUD hz), hdiv]
   ring
-
-
 
 theorem heat_equation_of_smooth_weak_pairing
     {U : Set (Spacetime n)} (hU : IsOpen U) (hUD : U ⊆ domain J e)

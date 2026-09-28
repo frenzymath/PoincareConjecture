@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialZeroCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentOrdinary
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentReadout
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -29,9 +17,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem exists_source_standard_initial_neck_canonical_neighborhood
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

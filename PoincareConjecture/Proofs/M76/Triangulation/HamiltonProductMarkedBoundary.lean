@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
-
-
-
 
 theorem hamilton_half_boundary_models {w : ℝ} (hw : 0 < w) :
     IsFinitePLBallPair (ℝ × ℝ)
@@ -101,11 +89,6 @@ theorem hamilton_half_boundary_models {w : ℝ} (hw : 0 < w) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_marked_half_boundary_parametrization {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b) (hb : b.IsFinitePL)

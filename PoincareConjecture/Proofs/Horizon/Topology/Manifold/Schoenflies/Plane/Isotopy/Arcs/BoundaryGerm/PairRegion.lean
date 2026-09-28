@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Isotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Gap
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.BoundaryGerm
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem compact_ribbon_meets_disjoint_disks_only_on_edges
     (A : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -66,8 +57,6 @@ theorem compact_ribbon_meets_disjoint_disks_only_on_edges
       · have hti : t ∈ Ioo 0 1 := ⟨lt_of_le_of_ne ht.1 (Ne.symm ht0),
           lt_of_le_of_ne ht.2 ht1⟩
         exact (hout s hs (mem_image_of_mem _ hti) (Or.inr hx)).elim
-
-
 
 theorem exists_supported_disjoint_disk_pair_isotopy_away_closed_region
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

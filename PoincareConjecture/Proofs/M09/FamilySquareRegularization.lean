@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.FamilyEndpointEquation
 import PoincareConjecture.Proofs.M09.CompactVelocityExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChildBoundaryContacts
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,12 +63,6 @@ private theorem subinterval_subset_edge
   rw [image_comp, ← Euler.affineChartSegment_image]
   apply image_mono (image_mono ?_)
   exact fun _ ht => ⟨(le_min ha.1 hd.1).trans ht.1, ht.2.trans (max_le ha.2 hd.2)⟩
-
-
-
-
-
-
 
 theorem m64Intrinsic_canonical_contact_children
     (F G : OpenPartialHomeomorph Plane AnnulusCoordinates)

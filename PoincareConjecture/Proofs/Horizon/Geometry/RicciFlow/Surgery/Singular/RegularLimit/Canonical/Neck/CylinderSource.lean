@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Cylinder
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +17,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C C' : GeneralizedSliceCarrier.{u}}
   (hf : Topology.IsEmbedding f) (hfsmooth : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
   (hgsmooth : ContMDiffOn (𝓡 3) (𝓡 3) ∞ g (range f))
   (hleft : Function.LeftInverse g f)
-
-
 
 noncomputable def rebaseSourceEmbedding :
     GeneralizedFlowCylinder F C' a q I (f ⁻¹' U) := by

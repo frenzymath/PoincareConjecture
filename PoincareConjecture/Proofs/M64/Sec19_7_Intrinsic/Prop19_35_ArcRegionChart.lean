@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcGraphNeighbo
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopRegionChart
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.CollarCoordinates
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_arc_region_chart
     {alpha : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha) {a b p : ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.AdaptedPolar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

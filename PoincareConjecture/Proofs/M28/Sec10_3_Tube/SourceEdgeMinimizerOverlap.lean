@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_reciprocal_band_of_positive_frontier_contact :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧
@@ -167,14 +156,7 @@ variable {M : Type v} [TopologicalSpace M]
   [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
-
-
-
-
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem mem_middle_slab_of_edist_center_le (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) {x : M}
@@ -270,9 +252,6 @@ theorem intrinsicEDist_comm_set {U : Set M} {p q : M} :
     · simpa [rev] using h0
   exact le_antisymm (hle p q) (hle q p)
 
-
-
-
 theorem anchor_height_lower (N : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)
     (hA : (1000 : ℝ) ≤ N.epsilon⁻¹) {U : Set M}
     (hNU : N.carrier ⊆ U) {z : M} (hz : z ∈ N.carrier)
@@ -337,13 +316,6 @@ theorem anchor_height_lower (N : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)
     hreal.trans (by simpa only [mul_assoc] using hupper)
   nlinarith [mul_le_mul_of_nonneg_left hA N.scale_pos.le]
 
-
-
-
-
-
-
-
 theorem exists_frontier_high_transition_accuracy :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ (1 / 1000 : ℝ) ∧
       ∀ {M : Type v} [TopologicalSpace M]
@@ -378,8 +350,6 @@ theorem exists_frontier_high_transition_accuracy :
     hcap.trans (Q.region_subset_carrier _ _)⟩
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
-
 
 theorem intrinsicEDist_triangle_set (U : Set M) {p q r : M} :
     intrinsicEDist g U p r ≤

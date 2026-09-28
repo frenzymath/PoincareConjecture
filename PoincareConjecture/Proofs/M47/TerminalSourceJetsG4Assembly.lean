@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsG4Mixed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 structure TerminalSourceJetsG4Good
     (S : RepairedControlledSchedulesData.{u})
@@ -65,8 +53,6 @@ structure TerminalSourceJetsG4Good
   hShort : blowupAnalyticConstant S B * L * τ ≤ 1 / 4
   heta : 0 < eta
   hPinchingScale : blowupPinchingThreshold (4 * L / 3) eta ≤ Q
-
-
 
 theorem terminalSourceJetsG4_eventually_raw
     {α : Type v} (l : Filter α)

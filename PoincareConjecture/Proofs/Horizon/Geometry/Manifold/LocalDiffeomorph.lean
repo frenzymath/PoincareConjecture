@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
-
-
-
-
-
-
-

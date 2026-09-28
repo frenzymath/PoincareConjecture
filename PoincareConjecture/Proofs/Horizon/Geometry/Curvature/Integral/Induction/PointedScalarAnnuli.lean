@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.PointedAnnuli
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Annulus
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +13,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_eventually_radial_annulus_scalar_bound_at_small_radii
     {m : ℕ} (hm : 1 ≤ m) {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateJacobian
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothermalMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarConjugateForm_metric_identity (H : Plane → ℝ) (x v w : Plane) :
     fderiv ℝ H x v * fderiv ℝ H x w +
@@ -75,10 +59,6 @@ theorem scalarConjugateForm_metric_identity (H : Plane → ℝ) (x v w : Plane) 
       (a * v 0 * w 0 + b * (v 0 * w 1 + v 1 * w 0) + c * v 1 * w 1)
   linear_combination (Z 1 * v 0 - Z 0 * v 1) *
     (Z 1 * w 0 - Z 0 * w 1) * hrho
-
-
-
-
 
 theorem scalarConjugateLinear_inner (H : Plane → ℝ) (x v w : Plane) :
     inner ℝ (scalarConjugateLinear D H x v) (scalarConjugateLinear D H x w) =

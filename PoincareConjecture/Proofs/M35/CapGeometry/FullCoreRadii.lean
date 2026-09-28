@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedBoundaryRadii
 import PoincareConjecture.Proofs.M35.CapGeometry.CompactCoreRadii
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_closed_core_curvature_balls
     (P : M35StandardCapPredecessors) :

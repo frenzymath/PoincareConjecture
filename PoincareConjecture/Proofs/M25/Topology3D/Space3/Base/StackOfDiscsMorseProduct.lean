@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.AmbientMorseChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapEnd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
-
 
 theorem exists_stackMorseProduct
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -134,8 +122,6 @@ theorem exists_stackMorseProduct
   rw [hp.2.2.1]
   apply heightPlaneCoordinates_reconstruct
   rw [hform _ (e.map_target hp.1), e.right_inv hp.1, hnorm]
-
-
 
 theorem exists_stackMorseEndTube
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

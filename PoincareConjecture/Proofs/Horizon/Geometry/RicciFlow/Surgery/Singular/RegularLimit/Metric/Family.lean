@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +12,6 @@ namespace PoincareConjecture.SingularRegularLimit
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem isSmoothFamilyOn_of_chartCoefficients
     (g : ℝ → RiemannianMetric n M) (J : Set ℝ)

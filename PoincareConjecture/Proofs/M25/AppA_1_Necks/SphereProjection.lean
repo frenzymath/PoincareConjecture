@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.GraphIsotopy
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Diffeomorph.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_coordinate_graph_of_slice_projection_localDiffeomorph
     (N N' : EpsilonNeck g) {t : ℝ} (ht : t ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹)
@@ -72,9 +58,6 @@ theorem exists_coordinate_graph_of_slice_projection_localDiffeomorph
     change N.coordinate_map (e q, h (e q)) = N'.coordinate_map (q, t)
     rw [hgraph]
     simp only [p, e.symm_apply_apply]
-
-
-
 
 theorem slice_isotopic_of_projection_localDiffeomorph
     (N N' : EpsilonNeck g) {t : ℝ} (ht : t ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹)

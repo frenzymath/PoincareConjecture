@@ -1,16 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RimSubcomplexes
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.AnnulusLevelCircles
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "Q2" => sphere (0 : Fin 2 → ℝ) 1
-
-
 
 theorem exists_four_collar_rim_subcomplexes
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

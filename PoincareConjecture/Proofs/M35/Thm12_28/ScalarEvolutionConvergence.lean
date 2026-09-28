@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarLaplacianConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators Matrix.Norms.Elementw
 namespace PoincareConjecture.M35
 
 local notation:max "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem ricciNormSq_eq_inverse_gram {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M] [T2Space M]
@@ -49,8 +39,6 @@ theorem ricciNormSq_eq_inverse_gram {n : ℕ} {M : Type*} [TopologicalSpace M]
         (Matrix.of (fun i j => g.inner x (b i) (b j)))⁻¹ i j * C (b i) (b j) :=
       bilinear_sum_basis_eq_inverse_gram C b e
     _ = _ := by simp only [hinner, Finset.mul_sum]
-
-
 
 theorem ricciNormSq_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -85,8 +73,6 @@ theorem ricciNormSq_tendsto_of_metric_jets {n : ℕ}
   apply tendsto_finsetSum
   intro c _
   exact (hI i j).mul ((hI a c).mul ((hR (b i) (b a)).mul (hR (b j) (b c))))
-
-
 
 theorem scalar_evolution_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

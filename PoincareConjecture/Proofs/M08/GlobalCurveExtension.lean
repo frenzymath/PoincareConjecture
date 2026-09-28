@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M08.BackwardEulerTransport
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -222,7 +215,6 @@ theorem connection_sum_parametric {g : RiemannianMetric n M} (D : LeviCivitaData
       rw [hsection, D.connection.isCovariantDerivativeOn.add hAi
         (MDifferentiableAt.sum_section hAS), ih hAS, Finset.sum_insert hi]
 
-
 def gluedParametricExtension (I : TopologicalSpace.Opens ℝ)
     (ρ : SmoothPartitionOfUnity ι (𝓘(ℝ, ℝ)) I univ)
     (U : ι → Set ℝ) (hU : ∀ i, IsOpen (U i)) (α : ℝ → M)
@@ -436,7 +428,6 @@ theorem gluedParametricExtension_equation {J : Set ℝ} (F : RicciFlow n M J) (T
   rw [hinner]
   dsimp only [B]
   ring
-
 
 theorem exists_regularizedEuler_extension_of_local {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) {I : Set ℝ} (hI : IsOpen I) (α : ℝ → M)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.ZeroCapRetention
 import PoincareConjecture.Proofs.M38.ComponentDecomposition
 import PoincareConjecture.Proofs.M38.EventSlices
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
-
 
 theorem zero_cap_reconstruction (F : SurgeryFlowData.{u})
     (T : ℝ) (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]

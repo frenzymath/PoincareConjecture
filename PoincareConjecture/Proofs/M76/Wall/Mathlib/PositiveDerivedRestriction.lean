@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.PositiveDerivedEquivalence
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
 
 theorem derivedSubdivision_mono_face_labels
     {L : SimplicialComplex ℝ E} [Fintype L.faces] (hLK : L ≤ K) :
@@ -49,8 +38,6 @@ variable (d : K.faces → E)
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = d s)
 
 include hd in
-
-
 
 theorem positiveDerived_mapsTo_subcomplex {f : E → E}
     (hf : (K.derivedSubdivision c hc).AffineOnFaces f)
@@ -84,9 +71,6 @@ theorem positiveDerived_mapsTo_subcomplex {f : E → E}
   have hxC : x ∈ C.space := hCs.symm ▸ hx
   exact hDs ▸ hfC.mapsTo_space hfaces hxC
 
-
-
-
 theorem positiveDerived_image_subcomplex {f g : E → E}
     (hf : (K.derivedSubdivision c hc).AffineOnFaces f)
     (hg : (K.derivedSubdivision d hd).AffineOnFaces g)
@@ -99,9 +83,6 @@ theorem positiveDerived_image_subcomplex {f g : E → E}
   apply Subset.antisymm hmapf.image_subset
   intro x hx
   exact ⟨g x, hmapg hx, hfg (space_subset_of_le hLK hx)⟩
-
-
-
 
 theorem positiveDerived_image_convexHull {f g : E → E}
     (hf : (K.derivedSubdivision c hc).AffineOnFaces f)
@@ -128,9 +109,6 @@ theorem positiveDerived_image_convexHull {f g : E → E}
   rw [← hL]
   exact K.positiveDerived_image_subcomplex c hc d hd hf hg hfc hgd hfg
     (K.finiteFaceSpan_le {s})
-
-
-
 
 theorem positiveDerived_eqOn_subcomplex {f : E → E}
     (hf : (K.derivedSubdivision c hc).AffineOnFaces f)

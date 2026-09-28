@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConformalInitialGain
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,10 +27,6 @@ local instance m64LocalGain_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem m64WeightedMixedMetric_local_tangential_gain
     (dirichlet : Fin n → Prop) {a : LoopPlane} {R : ℝ}

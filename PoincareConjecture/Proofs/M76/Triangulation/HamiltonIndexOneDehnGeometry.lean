@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonDehnRegionLift
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerHandleCorrection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCoverCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -73,9 +65,6 @@ variable (L : Submodule ℤ V2) {α : Type*}
   (T : HamiltonProtectedDehnAnnulus L e)
   (region : HamiltonDehnEnclosingRegion (Fin 1) (Fin 2) L e T.surface)
 
-
-
-
 structure HamiltonIndexOneDehnGeometry where
   Psum : Set V
   annulusSum : Set V
@@ -116,9 +105,6 @@ structure HamiltonIndexOneDehnGeometry where
   sphere_iff : ∀ y ∈ Psum,
     latticeCoordinateProjection (Fin 1) (Fin 2) L y ∈ frontier region.region ↔
       coverCoordinates y ∈ (coverCoordinates '' annulusSum) ∪ squareAttachingDisks
-
-
-
 
 theorem HamiltonRetainedBlockChart.exists_indexOne_dehn_geometry
     [DiscreteTopology L] {h : OpenPartialHomeomorph (V1 × V2) V3}

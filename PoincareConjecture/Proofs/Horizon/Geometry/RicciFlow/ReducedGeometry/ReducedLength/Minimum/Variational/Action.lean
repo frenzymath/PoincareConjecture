@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.PathCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,13 +11,11 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variational
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def regularizedLIntegrand {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (α : ℝ → M) (s : ℝ) : ℝ :=
   2 * s ^ 2 * (F.connection (T - s ^ 2)).scalarCurvature (α s) +
     (1 / 2 : ℝ) * (F.metric (T - s ^ 2)).inner (α s)
       (curveVelocity (n := n) α s) (curveVelocity (n := n) α s)
-
 
 noncomputable def regularizedLAction {J : Set ℝ} (F : RicciFlow n M J)
     (T tau : ℝ) (α : ℝ → M) : ℝ :=
@@ -44,7 +34,6 @@ theorem squarePath_integrand_eq_transformed {J : Set ℝ} {F : RicciFlow n M J}
   rw [Real.sqrt_sq hs.1.le, hvel]
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
-
 
 theorem squarePath_action {J : Set ℝ} {F : RicciFlow n M J}
     {T tau : ℝ} (p : BackwardTimePath F T 0 tau) :

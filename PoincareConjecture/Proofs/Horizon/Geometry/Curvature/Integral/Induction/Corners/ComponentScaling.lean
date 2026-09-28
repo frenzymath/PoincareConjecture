@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Regu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Similarity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
@@ -69,8 +62,6 @@ private theorem PoincareConjecture.LeviCivitaData.scalar_integral_le_of_inverse_
           rw [← mul_assoc, hi, one_mul]
     _ ≤ t^(n-2)*(C*(1+(t^(n-2))⁻¹*∫ x, K x ∂g.volumeMeasure)) := hm
     _ = _ := by rw [mul_add, mul_one]; field_simp
-
-
 
 theorem PoincareConjecture.RiemannianMetric.openFiber_scalar_integral_le_of_normalized_corner_bound
     {m k : ℕ} (hm : 2 ≤ m) {M : Type*}

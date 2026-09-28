@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Mass.HeatCutoffs
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.CompactCutoff
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,8 +76,6 @@ theorem limitReducedLength_weakPairing_eq_zero_on_slab
       hηone.self_of_nhdsSet z.2 (mem_image_of_mem Prod.snd hz), one_mul]
   exact apply_eq_zero_of_test_cutoffs T hT Φ Ψ hΨ hone
     (hχlim η hη.contDiff hηc hηs)
-
-
 
 theorem limitReducedLength_weakPairing_eq_zero
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

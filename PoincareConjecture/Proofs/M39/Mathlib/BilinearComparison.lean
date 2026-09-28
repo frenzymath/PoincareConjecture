@@ -4,15 +4,6 @@ import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Topology.Order.Compact
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace ContinuousLinearMap
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_uniform_pos_quadratic_lower
     [FiniteDimensional ℝ E]
@@ -56,9 +44,6 @@ theorem exists_uniform_pos_quadratic_lower
     field_simp
   simpa only [hscale, mul_comm (‖v‖ ^ 2) c] using h
 
-
-
-
 theorem exists_bilinear_norm_le_basis {ι : Type*} [Finite ι]
     (b : Module.Basis ι ℝ E) :
     ∃ D : ℝ, 0 < D ∧ ∀ (B : E →L[ℝ] E →L[ℝ] ℝ) (e : ℝ),
@@ -68,9 +53,6 @@ theorem exists_bilinear_norm_le_basis {ι : Type*} [Finite ι]
   refine ⟨D₁ * D₂, mul_pos hD₁ hD₂, fun B e he hcoeff => ?_⟩
   have hinner : ∀ i, ‖B (b i)‖ ≤ D₂ * e := fun i => h₂ he (hcoeff i)
   simpa only [mul_assoc] using h₁ (mul_nonneg hD₂.le he) hinner
-
-
-
 
 theorem quadratic_le_mul_of_norm_sub_le
     (A B : E →L[ℝ] E →L[ℝ] ℝ) {c k : ℝ} (hk : 1 < k)
@@ -92,10 +74,6 @@ theorem quadratic_le_mul_of_norm_sub_le
   rw [hcancel] at hmul
   have hbase := mul_le_mul_of_nonneg_left (hlower v) (sub_pos.mpr hk).le
   nlinarith
-
-
-
-
 
 theorem eventually_quadratic_le_mul_of_coefficients
     [FiniteDimensional ℝ E] {ι α : Type*} [Finite ι]

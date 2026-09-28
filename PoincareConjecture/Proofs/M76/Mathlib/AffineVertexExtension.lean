@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f g : E → F}
-
-
 
 theorem AffineOnFaces.eqOn_of_eqOn_vertices (hf : K.AffineOnFaces f)
     (hg : K.AffineOnFaces g) (hfg : EqOn f g K.vertices) : EqOn f g K.space := by
@@ -40,10 +28,6 @@ theorem AffineOnFaces.eqOn_of_eqOn_vertices (hf : K.AffineOnFaces f)
     ((AffineMap.eqOn_affineSpan hab (convexHull_subset_affineSpan _ hxs)).trans (hb hxs).symm)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_affineOnFaces_eqOn_vertices (K : SimplicialComplex ℝ E) (v : E → F) :
     ∃ f : E → F, K.AffineOnFaces f ∧ EqOn f v K.vertices := by

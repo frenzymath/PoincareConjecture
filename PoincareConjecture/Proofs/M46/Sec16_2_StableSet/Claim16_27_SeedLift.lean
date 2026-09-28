@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M13.GeneralizedSlices
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 variable {F : SurgeryFlowData.{u}} {window : M33RegularHistoryWindow F}
-
-
 
 theorem exists_realized_seed_cylinder (R : M46RegularSpacetimeData window)
     {C : GeneralizedSliceCarrier.{u}} {origin d duration : ℝ}
@@ -56,8 +44,6 @@ theorem exists_realized_seed_cylinder (R : M46RegularSpacetimeData window)
     exact e.regular_image_of_earlier (hsub hs)
       ⟨-duration, ⟨le_rfl, by linarith⟩, by linarith [hsJ.1]⟩
   exact R.history.cylinders_from_surgery C origin 1 J.domain U U.isOpen htime short hregular
-
-
 
 theorem realized_seed_cylinder_scalar (P : M46Predecessors.{u})
     (R : M46RegularSpacetimeData window)

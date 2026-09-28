@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SeparatingLimitCover
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_high_selected_neck_inside_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

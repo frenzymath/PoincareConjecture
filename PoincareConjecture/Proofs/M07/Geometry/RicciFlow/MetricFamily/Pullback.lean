@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Descent
 
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentSubdivision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem exists_midpoint_segment_path (a b : E) (hab : a ≠ b) :
     ∃ q : Fin 3 → E, Function.Injective q ∧ q 0 = a ∧ q 2 = b ∧

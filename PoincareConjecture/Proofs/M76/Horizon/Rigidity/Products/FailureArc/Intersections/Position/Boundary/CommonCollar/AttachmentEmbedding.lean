@@ -2,13 +2,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Function
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

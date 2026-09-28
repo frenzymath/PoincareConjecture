@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalHorizon
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedReverseBall
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +36,6 @@ private local instance longerSlabCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance longerSlabManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_slab_of_preserved_sources
     (hfinite : H ≠ ⊤) (rho : ℕ → ℕ) (hrho : StrictMono rho)
@@ -110,8 +98,6 @@ theorem limitFinite_slab_of_preserved_sources
   exact terminalCommonInterval_reindex_cylinder_iff.mpr
     (limitFinite_controlled_of_preserved_interior F W history t ht x hPositive hDiverges
       (G.subsequence (rho k)) hT hb hU E e0 zero hfuture hnorm hnegative captured)
-
-
 
 theorem limitFinite_longer_slab_false
     {D : GeneralizedBlowupSequence.{u}} (hdec : TerminalCommonIntervalDecided D)

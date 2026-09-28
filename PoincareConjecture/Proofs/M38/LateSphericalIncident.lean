@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.IncidentSphericalRegion
 import PoincareConjecture.Proofs.M38.SphericalModelRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (x : eventDiscardedOpen F T hT) (t : Ico (F.event T hT).tMinus T)
-
-
 
 theorem spherical_incident_assembly_of_late_chart
     (e : OpenPartialHomeomorph (F.slice t.val).carrier sphereCarrier.{u}.carrier)
@@ -49,8 +38,6 @@ theorem spherical_incident_assembly_of_late_chart
   intro y hy
   exact ⟨mem_univ _, hsource ⟨y, hy, rfl⟩⟩
 
-
-
 theorem spherical_incident_assembly_of_closed_sphere
     {U : Set (F.slice t.val).carrier}
     (C : ClosedComponentCertificate .threeSphere U)
@@ -70,8 +57,6 @@ theorem spherical_incident_assembly_of_closed_sphere
   exact spherical_incident_assembly_of_late_chart F T hT P x t
     d.toOpenPartialHomeomorph d.contMDiffOn_toFun d.contMDiffOn_invFun hsource
 
-
-
 theorem spherical_incident_assembly_of_euclidean_cap
     (C : CapCertificate (F.metric t.val)) (hkind : C.model_kind = .euclidean)
     (hsource : (F.event T hT).pre_identify t ''
@@ -85,8 +70,6 @@ theorem spherical_incident_assembly_of_euclidean_cap
     (euclideanCapRegionEquivalence H) C.carrier_open isOpen_univ
   apply spherical_incident_assembly_of_late_chart F T hT P x t e he hi
   rwa [heq]
-
-
 
 theorem spherical_incident_assembly_of_tube
     {U : Set (F.slice t.val).carrier} (hU : IsOpen U) (C : OpenCylinderModel U)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionInduction
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderInitialNonisolatedSigns
 import PoincareConjecture.Proofs.M76.Triangulation.StandardFinitePLSphereModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -21,12 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem hasAlexanderRegionBalls_of_generic_zero_charge_supplier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

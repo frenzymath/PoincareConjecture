@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Dual
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CompactSupport.IntegralCompactSupportCap
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Euclidean.IntegralEuclideanCompactCohomology
 
-
 set_option autoImplicit false
 
 noncomputable section

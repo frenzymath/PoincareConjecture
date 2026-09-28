@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Normalization
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ universe u
 namespace PoincareConjecture.M45NeckGluingInput
 
 variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
-
-
-
 
 theorem joining_scalar_lt_one_of_evolution_pos
     (hpos : ∀ t ∈ Ioo (-I.recent_duration) (0 : ℝ),
@@ -38,8 +27,6 @@ theorem joining_scalar_lt_one_of_evolution_pos
     (fun t ht => hpos t (by simpa only [interior_Icc] using ht))
   have htime : -I.recent_duration < (0 : ℝ) := neg_lt_zero.mpr I.recent_duration_pos
   simpa only [I.final_scalar_one] using hmono ⟨le_rfl, htime.le⟩ ⟨htime.le, le_rfl⟩ htime
-
-
 
 theorem older_duration_gt_one_of_evolution_pos
     (hpos : ∀ t ∈ Ioo (-I.recent_duration) (0 : ℝ),

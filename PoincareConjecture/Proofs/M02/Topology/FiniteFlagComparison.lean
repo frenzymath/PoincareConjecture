@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.GeometricAffineFlags
 import PoincareConjecture.Proofs.M02.Topology.FiniteConvexLipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.Original
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.PlanePairSignTransport
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -19,9 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_original_subedge_of_mem_triangle_intrinsicFrontier
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -68,10 +56,6 @@ theorem exists_original_subedge_of_mem_triangle_intrinsicFrontier
   have hgu : g u = Q.symm w := (Q.left_inv (hmap hu)).symm.trans (congrArg Q.symm hQgu)
   exact ⟨s.erase i, hiK, Finset.erase_subset _ _, hi2, ⟨u, hui, hQgu⟩,
     hQgu ▸ Q.map_source (hmap hu), u, hui, hgu⟩
-
-
-
-
 
 theorem ChartwisePLSphere.ncard_triangle_boundary_neighborSet_eq_one
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -134,9 +118,6 @@ theorem ChartwisePLSphere.ncard_triangle_boundary_neighborSet_eq_one
       hgi hSV ⟨hyS, hyedge⟩ Q hQ A hmap hA G hG hmarked
       (by simpa only [Q.right_inv hwQ] using hlocal)
   simpa only [Q.right_inv hwQ] using hdegree
-
-
-
 
 theorem finite_original_triangle_graph_boundary
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

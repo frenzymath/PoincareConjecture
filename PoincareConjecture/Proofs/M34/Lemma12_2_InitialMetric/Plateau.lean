@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RadialProfile
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capProfile_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) :
     capProfile a r = 2 * Real.sin (r / 2) := by
@@ -34,7 +22,6 @@ theorem capProfile_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) :
         intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ => hd x)
           ((Real.continuous_cos.comp (continuous_id.div_const 2)).intervalIntegrable 0 r)
 
-
 theorem capProfile_eq_of_ge {a r s : ℝ}
     (hr : a + 1 / 2 ≤ r) (hs : a + 1 / 2 ≤ s) :
     capProfile a r = capProfile a s := by
@@ -50,8 +37,6 @@ theorem capProfile_eq_of_ge {a r s : ℝ}
     intervalIntegral.integral_add_adjacent_intervals (μ := volume)
       (hc.intervalIntegrable 0 r) (hc.intervalIntegrable r s)
 
-
-
 theorem capProfile_zero_parameter_le : capProfile 0 Real.pi ≤ 1 / 2 := by
   rw [capProfile_eq_of_ge (s := (1 / 2 : ℝ)) (by linarith [Real.pi_gt_three])
     (by norm_num)]
@@ -60,8 +45,6 @@ theorem capProfile_zero_parameter_le : capProfile 0 Real.pi ≤ 1 / 2 := by
     (continuous_const.intervalIntegrable _ _) (fun x _ => capSlope_le_one 0 x)
   simpa only [capProfile, intervalIntegral.integral_const, sub_zero, smul_eq_mul,
     mul_one] using h
-
-
 
 theorem sqrt_two_lt_capProfile_half_pi :
     Real.sqrt 2 < capProfile (Real.pi / 2) Real.pi := by
@@ -86,8 +69,6 @@ theorem sqrt_two_lt_capProfile_half_pi :
     capProfile (Real.pi / 2) Real.pi at hadd
   rw [hbase] at hadd
   linarith
-
-
 
 theorem exists_capProfile_normalized :
     ∃ a ∈ Ioo (0 : ℝ) (Real.pi / 2), capProfile a Real.pi = Real.sqrt 2 := by

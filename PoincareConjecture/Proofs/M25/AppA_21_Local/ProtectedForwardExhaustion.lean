@@ -4,23 +4,11 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.CoherentChainLimit
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ForwardInfiniteEndSeparation
 import Mathlib.Logic.Function.Iterate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_finite_forward_chain_or_protected_deep_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

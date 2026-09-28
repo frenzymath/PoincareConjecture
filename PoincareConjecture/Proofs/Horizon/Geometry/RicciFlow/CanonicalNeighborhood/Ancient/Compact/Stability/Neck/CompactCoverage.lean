@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.TransportedCenters
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +18,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_transported_strongNecks_on_compact
     (hconv : M23TerminalMetricConvergence G e)

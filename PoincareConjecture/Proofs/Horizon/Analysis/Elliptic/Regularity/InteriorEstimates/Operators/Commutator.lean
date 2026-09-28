@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.ProfileCalculus
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.DifferentiatedEquation
 
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set
@@ -19,7 +13,6 @@ variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
 omit [NeZero d] in
-
 
 theorem exists_derivativeProfile_mul_bound {V : Set E} (hV : IsOpen V)
     (hc : IsCompact (closure V)) (r : ℕ) {a : E → ℝ}
@@ -44,8 +37,6 @@ theorem exists_derivativeProfile_mul_bound {V : Set E} (hV : IsOpen V)
   refine ⟨cutoffMultiplier r B, cutoffMultiplier_nonneg r hB, ?_⟩
   intro p hp u hu
   exact derivativeProfile_mul_le hV hp r ha hu hB hbound
-
-
 
 theorem differentiatedSource_profile_le {V : Set E} (hV : IsOpen V)
     (hc : IsCompact (closure V))

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalResolutionProperness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 theorem RetainedSquareMapFacts.old_fiber_subset
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}
@@ -45,8 +35,6 @@ theorem RetainedSquareMapFacts.old_fiber_subset
         (hunique aG b (facts.old_subset b.property) hab hneab).symm
     exact hzb ▸ b.property
 
-
-
 theorem RetainedSquareMapFacts.double_target_avoids
     {X : Type*} {f g : V2 → X} {K B : Set V2} {T : Set X} {j : K → V2}
     (facts : RetainedSquareMapFacts f g K j)
@@ -67,8 +55,6 @@ theorem RetainedSquareMapFacts.double_target_avoids
     exact hxT
   exact disjoint_left.mp hKB a.property (hbad ⟨haG, haT⟩)
 
-
-
 theorem RetainedSquareMapFacts.image_inter_eq
     {X : Type*} {f g : V2 → X} {K B : Set V2} {T W : Set X} {j : K → V2}
     (facts : RetainedSquareMapFacts f g K j)
@@ -85,8 +71,6 @@ theorem RetainedSquareMapFacts.image_inter_eq
     rcases hcover hx with hxK | hxB
     · exact ⟨⟨j ⟨x, hxK⟩, facts.mapsTo _, facts.keep _⟩, hxW⟩
     · exact False.elim (disjoint_left.mp hW hxW (Or.inl ⟨x, hxB, rfl⟩))
-
-
 
 theorem RetainedSquareMapFacts.exists_image_germ
     {X : Type*} [TopologicalSpace X] [T2Space X]

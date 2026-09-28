@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import Mathlib.Topology.Order.Compact
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +9,6 @@ open Set Geometry
 namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
-
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_eq_pair {d b : Set X}
     (hd : IsFinitePLBallPair ℝ d b) :
@@ -70,16 +57,10 @@ theorem IsFinitePLBallPair.exists_boundary_eq_pair {d b : Set X}
       rw [e.apply_symm_apply, hfront]
       exact Or.inr rfl
 
-
-
 theorem IsFinitePLBallPair.ncard_boundary_eq_two {d b : Set X}
     (hd : IsFinitePLBallPair ℝ d b) : b.ncard = 2 := by
   obtain ⟨x, y, hxy, rfl⟩ := hd.exists_boundary_eq_pair
   exact ncard_pair hxy
-
-
-
-
 
 theorem exists_single_interval_of_ncard_boundary_iUnion_eq_two {ι : Type*}
     (D B : ι → Set X) (hball : ∀ i, IsFinitePLBallPair ℝ (D i) (B i))

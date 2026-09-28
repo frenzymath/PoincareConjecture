@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +7,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis
-
-
 
 theorem contDiff_unique_scalar_root
     {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]

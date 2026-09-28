@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressWeakModes
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem m64AnnulusStress_trigonometric_modes_zero
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)
@@ -82,10 +67,6 @@ theorem m64AnnulusStress_trigonometric_modes_zero
     exact (mul_eq_zero.mp hs).resolve_left hjr
   · filter_upwards [hcm.2] with s hs
     exact (mul_eq_zero.mp hs).resolve_left (neg_ne_zero.mpr hjr)
-
-
-
-
 
 theorem m64AnnulusStress_constant_mode_zero
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu) {c : ℝ}

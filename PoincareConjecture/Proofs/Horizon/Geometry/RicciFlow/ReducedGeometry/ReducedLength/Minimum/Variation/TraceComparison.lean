@@ -4,25 +4,12 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture.ReducedLengthMinimum.Variation
-
-
-
-
 
 theorem sq_mul_integral_trace_eq {c : ℝ} (hc : 0 < c)
     (R V S G C D : ℝ → ℝ)
@@ -65,8 +52,6 @@ theorem sq_mul_integral_trace_eq {c : ℝ} (hc : 0 < c)
   change c ^ 2 * (∫ s in 0..c, D s) =
     2 * c - c ^ 3 * R c + c * V c / 4 - (∫ s in 0..c, A s) / 2
   linarith
-
-
 
 theorem curvature_add_minimum_le_two {c τ m : ℝ} (hc : 0 < c) (hτ : τ = c ^ 2)
     (R V S G C D : ℝ → ℝ)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiAnnular
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiMetric
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -43,9 +33,6 @@ private theorem smooth_positiveMetricBeltrami
   simpa only [positiveMetricBeltrami, div_eq_mul_inv] using!
     hnum.mul ((ofRealCLM.contDiff.comp hden).inv
       (fun z => ofReal_ne_zero.mpr (hdenpos z).ne'))
-
-
-
 
 theorem positiveMetricBeltrami_inverse_quadratic
     (K : Matrix (Fin 2) (Fin 2) ℝ) (hK : K.PosDef)
@@ -82,10 +69,6 @@ theorem positiveMetricBeltrami_inverse_quadratic
   change d * _ = d / ‖w‖ ^ 2 * _
   rw [hnorm]
   field_simp [hn.ne']
-
-
-
-
 
 theorem exists_smooth_disk_isothermal_coordinates
     (K : ℂ → Matrix (Fin 2) (Fin 2) ℝ)

@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryFrame
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,10 +12,6 @@ namespace PoincareConjecture.M64
 
 open M65Branch M65StrictTrace
 
-
-
-
-
 theorem halfDiskGradient_restrict {n : ℕ} {H : ℂ → EuclideanSpace ℝ (Fin n)}
     {R d : ℝ} (hd : 0 < d) (hdR : d ≤ R)
     (hH : ContDiffOn ℝ 1 H (closedBall (0 : ℂ) R ∩ {z | 0 ≤ z.im}))
@@ -31,11 +22,6 @@ theorem halfDiskGradient_restrict {n : ℕ} {H : ℂ → EuclideanSpace ℝ (Fin
   have hder := fderivWithin_subset hsub ((halfDisk_differential_domain hd).2.2.1 _ hz)
     ((hH _ (hsub hz)).differentiableWithinAt one_ne_zero)
   simp only [halfDiskGradient, hder]
-
-
-
-
-
 
 theorem halfDisk_normalized_actual_frame {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

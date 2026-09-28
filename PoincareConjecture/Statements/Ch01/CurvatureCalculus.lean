@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,7 +10,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def CurvatureTensorCalculus {g : RiemannianMetric n M} (D : LeviCivitaData g) : Prop :=
   IsSmoothCovariantTensor D.riemannEvaluation ∧

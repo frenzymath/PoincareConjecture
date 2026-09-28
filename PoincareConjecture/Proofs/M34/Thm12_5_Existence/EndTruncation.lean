@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndCoordinates
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,22 +10,14 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endClosedTail (e : StandardCylindricalEnd g) (L : ℝ) : Set StandardCapSpace :=
   e.coordinate '' (univ ×ˢ Ici L)
-
-
 
 def endTruncation (e : StandardCylindricalEnd g) (L : ℝ) : Set StandardCapSpace :=
   (endClosedTail e L)ᶜ
 
-
-
 def endTruncatedCore (e : StandardCylindricalEnd g) (L : ℝ) : Set StandardCapSpace :=
   (e.coordinate '' (univ ×ˢ Ioi L))ᶜ
-
-
 
 theorem end_carrier_isClosed (e : StandardCylindricalEnd g) : IsClosed e.carrier := by
   let : MetricSpace StandardCapSpace := Proofs.M09.selectedMetricSpace g
@@ -46,8 +28,6 @@ theorem end_carrier_isClosed (e : StandardCylindricalEnd g) : IsClosed e.carrier
   let : EDist StandardCapSpace := (Proofs.M09.selectedMetricSpace g).toEDist
   change IsOpen {x : StandardCapSpace | edist 0 x < ENNReal.ofReal e.radius}
   exact isOpen_lt (continuous_const.edist continuous_id) continuous_const
-
-
 
 theorem endClosedTail_eq (e : StandardCylindricalEnd g) {L : ℝ} (hL : 0 ≤ L) :
     endClosedTail e L = e.carrier ∩ (fun x => (e.inverse x).2) ⁻¹' Ici L := by
@@ -61,28 +41,20 @@ theorem endClosedTail_eq (e : StandardCylindricalEnd g) {L : ℝ} (hL : 0 ≤ L)
   · rintro ⟨hx, hheight⟩
     exact ⟨e.inverse x, ⟨mem_univ _, hheight⟩, e.coordinate_right_inverse hx⟩
 
-
-
 theorem endClosedTail_isClosed (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 0 ≤ L) : IsClosed (endClosedTail e L) := by
   rw [endClosedTail_eq e hL]
   exact e.inverse_smooth.continuousOn.snd.preimage_isClosed_of_isClosed
     (end_carrier_isClosed e) isClosed_Ici
 
-
-
 theorem endTruncation_isOpen (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 0 ≤ L) : IsOpen (endTruncation e L) :=
   (endClosedTail_isClosed e hL).isOpen_compl
-
-
 
 theorem endTruncation_mono (e : StandardCylindricalEnd g)
     {L R : ℝ} (hLR : L ≤ R) : endTruncation e L ⊆ endTruncation e R := by
   apply compl_subset_compl.mpr
   exact image_mono (prod_mono_right (Ici_subset_Ici.mpr hLR))
-
-
 
 theorem endTruncation_coordinate_iff (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 0 ≤ L) {z : StandardCylinderSpace} (hz : 0 ≤ z.2) :
@@ -91,8 +63,6 @@ theorem endTruncation_coordinate_iff (e : StandardCylindricalEnd g)
   rw [endClosedTail_eq e hL]
   simp only [mem_inter_iff, end_coordinate_mem_carrier e hz, true_and,
     mem_preimage, mem_Ici, e.coordinate_left_inverse ⟨mem_univ _, hz⟩, not_le]
-
-
 
 theorem endTruncatedCore_coordinate_iff (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 0 ≤ L) {z : StandardCylinderSpace} (hz : 0 ≤ z.2) :
@@ -108,8 +78,6 @@ theorem endTruncatedCore_coordinate_iff (e : StandardCylindricalEnd g)
         e.coordinate_left_inverse ⟨mem_univ _, hz⟩] at hi
     rw [haz] at ha
     exact (not_lt_of_ge hheight) ha.2
-
-
 
 theorem endTruncatedCore_isCompact (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 0 ≤ L) : IsCompact (endTruncatedCore e L) := by
@@ -138,16 +106,11 @@ theorem endTruncatedCore_isCompact (e : StandardCylindricalEnd g)
   exact Or.inr ⟨e.inverse x,
     ⟨mem_univ _, e.inverse_domain x hcarrier, hheight⟩, e.coordinate_right_inverse hcarrier⟩
 
-
-
 theorem endTruncatedCore_subset_truncation (e : StandardCylindricalEnd g)
     {L R : ℝ} (hLR : L < R) : endTruncatedCore e L ⊆ endTruncation e R := by
   intro x hx htail
   obtain ⟨z, hz, rfl⟩ := htail
   exact hx ⟨z, ⟨mem_univ _, hLR.trans_le hz.2⟩, rfl⟩
-
-
-
 
 theorem endTruncation_contains_compact (e : StandardCylindricalEnd g)
     {K : Set StandardCapSpace} (hK : IsCompact K) :

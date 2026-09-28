@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedPositiveTestAge
 import PoincareConjecture.Proofs.M47.SeedYoungPhysicalVolume
 import PoincareConjecture.Proofs.M47.SeedPositiveRetainedVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +31,6 @@ private theorem retained_time_lt_young_age
   have hprod := mul_pos params.safeTime_pos hApos
   apply (lt_div_iff₀ (by positivity : 0 < 32 * A)).mpr
   nlinarith only [hscaled, hcompare, hprod, sq_pos_of_pos hrNext]
-
-
 
 theorem exists_seed_terminal_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

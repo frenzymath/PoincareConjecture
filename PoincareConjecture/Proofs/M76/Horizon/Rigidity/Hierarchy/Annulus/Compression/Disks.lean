@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SecondCoordinateSlab
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.MarkedDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -44,9 +35,6 @@ private theorem new_phase_open_in_frontier
         (fun h => h.resolve_right hb), hf⟩
   rw [heq]
   exact (hF.union hB).isOpen_compl.preimage continuous_subtype_val
-
-
-
 
 theorem hamiltonZero_second_slab_disk_alternative {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (phi : C(H0, H0))

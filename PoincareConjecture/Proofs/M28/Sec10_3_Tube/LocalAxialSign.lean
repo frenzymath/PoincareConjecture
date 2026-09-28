@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalAxialMonotonicity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_transition_axis_signed_deriv_bounds_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

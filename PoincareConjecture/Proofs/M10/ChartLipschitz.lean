@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.SegmentDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

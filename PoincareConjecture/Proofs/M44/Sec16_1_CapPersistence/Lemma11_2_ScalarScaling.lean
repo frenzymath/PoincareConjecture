@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M01.NormalizationMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ variable {n : ℕ} {M N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T2Space M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
-
-
 
 theorem homothety_ricciNormSq_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -71,8 +59,6 @@ variable {n : ℕ} {M : Type*}
   [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] {g : RiemannianMetric n M}
 
-
-
 theorem rescaled_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     (f : M → ℝ) (x : M) :
     (m01RescaledMetric_connection g D Q hQ).gradient f x = Q⁻¹ • D.gradient f x := by
@@ -85,8 +71,6 @@ theorem rescaled_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
   apply (mul_left_cancel₀ hQ.ne')
   rw [← mul_assoc, mul_inv_cancel₀ hQ.ne', one_mul]
   exact h
-
-
 
 theorem rescaled_laplacian (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) :
@@ -103,16 +87,11 @@ theorem rescaled_laplacian (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     (Q⁻¹ • (D.connection (D.gradient f) x).toLinearMap) = _
   exact (LinearMap.trace ℝ (TangentSpace (𝓡 n) x)).map_smul Q⁻¹ _
 
-
-
 theorem rescaledMetric_identity_homothety {Q : ℝ} (hQ : 0 < Q) :
     MetricHomothety g (m01RescaledMetric g Q hQ) (Diffeomorph.refl (𝓡 n) M ∞) Q := by
   intro x v w
   simp only [Diffeomorph.coe_refl, mfderiv_id]
   exact m01RescaledMetric_inner g Q hQ x v w
-
-
-
 
 theorem rescaled_scalar_evolution [T2Space M] (D : LeviCivitaData g)
     {Q : ℝ} (hQ : 0 < Q) (x : M)

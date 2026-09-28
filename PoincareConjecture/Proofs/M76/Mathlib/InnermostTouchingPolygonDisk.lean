@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.TouchingPolygonNesting
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 import Mathlib.Order.WellFoundedSet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem exists_innermost_inside_of_singleton_inter {ι : Type*} [Finite ι] [Nonempty ι]
     (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))
@@ -43,10 +31,6 @@ theorem exists_innermost_inside_of_singleton_inter {ι : Type*} [Finite ι] [Non
     obtain ⟨x, hx, hxq⟩ := ((P i).isConnected_boundary_sdiff_singleton (hP i) (hinj i) q).nonempty
     exact (hxq (hinter hij ⟨hx, hbound ▸ hx⟩)).elim
   · exact hdisj
-
-
-
-
 
 theorem exists_innermost_finitePL_disk_of_singleton_inter {ι : Type*}
     [Finite ι] [Nonempty ι] (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))

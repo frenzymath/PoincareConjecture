@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -67,8 +58,6 @@ private theorem raw_divergence_term (g : RiemannianMetric n V)
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply,
     fderiv_const_apply, zero_apply, map_zero, zero_add]
   exact add_comm _ _
-
-
 
 theorem raw_vector_heat_divergence_operator {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} (hX : ContDiff ℝ ∞ X) (x : V) :

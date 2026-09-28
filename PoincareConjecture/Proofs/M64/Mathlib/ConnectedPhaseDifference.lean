@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularAngles
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,9 +17,6 @@ private theorem angularPoint_eq_iff_exp_eq {s t : ℝ} :
     ← m60LoopCircleHomeomorphCircle_angular t,
     m60LoopCircleHomeomorphCircle.injective.eq_iff]
   exact ⟨fun h => Subtype.ext h, fun h => congrArg Subtype.val h⟩
-
-
-
 
 theorem m64ContinuousPhase_difference {X : Type*} [TopologicalSpace X]
     {S : Set X} (hS : IsPreconnected S) {u v : X → ℝ} {k : ℝ} (hk : k ≠ 0)
@@ -50,9 +35,6 @@ theorem m64ContinuousPhase_difference {X : Type*} [TopologicalSpace X]
   have h := mul_left_cancel₀ hk (heq hx)
   change u x - v x = u a - v a at h
   linarith
-
-
-
 
 theorem m64AngularPoint_phase_shift {k u v : ℝ}
     (hobs : angularPoint (k * u) = angularPoint (k * v)) (t : ℝ) :

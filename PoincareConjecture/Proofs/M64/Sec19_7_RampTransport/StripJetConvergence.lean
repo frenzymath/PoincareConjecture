@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.ClosedStripSliceJets
 import Mathlib.Algebra.Field.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -21,10 +10,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M64.RampTransport
 
 local notation "S" => Set.prod (univ : Set ℝ) (Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem exists_periodic_strip_uniform_tolerance
     {Z : Type*} [MetricSpace Z] {f : ℝ × ℝ → Z}
@@ -55,8 +40,6 @@ theorem exists_periodic_strip_uniform_tolerance
 
 variable {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]
 
-
-
 theorem horizontalSliceJet_periodic {f : ℝ × ℝ → W}
     (hf : ContDiffOn ℝ 2 f S) {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1)
     {period : ℝ} (hp : Function.Periodic (fun x => f (x, s)) period) :
@@ -67,10 +50,6 @@ theorem horizontalSliceJet_periodic {f : ℝ × ℝ → W}
   have hp2 := hp1.deriv_of_differentiable (hc1.differentiable (by norm_num))
   intro x
   simp only [horizontalSliceJet, hp x, hp1 x, hp2 x]
-
-
-
-
 
 theorem exists_closedStrip_jet_tolerance {f : ℝ × ℝ → W}
     (hf : ContDiffOn ℝ 2 f S) {period : ℝ} (hperiod : 0 < period)

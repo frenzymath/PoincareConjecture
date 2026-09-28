@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.SourceSla
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleSlab
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

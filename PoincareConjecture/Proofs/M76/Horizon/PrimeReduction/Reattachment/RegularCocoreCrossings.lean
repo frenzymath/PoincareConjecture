@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.Regular
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.LocalDiskEdgeCrossing
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleInteriorCrossingChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

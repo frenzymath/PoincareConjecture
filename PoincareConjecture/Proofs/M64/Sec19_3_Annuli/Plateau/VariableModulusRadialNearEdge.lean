@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialBallGeo
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyPowerWeakening
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusGrowth
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,9 +35,6 @@ private theorem lowerDiskEnergy_eq_diskEnergy
     m64AnnulusLowerExtend_right _ _ (hball hp)]
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem weighted_lower_near_edge_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.FiniteGraphSection
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

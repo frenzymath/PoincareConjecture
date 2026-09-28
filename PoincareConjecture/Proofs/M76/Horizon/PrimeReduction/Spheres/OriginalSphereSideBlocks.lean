@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.SphereSideDualHalfBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSphereIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 
@@ -20,9 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_original_side_blocks
     {X ι : Type*} [MetricSpace X]

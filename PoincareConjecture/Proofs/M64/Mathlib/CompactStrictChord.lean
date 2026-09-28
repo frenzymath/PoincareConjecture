@@ -1,15 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,10 +19,6 @@ private theorem norm_sub_lt_two_of_no_opposite_unit
     simpa only [sub_eq_add_neg, add_comm, norm_neg, hv', hw', one_add_one_eq_two] using hd
   have hsame := (norm_add_eq_iff_real.mp heq).symm
   exact hne hv' hw' (by simpa only [norm_neg, hv', hw', one_smul] using hsame)
-
-
-
-
 
 theorem m64Compact_exists_uniform_strict_chord_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

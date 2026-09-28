@@ -32,8 +32,6 @@ theorem m67_pi_two_trivial_of_homeomorph
   obtain ⟨b'', rfl⟩ := hf b'
   rw [h.elim a'' b'']
 
-
-
 theorem m67_alpha_transport_of_diffeomorph
     (S : M59IdentificationSystem.{u})
     (B : M59HigherBasepointTransportService.{u})

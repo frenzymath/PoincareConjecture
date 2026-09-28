@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ theorem emptyTime_pos (F : SurgeryFlowData.{u}) {a : ℝ}
   subst a
   obtain ⟨x⟩ := F.initial_nonempty
   exact isEmptyElim x
-
-
 
 theorem surgeryTime_le_empty (F : SurgeryFlowData.{u}) {a T : ℝ}
     (ha : a ∈ F.time_domain) [IsEmpty (F.slice a).carrier]

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.Control
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +23,6 @@ private theorem metric_eq_of_inner_eq
   cases h
   cases hi
   rfl
-
-
 
 theorem ancientRescaleAt_backward_metric_zero
     {n : ℕ} {M : Type u} [TopologicalSpace M]

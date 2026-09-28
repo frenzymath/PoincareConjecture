@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_planar_closedRegion_subset_of_boundary_subset
     (A B : BallNeighborhoodChart E2 E2)

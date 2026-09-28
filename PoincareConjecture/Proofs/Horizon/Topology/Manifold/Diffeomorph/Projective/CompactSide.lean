@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Projectiv
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.AntipodalBallComplement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.CountableComplement
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -67,8 +58,6 @@ namespace PoincareConjecture.ProjectiveGluing
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S3" => UnitThreeSphere
 
-
-
 theorem isConnected_antipodal_ball_exterior
     (b : OpenPartialHomeomorph E3 S3) (hbs : closedBall 0 1 ⊆ b.source)
     (hb : ContMDiffOn (𝓡 3) (𝓡 3) ∞ b b.source)
@@ -92,8 +81,6 @@ theorem isConnected_antipodal_ball_exterior
       exact ⟨x, congrArg Subtype.val hx⟩
   rw [← hV, ← hrange]
   exact isConnected_range (continuous_subtype_val.comp D.continuous)
-
-
 
 theorem eq_antipodal_ball_side_of_frontier
     {L : Set S3} (hL : IsClosed L) (hregular : closure (interior L) = L)

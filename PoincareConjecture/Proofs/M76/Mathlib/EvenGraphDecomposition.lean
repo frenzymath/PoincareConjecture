@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EvenGraphCycles
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*} [Finite V]
-
-
-
-
 
 theorem exists_cycle_graph_decomposition (G : SimpleGraph V)
     (heven : ∀ v, Even (G.neighborSet v).ncard) :
@@ -84,10 +71,6 @@ theorem exists_cycle_graph_decomposition (G : SimpleGraph V)
         rcases Finset.mem_insert.mp hJ with rfl | hJ
         · exact hHG hJab
         · exact ((hS J hJ).2.2 hJab).1
-
-
-
-
 
 theorem IsCycles.support_inter_subset_singleton {G H J : SimpleGraph V} (q : V)
     (hdegree : ∀ v, v ≠ q → (G.neighborSet v).ncard = 2)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Frame.Field
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +31,6 @@ theorem curvature_transverse_eq (D : LeviCivitaData g) (x : M)
   ring
 
 open ConnectionAlongCurve ConnectionVariation ConjugateFrame
-
-
 
 theorem jacobi_of_scalar_in_parallel_frame (D : LeviCivitaData g)
     {γ : ℝ → M} {P : ℝ → EuclideanSpace ℝ (Fin 2) →L[ℝ] EuclideanSpace ℝ (Fin 2)}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quo
 import Mathlib.Topology.Covering.Quotient
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M38
 
 variable {M : Type*} [TopologicalSpace M]
-
 
 def CirclePullback (π : M → UnitCircle) :=
   {p : M × ℝ // π p.1 = unitCircleExp p.2}
@@ -32,9 +22,7 @@ variable (π : M → UnitCircle)
 instance : TopologicalSpace (CirclePullback π) :=
   inferInstanceAs (TopologicalSpace {p : M × ℝ // π p.1 = unitCircleExp p.2})
 
-
 def projection (a : CirclePullback π) : M := a.val.1
-
 
 def height (a : CirclePullback π) : ℝ := a.val.2
 
@@ -51,8 +39,6 @@ theorem projection_surjective : Function.Surjective (projection π) := by
   intro x
   obtain ⟨t, ht⟩ := unitCircleExp_surjective (π x)
   exact ⟨⟨(x, t), ht.symm⟩, rfl⟩
-
-
 
 theorem projection_isLocalHomeomorph (hπ : Continuous π) :
     IsLocalHomeomorph (projection π) := by
@@ -106,7 +92,6 @@ theorem projection_isLocalHomeomorph (hπ : Continuous π) :
       exact hL x hx }
   exact ⟨C, h.localInverse_mem_target, rfl⟩
 
-
 instance : AddAction ℤ (CirclePullback π) where
   vadd n a := ⟨(projection π a, height π a + n),
     (projection_height π a).trans (unitCircleExp_add_int (height π a) n).symm⟩
@@ -133,8 +118,6 @@ theorem height_vadd (n : ℤ) (a : CirclePullback π) :
 instance : ContinuousConstVAdd ℤ (CirclePullback π) where
   continuous_const_vadd _n :=
     (continuous_projection π |>.prodMk ((continuous_height π).add continuous_const)).subtype_mk _
-
-
 
 theorem projection_isAddQuotientCoveringMap (hπ : Continuous π) :
     IsAddQuotientCoveringMap (projection π) ℤ where
@@ -164,7 +147,6 @@ theorem projection_isAddQuotientCoveringMap (hπ : Continuous π) :
     have hlo' : (-1 : ℤ) < n := by exact_mod_cast hlo
     have hhi' : n < (1 : ℤ) := by exact_mod_cast hhi
     omega
-
 
 theorem height_isProperMap [CompactSpace M] (hπ : Continuous π) :
     IsProperMap (height π) := by

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CapContractionFlow
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -25,8 +15,6 @@ variable (f : E → E) {K L : ℝ≥0} (hK : LipschitzWith K f) (hL : ∀ x, ‖
 variable (hag : EqOn f (capContractionField χ u) (closedBall 0 1))
 
 include hχ hzero hu hag
-
-
 
 theorem capFlow_mapsTo_cap (a : ℝ) (ha : 0 ≤ a) (hone : ∀ z ∈ Icc a 1, χ z = 1)
     (t : ℝ) (ht : 0 ≤ t) :
@@ -69,8 +57,6 @@ theorem capFlow_mapsTo_cap (a : ℝ) (ha : 0 ≤ a) (hone : ∀ z ∈ Icc a 1, �
   change ‖c t‖ = 1
   change 1 ≤ ‖c t‖ ^ 2 at hsq
   nlinarith [norm_nonneg (c t)]
-
-
 
 theorem capFlow_eventually_mapsTo_ball (eps : ℝ) (heps : 0 < eps) :
     ∃ T : ℝ, 0 ≤ T ∧ ∀ t : ℝ, T ≤ t →

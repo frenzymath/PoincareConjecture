@@ -1,19 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Incidence
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Frontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Closure
 import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,7 +14,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
 
 theorem isPreconnected_chart_ball_sdiff_finite (p : M) {r : ℝ} (hr : 0 < r)
     (htarget : ball (chartAt (EuclideanSpace ℝ (Fin 2)) p p) r ⊆
@@ -70,8 +57,6 @@ theorem isPreconnected_chart_ball_sdiff_finite (p : M) {r : ℝ} (hr : 0 < r)
 
 variable [IsManifold (𝓡 2) ∞ M]
 
-
-
 theorem SmoothEdge.exists_mem_neighborhood_not_mem_finite (e : SmoothEdge M)
     (hinj : InjOn e.map (Icc (0 : ℝ) 1))
     {p : M} (hp : p ∈ e.map '' Icc (0 : ℝ) 1)
@@ -92,8 +77,6 @@ theorem SmoothEdge.exists_mem_neighborhood_not_mem_finite (e : SmoothEdge M)
     Set.Infinite.image hinj' (Ioo_infinite (hab.1.trans hab.2))
   obtain ⟨w, ⟨u, hu, rfl⟩, hw⟩ := Set.not_subset.mp (fun h => hinfinite (hV.subset h))
   exact ⟨e.map u, (hsub hu).2, ⟨u, Ioo_subset_Icc_self (hsub hu).1, rfl⟩, hw⟩
-
-
 
 theorem frontier_edge_complement_subset_closure_sdiff_finite [T2Space M]
     {I : Type v} [Finite I] (edge : I → SmoothEdge M)
@@ -153,8 +136,6 @@ theorem frontier_edge_complement_subset_closure_sdiff_finite [T2Space M]
     (edge i).exists_mem_neighborhood_not_mem_finite (hinj i) hpi hDopen hpD hV
   exact hUsub (hinside ⟨hwD, hwV⟩) (mem_iUnion.mpr ⟨i, hwi⟩)
 
-
-
 theorem frontier_edge_complement_eq_iUnion_of_uniform_incidence [T2Space M]
     {I : Type v} [Finite I] (edge : I → SmoothEdge M)
     (hinj : ∀ i, InjOn (edge i).map (Icc (0 : ℝ) 1)) (x : M)
@@ -206,8 +187,6 @@ theorem frontier_edge_complement_eq_iUnion_of_uniform_incidence [T2Space M]
   · intro z hz
     obtain ⟨i, hi⟩ := mem_iUnion.mp hz
     exact i.property hi
-
-
 
 theorem frontier_chartCircle_edge_complement_eq_iUnion [T2Space M]
     {I : Type v} [Finite I] (edge : I → SmoothEdge M) (p : I → M) (r : I → ℝ)

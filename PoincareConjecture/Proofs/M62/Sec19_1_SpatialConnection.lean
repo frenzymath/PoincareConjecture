@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeSlices
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeRicciPairing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem spatial_chart_connection_pairing {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (p : M)
@@ -74,8 +63,6 @@ theorem spatial_chart_connection_pairing {F : RicciFlow n M (Set.Icc a b)}
   simp only [hb, map_zero, zero_apply, sub_zero, add_zero, hd] at h
   simp only [hbx, map_zero, zero_apply, sub_zero, add_zero] at hs
   linarith only [h, hs]
-
-
 
 theorem spatial_spatial_horizontal {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)
@@ -172,8 +159,6 @@ theorem spatial_spatial_horizontal {F : RicciFlow n M (Set.Icc a b)}
     exact sub_eq_zero.mpr hpair
   exact (ne_of_gt (g.pos p (U - Z) (sub_ne_zero.mpr hne))) hz
 
-
-
 theorem spatial_connection_at {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p)
@@ -206,8 +191,6 @@ theorem spatial_connection_at {F : RicciFlow n M (Set.Icc a b)}
       exact G.spatial_time_pairing q V (B q.2 q.1)
     rw [hneg] at h
     linarith
-
-
 
 theorem spatial_connection {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)

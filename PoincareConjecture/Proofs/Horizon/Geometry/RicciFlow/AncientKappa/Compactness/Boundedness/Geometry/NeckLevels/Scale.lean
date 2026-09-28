@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.ComponentDiameter.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.TransportComponentDiameter
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +22,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M] [T3Space M]
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 2 + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem exists_remote_neck_scale_lower_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

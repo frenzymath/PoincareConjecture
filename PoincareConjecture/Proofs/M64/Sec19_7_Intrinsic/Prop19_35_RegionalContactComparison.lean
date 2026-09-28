@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_ContactTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_open_region_strictly_inside_annulus
     {U : Set AnnulusCoordinates} (hU : IsOpen U)
@@ -43,9 +30,6 @@ theorem m64Intrinsic_open_region_strictly_inside_annulus
     interior_closedBall (0 : AnnulusCoordinates) (by norm_num : (2 : ℝ) ≠ 0)] at hxinterior
   simpa only [mem_inter_iff, mem_compl_iff, Metric.mem_closedBall, Metric.mem_ball,
     dist_zero_right, not_le] using hxinterior
-
-
-
 
 theorem m64Intrinsic_regional_contact_le_annulus_contact
     {U : Set AnnulusCoordinates} (hU : IsOpen U)

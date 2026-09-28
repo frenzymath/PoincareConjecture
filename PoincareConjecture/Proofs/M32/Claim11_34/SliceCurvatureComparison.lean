@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.ScalarPullbackJet
 import PoincareConjecture.Proofs.M32.Mathlib.RelativeBilinearError
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Coordinates.BilinearConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -360,10 +346,6 @@ private theorem eventually_slice_comparison
   have heq : k0 + (k - k0) = k := by omega
   simpa only [heq] using h
 
-
-
-
-
 theorem blowup_eventually_sliceRicci_error
     (G : GeneralizedBlowupConvergence S J) {t : ℝ} (ht : t ∈ J)
     {K : Set G.limit.carrier.carrier} (hK : IsCompact K)
@@ -410,9 +392,6 @@ theorem blowup_eventually_sliceRicci_error
   erw [hmap] at h
   simpa only [comparisonConnection, rescaledMetric_ricci] using h
 
-
-
-
 theorem blowup_eventually_sliceScalar_error
     (G : GeneralizedBlowupConvergence S J) {t : ℝ} (ht : t ∈ J)
     {K : Set G.limit.carrier.carrier} (hK : IsCompact K)
@@ -435,9 +414,6 @@ theorem blowup_eventually_sliceScalar_error
     (extChartAt (𝓡 3) q).left_inv hx, rescaledMetric_scalarCurvature,
     GeneralizedRicciFlowData.scalar, GeneralizedFlowCylinder.pointMap,
     div_eq_mul_inv, mul_comm] using h
-
-
-
 
 theorem blowup_eventually_sliceMetric_error
     (G : GeneralizedBlowupConvergence S J) {t : ℝ} (ht : t ∈ J)

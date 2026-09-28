@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CrossingShift
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CrossingParity
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.BoundaryBasics
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem polygonCrossingParity_flip_near_edge
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}

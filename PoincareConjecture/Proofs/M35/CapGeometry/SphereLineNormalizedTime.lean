@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SphereLineTimeAffine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 theorem sphereLine_normalized_family_affine (N : M27SphereLineFlowCertificate K)
     (coordinate : RoundCylinderSpace → M) (Q : ℝ) (hQ : 0 < Q)

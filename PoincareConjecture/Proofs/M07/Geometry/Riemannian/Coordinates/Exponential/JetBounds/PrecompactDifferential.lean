@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ManifoldComparison
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,7 +42,6 @@ theorem exists_open_radial_variation_domain
   · intro s hs t ht
     rw [Metric.mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs]
     exact (mul_le_mul_of_nonneg_right (abs_lt.mpr ht).le (norm_nonneg _)).trans_lt hs
-
 
 theorem radialVariation_contDiffAt_chartField
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -101,7 +92,6 @@ theorem radialVariation_contDiffAt_chartField
 
 set_option maxHeartbeats 1000000 in
 
-
 theorem pullbackCoefficients_zero_of_normalized_chart
     (g : RiemannianMetric n M) {p : M}
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -134,9 +124,6 @@ theorem pullbackCoefficients_zero_of_normalized_chart
       (mfderiv (𝓡 n) (𝓡 n) e 0 w)) = g.pullbackCoefficients e 0 v w at hm
   rw [← hv, ← hw] at hm
   exact hm.symm.trans (hL v w)
-
-
-
 
 theorem radial_geodesic_differential_two_sided
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -213,8 +200,6 @@ theorem radial_geodesic_differential_two_sided
   rw [one_smul, mul_one, one_mul] at hh
   exact hh
 
-
-
 theorem exists_uniform_radial_comparison_radius {R : ℝ} (hR : 0 < R) (K : ℝ) :
     ∃ ρ : ℝ, 0 < ρ ∧ 2 * ρ < R ∧ ∀ s : ℝ, |s| ≤ 2 * ρ →
       (K * s ^ 2) * Real.exp (max 1 (K * s ^ 2)) ≤ 3 := by
@@ -231,8 +216,6 @@ theorem exists_uniform_radial_comparison_radius {R : ℝ} (hR : 0 < R) (K : ℝ)
     rw [Real.dist_eq, sub_zero]
     have hh := min_le_right (R / 4) (δ / 4)
     linarith
-
-
 
 theorem pullbackCoefficients_bounds_of_differential
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
@@ -257,7 +240,6 @@ theorem pullbackCoefficients_bounds_of_differential
   constructor <;> nlinarith [sq_nonneg (g.tangentNorm (e v)
     (mfderiv (𝓡 n) (𝓡 n) e v w) - ‖w‖ / 2),
     sq_nonneg (g.tangentNorm (e v) (mfderiv (𝓡 n) (𝓡 n) e v w) + ‖w‖ / 2)]
-
 
 theorem isInvertible_mfderiv_of_tangentNorm_lower_bound
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
@@ -287,8 +269,6 @@ theorem isInvertible_mfderiv_of_tangentNorm_lower_bound
   let A := LinearEquiv.ofBijective L.toLinearMap ⟨hi, hs⟩
   exact ⟨A.toContinuousLinearEquiv, rfl⟩
 
-
-
 theorem radial_image_mem_ball
     (g : RiemannianMetric n M) {p : M}
     {e : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}
@@ -307,8 +287,6 @@ theorem radial_image_mem_ball
       mul_le_mul_right ht1 _
     _ = ENNReal.ofReal ‖v‖ := mul_one _
     _ < ENNReal.ofReal R := (ENNReal.ofReal_lt_ofReal_iff hR).mpr hvR
-
-
 
 theorem radial_exponential_uniform_bounds
     (g : RiemannianMetric n M) (D : LeviCivitaData g) {p : M}

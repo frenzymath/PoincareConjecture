@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Chart
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
-
-
 
 theorem chartTriangle_transverse_nonpos
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -58,8 +48,6 @@ theorem chartTriangle_transverse_nonpos
     ⟨e (f.symm (u, b)), ⟨hfirst, hy, hsum⟩, e.left_inv hs⟩
     ⟨(u, b), ⟨hpos, hb.1, hu⟩, rfl⟩
 
-
-
 theorem chartTriangle_transverse_deriv_nonpos
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
     {a b d : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)
@@ -76,8 +64,6 @@ theorem chartTriangle_transverse_deriv_nonpos
   simp only [zero_add, hzero, sub_zero, smul_eq_mul]
   exact mul_nonpos_of_nonneg_of_nonpos (inv_nonneg.mpr (le_of_lt hpos)) hu
 
-
-
 theorem chartTriangle_shared_edge_germ
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
     (he : ∀ s ∈ Icc (0 : ℝ) 1, (0, s) ∈ e.target)
@@ -90,9 +76,6 @@ theorem chartTriangle_shared_edge_germ
   rw [← hts, e.right_inv (he t ht)]
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S]
-
-
-
 
 theorem chartTriangle_transverse_deriv_neg
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))

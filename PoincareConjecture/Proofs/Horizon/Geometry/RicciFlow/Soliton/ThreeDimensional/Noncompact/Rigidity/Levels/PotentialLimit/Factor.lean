@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Identities
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {f : M → ℝ}
-
-
 
 theorem compact_unitScalar_zeroLevel_of_parallel
     (hc : MetricComplete g) (hf : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ f)

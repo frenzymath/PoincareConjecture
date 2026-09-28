@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.L
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,9 +34,6 @@ private theorem mem_cthickening_sphere_of_abs_norm_sub_one_lt
       _ = ‖(‖x‖ - 1) • (p : E2)‖ := by rw [sub_smul, one_smul]
       _ = |‖x‖ - 1| := by simp [norm_smul, Real.norm_eq_abs]
   exact mem_cthickening_of_dist_le x p δ _ p.property (hdist ▸ hx.le.trans hεδ)
-
-
-
 
 theorem exists_ambient_circle_collar_extension
     {e : E2 -> E2} (he : ContDiff Real ∞ e)

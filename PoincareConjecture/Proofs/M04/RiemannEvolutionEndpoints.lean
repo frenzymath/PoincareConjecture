@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.FlowRiemannRegularity
 import PoincareConjecture.Proofs.M04.RicciEvolutionEndpoints
 import PoincareConjecture.Proofs.M04.RiemannEvolutionInterior
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -214,4 +207,3 @@ theorem curvatureTensor_timeDerivative_extend (F : RicciFlow n M J)
   exact ((hf t ht).differentiableWithinAt (by simp)).hasDerivWithinAt.congr_deriv (heq ht)
 
 end PoincareConjecture.M04
-

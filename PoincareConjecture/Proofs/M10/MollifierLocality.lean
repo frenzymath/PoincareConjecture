@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.MollifierBasics
 import Mathlib.Analysis.Calculus.FDeriv.Congr
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory ContinuousLinearMap
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M10
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [Measure.IsAddHaarMeasure μ]
-
 
 theorem normed_convolution_eqOn_of_eqOn (κ : ContDiffBump (0 : E))
     {f g : E → ℝ} {x : E} {r : ℝ} (hκ : κ.rOut ≤ r / 2)
@@ -44,7 +35,6 @@ theorem normed_convolution_eqOn_of_eqOn (κ : ContDiffBump (0 : E))
         _ = r := add_halves r
     change κ.normed μ z * f (y - z) = κ.normed μ z * g (y - z)
     rw [hfg hmem]
-
 
 theorem eventually_normed_convolution_eventuallyEq {κ : ℕ → ContDiffBump (0 : E)}
     (hκ : Tendsto (fun j ↦ (κ j).rOut) atTop (𝓝 0))

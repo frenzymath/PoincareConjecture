@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M47ScalarPersistence
 import PoincareConjecture.Proofs.M04.CompactSlabParabolic
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem component_scalar_floor_preserved
     (P : M47ScalarPersistencePredecessors.{u})
@@ -65,8 +53,6 @@ theorem component_scalar_floor_preserved
     have heq : t = a := le_antisymm ht.2 ht.1
     subst t
     exact hinit x hx
-
-
 
 theorem exists_earlier_component_scalar_le
     (P : M47ScalarPersistencePredecessors.{u})

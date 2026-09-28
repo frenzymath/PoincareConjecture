@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Connection
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +11,6 @@ namespace Poincare.Geometry.Curvature.Hypersurface
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem covariantDerivativeAlongMap_curvature (D : LeviCivitaData g)
     {F W : E → EuclideanSpace ℝ (Fin n)} {x : E}

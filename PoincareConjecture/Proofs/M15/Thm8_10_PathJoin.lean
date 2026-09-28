@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Mathlib.CurveExtension
 import PoincareConjecture.Proofs.M08.RegularizedAction
 import PoincareConjecture.Proofs.M09.SmoothJoinAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_backwardPath_concat_approx
     {n : ℕ} {M : Type u} [TopologicalSpace M]

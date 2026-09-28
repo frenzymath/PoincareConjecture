@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapBoundaryChart
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace PoincareConjecture.M76
 
 variable {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E]
-
-
-
 
 structure HamiltonMarkedCapCoordinates {D S : Set X} {eps : ℝ}
     (g : S × Ico (0 : ℝ) eps → X) where
@@ -52,8 +40,6 @@ namespace HamiltonMarkedCapCoordinates
 variable {D S : Set X} {eps : ℝ} {g : S × Ico (0 : ℝ) eps → X}
   (c : HamiltonMarkedCapCoordinates (E := E) (D := D) g)
 
-
-
 theorem inverse_nonneg (p : ℝ × E) (hp : p ∈ c.chart.target) (ht : 0 ≤ p.1) :
     c.chart.symm p = c.original.symm p := by
   have hp' := c.target.subset hp
@@ -64,8 +50,6 @@ theorem inverse_nonneg (p : ℝ × E) (hp : p ∈ c.chart.target) (ht : 0 ≤ p.
   have h := congrArg c.chart.symm (c.positive ⟨p, hpP⟩)
   rw [c.chart.left_inv hx] at h
   exact h.symm
-
-
 
 theorem inverse_nonpos (p : ℝ × E) (hp : p ∈ c.chart.target) (ht : p.1 ≤ 0) :
     ∃ t : Ico (0 : ℝ) eps, (t : ℝ) = -p.1 ∧ (t : ℝ) < c.radius ∧
@@ -82,8 +66,6 @@ theorem inverse_nonpos (p : ℝ × E) (hp : p ∈ c.chart.target) (ht : p.1 ≤ 
   have hpval : (-(t : ℝ), p.2) = p := by dsimp [t]; exact Prod.ext (neg_neg p.1) rfl
   rw [hpval] at h
   exact ⟨t, rfl, htr, h.symm⟩
-
-
 
 theorem side (hg : ∀ p, g p ∈ D) (x : X) (hx : x ∈ c.chart.source) :
     x ∈ D ↔ (c.chart x).1 ≤ 0 := by
@@ -105,8 +87,6 @@ theorem side (hg : ∀ p, g p ∈ D) (x : X) (hx : x ∈ c.chart.source) :
       exact hg _
     exact ⟨fun _ => ht', fun _ => hxD⟩
 
-
-
 theorem interior_side (hg : ∀ p, g p ∈ D) (x : X) (hx : x ∈ c.chart.source) :
     x ∈ interior D ↔ (c.chart x).1 < 0 := by
   have hi : c.chart.IsImage D {p | p.1 ≤ 0} := fun {y} hy => (c.side hg y hy).symm
@@ -118,15 +98,11 @@ theorem interior_side (hg : ∀ p, g p ∈ D) (x : X) (hx : x ∈ c.chart.source
   rw [heq] at h
   exact h.symm
 
-
-
 theorem coordinates_nonneg (p : ℝ × E) (hp : p ∈ c.chart.target) (ht : 0 ≤ p.1) :
     c.chart.symm p ∈ c.original.source ∧ c.original (c.chart.symm p) = p := by
   have hpB : p ∈ c.original.target := c.rectangle (c.target.subset hp)
   rw [c.inverse_nonneg p hp ht]
   exact ⟨c.original.map_target hpB, c.original.right_inv hpB⟩
-
-
 
 theorem lateral_subset_boundary_target : c.lateral ⊆ c.boundary.target := by
   intro z hz

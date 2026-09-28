@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity.Derivative
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -12,8 +10,6 @@ open scoped ContDiff
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem fderiv_le_of_approx_of_backward_increment
     {u F : E → ℝ} (hu : ContDiff ℝ 2 u) {y v : E} {T ε c Cf Cu : ℝ}

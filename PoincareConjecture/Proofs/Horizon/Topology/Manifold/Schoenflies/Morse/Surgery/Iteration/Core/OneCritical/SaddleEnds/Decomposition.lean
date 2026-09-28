@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.UpperFamily
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.HeightBand
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 namespace SphereSurgeryCoreCap
-
-
 
 structure AnnularEndFamily (v : E3) (g : S2 → E3) (B : Set Real) (C : Set S2) where
   caps : List (SphereSurgeryCoreCap v g B)
@@ -135,14 +131,11 @@ theorem core_eq_middle_union_ends (A : AnnularEndFamily v g B C) :
     · obtain ⟨i, hi⟩ := mem_iUnion.mp hp
       exact A.endRegion_subset_core i hi
 
-
-
 theorem range_eq_middle_union_ends_caps (A : AnnularEndFamily v g B C) :
     range g = (g '' A.middleRegion ∪ ⋃ i, g '' A.endRegion i) ∪
       ⋃ D ∈ A.caps, D.parametrization '' closedBall (0 : E2) 1 := by
   rw [range_eq_core_union_caps A.caps A.core_complement]
   conv_lhs => arg 1; rw [A.core_eq_middle_union_ends, image_union, image_iUnion]
-
 
 theorem cap_height_outside_middle (A : AnnularEndFamily v g B C)
     (D : SphereSurgeryCoreCap v g B) (hD : D ∈ A.caps)
@@ -168,9 +161,6 @@ end SphereSurgeryCoreCap
 namespace SphereMorseReduction
 
 open SphereSurgeryCoreCap
-
-
-
 
 theorem exists_terminal_annular_end_family
     {f : S2 → E3} (M : SphereMorseReduction f)

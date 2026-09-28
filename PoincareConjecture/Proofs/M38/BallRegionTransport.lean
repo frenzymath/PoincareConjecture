@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.BallTransport
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 import PoincareConjecture.Proofs.M38.BallPuncture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M38
 variable {A D : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set D.carrier}
   (B : SurgeryBallEmbedding A) (E : SurgeryRegionEquivalence A D U V)
   (hU : IsOpen U) (hV : IsOpen V) (hBU : B.map '' Metric.ball 0 2 ⊆ U)
-
 
 noncomputable def transportSurgeryBallRegion : SurgeryBallEmbedding D where
   map := E.map ∘ B.map
@@ -54,14 +45,11 @@ noncomputable def transportSurgeryBallRegion : SurgeryBallEmbedding D where
     let e := (regionPartialDiffeomorph E hU hV).toOpenPartialHomeomorph.toHomeomorphSourceTarget
     exact hV.isOpenEmbedding_subtypeVal.comp (e.isOpenEmbedding.comp hf)
 
-
 theorem transportSurgeryBallRegion_map (x : StandardCapSpace) :
     (transportSurgeryBallRegion B E hU hV hBU).map x = E.map (B.map x) := rfl
 
-
 theorem transportSurgeryBallRegion_inverse (y : D.carrier) :
     (transportSurgeryBallRegion B E hU hV hBU).inverse y = B.inverse (E.inverse y) := rfl
-
 
 theorem transportSurgeryBallRegion_closedBall :
     (transportSurgeryBallRegion B E hU hV hBU).closedBall = E.map '' B.closedBall := by
@@ -72,7 +60,6 @@ include hBU in
 
 theorem surgeryBall_closedBall_subset_region : B.closedBall ⊆ U :=
   (surgeryBall_closedBall_subset_image B).trans hBU
-
 
 theorem transportSurgeryBallRegion_complement_image :
     E.map '' (U \ B.closedBall) = V \ (transportSurgeryBallRegion B E hU hV hBU).closedBall := by
@@ -89,7 +76,6 @@ theorem transportSurgeryBallRegion_complement_image :
     refine ⟨x, ⟨hx, ?_⟩, hxy⟩
     intro hxb
     exact hy.2 ⟨x, hxb, hxy⟩
-
 
 noncomputable def transportSurgeryBallRegionComplement :
     SurgeryRegionEquivalence A D (U \ B.closedBall)
@@ -114,12 +100,10 @@ theorem disjoint_ball_image_subset_complement : B₁.map '' Metric.ball 0 2 ⊆ 
   intro x hx hxb
   exact Set.disjoint_left.mp hdisjoint (surgeryBall_closedBall_subset_image B₀ hxb) hx
 
-
 noncomputable def punctureTransportedSecondBall : SurgeryBallEmbedding A :=
   transportSurgeryBallRegion B₁ (surgeryBallPunctureEquivalence B₀)
     (surgeryBall_closedImage_compact B₀ 1 (by norm_num)).isClosed.isOpen_compl
     isClosed_singleton.isOpen_compl (disjoint_ball_image_subset_complement B₀ B₁ hdisjoint)
-
 
 theorem punctureTransportedSecondBall_map (x : StandardCapSpace)
     (hx : x ∈ Metric.ball 0 2) :
@@ -129,15 +113,12 @@ theorem punctureTransportedSecondBall_map (x : StandardCapSpace)
   intro hfirst
   exact Set.disjoint_left.mp hdisjoint hfirst ⟨x, hx, rfl⟩
 
-
 theorem punctureTransportedSecondBall_closedBall :
     (punctureTransportedSecondBall B₀ B₁ hdisjoint).closedBall = B₁.closedBall := by
   apply Set.image_congr
   intro x hx
   exact punctureTransportedSecondBall_map B₀ B₁ hdisjoint x
     (Metric.closedBall_subset_ball (by norm_num : (1 : ℝ) < 2) hx)
-
-
 
 noncomputable def twoBallPunctureRegionEquivalence :
     SurgeryRegionEquivalence A A (B₀.closedBallᶜ \ B₁.closedBall)

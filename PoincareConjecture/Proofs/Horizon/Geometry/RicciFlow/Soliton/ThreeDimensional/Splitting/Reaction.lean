@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.CurvatureN
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.RicciPropagation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_ricci_null_vector_of_null_frame_plane
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -125,8 +114,6 @@ end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RicciFlow
 
-
-
 theorem exists_ricci_null_vector_of_terminal_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -169,8 +156,6 @@ theorem exists_ricci_null_vector_of_terminal_null_plane
   · simpa only [hb1, hb2] using hzero
   · simpa only [hb1, hb2] using
       F.curvatureReaction_nonpos_on_terminal_null_plane hC hoperator x v w hzero
-
-
 
 theorem exists_ricci_null_vector_on_past_of_terminal_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]

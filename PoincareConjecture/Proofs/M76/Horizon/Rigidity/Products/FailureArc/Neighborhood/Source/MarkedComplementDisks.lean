@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Source.CanonicalFourSides
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.SourceContact
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

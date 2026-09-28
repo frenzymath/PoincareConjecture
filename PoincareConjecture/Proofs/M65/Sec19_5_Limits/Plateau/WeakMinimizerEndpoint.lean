@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerACL
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -43,11 +32,6 @@ private theorem m65Endpoint_integral_tendsto
   rcases le_total s t with hst | hts
   · exact hordered hs ht hst
   · simpa only [← intervalIntegral.integral_symm] using (hordered ht hs hts).neg
-
-
-
-
-
 
 theorem m65Interval_AC_graph_endpoint_limit
     {a b : ℝ} (hab : a < b) (f : ℕ → ℝ → ℝ)

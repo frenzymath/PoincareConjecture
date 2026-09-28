@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {t : ℝ} (ht : t ∈ H.generalized.interval)
-
-
 
 noncomputable def regular_history_preimage_homeomorph
     (U : Set (F.slice t).carrier) (hU : U ⊆ range (H.history.forward t ht)) :
@@ -44,8 +33,6 @@ noncomputable def regular_history_preimage_homeomorph
     exact (H.history.inverse_smooth t ht).continuousOn.comp_continuous
       continuous_subtype_val (fun y : U => hU y.property)
   }
-
-
 
 theorem regular_history_coordinate_pullback
     {V : Set RoundCylinderSpace} (hV : IsOpen V)

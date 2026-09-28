@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonExtremeVertex
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCrossingIndex
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
-
-
-
 
 theorem eq_of_mem_edgeSets_of_not_vertex (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -47,9 +35,6 @@ theorem eq_of_mem_edgeSets_of_not_vertex (P : Polygon E (n + 3))
       have h := (convexHull_mono hsubset) (hP i j ⟨hi, hj⟩)
       simpa only [convexHull_singleton, mem_singleton_iff] using h
     exact hq ⟨i, heq.symm⟩
-
-
-
 
 theorem exists_regular_point_on_edge (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

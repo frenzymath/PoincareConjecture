@@ -2,16 +2,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Separation.Basic
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open Set
 namespace Set
 
 variable {X ι κ : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_member_of_connected_punctured_cover [Finite κ]
     (F : κ → Set X) (hF : ∀ j, IsClosed (F j)) (q : X)
@@ -56,10 +43,6 @@ theorem exists_member_of_connected_punctured_cover [Finite κ]
     (fun h => hxj.2 (hcommon ⟨hxj.1, h hxC⟩))
   exact ⟨j, fun y hy => ⟨hleft hy, havoid y hy⟩⟩
 
-
-
-
-
 theorem exists_equiv_punctured_closed_connected_families [Finite ι] [Finite κ]
     (D : ι → Set X) (F : κ → Set X) (hD : ∀ i, IsClosed (D i))
     (hF : ∀ j, IsClosed (F j)) (q : X)
@@ -90,9 +73,6 @@ theorem exists_equiv_punctured_closed_connected_families [Finite ι] [Finite κ]
   intro x hx
   have h := hg (f i) hx
   rwa [hgf i] at h
-
-
-
 
 theorem IsPreconnected.closure_sdiff_singleton_eq [T1Space X] {s : Set X}
     (hs : IsPreconnected s) (hclosed : IsClosed s) (q : X)

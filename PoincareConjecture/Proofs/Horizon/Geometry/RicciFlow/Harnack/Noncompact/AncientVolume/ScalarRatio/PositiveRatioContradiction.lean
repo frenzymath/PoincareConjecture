@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularVariation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularRigidity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +15,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem false_of_positive_finite_scalar_ratio_and_corresponding_side_comparison
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

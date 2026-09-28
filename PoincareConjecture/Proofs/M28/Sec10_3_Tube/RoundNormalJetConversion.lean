@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
 open PoincareConjecture
 open PoincareConjecture.LeviCivitaData
 open PoincareConjecture.CoordinateExponential
-
-
 
 theorem christoffelBilinear_zero_of_gauss
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -72,8 +59,6 @@ theorem christoffelBilinear_zero_of_gauss
     (smul_eq_zero.mp hs).resolve_left (by norm_num)
   exact huv'.trans hcross'
 
-
-
 theorem gauss_center_coordinate_connection_zero
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))}
     (D : LeviCivitaData g)
@@ -84,8 +69,6 @@ theorem gauss_center_coordinate_connection_zero
     (contDiff_iff_contDiffAt.mpr (fun y => g.contDiffAt_euclideanCoefficients y))
     (fun y => g.inner_isInvertible y)
     (fun y u v => g.symm y u v) hgauss
-
-
 
 theorem covariant_metric_error_eq_fderiv_of_zero_connection
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)

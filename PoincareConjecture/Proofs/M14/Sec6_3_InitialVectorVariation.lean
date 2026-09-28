@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSlices
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareVariationRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -29,10 +19,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
-
 
 theorem exists_initialVectorVariation
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

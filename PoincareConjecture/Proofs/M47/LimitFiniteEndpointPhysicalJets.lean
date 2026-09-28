@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Coefficien
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ private noncomputable local instance endpointJetsBilinAdd :
     NormedAddCommGroup Bilin := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance endpointJetsBilinSpace :
     NormedSpace ℝ Bilin := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_spatial_jets
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -90,9 +79,6 @@ theorem limitFinite_endpoint_spatial_jets
     simpa only [Function.comp_def, f, hclock] using hslice
   intro V hV
   exact heta.tendsto_atTop.eventually (hconv V hV)
-
-
-
 
 theorem limitFinite_endpoint_physical_jet_readout
     {C : GeneralizedSliceCarrier.{u}} (F : ℕ → SurgeryFlowData.{u})

@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M23.Providers
 import PoincareConjecture.Proofs.M24
 import PoincareConjecture.Proofs.M25
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -51,7 +42,6 @@ theorem m26NormalizedCompactnessProvider_from_M23
     ∀ N : NormalizedKappaCompactnessData,
       Nonempty (RedesignNormalizedKappaCompactnessConclusion N) :=
   fun N => m23NormalizedKappaCompactness N P
-
 
 theorem m26PredecessorsFromMilestones : M26CanonicalNeighborhoodPredecessors.{u} := by
   let D16 : AncientKappaStructuralTheory.{u} 3 := Classical.choice
@@ -91,7 +81,6 @@ theorem m26PredecessorsFromMilestones : M26CanonicalNeighborhoodPredecessors.{u}
       (m20TwoDimensionalPredecessors (N := M))).ancient_classification K
   · intro M _ _ _ _ _ _ _ _ _ S G input
     exact m24ModelCertificates input
-
 
 theorem m26CanonicalNeighborhoodsFromMilestones : RepairedCanonicalNeighborhoodTheory.{u} :=
   m26CanonicalNeighborhoods m26PredecessorsFromMilestones

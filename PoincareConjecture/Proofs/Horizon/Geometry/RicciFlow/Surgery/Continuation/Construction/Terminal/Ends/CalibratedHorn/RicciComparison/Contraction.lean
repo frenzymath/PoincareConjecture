@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.RicciComparison.InverseGram
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckCurvature.ScalarBounds
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxRecDepth 4000

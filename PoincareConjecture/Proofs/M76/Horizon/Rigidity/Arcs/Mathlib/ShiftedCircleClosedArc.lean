@@ -1,12 +1,8 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
 set_option autoImplicit false
 open Set
 namespace AddCircle
-
-
 
 theorem coe_mem_closedIntervalArc_shifted_iff (p : ℝ) [Fact (0 < p)]
     {c a b z : ℝ} (ha : c ≤ a) (hb : b < c + p) (hz : z ∈ Ico c (c + p)) :
@@ -20,8 +16,6 @@ theorem coe_mem_closedIntervalArc_shifted_iff (p : ℝ) [Fact (0 < p)]
     exact htz' ▸ ht
   · exact fun h => ⟨z, h, rfl⟩
 
-
-
 theorem isImage_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
     {c a b : ℝ} (ha : c ≤ a) (hb : b < c + p) :
     (openPartialHomeomorphCoe p c).IsImage (Icc a b) (closedIntervalArc p a b) := by
@@ -30,8 +24,6 @@ theorem isImage_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
     change z ∈ Ioo c (c + p) at hz
     exact ⟨hz.1.le, by simpa only using hz.2⟩
   exact coe_mem_closedIntervalArc_shifted_iff p ha hb hzI
-
-
 
 theorem interior_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
     {c a b : ℝ} (ha : c < a) (hb : b < c + p) :
@@ -52,8 +44,6 @@ theorem interior_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
   · rintro ⟨t, ht, rfl⟩
     apply (hJ.interior.apply_mem_iff (hsource ⟨ht.1.le, ht.2.le⟩)).mpr
     simpa only [interior_Icc] using ht
-
-
 
 theorem frontier_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
     {c a b : ℝ} (ha : c < a) (hab : a ≤ b) (hb : b < c + p) :
@@ -82,7 +72,6 @@ theorem frontier_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
       apply (hJ.frontier.apply_mem_iff (hsource ⟨hab, le_rfl⟩)).mpr
       rw [frontier_Icc hab]
       exact Or.inr rfl
-
 
 theorem closure_interior_closedIntervalArc_shifted (p : ℝ) [Fact (0 < p)]
     {c a b : ℝ} (ha : c < a) (hab : a < b) (hb : b < c + p) :

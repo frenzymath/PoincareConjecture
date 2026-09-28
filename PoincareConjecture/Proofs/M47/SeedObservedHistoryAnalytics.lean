@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedOldHistoryAnalytics
 import PoincareConjecture.Proofs.M47.SeedLowScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_observed_history_analytic_bound
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

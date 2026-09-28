@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.AsymptoticCertificate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -20,10 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
-
 
 theorem partialStandardCapFlow_asymptoticPatches_exists
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

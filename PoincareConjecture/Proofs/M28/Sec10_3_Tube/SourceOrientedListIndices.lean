@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceOrientedList
 import Mathlib.Data.List.GetD
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +14,7 @@ variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
 
-
 def active (L : SourceOrientedList S) : Set ℤ := Icc 0 (L.nodes.length - 1)
-
-
 
 def node (L : SourceOrientedList S) (i : ℤ) : ℝ × EpsilonNeck (E.flow.metric E.time) :=
   L.nodes.getD i.toNat (L.nodes.head L.nonempty)

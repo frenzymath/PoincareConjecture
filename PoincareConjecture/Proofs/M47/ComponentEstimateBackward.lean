@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_BackwardFiniteE
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_BackwardOrdinaryCylinder
 import PoincareConjecture.Proofs.M47.ComponentEstimateRetained
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
 
 theorem exists_component_backward_cylinder_of_retained_frontiers
     {F : SurgeryFlowData.{u}}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteActualGerms
 import PoincareConjecture.Proofs.M47.LimitFiniteActualMetric
 import PoincareConjecture.Proofs.M47.LimitFiniteRetainedService
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -111,8 +102,6 @@ variable
             (F (G.subsequence k)).parameters.C)
 
 include hbad capBudget in
-
-
 
 theorem limitFinite_actual_endpoint_terminal_ball_service
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

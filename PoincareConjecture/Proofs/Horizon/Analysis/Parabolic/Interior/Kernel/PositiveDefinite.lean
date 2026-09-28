@@ -3,16 +3,6 @@ import Mathlib.Analysis.CStarAlgebra.Matrix
 import Mathlib.Analysis.Matrix.Order
 import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Matrix Real

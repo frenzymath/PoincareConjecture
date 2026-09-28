@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_CornerVariationMinimum
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionFirstVariation
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +29,6 @@ private theorem left_variationField_eq_zero {p : M14BackwardPath G T a b x y}
   apply variationField_eq_zero_of_constant V
   intro u hu
   exact (heq u hu).trans (V.square_base _).symm
-
-
-
 
 theorem cornerVariation_momentum_pairing
     (hCoordinates : M12MetricPredecessors.{0} n)

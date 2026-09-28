@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyDensity
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -20,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereRegularizedMetric_area_tendsto (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
@@ -62,8 +52,6 @@ theorem m60SphereRegularizedMetric_area_tendsto (g : RiemannianMetric n M)
     apply m60SphereRegularizedMetric_areaDensity_bound
     exact inv_le_one_of_one_le₀ (by have h := Nat.cast_nonneg (α := ℝ) k; linarith)
   · exact Filter.Eventually.of_forall hpoint
-
-
 
 theorem m60SphereRegularizedMetric_exists_area_lt (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

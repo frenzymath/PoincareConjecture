@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +24,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem cylinderNeckCoefficients_ricci_eq [T2Space M]
     (N : EpsilonNeck g) (D : LeviCivitaData g)
@@ -66,8 +54,6 @@ theorem cylinderNeckCoefficients_ricci_eq [T2Space M]
   simpa only [Diffeomorph.coe_refl, mfderiv_id, ContinuousLinearMap.id_apply,
     id_eq] using hscale
 
-
-
 theorem cylinderNeckChart_mfderiv_zero_apply
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (v : CE) :
@@ -91,8 +77,6 @@ theorem cylinderNeckChart_mfderiv_zero_apply
       (cylinderScalarCoordinateEquiv v).1, (cylinderScalarCoordinateEquiv v).2) = _
   rw [hc, hd]
   rfl
-
-
 
 theorem cylinderNeckCoefficients_ricci_zero [T2Space M]
     (N : EpsilonNeck g) (D : LeviCivitaData g) (q : UnitTwoSphere) {s : ℝ}

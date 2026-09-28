@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Nested.OriginalCoefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LinearPostcompose
 
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000

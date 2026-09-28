@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectedEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65ProjectedChart_second_hasDerivAt (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -58,8 +48,6 @@ theorem m65ProjectedChart_second_hasDerivAt (P : M62.CircleProductData F circumf
     simpa using
       (m65ProjectedCoordinates_hasDerivAt P c hc p (Ioo_subset_Icc_self ht) hy).deriv
   simpa [add_comm] using hcongr
-
-
 
 theorem m65ProjectedChart_evolution (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

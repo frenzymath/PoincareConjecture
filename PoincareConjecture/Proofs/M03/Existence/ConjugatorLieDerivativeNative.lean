@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -30,8 +22,6 @@ private theorem spatial_fderiv_eq {f : ℝ × E → F} {t : ℝ} {x : E}
     fderiv ℝ (fun z => f (t, z)) x =
       (fderiv ℝ f (t, x)).comp (ContinuousLinearMap.inr ℝ ℝ E) := by
   exact (hf.hasFDerivAt.comp x (hasFDerivAt_prodMk_right t x)).fderiv
-
-
 
 theorem hasDerivAt_spatial_fderiv_of_orbit
     {f : ℝ × E → F} {V : F → F} {J : Set ℝ} {t : ℝ} {x : E}
@@ -95,12 +85,10 @@ theorem hasDerivAt_spatial_fderiv_of_orbit
       hmixed.eq (1, 0) (0, u)
     _ = _ := congrArg (fun A : E →L[ℝ] F => A u) hderivs
 
-
 def coordinateLieMetric (G : F → F →L[ℝ] F →L[ℝ] ℝ) (V : F → F)
     (z u v : F) : ℝ :=
   fderiv ℝ G z (V z) u v + G z (fderiv ℝ V z u) v +
     G z u (fderiv ℝ V z v)
-
 
 theorem hasDerivWithinAt_pullback_coefficient
     {f : ℝ × E → F} {V : F → F}

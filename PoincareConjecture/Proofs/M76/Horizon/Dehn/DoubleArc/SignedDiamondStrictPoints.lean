@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedCoordinateSectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -34,8 +26,6 @@ theorem exists_signedTubeQuarter_point_off_radii (eps delta : Bool) :
   · rintro ⟨a, b, ha, hb, hab, heq⟩
     have he := congrArg Prod.snd heq
     cases eps <;> cases delta <;> norm_num [x, signedTubeCorner] at he
-
-
 
 theorem exists_strict_point_of_signed_diamond_quarters
     {E : Type*} [TopologicalSpace E] (J : Set E)

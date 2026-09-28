@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -22,7 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
 
 theorem pullbackVolumeDensity_id_bounds (x : EuclideanSpace ℝ (Fin n))
     {a b : ℝ} (ha : 0 < a)

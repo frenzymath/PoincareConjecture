@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapPhysicalAnalytics
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,15 +27,12 @@ variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
   (comparison : SurgeryCapFamilyComparison F S A eta e initial.chart)
   (s : ℝ) (hs : s ∈ J)
 
-
-
 noncomputable def actualCapSliceChart :
     PartialDiffeomorph (𝓡 3) (𝓡 3) E
       (F.slice (t + s / ((F.parameters.h t)⁻¹ ^ 2))).carrier ∞ :=
   (capInitialPartialDiffeomorph initial).trans
     (M44.cylinderSliceChart e
       (comparison.choose_spec.2.2.2.1 ▸ (capInitialPartialDiffeomorph initial).open_target) s hs)
-
 
 theorem actualCapSliceChart_source :
     (actualCapSliceChart e initial comparison s hs).source =
@@ -53,12 +42,9 @@ theorem actualCapSliceChart_source :
   refine ⟨fun hx => hx.1, fun hx => ⟨hx, ?_⟩⟩
   exact comparison.choose_spec.2.2.2.1 ▸ mem_image_of_mem initial.chart hx
 
-
 theorem actualCapSliceChart_apply (x : E) :
     actualCapSliceChart e initial comparison s hs x =
       e.forward s hs (initial.chart x) := rfl
-
-
 
 theorem actualCapSliceChart_metric (hh : 0 < F.parameters.h t)
     {x : E} (hx : x ∈ F.standard_initial.metric.ball 0 A) (v w : E) :

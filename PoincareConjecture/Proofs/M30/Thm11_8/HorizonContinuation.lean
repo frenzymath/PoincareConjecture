@@ -1,23 +1,11 @@
 import Mathlib.Data.ENNReal.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ENNReal
 
 namespace PoincareConjecture.M30
-
-
 
 theorem horizon_of_seed_cofinal_closure_and_extension
     (P : ℝ≥0∞ → Prop) {T0 : ℝ≥0∞}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeEndpoints
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,9 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : Cube ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 theorem HamiltonProperDiskTriangleFibers.exists_edge_product
     (F : HamiltonProperDiskTriangleFibers C) (h3 : Module.finrank ℝ E = 3)

@@ -7,18 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +19,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem volumeMeasure_ball_injectivityRadius_eq_euclidean_of_flat
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -93,8 +79,6 @@ theorem volumeMeasure_ball_injectivityRadius_eq_euclidean_of_flat
     _ = volume (Metric.ball (0 : EuclideanSpace ℝ (Fin 3)) ρ) := by simp
     _ = _ := euclidean_ball_volume_eq 3 hρ
 
-
-
 theorem volumeMeasure_ball_eq_euclidean_of_flat_of_volume_lower_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (hc : MetricComplete g)
     (hflat : ∀ x : M, D.curvatureTensorNorm x = 0)
@@ -153,8 +137,6 @@ theorem volumeMeasure_ball_eq_euclidean_of_flat_of_volume_lower_bound
   have hcancel := congrArg (fun z : ℝ≥0∞ => (ENNReal.ofReal a ^ 3)⁻¹ * z)
     (hlocal.trans hid)
   simpa only [ENNReal.inv_mul_cancel_left h0 ht] using hcancel
-
-
 
 theorem false_of_flat_of_volume_lower_bound_of_half_euclidean_unit_volume
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (hc : MetricComplete g)

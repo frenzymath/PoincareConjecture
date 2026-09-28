@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Su
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import Mathlib.Topology.UnitInterval
 
-
-
 set_option autoImplicit false
 open Set Geometry unitInterval
 
@@ -23,8 +21,6 @@ private theorem finitePL_interval_identity :
     simp [A]
   obtain ⟨K, hK, hKs⟩ := isCompact_Icc.exists_finite_triangulation_of_halfspaces A hA
   exact ⟨K, hK, hKs, K.affineOnFaces_affine (ContinuousAffineMap.id ℝ ℝ)⟩
-
-
 
 theorem exists_conjugate_joint_finitePL {A : Set E} {C : Set F}
     (q : A ≃ₜ C) (hq : q.IsFinitePL) (H : I → A ≃ₜ A)
@@ -53,8 +49,6 @@ theorem exists_conjugate_joint_finitePL {A : Set E} {C : Set F}
   intro t x
   change f (track ((t : ℝ), i x)) = _
   rw [← hiv x, hvalue, ← hfv]
-
-
 
 theorem finitePiecewiseAffineOn_supported_track
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

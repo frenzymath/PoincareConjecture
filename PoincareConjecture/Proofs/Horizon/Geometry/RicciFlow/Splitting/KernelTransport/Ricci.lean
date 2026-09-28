@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullSectio
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.KernelTransport.Monotonicity
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,9 +49,6 @@ lemma coordinateRicciOperator_differentiableWithinAt
       (hC.ricci_evolution n M (Icc a b) F t ht x
         (constantCoordinateField p v x) (constantCoordinateField p w x)).differentiableWithinAt
   exact (differentiableWithinAt_const _).clm_comp hB
-
-
-
 
 theorem ricciKernel_antitone_of_derivative_annihilates
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Icc a b)) (x : M)

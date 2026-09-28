@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_1_Pinching.GramLowerBound
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 import PoincareConjecture.Proofs.M09.TensorEvaluationBound
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,15 +21,11 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
   (Q : ℝ) (hQ : 0 < Q)
 
-
-
 def GeneralizedStrongNeck.global_original_point (tau : ℝ)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ) (hs : s ∈ Icc (-tau) 0)
     (x : strongNeckOpen S) : F.point :=
   ⟨t + (s / (Q * S.scale ^ 2)) / (S.scale⁻¹ ^ 2),
     GeneralizedStrongNeck.global_original_map S Q hQ tau hwindow s hs x⟩
-
-
 
 theorem GeneralizedStrongNeck.global_original_point_time_mem (tau : ℝ)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ) (hs : s ∈ Icc (-tau) 0)
@@ -46,8 +33,6 @@ theorem GeneralizedStrongNeck.global_original_point_time_mem (tau : ℝ)
     (GeneralizedStrongNeck.global_original_point S Q hQ tau hwindow s hs x).1 ∈
       F.interval :=
   S.backward_time_mem (GeneralizedStrongNeck.global_time_mem_backward S Q hQ hwindow hs)
-
-
 
 theorem GeneralizedStrongNeck.global_flow_plane_lower
     (P : RicciFlowCurvatureTheory.{u})
@@ -86,8 +71,6 @@ theorem GeneralizedStrongNeck.global_flow_plane_lower
     _ = _ := (GeneralizedStrongNeck.global_flow_curvatureTensor_original S H Q hQ
       tau htau hwindow s hs x v w v w).symm
 
-
-
 theorem GeneralizedStrongNeck.global_original_scalar_le_of_curvature_bound
     (P : RicciFlowCurvatureTheory.{u})
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4)
@@ -110,9 +93,6 @@ theorem GeneralizedStrongNeck.global_original_scalar_le_of_curvature_bound
     tau htau hwindow s hs x
   change D.scalarCurvature x = F.scalar p / Q at hread
   exact (div_le_iff₀ hQ).mp (hread ▸ hscalar)
-
-
-
 
 theorem GeneralizedStrongNeck.global_original_negativePart_lt
     (P : RicciFlowCurvatureTheory.{u}) (hpinch : generalizedHamiltonIveyPinched F)

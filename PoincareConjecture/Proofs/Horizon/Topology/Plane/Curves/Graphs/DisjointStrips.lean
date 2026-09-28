@@ -1,6 +1,3 @@
-
-
-
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
@@ -9,14 +6,6 @@ import Mathlib.Analysis.Normed.Group.Real
 import Mathlib.Data.Fintype.Order
 import Mathlib.Data.Finite.Sum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ open Set
 open scoped Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
 
 theorem exists_pos_le_finite_family {ι : Type*} [Finite ι]
     (r : ι → ℝ) (hr : ∀ i, 0 < r i) : ∃ δ > 0, ∀ i, δ ≤ r i := by
@@ -38,7 +25,6 @@ theorem exists_pos_le_finite_family {ι : Type*} [Finite ι]
   · exact ⟨1, zero_lt_one, fun i => False.elim (h ⟨i⟩)⟩
 
 variable {E : Type*} [TopologicalSpace E]
-
 
 theorem exists_strip_source_width (F : OpenPartialHomeomorph (ℝ × ℝ) E)
     (haxis : ∀ t ∈ Icc (0 : ℝ) 1, (t, (0 : ℝ)) ∈ F.source) :
@@ -58,8 +44,6 @@ theorem exists_strip_source_width (F : OpenPartialHomeomorph (ℝ × ℝ) E)
   simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] using abs_lt.mpr hz
 
 variable [T2Space E]
-
-
 
 theorem exists_disjoint_strip_separation
     (F G : OpenPartialHomeomorph (ℝ × ℝ) E)
@@ -99,9 +83,6 @@ theorem exists_disjoint_strip_separation
       using And.intro hz hw)
   have hmem : ((t, s), (z, w)) ∈ W := hVZ ⟨hIV ⟨ht, hs⟩, hzw⟩
   exact ⟨hmem.1.1, hmem.1.2, hmem.2⟩
-
-
-
 
 theorem exists_finite_disjoint_strip_width
     {ι : Type*} [Finite ι] (F : ι → OpenPartialHomeomorph (ℝ × ℝ) E)

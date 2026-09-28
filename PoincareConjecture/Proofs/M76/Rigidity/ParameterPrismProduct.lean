@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.ParameterPrismDomain
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedDiskProduct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,7 +13,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 
-
 def originalParameterPrismBase : D ≃ₜ (D ×ˢ ({0} : Set ℝ)) where
   toFun z := ⟨((z : V2), 0), z.property, rfl⟩
   invFun z := ⟨(z : E).1, z.property.1⟩
@@ -32,17 +24,12 @@ def originalParameterPrismBase : D ≃ₜ (D ×ˢ ({0} : Set ℝ)) where
   continuous_toFun := (continuous_subtype_val.prodMk continuous_const).subtype_mk _
   continuous_invFun := (continuous_fst.comp continuous_subtype_val).subtype_mk _
 
-
-
 theorem originalParameterPrismBase_finitePL : originalParameterPrismBase.IsFinitePL := by
   let a : V2 →ᴬ[ℝ] E :=
     (ContinuousAffineMap.id ℝ V2).prod (ContinuousAffineMap.const ℝ V2 (0 : ℝ))
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKD, _⟩, _⟩, _⟩ :=
     isFinitePLBallPair_unit_cube (ι := Fin 2)
   exact ⟨a, ⟨K, hK, hKD, K.affineOnFaces_affine a⟩, fun _ => rfl⟩
-
-
-
 
 noncomputable def originalParameterPrismProduct :
     HamiltonIndexOne.HamiltonUnmarkedDiskProduct (D ×ˢ I) originalParameterPrismBase := by
@@ -83,7 +70,6 @@ noncomputable def originalParameterPrismProduct :
   · intro x
     change ((x : V2), (1 / 2 : ℝ) * 0) = ((x : V2), 0)
     rw [mul_zero]
-
 
 theorem originalParameterPrismProduct_map (z : E) :
     originalParameterPrismProduct.map z = (z.1, (1 / 2 : ℝ) * z.2) := rfl

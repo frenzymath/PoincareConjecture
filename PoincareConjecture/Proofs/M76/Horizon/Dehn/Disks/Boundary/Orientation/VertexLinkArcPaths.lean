@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.Rim
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualLink
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_centroid_vertex_rim_homeomorph
     (A : SimplicialComplex ℝ E) [Fintype A.faces] {v : E} (hv : v ∈ A.vertices) :
@@ -52,8 +42,6 @@ theorem exists_centroid_vertex_rim_homeomorph
   rw [hvalue]
   change f (s.centroid ℝ id) = (insert v s).centroid ℝ id
   rw [hcent s hs', Finset.singleton_union]
-
-
 
 theorem exists_original_triangle_chain_in_vertex_rim_arc
     (A : SimplicialComplex ℝ E) [Fintype A.faces] {v a b : E}

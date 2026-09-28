@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.Tube
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PositiveTubeGraph
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_nearby_positive_tube_projection
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -88,9 +76,6 @@ theorem exists_nearby_positive_tube_projection
   refine ⟨hmem.1, ?_, abs_lt.mpr hmem.2.2⟩
   rw [(hd z s).deriv]
   exact hmem.2.1
-
-
-
 
 theorem exists_nearby_curve_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

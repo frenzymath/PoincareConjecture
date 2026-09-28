@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M44
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem pullbackCoefficients_congr_of_eventuallyEq
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -33,9 +22,6 @@ theorem pullbackCoefficients_congr_of_eventuallyEq
     (mfderiv (𝓡 n) (𝓡 n) a x w) = _
   rw [heq.mfderiv_eq, heq.self_of_nhds]
   rfl
-
-
-
 
 theorem pullbackCoefficients_eq_of_metric_germ
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

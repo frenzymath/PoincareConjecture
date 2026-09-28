@@ -3,14 +3,6 @@ import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.Ch17.GlobalSurgery
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M51Initial
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
 
 abbrev carrier (M : Type u) [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -116,7 +107,6 @@ theorem maximality {J : Set ℝ} (F : RicciFlow 3 M J)
     simpa only [hEq] using hcurv
 
 variable [CompactSpace M] [Nonempty M]
-
 
 noncomputable def rawFlow (g0 : StandardInitialMetric) (K : MetricSurgeryConstants)
     (P : SurgeryParameters) (I : NormalizedInitialMetric (M := M))

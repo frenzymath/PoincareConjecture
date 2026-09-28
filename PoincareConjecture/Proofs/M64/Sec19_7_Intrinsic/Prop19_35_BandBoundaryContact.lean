@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandEndpointFaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +14,6 @@ namespace PoincareConjecture
 variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
-
-
-
 
 theorem m64Intrinsic_band_endpoint_contact_corner
     (right : Bool) (p : Fin B.interface.count × Bool)
@@ -53,11 +36,6 @@ theorem m64Intrinsic_band_endpoint_contact_corner
   have hxv := heq.trans htip
   obtain ⟨k, hk⟩ := (B.vertex_mem_face_carrier_iff p _).mp (hxv ▸ hx.2)
   exact ⟨k, hk.trans hxv.symm⟩
-
-
-
-
-
 
 theorem m64Intrinsic_band_side_endpoint_contact_corners
     (right : Bool) (p : Fin B.interface.count × Bool) (k : Fin 3)
@@ -89,11 +67,6 @@ theorem m64Intrinsic_band_side_endpoint_contact_corners
   · apply m64Intrinsic_band_endpoint_contact_corner B right p hp
     exact ⟨hx.2, (B.face p).isClosed_carrier.frontier_subset
       ((B.face p).boundary_image_subset_frontier k hx.1)⟩
-
-
-
-
-
 
 theorem m64Intrinsic_band_side_outer_contact_corners
     (p : Fin B.interface.count × Bool) (k : Fin 3)

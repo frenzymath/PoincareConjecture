@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckExcursionSubarcs
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckShortening
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem small_ball_subset_middle (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.central_sphere) :
@@ -53,8 +42,6 @@ theorem small_ball_subset_middle (N : EpsilonNeck g) {p : M}
     nlinarith
   exact (not_lt_of_ge (hbudget.trans htotal)) hlength
 
-
-
 theorem precompact_ball_of_central_sphere (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.central_sphere) :
     IsCompact (closure (g.ball p (N.scale * N.epsilon⁻¹ / 8))) ∧
@@ -74,9 +61,6 @@ theorem precompact_ball_of_central_sphere (N : EpsilonNeck g) {p : M}
     closure_minimal hballK hK.isClosed
   exact ⟨hK.of_isClosed_subset isClosed_closure hclosure,
     hclosure.trans (N.coordinate_slab_subset_carrier_m28 hlo hhi)⟩
-
-
-
 
 theorem exists_central_sphere_minimizing_geodesic (N : EpsilonNeck g)
     (hepsilon : N.epsilon ≤ M28.neckShorteningEpsilon) {p q : M}

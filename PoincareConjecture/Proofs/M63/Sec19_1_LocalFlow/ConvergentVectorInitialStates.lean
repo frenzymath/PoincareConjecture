@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialCoordinateEncoder
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothSpectralInitialOrbit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Filter PoincareConjecture.SpectralHeatNative
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_vectorPeriodic_initialStates_tendsto
     {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]

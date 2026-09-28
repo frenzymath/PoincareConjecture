@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.Embedded
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.ExceptionSchedule
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -34,8 +25,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
 namespace OriginalRelativeNormalization
 
 variable {K : SimplicialComplex ℝ A} {j : A → t.Carrier} {R : Set M}
-
-
 
 theorem exists_annulus_branch_chart
     (D : OriginalRelativeNormalization step K j R Rim)

@@ -1,23 +1,11 @@
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology NNReal
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_lipschitzOnWith_of_compact_edist_ne_top
     {X Y : Type*} [PseudoMetricSpace X] [PseudoEMetricSpace Y]

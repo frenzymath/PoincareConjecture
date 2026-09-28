@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalP
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalProtectedExteriorDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningBigonFrontierCollar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

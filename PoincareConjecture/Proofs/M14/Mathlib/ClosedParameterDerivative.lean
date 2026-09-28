@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M08.ChartConnectionVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +9,6 @@ namespace PoincareConjecture.M14
 
 variable {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
-
 
 theorem parameterDerivative_contDiffOn
     {C : Set ℝ} {U : Set E} (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
@@ -32,9 +21,6 @@ theorem parameterDerivative_contDiffOn
   intro r hr
   exact congrArg (fun L : E →L[ℝ] H => L v)
     (M08.hasFDerivAt_spatialWithin hU f hf hr hx).fderiv
-
-
-
 
 theorem hasDerivWithinAt_parameterDerivative
     {C : Set ℝ} {U : Set E} (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
@@ -65,9 +51,6 @@ theorem hasDerivWithinAt_parameterDerivative
   intro r hr
   exact congrArg (fun L : E →L[ℝ] H => L v)
     (M08.hasFDerivAt_spatialWithin hU f hf hr hx).fderiv
-
-
-
 
 theorem hasDerivWithinAt_parameterDerivative_Icc
     {a b : ℝ} (hab : a < b) {U : Set E} (hU : IsOpen U)

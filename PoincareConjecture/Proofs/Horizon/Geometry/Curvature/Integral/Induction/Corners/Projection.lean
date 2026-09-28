@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Algebra.Order.Chebyshev
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +10,6 @@ open scoped InnerProductSpace BigOperators
 namespace Poincare.CurvatureIntegral
 
 variable {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [Fintype ι]
-
 
 theorem norm_sum_smul_sq_lower_bound
     (v : ι → E) (c : ι → ℝ) {a δ : ℝ} (hδ : 0 ≤ δ)
@@ -70,8 +60,6 @@ theorem norm_sum_smul_sq_lower_bound
   have herr := mul_le_mul_of_nonneg_left hCS hδ
   nlinarith
 
-
-
 theorem norm_starProjection_sq_le_of_inner_bounds
     [FiniteDimensional ℝ E]
     (v : ι → E) (z : E) {a δ ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε)
@@ -117,8 +105,6 @@ theorem norm_starProjection_sq_le_of_inner_bounds
     exact hB
   · have hp' : 0 < ‖p‖ ^ 2 := lt_of_le_of_ne (sq_nonneg _) (Ne.symm hp)
     nlinarith
-
-
 
 theorem norm_orthogonal_strainer_projection_ge_half
     [FiniteDimensional ℝ E]

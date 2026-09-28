@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.SourceTorusBand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointFans
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   {dLeft dRight : EuclideanSpace ℝ (Fin 2)} (K : S.CutChain dLeft dRight)
   {δ r : ℝ}
   (B : ∀ i : Fin S.count, (S.piece i).FixedStripBandFaces (K.graphCuts i) δ r r)
-
-
 
 theorem adjacent_cut_velocity_pos_smul
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -58,8 +48,6 @@ theorem adjacent_cut_velocity_pos_smul
   · rw [(B i).right_endpoint_coordinate_start (S.cut_lt i).le,
       (B j).left_endpoint_coordinate_start (S.cut_lt j).le, hij]
 
-
-
 theorem adjacent_bottom_vertices_eq_edge
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :
     (B i).faces.vertex (Fin.last (B i).faces.interface.count, false) =
@@ -79,8 +67,6 @@ theorem adjacent_bottom_vertices_eq_edge
     rw [(B j).faces.face_corner_eq_vertex] at h
     change (B j).faces.vertex (0, false) = _ at h
     rwa [hij]
-
-
 
 theorem adjacent_bottom_refined_fan
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)

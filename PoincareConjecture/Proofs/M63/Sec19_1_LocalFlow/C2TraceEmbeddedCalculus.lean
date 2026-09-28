@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurveTensorLeibniz
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem hasDerivAt_embedding_pushforward {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {e : M → W}
@@ -94,10 +81,6 @@ theorem hasDerivAt_embedding_pushforward {g : RiemannianMetric n M}
   have hpi := hasDerivAt_pi.mpr hcoord
   have h := L.toContinuousLinearMap.hasFDerivAt.comp_hasDerivAt x hpi
   convert! h using 1
-
-
-
-
 
 theorem hasDerivAt_coordinateHessian_pullback {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {e : M → W}

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Euclidean
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,7 +29,6 @@ private theorem boundary_param_mem_source (p : UnitTwoSphere) :
   exact mem_range_self p
 
 omit [T2Space M] in
-
 
 theorem boundary_param_isSmoothEmbedding
     (he : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)
@@ -87,8 +75,6 @@ theorem boundary_param_isSmoothEmbedding
 
 include ht
 
-
-
 theorem range_boundary_param :
     range (fun p : UnitTwoSphere => e (C.boundary_neck.coordinate_map (p, 0))) =
       frontier (e '' C.core) := by
@@ -97,8 +83,6 @@ theorem range_boundary_param :
   rfl
 
 omit hs ht
-
-
 
 theorem exists_euclidean_core_boundary_coordinates (hkind : C.model_kind = .euclidean) :
     ∃ e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)),

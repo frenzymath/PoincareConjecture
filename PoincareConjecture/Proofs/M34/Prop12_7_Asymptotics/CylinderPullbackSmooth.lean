@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderParametrizedJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology
 open Poincare.Geometry.Riemannian.SpaceForm
 
 namespace PoincareConjecture.M34
-
-
 
 theorem roundCylinderTensorSmoothOn_pullback
     {M : Type*} [TopologicalSpace M]

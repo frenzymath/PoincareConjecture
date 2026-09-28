@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_IntrinsicJetConvergence
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +23,6 @@ noncomputable local instance roundIntrinsicBilinearGroup : NormedAddCommGroup Bi
 
 noncomputable local instance roundIntrinsicBilinearSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem limitCanonical_round_intrinsic_difference_bound
     (g : RiemannianMetric 3 E3) (D : LeviCivitaData g)
@@ -78,10 +64,6 @@ theorem limitCanonical_round_intrinsic_difference_bound
           g.inner y (v 0) (v 1)) j) x ^ 2) ≤ bound at hxbound
   rw [heq] at hxbound
   exact hxbound
-
-
-
-
 
 theorem limitCanonical_round_local_difference_energy
     {X : Type*} [TopologicalSpace X] [ChartedSpace E3 X] [IsManifold (𝓡 3) ∞ X]

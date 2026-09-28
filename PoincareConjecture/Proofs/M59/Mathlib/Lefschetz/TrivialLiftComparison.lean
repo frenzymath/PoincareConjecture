@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ConeSimplicial
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ExtraDegeneracyChains
 import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyEquiv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,12 +24,8 @@ variable {J : Type u} [PartialOrder J]
   (χ : (supportedNerve s).toSSet ⟶ TopCat.toSSet.obj (TopCat.of X))
   (e : E ≃ₜ X × F) (he : ∀ z, p z = (e z).1)
 
-
-
 def coveringProductRetraction : C(E, F) :=
   ⟨fun z => (e z).2, continuous_snd.comp e.continuous⟩
-
-
 
 theorem singularLiftCone_augmentation :
     (singularLiftTrivializationIso p (supportedNerve s).toSSet χ e he).hom ≫
@@ -51,8 +36,6 @@ theorem singularLiftCone_augmentation :
 
 include hv hmin he in
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem singularLiftConeComparison_quasiIso
     (hret : QuasiIso (SSet.chainComplexMap

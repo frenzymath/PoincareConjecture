@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.ContractionDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m65ContractionAnnulusMap_diagonal_density (g : RiemannianMetric 3 M)
     (C : ℝ × (M × M) → M) (hdiag : ∀ s p, C (s, p, p) = p)

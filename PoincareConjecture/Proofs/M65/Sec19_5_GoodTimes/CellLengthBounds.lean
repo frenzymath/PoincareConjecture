@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SpeedBounds
 import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
 
 theorem m65Length_exp_bounds_on (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 H : ℝ} (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)

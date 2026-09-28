@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.PolygonCellCurvature
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfileTurning
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,9 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem m63FlattenedPolygon_graph_cell_integral (P : M62.CircleProductData F circumference)
     (t : ℝ) {N : ℕ} (polygon : M63GeodesicPolygon (F.metric t) (F.connection t) N)
@@ -62,9 +50,6 @@ theorem m63FlattenedPolygon_graph_cell_integral (P : M62.CircleProductData F cir
   · change (∫ x in m63CellLeft N j..(m63CellLeft N j + m63CellLength N), density x) ≤ _
     rw [intervalIntegral.integral_congr_Ioo_of_le hab heq]
     exact m63Profile_turning_integral_le_pi hN (polygon.side j).speed_nonnegative hB _
-
-
-
 
 theorem m63FlattenedPolygon_graph_totalCurvature (P : M62.CircleProductData F circumference)
     (t : ℝ) {N : ℕ} (polygon : M63GeodesicPolygon (F.metric t) (F.connection t) N)

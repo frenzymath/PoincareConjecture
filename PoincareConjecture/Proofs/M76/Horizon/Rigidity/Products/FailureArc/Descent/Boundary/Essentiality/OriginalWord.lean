@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.TwoIntervalRimTraversal
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

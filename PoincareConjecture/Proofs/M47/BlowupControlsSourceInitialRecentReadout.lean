@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentPatch
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyTensor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +39,6 @@ variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
       (mfderiv (𝓡 3) (𝓡 3) (Subtype.val : U → (F.slice T).carrier) y w))
 
 include hsource hdomain hcoordinate hmetric
-
-
 
 theorem source_initial_recent_native_readout
     (u : ℝ) (hu : u ∈ Icc (-H * s) 0) (z : RoundCylinderSpace)
@@ -125,8 +113,6 @@ theorem source_initial_recent_native_readout
       simp only [sourceRecentCapTensor, dif_pos hu]
       rw [← haffine]
       rfl
-
-
 
 theorem source_initial_recent_family_on_patch
     (hfamily : RoundCylinderFamilyClose epsilon (Icc (-H * s) 0)

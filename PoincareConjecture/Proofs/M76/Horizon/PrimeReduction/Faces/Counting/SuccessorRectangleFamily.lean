@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Counting.NormalCornerOrder
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Rectangles.AllCorners
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel

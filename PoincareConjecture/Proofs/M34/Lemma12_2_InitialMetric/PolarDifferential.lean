@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.PolarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff InnerProductSpace
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem capSphere_tangent_orthogonal (u : UnitTwoSphere) (v : TangentSpace (𝓡 2) u) :
     inner ℝ (u : StandardCapSpace)
@@ -28,7 +16,6 @@ theorem capSphere_tangent_orthogonal (u : UnitTwoSphere) (v : TangentSpace (𝓡
   convert! Submodule.mem_orthogonal_singleton_iff_inner_right.mp hmem using 1
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capCylinderCoordinate_mfderiv (R : ℝ) (z : StandardCylinderSpace)
     (v : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) :

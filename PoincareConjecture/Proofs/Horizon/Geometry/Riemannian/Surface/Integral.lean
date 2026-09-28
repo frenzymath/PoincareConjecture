@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Integrability
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -18,7 +11,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem integral_scalarCurvature_eq_posPart_sub_negPart (D : LeviCivitaData g) :
     (∫ x, D.scalarCurvature x ∂g.volumeMeasure) =
@@ -35,7 +27,6 @@ theorem integral_scalarCurvature_eq_posPart_sub_negPart (D : LeviCivitaData g) :
           max_eq_right (neg_nonneg.mpr (le_of_not_ge hx))]
     _ = _ := integral_sub D.integrable_scalarCurvature_posPart
       D.integrable_scalarCurvature_negPart
-
 
 theorem integral_scalarCurvature_le_iff_posPart (D : LeviCivitaData g) (C : ℝ) :
     (∫ x, D.scalarCurvature x ∂g.volumeMeasure) ≤ C ↔

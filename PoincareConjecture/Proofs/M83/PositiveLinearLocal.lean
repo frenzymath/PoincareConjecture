@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M83.Mathlib.LocalHomology
 import PoincareConjecture.Proofs.M02.Topology.PositiveLinearHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,9 +10,6 @@ open CategoryTheory HomologicalComplex Set
 namespace PoincareConjecture.Proofs.M83
 
 open PoincareConjecture.Proofs.M02.Topology
-
-
-
 
 theorem positiveLinear_relativeHomologyMap
     (L : EuclideanSpace Real (Fin 3) ≃L[Real] EuclideanSpace Real (Fin 3))

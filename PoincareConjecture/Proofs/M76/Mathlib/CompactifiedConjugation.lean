@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactVanishingExtension
 import PoincareConjecture.Proofs.M76.Mathlib.CoreBoundedCompactification
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_extension_core_coordinate_change (p : E ≃ₜ ball (0 : E) 2)
     {D : ℝ} (herror : ∀ x, ‖(p x : E) - NormedSpace.coreCompression x‖ ≤
@@ -50,11 +37,6 @@ theorem exists_extension_core_coordinate_change (p : E ≃ₜ ball (0 : E) 2)
   refine ⟨F, fun x => ?_, hfix⟩
   have h := hF (coreBall x)
   simpa only [coreBall_apply, Homeomorph.trans_apply, Homeomorph.symm_apply_apply, e] using h
-
-
-
-
-
 
 theorem exists_compactification_of_core_error (p : E ≃ₜ ball (0 : E) 2)
     {D : ℝ} (herror : ∀ x, ‖(p x : E) - NormedSpace.coreCompression x‖ ≤

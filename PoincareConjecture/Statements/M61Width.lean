@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.M61Width
 import PoincareConjecture.Definitions.Ch19.RampEstimates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,14 +14,12 @@ section LoopFamilies
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 structure M61FamilyWidthProperties (g : RiemannianMetric 3 M)
     (F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))) : Prop where
   area_continuous : Continuous (fun c => fillingArea g (F c))
   bounded_above : BddAbove (Set.range (fun c => fillingArea g (F c)))
   attained : ∃ c, fillingArea g (F c) = m61FamilyWidth g F
   nonnegative : 0 ≤ m61FamilyWidth g F
-
 
 structure M61FreeClassWidthProperties (g : RiemannianMetric 3 M)
     (F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))) : Prop where
@@ -50,13 +37,11 @@ structure M61FreeClassWidthProperties (g : RiemannianMetric 3 M)
       M61NullFamily G → F.Homotopic G →
         m61FreeClassWidth g F = m61FreeClassWidth g G
 
-
 def M61UniqueClassLabels (q : M59SphereQuotient) (x : M) : Prop :=
   ∀ F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)),
     M61NullFamily F →
       ∃! alpha : HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M)) (constantC1Loop x),
         M61Represents q x alpha F
-
 
 structure M61BasedClassWidthProperties (q : M59SphereQuotient)
     (g : RiemannianMetric 3 M) (x : M)
@@ -80,7 +65,6 @@ structure M61BasedClassWidthProperties (q : M59SphereQuotient)
 
 end LoopFamilies
 
-
 structure M61RawWidthCore : Prop where
   family : ∀ {M : Type u} [TopologicalSpace M]
       [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -95,7 +79,6 @@ structure M61RawWidthCore : Prop where
     ∀ F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)),
       M61NullFamily F → M61FreeClassWidthProperties g F
 
-
 structure M61SphereWidthProperties
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -104,7 +87,6 @@ structure M61SphereWidthProperties
   least : IsLeast (m61SphereAreaRange g) (m61SphereWidth g)
   attained : ∃ f : UnitTwoSphere → M, M60BranchedMinimalSphere g f ∧
     ¬ IsNullHomotopicSphere f ∧ m60SphereArea g f = m61SphereWidth g
-
 
 def M61ShortFamilyWidthClaim : Prop :=
   ∀ {M : Type u} [TopologicalSpace M]
@@ -115,7 +97,6 @@ def M61ShortFamilyWidthClaim : Prop :=
       ∀ F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)),
         M61NullFamily F → (∀ c, freeLoopLength g (F c) < zeta) →
           m61FamilyWidth g F < eta
-
 
 structure M61WidthTheory (q : M59SphereQuotient) : Prop extends M61RawWidthCore.{u} where
   class_labels : ∀ {M : Type u} [TopologicalSpace M]

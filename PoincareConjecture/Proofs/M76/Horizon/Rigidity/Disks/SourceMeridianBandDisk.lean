@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MeridianBand
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopImage
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,7 +16,6 @@ local notation "L" => hamiltonLowerPeriodLattice (Fin 1)
 local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 
-
 def hamiltonMeridianOpenBand : Set X :=
   hamiltonMeridianCutAmbientMap '' (Q ×ˢ Ioo (-1 : ℝ) 1)
 
@@ -35,16 +24,12 @@ theorem hamiltonMeridianOpenBand_subset_frontier :
   rintro y ⟨z, hz, rfl⟩
   exact mapsTo_hamiltonMeridianBand_frontier ⟨hz.1, hz.2.1.le, hz.2.2.le⟩
 
-
 def hamiltonMeridianOpenBandProjection : C(hamiltonMeridianOpenBand, Q) := by
   have hfirst (y : hamiltonMeridianOpenBand) : (y : X).1 ∈ Q := by
     obtain ⟨z, hz, hzy⟩ := y.property
     exact (congrArg Prod.fst hzy) ▸ hz.1
   exact ⟨fun y => ⟨(y : X).1, hfirst y⟩,
     (continuous_fst.comp continuous_subtype_val).subtype_mk hfirst⟩
-
-
-
 
 theorem exists_source_meridian_open_band_disk
     {α : Type*} (e : α → OpenPartialHomeomorph X V3) (he : PLDomain e R) :

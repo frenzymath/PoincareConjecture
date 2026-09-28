@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.LowerProducts
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,6 +39,4 @@ structure SurfaceVertexProducts (T : CoorientedSurfaceStars E) where
       T.surfaceBase {(q : E)}) ×ˢ I) =
         T.dualRegion {(p : E)} ∩ T.dualRegion {(q : E)}
 
-
 end Geometry.SimplicialComplex
-

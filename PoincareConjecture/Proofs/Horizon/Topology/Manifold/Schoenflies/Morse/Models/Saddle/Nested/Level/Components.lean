@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Level.Equation
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FourContacts.Resolution
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -47,7 +45,6 @@ theorem sourceHeight_mem_of_mem_innerOval {q : E2} (hq : q ∈ innerOval) :
   · rwa [sourceHeight_levelArc (by norm_num) ((levelRadicand_nonneg_iff z).mpr (Or.inr hz))]
   · rwa [sourceHeight_levelArc (by norm_num) ((levelRadicand_nonneg_iff z).mpr (Or.inr hz))]
 
-
 theorem norm_ge_of_mem_outerOval {q : E2} (hq : q ∈ outerOval) : (4 / 5 : Real) ≤ ‖q‖ := by
   have hz := sourceHeight_mem_of_mem_outerOval hq
   have hl := lowerRoot_bounds.1
@@ -55,7 +52,6 @@ theorem norm_ge_of_mem_outerOval {q : E2} (hq : q ∈ outerOval) : (4 / 5 : Real
   have hprod : 0 ≤ ((3 / 5 : Real) - sourceHeight q) *
       ((3 / 5 : Real) + sourceHeight q) := mul_nonneg (by linarith [hz.2]) (by linarith [hz.1])
   nlinarith [norm_nonneg q]
-
 
 theorem norm_lt_of_mem_innerOval {q : E2} (hq : q ∈ innerOval) : ‖q‖ < (4 / 5 : Real) := by
   have hz := sourceHeight_mem_of_mem_innerOval hq
@@ -92,7 +88,6 @@ private theorem oval_cover : (⋃ i, oval i) = levelSet := by
   rw [levelSet_eq_outerOval_union_innerOval]
   ext q
   simp [oval, Fin.exists_fin_two]
-
 
 theorem connectedComponentIn_levelSet_of_mem_outerOval {q : E2} (hq : q ∈ outerOval) :
     connectedComponentIn levelSet q = outerOval :=

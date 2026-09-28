@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Connection
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
-
-
-
 
 theorem m64_induced_connection_norm_le
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)

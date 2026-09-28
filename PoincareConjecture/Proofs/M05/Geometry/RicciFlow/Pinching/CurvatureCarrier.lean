@@ -1,18 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Parabolic
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.AlgebraicSpectrum
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.Bilinear
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -122,8 +111,6 @@ theorem curvatureOperator_mem_region_iff [T2Space M]
     refine ⟨hsymm, ?_⟩
     simpa only [htrace, ← hleast, negativeCurvaturePart] using hm
 
-
-
 theorem scaled_curvatureOperator_mem_region_of_pinching [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     {a : ℝ} (ha : 0 ≤ a)
@@ -147,8 +134,6 @@ theorem scaled_curvatureOperator_mem_region_of_pinching [T2Space M]
   · nlinarith [htrace]
   · intro hX
     nlinarith [hlog hX]
-
-
 
 theorem logarithmic_pinching_of_scaled_curvatureOperator_mem [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

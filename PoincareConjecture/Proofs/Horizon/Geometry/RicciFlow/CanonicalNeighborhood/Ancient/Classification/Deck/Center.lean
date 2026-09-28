@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Deck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,7 +17,6 @@ private instance : ConnectedSpace UnitTwoSphere := by
   norm_num
 
 variable {M : Type*} [TopologicalSpace M] (q : UnitTwoSphere × ℝ → M)
-
 
 theorem exists_common_center
     (hsplit : ∀ d : (UnitTwoSphere × ℝ) ≃ₜ (UnitTwoSphere × ℝ), q ∘ d = q →
@@ -71,7 +60,6 @@ theorem exists_common_center
       exact ⟨L, 1, Or.inl rfl, fun z => by simpa [hc] using hform z⟩
     · exact (href ⟨d, L, c, hd, fun z => by simpa only [neg_one_mul] using hform z⟩).elim
 
-
 theorem slice_orthogonal_group_free (hc : IsCoveringMap q) (a : ℝ)
     (L : RicciFlow.Splitting.orthogonalSurfaceDeckGroup (fun x => q (x, a)))
     (hL : L ≠ 1) (v : EuclideanSpace ℝ (Fin 3)) (hv : ‖v‖ = 1) : L.val v ≠ v := by
@@ -87,7 +75,6 @@ theorem slice_orthogonal_group_free (hc : IsCoveringMap q) (a : ℝ)
   apply RicciFlow.Splitting.surfaceMotion_injective
   funext y
   exact (congrArg Prod.fst (congrFun heq y)).trans (Subtype.ext rfl)
-
 
 theorem sphereFactor_eq_antipodal (hc : IsCoveringMap q) (a : ℝ)
     (d : (UnitTwoSphere × ℝ) ≃ₜ (UnitTwoSphere × ℝ)) (hd : q ∘ d = q)

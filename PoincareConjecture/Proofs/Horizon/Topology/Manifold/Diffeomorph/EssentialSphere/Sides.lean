@@ -4,21 +4,11 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Sets.Opens
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
 
 namespace Poincare.Topology
-
-
 
 theorem cylinder_sides_of_negative_witness
     {S M : Type*} [TopologicalSpace S] [ConnectedSpace S] [TopologicalSpace M]

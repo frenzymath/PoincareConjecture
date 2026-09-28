@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.SmoothBrokenCost
 import PoincareConjecture.Proofs.M09.ExponentialPhaseLinearization
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 1000000

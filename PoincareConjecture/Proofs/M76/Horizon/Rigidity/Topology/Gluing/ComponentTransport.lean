@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M54.Mathlib.BasedPathTransport
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.PathMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M76.IncompressibleGluing
 variable {X : Type*} [TopologicalSpace X]
 
 open Path.Homotopic.Quotient
-
-
 
 noncomputable def pathConjugation {b x : X} (t : Path.Homotopic.Quotient b x) :
     (FundamentalGroup X x)ᵐᵒᵖ ≃* (FundamentalGroup X b)ᵐᵒᵖ where
@@ -41,8 +31,6 @@ noncomputable def pathConjugation {b x : X} (t : Path.Homotopic.Quotient b x) :
         (t.trans ((MulOpposite.unop q).trans t.symm))
     simp only [trans_assoc, symm_trans_assoc]
 
-
-
 abbrev ComponentGroup (X : Type*) [TopologicalSpace X] (c : ZerothHomotopy X) :=
   (FundamentalGroup X c.out)ᵐᵒᵖ
 
@@ -54,10 +42,8 @@ theorem joined_component_out_iff (c : ZerothHomotopy X) (x : X) :
   · intro h
     exact Quotient.exact ((Quotient.out_eq' c).trans h)
 
-
 noncomputable def componentTails (c : ZerothHomotopy X) (x : X)
     (h : Joined c.out x) : Path.Homotopic.Quotient c.out x := mk h.somePath
-
 
 noncomputable def componentTransport (p : C(unitInterval, X)) :
     ∀ c : ZerothHomotopy X, ComponentGroup X c :=
@@ -68,21 +54,17 @@ noncomputable def componentTransport (p : C(unitInterval, X)) :
   funext c
   exact basedContinuousTransport_const c.out (componentTails c) x
 
-
 theorem componentTransport_eq_one_of_ne (p : C(unitInterval, X))
     (c : ZerothHomotopy X) (hc : c ≠ ZerothHomotopy.mk (p 0)) :
     componentTransport p c = 1 := by
   exact basedTransport_of_not_joined c.out (componentTails c) (mk p.toPath)
     (fun h => hc ((joined_component_out_iff c (p 0)).mp h))
 
-
-
 theorem componentTransport_square (S : C(unitInterval × unitInterval, X)) :
     componentTransport (S.horizontalPath 0) * componentTransport (S.verticalPath 1) =
       componentTransport (S.verticalPath 0) * componentTransport (S.horizontalPath 1) := by
   funext c
   exact basedContinuousTransport_square c.out (componentTails c) S
-
 
 noncomputable def componentLoopTransport (x : X) :
     (FundamentalGroup X x)ᵐᵒᵖ →* (∀ c : ZerothHomotopy X, ComponentGroup X c) where
@@ -100,7 +82,6 @@ noncomputable def componentLoopTransport (x : X) :
       componentTransport p.toContinuousMap := by
   funext c
   exact (basedContinuousTransport_path c.out (componentTails c) p).symm
-
 
 theorem componentLoopTransport_injective (x : X) :
     Function.Injective (componentLoopTransport x) := by

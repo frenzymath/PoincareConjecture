@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleFiber
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 structure OriginalTriangleFibers (T : OriginalProperDiskTriangulation e R j) where
   map : Finset (T.index → ℝ × V3) → ℝ → (T.index → ℝ × V3)
@@ -39,9 +28,6 @@ structure OriginalTriangleFibers (T : OriginalProperDiskTriangulation e R j) whe
   negative : ∀ s ∈ (T.marked 2).faces, s.card = 3 →
     ∀ p : (T.marked 2).vertices, (p : T.index → ℝ × V3) ∈ s → ∀ r ∈ I,
       T.height p (map s r) ≤ 0 ↔ r ≤ 0
-
-
-
 
 theorem OriginalProperDiskTriangulation.exists_triangle_fibers [T2Space X]
     (T : OriginalProperDiskTriangulation e R j) : Nonempty (OriginalTriangleFibers T) := by

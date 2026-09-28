@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSupportMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereVanishing
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereBase
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

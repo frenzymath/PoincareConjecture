@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralEuclideanCohomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false

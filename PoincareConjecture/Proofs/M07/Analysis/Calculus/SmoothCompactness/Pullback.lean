@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -47,8 +38,6 @@ private theorem locallyUniformly_of_zeroJet
   simpa only [Function.comp_def, iteratedFDeriv_zero_apply] using
     (ContinuousMultilinearMap.uniformContinuous_eval_const (0 : Fin 0 →
       EuclideanSpace ℝ (Fin d))).comp_tendstoUniformlyOn (hjet K hK hKU)
-
-
 
 theorem smooth_convergence_comp_on_open
     {d : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -120,7 +109,6 @@ theorem smooth_convergence_comp_on_open
     ((tendstoLocallyUniformlyOn_iteratedFDeriv_of_locally_eventually_smooth
       hpoint hlocal hbound m).mono hKV)
 
-
 theorem tendstoUniformlyOn_fderiv_jets
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -154,8 +142,6 @@ private theorem norm_iteratedFDeriv_bilinear_le_at
     (hfs.mono (fun _ hy => (hv hy).1)) (hgt.mono (fun _ hy => (hv hy).2))
     hvo.uniqueDiffOn hxv (le_refl (m : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
 
 theorem smooth_convergence_bilinear_on_open
     {d : ℕ} {F G H : Type*}
@@ -218,9 +204,6 @@ theorem smooth_convergence_bilinear_on_open
   exact (tendstoLocallyUniformlyOn_iff_tendstoUniformlyOn_of_compact hK).mp
     ((tendstoLocallyUniformlyOn_iteratedFDeriv_of_locally_eventually_smooth
       hpoint hlocal hbound m).mono hKU)
-
-
-
 
 theorem smooth_convergence_pullback_bilinear_on_open
     {d : ℕ} {U V : Set (EuclideanSpace ℝ (Fin d))}

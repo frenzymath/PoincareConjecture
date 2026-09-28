@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M60Area
 import PoincareConjecture.Proofs.M65.Mathlib.GramComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaDensityScaling_of_metric_comparison
     (g h : RiemannianMetric n M) {C : ℝ} (hC : 0 ≤ C)
@@ -47,8 +36,6 @@ theorem m65AreaDensityScaling_of_metric_comparison
     _ = C * m60AreaDensity g f z := by
       rw [Real.sqrt_mul (sq_nonneg C), Real.sqrt_sq hC]
       rfl
-
-
 
 theorem m65AreaScaling_of_metric_comparison
     (g h : RiemannianMetric n M) {C : ℝ} (hC : 0 ≤ C)

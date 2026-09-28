@@ -2,27 +2,16 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Subsequence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Completeness
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal NNReal Topology
 
 namespace PoincareConjecture
 
-
 structure PointedRicciFlowGeometricProducer
     {n : ℕ} {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses n T' T) where
   geometric_limit : PointedGeometricConvergence H.sequence
-
 
 structure PointedRicciFlowCompletenessProducer
     {n : ℕ} {T' T : ℝ}
@@ -30,9 +19,6 @@ structure PointedRicciFlowCompletenessProducer
     (G : PointedGeometricConvergence H.sequence) where
   complete_interior : ∀ t ∈ Set.Ioo T' T,
     FlowCarrier.metricComplete G.limitCarrier (G.limitFlow.metricAt t)
-
-
-
 
 theorem PointedRicciFlowCompletenessProducer.of_curvature_bound
     {n : ℕ} {T' T : ℝ}
@@ -50,15 +36,6 @@ theorem PointedRicciFlowCompletenessProducer.of_curvature_bound
     PointedRicciFlowCompletenessProducer H G where
   complete_interior := G.limitFlow.complete_interior_of_two_time_curvature_bound
     H.time_bounds hcomplete hcurv
-
-
-
-
-
-
-
-
-
 
 structure PointedRicciFlowInteriorCompletenessInput
     {n : ℕ} {T' T : ℝ}
@@ -89,8 +66,6 @@ structure PointedRicciFlowInteriorCompletenessInput
           C * (FlowCarrier.metricEMetricSpace G.limitCarrier
             (G.limitFlow.metricAt t.1)).edist x y
 
-
-
 theorem PointedRicciFlowInteriorCompletenessInput.toProducer
     {n : ℕ} {T' T : ℝ}
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
@@ -120,7 +95,6 @@ theorem PointedRicciFlowInteriorCompletenessInput.toProducer
       (G.limitFlow.metricAt t)).toUniformSpace
   simpa [d₁] using h
 
-
 def PointedRicciFlowGeometricProducer.ofSubsequence
     {n : ℕ} {T' T : ℝ}
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
@@ -128,7 +102,6 @@ def PointedRicciFlowGeometricProducer.ofSubsequence
     (P : PointedRicciFlowGeometricProducer (H.subsequence φ hφ)) :
     PointedRicciFlowGeometricProducer H where
   geometric_limit := P.geometric_limit.ofSubsequence hφ
-
 
 theorem PointedRicciFlowCompletenessProducer.ofSubsequence
     {n : ℕ} {T' T : ℝ}
@@ -139,7 +112,6 @@ theorem PointedRicciFlowCompletenessProducer.ofSubsequence
     PointedRicciFlowCompletenessProducer H (P.geometric_limit.ofSubsequence hφ) where
   complete_interior := C.complete_interior
 
-
 def PointedRicciFlowGeometricProducer.assemble
     {n : ℕ} {T' T : ℝ}
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
@@ -148,7 +120,6 @@ def PointedRicciFlowGeometricProducer.assemble
     PointedRicciFlowCompactnessConclusion H where
   geometric_limit := P.geometric_limit
   complete_interior := C.complete_interior
-
 
 theorem pointedRicciFlowCompactness_of_producers
     {n : ℕ} {T' T : ℝ}

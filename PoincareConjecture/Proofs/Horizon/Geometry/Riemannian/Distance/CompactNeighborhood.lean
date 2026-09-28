@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -99,8 +92,6 @@ private theorem exists_local_image_distance_bound
     (convex_ball _ _) he hB.le hupper hx.2 (Metric.mem_ball_self (by positivity))
   simp only [Function.comp_apply, c.left_inv hx.1, c.left_inv hp] at hdist
   exact hdist.trans (mul_le_mul_of_nonneg_left (Metric.mem_ball.mp hx.2).le (Real.sqrt_nonneg _))
-
-
 
 theorem exists_open_uniform_image_distance_bound
     (g : RiemannianMetric n X) (gseq : ℕ → RiemannianMetric n X)

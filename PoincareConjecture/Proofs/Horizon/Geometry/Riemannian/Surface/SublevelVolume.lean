@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.SublevelVolume.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Singleton
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +41,6 @@ variable {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
   [T3Space S] [CompactSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
-
 
 theorem tendsto_sublevelVolume_div_sub_min (D : LeviCivitaData g)
     {f : S → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f) {p : S}

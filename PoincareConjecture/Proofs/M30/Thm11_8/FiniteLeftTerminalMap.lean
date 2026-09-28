@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedSpatialSlices
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem exists_generalized_terminal_partialDiffeomorph
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

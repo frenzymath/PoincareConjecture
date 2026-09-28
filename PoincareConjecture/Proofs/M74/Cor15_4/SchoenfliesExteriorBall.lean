@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesBallSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +13,6 @@ open M25.Topology3D
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
-
-
 
 noncomputable def schoenfliesExteriorBall
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
@@ -88,8 +77,6 @@ noncomputable def schoenfliesExteriorBall
           (isOpen_ball.mem_nhds (ball_subset_ball hrR.le x.2))).contMDiffAt
     exact (B.punctureChart_symm_contMDiff d).contMDiffAt.comp x hc
 
-
-
 theorem schoenfliesExteriorBall_apply
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
     (Ψ : StandardCapSpace → StandardCapSpace) (hΨ : ContDiff ℝ ∞ Ψ)
@@ -101,8 +88,6 @@ theorem schoenfliesExteriorBall_apply
 end PoincareConjecture.SurgeryBallEmbedding
 
 namespace PoincareConjecture.M74
-
-
 
 noncomputable def restrictDiffeomorphBall
     (K : Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞)
@@ -134,16 +119,12 @@ noncomputable def restrictDiffeomorphBall
   · exact (ContMDiff.subtypeVal_comp_iff U F).mp (K.contMDiff.comp contMDiff_subtype_val)
   · exact (ContMDiff.subtypeVal_comp_iff U G).mp (K.symm.contMDiff.comp contMDiff_subtype_val)
 
-
-
 theorem restrictDiffeomorphBall_apply
     (K : Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞)
     (hK : ∀ x, ‖K x‖ = ‖x‖) (R : ℝ)
     (x : (⟨ball (0 : StandardCapSpace) R, isOpen_ball⟩ :
       TopologicalSpace.Opens StandardCapSpace)) :
     (restrictDiffeomorphBall K hK R x).1 = K x.1 := rfl
-
-
 
 theorem restrictDiffeomorphBall_symm_apply
     (K : Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞)

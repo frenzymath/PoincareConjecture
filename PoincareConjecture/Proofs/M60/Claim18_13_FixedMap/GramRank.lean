@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60AreaGram_det_ne_zero_iff (g : RiemannianMetric n M)
     (F : LoopPlane → M) (z : LoopPlane) :
@@ -36,15 +24,11 @@ theorem m60AreaGram_det_ne_zero_iff (g : RiemannianMetric n M)
     (v := fun i : Fin 2 =>
       mfderiv (𝓡 2) (𝓡 n) F z (EuclideanSpace.basisFun (Fin 2) ℝ i))
 
-
-
 theorem m60AreaGram_det_eq_zero_iff (g h : RiemannianMetric n M)
     (F : LoopPlane → M) (z : LoopPlane) :
     Matrix.det (m60AreaGram g F z) = 0 ↔ Matrix.det (m60AreaGram h F z) = 0 := by
   exact not_iff_not.mp
     ((m60AreaGram_det_ne_zero_iff g F z).trans (m60AreaGram_det_ne_zero_iff h F z).symm)
-
-
 
 theorem m60AreaDensity_eq_zero_of_det_eq_zero (g h : RiemannianMetric n M)
     (F : LoopPlane → M) (z : LoopPlane) (hz : Matrix.det (m60AreaGram g F z) = 0) :
@@ -52,15 +36,11 @@ theorem m60AreaDensity_eq_zero_of_det_eq_zero (g h : RiemannianMetric n M)
   simp only [m60AreaDensity, (m60AreaGram_det_eq_zero_iff g h F z).mp hz,
     max_self, Real.sqrt_zero]
 
-
-
 theorem m60SphereRicciTraceDensity_eq_zero {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (f : UnitTwoSphere → M) (z : LoopPlane)
     (hz : Matrix.det (m60AreaGram g (f ∘ m60SphereParameter) z) = 0) :
     m60SphereRicciTraceDensity D f z = 0 := by
   simp only [m60SphereRicciTraceDensity, hz, if_true]
-
-
 
 theorem m60SphereDensity_variation_of_degenerate {J : Set ℝ}
     (F : RicciFlow n M J) (f : UnitTwoSphere → M) (z : LoopPlane) (t : ℝ)

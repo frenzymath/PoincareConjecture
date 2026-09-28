@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnchoredNecks
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,11 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
-
 
 theorem cap_not_disappears_of_anchored_carrier
     {F : SurgeryFlowData.{u}} {origin scale tau d : ℝ}

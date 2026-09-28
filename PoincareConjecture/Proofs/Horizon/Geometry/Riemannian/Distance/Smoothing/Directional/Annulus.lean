@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.Excess
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +22,6 @@ private theorem isCompact_real_distance_annulus
   · intro y hy
     exact (ENNReal.ofReal_toReal (g.edist_ne_top p y)).symm.le.trans
       (ENNReal.ofReal_le_ofReal hy.2)
-
-
 
 theorem exists_distance_smoothing_with_excess_control
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ open scoped BigOperators
 namespace Geometry
 
 variable {ι : Type*} [Fintype ι]
-
-
-
 
 theorem sum_lt_card_of_mem_cube_ne_one {x : ι → ℝ}
     (hx : x ∈ Metric.closedBall (0 : ι → ℝ) 1) (hne : x ≠ fun _ => 1) :
@@ -32,9 +20,6 @@ theorem sum_lt_card_of_mem_cube_ne_one {x : ι → ℝ}
   simpa only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one] using
     Finset.sum_lt_sum (fun j (_ : j ∈ Finset.univ) => hle j)
       ⟨i, Finset.mem_univ i, hlt⟩
-
-
-
 
 theorem exists_cube_cutting_level [Nonempty ι] {s : Set (ι → ℝ)}
     (hs : IsCompact s) (hsub : s ⊆ Metric.closedBall (0 : ι → ℝ) 1)

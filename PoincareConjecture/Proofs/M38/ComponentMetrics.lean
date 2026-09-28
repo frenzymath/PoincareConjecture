@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,13 +14,9 @@ variable {M Q : Type*} [TopologicalSpace M] [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ Q]
 
-
-
 noncomputable def metricAlongDiffeomorph (g : RiemannianMetric 3 Q)
     (e : Diffeomorph (𝓡 3) (𝓡 3) M Q ∞) : RiemannianMetric 3 M :=
   g.pullbackOfLocalDiffeomorph e e.isLocalDiffeomorph
-
-
 
 theorem metricAlongDiffeomorph_inverse_inner (g : RiemannianMetric 3 Q)
     (e : Diffeomorph (𝓡 3) (𝓡 3) M Q ∞) (y : Q)
@@ -49,8 +37,6 @@ theorem metricAlongDiffeomorph_inverse_inner (g : RiemannianMetric 3 Q)
     (mfderiv (𝓡 3) (𝓡 3) e (e.symm y) (mfderiv (𝓡 3) (𝓡 3) e.symm y v))
   rw [hderiv, hderiv, e.apply_symm_apply]
 
-
-
 noncomputable def connectionAlongDiffeomorph {g : RiemannianMetric 3 Q}
     (D : LeviCivitaData g) (e : Diffeomorph (𝓡 3) (𝓡 3) M Q ∞) :
     LeviCivitaData (metricAlongDiffeomorph g e) := by
@@ -64,8 +50,6 @@ noncomputable def connectionAlongDiffeomorph {g : RiemannianMetric 3 Q}
     exact ContinuousLinearMap.isInvertible_equiv
   · intro x
     exact ⟨(), e x, e.symm_apply_apply x⟩
-
-
 
 theorem positiveCurvatureAlongDiffeomorph {g : RiemannianMetric 3 Q}
     (D : LeviCivitaData g) (e : Diffeomorph (𝓡 3) (𝓡 3) M Q ∞)

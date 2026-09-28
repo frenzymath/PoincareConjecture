@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M01.ConnectionRegularity
 import PoincareConjecture.Proofs.M01.Curvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
 open Filter

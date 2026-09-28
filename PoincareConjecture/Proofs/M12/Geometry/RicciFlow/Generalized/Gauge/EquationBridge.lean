@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M12MovingGaugeTheory
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.UniqueDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -29,10 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
-
-
-
-
 
 theorem movingGaugeEquation_iff_of_metric_derivative_ricci_eq
     (D : LeafwiseLeviCivitaFamily F S)
@@ -98,7 +85,6 @@ theorem movingGaugeEquation_iff_of_calculus
       MovingGaugeRicciPDE G c :=
   movingGaugeEquation_iff_of_metric_derivative_ricci_eq D G c
     h.metric_derivative h.ricci_eq
-
 
 theorem ordinaryMetricLieDerivative_zero
     {n : ℕ} {C : Type v} [TopologicalSpace C]
@@ -205,8 +191,6 @@ theorem compatible_ordinary_of_calculus_zero_drift
     ((compatible_equivalence_of_calculus_zero_drift D e G c hCalc hzero).mp
       hIntrinsic)
   exact hCalc.ricci_eq
-
-
 
 theorem cover_converse_of_calculus_zero_drift
     {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}

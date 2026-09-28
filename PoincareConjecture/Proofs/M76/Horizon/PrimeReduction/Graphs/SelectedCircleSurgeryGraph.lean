@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.SelectedCircl
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleSurgeryCrossings
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

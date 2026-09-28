@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EuclideanPlaneTopology
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Submodule
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 noncomputable def operatorOrthogonalSplitHomeomorph (V : Submodule ℝ E) :
     (E →L[ℝ] F) ≃ₜ ((V →L[ℝ] F) × (Vᗮ →L[ℝ] F)) where
@@ -47,9 +35,6 @@ noncomputable def operatorOrthogonalSplitHomeomorph (V : Submodule ℝ E) :
     (continuous_id.clm_comp continuous_const)
   continuous_invFun := (continuous_fst.clm_comp continuous_const).add
     (continuous_snd.clm_comp continuous_const)
-
-
-
 
 noncomputable def operatorRestrictionHomeomorph (V : Submodule ℝ E)
     (p : (V →L[ℝ] F) → Prop) :
@@ -81,9 +66,6 @@ noncomputable def operatorRestrictionHomeomorph (V : Submodule ℝ E)
       (e.continuous.comp continuous_subtype_val).snd
   · exact (e.symm.continuous.comp
       ((continuous_subtype_val.comp continuous_fst).prodMk continuous_snd)).subtype_mk (fun _ => _)
-
-
-
 
 theorem contractible_operatorRestriction (V : Submodule ℝ E)
     (p : (V →L[ℝ] F) → Prop) [ContractibleSpace {R : V →L[ℝ] F // p R}] :

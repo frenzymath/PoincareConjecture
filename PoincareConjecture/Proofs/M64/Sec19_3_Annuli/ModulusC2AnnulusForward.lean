@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusBoundaryRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusC2BoundaryMotion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusFamily
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
-
 
 theorem m64CircleProductAnnulus_modulus_exists_forward_of_c2_curves
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)
@@ -131,10 +112,6 @@ theorem m64CircleProductAnnulus_modulus_exists_forward_of_c2_curves
   have he0 : f0 h = (fun x => c0 x (t + h)) := funext (ha0 h (hsub0 he))
   have he1 : f1 h = (fun x => c1 x (t + h)) := funext (ha1 h (hsub1 he))
   exact he0 ▸ he1 ▸ ⟨B, harea⟩
-
-
-
-
 
 theorem m64CircleProductAnnulus_modulus_exists_forward_with_curvature_supremum
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)

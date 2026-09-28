@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHomeomorph
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -22,8 +12,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f g : E → F}
 
-
-
 theorem AffineOnFaces.interpolate (hf : K.AffineOnFaces f) (hg : K.AffineOnFaces g) (t : ℝ) :
     K.AffineOnFaces (fun x => (1 - t) • f x + t • g x) := by
   intro s hs
@@ -32,8 +20,6 @@ theorem AffineOnFaces.interpolate (hf : K.AffineOnFaces f) (hg : K.AffineOnFaces
   refine ⟨(1 - t) • a + t • b, fun x hx => ?_⟩
   simp only [ContinuousAffineMap.add_apply, ContinuousAffineMap.smul_apply, ha hx, hb hx]
 
-
-
 theorem radial_interpolation_pos {r t : ℝ} (hr : 0 < r) (ht : t ∈ Icc (0 : ℝ) 1) :
     0 < 1 - t + t * r := by
   rcases eq_or_lt_of_le ht.1 with h | h
@@ -41,9 +27,6 @@ theorem radial_interpolation_pos {r t : ℝ} (hr : 0 < r) (ht : t ∈ Icc (0 : �
   · exact add_pos_of_nonneg_of_pos (sub_nonneg.mpr ht.2) (mul_pos h hr)
 
 variable [DecidableEq E] [FiniteDimensional ℝ E] {f : E → E}
-
-
-
 
 theorem exists_radial_interpolation_homeomorph
     (hK : K.faces.Finite)
@@ -68,9 +51,6 @@ theorem exists_radial_interpolation_homeomorph
     hF.eqOn_of_eqOn_vertices hinterp (fun x hx => by
       simp only [hFv hx, hfv hx, add_smul, mul_smul])
   exact ⟨g, e, hg, fun x => (heF x).trans (heq x.property), heg⟩
-
-
-
 
 noncomputable def radialRescaleHomotopy
     (hK : K.faces.Finite)
@@ -105,8 +85,6 @@ noncomputable def radialRescaleHomotopy
     convert h using 1
     ext x
     exact (he x).symm
-
-
 
 theorem radialRescaleHomotopy_fixed_vertex
     (hK : K.faces.Finite)

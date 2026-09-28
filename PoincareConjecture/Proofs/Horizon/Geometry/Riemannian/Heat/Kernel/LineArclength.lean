@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineInjectivity
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
 
 theorem contMDiff_symm_of_line_coordinate (e : ℝ ≃ M)
     (he : ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) ∞ e)
@@ -72,7 +63,6 @@ theorem contMDiff_symm_of_line_coordinate (e : ℝ ≃ M)
     exact (f.right_inv hqtar).symm
   exact hcomp.congr_of_eventuallyEq hnear
 
-
 theorem metric_eq_of_unit_speed_line_coordinate (g : RiemannianMetric 1 M)
     (e : ℝ ≃ M) (he : ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) ∞ e)
     (hi : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ e.symm)
@@ -106,8 +96,6 @@ theorem metric_eq_of_unit_speed_line_coordinate (g : RiemannianMetric 1 M)
   exact mul_comm b a
 
 variable [T3Space M] [PreconnectedSpace M] [NoncompactSpace M]
-
-
 
 theorem exists_metric_line_coordinate (g : RiemannianMetric 1 M) (hc : MetricComplete g) :
     ∃ e : M ≃ ℝ, ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ e ∧

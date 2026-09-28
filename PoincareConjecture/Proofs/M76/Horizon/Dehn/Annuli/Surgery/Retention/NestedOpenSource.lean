@@ -16,9 +16,6 @@ local notation "Left" => Set.prod Q (Icc (-1 : ℝ) (-1 / 2))
 local notation "Middle" => Set.prod Q (Icc (-1 / 2 : ℝ) 0)
 local notation "Right" => Set.prod Q (Icc (0 : ℝ) 1)
 
-
-
-
 theorem exists_nested_retained_open_source
     {X : Type*} {f : P2 → X} {g : (V2 × ℝ) → X}
     {A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ L d : ℝ}

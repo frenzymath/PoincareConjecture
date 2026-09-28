@@ -3,13 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -140,4 +133,3 @@ theorem hasDerivAt_mvfderiv_time
   exact (hdSlice.congr_deriv hvalue).congr_of_eventuallyEq htimeEq
 
 end PoincareConjecture.M04
-

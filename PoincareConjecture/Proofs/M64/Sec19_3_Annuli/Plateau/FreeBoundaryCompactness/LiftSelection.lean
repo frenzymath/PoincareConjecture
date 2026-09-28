@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.MonotoneHelly
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LiftNormalization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem degreeOneLift_subsequence_ae (sigma : ℕ → M64PeriodicDegreeOneLift) :
     ∃ (k : ℕ → ℕ) (L : ℝ → ℝ), StrictMono k ∧ Monotone L ∧
@@ -58,10 +43,6 @@ theorem degreeOneLift_subsequence_ae (sigma : ℕ → M64PeriodicDegreeOneLift) 
         (limsup_le_of_le hbelow.isCobounded_le
           (Eventually.of_forall fun j => (normalizedDegreeOneLift_zero (sigma (k j))).2.le))⟩
   exact ⟨k, L, hk, hL, hperiod, hzero, hae⟩
-
-
-
-
 
 theorem degreeOneLift_pair_target_subsequence_ae
     {X : Type*} [TopologicalSpace X] (c0 c1 : ℝ → X)

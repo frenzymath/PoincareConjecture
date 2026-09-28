@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -19,7 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "A2" => squareAnnulus 8 1
 local notation "I" => Icc (0 : ℝ) 1
-
 
 theorem finitePiecewiseAffineOn_annulus_depth
     (K : SimplicialComplex ℝ P2) (hK : K.faces.Finite) (L : ℝ) :
@@ -35,7 +25,6 @@ theorem finitePiecewiseAffineOn_annulus_depth
     (ContinuousAffineMap.const ℝ P2 L -
       (ContinuousLinearMap.snd ℝ ℝ ℝ).toContinuousAffineMap)).finitePiecewiseAffineOn hK
   exact (hx.min hy).min (hx'.min hy')
-
 
 noncomputable def annulusCorrectionHeight (upper : Bool) (p : P2) : ℝ :=
   if upper then (3 + depth 8 p) / 8 else (1 - depth 8 p) / 8
@@ -72,7 +61,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [FiniteDimensional ℝ F] in
 
-
 theorem exists_correction_annulus_graph
     {L : SimplicialComplex ℝ E} {c : E × ℝ → F}
     (hc : FinitePiecewiseAffineOn c (L.space ×ˢ I)) (hi : InjOn c (L.space ×ˢ I))
@@ -107,7 +95,6 @@ theorem exists_correction_annulus_graph
 omit [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] in
 
-
 theorem correction_annulus_graph_eq_iff
     {L : SimplicialComplex ℝ E} {c : E × ℝ → F}
     (hi : InjOn c (L.space ×ˢ I))
@@ -133,7 +120,6 @@ theorem correction_annulus_graph_eq_iff
 omit [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] in
 
-
 theorem correction_annulus_graph_clearance
     {L : SimplicialComplex ℝ E} {c : E × ℝ → F} {D : Set F}
     (hD : ∀ z ∈ L.space ×ˢ I, c z ∈ D ↔ (1 / 2 : ℝ) ≤ z.2)
@@ -154,8 +140,6 @@ theorem correction_annulus_graph_clearance
     linarith [hp.1]
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] [NormedSpace ℝ F] in
-
-
 
 theorem correction_annulus_graph_frontier
     {L : SimplicialComplex ℝ E} {c : E × ℝ → F} {R : Set F}

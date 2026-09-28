@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M71.Thm18_1_ProfileAlgebra
 import PoincareConjecture.Proofs.M71.Thm18_1_InitialWidth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -21,17 +13,12 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {W : RepairedEventChildWitness D.flow}
   {ancestry : RepairedFiniteAncestryData D.flow W}
 
-
-
 noncomputable def m71ExtinctionTime (Q : M71FiniteContinuationService D W ancestry) : ℝ :=
   ((2 + m71InitialWidth Q / (2 * Real.pi)) ^ 4 - 1) / 4
-
 
 theorem m71ExtinctionTime_nonneg (Q : M71FiniteContinuationService D W ancestry) :
     0 ≤ m71ExtinctionTime Q :=
   (m71ProfileAlgebra_neg (m71InitialWidth Q) (m71InitialWidth_nonneg Q)).1
-
-
 
 theorem m71ExtinctionTime_mem
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

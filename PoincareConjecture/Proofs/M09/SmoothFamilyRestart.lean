@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.FamilyPhase
 import PoincareConjecture.Proofs.M09.SmoothTangentChartPhase
 import PoincareConjecture.Proofs.M09.ForwardRegularizedContinuation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckGlobalFlow
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureCharts
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,16 +21,11 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
 
 include hQ
 
-
-
 theorem GeneralizedStrongNeck.global_time_mem_backward {tau s : ℝ}
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (hs : s ∈ Icc (-tau) 0) :
     s / (Q * S.scale ^ 2) ∈ Ioc (-1 : ℝ) 0 := by
   have h := GeneralizedStrongNeck.global_time_mem_quarter S Q hQ hwindow hs
   exact ⟨by linarith [h.1], h.2⟩
-
-
-
 
 def GeneralizedStrongNeck.global_original_map (tau : ℝ)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ) (hs : s ∈ Icc (-tau) 0) :
@@ -49,16 +34,12 @@ def GeneralizedStrongNeck.global_original_map (tau : ℝ)
   fun x => S.time_cylinder.forward (s / (Q * S.scale ^ 2))
     (GeneralizedStrongNeck.global_time_mem_backward S Q hQ hwindow hs) x.val
 
-
-
 theorem GeneralizedStrongNeck.global_original_map_smooth (tau : ℝ)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ) (hs : s ∈ Icc (-tau) 0) :
     ContMDiff (𝓡 3) (𝓡 3) ∞
       (GeneralizedStrongNeck.global_original_map S Q hQ tau hwindow s hs) :=
   (S.time_cylinder.forward_smooth _ _).comp_contMDiff contMDiff_subtype_val
     (fun x => x.property)
-
-
 
 theorem GeneralizedStrongNeck.global_flow_metric_original
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4)
@@ -90,8 +71,6 @@ theorem GeneralizedStrongNeck.global_flow_metric_original
   dsimp only [f, GeneralizedStrongNeck.global_original_map, sigma]
   field_simp [S.scale_pos.ne']
 
-
-
 theorem GeneralizedStrongNeck.global_flow_scalar_original
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4)
     (s : ℝ) (hs : s ∈ Icc (-tau) 0) (x : strongNeckOpen S) :
@@ -119,8 +98,6 @@ theorem GeneralizedStrongNeck.global_flow_scalar_original
     (Diffeomorph.refl (𝓡 3) (F.slice time).carrier ∞) Q hQ
     (M13.identity_metricHomothety (F.metric time) Q hQ) (F.connection time) DQ (f x)
   exact hi.trans hh
-
-
 
 theorem GeneralizedStrongNeck.global_flow_curvatureTensor_original
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4)

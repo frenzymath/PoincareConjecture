@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
 open scoped Topology
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_toIcoMod {p : ℝ} (hp : 0 < p) (a : ℝ)
     {U : Set ℝ} (hU : IsOpen U)
@@ -46,9 +30,6 @@ namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
 
-
-
-
 theorem quotient_chart_transition_locallyPiecewiseAffine (a b : ℝ) :
     LocallyPiecewiseAffineOn
       ((openPartialHomeomorphCoe p a).trans (openPartialHomeomorphCoe p b).symm)
@@ -59,20 +40,11 @@ theorem quotient_chart_transition_locallyPiecewiseAffine (a b : ℝ) :
   intro x hx
   exact hx.2
 
-
-
-
 theorem quotient_chart_transition_mem_piecewiseAffineGroupoid (a b : ℝ) :
     (openPartialHomeomorphCoe p a).trans (openPartialHomeomorphCoe p b).symm ∈
       piecewiseAffineGroupoid ℝ :=
   ⟨quotient_chart_transition_locallyPiecewiseAffine p a b,
     quotient_chart_transition_locallyPiecewiseAffine p b a⟩
-
-
-
-
-
-
 
 theorem exists_core_fixed_puncturedCircle_chart (r : ℝ) (hr : r < p / 2) :
     ∃ e : OpenPartialHomeomorph (AddCircle p) ℝ,

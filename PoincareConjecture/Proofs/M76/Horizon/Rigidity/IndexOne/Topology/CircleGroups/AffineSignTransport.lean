@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageReparameterization
 import PoincareConjecture.Proofs.M76.Mathlib.AffineChartInclusion
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -13,8 +11,6 @@ namespace Geometry
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem IsPLAffineWitness.affine_conjugate
     {h : OpenPartialHomeomorph E E} {g : OpenPartialHomeomorph F F}
@@ -62,8 +58,6 @@ theorem IsPLAffineWitness.affine_conjugate
     change g (L y) = L (A (L.symm (L y)))
     rw [L.symm_apply_apply, heq y (hKs (K.convexHull_subset_space ht hy)), htA hy]
 
-
-
 theorem plLocalSign_affine_conjugate
     (h : OpenPartialHomeomorph E E) (g : OpenPartialHomeomorph F F)
     (hh : h ∈ piecewiseAffineGroupoid E) (hg : g ∈ piecewiseAffineGroupoid F)
@@ -78,7 +72,6 @@ theorem plLocalSign_affine_conjugate
 
 variable {X ι : Type*} [TopologicalSpace X]
 
-
 theorem affine_model_plAtlas_compatible
     (q : ι → OpenPartialHomeomorph X E)
     (hq : ∀ i j, (q i).symm.trans (q j) ∈ piecewiseAffineGroupoid E)
@@ -92,7 +85,6 @@ theorem affine_model_plAtlas_compatible
     exact ⟨hy, rfl⟩
   · intro x hx
     exact ⟨x, hx, rfl, rfl⟩
-
 
 theorem plAtlasTransitionSign_affine_model
     (q : ι → OpenPartialHomeomorph X E)

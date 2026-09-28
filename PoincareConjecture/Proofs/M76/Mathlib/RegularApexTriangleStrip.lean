@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularApexStripCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLStrip
@@ -16,9 +7,6 @@ open Set Geometry PLStrip
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem apexStrip_image_eq_slab (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ}
     (hv : A v < α) (hαβ : α < β) (hu : β < A u) (hw : β < A w) :
@@ -51,9 +39,6 @@ theorem apexStrip_image_eq_slab (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ
       ← A.triangle_section_eq_edgeLevels (hv.trans_le hAx.1)
         (hAx.2.trans_lt hu) (hAx.2.trans_lt hw)]
     exact ⟨hx, rfl⟩
-
-
-
 
 theorem exists_lower_triangle_strip (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ}
     (hi : AffineIndependent ℝ ![v, u, w])

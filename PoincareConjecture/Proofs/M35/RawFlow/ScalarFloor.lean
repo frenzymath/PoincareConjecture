@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.CompleteScalarMaximum
 import PoincareConjecture.Proofs.M10.ScalarBound
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

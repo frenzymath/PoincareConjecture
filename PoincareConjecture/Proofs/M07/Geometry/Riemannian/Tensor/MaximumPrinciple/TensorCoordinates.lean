@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Chart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.LaplacianRegularity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -30,8 +21,6 @@ local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 n) x) := by
   unfold TangentSpace
   infer_instance
 
-
-
 theorem tensorCoordinateDerivative_formula (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T) (p : M)
@@ -50,8 +39,6 @@ theorem tensorCoordinateDerivative_formula (D : LeviCivitaData g)
   apply D.covariantTensorDerivative_on_fields hT
   intro i
   exact (contMDiffAt_constantCoordinateField p (a i) hx).mdifferentiableAt (by simp)
-
-
 
 theorem tensorCoordinateDerivative_chart_formula (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k}
@@ -80,9 +67,6 @@ theorem tensorCoordinateDerivative_chart_formula (D : LeviCivitaData g)
     intro i
     exact (contMDiffAt_constantCoordinateField p (a i) hx).mdifferentiableAt (by simp)
 
-
-
-
 lemma constantCoordinateField_connectionCoefficient (D : LeviCivitaData g) (p : M)
     {x : M}
     (hx : x ∈ (trivializationAt (EuclideanSpace ℝ (Fin n))
@@ -94,12 +78,9 @@ lemma constantCoordinateField_connectionCoefficient (D : LeviCivitaData g) (p : 
   let e := trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p
   exact e.symmL_continuousLinearMapAt hx _
 
-
 def tensorCoordinateEvaluation {k : ℕ} (p : M) (T : CovariantTensorEvaluation n M k)
     (x : M) (a : Fin k → EuclideanSpace ℝ (Fin n)) : ℝ :=
   T x (fun i => constantCoordinateField p (a i) x)
-
-
 
 theorem tensorCoordinateDerivative_eq_fderiv_sub (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k}

@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M38.CirclePullback
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M38.CirclePullback
-
-
 
 theorem projection_injOn_precompact_component
     {M : Type*} [TopologicalSpace M] (π : M → UnitCircle) (hπ : Continuous π)

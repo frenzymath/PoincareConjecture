@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E2 M]
-
-
 
 theorem exists_restricted_morse_coordinates_of_eventuallyEq_add_const
     {h g : M -> Real} {p : M} {c : Real}
@@ -46,8 +42,6 @@ theorem exists_restricted_morse_coordinates_of_eventuallyEq_add_const
   have hpg : g p = h p + c := hg.eq_of_nhds
   rw [hxg, hform x hx.1, hpg]
   ring
-
-
 
 theorem morse_coordinates_of_eventuallyEq_add_const_at_critical_points
     {h g : M -> Real}

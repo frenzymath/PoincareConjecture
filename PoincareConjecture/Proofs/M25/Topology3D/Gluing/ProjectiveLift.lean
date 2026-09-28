@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 import Mathlib.Topology.Homotopy.Lifting
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,17 +19,10 @@ variable {Q : Type u} [TopologicalSpace Q]
   {p : RealProjectiveThree} {U : Set Q}
   (C : PoincareConjecture.StandardPuncturedProjectiveCover Q p U)
 
-
-
-
 private theorem lift_sphere_continuous
     (L : C(UnitTwoSphere, projectiveCoverDomain p)) :
     Continuous (fun q : UnitTwoSphere => (L q).1) :=
   continuous_subtype_val.comp L.continuous
-
-
-
-
 
 theorem exists_based_projective_sphere_lift
     (sigma : UnitTwoSphere → Q)
@@ -154,9 +136,6 @@ theorem exists_based_projective_sphere_lift
     hminus_smooth.continuous.isClosedEmbedding hminus_inj
   exact ⟨L, hLbase, hLdomain, hLcover, hLsmooth, hLclosed,
     hminus_smooth, hminus_closed, hdisjoint, hpreimage⟩
-
-
-
 
 theorem projective_sphere_lift_mfderiv_injective
     (sigma : UnitTwoSphere → Q)

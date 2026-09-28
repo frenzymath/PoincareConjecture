@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcCornerCaps
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapUnionSeparators
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +10,6 @@ open scoped Topology ContDiff
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_corner_cap_tip_unique
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -47,10 +31,6 @@ theorem m64Intrinsic_corner_cap_tip_unique
   cases positive <;> cases vertical <;> cases i <;> cases j <;>
     simp_all [sectorParameterEquiv_apply]
   all_goals linarith
-
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_cap_union_separator
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

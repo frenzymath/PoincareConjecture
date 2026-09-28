@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M11.SpatialCalculus
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,23 +12,15 @@ namespace TopologicalSpace.Opens
 
 variable {E : Type*} [NormedAddCommGroup E] (U : Opens E)
 
-
-
 theorem chartAt_apply_eq_val (x y : U) : chartAt E x y = y.val := rfl
-
-
 
 theorem chartAt_source_eq_univ (x : U) : (chartAt E x).source = univ := by
   simp only [chartAt_eq, chartAt_self_eq, OpenPartialHomeomorph.subtypeRestr_source,
     OpenPartialHomeomorph.refl_source, preimage_univ]
 
-
-
 theorem chartAt_symm_apply_val (x y : U) : (chartAt E x).symm y.val = y := by
   rw [← U.chartAt_apply_eq_val x y]
   exact (chartAt E x).left_inv (by rw [U.chartAt_source_eq_univ]; exact mem_univ y)
-
-
 
 theorem chartAt_target_eq (x : U) : (chartAt E x).target = (U : Set E) := by
   ext z
@@ -52,9 +36,6 @@ theorem chartAt_target_eq (x : U) : (chartAt E x).target = (U : Set E) := by
     exact (chartAt E x).map_source hmem
 
 variable [NormedSpace ℝ E]
-
-
-
 
 theorem mfderiv_chartAt_symm_val (x y : U) :
     mfderiv (𝓘(ℝ, E)) (𝓘(ℝ, E)) (chartAt E x).symm y.val = ContinuousLinearMap.id ℝ E := by

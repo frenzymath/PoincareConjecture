@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceSelectedWallField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedWallTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix NNReal
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_reference_selected_wall_transport
     (ws wm d sigma : ℝ)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDehnGeometry
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCubeParameter
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,11 +18,8 @@ local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "J" => Finset.univ.map (Function.Embedding.inl : Fin 1 ↪ Fin 1 ⊕ Fin 2)
 local notation "D" => coordinateCylinder J
 
-
-
 noncomputable def coverConjugate (A : V ≃ₜ V) : W ≃ₜ W :=
   coverCoordinates.symm.toHomeomorph.trans (A.trans coverCoordinates.toHomeomorph)
-
 
 theorem coverConjugate_apply (A : V ≃ₜ V) (x : V) :
     coverConjugate A (coverCoordinates x) = coverCoordinates (A x) := by
@@ -44,8 +32,6 @@ private theorem conjugate_image (A : V ≃ₜ V) (P : Set V) :
   congr 1
   funext x
   exact coverConjugate_apply A x
-
-
 
 theorem coverCoordinates_unit : coverCoordinates '' closedBall (0 : V) 1 =
     Icc (-1 : ℝ) 1 ×ˢ closedBall (0 : ℝ × ℝ) 1 := by
@@ -62,8 +48,6 @@ theorem coverCoordinates_unit : coverCoordinates '' closedBall (0 : V) 1 =
   ext x
   simp only [mem_closedBall_zero_iff, Prod.norm_def, max_le_iff,
     Real.norm_eq_abs, mem_prod, mem_Icc, abs_le]
-
-
 
 theorem coverConjugate_block_support (A : V ≃ₜ V)
     (hAout : ∀ x : V, 2 ≤ ‖x‖ → A x = x)
@@ -163,9 +147,6 @@ variable {L : Submodule ℤ V2} [DiscreteTopology L] {α γ β : Type*}
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 
-
-
-
 structure HamiltonIndexOneProtectedImage
     (geometry : HamiltonIndexOneDehnGeometry L e T region) (A : V ≃ₜ V) where
   ball : IsFinitePLBallPair W (coverCoordinates '' (A '' geometry.Psum))
@@ -206,9 +187,6 @@ structure HamiltonIndexOneProtectedImage
   core_disjoint : Disjoint
     (coverConjugate A '' (Icc (-1 : ℝ) 1 ×ˢ closedBall (0 : ℝ × ℝ) 1))
     (coverCoordinates '' (A '' geometry.annulusSum))
-
-
-
 
 theorem HamiltonIndexOneDehnGeometry.exists_protected_image_geometry
     (geometry : HamiltonIndexOneDehnGeometry L e T region)

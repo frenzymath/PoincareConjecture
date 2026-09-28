@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.M12HorizontalCalculus
 import PoincareConjecture.Statements.M12MetricPredecessors
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ t : ℝ, SpacetimeSliceGeometry F t}
-
 
 theorem M12MetricPredecessors.exists_leafwiseLeviCivitaFamily
     (h : M12MetricPredecessors.{u} n) (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) :
@@ -77,7 +65,6 @@ theorem horizontalRicci_symmetric (h : M12MetricPredecessors.{u} n)
     (D.sliceConnection t)).2.2.2.1 x (j.symm u) (j.symm v) 0 0).2.2.2
 
 end LeafwiseLeviCivitaFamily
-
 
 theorem horizontalMetricLieDerivativeOnFields_symmetric
     (V W : HorizontalSection F) (p : F.Point) :

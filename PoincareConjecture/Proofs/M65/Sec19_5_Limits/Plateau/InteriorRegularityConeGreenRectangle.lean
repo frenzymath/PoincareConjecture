@@ -2,27 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeFluxIntegral
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
-
 
 theorem coneGreen_rectangle {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}

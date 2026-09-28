@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Supremum
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,12 +18,10 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def regularReferencePreimage (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) (ht : t ∈ Ico H.reference.tMinus T)
     (S : Set (F.slice t).carrier) : Set (H.regularRegion P04) :=
   (fun x : H.regularRegion P04 => H.reference.forward t ht x) ⁻¹' S
-
 
 theorem scalar_sup_regularReferencePreimage (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) (ht : t ∈ Ico H.reference.tMinus T)
@@ -62,7 +46,6 @@ theorem scalar_sup_regularReferencePreimage (H : SingularTimeAssumptions F T M)
     exact (H.reference.scalar_pullback t ht (H.reference.inverse t ht y)).symm.trans
       (congrArg (F.connection t).scalarCurvature (H.reference.right_inverse t ht y))
 
-
 theorem regularReferencePreimage_subset (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) (ht : t ∈ Ico H.reference.tMinus T)
     (S : Set (F.slice t).carrier) {A : Set (H.regularRegion P04)}
@@ -73,8 +56,6 @@ theorem regularReferencePreimage_subset (H : SingularTimeAssumptions F T M)
     ⟨H.reference.forward t ht x, hx, H.reference.left_inverse t ht x⟩
   have heq : a = x := Subtype.ext hax
   exact heq ▸ ha
-
-
 
 theorem eventually_cap_core_calibration_close
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

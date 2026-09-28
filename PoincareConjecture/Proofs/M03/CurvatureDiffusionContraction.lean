@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M03.MetricInverse
 import PoincareConjecture.Proofs.M03.CurvatureTimeVariation
 import PoincareConjecture.Proofs.M03.CurvatureDerivativeCommutator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 

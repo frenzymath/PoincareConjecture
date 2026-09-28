@@ -2,16 +2,6 @@ import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open Set Metric
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
 
 theorem fixedSphere_isotopy_norm_sides (Φ : ℝ → E ≃ₜ E)
     (hc : ∀ x, ContinuousOn (fun t => Φ t x) (Icc (0 : ℝ) 1))
@@ -65,8 +53,6 @@ theorem fixedSphere_isotopy_norm_sides (Φ : ℝ → E ≃ₜ E)
       rcases hx.lt_or_eq with hl | he
       · exact (hlt hl).le
       · exact ((hone t ht).mpr he).le
-
-
 
 theorem fixedSphere_isotopy_image_balls (Φ : ℝ → E ≃ₜ E)
     (hc : ∀ x, ContinuousOn (fun t => Φ t x) (Icc (0 : ℝ) 1))

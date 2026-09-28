@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableFlowPatch
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourcePinching
 import PoincareConjecture.Proofs.M47.TerminalGermsPinchedOperator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceCountable_chart_operator
     (U : ℕ → Opens E) [∀ i, Nonempty (U i)] (i j : ℕ)

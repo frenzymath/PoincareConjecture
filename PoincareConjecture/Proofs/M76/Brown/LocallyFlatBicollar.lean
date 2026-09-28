@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatSideCollars
 import PoincareConjecture.Proofs.M76.Brown.TwoCollarGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_bicollar {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     ∃ O : Set V3, IsOpen O ∧ S ⊆ O ∧

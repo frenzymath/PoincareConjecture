@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -85,9 +76,6 @@ private theorem mul_inverse_sqrt_lt_of_square_lt
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
   FlowCarrier.measurableSpace FlowCarrier.borelSpace FlowCarrier.secondCountable
-
-
-
 
 theorem exists_noncompact_limit_scalar_anchor_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

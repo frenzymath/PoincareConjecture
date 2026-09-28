@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 import Mathlib.Geometry.Manifold.VectorBundle.MDifferentiable
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem curvatureOnFields_eq_zero_of_constant_covariantDerivative
     (D : LeviCivitaData g) (V : (x : M) → TangentSpace (𝓡 n) x) (c : ℝ)
@@ -47,8 +30,6 @@ theorem curvatureOnFields_eq_zero_of_constant_covariantDerivative
   simp only [smul_apply]
   rw [← smul_sub, D.connection.torsion_eq_zero_iff.mp D.torsion_eq_zero hX hY,
     sub_self]
-
-
 
 theorem curvature_eq_zero_of_constant_covariantDerivative
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -71,7 +52,6 @@ theorem curvature_eq_zero_of_constant_covariantDerivative
     (FiberBundle.mdifferentiableAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) u)
     (FiberBundle.mdifferentiableAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) v)
   simpa only [X, Y, FiberBundle.extend_apply_self] using hcurv.symm.trans hzero
-
 
 theorem curvatureTensor_eq_zero_of_constant_covariantDerivative
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

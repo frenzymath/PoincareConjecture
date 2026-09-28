@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem complete_initial_derivative_bound (P : RicciFlowCurvatureTheory.{u})
     (n k : ℕ) {K S : ℝ} (hK : 0 < K) (hS : 0 < S) :

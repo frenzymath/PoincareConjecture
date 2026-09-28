@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.HistoryIndices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
 
-
-
 theorem m72LedgerNonempty (I : M72ReconstructionInput N)
     (L : M72ReconstructionLedger I) : L.event_times.Nonempty := by
   refine ⟨I.extinction.extinction_time, ?_⟩
@@ -33,8 +22,6 @@ theorem m72LedgerNonempty (I : M72ReconstructionInput N)
   exact ⟨I.extinction.extinction_surgery_mem,
     I.global.certificate.flow.time_domain_nonnegative I.extinction.extinction_mem, le_rfl⟩
 
-
-
 theorem m72FirstEventExists (I : M72ReconstructionInput N)
     (L : M72ReconstructionLedger I) :
     ∃ e : M72EventIndex I L, ∀ e' : M72EventIndex I L, e.1 ≤ e'.1 := by
@@ -42,8 +29,6 @@ theorem m72FirstEventExists (I : M72ReconstructionInput N)
   refine ⟨⟨L.event_times.min' hnonempty, L.event_times.min'_mem hnonempty⟩, ?_⟩
   intro e'
   exact L.event_times.min'_le e'.1 e'.2
-
-
 
 noncomputable def m72FirstReferenceToInitial (I : M72ReconstructionInput N)
     (L : M72ReconstructionLedger I) (e : M72EventIndex I L)
@@ -55,8 +40,6 @@ noncomputable def m72FirstReferenceToInitial (I : M72ReconstructionInput N)
   rw [← hpred]
   exact (M72EventTopology I L e).predecessor_transport.symm
 
-
-
 noncomputable def m72FirstEventAssembly (I : M72ReconstructionInput N)
     (L : M72ReconstructionLedger I) (e : M72EventIndex I L)
     (hfirst : ∀ e' : M72EventIndex I L, e.1 ≤ e'.1)
@@ -66,9 +49,6 @@ noncomputable def m72FirstEventAssembly (I : M72ReconstructionInput N)
   (R.reindex (m72FirstTailEquiv I L e hfirst)
     (m72FirstTailEquiv_piece I L e hfirst)).transportTarget
       (m72FirstReferenceToInitial I L e hfirst)
-
-
-
 
 theorem m72InitialSliceConnected (I : M72ReconstructionInput N) :
     IsConnected (Set.univ : Set (I.global.certificate.flow.slice 0).carrier) := by

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaCurvature
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,10 +11,6 @@ open scoped Manifold ContDiff intervalIntegral
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 def M65SuppliedDiskGaussBonnet {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

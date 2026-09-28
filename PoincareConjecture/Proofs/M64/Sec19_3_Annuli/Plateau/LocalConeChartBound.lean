@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorEndpointBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ namespace PoincareConjecture
 
 variable {d n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_euclidean_target_differential_bound_on_compact
     (g : RiemannianMetric n M) {K : Set (EuclideanSpace ℝ (Fin d))}

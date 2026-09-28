@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ParametricChartDerivatives
 import PoincareConjecture.Proofs.M09.UniformPositiveForm
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

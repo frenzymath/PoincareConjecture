@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.FiniteSurfaceEdgeContacts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedFinitePolyhedronPosition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_protected_surface_edge_position
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

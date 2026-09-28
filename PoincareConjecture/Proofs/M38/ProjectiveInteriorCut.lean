@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.CollarShift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M38
 
 variable {Q : Type*} [TopologicalSpace Q] [ChartedSpace StandardCapSpace Q]
   (C : SmoothProjectiveDoubleModel Q)
-
 
 theorem projectiveDouble_collar_sphere_iff (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-1 : ℝ) 1) : C.collar (z, s) ∈ C.sphere ↔ s = 0 := by
@@ -31,7 +21,6 @@ theorem projectiveDouble_collar_sphere_iff (z : UnitTwoSphere) {s : ℝ}
       (by simp) hwt.symm)
   · rintro rfl
     exact C.collar_sphere.subset ⟨(z, 0), ⟨mem_univ _, rfl⟩, rfl⟩
-
 
 theorem projectiveDouble_collar_first_iff (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-1 : ℝ) 1) : C.collar (z, s) ∈ C.first_region ↔ s < 0 := by
@@ -46,7 +35,6 @@ theorem projectiveDouble_collar_first_iff (z : UnitTwoSphere) {s : ℝ}
   · intro h
     exact C.collar_negative ⟨(z, s), ⟨mem_univ _, hs.1, h⟩, rfl⟩
 
-
 theorem projectiveDouble_collar_closedFirst_iff (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-1 : ℝ) 1) :
     C.collar (z, s) ∈ closure C.first_region ↔ s ≤ 0 := by
@@ -54,8 +42,6 @@ theorem projectiveDouble_collar_closedFirst_iff (z : UnitTwoSphere) {s : ℝ}
     projectiveDouble_collar_first_iff C z hs,
     projectiveDouble_collar_sphere_iff C z hs]
   exact le_iff_lt_or_eq.symm
-
-
 
 theorem exists_projectiveDouble_small_collar {O : Set Q}
     (hO : IsOpen O) (hSO : C.sphere ⊆ O) :
@@ -83,8 +69,6 @@ theorem exists_projectiveDouble_small_collar {O : Set Q}
     simpa only [Metric.mem_ball, Real.dist_eq, sub_zero] using hsr)⟩).2
 
 variable [T2Space Q]
-
-
 
 theorem exists_projectiveDouble_first_interior_cut {O : Set Q}
     (hO : IsOpen O) (hSO : C.sphere ⊆ O) :

@@ -2,21 +2,10 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral Topology
-
-
 
 theorem ContinuousOn.antitoneOn_Icc_of_antitoneOn_Ioo
     {B : Type*} [TopologicalSpace B] [Preorder B] [OrderClosedTopology B]
@@ -42,8 +31,6 @@ theorem ContinuousOn.antitoneOn_Icc_of_antitoneOn_Ioo
     ((hf x hx).mono (fun z hz => ⟨hx.1.trans hz.1.le, hz.2.le.trans hy.2⟩)) hyz
 
 namespace intervalIntegral
-
-
 
 theorem sub_le_integral_of_interior_bound {u f : ℝ → ℝ} {a b : ℝ}
     (hab : a < b) (hu : ContinuousOn u (Icc a b)) (hf : ContinuousOn f (Icc a b))
@@ -72,9 +59,6 @@ end intervalIntegral
 
 namespace Poincare.Parabolic
 
-
-
-
 theorem le_mul_exp_of_hasDerivAt_le_mul {f f' : ℝ → ℝ} {K a b : ℝ}
     (hf : ContinuousOn f (Icc a b))
     (hderiv : ∀ t ∈ Ioo a b, HasDerivAt f (f' t) t)
@@ -98,8 +82,6 @@ theorem le_mul_exp_of_hasDerivAt_le_mul {f f' : ℝ → ℝ} {K a b : ℝ}
   have hmul := mul_le_mul_of_nonneg_right h (Real.exp_pos (K * (t - s))).le
   simpa only [g, sub_self, mul_zero, Real.exp_zero, mul_one, mul_assoc,
     ← Real.exp_add, neg_mul, neg_add_cancel, neg_zero, zero_add] using hmul
-
-
 
 theorem le_mul_exp_of_sub_le_integral_mul {f : ℝ → ℝ} {K a b : ℝ}
     (hK : 0 ≤ K) (hf : ContinuousOn f (Icc a b))
@@ -133,9 +115,6 @@ theorem le_mul_exp_of_sub_le_integral_mul {f : ℝ → ℝ} {K a b : ℝ}
     (show s ∈ Icc s t from ⟨le_rfl, hst⟩) (show t ∈ Icc s t from ⟨hst, le_rfl⟩) hst
   exact (hle t ⟨hst, le_rfl⟩).trans
     (by simpa only [V, intervalIntegral.integral_same, add_zero] using h)
-
-
-
 
 theorem integral_le_mul_exp_of_energy_bound {f f' E : ℝ → ℝ} {K a b : ℝ}
     (hab : a ≤ b) (hK : 0 ≤ K) (hf : ContinuousOn f (Icc a b))

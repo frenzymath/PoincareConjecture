@@ -3,21 +3,9 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Rotations
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.CylindricalEnd
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Curvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M34
-
-
 
 noncomputable def standardInitialMetricOfParameter (a : ℝ) (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (hn : capProfile a Real.pi = Real.sqrt 2) :
@@ -29,8 +17,6 @@ noncomputable def standardInitialMetricOfParameter (a : ℝ) (ha : 0 < a)
   rotation_invariant := capRiemannianMetric_rotation_invariant a ha hapi
   cylindrical_end := capCylindricalEnd ha hapi hn
   tip_sectional_curvature := capTipSectionalCurvature ha hapi (capLeviCivitaData a ha hapi)
-
-
 
 theorem standardInitialMetric_exists : Nonempty StandardInitialMetric := by
   obtain ⟨a, ha, hn⟩ := exists_capProfile_normalized

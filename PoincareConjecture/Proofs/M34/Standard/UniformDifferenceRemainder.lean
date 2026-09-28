@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.UniformDifferenceFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped BigOperators
 
 namespace PoincareConjecture.M34.DifferenceEnergy
 
-
-
 noncomputable def curvatureDifferenceRemainder {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
     (I0 I1 : Inverse n) (gamma : Gamma n) (R1 : Raw n) (kp vp : Flux n)
@@ -29,9 +17,6 @@ noncomputable def curvatureDifferenceRemainder {n dS : ℕ}
   curvatureContraction qS
     (divergenceAction gamma (principalFlux I0 qS d +
       curvatureDifferenceFlux I0 I1 gamma R1 kp H A S) + connectionRemainder vp A)
-
-
-
 
 theorem exists_uniform_curvatureDifferenceRemainder_bound
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsCompact K)

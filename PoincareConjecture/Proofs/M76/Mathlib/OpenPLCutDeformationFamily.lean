@@ -1,29 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCutDeformationFamily
 import PoincareConjecture.Proofs.M76.Mathlib.OpenSuperlevelDeformation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_open_PL_cut_deformation_family
     {M E G ι : Type*} [TopologicalSpace M] [T2Space M]

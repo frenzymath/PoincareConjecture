@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bigons.ResidualSupport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.ProperArcPairConfinement
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

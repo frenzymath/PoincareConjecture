@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalHarmonicStress
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceRescaling
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64AreaGram_sourceScale (g : RiemannianMetric n M) (s : ℝ) (hs : s ≠ 0)
     {f : LoopPlane → M} {p : LoopPlane}
@@ -58,9 +44,6 @@ theorem m64AreaGram_sourceScale (g : RiemannianMetric n M) (s : ℝ) (hs : s ≠
   simp only [map_smul, smul_apply, smul_eq_mul]
   change _ = _ * _ * g.inner (f (D p)) _ _
   ring
-
-
-
 
 theorem m64WeightedStress_of_rescaled (g : RiemannianMetric n M)
     {f : LoopPlane → M} {O : Set LoopPlane} (hO : IsOpen O)

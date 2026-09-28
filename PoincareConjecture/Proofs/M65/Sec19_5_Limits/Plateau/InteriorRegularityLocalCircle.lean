@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalPolar
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +22,6 @@ private theorem closedTarget_of_ae {E : Type*} [PseudoMetricSpace E]
     (closure_interior_Icc hab.ne).symm.subset
   intro t ht
   exact (hS.mem_iff_infDist_zero hS').mpr (heq ht)
-
-
-
-
 
 theorem polar_continuous_circle {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

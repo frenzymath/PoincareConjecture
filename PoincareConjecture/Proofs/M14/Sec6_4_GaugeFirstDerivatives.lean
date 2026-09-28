@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.RicciDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,16 +15,12 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 theorem horizontalRicciDerivativePairing_symm (q : G.Point) (U V W : G.Horizontal q) :
     M14HorizontalRicciDerivativePairing G q U V W =
       M14HorizontalRicciDerivativePairing G q U W V := by
   let D := G.leafwise.sliceConnection (G.spacetime.timeFunction q)
   exact D.covariantTensorDerivative_ricciEvaluation_symm
     D.normalization_curvatureTensorCalculus _ _ _ _
-
-
 
 theorem movingGauge_scalarDifferential
     {K : SpacetimeInterval} {T : SmoothSpacetimeInterval K}
@@ -56,8 +43,6 @@ theorem movingGauge_scalarDifferential
   rw [heq, mvfderiv_comp_apply x (hscalar.mdifferentiable (by simp) _)
     (he.mdifferentiable (by simp) _), ← g.spatialTangentEquiv_eq]
   rfl
-
-
 
 theorem gauge_chartActionPotential_differential (b : G.gaugeCover.index)
     (W : OrdinaryGaugeWitness G.leafwise (G.gaugeCover.cylinder b) (G.gaugeCover.metric b))

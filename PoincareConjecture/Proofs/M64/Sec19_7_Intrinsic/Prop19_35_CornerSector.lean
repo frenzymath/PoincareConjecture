@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ShorteningChord
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_tangentNorm_sub_lt_two
     (G : RiemannianMetric 2 AnnulusCoordinates) (p : AnnulusCoordinates)
@@ -52,10 +37,6 @@ theorem m64Intrinsic_tangentNorm_sub_lt_two
   obtain ⟨theta, htheta, htheta2⟩ := htheta
   rw [hnorm, map_sub]
   nlinarith [norm_nonneg (L.symm w - L.symm v)]
-
-
-
-
 
 theorem m64Intrinsic_exists_short_corner_sector_curve
     (N : IntrinsicAnnulus)

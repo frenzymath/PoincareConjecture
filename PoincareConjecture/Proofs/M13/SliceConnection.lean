@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M13.SpacetimeSlices
 import PoincareConjecture.Proofs.M13.ConnectionScale
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

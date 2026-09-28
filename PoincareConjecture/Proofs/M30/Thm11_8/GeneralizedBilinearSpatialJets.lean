@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedCoefficientLimit
 import PoincareConjecture.Proofs.M30.Mathlib.UniformBilinearJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
 
-
-
 noncomputable def generalizedPullbackCoefficients
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) (k : ℕ)
@@ -37,9 +26,6 @@ noncomputable def generalizedPullbackCoefficients
     (normalizedBlowupSliceMetric S (G.subsequence k) p.1).pullbackCoefficients
       (generalizedSliceHomeomorph G k p.1 ht ∘ (extChartAt (𝓡 3) q).symm) p.2
   else 0
-
-
-
 
 theorem tendstoUniformlyOn_generalized_bilinear_spatial_jets
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

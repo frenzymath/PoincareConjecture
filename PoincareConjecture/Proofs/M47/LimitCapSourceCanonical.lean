@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCapSourcePrefix
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCompactLongCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthCenter
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_finite_source_cap_canonical_cutoff
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

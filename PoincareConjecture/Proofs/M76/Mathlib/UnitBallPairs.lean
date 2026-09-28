@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {s b : Set X} {t c : Set Y}
-
-
-
 
 def restrictSubsets (e : s ≃ₜ t) (hb : b ⊆ s) (hc : c ⊆ t)
     (he : ∀ x : s, (x : X) ∈ b ↔ (e x : Y) ∈ c) : b ≃ₜ c where
@@ -30,9 +18,6 @@ def restrictSubsets (e : s ≃ₜ t) (hb : b ⊆ s) (hc : c ⊆ t)
   right_inv y := Subtype.ext (congrArg (fun z : t => (z : Y)) (e.apply_symm_apply _))
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
-
-
-
 
 theorem mem_subset_iff_of_extension (e : s ≃ₜ t) (eb : b ≃ₜ c)
     (hb : b ⊆ s) (hc : c ⊆ t)
@@ -58,17 +43,11 @@ namespace Set
 variable (E : Type*) [NormedAddCommGroup E]
   {X : Type*} [TopologicalSpace X]
 
-
-
-
-
 def IsUnitBallPair (s b : Set X) : Prop :=
   b ⊆ s ∧ ∃ e : s ≃ₜ closedBall (0 : E) 1,
     ∀ x : s, (x : X) ∈ b ↔ (e x : E) ∈ sphere (0 : E) 1
 
 variable {E}
-
-
 
 theorem IsUnitBallPair.of_homeomorph {Y : Type*} [TopologicalSpace Y]
     {s b : Set X} {t c : Set Y} (ht : IsUnitBallPair E t c)
@@ -77,18 +56,12 @@ theorem IsUnitBallPair.of_homeomorph {Y : Type*} [TopologicalSpace Y]
   obtain ⟨_, e, he⟩ := ht
   exact ⟨hb, H.trans e, fun x => (hH x).trans (he (H x))⟩
 
-
-
-
 theorem isUnitBallPair_of_compact_convex [NormedSpace ℝ E] {s : Set E}
     (hs : IsCompact s) (hcv : Convex ℝ s) (hne : (interior s).Nonempty) :
     IsUnitBallPair E s (frontier s) := by
   obtain ⟨e, eb, he⟩ := hs.exists_compatible_unitBall_models hcv hne
   exact ⟨hs.isClosed.frontier_subset, e, fun x =>
     e.mem_subset_iff_of_extension eb hs.isClosed.frontier_subset sphere_subset_closedBall he x⟩
-
-
-
 
 theorem IsUnitBallPair.exists_extension [NormedSpace ℝ E] [ProperSpace E] [Nontrivial E]
     {F Y : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [ProperSpace F] [Nontrivial F]

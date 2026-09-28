@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M47
 
 open M34 PoincareConjecture.Proofs.M47
-
-
 
 theorem terminalCurvature_exists_double_neck_array_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :

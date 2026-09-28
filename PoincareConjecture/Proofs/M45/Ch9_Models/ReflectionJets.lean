@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch9_Models.ReflectionBasics
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -153,9 +145,6 @@ theorem cylinderReflectedTensor_smooth {epsilon : ℝ} (B : RoundCylinderTwoTens
   intro p hp
   exact ⟨hp.1, by simpa only [cylinderCoordinateReflection_apply] using
     (show -p.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ from ⟨by linarith [hp.2.2], by linarith [hp.2.1]⟩)⟩
-
-
-
 
 theorem cylinderReflectedTensor_close {epsilon t : ℝ} (ht : t < 1)
     (B : RoundCylinderTwoTensor) (hB : ∀ z, IsBilinearMap ℝ (B z))

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusUnitInputMovingEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeAnnulusForward
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64FreeCircleProductAnnulus_modulus_exists_forward_of_ambient_bounds
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)
@@ -120,10 +104,6 @@ theorem m64FreeCircleProductAnnulus_modulus_exists_forward_of_ambient_bounds
   refine ⟨B, hB.trans_le (hh.trans ?_)⟩
   change A.area + h * (d + eta) ≤ _
   nlinarith [mul_nonneg hpos.le (sub_nonneg.mpr hd)]
-
-
-
-
 
 theorem m64AnnulusFlow_forward_of_free_modulus_minimum_of_ambient_bounds
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)

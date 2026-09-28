@@ -4,26 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -31,7 +11,6 @@ open scoped BigOperators
 namespace PoincareConjecture.SurgeryVolume.Measure
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
 
 noncomputable def continuousRowDeterminant :
     ContinuousMultilinearMap ℝ (fun _ : ι ↦ ι → ℝ) ℝ where
@@ -64,7 +43,6 @@ theorem continuousRowDeterminant_apply (A : Matrix ι ι ℝ) :
   rw [hAlt]
   rfl
 
-
 theorem hasDerivAt_matrix_det {A : ℝ → Matrix ι ι ℝ} {B : Matrix ι ι ℝ} {t : ℝ}
     (hA : HasDerivAt A B t) :
     HasDerivAt (fun s ↦ (A s).det) (∑ i, ((A t).updateRow i (B i)).det) t := by
@@ -80,7 +58,6 @@ theorem hasDerivAt_matrix_det {A : ℝ → Matrix ι ι ℝ} {B : Matrix ι ι �
   rw [← continuousRowDeterminant_apply ((A t).updateRow i (B i))]
   rfl
 
-
 theorem hasDerivAt_matrix_det_of_mul {A : ℝ → Matrix ι ι ℝ} {C : Matrix ι ι ℝ} {t : ℝ}
     (hA : HasDerivAt A (C * A t) t) :
     HasDerivAt (fun s ↦ (A s).det) (C.trace * (A t).det) t := by
@@ -91,13 +68,11 @@ theorem hasDerivAt_matrix_det_of_mul {A : ℝ → Matrix ι ι ℝ} {C : Matrix 
     rw [hrow, Matrix.det_updateRow_sum, smul_eq_mul]
   simpa only [hdet, Matrix.trace, Matrix.diag, Finset.sum_mul] using hasDerivAt_matrix_det hA
 
-
 theorem hasDerivAt_matrix_det_of_eq_one {A : ℝ → Matrix ι ι ℝ} {B : Matrix ι ι ℝ}
     {t : ℝ} (hA : HasDerivAt A B t) (hAt : A t = 1) :
     HasDerivAt (fun s ↦ (A s).det) B.trace t := by
   have h : HasDerivAt A (B * A t) t := by simpa only [hAt, mul_one] using hA
   simpa only [hAt, Matrix.det_one, mul_one] using hasDerivAt_matrix_det_of_mul h
-
 
 theorem hasDerivAt_sqrt_matrix_det_of_mul {A : ℝ → Matrix ι ι ℝ} {C : Matrix ι ι ℝ}
     {t : ℝ} (hA : HasDerivAt A (C * A t) t) (hpos : 0 < (A t).det) :
@@ -108,7 +83,6 @@ theorem hasDerivAt_sqrt_matrix_det_of_mul {A : ℝ → Matrix ι ι ℝ} {C : Ma
   convert h using 1
   field_simp [hsqrt]
   rw [Real.sq_sqrt hpos.le]
-
 
 theorem hasDerivAt_sqrt_matrix_det_of_eq_one {A : ℝ → Matrix ι ι ℝ}
     {B : Matrix ι ι ℝ} {t : ℝ} (hA : HasDerivAt A B t) (hAt : A t = 1) :

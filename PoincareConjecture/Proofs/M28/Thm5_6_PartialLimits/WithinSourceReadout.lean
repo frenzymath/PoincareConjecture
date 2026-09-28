@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M28.Mathlib.WithinSpacetimePullback
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.MetricExhaustion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem source_spacetime_pullbackCoefficients_tendsto_withinJets
     {ι : Type*} {n : ℕ}

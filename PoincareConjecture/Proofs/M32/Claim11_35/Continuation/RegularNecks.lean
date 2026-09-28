@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.SliceCurvatureComparison
 import PoincareConjecture.Proofs.M32.Claim11_35.SliceCapExclusion
 import PoincareConjecture.Proofs.M32.Claim11_35.SliceComponentExclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +15,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
 
 theorem exists_terminalBlowupConvergence_regular_slice_necks :
     ∃ epsilonRegular : ℝ, 0 < epsilonRegular ∧ epsilonRegular ≤ 1 / 200 ∧

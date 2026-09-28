@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCompactCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthFactory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_first_failure_zero_cap_canonical_cutoff
     (S : RepairedControlledSchedulesData.{u})

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Eucl
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Metric.Construction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

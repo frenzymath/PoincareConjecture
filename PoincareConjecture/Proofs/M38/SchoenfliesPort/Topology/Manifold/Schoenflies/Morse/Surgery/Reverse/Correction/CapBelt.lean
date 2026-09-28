@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.StepLens
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.Belt
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -50,8 +42,6 @@ private theorem mem_northern_model_iff_of_height_belt
     rw [← hpy, inner_smul_right] at hp
     exact nonneg_of_mul_nonneg_right hp (boundedCylinderRadius_pos v p)
 
-
-
 theorem mem_transported_cap_iff_of_normalized_height_mem_Icc
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
     (A : Diffeomorph 𝓘(Real, Hemisphere.Plane v) 𝓘(Real, Hemisphere.Plane v)
@@ -85,7 +75,6 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
 theorem capMinus_height_ge_cut {y : E3} (hy : y ∈ S.gMinus '' closedBall (0 : E2) 1) :
     c - S.a ≤ inner Real v y := by
   obtain ⟨_, ⟨p, hp, rfl⟩, rfl⟩ := S.gMinus_range ▸ hy
@@ -93,15 +82,12 @@ theorem capMinus_height_ge_cut {y : E3} (hy : y ∈ S.gMinus '' closedBall (0 : 
   exact le_add_of_nonneg_right (mul_nonneg S.s_pos.le
     (mul_nonneg (boundedCylinderRadius_pos v p).le hp))
 
-
 theorem capPlus_height_le_cut {y : E3} (hy : y ∈ S.gPlus '' closedBall (0 : E2) 1) :
     inner Real v y ≤ c + S.a := by
   obtain ⟨_, ⟨p, hp, rfl⟩, rfl⟩ := S.gPlus_range ▸ hy
   rw [Poincare.Geometry.Euclidean.inner_liftPlaneDiffeomorph, inner_smul_right]
   exact add_le_of_nonpos_right (mul_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr S.s_pos.le)
     (mul_nonneg (boundedCylinderRadius_pos v p).le hp))
-
-
 
 theorem cylindrical_slab_eq_tube_image
     {l u : Real} (hl : -S.ε < l) (hu : u < S.ε) :
@@ -138,8 +124,6 @@ theorem cylindrical_slab_eq_tube_image
       simp [Hemisphere.Plane,
         Submodule.orthogonalProjectionOnto_orthogonalComplement_singleton_eq_zero]
 
-
-
 theorem capMinus_belt_eq_original_annulus :
     (S.gMinus '' closedBall (0 : E2) 1) ∩
       {y : E3 | inner Real v y ∈ Icc (c - S.a) (c - S.a + S.s / 4)} =
@@ -160,8 +144,6 @@ theorem capMinus_belt_eq_original_annulus :
   simp only [mem_inter_iff, mem_ofPred_eq, hends.1, hends.2]
   exact ⟨fun hy => ⟨hy.2, (heq hy.2).mp hy.1⟩,
     fun hy => ⟨(heq hy.1).mpr hy.2, hy.1⟩⟩
-
-
 
 theorem capPlus_belt_eq_original_annulus :
     (S.gPlus '' closedBall (0 : E2) 1) ∩
@@ -186,8 +168,6 @@ theorem capPlus_belt_eq_original_annulus :
   exact ⟨fun hy => ⟨hy.2, (heq hy.2).mp hy.1⟩,
     fun hy => ⟨(heq hy.1).mpr hy.2, hy.1⟩⟩
 
-
-
 theorem capMinus_mem_prepared_of_height_near_cut {y : E3}
     (hy : y ∈ S.gMinus '' closedBall (0 : E2) 1)
     (hheight : |inner Real v y - (c - S.a)| ≤ S.s / 4) :
@@ -197,7 +177,6 @@ theorem capMinus_mem_prepared_of_height_near_cut {y : E3}
     ⟨hy, S.capMinus_height_ge_cut hy, by linarith [(abs_le.mp hheight).2]⟩
   rw [S.capMinus_belt_eq_original_annulus] at hmem
   exact image_subset_range _ _ hmem
-
 
 theorem capPlus_mem_prepared_of_height_near_cut {y : E3}
     (hy : y ∈ S.gPlus '' closedBall (0 : E2) 1)

@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M12
 import PoincareConjecture.Proofs.M14.Ch6_7_GeneralizedAssembly
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral BigOperators
@@ -26,74 +17,6 @@ universe u
 namespace PoincareConjecture
 
 variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem generalizedLGeometryTheory
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -106,9 +29,6 @@ theorem generalizedLGeometryTheory
   exact ⟨M14.generalizedLGeometryConclusion_of_smallTimeCoverage
     (m12MetricPredecessors.{0} n) ricciFlowCurvatureTheory.{0} hM12 hM13 G
     (M14.smallTimeCoverageStatement (m12MetricPredecessors.{0} n) hM12 G)⟩
-
-
-
 
 theorem generalizedLGeometryTheory_from_predecessors (n : ℕ) :
     GeneralizedLGeometryTheory.{u} n :=

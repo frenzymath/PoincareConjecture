@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.RelativeFaceMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology unitInterval
@@ -87,8 +78,6 @@ structure RelativeFaceMotionData {s t : Stage e S f r C} (step : Step s t)
     ((ambient u).symm.toOpenPartialHomeomorph.trans (t.charts l)) ∈ piecewiseAffineGroupoid E
   retained : ∀ u a, MapsTo (ambient u ∘ j) (convexHull ℝ (a.val : Set V)) (N a)
 
-
-
 theorem Step.nonempty_relative_face_motion_data {s t : Stage e S f r C} (step : Step s t)
     (K K₀ K₁ : SimplicialComplex ℝ V) (hK : K.faces.Finite)
     (hK₀ : K₀ ≤ K₁) (hK₁ : K₁ ≤ K)
@@ -153,8 +142,6 @@ theorem Step.nonempty_relative_face_motion_data {s t : Stage e S f r C} (step : 
     original_PL := hGPL
     inverse_PL := hGinvPL
     retained := hkeep }⟩
-
-
 
 def RelativeSurfaceState.move {s t : Stage e S f r C} {step : Step s t}
     {K K₀ K₁ : SimplicialComplex ℝ V} (hK : K.faces.Finite)

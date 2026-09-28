@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ThreeSphereConnection
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +11,9 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 noncomputable def threeSphereStereoFrame (a : UnitThreeSphere) :
     (ℝ ∙ (a : EuclideanSpace ℝ (Fin 4)))ᗮ ≃ₗᵢ[ℝ] StandardCapSpace :=
   (OrthonormalBasis.fromOrthogonalSpanSingleton 3 (ne_zero_of_mem_unit_sphere a)).repr
-
 
 theorem threeSphereStereo_opposite_plane (a : UnitThreeSphere) :
     (ℝ ∙ ((-a : UnitThreeSphere) : EuclideanSpace ℝ (Fin 4)))ᗮ =
@@ -35,13 +24,11 @@ theorem threeSphereStereo_opposite_plane (a : UnitThreeSphere) :
   rw [← Set.neg_singleton]
   exact Submodule.span_neg _
 
-
 noncomputable def threeSphereStereoOppositeIsometry (a : UnitThreeSphere) :
     StandardCapSpace ≃ₗᵢ[ℝ] StandardCapSpace :=
   ((threeSphereStereoFrame (-a)).symm.trans
     (LinearIsometryEquiv.ofEq _ _ (threeSphereStereo_opposite_plane a))).trans
       (threeSphereStereoFrame a)
-
 
 theorem threeSphereStereoOppositeIsometry_vector (a : UnitThreeSphere)
     (x : StandardCapSpace) :
@@ -51,10 +38,6 @@ theorem threeSphereStereoOppositeIsometry_vector (a : UnitThreeSphere)
   simp only [threeSphereStereoOppositeIsometry, LinearIsometryEquiv.trans_apply,
     LinearIsometryEquiv.symm_apply_apply]
   rfl
-
-
-
-
 
 theorem threeSphereStereo_opposite (a : UnitThreeSphere)
     (x : StandardCapSpace) (hx : x ≠ 0) :
@@ -115,8 +98,6 @@ theorem threeSphereStereo_opposite (a : UnitThreeSphere)
   change (2 / (1 - (‖x‖ ^ 2 + 4)⁻¹ * (‖x‖ ^ 2 - 4) * (-1)) *
       ((‖x‖ ^ 2 + 4)⁻¹ * 4)) • U w' = (4 / ‖x‖ ^ 2) • U w'
   exact congrArg (fun r : ℝ => r • U w') (by simpa only [mul_assoc] using hscalar)
-
-
 
 theorem threeSphereStereo_opposite_ray (a : UnitThreeSphere)
     (z : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :

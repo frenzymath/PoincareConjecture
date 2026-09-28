@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.EndFrontier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem frontier_inter_boundary_nonempty_of_mixed (C D : CapCertificate g)
     (hmeet : (D.boundary_sphere ∩ C.carrier).Nonempty)
@@ -45,8 +34,6 @@ theorem frontier_inter_boundary_nonempty_of_mixed (C D : CapCertificate g)
     rw [hfull]
     exact mem_univ _
   exact hmem
-
-
 
 theorem exists_mixed_boundary_positive_end_contact :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

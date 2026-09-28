@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.EndS
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.Forward
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Certificate
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_forward_cap_chain_separating_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -75,8 +61,6 @@ theorem exists_forward_cap_chain_separating_threshold :
   have haj : a ≤ j := by simpa only [hshape, ChainShape.active, mem_Ici] using hj
   have hindex : a + ((j - a).toNat : ℤ) = j := by omega
   simpa only [hindex] using hsepn (j - a).toNat
-
-
 
 theorem exists_forward_capped_tube_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

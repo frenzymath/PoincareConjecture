@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.AmbientS
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.GraphDegreeGerm
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.IntrinsicAffineGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -22,8 +12,6 @@ namespace Geometry.SimplicialComplex
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_face_graph_crossing_chart
     (J M G : SimplicialComplex ℝ V3)

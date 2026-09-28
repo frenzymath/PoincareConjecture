@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.ScalarGradientHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -33,8 +25,6 @@ noncomputable local instance capReadoutCoefficientNorm :
 
 noncomputable local instance capReadoutCoefficientSpace : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem cap_analyticJet_normalizedPullback
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]

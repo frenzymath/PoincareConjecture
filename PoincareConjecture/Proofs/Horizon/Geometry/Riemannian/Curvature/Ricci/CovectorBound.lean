@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Bounds
 import Mathlib.Algebra.QuadraticDiscriminant
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,7 +11,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [T2Space M]
   {g : RiemannianMetric n M}
-
 
 theorem sq_ricci_le_ricci_mul_ricci
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -42,7 +33,6 @@ theorem sq_ricci_le_ricci_mul_ricci
   have h := discrim_le_zero hq
   simp only [discrim, hB] at h
   nlinarith only [h]
-
 
 theorem sum_sq_ricci_le_scalar_mul_ricci
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

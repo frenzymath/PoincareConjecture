@@ -5,14 +5,6 @@ import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
 
 def squareRimVertex (i : Fin 4) : Q :=
   ⟨![![-1, -1], ![1, -1], ![1, 1], ![-1, 1]] i, by
@@ -34,8 +25,6 @@ def squareRimVertex (i : Fin 4) : Q :=
     · have h := norm_le_pi_norm
         (![![-1, -1], ![1, -1], ![1, 1], ![-1, 1]] i : V2) 0
       fin_cases i <;> simpa using h⟩
-
-
 
 def squareRimBase : Q := squareRimVertex 0
 
@@ -63,8 +52,6 @@ private noncomputable def squareRimSegment (a b : Q) (k : Fin 2)
   source' := Subtype.ext (Path.segment a.val b.val).source
   target' := Subtype.ext (Path.segment a.val b.val).target
 
-
-
 noncomputable def squareRimEdge (i : Fin 4) :
     Path (squareRimVertex i) (squareRimVertex (i + 1)) := by
   refine Fin.cases ?_ (fun i => ?_) i
@@ -75,8 +62,6 @@ noncomputable def squareRimEdge (i : Fin 4) :
       · exact squareRimSegment _ _ 1 (by rfl) (by change ‖(1 : ℝ)‖ = 1; norm_num)
       · refine Fin.cases ?_ (fun i => Fin.elim0 i) i
         exact squareRimSegment _ _ 0 (by rfl) (by change ‖(-1 : ℝ)‖ = 1; norm_num)
-
-
 
 noncomputable def squareRimLoop : Path squareRimBase squareRimBase :=
   ((squareRimEdge 0).trans (squareRimEdge 1)).trans

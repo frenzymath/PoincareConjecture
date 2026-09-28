@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Mathlib.SmoothAxisDivision
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Asymptotics
@@ -33,7 +23,6 @@ private theorem hasFDerivAt_norm_explicit {x : E} (hx : x ≠ 0) :
     field_simp [norm_ne_zero_iff.mpr hx]
     ring
 
-
 theorem hasFDerivAt_even_norm_zero {f : ℝ → ℝ}
     (hf : Differentiable ℝ f) (he : Function.Even f) :
     HasFDerivAt (fun x : E => f ‖x‖) (0 : E →L[ℝ] ℝ) 0 := by
@@ -47,7 +36,6 @@ theorem hasFDerivAt_even_norm_zero {f : ℝ → ℝ}
   have hh' : (fun x : E => f ‖x‖ - f 0) =o[𝓝 0] (fun x => x) := hh.of_norm_right
   rw [hasFDerivAt_iff_isLittleO]
   simpa only [norm_zero, zero_apply, sub_zero] using hh'
-
 
 theorem hasFDerivAt_even_norm {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (he : Function.Even f) (x : E) :
@@ -63,7 +51,6 @@ theorem hasFDerivAt_even_norm {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     simp only [smul_apply, smul_eq_mul]
     rw [← mul_axisDivision_deriv hf he ‖x‖]
     field_simp [norm_ne_zero_iff.mpr hx]
-
 
 theorem contDiff_even_norm {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (he : Function.Even f) : ContDiff ℝ ∞ (fun x : E => f ‖x‖) := by

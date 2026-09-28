@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskExistence
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ParametrizedContinuity
 import PoincareConjecture.Statements.M60Area
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem m60FillingArea_parametrized_near_minimizer (g : RiemannianMetric 3 M)
     (gamma : C1FreeLoopSpace (M := M)) (hnull : IsNullHomotopicLoop gamma)
     (epsilon : ℝ) (hepsilon : 0 < epsilon) :
@@ -37,16 +25,12 @@ theorem m60FillingArea_parametrized_near_minimizer (g : RiemannianMetric 3 M)
   obtain ⟨E', hboundary, harea⟩ := m60Disk_regularize_boundary g E
   exact ⟨E', hboundary, harea.trans_lt hE⟩
 
-
-
 theorem m60FillingArea_continuousOn (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) :
     ContinuousOn (fun gamma : C1FreeLoopSpace (M := M) => fillingArea g gamma)
       {gamma | IsNullHomotopicLoop gamma} :=
   m60FillingArea_continuousOn_of_parametrized_near_minimizers g hcompact
     (m60FillingArea_parametrized_near_minimizer g)
-
-
 
 theorem m60FillingAreaProperties_of_compact (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) : M60FillingAreaProperties g where

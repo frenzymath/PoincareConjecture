@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularSelectedCeiling
 import PoincareConjecture.Proofs.M47.TerminalRegularSourceCompactness
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalSource_regular_retained_ceiling
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

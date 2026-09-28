@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.ActualCoefficientFiel
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.NativeRicciNaturality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.Hessian
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +19,6 @@ open M36 M45 M44 SpacetimeBounds
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
-
-
 
 structure ActualTransitionData (hpos : 0 < beta * epsilon)
     (hsmall : beta * epsilon < 1 / 2) (z : RoundCylinderSpace) where
@@ -58,8 +48,6 @@ structure ActualTransitionData (hpos : 0 < beta * epsilon)
       (metricTwoJet (I.recentCenteredField z (-I.recent_duration)) x)) =ᶠ[𝓝 0]
     neckCoefficientPullback phi
       (fun x => jetRicciBilinear (metricTwoJet (I.olderCenteredField z 0) x))
-
-
 
 theorem exists_actualTransitionData (hpos : 0 < beta * epsilon)
     (hsmall : beta * epsilon < 1 / 2) (z : RoundCylinderSpace)

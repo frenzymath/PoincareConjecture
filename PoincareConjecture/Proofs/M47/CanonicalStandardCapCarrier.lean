@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapScalar
 import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Proofs.M36.StandardBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_standard_cap_initial_ball {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta C c R : ℝ}
@@ -71,8 +60,6 @@ theorem exists_standard_cap_initial_ball {g0 : StandardInitialMetric}
   intro y hy
   exact (hclosure hy).trans_lt ((ENNReal.ofReal_lt_ofReal_iff (by linarith : 0 < r + 1)).mpr
     (by linarith))
-
-
 
 theorem exists_standard_cap_uniform_initial_ball {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta C R : ℝ}

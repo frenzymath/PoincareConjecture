@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryRegular
 import PoincareConjecture.Proofs.M47.TerminalComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47Positive
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem regular_pre_component_limit_image
     (E : SurgeryEventData g₀ K P slice metric T) (x : (slice E.tMinus).carrier)
@@ -53,9 +42,6 @@ theorem regular_pre_component_limit_image
   exact Subset.antisymm (hconn.subset_connectedComponent hx)
     ((show IsClopen _ from ⟨hcomp.isClosed, hopen⟩).connectedComponent_subset hx)
 
-
-
-
 theorem retained_regular_component_meets_core
     (E : SurgeryEventData g₀ K P slice metric T) (policy : SurgeryEventTerminalPolicy E)
     (x : (slice E.tMinus).carrier)
@@ -74,9 +60,6 @@ theorem retained_regular_component_meets_core
   have heq : connectedComponent y = connectedComponent (E.limit_identify.map x) :=
     (connectedComponent_eq hqy).trans (connectedComponent_eq hqterm).symm
   exact ⟨y, heq ▸ mem_connectedComponent, hyR⟩
-
-
-
 
 theorem positive_pre_component_whole_retention
     (hC : RicciFlowCurvatureTheory.{u})

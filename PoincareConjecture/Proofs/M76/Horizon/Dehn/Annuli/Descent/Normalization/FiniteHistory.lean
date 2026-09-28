@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.FaceData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -22,9 +13,6 @@ variable {U E V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem Step.exists_relative_finite_face_history
     {s t : Stage e S f r C} (step : Step s t)

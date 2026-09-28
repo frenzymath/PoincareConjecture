@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundError
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +11,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem exists_round_comparison_coordinate_bounds :
     ∃ C : ℝ, 0 < C ∧
@@ -193,9 +180,6 @@ theorem exists_round_comparison_coordinate_bounds :
     rw [heval]
     change (1 / 2 : ℝ) * ‖v‖ ^ 2 ≤ R.scale * g.inner (R.forward (e 0)) _ _
     nlinarith [sq_nonneg ‖v‖]
-
-
-
 
 theorem exists_round_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧

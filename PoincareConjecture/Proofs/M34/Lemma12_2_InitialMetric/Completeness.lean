@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RadialDistance
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Manifold
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capRiemannianMetric_complete {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) : MetricComplete (capRiemannianMetric a ha hapi) := by

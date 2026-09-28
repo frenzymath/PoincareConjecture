@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ReflectionAnnulus
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,19 +9,14 @@ namespace Dehn
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def singleReflectionTube (L d : ℝ) : Set C3 :=
   (Icc (-d) d ×ˢ Icc (-d) d) ×ˢ Icc 0 (2 * L)
-
 
 def singleReflectionTubeSide (L d : ℝ) : Set C3 :=
   {z | z ∈ singleReflectionTube L d ∧ (|z.1.1| = d ∨ |z.1.2| = d)}
 
-
-
 def reflectionSecondHalf (L : ℝ) (z : C3) : C3 :=
   ((z.1.1, -z.1.2), z.2 - 2 * L)
-
 
 noncomputable def doubledReflectionTubeMap {X : Type*} (L : ℝ) (τ : C3 → X) : C3 → X :=
   fun z => if z.2 ≤ 2 * L then τ z else τ (reflectionSecondHalf L z)
@@ -67,8 +52,6 @@ private theorem coe_eq_half_shift {L s t : ℝ} (hL : 0 < L)
     · rintro (he | he)
       · linarith [hs.2]
       · exact Or.inl (by linarith)
-
-
 
 theorem doubledReflectionTubeMap_fibers
     {X : Type*} {L d : ℝ} (hL : 0 < L) (τ : C3 → X)
@@ -117,8 +100,6 @@ theorem doubledReflectionTubeMap_fibers
     simp only [reflectionSecondHalf, Prod.ext_iff, neg_neg, neg_eq_iff_eq_neg]
     aesop (add safe (by linarith))
 
-
-
 theorem doubledReflectionTubeMap_second
     {X : Type*} {L d : ℝ} (τ : C3 → X)
     (hseam : ∀ v ∈ Icc (-d) d ×ˢ Icc (-d) d,
@@ -148,8 +129,6 @@ private noncomputable def reflectionSecondHalfAffine (L : ℝ) : C3 →ᴬ[ℝ] 
       (ContinuousLinearMap.fst ℝ (ℝ × ℝ) ℝ).toContinuousAffineMap).prod
     ((ContinuousLinearMap.snd ℝ (ℝ × ℝ) ℝ).toContinuousAffineMap -
       ContinuousAffineMap.const ℝ C3 (2 * L))
-
-
 
 theorem doubledReflectionTubeMap_polyhedralPL
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -190,10 +169,6 @@ theorem doubledReflectionTubeMap_polyhedralPL
       · exact Or.inr ⟨hz.1, le_of_not_ge hh, hz.2.2⟩
   rw [← hcover]
   exact PolyhedralPLInCharts.union_of_finite hcompat K₀ K₁ hK₀ hK₁ hzero hone
-
-
-
-
 
 theorem doubledReflectionTubeMap_spec
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

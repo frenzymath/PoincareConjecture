@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.AnnulusSlices
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.BandEndpoints
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,9 +53,6 @@ private theorem smoothEmbedding_postcompose_diffeomorph
     (hf.contMDiff.mdifferentiable (by simp) p)]
   exact (P.mfderivToContinuousLinearEquiv (by simp) (f p)).injective.comp
     (injective_mfderiv_sphere_embedding hf p)
-
-
-
 
 theorem exists_buffered_capped_minimum_disk_band_straightening_of_physical_annulus_cover
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -281,8 +276,6 @@ theorem exists_buffered_capped_minimum_disk_band_straightening_of_physical_annul
     rw [hFband]
     exact hDband
 
-
-
 theorem exists_capped_minimum_disk_band_straightening_of_physical_annulus_cover
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {v : E3} (hv : ‖v‖ = 1)
@@ -348,9 +341,6 @@ theorem exists_capped_minimum_disk_band_straightening_of_physical_annulus_cover
       hε T hTs γ hTcylinder hTc hTneg hη
   exact ⟨J, r, hr, hrs, A, D, hh, fun t x ht => hu t x (by linarith),
     hc, hp, hb, hw⟩
-
-
-
 
 theorem exists_capped_minimum_disk_band_straightening
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

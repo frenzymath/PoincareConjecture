@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryGeometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,18 +16,10 @@ variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
-
 def metricRowFrame (G : E →L[ℝ] E →L[ℝ] ℝ) (V : E) (j : Fin n) : E →L[ℝ] E :=
   (EuclideanSpace.equiv (Fin n) ℝ).symm.toContinuousLinearMap.comp
     (ContinuousLinearMap.pi fun k => if k = j then G V else
       EuclideanSpace.proj k - (V k / V j) • EuclideanSpace.proj j)
-
-
-
-
 
 theorem metricRowFrame_apply (G : E →L[ℝ] E →L[ℝ] ℝ) (V W : E) (j k : Fin n) :
     metricRowFrame G V j W k = if k = j then G V W else W k - (V k / V j) * W j := by
@@ -45,10 +27,6 @@ theorem metricRowFrame_apply (G : E →L[ℝ] E →L[ℝ] ℝ) (V W : E) (j k : 
     EuclideanSpace.equiv, PiLp.coe_symm_continuousLinearEquiv, PiLp.toLp_apply,
     ContinuousLinearMap.pi_apply]
   split_ifs <;> rfl
-
-
-
-
 
 theorem metricRowFrame_injective (G : E →L[ℝ] E →L[ℝ] ℝ)
     (V : E) (j : Fin n) (hV : V j ≠ 0)
@@ -76,10 +54,6 @@ theorem metricRowFrame_injective (G : E →L[ℝ] E →L[ℝ] ℝ)
   apply hzero
   rw [map_sub, heq, sub_self]
 
-
-
-
-
 theorem metricRowFrame_contDiffOn
     {G : E → E →L[ℝ] E →L[ℝ] ℝ} {V : E → E} {U : Set E} (j : Fin n)
     (hG : ContDiffOn ℝ ∞ G U) (hV : ContDiffOn ℝ ∞ V U)
@@ -106,10 +80,6 @@ theorem metricRowFrame_contDiffOn
   intro q _
   ext k
   exact metricRowFrame_apply (G q) (V q) W j k
-
-
-
-
 
 theorem metricRowFrame_complex_isUnit (G : E →L[ℝ] E →L[ℝ] ℝ)
     (V : E) (j : Fin n) (hV : V j ≠ 0)

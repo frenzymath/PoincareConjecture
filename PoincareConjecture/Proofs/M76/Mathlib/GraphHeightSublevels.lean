@@ -1,16 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*} {G : SimpleGraph V}
-
-
-
-
 
 theorem Preconnected.induce_sdiff_singleton_of_neighbors_reachable
     {s : Set V} (hG : (G.induce s).Preconnected) {v : V} (hv : v ∈ s)
@@ -64,11 +50,6 @@ theorem Preconnected.induce_sdiff_singleton_of_neighbors_reachable
       exact a.property.2 (congrArg Subtype.val h).symm
     obtain ⟨w, hw⟩ := (hG ⟨v, hv⟩ ⟨a, a.property.1⟩).nonempty_neighborSet_left hva
     exact (hne ⟨w, w.property, hw⟩).elim
-
-
-
-
-
 
 theorem Preconnected.induce_lt_of_lower_neighbors
     [Finite V] {R : Type*} [LinearOrder R]

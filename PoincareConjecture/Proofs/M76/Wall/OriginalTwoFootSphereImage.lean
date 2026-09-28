@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.TwoFootHeightCarrier
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLCubeSphereModel
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,11 +10,6 @@ open Set Geometry TriangularRoofModel
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_original_two_foot_height_sphere
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

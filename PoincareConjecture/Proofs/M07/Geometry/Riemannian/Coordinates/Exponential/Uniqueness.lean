@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.FixedChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Speed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
 
 theorem coordinate_geodesic_unique_germ_at
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q₁ w₁ q₂ w₂ : ℝ → E} {t₀ : ℝ}
@@ -54,8 +45,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem IsGeodesicOn.eq_nhds_of_eq_and_coordDeriv
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) (hη : g.IsGeodesicOn η s)
@@ -84,7 +73,6 @@ theorem IsGeodesicOn.eq_nhds_of_eq_and_coordDeriv
   filter_upwards [heq, hs.mem_nhds ht₀] with t ht hts
   exact c.injOn (hγmap hts) (hηmap hts) ht.1
 
-
 theorem IsGeodesicOn.exists_open_nhds
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) {t : ℝ} (ht : t ∈ s) :
@@ -94,15 +82,12 @@ theorem IsGeodesicOn.exists_open_nhds
     mem_nhds_iff.mp (eventually_eventually_nhds.mpr hlocal)
   exact ⟨U, hUopen, htU, fun u hu => ⟨p, q, w, hUsub hu⟩⟩
 
-
 theorem IsGeodesicOn.contMDiffAt
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) {t : ℝ} (ht : t ∈ s) :
     ContMDiffAt (𝓘(ℝ, ℝ)) (𝓡 n) 1 γ t := by
   obtain ⟨U, hUopen, htU, hU⟩ := hγ.exists_open_nhds ht
   exact hU.contMDiffOn.contMDiffAt (hUopen.mem_nhds htU)
-
-
 
 theorem IsGeodesicOn.exists_common_chart_nhds
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
@@ -128,7 +113,6 @@ theorem IsGeodesicOn.exists_common_chart_nhds
     fun u hu => hUη u (hUsub hu).2.2,
     fun u hu => (hUsub hu).1.1, fun u hu => (hUsub hu).1.2⟩
 
-
 theorem IsGeodesicOn.eq_nhds_of_initial_data
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) (hη : g.IsGeodesicOn η s)
@@ -140,8 +124,6 @@ theorem IsGeodesicOn.eq_nhds_of_initial_data
   obtain ⟨U, hUopen, htU, hγU, hηU, hγmap, hηmap⟩ :=
     hγ.exists_common_chart_nhds hη ht₀ p hp (hpos ▸ hp)
   exact hγU.eq_nhds_of_eq_and_coordDeriv hηU hUopen p hγmap hηmap htU hpos hvel
-
-
 
 theorem IsGeodesicOn.eq_nhds_on_of_eq_nhds [T2Space M]
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
@@ -171,7 +153,6 @@ theorem IsGeodesicOn.eq_nhds_on_of_eq_nhds [T2Space M]
     exact hγU.eq_nhds_of_eq_and_coordDeriv hηU hUopen p hγmap hηmap htU hpos hvel
   exact hs.subset_of_closure_inter_subset hGopen ⟨t₀, ht₀, heq⟩ hGclosed
 
-
 theorem IsGeodesicOn.eqOn_of_eq_nhds [T2Space M]
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) (hη : g.IsGeodesicOn η s)
@@ -179,16 +160,12 @@ theorem IsGeodesicOn.eqOn_of_eq_nhds [T2Space M]
     (heq : γ =ᶠ[𝓝 t₀] η) : EqOn γ η s :=
   fun t ht => (hγ.eq_nhds_on_of_eq_nhds hη hs ht₀ heq t ht).self_of_nhds
 
-
-
 theorem IsGeodesicOn.eqOn_of_eventuallyEq [T2Space M]
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) (hη : g.IsGeodesicOn η s)
     (_hsopen : IsOpen s) (hs : IsPreconnected s) {t₀ : ℝ} (ht₀ : t₀ ∈ s)
     (heq : γ =ᶠ[𝓝 t₀] η) : EqOn γ η s :=
   hγ.eqOn_of_eq_nhds hη hs ht₀ heq
-
-
 
 theorem IsGeodesicOn.eq_nhds_on_of_initial_data [T2Space M]
     {g : RiemannianMetric n M} {γ η : ℝ → M} {s : Set ℝ}

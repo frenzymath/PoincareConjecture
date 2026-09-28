@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ComplexCycleLabels
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
   [DecidableEq E]
-
-
-
-
 
 theorem faceLink_faceLink (K : SimplicialComplex 𝕜 E) (s t : Finset E)
     (hst : Disjoint s t) : (K.faceLink s).faceLink t = K.faceLink (s ∪ t) := by
@@ -45,9 +32,6 @@ theorem faceLink_faceLink (K : SimplicialComplex 𝕜 E) (s t : Finset E)
         (Finset.union_nonempty.mpr (Or.inr hne))
     · simpa only [Finset.union_assoc] using hstu
 
-
-
-
 theorem edgeGraph_adj_iff_mem_faceLink (K : SimplicialComplex 𝕜 E) (u v : K.vertices) :
     K.vertexAbstractComplex.edgeGraph.Adj u v ↔ v.val ∈ (K.faceLink {u.val}).vertices := by
   change (u ≠ v ∧ ({u, v} : Finset K.vertices).map (Function.Embedding.subtype _) ∈ K.faces) ↔
@@ -61,9 +45,6 @@ theorem edgeGraph_adj_iff_mem_faceLink (K : SimplicialComplex 𝕜 E) (u v : K.v
   · rintro ⟨_, huv, hface⟩
     exact ⟨fun h => huv (congrArg Subtype.val h), hface⟩
 
-
-
-
 theorem image_edgeGraph_neighborSet (K : SimplicialComplex 𝕜 E) (u : K.vertices) :
     Subtype.val '' K.vertexAbstractComplex.edgeGraph.neighborSet u =
       (K.faceLink {u.val}).vertices := by
@@ -75,16 +56,10 @@ theorem image_edgeGraph_neighborSet (K : SimplicialComplex 𝕜 E) (u : K.vertic
     let v : K.vertices := ⟨x, (K.faceLink_vertices_subset {u.val} hx).1⟩
     exact ⟨v, (K.edgeGraph_adj_iff_mem_faceLink u v).mpr hx, rfl⟩
 
-
-
-
 theorem ncard_edgeGraph_neighborSet (K : SimplicialComplex 𝕜 E) (u : K.vertices) :
     (K.vertexAbstractComplex.edgeGraph.neighborSet u).ncard =
       (K.faceLink {u.val}).vertices.ncard := by
   rw [← K.image_edgeGraph_neighborSet u, ncard_image_of_injective _ Subtype.val_injective]
-
-
-
 
 theorem ncard_faceLink_edgeGraph_neighborSet (K : SimplicialComplex 𝕜 E)
     (s : Finset E) (u : (K.faceLink s).vertices) :

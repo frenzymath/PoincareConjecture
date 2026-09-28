@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffinePi
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +9,6 @@ open Set Geometry
 namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
-
-
-
 
 theorem two_puncture_charts_cover (x : AddCircle p) :
     ∃ b : Bool, x ∈ (openPartialHomeomorphCoe p (if b then 0 else p / 2)).target := by
@@ -44,15 +30,9 @@ theorem two_puncture_charts_cover (x : AddCircle p) :
 
 variable {ι : Type*} [Fintype ι]
 
-
-
-
 noncomputable def quotientProductChart (a : ι → ℝ) :
     OpenPartialHomeomorph (ι → AddCircle p) (ι → ℝ) :=
   OpenPartialHomeomorph.pi (fun i => (openPartialHomeomorphCoe p (a i)).symm)
-
-
-
 
 theorem quotientProductChart_transition_mem_piecewiseAffineGroupoid (a b : ι → ℝ) :
     (quotientProductChart p a).symm.trans (quotientProductChart p b) ∈
@@ -66,10 +46,6 @@ theorem quotientProductChart_transition_mem_piecewiseAffineGroupoid (a b : ι �
   exact piecewiseAffineGroupoid_pi _
     (fun i => quotient_chart_transition_mem_piecewiseAffineGroupoid p (a i) (b i))
 
-
-
-
-
 theorem exists_finite_piecewiseAffine_torus_chart_cover :
     ∃ c : (ι → Bool) → OpenPartialHomeomorph (ι → AddCircle p) (ι → ℝ),
       (∀ x, ∃ b, x ∈ (c b).source) ∧
@@ -82,9 +58,6 @@ theorem exists_finite_piecewiseAffine_torus_chart_cover :
   intro x
   choose b hb using fun i => two_puncture_charts_cover p (x i)
   exact ⟨b, fun i _ => hb i⟩
-
-
-
 
 theorem exists_piecewiseAffine_torus_chartedSpace :
     ∃ a : ChartedSpace (ι → ℝ) (ι → AddCircle p),

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.IndependentFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.GeneralBoundaryFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
 
 theorem mesh_frontier_nonvertex_mem_open_edge (M : TriangleMesh) (t : M.Triangle)
     {q : Plane} (hq : q ∈ frontier (convexHull ℝ (range (meshTriangleBasis M t))))
@@ -43,8 +35,6 @@ theorem mesh_frontier_nonvertex_mem_open_edge (M : TriangleMesh) (t : M.Triangle
     norm_num at h01
   · simpa only [hea, heb] using hopen
 
-
-
 theorem mesh_open_edge_mem_hull_iff (M : TriangleMesh) (t : M.Triangle)
     {a b : M.Vertex} (ha : a ∈ t.1) (hb : b ∈ t.1) (hab : a ≠ b)
     {q : Plane} (hq : q ∈ openSegment ℝ (M.position a) (M.position b)) (u : M.Triangle) :
@@ -59,8 +49,6 @@ theorem mesh_open_edge_mem_hull_iff (M : TriangleMesh) (t : M.Triangle)
       exact ⟨a, hau, rfl⟩
     · rw [range_meshTriangleBasis]
       exact ⟨b, hbu, rfl⟩
-
-
 
 theorem mesh_open_edge_mem_interior_of_other_parent
     (M : TriangleMesh) (t u : M.Triangle) (htu : t ≠ u)
@@ -84,8 +72,6 @@ theorem mesh_open_edge_mem_interior_of_other_parent
     exact meshTriangleBasis_subset_support M t
   · rw [hdrange]
     exact meshTriangleBasis_subset_support M u
-
-
 
 theorem mesh_open_edge_parent_card (M : TriangleMesh) (t : M.Triangle)
     {a b : M.Vertex} (ha : a ∈ t.1) (hb : b ∈ t.1) (hab : a ≠ b)
@@ -119,8 +105,6 @@ theorem mesh_open_edge_parent_card (M : TriangleMesh) (t : M.Triangle)
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem independently_refined_mesh_fan_in_parent_interior
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -151,9 +135,6 @@ theorem independently_refined_mesh_fan_in_parent_interior
     subst z
     exact (mesh_triangle_inter_frontier M t u (Ne.symm hut) ⟨interior_subset hq, hz⟩).2 hq
   · simp
-
-
-
 
 theorem independently_refined_mesh_new_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -201,8 +182,6 @@ theorem independently_refined_mesh_new_vertex_fan
       ⟨subset_closure ht, hnint t⟩ (hnew t)
     rw [mesh_open_edge_parent_card M t ha hb hab hedge]
     split_ifs <;> norm_num
-
-
 
 theorem independently_refined_mesh_interior_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

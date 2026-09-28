@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapLocalFlux
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationFlatDevelopment
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationSphereCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +19,6 @@ private theorem annulus_plane_field_smoothAt
       (fun q => (⟨q, X q⟩ : TangentBundle (𝓡 2) LoopPlane)) p := by
   rw [contMDiffAt_totalSpace]
   exact ⟨contMDiffAt_id, by simpa using contMDiffAt_iff_contDiffAt.mpr hX⟩
-
-
-
-
-
 
 theorem m64Annulus_connectionForm_curvature_integral
     (g : RiemannianMetric 2 LoopPlane) (D : LeviCivitaData g)

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerLevelTranspor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceSurfacePullback
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_lower_source_circles
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

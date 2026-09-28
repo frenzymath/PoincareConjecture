@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.CompactConfineme
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem hasDerivAt_function_along_neg_gradient_manifold
     (D : LeviCivitaData g) {f : M → ℝ} {γ : ℝ → M} {t : ℝ}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f (γ t))
@@ -36,8 +27,6 @@ theorem hasDerivAt_function_along_neg_gradient_manifold
   change HasDerivAt (f ∘ γ)
     (mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f (γ t) ((1 : ℝ) • -D.gradient f (γ t))) t at hd
   simpa only [one_smul, map_neg, ← hi] using! hd
-
-
 
 theorem neg_gradient_mem_sublevel_component_manifold
     (D : LeviCivitaData g) {f : M → ℝ} {U : Set M}
@@ -74,8 +63,6 @@ theorem neg_gradient_mem_sublevel_component_manifold
     (mem_image_of_mem γ (show (0 : ℝ) ∈ Icc 0 T from ⟨le_rfl, ht.1.trans ht.2⟩)) hpathsub
   rw [connectedComponentIn_eq hinit]
   exact hpathC (mem_image_of_mem γ ht)
-
-
 
 theorem exists_forward_neg_gradient_in_compact_sublevel_component_manifold
     [T2Space M] (D : LeviCivitaData g) {f : M → ℝ} {U : Set M}

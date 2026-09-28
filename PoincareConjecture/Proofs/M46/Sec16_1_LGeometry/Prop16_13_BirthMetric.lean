@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_IntrinsicCompari
 import PoincareConjecture.Definitions.M44CapPersistence
 import PoincareConjecture.Proofs.M04.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
 
 theorem exists_standardCap_birth_metric_factor {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta : ℝ}
@@ -64,10 +51,6 @@ theorem exists_standardCap_birth_metric_factor {g0 : StandardInitialMetric}
       simpa only [MaximalStandardCapFlow.metric, Nat.cast_ofNat, sub_zero, neg_mul,
         show (2 : ℝ) * 3 = 6 by norm_num]
         using hcompare
-
-
-
-
 
 theorem exists_actualCap_birth_metric_factor {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta : ℝ}

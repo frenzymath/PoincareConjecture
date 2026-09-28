@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.FiniteCollarCuts
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

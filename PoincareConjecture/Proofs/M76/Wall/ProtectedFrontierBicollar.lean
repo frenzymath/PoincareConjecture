@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.CompactMetrizableNeighborhood
 import PoincareConjecture.Proofs.M76.Wall.CompactPLFrontierBicollar
 import Mathlib.Topology.Metrizable.Uniformity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set BrownCollar
@@ -19,11 +10,6 @@ open Set BrownCollar
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem PLDomain.exists_protected_frontier_bicollar
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

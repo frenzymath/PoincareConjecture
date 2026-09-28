@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M13.HorizontalBasics
 import PoincareConjecture.Proofs.M13.SliceConnection
 import PoincareConjecture.Statements.M13HorizontalTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

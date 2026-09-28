@@ -4,16 +4,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -21,9 +11,6 @@ open Set Filter Topology
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem bijective_of_isLocalHomeomorph_ordered_fibers
     {S : Type u} {X : Type v} [TopologicalSpace S] [TopologicalSpace X]

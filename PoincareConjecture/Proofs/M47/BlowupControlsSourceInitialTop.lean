@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRetention
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_retained_top
     {F : SurgeryFlowData.{u}} {T : ℝ} (hT : T ∈ F.surgery_times)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactDer
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Filter Topology
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal NNReal
 namespace PoincareConjecture.M30
 
 universe u
-
-
 
 theorem metricComplete_of_proper_height_and_metric_translations
     {n : ℕ} {P : Type u} [TopologicalSpace P]

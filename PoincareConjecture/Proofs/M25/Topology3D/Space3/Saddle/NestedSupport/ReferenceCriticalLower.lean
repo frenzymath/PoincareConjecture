@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceHi
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.ReferenceCriticalValues
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -24,11 +14,6 @@ local notation "D2" =>
   Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
-
 
 theorem exists_reference_critical_lower_data
     (R : ℝ) (hR : 0 < R)

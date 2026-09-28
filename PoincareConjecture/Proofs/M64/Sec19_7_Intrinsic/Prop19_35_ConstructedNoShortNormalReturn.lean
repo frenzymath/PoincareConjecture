@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConstructedNormalReturnCurvature
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,11 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold Bundle Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_constructed_no_short_normal_return
     (N : IntrinsicAnnulus)

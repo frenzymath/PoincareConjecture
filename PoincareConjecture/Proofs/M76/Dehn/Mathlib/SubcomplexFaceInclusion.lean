@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry.SimplicialComplex
@@ -16,16 +7,12 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K A : SimplicialComplex ℝ E)
 
-
-
 def subcomplexVertexEmbedding (hAK : A ≤ K) : A.vertices ↪ K.vertices where
   toFun p := ⟨p.val, hAK p.property⟩
   inj' := by
     intro p q h
     apply Subtype.ext
     exact congrArg (fun z : K.vertices => z.val) h
-
-
 
 noncomputable def subcomplexFaceEmbedding (hAK : A ≤ K) (n : ℕ) :
     {s : Finset A.vertices // s ∈ A.vertexAbstractComplex.faces ∧ s.card = n} ↪
@@ -39,14 +26,10 @@ noncomputable def subcomplexFaceEmbedding (hAK : A ≤ K) (n : ℕ) :
   inj' := fun _ _ h => Subtype.ext
     (Finset.map_injective (K.subcomplexVertexEmbedding A hAK) (congrArg Subtype.val h))
 
-
-
 theorem subcomplexFaceEmbedding_map (hAK : A ≤ K) (n : ℕ)
     (s : {s : Finset A.vertices // s ∈ A.vertexAbstractComplex.faces ∧ s.card = n}) :
     (K.subcomplexFaceEmbedding A hAK n s).val =
       s.val.map (K.subcomplexVertexEmbedding A hAK) := rfl
-
-
 
 theorem subcomplexFaceEmbedding_forget (hAK : A ≤ K) (n : ℕ)
     (s : {s : Finset A.vertices // s ∈ A.vertexAbstractComplex.faces ∧ s.card = n}) :
@@ -54,8 +37,6 @@ theorem subcomplexFaceEmbedding_forget (hAK : A ≤ K) (n : ℕ)
       s.val.map (Function.Embedding.subtype _) := by
   rw [K.subcomplexFaceEmbedding_map, Finset.map_map]
   rfl
-
-
 
 theorem subcomplexFaceEmbedding_range_iff (hAK : A ≤ K) (n : ℕ)
     (s : {s : Finset K.vertices // s ∈ K.vertexAbstractComplex.faces ∧ s.card = n}) :
@@ -74,8 +55,6 @@ theorem subcomplexFaceEmbedding_range_iff (hAK : A ≤ K) (n : ℕ)
     rw [K.subcomplexFaceEmbedding_forget]
     exact A.vertexFaceEquiv_symm_map n a
 
-
-
 theorem subcomplexFaceEmbedding_subset_iff (hAK : A ≤ K) {n m : ℕ}
     (s : {s : Finset A.vertices // s ∈ A.vertexAbstractComplex.faces ∧ s.card = n})
     (t : {s : Finset A.vertices // s ∈ A.vertexAbstractComplex.faces ∧ s.card = m}) :
@@ -83,9 +62,6 @@ theorem subcomplexFaceEmbedding_subset_iff (hAK : A ≤ K) {n m : ℕ}
         (K.subcomplexFaceEmbedding A hAK m t).val ↔ s.val ⊆ t.val := by
   rw [K.subcomplexFaceEmbedding_map, K.subcomplexFaceEmbedding_map]
   exact Finset.map_subset_map
-
-
-
 
 theorem exists_unique_subcomplex_lower_face (hAK : A ≤ K) {n m : ℕ}
     (s : {s : Finset K.vertices // s ∈ K.vertexAbstractComplex.faces ∧ s.card = n})

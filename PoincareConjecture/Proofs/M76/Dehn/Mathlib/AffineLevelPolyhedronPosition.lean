@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineLevelComplexPosition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedCarrierRefinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_protected_affine_level_polyhedron_position
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

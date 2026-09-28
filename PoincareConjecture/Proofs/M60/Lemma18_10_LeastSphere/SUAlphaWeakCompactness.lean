@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaCoordinateCom
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaVariationalComparison
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.StrongLimit
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 namespace M60
-
-
-
 
 theorem suAlpha_common_chart_patch [T2Space M]
     (f : ℕ → C(UnitTwoSphere, M)) (f0 : C(UnitTwoSphere, M))
@@ -93,8 +88,6 @@ theorem suAlpha_common_chart_patch [T2Space M]
   refine ⟨e, r, R, b.contMDiff_smul contMDiffOn_chart, hr, hR,
     fun y hy => (hball y hy).1, fun z hz => hgood (hlocal hz), ?_⟩
   exact htail.mono fun j hj z hz => hgood (hj ⟨z, hz, rfl⟩)
-
-
 
 theorem suAlpha_observed_weak_derivatives
     [CompactSpace M] [T2Space M]
@@ -228,9 +221,6 @@ theorem suAlpha_observed_weak_derivatives
   apply integral_congr_ae
   filter_upwards [hm0.coeFn_toLp] with z hz
   rw [hz]
-
-
-
 
 theorem suAlpha_coordinate_weak_derivatives
     [CompactSpace M] [T2Space M]

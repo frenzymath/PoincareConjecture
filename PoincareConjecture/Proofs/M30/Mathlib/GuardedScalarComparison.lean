@@ -3,26 +3,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace PoincareConjecture.M30
-
-
 
 theorem le_two_mul_of_deriv_le_sq_above {f f' : ℝ → ℝ} {a b C M q : ℝ}
     (hC : 0 < C) (hM : 0 < M) (hq : q ≤ M)
@@ -60,8 +46,6 @@ theorem le_two_mul_of_deriv_le_sq_above {f f' : ℝ → ℝ} {a b C M q : ℝ}
   intro s hs
   exact (hle s hs).trans (hBbounds s hs).2
 
-
-
 theorem le_two_mul_of_abs_deriv_le_sq_above_backward
     {f f' : ℝ → ℝ} {a b C M q : ℝ}
     (hC : 0 < C) (hM : 0 < M) (hq : q ≤ M)
@@ -89,9 +73,6 @@ theorem le_two_mul_of_abs_deriv_le_sq_above_backward
     (by simpa only [neg_sub_neg] using htime)
   intro s hs
   simpa using hbound (-s) ⟨neg_le_neg hs.2, neg_le_neg hs.1⟩
-
-
-
 
 theorem scalar_le_double_on_normalized_backward_interval
     {f f' : ℝ → ℝ} {C D Q tau : ℝ}

@@ -41,5 +41,3 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.Ma
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.EnclosingRegion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.AxialMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SphereContact
-
-

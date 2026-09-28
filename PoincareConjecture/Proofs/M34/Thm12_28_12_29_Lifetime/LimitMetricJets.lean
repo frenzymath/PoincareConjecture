@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +12,6 @@ namespace PoincareConjecture.GeneralizedBlowupConvergence
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
   (C : GeneralizedBlowupConvergence S J)
 
-
-
 theorem exists_exhaustion_superset {K : Set C.limit.sliceCarrier.carrier}
     (hK : IsCompact K) : ∃ j, K ⊆ C.exhaustion.space j :=
   hK.elim_directed_cover C.exhaustion.space C.exhaustion.space_open
@@ -35,9 +22,6 @@ local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.top
 local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carrier.carrier :=
   C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
-
 
 theorem tendsto_coordinate_metricJetWithin
     (q : C.limit.sliceCarrier.carrier) (r : ℕ) (a b : Fin 3)
@@ -61,8 +45,6 @@ theorem tendsto_coordinate_metricJetWithin
     isCompact_singleton hdom epsilon hepsilon
   refine ⟨N, fun k hk => ?_⟩
   simpa only [dist_eq_norm] using (hN k hk).2 a b p (mem_singleton p)
-
-
 
 theorem tendsto_coordinate_metricJetWithin_apply
     (q : C.limit.sliceCarrier.carrier) (r : ℕ) (a b : Fin 3)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M09.PathSpaceCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,22 +13,15 @@ variable {K : Type v} [PseudoMetricSpace K] [CompactSpace K]
   {E F : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def parametricPostcomp (f : C(K × E, F)) (φ : C(K, E)) : C(K, F) :=
   ⟨fun k => f (k, φ k), f.continuous.comp (continuous_id.prodMk φ.continuous)⟩
 
 omit [NormedSpace ℝ E] [NormedSpace ℝ F] in
 
-
 theorem continuous_parametricPostcomp (f : C(K × E, F)) :
     Continuous (parametricPostcomp f) := by
   apply ContinuousMap.continuous_of_continuous_uncurry
   exact f.continuous.comp (continuous_snd.prodMk continuous_eval)
-
-
-
 
 theorem hasFDerivAt_parametricPostcomp [FiniteDimensional ℝ E]
     (f : C(K × E, F)) (Df : C(K × E, E →L[ℝ] F))

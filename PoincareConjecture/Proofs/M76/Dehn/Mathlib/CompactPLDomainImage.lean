@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLImageNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -165,11 +153,6 @@ private theorem exists_local_interior_image_pair
   · rw [hFT.embeddedImage_space]
     exact (image_image F B.symm T.space).symm
   · rw [SimplicialComplex.space_bot, hDfront, image_empty]
-
-
-
-
-
 
 theorem exists_finite_triangulations_domain_frontier_image
     {ι : Type*} (e : ι → OpenPartialHomeomorph M E)

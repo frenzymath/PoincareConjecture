@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarMarkedCutCharts
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,10 +15,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
-
-
-
-
 
 theorem exists_vertex_base_convex_chart (p : (T.marked 2).vertices) :
     ∃ (boundary : Bool) (C : Set C3) (L : (Fin 3 ⊕ Fin 3) → C3 →ₗ[ℝ] ℝ)
@@ -118,4 +105,3 @@ theorem exists_vertex_base_convex_chart (p : (T.marked 2).vertices) :
     rw [hboundary x x.property, hfirstzero x]
 
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

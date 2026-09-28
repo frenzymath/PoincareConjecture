@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.LowerReplacement
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,12 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -49,8 +37,6 @@ private def reverseTime : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Rea
   contMDiff_invFun := contMDiff_id.neg
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_buffered_relative_upper_end_replacement_of_surface_germ
     {v : E3} {g f : S2 → E3} {Z : Set Real}

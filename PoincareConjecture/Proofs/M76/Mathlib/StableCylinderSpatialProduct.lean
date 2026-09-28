@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.StableCylinderConjugation
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 import Mathlib.Topology.Covering.AddCircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open Set
 namespace StableCylinder
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem isLocalHomeomorphOn_shortArc_spatial
     (p : ℝ) [Fact (0 < p)] {delta : ℝ} (hd1 : delta ≤ 1) (hdp : delta < p / 2)
@@ -51,11 +38,6 @@ theorem isLocalHomeomorphOn_shortArc_spatial
     (hi.prodMap hc).mono (fun _ _ => ⟨mem_univ _, mem_univ _⟩)
   exact hp.comp (hf.comp (IsLocalHomeomorphOn.OpenPartialHomeomorph.isLocalHomeomorphOn Q)
     hQ) (fun _ _ => mem_univ _)
-
-
-
-
-
 
 theorem exists_spatial_product
     (p : ℝ) [Fact (0 < p)] {delta a : ℝ}

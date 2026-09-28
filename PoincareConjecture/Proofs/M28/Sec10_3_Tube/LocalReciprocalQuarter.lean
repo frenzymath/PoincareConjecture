@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFrontierSeed
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalPrefixSign
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalAxialContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_reciprocal_quarter_of_positive_frontier_contact_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

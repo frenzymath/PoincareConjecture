@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexSphereDiskComplement
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +10,6 @@ namespace Set
 variable {V X : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.boundary_disk_complement
     {B S d q : Set X} (hB : IsFinitePLBallPair V B S)

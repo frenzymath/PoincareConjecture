@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Standard
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Witnesses
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -85,7 +78,6 @@ private theorem memW01p_of_approximation {O : Set E} (hO : IsOpen O)
       weakGrad_component_memLp := hg
       isWeakGrad := hw }
   exact ⟨w.memW1p, w, φ, hφ, hc, hs, hv, hd⟩
-
 
 theorem memW01p_translate {u : E → ℝ} (hu : MemW01p 2 u (halfSpace d))
     (k : Fin d) (hk : k ≠ 0) (h : ℝ) :
@@ -227,7 +219,6 @@ theorem memW01p_mul_smooth {O : Set E} (hO : IsOpen O) {u η : E → ℝ}
     apply tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds _
       (fun _ => bot_le) hb
     simpa using hlim₁.add hlim₀
-
 
 theorem memW01p_standardNirenbergTest {u η : E → ℝ}
     (hu : MemW01p 2 u (halfSpace d))

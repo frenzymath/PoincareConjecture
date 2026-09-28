@@ -13,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {J : Set ℝ}
 
-
 theorem curvatureTensor_evolution_rhs_zero
     (D : LeviCivitaData g) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :
@@ -23,7 +22,6 @@ theorem curvatureTensor_evolution_rhs_zero
         D.curvatureReaction x u v w z := by
   simp only [curvatureDerivativeReaction]
   rfl
-
 
 theorem hasDerivAt_curvatureTensor_evolution_from_iterated
     (F : RicciFlow n M J) (x : M)

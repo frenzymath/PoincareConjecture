@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.SphereChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +15,6 @@ open SingularRegularLimit.RoundComparison
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {epsilon : ℝ}
-
 
 theorem normalizedMetric_diagonal_error_le (N : SingularRoundComponent g epsilon)
     (x : N.model.carrier) (v : TangentSpace (𝓡 3) x) :
@@ -45,8 +42,6 @@ theorem normalizedMetric_diagonal_error_le (N : SingularRoundComponent g epsilon
     · simp [hv]
     · exact (N.model_metric.pos x v hv).le
   exact h.trans (mul_le_mul_of_nonneg_right hnorm hnonneg)
-
-
 
 theorem normalizedMetric_centered_ellipticity (N : SingularRoundComponent g epsilon)
     (hepsilon : epsilon ≤ roundComparisonThreshold)

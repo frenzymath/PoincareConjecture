@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PrefixMinimality
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationPrefix
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationSlice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b c : ℝ} {x y : G.Point}
-
-
-
 
 theorem isLocalMin_cornerVariationAction (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T a b x y) (hmin : M14IsMinimizing q)

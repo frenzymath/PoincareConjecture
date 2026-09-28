@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCenteredTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 private theorem compatible_neck_cut_charts_of_transition
     (A B : EpsilonNeck g)
@@ -102,9 +89,6 @@ private theorem compatible_neck_cut_charts_of_transition
   · intro q
     simpa using hDAaff (q, 0) (by simpa using hrA)
   · exact hDAside
-
-
-
 
 theorem exists_compatible_neck_cut_charts_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -81,7 +74,6 @@ private theorem short_geodesic
     _ ≤ g.edist p x + g.edist x (γ s) := edist_triangle p x (γ s)
     _ ≤ ENNReal.ofReal r + ENNReal.ofReal (2*r) := add_le_add hx.le (hxs.trans hxy)
     _ = ENNReal.ofReal (3*r) := by rw [← ENNReal.ofReal_add hr.le (by positivity)]; congr 1; ring
-
 
 theorem openFiber_zero_edist_eq_of_ambient_closedBall
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

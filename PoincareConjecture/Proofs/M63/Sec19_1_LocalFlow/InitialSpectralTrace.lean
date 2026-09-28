@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralShiftedNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,16 +11,9 @@ open SpectralHeatNative
 
 variable {iota : Type*} [Countable iota] (lambda : iota → NNReal) (w : State iota)
 
-
-
-
-
 noncomputable def initialHeatGenerator (t : ℝ) : State iota :=
   stateOfCoeffs (fun i => (lambda i : ℝ) * Real.exp (-t * lambda i) *
     shiftedBaseMultiplier lambda w i)
-
-
-
 
 theorem initialHeatGenerator_eq {t : ℝ} (ht : 0 < t) :
     initialHeatGenerator lambda w t =
@@ -40,9 +22,6 @@ theorem initialHeatGenerator_eq {t : ℝ} (ht : 0 < t) :
   funext i
   exact stateOfCoeffs_apply
     (lp.memℓp (heatGenerator lambda t ht (shiftedBaseMultiplier lambda w))) i
-
-
-
 
 theorem initialHeatGenerator_memLp_energy {T : ℝ} (hT : 0 ≤ T) :
     MemLp (initialHeatGenerator lambda w) 2 (timeMeasure T) ∧
@@ -100,14 +79,8 @@ theorem initialHeatGenerator_memLp_energy {T : ℝ} (hT : 0 ≤ T) :
   simpa only [ENNReal.toReal_ofReal (by positivity : 0 ≤ ‖w‖ ^ 2 / 2)] using
     ENNReal.toReal_mono ENNReal.ofReal_ne_top henergy
 
-
-
-
 noncomputable def initialHeatHigh (t : ℝ) : State iota :=
   heat lambda t.toNNReal (shiftedBaseMultiplier lambda w) + initialHeatGenerator lambda w t
-
-
-
 
 theorem initialHeatHigh_coeff {t : ℝ} (ht : 0 < t) (i : iota) :
     initialHeatHigh lambda w t i = (1 + (lambda i : ℝ)) * Real.exp (-t * lambda i) *
@@ -116,9 +89,6 @@ theorem initialHeatHigh_coeff {t : ℝ} (ht : 0 < t) (i : iota) :
   simp only [lp.coeFn_add, Pi.add_apply, heat_apply, heatGenerator_apply,
     Real.coe_toNNReal t ht.le]
   ring
-
-
-
 
 theorem initialHeatHigh_trace {t : ℝ} (ht : 0 < t) :
     shiftedBaseMultiplier lambda (initialHeatHigh lambda w t) = heat lambda t.toNNReal w ∧
@@ -137,9 +107,6 @@ theorem initialHeatHigh_trace {t : ℝ} (ht : 0 < t) :
     field_simp
     rw [hs]
   exact ⟨heq, heq ▸ norm_heat_apply_le lambda t.toNNReal w⟩
-
-
-
 
 theorem initialHeatHigh_memLp_energy {T : ℝ} (hT : 0 ≤ T) :
     MemLp (initialHeatHigh lambda w) 2 (timeMeasure T) ∧
@@ -182,10 +149,6 @@ theorem initialHeatHigh_memLp_energy {T : ℝ} (hT : 0 ≤ T) :
       rw [integral_add (hUint.const_mul 2) (hGint.const_mul 2),
         integral_const_mul, integral_const_mul]
     _ ≤ _ := by nlinarith
-
-
-
-
 
 theorem initialHeat_eq_sub_integral {t : ℝ} (ht : 0 ≤ t) :
     heat lambda t.toNNReal (shiftedBaseMultiplier lambda w) =

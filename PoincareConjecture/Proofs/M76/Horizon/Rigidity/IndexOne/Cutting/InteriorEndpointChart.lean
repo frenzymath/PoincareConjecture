@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.ChartRestriction
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleEndpointHalfspace
 
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

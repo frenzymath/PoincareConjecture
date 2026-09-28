@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE
@@ -16,8 +8,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasDerivWithinAt_glue
     {a c b : ℝ} (hac : a ≤ c) (hcb : c ≤ b)
@@ -66,8 +56,6 @@ theorem hasDerivWithinAt_glue
       exact if_neg hs.not_ge
     rw [hval]
     exact ((h₂ t ⟨hct.le, ht.2⟩).congr_set hset).congr_of_eventuallyEq heq hval
-
-
 
 theorem exists_uniform_local_solutions [FiniteDimensional ℝ E]
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -22,9 +13,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
 local notation "Square" => CoordinateHalfBoxes.base 1
 local notation "SquareRim" => CoordinateHalfBoxes.baseBoundary 1
-
-
-
 
 theorem ChartwisePLSphere.exists_circle_planar_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

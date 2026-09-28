@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivativeDifference
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -36,7 +27,6 @@ noncomputable local instance m35JetCalculusLocal4 :
     NormedSpace ℝ (E →L[ℝ] W) :=
   ContinuousLinearMap.toNormedSpace
 
-
 theorem norm_fderiv_bilinear_le (B : E →L[ℝ] F →L[ℝ] W)
     {f : X → E} {g : X → F} (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
     (hB : ‖B‖ ≤ 1) (x : X) :
@@ -46,8 +36,6 @@ theorem norm_fderiv_bilinear_le (B : E →L[ℝ] F →L[ℝ] W)
     using B.norm_iteratedFDeriv_le_of_bilinear_of_le_one hf hg x
       (n := 1) (by simp) hB
 
-
-
 theorem norm_fderiv_clm_comp_le
     {f : X → F →L[ℝ] W} {g : X → E →L[ℝ] F}
     (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g) (x : X) :
@@ -55,7 +43,6 @@ theorem norm_fderiv_clm_comp_le
       ‖f x‖ * ‖fderiv ℝ g x‖ + ‖fderiv ℝ f x‖ * ‖g x‖ :=
   norm_fderiv_bilinear_le (ContinuousLinearMap.compL ℝ E F W) hf hg
     (ContinuousLinearMap.norm_compL_le ℝ E F W) x
-
 
 theorem norm_fderiv_clm_apply_le
     {f : X → E →L[ℝ] F} {g : X → E}
@@ -74,8 +61,6 @@ theorem norm_fderiv_smul_le {f : X → ℝ} {g : X → F}
       ‖f x‖ * ‖fderiv ℝ g x‖ + ‖fderiv ℝ f x‖ * ‖g x‖ :=
   norm_fderiv_bilinear_le (ContinuousLinearMap.lsmul ℝ ℝ) hf hg
     ContinuousLinearMap.opNorm_lsmul_le x
-
-
 
 theorem graph_derivative_norm_le_general (q : (X × ℝ) →L[ℝ] F)
     (p : X →L[ℝ] ℝ) :
@@ -108,8 +93,6 @@ noncomputable local instance m35JetCalculusLocal5 :
 noncomputable local instance m35JetCalculusLocal6 :
     NormedSpace ℝ D := ContinuousLinearMap.toNormedSpace
 
-
-
 noncomputable def dualSquaredLinear : D →L[ℝ] D →L[ℝ] ℝ :=
   let R := (InnerProductSpace.toDual ℝ V).symm.toContinuousLinearEquiv.toContinuousLinearMap
   (2 : ℝ) • (((ContinuousLinearMap.compL ℝ D V ℝ).flip R).comp
@@ -135,8 +118,6 @@ theorem norm_fderiv_dualSquaredDifferential_le
     (dualSquaredLinear.hasFDerivAt.comp x hp.hasFDerivAt).fderiv]
   exact (dualSquaredLinear.opNorm_comp_le _).trans
     (mul_le_mul_of_nonneg_right dualSquaredLinear_norm_le (norm_nonneg _))
-
-
 
 theorem norm_fderiv_flip (H : X → E →L[ℝ] F →L[ℝ] W)
     {x : X} (hH : DifferentiableAt ℝ H x) :

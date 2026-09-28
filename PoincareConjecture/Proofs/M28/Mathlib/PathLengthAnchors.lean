@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M04.ShiPiecewiseEnergy
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M28
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pathELength_eq_integral_fixed_segment_speed (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b c d : ℝ}
@@ -42,8 +31,6 @@ theorem pathELength_eq_integral_fixed_segment_speed (g : RiemannianMetric n M)
     mfderivWithin_of_mem_nhds (Icc_mem_nhds ht.1 ht.2),
     mfderivWithin_of_mem_nhds (Icc_mem_nhds (hac.trans_lt ht.1) (ht.2.trans_le hdb))]
 
-
-
 theorem continuousOn_pathELength_left (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b : ℝ} (hab : a < b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) 1 γ (Icc a b)) :
@@ -58,8 +45,6 @@ theorem continuousOn_pathELength_left (g : RiemannianMetric n M)
   intro t ht
   exact pathELength_eq_integral_fixed_segment_speed g hγ ht.1 ht.2 le_rfl
 
-
-
 theorem continuousOn_pathELength_right (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b : ℝ} (hab : a < b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) 1 γ (Icc a b)) :
@@ -73,8 +58,6 @@ theorem continuousOn_pathELength_right (g : RiemannianMetric n M)
   apply hcont.congr
   intro t ht
   exact pathELength_eq_integral_fixed_segment_speed g hγ le_rfl ht.1 ht.2
-
-
 
 theorem exists_pathELength_left_anchor (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b L : ℝ} (hab : a < b)
@@ -97,8 +80,6 @@ theorem exists_pathELength_left_anchor (g : RiemannianMetric n M)
     subst t
     rw [hzero] at heq
     exact (ENNReal.ofReal_pos.mpr hL).ne' heq.symm
-
-
 
 theorem exists_pathELength_right_anchor (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b L : ℝ} (hab : a < b)

@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.CoordinateRegularity
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SpatialJets
 import Mathlib.Topology.Instances.Matrix
-
-
-
-
-
-
-

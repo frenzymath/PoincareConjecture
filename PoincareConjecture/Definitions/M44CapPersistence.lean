@@ -3,17 +3,6 @@ import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 import PoincareConjecture.Definitions.M36MetricSurgery
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,7 +13,6 @@ namespace PoincareConjecture
 
 structure RepairedCapPersistenceData (g₀ : StandardInitialMetric) where
   standard_cap : RepairedStandardCapExistenceData g₀
-
 
   standard_cap_uniqueness :
     Nonempty (RepairedStandardCapUniquenessData g₀ standard_cap)

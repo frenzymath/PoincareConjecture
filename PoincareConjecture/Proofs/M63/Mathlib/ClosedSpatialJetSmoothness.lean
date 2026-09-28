@@ -4,26 +4,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.SpatialJetPrimitive
 import PoincareConjecture.Proofs.M03.Existence.DeTurckEndpointCalculusNative
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter MeasureTheory
 open PoincareConjecture.DeTurckEndpointCalculusNative
 open scoped ContDiff Topology
-
-
-
-
 
 theorem contDiffOn_infty_Icc_of_spatial_jets_and_finite_sources
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

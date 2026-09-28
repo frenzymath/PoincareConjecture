@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Frontier
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Resolution.RetainedCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_regular_boundary_pair_charts_of_local_height
     {X ι : Type*} [TopologicalSpace X]
@@ -184,8 +173,6 @@ theorem OriginalDiskProduct.exists_local_regular_boundary_pair_charts
       ∀ v ∈ C.coordinates.source,C.chart.symm v ∈ frontier R ↔
         (C.coordinates v).1.2 = 0) hset) hh
 
-
-
 theorem OriginalDiskProduct.exists_finite_boundary_slice_exceptional_values
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {R S : Set X} {j : (Fin 2 → ℝ) → X}
@@ -292,9 +279,6 @@ theorem OriginalDiskProduct.exists_finite_boundary_slice_exceptional_values_of_s
       change (y ∈ frontier R ↔ -Q y 0 = 0)
       simpa only [neg_eq_zero] using hfront y hy
 
-
-
-
 theorem OriginalDiskProduct.exists_regular_boundary_crossing_heights
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {R S : Set X} {j : (Fin 2 → ℝ) → X}
@@ -333,8 +317,6 @@ theorem OriginalDiskProduct.exists_regular_boundary_crossing_heights
   obtain ⟨C,hCR,hCF⟩ := hcharts t ht htW y hyt hy
   exact C.swap_boundary_region hCR hCF
 
-
-
 theorem OriginalDiskProduct.exists_regular_boundary_crossing_heights_in_contact_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {R S : Set X} {j : (Fin 2 → ℝ) → X}
@@ -365,4 +347,3 @@ theorem OriginalDiskProduct.exists_regular_boundary_crossing_heights_in_contact_
     (hSQ hx) hxC hCx hS hfront
 
 end PoincareConjecture.M76
-

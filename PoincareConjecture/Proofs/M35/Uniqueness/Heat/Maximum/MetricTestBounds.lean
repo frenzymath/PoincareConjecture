@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricEntropyTest
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.LinearTailJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

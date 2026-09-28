@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M62.Claim19_11_SlopeEvolution
 import PoincareConjecture.Proofs.M62.Cor0_3_Regularization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem slope_laws {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
     (P : CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MixedCompatibleChartPatch
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology

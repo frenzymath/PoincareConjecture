@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.SectionalRayleigh
 import PoincareConjecture.Proofs.M04.SectionalNullMinimum
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -153,4 +146,3 @@ theorem curvature_tensorLaplacian_nonneg_at_sectional_rayleigh_min
   exact sub_eq_zero.mpr hnull
 
 end PoincareConjecture.M04
-

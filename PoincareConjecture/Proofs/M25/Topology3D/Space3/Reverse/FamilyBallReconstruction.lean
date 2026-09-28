@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySurgeryHistory
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReconstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilySurgeryHistory.exists_initial_balls
     {u : UnitTwoSphere} {n m : ℕ}

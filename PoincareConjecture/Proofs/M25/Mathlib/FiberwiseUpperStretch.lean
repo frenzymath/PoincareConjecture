@@ -3,23 +3,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 universe u v w
-
-
 
 theorem Diffeomorph.exists_fiberwise_upper_stretch
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

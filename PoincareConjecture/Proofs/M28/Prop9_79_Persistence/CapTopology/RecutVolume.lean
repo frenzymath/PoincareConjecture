@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.QuantitativeRecut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem scalar_sup_pos_and_le_of_subset (N : CapCertificate g)
     {V : Set M} (hne : V.Nonempty) (hV : V ⊆ N.carrier) :
@@ -50,8 +37,6 @@ theorem scalar_sup_pos_and_le_of_subset (N : CapCertificate g)
       (le_csSup (hbounded.mono hsubset) hmem),
     csSup_le_csSup hbounded ⟨_, hmem⟩ hsubset⟩
 
-
-
 theorem normalized_volume_bound_of_subset (N : CapCertificate g)
     {V : Set M} (hne : V.Nonempty) (hV : V ⊆ N.carrier) :
     calibratedMetricVolume g V < ENNReal.ofReal N.cap_constant *
@@ -61,9 +46,6 @@ theorem normalized_volume_bound_of_subset (N : CapCertificate g)
     (show (-3 / 2 : ℝ) ≤ 0 by norm_num)
   exact ((MeasureTheory.measure_mono hV).trans_lt N.volume_bound).trans_le
     (mul_le_mul' le_rfl (ENNReal.ofReal_le_ofReal hpower))
-
-
-
 
 theorem exists_quantitative_cap_recut_margins_of_diameter_and_core_balls
     (N : CapCertificate g) {V : Set M}

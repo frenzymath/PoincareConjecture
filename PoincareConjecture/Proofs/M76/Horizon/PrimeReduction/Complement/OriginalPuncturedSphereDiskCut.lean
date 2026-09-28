@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.FiniteCapComponents
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -142,8 +134,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Sphere" => Geometry.CubicalThreeSphere.sphere
-
-
 
 theorem exists_original_punctured_sphere_disk_cut
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

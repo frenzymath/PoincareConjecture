@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem planarFamilyGraphCharts_preserve_nesting
     (C : ℝ → Fin 2 → UnitCircle → E2)

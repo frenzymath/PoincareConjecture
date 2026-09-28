@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedScalarComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem strongNeck_closed_scalar_difference_le (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {T epsilon : ℝ}

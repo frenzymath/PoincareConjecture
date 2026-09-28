@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,9 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle L0, W)
 local notation "J" => ((X × X) × X) × ℝ
-
-
-
 
 theorem exists_compact_smooth_initial_pool
     (F : RicciFlow n M (Icc a b)) {tau : ℝ} (htau : tau ∈ Icc a b)

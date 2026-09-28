@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Definitions.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +14,10 @@ universe u
 
 namespace PoincareConjecture.Proofs.M15
 
-
-
 noncomputable def rawBallSource (F : GeneralizedRicciFlowData.{u})
     (T : ℝ) (x : (F.slice T).carrier) (r : ℝ) :
     TopologicalSpace.Opens (F.slice T).carrier :=
   ⟨(F.metric T).ball x r, M04.initial_ball_isOpen (F.metric T) x r⟩
-
-
 
 def backwardBallInterval (r : ℝ) (hr : 0 < r) : SpacetimeInterval where
   domain := Icc (-r ^ 2) 0
@@ -38,8 +25,6 @@ def backwardBallInterval (r : ℝ) (hr : 0 < r) : SpacetimeInterval where
   nontrivial := ⟨-r ^ 2, ⟨le_rfl, neg_nonpos.mpr (sq_nonneg r)⟩,
     0, ⟨neg_nonpos.mpr (sq_nonneg r), le_rfl⟩,
     ne_of_lt (neg_lt_zero.mpr (sq_pos_of_pos hr))⟩
-
-
 
 theorem backwardBallInterval_physical (T r : ℝ) (hr : 0 < r) :
     (M12.cylinderPhysicalInterval T 1 zero_lt_one (backwardBallInterval r hr)).domain =
@@ -63,8 +48,6 @@ variable {F : GeneralizedRicciFlowData.{u}} (G : M12.FlowBoxRicciGeometry F)
     e.pointMap 0 h y = (⟨T, y⟩ : F.point))
   (hcurv : ∀ s hs y, y ∈ (F.metric T).ball x r →
     F.curvatureNorm (e.pointMap s hs y) ≤ r⁻¹ ^ 2)
-
-
 
 noncomputable def rawActualBallCylinder :
     M15ActualBallCylinder G.toLGeometry T ((G.sliceIdentification T).identification x) r

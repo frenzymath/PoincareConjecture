@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.OpenInclusionDifferential
 import PoincareConjecture.Proofs.M34.Standard.CompactCompleteness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Poincare.Gluing
@@ -21,16 +12,12 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def endDoubleParametrization (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) : StandardCapSpace → EndDouble e hL := by
   let := endDoublePiece_nonempty e hL
   exact ChartDistance.chartParametrization (fun _ : Bool => endTruncation e (L + 1))
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (i := i) ((endDoubleOverlap e hL).include i)
-
-
 
 theorem endDoubleParametrization_apply (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) (x : EndDoublePiece e L) :
@@ -41,8 +28,6 @@ theorem endDoubleParametrization_apply (e : StandardCylindricalEnd g)
     (fun _ : Bool => endTruncation e (L + 1))
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (i := i) ((endDoubleOverlap e hL).include i) x
-
-
 
 theorem endDoubleParametrization_contMDiffOn (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) :
@@ -55,8 +40,6 @@ theorem endDoubleParametrization_contMDiffOn (e : StandardCylindricalEnd g)
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (i := i)
     (endDouble_include_isLocalDiffeomorph e hL i).contMDiff
-
-
 
 theorem endDoubleParametrization_mfderiv (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) :
@@ -74,7 +57,6 @@ theorem endDoubleParametrization_mfderiv (e : StandardCylindricalEnd g)
     ((endDouble_include_isLocalDiffeomorph e hL i).contMDiff x)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem endDoubleParametrization_metric (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) {x : StandardCapSpace}
@@ -94,8 +76,6 @@ theorem endDoubleParametrization_metric (e : StandardCylindricalEnd g)
     endDoubleParametrization_apply, endDoubleParametrization_mfderiv]
   exact hp
 
-
-
 theorem endDoubleParametrization_cover (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (q : EndDouble e hL) :
     ∃ (i : Bool) (x : StandardCapSpace), x ∈ endTruncation e (L + 1) ∧
@@ -104,8 +84,6 @@ theorem endDoubleParametrization_cover (e : StandardCylindricalEnd g)
   | h a =>
     rcases a with ⟨i, x⟩
     exact ⟨i, x, x.property, endDoubleParametrization_apply e hL i x⟩
-
-
 
 theorem endDoubleMetric_complete (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : MetricComplete (endDoubleMetric e hL) :=

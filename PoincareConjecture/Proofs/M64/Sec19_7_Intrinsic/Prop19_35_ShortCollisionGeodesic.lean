@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactMinimizerGeodesic
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BaseToVertexMinimizer
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,13 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold ENNReal
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_short_collision_geodesic
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

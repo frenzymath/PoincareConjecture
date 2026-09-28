@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M76
 variable {X Y Z : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace Z] {ι κ ν : Type*}
   {R : Set X} {T : Set Y} {S : Set Z} {U : Set R} {W : Set T}
-
-
-
 
 theorem ChartwisePLOn.comp
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}

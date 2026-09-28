@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SourceBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.SourceMetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem eventually_image_ballAt_subset_ballAt
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -53,8 +44,6 @@ theorem eventually_image_ballAt_subset_ballAt
     (zero_lt_one.trans hC) hsource he hbound
   rw [hbase] at himage
   exact himage
-
-
 
 theorem exists_pos_eventually_image_subset_ballAt
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

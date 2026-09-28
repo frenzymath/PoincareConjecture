@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentEmbedding
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76
@@ -34,6 +28,5 @@ theorem quotient_lift_endpoint_difference
   have hy := congrFun heq y
   rw [←hy]
   abel
-
 
 end PoincareConjecture.M76

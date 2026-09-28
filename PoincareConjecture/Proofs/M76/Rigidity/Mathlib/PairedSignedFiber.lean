@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedFiber
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finitePL_fiber_of_paired_ends {N : Set E} {a z q : E}
     (hN : IsFinitePLBallPair ℝ N {a, z}) (f : E → ℝ)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CompactLocalFamilyGluing
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependenceAngularJets
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ArbitraryC2IntrinsicRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem exists_compact_c2_curve_family
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

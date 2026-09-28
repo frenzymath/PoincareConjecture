@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Inter
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -72,8 +65,6 @@ private theorem weakPartial_comp_split
   simp only [φ, Function.comp_apply, ContinuousLinearEquiv.symm_apply_apply, hd] at he
   simp only [Function.comp_apply, mul_comm] at he ⊢
   linarith
-
-
 
 theorem HasCanonicalL2Jet.memWkp_comp_split
     {U : Set (Spacetime n)} (hU : IsOpen U) {k : ℕ} {u : Spacetime n → ℝ}

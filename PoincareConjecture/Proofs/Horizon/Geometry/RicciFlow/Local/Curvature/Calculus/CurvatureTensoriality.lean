@@ -2,26 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureTensoriality
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

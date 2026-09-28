@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialPointIdentification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +52,6 @@ private theorem tip_metric_rotation
     (standardRotation A u) (standardRotation A v) = B 0 u v at h
   rw [map_zero] at h
   exact h
-
-
 
 theorem rotational_tip_ricci_diagonal (u v : StandardCapSpace) :
     D.ricci 0 u u * g.inner 0 v v = D.ricci 0 v v * g.inner 0 u u := by

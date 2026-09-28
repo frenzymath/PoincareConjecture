@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.BoundaryContact
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -115,7 +105,6 @@ private theorem affineIndependent_graph_off_graph (f : ℝ →ᵃ[ℝ] ℝ)
 
 omit [T2Space M] in
 
-
 theorem first_upper_line_avoids_lower_left :
     B.interface.piece B.firstCell a ≠ lo a := by
   let Q := B.interface
@@ -187,8 +176,6 @@ theorem first_upper_corner_affineIndependent :
     B.first_upper_line_avoids_lower_left.symm).map'
       collarParameterEquiv.symm.toContinuousLinearMap.toLinearMap.toAffineMap
       collarParameterEquiv.symm.injective
-
-
 
 noncomputable def firstUpperCornerBasis :
     AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)) :=
@@ -330,7 +317,6 @@ private theorem left_coordinate_mem_cut {q : EuclideanSpace ℝ (Fin 2)}
 
 omit [T2Space M] in
 
-
 theorem lower_carrier_inter_subset_outer {C : Set M}
     (hinterior : Disjoint C (interior B.carrier)) (hlower : Disjoint C B.lowerArc)
     (i : Fin B.interface.count) :
@@ -377,7 +363,6 @@ theorem lower_carrier_inter_subset_outer {C : Set M}
       simp [vertex, (B.upperGraph_endpoints i).2])
 
 omit [T2Space M] in
-
 
 theorem upper_carrier_inter_subset_outer {C : Set M}
     (hinterior : Disjoint C (interior B.carrier)) (hlower : Disjoint C B.lowerArc)
@@ -459,7 +444,6 @@ theorem last_lower_carrier_inter_subset_rightCut {C : Set M}
 
 omit [T2Space M] in
 
-
 theorem first_upper_carrier_inter_subset_corner_sides {C : Set M}
     (hinterior : Disjoint C (interior B.carrier)) (hlower : Disjoint C B.lowerArc) :
     C ∩ (B.pair B.firstCell).upper.carrier ⊆ F ''
@@ -468,7 +452,6 @@ theorem first_upper_carrier_inter_subset_corner_sides {C : Set M}
   have h := B.upper_carrier_inter_subset_outer hinterior hlower B.firstCell
   simpa [B.first_upper_edge_image_eq_corner_side,
     B.leftCut_eq_corner_side, image_union] using h
-
 
 theorem corner_sides_image_subset_first_upper_carrier :
     F '' (segment ℝ (B.firstUpperCornerBasis 0) (B.firstUpperCornerBasis 1) ∪

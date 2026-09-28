@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem exists_hessian_quadratic_bound (S : GradientShrinkingSolitonData n M) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.SelfSimilarity.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.RescaledSlice
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,7 +38,6 @@ variable {M : Type u} [TopologicalSpace M]
   change rescaledMetric _ |(-1 : ℝ)|⁻¹ (by norm_num) = _
   simp only [abs_neg, abs_one, inv_one, rescaledMetric, one_smul]
 
-
 theorem nonempty_homotheticMetricSlice_ulift
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)
     (hbound : ∀ t : ℝ, t < 0 → ∃ B : ℝ, 0 ≤ B ∧
@@ -82,8 +74,6 @@ theorem nonempty_homotheticMetricSlice_ulift
       (mfderiv (𝓡 3) (𝓡 3) e (k x) (mfderiv (𝓡 3) (𝓡 3) k x w))
   rw [hd v, hd w, show e (k x) = d.map (e x) from congrFun hcomp x]
   exact d.inner_eq (e x) (mfderiv (𝓡 3) (𝓡 3) e x v) (mfderiv (𝓡 3) (𝓡 3) e x w)
-
-
 
 def liftedShrinkingSolitonFlow
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

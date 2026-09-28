@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.ParametricInverse
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,8 +50,6 @@ theorem hasDerivAt_profileHeight {ρ : Real → Real} (hρ : ContDiff Real ∞ �
   have hW : HasDerivAt (profileW ρ) ((1 + deriv ρ s) / 2) s :=
     ((hasDerivAt_id s).add hd).div_const 2
   convert hW.sub (hX.pow 2) using 1 <;> first | rfl | norm_num
-
-
 
 theorem deriv_eq_one_of_profileX_eq_zero {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (hlower : ∀ s, |s| ≤ ρ s)
@@ -139,8 +128,6 @@ theorem surjective_profileHeight {ρ : Real → Real} (hρ : ContDiff Real ∞ �
     exact le_max_right _ _
   exact intermediate_value_univ l u (contDiff_profileHeight hρ).continuous ⟨hl, hu⟩
 
-
-
 def profileHeightDiffeomorph {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (hlower : ∀ s, |s| ≤ ρ s)
     (hderiv : ∀ s, |deriv ρ s| ≤ 1) {δ : Real} (hδ : 0 < δ)
@@ -164,8 +151,6 @@ def profileHeightDiffeomorph {ρ : Real → Real}
     (hderiv : ∀ s, |deriv ρ s| ≤ 1) {δ : Real} (hδ : 0 < δ)
     (htail : ∀ t, δ ≤ |t| → ρ t = |t|) (s : Real) :
     profileHeightDiffeomorph hρ hlower hderiv hδ htail s = profileHeight ρ s := rfl
-
-
 
 theorem exists_smooth_profile {δ : Real} (hδ : 0 < δ) :
     ∃ (ρ : Real → Real) (H : Real ≃ₘ[Real] Real),

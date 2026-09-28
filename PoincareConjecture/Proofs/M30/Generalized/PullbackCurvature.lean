@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M30.Generalized.OrdinaryCurvature
 import PoincareConjecture.Proofs.M30.Generalized.OrdinaryNegativeDefect
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture.M30.Cylinder
-
-
-
 
 theorem curvature_of_pullbackFlow
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import Mathlib.LinearAlgebra.BilinearForm.Properties
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -156,4 +150,3 @@ theorem curvatureTensorNorm_eq_zero_of_nonnegativeSectionalAt_scalar_zero
     curvatureTensor_eq_zero_of_nonnegativeSectionalAt_scalar_zero D x hsec hscalar]
 
 end PoincareConjecture.M04
-

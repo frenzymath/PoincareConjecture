@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boun
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.EnergyFlow
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Regularity.Tangential
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,8 +74,6 @@ private theorem heatPower_memWkp_on_precompact
       (hW.inter hH) hWHc (ih hW hWc hWU (k + 1) t ht f) B.smooth_c
     exact (BoundaryTangential.memWkp_add_two_of_local_weakEquation r B hW hV hVc hVW
       hu0 hf heq).le_succ
-
-
 
 theorem exists_local_heatPower_memWkp (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :

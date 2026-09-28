@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ProjectedWeightedEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.RampLabelPairLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 local notation "Strip" => preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
-
-
 
 theorem auxiliaryCircle_free_labels_continuous_limit
     (P : M62.CircleProductData F circumference)

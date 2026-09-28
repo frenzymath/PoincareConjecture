@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_polygon_map_eventuallyEq_side_of_cell_interior
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
@@ -52,10 +37,6 @@ theorem m64_polygon_map_eventuallyEq_side_of_cell_interior
   have hc := polygon.cell_agreement j (p 0 - m63CellLeft N j) hs
   convert hc using 1
   ring_nf
-
-
-
-
 
 theorem m64_interpolator_map_eventuallyEq_cell_extension
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

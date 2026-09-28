@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

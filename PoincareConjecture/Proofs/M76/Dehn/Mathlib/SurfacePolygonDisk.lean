@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.PLSpherePolygonCut
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularHalfBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem exists_point_outside_polygon_of_pure
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
@@ -56,10 +43,6 @@ theorem exists_point_outside_polygon_of_pure
         Finset.card_insert_le _ _
       _ = 2 := by simp
   omega
-
-
-
-
 
 theorem exists_roof_sphere_polygon_disks
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

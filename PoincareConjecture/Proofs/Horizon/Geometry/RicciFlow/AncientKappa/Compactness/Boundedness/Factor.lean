@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGradient.AncientFactor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Construction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +22,6 @@ open RiemannianMetric
 variable {M : Type} [TopologicalSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_round_surface_factor_of_persistent_parallel_coordinate
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)
@@ -106,9 +89,6 @@ theorem exists_round_surface_factor_of_persistent_parallel_coordinate
       (fun z => Φ z.2 (zeroLevelIncl f z.1)) := funext he
   rw [heq]
   exact gradientFlow_product_metric hf (hu t ht) (hz t ht) hs hΦt h0 z v w
-
-
-
 
 theorem exists_compact_round_surface_product_of_minimizing_line
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)

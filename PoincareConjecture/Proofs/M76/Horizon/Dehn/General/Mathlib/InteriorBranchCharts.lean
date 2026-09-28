@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.InteriorContactFaces
 import PoincareConjecture.Proofs.M76.Dehn.OriginalTwoBranchWindows
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -87,7 +83,6 @@ theorem exists_two_branch_chart_of_carrier_chart
         rwa [congrFun w.right_eq x] at hxy
     rw [hright, hvalue]
     exact hTK (Q y) hy.2.1
-
 
 theorem exists_swapped_crossing_chart
     {Y ι : Type*} [TopologicalSpace Y]

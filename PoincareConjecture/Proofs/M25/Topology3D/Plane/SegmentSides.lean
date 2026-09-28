@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.BendGraph
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalGraphSides
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_local_graph_two_segments (hdim : Module.finrank ℝ E = 2)
     {q a b : E} (ha : a ≠ q) (hb : b ≠ q)
@@ -55,8 +43,6 @@ theorem exists_local_graph_two_segments (hdim : Module.finrank ℝ E = 2)
       (f z).2 = bendGraph (f a) (f b) (f z).1
     rw [mem_union, hmem a z, hmem b z, ← mem_union]
     exact hgraph (f z) hz
-
-
 
 theorem hasLocalTwoSides_of_locally_two_segments (hdim : Module.finrank ℝ E = 2)
     {C : Set E} (hloc : ∀ q ∈ C, ∃ a b : E, a ≠ q ∧ b ≠ q ∧

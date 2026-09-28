@@ -1,12 +1,5 @@
 import PoincareConjecture.Statements.M50FinitePrefix
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -14,9 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m50SelectedLoss_from_M49
     (V49 : RepairedVolumeLossTheory.{u}) (V50 : RepairedFinitePrefixTheory.{u})

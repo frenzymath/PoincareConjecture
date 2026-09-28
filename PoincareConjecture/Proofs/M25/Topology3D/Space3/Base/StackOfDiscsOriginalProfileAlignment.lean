@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsSelectedScaleEvolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackOriginalProfileAlignment
     (P : SurgeryCapProfile) (rFlat rOne v0 v1 : ℝ)

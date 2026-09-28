@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,8 +21,6 @@ local instance sequenceTermT2Space : T2Space B.carrier.carrier := B.carrier.t2Sp
 local instance sequenceTermT3Space : T3Space B.carrier.carrier := B.carrier.t3Space
 local instance sequenceTermSecondCountable : SecondCountableTopology B.carrier.carrier := B.carrier.secondCountable
 local instance sequenceTermConnectedSpace : ConnectedSpace B.carrier.carrier := B.connectedSpace
-
-
 
 theorem exists_whole_past_curvature_bound
     (P : M23NormalizedKappaCompactnessPredecessors) :
@@ -59,8 +48,6 @@ local instance sequenceCarrierConnected (C : FlowCarrier 3) : ConnectedSpace C.c
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
 
-
-
 theorem allTimeCurvatureControl_of_eventually
     (P : M23NormalizedKappaCompactnessPredecessors)
     (heventual : ∀ r : ℝ, 0 < r → ∃ C : ℝ, 0 ≤ C ∧ ∀ᶠ k in atTop,
@@ -87,8 +74,6 @@ theorem allTimeCurvatureControl_of_eventually
     exact (hbound k t ht x).trans
       ((Finset.single_le_sum (fun j _ ↦ hB j) hkN).trans (le_add_of_nonneg_left hC))
 
-
-
 theorem allTimeCurvatureControl_of_expanding_balls
     (P : M23NormalizedKappaCompactnessPredecessors) (L : ℕ → ℝ)
     (hL : Tendsto L atTop atTop) {C : ℝ} (hC : 0 ≤ C)
@@ -112,10 +97,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 local instance varyingSequenceCarrierConnected (C : FlowCarrier 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
-
-
-
-
 
 theorem m23_exists_controlled_sequence_of_unbounded_curvature_scale
     (P : M23NormalizedKappaCompactnessPredecessors)

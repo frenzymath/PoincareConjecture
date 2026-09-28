@@ -10,8 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
-
 theorem ComponentBranchModel.exists_local_branch_inverses
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -121,8 +119,6 @@ theorem ComponentBranchModel.exists_local_branch_inverses
     · intro a ha
       have haT := hTsource.symm.subset ha
       exact ⟨haT, C.whole_preimage.subset ⟨hTD haT, hTC haT⟩⟩
-
-
 
 theorem ComponentBranchModel.exists_star_branch_inverses
     {X ι : Type*} [TopologicalSpace X]

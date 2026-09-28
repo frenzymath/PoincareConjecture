@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HomotopyLoopWhisker
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredLoopSplit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousMap.Homotopy
-
-
-
-
 
 theorem whiskeredLoopClass_eq {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y] {f g : C(X, Y)}

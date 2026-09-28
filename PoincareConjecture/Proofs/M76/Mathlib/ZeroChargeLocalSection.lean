@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalSegments
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +9,6 @@ open scoped Topology
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.exists_local_polygon_of_nonisolated
     {S : Set E} (h : HasAlexanderCurvePresentation S 0)
@@ -72,10 +59,6 @@ theorem HasAlexanderCurvePresentation.exists_local_polygon_of_nonisolated
       exact hx j hxj
   · exact fun hxP => hsub hxP
 
-
-
-
-
 theorem HasAlexanderCurvePresentation.exists_local_segments_of_nonisolated
     {S : Set E} (h : HasAlexanderCurvePresentation S 0)
     {q : E} (hq : q ∈ S) (hacc : q ∈ closure (S \ {q})) :
@@ -89,10 +72,6 @@ theorem HasAlexanderCurvePresentation.exists_local_segments_of_nonisolated
   refine ⟨u, v, hu, hv, hinter, hpair.trans hsub, ?_⟩
   filter_upwards [hlocal, hnear] with x hx hy
   exact hx.trans hy
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.local_germ_alternatives
     {S : Set E} (h : HasAlexanderCurvePresentation S 0) {q : E} (hq : q ∈ S) :

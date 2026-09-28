@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.BoundaryInteriorOldGerms
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalCrossingLink
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology
@@ -175,4 +166,3 @@ theorem OriginalGeneralPositionData.boundary_interior_link_sections
         _ < 0 := hvneg⟩
 
 end Geometry.OriginalPLTower
-

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Se
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexExtremeFaces
 import PoincareConjecture.Proofs.M76.Mathlib.ExtremeSegmentIntersections
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem triangleSliceGraph_segment_inter (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

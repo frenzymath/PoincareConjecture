@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalar
 import Mathlib.Topology.Order.MonotoneConvergence
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_canonicalFailureSlabLimit (hC : RicciFlowCurvatureTheory.{u})
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F} {T0 r : ℝ}

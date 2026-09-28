@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.SourceCharts.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,15 +22,10 @@ private noncomputable def partialStageUnitBallMap (k j : ℕ) (hjk : j ≤ k) (l
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : M k :=
   (cover k j hjk).unitBallMap ⟨l % (N j + 1), Nat.mod_lt _ (Nat.succ_pos _)⟩ x
 
-
-
-
 noncomputable def partialUnitBallMap (k i : ℕ)
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : M k :=
   partialStageUnitBallMap cover k (min (Nat.unpair i).1 k) (min_le_right _ _)
     (Nat.unpair i).2 x
-
-
 
 theorem partialUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
     partialUnitBallMap cover k i =
@@ -51,15 +35,11 @@ theorem partialUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
   simp only [partialUnitBallMap, min_eq_left hik]
   rfl
 
-
-
 theorem partialUnitBallMap_pair (k j : ℕ) (hjk : j ≤ k) (l : Fin (N j + 1)) :
     partialUnitBallMap cover k (Nat.pair j l) = (cover k j hjk).unitBallMap l := by
   funext x
   simp only [partialUnitBallMap, Nat.unpair_pair, min_eq_left hjk]
   simp only [partialStageUnitBallMap, Nat.mod_eq_of_lt l.isLt]
-
-
 
 theorem partialUnitBallMap_zero (k : ℕ) :
     partialUnitBallMap cover k 0 ⟨0, by simp⟩ = p k := by
@@ -68,8 +48,6 @@ theorem partialUnitBallMap_zero (k : ℕ) :
   simp only [NormalChartCover.unitBallMap, smul_zero]
   exact ((cover k 0 (Nat.zero_le k)).map_zero 0).trans
     (cover k 0 (Nat.zero_le k)).centre_zero
-
-
 
 theorem partialUnitBallMap_isLocalDiffeomorph
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
@@ -80,14 +58,10 @@ theorem partialUnitBallMap_isLocalDiffeomorph
     IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (partialUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isLocalDiffeomorph (hρ _) (hρR _) _
 
-
-
 theorem partialUnitBallMap_isOpenEmbedding
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
     Topology.IsOpenEmbedding (partialUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isOpenEmbedding (hρ _) (hρR _) _
-
-
 
 theorem metric_ball_eq_of_riemannian_edist
     (hdist : ∀ k (x y : M k), edist x y = (g k 0).edist x y)
@@ -95,8 +69,6 @@ theorem metric_ball_eq_of_riemannian_edist
   ext y
   change dist y x < s ↔ (g k 0).edist x y < ENNReal.ofReal s
   rw [← hdist, edist_dist, ENNReal.ofReal_lt_ofReal_iff_of_nonneg dist_nonneg, dist_comm]
-
-
 
 theorem partialUnitBallMap_distance_bounds
     (hdist : ∀ k (x y : M k), edist x y = (g k 0).edist x y)
@@ -138,9 +110,6 @@ theorem partialUnitBallMap_distance_bounds
     rw [hreal] at h
     exact (mul_le_mul_of_nonneg_right (Finset.inf'_le lower hj) dist_nonneg).trans h
 
-
-
-
 theorem partialUnitBallMap_eventual_radius
     (hdist : ∀ k (x y : M k), edist x y = (g k 0).edist x y)
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j)
@@ -169,8 +138,6 @@ theorem partialUnitBallMap_eventual_radius
   exact (dist_triangle _ (C.centre l) _).trans
     (add_le_add hcentre.le (hradial.le.trans
       (mem_ball_zero_iff.mp (NormalChartCover.rescale_mem_half_ball (hρ j) x)).le))
-
-
 
 theorem partialUnitBallMap_compact_cover
     (hdist : ∀ k (x y : M k), edist x y = (g k 0).edist x y)

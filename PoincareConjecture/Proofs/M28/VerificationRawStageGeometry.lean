@@ -3,15 +3,7 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.PartialDi
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialGeometry
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallMetricIdentity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.M28 PoincareConjecture.M28.CounterexampleNeckFamily
 open PoincareConjecture.Proofs.M28.NeckTransfer
-

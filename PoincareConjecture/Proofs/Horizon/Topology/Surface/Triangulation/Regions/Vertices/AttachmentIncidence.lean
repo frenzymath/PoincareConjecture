@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.IncidentCaps
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -99,8 +89,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_cap_radial_attachment
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

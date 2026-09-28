@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.MetricChange
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.Error
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -25,8 +23,6 @@ theorem doubled_accuracy_order_le (N : SingularRoundComponent g epsilon) :
     ⌊(2 * epsilon)⁻¹⌋₊ ≤ ⌊epsilon⁻¹⌋₊ :=
   Nat.floor_mono ((inv_le_inv₀ (mul_pos (by norm_num) N.epsilon_pos) N.epsilon_pos).2
     (by linarith [N.epsilon_pos]))
-
-
 
 def changeMetric (N : SingularRoundComponent g epsilon) (h : RiemannianMetric 3 M)
     (herror : ∀ x : N.model.carrier,

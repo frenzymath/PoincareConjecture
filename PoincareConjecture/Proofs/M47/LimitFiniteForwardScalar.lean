@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseShiftedSearch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem limitFinite_cylinder_scalar_forward
     {F : SurgeryFlowData.{u}} {Z : GeneralizedSliceCarrier.{u}}
@@ -101,8 +90,6 @@ variable (S : RepairedControlledSchedulesData.{u})
     F.parameters.delta t ≤ B.delta S.setup.standard_initial S.constants)
 
 include hInitial hConstants hC hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap
-
-
 
 theorem limitFinite_shifted_forward_scalar_bound
     (P : M44CapPersistencePredecessors.{u})
@@ -186,8 +173,6 @@ theorem limitFinite_shifted_forward_scalar_bound
   have hcancel : Q * (s / Q) = s := by field_simp
   rw [hread (s / Q) hs', hcancel, cylinderScalar_of_mem e x s hs, hrhoSq] at h
   simpa only [mul_assoc] using h
-
-
 
 theorem limitFinite_shifted_forward_curvature_bounds
     (P : M46Predecessors.{u})

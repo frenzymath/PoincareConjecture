@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Topology.TwistedLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Product.StrongNeck
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,16 +15,12 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
 
-
-
 def CoreNormalizedCurvatureTrichotomy : Prop :=
   ∀ (kappa : ℝ) (K : BasedKappaSolution kappa),
     (∀ t, t ≤ 0 → (K.flow.flow.connection t).StrictlyPositiveSectionalCurvature) ∨
       Nonempty (M27SphereLineFlowCertificate K.flow) ∨
       Nonempty (M27ProjectivePlaneLineFlowCertificate K.flow) ∨
       Nonempty (M27TwistedSphereLineFlowCertificate K.flow)
-
-
 
 theorem M23TerminalExtension.positiveSectionalCurvature_of_pointSouls
     (htrichotomy : CoreNormalizedCurvatureTrichotomy)

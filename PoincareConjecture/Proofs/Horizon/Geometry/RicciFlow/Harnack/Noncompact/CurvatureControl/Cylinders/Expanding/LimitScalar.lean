@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.ScalarTime
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.SmallProperties
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,9 +64,6 @@ theorem exists_buffered_limit_scalar_normalization_constant
       with k hk
     change 1 ≤ A (G.subsequence k) at hk
     exact hbase (G.subsequence k) (-δ) ⟨by linarith, by linarith⟩
-
-
-
 
 theorem exists_buffered_limit_scalar_normalization_constant_universal
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m) :

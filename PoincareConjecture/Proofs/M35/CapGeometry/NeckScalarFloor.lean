@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureScale
 import PoincareConjecture.Proofs.M35.CapGeometry.CoreBallVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +17,6 @@ private theorem cylinderChart_zero (q : UnitTwoSphere) : cylinderChart q 0 = (q,
       (mem_chart_source (EuclideanSpace ℝ (Fin 2)) q)
     simpa only [sphere_chart_center, Prod.fst_zero] using h
   · rfl
-
-
-
 
 theorem exists_cylinder_curvature_lower_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -74,9 +62,6 @@ theorem exists_cylinder_curvature_lower_bound :
   have hle := hsmall n
   rw [← hnorm n] at hle
   exact (not_lt_of_ge hle) hn
-
-
-
 
 theorem exists_scaled_nonnegative_cylinder_scalar_floor (P : RicciFlowCurvatureTheory.{0}) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

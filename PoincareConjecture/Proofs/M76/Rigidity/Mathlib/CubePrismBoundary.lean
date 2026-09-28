@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.ParameterPrismDomain
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,25 +13,18 @@ local notation "E" => (V2 × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
-
 def cubePrismBoundary (a b : ℝ) : Set E :=
   (Q ×ˢ Icc a b) ∪ (D ×ˢ ({a, b} : Set ℝ))
-
-
 
 theorem isFinitePLBallPair_cubePrism {a b : ℝ} (hab : a < b) :
     IsFinitePLBallPair E (D ×ˢ Icc a b) (cubePrismBoundary a b) :=
   (isFinitePLBallPair_unit_cube (ι := Fin 2)).prod (isFinitePLBallPair_Icc hab)
-
-
 
 theorem frontier_cubePrism {a b : ℝ} (hab : a ≤ b) :
     frontier (D ×ˢ Icc a b) = cubePrismBoundary a b := by
   rw [frontier_prod_eq, isClosed_closedBall.closure_eq, isClosed_Icc.closure_eq,
     frontier_closedBall _ one_ne_zero, frontier_Icc hab, union_comm]
   rfl
-
-
 
 theorem exists_finite_cubePrismBoundary {a b : ℝ} (hab : a < b) :
     ∃ K : SimplicialComplex ℝ E,
@@ -55,8 +40,6 @@ theorem exists_finite_cubePrismBoundary {a b : ℝ} (hab : a < b) :
   rw [K.frontierSubcomplex_space (isClosed_closedBall.prod isClosed_Icc)
     ((convex_closedBall _ _).prod (convex_Icc a b)) hne hKS,
     frontier_cubePrism hab.le]
-
-
 
 theorem exists_finite_cubePrismCap (t : ℝ) :
     ∃ K : SimplicialComplex ℝ E,
@@ -78,8 +61,6 @@ theorem exists_finite_cubePrismCap (t : ℝ) :
     exact ⟨hx, rfl⟩
   · intro hz
     exact ⟨z.1, hz.1, Prod.ext rfl (show t = z.2 from hz.2.symm)⟩
-
-
 
 theorem exists_finite_unitCubeSphere {ι : Type*} [Fintype ι] :
     ∃ K : SimplicialComplex ℝ (ι → ℝ),

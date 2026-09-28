@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -27,8 +19,6 @@ private theorem minimizing_curves_eqOn_of_endpoint_eq {y z : G.Point}
   cases h
   exact hunique q hq
 
-
-
 theorem stable_endpoint_injective {E : M14ExponentialFamily G T x}
     (H : M14StableSet G T τ x E) : Set.InjOn H.endpoint_map H.carrier := by
   intro Z hZ W hW heq
@@ -42,8 +32,6 @@ theorem stable_endpoint_injective {E : M14ExponentialFamily G T x}
   apply initialVector_eq_of_backward_branches_eqOn E
     (H.survivor Z hZ) (H.survivor W hW) (Real.sqrt_pos.mpr H.tau_pos)
   simpa only [Real.sq_sqrt H.tau_pos.le] using hbranch
-
-
 
 theorem stable_slice_endpoint_injective {E : M14ExponentialFamily G T x}
     (H : M14StableSet G T τ x E) : Set.InjOn H.endpoint_slice_map H.carrier := by

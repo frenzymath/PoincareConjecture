@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SphereContact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.FrontierQuarter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -264,8 +254,6 @@ theorem overlap_subset_successor_three_quarters
   · linarith [hy.2.2]
   · rw [heq] at haxis
     linarith
-
-
 
 theorem exists_frontier_reversal_balanced_overlap :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

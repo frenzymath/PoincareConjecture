@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroTraceC1
 import PoincareConjecture.Proofs.M64.Mathlib.ConformalTransverseBound
 import PoincareConjecture.Proofs.M64.Mathlib.TransverseProjection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +13,6 @@ open scoped ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Conformal_transverse_contDiffOn {N : ℕ} {R C H beta Lambda lower upper : ℝ}
     (hR : 0 < R) (u : LoopPlane → EuclideanSpace ℝ (Fin N))

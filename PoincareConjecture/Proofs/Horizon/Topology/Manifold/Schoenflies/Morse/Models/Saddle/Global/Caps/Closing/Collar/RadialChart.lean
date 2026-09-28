@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.SphereProjection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,15 +14,12 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
 
-
 theorem sphereProjection_pos_smul (q : S2) {t : Real} (ht : 0 < t) :
     sphereProjection (t • (q : E3)) = q := by
   apply Subtype.ext
   rw [sphereProjection_coe (smul_ne_zero ht.ne' (ne_zero_of_mem_unit_sphere q)),
     norm_smul, Real.norm_eq_abs, abs_of_pos ht, norm_eq_of_mem_sphere q, mul_one,
     smul_smul, inv_mul_cancel₀ ht.ne', one_smul]
-
-
 
 def radialDiskChart (m : OpenPartialHomeomorph E2 S2)
     (hm : ContMDiffOn (𝓡 2) (𝓡 2) ∞ m m.source)

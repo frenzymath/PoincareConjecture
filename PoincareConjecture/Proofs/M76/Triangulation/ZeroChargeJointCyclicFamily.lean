@@ -8,16 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlabComplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -27,10 +17,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] {n : ℕ}
-
-
-
-
 
 theorem exists_original_collar_of_cyclic_boxes
     (P : Polygon V (n + 3)) (t : Fin (n + 3) → ℝ)
@@ -70,9 +56,6 @@ theorem exists_original_collar_of_cyclic_boxes
   obtain ⟨tau, htau, hband⟩ := P.exists_surface_band_subset_original_neighborhood
     hS isOpen_interior hneighborhood A c hA hsection heta
   exact ⟨tau, htau, G, hG, hGheight, hGsurface, hGcore, hband.trans interior_subset⟩
-
-
-
 
 theorem exists_joint_cylinder_of_cyclic_boxes
     (P : Polygon V (n + 3)) (hP : P.HasSimplicialEdges)
@@ -121,10 +104,6 @@ theorem exists_joint_cylinder_of_cyclic_boxes
   refine ⟨epsilon, ⟨hepsilon.1, ?_⟩, K, hK, hKconvex, hdK, hcoreK,
     e, he, heheight, hestart, hesection, heband⟩
   exact (hepsilon.2.trans_le (min_le_right _ _)).trans htau.2
-
-
-
-
 
 theorem exists_joint_cylinder_of_actual_cut_boxes
     (P : Polygon V (n + 3)) (hP : P.HasSimplicialEdges)

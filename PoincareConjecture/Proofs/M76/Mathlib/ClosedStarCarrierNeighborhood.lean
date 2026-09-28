@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +8,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem closedFaceStar_mem_nhds_of_intrinsicInterior (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {s : Finset E} (hs : s ∈ K.faces)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicInverseTime
 import PoincareConjecture.Proofs.M35.RawFlow.AxisAngularRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -72,8 +63,6 @@ theorem rawWarpingRadius_deriv_hasDerivAt {t s : ℝ} (ht : t ∈ Ico 0 G.lifeti
   rw [rawWarpingRadius_eq P G hrotation ht, rawInverseRadius_eq P G hrotation ht]
   exact intrinsicWarpingRadius_deriv_hasDerivAt (G.flow.metric t) (hrotation t ht)
     (G.complete P ht) hs
-
-
 
 theorem rawWarpingRadius_hasDerivAt_time {t s : ℝ}
     (ht : t ∈ Ioo 0 G.lifetime) (hs : 0 < s) :

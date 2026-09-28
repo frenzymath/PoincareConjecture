@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergy
 import PoincareConjecture.Proofs.M40.Mathlib.SmoothingCharts
 import Mathlib.Geometry.Manifold.Metrizable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +16,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem suC1_exists_smooth_density_approximation
     (g : RiemannianMetric n M) (f₀ : C(UnitTwoSphere, M))
@@ -89,9 +78,6 @@ theorem suC1_exists_smooth_density_approximation
   obtain ⟨i, hi⟩ := hcover x
   exact hh i (Finset.mem_univ i) x hi
 
-
-
-
 theorem suC1_exists_smooth_energy_approximation
     (g : RiemannianMetric n M) (f : C(UnitTwoSphere, M))
     (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) {eta : ℝ} (heta : 0 < eta) :
@@ -115,8 +101,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [SecondCountableTopology M]
-
-
 
 theorem m60SphereEnergy_smooth_infimum (g : RiemannianMetric n M) :
     sInf (m60SphereEnergy g '' {f | ContMDiff (𝓡 2) (𝓡 n) ∞ f ∧
@@ -163,9 +147,6 @@ theorem m60SphereEnergy_smooth_infimum (g : RiemannianMetric n M) :
   · have hTempty := Set.not_nonempty_iff_eq_empty.mp hne
     have hSempty : S = ∅ := subset_eq_empty (hTempty ▸ hST) rfl
     rw [hSempty, hTempty]
-
-
-
 
 theorem m60SphereArea_smooth_energy_infimum (g : RiemannianMetric n M) :
     sInf (m60SphereArea g '' {f | ContMDiff (𝓡 2) (𝓡 n) 1 f ∧

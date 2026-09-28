@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCoordinateMomentum
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathSubstitution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -55,9 +46,6 @@ private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem squarePath_gauge_momentum_fixed_window
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,23 +1,10 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
-
-
-
 
 theorem StrictMonoOn.exists_smooth_openInterval_chart
     {f : ℝ → ℝ} {a b : ℝ}

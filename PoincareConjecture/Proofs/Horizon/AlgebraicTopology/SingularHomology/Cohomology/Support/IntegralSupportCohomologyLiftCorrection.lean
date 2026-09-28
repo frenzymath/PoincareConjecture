@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.Support.IntegralSupportCohomologyMV
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.HomologicalAlgebra.ModuleComplexHomologyClass
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

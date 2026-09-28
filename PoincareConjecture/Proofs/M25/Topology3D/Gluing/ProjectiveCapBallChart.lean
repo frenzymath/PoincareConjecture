@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCapEnds
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesCompactSide
 import PoincareConjecture.Proofs.M25.Mathlib.CompactFrontierUniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificate_exists_projective_buffered_ball_chart
     (hS : SchoenfliesService)

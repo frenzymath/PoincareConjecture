@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OneDimensional.Period
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.FlatCircleCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +19,6 @@ namespace Poincare.Geometry.Manifold.OneDimensional
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
-
 
 theorem nonempty_diffeomorph_of_periodic_line
     {T : ℝ} [ChartedSpace (EuclideanSpace ℝ (Fin 1)) (AddCircle T)]
@@ -88,10 +73,6 @@ theorem nonempty_diffeomorph_of_periodic_line
     exact hderiv t
   exact ⟨(Poincare.isLocalDiffeomorph_of_contMDiff_bijective_mfderiv
     hFsmooth hFderiv).diffeomorphOfBijective hFbij⟩
-
-
-
-
 
 theorem exists_addCircle_diffeomorph_of_compact_connected
     [T3Space M] [CompactSpace M] [ConnectedSpace M]

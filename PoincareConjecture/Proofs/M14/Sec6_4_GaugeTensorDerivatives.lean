@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.CurvatureTransport
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +19,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 theorem horizontalRicciDerivativePairing_eq_slice (q : G.Point) {t : ℝ}
     (ht : G.spacetime.timeFunction q = t) (U V W : G.Horizontal q) :
     M14HorizontalRicciDerivativePairing G q U V W =
@@ -41,8 +29,6 @@ theorem horizontalRicciDerivativePairing_eq_slice (q : G.Point) {t : ℝ}
           ((G.slices t).tangentEquiv ⟨q, ht⟩).symm W] := by
   subst t
   rfl
-
-
 
 theorem horizontalHessianPairing_eq_slice (q : G.Point) {t : ℝ}
     (ht : G.spacetime.timeFunction q = t) (U V : G.Horizontal q) :
@@ -75,9 +61,6 @@ private theorem gauge_slice_invertible (t : T.Point) (x : C) :
     (mfderiv (𝓡 n) (𝓡 n) (movingGaugeSliceMap e G.slices t) x).IsInvertible := by
   rw [← (H.slice_localDiffeomorph t).mfderivToContinuousLinearEquiv_coe (by simp) x]
   exact ContinuousLinearMap.isInvertible_equiv
-
-
-
 
 theorem movingGauge_ricciDerivativePairing (t : T.Point) (x : C)
     (U V W : TangentSpace (𝓡 n) x) :
@@ -118,8 +101,6 @@ theorem movingGauge_ricciDerivativePairing (t : T.Point) (x : C)
   funext i
   fin_cases i <;> rfl
 
-
-
 theorem movingGauge_horizontalHessianPairing
     (hscalar : ContMDiff (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞
       (horizontalScalarCurvature G.leafwise)) (t : T.Point) (x : C)
@@ -157,9 +138,6 @@ theorem movingGauge_horizontalHessianPairing
       (((G.slices t.val).tangentEquiv (f x)).symm (g.spatialTangentEquiv t x V))
   rw [gauge_slice_inverse_tangent H t x U, gauge_slice_inverse_tangent H t x V, heq]
   exact hh
-
-
-
 
 theorem movingGauge_bcalPairing (t : T.Point) (x : C)
     (U V W : TangentSpace (𝓡 n) x) :

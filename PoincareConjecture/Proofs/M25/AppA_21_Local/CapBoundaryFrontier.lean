@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CappedChainFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.boundary_subset_or_positive_chain_frontier
     {M : Type u} [TopologicalSpace M]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessClosed
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem c2ShrinkingCurve_unique_closed (F : RicciFlow n M (Icc a b))
     (hcompact : IsCompact (univ : Set M))
@@ -42,10 +28,6 @@ theorem c2ShrinkingCurve_unique_closed (F : RicciFlow n M (Icc a b))
   obtain ⟨U, ρ, hU, heU, hρ, hρe, _hmin, _huniq⟩ :=
     exists_smooth_compact_embedded_retraction e hemb he hinj
   exact c2ShrinkingCurve_unique_closed_of_retraction he hU heU hρ hρe hc hd hinit
-
-
-
-
 
 theorem c2ShrinkingCurve_unique_half_open (F : RicciFlow n M (Icc a b))
     (hcompact : IsCompact (univ : Set M))

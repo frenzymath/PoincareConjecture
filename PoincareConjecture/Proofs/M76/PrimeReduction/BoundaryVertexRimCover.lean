@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeOverlap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,7 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 omit [Fintype L.faces] in
 open Classical in
-
 
 theorem boundary_edge_dual_subset_vertex_link (hLK : L ≤ K)
     {p : E} (hp : p ∈ L.vertices) {s : Finset E} (hsc : s.card = 2) (hps : p ∈ s) :
@@ -36,7 +27,6 @@ theorem boundary_edge_dual_subset_vertex_link (hLK : L ≤ K)
     space_subset_of_le (K.barycentricDualBlock_le_link_of_ssubset (hLK hp) hstrict)
 
 open Classical in
-
 
 theorem boundary_vertex_rim_eq_iUnion_edges (hLK : L ≤ K)
     {p : E} (hp : p ∈ L.vertices) :

@@ -3,23 +3,11 @@ import Mathlib.LinearAlgebra.Basis.Fin
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M25.Topology3D
 
 open Module
-
-
 
 theorem exists_linearEquiv_map_pair {K E : Type*} [Field K] [AddCommGroup E]
     [Module K E] [FiniteDimensional K E] (hdim : Module.finrank K E = 2)
@@ -34,8 +22,6 @@ theorem exists_linearEquiv_map_pair {K E : Type*} [Field K] [AddCommGroup E]
     simp
   · rw [← hb1]
     simp
-
-
 
 theorem exists_continuousAffineEquiv_map_triangle {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

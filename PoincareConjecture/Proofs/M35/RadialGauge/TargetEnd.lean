@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.FullForcingDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
 
 theorem radialTargetCoupling_tendsto_zero {f₀ : ℝ → ℝ} {L : ℝ}
     (hf : Tendsto f₀ atTop (𝓝 L))
@@ -24,8 +14,6 @@ theorem radialTargetCoupling_tendsto_zero {f₀ : ℝ → ℝ} {L : ℝ}
   change Tendsto (fun r => f₀ r * deriv f₀ r / r) atTop (𝓝 0)
   have h := (hf.mul hdf).mul ((tendsto_id : Tendsto (fun r : ℝ => r) atTop atTop).const_div_atTop 1)
   simpa only [one_div, div_eq_mul_inv, mul_zero, id_eq, one_mul] using h
-
-
 
 theorem radialTargetCoupling_weighted_derivative_tendsto_zero
     {f₀ : ℝ → ℝ} (hfs : ContDiff ℝ ∞ f₀) {L : ℝ}
@@ -41,8 +29,6 @@ theorem radialTargetCoupling_weighted_derivative_tendsto_zero
   rw [(radialTargetCoupling_hasDerivAt hfs hrp.ne').deriv]
   unfold radialTargetCoupling
   field_simp [hrp.ne']
-
-
 
 theorem radialTargetCoupling_uniform_tail
     {f₀ : ℝ → ℝ} (hfs : ContDiff ℝ ∞ f₀) {L : ℝ}

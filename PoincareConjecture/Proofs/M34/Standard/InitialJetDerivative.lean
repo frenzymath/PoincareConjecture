@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.InitialDerivativeExtension
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,16 +14,12 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
 
-
-
 noncomputable def initialJointJetDerivative (n : ℕ) (Q : Jet E V n → V)
     (f : ℝ × E → V) (j : ℕ) (p : ℝ × E) :
     ℝ × E →L[ℝ] E [×j]→L[ℝ] V :=
   timeLift (E := E) (operator n Q j (spatialJet (n + j) f p)) +
     spaceLift ((continuousMultilinearCurryLeftEquiv ℝ (fun _ : Fin (j + 1) => E) V)
       (iteratedFDeriv ℝ (j + 1) (fun x => f (p.1, x)) p.2))
-
-
 
 theorem contDiffOn_initialJointJetDerivative
     {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}
@@ -56,8 +43,6 @@ theorem contDiffOn_initialJointJetDerivative
     ((spaceLift (E := E) (V := E [×j]→L[ℝ] V)).contDiff.comp_contDiffOn
       (hcurry.comp_contDiffOn (hjets (j + 1))))
 
-
-
 theorem hasFDerivAt_initialJointJetDerivative
     {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}
     (hΩ : IsOpen Ω) (hQ : ContDiffOn ℝ ∞ Q Ω)
@@ -79,8 +64,6 @@ theorem hasFDerivAt_initialJointJetDerivative
       hrange hevol j hp]
     rfl
   simpa only [heq] using hd.hasFDerivAt
-
-
 
 theorem hasFDerivWithinAt_initialJointJetDerivative
     {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}

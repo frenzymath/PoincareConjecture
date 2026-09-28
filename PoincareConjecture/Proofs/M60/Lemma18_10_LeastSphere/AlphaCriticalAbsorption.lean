@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalWeakTes
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 import Mathlib.Analysis.MeanInequalitiesPow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +17,6 @@ noncomputable section
 namespace PoincareConjecture.M60
 
 private abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem suNaturalGrowth_potential_bound
     {n : ℕ} {p q : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) (hq : 1 ≤ q)
@@ -137,8 +126,6 @@ theorem suNaturalGrowth_potential_bound
     hLT, sub_self, zero_add, integral_const_mul, integral_const_mul] at hbound
   exact hbound
 
-
-
 def suAlphaFlux {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (c alpha : ℝ) (v : E) : E →L[ℝ] ℝ :=
   (2 * alpha * (c + B v v) ^ (alpha - 1)) • B v
@@ -162,9 +149,6 @@ theorem suAlphaFlux_hasFDerivAt
   ext w
   simp only [suAlphaFlux, smul_apply, smul_eq_mul]
   ring
-
-
-
 
 theorem suAlphaFlux_weighted_monotone
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -219,8 +203,6 @@ theorem suAlphaFluxLinearization_hasFDerivAt
     ring
   simpa only [suAlphaFlux, suAlphaFluxLinearization, Pi.smul_def, heq] using! hd
 
-
-
 theorem suAlphaFluxLinearization_lower
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (hB : ∀ v, 0 ≤ B v v)
@@ -234,8 +216,6 @@ theorem suAlphaFluxLinearization_lower
   simpa only [suAlphaFluxLinearization, add_apply, smul_apply, smul_eq_mul,
     ContinuousLinearMap.smulRight_apply, pow_two, mul_assoc] using
     le_add_of_nonneg_right (a := 2 * alpha * (c + B v v) ^ (alpha - 1) * B w w) hp
-
-
 
 theorem suAlphaFluxLinearization_norm
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -297,9 +277,6 @@ theorem suAlphaFluxLinearization_norm
   simp only [div_eq_mul_inv] at hmul ⊢
   nlinarith only [hn, hnormB, hmul]
 
-
-
-
 theorem suAlphaFlux_weighted_lipschitz
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) {c alpha κ : ℝ}
@@ -345,9 +322,6 @@ theorem suAlphaFlux_weighted_lipschitz
       rw [(suAlphaFluxLinearization_hasFDerivAt B hpos hsymm hc alpha z).fderiv]
       exact hb z hz)
     (convex_segment w v) (left_mem_segment ℝ w v) (right_mem_segment ℝ w v)
-
-
-
 
 theorem suWeightedPotential_diffQuot_bound
     {p r t : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤)
@@ -418,10 +392,6 @@ theorem suWeightedPotential_diffQuot_bound
           ring)
       _ = _ := by rw [integral_const_mul, integral_add (hs a ha) (hs b hb)]
   exact ht.trans ((mul_le_mul_of_nonneg_left hestimate hc).trans_eq (by ring))
-
-
-
-
 
 theorem suNaturalGrowth_diffQuot_absorb
     {n : ℕ} {p q r t : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) (hq : 1 ≤ q)
@@ -567,8 +537,6 @@ theorem suNaturalGrowth_diffQuot_absorb
   apply (le_div_iff₀ hν).mpr
   nlinarith
 
-
-
 theorem suWeightedCutoff_diffQuot_bounded
     {p r t : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) [Fact (1 ≤ r)]
     [ENNReal.HolderTriple p p t] [ENNReal.HolderConjugate r t]
@@ -633,8 +601,6 @@ theorem suWeightedCutoff_diffQuot_bounded
   have habs : |∫ x, S x * V x ^ 2| ≤ (CB i).toReal := by
     simpa only [Real.enorm_eq_ofReal_abs, ENNReal.toReal_ofReal (abs_nonneg _)] using ht
   exact (le_abs_self _).trans habs
-
-
 
 theorem suWeakMap_localization {m : ℕ} {p r R : ℝ} (hp : 1 < p) (hrR : r < R)
     {center : LoopPlane} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}

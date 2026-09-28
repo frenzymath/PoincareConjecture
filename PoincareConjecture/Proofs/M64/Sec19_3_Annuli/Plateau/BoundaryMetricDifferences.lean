@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedSource
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalDifferenceQuotient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,10 +24,6 @@ local instance m64MetricDifference_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem m64WeightedMetric_difference_pointwise
     (w : Fin 2 → ℝ) (G0 G1 : E →L[ℝ] E →L[ℝ] ℝ)

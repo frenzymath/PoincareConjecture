@@ -6,10 +6,3 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
-
-
-
-
-
-
-

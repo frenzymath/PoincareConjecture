@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExten
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,16 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -37,8 +21,6 @@ namespace Poincare.Manifold.Schoenflies
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem ball_neighborhood_matching_collar_in_coordinates
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]

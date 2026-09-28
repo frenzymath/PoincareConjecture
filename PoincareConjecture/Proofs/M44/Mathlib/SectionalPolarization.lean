@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.CurvaturePolarization
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -18,9 +9,6 @@ set_option maxSynthPendingDepth 8
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem curvatureForm_planes_zero_of_orthonormal
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
@@ -56,8 +44,6 @@ theorem curvatureForm_planes_zero_of_orthonormal
   have h := horth u w huw
   simpa only [w, map_sub, LinearMap.sub_apply, map_smul, LinearMap.smul_apply,
     smul_eq_mul, hfstzero, hlstzero, mul_zero, sub_zero] using h
-
-
 
 theorem curvatureForm_zero_of_orthonormal
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

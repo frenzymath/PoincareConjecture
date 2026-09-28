@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.LocalDomains
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.SourceSlab
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -54,8 +46,6 @@ theorem sourceSlab_agrees_off_support
     rw [hf]
   · exact iff_of_false (fun h => hxR (sourceSlab_subset psi u v h))
       (fun h => hxR (sourceSlab_subset phi u v h))
-
-
 
 theorem exists_marked_corner_of_supported_map
     {α : Type*} (e : α → OpenPartialHomeomorph X V3)

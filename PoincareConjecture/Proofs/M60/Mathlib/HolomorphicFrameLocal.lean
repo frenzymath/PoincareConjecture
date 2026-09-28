@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.HolomorphicFrame
 import PoincareConjecture.Proofs.M60.Mathlib.HolomorphicFrameCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M60
 
 variable {W : Type*} [NormedAddCommGroup W] [NormedSpace ℂ W]
   [NormedSpace ℝ W] [IsScalarTower ℝ ℂ W]
-
-
 
 theorem cauchyRiemannDerivative_rescale {P : ℂ → W} (hP : Differentiable ℝ P)
     (z₀ : ℂ) (r : ℝ) (z : ℂ) :
@@ -41,10 +30,6 @@ theorem cauchyRiemannDerivative_rescale {P : ℂ → W} (hP : Differentiable ℝ
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V] [CompleteSpace V]
-
-
-
-
 
 theorem exists_local_c1_invertible_frame
     {A : ℂ → V →L[ℂ] V} {O : Set ℂ} (hO : IsOpen O)

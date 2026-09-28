@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.PeriodicFiber
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportedRadialSlide
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TimeCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_smooth_local_inverse_of_add_period
     {L U a b T : ℝ} (ha : L < a) (hb : b < U) (hT : 0 < T)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubeAngle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem eventuallyEq_of_sphereCircleParameter_eq
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,8 +24,6 @@ theorem eventuallyEq_of_sphereCircleParameter_eq
   exact injOn_sphereCircleParameter_Ico e
     (a := f x - Real.pi) (b := f x + Real.pi) (by linarith)
     ⟨hyf.1.le, hyf.2⟩ ⟨hyg.1.le, hyg.2⟩ hyeq
-
-
 
 theorem hasDerivAt_curveTubeAngle_movingCenter
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

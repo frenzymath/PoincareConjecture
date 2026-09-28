@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.CovariantSmooth
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,8 +23,6 @@ private theorem bounded_coordinate_sum {ι β : Type*} [Fintype β]
   rw [iteratedFDeriv_fun_sum_apply (fun b _ =>
     (hc i b).of_le (by exact_mod_cast le_top))]
   exact (norm_sum_le _ _).trans (Finset.sum_le_sum (fun b _ => hC b i))
-
-
 
 theorem hasUniformJetBoundsAt_roundCylinderTensorDerivative
     {ι : Type*} {n r : ℕ} (u : ι → ℝ) (hu : ∀ i, u i < 1)
@@ -85,8 +74,6 @@ theorem hasUniformJetBoundsAt_roundCylinderTensorDerivative
     (fun i b => ContDiffAt.sum (fun c _ => hcP i b c))
   exact hlead.sub hsum hleadC
     (fun i => ContDiffAt.sum (fun b _ => ContDiffAt.sum (fun c _ => hcP i b c)))
-
-
 
 theorem hasUniformJetBoundsAt_roundCylinderIteratedDerivative
     {ι : Type*} (m : ℕ) (epsilon : ι → ℝ) (u : ι → ℝ) (hu : ∀ i, u i < 1)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshMetricE
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.VaryingScaleReadout
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.RawError
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ open tube PoincareConjecture.Proofs.M28.NeckTransfer PoincareConjecture.Proofs.M
 open PoincareConjecture.Proofs.M28.FiniteHessian
 
 set_option maxHeartbeats 3200000 in
-
-
-
 
 theorem exists_retained_fresh_neck
     {epsilon C A : ℝ}
@@ -174,10 +161,6 @@ theorem exists_retained_fresh_neck
   exact ⟨hjk, V.toEpsilonNeck hclose, rfl, hcenterV, hscaleV, hconnection, hcarrier, hmap⟩
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_retained_positive_limit_neck_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

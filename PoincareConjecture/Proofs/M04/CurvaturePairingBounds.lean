@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureEnergyTrace
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -51,4 +44,3 @@ theorem abs_tensorPairing_le_tensorNorm_mul {r : ℕ}
   nlinarith [hsq, abs_nonneg (∑ a : Fin r → Fin d, f a * q a)]
 
 end PoincareConjecture.M04
-

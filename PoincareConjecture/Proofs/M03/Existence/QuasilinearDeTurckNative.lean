@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.SpectralScaleNative
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -31,7 +23,6 @@ variable {iota : Type*} [Countable iota] {T : ℝ}
 private theorem norm_l2_norm (F : ForcingSpace iota T) :
     ‖(Lp.memLp F).norm.toLp (fun t => ‖F t‖)‖ = ‖F‖ := by
   rw [Lp.norm_toLp, eLpNorm_norm, ← Lp.norm_def]
-
 
 theorem norm_le_mixed (F G H K : ForcingSpace iota T) {a b c : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c)
@@ -63,7 +54,6 @@ theorem norm_le_mixed (F G H K : ForcingSpace iota T) {a b c : ℝ}
         Real.norm_eq_abs, abs_of_nonneg ha, abs_of_nonneg hb, abs_of_nonneg hc,
         norm_l2_norm, norm_l2_norm, norm_l2_norm]
 
-
 theorem norm_le_sqrt_time (hT : 0 ≤ T) (F : ForcingSpace iota T) {C : ℝ}
     (hC : 0 ≤ C) (hF : ∀ᵐ t ∂timeMeasure T, ‖F t‖ ≤ C) :
     ‖F‖ ≤ Real.sqrt T * C := by
@@ -79,7 +69,6 @@ theorem norm_le_sqrt_time (hT : 0 ≤ T) (F : ForcingSpace iota T) {C : ℝ}
     _ = _ := by
       simp [timeMeasure, integral_const, Measure.real, Real.volume_Ioc,
         ENNReal.toReal_ofReal hT, smul_eq_mul]
-
 
 theorem intermediate_high_eq_trace (hT : 0 ≤ T) (lambda : iota → NNReal)
     (F : ForcingSpace iota T) :
@@ -137,7 +126,6 @@ theorem norm_intermediate_high_le (hT : 0 ≤ T) (hT1 : T ≤ 1)
         rwa [ht])
   simpa only [mul_left_comm, mul_assoc] using h
 
-
 def finiteHigh (lambda : iota → NNReal) (s : Finset iota) : State iota →L[ℝ] State iota := by
   classical
   have hsum : 0 ≤ ∑ i ∈ s, (1 + (lambda i : ℝ)) :=
@@ -181,7 +169,6 @@ theorem finiteProjection_response_eq (lambda : iota → NNReal)
   split_ifs with hi
   · rfl
   · exact (responseState_eq_zero_of_forcingProjection lambda s F hF ht hi).symm
-
 
 theorem intermediate_finiteHigh_response (hT : 0 ≤ T) (lambda : iota → NNReal)
     (s : Finset iota) (F : ForcingSpace iota T) (hF : forcingProjection s F = F)
@@ -261,7 +248,6 @@ theorem memLp_response_source (hT : 0 ≤ T) (F : ForcingSpace iota T) :
   apply mul_le_mul_of_nonneg_right _ (norm_nonneg _)
   exact add_le_add_left (mul_le_mul_of_nonneg_left ht N.principalConstant.coe_nonneg) _
 
-
 def forcingResidual (hT : 0 ≤ T) (F : ForcingSpace iota T) : ForcingSpace iota T :=
   (N.memLp_response_source hT F).toLp (fun t => N.toFun (shiftedHighOperator hT lambda F t))
 
@@ -335,13 +321,11 @@ theorem norm_forcingResidual_sub_le (hT : 0 ≤ T) (hT1 : T ≤ 1)
           N.lowerConstant.coe_nonneg)
     _ = _ := by ring
 
-
 def forcingRadius : ℝ := 1 / (64 * ((N.principalConstant : ℝ) + 1))
 
 theorem forcingRadius_pos : 0 < N.forcingRadius := by
   unfold forcingRadius
   positivity
-
 
 theorem exists_strict_forcing_interval :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧
@@ -389,7 +373,6 @@ theorem exists_strict_forcing_interval :
     linarith
   exact ⟨T, hT, hT1, hzero, hLip⟩
 
-
 theorem exists_forcing_interval :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧
       ‖N.forcingResidual hT.le 0‖ ≤ (1 - ((1 / 2 : NNReal) : ℝ)) * N.forcingRadius ∧
@@ -403,7 +386,6 @@ theorem exists_forcing_interval :
   · intro F G hF hG
     exact (hLip F G hF hG).trans
       (mul_le_mul_of_nonneg_right (by norm_num) (norm_nonneg _))
-
 
 theorem exists_strict_forcing_fixedPoint :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧ ∃ F : ForcingSpace iota T,
@@ -428,7 +410,6 @@ theorem exists_strict_forcing_fixedPoint :
     norm_num at hbound
     linarith
   exact ⟨T, hT, hT1, F, hfix, hthird, by linarith, hLip⟩
-
 
 theorem exists_quasilinear_response :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧ ∃ F : ForcingSpace iota T,
@@ -469,7 +450,6 @@ theorem exists_quasilinear_response :
       _ = ‖F‖ ^ 2 := (forcing_norm_sq F).symm
       _ ≤ N.forcingRadius ^ 2 := (sq_le_sq₀ (norm_nonneg _) hr.le).mpr hF
 
-
 theorem exists_projected_responses (s : ℕ → Finset iota) (hs : Tendsto s atTop atTop) :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧
       ∃ (F : ForcingSpace iota T) (G : ℕ → ForcingSpace iota T),
@@ -488,8 +468,6 @@ theorem exists_projected_responses (s : ℕ → Finset iota) (hs : Tendsto s atT
   exact ⟨T, hT, hT1, F, G, hF, hfix, hG, hlim,
     fun t ht i => tendsto_responseState_coeff_of_forcing hT.le lambda hlim ht i⟩
 
-
-
 theorem projected_response_derivative (hT : 0 ≤ T) (s : Finset iota)
     (F : ForcingSpace iota T)
     (hfix : forcingProjection s (N.forcingResidual hT F) = F)
@@ -505,8 +483,6 @@ theorem projected_response_derivative (hT : 0 ≤ T) (s : Finset iota)
   filter_upwards [N.forcingResidual_coe hT F,
     high_eq_finiteHigh_response hT lambda s F hsupp] with r hr hhigh
   rw [hr, hhigh]
-
-
 
 theorem exists_response_all_mass (s : ℕ → Finset iota) (hs : Tendsto s atTop atTop)
     {theta : ℝ} (htheta : theta ≤ 1)
@@ -560,8 +536,6 @@ theorem exists_response_all_mass (s : ℕ → Finset iota) (hs : Tendsto s atTop
   exact (tsum_nonneg (fun i => by positivity)).trans
     (hbound 0 ⟨le_rfl, hT.le⟩).2
 
-
-
 theorem exists_response_all_scale_paths (s : ℕ → Finset iota)
     (hs : Tendsto s atTop atTop) {theta : ℝ} (htheta : theta ≤ 1)
     (hseed : ∀ k, InScale lambda k (N.toFun 0))
@@ -612,8 +586,6 @@ theorem exists_response_all_scale_paths (s : ℕ → Finset iota)
   · intro t i
     rfl
 
-
-
 theorem fixedPoint_hasDerivWithinAt (hT : 0 ≤ T) (F : ForcingSpace iota T)
     (hfix : N.forcingResidual hT F = F) (Z : C(Icc (0 : ℝ) T, State iota))
     (hZ : ∀ t : Icc (0 : ℝ) T, scaleDecode lambda 2 (Z t) = responseState lambda F t)
@@ -652,8 +624,6 @@ private theorem weighted_mass_mono {k l : ℕ} (hkl : k ≤ l) (u : State iota)
       (sq_nonneg _)
   have hs := h.1.of_nonneg_of_le (fun i => by positivity) hpoint
   exact ⟨hs, (hs.tsum_le_tsum hpoint h.1).trans h.2⟩
-
-
 
 theorem exists_response_cofinal_mass (s : ℕ → Finset iota)
     (hs : Tendsto s atTop atTop) (orders : ℕ → ℕ)
@@ -715,7 +685,6 @@ theorem exists_response_cofinal_mass (s : ℕ → Finset iota)
     exact weighted_mass_mono (Nat.add_le_add_right hkj 1) (responseState lambda F t)
       (hbound t ht)
 
-
 theorem exists_response_cofinal_scale_paths (s : ℕ → Finset iota)
     (hs : Tendsto s atTop atTop) (orders : ℕ → ℕ)
     (horders : ∀ k, ∃ j, k ≤ orders j) {theta : ℝ} (htheta : theta ≤ 1)
@@ -744,7 +713,6 @@ theorem exists_response_cofinal_scale_paths (s : ℕ → Finset iota)
   exact exists_continuous_scale_lift_of_mass lambda k U hU hB
     (fun t => weighted_mass_mono (by omega : 2 * k ≤ 2 * k + 1) (U t) (hb t t.property))
 
-
 theorem exists_response_all_mass_of_even_energy (s : ℕ → Finset iota)
     (hs : Tendsto s atTop atTop) {theta : ℝ} (htheta : theta ≤ 1)
     (hseed : ∀ k, InScale lambda k (N.toFun 0))
@@ -765,7 +733,6 @@ theorem exists_response_all_mass_of_even_energy (s : ℕ → Finset iota)
   N.exists_response_cofinal_mass s hs (fun k => 2 * k) (fun k => ⟨k, by omega⟩)
     htheta hseed henergy
 
-
 theorem exists_response_all_scale_paths_of_even_energy (s : ℕ → Finset iota)
     (hs : Tendsto s atTop atTop) {theta : ℝ} (htheta : theta ≤ 1)
     (hseed : ∀ k, InScale lambda k (N.toFun 0))
@@ -783,8 +750,6 @@ theorem exists_response_all_scale_paths_of_even_energy (s : ℕ → Finset iota)
         (∀ t i, Z t i = scaleWeight lambda k i * responseState lambda F t i) :=
   N.exists_response_cofinal_scale_paths s hs (fun k => 2 * k) (fun k => ⟨k, by omega⟩)
     htheta hseed henergy
-
-
 
 theorem projected_response_even_mass_of_induction (hT : 0 < T) (hT1 : T ≤ 1)
     (s : ℕ → Finset iota) (G : ℕ → ForcingSpace iota T)
@@ -879,7 +844,6 @@ section ParameterRegularity
 variable {P X : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [CompleteSpace X]
 
-
 theorem exists_contDiffAt_fixedPoint (R : P × X → X) {p : P} {x : X} {k : ℕ∞ω}
     (hk : k ≠ 0) (hR : ContDiffAt ℝ k R (p, x)) (hfix : R (p, x) = x)
     (hsmall : ‖(fderiv ℝ R (p, x)).comp (ContinuousLinearMap.inr ℝ P X)‖ < 1) :
@@ -908,7 +872,6 @@ theorem exists_contDiffAt_fixedPoint (R : P × X → X) {p : P} {x : X} {k : ℕ
   · filter_upwards [hH.eventually_apply_eq_iff_implicitFunction hk hinv] with q hq
     rw [hH0] at hq
     simpa only [H, sub_eq_zero, eq_comm] using hq
-
 
 theorem exists_contDiffAt_fixedPoint_of_contraction (R : P × X → X)
     {p : P} {x : X} {k : ℕ∞ω} {r K : ℝ} (hk : k ≠ 0)

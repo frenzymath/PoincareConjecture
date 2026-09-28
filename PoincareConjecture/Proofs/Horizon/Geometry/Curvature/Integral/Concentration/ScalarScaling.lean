@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Rescaling
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -8,8 +7,6 @@ open Set Filter Topology MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture
-
-
 
 theorem tendsto_rescaled_unitBall_scalar_integral_of_tendsto_ball_scalar_integral
     {n : ℕ} {M : ℕ → Type*}

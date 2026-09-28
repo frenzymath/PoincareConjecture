@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_MarkedGaugeVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +25,6 @@ private theorem family_fixed_of_square {p : M14BackwardPath G T a b x y}
   have hsq := V.square_agrees _ hs u hu
   rw [Real.sq_sqrt (p.tau_nonneg.trans ht.1)] at hsq
   rw [← hsq, hfix u, R.agrees _ hs, Real.sq_sqrt (p.tau_nonneg.trans ht.1)]
-
-
-
 
 theorem exists_meetingGauge_variations (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T a b x y) (p : M14BackwardPath G T a c x (q.curve c))

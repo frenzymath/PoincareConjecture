@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.Complementar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.FiniteSeparatedAttachments
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalHalfBands
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -127,8 +119,6 @@ theorem complementaryHalfBand_iUnion
     · exact mem_iUnion.mpr ⟨(s, 0), hx⟩
     · exact mem_iUnion.mpr ⟨(s, 1), hx⟩
 
-
-
 theorem exists_original_complementary_cut_disk
     [Fintype (ResidualComplementaryEdge K P D)]
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
@@ -200,8 +190,6 @@ theorem complementaryCut_projection_image
   simp only [Finset.mem_univ, iUnion_true]
   rw [complementaryHalfBand_iUnion,
     treeCotree_exterior_eq_complementary_union K P hP D hD hbound hcofaces]
-
-
 
 theorem complementaryCut_projection_eq_iff
     [Fintype (ResidualComplementaryEdge K P D)]

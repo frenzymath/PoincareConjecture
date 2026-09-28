@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingPlane
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_radial_frontier_section_preserving_zero
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -95,8 +82,6 @@ theorem exists_finitePL_radial_frontier_section_preserving_zero
   rw [hef]
   exact hf.linear_zero_iff_of_positive_vertex_rescaling r hr hfv A
     (hDK.respectsAffineHyperplane hA) x (hDK.space_eq.symm.subset x.property)
-
-
 
 theorem exists_finitePL_link_convex_frontier_chart_preserving_zero
     [DecidableEq E] (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

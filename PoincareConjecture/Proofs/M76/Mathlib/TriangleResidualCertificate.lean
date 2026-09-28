@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualLevelScaling
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualContactScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,15 +15,6 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
-
 
 theorem exists_triangle_collar_residual_with_contacts (A : E →ᵃ[ℝ] ℝ)
     {s : Finset E} {q : E} (hAq : A q = 0) {β : ℝ} (hβ : 0 < β)
@@ -194,10 +176,6 @@ theorem exists_triangle_collar_residual_with_contacts (A : E →ᵃ[ℝ] ℝ)
       exact A.geometric_collar_mem_residual_iff hqw hAq hw hβ hβv a.toAffineMap haq haw
         (hS.subset p.property)
 
-
-
-
-
 theorem exists_triangle_collar_residual_with_levels (A : E →ᵃ[ℝ] ℝ)
     {s : Finset E} {q : E} (hAq : A q = 0) {β : ℝ} (hβ : 0 < β)
     {S : Set (E × ℝ)} {T : Set E} (H : S ≃ₜ T) (hH : H.IsFinitePL)
@@ -229,11 +207,6 @@ theorem exists_triangle_collar_residual_with_levels (A : E →ᵃ[ℝ] ℝ)
   obtain ⟨R, J, hJ, hJR, hfull, hzero, hedge, hmissing, hradial, _, hroof⟩ :=
     A.exists_triangle_collar_residual_with_contacts hAq hβ H hH hgeometry hsource hheight
   exact ⟨R, J, hJ, hJR, hfull, hzero, hedge, hmissing, hradial, hroof⟩
-
-
-
-
-
 
 theorem exists_triangle_collar_residual (A : E →ᵃ[ℝ] ℝ)
     {s : Finset E} {q : E} (hAq : A q = 0) {β : ℝ} (hβ : 0 < β)

@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroCoreCompression
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroCorePointMove
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_hamilton_zero_core_placement {ι : Type*} [Fintype ι]
     (A : (ι → ℝ) ≃ₜ (ι → ℝ))

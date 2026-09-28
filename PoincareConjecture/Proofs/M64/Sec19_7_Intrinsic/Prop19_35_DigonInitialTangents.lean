@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UnitTangentIndependence
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConvexCornerArrival
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +9,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_convex_corner_departure_nonneg
     {eta : ℝ → AnnulusCoordinates} {T : ℝ}
@@ -38,10 +31,6 @@ theorem m64Intrinsic_convex_corner_departure_nonneg
   rw [hzero, sub_zero, sub_zero]
   exact ⟨mul_nonneg (inv_pos.mpr htI.1).le hq.1,
     mul_nonneg (inv_pos.mpr htI.1).le hq.2⟩
-
-
-
-
 
 theorem m64Intrinsic_digon_initial_velocity_ne
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -73,10 +62,6 @@ theorem m64Intrinsic_digon_initial_velocity_ne
   rcases hmeet t ⟨ht.1.le, htA.le⟩ t ⟨ht.1.le, htB.le⟩ htEq with h | h
   · exact ht.1.ne' h.1
   · exact htA.ne h.1
-
-
-
-
 
 theorem m64Intrinsic_digon_initial_transverse_at_convex_corner
     (G : RiemannianMetric 2 AnnulusCoordinates)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeTimeDirection
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem initialValueDomain_initial_tube
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -39,9 +27,6 @@ theorem initialValueDomain_initial_tube
   obtain ⟨c, hc, _, U, hU, hZU, htube⟩ :=
     initialValueDomain_initial_tube_in_gauge hM04 hM12 b t₀ x₀ Z hsmax htime
   exact ⟨c, hc, U, hU, hZU, ht₀ ▸ htube⟩
-
-
-
 
 theorem initialValueDomain_zero_relative_open
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

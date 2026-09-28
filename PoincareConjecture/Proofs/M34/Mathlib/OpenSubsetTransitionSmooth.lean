@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.OpenSubsetTransition
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +13,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {H : Type*} [TopologicalSpace H] (I : ModelWithCorners 𝕜 E H)
   (e : OpenPartialHomeomorph H H) {U : Set H} (hU : IsOpen U) [Nonempty U]
   {n : ℕ∞ω}
-
-
 
 theorem contMDiffOn_onOpenSubset (he : ContMDiffOn I I n e e.source)
     (htarget : e.target ⊆ U) :

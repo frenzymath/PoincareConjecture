@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Strips.Projection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Planar.Clearance
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +17,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR" => 𝓘(Real, Real)
 local notation "IR2" => 𝓘(Real, Real × Real)
-
 
 def correctedStrip {v : E3} (g : S2 → E3)
     (D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -50,8 +40,6 @@ theorem contDiffOn_correctedStrip
   have hπ := J.symm.contDiff.contMDiff.comp
     ((Real ∙ v)ᗮ.orthogonalProjectionOnto.contMDiff.comp (D.contMDiff.comp hg.contMDiff))
   exact (hπ.comp_contMDiffOn hp).contDiffOn
-
-
 
 theorem correctedStrip_slice_geometry
     {v : E3} {g : S2 → E3}

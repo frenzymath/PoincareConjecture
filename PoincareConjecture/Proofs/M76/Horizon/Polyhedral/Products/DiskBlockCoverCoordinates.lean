@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval
@@ -35,8 +26,6 @@ private theorem plane_mem {z : Plane × ℝ} (hz : z ∈ cover) : z.1 ∈ closed
   rcases hz with hz | hz
   · exact hz.1
   · exact sphere_subset_closedBall hz.1
-
-
 
 theorem contractible_cover : ContractibleSpace cover := by
   let r : C(cover, block) :=
@@ -72,8 +61,6 @@ theorem contractible_cover : ContractibleSpace cover := by
   exact (contractible_iff_id_nullhomotopic cover).mpr ⟨p, (show
     (ContinuousMap.id cover).Homotopic (inc.comp r) from ⟨H⟩).trans hp⟩
 
-
-
 theorem annulus_eq_radial_image :
     closedBall (0 : Plane) 1 \ closedBall (0 : Plane) (1 / 2) =
       (fun z : Plane × ℝ => z.2 • z.1) ''
@@ -95,15 +82,12 @@ theorem annulus_eq_radial_image :
     simp only [mem_sdiff, mem_closedBall, dist_zero_right, htn, not_le]
     exact ⟨ht.2, ht.1⟩
 
-
 theorem isPathConnected_annulus :
     IsPathConnected (closedBall (0 : Plane) 1 \ closedBall (0 : Plane) (1 / 2)) := by
   rw [annulus_eq_radial_image]
   exact ((isPathConnected_sphere (by simp [Plane]) (0 : Plane) zero_le_one).prod
     ((convex_Ioc (1 / 2 : ℝ) 1).isPathConnected ⟨1, by constructor <;> norm_num⟩)).image
       (by fun_prop)
-
-
 
 theorem cover_sdiff_core :
     cover \ core =
@@ -123,7 +107,6 @@ theorem cover_sdiff_core :
   · rintro (hz | hz)
     · exact ⟨Or.inl ⟨hz.1.1, hz.2⟩, fun hc => hz.1.2 hc.1⟩
     · exact ⟨Or.inr hz, fun hc => Set.disjoint_left.mp hlat hz hc⟩
-
 
 theorem isPathConnected_cover_sdiff_core : IsPathConnected (cover \ core) := by
   rw [cover_sdiff_core]

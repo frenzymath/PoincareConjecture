@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.IntrinsicMinim
 import Mathlib.Topology.Connected.PathConnected
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,9 +14,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
 
 theorem blowup_eventually_minimizing_window_of_annulus_separation
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

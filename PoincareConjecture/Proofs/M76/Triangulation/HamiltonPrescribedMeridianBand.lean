@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductBandSides
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneActualMeridian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
 local notation "Io" => Ioo (-(1 / 4 : ℝ)) (1 / 4)
-
-
-
 
 theorem exists_original_prescribed_product_band {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

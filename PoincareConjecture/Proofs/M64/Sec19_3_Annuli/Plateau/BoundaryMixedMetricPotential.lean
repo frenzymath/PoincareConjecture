@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMixedPotential
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryComponentPairings
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,10 +27,6 @@ local instance m64MixedMetric_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem m64WeightedMixedMetric_potential
     (dirichlet : Fin n → Prop) {O S : Set LoopPlane} (hO : IsOpen O) (hS : MeasurableSet S)

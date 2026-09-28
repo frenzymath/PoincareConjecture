@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedPolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothCircleLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -16,11 +8,7 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 def complexEdgeDet (z w : ℂ) : ℝ := z.re * w.im - z.im * w.re
-
-
 
 theorem roundedCorner_det_pos (p u v : ℂ) {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : 0 < δ) (hρ : Differentiable ℝ ρ)
@@ -98,8 +86,6 @@ theorem roundedCorner_det_pos (p u v : ℂ) {ρ : ℝ → ℝ} {δ : ℝ}
   rw [hformula]
   linarith [(abs_le.mp hk).1]
 
-
-
 theorem exists_roundedPolygon_det_threshold {n : ℕ} [NeZero n] (p : Polygon ℂ n)
     (hp : ∀ i, 0 < complexEdgeDet (p i) (p (finRotate n i))) :
     ∃ d : ℝ, 0 < d ∧ ∀ δ : ℝ, 0 < δ → δ < d → ∀ ρ : ℝ → ℝ,
@@ -161,9 +147,6 @@ theorem exists_roundedPolygon_det_threshold {n : ℕ} [NeZero n] (p : Polygon �
   apply roundedCorner_det_pos (P i) (P i - P (i - 1)) (P (i + 1) - P i)
     hδ hρ htail hbound hder
   simpa only [P, hprev, polygonIntegerIndex_succ, u, v] using hsmall (polygonIntegerIndex n i)
-
-
-
 
 theorem exists_positive_polar_representation (γ : ℝ → ℂ)
     (hγ : ContDiff ℝ ∞ γ) (hangular : ∀ t, 0 < complexEdgeDet (γ t) (deriv γ t))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M49.UniformCapCount
 import PoincareConjecture.Proofs.M49.ComponentHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,8 +9,6 @@ open scoped ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem exists_uniform_event_prefix_bound
     (c d B : ℝ) (V₀ : ℝ≥0∞) (hMin : ℝ)

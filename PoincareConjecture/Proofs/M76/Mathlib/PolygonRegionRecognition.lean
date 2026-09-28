@@ -2,20 +2,9 @@ import PoincareConjecture.Proofs.M39.Mathlib.RootedSeparation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegions
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem IsPreconnected.m76_subset_of_disjoint_frontier {X : Type*} [TopologicalSpace X]
     {S U : Set X} (hS : IsPreconnected S) (hU : IsOpen U)
@@ -23,8 +12,6 @@ theorem IsPreconnected.m76_subset_of_disjoint_frontier {X : Type*} [TopologicalS
   exact hS.subset_of_disjoint_frontier hU hdis.symm hmeet
 
 namespace Polygon
-
-
 
 theorem inside_eq_of_open_bounded_frontier {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -48,8 +35,6 @@ theorem inside_eq_of_open_bounded_frontier {n : ℕ} (P : Polygon (ℝ × ℝ) (
     exact Set.disjoint_left.mpr (fun _ hx hy => hy.1 hx)
   · obtain ⟨x, hx⟩ := hne
     exact ⟨x, hsub hx, hx⟩
-
-
 
 theorem closure_inside_eq_of_compact_convex {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

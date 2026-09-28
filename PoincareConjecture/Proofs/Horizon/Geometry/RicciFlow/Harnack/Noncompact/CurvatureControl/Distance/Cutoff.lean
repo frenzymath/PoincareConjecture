@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -104,8 +97,6 @@ private lemma laplacian_scaled_profile (D : LeviCivitaData g)
     D.laplacian_eq_of_eventuallyEq heq, hgf, hgrad, mul_one,
     hd, hd₂, heq.self_of_nhds] using hl
 
-
-
 theorem cutoff_heat_le_of_upper_support (D : LeviCivitaData g)
     {ρ : ℝ → M → ℝ} {t : ℝ} {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U)
     (hρ : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ (ρ t) U)
@@ -158,8 +149,6 @@ private lemma deriv_eq_zero_of_flat {χ : ℝ → ℝ} (hanti : Antitone χ)
     · rw [hflat s hs]
     · exact (hanti (le_of_not_ge hs)).trans_eq (hflat 1 le_rfl))
   exact hm.deriv_eq_zero
-
-
 
 theorem cutoff_heat_le_of_flat_upper_support (D : LeviCivitaData g)
     {ρ : ℝ → M → ℝ} {t : ℝ} {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U)
@@ -243,8 +232,6 @@ variable {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M] {J : Set ℝ}
 
-
-
 theorem exists_distance_cutoff_lower_support (F : RicciFlow (m + 1) M J)
     {t r Λ scale δ d₀ A B C : ℝ} (ht : t ∈ interior J) (hm : 0 < m)
     (hcomplete : MetricComplete (F.metric t))
@@ -290,8 +277,6 @@ theorem exists_distance_cutoff_lower_support (F : RicciFlow (m + 1) M J)
       hA hB hC hg hl htbound (by simpa only [heq] using hpos)
     convert h using 1
     ring
-
-
 
 theorem exists_distance_cutoff_lower_support_of_flat (F : RicciFlow (m + 1) M J)
     {t r Λ scale δ d₀ A B C : ℝ} (ht : t ∈ interior J) (hm : 0 < m)

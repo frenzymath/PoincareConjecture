@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CutoffDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem exists_small_germ_extension (h : E → F) (hh : ContDiff ℝ ∞ h)
     (hh0 : h 0 = 0) (hd0 : fderiv ℝ h 0 = 0)

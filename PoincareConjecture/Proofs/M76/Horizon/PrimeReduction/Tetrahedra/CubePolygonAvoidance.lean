@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.AffineContactFiniteness
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSubspaceAvoidance
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76

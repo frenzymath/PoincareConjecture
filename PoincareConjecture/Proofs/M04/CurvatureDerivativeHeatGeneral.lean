@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.CurvatureDerivativeEvolution
 import PoincareConjecture.Proofs.M04.CurvatureDerivativeReactionBounds
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

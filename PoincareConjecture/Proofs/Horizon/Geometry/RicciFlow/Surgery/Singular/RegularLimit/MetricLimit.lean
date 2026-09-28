@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison.Loc
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,7 +19,6 @@ namespace RicciFlowAnalysis
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a s T K : ℝ} (F : RicciFlow n M (Ico a T))
-
 
 theorem metric_diagonal_bounds_on_tail (has : a ≤ s) (hsT : s < T)
     (hK : 0 ≤ K) (x : M)
@@ -52,8 +41,6 @@ theorem metric_diagonal_bounds_on_tail (has : a ≤ s) (hsT : s < T)
     nlinarith [mul_le_mul_of_nonneg_left ht.2.le hc]
   · apply le_trans h.2 (mul_le_mul_of_nonneg_right (Real.exp_le_exp.mpr ?_) hq)
     nlinarith [mul_le_mul_of_nonneg_left ht.2.le hc]
-
-
 
 theorem exists_terminal_metric_diagonal (has : a ≤ s) (hsT : s < T)
     (hK : 0 ≤ K) (x : M)
@@ -96,7 +83,6 @@ theorem exists_terminal_metric_diagonal (has : a ≤ s) (hsT : s < T)
   filter_upwards [Ico_mem_nhdsLT hsT] with t ht
   exact (metric_diagonal_bounds_on_tail F has hsT hK x hRm v ht).1
 
-
 theorem exists_terminal_metric_coefficient (has : a ≤ s) (hsT : s < T)
     (hK : 0 ≤ K) (x : M)
     (hRm : ∀ t ∈ Ico s T, (F.connection t).curvatureTensorNorm x ≤ K)
@@ -122,7 +108,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 theorem exists_terminal_metric_coefficient (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet)
     (v w : TangentSpace (𝓡 3) x) :
@@ -132,7 +117,6 @@ theorem exists_terminal_metric_coefficient (H : SingularTimeAssumptions F T M)
     H.exists_open_uniform_curvature_tail P04 hx
   exact RicciFlowAnalysis.exists_terminal_metric_coefficient H.reference.flow hs.le hsT hK.le x
     (fun t ht => hbound t ht x hxU) v w
-
 
 theorem exists_positive_terminal_metric_diagonal (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet)
@@ -145,7 +129,6 @@ theorem exists_positive_terminal_metric_diagonal (H : SingularTimeAssumptions F 
     hs.le hsT hK.le x (fun t ht => hbound t ht x hxU) v
   exact ⟨l, lt_of_lt_of_le (mul_pos (Real.exp_pos _)
     ((H.reference.flow.metric s).pos x v hv)) hlower, hl⟩
-
 
 noncomputable def terminalMetricCoefficient (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet)
@@ -185,8 +168,6 @@ theorem terminalMetricCoefficient_symm (H : SingularTimeAssumptions F T M)
   apply tendsto_nhds_unique (H.tendsto_terminalMetricCoefficient P04 hx v w)
   simpa only [(H.reference.flow.metric _).symm x w v] using
     H.tendsto_terminalMetricCoefficient P04 hx w v
-
-
 
 noncomputable def terminalMetricBilinear (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet) :
@@ -241,7 +222,6 @@ theorem tendsto_terminalMetricBilinear_apply (H : SingularTimeAssumptions F T M)
       (𝓝 (H.terminalMetricBilinear P04 hx v w)) :=
   H.tendsto_terminalMetricCoefficient P04 hx v w
 
-
 theorem terminalMetricBilinear_bounds (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet)
     {s K : ℝ} (hs : H.reference.tMinus ≤ s) (hsT : s < T) (hK : 0 ≤ K)
@@ -262,8 +242,6 @@ theorem terminalMetricBilinear_bounds (H : SingularTimeAssumptions F T M)
     filter_upwards [Ico_mem_nhdsLT hsT] with t ht
     exact (RicciFlowAnalysis.metric_diagonal_bounds_on_tail
       H.reference.flow hs hsT hK x hRm v ht).2
-
-
 
 theorem tendsto_terminalMetricBilinear (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet) :

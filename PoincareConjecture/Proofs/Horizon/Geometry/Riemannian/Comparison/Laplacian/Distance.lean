@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.SegmentRegular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.TailSupport
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

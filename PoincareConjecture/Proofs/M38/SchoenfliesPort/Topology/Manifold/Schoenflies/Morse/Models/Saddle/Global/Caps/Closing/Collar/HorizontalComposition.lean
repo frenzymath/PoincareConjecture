@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.HorizontalSeparated
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.TerminalLiftPreparation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +24,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_simultaneous_relative_cap_germs_preserving_height
     {ι : Type*} [Finite ι] (A B R : ι → Set E3) (W : Set E3) (height : E3 → Real)
@@ -105,8 +95,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
-
 theorem exists_simultaneous_horizontal_terminal_cap_germs
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -168,8 +156,6 @@ theorem exists_simultaneous_horizontal_terminal_cap_germs
   intro D hD q hq
   exact hW (Or.inr (mem_iUnion.mpr ⟨⟨D, hD⟩, mem_image_of_mem g hq⟩))
 
-
-
 theorem exists_surface_germ_of_cap_germ
     {ι : Type*} [Finite ι] {A B : ι → Set E3} {S T W R U : Set E3} (i : ι)
     (hA : ∀ j, IsCompact (A j)) (hB : ∀ j, IsCompact (B j))
@@ -218,8 +204,6 @@ theorem exists_surface_germ_of_cap_germ
           exact hS ▸ Or.inr (mem_iUnion.mpr ⟨i, (hcap.symm ▸
             (show x ∈ B i ∩ U from ⟨hj, hxV.1⟩)).1⟩)
         · exact False.elim ((hother j hji x hxV.2).2 hj)
-
-
 
 theorem exists_simultaneous_horizontal_terminal_germs
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -306,9 +290,6 @@ theorem exists_simultaneous_horizontal_terminal_germs
       image_union, image_iUnion, hGband]
   · rw [← hcancel (data.toTerminalSaddleGeometry.filledModel '' sphere (0 : E3) 1),
       data.model_decomposition, image_union, image_iUnion]
-
-
-
 
 theorem exists_prepared_horizontal_terminal_germs
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

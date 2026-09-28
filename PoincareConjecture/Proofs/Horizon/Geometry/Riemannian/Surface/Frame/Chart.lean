@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Stokes.Chart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open VectorField
@@ -34,7 +27,6 @@ structure AlignedChartFrame (g : RiemannianMetric 2 S)
   aligned : ∀ x ∈ e.source,
     let X := mpullback (𝓡 2) 𝓘(ℝ, ℝ × ℝ) e (fun _ => (1, 0)) x
     first x = (Real.sqrt (g.inner x X X))⁻¹ • X
-
 
 noncomputable def alignedChartFrame (g : RiemannianMetric 2 S)
     (e : OpenPartialHomeomorph S (ℝ × ℝ))

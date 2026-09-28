@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Principal
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -43,7 +35,6 @@ private lemma two_abs_mul_le_eps_sq_add_cross2 (a b ε : ℝ) (hε : 0 < ε) :
   calc 2 * |a| * |b| = 2 * u * v := huv.symm
     _ ≤ u^2 + v^2 := two_mul_le_add_sq u v
     _ = ε * a^2 + (1/ε) * b^2 := by rw [hu_sq, hv_sq]
-
 
 private theorem cross_2_pointwise_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -427,7 +418,6 @@ private lemma integrable_eta_sq_diffQuot_g_sq_cross2
     funext x; ring
   rw [h_eq]
   exact hint
-
 
 theorem cross_2_bound_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -926,7 +916,6 @@ theorem cross_2_bound_nonsmooth_quantitative
           ∂(volume : Measure E) from by ring]
     rw [← h_C_eq]
   linarith
-
 
 theorem cross_2_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

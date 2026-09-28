@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Co
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Collars.EmbeddedMapTransport
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.OriginalAnnularDegree
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric Topology PLAnnularStrip
 

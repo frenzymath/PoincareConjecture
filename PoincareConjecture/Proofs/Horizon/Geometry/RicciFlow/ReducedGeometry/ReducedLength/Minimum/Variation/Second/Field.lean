@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Minimizer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Construction.CompactField
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def fieldIndexDensity {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (α : ℝ → M)
     (C : Set ℝ) (Y : ∀ s, TangentSpace (𝓡 n) (α s))
     (H : ParametricAlongCurveExtensionOn C α Y) (s : ℝ) : ℝ :=
@@ -34,7 +25,6 @@ def fieldIndexDensity {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (α : ℝ �
     2 * s ^ 2 * connection.hessian connection.scalarCurvature (α s) (Y s) (Y s) -
     4 * s * ricciDerivativePairing connection (α s) (Y s) A (Y s) +
     2 * s * ricciDerivativePairing connection (α s) A (Y s) (Y s)
-
 
 theorem secondVariationIndexDensity_eq_fieldIndexDensity
     {J : Set ℝ} {F : RicciFlow n M J} {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -63,8 +53,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem fieldIndexDensity_integrable_and_integral_nonneg (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ} (S : SqrtRegularPath p)

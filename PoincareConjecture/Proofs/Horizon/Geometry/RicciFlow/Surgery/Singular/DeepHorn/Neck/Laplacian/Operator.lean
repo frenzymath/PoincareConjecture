@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +37,6 @@ private theorem tendsto_koszul
     (g := fun p : (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) × E =>
       metricKoszulCovector p.1 u p.2)
     (f := fun a => (A a, v a)) (h.tendsto (A₀, v₀)) (hA.prodMk_nhds hv)
-
-
 
 theorem tendsto_laplacian_of_metric_and_function_jets
     {n : ℕ} {α : Type*} {l : Filter α}

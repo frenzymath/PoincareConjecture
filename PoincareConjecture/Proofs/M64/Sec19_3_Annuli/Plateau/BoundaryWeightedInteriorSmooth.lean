@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceRescaling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakMinimizerInteriorSmooth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +19,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem m64SourceScale_alphaOne_variation
     (g : RiemannianMetric n M) (b : M) (s : ℝ) (hs : s ≠ 0)
@@ -71,8 +57,6 @@ theorem m64SourceScale_alphaOne_variation
   ring
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem M64ObservedWeakAnnulus.weighted_coordinates_rescaled_critical
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -203,8 +187,6 @@ theorem M64ObservedWeakAnnulus.weighted_coordinates_rescaled_critical
     · intro phi hp _ hps; exact (htest phi hp hps).2
   exact ⟨radius, hcritical⟩
 
-
-
 theorem M64ObservedWeakAnnulus.weighted_coordinates_contDiffAt
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (g : RiemannianMetric n M) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -234,9 +216,6 @@ theorem M64ObservedWeakAnnulus.weighted_coordinates_contDiffAt
   have hcomp : (u ∘ D) ∘ D.symm = u := by funext p; simp
   have hsm' := hsm.comp a D.symm.contDiff.contDiffAt
   rwa [hcomp] at hsm'
-
-
-
 
 theorem M64ObservedWeakAnnulus.contMDiffOn_of_weightedEnergy_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

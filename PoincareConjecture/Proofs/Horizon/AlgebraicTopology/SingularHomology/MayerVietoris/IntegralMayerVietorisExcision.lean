@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralMayerVietoris
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -182,7 +175,6 @@ def integralSumComparisonDiagram (A B : Set X) :
     change 𝟙 _ ≫ integralRelativeRestriction Set.subset_union_left =
       integralSumProjection A B ≫ integralSumComparison A B
     rw [Category.id_comp, integralSumProjection_comparison]
-
 
 theorem integralSumComparison_quasiIso
     (A B : Set X) (hA : IsOpen A) (hB : IsOpen B) :

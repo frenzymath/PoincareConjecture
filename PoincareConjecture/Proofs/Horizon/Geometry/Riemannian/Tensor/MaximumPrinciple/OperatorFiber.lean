@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.OperatorFiber
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.HilbertFiber
-
-
-
-
-
-
-

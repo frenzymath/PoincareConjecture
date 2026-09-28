@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnMeasure
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +17,6 @@ local notation "half" => curvePeriod / 2
 local notation "v" => annulusPoint (curvePeriod / 2) 0
 local notation "T" => m64AnnulusHalfTurn
 
-
-
-
 theorem m64RadialStrip_subset_closure (a b : ℝ) :
     {p : LoopPlane | p 0 ∈ Ioo a b ∧ p 1 ∈ Icc (0 : ℝ) 1} ⊆
       closure {p : LoopPlane | p 0 ∈ Ioo a b ∧ p 1 ∈ Ioo (0 : ℝ) 1} := by
@@ -43,18 +32,12 @@ theorem m64RadialStrip_subset_closure (a b : ℝ) :
   have heq : annulusPoint (p 0) (p 1) = p := by ext i; fin_cases i <;> rfl
   rwa [heq] at h
 
-
-
-
 theorem m64AnnulusHalfTurn_ae_reverse {M : Type*} {f g : LoopPlane → M}
     (h : g =ᵐ[volume.restrict S] f ∘ T) :
     g ∘ T =ᵐ[volume.restrict S] f := by
   filter_upwards [m64AnnulusHalfTurn_measurePreserving.quasiMeasurePreserving.ae h,
     m64AnnulusHalfTurn_involutive_ae] with p hp hT
   simpa only [Function.comp_apply, hT] using hp
-
-
-
 
 theorem m64AnnulusHalfTurn_left_overlap {M : Type*} [TopologicalSpace M] [T2Space M]
     {f g : LoopPlane → M} (hf : ContinuousOn f D) (hg : ContinuousOn g D)
@@ -87,9 +70,6 @@ theorem m64AnnulusHalfTurn_left_overlap {M : Type*} [TopologicalSpace M] [T2Spac
   apply heq.of_subset_closure (hf.mono hCD) hgc hOC
   simpa only [O, m64AnnulusHalfLeft, C, mem_Ioo, mem_Icc, and_assoc] using
     m64RadialStrip_subset_closure 0 half
-
-
-
 
 theorem m64AnnulusHalfTurn_right_overlap {M : Type*} [TopologicalSpace M] [T2Space M]
     {f g : LoopPlane → M} (hf : ContinuousOn f D) (hg : ContinuousOn g D)

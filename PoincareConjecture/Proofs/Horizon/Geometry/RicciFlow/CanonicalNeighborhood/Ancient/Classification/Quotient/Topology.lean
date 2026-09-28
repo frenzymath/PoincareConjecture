@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M27ProductModels
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.Twisted
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

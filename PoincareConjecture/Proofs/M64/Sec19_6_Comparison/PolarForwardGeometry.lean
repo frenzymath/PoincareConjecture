@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +14,8 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
-
 def m64PolarSource : Set LoopPlane :=
   {p | 0 < p 0 ∧ p 0 < curvePeriod ∧ 0 < p 1 ∧ p 1 < 1}
-
-
-
 
 theorem m64PolarSource_open : IsOpen m64PolarSource := by
   have h0 := PiLp.continuous_apply 2 (fun _ : Fin 2 => ℝ) 0
@@ -40,14 +24,8 @@ theorem m64PolarSource_open : IsOpen m64PolarSource := by
     ((isOpen_lt h0 continuous_const).inter
       ((isOpen_lt continuous_const h1).inter (isOpen_lt h1 continuous_const)))
 
-
-
-
 theorem m64PolarSource_subset : m64PolarSource ⊆ m64AnnulusDomain :=
   fun _ hp => ⟨hp.1.le, hp.2.1.le, hp.2.2.1.le, hp.2.2.2.le⟩
-
-
-
 
 theorem m64PolarSource_ae_eq_domain : m64PolarSource =ᵐ[volume] m64AnnulusDomain := by
   have heq : m64PolarSource =
@@ -58,17 +36,11 @@ theorem m64PolarSource_ae_eq_domain : m64PolarSource =ᵐ[volume] m64AnnulusDoma
   rw [heq]
   exact m64AnnulusDomain_ae_eq_boxInterior.symm
 
-
-
-
 theorem m64PolarForwardMap_norm {p : LoopPlane} (hp : -1 < p 1) :
     ‖m64PolarForwardMap p‖ = (1 / 2 : ℝ) * (p 1 + 1) := by
   have hr : 0 < (1 / 2 : ℝ) * (p 1 + 1) := by linarith
   rw [m64PolarForwardMap, norm_smul, Real.norm_eq_abs, abs_of_pos hr,
     norm_angularPoint, mul_one]
-
-
-
 
 theorem m64PolarForwardMap_injOn : InjOn m64PolarForwardMap m64PolarSource := by
   intro p hp q hq heq
@@ -96,9 +68,6 @@ theorem m64PolarForwardMap_injOn : InjOn m64PolarForwardMap m64PolarSource := by
   · exact hcoord0
   · exact hcoord1
 
-
-
-
 theorem m64PolarForwardMap_image_subset :
     m64PolarForwardMap '' m64PolarSource ⊆
       (closedBall (0 : LoopPlane) (1 / 2))ᶜ ∩ loopDiskSet := by
@@ -108,9 +77,6 @@ theorem m64PolarForwardMap_image_subset :
   simp only [mem_inter_iff, mem_compl_iff, mem_closedBall, dist_zero_right,
     loopDiskSet, not_le, hn]
   constructor <;> linarith [hp.2.2.1, hp.2.2.2]
-
-
-
 
 theorem m64_horizontal_line_null : volume {z : LoopPlane | z 1 = 0} = 0 := by
   let S : Set (ℝ × ℝ) := univ ×ˢ {(0 : ℝ)}
@@ -122,9 +88,6 @@ theorem m64_horizontal_line_null : volume {z : LoopPlane | z 1 = 0} = 0 := by
     ext z
     simp [S, loopPlaneEquivProd, MeasurableEquiv.finTwoArrow_apply]
   rw [← heq, measurePreserving_loopPlaneEquivProd.measure_preimage hS, hzero]
-
-
-
 
 theorem m64_exists_open_polar_angle {z : LoopPlane} (hz : z ≠ 0) (hline : z 1 ≠ 0) :
     ∃ theta ∈ Ioo (0 : ℝ) curvePeriod, ‖z‖ • angularPoint theta = z := by
@@ -150,9 +113,6 @@ theorem m64_exists_open_polar_angle {z : LoopPlane} (hz : z ≠ 0) (hline : z 1 
     lt_of_le_of_ne htheta.2 hperiod⟩, ?_⟩
   rw [hang]
   exact smul_inv_smul₀ hn.ne' z
-
-
-
 
 theorem m64PolarForwardMap_image_ae_eq :
     m64PolarForwardMap '' m64PolarSource =ᵐ[volume]

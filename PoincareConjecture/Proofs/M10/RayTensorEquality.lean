@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M10.GlobalRegularSlice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem regular_tensor_eq_of_weight_deriv_zero
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)
@@ -80,7 +69,6 @@ theorem regular_tensor_eq_of_weight_deriv_zero
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
 
-
 theorem weightedExponentialJacobian_deriv_eq_zero_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
@@ -98,7 +86,6 @@ theorem weightedExponentialJacobian_deriv_eq_zero_of_volume_eq
       (reducedVolume_eq_euclidean_of_le hL hDifferential G hmax hT hwindow hcurvature
         hb hbmax hs.1 hs.2.le heq)) x
   rw [hconst.deriv_eq, deriv_const]
-
 
 theorem reducedLength_tensor_eq_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

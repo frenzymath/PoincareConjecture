@@ -2,28 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry CoordinateHalfBoxes
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem Convex.smul_mem_interior_frontier_patch_cone
     {C P O : Set E} (hcv : Convex ℝ C) (hzero : (0 : E) ∈ interior C)
@@ -58,10 +42,6 @@ theorem Convex.smul_mem_interior_frontier_patch_cone
   dsimp only [R]
   rw [smul_inv_smul₀ hy.1.ne']
 
-
-
-
-
 theorem Convex.mem_interior_frontier_patch_cone_of_radial_pole
     {C P O : Set E} (hcv : Convex ℝ C) (hzero : (0 : E) ∈ interior C)
     {p q : E} (hq : q ∈ frontier C) {ρ : ℝ} (hρ : 1 < ρ) (hqp : q = ρ • p)
@@ -72,11 +52,6 @@ theorem Convex.mem_interior_frontier_patch_cone_of_radial_pole
   have h := hcv.smul_mem_interior_frontier_patch_cone hzero hq hO hqO hOP
     ⟨inv_pos.mpr hρpos, (inv_lt_one₀ hρpos).mpr hρ⟩
   rwa [hpq] at h
-
-
-
-
-
 
 theorem ContinuousAffineEquiv.exists_box_in_frontier_patch_cone
     (f : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] E)

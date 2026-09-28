@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.PhaseContactTransfer
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.JointPLComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

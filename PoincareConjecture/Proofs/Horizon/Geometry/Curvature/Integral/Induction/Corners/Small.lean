@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Isometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +14,6 @@ open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
 
 universe u
-
-
 
 theorem PoincareConjecture.normalizedCornerScalarBound_of_small
     {n m k : ℕ} (hdim : n = m + k) (δ H η C : ℝ)

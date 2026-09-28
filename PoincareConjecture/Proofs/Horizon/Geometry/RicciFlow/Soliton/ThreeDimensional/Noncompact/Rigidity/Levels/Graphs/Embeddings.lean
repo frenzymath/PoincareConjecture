@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MetricComparison
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +42,6 @@ theorem unscaledOriginalEmbedding_isLocalDiffeomorphOn (k : ℕ) :
   intro x
   exact (L.embedding_smooth k x).comp (𝓡 3) M
     ((Poincare.Manifold.shrinkDiffeomorph (𝓡 3) M).symm.isLocalDiffeomorph _)
-
-
 
 theorem unscaledOriginalEmbedding_eventually_relative_metric_error
     (K : Set L.limitCarrier.carrier) (hK : IsCompact K) {ε : ℝ} (hε : 0 < ε) :

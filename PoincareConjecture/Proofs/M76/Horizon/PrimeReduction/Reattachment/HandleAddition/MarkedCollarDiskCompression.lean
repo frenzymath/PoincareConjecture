@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalFiniteInwardCompression
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.OriginalFiniteCollarModel
@@ -125,4 +117,3 @@ theorem compress_original_disk_preserving_product_mark
       hH1 ⟨z,hd.1 hz⟩ ▸ (hHmark 1 ⟨z,hd.1 hz⟩).mpr hz⟩
 
 end PoincareConjecture.M76.OriginalFiniteCollarModel
-

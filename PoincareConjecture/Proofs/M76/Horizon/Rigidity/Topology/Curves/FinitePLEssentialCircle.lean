@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSquareCircle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ local notation "Q2" => sphere (0 : V2) 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
 
-
 noncomputable def annulusCoreCircle : C(Circle, Ann) :=
   ⟨fun z => annulusCylinderHomeomorph (⟨1 / 2, by norm_num⟩, z),
     annulusCylinderHomeomorph.continuous.comp (continuous_const.prodMk continuous_id)⟩
@@ -35,8 +25,6 @@ theorem annulusCoreCircle_apply (z : Circle) :
   rw [annulusCoreCircle, ContinuousMap.coe_mk, annulusCylinderHomeomorph_apply]
   change annulusMap 8 (by norm_num) (z, 2 * (1 / 2 : ℝ) - 1) = _
   norm_num
-
-
 
 theorem exists_polygon_of_finitePL_embedded_square_rim
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -63,8 +51,6 @@ theorem exists_polygon_of_finitePL_embedded_square_rim
   · rintro ⟨x, rfl⟩
     exact ⟨x, x.property, hvalue x⟩
 
-
-
 noncomputable def annulusOuterRimToCore :
     (⟨annulusRimPoint false, continuous_annulusRimPoint false⟩ :
       C(Circle, Ann)).Homotopy annulusCoreCircle where
@@ -80,10 +66,6 @@ noncomputable def annulusOuterRimToCore :
       (show (⟨(0 : ℝ) / 2, _⟩ : I) = 0 from Subtype.ext (by norm_num))).trans
       (annulusCylinderHomeomorph_zero z)
   map_one_left z := rfl
-
-
-
-
 
 theorem exists_finitePL_essential_annulus_core_homotopy
     (gamma : C(Q2, Ann)) (hinj : Function.Injective gamma)

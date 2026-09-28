@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.T
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.HypersurfaceSlab
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M}
-
-
 
 theorem scalarCurvature_posPart_le_levelScalar [T2Space M]
     (D : LeviCivitaData g) (f : M → ℝ) (x : M)
@@ -50,9 +41,6 @@ theorem scalarCurvature_posPart_le_levelScalar [T2Space M]
   apply max_le <;> nlinarith
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem integral_scalarCurvature_posPart_slab_le (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)

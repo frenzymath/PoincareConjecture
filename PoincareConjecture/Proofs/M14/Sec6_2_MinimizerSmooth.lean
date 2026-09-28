@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
-
-
-
 
 theorem minimizing_curve_contMDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hmin : M14IsMinimizing p) :
@@ -55,9 +43,6 @@ theorem minimizing_curve_contMDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     exact (hright _ hs.2).symm
   exact (hcyl.congr_of_eventuallyEq heq).contMDiffWithinAt
 
-
-
-
 theorem minimizing_horizontalVelocity_contMDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hmin : M14IsMinimizing p) :
     ContMDiffOn (𝓘(ℝ, ℝ)) ((spacetimeModel n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
@@ -69,9 +54,6 @@ theorem minimizing_horizontalVelocity_contMDiffOn (hM12 : GeneralizedRicciGaugeT
   intro s hs
   simp only [backwardPath_velocity_eq_projected p hs, projectedCurveVelocityWithin,
     projectedCurveVelocity, mfderivWithin_of_mem_nhds (isOpen_Ioo.mem_nhds hs)]
-
-
-
 
 theorem exists_minimizing_velocity_extension (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hmin : M14IsMinimizing p) :

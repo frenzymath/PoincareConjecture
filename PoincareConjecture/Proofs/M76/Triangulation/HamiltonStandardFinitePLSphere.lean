@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardLiftPL
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,10 +13,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
   {α : Type*}
   {d : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ)}
   {S : Set (LatticeHandleAmbient ι κ L)}
-
-
-
-
 
 theorem ChartwisePLSphere.exists_finitePL_standard_lattice_lift
     (s : ChartwisePLSphere d S) (hd : StandardLatticeHandleAtlas ι κ L d) :

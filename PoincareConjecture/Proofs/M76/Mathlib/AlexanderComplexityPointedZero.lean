@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonZeroSectionPartition
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
 
 theorem exists_decreasing_pointed_zero_presentations
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

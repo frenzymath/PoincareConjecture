@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Poincare.Analysis.Calculus
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem source_readout_smooth_convergence
     {n : ℕ} {U V : Set (EuclideanSpace ℝ (Fin n))}

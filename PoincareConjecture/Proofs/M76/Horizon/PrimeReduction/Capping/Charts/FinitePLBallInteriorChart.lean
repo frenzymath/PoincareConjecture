@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E W : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup W] [NormedSpace ℝ W]
   [FiniteDimensional ℝ W]
-
-
-
 
 theorem IsFinitePLBallPair.exists_open_cube_interior_chart {A B T : Set E}
     (hA : IsFinitePLBallPair W A B) (c : W ≃L[ℝ] V3) (hAT : A ⊆ T)

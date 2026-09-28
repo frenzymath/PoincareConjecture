@@ -1,14 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -33,8 +25,6 @@ private lemma sum_inner_project_sq (b : OrthonormalBasis ι ℝ E)
   rw [Finset.sum_add_distrib, Finset.sum_sub_distrib]
   simp only [← Finset.mul_sum, sum_inner_sq, hcross, hu]
   ring
-
-
 
 lemma sum_sq_orthogonal_restriction (b : OrthonormalBasis ι ℝ E)
     (A : E →L[ℝ] E) (hA : ∀ v w, inner ℝ (A v) w = inner ℝ v (A w))
@@ -77,7 +67,6 @@ lemma sum_sq_orthogonal_restriction (b : OrthonormalBasis ι ℝ E)
   simp_rw [hnormal, sum_inner_project_sq b u (A u) hu, sum_inner_sq]
   ring
 
-
 lemma trace_orthogonal_restriction (b : OrthonormalBasis ι ℝ E)
     (A : E →L[ℝ] E) (hA : ∀ v w, inner ℝ (A v) w = inner ℝ v (A w))
     (u : E) (hu : inner ℝ u u = 1) :
@@ -100,7 +89,6 @@ lemma trace_orthogonal_restriction (b : OrthonormalBasis ι ℝ E)
   rw [Finset.sum_add_distrib, Finset.sum_sub_distrib]
   simp only [← Finset.mul_sum, hc, sum_inner_sq, hu]
   ring
-
 
 lemma gauss_term_orthogonal_restriction (b : OrthonormalBasis ι ℝ E)
     (A : E →L[ℝ] E) (hA : ∀ v w, inner ℝ (A v) w = inner ℝ v (A w))

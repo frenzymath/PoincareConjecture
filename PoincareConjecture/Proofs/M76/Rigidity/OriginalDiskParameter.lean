@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,22 +15,16 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
 
-
-
 theorem disk_parameter_image :
     InjOn T.parameter (T.marked 2).space ∧ T.parameter '' (T.marked 2).space = D := by
   rw [T.disk_space]
   exact intrinsic_disk_parameter_image T.graph j T.parameter T.parameter_original
-
-
 
 theorem rim_space_subsets :
     (T.marked 3).space ⊆ (T.marked 2).space ∧
       (T.marked 3).space ⊆ (T.marked 1).space := by
   rw [← T.disk_boundary_inter]
   exact ⟨inter_subset_left, inter_subset_right⟩
-
-
 
 theorem parameter_mem_rim_iff {x : T.index → ℝ × V3}
     (hx : x ∈ (T.marked 2).space) : T.parameter x ∈ Q ↔ x ∈ (T.marked 3).space := by
@@ -51,16 +37,11 @@ theorem parameter_mem_rim_iff {x : T.index → ℝ × V3}
   · intro hxQ
     exact hQ.subset (mem_image_of_mem T.parameter hxQ)
 
-
-
 theorem disk_space_subset_region : (T.marked 2).space ⊆ (T.marked 0).space := by
   intro x hx
   have hxK : x ∈ T.ambient.space := SimplicialComplex.space_subset_of_le (T.marked_le 2) hx
   obtain ⟨hz, hjz⟩ := T.parameter_disk_point hx
   exact (T.inverse_mem_region_iff hxK).mp (hjz ▸ T.disk_in_region hz)
-
-
-
 
 theorem rim_le_disk : T.marked 3 ≤ T.marked 2 := by
   intro s hs
@@ -70,8 +51,6 @@ theorem rim_le_disk : T.marked 3 ≤ T.marked 2 := by
   exact (SimplicialComplex.vertex_mem_subcomplex_space_iff (T.marked_le 2) hxK).mp
     (T.rim_space_subsets.1 ((T.marked 3).subset_space hs hx))
 
-
-
 theorem rim_le_boundary : T.marked 3 ≤ T.marked 1 := by
   intro s hs
   apply T.marked_full 1 s (T.marked_le 3 hs)
@@ -79,9 +58,6 @@ theorem rim_le_boundary : T.marked 3 ≤ T.marked 1 := by
   have hxK := T.ambient.face_subset_vertices (T.marked_le 3 hs) hx
   exact (SimplicialComplex.vertex_mem_subcomplex_space_iff (T.marked_le 1) hxK).mp
     (T.rim_space_subsets.2 ((T.marked 3).subset_space hs hx))
-
-
-
 
 theorem disk_face_mem_boundary_iff {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) :

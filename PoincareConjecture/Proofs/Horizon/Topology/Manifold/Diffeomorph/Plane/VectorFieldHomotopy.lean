@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Basic
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.PlaneDiffeomorph
 
 private abbrev E2 := EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem exists_nonvanishing_homotopy
     {V : E2 → E2} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)
@@ -64,8 +52,6 @@ theorem exists_nonvanishing_homotopy
     simpa only [mem_closedBall, dist_zero_right] using hKR x hx
   · intro t x hx
     simp [H, hLfix x hx]
-
-
 
 theorem exists_pushforward_homotopy
     (g : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

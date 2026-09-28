@@ -1,24 +1,11 @@
 import Mathlib.Data.Set.Basic
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem two_foot_replacement_eq_height_carrier
     {E : Type*} {S₀ S₁ N D d₀ r₀ d₁ r₁ : Set E} {h : E → ℝ} {beta : ℝ}

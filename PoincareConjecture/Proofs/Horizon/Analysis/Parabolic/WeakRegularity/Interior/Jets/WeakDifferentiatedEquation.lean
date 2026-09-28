@@ -1,19 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
@@ -270,8 +255,6 @@ private theorem weak_pair {f g : Spacetime n → ℝ} (v : Spacetime n)
   rw [hψ.restrict_pair, (hψ.deriv v).restrict_pair] at hh
   exact hh
 
-
-
 theorem differentiated_inhomogeneous_pairing
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)
     {C : Coefficients n} (hC : C.IsSmoothOn U)
@@ -407,7 +390,6 @@ theorem differentiated_inhomogeneous_pairing
   rw [hfull, hright]
   change pair w (C.adjoint φ) = _
   linarith only [hwtest, hfderiv]
-
 
 theorem WeakSolutionOn.differentiated_pairing
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)

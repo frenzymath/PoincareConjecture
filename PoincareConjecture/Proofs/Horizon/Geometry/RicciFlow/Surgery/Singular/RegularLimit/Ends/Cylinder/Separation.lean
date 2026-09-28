@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Lif
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.ClosedHalf
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem isSeparating_of_closed_subset_of_simplyConnected_open
     (U : Opens M) [SimplyConnectedSpace U] {Y : Set M}
@@ -119,8 +110,6 @@ theorem isSeparating_of_closed_subset_of_simplyConnected_open
       by_contra hyY
       exact disjoint_left.mp hdis hy (hLB ⟨y.property, hyY⟩)
   exact N.isSeparating_iff_not_isNonseparating.mpr hsep
-
-
 
 theorem isSeparating_of_closed_cylinder_tail {U : Set M} (Q : OpenCylinderModel U)
     (hU : IsOpen U) (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1)

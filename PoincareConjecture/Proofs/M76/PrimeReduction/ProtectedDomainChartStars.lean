@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalDomainCharts
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
-
 
 theorem exists_protected_domain_chart_stars
     {e : ι → OpenPartialHomeomorph X V3} {R D : Set X}

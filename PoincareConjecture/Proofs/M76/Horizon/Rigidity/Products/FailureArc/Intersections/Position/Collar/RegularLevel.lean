@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

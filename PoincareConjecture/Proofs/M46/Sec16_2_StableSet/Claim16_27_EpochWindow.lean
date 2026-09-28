@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_Minimizer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,13 +8,9 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 theorem epochStart_ge_initial (j : ℕ) : 1 / 32 ≤ surgeryEpochStart j := by
   exact div_le_div_of_nonneg_right (one_le_pow₀ (by norm_num : (1 : ℝ) ≤ 2))
     (by norm_num)
-
-
 
 theorem epochStart_succ (j : ℕ) :
     surgeryEpochStart (j + 1) = 2 * surgeryEpochStart j := by
@@ -30,15 +18,11 @@ theorem epochStart_succ (j : ℕ) :
   rw [pow_succ]
   ring
 
-
-
 theorem prefix_epochStart_eq_twice {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) :
     surgeryEpochStart p.i = 2 * surgeryEpochStart (p.i - 1) := by
   have hi : p.i - 1 + 1 = p.i := Nat.sub_add_cancel p.i_pos
   simpa only [hi] using epochStart_succ (p.i - 1)
-
-
 
 theorem prefix_old_time_bounds {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T : ℝ}
@@ -50,8 +34,6 @@ theorem prefix_old_time_bounds {K : MetricSurgeryConstants}
   rw [prefix_epochStart_eq_twice p] at hTlo
   rw [epochStart_succ, prefix_epochStart_eq_twice p] at hThi
   refine ⟨?_, hTlo, ?_⟩ <;> linarith [epochStart_ge_initial (p.i - 1)]
-
-
 
 theorem prefix_low_scalar_time_window {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T tau : ℝ}
@@ -71,8 +53,6 @@ theorem prefix_low_scalar_time_window {K : MetricSurgeryConstants}
   rw [prefix_epochStart_eq_twice p]
   linarith [htau.1, epochStart_ge_initial (p.i - 1)]
 
-
-
 theorem prefix_seed_time_slab {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T tau : ℝ}
     (htau : tau ≤ T - surgeryEpochStart (p.i - 1) - p.setup.epsilon ^ 2)
@@ -81,9 +61,6 @@ theorem prefix_seed_time_slab {K : MetricSurgeryConstants}
   rw [surgeryEpochEntry, if_neg (Nat.ne_of_gt p.i_pos)]
   intro t ht
   exact ⟨by linarith [ht.1], ht.2.trans_lt hbefore⟩
-
-
-
 
 theorem prefix_comparison_time_bounds {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T tau delay radius : ℝ}
@@ -103,8 +80,6 @@ theorem prefix_comparison_time_bounds {K : MetricSurgeryConstants}
   · nlinarith [htau.1, hdelay.1]
   · apply prefix_seed_time_slab p htau.2 hbefore
     constructor <;> linarith [hdelay.1, hdelay.2]
-
-
 
 theorem HalfRadiusHistory.low_scalar_minimizer (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

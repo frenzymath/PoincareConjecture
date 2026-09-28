@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.Rims.CopiedRims
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.PrescribedRimChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip Topology
 

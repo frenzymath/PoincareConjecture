@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Variation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -29,16 +18,12 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {J : Set ℝ}
 
-
 lemma metric_inner_hasDerivWithinAt_ricci
     (F : RicciFlow n M J) (t : ℝ) (ht : t ∈ J)
     (x : M) (u v : TangentSpace (𝓡 n) x) :
     HasDerivWithinAt (fun s ↦ (F.metric s).inner x u v)
       (-2 * (F.connection t).ricci x u v) J t := by
   exact F.equation t ht x u v
-
-
-
 
 lemma hasDerivAt_hamiltonP_raw
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -66,8 +51,6 @@ lemma hasDerivAt_hamiltonP_raw
     (PoincareConjecture.RicciFlow.hasDerivAt_mvfderiv_ricci_fields
       hC F ht hX hZ (Y x))
 
-
-
 lemma hamiltonP_eq_raw_sub_connection
     (D : LeviCivitaData g) (x : M) (u v w : TangentSpace (𝓡 n) x) :
     let X := fun a : TangentSpace (𝓡 n) x =>
@@ -82,8 +65,6 @@ lemma hamiltonP_eq_raw_sub_connection
   simp [hamiltonP, LeviCivitaData.covariantTensorDerivative,
     LeviCivitaData.ricciEvaluation, Fin.sum_univ_two]
   ring
-
-
 
 lemma connection_hasDerivAt_ricci
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -100,8 +81,6 @@ lemma connection_hasDerivAt_ricci
             (F.connection t).covariantTensorDerivative (F.connection t).ricciEvaluation x ![w, u, v] :=
   F.connection_hasDerivAt_ricci ht
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) x v
-
-
 
 lemma covariantTensorDerivative_hamiltonP
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

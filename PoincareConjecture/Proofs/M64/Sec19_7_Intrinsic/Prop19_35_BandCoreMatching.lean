@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RetainedReturnCore
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreBandRefinement
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -67,11 +57,6 @@ private theorem core_triangle_contact
     simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]
 
 open Classical in
-
-
-
-
-
 
 theorem m64Intrinsic_linear_band_core_cut_lines
     (L : AnnulusCoordinates ≃L[ℝ] AnnulusCoordinates)
@@ -238,10 +223,6 @@ theorem m64Intrinsic_linear_band_core_cut_lines
 
 open Classical in
 
-
-
-
-
 theorem m64Intrinsic_refine_core_to_linear_band
     (L : AnnulusCoordinates ≃L[ℝ] AnnulusCoordinates)
     {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
@@ -266,11 +247,6 @@ theorem m64Intrinsic_refine_core_to_linear_band
     exact T.refineByLines_isMonochromatic_of_mem lines hl
 
 open Classical in
-
-
-
-
-
 
 theorem m64Intrinsic_refine_core_to_linear_bands
     {I : Type*} [Finite I]

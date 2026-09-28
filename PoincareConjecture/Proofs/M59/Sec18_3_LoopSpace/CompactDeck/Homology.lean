@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M02.HurewiczRepresentatives
 import PoincareConjecture.Statements.M40ComparisonHomotopy
 import Mathlib.LinearAlgebra.Dimension.Free
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +17,6 @@ universe u
 namespace PoincareConjecture.Proofs.M59
 
 open M02 M02.Topology
-
-
 
 theorem compactThree_integralHomology_two_isZero
     (P02 : RepairedClosedTopologyProvider.{u})
@@ -46,18 +34,12 @@ theorem compactThree_integralHomology_two_isZero
   · exact HomotopyGroup.pi1EquivFundamentalGroup.injective.subsingleton
   · exact T.pi_two_subsingleton
 
-
-
-
 theorem compactThree_integralHomology_above_isZero
     {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] (n : ℕ) :
     IsZero (integralHomology M (n + 4)) := by
   exact ((integralThreeManifoldCompactSupport (Set.univ : Set M)
     isCompact_univ).1 n).of_iso (integralHomologySupportUnivIso M (n + 4))
-
-
-
 
 theorem compactThree_integralHomology_isZero
     (P02 : RepairedClosedTopologyProvider.{u})
@@ -76,9 +58,6 @@ theorem compactThree_integralHomology_isZero
   rcases n with _ | n
   · exact (hthree rfl).elim
   · exact compactThree_integralHomology_above_isZero n
-
-
-
 
 theorem compactThree_integralHomology_free
     (P02 : RepairedClosedTopologyProvider.{u})
@@ -100,8 +79,6 @@ theorem compactThree_integralHomology_free
   · let := ModuleCat.isZero_iff_subsingleton.mp
       (compactThree_integralHomology_isZero P02 (M := M) n hzero hthree)
     exact Module.Free.of_subsingleton ℤ (integralHomology M n)
-
-
 
 theorem compactThree_integralHomology_finite
     (P02 : RepairedClosedTopologyProvider.{u})
@@ -126,9 +103,6 @@ theorem compactThree_integralHomology_finite
       (compactThree_integralHomology_isZero P02 (M := M) n hzero hthree)
     infer_instance
 
-
-
-
 theorem trace_integralHomologyMap_zero
     {X : Type u} [TopologicalSpace X] [PathConnectedSpace X] (f : C(X, X)) :
     LinearMap.trace ℤ (integralHomology X 0)
@@ -145,7 +119,6 @@ theorem trace_integralHomologyMap_zero
   simp only [LinearMap.trace_id, finrank_ulift, Module.finrank_self, Nat.cast_one]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem compactThree_homologyMap_eq_id_of_trace_one
     {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]

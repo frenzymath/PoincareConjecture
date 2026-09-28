@@ -156,4 +156,3 @@ theorem pullbackCovariantDerivative_chart_formula {J C U : Set ℝ}
   rw [chartSectionExtension_deriv hU hCU x α c hc hsrc Y hY (hCU hs) (hsrc hs), hcov, hvel]
 
 end PoincareConjecture.M08
-

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Uniqueness.Open
 
-
-
 noncomputable section
 
 namespace Poincare.ODE.LocalFlow
@@ -10,8 +8,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem glue_smooth_solution_families
     {F : E → E} {U V : Set E} (hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U)
@@ -66,8 +62,6 @@ theorem glue_smooth_solution_families
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem exists_uniform_smooth_local_flows
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)
     {F : E → E} (hF : ContDiffOn ℝ ∞ F U) :
@@ -107,9 +101,6 @@ theorem exists_uniform_smooth_local_flows
     refine ⟨V, mem_nhdsWithin_of_mem_nhds (hV.mem_nhds hxV), δ, hδ, ?_⟩
     intro y hy
     exact ⟨V, Φ, hV, hy, hs, hi, fun z hz t ht => ⟨hm z hz t ht, hd z hz t ht⟩⟩
-
-
-
 
 theorem exists_smooth_flow_along_compact_interval
     {F : E → E} {U : Set E} (hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U)

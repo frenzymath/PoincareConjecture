@@ -2,24 +2,6 @@ import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 import Mathlib.Order.Zorn
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -299,8 +281,6 @@ private noncomputable def Worldline.rescale {F : GeneralizedRicciFlowData.{u}}
     rfl
   exact hbox _ _ _ _ (hclock s'.1)
 
-
-
 theorem exists_maximalBackwardFlowLine_of_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {scale duration : ℝ} {I : Set ℝ}
     (e : GeneralizedFlowCylinder F (F.slice p.1) p.1 scale I {p.2})
@@ -330,8 +310,6 @@ theorem exists_maximalBackwardFlowLine_of_cylinder
         exact eq_of_heq (Sigma.mk.inj (heq s hs)).2
       exact Subset.antisymm (hw _ hext).1 hsub }
   exact ⟨L, hseed.1, hval⟩
-
-
 
 theorem maximalBackwardFlowLine_of_rescaled_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {r q duration : ℝ} {I : Set ℝ}

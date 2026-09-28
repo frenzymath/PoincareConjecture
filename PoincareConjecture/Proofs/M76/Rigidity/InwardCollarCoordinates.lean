@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +13,6 @@ namespace Geometry
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {c : E × ℝ → X}
-
-
 
 theorem PolyhedralPLInCharts.finite_product_slice
     (L : SimplicialComplex ℝ E) (hL : L.faces.Finite)
@@ -46,9 +36,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
-
-
-
 
 theorem ChartwisePLSphere.exists_finitePL_collar_base_parameter
     (s : ChartwisePLSphere e (frontier R))

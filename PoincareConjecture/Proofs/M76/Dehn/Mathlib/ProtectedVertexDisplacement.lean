@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_protected_vertex_height (J Q : SimplicialComplex ℝ E)
     (hQJ : Q ≤ J) {v : E} (hv : v ∈ J.vertices) (hvQ : v ∉ Q.vertices) :
@@ -54,10 +41,6 @@ theorem exists_protected_vertex_height (J Q : SimplicialComplex ℝ E)
     have hwv : w ≠ v := fun h => hvQ (h ▸ hw)
     change f w = 0
     simpa only [if_neg hwv] using hfv (hQJ hw)
-
-
-
-
 
 theorem exists_protected_vertex_displacement (J Q : SimplicialComplex ℝ E)
     (hQJ : Q ≤ J) {v : E} (hv : v ∈ J.vertices) (hvQ : v ∉ Q.vertices) (u : E) :

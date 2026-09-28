@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedJoin
 import PoincareConjecture.Proofs.M47.JointSeedConstantAction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J}
-
-
-
 
 theorem jointSeed_birth_reducedLength_of_worldline
     (hM04 : RicciFlowCurvatureTheory.{u}) {T d eta v K B : ℝ}

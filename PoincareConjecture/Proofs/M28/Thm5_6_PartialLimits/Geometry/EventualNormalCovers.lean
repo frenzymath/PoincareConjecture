@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.NormalCoverMetricLimit
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Topology Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_partial_metric_limit_of_eventual_normal_covers
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

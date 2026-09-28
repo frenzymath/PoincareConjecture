@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereNormalSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem referenceFlattening_height_factor
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)
@@ -58,7 +47,6 @@ theorem referenceFlattening_height_factor
   field_simp [hd.ne', hz.ne']
   nlinarith only [hn]
 
-
 noncomputable def referenceCapTransition
     (A : BallNeighborhoodChart E3 E3)
     (C : OpenPartialHomeomorph (E2 × ℝ) E3)
@@ -68,7 +56,6 @@ noncomputable def referenceCapTransition
   let G0 := heightCoordinates.toDiffeomorph.trans
     (referenceFlatteningDiffeomorph a ha α hα hpos)
   (G0.toHomeomorph.toOpenPartialHomeomorph.trans C).trans A.chart.symm
-
 
 theorem referenceCapTransition_spec
     (A : BallNeighborhoodChart E3 E3)
@@ -106,7 +93,6 @@ theorem referenceCapTransition_spec
     simp only [mem_univ, and_true, mem_ofPred_eq]
   · exact A.smooth_symm.comp (hJ.mono inter_subset_left) (fun _ hy => hy.2)
   · exact hJi.comp (A.smooth.mono inter_subset_left) (fun _ hy => hy.2)
-
 
 theorem referenceCapTransition_oriented_patch
     (A : BallNeighborhoodChart E3 E3)

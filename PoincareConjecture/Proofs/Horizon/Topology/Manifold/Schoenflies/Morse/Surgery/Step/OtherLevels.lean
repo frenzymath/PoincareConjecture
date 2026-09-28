@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.OtherLevels
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,18 +16,15 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
 theorem capMinus_height_mem_slab (x : E2) : |inner Real v (S.gMinus x) - c| < R := by
   obtain ⟨hl, hu⟩ := abs_lt.mp (S.gMinus_width x)
   exact abs_lt.mpr ⟨by linarith [S.a_pos, S.a_lt_quarter_R],
     by linarith [S.a_pos, S.a_lt_quarter_R]⟩
 
-
 theorem capPlus_height_mem_slab (x : E2) : |inner Real v (S.gPlus x) - c| < R := by
   obtain ⟨hl, hu⟩ := abs_lt.mp (S.gPlus_width x)
   exact abs_lt.mpr ⟨by linarith [S.a_pos, S.a_lt_quarter_R],
     by linarith [S.a_pos, S.a_lt_quarter_R]⟩
-
 
 theorem capMinus_avoids_of_far {k : Real} (hk : R < |k - c|) (x : E2) :
     inner Real v (S.gMinus x) ≠ k := by
@@ -38,14 +33,12 @@ theorem capMinus_avoids_of_far {k : Real} (hk : R < |k - c|) (x : E2) :
   rw [heq] at hb
   exact (not_lt_of_ge hk.le) hb
 
-
 theorem capPlus_avoids_of_far {k : Real} (hk : R < |k - c|) (x : E2) :
     inner Real v (S.gPlus x) ≠ k := by
   intro heq
   have hb := S.capPlus_height_mem_slab x
   rw [heq] at hb
   exact (not_lt_of_ge hk.le) hb
-
 
 theorem other_regular {k : Real} (hk : R < |k - c|)
     (hregular : ∀ p, inner Real v (f p) = k →
@@ -71,8 +64,6 @@ private def componentsEquiv {X Y : Type*} [TopologicalSpace X] [TopologicalSpace
     have hfiber : H ⁻¹' {y} = {H.symm y} := by ext x; exact H.toEquiv.eq_symm_apply.symm
     rw [hfiber]
     exact isConnected_singleton).toEquiv
-
-
 
 theorem other_card {k : Real} (hk : R < |k - c|)
     [Finite (ConnectedComponents ((fun p => inner Real v (f p)) ⁻¹' {k}))] :
@@ -112,8 +103,6 @@ theorem other_card {k : Real} (hk : R < |k - c|)
   refine ⟨inferInstance, inferInstance, ?_⟩
   exact (congrArg₂ (fun m n : Nat => m + n)
     (Nat.card_congr Eminus) (Nat.card_congr Eplus)).trans hcard
-
-
 
 theorem regular_on_cuts {A : Set Real}
     (hseparation : ∀ k ∈ A, k ≠ c → R < |k - c|)

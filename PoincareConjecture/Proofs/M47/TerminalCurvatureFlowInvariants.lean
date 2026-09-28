@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M47
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def terminalCurvatureFlowDiffeomorph
     (Phi : ℝ → M → M) (hzero : ∀ x, Phi 0 x = x)
@@ -35,8 +25,6 @@ def terminalCurvatureFlowDiffeomorph
   right_inv x := by rw [← hadd, add_neg_cancel, hzero]
   contMDiff_toFun := hs.comp (contMDiff_const.prodMk contMDiff_id)
   contMDiff_invFun := hs.comp (contMDiff_const.prodMk contMDiff_id)
-
-
 
 theorem terminalCurvature_flow_invariants
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -64,8 +52,6 @@ theorem terminalCurvature_flow_invariants
       (fun x _ => hmetric x) (mem_univ x)).symm
   · intro x y
     exact (RiemannianMetric.edist_diffeomorph g g e hmetric x y).symm
-
-
 
 theorem terminalCurvature_flow_isometry [T3Space M] [PreconnectedSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

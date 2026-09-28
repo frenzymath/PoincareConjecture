@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SeedPaths
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_ObservedSeedCylinder
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
 
 theorem stableSource_of_observed_cap_birth
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

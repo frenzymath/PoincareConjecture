@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussMetricExtension
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,7 +8,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.CoordinateExponential
-
 
 theorem metric_zero_eq_innerSL_of_gauss
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -34,8 +27,6 @@ theorem metric_zero_eq_innerSL_of_gauss
   simpa only [add_apply, ContinuousLinearMap.comp_apply, ContinuousLinearMap.id_apply,
     ContinuousLinearMap.flip_apply, ContinuousLinearMap.comp_zero, zero_add,
     innerSL_apply_apply, map_zero, zero_apply, add_zero] using hh.symm
-
-
 
 theorem christoffelBilinear_zero_of_local_gauss
     {n : ℕ} {U : Set (EuclideanSpace ℝ (Fin n))}

@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Geometry.Manifold.ContMDiff.Defs
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -126,7 +115,6 @@ theorem overlap_equation (hc : c ∈ Ioo a T)
     apply (he.mono_of_mem_nhdsWithin hlocal).congr_of_eventuallyEq_of_mem ?_ ht
     filter_upwards [hlocal] with s hs
     rw [overlapMetric_eq_right F G c hc.2 hmetric hs]
-
 
 noncomputable def glueOverlap (ha : 0 < a) (hc : c ∈ Ioo a T) (hTB : T < B)
     (hmetric : EqOn F.metric G.metric (Ico a T)) : RicciFlow n M (Ico 0 B) where

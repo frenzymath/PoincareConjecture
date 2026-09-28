@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Connectedness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
@@ -31,7 +23,6 @@ theorem eq_of_zero_right {i j l : ι} (p : X i) {x : X j} {y : X l}
   · have hrev : D l j (y, x) = 0 := (comm hD l j y x).trans hxy
     simpa only [hrev, add_zero] using triangle hD i l j p y x
   · simpa only [hxy, add_zero] using triangle hD i j l p x y
-
 
 noncomputable def quotientRadius {i₀ : ι} (p : X i₀) : C(Quotient O.setoid, ℝ) where
   toFun := Quotient.lift (fun x : Σ i, X i => D i₀ x.1 (p, x.2))
@@ -118,7 +109,6 @@ private theorem frontier_component_subset {Y : Type*} [TopologicalSpace Y]
   rw [hV.connectedComponentIn.interior_eq]
   exact heq ▸ hqC
 
-
 theorem exists_connected_radius_exhaustion
     [PreconnectedSpace (Quotient O.setoid)] [LocallyConnectedSpace (Quotient O.setoid)]
     (L : ι → ℝ≥0) (he : ∀ k i, LipschitzWith (L i) (e k i))
@@ -153,8 +143,6 @@ theorem exists_connected_radius_exhaustion
     rw [hUeq j] at hqU
     exact frontier_lt_subset_eq (quotientRadius hD O hrel p).continuous
       continuous_const hqU
-
-
 
 theorem exists_connected_exhaustion_of_source_ball_covers
     [∀ i, LocallyConnectedSpace (X i)]

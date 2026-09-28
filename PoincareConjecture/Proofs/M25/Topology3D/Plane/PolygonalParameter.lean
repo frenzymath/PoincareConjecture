@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedCorner
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Algebra.Ring.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 def polygonIntegerIndex (n : ℕ) [NeZero n] (j : ℤ) : Fin n :=
   ⟨(j % (n : ℤ)).toNat, (Int.toNat_lt (Int.emod_nonneg _ (by
@@ -30,20 +17,16 @@ def polygonIntegerIndex (n : ℕ) [NeZero n] (j : ℤ) : Fin n :=
 
 variable {n : ℕ} [NeZero n]
 
-
 theorem polygonIntegerIndex_nat (i : Fin n) : polygonIntegerIndex n (i.val : ℤ) = i := by
   apply Fin.ext
   change ((i.val : ℤ) % (n : ℤ)).toNat = i.val
   rw [Int.emod_eq_of_lt (Int.natCast_nonneg _) (by exact_mod_cast i.isLt)]
   rfl
 
-
 theorem polygonIntegerIndex_add_period (j : ℤ) :
     polygonIntegerIndex n (j + n) = polygonIntegerIndex n j := by
   apply Fin.ext
   exact congrArg Int.toNat (Int.add_emod_right j n)
-
-
 
 theorem polygonIntegerIndex_succ (j : ℤ) :
     polygonIntegerIndex n (j + 1) = finRotate n (polygonIntegerIndex n j) := by
@@ -59,14 +42,10 @@ theorem polygonIntegerIndex_succ (j : ℤ) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def polygonLinearParameter (p : Polygon E n) (t : ℝ) : E :=
   let j : ℤ := ⌊t⌋
   p (polygonIntegerIndex n j) + (t - j) •
     (p (polygonIntegerIndex n (j + 1)) - p (polygonIntegerIndex n j))
-
-
 
 theorem polygonLinearParameter_eq_edge (p : Polygon E n) (i : ℤ) {t : ℝ}
     (ht : t ∈ Icc (i : ℝ) ((i : ℝ) + 1)) :
@@ -84,8 +63,6 @@ theorem polygonLinearParameter_eq_edge (p : Polygon E n) (i : ℤ) {t : ℝ}
     rw [show (i : ℝ) + 1 - i = 1 by ring]
     simp only [Polygon.edgePath, AffineMap.lineMap_apply_one, polygonIntegerIndex_succ]
 
-
-
 theorem periodic_polygonLinearParameter (p : Polygon E n) :
     Periodic (polygonLinearParameter p) (n : ℝ) := by
   intro t
@@ -96,8 +73,6 @@ theorem periodic_polygonLinearParameter (p : Polygon E n) :
   simp only [polygonIntegerIndex_add_period, Int.cast_add, Int.cast_natCast]
   congr 2
   ring
-
-
 
 theorem polygonLinearParameter_eq_corner (p : Polygon E n) (i : ℤ) {t : ℝ}
     (ht : t ∈ Ioo ((i : ℝ) - 1) ((i : ℝ) + 1)) :
@@ -118,8 +93,6 @@ theorem polygonLinearParameter_eq_corner (p : Polygon E n) (i : ℤ) {t : ℝ}
     simp only [Polygon.edgePath, AffineMap.lineMap_apply_module',
       ← polygonIntegerIndex_succ, roundedCorner, abs_of_nonneg (sub_nonneg.mpr hmem.1)]
     module
-
-
 
 theorem continuous_polygonLinearParameter {Z : Type*} [TopologicalSpace Z]
     {p : Z → Polygon E n} (hp : ∀ i, Continuous (fun z => p z i)) :
@@ -151,8 +124,6 @@ theorem continuous_polygonLinearParameter {Z : Type*} [TopologicalSpace Z]
     continuous_snd.continuousAt (isOpen_Ioo.mem_nhds hx)
   filter_upwards [hU] with y hy
   exact polygonLinearParameter_eq_corner (p y.1) i hy
-
-
 
 theorem IsSimplePolygon.injOn_polygonLinearParameter {p : Polygon E n}
     (hp : IsSimplePolygon p) : InjOn (polygonLinearParameter p) (Ico 0 (n : ℝ)) := by
@@ -200,8 +171,6 @@ theorem IsSimplePolygon.injOn_polygonLinearParameter {p : Polygon E n}
           simpa only [Polygon.edgePath, AffineMap.lineMap_apply_one] using heq.symm.trans h)
         linarith
     exact False.elim (hidx (hp.vertices_injective (hleftj.symm.trans hleftk)))
-
-
 
 theorem range_polygonLinearParameter (p : Polygon E n) :
     range (polygonLinearParameter p) = p.boundary ℝ := by

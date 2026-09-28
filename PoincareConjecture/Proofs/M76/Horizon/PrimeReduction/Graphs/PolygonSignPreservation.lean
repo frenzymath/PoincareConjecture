@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedSignedPolygonZeros
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem mem_both_height_closures_of_strict_sign_preservation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -135,9 +125,6 @@ theorem mem_both_height_closures_of_strict_sign_preservation
     · rcases hsign with h | h
       · exact ⟨v, by simp, h.2⟩
       · exact ⟨u, by simp, h.2⟩
-
-
-
 
 theorem ncard_polygon_zero_eq_two_of_strict_sign_preservation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

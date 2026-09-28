@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.PositiveFrontier
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_middle_region_closure_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -109,8 +97,6 @@ theorem exists_middle_region_closure_control :
       (mul_le_mul_of_nonneg_right hscalei hroot.le) hdepth
       (by positivity) (mul_nonneg (C.neck i).scale_pos.le hroot.le)
   exact (not_le_of_gt hzW.2) ((ENNReal.ofReal_le_ofReal hdle).trans hlower)
-
-
 
 theorem exists_frontier_subset_exposed_end_closures :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcCandidate
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleEntry
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleBaseContact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -126,8 +118,6 @@ private theorem convexHull_inter_unitTriangle_subset
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ} {p : Polygon E (n + 2)}
-
-
 
 theorem IsSimplePolygonalArc.isAdmissible_polygonPushVertex_of_nonadjacent
     (hp : IsSimplePolygonalArc p) (hdim : Module.finrank ℝ E = 2)

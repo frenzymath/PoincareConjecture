@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutSt
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCore
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 def FamilyCutState.sourceCore
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -32,7 +21,6 @@ def FamilyCutState.sourceCore
   (univ : Set UnitTwoSphere) \
     ⋃ a : {a : Fin S.capCount // S.owner a = i},
       (S.cap a.1).sourceCapInterior
-
 
 theorem FamilyCutState.sourceCore_mem_and_seams
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -112,7 +100,6 @@ theorem FamilyCutState.sourceCore_mem_and_seams
       exact hb.2 ⟨q, hseam, rfl⟩
     · exact disjoint_left.mp (S.caps_disjoint hba) hb.1 ⟨q, hcap, rfl⟩
 
-
 structure FamilySourceAtlas
     (original : UnitTwoSphere × ℝ → E3)
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -134,7 +121,6 @@ structure FamilySourceAtlas
   collar_eq : ∀ i : Fin n, ∀ q ∈ (chart i).source,
     ∀ s : ℝ, |s| < 1 →
       psi i (q, s) = original (chart i q, timeScale i * s)
-
 
 theorem RegularSurgeryEvent.newCap_native_source
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -217,7 +203,6 @@ theorem RegularSurgeryEvent.newCap_native_source
     · intro hq
       exact ⟨q, hq, hidentity q hq.le⟩
 
-
 theorem FamilySourceAtlas.exists_initial
     (original : UnitTwoSphere × ℝ → E3)
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -249,7 +234,6 @@ theorem FamilySourceAtlas.exists_initial
     not_exists, iff_true]
   intro a
   exact False.elim (Nat.not_lt_zero _ (a.1.isLt.trans_le hcap.le))
-
 
 theorem FamilySourceAtlas.exists_surgery_step
     {original : UnitTwoSphere × ℝ → E3}

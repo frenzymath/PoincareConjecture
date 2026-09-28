@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem projKer_affineLeafMap_sub (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
@@ -33,8 +22,6 @@ theorem projKer_affineLeafMap_sub (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F
   rw [he, map_sub, ContinuousLinearMap.projKerOfRightInverse_apply_idem,
     ContinuousLinearMap.projKerOfRightInverse_comp_inv, sub_zero]
 
-
-
 theorem affineLeafMap_projKer (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (h0 : Function.RightInverse a.contLinear (Q x0))
     {x : F} (hx : Function.RightInverse a.contLinear (Q x)) {y : E}
@@ -46,10 +33,6 @@ theorem affineLeafMap_projKer (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     a.contLinear (Q x ((y - a x) - a.contLinear (Q x0 (y - a x)))) = y
   rw [(Q x).map_sub, hx, hy, zero_sub, map_neg]
   abel
-
-
-
-
 
 theorem eventually_affineLeaf_base_eq (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (hQ : ∀ x, Function.RightInverse a.contLinear (Q x))

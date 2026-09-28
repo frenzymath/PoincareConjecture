@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ChartwiseRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M76
 variable {X Y E ι κ : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {R C : Set X} {T : Set Y}
-
-
-
 
 theorem chartwisePLOn_interior_model_composite
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))

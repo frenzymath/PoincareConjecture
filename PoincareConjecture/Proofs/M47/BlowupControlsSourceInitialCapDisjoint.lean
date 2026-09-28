@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCapObstruction
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTipComparison
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarUpper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open M45
-
-
 
 theorem exists_source_initial_cap_disjoint_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {R : ℝ} (hR : 0 ≤ R) :

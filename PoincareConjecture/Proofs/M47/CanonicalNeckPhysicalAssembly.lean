@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPushedCylinder
 import PoincareConjecture.Proofs.M47.CanonicalNeckIsometricImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_physical_strong_neck_of_family
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}} {origin : ℝ}

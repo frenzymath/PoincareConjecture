@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MaxAffineSubdivision
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,15 +10,10 @@ namespace Geometry
 
 variable {ι : Type*}
 
-
-
 def signedCubeCoordinate (j : ι ⊕ ι) : (ι → ℝ) →ₗ[ℝ] ℝ :=
   match j with
   | .inl i => LinearMap.proj i
   | .inr i => -LinearMap.proj i
-
-
-
 
 def cubeSectorForms (j : Option (ι ⊕ ι)) : (ι → ℝ) →ᵃ[ℝ] ℝ :=
   match j with
@@ -35,8 +21,6 @@ def cubeSectorForms (j : Option (ι ⊕ ι)) : (ι → ℝ) →ᵃ[ℝ] ℝ :=
   | some i => (signedCubeCoordinate i).toAffineMap
 
 variable [Fintype ι]
-
-
 
 theorem norm_le_of_cubeSectorForms_le (x : ι → ℝ) {r : ℝ}
     (h : ∀ j, cubeSectorForms j x ≤ r) : ‖x‖ ≤ r := by
@@ -47,8 +31,6 @@ theorem norm_le_of_cubeSectorForms_le (x : ι → ℝ) {r : ℝ}
   have hp : x i ≤ r := h (some (.inl i))
   have hn : -x i ≤ r := h (some (.inr i))
   exact abs_le.mpr ⟨by linarith, hp⟩
-
-
 
 theorem signedCubeCoordinate_le_norm (j : ι ⊕ ι) (x : ι → ℝ) :
     signedCubeCoordinate j x ≤ ‖x‖ := by
@@ -61,10 +43,6 @@ theorem signedCubeCoordinate_le_norm (j : ι ⊕ ι) (x : ι → ℝ) :
       (by simpa only [Real.norm_eq_abs] using norm_le_pi_norm x i)
 
 namespace SimplicialComplex
-
-
-
-
 
 theorem exists_cubeSector_subdivision (K : SimplicialComplex ℝ (ι → ℝ))
     (hK : LocallyFinite (fun s : K.faces => convexHull ℝ (s.val : Set (ι → ℝ)))) :

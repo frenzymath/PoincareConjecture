@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralDirectedUnionRepresentatives
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportRange
 
-
-
 set_option autoImplicit false
 
 noncomputable section

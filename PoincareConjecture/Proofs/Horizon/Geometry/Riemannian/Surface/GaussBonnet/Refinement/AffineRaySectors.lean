@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.TwoRaySupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology
 open Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem mesh_support_regular_closed (M : TriangleMesh) :
     closure (interior M.toPlaneComplex.support) = M.toPlaneComplex.support := by
@@ -61,8 +53,6 @@ theorem second_affine_ray_eq_coordinate_axis (c : AffineBasis (Fin 3) ℝ Plane)
     have h := affineBasis_coordinate_reconstruction c z
     simpa only [h1, zero_smul, add_zero] using h
 
-
-
 theorem closed_regular_support_germ_of_affine_rays
     (c : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}
     (hK : IsClosed K) (hregular : closure (interior K) = K)
@@ -77,9 +67,6 @@ theorem closed_regular_support_germ_of_affine_rays
     union_comm] at hfront
   exact hfront
 
-
-
-
 theorem mesh_support_germ_of_affine_rays
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
     (hfront : frontier M.toPlaneComplex.support =ᶠ[𝓝 (c 0)]
@@ -91,8 +78,6 @@ theorem mesh_support_germ_of_affine_rays
     M.toPlaneComplex.isCompact_support.isClosed (mesh_support_regular_closed M) _ hfront
   apply (propext_iff.mp hfront.eq_of_nhds).mpr
   exact Or.inl ⟨0, by simp, by simp⟩
-
-
 
 theorem closed_regular_support_germ_of_affine_line
     (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l) {K : Set Plane} {q : Plane}
@@ -135,8 +120,6 @@ theorem closed_regular_support_germ_of_affine_line
     hboundary (Metric.mem_ball_self hr) hq with h | h
   · exact Or.inl (h.trans hA)
   · exact Or.inr (h.trans hB)
-
-
 
 theorem mesh_support_germ_of_affine_line
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l)

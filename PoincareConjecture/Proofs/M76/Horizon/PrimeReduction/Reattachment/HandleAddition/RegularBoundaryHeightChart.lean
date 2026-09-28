@@ -4,26 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePolyhedralPatches
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLevelSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_nonvertex_height_chart_preserving_affine_map
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -139,7 +124,6 @@ theorem exists_nonvertex_height_chart_preserving_affine_map
     change psi (-(f y - ell y) • w +ᵥ y) = psi y
     simp only [ContinuousAffineMap.map_vadd, map_smul, hpsiw, smul_zero, zero_vadd]
 
-
 private theorem exists_affine_height_frame_preserving_first
     (ell : ((ℝ × ℝ) × ℝ) →ᴬ[ℝ] ℝ) (w : (ℝ × ℝ) × ℝ)
     (hw : ell.contLinear w = 1) (hwfirst : w.1 = 0) (t : ℝ) :
@@ -169,9 +153,6 @@ private theorem exists_affine_height_frame_preserving_first
     simp only [vsub_eq_sub,sub_zero] at h
     rw [h]
     ring
-
-
-
 
 theorem exists_nonvertex_height_chart_preserving_two_planes
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)
@@ -207,8 +188,6 @@ theorem exists_nonvertex_height_chart_preserving_two_planes
     exact hpsi z
   · intro z hz
     rw [hvalue,hheight z (hHs.subset hz)]
-
-
 
 theorem exists_regular_height_charts_preserving_two_planes
     {f : ((ℝ × ℝ) × ℝ) → ℝ} {U : Set ((ℝ × ℝ) × ℝ)}
@@ -258,4 +237,3 @@ theorem exists_regular_height_charts_preserving_two_planes
       B (fun s hs => hAL (hBA hs)) hyB hBzero
 
 end Geometry.SimplicialComplex
-

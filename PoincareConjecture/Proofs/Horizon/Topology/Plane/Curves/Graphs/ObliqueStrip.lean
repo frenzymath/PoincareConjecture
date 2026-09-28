@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Strip
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,11 +8,9 @@ open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
 
-
 def obliqueStripMap (A B lo : ℝ → ℝ) (q : ℝ × ℝ) : ℝ × ℝ :=
   let x := A q.2 + q.1 * (B q.2 - A q.2)
   (x, lo x + q.2)
-
 
 noncomputable def obliqueStripInv (A B lo : ℝ → ℝ) (q : ℝ × ℝ) : ℝ × ℝ :=
   let z := q.2 - lo q.1
@@ -41,8 +28,6 @@ theorem obliqueStripMap_bottom {A B lo : ℝ → ℝ} {a b : ℝ}
     (hA : A 0 = a) (hB : B 0 = b) (t : ℝ) :
     obliqueStripMap A B lo (t, 0) = (a + t * (b - a), lo (a + t * (b - a))) := by
   simp [obliqueStripMap, hA, hB]
-
-
 
 noncomputable def obliqueStripCoordinates
     {A B lo : ℝ → ℝ} {Z X : Set ℝ}
@@ -118,8 +103,6 @@ theorem contDiffOn_obliqueStripCoordinates_symm :
     (fun q hq => ne_of_gt (sub_pos.mpr (hgap _ hq.2)))).prodMk hz
 
 end Coordinates
-
-
 
 theorem obliqueStripMap_image_rectangle {A B lo : ℝ → ℝ} {u v : ℝ}
     (hgap : ∀ z ∈ Icc u v, A z < B z) :

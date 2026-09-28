@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenIncl
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.RicciNullity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +24,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
     h.inner x v w = g.inner x.val v w)
 
 include hmetric in
-
 
 theorem terminalCurvature_open_inclusion_readouts (x : U) :
     E.scalarCurvature x = D.scalarCurvature x.val ∧
@@ -66,7 +56,6 @@ theorem terminalCurvature_open_inclusion_readouts (x : U) :
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem terminalCurvature_open_mpullback
     (V : (x : M) → TangentSpace (𝓡 n) x) (x : U) :
     mpullback (𝓡 n) (𝓡 n) (Subtype.val : U → M) V x = V x.val := by
@@ -77,7 +66,6 @@ theorem terminalCurvature_open_mpullback
   rfl
 
 include hmetric in
-
 
 theorem terminalCurvature_open_connection
     (V : (x : M) → TangentSpace (𝓡 n) x) (x : U)

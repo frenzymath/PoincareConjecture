@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,11 +14,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_faceAffine_vertex_stars_of_finite_ball_cover
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -95,11 +79,6 @@ theorem exists_faceAffine_vertex_stars_of_finite_ball_cover
     (g i) hrep hdsL (hSdq.trans sdiff_subset) hpd hpint hnS
   have hgL : L.AffineOnFaces (g i) := (hLD.trans hDT).affineOnFaces (hgT i)
   exact ⟨g i, (fun s hs => hgL s hs.1), hchart⟩
-
-
-
-
-
 
 theorem exists_faceAffine_vertex_stars_of_local_ball_pairs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

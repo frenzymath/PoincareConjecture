@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.InfiniteDerivedSubdivision
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K D : SimplicialComplex ℝ E} {c : Finset E → E}
-
-
-
-
 
 theorem finite_center_chain_faces_meeting
     (hc : ∀ s ∈ K.faces, c s ∈ convexHull ℝ (s : Set E))
@@ -53,8 +40,6 @@ theorem finite_center_chain_faces_meeting
     exact ⟨x, hsub hxt, hxU⟩
   · exact Finset.mem_image.mpr ⟨a,
       Finset.mem_powerset.mpr (fun s hs => Finset.mem_powerset.mpr (ham s hs)), he.symm⟩
-
-
 
 theorem locallyFinite_center_chain_faces
     (hc : ∀ s ∈ K.faces, c s ∈ convexHull ℝ (s : Set E))

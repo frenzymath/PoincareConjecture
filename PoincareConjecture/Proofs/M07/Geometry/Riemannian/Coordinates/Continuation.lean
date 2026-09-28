@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.ODE.CompactTrajectory
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_chart_geodesic_continuation
     {n : ℕ} {M : Type*} [TopologicalSpace M]

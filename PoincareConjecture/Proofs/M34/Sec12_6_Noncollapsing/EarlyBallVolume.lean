@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.UniformInitialCoordin
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.EarlySlabComparison
 import PoincareConjecture.Proofs.M34.Standard.CoordinateMetricBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_early_small_ball_volume {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : RicciFlowCurvatureTheory.{0})

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CappedTwoNeckSourceMinimizer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactBranchMinimizers
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapAlternatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_region_source_minimizer_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoreRadius
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeReference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem exists_cap_image_core_volume_tolerance {g : RiemannianMetric 3 M}
     (N : CapCertificate g) (hcomplete : MetricComplete g)

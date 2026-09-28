@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -636,4 +629,3 @@ theorem tensorLaplacian_tensorTraceLast {g : RiemannianMetric n M}
   simp only [Fin.append_cons, Fin.cast_refl, Function.comp_id]
 
 end PoincareConjecture.M04
-

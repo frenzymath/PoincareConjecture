@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orie
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Covering.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +14,6 @@ namespace Poincare.Topology.OrientationDoubleCover
 
 variable (M : Type u) [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 @[instance_reducible] noncomputable def chartedSpace :
     ChartedSpace (EuclideanSpace ℝ (Fin 3)) (TotalSpace M) :=
@@ -36,8 +28,6 @@ theorem isLocalDiffeomorph : letI := chartedSpace M
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (proj M) :=
   Poincare.Manifold.LocalHomeomorphLift.isLocalDiffeomorph
     (isCoveringMap M).isLocalHomeomorph (𝓡 3) ∞
-
-
 
 theorem mfderiv_proj_eq_id : letI := chartedSpace M
     ∀ p : TotalSpace M, mfderiv (𝓡 3) (𝓡 3) (proj M) p =
@@ -69,7 +59,6 @@ theorem extChartAt_eq_comp_proj : letI := chartedSpace M
   funext q
   exact Poincare.Manifold.LocalHomeomorphLift.localChart_apply
     (isCoveringMap M).isLocalHomeomorph p q
-
 
 theorem mfderiv_extChartAt_proj : letI := chartedSpace M
     ∀ (p q : TotalSpace M), q ∈ (chartAt (EuclideanSpace ℝ (Fin 3)) p).source →
@@ -117,14 +106,12 @@ theorem secondCountableTopology [CompactSpace M] : SecondCountableTopology (Tota
   let := compactSpace M
   exact ChartedSpace.secondCountable_of_sigmaCompact (EuclideanSpace ℝ (Fin 3)) (TotalSpace M)
 
-
 theorem contMDiff_flip : letI := chartedSpace M
     ContMDiff (𝓡 3) (𝓡 3) ∞ (flip M) := by
   let := chartedSpace M
   apply Poincare.Manifold.LocalHomeomorphLift.contMDiff_of_continuous_projection
     (isCoveringMap M).isLocalHomeomorph (𝓡 3) ∞ (continuous_flip M)
   exact (isLocalDiffeomorph M).contMDiff
-
 
 theorem mfderiv_flip_eq_id : letI := chartedSpace M
     ∀ p : TotalSpace M, mfderiv (𝓡 3) (𝓡 3) (flip M) p =
@@ -143,7 +130,6 @@ theorem mfderiv_flip_eq_id : letI := chartedSpace M
   rw [mfderiv_proj_eq_id, mfderiv_proj_eq_id] at hv
   exact hv.symm
 
-
 noncomputable def flipDiffeomorph : letI := chartedSpace M
     Diffeomorph (𝓡 3) (𝓡 3) (TotalSpace M) (TotalSpace M) ∞ := by
   let := chartedSpace M
@@ -152,7 +138,6 @@ noncomputable def flipDiffeomorph : letI := chartedSpace M
     contMDiff_toFun := contMDiff_flip M
     contMDiff_invFun := contMDiff_flip M
   }
-
 
 theorem flip_preserves_pullback_metric (g : PoincareConjecture.RiemannianMetric 3 M) :
     letI := chartedSpace M

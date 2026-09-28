@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.AntipodalCo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.ProjectiveDouble.Monodromy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Cover.InvolutionQuotient
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -85,7 +78,6 @@ theorem puncturedMap_fibers (p : RealProjectiveThree) (a b : PuncturedProjective
     from Quotient.eq]
   simp only [Subtype.ext_iff]
   rfl
-
 
 theorem punctured_exists_homology_retract (p : RealProjectiveThree)
     (R : ModuleCat (ZMod 2)) :

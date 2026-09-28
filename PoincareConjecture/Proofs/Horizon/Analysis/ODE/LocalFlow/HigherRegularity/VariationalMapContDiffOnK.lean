@@ -1,11 +1,3 @@
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.VariationalMapContDiffOnK
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.VariationalMapContDiffOnK.Foundations
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.HigherRegularity.ContDiffOnK
-
-
-
-
-
-
-
-

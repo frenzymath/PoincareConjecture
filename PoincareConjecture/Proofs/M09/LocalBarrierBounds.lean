@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.MinimizingBarrierBounds
 import PoincareConjecture.Proofs.M09.CompactMinimizingPreimages
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

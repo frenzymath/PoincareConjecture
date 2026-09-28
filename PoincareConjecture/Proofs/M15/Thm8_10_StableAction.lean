@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_PathProjection
 import PoincareConjecture.Proofs.M15.Lemma8_3_Action
 import PoincareConjecture.Proofs.M08.PathCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval}
-
-
 
 theorem ordinaryProduct_backwardLAction_congr
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -44,9 +33,6 @@ theorem ordinaryProduct_backwardLAction_congr
   rw [haction p, haction q]
   exact M08.backwardLLength_congr F T p.tau_lt.le
     (fun s hs => congrArg Prod.snd (hcurve hs))
-
-
-
 
 theorem ordinaryProduct_stable_reducedLength_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

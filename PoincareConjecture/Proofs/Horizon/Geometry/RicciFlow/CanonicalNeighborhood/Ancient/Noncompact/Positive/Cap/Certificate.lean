@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Buffered.Fields
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {delta D R epsilon C : ℝ}
   {G : SoulNeckRegion K S delta D R} (H : SoulCapGeometry G epsilon)
   (hsmall : epsilon ≤ 1 / 200) (hC : 0 < C) (B : BufferedRegionBounds H C)
-
 
 noncomputable def capCertificate : CapCertificate (K.flow.metric 0) := by
   classical

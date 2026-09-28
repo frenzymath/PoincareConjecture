@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialConnection
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ open ConnectionVariation Poincare.Riemannian.RadialTransport
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [CompleteSpace E]
-
-
 
 def radialFrameConnection (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (T : E → E →L[ℝ] E) (x d : E) : E →L[ℝ] E :=
@@ -63,7 +52,6 @@ theorem fderiv_inverse_transport_constant
   simpa only [covDerivAlong, fderiv_const_apply, zero_apply, fderiv_id,
     ContinuousLinearMap.id_apply, zero_add, id_eq] using h
 
-
 theorem radial_field_self_of_geodesic_rays
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
     (hgeo : ∀ x : E, ∀ t : ℝ, Γ (t • x) x x = 0) (x : E) :
@@ -86,8 +74,6 @@ theorem radial_field_self_of_geodesic_rays
     (fun t _ => by simpa only [neg_apply, hgeo x t, neg_zero] using hasDerivAt_const t x)
     (by simp [field_zero hΓ]) (show (1 : ℝ) ∈ Ioo (-2 : ℝ) 2 by norm_num)
   simpa only [one_smul] using heq
-
-
 
 theorem radial_coframe_euler_equation
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -135,8 +121,6 @@ theorem contDiff_radialFrameConnection_apply
     (((hdT.comp contDiff_fst).clm_apply contDiff_snd.fst |>.clm_apply contDiff_snd.snd).add
       (((hΓ.comp contDiff_fst).clm_apply contDiff_snd.fst).clm_apply
         ((hT.comp contDiff_fst).clm_apply contDiff_snd.snd)))
-
-
 
 theorem radial_coframe_eq_integral
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)

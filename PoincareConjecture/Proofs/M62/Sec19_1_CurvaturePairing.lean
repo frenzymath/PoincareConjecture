@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiCoordinateConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem curvatureTensor_pairing_of_commuting (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)

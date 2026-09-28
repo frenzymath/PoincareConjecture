@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.ComponentSpaceforms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def componentRoundDiffeomorph (S : GeneralizedSliceCarrier.{u})
     {g : RiemannianMetric 3 S.carrier} {epsilon : ℝ}
@@ -43,8 +33,6 @@ noncomputable def componentRoundDiffeomorph (S : GeneralizedSliceCarrier.{u})
       (fun y _ => hcarrier.symm.subset y.property)
   · apply (ContMDiff.subtypeVal_comp_iff (componentOpen S x) forward).mp
     exact Q.forward_smooth
-
-
 
 noncomputable def roundSpaceformOnComponent (S : GeneralizedSliceCarrier.{u})
     {g : RiemannianMetric 3 S.carrier} {epsilon : ℝ}

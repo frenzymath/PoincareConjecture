@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.RetainedComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Centered
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 10
@@ -107,8 +105,6 @@ theorem regularNeckWeakenedTerminalCylinder_pointMap_regular
     exact H.regularNeckExtendedCylinder_eq_regularBox P04 hΩ ⟨ht.1.le, ht.2⟩ N x₀
       ⟨hr.1, hcut.trans_lt ht.2⟩ _ _ hx
   · rfl
-
-
 
 theorem regularNeckWeakenedTerminalTensor_regular
     {s : ℝ} (hs : s ∈ Ioc (-1 : ℝ) 0)

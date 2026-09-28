@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNorma
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_AmbientBalls
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +16,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem localResult_range_subset_component
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count) :
     range (E.local_embed i) ⊆ connectedComponent (E.caps i).tip := by
@@ -39,15 +27,11 @@ theorem localResult_range_subset_component
   exact (isPreconnected_range (E.local_embed_smooth i).continuous).subset_connectedComponent
     (mem_range_self (E.local_result i).tip)
 
-
-
 theorem cap_subset_tip_component
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count) :
     (E.caps i).carrier ⊆ connectedComponent (E.caps i).tip := by
   rw [← E.local_cap_image i]
   exact (image_subset_range _ _).trans (localResult_range_subset_component E i)
-
-
 
 theorem localResult_not_compact
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count) :
@@ -58,8 +42,6 @@ theorem localResult_not_compact
   have h := hcompact.image e.continuous
   rw [image_univ, e.surjective.range_eq] at h
   exact noncompact_univ StandardCapSpace h
-
-
 
 theorem localResult_component_not_subset_ball
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count)
@@ -83,8 +65,6 @@ theorem localResult_component_not_subset_ball
   rw [hall, closure_univ] at hcompact
   exact localResult_not_compact E i hcompact
 
-
-
 theorem component_disjoint_cap_of_precompact_ball
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count)
     (x : (slice T).carrier) {r : ℝ} (hr : 0 < r)
@@ -105,8 +85,6 @@ theorem component_disjoint_cap_of_precompact_ball
     exact mem_connectedComponent
   exact ((edist_le_intrinsicEDist (connectedComponent x) (E.caps i).tip z).trans
     (intrinsicEDist_le_intrinsicDiameter htipx hz)).trans_lt hdiam
-
-
 
 theorem component_disjoint_cap_of_comparison
     (E : SurgeryEventData g₀ K P slice metric T) (i : Fin E.cap_count)

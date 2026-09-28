@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.B
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.OpenRegion.Shrinking
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.Nested
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_matching_of_balls_in_open_region {n : Nat}
     (A B : Diffeomorph (𝓡 n) (𝓡 n)

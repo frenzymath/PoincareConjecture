@@ -5,28 +5,12 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace Poincare.ODE
-
 
 theorem mul_exp_neg_integral_le_of_deriv_add_mul_nonneg
     {a b : ℝ} (hab : a ≤ b) {f f' q : ℝ → ℝ}
@@ -67,7 +51,6 @@ theorem mul_exp_neg_integral_le_of_deriv_add_mul_nonneg
       mul_le_mul_of_nonneg_right hend (Real.exp_pos _).le
     _ = f b := by rw [mul_assoc, ← Real.exp_add]; simp
 
-
 theorem finite_harnack_of_deriv_inequality
     {T a b : ℝ} (hTa : T < a) (hab : a ≤ b) {f f' q : ℝ → ℝ}
     (hf : ContinuousOn f (Icc a b)) (hq : ContinuousOn q (Ioo a b))
@@ -90,7 +73,6 @@ theorem finite_harnack_of_deriv_inequality
       field_simp [htT.ne']
     rwa [heq] at h
 
-
 theorem harnack_of_energy_inequality
     {a b : ℝ} (hab : a ≤ b) {f f' speedSq : ℝ → ℝ}
     (hf : ContinuousOn f (Icc a b)) (hSpeed : ContinuousOn speedSq (Ioo a b))
@@ -101,7 +83,6 @@ theorem harnack_of_energy_inequality
   simpa only [intervalIntegral.integral_div, neg_div] using
     mul_exp_neg_integral_le_of_deriv_add_mul_nonneg hab hf (hSpeed.div_const 2)
       (hSpeedInt.div_const 2) hf' hineq
-
 
 theorem finite_harnack_of_energy_inequality
     {T a b : ℝ} (hTa : T < a) (hab : a ≤ b) {f f' speedSq : ℝ → ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonBrownBoundaryChart
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -192,10 +182,6 @@ private theorem compact_domain_eq_brown_ball {K D : Set V3}
     have hall := (isClopen_iff_frontier_eq_empty.mpr hf).eq_univ
       ((hconn.nonempty.mono interior_subset).mono subset_union_right)
     exact (NormedSpace.unbounded_univ ℝ V3 (hall ▸ (hK.union hD).isBounded)).elim
-
-
-
-
 
 theorem exists_brown_ball_pair_of_compact_halfspace_domain
     (brown : HasBrownLocallyFlatSphereBalls) {K : Set V3} (hK : IsCompact K)

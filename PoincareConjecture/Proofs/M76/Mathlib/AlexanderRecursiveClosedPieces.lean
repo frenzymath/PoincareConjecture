@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.isCompact_piece_of_closed_base
     {S X TX : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

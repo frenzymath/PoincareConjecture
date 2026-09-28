@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareClockWindows
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,9 +11,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem relativeInterior_mem_nhdsWithin {Y : Type*} [TopologicalSpace Y]
     {A S : Set Y} {z : Y} (hz : z ∈ M14RelativeInterior A S) :
@@ -39,17 +25,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem jointDomain_time_pos (E : M14ExponentialFamily G T x)
     {z : G.Horizontal x × ℝ} (hz : z ∈ M14JointDomain G E) : 0 < z.2 := by
   obtain ⟨τ, _, hτ, _, ht⟩ := hz.1
   rw [ht]
   exact Real.sqrt_pos.mpr hτ
-
-
-
-
 
 theorem exists_jointDomain_gauge_tube (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hz : (Z, s) ∈ M14JointDomain G E) :

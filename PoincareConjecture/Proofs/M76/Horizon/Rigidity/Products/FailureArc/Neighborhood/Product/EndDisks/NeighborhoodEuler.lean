@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.EndDisks.EndComponents
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry Topology

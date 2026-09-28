@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.RadialDifferential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace

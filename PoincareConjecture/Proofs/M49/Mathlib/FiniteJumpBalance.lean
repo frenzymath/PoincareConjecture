@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M49.Mathlib.FiniteJumps
 import Mathlib.Topology.Algebra.Monoid
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology BigOperators
-
-
 
 theorem add_sum_le_add_sum_of_finite_left_jumps {β : Type*}
     [AddCommMonoid β] [Preorder β] [IsOrderedAddMonoid β]

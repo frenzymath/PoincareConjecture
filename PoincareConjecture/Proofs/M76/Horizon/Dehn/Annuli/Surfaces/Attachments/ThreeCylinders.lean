@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.CylinderRims
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

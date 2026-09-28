@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialMetric
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +17,6 @@ private theorem sphere_derivative_orthogonal (q : UnitTwoSphere)
       (mvfderiv (𝓡 2) (fun p : UnitTwoSphere => p.val) q).range := ⟨v, rfl⟩
   rw [range_mvfderiv_subtypeVal] at hmem
   exact Submodule.mem_orthogonal_singleton_iff_inner_right.mp hmem
-
 
 theorem radial_annulus_coordinate_mfderiv (a b : ℝ)
     (z : StandardCylinderSpace) (v : RoundCylinderTangent z) :
@@ -75,7 +64,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 theorem intrinsic_radial_annulus_pullback (a b : ℝ)
     (z : StandardCylinderSpace) (hz : 0 < a + b * z.2)

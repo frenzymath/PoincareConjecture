@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Set Filter Topology
 namespace Poincare.GromovHausdorff
 
 universe u
-
-
 
 theorem exists_subseq_finite_pointConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}

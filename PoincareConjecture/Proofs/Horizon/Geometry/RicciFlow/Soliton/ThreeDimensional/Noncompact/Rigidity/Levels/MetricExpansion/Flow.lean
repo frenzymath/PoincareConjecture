@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Expansion
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem inner_connection_normalizedGradient_of_tangent
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}
@@ -43,8 +34,6 @@ theorem inner_connection_normalizedGradient_of_tangent
   rw [inner_connection_smul_gradient_of_tangent D hf hinv v hv]
   ring
 
-
-
 theorem inner_connection_normalizedGradient_nonneg
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -60,8 +49,6 @@ end PoincareConjecture.LeviCivitaData
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem hasDerivAt_normalizedGradient_flow_squared_length
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -120,8 +107,6 @@ private theorem comp_normalizedGradient_eq_add
     (fun t ht ↦ (hd t ht).continuousAt.continuousWithinAt)
     (fun t _ ↦ (hl t).continuousAt.continuousWithinAt) (by simp)
 
-
-
 theorem normalizedGradient_flow_preserves_level_differential
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}
     {q : ℝ × EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -152,8 +137,6 @@ theorem normalizedGradient_flow_preserves_level_differential
   have hd := congrArg (fun A ↦ A v) (hleft.unique (hright.congr_of_eventuallyEq he))
   simp [mvfderiv, mfderiv_eq_fderiv, NormedSpace.fromTangentSpace]
   convert! hd using 1
-
-
 
 theorem normalizedGradient_flow_squared_length_monotone
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -190,8 +173,6 @@ theorem normalizedGradient_flow_squared_length_monotone
   exact div_nonneg (mul_nonneg (by norm_num)
     (hhess t (interior_subset ht) _ (htan t (interior_subset ht))))
     (hregular.self_of_nhds t (interior_subset ht)).le
-
-
 
 theorem exists_local_normalizedGradient_flow_with_nondecreasing_metric
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}

@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +10,6 @@ open Set
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold
-
-
 
 theorem bijective_of_deriv_pos_of_bounded_displacement
     {f : ℝ → ℝ} (hf : Continuous f) (hderiv : ∀ t, 0 < deriv f t)
@@ -37,8 +26,6 @@ theorem bijective_of_deriv_pos_of_bounded_displacement
   exact ⟨t, ht⟩
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]
-
-
 
 theorem exists_smooth_scalar_inverse
     {f : P × ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
@@ -70,8 +57,6 @@ theorem exists_smooth_scalar_inverse
     apply (hbij q.1).injective
     exact (sub_eq_zero.mp ht).trans (hfg q.1 q.2).symm
 
-
-
 def triangularDiffeomorph
     (f : P × ℝ → ℝ) (hf : ContDiff ℝ ∞ f)
     (hbij : ∀ p, Function.Bijective (fun t => f (p, t)))
@@ -102,9 +87,6 @@ theorem triangularDiffeomorph_symm_fst
     (hbij : ∀ p, Function.Bijective (fun t => f (p, t)))
     (hderiv : ∀ p t, deriv (fun s => f (p, s)) t ≠ 0) (z : P × ℝ) :
     ((triangularDiffeomorph f hf hbij hderiv).symm z).1 = z.1 := rfl
-
-
-
 
 def triangularDiffeomorphOfBoundedDisplacement
     (f : P × ℝ → ℝ) (hf : ContDiff ℝ ∞ f)

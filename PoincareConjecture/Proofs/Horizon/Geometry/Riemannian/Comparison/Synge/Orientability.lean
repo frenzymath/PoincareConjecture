@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Synge.Is
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Cover.Metric
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Cover.Frame
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 local notation "OC" => Poincare.Topology.OrientationDoubleCover.TotalSpace
-
-
 
 theorem nonempty_orientationCompatibleAtlas_of_compact_positive_sectional
     {M : Type u} [TopologicalSpace M] [T3Space M]

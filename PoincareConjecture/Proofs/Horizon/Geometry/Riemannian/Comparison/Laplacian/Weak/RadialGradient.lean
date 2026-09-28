@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.RadialSpeed
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_eq_velocity_of_calibrated_curve (D : LeviCivitaData g)
     {f : M → ℝ} (hLip : ∀ x y, |f x - f y| ≤ (g.edist x y).toReal)
@@ -58,8 +49,6 @@ theorem gradient_eq_velocity_of_calibrated_curve (D : LeviCivitaData g)
   apply norm_eq_zero.mp
   nlinarith [norm_nonneg u, norm_nonneg (u - v), sq_nonneg (‖u - v‖)]
 
-
-
 theorem mvfderiv_distance_gradient_eq_deriv_of_calibrated_curve
     [T3Space M] [PreconnectedSpace M] (D : LeviCivitaData g) (p : M)
     {γ : ℝ → M} {t : ℝ} (ht : 0 < t)
@@ -91,8 +80,6 @@ open Poincare.VolumeComparison
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eventually_edist_radial_eq_of_nonterminal
     (g : RiemannianMetric n M) {p : M} {R : ℝ}
@@ -134,8 +121,6 @@ theorem eventually_edist_radial_eq_of_nonterminal
   have hn : ‖s • θ‖ = s := by
     rw [norm_smul, Real.norm_of_nonneg hs.1.le, hθ, mul_one]
   simpa only [mem_ofPred_eq, hn] using hsS.2
-
-
 
 theorem mvfderiv_distance_gradient_eq_radial_deriv
     [PreconnectedSpace M]

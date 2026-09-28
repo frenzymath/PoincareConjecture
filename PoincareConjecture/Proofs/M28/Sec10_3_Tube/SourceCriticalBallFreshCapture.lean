@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshCore
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallStrongRadius
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CompactStageRegularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 3200000 in
-
-
-
 
 theorem exists_retained_fresh_core_capture
     {epsilon C A : ℝ}
@@ -100,10 +86,6 @@ theorem exists_retained_fresh_core_capture
     hzy).trans hxy
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_retained_strong_neck_core_capture_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedBallContainment
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
-
-
 
 theorem seed_midpoint_volume_of_metric_bounds
     (g h : RiemannianMetric 3 M) (q : M) {R k : ℝ} (hR : 0 < R)
@@ -72,8 +61,6 @@ theorem seed_midpoint_volume_of_metric_bounds
           ← ENNReal.ofReal_mul (by norm_num : (0 : ℝ) ≤ 1 / 8)]
         norm_num
       rw [hcancel, one_mul]
-
-
 
 theorem seed_midpoint_volume {J : Set ℝ} (F : RicciFlow 3 M J)
     {b v A L R k : ℝ} (q : M) (hR : 0 < R) (hA : 1 ≤ A) (hL : 0 < L)

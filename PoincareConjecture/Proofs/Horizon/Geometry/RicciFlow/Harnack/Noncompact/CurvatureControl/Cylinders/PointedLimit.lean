@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Compactness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 namespace PointedGeometricConvergence
-
-
 
 theorem curvatureTensorNorm_base_pos_of_scalar_lower_bound
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -48,8 +37,6 @@ theorem curvatureTensorNorm_base_pos_of_scalar_lower_bound
   by_contra! h
   have := mul_nonpos_of_nonneg_of_nonpos (sq_nonneg (n : ℝ)) h
   linarith
-
-
 
 theorem curvatureTensorNorm_le_of_uniform_ball_bound
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -77,8 +64,6 @@ theorem curvatureTensorNorm_le_of_uniform_ball_bound
 end PointedGeometricConvergence
 
 namespace RicciFlow
-
-
 
 theorem exists_nonflat_pointed_limit_of_terminal_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)

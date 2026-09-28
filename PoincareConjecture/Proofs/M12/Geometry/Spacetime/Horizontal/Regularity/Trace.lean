@@ -4,13 +4,6 @@ import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -51,7 +44,6 @@ private lemma contMDiffAt_matrix_inv_entry {ι : Type} [Fintype ι] [DecidableEq
       (c := (Pi.single i (1 : ℝ) : ι → ℝ) b))
   · simpa [Matrix.updateRow_apply, ha] using hG a b
 
-
 noncomputable def horizontalTensorTrace
     (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) {k : ℕ}
     (T : HorizontalCovariantTensorEvaluation F (k + 2)) :
@@ -60,7 +52,6 @@ noncomputable def horizontalTensorTrace
   let j := (S (F.timeFunction p)).tangentEquiv x
   let b := (S (F.timeFunction p)).metricOnPoints.orthonormalBasis x
   ∑ i, T p (Fin.cons (j (b i)) (Fin.cons (j (b i)) v))
-
 
 theorem IsSmoothHorizontalCovariantTensor.tensorTrace {k : ℕ}
     {T : HorizontalCovariantTensorEvaluation F (k + 2)}
@@ -149,7 +140,6 @@ theorem IsSmoothHorizontalCovariantTensor.tensorTrace {k : ℕ}
     simp only [← hB, hc] at h
     simpa only [horizontalTensorTrace, A, t, x, j] using h
 
-
 theorem IsSmoothHorizontalCovariantTensor.perm {k : ℕ}
     {T : HorizontalCovariantTensorEvaluation F k}
     (hT : IsSmoothHorizontalCovariantTensor F T) (σ : Equiv.Perm (Fin k)) :
@@ -160,7 +150,6 @@ theorem IsSmoothHorizontalCovariantTensor.perm {k : ℕ}
     exact ⟨A.domDomCongr σ, fun v => hA _⟩
   · intro U hU V hV
     exact hT.2 U hU (fun i => V (σ i)) (fun i => hV (σ i))
-
 
 theorem horizontalRicci_tensor_of_riemann
     (D : LeafwiseLeviCivitaFamily F S)
@@ -180,7 +169,6 @@ theorem horizontalRicci_tensor_of_riemann
     ∑ i, (D.sliceConnection (F.timeFunction p)).curvatureTensor x
       (j.symm (v 0)) (j.symm (j (b i))) (j.symm (v 1)) (j.symm (j (b i)))
   simp only [ContinuousLinearEquiv.symm_apply_apply]
-
 
 theorem horizontalScalarCurvature_smooth_of_ricci
     (D : LeafwiseLeviCivitaFamily F S)

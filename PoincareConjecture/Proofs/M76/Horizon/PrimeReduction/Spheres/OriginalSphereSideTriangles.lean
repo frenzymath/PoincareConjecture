@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSpher
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSphereSideFacets
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryTriangleFibers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -21,8 +11,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ChartwisePLSphere.exists_original_side_triangle_fibers
     {X ι : Type*} [MetricSpace X]

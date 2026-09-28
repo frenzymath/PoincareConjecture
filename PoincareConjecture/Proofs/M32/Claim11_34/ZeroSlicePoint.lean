@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.ZeroSlice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
 
 theorem blowup_zeroSliceEmbedding_pointMap
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

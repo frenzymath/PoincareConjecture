@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M36.Constants
 import PoincareConjecture.Proofs.M36.SurgeryResult
 import PoincareConjecture.Proofs.M36.SurgeryComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,38 +13,6 @@ universe u
 namespace PoincareConjecture
 
 open M36
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option maxHeartbeats 1000000 in
 

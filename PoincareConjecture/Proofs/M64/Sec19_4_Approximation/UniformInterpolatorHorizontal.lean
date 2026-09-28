@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorHorizonta
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformSampledPolygonCloseness
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellEventually
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +14,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m64_sampled_interpolator_horizontal_column_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -126,9 +109,6 @@ theorem m64_sampled_interpolator_horizontal_column_bound
   exact hB (z 1) htime (periodicFreeLoop gamma (z 0)) (beta (z 0))
     hshortSide.le (curveVelocity (periodicFreeLoop gamma) (z 0))
     (hbound (z 0) ⟨hdom.1, hdom.2.1⟩) (curveVelocity beta (z 0)) hbetaBound
-
-
-
 
 theorem m64_uniform_interpolator_horizontal_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

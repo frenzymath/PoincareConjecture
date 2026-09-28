@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.PartialScalarConvergen
 import PoincareConjecture.Proofs.M30.Thm11_1.StaticTerminalReadout
 import PoincareConjecture.Proofs.M30.Thm11_1.TerminalSourceBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem tendstoUniformlyOn_terminal_normalized_scalar
     (S : GeneralizedBlowupSequence.{u})
@@ -39,8 +28,6 @@ theorem tendstoUniformlyOn_terminal_normalized_scalar
   simpa only [terminalComponentMetric_scalarCurvature] using
     G.tendstoUniformlyOn_scalarCurvature
       (fun k => (terminalComponentMetric S k).leviCivitaData) D K hK
-
-
 
 theorem terminal_static_limit_base_scalar
     (S : GeneralizedBlowupSequence.{u})
@@ -58,9 +45,6 @@ theorem terminal_static_limit_base_scalar
   have hconst : Tendsto (fun _ : ℕ => (1 : ℝ)) atTop (𝓝 (D.scalarCurvature G.base)) := by
     simpa only [hsource] using h
   exact tendsto_nhds_unique hconst tendsto_const_nhds
-
-
-
 
 theorem shortControls_of_static_terminal_limit_bound
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

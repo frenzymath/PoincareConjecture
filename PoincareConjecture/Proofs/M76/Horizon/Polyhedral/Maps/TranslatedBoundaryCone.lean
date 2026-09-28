@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.ConvexBoundaryConeHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace unitInterval
@@ -37,10 +27,6 @@ private theorem affineOnFaces_affine_transport
   rw [← T.toAffineEquiv.toAffineMap.image_convexHull] at hx
   obtain ⟨y, hy, rfl⟩ := hx
   simpa using ha hy
-
-
-
-
 
 theorem AffineOnFaces.exists_boundary_cone_at_homotopy_with_faces [Nontrivial E]
     {K : SimplicialComplex ℝ E} {b : E → F} (hb : K.AffineOnFaces b)
@@ -200,8 +186,6 @@ theorem AffineOnFaces.exists_boundary_cone_at_homotopy_with_faces [Nontrivial E]
     rw [hju, hH0B]
     change B (t, U.symm (U u)) = B (t, u)
     rw [U.symm_apply_apply]
-
-
 
 theorem AffineOnFaces.exists_boundary_cone_at_homotopy [Nontrivial E]
     {K : SimplicialComplex ℝ E} {b : E → F} (hb : K.AffineOnFaces b)

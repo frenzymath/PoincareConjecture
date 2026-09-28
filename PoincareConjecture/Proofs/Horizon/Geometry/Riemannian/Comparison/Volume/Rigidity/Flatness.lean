@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.R
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.Curvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,8 +57,6 @@ private theorem scalarCurvature_center_eq_zero_of_unit_density
       exact (mul_eq_zero.mp H).resolve_left (pow_ne_zero _ (inv_ne_zero (norm_ne_zero_iff.mpr hu)))
   unfold LeviCivitaData.scalarCurvature
   simp only [hall, Finset.sum_const_zero]
-
-
 
 theorem curvatureTensor_eq_zero_of_maximal_volume_growth
     {n : ℕ} {M : Type*} [TopologicalSpace M]

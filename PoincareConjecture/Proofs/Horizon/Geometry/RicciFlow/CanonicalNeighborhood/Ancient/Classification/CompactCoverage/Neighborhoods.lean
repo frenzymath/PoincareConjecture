@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactCoverage.Diameter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.CollarCover
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace RicciFlow.uliftChartedSpace RicciFlow.uliftIsManifold
   AncientKappaSolution.uliftSecondCountable AncientKappaSolution.uliftConnectedSpace
-
-
 
 theorem compact_large_diameter_strong_collar_neighborhoods_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :
@@ -89,8 +76,6 @@ theorem compact_large_diameter_strong_collar_neighborhoods_of_m27
   rcases hnoncompact L hnoncompactL hnoL (ULift.up G.limit.base) with ⟨N, hN⟩ | hA
   · exact hnoneck ⟨G.limit.flow.strongNeckFromUlift N, by simp [hN]⟩
   · exact hnocap hA.of_ulift
-
-
 
 theorem compact_diameter_bound_or_strong_collar_neighborhoods_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

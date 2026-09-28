@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteCarrierLocalPathConnected
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenDomainFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology

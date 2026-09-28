@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.ZeroRatioDecay
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Uniqueness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +15,6 @@ open scoped Topology Manifold ContDiff Bundle
 universe u
 
 namespace Poincare.Analysis.Calculus
-
-
-
 
 theorem eventually_uniform_spatial_jets_of_uniform_values
     {n : ℕ} {E T : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -74,8 +57,6 @@ end Poincare.Analysis.Calculus
 
 namespace PoincareConjecture.RicciFlow
 
-
-
 theorem norm_pullbackCoefficients_sub_zero_le_of_curvature_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -116,11 +97,6 @@ theorem norm_pullbackCoefficients_sub_zero_le_of_curvature_bound
   apply mul_le_mul_of_nonneg_left _ (by positivity)
   rw [sub_zero, Real.norm_eq_abs, abs_of_nonpos ht.2]
   linarith [ht.1]
-
-
-
-
-
 
 theorem exists_backward_static_metric_jets_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

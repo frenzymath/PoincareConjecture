@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Regular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Locality
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -91,8 +81,6 @@ theorem hessian_normalizedPotential (S : GradientShrinkingSolitonData 3 M) (q x 
   rw [heq, S.connection.hessian_const_mul,
     S.connection.hessian_const_add_at (S.potential_contMDiff x)]
 
-
-
 theorem potential_tendsto_atTop_of_escape (S : GradientShrinkingSolitonData 3 M)
     (p : M) (q : ℕ → M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop) :
@@ -113,7 +101,6 @@ theorem potential_tendsto_atTop_of_escape (S : GradientShrinkingSolitonData 3 M)
   have hb := hbound (q k)
   nlinarith
 
-
 theorem potentialGradientScale_tendsto_atTop_of_escape
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)
     (p : M) (q : ℕ → M)
@@ -131,7 +118,6 @@ theorem potentialGradientScale_tendsto_atTop_of_escape
   have hB : B ≤ max B 0 := le_max_left _ _
   nlinarith
 
-
 theorem exists_normalizedPotential_hessian_bound
     (S : GradientShrinkingSolitonData 3 M) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ q x : M, ∀ v : TangentSpace (𝓡 3) x,
@@ -147,8 +133,6 @@ theorem exists_normalizedPotential_hessian_bound
       mul_le_mul_of_nonneg_left (hbound x v)
         (inv_nonneg.mpr (S.potentialGradientScale_nonneg q))
     _ = C / S.potentialGradientScale q * S.metric.inner x v v := by ring
-
-
 
 theorem normalizedPotential_hessian_eventually_lt
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)

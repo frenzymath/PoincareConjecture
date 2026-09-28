@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryStep
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMarkedChartMotion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -30,12 +19,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
-
 
 theorem Step.exists_original_boundary_branch_operation_with_closed_support
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}
@@ -527,8 +510,6 @@ theorem Step.exists_original_boundary_branch_operation_with_closed_support
   · rw [himage Rim, ← hPr]
   · simpa only [hSourceD] using hZs
   · simpa only [hSourceD] using hEs
-
-
 
 theorem Step.exists_original_boundary_branch_operation
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

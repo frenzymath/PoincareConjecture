@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.CurvatureCoefficien
 import PoincareConjecture.Proofs.M34.Mathlib.RadialConnectionDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capCurvature_formula {a : ℝ} (ha : 0 < a) (hapi : a ≤ Real.pi / 2)
     (D : LeviCivitaData (capRiemannianMetric a ha hapi))

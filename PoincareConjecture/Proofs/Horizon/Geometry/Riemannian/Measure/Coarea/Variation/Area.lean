@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Vari
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Proper
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.RegularDomain
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
-
 
 noncomputable def RiemannianMetric.regularLevelArea
     (g : RiemannianMetric (n + 1) M)
@@ -87,7 +79,6 @@ private theorem levelVariation_eq_of_one_near {χ : M → ℝ} {x : M}
   simp only [map_zero, zero_apply, zero_div, Pi.one_apply, one_mul, zero_add]
   rfl
 
-
 theorem isFiniteMeasure_regularLevelVolume_of_isProperMap
     {I : Set ℝ} (hI : IsOpen I)
     (hproper : IsProperMap (I.restrictPreimage f))
@@ -103,8 +94,6 @@ theorem isFiniteMeasure_regularLevelVolume_of_isProperMap
   change Integrable (fun z => χ (openLevelIncl f (g.regularDomain hf) t z)) _ at hi
   rw [heq] at hi
   exact (integrable_const_iff_isFiniteMeasure (by norm_num : (1 : ℝ) ≠ 0)).mp hi
-
-
 
 theorem first_variation_regularLevelArea
     {I : Set ℝ} (hI : IsOpen I)

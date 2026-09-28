@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseEstimate
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,11 +10,9 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
 
-
 noncomputable def inverseCoefficients
     (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) : ℝ :=
   EuclideanSpace.proj j ((g.inner x).inverse (EuclideanSpace.proj i))
-
 
 lemma contDiff_inverseCoefficients (i j : Fin n) :
     ContDiff ℝ ∞ (fun x ↦ g.inverseCoefficients x i j) := by
@@ -34,7 +24,6 @@ lemma contDiff_inverseCoefficients (i j : Fin n) :
     (hI.clm_apply (contDiffAt_const (c := EuclideanSpace.proj (𝕜 := ℝ) i)))
   exact h
 
-
 lemma inverseCoefficients_symm (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
     g.inverseCoefficients x i j = g.inverseCoefficients x j i := by
   have h := g.symm x ((g.inner x).inverse (EuclideanSpace.proj i))
@@ -42,8 +31,6 @@ lemma inverseCoefficients_symm (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
   rw [(g.inner_isInvertible x).self_apply_inverse,
     (g.inner_isInvertible x).self_apply_inverse] at h
   exact h.symm
-
-
 
 lemma sum_inverseCoefficients_mul_eq_inner (x v : EuclideanSpace ℝ (Fin n)) :
     (∑ i, ∑ j, g.inverseCoefficients x i j * v i * v j) =
@@ -62,8 +49,6 @@ lemma sum_inverseCoefficients_mul_eq_inner (x v : EuclideanSpace ℝ (Fin n)) :
   intro j _
   ring
 
-
-
 lemma sum_inverseCoefficients_mul_le (x : EuclideanSpace ℝ (Fin n))
     {a : ℝ} (ha : 0 < a)
     (hell : ∀ v : EuclideanSpace ℝ (Fin n), a * ‖v‖ ^ 2 ≤ g.inner x v v)
@@ -71,8 +56,6 @@ lemma sum_inverseCoefficients_mul_le (x : EuclideanSpace ℝ (Fin n))
     (∑ i, ∑ j, g.inverseCoefficients x i j * v i * v j) ≤ ‖v‖ ^ 2 / a := by
   rw [g.sum_inverseCoefficients_mul_eq_inner]
   exact CoordinateExponential.inner_inverse_innerSL_le ha hell v
-
-
 
 lemma le_sum_inverseCoefficients_mul (x : EuclideanSpace ℝ (Fin n))
     {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
@@ -91,7 +74,6 @@ private lemma norm_euclidean_proj (i : Fin n) :
     simp only [PiLp.proj_apply, innerSL_apply_apply, EuclideanSpace.basisFun_inner]
   rw [h, innerSL_apply_norm, (EuclideanSpace.basisFun (Fin n) ℝ).norm_eq_one]
 
-
 lemma abs_inverseCoefficients_le (x : EuclideanSpace ℝ (Fin n))
     {a : ℝ} (ha : 0 < a)
     (hell : ∀ v : EuclideanSpace ℝ (Fin n), a * ‖v‖ ^ 2 ≤ g.inner x v v)
@@ -103,8 +85,6 @@ lemma abs_inverseCoefficients_le (x : EuclideanSpace ℝ (Fin n))
     ((g.inner x).inverse (EuclideanSpace.proj i))
   rw [norm_euclidean_proj, one_mul] at heval
   simpa only [inverseCoefficients, PiLp.proj_apply, Real.norm_eq_abs] using heval.trans h
-
-
 
 lemma abs_inverseCoefficients_sub_le (x y : EuclideanSpace ℝ (Fin n))
     {a H r : ℝ} (ha : 0 < a)

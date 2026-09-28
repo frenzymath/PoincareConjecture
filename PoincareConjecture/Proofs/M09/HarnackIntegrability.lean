@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.SquareEnergyRegularity
 import PoincareConjecture.Proofs.M09.FamilySquareVelocity
 import PoincareConjecture.Proofs.M09.FrameForms
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -15,8 +7,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {X F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem graph_derivative_difference_norm_le
     (P Q : (X × ℝ) →L[ℝ] F) (p q : X →L[ℝ] ℝ) :
@@ -49,8 +39,6 @@ theorem graph_derivative_difference_norm_le
     (le_refl ‖(p - q).smulRight (Q (0, 1))‖)
   rw [ContinuousLinearMap.norm_smulRight_apply] at h
   nlinarith only [h, hspace, mul_le_mul_of_nonneg_right hscalar (norm_nonneg p)]
-
-
 
 theorem forcing_graph_fderiv_difference_norm_le
     {A : X → ℝ → F} {u v : X → ℝ} {x : X} {eta M2 M3 : ℝ}

@@ -5,24 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCo
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_lower_source_legs
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

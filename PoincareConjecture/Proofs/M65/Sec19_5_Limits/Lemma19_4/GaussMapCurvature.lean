@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussMapConnection
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M65Gauss
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
-
 
 theorem covariantDerivativeAlongMap_curvature (D : LeviCivitaData g)
     {F W : E → EuclideanSpace ℝ (Fin n)} {x : E}

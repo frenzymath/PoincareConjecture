@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevelUniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,16 +8,11 @@ namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 theorem injOn_edgeLine (A : E →ᵃ[ℝ] ℝ) {v u : E} (hu : A u ≠ A v) :
     InjOn A (affineSpan ℝ ({v, u} : Set E)) := by
   intro x hx y hy hxy
   exact (A.eq_edgeLevel_of_mem_affineSpan hu hx rfl).trans
     (A.eq_edgeLevel_of_mem_affineSpan hu hy hxy.symm).symm
-
-
-
 
 theorem edgeLevel_mem_segment (A : E →ᵃ[ℝ] ℝ) {v u : E} {c : ℝ}
     (h : (A v < c ∧ c < A u) ∨ (A u < c ∧ c < A v)) :

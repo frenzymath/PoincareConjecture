@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.BoundaryReduction.Construction
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 open PoincareConjecture.M76

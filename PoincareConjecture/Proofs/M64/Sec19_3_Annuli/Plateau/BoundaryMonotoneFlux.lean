@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryAveragedCutoff
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +10,6 @@ open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64MonotonePhase_cutoff_flux_sq
     (b q : ℝ → ℝ) (hb : Monotone b) (hq : ContDiff ℝ 1 q)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +12,6 @@ open M34 Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
 
 theorem exists_source_recent_family_coefficient_tolerance
     {gamma : ℝ} (hgamma : 0 < gamma) (T : ℝ) :

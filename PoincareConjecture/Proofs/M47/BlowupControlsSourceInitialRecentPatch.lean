@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCompressedCoordinates
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_PhysicalScalar
 import PoincareConjecture.Definitions.M45NeckGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,9 +42,6 @@ private noncomputable def sourceInitialAxialTranslation (c : ℝ) :
   right_inv := neckAxialInverse_right one_ne_zero c
   contMDiff_toFun := neckAxialSpaceMap_contMDiff 1 c
   contMDiff_invFun := neckAxialInverse_contMDiff 1 c
-
-
-
 
 theorem exists_source_initial_recent_patch
     {F : SurgeryFlowData.{u}} {T A : ℝ} {hT : T ∈ F.surgery_times}

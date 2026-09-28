@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Mathlib.C2LaplacianChange
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,16 +12,9 @@ namespace PoincareConjecture
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def m64ObservedCoordinateMetric (J : E → F) (Q : E → F →L[ℝ] F →L[ℝ] ℝ)
     (y : E) : E →L[ℝ] E →L[ℝ] ℝ :=
   (Q y).bilinearComp (fderiv ℝ J y) (fderiv ℝ J y)
-
-
-
-
 
 theorem m64ObservedCoordinateMetric_continuousOn
     {J : E → F} {Q : E → F →L[ℝ] F →L[ℝ] ℝ} {U K : Set E}
@@ -42,10 +26,6 @@ theorem m64ObservedCoordinateMetric_continuousOn
   have hflip := (ContinuousLinearMap.flipₗᵢ ℝ E F ℝ).continuous.comp_continuousOn hleft
   exact (ContinuousLinearMap.flipₗᵢ ℝ E E ℝ).continuous.comp_continuousOn
     (hflip.clm_comp hD)
-
-
-
-
 
 theorem m64ObservedCoordinateMetric_bounds
     {J : E → F} {H : F → E} {Q : E → F →L[ℝ] F →L[ℝ] ℝ} {U K : Set E}

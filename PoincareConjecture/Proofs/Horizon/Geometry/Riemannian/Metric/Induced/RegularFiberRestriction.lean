@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +11,6 @@ open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology ENNReal NNReal
 namespace PoincareConjecture.RiemannianMetric
-
 
 private theorem volumeMeasure_image_le_of_tangentNorm_le_on_compact_superset
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -90,7 +81,6 @@ private theorem volumeMeasure_image_le_of_tangentNorm_le_on_compact_superset
       ENNReal.tsum_le_tsum hD
     _ = ENNReal.ofReal C ^ n * g.volumeMeasure s := by
       rw [ENNReal.tsum_mul_left, ← measure_iUnion (disjoint_disjointed W) hDm, hpartition]
-
 
 private theorem measurePreserving_restrict_of_openPartialHomeomorph_norm_eq
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -171,8 +161,6 @@ private theorem tangentNorm_symm_of_openPartialHomeomorph_metric
     exact (congrArg (fun A => A v) hcomp).symm
   unfold tangentNorm
   rw [hmetric _ (e.map_target hy), hv, e.right_inv hy]
-
-
 
 theorem openRegularFiberMetric_restriction_transport
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

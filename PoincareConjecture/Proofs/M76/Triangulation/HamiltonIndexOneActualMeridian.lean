@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneActualMarkedA
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMeridian
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMeridianBand
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,7 +15,6 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "C8" => AddCircle (4 * (2 : ℝ))
 local notation "Param" => Set.prod J Q
-
 
 noncomputable def standardSquareMeridian (x : V2) : W :=
   (x 0, (-((x 1 + 7) / 4), -((x 1 + 7) / 4)))
@@ -40,11 +30,6 @@ private theorem standard_meridian_radius (x : Q) :
   have hr : 0 ≤ ((x : V2) 1 + 7) / 4 := by linarith [hx.1]
   change max ‖-(((x : V2) 1 + 7) / 4)‖ ‖-(((x : V2) 1 + 7) / 4)‖ = _
   simp only [max_self, norm_neg, Real.norm_eq_abs, abs_of_nonneg hr]
-
-
-
-
-
 
 theorem exists_actual_marked_meridian_filling
     (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock)

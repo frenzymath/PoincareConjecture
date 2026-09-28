@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import PoincareConjecture.Proofs.M03.Existence.HalfSpaceExtensionNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M63
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_finiteOrder_compact_extension (k : ℕ)
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -56,10 +44,6 @@ theorem exists_finiteOrder_compact_extension (k : ℕ)
   intro x hx
   change eta x • f x = f x
   rw [hOone hx.1, one_smul]
-
-
-
-
 
 theorem exists_finiteOrder_initialSlab_extension (k : ℕ)
     {U : Set E} (hU : IsOpen U) {K : Set E} (hK : IsCompact K) (hKU : K ⊆ U)

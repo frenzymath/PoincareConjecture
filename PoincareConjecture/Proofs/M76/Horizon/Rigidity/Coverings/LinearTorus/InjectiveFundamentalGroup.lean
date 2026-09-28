@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Inte
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.Affine
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 
-
-
-
 set_option autoImplicit false
 
 open scoped unitInterval
@@ -13,14 +10,11 @@ namespace PoincareConjecture.M76.LinearTorus
 
 variable (p : ℝ)
 
-
 def integerPeriodLoop (n : ℤ) : Path (0 : AddCircle p) 0 where
   toFun t := n • AddCircle.periodLoop p t
   continuous_toFun := (AddCircle.periodLoop p).continuous.zsmul n
   source' := by simp
   target' := by simp
-
-
 
 theorem integerPeriodLoop_eq_zero_of_homotopic_refl (hp : 0 < p) (n : ℤ)
     (h : (integerPeriodLoop p n).Homotopic (Path.refl (0 : AddCircle p))) : n = 0 := by
@@ -49,7 +43,6 @@ theorem integerPeriodLoop_eq_zero_of_homotopic_refl (hp : 0 < p) (n : ℤ)
   exact Int.cast_eq_zero.mp ((mul_eq_zero.mp hn).resolve_right hp.ne')
 
 variable (A : Matrix (Fin 2) (Fin 2) ℤ)
-
 
 theorem integer_kernel_eq_zero_of_fundamentalGroup_map_injective (hp : 0 < p)
     (hinj : Function.Injective (FundamentalGroup.map (integerMatrixMap p A) 0))
@@ -81,8 +74,6 @@ theorem integer_kernel_eq_zero_of_fundamentalGroup_map_injective (hp : 0 < p)
   · apply integerPeriodLoop_eq_zero_of_homotopic_refl p hp m
     exact hγ.map ContinuousMap.snd
 
-
-
 theorem det_ne_zero_of_fundamentalGroup_map_injective (hp : 0 < p)
     (hinj : Function.Injective (FundamentalGroup.map (integerMatrixMap p A) 0)) :
     A.det ≠ 0 := by
@@ -98,8 +89,6 @@ theorem det_ne_zero_of_fundamentalGroup_map_injective (hp : 0 < p)
   have hone := integer_kernel_eq_zero_of_fundamentalGroup_map_injective p A hp hinj
     1 0 (by simp [h00]) (by simp [h10])
   exact one_ne_zero hone.1
-
-
 
 theorem det_ne_zero_of_affine_fundamentalGroup_map_injective (hp : 0 < p)
     (c : AddCircle p × AddCircle p)

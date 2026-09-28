@@ -1,13 +1,5 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace OpenPartialHomeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 theorem exists_extension_away_from_closed {T W C : Set X}
     (q : OpenPartialHomeomorph T Y) (hTW : T ⊆ W) (hcover : W ⊆ T ∪ C)
@@ -77,8 +67,6 @@ theorem exists_extension_away_from_closed {T W C : Set X}
   · intro x
     change q (r ⟨x, hTW x.property⟩) = q x
     exact congrArg q (Subtype.ext (hr ⟨x, hTW x.property⟩ x.property))
-
-
 
 theorem exists_extension_to_finite_caps {ι : Type*} [Finite ι]
     (P : Set X) (D : ι → Set X) (hclosed : ∀ i, IsClosed (D i))

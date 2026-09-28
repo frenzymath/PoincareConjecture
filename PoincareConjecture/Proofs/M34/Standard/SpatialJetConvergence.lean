@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SpatialJets
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem tendstoUniformlyOn_spatialJets_of_jointJets
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

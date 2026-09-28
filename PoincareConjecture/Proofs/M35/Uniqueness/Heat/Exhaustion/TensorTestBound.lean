@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.CovariantTest
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

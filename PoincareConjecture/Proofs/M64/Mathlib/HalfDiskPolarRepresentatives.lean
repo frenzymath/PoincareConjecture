@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeakGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,12 +10,6 @@ open scoped ENNReal Topology
 namespace PoincareConjecture
 
 open M65Interior Proofs.M58
-
-
-
-
-
-
 
 theorem m64HalfDisk_polar_ae {epsilon R H : ℝ}
     (hepsilon : 0 < epsilon) (hRH : R ≤ H) {P : LoopPlane → Prop}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Pullback.Regularity
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,7 +28,6 @@ theorem pullbackMetric_smooth (e : MovingSpacetimeGauge F T C) :
     (T.realParam_smoothOn.comp contMDiffOn_fst (fun _ hp => hp.1)).prodMk
       contMDiffOn_snd
   exact e.spatialMetricForm_joint_smooth.comp_contMDiffOn hp
-
 
 def geometry (e : MovingSpacetimeGauge F T C) : MovingSpacetimeGaugeGeometry e where
   metric := e.pullbackMetric

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyWeakInverse
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +8,6 @@ open Set Filter MeasureTheory Complex
 open scoped Topology ContDiff SchwartzMap Convolution
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem dbar_convolution_smooth_left {k F : ℂ → ℂ}
     (hk : ContDiff ℝ 1 k) (hs : HasCompactSupport k)
@@ -47,10 +33,6 @@ theorem dbar_convolution_smooth_left {k F : ℂ → ℂ}
   apply integral_congr_ae
   filter_upwards [] with w
   ring
-
-
-
-
 
 theorem dbar_convolution_eq_zero_of_weak {k F : ℂ → ℂ} {U : Set ℂ}
     (hk : ContDiff ℝ ∞ k) (hs : HasCompactSupport k)

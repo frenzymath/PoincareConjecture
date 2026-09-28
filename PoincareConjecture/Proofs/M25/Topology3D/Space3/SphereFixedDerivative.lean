@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereTangency
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ open scoped Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem fderiv_eq_of_local_fixed_sphere (f : E → E) (x v : E) (hx : ‖x‖ = 1)
     (hf : DifferentiableAt ℝ f x)
@@ -37,8 +25,6 @@ theorem fderiv_eq_of_local_fixed_sphere (f : E → E) (x v : E) (hx : ‖x‖ = 
     filter_upwards [hcont.eventually hfixed, hγsphere] with t ht hs
     exact ht hs
   exact (hF.comp_hasDerivAt 0 hγ).unique (hγ.congr_of_eventuallyEq heq)
-
-
 
 theorem fixedHyperplane_interpolation_injective (A : E →L[ℝ] E) (x : E)
     (hx : ‖x‖ = 1) (hA : ∀ v, ⟪x, v⟫_ℝ = 0 → A v = v)
@@ -66,8 +52,6 @@ theorem fixedHyperplane_interpolation_injective (A : E →L[ℝ] E) (x : E)
     have hp : (1 - a + a * ⟪x, A x⟫_ℝ) * ⟪x, v⟫_ℝ = 0 := by nlinarith [hnv]
     exact (mul_eq_zero.mp hp).resolve_left hpos.ne'
   simpa only [hA v hz, ← add_smul, sub_add_cancel, one_smul] using hv
-
-
 
 theorem fixedHyperplane_interpolation_isUnit [FiniteDimensional ℝ E]
     (A : E →L[ℝ] E) (x : E) (hx : ‖x‖ = 1)

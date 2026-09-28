@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subdivision.SingularPrism
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory
@@ -19,7 +12,6 @@ namespace Poincare.Topology
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
   [CategoryWithHomology C]
 
-
 noncomputable def simplicialSimplexDifferenceHomologyClass (R : C) (X : SSet.{w})
     {n : ℕ} (s t : X _⦋n + 1⦌)
     (hface : ∀ i : Fin (n + 2), X.δ i s = X.δ i t) :
@@ -27,7 +19,6 @@ noncomputable def simplicialSimplexDifferenceHomologyClass (R : C) (X : SSet.{w}
   (X.chainComplex R).liftCycles (X.ιChainComplex s - X.ιChainComplex t) n (by simp)
     (simplicialSimplexDifference_d_eq_zero R X s t hface) ≫
       (X.chainComplex R).homologyπ (n + 1)
-
 
 theorem simplicialSimplexDifferenceHomologyClass_naturality (R : C)
     {X Y : SSet.{w}} (f : X ⟶ Y) {n : ℕ} (s t : X _⦋n + 1⦌)
@@ -40,7 +31,6 @@ theorem simplicialSimplexDifferenceHomologyClass_naturality (R : C)
   rw [Category.assoc, HomologicalComplex.homologyπ_naturality, ← Category.assoc,
     HomologicalComplex.liftCycles_comp_cyclesMap]
   simp only [Preadditive.sub_comp, SSet.ι_chainComplexMap_f]
-
 
 theorem simplicialSimplexDifferenceHomologyClass_eq_of_boundary (R : C)
     (X : SSet.{w}) {n : ℕ} (s t s' t' : X _⦋n + 1⦌)
@@ -65,7 +55,6 @@ theorem simplicialSimplexDifferenceHomologyClass_eq_of_boundary (R : C)
   rw [← Preadditive.sub_comp, hlift, Category.assoc,
     HomologicalComplex.toCycles_comp_homologyπ, comp_zero]
 
-
 noncomputable def singularSimplexHomologyClass (R : C) (X : TopCat.{w})
     {n : ℕ} (s : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X)
     (hface : ∀ i : Fin (n + 2),
@@ -74,7 +63,6 @@ noncomputable def singularSimplexHomologyClass (R : C) (X : TopCat.{w})
   simplicialSimplexDifferenceHomologyClass R (TopCat.toSSet.obj X) s
     (singularConstantSimplex X (n + 1) x)
     (fun i => (hface i).trans (singularConstantSimplex_face X x i).symm)
-
 
 theorem singularSimplexHomologyClass_eq_of_homotopy (R : C) {X Y : TopCat.{w}}
     {f g : X ⟶ Y} (H : TopCat.Homotopy f g) {n : ℕ}
@@ -96,7 +84,6 @@ theorem singularSimplexHomologyClass_eq_of_homotopy (R : C) {X Y : TopCat.{w}}
   rw [← hb]
   abel
 
-
 theorem singularSimplexHomologyClass_naturality (R : C) {X Y : TopCat.{w}}
     (f : X ⟶ Y) {n : ℕ} (s : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X)
     (hface : ∀ i : Fin (n + 2),
@@ -112,7 +99,6 @@ theorem singularSimplexHomologyClass_naturality (R : C) {X Y : TopCat.{w}}
       s (singularConstantSimplex X (n + 1) x)
       (fun i => (hface i).trans (singularConstantSimplex_face X x i).symm)
 
-
 theorem singularSimplexHomologyClass_const (R : C) (X : TopCat.{w})
     {n : ℕ} (x : X) :
     singularSimplexHomologyClass R X (singularConstantSimplex X (n + 1) x) x
@@ -124,7 +110,6 @@ theorem singularSimplexHomologyClass_const (R : C) (X : TopCat.{w})
     simp only [HomologicalComplex.liftCycles_i, zero_comp]
   simp only [singularSimplexHomologyClass, simplicialSimplexDifferenceHomologyClass,
     sub_self, hlift, zero_comp]
-
 
 theorem singularSimplexHomologyClass_eq_of_simplex_homotopy (R : C) (X : TopCat.{w})
     {n : ℕ} (s t : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X)

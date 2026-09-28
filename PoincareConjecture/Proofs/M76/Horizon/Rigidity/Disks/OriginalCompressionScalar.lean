@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalSignedDefi
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalRelativeSigns
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLHalfspaceNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem OriginalDiskProduct.exists_compression_scalar
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (he : PLDomain e R)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.LocalIntri
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.OpenImageDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ChartSegment
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -102,9 +92,6 @@ private theorem intrinsicImage_edist_le_of_convex_upper
 
 variable [T2Space N]
   {X : Type*} [TopologicalSpace X] [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]
-
-
-
 
 theorem originalOpen_edist_eq_openImagePullback_of_euclidean_bounds
     (h : RiemannianMetric 3 N)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecut
 import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
 
 theorem recutCarrier_compact_closure {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :

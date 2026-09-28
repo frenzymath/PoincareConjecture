@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M13SpacetimeRescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -19,8 +10,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
 
-
-
 def SpacetimeWorldline.IsMaximal {time : X → ℝ} {I K : SpacetimeInterval}
     {F : GeneralizedFlowSpacetime n X time I} (T : SpacetimeIntervalSystem)
     (γ : SpacetimeWorldline F (T.interval K)) : Prop :=
@@ -29,8 +18,6 @@ def SpacetimeWorldline.IsMaximal {time : X → ℝ} {I K : SpacetimeInterval}
     (∀ t : (T.interval K).Point,
       η.curve (spacetimeIntervalInclusion (T.interval K) (T.interval L) h t) = γ.curve t) →
     L.domain ⊆ K.domain
-
-
 
 def CompatibleSpacetimeEmbedding.IsMaximal {time : X → ℝ} {I K : SpacetimeInterval}
     {F : GeneralizedFlowSpacetime n X time I} (T : SpacetimeIntervalSystem)
@@ -43,9 +30,6 @@ def CompatibleSpacetimeEmbedding.IsMaximal {time : X → ℝ} {I K : SpacetimeIn
         e.toSpacetime (t, x)) →
     L.domain ⊆ K.domain
 
-
-
-
 structure BasedBallSpacetimeNeighborhood {time : X → ℝ} {I : SpacetimeInterval}
     (F : GeneralizedFlowSpacetime n X time I)
     (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) (T : SpacetimeIntervalSystem)
@@ -57,9 +41,6 @@ structure BasedBallSpacetimeNeighborhood {time : X → ℝ} {I : SpacetimeInterv
 
 variable {A : AdaptedMetricAtlas n X} {R : GeneralizedFlowCarrierConclusion A}
   {Q : ℝ} {hQ : 0 < Q} {a : ℝ}
-
-
-
 
 structure ParabolicDomainTransport (P : ParabolicSpacetimeRescaling R Q hQ a) where
   worldlineEquiv : ∀ K : SpacetimeInterval,
@@ -117,9 +98,6 @@ structure ParabolicDomainTransport (P : ParabolicSpacetimeRescaling R Q hQ a) wh
     (e : CompatibleSpacetimeCylinder R.spacetime (R.timeIntervals.interval K) C),
     (cylinderEquiv C K e).toCompatibleSpacetimeEmbedding =
       embeddingEquiv C K e.toCompatibleSpacetimeEmbedding
-
-
-
 
 structure ParabolicBallNeighborhoodTransport (P : ParabolicSpacetimeRescaling R Q hQ a)
     (t : ℝ) (p : (R.slices t).Point) (r : ℝ) (K : SpacetimeInterval) where

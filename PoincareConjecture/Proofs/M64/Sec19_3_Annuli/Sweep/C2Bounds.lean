@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.CurveDistance
 import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m64_c2_sweep_fixed_metric_bounds
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}
@@ -62,8 +48,6 @@ theorem m64_c2_sweep_fixed_metric_bounds
   · intro x hx t ht
     exact (hH ⟨(x, t), ⟨hx, ht⟩, rfl⟩).trans (le_max_left _ _)
 
-
-
 theorem m64_c2_time_slice_contMDiffOn
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}
     (hc : M63C2ShrinkingCurveOn F c (Icc a b)) (x : ℝ) :
@@ -75,9 +59,6 @@ theorem m64_c2_time_slice_contMDiffOn
   change (x, t) ∈ univ ×ˢ interior (Icc a b)
   rw [interior_Icc]
   exact ⟨mem_univ _, ht⟩
-
-
-
 
 theorem m64_c2_time_slice_edist [T2Space M]
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}
@@ -92,8 +73,6 @@ theorem m64_c2_time_slice_edist [T2Space M]
   intro u hu
   rw [hc.equation u (by simpa only [interior_Icc] using hu) x]
   exact hbound u ⟨hu.1.le, hu.2.le⟩
-
-
 
 theorem m64_c2_spatial_slice_edist [T2Space M]
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M}

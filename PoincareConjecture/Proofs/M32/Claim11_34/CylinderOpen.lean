@@ -1,20 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +13,6 @@ namespace PoincareConjecture.M32
 
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinder_forward_mfderiv_bijective
     (d : GeneralizedFlowCylinder F C a q J U) (hU : IsOpen U)
@@ -62,8 +46,6 @@ theorem cylinder_forward_mfderiv_bijective
     exact hv.trans hw.symm
   dsimp only [TangentSpace] at hinj ⊢
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
-
-
 
 theorem cylinder_isOpen_forward_image
     (d : GeneralizedFlowCylinder F C a q J U) (hU : IsOpen U)

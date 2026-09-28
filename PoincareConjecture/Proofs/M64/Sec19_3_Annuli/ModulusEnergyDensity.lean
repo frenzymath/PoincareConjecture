@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusDensityCongruence
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,16 +14,9 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 noncomputable def m64ModulusEnergyDensity (g : RiemannianMetric n M) (r : ℝ)
     (f : LoopPlane → M) (p : LoopPlane) : ℝ :=
   (r * m60AreaGram g f p 0 0 + r⁻¹ * m60AreaGram g f p 1 1) / 2
-
-
-
-
 
 theorem m64ModulusEnergyDensity_congr_of_eventuallyEq
     (g : RiemannianMetric n M) (r : ℝ) {f h : LoopPlane → M} {p : LoopPlane}
@@ -44,10 +25,6 @@ theorem m64ModulusEnergyDensity_congr_of_eventuallyEq
     congrArg (fun q : M => g.inner q v w) heq.eq_of_nhds
   simp only [m64ModulusEnergyDensity, m60AreaGram, heq.mfderiv_eq, hi]
   rfl
-
-
-
-
 
 theorem m64ModulusEnergyDensity_ae_eq_of_eqOn
     (g : RiemannianMetric n M) (r : ℝ) {f h : LoopPlane → M}
@@ -59,10 +36,6 @@ theorem m64ModulusEnergyDensity_ae_eq_of_eqOn
   apply m64ModulusEnergyDensity_congr_of_eventuallyEq g r
   filter_upwards [isOpen_interior.mem_nhds hp] with q hq
   exact heq (interior_subset hq)
-
-
-
-
 
 theorem m64AreaGram_eq_chart (g : RiemannianMetric n M) (b : M)
     {f : LoopPlane → M} {p : LoopPlane}
@@ -79,10 +52,6 @@ theorem m64AreaGram_eq_chart (g : RiemannianMetric n M) (b : M)
   rw [mfderiv_eq_fderiv] at hd
   rw [hd]
   exact (ConjugateVariation.chartCoefficients_apply g b hp _ _).symm
-
-
-
-
 
 theorem m64AreaGram_family_eq_chart (g : RiemannianMetric n M) (b : M)
     {v : ℝ × LoopPlane → M} {p : ℝ × LoopPlane}
@@ -112,10 +81,6 @@ theorem m64AreaGram_family_eq_chart (g : RiemannianMetric n M) (b : M)
   rw [hd.fderiv]
   rfl
 
-
-
-
-
 theorem m64AreaGram_family_contDiffAt (g : RiemannianMetric n M)
     {v : ℝ × LoopPlane → M} {p : ℝ × LoopPlane}
     (hv : ContMDiffAt 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) ∞ v p) (i j : Fin 2) :
@@ -141,10 +106,6 @@ theorem m64AreaGram_family_contDiffAt (g : RiemannianMetric n M)
     (contMDiffAt_iff_contMDiffAt_nhds (by simp)).mp (hv.of_le (by simp))
   filter_upwards [hchart, hnear] with q hq hvq
   exact m64AreaGram_family_eq_chart g b (hvq.mdifferentiableAt one_ne_zero) hq i j
-
-
-
-
 
 theorem m64ModulusEnergyDensity_family_contDiffAt (g : RiemannianMetric n M) (r : ℝ)
     {v : ℝ × LoopPlane → M} {p : ℝ × LoopPlane}

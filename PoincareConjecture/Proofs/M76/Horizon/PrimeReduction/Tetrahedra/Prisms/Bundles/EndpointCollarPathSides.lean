@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RawCenteredProductCollar
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76.PrismBelt

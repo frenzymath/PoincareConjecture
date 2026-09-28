@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapIsometryScalar
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingScalar
 import PoincareConjecture.Proofs.M13.Completeness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11CylinderOpenPartialHomeomorph_metric
     {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ} {K : Set ℝ} {U : Set C.carrier}
@@ -60,8 +50,6 @@ theorem ordinaryChapter11CylinderOpenPartialHomeomorph_metric
     (R.product.sliceMetric_eq ⟨origin + s / scale, ht⟩ (a x)
       (mfderiv (𝓡 3) (𝓡 3) a x v) (mfderiv (𝓡 3) (𝓡 3) a x w))
 
-
-
 theorem ordinaryChapter11_scaled_scalarAnalytic (p : (G).point) {Q : ℝ} (hQ : 0 < Q) :
     let g := M13.scaleSmoothMetric (F.metric p.1) Q hQ
     let D := M13.scaleLeviCivitaData (F.connection p.1) Q hQ
@@ -91,8 +79,6 @@ theorem ordinaryChapter11_scaled_scalarAnalytic (p : (G).point) {Q : ℝ} (hQ : 
   rw [M13.scaleLeviCivitaData_scalarCurvature, M13.scaleSmoothMetric_scalarGradientNorm,
     M13.scaleLeviCivitaData_scalarEvolution, ← hs, ← hg, ← he]
   rfl
-
-
 
 theorem ordinaryCap_scaled_metric_complete {n : ℕ} {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) X] [IsManifold (𝓡 n) ∞ X] [T3Space X]

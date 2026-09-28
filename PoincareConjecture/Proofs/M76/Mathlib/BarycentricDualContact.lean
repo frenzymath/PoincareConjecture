@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
 
 theorem cofaceCentroid_mem_dualBlock_link
     {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces)
@@ -40,8 +29,6 @@ theorem cofaceCentroid_mem_dualBlock_link
   exact hne (congrArg Subtype.val heq)
 
 omit [DecidableEq E] [Fintype K.faces] in
-
-
 
 theorem dualBlocks_inter_eq_centroid_of_no_common_coface
     [Finite K.faces]

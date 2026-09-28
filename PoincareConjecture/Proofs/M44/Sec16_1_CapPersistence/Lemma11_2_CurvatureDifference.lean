@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ConnectionDifference
 import PoincareConjecture.Proofs.M44.Mathlib.ConnectionCurvatureDifference
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem contDiff_connectionDifference (g h : RiemannianMetric 3 E) :
     ContDiff ℝ ∞ (connectionDifference g h) := by
   apply contDiff_iff_contDiffAt.mpr
@@ -35,17 +23,12 @@ theorem contDiff_connectionDifference (g h : RiemannianMetric 3 E) :
     (contDiffAt_christoffelBilinear (g.contDiffAt_euclideanCoefficients x)
       (g.inner_isInvertible x))
 
-
-
-
 noncomputable def covariantConnectionDifference (g h : RiemannianMetric 3 E)
     (x d u v : E) : E :=
   fderiv ℝ (connectionDifference g h) x d u v +
     christoffelBilinear g.euclideanCoefficients x d (connectionDifference g h x u v) -
     connectionDifference g h x (christoffelBilinear g.euclideanCoefficients x d u) v -
     connectionDifference g h x u (christoffelBilinear g.euclideanCoefficients x d v)
-
-
 
 theorem curvature_eq_add_connectionDifference {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x u v w : E) :
@@ -75,14 +58,10 @@ theorem curvature_eq_add_connectionDifference {g h : RiemannianMetric 3 E}
       (fderiv ℝ (christoffelBilinear g.euclideanCoefficients) x)
       (fderiv ℝ (christoffelBilinear h.euclideanCoefficients) x) u v w hs using 1
 
-
-
 noncomputable def koszulPermutation (T : CovariantTensorEvaluation 3 E 3) :
     CovariantTensorEvaluation 3 E 3 := fun x v =>
   T x v + T x (v ∘ (Equiv.swap 0 1).trans (Equiv.swap 0 2)) -
     T x (v ∘ (Equiv.swap 0 2).trans (Equiv.swap 0 1))
-
-
 
 theorem koszulPermutation_apply (T : CovariantTensorEvaluation 3 E 3) (x u v w : E) :
     koszulPermutation T x ![u, v, w] =
@@ -95,14 +74,10 @@ theorem koszulPermutation_apply (T : CovariantTensorEvaluation 3 E 3) (x u v w :
     fin_cases i <;> simp! [Equiv.swap_apply_def, Fin.ext_iff]
   simp only [koszulPermutation, h1, h2]
 
-
-
 theorem koszulPermutation_isSmooth {T : CovariantTensorEvaluation 3 E 3}
     (hT : IsSmoothCovariantTensor T) : IsSmoothCovariantTensor (koszulPermutation T) :=
   (hT.add (hT.perm ((Equiv.swap 0 1).trans (Equiv.swap 0 2)))).sub
     (hT.perm ((Equiv.swap 0 2).trans (Equiv.swap 0 1)))
-
-
 
 theorem covariant_koszulPermutation {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation 3 E 3} (hT : IsSmoothCovariantTensor T)

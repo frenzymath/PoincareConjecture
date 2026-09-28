@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.LocalRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 open scoped Manifold ContDiff Topology
@@ -26,11 +19,9 @@ private lemma contMDiffAt_const_field (x v : EuclideanSpace ℝ (Fin n)) :
 
 namespace RiemannianMetric
 
-
 def euclideanCoefficients (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) :
     EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ := fun y => g.inner y
-
 
 theorem contDiffAt_euclideanCoefficients (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -47,7 +38,6 @@ theorem contDiffAt_euclideanCoefficients (g : RiemannianMetric n (EuclideanSpace
   convert! hh using 1
 
 end RiemannianMetric
-
 
 noncomputable def metricKoszulCovector
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -86,7 +76,6 @@ theorem inner_connection_const (D : LeviCivitaData g)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem connection_const_eq_inverse (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
     D.connection (fun _ : EuclideanSpace ℝ (Fin n) => v) x u =
@@ -115,8 +104,6 @@ theorem connection_const_eq_inverse (D : LeviCivitaData g)
   have hh := congrArg (fun a : ℝ => (2⁻¹ : ℝ) * a) h.symm
   simp only [← mul_assoc, inv_mul_cancel₀ (by norm_num : (2 : ℝ) ≠ 0), one_mul] at hh
   convert! hh using 1
-
-
 
 theorem tendsto_connection_const_of_metric_jets
     {ι : Type*} {l : Filter ι}

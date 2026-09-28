@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem RawSourceCrossing.transport_retained
     {E Y X ι : Type*} [TopologicalSpace E] [TopologicalSpace Y]
     [TopologicalSpace X] [T2Space X]

@@ -1,22 +1,11 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Proofs.M32.Calibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.RepairedControlledSchedulesData
-
-
 
 noncomputable def recalibrateAnalytic
     (S : RepairedControlledSchedulesData.{u}) (A : ℝ) (hA : 0 < A) :

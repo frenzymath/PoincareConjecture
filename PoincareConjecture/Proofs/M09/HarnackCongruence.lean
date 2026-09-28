@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.HarnackIntegrability
 import PoincareConjecture.Proofs.M09.ActionCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

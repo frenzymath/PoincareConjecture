@@ -10,9 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
-
 theorem exists_nested_contractible_open_source
     {X : Type*} (J : SimplicialComplex ℝ P2) (hJ : J.faces.Finite)
     {A₀ A₁ : Set P2} {L d : ℝ}

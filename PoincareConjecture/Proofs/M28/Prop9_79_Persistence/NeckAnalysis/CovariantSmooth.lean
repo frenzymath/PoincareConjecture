@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.ModelChristoffel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,16 +7,12 @@ open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace Topology
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
-
 theorem contDiff_roundCylinderChristoffel {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (a b d : Fin 3) :
     ContDiff ℝ ∞ (fun p => roundCylinderChristoffel u
       (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b d) := by
   simp_rw [roundCylinderChristoffel_chosen_chart hu]
   exact contDiff_cylinderModelChristoffel a b d
-
-
 
 theorem contDiff_roundCylinderGram (u : ℝ) (q : UnitTwoSphere)
     (a b : Fin 3) :
@@ -42,8 +29,6 @@ theorem contDiff_roundCylinderGram (u : ℝ) (q : UnitTwoSphere)
   simp_rw [roundCylinderGram_chosen_chart]
   fin_cases a <;> fin_cases b <;> dsimp [Matrix.diagonal] <;>
     first | exact hf | exact contDiff_const
-
-
 
 theorem contDiffOn_roundCylinderTensorDerivative {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) {S : Set RoundCylinderCoordinates} (hS : IsOpen S)
@@ -66,8 +51,6 @@ theorem contDiffOn_roundCylinderTensorDerivative {u : ℝ} (hu : u < 1)
     exact (contDiff_roundCylinderChristoffel hu q j (a 0) (a i.succ)).contDiffAt.mul
       (ht _)
   exact (hd.sub hc).contDiffWithinAt
-
-
 
 theorem contDiffOn_roundCylinderIteratedDerivative {epsilon u : ℝ} (hu : u < 1)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B)

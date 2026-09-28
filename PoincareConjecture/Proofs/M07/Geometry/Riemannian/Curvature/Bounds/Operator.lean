@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,8 +50,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem abs_curvatureTensor_le_of_multilinear
     (D : LeviCivitaData g) (x : M)
     (A : MultilinearMap ℝ (fun _ : Fin 4 => TangentSpace (𝓡 n) x) ℝ)
@@ -94,8 +83,6 @@ section Euclidean
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem abs_curvatureTensor_le_tangentNorm
     (D : LeviCivitaData g) (x u v w z : EuclideanSpace ℝ (Fin n)) :
     |D.curvatureTensor x u v w z| ≤ D.curvatureTensorNorm x *
@@ -103,8 +90,6 @@ theorem abs_curvatureTensor_le_tangentNorm
         g.tangentNorm x z := by
   obtain ⟨A, hA⟩ := D.exists_multilinear_curvatureTensor x
   exact abs_curvatureTensor_le_of_multilinear D x A hA u v w z
-
-
 
 theorem tangentNorm_curvature_le
     (D : LeviCivitaData g) (x u v w : EuclideanSpace ℝ (Fin n)) :
@@ -132,8 +117,6 @@ theorem tangentNorm_curvature_le
     apply (mul_le_mul_iff_right₀ hpos).mp
     nlinarith only [h]
 
-
-
 theorem tangentNorm_curvature_conjugate_le
     (D : LeviCivitaData g) (p x : EuclideanSpace ℝ (Fin n))
     (P : EuclideanSpace ℝ (Fin n) ≃ₗ[ℝ] EuclideanSpace ℝ (Fin n))
@@ -150,8 +133,6 @@ theorem tangentNorm_curvature_conjugate_le
   have h := D.tangentNorm_curvature_le x (P u) v v
   rw [hnorm] at h
   nlinarith only [h]
-
-
 
 theorem tangentNorm_curvature_conjugate_le_of_bound
     (D : LeviCivitaData g) (p x : EuclideanSpace ℝ (Fin n))
@@ -174,8 +155,6 @@ namespace RiemannianMetric
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
 
-
-
 noncomputable def endomorphismInMetric (p : EuclideanSpace ℝ (Fin n))
     (A : EuclideanSpace ℝ (Fin n) →ₗ[ℝ] EuclideanSpace ℝ (Fin n)) :
     letI : Bundle.RiemannianBundle
@@ -194,8 +173,6 @@ noncomputable def endomorphismInMetric (p : EuclideanSpace ℝ (Fin n))
 @[simp] theorem endomorphismInMetric_apply (p : EuclideanSpace ℝ (Fin n))
     (A : EuclideanSpace ℝ (Fin n) →ₗ[ℝ] EuclideanSpace ℝ (Fin n))
     (u : EuclideanSpace ℝ (Fin n)) : g.endomorphismInMetric p A u = A u := rfl
-
-
 
 theorem norm_endomorphismInMetric_le (p : EuclideanSpace ℝ (Fin n))
     (A : EuclideanSpace ℝ (Fin n) →ₗ[ℝ] EuclideanSpace ℝ (Fin n))
@@ -220,8 +197,6 @@ end RiemannianMetric
 namespace LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem norm_endomorphismInMetric_curvature_le
     (D : LeviCivitaData g) (p x : EuclideanSpace ℝ (Fin n))

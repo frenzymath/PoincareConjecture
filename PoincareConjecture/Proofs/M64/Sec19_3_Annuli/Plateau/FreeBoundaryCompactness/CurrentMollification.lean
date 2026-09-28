@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.WeakCurrentCurl
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakAverages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem closed_current_convolution_closed
     {O : Set Plane} (hO : MeasurableSet O) (J : Fin 2 → Plane → ℝ)
@@ -71,8 +60,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 theorem observedWeakAnnulus_circle_current_memLp
     (e : M → E) (R : E →L[ℝ] Plane) (hnorm : ∀ q, ‖R (e q)‖ = 1)
     {c0 c1 : ℝ → M} (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (i : Fin 2) :
@@ -83,8 +70,6 @@ theorem observedWeakAnnulus_circle_current_memLp
   have hv := R.comp_memLp' (Lp.memLp (A.column i))
   simpa only [planarCurrentBilinear_apply, Function.comp_apply] using
     planarCurrentBilinear.memLp_of_bilin 2 hu hv
-
-
 
 theorem observedWeakAnnulus_smoothed_circle_current_closed
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

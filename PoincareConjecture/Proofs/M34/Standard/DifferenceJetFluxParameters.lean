@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.DifferenceEnergyJetOperators
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,25 +13,17 @@ namespace PoincareConjecture.M34.DifferenceEnergy
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def inverseMetricThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) : Inverse n :=
   (twoJetProjection n (truncate 2 J)).1.inverse
-
-
 
 noncomputable def connectionThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) : Gamma n :=
   connectionJetArray n (truncate 2 J)
 
-
-
 noncomputable def curvatureThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) : Raw n :=
   raisedCurvatureJetArray n (truncate 2 J)
-
-
 
 noncomputable def covariantCurvatureThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) : Flux n :=
@@ -49,15 +31,11 @@ noncomputable def covariantCurvatureThreeJet (n : ℕ)
     prolong 2 (raisedCurvatureJetArray n) J (EuclideanSpace.single d 1) l j k m +
       curvatureAction (connectionThreeJet n J) d (curvatureThreeJet n J) l j k m
 
-
-
 noncomputable def raisedCurvatureFluxThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) : Flux n :=
   fun i l j k m => ∑ d : Fin n,
     EuclideanSpace.proj i (inverseMetricThreeJet n J (EuclideanSpace.proj d)) *
       covariantCurvatureThreeJet n J d l j k m
-
-
 
 theorem contDiffOn_inverseMetricThreeJet (n : ℕ) :
     ContDiffOn ℝ ∞ (inverseMetricThreeJet n) (curvatureJetDomain n 1) := by
@@ -67,19 +45,13 @@ theorem contDiffOn_inverseMetricThreeJet (n : ℕ) :
   have hc := contDiffAt_fst.comp J ((twoJetProjection n).contDiff.contDiffAt.comp J ht)
   exact (hJ.contDiffAt_map_inverse.comp J hc).contDiffWithinAt
 
-
-
 theorem continuousOn_connectionThreeJet (n : ℕ) :
     ContinuousOn (connectionThreeJet n) (curvatureJetDomain n 1) :=
   (contDiffOn_differenceEnergyJetBackground n).continuousOn.fst.snd
 
-
-
 theorem continuousOn_curvatureThreeJet (n : ℕ) :
     ContinuousOn (curvatureThreeJet n) (curvatureJetDomain n 1) :=
   (contDiffOn_differenceEnergyJetBackground n).continuousOn.snd.fst
-
-
 
 theorem continuousOn_covariantCurvatureThreeJet (n : ℕ) :
     ContinuousOn (covariantCurvatureThreeJet n) (curvatureJetDomain n 1) := by
@@ -105,8 +77,6 @@ theorem continuousOn_covariantCurvatureThreeJet (n : ℕ) :
       (fun l j k m => continuousOn_pi.mp (continuousOn_pi.mp
         (continuousOn_pi.mp (continuousOn_pi.mp hR l) j) k) m)
       d l j k m)
-
-
 
 theorem continuousOn_raisedCurvatureFluxThreeJet (n : ℕ) :
     ContinuousOn (raisedCurvatureFluxThreeJet n) (curvatureJetDomain n 1) := by

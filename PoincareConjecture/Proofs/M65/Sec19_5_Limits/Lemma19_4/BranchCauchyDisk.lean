@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyCircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open scoped Topology ContDiff intervalIntegral
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem integral_ball_complex_polar (f : ℂ → E) (R : ℝ) :
     (∫ w in ball (0 : ℂ) R, f w) =
@@ -53,10 +40,6 @@ theorem integral_ball_complex_polar (f : ℂ → E) (R : ℝ) :
   change (∫ p in U ∩ T, p.1 • f (circleMap 0 p.1 p.2)) =
     ∫ p in T, p.1 • f (circleMap 0 p.1 p.2)
   rw [inter_eq_right.mpr (show T ⊆ U from fun _ hpT => ⟨hpT.1.1, hpT.2⟩)]
-
-
-
-
 
 theorem integral_inv_smul_dbar_ball [CompleteSpace E] {ψ : ℂ → E}
     (hψ : ContDiff ℝ 1 ψ) {R : ℝ} (hR : 0 < R) :

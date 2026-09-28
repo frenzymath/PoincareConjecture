@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckBackwardCurvature
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_spacetime_neck_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -42,9 +31,6 @@ theorem exists_spacetime_neck_curvature_bound :
   change DG.curvatureTensorNorm y = (D t).curvatureTensorNorm y / Q at hnorm
   rw [hnorm] at h
   exact (div_lt_iff₀ hQ).mp h
-
-
-
 
 theorem exists_evolving_neck_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, epsilon ≤ delta →

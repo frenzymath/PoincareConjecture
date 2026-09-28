@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step.OtherLevels
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,7 +27,6 @@ theorem isCompact_capMinusHeights : IsCompact S.capMinusHeights :=
 theorem isCompact_capPlusHeights : IsCompact S.capPlusHeights :=
   (isCompact_closedBall (0 : E2) 1).image
     ((innerSL Real v).continuous.comp S.gPlus_smooth.continuous)
-
 
 theorem disjoint_cuts_capMinusHeights {A : Set Real}
     (hsep : ∀ k ∈ A, k ≠ c -> R < |k - c|) : Disjoint A S.capMinusHeights := by

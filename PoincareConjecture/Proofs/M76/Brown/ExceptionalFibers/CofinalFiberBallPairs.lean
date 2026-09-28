@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.ChartCoreCompressio
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.AmbientBallPairTransport
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.CompactSaturatedImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ namespace ContinuousMap
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X] [RegularSpace X]
-
-
-
-
 
 theorem exists_fiber_ballPair_subset (g : C(X, X)) (c : X) (hc : c ∈ range g)
     (hfib : ∀ x y, g x = g y ↔ x = y ∨ (g x = c ∧ g y = c))

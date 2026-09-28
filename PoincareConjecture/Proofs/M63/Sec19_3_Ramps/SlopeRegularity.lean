@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import PoincareConjecture.Statements.M63CurveEstimates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem m63CurveVelocity_periodic {gamma : ℝ → M} {p : ℝ}
     (hgamma : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) gamma)
@@ -49,8 +37,6 @@ theorem m63CurveVelocity_periodic {gamma : ℝ → M} {p : ℝ}
   rw [hvalue, funext hper] at hcomp
   exact hcomp.symm
 
-
-
 theorem m63Slope_continuousOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) :
@@ -65,8 +51,6 @@ theorem m63Slope_continuousOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ
   simpa only [Pi.mul_def, Pi.inv_def, m62Slope, spatialUnitTangent,
     map_smul, smul_apply, smul_eq_mul]
     using hinv.mul hpair
-
-
 
 theorem m63Slope_contDiffOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -83,8 +67,6 @@ theorem m63Slope_contDiffOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     map_smul, smul_apply, smul_eq_mul]
     using hinv.mul hpair
 
-
-
 theorem m63Slope_periodic {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) {t : ℝ} (ht : t ∈ Icc a b) :
@@ -98,8 +80,6 @@ theorem m63Slope_periodic {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
       curveVelocity (fun y => c y t) x := hv x
   simp only [m62Slope, spatialUnitTangent]
   rw [M62.speed_periodic P.flow c hc ht x, hvx, hc.periodic t ht x]
-
-
 
 theorem m63IsRampAt_slice_iff {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point) (t : ℝ) :

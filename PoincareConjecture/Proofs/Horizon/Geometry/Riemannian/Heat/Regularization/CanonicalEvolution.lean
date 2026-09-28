@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.CanonicalKernel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.CompactData
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem kernel_integral_distance_lipschitz_of_exhaustion_kernel
     (H : ConservativeHeatKernelData g) (hn : 1 ≤ n) (hc : MetricComplete g)

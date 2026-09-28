@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthSlabContinuity
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlopeEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 variable {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
-
-
 
 theorem raw_axisWarpingRadius_deriv_contDiffOn :
     ContDiffOn ℝ ∞ (fun p : ℝ × ℝ => deriv (axisWarpingRadius (G.flow.metric p.1)) p.2)
@@ -65,8 +54,6 @@ theorem rawWarpingSlope_eq_original_deriv {t : ℝ} (ht : t ∈ Ico 0 G.lifetime
     (Real.sqrt (axisRadialCoefficient (G.flow.metric t)
       ((radialArclengthOrderIso (G.flow.metric t) (hrotation t ht) (G.complete P ht)).symm s)))⁻¹
   exact hh.deriv
-
-
 
 theorem rawWarpingSlope_continuousOn_slab {T : ℝ} (hT : 0 ≤ T)
     (hTlt : T < G.lifetime) :

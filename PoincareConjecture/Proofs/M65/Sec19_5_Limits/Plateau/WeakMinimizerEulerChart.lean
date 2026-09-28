@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerFields
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLinearChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -105,11 +95,6 @@ private theorem chart_extensions {M : Type u} [TopologicalSpace M]
     exact congrArg e (c.left_inv hqs)
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem exists_chart_graph {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

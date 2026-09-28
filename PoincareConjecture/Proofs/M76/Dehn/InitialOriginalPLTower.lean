@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalPLStage
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryDefiningCut
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
@@ -22,9 +12,6 @@ variable {U E M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [FiniteDimensional ℝ U] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M]
-
-
-
 
 theorem exists_original_graph_stage
     (e : ι → OpenPartialHomeomorph M E)

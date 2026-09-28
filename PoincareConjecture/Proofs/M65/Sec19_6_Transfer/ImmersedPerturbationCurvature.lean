@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {a b : ℝ}
-
-
-
 
 theorem curvature_contMDiffOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)
@@ -42,9 +29,6 @@ theorem curvature_contMDiffOn (F : RicciFlow 3 M (Icc a b))
   have hv := (speed_contDiffOn F c U hU hTime hc himm).inv
     (fun z hz => (Real.sqrt_pos.mpr ((F.metric z.2.2).pos _ _ (himm z hz))).ne')
   exact smul_field_contMDiffOn c U hU hc _ hv _ hD
-
-
-
 
 theorem residual_continuousOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)

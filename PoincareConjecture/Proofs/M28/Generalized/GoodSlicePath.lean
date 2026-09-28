@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.CompactPathTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_good_slice_path
     (F : GeneralizedRicciFlowData.{u}) (P : RicciFlowCurvatureTheory.{u})

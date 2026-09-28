@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.HalfDiskCollarRectangle
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,10 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 open M65Gauss M65StrictTrace
-
-
-
-
 
 theorem frame_connection_continuousOn {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -37,10 +28,6 @@ theorem frame_connection_continuousOn {n : ℕ}
   have hGamma : ContinuousOn (fun z => connectionCoefficient D (H z)) U :=
     (contDiff_connectionCoefficient D).continuous.comp_continuousOn hH.continuousOn
   exact (hG.clm_apply (hDT.add ((hGamma.clm_apply hDH).clm_apply hT.continuousOn))).clm_apply hN
-
-
-
-
 
 theorem halfDisk_boundary_connection_continuousOn {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

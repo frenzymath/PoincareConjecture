@@ -2,23 +2,12 @@ import Mathlib.Analysis.Calculus.DerivativeTest
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem not_isLocalMin_of_strict_upper_contact {f B : ℝ → ℝ} {c : ℝ}
     (hcontact : B c = f c) (hupper : ∀ᶠ t in 𝓝 c, f t ≤ B t)
@@ -35,7 +24,6 @@ theorem not_isLocalMin_of_strict_upper_contact {f B : ℝ → ℝ} {c : ℝ}
   have hzero : deriv (deriv B) c = 0 := by
     simpa only [deriv_const', deriv_const] using heq.deriv.deriv_eq
   linarith only [hsecond, hzero]
-
 
 theorem min_endpoints_le_of_strict_upper_contacts {f : ℝ → ℝ} {a b : ℝ}
     (hab : a < b) (hf : ContinuousOn f (Icc a b))

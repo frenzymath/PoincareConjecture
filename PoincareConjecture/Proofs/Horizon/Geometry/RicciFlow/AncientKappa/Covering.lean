@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Covering.Completeness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,7 +18,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   [T3Space M] [T3Space N]
   [MeasurableSpace M] [BorelSpace M] [MeasurableSpace N] [BorelSpace N]
-
 
 theorem AncientKappaNoncollapsed.of_covering
     {F : RicciFlow n M (Iic 0)} {G : RicciFlow n N (Iic 0)} {p : M → N}
@@ -53,8 +41,6 @@ theorem AncientKappaNoncollapsed.of_covering
     (F.metric t) (G.metric t) hp.contMDiff (hinner t ht) ((F.metric t).ball x r)
   rw [hball] at hvol
   exact (hnc r₀ hr₀ t ht (p x) r hr hrr₀ hbase).trans hvol
-
-
 
 theorem AncientKappaSolution.exists_lift_of_covering
     [T2Space M] [T2Space N] [SecondCountableTopology M] [SecondCountableTopology N]

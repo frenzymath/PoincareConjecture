@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.TwoFiberCellNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,10 +9,6 @@ namespace ContinuousMap
 variable {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [Infinite E] [TopologicalSpace X] [T2Space X] [RegularSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y] [RegularSpace Y]
-
-
-
-
 
 theorem exists_compact_second_fiber_ballPair_subset (q : C(X, Y))
     (hq : Function.Surjective q) (a b : Y) (hab : a ≠ b)

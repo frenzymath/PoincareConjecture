@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcInteriorSectorMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedSectorBlockGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

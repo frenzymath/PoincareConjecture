@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -36,8 +28,6 @@ theorem norm_iteratedFDeriv_bilinear_le_of_contDiffAt
     (hfs.mono (fun _ hy => (hv hy).1)) (hgt.mono (fun _ hy => (hv hy).2))
     hvo.uniqueDiffOn hxv (le_refl (q : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
 
 theorem norm_iteratedFDeriv_bilinear_le_affine_highest
     (L : E →L[ℝ] F →L[ℝ] G) {f : D → E} {g : D → F} {x : D}
@@ -85,8 +75,6 @@ theorem norm_iteratedFDeriv_bilinear_le_affine_highest
       exact mul_le_mul_of_nonneg_left (hterm i (by have := Finset.mem_range.mp hi; omega))
         (Nat.cast_nonneg _)
     _ = _ := by simp only [← Finset.sum_mul, C]; ring
-
-
 
 theorem norm_iteratedFDeriv_comp_le_affine_highest
     {f : E → F} {g : F → G} {x : E}

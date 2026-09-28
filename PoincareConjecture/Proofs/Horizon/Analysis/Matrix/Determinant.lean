@@ -6,10 +6,3 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Topology.Instances.Matrix
-
-
-
-
-
-
-

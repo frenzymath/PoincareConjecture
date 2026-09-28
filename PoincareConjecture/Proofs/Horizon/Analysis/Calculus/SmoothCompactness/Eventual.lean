@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.FiniteDimensional
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Function
@@ -23,16 +12,12 @@ namespace Poincare.Analysis.Calculus
 variable {d : ℕ} {E : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 def LocallyEventuallyContDiff
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
     (Ω : Set X) (f : ℕ → X → E) : Prop :=
   ∀ K : Set X, IsCompact K → K ⊆ Ω →
     ∀ᶠ j : ℕ in atTop, ∃ U : Set X,
       IsOpen U ∧ K ⊆ U ∧ ContDiffOn ℝ ∞ (f j) U
-
-
 
 theorem locallyEventuallyContDiff_of_local
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
@@ -100,8 +85,6 @@ private theorem exists_contDiff_extension_on_compact
       simp only [hy, zero_smul]
   · intro x hx
     simp only [hcK hx, one_smul]
-
-
 
 theorem exists_common_smoothSubsequenceExtraction_finiteDimensional_of_locallyEventuallyContDiff
     {X Y : ℕ → Type*}
@@ -177,8 +160,6 @@ theorem exists_common_smoothSubsequenceExtraction_finiteDimensional_of_locallyEv
   refine ⟨τ ∘ σ, hτ.comp hσ, f₀, hf₀, fun i m C hC hCΩ => ?_⟩
   exact (hlim i m C hC hCΩ).congr (hσ.tendsto_atTop.eventually (hjet i C hC hCΩ m))
 
-
-
 theorem exists_smoothSubsequenceExtraction_finiteDimensional_of_locallyEventuallyContDiff
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
     [FiniteDimensional ℝ X] [FiniteDimensional ℝ E]
@@ -197,8 +178,6 @@ theorem exists_smoothSubsequenceExtraction_finiteDimensional_of_locallyEventuall
       (X := fun _ => X) (Y := fun _ => E) (fun _ => hΩ) (fun _ => f)
       (fun _ => hf) (fun _ => hbound)
   exact ⟨σ, hσ, f₀ 0, hf₀ 0, hlim 0⟩
-
-
 
 theorem exists_smoothSubsequenceExtraction_of_locallyEventuallyContDiff
     [FiniteDimensional ℝ E]

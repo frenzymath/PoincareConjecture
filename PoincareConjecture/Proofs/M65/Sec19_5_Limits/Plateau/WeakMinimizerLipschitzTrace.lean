@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Restriction
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Topology SchwartzMap LineDeriv InnerProductSpace ContDiff NNReal
 namespace PoincareConjecture
 
 open EuclideanTranslationNative EuclideanMollificationNative DeTurckDomainRegularityNative
-
-
-
 
 theorem m65Mollify_lipschitz_error {f : LoopPlane → ℝ} {C : ℝ≥0}
     (hf : LipschitzWith C f) (hfL2 : MemLp f 2 volume) {ε : ℝ} (hε : 0 < ε)
@@ -107,10 +94,6 @@ private theorem m65Lipschitz_mollify_boundary_limit
     exact BoundedContinuousFunction.coeFn_toLp 2 mu ℝ _
   · rw [heq] at hlim
     exact hlim
-
-
-
-
 
 theorem m65CompactLipschitz_diskWeakTrace {f : LoopPlane → ℝ} {C : ℝ≥0}
     (hf : LipschitzWith C f) (hs : HasCompactSupport f) :
@@ -262,11 +245,6 @@ private theorem m65DiskLip_compact_extension {f : LoopPlane → ℝ} {C : ℝ≥
   intro x hx
   dsimp only [g]
   rw [hχeq x hx, hHeq x hx, one_mul]
-
-
-
-
-
 
 theorem m65LipschitzOn_diskWeakTrace {f : LoopPlane → ℝ} {C : ℝ≥0}
     (hf : LipschitzOnWith C f loopDiskSet) :

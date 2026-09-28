@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.TimeIdentification
 
-
 noncomputable section
 set_option autoImplicit false
 

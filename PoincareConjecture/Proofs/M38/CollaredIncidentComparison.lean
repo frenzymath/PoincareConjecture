@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.IncidentCappingComparison
 import PoincareConjecture.Proofs.M38.FiniteCappingGerms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_incident_diffeomorph_of_matched_balls
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

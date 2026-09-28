@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChain
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,9 +10,6 @@ open scoped Topology ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64BoundedCoordinate_weak_chain {m n : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}

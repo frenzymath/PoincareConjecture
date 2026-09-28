@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M12MetricPredecessors
 import PoincareConjecture.Statements.M12HorizontalTheory
 import PoincareConjecture.Statements.M12GaugeTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure OrdinaryProductRicciGeometry {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -31,9 +20,6 @@ structure OrdinaryProductRicciGeometry {n : ℕ} {M : Type u} [TopologicalSpace 
     IntrinsicGeneralizedRicciEquation leafwiseConnection ↔ OrdinaryMetricRicciPDE g c I
   ordinary_from_equation : IntrinsicGeneralizedRicciEquation leafwiseConnection →
     Nonempty (OrdinaryGaugeWitness leafwiseConnection product.productCylinder product.productMetric)
-
-
-
 
 structure GeneralizedRicciGaugeTheory (n : ℕ) : Prop where
   leafwise_calculus : ∀ (X : Type u) [TopologicalSpace X] (time : X → ℝ)

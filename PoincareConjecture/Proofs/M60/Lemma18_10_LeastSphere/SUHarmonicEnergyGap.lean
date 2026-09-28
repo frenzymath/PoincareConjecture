@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUEnergyRegularity
 import PoincareConjecture.Proofs.M60.Mathlib.SUPlaneMapConstancy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60Sphere_constant_of_energyDensity_zero (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -68,8 +57,6 @@ theorem m60Sphere_constant_of_energyDensity_zero (g : RiemannianMetric n M)
   exact fun p => hclosed (hdense p)
 
 variable [SecondCountableTopology M] [CompactSpace M]
-
-
 
 theorem m60HarmonicSphere_uniform_energy_gap (g : RiemannianMetric n M) :
     ∃ ε : ℝ, 0 < ε ∧ ∀ (f : UnitTwoSphere → M),

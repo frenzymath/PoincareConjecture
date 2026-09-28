@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Metric.CompactCarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
 
 theorem scalarCoreRadius_eq_of_connection
     {M : Type*} [TopologicalSpace M]
@@ -43,8 +30,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   BasedKappaSolution.connectedSpace
 
 namespace M23TerminalMetricConvergence
-
-
 
 theorem exists_cap_core_ball_transport_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

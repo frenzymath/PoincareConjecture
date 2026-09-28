@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.ShortLimitStatementAssembly
 import PoincareConjecture.Proofs.M30.Thm11_8.LongLimitStatementAssembly
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,17 +13,12 @@ universe u
 
 namespace PoincareConjecture.M30
 
-
-
-
 structure M30ContractServices : Prop where
   mixed : WithinFlowJetBoundsService.{0, 0}
   flow : WithinBilinearFlowService.{0}
   slice : SpatialSliceJetConvergenceService.{0, 0, 0, 0, 0}
   short : M30ShortControlService.{u}
   long : M30LongContractService.{u}
-
-
 
 theorem repairedControlledBlowupLimitTheory_of_services
     (P : M30ControlledBlowupPredecessors.{u})

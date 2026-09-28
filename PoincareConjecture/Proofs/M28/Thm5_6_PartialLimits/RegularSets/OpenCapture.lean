@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M28.Generalized.MetricVolumeCalibration
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -90,9 +79,6 @@ private theorem mapsTo_open_of_pathELength_lt_of_regular
       hprefix.closure_of_continuousOn hγc
   exact hc.2 (hKU (hclosed (right_mem_Icc.mpr hcpos.le)))
 
-
-
-
 theorem ambient_ball_subset_open_of_intrinsic_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)
     {r : ℝ} (hp : p ∈ regularPoints (intrinsicOpenMetric g U) r) :
@@ -102,8 +88,6 @@ theorem ambient_ball_subset_open_of_intrinsic_regular
   have hmaps := mapsTo_open_of_pathELength_lt_of_regular g U p hp hγ h0 hlen
   simpa only [h1] using hmaps (right_mem_Icc.mpr zero_le_one)
 
-
-
 theorem intrinsicOpenMetric_ball_eq_preimage_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)
     {r : ℝ} (hp : p ∈ regularPoints (intrinsicOpenMetric g U) r) :
@@ -111,8 +95,6 @@ theorem intrinsicOpenMetric_ball_eq_preimage_of_regular
       (Subtype.val : U → M) ⁻¹' g.ball (p : M) r :=
   intrinsicOpenMetric_ball_eq_preimage g U p
     (ambient_ball_subset_open_of_intrinsic_regular g U p hp)
-
-
 
 theorem intrinsicOpenMetric_ball_image_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)
@@ -128,8 +110,6 @@ theorem intrinsicOpenMetric_ball_image_of_regular
     exact ⟨⟨x, ambient_ball_subset_open_of_intrinsic_regular g U p hp hx⟩, hx, rfl⟩
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem intrinsicOpenMetric_ball_volume_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)
@@ -148,8 +128,6 @@ theorem intrinsicOpenMetric_ball_volume_of_regular
     exact (isOpen_lt (continuous_const.edist continuous_id) continuous_const).measurableSet
   rw [intrinsicOpenMetric_volumeMeasure_apply g U hball,
     intrinsicOpenMetric_ball_image_of_regular g U p hp]
-
-
 
 theorem intrinsicOpenMetric_ball_calibratedVolume_of_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)

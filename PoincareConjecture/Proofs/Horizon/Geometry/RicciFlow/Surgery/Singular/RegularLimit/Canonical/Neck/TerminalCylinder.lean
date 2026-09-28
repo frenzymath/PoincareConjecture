@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.CylinderSplice
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.BackwardClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ variable {M : Type u} [TopologicalSpace M]
   (hR : (F.connection t).scalarCurvature N.center <
     (H.terminalConnection P04).scalarCurvature x₀)
 
-
-
 def regularNeckSplicedCylinder :
     GeneralizedFlowCylinder (H.nonemptyExtension P04 hΩ).extended (H.terminalSliceCarrier P04)
       T ((H.terminalConnection P04).scalarCurvature x₀) (Ioc (-1) 0)
@@ -56,8 +45,6 @@ def regularNeckSplicedCylinder :
   intro s hs hl hc x hx
   exact H.regularNeckExtendedCylinder_eq_regularBox P04 hΩ ⟨ht.1.le, ht.2⟩ N x₀
     ⟨hl, hc.trans_lt ht.2⟩ (hold s hs hc) x hx
-
-
 
 theorem regularNeckSplicedCylinder_terminal (h : (0 : ℝ) ∈ Ioc (-1 : ℝ) 0)
     (x : H.regularRegion P04) :
@@ -79,13 +66,11 @@ theorem regularNeckSplicedCylinder_terminal (h : (0 : ℝ) ∈ Ioc (-1 : ℝ) 0)
   rw [hpoint _ T _ ⟨H.reference.tMinus_lt, le_rfl⟩ hclock,
     H.regularBox_forward_terminal P04]
 
-
 def regularTerminalDiffeomorph : Diffeomorph (𝓡 3) (𝓡 3)
     ((H.nonemptyExtension P04 hΩ).extended.slice T).carrier (H.regularRegion P04) ∞ where
   toEquiv := (H.terminalSliceHomeomorph P04).toEquiv
   contMDiff_toFun := H.terminalSliceHomeomorph_smooth P04
   contMDiff_invFun := H.terminalSliceHomeomorph_symm_smooth P04
-
 
 def regularNeckTerminalCylinder :
     GeneralizedFlowCylinder (H.nonemptyExtension P04 hΩ).extended
@@ -94,8 +79,6 @@ def regularNeckTerminalCylinder :
       ((H.regularNeckSourceMap P04 ⟨ht.1.le, ht.2⟩ ∘ H.terminalSliceHomeomorph P04) ⁻¹' N.carrier) :=
   (H.regularNeckSplicedCylinder P04 hΩ ht N x₀ hR).rebaseSource
     (H.regularTerminalDiffeomorph P04 hΩ)
-
-
 
 theorem regularNeckTerminalCylinder_identity (h : (0 : ℝ) ∈ Ioc (-1 : ℝ) 0)
     (x : ((H.nonemptyExtension P04 hΩ).extended.slice T).carrier) :

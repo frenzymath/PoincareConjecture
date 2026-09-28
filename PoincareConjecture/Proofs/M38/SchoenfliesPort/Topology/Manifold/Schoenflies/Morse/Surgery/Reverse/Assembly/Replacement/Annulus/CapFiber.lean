@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Correction.CapBelt
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Representation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,13 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -35,8 +22,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem mem_transported_cap_iff_of_projection_mem_circle
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
@@ -80,8 +65,6 @@ private theorem prepared_tube_projection_mem_circle (q : S1) {t : Real}
   simp [Hemisphere.Plane,
     Submodule.orthogonalProjectionOnto_orthogonalComplement_singleton_eq_zero]
 
-
-
 theorem prepared_tube_mem_capMinus_iff (q : S1) {t : Real}
     (ht : t ∈ Ioo (-S.ε) S.ε) :
     S.D (f (S.T (q, t))) ∈ S.gMinus '' closedBall (0 : E2) 1 ↔
@@ -98,7 +81,6 @@ theorem prepared_tube_mem_capMinus_iff (q : S1) {t : Real}
   · intro h
     exact ⟨(le_div_iff₀ S.s_pos).mpr (by linarith [h.1]),
       (div_le_iff₀ S.s_pos).mpr (by linarith [h.2])⟩
-
 
 theorem prepared_tube_mem_capPlus_iff (q : S1) {t : Real}
     (ht : t ∈ Ioo (-S.ε) S.ε) :

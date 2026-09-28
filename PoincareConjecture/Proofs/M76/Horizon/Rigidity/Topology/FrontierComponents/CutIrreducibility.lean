@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.IncompressibleCutIrreducibility
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -24,7 +15,6 @@ namespace FrontierResidualModel
 
 omit [T2Space X] in
 
-
 theorem paired_components_cover (lower : FrontierResidualModel e Nlower A)
     (upper : FrontierResidualModel e Nupper B) (hfront : frontier R = A ∪ B) :
     (⋃ i : Fin lower.count ⊕ Fin upper.count,
@@ -32,8 +22,6 @@ theorem paired_components_cover (lower : FrontierResidualModel e Nlower A)
   simpa only [iUnion_sum, Sum.elim_inl, Sum.elim_inr, lower.cover, upper.cover] using hfront.symm
 
 end FrontierResidualModel
-
-
 
 theorem IsPLIrreducible.of_frontier_component_models
     (hΩ : IsPLIrreducible e Ω) (hR : PLDomain e R) (hRΩ : R ⊆ Ω)

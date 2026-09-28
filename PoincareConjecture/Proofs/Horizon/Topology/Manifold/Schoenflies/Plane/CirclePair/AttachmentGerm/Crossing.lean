@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Restriction
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.CircleAttachmentGerm
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem normal_derivative_ne_zero_of_boundary_germ
     (P : PartialDiffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (p : S1)
@@ -62,8 +58,6 @@ theorem normal_derivative_ne_zero_of_boundary_germ
     exact ⟨x, hLx⟩
   have hpp := Submodule.mem_orthogonal_singleton_iff_inner_right.mp hporth
   simp at hpp
-
-
 
 theorem inward_radial_germ_of_outward_boundary_germ
     (P : PartialDiffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (p : S1)

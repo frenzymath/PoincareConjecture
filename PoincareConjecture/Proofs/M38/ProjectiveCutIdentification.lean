@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveCutCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A B : GeneralizedSliceCarrier.{u}}
-
-
 
 noncomputable def interiorCutRegionEquivalence
     {U W : Set A.carrier} {V : Set B.carrier}
@@ -65,9 +54,6 @@ noncomputable def interiorCutRegionEquivalence
     change H.symm (E.map (E.inverse (H y))) = y
     rw [E.right_inverse (hH (mem_image_of_mem H hy)), H.symm_apply_apply]
 
-
-
-
 theorem projectiveCut_negative_gluing
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier)
     (H : Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞)
@@ -99,8 +85,6 @@ theorem projectiveCut_negative_gluing
   rw [sub_eq_add_neg, hcollar z (-s) hsr, neg_neg,
     (puncturedProjectiveRegionEquivalence A C.first_model).right_inverse hHU,
     H.symm_apply_apply]
-
-
 
 theorem projectiveCut_positive_gluing
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier)

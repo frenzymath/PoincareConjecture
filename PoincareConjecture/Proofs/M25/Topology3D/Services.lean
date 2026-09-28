@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -20,19 +9,14 @@ open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 abbrev E3 := EuclideanSpace ℝ (Fin 3)
 
-
 abbrev E2 := EuclideanSpace ℝ (Fin 2)
-
 
 noncomputable def sphereMap (A : E3 ≃ₗᵢ[ℝ] E3) (x : UnitTwoSphere) : UnitTwoSphere :=
   ⟨A x.1, by
     rw [mem_sphere_zero_iff_norm, A.norm_map]
     exact mem_sphere_zero_iff_norm.mp x.2⟩
-
-
 
 structure DiffSphereIsotopyData (f : UnitTwoSphere → UnitTwoSphere) where
   isometry : E3 ≃ₗᵢ[ℝ] E3
@@ -44,12 +28,9 @@ structure DiffSphereIsotopyData (f : UnitTwoSphere → UnitTwoSphere) where
   isotopy_zero : ∀ x, isotopy 0 x = sphereMap isometry x
   isotopy_one : ∀ x, isotopy 1 x = f x
 
-
 def DiffSphereIsotopyService : Prop :=
   ∀ f : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞,
     Nonempty (DiffSphereIsotopyData f)
-
-
 
 structure PlanarSchoenfliesData (c : UnitCircle → E2) where
   inside : Set E2
@@ -69,8 +50,6 @@ structure PlanarSchoenfliesData (c : UnitCircle → E2) where
   chart_inverse : ∃ Ψ : E2 → E2, ContDiffOn ℝ ∞ Ψ (chart '' ball 0 radius) ∧
     ∀ x ∈ ball 0 radius, Ψ (chart x) = x
 
-
-
 structure PlanarSchoenfliesFamilyData (c : ℝ → UnitCircle → E2) (a b : ℝ) where
   radius : ℝ
   one_lt_radius : 1 < radius
@@ -87,13 +66,9 @@ structure PlanarSchoenfliesFamilyData (c : ℝ → UnitCircle → E2) (a b : ℝ
     Disjoint (chart z '' ball 0 1) (range (c z)) ∧
     Bornology.IsBounded (chart z '' ball 0 1)
 
-
-
 def IsPlanarEmbedding (c : UnitCircle → E2) : Prop :=
   ContMDiff (𝓡 1) 𝓘(ℝ, E2) ∞ c ∧ Function.Injective c ∧
     ∀ q, Function.Injective (mfderiv (𝓡 1) 𝓘(ℝ, E2) c q)
-
-
 
 def PlanarSchoenfliesService : Prop :=
   (∀ c : UnitCircle → E2, IsPlanarEmbedding c → Nonempty (PlanarSchoenfliesData c)) ∧
@@ -102,9 +77,6 @@ def PlanarSchoenfliesService : Prop :=
       (fun p : ℝ × UnitCircle => c p.1 p.2) →
     (∀ z ∈ Icc a b, IsPlanarEmbedding (c z)) →
     Nonempty (PlanarSchoenfliesFamilyData c a b))
-
-
-
 
 structure SchoenfliesData (ψ : UnitTwoSphere × ℝ → E3) (δ : ℝ) where
   side : ℝ
@@ -133,15 +105,11 @@ structure SchoenfliesData (ψ : UnitTwoSphere × ℝ → E3) (δ : ℝ) where
   chart_collar : ∀ (q : UnitTwoSphere) (s : ℝ), s ∈ Ico δ 1 →
     chart (radial s • (boundary_map q).1) = ψ (q, side * s)
 
-
-
 def IsCollarEmbedding (ψ : UnitTwoSphere × ℝ → E3) : Prop :=
   ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, E3) ∞ ψ (univ ×ˢ Ioo (-1) 1) ∧
     InjOn ψ (univ ×ˢ Ioo (-1) 1) ∧
     ∀ z ∈ (univ ×ˢ Ioo (-1 : ℝ) 1 : Set (UnitTwoSphere × ℝ)),
       Function.Injective (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, E3) ψ z)
-
-
 
 def SchoenfliesService : Prop :=
   ∀ ψ : UnitTwoSphere × ℝ → E3, IsCollarEmbedding ψ →

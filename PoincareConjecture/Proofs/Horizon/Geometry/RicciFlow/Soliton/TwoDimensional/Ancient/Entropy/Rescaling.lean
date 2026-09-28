@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.AsymptoticSoliton
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +28,6 @@ theorem SurfaceEntropy.scalarEntropy_eq_of_metric_eq
 variable [T2Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 2 M} {tau : ℝ}
 
-
-
 theorem AncientRescaling.scalarEntropy_eq_original (A : AncientRescaling K tau)
     (t : ℝ) (ht : t < 0) :
     SurfaceEntropy.scalarEntropy (A.flow.connection t) =
@@ -47,7 +38,6 @@ theorem AncientRescaling.scalarEntropy_eq_original (A : AncientRescaling K tau)
           (K.flow.connection (tau * t)) (1 / tau) (one_div_pos.mpr A.tau_pos)) :=
       SurfaceEntropy.scalarEntropy_eq_of_metric_eq _ _ (A.metric_eq_rescaledMetric t ht)
     _ = _ := SurfaceEntropy.scalarEntropy_rescaled _ _ _
-
 
 theorem AncientRescaling.scalarEntropy_neg_one (A : AncientRescaling K tau) :
     SurfaceEntropy.scalarEntropy (A.flow.connection (-1)) =
@@ -60,8 +50,6 @@ theorem AncientRescalingSequence.scalarEntropy_rescaling_subseq
     SurfaceEntropy.scalarEntropy ((S.rescaling (σ k)).flow.connection (-1)) =
       SurfaceEntropy.scalarEntropy (K.flow.connection (-S.scale (σ k))) :=
   (S.rescaling (σ k)).scalarEntropy_neg_one
-
-
 
 theorem AncientRescalingSequence.tendsto_scalarEntropy_original_of_rescaling
     (S : AncientRescalingSequence K) (σ : ℕ → ℕ)

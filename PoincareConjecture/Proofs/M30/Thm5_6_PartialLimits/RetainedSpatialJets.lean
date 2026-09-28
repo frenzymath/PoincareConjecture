@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M30.Mathlib.SpatialSliceJetService
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.BallTransfer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.SpacetimeBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem tendsto_retained_scalar_spatial_jets
     (hSlice : SpatialSliceJetConvergenceService.{0, 0, 0, 0, 0})

@@ -33,8 +33,6 @@ theorem m67_width_nonnegative
     (P.component s).connected (P.component s).basepoint
     (X.slice s).pi_two_trivial (X.slice s).alpha).nonnegative
 
-
-
 theorem m67_conclusion_of_event_factor_bounds
     (X : M67ChangingWidthPath D W P K C H B A q hM61 hM65)
     (hwidth : M61WidthTheory.{u} q)

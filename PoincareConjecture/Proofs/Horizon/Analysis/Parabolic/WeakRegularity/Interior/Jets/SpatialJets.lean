@@ -1,19 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.InitialEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.RescaledApproximation
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.WeakDerivativeLimit
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory Metric
 open Poincare.Analysis.Convolution
@@ -30,7 +17,6 @@ variable {n : ℕ}
 local instance : (volume : Measure (Spacetime n)).IsAddHaarMeasure := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
-
 
 theorem exists_local_spatial_weak_derivatives
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)

@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionAcuteCorner
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,10 +9,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_digon_initial_convex_coordinates
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))
@@ -54,10 +47,6 @@ theorem m64Intrinsic_digon_initial_convex_coordinates
   exact hfan'.trans (congrArg (fun p : AnnulusCoordinates =>
     g.cornerAngle p (deriv alpha 0 : AnnulusCoordinates)
       (deriv beta 0 : AnnulusCoordinates)) hv0)
-
-
-
-
 
 theorem m64Intrinsic_digon_terminal_convex_coordinates
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))

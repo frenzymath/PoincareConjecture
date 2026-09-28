@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartFaceImage
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.PrimeReduction.AffineContactFiniteness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_chart_image_of_face_card_le
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,15 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Coordinates
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Regularity
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.RicciEndomorphism.Regularity
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +17,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
 
 def ricciCoordinate (F : RicciFlow n M (Ico a b)) (x : M) (p : ℝ × M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
@@ -54,7 +44,6 @@ theorem contMDiffWithinAt_ricciCoordinate (F : RicciFlow n M (Ico a b)) (x y : M
     (contMDiffOn_ricciEndomorphism F (t, y) ⟨ht, mem_univ y⟩) |>.2
   simp only [e, hom_trivializationAt_apply] at h
   convert h using 1 <;> rfl
-
 
 def chartRicciCoefficient (F : RicciFlow n M (Ico a b)) (x : M)
     (z : EuclideanSpace ℝ (Fin n)) (t : ℝ) :
@@ -125,8 +114,6 @@ private theorem canonicalTransport_chart_contDiffOn
       (hsub hs)).mono hsub
   exact linearODE_contDiffOn_spatial A ht.1 (isOpen_extChartAt_target x) hA Φ hinit hsol
     (right_mem_Icc.mpr ht.1)
-
-
 
 theorem canonicalTransport_contMDiff_spatial (F : RicciFlow n M (Ico a b))
     {t : ℝ} (ht : t ∈ Ico a b) :

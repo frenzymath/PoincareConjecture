@@ -5,13 +5,6 @@ set_option autoImplicit false
 
 namespace PoincareConjecture.M04
 
-
-
-
-
-
-
-
 def shiTimeExponent (k l : Nat) : Nat := k - l
 
 theorem shiTimeExponent_eq_zero_of_le {k l : Nat} (h : k ≤ l) :

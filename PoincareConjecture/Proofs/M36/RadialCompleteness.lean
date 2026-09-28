@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.AxisLength
 import Mathlib.Topology.Order.MonotoneConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialSmoothG
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialColumnEnergyUpper
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakLocalEnergy
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +20,6 @@ local notation "O" => m64AnnulusLowerDomain
 local notation "S" => interior m64AnnulusDomain
 local notation "L" => m64AnnulusLowerStrip
 
-
-
 theorem lowerDiskEnergy_eq_diskEnergy
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (a : LoopPlane) (r : ℝ)
@@ -36,8 +28,6 @@ theorem lowerDiskEnergy_eq_diskEnergy
   intro p hp
   simp only [lowerEnergyDensity, lowerExtensionMap, lowerExtensionColumn,
     m64AnnulusLowerExtend_right _ _ (hball hp)]
-
-
 
 theorem lowerDiskEnergy_le_of_ball_subset
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -49,8 +39,6 @@ theorem lowerDiskEnergy_le_of_ball_subset
   setIntegral_mono_set ((A.lower_energy_integrable hc0 Q hQ hei hB).mono_set hball)
     (Eventually.of_forall (A.lowerEnergyDensity_nonneg Q hpos))
     (Eventually.of_forall hsub)
-
-
 
 theorem lower_smooth_energy_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceSurface
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +12,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 noncomputable def sourceRimCoordinates (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) :
@@ -79,7 +67,6 @@ noncomputable def sourceRimCoordinates (phi : C(H, H)) (theta : C)
     change (hamiltonOneHierarchyCoordinates
       (E (E.symm (hamiltonOneHierarchyCoordinates.symm (z.val, theta))))).1 = z.val
     rw [E.apply_symm_apply, hamiltonOneHierarchyCoordinates.apply_symm_apply]
-
 
 theorem sourceRimCoordinates_symm_original_point (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (z : hamiltonOneAnnulusRim) :

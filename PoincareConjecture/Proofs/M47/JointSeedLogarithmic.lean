@@ -1,14 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,17 +7,12 @@ open scoped intervalIntegral
 
 namespace PoincareConjecture.M47
 
-
-
 theorem jointSeed_age_window {c sigma : ℝ} (hc : 0 < c) (hsigma : 0 < sigma) :
     0 < sigma * Real.exp (-5 / c) ∧ sigma * Real.exp (-5 / c) < sigma := by
   refine ⟨mul_pos hsigma (Real.exp_pos _), ?_⟩
   apply mul_lt_of_lt_one_right hsigma
   apply Real.exp_lt_one_iff.mpr
   exact div_neg_of_neg_of_pos (by norm_num) hc
-
-
-
 
 theorem jointSeed_scalar_age_of_action
     {d c sigma a eta : ℝ} (hc : 0 < c) (hsigma : 0 < sigma)

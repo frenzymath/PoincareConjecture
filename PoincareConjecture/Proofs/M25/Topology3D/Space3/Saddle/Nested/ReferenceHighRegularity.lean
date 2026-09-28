@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem reference_high_sphere_regularity
     (ws wm d : ℝ)

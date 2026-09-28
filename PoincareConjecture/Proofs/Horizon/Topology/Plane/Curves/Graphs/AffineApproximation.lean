@@ -1,17 +1,6 @@
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Convex.Segment
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,7 +8,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
 
 noncomputable def secantAffineMap (f : ℝ → ℝ) (a b : ℝ) : ℝ →ᵃ[ℝ] ℝ where
   toFun t := f a + ((f b - f a) / (b - a)) * (t - a)
@@ -39,8 +27,6 @@ theorem secantAffineMap_eq_lineMap (f : ℝ → ℝ) (a b t : ℝ) :
 @[simp] theorem secantAffineMap_linear_one (f : ℝ → ℝ) (a b : ℝ) :
     (secantAffineMap f a b).linear 1 = (f b - f a) / (b - a) := by
   simp [secantAffineMap]
-
-
 
 theorem exists_piecewiseAffine_approximation
     {f : ℝ → ℝ} {U : Set ℝ} (hU : IsOpen U) (hf : ContDiffOn ℝ 1 f U)

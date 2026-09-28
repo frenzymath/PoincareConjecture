@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedSourceAnnuli
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -23,8 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E'] [NormedSpace 𝕜 E'] [TopologicalSpace H']
   {J : ModelWithCorners 𝕜 E' H'} [TopologicalSpace N] [ChartedSpace H' N]
   [IsManifold J 1 N]
-
-
 
 theorem continuousAt_tangentMap_of_contMDiffAt {f : M → N}
     {v : TangentBundle I M} (hf : ContMDiffAt I J 1 f v.proj) :

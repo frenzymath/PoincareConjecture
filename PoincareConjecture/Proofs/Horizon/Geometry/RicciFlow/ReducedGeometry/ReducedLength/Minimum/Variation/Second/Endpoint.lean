@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Minimality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullbackCovariantDerivative_velocity_eq_zero_of_constant
     {J I : Set ℝ} (F : RicciFlow n M J) (time : ℝ → ℝ)
@@ -49,7 +39,6 @@ theorem pullbackCovariantDerivative_velocity_eq_zero_of_constant
   rw [hext.deriv_eq, deriv_const, hvelocity s hs]
   simp only [map_zero, add_zero]
 
-
 theorem initialFixed_squareFamily_eq {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
     (V : InitialFixedLVariation F T a b p) {u : ℝ}
@@ -58,7 +47,6 @@ theorem initialFixed_squareFamily_eq {J : Set ℝ} {F : RicciFlow n M J}
   rw [V.square_agrees (Real.sqrt a) ⟨le_rfl, Real.sqrt_le_sqrt p.ordered.le⟩ u hu,
     Real.sq_sqrt p.nonnegative]
   exact V.fixed_left u hu
-
 
 theorem variationEndpointAcceleration_initial_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -72,7 +60,6 @@ theorem variationEndpointAcceleration_initial_eq_zero {J : Set ℝ} {F : RicciFl
     (D.endpoint_extension (Real.sqrt a) ha) hzero
   intro u hu
   exact (initialFixed_squareFamily_eq V hu).trans (initialFixed_squareFamily_eq V hzero).symm
-
 
 theorem secondVariationBoundaryTerm_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -91,7 +78,6 @@ open Geometry
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem secondVariationIndexForm_nonneg_of_hasDerivAt {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -118,7 +104,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem secondVariationIndexForm_nonneg_of_hasDerivAt (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ}

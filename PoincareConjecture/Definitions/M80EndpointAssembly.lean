@@ -1,12 +1,5 @@
 import PoincareConjecture.Statement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

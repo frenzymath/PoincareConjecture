@@ -1,18 +1,6 @@
 import Mathlib.Analysis.Convex.Deriv
 import Mathlib.Analysis.Convex.Jensen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +8,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Dirichlet_nonnegative_potential_eq_zero
     {a b : ℝ} {f v q : ℝ → ℝ}

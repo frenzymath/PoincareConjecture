@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimizingSequence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,13 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {c0 c1 : ℝ → M}
 
-
-
-
-
-
-
-
 structure M64DouglasMorreyAttainmentCertificate where
   sequence : ℕ → M64Annulus g c0 c1
   sequence_antitone : Antitone (fun k => (sequence k).area)
@@ -45,21 +26,11 @@ structure M64DouglasMorreyAttainmentCertificate where
     Tendsto (fun k => (sequence k).map p) atTop (𝓝 (limit.map p))
   limit_area_le : limit.area ≤ m64LeastAnnulusArea g c0 c1
 
-
-
-
-
 theorem M64DouglasMorreyAttainmentCertificate.limit_area_eq_infimum
     (C : M64DouglasMorreyAttainmentCertificate (g := g) (c0 := c0) (c1 := c1)) :
     C.limit.area = m64LeastAnnulusArea g c0 c1 := by
   exact le_antisymm C.limit_area_le
     (m64LeastAnnulusArea_le_annulus C.limit)
-
-
-
-
-
-
 
 noncomputable def m64DouglasMorreyAttainmentCertificate_of_limit
     (seed : M64Annulus g c0 c1) (limit : M64Annulus g c0 c1)
@@ -78,22 +49,10 @@ noncomputable def m64DouglasMorreyAttainmentCertificate_of_limit
     sequence_tendsto_limit := hpointwise
     limit_area_le := hlimit }
 
-
-
-
-
-
 noncomputable def m64AnnulusBranchSet
     (A : M64Annulus g c0 c1) : Set LoopPlane :=
   {p | p ∈ interior m64AnnulusDomain ∧
     mfderiv (𝓡 2) (𝓡 n) A.map p = 0}
-
-
-
-
-
-
-
 
 def M64AnnulusAreaStationary
     (A : M64Annulus g c0 c1) : Prop :=
@@ -107,10 +66,6 @@ def M64AnnulusAreaStationary
       HasDerivAt
         (fun s => m64AnnulusArea g (fun p => variation (s, p))) 0 0
 
-
-
-
-
 structure M64AnnulusBranchAwareFirstVariationCertificate
     (A : M64Annulus g c0 c1) : Prop where
   regularity : M64AnnulusRegularityCertificate A
@@ -120,11 +75,6 @@ structure M64AnnulusBranchAwareFirstVariationCertificate
     p ∉ m64AnnulusBranchSet A →
       Function.Injective (mfderiv (𝓡 2) (𝓡 n) A.map p)
 
-
-
-
-
-
 def m64MinimalAnnulusData_of_douglasMorrey
     (attainment : M64DouglasMorreyAttainmentCertificate
       (g := g) (c0 := c0) (c1 := c1))
@@ -133,10 +83,6 @@ def m64MinimalAnnulusData_of_douglasMorrey
     M64MinimalAnnulusData (g := g) (c0 := c0) (c1 := c1) := by
   exact m64MinimalAnnulusData_of_certificates attainment.limit
     attainment.limit_area_eq_infimum variation.regularity
-
-
-
-
 
 theorem exists_m64MinimalAnnulus
     (attainment : M64DouglasMorreyAttainmentCertificate

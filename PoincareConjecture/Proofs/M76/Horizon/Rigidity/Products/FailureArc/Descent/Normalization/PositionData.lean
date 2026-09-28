@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Intersections.Exceptional
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAmbientFamilies
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

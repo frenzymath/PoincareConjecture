@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartContactTube
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixMinimality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point}
 
-
-
-
 theorem finiteValueDomain_of_fullPath_through
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (p : M14BackwardPath G T a b x y)
     (hp : M14IsMinimizing p) (q : M14BackwardPath G T a b x y)
@@ -36,9 +24,6 @@ theorem finiteValueDomain_of_fullPath_through
   rintro A ⟨r, rfl⟩
   have hle := minimizing_action_le_prefix_add_tail hM12 p hp q r hc.2
   linarith
-
-
-
 
 theorem exists_pastTube_finiteValueDomain
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (p : M14BackwardPath G T a b x y)
@@ -53,10 +38,6 @@ theorem exists_pastTube_finiteValueDomain
   obtain ⟨r, hr⟩ := hpaths q hq hqb
   have hf := finiteValueDomain_of_fullPath_through hM12 p hp r ⟨hNa hq, hqb⟩
   simpa only [hr] using hf
-
-
-
-
 
 theorem reducedLengthAt_le_action_of_pastFinite
     {q : G.Point} (r : M14BackwardPath G T a b x q) {N : Set G.Point}
@@ -100,10 +81,6 @@ theorem reducedLengthAt_le_action_of_pastFinite
   simpa only [M14BackwardLAction, M14BackwardLIntegrand, prefixPath, restrictPath] using
     div_le_div_of_nonneg_right hle (mul_nonneg (by norm_num : (0 : ℝ) ≤ 2)
       (Real.sqrt_nonneg (b - d)))
-
-
-
-
 
 theorem actionSet_bddBelow_of_pastFinite {q : G.Point} {N : Set G.Point}
     (hb : 0 < b) (hN : N ∈ 𝓝 q) (hf : ContinuousAt (M14ReducedLengthAt G T a x) q)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialPullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ open Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
 
 theorem source_recent_clock_parameter {H s u : ℝ}
     (hH : 0 < H) (hs : 0 ≤ s) (hu : u ∈ Icc (-H * s) 0) :
@@ -46,7 +37,6 @@ theorem source_recent_clock_parameter {H s u : ℝ}
     · dsimp only [w]
       field_simp [hH.ne', hs0]
 
-
 theorem source_recent_clock_difference_le {H H0 s v d w : ℝ}
     (hH : 0 < H) (hHL : H ≤ H0 + 1) (hv : 0 ≤ v)
     (hs : |s - v| ≤ d) (hscale : |H - H0| ≤ d) (hw : w ∈ Icc (0 : ℝ) 1) :
@@ -68,7 +58,6 @@ theorem source_recent_clock_difference_le {H H0 s v d w : ℝ}
   exact ((mul_le_mul_of_nonneg_left (show 1 - w ≤ 1 by linarith only [hw.1])
     (abs_nonneg (H * s - H0 * v))).trans_eq (mul_one _)).trans hprod
 
-
 theorem source_recent_translation_coefficient (B : RoundCylinderTwoTensor)
     (c : ℝ) (q : UnitTwoSphere) (p : V) (a b : Fin 3) :
     roundCylinderTensorCoefficient (neckAxialTensorPullback 1 c B) (chartAt E₂ q) p a b =
@@ -83,7 +72,6 @@ theorem source_recent_translation_coefficient (B : RoundCylinderTwoTensor)
       (roundCylinderCoordinateBasis a).1) (add_zero p.1).symm
   · exact congrArg (fun y : E₂ => (mfderiv (𝓡 2) (𝓡 2) (chartAt E₂ q).symm y)
       (roundCylinderCoordinateBasis b).1) (add_zero p.1).symm
-
 
 theorem source_recent_translation_coefficient_jet (B D : RoundCylinderTwoTensor)
     (c : ℝ) (q : UnitTwoSphere) (r : ℝ) (j : ℕ) (a b : Fin 3) :

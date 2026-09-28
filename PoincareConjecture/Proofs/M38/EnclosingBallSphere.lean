@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.AnnulusReparametrization
 import PoincareConjecture.Proofs.M38.BallRegionTransport
 import PoincareConjecture.Proofs.M38.SpherePoleNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
 
 noncomputable def enclosingBallSphereCoordinates (C : SurgeryBallEmbedding A)
     (p : sphereCarrier.{u}.carrier) :
@@ -61,25 +50,21 @@ noncomputable def enclosingBallSphereCoordinates (C : SurgeryBallEmbedding A)
     inverse_smooth := C.map_smooth.comp K.inverse_smooth
       (fun _ hy => surgeryBall_inverse_mem K hy) }
 
-
 theorem enclosingBallSphereCoordinates_map (C : SurgeryBallEmbedding A)
     (p : sphereCarrier.{u}.carrier) (x : A.carrier) :
     (enclosingBallSphereCoordinates C p).map x =
       ULift.up (threeSphereStereoInverse (-p.down) (C.inverse x)) := rfl
-
 
 theorem enclosingBallSphereCoordinates_inverse (C : SurgeryBallEmbedding A)
     (p y : sphereCarrier.{u}.carrier) :
     (enclosingBallSphereCoordinates C p).inverse y =
       C.map (stereographic' 3 (-p.down) y.down) := rfl
 
-
 theorem enclosingBallSphereCoordinates_chart (C : SurgeryBallEmbedding A)
     (p : sphereCarrier.{u}.carrier) {x : StandardCapSpace} (hx : x ∈ Metric.ball 0 2) :
     (enclosingBallSphereCoordinates C p).map (C.map x) = (spherePoleReferenceBall p).map x := by
   change (spherePoleReferenceBall p).map (C.inverse (C.map x)) = _
   rw [C.left_inverse hx]
-
 
 theorem enclosingBallSphereCoordinates_unit_image (C : SurgeryBallEmbedding A)
     (p : sphereCarrier.{u}.carrier) :
@@ -127,7 +112,6 @@ theorem enclosingOriginalBall_inside_chart : B.closedBall ⊆ C.map '' Metric.ba
     (by norm_num : (1 : ℝ) ≤ 5 / 4))).trans hBC).trans
     (Set.image_mono (Metric.ball_subset_ball (by norm_num)))
 
-
 noncomputable def enclosingSphereBall : SurgeryBallEmbedding sphereCarrier.{u} :=
   transportSurgeryBallRegion
     (annulusReparametrizedBall ha (enclosingAnnulus_lt_one ha8) B)
@@ -135,19 +119,16 @@ noncomputable def enclosingSphereBall : SurgeryBallEmbedding sphereCarrier.{u} :
     (surgeryBall_image_open (spherePoleReferenceBall p))
     (enclosingShortBall_inside_chart B C ha ha8 hBC)
 
-
 theorem enclosingSphereBall_map (x : StandardCapSpace) :
     (enclosingSphereBall B C p ha ha8 hBC).map x =
       (spherePoleReferenceBall p).map
         (C.inverse (B.map (capRadialDiffeomorph 1 a ha (enclosingAnnulus_lt_one ha8) x))) := rfl
-
 
 theorem enclosingSphereBall_closedBall :
     (enclosingSphereBall B C p ha ha8 hBC).closedBall =
       (enclosingBallSphereCoordinates C p).map '' B.closedBall := by
   unfold enclosingSphereBall
   rw [transportSurgeryBallRegion_closedBall, annulusReparametrizedBall_closedBall]
-
 
 theorem enclosingSphereBall_inside_unit :
     (enclosingSphereBall B C p ha ha8 hBC).map '' Metric.ball 0 2 ⊆
@@ -157,14 +138,12 @@ theorem enclosingSphereBall_inside_unit :
   exact ⟨(annulusReparametrizedBall ha (enclosingAnnulus_lt_one ha8) B).map x,
     enclosingShortBall_inside_unit B C ha ha8 hBC ⟨x, hx, rfl⟩, rfl⟩
 
-
 theorem enclosingSphereBall_center :
     (enclosingSphereBall B C p ha ha8 hBC).map 0 =
       (enclosingBallSphereCoordinates C p).map (B.map 0) := by
   change (enclosingBallSphereCoordinates C p).map
     ((annulusReparametrizedBall ha (enclosingAnnulus_lt_one ha8) B).map 0) = _
   rw [annulusReparametrizedBall_center]
-
 
 theorem enclosingSphereBall_positive (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -174,7 +153,6 @@ theorem enclosingSphereBall_positive (z : UnitTwoSphere) {s : ℝ}
     ((annulusReparametrizedBall ha (enclosingAnnulus_lt_one ha8) B).map ((1 + s) • z.val)) = _
   rw [annulusReparametrizedBall_positive ha (enclosingAnnulus_lt_one ha8) B z hs]
   rfl
-
 
 theorem enclosingSphereBall_negative (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0) :
@@ -210,8 +188,6 @@ theorem enclosingSphereBall_disjoint
     ⟨_, annulusRadial_mapsTo ha (enclosingAnnulus_lt_one ha8) hz, rfl⟩
   exact Set.disjoint_left.mp hdisjoint hzero (heq.symm ▸ hone)
 
-
-
 theorem enclosingSphere_twoHole_image :
     (enclosingBallSphereCoordinates C p).map ''
       ((C.map '' Metric.ball 0 2) \ (B₀.closedBall ∪ B₁.closedBall)) =
@@ -235,7 +211,6 @@ theorem enclosingSphere_twoHole_image :
     intro hxb
     exact hy.2 ⟨x, hxb, hxy⟩
 
-
 noncomputable def enclosingSphereTwoHoleEquivalence :
     SurgeryRegionEquivalence A sphereCarrier.{u}
       ((C.map '' Metric.ball 0 2) \ (B₀.closedBall ∪ B₁.closedBall))
@@ -253,11 +228,9 @@ noncomputable def enclosingSphereTwoHoleEquivalence :
   map_smooth := (enclosingBallSphereCoordinates C p).map_smooth.mono Set.diff_subset
   inverse_smooth := (enclosingBallSphereCoordinates C p).inverse_smooth.mono Set.diff_subset
 
-
 theorem enclosingSphereTwoHoleEquivalence_map (x : A.carrier) :
     (enclosingSphereTwoHoleEquivalence C p ha ha8 B₀ B₁ hB₀ hB₁).map x =
       (spherePoleReferenceBall p).map (C.inverse x) := rfl
-
 
 theorem enclosingSphereTwoHoleEquivalence_inverse (y : sphereCarrier.{u}.carrier) :
     (enclosingSphereTwoHoleEquivalence C p ha ha8 B₀ B₁ hB₀ hB₁).inverse y =

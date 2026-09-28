@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hessian_in_smooth_local_parametrization (D : LeviCivitaData g)
     (B : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

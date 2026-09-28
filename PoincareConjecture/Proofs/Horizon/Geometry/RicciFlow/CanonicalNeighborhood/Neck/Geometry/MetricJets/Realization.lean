@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.MetricJets
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -82,7 +71,6 @@ theorem roundCylinderEuclideanCoefficients_pos
   · exact add_pos_of_pos_of_nonneg
       (mul_pos hfactor (sq_pos_of_pos (norm_pos_iff.mpr h₁))) (mul_self_nonneg _)
 
-
 def roundCylinderEuclideanMetric : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=
   RiemannianMetric.ofEuclideanCoefficients roundCylinderEuclideanCoefficients
     contDiff_roundCylinderEuclideanCoefficients roundCylinderEuclideanCoefficients_symm
@@ -124,7 +112,6 @@ theorem normalizedEuclideanCoefficients_symm (N : EpsilonNeck g)
       N.normalizedEuclideanCoefficients q s x w v := by
   change N.scale⁻¹ ^ 2 * g.inner _ _ _ = N.scale⁻¹ ^ 2 * g.inner _ _ _
   rw [g.symm]
-
 
 theorem exists_normalizedEuclideanCoefficients_realization
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}
@@ -171,8 +158,6 @@ theorem exists_normalizedEuclideanCoefficients_realization
   obtain ⟨h, D, V, hVo, h0V, hVW, heq⟩ := RiemannianMetric.exists_local_realization
     hWo h0W B (hB.mono hWU) (fun x _ => N.normalizedEuclideanCoefficients_symm q s x) hpos
   exact ⟨h, D, Filter.Eventually.mono (hVo.mem_nhds h0V) heq⟩
-
-
 
 theorem exists_normalizedEuclideanCoefficients_curvature_control
     {α : ℝ} (hα : 0 < α) :

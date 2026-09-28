@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LongitudinalPrismCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -19,11 +9,6 @@ namespace Geometry
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
 
 theorem exists_common_radius_fixed_lateral_boxes
     (R : ι → ℝ) (hR : ∀ i, 0 < R i) (F : ι → ((ℝ × ℝ) × ℝ) → E)

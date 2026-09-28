@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.PartialCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature.MovingJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 1000000
@@ -41,8 +31,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (hcomplete : G.limitCarrier.metricComplete (G.limitFlow.metric 0))
 
 include hF P hcontrol hcomplete
-
-
 
 theorem tendsto_terminal_spatial_pullbackJet
     (q : G.limitCarrier.carrier) {p : EuclideanSpace ℝ (Fin 3)}
@@ -107,8 +95,6 @@ theorem tendsto_terminal_spatial_pullbackJet
   have hsmoothf := hslice.contDiffAt
     (mem_of_superset (Metric.isOpen_ball.mem_nhds hpball) Metric.ball_subset_closedBall)
   exact ((coefficientEval a b).iteratedFDeriv_comp_left hsmoothf hr).symm
-
-
 
 theorem tendsto_terminal_curvatureTensorNorm
     (t : ℝ) (ht : t ≤ 0) (x : G.limitCarrier.carrier) :

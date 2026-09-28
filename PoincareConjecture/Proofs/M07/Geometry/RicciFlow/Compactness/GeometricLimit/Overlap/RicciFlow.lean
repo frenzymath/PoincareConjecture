@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Descent
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Descent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem exists_quotientRicciFlow_of_chart_flows_with_connection
     {ι : Type*} [Nonempty ι] {n : ℕ}
@@ -66,8 +56,6 @@ theorem exists_quotientRicciFlow_of_chart_flows_with_connection
   · intro t _ i x a b
     rw [hF i]
     exact quotientMetric_preserves U hU O hO (g t) (hcompat t) i x a b
-
-
 
 theorem exists_quotientRicciFlow_of_spacetime_limits_with_connection
     {ι : Type*} [Nonempty ι] {n : ℕ}
@@ -124,8 +112,6 @@ theorem exists_quotientRicciFlow_of_spacetime_limits_with_connection
   exact exists_quotientRicciFlow_of_chart_flows_with_connection U hU O hO
     g hcompat F hF t₀ D₀
 
-
-
 theorem exists_quotientRicciFlow_of_chart_flows
     {ι : Type*} [Nonempty ι] {n : ℕ}
     (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
@@ -165,10 +151,6 @@ theorem exists_quotientRicciFlow_of_chart_flows
     (quotientMetric_preserves U hU O hO (g 0) (hcompat 0)) hcover
   exact exists_quotientRicciFlow_of_chart_flows_with_connection U hU O hO
     g hcompat F hF 0 D₀
-
-
-
-
 
 theorem exists_quotientRicciFlow_of_spacetime_bounds
     {n : ℕ} (U : ℕ → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ noncomputable local instance gradientFourJetNormedGroup :
 noncomputable local instance gradientFourJetNormedSpace :
     NormedSpace ℝ (ScalarMetricFourJet 3) := Prod.normedSpace
 
-
-
 theorem continuousAt_model_jetScalarFirst {J : ScalarMetricFourJet 3}
     (hJ : J.1.1.IsInvertible) (i : Fin 3) :
     ContinuousAt (fun K : ScalarMetricFourJet 3 => jetScalarFirst K i) J := by
@@ -56,8 +45,6 @@ theorem continuousAt_model_jetScalarFirst {J : ScalarMetricFourJet 3}
     (m := ∞) (by simp)).continuousAt
   exact (hD.comp continuousAt_fst).clm_apply
     ((continuous_apply i).continuousAt.comp continuousAt_snd.fst)
-
-
 
 theorem model_abs_linear_le_coordinate_sum (L : E →L[ℝ] ℝ) (v : E) :
     |L v| ≤ (∑ i, |L (EuclideanSpace.basisFun (Fin 3) ℝ i)|) * ‖v‖ := by
@@ -80,9 +67,6 @@ theorem model_abs_linear_le_coordinate_sum (L : E →L[ℝ] ℝ) (v : E) :
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_model_scalar_differential_bound_of_fourJet (B : ℝ) :
     ∃ C : ℝ, 0 < C ∧ ∀ (g : RiemannianMetric 3 E) (D : LeviCivitaData g) (x : E),
@@ -144,8 +128,6 @@ theorem exists_model_scalar_differential_bound_of_fourJet (B : ℝ) :
     _ ≤ max C 1 * 2 := mul_le_mul hsum hvnorm (norm_nonneg _)
       (le_trans zero_le_one (le_max_right _ _))
     _ = _ := mul_comm _ _
-
-
 
 theorem exists_model_scalar_differential_bound_of_coordinate_jets (B : ℝ) :
     ∃ C : ℝ, 0 < C ∧ ∀ (g : RiemannianMetric 3 E) (D : LeviCivitaData g) (x : E),

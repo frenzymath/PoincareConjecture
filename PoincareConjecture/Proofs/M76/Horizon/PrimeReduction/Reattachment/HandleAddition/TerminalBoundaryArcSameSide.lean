@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedArcSphereObstruction
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProduct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -65,8 +58,6 @@ theorem terminal_disk_subset_original_bigon_side
   by_cases hs : x ∈ S
   · exact hW.frontier_subset (hWS.symm ▸ hs)
   · exact interior_subset (hN ⟨hx,hs⟩)
-
-
 
 theorem OriginalDiskProduct.terminal_disk_subset_marked_side
     {X α : Type*} [TopologicalSpace X]
@@ -187,4 +178,3 @@ theorem HamiltonMarkedProtectedBall.exists_original_terminal_disk_union_in_marke
   exact subset_inter hgE (hgimage.subset.trans (hunion.trans inter_subset_right))
 
 end PoincareConjecture.M76
-

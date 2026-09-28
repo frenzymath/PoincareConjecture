@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerSourceCircles
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedLowerHyperbola
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedTwoExteriorArcs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_selected_lower_exterior_arcs
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

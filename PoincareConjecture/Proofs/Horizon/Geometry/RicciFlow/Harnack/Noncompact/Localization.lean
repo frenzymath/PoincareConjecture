@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.B
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Perturbation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds.Quadratic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {O : M}
-
-
 
 lemma SmoothExhaustion.exists_compact_quadratic_perturbation_pos_on
     (S : SmoothExhaustion F O) (V : Set M)
@@ -59,8 +47,6 @@ lemma SmoothExhaustion.exists_compact_quadratic_perturbation_pos_on
   have hψu := mul_le_mul_of_nonneg_right hψ (sq_nonneg u)
   linarith only [hp, hψu]
 
-
-
 lemma SmoothExhaustion.exists_compact_quadratic_perturbation_pos
     (S : SmoothExhaustion F O)
     (hproper : ∀ r : ℝ, IsCompact {x | S.toFun x ≤ r})
@@ -72,8 +58,6 @@ lemma SmoothExhaustion.exists_compact_quadratic_perturbation_pos
   obtain ⟨K, hK, _, hpos⟩ := S.exists_compact_quadratic_perturbation_pos_on univ
     (fun r => by simpa only [mem_univ, and_true] using hproper r) hC hε hδ hA (T := T)
   exact ⟨K, hK, fun t ht x hx => hpos t ht x (mem_univ x) hx⟩
-
-
 
 lemma SmoothExhaustion.exists_initial_time_quadratic_perturbation_pos
     (S : SmoothExhaustion F O)
@@ -100,8 +84,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {O : M}
-
-
 
 theorem exists_compact_hamilton_perturbation_pos
     (hC : RicciFlowCurvatureTheory.{u}) (S : RicciFlow.SmoothExhaustion F O)

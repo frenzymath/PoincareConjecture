@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +10,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.mapsTo_nonpos_of_zeros_in_boundary
     {d q : Set X} (hd : IsFinitePLBallPair E d q)
@@ -46,9 +30,6 @@ theorem IsFinitePLBallPair.mapsTo_nonpos_of_zeros_in_boundary
   · have hweak := hnegative.closure_of_continuousOn hfc
     rwa [hd.closure_sdiff, closure_Iio] at hweak
 
-
-
-
 theorem IsFinitePLBallPair.mapsTo_nonneg_of_zeros_in_boundary
     {d q : Set X} (hd : IsFinitePLBallPair E d q)
     (f : X → ℝ) (hf : ContinuousOn f d)
@@ -66,11 +47,6 @@ theorem IsFinitePLBallPair.mapsTo_nonneg_of_zeros_in_boundary
   exact neg_nonpos.mp (show -f x ≤ 0 from h hx)
 
 variable [FiniteDimensional ℝ X]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.isFinitePLBallPair_signed_halves_of_zero_arc
     {s q W : Set X} {a b : X}
@@ -136,11 +112,6 @@ theorem IsFinitePLBallPair.isFinitePLBallPair_signed_halves_of_zero_arc
       exact (hcommon.symm.subset hxW).2
     · exact hx₁
   exact ⟨hd₀eq ▸ hd₀, hd₁eq ▸ hd₁⟩
-
-
-
-
-
 
 theorem IsFinitePLBallPair.signed_halves_of_zero_arc
     {s q W : Set X} {a b : X}

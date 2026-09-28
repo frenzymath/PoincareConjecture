@@ -2,19 +2,6 @@ import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem CapCertificate.isCompact_univ_of_whole (cap : CapCertificate g)
     (hcomplete : MetricComplete g) (hwhole : Set.univ ⊆ cap.carrier) :
@@ -46,8 +32,6 @@ theorem CapCertificate.isCompact_univ_of_whole (cap : CapCertificate g)
       cap.intrinsic_diameter_bound.le
   rw [← hball]
   exact g.isCompact_closedBall_of_metricComplete hcomplete p R
-
-
 
 theorem GlobalNeckCapConclusion.tube_or_capped_of_noncompact
     {epsilon C : ℝ} (conclusion : GlobalNeckCapConclusion g epsilon C)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -23,7 +12,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem gradient_mul (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
     (hh : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) h x) :
@@ -33,7 +21,6 @@ theorem gradient_mul (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
   ext v
   rw [D.inner_gradient, mvfderiv_fun_mul hf hh]
   simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul, D.inner_gradient]
-
 
 theorem hessian_mul (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -65,7 +52,6 @@ theorem hessian_mul (D : LeviCivitaData g) {f h : M → ℝ}
     ContinuousLinearMap.smulRight_apply, map_add, map_smul, smul_eq_mul,
     D.inner_gradient]
   ring
-
 
 theorem laplacian_mul (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -100,7 +86,6 @@ theorem laplacian_mul (D : LeviCivitaData g) {f h : M → ℝ}
       (∑ i, mvfderiv (𝓡 n) h x (b i) * mvfderiv (𝓡 n) f x (b i)) = _
   rw [hsum, hsum']
   ring
-
 
 theorem laplacian_sq (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRegularCore
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem subset_core_or_end_of_preconnected {S : Set M}
     (hS : IsPreconnected S) (hSV : S ⊆ N.carrier)
@@ -43,8 +32,6 @@ theorem subset_core_or_end_of_preconnected {S : Set M}
     rw [N.closed_core_eq_complement_end]
     exact ⟨hSV hx, hnot⟩
 
-
-
 theorem boundary_neck_region_subset_core_or_end {a b : ℝ}
     (ha : -N.boundary_neck.epsilon⁻¹ ≤ a) (hb : b ≤ N.boundary_neck.epsilon⁻¹)
     (hsign : b ≤ 0 ∨ 0 ≤ a) :
@@ -64,9 +51,6 @@ theorem boundary_neck_region_subset_core_or_end {a b : ℝ}
   · have ht := hx.2.1
     rw [hx0] at ht
     exact (not_lt_of_ge hs) ht
-
-
-
 
 theorem boundary_neck_opposite_sides {r : ℝ} (hr : 0 < r)
     (hrN : r ≤ N.boundary_neck.epsilon⁻¹) :

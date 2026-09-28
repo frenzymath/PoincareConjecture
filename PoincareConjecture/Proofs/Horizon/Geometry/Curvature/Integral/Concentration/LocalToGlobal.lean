@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.BallCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Slab.Summation
 
-
-
-
-
-
-
-
-
-
 open Set MeasureTheory PoincareConjecture
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false

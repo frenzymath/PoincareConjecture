@@ -1,25 +1,6 @@
 import PoincareConjecture.Definitions.M31SingularRegularLimit
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 import PoincareConjecture.Proofs.M60.Mathlib.CoordinateEnergyVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64ModulusEnergyDensity_hasDerivAt_of_affine_chart
     (g : RiemannianMetric n M) (r : ℝ) (b : M) (f : LoopPlane → M)

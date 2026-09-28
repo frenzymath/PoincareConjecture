@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryHistory
 import PoincareConjecture.Proofs.M76.Dehn.OriginalMarkedFaceAssembly
 import PoincareConjecture.Proofs.M76.Dehn.OriginalHistoryDoubleGraph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -31,13 +20,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
-
-
 
 theorem Step.exists_original_old_crossing_assembly
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarAnnulusArea
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskBoundaryRegularization
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {c0 c1 : ℝ → M}
-
-
-
 
 theorem m64DiskGluing_of_exact_boundary_annulus
     (A : M64Annulus g c0 c1) (gamma0 gamma1 : C1FreeLoopSpace (M := M))
@@ -78,9 +65,6 @@ theorem m64DiskGluing_of_exact_boundary_annulus
   refine ⟨D', ?_⟩
   rw [harea]
   exact add_le_add le_rfl (m64Annulus_polar_area_le A)
-
-
-
 
 theorem m64DiskGluing_of_annulus
     (A : M64Annulus g c0 c1) (gamma0 gamma1 : C1FreeLoopSpace (M := M))

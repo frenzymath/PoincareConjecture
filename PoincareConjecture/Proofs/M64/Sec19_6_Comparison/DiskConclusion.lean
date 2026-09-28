@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M64Annulus
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskInfimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,9 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
-
-
-
 
 theorem m64DiskGluingConclusion_of_estimates
     {circumference : ℝ} (P : M62.CircleProductData F circumference) (t : ℝ)

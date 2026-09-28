@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Planar.PairedTriangleDeterminants
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry

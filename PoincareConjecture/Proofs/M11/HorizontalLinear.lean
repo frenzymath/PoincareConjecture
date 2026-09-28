@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.KernelLinear
 import PoincareConjecture.Proofs.M11.TimeVector
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

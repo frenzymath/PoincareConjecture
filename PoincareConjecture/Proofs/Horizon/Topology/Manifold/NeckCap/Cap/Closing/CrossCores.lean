@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.CoreConne
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.NeckContainment
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_mutual_core_avoidance_or_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryCrossings
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem zero_face_card_le_two
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
@@ -40,9 +30,6 @@ theorem zero_face_card_le_two
     affineSpan_le.mpr hzero
   have hxzero : ell x = 0 := hspan ((hKU x hxU).mp hxK)
   exact hxpos.ne' hxzero
-
-
-
 
 theorem exists_protected_motion_interior_contact_cases
     (J K K₀ : SimplicialComplex ℝ V3) (hK : K.faces.Finite)

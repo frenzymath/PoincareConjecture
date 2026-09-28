@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Definitions.M60Area
 import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,10 +12,6 @@ noncomputable section
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 def M65AlphaOneSmoothness {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

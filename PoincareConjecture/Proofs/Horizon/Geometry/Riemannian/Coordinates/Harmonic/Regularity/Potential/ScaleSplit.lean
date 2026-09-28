@@ -1,13 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +9,6 @@ open scoped Topology
 namespace Poincare.Parabolic.Interior.Kernel
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
 
 theorem intervalIntegrable_of_threeQuarter_bound {F : ℝ → E} {t A : ℝ}
     (ht : 0 < t) (hF : AEStronglyMeasurable F (volume.restrict (Ioo 0 t)))
@@ -59,8 +49,6 @@ private theorem mul_square_neg_quarter_eq_sqrt {d : ℝ} (hd : 0 < d) :
     _ = d ^ (1 : ℝ) * d ^ (-(1 / 2 : ℝ)) := by rw [Real.rpow_one, hpow]
     _ = d ^ (1 + -(1 / 2 : ℝ)) := (Real.rpow_add hd _ _).symm
     _ = Real.sqrt d := by norm_num [Real.sqrt_eq_rpow]
-
-
 
 theorem norm_integral_le_halfPower_of_two_bounds [NormedSpace ℝ E] [CompleteSpace E]
     {F : ℝ → E} {t d A B : ℝ}

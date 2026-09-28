@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.StrongNeck
 import PoincareConjecture.Definitions.M27CanonicalGeometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {p x : M} {b epsilon C : ℝ}
 
-
 def canonicalCapFromNormalization (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
     (N : M27CanonicalCap A.target 0 x epsilon C) : M27CanonicalCap K b x epsilon C where
   time_mem := hb
@@ -37,8 +26,6 @@ def canonicalCapFromNormalization (A : AncientKappaNormalization K p b) (hb : b 
   constant_le := by simpa only [capFromNormalization_cap_constant] using N.constant_le
   connection_eq := A.capFromNormalization_connection N.cap
   contains := by simpa only [capFromNormalization_core] using N.contains
-
-
 
 def epsilonRoundComponentFromNormalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0)

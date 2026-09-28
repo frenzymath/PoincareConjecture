@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCapThreeCano
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportEmpty
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportHomeomorph
 
-
-
 set_option autoImplicit false
 
 noncomputable section

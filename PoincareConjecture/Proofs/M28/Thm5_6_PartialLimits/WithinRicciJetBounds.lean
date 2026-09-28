@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 import PoincareConjecture.Proofs.M28.Mathlib.WithinBoundsFromInterior
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +11,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.SpacetimeBounds
 
 open Bootstrap
-
-
-
-
 
 theorem eventuallyBounded_within_ricci_spacetime_jets
     {n : ℕ} {α : Type*} (l : Filter α)

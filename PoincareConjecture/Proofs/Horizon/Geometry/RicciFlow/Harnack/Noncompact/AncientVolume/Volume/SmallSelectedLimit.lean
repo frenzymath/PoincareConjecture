@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.AsymptoticRatio
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,9 +42,6 @@ private theorem ricci_nonneg_small
   change 0 ≤ ((F.pullbackDiffeomorph e).connection t).ricci z w w at hnonneg
   rw [F.pullbackDiffeomorph_ricci, hw] at hnonneg
   exact hnonneg
-
-
-
 
 theorem asymptoticVolumeRatio_pos_of_small_buffered_ancient_rescalings
     {m : ℕ} (hm : 0 < m) {M : Type u}

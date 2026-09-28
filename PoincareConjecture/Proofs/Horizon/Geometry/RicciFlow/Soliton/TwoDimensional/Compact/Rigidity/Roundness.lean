@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.TotalCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.SublevelVolume
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [CompactSpace M] [ConnectedSpace M] {g : RiemannianMetric 2 M}
-
-
 
 theorem constantPositiveSectionalCurvature_of_compact_surface_soliton
     (D : LeviCivitaData g) {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)

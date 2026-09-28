@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Zer
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.ZeroDifference
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.ParametrizedJets
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000

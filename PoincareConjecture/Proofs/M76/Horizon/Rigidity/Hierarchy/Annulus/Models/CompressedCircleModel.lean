@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.R
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compression.MarkedCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

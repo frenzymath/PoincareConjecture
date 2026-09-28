@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.BoxPathLength
 import PoincareConjecture.Proofs.M28.Generalized.CompactTransportCylinder
 import PoincareConjecture.Proofs.M28.Generalized.ScalarContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -21,10 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_compact_path_transport
     (F : GeneralizedRicciFlowData.{u}) (P : RicciFlowCurvatureTheory.{u})

@@ -4,15 +4,6 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.Baire.CompleteMetrizable
 import Mathlib.Topology.Baire.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap Module
@@ -21,8 +12,6 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem dense_compl_of_ne_top (A : AffineSubspace ℝ E) (hA : A ≠ ⊤) :
     Dense (A : Set E)ᶜ := by
   apply interior_eq_empty_iff_dense_compl.mp
@@ -30,9 +19,6 @@ theorem dense_compl_of_ne_top (A : AffineSubspace ℝ E) (hA : A ≠ ⊤) :
   have htop := isOpen_interior.affineSpan_eq_top (Set.nonempty_iff_ne_empty.mpr h)
   have hle : affineSpan ℝ (interior (A : Set E)) ≤ A := affineSpan_le.mpr interior_subset
   exact hA (top_le_iff.mp (htop ▸ hle))
-
-
-
 
 theorem segment_subset_compl_of_notMem_span_insert (A : AffineSubspace ℝ E)
     {x z : E} (hx : x ∉ A) (hz : z ∉ affineSpan ℝ (insert x (A : Set E))) :
@@ -52,8 +38,6 @@ variable [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
 
-
-
 theorem span_insert_ne_top_of_finrank_lt (A : AffineSubspace ℝ E)
     (hA : Module.finrank ℝ A.direction + 1 < Module.finrank ℝ E) (x : E) :
     affineSpan ℝ (insert x (A : Set E)) ≠ ⊤ := by
@@ -62,17 +46,12 @@ theorem span_insert_ne_top_of_finrank_lt (A : AffineSubspace ℝ E)
   rw [← direction_affineSpan, he, direction_top, finrank_top] at h
   omega
 
-
-
 theorem dense_compl_iUnion {ι : Type*} [Finite ι] (A : ι → AffineSubspace ℝ E)
     (hA : ∀ i, A i ≠ ⊤) : Dense (⋃ i, (A i : Set E))ᶜ := by
   let : CompleteSpace E := FiniteDimensional.complete ℝ E
   rw [compl_iUnion]
   exact dense_iInter_of_isOpen (fun i => (A i).closed_of_finiteDimensional.isOpen_compl)
     (fun i => (A i).dense_compl_of_ne_top (hA i))
-
-
-
 
 theorem isPathConnected_sdiff_iUnion {ι : Type*} [Finite ι]
     (A : ι → AffineSubspace ℝ E)

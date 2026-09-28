@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +39,6 @@ private theorem integral_inter_eq {W O : Set E} (hW : IsOpen W) {v : E → ℝ}
     (∫ x in W ∩ O, v x) = ∫ x in O, v x := by
   rw [← Measure.restrict_restrict hW.measurableSet]
   exact setIntegral_eq_integral_of_forall_compl_eq_zero hv
-
-
 
 theorem localize_weak_divergence
     (k : ℕ) {O W : Set E} (hO : IsOpen O) (hW : IsOpen W)

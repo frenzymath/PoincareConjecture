@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteOriginalChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ private noncomputable local instance finiteAnchorBilinAdd :
     NormedAddCommGroup V := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance finiteAnchorBilinSpace :
     NormedSpace ℝ V := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_anchor_coefficients
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}
@@ -69,8 +59,6 @@ theorem limitFinite_anchor_coefficients
   change g.inner (Φ z) (mfderiv (𝓡 3) (𝓡 3) Φ z v)
     (mfderiv (𝓡 3) (𝓡 3) Φ z w) = _
   rw [hmetric, hslot v, hslot w, hmap z hz]
-
-
 
 theorem limitFinite_anchor_coefficient_jets
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}

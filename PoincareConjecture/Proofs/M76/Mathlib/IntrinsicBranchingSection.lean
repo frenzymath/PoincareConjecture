@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBranchingSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.exists_branching_family
     {S : Set E} {a : ℕ} (h : HasAlexanderCurvePresentation S a) (ha : a ≠ 0) :

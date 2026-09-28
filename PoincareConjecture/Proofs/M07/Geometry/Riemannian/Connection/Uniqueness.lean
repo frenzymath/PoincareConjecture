@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.LocalRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology
 open Bundle Filter Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem connection_eq_of_mdifferentiableAt (D D' : LeviCivitaData g)
     {Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -38,8 +28,6 @@ theorem connection_eq_of_mdifferentiableAt (D D' : LeviCivitaData g)
   simp only [covariantDerivativeOnFields, FiberBundle.extend_apply_self] at h₁ h₂
   change g.inner x (D.connection Y x v) w = g.inner x (D'.connection Y x v) w
   linarith
-
-
 
 theorem connection_covariantDerivativeOnFields_eq (D D' : LeviCivitaData g)
     {X Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -59,7 +47,6 @@ theorem connection_covariantDerivativeOnFields_eq (D D' : LeviCivitaData g)
   exact (congrArg (fun L ↦ L v) hconn).trans
     (D.connection_eq_of_mdifferentiableAt D' (hD'.mdifferentiableAt (by simp)) v)
 
-
 theorem curvatureOnFields_eq_of_contMDiffAt (D D' : LeviCivitaData g)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hX : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X) x)
@@ -74,8 +61,6 @@ theorem curvatureOnFields_eq_of_contMDiffAt (D D' : LeviCivitaData g)
     D.connection_eq_of_mdifferentiableAt D' (hZ.mdifferentiableAt (by simp))]
   rfl
 
-
-
 theorem curvature_eq (D D' : LeviCivitaData g) (x : M)
     (v w z : TangentSpace (𝓡 n) x) :
     D.curvature x v w z = D'.curvature x v w z := by
@@ -84,12 +69,10 @@ theorem curvature_eq (D D' : LeviCivitaData g) (x : M)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) w)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) z)
 
-
 theorem curvatureTensor_eq (D D' : LeviCivitaData g) (x : M)
     (v w z u : TangentSpace (𝓡 n) x) :
     D.curvatureTensor x v w z u = D'.curvatureTensor x v w z u := by
   simp only [curvatureTensor, D.curvature_eq D']
-
 
 theorem curvatureTensorNorm_eq (D D' : LeviCivitaData g) (x : M) :
     D.curvatureTensorNorm x = D'.curvatureTensorNorm x := by

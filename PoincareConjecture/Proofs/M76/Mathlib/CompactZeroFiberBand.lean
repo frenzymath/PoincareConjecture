@@ -3,15 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Topology
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem IsCompact.exists_pos_abs_le_subset_of_zero_fiber
     {K U : Set X} (hK : IsCompact K) (hU : IsOpen U) {f : X → ℝ}

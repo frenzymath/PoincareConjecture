@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 import PoincareConjecture.Proofs.M34.Mathlib.NeckBilinearSmooth
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 12
@@ -68,10 +58,6 @@ private theorem exists_hessian_germ_step_bound (m : ℕ) {K : ℝ} (hK : 1 ≤ K
       (hs.of_le (by exact_mod_cast le_top))
       (ht.of_le (by exact_mod_cast le_top))).trans
         ((add_le_add hsbound htbound).trans (le_max_right _ _))
-
-
-
-
 
 theorem exists_finite_hessian_germ_jet_bound (N : ℕ) {K : ℝ} (hK : 1 ≤ K) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ (f : E → F) (A : E → E →L[ℝ] E →L[ℝ] E)

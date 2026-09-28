@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryInverseCoefficientBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -32,23 +20,12 @@ local instance m64BoundaryRaisedSourceBounds_bilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
-
-
 def m64BoundaryRaisedSource (G : E → E →L[ℝ] E →L[ℝ] ℝ)
     (w : Fin 2 → ℝ) (z : E) (V : Fin 2 → E) (b : Fin n → ℝ) (k : Fin n) : ℝ :=
   (∑ j : Fin n, b j * (m64BoundaryMetricInverse (G z) (EuclideanSpace.single k 1)) j) -
     ∑ i : Fin 2, ∑ j : Fin n, (w i * G z (V i) (EuclideanSpace.single j 1)) *
       fderiv ℝ (fun y => (m64BoundaryMetricInverse (G y) (EuclideanSpace.single k 1)) j)
         z (V i)
-
-
-
-
-
 
 theorem m64BoundaryRaisedSource_bound
     (G : E → E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ)

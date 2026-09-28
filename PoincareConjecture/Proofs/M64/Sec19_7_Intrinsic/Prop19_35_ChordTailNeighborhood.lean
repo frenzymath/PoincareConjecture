@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandEndpointGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,10 +8,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_affine_chord_image_interval
     (e : ℝ → AnnulusCoordinates)
@@ -37,10 +22,6 @@ theorem m64Intrinsic_affine_chord_image_interval
     module
   rw [← hL, ← segment_eq_Icc hab]
   exact image_segment ℝ L a b
-
-
-
-
 
 theorem m64Intrinsic_exists_chord_tail_neighborhood
     (e f : ℝ → AnnulusCoordinates)

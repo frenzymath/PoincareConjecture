@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,7 +12,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 def BalancedNeckChain.singleton (N : EpsilonNeck g) : BalancedNeckChain g N.epsilon where
   shape := .finite 0 0

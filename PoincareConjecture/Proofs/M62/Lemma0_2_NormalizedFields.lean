@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRegularity
 import PoincareConjecture.Proofs.M62.Lemma0_1_SpeedEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem unitTangent_joint_contMDiff (hc : M62ShrinkingCurve F c) :
     ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 n).tangent ∞
@@ -51,8 +41,6 @@ theorem unitTangent_joint_contMDiff (hc : M62ShrinkingCurve F c) :
   simpa only [e.continuousLinearMapAt_apply_of_mem ℝ hw] using
     (e.continuousLinearMapAt ℝ (c w.1 w.2)).map_smul
       (curveSpeed F c w.2 w.1)⁻¹ (curveVelocity (fun s => c s w.2) w.1)
-
-
 
 theorem spatialDerivative_joint_contMDiff [T2Space M]
     (hc : M62ShrinkingCurve F c)
@@ -92,8 +80,6 @@ theorem spatialDerivative_joint_contMDiff [T2Space M]
       (rampHorizontalCovariantDerivative (F.connection w.2) (fun s => c s w.2)
         (fun s => Y (s, w.2)) w.1)
 
-
-
 theorem normalization_coefficient_contDiffOn (hc : M62ShrinkingCurve F c) :
     ContDiffOn ℝ ∞ (fun z : ℝ × ℝ =>
       m62TangentRicci F c z.2 z.1 + m62CurvatureSquared F c z.2 z.1)
@@ -113,8 +99,6 @@ theorem normalization_coefficient_contDiffOn (hc : M62ShrinkingCurve F c) :
   dsimp only [v]
   have hnonzero := (speed_pos F c hc (Ioo_subset_Icc_self hz.2) z.1).ne'
   field_simp
-
-
 
 theorem unitTangent_time_derivative (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) (x : ℝ) :

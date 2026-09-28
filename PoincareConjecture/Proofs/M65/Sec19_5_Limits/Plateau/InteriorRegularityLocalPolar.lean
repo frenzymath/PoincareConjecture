@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarACL
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +22,6 @@ private theorem polar_ae_eq {f g : LoopPlane → ℝ} (hfg : f =ᵐ[volume] g)
       (ae_mono (polarPlane_map_strip_le x hε)
         (Measure.ae_smul_measure hfg (ENNReal.ofReal ε)⁻¹))
   exact Measure.ae_ae_of_ae_prod hp
-
-
-
-
 
 theorem polar_coordinate_AC {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

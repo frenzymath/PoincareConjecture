@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ReducedLengthUpperSemicontinuity
 import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 import PoincareConjecture.Proofs.M09.ExponentialAction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

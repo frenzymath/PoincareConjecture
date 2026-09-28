@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.AffineRaySectors
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapChordHalfspaces
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -22,8 +15,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem exists_affineBasis_of_independent_chord_vectors (z a b : Plane)
     (h : LinearIndependent ℝ (![a - z, b - z] : Fin 2 → Plane)) :
@@ -83,7 +74,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem cap_contact_zero_at_outer_tips (p : T.decomposition.vertices)
     (s : Bool × Bool) (R : T.decomposition.regions) (hR : T.region p s = R) :
     (T.caps p).chordSupportingLine s
@@ -94,9 +84,6 @@ theorem cap_contact_zero_at_outer_tips (p : T.decomposition.vertices)
   rw [ChartCircleArrangementVertexPatch.VertexCapFaces.chartChord,
     (T.caps p).sector_first_tip_eq, (T.caps p).sector_second_tip_eq, hR] at h
   exact ⟨h (left_mem_affineSegment ℝ _ _), h (right_mem_affineSegment ℝ _ _)⟩
-
-
-
 
 theorem first_outer_core_sector (p : T.decomposition.vertices)
     (R : T.decomposition.regions) (i : Bool) {z : Plane}
@@ -160,8 +147,6 @@ theorem first_outer_core_sector (p : T.decomposition.vertices)
   · exact Or.inl ⟨h1, h2, h⟩
   · exact Or.inr ⟨h1, h2, h⟩
 
-
-
 theorem second_outer_core_sector (p : T.decomposition.vertices)
     (R : T.decomposition.regions) (i : Bool) {z : Plane}
     (hz : z ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -224,8 +209,6 @@ theorem second_outer_core_sector (p : T.decomposition.vertices)
   · exact Or.inl ⟨h1, h2, h⟩
   · exact Or.inr ⟨h1, h2, h⟩
 
-
-
 theorem first_outer_core_sector_fan (g : RiemannianMetric 2 S)
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}
     (hz : z ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -253,8 +236,6 @@ theorem first_outer_core_sector_fan (g : RiemannianMetric 2 S)
   · exact Or.inl ⟨hs, T.core_contribution_at_convex_sector g R c h1 h2 hz' hs⟩
   · exact Or.inr ⟨hs, T.core_contribution_at_reflex_sector g R c h1 h2 hz'
       (by rwa [compl_interior_convexSector])⟩
-
-
 
 theorem second_outer_core_sector_fan (g : RiemannianMetric 2 S)
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}

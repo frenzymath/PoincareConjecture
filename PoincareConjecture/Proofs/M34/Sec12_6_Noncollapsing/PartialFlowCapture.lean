@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryCaptureData
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowCompleteness
 import PoincareConjecture.Statements.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 def partialFlowSpacetimeInterval {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0) :
     SpacetimeInterval where
@@ -28,8 +17,6 @@ def partialFlowSpacetimeInterval {g0 : StandardInitialMetric} (F : PartialStanda
     ⟨by linarith [F.lifetime_pos], by linarith [F.lifetime_pos]⟩,
     by linarith [F.lifetime_pos]⟩
 
-
-
 theorem partialFlow_ordinary_product {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors) :
     ∃ R : OrdinaryProductRicciGeometry F.flow.metric (partialFlowSpacetimeInterval F),
@@ -37,7 +24,6 @@ theorem partialFlow_ordinary_product {g0 : StandardInitialMetric}
   P.ordinary_product StandardCapSpace (partialFlowSpacetimeInterval F) F.flow
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem partialFlow_ordinary_capture {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors)

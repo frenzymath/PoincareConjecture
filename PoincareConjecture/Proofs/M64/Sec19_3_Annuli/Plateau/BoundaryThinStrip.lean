@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryContinuousReflection
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,20 +10,13 @@ open scoped Topology ENNReal ContDiff
 
 namespace PoincareConjecture
 
-
-
 def m64BoundaryThinStrip (R h : ℝ) : Set LoopPlane :=
   {p | p 0 ∈ Icc 0 h ∧ p 1 ∈ Icc (-R) R}
-
-
 
 theorem m64BoundaryThinStrip_measurableSet (R h : ℝ) :
     MeasurableSet (m64BoundaryThinStrip R h) := by
   exact ((isClosed_Icc.preimage (EuclideanSpace.proj (𝕜 := ℝ) 0).continuous).inter
     (isClosed_Icc.preimage (EuclideanSpace.proj (𝕜 := ℝ) 1).continuous)).measurableSet
-
-
-
 
 theorem m64BoundaryThinStrip_volume (R h : ℝ) :
     volume (m64BoundaryThinStrip R h) = ENNReal.ofReal h * ENNReal.ofReal (2 * R) := by
@@ -55,23 +37,16 @@ theorem m64BoundaryThinStrip_volume (R h : ℝ) :
   rw [Measure.volume_eq_prod, Measure.prod_prod, Real.volume_Icc, Real.volume_Icc]
   congr 2 <;> ring
 
-
-
 theorem m64BoundaryThinStrip_volume_ne_top (R h : ℝ) :
     volume (m64BoundaryThinStrip R h) ≠ ⊤ := by
   rw [m64BoundaryThinStrip_volume]
   exact ENNReal.mul_ne_top ENNReal.ofReal_ne_top ENNReal.ofReal_ne_top
-
-
 
 theorem m64BoundaryThinStrip_volume_real {R h : ℝ} (hR : 0 ≤ R) (hh : 0 ≤ h) :
     volume.real (m64BoundaryThinStrip R h) = 2 * R * h := by
   rw [Measure.real, m64BoundaryThinStrip_volume, ENNReal.toReal_mul,
     ENNReal.toReal_ofReal hh, ENNReal.toReal_ofReal (by positivity)]
   ring
-
-
-
 
 theorem m64Continuous_zero_trace_uniform_small {u : LoopPlane → ℝ}
     (hu : Continuous u) (hc : HasCompactSupport u)

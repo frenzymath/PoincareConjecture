@@ -29,8 +29,6 @@ theorem chart_image_frontier_iff
   rw [heq, frontier_chart_image_eq a U hU hUT R] at hpre
   exact (Set.ext_iff.mp hpre y).symm
 
-
-
 theorem exists_proper_disk_in_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X} (he : PLDomain e R)

@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FineSimplicialSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_finite_marked_face_cover
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -58,10 +45,6 @@ theorem exists_finite_marked_face_cover
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
-
 
 theorem exists_marked_square_face_cover
     {ι : Type*} (U : ι → Set D) (hU : ∀ i, IsOpen (U i))

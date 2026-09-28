@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.ProductTests
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.MassExhaustion
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem tendsto_weakPairing_productTests
     (F : RicciFlow n M J) {α β V : ℝ} (hαβ : α ≤ β) (hV : 0 ≤ V)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.ConvexSectorFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.CoreSupportGerms
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +22,6 @@ theorem refineByLines_append (M : TriangleMesh)
   | nil => rfl
   | cons f fs ih => exact ih (M.lineRefinementMesh f)
 
-
-
 theorem restrictTriangles_exists_usedVertex_of_mem_support
     (M : TriangleMesh) (P : Finset M.Vertex → Prop)
     (u : M.Triangle) (v : M.Vertex) (hv : v ∈ u.1)
@@ -42,8 +33,6 @@ theorem restrictTriangles_exists_usedVertex_of_mem_support
   refine ⟨⟨s, hs⟩, mesh_usedVertex_mem_triangle_of_mem_hull M t u hv ?_⟩
   rw [range_meshTriangleBasis]
   exact hqs
-
-
 
 theorem restrictTriangles_compl_support_eventuallyEq
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) {q : Plane}
@@ -81,7 +70,6 @@ theorem restrictTriangles_compl_support_eventuallyEq
     exact closure_minimal hsub C.toPlaneComplex.isCompact_support.isClosed
       (isOpen_interior.inter_closure ⟨hz, hzcl⟩)
 
-
 theorem closure_interior_convexSector (c : AffineBasis (Fin 3) ℝ Plane) :
     closure (interior {z | 0 ≤ c.coord 1 z ∧ 0 ≤ c.coord 2 z}) =
       {z | 0 ≤ c.coord 1 z ∧ 0 ≤ c.coord 2 z} := by
@@ -100,8 +88,6 @@ theorem closure_interior_convexSector (c : AffineBasis (Fin 3) ℝ Plane) :
       (by simpa only [affineSpan_convexHull] using c.tot)
   rw [hc.closure_interior_eq_closure_of_nonempty_interior (hn.mono (interior_mono ht)),
     hs.closure_eq]
-
-
 
 theorem restrictTriangles_compl_support_convexSector_germ
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -160,8 +146,6 @@ theorem lineRefinementTriangleEquiv_subset_restriction_iff_parent
   rw [hc]
   exact localRefinementMesh_subset_restriction_iff_parent M P f t s
 
-
-
 theorem lineRefinementMesh_restriction_support
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (f : Plane →ᵃ[ℝ] ℝ) :
     ((M.lineRefinementMesh f).restrictTriangles
@@ -195,8 +179,6 @@ theorem lineRefinementMesh_restriction_support
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem meshVertexAngleContribution_lineRefinementMesh_restriction
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (f : Plane →ᵃ[ℝ] ℝ) (x : S) :
@@ -218,8 +200,6 @@ theorem meshVertexAngleContribution_lineRefinementMesh_restriction
     exact coordinateTriangle_vertex_contribution_eq_of_range_eq g F _ _
       (range_meshTriangleBasis_lineRefinementTriangleEquiv M f t s) x
   · simp only [ht, if_false, Finset.sum_const_zero]
-
-
 
 theorem lineRefinementMesh_restriction_old_vertex_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -256,9 +236,6 @@ theorem lineRefinementMesh_restriction_old_vertex_contribution
       (F.injOn hqsource hvsource heq)
   · rfl
 
-
-
-
 theorem exists_refined_restriction_support_and_old_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -284,9 +261,6 @@ theorem exists_refined_restriction_support_and_old_contribution
     obtain ⟨t, ht⟩ := lineRefinementMesh_oldVertex_mem_triangle M f u v hv
     exact (hRv t (M.oldRefinedVertex f v) ht).trans
       (lineRefinementMesh_restriction_old_vertex_contribution g F M P f hF hFi hM u v hv)
-
-
-
 
 theorem exists_refined_restriction_comparing_selected_old_vertex
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -325,8 +299,6 @@ theorem exists_refined_restriction_comparing_selected_old_vertex
     contMDiffOn_id contMDiffOn_id (by simp) u v hv
   exact hpres.trans (hQv (restrictTrianglesTriangleEquiv M P u).1 v hv).symm
 
-
-
 theorem convex_subset_halfspace_of_local
     {C : Set Plane} (hC : Convex ℝ C) {q : Plane} (hq : q ∈ C)
     (l : Plane →ᵃ[ℝ] ℝ) (hlq : l q = 0)
@@ -356,8 +328,6 @@ theorem convex_subset_halfspace_of_local
   simp only [path, AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring,
     hlq, mul_zero, zero_add] at hnonneg
   exact nonneg_of_mul_nonneg_right hnonneg hr0
-
-
 
 theorem mesh_exists_usedVertex_of_convexSector_germ
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -419,9 +389,6 @@ theorem mesh_exists_usedVertex_of_convexSector_germ
   · change c.coord 2 (M.position v) = c.coord 2 (c 0)
     simpa only [AffineBasis.coord_apply, show (2 : Fin 3) ≠ 0 by decide, if_false] using h2
 
-
-
-
 theorem single_refineByLines_restrict_refineByLines_convexSector_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b c : AffineBasis (Fin 3) ℝ Plane)
@@ -469,8 +436,6 @@ theorem single_refineByLines_restrict_refineByLines_convexSector_fan_of_source
   rw [hright] at hfan
   simpa only [ha0] using hfan
 
-
-
 theorem single_refineByLines_restrict_straight_boundary_fan_of_monochromatic_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -513,8 +478,6 @@ theorem single_refineByLines_restrict_straight_boundary_fan_of_monochromatic_of_
   exact single_refineByLines_halfspace_vertex_fan_of_monochromatic G (OpenPartialHomeomorph.refl Plane)
     b lines l hl hmono contMDiffOn_id contMDiffOn_id (by simp)
     (restrictTrianglesTriangleEquiv M P u).1 a hau haint hal
-
-
 
 theorem single_refineByLines_restrict_refineByLines_straight_boundary_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -585,8 +548,6 @@ theorem single_refineByLines_restrict_refineByLines_straight_boundary_fan_of_sou
   · change meshVertexAngleContribution g F (N.refineByLines second) (F q) =
       if q ∈ interior N.toPlaneComplex.support then 2 * Real.pi else Real.pi at hnew
     simpa only [if_neg hnot] using hnew
-
-
 
 theorem single_refineByLines_restrict_refineByLines_reflexSector_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

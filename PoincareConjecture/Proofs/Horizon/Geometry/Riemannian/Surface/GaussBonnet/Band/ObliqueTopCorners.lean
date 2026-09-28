@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ObliqueFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,16 +49,12 @@ private theorem left_cut_map (i : Fin B.interface.count) (t : ℝ) :
       (B.cut i.castSucc, 0 + t * (B.upperGraph i (B.cut i.castSucc) - 0))) at h
   simpa only [sub_zero, zero_add, (B.upperGraph_endpoints i).1] using h
 
-
-
 theorem adjacent_top_vertices
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
     B.faceCoordinates (i, false) (B.faceBasis (i, false) 2) = B.vertex (i.succ, true) ∧
       B.faceCoordinates (i, true) (B.faceBasis (i, true) 2) = B.vertex (i.succ, true) ∧
       B.faceCoordinates (j, true) (B.faceBasis (j, true) 1) = B.vertex (i.succ, true) := by
   simp [B.face_corner_eq_vertex, cornerVertexIndex, hij]
-
-
 
 theorem adjacent_top_downward_velocity
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
@@ -83,22 +71,17 @@ theorem adjacent_top_downward_velocity
   rw [funext hmap]
   rfl
 
-
 noncomputable def topOutwardRay (i : Fin B.interface.count) :
     TangentSpace (𝓡 2) (B.vertex (i.succ, true)) :=
   -coordinateTriangleVelocity (B.faceCoordinates (i, false)) (B.faceBasis (i, false)) 2 1
-
 
 noncomputable def topLeftChord (i : Fin B.interface.count) :
     TangentSpace (𝓡 2) (B.vertex (i.succ, true)) :=
   coordinateTriangleVelocity (B.faceCoordinates (i, true)) (B.faceBasis (i, true)) 2 1
 
-
 noncomputable def topRightChord (j : Fin B.interface.count) :
     TangentSpace (𝓡 2) (B.vertex (j.castSucc, true)) :=
   coordinateTriangleVelocity (B.faceCoordinates (j, true)) (B.faceBasis (j, true)) 1 2
-
-
 
 theorem topOutwardRay_ne_zero
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -108,8 +91,6 @@ theorem topOutwardRay_ne_zero
     (B.faceCoordinates (i, false)) (B.faceBasis (i, false))
     (B.smooth_faceCoordinates hF (i, false)) (B.smooth_faceCoordinates_symm hFi (i, false))
     (B.face_triangle_subset_source (i, false)) (i := 2) (j := 1) (by decide))
-
-
 
 theorem topOutwardRay_eq_cut_velocity
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source) (i : Fin B.interface.count) :
@@ -148,8 +129,6 @@ theorem topOutwardRay_eq_cut_velocity
   exact congrArg (fun f : ℝ → S =>
     (mfderiv 𝓘(ℝ, ℝ) (𝓡 2) f 1 1 : EuclideanSpace ℝ (Fin 2))) (funext (B.right_cut_map i))
 
-
-
 theorem internal_top_corner_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
     (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target)
@@ -181,8 +160,6 @@ theorem internal_top_corner_fan (g : RiemannianMetric 2 S)
     ← B.adjacent_top_downward_velocity i j hij, g.cornerAngle_neg_left, g.cornerAngle_neg_left]
   ring
 
-
-
 theorem sum_corner_weights_internal_top
     (w : (Fin B.interface.count × Bool) → Fin 3 → ℝ)
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
@@ -198,8 +175,6 @@ theorem sum_corner_weights_internal_top
     and_true, and_false, hstart, Fin.succ_inj, add_zero, zero_add]
   simp only [Finset.sum_add_distrib, Finset.sum_ite_eq', Finset.mem_univ, if_true]
   ring
-
-
 
 theorem internal_top_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.ParallelDisks
 import Mathlib.SetTheory.Cardinal.NatCard
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -137,11 +130,6 @@ private theorem component_equiv_of_three_open_pieces
       (show x.val ∈ W (some true) from x.property)]
     rfl
 
-
-
-
-
-
 theorem level_components_of_parallel_disks
     {h : S2 → Real} {c ε a : Real} (ha : 0 < a) (haε : a < ε)
     (T : OpenPartialHomeomorph (S1 × Real) S2)
@@ -266,8 +254,6 @@ theorem level_components_of_parallel_disks
     · exact ⟨hx, fun hc => disjoint_left.mp hCU ((hCmem ⟨x, hx⟩).mpr hc) hu⟩
     · exact ⟨hx, fun hc => disjoint_left.mp hCV ((hCmem ⟨x, hx⟩).mpr hc) hv⟩
 
-
-
 theorem card_level_components_of_parallel_disks
     {h : S2 → Real} {c ε a : Real} (ha : 0 < a) (haε : a < ε)
     (T : OpenPartialHomeomorph (S1 × Real) S2)
@@ -312,8 +298,6 @@ theorem card_level_components_of_parallel_disks
   change Nat.card (ConnectedComponents U) + Nat.card (ConnectedComponents V) <
     Nat.card (ConnectedComponents L)
   omega
-
-
 
 theorem level_inter_disk_closed_eq_open_of_boundary_ne
     {h : S2 → Real} {c : Real} (e : E2 → S2)

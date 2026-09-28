@@ -1,29 +1,16 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.ModelGram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
 def cylinderSphereCoordinate (p : RoundCylinderCoordinates) : Fin 3 → ℝ :=
   ![p.1 0, p.1 1, 0]
 
-
 def cylinderSphereDelta (a b : Fin 3) : ℝ :=
   if a = b ∧ a ≠ 2 then 1 else 0
-
-
 
 noncomputable def cylinderModelChristoffel (p : RoundCylinderCoordinates)
     (a b d : Fin 3) : ℝ :=
@@ -31,8 +18,6 @@ noncomputable def cylinderModelChristoffel (p : RoundCylinderCoordinates)
     (cylinderSphereDelta a d * cylinderSphereCoordinate p b +
       cylinderSphereDelta a b * cylinderSphereCoordinate p d -
       cylinderSphereDelta b d * cylinderSphereCoordinate p a)
-
-
 
 theorem roundCylinderChristoffel_chosen_chart {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (a b d : Fin 3) :
@@ -48,7 +33,6 @@ theorem roundCylinderChristoffel_chosen_chart {u : ℝ} (hu : u < 1)
       EuclideanSpace.inner_single_right, cylinderModelChristoffel,
       cylinderSphereDelta, cylinderSphereCoordinate, sphereChartConformalFactor] <;>
     field_simp [ht, hp] <;> ring
-
 
 theorem contDiff_cylinderModelChristoffel (a b d : Fin 3) :
     ContDiff ℝ ∞ (fun p : RoundCylinderCoordinates => cylinderModelChristoffel p a b d) := by
@@ -79,7 +63,6 @@ theorem contDiff_cylinderModelChristoffel (a b d : Fin 3) :
     simp [smul_eq_mul]
   exact hr.mul ((hcb.add hcd).sub hca)
 
-
 theorem iteratedFDeriv_cylinderModelChristoffel_axial (k : ℕ) (s : ℝ)
     (a b d : Fin 3) :
     iteratedFDeriv ℝ k (fun p => cylinderModelChristoffel p a b d) (0, s) =
@@ -93,8 +76,6 @@ theorem iteratedFDeriv_cylinderModelChristoffel_axial (k : ℕ) (s : ℝ)
     (f := fun p => cylinderModelChristoffel p a b d) k (0, s) 0
   rw [heq, add_zero] at h
   exact h.symm
-
-
 
 theorem exists_bound_roundCylinderChristoffel_jets (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (u : ℝ), u < 1 → ∀ (q : UnitTwoSphere) (s : ℝ),

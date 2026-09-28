@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SectionalParameters
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SectionalLocalDiffusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -26,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
 set_option maxHeartbeats 2400000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem clopen_sectional_lower_preserved
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]
@@ -147,8 +138,6 @@ theorem clopen_sectional_lower_preserved
     (fun z => sub_nonneg.mpr (hqi z))
   intro t ht
   exact hcomplete t c (fun z => sub_nonneg.mp (hpres t ht z))
-
-
 
 theorem compact_sectional_lower_preserved
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]

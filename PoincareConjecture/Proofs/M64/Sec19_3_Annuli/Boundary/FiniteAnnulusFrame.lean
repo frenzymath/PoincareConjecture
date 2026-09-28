@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.StripAnnulusChart
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularTraceChart
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularArcFrame
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,12 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
-
 
 theorem annulus_regular_boundary_frame (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (x : ℝ) (upper : Bool)

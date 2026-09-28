@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicGaussianDuhamel
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem periodicGaussianHeat_restart_norm_bound
     {σ t ν A B C : ℝ} (hσ : 0 < σ) (hσt : σ ≤ t) (hν : 0 < ν)

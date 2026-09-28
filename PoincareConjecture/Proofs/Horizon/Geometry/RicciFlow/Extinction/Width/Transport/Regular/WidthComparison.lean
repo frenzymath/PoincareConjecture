@@ -18,7 +18,6 @@ variable {M N : Type u}
   [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
   [T2Space N] [SecondCountableTopology N]
 
-
 theorem m67_based_width_le_of_distance_le
     (S : M59IdentificationSystem.{u}) (B : M59HigherBasepointTransportService.{u})
     (W : M61WidthTheory.{u} S.quotient)
@@ -57,7 +56,6 @@ theorem m67_based_width_le_of_distance_le
     refine ⟨E, hE.trans ?_⟩
     have hfac : (1 : ℝ) ≤ (1 + eta) ^ 2 := by nlinarith
     exact mul_le_mul_of_nonneg_right (by simpa using hfac) D.area_nonnegative
-
 
 theorem m67_based_width_eq_of_diffeomorph
     (S : M59IdentificationSystem.{u}) (B : M59HigherBasepointTransportService.{u})

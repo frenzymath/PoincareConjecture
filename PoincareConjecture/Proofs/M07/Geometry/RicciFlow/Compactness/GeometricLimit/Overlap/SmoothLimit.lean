@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniqueness
 
-
-
 namespace PoincareConjecture.ChartDistance
 
 export Poincare.Analysis.Calculus

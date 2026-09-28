@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityEnergy
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeightedPotential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Metric
@@ -227,10 +217,6 @@ private theorem weighted_cross_point {r ε α β H ρ c t v d s : ℝ}
   change -(2 * c * weight * t - α * c ^ 2 * weight / q * s) * v * d ≤ _
   nlinarith only [hyoung, hcut, hrad]
 
-
-
-
-
 theorem regularized_weighted_energy_step {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → E → ℝ)
     (hf : ∀ j, Integrable (f j)) {U : Set E} (hU : IsOpen U)
@@ -419,11 +405,6 @@ private theorem singular_weight_limit (x : E) {α C : ℝ} {F : E → ℝ}
     rwa [eLpNorm_one_eq_lintegral_enorm, ← ofReal_integral_norm_eq_lintegral_enorm hgi,
       hgnormInt] at hnormG
   exact (ENNReal.ofReal_le_ofReal_iff hC).mp hnormGreal
-
-
-
-
-
 
 theorem weighted_energy_step {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → E → ℝ)

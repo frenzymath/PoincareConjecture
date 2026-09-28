@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.GaugePullbackMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open DeTurckNative DiffeomorphNative
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem euclideanConnection_pullback
     (k : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)
@@ -76,8 +64,6 @@ theorem euclideanConnection_pullback
           (fderiv ℝ (Φ : V → V) x v) (Φ x) := by convert! ht using 1
     _ = _ := by rw [← hd]
 
-
-
 theorem mapCovariantHessian_pullback
     (k b : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)
     (K : LeviCivitaData k) (B : LeviCivitaData b)
@@ -88,8 +74,6 @@ theorem mapCovariantHessian_pullback
   rw [mapCovariantHessian_apply, euclideanConnection_pullback k Φ K D,
     connectionDifference_euclidean]
   abel
-
-
 
 theorem mapTension_pullback
     (k b : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)

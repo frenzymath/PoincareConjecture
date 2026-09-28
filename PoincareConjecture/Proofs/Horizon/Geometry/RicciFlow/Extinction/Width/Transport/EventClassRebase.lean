@@ -10,16 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
-
 theorem m67_rebased_alpha_nonzero
     (S : M59IdentificationSystem.{u})
     (B : M59HigherBasepointTransportService.{u})

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.LatticeSpher
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Mathlib.CompatibleSignedPairHalfspace
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

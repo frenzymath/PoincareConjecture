@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.RadialInverse
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal Topology

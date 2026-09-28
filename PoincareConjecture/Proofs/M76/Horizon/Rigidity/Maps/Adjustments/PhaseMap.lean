@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.OriginalC
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Translations.DisplacementLift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.HomotopyDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -28,7 +19,6 @@ local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoord
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 noncomputable def hamiltonZeroCollarTangentialMap
     (phi : C(H0, H0)) (J : SimplicialComplex ℝ E) {r : ℝ} (hr : 0 < r)
     (c : E × ℝ → X0) {e : ι → OpenPartialHomeomorph X0 V3}
@@ -41,7 +31,6 @@ noncomputable def hamiltonZeroCollarTangentialMap
         (fun x => ⟨x.property, by constructor <;> linarith⟩))))⟩
 
 open Classical in
-
 
 noncomputable def hamiltonZeroCollarPhaseTarget
     (J : SimplicialComplex ℝ E) (g : C(J.space, C0 × C0)) (theta : C0) : E → X0 :=

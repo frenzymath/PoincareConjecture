@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardFrame
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -17,9 +9,7 @@ namespace PoincareConjecture.M76.HamiltonIndexTwoStandard
 local notation "P" => ((ℝ × ℝ) × ℝ)
 local notation "V" => (Fin 3 → ℝ)
 
-
 def middle : Set V := coordinates '' prism (-(3 / 2)) (3 / 2)
-
 
 def disk (j : Bool) : Set V := coordinates '' endDisk (endHeight j)
 
@@ -91,9 +81,6 @@ private theorem middle_boundary_inter_outer (j : Bool) :
     | false => exact Or.inl (Or.inr hd)
     | true => exact Or.inr hd
 
-
-
-
 noncomputable def source : HamiltonIndexTwoMarkedBall frame := by
   refine {
     carrier := middle
@@ -147,8 +134,6 @@ noncomputable def source : HamiltonIndexTwoMarkedBall frame := by
           lowerOuter (-2) (-(3 / 2)))) = coordinates '' endRim (endHeight j)
     rw [← image_union, ← image_union, ← image_inter coordinates.injective,
       middle_boundary_inter_outer]
-
-
 
 theorem unit_core_subset_source : closedBall (0 : V) 1 ⊆ source.carrier := by
   intro x hx

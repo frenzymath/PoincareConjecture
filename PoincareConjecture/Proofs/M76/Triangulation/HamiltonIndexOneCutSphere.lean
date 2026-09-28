@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M76
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem isFinitePLBallPair_of_compact_spherical_frontier
     (hdim : Module.finrank ℝ E = 3) {R : Set E}
@@ -52,9 +39,6 @@ local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 
 omit [FiniteDimensional ℝ E] in
-
-
-
 
 theorem exists_capped_annulus_frontier_map {A B : Set E}
     {a b : ℝ} (hab : a < b)
@@ -88,10 +72,6 @@ theorem exists_capped_annulus_frontier_map {A B : Set E}
     exact hHs x
   · intro x hx
     exact hHc x
-
-
-
-
 
 theorem isFinitePLBallPair_of_capped_annulus_frontier
     (hdim : Module.finrank ℝ E = 3) {R A B : Set E}

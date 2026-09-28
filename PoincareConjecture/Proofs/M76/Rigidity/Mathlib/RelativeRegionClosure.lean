@@ -1,14 +1,5 @@
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace PoincareConjecture.M76
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem closure_subtype_preimage_of_subset {R S : Set X} (hSR : S ⊆ R) :
     closure ((Subtype.val : R → X) ⁻¹' S) =
@@ -32,9 +21,6 @@ theorem closure_subtype_preimage_of_subset {R S : Set X} (hSR : S ⊆ R) :
   rw [closure_subtype, himage]
   rfl
 
-
-
-
 theorem regular_closed_subtype_preimage {R K : Set X}
     (hK : IsClosed K) (hKR : K ⊆ R) (hreg : closure (interior K) = K) :
     closure (interior ((Subtype.val : R → X) ⁻¹' K)) =
@@ -48,9 +34,6 @@ theorem regular_closed_subtype_preimage {R K : Set X}
   apply Subset.antisymm
   · exact closure_minimal interior_subset (hK.preimage continuous_subtype_val)
   · exact hcl.symm.subset.trans (closure_mono hsmall)
-
-
-
 
 theorem frontier_subtype_cut_of_closure {R U C : Set X}
     (hUR : U ⊆ R) (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' U))

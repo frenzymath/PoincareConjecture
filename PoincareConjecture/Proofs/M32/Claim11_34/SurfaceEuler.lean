@@ -2,24 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.TotalCurvat
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.VolumeSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -33,10 +15,6 @@ namespace PoincareConjecture.M32
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M] [CompactSpace M] [ConnectedSpace M]
-
-
-
-
 
 theorem compact_surface_total_scalar_euler_alternative
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g)

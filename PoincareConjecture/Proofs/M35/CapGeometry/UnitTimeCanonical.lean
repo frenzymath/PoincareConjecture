@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M35.CapGeometry.LimitFullStrongNeck
 import PoincareConjecture.Proofs.M35.Thm12_28.LimitAlternatives
 import PoincareConjecture.Proofs.M35.Thm12_28.AncientExtraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem exists_unit_time_canonical_constants (P : M35StandardCapPredecessors) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

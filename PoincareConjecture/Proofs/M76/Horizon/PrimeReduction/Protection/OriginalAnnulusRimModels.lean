@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAnn
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedRimCircleModels
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentParametrization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry

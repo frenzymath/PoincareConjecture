@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.MeasureComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
-
 
 private theorem edist_image_le_mul_edist_of_tangentNorm_le_on_ball
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -83,8 +71,6 @@ private theorem edist_image_le_mul_edist_of_tangentNorm_le_on_ball
 
 variable [T3Space M]
 
-
-
 theorem exists_open_edist_image_le_of_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     {f : M → N} {s : Set M} {p : M} (hs : s ∈ 𝓝 p)
@@ -129,8 +115,6 @@ theorem exists_open_edist_image_le_of_tangentNorm_le
 
 variable [T3Space N] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   [MeasurableSpace N] [BorelSpace N]
-
-
 
 theorem volumeMeasure_image_le_of_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

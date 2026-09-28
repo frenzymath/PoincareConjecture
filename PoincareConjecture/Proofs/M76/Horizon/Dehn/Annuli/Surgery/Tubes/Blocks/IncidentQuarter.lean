@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalIncidentQuarter
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Blocks.VertexFaces
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -34,7 +32,6 @@ theorem ComponentBranchModel.joint_subset_vertex_link
       (D.axis_le (D.axis.face_subset_vertices hs hvs)) hstrict)
 
 open Classical in
-
 
 theorem ComponentBranchModel.local_incident_quarter
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

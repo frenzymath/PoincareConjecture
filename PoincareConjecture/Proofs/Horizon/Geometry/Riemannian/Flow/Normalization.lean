@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Flow.BoundedSpeed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -60,8 +53,6 @@ theorem tangentNorm_boundedField_le_one (g : RiemannianMetric n M)
   rw [real_inner_self_eq_norm_sq, ← div_eq_inv_mul]
   apply (div_le_one (by positivity : 0 < 1 + ‖X x‖ ^ 2)).mpr
   nlinarith [sq_nonneg (‖X x‖ - 1)]
-
-
 
 theorem exists_smooth_globalFlow_of_positive_rescaling [T3Space M]
     (g : RiemannianMetric n M) (hc : MetricComplete g)

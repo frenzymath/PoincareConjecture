@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalStopped
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceSearch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_search_window
     {C : MetricSurgeryConstants} (p : SurgeryParameterPrefix C)
@@ -41,9 +31,6 @@ private theorem scalar_eq_of_heq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   rfl
-
-
-
 
 theorem terminalCommonInterval_exists_bounded_search
     (S : RepairedControlledSchedulesData.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderInitialBranchingCollars
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderNonisolatedProfileSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_initial_alexanderSectionProfile_with_nonisolated_signs
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)

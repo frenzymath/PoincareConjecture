@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedComponent
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -21,8 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 noncomputable def restrictToOpen (F : RicciFlow n M J) (U : Opens M) :
     RicciFlow n U J :=
@@ -35,7 +27,6 @@ noncomputable def restrictToOpen (F : RicciFlow n M J) (U : Opens M) :
     ((F.restrictToOpen U).metric t).inner x v w = (F.metric t).inner x
       (mfderiv (𝓡 n) (𝓡 n) (Subtype.val : U → M) x v)
       (mfderiv (𝓡 n) (𝓡 n) (Subtype.val : U → M) x w) := rfl
-
 
 noncomputable def restrictComponent (F : RicciFlow n M J) (p : M) :
     RicciFlow n (Poincare.connectedComponentOpens (EuclideanSpace ℝ (Fin n)) p) J :=
@@ -107,8 +98,6 @@ theorem restrictComponent_nonnegativeCurvatureOperator_iff
     (F.connection t) isOpen_univ contMDiff_subtype_val.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
 
-
-
 theorem exists_restrictComponent
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -144,6 +133,5 @@ theorem exists_restrictComponent
     F.restrictComponent_volumeMeasure_ball p, F.restrictComponent_curvatureTensor p,
     F.restrictComponent_scalarCurvature p, F.restrictComponent_curvatureTensorNorm p,
     F.restrictComponent_nonnegativeCurvatureOperator_iff p⟩
-
 
 end PoincareConjecture.RicciFlow

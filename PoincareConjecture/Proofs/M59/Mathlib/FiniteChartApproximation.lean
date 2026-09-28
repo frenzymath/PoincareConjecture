@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.LocalChartApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -27,7 +18,6 @@ variable {E H X F K M : Type*}
 
 omit [IsManifold I ∞ X] [NormalSpace X] [SigmaCompactSpace X]
   [J.Boundaryless] [IsManifold J ∞ M] in
-
 
 theorem exists_finite_chart_tolerance
     (L : List ((Σ x : X, SmoothBumpFunction I x) × M)) (f : X → M) (hf : Continuous f)
@@ -50,9 +40,6 @@ theorem exists_finite_chart_tolerance
     · exact hnear (Metric.mem_thickening_iff.mpr
         ⟨f x, ⟨x, hx, rfl⟩, (hg x).trans_le (min_le_right _ _)⟩)
     · exact hrest g (fun x => (hg x).trans_le (min_le_left _ _)) c hc x hx
-
-
-
 
 theorem exists_finite_chart_approximation
     (L : List ((Σ x : X, SmoothBumpFunction I x) × M))
@@ -86,9 +73,6 @@ theorem exists_finite_chart_approximation
       rcases List.mem_cons.mp hc with rfl | hc
       · exact hks x (hga x hx)
       · exact hkL c hc x hx
-
-
-
 
 theorem exists_compact_manifold_approximation
     (f : X → M) (hf : Continuous f) {S : Set X} (hS : IsCompact S)

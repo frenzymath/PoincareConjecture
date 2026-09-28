@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalScalarStability
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem continuousAt_scalarPower_extrema_on_compact
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J)

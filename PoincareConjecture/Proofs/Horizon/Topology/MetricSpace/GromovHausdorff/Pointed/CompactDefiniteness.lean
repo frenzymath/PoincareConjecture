@@ -1,21 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
-
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 open scoped Topology
@@ -75,11 +58,6 @@ private noncomputable def pointedApproximationMapsOfRealization
       rw [R.left_base, R.right_base, dist_self]
       exact hepsilon
     · simpa [g', hy] using hg y
-
-
-
-
-
 
 theorem exists_basedIsometry_of_pointedGHDistance_eq_zero
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -251,9 +229,6 @@ theorem exists_basedIsometry_of_pointedGHDistance_eq_zero
   change p.1 X.base = Y.base
   exact hbase
 
-
-
-
 theorem pointedGHDistance_eq_zero_iff_basedIsometry
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier] :
@@ -263,9 +238,6 @@ theorem pointedGHDistance_eq_zero_iff_basedIsometry
   · exact exists_basedIsometry_of_pointedGHDistance_eq_zero
   · rintro ⟨e, hbase⟩
     exact pointedGHDistance_eq_zero_of_basedIsometry X Y e hbase
-
-
-
 
 theorem exists_basedIsometry_of_common_pointedGH_limit
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
@@ -280,4 +252,3 @@ theorem exists_basedIsometry_of_common_pointedGH_limit
 end Poincare.GromovHausdorff
 
 end
-

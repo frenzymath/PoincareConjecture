@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinarySquarePath
 import PoincareConjecture.Proofs.M34.Standard.ModelCurveExtension
 import PoincareConjecture.Proofs.M34.Standard.OrdinaryHorizontalConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ noncomputable section
 variable {n : ℕ} {I : SpacetimeInterval}
   {F : RicciFlow n (EuclideanSpace ℝ (Fin n)) I.domain}
 
-
-
 def ordinarySquareVelocityExtension {T tau : ℝ}
     (q : BackwardTimePath F T 0 tau) (A : SqrtRegularPath q) :
     ParametricAlongCurveExtensionOn (n := n) (sqrtParameterInterval 0 tau) A.curve
@@ -37,7 +25,6 @@ def ordinarySquareVelocityExtension {T tau : ℝ}
       (uniqueDiffOn_Icc (Real.sqrt_pos.mpr q.ordered))) A.smooth
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 def ordinarySquareExtension
     (R : OrdinaryProductRicciGeometry F.metric I)
@@ -56,8 +43,6 @@ def ordinarySquareExtension
   exact ordinaryProductHorizontalLift_cylinder R.product _ _ _
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinarySquareExtension_covariantDerivative
     (R : OrdinaryProductRicciGeometry F.metric I)

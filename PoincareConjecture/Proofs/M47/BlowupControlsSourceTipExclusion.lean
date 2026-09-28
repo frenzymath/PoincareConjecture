@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceCapLocus
 import PoincareConjecture.Proofs.M47.CanonicalStandardTipLocus
 import PoincareConjecture.Proofs.M47.CanonicalStandardRecutCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem exists_source_bad_point_tip_exclusion_tolerance
     (S : RepairedControlledSchedulesData.{u}) {theta : ℝ}

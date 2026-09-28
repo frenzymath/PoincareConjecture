@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.NormalizedCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.CenteredScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +25,6 @@ private theorem deriv_nonneg_of_right_positive {h : ℝ → ℝ}
   have hht : 0 ≤ h t := (hp t ht0 htr).le
   simpa only [zero_add, hz, sub_zero, smul_eq_mul] using
     mul_nonneg (inv_nonneg.mpr ht0.le) hht
-
-
 
 theorem centered_transition_extension_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

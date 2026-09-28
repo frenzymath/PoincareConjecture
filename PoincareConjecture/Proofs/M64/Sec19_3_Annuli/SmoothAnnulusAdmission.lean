@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem m64Annulus_exists_eq_of_contMDiffOn
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}

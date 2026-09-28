@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.ProfileFamilyPartials
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricProducerNative
 import PoincareConjecture.Proofs.M03.Existence.ImplicitLocalFlowNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -38,8 +28,6 @@ private theorem profileParameterPath_contDiff : ContDiff ℝ ∞ profileParamete
     (hc.comp contDiff_fst)).add
     (((ContinuousLinearMap.inr ℝ ℝ ℝ).compLeftContinuous ℝ UnitInterval).contDiff.comp
       (contDiff_snd.smul contDiff_const))
-
-
 
 theorem axisDivision_family_contDiffOn {f : ℝ → ℝ → ℝ} {J : Set ℝ}
     (hJ : IsOpen J) (hf : ContDiffOn ℝ ∞ (Function.uncurry f) (J ×ˢ univ)) :

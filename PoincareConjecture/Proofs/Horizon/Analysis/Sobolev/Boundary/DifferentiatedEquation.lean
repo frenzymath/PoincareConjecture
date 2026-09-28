@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +38,6 @@ private theorem memLp_coeff_mul {O : Set E} (hO : IsOpen O)
   filter_upwards [ae_restrict_mem hO.measurableSet] with x hx
   simp only [Pi.mul_apply, norm_mul]
   exact mul_le_mul_of_nonneg_right (hC x (subset_closure hx)) (norm_nonneg _)
-
-
 
 theorem differentiated_weak_divergence
     {O : Set E} (hO : IsOpen O) (hOc : IsCompact (closure O))
@@ -182,7 +173,6 @@ theorem differentiated_weak_divergence
   rw [hnew, hsource]
   linarith
 
-
 theorem weakPartial_commute {O : Set E} {u pi pj q : E → ℝ}
     (i j : Fin d) (hi : HasWeakPartialDeriv i pi u O)
     (hj : HasWeakPartialDeriv j pj u O) (hq : HasWeakPartialDeriv j q pi O) :
@@ -205,8 +195,6 @@ theorem weakPartial_commute {O : Set E} {u pi pj q : E → ℝ}
   linarith
 
 open Poincare.Analysis.Sobolev.Euclidean
-
-
 
 theorem exists_weak_divergence_chosenWeakPartial
     {O : Set E} (hO : IsOpen O) (hOc : IsCompact (closure O))

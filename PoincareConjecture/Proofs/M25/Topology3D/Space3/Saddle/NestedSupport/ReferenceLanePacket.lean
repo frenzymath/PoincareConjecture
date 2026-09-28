@@ -3,31 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.Refe
 import PoincareConjecture.Proofs.M25.Mathlib.SignedHyperbolaChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ReferencePositiveLevels
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
 
 theorem exists_reference_lane_source_arcs
     (sigma : ℝ) (_hsigma : sigma = 1 ∨ sigma = -1)
@@ -106,11 +87,6 @@ theorem exists_reference_lane_source_arcs
   exact ⟨hcompact, hp, heta, hetaSmall, hparent, harc, hdisjoint,
     hcover, hrim, heach, hlabelInv⟩
 
-
-
-
-
-
 theorem reference_lane_transport_unions
     (j : UnitTwoSphere → E3) (_hj : Function.Injective j)
     (T : Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞)
@@ -152,10 +128,6 @@ theorem reference_lane_transport_unions
     rw [hRimInv, hSourceRim]
   exact ⟨hforward, hExteriorInv, hRim, hrimInv'⟩
 
-
-
-
-
 theorem reference_lane_strict_exterior
     (j : UnitTwoSphere → E3) (hj : Function.Injective j)
     (T : Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞)
@@ -193,10 +165,6 @@ theorem reference_lane_strict_exterior
     simpa only [T.symm_apply_apply] using hEq.symm
   have hzAlpha : alpha i t = z := hj hEq'
   exact hOutside i t ht (hzAlpha ▸ hz.2.1)
-
-
-
-
 
 theorem reference_lane_physical_normalized_unions
     (L : E3 ≃L[ℝ] (E2 × ℝ))
@@ -276,14 +244,6 @@ theorem reference_lane_physical_normalized_unions
       exact hmemExt i t ht
   exact ⟨hphys, hnorm⟩
 
-
-
-
-
-
-
-
-
 theorem reference_native_upper_level_image (d k delta : ℝ) :
     let j : UnitTwoSphere → E3 := fun q =>
       nestedReferenceDiffeomorph d (q : E3)
@@ -323,14 +283,6 @@ theorem reference_native_upper_level_image (d k delta : ℝ) :
     dsimp only [H]
     change (heightCoordinates (j q)).2 = k + delta + d at hh
     linarith only [hh]
-
-
-
-
-
-
-
-
 
 theorem reference_native_no_bypass_of_retained_roots
     (ws wm d rho delta : ℝ)
@@ -402,11 +354,6 @@ theorem reference_native_no_bypass_of_retained_roots
       exact hheight q hq) T
   exact hnb hV hC hconn hExterior hRim
 
-
-
-
-
-
 theorem exists_reference_lane_selected_sign_parent
     (e : OpenPartialHomeomorph UnitTwoSphere (ℝ × ℝ))
     (k d rho delta : ℝ)
@@ -473,11 +420,6 @@ theorem exists_reference_lane_selected_sign_parent
       exact hy
     exact hy'.1
   exact ⟨iPos, sigma, hiPos0, hiPos1, hSigma, rfl, hParent⟩
-
-
-
-
-
 
 theorem exists_reference_signed_endpoint_source_charts
     (rho delta : ℝ) (hrho : 0 < rho)

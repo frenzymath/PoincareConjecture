@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ClosedConeChord
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalChordBounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_avoids_salient_corner
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

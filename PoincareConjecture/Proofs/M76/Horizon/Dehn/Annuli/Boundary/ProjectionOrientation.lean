@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.StandardFrontierOrientation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -16,7 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {X E ι κ : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 theorem plAtlasTransitionSign_eq_one_of_common_coordinates
     (q : κ → OpenPartialHomeomorph X E)
@@ -39,7 +30,6 @@ theorem plAtlasTransitionSign_eq_one_of_common_coordinates
   exact (plLocalSign_eq_of_eqOn H (OpenPartialHomeomorph.refl E)
     (hq i j) (piecewiseAffineGroupoid E).id_mem hx (mem_univ _)
     H.open_source hx heq).trans (plLocalSign_refl ⟨q i x, mem_univ _⟩)
-
 
 theorem exists_chart_labels_of_neutral_cover
     (q : κ → OpenPartialHomeomorph X E)

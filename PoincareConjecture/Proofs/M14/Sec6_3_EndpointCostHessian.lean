@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EndpointCostDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_EndpointCostMinimum
 import PoincareConjecture.Proofs.M09.PositiveMomentumDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,10 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point ×
     G.gaugeCover.spatial j}
   (D : GaugeEndpointFamily f U T 0 b c 0 j lift)
-
-
-
-
 
 theorem meetingVelocity_deriv_eq_zero (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hc : c ∈ Ioo 0 b) {x y : G.Point} (m : M14BackwardPath G T 0 (b ^ 2) x y)

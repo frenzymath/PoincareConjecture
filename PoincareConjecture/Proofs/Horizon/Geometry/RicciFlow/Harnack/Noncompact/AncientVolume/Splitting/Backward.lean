@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.Persistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem ancient_backward_persistence_of_parallel_gradient
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

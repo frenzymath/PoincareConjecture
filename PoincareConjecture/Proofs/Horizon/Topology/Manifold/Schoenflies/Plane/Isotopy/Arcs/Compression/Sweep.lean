@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemispher
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +22,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 variable {v : E2}
 
 private theorem sqrt_two_pos : 0 < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
-
-
 
 def capSweepAffine (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, Hemisphere.Plane v × Real) (𝓡 2)
@@ -113,11 +100,9 @@ theorem capSweepAffine_mem_sphere (hv : ‖v‖ = 1) (p : Hemisphere.Plane v × 
   have h := capSweepAffine_norm_sq hv p
   constructor <;> intro hp <;> nlinarith [norm_nonneg (capSweepAffine hv p)]
 
-
 def unitBallSweepRange (hv : ‖v‖ = 1) : TopologicalSpace.Opens E2 :=
   ⟨(capSweepAffine hv).symm ⁻¹' sweepTarget,
     isOpen_sweepTarget.preimage (capSweepAffine hv).symm.continuous⟩
-
 
 def unitBallSweepParametrization (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, Hemisphere.Plane v × Real) (𝓡 2)
@@ -128,7 +113,6 @@ def unitBallSweepParametrization (hv : ‖v‖ = 1) :
         change (capSweepAffine hv).symm (capSweepAffine hv p) ∈ sweepTarget ↔ _
         rw [Diffeomorph.symm_apply_apply]
         rfl))
-
 
 def unitBallSweepChart (hv : ‖v‖ = 1) :
     Diffeomorph (𝓡 2) 𝓘(Real, Hemisphere.Plane v × Real)
@@ -349,8 +333,6 @@ theorem unitBallSweepChart_edge (hv : ‖v‖ = 1) :
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev S1 := sphere (0 : E2) 1
 
-
-
 theorem exists_marked_disk_sweep
     (b : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (g : E1 → S1) (hgi : InjOn g (closedBall 0 1))
@@ -402,10 +384,6 @@ theorem exists_marked_disk_sweep
     obtain ⟨z, hz, he⟩ := hedge
     exact H.injective he ▸ hz
 
-
-
-
-
 theorem exists_marked_disk_compression
     (b : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (g : E1 → S1) (hgi : InjOn g (closedBall 0 1))
@@ -424,7 +402,5 @@ theorem exists_marked_disk_compression
     exists_marked_disk_sweep b g hgi hgl
   exact exists_slab_compression C e ((isCompact_closedBall 0 1).image b.continuous)
     hW hO hslab hzero (hedge.trans (image_mono sphere_subset_closedBall)) hDW hBO
-
-
 
 end Poincare.Manifold.Schoenflies.PlaneArcs.Compression

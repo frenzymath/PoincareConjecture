@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.NestedSourceDisk
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceComplement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +10,6 @@ namespace Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
-
-
 
 theorem nested_annulus_source_partition {m n : ℕ}
     (P : Polygon V2 (m + 3)) (I : Polygon V2 (n + 3))
@@ -71,9 +58,6 @@ theorem nested_annulus_source_partition {m n : ℕ}
   · exact Set.disjoint_left.mpr fun _ hx hy => hy.2 (hnest hx)
   · intro x hx
     exact ⟨sphere_subset_closedBall hx, fun hp => (ne_of_lt (hPD (subset_closure hp))) hx⟩
-
-
-
 
 theorem exists_nested_annulus_source_disk {m n k : ℕ}
     (P : Polygon V2 (m + 3)) (I : Polygon V2 (n + 3)) (Q : Polygon V2 (k + 3))

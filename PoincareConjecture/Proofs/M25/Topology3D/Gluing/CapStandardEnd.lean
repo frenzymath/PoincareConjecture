@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.StandardEndServices
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capModelEquivalence_exists_carrierDiffeomorph
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -52,10 +36,6 @@ theorem capModelEquivalence_exists_carrierDiffeomorph
           (fun y => ⟨R.inverse y, R.inverse_mem y⟩)).mp
           (contMDiffOn_univ.mp R.inverse_smooth) }
   exact ⟨F, fun _ => rfl, fun _ => rfl⟩
-
-
-
-
 
 theorem capCertificate_exists_cofinalEndChart
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -142,10 +122,6 @@ theorem capCertificate_exists_cofinalEndChart
   apply Subtype.isCompact_iff.mpr
   rw [himage]
   exact C.isCompact_end_neck_lower_cut hd
-
-
-
-
 
 theorem capCertificate_exists_standardEnd_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

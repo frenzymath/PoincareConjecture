@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexSphereLargeDisks
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPLSubdisk
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_convex_sphere_polygon_disk_with_interior (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)
@@ -42,10 +30,6 @@ theorem exists_convex_sphere_polygon_disk_with_interior (K : SimplicialComplex �
   refine ⟨D, hD, hDd.trans (sdiff_subset.trans hds), fun hx => hpd (hDd hx).1, ?_⟩
   exact interior_preimage_val_of_open_neighborhood hds (hDd.trans sdiff_subset)
     sdiff_subset hopen (sdiff_subset.trans hDd) sdiff_subset hint
-
-
-
-
 
 theorem exists_convex_sphere_polygon_disk (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

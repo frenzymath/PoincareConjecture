@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Collars.OriginalAnnulusPush
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.AnnulusProjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PoincareConjecture.M76.Dehn
 

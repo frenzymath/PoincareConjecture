@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanCorner
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,11 +7,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_two_arc_frontier_germ
     (H : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)

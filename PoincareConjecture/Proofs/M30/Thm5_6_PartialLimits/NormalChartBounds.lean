@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.SourceCharts.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {g : ℝ → RiemannianMetric n M} {p : M}
   {T' T A R ρ a b : ℝ} {N : ℕ}
-
-
 
 theorem normalChart_unitBallMap_mem_ball
     (C : NormalChartCover g p T' T A R ρ a b N)
@@ -57,9 +45,6 @@ theorem normalChart_unitBallMap_mem_ball
 local instance :
     Nonempty (Metric.ball (0 : EuclideanSpace ℝ (Fin n)) 1) :=
   ⟨⟨0, by simp⟩⟩
-
-
-
 
 theorem normalChart_unitBallMap_upper_coefficients
     (C : NormalChartCover g p T' T A R ρ a b N)

@@ -4,17 +4,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,12 +15,8 @@ namespace PoincareConjecture.M64
 
 open Proofs.M58
 
-
-
 def planarCircleObservation {circumference : ℝ} (q : AddCircle circumference) : LoopPlane :=
   !₂[(AddCircle.toCircle q : ℂ).re, (AddCircle.toCircle q : ℂ).im]
-
-
 
 theorem planarCircleObservation_quotient {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (x : ℝ) :
@@ -42,8 +27,6 @@ theorem planarCircleObservation_quotient {circumference : ℝ}
       AddCircle.toCircle_apply_mk, Circle.coe_exp, Complex.exp_ofReal_mul_I_re,
       Complex.exp_ofReal_mul_I_im, angularPoint, curvePeriod]
 
-
-
 theorem planarCircleObservation_norm {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (q : C.Point) :
     ‖planarCircleObservation q‖ = 1 := by
@@ -52,8 +35,6 @@ theorem planarCircleObservation_norm {circumference : ℝ}
     rw [show planarCircleObservation (x : AddCircle circumference) =
       angularPoint (curvePeriod / circumference * x) from planarCircleObservation_quotient C x]
     exact norm_angularPoint _
-
-
 
 theorem planarCircleObservation_contMDiff {circumference : ℝ}
     (C : M62.CircleGeometry circumference) :
@@ -76,9 +57,6 @@ theorem planarCircleObservation_contMDiff {circumference : ℝ}
       (contDiff_angularPoint.comp (contDiff_const.mul contDiff_id)).contMDiff
     exact (hangle.contMDiffAt.comp _ hloc.localInverse_contMDiffAt).congr_of_eventuallyEq hformula
 
-
-
-
 theorem planarCircleCurrent_angularPoint (x d : ℝ) :
     planarCircleCurrent (angularPoint x) (d • angularVector x) = d := by
   have htrig := Real.sin_sq_add_cos_sq x
@@ -87,9 +65,6 @@ theorem planarCircleCurrent_angularPoint (x d : ℝ) :
   calc
     _ = d * (Real.sin x ^ 2 + Real.cos x ^ 2) := by ring
     _ = d := by rw [htrig, mul_one]
-
-
-
 
 theorem planarCircleCurrent_phase_derivative {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (L : LoopPlane → ℝ)

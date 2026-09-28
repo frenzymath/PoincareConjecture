@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Manifold.Schoenflies.Reverse
-
-
 
 theorem subset_exterior_of_isPreconnected
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

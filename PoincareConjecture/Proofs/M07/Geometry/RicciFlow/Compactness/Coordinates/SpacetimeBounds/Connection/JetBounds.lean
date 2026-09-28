@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Connection.Inverse
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Connection.Koszul
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -116,8 +114,6 @@ theorem norm_iteratedFDeriv_christoffel_repr_le
     (contDiffAt_const (c := u))).clm_apply (contDiffAt_const (c := v))
   simpa only [OrthonormalBasis.repr_apply_apply] using
     norm_iteratedFDeriv_inner_le hΓ q (le_of_eq (b.norm_eq_one a))
-
-
 
 theorem exists_affine_christoffel_jets_bound
     (q : ℕ) {a : ℝ} (ha : 0 < a) (b D : ℝ) (hD : 1 ≤ D) :

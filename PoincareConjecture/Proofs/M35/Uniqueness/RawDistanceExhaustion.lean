@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.CompleteDistanceSupports
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem exists_raw_distance_square_compact_exhaustion
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

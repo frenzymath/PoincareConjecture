@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Co
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.TwoCommensurableAnnularMarks
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.PLDomainInteriorConnected
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip Geometry.OriginalPLTower
 open Poincare.Topology.Orientation.ProjectivePlane

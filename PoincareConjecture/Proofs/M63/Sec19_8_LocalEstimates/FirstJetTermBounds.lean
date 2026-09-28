@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.TangentRicciDerivatives
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -24,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63TangentRicci_arc_abs_bounds [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -110,9 +98,6 @@ theorem m63TangentRicci_arc_abs_bounds [T2Space M]
         (abs_le.mp hSHS).1, (abs_le.mp hBS).1, (abs_le.mp hHH).1]
     · nlinarith only [(abs_le.mp hSSSS).2, (abs_le.mp hHSS).2,
         (abs_le.mp hSHS).2, (abs_le.mp hBS).2, (abs_le.mp hHH).2]
-
-
-
 
 theorem m63FirstJet_ambient_abs_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

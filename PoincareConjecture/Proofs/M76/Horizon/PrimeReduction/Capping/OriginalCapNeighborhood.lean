@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalBallBounda
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalBallBicollarEnlargement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalBallInteriorChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

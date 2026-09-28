@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.OrderedCrossingChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -16,7 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
 
 theorem isCompact_sdiff_of_open_in_disk {P L : Set V2}
     (hP : IsCompact P) (hPD : P ⊆ D2)
@@ -33,8 +24,6 @@ theorem isCompact_sdiff_of_open_in_disk {P L : Set V2}
       exact ⟨⟨x, hx⟩, hn, rfl⟩
   rw [← heq]
   exact ho.isClosed_compl.isCompact.image continuous_subtype_val
-
-
 
 theorem RawCrossingChart.exists_finite_branch_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

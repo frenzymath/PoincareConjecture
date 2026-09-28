@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedYoungBirthScales
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_old_buffered_birth_search_window
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

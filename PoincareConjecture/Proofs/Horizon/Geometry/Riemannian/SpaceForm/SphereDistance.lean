@@ -5,14 +5,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -345,8 +337,6 @@ private theorem sphereAngle_le_metric_edist (x y : UnitSphere n) :
   have hle := sphereAngle_le_pathELength γ hγ
   rw [h0, h1] at hle
   exact hle.trans_lt hlen
-
-
 
 theorem roundSphereMetric_edist_eq_angle
     {n : ℕ} (hn : 1 ≤ n) (x y : UnitSphere n) :

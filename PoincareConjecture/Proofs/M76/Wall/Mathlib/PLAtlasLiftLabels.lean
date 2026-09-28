@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLAtlasSignCover
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,10 +9,6 @@ namespace Geometry
 
 variable {X Y E ι : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_plAtlasSign_lift_labels
     (e : ι → OpenPartialHomeomorph X E)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.FrontierSphereGraph
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapMixedBoundarySide
 import PoincareConjecture.Proofs.M25.AppA_21_Local.FiniteCappedChainDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.exists_common_outward_graph_of_finite_core_frontier :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

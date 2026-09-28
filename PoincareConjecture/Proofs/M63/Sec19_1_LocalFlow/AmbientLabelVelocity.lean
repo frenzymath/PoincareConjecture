@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem ambientCurve_labelVelocity_regular (F : RicciFlow n M (Icc a b))
     {U : Set W} (hU : IsOpen U) {ρ : W → M}
@@ -73,9 +60,6 @@ theorem ambientCurve_labelVelocity_regular (F : RicciFlow n M (Icc a b))
     rw [hper t ht y, hqxper y]
   change deriv (A t) (x + L) / 2 = deriv (A t) x / 2
   rw [← deriv_comp_add_const, show (fun y => A t (y + L)) = A t from funext hAper]
-
-
-
 
 theorem ambientCurve_labelVelocity_eq (F : RicciFlow n M (Icc a b))
     {U : Set W} (hU : IsOpen U) {ρ : W → M}

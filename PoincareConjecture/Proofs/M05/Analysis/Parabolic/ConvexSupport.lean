@@ -1,20 +1,8 @@
-
 import Mathlib.Analysis.InnerProductSpace.Projection.Minimal
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.MetricSpace.HausdorffDistance
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -25,7 +13,6 @@ namespace Poincare.Parabolic
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 noncomputable def nearestPoint (K : Set E) (hne : K.Nonempty)
     (hclosed : IsClosed K) (hconv : Convex ℝ K) (v : E) : E := by
@@ -58,10 +45,8 @@ lemma nearestPoint_support (K : Set E) (hne : K.Nonempty)
   simpa only [Metric.infDist_eq_iInf, dist_eq_norm] using
     norm_sub_nearestPoint K hne hclosed hconv v
 
-
 def unitSupportSet (K : Set E) : Set (E × E) :=
   {q | q.1 ∈ K ∧ ‖q.2‖ = 1 ∧ ∀ z ∈ K, ⟪q.2, z - q.1⟫_ℝ ≤ 0}
-
 
 def boundedUnitSupportSet (K : Set E) (R : ℝ) : Set (E × E) :=
   unitSupportSet K ∩ {q | ‖q.1‖ ≤ R}
@@ -116,7 +101,6 @@ lemma norm_nearestPoint_le {K : Set E} (hne : K.Nonempty)
   have hz := norm_sub_le v z₀
   linarith
 
-
 theorem exists_boundedUnitSupport_active {K : Set E} (hne : K.Nonempty)
     (hclosed : IsClosed K) (hconv : Convex ℝ K) {z₀ v : E}
     (hz₀ : z₀ ∈ K) {B : ℝ} (hvB : ‖v‖ ≤ B) (hv : v ∉ K) :
@@ -143,7 +127,6 @@ theorem exists_boundedUnitSupport_active {K : Set E} (hne : K.Nonempty)
     calc
       r⁻¹ * r ^ 2 = r := by field_simp
       _ = Metric.infDist v K := norm_sub_nearestPoint K hne hclosed hconv v
-
 
 lemma unitSupport_at_nearestPoint_of_active {K : Set E} (hne : K.Nonempty)
     (hclosed : IsClosed K) (hconv : Convex ℝ K) {q : E × E}
@@ -191,8 +174,6 @@ theorem support_inner_velocity_nonpos {K : Set E} {p n w : E}
   have h := hmax.localize.hasFDerivWithinAt_nonpos hscalar.hasFDerivWithinAt hcone
   change ((a + ε) - a) * ⟪n, w⟫_ℝ ≤ 0 at h
   nlinarith
-
-
 
 theorem reaction_inner_le_mul_infDist {K S : Set E} (hne : K.Nonempty)
     (hclosed : IsClosed K) (hconv : Convex ℝ K) {q : E × E}

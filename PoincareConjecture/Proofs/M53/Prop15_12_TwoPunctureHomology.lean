@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_TwoPuncture
 import PoincareConjecture.Proofs.M02.Topology.IntegralConvexSupport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem planeExterior_twoPuncture_quasiIso
     (K : Set (E × ℝ)) (hK : IsCompact K) (hconv : Convex ℝ K)
@@ -60,8 +47,6 @@ theorem planeExterior_twoPuncture_quasiIso
   exact HomologySequence.quasiIso_τ₃ T (integralPairSequence_shortExact A)
     (integralPairSequence_shortExact Q) hincl
     (by change QuasiIso (𝟙 (integralChains (E × ℝ))); infer_instance)
-
-
 
 theorem planeExterior_twoPuncture_homology_isIso
     (K : Set (E × ℝ)) (hK : IsCompact K) (hconv : Convex ℝ K)

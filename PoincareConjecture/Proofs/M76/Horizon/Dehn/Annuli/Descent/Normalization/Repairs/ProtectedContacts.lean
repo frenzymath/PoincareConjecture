@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Repairs.MotionImages
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.ExceptionSchedule
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -32,8 +23,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {D : OriginalRelativeNormalization step K j R Rim}
   {a b : K.space} {W : Set s.Carrier} {ε : ℝ}
   (N : AnnulusBranchMotion D a b W ε)
-
-
 
 theorem protected_contact_nonexceptional
     (hW : W ∩ D.exceptionalDoubleValues ⊆ {D.projected a})
@@ -82,8 +71,6 @@ theorem protected_contact_nonexceptional
       fun h ↦ hne (Subtype.ext h)⟩, hxz⟩
   have hcenter : z = D.projected a := hW ⟨(N.chart_inside hzQ).1, hzE⟩
   exact hv0 (hQz.symm.trans ((congrArg N.chart hcenter).trans N.centered))
-
-
 
 theorem exists_protected_target_crossing
     (hcard : ∀ q ∈ K.faces, q.card ≤ 3)

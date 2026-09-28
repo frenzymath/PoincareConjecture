@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport.TimeBracket
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

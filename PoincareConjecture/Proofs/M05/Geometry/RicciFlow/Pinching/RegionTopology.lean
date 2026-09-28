@@ -1,10 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Region
 import Mathlib.Analysis.InnerProductSpace.Spectrum
 import Mathlib.LinearAlgebra.Charpoly.ToMatrix
 import Mathlib.LinearAlgebra.Trace
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -126,7 +123,6 @@ theorem isClosed_symmetric_continuousLinearMap :
       ((continuous_const : Continuous (fun _ : E →L[ℝ] E => v)).inner
         (ContinuousLinearMap.apply ℝ E w).continuous)
 
-
 def continuousRegion (hn : Module.finrank ℝ E = 3) (t : ℝ) :
     Set (E →L[ℝ] E) := {A | A.toLinearMap ∈ region hn t}
 
@@ -187,7 +183,6 @@ theorem isClosed_continuousRegion_spacetime (hn : Module.finrank ℝ E = 3) :
       ((continuous_const.inner ((ContinuousLinearMap.apply ℝ E v).continuous.comp
         continuous_snd)).neg.max continuous_const)).continuousOn
     (fun p hp => hp)
-
 
 theorem region_conj_equiv_iff
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]

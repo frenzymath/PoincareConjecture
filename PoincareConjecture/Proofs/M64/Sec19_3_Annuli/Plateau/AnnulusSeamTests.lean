@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,21 +10,13 @@ open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
 
-
-
 def m64AnnulusSeamDomain : Set LoopPlane :=
   {p | -curvePeriod < p 0 ∧ p 0 < curvePeriod ∧ 0 < p 1 ∧ p 1 < 1}
 
-
-
 def m64AnnulusSeamTranslation : LoopPlane := annulusPoint curvePeriod 0
-
-
 
 def m64AnnulusSeamTest (phi : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   phi p + phi (p - m64AnnulusSeamTranslation)
-
-
 
 theorem m64AnnulusSeamDomain_isOpen : IsOpen m64AnnulusSeamDomain := by
   have h0 : IsOpen {p : LoopPlane | -curvePeriod < p 0 ∧ p 0 < curvePeriod} :=
@@ -48,20 +27,14 @@ theorem m64AnnulusSeamDomain_isOpen : IsOpen m64AnnulusSeamDomain := by
       (isOpen_lt (EuclideanSpace.proj (𝕜 := ℝ) 1).continuous continuous_const)
   simpa only [m64AnnulusSeamDomain, Set.ofPred_and, inter_assoc] using h0.inter h1
 
-
-
 theorem m64AnnulusPoint_sub_seamTranslation (x s : ℝ) :
     annulusPoint x s - m64AnnulusSeamTranslation = annulusPoint (x - curvePeriod) s := by
   ext i
   fin_cases i <;> simp [m64AnnulusSeamTranslation, annulusPoint]
 
-
-
 theorem m64AnnulusSeamTest_contDiff {phi : LoopPlane → ℝ} (hp : ContDiff ℝ ∞ phi) :
     ContDiff ℝ ∞ (m64AnnulusSeamTest phi) :=
   hp.add (hp.comp (contDiff_id.sub contDiff_const))
-
-
 
 theorem m64AnnulusSeamTest_fderiv {phi : LoopPlane → ℝ} (hp : ContDiff ℝ ∞ phi)
     (p : LoopPlane) (i : Fin 2) :
@@ -77,8 +50,6 @@ theorem m64AnnulusSeamTest_fderiv {phi : LoopPlane → ℝ} (hp : ContDiff ℝ �
   simpa only [m64AnnulusSeamTest, Pi.add_def, Function.comp_def, id_eq,
     add_apply, ContinuousLinearMap.comp_apply, ContinuousLinearMap.id_apply] using hd
 
-
-
 theorem m64AnnulusSeamTest_periodic_boundary {phi : LoopPlane → ℝ}
     (hs : tsupport phi ⊆ m64AnnulusSeamDomain) (s : ℝ) :
     m64AnnulusSeamTest phi (annulusPoint curvePeriod s) =
@@ -89,8 +60,6 @@ theorem m64AnnulusSeamTest_periodic_boundary {phi : LoopPlane → ℝ}
     image_eq_zero_of_notMem_tsupport (fun h => (lt_irrefl (-curvePeriod)) (hs h).1)
   simp only [m64AnnulusSeamTest, m64AnnulusPoint_sub_seamTranslation, sub_self,
     zero_sub, hp, hm, zero_add, add_zero]
-
-
 
 theorem m64AnnulusSeamTest_radial_boundary {phi : LoopPlane → ℝ}
     (hs : tsupport phi ⊆ m64AnnulusSeamDomain) (x : ℝ) :
@@ -108,8 +77,6 @@ theorem m64AnnulusSeamTest_radial_boundary {phi : LoopPlane → ℝ}
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
-
-
 
 theorem M64ObservedWeakAnnulus.seam_folded_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

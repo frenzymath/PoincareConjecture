@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.AlternatingSectional
 import PoincareConjecture.Proofs.M04.SectionalRayleigh
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ open M04
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem sectional_lower_of_surjective_linearMap
     (D : LeviCivitaData g) (x : M)
@@ -62,8 +51,6 @@ theorem sectional_lower_of_surjective_linearMap
     (fun p q hp hq hpq => by rw [hdiag]; exact sub_nonneg.mpr (hmin p q hp hq hpq)) a b
   rw [hdiag] at h
   exact sub_nonneg.mp h
-
-
 
 theorem modelOrthonormalPairs_linearIndependent
     {p : EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n)}

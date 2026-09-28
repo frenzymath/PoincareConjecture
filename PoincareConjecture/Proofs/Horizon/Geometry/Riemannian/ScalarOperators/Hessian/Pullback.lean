@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
-
-
-
-
-
-
-

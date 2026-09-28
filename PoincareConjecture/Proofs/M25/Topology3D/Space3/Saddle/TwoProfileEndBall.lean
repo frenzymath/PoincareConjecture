@@ -11,22 +11,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_two_profile_end_ball
     (Pm Pp : SurgeryCapProfile) (u : UnitTwoSphere)

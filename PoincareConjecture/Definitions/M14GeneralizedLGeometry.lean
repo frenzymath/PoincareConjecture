@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M12GaugeCover
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
@@ -21,7 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
 
 structure GeneralizedLGeometryTransport (n : ℕ) (X : Type u)
     [TopologicalSpace X] (time : X → ℝ) (I : SpacetimeInterval) where
@@ -41,12 +31,10 @@ abbrev Horizontal (G : GeneralizedLGeometryTransport n X time I) (p : G.Point) :
 
 end GeneralizedLGeometryTransport
 
-
 noncomputable def M14RawLIntegrand (G : GeneralizedLGeometryTransport n X time I)
     (γ : ℝ → G.Point) (v : ∀ τ, G.Horizontal (γ τ)) (τ : ℝ) : ℝ :=
   Real.sqrt τ * (horizontalScalarCurvature G.leafwise (γ τ) +
     G.spacetime.horizontalMetric.inner (γ τ) (v τ) (v τ))
-
 
 structure M14BackwardPath (G : GeneralizedLGeometryTransport n X time I)
     (T τ₁ τ₂ : ℝ) (x y : G.Point) where
@@ -98,27 +86,22 @@ def M14AttainedDomain (G : GeneralizedLGeometryTransport n X time I)
     (T τ₁ τ₂ : ℝ) (x y : G.Point) : Prop :=
   ∃ p : M14BackwardPath G T τ₁ τ₂ x y, M14IsMinimizing p
 
-
 noncomputable def M14ActionValue (G : GeneralizedLGeometryTransport n X time I)
     (T τ₁ τ₂ : ℝ) (x y : G.Point) : ℝ :=
   sInf (M14ActionSet G T τ₁ τ₂ x y)
-
 
 noncomputable def M14ReducedLengthValue (G : GeneralizedLGeometryTransport n X time I)
     (T τ₁ τ₂ : ℝ) (x y : G.Point) : ℝ :=
   M14ActionValue G T τ₁ τ₂ x y / (2 * Real.sqrt τ₂)
 
-
 noncomputable def M14ReducedLengthAt (G : GeneralizedLGeometryTransport n X time I)
     (T τ₁ : ℝ) (x q : G.Point) : ℝ :=
   M14ReducedLengthValue G T τ₁ (T - G.spacetime.timeFunction q) x q
-
 
 noncomputable def M14BackwardTimeDerivative
     (G : GeneralizedLGeometryTransport n X time I)
     (f : G.Point → ℝ) (q : G.Point) : ℝ :=
   -(mvfderiv (spacetimeModel n) f q) (G.spacetime.timeVector q)
-
 
 noncomputable def M14GeneralizedHarnackDensity
     (G : GeneralizedLGeometryTransport n X time I)
@@ -132,7 +115,6 @@ noncomputable def M14GeneralizedHarnackDensity
       (p.horizontal_velocity s).val +
     2 * horizontalRicci G.leafwise (p.curve s)
       (p.horizontal_velocity s) (p.horizontal_velocity s)
-
 
 noncomputable def M14GeneralizedKIntegral
     (G : GeneralizedLGeometryTransport n X time I)

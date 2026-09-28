@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarCoefficientBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M47
 local notation "I" => Fin 3
 local notation "V" => EuclideanSpace ℝ I
 local notation "Idx" => Fin 4 → I
-
-
 
 theorem cap_scalar_difference_tensor_bound
     {g0 g1 : RiemannianMetric 3 V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

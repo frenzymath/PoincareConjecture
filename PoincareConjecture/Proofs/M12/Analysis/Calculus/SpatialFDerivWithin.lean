@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace PoincareConjecture.SpacetimeBounds
 
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem contDiffOn_spatialFDeriv_within {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
     (hf : ContDiffOn ℝ ∞ f (J ×ˢ U)) (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U) :

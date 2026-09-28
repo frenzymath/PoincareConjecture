@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 open scoped Topology
@@ -108,6 +101,4 @@ theorem PLDomain.closed_complement_contact
     have hc : x ∈ closure Dᶜ := by rw [closure_compl]; exact hx.1.2
     exact isOpen_interior.inter_closure ⟨hx.2,hc⟩
 
-
 end PoincareConjecture.M76
-

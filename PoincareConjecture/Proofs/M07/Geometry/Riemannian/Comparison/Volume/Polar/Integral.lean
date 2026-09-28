@@ -1,18 +1,6 @@
 import Mathlib.MeasureTheory.Constructions.HaarToSphere
 import Mathlib.MeasureTheory.Measure.Prod
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -42,8 +30,6 @@ private theorem polarScale_homeomorphUnitSphereProd
     polarScale (homeomorphUnitSphereProd E x) = (x : E) := by
   have hn : ‖(x : E)‖ ≠ 0 := norm_ne_zero_iff.2 x.2
   simp [polarScale, smul_smul, mul_inv_cancel₀ hn]
-
-
 
 theorem lintegral_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ≥0∞} (hf : Measurable f) :
@@ -80,7 +66,6 @@ theorem lintegral_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
   exact lintegral_subtype_comap measurableSet_Ioi
     (fun t : ℝ => ENNReal.ofReal (t ^ (finrank ℝ E - 1)) *
       f (t • (ω : E)))
-
 
 theorem setLIntegral_ball_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ≥0∞} (hf : Measurable f) (r : ℝ) :

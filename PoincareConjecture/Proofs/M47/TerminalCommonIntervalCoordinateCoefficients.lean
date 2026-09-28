@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSmoothLimit
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialChartMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCommonInterval_coordinate_coefficients_smooth
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -48,15 +38,11 @@ theorem terminalCommonInterval_coordinate_coefficients_smooth
     exact ((h n).contDiffAt_pullbackCoefficients
       (T.contMDiffOn_toFun.contMDiffAt (T.open_source.mem_nhds hx))).contDiffWithinAt
 
-
-
 theorem terminalCommonInterval_coordinate_coefficients_symmetric
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     (g : RiemannianMetric 3 M) (f : E → M) (x v w : E) :
     g.pullbackCoefficients f x v w = g.pullbackCoefficients f x w v := by
   exact g.symm _ _ _
-
-
 
 theorem terminalCommonInterval_coordinate_limit_coefficients
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

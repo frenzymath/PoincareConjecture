@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M02.SmallHomologyMapMono
 import PoincareConjecture.Proofs.M02.SmallHomologyMapEpi
 
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -16,8 +12,6 @@ namespace PoincareConjecture.Proofs.M02
 noncomputable section
 
 variable {X : Type u} [TopologicalSpace X] {I : Type v}
-
-
 
 theorem integral_small_inclusion_homologyMap_isIso_succ
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

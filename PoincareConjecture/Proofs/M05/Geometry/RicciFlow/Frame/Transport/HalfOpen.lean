@@ -1,15 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -26,7 +16,6 @@ private lemma exists_bound {A : ℝ → V →L[ℝ] V} {a b : ℝ}
     ∃ K : ℝ≥0, ∀ t ∈ Icc a b, ‖A t‖₊ ≤ K := by
   obtain ⟨K, hK⟩ := isCompact_Icc.bddAbove_image hA.nnnorm
   exact ⟨K, fun t ht => hK (mem_image_of_mem _ ht)⟩
-
 
 def compactTransport (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
     (hA : ContinuousOn A (Icc a b)) : ℝ → V →L[ℝ] V :=
@@ -54,7 +43,6 @@ theorem compactTransport_eqOn_of_le
   intro t ht
   exact (compactTransport_hasDerivWithinAt A (hab.trans hbc) hA'
     ⟨ht.1, ht.2.trans hbc⟩).mono (Icc_subset_Icc le_rfl hbc)
-
 
 def transportIco (A : ℝ → V →L[ℝ] V) (a b : ℝ)
     (hA : ContinuousOn A (Ico a b)) (t : ℝ) : V →L[ℝ] V :=
@@ -112,7 +100,6 @@ theorem transportIco_bijective
   simp only [transportIco, dif_pos ht, compactTransport]
   exact transportCurveOn_bijective A ht.1 _ _ ⟨ht.1, le_rfl⟩
 
-
 theorem transportIco_contDiffOn
     (A : ℝ → V →L[ℝ] V) {a b : ℝ}
     (hA : ContDiffOn ℝ ∞ A (Ico a b)) :
@@ -137,7 +124,6 @@ theorem transportIco_contDiffOn
       WithTop.coe_le_coe.mpr le_top)).clm_comp ih |>.congr ?_
     intro t ht
     exact heq ht
-
 
 theorem transportIco_pairing
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a < b)

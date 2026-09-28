@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarAngularCuts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,20 +13,12 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Cover" => ℝ × ℝ
 local notation "Band" => Set.prod (Ioo (1 : ℝ) 2) (Ioo (0 : ℝ) 1)
 
-
-
-
-
 theorem scalar_fractional_mem_band {z : Cover} (hz : z ∈ scalarCoverStrip)
     (hcut : z ∉ scalarAngularCuts) : z - (0, (⌊z.2⌋ : ℝ)) ∈ Band := by
   have hne : z.2 ≠ (⌊z.2⌋ : ℝ) := by
     intro heq
     exact hcut (mem_iUnion.mpr ⟨⌊z.2⌋, hz, heq⟩)
   exact ⟨by simpa [scalarCoverStrip] using hz, Int.fract_pos.mpr hne, Int.fract_lt_one _⟩
-
-
-
-
 
 theorem scalar_injOn_off_cuts_of_fundamental_image {f : Cover → Cover}
     (hdeck : ∀ z ∈ scalarCoverStrip, ∀ n : ℤ,
@@ -66,10 +46,6 @@ theorem scalar_injOn_off_cuts_of_fundamental_image {f : Cover → Cover}
   have huveq : x - (0, (m : ℝ)) = y - (0, (m : ℝ)) := by
     simpa only [u, v, hnm] using huv
   exact sub_left_injective huveq
-
-
-
-
 
 theorem scalar_injOn_strip_of_fundamental_image {f : Cover → Cover}
     (ho : ∀ z ∈ scalarCoverStrip, 𝓝 (f z) ≤ map f (𝓝 z))

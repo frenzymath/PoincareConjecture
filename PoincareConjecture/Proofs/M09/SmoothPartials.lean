@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.MixedPartials
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

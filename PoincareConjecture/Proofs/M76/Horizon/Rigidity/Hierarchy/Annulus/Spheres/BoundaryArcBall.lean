@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Geometry.BoundaryArcBall
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.ClosedComponent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

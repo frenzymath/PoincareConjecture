@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.OpenDomain
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateTime
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
 open Filter
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_of_scalar_coordinate_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -60,8 +47,6 @@ theorem exists_of_scalar_coordinate_jets
     nontrivial := (Fseq 0).nontrivial
     smooth := hg
     equation := equation_of_coordinate_jets Fseq g D hJ hg hspace htime' }, rfl⟩
-
-
 
 theorem exists_of_coordinate_jets_on_open
     {n : ℕ} (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))

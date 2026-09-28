@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingGradientEnergy
 import PoincareConjecture.Proofs.M04.ShiBernsteinEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem killingCovector_normSq {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -40,8 +29,6 @@ theorem killingCovector_normSq {n : ℕ}
   change (∑ j, g.inner x (X x) (b j) * g.inner x (b j) (X x)) =
     g.inner x (X x) (X x) at hp
   simpa only [g.symm x (b _) (X x), pow_two] using hp
-
-
 
 theorem vector_heat_gradient_cross_le {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -81,9 +68,6 @@ theorem vector_heat_gradient_cross_le {n : ℕ}
   have hrhs : 0 ≤ Q x ^ 2 + 16 * q x * H := by positivity
   nlinarith only [hbound, hrhs, sq_nonneg (Q x ^ 2 - 16 * q x * H),
     sq_nonneg (Q x ^ 2 + 16 * q x * H + 2 * p)]
-
-
-
 
 theorem vector_heat_product_reaction_of_eventually_heat
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

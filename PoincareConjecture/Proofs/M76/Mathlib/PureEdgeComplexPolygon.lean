@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GeometricCyclePolygons
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_polygon_of_pure_edges
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

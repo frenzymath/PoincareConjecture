@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 import PoincareConjecture.Proofs.M62.Cor0_3_Regularization
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,9 +16,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
-
-
-
 
 theorem m63ArcCutoff_regularization_error (hc : M62ShrinkingCurve F c)
     {alpha beta : ℝ} (hab : alpha ≤ beta) (x0 r : ℝ)
@@ -87,9 +74,6 @@ theorem m63ArcCutoff_regularization_error (hc : M62ShrinkingCurve F c)
             simpa only [one_mul] using
               mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_right hp1 hε) hv0
       _ = _ := intervalIntegral.integral_const_mul _ _
-
-
-
 
 theorem m63ArcCutoff_regularizedIntegral_tendstoUniformlyOn
     (hc : M62ShrinkingCurve F c) {alpha beta : ℝ} (hab : alpha ≤ beta) (x0 r : ℝ)

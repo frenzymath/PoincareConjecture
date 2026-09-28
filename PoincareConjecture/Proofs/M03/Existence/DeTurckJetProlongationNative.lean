@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckEndpointCalculusNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckJetCoordinatesNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -68,7 +60,6 @@ theorem contDiff_prolongedSource {k : ℕ} {R : (P × Jet k) → Z}
   induction w with
   | nil => exact hR
   | cons i w ih => exact contDiff_sourceStep ih i
-
 
 def wordDerivative : List (Fin d) → (P → Z) → P → Z
   | [], f => f
@@ -159,7 +150,6 @@ theorem sourceStep_eq_derivative {k : ℕ} (R : (P × Jet k) → Z)
   congr 2
   funext w
   exact (hshift (List.ofFn w.2) i).symm
-
 
 theorem prolongedSource_eq_wordDerivative {k : ℕ} {R : (P × Jet k) → Z}
     (hR : ContDiff ℝ ∞ R) {Omega : Set P} (hOmega : IsOpen Omega)
@@ -285,8 +275,6 @@ theorem source_path_word {k : ℕ} {R : (P × Jet k) → Z} (hR : ContDiff ℝ �
       (wordDerivative_eventuallyEq hlocal w).eq_of_nhds
     _ = _ := (prolongedSource_eq_wordDerivative hR hOmega u
       (fun a q hq => (hdu a q hq).differentiableAt) hshift w hp).symm
-
-
 
 theorem joint_smooth_of_integral_finite_jet {k : ℕ} {R : (P × Jet k) → Z}
     (hR : ContDiff ℝ ∞ R) (hTpos : 0 < T)

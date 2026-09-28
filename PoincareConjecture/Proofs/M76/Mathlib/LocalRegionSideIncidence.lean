@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +7,6 @@ open Set
 namespace IsClosed
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
-
 
 theorem local_complementary_sides {D U L R : Set X} (hD : IsClosed D)
     (hreg : closure (interior D) = D) {p : X} (hp : p ∈ frontier D)
@@ -63,11 +47,6 @@ theorem local_complementary_sides {D U L R : Set X} (hD : IsClosed D)
     have hyL : y ∈ L := hyLR.resolve_right
       (fun hyR => hyO (interior_subset (hRI hyR)))
     exact Or.inr ⟨hRI, hside_out hL (subset_union_left.trans hLR) ⟨y, hyL, hyO⟩⟩
-
-
-
-
-
 
 theorem inter_union_closure_eq_of_sides {D L R : Set X} (hD : IsClosed D)
     (hL : L ⊆ interior D) (hR : R ⊆ Dᶜ)

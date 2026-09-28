@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Pointed
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.SuppliedRebase
 
-
-
-
-
-
-
-
 noncomputable section
 open Set Filter Topology
 open Poincare.GromovHausdorff
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_openFiber_lifts_rebased_limit_of_expanding_realizations
     {m k : ℕ} {M : ℕ → Type}

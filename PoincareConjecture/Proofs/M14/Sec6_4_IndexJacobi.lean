@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexGreen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
-
 noncomputable def jacobiFieldDataOfExtension
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
     {Y : ∀ s, G.Horizontal (R.curve s)}
@@ -35,8 +23,6 @@ noncomputable def jacobiFieldDataOfExtension
   extension := E
   derivative_extension :=
     Classical.choice (exists_horizontalCovariantDerivative_extension R hCoordinates E)
-
-
 
 theorem index_zero_of_variationJacobiCondition
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

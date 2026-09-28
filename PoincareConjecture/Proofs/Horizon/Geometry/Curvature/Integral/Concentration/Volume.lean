@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem modelVolume_mono_radius (n : ℕ) {κ r R : ℝ}
     (hκ : 0 ≤ κ) (hr : 0 ≤ r) (hrR : r ≤ R) :
@@ -34,8 +24,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
-
 
 theorem volumeMeasure_real_ball_le_modelVolume_of_ricci_lower_bound
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n)
@@ -63,8 +51,6 @@ theorem volumeMeasure_real_ball_le_modelVolume_of_ricci_lower_bound
     ENNReal.ofReal_ne_top, one_mul] at hvol
   simpa only [Measure.real, ENNReal.toReal_ofReal hpos.le] using
     ENNReal.toReal_mono ENNReal.ofReal_ne_top hvol
-
-
 
 theorem volumeMeasure_real_ball_le_modelVolume_of_sectional_lower_bound
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n)

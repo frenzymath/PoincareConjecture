@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseReadout
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelScalar
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem neck_pullback_scalar_difference_le {g0 : RiemannianMetric 3 M}
     (N : EpsilonNeck g0) (hsmall : N.epsilon ≤ 1 / 200)

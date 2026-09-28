@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsVelocityBound
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTailFloor
 import PoincareConjecture.Proofs.M35.RadialGauge.FullForcingPolynomialBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -53,8 +44,6 @@ private theorem exterior_target_jets (j N : ℕ) :
   rw [← heq.iteratedDeriv_eq j]
   exact hCb t ht r hr
 
-
-
 theorem raw_intrinsic_forcing_weighted_value :
     ∃ C : ℝ, 0 < C ∧ ∀ t ∈ Icc 0 T, ∀ t₀ ∈ Icc 0 T, ∀ r ≥ 1,
       (1 + r) * |radialGaugeForcing (rawWarpingRadius P G hrotation t)
@@ -73,9 +62,6 @@ theorem raw_intrinsic_forcing_weighted_value :
   rw [← rawWarpingRadius_eq P G hrotation htG] at hcontrols
   exact radialGaugeForcing_weighted_value_bound hr hc (hfloor t ht r hr)
     hcontrols.2.2.1 hcontrols.2.2.2.2.2 (hVb t ht r (zero_le_one.trans hr)) (hCb t₀ ht₀ r hr)
-
-
-
 
 theorem raw_intrinsic_forcing_weighted_radial_derivative {eta : ℝ} :
     ∃ C : ℝ, 0 < C ∧ ∀ t ∈ Icc 0 T, ∀ t₀ ∈ Icc 0 T, ∀ r sigma,

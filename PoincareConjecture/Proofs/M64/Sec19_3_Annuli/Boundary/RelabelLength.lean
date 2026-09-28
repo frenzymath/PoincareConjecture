@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicChangeOfVariables
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff intervalIntegral
@@ -26,11 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
   {t : ℝ} {sigma : ℝ → ℝ}
-
-
-
-
-
 
 theorem integral_density_comp_monotone
     (hc : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => c y t))
@@ -53,11 +36,6 @@ theorem integral_density_comp_monotone
       (fun x _hx => (hsigma.differentiable (by norm_num) x).hasDerivAt)
       hsigma.continuous_deriv_one.continuousOn hA
 
-
-
-
-
-
 theorem arcLength_comp_monotone
     (hc : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => c y t))
     (hv : Continuous (curveSpeed F c t))
@@ -68,11 +46,6 @@ theorem arcLength_comp_monotone
   simpa only [m63ArcLength, one_mul] using
     integral_density_comp_monotone F c hc hsigma hmono
       (fun _ => 1) (by simpa only [one_mul] using hv) alpha beta
-
-
-
-
-
 
 theorem periodic_density_comp_lift
     (hc : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => c y t))
@@ -86,10 +59,6 @@ theorem periodic_density_comp_lift
   rw [integral_density_comp_monotone F c hc hsigma sigma.monotone A hA,
     sigma.period_shift]
   simpa only [zero_add] using hper.intervalIntegral_add_eq (sigma.map q) 0
-
-
-
-
 
 theorem length_comp_lift
     (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 (fun y => c y t))

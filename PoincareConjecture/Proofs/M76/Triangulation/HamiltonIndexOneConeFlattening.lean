@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardPrism
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexConeIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -69,10 +59,6 @@ private theorem upper_lower_outer_inter :
     rw [ht]
     exact ⟨Or.inl ⟨hx, le_rfl, zero_le_one⟩,
       Or.inl ⟨hx, by norm_num, le_rfl⟩⟩
-
-
-
-
 
 theorem exists_equator_frontier_map {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -135,9 +121,6 @@ private theorem convexJoin_equator :
     apply Prod.ext
     · exact hxy
     · simpa only [Prod.smul_snd, smul_zero] using ht
-
-
-
 
 theorem exists_conical_surface_chart {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

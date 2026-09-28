@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusBoundaryR
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseBoundaryReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -38,10 +25,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "I" => Icc (0 : ℝ) curvePeriod
-
-
-
-
 
 theorem local_energy_le_of_boundary_flux
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

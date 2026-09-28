@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.DeTurckEllipticity
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.DeTurckMaximum
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M35.Uniqueness
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem tensor_eq_zero_of_principal_equation {r : ℕ} {T C B : ℝ}
     (hT : 0 < T) (hC : 0 ≤ C) (hB : 0 ≤ B) (D : LeviCivitaData g)

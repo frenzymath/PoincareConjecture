@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ClosedStripDifferential
 import PoincareConjecture.Proofs.M64.Mathlib.LogScaledAffineDerivative
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,10 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
 
-
-
-
-
 theorem annulus_strip_gram_pos (A : M64Annulus g c0 c1)
     (hAc : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S)
     (hinj : ∀ p ∈ m64AnnulusDomain,
@@ -42,10 +32,6 @@ theorem annulus_strip_gram_pos (A : M64Annulus g c0 c1)
     have hb := hd (hz.trans (map_zero _).symm)
     exact (EuclideanSpace.basisFun (Fin 2) ℝ).toBasis.ne_zero 0 hb
   exact g.pos (A.map p) _ hne
-
-
-
-
 
 theorem annulus_strip_energy_eq (A : M64Annulus g c0 c1) (r : ℝ)
     (hAc : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S)
@@ -64,9 +50,6 @@ theorem annulus_strip_energy_eq (A : M64Annulus g c0 c1) (r : ℝ)
   unfold m64ModulusEnergyDensity
   rw [← hc]
   ring
-
-
-
 
 theorem annulus_strip_log_energy (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)
     (hAc : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S)

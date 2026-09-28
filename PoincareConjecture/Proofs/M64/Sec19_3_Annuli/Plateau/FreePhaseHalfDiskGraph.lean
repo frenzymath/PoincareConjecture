@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseLocalizedGr
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusLowerDiskCutoff
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusInwardApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -34,10 +22,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem lower_halfDisk_phase_graph_approximation
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

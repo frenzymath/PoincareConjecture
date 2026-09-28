@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M32.Neck.Spatial
 import PoincareConjecture.Proofs.M32.Mathlib.ComponentFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.NoReturn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 private theorem neck_exists_component_avoiding_set
     {M : Type u} [TopologicalSpace M]
@@ -95,10 +83,6 @@ private theorem neck_exists_component_avoiding_set
     by_contra hpP
     exact hnot ⟨not_disjoint_iff_nonempty_inter.mp hmP,
       not_disjoint_iff_nonempty_inter.mp hpP⟩
-
-
-
-
 
 theorem hornEndCut_exists_of_separating_neck_avoiding_prefix
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta : ℝ}

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Nonround
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -66,8 +55,6 @@ theorem uniform_core_scalar_bounds_of_services
       exact hupper K x hnonround p hp
   have hdivide := (div_lt_iff₀ hCpos).mpr (by simpa only [mul_comm] using hreverse)
   simpa only [div_eq_mul_inv, mul_comm] using hdivide
-
-
 
 theorem uniform_core_scalar_bounds
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {D : ℝ} (hD : 0 < D) :

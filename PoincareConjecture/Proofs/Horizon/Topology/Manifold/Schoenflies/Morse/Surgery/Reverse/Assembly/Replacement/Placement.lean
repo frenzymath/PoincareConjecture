@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Chart.CommonDisk
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Marking
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem lens_filled_placement_of_clearance
     {v : E3} (A : Diffeomorph 𝓘(Real, Hemisphere.Plane v) 𝓘(Real, Hemisphere.Plane v)
@@ -58,8 +53,6 @@ theorem lens_filled_placement_of_clearance
     rw [hxz] at hx
     exact (ne_of_lt (mem_ball_zero_iff.mp hx)) (mem_sphere_zero_iff_norm.mp hz)
 
-
-
 theorem filled_ball_subset_of_shared_exterior
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (m n : E2 → S2) {x : E2} (hx : x ∈ ball 0 1)
@@ -81,8 +74,6 @@ theorem filled_ball_subset_of_shared_exterior
   have hyB : y ∈ B '' closedBall (0 : E3) 1 :=
     (hside.symm ▸ (show y ∈ W ∩ (L '' ball (0 : E3) 1)ᶜ from ⟨hyW, hCL hyC⟩)).2
   exact False.elim (hCB hyC hyB)
-
-
 
 theorem filled_ball_subset_of_shared_exterior_at_cap
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

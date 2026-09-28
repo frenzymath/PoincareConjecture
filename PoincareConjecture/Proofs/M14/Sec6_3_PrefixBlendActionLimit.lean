@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixBlendDensity
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixBlendEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
   {q : M14BackwardPath G T τ₁ τ₂ x y}
   {p : M14BackwardPath G T τ₁ c x (q.curve c)} (D : PrefixJoinGauge q p)
-
-
 
 theorem tendsto_blend_action_zero (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     Tendsto (fun d => ∫ s in (c - 2 * d)..(c - d),

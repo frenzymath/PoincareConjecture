@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +18,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem rescaledMetric_gradient_const_mul (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (c : ℝ) (hc : 0 < c) (f : M → ℝ) (x : M) :
     (rescaledMetric_connection g D c hc).gradient (fun y => c * f y) x =
@@ -38,8 +26,6 @@ theorem rescaledMetric_gradient_const_mul (g : RiemannianMetric n M)
   ext v
   rw [(rescaledMetric_connection g D c hc).inner_gradient, mvfderiv_const_mul,
     rescaledMetric_inner, D.inner_gradient]
-
-
 
 theorem rescaledMetric_hessian (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (c : ℝ) (hc : 0 < c) (f : M → ℝ) (x : M)
@@ -51,8 +37,6 @@ end PoincareConjecture
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} (hcomparison : RayComparison p)
-
-
 
 def asymptoticConeDilationHomeomorph (c : ℝ≥0) (hc : 0 < c) :
     AsymptoticCone p hcomparison ≃ₜ AsymptoticCone p hcomparison where
@@ -73,8 +57,6 @@ def asymptoticConeDilationHomeomorph (c : ℝ≥0) (hc : 0 < c) :
 namespace UnitSliceRadialChartData
 
 variable {hcomparison} {n : ℕ}
-
-
 
 def dilate (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c) :
     UnitSliceRadialChartData hcomparison n where
@@ -142,8 +124,6 @@ theorem dilate_gradient (d : UnitSliceRadialChartData hcomparison n)
       d.connection.gradient d.potential x :=
   rescaledMetric_gradient_const_mul d.metric d.connection _ _ d.potential x
 
-
-
 theorem smooth_isometric_dilate_transition
     (d e : UnitSliceRadialChartData hcomparison n)
     (c b : ℝ≥0) (hc : 0 < c) (hb : 0 < b) :
@@ -159,8 +139,6 @@ theorem smooth_isometric_dilate_transition
     ((d.dilate c hc).metric.edist_eq_on_isometric_chart_transition (e.dilate b hb).metric
       (d.dilate c hc).ambientChart (e.dilate b hb).ambientChart
       (d.dilate c hc).distance (e.dilate b hb).distance)
-
-
 
 theorem smooth_homothety_in_radial_charts
     (d e : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c) :
@@ -188,8 +166,6 @@ theorem potential_homothety_in_radial_charts
   exact (d.dilate c hc).radial x hx.1
 
 end UnitSliceRadialChartData
-
-
 
 theorem exists_dilated_radial_model_at_positive_point {n : ℕ}
     (hcover : ∀ z : AsymptoticConeUnitSlice p hcomparison,

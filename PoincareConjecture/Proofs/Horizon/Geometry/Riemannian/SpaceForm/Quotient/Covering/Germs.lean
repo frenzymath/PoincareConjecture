@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Continuat
 import PoincareConjecture.Proofs.Horizon.Topology.Sheaves.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +14,6 @@ namespace Poincare.Geometry.Riemannian.SpaceForm
 
 variable {n : ℕ} {M : Type} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [Nonempty M]
-
 
 theorem locally_bijective_inverse_round_isometry_germ
     (g : RiemannianMetric n M)
@@ -61,8 +59,6 @@ theorem locally_bijective_inverse_round_isometry_germ
       filter_upwards [U.isOpen.mem_nhds hy] with z hz
       exact sectionExtension_apply U t.val hz
     exact ht.trans hfk
-
-
 
 theorem exists_global_inverse_round_local_isometry
     {M : Type} [TopologicalSpace M] [T2Space M] [CompactSpace M]

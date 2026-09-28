@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Cyclic.CyclicDistance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Reduction.VertexReplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem cyclicDistance_rotate_self {N : ℕ} (hN : 2 ≤ N) (k : Fin N) :
     cyclicDistance (finRotate N k) k = N - 1 := by
@@ -34,8 +21,6 @@ theorem cyclicDistance_rotate_self {N : ℕ} (hN : 2 ≤ N) (k : Fin N) :
 
 variable {n : ℕ}
 
-
-
 theorem cyclicArcIndex_delete_last (k : Fin (n + 4)) :
     cyclicArcIndex (finRotate (n + 4) k) (n + 2) (Fin.last (n + 2)) =
       (finRotate (n + 4)).symm k := by
@@ -48,8 +33,6 @@ theorem cyclicArcIndex_delete_last (k : Fin (n + 4)) :
   apply (finRotate (n + 4)).injective
   rw [Equiv.apply_symm_apply]
   simpa only [Function.iterate_succ_apply'] using hreach
-
-
 
 theorem cyclicArcIndex_delete_range (k : Fin (n + 4)) :
     range (cyclicArcIndex (finRotate (n + 4) k) (n + 2)) = ({k} : Set (Fin (n + 4)))ᶜ := by
@@ -69,8 +52,6 @@ theorem cyclicArcIndex_delete_range (k : Fin (n + 4)) :
         cyclicDistance (finRotate (n + 4) k) k := by omega
     have h := congrArg (fun m => (finRotate (n + 4))^[m] (finRotate (n + 4) k)) heq
     exact hi (by simpa only [iterate_cyclicDistance] using h)
-
-
 
 theorem cyclicArcEdgeIndex_delete_range (k : Fin (n + 4)) :
     range (fun j : Fin (n + 2) =>
@@ -108,14 +89,10 @@ theorem cyclicArcEdgeIndex_delete_range (k : Fin (n + 4)) :
     · exact hi.2 (hinj (heq.trans hpred.symm))
     · exact hi.1 (hinj (heq.trans hd.symm))
 
-
-
 def polygonDeleteVertex {E : Type*} (p : Polygon E (n + 4)) (k : Fin (n + 4)) :
     Polygon E (n + 3) := polygonArc p (finRotate (n + 4) k) (n + 2)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem polygonDeleteVertex_boundary (p : Polygon E (n + 4)) (k : Fin (n + 4))
     (hstraight : p k ∈ segment ℝ (p ((finRotate (n + 4)).symm k)) (p (finRotate (n + 4) k))) :
@@ -150,8 +127,6 @@ theorem polygonDeleteVertex_boundary (p : Polygon E (n + 4)) (k : Fin (n + 4))
         obtain ⟨j, hj⟩ := hr
         change cyclicArcIndex (finRotate (n + 4) k) (n + 2) j.castSucc = i at hj
         exact Or.inl (mem_iUnion.mpr ⟨j, hj.symm ▸ hi⟩)
-
-
 
 theorem IsSimplePolygon.isSimple_polygonDeleteVertex {p : Polygon E (n + 4)}
     (hp : IsSimplePolygon p) (k : Fin (n + 4))

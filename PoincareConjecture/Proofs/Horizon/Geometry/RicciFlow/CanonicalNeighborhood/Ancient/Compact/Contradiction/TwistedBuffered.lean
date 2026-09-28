@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.Twisted
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.TwistedBuffered.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] {K : AncientKappaSolution 3 M}
-
-
 
 noncomputable def bufferedUniformSlabCap
     (C : M27TwistedSphereLineFlowCertificate K) (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -139,8 +127,6 @@ noncomputable def bufferedUniformSlabCap
     rw [C.scalarGradientNorm_eq_zero ht x, zero_mul]
   · exact ⟨2, by linarith [hD.1], fun x _ => C.scalarEvolution_bound P ht x⟩
 
-
-
 theorem exists_buffered_cap_core_or_strong_neck
     (C : M27TwistedSphereLineFlowCertificate K) (P : M26CanonicalNeighborhoodPredecessors.{u})
     {t epsilon : ℝ} (ht : t ≤ 0) (hε : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200) :
@@ -167,8 +153,6 @@ theorem exists_buffered_cap_core_or_strong_neck
 end PoincareConjecture.M27TwistedSphereLineFlowCertificate
 
 namespace PoincareConjecture.CompactKappa
-
-
 
 theorem uniform_twisted_caps_with_fine_strong_exterior
     (P : M26CanonicalNeighborhoodPredecessors.{u})

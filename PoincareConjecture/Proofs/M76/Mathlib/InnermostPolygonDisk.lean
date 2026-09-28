@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.DisjointPolygonNesting
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 import Mathlib.Order.WellFoundedSet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
-
 
 theorem exists_innermost_closed_inside {ι : Type*} [Finite ι] [Nonempty ι]
     (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))
@@ -44,9 +32,6 @@ theorem exists_innermost_closed_inside {ι : Type*} [Finite ι] [Nonempty ι]
     intro x hx hxj
     rw [(P i).closure_inside (hP i) (hinj i)] at hx
     exact hx (houtside hxj)
-
-
-
 
 theorem exists_innermost_finitePL_disk {ι : Type*} [Finite ι] [Nonempty ι]
     (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))

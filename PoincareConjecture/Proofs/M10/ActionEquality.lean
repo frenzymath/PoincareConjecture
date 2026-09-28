@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.GramEquality
 import PoincareConjecture.Proofs.M10.GaussianNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem exponentialSliceJacobian_eq_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -46,7 +37,6 @@ theorem exponentialSliceJacobian_eq_of_volume_eq
   change Real.sqrt (Matrix.det _) = _
   rw [hmatrix]
   exact sqrt_det_four_mul_identity n hτ.le
-
 
 theorem normalized_action_eq_norm_sq_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

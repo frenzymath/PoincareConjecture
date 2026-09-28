@@ -4,16 +4,6 @@ import Mathlib.Data.Int.Init
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} {epsilon : ℝ}
-
-
-
 
 theorem exists_ordered_saturated_heights
     (C : BalancedNeckChain g epsilon)

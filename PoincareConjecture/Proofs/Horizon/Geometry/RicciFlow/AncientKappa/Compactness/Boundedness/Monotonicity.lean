@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Inheritance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Scalar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +23,6 @@ variable {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
 
 include hT htime
 
-
-
 theorem tendsto_scalarCurvature_on_finite_windows
     (t : ℝ) (ht : t < T) (x : G.limitCarrier.carrier) :
     Tendsto (fun k => ((F (G.subsequence k)).connection t).scalarCurvature
@@ -48,8 +35,6 @@ theorem tendsto_scalarCurvature_on_finite_windows
   let W := G.window F (ha.trans hb) hbT.le N hN
   apply (tendsto_add_atTop_iff_nat N).mp
   exact W.tendsto_scalarCurvature t (htw (mem_singleton t)) x
-
-
 
 theorem tendsto_curvatureTensorNorm_on_finite_windows
     (t : ℝ) (ht : t < T) (x : G.limitCarrier.carrier) :
@@ -76,7 +61,6 @@ local instance monotonicitySourceConnected (k : ℕ) :
 variable (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
   (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
 theorem interiorLimit_tendsto_scalarCurvature
     (t : ℝ) (ht : t < 1) (x : G.limitCarrier.carrier) :
     Tendsto (fun k => ((S.term (G.subsequence k)).flow.flow.connection (t - 1)).scalarCurvature
@@ -89,7 +73,6 @@ theorem interiorLimit_tendsto_scalarCurvature
   exact Eventually.of_forall fun k s hs => by
     change s - 1 ≤ 0
     linarith [hs.2]
-
 
 theorem interiorLimit_tendsto_curvatureTensorNorm
     (t : ℝ) (ht : t < 1) (x : G.limitCarrier.carrier) :
@@ -104,8 +87,6 @@ theorem interiorLimit_tendsto_curvatureTensorNorm
     change s - 1 ≤ 0
     linarith [hs.2]
 
-
-
 theorem interiorLimit_scalar_monotone
     (P : M23NormalizedKappaCompactnessPredecessors)
     {s t : ℝ} (hst : s ≤ t) (ht : t < 1) (x : G.limitCarrier.carrier) :
@@ -117,8 +98,6 @@ theorem interiorLimit_scalar_monotone
   exact Eventually.of_forall fun k => P.scalar_monotone
     (S.term (G.subsequence k)).carrier.carrier (S.term (G.subsequence k)).flow
     (s - 1) (t - 1) (by linarith) (by linarith) (G.embedding k x)
-
-
 
 theorem interiorLimit_past_norm_le_scalar
     (P : M23NormalizedKappaCompactnessPredecessors)

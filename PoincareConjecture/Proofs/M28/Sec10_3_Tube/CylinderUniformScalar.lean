@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetReadout
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapRatio
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.M28.tube
 
 open PoincareConjecture.SpacetimeBounds
-
-
 
 theorem neck_normalized_scalar_center
     {M : Type u} [TopologicalSpace M]
@@ -71,8 +59,6 @@ private theorem exists_cylinder_scalar_model_accuracy {delta : ℝ} (hdelta : 0 
     N.coordinate_map_coordinate_inverse hx] at h
   exact h
 
-
-
 theorem exists_cylinder_scalar_accuracy {delta : ℝ} (hdelta : 0 < delta) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
       ∀ (M : Type u) [TopologicalSpace M]
@@ -95,8 +81,6 @@ theorem exists_cylinder_scalar_accuracy {delta : ℝ} (hdelta : 0 < delta) :
     _ < delta / 2 + delta / 2 :=
       add_lt_add (hclose M g D N hepsilon x hx) (by simpa only [abs_sub_comm] using hc)
     _ = delta := by ring
-
-
 
 theorem exists_cylinder_scalar_ratio_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

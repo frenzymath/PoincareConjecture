@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.C1HomotopyLifting
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalPostcomposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +14,6 @@ open Proofs.M02 Proofs.M59
 
 variable {M : Type u} [MetricSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59_continuous_loop_cube_has_c1_representative
     (hcompact : IsCompact (univ : Set M)) (n : Nat) (x : M)
@@ -71,8 +61,6 @@ theorem m59_continuous_loop_cube_has_c1_representative
     rw [hGb v hv, GenLoop.boundary F v hv]
     exact hfix t x
 
-
-
 theorem m59_loopValues_homotopyGroupMap_injective
     (hcompact : IsCompact (univ : Set M)) (n : Nat) (x : M) :
     Function.Injective (homotopyGroupMap (Fin n) Proofs.M58.loopValues
@@ -93,8 +81,6 @@ theorem m59_loopValues_homotopyGroupMap_injective
       (congrArg (fun f : C(LoopCircle, M) => f z) (H.eq_fst t hv)).trans
         (congrArg (fun gamma : C1FreeLoopSpace (M := M) => gamma z) (GenLoop.boundary F v hv)))
 
-
-
 theorem m59_loopValues_homotopyGroupMap_surjective
     (hcompact : IsCompact (univ : Set M)) (n : Nat) (x : M) :
     Function.Surjective (homotopyGroupMap (Fin n) Proofs.M58.loopValues
@@ -104,8 +90,6 @@ theorem m59_loopValues_homotopyGroupMap_surjective
   intro F
   obtain ⟨G, h⟩ := m59_continuous_loop_cube_has_c1_representative hcompact n x F
   exact ⟨⟦G⟧, Quotient.sound h.symm⟩
-
-
 
 noncomputable def m59C1ValueEquiv
     (hcompact : IsCompact (univ : Set M)) (n : Nat) [Nonempty (Fin n)] (x : M) :

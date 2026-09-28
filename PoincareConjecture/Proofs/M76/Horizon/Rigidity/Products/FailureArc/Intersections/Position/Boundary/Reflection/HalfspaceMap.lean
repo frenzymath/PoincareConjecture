@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import Mathlib.Tactic.Linarith
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

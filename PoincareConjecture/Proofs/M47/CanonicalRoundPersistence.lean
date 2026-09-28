@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalMetricFamilyPullback
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {J : Set ℝ} {epsilon : ℝ}
-
-
 
 theorem continuousOn_round_metricJetError (F : RicciFlow 3 M J) (t : J)
     (N : SingularRoundComponent (F.metric t.val) epsilon) :
@@ -53,8 +43,6 @@ theorem continuousOn_round_metricJetError (F : RicciFlow 3 M J) (t : J)
     exact hflow.sub hmodel
   exact continuousOn_fixed_tensorJetEnergy N.model_metric N.model_connection T hT hTime
     ⌊epsilon⁻¹⌋₊
-
-
 
 theorem eventually_same_round_component (F : RicciFlow 3 M J) (t : J)
     (N : SingularRoundComponent (F.metric t.val) epsilon) :

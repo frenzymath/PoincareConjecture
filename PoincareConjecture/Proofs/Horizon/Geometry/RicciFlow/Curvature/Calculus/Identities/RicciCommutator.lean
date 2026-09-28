@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.I
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Reaction
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

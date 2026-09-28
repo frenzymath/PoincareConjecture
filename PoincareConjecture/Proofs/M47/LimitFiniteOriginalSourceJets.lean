@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteAnchorJets
 import PoincareConjecture.Proofs.M47.LimitFiniteChartMixed
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +33,6 @@ private local instance finiteOriginalSourceCharts :
     ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance finiteOriginalSourceManifold :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_exists_original_source_jets (P : M47Predecessors.{u})
     {d K : ℝ} (hd : 0 < d) (hK : 0 < K)

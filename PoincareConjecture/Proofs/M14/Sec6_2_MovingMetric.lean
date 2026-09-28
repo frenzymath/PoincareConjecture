@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackMetric
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y Z : ∀ s, G.Horizontal (γ s)}
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem pullbackExtensions_metric_pair_contMDiffAt
     (E : M14PullbackExtension G γ J Y) (F : M14PullbackExtension G γ J Z)
@@ -60,8 +50,6 @@ theorem pullbackExtensions_metric_pair_contMDiffAt
 set_option maxHeartbeats 1000000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem horizontalCovariantDerivative_metric_product
     (E : M14PullbackExtension G γ J Y) (F : M14PullbackExtension G γ J Z)
@@ -131,8 +119,6 @@ variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ
 
 set_option backward.isDefEq.respectTransparency false in
 
-
-
 theorem squareRoot_velocity_clock (R : M14SquareRootPath G p)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) G.spacetime.timeFunction (R.curve s)
@@ -148,9 +134,6 @@ theorem squareRoot_velocity_clock (R : M14SquareRootPath G p)
     (M14SqrtParameterInterval τ₁ τ₂) s (1 : ℝ)) = _
   rw [R.derivative_eq s hs, map_add, map_smul, htime, hhorizontal,
     smul_eq_mul, mul_one, add_zero]
-
-
-
 
 theorem squareRoot_covariantDerivative_metric_product (R : M14SquareRootPath G p)
     {Y Z : ∀ s, G.Horizontal (R.curve s)}

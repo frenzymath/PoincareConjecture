@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.TubeNeckConfinement
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ConfinementMinimizers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ open M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
 
 theorem exists_chain_neck_minimizer (T : EpsilonTubeCertificate g X)
     (i j : ℤ) (hi : i ∈ T.chain.shape.active) (hj : j ∈ T.chain.shape.active)

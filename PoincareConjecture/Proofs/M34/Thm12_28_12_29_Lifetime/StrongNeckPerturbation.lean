@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderGram_chart_center_inv_le_one {u : ℝ} (hu : u ≤ 0)
     (q : UnitTwoSphere) (s : ℝ) (a b : Fin 3) :
@@ -36,8 +24,6 @@ theorem roundCylinderGram_chart_center_inv_le_one {u : ℝ} (hu : u ≤ 0)
     · exact (abs_of_pos (inv_pos.mpr hpos)).trans_le hinv
     · norm_num
   · norm_num
-
-
 
 theorem roundCylinderJetErrorSquared_le_of_component_difference
     {u : ℝ} (hu : u ≤ 0) (B D : RoundCylinderTwoTensor) (m : ℕ)
@@ -65,10 +51,6 @@ theorem roundCylinderJetErrorSquared_le_of_component_difference
         (chartAt E₂ z.1 z.1, z.2) a)
     (M := 1) zero_le_one (roundCylinderGram_chart_center_inv_le_one hu z.1 z.2)
     (hjet k (Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)))
-
-
-
-
 
 theorem exists_roundCylinderFamilyClose_perturbation_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :

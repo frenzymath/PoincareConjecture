@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponent
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseLinkSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
 
 def edgeComponentVertexEquiv (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     (K.edgeComponentComplex C).vertices ≃ C where
@@ -30,9 +19,6 @@ def edgeComponentVertexEquiv (C : K.vertexAbstractComplex.edgeGraph.ConnectedCom
   invFun p := ⟨p.val.val, (K.edgeComponentComplex_vertex_iff C p.val).mpr p.property⟩
   left_inv _ := rfl
   right_inv _ := rfl
-
-
-
 
 def edgeComponentGraphHom (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     C.toSimpleGraph →g (K.edgeComponentComplex C).vertexAbstractComplex.edgeGraph where
@@ -57,15 +43,11 @@ def edgeComponentGraphHom (C : K.vertexAbstractComplex.edgeGraph.ConnectedCompon
         ((K.edgeComponentComplex_vertex_iff C p.val).mpr p.property) hface
         (Finset.singleton_subset_iff.mpr (Finset.mem_insert_self _ _))
 
-
-
 theorem edgeComponentComplex_connected
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     (K.edgeComponentComplex C).vertexAbstractComplex.edgeGraph.Connected :=
   SimpleGraph.Connected.map (K.edgeComponentGraphHom C)
     (K.edgeComponentVertexEquiv C).symm.surjective C.connected_toSimpleGraph
-
-
 
 theorem edgeComponentComplex_isPathConnected
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :

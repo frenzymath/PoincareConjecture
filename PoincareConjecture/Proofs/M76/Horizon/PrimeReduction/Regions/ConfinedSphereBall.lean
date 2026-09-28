@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAlexanderConsequences
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_confined_finitePL_sphere_ball
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

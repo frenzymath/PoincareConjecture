@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualEdgeDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem isFinitePLBallPair_dualBlock_of_polygon_faceLink
     {s : Finset E} (hs : s ∈ K.faces) {n : ℕ} (P : Polygon E (n + 3))

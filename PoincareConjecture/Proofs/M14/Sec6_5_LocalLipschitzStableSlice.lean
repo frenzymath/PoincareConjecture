@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14Exponential
 import Mathlib.Topology.Constructions.SumProd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point}
-
-
-
 
 theorem exists_stable_slice_neighborhood (E : M14ExponentialFamily G T x)
     (H : M14StableSet G T τ x E) {Z : G.Horizontal x} (hZ : Z ∈ H.carrier)

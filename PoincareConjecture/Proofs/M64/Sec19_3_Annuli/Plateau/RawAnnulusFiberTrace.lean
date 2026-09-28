@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.InteriorCurveTraces
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,10 +21,6 @@ local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
 local instance : IsFiniteMeasure mu := isFiniteMeasure_restrict.mpr
   ((measure_mono interior_subset).trans_lt m64AnnulusDomain_isCompact.measure_lt_top).ne
-
-
-
-
 
 theorem interiorCurve_vertical_trace_pointwise
     {f d : LoopPlane → ℝ} {b0 b1 : ℝ → ℝ}

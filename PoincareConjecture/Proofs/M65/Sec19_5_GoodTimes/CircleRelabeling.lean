@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.PeriodicLoop
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.Relabeling
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,12 +28,8 @@ private noncomputable def complexLoopCircle : Circle ≃ₜ LoopCircle where
         change ‖Complex.orthonormalBasisOneI.repr.symm (z : LoopPlane)‖ = 1
         rw [LinearIsometryEquiv.norm_map, z.property]))
 
-
-
 noncomputable def m65AngleLoopCircle : Real.Angle ≃ₜ LoopCircle :=
   AddCircle.homeomorphCircle'.trans complexLoopCircle
-
-
 
 theorem m65AngleLoopCircle_coe (x : ℝ) :
     m65AngleLoopCircle (x : Real.Angle) =
@@ -86,14 +73,9 @@ private noncomputable def angleRelabeling (phi : ℝ ≃o ℝ)
     continuous_invFun := continuous_coinduced_dom.mpr
       ((AddCircle.continuous_mk' (2 * Real.pi)).comp phi.symm.continuous) }
 
-
-
-
 noncomputable def m65CircleRelabeling (phi : ℝ ≃o ℝ)
     (hp : ∀ x, phi (x + curvePeriod) = phi x + curvePeriod) : LoopCircle ≃ₜ LoopCircle :=
   m65AngleLoopCircle.symm.trans ((angleRelabeling phi hp).trans m65AngleLoopCircle)
-
-
 
 theorem m65CircleRelabeling_angular (phi : ℝ ≃o ℝ)
     (hp : ∀ x, phi (x + curvePeriod) = phi x + curvePeriod) (x : ℝ) :
@@ -106,8 +88,6 @@ theorem m65CircleRelabeling_angular (phi : ℝ ≃o ℝ)
   rw [m65AngleLoopCircle.symm_apply_apply]
   exact m65AngleLoopCircle_coe (phi x)
 
-
-
 theorem m65AngularCircle_surjective : Function.Surjective (fun x : ℝ =>
     (⟨Proofs.M58.angularPoint x, Proofs.M58.norm_angularPoint x⟩ : LoopCircle)) := by
   have h (y : Real.Angle) : ∃ x : ℝ, m65AngleLoopCircle y =
@@ -116,9 +96,6 @@ theorem m65AngularCircle_surjective : Function.Surjective (fun x : ℝ =>
   intro z
   obtain ⟨x, hx⟩ := h (m65AngleLoopCircle.symm z)
   exact ⟨x, hx.symm.trans (m65AngleLoopCircle.apply_symm_apply z)⟩
-
-
-
 
 theorem m65AngularCircle_map_nhds (x : ℝ) :
     Filter.map (fun y : ℝ =>
@@ -133,9 +110,6 @@ theorem m65AngularCircle_map_nhds (x : ℝ) :
   exact (m65AngleLoopCircle.isOpenMap.comp QuotientAddGroup.isOpenMap_coe).map_nhds_eq
     ((m65AngleLoopCircle.continuous.comp
       (AddCircle.continuous_mk' (2 * Real.pi))).continuousAt)
-
-
-
 
 theorem m65CircleRelabeling_loop_values
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

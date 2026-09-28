@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessGraphNeighborho
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessNormalLabels
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "G" => ℝ × (W × W)
-
-
-
-
 
 theorem exists_forward_c2ShrinkingCurve_agreement
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -363,10 +349,6 @@ theorem exists_forward_c2ShrinkingCurve_agreement
     (fun t ht => (hThetaC2 t (Ioo_subset_Icc_self ht)).differentiable (by norm_num))
     hThetaPos hThetaInit
   exact ⟨tau, hstau, htauT, fun t ht x => by simpa only [htheta t ht x] using hagree t ht x⟩
-
-
-
-
 
 theorem c2ShrinkingCurve_unique_closed_of_retraction
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 import PoincareConjecture.Proofs.M60.Mathlib.CompactExtendedLipschitz
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64AnnulusDomain_convex : Convex ℝ m64AnnulusDomain := by
   intro x hx y hy a b ha hb hab
@@ -53,11 +37,6 @@ theorem m64AnnulusDomain_convex : Convex ℝ m64AnnulusDomain := by
             add_le_add (mul_le_mul_of_nonneg_left hx.2.2.2 ha)
               (mul_le_mul_of_nonneg_left hy.2.2.2 hb)
           _ = 1 := by rw [← add_mul, hab, one_mul]
-
-
-
-
-
 
 theorem m64_lipschitzOn_nhds_of_contMDiffAt
     (g : RiemannianMetric n M) {f : LoopPlane → M} {x : LoopPlane}
@@ -116,10 +95,6 @@ theorem m64_lipschitzOn_nhds_of_contMDiffAt
     ((2 * K : ℝ≥0) : ℝ≥0∞) * edist y z at hc
   simpa only [heqy, heqz, edist_dist, dist_eq_norm] using hc
 
-
-
-
-
 theorem m64_lipschitzOn_nhds_of_contMDiffOn
     (g : RiemannianMetric n M) {f : LoopPlane → M} {S : Set LoopPlane}
     (hS : IsOpen S) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f S) :
@@ -128,13 +103,6 @@ theorem m64_lipschitzOn_nhds_of_contMDiffOn
   intro x hx
   exact m64_lipschitzOn_nhds_of_contMDiffAt g
     ((hf x hx).contMDiffAt (hS.mem_nhds hx))
-
-
-
-
-
-
-
 
 theorem m64AnnulusDomain_edist_ne_top
     (g : RiemannianMetric n M) {f : LoopPlane → M}
@@ -157,9 +125,6 @@ theorem m64AnnulusDomain_edist_ne_top
   exact Poincare.edist_ne_top_of_preconnected
     (⟨f x, mem_image_of_mem f hx⟩ : R)
     (⟨f y, mem_image_of_mem f hy⟩ : R)
-
-
-
 
 theorem m64Annulus_hLip_of_local
     (g : RiemannianMetric n M) {f : LoopPlane → M}

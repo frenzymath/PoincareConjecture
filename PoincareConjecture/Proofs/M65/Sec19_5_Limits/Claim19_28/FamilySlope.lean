@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SlopeCollapse
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectedTangent
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65FamilySlope_uniform_small (C : M63FamilyConclusion G Gamma zeta)
     {ell K : ℝ} (hell : 0 < ell) (hK : 0 ≤ K) (epsilon : ℝ) (hepsilon : 0 < epsilon) :
@@ -57,8 +46,6 @@ theorem m65FamilySlope_uniform_small (C : M63FamilyConclusion G Gamma zeta)
     (fun y => ((C.solutions circumference h).ramp z t (hJ ht) y).le)
     (hcurv t ht) L hdegree x
   exact abs_lt_of_sq_lt_sq (hsquare.trans_lt hbound) hepsilon.le
-
-
 
 theorem m65FamilyProjected_immersed_small (C : M63FamilyConclusion G Gamma zeta)
     {ell K : ℝ} (hell : 0 < ell) (hK : 0 ≤ K) :

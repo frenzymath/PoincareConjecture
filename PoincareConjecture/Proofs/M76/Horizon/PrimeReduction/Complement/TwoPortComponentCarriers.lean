@@ -1,21 +1,11 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem componentIn_closed_two_port_attachment {P D : Set X}
     [LocallyConnectedSpace P] (hP : IsClosed P) (hD : IsClosed D)
@@ -71,7 +61,6 @@ theorem componentIn_closed_two_port_attachment {P D : Set X}
   have hB := connectedComponentIn_mono b (show P ⊆ P ∪ D from subset_union_left)
   rwa [connectedComponentIn_eq hba] at *
 
-
 theorem componentIn_closed_two_port_attachment_eq_of_not_mem {P D : Set X}
     [LocallyConnectedSpace P] (hP : IsClosed P) (hD : IsClosed D)
     (hDc : IsConnected D) {a b x : X} (ha : a ∈ P ∩ D) (hb : b ∈ P ∩ D)
@@ -96,8 +85,6 @@ theorem componentIn_closed_two_port_attachment_eq_of_not_mem {P D : Set X}
     (isPreconnected_connectedComponentIn.subset_connectedComponentIn
       (mem_connectedComponentIn (Or.inl hx)) hsub)
     (connectedComponentIn_mono x subset_union_left)
-
-
 
 theorem componentIn_closed_attachment_of_two_connected_ports {P D p q : Set X}
     [LocallyConnectedSpace P] (hP : IsClosed P) (hD : IsClosed D)

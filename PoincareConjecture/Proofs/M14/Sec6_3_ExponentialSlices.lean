@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionSmooth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem exponentialFamily_domain_slice_isOpen (E : M14ExponentialFamily G T x) (s : ℝ) :
     IsOpen {Z | (Z, s) ∈ E.domain} := by
   rw [isOpen_iff_mem_nhds]
@@ -35,8 +23,6 @@ theorem exponentialFamily_domain_slice_isOpen (E : M14ExponentialFamily G T x) (
   apply mem_of_superset ((hU.preimage hcont).mem_nhds hZU)
   intro W hW
   exact hsub ⟨hW, (E.domain_admissible hZ).1, (E.domain_admissible hZ).2⟩
-
-
 
 theorem exponentialFamily_gamma_slice_contMDiffAt (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hs : (Z, s) ∈ E.domain) :
@@ -51,8 +37,6 @@ theorem exponentialFamily_gamma_slice_contMDiffAt (E : M14ExponentialFamily G T 
       (fun _ hW => hW)
   exact (h Z hs).contMDiffAt ((exponentialFamily_domain_slice_isOpen E s).mem_nhds hs)
 
-
-
 theorem exponentialFamily_smooth_prefix
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}
@@ -66,9 +50,6 @@ theorem exponentialFamily_smooth_prefix
     initialValueCurve_smooth_prefix hM04 hM12 E.base_time hpos hsurv
   rw [← exponentialFamily_domain_eq E] at htube
   exact ⟨U, hU, hZU, htube, E.family_smooth.mono htube⟩
-
-
-
 
 theorem exponentialFamily_action_slice_contMDiffAt
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

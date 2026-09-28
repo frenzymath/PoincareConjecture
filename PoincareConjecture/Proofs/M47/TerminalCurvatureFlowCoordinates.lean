@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.CoordinateField
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g}
   {V : (x : M) → TangentSpace (𝓡 n) x}
 
-
 theorem terminalCurvature_contDiffAt_chart_field
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% V)) (a : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) a).target) :
@@ -40,8 +29,6 @@ theorem terminalCurvature_contDiffAt_chart_field
   rw [Bundle.contMDiffAt_totalSpace] at hG
   apply contMDiffAt_iff_contDiffAt.mp
   simpa using hG.2
-
-
 
 theorem terminalCurvature_chart_field_derivative
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% V))
@@ -100,7 +87,6 @@ theorem terminalCurvature_chart_field_derivative
   simp only [coordinateChristoffel, heq.self_of_nhds, heq.fderiv_eq] at hconn
   exact eq_neg_of_add_eq_zero_left hconn
 
-
 theorem terminalCurvature_chart_field_eq
     (a : M) {x : EuclideanSpace ℝ (Fin n)}
     (hx : x ∈ (extChartAt (𝓡 n) a).target) :
@@ -123,8 +109,6 @@ theorem terminalCurvature_chart_field_eq
   change mfderiv (𝓡 n) (𝓡 n) c.symm x
     (mfderiv (𝓡 n) (𝓡 n) c (c.symm x) (V (c.symm x))) = V (c.symm x) at h
   exact h.symm
-
-
 
 theorem terminalCurvature_coordinate_metric_derivative
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% V))

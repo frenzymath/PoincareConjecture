@@ -5,13 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 import Mathlib.MeasureTheory.Integral.Lebesgue.Add
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -279,4 +272,3 @@ theorem initial_half_ball_closure_subset_initial_ball [T2Space M]
     ((ENNReal.ofReal_lt_ofReal_iff hr).2 (by linarith))
 
 end PoincareConjecture.M04
-

@@ -1,13 +1,5 @@
 import Mathlib.Topology.VectorBundle.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set Topology
@@ -17,9 +9,6 @@ variable {R B F X : Type*} {E : B → Type*}
   [TopologicalSpace B] [TopologicalSpace X]
   [∀ x, AddCommMonoid (E x)] [∀ x, Module R (E x)] [∀ x, TopologicalSpace (E x)]
   [TopologicalSpace (TotalSpace F E)] [FiberBundle F E] [VectorBundle R F E]
-
-
-
 
 theorem Continuous.totalSpace_smul {f : X → TotalSpace F E} {c : X → R}
     (hf : Continuous f) (hc : Continuous c) :

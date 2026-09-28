@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.IncidentJointSigns
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondSquareCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
 
 @[ext] structure SignedAxisPermutation where
   swap : Bool
@@ -26,7 +17,6 @@ namespace SignedAxisPermutation
 def index (a : SignedAxisPermutation) (j : Fin 2) : Fin 2 := jointSheetIndex a.swap j
 
 def refl : SignedAxisPermutation := ⟨false, fun _ ↦ true⟩
-
 
 def trans (a b : SignedAxisPermutation) : SignedAxisPermutation :=
   ⟨Bool.xor a.swap b.swap, fun j ↦ signedTubeReindex (b.sign (a.index j)) (a.sign j)⟩

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcInsideGaps
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcSubarc
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcTerminalClosure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -200,7 +191,6 @@ private theorem contact_parameter_neighbors {n : ℕ} (p : Polygon E (n + 2))
     rw [hj]
     ring
 
-
 private theorem sorted_adjacent_contact_ranks {n m : ℕ}
     (c : Fin m ↪ Fin (n + 2)) (τ : Fin m ≃ Fin m)
     (hτ : StrictMono (fun j => (c (τ j)).val))
@@ -384,10 +374,7 @@ private theorem terminal_gap_regions {n m : ℕ}
       exact (Set.disjoint_left.mp hdis hx hlast).elim
     · exact h
 
-
 set_option maxHeartbeats 800000 in
-
-
 
 theorem IsSimplePolygonalArc.exists_terminal_inside_gaps {n k : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

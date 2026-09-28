@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Manifold
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +35,6 @@ private theorem exists_radial_variation_domain
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_orthonormal_exponential_jacobi_of_precompact_ball
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M) {R : ℝ} (hR : 0 < R)

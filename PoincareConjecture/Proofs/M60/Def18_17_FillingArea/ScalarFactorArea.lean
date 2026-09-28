@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRegularity
 import PoincareConjecture.Proofs.M60.Mathlib.LocalAlmostEverywhere
 import Mathlib.Analysis.Calculus.Rademacher
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60AreaDensity_eq_zero_of_scalar_increment_bound (g : RiemannianMetric n M)
     {F : LoopPlane → M} {ell : LoopPlane → ℝ} {z : LoopPlane} {K : ℝ≥0}
@@ -60,9 +48,6 @@ theorem m60AreaDensity_eq_zero_of_scalar_increment_bound (g : RiemannianMetric n
     exact hnonzero (le_bot_iff.mp (hker.trans_eq hzero))
   simp only [m60AreaDensity, hdet, max_self, Real.sqrt_zero]
 
-
-
-
 theorem m60AreaIntegral_eq_zero_of_scalar_increment_bound (g : RiemannianMetric n M)
     {F : LoopPlane → M} {ell : LoopPlane → ℝ} {S : Set LoopPlane}
     (hS : IsOpen S) {L K : ℝ≥0} (hell : LipschitzOnWith L ell S)
@@ -83,9 +68,6 @@ theorem m60AreaIntegral_eq_zero_of_scalar_increment_bound (g : RiemannianMetric 
   refine ⟨hzero, hi.congr (Filter.EventuallyEq.symm hzero), ?_⟩
   rw [integral_congr_ae hzero, integral_zero]
 
-
-
-
 theorem m60ScalarFactor_ae_mdifferentiable (g : RiemannianMetric n M)
     {F : LoopPlane → M} {ell : LoopPlane → ℝ} {S : Set LoopPlane}
     (hS : IsOpen S) {L K : ℝ≥0} (hell : LipschitzOnWith L ell S)
@@ -104,9 +86,6 @@ theorem m60ScalarFactor_ae_mdifferentiable (g : RiemannianMetric n M)
   rw [ENNReal.ofReal_mul L.coe_nonneg,
     ENNReal.ofReal_mul K.coe_nonneg, ENNReal.ofReal_coe_nnreal,
     ENNReal.ofReal_coe_nnreal, mul_assoc]
-
-
-
 
 theorem m60AreaIntegral_eq_zero_of_locally_scalar_increment_bound
     (g : RiemannianMetric n M) {F : LoopPlane → M} {S : Set LoopPlane}

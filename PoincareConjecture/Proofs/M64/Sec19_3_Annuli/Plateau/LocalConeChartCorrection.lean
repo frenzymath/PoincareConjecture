@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeChartBound
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64ChartReadable_local_correction
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -72,8 +59,6 @@ theorem m64ChartReadable_local_correction
   change c.symm (L (e q)) = q
   have hh : L (e q) = c q := (hVsub hq.1).2
   rw [hh, c.left_inv (hVsub hq.1).1]
-
-
 
 theorem m64ChartReadable_local_correction_into
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

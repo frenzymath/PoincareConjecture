@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M45.Mathlib.FourTensorContraction
 import PoincareConjecture.Definitions.Ch03.CurvatureReaction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,16 +13,12 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def curvatureBfour (D : LeviCivitaData g) (x : M)
     (v : Fin 4 → TangentSpace (𝓡 n) x) : ℝ :=
   D.curvatureB x (v 0) (v 1) (v 2) (v 3) -
     D.curvatureB x (v 0) (v 1) (v 3) (v 2) -
     D.curvatureB x (v 0) (v 3) (v 1) (v 2) +
     D.curvatureB x (v 0) (v 2) (v 1) (v 3)
-
-
 
 theorem curvatureReaction_eq_Bfour_sub_slots
     (D : LeviCivitaData g) (x : M) (v : Fin 4 → TangentSpace (𝓡 n) x) :
@@ -45,8 +33,6 @@ theorem curvatureReaction_eq_Bfour_sub_slots
   simp [LeviCivitaData.curvatureReaction, curvatureBfour,
     Fin.sum_univ_four, LeviCivitaData.riemannEvaluation,
     Finset.sum_add_distrib, Function.update]
-
-
 
 theorem curvature_energy_reaction_le
     (D : LeviCivitaData g) (x : M) :

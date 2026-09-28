@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.TerminalHorizontalProjection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.RadialChart
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -58,8 +50,6 @@ private theorem injective_fderiv_preserving_second
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_horizontal_fiber_chart
     (C : PartialDiffeomorph 𝓘(Real, E2 × Real) (𝓡 3) (E2 × Real) E3 ∞)
@@ -206,9 +196,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_terminal_model_horizontal_chart
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

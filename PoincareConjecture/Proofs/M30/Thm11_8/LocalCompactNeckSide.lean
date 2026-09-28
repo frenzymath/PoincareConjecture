@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.ContainedCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_precompact_neck_side_of_central_sphere_subset_chart
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]

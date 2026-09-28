@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,10 +18,6 @@ variable {G M ι : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
 
 theorem Stage.exists_original_marked_rim_model (st : Stage e S f r C)
     (hSD : S.space = D) {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

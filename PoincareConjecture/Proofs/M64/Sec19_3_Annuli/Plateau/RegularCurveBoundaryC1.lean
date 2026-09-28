@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryQuadraticCon
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundedCoordinateWeakChain
 import PoincareConjecture.Proofs.M64.Mathlib.MeasurePreservingColumnEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,11 +13,6 @@ open scoped Topology Manifold ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64RegularCurve_boundary_observed_contDiffOn {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]

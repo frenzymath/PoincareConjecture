@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusDepth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
-
 
 theorem interior_squareAnnulus {L d : ℝ} (hwidth : 2 * d < L) :
     interior (squareAnnulus L d) = depth L ⁻¹' Ioo (-d) d := by
@@ -38,8 +28,6 @@ theorem interior_squareAnnulus {L d : ℝ} (hwidth : 2 * d < L) :
     have hl : d ≤ min (min p.1 p.2) (min (L - p.1) (L - p.2)) :=
       le_min (le_min ha hc) (le_min (by linarith) (by linarith))
     exact (not_lt_of_ge hl) h
-
-
 
 theorem mem_frontier_squareAnnulus_iff {L d : ℝ} (hd : 0 < d)
     (hwidth : 2 * d < L) {p : ℝ × ℝ} (hp : p ∈ squareAnnulus L d) :

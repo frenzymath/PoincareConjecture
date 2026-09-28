@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseLift
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -14,9 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem closed_strip_exists_circle_phase {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)

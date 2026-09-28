@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinGauge
 import PoincareConjecture.Proofs.M09.SmoothJoinCutoff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {q : M14BackwardPath G T τ₁ τ₂ x y}
   {p : M14BackwardPath G T τ₁ c x (q.curve c)} (D : PrefixJoinGauge q p)
 
-
-
 theorem overlap_time {s : ℝ} (hs : s ∈ Icc (c - D.radius) c) :
     (D.lift (p.curve s)).1 = (D.lift (q.curve s)).1 := by
   have hwide : s ∈ Icc (c - D.radius) (c + D.radius) :=
@@ -34,9 +24,6 @@ theorem overlap_time {s : ℝ} (hs : s ∈ Icc (c - D.radius) c) :
   rw [D.lift_time _ (D.prefix_in_image s hs), D.lift_time _ (D.continuation_in_image s hwide),
     p.curve_time s ⟨D.left_margin.le.trans hs.1, hs.2⟩,
     q.curve_time s ⟨D.left_margin.le.trans hs.1, hwide.2.trans D.right_margin.le⟩]
-
-
-
 
 theorem blend_mem_region (a d : ℝ) {s : ℝ} (hs : s ∈ Icc (c - D.radius) c) :
     Proofs.M09.smoothJoinBlend (fun t => (D.lift (p.curve t)).2.val)

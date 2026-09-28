@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +13,8 @@ variable {ι E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-
 def HasUniformJetBounds (n : ℕ) (f : ι → E → F) : Prop :=
   ∀ m : ℕ, m ≤ n → ∃ C : ℝ, ∀ i x, ‖iteratedFDeriv ℝ m (f i) x‖ ≤ C
-
 
 def HasUniformJetBoundsOn (n : ℕ) (s : Set E) (f : ι → E → F) : Prop :=
   ∀ m : ℕ, m ≤ n → ∃ C : ℝ, ∀ i x, x ∈ s →
@@ -142,8 +131,6 @@ theorem HasUniformJetBounds.comp {n : ℕ} {f : ι → E → F} {g : ι → F �
   · intro j hj₁ hj
     exact (hAf' j hj i x).trans (le_pow_of_le_max_one rfl hj₁)
 
-
-
 theorem HasUniformJetBounds.comp_fixed {n : ℕ} {f : ι → E → F} {g : F → G}
     {K : Set F} (hf : HasUniformJetBounds n f)
     (hg : HasUniformJetBoundsOn n K (fun _ : Unit => g))
@@ -194,8 +181,6 @@ theorem HasUniformJetBoundsOn.comp {n : ℕ} {U : Set E} {V : Set F} {f : ι →
     rw [iteratedFDerivWithin_of_isOpen j hU hx]
     exact (hAf' j hj i x hx).trans (le_pow_of_le_max_one rfl hj₁)
 
-
-
 theorem HasUniformJetBoundsOn.comp_fixed_on {n : ℕ} {U : Set E} {V K : Set F}
     {f : ι → E → F} {g : F → G} (hU : IsOpen U) (hV : IsOpen V)
     (hf : HasUniformJetBoundsOn n U f)
@@ -220,8 +205,6 @@ theorem HasUniformJetBoundsOn.comp_fixed_on {n : ℕ} {U : Set E} {V K : Set F}
     rw [iteratedFDerivWithin_of_isOpen j hU hx]
     exact (hAf' j hj i x hx).trans (le_pow_of_le_max_one rfl hj₁)
 
-
-
 theorem norm_iteratedFDeriv_comp_le_of_contDiffAt {n : ℕ} {f : E → F}
     {g : F → G} {x : E} {C D : ℝ}
     (hg : ContDiffAt ℝ n g (f x)) (hf : ContDiffAt ℝ n f x)
@@ -245,8 +228,6 @@ theorem norm_iteratedFDeriv_comp_le_of_contDiffAt {n : ℕ} {f : E → F}
   · intro j hj₁ hj
     rw [iteratedFDerivWithin_of_isOpen j hU hxU]
     exact hD j hj₁ hj
-
-
 
 theorem HasUniformJetBoundsOn.comp_fixed_at {n : ℕ} {U : Set E} {K : Set F}
     {f : ι → E → F} {g : F → G} (hU : IsOpen U)
@@ -309,8 +290,6 @@ theorem HasUniformJetBoundsOn.succ_of_fderiv {n : ℕ} {s : Set E} {f : ι → E
     refine ⟨C, fun i x hx => ?_⟩
     rw [← norm_iteratedFDeriv_fderiv]
     exact hC i x hx
-
-
 
 theorem HasUniformJetBoundsOn.fderiv {n : ℕ} {s : Set E} {f : ι → E → F}
     (h : HasUniformJetBoundsOn (n + 1) s f) :

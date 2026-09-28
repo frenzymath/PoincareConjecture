@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
-
 
 lemma hasCompactSupport_radial_cutoff (g : RiemannianMetric n M)
     (hcomplete : MetricComplete g) (p : M) {R : ℝ} (hR : 0 < R)
@@ -38,8 +29,6 @@ lemma hasCompactSupport_radial_cutoff (g : RiemannianMetric n M)
   intro x hx
   apply hzero
   exact (le_div_iff₀ hR).mpr (le_of_lt (lt_of_not_ge hx))
-
-
 
 lemma radial_cutoff_lower_supports_of_distance_supports
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)

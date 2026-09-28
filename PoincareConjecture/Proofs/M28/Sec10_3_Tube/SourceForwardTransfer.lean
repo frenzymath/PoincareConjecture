@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckQuarterOverlap
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalForwardTransfer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckSegment
 
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
-
-
-
 
 theorem exists_source_frontier_oriented_forward_accuracy
     (S : CounterexampleNeckSegment E) :

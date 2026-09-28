@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Euclidean.Triangular
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +22,6 @@ private theorem contDiff_pair
   fin_cases i
   · exact hf
   · exact hg
-
-
 
 theorem exists_vertical_triangular_family
     (f : (ℝ × ℝ) × ℝ → ℝ) (hf : ContDiff ℝ ∞ f)
@@ -65,7 +61,6 @@ theorem exists_vertical_triangular_family
     contMDiff_toFun := (hA.comp (contDiff_const.prodMk contDiff_id)).contMDiff
     contMDiff_invFun := (hB.comp (contDiff_const.prodMk contDiff_id)).contMDiff }
   exact ⟨U, hA, fun _ _ => rfl⟩
-
 
 theorem exists_horizontal_triangular_family
     (f : (ℝ × ℝ) × ℝ → ℝ) (hf : ContDiff ℝ ∞ f)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCocycleOfClosed
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TerminalCocycleExactness
 import Mathlib.Algebra.Field.ZMod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -36,9 +25,6 @@ variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
 
 include hvertex hDN H hr K hs B hterminal
 
-
-
-
 theorem ker_edgeCoboundary_eq_range_vertexCoboundary :
     LinearMap.ker (edgeCoboundary A) = LinearMap.range (vertexCoboundary A) := by
   apply le_antisymm
@@ -51,10 +37,6 @@ theorem ker_edgeCoboundary_eq_range_vertexCoboundary :
   · rintro _ ⟨a, rfl⟩
     exact edgeCoboundary_vertexCoboundary A a
 
-
-
-
-
 theorem range_boundary2_eq_ker_boundary1 :
     LinearMap.range (edgeCoboundary A).dualMap =
       LinearMap.ker (vertexCoboundary A).dualMap := by
@@ -62,8 +44,6 @@ theorem range_boundary2_eq_ker_boundary1 :
     hvertex hDN H hr K hs B hterminal
   rw [LinearMap.range_dualMap_eq_dualAnnihilator_ker (edgeCoboundary A), hcochain,
     LinearMap.ker_dualMap_eq_dualAnnihilator_range (vertexCoboundary A)]
-
-
 
 theorem exists_triangle_chain_of_cycle
     (z : Module.Dual (ZMod 2) (Edge A → ZMod 2))

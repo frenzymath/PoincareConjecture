@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierSourceGraph
 import PoincareConjecture.Proofs.M76.Triangulation.OrientedQuadrantFrontierMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,12 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_actual_surface_frontier_map
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

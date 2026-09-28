@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -51,8 +45,6 @@ private theorem contDiffOn_density (g : RiemannianMetric n M)
   exact (g.contDiffAt_pullbackVolumeDensity
     (he.contMDiffAt (e.open_source.mem_nhds hx))
     (hD.mfderiv_injective hx)).1.contDiffWithinAt
-
-
 
 theorem exists_local_elliptic_form [NeZero n] [T2Space M]
     (g : RiemannianMetric n M) {Ω : Set M}

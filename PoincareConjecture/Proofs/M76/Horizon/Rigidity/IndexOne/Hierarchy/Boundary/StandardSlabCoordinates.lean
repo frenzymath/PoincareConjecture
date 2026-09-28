@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.StandardAnnulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -23,8 +15,6 @@ local notation "C" => AddCircle p
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 local notation "Q" => hamiltonOneHierarchyCoordinates
 
-
-
 noncomputable def shortClosedPhaseIntervalCoordinates (a b : ℝ) (hshort : b < a + p) :
     Icc a b ≃ₜ AddCircle.closedIntervalArc p a b := by
   let : Fact (0 < p) := ⟨by norm_num⟩
@@ -36,8 +26,6 @@ noncomputable def shortClosedPhaseIntervalCoordinates (a b : ℝ) (hshort : b < 
   exact Continuous.homeoOfEquivCompactToT2
     (f := Equiv.Set.imageOfInjOn (fun t : ℝ => (t : C)) (Icc a b) hinj)
     (((AddCircle.continuous_mk' p).comp continuous_subtype_val).subtype_mk _)
-
-
 
 noncomputable def standardSlabCoordinates (a b : ℝ) (hshort : b < a + p) :
     ((D1 × C) × Icc a b) ≃ₜ sourceSlab (ContinuousMap.id H) a b := by

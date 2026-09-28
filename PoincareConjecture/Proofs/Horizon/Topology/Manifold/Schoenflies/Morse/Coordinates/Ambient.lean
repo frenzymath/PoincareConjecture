@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Height
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,8 +56,6 @@ private theorem exists_partialDiffeomorph_of_contDiffOn
     contMDiffOn_toFun := (hg.mono (fun _ hz => (hHsource hz).1)).contMDiffOn
     contMDiffOn_invFun := hHi }
   exact ⟨d, hHa, fun _ hz => (hHsource hz).1, rfl⟩
-
-
 
 theorem bijective_fderiv_vertical_height_coordinates
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -129,8 +119,6 @@ theorem bijective_fderiv_vertical_height_coordinates
   exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank (by
     simp [P, E2, E3, Module.finrank_prod])).mp hi⟩
 
-
-
 theorem exists_ambient_height_coordinates
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     (v p : S2)
@@ -160,8 +148,6 @@ theorem exists_ambient_height_coordinates
   · intro z _
     change d z = G z
     rw [hdG]
-
-
 
 theorem exists_ambient_morse_coordinates
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

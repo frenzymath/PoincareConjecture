@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.ContinuousL2Product
 import PoincareConjecture.Proofs.M03.Existence.ContinuousPathCompositionNative
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory Set Filter
@@ -21,10 +12,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem exists_periodicH1_finite_composition {ι : Type*} [Fintype ι]
     (k : ℕ) (Φ : (ι → ℂ) → ℂ) (hΦ : ContDiff ℝ (k + 1) Φ) :

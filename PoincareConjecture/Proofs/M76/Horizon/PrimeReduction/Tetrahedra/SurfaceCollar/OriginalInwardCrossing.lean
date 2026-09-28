@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.PlanePairSignTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

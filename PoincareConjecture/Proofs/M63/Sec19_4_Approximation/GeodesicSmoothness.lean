@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.AutonomousODERegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Geodesic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {gamma : ℝ → M} {S : Set ℝ}
-
-
-
 
 theorem IsGeodesicOn.contMDiffAt_infty (hgamma : g.IsGeodesicOn gamma S)
     {t : ℝ} (ht : t ∈ S) : ContMDiffAt 𝓘(ℝ, ℝ) (𝓡 n) ∞ gamma t := by
@@ -45,9 +32,6 @@ theorem IsGeodesicOn.contMDiffAt_infty (hgamma : g.IsGeodesicOn gamma S)
     (contMDiffOn_extChartAt_symm p).contMDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 n) p).mem_nhds hqt)
   exact (hinverse.comp t hq).congr_of_eventuallyEq (h.mono fun _ hs => hs.1)
-
-
-
 
 theorem IsGeodesicOn.contMDiffOn_infty (hgamma : g.IsGeodesicOn gamma S) :
     ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ gamma S :=

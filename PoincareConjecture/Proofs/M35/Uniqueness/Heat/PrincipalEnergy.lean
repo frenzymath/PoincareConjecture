@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DirichletInitialHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawPrincipalExtension
 import PoincareConjecture.Proofs.M03.Existence.DeTurckGeneratorRegularityNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,7 +54,6 @@ theorem principalEnergy_symmetric (K : Set V) (A : Fin n → Fin n → 𝓢(V, �
   have he : A i j = A j i := by ext x; exact hA i j x
   rw [he, schwartzMultiplier_selfAdjoint, real_inner_comm]
 
-
 theorem dirichletForm_norm_sq (K : Set V) (u : dirichletForm K) :
     ‖u‖ ^ 2 = ‖dirichletInclusion K u‖ ^ 2 +
       ∑ i, ‖dirichletPartial K i u‖ ^ 2 := by
@@ -93,8 +83,6 @@ private theorem principalEnergy_coercive_test {K : Set V} (hK : IsClosed K)
         mul_zero, Finset.sum_const_zero, le_refl]
   simpa only [principalEnergy, dirichletPartial_into, w] using
     schwartz_coercive_energy A w ell hp
-
-
 
 theorem principalEnergy_coercive {K : Set V} (hK : IsClosed K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ell : ℝ}
@@ -131,8 +119,6 @@ theorem principalFormPairing_continuous (K : Set V) (A : Fin n → Fin n → �
     ((dirichletInclusion K).continuous.comp continuous_snd)).add
       (principalEnergy_continuous K A)
 
-
-
 theorem principalFormPairing_coercive {K : Set V} (hK : IsClosed K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ell : ℝ}
     (hell : ∀ x ∈ K, ∀ ξ : Fin n → ℝ,
@@ -149,8 +135,6 @@ theorem principalFormPairing_coercive {K : Set V} (hK : IsClosed K)
   unfold principalFormPairing
   rw [real_inner_self_eq_norm_sq]
   nlinarith only [hv, hd, hgrad]
-
-
 
 theorem exists_raw_coercive_dirichlet_energy (g : RiemannianMetric n V)
     {K : Set V} (hK : IsCompact K) :

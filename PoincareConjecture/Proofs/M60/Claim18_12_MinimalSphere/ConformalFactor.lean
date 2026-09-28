@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,15 +14,10 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 noncomputable def m60SphereConformalFactor (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) : ℝ :=
   g.inner (f p) (mfderiv (𝓡 2) (𝓡 n) f p (EuclideanSpace.basisFun (Fin 2) ℝ 0))
     (mfderiv (𝓡 2) (𝓡 n) f p (EuclideanSpace.basisFun (Fin 2) ℝ 0))
-
-
 
 theorem m60SphereConformalFactor_nonneg (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) :
@@ -40,8 +26,6 @@ theorem m60SphereConformalFactor_nonneg (g : RiemannianMetric n M)
     ⟨g.toRiemannianMetric⟩
   exact real_inner_self_nonneg (x := mfderiv (𝓡 2) (𝓡 n) f p
     (EuclideanSpace.basisFun (Fin 2) ℝ 0))
-
-
 
 theorem m60SphereConformalFactor_spec (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hc : M60WeaklyConformal g f)
@@ -61,8 +45,6 @@ theorem m60SphereConformalFactor_spec (g : RiemannianMetric n M)
   rw [hscale]
   exact hs v w
 
-
-
 theorem m60SphereConformalFactor_eq_zero_iff (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hc : M60WeaklyConformal g f) (p : UnitTwoSphere) :
     m60SphereConformalFactor g f p = 0 ↔ p ∈ m60SphereBranchSet (n := n) f := by
@@ -78,8 +60,6 @@ theorem m60SphereConformalFactor_eq_zero_iff (g : RiemannianMetric n M)
   · intro h
     change mfderiv (𝓡 2) (𝓡 n) f p = 0 at h
     simp [m60SphereConformalFactor, h]
-
-
 
 theorem m60SphereConformalFactor_contMDiff (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

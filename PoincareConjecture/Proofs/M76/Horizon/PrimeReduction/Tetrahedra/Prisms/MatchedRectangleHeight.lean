@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Pr
 import PoincareConjecture.Proofs.M76.Mathlib.RectangleConnectedSides
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProductBandGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

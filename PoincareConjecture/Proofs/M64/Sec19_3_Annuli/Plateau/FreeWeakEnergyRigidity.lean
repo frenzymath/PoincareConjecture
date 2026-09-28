@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimalAnnulusAreaStationarity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -33,9 +17,6 @@ variable {n m : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem m64FreeObservedWeakAnnulus_minimal_conformal_of_admission
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

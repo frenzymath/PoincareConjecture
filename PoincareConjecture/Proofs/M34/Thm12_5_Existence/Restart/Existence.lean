@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Curvature
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Completeness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M34.MetricFlowApproximation
 variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, TopologicalSpace (Mfamily k)] [∀ k, ChartedSpace StandardCapSpace (Mfamily k)]
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)] (A : MetricFlowApproximation ginit Mfamily)
-
-
-
 
 theorem complete_flow_exists (Dinit : LeviCivitaData ginit)
     (P : RicciFlowCurvatureTheory.{0}) (hcomplete : MetricComplete ginit) :

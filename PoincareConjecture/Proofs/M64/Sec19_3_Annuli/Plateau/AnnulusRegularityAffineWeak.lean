@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityInverseChart
 import PoincareConjecture.Proofs.M60.Mathlib.ChartApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +12,6 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
 
-
-
-
 theorem m64_exists_continuous_extension {n : ℕ} {K : Set LoopPlane}
     (hK : IsClosed K) {u : LoopPlane → EuclideanSpace ℝ (Fin n)}
     (hu : ContinuousOn u K) :
@@ -36,9 +22,6 @@ theorem m64_exists_continuous_extension {n : ℕ} {K : Set LoopPlane}
     ⟨fun p => u p, continuousOn_iff_continuous_domRestrict.mp hu⟩
   obtain ⟨v, hv⟩ := uK.exists_restrict_eq hK
   exact ⟨v, v.continuous, fun p hp => ContinuousMap.congr_fun hv ⟨p, hp⟩⟩
-
-
-
 
 theorem m64_affine_variation_compact_range {n : ℕ}
     {S : Set LoopPlane} (hS : IsCompact S)
@@ -63,8 +46,6 @@ theorem m64_affine_variation_compact_range {n : ℕ}
   exact (mul_le_mul_of_nonneg_left hCB (abs_nonneg t)).trans
     (le_of_lt ((lt_div_iff₀ hB).mp ht))
 
-
-
 theorem m64WeakPartial_add {O : Set LoopPlane} {i : Fin 2}
     {u v W Z : LoopPlane → ℝ}
     (hu : MemLp u 2 (volume.restrict O)) (hv : MemLp v 2 (volume.restrict O))
@@ -85,17 +66,12 @@ theorem m64WeakPartial_add {O : Set LoopPlane} {i : Fin 2}
   rw [hl, hr, hw phi hp hc hs, hz phi hp hc hs]
   ring
 
-
-
 theorem m64WeakPartial_const_mul {O : Set LoopPlane} {i : Fin 2}
     {u W : LoopPlane → ℝ} (hw : HasWeakPartialDeriv i W u O) (t : ℝ) :
     HasWeakPartialDeriv i (fun p => t * W p) (fun p => t * u p) O := by
   intro phi hp hc hs
   simp only [mul_assoc]
   rw [integral_const_mul, integral_const_mul, hw phi hp hc hs, mul_neg]
-
-
-
 
 theorem m64_affine_weak_coordinates {n : ℕ}
     {u phi : LoopPlane → EuclideanSpace ℝ (Fin n)}

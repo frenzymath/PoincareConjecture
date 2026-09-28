@@ -2,20 +2,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Tower.Original
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Annulus.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Annulus.EnclosingRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem hasHamiltonProtectedDehnAnnulus
     (L : Submodule ℤ (Fin 2 → ℝ)) [DiscreteTopology L] {α : Type*}

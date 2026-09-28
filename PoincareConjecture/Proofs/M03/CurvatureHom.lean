@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M03.MetricInverse
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
 import Mathlib.LinearAlgebra.Multilinear.Curry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 200000
@@ -499,7 +491,6 @@ theorem curvature_iterated_tangentNorm_le_orthonormal_energy
     _ = S := by simp only [S, norm_smul, Real.norm_eq_abs]
     _ ≤ Real.sqrt q * H := hbound
 
-
 theorem abs_curvature_iterated_pairing_le_orthonormal_energy
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -528,7 +519,6 @@ theorem abs_curvature_iterated_pairing_le_orthonormal_energy
   have hvec := curvature_iterated_tangentNorm_le_orthonormal_energy D k hU X hX hx
   dsimp only at hvec ⊢
   exact (hpair _).trans (mul_le_mul_of_nonneg_right hvec (Real.sqrt_nonneg _))
-
 
 theorem multilinear_two_trace_frame_eq_orthonormal
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -831,7 +821,6 @@ theorem abs_curvature_two_factor_contraction_le_orthonormal_energy
       simp only [Finset.sum_const, Finset.card_univ, hdim, nsmul_eq_mul]
       ring
 
-
 theorem curvature_iterated_orthonormal_energy_nonneg_and_eq_sq_sqrt
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (k : ℕ) (x : M) :
     let K := curvatureOnFields_iteratedCovariantDerivative D k
@@ -860,7 +849,6 @@ theorem curvature_iterated_orthonormal_energy_nonneg_and_eq_sq_sqrt
       real_inner_self_eq_norm_sq (kb γ)]
     exact sq_nonneg _
   exact ⟨hQ, (Real.sq_sqrt hQ).symm⟩
-
 
 theorem curvature_iterated_zero_orthonormal_energy_sqrt
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x : M) :

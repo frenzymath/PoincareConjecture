@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveMetric
 import PoincareConjecture.Proofs.M38.ThreeSphereCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,14 +12,11 @@ namespace PoincareConjecture.M38
 variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] [IsManifold (𝓡 3) ∞ Q]
 
-
 theorem projectiveStereo_localDiffeomorph (C : StandardProjectiveSmoothCover Q)
     (a : UnitThreeSphere) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (C.cover ∘ threeSphereStereoInverse a) :=
   fun z => (threeSphereStereoLocalDiffeomorph a z).comp
     (𝓡 3) Q (C.local_diffeomorph (threeSphereStereoInverse a z))
-
-
 
 theorem projectiveStereo_metric (C : StandardProjectiveSmoothCover Q)
     (a : UnitThreeSphere) (z u v : EuclideanSpace ℝ (Fin 3)) :
@@ -50,8 +38,6 @@ theorem projectiveStereo_metric (C : StandardProjectiveSmoothCover Q)
     (mfderiv (𝓡 3) (𝓡 3) (C.cover ∘ e) z v)
   rw [hc]
   rfl
-
-
 
 theorem projective_constantPositiveSectionalCurvature
     (C : StandardProjectiveSmoothCover Q) (D : LeviCivitaData (projectiveMetric C)) :

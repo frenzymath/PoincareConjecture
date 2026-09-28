@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Hyperbola
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -145,7 +139,6 @@ theorem negative_patch_level_eq_arcs (e : OpenPartialHomeomorph E2 M)
       linarith
   rw [heq, closedSquare_negativeLevel_eq_arcs hr ht htr, image_iUnion]
   rfl
-
 
 theorem positive_level_eq_arcs_union_exterior (e : OpenPartialHomeomorph E2 M)
     {h : M → Real} {c r t : Real} (hr : 0 < r) (ht : 0 < t) (htr : t < r ^ 2)

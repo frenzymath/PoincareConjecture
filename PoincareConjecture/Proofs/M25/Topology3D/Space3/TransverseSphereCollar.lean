@@ -5,28 +5,12 @@ import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Topology.Algebra.Module.Equiv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem mfderiv_sphere_product_time (C : UnitTwoSphere × ℝ → E3)
     (p : UnitTwoSphere)
@@ -45,9 +29,6 @@ theorem mfderiv_sphere_product_time (C : UnitTwoSphere × ℝ → E3)
       ((0 : TangentSpace (𝓡 2) p), (1 : ℝ)) at he
   rw [mfderiv_eq_fderiv] at he
   exact he.symm
-
-
-
 
 theorem sphere_product_mfderiv_bijective_of_normal
     (C : UnitTwoSphere × ℝ → E3) (j : UnitTwoSphere → E3)
@@ -101,10 +82,6 @@ theorem sphere_product_mfderiv_bijective_of_normal
     simp [E2, E3, Module.finrank_prod]
   exact ⟨hAi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (f := A.toLinearMap) hdim).mp hAi⟩
-
-
-
-
 
 theorem exists_transverse_sphere_collar
     (C : UnitTwoSphere × ℝ → E3) (j : UnitTwoSphere → E3)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Correction.CapBelt
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -55,8 +47,6 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
-
 theorem capMinus_edge_eq_cutting_circle :
     S.gMinus '' sphere (0 : E2) 1 =
       range (fun q : S1 => (c - S.a) • v + (S.γ q : E3)) := by
@@ -69,8 +59,6 @@ theorem capMinus_edge_eq_cutting_circle :
   rw [sub_eq_add_neg]
   exact S.cylinder q (-S.a)
     ⟨by linarith [S.a_lt_quarter_ε, S.a_pos], by linarith [S.ε_pos, S.a_pos]⟩
-
-
 
 theorem capPlus_edge_eq_cutting_circle :
     S.gPlus '' sphere (0 : E2) 1 =

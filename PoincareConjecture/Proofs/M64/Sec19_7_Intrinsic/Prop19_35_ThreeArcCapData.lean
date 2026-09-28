@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCornerCaps
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,18 +10,11 @@ open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
 
-
-
-
 abbrev m64IntrinsicOccupiedCapFamily
     (F : Bool × Bool → OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
     (r : ℝ) (positive : Bool) : Set AnnulusCoordinates :=
   ⋃ i, ⋃ (_ : if positive then i = (true, true) else i ≠ (true, true)),
     F i '' {q : ℝ × ℝ | 0 ≤ q.1 ∧ 0 ≤ q.2 ∧ q.1 + q.2 ≤ r}
-
-
-
-
 
 structure M64IntrinsicThreeArcCaps (gamma : Bool → ℝ → AnnulusCoordinates)
     (sigma : ℝ → AnnulusCoordinates) (T : Bool → ℝ) (S : ℝ)
@@ -86,18 +75,12 @@ structure M64IntrinsicThreeArcCaps (gamma : Bool → ℝ → AnnulusCoordinates)
 
 namespace M64IntrinsicThreeArcCaps
 
-
-
-
 abbrev carrier {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
     {T : Bool → ℝ} {S : ℝ} {U : Set AnnulusCoordinates}
     (C : M64IntrinsicThreeArcCaps gamma sigma T S U) (e : Bool) : Set AnnulusCoordinates :=
   m64IntrinsicOccupiedCapFamily (C.cap e) (C.radius e) (C.positive e)
 
 end M64IntrinsicThreeArcCaps
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_cap_data
     (gamma : Bool → ℝ → AnnulusCoordinates) (sigma : ℝ → AnnulusCoordinates)

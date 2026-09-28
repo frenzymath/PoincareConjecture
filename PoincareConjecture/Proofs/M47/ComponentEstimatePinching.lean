@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
 
-
-
 theorem component_pinched_curvature_bound (P : M47Predecessors.{u})
     {t Q L : ℝ} {U : Set M} (hpinch : SurgeryPinchedOn D t U)
     (hQ : Real.exp 4 ≤ Q) (hL : 1 ≤ L) {x : M} (hx : x ∈ U)
@@ -35,8 +23,6 @@ theorem component_pinched_curvature_bound (P : M47Predecessors.{u})
   exact (Proofs.M46.pinched_curvature_norm_le P.toM46 hpinch hx).trans
     (mul_le_mul_of_nonneg_left (max_le hscalar (hQ.trans hQL)) (by norm_num))
 
-
-
 theorem component_pinched_scalar_floor {t : ℝ} {U : Set M}
     (hpinch : SurgeryPinchedOn D t U) {x : M} (hx : x ∈ U) :
     -6 ≤ D.scalarCurvature x := by
@@ -45,8 +31,6 @@ theorem component_pinched_scalar_floor {t : ℝ} {U : Set M}
     apply (le_div_iff₀ hden).2
     nlinarith [hpinch.1]
   exact hfloor.trans (hpinch.2.1 x hx)
-
-
 
 theorem component_pinched_scaled_scalar_floor {t Q L : ℝ} {U : Set M}
     (hpinch : SurgeryPinchedOn D t U) (hQ : 6 ≤ Q) (hL : 1 ≤ L)

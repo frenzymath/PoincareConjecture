@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ noncomputable local instance capDerivativeCoefficientNorm : NormedAddCommGroup V
 
 noncomputable local instance capDerivativeCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_standardCap_intrinsic_derivative_bound {g0 : StandardInitialMetric}
     (S : MaximalStandardCapFlow g0) {theta : ℝ} (htheta : theta < S.base.lifetime)

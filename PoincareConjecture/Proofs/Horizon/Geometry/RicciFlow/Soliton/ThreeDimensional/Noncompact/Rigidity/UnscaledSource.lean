@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.ScalarBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Small
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
 
 def unscaledSourceFlow : RicciFlow 3 M (Iio 1) :=
   G.flow.translate (-1)
@@ -64,7 +56,6 @@ theorem unscaledSourceFlow_metricKappaNoncollapsed (t : ℝ) (ht : t < 1) :
   exact E.kappaNoncollapsed (sub_pos.mpr ht) S.connection
     (G.unscaledSourceFlow.connection t) S.kappa_noncollapsed
 
-
 theorem unscaledSourceFlow_curvature_bound :
     ∃ B : ℝ, 0 ≤ B ∧ ∀ t : ℝ, t < 1 → ∀ x : M,
       |(G.unscaledSourceFlow.connection t).curvatureTensorNorm x| ≤ B / (1 - t) := by
@@ -74,7 +65,6 @@ theorem unscaledSourceFlow_curvature_bound :
   rw [E.curvatureNorm (sub_pos.mpr ht) S.connection, abs_mul,
     abs_of_pos (inv_pos.mpr (sub_pos.mpr ht)), div_eq_mul_inv, mul_comm B]
   exact mul_le_mul_of_nonneg_left (hbound _) (inv_nonneg.mpr (sub_pos.mpr ht).le)
-
 
 theorem unscaledSourceFlow_scalar_lower_bound (hC : RicciFlowCurvatureTheory.{u}) :
     ∃ c : ℝ, 0 < c ∧ ∀ t : ℝ, t < 1 → ∀ x : M,
@@ -96,7 +86,6 @@ theorem unscaledSourceFlow_past_curvature_bound (b : ℝ) (hb : b < 1) :
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space RicciFlow.smallMeasurableSpace
   RicciFlow.smallBorelSpace
-
 
 def unscaledWindowFlow (a b : ℝ) (ha : a < 0) (hb : 0 < b) (hb1 : b < 1) :
     RicciFlow 3 (Shrink.{0} M) (Ioo a b) :=
@@ -123,8 +112,6 @@ def unscaledWindowSequence (q : ℕ → M) (a b : ℝ) (ha : a < 0) (hb : 0 < b)
     (hb1 : b < 1) : PointedFlowSequence 3 a b where
   carrier := fun _ => AncientRescalingSequence.smallRescalingCarrier (M := M)
   flow := G.unscaledBasedWindow q a b ha hb hb1
-
-
 
 def unscaledCompactnessHypotheses (q : ℕ → M) (a b : ℝ) (ha : a < 0) (hb : 0 < b)
     (hb1 : b < 1) : PointedRicciFlowCompactnessHypotheses 3 a b where

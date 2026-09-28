@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerOriginalWallCore
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerBrownCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,10 +12,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ] [Nonempty κ]
 local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ (hamiltonLowerPeriodLattice κ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem HamiltonLowerLatticeImmersion.exists_original_marked_brown_cap
     (I : HamiltonLowerLatticeImmersion κ)

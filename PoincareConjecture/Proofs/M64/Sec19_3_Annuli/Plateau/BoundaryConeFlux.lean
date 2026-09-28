@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeFields
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,16 +14,11 @@ open M65Interior
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
 
-
-
 noncomputable def coneRadialFlux (g : C → ℝ)
     (r : ℝ) (v0 : C) (v : ℝ → C)
     (x : LoopPlane) (test : LoopPlane → ℝ) (i : Fin 2) (s θ : ℝ) : ℝ :=
   s * Proofs.M58.angularPoint θ i * g (coneCoordinates r v0 v s θ) *
     test (polarPlane x (s, θ))
-
-
-
 
 noncomputable def coneAngularFlux (g : C → ℝ)
     (r : ℝ) (v0 : C) (v : ℝ → C)
@@ -60,9 +42,6 @@ private theorem polar_frame_coordinate (A : LoopPlane →L[ℝ] ℝ) (θ : ℝ) 
         Proofs.M58.angularVector θ i • Proofs.M58.angularVector θ) := by
       simp only [map_add, map_smul, smul_eq_mul]
     _ = _ := congrArg A hframe
-
-
-
 
 theorem coneRadialFlux_hasDerivAt {g : C → ℝ}
     (r : ℝ) (v0 : C) (v : ℝ → C)
@@ -88,9 +67,6 @@ theorem coneRadialFlux_hasDerivAt {g : C → ℝ}
   convert! hprod using 1
   simp only [Function.comp_def, Pi.mul_apply, smul_eq_mul, one_mul, id_eq]
   ring
-
-
-
 
 theorem coneAngularFlux_hasDerivAt {g : C → ℝ}
     (r : ℝ) (v0 : C)
@@ -122,9 +98,6 @@ theorem coneAngularFlux_hasDerivAt {g : C → ℝ}
   convert! hprod using 1
   simp only [Function.comp_def, Pi.mul_apply, map_smul, smul_eq_mul]
   ring
-
-
-
 
 theorem coneFlux_derivative_sum {g : C → ℝ}
     (r : ℝ) (v0 : C)

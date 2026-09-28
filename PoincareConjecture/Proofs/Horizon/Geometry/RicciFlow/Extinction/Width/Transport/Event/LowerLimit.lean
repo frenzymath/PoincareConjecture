@@ -4,7 +4,6 @@ set_option autoImplicit false
 
 namespace PoincareConjecture
 
-
 theorem m67_factor_tolerance {v epsilon : ℝ} (hv : 0 ≤ v) (hepsilon : 0 < epsilon) :
     ∃ eta : ℝ, 0 < eta ∧ ∀ w : ℝ, v ≤ (1 + eta) ^ 2 * w → v ≤ w + epsilon := by
   let eta := min 1 (epsilon / (4 * (v + 1)))
@@ -25,8 +24,6 @@ theorem m67_factor_tolerance {v epsilon : ℝ} (hv : 0 ≤ v) (hepsilon : 0 < ep
   have hsqw : eta ^ 2 * w ≤ eta * w := mul_le_mul_of_nonneg_right hsquare hw
   have hmul : eta * w ≤ eta * v := mul_le_mul_of_nonneg_left hwv heta.le
   nlinarith
-
-
 
 theorem m67_lower_limit_of_factor_bounds
     {T : ℝ} (width : Set.Icc (0 : ℝ) T → ℝ) (s : Set.Icc (0 : ℝ) T)

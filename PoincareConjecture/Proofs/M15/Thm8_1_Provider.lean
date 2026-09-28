@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
 
 theorem provider_implies_noncollapse {n : ℕ} {X : Type u} [TopologicalSpace X]
     {time : X → ℝ} {I : SpacetimeInterval}

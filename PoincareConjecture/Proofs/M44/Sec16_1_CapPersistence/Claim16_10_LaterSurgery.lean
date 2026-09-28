@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M33.RegularHistory
 import PoincareConjecture.Proofs.M44.Mathlib.ConnectedFrontier
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem SurgeryFlowCylinder.preterminal_image_preconnected
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -36,8 +25,6 @@ theorem SurgeryFlowCylinder.preterminal_image_preconnected
     ⟨origin + s / scale, ht⟩).symm.contMDiff.continuous
   exact hU.image _ (hpre.comp_continuousOn (e.forward_smooth s hs).continuousOn)
 
-
-
 theorem SurgeryFlowCylinder.preterminal_ball_preconnected
     {F : SurgeryFlowData.{u}} {origin scale : ℝ} {I : Set ℝ}
     (p : (F.slice origin).carrier) (r : ℝ)
@@ -51,8 +38,6 @@ theorem SurgeryFlowCylinder.preterminal_ball_preconnected
         (F.metric origin).ball p r) :=
   e.preterminal_image_preconnected ((F.metric origin).isPreconnected_ball p r)
     hPlus s hs ht
-
-
 
 theorem SurgeryFlowData.first_surgery_or_free (F : SurgeryFlowData.{u})
     {a b : ℝ} (hJ : Icc a b ⊆ F.time_domain) :
@@ -74,8 +59,6 @@ theorem SurgeryFlowData.first_surgery_or_free (F : SurgeryFlowData.{u})
     intro s hs hsI
     exact (not_lt_of_ge (hminimal s ⟨hs, hsI.1, hsI.2.le.trans htPlus.2.2⟩)) hsI.2
 
-
-
 theorem SurgeryEventData.all_lost_of_avoids_necks
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
     {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -89,8 +72,6 @@ theorem SurgeryEventData.all_lost_of_avoids_necks
   apply hU.subset_compl_interior_of_disjoint_frontier _ hlost
   rw [E.pre_boundary]
   exact disjoint_iUnion_right.mpr havoid
-
-
 
 theorem SurgeryFlowCylinder.disappears_of_late_neck_avoidance
     {F : SurgeryFlowData.{u}} {origin scale : ℝ} {I : Set ℝ}

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.UnitAdaptedIndexComparison
 import PoincareConjecture.Proofs.M09.ScalarIndexBoundary
 import PoincareConjecture.Proofs.M09.AdaptedVariationIndex
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -1,20 +1,9 @@
-
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.SupportTransport
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.CompactMaximum
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Separation.Basic
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +16,6 @@ namespace Poincare.Parabolic
 variable {B : Type*} [TopologicalSpace B] [CompactSpace B] [T2Space B]
   {V : B → Type*} [∀ x, NormedAddCommGroup (V x)] [∀ x, InnerProductSpace ℝ (V x)]
   [∀ x, FiniteDimensional ℝ (V x)]
-
-
-
 
 theorem local_mem_of_inward_of_contact
     {K : ∀ x, Set (V x)} (hne : ∀ x, (K x).Nonempty)

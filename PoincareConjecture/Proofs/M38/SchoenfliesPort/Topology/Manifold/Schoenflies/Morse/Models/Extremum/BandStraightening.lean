@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Extremum.AnnulusSlices
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.BandEndpoints
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -70,9 +62,6 @@ private theorem smoothEmbedding_postcompose_diffeomorph
     (injective_mfderiv_sphere_embedding hf p)
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_buffered_capped_minimum_disk_band_straightening_of_physical_annulus_cover
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -296,9 +285,7 @@ theorem exists_buffered_capped_minimum_disk_band_straightening_of_physical_annul
     rw [hFband]
     exact hDband
 
-
 set_option maxHeartbeats 1000000 in
-
 
 theorem exists_capped_minimum_disk_band_straightening_of_physical_annulus_cover
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -366,10 +353,7 @@ theorem exists_capped_minimum_disk_band_straightening_of_physical_annulus_cover
   exact ⟨J, r, hr, hrs, A, D, hh, fun t x ht => hu t x (by linarith),
     hc, hp, hb, hw⟩
 
-
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_capped_minimum_disk_band_straightening
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

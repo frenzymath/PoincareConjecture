@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.BoundaryBasics
 import Mathlib.Analysis.Convex.GaugeRescale
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,14 +12,12 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
 def affineBasisTriangle (b : AffineBasis (Fin 3) ℝ E) : Polygon E 3 :=
   ⟨b⟩
 
 end Module
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem affineBasisTriangle_boundary_eq_frontier (b : AffineBasis (Fin 3) ℝ E) :
     (affineBasisTriangle b).boundary ℝ = frontier (convexHull ℝ (range b)) := by
@@ -83,8 +69,6 @@ theorem affineBasisTriangle_boundary_eq_frontier (b : AffineBasis (Fin 3) ℝ E)
       refine ⟨b.coord 0 x, b.coord 1 x, hnonneg 0, hnonneg 1, ?_, ?_⟩
       · simpa only [hkzero, add_zero] using hsum
       · simpa only [hkzero, zero_smul, add_zero] using hrepr
-
-
 
 theorem affineBasisTriangle_homeomorph (b : AffineBasis (Fin 3) ℝ E) :
     ∃ h : E ≃ₜ E, h '' interior (convexHull ℝ (range b)) = ball 0 1 ∧

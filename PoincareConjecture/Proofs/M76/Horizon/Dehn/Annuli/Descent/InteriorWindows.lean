@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.ProtectedBoundary
 import PoincareConjecture.Proofs.M76.Dehn.OriginalTwoBranchWindows
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology Metric
@@ -19,7 +9,6 @@ open PoincareConjecture.M76.Dehn
 namespace Topology.TwoBranchWindow
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {r : X → Y}
-
 
 def restrictTarget (w : TwoBranchWindow r) (V : Set Y) (hV : IsOpen V) :
     TwoBranchWindow r where
@@ -52,8 +41,6 @@ theorem mem_restrictTarget_right (w : TwoBranchWindow r) {V : Set Y} (hV : IsOpe
   rw [w.right_eq]
   exact ⟨hx, hxr⟩
 
-
-
 theorem sources_disjoint_image (w : TwoBranchWindow r) {Z : Type*}
     (j : Z → X) (A : Set Z) (havoid : Disjoint w.target ((r ∘ j) '' A)) :
     Disjoint w.left.source (j '' A) ∧ Disjoint w.right.source (j '' A) := by
@@ -82,8 +69,6 @@ variable {U E V M ι : Type*}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
 
-
-
 theorem Step.window_sources_interior (step : Step s t)
     (w : TwoBranchWindow (step.projection ∘ step.inclusion)) (R : Set M)
     (hinside : w.target ⊆ interior (s.projection ⁻¹' R)) :
@@ -105,9 +90,6 @@ theorem Step.window_sources_interior (step : Step s t)
     have hy := w.right.map_source hx
     rw [w.right_target, w.right_eq] at hy
     exact hinside hy
-
-
-
 
 theorem Step.exists_protected_interior_windows (step : Step s t)
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

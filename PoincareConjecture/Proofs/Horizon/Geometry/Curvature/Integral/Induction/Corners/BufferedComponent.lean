@@ -3,20 +3,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.SeparatedNeighborhood
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_buffered_strainer_component_restriction
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

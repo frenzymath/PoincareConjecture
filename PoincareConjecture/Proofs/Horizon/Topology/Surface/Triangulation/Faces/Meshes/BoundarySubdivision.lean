@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -126,8 +116,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace Plane M] [IsManifold (𝓡 2) ∞ M]
 
-
-
 structure SmoothTriangleBoundarySubdivision
     (F : OpenPartialHomeomorph Plane M) (b : AffineBasis (Fin 3) ℝ Plane)
     (S : Finset M) where
@@ -165,13 +153,11 @@ structure SmoothTriangleBoundarySubdivision
         F (affineChartSegment (b (i.succAbove 0)) (b (i.succAbove 1)) (a + v * (c - a)))) ∧
       ((face t).boundary k).map 0 ∈ S ∧ ((face t).boundary k).map 1 ∈ S
 
-
 structure SmoothTriangleBoundarySubdivisionWithRefinement
     (F : OpenPartialHomeomorph Plane M) (b : AffineBasis (Fin 3) ℝ Plane)
     (S : Finset M) extends SmoothTriangleBoundarySubdivision F b S where
   refinement_lines : List (Plane →ᵃ[ℝ] ℝ)
   mesh_eq_refineByLines : mesh = (TriangleMesh.single b b.ind).refineByLines refinement_lines
-
 
 theorem SmoothTriangleBoundarySubdivision.open_boundary_avoids_marks
     {F : OpenPartialHomeomorph Plane M} {b : AffineBasis (Fin 3) ℝ Plane} {S : Finset M}
@@ -191,9 +177,6 @@ theorem SmoothTriangleBoundarySubdivision.open_boundary_avoids_marks
   have hzv := F.injOn hzsrc hvsrc heq
   exact boundarySubdivision_open_edge_avoids_vertices (meshTriangleBasis D.mesh t) k hv
     (hzv ▸ hz)
-
-
-
 
 theorem exists_smoothTriangleBoundarySubdivision_with_refinement
     (F : OpenPartialHomeomorph Plane M)
@@ -350,7 +333,6 @@ theorem exists_smoothTriangleBoundarySubdivision_with_refinement
   intro t
   rw [hcarrier]
   exact (image_mono (meshTriangleBasis_subset_support mesh t)).trans hmeshchart
-
 
 theorem exists_smoothTriangleBoundarySubdivision
     (F : OpenPartialHomeomorph Plane M)

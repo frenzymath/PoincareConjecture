@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarStandardCylinder
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,18 +15,11 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
-
-
 def m64TrimmedCoverCoordinate (eps : ℝ) (z : Cover) : Plane :=
   annulusPoint (curvePeriod * z.2) (eps + (1 - 2 * eps) * (z.1 - 1))
 
-
-
 def m64TrimmedAnnulusNeighborhood (eps : ℝ) : Set Plane :=
   {p | 0 < ‖p‖ ∧ eps + (1 - 2 * eps) * (‖p‖ - 1) ∈ Ioo (0 : ℝ) 1}
-
-
-
 
 theorem m64TrimmedCoverCoordinate_contDiff (eps : ℝ) :
     ContDiff ℝ ∞ (m64TrimmedCoverCoordinate eps) := by
@@ -77,18 +61,11 @@ private theorem trimmedCoordinate_fderiv_injective {eps : ℝ}
     exact congrArg (fderiv ℝ S (m64TrimmedCoverCoordinate eps z)) huv
   simpa only [hleft, fderiv_id, ContinuousLinearMap.id_apply] using heq
 
-
-
-
 theorem isOpen_m64TrimmedAnnulusNeighborhood (eps : ℝ) :
     IsOpen (m64TrimmedAnnulusNeighborhood eps) :=
   (isOpen_lt continuous_const continuous_norm).inter
     (isOpen_Ioo.preimage
       (continuous_const.add (continuous_const.mul (continuous_norm.sub continuous_const))))
-
-
-
-
 
 theorem standardAnnulusDomain_subset_trimmedNeighborhood {eps : ℝ}
     (hpos : 0 < eps) (hsmall : eps < 1 / 2) :
@@ -107,8 +84,6 @@ private theorem cover_boundary (radius theta : ℝ) :
   ext i
   fin_cases i <;> simp [scalarCoverMap, scalarCirclePoint, intrinsicAnnulusBoundary,
     EuclideanSpace.basisFun_apply, hangle]
-
-
 
 theorem m64TrimmedDescent_standardCylinder
     {M : Type*} {f : Plane → M} {F : Plane → M} {eps : ℝ}
@@ -166,10 +141,6 @@ private theorem trimmedDescent_smooth_immersedAt
   obtain ⟨u, rfl⟩ := A.surjective u
   obtain ⟨v, rfl⟩ := A.surjective v
   exact congrArg A (hinj huv)
-
-
-
-
 
 theorem m64_exists_trimmed_polar_descent
     {f : Plane → M}

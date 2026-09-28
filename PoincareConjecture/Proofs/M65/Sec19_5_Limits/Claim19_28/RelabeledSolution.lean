@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingIntrinsic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
 
 theorem m65ContinuousOn_smul_field {gamma : ℝ × ℝ → M}
     {Y : ∀ z, TangentSpace (𝓡 n) (gamma z)} {f : ℝ × ℝ → ℝ} {S : Set (ℝ × ℝ)}
@@ -43,9 +33,6 @@ theorem m65ContinuousOn_smul_field {gamma : ℝ × ℝ → M}
   change (e ⟨gamma w, f w • Y w⟩).2 = f w • (e ⟨gamma w, Y w⟩).2
   rw [← e.continuousLinearMapAt_apply_of_mem ℝ hw,
     ← e.continuousLinearMapAt_apply_of_mem ℝ hw, map_smul]
-
-
-
 
 theorem m65ShrinkingCurve_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ}
@@ -95,9 +82,6 @@ theorem m65ShrinkingCurve_fixed_relabeling (c : ℝ → ℝ → M)
     exact m65CurvatureVector_fixed_relabeling c hc hdiff hpos hz.2 z.1
   · intro t ht x
     exact m65ShrinkingEquation_fixed_relabeling c hc hdiff hpos ht x
-
-
-
 
 theorem m65ShrinkingCurve_exists_constantSpeed_solution (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {s : ℝ} (hs : s ∈ Ioo a b) :

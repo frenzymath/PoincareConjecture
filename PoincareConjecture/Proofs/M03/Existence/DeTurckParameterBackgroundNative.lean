@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckJetAffineNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckPullbackSourceNative
 import PoincareConjecture.Proofs.M03.Existence.ContinuousPathCompositionNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -139,7 +132,6 @@ theorem contDiffOn_compact_curry_nat {U : Set P} (hU : IsOpen U)
     · intro p hp
       exact (hasFDerivAt_compact_curry hU fbar A hp
         ((hA.continuousOn p hp).continuousAt (hU.mem_nhds hp)) hder).hasFDerivWithinAt
-
 
 theorem contDiffOn_compact_curry {U : Set P} (hU : IsOpen U)
     (f : P × M → F)
@@ -279,7 +271,6 @@ theorem background_inner (g0 : RiemannianMetric n M) (Phi : P → Diffeomorph I 
       g0.inner (Phi p x) (mfderiv I I (Phi p) x v) (mfderiv I I (Phi p) x w) :=
   smoothPullbackMetric_inner g0 (Phi p) x v w
 
-
 def seed (g0 : RiemannianMetric n M) (Phi : P → Diffeomorph I I M M ∞)
     (p : P) : SmoothTensor (n := n) (M := M) :=
   metricTensor (background g0 Phi p) - metricTensor g0
@@ -417,7 +408,6 @@ theorem smoothProbeTuples_seed_contDiffOn (Phi : P → Diffeomorph I I M M ∞) 
   exact (ContinuousMap.toLp 2 d.charts.measure ℝ :
     C(M, ℝ) →L[ℝ] Lp ℝ 2 d.charts.measure).contDiff.comp_contDiffOn
       (contDiffOn_pi.mp (contDiffOn_pi.mp (backgroundTuples_contDiffOn Phi d hU hPhi k) ab) w)
-
 
 def seedCoordinates (Phi : P → Diffeomorph I I M M ∞) (d : Data g0)
     (r : ℕ) (p : P) : State d.SymmetricIndex :=

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CertifiedDirectionalIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricBandLevelCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_prescribed_cap_collar_isotopy
     {B T d b U : Set E} {upper r : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderDifferential
 import PoincareConjecture.Definitions.M27ProductModels
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -30,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem projectivePlaneLine_cover_not_immersed
     {K : AncientKappaSolution 3 M} (P : M27ProjectivePlaneLineFlowCertificate K)
@@ -88,9 +73,6 @@ local instance : T3Space C.limit.carrier.carrier := C.limit.carrier.t3Space
 local instance : SecondCountableTopology C.limit.carrier.carrier :=
   C.limit.carrier.secondCountable
 local instance : ConnectedSpace C.limit.carrier.carrier := C.limit.connectedSpace
-
-
-
 
 theorem generalizedBlowupConvergence_not_projectivePlaneLine
     {kappa : ℝ} (A : BlowupAncientKappaIdentification C.limit kappa)

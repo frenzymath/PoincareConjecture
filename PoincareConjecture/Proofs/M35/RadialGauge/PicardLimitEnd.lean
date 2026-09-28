@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardDerivativeEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardC3Limit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {A F : Type*} [NormedAddCommGroup F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem weighted_geometric_limit_vanishes_uniformly
     {f : ℕ → A → V → F} {u : A → V → F} {C : ℝ}
@@ -51,8 +40,6 @@ noncomputable local instance m35PicardLimitEndLocal1 :
   ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35PicardLimitEndLocal2 :
     NormedSpace ℝ (V →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem gaugePicard_limit_derivatives_weighted_vanish_uniformly
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T C1 C2 : ℝ}

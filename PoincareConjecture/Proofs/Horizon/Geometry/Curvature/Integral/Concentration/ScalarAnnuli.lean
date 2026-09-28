@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PuncturedIntegral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Singleton
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +10,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem integral_scalarCurvature_posPart_outside_ball_le_of_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -83,8 +74,6 @@ theorem integral_scalarCurvature_posPart_outside_ball_le_of_scale_annuli
   rw [← g.toMetricSpace_ball, ← g.toMetricSpace_ball] at hx
   exact ⟨Metric.ball_subset_closedBall hx.1, hx.2⟩
 
-
-
 theorem integral_scalarCurvature_posPart_ball_le_of_all_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]
@@ -111,8 +100,6 @@ theorem integral_scalarCurvature_posPart_ball_le_of_all_scale_annuli
     (fun r hr hr' => hbound r (by linarith) hr')
   rw [show 4 * (a / 4) = a by ring, ← g.toMetricSpace_ball p a] at hb
   exact hb
-
-
 
 theorem integral_scalarCurvature_posPart_outside_ball_le_of_nonneg_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]

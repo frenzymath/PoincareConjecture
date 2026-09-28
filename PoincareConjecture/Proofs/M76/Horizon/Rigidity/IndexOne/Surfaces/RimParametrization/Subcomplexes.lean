@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimParam
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimSubcomplexModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.SourceCollarCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -18,8 +16,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_sourceRim_finitePL_circle_subcomplexes_of_injOn
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -96,8 +92,6 @@ theorem exists_sourceRim_finitePL_circle_subcomplexes_of_injOn
     fun side => ⟨hgamma side, hgammaInv side⟩, hval⟩
   intro side
   exact ⟨hJA side, hA.subset (hJA side)⟩
-
-
 
 theorem exists_sourceRim_finitePL_circle_subcomplexes
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

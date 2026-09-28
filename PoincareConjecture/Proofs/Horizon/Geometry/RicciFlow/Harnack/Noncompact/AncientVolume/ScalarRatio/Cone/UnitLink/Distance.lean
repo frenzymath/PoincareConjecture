@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} {hc : RayComparison p} {n : ℕ}
-
-
 
 theorem exists_unitSlice_local_ambient_realization
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
@@ -115,8 +103,6 @@ private theorem pathELength_comp_eq_on
   rw [hm _ (hγU hu)]
   rfl
 
-
-
 theorem unitSlice_edist_le_pathELength
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
       ∃ (d : UnitSliceRadialChartData hc n) (z : d.Level),
@@ -182,8 +168,6 @@ theorem unitSlice_edist_le_pathELength
   rw [hN N le_rfl] at hfinal
   exact hfinal
 
-
-
 theorem unitSlice_edist_le_metric_edist
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
       ∃ (d : UnitSliceRadialChartData hc n) (z : d.Level),
@@ -205,7 +189,6 @@ theorem unitSlice_edist_le_metric_edist
   have hle := unitSlice_edist_le_pathELength hcover γ hγ
   rw [h0, h1] at hle
   exact hle.trans_lt hlen
-
 
 theorem unitSlice_dist_le_metric_toReal_edist
     [PreconnectedSpace (AsymptoticConeUnitSlice p hc)]

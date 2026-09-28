@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Transport.RetainedDiskProduct
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -42,8 +40,6 @@ theorem physical_product_inverse {x : X} (hx : x ∈ frontier D ∩ W)
     ⟨P.surface_image.symm.subset ⟨x,hx,rfl⟩,ht⟩
   rw [P.graph_inverse _ (P.product_mem_ambient hz)]
   exact P.productInverse_left _ hz
-
-
 
 theorem physical_product_mem_cap_iff {x : X} (hx : x ∈ frontier D ∩ W)
     {t : ℝ} (ht : t ∈ I) :

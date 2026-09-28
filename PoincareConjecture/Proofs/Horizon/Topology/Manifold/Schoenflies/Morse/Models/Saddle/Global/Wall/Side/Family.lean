@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Disk
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Side
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
 
 structure CircleFamily (a b : Real) where
   hab : a ≤ b
@@ -78,7 +68,6 @@ private theorem frontier_transport
         exact ⟨p, (hmotion t ht p).symm⟩
       · rintro ⟨p, rfl⟩
         exact ⟨A.map (a, p), ⟨p, rfl⟩, hmotion t ht p⟩
-
 
 theorem exists_disk_family :
     ∃ C : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞,

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalRestart
 import PoincareConjecture.Proofs.M34.Standard.JoinedFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_extension_exists_of_curvature_bound
     (P : M34StandardCapPredecessors) {g0 : StandardInitialMetric}
@@ -70,8 +57,6 @@ theorem partialFlow_extension_exists_of_curvature_bound
     refine ⟨max B K, hB.le.trans (le_max_left _ _), ?_⟩
     exact fun t ht x => hbound t ⟨ht.1, ht.2.trans_lt hTend⟩ x
 
-
-
 theorem maximalFlow_curvature_unbounded (P : M34StandardCapPredecessors)
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)
     (F : MaximalStandardCapFlow g0) (B : ℝ) :
@@ -84,8 +69,6 @@ theorem maximalFlow_curvature_unbounded (P : M34StandardCapPredecessors)
     (fun t ht x => (hnot t ht x).trans
       ((le_max_left B 0).trans (by linarith)))
   exact F.maximal T hE
-
-
 
 theorem maximalFlow_curvature_unbounded_near_lifetime (P : M34StandardCapPredecessors)
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

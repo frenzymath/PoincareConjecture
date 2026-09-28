@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Cup.RetainedCore
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

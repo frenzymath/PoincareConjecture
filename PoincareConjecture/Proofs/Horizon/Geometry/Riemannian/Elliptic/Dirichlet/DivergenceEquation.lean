@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateTest
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem tendsto_gradient_pairing_of_weakEigen
     (u : H1Zero D Ω) (lambda : ℝ)
@@ -53,8 +45,6 @@ theorem tendsto_gradient_pairing_of_weakEigen
     ring
   simpa only [hseq, hlim] using ht
 
-
-
 theorem integral_gradient_eq_compact_coordinates
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -70,8 +60,6 @@ theorem integral_gradient_eq_compact_coordinates
   apply setIntegral_eq_integral_of_forall_compl_eq_zero
   intro y hy
   rw [D.gradient_eq_zero_of_notMem_tsupport (fun ht => hy (hh ht)), map_zero]
-
-
 
 theorem integral_test_eq_compact_coordinates
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -100,8 +88,6 @@ private theorem memLp_on_compact {K : Set (EuclideanSpace ℝ (Fin n))}
   obtain ⟨C, hC⟩ := hK.exists_bound_of_continuousOn hF
   exact MemLp.of_bound (hF.aestronglyMeasurable hK.measurableSet) C
     ((ae_restrict_mem hK.measurableSet).mono fun x hx => hC x hx)
-
-
 
 theorem weakEigen_divergence_compact
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -191,9 +177,6 @@ theorem weakEigen_divergence_compact
   have henergy := tendsto_gradient_pairing_of_weakEigen u lambda heigen hf h
   rw [hright] at henergy
   exact tendsto_nhds_unique hsum' henergy
-
-
-
 
 theorem weakEigen_divergence_local
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

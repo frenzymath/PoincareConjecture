@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardFamily
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_source_criticalBall_backward_family_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m64CirclePhase_column_sq_le_gram (P : M62.CircleProductData F circumference)
     (t : ℝ) (f : LoopPlane → P.charts.Point)
@@ -64,8 +51,6 @@ theorem m64CirclePhase_column_sq_le_gram (P : M62.CircleProductData F circumfere
   change (fderiv ℝ L p v) ^ 2 ≤ (P.flow.metric t).inner (f p) W W
   rw [P.metric_eq, hcircle]
   linarith
-
-
 
 theorem m64CirclePhase_energy_lower_bound (P : M62.CircleProductData F circumference)
     (t : ℝ) (f : LoopPlane → P.charts.Point)

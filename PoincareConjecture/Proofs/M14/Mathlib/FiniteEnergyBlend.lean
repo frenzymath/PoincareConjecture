@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyDisplacement
 import PoincareConjecture.Proofs.M14.Mathlib.BlendDerivativeEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M14
 open Proofs.M09
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem sharedEndpoint_distance_sq_le {f g : ℝ → E} {a b s : ℝ}
     (hf : ContinuousOn f (Icc a b)) (hg : ContinuousOn g (Icc a b))
@@ -41,10 +28,6 @@ theorem sharedEndpoint_distance_sq_le {f g : ℝ → E} {a b s : ℝ}
       _ = _ := by rw [norm_sub_rev (g s) (g b), ← heq]
   have hsq := (sq_le_sq₀ (norm_nonneg _) (by positivity)).mpr htriangle
   nlinarith [sq_nonneg (‖g b - g s‖ - ‖f b - f s‖)]
-
-
-
-
 
 theorem oneSidedBlend_deriv_sq_le {f g : ℝ → E} {b d s K : ℝ}
     (hd : 0 < d) (hK : 0 ≤ K)

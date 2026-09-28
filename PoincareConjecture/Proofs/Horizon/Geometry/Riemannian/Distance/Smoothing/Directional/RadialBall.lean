@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.RadialPair
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,7 +75,6 @@ theorem PoincareConjecture.RiemannianMetric.exists_distance_upper_support_of_opp
   refine ⟨V, rho, hV, hxV, hrho, hvalue, hupper, hγ1 ▸ hunit, ?_, ?_⟩
   · convert (hγ1 ▸ hfbound) using 1; ring
   · convert (hγ1 ▸ hhbound) using 1; ring
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_distance_upper_support_of_opposite_pairs_on_ball
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

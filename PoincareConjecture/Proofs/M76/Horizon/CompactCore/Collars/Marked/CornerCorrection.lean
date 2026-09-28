@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Patches.
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.OriginalProduct
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.FullBand
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

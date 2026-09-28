@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -19,7 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ s : ℝ, SpacetimeSliceGeometry F s}
-
 
 theorem horizontalRiemann_eq_slice
     (D : LeafwiseLeviCivitaFamily F S) (p : F.Point) {t : ℝ}
@@ -33,7 +24,6 @@ theorem horizontalRiemann_eq_slice
   subst t
   rfl
 
-
 theorem horizontalRicci_eq_slice
     (D : LeafwiseLeviCivitaFamily F S) (p : F.Point) {t : ℝ}
     (ht : F.timeFunction p = t) (u v : F.Horizontal p) :
@@ -44,7 +34,6 @@ theorem horizontalRicci_eq_slice
   subst t
   rfl
 
-
 theorem horizontalScalarCurvature_eq_slice
     (D : LeafwiseLeviCivitaFamily F S) (p : F.Point) {t : ℝ}
     (ht : F.timeFunction p = t) :
@@ -52,7 +41,6 @@ theorem horizontalScalarCurvature_eq_slice
       (D.sliceConnection t).scalarCurvature ⟨p, ht⟩ := by
   subst t
   rfl
-
 
 theorem horizontalCurvatureNorm_eq_slice
     (D : LeafwiseLeviCivitaFamily F S) (p : F.Point) {t : ℝ}

@@ -10,22 +10,12 @@ import Mathlib.Order.Interval.Set.OrderIso
 import Mathlib.Topology.Order.MonotoneContinuity
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M04
-
-
 
 theorem exists_positive_speed_reparam {v : ℝ → ℝ}
     (hv : Continuous v) (hv0 : ∀ t, 0 ≤ v t) {δ : ℝ} (hδ : 0 < δ) :
@@ -147,10 +137,8 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def pathSpeed (g : RiemannianMetric n M) (γ : ℝ → M) (t : ℝ) : ℝ :=
   g.tangentNorm (γ t) (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ t 1)
-
 
 noncomputable def pathEnergy (g : RiemannianMetric n M) (γ : ℝ → M) : ℝ :=
   ∫ t in (0 : ℝ)..1, g.inner (γ t)
@@ -204,7 +192,6 @@ theorem pathELength_eq_ofReal_integral_pathSpeed
     (Eventually.of_forall (pathSpeed_nonneg g γ))).symm
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_path_energy_reparam
     (g : RiemannianMetric n M) {γ : ℝ → M}
@@ -293,8 +280,6 @@ theorem exists_path_energy_reparam
       _ = A ^ 2 := by simp
   exact ⟨η, by simp [η, hθ0], by simp [η, hθ1], hηsmooth,
     hηimage, hlength, hbound, hlower, hupper⟩
-
-
 
 theorem exists_contMDiff_energy_path_sequence
     (g : RiemannianMetric n M) {p q : M} {R : ℝ}
@@ -405,4 +390,3 @@ theorem exists_contMDiff_energy_path_sequence
       hupperlim hElow hEup
 
 end PoincareConjecture.M04
-

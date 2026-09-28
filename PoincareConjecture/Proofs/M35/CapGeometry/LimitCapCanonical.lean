@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.CertificateConnection
 import PoincareConjecture.Proofs.M35.CapGeometry.SliceCapCertificate
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_limit_cap_canonical (P : M35StandardCapPredecessors) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ {g₀ : StandardInitialMetric}

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.ProperHalf
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +11,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_tube_closed_half_in_tail (e : TerminalEnd K)
     (A : RepairedNeckCapTopologyTheory.{u})

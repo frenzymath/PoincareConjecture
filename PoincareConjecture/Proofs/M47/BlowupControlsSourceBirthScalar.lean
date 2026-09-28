@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirth
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_CapScalarRate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_inserted_cap_birth_scalar_floor_cutoff
     {g0 : StandardInitialMetric} (P : RepairedCapPersistenceData.{u} g0)

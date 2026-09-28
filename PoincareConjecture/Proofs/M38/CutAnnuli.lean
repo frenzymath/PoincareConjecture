@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapAnnulus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def cutSideReflection (positive : Bool) :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -35,22 +26,18 @@ noncomputable def cutSideReflection (positive : Bool) :
     · exact contMDiff_fst.prodMk contMDiff_snd.neg
     · exact contMDiff_id
 
-
 @[simp] theorem cutSideReflection_apply (positive : Bool) (z : RoundCylinderSpace) :
     cutSideReflection positive z = (z.1, if positive then z.2 else -z.2) := rfl
-
 
 @[simp] theorem cutSideReflection_self (positive : Bool) (z : RoundCylinderSpace) :
     cutSideReflection positive (cutSideReflection positive z) = z := by
   cases positive <;> simp only [cutSideReflection_apply, Bool.false_eq_true,
     ↓reduceIte, neg_neg, Prod.mk.eta]
 
-
 @[simp] theorem cutSideReflection_zero (positive : Bool) (z : UnitTwoSphere) :
     cutSideReflection positive (z, 0) = (z, 0) := by
   cases positive <;> simp only [cutSideReflection_apply, Bool.false_eq_true,
     ↓reduceIte, neg_zero]
-
 
 theorem cutSideReflection_mem_full (positive : Bool) (z : RoundCylinderSpace) :
     cutSideReflection positive z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 ↔
@@ -58,7 +45,6 @@ theorem cutSideReflection_mem_full (positive : Bool) (z : RoundCylinderSpace) :
   cases positive <;> simp only [cutSideReflection_apply, Bool.false_eq_true,
     ↓reduceIte, Set.mem_prod, Set.mem_univ, true_and, Set.mem_Ioo]
   · constructor <;> intro h <;> constructor <;> linarith [h.1, h.2]
-
 
 theorem cutSideReflection_halves_disjoint :
     Disjoint (cutSideReflection false '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1))
@@ -75,7 +61,6 @@ variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
   [Nonempty (F.slice T).carrier] {i : Fin (F.event T hT).cap_count}
   (P : EventCapCoordinates F T hT i)
 
-
 theorem cutAnnular_map_smooth (positive : Bool) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞
       (P.collar ∘ cutSideReflection positive ∘ capAttachCoordinates)
@@ -89,7 +74,6 @@ theorem cutAnnular_map_smooth (positive : Bool) :
     exact (cutSideReflection_mem_full positive _).mpr
       (positive_collar_subset (capAttachCoordinates_mem hx))
 
-
 theorem cutAnnular_inverse_smooth (positive : Bool) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞
       (capAttachVector ∘ cutSideReflection positive ∘ P.collarInverse)
@@ -102,8 +86,6 @@ theorem cutAnnular_inverse_smooth (positive : Bool) :
   rintro _ ⟨z, hz, rfl⟩
   exact Set.mem_image_of_mem P.collar
     ((cutSideReflection_mem_full positive z).mpr (positive_collar_subset hz))
-
-
 
 noncomputable def cutAnnularChart (positive : Bool) :
     OpenPartialHomeomorph StandardCapSpace (F.slice (F.event T hT).tMinus).carrier where
@@ -145,14 +127,12 @@ noncomputable def cutAnnularChart (positive : Bool) :
     rintro _ ⟨z, hz, rfl⟩
     exact (cutSideReflection_mem_full positive z).mpr (positive_collar_subset hz)
 
-
 theorem cutAnnularChart_target_subset (positive : Bool) :
     (P.cutAnnularChart positive).target ⊆
       P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) := by
   rintro _ ⟨z, hz, rfl⟩
   exact Set.mem_image_of_mem P.collar
     ((cutSideReflection_mem_full positive z).mpr (positive_collar_subset hz))
-
 
 theorem cutAnnularChart_central_disjoint (positive : Bool) :
     Disjoint (P.cutAnnularChart positive).target
@@ -167,7 +147,6 @@ theorem cutAnnularChart_central_disjoint (positive : Bool) :
   have h := congrArg Prod.snd he
   cases positive <;> simp only [cutSideReflection_apply, Bool.false_eq_true,
     ↓reduceIte] at h <;> linarith [hz.2.1]
-
 
 theorem cutAnnularChart_opposite_disjoint :
     Disjoint (P.cutAnnularChart false).target (P.cutAnnularChart true).target := by

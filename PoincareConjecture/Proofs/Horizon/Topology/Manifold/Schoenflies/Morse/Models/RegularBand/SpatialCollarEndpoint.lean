@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CollarEndpoint
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.SpatialBoundaryAlignment
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ open Poincare.Geometry.Manifold Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_spatial_collar_alignment_with_constant_endpoint
     {v : E3} (hv : ‖v‖ = 1)

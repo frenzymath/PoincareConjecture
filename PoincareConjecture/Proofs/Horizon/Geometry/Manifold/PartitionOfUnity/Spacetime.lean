@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Partition
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [SigmaCompactSpace M]
-
-
 
 theorem exists_finite_spacetime_chart_decomposition
     {φ : M × ℝ → ℝ}

@@ -2,23 +2,12 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.SmoothApprox
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_bounded_family_height
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

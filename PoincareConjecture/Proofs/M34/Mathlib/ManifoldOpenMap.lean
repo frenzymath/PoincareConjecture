@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,7 +17,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace
   [ChartedSpace H M] [ChartedSpace H' N]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem map_nhds_eq_of_contMDiffAt_mfderiv_bijective {f : M → N} {x : M}
     (hf : ContMDiffAt I J ∞ f x)
@@ -66,8 +55,6 @@ theorem map_nhds_eq_of_contMDiffAt_mfderiv_bijective {f : M → N} {x : M}
     _ = map d.symm (map f' (𝓝 (c x))) := (map_map ..).symm
     _ = map d.symm (𝓝 (f' (c x))) := by rw [hstrict.map_nhds_eq_of_equiv]
     _ = 𝓝 (f x) := by rw [hFx, hdmap]
-
-
 
 theorem isOpen_image_of_contMDiffOn_mfderiv_bijective {f : M → N} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn I J ∞ f U)

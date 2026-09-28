@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.LensNesting
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Protected
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,9 +28,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
-
-
-
 
 theorem exists_explicit_lower_replacement
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -87,7 +76,6 @@ theorem exists_explicit_lower_replacement
   rw [hopen] at hcomplement
   rw [hcomplement] at hfull
   exact ⟨-d, neg_pos.mpr hdneg, hdsmall, F, by simpa only [neg_neg] using hfull⟩
-
 
 theorem exists_explicit_upper_replacement
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

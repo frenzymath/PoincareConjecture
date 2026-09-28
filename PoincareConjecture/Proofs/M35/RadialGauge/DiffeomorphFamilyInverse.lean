@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.SmoothEuclideanGauge
 import PoincareConjecture.Proofs.M03.Existence.PullbackConnectionNative
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem diffeomorph_family_symm_contDiffAt_order {k : ℕ} (hk : 1 ≤ k)
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {J : Set ℝ} (hJ : IsOpen J)
@@ -62,7 +51,6 @@ theorem diffeomorph_family_symm_contDiffAt_order {k : ℕ} (hk : 1 ≤ k)
   change Φ z.1 ((Φ z.1).symm z.2) = Φ z.1 (q z)
   rw [(Φ z.1).apply_symm_apply]
   exact (sub_eq_zero.mp hz).symm
-
 
 theorem diffeomorph_family_symm_contDiffAt
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {J : Set ℝ} (hJ : IsOpen J)

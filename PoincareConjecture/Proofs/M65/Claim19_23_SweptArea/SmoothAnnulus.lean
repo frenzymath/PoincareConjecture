@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.CompactLipschitz
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.AnnulusDomain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -20,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 noncomputable def m65AnnulusOfContMDiff (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -45,8 +35,6 @@ noncomputable def m65AnnulusOfContMDiff (g : RiemannianMetric n M)
     area_integrable := (m65Continuous_areaDensity g hf).continuousOn.integrableOn_compact
       m65AnnulusDomain_isCompact
   }
-
-
 
 @[simp] theorem m65AnnulusOfContMDiff_map (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) {c0 c1 : ℝ → M}

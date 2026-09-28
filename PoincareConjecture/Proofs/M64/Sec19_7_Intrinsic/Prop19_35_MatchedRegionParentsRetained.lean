@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MatchedRegionParents
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +9,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_cap_band_core_coordinate_parents_retaining_caps
     {I J : Type*} [Finite I] [Finite J]

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Isometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Equivalence
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
@@ -20,7 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem integral_scalarCurvature_eq_of_diffeomorph
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

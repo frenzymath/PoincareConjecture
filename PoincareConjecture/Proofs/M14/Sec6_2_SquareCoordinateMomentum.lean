@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquareCoefficients
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerCoordinateMomentum
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -75,9 +65,6 @@ private theorem force_smul
   intro w
   simp only [inner_smul_right, M08.chartForceVector_inner, map_smul, smul_apply, smul_eq_mul]
   ring
-
-
-
 
 theorem squareGauge_coordinate_momentum
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

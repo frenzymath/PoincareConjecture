@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M62.Mathlib.MultilinearUnitBound
 import PoincareConjecture.Proofs.M62.Lemma0_2_CurveLaws
 import PoincareConjecture.Proofs.M62.Cor0_3_AmbientBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem tensor_abs_le_of_unit_bound
     (g : RiemannianMetric n M) {k : ℕ}
@@ -43,8 +33,6 @@ theorem tensor_abs_le_of_unit_bound
   simpa only [← hA, Real.norm_eq_abs, hn] using h
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem spatialEvolutionRhs_add_ricci_sq_le
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -116,8 +104,6 @@ theorem spatialEvolutionRhs_add_ricci_sq_le
   nlinarith only [(abs_le.mp hHH).1, (abs_le.mp hRm).2,
     (abs_le.mp hHSS).2, (abs_le.mp hSSH).1, hSHsq, hSSq, hslack]
 
-
-
 theorem spatial_squared_bound [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {K0 K1 K2 : ℝ}
@@ -133,8 +119,6 @@ theorem spatial_squared_bound [T2Space M]
   rw [(hasDerivAt_curvatureSquared F c hc ht x).deriv]
   exact (le_add_of_nonneg_right (mul_nonneg (by norm_num) (sq_nonneg _))).trans
     (spatialEvolutionRhs_add_ricci_sq_le F c hc h0 h1 h2 hBounds ht x)
-
-
 
 theorem SpacetimeData.curvature_squared_bound [T2Space M]
     {F : RicciFlow n M (Set.Icc a b)} (G : SpacetimeData F)

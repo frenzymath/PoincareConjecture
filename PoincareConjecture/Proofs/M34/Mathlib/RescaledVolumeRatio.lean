@@ -1,21 +1,11 @@
 import Mathlib.Data.ENNReal.Inv
 import Mathlib.Tactic.FieldSimp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
 
 namespace ENNReal
-
-
 
 theorem rescaled_power_volume_ratio (V : ℝ≥0∞) (n : ℕ)
     {a q c d : ℝ} (ha : 0 < a) (hq : 0 < q) (hc : 0 ≤ c) (hd : 0 < d) :

@@ -6,23 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Spacetime.GeneralizedCylinderRestriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +19,6 @@ namespace PoincareConjecture.GeneralizedFlowCylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
   (d : GeneralizedFlowCylinder F C a q J U)
-
 
 theorem horizon_forward_mfderiv_bijective (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)
     {x : C.carrier} (hx : x ∈ U) :
@@ -70,7 +52,6 @@ theorem horizon_forward_mfderiv_bijective (hU : IsOpen U) (s : ℝ) (hs : s ∈ 
   dsimp only [TangentSpace] at hinj ⊢
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
 
-
 theorem horizon_isOpen_forward_image (hU : IsOpen U) (s : ℝ) (hs : s ∈ J) :
     IsOpen (d.forward s hs '' U) := by
   apply isOpen_iff_mem_nhds.mpr
@@ -80,7 +61,6 @@ theorem horizon_isOpen_forward_image (hU : IsOpen U) (s : ℝ) (hs : s ∈ J) :
     (d.horizon_forward_mfderiv_bijective hU s hs hx)]
   change (d.forward s hs) ⁻¹' (d.forward s hs '' U) ∈ 𝓝 x
   exact mem_of_superset (hU.mem_nhds hx) (fun z hz => mem_image_of_mem _ hz)
-
 
 noncomputable def sliceHomeomorph (hU : IsOpen U) (s : ℝ) (hs : s ∈ J) :
     OpenPartialHomeomorph C.carrier (F.slice (a + s / q)).carrier where
@@ -106,7 +86,6 @@ noncomputable def sliceHomeomorph (hU : IsOpen U) (s : ℝ) (hs : s ∈ J) :
 @[simp] theorem sliceHomeomorph_symm_apply (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)
     (x : (F.slice (a + s / q)).carrier) :
     (d.sliceHomeomorph hU s hs).symm x = d.inverse s hs x := rfl
-
 
 noncomputable def sliceHomeomorphAt (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)
     {t : ℝ} (ht : a + s / q = t) :
@@ -146,7 +125,6 @@ theorem sliceHomeomorphAt_pullbackInner (hU : IsOpen U) (s : ℝ) (hs : s ∈ J)
   cases ht
   rfl
 
-
 noncomputable def zeroSliceHomeomorph (hU : IsOpen U) (hzero : 0 ∈ J) :
     OpenPartialHomeomorph C.carrier (F.slice a).carrier :=
   d.sliceHomeomorphAt hU 0 hzero (by simp)
@@ -178,7 +156,6 @@ theorem zeroSliceHomeomorph_pullbackInner (hU : IsOpen U) (hzero : 0 ∈ J)
   d.sliceHomeomorphAt_pullbackInner hU 0 hzero _ x v w
 
 variable {C' : GeneralizedSliceCarrier.{u}}
-
 
 noncomputable def rebasePartialSource
     (e : OpenPartialHomeomorph C'.carrier C.carrier) (heU : e.target ⊆ U)
@@ -221,7 +198,6 @@ theorem rebasePartialSource_pointMap
     (s : ℝ) (hs : s ∈ J) (x : C'.carrier) :
     (d.rebasePartialSource e heU he hei).pointMap s hs x = d.pointMap s hs (e x) := rfl
 
-
 theorem rebasePartialSource_pullbackInner
     (e : OpenPartialHomeomorph C'.carrier C.carrier) (heU : e.target ⊆ U)
     (he : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)
@@ -238,7 +214,6 @@ theorem rebasePartialSource_pullbackInner
   rw [mfderiv_comp x hd hef]
   rfl
 
-
 noncomputable def rebaseAtZero (hU : IsOpen U) (hzero : 0 ∈ J) :
     GeneralizedFlowCylinder F (F.slice a) a q J
       (d.zeroSliceHomeomorph hU hzero).target :=
@@ -249,15 +224,12 @@ noncomputable def rebaseAtZero (hU : IsOpen U) (hzero : 0 ∈ J) :
       OpenPartialHomeomorph.symm_target, zeroSliceHomeomorph_source] using
       d.zeroSliceHomeomorph_smooth hU hzero)
 
-
 theorem rebaseAtZero_identity (hU : IsOpen U) (hzero : 0 ∈ J)
     (x : (F.slice a).carrier) (hx : x ∈ (d.zeroSliceHomeomorph hU hzero).target) :
     (d.rebaseAtZero hU hzero).pointMap 0 hzero x = (⟨a, x⟩ : F.point) := by
   change d.pointMap 0 hzero ((d.zeroSliceHomeomorph hU hzero).symm x) = _
   rw [d.zeroSliceHomeomorph_pointMap hU hzero,
     (d.zeroSliceHomeomorph hU hzero).right_inv hx]
-
-
 
 theorem rebaseAtZero_cylindricalPullback (hU : IsOpen U) (hzero : 0 ∈ J)
     {epsilon : ℝ} (Φ : RoundCylinderSpace → C.carrier)
@@ -310,7 +282,6 @@ namespace PoincareConjecture.GeneralizedBlowupConvergence
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
   (G : GeneralizedBlowupConvergence S J)
 
-
 noncomputable def zeroSliceEmbedding (k : ℕ) :
     OpenPartialHomeomorph G.limit.sliceCarrier.carrier
       ((S.flow (G.subsequence k)).slice (S.base (G.subsequence k)).1).carrier :=
@@ -336,7 +307,6 @@ theorem zeroSliceEmbedding_base (k : ℕ) :
     ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩
   rw [(G.embedding k).zeroSliceHomeomorph_pointMap (G.exhaustion.space_open k)] at h
   exact eq_of_heq (Sigma.mk.inj h).2
-
 
 noncomputable def cylinderSlabEmbedding
     (Φ : RoundCylinderSpace ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ G.limit.sliceCarrier.carrier)
@@ -364,7 +334,6 @@ theorem eventually_cylinderSlab_subset_exhaustion
   obtain ⟨j, hj⟩ := G.exists_exhaustion_superset
     ((isCompact_univ.prod isCompact_Icc).image Φ.continuous)
   exact (eventually_ge_atTop j).mono fun k hk => hj.trans (G.exhaustion.space_increasing hk)
-
 
 theorem eventually_cylinderSlabEmbedding
     (Φ : RoundCylinderSpace ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ G.limit.sliceCarrier.carrier)

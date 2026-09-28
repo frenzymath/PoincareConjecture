@@ -3,16 +3,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Data.List.FinRange
 import Mathlib.Data.List.Nodup
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

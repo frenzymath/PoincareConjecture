@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripHalfDiskComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 noncomputable def tubeArmOrientation (s0 s1 : Bool) : C3 →ᴬ[ℝ] C3 :=
   let xy := ContinuousLinearMap.fst ℝ P2 ℝ
@@ -31,11 +19,9 @@ noncomputable def tubeArmOrientation (s0 s1 : Bool) : C3 →ᴬ[ℝ] C3 :=
   else
     if s1 then ((-x).prod y).prod t else (y.prod (-x)).prod t
 
-
 theorem tubeArmOrientation_longitudinal (s0 s1 : Bool) (z : C3) :
     (tubeArmOrientation s0 s1 z).2 = z.2 := by
   cases s0 <;> cases s1 <;> rfl
-
 
 theorem tubeArmOrientation_inverse (s0 s1 : Bool) (z : C3) :
     tubeArmOrientation s0 s1 (tubeArmOrientation (!s1) (!s0) z) = z := by
@@ -50,13 +36,11 @@ theorem tubeArmOrientation_injective (s0 s1 : Bool) :
   simp only [Bool.not_not] at hx hy
   exact hx.symm.trans (h'.trans hy)
 
-
 theorem tubeArmOrientation_mem_tube (s0 s1 : Bool) (z : C3) :
     tubeArmOrientation s0 s1 z ∈ tube ↔ z ∈ tube := by
   rcases z with ⟨⟨x, y⟩, t⟩
   cases s0 <;> cases s1 <;>
     simp [tubeArmOrientation, tube, Prod.le_def, neg_le, and_comm, and_left_comm, and_assoc]
-
 
 theorem tubeArmOrientation_image (s0 s1 : Bool) :
     tubeArmOrientation s0 s1 '' tube = tube := by
@@ -67,7 +51,6 @@ theorem tubeArmOrientation_image (s0 s1 : Bool) :
     exact ⟨tubeArmOrientation (!s1) (!s0) z,
       (tubeArmOrientation_mem_tube (!s1) (!s0) z).mpr hz,
       tubeArmOrientation_inverse s0 s1 z⟩
-
 
 noncomputable def tubeArmHomeomorph (s0 s1 : Bool) : tube ≃ₜ tube where
   toFun z := ⟨tubeArmOrientation s0 s1 z,
@@ -83,13 +66,10 @@ noncomputable def tubeArmHomeomorph (s0 s1 : Bool) : tube ≃ₜ tube where
   continuous_invFun :=
     ((tubeArmOrientation (!s1) (!s0)).continuous.comp continuous_subtype_val).subtype_mk _
 
-
 theorem reoriented_tube_embedding {X : Type*} [TopologicalSpace X]
     (τ : C3 → X) (hτ : Topology.IsEmbedding (fun z : tube => τ z)) (s0 s1 : Bool) :
     Topology.IsEmbedding (fun z : tube => (τ ∘ tubeArmOrientation s0 s1) z) :=
   hτ.comp (tubeArmHomeomorph s0 s1).isEmbedding
-
-
 
 theorem reoriented_tube_polyhedralPL
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -106,8 +86,6 @@ theorem reoriented_tube_polyhedralPL
     (tubeArmOrientation_mem_tube s0 s1 z).mpr (hKs.subset hz)
   simpa only [hKs, tube] using hτ.comp_finitePiecewiseAffineOn K hK hPL hmaps
 
-
-
 theorem tubeArmOrientation_corners (s0 s1 : Bool) (t : ℝ) :
     tubeArmOrientation s0 s1 ((-1, 1), t) =
       ((farArmParameter (!s0), farArmParameter (!s0)), t) ∧
@@ -119,12 +97,9 @@ theorem tubeArmOrientation_corners (s0 s1 : Bool) (t : ℝ) :
       ((farArmParameter (!s1), -farArmParameter (!s1)), t) := by
   cases s0 <;> cases s1 <;> norm_num [tubeArmOrientation, farArmParameter]
 
-
 theorem reoriented_tube_image {X : Type*} (τ : C3 → X) (s0 s1 : Bool) :
     (τ ∘ tubeArmOrientation s0 s1) '' tube = τ '' tube := by
   rw [image_comp, tubeArmOrientation_image]
-
-
 
 theorem reoriented_tube_old_arm_equations
     {E X : Type*} (f : E → X) (c0 c1 : P2 → E) (τ : C3 → X)

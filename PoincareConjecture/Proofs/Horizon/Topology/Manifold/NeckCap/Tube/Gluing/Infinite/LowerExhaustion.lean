@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Chart
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.Cylinder
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem eighth_width_le_edist_of_not_mem_upper_region (N : EpsilonNeck g) {p x : M}
     (hp : p ∈ N.region (-N.epsilon⁻¹ / 2) (N.epsilon⁻¹ / 2))
@@ -78,9 +64,6 @@ theorem eighth_width_le_edist_of_not_mem_upper_region (N : EpsilonNeck g) {p x :
     (mul_le_mul_of_nonneg_left hvalue hfactor)).trans
     (N.axial_displacement_le_pathELength ht.1.le hγ hcarrier)
   exact (not_lt_of_ge (hax.trans (Manifold.pathELength_mono le_rfl ht.2))) hlength
-
-
-
 
 theorem lower_half_images_exhaust_of_neck_tails
     (N : ℕ → EpsilonNeck g) {ε : ℝ} (hε : ∀ n, (N n).epsilon = ε)
@@ -194,9 +177,6 @@ theorem lower_half_images_exhaust_of_neck_tails
     (hWnonempty.mono fun x hx => ⟨hWsub hx, hx⟩)
   intro x hx
   exact mem_iUnion.mp (hsubset hx)
-
-
-
 
 theorem exists_cylinder_of_neck_tails
     (N : ℕ → EpsilonNeck g) {ε : ℝ} (hε : ∀ n, (N n).epsilon = ε)

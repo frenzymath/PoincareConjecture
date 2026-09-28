@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleCirclePartition
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HyperbolaDiscArcs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -86,9 +78,6 @@ private theorem level_cover_from_disc_and_exterior
   rw [hsplit, hlocal, hexterior]
   ext x
   simp only [mem_union, mem_iUnion, exists_or]
-
-
-
 
 theorem exists_saddle_transported_two_pieces
     (F : E3 ≃ₜ E3) (Lm Lp C O : Set E3) (hOC : O ⊆ C)

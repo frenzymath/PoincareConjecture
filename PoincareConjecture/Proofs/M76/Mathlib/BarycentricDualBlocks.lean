@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,26 +9,17 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
-
-
-
 noncomputable def barycentricDualBlock (s : Finset E) : SimplicialComplex ℝ E :=
   K.barycentricSubdivision.vertexSubcomplex
     {x | ∃ t ∈ K.faces, s ⊆ t ∧ t.centroid ℝ id = x}
-
-
 
 theorem barycentricDualBlock_finite (s : Finset E) :
     (K.barycentricDualBlock s).faces.Finite :=
   K.barycentricSubdivision.vertexSubcomplex_finite _ K.barycentricSubdivision_finite
 
-
-
 theorem barycentricDualBlock_le (s : Finset E) :
     K.barycentricDualBlock s ≤ K.barycentricSubdivision :=
   K.barycentricSubdivision.vertexSubcomplex_le _
-
-
 
 theorem barycentricDualBlock_antitone {s t : Finset E} (hst : s ⊆ t) :
     K.barycentricDualBlock t ≤ K.barycentricDualBlock s := by
@@ -46,9 +28,6 @@ theorem barycentricDualBlock_antitone {s t : Finset E} (hst : s ⊆ t) :
   intro x hx
   obtain ⟨v, hv, htv, hvx⟩ := hu.2 x hx
   exact ⟨v, hv, hst.trans htv, hvx⟩
-
-
-
 
 theorem barycentricDualBlock_space_inter [DecidableEq E] (s t : Finset E) :
     (K.barycentricDualBlock s).space ∩ (K.barycentricDualBlock t).space =
@@ -82,9 +61,6 @@ theorem barycentricDualBlock_space_inter [DecidableEq E] (s t : Finset E) :
       mem_space_iff.mpr ⟨a, K.barycentricDualBlock_antitone
         Finset.subset_union_right ha, hxa⟩⟩
 
-
-
-
 theorem barycentricDualBlock_space_eq_empty_of_not_face
     {s : Finset E} (hs : s.Nonempty) (hsK : s ∉ K.faces) :
     (K.barycentricDualBlock s).space = ∅ := by
@@ -94,9 +70,6 @@ theorem barycentricDualBlock_space_eq_empty_of_not_face
   obtain ⟨v, hv⟩ := K.barycentricSubdivision.nonempty_of_mem_faces ht.1
   obtain ⟨u, hu, hsu, _⟩ := ht.2 v hv
   exact hsK (K.down_closed hu hsu hs)
-
-
-
 
 theorem barycentricNeighborhood_space_eq_iUnion_dualBlocks
     (L : SimplicialComplex ℝ E) :

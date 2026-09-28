@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FinitePLS
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

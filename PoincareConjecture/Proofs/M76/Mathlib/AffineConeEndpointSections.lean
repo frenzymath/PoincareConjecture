@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeAffine
 import PoincareConjecture.Proofs.M76.Mathlib.HeightSeparatedSets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem convexJoin_inter_base_level (A : E →ᵃ[ℝ] ℝ) {p : E} {d : Set E} {c : ℝ}
     (hpc : A p ≠ c) (hd : ∀ x ∈ d, A x = c) :
@@ -40,10 +28,6 @@ theorem convexJoin_inter_base_level (A : E →ᵃ[ℝ] ℝ) {p : E} {d : Set E} 
   · intro x hx
     exact ⟨mem_convexJoin.mpr ⟨p, mem_singleton p, x, hx, right_mem_segment ℝ p x⟩,
       hd x hx⟩
-
-
-
-
 
 theorem convexJoin_inter_apex_level (A : E →ᵃ[ℝ] ℝ) {p : E} {d : Set E} {c : ℝ}
     (hpc : A p ≠ c) (hd : ∀ x ∈ d, A x = c) (hne : d.Nonempty) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerHandleCorrection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,10 +16,6 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ
 local notation "D" => coordinateCylinder J
 local notation "C" => closedBall (0 : V) 1
 local notation "R" => latticeHandleDomain ι κ L
-
-
-
-
 
 theorem lowerHandleStraightening_of_protected_atlas_comparison
     (h : V → E)

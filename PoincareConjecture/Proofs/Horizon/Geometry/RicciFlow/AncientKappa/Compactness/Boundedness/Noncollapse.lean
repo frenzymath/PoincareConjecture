@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ namespace RicciFlow
 variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem scalar_monotone_of_terminalHomothety
     {b Q : ℝ} {F : RicciFlow 3 M (Iic b)} {G : RicciFlow 3 M (Iic 0)}
@@ -55,8 +42,6 @@ theorem scalar_monotone_of_terminalHomothety
     linarith
 
 variable [T2Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem metricKappaNoncollapsed_of_ancient_scalar_monotone
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -105,7 +90,6 @@ local instance noncollapseCarrierConnected (D : FlowCarrier 3) : ConnectedSpace 
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
 
 theorem interiorLimit_metricKappaNoncollapsed
     (P : M23NormalizedKappaCompactnessPredecessors)

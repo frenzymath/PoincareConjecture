@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

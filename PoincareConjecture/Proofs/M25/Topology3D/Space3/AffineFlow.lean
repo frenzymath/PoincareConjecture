@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 variable (f : E → E) {K L : ℝ≥0}
 variable (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
-
-
 
 theorem boundedFlow_eq_affine_on (c x : E) {d : ℝ} (hd : 0 < d)
     (hc : ∀ t ∈ Ioo (-d) d, f (x + t • c) = c) :
@@ -36,8 +25,6 @@ theorem boundedFlow_eq_affine_on (c x : E) {d : ℝ} (hd : 0 < d)
     simpa only [id_eq, one_smul] using ((hasDerivAt_id t).smul_const c).const_add x
   · simp only [boundedFlow_zero, zero_smul, add_zero]
 
-
-
 theorem boundedFlow_eq_affine_of_large_norm (c : E) {R : ℝ}
     (hc : ∀ y, R < ‖y‖ → f y = c) (x : E) (hx : R + ‖c‖ + 1 < ‖x‖)
     (t : ℝ) (ht : t ∈ Ioo (-1 : ℝ) 1) :
@@ -52,8 +39,6 @@ theorem boundedFlow_eq_affine_of_large_norm (c : E) {R : ℝ}
   have hnorm : ‖x‖ ≤ ‖x + u • c‖ + ‖u • c‖ := by
     simpa only [add_sub_cancel_right] using norm_sub_le (x + u • c) (u • c)
   linarith
-
-
 
 theorem boundedFlow_smooth_strip_of_compact_perturbation [FiniteDimensional ℝ E]
     (hf : ContDiff ℝ ∞ f) (c : E) (hs : HasCompactSupport (fun x => f x - c)) :
@@ -114,8 +99,6 @@ theorem boundedFlow_smooth_strip_of_compact_perturbation [FiniteDimensional ℝ 
       exact boundedFlow_eq_affine_of_large_norm f hK hL c hc q.1 hqnorm q.2 hq.2
     exact ((contDiffAt_fst.add (contDiffAt_snd.smul_const c)).congr_of_eventuallyEq
       heq).contDiffWithinAt
-
-
 
 theorem boundedFlow_contDiff_of_compact_perturbation [FiniteDimensional ℝ E]
     (hf : ContDiff ℝ ∞ f) (c : E) (hs : HasCompactSupport (fun x => f x - c)) :

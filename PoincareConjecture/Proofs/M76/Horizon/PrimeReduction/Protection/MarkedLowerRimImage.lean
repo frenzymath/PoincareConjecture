@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedProductCylinder
 
-
-
-
 noncomputable section
 open Set Metric BrownCollar
 
@@ -41,8 +38,6 @@ theorem markedLowerRimMap_eq
     markedLowerRimMap P x = markedProductCylinder P (x, ⟨0, by norm_num⟩) := by
   rw [markedProductCylinder_apply]
   simp [markedLowerRimMap]
-
-
 
 theorem exists_marked_lower_rim_image_data
     (P : (sphere (0 : ι → ℝ) 1 ×ˢ closedBall (0 : κ → ℝ) (3 / 2)) ≃ₜ Y) :

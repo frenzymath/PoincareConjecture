@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M53SphereSeparation
 import PoincareConjecture.Proofs.M53.Mathlib.CenteredHypersurfaceChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
 
 theorem sphere_exists_centered_zero_slice_chart
     {M : Type u} [TopologicalSpace M]

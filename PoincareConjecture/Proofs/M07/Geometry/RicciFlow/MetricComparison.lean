@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LogDerivative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem metric_inner_self_exp_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -52,7 +39,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
 theorem tangentNorm_le_exp_of_ricci_bound
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)
     (x : M) (v : TangentSpace (𝓡 n) x) (K : ℝ)
@@ -71,7 +57,6 @@ theorem tangentNorm_le_exp_of_ricci_bound
   rw [hexp, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (Real.exp_nonneg _)] at hsqrt
   exact hsqrt
 
-
 theorem ball_subset_ball_of_ricci_bound
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)
     (p : M) (r K : ℝ) {s t : ℝ} (hs : s ∈ I) (ht : t ∈ I)
@@ -85,8 +70,6 @@ theorem ball_subset_ball_of_ricci_bound
   intro x hx v
   exact F.tangentNorm_le_exp_of_ricci_bound hI hIJ x v K
     (fun τ hτ ↦ hRic τ hτ x hx v) hs ht
-
-
 
 theorem edist_le_exp_mul_of_ricci_bound
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)

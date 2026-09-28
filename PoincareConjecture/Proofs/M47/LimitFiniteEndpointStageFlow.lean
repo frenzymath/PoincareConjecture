@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsOpenMetrics
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenReadout
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ local notation "U" => TopologicalSpace.Opens.mk
 local notation "V" => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m)
 local notation "J" => Ioo (-H.toReal - d / 8) (-H.toReal + d / 4)
-
-
 
 theorem limitFinite_endpoint_original_stage_flow (hd : 0 < d)
     (R ρ : Fin (N + 1) → ℝ) (hρ : ∀ i, 0 < ρ i) (hρR : ∀ i, ρ i < R i)

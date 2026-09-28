@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandChainCompatibility
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Vertices
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,12 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_marked_coordinate_parents
     {I : Type*} [Finite I]

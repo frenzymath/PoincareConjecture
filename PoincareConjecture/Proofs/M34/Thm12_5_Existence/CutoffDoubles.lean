@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ModifiedDoubleMetric
 import PoincareConjecture.Proofs.M34.Standard.CutoffMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 theorem cutoffMetric_coefficients_on_truncation (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 3 ≤ R) :
@@ -42,8 +30,6 @@ theorem cutoffMetric_coefficients_on_truncation (e : StandardCylindricalEnd g)
   · simp only [endExhaustion, if_neg hc]
     linarith
 
-
-
 theorem cutoffMetric_coefficients_on_doubleCollar (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 3 ≤ R) :
     EqOn (cutoffMetric e h R).euclideanCoefficients g.euclideanCoefficients
@@ -53,12 +39,8 @@ theorem cutoffMetric_coefficients_on_doubleCollar (e : StandardCylindricalEnd g)
   rw [endExhaustion_coordinate_of_two_le e (by linarith [hz.2.1])]
   linarith [hz.2.1]
 
-
-
 abbrev CutoffDouble (e : StandardCylindricalEnd g) {R : ℝ} (hR : 3 ≤ R) :=
   EndDouble e (by linarith : 1 < R + 2)
-
-
 
 noncomputable def cutoffDoubleMetric (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 3 ≤ R) :
@@ -66,19 +48,13 @@ noncomputable def cutoffDoubleMetric (e : StandardCylindricalEnd g)
   modifiedEndDoubleMetric e (cutoffMetric e h R) (by linarith : 1 < R + 2)
     (cutoffMetric_coefficients_on_doubleCollar e h hR)
 
-
-
 noncomputable def cutoffDoubleChart (e : StandardCylindricalEnd g)
     {R : ℝ} (hR : 3 ≤ R) (i : Bool) : StandardCapSpace → CutoffDouble e hR :=
   endDoubleParametrization e (by linarith : 1 < R + 2) i
 
-
-
 theorem cutoffDouble_source_subset (e : StandardCylindricalEnd g) (R : ℝ) :
     endTruncation e (R - 1) ⊆ endTruncation e ((R + 2) + 1) :=
   endTruncation_mono e (by linarith)
-
-
 
 theorem cutoffDoubleChart_contMDiffOn (e : StandardCylindricalEnd g)
     {R : ℝ} (hR : 3 ≤ R) (i : Bool) :
@@ -86,16 +62,12 @@ theorem cutoffDoubleChart_contMDiffOn (e : StandardCylindricalEnd g)
   (endDoubleParametrization_contMDiffOn e (by linarith : 1 < R + 2) i).mono
     (cutoffDouble_source_subset e R)
 
-
-
 theorem cutoffDoubleChart_mfderiv_isInvertible (e : StandardCylindricalEnd g)
     {R : ℝ} (hR : 3 ≤ R) (i : Bool) {x : StandardCapSpace}
     (hx : x ∈ endTruncation e (R - 1)) :
     (mfderiv (𝓡 3) (𝓡 3) (cutoffDoubleChart e hR i) x).IsInvertible :=
   endDoubleParametrization_mfderiv_isInvertible e (by linarith : 1 < R + 2) i
     (cutoffDouble_source_subset e R hx)
-
-
 
 theorem cutoffDoubleMetric_initial_pullback (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 3 ≤ R) (i : Bool)
@@ -109,8 +81,6 @@ theorem cutoffDoubleMetric_initial_pullback (e : StandardCylindricalEnd g)
   exact hp.symm.trans (congrArg (fun B => B u v)
     (cutoffMetric_coefficients_on_truncation e h hR hx))
 
-
-
 theorem cutoffDouble_curvatureDerivative_le (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 3 ≤ R)
     (D : LeviCivitaData (cutoffMetric e h R)) (m : ℕ) {C : ℝ}
@@ -120,8 +90,6 @@ theorem cutoffDouble_curvatureDerivative_le (e : StandardCylindricalEnd g)
   modifiedEndDouble_curvatureDerivative_le e (cutoffMetric e h R) D
     (by linarith : 1 < R + 2) (cutoffMetric_coefficients_on_doubleCollar e h hR)
     m hbound D' q
-
-
 
 theorem eventually_compact_subset_cutoff_source (e : StandardCylindricalEnd g)
     {K : Set StandardCapSpace} (hK : IsCompact K) :

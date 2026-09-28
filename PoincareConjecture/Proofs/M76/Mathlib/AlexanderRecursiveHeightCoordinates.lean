@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.VariableHeightBand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,13 +10,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_moved_collar_height_coordinates_with_endpoints
     {B : Set E} {T R : Set F} {upper : E → ℝ}
@@ -143,9 +126,6 @@ theorem IsFinitePL.exists_moved_collar_height_coordinates_with_endpoints
     rw [H.injective.mem_set_image, hcontact]
     have h := hK'top (K'.symm p)
     simpa only [K'.apply_symm_apply] using h.symm
-
-
-
 
 theorem IsFinitePL.exists_moved_collar_height_coordinates
     {B : Set E} {T R : Set F} {upper : E → ℝ}

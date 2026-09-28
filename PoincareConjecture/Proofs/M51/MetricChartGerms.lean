@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
 theorem mfderiv_translatedChart (q : M) (z y : EuclideanSpace ℝ (Fin 3))
     (hy : y + z ∈ (extChartAt (𝓡 3) q).target) :
     mfderiv (𝓡 3) (𝓡 3) (fun w => (extChartAt (𝓡 3) q).symm (w + z)) y =
@@ -44,8 +33,6 @@ theorem mfderiv_translatedChart (q : M) (z y : EuclideanSpace ℝ (Fin 3))
   simp only [mfderiv_eq_fderiv, fderiv_add_const, fderiv_fun_id]
   ext v
   rfl
-
-
 
 theorem exists_shiftedChartMetric (g : RiemannianMetric 3 M) (q : M)
     (z : EuclideanSpace ℝ (Fin 3)) (hz : z ∈ (extChartAt (𝓡 3) q).target) :

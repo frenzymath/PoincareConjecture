@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateWeakDerivative
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem weak_directional_derivative_eq_fderiv_ae
     {O : Set (EuclideanSpace ℝ (Fin n))} (hO : IsOpen O)
@@ -66,8 +56,6 @@ theorem weak_directional_derivative_eq_fderiv_ae
 
 open LeviCivitaData.Dirichlet
 
-
-
 theorem localCoordinateDerivative_id_eq_fderiv_ae_of_volume
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} {D : LeviCivitaData g}
     {Ω K O : Set (EuclideanSpace ℝ (Fin n))}
@@ -87,8 +75,6 @@ theorem localCoordinateDerivative_id_eq_fderiv_ae_of_volume
     localCoordinateDerivative_weak
       (OpenPartialHomeomorph.refl (EuclideanSpace ℝ (Fin n)))
       contMDiffOn_id contMDiffOn_id hK (by simp) hOK hO u i hφ hc hs
-
-
 
 theorem localCoordinateDerivative_id_eq_fderiv_ae
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} {D : LeviCivitaData g}

@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M03.CompactFiniteCoefficient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped BigOperators
-
-
 
 theorem LinearMap.apply_eq_sum_equiv_coordinates
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -33,9 +21,6 @@ theorem LinearMap.apply_eq_sum_equiv_coordinates
   calc
     L x = L (∑ i : Fin d, q x i • q.symm (EuclideanSpace.single i 1)) := congrArg L hx
     _ = _ := by simp only [map_sum, map_smul]
-
-
-
 
 theorem exists_compact_three_linear_coordinate_bound
     {X I H A S : Type*} [TopologicalSpace X] [Fintype I]
@@ -91,9 +76,6 @@ theorem exists_compact_three_linear_coordinate_bound
     have hpair := PoincareConjecture.Proofs.M03.sum_two_mul_linear_combination_le
       (c p) alpha values hε (hbound p hp) hC
     simpa only [← hrepr, hvalues] using hpair
-
-
-
 
 theorem exists_compact_finite_linear_coordinate_bound
     {X I B : Type*} [TopologicalSpace X] [Fintype I] [Fintype B]

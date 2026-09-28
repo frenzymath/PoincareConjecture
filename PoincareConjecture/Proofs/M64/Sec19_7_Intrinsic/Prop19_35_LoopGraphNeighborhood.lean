@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularLoop
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_loop_graph_neighborhood
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {T : ℝ}
@@ -113,10 +97,6 @@ theorem m64Intrinsic_loop_graph_neighborhood
       apply L.injective
       rw [hgraph t (hJ ht), heq]
       exact Prod.ext rfl hzgraph.symm
-
-
-
-
 
 theorem m64Intrinsic_exists_regular_loop_graph_neighborhood
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

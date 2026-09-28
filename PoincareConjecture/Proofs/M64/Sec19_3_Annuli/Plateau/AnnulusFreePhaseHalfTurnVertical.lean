@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseHalf
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleGreenIdentity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,9 +39,6 @@ private theorem halfTurn_step_vertical_green (D : ℝ)
   simpa only [smul_eq_mul, mul_zero, integral_zero, zero_add,
     m64HalfTurnPiece, fderiv_const_apply, zero_apply,
     annulusPoint, Matrix.cons_val_zero, ite_mul, mul_ite, zero_mul] using h
-
-
-
 
 theorem m64FreePhaseHalfTurn_vertical_weak
     {u V : LoopPlane → ℝ} {D : ℝ}
@@ -146,9 +137,6 @@ theorem m64FreePhaseHalfTurn_vertical_weak
       linarith [hturn_zero]
     simpa only [mul_comm] using (eq_neg_iff_add_eq_zero.mpr h')
   rw [hsplit, hstep_zero, add_zero, hbase]
-
-
-
 
 theorem m64FreePhaseHalfTurn_vertical_green_split
     {u V : LoopPlane → ℝ} {D : ℝ}
@@ -256,9 +244,6 @@ theorem m64FreePhaseHalfTurn_vertical_green_split
         ∫ x in I,
           phi (annulusPoint x 1) * (if x < a then 0 else D) -
             phi (annulusPoint x 0) * (if x < a then 0 else D) := by rw [hstep]
-
-
-
 
 theorem m64FreePhaseHalfTurn_vertical_green_with_jump
     {u V : LoopPlane → ℝ} {D : ℝ}

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Cal
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,7 +9,6 @@ open Set Function
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
 
 def cappedCylinderHeight (a b s t : Real) : Real :=
   s * t + a + (b - a) * Real.smoothTransition (2 * t + 1 / 2)
@@ -66,7 +63,6 @@ theorem surjective_cappedCylinderHeight {a b s : Real} (hs : 0 < s) :
     dsimp only [u]
     nlinarith
   exact intermediate_value_univ l u (contDiff_cappedCylinderHeight a b s).continuous ⟨hl, hu⟩
-
 
 def cappedCylinderHeightDiffeomorph {a b s : Real} (hab : a ≤ b) (hs : 0 < s) :
     Real ≃ₘ[Real] Real := by

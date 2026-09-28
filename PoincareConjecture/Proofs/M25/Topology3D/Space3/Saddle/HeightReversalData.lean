@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 variable {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
-
 
 noncomputable def SurgeryCapTag.reverseHeight (C : SurgeryCapTag ψ u) :
     SurgeryCapTag ψ (-u) := by
@@ -82,8 +69,6 @@ noncomputable def SurgeryCapTag.reverseHeight (C : SurgeryCapTag ψ u) :
       · rfl
       · ring }
 
-
-
 theorem SurgeryCapTag.reverseHeight_tube (C : SurgeryCapTag ψ u) :
     (∀ p : E2 × ℝ, C.reverseHeight.tube p = C.tube (p.1, -p.2)) ∧
       (∀ y : E3, C.reverseHeight.tube.symm y =
@@ -96,15 +81,11 @@ theorem SurgeryCapTag.reverseHeight_tube (C : SurgeryCapTag ψ u) :
   · ext y
     exact heightTransportTube_mem_target C.tube _ _ y
 
-
-
 theorem SurgeryCapTag.reverseHeight_sets (C : SurgeryCapTag ψ u) :
     C.reverseHeight.sourceCap = C.sourceCap ∧
       C.reverseHeight.sourceSeam = C.sourceSeam ∧
       C.reverseHeight.cap = C.cap ∧ C.reverseHeight.seam = C.seam :=
   ⟨rfl, rfl, rfl, rfl⟩
-
-
 
 noncomputable def SaddlePieceData.reverseHeight (D : SaddlePieceData ψ u) :
     SaddlePieceData ψ (-u) := by
@@ -177,8 +158,6 @@ noncomputable def SaddlePieceData.reverseHeight (D : SaddlePieceData ψ u) :
       rcases D.cut_side i with h | h
       · exact Or.inr ⟨by rw [h.1], neg_lt_neg h.2⟩
       · exact Or.inl ⟨by rw [h.1]; norm_num, neg_lt_neg h.2⟩ }
-
-
 
 theorem SaddlePieceData.reverseHeight_geometry (D : SaddlePieceData ψ u) :
     D.reverseHeight.capCount = D.capCount ∧

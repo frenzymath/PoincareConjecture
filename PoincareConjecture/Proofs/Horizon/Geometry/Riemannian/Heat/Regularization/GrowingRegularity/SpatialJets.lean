@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.TimeDerivatives.Equation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Uniform
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -112,8 +102,6 @@ theorem iterate_secondOrderOperator_timeDerivative_slice_on
       fderiv_fderiv_spatialSlice_on (hO.prod hJ) hiter.1 ⟨hx, ht⟩,
       ← hiter.2 x hx t ht]
     simp only [Nat.add_succ, Function.iterate_succ_apply']
-
-
 
 theorem exists_spatial_jet_bound_of_bounded_powers
     {O V K : Set E} (hO : IsOpen O) (hV : IsOpen V)

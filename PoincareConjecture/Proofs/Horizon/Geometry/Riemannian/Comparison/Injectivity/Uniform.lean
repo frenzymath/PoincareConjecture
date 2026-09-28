@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.PackingScale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.PrecompactData
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.BallDiffeomorphism
-
-
-
-
-
-
-

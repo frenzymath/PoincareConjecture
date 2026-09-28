@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -17,7 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem LeviCivitaData.curvatureTensorNorm_eq_zero_of_dimension_le_one
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (hn : n ≤ 1) (x : M) :
@@ -39,14 +32,10 @@ theorem LeviCivitaData.curvatureTensorNorm_eq_zero_of_dimension_le_one
   simp only [hzero, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_pow,
     Finset.sum_const_zero, Real.sqrt_zero]
 
-
-
 theorem RicciFlow.curvatureTensorNorm_eq_zero_of_dimension_le_one
     {J : Set ℝ} (F : RicciFlow n M J) (hn : n ≤ 1) (t : ℝ) (x : M) :
     (F.connection t).curvatureTensorNorm x = 0 :=
   (F.connection t).curvatureTensorNorm_eq_zero_of_dimension_le_one hn x
-
-
 
 theorem RicciFlow.curvatureTensorNorm_bound_zero_of_dimension_le_one
     {J : Set ℝ} (F : RicciFlow n M J) (hn : n ≤ 1) :

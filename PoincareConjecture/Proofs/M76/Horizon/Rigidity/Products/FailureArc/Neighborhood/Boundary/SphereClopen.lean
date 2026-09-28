@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

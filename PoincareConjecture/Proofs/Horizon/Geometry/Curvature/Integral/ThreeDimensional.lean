@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Analysis.Real.Pi.Bounds
 
-
-
-
-
-
-
-
 open Set Filter MeasureTheory
 open PoincareConjecture Poincare.GromovHausdorff Poincare.Alexandrov Poincare.CurvatureIntegral
 open scoped Manifold ContDiff Bundle Topology

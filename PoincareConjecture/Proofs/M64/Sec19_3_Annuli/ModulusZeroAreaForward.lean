@@ -1,28 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusForwardEndpoint
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.max_positive
     {f : ℝ → ℝ} {t K epsilon : ℝ} (hepsilon : 0 < epsilon) (hK : 0 ≤ K)
@@ -60,10 +44,6 @@ theorem m64AnnulusForwardDerivativeBound.max_positive
     rw [max_eq_right hh.le, max_eq_right hft_eps.le, sub_self, zero_div]
     exact (mul_nonneg hK hepsilon.le).trans (le_add_of_nonneg_right heta.le)
 
-
-
-
-
 theorem m64AnnulusForwardDerivativeBound.exponential_of_on_Ioo
     {f : ℝ → ℝ} {a b K : ℝ}
     (hf : ContinuousOn f (Icc a b))
@@ -79,10 +59,6 @@ theorem m64AnnulusForwardDerivativeBound.exponential_of_on_Ioo
     le_rfl (fun _ _ => le_add_of_nonneg_right le_rfl)
   intro x hx
   simpa only [gronwallBound_ε0, mul_comm] using hcomparison x hx
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.exponential_of_positive_on_Ioo
     {f : ℝ → ℝ} {a b K : ℝ} (hK : 0 ≤ K)
@@ -104,11 +80,6 @@ theorem m64AnnulusForwardDerivativeBound.exponential_of_positive_on_Ioo
     (g := fun epsilon => Real.exp (K * (x - a)) * max (f a) epsilon)
     continuousWithinAt_const (by fun_prop) hcomparison
   simpa only [max_eq_left ha] using hlimit
-
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.on_Ico_of_positive_on_Ioo
     {f k : ℝ → ℝ} {a b : ℝ}

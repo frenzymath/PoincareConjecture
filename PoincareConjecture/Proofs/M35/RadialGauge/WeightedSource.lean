@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TipForcing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -18,12 +8,8 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def semilinearSource (b : E) (G : ℝ → ℝ)
     (u : ℝ) (p : E →L[ℝ] ℝ) : ℝ := p b + ‖p‖ ^ 2 + G u
-
-
 
 theorem semilinearSource_weighted_bound
     {w eta B L C u : ℝ} (hw : 1 ≤ w) (heta : 0 ≤ eta)
@@ -62,8 +48,6 @@ theorem semilinearSource_weighted_bound
   have hpbw := mul_le_mul_of_nonneg_left hpb hw0
   nlinarith
 
-
-
 theorem norm_sq_sub_norm_sq_le (p q : E →L[ℝ] ℝ) :
     |‖p‖ ^ 2 - ‖q‖ ^ 2| ≤ (‖p‖ + ‖q‖) * ‖p - q‖ := by
   calc
@@ -75,9 +59,6 @@ theorem norm_sq_sub_norm_sq_le (p q : E →L[ℝ] ℝ) :
       mul_le_mul_of_nonneg_right (abs_norm_sub_norm_le p q)
         (add_nonneg (norm_nonneg p) (norm_nonneg q))
     _ = _ := mul_comm _ _
-
-
-
 
 theorem semilinearSource_weighted_lipschitz
     {w eta B L u v : ℝ} (hw : 1 ≤ w)

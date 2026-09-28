@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C1ChartPullback
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicConnection
 import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem pullback_velocity_eq_chart_acceleration {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) {gamma : ℝ → M} {U : Set ℝ}
@@ -75,9 +59,6 @@ theorem pullback_velocity_eq_chart_acceleration {g : RiemannianMetric n M}
 
 variable {a b : ℝ}
 
-
-
-
 theorem speed_sq_eq_chart_coefficients (F : RicciFlow n M (Icc a b))
     (q : ℝ → ℝ → M) (p : M) {t : ℝ} {U : Set ℝ}
     (hU : IsOpen U) (hspace : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) 2 (fun y => q y t) U)
@@ -105,10 +86,6 @@ theorem speed_sq_eq_chart_coefficients (F : RicciFlow n M (Icc a b))
       (mfderiv (𝓡 n) (𝓡 n) (chartAt E p).symm (z x) (deriv z x))
       (mfderiv (𝓡 n) (𝓡 n) (chartAt E p).symm (z x) (deriv z x))
   erw [hcoord, hbase]
-
-
-
-
 
 theorem parabolic_gauge_iff_coordinate_equation (F : RicciFlow n M (Icc a b))
     (q : ℝ → ℝ → M) (p : M) {t x : ℝ} {U : Set ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedEndComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
 
 theorem diffeomorph_image_eq_self_of_tsupport_disjoint
     (F : D3) (K X : Set E3)
@@ -51,11 +39,6 @@ theorem diffeomorph_image_eq_self_of_tsupport_disjoint
       simpa only [hfixi x hx] using hx
     · intro hy
       exact ⟨y, hy, hfixi y hy⟩
-
-
-
-
-
 
 theorem exists_nonnested_end_exchange_compatibility
     (g h : D3) (S R E₀ E₁ P S₀ S₁ Q : Set E3)

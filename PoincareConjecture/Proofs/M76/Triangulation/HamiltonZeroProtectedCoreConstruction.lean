@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCoreConstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,10 +14,6 @@ local notation "V" => ((ι ⊕ κ) → ℝ)
 local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ)
 local notation "D" => coordinateCylinder J
 local notation "C" => closedBall (0 : V) 1
-
-
-
-
 
 theorem exists_hamiltonProtectedCoreData_zero_marked
     (h : V → E)

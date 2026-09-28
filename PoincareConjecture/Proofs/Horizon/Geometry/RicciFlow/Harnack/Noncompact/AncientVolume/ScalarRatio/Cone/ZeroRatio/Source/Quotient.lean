@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.DistanceMetric
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ variable {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]
   (hrel : ∀ i j (x : X i) (y : X j), O.Rel ⟨i, x⟩ ⟨j, y⟩ ↔ D i j (x, y) = 0)
   {B : Type*} [MetricSpace B] (f : ∀ i, X i → B)
   (hf : ∀ i j x y, dist (f i x) (f j y) = D i j (x, y))
-
-
 
 def quotientRealization : Quotient O.setoid → B :=
   Quotient.lift (fun a : Σ i, X i => f a.1 a.2) (by
@@ -46,8 +36,6 @@ theorem quotientRealization_injective :
       apply Quotient.sound
       apply (hrel a.1 b.1 a.2 b.2).mpr
       exact (hf a.1 b.1 a.2 b.2).symm.trans (dist_eq_zero.mpr hab)
-
-
 
 theorem range_quotientRealization :
     range (quotientRealization O hrel f hf) = ⋃ i, range (f i) := by
@@ -82,8 +70,6 @@ theorem isOpenMap_quotientRealization (hopen : ∀ i, IsOpenMap (f i)) :
   exact isOpen_iUnion fun i => hopen i _
     (hS.preimage (O.include_isOpenEmbedding i).continuous)
 
-
-
 theorem isOpenEmbedding_quotientRealization
     (hopen : ∀ i, Topology.IsOpenEmbedding (f i)) :
     Topology.IsOpenEmbedding (quotientRealization O hrel f hf) :=
@@ -97,8 +83,6 @@ variable {M : ℕ → Type*} [∀ k, MetricSpace (M k)]
   (hD : ∀ i j x y, Tendsto (fun k => dist (e k i x) (e k j y)) atTop
     (𝓝 (D i j (x, y))))
 
-
-
 theorem dist_quotientRealization (q r : Quotient O.setoid) :
     dist (quotientRealization O hrel f hf q) (quotientRealization O hrel f hf r) =
       quotientDistance hD O hrel q r := by
@@ -106,9 +90,6 @@ theorem dist_quotientRealization (q r : Quotient O.setoid) :
   | h a =>
     induction r using Quotient.inductionOn with
     | h b => exact hf a.1 b.1 a.2 b.2
-
-
-
 
 theorem isometry_quotientRealization
     [∀ i, LocallyCompactSpace (X i)]

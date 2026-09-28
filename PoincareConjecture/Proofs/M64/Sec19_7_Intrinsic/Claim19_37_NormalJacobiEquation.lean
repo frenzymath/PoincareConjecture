@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ open ConnectionVariation CoordinateExponential
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_phase_time_partial
     (N : IntrinsicAnnulus)
@@ -48,9 +38,6 @@ theorem m64Intrinsic_phase_time_partial
         (phase z).1 (phase z).2 (phase z).2) z.2 := by
     simpa [coordinateGeodesicField] using hode.hasFDerivAt.snd.hasDerivAt
   exact ⟨hfirst.unique hposition, hsecond.unique hvelocity⟩
-
-
-
 
 theorem m64Intrinsic_normal_variation_jacobi
     (N : IntrinsicAnnulus)
@@ -102,9 +89,6 @@ theorem m64Intrinsic_normal_variation_jacobi
   rw [(hpartial z hz).1] at h
   exact h
 
-
-
-
 theorem m64Intrinsic_christoffel_curvature_pairing
     (N : IntrinsicAnnulus) (p X T W : AnnulusCoordinates) :
     N.metric.inner p
@@ -119,9 +103,6 @@ theorem m64Intrinsic_christoffel_curvature_pairing
     coordinateCurvature_eq_retained N.connection]
   change N.connection.curvatureTensor p X T W T = _
   exact N.connection.curvatureTensor_eq_half_scalarCurvature p X T W T
-
-
-
 
 theorem m64Intrinsic_normal_variation_gaussian_jacobi
     (N : IntrinsicAnnulus)

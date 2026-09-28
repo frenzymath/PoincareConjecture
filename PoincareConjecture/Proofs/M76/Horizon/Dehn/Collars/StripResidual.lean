@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.FiniteResidual
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,8 +12,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ F]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_finite_collar_strip_residual
     (K : SimplicialComplex ℝ F) (L : SimplicialComplex ℝ E)

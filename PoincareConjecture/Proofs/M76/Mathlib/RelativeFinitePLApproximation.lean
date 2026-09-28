@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolationBound
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -26,11 +14,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem exists_relative_finitePL_approximation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -106,11 +89,6 @@ theorem exists_relative_finitePL_approximation
     rw [hgv hvR]
     exact (show ‖f v - f x‖ < ε / 2 from
       by simpa only [dist_eq_norm] using hδf v hvK x hx hdist).le
-
-
-
-
-
 
 theorem exists_relative_finitePL_approximation_in_open
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

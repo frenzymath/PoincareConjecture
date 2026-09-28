@@ -4,20 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetCentroidSigns
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaries
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.CofaceSideTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.OriginalTriangleCopies
-
 
 def planarCross (v : ℝ × ℝ) : (ℝ × ℝ) →ₗ[ℝ] ℝ where
   toFun w := v.1 * w.2 - v.2 * w.1
@@ -41,7 +32,6 @@ theorem planarCross_ne_zero {v : ℝ × ℝ} (hv : v ≠ 0) : planarCross v ≠ 
   simp only [planarCross, LinearMap.coe_mk, AddHom.coe_mk, LinearMap.zero_apply,
     mul_one, mul_zero, sub_zero, zero_sub, neg_eq_zero] at h₁ h₂
   exact hv (Prod.ext h₁ h₂)
-
 
 theorem planar_triangle_cross_ne_zero (p : Fin 3 → ℝ × ℝ)
     (hp : AffineIndependent ℝ p) : planarCross (p 1 - p 0) (p 2 - p 0) ≠ 0 := by
@@ -77,8 +67,6 @@ theorem planar_triangle_cross_ne_zero (p : Fin 3 → ℝ × ℝ)
     · change u.1 / v.1 * v.2 = u.2
       field_simp
       nlinarith
-
-
 
 theorem paired_planar_fan_positive_product
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (a b c : ℝ × ℝ)
@@ -161,8 +149,6 @@ private theorem rotate_twice_ne_self (n : ℕ) (i : Fin (n + 3)) :
     simpa only [finRotate_apply, add_assoc, hone, add_zero] using he
   have hv := congrArg Fin.val h
   norm_num [Fin.val_ofNat, Nat.mod_eq_of_lt (by omega : 2 < n + 3)] at hv
-
-
 
 theorem planar_boundary_cycle_uniform_direction
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hcv : Convex ℝ K.space)
@@ -260,9 +246,6 @@ private theorem planar_edge_support_at
     hlevel a (subset_convexHull ℝ _ (by simp)),
     hlevel b (subset_convexHull ℝ _ (by simp)), hLi⟩
 
-
-
-
 theorem planar_boundary_coface_cross_product
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hcv : Convex ℝ K.space)
     (hzero : (0 : ℝ × ℝ) ∈ interior K.space) (a b x : ℝ × ℝ)
@@ -315,10 +298,6 @@ theorem planar_boundary_coface_cross_product
       exact (mul_pos_iff_of_pos_left hc).mp hm
     exact mul_pos (hvertex.2 hcpos) hdpos
 
-
-
-
-
 theorem exists_oriented_planar_boundary_cycle
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite)
     (hcv : Convex ℝ K.space) (hzero : (0 : ℝ × ℝ) ∈ interior K.space) :
@@ -364,7 +343,6 @@ theorem exists_oriented_planar_boundary_cycle
     exact (mul_pos_iff.mp (hprod i (hn i).ne)).resolve_left
       (fun h ↦ not_lt_of_ge h.2.le (hn i)) |>.1
 
-
 theorem planar_triangle_boundary_cross (p : Fin 3 → ℝ × ℝ) (i : Fin 3) :
     planarCross (p (i.succAbove 1) - p (i.succAbove 0)) (p i - p (i.succAbove 0)) =
       (-1 : ℝ) ^ i.val * planarCross (p 1 - p 0) (p 2 - p 0) := by
@@ -392,8 +370,6 @@ private theorem parity_signed_real (d : ℝ) (hd : d ≠ 0) (i : Fin 3) :
   · have hp := sign_pos h
     have hn := sign_neg (neg_neg_of_pos h)
     fin_cases i <;> norm_num [orientationSignParity, hn, hp]
-
-
 
 theorem planar_numbered_boundary_cross_parity
     (number : (ℝ × ℝ) → ℕ) (p : Fin 3 → ℝ × ℝ)
@@ -427,8 +403,6 @@ theorem planar_numbered_boundary_cross_parity
   rw [planar_triangle_boundary_cross, parity_signed_real _ hd i]
   simp only [Dehn.orderedCofaceParity, hpar, if_neg (not_lt_of_gt hord), add_zero]
 
-
-
 theorem planar_numbered_boundary_cross_parity_reverse
     (number : (ℝ × ℝ) → ℕ) (p : Fin 3 → ℝ × ℝ)
     (hp : Function.Injective p) (hnumber : StrictMono (number ∘ p))
@@ -459,8 +433,6 @@ theorem planar_numbered_boundary_cross_parity_reverse
   linear_combination (norm := ring_nf) hrev
   simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, sub_zero]
 
-
-
 theorem planar_numbered_edge_apex_parity
     (number : (ℝ × ℝ) → ℕ) (p : Fin 3 → ℝ × ℝ)
     (hp : Function.Injective p) (hnumber : StrictMono (number ∘ p))
@@ -487,8 +459,6 @@ theorem planar_numbered_edge_apex_parity
     | exact planar_numbered_boundary_cross_parity_reverse number p hp hnumber hd 0
     | exact planar_numbered_boundary_cross_parity_reverse number p hp hnumber hd 1
     | exact planar_numbered_boundary_cross_parity_reverse number p hp hnumber hd 2
-
-
 
 theorem planar_paired_edge_cross_product
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (a b x y : ℝ × ℝ)
@@ -518,8 +488,6 @@ theorem planar_paired_edge_cross_product
     (fun h ↦ hby (sub_left_injective h)) (fun h ↦ hxy (sub_left_injective h)) hft hfu
   rw [planarCross_swap (x - a) (b - a), neg_mul, neg_pos] at h
   exact h
-
-
 
 theorem planar_sorted_cross_cancellation
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (number : (ℝ × ℝ) → ℕ)
@@ -584,8 +552,6 @@ theorem planar_sorted_cross_cancellation
   linear_combination (norm := ring_nf) hsign
   simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, neg_zero]
 
-
-
 theorem exists_planar_sorted_cross_signs
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (number : (ℝ × ℝ) → ℕ)
     (hnumber : InjOn number K.vertices) :
@@ -627,7 +593,6 @@ theorem exists_planar_sorted_cross_signs
     t.property.2 u.property.2 (fun h ↦ htu (Subtype.ext h)) hsc hst hsu
     (p t) (p u) (hpi t) (hpi u) (hpt t) (hpt u) (hpn t) (hpn u)
 
-
 theorem planar_boundary_edge_interior_cross_ne_zero
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hcv : Convex ℝ K.space)
     (z : ℝ × ℝ) (hz : z ∈ interior K.space) (a b : ℝ × ℝ) (hab : a ≠ b)
@@ -651,8 +616,6 @@ theorem planar_boundary_edge_interior_cross_ne_zero
     rw [hab', hw, hcross, zero_mul] at h
     exact (mul_eq_zero.mp h).resolve_left hc.ne'
   exact planarCross_ne_zero (sub_ne_zero.mpr hab.symm) hzero
-
-
 
 theorem planar_boundary_coface_interior_cross_product
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hcv : Convex ℝ K.space)
@@ -715,8 +678,6 @@ theorem planar_boundary_coface_interior_cross_product
       rw [← hident] at hm
       exact (mul_pos_iff_of_pos_left hc).mp hm
     exact mul_pos (hvertex.2 hpos) hdpos
-
-
 
 theorem exists_coherently_oriented_planar_boundary_cycle
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite)

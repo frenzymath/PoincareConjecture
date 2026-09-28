@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M33RegularHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

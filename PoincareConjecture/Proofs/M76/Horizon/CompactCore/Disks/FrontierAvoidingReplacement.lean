@@ -2,24 +2,11 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Piecewise
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_frontier_avoiding_replacement
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
@@ -70,9 +57,6 @@ theorem exists_frontier_avoiding_replacement
       simp only [mem_inter_iff, mem_preimage, mem_sdiff, hxB, hnot, and_false, not_true_eq_false]
     · simp only [mem_inter_iff, mem_preimage, mem_sdiff, hxB, not_false_eq_true,
         and_true, show g' x = g x from hout hxB]
-
-
-
 
 theorem exists_frontier_avoiding_family_deletion
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

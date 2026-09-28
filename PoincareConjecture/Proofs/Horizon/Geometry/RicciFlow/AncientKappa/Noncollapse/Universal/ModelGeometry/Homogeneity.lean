@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

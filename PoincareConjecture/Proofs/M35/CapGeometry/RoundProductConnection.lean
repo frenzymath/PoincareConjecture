@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanFields
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem product_metric_coefficient_fderiv
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2} {x : V}
@@ -50,8 +39,6 @@ theorem product_metric_coefficient_fderiv
   rw [he.fderiv_eq]
   simpa only [Function.comp_def, ContinuousLinearMap.comp_apply] using!
     congrArg (fun A : V →L[ℝ] ℝ => A w) hd.fderiv
-
-
 
 theorem product_euclideanConnection
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
@@ -90,8 +77,6 @@ theorem product_euclideanConnection
     (cylinderCoordinateEquiv w).1 = _ at h2
   linarith only [h3, h2]
 
-
-
 theorem product_connection_axial
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
     (D : LeviCivitaData g) (Dh : LeviCivitaData h) {x : V}
@@ -111,8 +96,6 @@ theorem product_connection_axial
   change fderiv ℝ (fun y => L (Z y)) x w = _
   rw [hd', D.connection_eq_fderiv_add hZ, product_euclideanConnection D Dh hmetric]
   simp [L, ContinuousLinearMap.comp_apply]
-
-
 
 theorem product_connection_horizontal
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}

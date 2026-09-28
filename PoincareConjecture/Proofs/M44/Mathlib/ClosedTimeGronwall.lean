@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem norm_derivWithin_le_of_interior {f : ℝ → E} {a b : ℝ} (hab : a < b)
     (hf : ContDiffOn ℝ 1 f (Icc a b)) {B : ℝ → ℝ} (hB : ContinuousOn B (Icc a b))
@@ -36,9 +24,6 @@ theorem norm_derivWithin_le_of_interior {f : ℝ → E} {a b : ℝ} (hab : a < b
   simpa only [closure_Ioo hab.ne] using
     le_on_closure hi (by simpa only [closure_Ioo hab.ne] using hc)
       (by simpa only [closure_Ioo hab.ne] using hB)
-
-
-
 
 theorem norm_le_exp_of_affine_derivWithin_bound {f : ℝ → E} {a b : ℝ}
     (hf : DifferentiableOn ℝ f (Icc a b)) {C D : ℝ} (hC : 0 ≤ C) (hD : 1 ≤ D)
@@ -67,9 +52,6 @@ theorem norm_le_exp_of_affine_derivWithin_bound {f : ℝ → E} {a b : ℝ}
   rw [gronwallBound_ε0] at h
   exact (norm_fst_le (q t)).trans h
 
-
-
-
 theorem norm_le_exp_of_interior_affine_bound {f : ℝ → E} {a b : ℝ} (hab : a < b)
     (hf : ContDiffOn ℝ 1 f (Icc a b)) {C D : ℝ} (hC : 0 ≤ C) (hD : 1 ≤ D)
     (hinit : ‖f a‖ ≤ D)
@@ -83,9 +65,6 @@ theorem norm_le_exp_of_interior_affine_bound {f : ℝ → E} {a b : ℝ} (hab : 
   apply mul_le_mul_of_nonneg_left _ (by linarith : 0 ≤ D)
   exact Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_left (sub_le_sub_right ht.2 a)
     (by positivity))
-
-
-
 
 theorem norm_sub_le_of_interior_deriv_bound {f : ℝ → E} {a b : ℝ} (hab : a < b)
     (hf : ContDiffOn ℝ 1 f (Icc a b)) {C : ℝ}

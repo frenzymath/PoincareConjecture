@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Paths.JoinedVariation
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -307,6 +295,5 @@ theorem shiChart_joined_density_second_jet [T2Space M] (D : LeviCivitaData g)
   · change shiChartMetric g c (F t 0) (W 0) (W 0) = _
     rw [hF0, hW0]
   · simpa only [A, smul_apply] using! hd.2.2
-
 
 end PoincareConjecture.RicciFlowAnalysis

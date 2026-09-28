@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.E
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
 structure SmoothExhaustion (F : RicciFlow n M J) (O : M) where
   toFun : M → ℝ
   smooth : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) ∞ toFun
@@ -33,9 +31,6 @@ structure SmoothExhaustion (F : RicciFlow n M J) (O : M) where
     |mvfderiv (𝓡 n) toFun x v| ≤ bound * (F.metric t).tangentNorm x v
   hessian_bound : ∀ t ∈ J, ∀ x v,
     (F.connection t).hessian toFun x v v ≤ bound * (F.metric t).inner x v v
-
-
-
 
 noncomputable def smoothExhaustionOfInitial
     (F : RicciFlow n M J) (O : M) (t₀ : ℝ) (ht₀ : t₀ ∈ J)
@@ -100,7 +95,6 @@ noncomputable def smoothExhaustionOfInitial
     exact (mul_le_mul_of_nonneg_left h hE).trans
       (by simpa only [B, E, mul_assoc] using mul_le_mul_of_nonneg_right hhess hq)
 
-
 lemma SmoothExhaustion.one_le {F : RicciFlow n M J} {O : M}
     (S : SmoothExhaustion F O) (x : M) : 1 ≤ S.toFun x := by
   obtain ⟨t, ht⟩ := F.nontrivial.nonempty
@@ -117,7 +111,6 @@ lemma SmoothExhaustion.bound_pos {F : RicciFlow n M J} {O : M}
   rw [hzero, zero_mul] at h
   linarith
 
-
 lemma SmoothExhaustion.laplacian_le {F : RicciFlow n M J} {O : M}
     (S : SmoothExhaustion F O) {t : ℝ} (ht : t ∈ J) (x : M) :
     (F.connection t).laplacian S.toFun x ≤ (n : ℝ) * S.bound := by
@@ -133,16 +126,12 @@ lemma SmoothExhaustion.laplacian_le {F : RicciFlow n M J} {O : M}
       Finset.sum_le_sum fun i _ => by simpa only [hinner i, mul_one] using S.hessian_bound t ht x (b i)
     _ = (n : ℝ) * S.bound := by simp [hdim]
 
-
-
-
 lemma LeviCivitaData.laplacian_const_mul {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (c : ℝ) (f : M → ℝ) (x : M) :
     D.laplacian (fun y => c * f y) x = c * D.laplacian f x := by
   unfold LeviCivitaData.laplacian
   simp only [LeviCivitaData.hessian_const_mul]
   rw [Finset.mul_sum]
-
 
 noncomputable def smoothExhaustionOfInitialOfCurvatureBound [T2Space M]
     (F : RicciFlow n M J) (O : M) (t₀ : ℝ) (ht₀ : t₀ ∈ J)
@@ -167,10 +156,6 @@ noncomputable def smoothExhaustionOfInitialOfCurvatureBound [T2Space M]
   simp only [Fintype.card_fin, hdim] at hnorm
   exact hnorm.trans (mul_le_mul_of_nonneg_right
     (mul_le_mul_of_nonneg_left (hRm t ht x) (by positivity)) hQ)
-
-
-
-
 
 theorem exists_smoothExhaustion_of_curvature_bound
     [T3Space M] [PreconnectedSpace M] [NoncompactSpace M]

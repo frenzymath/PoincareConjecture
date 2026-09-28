@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.HarmonicBranchIsolation
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.DiscreteSubset
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,15 +13,9 @@ namespace PoincareConjecture
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
 
-
-
 def m64PlaneDifferentialZeroSet
     {n : ℕ} (u : ℂ → EuclideanSpace ℝ (Fin n)) : Set ℂ :=
   {z | fderiv ℝ u z = 0}
-
-
-
-
 
 theorem m64PlaneHarmonicDifferential_zeroSet_finite
     {n : ℕ} {Γ : EuclideanSpace ℝ (Fin n) →

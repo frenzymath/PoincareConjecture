@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidea
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
-
-
-
-
-
-
-

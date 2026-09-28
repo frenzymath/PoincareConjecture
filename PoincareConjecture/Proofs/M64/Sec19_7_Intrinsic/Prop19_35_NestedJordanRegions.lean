@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnSide
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanCorner
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_jordan_nested_of_frontier_subset
     {U₁ V₁ U₂ V₂ : Set AnnulusCoordinates}
@@ -55,11 +39,6 @@ theorem m64Intrinsic_jordan_nested_of_frontier_subset
     U₂ = interior U₂ := hU₂.interior_eq.symm
     _ ⊆ interior (closure U₁) := interior_mono hUcl
     _ = U₁ := (m64Intrinsic_jordan_interior_closure hU₁ hV₁ hd₁ hf₁).1
-
-
-
-
-
 
 theorem m64Intrinsic_one_of_two_regions_is_annular
     {U₁ V₁ U₂ V₂ : Set AnnulusCoordinates}

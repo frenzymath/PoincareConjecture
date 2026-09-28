@@ -1,20 +1,6 @@
 import PoincareConjecture.Definitions.M64Approximation
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,9 +11,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 structure M64StaticApproximationTheory (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) : Prop where
@@ -56,17 +39,12 @@ structure M64StaticApproximationTheory (g : RiemannianMetric 3 M)
 
 variable {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
 
-
-
 structure M64AppliedFamilyEstimates (G : M63AmbientGeometry F)
     {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
     {zeta : ℝ} (C : M63FamilyConclusion G Gamma zeta) : Prop where
   curve_estimates : ∀ circumference (h : 0 < circumference), ∀ z : LoopTwoSphere,
     M63C2CurveEstimates (G.product circumference h).flow
       ((C.solutions circumference h).curve z) b G.K0 G.K1 G.K2
-
-
-
 
 structure M64EvolvingApproximation (G : M63AmbientGeometry F)
     (Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)))
@@ -76,9 +54,6 @@ structure M64EvolvingApproximation (G : M63AmbientGeometry F)
   family : M63FamilyConclusion G Gamma zeta
   approximation_eq : family.approximation = raw.toM63
   estimates : M64AppliedFamilyEstimates G family
-
-
-
 
 def M64FamilyApproximationTheory (F : RicciFlow 3 M (Set.Icc a b))
     (G : M63AmbientGeometry F) : Prop :=

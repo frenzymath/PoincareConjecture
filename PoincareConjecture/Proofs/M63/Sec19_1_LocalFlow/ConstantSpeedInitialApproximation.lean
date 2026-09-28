@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedPeriodInitialApproximation
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_smooth_positive_constantSpeed_C2_approximation
     (F : RicciFlow n M (Icc a b)) {e : M → W}

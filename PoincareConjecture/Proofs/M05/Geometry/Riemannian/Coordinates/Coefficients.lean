@@ -1,14 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Metric.Pullback
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.MetricDuality
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def pullbackCoefficients (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n)) :
@@ -41,7 +32,6 @@ noncomputable def pullbackCoefficients (g : RiemannianMetric n M)
     (E' := EuclideanSpace ℝ (Fin n)) (F' := EuclideanSpace ℝ (Fin n))
     (g.inner (f x)) A A
 
-
 theorem contDiffAt_pullbackCoefficients (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContMDiffAt (𝓡 n) (𝓡 n) ∞ f x) :
@@ -52,7 +42,6 @@ theorem contDiffAt_pullbackCoefficients (g : RiemannianMetric n M)
   apply contMDiffAt_clm_of_apply
   intro w
   exact (g.contDiffAt_pullback_inner hf v w).contMDiffAt
-
 
 theorem isInvertible_pullbackCoefficients (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -78,7 +67,6 @@ theorem isInvertible_pullbackCoefficients (g : RiemannianMetric n M)
   exact ⟨ContinuousLinearEquiv.ofBijective B (LinearMap.ker_eq_bot.mpr hinj)
     (LinearMap.range_eq_top.mpr hsurj), rfl⟩
 
-
 theorem contDiffOn_chartCoefficients (g : RiemannianMetric n M) (p : M) :
     ContDiffOn ℝ ∞ (g.pullbackCoefficients (extChartAt (𝓡 n) p).symm)
       (extChartAt (𝓡 n) p).target := by
@@ -86,7 +74,6 @@ theorem contDiffOn_chartCoefficients (g : RiemannianMetric n M) (p : M) :
   exact (g.contDiffAt_pullbackCoefficients
     ((contMDiffOn_extChartAt_symm p).contMDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 n) p).mem_nhds hx))).contDiffWithinAt
-
 
 theorem isInvertible_chartCoefficients (g : RiemannianMetric n M) (p : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) p).target) :

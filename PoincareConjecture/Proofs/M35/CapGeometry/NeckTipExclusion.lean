@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.TipNeckRealization
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_cylinder_tip_exclusion :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

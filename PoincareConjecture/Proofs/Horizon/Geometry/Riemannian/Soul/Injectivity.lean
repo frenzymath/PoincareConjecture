@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.ConvexDescent
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Monotonicity.CompactDescent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_pos_le_truncatedInjectivityRadius_of_nonnegativeSectional
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -52,8 +37,6 @@ theorem exists_pos_le_truncatedInjectivityRadius_of_nonnegativeSectional
   intro x hx _
   exact g.exists_stationary_radius_descent_of_convex D hc f p hfp hfnonneg hfconvex
     hK hC hCK hcurv hzero x hx
-
-
 
 theorem exists_uniform_injOn_globalExponential_of_nonnegativeSectional
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)

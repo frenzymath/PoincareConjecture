@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Geometry.SignedSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Differential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.CylinderCover
-
-
-
 
 theorem exists_axial_differential_lower_bound_of_gap_rate
     {l G W : ℝ} (hl : 0 < l) (hG : 0 < G) (hW : 0 ≤ W) :

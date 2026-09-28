@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CapBirth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 noncomputable def capScalarCutoff (epsilon c r : ℝ) : ℝ :=
   min 1 (r * min 1 c / (8 * epsilon))
-
 
 theorem capScalarCutoff_pos {epsilon c r : ℝ}
     (he : 0 < epsilon) (hc : 0 < c) (hr : 0 < r) :
@@ -25,8 +13,6 @@ theorem capScalarCutoff_pos {epsilon c r : ℝ}
   unfold capScalarCutoff
   exact lt_min zero_lt_one (div_pos (mul_pos hr (lt_min zero_lt_one hc))
     (mul_pos (by norm_num) he))
-
-
 
 theorem cap_birth_floor_gt_four_inv_sq
     (F : SurgeryFlowData) {t c r : ℝ} (ht : 0 ≤ t) (hc : 0 < c) (hr : 0 < r)

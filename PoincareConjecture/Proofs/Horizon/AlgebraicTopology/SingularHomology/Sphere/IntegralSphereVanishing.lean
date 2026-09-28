@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphere.IntegralSphereHomology
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralAmbientRelative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Metric

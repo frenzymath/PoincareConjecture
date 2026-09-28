@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +21,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
-
 
 theorem exists_spatial_upper_boundary_alignment_of_fillings
     {v : E3} (hv : ‖v‖ = 1)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaugeTimeJets
 import PoincareConjecture.Proofs.M35.RadialGauge.JointC1
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gauge_smooth_mild_joint_c1
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T : ℝ}

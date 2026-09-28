@@ -1,15 +1,6 @@
 import Mathlib.Topology.CWComplex.Classical.Finite
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Metric Set Topology
@@ -17,7 +8,6 @@ open Metric Set Topology
 universe u v
 
 namespace Poincare.Topology
-
 
 theorem exists_finiteCW_of_homeomorph {X : Type u} {Y : Type v}
     [TopologicalSpace X] [TopologicalSpace Y]

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Mesh.FiniteContacts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -55,10 +53,6 @@ theorem finitePiecewiseAffineOn_normalBaseMargin (r : ℝ)
   change max 0 (r - ‖p.1‖) = max 0 (r - ‖(p.1, (0 : ℝ))‖)
   rw [hp]
 
-
-
-
-
 theorem exists_normal_motion_finite_edge_contacts
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hcard : ∀ s ∈ K.faces, s.card ≤ 2) (r : ℝ)
@@ -107,9 +101,6 @@ theorem exists_normal_motion_finite_edge_contacts
   change p.2 = c * normalMargin r (p.1, 0) at hp
   rw [hp]
   ring
-
-
-
 
 theorem exists_normal_motion_finite_local_edge_contacts
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

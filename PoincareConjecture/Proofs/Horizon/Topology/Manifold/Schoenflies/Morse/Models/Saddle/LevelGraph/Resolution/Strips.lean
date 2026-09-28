@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Central
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Topology
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ open scoped Topology
 namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
-
 
 theorem exists_recut_exterior_strips {M : Type*} [TopologicalSpace M] [T2Space M]
     {h : M → Real} {c r η : Real}

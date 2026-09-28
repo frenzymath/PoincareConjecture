@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ShortCollisionGeodesic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,10 +8,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_reverse_closed_unit_geodesic
     (G : RiemannianMetric 2 AnnulusCoordinates) {eta : ℝ → AnnulusCoordinates}
@@ -50,11 +42,6 @@ theorem m64Intrinsic_reverse_closed_unit_geodesic
     change G.inner (eta (T - t)) (deriv q t) (deriv q t) = 1
     simp only [hderiv, map_neg, neg_apply, neg_neg]
     exact hunit (T - t) (htmap t ht)
-
-
-
-
-
 
 theorem m64Intrinsic_closed_base_vertex_geodesics
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryAttachedDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
-
 
 theorem two_boundary_attached_disks_complement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

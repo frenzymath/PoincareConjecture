@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace.Double
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.ProductDerivative
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

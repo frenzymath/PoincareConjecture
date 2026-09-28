@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +28,6 @@ local instance jetNormalizationMixedNormedGroup {m : ℕ} :
 local instance jetNormalizationMixedNormedSpace {m : ℕ} :
     NormedSpace ℝ (Grad m →L[ℝ] E m →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 
-
 def suJetBlockDiagonal {k m : ℕ} (A : E m →L[ℝ] E m) : E (k * m) →L[ℝ] E (k * m) :=
   LinearMap.toContinuousLinearMap {
     toFun := fun v => WithLp.toLp 2 fun a =>
@@ -60,8 +51,6 @@ theorem suJetBlock_ext {k m : ℕ} {v w : E (k * m)}
   obtain ⟨⟨j, a⟩, rfl⟩ := (finProdFinEquiv : Fin k × Fin m ≃ Fin (k * m)).surjective a
   exact congrArg (fun v : E m => v a) (h j)
 
-
-
 def suJetBlockDiagonalL {k m : ℕ} : (E m →L[ℝ] E m) →L[ℝ] E (k * m) →L[ℝ] E (k * m) :=
   LinearMap.toContinuousLinearMap {
     toFun := suJetBlockDiagonal
@@ -80,8 +69,6 @@ def suJetBlockDiagonalL {k m : ℕ} : (E m →L[ℝ] E m) →L[ℝ] E (k * m) �
       intro j
       simp only [smul_apply, map_smul, suJetBlock_diagonal, RingHom.id_apply]
   }
-
-
 
 def suJetBlockDiagonalEquiv {k m : ℕ} (L : E m ≃L[ℝ] E m) : E (k * m) ≃L[ℝ] E (k * m) where
   toLinearEquiv := {
@@ -110,8 +97,6 @@ theorem suJetBlock_diagonalEquiv {k m : ℕ} (L : E m ≃L[ℝ] E m)
     suJetBlock j (suJetBlockDiagonalEquiv L v) = L (suJetBlock j v) :=
   suJetBlock_diagonal L.toContinuousLinearMap j v
 
-
-
 theorem suJetBlock_principalTrace {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × E (3 * m)) (H : Fin 2 → Fin 2 → E (3 * m)) (j : Fin 3) :
     suJetBlock j (C.prolong.principalTrace z H) =
@@ -125,9 +110,6 @@ theorem suJetBlock_principalTrace {m : ℕ} (C : SUAffineJetCoefficients m)
     suJetBlock_columnBasis]
   simp only [apply_ite, map_zero, Finset.sum_ite_eq', Finset.mem_univ, ↓reduceIte]
   rfl
-
-
-
 
 def SUAffineJetNormalization.prolong {m : ℕ} {C : SUAffineJetCoefficients m}
     {O : Set (LoopPlane × E m)} {delta : ℝ}
@@ -184,9 +166,6 @@ def SUAffineJetNormalization.prolong {m : ℕ} {C : SUAffineJetCoefficients m}
       mul_nonneg hdelta (Real.sqrt_nonneg _)
     change ‖L R‖ ≤ delta * Real.sqrt (∑ i : Fin 2, ∑ k : Fin 2, ‖L (H i k)‖ ^ 2)
     nlinarith [norm_nonneg (L R)]
-
-
-
 
 theorem SUAffineJetCoefficients.prolong_smooth {m : ℕ} (C : SUAffineJetCoefficients m)
     {O : Set (LoopPlane × E m)} (hO : IsOpen O)

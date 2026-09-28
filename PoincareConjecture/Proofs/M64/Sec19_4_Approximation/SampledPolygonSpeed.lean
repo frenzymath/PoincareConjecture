@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledPolygonCloseness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_sampled_polygon_side_speed_le
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

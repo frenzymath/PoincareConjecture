@@ -1,12 +1,5 @@
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {ι 𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup E] [Module 𝕜 E]
-
-
 
 def directedUnion (K : ι → SimplicialComplex 𝕜 E) (hK : Directed (· ≤ ·) K) :
     SimplicialComplex 𝕜 E where
@@ -37,18 +28,12 @@ def directedUnion (K : ι → SimplicialComplex 𝕜 E) (hK : Directed (· ≤ �
     obtain ⟨k, hik, hjk⟩ := hK i j
     exact (K k).inter_subset_convexHull (hik hi) (hjk hj)
 
-
-
 theorem directedUnion_faces (K : ι → SimplicialComplex 𝕜 E) (hK : Directed (· ≤ ·) K) :
     (directedUnion K hK).faces = ⋃ i, (K i).faces := rfl
-
-
 
 theorem le_directedUnion (K : ι → SimplicialComplex 𝕜 E) (hK : Directed (· ≤ ·) K)
     (i : ι) : K i ≤ directedUnion K hK :=
   fun _ hs => mem_iUnion.mpr ⟨i, hs⟩
-
-
 
 theorem directedUnion_space (K : ι → SimplicialComplex 𝕜 E) (hK : Directed (· ≤ ·) K) :
     (directedUnion K hK).space = ⋃ i, (K i).space := by

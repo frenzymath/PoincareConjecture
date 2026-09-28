@@ -3,16 +3,6 @@ import PoincareConjecture.Statements.M63CurveEstimates
 import PoincareConjecture.Statements.M63LocalFlow
 import PoincareConjecture.Statements.M63Polygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,9 +16,6 @@ section Analytic
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 structure M63AnalyticConclusion (F : RicciFlow n M (Set.Icc a b))
     (G : M63AmbientGeometry F) : Prop where
@@ -72,7 +59,6 @@ structure M63AnalyticConclusion (F : RicciFlow n M (Set.Icc a b))
   uniform_derivatives : ∀ L0 Theta0 : ℝ, 0 ≤ L0 → 0 ≤ Theta0 →
     Nonempty (M63UniformDerivativeEstimates G L0 Theta0)
 
-
 structure M63FlowConclusion (F : RicciFlow n M (Set.Icc a b)) where
   geometry : M63AmbientGeometry F
   analytic : M63AnalyticConclusion F geometry
@@ -85,13 +71,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ}
 
-
 noncomputable def m63FamilyLengthSup (g : RiemannianMetric 3 M)
     (Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))) : ℝ :=
   sSup (Set.range (fun z => freeLoopLength g (Gamma z)))
-
-
-
 
 structure M63FamilyConclusion {F : RicciFlow 3 M (Set.Icc a b)}
     (G : M63AmbientGeometry F)
@@ -132,8 +114,6 @@ structure M63FamilyConclusion {F : RicciFlow 3 M (Set.Icc a b)}
 
 end RawFamilies
 
-
-
 def M63SmallLoopFillingService : Prop :=
   ∀ {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -141,9 +121,6 @@ def M63SmallLoopFillingService : Prop :=
     ∀ η : ℝ, 0 < η → ∃ ζ : ℝ, 0 < ζ ∧ ζ < η / 2 ∧
       ∀ gamma : C1FreeLoopSpace (M := M), freeLoopLength g gamma < ζ →
         ∃ D : LipschitzSpanningDisk g gamma, D.area < η
-
-
-
 
 def M63RampEstimatesTheory : Prop :=
   (∀ N : ℕ, 0 < N → M63ProfileProperties N) ∧

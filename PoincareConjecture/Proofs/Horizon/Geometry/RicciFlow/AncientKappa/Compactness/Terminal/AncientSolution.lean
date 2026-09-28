@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Nonflatness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 def ancientKappaSolutionOfTerminalScalarBound
     (F : RicciFlow 3 M (Iic 0)) (P : M23NormalizedKappaCompactnessPredecessors)

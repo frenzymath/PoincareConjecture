@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem space_subset_of_le {K L : SimplicialComplex ℝ E} (hKL : K ≤ L) :
     K.space ⊆ L.space := by
   intro x hx
@@ -27,9 +17,6 @@ theorem space_subset_of_le {K L : SimplicialComplex ℝ E} (hKL : K ≤ L) :
 
 variable [FiniteDimensional ℝ E] [DecidableEq F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
 
 theorem AffineOnFaces.image_subcomplex_carrier_vertices (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {K₀ : SimplicialComplex ℝ E} {L₀ : SimplicialComplex ℝ F}
@@ -46,16 +33,12 @@ theorem AffineOnFaces.image_subcomplex_carrier_vertices (hf : K.AffineOnFaces f)
 
 variable [DecidableEq E]
 
-
-
 theorem AffineOnFaces.embeddedImage_closedFaceStar_space (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :
     ((hf.embeddedImage hinj).closedFaceStar (s.image f)).space =
       f '' (K.closedFaceStar s).space :=
   (hf.image_subcomplex_carrier_vertices hinj (K.closedFaceStar_le s)
     (hf.embeddedImage_closedFaceStar_faces hinj hs)).1
-
-
 
 theorem AffineOnFaces.embeddedImage_faceLink_carrier_vertices (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :

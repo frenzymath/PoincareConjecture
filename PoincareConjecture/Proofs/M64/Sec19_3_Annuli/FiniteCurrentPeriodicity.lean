@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteCurrentTraces
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCirclePeriodicity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64FiniteAnnulusCurrent_seam
     (A : M64Annulus g c0 c1) {v : ℝ → LoopPlane → M}

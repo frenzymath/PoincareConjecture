@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.PeriodicCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PeriodicFiber
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_polar_circle_diffeomorphs
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -166,9 +156,6 @@ theorem exists_polar_circle_diffeomorphs
   intro s
   have h := hleft z (‖x‖ ^ 2) s
   rwa [hid s] at h
-
-
-
 
 theorem exists_supported_circle_lift_extension
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

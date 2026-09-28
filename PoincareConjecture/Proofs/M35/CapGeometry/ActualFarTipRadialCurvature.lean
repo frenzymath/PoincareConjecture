@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipSlope
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCurvatureDrop
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single (2 : Fin 3) 1
-
-
-
 
 theorem blowupSequence_far_tip_radial_sectional_tendsto_zero
     (P : M35StandardCapPredecessors)

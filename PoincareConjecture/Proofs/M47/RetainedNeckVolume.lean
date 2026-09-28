@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.RetainedNeckDistance
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_NeckVolume
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -150,9 +140,6 @@ private theorem retainedNeck_patch_ball_volume (R : MetricSurgeryResult g0 I)
   apply h.trans
   rw [← M15.calibratedMetricVolume_eq_volumeMeasure g, ← hretained]
   exact measure_mono (retainedNeckPatch_image_subset_ball R q hq ha ha1)
-
-
-
 
 theorem retained_neck_ball_volume (R : MetricSurgeryResult g0 I)
     {s : ℝ} (hs : 0 < s) (hscale : s ≤ I.neck.scale) :

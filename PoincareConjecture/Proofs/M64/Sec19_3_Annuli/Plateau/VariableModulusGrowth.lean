@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusCircleComparison
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMinimizerPowerGrowth
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,9 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem weighted_energy_contraction
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -85,9 +70,6 @@ theorem weighted_energy_contraction
   apply (le_div_iff₀ hL2).mpr
   nlinarith
 
-
-
-
 theorem weighted_uniform_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (g : RiemannianMetric n M) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -124,9 +106,6 @@ theorem weighted_uniform_column_power_growth
       A.column_disk_energy_le Q hQ hei.isEmbedding hb hpos hC hcoercive a r (hball r hr.2) i
     _ ≤ 2 * C * (K * r ^ beta) := mul_le_mul_of_nonneg_left hsmall (by positivity)
     _ = _ := by ring
-
-
-
 
 theorem weighted_local_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

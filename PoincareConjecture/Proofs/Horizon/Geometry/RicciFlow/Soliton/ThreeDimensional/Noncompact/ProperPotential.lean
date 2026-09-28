@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.Minimizi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem exists_potential_distance_lower_bound
     (S : GradientShrinkingSolitonData 3 M) (p : M) :
@@ -118,7 +108,6 @@ theorem exists_potential_distance_lower_bound
   have hmul := mul_le_mul_of_nonneg_right hq0 hd.le
   change S.potential p - (G + C) * L + L ^ 2 / 4 ≤ S.potential x
   nlinarith only [hIntegral, hmul]
-
 
 theorem isCompact_potential_sublevel
     (S : GradientShrinkingSolitonData 3 M) (a : ℝ) :

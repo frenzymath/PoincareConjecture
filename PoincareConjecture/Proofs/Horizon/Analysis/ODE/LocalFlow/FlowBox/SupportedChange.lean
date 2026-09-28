@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,8 +8,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.ODE.LocalFlow
-
-
 
 theorem exists_supported_vectorField_change
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

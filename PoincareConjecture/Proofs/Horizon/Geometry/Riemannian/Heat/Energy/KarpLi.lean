@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Gaussia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.PositivePart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.VolumeSupport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
   {g : RiemannianMetric n M}
-
-
 
 theorem karpLi_nonpos_of_short_time (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M) {u : ℝ × M → ℝ} {a b : ℝ}
@@ -98,7 +87,6 @@ theorem karpLi_nonpos_of_short_time (D : LeviCivitaData g)
       linarith) x
   · intro x
     exact smoothPositivePart_eq_zero_of_nonpos (hzero x)
-
 
 theorem karpLi_nonpos_on_short_interval (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M) {u : ℝ × M → ℝ} {a b : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapIsometryGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapIsometryScalar
 import PoincareConjecture.Proofs.M34.Standard.CapIsometryTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +18,6 @@ variable {M X : Type u} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [MeasurableSpace X] [BorelSpace M] [BorelSpace X]
   [T3Space M] [T3Space X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
-
 
 theorem exists_isometric_image_cap_of_necks (N : CapCertificate g)
     (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞) (hf : MetricHomothety g h f 1)

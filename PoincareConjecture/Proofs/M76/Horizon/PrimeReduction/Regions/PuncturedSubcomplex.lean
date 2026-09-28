@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdg
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

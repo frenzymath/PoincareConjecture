@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Co
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
-
-
-
-
-
-
-

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.RicciDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma covariantRicciDerivative_on_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -48,8 +36,6 @@ lemma covariantRicciDerivative_on_null_section
     W, FiberBundle.extend_apply_self] at h
   rw [Poincare.mvfderiv_eq_of_eventuallyEq heq, mvfderiv_const] at h
   simpa only [zero_apply, hnull.self_of_nhds _, sub_zero, zero_sub] using h
-
-
 
 theorem secondCovariantRicciDerivative_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -100,8 +86,6 @@ theorem secondCovariantRicciDerivative_null_section
   rw [hessian_zero, hsum_deriv, hmiddle, hright, hleft] at h
   linarith
 
-
-
 theorem tensorLaplacian_ricci_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (V : (y : M) → TangentSpace (𝓡 n) y) {x : M}
@@ -115,9 +99,6 @@ theorem tensorLaplacian_ricci_null_section
   apply Finset.sum_congr rfl
   intro i _
   exact secondCovariantRicciDerivative_null_section D hD V hV hnull _
-
-
-
 
 theorem ricci_connection_eq_zero_of_terminal_null
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

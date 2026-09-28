@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchRegularizedO
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +11,6 @@ open scoped Topology Convolution ContDiff
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
-
 
 theorem exists_smooth_bounded_approximation {h : ℂ → E} {R B : ℝ}
     (hB : 0 ≤ B) (hh : AEStronglyMeasurable h volume)

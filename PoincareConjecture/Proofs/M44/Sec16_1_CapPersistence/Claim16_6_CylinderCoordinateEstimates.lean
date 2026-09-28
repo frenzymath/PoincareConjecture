@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialCylinder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +19,6 @@ noncomputable local instance cylinderEstimateCoefficientNorm : NormedAddCommGrou
 
 noncomputable local instance cylinderEstimateCoefficientSpace : NormedSpace ℝ
     (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem exists_cylinder_coordinate_estimates (P : M44CapPersistencePredecessors.{u})
     (g0 : StandardInitialMetric) (m : ℕ) {R0 H K : ℝ}

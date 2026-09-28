@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Rescaling
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.SphereCover
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +24,6 @@ local instance productCarrierConnected {n : ℕ} (C : FlowCarrier n) :
 variable {M : Type} [TopologicalSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 structure SelectedAncientRescalings {b : ℝ} (F : RicciFlow 3 M (Iic b))
     (κ : ℝ) (p : M) where
@@ -64,8 +53,6 @@ structure SelectedAncientRescalings {b : ℝ} (F : RicciFlow 3 M (Iic b))
     Real.sqrt ((F.connection b).scalarCurvature (center i))) atTop atTop
   relative_radius_tends_zero : Tendsto
     (fun i => radius i / ((F.metric b).edist p (center i)).toReal) atTop (𝓝 0)
-
-
 
 structure RoundProductBlowup {b κ : ℝ} {F : RicciFlow 3 M (Iic b)} {p : M}
     (S : SelectedAncientRescalings F κ p) (δ : ℝ) where
@@ -116,8 +103,6 @@ namespace SelectedAncientRescalings
 variable {b κ : ℝ} {F : RicciFlow 3 M (Iic b)} {p : M}
   (S : SelectedAncientRescalings F κ p)
 
-
-
 theorem terminal_metric_eq_rescaled (i : ℕ) :
     (S.flow i).metric 0 = rescaledMetric (F.metric b)
       ((F.connection b).scalarCurvature (S.center i)) (S.scalar_pos i) := by
@@ -154,9 +139,6 @@ theorem terminal_metric_eq_rescaled (i : ℕ) :
     rfl
   exact hext heq
 
-
-
-
 theorem exists_originalSliceNeck (i : ℕ)
     (N : EpsilonNeck ((S.flow i).metric 0)) (hscale : N.scale = 1) :
     ∃ N' : EpsilonNeck (F.metric b),
@@ -172,8 +154,6 @@ theorem exists_originalSliceNeck (i : ℕ)
   exact ⟨B, hεB.trans hεA, by rw [hsB, hsA, hscale], hcB.trans hcA,
     hcarrierB.trans hcarrierA, hmapB.trans hmapA, hinverseB.trans hinverseA,
     hsphereB.trans hsphereA⟩
-
-
 
 theorem exists_roundProductBlowup
     (P : M23NormalizedKappaCompactnessPredecessors) (hκ : 0 < κ)
@@ -243,11 +223,6 @@ theorem exists_roundProductBlowup
   · intro t ht x
     exact (henorm t ht x).trans (hKnorm t x)
 
-
-
-
-
-
 theorem exists_terminal_epsilonNeck_threshold
     (P : M23NormalizedKappaCompactnessPredecessors)
     {ε : ℝ} (hε : 0 < ε) (hεhalf : ε < 1 / 2) :
@@ -273,16 +248,11 @@ theorem exists_terminal_epsilonNeck_threshold
     (fun i => S.radius i * Real.sqrt ((F.connection b).scalarCurvature (S.center i)))
     S.radii_diverge S.curvature_bound S.normalized S.scalar_base_le hε hεhalf
 
-
-
 theorem original_scales_tendsto_zero :
     Tendsto (fun i => 1 / Real.sqrt ((F.connection b).scalarCurvature (S.center i)))
       atTop (𝓝 0) := by
   simpa only [one_div, Function.comp_def] using
     tendsto_inv_atTop_zero.comp (Real.tendsto_sqrt_atTop.comp S.scalars_diverge)
-
-
-
 
 theorem exists_roundProductBlowup_with_terminal_necks
     (P : M23NormalizedKappaCompactnessPredecessors) (hκ : 0 < κ)
@@ -317,10 +287,6 @@ theorem exists_roundProductBlowup_with_terminal_necks
   exact ⟨A, hAε.trans hNε, hAs, hAcenter.trans hNcenter, hAmap.trans hNmap⟩
 
 end SelectedAncientRescalings
-
-
-
-
 
 theorem exists_selected_roundProductBlowup
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -362,9 +328,6 @@ theorem exists_selected_roundProductBlowup
   }
   exact ⟨S, fun η hη => S.exists_roundProductBlowup P hκ (hc b le_rfl)
     (hop b le_rfl) hmono η hη⟩
-
-
-
 
 theorem exists_selected_roundProductBlowup_with_terminal_necks
     (P : M23NormalizedKappaCompactnessPredecessors)

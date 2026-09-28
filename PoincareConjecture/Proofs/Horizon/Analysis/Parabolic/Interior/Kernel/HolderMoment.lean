@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.TimeIntegral
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real Set

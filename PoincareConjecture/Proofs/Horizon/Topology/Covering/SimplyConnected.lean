@@ -1,22 +1,10 @@
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.Topology
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] {f : E → X}
-
-
 
 theorem bijective_of_isCoveringMap_of_simplyConnected
     [PreconnectedSpace E] [Nonempty E]

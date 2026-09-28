@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Covering
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.Coordinates
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusPLLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -135,8 +127,6 @@ theorem exists_hamiltonZero_marked_annulus_covering_PL
   rw [Function.comp_apply, ← hfDv x]
   have h := hqC ((C).symm (D x))
   rwa [Homeomorph.apply_symm_apply] at h
-
-
 
 theorem exists_hamiltonZero_oriented_marked_annulus_covering_PL
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

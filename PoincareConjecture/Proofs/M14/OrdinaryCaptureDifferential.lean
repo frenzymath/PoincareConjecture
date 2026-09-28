@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.OrdinaryCaptureBranches
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureSlice
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSliceInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +26,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals)
 
 include D hCoordinates
-
-
-
 
 theorem ordinaryCapture_differential_bijective_iff
     (E : M14ExponentialFamily G t₀.val (e.toSpacetime (t₀, c₀)))

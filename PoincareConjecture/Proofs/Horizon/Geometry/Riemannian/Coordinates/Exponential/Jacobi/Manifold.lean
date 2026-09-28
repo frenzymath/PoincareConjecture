@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialJacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continuation.FixedChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Jacobi.Variation
-
-
-
-
-
-
-

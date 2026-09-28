@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_VolumeBoundary
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Thm1_34_ModelVolume
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SmallCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,25 +12,19 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
 noncomputable def canonicalCapLoss : ℝ := (Real.cosh 8)⁻¹ ^ 2
-
 
 theorem canonicalCapLoss_bounds : 0 < canonicalCapLoss ∧ canonicalCapLoss ≤ 1 := by
   refine ⟨pow_pos (inv_pos.mpr (Real.cosh_pos 8)) _, ?_⟩
   exact pow_le_one₀ (inv_nonneg.mpr (Real.cosh_pos 8).le)
     ((inv_le_one₀ (Real.cosh_pos 8)).mpr (Real.one_le_cosh 8))
 
-
 noncomputable def canonicalCapVolumeFloor (B : ℝ) : ℝ := canonicalCapLoss / (27 * B ^ 4)
-
 
 theorem canonicalCapVolumeFloor_pos {B : ℝ} (hB : 1 ≤ B) :
     0 < canonicalCapVolumeFloor B :=
   div_pos canonicalCapLoss_bounds.1 (mul_pos (by norm_num)
     (pow_pos (zero_lt_one.trans_le hB) _))
-
-
 
 theorem canonical_controlled_ball_volume
     {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
@@ -65,7 +50,6 @@ theorem canonical_controlled_ball_volume
       (RiemannianMetric.modelVolume_pos (by norm_num : 1 ≤ 3) (sq_nonneg (A / R)) hR)]
   exact (mul_le_mul' le_rfl hvolume).trans hcompare
 
-
 theorem canonicalCap_core_curvature (P : M46Predecessors.{u})
     {M : Type u} [TopologicalSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -86,8 +70,6 @@ theorem canonicalCap_core_curvature (P : M46Predecessors.{u})
     _ ≤ 64 * (N.core_radius x)⁻¹ ^ 2 :=
       mul_le_mul_of_nonneg_right (by norm_num) (sq_nonneg _)
     _ = _ := by simp only [div_eq_mul_inv, mul_pow]; norm_num
-
-
 
 theorem canonicalCap_test_ball_volume (P : M46Predecessors.{u})
     {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]

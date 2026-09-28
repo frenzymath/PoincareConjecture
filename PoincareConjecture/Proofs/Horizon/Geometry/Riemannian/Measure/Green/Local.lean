@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.CoordinateG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Coordinates
-
-
-
-
-
-
-

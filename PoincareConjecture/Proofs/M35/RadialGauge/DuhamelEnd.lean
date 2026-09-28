@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DerivativeKernelEnd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem heatDuhamel_weighted_vanishes_uniformly
     {f : ℝ → V → F} {C T : ℝ} (hT : 0 ≤ T)
@@ -56,9 +44,6 @@ theorem heatDuhamel_weighted_vanishes_uniformly
   change (1 + ‖x‖) * ‖heatDuhamel f t x‖ ≤ _ at h
   have hdt := mul_le_mul_of_nonneg_left ht.2 hd.le
   nlinarith
-
-
-
 
 theorem heatDuhamelGradient_weighted_vanishes_uniformly
     {f : ℝ → V → F} {C T : ℝ}

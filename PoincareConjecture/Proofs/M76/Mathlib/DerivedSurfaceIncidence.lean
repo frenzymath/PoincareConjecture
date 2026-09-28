@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedFaceChainIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.SurfaceFaceChainCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
-
-
 
 theorem derivedSubdivision_two_triangle_cofaces
     (hbound : ∀ u ∈ K.faces, u.card ≤ 3)

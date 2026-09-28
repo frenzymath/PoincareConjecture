@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCylinderAdmission
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarLocalC1Composition_metric_lipschitz
     (g : RiemannianMetric n M) (f : Plane → M)
@@ -55,10 +40,6 @@ theorem scalarLocalC1Composition_metric_lipschitz
       mul_le_mul_right hdist _
     _ = ((C * K : ℝ≥0) : ℝ≥0∞) * ENNReal.ofReal ‖y - z‖ := by
       rw [ENNReal.coe_mul, mul_assoc]
-
-
-
-
 
 theorem scalarLocalC1ClosedCylinder_admit
     (g : RiemannianMetric n M) (f : Plane → M)

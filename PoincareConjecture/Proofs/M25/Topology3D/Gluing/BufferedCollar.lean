@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem isCollarEmbedding_of_buffered_chart
     {W : Type u} [TopologicalSpace W] [ChartedSpace E3 W]

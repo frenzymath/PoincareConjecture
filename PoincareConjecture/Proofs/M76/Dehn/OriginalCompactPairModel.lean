@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryDefiningCut
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ScalarPairSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLScalarNeighborhoodModel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_compact_original_PL_pair_model
     (e : ι → OpenPartialHomeomorph M E)

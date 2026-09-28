@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderForward
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem neck_buffer_regularSlab_forward
     {F : SurgeryFlowData.{u}} {T c : ℝ} {I : Set ℝ} {U : Set (F.slice T).carrier}

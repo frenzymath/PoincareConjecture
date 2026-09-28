@@ -1,17 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.CutoffEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Bootstrap
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter
 open scoped ContDiff Topology
@@ -35,7 +23,6 @@ private theorem compact_sum_support {g : Fin n → Spacetime n → ℝ}
     (hg : ∀ i, HasCompactSupport (g i)) : HasCompactSupport (fun z => ∑ i, g i z) := by
   rw [show (fun z => ∑ i, g i z) = ∑ i, g i by funext z; simp only [Finset.sum_apply]]
   exact HasCompactSupport.finset_sum (s := Finset.univ) (fun i _ => hg i)
-
 
 theorem parabolic_cutoff_gradient_energy
     {a : Fin n → Fin n → Spacetime n → ℝ}

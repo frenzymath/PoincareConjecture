@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSubtype
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M56.TraceComponents
 import PoincareConjecture.Proofs.M56.SurvivorSelection
 import PoincareConjecture.Proofs.M54.BasepointTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m56TracePath (G54 : RepairedGroupEffectsTheory.{u})
     {F : SurgeryFlowData.{u}} (W : RepairedEventChildWitness F)

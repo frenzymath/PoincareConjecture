@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_FirstExitCompletion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
 
 omit [T3Space M] in
-
-
 
 theorem birthEnergy_integrable_of_action_bound (g : RiemannianMetric n M)
     {gamma : ℝ → M} {a b mu : ℝ} (hab : a ≤ b) (hmu : 0 < mu)
@@ -50,7 +39,6 @@ theorem birthEnergy_integrable_of_action_bound (g : RiemannianMetric n M)
   rwa [intervalIntegral.integral_const_mul] at h
 
 omit [T3Space M] in
-
 
 theorem half_radius_le_exit_edist (g : RiemannianMetric n M)
     {center x y : M} {R : ℝ} (hR : 0 < R)
@@ -96,9 +84,6 @@ private theorem capAction_lower_of_separation (g : RiemannianMetric n M)
       _ ≤ _ := mul_le_mul_of_nonneg_left haction (sq_nonneg h)
   exact (mul_le_mul_iff_right₀ (sq_pos_of_pos hh)).mp hscale
 
-
-
-
 theorem capSideAction_lower (g : RiemannianMetric n M)
     {gamma : ℝ → M} {a b mu A h : ℝ} (hab : a < b)
     (hmu : 0 < mu) (hA : 0 < A) (hh : 0 < h) (hduration : b - a ≤ h ^ 2)
@@ -111,9 +96,6 @@ theorem capSideAction_lower (g : RiemannianMetric n M)
     mu * A ^ 2 / 4 ≤ ∫ t in a..b, density t :=
   capAction_lower_of_separation g hab hmu hA hh hduration hcont hregular density hint
     hbound (half_radius_le_exit_edist g (mul_pos hA hh) hinner houter)
-
-
-
 
 theorem capEntryAction_lower (g : RiemannianMetric n M)
     {gamma : ℝ → M} {a b mu A h : ℝ} (hab : a < b)

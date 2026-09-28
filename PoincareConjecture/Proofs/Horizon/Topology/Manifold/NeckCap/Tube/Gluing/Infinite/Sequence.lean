@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.F
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.ZeroSphere
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +17,6 @@ local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 def neckPrefixUnion (N : ℕ → EpsilonNeck g) : ℕ → Opens M
   | 0 => (N 0).carrierOpen
@@ -56,8 +48,6 @@ theorem iSup_neckPrefixUnion (N : ℕ → EpsilonNeck g) :
   · apply iSup_le
     intro n
     exact (carrier_subset_neckPrefixUnion N n).trans (le_iSup (neckPrefixUnion N) n)
-
-
 
 theorem exists_forward_prefix_charts :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

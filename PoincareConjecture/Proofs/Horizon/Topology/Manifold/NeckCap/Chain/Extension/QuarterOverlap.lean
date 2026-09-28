@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem edist_le_of_mem_positive_quarter (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) {x y : M}
@@ -85,8 +72,6 @@ theorem edist_le_of_mem_positive_quarter (N : EpsilonNeck g)
   apply ENNReal.ofReal_le_ofReal
   nlinarith [mul_le_mul_of_nonneg_left hnum N.scale_pos.le]
 
-
-
 theorem edist_le_of_mem_closure_positive_quarter (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) {x y : M}
     (hx : x ∈ N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹)
@@ -100,8 +85,6 @@ theorem edist_le_of_mem_closure_positive_quarter (N : EpsilonNeck g)
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact closure_minimal (fun z hz => N.edist_le_of_mem_positive_quarter hε hx hz)
     (isClosed_le (continuous_const.edist continuous_id) continuous_const) hy
-
-
 
 theorem exists_positive_quarter_subset_frontier_neck_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

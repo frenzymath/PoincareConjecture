@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.OrdinaryExtraction
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30.Cylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
-
-
-
 
 theorem curvature_of_ordinaryFlow
     (e : GeneralizedFlowCylinder F C origin scale J.domain U)

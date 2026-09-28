@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartMetricDerivative
 import PoincareConjecture.Proofs.M10.FixedChartKoszul
 import PoincareConjecture.Proofs.M10.MetricDualDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle

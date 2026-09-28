@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.RicciNullity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem connectedComponent_complete_parallel_coordinate
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -73,7 +61,6 @@ theorem connectedComponent_complete_parallel_coordinate
     rw [DC.hessian_comp_of_metric_pullback D (hi.contMDiff x)
       (Eventually.of_forall hinv) (Eventually.of_forall hmetric) (hf (incl x))]
     exact hzero (incl x) _ _
-
 
 theorem restrictComponent_ricciNullity
     {n : ℕ} {M : Type*} [TopologicalSpace M]

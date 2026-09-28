@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderBuffer
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,8 +32,6 @@ private theorem physicalClock_time (s : ℝ)
     T + s / 1 = T + ((N.neck.scale⁻¹ ^ 2) * s) / (N.neck.scale⁻¹ ^ 2) := by
   simp only [div_one, mul_div_cancel_left₀ s N.cylinder.scale_pos.ne']
 
-
-
 noncomputable def strongNeckPhysicalClock :
     SurgeryFlowCylinder F (F.slice T) T 1
       (Ioc (-(N.neck.scale⁻¹ ^ 2)⁻¹) 0) N.neck.carrier :=
@@ -49,16 +39,12 @@ noncomputable def strongNeckPhysicalClock :
     (fun s : ℝ => (N.neck.scale⁻¹ ^ 2) * s)
     (physicalClock_mem N) (physicalClock_mono N) (physicalClock_time N)
 
-
-
 theorem strongNeckPhysicalClock_parameter {s : ℝ} (hs : s ∈ Ioc (-1 : ℝ) 0) :
     s / (N.neck.scale⁻¹ ^ 2) ∈ Ioc (-(N.neck.scale⁻¹ ^ 2)⁻¹) 0 := by
   constructor
   · simpa only [neg_div, one_div] using
       (div_lt_div_iff_of_pos_right N.cylinder.scale_pos).mpr hs.1
   · exact div_nonpos_of_nonpos_of_nonneg hs.2 N.cylinder.scale_pos.le
-
-
 
 theorem strongNeckPhysicalClock_forward (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0)
     (hs' : s / (N.neck.scale⁻¹ ^ 2) ∈ Ioc (-(N.neck.scale⁻¹ ^ 2)⁻¹) 0)
@@ -76,8 +62,6 @@ theorem strongNeckPhysicalClock_forward (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0)
     subst t
     rfl
   exact hf.trans (heq _ _ (mul_div_cancel₀ s N.cylinder.scale_pos.ne'))
-
-
 
 theorem strongNeckPhysicalClock_terminal
     (hs : (0 : ℝ) ∈ Ioc (-(N.neck.scale⁻¹ ^ 2)⁻¹) 0)

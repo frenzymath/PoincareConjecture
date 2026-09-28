@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Polygons.TriangleEdg
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoCofaceCarrierGerm
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveFaceCenterAtPoint
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -79,8 +69,6 @@ private theorem exists_signed_edge_vertices
     exact A.eq_zeroCrossing_of_mem_affineSpan (hv.trans hu').ne
       (by simpa only [pair_comm] using hpSpan) hpzero
 
-
-
 theorem exists_transverse_edge_pair_segments
     (K : SimplicialComplex ℝ E) {s a b : Finset E}
     (hs : s ∈ K.faces) (hs2 : s.card = 2)
@@ -138,8 +126,6 @@ theorem exists_transverse_edge_pair_segments
     exact ⟨hya'.1, hyb'.1⟩
   · rintro y rfl
     exact ⟨left_mem_segment ℝ y z, left_mem_segment ℝ y w⟩
-
-
 
 theorem exists_transverse_edge_two_segment_germ
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) {s a b : Finset E}

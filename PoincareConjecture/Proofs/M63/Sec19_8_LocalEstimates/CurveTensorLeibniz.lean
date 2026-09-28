@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetSpatialCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -25,9 +15,6 @@ open M62 Proofs.M09
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63HasDerivAt_tensor_pullback {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {k : ℕ} (T : CovariantTensorEvaluation n M k)
@@ -154,9 +141,6 @@ theorem m63HasDerivAt_tensor_pullback {g : RiemannianMetric n M}
   simp_rw [hslot]
   rw [Finset.sum_add_distrib]
   ring
-
-
-
 
 theorem m63ArcDerivative_tensor_pullback
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

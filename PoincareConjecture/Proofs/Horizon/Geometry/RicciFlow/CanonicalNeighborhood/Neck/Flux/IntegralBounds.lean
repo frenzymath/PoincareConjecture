@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.ProfileSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Bounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +15,6 @@ section Topological
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
 
 theorem integral_flux_bounds_of_pointwise
     (N : EpsilonNeck g) {L κ₁ κ₂ : ℝ}
@@ -84,9 +72,6 @@ end Topological
 variable {M : Type*} [MetricSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem integral_abs_busemann_axialTransitionProfile_flux_le
     (N : EpsilonNeck g) (D : LeviCivitaData g) (hc : MetricComplete g)

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Ball
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.GaussianSummation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem integrable_gaussian_heat_energy
     {n : ℕ} {M : Type*} [TopologicalSpace M]

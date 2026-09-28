@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedYoungJointBuffer
 import PoincareConjecture.Proofs.M47.SeedYoungBirthVolume
 import PoincareConjecture.Proofs.M47.SeedYoungMidpointVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_young_accessible_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

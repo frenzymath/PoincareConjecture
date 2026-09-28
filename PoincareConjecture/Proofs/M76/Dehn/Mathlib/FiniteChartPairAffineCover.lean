@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverTransport
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_paired_chart_cover
     {E E' F X Y ι κ : Type*}

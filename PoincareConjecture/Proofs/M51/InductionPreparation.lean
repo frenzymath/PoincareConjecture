@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.VolumeCalibration
 import PoincareConjecture.Proofs.M48.AnalyticCalibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -16,10 +8,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m51InductionPreparation
     (S : RepairedControlledSchedulesData.{u}) (P : M48Predecessors.{u})

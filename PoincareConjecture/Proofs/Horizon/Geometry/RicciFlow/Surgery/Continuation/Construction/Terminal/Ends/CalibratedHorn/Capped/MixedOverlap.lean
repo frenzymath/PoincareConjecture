@@ -5,7 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.Capped.LowerCore
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.AlignedCores
 
-
 set_option autoImplicit false
 
 open Set
@@ -51,8 +50,6 @@ private theorem mixed_overlap_of_shifted_slice (C D : CapCertificate g)
       rw [← hfD]
       exact image_mono D.closed_core_subset_carrier hycore
   · exact Or.inr hclosed
-
-
 
 theorem mixed_overlap_containment_or_closing_of_epsilon_le (C D : CapCertificate g)
     (hC : C.epsilon ≤ 1 / 200) (hDC : D.epsilon = C.epsilon)

@@ -1,8 +1,6 @@
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 set_option autoImplicit false
 open Set Topology
 

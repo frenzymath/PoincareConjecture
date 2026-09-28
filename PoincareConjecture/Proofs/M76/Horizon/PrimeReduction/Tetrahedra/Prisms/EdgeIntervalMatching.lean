@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.OriginalRectangleContacts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -78,8 +69,6 @@ private theorem reversed_image_Ioo {E : Type*} (e : ℝ → E) (c d : ℝ) :
     exact ⟨1-t,⟨by linarith [ht.2],by linarith [ht.1]⟩,rfl⟩
   · rintro ⟨t,ht,rfl⟩
     exact ⟨1-t,⟨by linarith [ht.2],by linarith [ht.1]⟩,by simp⟩
-
-
 
 theorem affine_edge_cut_intervals_eq
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

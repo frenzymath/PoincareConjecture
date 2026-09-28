@@ -1,23 +1,11 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Vertices
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
-
-
-
-
-
-
-
-
 
 namespace Poincare.Topology.Plane.Meshes
 
 open Set
 
 namespace TriangleMesh
-
 
 theorem lineRefinementMesh_vertex_old_or_zero (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (v : (M.lineRefinementMesh f).Vertex) :
@@ -34,7 +22,6 @@ theorem lineRefinementMesh_vertex_old_or_zero (M : TriangleMesh)
     change f v.1 = 0
     rw [← hv]
     exact M.pairCutPosition_apply_eq_zero f u w (Finset.mem_filter.mp huw).2
-
 
 theorem refineByLines_boundary_vertices_subset (M : TriangleMesh)
     (lines : List (Plane →ᵃ[ℝ] ℝ)) (B S : Set Plane)
@@ -217,8 +204,6 @@ private theorem exists_vertex_supporting_functions
     · simpa using hy1
     · simpa using hy2
 
-
-
 theorem exists_triangleMesh_exact_boundary_vertices_with_refinement
     (b : AffineBasis (Fin 3) ℝ Plane) (S : Finset Plane)
     (hS : (S : Set Plane) ⊆ frontier (convexHull ℝ (Set.range b)))
@@ -292,7 +277,6 @@ theorem exists_triangleMesh_exact_boundary_vertices_with_refinement
   obtain ⟨t, ht, hpt⟩ := mem_iUnion₂.mp hpsupport
   obtain ⟨v, -, hv⟩ := hmark p hp t ht hpt
   exact ⟨⟨v, hv⟩, hpfront⟩
-
 
 theorem exists_triangleMesh_exact_boundary_vertices
     (b : AffineBasis (Fin 3) ℝ Plane) (S : Finset Plane)

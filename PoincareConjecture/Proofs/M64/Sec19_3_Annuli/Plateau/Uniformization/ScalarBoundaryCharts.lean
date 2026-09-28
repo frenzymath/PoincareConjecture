@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.HalfSpaceChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,29 +13,13 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
-
-
-
 def scalarAnnulusDefining (x : Plane) : ℝ := (‖x‖ ^ 2 - 1) * (4 - ‖x‖ ^ 2)
-
-
-
-
-
 
 theorem scalarAnnulusDefining_smooth :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ scalarAnnulusDefining := by
   apply contMDiff_iff_contDiff.mpr
   exact ((contDiff_norm_sq ℝ).sub contDiff_const).mul
     (contDiff_const.sub (contDiff_norm_sq ℝ))
-
-
-
-
-
-
 
 theorem scalarAnnulusDefining_pos (x : Plane) :
     0 < scalarAnnulusDefining x ↔ x ∈ scalarAnnulus := by
@@ -58,11 +30,6 @@ theorem scalarAnnulusDefining_pos (x : Plane) :
     rcases mul_pos_iff.mp h with h | h <;> constructor <;> nlinarith
   · rintro ⟨h1, h2⟩
     apply mul_pos <;> nlinarith
-
-
-
-
-
 
 theorem scalarAnnulusDefining_regular {a : Plane} (ha : ‖a‖ = 1 ∨ ‖a‖ = 2) :
     Surjective (mfderiv (𝓡 2) 𝓘(ℝ, ℝ) scalarAnnulusDefining a) := by
@@ -84,12 +51,6 @@ theorem scalarAnnulusDefining_regular {a : Plane} (ha : ‖a‖ = 1 ∨ ‖a‖ 
   intro y
   refine ⟨(y / fderiv ℝ scalarAnnulusDefining a a) • a, ?_⟩
   rw [map_smul, smul_eq_mul, div_mul_cancel₀ _ hn]
-
-
-
-
-
-
 
 theorem exists_scalarAnnulus_boundary_chart {a : Plane}
     (ha : ‖a‖ = 1 ∨ ‖a‖ = 2) :

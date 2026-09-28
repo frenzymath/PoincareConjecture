@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_OpenRegularCylin
 import Mathlib.Algebra.Order.GroupWithZero.OrderIso
 import Mathlib.Algebra.Order.Group.OrderIso
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_initial_based_cylinder
     (F : SurgeryFlowData.{u}) {origin scale B : ℝ}

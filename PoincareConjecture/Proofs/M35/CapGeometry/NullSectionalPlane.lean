@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CurvatureMetricJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +33,6 @@ private theorem curvature_basis_expansion {g : RiemannianMetric 3 V}
   simp only [OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     OrthonormalBasis.coe_toBasis, ← hA]
 
-
-
 theorem curvatureTensor_tendsto_on_moving_vectors
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}
     (Dseq : ∀ k, LeviCivitaData (gseq k)) (D : LeviCivitaData g)
@@ -72,8 +62,6 @@ theorem curvatureTensor_tendsto_on_moving_vectors
         (fun m hm => hjet m (by omega)))
     simpa only [iteratedFDeriv_zero_eq_comp, Function.comp_def,
       LinearIsometryEquiv.apply_symm_apply] using h
-
-
 
 theorem exists_null_sectional_plane_of_metric_jets
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

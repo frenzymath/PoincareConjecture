@@ -6,16 +6,6 @@ import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Statements.M18AsymptoticSoliton
 import PoincareConjecture.Statements.M19TwoDimensionalClassification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 structure ThreeDimensionalClassificationPredecessors : Prop where
   local_flow :
@@ -54,18 +41,12 @@ structure ThreeDimensionalClassificationPredecessors : Prop where
       [ConnectedSpace N],
       TwoDimensionalClassificationTheory (M := N)
 
-
-
-
 structure ThreeDimensionalAsymptoticClassificationTheory
     (K : AncientKappaSolution 3 M) : Prop where
   classify :
     ∀ S : AncientRescalingSequence K,
       ∃ L : AncientAsymptoticSolitonLimitData S,
         ThreeDimensionalAsymptoticClassificationCertificate S L
-
-
-
 
 structure ThreeDimensionalClassificationTheory : Prop where
   classify : ∀ S : GradientShrinkingSolitonData 3 M,

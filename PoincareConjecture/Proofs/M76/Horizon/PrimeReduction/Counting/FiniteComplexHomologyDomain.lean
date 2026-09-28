@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.FiniteCompl
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTerminalPair
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem PLDomain.finite_modTwo_homology
     {X : Type u} {ι : Type v} [TopologicalSpace X] [T2Space X]

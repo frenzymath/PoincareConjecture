@@ -1,19 +1,8 @@
 import PoincareConjecture.Proofs.M47.JointSeedLogarithmic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_worldline_scale_budget
     {A C c rho v : ℝ} (hA : 0 < A) (hC : 0 < C) (hrho : 0 < rho) (hv : 0 < v)
@@ -36,8 +25,6 @@ theorem jointSeed_worldline_scale_budget
     rw [hidentity]
     nlinarith
 
-
-
 theorem jointSeed_worldline_uniform_scale
     {C c rho a v : ℝ} (hC : 0 ≤ C) (hc : 0 ≤ c) (ha : 0 < a) (hav : a ≤ v) :
     4 * max (rho⁻¹ ^ 2) (C * c / v) / 3 ≤
@@ -48,8 +35,6 @@ theorem jointSeed_worldline_uniform_scale
   have hnonneg : 0 ≤ max (rho⁻¹ ^ 2) (C * c / a) :=
     (sq_nonneg _).trans (le_max_left _ _)
   linarith
-
-
 
 theorem jointSeed_terminal_below_scale
     {C c rho v R : ℝ} (hC : 1 ≤ C) (hv : 0 < v) (hR : 0 ≤ R)

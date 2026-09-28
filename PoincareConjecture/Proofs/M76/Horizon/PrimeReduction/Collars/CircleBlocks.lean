@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CircleMarked
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTube
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -28,8 +20,6 @@ private theorem circle_dualBlock_congr
   have hi : hK = hL := Subsingleton.elim _ _
   cases hi
   rfl
-
-
 
 theorem exists_coordinate_circle_blocks
     (P : Fin 3 → SimplicialComplex ℝ V3) (hP : ∀ i, (P i).faces.Finite)

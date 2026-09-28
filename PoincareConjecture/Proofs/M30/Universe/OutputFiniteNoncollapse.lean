@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M30.Universe.OutputLift
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
 
 theorem liftBlowupLimit_limitNoncollapsedAtScale {J : Set ℝ}
     (L : BlowupLimitFlow.{0} J) {kappa r₀ : ℝ}

@@ -1,18 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,8 +7,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M45CylinderPatch (S : GeneralizedSliceCarrier.{u})
     (length : ℝ) (center : S.carrier) where
@@ -39,8 +24,6 @@ structure M45CylinderPatch (S : GeneralizedSliceCarrier.{u})
     coordinate (Set.univ ×ˢ Set.Ioo (-length) length)
   inverse_smooth : ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ inverse carrier
   center_sphere : ∃ z : UnitTwoSphere, coordinate (z, 0) = center
-
-
 
 structure M45NeckGluingInput (epsilon beta : ℝ) where
   recent_duration : ℝ
@@ -72,8 +55,6 @@ structure M45NeckGluingInput (epsilon beta : ℝ) where
         (mfderiv (𝓡 3) (𝓡 3) identify x w) =
           (recent_flow.metric (-recent_duration)).inner x v w
 
-
-
 noncomputable def M45NeckGluingInput.piecewiseTensor
     {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
     (coordinate : RoundCylinderSpace → I.recent_carrier.carrier) :
@@ -82,8 +63,6 @@ noncomputable def M45NeckGluingInput.piecewiseTensor
     roundCylinderPullback (I.recent_flow.metric t) coordinate
   else
     roundCylinderPullback (I.older_flow.metric t) (I.identify ∘ coordinate)
-
-
 
 structure M45NeckGluingConclusion {epsilon beta : ℝ}
     (I : M45NeckGluingInput.{u} epsilon beta) where
@@ -103,8 +82,6 @@ structure M45NeckGluingConclusion {epsilon beta : ℝ}
       (Set.Ioc (-1 : ℝ) 0 ×ˢ
         ((chartAt (EuclideanSpace ℝ (Fin 2)) q).target ×ˢ
           Set.Ioo (-epsilon⁻¹) epsilon⁻¹))
-
-
 
 def M45NeckGluingProperty (epsilon beta : ℝ) : Prop :=
   ∀ I : M45NeckGluingInput.{u} epsilon beta, Nonempty (M45NeckGluingConclusion I)

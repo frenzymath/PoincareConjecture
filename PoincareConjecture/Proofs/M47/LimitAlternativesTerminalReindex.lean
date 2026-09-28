@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalFloorScale
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalReindex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitAlternatives_terminal_common_reindex
     (S : RepairedControlledSchedulesData.{u})

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ScaleComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -141,8 +133,6 @@ theorem cap_interval_subset_ball (q : UnitTwoSphere) {a : ℝ} (ha : 0 < a) (ha1
   nlinarith [mul_pos N.scale_pos (sub_pos.mpr hxnorm),
     mul_pos N.scale_pos (sub_pos.mpr htabs)]
 
-
-
 theorem volume_center_ball_lower_of_le_two_scale {r : ℝ} (hr : 0 < r)
     (hrscale : r ≤ 2 * N.scale) :
     ENNReal.ofReal (DeepHorn.neckNoncollapseConstant * r ^ 3) ≤
@@ -207,8 +197,6 @@ namespace GeneralizedStrongNeck
 
 variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
 
-
-
 theorem radius_le_two_scale_of_curvature_bound (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) {r : ℝ} (hr : 0 < r)
     (hcurv : |F.curvatureNorm ⟨t, N.center⟩| ≤ r⁻¹ ^ 2) :
@@ -230,8 +218,6 @@ theorem radius_le_two_scale_of_curvature_bound (N : GeneralizedStrongNeck F t ep
       _ = r ^ 2 := by rw [hnorm, mul_one]
   rw [hprod] at hm'
   nlinarith [N.scale_pos]
-
-
 
 theorem noncollapsed_at_center (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) (r₀ : ℝ) :

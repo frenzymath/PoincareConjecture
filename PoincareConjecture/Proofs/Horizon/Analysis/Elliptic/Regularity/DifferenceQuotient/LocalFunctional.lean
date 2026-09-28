@@ -3,14 +3,6 @@ import Mathlib.Analysis.Normed.Operator.Extend
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -799,6 +791,5 @@ lemma smoothTestFunctional_loc_ext_eq_inner
       ⟪smoothTestFunctionalLocRiesz (d := d) (Ω := Ω) (Ω'' := Ω'') hw_l2 k, f⟫_ℝ := by
   unfold smoothTestFunctionalLocRiesz
   rw [InnerProductSpace.toDual_symm_apply]
-
 
 end Poincare.Analysis.Sobolev

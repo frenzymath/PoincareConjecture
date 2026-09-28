@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientRescaledLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.BufferedSegments
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +13,6 @@ namespace PoincareConjecture.AncientPointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 def alongSubsequence {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -66,8 +51,6 @@ def alongSubsequence {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     obtain ⟨N, hjN, hN⟩ := G.pullback_metric_CInfinity q j r K hK hKE ε hε
     exact ⟨N, hjN, fun k hk => hN (σ k) (hk.trans (hσ.id_le k))⟩
 
-
-
 theorem exists_isometric_line_of_subsequence_source_arcs
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
     (F : ∀ k, RicciFlow n (C k).carrier (J k)) {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -87,9 +70,6 @@ theorem exists_isometric_line_of_subsequence_source_arcs
     (fun k => F (G.subsequence (σ k))) hT
     (fun a b hb => (G.subsequence_strictMono.comp hσ).tendsto_atTop.eventually
       (htime a b hb)) hcomplete arc hbase hdist
-
-
-
 
 theorem exists_isometric_line_of_subsequence_opposite_segments
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
@@ -135,9 +115,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_isometric_line_of_selected_terminal_segments
     {m : ℕ} {M : Type} [TopologicalSpace M] [T3Space M]

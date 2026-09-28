@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.UniformScalarJets
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ChartBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -26,9 +18,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {g : ∀ k, RiemannianMetric 3 (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem jetScalarCurvature_chart_eq_of_mem_exhaustion
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :
@@ -70,9 +59,6 @@ theorem jetScalarCurvature_chart_eq_of_mem_exhaustion
       ⟨(hmap y hy).mfderivToContinuousLinearEquiv (by simp), rfl⟩).comp hi
   exact tube.jetScalarCurvature_metricTwoJet_pullback (D (G.subsequence k))
     hU hsmooth hinvertible ⟨hx, hstage⟩
-
-
-
 
 theorem tendstoUniformlyOn_chart_scalarCurvature
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :

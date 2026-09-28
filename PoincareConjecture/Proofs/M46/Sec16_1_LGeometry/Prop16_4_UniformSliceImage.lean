@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyRestart
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -20,9 +10,6 @@ open scoped Topology ContDiff NNReal
 namespace PoincareConjecture.Proofs.M46
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem surjOn_closedBall_of_derivative_close_identity
     {f : E → E} {D : E → E →L[ℝ] E} {x₀ : E} {R : ℝ} (hR : 0 ≤ R)
@@ -53,10 +40,6 @@ theorem surjOn_closedBall_of_derivative_close_identity
     norm_num
     ring
   rwa [hradius] at hsurj
-
-
-
-
 
 theorem closedFamily_exists_uniform_image_ball {C : Set ℝ} {U : Set E}
     (hC : UniqueDiffOn ℝ C) (hU : IsOpen U) (alpha : E × ℝ → E)

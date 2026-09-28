@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import PoincareConjecture.Proofs.M25.Mathlib.PositivePolar
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem EpsilonNeck.exists_supported_slice_graph_straightening
     {M : Type u} [TopologicalSpace M]

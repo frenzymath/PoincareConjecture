@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.GeneralizedNeck
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLocality
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,9 +19,6 @@ private theorem scalar_eq_of_metric_eq
     D.scalarCurvature x = D'.scalarCurvature x := by
   subst g'
   exact D.scalarCurvature_eq D' x
-
-
-
 
 theorem blowupSequence_limit_neck_canonical (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

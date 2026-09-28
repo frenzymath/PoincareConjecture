@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.BoundedDistance.Dense
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,13 +47,11 @@ theorem oldSlice_metric_homothety_symm (t : ℝ) (ht : t ∈ F.interval) :
   rw [hv v, hv w, e.apply_symm_apply] at hm
   simpa only [one_mul] using hm.symm
 
-
 theorem oldSlice_metric_calculus_symm (t : ℝ) (ht : t ∈ F.interval) :
     MetricHomothetyCalculus (E.extended.metric t) (F.metric t)
       (E.oldSliceDiffeomorph t ht).symm 1 :=
   Homothety.metricHomothetyCalculus _ _ _ 1 (by norm_num)
     (E.oldSlice_metric_homothety_symm t ht)
-
 
 theorem canonical_control (t : ℝ) (ht : t ∈ F.interval)
     (x : (F.slice t).carrier) (epsilon C : ℝ)
@@ -90,7 +79,6 @@ theorem canonical_control (t : ℝ) (ht : t ∈ F.interval)
     change E.inverse t ht (E.forward t ht x) ∈ N.carrier
     simpa only [E.left_inverse t ht x] using hmem
 
-
 theorem slice_canonical (s : ℝ) (hs : s ∈ F.interval) (epsilon C Q : ℝ)
     (h : generalizedSliceStrongCanonicalNeighborhoods F epsilon C Q s) :
     generalizedSliceStrongCanonicalNeighborhoods E.extended epsilon C Q s := by
@@ -102,7 +90,6 @@ theorem slice_canonical (s : ℝ) (hs : s ∈ F.interval) (epsilon C Q : ℝ)
   have hc := E.canonical_control s hs (E.inverse s hs y) epsilon C hcontrol
   rw [E.right_inverse s hs y] at hc
   exact ⟨hc⟩
-
 
 theorem earlier_dense_canonical (t : ℝ) (ht : t ∈ F.interval) (htT : t < T)
     (x : (F.slice t).carrier) (epsilon C : ℝ)
@@ -133,8 +120,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 theorem terminal_time_pos (H : SingularTimeAssumptions F T M) : 0 < T := by
   obtain ⟨s, hs⟩ := F.interval_nontrivial.nonempty
   exact (H.interval_preterminal hs).1.trans_lt (H.interval_preterminal hs).2
-
-
 
 theorem exists_regular_time_above (H : SingularTimeAssumptions F T M)
     {s a : ℝ} (hs0 : 0 ≤ s) (hsT : s ≤ T) (has : a < s) :
@@ -171,8 +156,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem earlier_dense_canonical_of_singularTimeAssumptions
     (E : GeneralizedFlowExtension F T) (H : SingularTimeAssumptions F T M)

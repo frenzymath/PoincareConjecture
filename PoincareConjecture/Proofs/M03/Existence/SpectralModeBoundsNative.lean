@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -15,7 +7,6 @@ open MeasureTheory Set
 noncomputable section
 
 namespace PoincareConjecture
-
 
 theorem intervalIntegral_sq_le_time_mul_integral_sq
     {T : ℝ} {f : ℝ → ℝ} (hT : 0 ≤ T)
@@ -53,7 +44,6 @@ theorem intervalIntegral_sq_le_time_mul_integral_sq
   have hdiff := nonneg_of_mul_nonneg_right hmul hpos
   exact sub_nonneg.mp hdiff
 
-
 theorem spectralMode_zero_initial_normSq_le_time_integral
     {lambda T t : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) (ht : t ∈ Icc (0 : ℝ) T) :
@@ -87,7 +77,6 @@ theorem spectralMode_zero_initial_normSq_le_time_integral
   rw [hmode]
   exact hsq.trans (mul_le_mul_of_nonneg_left hmono ht.1)
 
-
 theorem spectralMode_zero_initial_energy_le_time_sq
     {lambda T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) :
@@ -116,7 +105,6 @@ theorem spectralMode_zero_initial_energy_le_time_sq
       simp only [sub_zero, smul_eq_mul]
       ring
 
-
 theorem spectralMode_zero_initial_shifted_energy_le
     {lambda T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) :
@@ -136,7 +124,6 @@ theorem spectralMode_zero_initial_shifted_energy_le
     ring
   rw [hsplit]
   nlinarith
-
 
 theorem spectralMode_sub
     {lambda c d T t : ℝ} {f g : ℝ → ℝ}

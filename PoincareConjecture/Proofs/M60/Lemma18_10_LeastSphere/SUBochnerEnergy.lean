@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUConformality
 import PoincareConjecture.Proofs.M60.Mathlib.SUPlaneMeanValue
 import PoincareConjecture.Proofs.M01.NormalizationCurvatureBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem m60SphereEnergyDensity_contDiff (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
     ContDiff ℝ ∞ (m60SphereEnergyDensity g f) := by
@@ -34,8 +24,6 @@ theorem m60SphereEnergyDensity_contDiff (g : RiemannianMetric n M)
   simp only [Matrix.trace_fin_two]
   exact contDiff_const.mul
     ((m60AreaGram_entry_contDiff g hφ 0 0).add (m60AreaGram_entry_contDiff g hφ 1 1))
-
-
 
 theorem m60SphereEnergyDensity_eq_gram_of_harmonic (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -50,9 +38,6 @@ theorem m60SphereEnergyDensity_eq_gram_of_harmonic (g : RiemannianMetric n M)
   fin_cases i
   · exact hhalf
   · exact hgram.1.symm.trans hhalf
-
-
-
 
 theorem m60HarmonicSphere_uniform_bochner [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) :

@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Essentiality.BothRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Components.LiteralPartner
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

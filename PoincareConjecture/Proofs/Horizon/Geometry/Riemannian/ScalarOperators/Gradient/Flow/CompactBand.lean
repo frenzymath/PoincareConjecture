@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Speed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,7 +64,6 @@ private theorem integralCurve_eqOn_Ioo_of_contMDiffOn
     exact (heq.and hmem).mono (fun _ hs => hs)
 
 end PoincareConjecture.LeviCivitaData
-
 
 namespace PoincareConjecture.LeviCivitaData
 
@@ -147,7 +140,6 @@ private theorem ExpandingFlow.congr
     exact h.expansion y hy t ht v hv
 
 end PoincareConjecture.LeviCivitaData
-
 
 namespace PoincareConjecture.LeviCivitaData
 
@@ -255,7 +247,6 @@ private theorem exists_uniform_short_expandingFlow
 
 end PoincareConjecture.LeviCivitaData
 
-
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -294,7 +285,6 @@ private theorem ExpandingFlow.tangent
   exact (congrArg (fun L => L v) hchain).symm.trans (hdv.trans hv)
 
 end PoincareConjecture.LeviCivitaData
-
 
 namespace PoincareConjecture.LeviCivitaData
 
@@ -472,8 +462,6 @@ private theorem ExpandingFlow.extend
 
 end PoincareConjecture.LeviCivitaData
 
-
-
 theorem PoincareConjecture.LeviCivitaData.exists_uniform_normalizedGradient_manifoldFlow_on_compact_band
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -565,7 +553,6 @@ theorem PoincareConjecture.LeviCivitaData.exists_uniform_normalizedGradient_mani
   · intro y hy t ht
     have ht' : t ∈ Ico 0 (T + δ) := ⟨ht.1, by linarith [ht.2]⟩
     exact ⟨hΦ.level y hy t ht', hΦ.expansion y hy t ht'⟩
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_uniform_normalizedGradient_manifoldFlow_on_compact_buffer
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -675,8 +662,6 @@ theorem PoincareConjecture.LeviCivitaData.exists_uniform_normalizedGradient_mani
       (fun s (hs : s ∈ Icc 0 t) => ⟨by linarith [hs.1], by linarith [hs.2, ht.2]⟩)
       (fun s hs => hgrad _ (hΦ.stays y hy s hs))
     simpa only [hΦ.initial y hy, sub_zero] using hdist
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_uniform_normalizedGradient_manifoldFlow_on_closedBall
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

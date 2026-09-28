@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEnergyNormalization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.EnergyCompetitors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Complex
@@ -18,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65SpanningDisk_exists_normalized_energy_competitor
     {M : Type u} [TopologicalSpace M] [T2Space M]

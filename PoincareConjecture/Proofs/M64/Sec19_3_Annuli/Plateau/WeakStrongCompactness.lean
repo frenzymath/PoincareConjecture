@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakLocalizedCompactness
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongCompactness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem m64Annulus_weak_l2_isCompact
     (u : ℕ → LoopPlane → ℝ) (hw : ∀ j, MemW1pWitness 2 (u j) S)
@@ -46,8 +34,6 @@ theorem m64Annulus_weak_l2_isCompact
   apply m64Annulus_l2_isCompact_of_localized u (fun j => (hw j).memLp) hA
   intro phi hphi hc hs
   exact m64WeakSobolev_localized_l2_isCompact isOpen_interior u hw hv hC phi hphi hc hs
-
-
 
 theorem m64Annulus_weak_strong_subsequence
     (u : ℕ → LoopPlane → ℝ) (hw : ∀ j, MemW1pWitness 2 (u j) S)

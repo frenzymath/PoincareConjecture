@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Principal
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -23,7 +15,6 @@ namespace Poincare.Analysis.Sobolev.NirenbergCrossBoundsNonSmooth
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 private theorem diffQuot_coeff_cutoff_gradient_pointwise_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -347,7 +338,6 @@ private lemma integral_const_indicator_g_sq_eq
     · rw [Set.indicator_of_mem hx, Set.indicator_of_mem hx]; ring
     · rw [Set.indicator_of_notMem hx, Set.indicator_of_notMem hx]; ring]
   rw [MeasureTheory.integral_indicator (isClosed_tsupport η).measurableSet]
-
 
 theorem diffQuot_coeff_cutoff_gradient_bound_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -726,7 +716,6 @@ theorem diffQuot_coeff_cutoff_gradient_bound_nonsmooth_quantitative
             ∂(volume : Measure E) from by ring]
     rw [← h_C_eq]
   exact h_total_bound
-
 
 theorem diffQuot_coeff_cutoff_gradient_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

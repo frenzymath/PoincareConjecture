@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
-
 theorem isCompact_coordinate_image_Icc (N : EpsilonNeck g) (a b : ℝ)
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :
     IsCompact (N.coordinate_map '' (univ ×ˢ Icc a b)) := by
@@ -39,9 +24,6 @@ theorem isCompact_coordinate_image_Icc (N : EpsilonNeck g) (a b : ℝ)
   exact ⟨hq, ha.trans_le hs.1, hs.2.trans_lt hb⟩
 
 variable {ι : Type v} (N : ι → EpsilonNeck g) (a b : ι → ℝ)
-
-
-
 
 theorem iUnion_carrier_eq_iUnion_closedSlab
     (ha : ∀ i, -(N i).epsilon⁻¹ < a i)
@@ -63,8 +45,6 @@ theorem iUnion_carrier_eq_iUnion_closedSlab
 
 variable [Finite ι]
 
-
-
 theorem isCompact_iUnion_carrier_of_retained_cover
     (ha : ∀ i, -(N i).epsilon⁻¹ < a i)
     (hb : ∀ i, b i < (N i).epsilon⁻¹)
@@ -75,8 +55,6 @@ theorem isCompact_iUnion_carrier_of_retained_cover
   exact isCompact_iUnion fun i =>
     (N i).isCompact_coordinate_image_Icc (a i) (b i) (ha i) (hb i)
 
-
-
 theorem isClopen_iUnion_carrier_of_retained_cover [T2Space M]
     (ha : ∀ i, -(N i).epsilon⁻¹ < a i)
     (hb : ∀ i, b i < (N i).epsilon⁻¹)
@@ -85,9 +63,6 @@ theorem isClopen_iUnion_carrier_of_retained_cover [T2Space M]
     IsClopen (⋃ i, (N i).carrier) :=
   ⟨(isCompact_iUnion_carrier_of_retained_cover N a b ha hb hcover).isClosed,
     isOpen_iUnion fun i => (N i).carrier_open⟩
-
-
-
 
 theorem iUnion_carrier_eq_univ_of_retained_cover [T2Space M]
     [PreconnectedSpace M] [Nonempty ι]
@@ -101,8 +76,6 @@ theorem iUnion_carrier_eq_univ_of_retained_cover [T2Space M]
   exact ⟨(N i).center, mem_iUnion.mpr
     ⟨i, (N i).central_sphere_subset (N i).center_on_central_sphere⟩⟩
 
-
-
 theorem subset_iUnion_carrier_of_retained_cover [T2Space M]
     (ha : ∀ i, -(N i).epsilon⁻¹ < a i)
     (hb : ∀ i, b i < (N i).epsilon⁻¹)
@@ -113,9 +86,6 @@ theorem subset_iUnion_carrier_of_retained_cover [T2Space M]
     X ⊆ ⋃ i, (N i).carrier :=
   hX.subset_isClopen
     (isClopen_iUnion_carrier_of_retained_cover N a b ha hb hcover) hmeet
-
-
-
 
 theorem iUnion_carrier_eq_connectedComponent_of_retained_cover
     [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] [Nonempty ι]

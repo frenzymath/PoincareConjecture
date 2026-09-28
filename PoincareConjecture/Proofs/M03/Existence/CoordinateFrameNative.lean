@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicRicciJetNative
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false

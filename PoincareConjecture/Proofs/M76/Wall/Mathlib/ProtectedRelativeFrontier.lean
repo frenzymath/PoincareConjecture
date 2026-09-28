@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.RelativeFilledFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem protected_relative_frontier_eq_of_frontier
     {X : Type*} [TopologicalSpace X] {R K F : Set X}

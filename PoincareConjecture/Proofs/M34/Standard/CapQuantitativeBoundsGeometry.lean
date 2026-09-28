@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameterRecut
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 theorem intrinsicDiameter_lt_of_normalized_base
     {C : ℝ} (hC : N.cap_constant ≤ C)
     {o : M} (ho : o ∈ N.carrier) (hnormal : N.connection.scalarCurvature o = 1) :
@@ -37,8 +26,6 @@ theorem intrinsicDiameter_lt_of_normalized_base
   calc
     _ ≤ N.cap_constant * 1 := mul_le_mul_of_nonneg_left hp N.cap_constant_pos.le
     _ ≤ C := by simpa only [mul_one] using hC
-
-
 
 theorem volume_lt_of_normalized_base
     {C : ℝ} (hC : N.cap_constant ≤ C)
@@ -51,8 +38,6 @@ theorem volume_lt_of_normalized_base
     _ ≤ ENNReal.ofReal N.cap_constant * ENNReal.ofReal 1 :=
       mul_le_mul_right (ENNReal.ofReal_le_ofReal hp) _
     _ ≤ ENNReal.ofReal C := by simpa using ENNReal.ofReal_le_ofReal hC
-
-
 
 theorem image_recut_intrinsicDiameter_lt
     {C : ℝ} (hC : N.cap_constant ≤ C)
@@ -75,9 +60,6 @@ theorem image_recut_intrinsicDiameter_lt
     _ < 4 * ENNReal.ofReal C :=
       (ENNReal.mul_right_strictMono (by norm_num) (by norm_num)) hdiam
     _ = ENNReal.ofReal (4 * C) := by rw [ENNReal.ofReal_mul (by norm_num)]; norm_num
-
-
-
 
 theorem image_recut_volume_lt
     [MeasurableSpace X] [BorelSpace X] [T3Space X] [SecondCountableTopology M]

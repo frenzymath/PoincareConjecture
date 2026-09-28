@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
 
 theorem PolyhedralPLInCharts.project
     {V E X Y ι κ : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -45,10 +33,6 @@ end Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_projected_proper_cut_map
     {V X ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,8 +7,6 @@ open scoped ContDiff Topology BigOperators
 open Poincare.Analysis.Calculus
 
 namespace PoincareConjecture.M32
-
-
 
 theorem exists_eventually_finite_jet_bound
     {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
@@ -44,8 +32,6 @@ theorem exists_eventually_finite_jet_bound
     let l : Fin (N + 1) := ⟨j, Nat.lt_succ_of_le hj⟩
     exact (hy l).trans ((Finset.single_le_sum
       (fun i _ => hB i) (Finset.mem_univ l)).trans (le_add_of_nonneg_left zero_le_one))
-
-
 
 theorem exists_composition_finite_jet_bound
     {E F G : Type*}

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.We
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Density
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,10 +18,6 @@ open Poincare.Analysis.Sobolev.NirenbergDiffQuotTestFunction
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
-
-
 
 theorem m64MemW01p_of_halfspace_support
     {u : E → ℝ} (w : MemW1pWitness 2 u univ)

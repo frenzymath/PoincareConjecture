@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.LocalBounds
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +11,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology ENNReal NNReal Bundle
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem eq_quadratic_of_locally_quadratic
     {F : ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J) (hconn : IsPreconnected J)
@@ -71,8 +56,6 @@ theorem eq_quadratic_of_locally_quadratic
     (fun u _ => (hpoly u).differentiableAt.differentiableWithinAt)
     (fun u hu => (hder u hu).trans (hpoly u).deriv.symm)
     ht₀ (by simp)
-
-
 
 theorem interpolation_of_locally_quadratic
     {F : ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J) (hconn : IsPreconnected J)
@@ -136,8 +119,6 @@ private theorem endpoint_injective_nhds
     hH.mem_toOpenPartialHomeomorph_source hdH (by simp)
   exact ⟨G.source ∩ U, inter_mem (G.open_source.mem_nhds hxG) (hU.mem_nhds hx),
     inter_subset_right, G.injOn.mono inter_subset_left⟩
-
-
 
 private theorem exists_injective_joint_geodesic_flow
     (g : RiemannianMetric n M) (p : M) :
@@ -291,9 +272,6 @@ private theorem speed_eq_dist_of_minimizing
   simp only [chartCoefficients_self] at hspeed
   exact hspeed.trans hh'
 
-
-
-
 theorem exists_minimizing_neighborhood_of_small_chart_velocity
     (g : RiemannianMetric n M) (p : M) :
     ∃ U ∈ 𝓝 p, ∃ r : ℝ, 0 < r ∧
@@ -437,9 +415,6 @@ theorem exists_minimizing_neighborhood_of_small_chart_velocity
   rw [heqI hs, heqI ht]
   exact hηmin s hs t ht
 
-
-
-
 theorem IsGeodesicOn.exists_minimizing_affine_neighborhood
     {g : RiemannianMetric n M} {γ : ℝ → M} {J : Set ℝ}
     (hγ : g.IsGeodesicOn γ J) (hJ : IsOpen J) {t₀ : ℝ} (ht₀ : t₀ ∈ J) :
@@ -540,9 +515,6 @@ private theorem speed_affine {g : RiemannianMetric n M} {γ : ℝ → M}
     a * g.tangentNorm (γ t) (mfderiv (𝓘(ℝ, ℝ)) (𝓡 n) γ t 1))
     (by ring : a * 0 + b = b)
 
-
-
-
 theorem geodesic_quadratic_of_minimizing_geodesic_quadratic
     (g : RiemannianMetric n M) (f : M → ℝ)
     (hquad : ∀ (γ : ℝ → M) (ε : ℝ), 0 < ε →
@@ -603,8 +575,6 @@ theorem geodesic_quadratic_of_minimizing_geodesic_quadratic
   field_simp
   ring
 
-
-
 theorem geodesic_quadratic_of_minimizing_segments
     (g : RiemannianMetric n M) (f : M → ℝ)
     (hquad : ∀ (γ : ℝ → M) (ε : ℝ), 0 < ε →
@@ -622,9 +592,6 @@ theorem geodesic_quadratic_of_minimizing_segments
   intro γ ε hε hγ hmin t ht
   rw [speed_eq_dist_of_minimizing hε hγ hmin]
   exact hquad γ ε hε hγ hmin t ht
-
-
-
 
 theorem contMDiff_of_locally_lipschitz_minimizing_segments
     (g : RiemannianMetric n M) (f : M → ℝ)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectTensor
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingStationary
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

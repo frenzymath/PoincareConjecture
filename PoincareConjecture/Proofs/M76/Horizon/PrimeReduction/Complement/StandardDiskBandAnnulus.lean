@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

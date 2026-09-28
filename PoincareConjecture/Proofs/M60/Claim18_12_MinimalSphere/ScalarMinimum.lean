@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M60Area
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -21,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60ScalarMinimum_isLeast [Nonempty M] {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (hcompact : IsCompact (Set.univ : Set M))
     (hscalar : Continuous D.scalarCurvature) :
@@ -33,8 +23,6 @@ theorem m60ScalarMinimum_isLeast [Nonempty M] {g : RiemannianMetric n M}
 
 set_option backward.isDefEq.respectTransparency false in
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem m60ScalarMinimum_isLeast_of_flow {J : Set ℝ} (F : RicciFlow n M J)
     (hcompact : IsCompact (Set.univ : Set M)) (f : UnitTwoSphere → M)

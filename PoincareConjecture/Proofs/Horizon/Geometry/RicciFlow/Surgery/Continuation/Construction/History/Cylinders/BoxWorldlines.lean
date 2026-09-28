@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -76,8 +69,6 @@ theorem event_box_tracks (s : ℝ) (hs : s ∈ J)
       have hts : t = s := (div_left_inj' e.scale_pos.ne').mp (add_left_cancel hclock)
       subst t
       exact hy
-
-
 
 theorem exists_tracking_box
     (L : ∀ t, t ∈ F.surgery_times → t ∈ W.interval →

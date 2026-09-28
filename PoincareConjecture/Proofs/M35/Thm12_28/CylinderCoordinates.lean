@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderImmersion
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricRigidity
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 noncomputable def cylinderSpatialCoordinates {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)
@@ -70,8 +59,6 @@ noncomputable def cylinderSpatialCoordinates {J : Set ℝ}
   · apply (e.inverse_smooth s hs).comp d.symm.contMDiff.contMDiffOn
     rintro y ⟨x, hx, rfl⟩
     exact ⟨x, hx, (d.symm_apply_apply (e.forward s hs x)).symm⟩
-
-
 
 theorem cylinder_pullbackInner_eq_fixed {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)

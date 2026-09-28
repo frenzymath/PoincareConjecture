@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalStandardTipLocus
 import PoincareConjecture.Proofs.M47.CanonicalNeckTipDistance
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem standard_tip_locus_cap (S : RepairedControlledSchedulesData.{u})
     {theta s : ℝ} (htheta : theta < 1) (hs : s ∈ Icc 0 theta)
@@ -58,8 +47,6 @@ theorem standard_tip_locus_cap (S : RepairedControlledSchedulesData.{u})
   obtain ⟨refined⟩ := S.calibration.cap_refinement s x N
   exact ⟨refined.cap, refined.epsilon_eq, refined.constant_eq.le,
     refined.connection_eq, refined.contains⟩
-
-
 
 theorem exists_compact_standard_tip_cap_cover (S : RepairedControlledSchedulesData.{u})
     {theta : ℝ} (htheta0 : 0 < theta) (htheta : theta < 1) :

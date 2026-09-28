@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCochains
 import PoincareConjecture.Proofs.M02.Topology.IntegralExcision
 import Mathlib.Algebra.Homology.DerivedCategory.KProjective
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

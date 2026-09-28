@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M12MovingGaugeTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -106,8 +98,6 @@ private lemma movingGauge_mfderiv_prod
     _ = a • movingGaugeTimeVelocity e t x +
         (G.spatialTangentEquiv t x u).val := by
       rw [htime, G.spatialTangentEquiv_eq]
-
-
 
 lemma compatibleMovingGaugeDrift_zero
     (e : CompatibleSpacetimeCylinder F T C) (G : SpacetimeCylinderMetric e)
@@ -302,8 +292,6 @@ private lemma movingGauge_time_derivative
         (fun q : T.Point × C ↦ q.1.val) (t, x)
           (T.positiveTangent t, movingGaugeDrift G t x)) = 1 := hcoord_one
   exact htimeEq.trans hcoord_one'
-
-
 
 lemma movingGauge_time_vector_eq
     (e : MovingSpacetimeGauge F T C) (G : MovingSpacetimeGaugeGeometry e)

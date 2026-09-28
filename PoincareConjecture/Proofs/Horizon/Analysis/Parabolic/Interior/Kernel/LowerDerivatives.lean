@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.TimeIntegral
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Bounded
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real Set

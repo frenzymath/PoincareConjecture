@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalIncidentQuarter
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 

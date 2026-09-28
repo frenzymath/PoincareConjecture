@@ -2,14 +2,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.AffineSpace.Basis
 import Mathlib.LinearAlgebra.Determinant
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,9 +24,6 @@ private theorem det_update_basis [Fintype ι] [DecidableEq ι]
       rw [e.det.map_update_self e (Ne.symm hki)]
       simp [Module.Basis.coord_apply, hki]
   exact congrArg (fun L : E →ₗ[ℝ] ℝ => L v) hcoord
-
-
-
 
 theorem det_linear_eq_coord_of_fix_facet [Finite ι] (b : AffineBasis ι ℝ E)
     (i j : ι) (hij : i ≠ j) (T : E →ᵃ[ℝ] E)

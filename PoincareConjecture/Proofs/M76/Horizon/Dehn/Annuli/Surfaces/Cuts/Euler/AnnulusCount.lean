@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.CircleCapEuler
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.SquareAnnulusCylinder
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.CompressionCylinderEulerCount
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

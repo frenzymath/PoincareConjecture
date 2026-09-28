@@ -1,8 +1,6 @@
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.ContinuousOn
 
-
-
 set_option autoImplicit false
 open Set
 

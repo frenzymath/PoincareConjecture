@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.KernelTran
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Coordinates
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -87,7 +78,6 @@ theorem exists_local_contMDiff_kernel_section
   · intro q hq
     exact inverse_regularized_mem_kernel (A q) K (hB q hq) (hdim q hq.2) ⟨v, hv⟩
 
-
 def coordinateRicciBilinear (D : LeviCivitaData g) (p x : M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
   let e := trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p
@@ -101,7 +91,6 @@ lemma coordinateRicciBilinear_apply (D : LeviCivitaData g) (p x : M)
       D.ricci x (constantCoordinateField p v x) (constantCoordinateField p w x) := by
   change ricciBilinear D x _ _ = _
   exact ricciBilinear_apply _ _ _ _
-
 
 def coordinateRicciOperator (D : LeviCivitaData g) (p x : M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
@@ -175,8 +164,6 @@ lemma coordinateRicciOperator_finrank_ker (D : LeviCivitaData g)
       congrFun (e.symm_continuousLinearEquivAt_eq hx) v]
   rw [hker, LinearEquiv.finrank_map_eq]
   rfl
-
-
 
 theorem exists_local_smooth_ricci_null_section (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) {x : M}

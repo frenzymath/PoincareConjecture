@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.SourceBox
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

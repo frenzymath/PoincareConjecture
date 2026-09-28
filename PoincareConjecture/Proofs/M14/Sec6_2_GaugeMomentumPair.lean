@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SmoothGaugeSurface
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeAction
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenSurfaceFields
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
-
 
 theorem supportedBackwardGauge_weightedPair (x₀ : G.gaugeCover.spatial b)
     {U : Set G.Point} (hU : IsOpen U)

@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThinGraphBands
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +22,6 @@ private theorem subgraph_slice_image (F : ℝ × ℝ → AnnulusCoordinates) (h 
     exact ⟨z, hz, heq⟩
   · rintro ⟨z, hz, heq⟩
     exact ⟨(t, z), ⟨⟨ht, hz⟩, rfl⟩, heq⟩
-
-
-
 
 theorem m64Intrinsic_exists_arc_band_chain
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

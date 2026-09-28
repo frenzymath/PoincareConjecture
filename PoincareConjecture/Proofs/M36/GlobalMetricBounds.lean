@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M36.SurgeryDistance
 import PoincareConjecture.Proofs.M36.MetricSizeBounds
 import PoincareConjecture.Proofs.M36.NeckMetricUpper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

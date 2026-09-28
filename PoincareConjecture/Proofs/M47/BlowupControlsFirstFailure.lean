@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsWindow
 import PoincareConjecture.Proofs.M47.BlowupControlsAnalytics
 import PoincareConjecture.Proofs.M47.BlowupControlsDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +29,6 @@ variable (S : RepairedControlledSchedulesData.{u})
 
 include hInitial hConstants hC hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap
 
-
-
 theorem first_failure_physical_analytic_estimate
     {s : ℝ} (hs : s ∈ Ico (base - T / Q) base) (x : (F.slice s).carrier)
     (hScalar : Q ≤ (F.connection s).scalarCurvature x) :
@@ -66,8 +55,6 @@ theorem first_failure_physical_analytic_estimate
   have h := hEarlier u ⟨(hWindow huWindow).1, hu.2.trans hs.2⟩ (hDomain huWindow) y
     ((hThreshold.trans hScalar).trans hy)
   simpa only [hC] using h
-
-
 
 theorem first_failure_generalized_analytic_estimate
     (h04 : RicciFlowCurvatureTheory.{u}) {W : M33RegularHistoryWindow F}

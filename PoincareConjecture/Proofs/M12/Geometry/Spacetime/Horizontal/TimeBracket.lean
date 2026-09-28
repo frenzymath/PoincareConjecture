@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -135,7 +125,6 @@ theorem horizontalTimeBracket_val
         (horizontalSectionVectorField F V) p := by
   exact congrArg Subtype.val (F.horizontalProjection_identity p
     ⟨_, horizontalTimeBracket_is_horizontal hU hV hp⟩)
-
 
 theorem horizontalSectionBracket_is_horizontal
     {U : Set F.Point} (hU : IsOpen U) {V W : HorizontalSection F}

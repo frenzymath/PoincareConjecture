@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsVelocity
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

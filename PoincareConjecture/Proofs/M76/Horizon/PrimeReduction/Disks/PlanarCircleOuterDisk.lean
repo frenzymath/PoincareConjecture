@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.CircleCapAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 namespace PoincareConjecture.M76
@@ -26,8 +17,6 @@ private theorem outsideCircleStrip_apply (β : ℝ) (positive : Bool) (z : P2) :
     outsideCircleStrip β positive z =
       (if positive then -(1 - z.2) / 4 else (1 - z.2) / 4, β / 32 * z.1) := by
   cases positive <;> ext <;> simp [outsideCircleStrip] <;> ring
-
-
 
 theorem exists_outer_disk_of_planar_circle_strip
     {n : ℕ} (P : Polygon P2 (n + 3)) (hP : P.HasSimplicialEdges)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.PairedCo
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquarePolygonUniformBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -19,8 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_paired_circle_parameters
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,21 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.HornBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,9 +22,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
-
 
 theorem terminalBlowupSequence_eventually_closure_strongNecks
     (hM04 : RicciFlowCurvatureTheory.{u}) {K B : ℝ} {accuracy : ℕ → ℝ}

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M10.ContactBounds
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem mem_closure_interior_of_local_regular_sublevel
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -54,8 +42,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 theorem boundary_subset_closure_core : N.boundary_sphere ⊆ closure N.core := by
   rw [N.core_eq_interior_closed_core]
   intro x hx
@@ -65,8 +51,6 @@ theorem boundary_subset_closure_core : N.boundary_sphere ⊆ closure N.core := b
     hf.continuousOn ((hf.contMDiffAt (hU.mem_nhds hxU)).mdifferentiableAt (by simp))
   intro hz
   exact hd (by rw [hz]; rfl)
-
-
 
 theorem closure_core_eq_closed_core : closure N.core = N.closed_core := by
   apply Subset.antisymm

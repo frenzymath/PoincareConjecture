@@ -1,20 +1,11 @@
 import Mathlib.Logic.Equiv.Set
 import Mathlib.Data.Set.Image
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
 
 noncomputable def joinSourceCopies {E Y : Type*} {A B : Set E}
     (hAB : Disjoint A B) (jA : A → Y) (jB : B → Y) : (A ∪ B : Set E) → Y := by
@@ -74,8 +65,6 @@ theorem joinSourceCopies_target {E Y X : Type*} {A B : Set E}
   · rw [joinSourceCopies_right hAB jA jB x hx]
     exact hB ⟨x, hx⟩
 
-
-
 theorem retained_double_relation_eq
     {E Y X : Type*} {K : Set E} {D N : Set Y} {f : E → X} {g : Y → X}
     (j : K → Y) (hj : Function.Injective j)
@@ -101,8 +90,6 @@ theorem retained_double_relation_eq
     · simpa only [hkeep] using heq
     · intro hxy
       exact hne (congrArg Subtype.val (hj hxy))
-
-
 
 theorem retained_double_locus_eq
     {E Y X : Type*} {K : Set E} {D N : Set Y} {f : E → X} {g : Y → X}

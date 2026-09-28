@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparisonCoordinates
 import PoincareConjecture.Proofs.M34.Mathlib.MatrixInverseSmoothOn
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderJetTranslation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capPersistence_modelGram_contDiff {m : ℕ∞ω} (u : ℝ)
     (q : UnitTwoSphere) (a b : Fin 3) :
@@ -42,8 +30,6 @@ theorem capPersistence_modelGram_contDiff {m : ℕ∞ω} (u : ℝ)
   · simp only [if_neg hab]
     exact contDiff_const
 
-
-
 theorem capPersistence_modelGram_det_ne_zero {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
     (roundCylinderGram u (chartAt E₂ q) p).det ≠ 0 := by
@@ -54,8 +40,6 @@ theorem capPersistence_modelGram_det_ne_zero {u : ℝ} (hu : u < 1)
   · exact hp
   · exact hp
   · norm_num
-
-
 
 theorem capPersistence_modelChristoffel_contDiff {m : ℕ∞ω} {u : ℝ}
     (hu : u < 1) (q : UnitTwoSphere) (a b d : Fin 3) :
@@ -76,15 +60,11 @@ theorem capPersistence_modelChristoffel_contDiff {m : ℕ∞ω} {u : ℝ}
   exact contDiff_const.mul (ContDiff.sum fun j _ =>
     (hinv a j).mul (((hd d j b).add (hd b j d)).sub (hd b d j)))
 
-
-
 theorem capPersistence_modelChristoffel_eq (u : ℝ) (q q' : UnitTwoSphere) :
     roundCylinderChristoffel u (chartAt E₂ q) =
       roundCylinderChristoffel u (chartAt E₂ q') := by
   funext p a b d
   simp only [roundCylinderChristoffel, roundCylinderGram_chosenChart]
-
-
 
 theorem capPersistence_exists_modelChristoffel_jet_bound {u : ℝ} (hu : u < 1)
     {K : Set RoundCylinderCoordinates} (hK : IsCompact K) (N : ℕ) :
@@ -110,8 +90,6 @@ theorem capPersistence_exists_modelChristoffel_jet_bound {u : ℝ} (hu : u < 1)
   exact (hC i x hx).trans ((le_max_left _ _).trans
     (Finset.single_le_sum (fun _ _ => le_max_right _ _) (Finset.mem_univ i)))
 
-
-
 theorem capPersistence_modelChristoffel_jet_add_axial (s u : ℝ)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (j : ℕ) (a b d : Fin 3) :
     iteratedFDeriv ℝ j (fun y => roundCylinderChristoffel u (chartAt E₂ q) y a b d)
@@ -121,8 +99,6 @@ theorem capPersistence_modelChristoffel_jet_add_axial (s u : ℝ)
   congr 1
   funext y
   exact roundCylinderChristoffel_add_axial s u _ y a b d
-
-
 
 theorem capPersistence_exists_modelChristoffel_center_jet_bound
     {u : ℝ} (hu : u < 1) (N : ℕ) :

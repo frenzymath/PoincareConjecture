@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSphereTopology
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -62,8 +54,6 @@ theorem finitePLBallPair_of_compact_regularClosed_spherical_frontier
     exact closure_mono hUP)
   rwa [← hEq] at hball
 
-
-
 theorem finitePLBallPair_of_compact_plDomain_spherical_frontier
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -75,8 +65,6 @@ theorem finitePLBallPair_of_compact_plDomain_spherical_frontier
     IsFinitePLBallPair P3 P (frontier P) :=
   finitePLBallPair_of_compact_regularClosed_spherical_frontier hdim hdimF
     hP ha.closure_interior e he hD hcv hne
-
-
 
 theorem finitePLBallPair_of_compact_plDomain_two_disk_frontier
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

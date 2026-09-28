@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.BallBoundaryChart
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 def unitBallMarkedCone (v : E3) (r : Real) : Set E3 :=
   {y | 0 < inner Real v y ∧
@@ -88,9 +79,6 @@ private theorem unitBall_graphImage_inter_cone {v : E3} (hv : ‖v‖ = 1)
     have hyU : y ∈ (unitBallBoundaryHalfSpace v : Set E3) := hy.1
     simp only [hyU, not_true_eq_false, and_false, false_or, hmem]
   · simp only [mem_inter_iff, mem_ofPred_eq, hy, and_false, false_and]
-
-
-
 
 theorem exists_flat_marked_unitBall {v : E3} (hv : ‖v‖ = 1)
     {r : Real} (hr : 0 < r) :

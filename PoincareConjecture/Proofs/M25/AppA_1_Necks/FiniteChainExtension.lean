@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.FiniteChainBarrier
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedFrontierNeighbor
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_finite_forward_extension :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

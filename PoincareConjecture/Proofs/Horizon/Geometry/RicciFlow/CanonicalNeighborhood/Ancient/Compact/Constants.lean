@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {t epsilon C C' : ℝ}
-
 
 def StrongCapCertificate.mono_constant
     (N : StrongCapCertificate K t epsilon C) (hC : C ≤ C') :
@@ -52,7 +43,6 @@ def StrongCapCertificate.mono_constant
       (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_right
         (inv_anti₀ N.constant_pos hC) (pow_nonneg hr.le 3))).trans hvolume⟩
 
-
 def M26StrongDoubleCappedTube.mono_constant
     (N : M26StrongDoubleCappedTube K t epsilon C) (hC : C ≤ C') :
     M26StrongDoubleCappedTube K t epsilon C' := {
@@ -61,7 +51,6 @@ def M26StrongDoubleCappedTube.mono_constant
   cap₁ := N.cap₁.mono_constant hC
   cap₂ := N.cap₂.mono_constant hC
 }
-
 
 theorem CompactSmallSliceCertificate.mono_constant
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -72,7 +61,6 @@ theorem CompactSmallSliceCertificate.mono_constant
   have hx : 0 < (K.flow.connection 0).scalarCurvature x := A.scale_eq ▸ A.scale_pos
   exact (N.diameter_bound x).trans_le
     (mul_le_mul_of_nonneg_right hC (Real.rpow_nonneg hx.le _))
-
 
 theorem RepairedCanonicalNeighborhoodCertificate.mono_constant
     (P : M26CanonicalNeighborhoodPredecessors.{u})

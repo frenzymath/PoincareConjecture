@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Comp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ProperDiskSelectedHole
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -247,7 +240,6 @@ theorem exists_sphere_family_cocore_innermost_disk_at_height
         · exact hji ▸ hj
         · exact ((hBO hx).1.2.2.2 (mem_iUnion.mpr ⟨⟨j,hji⟩,hj⟩)).elim
     exact hmem.trans (hBS x hx)
-
 
 theorem exists_sphere_family_cocore_innermost_disk
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

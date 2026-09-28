@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.AffineFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped NNReal ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem scalarFlow_eq_add_on (b : ℝ → ℝ) {K L : ℝ≥0}
     (hK : LipschitzWith K b) (hL : ∀ z, ‖b z‖ ≤ L)
@@ -46,15 +33,11 @@ variable (hb : ∀ z ∈ Ioo (m - d) (m + d), b z = 1)
 
 include hbK hbL hH hHb hS hd hb
 
-
-
 theorem regularFlow_height {x : E} (hx : x ∈ S) (hxm : H x = m)
     {t : ℝ} (ht : t ∈ Ioo (-d) d) :
     H (boundedFlow f hK hL x t) = m + t := by
   rw [boundedFlow_intertwines_on f hK hL b hbK hbL H hH hHb x (hS x hx), hxm]
   exact scalarFlow_eq_add_on b hbK hbL m hd hb ht
-
-
 
 theorem regularFlow_back_height {y : E} (hy : y ∈ S)
     (hyH : H y ∈ Ioo (m - d) (m + d)) :
@@ -71,8 +54,6 @@ theorem regularFlow_back_height {y : E} (hy : y ∈ S)
       rw [heq']
     _ = m := by
       rw [show m - H y = -(H y - m) by ring, boundedFlow_neg]
-
-
 
 noncomputable def regularLevelEquiv :
     ({x : E // x ∈ S ∧ H x = m} × Ioo (-d) d) ≃
@@ -102,19 +83,15 @@ noncomputable def regularLevelEquiv :
       (H y.1 - m) = y.1
     rw [← boundedFlow_add, show m - H y.1 + (H y.1 - m) = 0 by ring, boundedFlow_zero]
 
-
 @[simp] theorem regularLevelEquiv_apply
     (p : {x : E // x ∈ S ∧ H x = m} × Ioo (-d) d) :
     (regularLevelEquiv f hK hL b hbK hbL H hH hHb hS m hd hb p).1 =
       boundedFlow f hK hL p.1.1 p.2.1 := rfl
 
-
 @[simp] theorem regularLevelEquiv_symm_apply
     (y : {y : E // y ∈ S ∧ H y ∈ Ioo (m - d) (m + d)}) :
     ((regularLevelEquiv f hK hL b hbK hbL H hH hHb hS m hd hb).symm y).1.1 =
       boundedFlow f hK hL y.1 (m - H y.1) := rfl
-
-
 
 noncomputable def regularLevelHomeomorph [FiniteDimensional ℝ E]
     (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f) :
@@ -138,8 +115,6 @@ noncomputable def regularLevelHomeomorph [FiniteDimensional ℝ E]
     · exact (hheight.sub continuous_const).subtype_mk _
 
 omit hbK hbL hH hHb hS hd hb in
-
-
 
 theorem regularFlow_back_contDiffOn [FiniteDimensional ℝ E]
     (hf : ContDiff ℝ ∞ f) (hs : HasCompactSupport f)

@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.MarkedBall.Construction
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli.MarkedBall
-
-
 
 theorem exists_disk_with_prescribed_rim
     {E F X ι : Type*}

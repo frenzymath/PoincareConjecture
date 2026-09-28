@@ -1,7 +1,5 @@
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
 noncomputable section
 
 open MeasureTheory Filter
@@ -10,7 +8,6 @@ open scoped ENNReal
 namespace Poincare.Analysis.Sobolev
 
 variable {α : Type*} [MeasurableSpace α] {μ : Measure α} {f : α → ℝ}
-
 
 theorem norm_toLp_sq_eq_integral (hf : MemLp f 2 μ) :
     ‖hf.toLp f‖ ^ 2 = ∫ x, f x ^ 2 ∂μ := by
@@ -23,7 +20,6 @@ theorem eLpNorm_toReal_sq_eq_integral (hf : MemLp f 2 μ) :
     (eLpNorm f 2 μ).toReal ^ 2 = ∫ x, f x ^ 2 ∂μ := by
   rw [← Lp.norm_toLp f hf]
   exact norm_toLp_sq_eq_integral hf
-
 
 theorem eLpNorm_two_le_sqrt_of_integral_sq_le (hf : MemLp f 2 μ)
     {C : ℝ} (hC : ∫ x, f x ^ 2 ∂μ ≤ C) :

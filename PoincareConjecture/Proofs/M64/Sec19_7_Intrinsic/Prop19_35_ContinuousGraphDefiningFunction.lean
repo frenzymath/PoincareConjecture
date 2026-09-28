@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ContinuousGraphShear
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopRegionChart
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,10 +9,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_continuous_graph_defining_function
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ))

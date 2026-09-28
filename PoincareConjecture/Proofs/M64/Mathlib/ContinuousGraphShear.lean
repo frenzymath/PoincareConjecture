@@ -1,22 +1,11 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Algebra.Group.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 def m64ContinuousGraphShear
     {E F : Type*} [TopologicalSpace E] [TopologicalSpace F]

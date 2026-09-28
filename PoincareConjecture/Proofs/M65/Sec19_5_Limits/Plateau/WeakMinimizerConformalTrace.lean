@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalPullback
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -100,11 +90,6 @@ private theorem m65SmoothDisk_C1_trace (f : LoopPlane → ℝ) (hf : ContDiff �
     Lp.ext (hfb.coeFn_toLp.trans hb.symm)
   have h := m65DiskWeakTrace_of_C1 f hf hfa hfd hfb
   rwa [hu', hd', hb'] at h
-
-
-
-
-
 
 theorem m65WeakTrace_smooth_change (φ ψ : LoopPlane → LoopPlane)
     (hφ : ContDiff ℝ 1 φ) (hψ : ∀ z ∈ loopDiskSet, ContDiffAt ℝ 1 ψ z)

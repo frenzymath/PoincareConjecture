@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Filter
 open scoped Manifold Topology
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem mfderiv_eq_inverse_chart_comp_fderiv
     {E F G H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPrimalCutDisk
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalRimLiftCoverage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical

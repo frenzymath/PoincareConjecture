@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableI
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 import Mathlib.MeasureTheory.Integral.DivergenceTheorem
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,11 +14,6 @@ namespace PoincareConjecture
 open Proofs.M58
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem m64Annulus_integral_divergence_of_continuous
     {J0 J1 : LoopPlane → E}
@@ -102,10 +93,6 @@ theorem m64Annulus_integral_divergence_of_continuous
     intervalIntegral.integral_of_le zero_le_one,
     setIntegral_congr_set (Ioc_ae_eq_Icc (α := ℝ) (μ := volume))] at hdiv
   simpa only [D, hL, sub_eq_add_neg, add_assoc] using hdiv
-
-
-
-
 
 theorem m64Annulus_integral_divergence_of_continuous_periodic
     {J0 J1 : LoopPlane → E}

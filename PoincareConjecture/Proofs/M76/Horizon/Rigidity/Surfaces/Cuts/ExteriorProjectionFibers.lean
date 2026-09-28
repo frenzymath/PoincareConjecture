@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ComplementaryCutDisk
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical

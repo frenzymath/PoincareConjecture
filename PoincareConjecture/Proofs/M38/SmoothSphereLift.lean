@@ -6,19 +6,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +15,6 @@ namespace PoincareConjecture.M38
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem isImmersion_sphere_lift
     (q : UnitThreeSphere → M) (hq : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ q)
@@ -72,9 +57,6 @@ theorem isImmersion_sphere_lift
   rw [← heq hdv.2, hlift]
   apply h.writtenInCharts
   simpa using hv'.1
-
-
-
 
 theorem exists_smooth_sphere_lift
     (q : UnitThreeSphere → M) (hq : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ q)

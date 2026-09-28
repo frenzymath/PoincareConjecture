@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamPowerGrow
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakRepresentative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalRepresentative
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +14,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64SeamRepresentative_translation
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -56,9 +42,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem M64ObservedWeakAnnulus.seam_continuous_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

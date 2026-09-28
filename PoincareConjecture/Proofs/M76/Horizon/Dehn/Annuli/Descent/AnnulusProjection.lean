@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.ProtectedBoundary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.MarkedRims
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -37,8 +27,6 @@ theorem mem_sphere_iff_exists_endpoint (x : V1) :
       exact (congrFun hc i).trans hn
   · rintro ⟨b, rfl⟩
     exact endpoint_mem_sphere b
-
-
 
 theorem injOn_boundary_of_rims {X : Type*} (g : (V1 × V2) → X)
     (hinj : ∀ b : Bool, Function.Injective
@@ -71,9 +59,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {f : (V1 × V2) → M}
   {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_annulus_projection_neighborhood (step : Step s t)
     (hS : S.space = ProtectedAnnulus.source) (hSf : S.faces.Finite)

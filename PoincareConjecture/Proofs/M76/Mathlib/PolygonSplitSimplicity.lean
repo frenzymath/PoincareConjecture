@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitEdges
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonChordCompatibility
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} {m n : ℕ}
-
-
 
 theorem injective_split (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (hinj : Function.Injective (Fin.append u v)) :
@@ -32,8 +21,6 @@ theorem injective_split (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
   · apply Fin.snoc_injective_of_injective hv
     rintro ⟨i, hi⟩
     exact hdis 0 i hi.symm
-
-
 
 theorem edgeVertices_split_left_cases (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (i : Fin ((m + 1) + 1)) :
@@ -49,8 +36,6 @@ theorem edgeVertices_split_left_cases (u : Fin (m + 1) → E) (v : Fin (n + 1) �
     exact ⟨i.castAdd (n + 1), congrArg (fun s : Finset E => (s : Set E))
       (edgeVertices_split_left u v i)⟩
 
-
-
 theorem edgeVertices_split_right_cases (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (i : Fin ((n + 1) + 1)) :
     (∃ j, ((mk (Fin.snoc v (u 0))).edgeVertices i : Set E) =
@@ -64,9 +49,6 @@ theorem edgeVertices_split_right_cases (u : Fin (m + 1) → E) (v : Fin (n + 1) 
       (edgeVertices_split_right u v i)⟩
 
 variable [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem hasSimplicialEdges_split (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (hP : (mk (Fin.append u v)).HasSimplicialEdges)

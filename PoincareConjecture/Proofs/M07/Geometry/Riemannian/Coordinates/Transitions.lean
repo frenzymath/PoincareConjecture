@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem mfderiv_bijective_of_pullback_eq (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) {f : M → N} (x : M)
@@ -53,7 +43,6 @@ theorem mfderiv_bijective_of_pullback_eq (g : RiemannianMetric n M)
     rfl
   exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hfin).mp hi⟩
 
-
 theorem isOpenEmbedding_of_injective_pullback_eq (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) {f : M → N}
     (hf : ContMDiff (𝓡 n) (𝓡 n) ∞ f) (hinj : Function.Injective f)
@@ -68,8 +57,6 @@ theorem isOpenEmbedding_of_injective_pullback_eq (g : RiemannianMetric n M)
   rw [← Poincare.map_nhds_eq_of_contMDiffAt_mfderiv_bijective (hf x)
     (g.mfderiv_bijective_of_pullback_eq h x (hmetric x))]
   exact image_mem_map (hU.mem_nhds hx)
-
-
 
 theorem contMDiffOn_invFun_of_injective_pullback_eq [Nonempty M] (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) {f : M → N}

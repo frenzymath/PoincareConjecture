@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddlePortMatching
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -44,8 +35,6 @@ private theorem morse_radial_disc_isPreconnected (r : ℝ) (hr : 0 < r) :
       simpa only [he, e.apply_symm_apply] using hs
   rw [← hball]
   exact Metric.isPreconnected_ball.image e e.continuous.continuousOn
-
-
 
 theorem exists_saddle_exterior_upper_matching
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

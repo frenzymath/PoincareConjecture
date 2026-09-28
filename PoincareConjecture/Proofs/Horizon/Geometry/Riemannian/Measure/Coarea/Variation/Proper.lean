@@ -1,16 +1,11 @@
 import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
 open Set Topology
 
 namespace Poincare.Coarea
 
 variable {M : Type*} [TopologicalSpace M] {f : M → ℝ} {I : Set ℝ}
-
 
 theorem isCompact_slab_of_isProperMap
     (hf : IsProperMap (I.restrictPreimage f))

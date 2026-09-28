@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningFaceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

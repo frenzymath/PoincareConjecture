@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.LocalChart
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +42,6 @@ private theorem polarMap_eq_homothety
   change d.ambientChart.symm (asymptoticConeDilation hcomparison
     (Real.toNNReal (1 + (w.1 / c - 1))) _) = _
   rw [show 1 + (w.1 / c - 1) = w.1 / c by ring]
-
-
 
 theorem inner_polarMap_at
     (d : UnitSliceRadialChartData hcomparison n) (c r : ℝ≥0) (hc : 0 < c) (hr : 0 < r)
@@ -104,8 +96,6 @@ theorem inner_polarMap_at
   rw [← mul_assoc, hscale]
   rw [hcenter] at hreference
   exact hreference
-
-
 
 theorem exists_smooth_polar_coordinates
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c) (z : d.Level) :

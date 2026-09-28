@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem monotoneOn_weighted_scalar_on_Ioc
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -95,8 +84,6 @@ theorem monotoneOn_weighted_scalar_on_Ioc
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_finite_limit_scalar_bound
     (hC : RicciFlowCurvatureTheory.{u}) (hH : HarnackAncientTheory.{u})

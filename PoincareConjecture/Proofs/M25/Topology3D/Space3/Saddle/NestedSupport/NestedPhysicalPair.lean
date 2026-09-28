@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.RelativeExteriorArc
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 structure NestedRelativeArcPacket where
   kappa : OpenPartialHomeomorph E2 E2
@@ -95,7 +85,6 @@ private def nestedPacketDelta (p : NestedRelativeArcPacket) : Set E2 :=
 
 private def nestedPacketK (p : NestedRelativeArcPacket) : Set E2 :=
   p.kappa '' closedBall (0 : E2) 1
-
 
 theorem exists_saddle_nested_pair_of_relative_packets
     (hP : PlanarSchoenfliesService)
@@ -330,11 +319,6 @@ theorem exists_saddle_nested_pair_of_relative_packets
     exact ⟨hArc i t ht, hArcInv i t ht⟩
   · intro i
     exact hArcImage i
-
-
-
-
-
 
 theorem exists_saddle_nested_pair_raw_output
     (hP : PlanarSchoenfliesService)

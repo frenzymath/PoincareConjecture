@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.MetricConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.Distance
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   [∀ k, T3Space (M k)] [∀ k, PreconnectedSpace (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem exists_eventual_chart_ball_capture
     (G : RegularPointedMetricConvergence g p) :

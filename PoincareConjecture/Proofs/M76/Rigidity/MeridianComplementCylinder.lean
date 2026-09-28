@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ComplementaryCircleInterval
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBand
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +17,6 @@ local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
 theorem mem_image_hamiltonBoundaryCylinder (J : Set ℝ) (x : X) :
     x ∈ hamiltonMeridianCutAmbientMap '' (Q ×ˢ J) ↔
       x.1 ∈ Q ∧ hamiltonSolidTorusCircleEquiv x.2 ∈
@@ -38,8 +28,6 @@ theorem mem_image_hamiltonBoundaryCylinder (J : Set ℝ) (x : X) :
     refine ⟨(x.1, t), ⟨hx, ht⟩, Prod.ext rfl ?_⟩
     exact hamiltonSolidTorusCircleEquiv.injective htx
 
-
-
 theorem injOn_hamiltonComplementCylinder {a : ℝ} (ha : 0 < a) :
     InjOn hamiltonMeridianCutAmbientMap (Q ×ˢ Icc a (p - a)) := by
   intro z hz w hw heq
@@ -47,8 +35,6 @@ theorem injOn_hamiltonComplementCylinder {a : ℝ} (ha : 0 < a) :
   have hsnd := congrArg (fun x : X => hamiltonSolidTorusCircleEquiv x.2) heq
   change (z.2 : AddCircle p) = (w.2 : AddCircle p) at hsnd
   exact Prod.ext hfst (AddCircle.injOn_coe_complementaryInterval ha hz.2 hw.2 hsnd)
-
-
 
 theorem image_hamiltonComplementCylinder {a : ℝ}
     (ha : 0 < a) (hap : a < p / 2) :
@@ -65,8 +51,6 @@ theorem image_hamiltonComplementCylinder {a : ℝ}
   change (_ ∧ ¬ _) ↔ (_ ∧ ¬ (_ ∧ _))
   tauto
 
-
-
 theorem hamiltonComplementCylinder_upper (z : V2) (a : ℝ) :
     hamiltonMeridianCutAmbientMap (z, p - a) =
       hamiltonMeridianCutAmbientMap (z, -a) := by
@@ -76,8 +60,6 @@ theorem hamiltonComplementCylinder_upper (z : V2) (a : ℝ) :
     change ((p - a : ℝ) : AddCircle p) = ((-a : ℝ) : AddCircle p)
     exact AddCircle.coe_period_sub a
   exact congrArg (fun q : T => (z, q)) hq
-
-
 
 theorem exists_hamiltonComplementCylinder_homeomorph {a : ℝ}
     (ha : 0 < a) (hap : a < p / 2) :

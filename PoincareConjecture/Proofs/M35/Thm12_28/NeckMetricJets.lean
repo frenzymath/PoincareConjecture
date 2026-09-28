@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderFrechetJets
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvature
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLeviCivita
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RoundCylinderClose
-
-
 
 theorem euclidean_metric_error_component_abs_lt_shift
     {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
@@ -66,8 +55,6 @@ theorem euclidean_metric_error_component_abs_lt_shift
     hjet).trans htransport
   exact (congrArg abs heq).trans_lt (h.iterated_error_component_abs_lt he hlo hu q s hs hk hr i j a)
 
-
-
 theorem euclidean_metric_error_component_abs_lt
     {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (he : 0 < epsilon)
@@ -93,8 +80,6 @@ theorem euclidean_metric_error_component_abs_lt
 end PoincareConjecture.RoundCylinderClose
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem euclidean_realization_coefficient_germ {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (g : RiemannianMetric 3 StandardCapSpace)

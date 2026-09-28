@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
@@ -17,8 +8,6 @@ open Set Geometry Metric
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem mem_subcomplex_of_mem_intrinsicInterior_iff
     {K A : SimplicialComplex ℝ E} (hAK : A ≤ K)
@@ -32,11 +21,6 @@ theorem mem_subcomplex_of_mem_intrinsicInterior_iff
       (K.subset_of_mem_intrinsicInterior_face hs (hAK ht) hx hxt)
       (K.nonempty_of_mem_faces hs)
   · exact fun hsA => convexHull_subset_space hsA (intrinsicInterior_subset hx)
-
-
-
-
-
 
 theorem exists_protected_face_bigon_neighborhood
     {K A : SimplicialComplex ℝ E} (hK : K.faces.Finite) (hAK : A ≤ K)

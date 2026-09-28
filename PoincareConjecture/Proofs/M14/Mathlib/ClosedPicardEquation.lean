@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathPrimitive
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathSubstitution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   {a b : ℝ}
-
-
 
 theorem closedPath_picard_equation_of_ode (t₀ : Icc a b) (f : ℝ × E → E)
     (hf : ContinuousOn f (Icc a b ×ˢ univ)) (φ : C(Icc a b, E))
@@ -55,9 +44,6 @@ theorem closedPath_picard_equation_of_ode (t₀ : Icc a b) (f : ℝ × E → E)
   rw [closedPathPrimitive_apply]
   change φ r = φ t₀ + ∫ s in t₀.val..r.val, g s
   rw [hFTC, add_sub_cancel]
-
-
-
 
 theorem closedPath_ode_of_picard_equation (t₀ : Icc a b) (f : ℝ × E → E)
     (hf : ContinuousOn f (Icc a b ×ˢ univ)) (x₀ : E) (φ : C(Icc a b, E))

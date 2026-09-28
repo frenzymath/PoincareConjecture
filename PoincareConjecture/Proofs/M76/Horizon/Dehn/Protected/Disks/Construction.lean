@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Disks.RetainedSlabs
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.ChartProperDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,9 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_protected_disk_pair
     (L : Submodule ℤ V1) [DiscreteTopology L] {α : Type*}
@@ -69,8 +57,6 @@ theorem exists_protected_disk_pair
   intro b x hx
   rw [hmap b ⟨x, sphere_subset_closedBall hx⟩, hrim b ⟨x, hx⟩]
   exact chartSlab_inverse_formula L retained ⟨sphere_subset_closedBall hx, height_mem_transverse b⟩
-
-
 
 theorem nonempty_protected_disks
     (L : Submodule ℤ V1) [DiscreteTopology L] {α : Type*}

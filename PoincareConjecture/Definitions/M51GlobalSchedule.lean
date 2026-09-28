@@ -3,14 +3,6 @@ import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 import PoincareConjecture.Definitions.M50FinitePrefix
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,11 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 structure RepairedGlobalControlledPrefix
     {K : MetricSurgeryConstants} (schedule : GlobalSurgerySchedule K)
@@ -40,8 +27,6 @@ structure RepairedGlobalControlledPrefix
   canonical : SurgeryCanonicalAssumption flow
   noncollapsed : SurgeryNoncollapsed flow
   delta_eq : ∀ t, 0 ≤ t → flow.parameters.delta t = delta t
-
-
 
   schedule_agreement : ∀ j : ℕ, ∀ t ∈ surgeryEpochEntry j,
     0 ≤ t →
@@ -101,7 +86,6 @@ structure RepairedGlobalScheduleData
   canonical : SurgeryCanonicalAssumption flow
   noncollapsed : SurgeryNoncollapsed flow
   schedule_standard_initial : schedule.setup.standard_initial = flow.standard_initial
-
 
   volume_nonempty_pre_interval : RepairedNonemptyEventPreInterval flow
   volume_vanishing_pre_interval : RepairedVanishingEventPreInterval flow

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInverseChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

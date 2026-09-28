@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M51.EpochCoverage
 import PoincareConjecture.Proofs.M51.ZeroCapDiscard
 import PoincareConjecture.Statements.M50FinitePrefix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,14 +11,12 @@ universe u
 
 namespace PoincareConjecture.M51
 
-
 theorem globalVolumeControls (F : SurgeryFlowData.{u})
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (admissible : SurgeryFlowAdmissible F) (pinched : SurgeryFlowPinched F) :
     RepairedVolumeLossControls F :=
   ⟨admissible, pinched, F.nonemptyEventPreInterval,
     F.vanishingEventPreInterval, F.zeroCapDiscard H13⟩
-
 
 theorem selected_global_volume
     (S : RepairedControlledSchedulesData.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import PoincareConjecture.Definitions.Ch19.AnnulusComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
@@ -43,9 +34,6 @@ noncomputable def flowScalarCurvatureInfimum
     {t₀ t₁ : ℝ} (F : RicciFlow 3 M (Set.Icc t₀ t₁)) (t : ℝ) : ℝ :=
   sInf (Set.range (fun x : M => (F.connection t).scalarCurvature x))
 
-
-
-
 noncomputable def areaComparisonProfile
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -55,9 +43,6 @@ noncomputable def areaComparisonProfile
     (a - 2 * Real.pi * (∫ s in t₀..t,
       Real.exp (∫ v in t₀..s,
         sInf (Set.range (fun x : M => (F.connection v).scalarCurvature x)) / 2)))
-
-
-
 
 structure DeformationRampFamily {t₀ t₁ : ℝ}
     (A : RampAmbientData (n := 3) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -84,9 +69,6 @@ structure DeformationRampFamily {t₀ t₁ : ℝ}
     FreeTwoSphereHomotopic approximation (family lambda t)
   filling_data : ∀ lambda t, t ∈ Set.Icc t₀ t₁ → ∀ c,
     FillingAreaData (A.flow.metric t) ((family lambda t).family c)
-
-
-
 
 structure EssentialAnnulusCurve where
   curve : ℝ → AnnulusCoordinates

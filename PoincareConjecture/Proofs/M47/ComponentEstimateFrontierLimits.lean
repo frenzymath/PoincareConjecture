@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetric
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import PoincareConjecture.Statements.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +31,6 @@ private theorem exists_component_right_slab
   · simp only [zero_div, add_zero] at hb0
     linarith
   · simpa only [div_one, add_sub_cancel] using hfree
-
-
 
 theorem component_cylinder_scalar_le_at_left
     (P : M47Predecessors.{u})
@@ -78,8 +67,6 @@ theorem component_cylinder_scalar_le_at_left
     rw [cylinderScalar_of_mem e x s ⟨hs.1.le, hs.2.trans hr0.le⟩]
     exact hbound s ⟨hs.1, hs.2.trans hr0.le⟩)
   simpa only [cylinderScalar_of_mem e x a haI] using h
-
-
 
 theorem component_cylinder_quadratic_le_at_left
     (e : SurgeryFlowCylinder F C origin 1 (Icc a 0) U)

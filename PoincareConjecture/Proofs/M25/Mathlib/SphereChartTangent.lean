@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Stereographic.Transition
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open PoincareConjecture
 open scoped Manifold ContDiff
 
 namespace Poincare.Geometry.Riemannian.SpaceForm
-
-
 
 theorem sphere_chart_symm_mfderiv_zero {n : ℕ} (q : UnitSphere n) :
     mfderiv (𝓡 n) (𝓡 n) (chartAt (EuclideanSpace ℝ (Fin n)) q).symm 0 =
@@ -31,8 +20,6 @@ theorem sphere_chart_symm_mfderiv_zero {n : ℕ} (q : UnitSphere n) :
     (chartAt (EuclideanSpace ℝ (Fin n)) q q) =
       ContinuousLinearMap.id ℝ (EuclideanSpace ℝ (Fin n)) at h
   rwa [sphere_chart_center] at h
-
-
 
 theorem norm_mfderiv_sphere_inclusion {n : ℕ} (q : UnitSphere n)
     (v : TangentSpace (𝓡 n) q) :

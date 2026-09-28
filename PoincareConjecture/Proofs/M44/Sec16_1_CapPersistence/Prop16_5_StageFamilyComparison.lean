@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_StageComparison
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +24,6 @@ noncomputable local instance stageFamilyCoefficientSpace :
 variable {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}
   {start rNext A eta theta Rinner : ℝ} {cutoffs : ℕ → ℝ}
   {X : ∀ n, PreparedCapCounterexample.{u} setup start rNext A eta theta (cutoffs n) Rinner}
-
-
-
-
 
 theorem eventually_stage_metricJetError_le
     (P : M44CapPersistencePredecessors.{u})

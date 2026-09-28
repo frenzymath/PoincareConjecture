@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Positivity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle ENNReal
 universe u
@@ -67,8 +60,6 @@ theorem parabolicRescale_ball (s : ℝ) (x : M) (r : ℝ) :
 end PoincareConjecture.RicciFlow
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_parabolicRescaling
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

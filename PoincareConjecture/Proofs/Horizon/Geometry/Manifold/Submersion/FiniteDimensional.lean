@@ -4,15 +4,6 @@ import Mathlib.Analysis.Normed.Ring.Units
 import Mathlib.Geometry.Manifold.Submersion
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ open Set Filter Function
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Geometry.Manifold
-
-
 
 theorem mfderiv_pi_apply
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -84,8 +73,6 @@ private theorem exists_smooth_local_equiv
         simp [ContinuousLinearEquiv.ofUnit, IsUnit.unit_spec]
     exact (G.contDiffAt_symm hy hd' (hf.contDiffAt (hs.mem_nhds hyf))).contDiffWithinAt
 
-
-
 theorem exists_projection_chart_of_surjective_mfderiv
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -137,8 +124,6 @@ theorem exists_projection_chart_of_surjective_mfderiv
   have heq := congrArg (fun z => (e z).1) hyinv
   change f (d.symm y) = (e y).1
   simpa [d, H, fc, Function.comp_def] using heq
-
-
 
 theorem isSubmersionAt_of_surjective_mfderiv
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CornerBounds
 import Mathlib.Geometry.Euclidean.Angle.Oriented.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem mesh_edge_exists_other_parent_of_interior
     (M : TriangleMesh) (t : M.Triangle) {a b : M.Vertex}
@@ -64,8 +54,6 @@ theorem mesh_edge_exists_other_parent_of_interior
   have h := hint 2
   norm_num [← hc0, ← hc1, AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring,
     AffineBasis.coord_apply, Fin.ext_iff] at h
-
-
 
 theorem halfspace_restriction_edge_exists_other_parent
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ)
@@ -124,8 +112,6 @@ section OrientedAngles
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
   [Fact (Module.finrank ℝ V = 2)]
 
-
-
 theorem angle_coe_eq_sign_smul_oangle
     (o : Orientation ℝ V (Fin 2)) {x y : V} (hx : x ≠ 0) (hy : y ≠ 0)
     (hangle : InnerProductGeometry.angle x y ∈ Ioo 0 Real.pi) :
@@ -142,8 +128,6 @@ theorem angle_coe_eq_sign_smul_oangle
     · exact False.elim (hangle.2.ne h)
   · rw [hs, SignType.coe_one, one_zsmul, o.oangle_eq_angle_of_sign_eq_one hs]
 
-
-
 theorem affineTriangle_shared_edge_oangle_sign_neg
     (o : Orientation ℝ V (Fin 2)) (L : Plane →ₗ[ℝ] V)
     (b c : AffineBasis (Fin 3) ℝ Plane) (h0 : b 0 = c 0) (h1 : b 1 = c 1)
@@ -157,7 +141,6 @@ theorem affineTriangle_shared_edge_oangle_sign_neg
   simp [hneg]
 
 end OrientedAngles
-
 
 def meshEdgeBasis (M : TriangleMesh) (t : M.Triangle)
     (a b : M.Vertex) (ha : a ∈ t.1) (hb : b ∈ t.1) (hab : a ≠ b) :
@@ -281,15 +264,12 @@ theorem meshLinearCorner_pos (M : TriangleMesh) (L : Plane →ₗ[ℝ] V)
   rw [meshLinearCorner, dif_pos ha]
   exact (affineBasis_linear_angle_mem_Ioo L hL _).1
 
-
-
 def meshEdgeAngleSign (M : TriangleMesh) (o : Orientation ℝ V (Fin 2))
     (L : Plane →ₗ[ℝ] V) (a b : M.Vertex) (t : M.Triangle) : ℤ :=
   if h : a ∈ t.1 ∧ b ∈ t.1 ∧ a ≠ b then
     ((o.oangle (L (M.position b - M.position a))
       (L (meshEdgeBasis M t a b h.1 h.2.1 h.2.2 2 - M.position a))).sign : ℤ)
   else 0
-
 
 theorem meshEdgeAngleSign_neg_of_distinct_parents
     (M : TriangleMesh) (o : Orientation ℝ V (Fin 2)) (L : Plane →ₗ[ℝ] V)
@@ -318,8 +298,6 @@ theorem meshEdgeAngleSign_eq_basis
   unfold meshEdgeAngleSign
   rw [dif_pos (show a ∈ t.1 ∧ b ∈ t.1 ∧ a ≠ b from ⟨hat, hbt, hab⟩),
     meshEdgeBasis_two_eq_of_range_eq M t a b hat hbt hab c hc0 hc1 hr, hc0, hc1]
-
-
 
 theorem sum_meshEdgeAngleSign_smul_eq_corner_difference
     {A : Type*} [AddCommGroup A]
@@ -418,7 +396,6 @@ theorem meshLinearCorner_coe_eq_neg_sum_edge_potential
   · rw [meshLinearCorner, dif_neg hat]
     simp [meshEdgeAngleSign, hat]
 
-
 theorem sum_meshEdgeAngleSign_eq_zero_of_two_parents
     (M : TriangleMesh) (o : Orientation ℝ V (Fin 2)) (L : Plane →ₗ[ℝ] V)
     {a b : M.Vertex} (hab : a ≠ b)
@@ -447,9 +424,6 @@ theorem sum_meshEdgeAngleSign_eq_zero_of_two_parents
   rw [heq, Finset.sum_pair htu,
     meshEdgeAngleSign_neg_of_distinct_parents M o L t u htu hab hat hbt hau hbu,
     add_neg_cancel]
-
-
-
 
 theorem sum_halfspace_meshEdgeAngleSign_smul_eq_zero
     {A : Type*} [AddCommGroup A]
@@ -485,8 +459,6 @@ theorem sum_halfspace_meshEdgeAngleSign_smul_eq_zero
       rw [meshEdgeAngleSign, dif_neg (fun h => hparents ⟨t, h⟩), zero_smul]
 
 end EdgeSigns
-
-
 
 theorem exists_affineLine_direction (l : Plane →ᵃ[ℝ] ℝ)
     (hl : Function.Surjective l) :
@@ -625,8 +597,6 @@ theorem meshVertexAngleContribution_eq_sum_linearCorner
     change M.position (M.orderedVertex t i) = M.position a at hpos
     exact hat (M.position_injective hpos ▸ M.orderedVertex_mem t i)
 
-
-
 theorem halfspace_meshVertexAngleContribution_mem_pi_multiples
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ)
@@ -749,9 +719,6 @@ private theorem halfspace_contributions_add_opposite
     (fun s => ¬M.triangleCarrier s ⊆ {z | 0 ≤ l z})] at h
   exact h
 
-
-
-
 theorem single_refineByLines_halfspace_vertex_fan_of_monochromatic
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -814,8 +781,6 @@ theorem single_refineByLines_halfspace_vertex_fan_of_monochromatic
     omega
   simpa only [hn1, Int.cast_one, one_mul] using hnp
 
-
-
 theorem single_refineByLines_halfspace_vertex_fan_of_mem
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -837,9 +802,6 @@ theorem single_refineByLines_halfspace_vertex_fan_of_mem
   single_refineByLines_halfspace_vertex_fan_of_monochromatic g F b lines l hl
     ((TriangleMesh.single b b.ind).refineByLines_isMonochromatic_of_mem lines hmem)
     hF hFi hb u a hau haint hal
-
-
-
 
 theorem single_refineByLines_restrict_straight_boundary_fan_of_mem_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

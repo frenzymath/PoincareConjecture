@@ -6,16 +6,6 @@ import Mathlib.Geometry.Manifold.VectorBundle.Tangent
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.IntegralCurve.Transform
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -33,10 +23,6 @@ variable {n : ℕ} {M : Type u}
 
 local notation "I" => 𝓡 n
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem contMDiffWithinAt_neg_tangentBundleSection
     {X : ℝ → ∀ x : M, TangentSpace I x}
@@ -185,10 +171,6 @@ end TimeDependentFlowNative
 namespace TimeDependentFlowNative
 
 variable [T2Space M]
-
-
-
-
 
 structure GlobalTimeDependentFlow
     (V : SmoothTimeDependentVectorField (n := n) (M := M)) where
@@ -424,8 +406,6 @@ end TimeDependentFlowNative
 
 variable {Φ Ψ : ℝ → M → M}
 
-
-
 noncomputable def family
     (hΦ : ContMDiff (𝓘(ℝ, ℝ).prod I) I ∞
       (fun p : ℝ × M => Φ p.1 p.2))
@@ -467,8 +447,6 @@ theorem family_zero
     family hΦ hΨ hΨΦ hΦΨ 0 = Diffeomorph.refl I M ∞ := by
   exact PoincareConjecture.ConjugatingFlowNative.diffeomorphFamily_zero
     hΦ hΨ hΨΦ hΦΨ h0
-
-
 
 theorem family_hasMFDerivAt_negW
     (W : (t : ℝ) → (x : M) → TangentSpace I x)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PointedCapArcReplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,12 +8,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_level_arc
     {B T d b : Set E} {upper g r : E → ℝ}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,7 +12,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 800000 in
-
 
 theorem abs_curvatureTensor_basis_le (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (q : M)
@@ -48,7 +39,6 @@ theorem abs_curvatureTensor_basis_le (g : RiemannianMetric n M)
         Finset.sum_nonneg (fun _ _ ↦ Finset.sum_nonneg (fun _ _ ↦ sq_nonneg _))))
         (Finset.mem_univ i)
 
-
 theorem abs_scalarCurvature_le (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (q : M) :
     |D.scalarCurvature q| ≤ (n : ℝ) ^ 2 * D.curvatureTensorNorm q := by
@@ -69,7 +59,6 @@ theorem abs_scalarCurvature_le (g : RiemannianMetric n M)
     _ = (n : ℝ) ^ 2 * D.curvatureTensorNorm q := by
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
       ring
-
 
 theorem exists_uniform_scalarCurvature_bound {J I : Set ℝ} (F : RicciFlow n M J)
     [T3Space M] (hcurvature : CompleteBoundedCurvatureOn F I) :

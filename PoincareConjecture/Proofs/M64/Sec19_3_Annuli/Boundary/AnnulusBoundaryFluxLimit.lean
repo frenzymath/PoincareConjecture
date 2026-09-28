@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusBoundaryCollar
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FiniteScaledCollar
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,10 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
 
 set_option maxHeartbeats 1400000 in
-
-
-
-
 
 theorem annulus_boundary_flux_limits (D : LeviCivitaData g) (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (hminimum : A.area = m64LeastAnnulusArea g c0 c1)

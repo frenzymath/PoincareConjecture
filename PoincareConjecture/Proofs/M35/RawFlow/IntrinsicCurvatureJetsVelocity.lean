@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTip
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -29,8 +19,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
   {T : ℝ} (hT : 0 ≤ T) (hTlt : T < G.lifetime)
 
 include hT hTlt
-
-
 
 theorem raw_intrinsic_acceleration_jet_continuous_subtype (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ => iteratedDeriv j
@@ -65,8 +53,6 @@ theorem raw_intrinsic_acceleration_jet_continuous_subtype (j : ℕ) :
   simpa only [Function.comp_def, Pi.inv_apply, div_eq_mul_inv, mul_assoc,
     iteratedDeriv_const_mul_field, q, v, f] using hmul
 
-
-
 theorem raw_intrinsic_velocity_jet_continuous_subtype (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ =>
       iteratedDeriv j (rawRadialVelocity P G hrotation p.1.1) p.2) := by
@@ -96,8 +82,6 @@ theorem raw_intrinsic_velocity_jet_continuous_subtype (j : ℕ) :
       simp only [iteratedDeriv_zero, rawRadialVelocity_eq P G hrotation
         ⟨p.1.2.1, p.1.2.2.trans_lt hTlt⟩, intrinsicRadialVelocity, hae]
   | succ n => simpa only [iteratedDeriv_succ', hd] using hac n
-
-
 
 theorem raw_intrinsic_xi_jet_continuous_subtype (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ =>

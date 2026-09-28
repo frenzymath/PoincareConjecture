@@ -3,14 +3,6 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
 set_option backward.isDefEq.respectTransparency false
 
 namespace PoincareConjecture.RiemannianMetric.Induced
@@ -61,8 +53,6 @@ variable
   {H' : Type*} [TopologicalSpace H'] {I' : ModelWithCorners ℝ E' H'}
   {M' : Type*} [TopologicalSpace M'] [ChartedSpace H' M'] [IsManifold I' ∞ M']
 
-
-
 noncomputable def pullbackFormOf
     (b : ∀ y : M', TangentSpace I' y →L[ℝ] TangentSpace I' y →L[ℝ] ℝ) (F : M → M') (p : M) :
     TangentSpace I p →L[ℝ] TangentSpace I p →L[ℝ] ℝ :=
@@ -76,9 +66,6 @@ omit [IsManifold I ∞ M] [IsManifold I' ∞ M'] in
     (v w : TangentSpace I p) :
     pullbackFormOf b F p v w = b (F p) (mfderiv I I' F p v) (mfderiv I I' F p w) :=
   rfl
-
-
-
 
 noncomputable def pullbackForm (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' (TangentSpace I' : M' → Type _)) (F : M → M') (p : M) :
     TangentSpace I p →L[ℝ] TangentSpace I p →L[ℝ] ℝ :=
@@ -100,11 +87,6 @@ theorem pullbackForm_symm (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' (Tang
 
 omit [IsManifold I ∞ M] in
 
-
-
-
-
-
 theorem pullbackForm_posDef_iff_immersion (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' (TangentSpace I' : M' → Type _)) (F : M → M') :
     (∀ (p : M) (v : TangentSpace I p), v ≠ 0 → 0 < pullbackForm g' F p v v) ↔
       ∀ p : M, Function.Injective (mfderiv I I' F p) := by
@@ -121,8 +103,6 @@ theorem pullbackForm_posDef_iff_immersion (g' : Bundle.ContMDiffRiemannianMetric
     intro himm p v hv
     rw [pullbackForm_apply]
     exact g'.pos _ _ fun h => hv (himm p (by rw [h, map_zero]))
-
-
 
 noncomputable def bilinearCompOf
     (b : ∀ y : M', TangentSpace I' y →L[ℝ] TangentSpace I' y →L[ℝ] ℝ) {F : M → M'}
@@ -146,8 +126,6 @@ theorem pullbackFormOf_eq_bilinearCompOf
     (b : ∀ y : M', TangentSpace I' y →L[ℝ] TangentSpace I' y →L[ℝ] ℝ) (F : M → M') (p : M) :
     pullbackFormOf b F p = bilinearCompOf b (fun x => mfderiv I I' F x) p :=
   rfl
-
-
 
 theorem contMDiffAt_bilinearCompOf
     (b : ∀ y : M', TangentSpace I' y →L[ℝ] TangentSpace I' y →L[ℝ] ℝ)
@@ -213,8 +191,6 @@ theorem contMDiffAt_bilinearCompOf
   simp only [htrivM', htrivM, Bundle.Trivial.linearMapAt_trivialization, LinearMap.id_coe, id_eq,
     bilinearCompOf_apply, ← htT, ← hsT, hkey]
 
-
-
 theorem contMDiff_pullbackFormOf
     (b : ∀ y : M', TangentSpace I' y →L[ℝ] TangentSpace I' y →L[ℝ] ℝ)
     (hb : ContMDiff I' (I'.prod 𝓘(ℝ, E' →L[ℝ] E' →L[ℝ] ℝ)) ∞
@@ -229,8 +205,6 @@ theorem contMDiff_pullbackFormOf
   contMDiffAt_bilinearCompOf b hb hF.contMDiffAt (fun x => mfderiv I I' F x)
     (hF.contMDiffAt.mfderiv_const (by simp))
 
-
-
 theorem pullbackForm_contMDiff (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' (TangentSpace I' : M' → Type _)) {F : M → M'}
     (hF : ContMDiff I I' ∞ F) :
     ContMDiff I (I.prod 𝓘(ℝ, E →L[ℝ] E →L[ℝ] ℝ)) ∞
@@ -240,13 +214,6 @@ theorem pullbackForm_contMDiff (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' 
   contMDiff_pullbackFormOf (fun y => g'.inner y) g'.contMDiff hF
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 noncomputable def pullbackMetric (g' : Bundle.ContMDiffRiemannianMetric I' ∞ E' (TangentSpace I' : M' → Type _)) (F : M → M')
     (hF : ContMDiff I I' ∞ F) (himm : ∀ p : M, Function.Injective (mfderiv I I' F p)) :

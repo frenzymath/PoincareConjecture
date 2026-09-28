@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import PoincareConjecture.Proofs.M62.Lemma19_9_Length
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem hasDerivAt_regularizedTotal
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -44,8 +33,6 @@ theorem hasDerivAt_regularizedTotal
   exact (M08.hasDerivAt_variationParameter isOpen_Ioo V hV hx' ht).deriv.symm
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem regularized_total_deriv_le [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)

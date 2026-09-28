@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualFaceGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
@@ -19,7 +10,6 @@ variable {V : Type*} [Fintype V] (A : PreAbstractSimplicialComplex V)
   (P : SimpleGraph V)
   (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)
 
-
 noncomputable def dualWalkCochain {u v : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u v) : Edge A → ZMod 2 :=
   match w with
@@ -27,7 +17,6 @@ noncomputable def dualWalkCochain {u v : Triangle A}
   | .cons h p =>
     Pi.single (complementaryTriangleEdgeEquiv A P hcofaces ⟨s(_, _), h⟩).val 1 +
       dualWalkCochain p
-
 
 theorem edgeCoboundary_complementary_single {u v : Triangle A}
     (h : (complementaryTriangleGraph A P).Adj u v) :
@@ -51,7 +40,6 @@ theorem edgeCoboundary_complementary_single {u v : Triangle A}
   · simp [hv, h.ne.symm]
   · simp [hu, hv]
 
-
 theorem edgeCoboundary_dualWalkCochain {u v : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u v) :
     edgeCoboundary A (dualWalkCochain A P hcofaces w) =
@@ -67,14 +55,12 @@ theorem edgeCoboundary_dualWalkCochain {u v : Triangle A}
           ((Pi.single v 1 t + Pi.single v 1 t) + Pi.single w 1 t) := by abel_nf
       _ = _ := by rw [CharTwo.add_self_eq_zero, zero_add]
 
-
 theorem dualWalkCochain_closed {u : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u u) :
     edgeCoboundary A (dualWalkCochain A P hcofaces w) = 0 := by
   rw [edgeCoboundary_dualWalkCochain]
   ext t
   exact CharTwo.add_self_eq_zero _
-
 
 theorem dualWalkCochain_eq_zero_on_primal {u v : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u v) (e : Edge A)
@@ -88,7 +74,6 @@ theorem dualWalkCochain_eq_zero_on_primal {u v : Triangle A}
       exact (complementaryTriangleEdgeEquiv A P hcofaces ⟨s(u, v), h⟩).property
         (hEq.symm ▸ he)
     simp [dualWalkCochain, Ne.symm hne, ih]
-
 
 theorem dualWalkCochain_eq_count {u v : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u v)
@@ -115,7 +100,6 @@ theorem dualWalkCochain_eq_count {u v : Triangle A}
       simp [dualWalkCochain, ih, SimpleGraph.Walk.edges_cons, hs, add_comm]
     · have hl := mt heq.mp hs
       simp [dualWalkCochain, Ne.symm hl, ih, SimpleGraph.Walk.edges_cons, hs]
-
 
 theorem dualWalkCochain_eq_one_of_isTrail {u v : Triangle A}
     (w : (complementaryTriangleGraph A P).Walk u v) (hw : w.IsTrail)

@@ -12,8 +12,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
 
-
-
 theorem exists_reference_lower_source_circles
     (ws wm d a : ℝ)
     (hwslo : (1 : ℝ) / 2 < ws) (hwshi : ws < 3 / 4)

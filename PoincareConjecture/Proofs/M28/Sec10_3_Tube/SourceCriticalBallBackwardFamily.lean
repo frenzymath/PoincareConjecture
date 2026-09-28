@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardData
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,35 +22,24 @@ variable {epsilon C A : ℝ}
   {q : G.limitCarrier.carrier} {a : ℝ}
   (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 
-
-
 def sourceIndex (k : ℕ) : ℕ := phi (G.subsequence (k + D.offset))
-
-
 
 def domain : Set (EuclideanSpace ℝ (Fin 3)) := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact ball (extChartAt (𝓡 3) q q) (2 * D.radius)
 
-
 theorem domain_open : IsOpen D.domain := isOpen_ball
-
-
 
 instance domain_nonempty : Nonempty D.domain := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact ⟨⟨extChartAt (𝓡 3) q q, mem_ball_self (by linarith [D.radius_pos])⟩⟩
 
-
-
 def sourceMap (k : ℕ) : D.domain → H.tubeCriticalRegion T A1 (D.sourceIndex k) := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact fun x => G.embedding (k + D.offset) ((extChartAt (𝓡 3) q).symm x.val)
-
-
 
 theorem sourceMap_localDiffeomorph (k : ℕ) :
     letI := D.domain_open.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -71,8 +51,6 @@ theorem sourceMap_localDiffeomorph (k : ℕ) :
   · exact ball_subset_closedBall.trans D.target
   · exact (image_mono ball_subset_closedBall).trans (D.exhaustion k)
 
-
-
 theorem sourceMap_mem_ball (k : ℕ) (x : D.domain) :
     (D.sourceMap k x).val.val ∈
       ((E (D.sourceIndex k + H.shift)).flow.metric
@@ -81,8 +59,6 @@ theorem sourceMap_mem_ball (k : ℕ) (x : D.domain) :
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact D.capture k x.val (ball_subset_closedBall x.property)
-
-
 
 theorem sourceMap_mem_neck (k : ℕ) (x : D.domain) :
     (D.sourceMap k x).val.val ∈ (D.neck k).carrier := by
@@ -95,13 +71,9 @@ theorem sourceMap_mem_neck (k : ℕ) (x : D.domain) :
   exact (N.small_ball_subset_middle N.center_on_central_sphere
     (hball.trans_le (ENNReal.ofReal_le_ofReal hradius))).1
 
-
-
 def neckMap (k : ℕ) : D.domain → strongNeckOpen (D.neck k) :=
   GeneralizedStrongNeck.captured_chart_map (D.neck k) D.domain
     (fun x => (D.sourceMap k x).val.val) (D.sourceMap_mem_neck k)
-
-
 
 theorem neckMap_localDiffeomorph (k : ℕ) :
     letI := D.domain_open.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -112,19 +84,13 @@ theorem neckMap_localDiffeomorph (k : ℕ) :
       D.domain D.domain_open (D.sourceMap k) (D.sourceMap_localDiffeomorph k))
     (D.sourceMap_mem_neck k)
 
-
-
 def parametrization (k : ℕ) : EuclideanSpace ℝ (Fin 3) → strongNeckOpen (D.neck k) :=
   chartParametrization (fun _ : Unit => D.domain) (fun _ => D.domain_open)
     (i := ()) (D.neckMap k)
 
-
-
 @[simp] theorem parametrization_apply (k : ℕ) (x : D.domain) :
     D.parametrization k x = D.neckMap k x :=
   chartParametrization_apply (fun _ : Unit => D.domain) (fun _ => D.domain_open) _ x
-
-
 
 theorem parametrization_smooth (k : ℕ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (D.parametrization k) D.domain := by
@@ -133,8 +99,6 @@ theorem parametrization_smooth (k : ℕ) :
     (D.neckMap_localDiffeomorph k).contMDiff
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem parametrization_invertible (k : ℕ) {x : EuclideanSpace ℝ (Fin 3)}
     (hx : x ∈ D.domain) : (mfderiv (𝓡 3) (𝓡 3) (D.parametrization k) x).IsInvertible := by
@@ -147,8 +111,6 @@ theorem parametrization_invertible (k : ℕ) {x : EuclideanSpace ℝ (Fin 3)}
   exact ⟨(D.neckMap_localDiffeomorph k ⟨x, hx⟩).mfderivToContinuousLinearEquiv
     (by simp), rfl⟩
 
-
-
 theorem common_window (k : ℕ) :
     a / 8 ≤ (E (D.sourceIndex k + H.shift)).flow.scalar
       ⟨(E (D.sourceIndex k + H.shift)).time,
@@ -159,8 +121,6 @@ theorem common_window (k : ℕ) :
       (E (D.sourceIndex k + H.shift)).basepoint⟩ * (D.neck k).scale ^ 2 at h
   linarith
 
-
-
 def sourceFlow (k : ℕ) : RicciFlow 3 (strongNeckOpen (D.neck k)) (Icc (-(a / 8)) 0) :=
   GeneralizedStrongNeck.global_flow (D.neck k) (D.raw k)
     ((E (D.sourceIndex k + H.shift)).flow.scalar
@@ -169,9 +129,6 @@ def sourceFlow (k : ℕ) : RicciFlow 3 (strongNeckOpen (D.neck k)) (Icc (-(a / 8
     (D.common_window k)
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 theorem terminal_coefficients :
     letI := G.limitCarrier.topologicalSpace

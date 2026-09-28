@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem exists_positive_face_of_mem_height_closure
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ)
@@ -41,8 +29,6 @@ theorem exists_positive_face_of_mem_height_closure
     exact mem_iUnion₂.mpr ⟨s, ⟨hs, hpos⟩, hxs⟩
   obtain ⟨s, hsT, hps⟩ := mem_iUnion₂.mp (closure_minimal hsub hclosed hp)
   exact ⟨s, hsT.1, hps, hsT.2⟩
-
-
 
 theorem AffineOnFaces.mem_positive_height_closure_image
     {K : SimplicialComplex ℝ E} {f : E → F} (hf : K.AffineOnFaces f)
@@ -67,8 +53,6 @@ theorem AffineOnFaces.mem_positive_height_closure_image
   exact ⟨(image_mono (K.convexHull_subset_space hs)) ((hf.image_convexHull hs).symm.subset hy),
     hyB⟩
 
-
-
 theorem AffineOnFaces.mem_negative_height_closure_image
     {K : SimplicialComplex ℝ E} {f : E → F} (hf : K.AffineOnFaces f)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) (B : F →ᵃ[ℝ] ℝ)
@@ -81,9 +65,6 @@ theorem AffineOnFaces.mem_negative_height_closure_image
       (by simpa only [AffineMap.coe_neg, Pi.neg_apply, neg_pos] using hneg)
       (by simpa only [AffineMap.coe_neg, Pi.neg_apply, neg_pos] using hp)
       (by simpa only [AffineMap.coe_neg, Pi.neg_apply, neg_eq_zero] using hzero)
-
-
-
 
 theorem AffineOnFaces.mem_both_height_closures_image
     {K : SimplicialComplex ℝ E} {f : E → F} (hf : K.AffineOnFaces f)

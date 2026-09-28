@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleNormalCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

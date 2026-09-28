@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.RadialHessian
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.CoordinateExponential.Alexandrov
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem radial_christoffel_identities
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
@@ -72,8 +63,6 @@ theorem radial_christoffel_identities
     simp only [christoffelBilinear_apply] at hs
     rw [h2, hs, hsymm.self_of_nhds x (coordinateChristoffel B x x w)] at hm
     linarith
-
-
 
 theorem radial_quadratic_refinement
     (B : E →L[ℝ] E →L[ℝ] ℝ) (G : E →L[ℝ] E) {x : E} {k : ℝ}

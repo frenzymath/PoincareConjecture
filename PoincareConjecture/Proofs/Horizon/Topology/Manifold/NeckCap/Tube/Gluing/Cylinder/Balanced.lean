@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Finite.Certificate
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.BiInfinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace

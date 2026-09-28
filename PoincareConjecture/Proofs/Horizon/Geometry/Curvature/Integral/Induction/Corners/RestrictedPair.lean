@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.RestrictedGradient
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Bundle InnerProductSpace
 universe u
 
 namespace Poincare.CurvatureIntegral
-
 
 theorem norm_starProjection_add_sq_le_of_opposite
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -47,8 +37,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance restrictedPair_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem tangentNorm_gradient_add_openRegularFiberMetric_sq_le
     {f : M → Fin k → ℝ}
@@ -87,8 +75,6 @@ theorem tangentNorm_gradient_add_openRegularFiberMetric_sq_le
       g.gradient (fun y => f y i) (openFiberIncl f U c x))))ᗮ
     (g.gradient φ (openFiberIncl f U c x)) (g.gradient ψ (openFiberIncl f U c x))
     hφunit hψunit hpair
-
-
 
 theorem strainer_openFiber_gradient_pair_bounds
     {m k : ℕ} {M : Type u} [TopologicalSpace M]

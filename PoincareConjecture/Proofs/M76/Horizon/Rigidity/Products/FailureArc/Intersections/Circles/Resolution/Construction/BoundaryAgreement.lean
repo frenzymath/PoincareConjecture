@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Reduction.LocalCharts
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

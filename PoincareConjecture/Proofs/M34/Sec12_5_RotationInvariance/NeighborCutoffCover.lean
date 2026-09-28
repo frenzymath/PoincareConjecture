@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.TranslatedEnergyCutoffs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 theorem translatedEnergyCutoff_neighbor_plateau (e : StandardCylindricalEnd g)
     {j : ℕ} (hj : 0 < j) {x : StandardCapSpace}
@@ -42,8 +30,6 @@ theorem translatedEnergyCutoff_neighbor_plateau (e : StandardCylindricalEnd g)
       simp only [Nat.cast_add, Nat.cast_one]
       constructor <;> linarith [hx.2]
 
-
-
 theorem translatedEnergyCutoff_neighbor_squares (e : StandardCylindricalEnd g)
     {j : ℕ} (hj : 0 < j) {x : StandardCapSpace}
     (hx : endExhaustion e x - (j : ℝ) ∈ Icc (41 / 10 : ℝ) (59 / 10)) :
@@ -59,8 +45,6 @@ theorem translatedEnergyCutoff_neighbor_squares (e : StandardCylindricalEnd g)
   · rw [h]
     nlinarith [sq_nonneg (translatedEnergyCutoff e (j - 1) x),
       sq_nonneg (translatedEnergyCutoff e j x)]
-
-
 
 theorem energyCutoffs_initial_plateau (e : StandardCylindricalEnd g) {x : StandardCapSpace}
     (hx : endExhaustion e x ≤ 6) :
@@ -78,8 +62,6 @@ theorem energyCutoffs_initial_plateau (e : StandardCylindricalEnd g) {x : Standa
       apply translatedEnergyCutoff_eq_one e 1
       norm_num only [Nat.cast_one]
       constructor <;> linarith
-
-
 
 theorem energyCutoffs_initial_squares (e : StandardCylindricalEnd g) {x : StandardCapSpace}
     (hx : endExhaustion e x ≤ 6) :

@@ -1,20 +1,9 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
 namespace Poincare
 
 open Set
-
-
 
 theorem abs_log_sub_le_of_abs_deriv_le_mul
     {f f' : ℝ → ℝ} {s : Set ℝ} {C x y : ℝ}
@@ -33,8 +22,6 @@ theorem abs_log_sub_le_of_abs_deriv_le_mul
     exact (div_le_iff₀ (hpos t ht)).2 (hbound t ht)
   simpa only [Real.norm_eq_abs] using
     hs.norm_image_sub_le_of_norm_hasDerivWithin_le hlog hquot hx hy
-
-
 
 theorem exp_bounds_of_abs_deriv_le_mul
     {f f' : ℝ → ℝ} {s : Set ℝ} {C x y : ℝ}

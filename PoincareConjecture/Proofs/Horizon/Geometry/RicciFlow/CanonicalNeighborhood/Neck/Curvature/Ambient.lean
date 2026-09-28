@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 def centeredEuclideanParametrization (N : EpsilonNeck g) (q : UnitTwoSphere)
     (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) : M :=
@@ -83,8 +72,6 @@ theorem normalizedEuclideanCoefficients_eq_pullback (N : EpsilonNeck g)
   rw [N.centeredEuclideanParametrization_mfderiv q s hx,
     N.centeredEuclideanParametrization_mfderiv q s hx]
   rfl
-
-
 
 theorem normalized_realization_curvature
     (N : EpsilonNeck g) (D' : LeviCivitaData g) (q : UnitTwoSphere) {s : ℝ}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.BackwardInterval
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardNonflatness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 noncomputable def ancientKappaIdentificationOfNoncollapsed
     (hC : RicciFlowCurvatureTheory.{u})

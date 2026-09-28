@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => m64AnnulusDomain
 
-
-
 structure M64PeriodicDegreeOneLift where
   map : ℝ → ℝ
   monotone : Monotone map
@@ -37,9 +22,6 @@ structure M64PeriodicDegreeOneLift where
   lipschitz_nonnegative : 0 ≤ lipschitz_constant
   lipschitz_on : ∀ x y : ℝ,
     |map x - map y| ≤ lipschitz_constant * |x - y|
-
-
-
 
 def m64FreeClassicalWeightedGramEnergyRange
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Set ℝ :=
@@ -50,9 +32,6 @@ def m64FreeClassicalWeightedGramEnergyRange
           (r * m60AreaGram g A.map p 0 0 +
             r⁻¹ * m60AreaGram g A.map p 1 1) / 2) S volume ∧
           x = m64ClassicalWeightedGramEnergy g A r}
-
-
-
 
 def M64FreeConformalModulusApproximation
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Prop :=
@@ -65,18 +44,11 @@ def M64FreeConformalModulusApproximation
               r⁻¹ * m60AreaGram g A'.map p 1 1) / 2) S volume ∧
             m64ClassicalWeightedGramEnergy g A' r ≤ A.area + ε
 
-
-
-
-
 def M64FreeBoundaryAreaTransport
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Prop :=
   ∀ (sigma0 sigma1 : M64PeriodicDegreeOneLift)
     (A : M64Annulus g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map)),
     ∃ B : M64Annulus g c0 c1, B.area = A.area
-
-
-
 
 theorem m64LeastAnnulusArea_le_free_weightedGramEnergy
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
@@ -93,9 +65,6 @@ theorem m64LeastAnnulusArea_le_free_weightedGramEnergy
     m64LeastAnnulusArea g c0 c1 ≤ B.area := m64LeastAnnulusArea_le_annulus B
     _ = A.area := hB
     _ ≤ m64ClassicalWeightedGramEnergy g A r := A.area_le_weightedGramEnergy hr hA
-
-
-
 
 theorem m64LeastAnnulusArea_eq_freeClassicalWeightedGramEnergy_sInf
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

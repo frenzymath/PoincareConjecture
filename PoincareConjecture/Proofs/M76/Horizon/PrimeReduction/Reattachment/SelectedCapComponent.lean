@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.FiniteRetainedBallReplacement
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.SelectedComponentBoundaries
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

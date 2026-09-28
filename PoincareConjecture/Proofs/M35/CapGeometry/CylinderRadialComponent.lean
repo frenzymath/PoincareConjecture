@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CurvatureMetricJets
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ attribute [local instance] covectorNormedGroup
     NormedAddCommGroup (E3 →L[ℝ] E3 →L[ℝ] ℝ) := inferInstance
 
 attribute [local instance] bilinearNormedGroup
-
-
 
 theorem cylinder_radial_curvatureTensor_tendsto_zero
     {gseq : ℕ → RiemannianMetric 3 E3} {pseq : ℕ → E3}

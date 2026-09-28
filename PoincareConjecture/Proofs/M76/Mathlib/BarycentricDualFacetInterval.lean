@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualBlocks
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
 omit [FiniteDimensional ℝ E] in
-
 
 private theorem centroid_pair_face [DecidableEq E]
     {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces) (hst : s ⊆ t) :
@@ -39,10 +29,6 @@ private theorem centroid_pair_face [DecidableEq E]
     · exact Or.inr hst
     · exact Or.inl Subset.rfl
   · simp only [Finset.image_insert, Finset.image_singleton]
-
-
-
-
 
 theorem isFinitePLBallPair_barycentricDualBlock_of_paired_facet
     {n : ℕ} (hcard : ∀ t ∈ K.faces, t.card ≤ n + 1)

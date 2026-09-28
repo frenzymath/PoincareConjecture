@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedReturnRegion
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,11 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_central_return_child
     (N : IntrinsicAnnulus)

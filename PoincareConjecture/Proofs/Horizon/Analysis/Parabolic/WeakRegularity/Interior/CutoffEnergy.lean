@@ -1,16 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter
 open scoped ContDiff Topology
@@ -127,7 +115,6 @@ private theorem cutoff_divergence_pairing
   rw [integral_finsetSum _ (fun i _ => hL i),
     integral_finsetSum _ (fun i _ => hR i), integral_finsetSum _ (fun i _ => hC i)]
   simp only [he, Finset.sum_sub_distrib, Finset.sum_neg_distrib, Finset.mul_sum]
-
 
 theorem parabolic_cutoff_energy_identity
     {a : Fin n → Fin n → Spacetime n → ℝ}

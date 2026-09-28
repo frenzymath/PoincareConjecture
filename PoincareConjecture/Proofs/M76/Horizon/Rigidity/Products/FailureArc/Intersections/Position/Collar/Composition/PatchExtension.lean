@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MixedCompatibleChartPatch
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedObservedSearchBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_observed_search_scales
     (S : RepairedControlledSchedulesData.{u}) (p : SurgeryParameterPrefix S.constants) :

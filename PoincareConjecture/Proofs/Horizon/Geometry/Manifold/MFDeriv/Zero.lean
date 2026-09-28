@@ -2,8 +2,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold Topology
@@ -16,8 +14,6 @@ variable {E F H M : Type*}
   [TopologicalSpace H] [TopologicalSpace M]
   {I : ModelWithCorners ℝ E H} [I.Boundaryless]
   [ChartedSpace H M] [IsManifold I 1 M]
-
-
 
 theorem isLocallyConstant_of_mfderiv_eq_zero {f : M → F}
     (hf : MDifferentiable I 𝓘(ℝ, F) f)

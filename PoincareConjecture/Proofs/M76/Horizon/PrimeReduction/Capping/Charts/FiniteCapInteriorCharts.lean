@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.FinitePLBallInteriorChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -15,8 +7,6 @@ open Set Metric Geometry
 namespace Geometry.SeparatedSphereCaps
 
 variable {X ι : Type*}
-
-
 
 theorem cap_interior_preimage_eq_compl (P : Set X) (D : ι → Set X) (i : ι)
     {B : Set X} (hattach : D i ∩ P = B)
@@ -40,8 +30,6 @@ theorem cap_interior_preimage_eq_compl (P : Set X) (D : ι → Set X) (i : ι)
       · exact False.elim (hx (Or.inr (mem_iUnion.mpr ⟨⟨j, hji⟩, hj⟩)))
     exact ⟨hxD, fun hB => hxP (hattach.symm.subset hB).2⟩
 
-
-
 theorem isOpen_cap_interior [TopologicalSpace X] [Finite ι] (P : Set X) (D : ι → Set X)
     (hP : IsClosed P) (hD : ∀ i, IsClosed (D i)) (i : ι)
     {B : Set X} (hattach : D i ∩ P = B)
@@ -60,8 +48,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E W ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup W] [NormedSpace ℝ W]
   [FiniteDimensional ℝ W] [Finite ι]
-
-
 
 theorem IsFinitePLBallPair.exists_finite_cap_interior_chart
     (P : Set E) (D : ι → Set E) (hP : IsClosed P)

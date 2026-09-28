@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -20,7 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 variable {G : GeneralizedLGeometryTransport n X time I}
 
-
 def M14MinimizerEulerStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T τ₁ τ₂ : ℝ) (x y : G.Point)
@@ -28,7 +19,6 @@ def M14MinimizerEulerStatement
     M14IsMinimizing p →
       ∃ E : M14PullbackExtension G p.curve (Set.Ioo τ₁ τ₂) p.horizontal_velocity,
         M14EulerEquation G p E
-
 
 def M14SquareRootEulerStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
@@ -42,10 +32,6 @@ def M14SquareRootEulerStatement
         ∀ W : G.Horizontal (R.curve s),
         M14SquareRootEulerResidual G R E s W = 0
 
-
-
-
-
 def M14SquareRootRegularizationStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T τ₁ τ₂ : ℝ) (x y : G.Point)
@@ -58,7 +44,6 @@ def M14SquareRootRegularizationStatement
         ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂,
           ∀ W : G.Horizontal (R.curve s),
             M14SquareRootEulerResidual G R E s W = 0
-
 
 def M14InitialEndpointFixed
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -75,7 +60,6 @@ def M14BothEndpointsFixed
   M14InitialEndpointFixed V ∧
     V.right_endpoint_fixed
 
-
 def M14FirstVariationStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T τ₁ τ₂ : ℝ) (x y : G.Point)
@@ -83,8 +67,6 @@ def M14FirstVariationStatement
     (R : M14SquareRootPath G p)
     (V : M14LVariationData G p R),
     ∃ D : M14VariationDerivativeData V, M14FirstVariationIdentity V D
-
-
 
 def M14SecondVariationStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
@@ -95,9 +77,6 @@ def M14SecondVariationStatement
     (E₀ : M14PullbackExtension G p.curve (Set.Ioo τ₁ τ₂) p.horizontal_velocity),
     M14EulerEquation G p E₀ →
       ∃ D : M14VariationDerivativeData V, M14SecondVariationIdentity V D
-
-
-
 
 def M14FixedEndpointIndexStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
@@ -111,11 +90,6 @@ def M14FixedEndpointIndexStatement
           ∀ W : G.Horizontal (R.curve s),
             M14SquareRootEulerResidual G R D.base_extension s W = 0) ∧
         0 ≤ M14SecondVariationIndexForm V D
-
-
-
-
-
 
 def M14FixedEndpointIndexKernelStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
@@ -134,7 +108,6 @@ def M14FixedEndpointIndexKernelStatement
         (M14SecondVariationIndexForm V D = 0 ↔
           M14VariationJacobiCondition V D)
 
-
 def M14JacobiStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T τ₁ τ₂ : ℝ) (x y : G.Point)
@@ -149,7 +122,6 @@ def M14JacobiStatement
       M14JacobiFirstDerivative Q (Real.sqrt τ₁) = W ∧
       ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂,
         ∀ Z : G.Horizontal (R.curve s), M14JacobiResidual G R Q s Z = 0
-
 
 def M14InitialJacobiStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
@@ -172,7 +144,6 @@ def M14InitialJacobiStatement
           (∀ s ∈ M14SqrtParameterInterval τ₁ τ₂,
             ∀ Z : G.Horizontal (R.curve s), M14JacobiResidual G R Q' s Z = 0) →
           ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂, Q'.field s = Q.field s)
-
 
 structure M14PathCalculusConclusion
     (G : GeneralizedLGeometryTransport n X time I) : Prop where

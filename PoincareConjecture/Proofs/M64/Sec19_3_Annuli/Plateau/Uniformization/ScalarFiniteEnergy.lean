@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.RepresentativeDerivative
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,12 +17,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarPotential_partial_memLp (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -92,12 +72,6 @@ theorem scalarPotential_partial_memLp (w : H1Zero D scalarAnnulus)
   rw [hd]
   simp
 
-
-
-
-
-
-
 theorem scalarPotential_finite_differential_energy (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hHae : H =ᵐ[g.volumeMeasure.restrict scalarAnnulus]
@@ -113,12 +87,6 @@ theorem scalarPotential_finite_differential_energy (w : H1Zero D scalarAnnulus)
       (EuclideanSpace.basisFun (Fin 2) ℝ).norm_dual (fderiv ℝ H x)
   simp_rw [heq]
   exact integrable_finsetSum _ (fun i _ => hi i)
-
-
-
-
-
-
 
 theorem exists_finite_energy_annular_harmonic_potential :
     ∃ (H : Plane → ℝ) (u : H1Zero D scalarAnnulus),

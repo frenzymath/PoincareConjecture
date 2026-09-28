@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M34.Standard.QuadraticTangentComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem tangentNorm_le_two_div_sqrt_mul_of_scaled_inner_le
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

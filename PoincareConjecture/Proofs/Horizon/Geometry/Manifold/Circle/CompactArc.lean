@@ -2,15 +2,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +15,6 @@ private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev S1 := sphere (0 : EuclideanSpace Real (Fin 2)) 1
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 2)) = 1 + 1) :=
   ⟨by simp⟩
-
 
 theorem exists_real_stereographic_chart (p : S1) :
     ∃ e : OpenPartialHomeomorph Real S1,
@@ -49,8 +39,6 @@ theorem exists_real_stereographic_chart (p : S1) :
       A.symm.contDiff.contMDiff.comp_contMDiffOn (contMDiffOn_of_mem_maximalAtlas hc)
   · intro x y hxy
     exact e.injOn (hes ▸ mem_univ x) (hes ▸ mem_univ y) hxy
-
-
 
 theorem exists_interval_parametrization_of_compact_connected
     {K : Set S1} (hK : IsCompact K) (hconn : IsConnected K)

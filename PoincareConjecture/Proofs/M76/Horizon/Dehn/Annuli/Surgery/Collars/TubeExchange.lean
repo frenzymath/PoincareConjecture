@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
 
-
-
 def pairedTubeExchange : C3 ≃L[ℝ] C3 :=
   ((ContinuousLinearEquiv.refl ℝ ℝ).prodCongr (ContinuousLinearEquiv.neg ℝ)).prodCongr
     (ContinuousLinearEquiv.refl ℝ ℝ)
@@ -36,7 +34,6 @@ theorem pairedTubeExchange_image (L d : ℝ) :
   · intro z hz
     refine ⟨pairedTubeExchange z, (pairedTubeExchange_mem L d z).mpr hz, ?_⟩
     simp only [pairedTubeExchange_apply, neg_neg]
-
 
 theorem pairedTubeExchange_map
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

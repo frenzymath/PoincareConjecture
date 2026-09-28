@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Model
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -84,8 +75,6 @@ private theorem injOn_of_abs_deriv_ge {F : ℝ → ℝ} {W m : ℝ} (hm : 0 < m)
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem exists_smooth_cylinderCover_level_graph
     (Φ : RoundCylinderSpace → M) {s : ℝ}

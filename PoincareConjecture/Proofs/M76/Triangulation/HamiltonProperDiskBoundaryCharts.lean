@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinderHalfspace
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -50,11 +41,6 @@ private theorem exists_centered_linear_halfspace_chart {E : Type*}
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_proper_disk_boundary_pair_chart {R D : Set V3}
     (hR : PLDomain

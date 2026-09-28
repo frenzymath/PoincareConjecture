@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Flow
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option backward.isDefEq.respectTransparency false
@@ -73,7 +65,6 @@ theorem hasFDerivAt_endpoint_zero :
   exact hd.hasFDerivAt.congr_fderiv
     (hA.unique ((hasFDerivAt_id (0 : E)).const_smul D.time))
 
-
 def domain : Set E := (fun v : E => D.time⁻¹ • v) ⁻¹' ball 0 D.radius
 
 theorem isOpen_domain : IsOpen D.domain := by
@@ -82,7 +73,6 @@ theorem isOpen_domain : IsOpen D.domain := by
 
 theorem zero_mem_domain : (0 : E) ∈ D.domain := by
   simpa [domain] using (mem_ball_self D.radius_pos : (0 : E) ∈ ball 0 D.radius)
-
 
 def exponential (v : E) : E := D.endpoint (D.time⁻¹ • v)
 
@@ -100,7 +90,6 @@ theorem hasFDerivAt_exponential_zero :
   apply h.congr_fderiv
   ext v
   simp [smul_smul, D.time_pos.ne']
-
 
 def trajectory (v : E) (t : ℝ) : E × E :=
   velocityScale D.time (D.flow (D.time⁻¹ • v, D.time * t))

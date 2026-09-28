@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CalibratedMetricComparison
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalizedBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [CompactSpace M]
-
-
 
 theorem exists_normalized_ball_on_compact (g : RiemannianMetric 3 M)
     {f : M → ℝ} (hf : Continuous f) (x : M) (hfx : 0 < f x) :
@@ -139,8 +127,6 @@ theorem exists_normalized_ball_on_compact (g : RiemannianMetric 3 M)
   have himages : (fun y : V => f y.val) '' Metric.ball xV r = f '' g.ball x r := by
     rw [← hball, image_image]
   exact ⟨r, hr, hrR, by rwa [← himages], isClosed_closure.isCompact⟩
-
-
 
 theorem exists_scalar_normalized_ball_on_compact (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (x : M) (hR : 0 < D.scalarCurvature x) :

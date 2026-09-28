@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Intersections
 import Mathlib.Topology.Connected.Clopen
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -21,7 +11,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] {r : M → ℝ} {p : M}
 variable (P : ChartCircleArrangementVertexPatch r p)
-
 
 noncomputable def radialMap (d : Bool × Bool) (t : ℝ) : M :=
   P.sectorCoordinates (d.2, d.2) (if d.1 then (t, 0) else (0, t))
@@ -116,7 +105,6 @@ theorem center_mem_closure_radialSide_sdiff (d : Bool × Bool) {ε : ℝ}
     exact left_mem_Icc.mpr hε.le
   simpa only [P.radialMap_zero] using hc
 
-
 theorem radialSide_inter_subset_center {d e : Bool × Bool} (hde : d ≠ e)
     {ε : ℝ} (hwidth : ε ≤ P.width) :
     P.radialSide d ε ∩ P.radialSide e ε ⊆ {p} := by
@@ -142,8 +130,6 @@ theorem radialSide_inter_subset_center {d e : Bool × Bool} (hde : d ≠ e)
   cases d₁ <;> cases d₂ <;> cases e₁ <;> cases e₂ <;>
     simp at hde <;>
     simp [sectorParameterEquiv_apply] at hfst hsnd <;> linarith
-
-
 
 theorem radialSide_subset_circles_of_mem (d : Bool × Bool) {ε : ℝ}
     (hwidth : ε ≤ P.width) {q : M} (hq : q ∈ P.radialSide d ε)

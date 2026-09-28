@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Area
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem exists_threshold_scalarCurvature_lt_one
     (S : GradientShrinkingSolitonData 3 M)
     (hP : ThreeDimensionalClassificationPredecessors.{u})
@@ -41,8 +29,6 @@ theorem exists_threshold_scalarCurvature_lt_one
   exact S.exists_threshold_scalar_lt_of_escaping_subsequence
     (hP.curvature.tensor_calculus 3 M S.metric S.connection) hRic p
     (S.exists_scalar_subsequence_tendsto_one hP p)
-
-
 
 theorem exists_monotone_potential_level_area_of_ricci_positive
     (S : GradientShrinkingSolitonData 3 M)
@@ -55,8 +41,6 @@ theorem exists_monotone_potential_level_area_of_ricci_positive
     (hP.curvature.tensor_calculus 3 M S.metric S.connection)
   exact ⟨max a b, hb _ (le_max_right _ _)
     (fun x hx => (ha x ((le_max_left _ _).trans hx.le)).le)⟩
-
-
 
 theorem exists_threshold_regularLevel_scalarCurvature_lt_one_of_ricci_positive
     (S : GradientShrinkingSolitonData 3 M)

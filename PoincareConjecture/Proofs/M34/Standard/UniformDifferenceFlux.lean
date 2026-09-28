@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxContinuity
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open Set
 open scoped BigOperators
 
 namespace PoincareConjecture.M34.DifferenceEnergy
-
-
-
 
 theorem exists_uniform_curvatureDifferenceFlux_bound
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsCompact K)

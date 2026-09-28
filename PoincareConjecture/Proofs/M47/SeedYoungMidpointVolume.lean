@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedMidpointVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
-
-
 
 theorem seed_midpoint_volume_of_exponential_metric_bounds
     (g h : RiemannianMetric 3 M) (q : M) {R B V : ℝ} (hR : 0 < R)
@@ -86,8 +75,6 @@ theorem seed_midpoint_volume_of_exponential_metric_bounds
   rw [ENNReal.ofReal_mul (Real.exp_pos (-6 * B)).le]
   exact (mul_le_mul_right hbound _).trans_eq
     (by rw [← mul_assoc, hcancelVolume, one_mul])
-
-
 
 theorem seed_young_midpoint_volume
     {J : Set ℝ} (G : RicciFlow 3 M J) {b v d B R V : ℝ}

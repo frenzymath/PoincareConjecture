@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorBundle.Riemannian
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle
@@ -21,8 +14,6 @@ variable {EB : Type*} [NormedAddCommGroup EB] [NormedSpace ℝ EB]
   {E : B → Type*} [TopologicalSpace (TotalSpace F E)]
   [∀ b, TopologicalSpace (E b)] [∀ b, AddCommGroup (E b)] [∀ b, Module ℝ (E b)]
   [FiberBundle F E] [VectorBundle ℝ F E]
-
-
 
 theorem eq_of_inner_eq {g g' : ContMDiffRiemannianMetric IB n F E}
     (h : ∀ x, g.inner x = g'.inner x) : g = g' := by

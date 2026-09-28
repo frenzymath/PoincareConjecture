@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ variable {E F V M ι : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V} {f : F → M} {S : Set F}
-
-
-
 
 theorem PolyhedralPLInCharts.comp_finitePiecewiseAffineOn
     (hf : PolyhedralPLInCharts e f S)

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.LevelSliceChart
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 noncomputable def collarLevelHomeomorph
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ) :
@@ -44,13 +31,10 @@ noncomputable def collarLevelHomeomorph
   have hc : Continuous f := (he.comp continuous_subtype_val).subtype_mk _
   exact hc.homeoOfEquivCompactToT2 (f := Equiv.ofBijective f hf)
 
-
 @[simp] theorem collarLevelHomeomorph_apply
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)
     (q : {q : UnitTwoSphere // ⟪u, ψ (q, 0)⟫_ℝ = t}) :
     (collarLevelHomeomorph ψ hψ u t q : E3) = ψ (q.1, 0) := rfl
-
-
 
 theorem collarLevelHomeomorph_symm_eq
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)
@@ -70,8 +54,6 @@ theorem collarLevelHomeomorph_symm_eq
     _ = (e.symm (y : E3)).1 :=
       congrArg (fun z => (e.symm z).1) ((congrFun he (q.1, 0)).trans hq)
 
-
-
 theorem collarHeightLevel_locallyConnected
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)
     (hreg : ∀ q : UnitTwoSphere, ⟪u, ψ (q, 0)⟫_ℝ = t →
@@ -84,8 +66,6 @@ theorem collarHeightLevel_locallyConnected
   let : LocallyConnectedSpace {q : UnitTwoSphere // ⟪u, ψ (q, 0)⟫_ℝ = t} :=
     locallyConnected_regular_surface_level (E := E2) (by simp [E2]) _ hf t hreg
   exact (collarLevelHomeomorph ψ hψ u t).symm.isOpenEmbedding.locallyConnectedSpace
-
-
 
 theorem finite_collarHeightLevel_components
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

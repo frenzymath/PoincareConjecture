@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawChartBoun
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.LimitFiniteChartBounds
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.ForwardCylinderErrors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +19,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_regularRawStage_forward_metric_error (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)

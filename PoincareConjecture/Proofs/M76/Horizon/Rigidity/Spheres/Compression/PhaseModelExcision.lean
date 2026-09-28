@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.RetainedPhaseModels
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FiniteComponentExcision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallBoundaryCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

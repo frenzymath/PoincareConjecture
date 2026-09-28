@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.FiniteChainClosedQuarters
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.PositiveFrontierSeparation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.exists_finite_outward_extension :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

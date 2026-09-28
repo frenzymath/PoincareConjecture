@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalWholeDiskProduct
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ExteriorDiskAttachment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

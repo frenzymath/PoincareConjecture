@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionHeight
 import PoincareConjecture.Proofs.M25.Mathlib.SphereChartTangent
 import PoincareConjecture.Proofs.M25.Mathlib.FiniteDifferenceInterpolation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -25,9 +16,6 @@ universe u
 namespace PoincareConjecture.EpsilonNeck
 
 open Poincare.Geometry.Riemannian.SpaceForm
-
-
-
 
 theorem exists_contained_slab_orthogonal_C1_control {L η : ℝ}
     (hL : 0 ≤ L) (hη : 0 < η) :
@@ -129,10 +117,6 @@ theorem exists_contained_slab_orthogonal_C1_control {L η : ℝ}
   exact hfirst
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem exists_middle_overlap_slab_near_product {L κ η : ℝ}
     (hL : 0 ≤ L) (hκ : κ ∈ Ioc 0 1) (hη : 0 < η) :

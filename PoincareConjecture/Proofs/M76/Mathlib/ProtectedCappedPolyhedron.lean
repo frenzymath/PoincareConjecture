@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ProtectedSlicePolyhedron
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Set
 variable {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_protected_capped_polyhedron
     {s b d : Set X} (hs : IsFinitePLBallPair E s b) (hd : IsFinitePLBallPair F d b)

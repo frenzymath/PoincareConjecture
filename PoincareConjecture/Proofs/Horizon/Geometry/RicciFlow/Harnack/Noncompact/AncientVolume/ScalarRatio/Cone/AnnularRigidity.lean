@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,8 +43,6 @@ private theorem subtype_chart_coefficients
   rw [hmetric]
   exact congrArg (fun z => h.inner z v w) (c.right_inv hy)
 
-
-
 theorem IsGeodesicOn.subtype_val_of_inner_eq
     {U : Opens (EuclideanSpace ℝ (Fin n))}
     {g : RiemannianMetric n U} {h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -93,8 +79,6 @@ theorem IsGeodesicOn.subtype_val_of_inner_eq
         using hdata t ht)
   simpa only [extChartAt_model_space_eq_id, PartialEquiv.refl_symm,
     PartialEquiv.refl_coe, id_eq] using hh
-
-
 
 theorem tangentNorm_subtype_curve_of_inner_eq
     {U : Opens (EuclideanSpace ℝ (Fin n))}
@@ -164,9 +148,6 @@ private theorem euclidean_speed_affine
   exact congrArg (fun t : ℝ =>
     a * g.tangentNorm (γ t) (mfderiv (𝓘(ℝ, ℝ)) (𝓡 n) γ t 1))
     (by ring : a * 0 + b = b)
-
-
-
 
 theorem geodesic_quadratic_on_of_minimizing_segments
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -243,8 +224,6 @@ end PoincareConjecture.RiemannianMetric
 
 namespace Poincare.AncientVolume.ScalarRatio
 
-
-
 theorem locally_lipschitz_opens_of_lipschitzOn_closedBall
     {n : ℕ} (U : Opens (EuclideanSpace ℝ (Fin n)))
     {ρ : ℝ} (hU : (U : Set (EuclideanSpace ℝ (Fin n))) ⊆ Metric.ball 0 ρ)
@@ -313,9 +292,6 @@ private theorem mfderiv_coordinate_inclusion
   ext v
   exact (congrArg (fun A => A v) hh).symm
 
-
-
-
 theorem curvatureTensorNorm_eq_zero_of_annular_minimizing_identity
     {n : ℕ} (hC : RicciFlowCurvatureTheory.{u})
     {U : Opens (EuclideanSpace ℝ (Fin n))} (F : RicciFlow n U (Iic 0))
@@ -357,9 +333,6 @@ theorem curvatureTensorNorm_eq_zero_of_annular_minimizing_identity
     ((F.connection 0).gradient (fun x : U => f x)) hsmooth (c := 1) (by norm_num)
   intro x v
   simpa only [one_smul] using hgrad x v
-
-
-
 
 theorem curvatureTensorNorm_eq_zero_on_of_annular_minimizing_identity
     {n : ℕ} (hC : RicciFlowCurvatureTheory.{u})
@@ -411,8 +384,6 @@ theorem curvatureTensorNorm_eq_zero_on_of_annular_minimizing_identity
   have hpoint : e y = x := Subtype.ext rfl
   rw [hpoint] at hnat
   exact hnat.symm.trans (hflat y)
-
-
 
 theorem false_of_scalar_one_annular_minimizing_identity
     {n : ℕ} (hC : RicciFlowCurvatureTheory.{u})

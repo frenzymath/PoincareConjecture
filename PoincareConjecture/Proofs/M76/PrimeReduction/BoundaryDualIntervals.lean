@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
 
 theorem barycentricDualBlock_space_of_single_coface
     {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces) (hst : s ⊆ t)
@@ -61,8 +51,6 @@ theorem barycentricDualBlock_space_of_single_coface
     apply (K.barycentricDualBlock s).convexHull_subset_space hedge
     simpa only [Finset.coe_pair, convexHull_pair] using hx
 
-
-
 theorem barycentricDualBlock_space_of_maximal
     {s : Finset E} (hs : s ∈ K.faces)
     (hmax : ∀ t ∈ K.faces, s ⊆ t → t = s) :
@@ -70,9 +58,6 @@ theorem barycentricDualBlock_space_of_maximal
   simpa only [segment_same] using
     K.barycentricDualBlock_space_of_single_coface hs hs Subset.rfl
       (fun t ht hst => Or.inl (hmax t ht hst))
-
-
-
 
 theorem barycentricDualBlock_boundary_interval
     (L : SimplicialComplex ℝ E) [Finite L.faces] (hLK : L ≤ K)

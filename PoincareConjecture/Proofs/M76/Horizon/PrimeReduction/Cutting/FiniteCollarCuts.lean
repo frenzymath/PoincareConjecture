@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarCutCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem finite_collar_cut_geometry
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [Finite ι]

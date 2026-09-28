@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalC
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalSphereProductDomain
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -173,9 +164,6 @@ theorem retained_collar_reattachment_geometry
   rw [union_inter_distrib_right, hAH, inter_comm P.closedStrip H, hHstrip]
   apply union_eq_left.mpr
   exact image_mono (prod_mono subset_rfl (by intro t ht; rcases ht with rfl; norm_num))
-
-
-
 
 theorem retained_collar_exchange_exterior
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

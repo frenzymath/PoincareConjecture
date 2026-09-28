@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CircleCurrentLaplacian
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCirclePeriodicity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PeriodicHarmonicTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_harmonic_strip_of_conformal_minimum
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)
@@ -52,11 +35,6 @@ theorem m64AnnulusCircleCurrent_harmonic_strip_of_conformal_minimum
     rw [← m64AnnulusInterior_closure]
     exact subset_closure
   exact (hA p (hsub hp)).contMDiffWithinAt
-
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_positive_of_boundary_nonneg
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)
@@ -81,9 +59,6 @@ theorem m64AnnulusCircleCurrent_positive_of_boundary_nonneg
     (m64AnnulusCircleCurrent_periodic P t A 0) hlower hupper hnonzero
 
 omit [T2Space M] [CompactSpace M] in
-
-
-
 
 theorem m64Annulus_horizontal_column_ne_zero_of_circleCurrent_pos
     (P : M62.CircleProductData F circumference) (t : ℝ)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_ProjectionCoordinates
 import PoincareConjecture.Proofs.M14.Mathlib.MovingLinearMap
 import PoincareConjecture.Proofs.M08.VariationCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,14 +16,10 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 noncomputable def surfaceHorizontalFst (α : ℝ × ℝ → G.Point) (s u : ℝ) :
     G.Horizontal (α (s, u)) :=
   G.spacetime.horizontalProjection (α (s, u))
     (mfderiv 𝓘(ℝ) (spacetimeModel n) (fun r => α (r, u)) s (1 : ℝ))
-
-
 
 noncomputable def surfaceHorizontalSnd (α : ℝ × ℝ → G.Point) (s u : ℝ) :
     G.Horizontal (α (s, u)) :=
@@ -40,10 +27,6 @@ noncomputable def surfaceHorizontalSnd (α : ℝ × ℝ → G.Point) (s u : ℝ)
     (mfderiv 𝓘(ℝ) (spacetimeModel n) (fun r => α (s, r)) u (1 : ℝ))
 
 set_option maxHeartbeats 2000000 in
-
-
-
-
 
 theorem horizontalCovariantDerivative_surface_commute
     (hCoordinates : M12MetricPredecessors.{0} n)

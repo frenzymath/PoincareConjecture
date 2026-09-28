@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Proofs.M02.CubeSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
 
 namespace PoincareConjecture
-
-
 
 theorem m59SphereQuotient_nonempty : Nonempty M59SphereQuotient := by
   obtain ⟨q, hq, hfiber⟩ := Proofs.M02.exists_cube_sphere_quotient_of_card_eq
@@ -38,8 +28,6 @@ theorem m59SphereQuotient_nonempty : Nonempty M59SphereQuotient := by
     exact congrArg e ((hfiber t (fun _ => 0)).mpr (Or.inr ⟨ht, hzero⟩))
   · intro t s
     exact e.injective.eq_iff.trans (hfiber t s)
-
-
 
 noncomputable def m59SphereQuotient : M59SphereQuotient :=
   Classical.choice m59SphereQuotient_nonempty

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.LowerSemicontinuity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Action
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral ENNReal
 universe u
 
 namespace PoincareConjecture.ReducedLengthMinimum.Variational
-
-
 
 theorem sum_integral_fin_partition {m : ℕ} (t : Fin (m + 1) → ℝ)
     (ht : Monotone t) (f : ℝ → ℝ)
@@ -54,8 +41,6 @@ theorem sum_integral_fin_partition {m : ℕ} (t : Fin (m + 1) → ℝ)
 
 variable {n : ℕ} {M : Type u} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem chart_piece_action_eq {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) {a b : ℝ} (hab : a ≤ b) (x : M) (α : ℝ → M)
@@ -89,8 +74,6 @@ theorem chart_piece_action_eq {J : Set ℝ} (F : RicciFlow n M J)
     rw [metricInChart_deriv _ (hsrc (Ioo_subset_Icc_self hsI)) hdiff]
     simp only [regularizedLIntegrand, referenceSpeedSq, V, add_sub_cancel_left]
   rw [hkin, intervalIntegral.integral_sub hint hV, sub_add_cancel]
-
-
 
 theorem finite_chart_action_le {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) {ι : Type*} [Fintype ι]

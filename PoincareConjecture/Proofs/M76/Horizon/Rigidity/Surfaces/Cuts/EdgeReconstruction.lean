@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTrianglePointwiseGluing
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleCofaceConstancy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (K : SimplicialComplex ℝ E)
-
 
 def originalEdgeContact (s t : Triangle K) : Prop :=
   ∃ e ∈ K.faces, e.card = 2 ∧ e ⊆ s.val ∧ e ⊆ t.val
@@ -67,7 +58,6 @@ theorem pointwiseGlueRelation_of_common_vertex
     exact pointwiseGlueRelation_refl K label (originalEdgeContact K) x
   exact (hPt ▸ hPs) y hyt hxy.symm
 
-
 theorem pointwiseGlueRelation_originalEdgeContact_iff
     (label : Triangle K → ℝ)
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)
@@ -102,7 +92,6 @@ theorem pointwiseGlueRelation_originalEdgeContact_iff
     · rw [hxv]
       exact Finset.mem_of_mem_inter_right (hv.symm ▸ Finset.mem_singleton_self v)
     · exact hxy
-
 
 theorem pointwiseGlueRelation_originalEdgeContact_iff_of_connected_links
     (hK : K.faces.Finite) (label : Triangle K → ℝ)

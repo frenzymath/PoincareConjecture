@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeRegular
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchLocalFactor
 import Mathlib.Analysis.Complex.HasPrimitives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -86,10 +76,6 @@ private theorem rectangle_crossing_real {F : ℂ → ℂ} {U : Set ℂ}
   simp only [smul_eq_mul] at hl hu ⊢
   linear_combination hl + hu
 
-
-
-
-
 theorem differentiableOn_of_continuousOn_off_real {F : ℂ → ℂ} {U : Set ℂ}
     (hU : IsOpen U) (hc : ContinuousOn F U)
     (hd : ∀ z ∈ U, z.im ≠ 0 → DifferentiableAt ℂ F z) :
@@ -145,11 +131,6 @@ private theorem inverse_matrix_differentiableAt {E : Type*}
   rw [Ring.inverse_mul_cancel _ (hunit z), map_zero] at hzero
   exact differentiableAt_complex_of_dbar_eq_zero hH hzero
 
-
-
-
-
-
 theorem differentiableOn_inverse_cauchyGauge_off_real {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {F : ℂ → Fin n → ℂ}
     {R B0 : ℝ} {U : Set ℂ}
@@ -190,11 +171,6 @@ theorem differentiableOn_inverse_cauchyGauge_off_real {n : ℕ} [Nonempty (Fin n
   intro z hz
   exact differentiableWithinAt_pi.mpr (fun i => hcoord i z hz)
 
-
-
-
-
-
 theorem exists_gauged_power_factor_off_real {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {F : ℂ → Fin n → ℂ}
     {R B0 : ℝ} {U : Set ℂ}
@@ -227,9 +203,6 @@ theorem exists_gauged_power_factor_off_real {n : ℕ} [Nonempty (Fin n)]
   filter_upwards [hfactor] with z hz
   rw [← hidentity z, hz, sub_zero, map_smul]
 
-
-
-
 noncomputable def reflectionOperator {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) (hJ : ∀ (c : ℂ) v, J (c • v) = star c • J v)
     (A : E →L[ℂ] E) : E →L[ℂ] E where
@@ -237,9 +210,6 @@ noncomputable def reflectionOperator {E : Type*} [NormedAddCommGroup E] [NormedS
   map_add' v w := by simp only [map_add]
   map_smul' c v := by simp only [hJ, map_smul, star_star, RingHom.id_apply]
   cont := J.continuous.comp (A.continuous.comp J.continuous)
-
-
-
 
 noncomputable def reflectionOperatorL {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) (hJ : ∀ (c : ℂ) v, J (c • v) = star c • J v) :
@@ -263,9 +233,6 @@ noncomputable def reflectionOperatorL {E : Type*} [NormedAddCommGroup E] [Normed
       change ‖J (A (J v))‖ ≤ ‖A‖ * ‖v‖
       simpa only [J.norm_map] using A.le_opNorm (J v))
 
-
-
-
 theorem dbar_reflected {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) (hJ : ∀ (c : ℂ) v, J (c • v) = star c • J v)
     {F : ℂ → E} {z : ℂ} (hF : DifferentiableAt ℝ F (star z)) :
@@ -281,25 +248,15 @@ theorem dbar_reflected {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
     map_add, hJ]
   simp
 
-
-
-
 noncomputable def reflectedField {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) (F : ℂ → E) (z : ℂ) : E :=
   if 0 ≤ z.im then F z else J (F (star z))
-
-
-
 
 noncomputable def reflectedCoefficient {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) (hJ : ∀ (c : ℂ) v, J (c • v) = star c • J v)
     (A : ℂ → E →L[ℂ] E) (z : ℂ) : E →L[ℂ] E :=
   if 0 ≤ z.im then A z else reflectionOperator J hJ (A (star z))
-
-
-
-
 
 theorem reflectedField_continuousOn {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -362,9 +319,6 @@ private theorem half_piecewise_contDiffOn {E : Type*}
     exact ((hF.contDiffAt ((hU.inter (isOpen_lt continuous_const continuous_im)).mem_nhds
       ⟨hz.1, hpos⟩)).congr_of_eventuallyEq hlocal).contDiffWithinAt
 
-
-
-
 theorem reflectedField_contDiffOn {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
     (J : E ≃ₗᵢ[ℝ] E) {F : ℂ → E} {r : ℝ}
@@ -377,9 +331,6 @@ theorem reflectedField_contDiffOn {E : Type*}
   refine ⟨?_, ?_⟩
   · simpa only [mem_ball_zero_iff, conjCLE_apply, norm_conj] using hz.1
   · simpa only [mem_ofPred_eq, conjCLE_apply, conj_im, neg_pos] using hz.2
-
-
-
 
 theorem reflectedCoefficient_contDiffOn {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -395,10 +346,6 @@ theorem reflectedCoefficient_contDiffOn {E : Type*}
   refine ⟨?_, ?_⟩
   · simpa only [mem_ball_zero_iff, conjCLE_apply, norm_conj] using hz.1
   · simpa only [mem_ofPred_eq, conjCLE_apply, conj_im, neg_pos] using hz.2
-
-
-
-
 
 theorem reflectedField_equation {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -433,11 +380,6 @@ theorem reflectedField_equation {E : Type*}
       congrArg dbarLinear hlocal.fderiv_eq
     rw [hbar, heq z hz hpos]
     simp only [reflectedCoefficient, reflectedField, if_pos hpos.le]
-
-
-
-
-
 
 theorem exists_small_reflected_coefficient {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -533,12 +475,6 @@ theorem exists_small_reflected_coefficient {E : Type*}
       hAC1.mono (fun _ hz => ⟨ball_subset_ball hRr.le hz.1, hz.2⟩)
     exact (reflectedCoefficient_contDiffOn J hJ hAr).congr (fun z hz => heq z hz.1)
   exact ⟨A0, R, B0, hR, hRr, hB, hA0m, hA0s, hA0b, hsmall, hA0C1, heq⟩
-
-
-
-
-
-
 
 theorem exists_half_disk_power_factor {n : ℕ} [Nonempty (Fin n)]
     (J : (Fin n → ℂ) ≃ₗᵢ[ℝ] (Fin n → ℂ))

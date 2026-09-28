@@ -1,16 +1,6 @@
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem preimage_eq_of_frontier_preimage_eq
     (H : C(unitInterval × X, Y)) {A : Set Y} (hA : IsClosed A)
@@ -49,10 +36,6 @@ theorem preimage_eq_of_frontier_preimage_eq
     rcases isClopen_iff.mp hcl with he | he
     · simp only [he, mem_empty_iff_false]
     · simp only [he, mem_univ]
-
-
-
-
 
 theorem side_preimages_eq_of_frontier_preimage_eq
     (H : C(unitInterval × X, Y)) {A : Set Y} (hA : IsClosed A)

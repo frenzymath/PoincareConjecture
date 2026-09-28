@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 import Mathlib.Algebra.Order.Chebyshev
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators
@@ -19,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem laplacian_sq_le_dim_mul_hessian_normSq (D : LeviCivitaData g)
     (f : M → ℝ) (x : M) :

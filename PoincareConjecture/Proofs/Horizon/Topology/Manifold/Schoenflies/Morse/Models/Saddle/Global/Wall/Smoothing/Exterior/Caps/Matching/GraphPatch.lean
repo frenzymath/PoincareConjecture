@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Pasting.Immersion
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +15,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
 
 def planarGraphFlattening {f : Real → Real} (hf : ContDiff Real ∞ f) :
     Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
@@ -44,8 +41,6 @@ def planarGraphFlattening {f : Real → Real} (hf : ContDiff Real ∞ f) :
     (p : E2) : planarGraphFlattening hf p 1 = p 1 := by
   change (p - f (p 1) • (EuclideanSpace.single 0 1 : E2)) 1 = _
   simp
-
-
 
 theorem eventually_range_iff_graph_of_graph_arc
     (γ : S1 → E2)
@@ -79,8 +74,6 @@ theorem eventually_range_iff_graph_of_graph_arc
   exact hy.trans (by
     change planarGraphFlattening hf y 0 = 0 ↔ y 0 = f (y 1)
     rw [planarGraphFlattening_zero, sub_eq_zero])
-
-
 
 theorem eventually_circleFamily_range_iff_rounded_graph
     {a b : Real} (C : Side.CircleFamily a b)

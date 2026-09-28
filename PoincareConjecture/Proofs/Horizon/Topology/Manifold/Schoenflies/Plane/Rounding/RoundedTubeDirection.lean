@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.TubeAngle
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_uniform_positive_rounded_tube_projection
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

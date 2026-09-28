@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedAttachmentGerms
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedTopCornerFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,8 +81,6 @@ theorem not_mem_region_caps_at_shared_cut
     · exact h
   · simp only [if_neg hlast, mem_empty_iff_false] at h
 
-
-
 theorem collar_germ_at_shared_band_cut
     (p : T.decomposition.IncidentEdgeIndex) (i j : Fin (T.graphs p).count)
     (hij : i.succ = j.castSucc) {q : S}
@@ -133,8 +125,6 @@ theorem collar_germ_at_shared_band_cut
   · rintro (h | h)
     · exact mem_iUnion.mpr ⟨⟨⟨p, i⟩, rfl⟩, h⟩
     · exact mem_iUnion.mpr ⟨⟨⟨p, j⟩, rfl⟩, h⟩
-
-
 
 def bandJunctionPoint (p : T.decomposition.IncidentEdgeIndex)
     (k : Fin ((T.graphs p).count + 1)) : Plane :=
@@ -200,7 +190,6 @@ theorem bandJunctionPoint_mem_rightCut
 
 omit [T2Space S] in
 
-
 theorem bandJunctionPoint_mem_region
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count) :
     (chartAt Plane (T.chart p.1.1 : S)).symm (T.bandJunctionPoint p i.succ) ∈
@@ -209,8 +198,6 @@ theorem bandJunctionPoint_mem_region
   rw [← T.ambientTopPoint_one_eq_bandJunctionPoint, (T.bands p i).ambientTopPoint_map]
   exact T.band_positive_height_mem_region p i (by simp)
     ((T.bands p i).faces.height_pos (by simp)) le_rfl
-
-
 
 theorem coordinate_collar_germ_at_band_junction
     (p : T.decomposition.IncidentEdgeIndex) (i j : Fin (T.graphs p).count)
@@ -237,8 +224,6 @@ theorem coordinate_collar_germ_at_band_junction
       (fun h => T.band_regions p i h) (fun h => T.band_regions p j h))
     simpa only [C.right_inv hys] using hy
 
-
-
 theorem core_complement_germ_at_band_junction
     (p : T.decomposition.IncidentEdgeIndex) (i j : Fin (T.graphs p).count)
     (hij : i.succ = j.castSucc) :
@@ -252,8 +237,6 @@ theorem core_complement_germ_at_band_junction
   change (T.refined.mesh p.1.1).toPlaneComplex.support z = ¬interior _ z
   change (T.refined.mesh p.1.1).toPlaneComplex.support z = ¬interior _ z at hcz
   rwa [hiz] at hcz
-
-
 
 theorem band_pair_core_union_mem_nhds_at_junction
     (p : T.decomposition.IncidentEdgeIndex) (i j : Fin (T.graphs p).count)
@@ -274,7 +257,6 @@ theorem band_pair_core_union_mem_nhds_at_junction
   · exact Or.inr h
 
 set_option maxHeartbeats 1200000 in
-
 
 theorem vertex_contribution_eq_band_pair_add_core_at_junction
     (g : RiemannianMetric 2 S)

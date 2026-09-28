@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonGeome
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonLength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g}
-
-
 
 theorem m64FlattenedPolygon_length {N : ℕ}
     (polygon : M63GeodesicPolygon g D N) (hN : 0 < N) :
@@ -70,9 +56,6 @@ theorem m64FlattenedPolygon_length {N : ℕ}
   change (∫ x in (0 : ℝ)..curvePeriod, v x) = ∑ j : Fin N, ell * (polygon.side j).speed
   rw [← hsum]
   exact Finset.sum_congr rfl (fun j _ => hcell j)
-
-
-
 
 theorem m64_freeLoopLength_eq_polygonLength
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

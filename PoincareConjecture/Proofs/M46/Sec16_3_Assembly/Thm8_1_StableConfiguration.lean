@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_1_Constants
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 structure StableSource {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     {D : NoncollapseTest F O} (H : HalfRadiusHistory D) (taubar l0 V : ℝ) where
@@ -44,8 +33,6 @@ structure StableSource {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
       (H.spacetime.geometry.toLGeometry.slices (D.time - tau)).metricOnPoints
       (stable.endpoint_slice_map '' W)
 
-
-
 noncomputable def StableSource.configuration
     (P : M46Predecessors.{u}) {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     {D : NoncollapseTest F O} {H : HalfRadiusHistory D} {taubar l0 V : ℝ}
@@ -67,8 +54,6 @@ noncomputable def StableSource.configuration
   W_subset_stable := Q.W_subset
   normalized_reduced_length := Q.reduced_length
   terminal_image_volume := Q.image_volume
-
-
 
 theorem StableSource.volume (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_local_parallel_unit_null_section_of_local_isometry
     {n : ℕ} {N : Type u} {M : Type v}

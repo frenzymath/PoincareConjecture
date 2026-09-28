@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.QuadraticCancellation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Reaction.Contractions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma hamiltonM_geometric_prescribed_jet_cancellation
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (τ : ℝ) (x : M)
@@ -70,8 +61,6 @@ lemma hamiltonM_geometric_prescribed_jet_cancellation
   dsimp only [R, Ric]
   rw [div_eq_mul_inv] at h
   linarith only [h]
-
-
 
 lemma hamiltonP_geometric_prescribed_jet_cancellation
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (k : ℝ) (x : M)

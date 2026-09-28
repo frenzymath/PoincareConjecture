@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiSmoothForcing
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,11 +9,6 @@ open MeasureTheory FourierTransform Filter LineDeriv
 open scoped Topology SchwartzMap ContDiff ComplexConjugate LineDeriv
 
 namespace Complex
-
-
-
-
-
 
 theorem exists_smooth_beltrami_logPotential (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)
@@ -53,10 +38,6 @@ private theorem fderiv_exp_comp (q : ℂ → ℂ) (hq : ContDiff ℝ ∞ q) (z v
     fderiv ℝ (fun y => exp (q y)) z v = exp (q z) * fderiv ℝ q z v := by
   rw [((hq.differentiable (by norm_num)).differentiableAt.hasFDerivAt.cexp).fderiv]
   rfl
-
-
-
-
 
 theorem exists_smooth_beltrami_closed_coefficients (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

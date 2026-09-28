@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarJet
 import PoincareConjecture.Proofs.M44.Mathlib.SecondDerivativeComposition
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,14 +16,8 @@ open PoincareConjecture.SpacetimeBounds
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 
-
-
-
 abbrev ScalarMetricFourJet (n : ℕ) := MetricTwoJet n ×
   (Fin n → MetricTwoJet n) × (Fin n → Fin n → MetricTwoJet n)
-
-
-
 
 noncomputable def scalarMetricFourJet {n : ℕ} (B : E n → MetricCoefficient n)
     (x : E n) : ScalarMetricFourJet n :=
@@ -41,33 +26,22 @@ noncomputable def scalarMetricFourJet {n : ℕ} (B : E n → MetricCoefficient n
     fun i j => fderiv ℝ (fderiv ℝ (metricTwoJet B)) x
       (EuclideanSpace.basisFun (Fin n) ℝ i) (EuclideanSpace.basisFun (Fin n) ℝ j))
 
-
-
 theorem contDiffAt_metricTwoJet {n : ℕ} {B : E n → MetricCoefficient n} {x : E n}
     (hB : ContDiffAt ℝ ∞ B x) : ContDiffAt ℝ ∞ (metricTwoJet B) x := by
   have hB' := hB.fderiv_right (m := ∞) (by simp)
   exact hB.prodMk (hB'.prodMk (hB'.fderiv_right (m := ∞) (by simp)))
 
-
-
 noncomputable def jetScalarFirst {n : ℕ} (K : ScalarMetricFourJet n) (i : Fin n) : ℝ :=
   fderiv ℝ (@jetScalarCurvature n) K.1 (K.2.1 i)
-
-
 
 noncomputable def jetScalarSecond {n : ℕ} (K : ScalarMetricFourJet n)
     (i j : Fin n) : ℝ :=
   fderiv ℝ (fderiv ℝ (@jetScalarCurvature n)) K.1 (K.2.1 i) (K.2.1 j) +
     fderiv ℝ (@jetScalarCurvature n) K.1 (K.2.2 i j)
 
-
-
 noncomputable def jetContractedChristoffel {n : ℕ} (J : MetricTwoJet n) : E n :=
   ∑ i, jetChristoffel J (EuclideanSpace.basisFun (Fin n) ℝ i)
     (J.1.inverse (EuclideanSpace.proj i))
-
-
-
 
 noncomputable def jetScalarLaplacian {n : ℕ} (K : ScalarMetricFourJet n) : ℝ :=
   secondDerivativeArrayContraction (@jetScalarCurvature n)
@@ -81,7 +55,6 @@ noncomputable def jetScalarLaplacian {n : ℕ} (K : ScalarMetricFourJet n) : ℝ
 section ChainRule
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
-
 
 noncomputable local instance scalarCoefficientNormedGroup (n : ℕ) :
     NormedAddCommGroup (MetricCoefficient n) := ContinuousLinearMap.toNormedAddCommGroup
@@ -108,8 +81,6 @@ noncomputable local instance scalarTwoJetSecondNormedGroup (n : ℕ) :
 noncomputable local instance scalarTwoJetSecondNormedSpace (n : ℕ) :
     NormedSpace ℝ (E n →L[ℝ] E n →L[ℝ] MetricTwoJet n) := ContinuousLinearMap.toNormedSpace
 
-
-
 theorem jetScalarFirst_scalarMetricFourJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) (i : Fin n) :
     jetScalarFirst (scalarMetricFourJet g.euclideanCoefficients x) i =
@@ -122,8 +93,6 @@ theorem jetScalarFirst_scalarMetricFourJet {n : ℕ}
     funext fun y => (jetScalarCurvature_metricTwoJet D y).symm
   rw [heq, fderiv_comp x (hS.differentiableAt (by simp)) (hJ.differentiableAt (by simp))]
   rfl
-
-
 
 theorem jetScalarSecond_scalarMetricFourJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) (i j : Fin n) :
@@ -141,8 +110,6 @@ theorem jetScalarSecond_scalarMetricFourJet {n : ℕ}
     funext fun y => jetScalarCurvature_metricTwoJet D y
   rw [heq] at h
   exact h.symm
-
-
 
 theorem jetScalarLaplacian_scalarMetricFourJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) :
@@ -192,8 +159,6 @@ theorem jetScalarLaplacian_scalarMetricFourJet {n : ℕ}
 
 end ChainRule
 
-
-
 theorem contDiffAt_jetContractedChristoffel {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) : ContDiffAt ℝ ∞ (@jetContractedChristoffel n) J := by
   have hI : ContDiffAt ℝ ∞ (fun K : MetricTwoJet n => K.1.inverse) J :=
@@ -201,9 +166,6 @@ theorem contDiffAt_jetContractedChristoffel {n : ℕ} {J : MetricTwoJet n}
   apply ContDiffAt.sum
   intro i _
   exact contDiffAt_jetChristoffel hJ contDiffAt_const (hI.clm_apply contDiffAt_const)
-
-
-
 
 theorem continuousAt_jetScalarLaplacian {n : ℕ} {K : ScalarMetricFourJet n}
     (hK : K.1.1.IsInvertible) : ContinuousAt (@jetScalarLaplacian n) K := by

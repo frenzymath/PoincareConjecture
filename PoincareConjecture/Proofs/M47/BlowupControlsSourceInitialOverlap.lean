@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_initial_recent_time_mem_overlap
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

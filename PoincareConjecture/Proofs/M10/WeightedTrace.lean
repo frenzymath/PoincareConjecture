@@ -1,14 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Trace
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -33,7 +25,6 @@ theorem trace_eq_sum_normalized_metric {ι : Type*} [Fintype ι]
   change inner ℝ (b i) (C.symm (A (C (b i)))) = _
   have h := hC (C.symm (A (C (b i)))) (b i)
   simpa only [ContinuousLinearEquiv.apply_symm_apply, real_inner_comm] using h.symm
-
 
 theorem trace_fderiv_smul {ρ : E → ℝ} {a : E → E} {y : E}
     (hρ : DifferentiableAt ℝ ρ y) (ha : DifferentiableAt ℝ a y) :

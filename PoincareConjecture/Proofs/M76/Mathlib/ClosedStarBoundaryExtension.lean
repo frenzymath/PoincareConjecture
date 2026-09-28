@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +13,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F] [DecidableEq E]
-
-
-
-
 
 theorem IsFinitePL.exists_closedStar_extension_radial
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -89,9 +76,6 @@ theorem IsFinitePL.exists_closedStar_extension_radial
   · intro x r hr
     rw [hg.cone_extension_smul hg0 hbase (hRs.symm.subset x.property) hr, ← hef x]
 
-
-
-
 theorem IsFinitePL.exists_closedStar_extension
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hzero : (0 : E) ∈ K.vertices) (hne : (K.link 0).space.Nonempty)
@@ -107,9 +91,6 @@ theorem IsFinitePL.exists_closedStar_extension
   apply Subtype.ext
   exact (hHg ⟨x,
     SimplicialComplex.space_subset_of_le (K.link_le_closedStar 0) x.property⟩).trans (hbase x)
-
-
-
 
 theorem IsFinitePL.isFinitePLBallPair_closedStar
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

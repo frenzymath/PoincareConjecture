@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonJordanSeparation
 import PoincareConjecture.Proofs.M76.Mathlib.UnboundedComplementComponent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem isCompact_boundary {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {n : ℕ} (P : Polygon E n) : IsCompact (P.boundary ℝ) := by
@@ -29,8 +18,6 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
   (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
 
 include hP hinj
-
-
 
 theorem exists_bounded_unbounded_complement_components :
     ∃ a ∈ (P.boundary ℝ)ᶜ, ∃ b ∈ (P.boundary ℝ)ᶜ,
@@ -56,10 +43,6 @@ theorem exists_bounded_unbounded_complement_components :
     refine ⟨a, ha, b, hb, hother a ?_, ?_, hcover⟩
     · exact fun h => hne (h.trans heq.symm)
     · rwa [heq]
-
-
-
-
 
 theorem exists_bounded_complementary_regions :
     ∃ U V : Set (ℝ × ℝ), IsOpen U ∧ IsOpen V ∧ IsConnected U ∧ IsConnected V ∧

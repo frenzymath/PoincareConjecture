@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_sphere_chart_radial_lift
     (F : Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞)

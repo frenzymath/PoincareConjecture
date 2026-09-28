@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.NeckPatch
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Curvature
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -247,10 +230,6 @@ private theorem seed_native_time_mem_half
   refine ⟨(le_div_iff₀ hq).mpr ?_,
     div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonpos_of_nonneg hs.2 hR.le) hq.le⟩
   nlinarith [hbound.trans hquarter]
-
-
-
-
 
 theorem exists_seed_cylinder_of_terminal_strongNecks
     (hM04 : RicciFlowCurvatureTheory.{u}) :

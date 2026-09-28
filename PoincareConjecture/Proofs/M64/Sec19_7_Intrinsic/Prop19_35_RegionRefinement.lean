@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapCoreMatching
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,12 +58,6 @@ private theorem region_subdivision_intersections
     rintro q ⟨z, hz, rfl⟩
     rw [mem_singleton_iff.mp (hv hz), ← hj]
     exact mem_singleton _
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_compatible_region_refinement
     {I : Type*} [Finite I]

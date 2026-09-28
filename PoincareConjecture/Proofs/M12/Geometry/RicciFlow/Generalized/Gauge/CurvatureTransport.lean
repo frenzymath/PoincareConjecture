@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Spacetime.SliceTransport
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceGeometry
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
-
 
 structure MovingGaugeCurvatureTransportFields
     (D : LeafwiseLeviCivitaFamily F S)
@@ -59,7 +49,6 @@ private theorem slice_deriv_eq_tangent_symm
   rw [← movingGaugeSliceMap_tangent_eq e S G t x u]
   exact (S t.val).tangentEquiv (movingGaugeSliceMap e S t x)
     |>.symm_apply_apply _
-
 
 theorem movingGaugeCurvatureTransportFields
     (D : LeafwiseLeviCivitaFamily F S)

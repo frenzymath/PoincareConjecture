@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Energy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData.Dirichlet
 universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
-
 
 def coordinateExtension
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -46,7 +39,6 @@ theorem coordinateExtension_eventuallyEq
   exact coordinateExtension_apply e φ hz
 
 variable [T2Space M]
-
 
 theorem tsupport_coordinateExtension_subset_image
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -75,7 +67,6 @@ variable [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ 
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem contMDiff_coordinateExtension
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (hei : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e.symm e.target)
@@ -88,8 +79,6 @@ theorem contMDiff_coordinateExtension
   have hyt := e.map_source (hφs hx)
   apply ContMDiffAt.congr_of_eventuallyEq _ (coordinateExtension_eventuallyEq e φ hyt)
   exact hφ.contMDiff.contMDiffAt.comp (e x) (hei.contMDiffAt (e.open_target.mem_nhds hyt))
-
-
 
 def EnergyTest.ofCoordinates
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -105,7 +94,6 @@ def EnergyTest.ofCoordinates
         (hφs.trans inter_subset_left) hy
       exact (hφs hx).2⟩
 
-
 theorem EnergyTest.ofCoordinates_apply
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (hei : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e.symm e.target)
@@ -114,7 +102,6 @@ theorem EnergyTest.ofCoordinates_apply
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ e.source) :
     EnergyTest.ofCoordinates (D := D) e hei φ hφ hφc hφs (e x) = φ x :=
   coordinateExtension_comp_apply e φ hx
-
 
 theorem EnergyTest.chartPullback_ofCoordinates
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -127,8 +114,6 @@ theorem EnergyTest.chartPullback_ofCoordinates
   · rw [chartPullback_apply e _ hx, EnergyTest.ofCoordinates_apply e hei φ hφ hφc hφs hx]
   · have hxφ : x ∉ tsupport φ := fun h => hx (hφs h).1
     simp [chartPullback, hx, image_eq_zero_of_notMem_tsupport hxφ]
-
-
 
 theorem EnergyTest.ofCoordinates_comp_eventuallyEq
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

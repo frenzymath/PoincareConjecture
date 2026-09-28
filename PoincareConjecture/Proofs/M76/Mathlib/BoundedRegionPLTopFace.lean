@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +11,6 @@ namespace Geometry
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_open_topFace_image
     {f : E → X × ℝ} {S : Set E} {D : Set X}
@@ -69,10 +55,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.mem_interior_preimage_cylinder
     {s b : Set (X × ℝ)} {D : Set X} (hs : IsFinitePLBallPair E s b)

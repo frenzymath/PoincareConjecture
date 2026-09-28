@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 import Mathlib.Topology.Compactness.SigmaCompact
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -59,8 +50,6 @@ theorem component_compl_meets_frontier {K L : Set X}
     isPreconnected_connectedComponentIn hdis ⟨q, hqC, hqL⟩
   exact hx (interior_subset (hsub (mem_connectedComponentIn hxK)))
 
-
-
 theorem exists_finite_component_cover_outside_compact {K L : Set X}
     (hK : IsCompact K) (hL : IsCompact L) (hKL : K ⊆ interior L) :
     ∃ s : Finset X, (∀ p ∈ s, p ∈ Kᶜ) ∧
@@ -95,8 +84,6 @@ theorem exists_finite_component_cover_outside_compact {K L : Set X}
     have heq := (connectedComponentIn_eq hyC).trans (connectedComponentIn_eq hyp).symm
     rw [← heq]
     exact mem_connectedComponentIn (fun hxK => hx (interior_subset (hKL hxK)))
-
-
 
 theorem exists_unbounded_component_trace (K : CompactExhaustion X)
     {A : Set X} (hA : ∀ L : Set X, IsCompact L → ¬ A ⊆ L) (n : ℕ) :

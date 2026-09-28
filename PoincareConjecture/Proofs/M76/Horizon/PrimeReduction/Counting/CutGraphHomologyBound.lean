@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.IncidenceHomologyInjection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalCutHomologyRetract
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

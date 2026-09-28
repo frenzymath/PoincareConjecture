@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Loca
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LocalGeometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -23,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
 
 open Set
-
-
 
 theorem eventually_interior_curvatureDerivativeNorm_le_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ}
@@ -149,7 +135,6 @@ theorem eventually_interior_curvatureDerivativeNorm_le_of_local_derivative_estim
   change (F.flow.connection (δ + (t - δ))).curvatureDerivativeNorm m x ≤ _ at h
   rwa [show δ + (t - δ) = t by ring] at h
 
-
 theorem eventually_interior_curvatureDerivativeNorm_le
     {n : ℕ} {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -166,8 +151,6 @@ theorem eventually_interior_curvatureDerivativeNorm_le
         (F.flow.connection t).curvatureDerivativeNorm m x ≤ D :=
   H.eventually_interior_curvatureDerivativeNorm_le_of_local_derivative_estimates
     hM04.local_derivative_estimates a b ha hb A hA m
-
-
 
 theorem eventually_two_time_curvatureDerivativeNorm_le_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ}
@@ -192,7 +175,6 @@ theorem eventually_two_time_curvatureDerivativeNorm_le_of_local_derivative_estim
   dsimp only at hkbound ⊢
   intro s hs t ht x hx
   exact hkbound t ht x (hkcontain s hs t ⟨by linarith [ht.1], by linarith [ht.2]⟩ hx)
-
 
 theorem eventually_two_time_curvatureDerivativeNorm_le
     {n : ℕ} {T' T : ℝ}

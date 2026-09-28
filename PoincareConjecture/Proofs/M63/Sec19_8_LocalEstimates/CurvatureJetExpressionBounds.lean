@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 import Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset
 import Mathlib.Algebra.Order.Ring.Cast
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -27,9 +18,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63CurvatureJet_ambientError_abs_le
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)
@@ -183,9 +171,6 @@ theorem m63CurvatureJet_ambientError_abs_le
   dsimp only [C, w, N, V] at hfinal
   dsimp only
   simpa only [D, z, mul_assoc] using hfinal
-
-
-
 
 theorem m63TangentRicci_arc_iterate_abs_le [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)

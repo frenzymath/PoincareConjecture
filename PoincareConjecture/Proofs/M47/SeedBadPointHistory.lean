@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_first_failure_history_preimage
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

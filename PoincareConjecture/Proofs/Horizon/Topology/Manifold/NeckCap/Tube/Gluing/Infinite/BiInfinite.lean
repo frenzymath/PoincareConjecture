@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.I
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.TwoSidedCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace

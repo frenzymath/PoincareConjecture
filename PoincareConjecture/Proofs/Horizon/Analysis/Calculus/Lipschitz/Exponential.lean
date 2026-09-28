@@ -1,8 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +10,6 @@ open scoped ContDiff NNReal
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_lipschitzOnWith_mul_exp_neg
     {C : Set E} (hC : IsCompact C) (hconv : Convex ℝ C)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundMetricDerivatives
 import Mathlib.Analysis.Calculus.BumpFunction.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +20,6 @@ private abbrev GaussE := EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
 
 def roundGaussErrorCoefficients
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -88,10 +76,6 @@ private theorem smooth_bilinear_tensor
       simpa using contMDiffAt_iff_contDiffAt.mp h
     exact (contMDiffAt_iff_contDiffAt.mpr
       ((hB.contDiffAt.clm_apply (hXi 0)).clm_apply (hXi 1))).contMDiffWithinAt
-
-
-
-
 
 theorem exists_round_gauss_error_section
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.BallGeometry
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderRigidity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem noncollapsed (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
     (F : MaximalStandardCapFlow g₀) (N : StandardFlowNoncollapsingCertificate F)

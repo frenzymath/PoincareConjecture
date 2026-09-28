@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Parametrization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -28,8 +18,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem eventually_scalarNormalized_parametrized_jets_at_of_chart_bound
     (F : RicciFlow 3 M (Iic 0))

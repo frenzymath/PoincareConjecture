@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPositivePart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.prod_mk {f : E → F} {g : E → G} {S : Set E}
     (hf : FinitePiecewiseAffineOn f S) (hg : FinitePiecewiseAffineOn g S) :
@@ -39,17 +26,11 @@ theorem FinitePiecewiseAffineOn.prod_mk {f : E → F} {g : E → G} {S : Set E}
   obtain ⟨b, hb⟩ := hRL.affineOnFaces hgL s hs
   exact ⟨a.prod b, fun x hx => Prod.ext (ha hx) (hb hx)⟩
 
-
-
-
 theorem FinitePiecewiseAffineOn.add {f g : E → F} {S : Set E}
     (hf : FinitePiecewiseAffineOn f S) (hg : FinitePiecewiseAffineOn g S) :
     FinitePiecewiseAffineOn (fun x => f x + g x) S :=
   (hf.prod_mk hg).postcomp
     (ContinuousLinearMap.fst ℝ F F + ContinuousLinearMap.snd ℝ F F).toContinuousAffineMap
-
-
-
 
 theorem FinitePiecewiseAffineOn.sub {f g : E → F} {S : Set E}
     (hf : FinitePiecewiseAffineOn f S) (hg : FinitePiecewiseAffineOn g S) :

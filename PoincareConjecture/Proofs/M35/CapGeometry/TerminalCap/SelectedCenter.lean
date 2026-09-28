@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedPointDistance
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedNeckTipDistance
 import PoincareConjecture.Proofs.M35.Thm12_28.TerminalScalarConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
-
 
 theorem blowupSequence_separated_radial_center
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

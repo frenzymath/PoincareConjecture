@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Endpoint
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace PoincareConjecture.CoordinateExponential
@@ -59,9 +50,6 @@ theorem exists_openPartialHomeomorph [CompleteSpace E] (D : LocalFlowData B U x)
     exact (e.contDiffAt_symm hy hderiv hsmooth).contDiffWithinAt
 
 end LocalFlowData
-
-
-
 
 theorem exists_local_exponential [FiniteDimensional ℝ E]
     (hU : IsOpen U) (hB : ContDiffOn ℝ ∞ B U)

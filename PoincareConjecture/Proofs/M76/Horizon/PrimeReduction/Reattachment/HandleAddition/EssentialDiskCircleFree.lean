@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.EssentialDiskInnermostCircle
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.PlanarSurfaceCarrierInterior
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 open Set Metric Geometry
@@ -106,4 +94,3 @@ theorem ChartwisePLSphere.contact_intervals_of_sphere_and_disk_minima
   · exact (hnocircle ⟨i,hc⟩).elim
 
 end PoincareConjecture.M76
-

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyLevelDeletion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.RetainedCapPlacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem family_levels_preserved_at_separated_cut
     (old new : Set E3) (u : UnitTwoSphere)
@@ -50,7 +40,6 @@ theorem family_levels_preserved_at_separated_cut
     rw [hyz]
     exact hwidth.trans hzt.le
   exact (houter y hwy).trans (hlevel z hz p)
-
 
 theorem SurgeryCapTag.cap_outside_other_cut_buffer
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

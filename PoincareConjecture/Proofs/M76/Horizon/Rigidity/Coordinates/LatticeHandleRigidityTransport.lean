@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleNormalization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_lattice_handle_rigidity_transport
     {ι ι' κ κ' α β : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']

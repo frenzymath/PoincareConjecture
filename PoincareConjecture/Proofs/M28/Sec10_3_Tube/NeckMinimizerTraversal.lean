@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphSides
 import PoincareConjecture.Proofs.M28.Mathlib.PathLengthAnchors
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -85,9 +73,6 @@ private theorem exists_two_contained_collar_levels (W : EpsilonNeck g)
   · simpa only [htzero, sub_zero] using hdlevel
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem exists_neck_minimizer_opposite_levels (W : EpsilonNeck g)
     (hε : W.epsilon ≤ 1 / 1000) {U : Set M} (hWU : W.carrier ⊆ U)
@@ -184,8 +169,6 @@ theorem exists_neck_minimizer_opposite_levels (W : EpsilonNeck g)
     · rcases (abs_eq hr.le).mp hdabs with hdpos | hdneg
       · simp only [one_mul, hdpos]
       · exact False.elim (hneq (hcneg.trans hdneg.symm))
-
-
 
 theorem exists_neck_minimizer_graph_crossing (W : EpsilonNeck g)
     (hε : W.epsilon ≤ 1 / 1000) {U : Set M} (hWU : W.carrier ⊆ U)

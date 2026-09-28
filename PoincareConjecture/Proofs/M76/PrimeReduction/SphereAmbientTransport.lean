@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,8 +11,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ChartwisePLSphere.nonempty_image
     {X ι : Type*} [TopologicalSpace X]

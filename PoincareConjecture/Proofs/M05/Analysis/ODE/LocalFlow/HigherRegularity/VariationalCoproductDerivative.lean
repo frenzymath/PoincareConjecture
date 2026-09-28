@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.VariationalLevelOneSmoothness
-
 
 noncomputable section
 

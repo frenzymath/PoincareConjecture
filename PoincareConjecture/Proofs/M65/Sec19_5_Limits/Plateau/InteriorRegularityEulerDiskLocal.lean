@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerLocaliz
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerFields
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ open scoped Topology ContDiff SchwartzMap LineDeriv
 universe u
 
 namespace PoincareConjecture.M65WeakDisk
-
-
-
 
 def localMap {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     {γ : LoopCircle → M} (F : M65WeakDisk e γ) :
@@ -75,10 +61,6 @@ end PoincareConjecture.M65WeakDisk
 namespace PoincareConjecture.M65Euler
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem compact_disk_green_difference {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

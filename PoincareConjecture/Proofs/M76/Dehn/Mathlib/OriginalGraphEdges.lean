@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AcyclicEdgeChains
 import PoincareConjecture.Proofs.M76.Mathlib.ComplexCycleLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Sym2
 
 variable {ι : Type*} [DecidableEq ι]
-
-
 
 theorem toFinset_injective : Function.Injective (toFinset : Sym2 ι → Finset ι) := by
   intro p q h
@@ -32,8 +21,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι : Type*} [DecidableEq ι] (A : AbstractSimplicialComplex ι)
 
-
-
 theorem exists_original_face_of_graph_edge (T : SimpleGraph ι) (hT : T ≤ A.edgeGraph)
     (q : T.edgeSet) :
     ∃ e : Edge A.toPreAbstractSimplicialComplex,
@@ -48,9 +35,6 @@ theorem exists_original_face_of_graph_edge (T : SimpleGraph ι) (hT : T ≤ A.ed
     · exact Sym2.toFinset_mk_eq.symm
     · ext x
       simp only [e, Finset.mem_insert, Finset.mem_singleton]
-
-
-
 
 noncomputable def originalGraphEdgeEquiv (T : SimpleGraph ι) (hT : T ≤ A.edgeGraph) :
     T.edgeSet ≃ {e : Edge A.toPreAbstractSimplicialComplex //
@@ -79,8 +63,6 @@ noncomputable def originalGraphEdgeEquiv (T : SimpleGraph ι) (hT : T ≤ A.edge
     ext x
     rw [he]
     simp only [q, Sym2.mem_toFinset, Sym2.mem_iff, Finset.mem_insert, Finset.mem_singleton]
-
-
 
 theorem card_original_graph_edges (T : SimpleGraph ι) (hT : T ≤ A.edgeGraph) :
     Nat.card T.edgeSet = Nat.card {e : Edge A.toPreAbstractSimplicialComplex //

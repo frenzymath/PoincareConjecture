@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.EdgeChartHeight
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_halfInterval
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -164,4 +151,3 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_halfInterval
   exact (hphysical _ (hVB (hballV hxball))).trans (hendpoint t htpar)
 
 end PoincareConjecture.M76
-

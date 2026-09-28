@@ -1,11 +1,4 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMiddleCrossing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphIsotopy
 
-
-
-
-
-
-
 set_option autoImplicit false
-

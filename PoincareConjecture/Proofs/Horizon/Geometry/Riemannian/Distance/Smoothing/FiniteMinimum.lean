@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.RegularizedMinimum.Finite
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Minimum
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
-
 theorem contMDiffAt_finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
     (f : Fin (k + 1) → M → ℝ) {x : M}
     (hf : ∀ i, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x) :
@@ -31,8 +23,6 @@ theorem contMDiffAt_finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
   | succ k ih =>
     exact contMDiffAt_regularizedMin δ hδ (hf 0)
       (ih (fun i => f i.succ) (fun i => hf i.succ))
-
-
 
 theorem mvfderiv_finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
     (f : Fin (k + 1) → M → ℝ) {x : M}
@@ -81,7 +71,6 @@ private theorem le_weighted_sum_of_active {ι : Type*} [Fintype ι]
       · simp [hwi]
       · exact mul_le_mul_of_nonneg_left (ha i hwi) (hw i)
 
-
 theorem mvfderiv_finiteRegularizedMin_le_of_active (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
     (f : Fin (k + 1) → M → ℝ) {x : M}
     (hf : ∀ i, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x)
@@ -93,7 +82,6 @@ theorem mvfderiv_finiteRegularizedMin_le_of_active (δ : ℝ) (hδ : 0 < δ) (k 
   exact weighted_sum_le_of_active _ _ (Poincare.finiteRegularizedMinWeight_nonneg δ hδ k _)
     (Poincare.sum_finiteRegularizedMinWeight δ hδ k _) hB
 
-
 theorem le_mvfderiv_finiteRegularizedMin_of_active (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
     (f : Fin (k + 1) → M → ℝ) {x : M}
     (hf : ∀ i, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x)
@@ -104,7 +92,6 @@ theorem le_mvfderiv_finiteRegularizedMin_of_active (δ : ℝ) (hδ : 0 < δ) (k 
   rw [mvfderiv_finiteRegularizedMin δ hδ k f hf]
   exact le_weighted_sum_of_active _ _ (Poincare.finiteRegularizedMinWeight_nonneg δ hδ k _)
     (Poincare.sum_finiteRegularizedMinWeight δ hδ k _) hB
-
 
 theorem contMDiffOn_finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
     (f : Fin (k + 1) → M → ℝ) {U : Set M} (hU : IsOpen U)
@@ -118,8 +105,6 @@ theorem contMDiffOn_finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
 namespace LeviCivitaData
 
 variable [IsManifold (𝓡 n) ∞ M] {g : RiemannianMetric n M}
-
-
 
 theorem hessian_finiteRegularizedMin_le_weighted (D : LeviCivitaData g)
     (δ : ℝ) (hδ : 0 < δ) (k : ℕ) (f : Fin (k + 1) → M → ℝ) {x : M}
@@ -160,8 +145,6 @@ theorem hessian_finiteRegularizedMin_le_weighted (D : LeviCivitaData g)
         simp_rw [mul_assoc]
         rw [← Finset.mul_sum]
 
-
-
 theorem hessian_finiteRegularizedMin_le_of_active (D : LeviCivitaData g)
     (δ : ℝ) (hδ : 0 < δ) (k : ℕ) (f : Fin (k + 1) → M → ℝ) {x : M}
     (hf : ∀ i, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x)
@@ -173,7 +156,6 @@ theorem hessian_finiteRegularizedMin_le_of_active (D : LeviCivitaData g)
   apply (D.hessian_finiteRegularizedMin_le_weighted δ hδ k f hf v).trans
   exact weighted_sum_le_of_active _ _ (Poincare.finiteRegularizedMinWeight_nonneg δ hδ k _)
     (Poincare.sum_finiteRegularizedMinWeight δ hδ k _) hH
-
 
 theorem gradient_finiteRegularizedMin_norm_le_of_active (D : LeviCivitaData g)
     (δ : ℝ) (hδ : 0 < δ) (k : ℕ) (f : Fin (k + 1) → M → ℝ) {x : M}
@@ -194,8 +176,6 @@ theorem gradient_finiteRegularizedMin_norm_le_of_active (D : LeviCivitaData g)
     mvfderiv_finiteRegularizedMin_le_of_active δ hδ k f hf v
       (fun i hwi => (abs_le.mp (hi i hwi)).2)⟩
 
-
-
 theorem hessian_finiteRegularizedMin_le_of_value_gap (D : LeviCivitaData g)
     (δ : ℝ) (hδ : 0 < δ) (k : ℕ) (f : Fin (k + 1) → M → ℝ) {x : M}
     (hf : ∀ i, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x)
@@ -210,8 +190,6 @@ theorem hessian_finiteRegularizedMin_le_of_value_gap (D : LeviCivitaData g)
   by_contra hgap
   exact hi (Poincare.finiteRegularizedMinWeight_eq_zero_of_iInf_gap δ hδ k
     (fun i => f i x) i (lt_of_not_ge hgap))
-
-
 
 theorem gradient_finiteRegularizedMin_norm_le_of_value_gap (D : LeviCivitaData g)
     (δ : ℝ) (hδ : 0 < δ) (k : ℕ) (f : Fin (k + 1) → M → ℝ) {x : M}

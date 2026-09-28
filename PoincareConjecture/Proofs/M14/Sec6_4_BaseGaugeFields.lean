@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {N : Set ℝ}
   {β : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b}
-
-
 
 theorem squareRootVelocity_gauge (hN : IsOpen N)
     (hβ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ β
@@ -55,9 +43,6 @@ theorem squareRootVelocity_gauge (hN : IsOpen N)
     exact (squareRoot_horizontalVelocity_eq_projection R hs.1).symm
   rw [hleft] at hc
   exact hc.trans (heq_of_eq hp)
-
-
-
 
 theorem baseCovariantDerivative_gauge
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -100,9 +85,6 @@ theorem baseCovariantDerivative_gauge
   exact (heq_of_eq (horizontalCovariantDerivative_restrict_inter E
     (hN.mem_nhds hs.2))).trans
       ((horizontalCovariantDerivative_congrOn E₀ hγ hY hs).trans (heq_of_eq hform))
-
-
-
 
 theorem squareRootCovariantVelocity_gauge
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

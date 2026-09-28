@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCollarStereogra
 import PoincareConjecture.Proofs.M25.Mathlib.CompactBallChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificate_exists_projective_filled_end_lift
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

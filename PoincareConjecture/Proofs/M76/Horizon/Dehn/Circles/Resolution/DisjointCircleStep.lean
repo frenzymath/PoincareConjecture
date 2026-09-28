@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.DisjointSou
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OrdinaryModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.LocalInjectivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -93,8 +86,6 @@ theorem exists_disjoint_boundary_data (G : PairedCircleCollars D L d)
     have h := G.period_value (if !b then 1 else 0) s hs
       ⟨d, ⟨by linarith, le_rfl⟩⟩ p hp
     cases b <;> simpa [sourceTubeDiagonal, y, c, B, I, regionChart_value] using h
-
-
 
 theorem exists_disjoint_step [T2Space X] (G : PairedCircleCollars D L d)
     (hd : 0 < d) (hwidth : 4 * d < L) {b : ℝ} (hb : 0 < b) (hbd : b < d)
@@ -200,7 +191,6 @@ theorem exists_disjoint_step [T2Space X] (G : PairedCircleCollars D L d)
       exact disjoint_left.mp disjoint_interior_frontier (G.tube_interior hw) hzfront)
   exact ⟨g, hg, hgr, hgR, (hproper (frontier R) hfront htfront).1,
     hmodel, hboundary, hinterior, hproper⟩
-
 
 theorem exists_disjoint_circle_resolution [T2Space X] (G : PairedCircleCollars D L d)
     (hd : 0 < d) (hwidth : 4 * d < L) {b : ℝ} (hb : 0 < b) (hbd : b < d)

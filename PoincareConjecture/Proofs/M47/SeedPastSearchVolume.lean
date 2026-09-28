@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.SeedRetainedSearch
 import PoincareConjecture.Proofs.M47.SeedSearchVolumeTransfer
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_1_Prefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_past_search_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

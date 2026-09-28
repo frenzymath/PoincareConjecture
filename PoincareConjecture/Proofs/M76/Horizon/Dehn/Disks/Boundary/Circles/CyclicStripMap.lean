@@ -3,19 +3,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
-
 
 private theorem product_joint_fiber_iff
     {E F : Type*} [TopologicalSpace E] [TopologicalSpace F] {S : Set F} {B C J : Set E}
@@ -57,8 +48,6 @@ private theorem product_joint_fiber_iff
     rw [← hyform] at hright
     exact hleft.trans ((congrArg (fun z : S ↦ (G z : E))
       (Subtype.ext hcoord)).trans hright.symm)
-
-
 
 private theorem exists_product_cut_map
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -140,8 +129,6 @@ private theorem exists_product_cut_map
     let x := (map i).symm ⟨y, hi⟩
     exact ⟨x, mem_iUnion.mpr ⟨i, x.property⟩,
       (hval i x).trans (congrArg Subtype.val ((map i).apply_symm_apply ⟨y, hi⟩))⟩
-
-
 
 private theorem exists_product_cycle_map
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -305,8 +292,6 @@ private theorem exists_translated_unit_strip_block
   change x.val.2 = (e.symm x : P2 × ℝ).2 + a at hv1
   linarith
 
-
-
 theorem exists_cyclic_strip_map
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
     (B J : Fin (n + 3) → Set E) (G : ∀ i, signedTubeSheet 0 ≃ₜ J i)
@@ -408,8 +393,6 @@ theorem exists_cyclic_strip_map
         using x.property
     exact (hvalue i ⟨x, hx⟩).trans (hshiftValue i ⟨x, hx⟩)
   · simpa [t] using hfib
-
-
 
 theorem cyclic_strip_axis_iff
     {E : Type*} [TopologicalSpace E] {n : ℕ}

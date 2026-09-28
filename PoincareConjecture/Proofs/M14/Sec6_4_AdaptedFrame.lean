@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedGlobal
 import PoincareConjecture.Proofs.M14.Sec6_7_MetricBases
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +18,6 @@ private theorem horizontal_t2Space {q : G.Point} : T2Space (G.Horizontal q) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal q
 
 attribute [local instance] horizontal_t2Space
-
-
 
 theorem horizontalBasis_of_orthonormal (q : G.Point) (v : Fin n → G.Horizontal q)
     (hv : ∀ i j, G.spacetime.horizontalMetric.inner q (v i) (v j) = if i = j then 1 else 0) :
@@ -47,9 +36,6 @@ theorem horizontalBasis_of_orthonormal (q : G.Point) (v : Fin n → G.Horizontal
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem exists_horizontalUnitAdaptedFrame
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :

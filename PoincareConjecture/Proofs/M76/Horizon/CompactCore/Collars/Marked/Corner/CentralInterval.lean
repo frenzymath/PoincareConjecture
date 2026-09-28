@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Coordina
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductSlices
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.PairChart
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology

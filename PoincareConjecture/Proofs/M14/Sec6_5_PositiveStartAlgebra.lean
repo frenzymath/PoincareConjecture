@@ -2,19 +2,9 @@ import PoincareConjecture.Statements.M14GeneralizedLGeometry
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M14
-
-
 
 theorem positiveStart_initial_factor {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     Real.rpow (a / b) (3 / 2 : ℝ) = (a * Real.sqrt a) / (b * Real.sqrt b) := by
@@ -22,9 +12,6 @@ theorem positiveStart_initial_factor {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     Real.rpow_add (div_pos ha hb), Real.rpow_one, ← Real.sqrt_eq_rpow,
     Real.sqrt_div ha.le]
   ring
-
-
-
 
 theorem positiveStart_correction_algebra {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     (L E S C K d g : ℝ)

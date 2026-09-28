@@ -5,22 +5,11 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 
 namespace Poincare.Analysis.Heat
-
 
 theorem summable_gaussian_mul_exp_nat {a : ℝ} (ha : 0 < a) (c : ℝ) :
     Summable (fun n : ℕ ↦ Real.exp (-a * (n : ℝ) ^ 2 + c * ((n : ℝ) + 1))) := by
@@ -33,8 +22,6 @@ theorem summable_gaussian_mul_exp_nat {a : ℝ} (ha : 0 < a) (c : ℝ) :
   have hprod := mul_nonneg (sub_nonneg.mpr hlarge') (Nat.cast_nonneg n : (0 : ℝ) ≤ n)
   rw [Real.norm_eq_abs, abs_of_pos (Real.exp_pos _), ← Real.exp_add]
   exact Real.exp_le_exp.mpr (by nlinarith)
-
-
 
 theorem integrable_gaussian_weight_of_ball_integral_le_exp
     {X : Type*} [MeasurableSpace X] {μ : Measure X} {r q : X → ℝ}
@@ -93,8 +80,6 @@ theorem integrable_gaussian_weight_of_ball_integral_le_exp
     exact mem_iUnion.mpr ⟨⌊r x⌋₊, Nat.floor_le (hr0 x), Nat.lt_floor_add_one (r x)⟩
   simpa only [hcover, integrableOn_univ] using
     integrableOn_iUnion_of_summable_integral_norm hfi hsum
-
-
 
 theorem cutoff_energy_growth_le_exp {R A b C₀ V c : ℝ}
     (hR : 1 ≤ R) (hA : 0 ≤ A) (hb : 0 ≤ b) (hC₀ : 0 ≤ C₀) (hV : 0 ≤ V) :

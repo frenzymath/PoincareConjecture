@@ -2,17 +2,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem hasFDerivAt_rescaled (f : E → F) {r : ℝ} (hr : r ≠ 0) (x : E)
     (hf : DifferentiableAt ℝ f (r • x)) :
     HasFDerivAt (fun y => r⁻¹ • f (r • y)) (fderiv ℝ f (r • x)) x := by
@@ -32,8 +19,6 @@ theorem hasFDerivAt_rescaled (f : E → F) {r : ℝ} (hr : r ≠ 0) (x : E)
   apply h.congr_fderiv
   ext y
   simp [smul_smul, hr]
-
-
 
 theorem cutoff_smul_fderiv_bound (ρ : E → ℝ) (hρ : ContDiff ℝ ∞ ρ)
     (f : E → F) (hf : ContDiff ℝ ∞ f) (hf0 : f 0 = 0)
@@ -66,7 +51,6 @@ theorem cutoff_smul_fderiv_bound (ρ : E → ℝ) (hρ : ContDiff ℝ ∞ ρ)
     rw [fderiv_of_notMem_tsupport ℝ hg, norm_zero]
     positivity
 
-
 theorem cutoff_smul_lipschitz (ρ : E → ℝ) (hρ : ContDiff ℝ ∞ ρ)
     (f : E → F) (hf : ContDiff ℝ ∞ f) (hf0 : f 0 = 0)
     {R C ε : ℝ} (hR : 0 < R) (hC : 0 ≤ C) (hε : 0 ≤ ε)
@@ -78,8 +62,6 @@ theorem cutoff_smul_lipschitz (ρ : E → ℝ) (hρ : ContDiff ℝ ∞ ρ)
   intro x
   exact_mod_cast cutoff_smul_fderiv_bound ρ hρ f hf hf0 hR hC hε
     hs hρnorm hρderiv hfderiv x
-
-
 
 theorem lipschitz_rescaled (f : E → F) {L : ℝ≥0} (hf : LipschitzWith L f)
     {r : ℝ} (hr : r ≠ 0) : LipschitzWith L (fun x => r⁻¹ • f (r • x)) := by

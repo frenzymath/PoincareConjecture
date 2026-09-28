@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.FixedChartIndexCoefficients
 import PoincareConjecture.Proofs.M09.FixedChartCurvature
 import PoincareConjecture.Proofs.M09.AdaptedIndexTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

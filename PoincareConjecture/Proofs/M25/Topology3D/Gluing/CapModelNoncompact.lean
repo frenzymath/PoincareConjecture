@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCapCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem StandardPuncturedProjectiveCover.not_isCompact_region
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -57,9 +45,6 @@ theorem StandardPuncturedProjectiveCover.not_isCompact_region
   obtain ⟨x, hx⟩ := Quotient.mk'_surjective p
   have hxvalid : x ∈ projectiveCoverDomain p := hfull.symm ▸ mem_univ x
   exact hxvalid hx
-
-
-
 
 theorem capModelEquivalence_not_isCompact_carrier
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

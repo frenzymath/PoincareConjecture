@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,10 +14,6 @@ local notation "V" => ((ι ⊕ κ) → ℝ)
 local notation "pi" => latticeCoordinateProjection ι κ L
 
 variable {ι κ L} {β : Type*}
-
-
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_projection_add_linear
     {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]

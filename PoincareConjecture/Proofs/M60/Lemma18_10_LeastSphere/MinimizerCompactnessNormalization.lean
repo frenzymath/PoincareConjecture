@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerMaxGradient
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessInterface
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaEnergyMinimizers
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,9 +42,6 @@ private theorem unbounded_subsequence (a : ℕ → ℝ) (ha : ¬ BddAbove (range
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 theorem suSphereWeightedEuler_rescale
     (g : RiemannianMetric n M) {alpha : ℝ} {f : UnitTwoSphere → M}
     (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) (heq : SUSphereWeightedEuler g alpha f)
@@ -86,9 +81,6 @@ theorem suSphereWeightedEuler_rescale
   rw [hbase, smul_zero] at h
   simpa only [hq, U, F, u, v, Function.comp_def] using h
 
-
-
-
 theorem suBoundedGradient_nonNull_subsequence [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) (f : ℕ → UnitTwoSphere → M)
     (hf : ∀ j, ContMDiff (𝓡 2) (𝓡 n) ∞ (f j))
@@ -105,10 +97,6 @@ theorem suBoundedGradient_nonNull_subsequence [CompactSpace M] [T2Space M]
   intro p
   exact Real.rpow_le_rpow (by have := m60SphereIntrinsicEnergy_nonneg g (f j) p; positivity)
     (by linarith [hbound j p]) (by norm_num)
-
-
-
-
 
 theorem suUnboundedGradient_normalized_subsequence
     (g : RiemannianMetric n M) (f : ℕ → UnitTwoSphere → M)

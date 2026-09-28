@@ -5,16 +5,6 @@ import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Definitions.M38LocalTopology
 import PoincareConjecture.Definitions.M72TopologyTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -67,7 +57,6 @@ structure M72EventTopologyData (F : SurgeryFlowData.{u})
         predecessor_time_domain no_surgery_before).identify
         ⟨pre_time, ⟨predecessor_lt.le, le_rfl⟩⟩ x
 
-
 def M72EventTopologyData.nonemptyReferenceMap
     {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
     (E : M72EventTopologyData F T hT) [hN : Nonempty (F.slice T).carrier] :
@@ -75,7 +64,6 @@ def M72EventTopologyData.nonemptyReferenceMap
       (F.slice (F.event T hT).tMinus).carrier (F.slice E.pre_time).carrier ∞ :=
   (F.event T hT).pre_identify
     ⟨E.pre_time, ⟨(E.nonempty_reference hN).le, E.pre_time_lt⟩⟩
-
 
 def M72EventTopologyData.vanishingReferenceMap
     {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
@@ -85,16 +73,10 @@ def M72EventTopologyData.vanishingReferenceMap
   (F.vanishing_event T hT).pre_identify
     ⟨E.pre_time, ⟨(E.vanishing_reference hE).le, E.pre_time_lt⟩⟩
 
-
-
-
 structure M72ComponentAssemblyTransport
     (P Q : GeneralizedSliceCarrier.{u}) where
   region : Set Q.carrier
   component_equivalence : SurgeryRegionEquivalence P Q Set.univ region
-
-
-
 
 structure M72SuccessorTransport (F : SurgeryFlowData.{u})
     (H T T' : ℝ) (hT : T ∈ F.surgery_times) (hT' : T' ∈ F.surgery_times)

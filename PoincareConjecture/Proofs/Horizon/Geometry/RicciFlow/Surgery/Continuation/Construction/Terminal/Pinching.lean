@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Local
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -25,8 +15,6 @@ variable {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem terminal_pinched (H : SingularTimeAssumptions G T M)
     (Q : SingularLimitConclusion H) :

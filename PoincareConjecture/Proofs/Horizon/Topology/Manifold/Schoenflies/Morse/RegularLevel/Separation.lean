@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereConnectivity
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,10 +41,6 @@ private theorem exists_sphere_circle_collar_complementary_regions
     exact hneg ⟨(z.1, ⟨z.2, hz.2.1, hz.2.2.trans hε⟩), hz.2.2, rfl⟩
   · rintro y ⟨z, hz, rfl⟩
     exact hpos ⟨(z.1, ⟨z.2, (neg_lt_zero.mpr hε).trans hz.2.1, hz.2.2⟩), hz.2.1, rfl⟩
-
-
-
-
 
 theorem exists_regular_level_component_complementary_regions
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

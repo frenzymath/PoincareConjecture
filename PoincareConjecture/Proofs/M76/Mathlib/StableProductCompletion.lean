@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +8,6 @@ open Set
 namespace IsLocalHomeomorphOn
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
-
 
 theorem exists_union {f g : X → Y} {U V : Set X}
     (hf : IsLocalHomeomorphOn f U) (hg : IsLocalHomeomorphOn g V)
@@ -50,9 +34,6 @@ theorem exists_union {f g : X → Y} {U V : Set X}
     intro y hy
     exact (hFg (interior_subset hy.2)).trans (congrFun he y)
 
-
-
-
 theorem prod_id {Z : Type*} [TopologicalSpace Z] {f : X → Y} {U : Set X}
     (hf : IsLocalHomeomorphOn f U) :
     IsLocalHomeomorphOn (fun z : X × Z => (f z.1, z.2)) (U ×ˢ univ) := by
@@ -65,11 +46,6 @@ theorem prod_id {Z : Type*} [TopologicalSpace Z] {f : X → Y} {U : Set X}
 end IsLocalHomeomorphOn
 
 namespace PLFiberCompression
-
-
-
-
-
 
 theorem exists_stable_product_completion_with_formula {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y]
@@ -134,9 +110,6 @@ theorem exists_stable_product_completion_with_formula {X Y : Type*}
   change F (C z) = G z
   rw [hCz]
   exact hFG ⟨hzU, hz.2⟩
-
-
-
 
 theorem exists_stable_product_completion {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y]

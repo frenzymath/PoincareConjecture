@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,8 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
-
-
 
 theorem compact_uniform_normalized_scalar_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -53,9 +41,6 @@ theorem compact_uniform_normalized_scalar_bound
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space RicciFlow.smallMeasurableSpace
   RicciFlow.smallBorelSpace
-
-
-
 
 theorem compact_uniform_scalar_bound_of_normalized
     (P : M26CanonicalNeighborhoodPredecessors.{u})

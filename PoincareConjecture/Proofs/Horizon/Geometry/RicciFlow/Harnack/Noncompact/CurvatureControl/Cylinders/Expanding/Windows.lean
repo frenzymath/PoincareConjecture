@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.CurvatureLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_common_buffer_pointed_limits_of_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)

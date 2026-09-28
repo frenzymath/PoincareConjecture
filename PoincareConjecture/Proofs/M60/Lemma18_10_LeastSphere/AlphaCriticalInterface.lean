@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Derivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -26,15 +16,11 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def suAlphaRoundFactor (z : LoopPlane) : ℝ := 16 / (‖z‖ ^ 2 + 4) ^ 2
-
 
 def suAlphaChartCoordinate (f : C(UnitTwoSphere, M)) (p : UnitTwoSphere) :
     LoopPlane → EuclideanSpace ℝ (Fin n) :=
   (chartAt (EuclideanSpace ℝ (Fin n)) (f p)) ∘ f ∘ (chartAt LoopPlane p).symm
-
-
 
 def suAlphaChartVariation (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
     (u : LoopPlane → EuclideanSpace ℝ (Fin n))
@@ -46,8 +32,6 @@ def suAlphaChartVariation (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
     ((∑ i : Fin 2, fderiv ℝ G (u z) (phi z) (V i z) (V i z)) +
       2 * ∑ i : Fin 2, G (u z) (V i z)
         (fderiv ℝ phi z (EuclideanSpace.single i 1)))
-
-
 
 structure SUWeakAlphaChart (g : RiemannianMetric n M) (alpha : ℝ)
     (f : C(UnitTwoSphere, M)) (p : UnitTwoSphere) where
@@ -79,16 +63,10 @@ structure SUWeakAlphaChart (g : RiemannianMetric n M) (alpha : ℝ)
     (∫ z in Metric.ball ((chartAt LoopPlane p) p) radius,
       suAlphaChartVariation g (f p) alpha (suAlphaChartCoordinate (n := n) f p) column phi z) = 0
 
-
-
-
 structure SUWeakAlphaSphere (g : RiemannianMetric n M) (eps0 alpha : ℝ) where
   alpha_mem : alpha ∈ Ioo 1 (1 + eps0)
   map : C(UnitTwoSphere, M)
   chart : ∀ p : UnitTwoSphere, SUWeakAlphaChart g alpha map p
-
-
-
 
 structure SUWeakAlphaCoordinate (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
     (u : LoopPlane → EuclideanSpace ℝ (Fin n))
@@ -111,17 +89,10 @@ structure SUWeakAlphaCoordinate (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
     ContDiff ℝ ∞ phi → HasCompactSupport phi → tsupport phi ⊆ Metric.ball center radius →
     (∫ z in Metric.ball center radius, suAlphaChartVariation g b alpha u V phi z) = 0
 
-
-
-
-
-
 def SUAlphaOneSmoothness (g : RiemannianMetric n M) : Prop :=
   ∀ (b : M) (u : LoopPlane → EuclideanSpace ℝ (Fin n))
     (V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin n)) (center : LoopPlane) (radius : ℝ),
     SUWeakAlphaCoordinate g b 1 u V center radius → ContDiffAt ℝ ∞ u center
-
-
 
 theorem SUWeakAlphaChart.coordinateData {g : RiemannianMetric n M} {alpha : ℝ}
     {f : C(UnitTwoSphere, M)} {p : UnitTwoSphere} (S : SUWeakAlphaChart g alpha f p) :
@@ -140,8 +111,6 @@ theorem SUWeakAlphaChart.coordinateData {g : RiemannianMetric n M} {alpha : ℝ}
   weak_derivative := S.weak_derivative
   variation_integrable := S.variation_integrable
   variation_zero := S.variation_zero
-
-
 
 structure SUInitialGain {m : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin m))
@@ -163,9 +132,6 @@ structure SUInitialGain {m : ℕ}
   second_weak_derivative : ∀ (i j : Fin 2) (a : Fin m),
     HasWeakPartialDeriv j (fun z => hessian i j z a) (fun z => V i z a)
       (Metric.ball center radius)
-
-
-
 
 structure SUQuadraticWeakSystem {m : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin m))

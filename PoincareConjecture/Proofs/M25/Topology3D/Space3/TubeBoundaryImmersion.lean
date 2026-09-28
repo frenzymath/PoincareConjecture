@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceSurfacePullback
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem tube_boundary_smooth_immersion (e : OpenPartialHomeomorph (E2 × ℝ) E3)
     (he : ContDiffOn ℝ ∞ e e.source) (hei : ContDiffOn ℝ ∞ e.symm e.target)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCapNaturality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits

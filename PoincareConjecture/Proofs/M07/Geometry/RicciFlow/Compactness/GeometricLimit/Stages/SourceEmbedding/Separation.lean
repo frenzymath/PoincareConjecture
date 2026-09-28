@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceSeparation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem eventually_source_extension_eq_iff
     {Q Y : Type*} [MetricSpace Q] [TopologicalSpace Y]

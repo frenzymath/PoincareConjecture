@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Gradient.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture
-
-
 
 theorem scalarGradientNorm_eq_of_local_isometry
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

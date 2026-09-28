@@ -2,16 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.Completion
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.Normed.Operator.Extend
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,7 +13,6 @@ namespace Poincare.Analysis.Dirichlet
 
 variable {V H : Type*} [SeminormedAddCommGroup V] [InnerProductSpace ℝ V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
-
 
 def completionMap (j : V →L[ℝ] H) : Completion V →L[ℝ] H :=
   j.extend Completion.toComplL
@@ -39,7 +28,6 @@ theorem norm_completionMap_apply_le (j : V →L[ℝ] H) {C : ℝ}
   | hp => exact isClosed_le (completionMap j).continuous.norm (continuous_const.mul continuous_norm)
   | ih v => simpa using hj v
 
-
 def resolvent (j : V →L[ℝ] H) : H →L[ℝ] Completion V :=
   (completionMap j).adjoint
 
@@ -53,7 +41,6 @@ theorem resolvent_unique (j : V →L[ℝ] H) (f : H) (u : Completion V)
   apply ext_inner_right ℝ
   intro v
   rw [hu, resolvent_inner]
-
 
 theorem resolvent_unique_of_test (j : V →L[ℝ] H) (f : H) (u : Completion V)
     (hu : ∀ v : V, ⟪u, (v : Completion V)⟫_ℝ = ⟪f, j v⟫_ℝ) :
@@ -72,7 +59,6 @@ theorem norm_resolvent_le (j : V →L[ℝ] H) (hj : ∀ v, ‖j v‖ ≤ ‖v‖
   rw [LinearIsometryEquiv.norm_map]
   exact (completionMap j).opNorm_le_bound zero_le_one fun v =>
     norm_completionMap_apply_le j (C := 1) (by simpa using hj) v
-
 
 def ambientResolvent (j : V →L[ℝ] H) : H →L[ℝ] H :=
   (completionMap j).comp (resolvent j)

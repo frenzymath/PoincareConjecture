@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPush
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem IsSimplePolygonalArc.terminal_path_isSimplePolygon {n k : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) (hk : 2 ≤ k)

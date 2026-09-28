@@ -4,24 +4,11 @@ import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Algebra.Group.Units
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
 
 namespace BrownCollar
-
-
-
-
 
 theorem exists_coherent_normal_product_units
     {P X ι : Type*} [TopologicalSpace P] [TopologicalSpace X]

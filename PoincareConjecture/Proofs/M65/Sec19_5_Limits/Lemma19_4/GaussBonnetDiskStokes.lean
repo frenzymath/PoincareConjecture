@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskTraceDivergence
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarMeasure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +9,6 @@ open Set MeasureTheory Real
 open scoped ContDiff Topology intervalIntegral
 
 namespace PoincareConjecture.M65Gauss
-
-
-
-
 
 theorem integral_divergence_loopDisk_off_countable
     (X : LoopPlane → LoopPlane) (d : LoopPlane → ℝ) (S : Set LoopPlane)

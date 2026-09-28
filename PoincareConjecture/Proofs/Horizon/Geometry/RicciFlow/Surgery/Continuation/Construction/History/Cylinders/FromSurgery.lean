@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Cylinders.LiftedBoxes
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Cylinders.LocalEmbedding
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,7 +24,6 @@ variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
   (hguard : ∀ s hs, e.forward s hs '' U ⊆ m33RegularRegion F (origin + s / scale))
 
 include hguard
-
 
 def fromSurgeryCylinder : GeneralizedFlowCylinder (generalized W L) C origin scale J U where
   scale_pos := e.scale_pos
@@ -60,7 +51,6 @@ theorem fromSurgeryCylinder_pullbackInner (hU : IsOpen U)
     (fromSurgeryCylinder W L e htime hguard).pullbackInner s hs x v w =
       e.pullbackInner s hs x v w :=
   lifted_pullbackInner W e htime hguard hU s hs x hx v w
-
 
 theorem cylinders_from_surgery (hU : IsOpen U) :
     ∃ d : GeneralizedFlowCylinder (generalized W L) C origin scale J U,

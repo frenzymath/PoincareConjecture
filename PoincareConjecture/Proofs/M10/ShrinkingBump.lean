@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -16,7 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 noncomputable def shrinkingBump (r : ℝ) (hr : 0 < r) (j : ℕ) : ContDiffBump (0 : E) where
   rIn := r / ((j : ℝ) + 1) / 2

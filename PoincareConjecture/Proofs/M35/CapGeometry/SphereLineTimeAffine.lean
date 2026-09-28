@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SphereLineChartTime
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundFactorTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 theorem sphereLineFactor_hasDerivWithinAt (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (q : UnitTwoSphere) (x u v : E2) :
@@ -50,8 +40,6 @@ theorem sphereLineFactor_hasDerivWithinAt (N : M27SphereLineFlowCertificate K)
   change G x u v = G (cylinderCoordinateEquiv (cylinderCoordinateEquiv.symm (x, 0))).1 u v
   rw [ContinuousLinearEquiv.apply_symm_apply]
 
-
-
 theorem sphereLineChartMetric_time_affine (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (q : UnitTwoSphere) (x u v : V) :
     (sphereLineChartMetric N t q).inner x u v =
@@ -67,9 +55,6 @@ theorem sphereLineChartMetric_time_affine (N : M27SphereLineFlowCertificate K)
       (fun s hs => sphereLineFactor_hasDerivWithinAt N s hs q) t ht]
   ring
 
-
-
-
 theorem sphereLineChartMetric_two_times (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (tau : ℝ) (htau : 0 < tau)
     (q : UnitTwoSphere) (x u v : V) :
@@ -80,8 +65,6 @@ theorem sphereLineChartMetric_two_times (N : M27SphereLineFlowCertificate K)
     sphereLineChartMetric_time_affine N (-tau) (neg_nonpos.mpr htau.le)]
   field_simp [htau.ne']
   ring
-
-
 
 theorem sphereLine_metric_two_times (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (tau : ℝ) (htau : 0 < tau)

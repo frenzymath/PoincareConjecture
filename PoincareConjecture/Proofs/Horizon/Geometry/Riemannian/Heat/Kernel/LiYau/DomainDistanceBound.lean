@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.D
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Distance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology Bundle
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem exists_liYau_radius_error_on_domains
     {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

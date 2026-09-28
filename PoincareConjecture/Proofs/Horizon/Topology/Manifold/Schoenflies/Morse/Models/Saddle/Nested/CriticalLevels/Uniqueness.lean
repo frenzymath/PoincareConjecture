@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalLevels.Finite
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
 noncomputable section
 set_option autoImplicit false
 

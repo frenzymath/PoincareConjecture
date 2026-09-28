@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.ClosedSetNesting
 import PoincareConjecture.Proofs.M38.SurgeryBallTopology
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,9 +9,6 @@ open Set Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem sphereBalls_nested_or_disjoint
     (B C : SurgeryBallEmbedding sphereCarrier.{u})
@@ -35,9 +22,6 @@ theorem sphereBalls_nested_or_disjoint
     (surgeryBall_closedBall_connected B).isPreconnected
     (sphereBall_complement_connected B).isPreconnected
     (surgeryBall_frontier_connected C).isPreconnected hdisjoint p hpB hpC
-
-
-
 
 theorem exists_innermost_sphereBall {I : Type*} [Finite I] [Nonempty I]
     (B : I → SurgeryBallEmbedding sphereCarrier.{u})

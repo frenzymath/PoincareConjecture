@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Connectedness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.BoundaryEscape
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology NNReal
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem exists_partial_radius_exhaustion
     {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]
@@ -69,8 +58,6 @@ theorem exists_partial_radius_exhaustion
   · intro q
     induction q using Quotient.inductionOn with
     | h q => exact (hrlim.eventually (lt_mem_nhds (hrange q.1 q.2))).exists
-
-
 
 theorem partial_boundary_control_of_chart_approximation
     {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]

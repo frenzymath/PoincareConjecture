@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.EventCapCoordinates
 import PoincareConjecture.Proofs.M38.EventSlices
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +14,8 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
 noncomputable def eventCappingNeighborhood : Set (F.slice (F.event T hT).tMinus).carrier :=
   ⋃ i, (P i).collar '' (Set.univ ×ˢ Set.Ioo (-1 / 2 : ℝ) (1 / 2))
-
 
 theorem eventCappingNeighborhood_open : IsOpen (eventCappingNeighborhood F T hT P) := by
   apply isOpen_iUnion
@@ -34,11 +24,8 @@ theorem eventCappingNeighborhood_open : IsOpen (eventCappingNeighborhood F T hT 
   intro z hz
   exact ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
 
-
 noncomputable def eventCappingRemainder : Set (F.slice (F.event T hT).tMinus).carrier :=
   (interior (F.event T hT).retained_pre)ᶜ \ eventCappingNeighborhood F T hT P
-
-
 
 theorem eventCappingRemainder_compact : IsCompact (eventCappingRemainder F T hT P) := by
   have ht := mem_time_domain_before_surgery F hT (F.event T hT).tMinus_nonnegative
@@ -47,8 +34,6 @@ theorem eventCappingRemainder_compact : IsCompact (eventCappingRemainder F T hT 
     isCompact_univ_iff.mp (F.slices_compact _ ht)
   exact (isOpen_interior.isClosed_compl.inter
     (eventCappingNeighborhood_open F T hT P).isClosed_compl).isCompact
-
-
 
 theorem eventCappingRemainder_discarded :
     eventCappingRemainder F T hT P ⊆ (F.event T hT).retained_preᶜ := by
@@ -64,8 +49,6 @@ theorem eventCappingRemainder_discarded :
   subst s
   apply hx.2
   exact Set.mem_iUnion.mpr ⟨i, (z, 0), ⟨Set.mem_univ _, by norm_num⟩, hmap⟩
-
-
 
 theorem eventCappingRemainder_cover {x : (F.slice (F.event T hT).tMinus).carrier}
     (hx : x ∈ (F.event T hT).retained_preᶜ)

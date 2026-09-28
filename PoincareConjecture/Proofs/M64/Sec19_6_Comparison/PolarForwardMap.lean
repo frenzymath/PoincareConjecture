@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarAnnulusMap
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.Calculus.FDeriv.WithLp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +12,8 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
-
 noncomputable def m64PolarForwardMap (p : LoopPlane) : LoopPlane :=
   ((1 / 2 : ℝ) * (p 1 + 1)) • angularPoint (p 0)
-
-
-
 
 theorem m64PolarForwardMap_hasFDerivAt (p : LoopPlane) :
     HasFDerivAt (𝕜 := ℝ) m64PolarForwardMap
@@ -49,9 +33,6 @@ theorem m64PolarForwardMap_hasFDerivAt (p : LoopPlane) :
       ((1 / 2 : ℝ) * w 1) * angularPoint (p 0) i
   ring
 
-
-
-
 theorem m64PolarAnnulusMap_comp_forward
     {Y : Type*} {f : LoopPlane → Y}
     (hperiodic : ∀ x s : ℝ,
@@ -64,9 +45,6 @@ theorem m64PolarAnnulusMap_comp_forward
   rw [harg] at h
   have hpoint : annulusPoint (p 0) (p 1) = p := by ext i; fin_cases i <;> rfl
   simpa only [m64PolarForwardMap, hpoint] using h
-
-
-
 
 theorem m64PolarAnnulusMap_comp_forward_eventually
     {Y : Type*} {f : LoopPlane → Y}

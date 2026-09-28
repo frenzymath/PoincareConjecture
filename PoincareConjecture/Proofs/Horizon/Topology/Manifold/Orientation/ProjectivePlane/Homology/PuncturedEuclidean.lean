@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Rela
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homology.IntegralHomologyEquiv
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereOpenCover
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

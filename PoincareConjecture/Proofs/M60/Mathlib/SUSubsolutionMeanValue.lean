@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.EnergyMeanValue
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Powers
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +8,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff ENNReal NNReal
 
 namespace PoincareConjecture.M60
-
-
 
 theorem exists_plane_subsolution_mean_value {a b Λ : ℝ}
     (ha : 0 < a) (hb : 0 ≤ b) (hΛ : 0 ≤ Λ) :

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalTriangleBoundaryDegree
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Contacts.Endpoints
 
-
-
 set_option autoImplicit false
 open Set Geometry Filter
 open scoped Topology
@@ -72,6 +70,4 @@ theorem ncard_surface_triangle_boundary_neighborSet_eq_one
       (by simpa only [Q.right_inv hwQ] using hlocal)
   simpa only [Q.right_inv hwQ] using hdegree
 
-
 end PoincareConjecture.M76
-

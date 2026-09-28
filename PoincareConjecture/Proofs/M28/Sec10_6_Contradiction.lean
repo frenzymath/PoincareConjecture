@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LimitData
 import PoincareConjecture.Proofs.M28.Thm10_2_SameTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem same_time_of_tube_contradiction {epsilon₀ : ℝ}
     (hproduce : ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ epsilon₀ →

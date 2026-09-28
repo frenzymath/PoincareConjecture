@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeReference
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,12 +8,8 @@ open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def capBallVolumeCoefficient (C : ℝ) : ℝ :=
   ((100 * C)⁻¹) ^ 3 / (8 * C * (2 * C) ^ 3)
-
-
 
 theorem capBallVolumeCoefficient_pos {C : ℝ} (hC : 0 < C) :
     0 < capBallVolumeCoefficient C := by
@@ -42,10 +28,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [T3Space M] [T3Space X] [SecondCountableTopology M] [SecondCountableTopology X]
   [ConnectedSpace M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem normalized_image_core_ball_volume_lower
     {C : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)

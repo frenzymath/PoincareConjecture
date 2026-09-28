@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) {c d : ℝ → ℝ → M}
   {phi : ℝ → ℝ} {t : ℝ}
-
-
 
 theorem curvatureEnergy_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -41,9 +30,6 @@ theorem curvatureEnergy_eq_of_relabeling (hd : M62ShrinkingCurve F d)
       dsimp only
       rw [curvatureSquared_congr_slice F hcd, curveSpeed_congr_slice F hcd]
     _ = _ := smooth_curvatureEnergy_comp F d hd hphi hpos hshift ht
-
-
-
 
 theorem length_energy_bound_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)

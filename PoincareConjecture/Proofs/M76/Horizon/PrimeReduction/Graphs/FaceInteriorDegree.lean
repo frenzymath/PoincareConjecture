@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.TransverseEdgeFaceGerm
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.TransverseTriangleInteriorSection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter Module
@@ -23,8 +12,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_two_segment_section_of_transverse_face
     (P : SimplicialComplex ℝ V3) (hP : P.faces.Finite)
@@ -82,8 +69,6 @@ theorem exists_two_segment_section_of_transverse_face
         (by simp) ha (by omega) A hwa hwzero hne
   exact hsection
 
-
-
 theorem ncard_face_graph_neighbors_of_local_disks_outside_protection
     (P J T G : SimplicialComplex ℝ V3) (hP : P.faces.Finite)
     (hbound : ∀ a ∈ P.faces, a.card ≤ 3)
@@ -131,8 +116,6 @@ theorem ncard_face_graph_neighbors_of_local_disks_outside_protection
   filter_upwards [hsection, htarget] with x hx hxt
   rw [hGs, mem_inter_iff, hxt]
   exact hx
-
-
 
 theorem ncard_face_graph_neighbors_of_local_disks
     (P J T G : SimplicialComplex ℝ V3) (hP : P.faces.Finite)

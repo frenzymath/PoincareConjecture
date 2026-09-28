@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralAmbientRelative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +15,10 @@ open PoincareConjecture.Proofs.M02.Topology
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
 def pairSubspaceMap (f : C(X, Y)) {A : Set X} {B : Set Y}
     (hf : MapsTo f A B) : C(A, B) :=
   ⟨fun x => ⟨f x, hf x.property⟩,
     (f.continuous.comp continuous_subtype_val).subtype_mk _⟩
-
-
 
 @[reassoc]
 theorem integralRelativeBoundary_naturality
@@ -50,8 +38,6 @@ theorem integralRelativeBoundary_naturality
       comm₂₃ := (integralRelativeMap_projection f hf).symm }
   exact (HomologySequence.δ_naturality F (integralPairSequence_shortExact A)
     (integralPairSequence_shortExact B) (n + 1) n rfl).symm
-
-
 
 theorem integralRelativeBoundary_isIso [ContractibleSpace X] (A : Set X) (n : Nat) :
     IsIso (integralRelativeBoundary A (n + 1)) := by

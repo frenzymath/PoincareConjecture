@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationExtensions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,15 +14,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 noncomputable def variationBoundaryPair (V : M14LVariationData G p R) (s : ℝ) : ℝ :=
   G.spacetime.horizontalMetric.inner (R.curve s)
     (R.horizontal_velocity s) (M14VariationField V s)
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem variationBoundaryPair_contDiffOn (V : M14LVariationData G p R) :
     ContDiffOn ℝ ∞ (variationBoundaryPair V) (M14SqrtParameterInterval τ₁ τ₂) := by
@@ -46,8 +34,6 @@ theorem variationBoundaryPair_contDiffOn (V : M14LVariationData G p R) :
     simpa only [Bundle.Trivial.fiberBundle_trivializationAt', Bundle.Trivial.trivialization_apply]
       using (Bundle.contMDiffWithinAt_totalSpace.mp (hpair s hs)).2
   exact h.contDiffOn
-
-
 
 theorem hasDerivWithinAt_variationBoundaryPair
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)

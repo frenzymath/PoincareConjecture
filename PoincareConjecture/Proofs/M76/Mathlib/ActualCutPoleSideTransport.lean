@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleSegmentSideTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -18,12 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_actual_cut_pole_filling_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

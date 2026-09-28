@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Normalizati
 import PoincareConjecture.Proofs.Horizon.LinearAlgebra.BilinearForm.OrthogonalRestriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -102,9 +95,6 @@ private lemma ricci_smul_self (D : LeviCivitaData g)
     ← Finset.mul_sum]
   ring
 
-
-
-
 lemma inner_connection_unitNormal (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M)
     (hreg : 0 < g.inner x (D.gradient f x) (D.gradient f x))
@@ -128,10 +118,6 @@ lemma inner_connection_unitNormal (D : LeviCivitaData g)
   simp only [a, q, div_eq_mul_inv, mul_comm]
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
-
 
 theorem integral_hypersurface_bochner (D : LeviCivitaData g)
     {φ f : M → ℝ} (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ)

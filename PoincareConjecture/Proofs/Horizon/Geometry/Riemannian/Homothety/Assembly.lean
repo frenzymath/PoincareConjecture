@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Completen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +14,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
-
 
 theorem metricHomothetyCalculus
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

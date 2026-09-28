@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricPointedArcLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +7,6 @@ open Set Geometry
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem pointed_cap_collar_arc_inter_fixed_residual
     {d b R : Set E} (H : E ≃ₜ E) {A r upper : E → ℝ} {f : E → E} {a c : ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.InteriorSecondDerivatives
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.VectorDivergence
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawStrongHeat
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

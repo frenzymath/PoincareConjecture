@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckError
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticComparison
 import PoincareConjecture.Proofs.M34.Standard.CapIsometryPullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => StandardCapSpace
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 theorem exists_actualCap_neck_normalized_comparison_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

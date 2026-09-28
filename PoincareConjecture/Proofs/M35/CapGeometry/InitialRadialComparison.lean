@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialNormalizedProfile
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 def InitialRadialComparison (P : RicciFlowCurvatureTheory.{0})
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -28,8 +18,6 @@ def InitialRadialComparison (P : RicciFlowCurvatureTheory.{0})
   let b := (Real.sqrt Q)⁻¹
   0 < a - b * epsilon⁻¹ ∧ RoundCylinderClose epsilon 0 (radialCylinderTensor
     (fun u => Q * rawWarpingRadius P E.flow.base E.rotation_invariant t (a + b * u) ^ 2) 1)
-
-
 
 theorem initial_radial_comparison_eventually
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -82,8 +70,6 @@ theorem initial_radial_comparison_eventually
     have hh := hn k hk z ⟨mem_univ _, ⟨hz.1.le, hz.2.le⟩⟩
     rw [sub_zero] at hh
     exact le_of_lt ((le_abs_self _).trans_lt hh)
-
-
 
 theorem exists_initial_radial_comparison_threshold
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

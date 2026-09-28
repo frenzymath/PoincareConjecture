@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.SphereBundleFlow
 import PoincareConjecture.Proofs.M38.SmoothCoverLift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set Filter Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_sphereBundle_pullback_cylinder (Q : GeneralizedSliceCarrier)
     [CompactSpace Q.carrier] (B : SurgerySphereBundle Q) :

@@ -3,25 +3,12 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Topology.UnitInterval
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_reference_connector_image
     (e : OpenPartialHomeomorph UnitTwoSphere (ℝ × ℝ))

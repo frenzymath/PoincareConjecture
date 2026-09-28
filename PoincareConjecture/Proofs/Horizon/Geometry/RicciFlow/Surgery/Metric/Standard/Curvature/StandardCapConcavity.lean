@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.RadialCompleteness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Tensors.RiemannRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -299,9 +292,6 @@ private theorem warp_radial_numerator (g₀ : StandardInitialMetric) {r : ℝ} (
   dsimp only [b, d] at halg
   linarith only [hDW, hDV, halg]
 
-
-
-
 theorem standardCap_sectional_radial (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     g₀.connection.sectionalCurvature (axisPoint r) (axisBasis 0) (axisBasis 1) =
       -deriv (deriv (axisTangentialCoefficient g₀)) r /
@@ -319,7 +309,6 @@ theorem standardCap_sectional_radial (g₀ : StandardInitialMetric) {r : ℝ} (h
   field_simp [hr.ne', (axisRadialCoefficient_pos g₀ r).ne',
     (axisTangentialCoefficient_pos g₀ r).ne']
   ring
-
 
 noncomputable def angularRadiusSlope (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   deriv (euclideanWarpRadius g₀) r / radialSpeed g₀ r
@@ -391,8 +380,6 @@ private theorem warp_slope_deriv (g₀ : StandardInitialMetric) (r : ℝ) :
   simpa only [Pi.div_def, warp_speed_deriv] using
     (hp.div hl (radialSpeed_pos g₀ r).ne').deriv
 
-
-
 theorem standardCap_sectional_radial_slope (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :
     g₀.connection.sectionalCurvature (axisPoint r) (axisBasis 0) (axisBasis 1) =
@@ -434,7 +421,6 @@ theorem angularRadiusSlope_antitoneOn (g₀ : StandardInitialMetric) :
     ((angularRadiusSlope_contDiff g₀).differentiable (by simp)).differentiableOn
   intro r hr
   exact angularRadiusSlope_deriv_nonpos g₀ (by simpa only [interior_Ioi, mem_Ioi] using hr)
-
 
 theorem angularRadiusSlope_nonneg (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     0 ≤ angularRadiusSlope g₀ r := by
@@ -573,8 +559,6 @@ private theorem warp_tip_radial_sectional (g₀ : StandardInitialMetric) :
     (inv_ne_zero (Real.sqrt_pos.mpr (axisTangentialCoefficient_pos g₀ r)).ne')] at hk
   exact hk
 
-
-
 theorem angularRadiusSlope_lt_one (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     angularRadiusSlope g₀ r < 1 := by
   obtain ⟨e, he, htip⟩ := warp_tip_radial_sectional g₀
@@ -602,8 +586,6 @@ theorem angularRadiusSlope_lt_one (g₀ : StandardInitialMetric) {r : ℝ} (hr :
   exact (angularRadiusSlope_antitoneOn g₀ ht0 hr htr.le).trans_lt
     ((hstrict ⟨hs0, hst.trans hte⟩ ⟨ht0, hte⟩ hst).trans_le hqs)
 
-
-
 theorem standardCap_sectional_tangential_pos (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :
     0 < g₀.connection.sectionalCurvature (axisPoint r) (axisBasis 1) (axisBasis 2) := by
@@ -625,6 +607,5 @@ theorem standardCap_sectional_tangential_pos (g₀ : StandardInitialMetric)
   have hnum := (div_lt_one hden).mp hq
   rw [standardCap_sectional_tangential g₀ hr]
   exact div_pos (sub_pos.mpr hnum) (by positivity)
-
 
 end PoincareConjecture.MetricSurgery

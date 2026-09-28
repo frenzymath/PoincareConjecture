@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBaseCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ConvexAffineSectionBallPair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,9 +15,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem frontier_vertex_ballPair (p : (T.marked 2).vertices)
     (hpfront : (p : T.index → ℝ × V3) ∈ (T.marked 1).space) :

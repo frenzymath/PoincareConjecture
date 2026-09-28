@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M09.VelocityChainRules
 import Mathlib.Analysis.Calculus.Deriv.Shift
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem speed_periodic
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -54,8 +43,6 @@ theorem speed_periodic
     (F.metric t).tangentNorm (c x t) (curveVelocity (fun y => c y t) x)
   rw [← hcomp, hc.periodic t ht x]
 
-
-
 theorem curvatureSquared_periodic
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Set.Ioo a b) :
@@ -68,8 +55,6 @@ theorem curvatureSquared_periodic
   rw [hc.equation t ht (x + curvePeriod), hc.equation t ht x] at hvel
   dsimp only [m62CurvatureSquared]
   rw [hvel, hc.periodic t (Set.Ioo_subset_Icc_self ht) x]
-
-
 
 theorem integral_regularized_arcSecond_eq_zero
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)

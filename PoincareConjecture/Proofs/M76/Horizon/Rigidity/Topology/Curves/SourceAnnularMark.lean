@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.OriginalAn
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.SwappedSquareMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.CoordinateGenerator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -95,7 +86,6 @@ theorem SourceSquareMap.exists_original_annular_mark
       ⟨x, Dehn.originalAnnulusOpenMark_subset A x.property⟩).mp x.property)
     gamma hinj g hg hgvalue hessential
 
-
 theorem SourceSquareMap.exists_two_original_annular_marks
     {E V X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -165,7 +155,6 @@ theorem SourceSquareMap.exists_two_original_annular_marks
     rw [heq] at hcore
     exact ⟨B, hBS, A, j, hc, hclosed, hj, hjv, hopen, hcore, hret, hcurves⟩
 
-
 noncomputable def sourceAnnularCore {X : Type*} [TopologicalSpace X]
     {B S : Set X} (A : Ann ≃ₜ B) (hBS : B ⊆ S) : C(Circle, S) :=
   (ContinuousMap.inclusion hBS).comp
@@ -175,7 +164,6 @@ theorem sourceAnnularCore_mem_mark {X : Type*} [TopologicalSpace X]
     {B S : Set X} (A : Ann ≃ₜ B) (hBS : B ⊆ S) (z : Circle) :
     (sourceAnnularCore A hBS z : X) ∈ Dehn.originalAnnulusOpenMark A :=
   Dehn.originalAnnulusOpenMark_contains_core A z
-
 
 theorem sourceAnnularCore_periodLoop_not_isOfFinOrder
     {X : Type*} [TopologicalSpace X] {p : ℝ} [Fact (0 < p)]

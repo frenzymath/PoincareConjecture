@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLinearChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,10 +11,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
-
-
-
-
 
 theorem m65Embedding_exists_bounded_chart (e : M → EuclideanSpace ℝ (Fin N))
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

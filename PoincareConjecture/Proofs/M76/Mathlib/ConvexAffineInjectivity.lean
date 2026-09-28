@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexLinearInjectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace AffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [AddCommGroup F] [Module ℝ F]
-
-
 
 theorem injOn_affineSpan_of_injOn_convex (a : E →ᵃ[ℝ] F) {C : Set E}
     (hC : Convex ℝ C) (hne : C.Nonempty) (ha : InjOn a C) :
@@ -28,8 +18,6 @@ theorem injOn_affineSpan_of_injOn_convex (a : E →ᵃ[ℝ] F) {C : Set E}
   have hl : InjOn a.linear C := fun x hx y hy h => ha hx hy ((heq x y).mpr h)
   have hspan := a.linear.injOn_affineSpan_of_injOn_convex hC hne hl
   exact fun x hx y hy h => hspan hx hy ((heq x y).mp h)
-
-
 
 theorem affineIndependent_comp_of_injOn_convexHull {ι : Type*} (a : E →ᵃ[ℝ] F)
     {p : ι → E} (hp : AffineIndependent ℝ p)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M39.Prop15_12_PathBounds
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Bundle Manifold
@@ -27,12 +16,8 @@ section ChartCorrection
 variable {M E A : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace A]
 
-
-
 noncomputable def chartCorrection (e : OpenPartialHomeomorph M E) (f : E → E) : M → M :=
   chartPerturb e e.source id (fun x => f (e x) - e x)
-
-
 
 theorem chartCorrection_of_mem (e : OpenPartialHomeomorph M E) (f : E → E)
     {x : M} (hx : x ∈ e.source) : chartCorrection e f x = e.symm (f (e x)) := by
@@ -41,13 +26,9 @@ theorem chartCorrection_of_mem (e : OpenPartialHomeomorph M E) (f : E → E)
   dsimp only [id_eq]
   abel
 
-
-
 theorem chartCorrection_of_not_mem (e : OpenPartialHomeomorph M E) (f : E → E)
     {x : M} (hx : x ∉ e.source) : chartCorrection e f x = x := by
   simp [chartCorrection, chartPerturb, hx]
-
-
 
 theorem chartCorrection_eq_self (e : OpenPartialHomeomorph M E) {f : E → E} {K : Set E}
     (hfix : ∀ z ∉ K, f z = z) {x : M} (hx : x ∉ e.symm '' K) :
@@ -57,8 +38,6 @@ theorem chartCorrection_eq_self (e : OpenPartialHomeomorph M E) {f : E → E} {K
     rw [chartCorrection_of_mem e f hxs, hfix _ hex, e.left_inv hxs]
   · exact chartCorrection_of_not_mem e f hxs
 
-
-
 theorem chartCorrection_eventuallyEq (e : OpenPartialHomeomorph M E)
     {f : E → E} {K : Set E} (hK : IsCompact K) (hKe : K ⊆ e.target)
     (hfix : ∀ z ∉ K, f z = z) {x : M} (hx : x ∉ e.symm '' K) :
@@ -67,9 +46,6 @@ theorem chartCorrection_eventuallyEq (e : OpenPartialHomeomorph M E)
     hK.image_of_continuousOn (e.continuousOn_symm.mono hKe)
   filter_upwards [hc.isClosed.isOpen_compl.mem_nhds hx] with y hy
   exact chartCorrection_eq_self e hfix hy
-
-
-
 
 theorem continuous_chartCorrection_family (e : OpenPartialHomeomorph M E)
     {F : A → E → E} (hF : Continuous (uncurry F))
@@ -98,8 +74,6 @@ theorem continuous_chartCorrection_family (e : OpenPartialHomeomorph M E)
     filter_upwards [(hc.isClosed.isOpen_compl.preimage continuous_snd).mem_nhds hxK] with p hp
     exact chartCorrection_eq_self e (hfix p.1) hp
 
-
-
 theorem continuous_chartCorrection (e : OpenPartialHomeomorph M E) {f : E → E}
     (hf : Continuous f) {K : Set E} (hK : IsCompact K) (hKe : K ⊆ e.target)
     (hrange : MapsTo f e.target e.target) (hfix : ∀ z ∉ K, f z = z) :
@@ -108,8 +82,6 @@ theorem continuous_chartCorrection (e : OpenPartialHomeomorph M E) {f : E → E}
     (F := fun _ => f) (hf.comp continuous_snd) hK hKe (fun _ => hrange) (fun _ => hfix)
   exact hc.comp
     ((continuous_const : Continuous (fun _ : M => Unit.unit)).prodMk continuous_id)
-
-
 
 noncomputable def chartCorrectionHomotopy (e : OpenPartialHomeomorph M E)
     {f : C(E, E)} (H : (ContinuousMap.id E).Homotopy f)
@@ -143,9 +115,6 @@ variable {M E H : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace H] [ChartedSpace H M]
   {J : ModelWithCorners ℝ E H}
 
-
-
-
 theorem contMDiff_chartCorrection (e : OpenPartialHomeomorph M E) {f : E → E}
     (hf : ContDiff ℝ ∞ f)
     (he : ContMDiffOn J 𝓘(ℝ, E) ∞ e e.source)
@@ -178,16 +147,10 @@ section RiemannianCoordinates
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 noncomputable def chartPullbackNorm (g : RiemannianMetric 3 M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
     (p : EuclideanSpace ℝ (Fin 3) × EuclideanSpace ℝ (Fin 3)) : ℝ :=
   g.tangentNorm (e.symm p.1) (mfderiv (𝓡 3) (𝓡 3) e.symm p.1 p.2)
-
-
-
 
 theorem continuousOn_chartPullbackNorm (g : RiemannianMetric 3 M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
@@ -217,8 +180,6 @@ theorem continuousOn_chartPullbackNorm (g : RiemannianMetric 3 M)
     hV.inner_bundle hV
   exact hi.sqrt
 
-
-
 theorem chartPullbackNorm_pos (g : RiemannianMetric 3 M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
     (he : e.MDifferentiable (𝓡 3) (𝓡 3))
@@ -232,8 +193,6 @@ theorem chartPullbackNorm_pos (g : RiemannianMetric 3 M)
   change (w : TangentSpace (𝓡 3) z) = 0
   apply he.symm.mfderiv_injective hz
   exact hzero.trans (map_zero (mfderiv (𝓡 3) (𝓡 3) e.symm z)).symm
-
-
 
 theorem chartPullbackNorm_smul (g : RiemannianMetric 3 M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
@@ -255,9 +214,6 @@ section RiemannianCorrection
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem mfderiv_chartCorrection
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
     {f : EuclideanSpace ℝ (Fin 3) → EuclideanSpace ℝ (Fin 3)}
@@ -276,9 +232,6 @@ theorem mfderiv_chartCorrection
       (hfm.comp x (he.mdifferentiableAt hx)),
     mfderiv_comp x hfm (he.mdifferentiableAt hx), mfderiv_eq_fderiv]
   rfl
-
-
-
 
 theorem chartCorrection_pullback_le (g : RiemannianMetric 3 M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
@@ -348,10 +301,6 @@ theorem chartCorrection_pullback_le (g : RiemannianMetric 3 M)
     change B x v v ≤ C ^ 2 * B x v v
     exact le_mul_of_one_le_left (hg_nonneg x v) (by nlinarith)
 
-
-
-
-
 theorem exists_smooth_pointCorrection [RegularSpace M]
     (g : RiemannianMetric 3 M) (b : M) {η : ℝ} (hη : 0 < η) :
     ∃ r : ℝ, 0 < r ∧ ∀ a : M, g.edist a b < ENNReal.ofReal r →
@@ -404,10 +353,6 @@ theorem exists_smooth_pointCorrection [RegularSpace M]
     exact M39.metric_edist_le_mul_of_pullback g g (by linarith) hp
       (chartCorrection_pullback_le g e hf heM hK hKe hrange hfix (by linarith) hfbound) x y
 
-
-
-
-
 theorem exists_smooth_pointCorrected_map [RegularSpace M]
     {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -434,10 +379,6 @@ theorem exists_smooth_pointCorrected_map [RegularSpace M]
         mul_le_mul' le_rfl (hbound x y)
       _ = ENNReal.ofReal ((1 + η) * C) * g.edist x y := by
         rw [ENNReal.ofReal_mul (by linarith : 0 ≤ 1 + η), mul_assoc]
-
-
-
-
 
 theorem exists_smooth_pointCorrected_map_with_loss [RegularSpace M]
     {X : Type*} [TopologicalSpace X]
@@ -466,6 +407,5 @@ theorem exists_smooth_pointCorrected_map_with_loss [RegularSpace M]
   exact mul_le_mul' (ENNReal.ofReal_le_ofReal hbudget) le_rfl
 
 end RiemannianCorrection
-
 
 end PoincareConjecture.M40

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.BoundaryCircleAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceDiskBoundary
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

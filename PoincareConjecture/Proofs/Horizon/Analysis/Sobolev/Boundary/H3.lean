@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.LocalTangenti
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.NormalH3
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -105,8 +99,6 @@ private theorem memWkp_two_of_local_principal
     (fun i => (hw i).restrict hVH inter_subset_right)
     (exists_tangential_weakPartial_of_local_weakEquation B hW hV hVc hVW hu hf hp hw hF heq')
   exact principal_restrict hsub heq
-
-
 
 theorem memWkp_three_of_weakEquation
     (B : SmoothEllipticBilinearForm d univ)

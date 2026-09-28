@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Complet
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Speed
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_complete_flow_of_bounded_speed (g : RiemannianMetric n M)
     (hc : MetricComplete g) (X : (x : M) → TangentSpace (𝓡 n) x)

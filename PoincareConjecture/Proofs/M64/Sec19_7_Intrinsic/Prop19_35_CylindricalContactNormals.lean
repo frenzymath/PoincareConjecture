@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalContactPositive
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_cylindrical_normal_contact_opposite
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -64,11 +49,6 @@ theorem m64Intrinsic_cylindrical_normal_contact_opposite
     exact Prod.ext hb hheight
   exact m64Intrinsic_first_normal_contact_opposite G hu hS hpS hqS hpheight hqheight
     hne hmeet hinj hip hiq hpunit hqunit hporth hqorth
-
-
-
-
-
 
 theorem m64Intrinsic_nonembedded_normal_strip_has_opposite_contact
     (G : RiemannianMetric 2 AnnulusCoordinates)

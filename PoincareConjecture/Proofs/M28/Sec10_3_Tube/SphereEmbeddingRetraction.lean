@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem exists_sphere_embedding_local_retraction
     {f : UnitTwoSphere → M}

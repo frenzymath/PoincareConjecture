@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderIsotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,16 +9,12 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E]
 
-
-
 theorem norm_apply_le_of_fixed_outside (e : E ≃ₜ E) {R : ℝ}
     (he : ∀ x, R ≤ ‖x‖ → e x = x) {x : E} (hx : ‖x‖ ≤ R) : ‖e x‖ ≤ R := by
   by_contra hn
   have hfix : e (e x) = e x := he _ (le_of_lt (lt_of_not_ge hn))
   have hex : e x = x := e.injective hfix
   exact hn (by simpa only [hex] using hx)
-
-
 
 theorem norm_sub_le_of_fixed_outside (e : E ≃ₜ E) {R : ℝ} (hR : 0 ≤ R)
     (he : ∀ x, R ≤ ‖x‖ → e x = x) (x : E) : ‖e x - x‖ ≤ 2 * R := by
@@ -40,9 +28,6 @@ theorem norm_sub_le_of_fixed_outside (e : E ≃ₜ E) {R : ℝ} (hR : 0 ≤ R)
 
 variable [NormedSpace ℝ E]
 
-
-
-
 theorem alexanderFamily_apply_of_fixed_outside (e : E ≃ₜ E) {R : ℝ}
     (he : ∀ x, R ≤ ‖x‖ → e x = x) {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1)
     {x : E} (hx : R ≤ ‖x‖) : e.alexanderFamily t x = x := by
@@ -54,9 +39,6 @@ theorem alexanderFamily_apply_of_fixed_outside (e : E ≃ₜ E) {R : ℝ}
     exact le_mul_of_one_le_left (norm_nonneg _) ((one_le_inv₀ htpos).mpr ht.2)
   rw [e.alexanderFamily_apply_of_ne_zero ht0, he _ (hx.trans hscale), smul_inv_smul₀ ht0]
 
-
-
-
 noncomputable def alexanderHomotopy (e : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖e x - x‖ ≤ C) :
     ContinuousMap.HomotopyWith (ContinuousMap.id E) ⟨e, e.continuous⟩
@@ -67,8 +49,6 @@ noncomputable def alexanderHomotopy (e : E ≃ₜ E) {C : ℝ}
   map_zero_left x := by simp
   map_one_left x := by simp
   prop' t := (e.alexanderFamily (t : ℝ)).isHomeomorph
-
-
 
 noncomputable def supportedAlexanderHomotopy (e : E ≃ₜ E) {R : ℝ} (hR : 0 ≤ R)
     (he : ∀ x, R ≤ ‖x‖ → e x = x) :

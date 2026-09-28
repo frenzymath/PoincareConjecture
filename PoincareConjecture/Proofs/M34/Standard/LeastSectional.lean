@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.SectionalModelParameters
 import PoincareConjecture.Proofs.M34.Standard.SectionalNormLower
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,23 +11,17 @@ namespace PoincareConjecture.M34
 
 open M04
 
-
-
 theorem modelOrthonormalPairs_three_nonempty : (modelOrthonormalPairs 3).Nonempty := by
   let b := EuclideanSpace.basisFun (Fin 3) ℝ
   refine ⟨(b 0, b 1), b.orthonormal.norm_eq_one 0, b.orthonormal.norm_eq_one 1, ?_⟩
   rw [b.inner_eq_ite]
   norm_num
 
-
-
 noncomputable def modelLeastSectional
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))} (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin 3)) : ℝ :=
   sInf (range (fun p : modelOrthonormalPairs 3 =>
     D.curvatureTensor x p.1.1 p.1.2 p.1.1 p.1.2 / metricGram g x p.1.1 p.1.2))
-
-
 
 theorem le_modelLeastSectional
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))} (D : LeviCivitaData g)
@@ -50,8 +35,6 @@ theorem le_modelLeastSectional
   · exact ⟨_, ⟨⟨p, hp⟩, rfl⟩⟩
   · rintro y ⟨q, rfl⟩
     exact h q.1 q.2
-
-
 
 theorem modelLeastSectional_le
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))} (D : LeviCivitaData g)
@@ -69,8 +52,6 @@ theorem modelLeastSectional_le
   · exact ⟨⟨p, hp⟩, rfl⟩
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem continuous_modelLeastSectional_flow {J : Set ℝ}
     (F : RicciFlow 3 (EuclideanSpace ℝ (Fin 3)) J) :
@@ -93,8 +74,6 @@ theorem continuous_modelLeastSectional_flow {J : Set ℝ}
     (isCompact_univ (X := P)).continuous_sInf hc
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem continuous_modelLeastSectional_slice {J : Set ℝ}
     (F : RicciFlow 3 (EuclideanSpace ℝ (Fin 3)) J) {t : ℝ} (ht : t ∈ J) :

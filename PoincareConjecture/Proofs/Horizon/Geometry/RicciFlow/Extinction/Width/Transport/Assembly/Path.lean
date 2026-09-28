@@ -10,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m67ChangingWidthPathOfSlices
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)
     (W : RepairedEventChildWitness D.flow) {T : ℝ}

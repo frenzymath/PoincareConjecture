@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomologyOpenMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +11,6 @@ open scoped unitInterval
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
 
 theorem integralRelativeMap_homology_isIso_of_pair_inverse
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]

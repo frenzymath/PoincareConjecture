@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.BoundarySubdivision
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -170,7 +160,6 @@ theorem parent_source_subset : convexHull ℝ (range b) ⊆ F.source := by
 
 omit [T2Space M] in
 
-
 theorem carrier_inter_parent_edge (t : D.mesh.Triangle) (i : Fin 3) :
     (∃ k : Fin 3,
       (D.face t).carrier ∩ (F '' affineSegment ℝ (b (i.succAbove 0)) (b (i.succAbove 1))) =
@@ -213,7 +202,6 @@ theorem parent_edge_injective (i : Fin 3) :
   norm_num at h01
 
 omit [T2Space M] in
-
 
 theorem boundary_parameters_of_subset_parent_edge (t : D.mesh.Triangle) (k i : Fin 3)
     (hsub : ((D.face t).boundary k).map '' Icc (0 : ℝ) 1 ⊆
@@ -262,9 +250,6 @@ theorem boundary_parameters_of_subset_parent_edge (t : D.mesh.Triangle) (k i : F
     congr 1
     simp only [affineChartSegment]
     module
-
-
-
 
 theorem carrier_inter_marked_parent_subsegment (t : D.mesh.Triangle) (i : Fin 3)
     (a c : ℝ) (ha : a ∈ Icc (0 : ℝ) 1) (hc : c ∈ Icc (0 : ℝ) 1)

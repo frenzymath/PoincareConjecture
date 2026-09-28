@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInverseChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ variable {E F G X ι : Type*}
   [TopologicalSpace X]
 
 omit [FiniteDimensional ℝ F] [FiniteDimensional ℝ G] in
-
-
 
 theorem PolyhedralPLInCharts.restrict_finite
     {e : ι → OpenPartialHomeomorph X F} {f : E → X} {S : Set E}
@@ -44,10 +33,6 @@ theorem PolyhedralPLInCharts.restrict_finite
       hNV (show (⟨y, hNK hy⟩ : K.space) ∈ Subtype.val ⁻¹' N.space from hy), rfl⟩
   exact ⟨i, N, W, hN, hNK, hW, hxW, hWN,
     fun y hy => hfJ (hNJ hy), hcoords.restrict N hN hNJ⟩
-
-
-
-
 
 theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_lift
     {e : ι → OpenPartialHomeomorph X F}

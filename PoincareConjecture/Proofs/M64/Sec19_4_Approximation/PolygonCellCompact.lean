@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64PolygonCellSet_isClosed {N : ℕ} (j : Fin N) :
     IsClosed (m64PolygonCellSet j) := by
@@ -35,9 +21,6 @@ theorem m64PolygonCellSet_isClosed {N : ℕ} (j : Fin N) :
     ((isClosed_le h0 continuous_const).inter
       ((isClosed_le continuous_const h1).inter
         (isClosed_le h1 continuous_const)))
-
-
-
 
 theorem m64PolygonCellSet_subset_annulusDomain {N : ℕ} (hN : 0 < N)
     (j : Fin N) : m64PolygonCellSet j ⊆ m64AnnulusDomain := by
@@ -62,9 +45,6 @@ theorem m64PolygonCellSet_subset_annulusDomain {N : ℕ} (hN : 0 < N)
         mul_le_mul_of_nonneg_right hj hell.le
       _ = curvePeriod := m63_count_mul_cellLength hN
   exact ⟨hleft.trans hp.1, hp.2.1.trans hright, hp.2.2.1, hp.2.2.2⟩
-
-
-
 
 theorem m64PolygonCellSet_isCompact {N : ℕ} (hN : 0 < N) (j : Fin N) :
     IsCompact (m64PolygonCellSet j) := by

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningPathPolygon
 import PoincareConjecture.Proofs.M76.PrimeReduction.ActualReturningArcFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ namespace Polygon
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
-
 
 theorem exists_actual_returning_polygons_and_innermost
     {ι : Type*} [Finite ι] [Nonempty ι]

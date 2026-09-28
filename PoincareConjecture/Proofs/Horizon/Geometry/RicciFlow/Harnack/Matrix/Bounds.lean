@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.RicciCont
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.RicciContraction.SecondDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.LaplacianTrace
-
-
-
-
-
-
-

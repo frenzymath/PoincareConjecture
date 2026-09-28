@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_JointNeighborhood
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeSliceInvertible
 import PoincareConjecture.Proofs.M14.Sec6_3_BackwardClock
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,10 +20,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
-
 
 theorem exists_jointMap_local_inverse (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hz : (Z, s) ∈ M14JointDomain G E) :

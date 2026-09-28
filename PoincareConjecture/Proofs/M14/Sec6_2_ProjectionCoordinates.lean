@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_HorizontalTorsion
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCoordinates
 import PoincareConjecture.Proofs.M12.Geometry.Manifold.ContDiff.LinearMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,13 +17,9 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 noncomputable def horizontalChartFrame (x : G.Point) (v : SpacetimeModelVector n) :
     HorizontalSection G.spacetime :=
   fun p => G.spacetime.horizontalProjection p (VectorField.chartFrame (spacetimeModel n) x v p)
-
-
 
 theorem horizontalChartFrame_smooth (x : G.Point) (v : SpacetimeModelVector n) :
     IsSmoothHorizontalSectionOn G.spacetime (horizontalChartFrame x v)
@@ -50,15 +37,11 @@ variable (e : Trivialization (EuclideanSpace ℝ (Fin n))
     (TotalSpace.proj : TotalSpace (EuclideanSpace ℝ (Fin n)) G.Horizontal → G.Point))
   [MemTrivializationAtlas e]
 
-
-
 noncomputable def horizontalProjectionInCoordinates (x p : G.Point) :
     SpacetimeModelVector n →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   (e.continuousLinearMapAt ℝ p).comp ((G.spacetime.horizontalProjection p).comp
     ((trivializationAt (SpacetimeModelVector n)
       (TangentSpace (spacetimeModel n) : G.Point → Type _) x).symmL ℝ p))
-
-
 
 theorem horizontalProjectionInCoordinates_contMDiffAt {x p : G.Point}
     (hx : p ∈ (extChartAt (spacetimeModel n) x).source) (he : p ∈ e.baseSet) :
@@ -76,8 +59,6 @@ theorem horizontalProjectionInCoordinates_contMDiffAt {x p : G.Point}
   filter_upwards [e.open_baseSet.mem_nhds he] with q hq
   exact e.continuousLinearMapAt_apply_of_mem ℝ hq _
 
-
-
 theorem horizontalProjectionInCoordinates_curve_deriv
     {γ : ℝ → G.Point} {x : G.Point} {s : ℝ}
     (hx : γ s ∈ (extChartAt (spacetimeModel n) x).source)
@@ -93,7 +74,6 @@ theorem horizontalProjectionInCoordinates_curve_deriv
     (by simpa only [extChartAt_source] using hx) hγ]
 
 omit [MemTrivializationAtlas e] in
-
 
 theorem horizontalChartFrame_covariant_symm
     (hCoordinates : M12MetricPredecessors.{0} n) {x p : G.Point}
@@ -113,9 +93,6 @@ theorem horizontalChartFrame_covariant_symm
   rw [VectorField.chartFrame_mlieBracket (spacetimeModel n)
     (by simpa only [extChartAt_source] using hx), map_zero] at h
   exact sub_eq_zero.mp h
-
-
-
 
 theorem horizontalProjectionInCoordinates_torsion
     (hCoordinates : M12MetricPredecessors.{0} n) {x p : G.Point}

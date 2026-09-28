@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Transport.Escape
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.NullReduction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +28,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem not_ricci_positive_of_noncompact
     (S : GradientShrinkingSolitonData 3 M)
@@ -105,8 +93,6 @@ theorem not_ricci_positive_of_noncompact
   exact h.false_of_subunit_scalar_nondecreasing_area_limit A.metric hunit
     (A.scalarCurvature_lt_one hD hQ hR 0 (hhigh 0))
     (fun k => harea (Nat.zero_le k)) A.area_tendsto
-
-
 
 theorem exists_null_plane_of_noncompact
     (S : GradientShrinkingSolitonData 3 M)

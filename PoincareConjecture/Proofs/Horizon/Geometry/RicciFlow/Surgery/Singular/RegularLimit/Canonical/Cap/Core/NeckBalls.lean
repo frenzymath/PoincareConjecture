@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem edist_lower_between_closedCollars (N : EpsilonNeck g)
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) (hb : b < N.epsilon⁻¹)
@@ -69,7 +60,6 @@ theorem edist_lower_between_closedCollars (N : EpsilonNeck g)
     (N.axial_displacement_le_pathELength ht.1.le hγ hcarrier)
   exact (not_lt_of_ge (hax.trans (Manifold.pathELength_mono le_rfl ht.2))) hlength
 
-
 theorem precompact_ball_of_mem_closedCollar (N : EpsilonNeck g)
     {a b r : ℝ} (ha : 0 ≤ a) (hab : a < b) (hb : b < N.epsilon⁻¹)
     {p : M} (hp : p ∈ N.closedCollar a) (hr : 0 < r)
@@ -84,8 +74,6 @@ theorem precompact_ball_of_mem_closedCollar (N : EpsilonNeck g)
     exact (not_lt_of_ge (hlow.trans hx))
       ((ENNReal.ofReal_lt_ofReal_iff (hr.trans hclear)).mpr hclear)
   exact ⟨hsub, (N.isCompact_closedCollar hb).of_isClosed_subset isClosed_closure hsub⟩
-
-
 
 theorem precompact_three_scale_ball (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 200) {p : M}
@@ -113,8 +101,6 @@ theorem precompact_three_scale_ball (N : EpsilonNeck g)
     (by positivity) (by linarith : (0.75 : ℝ) * N.epsilon⁻¹ < (0.875 : ℝ) * N.epsilon⁻¹)
     hb hp (by positivity : 0 < 3 * N.scale) hclear
   exact ⟨hsub.trans (N.closedCollar_subset_carrier hb), hcompact⟩
-
-
 
 theorem exists_calibrated_radius_of_scalar_bounds (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 200)
@@ -167,8 +153,6 @@ theorem exists_calibrated_radius_of_scalar_bounds (N : EpsilonNeck g)
     closure_mono (hball (by linarith [hr.2]))
   exact ⟨r, hr, hcal, hclosure.trans hsub,
     hcompact.of_isClosed_subset isClosed_closure hclosure⟩
-
-
 
 theorem exists_deep_collar_calibration_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

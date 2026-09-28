@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Volume
 
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

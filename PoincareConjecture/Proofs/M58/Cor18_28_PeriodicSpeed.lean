@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Bundle Real
@@ -23,14 +14,10 @@ namespace PoincareConjecture.Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem periodic_periodicFreeLoop (γ : C1FreeLoopSpace (M := M)) :
     Function.Periodic (periodicFreeLoop γ) rampPeriod := by
   intro t
   simp [periodicFreeLoop, rampPeriod, Real.cos_add_two_pi, Real.sin_add_two_pi]
-
-
 
 theorem periodic_freeLoopSpeed (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) :
@@ -59,8 +46,6 @@ theorem periodic_freeLoopSpeed (g : RiemannianMetric 3 M)
     erw [hda]
   rw [hinput] at ht
   exact (congrArg (fun v : TangentBundle (𝓡 3) M => ‖v.2‖) ht).symm
-
-
 
 theorem integral_polar_freeLoopSpeed (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) :

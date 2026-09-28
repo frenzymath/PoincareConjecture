@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SourcePoleQuadrantPatches
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCirclePoleBranches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry RectangleCornerArcs
@@ -19,11 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_source_pole_equator_labels
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}
@@ -68,11 +53,6 @@ theorem exists_source_pole_equator_labels
     (source_pole_opposite_axis_contacts hinj hψzero hr.le).1
   exact exists_opposite_circle_arc_labels (fun i => arc (false, i)) d c
     (fun i => hArc (false, i)) hpq hpair hd hc hcover hmiss hinter
-
-
-
-
-
 
 theorem SourcePoleQuadrantData.attached_to_labelled_region
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}

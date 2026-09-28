@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_centered_double_neck
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

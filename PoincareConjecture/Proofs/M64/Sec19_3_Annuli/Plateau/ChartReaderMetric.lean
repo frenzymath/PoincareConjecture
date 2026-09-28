@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessTarget
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUCoordinateMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +14,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64ChartReadable_local_metric
     (g : RiemannianMetric n M) (e : M → E)

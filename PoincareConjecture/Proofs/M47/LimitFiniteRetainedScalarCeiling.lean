@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteActualRetainedBound
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointScalarCeiling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,9 +55,6 @@ private local instance retainedScalarConnected : ConnectedSpace G.limit.carrier.
 
 local notation "U" => (fun j : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j))
-
-
-
 
 theorem limitFinite_actual_retained_scalar_ceiling
     (P : M47Predecessors.{u}) (sched : RepairedControlledSchedulesData.{u})

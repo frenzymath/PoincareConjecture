@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M40.Mathlib.FiniteSmoothingCover
 import PoincareConjecture.Proofs.M40.Mathlib.CompactChartMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +14,6 @@ variable {E F M N : Type*}
   [TopologicalSpace M] [ChartedSpace E M] [T2Space M] [CompactSpace M]
   [IsManifold 𝓘(ℝ, E) ∞ M]
   [PseudoEMetricSpace N] [ChartedSpace F N]
-
-
-
-
 
 theorem exists_finite_smoothing_charts (f₀ : C(M, N)) :
     ∃ (n : ℕ) (c : Fin n → M)

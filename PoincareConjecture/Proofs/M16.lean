@@ -1,13 +1,6 @@
 import PoincareConjecture.Statements.M16StructuralKappa
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Structure
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,29 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem ancientKappaStructuralConsequences
     (n : ℕ)

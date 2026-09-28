@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSlab
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 structure AlexanderCollarSlab (S : Set E) (A : E →ᵃ[ℝ] ℝ) (q : E) (β : ℝ) where
 
@@ -71,9 +57,6 @@ structure AlexanderCollarSlab (S : Set E) (A : E →ᵃ[ℝ] ℝ) (q : E) (β : 
 
   bottom_covered : S ∩ {x | A x = 0} ⊆ collar
 
-
-
-
 def AlexanderHalfSlab.toCollarSlab {S : Set E} {A : E →ᵃ[ℝ] ℝ}
     {q : E} {β : ℝ} (M : AlexanderHalfSlab S A q β) :
     AlexanderCollarSlab S A q β where
@@ -99,9 +82,6 @@ def AlexanderHalfSlab.toCollarSlab {S : Set E} {A : E →ᵃ[ℝ] ℝ}
   bottom := M.bottom
   bottom_covered := M.bottom_covered
 
-
-
-
 theorem AlexanderCollarSlab.chart_eq_apex_of_base_eq {S : Set E} {A : E →ᵃ[ℝ] ℝ}
     {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
     (p : {p : E × ℝ | p.1 ∈ S ∩ {x | A x = 0} ∧
@@ -111,9 +91,6 @@ theorem AlexanderCollarSlab.chart_eq_apex_of_base_eq {S : Set E} {A : E →ᵃ[�
     apply le_antisymm _ p.property.2.1
     simpa only [hp, M.apex_upper] using p.property.2.2
   exact (M.bottom p hz).trans hp
-
-
-
 
 theorem AlexanderCollarSlab.apex_mem_residual {S : Set E} {A : E →ᵃ[ℝ] ℝ}
     {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β) : q ∈ M.residual := by

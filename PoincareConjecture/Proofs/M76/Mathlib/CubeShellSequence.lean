@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CubeShellHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSequenceIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology Geometry
 
 namespace CubeShell
-
-
-
 
 theorem iUnion_sequence_shells_eq {a : ℕ → ℝ} {c : ℝ}
     (ha : StrictAnti a) (hc : ∀ n, c < a n) (hlim : Tendsto a atTop (𝓝 c)) :
@@ -28,9 +15,6 @@ theorem iUnion_sequence_shells_eq {a : ℕ → ℝ} {c : ℝ}
   change (x ∈ ⋃ n, shell (a (n + 1)) (a n)) ↔ ‖x‖ ∈ Ioc c (a 0)
   conv_rhs => rw [← ha.iUnion_adjacent_Icc_eq_Ioc hc hlim]
   simp only [mem_iUnion, shell, mem_ofPred_eq]
-
-
-
 
 theorem exists_sequence_shell_neighborhood {a : ℕ → ℝ} {c : ℝ}
     (ha : StrictAnti a) (hlim : Tendsto a atTop (𝓝 c))
@@ -53,9 +37,6 @@ theorem exists_sequence_shell_neighborhood {a : ℕ → ℝ} {c : ℝ}
   apply Filter.mem_of_superset (hopen.mem_nhds
     ⟨hN (N + 1) (Nat.le_succ N), hx.2⟩)
   exact fun _ hy => ⟨hy.1.le, hy.2.le⟩
-
-
-
 
 theorem sequence_shell_overlap_iff {a b : ℕ → ℝ}
     (ha : StrictAnti a) (hb : StrictAnti b)
@@ -80,8 +61,6 @@ theorem sequence_shell_overlap_iff {a b : ℕ → ℝ}
   rw [ha.mem_adjacent_Icc_iff x.property, hb.mem_adjacent_Icc_iff (e n x).property,
     houter, hinner]
 
-
-
 theorem sequence_shell_agree {a b : ℕ → ℝ} (ha : StrictAnti a)
     (e : ∀ n, shell (a (n + 1)) (a n) ≃ₜ shell (b (n + 1)) (b n))
     (hinner : ∀ n (x : shell (a (n + 1)) (a n)), ‖(x : Ambient)‖ = a (n + 1) →
@@ -102,9 +81,6 @@ theorem sequence_shell_agree {a b : ℕ → ℝ} (ha : StrictAnti a)
     rw [hinner n ⟨x, hn⟩ hr, houter m ⟨x, hm⟩ hr']
     change (b (n + 1) / a (n + 1)) • x = (b m / a m) • x
     rw [hi]
-
-
-
 
 theorem sequence_shell_open_membership {a b : ℕ → ℝ} {c d : ℝ}
     (ha : StrictAnti a) (hb : StrictAnti b) (hc : ∀ n, c < a n) (hd : ∀ n, d < b n)
@@ -141,11 +117,6 @@ theorem sequence_shell_open_membership {a b : ℕ → ℝ} {c d : ℝ}
   · exact iff_of_true
       ⟨hlo, x.property.2.trans_lt (ha (Nat.pos_of_ne_zero hn))⟩
       ⟨hhi, (e n x).property.2.trans_lt (hb (Nat.pos_of_ne_zero hn))⟩
-
-
-
-
-
 
 theorem exists_sequence_openPartialHomeomorph {a b : ℕ → ℝ} {c d : ℝ}
     (hc : 0 ≤ c) (hd : 0 ≤ d) (ha : StrictAnti a) (hb : StrictAnti b)

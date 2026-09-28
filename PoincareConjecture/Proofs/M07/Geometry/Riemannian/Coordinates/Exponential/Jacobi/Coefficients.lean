@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Defs
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +19,6 @@ private def koszulBilinear
     E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ :=
   let flipL := (ContinuousLinearMap.flipₗᵢ ℝ E E ℝ).toLinearIsometry.toContinuousLinearMap
   (2⁻¹ : ℝ) • (A + (flipL.comp A).flip - flipL.comp A.flip)
-
 
 def christoffelBilinear (B : E → E →L[ℝ] E →L[ℝ] ℝ) (x : E) :
     E →L[ℝ] E →L[ℝ] E :=

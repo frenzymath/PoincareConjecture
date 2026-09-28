@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M09.SmoothTangentChartPhase
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

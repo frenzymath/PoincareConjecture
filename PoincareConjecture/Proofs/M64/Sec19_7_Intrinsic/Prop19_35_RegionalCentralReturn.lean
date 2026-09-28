@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalEndpoin
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalEmbeddedContact
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseRetainedBases
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,11 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_exists_regional_central_return
     (N : IntrinsicAnnulus) {K delta r q mu alpha h : ℝ}

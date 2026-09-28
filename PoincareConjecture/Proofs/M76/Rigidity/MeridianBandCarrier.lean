@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianRim
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_finite_hamiltonMeridianBand {a b : ℝ} (hab : a < b) :
     ∃ K : SimplicialComplex ℝ (V2 × ℝ),

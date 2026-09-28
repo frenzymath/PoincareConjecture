@@ -1,15 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Coordinates
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Chart
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Local
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -30,7 +21,6 @@ lemma mem_tangentTrivialization_of_mem_extChartAt {p x : M}
     x ∈ (trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p).baseSet := by
   simpa only [TangentBundle.trivializationAt_baseSet, extChartAt_source] using hx
 
-
 def centeredChartDomain (p : M) : Set (EuclideanSpace ℝ (Fin n)) :=
   {z | extChartAt (𝓡 n) p p + z ∈ (extChartAt (𝓡 n) p).target}
 
@@ -42,7 +32,6 @@ omit [IsManifold (𝓡 n) ∞ M] in
 lemma zero_mem_centeredChartDomain (p : M) : (0 : EuclideanSpace ℝ (Fin n)) ∈ centeredChartDomain p := by
   simpa only [centeredChartDomain, mem_ofPred_eq, add_zero] using
     (extChartAt (𝓡 n) p).map_source (mem_extChartAt_source p)
-
 
 def centeredConnectionCoefficient (D : LeviCivitaData g) (p : M)
     (z : EuclideanSpace ℝ (Fin n)) :
@@ -65,7 +54,6 @@ lemma contDiffOn_centeredConnectionCoefficient (D : LeviCivitaData g) (p : M) :
     contMDiffAt_const.add contMDiffAt_id
   have h := hcoeff.comp z (hsymm.comp z htrans)
   exact (contMDiffAt_iff_contDiffAt.mp h).contDiffWithinAt
-
 
 def fieldFromCenteredCoordinates (p : M)
     (Y : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))
@@ -99,8 +87,6 @@ lemma contMDiffAt_fieldFromCenteredCoordinates (p : M)
     exact ⟨contMDiffAt_id, by simpa using hYc⟩
   exact (e.contMDiffAt_symmL (IB := 𝓡 n) (n := ∞)
     (mem_tangentTrivialization_of_mem_extChartAt hx)).clm_bundle_apply hv
-
-
 
 lemma coordinate_connection_fieldFromCenteredCoordinates (D : LeviCivitaData g) (p : M)
     {Y : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)} {x : M}
@@ -223,9 +209,6 @@ lemma second_connection_fieldFromCenteredCoordinates_zero (D : LeviCivitaData g)
     (D.connection (fieldFromCenteredCoordinates p H) p a)) = e.symmL ℝ p 0 at hh
   rw [e.symmL_continuousLinearMapAt (FiberBundle.mem_baseSet_trivializationAt _ _ p), map_zero] at hh
   exact hh
-
-
-
 
 theorem exists_radialParallelField (D : LeviCivitaData g) (p : M)
     (v : TangentSpace (𝓡 n) p) :

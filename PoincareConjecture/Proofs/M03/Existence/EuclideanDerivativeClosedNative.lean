@@ -2,15 +2,6 @@ import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -32,13 +23,11 @@ theorem inner_schwartzToLp (f g : 𝓢(ModelE, ℝ)) :
   rw [hf, hg]
   simp [RCLike.inner_apply, mul_comm]
 
-
 theorem inner_schwartzLineDeriv (φ f : 𝓢(ModelE, ℝ)) (v : ModelE) :
     inner ℝ (φ.toLp 2 volume) ((∂_{v} f).toLp 2 volume) =
       -inner ℝ ((∂_{v} φ).toLp 2 volume) (f.toLp 2 volume) := by
   rw [inner_schwartzToLp, inner_schwartzToLp]
   exact SchwartzMap.integral_mul_lineDerivOp_right_eq_neg_left φ f v
-
 
 theorem schwartzLineDeriv_limit_zero (v : ModelE) (f : ℕ → 𝓢(ModelE, ℝ))
     (w : Lp ℝ 2 (volume : Measure ModelE))

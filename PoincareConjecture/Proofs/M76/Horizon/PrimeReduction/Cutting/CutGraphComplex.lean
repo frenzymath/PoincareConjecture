@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphSectionPasting
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BarycentricOpenStars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set StdSimplexCore
 

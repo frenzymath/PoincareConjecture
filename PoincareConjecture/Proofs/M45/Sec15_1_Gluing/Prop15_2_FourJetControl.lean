@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -34,8 +25,6 @@ noncomputable local instance : NormedAddCommGroup (ScalarMetricFourJet 3) :=
   Prod.normedAddCommGroup
 noncomputable local instance : NormedSpace ℝ (ScalarMetricFourJet 3) := Prod.normedSpace
 
-
-
 theorem metricTwoJet_sub_of_two_derivatives {F G : E → MetricCoefficient 3} {x : E}
     (hF : ContDiffAt ℝ 2 F x) (hG : ContDiffAt ℝ 2 G x) :
     metricTwoJet (fun p => F p - G p) x = metricTwoJet F x - metricTwoJet G x := by
@@ -50,9 +39,6 @@ theorem metricTwoJet_sub_of_two_derivatives {F G : E → MetricCoefficient 3} {x
   have h := congrArg (fun L => L ![u, v]) (fun_iteratedFDeriv_sub_apply hF hG)
   simpa only [iteratedFDeriv_two_apply, sub_apply,
     Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_fin_one] using h
-
-
-
 
 theorem scalarMetricFourJet_sub_of_contDiffAt {F G : E → MetricCoefficient 3} {x : E}
     (hF : ContDiffAt ℝ ∞ F x) (hG : ContDiffAt ℝ ∞ G x) :
@@ -89,9 +75,6 @@ theorem scalarMetricFourJet_sub_of_contDiffAt {F G : E → MetricCoefficient 3} 
       Fin.isValue, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_fin_one] using h
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_evolvingCylinder_fourJet_error :
     ∃ C : ℝ, 0 < C ∧

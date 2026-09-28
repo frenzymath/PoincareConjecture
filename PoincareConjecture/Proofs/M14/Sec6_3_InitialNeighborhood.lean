@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialExistence
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_gauge_squareClock_interval (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
@@ -37,9 +25,6 @@ theorem exists_gauge_squareClock_interval (b : G.gaugeCover.index)
   have hsq := (sq_le_sq₀ hs.1 (Real.sqrt_nonneg (t₀.val - a))).mpr hs.2
   rw [Real.sq_sqrt (sub_nonneg.mpr hat.le)] at hsq
   exact ⟨by linarith, sub_le_self _ (sq_nonneg s)⟩
-
-
-
 
 theorem initialValueDomain_initial_tube_in_gauge
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -62,8 +47,6 @@ theorem initialValueDomain_initial_tube_in_gauge
   intro z hz
   exact initialValueDomain_prefix
     ((initialValueDomain_positive_iff hc).mpr (hpath z.1 hz.1)) hz.2.1 hz.2.2
-
-
 
 theorem initialValueDomain_zero_relative_open_in_gauge
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

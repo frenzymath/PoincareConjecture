@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.TubeModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.NormalizedSignedTubeMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -21,8 +13,6 @@ local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
 local notation "tubeSet" => PolygonalCrossingResolution.tube
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_normalized_interval_tube
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

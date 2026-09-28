@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceVariat
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbation
 import Mathlib.Analysis.Calculus.Deriv.Support
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +25,6 @@ private theorem compact_scalar_bound {f : ℝ → ℝ} (hf : Continuous f)
     (hc : HasCompactSupport f) : ∃ C : ℝ, 0 ≤ C ∧ ∀ x, |f x| ≤ C := by
   obtain ⟨C, hC⟩ := hf.bounded_above_of_compact_support hc
   exact ⟨max C 0, le_max_right _ _, fun x => (hC x).trans (le_max_left _ _)⟩
-
-
-
 
 theorem m64LocalizedHorizontalField_bounded_derivative
     {eta rho : ℝ → ℝ} (heta : ContDiff ℝ ∞ eta)
@@ -82,8 +68,6 @@ theorem m64LocalizedHorizontalField_bounded_derivative
       · exact hb1 _
       · exact hproj 0
     _ = _ := by ring
-
-
 
 theorem m64_exists_smooth_localized_horizontal_source
     {eta rho : ℝ → ℝ} (heta : ContDiff ℝ ∞ eta)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateScalarPatch
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_last_component_scalar_crossing
     {f : ℝ → ℝ} {s t H : ℝ} (hst : s ≤ t)
@@ -56,9 +44,6 @@ theorem exists_last_component_scalar_crossing
   rcases lt_or_eq_of_le hu.1 with hcu | rfl
   · exact (hstrict u ⟨hcu, hu.2⟩).le
   · exact hvalue.le
-
-
-
 
 theorem exists_component_maximum_exclusion_duration
     (P : M47ScalarPersistencePredecessors.{u})

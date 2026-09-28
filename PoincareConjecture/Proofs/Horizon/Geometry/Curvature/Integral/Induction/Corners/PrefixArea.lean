@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.PrefixBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Area
 
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology

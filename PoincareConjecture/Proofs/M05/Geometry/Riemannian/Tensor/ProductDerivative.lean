@@ -1,4 +1,3 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Product
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.RicciDerivative
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Trace
@@ -17,9 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 lemma covariantTensorDerivative_tensorProduct
     {k l : ℕ} (D : LeviCivitaData g)

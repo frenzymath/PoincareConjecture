@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroTraceCutoff
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +11,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
-
-
 
 theorem m64Continuous_zeroExtension_continuous {u : LoopPlane → ℝ}
     (hu : Continuous u) (hzero : ∀ p : LoopPlane, p 0 = 0 → u p = 0) :
@@ -56,9 +43,6 @@ private theorem integral_normalCutoff_tendsto {a : LoopPlane → ℝ}
         |>.trans_eq (one_mul _)
   · filter_upwards [ae_restrict_mem isOpen_halfSpace.measurableSet] with p hp
     simpa using (normalCutoff_tendsto hp).mul_const (a p)
-
-
-
 
 theorem m64Continuous_zeroTrace_weak_test {u v phi : LoopPlane → ℝ} (i : Fin 2)
     (hu : Continuous u)
@@ -135,8 +119,6 @@ theorem m64Continuous_zeroTrace_weak_test {u v phi : LoopPlane → ℝ} (i : Fin
   simpa only [add_zero] using tendsto_nhds_unique hh
     ((integral_normalCutoff_tendsto hIv).neg.congr'
       (Eventually.of_forall fun n => (heq n).symm))
-
-
 
 theorem m64Continuous_zeroExtension_weak {u v : LoopPlane → ℝ} (i : Fin 2)
     (hu : Continuous u)

@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import Mathlib.Analysis.InnerProductSpace.NormDet
 import Mathlib.Analysis.Normed.Module.FiniteDimension
-
-
-
-
-
-
-

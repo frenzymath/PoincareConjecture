@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.CoreConne
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Interior
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
-
-
 
 theorem nonempty_smoothDomain_core :
     Nonempty (Poincare.Manifold.SmoothDomain 3 C.core) := by
@@ -71,8 +58,6 @@ theorem nonempty_smoothDomain_core :
     isSmoothEmbedding := hemb
     image_interior := hinterior
     boundary_nonempty := hb }⟩
-
-
 
 theorem smoothDomain_image_boundary (D : Poincare.Manifold.SmoothDomain 3 C.core) :
     Subtype.val '' D.intrinsicBoundary = C.boundary_sphere := by

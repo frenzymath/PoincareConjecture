@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalNeighborCofaces
 import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
-
 
 theorem exceptionalSliceGraph_two_neighbors (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0)
@@ -66,9 +54,6 @@ theorem exceptionalSliceGraph_two_neighbors (K : SimplicialComplex ℝ E)
         exact ⟨hu.1, hu.2.1⟩
   rw [hneighbors]
   exact ncard_pair hvw
-
-
-
 
 theorem exceptionalSliceGraph_even_neighbors (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) {q : E} (hAq : A q = 0)

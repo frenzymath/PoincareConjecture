@@ -3,16 +3,6 @@ import Mathlib.Topology.CompactOpen
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open Set
 variable {E K F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace K] [CompactSpace K] [T2Space K]
   [TopologicalSpace F]
-
-
 
 theorem IsZLattice.isCompact_range_of_periodic_prod (L : Submodule ℤ E)
     [DiscreteTopology L] [IsZLattice ℝ L] (f : K × E → F) (hf : Continuous f)
@@ -44,9 +32,6 @@ theorem IsZLattice.isCompact_range_of_periodic_prod (L : Submodule ℤ E)
       exact ⟨(g x, k), ⟨⟨x, rfl⟩, mem_univ k⟩, rfl⟩
   rwa [himage] at hcompact
 
-
-
-
 theorem IsZLattice.exists_pos_displacement_bound_prod (L : Submodule ℤ E)
     [DiscreteTopology L] [IsZLattice ℝ L] (f : K × E → E) (hf : Continuous f)
     (hequiv : ∀ k x z, z ∈ L → f (k, x + z) = f (k, x) + z) :
@@ -56,9 +41,6 @@ theorem IsZLattice.exists_pos_displacement_bound_prod (L : Submodule ℤ E)
       rw [hequiv k x z hz, add_sub_add_right_eq_sub]
   obtain ⟨C, hC, hbound⟩ := hc.isBounded.exists_pos_norm_le
   exact ⟨C, hC, fun k x => hbound _ ⟨(k, x), rfl⟩⟩
-
-
-
 
 theorem Homeomorph.exists_pos_displacement_bound_of_lattice (e : E ≃ₜ E)
     (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L]

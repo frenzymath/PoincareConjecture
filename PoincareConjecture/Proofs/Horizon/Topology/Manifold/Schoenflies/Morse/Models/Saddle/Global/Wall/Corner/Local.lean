@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Corner.Frontier
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +12,6 @@ theorem frontier_inter_eq_of_inter_eq {A B U : Set E3}
     (hU : IsOpen U) (h : A ∩ U = B ∩ U) :
     frontier A ∩ U = frontier B ∩ U := by
   rw [← frontier_inter_open_inter hU, h, frontier_inter_open_inter hU]
-
-
 
 theorem frontier_union_inter_eq_of_corner_coordinates
     {A B U : Set E3} (hU : IsOpen U)
@@ -35,8 +26,6 @@ theorem frontier_union_inter_eq_of_corner_coordinates
   have hfront : D '' frontier body = frontier (D '' body) :=
     D.toHomeomorph.image_frontier body
   rw [frontier_inter_eq_of_inter_eq hU hbody, ← hfront, frontier_body]
-
-
 
 theorem frontier_sdiff_closure_eq_of_sdiff_eq {A B U : Set E3}
     (h : A \ U = B \ U) :
@@ -53,8 +42,6 @@ theorem frontier_sdiff_closure_eq_of_sdiff_eq {A B U : Set E3}
       rw [← h] at hp'
       exact ⟨hp'.1, hpU⟩
   exact frontier_inter_eq_of_inter_eq isClosed_closure.isOpen_compl hbody
-
-
 
 theorem sphere_image_sdiff_closure_eq_of_body_agreement
     (a F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) {B U : Set E3}

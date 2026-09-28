@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskInteriorCha
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -33,8 +24,6 @@ private noncomputable def sphereNormalCoordinateOrder : C3 ≃ᴬ[ℝ] V3 :=
       map_add' := by intro x y; funext i; fin_cases i <;> rfl
       map_smul' := by intro r x; funext i; fin_cases i <;> rfl }
   L.toContinuousLinearEquiv.toContinuousAffineEquiv
-
-
 
 theorem ChartwisePLSphere.exists_pair_chart_in_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -120,8 +109,6 @@ theorem ChartwisePLSphere.exists_pair_chart_in_chart
     have hyS : y ∈ S ↔ Q y ∈ P.space := by
       simpa only [Q.left_inv hy.1] using hmem (Q y) hyJ
     exact hyS.trans (hyPd.trans (hHd (Q y) hy.2.1.1))
-
-
 
 theorem ChartwisePLSphere.exists_pair_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

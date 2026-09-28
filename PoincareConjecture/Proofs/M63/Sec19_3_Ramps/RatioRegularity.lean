@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Cor19_13_SmoothSlope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63CurvatureSquared_periodic (F : RicciFlow n M (Icc a b))
     (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Icc a b) :
@@ -44,8 +31,6 @@ theorem m63CurvatureSquared_periodic (F : RicciFlow n M (Icc a b))
   exact hEq.of_subset_closure (hcont (x + curvePeriod)) (hcont x)
     Ioo_subset_Icc_self (by rw [closure_Ioo hab.ne]) ht
 
-
-
 theorem m63RampRatio_continuousOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c)
@@ -53,9 +38,6 @@ theorem m63RampRatio_continuousOn {F : RicciFlow n M (Icc a b)} {circumference :
     ContinuousOn (fun z : ℝ × ℝ => m63RampRatio P c ε z.2 z.1) (univ ×ˢ Icc a b) := by
   exact (M62.regularized_continuousOn P.flow c hc ε).div
     (m63Slope_continuousOn P c hc) (fun z hz => (hu z.2 hz.2 z.1).ne')
-
-
-
 
 theorem m63RampRatio_contDiffOn {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -66,9 +48,6 @@ theorem m63RampRatio_contDiffOn {F : RicciFlow n M (Icc a b)} {circumference : �
     (M62.curvatureSquared_contDiffOn P.flow c hc)).div (m63Slope_contDiffOn P c hc)
       (fun z hz => (hu z.2 (Ioo_subset_Icc_self hz.2) z.1).ne')
 
-
-
-
 theorem m63RampRatio_periodic {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) (ε : ℝ) {t : ℝ} (ht : t ∈ Icc a b) :
@@ -76,8 +55,6 @@ theorem m63RampRatio_periodic {F : RicciFlow n M (Icc a b)} {circumference : ℝ
   intro x
   simp only [m63RampRatio, m62RegularizedCurvature,
     m63CurvatureSquared_periodic P.flow c hc ht x, m63Slope_periodic P c hc ht x]
-
-
 
 theorem m63RampRatio_differentiableAt_time
     {F : RicciFlow n M (Icc a b)} {circumference : ℝ}

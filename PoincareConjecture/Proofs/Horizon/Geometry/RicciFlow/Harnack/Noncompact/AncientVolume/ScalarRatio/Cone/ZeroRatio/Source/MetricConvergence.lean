@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Embeddings
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.MetricConvergence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +10,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem pullbackCoefficients_tendsto_jets_of_corrected_charts
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)]
@@ -99,10 +88,6 @@ end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.ChartDistance
 
-
-
-
-
 theorem HasLocalSourceModels.exists_local_pullbackCoefficients_tendsto_jets
     {ι : Type*} {n : ℕ}
     (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
@@ -149,10 +134,6 @@ theorem HasLocalSourceModels.exists_local_pullbackCoefficients_tendsto_jets
 end PoincareConjecture.ChartDistance
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
-
 
 theorem exists_local_source_metric_convergence_of_normal_charts
     {ι : Type*} {n : ℕ}

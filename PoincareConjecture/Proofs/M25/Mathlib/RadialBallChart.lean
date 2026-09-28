@@ -1,26 +1,12 @@
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Topology.OpenPartialHomeomorph.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_smooth_radialBall_chart
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

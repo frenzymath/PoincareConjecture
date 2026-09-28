@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_contained_slice_compact_transport :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -85,8 +72,6 @@ theorem exists_contained_slice_compact_transport :
   · change (eN.symm ∘ eP) '' P.central_sphere = N.central_sphere
     rw [image_comp, hPsphere, ← hNsphere]
     exact eN.toEquiv.symm_image_image _
-
-
 
 theorem exists_contained_slice_separation_agreement :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

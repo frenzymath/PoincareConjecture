@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OrientedCollar
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLTriangleBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 
 namespace Dehn
-
-
 
 theorem exists_synchronized_collar_boundary_homeomorph
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

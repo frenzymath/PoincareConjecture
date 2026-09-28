@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +16,6 @@ local notation "V" => ((ℝ × ℝ) × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_disk_prism_extension
     {N S B q : Set E} (hN : IsFinitePLBallPair V N S)

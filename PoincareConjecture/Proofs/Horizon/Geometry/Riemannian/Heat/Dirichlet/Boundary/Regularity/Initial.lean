@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boun
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Time
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.ResolventPowers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +15,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {Ω : Set M}
-
 
 theorem exists_continuous_heat_test (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (φ : EnergyTest D Ω) :
@@ -63,7 +55,6 @@ theorem exists_continuous_heat_test (D : LeviCivitaData g)
         heatSemigroup_domainL2Resolvent_pow D hn S.isOpen S.isCompact_closure]
       exact (hT _).1
     · exact (hT _).2
-
 
 theorem tendstoUniformly_heat_test (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (φ : EnergyTest D Ω) :

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscNormalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscComplement
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,8 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem source_sphere_two_discs_of_planar (hP : PlanarSchoenfliesService)
     (q : UnitCircle → UnitTwoSphere) (hq : ContMDiff (𝓡 1) (𝓡 2) ∞ q)

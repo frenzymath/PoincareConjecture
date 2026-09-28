@@ -4,21 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 import PoincareConjecture.Proofs.M14.Sec6_5_ScalarEvolutionTransportRicci
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v w
 
 namespace PoincareConjecture.M32
-
-
 
 theorem preimage_value_range {X : Type u} {Y : Type v} {Z : Type w}
     (e : X ≃ Y) (U : Set Y) (a : X → Z) (b : Y → Z)
@@ -53,13 +36,9 @@ variable {M : Type u} {N : Type v}
 
 include Hcal
 
-
-
 theorem unitHomothety_scalar_eq (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :
     D.scalarCurvature x = D'.scalarCurvature (e x) := by
   simpa only [div_one] using (Hcal.scalar_eq D D' x).symm
-
-
 
 theorem unitHomothety_scalar_range (D : LeviCivitaData g) (D' : LeviCivitaData h)
     (U : Set N) (a : ℝ → ℝ) :
@@ -69,22 +48,16 @@ theorem unitHomothety_scalar_range (D : LeviCivitaData g) (D' : LeviCivitaData h
     (fun y => a (D'.scalarCurvature y))
     (fun x => congrArg a (unitHomothety_scalar_eq Hcal D D' x))
 
-
-
 theorem unitHomothety_scalarSup_eq
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (U : Set N) :
     scalarCurvatureSupOn g D (e ⁻¹' U) = scalarCurvatureSupOn h D' U := by
   unfold scalarCurvatureSupOn
   exact congrArg sSup (unitHomothety_scalar_range Hcal D D' U id)
 
-
-
 theorem unitHomothety_ball_eq (x : M) (r : ℝ) : g.ball x r = e ⁻¹' h.ball (e x) r := by
   have hi : e '' g.ball x r = h.ball (e x) r := by simpa using Hcal.ball_image x r
   rw [← hi]
   exact (Set.preimage_image_eq _ (show Function.Injective e from e.injective)).symm
-
-
 
 theorem unitHomothety_volume_eq (U : Set N) :
     calibratedMetricVolume g (e ⁻¹' U) = calibratedMetricVolume h U := by
@@ -92,8 +65,6 @@ theorem unitHomothety_volume_eq (U : Set N) :
   simpa only [hr, ENNReal.ofReal_one, one_mul,
     Set.image_preimage_eq _ (show Function.Surjective e from e.surjective)] using
     (Hcal.volume_image (e ⁻¹' U)).symm
-
-
 
 theorem unitHomothety_intrinsicEDist_eq (U : Set N) (x y : M) :
     intrinsicEDist g (e ⁻¹' U) x y = intrinsicEDist h U (e x) (e y) := by
@@ -114,8 +85,6 @@ theorem unitHomothety_intrinsicEDist_eq (U : Set N) (x y : M) :
       simpa using hU ⟨s, hs, rfl⟩
     · simpa [Function.comp_def] using Hcal.path_length 0 1 (by norm_num) (e.symm ∘ γ) hγ'
 
-
-
 theorem unitHomothety_intrinsicDiameter_eq (U : Set N) :
     intrinsicDiameter g (e ⁻¹' U) = intrinsicDiameter h U := by
   unfold intrinsicDiameter
@@ -129,8 +98,6 @@ theorem unitHomothety_intrinsicDiameter_eq (U : Set N) :
     refine ⟨(⟨e.symm x, by simp [x.property]⟩,
       ⟨e.symm y, by simp [y.property]⟩), ?_⟩
     simpa using unitHomothety_intrinsicEDist_eq Hcal U (e.symm x) (e.symm y)
-
-
 
 theorem unitHomothety_scalarGradient_eq (he : MetricHomothety g h e 1)
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :
@@ -161,8 +128,6 @@ theorem unitHomothety_scalarGradient_eq (he : MetricHomothety g h e 1)
       simpa only [L.apply_symm_apply, one_mul, v.property] using hi.symm
     refine ⟨⟨L.symm v.1, hv⟩, ?_⟩
     simpa only [L.apply_symm_apply] using congrArg abs (hd (L.symm v.1)).symm
-
-
 
 theorem unitHomothety_scalarEvolution_eq (he : MetricHomothety g h e 1)
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :

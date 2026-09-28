@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace ContDiff
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_smooth_openPartialHomeomorph {f : E → F} {n : ℕ∞ω}
     (hf : ContDiff ℝ n f) (hn : n ≠ 0) {x : E} (A : E ≃L[ℝ] F)
@@ -44,10 +32,6 @@ theorem exists_smooth_openPartialHomeomorph {f : E → F} {n : ℕ∞ω}
       rw [hB]
       exact (hf.differentiable hn).differentiableAt.hasFDerivAt
     · exact hf.contDiffAt
-
-
-
-
 
 theorem exists_smooth_openPartialHomeomorph_on {f : E → F} {n : ℕ∞ω}
     (hf : ContDiff ℝ n f) (hn : n ≠ 0) {U : Set E} (hU : IsOpen U)

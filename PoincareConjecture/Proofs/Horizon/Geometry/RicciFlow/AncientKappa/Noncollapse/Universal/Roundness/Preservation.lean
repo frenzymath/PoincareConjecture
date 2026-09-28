@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.TransportedContact
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.LocalPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +48,6 @@ private theorem finrank_tangent (x : M) :
     Module.finrank ℝ (TangentSpace (𝓡 3) x) = 3 := by
   change Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 3
   simp
-
-
 
 theorem transportedRicciComplement_mem_of_initial
     (F : RicciFlow 3 M (Ico a b))
@@ -134,8 +123,6 @@ private theorem tensorPinchingCone_pullback_iff
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact tensorPinchingCone_transport_iff (e.isometryOfInner he).symm c T
-
-
 
 theorem ricciComplement_mem_of_initial
     (F : RicciFlow 3 M (Ico a b))

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Interval
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Interval.Smooth
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

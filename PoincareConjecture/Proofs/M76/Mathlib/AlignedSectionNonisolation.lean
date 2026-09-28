@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.Perfect
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +10,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem RespectsAffineHyperplane.mem_closure_zero_section_sdiff_singleton
     {K : SimplicialComplex ℝ E} {A : E →ᵃ[ℝ] ℝ}

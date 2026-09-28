@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Strips.RelativeMatching
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev P2 := Real × E2
-
 
 def physicalStripHeightCoordinates {v : E3} (hv : ‖v‖ = 1)
     (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c : Real) :
@@ -56,7 +53,6 @@ theorem physicalStripHeightCoordinates_symm {v : E3} (hv : ‖v‖ = 1)
     show c + (inner Real v x - c) = inner Real v x by ring, J.symm_apply_apply]
   exact ((Poincare.Geometry.Euclidean.heightCoordinates hv).apply_symm_apply x).symm
 
-
 def physicalStripConjugate {v : E3} (hv : ‖v‖ = 1)
     (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c : Real)
     (H : Diffeomorph 𝓘(Real, P2) 𝓘(Real, P2) P2 P2 ∞) :
@@ -85,8 +81,6 @@ theorem physicalStripHeightCoordinates_strip {v : E3} (hv : ‖v‖ = 1)
   rw [← hh]
   exact (Poincare.Geometry.Euclidean.heightCoordinates hv).apply_symm_apply _
 
-
-
 theorem physicalStripConjugate_apply_strip {v : E3} (hv : ‖v‖ = 1)
     (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c : Real)
     (H : Diffeomorph 𝓘(Real, P2) 𝓘(Real, P2) P2 P2 ∞)
@@ -102,7 +96,6 @@ theorem physicalStripConjugate_apply_strip {v : E3} (hv : ‖v‖ = 1)
       (physicalStripHeightCoordinates hv J c (z.2, stripPlaneMap g₀ v J F₀ z)))) = _
   rw [Diffeomorph.symm_apply_apply, hH,
     physicalStripHeightCoordinates_strip hv J c g₁ F₁ z hh₁]
-
 
 theorem physicalStripConjugate_image_strip {v : E3} (hv : ‖v‖ = 1)
     (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c : Real)
@@ -122,7 +115,6 @@ theorem physicalStripConjugate_image_strip {v : E3} (hv : ‖v‖ = 1)
     exact ⟨_, ⟨z, hz, rfl⟩, (hpoint z hz).symm⟩
   · rintro _ ⟨_, ⟨z, hz, rfl⟩, rfl⟩
     exact ⟨_, ⟨_, ⟨z, hz, rfl⟩, rfl⟩, hpoint z hz⟩
-
 
 theorem physicalStripConjugate_preserved_germ {v : E3} (hv : ‖v‖ = 1)
     (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c : Real)

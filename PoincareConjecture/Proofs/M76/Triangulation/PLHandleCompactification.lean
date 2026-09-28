@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLCylinderCompression
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeCompactifiedConjugation
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeAlexanderIsotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_plHandleCompactification (ι : Type*) [Fintype ι] (J : Finset ι) :
     ∃ p : OpenPartialHomeomorph (ι → ℝ) (ι → ℝ),

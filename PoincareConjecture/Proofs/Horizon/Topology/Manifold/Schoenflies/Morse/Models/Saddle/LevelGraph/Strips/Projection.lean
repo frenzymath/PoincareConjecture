@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenIncl
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +20,6 @@ private abbrev S2 := Metric.sphere (0 : E3) 1
 local notation "IR" => 𝓘(Real, Real)
 local notation "IR2" => 𝓘(Real, Real × Real)
 
-
-
 theorem contMDiffOn_projected_strip
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
     (v : E3) (F : OpenPartialHomeomorph (Real × Real) S2)
@@ -35,8 +27,6 @@ theorem contMDiffOn_projected_strip
     ContMDiffOn IR2 𝓘(Real, (Real ∙ v)ᗮ) ∞
       (fun z => (Real ∙ v)ᗮ.orthogonalProjectionOnto (g (F z))) F.source :=
   ((Real ∙ v)ᗮ.orthogonalProjectionOnto.contMDiff.comp hg.contMDiff).comp_contMDiffOn hF
-
-
 
 theorem projected_strip_slice_geometry
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

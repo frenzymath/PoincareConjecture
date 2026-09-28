@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kern
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Initial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.Mass
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -119,7 +112,6 @@ private theorem integral_heatKernelContinuous_between (D : LeviCivitaData g)
   rw [integral_heatKernelContinuous_affine_test D S t ht x b a₂ C] at h₂
   have hm := mul_le_mul_of_nonneg_left (heatKernelContinuous_mass_le_one D S t ht x) hC
   constructor <;> nlinarith
-
 
 theorem tendsto_integral_heatKernelContinuousTime (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω)

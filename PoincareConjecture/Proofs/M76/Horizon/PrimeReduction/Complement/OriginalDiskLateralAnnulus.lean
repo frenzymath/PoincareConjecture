@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.StandardDiskBandAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalDiskStripBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

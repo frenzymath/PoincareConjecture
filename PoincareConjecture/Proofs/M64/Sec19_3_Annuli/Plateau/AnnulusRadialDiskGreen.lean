@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.UniformCircleIntegra
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +20,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => ball (0 : LoopPlane) 1
 local notation "K" => closedBall (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem m64WeakDisk_good_radius
     (u : LoopPlane → E) (V : Fin 2 → LoopPlane → E)
@@ -90,8 +75,6 @@ theorem m64WeakDisk_good_radius
     setIntegral_congr_set (M60.haar_ball_ae_eq_closedBall volume (0 : LoopPlane) r)]
   exact h
 
-
-
 theorem m64Disk_setIntegral_tendsto
     {r : ℕ → ℝ} (hr : ∀ j, r j ≤ 1) (hlim : Tendsto r atTop (𝓝 1))
     {f : LoopPlane → E} (hf : IntegrableOn f S volume) :
@@ -106,8 +89,6 @@ theorem m64Disk_setIntegral_tendsto
       volume.restrict (ball (0 : LoopPlane) (r j)) :=
     Measure.restrict_restrict_of_subset (ball_subset_ball (hr j))
   simpa only [hrestrict] using h
-
-
 
 theorem m64Disk_radial_tendstoUniformly
     {r : ℕ → ℝ} (hlim : Tendsto r atTop (𝓝 1)) :
@@ -124,8 +105,6 @@ theorem m64Disk_radial_tendstoUniformly
   exact heq.trans_lt hj
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem m64ContinuousH1Disk_green
     (u : LoopPlane → E) (V : Fin 2 → LoopPlane → E)

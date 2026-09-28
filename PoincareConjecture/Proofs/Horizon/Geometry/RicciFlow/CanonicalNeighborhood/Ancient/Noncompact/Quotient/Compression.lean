@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.CoreTopology
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 noncomputable def oddLineMap (C : M27TwistedSphereLineFlowCertificate K)
     (f : ℝ → ℝ) (x : M) : M :=
@@ -46,8 +34,6 @@ theorem oddLineMap_cover (C : M27TwistedSphereLineFlowCertificate K)
     rw [hp]
     change (-q.1, f (-q.2)) = (-q.1, -f q.2)
     rw [hf q.2]
-
-
 
 theorem contMDiffAt_oddLineMap (C : M27TwistedSphereLineFlowCertificate K)
     {f : ℝ → ℝ} (hf : Function.Odd f) (p : UnitTwoSphere × ℝ)
@@ -124,8 +110,6 @@ private theorem contDiffAt_expandLine {r s : ℝ} (hr : 0 < r)
   apply (Real.contDiffAt_tan.mpr
     (Real.cos_pos_of_mem_Ioo (expansion_argument_mem hr hs)).ne').comp s
   exact contDiffAt_id.div_const _
-
-
 
 noncomputable def slabCapModel (C : M27TwistedSphereLineFlowCertificate K)
     {r : ℝ} (hr : 0 < r) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.AffineHalfspaceProduct
 import PoincareConjecture.Proofs.M76.Wall.OppositePLDomain
 import PoincareConjecture.Proofs.M76.Brown.AmbientSideCollars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry BrownCollar
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_side_collars
     {X ι : Type*} [MetricSpace X]

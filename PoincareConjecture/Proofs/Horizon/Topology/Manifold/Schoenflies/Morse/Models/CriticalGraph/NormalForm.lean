@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.B
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,8 +48,6 @@ private theorem exists_global_extension_near_zero
     (fun x hx y hy hxy => Q.injOn (hball hx).2 (hball hy).2 hxy)
     (fun x hx => hloc ⟨x, (hball hx).1⟩)
   exact ⟨r, hr, fun x hx => (hball hx).1.1, G, hG⟩
-
-
 
 theorem exists_height_preserving_critical_graph_with_plane_action
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -105,9 +101,6 @@ theorem exists_height_preserving_critical_graph_with_plane_action
       Poincare.Geometry.Euclidean.liftPlaneDiffeomorph_apply hv 0 1 one_ne_zero A (f (e x)),
       hA, hform x (hrs hx)]
     simp only [one_mul, zero_add, add_comm]
-
-
-
 
 theorem exists_height_preserving_critical_graph
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

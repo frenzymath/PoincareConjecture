@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryRealization
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.FixedFlowSequence
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCurvatureLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
   (R : OrdinaryProductRicciGeometry F.metric I)
-
-
 
 theorem limitNoncollapse_included_spatial_metricJet
     (p : ℕ → (M34.ordinaryChapter11Flow (I := I) (F := F) R).point)
@@ -52,8 +41,6 @@ theorem limitNoncollapse_included_spatial_metricJet
           (fun t x v w => (C.limit.flow.metric t).inner x v w) a b (z.1, y)) z.2)) := by
   exact M34.ordinaryChapter11_tendsto_spatial_metricJet R p hpositive hdiverges
     C hJ q r a b z hz
-
-
 
 theorem limitNoncollapse_included_curvature_readout
     (p : ℕ → (M34.ordinaryChapter11Flow (I := I) (F := F) R).point)

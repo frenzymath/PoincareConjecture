@@ -6,16 +6,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.WeakH1
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,7 +54,6 @@ universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def metricInChart (g : RiemannianMetric n M) (x y : M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
@@ -130,7 +119,6 @@ theorem metricInChart_joint_continuousOn {J : Set ℝ} (F : RicciFlow n M J) (x 
     exact ⟨hz.2, hz.2, mem_univ _⟩
   exact (Bundle.Trivialization.mem_source e).mpr hb
 
-
 noncomputable def regularizedChartMetric {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (x : M) (z : ℝ × M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
@@ -185,7 +173,6 @@ theorem metricInChart_deriv (g : RiemannianMetric n M) {α : ℝ → M} {x : M} 
 
 open MeasureTheory Filter
 open scoped intervalIntegral
-
 
 theorem chart_velocity_L2_bound (g : RiemannianMetric n M) (x : M)
     {K : Set M} (hK : IsCompact K)

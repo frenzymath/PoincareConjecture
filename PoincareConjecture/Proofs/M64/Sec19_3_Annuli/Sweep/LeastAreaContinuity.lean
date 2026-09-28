@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.LeastAreaComparison
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.NonemptyEvolution
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m64LeastAnnulusArea_continuous_of_initial
     (hcompact : IsCompact (univ : Set M))
@@ -70,9 +56,6 @@ theorem m64LeastAnnulusArea_continuous_of_initial
     nlinarith
   · filter_upwards [self_mem_nhdsWithin] with t ht
     exact (hcomp t ht).1
-
-
-
 
 theorem m64AnnulusFlow_continuous_of_initial
     (hcompact : IsCompact (univ : Set M))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38
 import PoincareConjecture.Proofs.M52
 import PoincareConjecture.Proofs.M72.LocalTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -36,19 +27,6 @@ theorem m72GlobalEpsilonBound
   have hs : G.schedule.schedule = schedule := eq_of_heq hschedule
   rw [hs]
   exact hbound
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m72GlobalFlowWithRawTopology
     (A : RepairedNeckCapTopologyTheory.{u})
@@ -94,9 +72,6 @@ theorem m72GlobalFlowWithRawTopology
   exact ⟨G, hK, hschedule, hdelta,
     htopology G.certificate.flow G.certificate.admissible
       (m72GlobalEpsilonBound G schedule hK hschedule hbound)⟩
-
-
-
 
 noncomputable def m72ReconstructionInputFromRaw
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceRim
 import PoincareConjecture.Proofs.M76.Rigidity.StandardBoundaryTori
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -26,8 +17,6 @@ local notation "D" => closedBall (0 : V1) 1
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
-
-
 noncomputable def sourceBoundaryCircle (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) :
     C(C, sourceSurface phi theta) where
@@ -35,7 +24,6 @@ noncomputable def sourceBoundaryCircle (phi : C(H, H)) (theta : C)
     let z := (sourceRimCoordinates phi theta F).symm ⟨(b, c), hb⟩
     ⟨z.val, z.property.1⟩
   continuous_toFun := by fun_prop
-
 
 theorem sourceBoundaryCircle_original_point (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) (c : C) :
@@ -47,7 +35,6 @@ theorem sourceBoundaryCircle_mem_frontier (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) (c : C) :
     (sourceBoundaryCircle phi theta F b hb c : X) ∈ frontier R :=
   ((sourceRimCoordinates phi theta F).symm ⟨(b, c), hb⟩).property.2
-
 
 noncomputable def sourceSurfaceCircleProjection (phi : C(H, H)) (theta : C) :
     C(sourceSurface phi theta, C) where
@@ -66,14 +53,11 @@ theorem sourceBoundaryCircle_leftInverse (phi : C(H, H)) (theta : C)
       (hamiltonOneHierarchyCoordinates.symm ((b, c), theta))))).1.2 = c
   rw [Homeomorph.apply_symm_apply, hamiltonOneHierarchyCoordinates.apply_symm_apply]
 
-
 theorem sourceBoundaryCircle_pi1_injective (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) (c : C) :
     Function.Injective (FundamentalGroup.map (sourceBoundaryCircle phi theta F b hb) c) :=
   FundamentalGroup.map_injective_of_leftInverse _ _
     (sourceBoundaryCircle_leftInverse phi theta F b hb) c
-
-
 
 theorem sourceBoundaryCircle_ambient_pi1_injective (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) (c : C) :
@@ -85,8 +69,6 @@ theorem sourceBoundaryCircle_ambient_pi1_injective (phi : C(H, H)) (theta : C)
       ((hamiltonLowerLatticePiEquiv (Fin 2)).continuous.comp continuous_snd)⟩
   apply FundamentalGroup.map_injective_of_leftInverse _ r
   exact sourceBoundaryCircle_leftInverse phi theta F b hb
-
-
 
 theorem sourceSurface_nontrivial_pi1_at_boundary (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D) (hb : ‖(b : V1)‖ = 1) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceFrame
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65StrictTrace
-
-
-
 
 theorem exists_regular_coordinate_inverse {h : ℝ → ℝ} {I : Set ℝ} {s : ℝ}
     (hI : IsOpen I) (hs : s ∈ I) (hh : ContDiffOn ℝ ∞ h I)
@@ -51,9 +39,6 @@ theorem exists_regular_coordinate_inverse {h : ℝ → ℝ} {I : Set ℝ} {s : �
   apply (e.contDiffAt_symm_deriv (hne _ ht) hy ?_ ?_).contDiffWithinAt
   · simpa only [he] using (hd.differentiableAt (by simp)).hasDerivAt
   · simpa only [he] using hd
-
-
-
 
 theorem exists_smooth_tangent_extension {c : ℝ → LoopAmbient} {I : Set ℝ} {s : ℝ}
     (hI : IsOpen I) (hs : s ∈ I) (hc : ContDiffOn ℝ ∞ c I)
@@ -102,9 +87,6 @@ theorem exists_smooth_tangent_extension {c : ℝ → LoopAmbient} {I : Set ℝ} 
     refine ⟨hsigmem q hq, rfl, ?_⟩
     have hn := hne _ (hsigmem q hq)
     rwa [hd _ (hsub (hsigmem q hq))] at hn
-
-
-
 
 theorem boundary_tangent_from_inverse
     {c b : ℝ → LoopAmbient} {I J : Set ℝ} {U : Set LoopAmbient}

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,7 +46,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 theorem isCompact_terminal_modelBand (data : TerminalSaddleData M P p e) :
     IsCompact data.toTerminalSaddleGeometry.modelBand := by
   unfold TerminalSaddleGeometry.modelBand TerminalSaddleGeometry.B
@@ -57,7 +54,6 @@ theorem isCompact_terminal_modelBand (data : TerminalSaddleData M P p e) :
     data.toTerminalSaddleGeometry.filledModel.contMDiff.continuous).image
       data.toTerminalSaddleGeometry.flatten.contMDiff.continuous |>.inter_right
   exact isClosed_Icc.preimage (EuclideanSpace.proj 2).continuous
-
 
 theorem actual_terminal_cap_interior_disjoint_band
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves) (i : Fin 3) :
@@ -71,7 +67,6 @@ theorem actual_terminal_cap_interior_disjoint_band
       ((M.tree.embedding_of_mem_leaves hg).isEmbedding.injective
         (data.toTerminalSaddleGeometry.flatten.injective hxy))
   · simp only [image_comp, data.actualDisk_image, TerminalSaddleGeometry.C]
-
 
 theorem model_terminal_cap_interior_disjoint_band
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_MetricBoun
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_LengthBarrier
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem inverse_quadratic_bound (Q : SurgeryCapClose g₀ S g tip scale eta)
     {y : S.carrier} (hy : y ∈ Q.map '' g₀.metric.ball 0 eta⁻¹)
@@ -50,8 +40,6 @@ theorem inverse_quadratic_bound (Q : SurgeryCapClose g₀ S g tip scale eta)
     _ ≤ scale ^ 2 * (scale⁻¹ ^ 2 * g.inner y w w) :=
       mul_le_mul_of_nonneg_left hb (sq_nonneg scale)
     _ = g.inner y w w := by field_simp [Q.scale_pos.ne']
-
-
 
 theorem ball_subset_image_of_buffer
     (Q : SurgeryCapClose g₀ S g tip scale eta) (heta : eta < 1)
@@ -97,9 +85,6 @@ theorem ball_subset_image_of_buffer
       (m01RescaledMetric g₀.metric c hc).edist (Q.inverse tip) (Q.inverse (Q.map x))
     rw [hinvtip, Q.left_inverse hxsource, m01RescaledMetric_edist, hx,
       ENNReal.ofReal_mul (Real.sqrt_nonneg c)]
-
-
-
 
 theorem isCompact_closure_ball_of_buffer
     (Q : SurgeryCapClose g₀ S g tip scale eta) (heta : eta < 1)

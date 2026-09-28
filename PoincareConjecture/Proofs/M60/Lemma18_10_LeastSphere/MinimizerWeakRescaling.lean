@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerRescaling
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakHessian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,12 +15,8 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 def suAffineHomeomorph (a : Plane) {s : ℝ} (hs : 0 < s) : Plane ≃ₜ Plane :=
   (Homeomorph.smulOfNeZero s hs.ne').trans (Homeomorph.addLeft a)
-
-
 
 theorem suAffine_image_ball (a : Plane) {s : ℝ} (hs : 0 < s) (R : ℝ) :
     (fun z : Plane => a + s • z) '' Metric.ball 0 R = Metric.ball a (s * R) := by
@@ -52,14 +39,10 @@ theorem suAffine_image_ball (a : Plane) {s : ℝ} (hs : 0 < s) (R : ℝ) :
       rw [smul_inv_smul₀ hs.ne']
       abel
 
-
-
 theorem suAffine_preimage_ball (a : Plane) {s : ℝ} (hs : 0 < s) (R : ℝ) :
     (fun z : Plane => a + s • z) ⁻¹' Metric.ball a (s * R) = Metric.ball 0 R := by
   rw [← suAffine_image_ball a hs R]
   exact Set.preimage_image_eq _ (suAffineHomeomorph a hs).injective
-
-
 
 theorem suAffine_map_volume (a : Plane) {s : ℝ} (hs : 0 < s) :
     (volume : Measure Plane).map (fun x => a + s • x) =
@@ -70,8 +53,6 @@ theorem suAffine_map_volume (a : Plane) {s : ℝ} (hs : 0 < s) :
   have hdim : Module.finrank ℝ Plane = 2 := by simp
   rw [hdim, abs_of_nonneg (inv_nonneg.mpr (sq_nonneg s))]
 
-
-
 theorem suAffine_map_restrict (a : Plane) {s : ℝ} (hs : 0 < s) (O : Set Plane) :
     (volume.restrict ((fun x : Plane => a + s • x) ⁻¹' O)).map
       (fun x => a + s • x) = ENNReal.ofReal ((s ^ 2)⁻¹) • volume.restrict O := by
@@ -80,8 +61,6 @@ theorem suAffine_map_restrict (a : Plane) {s : ℝ} (hs : 0 < s) (O : Set Plane)
     (volume.restrict ((fun x : Plane => a + s • x) ⁻¹' O)).map (fun x => a + s • x) at h
   rw [suAffine_map_volume a hs, Measure.restrict_smul] at h
   exact h.symm
-
-
 
 theorem suAffine_memLp {E : Type*} [NormedAddCommGroup E]
     {O : Set Plane} {u : Plane → E} {p : ℝ≥0∞}
@@ -93,8 +72,6 @@ theorem suAffine_memLp {E : Type*} [NormedAddCommGroup E]
     rw [suAffine_map_restrict a hs O]
     exact hu.smul_measure ENNReal.ofReal_ne_top
   exact h.comp_of_map (by fun_prop)
-
-
 
 theorem suAffine_weakPartial {O : Set Plane} {u p : Plane → ℝ} {i : Fin 2}
     (hw : HasWeakPartialDeriv i p u O) (a : Plane) {s : ℝ} (hs : 0 < s) :

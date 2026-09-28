@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapChordSigns
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapSeparation
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +10,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_cap_endpoint_separator
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T r : ℝ} (hr : 0 < r)

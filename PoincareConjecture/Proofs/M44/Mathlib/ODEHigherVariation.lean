@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Mathlib.ODELinearVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,10 +7,6 @@ open Set Filter Metric
 open scoped ContDiff Topology
 
 universe u
-
-
-
-
 
 theorem tendstoUniformlyOn_ode_spatial_jets
     (m : ℕ) {E P : Type u}

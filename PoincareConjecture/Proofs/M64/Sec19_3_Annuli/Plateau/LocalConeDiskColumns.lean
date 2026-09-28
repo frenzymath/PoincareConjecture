@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskMap
 import PoincareConjecture.Proofs.M60.Mathlib.ConformalTrace
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ open Proofs.M58
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
 
 theorem m64LocalConeDiskMap_radial_column
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)
@@ -63,8 +50,6 @@ theorem m64LocalConeDiskMap_radial_column
     (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) (fun s => H (s, center, gamma t))
       (1 - diskTimeProfile r)) (-deriv diskTimeProfile r) (1 : ℝ))
 
-
-
 theorem m64LocalConeDiskMap_angular_column
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)
     (hperiod : Function.Periodic gamma curvePeriod) {r : ℝ} (hr : 0 < r) (t : ℝ)
@@ -98,8 +83,6 @@ theorem m64LocalConeDiskMap_angular_column
   exact he.symm.trans hc
 
 variable [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64EnergyDensity_polar_frame (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) (t : ℝ) :

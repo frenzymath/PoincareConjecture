@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.Persistence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +29,6 @@ variable {M : Type u} [TopologicalSpace M]
   (hzero : (K.flow.connection b).curvatureTensor x v w v w = 0)
 
 include hb hv hw hvw hzero
-
-
 
 theorem exists_ricci_null_vector_on_past_of_null_plane
     (t : ℝ) (ht : t ≤ b) (y : M) :
@@ -74,7 +61,6 @@ theorem exists_ricci_null_vector_on_past_of_null_plane
   exact (congrArg (fun s : ℝ => ∃ z : TangentSpace (𝓡 3) y, z ≠ 0 ∧
     ∀ u, (K.flow.connection s).ricci y z u = 0) (sub_add_cancel t b)).mp hn
 
-
 theorem ricciNullity_eq_one_on_past_of_null_plane
     (t : ℝ) (ht : t ≤ b) (y : M) :
     ricciNullity (K.flow.connection t) y = 1 := by
@@ -104,8 +90,6 @@ theorem ricciNullity_eq_one_on_past_of_null_plane
     exact hz (congrArg Subtype.val heq)
   omega
 
-
-
 theorem ricciKernel_eq_on_past_of_null_plane
     (t : ℝ) (ht : t ≤ b) (y : M) :
     ricciKernel (K.flow.connection t) y = ricciKernel (K.flow.connection b) y := by
@@ -127,8 +111,6 @@ theorem ricciKernel_eq_on_past_of_null_plane
   change ricciNullity (K.flow.connection b) y = ricciNullity (K.flow.connection t) y
   rw [K.ricciNullity_eq_one_on_past_of_null_plane hb x v w hv hw hvw hzero b le_rfl y,
     K.ricciNullity_eq_one_on_past_of_null_plane hb x v w hv hw hvw hzero t ht y]
-
-
 
 theorem inner_eq_on_past_of_null_plane
     (t : ℝ) (ht : t ≤ b) (y : M) (z u : TangentSpace (𝓡 3) y)
@@ -153,8 +135,6 @@ theorem inner_eq_on_past_of_null_plane
       (uniqueDiffOn_Icc hab s ⟨hs.1, hs.2.le⟩)
   exact (constant_of_derivWithin_zero hdiff hderiv t ⟨by linarith, ht⟩).trans
     (constant_of_derivWithin_zero hdiff hderiv b ⟨hab.le, le_rfl⟩).symm
-
-
 
 theorem exists_fixed_local_parallel_unit_null_section
     (y : M) :
@@ -196,8 +176,6 @@ theorem exists_fixed_local_parallel_unit_null_section
       fun p hp => (mem_ricciKernel _ _ _).mp (hnull t ht p hp))
     (Filter.Eventually.mono (hU.mem_nhds hq) fun p hp => hunit t ht p hp)
     (K.ricciNullity_eq_one_on_past_of_null_plane hb x v w hv hw hvw hzero t ht q) z
-
-
 
 theorem nullOrientationCover_of_null_plane :
     Nonempty (NullOrientationCover (K.flow.connection b)) := by

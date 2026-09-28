@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerRotation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,13 +11,9 @@ open scoped Topology ContDiff InnerProductSpace
 
 namespace PoincareConjecture
 
-
-
 def m65DiskRotationL2 (θ : ℝ) :
     Lp ℝ 2 (volume.restrict loopDiskSet) →ₗᵢ[ℝ] Lp ℝ 2 (volume.restrict loopDiskSet) :=
   Lp.compMeasurePreservingₗᵢ ℝ (m65PlaneRotation θ) (m65PlaneRotation_disk_measurePreserving θ)
-
-
 
 def m65BoundaryRotationL2 (θ : ℝ) : Lp ℝ 2 m65CircleBoundaryMeasure →ₗᵢ[ℝ]
     Lp ℝ 2 m65CircleBoundaryMeasure :=
@@ -84,9 +70,6 @@ private theorem m65Rotation_derivative (θ : ℝ) (f : LoopPlane → ℝ) (hf : 
     rw [(m65Rotation_basis θ).2, map_add, map_smul, map_smul]
     rfl
 
-
-
-
 theorem m65DiskRotationL2_energy (θ : ℝ)
     (d : Fin 2 → Lp ℝ 2 (volume.restrict loopDiskSet)) :
     ‖Real.cos θ • m65DiskRotationL2 θ (d 0) +
@@ -121,11 +104,6 @@ private theorem m65RotatedC1_trace (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 
     Lp.ext (hfb.coeFn_toLp.trans hb.symm)
   have h := m65DiskWeakTrace_of_C1 f hf hfa hfd hfb
   rwa [hu', hd', hb'] at h
-
-
-
-
-
 
 theorem m65WeakTrace_rotation (θ : ℝ)
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

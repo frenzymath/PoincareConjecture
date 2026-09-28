@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.Orientable.PeriodicRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.Periodic.WindowSegments
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open Poincare.Topology.Orientation.ProjectivePlane

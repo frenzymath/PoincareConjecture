@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Ricci
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -29,8 +22,6 @@ private lemma inner_sq_le {n : ℕ} {M : Type*} [TopologicalSpace M]
   simpa only [pow_two] using h
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
-
 
 lemma fderiv_inverse_apply (x u : EuclideanSpace ℝ (Fin n))
     (ξ : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :
@@ -55,7 +46,6 @@ lemma fderiv_inverse_apply (x u : EuclideanSpace ℝ (Fin n))
   rw [map_add, hinv.inverse_apply_self, map_zero] at h
   exact eq_neg_of_add_eq_zero_left h
 
-
 lemma fderiv_inverseCoefficients_eq (x u : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
     fderiv ℝ (fun y ↦ g.inverseCoefficients y i j) x u =
       -EuclideanSpace.proj j ((g.euclideanCoefficients x).inverse
@@ -79,8 +69,6 @@ private lemma norm_proj (i : Fin n) : ‖EuclideanSpace.proj (𝕜 := ℝ) i‖ 
     simp only [PiLp.proj_apply, innerSL_apply_apply, EuclideanSpace.basisFun_inner]
   rw [h, innerSL_apply_norm, (EuclideanSpace.basisFun (Fin n) ℝ).norm_eq_one]
 
-
-
 lemma abs_fderiv_inverseCoefficients_le (x u : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
     |fderiv ℝ (fun y ↦ g.inverseCoefficients y i j) x u| ≤
       ‖(g.euclideanCoefficients x).inverse‖ ^ 2 *
@@ -100,7 +88,6 @@ lemma abs_fderiv_inverseCoefficients_le (x u : EuclideanSpace ℝ (Fin n)) (i j 
           (by positivity))
     _ = _ := by rw [norm_proj, norm_proj]; ring
 
-
 lemma abs_inverseCoefficients_le_opNorm (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
     |g.inverseCoefficients x i j| ≤ ‖(g.euclideanCoefficients x).inverse‖ := by
   have h := (EuclideanSpace.proj (𝕜 := ℝ) j).le_opNorm
@@ -109,7 +96,6 @@ lemma abs_inverseCoefficients_le_opNorm (x : EuclideanSpace ℝ (Fin n)) (i j : 
   have hi := (g.euclideanCoefficients x).inverse.le_opNorm (EuclideanSpace.proj i)
   rw [norm_proj, mul_one] at hi
   exact h.trans hi
-
 
 lemma norm_euclideanCoefficients_le_of_upper (x : EuclideanSpace ℝ (Fin n))
     {b : ℝ} (hb : 0 ≤ b)
@@ -169,8 +155,6 @@ private lemma abs_neg_add_add_sub_le (a b c d : ℝ) :
     _ ≤ (|a| + |b| + |c|) + |d| := by
       gcongr
       simpa only [abs_neg] using abs_add_le (-a) b
-
-
 
 theorem abs_harmonicRicciQuadratic_le_opNorm (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
@@ -281,8 +265,6 @@ theorem abs_harmonicRicciQuadratic_le_opNorm (D : LeviCivitaData g)
   convert h using 1
   dsimp [I, B, G, c]
   ring
-
-
 
 theorem abs_harmonicRicciQuadratic_le_of_ellipticity (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) {a b : ℝ}

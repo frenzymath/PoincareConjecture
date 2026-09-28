@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.OldBoxes
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.ReferenceCompatibility
 
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem regularSpacetimeForward_eq_oldBox_of_eq
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -39,7 +36,6 @@ theorem regularSpacetimeForward_eq_oldBox_of_eq
   apply congrArg (Sigma.mk s)
   exact H.reference.forward_eq_of_eq b x (y : M) ⟨ht.1.le, htT⟩ hbt hbase
     ⟨hs.1.le, hsT⟩ hbs
-
 
 theorem regularSpacetimeForward_eq_of_eq
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

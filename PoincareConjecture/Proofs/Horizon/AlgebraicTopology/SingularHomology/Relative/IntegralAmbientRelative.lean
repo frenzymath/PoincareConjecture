@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homology.IntegralCoverHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

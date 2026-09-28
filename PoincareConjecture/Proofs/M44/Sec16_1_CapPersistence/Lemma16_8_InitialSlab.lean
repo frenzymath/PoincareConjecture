@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialCha
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialTwoJet
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedBirthBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,10 +28,6 @@ noncomputable local instance initialSlabTwoJetNormedGroup :
 
 noncomputable local instance initialSlabTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_initial_slab_bound (P : M44CapPersistencePredecessors.{u})
     (g0 : StandardInitialMetric) (C : ℝ) (x u v : E)

@@ -2,27 +2,14 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 def unitCorner : Set (ℝ × ℝ) :=
   segment ℝ (0, 0) (1, 0) ∪ segment ℝ (0, 0) (0, 1)
-
-
 
 theorem mem_unitCorner_iff (z : ℝ × ℝ) :
     z ∈ unitCorner ↔
@@ -41,8 +28,6 @@ theorem mem_unitCorner_iff (z : ℝ × ℝ) :
     · right
       refine ⟨z.2, ⟨hz0, hz2⟩, ?_⟩
       ext <;> simp [hz1]
-
-
 
 theorem unitCorner_box_sectors {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
     let W : Set (ℝ × ℝ) := Ioo (-r) r ×ˢ Ioo (-r) r

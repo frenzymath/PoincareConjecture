@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (Fin 2 → ℝ)
-
-
-
-
 
 theorem exists_original_signed_tube_branch_inverses
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalPullbackCoefficients
 import PoincareConjecture.Proofs.M34.Standard.LocalIsometryDifferences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,7 +22,6 @@ include hf
 
 omit [IsManifold (𝓡 n) ∞ N] in
 
-
 theorem canonicalDomain_pullback_mfderiv_isInvertible :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -41,8 +30,6 @@ theorem canonicalDomain_pullback_mfderiv_isInvertible :
   let := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
   intro x
   exact ⟨(hf x).mfderivToContinuousLinearEquiv (by simp), rfl⟩
-
-
 
 theorem canonicalDomain_pullback_connection_difference :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -64,9 +51,6 @@ theorem canonicalDomain_pullback_connection_difference :
     (F.connection t) (F'.connection t) (hf.contMDiff x)
     (Eventually.of_forall (canonicalDomain_pullback_mfderiv_isInvertible U hU f hf))
     (Eventually.of_forall (fun _ _ _ => rfl)) (Eventually.of_forall (fun _ _ _ => rfl)) u v
-
-
-
 
 theorem canonicalDomain_pullback_curvature :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

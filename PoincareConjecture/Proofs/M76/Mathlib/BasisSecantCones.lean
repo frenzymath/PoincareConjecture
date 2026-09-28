@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BasisConeCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,12 +10,8 @@ variable {ι E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 def secantCone (b : Basis ι ℝ E) (s t : Set ι) : Set E :=
   {x | (∀ i ∉ t, 0 ≤ b.repr x i) ∧ ∀ i ∉ s, b.repr x i ≤ 0}
-
-
 
 theorem isClosed_secantCone [Finite ι] (b : Basis ι ℝ E) (s t : Set ι) :
     IsClosed (b.secantCone s t) := by
@@ -39,8 +26,6 @@ theorem isClosed_secantCone [Finite ι] (b : Basis ι ℝ E) (s t : Set ι) :
     (isClosed_iInter (fun i => isClosed_iInter (fun _ : i ∉ s =>
       isClosed_le (hc i) (continuous_const (y := (0 : ℝ))))))
 
-
-
 theorem smul_mem_secantCone (b : Basis ι ℝ E) {s t : Set ι} {x : E}
     (hx : x ∈ b.secantCone s t) {r : ℝ} (hr : 0 ≤ r) : r • x ∈ b.secantCone s t := by
   constructor
@@ -49,8 +34,6 @@ theorem smul_mem_secantCone (b : Basis ι ℝ E) {s t : Set ι} {x : E}
   · intro i hi
     simpa only [map_smul, Finsupp.smul_apply, smul_eq_mul] using
       mul_nonpos_of_nonneg_of_nonpos hr (hx.2 i hi)
-
-
 
 theorem mem_secantCone_iff [Finite ι] (b : Basis ι ℝ E) (s t : Set ι) (z : E) :
     z ∈ b.secantCone s t ↔ ∃ x ∈ b.nonnegativeCone s,
@@ -82,9 +65,6 @@ theorem mem_secantCone_iff [Finite ι] (b : Basis ι ℝ E) (s t : Set ι) (z : 
       simpa only [map_sub, Finsupp.sub_apply, hy.2 i hi, sub_zero] using hx.1 i
     · intro i hi
       simpa only [map_sub, Finsupp.sub_apply, hx.2 i hi, zero_sub] using neg_nonpos.mpr (hy.1 i)
-
-
-
 
 theorem eq_zero_of_mem_secantCone_of_injOn [Finite ι] (b : Basis ι ℝ E) {s t : Set ι}
     (Q : E →L[ℝ] F)

@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M35Providers
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.OrdinaryParabolicRescaling
 
 variable {I : SpacetimeInterval} {F : RicciFlow 3 StandardCapSpace I.domain}
   {Q a : ℝ} {hQ : 0 < Q} (R : OrdinaryParabolicRescaling F Q hQ a)
-
-
 
 theorem scalar_directional_eq (s : ℝ) (x : StandardCapSpace)
     (v : TangentSpace (𝓡 3) x) :
@@ -37,8 +26,6 @@ theorem scalar_directional_eq (s : ℝ) (x : StandardCapSpace)
     simpa only [div_eq_mul_inv, mul_comm] using h
   rw [hf, mvfderiv_const_mul]
   ring
-
-
 
 theorem scalar_evolution_eq_of_interval (P : RicciFlowCurvatureTheory.{0})
     {T : ℝ} (hT : 0 < T)
@@ -70,8 +57,6 @@ theorem scalar_evolution_eq_of_interval (P : RicciFlowCurvatureTheory.{0})
   have hud := uniqueDiffOn_Icc hT T hmem
   have heq := (hnew.derivWithin hud).symm.trans (hcomp.derivWithin hud)
   exact heq.trans (by ring)
-
-
 
 theorem scalar_evolution_eq (P : RicciFlowCurvatureTheory.{0})
     (hsub : Icc (0 : ℝ) 1 ⊆ (parabolicInterval Q hQ a I).domain)

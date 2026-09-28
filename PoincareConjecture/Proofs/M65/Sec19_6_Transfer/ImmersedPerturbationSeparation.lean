@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationLocal
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.CircleRelabeling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,9 +28,6 @@ private theorem velocity_eq_of_angular_eq (gamma : C1FreeLoopSpace (M := M))
   have h := (m65PeriodicLoopTangent_eq gamma x).trans
     ((congrArg (c1LoopTangent gamma) hxy).trans (m65PeriodicLoopTangent_eq gamma y).symm)
   exact congrArg (fun v : TangentBundle (𝓡 3) M => (v.2 : LoopAmbient)) h
-
-
-
 
 theorem exists_circle_neighborhood
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (J : Set ℝ) (d : ℝ)
@@ -84,11 +71,6 @@ theorem exists_circle_neighborhood
     exact hnonzero
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem exists_uniform_immersion_separation
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (J K : Set ℝ) (d : ℝ)

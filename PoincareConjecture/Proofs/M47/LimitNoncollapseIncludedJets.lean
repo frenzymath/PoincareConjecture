@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseGeneralizedJets
 import PoincareConjecture.Proofs.M34.Standard.IncludedMetricCoordinates
 import PoincareConjecture.Proofs.M34.Mathlib.LocalSpatialJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem limitNoncollapse_generalized_coefficient_contDiffOn
     (P : M47Predecessors.{u}) {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
@@ -82,8 +71,6 @@ theorem limitNoncollapse_generalized_coefficient_contDiffOn
   rw [hv, hv, hval hz.2] at hm
   simpa only [blowupPullbackCoefficient, dif_pos hz.1, c, id_eq] using hm.symm
 
-
-
 theorem limitNoncollapse_generalized_spatial_jet
     (P : M47Predecessors.{u}) {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
     {G : GeneralizedRicciFlowData.{u}} {b Q τ : ℝ} (hτ : 0 < τ)
@@ -115,9 +102,6 @@ local instance : ChartedSpace E C.limit.carrier.carrier := C.limit.carrier.chart
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
 
 include P
-
-
-
 
 theorem limitNoncollapse_generalized_compact_spatial_jets
     (hJ : UniqueDiffOn ℝ J) (q : C.limit.sliceCarrier.carrier) (r : ℕ)

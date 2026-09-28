@@ -1,14 +1,6 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Data.List.Nodup
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

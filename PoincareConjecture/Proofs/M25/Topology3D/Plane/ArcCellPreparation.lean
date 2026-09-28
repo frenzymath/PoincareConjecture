@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcCompatibleWindows
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPushNonadjacent
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcLocalPush
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -121,8 +113,6 @@ private theorem preparation_push_straight {n : ℕ} (p : Polygon E (n + 3))
   · simpa only [polygonPushVertex, polygonReplaceVertex_apply_of_ne _ _ _ hne.symm,
       polygonReplaceVertex_apply_of_ne _ _ _ hp.symm,
       polygonReplaceVertex_apply_of_ne _ _ _ hn.symm] using hs
-
-
 
 theorem exists_relative_polygonalArc_cell_preparation
     [FiniteDimensional ℝ E] (hdim : Module.finrank ℝ E = 2) {n : ℕ}

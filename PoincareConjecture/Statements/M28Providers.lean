@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M28BoundedDistance
 import PoincareConjecture.Statements.M25NeckCapTopology
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

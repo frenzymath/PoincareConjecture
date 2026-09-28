@@ -2,25 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.Compactness
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -33,8 +14,6 @@ section ProperHorn
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
-
-
 
 theorem horn_exists_tail_avoiding_compact (horn : StrongHorn E epsilon)
     (K : Set (E.extended.slice T).carrier) (hK : IsCompact K) :
@@ -54,8 +33,6 @@ theorem horn_exists_tail_avoiding_compact (horn : StrongHorn E epsilon)
   · refine ⟨0, le_rfl, by norm_num, ?_⟩
     intro s t ht ht1 hx
     exact hne ⟨(s, ⟨t, ⟨ht.le, ht1⟩⟩), hx⟩
-
-
 
 theorem horn_tail_not_subset_compact (horn : StrongHorn E epsilon)
     (b : ℝ) (hb : b < 1)
@@ -82,8 +59,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {H : SingularTimeAssumptions F T M}
 
-
-
 theorem horn_exists_tail_scalar_gt (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension epsilon) (q : ℝ) :
     ∃ b : ℝ, 0 ≤ b ∧ b < 1 ∧
@@ -93,8 +68,6 @@ theorem horn_exists_tail_scalar_gt (Q : SingularLimitConclusion H)
   obtain ⟨b, hb0, hb1, hb⟩ := horn_exists_tail_avoiding_compact horn _
     (terminalScalarSublevel_isCompact Q q)
   exact ⟨b, hb0, hb1, fun s t ht ht1 => lt_of_not_ge (hb s t ht ht1)⟩
-
-
 
 theorem horn_exists_ray_scalar_eq (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension epsilon) (s : UnitTwoSphere) (q : ℝ)
@@ -121,8 +94,6 @@ theorem horn_exists_ray_scalar_eq (Q : SingularLimitConclusion H)
   obtain ⟨a, ha⟩ := intermediate_value_univ t0 t1 hf ⟨h0, h1⟩
   exact ⟨a, by simpa [f, horn.coordinate_eq] using ha⟩
 
-
-
 theorem horn_exists_scalar_eq_inverse_sq (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension epsilon)
     {r h : ℝ} (hr : 0 < r) (hh : 0 < h) (hhr : h ≤ r)
@@ -143,8 +114,6 @@ theorem horn_exists_scalar_eq_inverse_sq (Q : SingularLimitConclusion H)
   refine ⟨horn.coordinate (p, t), (horn.coordinate (p, t)).property, ?_⟩
   simpa [horn.coordinate_eq] using ht
 
-
-
 theorem hornCut_exists_scalar_gt (Q : SingularLimitConclusion H)
     {delta rho : ℝ} {horn : StrongHorn Q.extension epsilon}
     {N : TerminalStrongNeck Q.extension delta} (cut : HornEndCut horn N rho) (q : ℝ) :
@@ -152,9 +121,6 @@ theorem hornCut_exists_scalar_gt (Q : SingularLimitConclusion H)
   by_contra h
   push Not at h
   exact cut.escapes_compact _ (terminalScalarSublevel_isCompact Q q) h
-
-
-
 
 theorem hornCut_exists_scalar_eq_of_mem_closure (Q : SingularLimitConclusion H)
     {delta rho : ℝ} {horn : StrongHorn Q.extension epsilon}

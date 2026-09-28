@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.ExponentialComparison
 import PoincareConjecture.Statements.M60Area
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m60FixedMapAreaProperties_of_variation
     {n : ℕ} {M : Type u} [TopologicalSpace M]

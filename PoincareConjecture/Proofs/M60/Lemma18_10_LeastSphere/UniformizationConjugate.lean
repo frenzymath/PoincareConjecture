@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.UniformizationPrimitives
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M60
 
 private abbrev Plane := EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem plane_form_apply (L : Plane →L[ℝ] ℝ) (v : Plane) :
     L v = L (EuclideanSpace.basisFun (Fin 2) ℝ 0) * v 0 +
       L (EuclideanSpace.basisFun (Fin 2) ℝ 1) * v 1 := by
@@ -33,13 +21,8 @@ theorem plane_form_apply (L : Plane →L[ℝ] ℝ) (v : Plane) :
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     Fin.sum_univ_two, mul_comm] using h.symm
 
-
-
 def rotatedFlux (A B : Plane → ℝ) (x : Plane) : Plane →L[ℝ] ℝ :=
   -(B x) • EuclideanSpace.proj 0 + A x • EuclideanSpace.proj 1
-
-
-
 
 theorem exists_conjugate_of_divergence_zero
     {A B : Plane → ℝ} (hA : ContDiff ℝ ∞ A) (hB : ContDiff ℝ ∞ B)
@@ -69,10 +52,6 @@ theorem exists_conjugate_of_divergence_zero
     plane_form_apply (fderiv ℝ A y) v, plane_form_apply (fderiv ℝ B y) w,
     plane_form_apply (fderiv ℝ A y) w]
   linear_combination (v 0 * w 1 - v 1 * w 0) * hdiv y hy
-
-
-
-
 
 theorem exists_conjugate_of_harmonic_coordinate
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)

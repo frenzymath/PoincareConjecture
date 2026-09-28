@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Cap
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +39,6 @@ theorem metricHomothety_shrink (F : RicciFlow 3 M J) (t : ℝ) :
   change w = mfderiv (𝓡 3) (𝓡 3) e.symm (e x)
     (mfderiv (𝓡 3) (𝓡 3) e x w) at hw
   rw [← hv, ← hw, e.symm_apply_apply, one_mul]
-
-
 
 noncomputable def capFromShrink (F : RicciFlow 3 M J) (t : ℝ)
     (A : CapCertificate (F.shrink.metric t)) : CapCertificate (F.metric t) :=

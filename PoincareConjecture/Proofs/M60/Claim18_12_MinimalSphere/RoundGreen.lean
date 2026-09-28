@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.CompactSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +8,6 @@ open MeasureTheory
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60RoundSphere_integral_laplacian (D : LeviCivitaData m60RoundSphereMetric)
     (φ : UnitTwoSphere → ℝ) (hφ : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ φ) :

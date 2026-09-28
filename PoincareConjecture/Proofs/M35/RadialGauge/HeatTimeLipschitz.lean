@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatEquation
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
 
 theorem euclidean_hessian_trace_norm_le (A : V →L[ℝ] V →L[ℝ] F) :
     ‖∑ i : Fin (n + 1), A (EuclideanSpace.single i (1 : ℝ))
@@ -39,8 +28,6 @@ theorem euclidean_hessian_trace_norm_le (A : V →L[ℝ] V →L[ℝ] F) :
       simp only [EuclideanSpace.single, PiLp.norm_single, norm_one, mul_one] at h1 h2
       exact h2.trans h1
     _ = _ := by simp [Nat.cast_add, Nat.cast_one]
-
-
 
 theorem heatAverage_time_lipschitz {f : V → F} {f' : V → V →L[ℝ] F}
     {f'' : V → V →L[ℝ] V →L[ℝ] F}

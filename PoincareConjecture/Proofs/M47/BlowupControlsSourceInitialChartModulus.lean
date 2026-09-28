@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialChartJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem source_initial_chart_time_modulus (P : RicciFlowCurvatureTheory.{u})
     {tau R K rho a b : ℝ} (htau : 0 < tau) (hK : 0 < K)

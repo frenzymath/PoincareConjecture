@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M03.CoordinateIntegration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology BigOperators
 open MeasureTheory Set PoincareConjecture.Proofs.M03
-
-
-
 
 theorem localized_elliptic_energy_le_of_cutoff_bound
     {n : ℕ} {V : Set (EuclideanSpace ℝ (Fin n))} (hV : IsOpen V)
@@ -178,9 +165,6 @@ theorem localized_elliptic_energy_le_of_cutoff_bound
       rw [integral_add (hGi.const_mul _) (hKi.const_mul _),
         integral_const_mul, integral_const_mul,
         integral_indicator (isClosed_tsupport φ).measurableSet]
-
-
-
 
 theorem exists_uniform_cutoff_contraction_bound
     {n : ℕ} {φ : EuclideanSpace ℝ (Fin n) → ℝ}

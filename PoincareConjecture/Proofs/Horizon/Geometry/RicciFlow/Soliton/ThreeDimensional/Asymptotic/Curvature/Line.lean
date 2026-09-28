@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Ancient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SelectedComparison
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -152,6 +143,5 @@ theorem exists_isometric_line_of_open_selected_rescalings
       rw [← ENNReal.ofReal_toReal (((H j).metric (-δ)).edist_ne_top _ _), hα a ha b hb]
     · intro a ha b hb
       rw [← ENNReal.ofReal_toReal (((H j).metric (-δ)).edist_ne_top _ _), hβ a ha b hb]
-
 
 end PoincareConjecture.RicciFlow

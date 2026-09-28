@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,21 +27,15 @@ noncomputable local instance evolvingTwoJetNormedGroup :
 noncomputable local instance evolvingTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 noncomputable def evolvingCylinderModelField (t : ℝ) (x : E) : MetricCoefficient 3 :=
   (1 - t) • cylinderModelField x +
     t • cylinderHeightCovector.smulRight cylinderHeightCovector
-
-
 
 theorem evolvingCylinderModelField_contDiff (t : ℝ) :
     ContDiff ℝ ∞ (evolvingCylinderModelField t) := by
   have h : ContDiff ℝ ∞ (fun x : E => (1 - t) • cylinderModelField x) :=
     cylinderModelField_contDiff.const_smul (1 - t)
   exact h.add contDiff_const
-
-
 
 theorem centeredCylinderBilinear_evolving_gram (t : ℝ) (theta : UnitTwoSphere) (s : ℝ) :
     centeredCylinderBilinear (roundCylinderGram t (chartAt E₂ theta)) s =
@@ -66,15 +50,11 @@ theorem centeredCylinderBilinear_evolving_gram (t : ℝ) (theta : UnitTwoSphere)
   simp only [cylinderSphereFactor, Prod.fst_add, add_zero]
   ring
 
-
-
 theorem evolvingCylinderModelField_fderiv (t : ℝ) (x : E) :
     fderiv ℝ (evolvingCylinderModelField t) x =
       (1 - t) • fderiv ℝ cylinderModelField x := by
   exact (((cylinderModelField_contDiff.differentiable (by simp) x).hasFDerivAt.const_smul
     (1 - t)).add_const (t • cylinderHeightCovector.smulRight cylinderHeightCovector)).fderiv
-
-
 
 theorem evolvingCylinderModelField_second_fderiv (t : ℝ) (x : E) :
     fderiv ℝ (fderiv ℝ (evolvingCylinderModelField t)) x =
@@ -86,12 +66,8 @@ theorem evolvingCylinderModelField_second_fderiv (t : ℝ) (x : E) :
   exact (((cylinderModelField_contDiff.fderiv_right (m := ∞) (by simp)).differentiable
     (by simp) x).hasFDerivAt.const_smul (1 - t)).fderiv
 
-
-
 noncomputable def evolvingCylinderModelJet (t : ℝ) : MetricTwoJet 3 :=
   metricTwoJet (evolvingCylinderModelField t) 0
-
-
 
 theorem evolvingCylinderModelJet_eq (t : ℝ) :
     evolvingCylinderModelJet t = (1 - t) • cylinderModelJet +
@@ -100,15 +76,11 @@ theorem evolvingCylinderModelJet_eq (t : ℝ) :
     evolvingCylinderModelField_fderiv, evolvingCylinderModelField_second_fderiv]
   simp only [evolvingCylinderModelField, Prod.smul_mk, Prod.mk_add_mk, add_zero]
 
-
-
 theorem continuous_evolvingCylinderModelJet : Continuous evolvingCylinderModelJet := by
   rw [show evolvingCylinderModelJet = fun t : ℝ => (1 - t) • cylinderModelJet +
       (t • cylinderHeightCovector.smulRight cylinderHeightCovector, 0, 0) from
     funext evolvingCylinderModelJet_eq]
   fun_prop
-
-
 
 theorem staticCylinderCorrection_centered_error (t : ℝ) (B : RoundCylinderTwoTensor)
     (theta : UnitTwoSphere) (s : ℝ) :
@@ -123,9 +95,6 @@ theorem staticCylinderCorrection_centered_error (t : ℝ) (B : RoundCylinderTwoT
     staticCylinderCorrection_coefficient]
   ring
 
-
-
-
 theorem evolving_centeredCylinderMetric_contDiffAt {epsilon t : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose epsilon t B)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹) :
@@ -137,9 +106,6 @@ theorem evolving_centeredCylinderMetric_contDiffAt {epsilon t : ℝ}
     exact (chartAt E₂ z.1).map_source (mem_chart_source E₂ z.1)
   exact (hB.1 z.1 i j).contDiffAt
     (((chartAt E₂ z.1).open_target.prod isOpen_Ioo).mem_nhds ⟨hzero, hz⟩)
-
-
-
 
 theorem evolving_roundCylinderClose_twoJet_error {epsilon t : ℝ}
     (hepsilon : 0 < epsilon) (ht0 : 0 ≤ t) (ht : t < 1)

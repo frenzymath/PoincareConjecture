@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -68,10 +60,6 @@ private theorem faceLink_one_of_halfspace_chart
     rw [← P.closedFaceStar_singleton_eq_closedStar]
     exact P.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hc
-
-
-
-
 
 theorem faceLink_ncard_eq_one_each_side_of_flat_chart
     (K N P M : SimplicialComplex ℝ E) (hK : K.faces.Finite)

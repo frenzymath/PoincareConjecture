@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.FiniteModelC
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.SeparatedSphereCaps
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SeparatedSphereCaps

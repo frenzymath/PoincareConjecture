@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

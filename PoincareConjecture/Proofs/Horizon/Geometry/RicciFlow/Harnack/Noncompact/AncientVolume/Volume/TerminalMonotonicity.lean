@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -92,9 +80,6 @@ private theorem volumeMeasure_le_of_global_tangentNorm_le
     ENNReal.smul_def, smul_eq_mul]
   exact (mul_le_mul_right hraw _).trans_eq (by ac_rfl)
 
-
-
-
 theorem asymptoticVolumeRatio_le_of_tangentNorm_bounds
     [SecondCountableTopology M]
     (g h : RiemannianMetric n M) (Dg : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -142,8 +127,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem asymptoticVolumeRatio_le_exp_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
     (hn : 1 ≤ n) (hcomplete : ∀ t ≤ 0, MetricComplete (F.metric t))
@@ -181,8 +164,6 @@ theorem asymptoticVolumeRatio_le_exp_of_bounded_ancient
     simpa only [abs_sub_comm a b] using
       F.tangentNorm_le_exp_of_ricci_bound (convex_Iic 0) (Subset.refl _) x v
         ((n : ℝ) ^ 3 * K) (fun t ht => hRic t ht x v) hb ha
-
-
 
 theorem antitoneOn_asymptoticVolumeRatio_of_bounded_ancient
     {m : ℕ} {N : Type u} [TopologicalSpace N]

@@ -1,19 +1,9 @@
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem ContinuousOn.exists_first_exit_open
     {A X : Type*} [ConditionallyCompleteLinearOrder A] [DenselyOrdered A]
@@ -45,9 +35,6 @@ theorem ContinuousOn.exists_first_exit_open
   have hcl : γ t ∈ closure U :=
     closure_mono (image_subset_iff.mpr hbefore) (hcont.mem_closure_image htcl)
   exact ⟨t, ⟨hat, ht.1.1.2⟩, ⟨hcl, fun h => ht.1.2 (interior_subset h)⟩, hbefore⟩
-
-
-
 
 theorem IsPreconnected.exists_mem_frontier_of_mem_not_mem
     {X : Type*} [TopologicalSpace X] {S Y : Set X}

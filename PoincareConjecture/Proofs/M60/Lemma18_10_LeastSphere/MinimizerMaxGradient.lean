@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerEnergyConti
 import PoincareConjecture.Proofs.M36.CylinderGram
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem suSphereGradient_exists_max (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
     ∃ p : UnitTwoSphere, ∀ x : UnitTwoSphere,
@@ -39,14 +27,10 @@ theorem suSphereGradient_exists_max (g : RiemannianMetric n M)
     (continuous_const.mul (suC1_intrinsicEnergy_continuous g hf)).continuousOn
   exact ⟨p, fun x => hp (Set.mem_univ x)⟩
 
-
-
 theorem suSphereChart_symm_zero (p : UnitTwoSphere) :
     (chartAt LoopPlane p).symm 0 = p := by
   rw [← M36.sphere_chart_center_zero p]
   exact (chartAt LoopPlane p).left_inv (mem_chart_source LoopPlane p)
-
-
 
 theorem suSphere_rescaled_density (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -59,8 +43,6 @@ theorem suSphere_rescaled_density (g : RiemannianMetric n M)
   simp only [zero_add, Function.comp_apply] at h
   rw [h, suSphereChart_energy g f hf p]
   exact (mul_assoc _ _ _).symm
-
-
 
 theorem suSphere_rescaled_energy (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -99,10 +81,6 @@ theorem suSphere_rescaled_energy (g : RiemannianMetric n M)
     rw [ht, suC1_energy_eq_intrinsic_integral g hf, suSphereChart_integral p _ hc]
     apply integral_congr_ae
     exact Eventually.of_forall fun z => suSphereChart_energy g f hf p z
-
-
-
-
 
 theorem suSphere_maximum_normalization (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -146,9 +124,6 @@ theorem suSphere_maximum_normalization (g : RiemannianMetric n M)
       nlinarith [sq_nonneg ‖s • z‖]
     have h := (div_le_iff₀ (suRoundFactor_smooth_pos.2 (s • z))).mp (hbound z)
     nlinarith
-
-
-
 
 theorem suNormalized_disk_energy_le (g : RiemannianMetric n M)
     {v : LoopPlane → M} (hv : ContMDiff (𝓡 2) (𝓡 n) 1 v)

@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Convolution.Directional
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.MeanValue.UpperSupport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter ContinuousLinearMap MeasureTheory
 open scoped Convolution NNReal ContDiff Topology
 
 namespace Poincare
-
 
 theorem exists_contDiff_hessian_directional_approx_of_lipschitzOn_ball
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -115,7 +107,6 @@ theorem exists_contDiff_hessian_directional_approx_of_lipschitzOn_ball
     rw [map_neg] at hlower
     exact ⟨by linarith, hupper⟩
 
-
 theorem exists_contDiff_hessian_directional_approx_of_upper_support
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     [FiniteDimensional ℝ E] {ι : Type*} {f : E → ℝ} {K : ℝ≥0} {C : ℝ}
@@ -139,7 +130,6 @@ theorem exists_contDiff_hessian_directional_approx_of_upper_support
   intro i x hx y hy t ht hz
   exact Analysis.increment_bounds_of_fderiv_upper_support
     (convex_ball x₀ R) hf.continuousOn (hsupport i x hx) hy ht hz
-
 
 theorem exists_contDiff_hessian_directional_approx_of_field_upper_support
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

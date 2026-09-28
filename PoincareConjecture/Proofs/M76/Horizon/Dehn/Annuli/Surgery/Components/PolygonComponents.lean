@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,25 +13,18 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
 theorem zero_mem_interval : (0 : ℝ) ∈ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ := by
   have hpos := inv_pos.mpr N.epsilon_pos
   exact ⟨neg_lt_zero.mpr hpos, hpos⟩
-
-
 
 theorem coordinate_inverse_map (z : RoundCylinderSpace)
     (hz : z.2 ∈ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     N.coordinate_inverse (N.coordinate_map z) = z :=
   N.coordinate_inverse_coordinate_map ⟨Set.mem_univ _, hz⟩
 
-
-
 theorem coordinate_map_inverse {x : M} (hx : x ∈ N.carrier) :
     N.coordinate_map (N.coordinate_inverse x) = x :=
   N.coordinate_map_coordinate_inverse hx
-
-
 
 theorem coordinate_map_image :
     N.coordinate_map '' (Set.univ ×ˢ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) =
@@ -56,8 +36,6 @@ theorem coordinate_map_image :
     exact ⟨N.coordinate_inverse x, N.coordinate_inverse_mem x hx,
       N.coordinate_map_inverse hx⟩
 
-
-
 theorem coordinate_map_injOn : Set.InjOn N.coordinate_map
     (Set.univ ×ˢ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) := by
   intro z hz w hw h
@@ -67,13 +45,9 @@ theorem coordinate_map_injOn : Set.InjOn N.coordinate_map
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem m25_carrier_subset_connectedComponent : N.carrier ⊆ connectedComponent N.center :=
   N.isConnected_carrier.subset_connectedComponent
     (N.central_sphere_subset N.center_on_central_sphere)
-
-
 
 theorem m25_component_diff_central_sphere_nonempty :
     (connectedComponent N.center \ N.central_sphere).Nonempty := by
@@ -90,12 +64,8 @@ theorem m25_component_diff_central_sphere_nonempty :
   dsimp [z] at hzero
   linarith
 
-
-
 theorem m25_isSeparating_iff_not_isNonseparating : N.IsSeparating ↔ ¬ N.IsNonseparating :=
   and_iff_right N.m25_component_diff_central_sphere_nonempty
-
-
 
 theorem m25_isSeparating_or_isNonseparating : N.IsSeparating ∨ N.IsNonseparating := by
   rw [N.m25_isSeparating_iff_not_isNonseparating]

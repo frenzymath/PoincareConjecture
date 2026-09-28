@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Geodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.RadialGauss
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +33,6 @@ theorem curve_velocity_comp {γ : ℝ → M} {f : ℝ → ℝ} {t c : ℝ}
   rw [hv]
   simpa only [smul_eq_mul, mul_one] using
     (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ (f t)).map_smul c (1 : ℝ)
-
-
 
 theorem exists_squared_distance_endpoint_support
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

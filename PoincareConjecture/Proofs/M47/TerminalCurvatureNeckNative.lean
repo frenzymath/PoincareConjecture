@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNativeBounds
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_neck_native_realization
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

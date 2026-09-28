@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.BoundaryDisks.JordanFillingCoverage
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Bornology
 namespace PoincareConjecture.M76

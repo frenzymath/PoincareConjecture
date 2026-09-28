@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.Contin
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.OriginalCircleObservation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusMinimizer
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +15,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_exists_weak_modulus_minimizer
     (P : M62.CircleProductData F circumference)

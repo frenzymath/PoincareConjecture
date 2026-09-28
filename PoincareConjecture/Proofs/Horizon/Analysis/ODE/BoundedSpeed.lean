@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.CompactConfinement
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE
@@ -17,7 +8,6 @@ open Set Metric
 open scoped ContDiff
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem dist_le_of_solution_bounded_speed
     {U : Set E} {F : E → E} {C T : ℝ} (hC : 0 ≤ C)
@@ -33,8 +23,6 @@ theorem dist_le_of_solution_bounded_speed
   simpa only [Real.dist_eq, sub_zero, abs_of_nonneg ht.1] using hb
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_solution_of_bounded_speed
     {U : Set E} (hU : IsOpen U) {F : E → E} (hF : ContDiffOn ℝ ∞ F U)

@@ -1,21 +1,11 @@
 import Mathlib.MeasureTheory.Integral.Lebesgue.Countable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter MeasureTheory
 open scoped ENNReal
 
 namespace ENNReal
-
-
 
 theorem tsum_liminf_le {ι κ : Type*} {l : Filter ι} [IsCountablyGenerated l]
     (f : ι → κ → ℝ≥0∞) :

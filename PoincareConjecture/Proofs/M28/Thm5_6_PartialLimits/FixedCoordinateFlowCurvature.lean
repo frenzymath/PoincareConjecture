@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ScalarConv
 import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -61,8 +50,6 @@ set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
 
-
-
 theorem spatial_twoJets (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 < tau)
     (he : letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
       ∀ k, IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (e k))
@@ -90,8 +77,6 @@ theorem spatial_twoJets (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 < tau)
   rcases mem_singleton_iff.mp hy with rfl
   exact mem_singleton (t, y)
 
-
-
 theorem coefficients_eq_canonical_germ (L : FixedCoordinateFlowLimit F V hV e)
     (t : ℝ) (ht : t ∈ Icc (-tau) 0) :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -106,9 +91,6 @@ theorem coefficients_eq_canonical_germ (L : FixedCoordinateFlowLimit F V hV e)
     (L.flow.metric t) x ⟨p, hp⟩]
   ext v w
   exact L.metric_coefficients t ht ⟨p, hp⟩ v w
-
-
-
 
 theorem metric_inner_tendsto (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 < tau)
     (he : letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -136,9 +118,6 @@ theorem metric_inner_tendsto (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 <
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem curvatureTensor_tendsto (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 < tau)
     (he : letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -205,8 +184,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
 
 theorem scalarCurvature_tendsto (L : FixedCoordinateFlowLimit F V hV e) (htau : 0 < tau)
     (he : letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.SmoothJoinDensityBound
 import PoincareConjecture.Proofs.M09.JoinIntegralEstimate
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

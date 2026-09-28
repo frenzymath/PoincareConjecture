@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeRectangle
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_circle_endpoint_distance_sq_le_energy
     (g : RiemannianMetric n M) {gamma : ℝ → M}
@@ -58,8 +46,6 @@ theorem m64_circle_endpoint_distance_sq_le_energy
     ((mul_le_mul_of_nonneg_left hsub hx.1).trans
       (mul_le_mul_of_nonneg_right hx.2 hE))
 
-
-
 theorem m64_periodic_circle_distance_sq_le_energy
     (g : RiemannianMetric n M) {gamma : ℝ → M}
     (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma)
@@ -74,8 +60,6 @@ theorem m64_periodic_circle_distance_sq_le_energy
   rw [← heq]
   exact m64_circle_endpoint_distance_sq_le_energy g hgamma
     (Ico_subset_Icc_self (toIcoMod_mem_Ico' hP x))
-
-
 
 theorem m64_periodic_circle_speed
     (g : RiemannianMetric n M) {gamma : ℝ → M}
@@ -105,8 +89,6 @@ theorem m64_periodic_circle_speed
     erw [hda]
   rw [hinput] at ht
   exact (congrArg (fun v : TangentBundle (𝓡 n) M => ‖v.2‖) ht).symm
-
-
 
 theorem m64_circle_energy_polar_interval
     (g : RiemannianMetric n M) {gamma : ℝ → M}

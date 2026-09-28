@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceEnergy
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateEnergyZero
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem canonicalDifferenceEnergy_metric_eq_of_zero
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

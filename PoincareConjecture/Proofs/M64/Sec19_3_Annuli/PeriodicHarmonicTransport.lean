@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PeriodicHarmonicMinimum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,10 +37,6 @@ private theorem translated_point {f : LoopPlane → ℝ}
   ext i
   fin_cases i <;> simp [T, q, z, annulusPoint, toIcoMod, neg_smul, sub_eq_add_neg, add_comm]
 
-
-
-
-
 theorem m64PeriodicScalar_contDiffAt_of_fundamental
     {f : LoopPlane → ℝ} {k : ℕ∞ω}
     (hreg : ∀ p ∈ m64AnnulusDomain, ContDiffAt ℝ k f p)
@@ -77,10 +61,6 @@ private theorem laplacian_continuousAt {f : LoopPlane → ℝ} {p : LoopPlane}
   simp only [Fin.sum_univ_two]
   exact (hd.continuousMultilinear_apply_const _).continuousAt.add
     (hd.continuousMultilinear_apply_const _).continuousAt
-
-
-
-
 
 theorem m64PeriodicScalar_harmonicOnNhd_strip
     {f : LoopPlane → ℝ}

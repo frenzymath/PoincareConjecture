@@ -2,16 +2,6 @@ import Mathlib.Topology.VectorBundle.Riemannian
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set Filter
@@ -27,14 +17,10 @@ variable {B : Type u} [TopologicalSpace B]
   [∀ x, NormedAddCommGroup (E x)] [∀ x, InnerProductSpace ℝ (E x)]
   [FiberBundle F E] [VectorBundle ℝ F E] [IsContinuousRiemannianBundle F E]
 
-
-
 theorem continuous_bundle_norm : Continuous (fun v : TotalSpace F E => ‖v.2‖) := by
   have h : Continuous (fun v : TotalSpace F E => inner ℝ v.2 v.2) :=
     continuous_id.inner_bundle continuous_id
   simpa only [real_inner_self_eq_norm_sq, Real.sqrt_sq (norm_nonneg _)] using h.sqrt
-
-
 
 theorem isCompact_bundle_norm_le [T2Space B] [LocallyCompactSpace B] [ProperSpace F]
     {K : Set B} (hK : IsCompact K) (R : ℝ) :

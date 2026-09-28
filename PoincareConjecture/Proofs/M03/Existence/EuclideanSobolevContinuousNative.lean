@@ -3,14 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.JapaneseBracket
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -28,7 +20,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 abbrev FrequencyL2 (n : ℕ) := Lp ℂ 2 (volume : Measure (EuclideanSpace ℝ (Fin n)))
 
 abbrev FrequencyL1 (n : ℕ) := Lp ℂ 1 (volume : Measure (EuclideanSpace ℝ (Fin n)))
-
 
 def weightedL1 (w : FrequencyL2 n) : FrequencyL2 n →L[ℂ] FrequencyL1 n :=
   (ContinuousLinearMap.mul ℂ ℂ).holderL volume 2 2 1 w
@@ -58,7 +49,6 @@ theorem norm_inverseFourier_le (f : FrequencyL1 n) :
     _ = ∫ y, ‖f y‖ := by simp only [Circle.norm_smul]
     _ = ‖f‖ := (L1.norm_eq_integral_norm f).symm
 
-
 def weightedInverse (w : FrequencyL2 n) : FrequencyL2 n →L[ℂ] E →ᵇ ℂ :=
   (Real.Lp.fourierTransformInvCLM E ℂ).comp (weightedL1 w)
 
@@ -71,7 +61,6 @@ theorem weightedInverse_apply (w u : FrequencyL2 n) (x : E) :
   change Real.Lp.fourierTransformInvCLM E ℂ (weightedL1 w u) x = _
   rw [Real.Lp.fourierTransformInvCLM_apply, Real.Lp.fourierTransformInv_apply]
   exact Real.fourierInv_congr_ae (weightedL1_ae_eq w u) x
-
 
 theorem weightedInverse_eq_of_fourier (w u : FrequencyL2 n) {f : E → ℂ}
     (hf : Continuous f) (hfi : Integrable f) (hF : Integrable (𝓕 f))
@@ -94,7 +83,6 @@ theorem continuous_decayWeight (s : ℝ) : Continuous (decayWeight (n := n) s) :
   intro x
   exact Or.inl (ne_of_gt (by positivity : (0 : ℝ) < 1 + ‖x‖ ^ 2))
 
-
 theorem memLp_decayWeight {s : ℝ} (hs : (n : ℝ) < 2 * s) :
     MemLp (decayWeight (n := n) s) 2 volume := by
   apply (memLp_two_iff_integrable_sq (μ := (volume : Measure E))
@@ -114,7 +102,6 @@ def decayLp {s : ℝ} (hs : (n : ℝ) < 2 * s) : FrequencyL2 n :=
 theorem decayLp_ae_eq {s : ℝ} (hs : (n : ℝ) < 2 * s) :
     decayLp hs =ᵐ[volume] (fun x : E => (decayWeight s x : ℂ)) :=
   (memLp_decayWeight hs).ofReal.coeFn_toLp
-
 
 def sobolevRealization {s : ℝ} (hs : (n : ℝ) < 2 * s) : FrequencyL2 n →L[ℂ] E →ᵇ ℂ :=
   weightedInverse (decayLp hs)
@@ -138,7 +125,6 @@ theorem sobolevRealization_eq_of_fourier {s : ℝ} (hs : (n : ℝ) < 2 * s)
   apply weightedInverse_eq_of_fourier (decayLp hs) u hf hfi hF
   filter_upwards [decayLp_ae_eq hs, hcoord] with y hy hc
   rw [hy, hc]
-
 
 def realSobolevRealization {s : ℝ} (hs : (n : ℝ) < 2 * s) :
     FrequencyL2 n →L[ℝ] E →ᵇ ℝ :=

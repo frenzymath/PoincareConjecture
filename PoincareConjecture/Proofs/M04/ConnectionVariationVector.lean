@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ConnectionVariation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

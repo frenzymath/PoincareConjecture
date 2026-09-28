@@ -1,23 +1,10 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
-
-
-
 
 theorem norm_iteratedFDerivWithin_le_of_interior_bound
     {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]

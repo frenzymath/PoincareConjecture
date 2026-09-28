@@ -5,20 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.DirectionalTubeSlab
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.ValueTube
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -107,7 +93,6 @@ private theorem gradient_real_const_mul
   ext v
   rw [D.inner_gradient, mvfderiv_const_mul]
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
-
 
 private theorem exists_partner_of_prescribed_slab
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -276,8 +261,6 @@ private theorem exists_partner_of_prescribed_slab
       _ ≤ 1 * ((3 / s) * g.inner x w w) :=
         mul_le_mul_of_nonneg_right hν1 (mul_nonneg (by positivity) hw)
       _ = _ := one_mul _
-
-
 
 theorem exists_directional_slab_with_augmented_level_strainers
     {n k : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -505,9 +488,6 @@ theorem exists_directional_slab_with_augmented_level_strainers
     (fun x hx i j hij => (holdcross x (hxU x hx) i j hij).2.2)
     (fun x hx => (hcore x (hb x hx.1).1 (hb x hx.1).2.1).2.2.2.2 hx.2)
   exact ⟨hcompact, v, hv, hbuffer, hb, haug⟩
-
-
-
 
 theorem exists_directional_slab_with_augmented_level_strainers_in_value_tube
     {n k : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

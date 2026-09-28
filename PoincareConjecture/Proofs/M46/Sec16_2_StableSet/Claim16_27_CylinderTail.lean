@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SeedReparamete
 import PoincareConjecture.Proofs.M14.Sec6_2_IntervalLift
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ open PoincareConjecture.Proofs.M12
 variable {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)
   {C : GeneralizedSliceCarrier.{u}} {T tau d rho Q : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
-
-
 
 theorem exists_seed_cylinder_tail (htau : 0 < tau) (hd : 0 < d) (hrho : 0 ≤ rho)
     (hJ : J.domain = Icc (-d) 0)

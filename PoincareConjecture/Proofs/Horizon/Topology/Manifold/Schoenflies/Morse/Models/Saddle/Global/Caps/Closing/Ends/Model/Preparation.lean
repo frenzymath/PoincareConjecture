@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.TerminalCylinder
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IP" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem exists_model_cylindrical_preparation
     {v : E3} (hv : ‖v‖ = 1) {f : S2 → E3}

@@ -4,25 +4,6 @@ import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 import Mathlib.Topology.Compactness.Lindelof
 import Mathlib.Topology.Algebra.InfiniteSum.ENNReal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Function
@@ -32,7 +13,6 @@ namespace PoincareConjecture.SurgeryVolume.Measure
 
 variable {X : Type*} [TopologicalSpace X] [SecondCountableTopology X]
   [MeasurableSpace X] [OpensMeasurableSpace X]
-
 
 theorem measure_le_mul_of_local_comparison {μ ν : Measure X} {U : Set X} {c : ℝ≥0∞}
     (hlocal : ∀ x ∈ U, ∃ V : Set X, IsOpen V ∧ x ∈ V ∧
@@ -61,7 +41,6 @@ theorem measure_le_mul_of_local_comparison {μ ν : Measure X} {U : Set X} {c : 
       hV (e k) (D k) (hDm k) (inter_subset_right.trans (disjointed_subset W k))
     _ = c * ν A := by rw [ENNReal.tsum_mul_left, ← measure_iUnion hDd hDm, hcover]
 
-
 theorem measure_eq_of_local_comparisons {μ ν : Measure X} {U : Set X}
     (c : ℕ → ℝ≥0∞) (hc : Tendsto c atTop (𝓝 1))
     (hforward : ∀ k, ∀ x ∈ U, ∃ V : Set X, IsOpen V ∧ x ∈ V ∧
@@ -76,7 +55,6 @@ theorem measure_eq_of_local_comparisons {μ ν : Measure X} {U : Set X}
       measure_le_mul_of_local_comparison (hforward k) hA hAU
   · exact ge_of_tendsto' (hlim (μ A)) fun k ↦
       measure_le_mul_of_local_comparison (hreverse k) hA hAU
-
 
 theorem restrict_eq_of_local_comparisons {μ ν : Measure X} {U : Set X}
     (hU : MeasurableSet U) (c : ℕ → ℝ≥0∞) (hc : Tendsto c atTop (𝓝 1))

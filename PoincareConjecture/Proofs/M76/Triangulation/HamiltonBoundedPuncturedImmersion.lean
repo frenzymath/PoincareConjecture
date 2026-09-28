@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PuncturedTorusCompression
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusPLPullback
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddCircle
-
-
 
 theorem exists_bounded_core_fixed_puncturedCircle_chart
     (p : ℝ) [Fact (0 < p)] (r : ℝ) (hr : r < p / 2) :
@@ -39,11 +27,6 @@ theorem exists_bounded_core_fixed_puncturedCircle_chart
 end AddCircle
 
 namespace PLAnnularStrip
-
-
-
-
-
 
 theorem exists_bounded_punctured_torus_PL_immersion {L d D : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hdD : d < D)

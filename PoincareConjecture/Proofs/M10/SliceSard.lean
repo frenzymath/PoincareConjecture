@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.Countability
 import PoincareConjecture.Proofs.M10.Sard
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set

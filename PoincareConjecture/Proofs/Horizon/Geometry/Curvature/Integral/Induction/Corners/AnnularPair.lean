@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.DistancePair
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -98,8 +89,6 @@ private theorem gradient_real_const_mul
   ext v
   rw [D.inner_gradient, mvfderiv_const_mul]
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
-
-
 
 theorem exists_annular_slab_with_level_opposite_partners
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

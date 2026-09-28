@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.TimeDerivativ
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 theorem hasDerivAt_divergence_hamiltonP
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -86,7 +78,6 @@ theorem hasDerivAt_divergence_hamiltonP
   simp only [RiemannianMetric.tensorTrace, Q, Fin.sum_univ_three,
     Matrix.Fin.cons_vecCons, Matrix.cons_val_zero, T, W, A]
   rfl
-
 
 theorem tensorHeatOperator_divergence_hamiltonP_commutator
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -168,7 +159,6 @@ theorem tensorHeatOperator_divergence_hamiltonP_commutator
   simp only [Finset.sum_add_distrib, ← Finset.mul_sum]
   dsimp only [D, e, Q, P] at hfirst
   rw [hfirst]
-
 
 theorem tensorHeatOperator_divergence_hamiltonP
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

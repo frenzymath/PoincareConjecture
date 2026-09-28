@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFiniteBalanced
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCylinderCertificate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_finite_openCylinderModel_threshold_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -39,8 +27,6 @@ theorem exists_finite_openCylinderModel_threshold_m28 :
   obtain ⟨D, j, hj, c, hc, hDzero⟩ := hfinite C
     (hε.trans (min_le_left _ _)) a b hshape
   exact hmodel C (hε.trans (min_le_right _ _)) D j hj c hc hDzero
-
-
 
 theorem exists_finite_tubeCertificate_threshold_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

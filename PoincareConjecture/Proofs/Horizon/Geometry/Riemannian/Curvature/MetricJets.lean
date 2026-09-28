@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 noncomputable def RiemannianMetric.scalarMetricTwoJet
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -28,9 +14,6 @@ noncomputable def RiemannianMetric.scalarMetricTwoJet
     (r : Fin 3) → ι → ι →
       ContinuousMultilinearMap ℝ (fun _ : Fin r.val => EuclideanSpace ℝ (Fin n)) ℝ :=
   fun r i j => iteratedFDeriv ℝ r.val (fun y => g.inner y (b i) (b j)) x
-
-
-
 
 theorem LeviCivitaData.exists_scalar_ricci_control_of_metric_twoJet
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

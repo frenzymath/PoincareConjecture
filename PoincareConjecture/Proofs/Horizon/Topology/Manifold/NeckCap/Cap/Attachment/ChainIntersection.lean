@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_chain_intersection_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularOperations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +8,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem ordinary_capped_low_level_presentations
     {S s s' b d : Set E} {A : E → ℝ} (hA : Continuous A)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ScalarConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -19,9 +10,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M28
 
 open SpacetimeBounds Poincare.Analysis.Calculus
-
-
-
 
 theorem tendstoUniformlyOn_metricTwoJet_of_uniform_bilinear_jets
     {n : ℕ} {B : ℕ → EuclideanSpace ℝ (Fin n) → MetricCoefficient n}
@@ -46,9 +34,6 @@ theorem tendstoUniformlyOn_metricTwoJet_of_uniform_bilinear_jets
     Metric.tendstoUniformlyOn_iff.mp h2 delta hdelta] with k hk0 hk1 hk2
   intro x hx
   exact max_lt (hk0 x hx) (max_lt (hk1 x hx) (hk2 x hx))
-
-
-
 
 theorem tendstoUniformlyOn_jetScalarCurvature_of_metricTwoJet
     {B : ℕ → EuclideanSpace ℝ (Fin 3) → MetricCoefficient 3}

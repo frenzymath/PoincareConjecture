@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralFiniteSupport
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -44,8 +36,6 @@ theorem exists_finite_compact_support_refinement [T2Space X] [RegularSpace X]
   intro y hy
   obtain ⟨x, hxs, hyN⟩ := mem_iUnion₂.mp (hs hy)
   exact mem_iUnion₂.mpr ⟨x, hxs, hy, interior_subset hyN⟩
-
-
 
 theorem integralCompactSupport_local_to_global [T2Space X] [RegularSpace X]
     (K : Set X) (hK : IsCompact K) (d : Nat)
@@ -133,8 +123,6 @@ theorem exists_integralSupportHomology_finite_gluing [T2Space X]
           (singleton_subset_iff.mpr hx) (subset_union_right : L ⊆ F i ∪ L) d a
         rw [hac] at he
         exact he.symm.trans (hc x hx)
-
-
 
 theorem exists_unique_integralSupportHomology_compact_gluing [T2Space X] [RegularSpace X]
     (d : Nat) (hD : ∀ L : Set X, IsCompact L → IntegralSupportDetected L d)

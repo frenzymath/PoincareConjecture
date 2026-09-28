@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.AffineLinkSec
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FaceAffinePolygonSignPreservation
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDiskSignedLink
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -21,10 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem ncard_graph_degree_after_face_affine_motion_at_fixed_vertex
     (K G : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarHalfSpaceGradient
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -26,10 +16,6 @@ open Weak Euclidean BoundaryTangential BoundaryLocalization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => halfSpace 2
-
-
-
-
 
 theorem halfSpace_H4_continuous_hessian {u : Plane → ℝ}
     (hc : HasCompactSupport u) (hu : MemWkp 4 2 u Half) :
@@ -55,10 +41,6 @@ theorem halfSpace_H4_continuous_hessian {u : Plane → ℝ}
   choose H hHc hH using fun i j =>
     M64Uniformization.scalar_halfSpace_H2_continuous_extension (hvc i j) (hv i j)
   exact ⟨H, hHc, fun i j => (hvae i j).symm.trans (hH i j)⟩
-
-
-
-
 
 theorem local_halfSpace_H4_continuous_hessian
     {V : Set Plane} (hV : IsOpen V)

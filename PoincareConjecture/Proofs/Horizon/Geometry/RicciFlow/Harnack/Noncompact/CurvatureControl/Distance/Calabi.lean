@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -238,8 +231,6 @@ theorem exists_calabi_radial_data_of_finite
   · have hhalf : (g.edist p x).toReal / 2 ≤ ‖v‖ := by rw [hnorm]; linarith
     simpa using hlap.trans
       (RiemannianMetric.radius_comparison_of_half_le (k := 0) (Nat.cast_nonneg m) hdpos hhalf)
-
-
 
 theorem exists_distance_spacetime_upper_support
     {m : ℕ} {N : Type u} [TopologicalSpace N] [T3Space N] [ConnectedSpace N]

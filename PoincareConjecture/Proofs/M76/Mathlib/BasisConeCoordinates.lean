@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BasisEvaluation
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConvexHull
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace Module.Basis
 
 variable {ι E : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 def nonnegativeCone (b : Basis ι ℝ E) (s : Set ι) : ConvexCone ℝ E where
   carrier := {x | (∀ i, 0 ≤ b.repr x i) ∧ ∀ i ∉ s, b.repr x i = 0}
@@ -39,15 +28,10 @@ def nonnegativeCone (b : Basis ι ℝ E) (s : Set ι) : ConvexCone ℝ E where
     · intro i hi
       simp only [map_add, Finsupp.add_apply, hx.2 i hi, hy.2 i hi, add_zero]
 
-
-
 theorem mem_nonnegativeCone_iff (b : Basis ι ℝ E) (s : Set ι) (x : E) :
     x ∈ b.nonnegativeCone s ↔ (∀ i, 0 ≤ b.repr x i) ∧ ∀ i ∉ s, b.repr x i = 0 := Iff.rfl
 
 variable [Finite ι]
-
-
-
 
 theorem nonnegativeCone_eq_hull (b : Basis ι ℝ E) (s : Set ι) :
     b.nonnegativeCone s = ConvexCone.hull ℝ (insert 0 (b '' s)) := by
@@ -81,8 +65,6 @@ theorem nonnegativeCone_eq_hull (b : Basis ι ℝ E) (s : Set ι) :
         have hij : i ≠ j := fun he => hj (he ▸ hi)
         simp only [repr_self_apply, if_neg hij]
 
-
-
 theorem isClosed_nonnegativeCone (b : Basis ι ℝ E) (s : Set ι) :
     IsClosed (b.nonnegativeCone s : Set E) := by
   classical
@@ -95,9 +77,6 @@ theorem isClosed_nonnegativeCone (b : Basis ι ℝ E) (s : Set ι) :
     (hc i))).inter (isClosed_iInter (fun i =>
       isClosed_iInter (fun _ : i ∉ s =>
         isClosed_eq (hc i) (continuous_const (y := (0 : ℝ))))))
-
-
-
 
 theorem exists_pos_smul_mem_simplex_of_mem_nonnegativeCone (b : Basis ι ℝ E)
     {s : Set ι} {x : E} (hx : x ∈ b.nonnegativeCone s) :

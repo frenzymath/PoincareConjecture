@@ -1,22 +1,12 @@
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M15
-
-
 
 theorem exists_small_epsilon_exit_bounds (n : ℕ) (A : ℝ) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 2 ∧
@@ -39,8 +29,6 @@ theorem exists_small_epsilon_exit_bounds (n : ℕ) (A : ℝ) :
   have hmem : epsilon ∈ Metric.ball (0 : ℝ) delta := by
     simpa only [Metric.mem_ball, Real.dist_eq, sub_zero, abs_of_pos hepsilon] using hedelta
   exact ⟨(hball hmem).1.le, (hball hmem).2.le⟩
-
-
 
 theorem scaled_squareRoot_speed_le
     (n : ℕ) {A r epsilon q s : ℝ}

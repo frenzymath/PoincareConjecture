@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.NormalChartTransitions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {P X : Type*} [TopologicalSpace P] [TopologicalSpace X]
-
-
 
 theorem normal_product_transition_pair
     (q r : OpenPartialHomeomorph (P × ℝ) X) (S : Set X)
@@ -33,9 +22,6 @@ theorem normal_product_transition_pair
     _ ↔ q z ∈ S := by rw [r.right_inv hzr]
     _ ↔ z.2 = 0 := hq z hzq
 
-
-
-
 theorem normal_product_transition_base
     (q r : OpenPartialHomeomorph (P × ℝ) X) (x : P)
     (hqx : (x, (0 : ℝ)) ∈ q.source) (hrx : (x, (0 : ℝ)) ∈ r.source)
@@ -49,8 +35,6 @@ theorem normal_product_transition_base
     exact r.map_source hrx
   · change r.symm (q (x, 0)) = (x, 0)
     rw [hzero, r.left_inv hrx]
-
-
 
 theorem normal_product_sign_cocycle
     (q r t : OpenPartialHomeomorph (P × ℝ) X) (x : P)

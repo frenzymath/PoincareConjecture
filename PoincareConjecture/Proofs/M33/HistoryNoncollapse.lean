@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -92,8 +82,6 @@ theorem M33RegularHistoryData.noncollapsed_ball
   have h := hN r hr hle hback c hzero hnorm
   rw [← H.volume_image t ht] at h
   exact h.trans (measure_mono (H.history.ball_image_subset t ht z r))
-
-
 
 theorem M33RegularHistoryData.noncollapsedOn_of_generalized
     {J : Set ℝ} (hJ : J ⊆ H.generalized.interval) (kappa : ℝ)

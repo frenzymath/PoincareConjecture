@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.Mollificatio
 import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.MollifierTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Spectral.Counting.ChartLocalization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -37,7 +30,6 @@ private theorem norm_sub_sq_eq_integral_of_ae
   apply integral_congr_ae
   filter_upwards [Lp.coeFn_sub a b, ha, hb] with x hsub hax hbx
   simp only [hsub, Pi.sub_apply, hax, hbx]
-
 
 theorem exists_integral_chart_mollification_sub_sq_le_energy
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -67,7 +59,6 @@ theorem exists_integral_chart_mollification_sub_sq_le_energy
       mul_le_mul_of_nonneg_left (hder _ (f.mulSmooth_support_subset χ hχ)) (sq_nonneg ε)
     _ ≤ ε ^ 2 * (A * (C * ‖f‖) ^ 2) := by gcongr
     _ = A * C ^ 2 * ε ^ 2 * ‖f‖ ^ 2 := by ring
-
 
 theorem exists_norm_chartLocalization_sub_mollifyOn_sq_le_energy
     (hΩ : IsOpen Ω) (hcΩ : IsCompact (closure Ω))

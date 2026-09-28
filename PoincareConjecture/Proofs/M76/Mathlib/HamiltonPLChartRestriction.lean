@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +9,6 @@ namespace OpenPartialHomeomorph
 
 variable {M E : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
 
 theorem self_transition_mem_piecewiseAffineGroupoid
     (c : OpenPartialHomeomorph M E) : c.symm.trans c ∈ piecewiseAffineGroupoid E := by
@@ -31,9 +20,6 @@ theorem self_transition_mem_piecewiseAffineGroupoid
   change x = c (c.symm x)
   exact (c.right_inv hx.1).symm
 
-
-
-
 theorem restricted_transition_mem_piecewiseAffineGroupoid
     (c d : OpenPartialHomeomorph M E)
     (hcd : c.symm.trans d ∈ piecewiseAffineGroupoid E) (U V : Set M) :
@@ -43,9 +29,6 @@ theorem restricted_transition_mem_piecewiseAffineGroupoid
   apply hf.mono ((c.restr U).symm.trans (d.restr V)).open_source
   intro x hx
   exact ⟨hx.1.1, hx.2.1⟩
-
-
-
 
 theorem restricted_transition_mem_of_overlap
     (c d : OpenPartialHomeomorph M E) {U V N : Set M}

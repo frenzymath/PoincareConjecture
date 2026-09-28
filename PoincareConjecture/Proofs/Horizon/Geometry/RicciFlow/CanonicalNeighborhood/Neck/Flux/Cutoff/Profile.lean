@@ -2,16 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -58,9 +48,6 @@ theorem integral_deriv_axialTransitionProfile {L : ℝ} (hL : 0 < L) :
     (((contDiff_axialTransitionProfile L).continuous_deriv (by simp)).intervalIntegrable _ _),
     axialTransitionProfile_one hL le_rfl, axialTransitionProfile_zero hL le_rfl]
   norm_num
-
-
-
 
 theorem lintegral_ofReal_mul_deriv_axialTransitionProfile
     {L κ : ℝ} (hL : 0 < L) (hκ : 0 ≤ κ) :

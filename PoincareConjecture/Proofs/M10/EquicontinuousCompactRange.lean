@@ -2,16 +2,6 @@ import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -20,7 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {A X ι : Type*} [TopologicalSpace A] [MetricSpace X]
-
 
 theorem isClosed_totallyBounded_fibers {f : ι → A → X} (hf : Equicontinuous f) :
     IsClosed {a | TotallyBounded (range (fun i ↦ f i a))} := by
@@ -41,7 +30,6 @@ theorem isClosed_totallyBounded_fibers {f : ι → A → X} (hf : Equicontinuous
 
 variable [CompleteSpace X] [LocallyCompactSpace X]
 
-
 theorem exists_compact_range_nhds {f : ι → A → X} {a : A}
     (hf : EquicontinuousAt f a) (ha : TotallyBounded (range (fun i ↦ f i a))) :
     ∃ K : Set X, IsCompact K ∧ ∀ᶠ b in 𝓝 a, ∀ i, f i b ∈ K := by
@@ -54,7 +42,6 @@ theorem exists_compact_range_nhds {f : ι → A → X} {a : A}
   apply mem_cthickening_of_dist_le _ (f i a) _ _ (subset_closure (mem_range_self i))
   simpa only [dist_comm] using (hb i).le
 
-
 theorem isOpen_totallyBounded_fibers {f : ι → A → X} (hf : Equicontinuous f) :
     IsOpen {a | TotallyBounded (range (fun i ↦ f i a))} := by
   apply isOpen_iff_mem_nhds.mpr
@@ -62,7 +49,6 @@ theorem isOpen_totallyBounded_fibers {f : ι → A → X} (hf : Equicontinuous f
   obtain ⟨K, hK, hnear⟩ := exists_compact_range_nhds (hf a) ha
   filter_upwards [hnear] with b hb
   exact hK.totallyBounded.subset (range_subset_iff.mpr hb)
-
 
 theorem exists_compact_range_of_anchored_equicontinuous
     [CompactSpace A] [PreconnectedSpace A] {f : ι → A → X}

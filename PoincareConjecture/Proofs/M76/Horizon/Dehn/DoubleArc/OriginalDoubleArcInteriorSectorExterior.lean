@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcJointStrictPoints
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.StrictCoordinateFrontierPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

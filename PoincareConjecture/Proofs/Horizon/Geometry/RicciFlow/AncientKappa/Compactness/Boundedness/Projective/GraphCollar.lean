@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Collar
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem exists_projectiveHeightGraph_collar
     {M : Type*} [TopologicalSpace M] (f : RoundCylinderSpace → M) {s : ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.StageSequence
 import PoincareConjecture.Proofs.M51.EpochIndex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +11,6 @@ universe u
 namespace PoincareConjecture.M51
 
 open M51Numerical
-
 
 structure CompletedStageChain
     (S : RepairedControlledSchedulesData.{u})
@@ -60,7 +49,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {C : RepairedCanonicalInductionData S N}
   {F₀ : SurgeryFlowData.{u}} {k : ℕ}
 
-
 noncomputable def ofStages
     (stage : ∀ n : ℕ, Σ F : SurgeryFlowData.{u}, EpochStage S N C (k + n) F)
     (hzero : (stage 0).1 = F₀)
@@ -82,7 +70,6 @@ noncomputable def ofStages
 
 variable (Q : CompletedStageChain S N C F₀ k)
 
-
 theorem parameters_eq (n : ℕ) : (Q.flow n).parameters = F₀.parameters := by
   induction n with
   | zero =>
@@ -91,7 +78,6 @@ theorem parameters_eq (n : ℕ) : (Q.flow n).parameters = F₀.parameters := by
   | succ n ih =>
     rw [← Q.step_eq n]
     exact (Q.step n).parameters_eq.trans ih
-
 
 theorem standard_initial_eq (n : ℕ) :
     (Q.flow n).standard_initial = F₀.standard_initial := by
@@ -103,7 +89,6 @@ theorem standard_initial_eq (n : ℕ) :
     rw [← Q.step_eq n]
     exact (Q.step n).standard_initial_eq.trans ih
 
-
 theorem local_constants_eq (n : ℕ) :
     (Q.flow n).local_constants = F₀.local_constants := by
   induction n with
@@ -114,24 +99,19 @@ theorem local_constants_eq (n : ℕ) :
     rw [← Q.step_eq n]
     exact (Q.step n).local_constants_eq.trans ih
 
-
 theorem standard_initial_setup_eq (n : ℕ) :
     (Q.flow n).standard_initial = S.setup.standard_initial := by
   simpa only [prefix_setup] using (Q.old_controls n).standard_initial_eq
-
 
 theorem local_constants_setup_eq (n : ℕ) :
     (Q.flow n).local_constants = S.constants :=
   (Q.old_controls n).local_constants_eq
 
-
 theorem epsilon_setup_eq (n : ℕ) : (Q.flow n).parameters.epsilon = S.setup.epsilon := by
   simpa only [prefix_setup] using (Q.old_controls n).epsilon_eq
 
-
 theorem C_setup_eq (n : ℕ) : (Q.flow n).parameters.C = S.setup.C := by
   simpa only [prefix_setup] using (Q.old_controls n).C_eq
-
 
 theorem horizon_strictMono : StrictMono (fun n => (Q.observation n).H) := by
   intro n m hnm
@@ -139,7 +119,6 @@ theorem horizon_strictMono : StrictMono (fun n => (Q.observation n).H) := by
   rw [Q.horizon_eq, Q.horizon_eq]
   apply epochStart_strictMono
   omega
-
 
 theorem exists_later_horizon (n : ℕ) (B : ℝ) :
     ∃ m, n ≤ m ∧ B < (Q.observation m).H := by
@@ -149,22 +128,18 @@ theorem exists_later_horizon (n : ℕ) (B : ℝ) :
   rw [Q.horizon_eq]
   exact (lt_epochStart_index B).trans_le (epochStart_strictMono.monotone (by omega))
 
-
 theorem exists_lt_horizon (B : ℝ) : ∃ n, B < (Q.observation n).H := by
   obtain ⟨n, _, hn⟩ := Q.exists_later_horizon 0 B
   exact ⟨n, hn⟩
-
 
 theorem mem_time_domain_of_lt_horizon (n : ℕ) {t : ℝ}
     (ht : 0 ≤ t) (hH : t < (Q.observation n).H) : t ∈ (Q.flow n).time_domain :=
   (Q.observation n).interval_subset ⟨ht, hH⟩
 
-
 theorem exists_later_time (n : ℕ) (t : ℝ) (ht : 0 ≤ t) :
     ∃ m, n ≤ m ∧ t < (Q.observation m).H ∧ t ∈ (Q.flow m).time_domain := by
   obtain ⟨m, hnm, hH⟩ := Q.exists_later_horizon n t
   exact ⟨m, hnm, hH, Q.mem_time_domain_of_lt_horizon m ht hH⟩
-
 
 theorem exists_later_interval (n : ℕ) (B : ℝ) :
     ∃ m, n ≤ m ∧ Icc 0 B ⊆ (Q.flow m).time_domain := by
@@ -174,7 +149,6 @@ theorem exists_later_interval (n : ℕ) (B : ℝ) :
   exact Q.mem_time_domain_of_lt_horizon m ht.1 (ht.2.trans_lt hH)
 
 end CompletedStageChain
-
 
 theorem exists_completed_stage_chain_from
     {S : RepairedControlledSchedulesData.{u}}

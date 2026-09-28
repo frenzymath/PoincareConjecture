@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroCrossing
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem StraddlesZero.card (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     (he : A.StraddlesZero e) : e.card = 2 := by
@@ -30,13 +19,9 @@ theorem StraddlesZero.card (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
   rw [hefin]
   exact Finset.card_pair (fun h => by subst v; exact hu.not_gt hv)
 
-
-
 noncomputable def straddlingPoint (A : E →ᵃ[ℝ] ℝ) (e : Finset E)
     (he : A.StraddlesZero e) : E :=
   (StraddlesZero.existsUnique A he).exists.choose
-
-
 
 theorem straddlingPoint_mem (A : E →ᵃ[ℝ] ℝ) (e : Finset E)
     (he : A.StraddlesZero e) :
@@ -48,9 +33,6 @@ end AffineMap
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem eq_edges_of_regular_zero_point (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (hreg : ∀ v ∈ K.vertices, A v ≠ 0) {e f : Finset E}
@@ -76,9 +58,6 @@ theorem eq_edges_of_regular_zero_point (K : SimplicialComplex ℝ E) (A : E →�
     (Finset.singleton_nonempty v)
   rw [hv, Finset.coe_singleton, convexHull_singleton, mem_singleton_iff] at hx
   exact hreg v hvK (hx ▸ hAx)
-
-
-
 
 theorem straddlingPoint_injective (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (hreg : ∀ v ∈ K.vertices, A v ≠ 0) :

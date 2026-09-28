@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.RoundCylinderReflectionJets
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def roundCylinderAxialReflection :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -37,9 +26,7 @@ noncomputable def roundCylinderAxialReflection :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem roundCylinderTensorCoefficient_smul_pullback_axialReflection
     (g : RiemannianMetric 3 M) (a : ℝ) (f : RoundCylinderSpace → M)
@@ -93,8 +80,6 @@ theorem roundCylinderTensorCoefficient_smul_pullback_axialReflection
   simp only [J,
     roundCylinderCoordinateReflection_basis, map_smul, smul_apply, smul_eq_mul]
   ring
-
-
 
 theorem NeckMetricJetComparison.axialReflection
     {g : RiemannianMetric 3 M} {epsilon scale : ℝ} {f : RoundCylinderSpace → M}

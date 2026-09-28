@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem IsFinitePL.exists_model_of_ambient_image {s : Set E} {t : Set F}
     {e : s ≃ₜ t} (he : e.IsFinitePL) (H : E ≃ₜ E)
@@ -41,11 +28,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_sphere_model_of_deformed_disk_union
     {s d b : Set E} (hs : IsFinitePLBallPair (ℝ × ℝ) s b)

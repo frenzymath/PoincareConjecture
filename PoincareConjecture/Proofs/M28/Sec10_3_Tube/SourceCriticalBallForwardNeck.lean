@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialCoeff
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.ForwardCoreCoefficientReadout
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.RawError
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem eventually_exists_regularRawStage_forward_neck (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)

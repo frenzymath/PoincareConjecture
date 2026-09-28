@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckStatePullbackContinuityNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSpatialParameterNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -92,7 +86,6 @@ theorem tensorEvaluation_smoothTensorCoordinates
     tensorEvaluation d L r p hpr hp x v w (d.smoothTensorCoordinates (2 * r) h hs) = h x v w := by
   rw [tensorEvaluation_apply, stateTensor_smoothTensorCoordinates]
 
-
 theorem stateTensor_probe (z : State d.SymmetricIndex) (ab : d.ProbeIndex) (x : M) :
     stateTensor d L r p hpr hp z x (d.fields ab.1 x) (d.fields ab.2 x) =
       probeEvaluation d L r p hpr hp ab x z := by
@@ -123,7 +116,6 @@ theorem stateTensor_symmetric (z : State d.SymmetricIndex) (x : M)
   rw [← tensorEvaluation_apply, ← tensorEvaluation_apply]
   exact tendsto_nhds_unique (by simpa only [Function.comp_def, hid] using hleft) hright
 
-
 theorem stateTensor_evenPullback (Phi : Diffeomorph I I M M ∞) {C : ℝ≥0∞}
     (hC : C ≠ ⊤) (hdom : d.charts.measure.map Phi ≤ C • d.charts.measure)
     (z : State d.SymmetricIndex) (x : M) (v w : TangentSpace I x) :
@@ -143,7 +135,6 @@ theorem stateTensor_evenPullback (Phi : Diffeomorph I I M M ∞) {C : ℝ≥0∞
       tensorEvaluation_smoothTensorCoordinates, smoothPullback_apply]
   rw [← tensorEvaluation_apply, ← tensorEvaluation_apply]
   exact tendsto_nhds_unique (by simpa only [Function.comp_def, hid] using hleft) hright
-
 
 theorem probeEvaluation_inverse_formula (Phi : Diffeomorph I I M M ∞) {C : ℝ≥0∞}
     (hC : C ≠ ⊤) (hdom : d.charts.measure.map Phi ≤ C • d.charts.measure)
@@ -245,7 +236,6 @@ theorem reconstructedProbePath_eq {Phi : P → Diffeomorph I I M M ∞}
   simp only [horbit t]
   exact (probeEvaluation_inverse_formula d L r p hpr hp (Phi a) hC hdom (z t) ab x).symm
 
-
 theorem contMDiffAt_probePath_of_orbit (z : C(K, State d.SymmetricIndex)) (x : M)
     {U : Set (Fin n → ℝ)} (hU : IsOpen U) (h0 : 0 ∈ U)
     (Phi : (Fin n → ℝ) → Diffeomorph I I M M ∞)
@@ -279,7 +269,6 @@ theorem contMDiffAt_probePath_of_orbit (z : C(K, State d.SymmetricIndex)) (x : M
       (horbit _ hyV) ab x).symm
   rw [contMDiffAt_iff_source]
   exact ((hQ.comp (extChartAt I x x) hinv).congr_of_eventuallyEq heq).contMDiffAt.contMDiffWithinAt
-
 
 def recoveredTensor (z : C(K, State d.SymmetricIndex))
     (hspatial : ∀ ab : d.ProbeIndex,
@@ -378,7 +367,6 @@ theorem contMDiffOn_chartTensorPath (z : C(K, State d.SymmetricIndex))
   contMDiffOn_tensorPairPath d L r p hpr hp z hspatial _ _
     (DeTurckNative.chartFrame_contMDiffOn base i)
     (DeTurckNative.chartFrame_contMDiffOn base j)
-
 
 theorem contMDiff_probePath_of_parameter_orbits (z : C(K, State d.SymmetricIndex))
     (horbits : ∀ (U : Set (Fin n → ℝ)), IsOpen U → 0 ∈ U →

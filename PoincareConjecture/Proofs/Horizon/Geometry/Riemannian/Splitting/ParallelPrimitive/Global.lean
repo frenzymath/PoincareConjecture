@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelP
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelPrimitive.Global.Sections
 import PoincareConjecture.Proofs.Horizon.Topology.Sheaves.Continuation
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ namespace PoincareConjecture.ParallelPrimitive
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem primitive_germ_surjective
     (α : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] ℝ)
@@ -47,8 +35,6 @@ theorem primitive_germ_surjective
   change f y + (s.val ⟨y, hyW⟩ - f y) = s.val ⟨y, hyW⟩
   ring
 
-
-
 theorem locally_bijective_primitive_germ_of_parallel
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}
@@ -70,8 +56,6 @@ end PoincareConjecture.ParallelPrimitive
 namespace PoincareConjecture.LeviCivitaData
 
 open ParallelPrimitive
-
-
 
 theorem exists_global_potential_of_parallel
     {n : ℕ} {M : Type*} [TopologicalSpace M]

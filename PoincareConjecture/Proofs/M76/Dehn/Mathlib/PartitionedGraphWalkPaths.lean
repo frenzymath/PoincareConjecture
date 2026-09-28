@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineGraphWalkPaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped unitInterval
 namespace Path
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
 
 def intervalIn (s : Set E) (f : ℝ → E)
     (hc : ContinuousOn f (Icc (0 : ℝ) 1))
@@ -51,10 +38,6 @@ private theorem geometricWalkPath_copy {a b c d : K.vertices}
   subst c
   subst d
   rfl
-
-
-
-
 
 theorem exists_partitioned_geometric_walk
     (hK : K.faces.Finite) (hdim : ∀ s ∈ K.faces, s.card ≤ 2)

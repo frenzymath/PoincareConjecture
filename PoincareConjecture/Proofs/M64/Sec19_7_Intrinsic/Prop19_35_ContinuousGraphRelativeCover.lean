@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ContinuousGraphShear
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ProductLineRelativeCover
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,9 +8,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_continuous_graph_relative_cover
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ))

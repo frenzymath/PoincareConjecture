@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CoordinateTriangle
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.FanAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,13 +12,11 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 noncomputable def coordinateTriangleVelocity
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) (i j : Fin 3) :
     TangentSpace (𝓡 2) (F (b i)) :=
   mfderiv 𝓘(ℝ, ℝ) (𝓡 2) (fun t : ℝ => F (AffineMap.lineMap (b i) (b j) t)) 0 1
-
 
 noncomputable def coordinateTriangleAngle (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -35,7 +26,6 @@ noncomputable def coordinateTriangleAngle (g : RiemannianMetric 2 S)
     (coordinateTriangleVelocity F b i (i.succAbove 1))
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem coordinateTriangleVelocity_eq_differential
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -141,7 +131,6 @@ theorem coordinateTriangleVelocity_ne_zero
     apply (coordinateTriangleChart F b).map_target
     apply coordinateTriangleChart_target F b hsource
     fin_cases i <;> norm_num [standardTriangleVertex]
-
 
 theorem sum_coordinateTriangleAngle_eq_chartFields (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

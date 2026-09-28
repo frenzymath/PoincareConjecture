@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem localDiffeomorphAt_of_smooth_bijective_derivative
     {f : E -> E} (hf : ContDiff Real ∞ f) {a : E}

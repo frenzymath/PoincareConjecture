@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.SeparationEvolution
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductFlow
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +12,6 @@ open scoped Topology ContDiff Manifold
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusEvolution_of_M63
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

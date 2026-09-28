@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalFieldLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,8 +8,6 @@ open scoped ContDiff NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {P : Type*} [NormedAddCommGroup P]
-
-
 
 theorem norm_le_of_lipschitz_supported_ball (g : P → P) {L : ℝ≥0}
     (hg : LipschitzWith L g) (hg0 : g 0 = 0) {b : ℝ} (hb : 0 ≤ b)
@@ -31,8 +20,6 @@ theorem norm_le_of_lipschitz_supported_ball (g : P → P) {L : ℝ≥0}
     exact mul_nonneg L.coe_nonneg hb
 
 variable [NormedSpace ℝ P]
-
-
 
 theorem horizontalFieldLift_lipschitz (χ : ℝ → ℝ) (g : P → P)
     {k l b : ℝ≥0} (hχ : LipschitzWith k χ) (hχnorm : ∀ r, ‖χ r‖ ≤ 1)

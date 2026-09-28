@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralExcision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,7 +27,6 @@ theorem integralSubspaceChains_homology_mono_of_contractible
     CategoryTheory.Functor.map_comp, HomologicalComplex.homologyMap_comp] at he
   exact mono_of_mono_fac he.symm
 
-
 theorem integralToRelativeHomology_isIso_of_contractible
     (A : Set X) [ContractibleSpace A] (n : Nat) :
     IsIso (integralToRelativeHomology A (n + 1)) := by
@@ -51,7 +42,6 @@ theorem integralToRelativeHomology_isIso_of_contractible
   let : Epi (integralToRelativeHomology A (n + 1)) :=
     (S.homology_exact₃ (n + 1) n rfl).epi_f hδ
   exact isIso_of_mono_of_epi _
-
 
 def integralContractibleCoverHomologyIso
     (A B : Set X) [ContractibleSpace A] [ContractibleSpace B]
@@ -70,8 +60,6 @@ def integralContractibleCoverHomologyIso
     (integralPairSequence_shortExact AB).δIso (n + 2) (n + 1) rfl
       (integral_contractible_homology_isZero B (n + 2) (by omega))
       (integral_contractible_homology_isZero B (n + 1) (by omega))
-
-
 
 def integralContractibleCoverHomologyOneIso
     (A B : Set X) [ContractibleSpace A] [ContractibleSpace B]

@@ -1,40 +1,24 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
 
-
-
 noncomputable def roundCylinderCoordinateReflection :
     RoundCylinderCoordinates ≃L[ℝ] RoundCylinderCoordinates :=
   (ContinuousLinearEquiv.refl ℝ (EuclideanSpace ℝ (Fin 2))).prodCongr
     (LinearIsometryEquiv.neg ℝ).toContinuousLinearEquiv
 
-
 def roundCylinderAxialSign (i : Fin 3) : ℝ := if i = 2 then -1 else 1
-
-
 
 theorem roundCylinderCoordinateReflection_basis (i : Fin 3) :
     roundCylinderCoordinateReflection (roundCylinderCoordinateBasis i) =
       roundCylinderAxialSign i • roundCylinderCoordinateBasis i := by
   fin_cases i <;> simp [roundCylinderCoordinateReflection, roundCylinderCoordinateBasis,
     roundCylinderAxialSign]
-
-
 
 theorem roundCylinderCoordinateReflection_fderiv_apply
     (f : RoundCylinderCoordinates → ℝ) (a : ℝ)
@@ -52,8 +36,6 @@ theorem roundCylinderCoordinateReflection_fderiv_apply
     smul_eq_mul]
   ring
 
-
-
 theorem roundCylinderGram_axialReflection
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (a b : Fin 3) :
     roundCylinderGram 0 (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b =
@@ -63,8 +45,6 @@ theorem roundCylinderGram_axialReflection
   fin_cases a <;> fin_cases b <;>
     simp [roundCylinderGram_eq_stereographic_formula, roundCylinderCoordinateReflection,
       roundCylinderCoordinateBasis, roundCylinderAxialSign]
-
-
 
 theorem roundCylinderGram_inv_axialReflection
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (a b : Fin 3) :
@@ -83,8 +63,6 @@ theorem roundCylinderGram_inv_axialReflection
   rw [hdiag, hdiag, Matrix.inv_diagonal, Matrix.inv_diagonal]
   fin_cases a <;> fin_cases b <;>
     simp [roundCylinderCoordinateReflection, roundCylinderAxialSign, Matrix.diagonal]
-
-
 
 theorem roundCylinderChristoffel_axialReflection
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (a b d : Fin 3) :

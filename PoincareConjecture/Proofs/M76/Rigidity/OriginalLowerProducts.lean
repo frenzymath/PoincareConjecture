@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleProducts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,14 +13,9 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
-
-
 noncomputable def OriginalProperDiskTriangulation.diskDualBase
     (T : OriginalProperDiskTriangulation e R j) (s : Finset (T.index → ℝ × V3)) :
     Set (T.index → ℝ × V3) := T.dualRegion s ∩ (T.marked 2).space
-
-
-
 
 structure OriginalLowerProducts (T : OriginalProperDiskTriangulation e R j) where
   map : Finset (T.index → ℝ × V3) → (T.index → ℝ × V3) × ℝ → (T.index → ℝ × V3)

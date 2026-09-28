@@ -3,13 +3,6 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,10 +15,7 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 def puncturedThreeSpace : Opens E3 := ⟨{0}ᶜ, isOpen_compl_singleton⟩
-
-
 
 def sphereCylinderDiffeomorphPunctured :
     Diffeomorph CylModel (𝓡 3) (S2 × ℝ) puncturedThreeSpace ∞ := by

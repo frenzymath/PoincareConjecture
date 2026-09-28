@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCenterLimits
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckPinching
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,18 +18,14 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (U := strongNeckOpen S) (J := strongNeckBackwardInterval)
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
 
-
 theorem GeneralizedStrongNeck.rescaled_secondary_scale_eq_one :
     S.scale⁻¹ ^ 2 * S.scale ^ 2 = 1 := by
   rw [← mul_pow, inv_mul_cancel₀ S.scale_pos.ne', one_pow]
-
 
 theorem GeneralizedStrongNeck.rescaled_eighth_global_window :
     (1 / 8 : ℝ) ≤ (S.scale⁻¹ ^ 2 * S.scale ^ 2) / 4 := by
   rw [GeneralizedStrongNeck.rescaled_secondary_scale_eq_one S]
   norm_num
-
-
 
 theorem GeneralizedStrongNeck.global_flow_metric_eq_half_of_unit_scale
     (Q : ℝ) (hQ : 0 < Q) (hunit : Q * S.scale ^ 2 = 1)
@@ -60,8 +44,6 @@ theorem GeneralizedStrongNeck.global_flow_metric_eq_half_of_unit_scale
   simp only [Bundle.ContMDiffRiemannianMetric.mk.injEq]
   funext x
   exact ContinuousLinearMap.ext (fun v => ContinuousLinearMap.ext (hinner x v))
-
-
 
 theorem GeneralizedStrongNeck.global_flow_curvature_eq_half_of_unit_scale
     (Q : ℝ) (hQ : 0 < Q) (hunit : Q * S.scale ^ 2 = 1)
@@ -96,22 +78,18 @@ theorem GeneralizedStrongNeck.global_flow_curvature_eq_half_of_unit_scale
         ((GeneralizedStrongNeck.rescaled_half_flow S H).connection s)
         isOpen_univ contMDiff_id.contMDiffOn hmetric (mem_univ x)
 
-
 @[simp] theorem GeneralizedStrongNeck.rescaled_eighth_flow_metric (s : ℝ) :
     (GeneralizedStrongNeck.rescaled_eighth_flow S H).metric s =
       (GeneralizedStrongNeck.rescaled_half_flow S H).metric s := rfl
-
 
 @[simp] theorem GeneralizedStrongNeck.rescaled_eighth_flow_connection (s : ℝ) :
     (GeneralizedStrongNeck.rescaled_eighth_flow S H).connection s =
       (GeneralizedStrongNeck.rescaled_half_flow S H).connection s := rfl
 
-
 def GeneralizedStrongNeck.rescaled_eighth_original_point
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) : F.point :=
   GeneralizedStrongNeck.global_original_point S (S.scale⁻¹ ^ 2) S.time_cylinder.scale_pos
     (1 / 8) (GeneralizedStrongNeck.rescaled_eighth_global_window S) s hs x
-
 
 theorem GeneralizedStrongNeck.rescaled_eighth_original_point_eq_pointMap
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) :
@@ -128,14 +106,12 @@ theorem GeneralizedStrongNeck.rescaled_eighth_original_point_eq_pointMap
             change s / (S.scale⁻¹ ^ 2 * S.scale ^ 2) = s
             rw [GeneralizedStrongNeck.rescaled_secondary_scale_eq_one S, div_one]))
 
-
 theorem GeneralizedStrongNeck.rescaled_eighth_original_point_time
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) :
     (GeneralizedStrongNeck.rescaled_eighth_original_point S s hs x).1 = t + s * S.scale ^ 2 := by
   change t + (s / (S.scale⁻¹ ^ 2 * S.scale ^ 2)) / (S.scale⁻¹ ^ 2) = _
   rw [GeneralizedStrongNeck.rescaled_secondary_scale_eq_one S, div_one]
   field_simp [S.scale_pos.ne']
-
 
 theorem GeneralizedStrongNeck.rescaled_eighth_original_point_time_mem
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) :
@@ -144,25 +120,21 @@ theorem GeneralizedStrongNeck.rescaled_eighth_original_point_time_mem
     S.time_cylinder.scale_pos (1 / 8) (GeneralizedStrongNeck.rescaled_eighth_global_window S)
     s hs x
 
-
 theorem GeneralizedStrongNeck.rescaled_eighth_physical_time_mem
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) :
     t + s * S.scale ^ 2 ∈ F.interval := by
   rw [← GeneralizedStrongNeck.rescaled_eighth_original_point_time S s hs x]
   exact GeneralizedStrongNeck.rescaled_eighth_original_point_time_mem S s hs x
 
-
 def GeneralizedStrongNeck.rescaled_eighth_pinching_error
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) : ℝ :=
   let p := GeneralizedStrongNeck.rescaled_eighth_original_point S s hs x
   (F.connection p.1).negativeCurvaturePart p.2 / (S.scale⁻¹ ^ 2)
 
-
 theorem GeneralizedStrongNeck.rescaled_eighth_pinching_error_nonneg
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S) :
     0 ≤ GeneralizedStrongNeck.rescaled_eighth_pinching_error S s hs x :=
   div_nonneg (le_max_right _ _) S.time_cylinder.scale_pos.le
-
 
 theorem GeneralizedStrongNeck.rescaled_half_plane_lower_eighth_window
     (P : RicciFlowCurvatureTheory.{u})
@@ -187,7 +159,6 @@ theorem GeneralizedStrongNeck.rescaled_half_plane_lower_eighth_window
   rw [hgram, htensor] at h
   exact h
 
-
 theorem GeneralizedStrongNeck.rescaled_eighth_flow_plane_lower
     (P : RicciFlowCurvatureTheory.{u})
     (s : ℝ) (hs : s ∈ Icc (-(1 / 8 : ℝ)) 0) (x : strongNeckOpen S)
@@ -196,8 +167,6 @@ theorem GeneralizedStrongNeck.rescaled_eighth_flow_plane_lower
         M04.metricGram ((GeneralizedStrongNeck.rescaled_eighth_flow S H).metric s) x v w ≤
       ((GeneralizedStrongNeck.rescaled_eighth_flow S H).connection s).curvatureTensor x v w v w :=
   GeneralizedStrongNeck.rescaled_half_plane_lower_eighth_window S H P s hs x v w
-
-
 
 theorem GeneralizedStrongNeck.rescaled_eighth_original_scalar_le_of_curvature_bound
     (P : RicciFlowCurvatureTheory.{u})
@@ -214,8 +183,6 @@ theorem GeneralizedStrongNeck.rescaled_eighth_original_scalar_le_of_curvature_bo
     S H (S.scale⁻¹ ^ 2) S.time_cylinder.scale_pos P (1 / 8) (by norm_num)
     (GeneralizedStrongNeck.rescaled_eighth_global_window S) s hs x (hnorm.trans_le hcurv)
 
-
-
 theorem GeneralizedStrongNeck.rescaled_eighth_pinching_error_lt
     (P : RicciFlowCurvatureTheory.{u}) (hpinch : generalizedWeakHamiltonIveyPinched F)
     {K eta : ℝ} (hK : 0 ≤ K) (heta : 0 < eta)
@@ -231,8 +198,6 @@ theorem GeneralizedStrongNeck.rescaled_eighth_pinching_error_lt
     (GeneralizedStrongNeck.rescaled_eighth_original_point_time_mem S s hs x) p.2
     (GeneralizedStrongNeck.rescaled_eighth_original_scalar_le_of_curvature_bound
       S H P s hs x hcurv)
-
-
 
 theorem strongNeck_eighth_pinching_error_eventually_lt
     (P : RicciFlowCurvatureTheory.{u}) {epsilon : ℝ}
@@ -256,8 +221,6 @@ theorem strongNeck_eighth_pinching_error_eventually_lt
   intro s hs x
   exact GeneralizedStrongNeck.rescaled_eighth_pinching_error_lt
     (S i) (H i) P (hpinch i) hK heta hi s hs x (hcurv i s hs x)
-
-
 
 theorem strongNeck_eighth_pinching_error_tendsto_zero
     (P : RicciFlowCurvatureTheory.{u}) {epsilon : ℝ}

@@ -1,8 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Algebra
-
-
 
 set_option autoImplicit false
 

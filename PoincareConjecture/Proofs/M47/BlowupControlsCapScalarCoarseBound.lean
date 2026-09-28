@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarArithmetic
 import PoincareConjecture.Proofs.M04.ShiNormalCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

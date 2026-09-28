@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Parabolic
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.ParameterExistence
 import Mathlib.Algebra.Star.Module
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -77,7 +67,6 @@ private theorem exists_symmetric_reaction_curve
   · intro t ht
     convert! ι.hasFDerivAt.comp_hasDerivWithinAt t (hd t ht) using 1
     exact (hforget _).symm
-
 
 theorem reaction_support_nonpos (hn : Module.finrank ℝ E = 3)
     {c : ℝ} (hc : 1 ≤ c) {A : E →L[ℝ] E} (hA : A ∈ pinchingCone c)

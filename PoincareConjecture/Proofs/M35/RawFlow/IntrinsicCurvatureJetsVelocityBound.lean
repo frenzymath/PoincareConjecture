@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsBounds
 import PoincareConjecture.Proofs.M35.RawFlow.RawRadialVelocityBound
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -50,8 +41,6 @@ private theorem velocity_jet_bound
   have hclosed : IsClosed {s : ℝ | |iteratedDeriv (j + 1) v s| ≤ 2 * C} :=
     isClosed_le hc.abs continuous_const
   exact closure_minimal (s := Ioi (0 : ℝ)) hp hclosed (by rwa [closure_Ioi])
-
-
 
 theorem raw_intrinsic_velocity_jets_bounded_on_slab
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RadialEndpoint
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingNorm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +13,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_contDiffAt_focusing_field
     {kappa : ℝ} (hkappa : kappa ≠ 0)
     {x : AnnulusCoordinates} (hx : x ≠ 0) :
@@ -39,8 +24,6 @@ theorem m64Intrinsic_contDiffAt_focusing_field
   exact (((contDiffAt_const.mul hn).sin).div
     (contDiffAt_const.mul hn) (mul_ne_zero hkappa (norm_ne_zero_iff.mpr hx))).smul
       contDiffAt_id
-
-
 
 theorem m64Intrinsic_pushed_focusing_norm_le_sin_radius
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -61,9 +44,6 @@ theorem m64Intrinsic_pushed_focusing_norm_le_sin_radius
   apply div_le_div_of_nonneg_right _ hkappa.le
   apply Real.sin_le_sin_of_le_of_le_pi_div_two _ hRhalf hangle
   linarith [mul_pos hkappa hx, Real.pi_pos]
-
-
-
 
 theorem m64Intrinsic_focusing_at_of_radial_segment
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

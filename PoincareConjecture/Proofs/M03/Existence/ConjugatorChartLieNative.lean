@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ConjugatorLieDerivativeNative
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2000000
 set_option backward.isDefEq.respectTransparency false

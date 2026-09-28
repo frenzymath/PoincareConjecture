@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureOpenInclusion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M47
 
 open Poincare.Geometry.Manifold.RegularLevel
-
-
 
 theorem terminalCurvature_component_field
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

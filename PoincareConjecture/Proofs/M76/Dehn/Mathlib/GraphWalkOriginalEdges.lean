@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GraphWalkConcatenation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace SimpleGraph.Walk
@@ -45,9 +36,6 @@ private theorem getVert_concatSequence_single {n : ℕ} (p : Fin (n + 1) → V)
       rw [show n + 1 - n = 1 from by omega]
       rfl
 
-
-
-
 theorem concatSequence_original_edges {u v : V} (w : G.Walk u v) :
     concatSequence (fun i : Fin (w.length + 1) => w.getVert i.val)
       (fun i : Fin w.length => Walk.cons (w.adj_getVert_succ i.isLt) .nil) =
@@ -67,9 +55,6 @@ private theorem realizePath_copy_endpoints {X : Type*} [TopologicalSpace X]
   subst u'
   subst v'
   rfl
-
-
-
 
 theorem realizePath_homotopic_original_edges {X : Type*} [TopologicalSpace X]
     (a : V → X) (edge : ∀ {u v : V}, G.Adj u v → _root_.Path (a u) (a v))

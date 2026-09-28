@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereDistance
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +24,6 @@ variable {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
   (hshort : v * (G.connection v).scalarCurvature z < 1 + gamma)
 
 include hsmall hdisjoint hshort
-
-
 
 theorem exists_standard_initial_neck_sphere_path
     (q r : UnitTwoSphere) {a : ℝ} (ha : a ∈ Ioo (-gamma⁻¹) gamma⁻¹) :
@@ -108,8 +96,6 @@ theorem exists_standard_initial_neck_sphere_path
       dsimp only [C]
       linarith
 
-
-
 theorem standard_initial_neck_axis_path
     (q : UnitTwoSphere) {a b R : ℝ} (hR : R ≤ gamma⁻¹)
     (ha : a ∈ Ioo (-R) R) (hb : b ∈ Ioo (-R) R) :
@@ -178,8 +164,6 @@ theorem standard_initial_neck_axis_path
       intro t ht
       exact ENNReal.ofReal_le_ofReal (hspeed t ht)
     _ = _ := by simp
-
-
 
 theorem exists_standard_initial_neck_strip_paths
     {R : ℝ} (hR : R ≤ gamma⁻¹) (q r : UnitTwoSphere) {a b : ℝ}

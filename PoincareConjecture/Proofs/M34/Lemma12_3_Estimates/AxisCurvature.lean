@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.CurvatureCoefficients
 import PoincareConjecture.Proofs.M34.Mathlib.RadialConnectionDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialCurvature_formula (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (u v w : StandardCapSpace) :
@@ -54,7 +43,6 @@ theorem initialCurvature_formula (g₀ : StandardInitialMetric)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem initialCurvature_angular_axis (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     g₀.connection.curvature (EuclideanSpace.single (0 : Fin 3) r)
       (EuclideanSpace.single (1 : Fin 3) (1 : ℝ))
@@ -72,7 +60,6 @@ theorem initialCurvature_angular_axis (g₀ : StandardInitialMetric) {r : ℝ} (
   simp
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialCurvature_radial_axis (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     g₀.connection.curvature (EuclideanSpace.single (0 : Fin 3) r)
@@ -95,7 +82,6 @@ theorem initialCurvature_radial_axis (g₀ : StandardInitialMetric) {r : ℝ} (h
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem initialCurvatureTensor_angular_axis (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :
     g₀.connection.curvatureTensor (EuclideanSpace.single (0 : Fin 3) r)
@@ -111,7 +97,6 @@ theorem initialCurvatureTensor_angular_axis (g₀ : StandardInitialMetric)
   ring
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialCurvatureTensor_radial_axis (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :

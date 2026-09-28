@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryLifts
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64FreeConformalModulusApproximation_of_fixed
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

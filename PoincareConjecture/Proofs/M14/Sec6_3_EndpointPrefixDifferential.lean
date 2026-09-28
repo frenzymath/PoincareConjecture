@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EndpointLineField
 import PoincareConjecture.Proofs.M14.Sec6_3_ParameterLineVariation
 import PoincareConjecture.Proofs.M14.Sec6_3_ParameterActionDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -46,9 +37,6 @@ variable {f : ℝ × ℝ → G.Point} {U : Set ℝ} {T B c : ℝ}
   {lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point ×
     G.gaugeCover.spatial j}
   (D : GaugeEndpointFamily f U T 0 B c 0 j lift)
-
-
-
 
 theorem prefixAction_fderiv_of_velocity
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

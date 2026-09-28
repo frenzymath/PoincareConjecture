@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Riemannian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set Bundle
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem continuousOn_pullback_inner
     {E F H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

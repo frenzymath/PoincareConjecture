@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependenceEmbeddedJets
 import PoincareConjecture.Proofs.M63.Mathlib.RetractionTangentContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {Z : Type w} [TopologicalSpace Z] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem continuous_angular_jets_of_embedded_jets
     (F : RicciFlow n M (Icc a b))

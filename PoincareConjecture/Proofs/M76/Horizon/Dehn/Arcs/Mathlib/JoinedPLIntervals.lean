@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "I01" => Icc (0 : ℝ) 1
 local notation "I12" => Icc (1 : ℝ) 2
-
-
 
 theorem isFinitePLBallPair_joined_intervals
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

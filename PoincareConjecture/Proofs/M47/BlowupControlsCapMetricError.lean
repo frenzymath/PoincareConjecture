@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M47
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem cap_metricDifference_smooth (g0 g1 : RiemannianMetric n M) :
     IsSmoothCovariantTensor
@@ -49,7 +38,6 @@ theorem cap_metricDifference_smooth (g0 g1 : RiemannianMetric n M) :
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem cap_metricDifference_quadratic_le (g0 g1 : RiemannianMetric n M)
     (x : M) (v : TangentSpace (𝓡 n) x) :
     |g1.inner x v v - g0.inner x v v| ≤
@@ -70,8 +58,6 @@ theorem cap_metricDifference_quadratic_le (g0 g1 : RiemannianMetric n M)
       ← pow_two, mul_pow] using hb
   exact (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hN hV)).mp (by rwa [sq_abs])
 
-
-
 theorem cap_metricDifference_frame_lower (g0 g1 : RiemannianMetric n M)
     (x : M) (e : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
     (he : ∀ v w, g0.inner x (e v) (e w) = inner ℝ v w)
@@ -85,8 +71,6 @@ theorem cap_metricDifference_frame_lower (g0 g1 : RiemannianMetric n M)
   have hmul := mul_le_mul_of_nonneg_right herror (sq_nonneg ‖v‖)
   have hlo := neg_abs_le (g1.inner x (e v) (e v) - ‖v‖ ^ 2)
   linarith
-
-
 
 theorem cap_metricDifference_inverse_norm_le (g0 g1 : RiemannianMetric n M)
     (x : M) (e : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)

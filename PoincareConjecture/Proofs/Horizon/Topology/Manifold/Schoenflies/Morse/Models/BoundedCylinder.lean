@@ -4,14 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,7 +61,6 @@ private theorem boundedCylinderDenominator_horizontal_le (s : Real) :
   dsimp only [boundedCylinderDenominator]
   nlinarith
 
-
 def boundedCylinderRadius (v : E3) (p : S2) : Real :=
   (Real.sqrt (boundedCylinderDenominator (inner Real v (p : E3))))⁻¹
 
@@ -105,7 +96,6 @@ theorem contMDiff_boundedCylinderRadius (v : E3) :
     exact (Real.contDiffAt_sqrt (boundedCylinderDenominator_pos _).ne').contMDiffAt.comp p (hD p)
   exact hs.inv₀ (fun p => (Real.sqrt_pos.mpr (boundedCylinderDenominator_pos _)).ne')
 
-
 theorem boundedCylinderRadius_of_abs_height_le (v : E3) (p : S2)
     (hp : |inner Real v (p : E3)| ≤ 1 / 2) :
     boundedCylinderRadius v p = (Real.sqrt (1 - inner Real v (p : E3) ^ 2))⁻¹ := by
@@ -115,14 +105,11 @@ theorem boundedCylinderRadius_of_abs_height_le (v : E3) (p : S2)
     nlinarith [sq_abs (inner Real v (p : E3))]
   simp [boundedCylinderRadius, boundedCylinderDenominator, boundedCylinderWeight_zero hsq]
 
-
-
 theorem boundedCylinderRadius_of_three_quarters_le_sq_height (v : E3) (p : S2)
     (hp : 3 / 4 ≤ inner Real v (p : E3) ^ 2) :
     boundedCylinderRadius v p = |inner Real v (p : E3)|⁻¹ := by
   simp [boundedCylinderRadius, boundedCylinderDenominator, boundedCylinderWeight_one hp,
     Real.sqrt_sq_eq_abs]
-
 
 theorem norm_boundedCylinder_projection_le (v : E3) (hv : ‖v‖ = 1) (p : S2) :
     ‖(Hemisphere.Plane v).orthogonalProjectionOnto
@@ -150,7 +137,6 @@ theorem norm_boundedCylinder_projection_le (v : E3) (hv : ‖v‖ = 1) (p : S2) 
       mul_le_mul_of_nonneg_left hnorm (boundedCylinderRadius_pos v p).le
     _ = 1 := inv_mul_cancel₀ (Real.sqrt_pos.mpr (boundedCylinderDenominator_pos _)).ne'
 
-
 theorem abs_boundedCylinder_height_le (v : E3) (hv : ‖v‖ = 1) (p : S2) :
     |inner Real v (boundedCylinderRadius v p • (p : E3))| ≤ 2 := by
   have hh : |inner Real v (p : E3)| ≤ 1 := by
@@ -160,8 +146,6 @@ theorem abs_boundedCylinder_height_le (v : E3) (hv : ‖v‖ = 1) (p : S2) :
     _ ≤ boundedCylinderRadius v p * 1 :=
       mul_le_mul_of_nonneg_left hh (boundedCylinderRadius_pos v p).le
     _ ≤ 2 := by simpa using boundedCylinderRadius_le_two v p
-
-
 
 theorem exists_boundedCylinder_ambient (v : E3) (hv : ‖v‖ = 1) :
     ∃ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,

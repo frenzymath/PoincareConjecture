@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalResolutionComponentDecrease
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalResolutionProperness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_original_selected_resolution_with_decrease
     {F X ι I : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

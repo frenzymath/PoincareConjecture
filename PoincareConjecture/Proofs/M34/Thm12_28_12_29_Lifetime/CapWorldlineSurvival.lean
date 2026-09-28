@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.FixedFlowSequence
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapScalarBounds
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryMaximalLine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +17,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F) (F := F.flow) R
 
 include P
-
-
 
 theorem partialFlow_chapter11_worldline_survival (p : ℕ → (G).point)
     (hpositive : ∀ k, 0 < (G).scalar (p k))

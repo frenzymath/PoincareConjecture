@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerRoundFactor
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +25,6 @@ local instance suNormalizedEquationBilinearSpace {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 
-
-
 theorem suMetricQuadratic_fderiv
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -56,9 +44,6 @@ theorem suMetricQuadratic_fderiv
   simp only [Fin.sum_univ_two, add_apply, coe_comp, Function.comp_apply, flip_apply]
   rw [hsym (fderiv ℝ (v 0) x d), hsym (fderiv ℝ (v 1) x d)]
   ring
-
-
-
 
 theorem suWeightedMetricFlux_fderiv
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -120,8 +105,6 @@ theorem suWeightedMetricFlux_fderiv
   field_simp [hlpos.ne', hdpos.ne']
   ring
 
-
-
 theorem suWeightedLinearMetricFlux_fderiv
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -142,9 +125,6 @@ theorem suWeightedLinearMetricFlux_fderiv
   simpa only [ContinuousLinearMap.fderiv] using
     suWeightedMetricFlux_fderiv G u (fun i => v i) lambda x d w k alpha
       hG u.differentiableAt (fun i => (v i).differentiableAt) hl hlpos hsym hpos
-
-
-
 
 theorem suAlphaJetFlux_fderiv
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -221,8 +201,6 @@ theorem suAlphaJetFlux_fderiv
   simp only [Function.comp_apply, hpz, hlD] at hflux
   fin_cases k <;> simpa [G, E, z, d, e, uu, vv, Fin.sum_univ_two] using! hflux
 
-
-
 theorem suMetricJet_connection_cancellation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (DG : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
@@ -232,9 +210,6 @@ theorem suMetricJet_connection_cancellation
     2 * DG v v w - DG w v v = 2 * B (Gamma v v) w := by
   rw [hc v v w, hc w v v, ht w v, hs (Gamma v w) v]
   ring
-
-
-
 
 theorem suMetricJet_residual_pairing {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -261,10 +236,6 @@ theorem suMetricJet_residual_pairing {n : ℕ}
   linear_combination h0 + h1
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem SUInitialGain.alpha_normalized_equation_ae
     {n : ℕ} {M : Type*} [TopologicalSpace M]

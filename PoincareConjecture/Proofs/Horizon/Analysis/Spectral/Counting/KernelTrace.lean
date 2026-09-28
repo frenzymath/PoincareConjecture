@@ -3,13 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Orthonormal
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory
@@ -20,7 +13,6 @@ namespace Poincare.Analysis.Spectral.Counting
 variable {H K X ι : Type*}
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
   [NormedAddCommGroup K] [InnerProductSpace ℝ K] [CompleteSpace K]
-
 
 theorem sum_inner_map_sq_le (A : H →L[ℝ] K) {b : ι → H}
     (hb : Orthonormal ℝ b) (s : Finset ι) (k : K) :
@@ -39,7 +31,6 @@ theorem sum_inner_map_sq_le (A : H →L[ℝ] K) {b : ι → H}
 
 variable [MeasurableSpace X] {ν : Measure X}
 
-
 theorem sum_integral_inner_map_sq_le (A : H →L[ℝ] K) {b : ι → H}
     (hb : Orthonormal ℝ b) (s : Finset ι) (k : X → K)
     (hk : Integrable (fun x => ‖k x‖ ^ 2) ν)
@@ -49,8 +40,6 @@ theorem sum_integral_inner_map_sq_le (A : H →L[ℝ] K) {b : ι → H}
   rw [← integral_finsetSum s hi, ← integral_const_mul]
   exact integral_mono (integrable_finsetSum _ hi) (hk.const_mul _)
     (fun x => sum_inner_map_sq_le A hb s (k x))
-
-
 
 theorem sum_integral_inner_map_sq_le_const [IsFiniteMeasure ν]
     (A : H →L[ℝ] K) {b : ι → H} (hb : Orthonormal ℝ b)
@@ -132,8 +121,6 @@ private theorem norm_kernelOnLinear_sq_le (u : K) :
     _ = ν.real S * C ^ 2 * ‖u‖ ^ 2 := by
       simp [Measure.real, mul_assoc]
 
-
-
 def kernelOn : K →L[ℝ] Lp ℝ 2 ν :=
   (kernelOnLinear S hS hνS k hk C hbound).mkContinuous
     (Real.sqrt (ν.real S) * C) fun u => by
@@ -158,7 +145,6 @@ theorem norm_kernelOn_sq_eq_integral (u : K) :
     ext x
     by_cases hx : x ∈ S <;> simp [hx]
   rw [h_ind, integral_indicator hS]
-
 
 theorem sum_norm_kernelOn_map_sq_le (A : H →L[ℝ] K) {b : ι → H}
     (hb : Orthonormal ℝ b) (s : Finset ι) {B : ℝ}

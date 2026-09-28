@@ -3,22 +3,10 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
 
 theorem norm_frame_le_of_quadratic_lower_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -38,8 +26,6 @@ theorem norm_frame_le_of_quadratic_lower_bound
     _ ≤ Real.sqrt (c⁻¹ * ‖v‖ ^ 2) := Real.sqrt_le_sqrt hsq
     _ = Real.sqrt c⁻¹ * ‖v‖ := by
       rw [Real.sqrt_mul (inv_pos.mpr hc).le, Real.sqrt_sq (norm_nonneg v)]
-
-
 
 theorem exists_subseq_orthonormal_frame_of_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
@@ -72,8 +58,6 @@ theorem exists_subseq_orthonormal_frame_of_bound
     ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank rfl).mp hinj⟩
   exact ⟨φ, hφ, ContinuousLinearEquiv.ofBijective A
     (LinearMap.ker_eq_bot.mpr hbij.1) (LinearMap.range_eq_top.mpr hbij.2), hL, hA⟩
-
-
 
 theorem exists_subseq_orthonormal_frame_of_eventual_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]

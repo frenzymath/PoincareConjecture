@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Gra
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Graph.HeightExtension
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.TimePreservingFibers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
-
 
 theorem exists_curveAnnularTube_graph_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

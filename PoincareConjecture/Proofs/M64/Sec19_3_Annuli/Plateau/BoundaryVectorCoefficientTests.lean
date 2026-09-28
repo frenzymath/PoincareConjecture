@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCompactCoefficientTests
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -83,10 +71,6 @@ private theorem compact_coefficient_products
     simpa only [smul_eq_mul, Pi.mul_apply, Function.comp_apply, hval] using h
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64NaturalGrowth_compact_vector_face_test
     (dirichlet : Fin n → Prop) {O A : Set LoopPlane} (hO : IsOpen O)

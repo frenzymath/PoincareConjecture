@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductRescaling
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

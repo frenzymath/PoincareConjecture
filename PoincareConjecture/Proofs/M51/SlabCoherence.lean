@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M51Slab
 variable (F : SurgeryFlowData.{u}) {a H : ℝ} (haH : a < H)
     (hI : Set.Ico a H ⊆ F.time_domain)
     (hS : Disjoint F.surgery_times (Set.Ioo a H))
-
 
 noncomputable def closedSlab (b : ℝ) (hab : a < b) (hbH : b < H) :
     SurgeryRegularSlab F.slice F.metric a b :=
@@ -37,7 +28,6 @@ theorem closedSlab_initial_inverse (b : ℝ) (hab : a < b) (hbH : b < H)
     ⟨a, le_rfl, hab.le⟩).symm_apply_apply x
   rw [(closedSlab F hI hS b hab hbH).initial_identify] at h
   exact h
-
 
 theorem closedSlab_identify_eq (b c : ℝ) (hab : a < b) (hbH : b < H)
     (hac : a < c) (hcH : c < H) (t : ℝ) (htb : t ∈ Set.Icc a b)
@@ -58,8 +48,6 @@ theorem closedSlab_identify_eq (b c : ℝ) (hab : a < b) (hbH : b < H)
   simpa only [SurgeryRegularSlab.transport,
     closedSlab_initial_inverse F hI hS b hab hbH x,
     closedSlab_initial_inverse F hI hS c hac hcH x] using h
-
-
 
 theorem closedSlab_metric_eq (b c : ℝ) (hab : a < b) (hbH : b < H)
     (hac : a < c) (hcH : c < H) (t : ℝ) (htb : t ∈ Set.Icc a b)

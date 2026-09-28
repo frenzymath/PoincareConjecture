@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusConormalAcceleration
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ParabolicGaugeGeometry
 import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64Annulus_curvature_conormal_eq
     (F : RicciFlow n M (Icc a b)) {t : ℝ}

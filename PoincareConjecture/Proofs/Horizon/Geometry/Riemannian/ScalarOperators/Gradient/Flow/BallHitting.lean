@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.HittingTime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.CompactBand
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.HittingDifferential
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +22,6 @@ private theorem scalar_derivative_along_curve
     (mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f (γ s) ((1 : ℝ) • W (γ s))) s at hd'
   simpa [mvfderiv, NormedSpace.fromTangentSpace] using hd'
 end PoincareConjecture.LeviCivitaData
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_uniform_level_retraction_on_closedBall
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

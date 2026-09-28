@@ -3,16 +3,6 @@ import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -24,9 +14,6 @@ variable {X E F : Type*} [MeasurableSpace X] {mu : Measure X}
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
 
-
-
-
 theorem MemLp.clm_apply_of_ae_bound {p : ℝ≥0∞} {u : X → E}
     (hu : MemLp u p mu) {A : X → E →L[ℝ] F}
     (hA : AEStronglyMeasurable A mu) {C : ℝ}
@@ -36,9 +23,6 @@ theorem MemLp.clm_apply_of_ae_bound {p : ℝ≥0∞} {u : X → E}
   filter_upwards [hbound] with x hx
   exact (A x).le_opNorm (u x) |>.trans
     (mul_le_mul_of_nonneg_right hx (norm_nonneg _))
-
-
-
 
 noncomputable def Lp.coefficientL2 (A : X → E →L[ℝ] F)
     (hA : AEStronglyMeasurable A mu) (C : ℝ)
@@ -68,24 +52,16 @@ noncomputable def Lp.coefficientL2 (A : X → E →L[ℝ] F)
     exact ((A x).le_opNorm (u x)).trans
       (mul_le_mul_of_nonneg_right hAx (norm_nonneg _)))
 
-
-
 theorem Lp.coefficientL2_ae (A : X → E →L[ℝ] F)
     (hA : AEStronglyMeasurable A mu) (C : ℝ)
     (hbound : ∀ᵐ x ∂mu, ‖A x‖ ≤ C) (u : Lp E 2 mu) :
     Lp.coefficientL2 A hA C hbound u =ᵐ[mu] fun x => A x (u x) :=
   ((Lp.memLp u).clm_apply_of_ae_bound hA hbound).coeFn_toLp
 
-
-
 theorem Lp.norm_sq_eq_integral_norm_sq (u : Lp E 2 mu) :
     ‖u‖ ^ 2 = ∫ x, ‖u x‖ ^ 2 ∂mu := by
   rw [← real_inner_self_eq_norm_sq u, L2.inner_def]
   simp only [real_inner_self_eq_norm_sq]
-
-
-
-
 
 theorem Lp.tendsto_coefficientL2_apply
     {A : ℕ → X → E →L[ℝ] F} {A0 : X → E →L[ℝ] F}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.AxisCoefficients
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace

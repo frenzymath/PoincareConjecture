@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularLevelScalar
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -55,8 +47,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M]
   [IsManifold (𝓡 (m + 2)) ∞ M]
   {g : RiemannianMetric (m + 2) M}
-
-
 
 theorem regularLevel_sectionalCurvature_lower_bound
     (D : LeviCivitaData g)

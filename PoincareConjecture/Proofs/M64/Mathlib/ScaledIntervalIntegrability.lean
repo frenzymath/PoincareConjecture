@@ -1,9 +1,5 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -11,9 +7,6 @@ set_option warningAsError true
 open Set MeasureTheory
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem intervalIntegrable_of_scaled_coordinates {a b r x : ℝ} (hab : a ≤ b) (hr : 0 < r)
     {f F : ℝ → ℝ}
@@ -33,9 +26,6 @@ theorem intervalIntegrable_of_scaled_coordinates {a b r x : ℝ} (hab : a ≤ b)
     have hh := heq ((s - x) / r) (hmap hs)
     simpa only [Function.comp_apply, mul_div_cancel₀ _ hr.ne', add_sub_cancel] using hh.symm
   exact hc.intervalIntegrable_of_Icc hab
-
-
-
 
 theorem intervalIntegrable_of_grid {N : ℕ} (v : ℕ → ℝ) (f : ℝ → ℝ)
     (hf : ∀ k < N, IntervalIntegrable f volume (v k) (v (k + 1))) :

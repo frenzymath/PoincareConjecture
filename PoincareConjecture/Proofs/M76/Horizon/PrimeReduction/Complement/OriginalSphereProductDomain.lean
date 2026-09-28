@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalS
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphereCutPLDomain
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 

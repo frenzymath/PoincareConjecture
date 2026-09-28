@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.Localization
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.Caccioppoli
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology

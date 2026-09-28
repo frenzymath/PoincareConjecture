@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.UniformCompactJets
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 universe u
-
-
-
 
 structure CompactSmoothConvergenceOn
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -39,11 +27,9 @@ variable {E F G ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   {l : Filter ι} {U : Set E} {fseq : ι → E → F} {f : E → F}
 
-
 theorem uniformlyOn (h : CompactSmoothConvergenceOn fseq f l U)
     {K : Set E} (hK : IsCompact K) (hKU : K ⊆ U) : TendstoUniformlyOn fseq f l K :=
   tendstoUniformlyOn_of_iteratedFDeriv_zero (h.jets 0 K hK hKU)
-
 
 theorem mono (h : CompactSmoothConvergenceOn fseq f l U)
     {V : Set E} (hV : IsOpen V) (hVU : V ⊆ U) :
@@ -52,8 +38,6 @@ theorem mono (h : CompactSmoothConvergenceOn fseq f l U)
   smooth := h.smooth.mono hVU
   eventually_smooth K hK hKV := h.eventually_smooth K hK (hKV.trans hVU)
   jets j K hK hKV := h.jets j K hK (hKV.trans hVU)
-
-
 
 theorem congr (h : CompactSmoothConvergenceOn fseq f l U)
     {gseq : ι → E → F} {g : E → F}
@@ -75,8 +59,6 @@ theorem congr (h : CompactSmoothConvergenceOn fseq f l U)
       have heq := Filter.eventuallyEq_of_mem (h.isOpen.mem_nhds (hKU hx)) hmodel
       exact (heq.iteratedFDeriv ℝ j).self_of_nhds.symm
 
-
-
 theorem fderiv (h : CompactSmoothConvergenceOn fseq f l U) :
     CompactSmoothConvergenceOn (fun i => _root_.fderiv ℝ (fseq i)) (_root_.fderiv ℝ f) l U where
   isOpen := h.isOpen
@@ -84,8 +66,6 @@ theorem fderiv (h : CompactSmoothConvergenceOn fseq f l U) :
   eventually_smooth K hK hKU := (h.eventually_smooth K hK hKU).mono
     fun i hi x hx => (hi x hx).fderiv_right (m := ∞) (by simp)
   jets j K hK hKU := tendstoUniformlyOn_iteratedFDeriv_fderiv (h.jets (j + 1) K hK hKU)
-
-
 
 theorem prodMk (hf : CompactSmoothConvergenceOn fseq f l U)
     {gseq : ι → E → G} {g : E → G} (hg : CompactSmoothConvergenceOn gseq g l U) :
@@ -101,7 +81,6 @@ theorem prodMk (hf : CompactSmoothConvergenceOn fseq f l U)
     (hf.eventually_smooth K hK hKU) (hg.eventually_smooth K hK hKU)
     (hf.jets j K hK hKU) (hg.jets j K hK hKU)
 
-
 theorem constant (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) :
     CompactSmoothConvergenceOn (fun _ : ι => f) f l U where
   isOpen := hU
@@ -112,8 +91,6 @@ theorem constant (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) :
     rw [Metric.tendstoUniformlyOn_iff]
     intro epsilon hepsilon
     exact Eventually.of_forall fun _ _ _ => by simpa only [dist_self] using hepsilon
-
-
 
 theorem of_tendsto_const {a : ι → F} {b : F} (hab : Tendsto a l (𝓝 b)) (hU : IsOpen U) :
     CompactSmoothConvergenceOn (fun i => fun _ : E => a i) (fun _ => b) l U where
@@ -129,8 +106,6 @@ theorem of_tendsto_const {a : ι → F} {b : F} (hab : Tendsto a l (𝓝 b)) (hU
     | succ j =>
       simp only [iteratedFDeriv_succ_const]
       exact tendsto_const_nhds.tendstoUniformlyOn_const K
-
-
 
 theorem comp_continuousLinearMap (h : CompactSmoothConvergenceOn fseq f l U)
     (L : G →L[ℝ] E) :
@@ -158,8 +133,6 @@ theorem comp_continuousLinearMap (h : CompactSmoothConvergenceOn fseq f l U)
 
 end CompactSmoothConvergenceOn
 
-
-
 theorem CompactSmoothConvergenceOn.comp_smooth
     {E F G : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -180,8 +153,6 @@ theorem CompactSmoothConvergenceOn.comp_smooth
     (fun x hx => h.smooth.contDiffAt (h.isOpen.mem_nhds (hKU hx))) hg
     (fun x hx => hfV (hKU hx)) (h.eventually_smooth K hK hKU)
     (fun m _ => h.jets m K hK hKU)
-
-
 
 theorem Filter.Tendsto.compactSmoothConvergenceOn_clm_apply
     {E F : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

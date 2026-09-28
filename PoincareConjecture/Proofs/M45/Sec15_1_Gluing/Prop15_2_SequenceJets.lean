@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingJets
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_VanishingOperations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +10,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M45
 
 variable {ι : Type*} {l : Filter ι}
-
-
-
 
 theorem eventually_le_floor_inv {eta : ι → ℝ}
     (hpos : ∀ i, 0 < eta i) (hzero : Tendsto eta l (𝓝 0)) (m : ℕ) :
@@ -32,9 +21,6 @@ theorem eventually_le_floor_inv {eta : ι → ℝ}
   apply (le_div_iff₀ (hpos i)).mpr
   have hb := (lt_div_iff₀ (by positivity : (0 : ℝ) < (m : ℝ) + 1)).mp hi
   nlinarith only [hb, hpos i]
-
-
-
 
 theorem evolvingCylinderError_pointJetsVanish
     {eta t : ι → ℝ} {B : ι → RoundCylinderTwoTensor} {z : ι → RoundCylinderSpace}
@@ -55,9 +41,6 @@ theorem evolvingCylinderError_pointJetsVanish
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem PointJetsConverge.of_sub_vanish {f g : ι → E → F} {x : ι → E}
     {f0 : E → F} {x0 : E}
     (hg : PointJetsConverge g x f0 x0 l)
@@ -69,8 +52,6 @@ theorem PointJetsConverge.of_sub_vanish {f g : ι → E → F} {x : ι → E}
   simpa only [fun_iteratedFDeriv_sub_apply
     ((hfs _).of_le (by exact_mod_cast le_top))
     ((hgs _).of_le (by exact_mod_cast le_top)), sub_add_cancel, zero_add] using h
-
-
 
 theorem PointJetsConverge.const_smul_family {f : ι → E → F} {x : ι → E}
     {f0 : E → F} {x0 : E} {c : ι → ℝ} {c0 : ℝ}

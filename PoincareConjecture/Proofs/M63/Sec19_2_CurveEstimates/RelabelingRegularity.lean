@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) {c d : ℝ → ℝ → M}
   {phi : ℝ → ℝ} {t x : ℝ}
 
-
-
 theorem speed_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (ht : t ∈ Icc a b) (hcd : ∀ y, c y t = d (phi y) t) :
@@ -36,8 +24,6 @@ theorem speed_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     ((hd.spatial_regular t ht (phi x)).mdifferentiableAt (by norm_num))
     (hphi x).hasDerivAt (hpos x).le
 
-
-
 theorem curvatureSquared_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (ht : t ∈ Icc a b) (hcd : ∀ y, c y t = d (phi y) t) :
@@ -46,8 +32,6 @@ theorem curvatureSquared_eq_of_relabeling (hd : M62ShrinkingCurve F d)
   exact curvatureSquared_comp F d
     ((hd.spatial_regular t ht).mdifferentiable (by norm_num)) hphi hpos
     ((M62.unitTangent_contMDiff F d hd ht (phi x)).mdifferentiableAt (by simp))
-
-
 
 theorem speed_contDiff_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 2 phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -59,8 +43,6 @@ theorem speed_contDiff_of_relabeling (hd : M62ShrinkingCurve F d)
   rw [heq]
   have hphi' : ContDiff ℝ 1 (deriv phi) := hphi.deriv'
   exact hphi'.mul ((M62.speed_contDiff F d hd ht).comp (hphi.of_le (by norm_num)))
-
-
 
 theorem curvatureSquared_contDiff_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 2 phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -74,8 +56,6 @@ theorem curvatureSquared_contDiff_of_relabeling (hd : M62ShrinkingCurve F d)
     (M62.curvatureSquared_contDiffOn F d hd).comp_contDiff
       (contDiff_id.prodMk contDiff_const) (fun _ => ⟨mem_univ _, ht⟩)
   exact (hq.of_le (by decide)).comp hphi
-
-
 
 theorem regularized_contDiff_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 2 phi) (hpos : ∀ y, 0 < deriv phi y)

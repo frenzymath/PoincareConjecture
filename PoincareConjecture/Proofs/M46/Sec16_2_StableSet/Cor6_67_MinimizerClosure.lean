@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_EndpointRecovery
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_68_ActionContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
-
 
 theorem minimizing_exponential_limit
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +36,6 @@ private theorem deriv_bilinear_eq_sum
     HasDerivAt.fun_sum (u := Finset.univ) (fun j _ =>
       (hB i j).hasDerivAt.const_mul (b.repr u i * b.repr v j)))
   simpa only [← hexpand] using hd.deriv
-
-
 
 theorem tendsto_inner_time_deriv_of_coordinate_deriv
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.MayerVietoris.IntegralCompactSupportOpenConnectingRefinement
 
-
 set_option autoImplicit false
 
 noncomputable section

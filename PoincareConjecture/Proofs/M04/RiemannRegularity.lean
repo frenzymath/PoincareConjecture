@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M04.CurvaturePointwise
 import PoincareConjecture.Proofs.M04.CurvatureFieldsRegularity
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

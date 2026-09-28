@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.Bounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -21,8 +14,6 @@ namespace PoincareConjecture.RicciFlow
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
 
 theorem diagonal_referenceCharts_analytic_bounds_of_estimates
     {n : ℕ} {T' T δ : ℝ} (S : PointedFlowSequence n T' T)

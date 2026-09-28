@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialFrameVariation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.MetricCompatibility
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -32,7 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 def radialCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n))
     (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
@@ -45,8 +32,6 @@ private theorem contDiff_metricChristoffel (g : RiemannianMetric n (EuclideanSpa
   intro x
   exact contDiffAt_christoffelBilinear (g.contDiffAt_euclideanCoefficients x)
     (g.inner_isInvertible x)
-
-
 
 theorem contDiff_radialCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n)) :
@@ -75,7 +60,6 @@ theorem contDiff_radialCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
     LeviCivitaData.tensorCoordinateEvaluation_model] using
     he.comp (hS.prodMk hV)
 
-
 theorem inner_radial_field (D : LeviCivitaData g) (x v w : EuclideanSpace ℝ (Fin n)) :
     g.inner x
         (field (christoffelBilinear g.euclideanCoefficients) v x)
@@ -100,15 +84,12 @@ theorem inner_radial_field (D : LeviCivitaData g) (x v w : EuclideanSpace ℝ (F
       (by simp)).differentiableWithinAt)
     (fun z _ => hcompat z) x (fun _ _ => mem_univ _) v w
 
-
 theorem tangentNorm_radial_field (D : LeviCivitaData g)
     (x v : EuclideanSpace ℝ (Fin n)) :
     g.tangentNorm x (field (christoffelBilinear g.euclideanCoefficients) v x) =
       g.tangentNorm 0 v := by
   unfold RiemannianMetric.tangentNorm
   rw [inner_radial_field D]
-
-
 
 theorem fderiv_radialCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n))
@@ -135,8 +116,6 @@ theorem fderiv_radialCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
       LeviCivitaData.manifoldCovDerivAlong_model, covDerivAlong, covariantDerivative]
   congr 1
 
-
-
 theorem fderiv_radialCurvatureComponent_radial (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n))
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -154,8 +133,6 @@ theorem fderiv_radialCurvatureComponent_radial (D : LeviCivitaData g) (m : ℕ)
     D.riemannEvaluation_isSmooth_model m).1 x
   simp only [hA, MultilinearMap.map_update_zero, Finset.sum_const_zero, add_zero]
 
-
-
 theorem abs_radialCurvatureComponent_le (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n))
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -166,8 +143,6 @@ theorem abs_radialCurvatureComponent_le (D : LeviCivitaData g) (m : ℕ)
   obtain ⟨A, hA⟩ := (D.iteratedCovariantTensorDerivative_isSmooth
     D.riemannEvaluation_isSmooth_model m).1 x
   exact abs_tensor_evaluation_le_tensorNorm g _ x A hA _
-
-
 
 theorem abs_radialCurvatureComponent_le_of_curvatureDerivativeNorm_le
     (D : LeviCivitaData g) (m : ℕ) {C : ℝ}

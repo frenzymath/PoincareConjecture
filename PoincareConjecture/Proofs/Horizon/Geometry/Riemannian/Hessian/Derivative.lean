@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Symmetry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -24,7 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem covariantTensorDerivative_hessian_eq (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -54,7 +45,6 @@ theorem covariantTensorDerivative_hessian_eq (D : LeviCivitaData g)
   simp only [map_sub, sub_apply, Y]
   ring
 
-
 theorem covariantTensorDerivative_hessian_symm (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
     (x : M) (a b c : TangentSpace (𝓡 n) x) :
@@ -70,7 +60,6 @@ theorem covariantTensorDerivative_hessian_symm (D : LeviCivitaData g)
     fin_cases i <;> simp
   rw [hv] at h
   exact h.symm
-
 
 theorem sum_covariantTensorDerivative_hessian_eq (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

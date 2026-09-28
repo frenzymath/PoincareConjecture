@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_AnalyticBounds
 import PoincareConjecture.Proofs.M14.Sec6_7_BackwardStable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem reducedVolumeStatement_of_analytic
     (hCoordinates : M12MetricPredecessors.{0} n)

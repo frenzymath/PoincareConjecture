@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.LateConnectorBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff ENNReal intervalIntegral
 
 namespace PoincareConjecture.M34
-
-
 
 theorem partialFlow_fixed_early_reduced_length_volume {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : RicciFlowCurvatureTheory.{0}) :

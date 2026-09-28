@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLCubeSphereModel
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 
-
-
 set_option autoImplicit false
 open Set Geometry TriangularRoofModel
 

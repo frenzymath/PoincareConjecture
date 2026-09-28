@@ -1,22 +1,11 @@
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem homotopic_of_continuousOn_interval
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

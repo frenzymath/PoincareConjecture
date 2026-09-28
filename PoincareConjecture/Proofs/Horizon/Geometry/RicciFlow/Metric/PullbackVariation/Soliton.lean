@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Metric.PullbackVaria
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +23,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 include hJ hf hs hΦ
 
-
-
 theorem hasDerivAt_soliton_pullback_metric {t : ℝ} (ht : t ∈ J)
     (hsol : ∀ y (a b : TangentSpace (𝓡 n) y),
       (F.connection t).ricci y a b + (F.connection t).hessian (fun z => f (t, z)) y a b +
@@ -44,7 +40,6 @@ theorem hasDerivAt_soliton_pullback_metric {t : ℝ} (ht : t ∈ J)
     ring
   rw [← hcoef]
   linear_combination -2 * h
-
 
 theorem soliton_pullback_metric_eq_time_ratio
     (hzero : ∀ s ∈ J, s ≠ 0)

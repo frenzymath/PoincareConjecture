@@ -1,21 +1,11 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem integral_limit_le_of_ae_upper_bound {X : Type*} [MeasurableSpace X]
     {μ : Measure X} {a : ℕ → X → ℝ} {b c : X → ℝ} {I : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {g0 : StandardInitialMetric}
   {K : MetricSurgeryConstants} {I : MetricSurgeryInput K g}
-
-
 
 noncomputable def retainedNegativeChart (R : MetricSurgeryResult g0 I) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) M R.output.carrier ∞ := by
@@ -55,9 +44,6 @@ noncomputable def retainedNegativeChart (R : MetricSurgeryResult g0 I) :
     contMDiffOn_invFun := hi }
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
-
-
 
 theorem retained_negative_volume_eq (R : MetricSurgeryResult g0 I)
     {A : Set M} (hA : MeasurableSet A)

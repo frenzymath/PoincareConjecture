@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalResponse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ open EuclideanDerivativeNative DeTurckGeneratorRegularityNative
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 def testMultiplier (K : Set V) (a : 𝓢(V, ℝ)) :
     supportedTests K →ₗ[ℝ] supportedTests K :=
@@ -44,12 +34,9 @@ theorem testMultiplier_toLp (K : Set V) (a : 𝓢(V, ℝ)) (f : supportedTests K
   rw [hp, hm, hf]
   rfl
 
-
 def principalTestLaplacian {K : Set V} (hK : IsClosed K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) : supportedTests K →ₗ[ℝ] supportedTests K :=
   ∑ i, ∑ j, (testPartial hK i).comp ((testMultiplier K (A i j)).comp (testPartial hK j))
-
-
 
 theorem principalEnergy_pairing_laplacian {K : Set V} (hK : IsClosed K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) (φ f : supportedTests K) :
@@ -79,8 +66,6 @@ theorem principalEnergy_pairing_laplacian {K : Set V} (hK : IsClosed K)
       ((∂_{EuclideanSpace.single i (1 : ℝ)}
         (testMultiplier K (A i j) (testPartial hK j f) : 𝓢(V, ℝ))).toLp 2 volume)
   linarith only [hp]
-
-
 
 theorem principalForm_pairing_laplacian {K : Set V} (hK : IsClosed K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) (f : supportedTests K) (u : dirichletForm K) :

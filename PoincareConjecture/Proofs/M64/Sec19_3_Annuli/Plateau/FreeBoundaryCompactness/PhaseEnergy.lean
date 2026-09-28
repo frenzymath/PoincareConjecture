@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryLogarithmicOscillation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +16,6 @@ open Proofs.M58
 local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem upperBoundaryDisk_subset_interior {x rho : ℝ}
     (hx : rho < x) (hP : x + rho < curvePeriod) (hr : rho < 1) :
@@ -46,8 +36,6 @@ theorem upperBoundaryDisk_subset_interior {x rho : ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem circle_phase_energy_le_weighted_annulus
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -109,9 +97,6 @@ theorem circle_phase_energy_le_weighted_annulus
     _ = _ := by
       unfold m64ClassicalWeightedGramEnergy
       rw [m64Annulus_restrict_closed_eq_interior]
-
-
-
 
 theorem annulus_lower_phase_logarithmic_bound
     (P : M62.CircleProductData F circumference) (t : ℝ)

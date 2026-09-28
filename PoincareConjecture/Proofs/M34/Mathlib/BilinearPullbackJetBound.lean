@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +14,6 @@ variable {E F G H : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
 
 private theorem norm_iteratedFDeriv_bilinear_le_of_contDiffAt
     (B : F →L[ℝ] G →L[ℝ] H) {f : E → F} {g : E → G} {x : E}
@@ -41,8 +30,6 @@ private theorem norm_iteratedFDeriv_bilinear_le_of_contDiffAt
     (hfs.mono (fun _ hy => (hv hy).1)) (hgt.mono (fun _ hy => (hv hy).2))
     hvo.uniqueDiffOn hxv (le_refl (m : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
 
 theorem norm_iteratedFDeriv_bilinear_le_of_jet_bounds
     (B : F →L[ℝ] G →L[ℝ] H) {f : E → F} {g : E → G} {x : E}
@@ -107,9 +94,6 @@ private theorem exists_two_bilinear_jet_bound
   have hb := norm_iteratedFDeriv_bilinear_le_of_jet_bounds op₂ hfirst hd m
     (mul_nonneg hC₁ hA) hfirstjet hdjet
   exact hb.trans_eq (by ring)
-
-
-
 
 theorem exists_bilinear_pullback_jet_bound (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (f : E → F) (B : F → F →L[ℝ] F →L[ℝ] G) (x : E),

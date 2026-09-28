@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Slab
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory TopologicalSpace
@@ -22,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)
   (U : Opens M)
   (hreg : ∀ x ∈ U, mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
-
-
 
 theorem continuousOn_regularLevelIntegral_compact_slab
     {a b : ℝ} (hcompact : IsCompact (f ⁻¹' Icc a b))
@@ -47,8 +39,6 @@ theorem continuousOn_regularLevelIntegral_compact_slab
     change f (openLevelIncl f U c z) ∈ Icc a b
     rwa [show f (openLevelIncl f U c z) = c from z.2]
   simp only [P, hχone hz, Pi.one_apply, one_mul]
-
-
 
 theorem integral_coarea_compact_slab
     {a b : ℝ} (hcompact : IsCompact (f ⁻¹' Icc a b))

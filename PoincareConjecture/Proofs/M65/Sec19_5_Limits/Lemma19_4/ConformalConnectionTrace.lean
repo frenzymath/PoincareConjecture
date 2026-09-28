@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussMapConnection
 import PoincareConjecture.Definitions.M65
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +8,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.M65Gauss
-
-
-
 
 theorem connectionCoefficient_trace_eq_zero
     {h : RiemannianMetric 2 LoopPlane} (D : LeviCivitaData h)

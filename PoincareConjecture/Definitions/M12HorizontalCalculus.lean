@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.M11SpacetimeSlices
 import PoincareConjecture.Definitions.Ch01.Curvature
 import Mathlib.LinearAlgebra.Multilinear.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,15 +13,12 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
 abbrev HorizontalSection (F : GeneralizedFlowSpacetime n X time I) :=
   (p : F.Point) → F.Horizontal p
-
 
 def horizontalSectionVectorField (F : GeneralizedFlowSpacetime n X time I)
     (V : HorizontalSection F) (p : F.Point) : TangentSpace (spacetimeModel n) p :=
   (V p).val
-
 
 def IsSmoothHorizontalSectionOn (F : GeneralizedFlowSpacetime n X time I)
     (V : HorizontalSection F) (U : Set F.Point) : Prop :=
@@ -41,11 +27,9 @@ def IsSmoothHorizontalSectionOn (F : GeneralizedFlowSpacetime n X time I)
     (fun p : F.Point ↦ Bundle.TotalSpace.mk' (EuclideanSpace ℝ (Fin n))
       (E := F.Horizontal) p (V p)) U
 
-
 abbrev HorizontalCovariantTensorEvaluation (F : GeneralizedFlowSpacetime n X time I)
     (k : ℕ) :=
   (p : F.Point) → (Fin k → F.Horizontal p) → ℝ
-
 
 def IsSmoothHorizontalCovariantTensor (F : GeneralizedFlowSpacetime n X time I)
     {k : ℕ} (T : HorizontalCovariantTensorEvaluation F k) : Prop :=
@@ -56,15 +40,12 @@ def IsSmoothHorizontalCovariantTensor (F : GeneralizedFlowSpacetime n X time I)
       (∀ i, IsSmoothHorizontalSectionOn F (V i) U) →
       ContMDiffOn (spacetimeModel n) 𝓘(ℝ) ∞ (fun p ↦ T p (fun i ↦ V i p)) U
 
-
 noncomputable def horizontalTimeBracket (F : GeneralizedFlowSpacetime n X time I)
     (V : HorizontalSection F) (p : F.Point) : F.Horizontal p :=
   F.horizontalProjection p
     (VectorField.mlieBracket (spacetimeModel n)
       (show (q : F.Point) → TangentSpace (spacetimeModel n) q from F.timeVector)
       (horizontalSectionVectorField F V) p)
-
-
 
 noncomputable def horizontalMetricLieDerivativeOnFields
     (F : GeneralizedFlowSpacetime n X time I)
@@ -74,15 +55,12 @@ noncomputable def horizontalMetricLieDerivativeOnFields
     F.horizontalMetric.inner p (horizontalTimeBracket F U p) (V p) -
     F.horizontalMetric.inner p (U p) (horizontalTimeBracket F V p)
 
-
 noncomputable def horizontalMetricLieDerivative
     (F : GeneralizedFlowSpacetime n X time I)
     (p : F.Point) (u v : F.Horizontal p) : ℝ :=
   let U : HorizontalSection F := FiberBundle.extend (EuclideanSpace ℝ (Fin n)) u
   let V : HorizontalSection F := FiberBundle.extend (EuclideanSpace ℝ (Fin n)) v
   horizontalMetricLieDerivativeOnFields F U V p
-
-
 
 structure LeafwiseLeviCivitaFamily (F : GeneralizedFlowSpacetime n X time I)
     (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) where
@@ -91,17 +69,14 @@ structure LeafwiseLeviCivitaFamily (F : GeneralizedFlowSpacetime n X time I)
 variable {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ t : ℝ, SpacetimeSliceGeometry F t}
 
-
 def spacetimeSlicePoint (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) (p : F.Point) :
     (S (F.timeFunction p)).Point :=
   ⟨p, rfl⟩
-
 
 noncomputable def restrictHorizontalSection
     (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) (t : ℝ) (V : HorizontalSection F) :
     (x : (S t).Point) → TangentSpace (𝓡 n) x :=
   fun x ↦ ((S t).tangentEquiv x).symm (V x.val)
-
 
 noncomputable def horizontalRiemann (D : LeafwiseLeviCivitaFamily F S)
     (p : F.Point) (u v w z : F.Horizontal p) : ℝ :=
@@ -110,7 +85,6 @@ noncomputable def horizontalRiemann (D : LeafwiseLeviCivitaFamily F S)
   let j := (S t).tangentEquiv x
   (D.sliceConnection t).curvatureTensor x (j.symm u) (j.symm v) (j.symm w) (j.symm z)
 
-
 noncomputable def horizontalRicci (D : LeafwiseLeviCivitaFamily F S)
     (p : F.Point) (u v : F.Horizontal p) : ℝ :=
   let t := F.timeFunction p
@@ -118,26 +92,21 @@ noncomputable def horizontalRicci (D : LeafwiseLeviCivitaFamily F S)
   let j := (S t).tangentEquiv x
   (D.sliceConnection t).ricci x (j.symm u) (j.symm v)
 
-
 noncomputable def horizontalScalarCurvature (D : LeafwiseLeviCivitaFamily F S)
     (p : F.Point) : ℝ :=
   (D.sliceConnection (F.timeFunction p)).scalarCurvature (spacetimeSlicePoint S p)
-
 
 noncomputable def horizontalCurvatureNorm (D : LeafwiseLeviCivitaFamily F S)
     (p : F.Point) : ℝ :=
   (D.sliceConnection (F.timeFunction p)).curvatureTensorNorm (spacetimeSlicePoint S p)
 
-
 noncomputable def horizontalCurvatureNormSq (D : LeafwiseLeviCivitaFamily F S)
     (p : F.Point) : ℝ :=
   horizontalCurvatureNorm D p ^ 2
 
-
 def IntrinsicGeneralizedRicciEquation (D : LeafwiseLeviCivitaFamily F S) : Prop :=
   ∀ p : F.Point, ∀ u v : F.Horizontal p,
     horizontalMetricLieDerivative F p u v = -2 * horizontalRicci D p u v
-
 
 noncomputable def rawLeafwiseCovariantDerivative (D : LeafwiseLeviCivitaFamily F S)
     (V : HorizontalSection F) (p : F.Point) : F.Horizontal p →L[ℝ] F.Horizontal p :=
@@ -147,8 +116,6 @@ noncomputable def rawLeafwiseCovariantDerivative (D : LeafwiseLeviCivitaFamily F
   j.toContinuousLinearMap.comp
     (((D.sliceConnection t).connection (restrictHorizontalSection S t V) x).comp
       j.symm.toContinuousLinearMap)
-
-
 
 noncomputable def rawHorizontalCovariantDerivative (D : LeafwiseLeviCivitaFamily F S)
     (V : HorizontalSection F) (p : F.Point) :

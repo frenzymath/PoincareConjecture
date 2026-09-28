@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.GeometricODE
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

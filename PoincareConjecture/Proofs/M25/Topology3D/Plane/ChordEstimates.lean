@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {f f' : ℝ → E} {a b ε : ℝ} {v : E}
-
-
 
 theorem norm_slope_sub_le_of_deriv_sub_le (hab : a < b)
     (hd : ∀ s ∈ Icc a b, HasDerivWithinAt f (f' s) (Icc a b) s)
@@ -45,8 +34,6 @@ theorem norm_slope_sub_le_of_deriv_sub_le (hab : a < b)
     _ ≤ (b - a)⁻¹ * (ε * (b - a)) :=
       mul_le_mul_of_nonneg_left h (le_of_lt (inv_pos.mpr (sub_pos.mpr hab)))
     _ = ε := by rw [mul_left_comm, inv_mul_cancel₀ hne, mul_one]
-
-
 
 theorem norm_chord_sub_le_of_deriv_sub_le (hab : a ≤ b)
     (hd : ∀ s ∈ Icc a b, HasDerivWithinAt f (f' s) (Icc a b) s)
@@ -86,8 +73,6 @@ theorem norm_chord_sub_le_of_deriv_sub_le (hab : a ≤ b)
       (mul_le_of_le_one_left (mul_nonneg hε (sub_nonneg.mpr hab)) ht.2)
       (mul_le_mul_of_nonneg_left (sub_le_sub_right hs.2 a) hε)
     _ = 2 * ε * (b - a) := by ring
-
-
 
 theorem exists_uniform_chord_estimates {X : Type*} [PseudoMetricSpace X]
     {K : Set X} (hK : IsCompact K) {c d : X → ℝ → E} {l u : ℝ}

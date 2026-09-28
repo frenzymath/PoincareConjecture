@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem manifoldCovDerivAlong_comp_affine
     (g : RiemannianMetric n M) {q : ℝ → M}
@@ -57,7 +45,6 @@ theorem manifoldCovDerivAlong_comp_affine
     smul_apply, ← smul_add]
   rfl
 
-
 theorem manifoldCovDerivAlong_const_smul
     (g : RiemannianMetric n M) (q : ℝ → M)
     (V : (t : ℝ) → TangentSpace (𝓡 n) (q t)) (a t : ℝ) :
@@ -70,7 +57,6 @@ theorem manifoldCovDerivAlong_const_smul
         (extChartAt (𝓡 n) (q t)) (q s) (V s)) from rfl,
     fderiv_const_smul_field]
   simp only [Pi.smul_apply, smul_apply, ← smul_add, map_smul]
-
 
 theorem manifoldCovDerivAlong_twice_comp_affine
     (g : RiemannianMetric n M) {q : ℝ → M} {I : Set ℝ}
@@ -97,7 +83,6 @@ theorem manifoldCovDerivAlong_twice_comp_affine
   rw [manifoldCovDerivAlong_comp_affine g (hq.contMDiffAt (hI.mem_nhds ht))
     ((contDiffAt_chartField_covDeriv g hI hq hV ht
       (mem_extChartAt_source _)).differentiableAt (by simp)), smul_smul, pow_two]
-
 
 theorem mfderiv_comp_affine_apply_one {q : ℝ → M} {a b t : ℝ}
     (hq : ContMDiffAt 𝓘(ℝ, ℝ) (𝓡 n) ∞ q (a * t + b)) :
@@ -128,8 +113,6 @@ private theorem curvature_neg_velocity (g : RiemannianMetric n M) (D : LeviCivit
   rw [show -v = (-1 : ℝ) • v by simp,
     D.curvatureTensor_smul_second, D.curvatureTensor_smul_last]
   ring
-
-
 
 theorem jacobi_ne_zero_of_minimizing_terminal [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g) {γ : ℝ → M} {I : Set ℝ}

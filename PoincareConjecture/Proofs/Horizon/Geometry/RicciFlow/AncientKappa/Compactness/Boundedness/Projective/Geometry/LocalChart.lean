@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Geometry.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph.Product
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +30,6 @@ private theorem exists_smooth_localChart
     right_inv' := fun y hy => (hφ (φ.map_target hy)).trans (φ.right_inv hy)
     contMDiffOn_toFun := φ.contMDiffOn_toFun.congr hφ }
   exact ⟨ψ.toOpenPartialHomeomorph, hp, ψ.contMDiffOn_toFun, ψ.contMDiffOn_invFun, rfl⟩
-
-
 
 theorem centeredParametrization_isLocalDiffeomorphAt
     {f : RoundCylinderSpace → M} {ε : ℝ}
@@ -72,8 +63,6 @@ theorem centeredParametrization_isLocalDiffeomorphAt
     simp only [Prod.map_apply, id_eq, sphere_chart_symm_zero]
     exact hf ⟨(q, s), ⟨mem_univ _, hs⟩⟩
   exact hp'.comp (𝓡 3) M hnext
-
-
 
 theorem exists_centered_localChart
     {f : RoundCylinderSpace → M} {ε : ℝ}

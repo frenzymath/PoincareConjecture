@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AffineSpectralResidual
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialSpectralDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,10 +14,6 @@ variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
   {lambda : iota → NNReal} {T r : ℝ}
   (N : TimeDependentSpectralResidual lambda T) (w : State iota)
-
-
-
-
 
 theorem exists_initial_spectral_response (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 ≤ r)
     (hsmall : 2 * N.perturbationConstant + 2 * N.principalConstant * ‖w‖ +
@@ -135,9 +122,6 @@ theorem exists_initial_spectral_response (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 
       ∂timeMeasure T) + (∫ t, ‖initialHeatGenerator lambda w t + generatorState lambda F t‖ ^ 2
       ∂timeMeasure T) ≤ _
     nlinarith
-
-
-
 
 theorem initial_forcing_fixedPoint_unique (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 ≤ r)
     (hsmall : 2 * N.perturbationConstant + 2 * N.principalConstant * ‖w‖ +

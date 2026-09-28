@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenDomainFrontier
 import Mathlib.Topology.Connected.PathConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem exists_compact_connected_carrier
     {X : Type*} [TopologicalSpace X] {P R : Set X}

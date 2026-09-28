@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollar
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +9,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 structure M64IntrinsicLinearBandData where
   frame : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates
@@ -33,9 +26,6 @@ structure M64IntrinsicLinearBandData where
 
 namespace M64IntrinsicLinearBandData
 
-
-
-
 def ofChain {gamma : ℝ → AnnulusCoordinates} {a b : ℝ} {U : Set AnnulusCoordinates}
     (E : M64IntrinsicArcBandChain gamma a b U) (i : Fin E.count) :
     M64IntrinsicLinearBandData where
@@ -48,9 +38,6 @@ def ofChain {gamma : ℝ → AnnulusCoordinates} {a b : ℝ} {U : Set AnnulusCoo
   left_length := E.length
   right_length := E.length
   band := E.band i
-
-
-
 
 def ofPatch {gamma : Bool → ℝ → AnnulusCoordinates} {T b : Bool → ℝ}
     {U : Set AnnulusCoordinates} (P : M64IntrinsicJoinedBandPatch gamma T b U) (e : Bool) :
@@ -74,21 +61,12 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {C : M64IntrinsicThreeArcCaps gamma sigma T S U}
   (D : M64IntrinsicThreeArcCollar C b)
 
-
-
-
 abbrev BandIndex := (Σ e : Bool, Fin (D.joined.chain e).count) ⊕ (Bool ⊕ Fin D.third.count)
-
-
-
 
 def bandData : D.BandIndex → M64IntrinsicLinearBandData
   | .inl ⟨e, i⟩ => .ofChain (D.joined.chain e) i
   | .inr (.inl e) => .ofPatch D.joined.patch e
   | .inr (.inr i) => .ofChain D.third i
-
-
-
 
 theorem band_union : (⋃ i, (D.bandData i).band.carrier) =
     m64IntrinsicJoinedBandUnion D.joined.chain D.joined.patch ∪
@@ -110,9 +88,6 @@ theorem band_union : (⋃ i, (D.bandData i).band.carrier) =
     · obtain ⟨i, hi⟩ := mem_iUnion.mp hp
       exact mem_iUnion.mpr ⟨.inr (.inr i), hi⟩
 
-
-
-
 theorem band_subset (i : D.BandIndex) : (D.bandData i).band.carrier ⊆ D.carrier := by
   intro p hp
   have h : p ∈ ⋃ i, (D.bandData i).band.carrier := mem_iUnion.mpr ⟨i, hp⟩
@@ -120,10 +95,6 @@ theorem band_subset (i : D.BandIndex) : (D.bandData i).band.carrier ⊆ D.carrie
   rcases h with h | h
   · exact Or.inl (Or.inr h)
   · exact Or.inr h
-
-
-
-
 
 theorem band_lower_subset
     (hfront : frontier U = gamma false '' Icc 0 (T false) ∪

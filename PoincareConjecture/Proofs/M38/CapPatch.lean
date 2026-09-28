@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.CapAnnulus
 import PoincareConjecture.Proofs.M38.PartialChartRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,18 +11,14 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 def capDoubleBall : TopologicalSpace.Opens StandardCapSpace :=
   ⟨Metric.ball 0 2, Metric.isOpen_ball⟩
-
 
 theorem capDoubleBall_nonempty : Nonempty capDoubleBall :=
   ⟨⟨0, by simp [capDoubleBall]⟩⟩
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
-
-
 
 def eventDiscardedOpen :
     TopologicalSpace.Opens (F.slice (F.event T hT).tMinus).carrier :=
@@ -48,13 +36,10 @@ theorem discarded_nonempty : Nonempty (eventDiscardedOpen F T hT) := by
   exact P.annular_target_discarded
     ⟨(capUnitDirection 0, 1 / 2), ⟨Set.mem_univ _, by norm_num⟩, rfl⟩
 
-
-
 noncomputable def attachmentChart :
     OpenPartialHomeomorph capDoubleBall (eventDiscardedOpen F T hT) :=
   ((P.annularChart.subtypeRestr capDoubleBall_nonempty).symm.subtypeRestr
     P.discarded_nonempty).symm
-
 
 theorem attachmentChart_source :
     P.attachmentChart.source = {x : capDoubleBall | 1 < ‖x.val‖} := by
@@ -64,7 +49,6 @@ theorem attachmentChart_source :
   change (1 < ‖x.val‖ ∧ ‖x.val‖ < 2) ↔ 1 < ‖x.val‖
   exact and_iff_left (by simpa only [capDoubleBall, TopologicalSpace.Opens.mem_mk,
     Metric.mem_ball, dist_zero_right] using x.property)
-
 
 theorem attachmentChart_target :
     P.attachmentChart.target =
@@ -77,15 +61,11 @@ theorem attachmentChart_target :
   · intro x hx
     exact (Metric.mem_ball.mpr (by simpa only [dist_zero_right] using hx.2))
 
-
-
 theorem attachmentChart_apply {x : capDoubleBall} (hx : 1 < ‖x.val‖) :
     (P.attachmentChart x).val = P.collar (capAttachCoordinates x.val) := by
   have hsrc : x ∈ P.attachmentChart.source := by rwa [P.attachmentChart_source]
   exact (P.annularChart.subtypeRestr capDoubleBall_nonempty).symm.subtypeRestr_symm_apply
     P.discarded_nonempty hsrc
-
-
 
 theorem attachmentChart_graph_closed :
     IsClosed {q : capDoubleBall × eventDiscardedOpen F T hT |
@@ -104,7 +84,6 @@ theorem attachmentChart_graph_closed :
       exact ⟨hx, Subtype.ext ((P.attachmentChart_apply hx).trans hxy)⟩
   rw [heq]
   exact P.attachment_graph_closed
-
 
 theorem attachmentChart_targets_disjoint {j : Fin (F.event T hT).cap_count}
     (Q : EventCapCoordinates F T hT j) (hij : i ≠ j) :

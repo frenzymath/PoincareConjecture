@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnGree
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicGreenIdentity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -168,9 +162,6 @@ private theorem m64_free_phase_halfTurn_horizontal_zero
       _ = _ := by exact integral_sub huint hqcoord
   rw [hsplitV, hsplitU]
   linarith [hq, hqcoord']
-
-
-
 
 theorem m64FreePhaseHalfTurn_horizontal_weak
     {u V : LoopPlane → ℝ} {D : ℝ}

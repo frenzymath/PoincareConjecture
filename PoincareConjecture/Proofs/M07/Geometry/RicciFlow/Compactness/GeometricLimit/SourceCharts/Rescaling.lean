@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoe
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
@@ -36,8 +25,6 @@ local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, 
 variable {R ρ a b : ℕ → ℝ} {N : ℕ → ℕ}
     (cover : ∀ k j, j ≤ k → NormalChartCover ((S.flow k).flow.metric)
       (S.flow k).base T' T ((j : ℝ) + 1) (R j) (ρ j) (a j) (b j) (N j))
-
-
 
 theorem diagonalUnitBallMap_eventually_bounded_spacetime_derivatives
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (i : ℕ)

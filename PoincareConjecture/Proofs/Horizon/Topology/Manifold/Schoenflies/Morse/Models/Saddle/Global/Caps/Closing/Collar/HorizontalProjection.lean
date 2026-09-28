@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.HorizontalChart
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.TerminalProjection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_fst_projection_chart
     {J : E2 → E2 × Real} {V : Set E2} (hV : IsOpen V)
@@ -79,7 +75,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 def actualCapPhysicalCoordinates (data : TerminalSaddleData M P p e)
     (H : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (i : Fin 3) (x : E2) : E3 :=
   data.toTerminalSaddleGeometry.filledModel (actualCapModelCoordinates data H i x)
@@ -91,8 +86,6 @@ theorem actualCapPhysicalCoordinates_eq (data : TerminalSaddleData M P p e)
         (H (data.toTerminalSaddleGeometry.flatten (g (data.actualDisk i x)))) := by
   simp only [actualCapPhysicalCoordinates, actualCapModelCoordinates,
     Diffeomorph.apply_symm_apply]
-
-
 
 theorem exists_actual_horizontal_projection_in_chart
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -200,9 +193,6 @@ theorem exists_actual_horizontal_projection_in_chart
     exists_fst_projection_chart hV hVc hJ R hRcircle hJc hJi hJn
   exact ⟨T, hTc, hTi, fun x hx => (hTs hx).1,
     fun x hx => ⟨(hTs hx).2, hTk x hx⟩⟩
-
-
-
 
 theorem exists_actual_terminal_horizontal_graph
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

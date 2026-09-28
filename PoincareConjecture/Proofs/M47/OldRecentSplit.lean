@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -20,20 +10,14 @@ universe u
 
 namespace PoincareConjecture.Proofs.M47
 
-
-
 noncomputable def seedRadiusFactor (epsilon age : ℝ) : ℝ :=
   min 1 (Real.sqrt (age / 2) / epsilon)
-
-
 
 theorem seedRadiusFactor_bounds {epsilon age : ℝ}
     (hepsilon : 0 < epsilon) (hage : 0 < age) :
     0 < seedRadiusFactor epsilon age ∧ seedRadiusFactor epsilon age ≤ 1 := by
   exact ⟨lt_min (by norm_num)
     (div_pos (Real.sqrt_pos.mpr (half_pos hage)) hepsilon), min_le_left _ _⟩
-
-
 
 theorem seedRadiusFactor_sq_le {epsilon age r : ℝ}
     (hepsilon : 0 < epsilon) (hage : 0 < age) (hr : 0 < r) (hle : r ≤ epsilon) :
@@ -46,21 +30,15 @@ theorem seedRadiusFactor_sq_le {epsilon age r : ℝ}
   exact (pow_le_pow_left₀ (mul_nonneg htheta.1.le hr.le) hbound 2).trans_eq
     (Real.sq_sqrt (half_pos hage).le)
 
-
-
 theorem seedRadiusFactor_sq_lt {epsilon age r : ℝ}
     (hepsilon : 0 < epsilon) (hage : 0 < age) (hr : 0 < r) (hle : r ≤ epsilon) :
     (seedRadiusFactor epsilon age * r) ^ 2 < age :=
   (seedRadiusFactor_sq_le hepsilon hage hr hle).trans_lt (half_lt_self hage)
 
-
-
 theorem seedRadiusFactor_volume_constant_pos {epsilon age kappa : ℝ}
     (hepsilon : 0 < epsilon) (hage : 0 < age) (hkappa : 0 < kappa) :
     0 < kappa * seedRadiusFactor epsilon age ^ 3 :=
   mul_pos hkappa (pow_pos (seedRadiusFactor_bounds hepsilon hage).1 3)
-
-
 
 theorem volume_lower_of_reduced_ball
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

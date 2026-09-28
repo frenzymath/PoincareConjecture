@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryShellOscillation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,23 +13,15 @@ open Proofs.M58
 
 local notation "S" => interior m64AnnulusDomain
 
-
-
 def upperBoundaryDisk (x rho : ℝ) : Set LoopPlane :=
   Metric.closedBall (annulusPoint x 0) rho ∩ {p | 0 < p 1}
-
-
 
 theorem upperBoundaryDisk_measurable (x rho : ℝ) : MeasurableSet (upperBoundaryDisk x rho) :=
   measurableSet_closedBall.inter (measurableSet_lt measurable_const (by fun_prop))
 
-
-
 theorem upperBoundaryDisk_mono (x : ℝ) {r R : ℝ} (h : r ≤ R) :
     upperBoundaryDisk x r ⊆ upperBoundaryDisk x R :=
   inter_subset_inter_left _ (Metric.closedBall_subset_closedBall h)
-
-
 
 theorem upperBoundaryShell_eq_sdiff (x rho : ℝ) :
     upperBoundaryShell x rho =
@@ -46,8 +29,6 @@ theorem upperBoundaryShell_eq_sdiff (x rho : ℝ) :
   ext p
   simp only [upperBoundaryShell, upperBoundaryDisk, mem_inter_iff, Set.mem_sdiff]
   tauto
-
-
 
 theorem upperBoundaryShell_integral_eq
     (x : ℝ) {rho : ℝ} (hrho : 0 ≤ rho) {F : LoopPlane → ℝ}
@@ -59,9 +40,6 @@ theorem upperBoundaryShell_integral_eq
   apply setIntegral_sdiff (upperBoundaryDisk_measurable _ _) hF
   exact upperBoundaryDisk_mono x (mul_le_of_le_one_right hrho
     (Real.exp_le_one_iff.mpr (by norm_num)))
-
-
-
 
 theorem boundary_logarithmic_oscillation
     (L : LoopPlane → ℝ) (hLc : Continuous L) (hL : ContDiffOn ℝ 1 L S)

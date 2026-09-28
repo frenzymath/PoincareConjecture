@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubeAngle
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_uniform_monotone_tube_chords
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

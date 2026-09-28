@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_RegularBirthLif
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderRelativeImage
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +21,6 @@ private theorem birth_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
-
-
 
 theorem capBirth_positiveTrace_mem_nhdsWithin
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

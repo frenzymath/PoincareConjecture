@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.Ch04.Continuation
 import Mathlib.Order.ConditionallyCompleteLattice.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M45
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_flow_of_initial_cover
     (hunique : RicciFlowUniqueness n M) (g₀ : RiemannianMetric n M)
@@ -79,8 +68,6 @@ theorem exists_flow_of_initial_cover
         filter_upwards [self_mem_nhdsWithin, hnear] with s hs hst
         rw [heq s t hs ht hst.2] }
   exact ⟨F, (hd 0 hzero).2.2⟩
-
-
 
 theorem exists_long_flow_of_uniform_curvature
     (hlocal : RicciFlowLocalTheory n M) (g₀ : RiemannianMetric n M)

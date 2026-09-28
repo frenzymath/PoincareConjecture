@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_normalized_ball_of_continuous
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -44,8 +31,6 @@ theorem exists_normalized_ball_of_continuous
     exact he.trans Metric.eball_ofReal
   refine ⟨r, hr, hrR, ?_, Proofs.M09.isCompact_closure_metric_ball g hcomplete x r⟩
   rwa [hball]
-
-
 
 theorem exists_scalar_normalized_ball
     {M : Type*} [TopologicalSpace M]

@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.DisjointIntervalUniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem connected_component_in_one_exterior
     {E : Type*} [TopologicalSpace E] {S A M C B0 B1 K : Set E}
@@ -46,8 +34,6 @@ theorem connected_component_in_one_exterior
   · have hKC := subset_of_preconnected_closed_union hC (hA.union hM) hCAM
       hK.isPreconnected (by simpa only [union_comm C] using hsub) ⟨x, hx, hxC⟩
     exact Or.inr (Or.inr ⟨hKC, hAC.symm.mono_left hKC, hMC.symm.mono_left hKC⟩)
-
-
 
 theorem old_component_retained_or_disjoint
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

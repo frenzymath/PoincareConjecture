@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.TranslatedBoundaryC
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.ProtectedVertexMotion
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleNormalCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

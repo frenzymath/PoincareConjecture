@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.RaisedReturnRadialAvoidan
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ComparisonCircleAssembly
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PlanarCurveNormalChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -23,10 +13,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1500000 in
-
-
-
-
 
 theorem exists_saddle_common_beta_outer_input
     (kappa : OpenPartialHomeomorph E2 E2)

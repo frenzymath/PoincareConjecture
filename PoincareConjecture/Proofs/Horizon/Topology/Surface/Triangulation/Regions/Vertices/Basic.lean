@@ -1,15 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Decomposition
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.VertexPatches
 import PoincareConjecture.Proofs.Horizon.Topology.Paths.Trimming
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,9 +17,7 @@ namespace FiniteChartRegionDecomposition
 
 variable (D : FiniteChartRegionDecomposition (M := M))
 
-
 abbrev EdgeIndex := Σ i, Fin (D.edgeCount i)
-
 
 noncomputable def vertices : Finset M := by
   classical
@@ -84,7 +73,6 @@ omit [T2Space M] in
 theorem isCompact_edge (a : D.EdgeIndex) :
     IsCompact ((D.edge a.1 a.2).map '' Icc (0 : ℝ) 1) :=
   isCompact_Icc.image_of_continuousOn (D.edge a.1 a.2).smooth.continuousOn
-
 
 theorem exists_vertex_patches :
     ∃ P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius p,

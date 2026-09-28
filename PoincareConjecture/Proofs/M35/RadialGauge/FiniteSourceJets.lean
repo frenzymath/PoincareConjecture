@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessian
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -103,8 +95,6 @@ theorem gaugeSource_contDiff_two_of_three {b : V → V} {G : V → ℝ → ℝ} 
   exact ((hp.clm_apply hb).add hsquare).add
     (hG.comp (contDiff_id.prodMk (hu.of_le (by norm_num))))
 
-
-
 theorem gaugeSource_hessian_norm_le_of_contDiff_three
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ}
     (hb : ContDiff ℝ ∞ b) (hG : ContDiff ℝ ∞ (fun p : V × ℝ => G p.1 p.2))
@@ -173,8 +163,6 @@ theorem gaugeSource_hessian_norm_le_of_contDiff_three
     ‖p x‖ * ‖fderiv ℝ db x‖ + ‖fderiv ℝ gx x‖ + ‖fderiv ℝ gz x‖ * ‖p x‖
   rw [Real.norm_eq_abs] at h5 hs
   nlinarith only [hs, h3a, h3b]
-
-
 
 theorem gaugeSource_hessian_bound_of_contDiff_three
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}

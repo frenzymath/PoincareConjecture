@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Embedding.Profile
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
-
-
 noncomputable section
 
 set_option maxHeartbeats 800000
@@ -97,8 +94,6 @@ theorem derivativeProfile_partial_le [NeZero d] {Ω : Set E}
       rw [Finset.sum_range_succ' (n := r + 1)]
       exact le_self_add
 
-
-
 theorem norm_iteratedFDeriv_succ_le_sum_partial {u : E → ℝ}
     (hu : ContDiff ℝ (⊤ : ℕ∞) u) (r : ℕ) (x : E) :
     ‖iteratedFDeriv ℝ (r + 1) u x‖ ≤
@@ -152,8 +147,6 @@ theorem norm_iteratedFDeriv_succ_le_sum_partial {u : E → ℝ}
       apply Finset.sum_congr rfl
       intro i hi
       ring
-
-
 
 theorem derivativeProfile_succ_le_sum_partial [NeZero d] {Ω : Set E}
     {p : ℝ≥0∞} (hp : 1 ≤ p) (r : ℕ) {u : E → ℝ}

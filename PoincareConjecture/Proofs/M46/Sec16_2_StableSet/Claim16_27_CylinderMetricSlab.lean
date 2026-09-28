@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetric
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem cylinderQuadratic_exp_bounds_on_slab
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -3,17 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.ClosedComponentCertificate
-
-
-
 
 theorem nonempty_of_compact_connected_opens
     {M : Type u} [TopologicalSpace M]

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Compat.M23DistanceDistortion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Windows
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.DistanceDistortion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
@@ -26,8 +15,6 @@ variable {m : ℕ} {M : Type} [TopologicalSpace M] [T3Space M] [ConnectedSpace M
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
   (F : RicciFlow (m + 1) M (Iic 0))
 
-
-
 theorem terminal_distance_le_of_ancient_ricci_nonneg
     (hRic : ∀ t ≤ 0, ∀ x : M, ∀ v : TangentSpace (𝓡 (m + 1)) x,
       0 ≤ (F.connection t).ricci x v v)
@@ -40,8 +27,6 @@ theorem terminal_distance_le_of_ancient_ricci_nonneg
   have hx' := F.ball_subset_terminal_ball_of_ancient_ricci_nonneg p r hs
     (fun t ht y _ v => hRic t ht y v) hx
   exact ((ENNReal.lt_ofReal_iff_toReal_lt ((F.metric 0).edist_ne_top p x)).mp hx').le
-
-
 
 theorem tendsto_terminal_distance_of_local_ricci_bound
     {a Λ r : ℝ} (ha : a < 0) (hΛ : 0 ≤ Λ) (hr : 0 < r) (O : M)
@@ -75,8 +60,6 @@ theorem tendsto_terminal_distance_of_local_ricci_bound
       ENNReal.mul_ne_top ENNReal.ofReal_ne_top ((F.metric 0).edist_ne_top x y)
     simpa only [sub_zero, ENNReal.toReal_mul,
       ENNReal.toReal_ofReal (Real.exp_nonneg _)] using ENNReal.toReal_mono hfinite h
-
-
 
 theorem toReal_edist_le_add_on_closed_terminal_ball
     (hm : 0 < m) {a Λ scale r R : ℝ} (ha : a < 0)

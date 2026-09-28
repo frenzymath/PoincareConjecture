@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordi
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Spacetime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +14,6 @@ namespace PoincareConjecture.RicciFlow.ConjugateHeat
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 def testFunctions (U : Set (M × ℝ)) : Submodule ℝ (M × ℝ → ℝ) where
   carrier := {φ | ContMDiff ((𝓡 n).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ φ ∧
@@ -40,7 +38,6 @@ theorem test_smooth_space {U : Set (M × ℝ)} (φ : testFunctions (n := n) U) (
 theorem test_smooth_time {U : Set (M × ℝ)} (φ : testFunctions (n := n) U) (x : M) :
     ContDiff ℝ ∞ (fun τ => φ (x, τ)) :=
   (φ.property.1.comp (contMDiff_const.prodMk contMDiff_id)).contDiff
-
 
 def testOperator (F : RicciFlow n M J) (φ : M × ℝ → ℝ) (z : M × ℝ) : ℝ :=
   deriv (fun τ => φ (z.1, τ)) z.2 +
@@ -71,7 +68,6 @@ theorem testOperator_smul (F : RicciFlow n M J) {U : Set (M × ℝ)}
     (F.connection (-z.2)).laplacian_const_mul]
   simp only [testOperator, Pi.smul_apply, smul_eq_mul, mul_add]
 
-
 def testOperatorLinear (F : RicciFlow n M J) (U : Set (M × ℝ)) :
     testFunctions (n := n) U →ₗ[ℝ] (M × ℝ → ℝ) where
   toFun φ := testOperator F φ
@@ -84,7 +80,6 @@ variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
 def weakPairing (F : RicciFlow n M J) (u φ : M × ℝ → ℝ) : ℝ :=
   ∫ τ, ∫ x, u (x, τ) * testOperator F φ (x, τ) ∂(F.metric (-τ)).volumeMeasure
-
 
 def weakPairingLinear (F : RicciFlow n M J) (u : M × ℝ → ℝ)
     (U : Set (M × ℝ))
@@ -105,7 +100,6 @@ def weakPairingLinear (F : RicciFlow n M J) (u : M × ℝ → ℝ)
     rfl
 
 end Pairing
-
 
 theorem abs_apply_le_test_cutoff {U : Set (M × ℝ)}
     (T : testFunctions (n := n) U →ₗ[ℝ] ℝ)
@@ -128,7 +122,6 @@ theorem abs_apply_le_test_cutoff {U : Set (M × ℝ)}
     linarith)
   simp only [map_sub, map_add, map_smul, smul_eq_mul] at hm hp
   exact abs_le.mpr ⟨by linarith, by linarith⟩
-
 
 theorem apply_eq_zero_of_test_cutoffs {U : Set (M × ℝ)}
     (T : testFunctions (n := n) U →ₗ[ℝ] ℝ)

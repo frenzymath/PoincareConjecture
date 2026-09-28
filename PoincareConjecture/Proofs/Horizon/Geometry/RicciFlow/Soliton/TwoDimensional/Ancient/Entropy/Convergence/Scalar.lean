@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Scalar
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +20,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 2 M} {S : AncientRescalingSequence K}
-
 
 theorem tendsto_scalarCurvature_at_coordinate_points_neg_one
     (G : AncientCompactTimeConvergence S)
@@ -98,7 +95,6 @@ theorem tendsto_scalarCurvature_at_coordinate_points_neg_one
   exact (G.embedding (k i)).scalarCurvature_eq_of_coordinate_germ
     (G.exhaustion_open (k i)) q (-1, y i) hi'.1 hi'.2 (gd i).1 (gd i).2 hi
 
-
 theorem tendsto_scalarCurvature_at_points_neg_one
     (G : AncientCompactTimeConvergence S) (hcompact : CompactSpace G.limit.carrier.carrier)
     {α : Type*} {l : Filter α} [l.NeBot] (k : α → ℕ) (hk : Tendsto k l atTop)
@@ -125,7 +121,6 @@ theorem tendsto_scalarCurvature_at_points_neg_one
     (mem_extChartAt_source (I := 𝓡 2) p))] with i hi
   rw [c.left_inv hi]
 
-
 theorem tendstoUniformly_scalarCurvature_pullback_neg_one
     (G : AncientCompactTimeConvergence S) (hcompact : CompactSpace G.limit.carrier.carrier)
     {c : ℝ} (hround : ∀ x, (G.limit.flow.connection (-1)).scalarCurvature x = c) :
@@ -139,7 +134,6 @@ theorem tendstoUniformly_scalarCurvature_pullback_neg_one
   apply Uniform.tendsto_nhds_right.mp
   simpa only [hround] using G.tendsto_scalarCurvature_at_points_neg_one hcompact
     (l := (atTop : Filter ℕ) ×ˢ 𝓝 x) Prod.fst tendsto_fst Prod.snd tendsto_snd
-
 
 theorem tendstoUniformly_scalarCurvature_rescaling_neg_one
     (G : AncientCompactTimeConvergence S) (hcompact : CompactSpace G.limit.carrier.carrier)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalProtectedBallProduct
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalDiskAttachmentComplement
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry PLAnnularStrip

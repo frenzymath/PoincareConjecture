@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricBoundaryFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
 
 theorem exists_original_signed_tube_axis_maps
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

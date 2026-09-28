@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapCurvature
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBirthMetric
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -37,8 +27,6 @@ noncomputable local instance wholeCapTwoJetNorm : NormedAddCommGroup (MetricTwoJ
 
 noncomputable local instance wholeCapTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
 
 theorem exists_actualCap_whole_retention_cutoff
     (P : M44CapPersistencePredecessors.{u})

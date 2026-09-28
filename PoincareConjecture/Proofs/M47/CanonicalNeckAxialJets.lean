@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialPullback
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderCovariantJetBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,11 +14,8 @@ open M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
 
-
 noncomputable def neckAxialConstantArray (v : ℝ) {r : ℕ} (a : Fin r → Fin 3) : ℝ :=
   v * if ∀ i, a i = 2 then 1 else 0
-
-
 
 theorem roundCylinderTensorDerivative_add_neckAxialConstantArray
     (u v : ℝ) (q : UnitTwoSphere) {r : ℕ}
@@ -44,7 +33,6 @@ theorem roundCylinderTensorDerivative_add_neckAxialConstantArray
   simp only [roundCylinderTensorDerivative, fderiv_add_const]
   simp_rw [mul_add, hzero, add_zero]
 
-
 theorem roundCylinderTensorDerivative_eq_of_eventuallyEq
     (u : ℝ) (q : UnitTwoSphere) {r : ℕ} {T S : V → (Fin r → Fin 3) → ℝ} {p : V}
     (h : ∀ a, (fun y => T y a) =ᶠ[𝓝 p] fun y => S y a)
@@ -60,8 +48,6 @@ theorem roundCylinderTensorDerivative_eq_of_eventuallyEq
   intro j _
   exact congrArg (fun v => roundCylinderChristoffel u (chartAt E₂ q) p j
     (a 0) (a i.succ) * v) (h (Function.update (fun k => a k.succ) i j)).self_of_nhds
-
-
 
 theorem roundCylinderIteratedDerivative_neckAxialTensorPullback_succ
     (lambda c : ℝ) {u : ℝ} (hu : u < 1)

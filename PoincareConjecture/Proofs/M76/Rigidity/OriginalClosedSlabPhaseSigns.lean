@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedSlabAdjustment
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleSlabPhaseSigns
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,11 +15,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 open Classical in
-
-
-
-
-
 
 theorem exists_hamiltonZero_small_phase_adjustment {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

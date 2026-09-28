@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceG
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Restriction
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
-
 
 structure MovingGaugeSectionTransportFields
     (D : LeafwiseLeviCivitaFamily F S)
@@ -174,8 +161,6 @@ private theorem movingGauge_time_coefficient
   change a • ((T.inclusionDerivative t) ((T.inclusionDerivative t).symm 1)) = a
   rw [ContinuousLinearEquiv.apply_symm_apply]
   simp
-
-
 
 theorem movingGaugeSectionTransportFields
     (D : LeafwiseLeviCivitaFamily F S)

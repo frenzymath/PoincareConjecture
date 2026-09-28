@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryTaggedCollar
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPair
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_regular_disc_surgery (P : SurgeryCapProfile)
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

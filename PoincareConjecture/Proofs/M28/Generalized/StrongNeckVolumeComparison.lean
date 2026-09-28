@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.SphereMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,10 +39,6 @@ private theorem sphere_conformal_bounds {x : EuclideanSpace ℝ (Fin 2)}
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem normalized_neck_chart_speed_bounds (N : EpsilonNeck g)
     (hscale : N.scale = 1) (q : UnitTwoSphere) (s : ℝ) {x : E}

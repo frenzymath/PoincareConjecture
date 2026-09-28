@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyComparison
 import PoincareConjecture.Proofs.M02.Topology.IntegralDualBiprod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

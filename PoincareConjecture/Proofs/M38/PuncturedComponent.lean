@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M38.BallPuncture
 import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem punctured_standard_ball_connected (r : ℝ) (hr : 0 < r) :
     IsConnected (Metric.ball (0 : StandardCapSpace) r \ {0}) := by
@@ -58,8 +47,6 @@ theorem punctured_standard_ball_connected (r : ℝ) (hr : 0 < r) :
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
-
 theorem surgeryBall_punctured_image :
     B.map '' (Metric.ball (0 : StandardCapSpace) 2 \ {0}) =
       (B.map '' Metric.ball (0 : StandardCapSpace) 2) \ {B.map 0} := by
@@ -78,15 +65,11 @@ theorem surgeryBall_punctured_image :
     intro hz0
     exact hy (hzy.symm.trans (congrArg B.map (show z = 0 from hz0)))
 
-
 theorem surgeryBall_punctured_image_connected :
     IsConnected ((B.map '' Metric.ball (0 : StandardCapSpace) 2) \ {B.map 0}) := by
   rw [← surgeryBall_punctured_image B]
   exact (punctured_standard_ball_connected 2 (by norm_num)).image B.map
     (B.map_smooth.continuousOn.mono Set.diff_subset)
-
-
-
 
 theorem preconnected_diff_singleton_of_local
     {X : Type*} [TopologicalSpace X] [T1Space X]
@@ -129,8 +112,6 @@ theorem preconnected_diff_singleton_of_local
   · exact Or.inr (hside v u hv hu (by rwa [Set.union_comm])
       (by rw [Set.inter_comm v u]; exact hdisjoint) hlocal)
 
-
-
 theorem punctured_component_connected (A : GeneralizedSliceCarrier.{u}) (p : A.carrier) :
     IsConnected (connectedComponent p \ {p}) := by
   obtain ⟨B, hcenter, hsub, _⟩ := exists_surgeryBall_in_open A p
@@ -144,11 +125,9 @@ theorem punctured_component_connected (A : GeneralizedSliceCarrier.{u}) (p : A.c
     preconnected_diff_singleton_of_local isConnected_connectedComponent.isPreconnected
       mem_connectedComponent (surgeryBall_image_open B) hpW hWC hpunct.isPreconnected⟩
 
-
 theorem punctured_component_preconnected (A : GeneralizedSliceCarrier.{u}) (p : A.carrier) :
     IsPreconnected (connectedComponent p \ {p}) :=
   (punctured_component_connected A p).isPreconnected
-
 
 theorem surgeryBallCollapse_mem_component {x : A.carrier}
     (hx : x ∈ connectedComponent (B.map 0)) (hexterior : x ∈ B.closedBallᶜ) :
@@ -161,7 +140,6 @@ theorem surgeryBallCollapse_mem_component {x : A.carrier}
   · rw [surgeryBallCollapse, surgeryBallPatch_of_not_mem B _ hu]
     exact hx
 
-
 theorem surgeryBallExpand_mem_component {x : A.carrier}
     (hx : x ∈ connectedComponent (B.map 0)) (hpuncture : x ∈ ({B.map 0} : Set A.carrier)ᶜ) :
     surgeryBallExpand B x ∈ connectedComponent (B.map 0) := by
@@ -172,8 +150,6 @@ theorem surgeryBallExpand_mem_component {x : A.carrier}
       ⟨_, punctureExpand_mem_ball hpos hupper, rfl⟩
   · rw [surgeryBallExpand, surgeryBallPatch_of_not_mem B _ hu]
     exact hx
-
-
 
 theorem surgeryBall_component_complement_connected :
     IsConnected (connectedComponent (B.map 0) \ B.closedBall) := by

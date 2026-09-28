@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ScalarDoub
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ComponentExclusion
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PinchingBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem regularSlab_not_component_of_collar (P : M44CapPersistencePredecessors.{u})
     (F : SurgeryFlowData.{u}) {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b)
@@ -39,9 +27,6 @@ theorem regularSlab_not_component_of_collar (P : M44CapPersistencePredecessors.{
     (hU.image (S.identify t) (S.identify t).continuous.continuousOn)
     (scalar_smooth_of_predecessors P (F.connection t.1)).continuous
     (mem_image_of_mem _ hp) v w horth hplane (mem_image_of_mem _ hx)
-
-
-
 
 theorem exists_collar_scalar_curvature_bound (P : M44CapPersistencePredecessors.{u}) (C : ℝ) :
     ∃ L : ℝ, 0 < L ∧ ∀ (F : SurgeryFlowData.{u}) {a b : ℝ}

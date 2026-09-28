@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSphereTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,7 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 theorem IsFinitePLBallPair.isConnected_boundary_three
     {D B : Set E} (hD : IsFinitePLBallPair V3 D B) : IsConnected B := by
   obtain ⟨d, _, hdb⟩ := hD.exists_cube_chart (ContinuousLinearEquiv.refl ℝ V3)
@@ -32,9 +21,6 @@ theorem IsFinitePLBallPair.isConnected_boundary_three
   exact db.isConnected_of_convex_frontier
     (isCompact_closedBall _ _) (convex_closedBall _ _)
     ⟨0, ball_subset_interior_closedBall (mem_ball_self zero_lt_one)⟩ (by simp)
-
-
-
 
 theorem IsFinitePLBallPair.exists_components_homeomorph_of_attachment
     {P D B : Set E} (hD : IsFinitePLBallPair V3 D B)
@@ -45,9 +31,6 @@ theorem IsFinitePLBallPair.exists_components_homeomorph_of_attachment
   exact Topology.exists_components_homeomorph_closed_attachment
     hP hD.isCompact.isClosed hD.isConnected
     (hattach.symm ▸ hD.isConnected_boundary_three)
-
-
-
 
 theorem IsFinitePLBallPair.exists_components_homeomorph_of_removal
     {R D B : Set E} (hD : IsFinitePLBallPair V3 D B)

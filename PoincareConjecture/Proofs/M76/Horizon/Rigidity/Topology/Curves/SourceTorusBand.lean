@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -95,8 +87,6 @@ theorem SourceSquareMap.exists_coordinate_band
     exact hvval z
   · intro z
     exact congrArg Prod.fst (h.symm_apply_apply _)
-
-
 
 theorem SourceSquareMap.exists_original_coordinate_band
     [FiniteDimensional ℝ E]

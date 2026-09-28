@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Norm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture
-
 
 theorem abs_multilinear_apply_le_orthonormal_tensor_norm
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -54,8 +44,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem abs_tensor_evaluation_le_tensorNorm
     (g : RiemannianMetric n M) {k : ℕ}
     (T : CovariantTensorEvaluation n M k) (x : M)
@@ -76,8 +64,6 @@ theorem abs_tensor_evaluation_le_tensorNorm
   have h := abs_multilinear_apply_le_orthonormal_tensor_norm A b v
   rw [← hN] at h
   simpa [← hA, hnorm, Fin.prod_univ_succ, mul_assoc] using h
-
-
 
 theorem abs_tensor_orthonormal_component_le_tensorNorm
     (g : RiemannianMetric n M) {k : ℕ}

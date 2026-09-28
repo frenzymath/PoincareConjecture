@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckCompletionRadius
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedSphereRayCrossing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RecutArbitraryNeckContainment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +15,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem centered_neck_scalar_radius_floor
     (N : EpsilonNeck g) (D : LeviCivitaData g)
@@ -59,9 +45,6 @@ theorem centered_neck_scalar_radius_floor
 
 omit [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] in
-
-
-
 
 theorem exists_centered_neck_radius_floor_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

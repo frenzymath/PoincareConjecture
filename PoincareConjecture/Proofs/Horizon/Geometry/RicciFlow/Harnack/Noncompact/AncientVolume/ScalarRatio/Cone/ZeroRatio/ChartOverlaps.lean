@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Extraction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_normal_chart_overlap_limits
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)] [∀ k, T3Space (M k)]

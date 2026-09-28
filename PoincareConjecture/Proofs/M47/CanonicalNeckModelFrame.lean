@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNormal
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderContractions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ namespace PoincareConjecture.Proofs.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
 
 noncomputable def neckModelFrame : E ≃L[ℝ] E :=
   M35.cylinderCoordinateEquiv.trans
@@ -43,7 +34,6 @@ theorem neckModelFrame_basis (i : Fin 3) :
 private theorem inverse_sqrt_two_square : (Real.sqrt 2)⁻¹ * (Real.sqrt 2)⁻¹ = 1 / 2 := by
   rw [← mul_inv, ← pow_two, Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 2)]
   norm_num
-
 
 theorem neckModelFrame_isometry (s : ℝ) (v w : E) :
     (M35.cylinderEuclideanMetric 0 (by norm_num)).inner
@@ -72,7 +62,6 @@ theorem neckModelFrame_isometry (s : ℝ) (v w : E) :
         inner ℝ (M35.cylinderCoordinateEquiv v).1 (M35.cylinderCoordinateEquiv w).1 +
         (M35.cylinderCoordinateEquiv v).2 * (M35.cylinderCoordinateEquiv w).2 := by ring
     _ = _ := by rw [inverse_sqrt_two_square]; norm_num; exact hsplit
-
 
 theorem neckModelFrame_ricci
     (D : LeviCivitaData (M35.cylinderEuclideanMetric 0 (by norm_num)))

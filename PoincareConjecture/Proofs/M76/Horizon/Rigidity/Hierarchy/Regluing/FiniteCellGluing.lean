@@ -1,21 +1,9 @@
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem isLocallyInjective_of_finite_marked_cells
     {X Y ι κ : Type*} [TopologicalSpace X] [Finite ι]

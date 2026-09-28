@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.M28
 import PoincareConjecture.Proofs.M29
 import PoincareConjecture.Proofs.M30
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

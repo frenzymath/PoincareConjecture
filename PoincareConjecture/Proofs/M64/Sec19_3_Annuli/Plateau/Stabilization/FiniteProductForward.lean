@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.Double
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.CircleCurvatureNorm
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.UnitRicciControl
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,10 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem auxiliaryCircle_finite_exists_forward
     (P : M62.CircleProductData F circumference)
@@ -67,10 +57,6 @@ theorem auxiliaryCircle_finite_exists_forward
       (auxiliaryCircle_ricci_quadratic_abs_le P Q hn t hK q (hcurv q.1.1) v))
   have hcoef : K + 2 * (((n : ℝ) - 1) * K) = (2 * (n : ℝ) - 1) * K := by ring
   simpa only [hcoef] using hforward
-
-
-
-
 
 theorem auxiliaryCircle_finite_exists_forward_of_ambient_bounds
     (P : M62.CircleProductData F circumference)

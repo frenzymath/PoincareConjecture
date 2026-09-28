@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem nested_collar_component_retention_on_source
     {A₀ A₁ U S : Set P2} {l₀ r₀ l₁ r₁ : ℝ}
     (B₀ : OrientedPolygonCollar l₀ r₀ A₀) (B₁ : OrientedPolygonCollar l₁ r₁ A₁)
@@ -27,8 +25,6 @@ theorem nested_collar_component_retention_on_source
     · exact ho₁ hx (subset_closure (B₁.nested hi))
     · exact ho.2 (B₀.nested (subset_closure (hi₀ hx)))
   · exact Or.inl (fun x hx ↦ Or.inr ⟨hUS hx, fun h ↦ ho₀ hx (subset_closure h)⟩)
-
-
 
 theorem SourceCircleDecomposition.nested_planar_component_retention
     {X : Type*} {f : P2 → X} {S A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ : ℝ}
@@ -83,8 +79,6 @@ theorem SourceCircleDecomposition.nested_planar_component_retention
   · intro hh
     obtain ⟨x, hx⟩ := (M.pieces_isConnected k).nonempty
     exact disjoint_left.mp hk hx (hh hx)
-
-
 
 theorem nested_planar_retained_closed_band
     {A₀ A₁ S G : Set P2} {l₀ r₀ l₁ r₁ : ℝ}

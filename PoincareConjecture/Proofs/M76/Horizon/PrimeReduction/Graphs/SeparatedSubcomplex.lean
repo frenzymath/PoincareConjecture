@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -90,8 +81,6 @@ theorem vertexSubcomplex_ncard_neighborSet_of_closed_separation
         ⟨v.val, G.vertexSubcomplex_le A v.property⟩).ncard := by
   rw [(G.vertexSubcomplex A).ncard_edgeGraph_neighborSet, G.ncard_edgeGraph_neighborSet,
     G.vertexSubcomplex_vertex_link_of_closed_separation hA hB hdis hcover v.property]
-
-
 
 theorem exists_subcomplex_of_closed_image_partition
     {X : Type*} [TopologicalSpace X] (hG : G.faces.Finite)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusHarmonicMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PeriodicHarmonicMinimum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,10 +42,6 @@ private theorem modulus_constant_on_domain {f : LoopPlane → ℝ} {c : ℝ}
   · rw [← m64AnnulusInterior_closure]
     exact subset_closure
   · rw [m64AnnulusInterior_closure]
-
-
-
-
 
 theorem m64PeriodicModulus_nonneg_of_boundary_nonneg
     {r : ℝ} (hr : 0 < r) {f : LoopPlane → ℝ}
@@ -109,10 +94,6 @@ theorem m64PeriodicModulus_nonneg_of_boundary_nonneg
     rw [hboundary] at hb
     exact (not_lt_of_ge hb) hneg
   exact fun q hq => hnonneg.trans (hglobal q hq)
-
-
-
-
 
 theorem m64PeriodicModulus_pos_of_boundary_nonneg
     {r : ℝ} (hr : 0 < r) {f : LoopPlane → ℝ}

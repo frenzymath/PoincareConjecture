@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.OpenSubco
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.SubdivisionEdgeCofaces
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem ncard_triangle_cofaces_eq_two_of_local_disk
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

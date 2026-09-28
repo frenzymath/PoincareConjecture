@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.VaryingSc
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.RawError
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,11 +39,6 @@ private theorem inverse_difference_tendsto_zero
     abs_of_pos hRpos, abs_of_pos hSpos, abs_sub_comm]
   apply (div_lt_iff₀ (mul_pos hRpos hSpos)).mpr
   exact (hK k hk).2.trans_le (mul_le_mul_of_nonneg_left hden hdelta.le)
-
-
-
-
-
 
 theorem eventually_exists_neck_of_captured_finite_metric_jets
     {M : Type v} [TopologicalSpace M] [T3Space M]

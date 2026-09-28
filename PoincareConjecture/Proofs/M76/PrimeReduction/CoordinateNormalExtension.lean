@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ActualWidthNormalExtension
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallSupportedAmbientExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
-
-
-
 
 theorem exists_coordinate_normal_extension
     (T : P3 ≃ᴬ[ℝ] V3)

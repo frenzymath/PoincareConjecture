@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseInwardRay
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,10 +41,6 @@ private theorem positive_normal_germ
       exact hrpos'.not_ge (hrside.mp hcl)
     obtain ⟨_, h⟩ := hfalse.exists
     exact False.elim h
-
-
-
-
 
 theorem m64Intrinsic_inward_ray_transverse_pos
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

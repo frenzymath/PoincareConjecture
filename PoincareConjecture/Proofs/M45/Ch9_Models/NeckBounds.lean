@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Ch9_Models.NormalizedChart
 import PoincareConjecture.Proofs.M45.Ch9_Models.MetricRealization
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_NeckFourJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +14,8 @@ open PoincareConjecture.M44 PoincareConjecture.M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
-
 noncomputable def modelNeckCoordinateBound : ℝ :=
   Classical.choose exists_centeredCylinderMetric_fourJet_bound
-
-
-
 
 theorem model_four_jet_order {epsilon : ℝ}
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200) :
@@ -39,9 +25,6 @@ theorem model_four_jet_order {epsilon : ℝ}
     rw [inv_eq_one_div, le_div_iff₀ hepsilon]
     linarith
   exact Nat.le_floor hinv
-
-
-
 
 theorem model_neck_analytic
     {Cg Ce : ℝ} (hCg : 0 < Cg) (hCe : 0 < Ce)

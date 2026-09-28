@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapBandRays
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -133,7 +125,6 @@ variable {D}
   {G : D.OrientedGraphPiece e R (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm a b}
   (E : D.CapGraphEndpoint P region chart caps e R G terminal trim)
 
-
 noncomputable def outwardRadialVelocity :
     TangentSpace (𝓡 2) (D.edgeFromEndpoint e terminal trim) :=
   -coordinateTriangleVelocity ((caps (D.edgeEndpoint e terminal)).coordinates E.sector)
@@ -173,8 +164,6 @@ private theorem inward_radial_map (t : ℝ) :
     congr 1
     simp [affineChartSegment, AffineMap.lineMap_apply, vsub_eq_sub, vadd_eq_add, add_comm,
       Fin.succAbove, Fin.lt_def]
-
-
 
 theorem edgeFromEndpoint_velocity_pos_smul_outward (htrim : trim ∈ Ioo (0 : ℝ) 1) :
     ∃ a : ℝ, 0 < a ∧
@@ -244,8 +233,6 @@ namespace OrientedGraphPiece
 variable {D} {e : D.EdgeIndex} {R : D.regions}
   {C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S} {a b : ℝ}
   (G : D.OrientedGraphPiece e R C a b)
-
-
 
 theorem parameter_deriv_pos {t : ℝ} (ht : t ∈ G.parameter.source) :
     0 < deriv G.parameter t := by
@@ -324,8 +311,6 @@ private theorem bottom_map (i : Fin B.faces.interface.count) (t : ℝ) :
         (B.faces.cut i.castSucc + t * (B.faces.cut i.succ - B.faces.cut i.castSucc), 0)) at h
   rw [h, B.coordinates_eq, G.strip_axis]
 
-
-
 theorem first_bottom_velocity_pos_smul_edge (hab : a < b)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source) :
     ∃ c : ℝ, 0 < c ∧
@@ -363,8 +348,6 @@ theorem first_bottom_velocity_pos_smul_edge (hab : a < b)
       EuclideanSpace ℝ (Fin 2))) (show G.parameter a + 0 * (w * d) = G.parameter a by ring)
   have hv' := hv.trans (congrArg (fun v : EuclideanSpace ℝ (Fin 2) => (w * d) • v) hpoint)
   exact hv'.trans (by rw [he, smul_smul, div_mul_cancel₀ _ hp.ne']; congr 2)
-
-
 
 theorem last_bottom_velocity_pos_smul_edge (hab : a < b)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source) :
@@ -434,7 +417,6 @@ variable {D : FiniteChartRegionDecomposition (M := S)}
   (K : Q.CutChain L.direction T.direction)
   {r δ : ℝ}
 
-
 theorem first_cap_bottom_velocity_pos_smul
     (B : (Q.piece Q.firstPiece).FixedStripBandFaces (K.graphCuts Q.firstPiece) δ r r) :
     ∃ a : ℝ, 0 < a ∧
@@ -454,8 +436,6 @@ theorem first_cap_bottom_velocity_pos_smul
   refine ⟨a * b, mul_pos ha hb, ?_⟩
   exact he.trans ((congrArg (fun v : EuclideanSpace ℝ (Fin 2) => a • v) (hp.trans hc)).trans
     (smul_smul a b _))
-
-
 
 theorem last_cap_bottom_velocity_pos_smul
     (B : (Q.piece Q.lastPiece).FixedStripBandFaces (K.graphCuts Q.lastPiece) δ r r) :
@@ -477,8 +457,6 @@ theorem last_cap_bottom_velocity_pos_smul
   refine ⟨a * b, mul_pos ha hb, ?_⟩
   exact he.trans ((congrArg (fun v : EuclideanSpace ℝ (Fin 2) => a • v) (hp.trans hc')).trans
     (smul_smul a b _))
-
-
 
 theorem first_cap_band_refined_contribution (g : RiemannianMetric 2 S)
     (B : (Q.piece Q.firstPiece).FixedStripBandFaces (K.graphCuts Q.firstPiece) δ r r)
@@ -507,8 +485,6 @@ theorem first_cap_band_refined_contribution (g : RiemannianMetric 2 S)
   rw [hpoint] at hfan
   rw [hfan, hb, hc, g.cornerAngle_smul_pos_left _ _ _ ha,
     g.cornerAngle_smul_pos_right _ _ _ hbpos]
-
-
 
 theorem last_cap_band_refined_contribution (g : RiemannianMetric 2 S)
     (B : (Q.piece Q.lastPiece).FixedStripBandFaces (K.graphCuts Q.lastPiece) δ r r)

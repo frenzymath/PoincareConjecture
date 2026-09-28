@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsFamily
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -20,7 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
 
-
 noncomputable def stackCapEndChart
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (C : SurgeryCapTag psi u) (R : E2 ≃ₗᵢ[ℝ] E2) :
@@ -29,7 +19,6 @@ noncomputable def stackCapEndChart
     (R.toContinuousLinearEquiv.prodCongr (ContinuousLinearEquiv.refl ℝ ℝ))
   let H := (heightPlaneCoordinates u).trans (ContinuousLinearEquiv.prodComm ℝ E2 ℝ)
   (A.toHomeomorph.transOpenPartialHomeomorph C.tube).transHomeomorph H.toHomeomorph
-
 
 theorem stackCapEndChart_spec
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -72,7 +61,6 @@ theorem stackCapEndChart_spec
     have h := hh (T.symm p) (T.map_target hp)
     rw [T.right_inv hp] at h
     exact h.symm
-
 
 noncomputable def stackCapEndFiber
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -123,7 +111,6 @@ noncomputable def stackCapEndFiber
     continuousOn_toFun := hf.continuousOn
     continuousOn_invFun := hi.continuousOn }
   exact ⟨e, fun _ hx => hsrc ⟨mem_univ _, hx⟩, hf, hi⟩
-
 
 theorem stackCapEndFiber_spec
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

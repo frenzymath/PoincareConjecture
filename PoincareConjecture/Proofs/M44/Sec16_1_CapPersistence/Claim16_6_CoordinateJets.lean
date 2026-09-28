@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) 
 
 noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_uniform_ordinary_jet_bound_of_covariant_components
     (G : ℕ → ℝ) (hG : ∀ l, 0 ≤ G l) (k j m : ℕ) :
@@ -152,9 +139,6 @@ theorem exists_uniform_ordinary_jet_bound_of_covariant_components
             (comparisonTensorComponent_contDiff hTm a).contDiffAt j).trans
               ((Finset.sum_le_sum (fun c _ => hcolumn c)).trans_eq (by simp; ring))
 
-
-
-
 theorem exists_ordinary_jet_bound_of_covariant_components
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     {K : Set E} (hK : IsCompact K) (k j m : ℕ) :
@@ -173,8 +157,6 @@ theorem exists_ordinary_jet_bound_of_covariant_components
   intro T hT rho hrho x hx hbase a
   exact hbound D T hT rho hrho x (fun l _ a b c => hGbound l a b c x hx) hbase a
 
-
-
 theorem exists_basis_tangent_norm_bound (g : RiemannianMetric 3 E)
     {K : Set E} (hK : IsCompact K) :
     ∃ L : ℝ, 0 < L ∧ ∀ x ∈ K, ∀ a : Fin 3, g.tangentNorm x (e a) ≤ L := by
@@ -192,8 +174,6 @@ theorem exists_basis_tangent_norm_bound (g : RiemannianMetric 3 E)
   have hs := Finset.single_le_sum (fun b _ => le_max_right (A b) 0) (Finset.mem_univ a)
   exact h.trans ((le_max_left (A a) 0).trans (hs.trans (by dsimp [L]; linarith)))
 
-
-
 theorem comparison_component_le_tangent_bound
     (g : RiemannianMetric 3 E) {k : ℕ} (T : CovariantTensorEvaluation 3 E k)
     (x : E) (hT : ∃ A : MultilinearMap ℝ (fun _ : Fin k => E) ℝ,
@@ -210,9 +190,6 @@ theorem comparison_component_le_tangent_bound
       _ = _ := by simp
   exact h.trans ((mul_le_mul hN hprod
     (Finset.prod_nonneg (fun _ _ => Real.sqrt_nonneg _)) hrho).trans_eq (mul_comm _ _))
-
-
-
 
 theorem exists_uniform_ordinary_jet_bound_of_covariant_norms
     (G : ℕ → ℝ) (hG : ∀ l, 0 ≤ G l) {L : ℝ} (hL : 0 < L) (k j : ℕ) :
@@ -245,8 +222,6 @@ theorem exists_uniform_ordinary_jet_bound_of_covariant_norms
     exact hc.trans (mul_le_mul_of_nonneg_right hb hrho)
   exact (hAbound D T hT (B * rho) (mul_nonneg hB.le hrho) x hchrist hbase a).trans_eq
     (mul_assoc A B rho).symm
-
-
 
 theorem exists_ordinary_jet_bound_of_covariant_norms
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
@@ -292,9 +267,6 @@ private theorem norm_bilinear_jet_le_components
       (mul_le_mul_of_nonneg_right (h a b) hp)
   exact (euclideanThree_bilinear_norm_le _ (mul_nonneg hrho hp) hc).trans_eq (by ring)
 
-
-
-
 theorem exists_uniform_local_bilinear_jet_bound_of_covariant_norms
     (G : ℕ → ℝ) (hG : ∀ l, 0 ≤ G l) {L : ℝ} (hL : 0 < L) (j : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
@@ -335,9 +307,6 @@ theorem exists_uniform_local_bilinear_jet_bound_of_covariant_norms
     (heq.iteratedFDeriv ℝ j).self_of_nhds
   rw [← hjet]
   exact (norm_bilinear_jet_le_components hA j x (mul_nonneg hC.le hrho) hc).trans_eq (by ring)
-
-
-
 
 theorem exists_local_bilinear_jet_bound_of_covariant_norms
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g)

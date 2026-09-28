@@ -3,15 +3,6 @@ import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -48,8 +39,6 @@ private theorem invariant_zpow (d : Equiv.Perm (C × ℝ)) (p : C × ℝ → M)
   | succ n hn => rw [zpow_add, zpow_one, Equiv.Perm.mul_apply, hn, hp]
   | pred n hn => rw [zpow_sub, zpow_one, Equiv.Perm.mul_apply, hn, hi]
 
-
-
 theorem image_slab_eq_univ_of_translation
     (p : C × ℝ → M) (hsurj : Function.Surjective p)
     (d : Equiv.Perm (C × ℝ)) (l : ℝ) (hl : 0 < l)
@@ -69,7 +58,6 @@ theorem image_slab_eq_univ_of_translation
   push_cast
   constructor <;> nlinarith
 
-
 theorem image_slab_eq_univ_of_nonzero_translation
     (p : C × ℝ → M) (hsurj : Function.Surjective p)
     (d : Equiv.Perm (C × ℝ)) (l : ℝ) (hl : l ≠ 0)
@@ -85,8 +73,6 @@ theorem image_slab_eq_univ_of_nonzero_translation
       simpa using (hp (d⁻¹ z)).symm
   · rw [abs_of_pos hpos]
     exact image_slab_eq_univ_of_translation p hsurj d l hpos hd hp
-
-
 
 theorem compactSpace_of_nonzero_translation
     [TopologicalSpace C] [CompactSpace C] [TopologicalSpace M]

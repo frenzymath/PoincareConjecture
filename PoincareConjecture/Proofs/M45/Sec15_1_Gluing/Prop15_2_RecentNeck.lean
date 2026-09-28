@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Patches
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M45CylinderPatch.neckHomeomorph {S : GeneralizedSliceCarrier.{u}}
     {eta : ℝ} {x : S.carrier} (P : M45CylinderPatch S eta⁻¹ x) :
@@ -46,9 +35,6 @@ def M45CylinderPatch.neckHomeomorph {S : GeneralizedSliceCarrier.{u}}
     have h := P.inverse_smooth.continuousOn.comp_continuous continuous_subtype_val
       (fun y : P.carrier => y.2)
     exact h.fst.prodMk (h.snd.subtype_mk _)
-
-
-
 
 noncomputable def M45NeckGluingInput.recentNeck {epsilon beta : ℝ}
     (I : M45NeckGluingInput.{u} epsilon beta)

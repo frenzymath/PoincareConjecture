@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerLocal
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +11,6 @@ open scoped Topology SchwartzMap ContDiff LineDeriv
 universe u v
 
 namespace PoincareConjecture.M65Euler
-
-
-
 
 def restrict_map {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     {S T : Set LoopPlane} (F : M65LocalWeakMap e S) (hTS : T ⊆ S) :
@@ -49,9 +35,6 @@ def restrict_map {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     rw [hleft T hs, hright T hs]
     exact hw
 
-
-
-
 def replace_value {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     {S : Set LoopPlane} (F : M65LocalWeakMap e S) (q : LoopPlane → M)
     (hq : (fun z => e (q z)) =ᵐ[volume.restrict S] fun z => e (F.value z)) :
@@ -67,10 +50,6 @@ def replace_value {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     apply integral_congr_ae
     filter_upwards [hq] with z hz
     rw [hz]
-
-
-
-
 
 theorem derivative_unique {M : Type u} {M' : Type v} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {e' : M' → EuclideanSpace ℝ (Fin N)}

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhaseCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem finitePiecewiseAffineOn_of_circle_lift
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -64,9 +53,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
-
-
 
 theorem finitePiecewiseAffineOn_sourcePhase_lift
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.MovingCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.UniformConvergence.MovingPoints
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -100,8 +89,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
 
-
-
 theorem eventually_terminalCylinder_coefficientJets
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ j (s t : ℝ) (x : G.limit.carrier.carrier),
@@ -134,8 +121,6 @@ theorem eventually_terminalCylinder_coefficientJets
   exact ⟨Metric.mem_ball_self (by norm_num : (0 : ℝ) < 1 / 2),
     (neg_lt_neg hinv).trans_le hs.1, hs.2.trans_lt hinv⟩
 
-
-
 theorem eventually_terminalCylinder_tensorSmoothOn
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)
     {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
@@ -163,8 +148,6 @@ theorem eventually_terminalCylinder_tensorSmoothOn
         (hΦ.contMDiffAt ((isOpen_univ.prod isOpen_Ioo).mem_nhds (hsub hzK)))).contMDiffWithinAt
   simpa only [one_mul] using roundCylinderTensorSmoothOn_smul_pullback
     ((S.term (G.subsequence k)).flow.flow.metric u) hs 1
-
-
 
 theorem eventually_terminalCylinder_familyClose
     (hconv : M23TerminalMetricConvergence G e)

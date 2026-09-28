@@ -1,22 +1,11 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.PartialStandardCapFlow
-
-
 
 noncomputable def extensionOfMetricAgreement
     {g₀ : StandardInitialMetric} (F G : PartialStandardCapFlow g₀)

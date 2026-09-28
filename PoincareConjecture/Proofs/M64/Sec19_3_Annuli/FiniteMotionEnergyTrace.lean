@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionEnergy
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,17 +16,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin k)) N] [IsManifold (𝓡 k) ∞ N]
   {a b : ℝ}
 
-
-
-
 def m64AnnulusMotionEnergyTrace (F : RicciFlow k N (Icc a b))
     (time : ℝ) (Phi : ℝ × M → N) (r : ℝ) (f : LoopPlane → M)
     (w : ℝ × LoopPlane) : ℝ :=
   r * m64AmbientMotionEnergy (n := n) F time Phi (w.1, m64AnnulusWithinColumn f 0 w.2) +
     r⁻¹ * m64AmbientMotionEnergy (n := n) F time Phi (w.1, m64AnnulusWithinColumn f 1 w.2)
-
-
-
 
 def m64AnnulusMotionEnergyDerivativeTrace (F : RicciFlow k N (Icc a b))
     (time : ℝ) (Phi : ℝ × M → N) (r : ℝ) (f : LoopPlane → M)
@@ -41,9 +31,6 @@ def m64AnnulusMotionEnergyDerivativeTrace (F : RicciFlow k N (Icc a b))
       (s, m64AnnulusWithinColumn f 1 w.2)) w.1
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem m64AnnulusMotionEnergyTrace_eq (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)
@@ -74,10 +61,6 @@ theorem m64AnnulusMotionEnergyTrace_eq (F : RicciFlow k N (Icc a b))
     m64AmbientMotionTangent, m64AnnulusWithinColumn, m64ModulusEnergyDensity,
     m60AreaGram, hcol]
   ring
-
-
-
-
 
 theorem m64AnnulusMotionEnergyTrace_continuous (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)
@@ -111,10 +94,6 @@ theorem m64AnnulusMotionEnergyTrace_continuous (F : RicciFlow k N (Icc a b))
     convert! hKt.comp (harg i) (fun _ hw => ⟨hw.1, hfO hw.2⟩) using 1
   exact ⟨((hE 0).const_mul r).add ((hE 1).const_mul r⁻¹),
     ((hD 0).const_mul r).add ((hD 1).const_mul r⁻¹)⟩
-
-
-
-
 
 theorem m64AnnulusMotionEnergyTrace_hasDerivAt (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)

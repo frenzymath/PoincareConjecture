@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenFieldExtension
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -35,8 +25,6 @@ private theorem zero_mem_parameterDomain (V : M14LVariationData G p R) :
   rw [V.parameterDomain_eq]
   exact ⟨neg_neg_of_pos V.radius_pos, V.radius_pos⟩
 
-
-
 theorem variation_endpoint_field_smooth (V : M14LVariationData G p R) :
     ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ)))
       ((spacetimeModel n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
@@ -58,8 +46,6 @@ theorem variation_endpoint_field_smooth (V : M14LVariationData G p R) :
     G.spacetime.horizontalProjection_smooth
   exact hproj.comp_contMDiffOn htan
 
-
-
 theorem variation_field_smooth (V : M14LVariationData G p R) :
     ContMDiffOn (𝓘(ℝ, ℝ))
       ((spacetimeModel n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
@@ -79,15 +65,11 @@ theorem variation_field_smooth (V : M14LVariationData G p R) :
     rfl
   exact htransport (V.square_base s) _
 
-
-
 theorem exists_variation_field_extension (V : M14LVariationData G p R) :
     Nonempty (M14PullbackExtension G R.curve
       (M14SqrtParameterInterval τ₁ τ₂) (M14VariationField V)) :=
   exists_pullbackExtension_Icc (Real.sqrt_lt_sqrt p.tau_nonneg p.tau_lt)
     (variation_field_smooth V)
-
-
 
 theorem exists_endpoint_variation_extension (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -97,9 +79,6 @@ theorem exists_endpoint_variation_extension (V : M14LVariationData G p R)
   exact (variation_endpoint_field_smooth V).comp
     ((contMDiff_const (c := s)).prodMk contMDiff_id).contMDiffOn
       (fun _ hu => ⟨hs, hu⟩)
-
-
-
 
 theorem exists_variationDerivativeData (V : M14LVariationData G p R) :
     Nonempty (M14VariationDerivativeData V) := by

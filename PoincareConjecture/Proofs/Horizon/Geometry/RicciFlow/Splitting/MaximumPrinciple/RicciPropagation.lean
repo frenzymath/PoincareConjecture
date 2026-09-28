@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.RicciNullity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.PartialTrace.Continuity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 theorem ricciNullity_eq_on_positive_slice
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -39,8 +28,6 @@ theorem ricciNullity_eq_on_positive_slice
     (fun k hk => ricciPartialTrace_continuousOn_prod hC hab F hk)
     (fun k hk => ricciPartialTrace_heatLowerContacts hC hab F hk
       (fun r hr => hsec r ⟨hr.1.le, hr.2.le⟩)) ht (mem_univ x) (mem_univ y)
-
-
 
 theorem ricciNullity_antitoneOn
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)

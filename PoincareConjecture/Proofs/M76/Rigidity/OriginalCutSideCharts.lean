@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalIsolatedCapCharts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalRelativeCutFrontier
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeConvexChartSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem OriginalDiskProduct.exists_cut_side_chart
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (he : PLDomain e R)

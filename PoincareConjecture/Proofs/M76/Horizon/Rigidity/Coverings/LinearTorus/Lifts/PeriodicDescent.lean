@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.Scalar
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -43,7 +41,6 @@ theorem exists_descended_periodic (E : C(ℝ × ℝ, ℝ))
     rw [heq]
     exact E.continuous
   exact ⟨⟨e, hc⟩, he⟩
-
 
 theorem exists_scalar_decomposition (f : C(AddCircle p × AddCircle p, AddCircle p)) :
     ∃ (n m : ℤ) (e : C(AddCircle p × AddCircle p, ℝ)),

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularStageFamily
 import PoincareConjecture.Proofs.M47.TerminalRegularAtlasCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_included_metric
     {S : RepairedControlledSchedulesData.{u}}
@@ -42,8 +31,6 @@ theorem terminalSource_regular_included_metric
   exact (data.metric s hs z v w).trans
     ((terminalSourceNormal_historyCylinder_maps H _ data.time data.cylinder).2
       s hs z.val z.property _ _).symm
-
-
 
 theorem terminalSource_regular_captured_jets
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]

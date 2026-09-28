@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetChart
 import PoincareConjecture.Proofs.M14.Mathlib.TrivializationConnection
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 namespace TopologicalSpace.Opens
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (U : Opens E)
-
-
 
 theorem tangentBundle_snd_contMDiff :
     ContMDiff (𝓘(ℝ, E)).tangent (𝓘(ℝ, E)) ∞
@@ -37,8 +26,6 @@ theorem tangentBundle_snd_contMDiff :
   rw [PoincareConjecture.Proofs.M11.mfderiv_openSubtype_val]
   rfl
 
-
-
 theorem tangent_trivialization_apply (x y : U) (v : TangentSpace (𝓘(ℝ, E)) y) :
     (trivializationAt E (TangentSpace (𝓘(ℝ, E)) : U → Type _) x).continuousLinearMapAt
       ℝ y v = (show E from v) := by
@@ -49,8 +36,6 @@ theorem tangent_trivialization_apply (x y : U) (v : TangentSpace (𝓘(ℝ, E)) 
   change mfderiv (𝓘(ℝ, E)) (𝓘(ℝ, E)) (Subtype.val : U → E) y v = v
   rw [PoincareConjecture.Proofs.M11.mfderiv_openSubtype_val]
   rfl
-
-
 
 theorem tangent_trivialization_symmL_apply (x y : U) (v : E) :
     (trivializationAt E (TangentSpace (𝓘(ℝ, E)) : U → Type _) x).symmL ℝ y v = v := by
@@ -63,8 +48,6 @@ theorem tangent_trivialization_symmL_apply (x y : U) (v : E) :
     (show TangentSpace (𝓘(ℝ, E)) y from v)
   rw [U.tangent_trivialization_apply] at h
   exact h
-
-
 
 theorem contMDiff_constant_tangentField (v : E) :
     ContMDiff (𝓘(ℝ, E)) (𝓘(ℝ, E)).tangent ∞
@@ -88,9 +71,6 @@ variable {EP HP P : Type*} [NormedAddCommGroup EP] [NormedSpace ℝ EP]
   [TopologicalSpace HP] {L : ModelWithCorners ℝ EP HP}
   [TopologicalSpace P] [ChartedSpace HP P]
 
-
-
-
 theorem tangentField_contMDiffWithinAt {k : ℕ∞ω}
     {b : P → U} {v : P → E} {S : Set P} {z : P}
     (hb : ContMDiffWithinAt L (𝓘(ℝ, E)) k b S z)
@@ -111,9 +91,6 @@ theorem tangentField_contMDiffWithinAt {k : ℕ∞ω}
     (U.tangent_trivialization_apply (b z) (b a) (v a))
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem covariantDerivative_eq_derivative_add_constant
     {D : (∀ x : U, TangentSpace (𝓘(ℝ, E)) x) →

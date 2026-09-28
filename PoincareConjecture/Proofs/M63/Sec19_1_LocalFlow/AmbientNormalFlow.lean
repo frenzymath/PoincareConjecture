@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientClosedCurveFields
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientManifoldGauge
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem ambientCurve_normal_solution_of_labels (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

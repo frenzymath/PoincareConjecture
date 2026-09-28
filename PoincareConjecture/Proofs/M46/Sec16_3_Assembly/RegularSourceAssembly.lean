@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallRadiusAssembly
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.HalfRadiusHistory
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveAncestor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem regularSourceProducer_of_reviewed_producers (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

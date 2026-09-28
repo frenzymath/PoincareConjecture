@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +18,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [Fintype K.faces] in
 include hc in
-
-
 
 theorem positiveFaceCenter_injective [Finite K.faces] : Function.Injective c := by
   classical
@@ -63,16 +51,11 @@ theorem positiveFaceCenter_injective [Finite K.faces] : Function.Injective c := 
 omit [Fintype K.faces] in
 include hc in
 
-
 theorem positiveFaceCenter_singleton {p : E} (hp : {p} ∈ K.faces) :
     c ⟨{p}, hp⟩ = p := by
   obtain ⟨w, _, hsum, hval⟩ := hc ⟨{p}, hp⟩
   have hw : w p = 1 := by simpa only [Finset.sum_singleton] using hsum
   simpa only [Finset.sum_singleton, hw, one_smul] using hval.symm
-
-
-
-
 
 theorem derivedSubdivision_closedStar_faces [DecidableEq E]
     {p : E} (hp : {p} ∈ K.faces) (t : Finset E) :

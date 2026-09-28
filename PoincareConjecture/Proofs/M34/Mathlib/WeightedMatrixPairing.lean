@@ -4,21 +4,9 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
-
 
 theorem weighted_matrix_pairing_sq_le
     {ι κ : Type*} [Fintype ι] [Fintype κ]
@@ -46,8 +34,6 @@ theorem weighted_matrix_pairing_sq_le
   simp only [Fintype.sum_prod_type, hpair, hf, hg] at h
   rw [← Finset.sum_mul_sum] at h
   simpa only [mul_assoc] using h
-
-
 
 theorem abs_matrix_quadratic_le_of_weighted_sq
     {ι : Type*} [Fintype ι] (d : ι → ℝ) (hd : ∀ i, 0 < d i)

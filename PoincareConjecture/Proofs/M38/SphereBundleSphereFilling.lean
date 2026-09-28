@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M38.SphereBundleCylinder
 import PoincareConjecture.Proofs.M38.CylinderCoverFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem sphereBundle_sphere_filling_or_lifted_coordinates
     (Q : GeneralizedSliceCarrier) [CompactSpace Q.carrier] (B : SurgerySphereBundle Q)

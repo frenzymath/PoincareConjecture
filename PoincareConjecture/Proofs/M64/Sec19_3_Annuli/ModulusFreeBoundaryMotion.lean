@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusC2BoundaryMotion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64C2ShrinkingCurve_free_relabel_smooth_near_anchor
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}
@@ -89,11 +71,6 @@ theorem m64C2ShrinkingCurve_free_relabel_smooth_near_anchor
   apply (hdlocal.comp hmap.contMDiffOn (fun q hq => ⟨mem_univ _, hq.2⟩)).congr
   intro q hq
   exact hrel q.2 (Ioo_subset_Icc_self hq.2) (sigma q.1)
-
-
-
-
-
 
 theorem m64C2ShrinkingCurve_exists_free_centered_motion
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

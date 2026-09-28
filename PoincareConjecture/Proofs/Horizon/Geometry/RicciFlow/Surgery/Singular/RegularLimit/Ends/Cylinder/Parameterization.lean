@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.ClosedHalf
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +10,8 @@ universe u
 
 namespace PoincareConjecture.OpenCylinderModel
 
-
 def halfAxial (side : Bool) (a t : ℝ) : ℝ :=
   if side then a + (1 - a) * t else a * (1 - t)
-
 
 noncomputable def halfAxialInverse (side : Bool) (a s : ℝ) : ℝ :=
   if side then (s - a) / (1 - a) else 1 - s / a
@@ -82,7 +72,6 @@ theorem halfParameterization_mem (Q : OpenCylinderModel U) (side : Bool)
     Q.halfParameterization side a (z.1, (z.2 : ℝ)) ∈ Q.closedTail side a := by
   exact ⟨(z.1, halfAxial side a z.2), ⟨mem_univ _, halfAxial_mem side ha z.2.property⟩, rfl⟩
 
-
 noncomputable def halfHomeomorph (Q : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     (UnitTwoSphere × Ico (0 : ℝ) 1) ≃ₜ Q.closedTail side a where
@@ -129,7 +118,6 @@ theorem halfHomeomorph_eq (Q : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (z : UnitTwoSphere × Ico (0 : ℝ) 1) :
     (Q.halfHomeomorph side ha z : M) =
       Q.halfParameterization side a (z.1, (z.2 : ℝ)) := rfl
-
 
 theorem halfParameterization_proper (Q : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hclosed : IsClosed (Q.closedTail side a))

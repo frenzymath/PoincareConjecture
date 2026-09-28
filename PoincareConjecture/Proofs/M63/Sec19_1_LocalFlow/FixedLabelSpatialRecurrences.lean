@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import PoincareConjecture.Proofs.M63.Mathlib.DenseParameterDerivative
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem fixedLabel_embedded_closed_spatial_recurrences
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M} {J : Set ℝ}

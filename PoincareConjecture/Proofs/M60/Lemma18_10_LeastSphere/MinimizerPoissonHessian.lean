@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerPlanePoisson
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.CompletedDerivativeBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ local notation "gEucl" => RiemannianMetric.euclideanMetric 2
 private theorem lp_integral_sq {X : Type*} [MeasurableSpace X] {μ : Measure X}
     (v : Lp ℝ 2 μ) : (∫ x, v x ^ 2 ∂μ) = ‖v‖ ^ 2 := by
   simpa only [Lp.norm_def] using (eLpNorm_toReal_sq_eq_integral (Lp.memLp v)).symm
-
-
-
-
 
 theorem suPlane_poisson_hessian :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (F : Lp ℝ 2 (gEucl).volumeMeasure),

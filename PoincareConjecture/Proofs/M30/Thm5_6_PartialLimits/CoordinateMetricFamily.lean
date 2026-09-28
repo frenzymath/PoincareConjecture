@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +7,6 @@ open Set Filter TopologicalSpace
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_smooth_metricFamily_of_coefficients
     {n : ℕ} (U : Opens (EuclideanSpace ℝ (Fin n)))

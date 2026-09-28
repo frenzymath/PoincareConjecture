@@ -1,24 +1,11 @@
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.ReducedLengthMinimum
-
-
-
 
 theorem frequently_slope_lt_of_upper_barriers {f : ℝ → ℝ} {x a : ℝ}
     (hbarrier : ∀ ε > 0, ∃ (b : ℝ → ℝ) (d : ℝ),
@@ -34,12 +21,6 @@ theorem frequently_slope_lt_of_upper_barriers {f : ℝ → ℝ} {x a : ℝ}
   apply lt_of_le_of_lt _ hy.1
   rw [slope_def_field, slope_def_field, hbx]
   exact div_le_div_of_nonneg_right (sub_le_sub_right hy.2.1 _) (le_of_lt (sub_pos.mpr hy.2.2))
-
-
-
-
-
-
 
 theorem le_of_approximate_upper_barriers {m : ℝ → ℝ} {c : ℝ}
     (hcont : ContinuousOn m (Ioi 0))
@@ -64,8 +45,6 @@ theorem le_of_approximate_upper_barriers {m : ℝ → ℝ} {c : ℝ}
   apply div_neg_of_neg_of_pos _ htpos
   change m t = c + ε at hmt
   linarith
-
-
 
 theorem le_of_approximate_upper_barriers_of_continuousWithinAt
     {m : ℝ → ℝ} {c : ℝ}

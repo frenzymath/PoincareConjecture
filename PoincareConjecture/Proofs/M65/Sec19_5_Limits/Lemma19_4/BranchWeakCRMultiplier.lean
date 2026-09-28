@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyWeakInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +7,6 @@ open Set MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
 
 theorem dbar_mul {p q : ℂ → ℂ} {z : ℂ}
     (hp : DifferentiableAt ℝ p z) (hq : DifferentiableAt ℝ q z) :
@@ -29,9 +16,6 @@ theorem dbar_mul {p q : ℂ → ℂ} {z : ℂ}
   simp only [dbar, hd.fderiv, dbarLinear, smul_apply, add_apply,
     ContinuousLinearMap.apply_apply, smul_eq_mul]
   ring
-
-
-
 
 theorem weak_dbar_mul_C1 {F G q : ℂ → ℂ} {U : Set ℂ}
     (hF : LocallyIntegrable F volume) (hG : LocallyIntegrable G volume)

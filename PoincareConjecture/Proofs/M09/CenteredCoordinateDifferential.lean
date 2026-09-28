@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.CenteredChartOperators
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

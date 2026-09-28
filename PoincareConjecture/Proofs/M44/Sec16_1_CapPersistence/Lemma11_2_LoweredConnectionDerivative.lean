@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_CurvatureDifference
 import PoincareConjecture.Proofs.M44.Mathlib.BilinearEvaluationDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open CoordinateExponential
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
-
 theorem fderiv_metric_evaluation (h : RiemannianMetric 3 E) (x d u v : E) :
     fderiv ℝ (fun y => h.euclideanCoefficients y u v) x d =
       fderiv ℝ h.euclideanCoefficients x d u v := by
@@ -32,8 +20,6 @@ theorem fderiv_metric_evaluation (h : RiemannianMetric 3 E) (x d u v : E) :
   simpa only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply,
     add_apply, zero_apply, map_zero, add_zero, zero_add] using
       congrArg (fun L => L d) he.fderiv
-
-
 
 theorem fderiv_inner_connectionDifference (g h : RiemannianMetric 3 E)
     (x d u v w : E) :
@@ -45,9 +31,6 @@ theorem fderiv_inner_connectionDifference (g h : RiemannianMetric 3 E)
     ((contDiff_connectionDifference g h).differentiable (by simp) x) d u v w
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem covariant_koszul_error_eq_lowered {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x d u v w : E) :
@@ -114,9 +97,6 @@ theorem covariant_koszul_error_eq_lowered {g h : RiemannianMetric 3 E}
   change D.covariantTensorDerivative Q x ![d, u, v, w] = _
   simp only [covariantConnectionDifference, map_sub, map_add, sub_apply, add_apply]
   linarith! only [hc']
-
-
-
 
 theorem inner_covariantConnectionDifference {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x d u v w : E) :

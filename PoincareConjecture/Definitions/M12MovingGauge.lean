@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M11CompatibleEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -19,8 +10,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I K : SpacetimeInterval}
-
-
 
 structure MovingSpacetimeGauge (F : GeneralizedFlowSpacetime n X time I)
     (D : SmoothSpacetimeInterval K) (C : Type v) [TopologicalSpace C]
@@ -37,7 +26,6 @@ variable {F : GeneralizedFlowSpacetime n X time I} {D : SmoothSpacetimeInterval 
   {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
 
-
 def CompatibleSpacetimeCylinder.toMovingSpacetimeGauge
     (e : CompatibleSpacetimeCylinder F D C) : MovingSpacetimeGauge F D C where
   interval_subset := e.interval_subset
@@ -46,8 +34,6 @@ def CompatibleSpacetimeCylinder.toMovingSpacetimeGauge
   time_eq := e.time_eq
   smooth := e.smooth
   differential_injective := e.differential_injective
-
-
 
 structure MovingSpacetimeGaugeGeometry (e : MovingSpacetimeGauge F D C) where
   metric : ℝ → RiemannianMetric n C
@@ -60,8 +46,6 @@ structure MovingSpacetimeGaugeGeometry (e : MovingSpacetimeGauge F D C) where
     F.horizontalMetric.inner (e.toSpacetime (t, x))
       (spatialTangentEquiv t x v) (spatialTangentEquiv t x w)
 
-
-
 def SpacetimeCylinderMetric.toMovingSpacetimeGaugeGeometry
     {e : CompatibleSpacetimeCylinder F D C} (G : SpacetimeCylinderMetric e) :
     MovingSpacetimeGaugeGeometry e.toMovingSpacetimeGauge where
@@ -71,21 +55,17 @@ def SpacetimeCylinderMetric.toMovingSpacetimeGaugeGeometry
   spatialTangentEquiv_eq := G.spatialTangentEquiv_eq
   metric_eq := G.metric_eq
 
-
 noncomputable def movingGaugeTimeVelocity (e : MovingSpacetimeGauge F D C)
     (t : D.Point) (x : C) :
     TangentSpace (spacetimeModel n) (e.toSpacetime (t, x)) :=
   mfderiv (spacetimeModel n) (spacetimeModel n) e.toSpacetime (t, x)
     (D.positiveTangent t, 0)
 
-
-
 noncomputable def movingGaugeDrift {e : MovingSpacetimeGauge F D C}
     (G : MovingSpacetimeGaugeGeometry e) (t : D.Point) (x : C) :
     TangentSpace (𝓡 n) x :=
   (G.spatialTangentEquiv t x).symm
     (-F.horizontalProjection (e.toSpacetime (t, x)) (movingGaugeTimeVelocity e t x))
-
 
 def movingGaugeSliceMap (e : MovingSpacetimeGauge F D C)
     (S : ∀ s : ℝ, SpacetimeSliceGeometry F s) (t : D.Point) : C → (S t.val).Point :=

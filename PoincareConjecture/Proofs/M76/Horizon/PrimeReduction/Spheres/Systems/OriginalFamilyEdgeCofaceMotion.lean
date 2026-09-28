@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalEdgeCofaceCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalFamilyEdgePosition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -97,4 +90,3 @@ theorem exists_original_sphere_system_edge_coface_motion
       (hphysical_mem (F z) (hVB hz)).trans (hFL z hz)
 
 end PoincareConjecture.M76
-

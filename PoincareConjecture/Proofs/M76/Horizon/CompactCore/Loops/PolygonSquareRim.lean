@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquarePolygonUniformBoundary
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.UniformPolygonLoopHomotopy
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonCycleLoopComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_original_polygon_square_rim
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

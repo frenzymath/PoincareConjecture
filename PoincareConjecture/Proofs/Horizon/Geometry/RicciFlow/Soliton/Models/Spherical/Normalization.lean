@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema.FiniteRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,12 +31,10 @@ private theorem round_of_metric_eq {g h : RiemannianMetric 3 M}
   rw [heq]
   exact hsec x u v hu hv huv
 
-
 theorem soliton_round (C : CompactRoundShrinkingModel G) :
     ConstantPositiveSectionalCurvature S.metric S.connection :=
   round_of_metric_eq (G.flow.connection (-1)) S.connection G.at_minus_one
     (C.round_at_time (-1) (by norm_num))
-
 
 theorem soliton_sectionalCurvature (C : CompactRoundShrinkingModel G)
     (x : M) (u v : TangentSpace (𝓡 3) x)
@@ -88,7 +77,6 @@ theorem soliton_sectionalCurvature (C : CompactRoundShrinkingModel G)
   have hc : c = (1 / 4 : ℝ) := by linarith
   rw [hall x u v hgram, hc]
 
-
 theorem soliton_ricci (C : CompactRoundShrinkingModel G)
     (x : M) (u v : TangentSpace (𝓡 3) x) :
     S.connection.ricci x u v = (1 / 2 : ℝ) * S.metric.inner x u v := by
@@ -96,7 +84,6 @@ theorem soliton_ricci (C : CompactRoundShrinkingModel G)
     (C.soliton_sectionalCurvature x) u v
   norm_num at h
   exact h
-
 
 theorem inner_eq_neg_time_mul (C : CompactRoundShrinkingModel G)
     (t : ℝ) (ht : t < 0) (x : M) (u v : TangentSpace (𝓡 3) x) :

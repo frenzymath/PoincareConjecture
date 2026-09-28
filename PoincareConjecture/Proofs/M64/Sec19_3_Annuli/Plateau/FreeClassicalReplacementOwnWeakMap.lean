@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationCertificate
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusLipschitzSeed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +18,6 @@ variable {n m : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
-
-
-
 
 theorem m64FreeMorreyCandidate_ownObservedWeakMap
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

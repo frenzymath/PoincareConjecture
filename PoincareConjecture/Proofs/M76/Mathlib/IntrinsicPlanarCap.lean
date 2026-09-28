@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +11,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι] [Nonempty ι]
-
-
-
-
 
 theorem exists_intrinsic_plane_cap
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)

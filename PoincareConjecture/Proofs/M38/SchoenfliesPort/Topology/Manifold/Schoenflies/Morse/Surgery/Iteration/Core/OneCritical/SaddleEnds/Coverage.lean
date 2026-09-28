@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Family
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Extrema
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +24,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_lower_end_through_point
     (L : List (SphereSurgeryCoreCap v g B))
@@ -105,8 +95,6 @@ theorem exists_lower_end_through_point
   refine ⟨D, hD, hDb, ⟨(z, t), ⟨mem_univ _, ?_, ht.2⟩, hzp⟩⟩
   rw [← hpt, ← hDheight]
   exact hmin ⟨hpF, hpC⟩
-
-
 
 theorem exists_lower_annular_end_family
     (L : List (SphereSurgeryCoreCap v g B))

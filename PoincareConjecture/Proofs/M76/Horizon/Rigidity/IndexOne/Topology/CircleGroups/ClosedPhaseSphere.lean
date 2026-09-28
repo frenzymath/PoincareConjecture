@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Compl
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -33,8 +22,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem exists_hamilton_whole_frontier_component_sphere
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3) {N S : Set X}
@@ -107,9 +94,6 @@ theorem exists_hamilton_whole_frontier_component_sphere
   change Nonempty (ChartwisePLSphere e (q '' J.space)) at hsphere
   rw [hqS] at hsphere
   exact hsphere
-
-
-
 
 theorem exists_closed_source_component_sphere
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

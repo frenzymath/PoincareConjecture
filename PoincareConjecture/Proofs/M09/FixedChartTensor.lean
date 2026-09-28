@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.FrozenChartCoordinates
 import PoincareConjecture.Proofs.M09.BilinearFamily
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

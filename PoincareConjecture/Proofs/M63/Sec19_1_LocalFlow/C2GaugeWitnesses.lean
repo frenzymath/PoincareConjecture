@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ParabolicGaugeGeometry
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 theorem spatial_velocity_contMDiff_of_c2 {gamma : ℝ → M}
     (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 2 gamma) :
     ContMDiff 𝓘(ℝ, ℝ) ((𝓡 n).prod (𝓡 n)) 1
@@ -39,8 +26,6 @@ theorem spatial_velocity_contMDiff_of_c2 {gamma : ℝ → M}
     apply contMDiff_vectorSpace_iff_contDiff.mpr
     exact contDiff_const
   exact (hgamma.contMDiff_tangentMap (m := 1) (by norm_num)).comp hone
-
-
 
 theorem speed_contDiff_of_c2 (F : RicciFlow n M (Set.Icc a b))
     (q : ℝ → ℝ → M) {t : ℝ}
@@ -62,9 +47,6 @@ theorem speed_contDiff_of_c2 (F : RicciFlow n M (Set.Icc a b))
     intro x
     exact (Bundle.contMDiffAt_totalSpace.mp (hpair x)).2
   exact hsq.contDiff.sqrt fun x => ((F.metric t).pos _ _ (himm x)).ne'
-
-
-
 
 theorem unitTangent_contMDiff_of_c2 (F : RicciFlow n M (Set.Icc a b))
     (q : ℝ → ℝ → M) {t : ℝ}
@@ -92,9 +74,6 @@ theorem unitTangent_contMDiff_of_c2 (F : RicciFlow n M (Set.Icc a b))
   simpa only [e.continuousLinearMapAt_apply_of_mem ℝ hy] using
     (e.continuousLinearMapAt ℝ (q y t)).map_smul
       (curveSpeed F q t y)⁻¹ (curveVelocity (fun z => q z t) y)
-
-
-
 
 theorem normal_equation_of_c2_parabolic_gauge
     (F : RicciFlow n M (Set.Icc a b)) (q : ℝ → ℝ → M) (psi : ℝ → ℝ → ℝ)

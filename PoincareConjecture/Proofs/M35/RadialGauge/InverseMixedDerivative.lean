@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DiffeomorphInverseTime
 import PoincareConjecture.Proofs.M03.Existence.ConjugatorLieDerivativeNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -87,8 +78,6 @@ private theorem spatial_fderiv_time_of_source
     fderiv ℝ (fderiv ℝ f) (t, x) (1, 0) (0, v) =
         fderiv ℝ (fderiv ℝ f) (t, x) (0, v) (1, 0) := hmixed.eq (1, 0) (0, v)
     _ = _ := (source_fderiv_as_joint hf htime v).symm
-
-
 
 theorem diffeomorph_family_symm_fderiv_hasDerivAt
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {J : Set ℝ} (hJ : IsOpen J)

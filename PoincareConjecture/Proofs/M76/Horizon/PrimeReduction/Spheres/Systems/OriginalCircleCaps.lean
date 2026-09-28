@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Memb
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.AmbientTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
-
-
 
 theorem exists_sphere_system_circle_caps
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -115,8 +104,6 @@ theorem exists_sphere_system_circle_caps
     (hdis (Ne.symm hji)).union_left hDC
   exact ⟨hdisj.mono_left (subset_union_left.trans hrawunion.subset),
     hdisj.mono_left (subset_union_right.trans hrawunion.subset)⟩
-
-
 
 theorem exists_original_sphere_system_circle_caps
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

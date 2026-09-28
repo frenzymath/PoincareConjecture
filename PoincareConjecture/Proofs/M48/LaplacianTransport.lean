@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M48.RicciNormTransport
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -30,9 +21,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [IsManifold (𝓡 n) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
   {f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞}
-
-
-
 
 theorem MetricHomothetyCalculus.m48_hessian_eq
     (H : MetricHomothetyCalculus g h f 1)
@@ -96,7 +84,6 @@ theorem MetricHomothetyCalculus.m48_hessian_eq
 
 omit [T3Space M] [MeasurableSpace M] [BorelSpace M] in
 
-
 theorem LeviCivitaData.m48_laplacian_eq_sum
     (D : LeviCivitaData g) (phi : M → ℝ) (x : M)
     (hphi : ContMDiffAt (𝓡 n) 𝓘(ℝ) ∞ phi x)
@@ -114,8 +101,6 @@ theorem LeviCivitaData.m48_laplacian_eq_sum
     Module.Basis.coe_toOrthonormalBasis] using
       sum_diag_basis_independent (hessianBilin D phi x hphi)
         (g.orthonormalBasis x) (b.toOrthonormalBasis hb')
-
-
 
 theorem MetricHomothetyCalculus.m48_laplacian_eq
     (H : MetricHomothetyCalculus g h f 1) (hf : MetricHomothety g h f 1)
@@ -143,8 +128,6 @@ theorem MetricHomothetyCalculus.m48_laplacian_eq
   simp_rw [Module.Basis.map_apply, he, H.m48_hessian_eq D D' phi hphi]
   rfl
 
-
-
 theorem SurgeryRegularSlab.m48_scalarCurvature_eq
     {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {a b : ℝ}
@@ -158,8 +141,6 @@ theorem SurgeryRegularSlab.m48_scalarCurvature_eq
     (slice a).carrier (slice t.1).carrier (B.flow.metric t.1) (metric t.1)
     (B.identify t) 1 (by norm_num) hf
   simpa only [div_one] using H.scalar_eq (B.flow.connection t.1) D x
-
-
 
 theorem SurgeryRegularSlab.m48_scalarLaplacian_eq
     {slice : ℝ → GeneralizedSliceCarrier.{u}}

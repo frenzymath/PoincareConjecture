@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.GeometricChartEquation
 import PoincareConjecture.Proofs.M09.CoordinateEnergy
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

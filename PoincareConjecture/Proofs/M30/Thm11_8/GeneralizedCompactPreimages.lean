@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedCompactImages
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
 
 theorem eventually_generalized_terminal_baseBall_preimage_ball
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordi
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +21,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 include he hei
 
-
 theorem contDiffOn_of_weak_heat_pairing
     {U : Set (Spacetime n)} (hU : IsOpen U) (hUD : U ⊆ domain J e)
     {w : Spacetime n → ℝ} (hw : ContinuousOn w U)
@@ -42,8 +39,6 @@ theorem contDiffOn_of_weak_heat_pairing
   dsimp only
   rw [laplacian_coordinateTest_forward F e he hei hφ (hUD hz)]
   ring
-
-
 
 theorem potential_contDiffOn_of_weak_heat_pairing
     {U : Set (Spacetime n)} (hU : IsOpen U) (hUD : U ⊆ domain J e)

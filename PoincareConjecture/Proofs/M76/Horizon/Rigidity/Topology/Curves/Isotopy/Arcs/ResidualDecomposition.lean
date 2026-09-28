@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bigons.ExtendedExcursion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

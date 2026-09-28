@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_PathRestriction
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ σ : ℝ} {x y : G.Point} {Z : G.Horizontal x}
-
-
-
 
 def initialValuePathRestrict (P : M14SquareRootInitialValuePath G T τ x y Z)
     (hσ : 0 < σ) (hστ : σ ≤ τ) :
@@ -66,9 +54,6 @@ def initialValuePathRestrict (P : M14SquareRootInitialValuePath G T τ x y Z)
   dsimp only [R]
   rw [← hD]
   exact P.euler s (hsub hs) W
-
-
-
 
 theorem exists_initialValuePath_prefix
     (P : M14SquareRootInitialValuePath G T τ x y Z) (hσ : 0 < σ) (hστ : σ ≤ τ) :

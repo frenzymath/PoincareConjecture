@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcBranchLinks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem exists_link_polygon_of_pair_parameter
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

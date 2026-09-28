@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,14 +9,10 @@ universe u
 
 namespace PoincareConjecture
 
-
 def generalizedSliceStrongCanonicalNeighborhoods
     (F : GeneralizedRicciFlowData.{u}) (epsilon C Q s : ℝ) : Prop :=
   ∀ y : (F.slice s).carrier, Q ≤ F.scalar ⟨s, y⟩ →
     Nonempty (GeneralizedCanonicalControl (F := F) s y epsilon C)
-
-
-
 
 def generalizedEarlierStrongCanonicalNeighborhoods
     (F : GeneralizedRicciFlowData.{u})
@@ -32,9 +21,6 @@ def generalizedEarlierStrongCanonicalNeighborhoods
     ∀ y : (F.slice s).carrier,
       4 * F.scalar ⟨t, x⟩ ≤ F.scalar ⟨s, y⟩ →
         Nonempty (GeneralizedCanonicalControl (F := F) s y epsilon C)
-
-
-
 
 def generalizedEarlierDenseStrongCanonicalNeighborhoods
     (F : GeneralizedRicciFlowData.{u})
@@ -51,9 +37,6 @@ theorem generalizedEarlierStrongCanonicalNeighborhoods.left_dense
     generalizedEarlierDenseStrongCanonicalNeighborhoods F epsilon C t x := by
   intro s hs hst a has
   exact ⟨s, hs, has, le_rfl, h s hs hst⟩
-
-
-
 
 def generalizedHamiltonIveyPinchedAt
     (F : GeneralizedRicciFlowData.{u}) (t : ℝ) : Prop :=
@@ -92,10 +75,6 @@ def generalizedPinchedOrNonnegative
   (F.interval ⊆ Set.Ici 0 ∧ generalizedHamiltonIveyPinched F) ∨
     generalizedNonnegativeCurvature F
 
-
-
-
-
 theorem generalizedHamiltonIveyPinched_of_nonnegative
     {F : GeneralizedRicciFlowData.{u}}
     (hinterval : F.interval ⊆ Set.Ici 0)
@@ -110,7 +89,6 @@ theorem generalizedHamiltonIveyPinched_of_nonnegative
   · intro x hx
     rw [(hnonnegative.1 t ht x).2] at hx
     exact (lt_irrefl 0 hx).elim
-
 
 def RepairedBoundedDistanceEstimate
     (F : GeneralizedRicciFlowData.{u}) (A D t : ℝ)

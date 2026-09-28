@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

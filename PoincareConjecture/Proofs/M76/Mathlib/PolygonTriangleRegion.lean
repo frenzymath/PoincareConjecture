@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexRelativeInteriorCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem affineIndependent_triangle {E : Type*} [AddCommGroup E] [Module ℝ E]
     (P : Polygon E 3) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
@@ -30,8 +19,6 @@ theorem affineIndependent_triangle {E : Type*} [AddCommGroup E] [Module ℝ E]
   · simpa [show (-1 : Fin 3) = 2 by decide] using hind.comm_left.comm_right
   · simpa using hind
   · simpa using hind.comm_right.comm_left
-
-
 
 theorem frontier_convexHull_triangle (P : Polygon (ℝ × ℝ) 3)
     (hind : AffineIndependent ℝ P) : frontier (convexHull ℝ (range P)) = P.boundary ℝ := by
@@ -50,9 +37,6 @@ theorem frontier_convexHull_triangle (P : Polygon (ℝ × ℝ) 3)
     tauto
   simp only [himage, ← P.edgeSet_eq_convexHull]
   exact (finRotate 3).surjective.iUnion_comp _
-
-
-
 
 theorem closure_inside_triangle (P : Polygon (ℝ × ℝ) 3)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

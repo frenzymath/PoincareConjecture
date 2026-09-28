@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOldHistoryVolume
 import PoincareConjecture.Proofs.M47.SeedComponentBirth
 import PoincareConjecture.Proofs.M47.SeedPositiveOnset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_old_volume_or_recent_ancestry
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SurfaceLinkPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicIsolatedStarSign
 import PoincareConjecture.Proofs.M76.Mathlib.CentralLinkSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem zero_charge_link_sign_data
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_InitialJetConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,9 +52,6 @@ private theorem contDiffAt_geodesicFieldJet {J : Jet} (hJ : J.1.IsInvertible) :
     fun_prop
   exact (contDiffAt_snd.comp J contDiffAt_snd).prodMk (hI.clm_apply hK).neg
 
-
-
-
 theorem compactSmoothConvergenceOn_geodesicField
     {ι : Type*} {l : Filter ι} {Bseq : ι → E → Bilin} {B : E → Bilin}
     (h : CompactSmoothConvergenceOn Bseq B l univ) (hinv : ∀ x, (B x).IsInvertible) :
@@ -86,9 +73,6 @@ theorem compactSmoothConvergenceOn_geodesicField
   have houter : ContDiffOn ℝ ∞ (geodesicFieldJet (E := E)) U :=
     fun J hJ => (contDiffAt_geodesicFieldJet hJ).contDiffWithinAt
   exact (h0.prodMk (h1.prodMk hv)).comp_smooth hU houter (fun z _ => hinv z.1)
-
-
-
 
 theorem tendstoUniformlyOn_geodesicField_of_coefficients
     {ι : Type*} {l : Filter ι} {Bseq : ι → E → Bilin} {B : E → Bilin}
@@ -128,9 +112,6 @@ theorem tendstoUniformlyOn_geodesicField_of_coefficients
     ((hK.prod hV).image hG) (fun z _ => hinv z.1) hFG
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem tendstoUniformlyOn_fderiv_geodesicField_of_coefficients
     {ι : Type*} {l : Filter ι} {Bseq : ι → E → Bilin} {B : E → Bilin}
@@ -219,9 +200,6 @@ noncomputable local instance : NormedAddCommGroup Bilin :=
 noncomputable local instance : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem compactSmoothConvergenceOn_initial_coefficients
     (g₀ : StandardInitialMetric)
     (S : ℕ → GeneralizedSliceCarrier.{u})
@@ -242,8 +220,6 @@ theorem compactSmoothConvergenceOn_initial_coefficients
         ((hdomain (eta n) (Q n).eta_pos hn.le).2 hx))
   jets j _ hK _ := tendstoUniformlyOn_initial_coefficient_jets g₀ S g tip scale eta Q heta j hK
 
-
-
 theorem compactSmoothConvergenceOn_initial_geodesicFields
     (g₀ : StandardInitialMetric)
     (S : ℕ → GeneralizedSliceCarrier.{u})
@@ -256,8 +232,6 @@ theorem compactSmoothConvergenceOn_initial_geodesicFields
   compactSmoothConvergenceOn_geodesicField
     (compactSmoothConvergenceOn_initial_coefficients g₀ S g tip scale eta Q heta)
     g₀.metric.inner_isInvertible
-
-
 
 theorem tendstoUniformlyOn_initial_geodesicFields
     (g₀ : StandardInitialMetric)
@@ -290,8 +264,6 @@ theorem tendstoUniformlyOn_initial_geodesicFields
   exact tendstoUniformlyOn_geodesicField_of_coefficients
     (contDiff_iff_contDiffAt.mpr g₀.metric.contDiffAt_euclideanCoefficients)
     g₀.metric.inner_isInvertible hK hV hzero hone
-
-
 
 theorem tendstoUniformlyOn_initial_fderiv_geodesicFields
     (g₀ : StandardInitialMetric)

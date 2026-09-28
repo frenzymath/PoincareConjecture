@@ -1,14 +1,5 @@
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem subset_interior_or_compl_of_disjoint_frontier
     {K V : Set X} (hK : IsClosed K) (hV : IsPreconnected V)
@@ -31,9 +20,6 @@ theorem subset_interior_or_compl_of_disjoint_frontier
     exact Set.disjoint_left.mp havoid hx
       ((mem_frontier_iff_notMem_interior hxK).mpr hnot)
   · exact Or.inr hxK
-
-
-
 
 theorem opposite_sides_of_frontier_cover [PreconnectedSpace X]
     {K U V W : Set X} (hK : IsClosed K) (hU : IsOpen U)

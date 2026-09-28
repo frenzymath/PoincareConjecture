@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedAmbient
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleHomotopySurjective
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,14 +16,10 @@ local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
 
-
-
 noncomputable def hamiltonZeroCircleMap (phi : C(H0, H0)) : C(X0, C0) :=
   ⟨fun x => (hamiltonZeroHierarchyCoordinates (phi (hamiltonZeroAmbientEquiv x))).2,
     continuous_snd.comp (hamiltonZeroHierarchyCoordinates.continuous.comp
       (phi.continuous.comp hamiltonZeroAmbientEquiv.continuous))⟩
-
-
 
 theorem hamiltonZeroCircleMap_domain (phi : C(H0, H0)) (x : R0) :
     hamiltonZeroCircleMap phi (x : X0) =
@@ -45,13 +32,9 @@ theorem hamiltonZeroCircleMap_domain (phi : C(H0, H0)) (x : R0) :
     (hamiltonZeroHierarchyCoordinates (q (q.symm (phi (q x))))).2
   rw [q.apply_symm_apply]
 
-
-
 theorem hamiltonZeroAmbientCircle_mk (x : Fin 0 → ℝ) (z : Fin 3 → ℝ) :
     (hamiltonZeroHierarchyCoordinates
       (hamiltonZeroAmbientEquiv (x, QuotientAddGroup.mk z))).2 = (z 2 : C0) := rfl
-
-
 
 theorem surjective_hamiltonZeroCircleMap (phi : C(H0, H0))
     (F : (ContinuousMap.id H0).HomotopyRel phi B0) :

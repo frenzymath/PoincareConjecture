@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartHessianCorrection
 import PoincareConjecture.Proofs.M10.BilinearDerivativeBound
 import PoincareConjecture.Proofs.M10.GradientNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle

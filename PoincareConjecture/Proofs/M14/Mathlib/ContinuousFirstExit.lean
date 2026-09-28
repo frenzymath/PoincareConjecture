@@ -2,24 +2,11 @@ import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Order.Monotone
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem exists_first_exit_of_continuousOn {X : Type*} [TopologicalSpace X]
     {γ : ℝ → X} {a b : ℝ} (hγ : ContinuousOn γ (Icc a b))

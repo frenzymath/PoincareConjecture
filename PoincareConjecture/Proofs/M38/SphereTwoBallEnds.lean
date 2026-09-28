@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.SphereTwoBallReduction
 import PoincareConjecture.Proofs.M38.SpherePoleNormalization
 import PoincareConjecture.Proofs.M38.CenteredEuclideanBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,19 +16,16 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 theorem punctureCollapse_ray (z : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
     punctureCollapse (t • z.val) = punctureRadialOrderIso t • z.val := by
   rw [punctureCollapse, capRadialMap, norm_smul, Real.norm_eq_abs, abs_of_pos ht,
     show ‖z.val‖ = 1 by simp, mul_one, smul_smul, div_mul_cancel₀ _ ht.ne']
-
 
 noncomputable def spherePoleDirection (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) :
     Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞ :=
   linearSphereDiffeomorph
     (L.trans (threeSphereStereoOppositeIsometry a).toContinuousLinearEquiv)
-
 
 theorem spherePoleDirection_coe (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) (z : UnitTwoSphere) :
@@ -53,12 +40,10 @@ theorem spherePoleDirection_coe (a : UnitThreeSphere)
 variable (B₀ B₁ : SurgeryBallEmbedding sphereCarrier.{u})
   (hdisjoint : Disjoint (B₀.map '' Metric.ball 0 2) (B₁.map '' Metric.ball 0 2))
 
-
 noncomputable def sphereTwoBallCylinder
     (D : OpenCylinderModel (sphereSecondEuclideanBall B₀ B₁ hdisjoint).closedBallᶜ) :
     OpenCylinderModel (B₀.closedBall ∪ B₁.closedBall)ᶜ :=
   pullbackCylinder (sphereTwoBallEquivalence B₀ B₁ hdisjoint) D
-
 
 theorem sphereTwoBallCylinder_second_inverse
     (D : OpenCylinderModel (sphereSecondEuclideanBall B₀ B₁ hdisjoint).closedBallᶜ)
@@ -83,7 +68,6 @@ variable (a : UnitThreeSphere) (L₀ : StandardCapSpace ≃L[ℝ] StandardCapSpa
     B₀.map x = ULift.up (threeSphereStereoInverse (-a) (L₀ (b • x))))
 
 include hb hcenter hnormal in
-
 
 theorem sphereTwoBall_first_ray (z : UnitTwoSphere) {t : ℝ}
     (ht : 1 < t) (htop : t < 2) (hcollapse : punctureRadialOrderIso t ≤ 5 / 4) :
@@ -111,7 +95,6 @@ theorem sphereTwoBall_first_ray (z : UnitTwoSphere) {t : ℝ}
     spherePoleDirection_coe]
 
 include hb hcenter hnormal in
-
 
 theorem sphereTwoBallCylinder_first_inverse
     (D : OpenCylinderModel (sphereSecondEuclideanBall B₀ B₁ hdisjoint).closedBallᶜ)

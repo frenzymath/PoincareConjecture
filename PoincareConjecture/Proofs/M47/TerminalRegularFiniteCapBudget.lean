@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularCommonBudget
 import PoincareConjecture.Proofs.M47.SourceCanonical
 import PoincareConjecture.Proofs.M47.LimitCapSourceCanonical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalSource_exists_regular_sequence_finite_cap_budget
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

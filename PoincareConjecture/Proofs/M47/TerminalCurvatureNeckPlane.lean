@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.NeckCurvatureJet
 import PoincareConjecture.Proofs.M01.NormalizationCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open M36 SpacetimeBounds
-
-
 
 theorem exists_terminalCurvature_neck_positive_plane :
     ∃ delta : ℝ, 0 < delta ∧

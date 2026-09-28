@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncolla
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

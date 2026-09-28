@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Mathlib.PointJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ variable {E F G H : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
 
 theorem jet_comp_tendsto_zero_of_bounded
     {r : ℕ} {f : ℕ → E → F} {g : ℕ → F → G} {p : ℕ → E}
@@ -71,8 +60,6 @@ private theorem norm_bilinear_jet_le (B : F →L[ℝ] G →L[ℝ] H)
     (hfs.mono (hUsub.trans inter_subset_left))
     (hgs.mono (hUsub.trans inter_subset_right)) hU.uniqueDiffOn hpU (le_refl (r : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hU hpU] using h
-
-
 
 theorem jet_bilinear_tendsto_zero_of_bounded
     {r : ℕ} {f : ℕ → E → F} {g : ℕ → E → G} {p : ℕ → E}

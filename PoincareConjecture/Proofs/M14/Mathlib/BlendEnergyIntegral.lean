@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyBlend
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M14
 open Proofs.M09
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
-
 
 theorem oneSidedBlend_energy_le {f g : ℝ → E} {b d K : ℝ}
     (hd : 0 < d) (hK : 0 ≤ K)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.AxisCoefficients
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace

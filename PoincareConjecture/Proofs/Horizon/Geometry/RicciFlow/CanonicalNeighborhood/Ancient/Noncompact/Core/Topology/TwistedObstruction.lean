@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M54.Mathlib.VanKampenGeneral
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,9 +42,6 @@ theorem stripPositiveInclusion_isOpenEmbedding :
       (isOpen_Ioo (a := (1 : ℝ)) (b := 2)).isOpenEmbedding_subtypeVal
   exact Topology.IsOpenEmbedding.id.prodMap hi
 
-
-
-
 theorem isSimplyConnected_of_open_cover
     {M : Type*} [TopologicalSpace M] [SimplyConnectedSpace M]
     {U V : Set M} (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
@@ -70,8 +54,6 @@ theorem isSimplyConnected_of_open_cover
   rw [← Path.Homotopic.Quotient.eq]
   apply VanKampen.inclusion_injective_at U V x hU hV hcover hinter
   exact Subsingleton.elim _ _
-
-
 
 theorem no_twistedStrip_localHomeomorph
     {M : Type*} [TopologicalSpace M] [T2Space M]

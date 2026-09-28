@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialAxialPath
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {g0 : StandardInitialMetric}
   {K : MetricSurgeryConstants} {I : MetricSurgeryInput K g}
-
-
 
 theorem source_initial_old_height_le_tip_distance
     (R : MetricSurgeryResult g0 I) {y : M}

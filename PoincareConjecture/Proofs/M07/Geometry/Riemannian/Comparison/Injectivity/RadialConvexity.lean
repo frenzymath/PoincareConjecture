@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ}
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem isGeodesicOn_ray_of_gauss
     (hgauss : ∀ x w : EuclideanSpace ℝ (Fin n), g.inner x x w = inner ℝ x w)
@@ -50,7 +41,6 @@ theorem isGeodesicOn_ray_of_gauss
     hcoeff, hΓ, neg_zero, true_and]
   exact ⟨by simpa only [id_eq, one_smul] using (hasDerivAt_id r).smul_const v,
     hasDerivAt_const r v⟩
-
 
 theorem radial_pairing_ge_half_norm_sq
     (D : LeviCivitaData g)
@@ -149,8 +139,6 @@ theorem radial_pairing_ge_half_norm_sq
     (one_smul ℝ x)
   simp only [one_smul] at h
   exact h.trans_eq hbase
-
-
 
 theorem IsGeodesicOn.norm_sq_le_deriv2_norm_sq
     (D : LeviCivitaData g)

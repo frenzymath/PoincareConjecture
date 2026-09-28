@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +11,6 @@ open scoped Topology ContDiff Manifold SchwartzMap
 universe u
 
 namespace PoincareConjecture.M65Euler
-
-
-
-
 
 theorem exists_bounded_extension {N K : ℕ}
     {h : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin K)}
@@ -59,10 +44,6 @@ theorem exists_bounded_extension {N K : ℕ}
   change χ y • h y = h y
   simp only [hy, Pi.one_apply, one_smul]
 
-
-
-
-
 def lift_target {M : Type u} {N : ℕ} {U : Set LoopPlane}
     (G : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) U)
     (e : M → EuclideanSpace ℝ (Fin N)) (q : LoopPlane → M)
@@ -79,11 +60,6 @@ def lift_target {M : Type u} {N : ℕ} {U : Set LoopPlane}
     apply integral_congr_ae
     filter_upwards [hq] with z hz
     rw [hz]
-
-
-
-
-
 
 theorem exists_inverse_chart_extension {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

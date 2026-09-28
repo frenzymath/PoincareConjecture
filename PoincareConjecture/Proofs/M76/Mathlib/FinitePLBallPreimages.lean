@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,11 +9,6 @@ namespace Homeomorph
 variable {V E F : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.preimage_ballPair {s : Set E} {t a b : Set F}
     {e : s ≃ₜ t} (he : e.IsFinitePL) (ha : IsFinitePLBallPair V a b)

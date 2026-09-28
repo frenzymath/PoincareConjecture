@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.DerivativeKernel
 import PoincareConjecture.Proofs.M40.Mathlib.SmoothChartDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +17,6 @@ variable {E F G M : Type*}
   [RiemannianBundle (TangentSpace 𝓘(ℝ, F) : M → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : M → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) M]
-
-
-
 
 theorem mfderiv_apply_eq_zero_of_increment_bound {f : E → G} {h : E → M}
     {x : E} {C : ℝ≥0} (hf : DifferentiableAt ℝ f x)

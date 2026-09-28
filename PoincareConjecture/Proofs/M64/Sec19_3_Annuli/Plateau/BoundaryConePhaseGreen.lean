@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConePhase
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,11 +14,6 @@ open Proofs.M58
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
   [CompleteSpace C] [ProperSpace C]
-
-
-
-
-
 
 theorem normalizedPhase_halfCone_green {beta : C → ℝ} {v d : ℝ → C} {L : ℝ → ℝ}
     {r rho k : ℝ} (hr : 0 < r) (hrho : 0 < rho) (hk : k ≠ 0)

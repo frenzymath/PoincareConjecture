@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallScalarLimit
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_source_criticalBall_neck_scale_limits_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

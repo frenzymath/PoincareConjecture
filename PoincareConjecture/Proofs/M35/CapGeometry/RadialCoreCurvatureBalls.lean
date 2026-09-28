@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialCoreScalarWitness
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCollarPoint
 import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +20,6 @@ variable (P : M35StandardCapPredecessors) (g : RiemannianMetric 3 StandardCapSpa
   (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
 
 include P hrotation hcomplete
-
 
 theorem closure_ball_subset_tip_ball (y : StandardCapSpace) {b R : ℝ}
     (hb : 0 ≤ b) (hmargin : radialArclength g ‖y‖ + b < R) :
@@ -59,8 +48,6 @@ theorem closure_ball_subset_tip_ball (y : StandardCapSpace) {b R : ℝ}
       hmargin
 
 include D hsec in
-
-
 
 theorem radial_core_curvature_balls {a length : ℝ} (ha : 0 < a) (hlength : 0 < length)
     (hfar : 6 * intrinsicWarpingRadius g hrotation hcomplete a < a)

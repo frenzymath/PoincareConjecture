@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorDecodeNative
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option synthInstance.maxHeartbeats 400000
@@ -139,7 +130,6 @@ theorem nativeDecode_contMDiff (g : RiemannianMetric n M)
   exact congrArg (fun h : BilinFib x => (TotalSpace.mk' BilinE x h : TotalSpace BilinE BilinFib))
     (nativeDecode_eq_sum g F x (C x))
 
-
 def smoothDecode (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M))
     (C : M → TensorProbeNative.Coefficients iota)
@@ -162,7 +152,6 @@ theorem probes_smoothDecode (g : RiemannianMetric n M)
   apply PiLp.ext
   rintro ⟨a, b⟩
   rfl
-
 
 theorem nativeDecode_contMDiffOn_spacetime (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M))

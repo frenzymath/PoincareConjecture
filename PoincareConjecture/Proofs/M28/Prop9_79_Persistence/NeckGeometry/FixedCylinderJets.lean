@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedC
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMetricBounds
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderFiniteJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
-
 theorem cylinderNeckCoefficients_unscale (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) :
     g.pullbackCoefficients (cylinderNeckChart N q s) x =
@@ -40,10 +27,6 @@ theorem cylinderNeckCoefficients_unscale (N : EpsilonNeck g)
     N.scale ^ 2 * (N.scale⁻¹ ^ 2 *
       g.pullbackCoefficients (cylinderNeckChart N q s) x v w)
   rw [← mul_assoc, hcancel, one_mul]
-
-
-
-
 
 theorem hasUniformJetBoundsAt_fixedCylinderCoordinates_fderiv
     (N : EpsilonNeck g) {ι : Type*}

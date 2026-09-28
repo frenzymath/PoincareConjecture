@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M11SpacetimeSlices
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -21,7 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I K : SpacetimeInterval}
 
-
 structure SpacetimeWorldline (F : GeneralizedFlowSpacetime n X time I)
     (D : SmoothSpacetimeInterval K) where
   interval_subset : K.domain ⊆ I.domain
@@ -31,8 +21,6 @@ structure SpacetimeWorldline (F : GeneralizedFlowSpacetime n X time I)
   derivative_eq : ∀ t,
     mfderiv (𝓡∂ 1) (spacetimeModel n) curve t (D.positiveTangent t) =
       F.timeVector (curve t)
-
-
 
 structure CompatibleSpacetimeEmbedding (F : GeneralizedFlowSpacetime n X time I)
     (D : SmoothSpacetimeInterval K) (C : Type v) [TopologicalSpace C] where
@@ -46,8 +34,6 @@ structure CompatibleSpacetimeEmbedding (F : GeneralizedFlowSpacetime n X time I)
     mfderiv (𝓡∂ 1) (spacetimeModel n) (fun s : D.Point ↦ toSpacetime (s, x)) t
       (D.positiveTangent t) = F.timeVector (toSpacetime (t, x))
 
-
-
 structure CompatibleSpacetimeCylinder (F : GeneralizedFlowSpacetime n X time I)
     (D : SmoothSpacetimeInterval K) (C : Type v) [TopologicalSpace C]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
@@ -56,14 +42,11 @@ structure CompatibleSpacetimeCylinder (F : GeneralizedFlowSpacetime n X time I)
   differential_injective : ∀ p,
     Function.Injective (mfderiv (spacetimeModel n) (spacetimeModel n) toSpacetime p)
 
-
 def CompatibleSpacetimeEmbedding.IsBasedAt
     {F : GeneralizedFlowSpacetime n X time I} {D : SmoothSpacetimeInterval K}
     {C : Type v} [TopologicalSpace C] (e : CompatibleSpacetimeEmbedding F D C)
     (t : D.Point) (source : C → F.Point) : Prop :=
   ∀ x, e.toSpacetime (t, x) = source x
-
-
 
 structure SpacetimeCylinderMetric {F : GeneralizedFlowSpacetime n X time I}
     {D : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]

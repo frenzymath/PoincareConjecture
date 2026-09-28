@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeFaces
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalHalfBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

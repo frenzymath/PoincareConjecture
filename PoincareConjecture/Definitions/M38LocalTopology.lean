@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import PoincareConjecture.Definitions.M37SurgeryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -53,7 +45,6 @@ structure RawLocalSurgeryTopologyData (F : SurgeryFlowData.{u}) where
     ∀ (T : ℝ) (hT : T ∈ F.surgery_times)
       [IsEmpty (F.slice T).carrier],
       Nonempty (RawVanishingTopologyWitness F T hT)
-
 
 abbrev RepairedNonemptyCapCorrespondence
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)

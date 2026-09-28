@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedRegularSequence
 import PoincareConjecture.Proofs.M47.BlowupControlsSourcePointwiseCanonical
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem pointwise_of_initial_neighborhood
     (S : RepairedControlledSchedulesData.{u})
@@ -107,8 +94,6 @@ theorem pointwise_of_initial_neighborhood
   fun _theta htheta _v hv z =>
     exists_source_standard_canonical_neighborhood_of_initial S p hp htheta hv z
       (initial _ htheta _ hv z)
-
-
 
 theorem exists_seed_regular_counterexample_sequence_of_initial
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

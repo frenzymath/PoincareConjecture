@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Sectional
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric.FactorCurvature
 variable {n : ℕ}
   {g : RiemannianMetric (n + 1) (EuclideanSpace ℝ (Fin (n + 1)))}
   {h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem secondFundamentalForm_eq_zero_of_parallel_normal
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -46,8 +36,6 @@ theorem secondFundamentalForm_eq_zero_of_parallel_normal
   rw [hn', zero_mul] at hs
   by_contra hne
   exact (ne_of_gt (g.pos (F x) _ hne)) hs
-
-
 
 theorem curvatureTensor_eq_of_parallel_normal
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)

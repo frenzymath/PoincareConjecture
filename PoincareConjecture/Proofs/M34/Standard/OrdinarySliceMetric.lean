@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProductGeomet
 import PoincareConjecture.Statements.M13MetricHomothety
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M34
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval} {g : ℝ → RiemannianMetric n M}
-
-
 
 theorem ordinarySlice_metricHomothety (R : OrdinaryProductSpacetimeConclusion g I)
     (t : I.domain) :
@@ -39,14 +28,10 @@ variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
 
 include C
 
-
-
 theorem ordinarySlice_ball (p : M) (r : ℝ) :
     R.sliceIdentification t '' (g t.val).ball p r =
       (R.slices t.val).metricOnPoints.ball (R.sliceIdentification t p) r := by
   simpa only [Real.sqrt_one, one_mul] using C.ball_image p r
-
-
 
 theorem ordinarySlice_ball_volume (p : M) (r : ℝ) :
     calibratedMetricVolume (R.slices t.val).metricOnPoints
@@ -55,8 +40,6 @@ theorem ordinarySlice_ball_volume (p : M) (r : ℝ) :
   rw [← ordinarySlice_ball R t C]
   simpa only [Real.rpow_eq_pow, Real.one_rpow, ENNReal.ofReal_one, one_mul] using
     C.volume_image ((g t.val).ball p r)
-
-
 
 theorem ordinarySlice_compact_ball [ConnectedSpace M]
     (hcomplete : MetricComplete (g t.val)) (p : M) (r : ℝ) :

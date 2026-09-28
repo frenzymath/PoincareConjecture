@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Comp
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pathELength_subtype_val_of_contMDiffAt {U : TopologicalSpace.Opens M}
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
@@ -42,8 +32,6 @@ theorem pathELength_subtype_val_of_contMDiffAt {U : TopologicalSpace.Opens M}
     ENNReal.ofReal (Real.sqrt (g.inner (γ t : M) _ _))
   rw [hinner]
   rfl
-
-
 
 theorem ball_subtype_val_of_subset {U : TopologicalSpace.Opens M}
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)

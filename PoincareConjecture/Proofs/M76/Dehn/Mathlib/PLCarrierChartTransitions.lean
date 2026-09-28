@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotionLocal
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartInverse
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.PLCarrierMotion
-
-
-
 
 theorem chart_transitions {E X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

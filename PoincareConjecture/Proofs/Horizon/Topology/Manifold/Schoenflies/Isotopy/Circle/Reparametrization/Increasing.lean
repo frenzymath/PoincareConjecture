@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.PeriodicCircle
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Extension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +37,6 @@ private theorem hasDerivAt_unitCircleExp_coe (s : Real) :
   convert! (hasDerivAt_sphereCircleParameter_coe coordinates ((2 * Real.pi) * s)).scomp s
     ((hasDerivAt_id s).const_mul (2 * Real.pi)) using 1
   simp
-
-
 
 theorem exists_ambient_diffeomorph_of_increasing_circle_lift
     (L : Real ≃ₘ[Real] Real) (hm : StrictMono L)

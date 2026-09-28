@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 theorem m64Annulus_pushforward_contMDiffAt
     {f : LoopPlane → M} {p : LoopPlane}
     (hf : ContMDiffAt (𝓡 2) (𝓡 n) ∞ f p) (v : LoopPlane) :
@@ -41,8 +27,6 @@ theorem m64Annulus_pushforward_contMDiffAt
   exact (hf.mfderiv_const (m := ∞) (by simp)).clm_apply_of_inCoordinates hv hf
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem m64Annulus_horizontal_velocity
     {f : LoopPlane → M} {x s : ℝ}
@@ -63,8 +47,6 @@ theorem m64Annulus_horizontal_velocity
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
 theorem m64Annulus_vertical_velocity
     {f : LoopPlane → M} {x s : ℝ}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f (annulusPoint x s)) :
@@ -81,10 +63,6 @@ theorem m64Annulus_vertical_velocity
   have hchain := mfderiv_comp_apply s hf hmd (1 : ℝ)
   rw [hd] at hchain
   exact hchain
-
-
-
-
 
 theorem m64Annulus_horizontal_velocity_contMDiffAt
     {f : LoopPlane → M} {O : Set LoopPlane} (hO : IsOpen O)
@@ -109,10 +87,6 @@ theorem m64Annulus_horizontal_velocity_contMDiffAt
   congr 1
   exact m64Annulus_horizontal_velocity
     ((hf.contMDiffAt (hO.mem_nhds hz)).mdifferentiableAt (by simp))
-
-
-
-
 
 theorem m64Annulus_vertical_velocity_contMDiffAt
     {f : LoopPlane → M} {O : Set LoopPlane} (hO : IsOpen O)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.MetricConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 structure PartialPointedFlowConvergence {n : ℕ} {M : ℕ → Type u}
     [∀ k, TopologicalSpace (M k)]
@@ -54,9 +41,6 @@ structure PartialPointedFlowConvergence {n : ℕ} {M : ℕ → Type u}
           (fun z : ℝ × EuclideanSpace ℝ (Fin n) =>
             (limitFlow.metric z.1).pullbackCoefficients (extChartAt (𝓡 n) q).symm z.2)
           (J ×ˢ (extChartAt (𝓡 n) q).target)) atTop K
-
-
-
 
 noncomputable def PartialPointedFlowConvergence.reindex
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

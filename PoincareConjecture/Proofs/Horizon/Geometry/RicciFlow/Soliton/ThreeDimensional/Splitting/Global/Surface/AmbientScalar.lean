@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Flow
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -74,7 +65,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ConnectedSpace M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
 
 theorem scalarCurvature_minus_one_eq_one_of_null_plane
     (hP : ThreeDimensionalClassificationPredecessors.{u})

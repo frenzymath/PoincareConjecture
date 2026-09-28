@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SupportedGaugeFamily
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationClock
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,30 +19,19 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n)) (c : ℝ)
 
-
-
-
 noncomputable def affineGaugeFamily (z : ℝ × ℝ) : G.Point :=
   (G.gaugeCover.cylinder b).toSpacetime ((lift (V.squareFamily z.1 z.2)).1,
     (G.gaugeCover.spatial b).affineShift (lift (V.squareFamily z.1 z.2)).2
       ((c * z.2) • η z.1))
 
-
-
-
 noncomputable def supportedAffineGaugeFamily (z : ℝ × ℝ) : G.Point := by
   classical
   exact if z.1 ∈ tsupport η then affineGaugeFamily V b lift η c z else V.squareFamily z.1 z.2
-
-
 
 theorem supportedAffineGaugeFamily_eq_of_not_tsupport {z : ℝ × ℝ}
     (hz : z.1 ∉ tsupport η) :
     supportedAffineGaugeFamily V b lift η c z = V.squareFamily z.1 z.2 := by
   simp only [supportedAffineGaugeFamily, if_neg hz]
-
-
-
 
 theorem supportedAffineGaugeFamily_eq_gauge {z : ℝ × ℝ}
     (hz : (G.gaugeCover.cylinder b).toSpacetime (lift (V.squareFamily z.1 z.2)) =
@@ -64,9 +43,6 @@ theorem supportedAffineGaugeFamily_eq_gauge {z : ℝ × ℝ}
     simp only [affineGaugeFamily, image_eq_zero_of_notMem_tsupport hs, smul_zero,
       TopologicalSpace.Opens.affineShift_zero, Prod.mk.eta]
     exact hz.symm
-
-
-
 
 theorem supportedAffineGaugeFamily_at_zero
     (hsrc : ∀ s ∈ tsupport η,
@@ -90,9 +66,6 @@ private theorem squareFamily_interior_contMDiffAt {z : ℝ × ℝ}
       fun _ hw => V.square_contains ⟨Ioo_subset_Icc_self hw.1, hw.2⟩)
   exact hV.contMDiffAt ((isOpen_Ioo.prod hP).mem_nhds ⟨hs, hu⟩)
 
-
-
-
 theorem affineGaugeFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
     (hη : ContDiff ℝ ∞ η) {z : ℝ × ℝ}
@@ -112,9 +85,6 @@ theorem affineGaugeFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     ((G.gaugeCover.spatial b).affineShift_domain_isOpen.mem_nhds hshift)).comp z
       (hL.snd.prodMk hv)
   exact (G.gaugeCover.cylinder b).smooth.contMDiffAt.comp z (hL.fst.prodMk hS)
-
-
-
 
 theorem supportedAffineGaugeFamily_contMDiffOn {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -149,8 +119,6 @@ theorem supportedAffineGaugeFamily_contMDiffOn {U : Set G.Point} (hU : IsOpen U)
       exact supportedAffineGaugeFamily_eq_of_not_tsupport V b lift η c hw
     exact (hbase z hz).congr_of_eventuallyEq
       (heq.filter_mono nhdsWithin_le_nhds) heq.eq_of_nhds
-
-
 
 theorem supportedAffineGaugeFamily_time {P : Set ℝ} (hP : P ⊆ V.parameterDomain)
     (hrec : ∀ s ∈ tsupport η, ∀ v ∈ P,

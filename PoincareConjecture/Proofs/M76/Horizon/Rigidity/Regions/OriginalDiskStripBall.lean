@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -31,8 +20,6 @@ local notation "ends" => ({-(1 / 2 : ℝ), 1 / 2} : Set ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem exists_closedStrip_ball (P : OriginalDiskProduct e R j) :
     Nonempty (ChartwisePLBall e P.closedStrip
@@ -86,7 +73,6 @@ theorem exists_closedStrip_ball (P : OriginalDiskProduct e R j) :
 
 omit [T2Space X] in
 
-
 theorem closedStrip_inter_frontier (P : OriginalDiskProduct e R j) :
     P.closedStrip ∩ frontier R = P.map '' (Q ×ˢ I) := by
   ext x
@@ -99,8 +85,6 @@ theorem closedStrip_inter_frontier (P : OriginalDiskProduct e R j) :
     have hzD : z.1 ∈ D := sphere_subset_closedBall hz.1
     refine ⟨⟨z, ⟨hzD, hz.2⟩, rfl⟩, ?_⟩
     exact (P.proper z ⟨hzD, by linarith [hz.2.1], by linarith [hz.2.2]⟩).mpr hz.1
-
-
 
 theorem frontier_closedStrip (P : OriginalDiskProduct e R j) :
     frontier P.closedStrip = (P.map '' (Q ×ˢ I)) ∪ P.endDisks := by

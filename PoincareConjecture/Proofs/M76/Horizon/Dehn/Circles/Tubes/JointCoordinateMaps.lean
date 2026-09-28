@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.JointDiamondMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SignedAxisPermutations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

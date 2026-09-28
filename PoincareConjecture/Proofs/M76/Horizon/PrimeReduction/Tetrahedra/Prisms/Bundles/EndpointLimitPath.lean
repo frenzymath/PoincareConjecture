@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import Mathlib.Topology.Order.ExtendFrom
 import Mathlib.Topology.UnitInterval
 
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology

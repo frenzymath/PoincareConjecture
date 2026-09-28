@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapWidths
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Interfaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Intersections
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,7 +24,6 @@ variable
   {e : D.EdgeIndex} {R : D.regions} {a b trim : ℝ} {terminal : Bool}
   {g : D.OrientedGraphPiece e R (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm a b}
   (E : D.CapGraphEndpoint P region chart B e R g terminal trim)
-
 
 def chordSegment (r : ℝ) : Set M :=
   (fun u : ℝ => (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm
@@ -94,7 +82,6 @@ theorem rightCut_subset_carrier : F.faces.rightCut ⊆ F.faces.carrier := by
 
 omit [T2Space M] in
 
-
 theorem inter_region_caps_subset_cuts
     (havoid : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ z : ℝ, |z| < δ →
       Q.coordinates g.parameter.open_target g.lower_smooth (t, z) ∉
@@ -148,8 +135,6 @@ variable
 
 include hdisjoint hlocal hcut hmatch
 
-
-
 theorem exists_internal_cap_free_ray (e : D.EdgeIndex) (R : D.regions)
     {t : ℝ} (ht : t ∈ Ioo (cut e false) (1 - cut e true))
     (hchart : (D.edge e.1 e.2).map t ∈
@@ -191,8 +176,6 @@ variable {e : D.EdgeIndex} {R : D.regions}
     (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm (cut e false) (1 - cut e true)}
   {dLeft dRight : EuclideanSpace ℝ (Fin 2)} (K : S.CutChain dLeft dRight)
 
-
-
 theorem CutChain.exists_internal_cap_free_length (j : Fin (S.count + 1))
     (hj0 : j ≠ 0) (hjlast : j ≠ Fin.last S.count) :
     ∃ ε > 0, ∀ u ∈ Icc (0 : ℝ) ε,
@@ -213,8 +196,6 @@ theorem CutChain.exists_internal_cap_free_length (j : Fin (S.count + 1))
   rw [hij] at hs
   exact exists_internal_cap_free_ray P region chart B hdisjoint hlocal cut hcut hmatch e R
     ht hs (K.direction j)
-
-
 
 theorem CutChain.exists_all_internal_cap_free_length :
     ∃ ε > 0, ∀ j : Fin (S.count + 1), j ≠ 0 → j ≠ Fin.last S.count →
@@ -259,8 +240,6 @@ variable
   (L : D.CapGraphEndpoint P region chart B e R (S.piece S.firstPiece) false (cut e false))
   (T : D.CapGraphEndpoint P region chart B e R (S.piece S.lastPiece) true (cut e true))
   (K : S.CutChain L.direction T.direction)
-
-
 
 theorem CutChain.band_inter_region_caps {r δ : ℝ} (hr : r ≤ 1)
     (hfree : ∀ j : Fin (S.count + 1), j ≠ 0 → j ≠ Fin.last S.count →

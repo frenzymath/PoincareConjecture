@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M10.CalibratedTransport
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M34
-
-
 
 theorem compact_identity_metric_bounds {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -51,8 +40,6 @@ theorem compact_identity_metric_bounds {n : ℕ}
   refine ⟨(hA ⟨x, hx, rfl⟩).trans (le_max_right _ _), ?_⟩
   apply (inv_le_comm₀ hd (hpos x)).mpr
   exact (hBinv ⟨x, hx, rfl⟩).trans (le_max_right _ _)
-
-
 
 theorem coordinate_ball_volume_lower {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

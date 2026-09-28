@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.InteriorPhas
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceSurface
 import PoincareConjecture.Proofs.M76.Rigidity.StandardBoundaryTori
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -31,9 +22,6 @@ local notation "Q" => hamiltonOneHierarchyCoordinates
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 
 private instance period_positive : Fact (0 < p) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_original_ball_phase_removal
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

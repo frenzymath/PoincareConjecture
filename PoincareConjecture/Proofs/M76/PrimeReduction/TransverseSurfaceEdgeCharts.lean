@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.FiniteSurfaceEdgeContacts
 import PoincareConjecture.Proofs.M76.PrimeReduction.AffinePlaneLineCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.IntrinsicAffineGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_transverse_surface_edge_chart
     (A T : SimplicialComplex ℝ E) (hA : A.faces.Finite) (hT : T.faces.Finite)

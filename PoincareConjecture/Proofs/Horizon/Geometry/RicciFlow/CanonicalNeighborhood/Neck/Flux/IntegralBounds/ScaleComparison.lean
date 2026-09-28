@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.IntegralBounds.Oriented
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Comparison
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -69,8 +58,6 @@ private theorem upper_flux_factor_le_scale_sq
   have := mul_le_mul_of_nonneg_left hfactor (mul_nonneg hA (sq_nonneg r))
   linarith
 
-
-
 theorem scale_div_eight_le_of_real_flux_bounds
     {r₁ r₂ ε₁ ε₂ A F₁ F₂ : ℝ}
     (hr₁ : 0 < r₁) (hr₂ : 0 < r₂)
@@ -101,9 +88,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [MetricSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem scale_div_eight_le_of_outward_flux_comparison
     (N₁ N₂ : EpsilonNeck g) (D : LeviCivitaData g) (hc : MetricComplete g)

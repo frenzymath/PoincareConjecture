@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.OfCompLeft
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,11 +11,6 @@ namespace PoincareConjecture.M14
 variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace 𝕜 E] [CompleteSpace E]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace 𝕜 F]
-
-
-
-
-
 
 theorem contDiffOn_inverse_of_leftInverse {f : E → F} {g : F → E}
     {S : Set E} {T : Set F} (hS : UniqueDiffOn 𝕜 S)

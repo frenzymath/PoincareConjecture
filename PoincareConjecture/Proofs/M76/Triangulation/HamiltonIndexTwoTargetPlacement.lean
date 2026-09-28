@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardPlacement
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoTarget
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -40,10 +31,6 @@ private theorem cylinder_inter_closedBall_subset_box :
     · exact (abs_le.mp hone).2
     · exact (abs_le.mp htwo).2
 
-
-
-
-
 theorem fixes_box_exterior (A : V ≃ₜ V)
     (hAout : ∀ x : V, 2 ≤ ‖x‖ → A x = x)
     (hArel : EqOn A id (Dᶜ ∪ frontier D)) :
@@ -60,10 +47,6 @@ theorem fixes_box_exterior (A : V ≃ₜ V)
   by_cases hxd : x ∈ D
   · exact hArel (Or.inr ⟨subset_closure hxd, hxi⟩)
   · exact hArel (Or.inl hxd)
-
-
-
-
 
 theorem exists_supported_placement_in_image
     (P : Set V) (delta : Bool → Set V)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.RicciComplementEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.GeometricPreservation.Continuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +45,6 @@ variable {M : Type*} [TopologicalSpace M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
-
 
 theorem exists_transportedRicciComplement_local_coordinates
     (F : RicciFlow 3 M (Ico a b))

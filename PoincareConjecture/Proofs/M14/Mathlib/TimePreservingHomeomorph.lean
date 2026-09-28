@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
-
 
 theorem exists_timePreserving_homeomorph_extension
     {f : E × ℝ → F × ℝ} {L : (E × ℝ) ≃L[ℝ] (F × ℝ)}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ClosedSideSubcomplexes
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

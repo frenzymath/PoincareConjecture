@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +10,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
-
-
-
 
 theorem abs_surfaceTurningForm_le_tangentNorm (D : LeviCivitaData g)
     (e1 e2 T V : (x : S) → TangentSpace (𝓡 2) x) (x : S)

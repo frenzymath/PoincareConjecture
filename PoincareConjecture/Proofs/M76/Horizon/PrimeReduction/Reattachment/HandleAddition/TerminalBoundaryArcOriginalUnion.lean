@@ -9,15 +9,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalEndFrontier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalLabeledEndEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn.Annuli.BoundaryUnionDisk
@@ -120,4 +111,3 @@ theorem HamiltonMarkedProtectedBall.exists_original_terminal_disk_union
     g,hg,hgi,hgimage,hgrim,hgE,hgS,hgF⟩
 
 end PoincareConjecture.M76
-

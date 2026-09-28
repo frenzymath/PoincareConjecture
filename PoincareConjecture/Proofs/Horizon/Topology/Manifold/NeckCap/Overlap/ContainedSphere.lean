@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ProjectionDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_contained_graphical_sphere :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -57,8 +43,6 @@ theorem exists_contained_graphical_sphere :
     (hsubset (N'.centralSphere_range ▸ mem_range_self q)) hscale
     (hricci N N.connection (hN ▸ hε.trans (min_le_right _ _)))
     (hricci N' N.connection (hN' ▸ hε.trans (min_le_right _ _)))
-
-
 
 theorem exists_contained_compact_transport :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

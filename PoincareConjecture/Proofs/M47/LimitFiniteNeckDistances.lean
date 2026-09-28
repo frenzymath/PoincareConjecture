@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem limitFinite_same_height_distance
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier)
@@ -57,8 +46,6 @@ theorem limitFinite_same_height_distance
   have hbound := hlength.trans (ENNReal.ofReal_le_ofReal hfactor)
   simpa only [ENNReal.toReal_ofReal (by positivity : 0 ≤ 20 * N.scale)] using
     ENNReal.toReal_mono ENNReal.ofReal_ne_top hbound
-
-
 
 theorem limitFinite_half_neck_time_lower
     (hepsilon : N.epsilon ≤ 1 / 100) {gamma : ℝ → M} {s : ℝ} (hs : 0 ≤ s)

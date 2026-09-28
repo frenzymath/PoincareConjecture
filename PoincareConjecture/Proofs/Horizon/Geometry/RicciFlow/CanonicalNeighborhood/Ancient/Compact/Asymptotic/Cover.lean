@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Cover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.RoundQuotient
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem AncientKappaNormalization.metricDiameter_terminal
     {K : AncientKappaSolution 3 M} {p : M} {t : ℝ}
     (A : AncientKappaNormalization K p t) :
@@ -40,9 +27,6 @@ theorem AncientKappaNormalization.metricDiameter_terminal
   intro x v w
   simpa only [Diffeomorph.coe_refl, id_eq, mfderiv_id, ContinuousLinearMap.id_apply,
     zero_div, add_zero] using A.metric_eq 0 x v w
-
-
-
 
 theorem compact_nonround_exists_earlier_covered_normalization
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

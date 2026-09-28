@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem SourceTubeData.node_last_readout
     {epsilon C A D₀ D : ℝ}
@@ -46,9 +33,6 @@ theorem SourceTubeData.node_last_readout
     ((T.list.vertex _ (List.getLast_mem T.list.nonempty)).1.2))
 
 namespace CounterexampleNeckFamily
-
-
-
 
 theorem exists_source_terminal_neck_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -82,9 +66,6 @@ theorem exists_source_terminal_neck_scalar_accuracy :
     rw [H.normalizedSlice_scalar_eq, H.normalizedSlice_scalar_eq, ← mul_div_assoc]
     exact div_le_div_of_nonneg_right hraw (H.base_scalar_pos k).le
   linarith only [hk, hnormalized]
-
-
-
 
 theorem exists_source_terminal_neck_exclusion_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

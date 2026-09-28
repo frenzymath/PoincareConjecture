@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.S
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.AreaGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.ModelBounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 def scaleSlabAreaConstant (n : ℕ) : ℝ :=
   96 * euclideanUnitBallVolume (n + 1) * 2 ^ (n + 1) * Real.exp (57 * (n : ℝ))
@@ -49,7 +38,6 @@ private theorem modelVolume_two_mul_le (n : ℕ) {r : ℝ}
       exact mul_nonneg (euclideanUnitBallVolume_nonneg _) (pow_nonneg (by positivity) _)
     _ = _ := by rw [mul_pow]; ring
 
-
 theorem scaleSlabArea_seed_le (n : ℕ) {r : ℝ}
     (hr : 0 < r) (hr1 : r ≤ 1) :
     2 * modelVolume (n + 1) 1 (2 * r) / (7 * r / 6 - 55 * r / 48) *
@@ -76,7 +64,6 @@ theorem scaleSlabArea_seed_le (n : ℕ) {r : ℝ}
       rw [show (57 : ℝ) * n = 2 * n + 55 * n by ring, Real.exp_add, pow_succ]
       field_simp
       ring
-
 
 private theorem regularLevelArea_le_scaleSlabAreaConstant
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -114,8 +101,6 @@ private theorem regularLevelArea_le_scaleSlabAreaConstant
     (mul_le_mul_of_nonneg_left
       (pow_le_pow_left₀ hr.le (by linarith [ht.1]) n)
       (scaleSlabAreaConstant_pos n).le))
-
-
 
 theorem exists_proper_regular_slab_with_dimensional_area_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]

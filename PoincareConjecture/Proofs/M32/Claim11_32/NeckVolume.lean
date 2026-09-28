@@ -4,25 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Sh
 import PoincareConjecture.Proofs.M15.Thm1_34_Calibration
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,8 +19,6 @@ private theorem strongNeck_scale_eq_inv_sqrt_scalar (N : GeneralizedStrongNeck F
     N.scale = (Real.sqrt (F.scalar ⟨t, N.center⟩))⁻¹ := by
   rw [N.scale_scalar, neg_div, Real.rpow_neg N.scalar_center_pos.le, Real.sqrt_eq_rpow]
   rfl
-
-
 
 theorem strongNeck_radius_le_two_scale_of_curvature_bound
     (N : GeneralizedStrongNeck F t epsilon) (hepsilon : epsilon < 1 / 2)
@@ -64,8 +43,6 @@ theorem strongNeck_radius_le_two_scale_of_curvature_bound
   rw [hprod] at hm'
   nlinarith [N.scale_pos]
 
-
-
 theorem strongNeck_noncollapsed_at_center (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) (r₀ : ℝ) :
     GeneralizedKappaNoncollapsedAt F ⟨t, N.center⟩ neckNoncollapseConstant r₀ := by
@@ -82,8 +59,6 @@ theorem strongNeck_noncollapsed_at_center (N : GeneralizedStrongNeck F t epsilon
   rw [PoincareConjecture.Proofs.M15.calibratedMetricVolume_eq_euclideanHausdorff]
   exact hv
 
-
-
 theorem strongNeck_calibratedVolume_center_ball_lower
     (N : GeneralizedStrongNeck F t epsilon) (hepsilon : epsilon < 1 / 2) :
     ENNReal.ofReal (neckNoncollapseConstant /
@@ -98,8 +73,6 @@ theorem strongNeck_calibratedVolume_center_ball_lower
   rw [strongNeck_scale_eq_inv_sqrt_scalar, inv_pow, ← div_eq_mul_inv] at hv
   rw [PoincareConjecture.Proofs.M15.calibratedMetricVolume_eq_euclideanHausdorff, one_div]
   exact hv
-
-
 
 theorem terminal_volume_of_strongNecks (S : GeneralizedBlowupSequence.{u})
     (hneck : ∀ᶠ k : ℕ in Filter.atTop,

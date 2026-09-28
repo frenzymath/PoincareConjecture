@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderModelField
 import PoincareConjecture.Proofs.M36.RetainedDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

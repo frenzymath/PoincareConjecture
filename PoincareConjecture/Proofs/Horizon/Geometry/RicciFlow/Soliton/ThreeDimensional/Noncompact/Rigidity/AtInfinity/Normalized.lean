@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.AtInfinity.ScalarTransfer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Normalization.Flow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,7 +48,6 @@ theorem unscaledPointedLimit_metricKappaNoncollapsed
         calibratedMetricVolume_eq_volumeMeasure] using hκ.2 x r hr hbound)
   simpa only [calibratedMetricVolume_eq_volumeMeasure] using hvol
 
-
 def unscaledLiftedCarrier : FlowCarrier.{u} 3 := by
   let C := L.limitCarrier
   let : ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
@@ -68,7 +60,6 @@ def unscaledLiftedCarrier : FlowCarrier.{u} 3 := by
   let : SecondCountableTopology (ULift.{u} C.carrier) :=
     Homeomorph.ulift.secondCountableTopology
   exact FlowCarrier.ofConnectedManifold 3 (ULift.{u} C.carrier)
-
 
 def unscaledLiftedFlow : RicciFlow 3 (G.unscaledLiftedCarrier L).carrier (Iio 1) :=
   L.limitFlow.ulift
@@ -122,8 +113,6 @@ theorem unscaledLiftedFlow_scalar_lower_bound (hC : RicciFlowCurvatureTheory.{u}
   refine ⟨c, hc, fun t ht x => ?_⟩
   simpa only [unscaledLiftedFlow, L.limitFlow.ulift_scalarCurvature] using hbound t ht x.down
 
-
-
 theorem unscaledPointedLimit_scalarCurvature_eq_one_div_one_sub
     (hP : ThreeDimensionalClassificationPredecessors.{u}) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -154,7 +143,6 @@ theorem unscaledSourceFlow_scalarCurvature_zero (x : M) :
 include G in
 omit L in
 
-
 theorem exists_scalar_subsequence_tendsto_one
     (hP : ThreeDimensionalClassificationPredecessors.{u}) (p : M) (q : ℕ → M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop) :
@@ -182,8 +170,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem GradientShrinkingSolitonData.exists_scalar_subsequence_tendsto_one
     (S : GradientShrinkingSolitonData 3 M)

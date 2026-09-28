@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem fderiv2_parametrization_le_of_hessian_le (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -80,8 +70,6 @@ theorem fderiv2_parametrization_le_of_hessian_le (D : LeviCivitaData g)
   change D.hessian f (e z) (T v) (T v) =
     fderiv ℝ (fderiv ℝ (f ∘ e)) z v v - fderiv ℝ (f ∘ e) z (Γ v v) at heq
   nlinarith
-
-
 
 theorem intrinsic_bounds_of_parametrization (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

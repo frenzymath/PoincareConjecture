@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarMap
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularLengthMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,13 +14,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
 noncomputable def m64PolarCoordinate (theta : LoopPlane → ℝ)
     (z : LoopPlane) : AnnulusCoordinates :=
   annulusPoint (theta z) (2 * ‖z‖ - 1)
-
-
 
 theorem m64AnnulusPolarMap_local_edist_of_angle
     (A : M64Annulus g c0 c1) {z : LoopPlane} (hz : z ≠ 0)

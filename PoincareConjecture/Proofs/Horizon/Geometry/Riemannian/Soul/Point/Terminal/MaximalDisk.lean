@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.PositiveRank
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 structure ContainedNormalDisk (g : RiemannianMetric n M) (S : Set M) where
   center : M
@@ -64,7 +47,6 @@ theorem rank_lt_of_empty_interior (D : ContainedNormalDisk g S)
 
 omit [T3Space M] in
 
-
 theorem radial_contraction (D : ContainedNormalDisk g S)
     (hconv : ∀ (curve : ℝ → M) (a b : ℝ),
       g.IsGeodesicOn curve (Icc a b) →
@@ -85,8 +67,6 @@ theorem radial_contraction (D : ContainedNormalDisk g S)
 
 end ContainedNormalDisk
 
-
-
 theorem exists_zero_containedNormalDisk (g : RiemannianMetric n M) {S : Set M}
     {q : M} (hq : q ∈ S) :
     ∃ D : ContainedNormalDisk g S, D.center = q ∧ D.rank = 0 := by
@@ -98,8 +78,6 @@ theorem exists_zero_containedNormalDisk (g : RiemannianMetric n M) {S : Set M}
     simpa only [hv0, he0] using hq
   refine ⟨⟨q, hq, r, hr, e, hsource, he0, he, hei, hed, hgeo, ⊥, hsub⟩, rfl, ?_⟩
   simp [ContainedNormalDisk.rank]
-
-
 
 theorem exists_maximal_containedNormalDisk (g : RiemannianMetric n M) {S : Set M}
     (hne : S.Nonempty) :
@@ -115,8 +93,6 @@ theorem exists_maximal_containedNormalDisk (g : RiemannianMetric n M) {S : Set M
   have hle := Nat.le_findGreatest D'.rank_le (show P D'.rank from ⟨D', rfl⟩)
   simpa only [← hD] using hle
 
-
-
 theorem exists_rank_one_containedNormalDisk [ConnectedSpace M]
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}
     (hconv : ∀ (curve : ℝ → M) (a b : ℝ),
@@ -127,8 +103,6 @@ theorem exists_rank_one_containedNormalDisk [ConnectedSpace M]
   obtain ⟨q, hq, r, e, V, hr, hsource, he0, he, hei, hed, hgeo, hdim, hsub⟩ :=
     g.exists_positive_normal_line_disk_of_two_points hcomplete hconv hx hy hxy
   exact ⟨⟨q, hq, r, hr, e, hsource, he0, he, hei, hed, hgeo, V, hsub⟩, hdim⟩
-
-
 
 theorem exists_positive_maximal_containedNormalDisk [ConnectedSpace M]
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}

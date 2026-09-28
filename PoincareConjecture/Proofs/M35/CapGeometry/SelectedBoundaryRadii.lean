@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M35.CapGeometry.BoundaryNeckRadius
 import PoincareConjecture.Proofs.M35.CapGeometry.TransportedInnerBall
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactMetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_boundary_curvature_ball_neighborhoods
     (P : M35StandardCapPredecessors) :

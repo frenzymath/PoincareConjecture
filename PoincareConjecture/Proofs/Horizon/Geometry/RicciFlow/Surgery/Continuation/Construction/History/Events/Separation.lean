@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.OrdinaryRestart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SurgeryFlowData
-
-
 
 theorem exists_last_surgery_before (F : SurgeryFlowData.{u}) {b : ℝ}
     (hb : b ∈ F.surgery_times) :
@@ -53,8 +42,6 @@ theorem exists_last_surgery_before (F : SurgeryFlowData.{u}) {b : ℝ}
     have hsA : s ∈ A := Or.inr ⟨hs, ha0.trans hsI.1.le, hsI.2⟩
     exact (not_lt_of_ge (le_csSup hfin.bddAbove hsA)) hsI.1
 
-
-
 theorem curvature_unbounded_before_surgery (F : SurgeryFlowData.{u}) {b : ℝ}
     (hb : b ∈ F.surgery_times) [Nonempty (F.slice b).carrier]
     (C s : ℝ) (hs : s < b) :
@@ -76,7 +63,6 @@ namespace PoincareConjecture.Surgery.RegularHistory
 
 variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
   {T : ℝ} (hT : T ∈ F.surgery_times) (hTW : T ∈ W.interval)
-
 
 theorem event_pre_surgery_free :
     Disjoint F.surgery_times

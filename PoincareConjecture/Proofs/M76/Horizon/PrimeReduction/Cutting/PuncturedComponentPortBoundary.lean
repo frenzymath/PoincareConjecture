@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedSph
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RelativeComponentBoundary
 import PoincareConjecture.Proofs.M76.Wall.SphericalFrontierFilling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

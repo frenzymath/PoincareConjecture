@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsExtraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_limit_at_terminal
     {E : Type*} [NormedAddCommGroup E]

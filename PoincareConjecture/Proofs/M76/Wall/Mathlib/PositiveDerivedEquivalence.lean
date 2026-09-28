@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.DerivedFaceChainIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
   (hd : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = d s)
-
-
-
-
 
 theorem exists_positiveDerived_homeomorph :
     ∃ (f g : E → E) (e : K.space ≃ₜ K.space),

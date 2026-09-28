@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -15,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 def partialHomeomorphRegions {A B : GeneralizedSliceCarrier.{u}}
     (e : OpenPartialHomeomorph A.carrier B.carrier)

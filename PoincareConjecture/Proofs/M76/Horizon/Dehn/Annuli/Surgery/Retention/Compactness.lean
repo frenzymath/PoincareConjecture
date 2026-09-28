@@ -5,8 +5,6 @@ open Set Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem isCompact_retained_double_locus
     {E X : Type*} [TopologicalSpace E] {f : E → X} {K S : Set E}
     (hKS : K ⊆ S) (hK : IsClosed K) (hG : IsCompact (doubleLocusOn f S))
@@ -31,8 +29,6 @@ theorem isCompact_retained_double_locus
       exact ⟨z, ⟨hx, hyval ▸ hy⟩, rfl⟩
   rw [← heq]
   exact hA.isCompact.image continuous_subtype_val
-
-
 
 theorem isCompact_new_double_locus_of_retained
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y]

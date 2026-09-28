@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Profile
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 def axialTransition (A : Set M) (φ : ℝ → ℝ) (x : M) : ℝ := by
   classical
@@ -84,8 +73,6 @@ private theorem axialTransition_eq_one_on_positive_side
   · have hxA : x ∉ A := fun h => Set.disjoint_left.mp hdisj h hxB
     simp [axialTransition, hx, hxA]
 
-
-
 theorem contMDiff_axialTransition
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -120,8 +107,6 @@ theorem axialTransition_mem_Icc {A : Set M} {φ : ℝ → ℝ}
   unfold axialTransition
   split_ifs <;> simp_all
 
-
-
 theorem hasCompactSupport_one_sub_axialTransition
     {A B : Set M} (hAc : IsCompact (closure A))
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -148,8 +133,6 @@ theorem hasCompactSupport_one_sub_axialTransition
   have heq := N.axialTransition_eq_one_on_positive_side hdisj hneg hL hone hxB hxK
   exact hx (by simp only [heq, sub_self])
 
-
-
 theorem hasCompactSupport_axialTransition
     {A B : Set M} (hBc : IsCompact (closure B))
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -174,7 +157,6 @@ theorem hasCompactSupport_axialTransition
     exact hc.resolve_right hxB
   exact hx (N.axialTransition_eq_zero_on_negative_side hdisj hpos hL hzero hxA hxK)
 
-
 theorem gradient_axialTransition (D : LeviCivitaData g) (A : Set M)
     {φ : ℝ → ℝ} (hφ : ContDiff ℝ ∞ φ) {x : M} (hx : x ∈ N.carrier) :
     D.gradient (N.axialTransition A φ) x =
@@ -187,8 +169,6 @@ theorem gradient_axialTransition (D : LeviCivitaData g) (A : Set M)
     unfold LeviCivitaData.gradient mvfderiv
     rw [he.mfderiv_eq, he.eq_of_nhds]
   rw [hg, N.gradient_axialCutoff D hφ hx]
-
-
 
 theorem axialTransition_eventually_constant_of_not_mem
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)
@@ -212,8 +192,6 @@ theorem axialTransition_eventually_constant_of_not_mem
     filter_upwards [hB.mem_nhds hxB, hK.isClosed.isOpen_compl.mem_nhds hxK] with y hyB hyK
     exact N.axialTransition_eq_one_on_positive_side hdisj hneg hL hone hyB hyK
 
-
-
 theorem gradient_axialTransition_eq_zero_of_not_mem (D : LeviCivitaData g)
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -227,8 +205,6 @@ theorem gradient_axialTransition_eq_zero_of_not_mem (D : LeviCivitaData g)
   unfold LeviCivitaData.gradient mvfderiv
   rw [he.mfderiv_eq, he.eq_of_nhds]
   simp
-
-
 
 theorem hasCompactSupport_axialTransition_sub
     (N₂ : EpsilonNeck g) {A₁ A₂ : Set M} {φ₁ φ₂ : ℝ → ℝ}
@@ -244,8 +220,6 @@ theorem hasCompactSupport_axialTransition_sub
     ring
   rw [heq]
   exact hc₂.sub hc₁
-
-
 
 theorem axialTransition_sub_nonneg
     (N₂ : EpsilonNeck g) {A₁ A₂ : Set M} {φ₁ φ₂ : ℝ → ℝ}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem low_scalar_subset_retained_interior
     (F : SurgeryFlowData.{u}) {t L : ℝ} (hT : t ∈ F.surgery_times)
@@ -44,9 +32,6 @@ theorem low_scalar_subset_retained_interior
   intro hmem
   obtain ⟨i, hi⟩ := mem_iUnion.mp hmem
   exact not_lt_of_ge hy (hcap i y hi)
-
-
-
 
 theorem low_scalar_inverse_retained
     (F : SurgeryFlowData.{u}) {t L : ℝ} (hT : t ∈ F.surgery_times)

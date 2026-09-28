@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem exists_round_model_coordinate_bounds :
     ∃ r : ℝ, 0 < r ∧ ∃ B : ℕ → ℝ, (∀ j, 0 ≤ B j) ∧

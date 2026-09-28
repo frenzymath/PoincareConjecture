@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +11,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem low_scalar_point_of_action {T S Q : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 S x y) (hQ : 0 ≤ Q)
@@ -87,8 +76,6 @@ theorem low_scalar_point_of_action {T S Q : ℝ} {x y : G.Point}
   have hscaled := mul_lt_mul_of_pos_right hmargin hsqrt
   nlinarith
 
-
-
 theorem prefix_low_scalar_action_margin {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {S : ℝ} (hS : 1 / 32 ≤ S) :
     3 < ((p.r (Fin.last p.i))⁻¹ ^ 2 / 16 - 6) * S := by
@@ -104,8 +91,6 @@ theorem prefix_low_scalar_action_margin {K : MetricSurgeryConstants}
   have hprod := mul_le_mul hcoeff hS (by norm_num : (0 : ℝ) ≤ 1 / 32)
     (by linarith : 0 ≤ (p.r (Fin.last p.i))⁻¹ ^ 2 / 16 - 6)
   exact (by norm_num : (3 : ℝ) < 2494 * (1 / 32)).trans_le hprod
-
-
 
 theorem middle_interval_subset_old_window {a T epsilon : ℝ}
     (ha : 1 / 32 ≤ a) (hTlo : 2 * a ≤ T) (hThi : T ≤ 4 * a)

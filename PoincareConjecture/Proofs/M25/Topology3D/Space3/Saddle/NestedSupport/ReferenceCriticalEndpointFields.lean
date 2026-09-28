@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedEndpointCo
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "D1" =>
   Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞
-
-
-
-
 
 theorem saddle_reference_critical_endpoint_germs
     (delta eta1 nu : ℝ)

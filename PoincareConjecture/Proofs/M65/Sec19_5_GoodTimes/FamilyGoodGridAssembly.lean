@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.GridPartition
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.ClosedCellJets
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.LengthNoncollapse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
-
-
 
 theorem m65Family_exists_fixed_good_grid (C : M63FamilyConclusion G Gamma zeta)
     (E : M64AppliedFamilyEstimates G C) (hab : a < b)

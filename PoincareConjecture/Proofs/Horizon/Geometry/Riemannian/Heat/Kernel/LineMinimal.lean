@@ -5,13 +5,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineArclength
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ open scoped Topology ContDiff NNReal Manifold
 open Poincare.Analysis.Heat
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem realHeatKernel_le_of_nonnegative_heat_solution
     {u : ℝ → ℝ → ℝ} {y : ℝ}
@@ -84,8 +75,6 @@ theorem realHeatKernel_le_of_nonnegative_heat_solution
   filter_upwards [self_mem_nhdsWithin] with τ hτ
   exact hcompare τ hτ
 
-
-
 theorem realHeatKernel_coordinate_le_of_nonnegative_heat_solution
     {M : Type*} [TopologicalSpace M] [T3Space M]
     [MeasurableSpace M] [BorelSpace M]
@@ -137,10 +126,6 @@ theorem realHeatKernel_coordinate_le_of_nonnegative_heat_solution
       have hh := hμ.integral_comp eh.measurableEmbedding (fun z => φ z * v z s)
       simpa only [Function.comp_apply, v, Equiv.symm_apply_apply] using hh.symm
     simpa only [heq, Function.comp_apply] using hp
-
-
-
-
 
 theorem exists_minimal_smooth_conservativeHeatKernel_dim_one
     {M : Type*} [TopologicalSpace M] [T3Space M]

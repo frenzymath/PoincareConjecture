@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedRadialFrontierChart
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHalfspaces
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finitePL_radial_frontier_section_preserving_halfspaces
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -99,8 +87,6 @@ theorem exists_finitePL_radial_frontier_section_preserving_halfspaces
       (hDK.respectsAffineHyperplane hA) x (hDK.space_eq.symm.subset x.property),
     hf.linear_nonneg_iff_of_positive_vertex_rescaling r hr hfv A
       (hDK.respectsAffineHyperplane hA) x (hDK.space_eq.symm.subset x.property)⟩
-
-
 
 theorem exists_finitePL_link_convex_frontier_chart_preserving_halfspaces
     [DecidableEq E] (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

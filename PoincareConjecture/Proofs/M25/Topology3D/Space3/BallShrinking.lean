@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -26,9 +15,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_ball_shrinking_isotopy (B : BallNeighborhoodChart E F) :
     ∃ Φ : ℝ → Diffeomorph 𝓘(ℝ, F) 𝓘(ℝ, F) F F ∞,

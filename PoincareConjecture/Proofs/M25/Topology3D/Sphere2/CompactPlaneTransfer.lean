@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.CompactChartTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.StereographicReduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 def CompactPlanarIsotopyProperty : Prop :=
   ∀ (h : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ)) {K : Set (ℝ × ℝ)}, IsCompact K →
@@ -30,9 +18,6 @@ def CompactPlanarIsotopyProperty : Prop :=
       (∀ t, 1 ≤ t → ∀ x, H t x = x) ∧
       ∃ Q : Set (ℝ × ℝ), IsCompact Q ∧
         ∀ t x, x ∉ Q → H t x = x ∧ (H t).symm x = x
-
-
-
 
 theorem exists_sphere_isotopy_of_identity_near_pole
     (hPlane : CompactPlanarIsotopyProperty) (p : UnitTwoSphere)

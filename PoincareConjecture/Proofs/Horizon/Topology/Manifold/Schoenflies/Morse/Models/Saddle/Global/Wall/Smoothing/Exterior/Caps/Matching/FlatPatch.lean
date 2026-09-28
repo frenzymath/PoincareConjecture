@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Matching.LocalSide
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Smoothing.Exterior.Caps.Matc
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev S1 := sphere (0 : E2) 1
-
-
-
 
 theorem eventually_range_iff_wall_of_flat_arc
     (γ : S1 → E2)

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCylinders
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_blowup_test_radius {tau B : ℝ} (htau : 0 < tau) (hB : 0 ≤ B) :
     ∃ rho : ℝ, 0 < rho ∧ rho ^ 2 ≤ tau ∧ B ≤ rho⁻¹ ^ 2 := by
@@ -32,8 +22,6 @@ theorem exists_seed_blowup_test_radius {tau B : ℝ} (htau : 0 < tau) (hB : 0 �
   refine ⟨rho, hrho, htime, ?_⟩
   nlinarith [Real.sq_sqrt (show 0 ≤ B + 1 by linarith), sq_nonneg (rho⁻¹)]
 
-
-
 theorem seed_blowup_physical_radius_le {rho epsilon Q : ℝ}
     (hrho : 0 < rho) (hepsilon : 0 < epsilon) (hQ : 0 < Q)
     (hlarge : (rho / epsilon) ^ 2 ≤ Q) :
@@ -44,7 +32,6 @@ theorem seed_blowup_physical_radius_le {rho epsilon Q : ℝ}
   apply (div_le_iff₀ (Real.sqrt_pos.mpr hQ)).2
   have h := (div_le_iff₀ hepsilon).mp hsqrt
   nlinarith
-
 
 theorem seed_blowup_eventually_radius_le {rho epsilon : ℝ}
     (hrho : 0 < rho) (hepsilon : 0 < epsilon) (Q : ℕ → ℝ)

@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.HalfDiskCollarRectangle
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,11 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 open M65Gauss M65StrictTrace
-
-
-
-
-
 
 theorem finite_halfDisk_frame_collar_limit {ι : Type*} [Finite ι] {n : ℕ}
     (g : ι → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

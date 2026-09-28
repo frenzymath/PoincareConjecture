@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphObstacleWidth
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,10 +7,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_straight_chart_separator
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {t : ℝ}

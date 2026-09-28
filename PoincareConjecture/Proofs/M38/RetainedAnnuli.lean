@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RetentionInterior
 import PoincareConjecture.Proofs.M38.CappingComponentLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
 
-
 def eventCapComplementOpen : TopologicalSpace.Opens (F.slice T).carrier :=
   ⟨(⋃ i, ((F.event T hT).caps i).carrier)ᶜ,
     (isClosed_iUnion_of_finite fun i =>
@@ -32,8 +23,6 @@ namespace EventCapCoordinates
 
 variable {F T hT} {i : Fin (F.event T hT).cap_count}
   (P : EventCapCoordinates F T hT i)
-
-
 
 theorem retained_gluing (z : UnitTwoSphere) (s : ℝ)
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0) :
@@ -56,7 +45,6 @@ theorem retained_gluing (z : UnitTwoSphere) (s : ℝ)
   rw [eventCapBall_map, hrad, hret]
   rfl
 
-
 theorem ball_annular_mem {x : StandardCapSpace} (hx : 1 < ‖x‖ ∧ ‖x‖ < 2) :
     P.ball.map x ∈ eventCapComplementOpen F T hT := by
   have hs : 1 - ‖x‖ ∈ Set.Ioo (-1 : ℝ) 0 := by
@@ -68,8 +56,6 @@ theorem ball_annular_mem {x : StandardCapSpace} (hx : 1 < ‖x‖ ∧ ‖x‖ < 
   rw [← retention_interior_image]
   exact Set.mem_image_of_mem _ (P.negative_interior
     ⟨(capUnitDirection x, 1 - ‖x‖), ⟨Set.mem_univ _, hs⟩, rfl⟩)
-
-
 
 theorem ball_mem_cap_complement_iff {x : StandardCapSpace}
     (hx : x ∈ Metric.ball (0 : StandardCapSpace) 2) :
@@ -84,24 +70,18 @@ theorem ball_mem_cap_complement_iff {x : StandardCapSpace}
   · intro h
     exact P.ball_annular_mem ⟨h, by simpa only [Metric.mem_ball, dist_zero_right] using hx⟩
 
-
 theorem ball_patch_open : IsOpen (P.ball.map '' Metric.ball (0 : StandardCapSpace) 2) := by
   have h := P.ball.open_embedding.isOpen_range
   change IsOpen (Set.range (P.ball.map ∘
     (Subtype.val : Metric.ball (0 : StandardCapSpace) 2 → StandardCapSpace))) at h
   simpa only [Set.range_comp, Subtype.range_coe_subtype, Set.ofPred_mem_eq] using h
 
-
-
 noncomputable def retainedAnnularPoint : eventCapComplementOpen F T hT :=
   ⟨P.ball.map capAnnularPoint.val, P.ball_annular_mem (by rw [capAnnularPoint_norm]; norm_num)⟩
-
 
 theorem retainedAnnularPoint_mem : P.retainedAnnularPoint.val ∈
     P.ball.map '' Metric.ball (0 : StandardCapSpace) 2 :=
   ⟨capAnnularPoint.val, capAnnularPoint.property, rfl⟩
-
-
 
 theorem retained_annulus_connected : IsConnected
     {y : eventCapComplementOpen F T hT | y.val ∈ P.ball.map '' Metric.ball 0 2} := by
@@ -140,8 +120,6 @@ theorem retained_annulus_connected : IsConnected
         exact hxy
   rw [← hrange]
   exact isConnected_range hf
-
-
 
 theorem retained_annulus_component_eq (y : eventCapComplementOpen F T hT)
     (hy : y.val ∈ P.ball.map '' Metric.ball (0 : StandardCapSpace) 2) :

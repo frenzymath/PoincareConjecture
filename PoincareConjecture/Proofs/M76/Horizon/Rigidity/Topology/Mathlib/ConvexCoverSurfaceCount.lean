@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.LowDimens
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -60,7 +52,6 @@ theorem surfaceEulerCount_eq_zero_of_space_empty
     have hempty : IsEmpty (K.FaceOfCard n) := ⟨fun s => by simpa [hfaces] using s.property.1⟩
     exact Nat.card_of_isEmpty
   simp only [surfaceEulerCount, hcard, Nat.cast_zero, sub_self, add_zero]
-
 
 theorem faces_eq_biUnion_of_subcomplex_cover
     (K : SimplicialComplex ℝ E) (C : ι → SimplicialComplex ℝ E)

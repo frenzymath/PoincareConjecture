@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M48.StaticCap
 import PoincareConjecture.Proofs.M48.StaticComponents
 import PoincareConjecture.Proofs.M48.StrongNeck
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
 
 theorem M33RegularHistoryData.canonical_control
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODELocalExistence
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerODE
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem closedChartEulerPhase_restrict {J C D : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) (x₀ : M)
@@ -45,10 +32,6 @@ theorem closedChartEulerPhase_restrict {J C D : Set ℝ} (F : RicciFlow n M J)
     (M08.hasFDerivAt_spatialWithin hU _
       (M08.chartActionPotential_closed_contDiffOn F hM04 T x₀ htime) (hDC hs) hz)
   simp only [M08.closedChartEulerPhase, hB, hP]
-
-
-
-
 
 theorem exists_closedChartEulerPhase_family {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) (x₀ : M)

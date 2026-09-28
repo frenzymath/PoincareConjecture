@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch19.AnnulusComparison
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Incidence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,16 +10,10 @@ open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
 
-
-
-
 def m64Intrinsic_cappedRegionCarrier {I : Type*}
     (face : I → SmoothFace AnnulusCoordinates) (V : Set AnnulusCoordinates) :
     Sum I Unit → Set AnnulusCoordinates :=
   Sum.elim (fun i => (face i).carrier) (fun _ => closure V)
-
-
-
 
 theorem m64Intrinsic_capped_region_cover
     {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)
@@ -111,9 +95,6 @@ theorem m64Intrinsic_capped_region_cover
   · intro p hp
     obtain ⟨i, hi⟩ := mem_iUnion.mp hp
     exact mem_iUnion.mpr ⟨Sum.inl i, hi⟩
-
-
-
 
 theorem m64Intrinsic_exists_capped_region_adjacent_faces
     {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)
@@ -226,9 +207,6 @@ theorem m64Intrinsic_exists_capped_region_adjacent_faces
     exact ⟨a, d, had, hmembers⟩
   choose left right hdistinct hexact using heach
   exact ⟨fun e => (left e, right e), hdistinct, hexact⟩
-
-
-
 
 theorem m64Intrinsic_capped_region_interiors
     {I : Type*} (face : I → SmoothFace AnnulusCoordinates)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainMaps
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

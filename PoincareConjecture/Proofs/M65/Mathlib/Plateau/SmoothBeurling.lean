@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.FourierL2Integral
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -53,13 +42,7 @@ private theorem integrable_beurlingFrequency (h : 𝓢(ℂ, ℂ)) :
     (measurable_beurlingFrequency h).aestronglyMeasurable
   exact Eventually.of_forall (norm_beurlingFrequency_le h)
 
-
-
-
 def beurlingSchwartz (h : 𝓢(ℂ, ℂ)) : ℂ → ℂ := 𝓕⁻ (beurlingFrequency h)
-
-
-
 
 theorem contDiff_beurlingSchwartz (h : 𝓢(ℂ, ℂ)) :
     ContDiff ℝ ∞ (beurlingSchwartz h) := by
@@ -67,9 +50,6 @@ theorem contDiff_beurlingSchwartz (h : 𝓢(ℂ, ℂ)) :
     Real.contDiff_fourier fun n _ => integrable_moment_beurlingFrequency h n
   change ContDiff ℝ ∞ (fun z => 𝓕⁻ (beurlingFrequency h) z)
   simpa only [Real.fourierInv_eq_fourier_neg, Function.comp_def] using hf.comp contDiff_neg
-
-
-
 
 theorem beurlingSchwartz_ae (h : 𝓢(ℂ, ℂ)) :
     beurlingSchwartz h =ᵐ[volume] beurlingL2 (h.toLp 2 volume) :=
@@ -100,10 +80,6 @@ private theorem frequencyDerivative_apply (h : 𝓢(ℂ, ℂ)) (v ξ : ℂ) :
   push_cast
   ring
 
-
-
-
-
 theorem fderiv_beurlingSchwartz (h : 𝓢(ℂ, ℂ)) (z v : ℂ) :
     fderiv ℝ (beurlingSchwartz h) z v = beurlingSchwartz (∂_{v} h) z := by
   have hf' : Integrable (fun ξ => ‖ξ‖ * ‖beurlingFrequency h ξ‖) := by
@@ -120,24 +96,14 @@ theorem fderiv_beurlingSchwartz (h : 𝓢(ℂ, ℂ)) (z v : ℂ) :
   simp_rw [frequencyDerivative_apply]
   exact (Real.fourierInv_eq_fourier_neg (beurlingFrequency (∂_{v} h)) z).symm
 
-
-
-
-
 def localizedBeurling (μ : 𝓢(ℂ, ℂ)) (hμ : HasCompactSupport (μ : ℂ → ℂ))
     (h : 𝓢(ℂ, ℂ)) : 𝓢(ℂ, ℂ) :=
   (hμ.mul_right (f' := beurlingSchwartz h)).toSchwartzMap
     ((μ.smooth ⊤).mul (contDiff_beurlingSchwartz h))
 
-
-
-
 theorem localizedBeurling_apply (μ : 𝓢(ℂ, ℂ)) (hμ : HasCompactSupport (μ : ℂ → ℂ))
     (h : 𝓢(ℂ, ℂ)) (z : ℂ) :
     localizedBeurling μ hμ h z = μ z * beurlingSchwartz h z := rfl
-
-
-
 
 theorem norm_localizedBeurling_toLp_le (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hbound : ∀ z, ‖μ z‖ ≤ k)
@@ -157,10 +123,6 @@ private theorem hasCompactSupport_lineDeriv (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) (v : ℂ) :
     HasCompactSupport ((∂_{v} μ : 𝓢(ℂ, ℂ)) : ℂ → ℂ) := by
   exact hμ.fderiv_apply (𝕜 := ℝ) v
-
-
-
-
 
 theorem lineDeriv_localizedBeurling (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) (h : 𝓢(ℂ, ℂ)) (v : ℂ) :

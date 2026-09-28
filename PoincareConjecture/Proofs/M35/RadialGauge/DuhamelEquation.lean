@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelTimeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem euclideanLaplacian_heatDuhamel {f : ℝ → V → F} {C D E t : ℝ}
     (ht : 0 ≤ t) (hfm : StronglyMeasurable (Function.uncurry f))
@@ -75,8 +64,6 @@ theorem euclideanLaplacian_heatDuhamel {f : ℝ → V → F} {C D E t : ℝ}
   rw [← tr.integral_comp_comm hgi]
   apply integral_congr_ae
   exact Eventually.of_forall (fun z => htr _)
-
-
 
 theorem heatDuhamel_solves_heat {f : ℝ → V → F} {C D E t : ℝ}
     (ht : 0 ≤ t) (hfm : StronglyMeasurable (Function.uncurry f))

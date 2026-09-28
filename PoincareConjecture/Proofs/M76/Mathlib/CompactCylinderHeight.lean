@@ -3,26 +3,11 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace StableCylinder
-
-
-
-
-
 
 theorem exists_uniform_height_bound {X : Type*} [TopologicalSpace X] [CompactSpace X]
     (v : X × ℝ → ℝ) (hv : ContinuousOn v (univ ×ˢ Ioo (-1) 1))

@@ -1,19 +1,6 @@
 import Mathlib.Analysis.Fourier.AddCircle
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -23,11 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64L1Fourier_zero_continuous_pairing
     {T : ℝ} (hT : 0 < T) {f : ℝ → ℂ}
@@ -67,11 +49,6 @@ theorem m64L1Fourier_zero_continuous_pairing
     hspan A.isClosed_ker
   rw [span_fourier_closure_eq_top] at hfull
   exact hfull (Submodule.mem_top : g ∈ (⊤ : Submodule ℂ C(AddCircle T, ℂ)))
-
-
-
-
-
 
 theorem m64L1Fourier_eq_zero
     {T : ℝ} (hT : 0 < T) {f : ℝ → ℂ}

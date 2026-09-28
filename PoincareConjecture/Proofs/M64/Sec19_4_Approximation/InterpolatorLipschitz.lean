@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellLipschitzG
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorLocalLipschitz
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorMapFields
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_interpolator_rectangle_lipschitz
     (g : RiemannianMetric n M) {D : LeviCivitaData g}

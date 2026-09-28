@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsFirstFailure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M47
-
 
 theorem exists_source_initial_search_duration {A m : ℝ} (hA : 0 < A) (hm : 0 < m) :
     ∃ L d : ℝ, 1 ≤ L ∧ 2 / m ≤ L ∧ 0 < d ∧ d ≤ m ∧ d ≤ 1 ∧
@@ -32,8 +22,6 @@ theorem exists_source_initial_search_duration {A m : ℝ} (hA : 0 < A) (hm : 0 <
       _ = 1 := mul_inv_cancel₀ hcoef.ne'
   exact ⟨L, d, hL, le_max_right _ _, hd, min_le_left _ _,
     (min_le_right _ _).trans (min_le_left _ _), by nlinarith only [hshort]⟩
-
-
 
 theorem source_initial_search_anchor_bounds
     {m M d H age : ℝ} (hm : 0 < m) (hd : 0 < d) (hdm : d ≤ m) (hdOne : d ≤ 1)
@@ -70,8 +58,6 @@ theorem source_initial_search_anchor_bounds
     have hratio : 3 * d / (4 * M) ≤ 3 * d / (4 * H) :=
       div_le_div_of_nonneg_left (by positivity) (by positivity) (by linarith only [hHM])
     exact hraw.trans_le (sub_le_sub_left hratio _)
-
-
 
 theorem source_initial_search_physical_clock
     {base birth Q q u : ℝ} (hQ : 0 < Q) (hq : 0 < q) :

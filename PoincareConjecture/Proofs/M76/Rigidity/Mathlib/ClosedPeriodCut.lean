@@ -1,13 +1,5 @@
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace AddCircle
 
 variable {p : ℝ} [Fact (0 < p)]
 
-
-
 theorem coe_eq_zero_iff_endpoints {t : ℝ} (ht : t ∈ Icc 0 p) :
     (t : AddCircle p) = 0 ↔ t = 0 ∨ t = p := by
   by_cases htp : t = p
@@ -25,9 +15,6 @@ theorem coe_eq_zero_iff_endpoints {t : ℝ} (ht : t ∈ Icc 0 p) :
     simp only [coe_period, or_true]
   · rw [coe_eq_zero_iff_of_mem_Ico ⟨ht.1, lt_of_le_of_ne ht.2 htp⟩]
     simp only [htp, or_false]
-
-
-
 
 theorem coe_eq_coe_iff_eq_or_endpoints {t u : ℝ}
     (ht : t ∈ Icc 0 p) (hu : u ∈ Icc 0 p) :

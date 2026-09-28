@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompetitors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_flat_intrinsic_path (g : RiemannianMetric 3 M)
     {U : Set M} {γ : ℝ → M} {a b : ℝ}
@@ -72,8 +60,6 @@ theorem exists_flat_intrinsic_path (g : RiemannianMetric 3 M)
     simp [hzero t ht]
   · filter_upwards [Ioi_mem_nhds hb'b] with t ht
     simp [hone t ht]
-
-
 
 theorem exists_intrinsic_splice (g : RiemannianMetric 3 M)
     {U : Set M} {α β : ℝ → M}
@@ -127,9 +113,6 @@ theorem exists_intrinsic_splice (g : RiemannianMetric 3 M)
     exists_unit_interval_path g zero_le_two hτ.contMDiffOn
       (fun t _ => hτU (mem_univ t))
   exact ⟨σ, h0.trans hτ0, h1.trans hτ2, hσ, hσU, hσlen.trans hτlen⟩
-
-
-
 
 theorem exists_intrinsic_subarc_replacement (g : RiemannianMetric 3 M)
     {U : Set M} {γ α : ℝ → M} {a b c d : ℝ}

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.MorseSquareSqueeze
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +31,6 @@ private theorem disk_preserved_of_fixed_boundary
     D.toHomeomorph hdim hbdy
   change (H ∘ D) '' closedBall (0 : E2) 1 = D '' closedBall 0 1 at h
   simpa only [image_comp] using h
-
-
-
 
 theorem exists_disk_pair_isotopy_fixing_entire_negative_morse_square
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

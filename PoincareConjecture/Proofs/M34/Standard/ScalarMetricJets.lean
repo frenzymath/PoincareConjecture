@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem scalarCurvature_eq_inverse_gram
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -31,8 +19,6 @@ theorem scalarCurvature_eq_inverse_gram
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact bilinear_sum_basis_eq_inverse_gram (M13.ricciLinear D x) b (g.orthonormalBasis x)
-
-
 
 theorem tendsto_scalarCurvature_of_finite_scalar_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}

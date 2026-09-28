@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteComplexProjectionChart
 import PoincareConjecture.Proofs.M76.Mathlib.NormalizedProjectionLeaves
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_leafProjection_chart (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)

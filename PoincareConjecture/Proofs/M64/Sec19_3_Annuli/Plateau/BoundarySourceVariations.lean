@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTargetLabelV
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseSourcePullback
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff ENNReal Manifold
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem smooth_periodic_source_variation
     {theta : ℝ → ℝ} (htheta : ContDiff ℝ ∞ theta)
@@ -60,9 +46,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem exists_smooth_horizontal_variation
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

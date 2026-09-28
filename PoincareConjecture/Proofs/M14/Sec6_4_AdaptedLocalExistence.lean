@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoefficients
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +32,6 @@ private theorem horizontal_three_eval_heq
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p) (b : G.gaugeCover.index)
-
-
-
 
 theorem exists_gaugeHorizontalUnitAdaptedField
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

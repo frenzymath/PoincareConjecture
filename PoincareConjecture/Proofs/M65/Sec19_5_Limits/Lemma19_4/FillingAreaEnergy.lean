@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BoundaryMotionTrac
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.EnergyIntegral
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.AttainmentRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem family_motion [T2Space M] [CompactSpace M]
     {a b : ℝ} (F : RicciFlow 3 M (Icc a b)) {J : Set ℝ} (hJ : IsOpen J)
@@ -329,9 +318,6 @@ private theorem ambientColumn_eq {g : RiemannianMetric 3 M}
 set_option maxHeartbeats 1200000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem disk_energy_firstVariation {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
     {T : Set ℝ} (hT : IsOpen T) (hTF : T ⊆ Ioo a b) (Phi : ℝ × M → M)

@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -20,14 +11,10 @@ namespace PoincareConjecture.M60
 variable {E F M : Type*} [NormedAddCommGroup E] [NormedAddCommGroup F]
   [TopologicalSpace M]
 
-
-
 noncomputable def supportedChartExtension (e : OpenPartialHomeomorph M E)
     (V : E → F) : M → F := by
   classical
   exact fun p => if p ∈ e.source then V (e p) else 0
-
-
 
 theorem supportedChartExtension_of_mem (e : OpenPartialHomeomorph M E)
     (V : E → F) {p : M} (hp : p ∈ e.source) :
@@ -35,8 +22,6 @@ theorem supportedChartExtension_of_mem (e : OpenPartialHomeomorph M E)
   simp only [supportedChartExtension, if_pos hp]
 
 variable [T2Space M]
-
-
 
 theorem tsupport_supportedChartExtension_subset (e : OpenPartialHomeomorph M E)
     {V : E → F} (hV : HasCompactSupport V) (hsource : tsupport V ⊆ e.target) :
@@ -52,8 +37,6 @@ theorem tsupport_supportedChartExtension_subset (e : OpenPartialHomeomorph M E)
     simpa only [mem_support, supportedChartExtension_of_mem e V hp'] using hp)
   exact ⟨e p, hVp, e.left_inv hp'⟩
 
-
-
 theorem hasCompactSupport_supportedChartExtension (e : OpenPartialHomeomorph M E)
     {V : E → F} (hV : HasCompactSupport V) (hsource : tsupport V ⊆ e.target) :
     HasCompactSupport (supportedChartExtension e V) :=
@@ -62,8 +45,6 @@ theorem hasCompactSupport_supportedChartExtension (e : OpenPartialHomeomorph M E
 
 variable {H : Type*} [TopologicalSpace H] [NormedSpace ℝ E] [NormedSpace ℝ F]
   [ChartedSpace H M] {I : ModelWithCorners ℝ E H}
-
-
 
 theorem contMDiff_supportedChartExtension (e : OpenPartialHomeomorph M E)
     (he : ContMDiffOn I 𝓘(ℝ, E) ∞ e e.source) {V : E → F}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_LocalTestField
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +24,6 @@ private theorem horizontal_transport_val {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
-
 theorem variationField_supportedGauge_val_at (V : M14LVariationData G p R) {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval a b)
     (hV : ∀ v, V.squareFamily s v = supportedGaugeFamily R j lift η (s, v))
@@ -53,8 +42,6 @@ theorem variationField_supportedGauge_val_at (V : M14LVariationData G p R) {s : 
     funext (fun v => (hV v).trans (supportedGaugeFamily_eq_gauge R j lift η hright))
   rw [heq]
   exact gaugeShiftFamily_parameter_mfderiv R j lift η s
-
-
 
 theorem variationField_supportedGauge_eq_zero (V : M14LVariationData G p R) {s : ℝ}
     (hV : ∀ v, V.squareFamily s v = supportedGaugeFamily R j lift η (s, v))

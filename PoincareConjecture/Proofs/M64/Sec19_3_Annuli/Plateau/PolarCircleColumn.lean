@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarStrongApproximation
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,14 +11,10 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 theorem m64AngularVector_periodic : Function.Periodic angularVector curvePeriod := by
   intro x
   ext i
   fin_cases i <;> simp [angularVector, curvePeriod, Real.sin_add_two_pi, Real.cos_add_two_pi]
-
-
 
 theorem m64MorreyPolarAngularColumn_circle
     {E : Type*} [AddCommMonoid E] [Module ℝ E]
@@ -37,8 +27,6 @@ theorem m64MorreyPolarAngularColumn_circle
   unfold m64MorreyPolarAngularColumn
   rw [m64MorreyPolarStrip_fderiv]
   simp [annulusPoint]
-
-
 
 theorem m64MorreyPolarAngularColumn_periodic
     {E : Type*} [AddCommMonoid E] [Module ℝ E]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.SurgeryTransitionChart
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 import PoincareConjecture.Proofs.M36.PolarContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

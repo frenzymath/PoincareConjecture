@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCir
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.ParametrizedCap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Clearance
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +19,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
-
 
 theorem exists_capped_sphere_of_cylindrical_tube_with_disk_and_range_for_small_scale
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -209,9 +204,6 @@ theorem exists_capped_sphere_of_cylindrical_tube_with_disk_and_range_for_small_s
   refine ⟨?_, hgboundary p⟩
   simpa only [one_smul] using (hmatch p 1 (by simpa using hη)).2.2
 
-
-
-
 theorem exists_capped_sphere_of_cylindrical_tube_with_disk_and_range
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {v : E3} (hv : ‖v‖ = 1) (c : Real) {ε : Real} (hε : 0 < ε)
@@ -275,8 +267,6 @@ theorem exists_capped_sphere_of_cylindrical_tube_with_disk_and_range
   obtain ⟨d, hd, hdi, hds, hdc, hdb, hdcenter, hdneg, q, g, hg⟩ := hcap (-δ / 2) hsδ hs
   exact ⟨d, hd, hdi, hds, hdc, hdb, hdcenter, hdneg, q, -δ / 2, hs, g, hg⟩
 
-
-
 theorem exists_capped_sphere_of_cylindrical_tube_with_disk
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {v : E3} (hv : ‖v‖ = 1) (c : Real) {ε : Real} (hε : 0 < ε)
@@ -334,9 +324,6 @@ theorem exists_capped_sphere_of_cylindrical_tube_with_disk
       e hesource he hei hecenter henegative
   exact ⟨d, hd, hdi, hds, hdc, hdb, hdcenter, hdneg,
     q, s, hs, g, hg, hgi, hgd, hgb, hgn, hgw, hgcollar, hgdis, hsplice⟩
-
-
-
 
 theorem exists_capped_sphere_of_cylindrical_tube
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

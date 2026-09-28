@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalProtectedExteriorDomain
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

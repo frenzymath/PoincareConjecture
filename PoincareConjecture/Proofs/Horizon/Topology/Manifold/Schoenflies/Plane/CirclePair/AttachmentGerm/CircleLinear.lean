@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.LinearBall
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +20,6 @@ private theorem linearBall_mem_sphere (A : E2 ≃L[Real] E2) (p : S1) :
     ne_zero_of_mem_unit_sphere p (A.injective (h.trans A.map_zero.symm))
   rw [LinearBall.apply_of_mem_sphere A p.property, mem_sphere_zero_iff_norm, norm_smul]
   simp [norm_ne_zero_iff.mpr hA]
-
 
 def linearAction (A : E2 ≃L[Real] E2) : Diffeomorph (𝓡 1) (𝓡 1) S1 S1 ∞ where
   toFun p := ⟨LinearBall.neighborhood A p, linearBall_mem_sphere A p⟩
@@ -57,7 +54,6 @@ theorem linearAction_isometry_apply (A : E2 ≃ₗᵢ[Real] E2) (p : S1) :
   rw [linearAction_apply]
   simp only [LinearIsometryEquiv.coe_toContinuousLinearEquiv,
     A.norm_map, norm_eq_of_mem_sphere, inv_one, one_smul]
-
 
 theorem linearAction_hemisphere (p : S1)
     (L : Hemisphere.Plane (p : E2) ≃L[Real] Hemisphere.Plane (p : E2))

@@ -6,21 +6,9 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.AsymptoticCertificate
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.NoncollapsingCertificate
 import PoincareConjecture.Proofs.M34.Standard.CylinderAtlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M34
-
-
 
 theorem repairedStandardCapExistenceData_of_lifetime_ge_one
     (P : M34StandardCapPredecessors) {g0 : StandardInitialMetric}
@@ -42,9 +30,6 @@ theorem repairedStandardCapExistenceData_of_lifetime_ge_one
     asymptotic := fun _ ht _ he => standardFlowAsymptoticCertificate_exists P.curvature E0 F A he ht
     noncollapsing := standardFlow_noncollapsingCertificate F P
   }⟩
-
-
-
 
 theorem repairedStandardCapExistenceTheory_of_lifetime_ge_one
     (P : M34StandardCapPredecessors)

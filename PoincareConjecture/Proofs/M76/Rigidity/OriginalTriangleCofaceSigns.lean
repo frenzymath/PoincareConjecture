@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleSignWitness
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SingleVertexAffineSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry SignType
@@ -21,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem sign_eq_on_triangle_coface
     (p q : (T.marked 2).vertices) {s t : Finset (T.index → ℝ × V3)}

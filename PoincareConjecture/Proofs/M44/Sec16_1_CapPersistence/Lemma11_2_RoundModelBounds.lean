@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundModelCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M44
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem scalarCurvature_eq_six_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
@@ -37,9 +26,6 @@ theorem scalarCurvature_eq_six_of_sectional_one (D : LeviCivitaData g)
   change (∑ i, ∑ j, D.curvatureTensor x (b i) (b j) (b i) (b j)) = 6
   simp_rw [curvatureTensor_eq_metricGram_of_sectional_one D hsec, hb]
   norm_num [hdim, Fin.sum_univ_succ]
-
-
-
 
 theorem curvatureTensorNorm_le_nine_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
@@ -70,9 +56,6 @@ theorem curvatureTensorNorm_le_nine_of_sectional_one (D : LeviCivitaData g)
       exact Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ =>
         Finset.sum_le_sum fun k _ => Finset.sum_le_sum fun l _ => hcomponent i j k l
     _ = 9 ^ 2 := by norm_num [hdim]
-
-
-
 
 theorem curvatureDerivativeNorm_le_nine_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →

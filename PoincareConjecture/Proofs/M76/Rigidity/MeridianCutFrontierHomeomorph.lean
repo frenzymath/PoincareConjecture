@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierPL
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierInjective
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,8 +20,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
-
-
 
 theorem exists_meridianCutFrontier_homeomorph (P : OriginalDiskProduct e R j)
     (he : PLDomain e R) (hR : IsCompact R)

@@ -1,17 +1,8 @@
-
-
-
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteComplement
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,8 +10,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
 
 theorem exists_equiv_of_transverse_functionals
     {a b : EuclideanSpace ℝ (Fin 2) →L[ℝ] ℝ}
@@ -50,8 +39,6 @@ theorem exists_equiv_of_transverse_functionals
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mpr hsurj
   exact ⟨(LinearEquiv.ofBijective A.toLinearMap ⟨hinj, hsurj⟩).toContinuousLinearEquiv,
     fun _ => rfl⟩
-
-
 
 theorem exists_local_coordinates_of_transverse_levels
     {f g : EuclideanSpace ℝ (Fin 2) → ℝ} {p v : EuclideanSpace ℝ (Fin 2)}
@@ -131,8 +118,6 @@ private theorem mem_intervalSide {a x b y : ℝ} (hy : y ∈ Ioo a b) (hne : y �
   · exact ⟨false, hy.1, h⟩
   · exact ⟨true, h, hy.2⟩
 
-
-
 theorem exists_four_sectors_of_transverse_levels
     {f g : EuclideanSpace ℝ (Fin 2) → ℝ} {p v : EuclideanSpace ℝ (Fin 2)}
     (hf : ContDiffAt ℝ ∞ f p) (hg : ContDiffAt ℝ ∞ g p)
@@ -183,8 +168,6 @@ theorem exists_four_sectors_of_transverse_levels
       obtain ⟨j, hj⟩ := mem_intervalSide hq.2 hnot.2
       exact mem_iUnion.mpr ⟨(i, j), q, ⟨hi, hj⟩, rfl⟩
 
-
-
 theorem exists_finite_complement_of_transverse_levels
     {f g : EuclideanSpace ℝ (Fin 2) → ℝ} {p v : EuclideanSpace ℝ (Fin 2)}
     (hf : ContDiffAt ℝ ∞ f p) (hg : ContDiffAt ℝ ∞ g p)
@@ -200,8 +183,6 @@ theorem exists_finite_complement_of_transverse_levels
   exact ⟨W, hopen, hp, hsub,
     Poincare.Topology.finite_connectedComponents_of_finite_preconnected_cover_set U
       (fun i => (hU i).2.isConnected.isPreconnected) hcover⟩
-
-
 
 theorem exists_local_coordinates_of_regular_level
     {f : EuclideanSpace ℝ (Fin 2) → ℝ} {p : EuclideanSpace ℝ (Fin 2)}
@@ -231,8 +212,6 @@ theorem exists_local_coordinates_of_regular_level
       hdf v.property hvg
   refine ⟨F, hp, fun z => congrArg Prod.fst (hF z), hcont, ?_⟩
   simpa only [hF] using hinv
-
-
 
 theorem exists_two_sectors_of_regular_level
     {f : EuclideanSpace ℝ (Fin 2) → ℝ} {p : EuclideanSpace ℝ (Fin 2)}
@@ -272,8 +251,6 @@ theorem exists_two_sectors_of_regular_level
       simp only [mem_ofPred_eq, hcoordinate q hq] at hnot
       obtain ⟨i, hi⟩ := mem_intervalSide hq.1 hnot
       exact mem_iUnion.mpr ⟨i, q, ⟨hi, hq.2⟩, rfl⟩
-
-
 
 theorem exists_finite_complement_of_regular_level
     {f : EuclideanSpace ℝ (Fin 2) → ℝ} {p : EuclideanSpace ℝ (Fin 2)}

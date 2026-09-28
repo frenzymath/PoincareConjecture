@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCircleA
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalClass
 import Mathlib.Analysis.Complex.RealDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open Set Filter Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65StrictTrace
-
-
 
 def puncturedArc (p : LoopCircle) (t : ℝ) : LoopCircle :=
   ⟨orthonormalBasisOneI.repr
@@ -37,13 +26,9 @@ private theorem puncturedArc_complex (p : LoopCircle) (t : ℝ) :
   simp only [puncturedArc, LinearIsometryEquiv.symm_apply_apply,
     boundaryCoordinate, Circle.coe_exp, mul_comm Complex.I (t : ℂ)]
 
-
-
 theorem puncturedArc_continuous (p : LoopCircle) : Continuous (puncturedArc p) :=
   (orthonormalBasisOneI.repr.continuous.comp
     ((contDiff_boundaryCoordinate _).continuous.comp Complex.continuous_ofReal)).subtype_mk _
-
-
 
 theorem puncturedArc_arg (p z : LoopCircle) :
     puncturedArc p (m65WeakCircleArg p z) = z := by
@@ -69,8 +54,6 @@ theorem puncturedArc_arg (p z : LoopCircle) :
   simp only [neg_div, neg_mul_neg]
   exact mul_div_cancel₀ _ hp0
 
-
-
 theorem arg_puncturedArc (p : LoopCircle) {t : ℝ} (ht : t ∈ Ioo (-Real.pi) Real.pi) :
     m65WeakCircleArg p (puncturedArc p t) = t := by
   have hp : orthonormalBasisOneI.repr.symm (p : LoopPlane) ≠ 0 := by
@@ -84,8 +67,6 @@ theorem arg_puncturedArc (p : LoopCircle) {t : ℝ} (ht : t ∈ Ioo (-Real.pi) R
   rw [he]
   exact Circle.arg_exp ht.1 ht.2.le
 
-
-
 theorem weakCircleArg_mem {p z : LoopCircle} (hz : z ≠ p) :
     m65WeakCircleArg p z ∈ Ioo (-Real.pi) Real.pi := by
   refine ⟨neg_pi_lt_arg _, lt_of_le_of_ne (arg_le_pi _) ?_⟩
@@ -96,8 +77,6 @@ theorem weakCircleArg_mem {p z : LoopCircle} (hz : z ≠ p) :
   apply orthonormalBasisOneI.repr.symm.injective
   rw [puncturedArc_complex, Circle.coe_exp, Complex.exp_pi_mul_I]
   simp
-
-
 
 theorem puncturedArc_hasDerivAt (p : LoopCircle) (t : ℝ) :
     ∃ v : LoopPlane, v ≠ 0 ∧
@@ -113,9 +92,6 @@ theorem puncturedArc_hasDerivAt (p : LoopCircle) (t : ℝ) :
     exact mul_ne_zero Complex.I_ne_zero (mul_ne_zero hp (exp_ne_zero _)) hz
   · exact orthonormalBasisOneI.repr.toContinuousLinearEquiv.hasFDerivAt.comp_hasDerivAt t
       (hasDerivAt_boundaryCoordinate _ (t : ℂ)).comp_ofReal
-
-
-
 
 theorem exists_collapsed_arc (beta : C(LoopCircle, LoopCircle))
     (hbeta : M65WeakCircleParameter beta) (hnot : ¬Function.Injective beta) :

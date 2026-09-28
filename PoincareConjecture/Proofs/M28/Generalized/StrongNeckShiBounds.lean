@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Local
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_source_neck_quarter_derivative_bound
     (hShi : LocalCurvatureDerivativeEstimates.{u})
@@ -120,8 +104,6 @@ theorem exists_source_neck_quarter_derivative_bound
   rw [show s + 1 / 2 + -(1 / 2 : ℝ) = s by ring] at hd
   refine hd.trans (div_le_div_of_nonneg_left hC.le (by positivity) ?_)
   exact Real.rpow_le_rpow (by norm_num) (by linarith [hs.1]) (by positivity)
-
-
 
 theorem exists_source_neck_terminal_derivative_bound
     (hShi : LocalCurvatureDerivativeEstimates.{u})

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainMaps
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace PoincareConjecture.M76
 variable {X Y E : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {ι κ : Type*} {R : Set X} {T : Set Y}
-
-
-
-
 
 theorem ChartwisePLMap.finitePiecewiseAffineOn_fixed_chart
     {d : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}

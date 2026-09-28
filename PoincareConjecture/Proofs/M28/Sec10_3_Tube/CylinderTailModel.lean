@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderIntervalModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderEndRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
-
-
 
 theorem exists_reflected_model (T : OpenCylinderModel U) :
     ∃ T' : OpenCylinderModel U,
@@ -53,8 +43,6 @@ theorem exists_reflected_model (T : OpenCylinderModel U) :
     have hs' : s = 1 / 2 := hs
     subst s
     exact ⟨(q, 1 / 2), ⟨mem_univ _, rfl⟩, hmiddle q⟩
-
-
 
 theorem exists_positive_tail_model (T : OpenCylinderModel U) {a : ℝ}
     (ha : 0 < a) (ha' : a < 1) :

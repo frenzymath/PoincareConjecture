@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.CompactCutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem integral_laplacian_eq_zero_of_subharmonic_of_neg_subharmonic
     (D : LeviCivitaData g) {f : M → ℝ} (hf : Continuous f)
@@ -94,8 +79,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
 
-
-
 theorem busemann_weak_harmonic_of_distributional_subharmonic
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -115,8 +98,6 @@ theorem busemann_weak_harmonic_of_distributional_subharmonic
   intro θ hθ hθc hθ0
   simpa only [g.busemann_reverse_eq_neg D hm hcomplete hRic hγ] using hsubrev θ hθ hθc hθ0
 
-
-
 theorem busemann_smooth_harmonic_of_distributional_subharmonic
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -133,8 +114,6 @@ theorem busemann_smooth_harmonic_of_distributional_subharmonic
   D.smooth_harmonic_of_distance_lipschitz_of_weak_harmonic (by omega)
     (g.continuous_busemann hγ) (g.abs_busemann_sub_le hγ)
     (g.busemann_weak_harmonic_of_distributional_subharmonic D hm hcomplete hRic hγ hsub hsubrev)
-
-
 
 theorem busemann_properties_of_distributional_subharmonic
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)

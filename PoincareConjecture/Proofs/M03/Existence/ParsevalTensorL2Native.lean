@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorDecodeNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 400000
@@ -150,7 +142,6 @@ def projectionL2LinearMap : Lp (Coefficients iota) 2 μ →ₗ[ℝ] Lp (Coeffici
     simp only [RingHom.id_apply]
     simp only [hc, hi, ho, Pi.smul_apply, hf, map_smul]
 
-
 def projectionL2 : Lp (Coefficients iota) 2 μ →L[ℝ] Lp (Coefficients iota) 2 μ :=
   (projectionL2LinearMap g F hF μ).mkContinuous 1 (fun f => by
     change ‖projectionL2Fun g F hF μ f‖ ≤ 1 * ‖f‖
@@ -194,7 +185,6 @@ theorem projectionL2_tensorToLp (h : TensorProbeNative.SmoothTensor (n := n) (M 
     TensorProbeNative.tensorToLp_coe F μ h] with x hp ht
   rw [hp, ht]
   exact nativeProjection_probes g F hF h x
-
 
 theorem projectionL2_eq_self_of_mem_tensorL2 {f : Lp (Coefficients iota) 2 μ}
     (hf : f ∈ TensorProbeNative.tensorL2 F μ) : projectionL2 g F hF μ f = f := by

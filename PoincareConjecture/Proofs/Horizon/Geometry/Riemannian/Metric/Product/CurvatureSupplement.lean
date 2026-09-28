@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curvature
 
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false
@@ -77,7 +69,6 @@ private theorem product_ricci_scalar_and_sectional (z : M × ℝ) :
     (DG.gradient h (i z.1)) (hu _) (ho _) hR hn hK hsec
 
 include hmetric in
-
 
 theorem ricci_eq_of_line_product (z : M × ℝ) (v w : TangentSpace (𝓡 n) z.1) :
     DG.ricci (e z)

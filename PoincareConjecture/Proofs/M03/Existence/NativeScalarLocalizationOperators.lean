@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeChartScalarLocalization
 import PoincareConjecture.Proofs.M03.Existence.NativeChartLocalizationData
 import PoincareConjecture.Proofs.M03.Existence.FiniteLocalizationCompactnessNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -55,7 +47,6 @@ theorem scalarCutoff_tsupport_subset (a : L.patches) :
   (tsupport_chartScalar_subset a.val.1.val (L.weight_compactSupport a)
     (L.weight_support_source a) (L.weight_zero_off_support a)).trans
       (L.supportImage_subset_region a)
-
 
 def localizationL2 (a : L.patches) : Lp ℝ 2 d.measure →L[ℝ] ScalarL2 n :=
   (cutoffL2 (L.scalarCutoff a) (L.region_open a).measurableSet).comp
@@ -140,7 +131,6 @@ theorem reconstructionMeasureBound (a : L.patches) :
   (d.exists_measure_restrict_le_chart a.val.1.val (L.weight_compactSupport a)
     (L.weight_support_source a)).choose_spec.2
 
-
 def reconstructionL2 (a : L.patches) : ScalarL2 n →L[ℝ] Lp ℝ 2 d.measure :=
   chartExtensionL2 (L.chart a) (isClosed_tsupport (L.weight a)).measurableSet
     (L.weight_support_source a) (L.reconstructionConstant_ne_top a) (L.reconstructionMeasureBound a)
@@ -158,7 +148,6 @@ theorem reconstruction_localization_toLp_eq (a : L.patches) {f : M → ℝ}
   exact chartExtension_chartScalar a.val.1.val ((L.weight_smooth a).mul hf)
     (L.weight_compactSupport a) (L.weight_support_source a) (L.localizedProduct_zero a f)
     (L.globalProduct_memLp a hf) (L.reconstructionConstant_ne_top a) (L.reconstructionMeasureBound a)
-
 
 theorem sum_reconstruction_localization (f : M → ℝ)
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hfμ : MemLp f 2 d.measure) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem exists_original_closedStar_image_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

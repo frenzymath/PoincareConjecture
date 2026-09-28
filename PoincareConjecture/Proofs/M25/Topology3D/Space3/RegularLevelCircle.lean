@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelPeriod
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.PeriodicCurveSmooth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_regular_collar_component_circle
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

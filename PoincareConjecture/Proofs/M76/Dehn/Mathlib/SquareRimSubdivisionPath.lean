@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.UniformPolygonCorrespondence
 import PoincareConjecture.Proofs.M76.Wall.SquareRimCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Polygon
@@ -19,8 +10,6 @@ open scoped unitInterval
 namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
-
-
 
 theorem squareRimLoop_quarter (i : Fin 4) (s : unitInterval) {u : ℝ}
     (hu : u ∈ Icc (0 : ℝ) 1) (hs : 4 * (s : ℝ) = (i : ℝ) + u) :
@@ -32,9 +21,6 @@ theorem squareRimLoop_quarter (i : Fin 4) (s : unitInterval) {u : ℝ}
     split_ifs <;> ext k <;> fin_cases k <;>
       norm_num [squareRimPolygon, squareRimVertex, finRotate_apply, Fin.add_def,
         AffineMap.lineMap_apply_module] <;> linarith [hu.1, hu.2]
-
-
-
 
 theorem squareRimLoop_uniform_subedge (m : ℕ) (k : Fin (4 * (m + 1)))
     (a s : unitInterval)

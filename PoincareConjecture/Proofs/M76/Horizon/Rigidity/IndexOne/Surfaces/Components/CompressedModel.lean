@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.CommonComponent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Incidence.TwoRimModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar
 
@@ -25,7 +17,6 @@ local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "Q2" => sphere (0 : V2) 1
 
 open Classical in
-
 
 theorem exists_compressed_sourceSurface_common_component_model
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

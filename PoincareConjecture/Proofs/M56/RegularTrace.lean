@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M56.ComponentTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m56Trace_regularExtension {F : SurgeryFlowData.{u}} {a b : ℝ}
     (P : M56ComponentTrace F a) (ha0 : 0 ≤ a) (hab : a < b)
@@ -76,8 +66,6 @@ noncomputable def m56Trace_regularExtension {F : SurgeryFlowData.{u}} {a b : ℝ
     have hpre : (F.event s.1 hs).tMinus ≤ a := (F.event s.1 hs).tMinus_lt.le.trans hsa
     simpa only [p, dif_pos hsa, dif_pos hpre] using
       P.inherited ⟨s.1, s.2.1, hsa⟩ hs hpost
-
-
 
 theorem m56Trace_regularExtension_terminal {F : SurgeryFlowData.{u}} {a b : ℝ}
     (P : M56ComponentTrace F a) (ha0 : 0 ≤ a) (hab : a < b)

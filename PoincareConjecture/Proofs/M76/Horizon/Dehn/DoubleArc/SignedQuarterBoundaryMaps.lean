@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeJointMaps
 import PoincareConjecture.Proofs.M76.Mathlib.NestedPLBallBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

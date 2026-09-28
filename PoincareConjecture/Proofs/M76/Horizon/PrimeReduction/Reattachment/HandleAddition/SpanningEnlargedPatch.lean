@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalSpherePatchReplacement
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -22,7 +13,6 @@ local notation "Rect" => J ×ˢ I
 local notation "Wide" => Set.prod (Icc (-1 : ℝ) 2) (Icc (-1 : ℝ) 1)
 local notation "WideRim" => Set.union (Set.prod ({-1,2} : Set ℝ) (Icc (-1 : ℝ) 1))
   (Set.prod (Icc (-1 : ℝ) 2) ({-1,1} : Set ℝ))
-
 
 theorem exists_original_PL_map_union_of_disk_carriers
     {X E ι : Type*} [TopologicalSpace X]
@@ -39,7 +29,6 @@ theorem exists_original_PL_map_union_of_disk_carriers
     (hKs.symm ▸ hf) (hLs.symm ▸ hg)
     (fun x hx hy => hag x ⟨hKs.subset hx,hLs.subset hy⟩)
   exact ⟨h,by simpa only [hKs,hLs] using hh,hKs ▸ hf',hLs ▸ hg'⟩
-
 
 theorem exists_original_three_panel_patch
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -173,8 +162,6 @@ theorem exists_original_three_panel_patch
   · exact False.elim (hseparate w z hw hz h.symm)
   · exact hcrossR z w hz hw h
   · exact hARi (hki (hARmap hz) (hARmap hw) ((hfR' z hz).symm.trans (h.trans (hfR' w hw))))
-
-
 
 theorem exists_original_enlarged_spanning_patch
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

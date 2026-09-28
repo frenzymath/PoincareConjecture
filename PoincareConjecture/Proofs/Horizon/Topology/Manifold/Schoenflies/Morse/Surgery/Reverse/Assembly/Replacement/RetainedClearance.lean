@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.RetainedCollar
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -39,8 +37,6 @@ private theorem prepared_eq_tube_of_height_projection {y : E3}
       closedBall 0 1) ∩ range (fun p => S.D (f p)) from ⟨hplane, hy⟩)
   exact ⟨q, heq⟩
 
-
-
 theorem not_mem_retainedPlus_of_height_projection {y : E3}
     (hheight : |inner Real v y - c| ≤ 2 * S.a)
     (hproj : (Hemisphere.Plane v).orthogonalProjectionOnto y ∈ S.A '' closedBall 0 1)
@@ -57,7 +53,6 @@ theorem not_mem_retainedPlus_of_height_projection {y : E3}
         have hh := (abs_le.mp hheight).1
         linarith [S.a_lt_quarter_ε, S.a_pos]) ht) hpt
   · exact S.tube_not_mem_retainedPlus q ⟨lt_of_not_ge ht, by linarith⟩ hpt
-
 
 theorem not_mem_retainedMinus_of_height_projection {y : E3}
     (hheight : |inner Real v y - c| ≤ 2 * S.a)

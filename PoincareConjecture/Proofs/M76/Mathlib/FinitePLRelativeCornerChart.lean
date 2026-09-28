@@ -1,29 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCornerStraightening
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
-
 
 theorem exists_nonvertex_relative_corner_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

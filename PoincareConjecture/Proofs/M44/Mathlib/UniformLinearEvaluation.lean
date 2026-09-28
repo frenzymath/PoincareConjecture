@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.UniformCompactDerivative
 import Mathlib.Analysis.Normed.Operator.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -18,8 +8,6 @@ open scoped Topology
 
 variable {E F ι P : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] {l : Filter ι}
-
-
 
 theorem Filter.Tendsto.tendstoUniformlyOn_clm_apply
     {Lseq : ι → E →L[ℝ] F} {L : E →L[ℝ] F}
@@ -41,8 +29,6 @@ theorem Filter.Tendsto.tendstoUniformlyOn_clm_apply
     _ < epsilon / B * B := mul_lt_mul_of_pos_right hn hB
     _ = epsilon := div_mul_cancel₀ _ hB.ne'
   simpa only [dist_eq_norm, sub_apply, norm_sub_rev] using hbound
-
-
 
 theorem TendstoUniformlyOn.clm_of_apply_unitBall
     {Lseq : ι → P → E →L[ℝ] F} {L : P → E →L[ℝ] F} {K : Set P}

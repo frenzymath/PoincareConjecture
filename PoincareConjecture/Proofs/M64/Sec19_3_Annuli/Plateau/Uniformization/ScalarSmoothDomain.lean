@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.FromEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
-
-
-
 theorem scalarAnnulusDefining_nonneg (x : Plane) :
     0 ≤ scalarAnnulusDefining x ↔ 1 ≤ ‖x‖ ∧ ‖x‖ ≤ 2 := by
   have hn := norm_nonneg x
@@ -40,11 +23,6 @@ theorem scalarAnnulusDefining_nonneg (x : Plane) :
     rcases mul_nonneg_iff.mp h with h | h <;> constructor <;> nlinarith
   · rintro ⟨h1, h2⟩
     apply mul_nonneg <;> nlinarith
-
-
-
-
-
 
 theorem scalarAnnulusDefining_zero (x : Plane) :
     scalarAnnulusDefining x = 0 ↔ ‖x‖ = 1 ∨ ‖x‖ = 2 := by
@@ -56,20 +34,10 @@ theorem scalarAnnulusDefining_zero (x : Plane) :
     · exact Or.inr (by nlinarith)
   · rintro (h | h) <;> norm_num [scalarAnnulusDefining, h]
 
-
-
-
-
-
 theorem scalarAnnulusDefining_regular_zero (x : Plane)
     (hx : scalarAnnulusDefining x = 0) :
     Surjective (mfderiv (𝓡 2) 𝓘(ℝ, ℝ) scalarAnnulusDefining x) :=
   scalarAnnulusDefining_regular ((scalarAnnulusDefining_zero x).mp hx)
-
-
-
-
-
 
 theorem scalarClosedAnnulus_isCompact :
     IsCompact {x : Plane | 0 ≤ scalarAnnulusDefining x} := by
@@ -78,11 +46,6 @@ theorem scalarClosedAnnulus_isCompact :
   intro x hx
   simpa only [Metric.mem_closedBall, dist_zero_right] using
     ((scalarAnnulusDefining_nonneg x).mp hx).2
-
-
-
-
-
 
 theorem scalarClosedAnnulus_isConnected :
     IsConnected {x : Plane | 0 ≤ scalarAnnulusDefining x} := by
@@ -112,11 +75,6 @@ theorem scalarClosedAnnulus_isConnected :
   rw [heq]
   exact himage
 
-
-
-
-
-
 theorem scalarClosedAnnulus_interior :
     interior {x : Plane | 0 ≤ scalarAnnulusDefining x} = scalarAnnulus := by
   rw [← self_sdiff_frontier, Poincare.Manifold.frontier_superlevel_eq_regular_level
@@ -125,12 +83,6 @@ theorem scalarClosedAnnulus_interior :
   change (0 ≤ scalarAnnulusDefining x ∧ ¬ scalarAnnulusDefining x = 0) ↔ _
   rw [← scalarAnnulusDefining_pos]
   exact ⟨fun h => lt_of_le_of_ne h.1 (Ne.symm h.2), fun h => ⟨h.le, h.ne'⟩⟩
-
-
-
-
-
-
 
 theorem nonempty_scalarAnnulus_smoothDomain :
     Nonempty (Poincare.Manifold.SmoothDomain 2 scalarAnnulus) := by

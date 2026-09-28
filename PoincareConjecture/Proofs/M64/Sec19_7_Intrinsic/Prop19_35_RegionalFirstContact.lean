@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AnnularRegionEn
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalContactComparison
 import Mathlib.MeasureTheory.MeasurableSpace.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,11 +11,6 @@ open Set MeasureTheory
 open scoped Topology Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_measurable_regional_contact_times
     {a b : ℝ} (hinj : InjOn (intrinsicAnnulusBoundary 1) (Icc a b))

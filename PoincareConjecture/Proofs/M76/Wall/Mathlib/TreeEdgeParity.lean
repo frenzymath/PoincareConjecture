@@ -2,19 +2,9 @@ import Mathlib.Combinatorics.SimpleGraph.Acyclic
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Algebra.CharP.Two
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace SimpleGraph
-
-
 
 theorem IsTree.exists_edge_parity {V : Type*} {D : SimpleGraph V}
     (hD : D.IsTree) (root : V) (weight : Sym2 V → ZMod 2) :

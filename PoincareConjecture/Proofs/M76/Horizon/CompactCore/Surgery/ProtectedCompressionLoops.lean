@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.FrontierBlockLo
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedBlockFrontier
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.ProtectedLoopTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

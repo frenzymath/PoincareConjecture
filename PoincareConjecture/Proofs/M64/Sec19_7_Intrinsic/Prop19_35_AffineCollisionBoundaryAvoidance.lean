@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CollisionBaseAv
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AffineCircleSubarcs
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCollisionTransverse
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,12 +10,6 @@ open Set
 open scoped Topology ContDiff Manifold Matrix ENNReal
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_affine_collision_minimizer_interior
     (N : IntrinsicAnnulus) {base alpha beta : ℝ → AnnulusCoordinates}
@@ -165,12 +155,6 @@ theorem m64Intrinsic_affine_collision_minimizer_interior
     ⟨hconf (Ioo_subset_Icc_self ht), by simpa only [hU.interior_eq] using hn⟩
   rw [hfront] at hf
   exact hf.elim (hbaseAvoid t ht) (hsideAvoid t ht)
-
-
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_geodesic_of_open_confinement
     (G : RiemannianMetric 2 AnnulusCoordinates) {U : Set AnnulusCoordinates}

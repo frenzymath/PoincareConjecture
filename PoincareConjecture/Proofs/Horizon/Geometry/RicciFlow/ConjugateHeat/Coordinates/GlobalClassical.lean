@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.Classical
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Density
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -73,8 +72,6 @@ theorem normalizedDensity_contMDiffOn {l : M × ℝ → ℝ}
   have hlz := hl.contMDiffAt ((isOpen_univ.prod isOpen_Ioi).mem_nhds hz)
   have hexp := Real.contDiff_exp.contMDiff.contMDiffAt.comp z hlz.neg
   exact ((ht.contMDiffAt.comp z contMDiffAt_snd).mul hexp).contMDiffWithinAt
-
-
 
 theorem potential_heat_equation_of_contMDiffOn_weakPairing_eq_zero
     (F : RicciFlow n M (Iio (0 : ℝ))) {l : M × ℝ → ℝ}

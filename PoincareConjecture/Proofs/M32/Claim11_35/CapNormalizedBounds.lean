@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M32.Neck.ScalarControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,9 +26,6 @@ private theorem sqrt_mul_neg_half_le {Q m R : ℝ}
     _ = m ^ (-1 / 2 : ℝ) := by
       rw [← Real.rpow_add hQ]
       norm_num
-
-
-
 
 theorem cap_normalized_carrier_and_boundary_scale
     {M : Type u} [TopologicalSpace M]

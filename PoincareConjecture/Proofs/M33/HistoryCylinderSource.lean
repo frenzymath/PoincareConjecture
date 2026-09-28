@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M33.HistoryMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

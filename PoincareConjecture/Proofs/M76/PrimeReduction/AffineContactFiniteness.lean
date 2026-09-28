@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineIntersectionRanks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -16,8 +7,6 @@ open Set Module
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem finrank_affineSpan_finset_le {s : Finset E} (hs : s.Nonempty)
     {d : ℕ} (hc : s.card ≤ d + 1) :
@@ -30,9 +19,6 @@ theorem finrank_affineSpan_finset_le {s : Finset E} (hs : s.Nonempty)
   omega
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem subsingleton_convexHulls_inter_of_span_top_of_rank_le
     {s t : Set E} (hspan : affineSpan ℝ (s ∪ t) = ⊤)

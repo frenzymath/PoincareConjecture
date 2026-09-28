@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TerminalMetricComparison
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricChartCancellation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,9 +22,6 @@ private theorem eventually_on_compact {X : Type*} [TopologicalSpace X]
   · intro x hx
     obtain ⟨U, hUx, hU⟩ := hlocal x hx
     exact ⟨U, mem_nhdsWithin_of_mem_nhds hUx, hU⟩
-
-
-
 
 theorem blowupSequence_compact_metric_comparison (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

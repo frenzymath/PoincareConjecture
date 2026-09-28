@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Difference
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Standard
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Principal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -43,8 +34,6 @@ private lemma cutoff_product_sq_bound
   have hz := mul_le_mul_of_nonneg_right hab (sq_nonneg z)
   have hat := mul_le_mul_of_nonneg_right ha2 (mul_nonneg (sq_nonneg a) (sq_nonneg t))
   nlinarith [sq_nonneg (a ^ 2 * t - 2 * a * b * z)]
-
-
 
 theorem nirenbergTestFunction_sq_integral_le_weak
     {u g : E → ℝ} (hu : MemLp u 2 volume) (hg : MemLp g 2 volume)

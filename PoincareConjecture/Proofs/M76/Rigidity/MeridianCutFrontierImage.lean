@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +17,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
-
-
 
 theorem image_meridianCutFrontierMap (P : OriginalDiskProduct e R j)
     {a : ℝ} (hgap : a / 2 < p - a / 2)
@@ -58,8 +49,6 @@ theorem image_meridianCutFrontierMap (P : OriginalDiskProduct e R j)
       · refine ⟨(z.1, a / 2), Or.inr ⟨hz.1, by simp⟩, ?_⟩
         rw [P.meridianCutFrontierMap_lower]
         exact congrArg P.map (Prod.ext rfl ht.symm)
-
-
 
 theorem image_meridianCutFrontierMap_eq_frontier (P : OriginalDiskProduct e R j)
     (hR : IsCompact R)

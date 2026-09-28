@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 import PoincareConjecture.Proofs.M76.Mathlib.TorusPLCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -33,9 +22,6 @@ theorem depth_centered (x : ℝ × ℝ) :
       min (min (7 / 4 - x.1) (7 / 4 - -x.1))
         (min (7 / 4 - x.2) (7 / 4 - -x.2)) by ac_rfl]
   simp only [min_sub_sub_left, ← abs_eq_max_neg, Prod.norm_def, Real.norm_eq_abs]
-
-
-
 
 theorem exists_square_shell_radial_chart {v : ℝ × ℝ}
     (hv : ‖v‖ ∈ Icc (3 / 2 : ℝ) 2) :

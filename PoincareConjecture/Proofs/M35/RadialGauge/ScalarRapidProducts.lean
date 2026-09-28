@@ -1,23 +1,12 @@
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.IteratedDeriv.WithinZpow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff BigOperators
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem scalar_rapid_product {A : Type*} {f g : A → ℝ → ℝ}
     (hf : ∀ a, ContDiffOn ℝ ∞ (f a) (Ioi 0))
@@ -53,8 +42,6 @@ theorem scalar_rapid_product {A : Type*} {f g : A → ℝ → ℝ}
     (mul_nonneg (Nat.cast_nonneg _) (hB0 i))
   convert! hm using 1
   ring
-
-
 
 theorem reciprocal_radius_jet_bound (j : ℕ) {r : ℝ} (hr : 1 ≤ r) :
     |iteratedDeriv j (fun s : ℝ => 1 / s) r| ≤ (j.factorial : ℝ) := by

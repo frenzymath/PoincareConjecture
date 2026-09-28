@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.StandardBalls
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal Topology

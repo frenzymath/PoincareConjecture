@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.OrdinaryAtlas
 import PoincareConjecture.Proofs.M11.OrdinaryChartHomeomorph
 import PoincareConjecture.Proofs.M11.SpacetimeGeometry
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

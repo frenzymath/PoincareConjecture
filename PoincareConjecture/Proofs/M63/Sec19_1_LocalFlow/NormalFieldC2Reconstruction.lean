@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalizationLimit
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedLimit
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem normalField_c2_reconstruction_with_anchored_speed
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

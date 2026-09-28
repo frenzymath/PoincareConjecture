@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryCharts.Source
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Reduction.SourceGeometry
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 
@@ -10,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem planar_annulus_subset_closure_interior : Ann ⊆ closure (interior Ann) := by
   intro x hx

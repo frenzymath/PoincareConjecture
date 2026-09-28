@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +13,6 @@ variable {E P : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace
   [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem exists_zero_chart (Q : ((E × P) × E) → E) (w : (E × P) × E)
     (hQ : ContDiffAt ℝ 1 Q w) (hw : Q w = 0)

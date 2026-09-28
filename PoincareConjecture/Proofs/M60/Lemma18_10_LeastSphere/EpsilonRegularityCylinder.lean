@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularity
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +10,6 @@ open scoped ContDiff Topology Manifold
 namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60HarmonicMap_stress_conservation (g : RiemannianMetric n M)
     {φ : LoopPlane → M} (hφ : ContMDiff (𝓡 2) (𝓡 n) ∞ φ) (p : LoopPlane)
@@ -82,7 +76,6 @@ theorem m60HarmonicMap_stress_conservation (g : RiemannianMetric n M)
   dsimp only [Function.comp_def] at h
   erw [hA.fderiv_eq (𝕜 := ℝ), hC.fderiv_eq (𝕜 := ℝ)] at h
   exact h
-
 
 def suCylinderPoint (t θ : ℝ) : LoopPlane :=
   t • EuclideanSpace.basisFun (Fin 2) ℝ 0 + θ • EuclideanSpace.basisFun (Fin 2) ℝ 1
@@ -175,8 +168,6 @@ private theorem gram_translate (g : RiemannianMetric n M)
     (mfderiv (𝓡 2) (𝓡 n) (φ ∘ (fun y => y + a)) x _) = _
   rw [hd]
   rfl
-
-
 
 theorem m60HarmonicCylinder_radial_angular (g : RiemannianMetric n M)
     {φ : LoopPlane → M} (hφ : ContMDiff (𝓡 2) (𝓡 n) ∞ φ) {T : ℝ} (hT : 0 < T)

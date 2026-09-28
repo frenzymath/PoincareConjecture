@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -52,9 +42,6 @@ private theorem positive_of_low_endpoint {a b q : ℝ × ℝ} {h : ℝ}
   rcases haxis with hx | hy
   · exact Or.inl ⟨hx, hrnonneg.2, by simpa only [hx, zero_add] using hrh⟩
   · exact Or.inr ⟨hy, hrnonneg.1, by simpa only [hy, add_zero] using hrh⟩
-
-
-
 
 theorem endpoint_mem_cap_of_inter {a b q : ℝ × ℝ} {h : ℝ}
     (hq : q ∈ segment ℝ a b) (hqx : 0 < q.1) (hqy : 0 < q.2)

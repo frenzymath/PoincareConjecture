@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OrdinaryCapHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ V] [FiniteDimensional ℝ E] in
-
-
 
 theorem mem_closure_height_lt_of_ball_sublevel
     {D : Set E} (A : E → ℝ) {c : ℝ}
@@ -42,9 +30,6 @@ theorem mem_closure_height_lt_of_ball_sublevel
   rw [hdiff] at h
   exact h.symm ▸ hD.1 hx
 
-
-
-
 theorem IsFinitePLBallPair.rim_eq_top_of_ball_sublevel
     {D B : Set E} (hD : IsFinitePLBallPair V D B)
     (A : E → ℝ) {t : ℝ}
@@ -55,10 +40,6 @@ theorem IsFinitePLBallPair.rim_eq_top_of_ball_sublevel
     inter_eq_left.mpr hupper
   rw [hcarrier] at htop
   exact hD.boundary_eq_of_same_carrier htop
-
-
-
-
 
 theorem ordinary_cap_mem_both_height_closures_of_rim_approach
     {D B S : Set E} (A : E → ℝ) {t : ℝ} (ht : 0 < t)

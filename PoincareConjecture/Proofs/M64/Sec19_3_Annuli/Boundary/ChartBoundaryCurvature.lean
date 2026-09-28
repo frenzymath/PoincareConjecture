@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FiniteChartDifferen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularTraceChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundarySubdivision
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,11 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem halfDisk_chart_boundary_connection (D : LeviCivitaData g)
     {f : E → M} {S : Set E} (hf : ContMDiffOn 𝓘(ℝ, E) (𝓡 n) 1 f S)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
-
-
 
 theorem eventually_exists_uniform_finset_cover
     {n : ℕ} {T' T : ℝ}

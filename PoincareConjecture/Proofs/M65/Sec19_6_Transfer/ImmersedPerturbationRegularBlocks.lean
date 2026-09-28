@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationCoordinates
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFiniteControls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +30,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
   {J : Set ℝ} {n : ℕ}
 
-
-
 theorem original_values_eq_of_loopSite (C : M65SmoothFilledLoopFamily F J)
     (z w : LoopAmbient) (h : loopSite z = loopSite w) :
     z 2 = w 2 ∧
@@ -59,10 +47,6 @@ theorem original_values_eq_of_loopSite (C : M65SmoothFilledLoopFamily F J)
       _ = C.loops (z 2) (ang (z 1)) := (C.loops (z 2)).boundary (ang (z 1))
       _ = C.loops (w 2) (ang (w 1)) := by rw [ht, hy]
       _ = _ := ((C.loops (w 2)).boundary (ang (w 1))).symm
-
-
-
-
 
 theorem doublePointEquation_eq_of_loopSite (C : M65SmoothFilledLoopFamily F J)
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → LoopPlane → ℝ)
@@ -90,9 +74,6 @@ private theorem selected_derivative_eq {k : ℕ} (i : Fin k)
         ((hasFDerivAt_id (𝕜 := ℝ) w.1).prodMk (hasFDerivAt_const w.2 w.1))).fderiv
   rw [hparam]
   rfl
-
-
-
 
 theorem exists_selected_block_neighborhood {k : ℕ} (i : Fin k)
     (Q : (Fin (k * 3) → ℝ) × LoopAmbient → LoopAmbient)

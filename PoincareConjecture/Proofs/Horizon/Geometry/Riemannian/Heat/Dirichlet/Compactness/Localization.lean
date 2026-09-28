@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Reso
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Cutoffs
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,7 +16,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 def EnergyTest.mulSmooth (f : EnergyTest D Ω) (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) : EnergyTest D Ω :=
@@ -46,7 +38,6 @@ theorem EnergyTest.mulSmooth_support_subset (f : EnergyTest D Ω) (χ : M → �
   | empty => rfl
   | @insert i s hi ih => simp only [Finset.sum_insert hi, EnergyTest.coe_add, ih]; rfl
 
-
 def mulSmoothLinear (D : LeviCivitaData g) (Ω : Set M) (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) :
     EnergyTest D Ω →ₗ[ℝ] EnergyTest D Ω where
@@ -60,7 +51,6 @@ def mulSmoothLinear (D : LeviCivitaData g) (Ω : Set M) (χ : M → ℝ)
     funext x
     change χ x * (c * f x) = c * (χ x * f x)
     ring
-
 
 theorem gradient_mul_energy_le (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (f : EnergyTest D Ω) (x : M) :
@@ -89,7 +79,6 @@ theorem gradient_mul_energy_le (χ : M → ℝ)
   simpa only [mul_pow, Real.norm_eq_abs, sq_abs, mul_assoc] using hs.trans hsum
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem exists_mulSmooth_norm_bound (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (hc : HasCompactSupport χ) :
@@ -133,7 +122,6 @@ theorem exists_mulSmooth_norm_bound (χ : M → ℝ)
   apply (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (Real.sqrt_nonneg C) (norm_nonneg f))).mp
   simpa only [mul_pow, Real.sq_sqrt hC] using he
 
-
 def mulSmoothCLM (D : LeviCivitaData g) (Ω : Set M) (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (hc : HasCompactSupport χ) :
     EnergyTest D Ω →L[ℝ] EnergyTest D Ω :=
@@ -163,7 +151,6 @@ theorem EnergyTest.sum_mul_partition {ι : Type*} [Fintype ι] {K : Set M}
   · have hf : f x = 0 := image_eq_zero_of_notMem_tsupport
       (fun hs => hx (hΩ (f.support_subset hs)))
     simp only [hf, mul_zero]
-
 
 theorem testToL2_sum_mul_partition {ι : Type*} [Fintype ι] {K : Set M}
     (ρ : SmoothPartitionOfUnity ι (𝓡 n) M K) (hΩ : Ω ⊆ K)

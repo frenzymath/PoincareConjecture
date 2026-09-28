@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hypersurface.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem normalized_homothety_isLocalDiffeomorph
     (g : RiemannianMetric n M) {c : ℝ} (hc : 0 < c)
@@ -71,8 +67,6 @@ theorem normalized_homothety_isLocalDiffeomorph
     linarith
   change Function.Bijective L
   exact ⟨hi, LinearMap.injective_iff_surjective.mp hi⟩
-
-
 
 theorem exists_unit_umbilic_of_homothetic_radial_potential
     {m : ℕ} {S : Type*} [TopologicalSpace S]

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem mapRadiusInverse_continuousOn
     {w : ℝ → ℝ → ℝ} {J : Set ℝ}

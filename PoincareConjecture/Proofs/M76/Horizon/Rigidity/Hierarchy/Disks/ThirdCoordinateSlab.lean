@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.RegularThirdCoordinate
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.CircleSlabDomain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Gronwall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem norm_le_exp_of_affine_deriv_bound_closed_backward
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

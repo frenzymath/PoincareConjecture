@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.FinSucc
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {N M : Type*} [TopologicalSpace N] [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
-
-
 
 noncomputable def productVolumeChart
     (e : (N × ℝ) ≃ₘ⟮(𝓡 n).prod 𝓘(ℝ, ℝ), 𝓡 (n + 1)⟯ M)
@@ -127,8 +119,6 @@ theorem mfderiv_productVolumeChart
     rfl
 
 variable [IsManifold (𝓡 n) ∞ N] [IsManifold (𝓡 (n + 1)) ∞ M]
-
-
 
 theorem pullbackVolumeDensity_productVolumeChart
     (h : RiemannianMetric n N) (g : RiemannianMetric (n + 1) M)

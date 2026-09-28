@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingOuterCollar
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingCoreEquality
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PositiveCollarOpen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,10 +16,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
-
 
 theorem ball_eq_collar_core (P : OriginalDiskProduct e R j)
     (hK : IsCompact P.cutCarrier)

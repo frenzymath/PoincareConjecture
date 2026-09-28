@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compression.Upper.PhaseMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compression.Upper.SlabCoordinate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -149,4 +141,3 @@ theorem exists_hamiltonZero_upper_second_slab_map
     simp
 
 end PoincareConjecture.M76
-

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.FullDomainEvolving
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.FullDomainScalarNormalized
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -41,8 +30,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_terminalNeck_full_scalarNormalized_centeredErrorJets
     (hconv : M23TerminalMetricConvergence G e)
@@ -136,8 +123,6 @@ theorem eventually_terminalNeck_full_scalarNormalized_centeredErrorJets
     _ ≤ (2 * r) * (eta / (4 * r)) + eta / 2 :=
       add_le_add (mul_le_mul hsi.2 hraw' (norm_nonneg _) (by positivity)) hlimit'
     _ = eta := by field_simp; ring
-
-
 
 theorem eventually_terminalNeck_full_scalarNormalized_familyClose
     (hconv : M23TerminalMetricConvergence G e)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundedRegions
 import PoincareConjecture.Proofs.M76.Mathlib.CompactZeroFiberBand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHeightIntervalRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,11 +12,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_two_side_height_band
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

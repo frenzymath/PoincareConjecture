@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.RepairPairs
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Crossings.ProjectedChart
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -53,4 +47,3 @@ structure FiniteMarkedSurfaceRepairs
       B.chart.source ⊆ window k
 
 end Geometry.OriginalPLTower
-

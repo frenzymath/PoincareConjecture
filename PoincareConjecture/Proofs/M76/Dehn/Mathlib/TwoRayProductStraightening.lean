@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.DistinctRayStraightening
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousLinearMap
-
-
 
 theorem exists_whole_two_ray_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -47,9 +36,6 @@ theorem exists_whole_two_ray_straightening
       have heq : (t / ell u) * ell u = t := div_mul_cancel₀ t (ne_of_lt huell)
       refine Or.inl ⟨t / ell u, hquot, H.injective ?_⟩
       rw [ht, hnegative _ hquot, heq]
-
-
-
 
 theorem exists_whole_two_ray_product_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,41 +1,20 @@
-
 import Mathlib
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 open scoped BigOperators
 
 namespace Poincare.Geometry.Curvature.Operator
 
-
 def pairFirst : Fin 3 → Fin 3 := ![1, 2, 0]
 
-
 def pairSecond : Fin 3 → Fin 3 := ![2, 0, 1]
-
 
 def curvatureMatrix (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ) :
     Matrix (Fin 3) (Fin 3) ℝ :=
   fun i j => R (pairFirst i) (pairSecond i) (pairFirst j) (pairSecond j)
 
-
-
-
 noncomputable def curvatureOperator (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ) :
     EuclideanSpace ℝ (Fin 3) →ₗ[ℝ] EuclideanSpace ℝ (Fin 3) :=
   (curvatureMatrix R).toEuclideanLin
-
 
 theorem curvatureMatrix_isSymm
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
@@ -44,14 +23,12 @@ theorem curvatureMatrix_isSymm
   ext i j
   exact hpair _ _ _ _
 
-
 theorem curvatureOperator_isSymmetric
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
     (hpair : ∀ i j k l, R i j k l = R k l i j) :
     (curvatureOperator R).IsSymmetric := by
   exact Matrix.isSymmetric_toEuclideanLin_iff.mpr
     (Matrix.isHermitian_iff_isSymm.mpr (curvatureMatrix_isSymm R hpair))
-
 
 theorem curvatureOperator_rayleigh
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ) (v : EuclideanSpace ℝ (Fin 3)) :
@@ -68,7 +45,6 @@ private theorem skew_sum_sq (f : Fin 3 → Fin 3 → ℝ)
   rw [hskew 1 0, hskew 0 2, hskew 2 1]
   ring
 
-
 theorem scalar_contraction_eq_twice_trace
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
     (hfirst : ∀ i j k l, R i j k l = -R j i k l)
@@ -80,7 +56,6 @@ theorem scalar_contraction_eq_twice_trace
   simp [Matrix.trace, curvatureMatrix, Fin.sum_univ_succ, pairFirst, pairSecond, hdiag]
   rw [hswap 1 0, hswap 0 2, hswap 2 1]
   ring
-
 
 theorem norm_contraction_eq_four_frobeniusSq
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
@@ -103,12 +78,9 @@ theorem norm_contraction_eq_four_frobeniusSq
       simp only [curvatureMatrix, Fin.sum_univ_succ, Fin.sum_univ_zero]
       ring
 
-
 theorem matrix_trace_toEuclideanLin (A : Matrix (Fin 3) (Fin 3) ℝ) :
     LinearMap.trace ℝ (EuclideanSpace ℝ (Fin 3)) A.toEuclideanLin = A.trace := by
   rw [Matrix.toEuclideanLin_eq_toLin_orthonormal, Matrix.trace_toLin_eq]
-
-
 
 theorem matrix_frobeniusSq_eq_basis_energy
     (A : Matrix (Fin 3) (Fin 3) ℝ) (hA : A.IsSymm)
@@ -130,14 +102,11 @@ theorem matrix_frobeniusSq_eq_basis_energy
     EuclideanSpace.basisFun_apply, Matrix.mulVec_single, Matrix.col]
   exact Finset.sum_comm
 
-
 theorem curvatureOperator_trace
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ) :
     LinearMap.trace ℝ (EuclideanSpace ℝ (Fin 3)) (curvatureOperator R) =
       Matrix.trace (curvatureMatrix R) := by
   exact matrix_trace_toEuclideanLin (curvatureMatrix R)
-
-
 
 theorem curvatureOperator_energy
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
@@ -149,7 +118,6 @@ theorem curvatureOperator_energy
   exact matrix_frobeniusSq_eq_basis_energy (curvatureMatrix R)
     (curvatureMatrix_isSymm R hpair) b
 
-
 theorem curvatureOperator_scalar_identity
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
     (hfirst : ∀ i j k l, R i j k l = -R j i k l)
@@ -157,8 +125,6 @@ theorem curvatureOperator_scalar_identity
     (∑ i, ∑ j, R i j i j) =
       2 * LinearMap.trace ℝ (EuclideanSpace ℝ (Fin 3)) (curvatureOperator R) := by
   rw [scalar_contraction_eq_twice_trace R hfirst hlast, curvatureOperator_trace]
-
-
 
 theorem curvatureOperator_normSq_identity
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)

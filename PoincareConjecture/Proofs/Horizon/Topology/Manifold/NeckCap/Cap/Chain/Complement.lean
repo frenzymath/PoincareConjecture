@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Truncation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Complement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,8 +32,6 @@ private theorem mem_closure_region_iff (N : EpsilonNeck g) {a b : ℝ}
   simpa only [closure_prod_eq, closure_univ, closure_Ioo hab.ne,
     mem_prod, mem_univ, true_and, mem_Icc] using h.symm
 
-
-
 theorem closure_interior_eq_of_slice_frontier (N : EpsilonNeck g)
     {K : Set M} {t : ℝ} (hclosed : IsClosed K)
     (ht : t ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -70,8 +60,6 @@ theorem closure_interior_eq_of_slice_frontier (N : EpsilonNeck g)
     rw [mem_closure_region_iff N ht.1 (N.coordinate_map_mem hdom),
       N.coordinate_inverse_coordinate_map hdom]
     exact ⟨ht.1.le, le_rfl⟩
-
-
 
 theorem isConnected_component_diff_of_height_sublevel (N : EpsilonNeck g)
     {K : Set M} {t : ℝ} {c : M} (hclosed : IsClosed K)
@@ -142,8 +130,6 @@ theorem isConnected_component_diff_of_height_sublevel (N : EpsilonNeck g)
 end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_finite_chain_complement_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

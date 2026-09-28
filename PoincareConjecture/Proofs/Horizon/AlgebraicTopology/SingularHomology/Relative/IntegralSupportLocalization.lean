@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralMayerVietoris
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -76,8 +66,6 @@ private theorem homologyClass_zero_iff_boundary
       simpa only [← ConcreteCategory.comp_apply, toCycles_i] using hb
     rw [← he]
     exact congrArg (fun f => f b) (C.toCycles_comp_homologyπ (n + 1) n)
-
-
 
 theorem exists_open_integralRelativeHomology_restriction_eq_zero [T2Space X]
     (K : Set X) (n : Nat) (a : integralRelativeHomology Kᶜ n)
@@ -162,8 +150,6 @@ theorem exists_open_integralRelativeHomology_restriction_eq_zero [T2Space X]
   change homologyMap g n (R.homologyπ n z) = Q.homologyπ n (cyclesMap g n z) at he
   rw [hz] at he
   exact he.trans hboundary
-
-
 
 theorem exists_compact_integralRelativeHomology_restriction_eq_zero
     [T2Space X] [RegularSpace X]

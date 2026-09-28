@@ -3,15 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.PolarCoord
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric Complex
@@ -38,8 +29,6 @@ private theorem radius_smul_cauchyTransformKernel {r : ℝ} (hr : 0 < r)
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V]
-
-
 
 theorem cauchyTransform_eq_polar (f : ℂ → V) (z : ℂ) :
     cauchyTransform f z =
@@ -77,17 +66,12 @@ theorem cauchyTransform_eq_polar (f : ℂ → V) (z : ℂ) :
 
 omit [IsScalarTower ℝ ℂ V] in
 
-
-
 theorem continuous_cauchyTransform_polar {f : ℂ → V} (hf : Continuous f) (z : ℂ) :
     Continuous (fun p : ℝ × ℝ => (Real.pi⁻¹ : ℝ) •
       ((circleMap 0 1 p.2)⁻¹ • f (z - circleMap 0 p.1 p.2))) := by
   simp only [circleMap_zero_inv]
   simp only [inv_one, circleMap_zero]
   fun_prop
-
-
-
 
 theorem cauchyTransform_eq_iterated_polar [CompleteSpace V]
     {f : ℂ → V} (hf : Continuous f) (z : ℂ) :

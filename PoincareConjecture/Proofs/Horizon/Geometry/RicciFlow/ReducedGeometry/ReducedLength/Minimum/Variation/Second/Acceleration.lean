@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Fields
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,6 +79,5 @@ theorem variationEndpointAcceleration_chart {J : Set ℝ} {F : RicciFlow n M J}
   rw [Frame.chartConnection_eq_retainedConnection_squareDomain F T s x _ hx ht]
   exact ((trivializationAt (EuclideanSpace ℝ (Fin n))
     (TangentSpace (𝓡 n)) x).symmL ℝ (V.baseSquareCurve s)).map_add _ _ |>.symm
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

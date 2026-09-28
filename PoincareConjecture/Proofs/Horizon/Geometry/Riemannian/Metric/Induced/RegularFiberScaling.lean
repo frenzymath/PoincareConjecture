@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Regu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberComplete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace Poincare.Geometry.Manifold.RegularFiber
@@ -22,7 +16,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m+k))) = m+k) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
 theorem openRegularFiberMetric_rescaledMetric
     (g : RiemannianMetric (m+k) M) (a : ℝ) (ha : 0<a) :
     letI := openFiberChartedSpace (m := m) hf U hreg v
@@ -30,7 +23,6 @@ theorem openRegularFiberMetric_rescaledMetric
     openRegularFiberMetric hf U hreg v (rescaledMetric g a ha) =
       rescaledMetric (openRegularFiberMetric hf U hreg v g) a ha := by
   rfl
-
 
 theorem openRegularFiberMetric_rescaledMetric_edist
     (g : RiemannianMetric (m+k) M) (a : ℝ) (ha : 0<a)
@@ -44,8 +36,6 @@ theorem openRegularFiberMetric_rescaledMetric_edist
   rw [openRegularFiberMetric_rescaledMetric]
   exact rescaledMetric_edist _ a ha x y
 end PoincareConjecture.RiemannianMetric
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_scaled_openFiber_metric_equivalence
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

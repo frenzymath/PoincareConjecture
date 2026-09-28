@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

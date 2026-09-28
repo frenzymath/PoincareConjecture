@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,8 +60,6 @@ theorem exists_exposed_edge_of_pure_triangles (K : SimplicialComplex ℝ E)
   exact hxfront.2
     (K.mem_interior_space_of_paired_facet (by omega) ht hu (by omega)
       (by omega) het heu (Ne.symm hne) hxe)
-
-
 
 theorem exists_exposed_edge_of_triangle_selection (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 2) (hK : K.faces.Finite)

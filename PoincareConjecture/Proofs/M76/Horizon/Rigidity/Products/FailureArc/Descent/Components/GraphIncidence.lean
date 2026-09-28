@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Grap
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.IntrinsicAffineGerms
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Filter
 open scoped Topology
@@ -217,4 +215,3 @@ theorem face_card_and_degree_of_boundary_segment_germs
     omega
 
 end Geometry.SimplicialComplex
-

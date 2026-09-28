@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M18AsymptoticSoliton
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture

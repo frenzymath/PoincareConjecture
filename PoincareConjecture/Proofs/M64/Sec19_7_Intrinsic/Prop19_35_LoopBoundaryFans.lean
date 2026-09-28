@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalBoundaryFans
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UpperGraph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +10,6 @@ open scoped Topology ContDiff Manifold Bundle
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_defining_function
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}
@@ -76,11 +58,6 @@ theorem m64Intrinsic_exists_loop_defining_function
     change z ∈ closure U ↔ 0 ≤ (L z).2 - h (L z).1
     rw [sub_nonneg]
     simpa only [L.symm_apply_apply] using hz.1
-
-
-
-
-
 
 theorem m64Intrinsic_return_region_smooth_boundary_fan
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

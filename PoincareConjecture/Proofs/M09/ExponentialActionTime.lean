@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedLength
 import PoincareConjecture.Proofs.M09.BackwardActionDensity
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

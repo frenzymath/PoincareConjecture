@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.FiniteSourcePullback
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
-
 
 theorem exists_expanding_reference_source_family
     {T0 : ℝ≥0∞} (T B : ℕ → ℝ)

@@ -1,21 +1,10 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
-
-
 
 theorem mfderiv_subtypeVal_singleton
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

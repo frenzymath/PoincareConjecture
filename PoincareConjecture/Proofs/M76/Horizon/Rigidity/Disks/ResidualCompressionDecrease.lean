@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.Compress
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ResidualCompressionComplexity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped BigOperators
@@ -130,7 +121,6 @@ theorem residualComplexity_decreases
     exact Nat.pos_of_ne_zero (fun hz => hnonsphere (hzeroSphere (q b) hz))
   apply residualComplexity_decreases_of_euler_change oldResidual newResidual c q same hSame hpositive
   simpa only [hOldCount, hNewCount, hcountOld, hcountNew] using hEuler
-
 
 theorem frontierResidualModel_complexity_decreases
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

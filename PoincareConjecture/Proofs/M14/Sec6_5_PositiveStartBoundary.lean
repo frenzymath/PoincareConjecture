@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartInitialVelocity
 import PoincareConjecture.Proofs.M14.Sec6_5_HarnackIntegral
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEuler
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem positiveStart_initial_harnackPrimitive (R : M14SquareRootPath G p)
     (hstart : MDifferentiableWithinAt (𝓘(ℝ, ℝ)) (spacetimeModel n)
@@ -44,9 +33,6 @@ theorem positiveStart_initial_harnackPrimitive (R : M14SquareRootPath G p)
     show (Real.sqrt a) ^ 3 = a * Real.sqrt a by
       rw [pow_succ, Real.sq_sqrt p.tau_nonneg]]
   ring
-
-
-
 
 theorem positiveStart_harnackIntegral_eq
     (hCoordinates : M12MetricPredecessors.{0} n)

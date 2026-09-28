@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CirclePhaseIntervals
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AddCircle
-
-
-
 
 theorem mapsTo_phase_arc_on_fibers {E : Type*} [TopologicalSpace E]
     (p : ℝ) [Fact (0 < p)] {B : Set E} {a b eta delta : ℝ}
@@ -68,10 +56,6 @@ theorem mapsTo_phase_arc_on_fibers {E : Type*} [TopologicalSpace E]
       hdis hsub ⟨g 0, ⟨0, hzero, rfl⟩, hbase⟩
     intro t ht
     exact hright ⟨t, ht, rfl⟩
-
-
-
-
 
 theorem exists_real_lift_on_phase_arcs {E : Type*} [TopologicalSpace E]
     (p : ℝ) [Fact (0 < p)] {S : Set E} {a b eta : ℝ}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_square_filling_of_pi1_injective
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -57,8 +47,6 @@ theorem exists_square_filling_of_pi1_injective
     hinj (hmap.trans (map_one (FundamentalGroup.map i (gamma squareRimBase))).symm)
   exact (nullhomotopic_of_squareRimLoop gamma
     (Path.Homotopic.Quotient.exact hnull)).exists_closedBall_extension gamma
-
-
 
 theorem exists_square_filling_in_subset
     {X : Type*} [TopologicalSpace X] {N : Set X}

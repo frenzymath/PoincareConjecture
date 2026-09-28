@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Escaping.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ namespace M23TerminalExtension
 
 variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
-
-
 
 theorem terminal_edist_le_of_uniform_source_bound
     (T : M23TerminalExtension G) {D : ℝ} (hD : 0 ≤ D)
@@ -60,8 +50,6 @@ theorem terminal_edist_le_of_uniform_source_bound
   rw [← ENNReal.ofReal_toReal
     (((S.term (G.subsequence k)).flow.flow.metric 0).edist_ne_top _ _)]
   exact ENNReal.ofReal_le_ofReal (hbound _ _ _)
-
-
 
 theorem isCompact_of_uniform_source_diameter
     (T : M23TerminalExtension G) {D : ℝ} (hD : 0 ≤ D)

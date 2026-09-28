@@ -4,24 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.OriginalCollarLevelCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PointedCollarSourcePartition
 import PoincareConjecture.Proofs.M76.Mathlib.PointedRimArcPartition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
 
 theorem bijOn_ambient_representative {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y] {s : Set X} {t : Set Y}
@@ -40,12 +27,6 @@ theorem bijOn_ambient_representative {X Y : Type*}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_whole_level_comparison_with_selected
     {B T d b k R : Set E} {upper g r : E → ℝ} {q : E}
@@ -212,11 +193,6 @@ theorem IsFinitePL.exists_pointed_whole_level_comparison_with_selected
       ⟨f₀ x, hsource.subset (Or.inl ⟨x, hw₀ ⟨hxk, hxu⟩, rfl⟩)⟩
     refine ⟨z, ?_, hGw ⟨x, hxk, hxu⟩⟩
     exact (hf₀val ⟨x, hw₀ ⟨hxk, hxu⟩⟩).symm.trans (hL₀val _)
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_whole_level_comparison
     {B T d b k R : Set E} {upper g r : E → ℝ} {q : E}

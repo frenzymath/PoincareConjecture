@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M09.CoordinateJacobiCommutation
 import PoincareConjecture.Proofs.M09.CoordinateEulerLinearization
 import PoincareConjecture.Proofs.M08.WeightedJacobiCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -25,10 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem coordinate_linearization_weightedJacobi
     (G : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ) (R : ℝ × E → ℝ) (U : Set (ℝ × E))

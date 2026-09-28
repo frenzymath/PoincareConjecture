@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOpenInclusion
 import PoincareConjecture.Proofs.M47.TerminalCurvatureLocalParallel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem terminalCurvature_ambient_rank_one
     {M : Type u} [TopologicalSpace M] [T2Space M]

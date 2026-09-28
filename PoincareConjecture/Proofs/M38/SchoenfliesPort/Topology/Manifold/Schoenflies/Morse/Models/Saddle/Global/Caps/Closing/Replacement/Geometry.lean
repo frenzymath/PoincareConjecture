@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Replacement.Sides
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -48,7 +40,6 @@ theorem terminal_physical_modelBand_eq_preimage (data : TerminalSaddleData M P p
   · intro hy
     exact ⟨data.toTerminalSaddleGeometry.flatten y, hy,
       data.toTerminalSaddleGeometry.flatten.symm_apply_apply y⟩
-
 
 theorem isClosed_terminal_physical_modelBand (data : TerminalSaddleData M P p e) :
     IsClosed (data.toTerminalSaddleGeometry.flatten.symm ''
@@ -89,7 +80,6 @@ theorem terminal_physical_modelCaps_disjoint (data : TerminalSaddleData M P p e)
   rw [← terminal_physical_modelCap_eq_image, ← terminal_physical_modelCap_eq_image]
   exact (disjoint_image_iff data.toTerminalSaddleGeometry.flatten.symm.injective).mpr
     (data.model_disjoint hij)
-
 
 theorem terminal_lower_model_domain_height (data : TerminalSaddleData M P p e) (i : Fin 3)
     (hseed : inner Real (M.v : E3)

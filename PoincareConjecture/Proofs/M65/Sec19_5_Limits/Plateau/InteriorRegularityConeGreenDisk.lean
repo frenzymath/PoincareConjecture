@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeGreenRectangle
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadialIntegral
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem coneDisk_green {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}

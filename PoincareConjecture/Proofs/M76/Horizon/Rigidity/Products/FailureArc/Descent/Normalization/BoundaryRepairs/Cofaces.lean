@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Parameter
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.BoundaryOperationCofaces
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -12,8 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Ann" => squareAnnulus 8 1
 local notation "Rim" => Set.ofPred (fun z : P2 => depth 8 z = -1 ∨ depth 8 z = 1)
-
-
 
 theorem exists_unique_annulus_boundary_triangle_germ
     (B K : SimplicialComplex ℝ V3) (hB : B.faces.Finite) (hKB : K ≤ B)
@@ -134,8 +130,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {step : Step s t} {j : P2 → t.Carrier} {R Fmark : Set M}
   {a b : Ann} {W : Set s.Carrier} {ε : ℝ}
   (A : PlanarAnnulusBoundaryMotion step j R Fmark a b W ε)
-
-
 
 theorem exists_moved_boundary_cofaces (hj : PolyhedralPLInCharts t.charts j Ann) :
     ∃ B K : SimplicialComplex ℝ V3,

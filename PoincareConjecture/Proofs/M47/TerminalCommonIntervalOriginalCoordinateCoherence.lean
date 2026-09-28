@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalOriginalCoherence
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoordinateMetric
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCommonInterval_original_coordinate_coherence
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

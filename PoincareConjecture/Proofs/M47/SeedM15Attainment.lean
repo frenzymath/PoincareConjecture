@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Connectio
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_minimizingRegion
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

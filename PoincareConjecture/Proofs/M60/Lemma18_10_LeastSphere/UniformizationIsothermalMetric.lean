@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationConjugate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,20 +11,14 @@ namespace PoincareConjecture.M60
 
 private abbrev Plane := EuclideanSpace ℝ (Fin 2)
 
-
-
 def firstCoordinateGradient (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
     (x : Plane) : Plane := D.gradient (fun y : Plane => y 0) x
-
-
 
 def conjugateMetricForm (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
     (x : Plane) : Plane →L[ℝ] ℝ :=
   rotatedFlux
     (fun y => g.pullbackVolumeDensity id y * firstCoordinateGradient g D y 0)
     (fun y => g.pullbackVolumeDensity id y * firstCoordinateGradient g D y 1) x
-
-
 
 theorem inner_firstCoordinateGradient (g : RiemannianMetric 2 Plane)
     (D : LeviCivitaData g) (x v : Plane) :
@@ -45,8 +29,6 @@ theorem inner_firstCoordinateGradient (g : RiemannianMetric 2 Plane)
   simp only [mvfderiv, mfderiv_eq_fderiv, hderiv, NormedSpace.fromTangentSpace]
   rfl
 
-
-
 theorem firstCoordinateGradient_zero_pos (g : RiemannianMetric 2 Plane)
     (D : LeviCivitaData g) (x : Plane) : 0 < firstCoordinateGradient g D x 0 := by
   have hne : firstCoordinateGradient g D x ≠ 0 := by
@@ -56,8 +38,6 @@ theorem firstCoordinateGradient_zero_pos (g : RiemannianMetric 2 Plane)
     norm_num [PiLp.single_apply] at he
   rw [← inner_firstCoordinateGradient g D x (firstCoordinateGradient g D x)]
   exact g.pos x _ hne
-
-
 
 theorem plane_metric_expand (g : RiemannianMetric 2 Plane) (x v w : Plane) :
     g.inner x v w =
@@ -77,9 +57,6 @@ theorem plane_metric_expand (g : RiemannianMetric 2 Plane) (x v w : Plane) :
   rw [g.symm x (EuclideanSpace.basisFun (Fin 2) ℝ 1)
     (EuclideanSpace.basisFun (Fin 2) ℝ 0)]
   ring
-
-
-
 
 theorem metric_eq_conjugate_coordinates (g : RiemannianMetric 2 Plane)
     (D : LeviCivitaData g) (x v w : Plane) :

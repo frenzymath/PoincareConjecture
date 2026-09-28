@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Radial
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -29,9 +20,6 @@ local instance : NormedSpace ℝ (F →L[ℝ] F) := ContinuousLinearMap.toNormed
 local instance : NormedAddCommGroup (E →L[ℝ] F →L[ℝ] F) :=
   ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ (E →L[ℝ] F →L[ℝ] F) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_field_local
     {Γ : E → E →L[ℝ] F →L[ℝ] F} {U : Set E}

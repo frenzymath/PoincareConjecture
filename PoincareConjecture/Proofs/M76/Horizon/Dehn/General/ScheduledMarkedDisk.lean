@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTowerDescent
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.DisjointSupportedMotions
 import PoincareConjecture.Proofs.M76.Dehn.OriginalStageDiskMotion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -27,8 +19,6 @@ variable {M ι α : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
   {st : Stage e S f r C} {R Fmark : Set M}
   {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
-
-
 
 theorem StageMarkedDisk.exists_finite_moved_marked_disk
     (old : StageMarkedDisk st R Fmark base Jgroup)

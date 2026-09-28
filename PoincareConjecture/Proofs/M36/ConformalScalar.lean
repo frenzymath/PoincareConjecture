@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.CurvatureTrace
 import Mathlib.LinearAlgebra.Basis.SMul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

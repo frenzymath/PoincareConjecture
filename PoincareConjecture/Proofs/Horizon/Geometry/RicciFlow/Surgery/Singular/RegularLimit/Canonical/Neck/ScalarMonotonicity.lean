@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,8 +48,6 @@ private theorem exists_strictMonoOn_tail_of_endpoint_derivative_pos
   have h := hpositive ⟨hcs.trans ht.1, ht.2⟩
   change 0 < derivWithin f (Ioc a b) t at h
   rwa [derivWithin_of_mem_nhds (Ioc_mem_nhds (has.trans ht.1) ht.2)] at h
-
-
 
 theorem exists_neck_terminal_scalar_monotonicity_threshold
     (P04 : RicciFlowCurvatureTheory.{u}) :

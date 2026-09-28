@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.UpperEnd
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapHeightCompression
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_target_three_end_replacement
     (hP : PlanarSchoenfliesService)

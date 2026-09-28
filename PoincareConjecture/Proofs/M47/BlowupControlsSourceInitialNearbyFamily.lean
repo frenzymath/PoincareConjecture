@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamily
 import PoincareConjecture.Proofs.M47.CanonicalCapNearbyErrors
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,9 +46,6 @@ private theorem initialRestricted_comparison
   obtain ⟨bound, hbound, hlifetime, hinterval, _himage, hjet⟩ := comparison
   exact ⟨small, rfl, bound, hbound, hlifetime, hinterval, rfl,
     fun s hs x hx => hjet s hs x (hball hx)⟩
-
-
-
 
 theorem exists_source_initial_nearby_family
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

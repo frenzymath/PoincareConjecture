@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_InitialScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46 Proofs.M12
-
 
 structure SeedM15SafeCylinder {F : SurgeryFlowData.{u}} {T : ℝ}
     {hT : 0 < T} {hTF : T ∈ F.time_domain} {x : (F.slice T).carrier} {r : ℝ}
@@ -51,8 +42,6 @@ private theorem history_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
 
 theorem seedM15_safeCylinder (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {T r : ℝ} {hT : 0 < T} {hTF : T ∈ F.time_domain}

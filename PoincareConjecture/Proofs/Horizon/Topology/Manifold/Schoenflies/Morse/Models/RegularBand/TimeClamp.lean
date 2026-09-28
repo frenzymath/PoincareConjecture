@@ -1,7 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,8 +7,6 @@ open Set
 open scoped ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_smooth_band_endpoint_clamp
     {a b w : Real} (hw : 0 < w) (hsep : a + w < b - w) :

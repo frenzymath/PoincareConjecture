@@ -1,29 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLBandCutoff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousAffineMap
-
-
-
-
-
-
 
 theorem exists_corner_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

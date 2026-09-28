@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Extension
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace Poincare
 local notation "S2" => Metric.sphere (0 : EuclideanSpace ℝ (Fin 3)) 1
 local notation "Cyl" => S2 × ℝ
 local notation "I" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_essential_sphere_collar_extension_in_open
     {M : Type*} [TopologicalSpace M] [T2Space M]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem top_face_inter_inner_cylinderExterior {u Q C d : Set X}
     (huQ : u ⊆ Q) (hQC : Q ⊆ C) (hcontact : u ∩ frontier Q = d) :
@@ -36,10 +23,6 @@ theorem top_face_inter_inner_cylinderExterior {u Q C d : Set X}
     have htop : x ∈ u ×ˢ {(1 : ℝ)} := ⟨hxd.1, hx.2⟩
     exact ⟨htop, prod_singleton_one_subset_frontier_cylinder (huQ.trans hQC) htop,
       fun hi => hxd.2.2 hi.1⟩
-
-
-
-
 
 theorem cylinderExterior_eq_union_of_boundary_cut {Q C b u d l : Set X}
     (hQC : Q ⊆ C) (hunion : b ∪ u = Q) (hinter : b ∩ u = l)

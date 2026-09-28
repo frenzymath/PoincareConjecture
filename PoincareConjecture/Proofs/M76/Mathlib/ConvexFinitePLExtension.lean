@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalAffineExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
 
 theorem IsFinitePL.exists_convex_extension_zero {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

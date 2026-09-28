@@ -2,24 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.NoncollapseVolume
 import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,10 +35,6 @@ private theorem backward_center_radius_le_four_scale
     field_simp [hr.ne']
   rw [hleft, hright] at hm
   nlinarith [N.scale_pos]
-
-
-
-
 
 theorem exists_strongNeck_backward_center_noncollapsed :
     ∃ epsilonNC : ℝ, 0 < epsilonNC ∧ epsilonNC ≤ 1 / 200 ∧

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.FixedMetricSmoothness
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_spacetime_spatial_CInfinity (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -103,9 +92,6 @@ theorem blowupSequence_spacetime_spatial_CInfinity (P : M35StandardCapPredecesso
         (norm_nonneg B)).trans_eq (mul_one _))
   exact hnorm.trans_lt ((hN k hk).2 a b p hp)
 
-
-
-
 theorem blowupSequence_spatial_jet_tendsto_moving (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
     (t : ℕ → ℝ) (x : ℕ → StandardCapSpace)
@@ -168,9 +154,6 @@ theorem blowupSequence_spatial_jet_tendsto_moving (P : M35StandardCapPredecessor
     simpa only [dist_zero_right] using (hN (sigma k) (hk₀ k hk)).2 a b (pseq k) (hpseq k)
   have hsum := hdiff.add hlimit
   simpa only [sub_add_cancel, zero_add] using hsum
-
-
-
 
 theorem blowupSequence_spatial_error_jets (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

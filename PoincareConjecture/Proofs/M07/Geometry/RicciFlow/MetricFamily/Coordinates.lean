@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.MetricLimit
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Bundle

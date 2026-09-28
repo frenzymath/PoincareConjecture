@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.MovedComplexes
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.SourceRegularity
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -19,8 +17,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {step : Step s t} {j : P2 → t.Carrier} {R Fmark : Set M}
   {a b : Ann} {W : Set s.Carrier} {ε : ℝ}
   (A : PlanarAnnulusBoundaryMotion step j R Fmark a b W ε)
-
-
 
 theorem parameter_mem_closure_interior
     (hj : PolyhedralPLInCharts t.charts j Ann)

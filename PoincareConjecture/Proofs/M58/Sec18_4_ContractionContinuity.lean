@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_ContractionLoops
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -20,8 +11,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem continuous_contraction_tangent_input :
     Continuous (fun v : ℝ × (M × TangentBundle (𝓡 3) M) =>
@@ -41,9 +30,6 @@ theorem continuous_contraction_tangent_input :
   exact (contMDiff_equivTangentBundleProd_symm (I := 𝓘(ℝ, ℝ))
     (I' := (𝓡 3).prod (𝓡 3)) (M := ℝ) (M' := M × M) (n := 0)).continuous.comp
       (ht.prodMk hpair)
-
-
-
 
 theorem continuous_contractionLoop {X : Type v} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) (t : X → ℝ) (p : X → M)

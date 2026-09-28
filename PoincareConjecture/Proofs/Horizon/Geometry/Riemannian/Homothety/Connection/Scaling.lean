@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.Koszul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,7 +10,6 @@ namespace PoincareConjecture.Homothety
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem metric_inner_mdifferentiableAt (g : RiemannianMetric n M)
     (Y Z : (x : M) → TangentSpace (𝓡 n) x) (x : M)
@@ -33,7 +22,6 @@ theorem metric_inner_mdifferentiableAt (g : RiemannianMetric n M)
     ⟨g.toRiemannianMetric⟩
   exact hY.inner_bundle hZ
 
-
 theorem mvfderiv_const_mul_metric_inner (g : RiemannianMetric n M) (Q : ℝ)
     (Y Z : (x : M) → TangentSpace (𝓡 n) x) (x : M)
     (hY : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n)))
@@ -44,7 +32,6 @@ theorem mvfderiv_const_mul_metric_inner (g : RiemannianMetric n M) (Q : ℝ)
       Q * mvfderiv (𝓡 n) (fun p ↦ g.inner p (Y p) (Z p)) x v := by
   rw [mvfderiv_fun_mul mdifferentiableAt_const (metric_inner_mdifferentiableAt g Y Z x hY hZ)]
   simp only [mvfderiv_const, smul_zero, add_zero, smul_apply, smul_eq_mul]
-
 
 theorem metricCompatible_of_inner_eq (D : LeviCivitaData g)
     (h : RiemannianMetric n M) (Q : ℝ)
@@ -64,7 +51,6 @@ theorem metricCompatible_of_inner_eq (D : LeviCivitaData g)
   rw [mvfderiv_const_mul_metric_inner g Q Y Z x hY hZ, D.normalization_mvfderiv_inner X Y Z hY hZ]
   ring
 
-
 noncomputable def scaleLeviCivitaData (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 < Q) :
     LeviCivitaData (scaleSmoothMetric g Q hQ) where
   connection := D.connection
@@ -72,10 +58,8 @@ noncomputable def scaleLeviCivitaData (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 <
   torsion_eq_zero := D.torsion_eq_zero
   metricCompatible := metricCompatible_of_inner_eq D _ Q (fun _ _ _ ↦ rfl)
 
-
 theorem scaleLeviCivitaData_connection (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 < Q) :
     (scaleLeviCivitaData D Q hQ).connection = D.connection := rfl
-
 
 theorem scale_connection_eq_at (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 < Q)
     (D' : LeviCivitaData (scaleSmoothMetric g Q hQ))

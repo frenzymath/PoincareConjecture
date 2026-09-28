@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.SingleCutRegions
 import PoincareConjecture.Proofs.M38.TwoBallNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   (S : Set (Fin (F.event T hT).cap_count))
   (i : Fin (F.event T hT).cap_count)
 
-
 theorem singleCutBall_images_disjoint :
     Disjoint ((singleCutBall F T hT P S i false).map '' Metric.ball 0 2)
       ((singleCutBall F T hT P S i true).map '' Metric.ball 0 2) := by
@@ -39,10 +30,6 @@ theorem singleCutBall_images_disjoint :
   exact (partialCapPatch_disjoint F T hT P (insert i S)
     (⟨i, Set.mem_insert i S⟩, false) (⟨i, Set.mem_insert i S⟩, true)
     (by simp)).mono (hsub false) (hsub true)
-
-
-
-
 
 theorem singleCut_exists_enclosing_ball
     (hsame : ConnectedComponents.mk ((singleCutBall F T hT P S i false).map 0) =

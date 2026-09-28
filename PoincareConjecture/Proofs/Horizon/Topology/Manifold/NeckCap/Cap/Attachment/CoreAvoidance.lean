@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.EndFronti
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceUpper
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.FrontierScale
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,9 +69,6 @@ private theorem pathELength_lower_of_cross_between_exterior_points
   have hlen := mul_le_mul_of_nonneg_left hinv hs.le
   nlinarith
 
-
-
-
 theorem exists_closed_core_end_thickness_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -134,8 +120,6 @@ theorem exists_closed_core_end_thickness_threshold :
   rw [C.end_neck_epsilon] at hlower
   exact not_lt_of_ge hlower hlength
 
-
-
 theorem exists_exterior_center_neck_disjoint_closed_core_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -180,8 +164,6 @@ theorem exists_exterior_center_neck_disjoint_closed_core_threshold :
     apply (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr
     nlinarith [mul_le_mul_of_nonneg_right hPscale hi.le, mul_pos hs hi]
   exact not_lt_of_ge hlower (hupper.trans_lt hstrict)
-
-
 
 theorem exists_frontier_neck_disjoint_closed_core_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

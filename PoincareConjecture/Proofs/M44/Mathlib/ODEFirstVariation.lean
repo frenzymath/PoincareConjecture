@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.UniformCompactDerivative
 import PoincareConjecture.Proofs.M44.Mathlib.ODEModelBuffer
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.MixedDerivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,18 +11,13 @@ section FirstVariation
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def firstVariationalField (F : E → E) (z : E × E) : E × E :=
   (F z.1, fderiv ℝ F z.1 z.2)
-
 
 theorem ContDiff.firstVariationalField {F : E → E} (hF : ContDiff ℝ ∞ F) :
     ContDiff ℝ ∞ (firstVariationalField F) :=
   (hF.comp contDiff_fst).prodMk
     (((hF.fderiv_right (m := ∞) (by simp)).comp contDiff_fst).clm_apply contDiff_snd)
-
-
 
 theorem hasDerivAt_first_variation
     {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -53,8 +38,6 @@ theorem hasDerivAt_first_variation
     (fderiv ℝ F (γ (p, t))).comp (fderiv ℝ (fun q => γ (q, t)) p) at hchain
   rw [hchain] at hd
   exact hode.self_of_nhds.prodMk hd
-
-
 
 theorem tendstoUniformlyOn_firstVariationalField
     [FiniteDimensional ℝ E] {ι : Type*} {l : Filter ι}
@@ -85,12 +68,8 @@ section SolutionFamilies
 variable {E P : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup P] [NormedSpace ℝ P]
 
-
-
 noncomputable def firstVariation (γ : P × ℝ → E) (z : P × P) (t : ℝ) : E × E :=
   (γ (z.1, t), fderiv ℝ (fun p => γ (p, t)) z.1 z.2)
-
-
 
 theorem ContDiffAt.firstVariation {γ : P × ℝ → E} {p v : P} {t : ℝ}
     (hγ : ContDiffAt ℝ ∞ γ (p, t)) :
@@ -121,9 +100,6 @@ theorem ContDiffAt.firstVariation {γ : P × ℝ → E} {p v : P} {t : ℝ}
   simpa only [firstVariation, Function.comp_def, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.prod_apply, ContinuousLinearMap.id_apply,
     zero_apply] using congrArg (fun D => D z.1.2) hspace.fderiv
-
-
-
 
 theorem tendstoUniformlyOn_firstVariation_of_compact_model
     [FiniteDimensional ℝ E] {ι : Type*} {l : Filter ι}

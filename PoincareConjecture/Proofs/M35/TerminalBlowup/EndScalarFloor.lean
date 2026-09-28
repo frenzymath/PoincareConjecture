@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureLimit
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckScalarFloor
 import PoincareConjecture.Definitions.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem cylinder_curvatureTensorNorm_tendsto_at_fixed_time
     (g : ℕ → RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)))
@@ -72,8 +59,6 @@ theorem cylinder_curvatureTensorNorm_tendsto_at_fixed_time
     have h := cylinder_curvatureTensorNorm_center t ht.2 modelD (q 0) 0
     simpa only [← Prod.zero_eq_mk, map_zero] using h
   exact hmodel ▸ hnorm
-
-
 
 theorem exists_cylinder_curvature_lower_bound_at_time {t : ℝ} (ht : t ∈ Ico 0 1) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -127,8 +112,6 @@ theorem exists_cylinder_curvature_lower_bound_at_time {t : ℝ} (ht : t ∈ Ico 
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem exists_compact_exterior_terminal_scalar_floor
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

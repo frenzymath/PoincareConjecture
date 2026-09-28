@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCompressedCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g h : RiemannianMetric 3 M}
 
-
-
 theorem compressedNeck_map_mem (N : EpsilonNeck g)
     {lambda c : ℝ} (hlambda : lambda ∈ Ioo (0 : ℝ) 1)
     (hc : |c| < (1 - lambda) * N.epsilon⁻¹) {z : RoundCylinderSpace}
@@ -38,8 +27,6 @@ theorem compressedNeck_map_mem (N : EpsilonNeck g)
   rw [← heq]
   exact (compressedNeckCoordinate N hlambda hc z').property
 
-
-
 theorem compressedNeck_center_on_central_sphere (N : EpsilonNeck g)
     (lambda c : ℝ) (x : M) (hx : x ∈ N.carrier)
     (hheight : (N.coordinate_inverse x).2 = c) :
@@ -51,8 +38,6 @@ theorem compressedNeck_center_on_central_sphere (N : EpsilonNeck g)
   rw [N.coordinate_map_eq] at h
   simpa only [Function.comp_apply, neckAxialSpaceMap, mul_zero, zero_add,
     ← hheight, Prod.mk.eta] using h
-
-
 
 theorem exists_compressed_neck_of_normalized_comparison (N : EpsilonNeck g)
     {lambda c : ℝ} (hlambda : lambda ∈ Ioo (0 : ℝ) 1)

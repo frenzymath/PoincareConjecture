@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.TimeDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +28,6 @@ private lemma contDiffAt_clm_of_apply
   rw [← Function.id_comp f, ← e₂.symm_comp_self]
   exact e₂.symm.contDiff.contDiffAt.comp t
     (contDiffAt_pi.mpr fun i => hf _)
-
 
 lemma hasDerivAt_covariantTensorEvaluation_update
     (F : RicciFlow n M J) {k : ℕ} {T W : ℝ → CovariantTensorEvaluation n M k}
@@ -82,8 +74,6 @@ lemma hasDerivAt_covariantTensorEvaluation_update
       ((hW x (Function.update v i (V t))).congr_of_eventuallyEq
         (Eventually.of_forall fun s => hL s (V t)))
   simpa only [hL, hcoef, add_comm] using hLd.clm_apply hV
-
-
 
 lemma hasDerivAt_covariantTensorDerivative_time_all
     (F : RicciFlow n M J) {k : ℕ} {T W : ℝ → CovariantTensorEvaluation n M k}

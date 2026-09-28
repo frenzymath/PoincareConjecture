@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalPartitionSides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

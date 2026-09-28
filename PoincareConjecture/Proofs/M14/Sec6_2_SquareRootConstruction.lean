@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareGaugeEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
-
-
 
 theorem squarePath_contMDiffOn_of_euler
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -70,8 +59,6 @@ theorem squarePath_contMDiffOn_of_euler
     exact ⟨max_le ht.1.1 ht.2.1.le, le_min ht.1.2 ht.2.2.le⟩
   exact (hlocal s hsLocal).mono_of_mem_nhdsWithin hLocalNear
 
-
-
 theorem squarePath_within_velocity_decomposition
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ (fun s => p.curve (s ^ 2))
       (M14SqrtParameterInterval τ₁ τ₂)) {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -105,8 +92,6 @@ theorem squarePath_within_velocity_decomposition
   rw [show (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) G.spacetime.timeFunction (γ s) v) =
     -(2 * s) from hclock, neg_smul, sub_neg_eq_add]
   abel
-
-
 
 noncomputable def squareRootPathOfEuler
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

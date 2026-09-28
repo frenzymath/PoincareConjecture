@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V E : Type*} [Finite V] [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem exists_polygon_of_two_neighbors (G : SimpleGraph V) (p : V → E)
     (hconn : G.Connected) (hdegree : ∀ v, (G.neighborSet v).ncard = 2)
@@ -38,9 +26,6 @@ theorem exists_polygon_of_two_neighbors (G : SimpleGraph V) (p : V → E)
   simpa only [Polygon.edgeSet, Polygon.edgeVertices, Finset.coe_pair,
     affineSegment_eq_segment, finRotate_apply] using
     (hinter (hadj i) (hadj j))
-
-
-
 
 theorem exists_component_polygons_of_two_neighbors (G : SimpleGraph V) (p : V → E)
     (hdegree : ∀ v, (G.neighborSet v).ncard = 2) (hinj : Function.Injective p)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Minimality
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Alignment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
-
 
 theorem long_scaled_velocity_lower_bound_of_controls
     {f v acc : ℝ → ℝ} {L r ε α C δ : ℝ}
@@ -45,10 +36,6 @@ theorem long_scaled_velocity_lower_bound_of_controls
   have hvt := hlow t ht
   have hmul := mul_le_mul_of_nonneg_left hvt hr.le
   nlinarith [hquality, hmul]
-
-
-
-
 
 theorem long_scaled_velocity_lower_bound_of_intrinsic_minimality
     {M : Type*} [TopologicalSpace M]
@@ -81,9 +68,6 @@ theorem long_scaled_velocity_lower_bound_of_intrinsic_minimality
   exact long_scaled_velocity_lower_bound_of_controls hr hε hεhalf hL hpos
     hquality hf hv hacc hmin horient
 
-
-
-
 theorem long_neck_axial_speed_of_intrinsic_minimality
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
     {f v acc : ℝ → ℝ} {L α C δ : ℝ} {x : ℝ → M}
@@ -111,9 +95,6 @@ theorem long_neck_axial_speed_of_intrinsic_minimality
   exact long_scaled_velocity_lower_bound_of_intrinsic_minimality g N.carrier
     N.scale_pos N.epsilon_pos N.epsilon_lt_half hL hpos hquality hf hv hacc hC
     hsegment hcompetitor horient
-
-
-
 
 theorem norm_sub_le_of_long_neck_controls
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

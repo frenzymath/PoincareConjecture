@@ -5,10 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RadialDigonGeod
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactRadialInverse
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConfinedRadialInverse
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +16,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_confined_digon_has_earlier_contact
     (N : IntrinsicAnnulus) {K kappa R s : ℝ} (hK : N.GaussianCurvatureBound K)

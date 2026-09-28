@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TangentCylinderBound
 import PoincareConjecture.Proofs.M76.Mathlib.OrthogonalCylinderCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace ContinuousLinearEquiv
 
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
-
-
 
 theorem exists_pos_secant_bound_of_centered_image (e : E ≃L[ℝ] G)
     (Q : E →L[ℝ] F) (p : E) {S : Set E} {c : ℝ} (hc : 0 < c)

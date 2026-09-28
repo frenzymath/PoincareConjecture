@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.ChosenChart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.FlowCarrier
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LocalConvergence
-
-
-
-
-
-
-

@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.VariationalMapContDiffOnK
 import Mathlib.Analysis.ODE.Gronwall
 

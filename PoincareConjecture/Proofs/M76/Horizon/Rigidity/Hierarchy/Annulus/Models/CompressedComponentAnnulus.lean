@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.C
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.OriginalCyclicAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.SharedBoundaryConeUnion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000

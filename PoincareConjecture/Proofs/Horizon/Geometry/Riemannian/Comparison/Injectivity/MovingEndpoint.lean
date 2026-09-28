@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.InverseRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasFDerivAt_inverse_radius
     (g : RiemannianMetric n M)
@@ -57,8 +46,6 @@ theorem hasFDerivAt_inverse_radius
   ext w
   simp only [smul_apply, smul_eq_mul]
   field_simp
-
-
 
 theorem hasFDerivAt_average_inverse_radius_zero
     (g : RiemannianMetric n M)

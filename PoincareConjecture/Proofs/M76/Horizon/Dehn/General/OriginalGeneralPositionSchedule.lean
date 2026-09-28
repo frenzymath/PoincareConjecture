@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositionData
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.FiniteExceptionNeighborhoods
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -23,7 +15,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
 
 theorem OriginalGeneralPositionData.exists_exception_schedule
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
@@ -94,4 +85,3 @@ theorem OriginalGeneralPositionData.exists_exception_schedule
       (fun x _ ↦ congrFun (w (q k)).right_eq x) a b⟩
 
 end Geometry.OriginalPLTower
-

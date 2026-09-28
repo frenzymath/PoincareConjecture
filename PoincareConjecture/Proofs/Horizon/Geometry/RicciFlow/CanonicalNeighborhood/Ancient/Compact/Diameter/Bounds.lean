@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.UniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,7 +14,6 @@ section Diameter
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [ConnectedSpace M]
-
 
 theorem compact_metricDiameter_bddAbove (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (Set.univ : Set M)) :
@@ -46,13 +35,11 @@ theorem compact_metricDiameter_bddAbove (g : RiemannianMetric 3 M)
   dsimp at hx hy ⊢
   linarith
 
-
 theorem compact_toReal_edist_le_metricDiameter (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (Set.univ : Set M)) (p q : M) :
     (g.edist p q).toReal ≤ metricDiameter g Set.univ :=
   le_csSup (compact_metricDiameter_bddAbove g hcompact)
     ⟨(⟨p, Set.mem_univ p⟩, ⟨q, Set.mem_univ q⟩), rfl⟩
-
 
 theorem compact_mem_ball_of_metricDiameter_lt (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (Set.univ : Set M)) {r : ℝ}
@@ -61,8 +48,6 @@ theorem compact_mem_ball_of_metricDiameter_lt (g : RiemannianMetric 3 M)
     ((compact_toReal_edist_le_metricDiameter g hcompact p q).trans_lt hdiam)
 
 end Diameter
-
-
 
 theorem compact_uniform_scalar_bound_of_normalized_diameter
     (P : M26CanonicalNeighborhoodPredecessors.{u})

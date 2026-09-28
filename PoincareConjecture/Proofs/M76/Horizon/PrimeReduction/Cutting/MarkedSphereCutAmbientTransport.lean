@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedSphereCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.RelativeCutAmbientTransport
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

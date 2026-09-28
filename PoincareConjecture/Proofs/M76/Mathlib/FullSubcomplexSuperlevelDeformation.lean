@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteBarycentricCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore unitInterval
@@ -26,13 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 open scoped Classical in
-
-
-
-
-
-
-
 
 theorem exists_full_subcomplex_superlevel_deformation_preserving_subcomplexes_mass
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)
@@ -174,8 +155,6 @@ theorem exists_full_subcomplex_superlevel_deformation_preserving_subcomplexes_ma
 
 open scoped Classical in
 
-
-
 theorem exists_full_subcomplex_superlevel_deformation_preserving_subcomplexes
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)
     (hfull : ∀ s ∈ K.faces, (∀ v ∈ s, v ∈ L.vertices) → s ∈ L.faces) :
@@ -202,11 +181,6 @@ theorem exists_full_subcomplex_superlevel_deformation_preserving_subcomplexes
   exact ⟨hN, hLN, U, hU, hLU, hUN, H, hHN, hH0, hH1, hfix, hpreserve⟩
 
 open scoped Classical in
-
-
-
-
-
 
 theorem exists_full_subcomplex_superlevel_deformation
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarPurity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem original_boundary_surface_incidence
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

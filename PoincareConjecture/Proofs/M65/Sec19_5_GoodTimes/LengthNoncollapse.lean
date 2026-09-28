@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.FamilyAdapters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65FamilyLength_backward_lower_bound (C : M63FamilyConclusion G Gamma zeta)
     (E : M64AppliedFamilyEstimates G C) (circumference : ℝ) (h : 0 < circumference)
@@ -47,8 +37,6 @@ theorem m65FamilyLength_backward_lower_bound (C : M63FamilyConclusion G Gamma ze
     have hz : G.K2 * (b - a) + -G.K2 * (b - a) = 0 := by ring
     rw [hz, Real.exp_zero]
   simpa only [mul_assoc, hcancel, mul_one] using hscaled
-
-
 
 theorem m65FamilyLength_short_or_earlier_lower_bound
     (C : M63FamilyConclusion G Gamma zeta) (E : M64AppliedFamilyEstimates G C)

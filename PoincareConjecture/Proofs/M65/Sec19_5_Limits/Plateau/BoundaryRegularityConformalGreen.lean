@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Boundary
 
 open M65StrictTrace
-
-
-
 
 theorem diskBoundaryCoordinate_columns (p : ℂ) (z : LoopPlane) :
     let e := EuclideanSpace.basisFun (Fin 2) ℝ
@@ -38,9 +26,6 @@ theorem diskBoundaryCoordinate_columns (p : ℂ) (z : LoopPlane) :
   constructor <;> ext i <;> fin_cases i <;>
     simp [E, diskBoundaryCoordinate, Complex.orthonormalBasisOneI_repr_apply,
       Complex.orthonormalBasisOneI_repr_symm_apply, EuclideanSpace.basisFun_apply]
-
-
-
 
 theorem diskBoundaryCoordinate_det {p : ℂ} (hp : ‖p‖ = 1) (z : LoopPlane) :
     (fderiv ℝ (diskBoundaryCoordinate p) z).det =
@@ -70,9 +55,6 @@ private theorem boundary_coordinate_partial (p : ℂ) (z : LoopPlane) (i k : Fin
   have hd := (EuclideanSpace.proj i).hasFDerivAt.comp z
     ((contDiff_diskBoundaryCoordinate p).differentiable (by simp) z).hasFDerivAt
   exact congrArg (fun L => L (EuclideanSpace.basisFun (Fin 2) ℝ k)) hd.fderiv
-
-
-
 
 theorem diskBoundaryCoordinate_cofactor_divergence (p : ℂ) (z : LoopPlane) (i : Fin 2) :
     (∑ k : Fin 2, fderiv ℝ (fun w =>
@@ -112,10 +94,6 @@ theorem diskBoundaryCoordinate_cofactor_divergence (p : ℂ) (z : LoopPlane) (i 
     simp only [neg_apply, boundary_coordinate_partial, P, e]
     rw [(diskBoundaryCoordinate_columns p z).1, (diskBoundaryCoordinate_columns p z).2]
     simp [EuclideanSpace.basisFun_apply]
-
-
-
-
 
 theorem diskBoundaryCoordinate_test_divergence {p : ℂ} (hp : ‖p‖ = 1)
     (test : LoopPlane → ℝ) (ht : ContDiff ℝ 1 test) (z : LoopPlane) (i : Fin 2) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalRoundPersistence
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeRound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {a b : ℝ}
-
-
 
 theorem eventually_regularSlab_round_control (S : SurgeryRegularSlab F.slice F.metric a b)
     (t : Icc a b)
@@ -40,8 +30,6 @@ theorem eventually_regularSlab_round_control (S : SurgeryRegularSlab F.slice F.m
   change S.identify s x ∈ S.identify s '' P.carrier
   refine ⟨x, ?_, rfl⟩
   rwa [hPcarrier]
-
-
 
 theorem regularSlab_limit_not_round (S : SurgeryRegularSlab F.slice F.metric a b)
     (t : Icc a b) (times : ℕ → Icc a b) (points : ℕ → (F.slice a).carrier)

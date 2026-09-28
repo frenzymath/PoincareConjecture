@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embedding.LocalDiffeomorphism
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.TimeMetricComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.SmoothSpacetimeEmbedding
 
 variable {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
   {F : BasedFlow n T' T C} {G : BasedFlow n T' T D} {U : Set C.carrier}
-
-
 
 noncomputable def spatialOpenPartialHomeomorph
     (e : SmoothSpacetimeEmbedding F G (Ioo T' T ×ˢ U))
@@ -91,7 +82,6 @@ namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
 
-
 noncomputable def sourceCoordinateChart (G : PointedGeometricConvergence S)
     (hT : T' < 0 ∧ 0 < T) (k : ℕ) (q : G.limitCarrier.carrier) :
     letI : TopologicalSpace (S.carrier (G.subsequence k)).carrier :=
@@ -130,8 +120,6 @@ theorem sourceCoordinateChart_smooth (G : PointedGeometricConvergence S)
   constructor
   · exact hf.comp (contMDiffOn_chart_symm.mono inter_subset_left) inter_subset_right
   · exact contMDiffOn_chart.comp (hi.mono inter_subset_left) inter_subset_right
-
-
 
 theorem eventually_subset_sourceCoordinateChart (G : PointedGeometricConvergence S)
     (hT : T' < 0 ∧ 0 < T) (q : G.limitCarrier.carrier)

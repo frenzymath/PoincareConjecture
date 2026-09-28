@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter MeasureTheory
@@ -34,8 +26,6 @@ theorem scalarCurvature_posPart_le_add_weight
   · nlinarith [mul_nonneg (Nat.cast_nonneg n : (0 : ℝ) ≤ n) hK]
   · exact le_add_of_nonneg_right (mul_nonneg (sq_nonneg _) hK)
 
-
-
 theorem integral_scalarCurvature_posPart_le_integral_add_weight
     (D : LeviCivitaData g) {s : Set M} (hs : MeasurableSet s) {K : M → ℝ}
     (hK : ∀ x ∈ s, 0 ≤ K x)
@@ -53,7 +43,6 @@ theorem integral_scalarCurvature_posPart_le_integral_add_weight
   simpa only [Pi.add_apply, integral_add hR (hKi.const_mul ((n : ℝ) ^ 2)),
     integral_const_mul] using hb
 
-
 theorem integral_scalarCurvature_posPart_le_integral_add_weight_of_isCompact
     (D : LeviCivitaData g) {s : Set M} (hs : IsCompact s) {K : M → ℝ}
     (hKc : ContinuousOn K s) (hK : ∀ x ∈ s, 0 ≤ K x)
@@ -65,8 +54,6 @@ theorem integral_scalarCurvature_posPart_le_integral_add_weight_of_isCompact
   exact D.integral_scalarCurvature_posPart_le_integral_add_weight hs.measurableSet
     hK hsec (D.continuous_scalarCurvature.continuousOn.integrableOn_compact hs)
     (hKc.integrableOn_compact hs)
-
-
 
 theorem normalized_integral_scalarCurvature_posPart_le_add
     (D : LeviCivitaData g) {s : Set M} (hs : MeasurableSet s) {K : M → ℝ}
@@ -89,8 +76,6 @@ theorem normalized_integral_scalarCurvature_posPart_le_add
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture
-
-
 
 theorem tendsto_normalized_scalar_integral_atTop_of_posPart
     {n : ℕ} {M : ℕ → Type*} [∀ j, TopologicalSpace (M j)]
@@ -117,8 +102,6 @@ theorem tendsto_normalized_scalar_integral_atTop_of_posPart
   have hb := (D j).normalized_integral_scalarCurvature_posPart_le_add
     (hs j) (hK j) (hsec j) (hR j) (hKi j)
   linarith
-
-
 
 theorem tendsto_normalized_scalar_integral_atTop_of_posPart_of_isCompact
     {n : ℕ} {M : ℕ → Type*} [∀ j, TopologicalSpace (M j)]

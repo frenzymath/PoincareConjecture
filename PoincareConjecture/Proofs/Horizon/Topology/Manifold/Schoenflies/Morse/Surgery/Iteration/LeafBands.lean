@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Tree
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Cuts
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,8 +16,6 @@ private instance : ConnectedSpace S2 := isConnected_iff_connectedSpace.mp
   (isConnected_sphere (by rw [← Module.finrank_eq_rank]; norm_num [E3]) (0 : E3) zero_le_one)
 
 variable {v : E3} {A : Finset Real} {f : S2 → E3}
-
-
 
 theorem height_range_subset_component (tree : SphereSurgeryTree v A f)
     {g : S2 → E3} (hg : g ∈ tree.leaves) (p : S2) :
@@ -42,10 +38,6 @@ private theorem critical_subsingleton_in_component
   apply hseparation p q hp.1 hq.1
   rw [← connectedComponentIn_eq hp.2]
   exact hq.2
-
-
-
-
 
 theorem height_band_of_mem_leaves (tree : SphereSurgeryTree v A f)
     {g : S2 → E3} (hg : g ∈ tree.leaves) {h : S2 → Real}

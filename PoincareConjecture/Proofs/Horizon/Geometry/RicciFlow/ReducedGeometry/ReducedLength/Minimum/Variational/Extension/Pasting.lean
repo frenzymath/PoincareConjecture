@@ -1,10 +1,5 @@
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

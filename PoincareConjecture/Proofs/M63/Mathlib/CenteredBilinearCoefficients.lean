@@ -1,19 +1,8 @@
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem norm_centeredBilinearCoefficients_sub_le
     {S E : Type*} [NormedAddCommGroup S] [NormedSpace ℝ S]

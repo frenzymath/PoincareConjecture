@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryNormalization
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -85,10 +75,6 @@ private theorem m65EnergyDensity_comp_columns (g : RiemannianMetric 3 M)
     real_inner_smul_left, real_inner_smul_right]
   ring
 
-
-
-
-
 theorem m65EnergyDensity_comp_holomorphic (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) (φ : ℂ → ℂ) (z : LoopPlane)
     (hφ : DifferentiableAt ℂ φ (orthonormalBasisOneI.repr.symm z))
@@ -105,10 +91,6 @@ theorem m65EnergyDensity_comp_holomorphic (g : RiemannianMetric 3 M)
       ((hφ.restrictScalars ℝ).comp z e.symm.toContinuousLinearEquiv.differentiableAt)
   obtain ⟨h0, h1⟩ := m65Holomorphic_real_columns φ z hφ
   exact m65EnergyDensity_comp_columns g f Φ z hf hΦ _ _ h0 h1
-
-
-
-
 
 theorem m65DiskEnergy_holomorphic_reparameterize {g : RiemannianMetric 3 M}
     {γ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ)
@@ -197,10 +179,6 @@ theorem m65DiskEnergy_holomorphic_reparameterize {g : RiemannianMetric 3 M}
     _ = ∫ z in Φ '' loopDiskSet, m60EnergyDensity g D.map z :=
       (integral_image_eq_integral_abs_det_fderiv_smul volume hs hderiv hinj _).symm
     _ = _ := by rw [himage]
-
-
-
-
 
 theorem m65SpanningDisk_threePointEnergyNormalization {g : RiemannianMetric 3 M}
     {γ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ)
@@ -297,11 +275,6 @@ theorem m65SpanningDisk_threePointEnergyNormalization {g : RiemannianMetric 3 M}
     exact congrArg e hb
   · rw [hinverse]
     exact hc.imp (congrArg e) (congrArg e)
-
-
-
-
-
 
 theorem m65SpanningDisk_normalizedEnergyComparison {g : RiemannianMetric 3 M}
     {γ : C1FreeLoopSpace (M := M)}

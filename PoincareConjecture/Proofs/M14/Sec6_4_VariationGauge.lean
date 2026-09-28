@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationClock
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p} (V : M14LVariationData G p R)
-
-
-
 
 theorem exists_variation_gauge_rectangle {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -73,9 +60,6 @@ variable (b : G.gaugeCover.index)
   {β : ℝ × ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b}
 
-
-
-
 theorem variationGauge_spatial_contDiffOn {S P : Set ℝ}
     (hβ : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ β (S ×ˢ P)) :
     ContDiffOn ℝ ∞ (fun z => (β z).2.val) (S ×ˢ P) := by
@@ -87,9 +71,6 @@ theorem variationGauge_spatial_contDiffOn {S P : Set ℝ}
   have h := hval.comp_contMDiffOn hsp
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at h
   exact h.contDiffOn
-
-
-
 
 theorem endpointVariationField_gauge {S P : Set ℝ} (hP : IsOpen P)
     (hβ : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ β (S ×ˢ P))
@@ -112,9 +93,6 @@ theorem endpointVariationField_gauge {S P : Set ℝ} (hP : IsOpen P)
     (derivWithin_of_mem_nhds (f := fun r => (β (s, r)).2.val) (hP.mem_nhds hu))
   simpa only [projectedCurveVelocityWithin, M14EndpointVariationField,
     mfderivWithin_of_mem_nhds (hP.mem_nhds hu)] using h.trans (heq_of_eq hd)
-
-
-
 
 theorem variationSquareVelocity_gauge {N P : Set ℝ} (hN : IsOpen N)
     (hβ : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ β

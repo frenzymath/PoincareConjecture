@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.UnitLink.AngularDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.UnitLink.Connected
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +13,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} {hc : RayComparison p}
-
 
 def unitSliceAngle (x y : AsymptoticConeUnitSlice p hc) : ℝ :=
   Real.arccos (1 - dist x y ^ 2 / 2)
@@ -56,8 +48,6 @@ private theorem unit_radial_cosine (x z : AsymptoticConeUnitSlice p hc) (r : ℝ
   rw [dist_sq_asymptoticConeDilation, x.property, z.property, cos_unitSliceAngle]
   change (r : ℝ) ^ 2 * (1 : ℝ) ^ 2 + 1 ^ 2 - r * (1 ^ 2 + 1 ^ 2 - dist x z ^ 2) = _
   ring
-
-
 
 theorem unitSliceAngle_triangle (x z y : AsymptoticConeUnitSlice p hc) :
     unitSliceAngle x y ≤ unitSliceAngle x z + unitSliceAngle z y := by
@@ -146,8 +136,6 @@ theorem unitSliceAngle_eq_twice_arcsin (x y : AsymptoticConeUnitSlice p hc) :
   · exact mul_nonneg (by norm_num) (Real.arcsin_nonneg.mpr (div_nonneg dist_nonneg (by norm_num)))
   · linarith [Real.arcsin_le_pi_div_two (dist x y / 2)]
 
-
-
 theorem exists_unitSliceAngle_le_mul_dist {c : ℝ} (hc1 : 1 < c) :
     ∃ δ : ℝ, 0 < δ ∧ ∀ x y : AsymptoticConeUnitSlice p hc,
       dist x y < δ → unitSliceAngle x y ≤ c * dist x y := by
@@ -183,8 +171,6 @@ private theorem ennreal_le_of_real_factors {a b : ℝ≥0∞}
   have hh := ENNReal.toReal_mono (ENNReal.mul_ne_top ENNReal.ofReal_ne_top hb) (h c hc)
   rw [ENNReal.toReal_mul, ENNReal.toReal_ofReal (by linarith : 0 ≤ c)] at hh
   simpa only [mul_comm] using hh
-
-
 
 theorem unitSliceAngle_le_pathELength {n : ℕ}
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
@@ -258,8 +244,6 @@ theorem unitSliceAngle_le_pathELength {n : ℕ}
   rw [hN N le_rfl] at hfinal
   exact hfinal
 
-
-
 theorem unitSliceAngle_le_metric_edist {n : ℕ}
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
       ∃ (d : UnitSliceRadialChartData hc n) (z : d.Level), (d.levelHomeomorph z).1 = x) :
@@ -280,8 +264,6 @@ theorem unitSliceAngle_le_metric_edist {n : ℕ}
   have hle := unitSliceAngle_le_pathELength hcover γ hγ
   rw [h0, h1] at hle
   exact hle.trans_lt hlen
-
-
 
 theorem unitSlice_metric_edist_eq_angle_of_metric_segment {n : ℕ}
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
@@ -325,9 +307,6 @@ private theorem exists_distinct_nearby_link_point
   · intro h
     exact hneq ((e.right_inv hu.1).symm.trans (congrArg e h))
   · simpa only [mem_preimage, Metric.mem_ball, dist_comm] using hu.2
-
-
-
 
 theorem unitSlice_metric_edist_eq_angle_of_metricComplete
     {m n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -392,9 +371,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem unitSliceMetric_edist_eq_angle_of_zero_ratio
     {n : ℕ} (hn : 1 ≤ n) {M : Type u} [TopologicalSpace M] [T3Space M]

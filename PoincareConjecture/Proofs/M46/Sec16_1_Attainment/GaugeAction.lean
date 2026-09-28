@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeActionLimit
 import PoincareConjecture.Proofs.M08.PathGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
-
-
 
 theorem backward_square_density_integrable (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     (p : M14BackwardPath G T 0 tau x y) :
@@ -39,9 +29,6 @@ theorem backward_square_density_integrable (hM12 : GeneralizedRicciGaugeTheory.{
   have h := (hp.intervalIntegrable_of_Icc (Real.sqrt_le_sqrt p.tau_lt.le)).add
     (hk.const_mul (1 / 2 : ℝ))
   simpa only [Real.sqrt_zero] using h
-
-
-
 
 theorem gauge_piece_action_eq (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     (e : AttainmentGauge G) (p : M14BackwardPath G T 0 tau x y)
@@ -83,9 +70,6 @@ theorem gauge_piece_action_eq (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
   change (_ - ∫ s in a..b, M14.pathSquarePotential p s) +
     (∫ s in a..b, M14.pathSquarePotential p s) = _
   exact sub_add_cancel _ _
-
-
-
 
 theorem gauge_partition_action_eq (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     (p : M14BackwardPath G T 0 tau x y) {m : ℕ} (t : Fin (m + 1) → ℝ)

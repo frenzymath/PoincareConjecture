@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckCovariantArrayBounds
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderCovariantJetBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff BigOperators Topology
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderChristoffel_compact_time_jet_bound
     {I : Set ℝ} (hI : IsCompact I) (hI1 : I ⊆ Iio (1 : ℝ))
@@ -48,9 +36,6 @@ theorem roundCylinderChristoffel_compact_time_jet_bound
   rw [roundCylinderChristoffel_eq_chart_center u q₀ q]
   exact (hC (a, b, d) u hu x hx).trans ((le_max_left _ _).trans
     (Finset.single_le_sum (fun _ _ => le_max_right _ _) (Finset.mem_univ (a, b, d))))
-
-
-
 
 theorem exists_roundCylinder_covariant_difference_component_bound
     {I : Set ℝ} (hI : IsCompact I) (hI1 : I ⊆ Iio (1 : ℝ))

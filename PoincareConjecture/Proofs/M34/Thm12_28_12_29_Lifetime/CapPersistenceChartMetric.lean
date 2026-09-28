@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderPullback
 import PoincareConjecture.Proofs.M34.Mathlib.NeckChartDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem capPersistence_chart_pullback (g : RiemannianMetric n M) (a : M)
     {φ : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -64,9 +50,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
-
 
 theorem capPersistenceEuclideanMap_origin_lower (q : UnitTwoSphere) (s : ℝ)
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (v : E₃) :

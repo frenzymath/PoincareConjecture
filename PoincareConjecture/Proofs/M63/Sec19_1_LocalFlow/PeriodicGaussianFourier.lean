@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianHeat
 import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory AddCircle
@@ -17,10 +8,6 @@ open MeasureTheory AddCircle
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem periodicGaussianHeat_fourier (t : ℝ) (ht : 0 ≤ t) (c : ℂ) (n : ℤ) :
     periodicGaussianHeat t (c • (fourier n : C(AddCircle L, ℂ))) =

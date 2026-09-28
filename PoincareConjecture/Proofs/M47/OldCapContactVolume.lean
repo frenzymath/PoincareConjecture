@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.OldCapContactPath
 import PoincareConjecture.Proofs.M47.SeedStoppedPath
 import PoincareConjecture.Proofs.M47.SeedUniformTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
-
 
 theorem exists_old_cap_contact_volume (P : M47Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

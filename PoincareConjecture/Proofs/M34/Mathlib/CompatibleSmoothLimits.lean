@@ -1,22 +1,10 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem exists_contDiffOn_limit_of_open_exhaustion
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

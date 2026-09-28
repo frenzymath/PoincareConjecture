@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalConnectio
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -18,8 +10,6 @@ set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff Bundle Topology BigOperators InnerProductSpace
 
 namespace PoincareConjecture.M65Gauss
-
-
 
 def secondFundamentalFormBilinear {m n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -36,9 +26,6 @@ def secondFundamentalFormBilinear {m n : ℕ}
     (by intros; simp only [secondFundamentalForm, covariantHessianMap, map_add]; abel)
     (by intros; simp only [secondFundamentalForm, covariantHessianMap, map_smul,
         smul_add, smul_sub])
-
-
-
 
 theorem bilinear_conformal_trace
     {V : Type*} [AddCommGroup V] [Module ℝ V]

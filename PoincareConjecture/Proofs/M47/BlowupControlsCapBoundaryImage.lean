@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapImageTopology
 import PoincareConjecture.Proofs.M34.Mathlib.RegularSublevelPartialImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem cap_image_boundary_local_defining_function
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

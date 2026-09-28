@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaCompeti
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaBoundaryLength
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.ScalarInfimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M65Filling
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem radial_flux_integrable (g : RiemannianMetric 3 M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
@@ -58,10 +46,6 @@ theorem radial_flux_integrable (g : RiemannianMetric 3 M)
     (hf.continuousOn_tangentMapWithin le_rfl m65LoopDisk_uniqueMDiffOn).comp_continuous
       harg hmem
   exact ((hW.comp hfcurve).inner_bundle hrad).intervalIntegrable _ _
-
-
-
-
 
 theorem radial_flux_le_of_residual [T2Space M]
     {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
@@ -120,9 +104,6 @@ theorem radial_flux_le_of_residual [T2Space M]
   rw [intervalIntegral.integral_add hHI (hNI.const_mul epsilon),
     intervalIntegral.integral_const_mul, hlength] at hle
   exact hle
-
-
-
 
 theorem scalar_area_lower_bound [CompactSpace M]
     {a b : ℝ} (F : RicciFlow 3 M (Icc a b)) {q : ℝ} (hq : q ∈ Icc a b)

@@ -1,10 +1,6 @@
 import Mathlib.Analysis.Normed.Operator.Prod
 import Mathlib.Topology.Algebra.Module.Equiv
 
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M11

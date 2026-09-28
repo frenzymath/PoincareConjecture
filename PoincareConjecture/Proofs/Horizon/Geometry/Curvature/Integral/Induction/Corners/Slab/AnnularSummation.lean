@@ -6,7 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberCompact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 
-
 open Set MeasureTheory PoincareConjecture
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology BigOperators

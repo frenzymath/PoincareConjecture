@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_intrinsic_proper_disk_neighborhood_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

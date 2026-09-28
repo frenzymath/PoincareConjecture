@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.PeriodicJetTolerance
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -26,23 +14,14 @@ variable {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]
 
 local notation "S" => Set.prod (univ : Set ℝ) (Icc (0 : ℝ) 1)
 
-
-
-
 noncomputable def horizontalSliceJet (f : ℝ × ℝ → W) (p : ℝ × ℝ) : W × W × W :=
   (f p, deriv (fun x => f (x, p.2)) p.1,
     deriv (deriv (fun x => f (x, p.2))) p.1)
-
-
 
 theorem closedStrip_slice_contDiff {f : ℝ × ℝ → W} {k : ℕ∞ω}
     (hf : ContDiffOn ℝ k f S) {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1) :
     ContDiff ℝ k (fun x => f (x, s)) :=
   hf.comp_contDiff (contDiff_id.prodMk contDiff_const) (fun _ => ⟨mem_univ _, hs⟩)
-
-
-
-
 
 theorem closedStrip_horizontal_derivatives {f : ℝ × ℝ → W}
     (hf : ContDiffOn ℝ 2 f S) {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1) (x : ℝ) :
@@ -67,9 +46,6 @@ theorem closedStrip_horizontal_derivatives {f : ℝ × ℝ → W}
   exact (hd.comp_hasDerivAt x (hline x)
     (show ∀ᶠ z : ℝ in 𝓝 x, (z, s) ∈ S from
       Eventually.of_forall (fun _ => ⟨mem_univ _, hs⟩))).deriv
-
-
-
 
 theorem horizontalSliceJet_continuousOn {f : ℝ × ℝ → W}
     (hf : ContDiffOn ℝ 2 f S) : ContinuousOn (horizontalSliceJet f) S := by

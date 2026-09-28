@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -20,14 +12,11 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ}
 
-
 def euclideanDivergenceOperator
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   g.pullbackVolumeDensity id x • (g.euclideanCoefficients x).inverse.comp (innerSL ℝ)
-
-
 
 theorem euclideanDivergenceOperator_basis_apply
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -50,7 +39,6 @@ theorem euclideanDivergenceOperator_basis_apply
     LeviCivitaData.Dirichlet.divergenceCoefficients, hb]
   rfl
 
-
 theorem contDiff_euclideanDivergenceOperator
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) :
     ContDiff ℝ ∞ g.euclideanDivergenceOperator := by
@@ -66,9 +54,6 @@ theorem contDiff_euclideanDivergenceOperator
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.HarmonicCoordinates
-
-
-
 
 theorem exists_divergence_operator_derivative_bound {n : ℕ} :
     let B₀ : EuclideanSpace ℝ (Fin n) →L[ℝ]

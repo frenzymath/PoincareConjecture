@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapThreeArrays
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +30,6 @@ theorem cap_frameInverseGram_eq_ite (g : RiemannianMetric n M) (x : M)
   rw [cap_frameGram_eq_identity g x e he, ContinuousLinearMap.inverse_id,
     ContinuousLinearMap.id_apply]
   simp [EuclideanSpace.basisFun_apply, EuclideanSpace.inner_single_left]
-
-
 
 theorem cap_tensorNorm_frame {r : ℕ} (g : RiemannianMetric n M)
     (T : CovariantTensorEvaluation n M r) (x : M)

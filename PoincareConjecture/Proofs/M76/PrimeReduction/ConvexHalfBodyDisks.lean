@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ConvexZeroSectionDisk
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
 
 theorem isFinitePLBallPair_convex_half_body_sides
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

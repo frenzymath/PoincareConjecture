@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import Mathlib.Data.Int.Interval
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem frontier_finite_union_subset_end_closures
     {M : Type u} [TopologicalSpace M]
@@ -117,9 +105,6 @@ theorem frontier_finite_union_subset_end_closures
       intro y hy
       exact ⟨hy.1, by linarith [hy.2.1], hy.2.2⟩
     exact closure_mono hsub hxpos
-
-
-
 
 theorem exists_exterior_end_center_of_not_subset
     {M : Type u} [TopologicalSpace M]

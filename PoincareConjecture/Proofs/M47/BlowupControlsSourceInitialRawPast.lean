@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialAgreement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_raw_past
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

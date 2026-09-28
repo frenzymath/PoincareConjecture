@@ -4,15 +4,6 @@ import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Sectional
 import PoincareConjecture.Proofs.M05.LinearAlgebra.CrossProduct.Orthonormal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Matrix
@@ -96,8 +87,6 @@ end PoincareConjecture.M35
 
 namespace PoincareConjecture.LeviCivitaData
 
-
-
 theorem nonnegativeCurvatureOperator_of_nonnegative_sectional_three
     {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -132,8 +121,6 @@ theorem nonnegativeCurvatureOperator_of_nonnegative_sectional_three
       (g.orthonormalBasis x j) (g.orthonormalBasis x k) (g.orthonormalBasis x l)
   simp only [← e.sum_comp]
   simpa only [ht] using h
-
-
 
 theorem curvatureOperatorBound_of_curvatureTensorNorm_le
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_SphereVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem canonicalNeck_central_distance (q r : UnitTwoSphere) :
     g.edist (N.coordinate_map (q, 0)) (N.coordinate_map (r, 0)) ≤
@@ -72,7 +61,6 @@ theorem canonicalNeck_central_distance (q r : UnitTwoSphere) :
       add_zero, mul_assoc] using h
   exact canonicalSphereMetric.edist_le_mul_of_inner_mfderiv_le g hF hC hbound q r
 
-
 noncomputable def canonicalNeckPatch (q : UnitTwoSphere) (a : ℝ) :
     Set RoundCylinderSpace :=
   canonicalSphereMetric.ball q a ×ˢ Ioo (-a) a
@@ -87,8 +75,6 @@ theorem canonicalNeckPatch_subset_domain (q : UnitTwoSphere) {a : ℝ}
     linarith [N.epsilon_lt_half]
   intro z hz
   exact ⟨mem_univ _, ⟨by linarith [hz.2.1], by linarith [hz.2.2]⟩⟩
-
-
 
 theorem canonicalNeckPatch_image_subset_ball (q : UnitTwoSphere)
     (hq : N.coordinate_map (q, 0) = N.center) {a : ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalTerminalNeck
 import PoincareConjecture.Proofs.M48.ExtensionCanonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F0 k)
   (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
-
-
 
 theorem globalFlow_admissible : SurgeryFlowAdmissible (Q.globalFlow m13) := by
   constructor

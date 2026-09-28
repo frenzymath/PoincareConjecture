@@ -5,16 +5,6 @@ import Mathlib.Order.Filter.Ultrafilter.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Push
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Metric
@@ -101,7 +91,6 @@ theorem busemann_apply_ray {ray : ℝ → M} (hray : IsRay ray)
     rw [hray ht hs]
     linarith [le_abs_self (t - s)]
 
-
 theorem exists_minimizing_hyperfilter_limit [ProperSpace M]
     {I : Set ℝ} (h0I : (0 : ℝ) ∈ I)
     {J : ℕ → Set ℝ} {curve : ℕ → ℝ → M}
@@ -142,7 +131,6 @@ theorem exists_minimizing_hyperfilter_limit [ProperSpace M]
       exact hcurve k hks hkt
     exact tendsto_nhds_unique (h₁.congr' h₂) tendsto_const_nhds
   · exact hK.isClosed.mem_of_tendsto (hray 0 h0I) (Eventually.of_forall hanchor)
-
 
 theorem exists_ray_in_closed_set [ProperSpace M]
     {K : Set M} (hK : IsClosed K) (hnc : ¬ IsCompact K) {p : M}

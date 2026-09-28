@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingExponential
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPathUnique
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +33,6 @@ private theorem uniquePathData_start_zero {S : GeneralizedLGeometryTransport n X
   rfl
 
 include hCoordinates in
-
 
 theorem rescalingUniqueBranch_iff {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

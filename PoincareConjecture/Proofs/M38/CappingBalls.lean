@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.CappingCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,30 +20,25 @@ noncomputable local instance cappedBallChartedSpace :
 local instance cappedBallIsManifold : IsManifold (𝓡 3) ∞ (CappedDiscardedSpace F T hT P) :=
   cappedDiscardedSpace_isManifold F T hT P
 
-
 noncomputable def eventCappingChart (j : EventCappingIndex F T hT) :
     OpenPartialHomeomorph (CappedDiscardedSpace F T hT P) StandardCapSpace :=
   Poincare.Gluing.quotientChart
     (fun j => (eventCappingDomain F T hT j : Set StandardCapSpace))
     (fun j => (eventCappingDomain F T hT j).isOpen) (eventCappingOverlap F T hT P) j
 
-
 theorem eventCappingChart_target (j : EventCappingIndex F T hT) :
     (eventCappingChart F T hT P j).target = eventCappingDomain F T hT j :=
   Poincare.Gluing.quotientChart_target _ _ _ j
-
 
 theorem eventCappingChart_source (j : EventCappingIndex F T hT) :
     (eventCappingChart F T hT P j).source = Set.range (eventCappingInclude F T hT P j) := by
   rw [eventCappingChart, Poincare.Gluing.quotientChart_source, Set.image_univ]
   rfl
 
-
 theorem eventCappingChart_symm (j : EventCappingIndex F T hT)
     (x : eventCappingDomain F T hT j) :
     (eventCappingChart F T hT P j).symm x.val = eventCappingInclude F T hT P j x :=
   Poincare.Gluing.quotientChart_symm_apply _ _ _ j x.property
-
 
 noncomputable def cappedCapBall (i : Fin (F.event T hT).cap_count) :
     SurgeryBallEmbedding (cappedDiscardedCarrier F T hT P) := by
@@ -84,11 +71,9 @@ noncomputable def cappedCapBall (i : Fin (F.event T hT).cap_count) :
     rw [heq]
     exact eventCappingInclude_openEmbedding F T hT P (.inr i)
 
-
 theorem cappedCapBall_map (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
     (cappedCapBall F T hT P i).map x.val = eventCappingInclude F T hT P (.inr i) x :=
   eventCappingChart_symm F T hT P (.inr i) x
-
 
 theorem cappedCapBall_closedBall (i : Fin (F.event T hT).cap_count) :
     (cappedCapBall F T hT P i).closedBall = eventCappingInclude F T hT P (.inr i) ''
@@ -106,8 +91,6 @@ theorem cappedCapBall_closedBall (i : Fin (F.event T hT).cap_count) :
     refine ⟨x.val, ?_, cappedCapBall_map F T hT P i x⟩
     change ‖x.val‖ ≤ (1 : ℝ) at hx
     simpa only [Metric.mem_closedBall, dist_zero_right] using hx
-
-
 
 theorem cappedCapBall_attachment (i : Fin (F.event T hT).cap_count)
     (x : capDoubleBall) (hx : 1 < ‖x.val‖) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M09.PathComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T tau theta : ℝ}
-
-
 
 def jointSeed_restrict_path (path : BackwardTimePath F T 0 tau)
     (htheta : 0 < theta) (hle : theta ≤ tau) : BackwardTimePath F T 0 theta where
@@ -37,8 +26,6 @@ def jointSeed_restrict_path (path : BackwardTimePath F T 0 tau)
     rw [uIcc_of_le htheta.le, uIcc_of_le path.ordered.le]
     exact Icc_subset_Icc le_rfl hle)
 
-
-
 theorem jointSeed_integrand_nonneg (path : BackwardTimePath F T 0 tau)
     (hscalar : ∀ s ∈ J, ∀ x : M, 0 ≤ (F.connection s).scalarCurvature x)
     {s : ℝ} (hs : s ∈ Icc 0 tau) : 0 ≤ backwardLIntegrand F T path.curve s := by
@@ -51,8 +38,6 @@ theorem jointSeed_integrand_nonneg (path : BackwardTimePath F T 0 tau)
     exact real_inner_self_nonneg
   exact mul_nonneg (Real.sqrt_nonneg s)
     (add_nonneg (hscalar (T - s) (path.time_mem s hs) (path.curve s)) hkin)
-
-
 
 theorem jointSeed_restricted_action_le (path : BackwardTimePath F T 0 tau)
     (htheta : 0 < theta) (hle : theta ≤ tau)

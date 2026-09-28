@@ -1,13 +1,5 @@
 import Mathlib.AlgebraicTopology.SingularHomology.HomotopyInvariance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -19,7 +11,6 @@ namespace PoincareConjecture.Proofs.M02
 
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
 
-
 theorem simplicialSimplexDifference_d_eq_zero (R : C) (X : SSet.{w})
     {n : ℕ} (s t : X _⦋n + 1⦌)
     (hface : ∀ i : Fin (n + 2), X.δ i s = X.δ i t) :
@@ -30,11 +21,9 @@ theorem simplicialSimplexDifference_d_eq_zero (R : C) (X : SSet.{w})
     simp only [SSet.ιChainComplex_d, hface]
   rw [Preadditive.sub_comp, hd, sub_self]
 
-
 noncomputable def singularConstantSimplex (X : TopCat.{w}) (n : ℕ) (x : X) :
     (TopCat.toSSet.obj X) _⦋n⦌ :=
   (X.toSSetObjEquiv _).symm (ContinuousMap.const _ x)
-
 
 theorem singularConstantSimplex_face (X : TopCat.{w}) {n : ℕ}
     (x : X) (i : Fin (n + 2)) :
@@ -43,14 +32,12 @@ theorem singularConstantSimplex_face (X : TopCat.{w}) {n : ℕ}
   refine (X.toSSetObjEquiv _).injective ?_
   exact ContinuousMap.ext (fun _ => rfl)
 
-
 theorem singularConstantSimplex_map {X Y : TopCat.{w}} (f : X ⟶ Y)
     (n : ℕ) (x : X) :
     (TopCat.toSSet.map f).app _ (singularConstantSimplex X n x) =
       singularConstantSimplex Y n (f x) := by
   refine (Y.toSSetObjEquiv _).injective ?_
   exact ContinuousMap.ext (fun _ => rfl)
-
 
 theorem singularSimplexDifference_d_eq_zero (R : C) (X : TopCat.{w})
     {n : ℕ} (s : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X)

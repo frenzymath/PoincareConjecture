@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.ChartStars
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

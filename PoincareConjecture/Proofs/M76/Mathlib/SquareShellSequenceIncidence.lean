@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSequenceCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace SquareShell
-
-
-
 
 theorem radiusMap_eq_left_iff {a b c d r : ℝ} (hab : a < b) (hcd : c < d) :
     radiusMap a b c d r = c ↔ r = a := by
@@ -28,9 +15,6 @@ theorem radiusMap_eq_left_iff {a b c d r : ℝ} (hab : a < b) (hcd : c < d) :
   · rintro rfl
     exact (radiusMap_endpoints hab).1
 
-
-
-
 theorem radiusMap_eq_right_iff {a b c d r : ℝ} (hab : a < b) (hcd : c < d) :
     radiusMap a b c d r = d ↔ r = b := by
   constructor
@@ -39,9 +23,6 @@ theorem radiusMap_eq_right_iff {a b c d r : ℝ} (hab : a < b) (hcd : c < d) :
     exact h.trans (radiusMap_endpoints hab).2.symm
   · rintro rfl
     exact (radiusMap_endpoints hab).2
-
-
-
 
 theorem sequence_shell_overlap_iff {a b : ℕ → ℝ}
     (ha : StrictAnti a) (hb : StrictAnti b)
@@ -64,8 +45,6 @@ theorem sequence_shell_overlap_iff {a b : ℕ → ℝ}
   rw [ha.mem_adjacent_Icc_iff x.property, hb.mem_adjacent_Icc_iff (e n x).property,
     houter, hinner]
 
-
-
 theorem sequence_shell_agree {a b : ℕ → ℝ} (ha : StrictAnti a)
     (e : ∀ n, shell (a (n + 1)) (a n) ≃ₜ shell (b (n + 1)) (b n))
     (hinner : ∀ n (x : shell (a (n + 1)) (a n)), ‖(x : ℝ × ℝ)‖ = a (n + 1) →
@@ -86,9 +65,6 @@ theorem sequence_shell_agree {a b : ℕ → ℝ} (ha : StrictAnti a)
     rw [hinner n ⟨x, hn⟩ hr, houter m ⟨x, hm⟩ hr']
     change (b (n + 1) / a (n + 1)) • x = (b m / a m) • x
     rw [hi]
-
-
-
 
 theorem sequence_shell_open_membership {a b : ℕ → ℝ} {c d : ℝ}
     (ha : StrictAnti a) (hb : StrictAnti b) (hc : ∀ n, c < a n) (hd : ∀ n, d < b n)

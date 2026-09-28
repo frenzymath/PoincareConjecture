@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.OriginalPLIdentity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.OriginalToStandard
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -30,9 +19,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
-
 
 theorem polyhedralPL_standard_to_original_frontier_on_parameter
     {V α β : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -138,10 +124,6 @@ theorem polyhedralPL_standard_to_original_frontier_on_parameter
   intro z hz
   obtain ⟨s, hs, hzs⟩ := SimplicialComplex.mem_space_iff.mp (hJK.symm.subset hz)
   exact mem_iUnion.mpr ⟨⟨s, hs⟩, (hMs ⟨s, hs⟩).symm.subset hzs⟩
-
-
-
-
 
 theorem exists_original_frontier_inverse_parameter
     {V α β : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Isotopy.Mathlib.RelativeCircleLift
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -17,8 +8,6 @@ namespace AddCircle
 
 variable {Y : Type*} [TopologicalSpace Y]
   [SimplyConnectedSpace Y] [LocallyPathConnectedSpace Y]
-
-
 
 theorem exists_lift_eq_prescribed_on_connected_set (period : ℝ) [Fact (0 < period)]
     (f : C(Y, AddCircle period)) {A : Set Y} (hA : IsConnected A)
@@ -36,9 +25,6 @@ theorem exists_lift_eq_prescribed_on_connected_set (period : ℝ) [Fact (0 < per
       (by funext y; exact (congrFun hlift y).trans (hboundary y).symm)
       base hlift0
   exact ⟨lift, fun y => congrFun hlift y, fun y => congrFun heq y⟩
-
-
-
 
 theorem exists_homotopyRel_clamped_lift_of_connected_set
     (period : ℝ) [Fact (0 < period)]

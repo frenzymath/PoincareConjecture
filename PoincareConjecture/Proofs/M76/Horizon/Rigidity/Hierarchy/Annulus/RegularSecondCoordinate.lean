@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SecondCo
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.PhaseChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleRegularLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,8 +16,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_hamiltonZero_second_coordinate_finite_regular_values {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)
@@ -125,9 +113,6 @@ theorem exists_hamiltonZero_second_coordinate_finite_regular_values {ι κ : Typ
       hxT, hzero, hpsi, hT, hTR, hTB, hformula, ?_⟩
     intro y hy
     simpa only [hxt] using hlevel y hy
-
-
-
 
 theorem exists_hamiltonZero_regular_second_coordinate {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

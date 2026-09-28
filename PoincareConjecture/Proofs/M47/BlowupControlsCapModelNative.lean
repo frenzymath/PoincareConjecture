@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeJets
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,8 +72,6 @@ theorem cap_model_tensorNorm_sq (u : ℝ) (hu : u < 1)
         (M35.cylinderCoordinateEquiv.symm (0, s)) (ContinuousLinearMap.id ℝ E₃) (a j) (b j)) = _
   simp only [cap_model_frameInverseGram u hu q s]
   ring
-
-
 
 theorem cap_model_metricDifference_norm_sq
     (u : ℝ) (hu : u < 1) (g1 : RiemannianMetric 3 E₃)

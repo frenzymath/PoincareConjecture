@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.EssentialOutputPolygon
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76.Dehn
@@ -116,4 +108,3 @@ theorem exists_finite_essential_output_polygon
   exact ⟨n, P, hP, hPi, hPimage, htransport, hinner, houter⟩
 
 end PoincareConjecture.M76
-

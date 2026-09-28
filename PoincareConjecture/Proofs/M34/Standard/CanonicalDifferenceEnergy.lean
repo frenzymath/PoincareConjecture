@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDensityIntegral
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceEnergyRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
   (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA))
   (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
 
-
-
 noncomputable def canonicalDifferenceEnergy (φ : V n → ℝ) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -39,8 +27,6 @@ noncomputable def canonicalDifferenceEnergy (φ : V n → ℝ) :
   letI : MeasurableSpace (V n) := borel _
   letI : BorelSpace (V n) := ⟨rfl⟩
   fun F F' p t => ∫ x, φ x ^ 2 * canonicalDifferenceDensity U hU qH qA qS F F' p t x
-
-
 
 theorem canonicalDifferenceEnergy_nonneg (φ : V n → ℝ) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -59,8 +45,6 @@ variable {φ : V n → ℝ} (hφ : Continuous φ) (hφc : HasCompactSupport φ)
   (hφU : tsupport φ ⊆ U)
 
 include hφ hφc hφU
-
-
 
 theorem canonicalDifferenceEnergy_continuousOn :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -81,9 +65,6 @@ theorem canonicalDifferenceEnergy_continuousOn :
   apply hc.congr
   intro t ht
   exact canonicalDifferenceDensity_integral_eq U hU qH qA qS hφ hφc hφU F F' p (hKJ ht)
-
-
-
 
 theorem canonicalDifferenceEnergy_differentiableAt :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

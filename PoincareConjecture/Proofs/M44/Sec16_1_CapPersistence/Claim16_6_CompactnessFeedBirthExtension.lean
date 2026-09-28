@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Compactnes
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SpatialJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +11,6 @@ namespace PoincareConjecture.M44
 
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
 
 theorem tendsto_spatialJet_of_compactSmooth
     {fseq : ℕ → ℝ × E → V} {f : ℝ × E → V} {U : Set (ℝ × E)}
@@ -50,15 +36,12 @@ theorem tendsto_spatialJet_of_compactSmooth
   exact (Poincare.Analysis.iteratedFDeriv_spatial_slice (fseq k)
     (hk p (mem_singleton p)) m v).symm
 
-
-
 noncomputable def birthExtendedCoefficients (b0 : E → V) (b : ℝ × E → V) :
     ℝ × E → V := by
   classical
   exact fun p => if p.1 = 0 then b0 p.2 else b p
 
 omit [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V] in
-
 
 theorem birthExtendedCoefficients_zero (b0 : E → V) (b : ℝ × E → V) :
     (fun x => birthExtendedCoefficients b0 b (0, x)) = b0 := by
@@ -67,14 +50,10 @@ theorem birthExtendedCoefficients_zero (b0 : E → V) (b : ℝ × E → V) :
 
 omit [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V] in
 
-
 theorem birthExtendedCoefficients_interior (b0 : E → V) (b : ℝ × E → V) (T : ℝ) :
     EqOn (birthExtendedCoefficients b0 b) b (Ioo 0 T ×ˢ univ) := by
   intro p hp
   exact if_neg hp.1.1.ne'
-
-
-
 
 theorem birthExtendedCoefficients_spatial_smooth
     {b0 : E → V} {b : ℝ × E → V} {T : ℝ}
@@ -91,10 +70,6 @@ theorem birthExtendedCoefficients_spatial_smooth
       (fun x _ => (show (t, x) ∈ Ioo 0 T ×ˢ (univ : Set E) from
         ⟨⟨hpos, ht.2⟩, mem_univ x⟩))
     simpa only [birthExtendedCoefficients, if_neg hpos.ne'] using hslice
-
-
-
-
 
 theorem continuousOn_birthExtended_spatialJets [ProperSpace E]
     {fseq : ℕ → ℝ × E → V} {b : ℝ × E → V} {b0 : E → V}

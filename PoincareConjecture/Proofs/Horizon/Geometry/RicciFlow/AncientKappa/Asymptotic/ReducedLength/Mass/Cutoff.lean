@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Mass.Integrable
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Tails.Limit.Cutoff
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
   (G : AncientCompactTimeConvergence S)
-
-
 
 theorem exists_limitDensity_mass_cutoffs
     (P : AncientAsymptoticSolitonPredecessors K)

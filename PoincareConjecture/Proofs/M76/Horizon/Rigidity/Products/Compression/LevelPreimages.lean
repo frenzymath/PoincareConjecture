@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.PhaseSigns
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleSlabAdjustedLevels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -222,4 +214,3 @@ theorem exists_hamiltonZero_level_preserving_adjustment {ι κ : Type*}
     exact (hpoint t y).2
 
 end PoincareConjecture.M76.PrescribedSlab
-

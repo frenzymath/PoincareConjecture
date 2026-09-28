@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -71,10 +62,6 @@ private theorem PLDomain.exists_frontier_plane_coordinates
   obtain ⟨q, hqs, hqt, hq, hqi⟩ := B.exists_affine_hypersurface_chart ell
     (B.isImage_frontier_of_affine_nonneg ell hell hhalf) a r hra har haz x
   exact ⟨B, a, r, q, hqs.symm ▸ hxB, hB, hqs, hqt, hq, hqi⟩
-
-
-
-
 
 theorem isLocalHomeomorph_frontier_of_polyhedral_model
     {E X Y ι κ : Type*}
@@ -162,8 +149,6 @@ theorem isLocalHomeomorph_frontier_of_polyhedral_model
   have hb := hbq.of_comp_right
     ((IsLocalHomeomorphOn.OpenPartialHomeomorph.isLocalHomeomorphOn q.symm).mono inter_subset_left)
   exact hb x ⟨q x, hxU, q.left_inv hxq⟩
-
-
 
 theorem isCoveringMap_frontier_of_polyhedral_model
     {E X Y ι κ : Type*}

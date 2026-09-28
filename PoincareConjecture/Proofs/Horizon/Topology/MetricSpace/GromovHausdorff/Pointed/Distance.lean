@@ -1,22 +1,7 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Basic
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Topology.MetricSpace.Gluing
 import Mathlib.Topology.MetricSpace.Infsep
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 open scoped Topology
@@ -24,8 +9,6 @@ open scoped Topology
 namespace Poincare.GromovHausdorff
 
 universe u
-
-
 
 structure FiniteDiameterBasedMetricSpace where
   carrier : Type u
@@ -37,16 +20,11 @@ structure FiniteDiameterBasedMetricSpace where
 instance (X : FiniteDiameterBasedMetricSpace.{u}) : MetricSpace X.carrier := X.metric
 instance (X : FiniteDiameterBasedMetricSpace.{u}) : Nonempty X.carrier := ⟨X.base⟩
 
-
 def FiniteDiameterBasedMetricSpace.toBasedMetricSpaceBundle
     (X : FiniteDiameterBasedMetricSpace.{u}) : BasedMetricSpaceBundle.{u} :=
   { carrier := X.carrier
     metric := X.metric
     base := X.base }
-
-
-
-
 
 structure PointedGHRealization
     (X Y : FiniteDiameterBasedMetricSpace.{u}) where
@@ -67,8 +45,6 @@ private theorem pointedBaseMap_isometry
     Isometry (pointedBaseMap X) := by
   intro a b
   simp [pointedBaseMap]
-
-
 
 noncomputable def basePointedGHRealization
     (X Y : FiniteDiameterBasedMetricSpace.{u}) :
@@ -92,7 +68,6 @@ theorem nonempty_pointedGHRealization
     Nonempty (PointedGHRealization X Y) :=
   ⟨basePointedGHRealization X Y⟩
 
-
 noncomputable def pointedHausdorffDist
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y) : ℝ :=
@@ -105,15 +80,9 @@ theorem pointedHausdorffDist_nonneg
     0 ≤ pointedHausdorffDist R := by
   exact Metric.hausdorffDist_nonneg
 
-
-
 def pointedGHAdmissibleDistances
     (X Y : FiniteDiameterBasedMetricSpace.{u}) : Set ℝ :=
   Set.range (fun R : PointedGHRealization X Y => pointedHausdorffDist R)
-
-
-
-
 
 noncomputable def pointedGHDistance
     (X Y : FiniteDiameterBasedMetricSpace.{u}) : ℝ :=
@@ -141,17 +110,12 @@ theorem pointedGHAdmissibleDistances_bddBelow
   rcases hd with ⟨R, rfl⟩
   exact pointedHausdorffDist_nonneg R
 
-
-
-
 theorem pointedGHDistance_le_realization
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y) :
     pointedGHDistance X Y ≤ pointedHausdorffDist R := by
   unfold pointedGHDistance pointedGHAdmissibleDistances
   exact csInf_le (pointedGHAdmissibleDistances_bddBelow X Y) ⟨R, rfl⟩
-
-
 
 theorem pointedGHDistance_eq_realization_of_min
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -166,9 +130,6 @@ theorem pointedGHDistance_eq_realization_of_min
     rintro d ⟨S, rfl⟩
     exact hmin S
 
-
-
-
 theorem pointedHausdorffDist_eq_zero_of_attained_zero
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y)
@@ -176,9 +137,6 @@ theorem pointedHausdorffDist_eq_zero_of_attained_zero
     (hzero : pointedGHDistance X Y = 0) :
     pointedHausdorffDist R = 0 := by
   rw [← hattain, hzero]
-
-
-
 
 theorem basedIsometry_of_realization_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -192,9 +150,6 @@ theorem basedIsometry_of_realization_agreement
       _ = R.ambient.base := R.left_base
       _ = R.right Y.base := R.right_base.symm
   exact R.right_isometry.injective hbase
-
-
-
 
 theorem basedIsometry_unique_of_realization_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -210,8 +165,6 @@ theorem basedIsometry_unique_of_realization_agreement
     R.right (e₁ x) = R.left x := (h₁ x).symm
     _ = R.right (e₂ x) := h₂ x
 
-
-
 theorem exists_pointedGHRealization_lt_add
     (X Y : FiniteDiameterBasedMetricSpace.{u})
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :
@@ -224,10 +177,6 @@ theorem exists_pointedGHRealization_lt_add
     exists_lt_of_csInf_lt (pointedGHAdmissibleDistances_nonempty X Y) hlt
   rcases hd with ⟨R, rfl⟩
   exact ⟨R, hdlt⟩
-
-
-
-
 
 theorem pointedGHDistance_eq_zero_iff_forall_pos_exists_realization_lt
     (X Y : FiniteDiameterBasedMetricSpace.{u}) :
@@ -262,7 +211,6 @@ private theorem range_isBounded_of_finiteDiameter
   rw [hf.dist_eq]
   exact hC x y
 
-
 theorem pointedHausdorffEDist_ne_top
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y) :
@@ -274,10 +222,6 @@ theorem pointedHausdorffEDist_ne_top
   · exact Set.range_nonempty _
   · exact range_isBounded_of_finiteDiameter X R.left_isometry
   · exact range_isBounded_of_finiteDiameter Y R.right_isometry
-
-
-
-
 
 theorem exists_right_point_lt_of_pointedHausdorffDist_lt
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -291,8 +235,6 @@ theorem exists_right_point_lt_of_pointedHausdorffDist_lt
   rcases hy with ⟨y, rfl⟩
   exact ⟨y, hdist⟩
 
-
-
 theorem exists_left_point_lt_of_pointedHausdorffDist_lt
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y) {epsilon : ℝ}
@@ -304,9 +246,6 @@ theorem exists_left_point_lt_of_pointedHausdorffDist_lt
       hε (pointedHausdorffEDist_ne_top R)
   rcases hx with ⟨x, rfl⟩
   exact ⟨x, hdist⟩
-
-
-
 
 theorem abs_dist_base_sub_dist_base_lt_of_corresponding
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -330,9 +269,6 @@ theorem abs_dist_base_sub_dist_base_lt_of_corresponding
     have ht := dist_triangle R.ambient.base (R.left x) (R.right y)
     linarith
   exact (abs_lt).2 ⟨h₂, h₁⟩
-
-
-
 
 theorem exists_basedIsometry_of_attained_zero_of_compact_ranges
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -375,8 +311,6 @@ theorem exists_basedIsometry_of_attained_zero_of_compact_ranges
     _ = R.ambient.base := R.left_base
     _ = R.right Y.base := R.right_base.symm
 
-
-
 theorem exists_basedIsometry_of_attained_zero_of_compact_carriers
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -388,7 +322,6 @@ theorem exists_basedIsometry_of_attained_zero_of_compact_carriers
     (isCompact_range R.left_isometry.continuous)
     (isCompact_range R.right_isometry.continuous)
   exact pointedHausdorffDist_eq_zero_of_attained_zero R hattain hzero
-
 
 noncomputable def PointedGHRealization.glue
     {X Y Z : FiniteDiameterBasedMetricSpace.{u}}
@@ -461,8 +394,6 @@ theorem pointedHausdorffDist_glue_le
       rw [hxy, hyz]
       rfl
 
-
-
 theorem pointedGHDistance_triangle
     (X Y Z : FiniteDiameterBasedMetricSpace.{u}) :
     pointedGHDistance X Z ≤
@@ -481,10 +412,6 @@ theorem pointedGHDistance_triangle
         (pointedGHDistance Y Z + epsilon / 2) := add_lt_add hR hS
     _ = pointedGHDistance X Y + pointedGHDistance Y Z + epsilon := by ring
 
-
-
-
-
 def deltaNetModel
     (X : FiniteDiameterBasedMetricSpace.{u})
     (L : Set X.carrier) (hbase : X.base ∈ L) :
@@ -497,10 +424,6 @@ def deltaNetModel
       refine ⟨C, ?_⟩
       intro p q
       exact hC p.1 q.1 }
-
-
-
-
 
 theorem exists_finite_isDeltaNet_of_compactSpace
     {X : Type u} [MetricSpace X] [CompactSpace X]
@@ -539,8 +462,6 @@ theorem exists_finite_isDeltaNet_of_compactSpace
     intro u v hu hv huv
     exact (huv (hsubsingleton hu hv)).elim
 
-
-
 theorem pointedGHDistance_le_deltaNet
     (X : FiniteDiameterBasedMetricSpace.{u})
     (δ : ℝ) (hδ : 0 ≤ δ) (L : Set X.carrier)
@@ -571,8 +492,6 @@ theorem pointedGHDistance_le_deltaNet
       change dist w.1 w.1 ≤ δ
       simpa using hδ
   exact (pointedGHDistance_le_realization R).trans hR
-
-
 
 theorem pointedGHDistance_symm
     (X Y : FiniteDiameterBasedMetricSpace.{u}) :
@@ -610,9 +529,6 @@ theorem pointedGHDistance_symm
           (t := Set.range R.right)).symm
   unfold pointedGHDistance
   rw [hsets]
-
-
-
 
 theorem pointedGHDistance_le_sum_deltaNets
     (X : FiniteDiameterBasedMetricSpace.{u})
@@ -671,8 +587,6 @@ theorem pointedGHDistance_self
     exact hR ▸ csInf_le hbounded hmem
   · exact pointedGHDistance_nonneg X X
 
-
-
 noncomputable def PointedCompactMetricSpace.toFiniteDiameterBasedMetricSpace
     (X : PointedCompactMetricSpace.{u}) :
     FiniteDiameterBasedMetricSpace.{u} := by
@@ -688,8 +602,6 @@ noncomputable def PointedCompactMetricSpace.toFiniteDiameterBasedMetricSpace
       metric := X.metric
       base := X.base
       finite_diameter := ⟨C, fun p q => hC (mem_univ p) (mem_univ q)⟩ }
-
-
 
 theorem pointedGHDistance_eq_zero_of_basedIsometry
     (X Y : FiniteDiameterBasedMetricSpace.{u})
@@ -713,15 +625,6 @@ theorem pointedGHDistance_eq_zero_of_basedIsometry
   exact le_antisymm
     ((pointedGHDistance_le_realization R).trans_eq hR)
     (pointedGHDistance_nonneg _ _)
-
-
-
-
-
-
-
-
-
 
 theorem pointedGHDistance_eq_ghDist_of_optimal_base_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -762,8 +665,6 @@ theorem pointedGHDistance_eq_ghDist_of_optimal_base_agreement
       S.left_isometry S.right_isometry
   exact le_antisymm hupper hlower
 
-
-
 theorem exists_pointedGHRealization_attaining_of_optimal_base_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -792,8 +693,6 @@ theorem exists_pointedGHRealization_attaining_of_optimal_base_agreement
     exact _root_.GromovHausdorff.hausdorffDist_optimal
   exact ⟨R, (pointedGHDistance_eq_ghDist_of_optimal_base_agreement hbase).trans hR.symm⟩
 
-
-
 theorem exists_basedIsometry_of_pointedGHDistance_eq_zero_of_optimal_base_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -805,8 +704,6 @@ theorem exists_basedIsometry_of_pointedGHDistance_eq_zero_of_optimal_base_agreem
   obtain ⟨R, hR⟩ :=
     exists_pointedGHRealization_attaining_of_optimal_base_agreement hbase
   exact exists_basedIsometry_of_attained_zero_of_compact_carriers R hR hzero
-
-
 
 theorem pointedGHDistance_eq_zero_iff_basedIsometry_of_compact_carriers
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -823,10 +720,6 @@ theorem pointedGHDistance_eq_zero_iff_basedIsometry_of_compact_carriers
   · rintro ⟨e, hbase⟩
     exact pointedGHDistance_eq_zero_of_basedIsometry X Y e hbase
 
-
-
-
-
 theorem pointedGHDistance_eq_zero_iff_basedIsometry_of_optimal_base_agreement
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -841,21 +734,15 @@ theorem pointedGHDistance_eq_zero_iff_basedIsometry_of_optimal_base_agreement
   · rintro ⟨e, he⟩
     exact pointedGHDistance_eq_zero_of_basedIsometry X Y e he
 
-
-
 def UniformlyBoundedDiameter
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u}) : Prop :=
   ∃ C : ℝ, ∀ k (p q : (X k).carrier), dist p q ≤ C
-
 
 def PointedGHConverges
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (Y : FiniteDiameterBasedMetricSpace.{u}) : Prop :=
   UniformlyBoundedDiameter X ∧
     Tendsto (fun k => pointedGHDistance (X k) Y) atTop (𝓝 0)
-
-
-
 
 theorem pointedGHDistance_eq_zero_of_common_pointedGH_limit
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
@@ -882,11 +769,6 @@ theorem pointedGHDistance_eq_zero_of_common_pointedGH_limit
     squeeze_zero (fun _ => pointedGHDistance_nonneg Y Z) hupper hsum
   simpa using tendsto_nhds_unique_dist hdist tendsto_const_nhds
 
-
-
-
-
-
 theorem exists_basedIsometry_of_common_pointedGH_limit_of_attained
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (Y Z : FiniteDiameterBasedMetricSpace.{u})
@@ -899,8 +781,6 @@ theorem exists_basedIsometry_of_common_pointedGH_limit_of_attained
   have hzero := pointedGHDistance_eq_zero_of_common_pointedGH_limit X Y Z hY hZ
   exact (pointedGHDistance_eq_zero_iff_basedIsometry_of_compact_carriers
     (X := Y) (Y := Z) hattain).mp hzero
-
-
 
 noncomputable def realizationSequenceOfPointedGHConverges
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
@@ -939,9 +819,6 @@ noncomputable def realizationSequenceOfPointedGHConverges
         · simpa [epsilon] using
             h.2.add (tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ)) }
 
-
-
-
 theorem pointedGHConverges_of_realizationSequence
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (Y : FiniteDiameterBasedMetricSpace.{u})
@@ -969,9 +846,6 @@ theorem pointedGHConverges_of_realizationSequence
     exact pointedGHDistance_le_realization R
   · exact S.hausdorff_tendsto_zero
 
-
-
-
 theorem pointedGHConverges_iff_exists_realizationSequence
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (Y : FiniteDiameterBasedMetricSpace.{u})
@@ -989,16 +863,11 @@ theorem pointedGHConverges_iff_exists_realizationSequence
   · rintro ⟨S, hS⟩
     exact pointedGHConverges_of_realizationSequence X Y hbounded S
 
-
 def VaryingRealizationSequence.PointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
     (S : VaryingRealizationSequence X Y)
     (p : ∀ k, (X k).carrier) (q : Y.carrier) : Prop :=
     Tendsto (fun k => dist (S.left k (p k)) (S.right k q)) atTop (𝓝 0)
-
-
-
-
 
 theorem VaryingRealizationSequence.tendsto_dist_base
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -1031,8 +900,6 @@ theorem VaryingRealizationSequence.tendsto_dist_base
         dist_dist_dist_le_right _ _ _
   · exact h
 
-
-
 theorem VaryingRealizationSequence.eventually_mem_ball_of_pointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
     (S : VaryingRealizationSequence X Y)
@@ -1044,8 +911,6 @@ theorem VaryingRealizationSequence.eventually_mem_ball_of_pointConverges
   rw [Metric.mem_ball']
   exact hk
 
-
-
 theorem VaryingRealizationSequence.eventually_dist_base_gt_of_pointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
     (S : VaryingRealizationSequence X Y)
@@ -1053,9 +918,6 @@ theorem VaryingRealizationSequence.eventually_dist_base_gt_of_pointConverges
     (h : S.PointConverges p q) {r : ℝ} (hq : r < dist Y.base q) :
     ∀ᶠ k in atTop, r < dist ((X k).base) (p k) := by
   exact (S.tendsto_dist_base p q h).eventually_const_lt hq
-
-
-
 
 theorem pointedGHDistance_le_varyingRealization
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
@@ -1079,8 +941,6 @@ theorem pointedGHDistance_le_varyingRealization
       right_base := (S.base_agree k).symm }
   exact pointedGHDistance_le_realization R
 
-
-
 theorem pointedGHDistance_tendsto_zero_of_varyingRealization
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (Y : FiniteDiameterBasedMetricSpace.{u})
@@ -1094,8 +954,6 @@ theorem pointedGHDistance_tendsto_zero_of_varyingRealization
   · intro k
     exact pointedGHDistance_le_varyingRealization X Y S k
   · exact S.hausdorff_tendsto_zero
-
-
 
 theorem pointedGHDistance_tendsto_zero_of_realizationSequence
     (X Y : FiniteDiameterBasedMetricSpace.{u})
@@ -1124,8 +982,6 @@ theorem pointedGHDistance_tendsto_zero_of_realizationSequence
     exact hle k
   · exact S.hausdorff_tendsto_zero
 
-
-
 theorem pointedGHDistance_eq_zero_of_realizationSequence
     (X Y : FiniteDiameterBasedMetricSpace.{u})
     (S : RealizationSequence X.carrier Y.carrier X.base Y.base) :
@@ -1133,15 +989,12 @@ theorem pointedGHDistance_eq_zero_of_realizationSequence
   have hconst := pointedGHDistance_tendsto_zero_of_realizationSequence X Y S
   simpa using tendsto_nhds_unique_dist hconst tendsto_const_nhds
 
-
 def onePointFiniteDiameterBasedMetricSpace :
     FiniteDiameterBasedMetricSpace.{u} :=
   { carrier := PUnit
     metric := inferInstance
     base := PUnit.unit
     finite_diameter := ⟨0, by simp⟩ }
-
-
 
 theorem pointedGHDistance_le_onePoint_of_diameterBound
     (X : FiniteDiameterBasedMetricSpace.{u}) (C : ℝ)
@@ -1172,8 +1025,6 @@ theorem pointedGHDistance_le_onePoint_of_diameterBound
     change dist X.base X.base ≤ C
     simpa using hC_nonneg
 
-
-
 theorem pointedGHConverges_onePoint_of_diameter_tendsto
     (X : ℕ → FiniteDiameterBasedMetricSpace.{u})
     (diameterBound : ℕ → ℝ)
@@ -1189,8 +1040,6 @@ theorem pointedGHConverges_onePoint_of_diameter_tendsto
       (fun k => pointedGHDistance_le_onePoint_of_diameterBound
         (X k) (diameterBound k) (hbound k))
       htendsto
-
-
 
 theorem pointedGHConverges_deltaNet
     (X : FiniteDiameterBasedMetricSpace.{u})
@@ -1209,9 +1058,6 @@ theorem pointedGHConverges_deltaNet
         rw [pointedGHDistance_symm]
         exact pointedGHDistance_le_deltaNet X (delta k) (hdelta_nonneg k) (L k) (hL k))
       hdelta
-
-
-
 
 theorem exists_finite_deltaNet_approximation_of_compactSpace
     (X : FiniteDiameterBasedMetricSpace.{u}) [CompactSpace X.carrier] :
@@ -1239,7 +1085,6 @@ theorem exists_finite_deltaNet_approximation_of_compactSpace
   · exact pointedGHConverges_deltaNet X delta
       (fun k => (hdelta_pos k).le) hdelta L hL
 
-
 def ballModel (X : BasedMetricSpaceBundle.{u}) (r : ℝ) (hr : 0 < r) :
     FiniteDiameterBasedMetricSpace.{u} :=
   { carrier := Metric.ball X.base r
@@ -1258,13 +1103,11 @@ def ballModel (X : BasedMetricSpaceBundle.{u}) (r : ℝ) (hr : 0 < r) :
         _ < r + r := add_lt_add hp (by simpa [dist_comm] using hq)
         _ = 2 * r := by ring }
 
-
 def ballModelInclusion
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)
     (hr : 0 < r) (hs : 0 < s) (hrs : r ≤ s) :
     (ballModel X r hr).carrier → (ballModel X s hs).carrier :=
   fun p => ⟨p.1, lt_of_lt_of_le p.2 hrs⟩
-
 
 theorem ballModelInclusion_isometry
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)
@@ -1273,8 +1116,6 @@ theorem ballModelInclusion_isometry
   intro p q
   rfl
 
-
-
 theorem ballModelInclusion_base
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)
     (hr : 0 < r) (hs : 0 < s) (hrs : r ≤ s) :
@@ -1282,9 +1123,6 @@ theorem ballModelInclusion_base
       (ballModel X s hs).base := by
   apply Subtype.ext
   rfl
-
-
-
 
 noncomputable def ballModelNestedRealization
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)
@@ -1300,9 +1138,6 @@ noncomputable def ballModelNestedRealization
     right_isometry := isometry_id
     left_base := ballModelInclusion_base X r s hr hs hrs
     right_base := rfl }
-
-
-
 
 theorem pointedHausdorffDist_ballModelNestedRealization_le
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)
@@ -1323,11 +1158,6 @@ theorem pointedHausdorffDist_ballModelNestedRealization_le
     have hp := p.2
     change dist p.1 X.base < s at hp
     exact hp.le
-
-
-
-
-
 
 def PointedGHConvergesUnbounded
     (X : ℕ → BasedMetricSpaceBundle.{u})

@@ -1,14 +1,5 @@
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace PoincareConjecture.M14
 
 variable {P K F : Type*} [TopologicalSpace P] [TopologicalSpace K] [TopologicalSpace F]
-
-
-
 
 theorem exists_continuousOn_pathFamily {U : Set P} (f : P × K → F)
     (hf : ContinuousOn f (U ×ˢ univ)) (fallback : C(K, F)) :

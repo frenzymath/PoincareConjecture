@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.MarkedSimplicialApproximation
 import Mathlib.Topology.Homotopy.Affine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
 
 theorem exists_marked_finitePL_homotopy
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

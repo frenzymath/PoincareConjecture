@@ -2,16 +2,6 @@ import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open Set Metric
 namespace NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 noncomputable def closedBallCompression (d : ℝ) (x : E) : E :=
   (d / (1 + (d - 1) * ‖x‖)) • x
@@ -72,8 +60,6 @@ theorem continuousOn_closedBallCompression {d : ℝ} (hd : 0 < d) :
   intro x hx
   exact (closedBallCompression_denom_pos hd (mem_closedBall_zero_iff.mp hx)).ne'
 
-
-
 theorem norm_closedBallCompression_lt {r d η : ℝ} (hr : r < 1)
     (hd : 0 < d) (hη : 0 < η)
     (hdη : d ≤ η * (1 - r) / 2) {x : E} (hx : ‖x‖ ≤ r) :
@@ -94,8 +80,6 @@ end NormedSpace
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 noncomputable def closedBallCompression (d : ℝ) (hd : 0 < d) :
     closedBall (0 : E) 1 ≃ₜ closedBall (0 : E) 1 where
@@ -120,9 +104,6 @@ theorem closedBallCompression_apply_sphere (d : ℝ) (hd : 0 < d)
   apply Subtype.ext
   exact NormedSpace.closedBallCompression_of_norm_eq_one hd
     (mem_sphere_zero_iff_norm.mp hx)
-
-
-
 
 theorem exists_closedBallCompression {r η : ℝ} (hr : r < 1) (hη : 0 < η) :
     ∃ h : closedBall (0 : E) 1 ≃ₜ closedBall (0 : E) 1,

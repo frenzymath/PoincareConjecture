@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_full_locallyFinite_complex :
     ∃ K : SimplicialComplex ℝ E, K.space = univ ∧

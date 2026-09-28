@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateCoefficients
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,10 +25,6 @@ local instance m64ConformalGain_trilinearGroup :
 local instance m64ConformalGain_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem m64WeightedConformal_normal_column_bound
     (G : E →L[ℝ] E →L[ℝ] ℝ) (v0 v1 : E) {kappa C modulus : ℝ}
@@ -68,10 +53,6 @@ theorem m64WeightedConformal_normal_column_bound
   exact (sq_le_sq₀ (norm_nonneg _) (by positivity)).mp
     ((mul_le_mul_iff_of_pos_left hk).mp hsquare)
 
-
-
-
-
 theorem m64WeightedConformal_normal_memLp
     {X : Type*} [MeasurableSpace X] {mu : Measure X} {p : ℝ≥0∞}
     (G : X → E →L[ℝ] E →L[ℝ] ℝ) {v0 v1 : X → E} {kappa C modulus : ℝ}
@@ -84,9 +65,6 @@ theorem m64WeightedConformal_normal_memLp
   exact m64WeightedConformal_normal_column_bound (G x) (v0 x) (v1 x) hk hx.1 hx.2.1 hx.2.2
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem m64WeightedChart_source_memLp_two
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 n) ∞ M]

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Paths.EmbeddedConcatenation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Paths.PLConcatenation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -96,8 +88,6 @@ private theorem interval_homeomorph_end_iff (H : unitInterval ≃ₜ unitInterva
   · rintro (rfl | rfl)
     · exact interval_homeomorph_preimage_endpoint H.symm false
     · exact interval_homeomorph_preimage_endpoint H.symm true
-
-
 
 theorem hamiltonZero_installed_unfolded_annulus_frontier_iff
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
@@ -228,9 +218,6 @@ private theorem extend_marked_disk_path
       exact (hleftfront 1).mpr rfl
     · rw [K.target]
       exact (hrightfront 1).mpr rfl
-
-
-
 
 theorem exists_hamiltonZero_extended_disk_failure_arc
     {ι η : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -465,8 +452,6 @@ theorem exists_hamiltonZero_extended_disk_failure_arc
     (fun t => (hKcoords t).2.1) (fun t => (hKcoords t).2.2) theta (fun t => (hKcoords t).1)
   exact ⟨P, K.toContinuousMap, hP, hPK, hK, hKR, hKproper,
     hinterior K.toContinuousMap hKR hKproper, G, hG⟩
-
-
 
 theorem exists_hamiltonZero_extended_second_slab_disk_failure_arc
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

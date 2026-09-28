@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -20,8 +11,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem SmoothEdge.image_Icc_subset_closed_iff (e : SmoothEdge M)
     {A : Set M} (hA : IsClosed A) :

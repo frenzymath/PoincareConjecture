@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M38.SpherePunctureCoordinates
 import PoincareConjecture.Proofs.M38.PartialHomeomorphRegions
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Diffeomorph.EssentialSphere.Extension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +17,6 @@ namespace PoincareConjecture.M38
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
-
-
-
-
 
 theorem cylinder_sphere_filling_or_collar_coordinates_of_source_eq
     (Q : GeneralizedSliceCarrier.{u})
@@ -146,8 +132,6 @@ theorem cylinder_sphere_filling_or_collar_coordinates_of_source_eq
       exact j.toPartialEquiv.left_inv (by
         change c (z, 0) ∈ j₀.source ∩ j₀ ⁻¹' univ
         simp only [hj₀s, preimage_univ, inter_self, mem_univ])
-
-
 
 theorem cylinder_sphere_filling_or_collar_coordinates
     (Q : GeneralizedSliceCarrier.{u})

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.WeakGradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateTest
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -119,8 +118,6 @@ private theorem linearMap_eq_sum_coordinates
   simpa only [map_sum, map_smul, smul_eq_mul, OrthonormalBasis.coe_toBasis,
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
-
-
 
 theorem reducedLength_weak_coordinate_gradient_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -263,8 +260,6 @@ theorem reducedLength_weak_coordinate_gradient_le
   have hHi : Integrable H := hp.1
   rw [hHQ] at hHi
   exact ⟨(integrable_indicator_iff hO.measurableSet).mp hHi, hw⟩
-
-
 
 theorem reducedLength_weak_coordinate_divergence_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

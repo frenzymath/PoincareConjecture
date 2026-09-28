@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.RegularFaceRegionLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry

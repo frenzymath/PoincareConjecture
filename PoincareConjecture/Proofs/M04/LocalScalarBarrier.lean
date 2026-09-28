@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.MovingScalarBarrier
 import PoincareConjecture.Proofs.M04.CompactSlabParabolic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -199,4 +192,3 @@ theorem ricciFlow_compactDomain_moving_barrier [T2Space M]
   exact sub_nonneg.mp (hw t ht x hx)
 
 end PoincareConjecture.M04
-

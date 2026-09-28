@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.RaisingCutHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.VariableBandHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.mem_both_height_closures_of_capped_moved_collar
     {S s s' d B : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

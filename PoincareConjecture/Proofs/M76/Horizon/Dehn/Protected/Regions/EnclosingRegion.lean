@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.ProductRegion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.Projection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 

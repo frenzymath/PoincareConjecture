@@ -1,18 +1,6 @@
 import PoincareConjecture.Statements.M64Annulus
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,10 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
-
-
 
 theorem m64AnnulusForward_of_minimal_competitors
     {circumference : ℝ} {P : M62.CircleProductData F circumference}

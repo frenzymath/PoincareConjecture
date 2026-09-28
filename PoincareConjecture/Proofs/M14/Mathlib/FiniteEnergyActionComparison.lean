@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyPoincare
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -17,8 +8,6 @@ open scoped intervalIntegral
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem finite_energy_action_gap {a b α β : ℝ} (hab : a ≤ b) (hβ : 0 ≤ β)
     {f g L : ℝ → ℝ} (hf : IntervalIntegrable f volume a b)
@@ -44,9 +33,6 @@ theorem finite_energy_action_gap {a b α β : ℝ} (hab : a ≤ b) (hβ : 0 ≤ 
   have hP := mul_le_mul_of_nonneg_left
     (integral_sq_norm_le_length_sq_energy hab hw hwd hd hb) hβ
   nlinarith
-
-
-
 
 theorem finite_energy_action_eq_of_gap_nonpos {a b α β : ℝ}
     (hab : a ≤ b) (hβ : 0 ≤ β) (hshort : 0 < α - β * (b - a) ^ 2)

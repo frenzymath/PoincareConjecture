@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -21,11 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_triangle_interior_affine_height_box
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

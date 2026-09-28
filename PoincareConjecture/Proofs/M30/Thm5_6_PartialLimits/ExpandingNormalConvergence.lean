@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ExpandingChartBounds
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.OpenTimePointedConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space
-
-
-
 
 theorem exists_complete_reference_convergence_of_expanding_normal_charts
     {n : ℕ} {s' s : ℝ}

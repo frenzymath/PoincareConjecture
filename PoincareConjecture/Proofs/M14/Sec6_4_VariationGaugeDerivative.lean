@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeAcceleration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +21,6 @@ private theorem field_transport_heq {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem variationField_gauge (V : M14LVariationData G p R)
     (b : G.gaugeCover.index) {S P : Set ℝ} (hP : IsOpen P) (hzero : (0 : ℝ) ∈ P)
     {β : ℝ × ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
@@ -45,10 +34,6 @@ theorem variationField_gauge (V : M14LVariationData G p R)
         (deriv (fun v => (β (s, v)).2.val) 0)) :=
   (field_transport_heq (V.square_base s) _).trans
     (endpointVariationField_gauge V b hP hβ hrec hs hzero)
-
-
-
-
 
 theorem variationCovariantDerivative_gauge
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)

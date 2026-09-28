@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddCircle
-
-
-
 
 theorem exists_representative_avoiding_finite (p : ℝ) [Fact (0 < p)]
     {S : Set (AddCircle p)} (hS : S.Finite) :
@@ -36,10 +24,6 @@ theorem exists_representative_avoiding_finite (p : ℝ) [Fact (0 < p)]
 end AddCircle
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_compact_regular_circle_level
     {M E ι : Type*} [TopologicalSpace M] [CompactSpace M]

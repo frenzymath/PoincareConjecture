@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingQuadraticLiminf
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +12,6 @@ namespace PoincareConjecture.M64
 open Poincare.Analysis.Sobolev.WeakCompactness
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
-
-
 
 def planarCircleCurrent (u v : E) : ℝ := u 0 * v 1 - u 1 * v 0
 
@@ -56,8 +42,6 @@ private theorem inner_tendsto_weak_strong
 
 variable {X : Type*} [MeasurableSpace X] {mu : Measure X}
 
-
-
 theorem planarCircleCurrent_integrable (u v : Lp E 2 mu) :
     Integrable (fun x => planarCircleCurrent (u x) (v x)) mu := by
   have h : Integrable (fun x => inner ℝ ((quarterTurn.compLp u) x) (v x)) mu :=
@@ -65,9 +49,6 @@ theorem planarCircleCurrent_integrable (u v : Lp E 2 mu) :
   apply h.congr
   filter_upwards [quarterTurn.coeFn_compLp u] with x hx
   rw [hx, quarterTurn_inner]
-
-
-
 
 theorem planarCircleCurrent_integral_tendsto
     {u v : ℕ → Lp E 2 mu} {U V : Lp E 2 mu}
@@ -87,9 +68,6 @@ theorem planarCircleCurrent_integral_tendsto
     change inner ℝ ((quarterTurn.compLp a) x) (b x) = _
     rw [hx, quarterTurn_inner]
   simpa only [hid] using h
-
-
-
 
 theorem planarProjection_current_integral_tendsto
     {m : ℕ} (R : EuclideanSpace ℝ (Fin m) →L[ℝ] E)

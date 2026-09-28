@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckConstructor
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnchor
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ open Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_cap_anchored_necks (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200)

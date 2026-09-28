@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Complete.Local
 import Mathlib.Geometry.Manifold.Algebra.SmoothFunctions
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {X : (x : M) → TangentSpace (𝓡 n) x}
-
 
 structure SmoothIntegralFamily (X : (x : M) → TangentSpace (𝓡 n) x)
     (V : Set M) (I : Set ℝ) (Φ : ℝ × M → M) : Prop where
@@ -33,7 +30,6 @@ theorem SmoothIntegralFamily.smooth_orbit {V : Set M} {I : Set ℝ} {Φ : ℝ ×
     (h : SmoothIntegralFamily X V I Φ) {y : M} (hy : y ∈ V) :
     ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ (fun t => Φ (t, y)) I :=
   h.smooth.comp (contMDiff_id.prodMk contMDiff_const).contMDiffOn (fun _ ht => ⟨ht, hy⟩)
-
 
 theorem exists_uniform_smooth_localFlows
     (hX : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% X))
@@ -66,7 +62,6 @@ theorem exists_uniform_smooth_localFlows
       fun y hy => ⟨V, Φ, hV, hy, ⟨hs, hd⟩, hi⟩⟩
 
 variable [T2Space M]
-
 
 theorem SmoothIntegralFamily.glue
     (hX : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) 1 (T% X))

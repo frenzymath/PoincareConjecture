@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.TubeEnds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CapDirection
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_compact_prefix_frontier_subset (C : CapCertificate g)
     {U : Set M} (htail : ∃ s ∈ Ioo 0 C.epsilon⁻¹,
@@ -49,8 +46,6 @@ theorem exists_compact_prefix_frontier_subset (C : CapCertificate g)
   exact ⟨K, hK, hKC,
     fun x hx => hsmall (hKC (hK.isClosed.frontier_subset hx)) hx.2,
     fun x hx => hsmall hx.1 (fun hi => hx.2 (interior_subset hi))⟩
-
-
 
 theorem exists_compact_tube_tail (C : CapCertificate g)
     {X : Set M} (tube : EpsilonTubeCertificate g X)
@@ -121,8 +116,6 @@ universe u
 variable {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension G T} {K : TerminalComponentPath E}
 
-
-
 theorem exists_compact_cappedTube_attachment (e : TerminalEnd K)
     (hproper : ∀ D : Set ℝ, IsCompact D →
       IsCompact ((E.extended.connection T).scalarCurvature ⁻¹' D))
@@ -143,9 +136,6 @@ theorem exists_compact_cappedTube_attachment (e : TerminalEnd K)
     exact e.tail_image_not_subset_compact k hL
       ((hk k le_rfl).trans (hside ▸ hsub))
   exact ⟨L, a, hL, hLC, ha, heq ▸ hsub, hrest⟩
-
-
-
 
 theorem cappedTube_carrier_eq_component (e : TerminalEnd K)
     (hproper : ∀ D : Set ℝ, IsCompact D →

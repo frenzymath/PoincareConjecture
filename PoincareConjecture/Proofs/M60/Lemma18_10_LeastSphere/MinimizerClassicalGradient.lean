@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageDerivative
 import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,10 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 def suPlaneColumns {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (p : Fin 2 → E) : Plane →L[ℝ] E :=
   (EuclideanSpace.proj (𝕜 := ℝ) 0).smulRight (p 0) +
     (EuclideanSpace.proj (𝕜 := ℝ) 1).smulRight (p 1)
-
-
 
 theorem suPlaneColumns_reconstruct {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (L : Plane →L[ℝ] E) :
@@ -44,9 +31,6 @@ theorem suPlaneColumns_reconstruct {E : Type*} [NormedAddCommGroup E] [NormedSpa
   nth_rw 3 [hx]
   simp
 
-
-
-
 theorem suMollifier_joint_tendsto {m : ℕ} {r : ℕ → ℝ} (hr : ∀ j, 0 < r j)
     (hz : Tendsto r atTop (𝓝 0)) {g : Plane → EuclideanSpace ℝ (Fin m)}
     (hg : AEStronglyMeasurable g volume) {x : Plane} (hc : ContinuousAt g x) :
@@ -57,10 +41,6 @@ theorem suMollifier_joint_tendsto {m : ℕ} {r : ℕ → ℝ} (hr : ∀ j, 0 < r
     (φ := fun q : ℕ × Plane => mollifierBumpEps (hr q.1))
     (g := fun _ : ℕ × Plane => g) (hz.comp tendsto_fst)
     (Eventually.of_forall fun _ => hg) (hc.tendsto.comp tendsto_snd) tendsto_snd
-
-
-
-
 
 theorem suContinuous_weak_gradient_hasFDerivAt_on_ball {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}
@@ -142,8 +122,6 @@ theorem suContinuous_weak_gradient_hasFDerivAt_on_ball {m : ℕ}
       (Eventually.of_forall fun _ => hU.aestronglyMeasurable)
       ((hUc y (hsub hy)).tendsto.comp tendsto_snd) (tendsto_const_nhds (x := y))
     simpa only [v, U, mollifierEps, indicator_of_mem (hsub hy)] using! h
-
-
 
 theorem suContinuous_weak_gradient_hasFDerivAt {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

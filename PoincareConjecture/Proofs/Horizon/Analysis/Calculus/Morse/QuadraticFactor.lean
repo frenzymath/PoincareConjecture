@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -22,7 +13,6 @@ universe u
 
 variable {E V : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [CompleteSpace V]
-
 
 def quadraticFactor (f : E → V) (x : E) : E →L[ℝ] E →L[ℝ] V :=
   ∫ t in (0 : ℝ)..1, (1 - t) • fderiv ℝ (fderiv ℝ f) (t • x)
@@ -82,7 +72,6 @@ theorem quadraticFactor_symmetric {f : E → V}
     rw [minSmoothness_of_isRCLikeNormedField]
     exact WithTop.coe_le_coe.mpr le_top)).eq v w]
 
-
 theorem sub_eq_fderiv_add_quadraticFactor {f : E → V}
     (hf : ContDiff ℝ ∞ f) (x : E) :
     f x - f 0 = fderiv ℝ f 0 x + quadraticFactor f x x x := by
@@ -114,7 +103,6 @@ theorem sub_eq_fderiv_add_quadraticFactor {f : E → V}
   simp [D]
   abel
 
-
 theorem eq_add_quadraticFactor_of_fderiv_eq_zero {f : E → V}
     (hf : ContDiff ℝ ∞ f) (hcrit : fderiv ℝ f 0 = 0) (x : E) :
     f x = f 0 + quadraticFactor f x x x := by
@@ -126,7 +114,6 @@ section RealValued
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
 
-
 theorem bilinear_eq_zero_of_diagonal_eq_zero (B : P →L[ℝ] P →L[ℝ] ℝ)
     (hsymm : ∀ v w, B v w = B w v) (hdiag : ∀ v, B v v = 0) : B = 0 := by
   ext v w
@@ -135,8 +122,6 @@ theorem bilinear_eq_zero_of_diagonal_eq_zero (B : P →L[ℝ] P →L[ℝ] ℝ)
   rw [hdiag v, hdiag w, hsymm w v] at h
   simp only [zero_apply]
   linarith
-
-
 
 theorem exists_hessian_diagonal_ne_zero [Nontrivial P] {f : P → ℝ}
     (hf : ContDiff ℝ ∞ f)
@@ -155,8 +140,6 @@ theorem exists_hessian_diagonal_ne_zero [Nontrivial P] {f : P → ℝ}
   rfl
 
 end RealValued
-
-
 
 theorem exists_smooth_quadratic_factor
     {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]

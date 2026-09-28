@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M51.MetricLimitJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ universe u
 namespace PoincareConjecture.M51
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
 
 theorem metricLimit_local_curvature_bound
     (g : ℝ → RiemannianMetric 3 A.carrier) (D : ∀ t, LeviCivitaData (g t))
@@ -65,7 +54,6 @@ theorem metricLimit_local_curvature_bound
     Subtype.val ⁻¹' V from hx.2.2))
   simpa only [c.left_inv hx.1] using hb
 
-
 theorem metricLimit_curvature_bound_of_compact
     (g : ℝ → RiemannianMetric 3 A.carrier) (D : ∀ t, LeviCivitaData (g t))
     (g₀ : RiemannianMetric 3 A.carrier) {T : ℝ}
@@ -99,8 +87,6 @@ theorem metricLimit_curvature_bound_of_compact
 end PoincareConjecture.M51
 
 namespace PoincareConjecture.SurgeryMetricLimitOn
-
-
 
 theorem curvature_bound_of_compact
     (A B : GeneralizedSliceCarrier.{u})

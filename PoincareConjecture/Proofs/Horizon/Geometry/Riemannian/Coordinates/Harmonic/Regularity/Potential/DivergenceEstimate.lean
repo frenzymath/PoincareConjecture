@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.GradientHolder
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.HessianHolder
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,9 +28,6 @@ private theorem differentiable_fderiv_heatDuh_compactSlice {f : V × ℝ → F}
   rw [heq]
   exact (hasFDerivAt_heatDuh_compactSlice (contDiff_spatialDerivative hf)
     (hasCompactSupport_spatialDerivative hc) ht x).differentiableAt
-
-
-
 
 theorem exists_uniform_divergence_potential_gradient_halfHolder {ι : Type*} [Fintype ι] :
     ∃ C : ℝ, 1 ≤ C ∧

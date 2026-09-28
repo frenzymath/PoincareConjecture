@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.NestedCircl
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.DisjointCircleStep
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.PairedMarkedModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

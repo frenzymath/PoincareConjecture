@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.Linear
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Analysis.Calculus.Deriv.Basic
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -24,7 +13,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
   [CompleteSpace V] [FiniteDimensional ℝ V]
-
 
 structure EvolvingMetricData (J : Set ℝ) where
   metric : ℝ → V →L[ℝ] V →L[ℝ] ℝ
@@ -41,7 +29,6 @@ private theorem finBasisOperatorEquiv_apply_basis
     (f : Fin (Module.finrank ℝ V) → V) (i : Fin (Module.finrank ℝ V)) :
     finBasisOperatorEquiv f ((Module.finBasis ℝ V) i) = f i := by
   simp [finBasisOperatorEquiv]
-
 
 noncomputable def transportCurveOn
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
@@ -76,7 +63,6 @@ noncomputable def transportCurveOn
     simp [S, finBasisOperatorEquiv_apply_basis]
   rw [hmaps, hS]
   rfl
-
 
 theorem transportCurveOn_hasDerivWithinAt
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
@@ -117,7 +103,6 @@ theorem transportCurveOn_continuousOn
   rw [transportCurveOn_apply_of_mem A hab hcont hK ⟨le_rfl, hab⟩]
   exact Poincare.ODE.Linear.solOf_left hab hcont hK v
 
-
 theorem transportCurveOn_eqOn
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
     (hcont : ContinuousOn A (Icc a b)) {K : ℝ≥0}
@@ -135,7 +120,6 @@ theorem transportCurveOn_eqOn
     simpa using (hΨ s hs).clm_apply (hasDerivWithinAt_const s (Icc a b) v)
   · simp [Poincare.ODE.Linear.solOf_left, hΨa]
 
-
 theorem transportCurveOn_eqOn_of_le
     (A : ℝ → V →L[ℝ] V) {a b c : ℝ} (hab : a ≤ b) (hbc : b ≤ c)
     (hcont : ContinuousOn A (Icc a c)) {K L : ℝ≥0}
@@ -147,7 +131,6 @@ theorem transportCurveOn_eqOn_of_le
   intro t ht
   exact (transportCurveOn_hasDerivWithinAt A (hab.trans hbc) hcont hL
     ⟨ht.1, ht.2.trans hbc⟩).mono (Icc_subset_Icc le_rfl hbc)
-
 
 theorem transportCurveOn_bijective
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a ≤ b)
@@ -215,7 +198,6 @@ private theorem pairing_deriv_zero {J : Set ℝ} (G : EvolvingMetricData (V := V
   rw [hleft t ht, hright t ht]
   ring
 
-
 theorem transport_pairing_eq_left {J : Set ℝ} (G : EvolvingMetricData (V := V) J)
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a < b)
     (hcont : ContinuousOn A (Icc a b)) {K : ℝ≥0}
@@ -244,7 +226,6 @@ theorem transport_pairing_eq_left {J : Set ℝ} (G : EvolvingMetricData (V := V)
     exact Poincare.ODE.Linear.solOf_left hab.le hcont hK w
   simpa [f, hva, hwa] using hc
 
-
 theorem transport_isometry_on {J : Set ℝ} (G : EvolvingMetricData (V := V) J)
     (A : ℝ → V →L[ℝ] V) {a b : ℝ} (hab : a < b)
     (hcont : ContinuousOn A (Icc a b)) {K : ℝ≥0}
@@ -255,7 +236,6 @@ theorem transport_isometry_on {J : Set ℝ} (G : EvolvingMetricData (V := V) J)
     G.metric t (transportCurveOn (V := V) A hab.le hcont hK t v)
       (transportCurveOn (V := V) A hab.le hcont hK t w) = G.metric a v w :=
   transport_pairing_eq_left G A hab hcont hK hleft hright v w t.2
-
 
 theorem transport_injective_of_nondegenerate {J : Set ℝ}
     (G : EvolvingMetricData (V := V) J) (A : ℝ → V →L[ℝ] V)

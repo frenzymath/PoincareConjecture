@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.VectorBundle.CompactDisk
 import Mathlib.Analysis.InnerProductSpace.Orthonormal
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,12 +16,10 @@ variable {B : Type*} [TopologicalSpace B]
   [FiberBundle F E] [VectorBundle ℝ F E] [IsContinuousRiemannianBundle F E]
   {I : Type*}
 
-
 def fiberFamilies (I : Type*) : Set (B × (I → TotalSpace F E)) :=
   {q | ∀ i, (q.2 i).1 = q.1}
 
 namespace FiberFamily
-
 
 def vector (q : fiberFamilies (F := F) (E := E) I) (i : I) : E q.val.1 :=
   cast (congrArg E (q.property i)) (q.val.2 i).2
@@ -69,8 +60,6 @@ lemma isClosed_fiberFamilies [T2Space B] :
   exact isClosed_iInter fun i => isClosed_eq
     ((FiberBundle.continuous_proj F E).comp ((continuous_apply i).comp continuous_snd))
     continuous_fst
-
-
 
 theorem isCompact_orthonormalFamilies_over [Fintype I] [T2Space B]
     [LocallyCompactSpace B] [FiniteDimensional ℝ F]

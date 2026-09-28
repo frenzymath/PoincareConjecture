@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusPLLift
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry PLAnnularStrip

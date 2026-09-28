@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicEndRayUniqueness
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedCylinderMetricRays
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem selected_segment_tendsto_shortened_ray
     (T : EpsilonTubeCertificate g X) (C : OpenCylinderModel T.carrier)

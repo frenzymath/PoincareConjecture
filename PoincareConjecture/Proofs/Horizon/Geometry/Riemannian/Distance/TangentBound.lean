@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +13,6 @@ variable {m n : ℕ} {M N : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 m) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
 
 theorem edist_le_mul_of_tangentNorm_mfderiv_le
     (g : RiemannianMetric m M) (h : RiemannianMetric n N)
@@ -47,9 +40,6 @@ theorem edist_le_mul_of_tangentNorm_mfderiv_le
   dsimp only
   rw [← ofReal_norm, ← ofReal_norm, ← ENNReal.ofReal_mul hC.le]
   exact ENNReal.ofReal_le_ofReal (hbound (γ t) _)
-
-
-
 
 theorem edist_le_mul_of_inner_mfderiv_le
     (g : RiemannianMetric m M) (h : RiemannianMetric n N)

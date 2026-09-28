@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyZero
 import PoincareConjecture.Proofs.M02.Topology.IntegralBallSupport
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

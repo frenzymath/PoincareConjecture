@@ -168,5 +168,3 @@ theorem extension_metric_pair_contDiffOn {J C : Set ℝ} (F : RicciFlow n M J)
     (parametricExtension_along_contMDiffOn EZ hα) htime).contDiffOn
 
 end PoincareConjecture.M08
-
-

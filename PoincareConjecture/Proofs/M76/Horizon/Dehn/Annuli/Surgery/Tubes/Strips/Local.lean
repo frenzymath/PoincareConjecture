@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.LocalBran
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalSourceStrips
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -21,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] {S : Set E}
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
-
-
 
 theorem RawSourceCrossing.eq_of_coordinate_ne
     {x y : E} (C : RawSourceCrossing e f S R x y)
@@ -46,8 +36,6 @@ theorem RawSourceCrossing.eq_of_coordinate_ne
   · have hAR : a ∉ C.right := fun h => hn ((C.right_image _ hpoint).mp ⟨a, h, rfl⟩).1
     have hBR : b ∉ C.right := fun h => hn ((C.right_image _ hpoint).mp ⟨b, h, hab.symm⟩).1
     exact hinjL (hA.resolve_right hAR) (hB.resolve_right hBR) hab
-
-
 
 theorem ComponentBranchModel.exists_local_source_strip
     {old : SourceCircleDecomposition f S} {i : old.Index}
@@ -109,4 +97,3 @@ theorem ComponentBranchModel.exists_local_source_strip
       (a₁ := ⟨w, hw⟩) (a₂ := ⟨phi z, hmem.2⟩) heq)
 
 end PoincareConjecture.M76.Dehn.Annuli
-

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ variable {n m : ℕ} {N L M : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) L]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) M]
   [IsManifold (𝓡 n) ∞ N] [IsManifold (𝓡 m) ∞ L] [IsManifold (𝓡 m) ∞ M]
-
-
 
 theorem exists_metric_on_embedded_height_graph
     (g : RiemannianMetric m M) (e : (N × ℝ) ≃ₘ⟮(𝓡 n).prod 𝓘(ℝ, ℝ), 𝓡 m⟯ L)
@@ -60,8 +50,6 @@ theorem exists_metric_on_embedded_height_graph
     exact congrArg Prod.fst heq
   exact ⟨Induced.pullbackMetric g (E ∘ e ∘ j) hψ hψi, fun _ _ _ => rfl⟩
 
-
-
 theorem product_metric_height_graph_inner
     (h : RiemannianMetric n N) (g : RiemannianMetric m L)
     (e : (N × ℝ) ≃ₘ⟮(𝓡 n).prod 𝓘(ℝ, ℝ), 𝓡 m⟯ L)
@@ -84,8 +72,6 @@ theorem product_metric_height_graph_inner
   rw [hproduct, mfderiv_prodMk mdifferentiableAt_id (hu.mdifferentiable (by simp) y), mfderiv_id]
   change h.inner y v v + mvfderiv (𝓡 n) u y v * mvfderiv (𝓡 n) u y v = _
   ring
-
-
 
 theorem height_graph_relative_metric_error
     (h : RiemannianMetric n N) (gk : RiemannianMetric n N)
@@ -122,8 +108,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {N : Type*} [TopologicalSpace N] [T3Space N]
   [MeasurableSpace N] [BorelSpace N] [CompactSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N] [IsManifold (𝓡 2) ∞ N]
-
-
 
 theorem tendsto_area_of_height_graph_metric_error
     (h : RiemannianMetric 2 N) (gseq : ℕ → RiemannianMetric 2 N)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PairedLevelGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SurfaceLevels
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +8,6 @@ open Set Filter MeasureTheory
 open Poincare.CurvatureIntegral Poincare.GromovHausdorff
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology BigOperators
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_surface_scalar_concentration_at_quarter_spire
     {M : ℕ → Type}

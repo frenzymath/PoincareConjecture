@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.TerminalPinching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -76,8 +59,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
 
-
-
 theorem extension_scalar_gradient_bound
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
     (t : ℝ) (ht : t ∈ F.interval) (x : (E.extended.slice t).carrier)
@@ -93,8 +74,6 @@ theorem extension_scalar_gradient_bound
   rw [E.scalar_pullback] at hx ⊢
   rw [E.metric_pullback] at hv
   exact H.scalar_gradient_bound t ht y hx w hv
-
-
 
 theorem extension_box_scalar_gradient_bound
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -117,8 +96,6 @@ theorem extension_box_scalar_gradient_bound
     scalarDifferential_pullback ((E.extended.box b).flow.connection t)
       (E.extended.connection t) ((E.extended.box b).forward t hb)
       ((E.extended.box b).forward_smooth t hb) (box_scalar_pullback E.extended b t hb)] at h
-
-
 
 theorem terminal_box_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -147,8 +124,6 @@ theorem terminal_box_scalar_gradient_bound
   filter_upwards [hevent, hscalar.eventually (Ioi_mem_nhds hx)] with t ht htx
   exact extension_box_scalar_gradient_bound H E b t ht.1 ht.2 x htx.le v
 
-
-
 theorem terminal_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -167,8 +142,6 @@ theorem terminal_scalar_gradient_bound
   rw [(E.extended.box b).metric_pullback] at hv
   have h := terminal_box_scalar_gradient_bound hM04 H E b hT y hx w
   simpa only [hv, Real.sqrt_one, mul_one] using h
-
-
 
 theorem extension_scalar_gradient_bound_of_strict
     (hM04 : RicciFlowCurvatureTheory.{u})

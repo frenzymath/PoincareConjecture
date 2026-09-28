@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_ActualPositiveAction
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,17 +15,12 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
 
-
-
 theorem pathInitialSquareKinetic_nonneg (p : M14BackwardPath G T 0 tau x y) (s : ℝ) :
     0 ≤ M14.pathSquareKinetic p s := by
   dsimp only [M14.pathSquareKinetic]
   by_cases hv : (2 * s) • p.horizontal_velocity (s ^ 2) = 0
   · simp only [hv, map_zero, le_refl]
   · exact (G.spacetime.horizontalMetric.pos _ _ hv).le
-
-
-
 
 theorem pathSquareKinetic_integral_le_positiveAction
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
@@ -78,8 +64,6 @@ theorem pathSquareKinetic_integral_le_positiveAction
   rw [intervalIntegral.integral_const_mul, hchange] at hbound
   dsimp only [density] at hbound
   linarith
-
-
 
 theorem pathSquareKinetic_prefix_le_positiveAction
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetNormalD
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussEquation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -53,11 +43,6 @@ private theorem conformalGram_pairing
   rw [he, he, he, he]
   norm_num
   ring
-
-
-
-
-
 
 theorem logarithmicDensity_eq_gauss
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

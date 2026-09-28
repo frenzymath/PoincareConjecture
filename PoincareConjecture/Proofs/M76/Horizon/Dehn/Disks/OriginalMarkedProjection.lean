@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTowerDescent
 import PoincareConjecture.Proofs.M76.Wall.CutDiskProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -19,8 +10,6 @@ namespace Geometry.OriginalPLTower
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 def StageMarkedDisk.project
     {M ι : Type*} [TopologicalSpace M]

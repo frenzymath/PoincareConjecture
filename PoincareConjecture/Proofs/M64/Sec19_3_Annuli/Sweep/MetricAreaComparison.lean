@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.MetricTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_gram_pair_le_of_metric_le
     (g h : RiemannianMetric n M) (x : M) {D : ℝ} (hD : 0 ≤ D)
@@ -64,8 +50,6 @@ theorem m64_gram_pair_le_of_metric_le
       ring
     _ = _ := by rw [← hinvariant g]
 
-
-
 theorem m64AreaDensity_le_of_tangentNorm_le
     (g h : RiemannianMetric n M) {C : ℝ} (_hC : 0 ≤ C)
     (hcompare : ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,
@@ -96,9 +80,6 @@ theorem m64AreaDensity_le_of_tangentNorm_le
       Real.sqrt_le_sqrt hdet
     _ = _ := by rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (sq_nonneg C)]
 
-
-
-
 theorem m64Annulus_transport_metric_area [T2Space M]
     (g h : RiemannianMetric n M) {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) {C : ℝ} (hC : 0 < C)
@@ -119,9 +100,6 @@ theorem m64Annulus_transport_metric_area [T2Space M]
         rw [hmap]
         exact m64AreaDensity_le_of_tangentNorm_le g h hC.le hcompare A.map p)
     _ = _ := integral_const_mul _ _
-
-
-
 
 theorem m64Annulus_transport_time_area [T2Space M]
     {a b : ℝ} (F : RicciFlow n M (Icc a b)) {K : ℝ} (hK : 0 ≤ K)

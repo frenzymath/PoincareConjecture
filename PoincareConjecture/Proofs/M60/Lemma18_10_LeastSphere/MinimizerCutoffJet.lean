@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSupportedHessian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,14 +36,10 @@ private theorem weak_add {i : Fin 2} {u v p q : Plane → ℝ}
   rw [hl, hr, h1, h2]
   ring
 
-
-
 def suCutoffColumn {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
     (i : Fin 2) (x : Plane) : E :=
   χ x • p i x + fderiv ℝ χ x (EuclideanSpace.single i 1) • u x
-
-
 
 def suCutoffHessian {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
@@ -59,8 +47,6 @@ def suCutoffHessian {E : Type*} [AddCommGroup E] [Module ℝ E]
   (χ x • H i j x + fderiv ℝ χ x (EuclideanSpace.single j 1) • p i x) +
     (fderiv ℝ χ x (EuclideanSpace.single i 1) • p j x +
       fderiv ℝ (D[i] χ) x (EuclideanSpace.single j 1) • u x)
-
-
 
 theorem suCutoff_weak_jet {m : ℕ} {O : Set Plane}
     {u : Plane → EuclideanSpace ℝ (Fin m)}
@@ -123,8 +109,6 @@ theorem suCutoff_weak_jet {m : ℕ} {O : Set Plane}
       (Poincare.Analysis.Elliptic.memLp_mul_of_compact_memLp (hm hu b)
         (hd i).continuous (hdc i) (hds i)) (h2 i j b) (h3 i j b) hw1 hw2
 
-
-
 theorem suCutoffHessian_eq_zero {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
     (H : Fin 2 → Fin 2 → Plane → E) (i j : Fin 2) (x : Plane)
@@ -138,9 +122,6 @@ theorem suCutoffHessian_eq_zero {E : Type*} [AddCommGroup E] [Module ℝ E]
         ((tsupport_fderiv_apply_subset ℝ (EuclideanSpace.single j 1)) h)))
   simp only [suCutoffHessian, image_eq_zero_of_notMem_tsupport hx, hd, hdd,
     zero_smul, add_zero]
-
-
-
 
 theorem suCutoffHessian_eq_of_eq_one {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)

@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNewCapTag
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_retained_collar_chart
     (psi psiNew : UnitTwoSphere × ℝ → E3)
@@ -50,9 +37,6 @@ theorem exists_retained_collar_chart
     exact e.map_source (hKe hp)
   · intro p hp s hstime
     exact hUP hp.2 s hstime
-
-
-
 
 theorem exists_surgery_replacement_tagged_collar
     (P : SurgeryCapProfile) (psi : UnitTwoSphere × ℝ → E3)

@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem SaddleLowerLevelData.source_sublevel_decomposition
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -1,28 +1,11 @@
 import Mathlib.Analysis.Convex.Basic
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace ContinuousMap
-
-
-
-
-
 
 theorem exists_homotopyRel_open_superlevel
     {M : Type*} [TopologicalSpace M] {z : M → ℝ} (hz : Continuous z)

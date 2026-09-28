@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.FiniteCalabi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.FiniteContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,7 +64,6 @@ private theorem le_terminal_add_of_upper_support
     (by fun_prop : Continuous (fun c : ℝ => f b + c * (b - a))).continuousAt.eventually_lt_const hgap
   filter_upwards [self_mem_nhdsWithin, hnear.filter_mono nhdsWithin_le_nhds] with c hc hcap
   exact hrate c hc hcap
-
 
 theorem terminal_closedBall_distance_bound
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

@@ -1,28 +1,12 @@
 import PoincareConjecture.Definitions.Ch19.AnnulusComparison
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.frequently_slope_lt
     {f : ℝ → ℝ} {q t R : ℝ}
@@ -41,10 +25,6 @@ theorem m64AnnulusForwardDerivativeBound.frequently_slope_lt
   rw [slope_def_field]
   linarith
 
-
-
-
-
 theorem m64AnnulusForwardDerivativeBound.linear_comparison
     {f q : ℝ → ℝ} {s t C : ℝ} (hst : s ≤ t)
     (hf : ContinuousOn f (Icc s t))
@@ -59,10 +39,6 @@ theorem m64AnnulusForwardDerivativeBound.linear_comparison
   intro x hx R hR
   exact m64AnnulusForwardDerivativeBound.frequently_slope_lt
     (hforward x hx) ((hq x hx).trans_lt hR)
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.at_initial
     {f q : ℝ → ℝ} {a b : ℝ} (hab : a < b)
@@ -101,10 +77,6 @@ theorem m64AnnulusForwardDerivativeBound.at_initial
   have h := hbound (a + h) (by constructor <;> linarith [hh.1, hh.2])
   apply (div_le_iff₀ hh.1).mpr
   nlinarith
-
-
-
-
 
 theorem m64AnnulusForwardDerivativeBound.on_Ico_of_on_Ioo
     {f q : ℝ → ℝ} {a b : ℝ}

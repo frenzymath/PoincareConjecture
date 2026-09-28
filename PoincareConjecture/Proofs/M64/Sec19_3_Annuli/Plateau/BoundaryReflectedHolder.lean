@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryContinuousReflection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -23,10 +9,6 @@ open Set Metric
 open Poincare.Analysis.Sobolev.BoundaryExtension
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64ContinuousBoundaryReflect_holder {u : LoopPlane → ℝ}
     {epsilon R H β : ℝ} (he : epsilon ^ 2 = 1) (hH : 0 ≤ H) (hβ : 0 ≤ β)

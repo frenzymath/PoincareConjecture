@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerMetric
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussConnectionCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +13,9 @@ namespace PoincareConjecture.M65Euler
 
 variable {N : ℕ}
 
-
-
-
 def metricDualField (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (k : Fin N) (x : EuclideanSpace ℝ (Fin N)) : EuclideanSpace ℝ (Fin N) :=
   (g.euclideanCoefficients x).inverse (EuclideanSpace.proj k)
-
-
 
 theorem contDiff_metricDualField (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (k : Fin N) : ContDiff ℝ ∞ (metricDualField g k) := by
@@ -39,9 +24,6 @@ theorem contDiff_metricDualField (g : RiemannianMetric N (EuclideanSpace ℝ (Fi
   have hi : (g.euclideanCoefficients x).IsInvertible := g.inner_isInvertible x
   exact (hi.contDiffAt_map_inverse.comp x (g.contDiffAt_euclideanCoefficients x)).clm_apply
     contDiffAt_const
-
-
-
 
 theorem metricDualField_pairing (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (k : Fin N) (x a : EuclideanSpace ℝ (Fin N)) :
@@ -67,10 +49,6 @@ private theorem metricDualField_derivative_pairing
   change 0 = g.inner x (fderiv ℝ (metricDualField g k) x u) a +
     fderiv ℝ g.euclideanCoefficients x u (metricDualField g k x) a at h
   linarith only [h]
-
-
-
-
 
 theorem metricDual_firstVariation
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)

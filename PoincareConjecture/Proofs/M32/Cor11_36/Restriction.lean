@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Cor11_36.Comparison
 import PoincareConjecture.Definitions.M32HornSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 noncomputable def restrictCylinderSpace
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -64,8 +46,6 @@ private theorem restrictedMap_open (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : Topology.IsOpenEmbedding (restrictedMap N hed) :=
   N.carrier_open.isOpenEmbedding_subtypeVal.comp
     (N.coordinate.isOpenEmbedding.comp (domainInclusion_open N.epsilon_pos hed))
-
-
 
 noncomputable def restrictNeckAccuracy (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : GeneralizedStrongNeck F t delta := by
@@ -116,19 +96,15 @@ noncomputable def restrictNeckAccuracy (N : GeneralizedStrongNeck F t epsilon)
     have hd : 0 < delta⁻¹ := inv_pos.mpr (N.epsilon_pos.trans_le hed)
     exact ⟨(s, ⟨0, by constructor <;> linarith⟩), hmap _⟩
 
-
 @[simp] theorem restrictNeckAccuracy_center (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : (restrictNeckAccuracy N hed).center = N.center := rfl
-
 
 @[simp] theorem restrictNeckAccuracy_central_sphere (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) :
     (restrictNeckAccuracy N hed).central_sphere = N.central_sphere := rfl
 
-
 @[simp] theorem restrictNeckAccuracy_scale (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : (restrictNeckAccuracy N hed).scale = N.scale := rfl
-
 
 theorem restrictNeckAccuracy_carrier_subset (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : (restrictNeckAccuracy N hed).carrier ⊆ N.carrier := by
@@ -136,8 +112,6 @@ theorem restrictNeckAccuracy_carrier_subset (N : GeneralizedStrongNeck F t epsil
   exact (N.coordinate _).property
 
 end Neck
-
-
 
 noncomputable def restrictHornCutAccuracy
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta eta rho : ℝ}
@@ -154,8 +128,6 @@ noncomputable def restrictHornCutAccuracy
   contains_tail := cut.contains_tail
   escapes_compact := cut.escapes_compact
   disjoint_low_curvature := cut.disjoint_low_curvature
-
-
 
 def enlargeHornCutRadius
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta rho sigma : ℝ}
@@ -175,8 +147,6 @@ def enlargeHornCutRadius
     intro x hx
     exact hx.trans (pow_le_pow_left₀ (inv_nonneg.mpr (hr.trans_le hrs).le)
       ((inv_le_inv₀ (hr.trans_le hrs) hr).2 hrs) 2))
-
-
 
 theorem deepHornConclusion_mono
     {F : GeneralizedRicciFlowData.{u}} {T epsilon C rho sigma delta eta h : ℝ}

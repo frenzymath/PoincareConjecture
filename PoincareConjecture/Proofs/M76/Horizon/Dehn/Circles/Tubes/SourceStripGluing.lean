@@ -10,9 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
-
-
 theorem exists_source_strip_gluing
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] {U : Set E} (f : E → X) (physical : P2 → X)

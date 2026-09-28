@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SharpDepth
 import PoincareConjecture.Proofs.M25.Mathlib.PlateauMeanValue
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem EpsilonNeck.exists_relative_height_lower_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

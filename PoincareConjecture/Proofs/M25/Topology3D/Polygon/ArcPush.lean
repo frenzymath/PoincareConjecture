@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PolygonalArc
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PushIn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_arc_incident_edge_indices {n : ℕ} (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) :
@@ -41,8 +30,6 @@ theorem exists_arc_incident_edge_indices {n : ℕ} (k : Fin (n + 2))
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 theorem polygonArcIncidentEdges_subset_triangle_inter_boundary
     (p : Polygon E (n + 2)) (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) :
@@ -64,8 +51,6 @@ theorem polygonArcIncidentEdges_subset_triangle_inter_boundary
   · refine ⟨hconv.segment_subset hk hs hx, polygon_arcEdge_subset_boundary p j ?_⟩
     rw [polygon_arcEdge_eq_segment, hjk, hjs]
     exact hx
-
-
 
 theorem IsSimplePolygonalArc.vertex_mem_triangle_iff_of_admissible
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -95,8 +80,6 @@ theorem IsSimplePolygonalArc.vertex_mem_triangle_iff_of_admissible
   · intro hl
     apply subset_convexHull ℝ _
     rcases hl with rfl | rfl | rfl <;> simp
-
-
 
 theorem IsSimplePolygonalArc.triangle_inter_edge_subset_of_admissible
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -130,8 +113,6 @@ theorem IsSimplePolygonalArc.triangle_inter_edge_subset_of_admissible
     have hh := hp.edges_inter j l hjl ⟨hz, hzl⟩
     rw [hjk, hjs] at hh
     exact ⟨Or.inr (hh.1.resolve_left hzk), hh.2⟩
-
-
 
 theorem IsSimplePolygonalArc.isSimple_polygonReplaceVertex_of_admissible
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -284,8 +265,6 @@ theorem IsSimplePolygonalArc.isSimple_polygonReplaceVertex_of_admissible
           hqother _ (hunchanged m hm'.1 hm'.2).1,
           hqother _ (hunchanged m hm'.1 hm'.2).2] using hp.edges_inter l m hlm hz
 
-
-
 theorem IsSimplePolygonalArc.isSimple_polygonPushVertex {p : Polygon E (n + 2)}
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2)) (had : IsAdmissibleArcVertex p k)
     {t : ℝ} (ht : t ∈ Icc 0 1) : IsSimplePolygonalArc (polygonPushVertex p k t) := by
@@ -323,16 +302,12 @@ theorem IsSimplePolygonalArc.isSimple_polygonPushVertex {p : Polygon E (n + 2)}
   exact hp.isSimple_polygonReplaceVertex_of_admissible k had _
     (cornerPushPoint_mem_triangle _ _ _ ht) hcorner.1 hcorner.2.1 hcorner.2.2
 
-
-
 theorem polygonPushVertex_arc_endpoints (p : Polygon E (n + 2)) (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) (t : ℝ) :
     polygonPushVertex p k t 0 = p 0 ∧
       polygonPushVertex p k t (Fin.last (n + 1)) = p (Fin.last (n + 1)) := by
   exact ⟨polygonReplaceVertex_apply_of_ne _ _ _ hk0.symm,
     polygonReplaceVertex_apply_of_ne _ _ _ hkl.symm⟩
-
-
 
 theorem polygonPushVertex_arcBoundary_sdiff_triangle (p : Polygon E (n + 2))
     (k : Fin (n + 2)) {t : ℝ} (ht : t ∈ Icc 0 1) :

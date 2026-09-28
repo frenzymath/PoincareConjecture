@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.QuotientHomothety
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem tendstoUniformlyOn_scalarEvolution (G : RicciFlow n M J)
     {T : ℝ} (hT : T ∈ J) {A : Set M} (hA : IsCompact A) :
@@ -54,8 +43,6 @@ theorem tendstoUniformlyOn_scalarEvolution (G : RicciFlow n M J)
         2 * (G.connection T).ricciNormSq x) < ε := hbound t ht x hx
   rwa [dist_comm] at hb
 
-
-
 theorem tendstoUniformlyOn_scalarCurvature_sq (G : RicciFlow n M J)
     {T : ℝ} (hT : T ∈ J) {A : Set M} (hA : IsCompact A) :
     TendstoUniformlyOn (fun t x => ((G.connection t).scalarCurvature x) ^ 2)
@@ -83,7 +70,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem terminalFlow_scalarEvolution_of_lt
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -134,8 +120,6 @@ theorem terminalFlow_scalarEvolution_at_terminal
   congrArg (fun g : RiemannianMetric 3 (H.regularRegion P04) =>
     g.leviCivitaData.laplacian g.leviCivitaData.scalarCurvature x +
       2 * g.leviCivitaData.ricciNormSq x) (H.terminalMetricFamily_at_terminal P04)
-
-
 
 theorem eventually_captured_cap_terminal_scalarEvolution_bound
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

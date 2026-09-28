@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.RadialArclength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal

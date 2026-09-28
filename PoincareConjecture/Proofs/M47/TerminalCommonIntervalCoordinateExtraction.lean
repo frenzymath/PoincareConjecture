@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoordinateRows
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoordinateCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCommonInterval_actual_coordinate_extraction
     {M : Type u} {N : Type v} {X : ℕ → Type w}

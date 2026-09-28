@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M13MetricHomothety
 import PoincareConjecture.Definitions.Ch04.Pinching
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

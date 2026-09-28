@@ -2,23 +2,11 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Data.Finset.Lattice.Fold
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem compact_connected_diff_of_connected_seam
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -77,8 +65,6 @@ theorem compact_connected_diff_of_connected_seam
       exact ⟨hx.1, hx.2.2⟩
     · intro hx
       exact ⟨hx.1, hDK hx.1, hx.2⟩
-
-
 
 theorem compact_connected_diff_finite_caps
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -163,8 +149,6 @@ theorem compact_connected_diff_finite_caps
           exact hxU ⟨i, Or.inl rfl, hxi⟩
     rw [heq] at hc hn
     exact ⟨hc, hn⟩
-
-
 
 theorem compact_connected_retained_of_cap_cover
     {X Y ι : Type*} [TopologicalSpace X] [T2Space X]

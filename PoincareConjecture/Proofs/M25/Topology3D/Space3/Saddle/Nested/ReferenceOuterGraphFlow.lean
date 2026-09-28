@@ -6,23 +6,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_outer_reference_graph_flow
     (F : Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)

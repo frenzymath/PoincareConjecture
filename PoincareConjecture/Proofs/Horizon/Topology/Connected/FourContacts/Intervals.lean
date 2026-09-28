@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteBoundaryCompon
 import Mathlib.Topology.Algebra.Ring.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -41,8 +35,6 @@ private theorem exists_path_in_interval_image
         mul_nonneg hv.1 (sub_nonneg.mpr ht.2)]
   · simpa [u] using hxs
   · simpa [u] using hyt
-
-
 
 theorem pairing_of_interval_components
     {K : Set X} (b : Fin 2 × Fin 2 → K) (hb : Function.Injective b)

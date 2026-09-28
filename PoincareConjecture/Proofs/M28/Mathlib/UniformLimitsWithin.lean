@@ -1,23 +1,10 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
-
-
-
 
 theorem hasFDerivWithinAt_of_tendstoLocallyUniformlyOn_convex
     {ι E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

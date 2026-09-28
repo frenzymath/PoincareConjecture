@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.DisjointSupportedMotions
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchMotionSupport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +10,6 @@ namespace Geometry
 variable {X T α Y : Type*} [TopologicalSpace X] [TopologicalSpace T]
 
 omit [TopologicalSpace T] in
-
 
 theorem homeomorph_image_inter_eq_of_eqOn_support
     (H G : X ≃ₜ X) {U : Set X} (heq : EqOn H G U)
@@ -46,7 +35,6 @@ theorem homeomorph_image_inter_eq_of_eqOn_support
 
 omit [TopologicalSpace T] in
 
-
 theorem composeSupportedMotions_branch_image
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
     (hfix : ∀ a t, EqOn (F a t) id (p ⁻¹' V a)ᶜ)
@@ -64,7 +52,6 @@ theorem composeSupportedMotions_branch_image
 
 omit [TopologicalSpace T] in
 
-
 theorem composeSupportedMotions_branch_iff
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
     (hfix : ∀ a t, EqOn (F a t) id (p ⁻¹' V a)ᶜ)
@@ -79,7 +66,6 @@ theorem composeSupportedMotions_branch_iff
 
 omit [TopologicalSpace T] in
 
-
 theorem composeSupportedMotions_branch_image_off_supports
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
     (hfix : ∀ a t, EqOn (F a t) id (p ⁻¹' V a)ᶜ)
@@ -92,8 +78,6 @@ theorem composeSupportedMotions_branch_image_off_supports
   simpa only [sdiff_eq] using
     OriginalPLTower.motion_projected_branch_image_eq_off_target_support
       (composeSupportedMotions F l t) disjoint_compl_right hfull A B
-
-
 
 theorem exists_finite_scheduled_branch_motion
     [TopologicalSpace Y] {E : Type*} [TopologicalSpace E]

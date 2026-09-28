@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapDistance
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceNeckGeometry
 import PoincareConjecture.Proofs.M09.HessianTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem slice_scalarSup_image (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -36,8 +25,6 @@ theorem slice_scalarSup_image (P : M35StandardCapPredecessors)
   · rintro ⟨⟨x, hx⟩, ha⟩
     exact ⟨⟨(sliceDiffeomorph ht).symm x, ⟨x, hx, rfl⟩⟩,
       (scalar_eq P F ht x).trans ha⟩
-
-
 
 theorem slice_ball_image (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -60,8 +47,6 @@ theorem slice_ball_image (P : M35StandardCapPredecessors)
     change (metric F t).edist (e.symm x) y < ENNReal.ofReal r at hy
     simpa only [e.symm_apply_apply] using hy
 
-
-
 theorem slice_closure_ball_image (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
     (x : StandardCapSpace) (r : ℝ) :
@@ -71,8 +56,6 @@ theorem slice_closure_ball_image (P : M35StandardCapPredecessors)
     _ = closure ((sliceDiffeomorph ht).symm '' (F.metric t).ball x r) :=
       (sliceDiffeomorph ht).symm.toHomeomorph.image_closure _
     _ = _ := congrArg closure (slice_ball_image P F ht x r)
-
-
 
 theorem slice_scalarGradientNorm_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -85,8 +68,6 @@ theorem slice_scalarGradientNorm_eq (P : M35StandardCapPredecessors)
     (fun v w => (metric_pullback F ht x v w).symm)
     (Proofs.M09.scalarCurvature_contMDiff P.curvature (connection F t)).contMDiffAt
     (Eventually.of_forall (fun y => (scalar_eq P F ht y).symm))).symm
-
-
 
 theorem slice_intrinsicDiameter_image_le
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -102,8 +83,6 @@ theorem slice_intrinsicDiameter_image_le
           1 * Real.sqrt ((F.metric t).inner x v v)
       rw [metric_pullback, one_mul])
   simpa only [ENNReal.ofReal_one, one_mul] using h
-
-
 
 theorem slice_roundCylinderPullback
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)

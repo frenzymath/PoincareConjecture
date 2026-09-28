@@ -1,15 +1,11 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Manifold.Schoenflies.Reverse
-
-
 
 theorem image_cap_eq_translate_union_cylinder
     {E : Type*} [TopologicalSpace E]

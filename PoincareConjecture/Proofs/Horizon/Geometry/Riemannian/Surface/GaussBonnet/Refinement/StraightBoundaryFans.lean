@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.HalfplaneFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem single_lineRefinementMesh_usedVertex_not_mem_interior
     (b : AffineBasis (Fin 3) ℝ Plane) (l : Plane →ᵃ[ℝ] ℝ)
@@ -50,8 +41,6 @@ theorem single_lineRefinementMesh_usedVertex_not_mem_interior
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem lineRefinementMesh_halfspace_vertex_fan_of_initial
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (f l : Plane →ᵃ[ℝ] ℝ)
@@ -77,8 +66,6 @@ theorem lineRefinementMesh_halfspace_vertex_fan_of_initial
     rw [lineRefinementMesh_halfspace_old_vertex_contribution g F M f l hl hmono hF hFi hM t v hv]
     exact hfan t v hv hxint hxl
   · exact lineRefinementMesh_halfspace_new_vertex_fan g F M f l hl hmono t hcut hxint hxl hF hFi hM
-
-
 
 theorem refineByLines_halfspace_vertex_fan_of_initial
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -106,9 +93,6 @@ theorem refineByLines_halfspace_vertex_fan_of_initial
       (by simpa only [M.lineRefinementMesh_support f] using hM)
       (lineRefinementMesh_halfspace_vertex_fan_of_initial g F M f l hl hmono hF hFi hM hfan)
       u x hx hxint hxl
-
-
-
 
 theorem single_refineByLines_halfspace_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -138,9 +122,6 @@ theorem single_refineByLines_halfspace_vertex_fan
       (by simpa only [TriangleMesh.lineRefinementMesh_support, TriangleMesh.single_support] using hvint))
   · simpa only [TriangleMesh.refineByLines_support, TriangleMesh.lineRefinementMesh_support,
       TriangleMesh.single_support, TriangleMesh.refineByLines] using hxint
-
-
-
 
 theorem single_refineByLines_restrict_straight_boundary_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

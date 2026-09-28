@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Axis
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalEndpoint
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Filter
 open scoped Topology

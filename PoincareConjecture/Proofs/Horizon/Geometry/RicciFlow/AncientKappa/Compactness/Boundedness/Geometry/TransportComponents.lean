@@ -1,14 +1,6 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +9,6 @@ open Set Topology
 namespace PoincareConjecture.AncientCompactness
 
 variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N] [T2Space N]
-
-
 
 def compactTransportHomeomorph {A : Set M} {B : Set N} {Q : M → N}
     (hA : IsCompact A) (hQ : ContinuousOn Q A) (hbij : BijOn Q A B) : A ≃ₜ B := by
@@ -29,8 +19,6 @@ def compactTransportHomeomorph {A : Set M} {B : Set N} {Q : M → N}
 @[simp] theorem compactTransportHomeomorph_apply {A : Set M} {B : Set N} {Q : M → N}
     (hA : IsCompact A) (hQ : ContinuousOn Q A) (hbij : BijOn Q A B) (x : A) :
     (compactTransportHomeomorph hA hQ hbij x : N) = Q x := rfl
-
-
 
 theorem image_connectedComponentIn_eq_of_compact_bijOn
     {A : Set M} {B : Set N} {Q : M → N}

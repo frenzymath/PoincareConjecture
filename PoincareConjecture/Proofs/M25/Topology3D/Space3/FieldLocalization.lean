@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem exists_compact_smooth_cutoff [FiniteDimensional ℝ E]
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U) :
@@ -38,8 +27,6 @@ theorem exists_compact_smooth_cutoff [FiniteDimensional ℝ E]
   exact ⟨ρ, ρ.contMDiff.contDiff, hL.of_isClosed_subset (isClosed_tsupport ρ) hts,
     hts.trans hLU, hnear, hrange⟩
 
-
-
 theorem contDiff_cutoff_smul {U : Set E} (hU : IsOpen U)
     (ρ : E → ℝ) (hρ : ContDiff ℝ ∞ ρ) (hs : tsupport ρ ⊆ U)
     (f : E → F) (hf : ContDiffOn ℝ ∞ f U) :
@@ -52,8 +39,6 @@ theorem contDiff_cutoff_smul {U : Set E} (hU : IsOpen U)
       filter_upwards [(isClosed_tsupport ρ).isOpen_compl.mem_nhds hx] with y hy
       rw [image_eq_zero_of_notMem_tsupport hy, zero_smul]
     exact contDiffAt_const.congr_of_eventuallyEq heq
-
-
 
 theorem exists_compactField_extension [FiniteDimensional ℝ E]
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -68,16 +53,12 @@ theorem exists_compactField_extension [FiniteDimensional ℝ E]
 
 omit [NormedSpace ℝ E] in
 
-
 theorem cutoff_smul_preserves_linear {U : Set E} (ρ : E → ℝ)
     (hs : tsupport ρ ⊆ U) (f : E → F) (A : F →L[ℝ] G)
     (hA : ∀ x ∈ U, A (f x) = 0) (x : E) : A (ρ x • f x) = 0 := by
   by_cases hx : ρ x = 0
   · simp only [hx, zero_smul, map_zero]
   · rw [map_smul, hA x (hs (subset_tsupport ρ hx)), smul_zero]
-
-
-
 
 theorem exists_compactField_extension_preserving [FiniteDimensional ℝ E]
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

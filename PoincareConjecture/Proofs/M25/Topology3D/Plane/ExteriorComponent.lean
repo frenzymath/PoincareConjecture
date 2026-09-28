@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ConvexExterior
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_unbounded_compl_component {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] (hdim : 1 < Module.rank ℝ E)

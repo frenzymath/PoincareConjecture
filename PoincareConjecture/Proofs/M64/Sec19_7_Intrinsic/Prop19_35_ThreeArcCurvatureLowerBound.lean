@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcRegionC
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcBoundaryTurning
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_three_arc_region_curvature_lower_bound
     (N : IntrinsicAnnulus) {U V : Set AnnulusCoordinates}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +18,6 @@ variable {M : Type u} {N : Type v} {X : Type w}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
 
 omit [T3Space M] in
-
 
 theorem terminalCommonInterval_cross_capture
     (g : RiemannianMetric 3 M) (k : RiemannianMetric 3 N)
@@ -79,7 +70,6 @@ omit [T3Space M] [T3Space N] [T2Space X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X] in
-
 
 theorem terminalCommonInterval_cross_map_identities
     (e : OpenPartialHomeomorph M X) (f : OpenPartialHomeomorph N X)

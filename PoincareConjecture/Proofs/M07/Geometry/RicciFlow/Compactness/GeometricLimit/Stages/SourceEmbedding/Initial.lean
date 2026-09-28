@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.LocalModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem exists_initial_source_models
     {ι : Type*} {n : ℕ}

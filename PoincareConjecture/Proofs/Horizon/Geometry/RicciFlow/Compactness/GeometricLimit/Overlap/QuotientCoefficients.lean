@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gluing.Construction
-
-
-
-
-
-
-

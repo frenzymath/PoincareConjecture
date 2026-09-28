@@ -2,23 +2,10 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import Mathlib.Algebra.Order.ToIntervalMod
 import Mathlib.Analysis.ODE.ExistUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology NNReal
-
-
-
-
 
 theorem exists_periodic_scalar_curves_on_Icc {L H : ℝ}
     (hL : 0 < L) (hH : 0 < H) (X : ℝ → ℝ → ℝ)

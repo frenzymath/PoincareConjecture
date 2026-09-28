@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ExteriorDiskLoc
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

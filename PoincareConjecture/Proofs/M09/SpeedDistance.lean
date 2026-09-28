@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal NNReal

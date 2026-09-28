@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_Gauss
 import PoincareConjecture.Proofs.M62.Sec19_1_Codazzi
 import PoincareConjecture.Proofs.M62.Cor0_3_RegularizedGradient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem normal_norm {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)
@@ -89,8 +78,6 @@ theorem normal_norm {F : RicciFlow n M (Set.Icc a b)}
   rw [G.metric_eq, hP, pow_two]
   rfl
 
-
-
 theorem regularized_gradient_le {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (t : OpenTime a b) (x : ℝ) :
@@ -100,8 +87,6 @@ theorem regularized_gradient_le {F : RicciFlow n M (Set.Icc a b)}
   rw [G.normal_norm c hc t x]
   exact (PoincareConjecture.M62.regularized_gradient_le F c hc hepsilon t.property x).trans
     (le_add_of_nonneg_right (sq_nonneg _))
-
-
 
 theorem spacetimeEvolutionRhs_eq_spatial {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)

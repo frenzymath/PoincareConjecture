@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M45SmallNecks
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Scale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem smallNeckThreshold :
     ∃ epsilon₁ : ℝ, 0 < epsilon₁ ∧ M45SmallNeckScaleBound.{u} epsilon₁ := by

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped BigOperators Topology
@@ -44,8 +36,6 @@ private lemma curvatureTensorNorm_eq_sqrt_sum (D : LeviCivitaData g) (x : M) :
   simp only [Fintype.sum_unique]
   rfl
 
-
-
 theorem LeviCivitaData.curvatureTensorNorm_eq_tensorNormFromComponents
     (D : LeviCivitaData g) (x : M) {ι : Type*} [Fintype ι] [DecidableEq ι]
     (b : Module.Basis ι ℝ (TangentSpace (𝓡 n) x))
@@ -73,8 +63,6 @@ theorem LeviCivitaData.curvatureTensorNorm_eq_tensorNormFromComponents
   simp_rw [← hA]
   rfl
 
-
-
 theorem LeviCivitaData.curvatureTensorNorm_eq_tensorHilbertSchmidtNorm
     (D : LeviCivitaData g) (x : M)
     (A : MultilinearMap ℝ (fun _ : Fin 4 => TangentSpace (𝓡 n) x) ℝ)
@@ -94,9 +82,6 @@ theorem LeviCivitaData.curvatureTensorNorm_eq_tensorHilbertSchmidtNorm
     tensorHilbertSchmidtNorm_eq_tensorNormFromComponents _ _ b]
   simp_rw [← hA]
   rfl
-
-
-
 
 theorem LeviCivitaData.tendsto_curvatureTensorNorm_of_components
     {α : Type*} {l : Filter α} {gseq : α → RiemannianMetric n M}
@@ -123,8 +108,6 @@ theorem LeviCivitaData.tendsto_curvatureTensorNorm_of_components
     (hAseq a).choose (hAseq a).choose_spec
   simp_rw [heq, D.curvatureTensorNorm_eq_tensorNormFromComponents x b hA.choose hA.choose_spec]
   exact tendsto_tensorNormFromComponents hG hR hdet
-
-
 
 theorem LeviCivitaData.curvatureTensorNorm_eq_of_linearEquiv
     {N : Type*} [TopologicalSpace N]

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.SurgeryStep
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.CapPreservation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -56,7 +48,6 @@ namespace SphereSurgeryTree
 
 variable {v : E3} {A : Finset Real} {f : S2 → E3}
 
-
 def reflected (hv : ‖v‖ = 1) (T : SphereSurgeryTree v A f) :
     SphereSurgeryTree v (A.image Neg.neg) (heightReflection hv ∘ f) := by
   classical
@@ -74,7 +65,6 @@ def reflected (hv : ‖v‖ = 1) (T : SphereSurgeryTree v A f) :
     obtain ⟨j, hj, rfl⟩ := Finset.mem_image.mp hk
     have hjc : j ≠ c := fun heq => hkc (congrArg Neg.neg heq)
     simpa only [neg_sub_neg, abs_sub_comm] using hsep j hj hjc
-
 
 theorem reflected_leaves (hv : ‖v‖ = 1) (T : SphereSurgeryTree v A f) :
     (T.reflected hv).leaves = T.leaves.reverse.map (fun g => heightReflection hv ∘ g) := by
@@ -96,7 +86,6 @@ theorem reflected_mem_leaves (hv : ‖v‖ = 1) (T : SphereSurgeryTree v A f)
     heightReflection hv ∘ g ∈ (T.reflected hv).leaves :=
   (T.mem_reflected_leaves_iff hv _).mpr ⟨g, hg, rfl⟩
 
-
 theorem Protects.reflected (hv : ‖v‖ = 1) {T : SphereSurgeryTree v A f} {B : Set Real}
     (hT : T.Protects B) : (T.reflected hv).Protects (Neg.neg '' B) := by
   induction T with
@@ -105,7 +94,6 @@ theorem Protects.reflected (hv : ‖v‖ = 1) {T : SphereSurgeryTree v A f} {B :
     refine ⟨?_, ihp hT.2.2, ihm hT.2.1⟩
     rintro k ⟨j, hj, rfl⟩
     simpa only [neg_sub_neg, abs_sub_comm] using hT.1 j hj
-
 
 theorem PreservesCaps.reflected (hv : ‖v‖ = 1) {T : SphereSurgeryTree v A f}
     (hT : T.PreservesCaps) : (T.reflected hv).PreservesCaps := by

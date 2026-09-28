@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseArcCuts
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,10 +8,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_joined_arc_strips
     {alpha beta : ℝ → AnnulusCoordinates}

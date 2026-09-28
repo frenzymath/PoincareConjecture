@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricConvergence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M30.PartialPointedMetricConvergence
-
-
-
 
 theorem source_ball_coverage_of_boundary_control
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
@@ -91,9 +77,6 @@ theorem source_ball_coverage_of_boundary_control
         exact ⟨hx, hxV⟩
       exact (not_lt_of_ge (hj x hfront)) hyball
     exact mem_image_of_mem f hxV
-
-
-
 
 theorem source_ball_coverage
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

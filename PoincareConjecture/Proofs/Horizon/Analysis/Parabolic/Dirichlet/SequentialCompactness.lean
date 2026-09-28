@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Normed.Operator.Compact.Basic
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set UniformSpace
@@ -16,7 +9,6 @@ namespace Poincare.Analysis.Dirichlet
 
 variable {V H : Type*} [SeminormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup H] [NormedSpace ℝ H] [CompleteSpace H]
-
 
 theorem isCompactOperator_of_cauchySeq_subseq (j : V →L[ℝ] H)
     (hj : ∀ u : ℕ → V, (∀ k, ‖u k‖ ≤ 1) →

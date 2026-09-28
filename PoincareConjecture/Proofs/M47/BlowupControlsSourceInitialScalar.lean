@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckScalarComparison
 import PoincareConjecture.Proofs.M35.RawFlow.InitialCylinderCoordinates
 import PoincareConjecture.Proofs.M36.CylindricalBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff ENNReal
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem standard_initial_scalar_eq_one_of_tip_distance
     (g0 : StandardInitialMetric) {x : StandardCapSpace}
@@ -52,8 +41,6 @@ theorem standard_initial_scalar_eq_one_of_tip_distance
   change g0.connection.scalarCurvature
     (g0.cylindrical_end.coordinate (g0.cylindrical_end.inverse x)) = 1 at hscalar
   rwa [g0.cylindrical_end.coordinate_right_inverse hmem] at hscalar
-
-
 
 theorem standard_initial_neck_birth_scale_lt_four
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

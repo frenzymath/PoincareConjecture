@@ -1,21 +1,8 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Contact
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Extrema
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Scaling
 import Mathlib.Geometry.Manifold.BumpFunction
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma laplacian_nonpos_of_isLocalMaxOn_open [T2Space M]
     (D : LeviCivitaData g) {f : M → ℝ} {U : Set M} (hU : IsOpen U)
@@ -78,7 +63,6 @@ private lemma hessian_sum_on_open (D : LeviCivitaData g) {J : Type} [Fintype J]
     mvfderiv_sum_apply f x (D.connection Y x a)
       (fun j => (hfx j).mdifferentiableAt (by simp)), Finset.sum_sub_distrib]
 
-
 lemma laplacian_sum_on_open (D : LeviCivitaData g) {J : Type} [Fintype J]
     (f : J → M → ℝ) {U : Set M} (hU : IsOpen U)
     (hf : ∀ j, ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f j) U)
@@ -86,8 +70,6 @@ lemma laplacian_sum_on_open (D : LeviCivitaData g) {J : Type} [Fintype J]
     D.laplacian (fun y => ∑ j, f j y) x = ∑ j, D.laplacian (f j) x := by
   simp only [laplacian, D.hessian_sum_on_open f hU hf hx]
   exact Finset.sum_comm
-
-
 
 theorem sum_tensorLaplacian_eq_laplacian_of_zero_jets
     (D : LeviCivitaData g) {J : Type} [Fintype J] {k : ℕ}
@@ -108,8 +90,6 @@ theorem sum_tensorLaplacian_eq_laplacian_of_zero_jets
   intro j _
   rw [D.laplacian_const_mul, D.tensorLaplacian_eq_laplacian_of_zero_jets hT (W j) x
     (fun i => (hW j i x hx).contMDiffAt (hU.mem_nhds hx)) (hfirst j) (hsecond j)]
-
-
 
 theorem sum_tensorLaplacian_nonpos_of_isLocalMax [T2Space M]
     (D : LeviCivitaData g) {J : Type} [Fintype J] {k : ℕ}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.CompactCapture
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,8 +65,6 @@ theorem terminalNeckCenter_mem
 end PoincareConjecture.SingularTimeAssumptions
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
 
 theorem exists_late_neck_coordinate_capture_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

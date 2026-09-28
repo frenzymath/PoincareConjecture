@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.VolumeCove
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NormalCharts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.DistanceLower
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 structure RegularNormalChartCover {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -67,10 +54,6 @@ private theorem exists_surjective_fin_with_base {α : Type*} [Fintype α]
   refine ⟨Fin.cases a (Function.invFun e), rfl, ?_⟩
   intro x
   exact ⟨(e x).succ, Function.leftInverse_invFun e.injective x⟩
-
-
-
-
 
 theorem exists_uniform_regular_normal_cover
     (n : ℕ) {K δ r₀ κ V : ℝ} (hn : 1 ≤ n) (hK : 0 ≤ K)

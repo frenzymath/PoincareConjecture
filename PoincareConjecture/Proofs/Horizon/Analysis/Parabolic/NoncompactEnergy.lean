@@ -1,17 +1,6 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.MeasureTheory.Integral.Lebesgue.Add
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -20,10 +9,6 @@ open scoped Topology
 namespace Poincare.Parabolic
 
 variable {α : Type*} [MeasurableSpace α] {μ : Measure α}
-
-
-
-
 
 theorem hasFiniteIntegral_of_cutoff_lintegral_bound
     {q : α → ℝ} (hq : 0 ≤ᵐ[μ] q)
@@ -69,11 +54,6 @@ theorem hasFiniteIntegral_of_cutoff_lintegral_bound
     exact Real.enorm_of_nonneg hx
   rw [hnorm]
   exact (hglobal.trans_lt ENNReal.ofReal_lt_top)
-
-
-
-
-
 
 theorem integrable_of_cutoff_integral_bound
     {q : α → ℝ} (hq : 0 ≤ᵐ[μ] q)

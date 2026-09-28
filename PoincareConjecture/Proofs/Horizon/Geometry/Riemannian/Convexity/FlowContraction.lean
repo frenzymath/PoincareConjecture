@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.Normalize
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Connection
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Variation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ namespace Poincare.Geometry.Riemannian.Convexity
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem differentiableAt_normalizedNegGradient (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -35,8 +24,6 @@ theorem differentiableAt_normalizedNegGradient (D : LeviCivitaData g)
     (by simp)
   rw [mdifferentiableAt_totalSpace] at hs
   exact mdifferentiableAt_iff_differentiableAt.mp (by simpa using hs.2)
-
-
 
 theorem hasDerivAt_flow_squared_length
     (D : LeviCivitaData g)
@@ -81,9 +68,6 @@ theorem hasDerivAt_flow_squared_length
   rw [g.symm (q (t, x)) w (fderiv ℝ X (q (t, x)) w),
     g.symm (q (t, x)) w (D.euclideanConnection w (X (q (t, x))) (q (t, x)))]
   ring
-
-
-
 
 theorem normalized_flow_squared_length_le
     (D : LeviCivitaData g)

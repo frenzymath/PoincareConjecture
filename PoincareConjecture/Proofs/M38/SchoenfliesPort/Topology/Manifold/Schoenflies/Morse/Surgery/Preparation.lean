@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.InnermostDisk
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.LocalizedFlattening
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,14 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -40,9 +26,6 @@ private abbrev Plane (v : E3) := (Real ∙ v)ᗮ
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 private instance : ChartedSpace (EuclideanSpace Real (Fin 1) × Real) (S1 × Real) :=
   prodChartedSpace _ _ _ _
-
-
-
 
 theorem exists_prepared_innermost_regular_circle_of_smooth
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -149,7 +132,6 @@ theorem exists_prepared_innermost_regular_circle_of_smooth
       have hz : f (F (q, 0)) ∈ f '' connectedComponentIn (h ⁻¹' {c}) p :=
         ⟨F (q, 0), hcenter ▸ mem_range_self q, rfl⟩
       exact (hintersection.symm ▸ hz).1
-
 
 theorem exists_prepared_innermost_regular_circle
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

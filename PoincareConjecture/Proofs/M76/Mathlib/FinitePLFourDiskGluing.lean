@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGraphExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem four_disk_graph_contacts {X : Type*} (U S : Bool × Bool → Set X)
     (hS : ∀ i, U (false, i.2) ∪ U (true, i.1) ⊆ S i)
@@ -55,10 +42,6 @@ theorem four_disk_graph_contacts {X : Type*} (U S : Bool × Bool → Set X)
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_finitePL_four_disk_gluing
     (A D : Bool × Bool → Set E) (B T : Bool × Bool → Set F)

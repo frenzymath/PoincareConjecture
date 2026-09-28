@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Analysis.Calculus.FDeriv.WithLp
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +11,6 @@ open scoped Manifold ContDiff BigOperators Bundle
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
 
 def coordinateMap (U : Fin n → EuclideanSpace ℝ (Fin n) → ℝ) :
     EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) :=
@@ -42,8 +33,6 @@ theorem differentiableAt_coordinateMap {U : Fin n → EuclideanSpace ℝ (Fin n)
     DifferentiableAt ℝ (coordinateMap U) x :=
   (differentiableAt_piLp 2).mpr hU
 
-
-
 theorem fderiv_coordinateMap_apply {U : Fin n → EuclideanSpace ℝ (Fin n) → ℝ}
     {x : EuclideanSpace ℝ (Fin n)} (hU : ∀ i, DifferentiableAt ℝ (U i) x)
     (v : EuclideanSpace ℝ (Fin n)) (i : Fin n) :
@@ -54,7 +43,6 @@ theorem fderiv_coordinateMap_apply {U : Fin n → EuclideanSpace ℝ (Fin n) →
       (EuclideanSpace.proj (𝕜 := ℝ) i).comp (fderiv ℝ (coordinateMap U) x) :=
     h.fderiv
   exact (congrArg (fun A : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ => A v) hrow).symm
-
 
 theorem norm_le_sqrt_dim_mul_of_coordinate_bound
     (A : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -76,7 +64,6 @@ theorem norm_le_sqrt_dim_mul_of_coordinate_bound
         nsmul_eq_mul, mul_pow, Real.sq_sqrt (Nat.cast_nonneg n)]
       ring
 
-
 theorem norm_fderiv_coordinateMap_sub_id_le
     {U : Fin n → EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hU : ∀ i, DifferentiableAt ℝ (U i) x) {ε : ℝ} (hε : 0 ≤ ε)
@@ -94,7 +81,6 @@ theorem norm_fderiv_coordinateMap_sub_id_le
   exact ((fderiv ℝ (U i) x - EuclideanSpace.proj (𝕜 := ℝ) i).le_opNorm v).trans
     (mul_le_mul_of_nonneg_right (herror i) (norm_nonneg v))
 
-
 theorem norm_fderiv_coordinateMap_sub_id_le_max [NeZero n]
     {U : Fin n → EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hU : ∀ i, DifferentiableAt ℝ (U i) x) :
@@ -109,8 +95,6 @@ theorem norm_fderiv_coordinateMap_sub_id_le_max [NeZero n]
       (Finset.mem_univ i)
 
 variable {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem norm_fderiv_coordinateMap_sub_id_le_of_frame (D : LeviCivitaData g)
     {U : Fin n → EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology intervalIntegral
@@ -75,8 +65,6 @@ noncomputable def M14EndpointSliceMfderiv
     ⟨G.spacetime.horizontalMetric.toRiemannianMetric⟩
   mfderiv (𝓘(ℝ, G.Horizontal x)) (𝓡 n) f Z
 
-
-
 structure M14SquareRootInitialValuePath
     (G : GeneralizedLGeometryTransport n X time I)
     (T τ : ℝ) (x y : G.Point) (Z : G.Horizontal x) where
@@ -88,7 +76,6 @@ structure M14SquareRootInitialValuePath
     M14SquareRootEulerResidual G square_path extension s W = 0
   initial_velocity : ∃ h : square_path.curve 0 = x,
     h ▸ square_path.horizontal_velocity 0 = (2 : ℝ) • Z
-
 
 structure M14ExponentialFamily
     (G : GeneralizedLGeometryTransport n X time I)
@@ -168,7 +155,6 @@ structure M14ExponentialFamily
       ambient_differential Z s hs =
         M14InitialVectorDerivative G gamma s Z
 
-
   differential_pointwise_mfderiv : ∀ Z s (hs : (Z, s) ∈ domain) W,
     (differential Z s hs W).val =
       M14InitialVectorDerivative G gamma s Z W
@@ -200,7 +186,6 @@ structure M14ExponentialFamily
         (2 : ℝ) • W
   maximal_lifetime : ∀ Z, Set.OrdConnected {s | (Z, s) ∈ domain}
 
-
 def M14UniqueMinimizingBranch
     (G : GeneralizedLGeometryTransport n X time I)
     (T τ : ℝ) (x : G.Point) (E : M14ExponentialFamily G T x)
@@ -212,8 +197,6 @@ def M14UniqueMinimizingBranch
       ∀ q : M14BackwardPath G T 0 τ x (E.gamma Z (Real.sqrt τ)),
         M14IsMinimizing q → Set.EqOn q.curve p.curve (Set.Icc 0 τ)
 
-
-
 def M14StableInitialVector
     (G : GeneralizedLGeometryTransport n X time I)
     (T τ : ℝ) (x : G.Point) (E : M14ExponentialFamily G T x)
@@ -222,7 +205,6 @@ def M14StableInitialVector
     Function.Bijective (E.differential Z (Real.sqrt τ) hZ) ∧
     ∃ U : Set (G.Horizontal x), IsOpen U ∧ Z ∈ U ∧
       ∀ W ∈ U, M14UniqueMinimizingBranch G T τ x E W
-
 
 structure M14StableSet
     (G : GeneralizedLGeometryTransport n X time I)
@@ -288,7 +270,6 @@ def M14StableGraph
     Set (G.Horizontal x × ℝ) :=
   {z | ∃ τ : ℝ, ∃ H : M14StableSet G T τ x E,
     0 < τ ∧ z.1 ∈ H.carrier ∧ z.2 = Real.sqrt τ}
-
 
 def M14RelativeInterior {α : Type*} [TopologicalSpace α]
     (A S : Set α) : Set α :=

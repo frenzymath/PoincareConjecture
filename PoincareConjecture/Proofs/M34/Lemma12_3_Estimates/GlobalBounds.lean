@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndTransport
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M34.Lemma12_3_CoreVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,12 +11,8 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endEstimateCore (e : StandardCylindricalEnd g) : Set StandardCapSpace :=
   e.closed_core ∪ e.coordinate '' (univ ×ˢ Icc (0 : ℝ) 1)
-
-
 
 theorem endEstimateCore_isCompact (e : StandardCylindricalEnd g) :
     IsCompact (endEstimateCore e) := by
@@ -38,8 +24,6 @@ theorem endEstimateCore_isCompact (e : StandardCylindricalEnd g) :
     change -e.collar < z.2
     have h := hz.2.1
     linarith [e.collar_pos]⟩
-
-
 
 theorem end_height_gt_one_of_not_mem_core (e : StandardCylindricalEnd g)
     {x : StandardCapSpace} (hx : x ∉ endEstimateCore e) :
@@ -55,9 +39,6 @@ theorem end_height_gt_one_of_not_mem_core (e : StandardCylindricalEnd g)
   apply hx
   exact Or.inr ⟨e.inverse x, ⟨mem_univ _, e.inverse_domain x hcarrier, le_of_not_gt h⟩,
     e.coordinate_right_inverse hcarrier⟩
-
-
-
 
 theorem end_compact_curvature_representative (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) (x : StandardCapSpace) :
@@ -75,9 +56,6 @@ theorem end_compact_curvature_representative (D : LeviCivitaData g)
   · intro k
     simpa only [hsum] using end_curvatureDerivativeNorm_translate D e (1 - z.2) hzpos hpos k
 
-
-
-
 theorem end_curvatureDerivativeNorm_bounded (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) (k : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ x : StandardCapSpace, D.curvatureDerivativeNorm k x ≤ C := by
@@ -87,8 +65,6 @@ theorem end_curvatureDerivativeNorm_bounded (D : LeviCivitaData g)
   obtain ⟨y, hy, _, hnorm⟩ := end_compact_curvature_representative D e x
   rw [hnorm k]
   exact hC y hy
-
-
 
 theorem end_scalarCurvature_bounds (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g)
@@ -101,8 +77,6 @@ theorem end_scalarCurvature_bounds (D : LeviCivitaData g)
   obtain ⟨y, hy, hscalar, _⟩ := end_compact_curvature_representative D e x
   rw [hscalar]
   exact hC y hy
-
-
 
 theorem standardCapEstimate_of_scalar_pos (g₀ : StandardInitialMetric)
     (hpos : ∀ x : StandardCapSpace, 0 < g₀.connection.scalarCurvature x) :

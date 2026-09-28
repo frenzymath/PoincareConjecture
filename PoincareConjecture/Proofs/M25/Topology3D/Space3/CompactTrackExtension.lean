@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowAlgebra
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable {P : Type*} [TopologicalSpace P]
-
-
 
 theorem exists_compact_field_tracking {S : Set P} (hS : IsCompact S)
     (γ : ℝ → P → E)

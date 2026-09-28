@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Collar
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem cylinderCover_axialCoordinate_mfderiv
     {M : Type*} [TopologicalSpace M]
@@ -42,9 +33,6 @@ theorem cylinderCover_axialCoordinate_mfderiv
   rw [← mfderiv_comp_apply z (haat.mdifferentiableAt (by simp))
     ((hf ⟨z, hz⟩).mdifferentiableAt (by simp)), heq.mfderiv_eq, mfderiv_snd]
   rfl
-
-
-
 
 theorem exists_projectiveCylinderSlab_axialCoordinate
     {M : Type*} [TopologicalSpace M]

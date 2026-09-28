@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
 open Set
 open scoped Manifold ContDiff Bundle
 noncomputable section

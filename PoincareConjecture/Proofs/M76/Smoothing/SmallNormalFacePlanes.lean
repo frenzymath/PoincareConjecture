@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmallFaceLinks
 import PoincareConjecture.Proofs.M76.Mathlib.CofaceFrames
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarPlaneCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry ContinuousLinearMap
@@ -23,9 +13,6 @@ section Singleton
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [Subsingleton F]
-
-
-
 
 theorem contractible_singletonFrameEmbeddingSpace (J : F →L[ℝ] E) :
     ContractibleSpace (FrameEmbeddingSpace J ({0} : Set E)) := by
@@ -39,10 +26,6 @@ end Singleton
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem contractible_twoPointFaceStarPlanes (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E))
@@ -94,10 +77,6 @@ theorem contractible_twoPointFaceStarPlanes (K : SimplicialComplex ℝ E)
     exact mem_affineSpan ℝ (Finset.mem_union_right s (Finset.mem_singleton_self u))
   have h := K.contractible_faceStarTransversePlaneSpace hK hs hp J hJ ht hframe
   rwa [CommSemiring.finrank_self] at h
-
-
-
-
 
 theorem contractible_emptyLinkFaceStarPlanes (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E))

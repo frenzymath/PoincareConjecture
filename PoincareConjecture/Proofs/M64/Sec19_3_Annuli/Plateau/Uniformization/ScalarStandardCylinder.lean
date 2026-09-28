@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCylinderArea
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarDescent
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,32 +14,17 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
 def scalarStandardCylinderMap (p : Plane) : Plane :=
   scalarCoverMap (scalarCylinderCoordinate p + (1, 0))
 
-
-
-
 theorem scalarStandardCylinderMap_smooth : ContDiff ℝ ∞ scalarStandardCylinderMap :=
   scalarCoverMap_smooth.comp (scalarCylinderCoordinate.contDiff.add contDiff_const)
-
-
-
-
 
 theorem scalarStandardCylinderMap_mem {p : Plane} (hp : p 1 ∈ Ioo (0 : ℝ) 1) :
     scalarStandardCylinderMap p ∈ scalarAnnulus := by
   apply scalarCoverMap_mem
   change 1 < p 1 + 1 ∧ p 1 + 1 < 2
   constructor <;> linarith [hp.1, hp.2]
-
-
-
-
 
 theorem scalarStandardCylinderMap_invertible {p : Plane} (hp : p 1 ∈ Ioo (0 : ℝ) 1) :
     (fderiv ℝ scalarStandardCylinderMap p).IsInvertible := by
@@ -73,10 +47,6 @@ theorem scalarStandardCylinderMap_invertible {p : Plane} (hp : p 1 ∈ Ioo (0 : 
       scalarCylinderCoordinate from hD.fderiv, ← hA]
   rfl
 
-
-
-
-
 theorem scalarStandardCylinderMap_injOn :
     InjOn scalarStandardCylinderMap scalarCylinderFundamental := by
   intro p hp q hq hpq
@@ -97,10 +67,6 @@ theorem scalarStandardCylinderMap_injOn :
       scalarCylinderCoordinate q + (1, 0) := by
     simpa only [hk0, Int.cast_zero, Prod.mk_zero_zero, add_zero] using hk
   exact scalarCylinderCoordinate_injective (add_right_cancel hcoord)
-
-
-
-
 
 theorem scalarStandardCylinderMap_image :
     scalarStandardCylinderMap '' scalarCylinderFundamental = scalarAnnulus := by

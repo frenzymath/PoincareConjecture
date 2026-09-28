@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryOddReflection
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.NormalDerivative
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,12 +17,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 namespace PoincareConjecture
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
-
-
 
 theorem m64OddBoundaryReflect_memWkp_two_of_weakEquation
     (B : Poincare.Analysis.Sobolev.NirenbergEuclidean.SmoothEllipticBilinearForm 2 univ)

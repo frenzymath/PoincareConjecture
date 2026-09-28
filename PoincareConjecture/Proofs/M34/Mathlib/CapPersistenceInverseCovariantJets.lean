@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CapPersistenceFrameJets
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff BigOperators Topology
 open Poincare.Analysis.Calculus
-
-
-
-
 
 theorem norm_iteratedFDeriv_le_of_covariantArray
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [Fintype ι]

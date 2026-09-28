@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometrySectional
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -94,7 +85,6 @@ theorem round (t : ℝ) : ConstantPositiveSectionalCurvature (metric s t) (conne
 
 variable {P : Type u} [TopologicalSpace P]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) P] [IsManifold (𝓡 3) ∞ P]
-
 
 def productData
     (e : P ≃ₘ⟮𝓡 3, (𝓡 2).prod 𝓘(ℝ, ℝ)⟯ (N × ℝ)) :

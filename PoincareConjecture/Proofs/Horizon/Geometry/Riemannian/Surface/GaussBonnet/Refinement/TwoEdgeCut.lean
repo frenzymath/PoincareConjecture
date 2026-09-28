@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.LineCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
 
 def coordinateTwoEdgeCutBasis
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -46,10 +36,8 @@ def coordinateTwoEdgeCutBasis
         ![b 2, affineCutPoint f (b 0) (b 1), affineCutPoint f (b 0) (b 2)]] i k := by
   fin_cases i <;> fin_cases k <;> simp [coordinateTwoEdgeCutBasis]
 
-
 def coordinateTwoEdgeCutSlot (i k : Fin 3) : Fin 5 :=
   ![![0, 3, 4], ![1, 2, 3], ![2, 3, 4]] i k
-
 
 theorem coordinateTwoEdgeCutSlot_face_injective :
     Function.Injective (fun i : Fin 3 =>
@@ -66,8 +54,6 @@ theorem coordinateTwoEdgeCutBasis_strictModelPosition
       TriangleMesh.strictModelPosition b f (coordinateTwoEdgeCutSlot i k) := by
   fin_cases i <;> fin_cases k <;>
     simp [coordinateTwoEdgeCutSlot, TriangleMesh.strictModelPosition]
-
-
 
 theorem coordinateTwoEdgeCutBasis_affineReference
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -97,7 +83,6 @@ theorem coordinateTwoEdgeCutBasis_hull_subset
   · exact (coordinateLineCutBasis_hull_subset l f hl0 hl1 true).trans
       (coordinateLineCutBasis_hull_subset b f h0 h1 false)
 
-
 theorem coordinateTwoEdgeCutBasis_hull_strictModelPosition
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ)
@@ -120,7 +105,6 @@ theorem coordinateTwoEdgeCutBasis_hull_strictModelPosition
     · exact ⟨1, coordinateTwoEdgeCutBasis_strictModelPosition b f h0 h1 h2 i 1⟩
     · exact ⟨2, coordinateTwoEdgeCutBasis_strictModelPosition b f h0 h1 h2 i 2⟩
 
-
 theorem coordinateTwoEdgeCutBasis_strictVertices (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -131,7 +115,6 @@ theorem coordinateTwoEdgeCutBasis_strictVertices (M : TriangleMesh)
         EuclideanSpace ℝ (Fin 2)) := by
   rw [M.strictVertices_val]
   exact coordinateTwoEdgeCutBasis_strictModelPosition _ f h0 h1 h2 i k
-
 
 theorem coordinateTwoEdgeCutBasis_mem_strictMeshFor (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -145,7 +128,6 @@ theorem coordinateTwoEdgeCutBasis_mem_strictMeshFor (M : TriangleMesh)
   rw [M.strictMeshFor_triangles]
   fin_cases i <;> simp [coordinateTwoEdgeCutSlot, TriangleMesh.strictPatternTriangles]
 
-
 theorem coordinateTwoEdgeCutBasis_strictMeshFor_triangles (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -157,8 +139,6 @@ theorem coordinateTwoEdgeCutBasis_strictMeshFor_triangles (M : TriangleMesh)
         M.strictVertices f v h0 h1 h2 (coordinateTwoEdgeCutSlot i 2)}) := by
   rw [M.strictMeshFor_triangles, show (Finset.univ : Finset (Fin 3)) = {0, 1, 2} by decide]
   simp [coordinateTwoEdgeCutSlot, TriangleMesh.strictPatternTriangles]
-
-
 
 theorem coordinateTwoEdgeCutBasis_face_injective (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -175,7 +155,6 @@ theorem coordinateTwoEdgeCutBasis_face_injective (M : TriangleMesh)
   apply Finset.map_injective (M.strictVerticesEmbedding f v hv h0 h1 h2)
   simpa only [Finset.map_insert, Finset.map_singleton, TriangleMesh.strictVerticesEmbedding,
     Function.Embedding.coeFn_mk] using hij
-
 
 theorem coordinateTwoEdgeCutBasis_cellCarrier (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -195,8 +174,6 @@ theorem coordinateTwoEdgeCutBasis_cellCarrier (M : TriangleMesh)
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem coordinateTwoEdgeCutBasis_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -235,8 +212,6 @@ theorem coordinateTwoEdgeCutBasis_vertex_contribution (g : RiemannianMetric 2 S)
   change _ = A b + _ at hfirst
   change _ = A l + _ at hsecond
   linarith only [hfirst, hsecond]
-
-
 
 theorem sum_coordinateTwoEdgeCutBasis_angles (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

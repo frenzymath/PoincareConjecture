@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ConnectedRimProjection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

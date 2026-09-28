@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionThinCollarModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDomination
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
-
-
-
-
 
 theorem exists_thinCollar_avoiding_polyhedron
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)

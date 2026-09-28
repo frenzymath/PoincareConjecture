@@ -1,10 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Gradient
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.IntegralCurve.Transform
 import Mathlib.Analysis.Calculus.DerivativeTest
-
-
 
 set_option autoImplicit false
 

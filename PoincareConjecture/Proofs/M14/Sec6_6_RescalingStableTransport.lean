@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingJacobian
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingStableVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
 include hCoordinates in
-
-
 
 theorem rescalingStableTransport {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

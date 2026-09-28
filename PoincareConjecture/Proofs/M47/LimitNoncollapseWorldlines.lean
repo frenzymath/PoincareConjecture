@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedWorldlines
 import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -26,8 +17,6 @@ open PoincareConjecture.Proofs.M12
 variable {F : GeneralizedRicciFlowData.{u}} {C B : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {I J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier} {V : TopologicalSpace.Opens B.carrier}
-
-
 
 theorem limitNoncollapse_worldline_unique
     (hM11 : GeneralizedSpacetimeGeometryTheory.{u} 3)
@@ -64,14 +53,10 @@ theorem limitNoncollapse_worldline_unique
     ((R.compatible.worldline_unique K L gamma eta (a + s0 / q) hki0 hlj0
       (hgamma0.trans (hstart.trans heta0.symm)) (a + s / q) hki hlj).trans heta)
 
-
 theorem limitNoncollapse_baseBall_isOpen (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (A : ℝ) : IsOpen (S.baseBall k A) :=
   isOpen_Iio.preimage ((M36.metric_edist_continuous ((S.flow k).metric (S.base k).1)).comp
     (continuous_const.prodMk continuous_id))
-
-
-
 
 theorem limitNoncollapse_at_of_slab
     (hM11 : GeneralizedSpacetimeGeometryTheory.{u} 3)

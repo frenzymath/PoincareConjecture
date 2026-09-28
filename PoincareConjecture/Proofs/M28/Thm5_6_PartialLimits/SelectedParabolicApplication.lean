@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinPartialFlow
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
@@ -19,10 +10,6 @@ open PoincareConjecture.ChartDistance
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 structure SelectedParabolicApplicationData
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
@@ -85,7 +72,6 @@ structure SelectedParabolicApplicationData
         ((flow k).metric t).pullbackCoefficients
           (chartParametrization (U := U) (hU := isOpen_U) (i := i)
             (embedding k i)) x v v
-
 
 theorem SelectedParabolicApplicationData.partial_flow
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PLMapTransport
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem ChartwisePLMap.lattice_handle_conjugacy
     {ι ι' κ κ' α β : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']
@@ -50,8 +40,6 @@ theorem ChartwisePLMap.lattice_handle_conjugacy
   change h ((psi (q x)).1.val, (psi (q x)).2) =
     ((phi (q' ⟨h x, hx⟩)).1.val, (phi (q' ⟨h x, hx⟩)).2)
   rw [← hg, hconj, hqx]
-
-
 
 theorem ChartwisePLHomeomorph.lattice_handle_conjugacy
     {ι ι' κ κ' α β : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']

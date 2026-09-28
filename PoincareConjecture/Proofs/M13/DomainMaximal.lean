@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M13.DomainLaws
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

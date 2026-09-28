@@ -1,20 +1,8 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GraphHeightSublevels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem exists_strict_sublevel_eq_closed_sublevel
     {V R : Type*} [Finite V] [LinearOrder R] [NoMaxOrder R]
@@ -46,10 +34,6 @@ theorem exists_strict_sublevel_eq_closed_sublevel
 namespace SimpleGraph
 
 variable {V R : Type*} [Finite V] [LinearOrder R] [NoMaxOrder R]
-
-
-
-
 
 theorem exists_lower_neighbor_of_preconnected_sublevels
     (G : SimpleGraph V) (A : V → R) (hA : Function.Injective A)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.BoundaryInteriorMovedE
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BoundaryContactFaces
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalBranchCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -110,4 +102,3 @@ theorem OriginalGeneralPositionData.boundary_interior_contact_chart
       hT'PL, hT'height, hT'K⟩
 
 end Geometry.OriginalPLTower
-

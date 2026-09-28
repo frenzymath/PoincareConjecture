@@ -3,21 +3,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Data.Set.Card.Arithmetic
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -84,13 +69,6 @@ private theorem m64Intrinsic_exists_global_normal_chart
   rw [hF]
   exact he.contDiffOn
 
-
-
-
-
-
-
-
 theorem m64Intrinsic_global_normal_chart_area_lower
     (G : RiemannianMetric 2 AnnulusCoordinates)
     (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -129,10 +107,6 @@ theorem m64Intrinsic_global_normal_chart_area_lower
   exact m64Intrinsic_chart_area_lower G F hFmd hFinvmd hS hSsource speed
     hboundF himageF
 
-
-
-
-
 theorem m64Intrinsic_compact_normal_fiber_finite
     (e : AnnulusCoordinates → AnnulusCoordinates)
     (hlocal : IsLocalHomeomorph e)
@@ -148,11 +122,6 @@ theorem m64Intrinsic_compact_normal_fiber_finite
     obtain ⟨φ, hxφ, hφ⟩ := hlocal x
     exact ⟨φ, hxφ, hφ.symm⟩
   exact hcompact.finite hdiscrete
-
-
-
-
-
 
 theorem m64Intrinsic_compact_normal_fiber_bounded_multiplicity
     (e : AnnulusCoordinates → AnnulusCoordinates)

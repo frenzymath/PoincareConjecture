@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_centered_circle_height_chart
     {M E ι : Type*} [TopologicalSpace M]

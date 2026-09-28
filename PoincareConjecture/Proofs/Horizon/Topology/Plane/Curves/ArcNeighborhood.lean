@@ -1,17 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.LocalStraightening
 import Mathlib.Analysis.Convex.PathConnected
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,9 +7,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
-
 
 theorem exists_two_sided_arc_neighborhood_with_boundary
     {f : ℝ → EuclideanSpace ℝ (Fin 2)}
@@ -141,9 +126,6 @@ theorem exists_two_sided_arc_neighborhood_with_boundary
   · simpa only [haxis] using hboundary (t, 0) ⟨hab, hcd⟩ rfl
   · rintro z ⟨q, hq, rfl⟩ hz
     exact hboundary q hq ((harc q hq).mp hz)
-
-
-
 
 theorem exists_two_sided_arc_neighborhood
     {f : ℝ → EuclideanSpace ℝ (Fin 2)}

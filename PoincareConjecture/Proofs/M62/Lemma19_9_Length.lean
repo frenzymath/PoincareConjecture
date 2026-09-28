@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 import PoincareConjecture.Proofs.M08.VariationIntegral
 import PoincareConjecture.Statements.Ch19.CurveEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem length_density_continuous (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) :
@@ -47,8 +36,6 @@ theorem length_density_continuous (hc : M62ShrinkingCurve F c)
     curveSpeed F c t x = -M08.variationParameterDeriv Set.univ (Set.Ioo a b) V (x, t)
   rw [heq x]
   ring
-
-
 
 theorem hasDerivAt_length (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) :
@@ -75,8 +62,6 @@ theorem hasDerivAt_length (hc : M62ShrinkingCurve F c)
   dsimp only
   rw [heq]
   ring
-
-
 
 theorem length_deriv_le_integral (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -109,8 +94,6 @@ theorem length_deriv_le_integral (hc : M62ShrinkingCurve F c)
         curveSpeed F c t x := by ring
     _ ≤ (K2 - m62CurvatureSquared F c t x) * curveSpeed F c t x :=
       mul_le_mul_of_nonneg_right (by linarith) (speed_nonneg F c t x)
-
-
 
 theorem length_deriv_le (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)

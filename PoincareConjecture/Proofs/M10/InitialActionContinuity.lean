@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 theorem action_continuousOn_initial (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) {b : ℝ} (hb : 0 < b) (hmax : b < τmax) :
     ContinuousOn (G.toLExponentialFamily.action Z) (Icc 0 b) := by
@@ -32,7 +23,6 @@ theorem action_continuousOn_initial (G : LExponentialGeometry F T τmax p)
     (0 : ℝ) ∈ uIcc 0 b)
   change ContinuousOn (fun s ↦ ∫ t in 0..s, backwardLIntegrand F T (G.gamma Z) t) (Icc 0 b)
   simpa only [uIcc_of_le hb.le] using hc
-
 
 theorem action_tendsto_zero (G : LExponentialGeometry F T τmax p)
     (hmax : 0 < τmax) (Z : TangentSpace (𝓡 n) p) :

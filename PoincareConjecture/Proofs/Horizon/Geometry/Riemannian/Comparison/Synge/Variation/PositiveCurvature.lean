@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Synge.Variation.Index
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.Sectional
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {γ η₀ η₁ : ℝ → M}
   {V : ℝ → EuclideanSpace ℝ (Fin n)} {a b : ℝ}
 
-
-
 theorem intrinsicIndexIntegrand_neg_of_parallel
     (D : LeviCivitaData g) {t : ℝ}
     (hsec : ∀ u v, g.inner (γ t) u u = 1 → g.inner (γ t) v v = 1 →
@@ -41,8 +30,6 @@ theorem intrinsicIndexIntegrand_neg_of_parallel
   have h := D.curvatureTensor_diagonal_pos_of_orthonormal (γ t) hsec hind
   simpa only [intrinsicIndexIntegrand, hparallel, map_zero, zero_apply, zero_sub,
     LeviCivitaData.curvatureTensor, neg_lt_zero] using h
-
-
 
 theorem GeodesicVariation.sum_index_neg [T2Space M]
     (R : GeodesicVariation g γ V a b η₀ η₁) (D : LeviCivitaData g)
@@ -68,9 +55,6 @@ theorem GeodesicVariation.sum_index_neg [T2Space M]
     simpa only [Pi.neg_apply, intervalIntegral.integral_neg, neg_pos] using hpos
   exact Finset.sum_neg (fun i hi => hneg i hi)
     ⟨0, Finset.mem_range.mpr R.N_pos⟩
-
-
-
 
 theorem not_minimizing_endpoints_of_parallel [T2Space M]
     (D : LeviCivitaData g) {I : Set ℝ}

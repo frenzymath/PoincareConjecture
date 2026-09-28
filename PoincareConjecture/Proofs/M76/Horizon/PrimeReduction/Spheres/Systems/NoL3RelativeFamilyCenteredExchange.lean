@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.LocalCollarC
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RelativeCollarEndpointFrontiers
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SelectedOriginalCutDomain
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 namespace PoincareConjecture.M76

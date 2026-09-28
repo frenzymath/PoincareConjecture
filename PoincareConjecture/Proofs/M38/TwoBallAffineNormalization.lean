@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.BallGermRectification
 import PoincareConjecture.Proofs.M38.BallShrinking
 import PoincareConjecture.Proofs.M38.BallTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,10 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
-
-
 
 theorem exists_surgeryBallAffineNormalizationCompact (B C : SurgeryBallEmbedding A)
     (hBC : B.map 0 ∈ C.map '' Metric.ball (0 : StandardCapSpace) 2) :
@@ -75,8 +62,6 @@ theorem exists_surgeryBallAffineNormalizationCompact (B C : SurgeryBallEmbedding
           (by norm_num)))) hmem)
     rw [hsfix y hy, hEfix y hsmall]
 
-
-
 theorem exists_surgeryBallAffineNormalization (B C : SurgeryBallEmbedding A)
     (hBC : B.map 0 ∈ C.map '' Metric.ball (0 : StandardCapSpace) 2) :
     ∃ e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞,
@@ -96,12 +81,6 @@ theorem exists_surgeryBallAffineNormalization (B C : SurgeryBallEmbedding A)
   intro y hy
   exact hfix y (fun h => hy ((Set.image_mono
     (Metric.closedBall_subset_ball (by norm_num))) h))
-
-
-
-
-
-
 
 theorem exists_twoBallAffineNormalization (B D C : SurgeryBallEmbedding A)
     (hBD : Disjoint (B.map '' Metric.ball (0 : StandardCapSpace) 2)

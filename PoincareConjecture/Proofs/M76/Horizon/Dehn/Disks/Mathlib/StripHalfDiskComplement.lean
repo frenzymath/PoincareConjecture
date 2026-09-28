@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripCenterCuts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryAttachedDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,29 +9,23 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 
-
 def halfSource (positive : Bool) : Set P2 :=
   Icc (0 : ℝ) 1 ×ˢ if positive then Icc (0 : ℝ) 1 else Icc (-1 : ℝ) 0
 
-
 def farArmParameter (positive : Bool) : ℝ := if positive then 1 else -1
-
 
 theorem halfSource_subset_source (positive : Bool) : halfSource positive ⊆ source := by
   cases positive with
   | false => exact fun x hx => ⟨hx.1, hx.2.1, hx.2.2.trans (by norm_num)⟩
   | true => exact fun x hx => ⟨hx.1, le_trans (by norm_num) hx.2.1, hx.2.2⟩
 
-
 theorem arm_zero_subset_halfSource (positive : Bool) : arm 0 ⊆ halfSource positive := by
   intro x hx
   have hx0 : x.2 = 0 := hx.2
   cases positive <;> exact ⟨hx.1, by rw [hx0]; norm_num⟩
 
-
 theorem farArmParameter_ne_zero (positive : Bool) : farArmParameter positive ≠ 0 := by
   cases positive <;> norm_num [farArmParameter]
-
 
 theorem halfSource_union (positive : Bool) :
     halfSource positive ∪ halfSource (!positive) = source := by
@@ -59,7 +43,6 @@ theorem halfSource_union (positive : Bool) :
       rw [union_comm, ← prod_union, hinterval]
       rfl
 
-
 theorem arm_far_subset_source (positive : Bool) :
     arm (farArmParameter positive) ⊆ source := by
   intro x hx
@@ -67,7 +50,6 @@ theorem arm_far_subset_source (positive : Bool) :
   refine ⟨hx.1, ?_⟩
   rw [hxfar]
   cases positive <;> norm_num [farArmParameter]
-
 
 theorem disjoint_center_far_images
     {E : Type*} (c : P2 → E) (hci : InjOn c source) (positive : Bool) :
@@ -164,8 +146,6 @@ private theorem exists_half_strip_attaching_arc_of_bounds
       exact hfar0 (hx.2.symm.trans hxzero)
   exact ⟨c '' U, hhalf, hUimage, hUQA, hWimage, hendsImage, hproper⟩
 
-
-
 theorem exists_half_strip_attaching_arc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {A QA Q : Set E} (c : P2 → E) (positive : Bool)
@@ -191,8 +171,6 @@ theorem exists_half_strip_attaching_arc
       exact exists_half_strip_attaching_arc_of_bounds 0 1 1 (by norm_num)
         (by norm_num) le_rfl rfl one_ne_zero c hcPL hci hcQ hhalfA hQA
 
-
-
 theorem exists_lower_half_strip_complement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {A QA Q : Set E} (hA : IsFinitePLBallPair P2 A QA) (c : P2 → E)
@@ -213,7 +191,6 @@ theorem exists_lower_half_strip_complement
     hA.exists_boundary_attached_disk_complement hH hhalfA hU hUQA hW hends hproper
   exact ⟨V, hV, hcomp, hcover, hinter, hcontact⟩
 
-
 theorem exists_upper_half_strip_complement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {A QA Q : Set E} (hA : IsFinitePLBallPair P2 A QA) (c : P2 → E)
@@ -233,8 +210,6 @@ theorem exists_upper_half_strip_complement
   obtain ⟨V, hV, _, _, hcomp, hcover, hinter, _, hcontact⟩ :=
     hA.exists_boundary_attached_disk_complement hH hhalfA hU hUQA hW hends hproper
   exact ⟨V, hV, hcomp, hcover, hinter, hcontact⟩
-
-
 
 theorem half_strip_disk_complement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

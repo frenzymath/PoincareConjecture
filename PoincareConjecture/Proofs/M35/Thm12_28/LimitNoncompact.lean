@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.BlowupSequence
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem cylinder_source_noncompact {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {C : GeneralizedSliceCarrier} {a Q : ℝ} {I : Set ℝ} {U : Set C.carrier}
@@ -68,9 +57,6 @@ theorem cylinder_source_noncompact {J : Set ℝ} (F : RicciFlow 3 StandardCapSpa
   have hclopen : IsClopen (range f) := ⟨hcompactRange.isClosed, hopenRange⟩
   have hrange : range f = univ := hclopen.eq_univ ⟨f x₀, mem_range_self x₀⟩
   exact noncompact_univ StandardCapSpace (hrange ▸ hcompactRange)
-
-
-
 
 theorem blowupSequence_limit_noncompact (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

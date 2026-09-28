@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Pote
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Holder
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real Set Filter

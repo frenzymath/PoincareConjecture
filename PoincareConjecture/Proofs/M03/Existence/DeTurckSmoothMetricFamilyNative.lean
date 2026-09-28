@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckJetProlongationNative
 import PoincareConjecture.Proofs.M03.Existence.CoordinateMetricRegularityNative
 import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorSmoothNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -388,7 +382,6 @@ theorem contDiffOn_coordinateJetPath {Omega : Set P} (hOmega : IsOpen Omega)
     (contDiffOn_pi.mpr (fun w : WordIndex (Fin n) 2 =>
       wordDerivative_contDiffOn hOmega hU (List.ofFn w.2)))
 
-
 theorem packChartState_eq_frameMetricJet (base : M) (U : P → C(K, Mat × Mat))
     (hU : ContDiffOn ℝ ∞ U (chartDomain base)) (b : Bool) (g : K → RiemannianMetric n M)
     (hvalue : ∀ y t, matrixSlot b (U y t) = coordinateMetricEntries (g t) base y)
@@ -467,7 +460,6 @@ theorem contDiffOn_coordinateSourcePath
   (contDiff_postcomp K (sourceMap fExt)
     (contDiff_const.prodMk (hfExt.comp contDiff_packChartJet))).comp_contDiffOn
       (contDiffOn_coordinateJetPath hOmega hU)
-
 
 theorem exists_coordinate_source_extension (base : M) (U : P → C(K, Mat × Mat))
     (hU : ContDiffOn ℝ ∞ U (chartDomain base)) (g : K → RiemannianMetric n M)
@@ -570,7 +562,6 @@ private theorem path_integral_eq_of_derivative
   change U t = U ⟨0, by simp [hT.le]⟩ + ∫ s in (0 : ℝ)..t, IccExtend hT.le S s
   rw [hint]
   abel
-
 
 theorem coordinatePairPath_hasDerivWithinAt (base : M)
     (U : P → C(Icc (0 : ℝ) T, Mat × Mat))
@@ -753,7 +744,6 @@ theorem contMDiffOn_metricPair_of_local_coordinates {J : Set ℝ}
     rw [hpoint]
     exact metricPair_chart_sum (g a.1) base V W ha.2.1
   exact ((hsum.congr heq) q ⟨hq.1, hx, hbase⟩).mono_of_mem_nhdsWithin hsmall
-
 
 theorem isSmoothFamilyOn_of_local_coordinates_fields {A : Type*} [Fintype A]
     (background : RiemannianMetric n M) (F : A → SmoothField (n := n) (M := M))

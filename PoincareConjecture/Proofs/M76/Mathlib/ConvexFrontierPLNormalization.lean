@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -21,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finitePL_convex_frontier_halfspaces_marked (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s t : Set E} (hs : IsCompact s) (ht : IsCompact t)
@@ -101,10 +89,6 @@ theorem exists_finitePL_convex_frontier_halfspaces_marked (K : SimplicialComplex
   change (e ⟨p, hDs.symm ▸ p.property⟩ : E) = (gauge t p)⁻¹ • (p : E)
   rw [hef]
   exact hfv (hPv hp)
-
-
-
-
 
 theorem exists_finitePL_convex_frontier_halfspaces (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s t : Set E} (hs : IsCompact s) (ht : IsCompact t)

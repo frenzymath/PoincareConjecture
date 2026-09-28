@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Reduction.SupportingVertex
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Triangle.TriangleRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ} {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.admissibleVertex_of_triangle_arc (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (a : Fin n)
@@ -106,9 +95,6 @@ theorem IsSimplePolygon.admissibleVertex_of_triangle_arc (hp : IsSimplePolygon p
   · change polygonVertexTriangle p c ⊆ closure (polygonInterior p)
     rw [hTclosure]
     exact hnested.2
-
-
-
 
 theorem IsSimplePolygon.exists_admissible_vertex_away_edge (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (hn : 3 < n) (i : Fin n) :

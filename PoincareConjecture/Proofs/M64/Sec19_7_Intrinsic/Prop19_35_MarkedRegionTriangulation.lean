@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MarkedCoordinateParents
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionRefinementCorner
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,12 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 structure M64IntrinsicCoordinateTriangulation (K : Set AnnulusCoordinates) where
   count : ℕ
@@ -41,12 +31,6 @@ structure M64IntrinsicCoordinateTriangulation (K : Set AnnulusCoordinates) where
       ((face p).boundary k).map '' Icc (0 : ℝ) 1 = ((face q).boundary l).map '' Icc (0 : ℝ) 1) ∨
     ∃ v : Fin 3, (face p).carrier ∩ (face q).carrier ⊆ {coordinates p (basis p v)}
   cover : (⋃ p, (face p).carrier) = K
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_marked_region_triangulation
     {I : Type*} [Finite I]

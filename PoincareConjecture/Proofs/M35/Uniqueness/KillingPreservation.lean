@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingLichnerowicz
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectRegularity
 import PoincareConjecture.Proofs.M35.Uniqueness.BoundedLichnerowicz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +10,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem bounded_vector_heat_preserves_killing
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -60,9 +47,6 @@ theorem bounded_vector_heat_preserves_killing
       ⟨ht.1, ht.2.trans_lt hTlt⟩ X hX hJoint (hheat t ht) x v)
   intro t ht x u v
   exact hz t ht x ![u, v]
-
-
-
 
 theorem bounded_vector_heat_initial_killing_stationary
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

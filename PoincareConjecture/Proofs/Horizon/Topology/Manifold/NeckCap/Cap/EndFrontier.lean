@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SphereContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem frontier_carrier_subset_frontier_end (C : CapCertificate g) :
     frontier C.carrier ⊆ frontier C.end_neck.carrier := by
@@ -67,8 +56,6 @@ private theorem reversed_end_boundary_sphere_contact (C : CapCertificate g) :
     C.boundary_eq_neck_sphere.symm ▸ C.boundary_neck.center_on_central_sphere
   simpa only [EpsilonNeck.reversed_epsilon, EpsilonNeck.reversed_region,
     C.end_neck_epsilon, neg_div] using C.boundary_subset_negative_end_closure hboundary
-
-
 
 theorem exists_frontier_carrier_subset_closure_positive_end :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

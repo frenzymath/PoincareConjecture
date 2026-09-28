@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Disk
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -64,9 +57,6 @@ private theorem connector_image_subset_compl_of_endpoint
   · have hend := closure_mono h (connector_endpoint_mem_closure hβ ht)
     exact (hmem ((closure_minimal interior_subset hK) hend)).elim
   · exact h
-
-
-
 
 theorem exists_filled_planar_circle_pair_with_connector_region
     (γ₀ γ₁ : S1 → E2)

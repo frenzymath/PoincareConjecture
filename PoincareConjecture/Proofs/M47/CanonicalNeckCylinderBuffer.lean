@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderAlternative
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderForward
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_strictLeft_cylinder_buffer_or_cap
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

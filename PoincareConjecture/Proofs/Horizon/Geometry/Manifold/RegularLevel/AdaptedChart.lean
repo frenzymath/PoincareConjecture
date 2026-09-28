@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Straight
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
 open Set Filter Function
 open scoped Manifold Topology ContDiff
 
@@ -25,11 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   [I.Boundaryless]
 
-
-
-
-
-
 def mfderivReal (f : M → ℝ) (q : M) (v : TangentSpace I q) : ℝ :=
   mfderiv I 𝓘(ℝ, ℝ) f q v
 
@@ -38,7 +25,6 @@ omit [FiniteDimensional ℝ E] [IsManifold I ∞ M] [I.Boundaryless] in
     mfderivReal (I := I) f q v = mfderiv I 𝓘(ℝ, ℝ) f q v := rfl
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem contDiffAt_comp_extChartAt_symm {f : M → ℝ}
     (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (z : M) {y : E}
@@ -52,15 +38,12 @@ theorem contDiffAt_comp_extChartAt_symm {f : M → ℝ}
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem contDiffOn_comp_extChartAt_symm {f : M → ℝ}
     (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (z : M) :
     ContDiffOn ℝ ∞ (f ∘ (extChartAt I z).symm) (extChartAt I z).target :=
   fun _ hy => (contDiffAt_comp_extChartAt_symm hf z hy).contDiffWithinAt
 
 omit [FiniteDimensional ℝ E] [IsManifold I ∞ M] in
-
-
 
 theorem hasFDerivAt_comp_extChartAt_symm {f : M → ℝ}
     (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (y : M) :
@@ -74,18 +57,6 @@ theorem hasFDerivAt_comp_extChartAt_symm {f : M → ℝ}
       = f ∘ (extChartAt I y).symm := by
     simp [writtenInExtChartAt]
   rwa [hfun] at h
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_extChartAt_openPartialHomeomorph_comp_symm_eq_affine
     {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (y : M)

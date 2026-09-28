@@ -2,21 +2,11 @@ import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.MetricSpace.Pseudo.Constructions
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology Function
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_uniform_product_ball
     {X E : Type*} [TopologicalSpace X] [CompactSpace X] [PseudoMetricSpace E]
@@ -33,8 +23,6 @@ theorem exists_uniform_product_ball
   obtain ⟨δ, hδ, hball⟩ := Metric.mem_nhds_iff.mp
     (hW.mem_nhds (hpW (mem_singleton p)))
   exact ⟨δ, hδ, fun z hz => hprod ⟨hV hz.1, hball hz.2⟩⟩
-
-
 
 theorem exists_compact_collar_injective_strip
     {X Y : Type*} [TopologicalSpace X] [CompactSpace X]

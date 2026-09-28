@@ -3,13 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 namespace Poincare.Analysis.Spectral.Counting
 
 theorem sqrt_pow_eq_rpow {x : ℝ} (hx : 0 ≤ x) (n : ℕ) :
@@ -17,8 +10,6 @@ theorem sqrt_pow_eq_rpow {x : ℝ} (hx : 0 ≤ x) (n : ℕ) :
   rw [Real.sqrt_eq_rpow, ← Real.rpow_natCast, ← Real.rpow_mul hx]
   congr 1
   ring
-
-
 
 theorem le_rpow_of_le_error_add_inverse_pow {N A B w : ℝ} (n : ℕ)
     (hN : 0 ≤ N) (hA : 0 ≤ A) (hw : 1 ≤ w)
@@ -51,8 +42,6 @@ theorem le_rpow_of_le_error_add_inverse_pow {N A B w : ℝ} (n : ℕ)
     Real.mul_rpow (by positivity : 0 ≤ 2 * (A + 1)) hwpos.le]
   ring
 
-
-
 theorem one_le_four_mul_weighted_sq_sum {ι : Type*} (s : Finset ι)
     (a b : ι → ℝ) (h : 1 / 2 ≤ ∑ i ∈ s, a i * b i) :
     1 ≤ 4 * (∑ i ∈ s, a i ^ 2) * ∑ i ∈ s, b i ^ 2 := by
@@ -64,8 +53,6 @@ theorem norm_sq_le_two_mul_sub_sq_add (K : Type*) [SeminormedAddCommGroup K]
   have h' : ‖x‖ ≤ ‖x - y‖ + ‖y‖ := norm_le_norm_sub_add x y
   nlinarith [sq_nonneg (‖x - y‖ - ‖y‖), norm_nonneg (x - y), norm_nonneg x,
     norm_nonneg y]
-
-
 
 theorem card_le_error_add_trace {ι J K : Type*} [Fintype J]
     [SeminormedAddCommGroup K] (s : Finset ι) (v z : ι → J → K)
@@ -88,7 +75,6 @@ theorem card_le_error_add_trace {ι J K : Type*} [Fintype J]
   rw [Finset.sum_comm] at hsum
   have ht := mul_le_mul_of_nonneg_left htrace (by positivity : 0 ≤ 2 * C)
   nlinarith
-
 
 theorem finite_ncard_le_of_finset_card_le {ι : Type*} (S : Set ι) {C : ℝ}
     (h : ∀ s : Finset ι, (↑s : Set ι) ⊆ S → (s.card : ℝ) ≤ C) :

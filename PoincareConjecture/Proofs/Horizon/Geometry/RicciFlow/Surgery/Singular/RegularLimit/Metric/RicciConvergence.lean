@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -34,8 +27,6 @@ theorem tendsto_metricTwoJet_of_bilinear_jets
     tendsto_pi_nhds.mpr (fun r => hjets r (by omega))
   have h := ((twoJetProjection n).continuous.tendsto _).comp hpi
   simpa only [Function.comp_def, twoJetProjection_spatialJet] using h
-
-
 
 theorem tendsto_ricci_of_chart_metric_jets
     {n : ℕ} {M X ι : Type*} {l : Filter ι}

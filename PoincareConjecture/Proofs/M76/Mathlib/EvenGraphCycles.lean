@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ComponentCycleLabels
 import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*}
-
-
-
 
 theorem exists_cycle_of_even_neighbors [Finite V] (G : SimpleGraph V) (hG : G ≠ ⊥)
     (heven : ∀ v, Even (G.neighborSet v).ncard) :
@@ -45,8 +33,6 @@ theorem exists_cycle_of_even_neighbors [Finite V] (G : SimpleGraph V) (hG : G �
   rw [← C.ncard_neighborSet G v, hcard] at he
   exact (by decide : ¬ Even (1 : ℕ)) he
 
-
-
 theorem IsCycles.even_neighbors {G : SimpleGraph V} (hG : G.IsCycles) (v : V) :
     Even (G.neighborSet v).ncard := by
   by_cases hv : (G.neighborSet v).Nonempty
@@ -54,9 +40,6 @@ theorem IsCycles.even_neighbors {G : SimpleGraph V} (hG : G.IsCycles) (v : V) :
     exact even_two
   · rw [Set.not_nonempty_iff_eq_empty.mp hv, Set.ncard_empty]
     exact Even.zero
-
-
-
 
 theorem even_neighbors_sdiff_of_isCycles [Finite V] (G H : SimpleGraph V) (hHG : H ≤ G)
     (heven : ∀ v, Even (G.neighborSet v).ncard) (hH : H.IsCycles) :

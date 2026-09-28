@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.CompactBalls
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M30.PartialPointedMetricConvergence
-
-
 
 theorem metricComplete_of_source_ball_coverage
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

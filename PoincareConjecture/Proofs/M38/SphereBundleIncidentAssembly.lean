@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.SphereBundleCutChart
 import PoincareConjecture.Proofs.M38.SpaceformIncidentAssembly
 import PoincareConjecture.Proofs.M38.ComponentTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem sphereBundle_incident_assembly_of_component_chart
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

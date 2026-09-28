@@ -1,32 +1,16 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
 
-
-
 theorem radiusMap_self {a b : ℝ} (hab : a < b) (r : ℝ) :
     radiusMap a b a b r = r := by
   unfold radiusMap
   rw [div_self (sub_ne_zero.mpr hab.ne'), one_mul]
   ring
-
-
-
-
 
 theorem exists_fixed_radius_homeomorph {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
 
 lemma exists_heat_harnack_path (g : RiemannianMetric n M) (hc : MetricComplete g)
     (O x y : M) {R : ℝ}

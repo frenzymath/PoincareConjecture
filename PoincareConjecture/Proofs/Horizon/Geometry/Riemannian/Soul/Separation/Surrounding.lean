@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Nec
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.BoundaryDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Depth.Points
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -71,9 +62,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
 
-
-
-
 theorem PointSoulData.exists_surrounding_neck_regions
     (P : PointSoulData g) (hc : MetricComplete g)
     (N : EpsilonNeck g) (hN : N.epsilon ≤ neckSeparationThreshold) :
@@ -99,8 +87,6 @@ theorem PointSoulData.exists_surrounding_neck_regions
 end PoincareConjecture.RiemannianMetric
 
 universe u
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_universal_soul_neck_separation_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ < 1 / 2 ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerCuts
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceBackwardAnchor
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerAnchors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_actual_later_negative_cut_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

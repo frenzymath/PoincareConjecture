@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Sequence.Infimum
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem exists_reducedLength_self_le_on_interval (K : AncientKappaSolution 2 M)
     (p : M) (B : ℝ) :
@@ -38,7 +29,6 @@ theorem exists_reducedLength_self_le_on_interval (K : AncientKappaSolution 2 M)
   intro s hs
   exact (hA (mem_image_of_mem _ ⟨hs.1, hs.2.trans htauB⟩)).trans (le_max_left A 0)
 
-
 theorem exists_uniform_reducedLength_comparator (K : AncientKappaSolution 2 M)
     (p : M) (B : ℝ) :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ tau : ℝ, 0 < tau → tau ≤ B →
@@ -49,7 +39,6 @@ theorem exists_uniform_reducedLength_comparator (K : AncientKappaSolution 2 M)
   apply (hbound tau htau htauB).trans
   exact div_le_div_of_nonneg_right
     (mul_le_mul_of_nonneg_left (htauB.trans (le_max_left _ _)) hC) (by norm_num)
-
 
 theorem exists_compact_reducedLength_sublevels (K : AncientKappaSolution 2 M)
     (p : M) (B A : ℝ) :
@@ -69,7 +58,6 @@ theorem exists_compact_reducedLength_sublevels (K : AncientKappaSolution 2 M)
     (mul_le_mul_of_nonneg_left (htauB.trans (le_max_left _ _)) (by norm_num))
     (le_max_right _ _)
 
-
 theorem isCompact_closure_spacetime_reducedLength_sublevel (K : AncientKappaSolution 2 M)
     (p : M) (B A : ℝ) :
     IsCompact (closure {z : M × ℝ |
@@ -80,7 +68,6 @@ theorem isCompact_closure_spacetime_reducedLength_sublevel (K : AncientKappaSolu
   apply closure_minimal _ hcompact.isClosed
   rintro ⟨q, tau⟩ ⟨htau, htauB, hq⟩
   exact ⟨hsub tau htau htauB hq, htau.le, htauB⟩
-
 
 theorem continuousOn_scalarCurvature_spacetime_Icc (K : AncientKappaSolution 2 M)
     {B : ℝ} (hB : 0 < B) :
@@ -112,7 +99,6 @@ theorem exists_curvature_bound_on_compact (K : AncientKappaSolution 2 M)
   have hscalar : |(K.flow.connection t).scalarCurvature q| ≤ C :=
     hC ⟨(t, q), ⟨ht, hq⟩, rfl⟩
   exact hnorm.le.trans (hscalar.trans (le_max_left C 0))
-
 
 theorem regularizedPotential_continuousOn (K : AncientKappaSolution 2 M)
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b) (S : Set M) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationBlockNeighborhood
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationCompact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +16,8 @@ namespace PoincareConjecture.M65Perturbation
 local notation "ang" => (fun x : ℝ =>
   (Subtype.mk (Proofs.M58.angularPoint x) (Proofs.M58.norm_angularPoint x) : LoopCircle))
 
-
-
 def loopSite (z : LoopAmbient) : (LoopCircle × LoopCircle) × ℝ :=
   ((ang (z 0), ang (z 1)), z 2)
-
-
 
 theorem loopSite_open_quotient : IsOpenQuotientMap loopSite := by
   have hAng : IsOpenQuotientMap ang := by
@@ -80,10 +66,6 @@ private theorem original_circle_continuous (C : M65SmoothFilledLoopFamily F J) (
 variable [T2Space M] [CompactSpace M]
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem exists_finite_regular_controls (C : M65SmoothFilledLoopFamily F J)
     (hJ : IsOpen J) (K : Set ℝ) (hK : IsCompact K) (hKJ : K ⊆ J)

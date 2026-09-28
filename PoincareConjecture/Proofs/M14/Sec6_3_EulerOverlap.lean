@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquareRepresentative
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareRootComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,9 +30,6 @@ private theorem residualPair_heq {x y : G.Point} (h : x = y)
   cases hV
   cases hW
   rfl
-
-
-
 
 theorem squareRootEulerResidual_eq_on_subset
     (R : M14SquareRootPath G p) (S : M14SquareRootPath G q)

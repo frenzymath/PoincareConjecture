@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeToCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Poincare.RicciFlow.Harnack
-
-
 
 theorem differentialHarnackAncientTheory_of_component_local_right_curvature_bounds
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -50,9 +40,6 @@ theorem differentialHarnackAncientTheory_of_component_local_right_curvature_boun
     hM04 F hcomplete hcurv hbound
   intro p a b hab hJ
   exact hright n M T₀ T₁ hT F hcomplete hcurv hbound p a b hab hJ
-
-
-
 
 theorem differentialHarnackAncientTheory_of_bounded_ancient_zero_volume
     (hM04 : RicciFlowCurvatureTheory.{u}) : HarnackAncientTheory.{u} := by

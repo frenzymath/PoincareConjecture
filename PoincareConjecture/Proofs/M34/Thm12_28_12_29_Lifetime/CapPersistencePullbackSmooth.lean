@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocality
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizationModel
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem capPersistence_roundCylinderTensorSmoothOn_pullback
     {M : Type*} [TopologicalSpace M]
@@ -103,8 +91,6 @@ theorem capPersistence_roundCylinderTensorSmoothOn_pullback
     rw [hd, hd]
     rfl
   exact (hscalar.congr_of_eventuallyEq heq).contDiffWithinAt
-
-
 
 theorem capPersistence_generalizedCylinderPullback_smooth
     {G : GeneralizedRicciFlowData} {C : GeneralizedSliceCarrier}

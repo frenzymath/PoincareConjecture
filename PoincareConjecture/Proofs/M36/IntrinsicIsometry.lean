@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.MetricPathLength
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

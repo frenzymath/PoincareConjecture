@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.ScalarJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Equation
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,10 +18,6 @@ open SpacetimeBounds
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem scalarMetricTraceTwoJet_pullback
     {n : ℕ} {M : Type u} [TopologicalSpace M]

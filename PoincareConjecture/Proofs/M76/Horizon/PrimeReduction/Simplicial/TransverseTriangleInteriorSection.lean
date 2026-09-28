@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MaximalFaceAffineGerm
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_transverse_triangle_interior_two_segment_germ
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

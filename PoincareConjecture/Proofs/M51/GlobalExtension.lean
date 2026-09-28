@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalRawFlow
 import PoincareConjecture.Proofs.M51.GlobalEventLedger
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : Nat}
   (Q : CompletedStageChain S N C F0 k)
   (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
-
-
 
 noncomputable def globalExtension (n : Nat) : SurgeryFlowExtension (Q.flow n) where
   extended := Q.globalFlow m13
@@ -62,23 +51,15 @@ noncomputable def globalExtension (n : Nat) : SurgeryFlowExtension (Q.flow n) wh
     let : IsEmpty (Q.globalSlice T).carrier := he
     exact Q.globalVanishingEvent_old_reference m13 n T hT hT'
 
-
-
 theorem globalExtension_extended (n : Nat) :
     (Q.globalExtension m13 n).extended = Q.globalFlow m13 := rfl
-
-
 
 theorem globalExtension_identify (n : Nat) (t : Real)
     (ht : t ∈ (Q.flow n).time_domain) :
     (Q.globalExtension m13 n).identify t ht = Q.globalIdentify n t ht := rfl
 
-
-
 noncomputable def inputExtension : SurgeryFlowExtension F0 :=
   ComposedExtension.append Q.initial Q.initial_eq (Q.globalExtension m13 0)
-
-
 
 theorem inputExtension_extended : (Q.inputExtension m13).extended = Q.globalFlow m13 :=
   ComposedExtension.append_extended Q.initial Q.initial_eq (Q.globalExtension m13 0)

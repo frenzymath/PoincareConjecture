@@ -3,14 +3,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -44,8 +36,6 @@ theorem signed_collar_mem_connectedComponentIn_iff
       hinside
     rw [← connectedComponentIn_eq hbase] at hsub
     exact hsub (mem_image_of_mem (fun s : ℝ => c (z, s)) ⟨ht0, le_rfl⟩)
-
-
 
 theorem signed_collar_side_on_connectedComponentIn
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

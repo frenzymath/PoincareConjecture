@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 def affineZeroSubcomplex (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) :
     SimplicialComplex ℝ E where
@@ -31,14 +20,9 @@ def affineZeroSubcomplex (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) :
     exact ⟨K.down_closed hs.1 hts ht, fun x hx => hs.2 x (hts hx)⟩
   inter_subset_convexHull hs ht := K.inter_subset_convexHull hs.1 ht.1
 
-
-
 theorem affineZeroSubcomplex_finite (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) :
     (K.affineZeroSubcomplex A).faces.Finite := hK.subset (fun _ hs => hs.1)
-
-
-
 
 theorem affineZeroSubcomplex_space (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hA : K.RespectsAffineHyperplane A) :

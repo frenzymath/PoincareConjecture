@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M10.MovingAction
 import PoincareConjecture.Proofs.M10.WeightedJacobian
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,13 +17,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 noncomputable def weightedExponentialJacobian (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
   Real.rpow τ (-(n : ℝ) / 2) *
     Real.exp (-(G.toLExponentialFamily.action (metricCoordinates (F.metric T) p x) τ /
       (2 * Real.sqrt τ))) * exponentialSliceJacobian G τ x
-
 
 theorem weightedExponentialJacobian_nonneg (G : LExponentialGeometry F T τmax p)
     {τ : ℝ} (hτ : 0 < τ) (x : EuclideanSpace ℝ (Fin n)) :
@@ -41,7 +30,6 @@ theorem weightedExponentialJacobian_nonneg (G : LExponentialGeometry F T τmax p
     (exponentialSliceJacobian_nonneg G τ x)
 
 variable [ConnectedSpace M]
-
 
 theorem weightedExponentialJacobian_eq_density_mul (hL : LGeodesicTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (x : EuclideanSpace ℝ (Fin n)) {τ : ℝ}
@@ -54,7 +42,6 @@ theorem weightedExponentialJacobian_eq_density_mul (hL : LGeodesicTheory F T τm
     (metricCoordinates (F.metric T) p x) hτ hmax hmin
   simp only [weightedExponentialJacobian, reducedVolumeDensity, exponentialSliceChart_apply,
     ha, if_pos hτ]
-
 
 theorem weightedExponentialJacobian_hasDerivAt
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)
@@ -76,7 +63,6 @@ theorem weightedExponentialJacobian_hasDerivAt
   simp only [exponentialSliceChart_apply] at hj
   exact weightedJacobian_hasDerivAt hτ ha hj
 
-
 theorem weightedExponentialJacobian_deriv_nonpos
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -94,7 +80,6 @@ theorem weightedExponentialJacobian_deriv_nonpos
   refine mul_nonpos_of_nonneg_of_nonpos (weightedExponentialJacobian_nonneg G hτ x) ?_
   dsimp only [reducedLengthLaplacian] at hres
   linarith only [hres]
-
 
 theorem weightedExponentialJacobian_antitoneOn
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedScalarPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,8 +29,6 @@ private theorem ricci_transport_smul (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   ring
 
 variable {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
 
 theorem squareRoot_shiftedHarnackDensity_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -71,9 +60,6 @@ theorem squareRoot_shiftedHarnackDensity_eq
   unfold M14GeneralizedHarnackDensity M14HorizontalScalarDifferential
   have hs0 : s ≠ 0 := ((Real.sqrt_nonneg a).trans_lt hs.1).ne'
   field_simp [hs0]
-
-
-
 
 theorem adaptedScalarPrimitive_add_shiftedHarnack
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)

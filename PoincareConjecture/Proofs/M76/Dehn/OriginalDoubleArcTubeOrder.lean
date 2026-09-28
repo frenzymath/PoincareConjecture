@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcDualBoundaryAvoidance
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteSubcomplexContact
 import Mathlib.Order.Fin.Tuple
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
 
 theorem exists_original_signed_tube_order
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

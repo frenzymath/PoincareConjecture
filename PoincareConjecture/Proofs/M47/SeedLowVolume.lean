@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedLowTest
 import PoincareConjecture.Proofs.M47.SeedPositiveSafeVolume
 import PoincareConjecture.Proofs.M47.SeedSmallVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47 M46
-
-
 
 theorem exists_positive_low_center_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

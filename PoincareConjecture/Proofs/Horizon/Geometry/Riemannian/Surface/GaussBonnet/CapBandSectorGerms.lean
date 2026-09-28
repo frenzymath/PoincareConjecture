@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilySeparation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedAssembly
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +50,6 @@ private theorem disjoint_coordinate_image_interior
   rintro z ⟨a, ha, haz⟩ ⟨b, hb, hbz⟩
   have hab := F.injOn (hA ha) (hB (interior_subset hb)) (haz.trans hbz.symm)
   exact disjoint_left.mp hdisjoint (hab ▸ ha) hb
-
-
 
 theorem halfplane_side_of_regular_wedge_separation
     {A B : Set Plane} {q d : Plane} (l f g : Plane →ᵃ[ℝ] ℝ)
@@ -113,8 +104,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   {e : D.EdgeIndex} {R : D.regions} {a b trim : ℝ} {terminal : Bool}
   {G : D.OrientedGraphPiece e R (chartAt Plane (chart R)).symm a b}
   (E : D.CapGraphEndpoint P region chart caps e R G terminal trim)
-
-
 
 theorem exists_attachment_chart_cap_halfplane {r : ℝ} (hr : r ∈ Ioo (0 : ℝ) 1) :
     let q := chartAt Plane (chart R) (D.edgeFromEndpoint e terminal trim) + r • E.direction
@@ -229,8 +218,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (K : Q.CutChain L.direction E.direction)
   {δ r : ℝ}
 
-
-
 theorem first_attachment_union_reflex_germ
     (B : (Q.piece Q.firstPiece).FixedStripBandFaces (K.graphCuts Q.firstPiece) δ r r)
     (hr : r ∈ Ioo (0 : ℝ) 1)
@@ -264,8 +251,6 @@ theorem first_attachment_union_reflex_germ
     hld hker hcap hband hregular hsep
   filter_upwards [hresult.2.2] with z hz
   simpa only [image_union] using hz
-
-
 
 theorem last_attachment_union_reflex_germ
     (B : (Q.piece Q.lastPiece).FixedStripBandFaces (K.graphCuts Q.lastPiece) δ r r)
@@ -309,8 +294,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
 
-
-
 theorem cap_disjoint_band_interior (p : T.decomposition.vertices) (s : Bool × Bool)
     (a : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs a).count) :
     Disjoint ((T.caps p).face s).carrier (interior (T.bands a i).faces.carrier) := by
@@ -337,8 +320,6 @@ theorem cap_disjoint_band_interior (p : T.decomposition.vertices) (s : Bool × B
   rw [(T.refinement.subdivision (.inl (p, s))).support]
   exact (T.caps p).carrier_eq s ▸ hq
 
-
-
 theorem first_cap_band_attachment_germ (a : T.decomposition.IncidentEdgeIndex)
     (hr : T.length < 1) :
     let B := T.bands a (T.graphs a).firstPiece
@@ -352,8 +333,6 @@ theorem first_cap_band_attachment_germ (a : T.decomposition.IncidentEdgeIndex)
   exact (T.chains a).first_attachment_union_reflex_germ (T.leftCap a) (T.rightCap a)
     (T.bands a (T.graphs a).firstPiece) ⟨T.length_pos, hr⟩
     (T.cap_disjoint_band_interior _ _ _ _)
-
-
 
 theorem last_cap_band_attachment_germ (a : T.decomposition.IncidentEdgeIndex)
     (hr : T.length < 1) :

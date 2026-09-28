@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.CapModelEquivalence
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 noncomputable def restrictOpen {kind : CapModelKind} {p : RealProjectiveThree}
     {S : Set M} (A : CapModelEquivalence kind p S)

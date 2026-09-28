@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointSignedCutoff
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,17 +10,10 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
 
-
-
-
 noncomputable def jointProjectedCutoff
     (F : V × (ℝ × ℝ) → E × ℝ) (j : E → V × ℝ) (R epsilon : ℝ)
     (p : E × ℝ) : E :=
   (F ((j p.1).1, (signedTimeCutoff R epsilon p.2 (j p.1).2, (j p.1).2))).1
-
-
-
-
 
 theorem jointProjectedCutoff_finitePiecewiseAffineOn
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ V]
@@ -75,7 +57,6 @@ theorem jointProjectedCutoff_finitePiecewiseAffineOn
 omit [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] in
 
-
 theorem jointProjectedCutoff_at_zero
     {F : V × (ℝ × ℝ) → E × ℝ} {j : E → V × ℝ}
     {N : Set E} {R epsilon : ℝ} (hR : 0 < R) (hepsilon : 0 ≤ epsilon)
@@ -87,8 +68,6 @@ theorem jointProjectedCutoff_at_zero
 
 omit [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] in
-
-
 
 theorem jointProjectedCutoff_fixed_margin
     {F : V × (ℝ × ℝ) → E × ℝ} {j : E → V × ℝ}
@@ -103,7 +82,6 @@ theorem jointProjectedCutoff_fixed_margin
 omit [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] in
 
-
 theorem jointProjectedCutoff_core
     {F : V × (ℝ × ℝ) → E × ℝ} {j : E → V × ℝ}
     {R epsilon t : ℝ} (hR : 0 < R) (hepsilon : 0 ≤ epsilon)
@@ -113,10 +91,6 @@ theorem jointProjectedCutoff_core
   rw [hz, signedTimeCutoff_core hR hepsilon ht]
 
 omit [NormedAddCommGroup V] [NormedSpace ℝ V] in
-
-
-
-
 
 theorem jointProjectedCutoff_injOn
     {F : V × (ℝ × ℝ) → E × ℝ} {j : E → V × ℝ}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -118,10 +109,6 @@ private theorem full_face_label_constant {β : Type*}
   change label (piece x) = label (piece y) at h
   rwa [hx, hy] at h
 
-
-
-
-
 theorem det_mul_pos_of_injective_convex_pieces
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hdim : 0 < Module.finrank ℝ E)
@@ -158,10 +145,6 @@ theorem det_mul_pos_of_injective_convex_pieces
     · exact mul_pos_of_neg_of_neg hs ht
     · exact (not_lt_of_ge hs.le (hiff.mpr ht)).elim
   · exact mul_pos hs (hiff.mp hs)
-
-
-
-
 
 theorem exists_actual_convex_affine_pieces_with_same_sign
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

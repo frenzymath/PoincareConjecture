@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTimePotential
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.RawTestOperator
 import PoincareConjecture.Proofs.M03.Existence.DeTurckHigherDomainNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -125,8 +117,6 @@ private theorem raw_smooth_entropy_integral_nonpos {K : Set V} (hK : IsCompact K
     (∫ x, metricEntropyTimePotential D η Q (x, X x)) ≤ 0
   rw [← integral_add hiP hiT]
   simpa only [he] using! hsource
-
-
 
 theorem raw_smooth_form_entropy_nonpos {K : Set V} (hK : IsCompact K)
     {g : RiemannianMetric n V} (D : LeviCivitaData g)

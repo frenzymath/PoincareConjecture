@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M71
 import PoincareConjecture.Proofs.M71.ComparisonProviders
 import PoincareConjecture.Proofs.M71.PoincareInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,25 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m71ExtinctionFromCalibratedTheories
     (A25 : RepairedNeckCapTopologyTheory.{u})

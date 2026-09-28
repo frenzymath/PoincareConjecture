@@ -1,14 +1,4 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.SolutionOperator
-
 
 noncomputable section
 

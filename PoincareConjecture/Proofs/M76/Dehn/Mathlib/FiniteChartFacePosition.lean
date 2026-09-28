@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartPrefixCarriers
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartFaceImage
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedFinitePolyhedronPosition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
-
 
 theorem exists_original_face_coordinate_position
     {E F X Y ι κ : Type*}

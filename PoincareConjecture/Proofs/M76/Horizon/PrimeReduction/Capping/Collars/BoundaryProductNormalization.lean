@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +12,6 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem IsFinitePL.exists_boundary_normalized_product
     {A : Set E} {T B : Set F}
@@ -74,7 +64,6 @@ theorem IsFinitePL.exists_boundary_normalized_product
       rw [P.apply_symm_apply]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem IsFinitePL.exists_boundary_product_map
     {B T : Set E} {D : (B ×ˢ I : Set (E × ℝ)) ≃ₜ T} (hD : D.IsFinitePL)

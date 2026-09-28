@@ -4,21 +4,11 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 namespace Complex
-
-
 
 theorem linearIndependent_one_circleExp {theta : ℝ} (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :
     LinearIndependent ℝ ((↑) : ↥({(1 : ℂ), (Circle.exp theta : ℂ)} : Set ℂ) → ℂ) := by
@@ -30,8 +20,6 @@ theorem linearIndependent_one_circleExp {theta : ℝ} (htheta : theta ∈ Ioo (0
   simp only [smul_im, one_im, smul_zero, Circle.coe_exp, exp_ofReal_mul_I_im] at hi
   linarith
 
-
-
 theorem im_circleExp_neg_mul (theta : ℝ) (z : ℂ) :
     ((Circle.exp (-theta) : ℂ) * z).im = ‖z‖ * Real.sin (z.arg - theta) := by
   calc
@@ -42,8 +30,6 @@ theorem im_circleExp_neg_mul (theta : ℝ) (z : ℂ) :
     _ = ‖z‖ * Real.sin (z.arg - theta) := by
       rw [← norm_mul_sin_arg z, ← norm_mul_cos_arg z, Real.sin_sub]
       ring
-
-
 
 theorem arg_mem_Icc_of_short_sector {theta : ℝ} (htheta : theta ∈ Ioo (0 : ℝ) Real.pi)
     {z : ℂ} (hz : z ≠ 0) (him : 0 ≤ z.im)
@@ -58,8 +44,6 @@ theorem arg_mem_Icc_of_short_sector {theta : ℝ} (htheta : theta ∈ Ioo (0 : �
       linarith [htheta.1])
   exact (not_lt_of_ge hrot) (mul_pos (norm_pos_iff.mpr hz) hsin)
 
-
-
 theorem segment_one_circleExp_subset_slitPlane {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :
     segment ℝ (1 : ℂ) (Circle.exp theta) ⊆ slitPlane := by
@@ -72,8 +56,6 @@ theorem segment_one_circleExp_subset_slitPlane {theta : ℝ}
     have hbpos : 0 < b := lt_of_le_of_ne hb (Ne.symm hb0)
     simpa only [add_im, smul_im, one_im, smul_zero, zero_add, Circle.coe_exp,
       exp_ofReal_mul_I_im, smul_eq_mul, mul_zero] using (mul_pos hbpos hsin).ne'
-
-
 
 theorem arg_mem_Icc_of_mem_segment_one_circleExp {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) {z : ℂ}
@@ -92,8 +74,6 @@ theorem arg_mem_Icc_of_mem_segment_one_circleExp {theta : ℝ}
     rw [he]
     exact mul_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr ha)
       (Real.sin_nonneg_of_nonneg_of_le_pi htheta.1.le htheta.2.le)
-
-
 
 theorem arg_image_segment_one_circleExp {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :
@@ -117,8 +97,6 @@ theorem arg_image_segment_one_circleExp {theta : ℝ}
     obtain ⟨t, ht, htf⟩ := intermediate_value_Icc zero_le_one harg hends
     exact ⟨f t, hfseg ht, htf⟩
 
-
-
 theorem normalize_eq_circleExp_arg {z : ℂ} (hz : z ≠ 0) :
     NormedSpace.normalize z = (Circle.exp z.arg : ℂ) := by
   have hpolar : ‖z‖ • (Circle.exp z.arg : ℂ) = z := by
@@ -127,9 +105,6 @@ theorem normalize_eq_circleExp_arg {z : ℂ} (hz : z ≠ 0) :
     NormedSpace.normalize z = ‖z‖⁻¹ • (‖z‖ • (Circle.exp z.arg : ℂ)) :=
       congrArg (fun x : ℂ => ‖z‖⁻¹ • x) hpolar.symm
     _ = (Circle.exp z.arg : ℂ) := inv_smul_smul₀ (norm_ne_zero_iff.mpr hz) _
-
-
-
 
 theorem normalize_image_segment_one_circleExp {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :
@@ -146,13 +121,9 @@ theorem normalize_image_segment_one_circleExp {theta : ℝ}
     rw [normalize_eq_circleExp_arg
       (slitPlane_ne_zero (segment_one_circleExp_subset_slitPlane htheta hz)), harg]
 
-
-
 theorem normalize_circle_mul (a : Circle) (z : ℂ) :
     NormedSpace.normalize ((a : ℂ) * z) = (a : ℂ) * NormedSpace.normalize z := by
   simp only [NormedSpace.normalize, norm_mul, Circle.norm_coe, one_mul, mul_smul_comm]
-
-
 
 theorem circleExp_mul_image_segment (a b : ℝ) :
     (fun z : ℂ => (Circle.exp a : ℂ) * z) ''
@@ -165,9 +136,6 @@ theorem circleExp_mul_image_segment (a b : ℝ) :
       ((Circle.exp a : ℂ) * (Circle.exp (b - a) : ℂ)) at h
   simpa only [mul_one, ← Circle.coe_mul, ← Circle.exp_add, add_sub_cancel] using h
 
-
-
-
 theorem linearIndependent_circleExp_pair {a b : ℝ} (hab : a < b) (hba : b - a < Real.pi) :
     LinearIndependent ℝ ((↑) : ↥({(Circle.exp a : ℂ), (Circle.exp b : ℂ)} : Set ℂ) → ℂ) := by
   change LinearIndepOn ℝ id ({(Circle.exp a : ℂ), (Circle.exp b : ℂ)} : Set ℂ)
@@ -177,10 +145,6 @@ theorem linearIndependent_circleExp_pair {a b : ℝ} (hab : a < b) (hba : b - a 
     (rotation (Circle.exp a)).injective.injOn
   simpa only [image_pair, LinearEquiv.coe_coe, LinearIsometryEquiv.coe_toLinearEquiv,
     rotation_apply, mul_one, ← Circle.coe_mul, ← Circle.exp_add, add_sub_cancel] using hr
-
-
-
-
 
 theorem normalize_image_segment_circleExp {a b : ℝ} (hab : a < b)
     (hba : b - a < Real.pi) :

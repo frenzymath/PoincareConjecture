@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

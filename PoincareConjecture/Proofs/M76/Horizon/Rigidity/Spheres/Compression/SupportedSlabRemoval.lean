@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.PhaseM
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.SupportedSlabDomain
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalSupportedBallPhaseHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.NonlinearSpectralTranslation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorSpectralResponse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,10 +14,6 @@ variable {L : ℝ} {ι : Type*} [Fintype ι]
 local notation "S" => State ((ℤ × Fin 2) × ι)
 local notation "H" => lp (fun _ : ℤ => ℂ) 2
 local notation "lambda" => (fun p : (ℤ × Fin 2) × ι => periodicSpectrum L (Prod.fst p))
-
-
-
-
 
 theorem initial_forcing_equation_spectralTranslation
     (M : H →L[ℝ] S →L[ℝ] S) (G : ℝ × S → H) (Q : ℝ × S → S)

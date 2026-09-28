@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalRescaling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalPatching
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem m64Morrey_local_representative {m : ℕ} {O : Set Plane}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

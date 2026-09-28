@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalSphereChartCarrier
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +8,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_finite_clipped_parameter
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

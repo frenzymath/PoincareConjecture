@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.SingleCutHandleCoordinates
 import PoincareConjecture.Proofs.M38.CollarRegionComparison
 import PoincareConjecture.Proofs.M38.MonodromyFramedCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency true
 
@@ -46,7 +37,6 @@ variable (C : SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)))
 local notation "D₀" => enclosingSphereBall B₀ C p ha ha8 hB₀
 local notation "D₁" => enclosingSphereBall B₁ C p ha ha8 hB₁
 local notation "WS" => enclosingSphereInnerTwoHoleRegion C p ha ha8 B₀ B₁ hB₀ hB₁
-
 
 variable (H : @OpenCylinderModel (sphereCarrier.{u}).carrier
     (sphereCarrier.{u}).topologicalSpace (sphereCarrier.{u}).chartedSpace
@@ -97,10 +87,6 @@ theorem singleCutHandleCoordinates_matching (z : RoundCylinderSpace)
     rw [mul_assoc]
 
 include ha ha8 hb hba hk hk2 heta8 hbeta hlower hupper in
-
-
-
-
 
 theorem exists_singleCutHandleRegion :
     ∃ Q : SurgeryRegionEquivalence X (monodromyCarrier.{u} beta)

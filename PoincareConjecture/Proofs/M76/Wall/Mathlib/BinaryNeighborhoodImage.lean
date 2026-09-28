@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryDerivedLevelSets
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem image_barycentricNeighborhood_binaryCenters
     (A : SimplicialComplex ℝ E) {F : E → E} {h : E → ℝ}

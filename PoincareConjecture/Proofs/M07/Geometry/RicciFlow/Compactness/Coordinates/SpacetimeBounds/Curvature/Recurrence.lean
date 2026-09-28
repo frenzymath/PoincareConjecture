@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FrameJetBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 def coordinateCurvatureComponent (D : LeviCivitaData g) (m : ℕ)
     (v : Fin (4 + m) → EuclideanSpace ℝ (Fin n))
@@ -85,8 +73,6 @@ private theorem component_update_eq_sum (D : LeviCivitaData g)
   have h := congrArg (fun z => A (Function.update v i z)) (b.sum_repr w).symm
   simpa only [coordinateCurvatureComponent, hA, MultilinearMap.map_update_sum,
     MultilinearMap.map_update_smul, smul_eq_mul] using h
-
-
 
 theorem fderiv_coordinateCurvatureComponent_eq_sum (D : LeviCivitaData g)
     (b : OrthonormalBasis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))

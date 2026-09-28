@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.FourArcRectangle
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -92,9 +85,6 @@ theorem exists_rectangle_with_prescribed_sides
     exact (congrArg Subtype.val (hCH ⟨(0, t), Or.inr (Or.inl ⟨rfl, t.property⟩)⟩)).trans (hHL t)
   · intro t
     exact (congrArg Subtype.val (hCH ⟨(1, t), Or.inr (Or.inr ⟨rfl, t.property⟩)⟩)).trans (hHR t)
-
-
-
 
 theorem exists_rectangle_respecting_pairings
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

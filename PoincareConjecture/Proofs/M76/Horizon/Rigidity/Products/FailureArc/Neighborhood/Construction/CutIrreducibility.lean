@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.OriginalCompressionNeighborhood
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

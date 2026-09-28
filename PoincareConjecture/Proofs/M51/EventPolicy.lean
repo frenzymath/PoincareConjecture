@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.SurgeryVanishingEventData
-
-
 
 theorem transportTerminalPolicy
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)

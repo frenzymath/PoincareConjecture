@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralKe
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.Semigroup
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Spectral.DirichletCounting
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,7 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 variable (D : LeviCivitaData g) (Ω : Set M) (hn : 0 < n)
   (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
-
 
 def heatKernelL2 (t : ℝ≥0) :
     Lp ℝ 2 ((g.volumeMeasure.restrict Ω).prod (g.volumeMeasure.restrict Ω)) :=
@@ -105,8 +93,6 @@ theorem heatKernelL2_sections_integrable_ae (t : ℝ≥0)
         (g.volumeMeasure.restrict Ω) := by
   let := domainMeasure_isFinite (g := g) Ω hc
   exact Poincare.Analysis.Dirichlet.kernel_sections_integrable_ae _ f
-
-
 
 theorem tendsto_heatKernelL2_integral_initial
     (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω)) :

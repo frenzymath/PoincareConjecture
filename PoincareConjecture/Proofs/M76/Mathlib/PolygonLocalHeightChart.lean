@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCornerHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalSegments
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +9,6 @@ open scoped Topology
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
 
 theorem exists_local_height_chart_of_both_signs
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

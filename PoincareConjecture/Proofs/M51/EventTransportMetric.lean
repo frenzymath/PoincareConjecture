@@ -2,18 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Diffeomorph
 import PoincareConjecture.Proofs.M13.MetricCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +18,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem pullback_metric_homothety
     {slice' : ℝ → GeneralizedSliceCarrier.{u}}
     (E : SurgeryEventData g₀ K P slice metric T)
@@ -43,8 +29,6 @@ theorem pullback_metric_homothety
   intro x v w
   simpa only [one_mul] using
     (E.pre_flow.pullbackDiffeomorph_inner e t.1 x v w).symm
-
-
 
 theorem pullback_metric_calculus
     {M N : Type u} [TopologicalSpace M]
@@ -60,14 +44,6 @@ theorem pullback_metric_calculus
       (g.pullbackOfLocalDiffeomorph e e.isLocalDiffeomorph) g e 1 :=
   M13.metricHomothetyCalculus _ _ e 1 (by norm_num) hf
 
-
-
-
-
-
-
-
-
 structure MetricLimitTransportData
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice slice' : ℝ → GeneralizedSliceCarrier.{u}}
@@ -80,7 +56,6 @@ structure MetricLimitTransportData
       (E.pre_flow.pullbackDiffeomorph p.symm).metric E.limit_metric
       (fun x => E.limit_identify.map (p.symm x))
       (p.symm ⁻¹' E.regular_limit) T
-
 
 theorem MetricLimitTransportData.metricConverges
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
@@ -95,8 +70,6 @@ theorem MetricLimitTransportData.metricConverges
       (fun x => E.limit_identify.map (p.symm x))
       (p.symm ⁻¹' E.regular_limit) T :=
   D.metric_converges
-
-
 
 theorem limit_identify_image_preimage
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}

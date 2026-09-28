@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakVectorCompactnes
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.HilbertExtraction
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +18,6 @@ variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64Annulus_weak_sobolev_subsequence
     (u : ℕ → LoopPlane → E) (V : ℕ → Fin 2 → LoopPlane → E)

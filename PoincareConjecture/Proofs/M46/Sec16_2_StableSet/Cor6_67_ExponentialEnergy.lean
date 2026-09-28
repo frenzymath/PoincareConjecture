@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_InitialBound
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_square_energy_uniform_bound
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

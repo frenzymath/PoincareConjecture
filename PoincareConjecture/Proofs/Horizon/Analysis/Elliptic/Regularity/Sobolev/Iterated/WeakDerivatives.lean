@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Basic
 
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory
@@ -16,7 +10,6 @@ namespace Poincare.Analysis.Sobolev.Euclidean
 variable {d : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem memWkp_succ_of_weakDerivatives
     {Ω : Set E} (hΩ : IsOpen Ω) {p : ℝ≥0∞} (hp : 1 ≤ p)
@@ -34,7 +27,6 @@ theorem memWkp_succ_of_weakDerivatives
       ((chosenWeakPartial'_memLp_of_mem hu1 i).locallyIntegrable hp)
       ((hg i).memLp.locallyIntegrable hp)
   exact (MemWkp_congr_ae hp hΩ hae).mpr (hg i)
-
 
 theorem memWkp_succ_iff_exists_weakDerivatives
     {Ω : Set E} (hΩ : IsOpen Ω) {p : ℝ≥0∞} (hp : 1 ≤ p)

@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.TransverseSphereCollar
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem sphere_horizontal_mvfderiv_bijective
     (p : UnitTwoSphere) (hp : (heightCoordinates (p : E3)).2 ≠ 0) :
@@ -72,9 +59,6 @@ theorem sphere_horizontal_mvfderiv_bijective
   exact ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (f := (mvfderiv (𝓡 2) X p).toLinearMap) hdim).mp hinj⟩
 
-
-
-
 theorem north_collar_candidate_regular
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
     (Q : OpenPartialHomeomorph UnitTwoSphere UnitTwoSphere)
@@ -118,9 +102,6 @@ theorem north_collar_candidate_regular
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, E3) (psi ∘ QP) (p, 0))
   rw [mfderiv_comp (p, 0) hpd (hQP.mdifferentiableAt hQpoint)]
   exact hpb.comp (hQP.mfderiv_bijective hQpoint)
-
-
-
 
 theorem flat_tube_candidate_regular
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)

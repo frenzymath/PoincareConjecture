@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.PullbackMetricNative
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

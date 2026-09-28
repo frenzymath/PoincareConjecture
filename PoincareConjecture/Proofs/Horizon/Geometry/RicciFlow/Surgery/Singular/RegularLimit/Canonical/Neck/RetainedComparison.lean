@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Worldlines
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelComparison
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -86,8 +84,6 @@ theorem regularNeckWeakenedTerminalTensor_old
   simp only [generalizedCylinderPullback, dif_pos hr]
   exact E.pushCylinder_pullbackInner N.time_cylinder ⟨N.center⟩ N.carrier_open
     _ hr _ (hgmap ⟨mem_univ _, hz⟩) _ _
-
-
 
 theorem regularNeckWeakenedTerminalTensor_retained_comparison
     (hcapture : MapsTo (H.reference.inverse t ⟨ht.1.le, ht.2⟩)

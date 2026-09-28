@@ -1,14 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexCaps
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -30,8 +21,6 @@ theorem center_mem_interior_union : p ∈ interior (⋃ i, (B.face i).carrier) :
   mem_interior_iff_mem_nhds.mpr (Filter.mem_of_superset
     (B.isOpen_neighborhood.mem_nhds B.mem_neighborhood) B.neighborhood_subset_carriers)
 
-
-
 theorem first_boundary_mem_interior_union (i : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
     ((B.face i).boundary 2).map t ∈ interior (⋃ j, (B.face j).carrier) := by
@@ -50,7 +39,6 @@ theorem first_boundary_mem_interior_union (i : Bool × Bool)
     (B.carrier_eq i) (B.carrier_eq j) (B.boundary_map i) (B.boundary_map j)
     hinter 2 2 (B.boundary_injective i 2) (B.first_boundary_agreement rfl) ht
   exact interior_mono (union_subset (subset_iUnion _ i) (subset_iUnion _ j)) h
-
 
 theorem second_boundary_mem_interior_union (i : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
@@ -82,8 +70,6 @@ private theorem first_boundary_end_eq_chord_start (i : Bool × Bool) :
     ((B.face i).boundary 2).map 1 = ((B.face i).boundary 0).map 0 := by
   rw [B.boundary_map i 2, B.boundary_map i 0]
   simp [affineChartSegment, Fin.succAbove, Fin.lt_def]
-
-
 
 theorem frontier_union_subset_chords :
     frontier (⋃ i, (B.face i).carrier) ⊆

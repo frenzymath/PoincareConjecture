@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.TwoToOneRegularChart
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.RegularQuotient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,9 +9,6 @@ namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [RegularSpace Y] [T1Space Y]
-
-
-
 
 theorem exists_two_to_one_open_regular_map (q : C(X, Y)) (hq : IsQuotientMap q)
     (a b : Y) (hab : a ≠ b)

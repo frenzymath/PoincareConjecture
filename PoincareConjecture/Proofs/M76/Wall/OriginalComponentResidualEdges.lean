@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalComponentSurfaceCounts
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TreeCotreeResidualEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_edgeComponent_trees_with_residual_edges
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

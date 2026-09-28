@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.FixedMetricJets
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricFamilyWithin
 import PoincareConjecture.Proofs.M35.Mathlib.SpatialJetsWithin
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem fixedCylinderMetricCoefficient_eq_pullback {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)
@@ -41,8 +31,6 @@ theorem fixedCylinderMetricCoefficient_eq_pullback {J : Set ℝ}
       (hv (EuclideanSpace.basisFun (Fin 3) ℝ i)).symm
       (hv (EuclideanSpace.basisFun (Fin 3) ℝ j)).symm)
 
-
-
 theorem fixedCylinderMetricCoefficient_contDiffAt_spatial {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)
     (a Q : ℝ) (f : C.carrier → StandardCapSpace) (q : C.carrier)
@@ -62,8 +50,6 @@ theorem fixedCylinderMetricCoefficient_contDiffAt_spatial {J : Set ℝ}
   filter_upwards [(isOpen_extChartAt_target (I := 𝓡 3) q).mem_nhds hp, hnear] with y hy hyU
   exact fixedCylinderMetricCoefficient_eq_pullback F C a Q f q i j (u, y) hy
     (hf.contMDiffAt (hU.mem_nhds hyU))
-
-
 
 theorem fixedCylinderMetricCoefficient_contDiffOn {J I : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)
@@ -89,8 +75,6 @@ theorem fixedCylinderMetricCoefficient_contDiffOn {J I : Set ℝ}
   intro p hp
   exact fixedCylinderMetricCoefficient_eq_pullback F C a Q f q i j p
     (hV hp.2) (hfAt p.2 hp.2)
-
-
 
 theorem fixedCylinderMetricCoefficient_spatialJetAt {J I : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)
@@ -119,8 +103,6 @@ theorem fixedCylinderMetricCoefficient_spatialJetAt {J I : Set ℝ}
     (f := fixedCylinderMetricCoefficient F C a Q f q i j) hset r
   exact hspatial.trans (congrArg (fun A => A.compContinuousLinearMap
     (fun _ => ContinuousLinearMap.inr ℝ ℝ (EuclideanSpace ℝ (Fin 3)))) hjet)
-
-
 
 theorem fixedCylinderMetricCoefficient_spatialJet {J I : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)

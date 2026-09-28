@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Inclusio
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Gradient
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +24,6 @@ local instance regularFiber_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
 def regularFiberMetric (g : RiemannianMetric (m + k) M) :
     letI := fiberChartedSpace (m := m) hf c hreg
     letI := isManifold_fiber (m := m) hf c hreg
@@ -49,7 +42,6 @@ def regularFiberMetric (g : RiemannianMetric (m + k) M) :
         (mfderiv (𝓡 m) (𝓡 (m + k)) ((↑) : (f ⁻¹' {c} : Set M) → M) x v)
         (mfderiv (𝓡 m) (𝓡 (m + k)) ((↑) : (f ⁻¹' {c} : Set M) → M) x w) := rfl
 
-
 theorem metricComplete_regularFiberMetric [T3Space M]
     (g : RiemannianMetric (m + k) M) (hcomplete : MetricComplete g) :
     letI := fiberChartedSpace (m := m) hf c hreg
@@ -61,8 +53,6 @@ theorem metricComplete_regularFiberMetric [T3Space M]
     (contMDiff_fiber_val hf c hreg)
     (isClosed_singleton.preimage hf.continuous).isClosedEmbedding_subtypeVal
     (regularFiberMetric_inner hf c hreg g) hcomplete
-
-
 
 theorem mfderiv_gradient_regularFiberMetric
     (g : RiemannianMetric (m + k) M) {φ : M → ℝ}

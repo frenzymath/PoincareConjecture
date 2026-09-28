@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.FullCutPost
 import PoincareConjecture.Proofs.M38.FullCutDiscarded
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +23,6 @@ noncomputable local instance fullSmoothDiscardedChartedSpace :
     ChartedSpace StandardCapSpace (CappedDiscardedSpace F T hT P) :=
   cappedDiscardedChartedSpace F T hT P
 
-
 noncomputable def retentionInteriorDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3)
       (eventRetainedInteriorOpen F T hT) (eventCapComplementOpen F T hT) ∞ where
@@ -47,7 +38,6 @@ noncomputable def retentionInteriorDiffeomorph :
     exact (retentionInteriorEquivalence F T hT).inverse_smooth.comp_contMDiff
       contMDiff_subtype_val (fun x => x.property)
 
-
 theorem fullCutPostOld_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (fullCutPostOld F T hT P) := by
   intro x
@@ -56,7 +46,6 @@ theorem fullCutPostOld_localDiffeomorph :
     (openInclusion_localDiffeomorph (F.slice (F.event T hT).tMinus)
       (eventRetainedInteriorOpen F T hT) (eventCutOpen F T hT P Set.univ)
       (retained_subset_fullCut F T hT P) ((retentionInteriorHomeomorph F T hT).symm x))
-
 
 theorem fullCutPostInclusion_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (fullCutPostInclusion F T hT P) := by
@@ -92,7 +81,6 @@ theorem fullCutPostInclusion_localDiffeomorph :
         ((P i).ball.map z) at h
       rwa [hzp] at h
 
-
 theorem fullCutDiscardedPatch_localDiffeomorph (j : EventCappingIndex F T hT) :
     letI := (eventCappingDomain F T hT j).isOpen.isOpenEmbedding_subtypeVal.singletonChartedSpace
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (fullCutDiscardedPatch F T hT P j) := by
@@ -124,7 +112,6 @@ theorem fullCutDiscardedPatch_localDiffeomorph (j : EventCappingIndex F T hT) :
   | inr i =>
       exact partialCappingInclude_localDiffeomorph F T hT P Set.univ
         (.inr (⟨i, Set.mem_univ i⟩, true))
-
 
 theorem fullCutDiscardedInclusion_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (fullCutDiscardedInclusion F T hT P) := by

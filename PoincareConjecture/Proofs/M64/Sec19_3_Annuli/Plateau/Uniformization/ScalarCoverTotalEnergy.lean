@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,12 +29,6 @@ private theorem volume_density : g.volumeMeasure =
     contMDiffOn_id contMDiffOn_id
   simpa using h
 
-
-
-
-
-
-
 theorem scalarAnnulus_metric_integral_cover (F : Plane → ℝ) :
     (∫ x in scalarAnnulus, F x ∂g.volumeMeasure) =
       ∫ z in Band, (2 * Real.pi * z.1) * g.pullbackVolumeDensity id (scalarCoverMap z) *
@@ -63,12 +44,6 @@ theorem scalarAnnulus_metric_integral_cover (F : Plane → ℝ) :
   intro z _
   dsimp only
   ring
-
-
-
-
-
-
 
 theorem scalarAnnulus_metric_integrable_cover {F : Plane → ℝ}
     (hF : IntegrableOn F scalarAnnulus g.volumeMeasure) :
@@ -90,11 +65,6 @@ theorem scalarAnnulus_metric_integrable_cover {F : Plane → ℝ}
   dsimp only
   ring
 
-
-
-
-
-
 theorem scalarCoverJacobian_integral_eq_energy {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus) :
     (∫ z in Band, scalarCoverJacobian D H z) =
@@ -104,12 +74,6 @@ theorem scalarCoverJacobian_integral_eq_energy {H : Plane → ℝ}
   apply setIntegral_congr_fun (measurableSet_Ioo.prod measurableSet_Ioo)
   intro z hz
   exact scalarCoverJacobian_eq_metric_energy D hHs hz.1
-
-
-
-
-
-
 
 theorem scalarPotential_coverJacobian_finite_pos (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

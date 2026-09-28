@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.IsManifold.ExtChartAt
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set

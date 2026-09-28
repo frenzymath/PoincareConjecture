@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Data.List.Sort
 import Mathlib.Data.List.Pairwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ open Set Geometry
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_hamilton_face_order (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) :

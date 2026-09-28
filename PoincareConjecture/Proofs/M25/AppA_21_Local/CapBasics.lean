@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.Choice
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem CapCertificate.m25_isConnected_carrier (C : CapCertificate g) :
     IsConnected C.carrier := by
   refine ⟨C.core_nonempty.mono C.m25_core_subset_carrier, isPreconnected_of_forall_pair ?_⟩
@@ -43,9 +30,6 @@ theorem CapCertificate.m25_isConnected_carrier (C : CapCertificate g) :
     isPreconnected_Icc.image γ hγ.continuousOn⟩
   · exact ⟨0, by norm_num, h0⟩
   · exact ⟨1, by norm_num, h1⟩
-
-
-
 
 theorem CapCertificate.m25_closure_core_eq_closed_core (C : CapCertificate g) :
     closure C.core = C.closed_core := by
@@ -111,8 +95,6 @@ theorem CapCertificate.m25_closure_core_eq_closed_core (C : CapCertificate g) :
     · apply hboundary
       rw [← C.core_frontier_eq_boundary]
       exact ⟨subset_closure hx, hi⟩
-
-
 
 theorem CapCertificate.end_neck_scale_lower (C : CapCertificate g)
     {x : M} {B : ℝ} (hx : x ∈ C.carrier) (hB : C.cap_constant ≤ B) :

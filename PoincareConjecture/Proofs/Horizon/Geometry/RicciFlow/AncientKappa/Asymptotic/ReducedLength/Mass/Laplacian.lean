@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Extraction.Ancient.LimitRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Exponential
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,8 +52,6 @@ theorem limitReducedLength_slice_locally_lipschitz
       (LipschitzWith.prodMk_right τ).lipschitzOnWith
       (fun x hx => ⟨Metric.ball_subset_closedBall hx, le_refl τ, le_refl τ⟩)
 
-
-
 theorem limitDensity_integral_laplacian_eq_gradient
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)
     {σ : ℕ → ℕ} (hσ : StrictMono σ) (l : G.limit.carrier.carrier × ℝ → ℝ)
@@ -77,8 +74,6 @@ theorem limitDensity_integral_laplacian_eq_gradient
     hlc (G.limitReducedLength_slice_locally_lipschitz P hσ l hlim hτ) hχ hc).2
   simp only [mul_assoc, integral_const_mul]
   rw [heq]
-
-
 
 theorem abs_limitDensity_integral_laplacian_le
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

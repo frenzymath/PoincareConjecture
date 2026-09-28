@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalPullbackRealization
 import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_partial_chart_scalar
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.FiniteSurface
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 

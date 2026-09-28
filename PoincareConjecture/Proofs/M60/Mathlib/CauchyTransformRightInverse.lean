@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyTransformPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex Set MeasureTheory Metric
@@ -20,8 +11,6 @@ variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V] [CompleteSpace V]
 
 omit [CompleteSpace V] in
-
-
 
 theorem cauchyRiemannDerivative_cauchyTransform {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (hc : HasCompactSupport f) (z : ℂ) :
@@ -47,10 +36,6 @@ theorem cauchyRiemannDerivative_cauchyTransform {f : ℂ → V}
       cauchyTransformKernel w • fderiv ℝ f (z - w) I) := ((hi I).smul I).smul _
   rw [integral_add h1 h2]
   simp only [integral_smul]
-
-
-
-
 
 theorem cauchyTransform_rightInverse {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (hc : HasCompactSupport f)

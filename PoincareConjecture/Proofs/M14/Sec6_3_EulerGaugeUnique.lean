@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerODE
 import PoincareConjecture.Proofs.M14.Sec6_3_EulerGaugePhase
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,10 +24,6 @@ private theorem gaugeTangent_eq_of_heq
       ((G.gaugeCover.metric b).spatialTangentEquiv z'.1 z'.2 w)) : v = w := by
   cases hz
   exact ((G.gaugeCover.metric b).spatialTangentEquiv z.1 z.2).injective (eq_of_heq hv)
-
-
-
-
 
 theorem squareRootEuler_gauge_unique
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

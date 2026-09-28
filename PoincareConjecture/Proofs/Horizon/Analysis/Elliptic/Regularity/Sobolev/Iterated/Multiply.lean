@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Basic
 
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology

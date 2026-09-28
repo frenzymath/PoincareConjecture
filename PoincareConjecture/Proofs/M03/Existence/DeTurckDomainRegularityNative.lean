@@ -11,12 +11,6 @@ import Mathlib.Data.Set.Finite.List
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -34,10 +28,8 @@ variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 def differenceQuotient (u : ScalarL2 n) (v : E) (h : ℝ) : ScalarL2 n :=
   h⁻¹ • (translateLp (h • v) u - u)
-
 
 theorem inner_translateLp (u w : ScalarL2 n) (a : E) :
     inner ℝ (translateLp a u) w = inner ℝ u (translateLp (-a) w) := by
@@ -58,14 +50,12 @@ theorem inner_translateLp (u w : ScalarL2 n) (a : E) :
       rw [hx]
       simp only [Real.inner_apply, sub_eq_add_neg, mul_comm]
 
-
 theorem inner_differenceQuotient_adjoint (u w : ScalarL2 n) (v : E) (h : ℝ) :
     inner ℝ (differenceQuotient u v h) w =
       -(inner ℝ u (differenceQuotient w v (-h))) := by
   simp only [differenceQuotient, real_inner_smul_left, real_inner_smul_right,
     inner_sub_left, inner_sub_right, inner_neg_right, inner_translateLp, neg_smul, inv_neg]
   ring
-
 
 theorem continuous_differenceQuotient (v : E) (h : ℝ) :
     Continuous (fun u : ScalarL2 n => differenceQuotient u v h) := by
@@ -75,7 +65,6 @@ theorem continuous_differenceQuotient (v : E) (h : ℝ) :
   change Continuous (fun u : ScalarL2 n => (h⁻¹ : ℝ) • (translateLp (h • v) u - u))
   exact (continuous_const : Continuous (fun _ : ScalarL2 n => (h⁻¹ : ℝ))).smul
     (htrans.sub continuous_id)
-
 
 theorem norm_differenceQuotient_toLp_le {f : E → ℝ} (v : E)
     (hf : ContDiff ℝ 1 f) (hfL2 : MemLp f 2 volume)
@@ -102,7 +91,6 @@ theorem norm_differenceQuotient_toLp_le {f : E → ℝ} (v : E)
       _ = _ := by
         rw [← mul_assoc, ← abs_mul, inv_mul_cancel₀ hh, abs_one, one_mul]
 
-
 theorem norm_differenceQuotient_le_of_tendsto (u d : ScalarL2 n) (v : E)
     (f g : ℕ → ScalarL2 n) (hf : Tendsto f atTop (𝓝 u)) (hg : Tendsto g atTop (𝓝 d))
     (hbound : ∀ k h, ‖differenceQuotient (f k) v h‖ ≤ ‖g k‖) (h : ℝ) :
@@ -110,7 +98,6 @@ theorem norm_differenceQuotient_le_of_tendsto (u d : ScalarL2 n) (v : E)
   exact le_of_tendsto_of_tendsto
     (((continuous_differenceQuotient v h).tendsto u).comp hf).norm hg.norm
     (Eventually.of_forall (fun k => hbound k h))
-
 
 theorem norm_differenceQuotient_le_of_denseRange {α β : Type*} [TopologicalSpace β]
     (e : α → β) (he : DenseRange e) (U D : β → ScalarL2 n)
@@ -128,7 +115,6 @@ theorem inner_schwartz (u : ScalarL2 n) (φ : 𝓢(E, ℝ)) :
   filter_upwards [φ.coeFn_toLp 2 volume] with x hx
   rw [hx]
   simp only [Real.inner_apply, mul_comm]
-
 
 theorem inner_translate_schwartz (u : ScalarL2 n) (v : E) (h : ℝ)
     (φ : 𝓢(E, ℝ)) :
@@ -150,7 +136,6 @@ theorem inner_differenceQuotient_schwartz (u : ScalarL2 n) (v : E) (h : ℝ)
       h⁻¹ * ((∫ x, u x * φ (x - h • v)) - ∫ x, u x * φ x) := by
   rw [differenceQuotient, real_inner_smul_left, inner_sub_left,
     inner_translate_schwartz, inner_schwartz]
-
 
 theorem hasDerivAt_test_translation_pairing (u : ScalarL2 n) (v : E)
     (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ) :
@@ -216,7 +201,6 @@ theorem hasDerivAt_test_translation_pairing (u : ScalarL2 n) (v : E)
     (Eventually.of_forall (fun x h _ => hderiv h x))
   simpa only [A, A', zero_smul, sub_zero, integral_neg] using h.2
 
-
 theorem tendsto_inner_differenceQuotient (u : ScalarL2 n) (v : E)
     (φ : 𝓢(E, ℝ)) (hφ : HasCompactSupport φ) :
     Tendsto (fun h => inner ℝ (differenceQuotient u v h) (φ.toLp 2 volume))
@@ -229,7 +213,6 @@ theorem tendsto_inner_differenceQuotient (u : ScalarL2 n) (v : E)
     ring
   rw [heq]
   exact (hasDerivAt_test_translation_pairing u v φ hφ).tendsto_slope
-
 
 theorem exists_weakDerivative_of_bounded_differenceQuotients
     (u : ScalarL2 n) (v : E) {C : ℝ}
@@ -275,14 +258,12 @@ theorem exists_weakCoordinateDerivative_of_bounded_differenceQuotients
         -(∫ x, u x * fderiv ℝ φ x (EuclideanSpace.single j 1)) :=
   exists_weakDerivative_of_bounded_differenceQuotients u (EuclideanSpace.single j 1) hbound
 
-
 theorem integrable_of_ae_compact_support (u : ScalarL2 n) {K : Set E}
     (hK : IsCompact K) (huK : ∀ᵐ x ∂volume, x ∉ K → u x = 0) :
     Integrable (u : E → ℝ) volume := by
   have hloc : IntegrableOn (u : E → ℝ) K volume :=
     ((Lp.memLp u).locallyIntegrable (by norm_num)).integrableOn_isCompact hK
   exact hloc.integrable_of_ae_notMem_eq_zero huK
-
 
 theorem hasDerivAt_test_translation_pairing_of_integrable (u : ScalarL2 n)
     (hu : Integrable (u : E → ℝ) volume) (v : E) (φ : 𝓢(E, ℝ)) :
@@ -338,7 +319,6 @@ theorem tendsto_inner_differenceQuotient_of_integrable (u : ScalarL2 n)
     ring
   rw [heq]
   exact (hasDerivAt_test_translation_pairing_of_integrable u hu v φ).tendsto_slope
-
 
 theorem exists_weakDerivative_of_bounded_differenceQuotients_integrable
     (u : ScalarL2 n) (hu : Integrable (u : E → ℝ) volume) (v : E) {C : ℝ}
@@ -511,7 +491,6 @@ def mollifyL2 (hε : 0 < ε) (u : ScalarL2 n) : ScalarL2 n :=
 theorem mollifyL2_ae_eq (hε : 0 < ε) (u : ScalarL2 n) :
     mollifyL2 hε u =ᵐ[volume] mollify hε u := (memLp_mollify hε u).coeFn_toLp
 
-
 theorem norm_mollifyL2_sub_sq_le (hε : 0 < ε) (u : ScalarL2 n) :
     ‖mollifyL2 hε u - u‖ ^ 2 ≤
       ∫ y, mollifier hε y * ‖translateLp (-y) u - u‖ ^ 2 := by
@@ -557,7 +536,6 @@ theorem norm_mollifyL2_sub_le_of_translate (hε : 0 < ε) (u : ScalarL2 n)
 theorem translateLp_zero (u : ScalarL2 n) : translateLp (0 : E) u = u := by
   apply Lp.ext
   simpa only [add_zero] using translateLp_ae_eq (0 : E) u
-
 
 theorem tendsto_mollifyL2 (eps : ℕ → ℝ) (heps : ∀ j, 0 < eps j)
     (heps0 : Tendsto eps atTop (𝓝 0)) (u : ScalarL2 n) :
@@ -633,7 +611,6 @@ theorem mollifySchwartz_toLp (hε : 0 < ε) (u : ScalarL2 n) {K : Set E}
   exact ((mollifySchwartz hε u hK huK).coeFn_toLp 2 volume).trans
     (mollifyL2_ae_eq hε u).symm
 
-
 theorem fderiv_mollify_of_weak_pairing (hε : 0 < ε) (u d : ScalarL2 n) (v : E)
     (hweak : ∀ φ : 𝓢(E, ℝ),
       inner ℝ d (φ.toLp 2 volume) = -(∫ y, u y * fderiv ℝ φ y v)) (x : E) :
@@ -667,7 +644,6 @@ theorem fderiv_mollify_of_weak_pairing (hε : 0 < ε) (u d : ScalarL2 n) (v : E)
       using 1 <;> first | rfl | simp only [zero_smul, add_zero]
   exact hc.unique hd
 
-
 theorem fderiv_mollify_of_weak_derivative (hε : 0 < ε) (u d : ScalarL2 n)
     (hu : Integrable (u : E → ℝ) volume) (v : E)
     (hweak : ∀ φ : 𝓢(E, ℝ),
@@ -687,7 +663,6 @@ theorem lineDeriv_mollifySchwartz_toLp (hε : 0 < ε) (u d : ScalarL2 n)
   change fderiv ℝ (mollify hε u) x v = mollify hε d x
   exact fderiv_mollify_of_weak_derivative hε u d
     (integrable_of_ae_compact_support u hK huK) v hweak x
-
 
 theorem exists_schwartz_approximation_of_weak_derivatives
     (u : ScalarL2 n) (d : Fin n → ScalarL2 n) {K : Set E}
@@ -725,7 +700,6 @@ theorem exists_schwartz_approximation_of_weak_derivatives
     rw [heq]
     exact tendsto_mollifyL2 eps heps heps0 (d i)
 
-
 def orderedSchwartzDerivative : List (Fin n) → 𝓢(E, ℝ) → 𝓢(E, ℝ)
   | [], φ => φ
   | i :: w, φ => ∂_{EuclideanSpace.single i (1 : ℝ)} (orderedSchwartzDerivative w φ)
@@ -736,7 +710,6 @@ theorem orderedSchwartzDerivative_append (w v : List (Fin n)) (φ : 𝓢(E, ℝ)
   induction w with
   | nil => rfl
   | cons i w ih => simp only [List.cons_append, orderedSchwartzDerivative, ih]
-
 
 theorem finite_weakJet_pairing (q : List (Fin n) → ScalarL2 n) (k : ℕ)
     (hweak : ∀ w : List (Fin n), w.length < k → ∀ i (φ : 𝓢(E, ℝ)),
@@ -793,7 +766,6 @@ theorem orderedSchwartzDerivative_mollifySchwartz_toLp
   rw [hleft, hright]
   exact orderedSchwartzDerivative_mollifySchwartz hε q k hK hqK hweak w hw x
 
-
 theorem exists_schwartz_approximation_of_finite_weak_jets
     (q : List (Fin n) → ScalarL2 n) (k : ℕ)
     {K : Set E} (hK : IsCompact K) (hqK : ∀ᵐ y ∂volume, y ∉ K → q [] y = 0)
@@ -829,8 +801,6 @@ theorem exists_schwartz_approximation_of_finite_weak_jets
     exact tendsto_mollifyL2 eps heps heps0 (q w)
 
 end WeakApproximation
-
-
 
 theorem exists_continuous_weakJet
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X] [CompleteSpace X]
@@ -882,8 +852,6 @@ theorem exists_continuous_weakJet
     exact (tendsto_nhds_unique hleft hright).trans (hd x φ).symm
   exact ⟨⟨D, hD⟩, hd⟩
 
-
-
 theorem exists_continuous_finite_weakJets
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X] [CompleteSpace X]
     (U : X →L[ℝ] ScalarL2 n) (q : X → List (Fin n) → ScalarL2 n) (k : ℕ)
@@ -910,7 +878,6 @@ theorem exists_continuous_finite_weakJets
     exact (hD z φ).trans (hpair w hw z φ).symm
   choose D hD using hex
   exact ⟨D, hD⟩
-
 
 theorem exists_finite_weakJet_bound
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X] [CompleteSpace X]

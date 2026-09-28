@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Variation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.BoundaryRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -68,8 +61,6 @@ theorem covariantRiemannDerivative_null_section
   rw [hvalues, Poincare.mvfderiv_eq_of_eventuallyEq heq, mvfderiv_const, hsum] at h
   simpa only [zero_apply, sub_zero] using h
 
-
-
 theorem covariantRicciDerivative_all_slots_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (hsec : D.NonnegativeSectionalCurvature)
@@ -122,8 +113,6 @@ theorem covariantRicciDerivative_all_slots_eq_zero_of_terminal_null
     (hsec b ⟨hab.le, le_rfl⟩) V hV hnull
   intro c
   exact ricci_connection_eq_zero_of_terminal_null hC hab F hsec V hV hnull c _
-
-
 
 theorem secondCovariantRicciDerivative_eq_zero_of_null_section
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -235,8 +224,6 @@ theorem connection_hasDerivAt_zero_of_covariantRicciDerivative_eq_zero
   rw [hAzero] at hA
   exact (hA.add_const ((F.connection t).connection V x -
     (F.connection t).connection W x)).congr_of_eventuallyEq (Eventually.of_forall heq)
-
-
 
 theorem connection_eq_terminal_of_ricci_null
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

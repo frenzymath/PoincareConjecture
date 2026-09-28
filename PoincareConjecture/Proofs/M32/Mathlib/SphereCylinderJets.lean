@@ -2,17 +2,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -65,9 +54,6 @@ private theorem stereoInvCylinder_uniform_spatial_jet_bound [FiniteDimensional �
   apply (hC (v, z) ?_).trans (le_max_left _ _)
   exact ⟨by simpa only [mem_closedBall, dist_zero_right] using hv,
     by simpa only [mem_closedBall, dist_zero_right] using hz, hs⟩
-
-
-
 
 theorem sphereCylinder_chart_symm_uniform_jet_bound [FiniteDimensional ℝ E]
     {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)] (R S : ℝ) (m : ℕ) :

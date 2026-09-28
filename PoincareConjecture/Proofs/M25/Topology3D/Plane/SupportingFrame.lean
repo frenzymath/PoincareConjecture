@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OppositeCoordinate
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_lexicographic_min {ι A B : Type*} [Finite ι] [Nonempty ι]
     [LinearOrder A] [LinearOrder B] (f : ι → A × B) :
@@ -35,8 +23,6 @@ theorem exists_lexicographic_min {ι A B : Type*} [Finite ι] [Nonempty ι]
     exact ha j (Finset.mem_univ j)
   · intro j hj
     exact hmin j (Finset.mem_filter.mpr ⟨Finset.mem_univ j, hj.trans hi1⟩)
-
-
 
 theorem linearIndependent_of_lex_nonnegative {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] (e : E ≃L[ℝ] (ℝ × ℝ)) {u v : E}

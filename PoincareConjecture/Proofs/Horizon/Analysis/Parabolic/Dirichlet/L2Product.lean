@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,7 +19,6 @@ theorem memLp_tensor (f : Lp ℝ 2 μ) (g : Lp ℝ 2 ν) :
     ((Lp.aestronglyMeasurable f).comp_fst.mul (Lp.aestronglyMeasurable g).comp_snd)).mpr
   simpa only [Pi.mul_apply, mul_pow] using
     (Lp.memLp f).integrable_sq.mul_prod (Lp.memLp g).integrable_sq
-
 
 def tensorL2 (f : Lp ℝ 2 μ) (g : Lp ℝ 2 ν) : Lp ℝ 2 (μ.prod ν) :=
   (memLp_tensor f g).toLp (fun z : α × β => f z.1 * g z.2)
@@ -92,7 +83,6 @@ theorem tensorL2_smul_right (c : ℝ) (f : Lp ℝ 2 μ) (g : Lp ℝ 2 ν) :
   simp only [Function.comp_def, Pi.smul_apply, smul_eq_mul] at h3 h4
   rw [h1, h4, h2, h3]
   ring
-
 
 def tensorL2CLM [SFinite μ] [SFinite ν]
     (f : Lp ℝ 2 μ) : Lp ℝ 2 ν →L[ℝ] Lp ℝ 2 (μ.prod ν) :=

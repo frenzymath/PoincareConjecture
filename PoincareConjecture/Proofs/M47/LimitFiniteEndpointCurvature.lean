@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M35.Prop12_31.CurvatureOperator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -104,8 +95,6 @@ private theorem old_right_tail (hfinite : H ≠ ⊤) {d : ℝ} (hd : 0 < d) :
   rw [limitFinite_domain_eq hfinite]
   exact ⟨htright, htneg.le⟩
 
-
-
 theorem limitFinite_endpoint_curvature_readouts (d : ℕ → ℝ)
     (A : ∀ m, RicciFlow 3 (U m) (Ioo (-H.toReal - d m / 8) (-H.toReal + d m / 4)))
     (gE : RiemannianMetric 3 G.limit.sliceCarrier.carrier) (DE : LeviCivitaData gE)
@@ -119,8 +108,6 @@ theorem limitFinite_endpoint_curvature_readouts (d : ℕ → ℝ)
         DE.curvatureTensor x.val v w z a) ∧
       ((A m).connection (-H.toReal)).curvatureTensorNorm x = DE.curvatureTensorNorm x.val :=
   inclusion_curvature_readouts DE (U m) ((A m).connection (-H.toReal)) (hendpoint m) x
-
-
 
 theorem limitFinite_endpoint_operator (d : ℕ → ℝ)
     (A : ∀ m, RicciFlow 3 (U m) (Ioo (-H.toReal - d m / 8) (-H.toReal + d m / 4)))
@@ -164,8 +151,6 @@ theorem limitFinite_endpoint_operator (d : ℕ → ℝ)
   have hzero := ge_of_tendsto hlim hnonneg
   exact hzero.trans_eq
     ((limitFinite_endpoint_curvature_readouts G d A gE DE hendpoint m y).2.1 v w v w)
-
-
 
 theorem limitFinite_endpoint_bounds (d : ℕ → ℝ)
     (A : ∀ m, RicciFlow 3 (U m) (Ioo (-H.toReal - d m / 8) (-H.toReal + d m / 4)))

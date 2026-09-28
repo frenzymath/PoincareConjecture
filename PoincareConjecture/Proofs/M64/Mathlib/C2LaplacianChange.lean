@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SecondDerivativeChain
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,9 +14,6 @@ variable {P E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem m64C2_laplacian_comp {f : P → E} {H : E → F} {x : P}
     (hf : ContDiffAt ℝ 2 f x) (hH : ContDiffAt ℝ 2 H (f x)) (b : Fin 2 → P) :
     (∑ i, fderiv ℝ (fderiv ℝ (H ∘ f)) x (b i) (b i)) =
@@ -35,9 +23,6 @@ theorem m64C2_laplacian_comp {f : P → E} {H : E → F} {x : P}
   simp_rw [M60.second_fderiv_comp hH hf]
   rw [Finset.sum_add_distrib, map_sum]
 
-
-
-
 theorem m64C1_reconstruction_column_bound {f : P → E} {u : P → F} {A : F → E}
     {x : P} (hu : DifferentiableAt ℝ u x) (hA : DifferentiableAt ℝ A (u x))
     (heq : f =ᶠ[𝓝 x] A ∘ u) {L : ℝ} (hL : ‖fderiv ℝ A (u x)‖ ≤ L) (v : P) :
@@ -45,10 +30,6 @@ theorem m64C1_reconstruction_column_bound {f : P → E} {u : P → F} {A : F →
   rw [heq.fderiv_eq, fderiv_comp x hA hu, ContinuousLinearMap.comp_apply]
   exact ((fderiv ℝ A (u x)).le_opNorm _).trans
     (mul_le_mul_of_nonneg_right hL (norm_nonneg _))
-
-
-
-
 
 theorem m64C2_coordinate_laplacian_growth {f : P → E} {H : E → F} {x : P}
     (hf : ContDiffAt ℝ 2 f x) (hH : ContDiffAt ℝ 2 H (f x)) (b : Fin 2 → P)

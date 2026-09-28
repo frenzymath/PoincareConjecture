@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ open Set Metric
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
-
 
 theorem isUnitBallPair_of_onePoint_homeomorph {S D : Set E} (hSD : S ⊆ D)
     (H : OnePoint E ≃ₜ OnePoint E)

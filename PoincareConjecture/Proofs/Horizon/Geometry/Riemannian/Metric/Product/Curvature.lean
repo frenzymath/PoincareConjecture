@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Heig
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Level
 
-
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false
@@ -72,7 +65,6 @@ private theorem product_scalar_and_sectional (z : M × ℝ) :
     (DG.gradient h (i z.1)) (hu _) (ho _) hR hn hK hsec
 
 include hmetric in
-
 
 theorem scalarCurvature_eq_of_line_product (z : M × ℝ) :
     DG.scalarCurvature (e z) = D.scalarCurvature z.1 :=

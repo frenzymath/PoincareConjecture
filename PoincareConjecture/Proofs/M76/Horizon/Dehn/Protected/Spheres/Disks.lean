@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundarySphere
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -37,8 +28,6 @@ private theorem exists_finite_prismSide :
 variable {L : Submodule ℤ V1} {α : Type*}
   {e : α → OpenPartialHomeomorph (LatticeHandleAmbient (Fin 2) (Fin 1) L) V3}
   (T : HamiltonProtectedDehnDisks L e)
-
-
 
 theorem prismMap_piecewiseAffine
     (he : PLDomain e (latticeHandleDomain (Fin 2) (Fin 1) L))
@@ -93,9 +82,6 @@ theorem prismMap_piecewiseAffine
     exact PolyhedralPLInCharts.union_of_finite he.compatible K0 K1 hK0 hK1 hzero hone
   have hall := PolyhedralPLInCharts.union_of_finite he.compatible J K hJ hK hcaps hside
   simpa only [hJs, hK0s, hK1s, hKs, ← prism_boundary_eq] using hall
-
-
-
 
 theorem nonempty_chartwisePLSphere [DiscreteTopology L]
     (he : PLDomain e (latticeHandleDomain (Fin 2) (Fin 1) L))

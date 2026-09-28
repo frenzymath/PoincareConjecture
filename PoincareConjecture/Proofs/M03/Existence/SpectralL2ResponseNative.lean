@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralResponseNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeStateNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -89,7 +80,6 @@ private theorem scalar_lintegral_energy_le_of_memLp {T : ℝ} (hT : 0 ≤ T)
     nlinarith
   simpa only [derivativeCoeff, generatorCoeff, responseCoeff,
     intervalIntegral.integral_of_le hT] using hsum
-
 
 theorem lintegral_response_energy_le_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
@@ -184,7 +174,6 @@ theorem ae_derivativeState_apply_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤
   intro i
   exact stateOfCoeffs_apply ht i
 
-
 theorem responseState_apply_of_memLp [Countable iota] {T t : ℝ}
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
     (lambda : iota → NNReal) (ht : t ∈ Icc (0 : ℝ) T) (i : iota) :
@@ -239,7 +228,6 @@ theorem derivativeState_add_generatorState_of_memLp [Countable iota] {T : ℝ} (
   rw [stateOfCoeffs_apply htD, stateOfCoeffs_apply htA]
   exact sub_add_cancel _ _
 
-
 theorem ae_generatorState_apply_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
     (lambda : iota → NNReal) :
@@ -264,7 +252,6 @@ theorem ae_responseState_equation_of_memLp [Countable iota] {T : ℝ} (hT : 0 �
     derivativeState_add_generatorState_of_memLp hT hF lambda] with t ht heq
   exact ht.congr_deriv (eq_sub_iff_add_eq.mpr heq)
 
-
 theorem integral_response_energy_le_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
     (lambda : iota → NNReal) :
@@ -286,7 +273,6 @@ theorem integral_response_energy_le_of_memLp [Countable iota] {T : ℝ} (hT : 0 
   have hn : 0 ≤ ∫ t, ‖F t‖ ^ 2 ∂timeMeasure T := integral_nonneg (fun _ => sq_nonneg _)
   rw [← hd, ← ha, ← hr, ENNReal.toReal_ofReal hn] at he
   exact he
-
 
 theorem exists_spectralHeat_response_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     (lambda : iota → NNReal) {F : ℝ → State iota}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_convex_frontier_four_regions (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

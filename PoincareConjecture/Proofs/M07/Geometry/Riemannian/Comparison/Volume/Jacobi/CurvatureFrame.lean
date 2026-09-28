@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureSymmetry
 import Mathlib.Analysis.InnerProductSpace.Symmetric
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
     (P : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
     (v : TangentSpace (𝓡 n) x) :
@@ -38,7 +27,6 @@ def radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
     (v : TangentSpace (𝓡 n) x) (u : EuclideanSpace ℝ (Fin n)) :
     D.radialCurvatureInFrame x P v u = P.symm (D.curvature x (P u) v v) := rfl
 
-
 @[simp] theorem radialCurvatureInFrame_radial (D : LeviCivitaData g) (x : M)
     (P : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
     (v : TangentSpace (𝓡 n) x) :
@@ -46,7 +34,6 @@ def radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
   simp only [radialCurvatureInFrame_apply, P.apply_symm_apply]
   change P.symm (D.radialCurvature x v v) = 0
   rw [D.radialCurvature_self, map_zero]
-
 
 theorem isSymmetric_radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
     (P : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)
@@ -59,7 +46,6 @@ theorem isSymmetric_radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
   rw [← hP, ← hP]
   simpa only [radialCurvatureInFrame_apply, P.apply_symm_apply, radialCurvature_apply] using
     D.inner_radialCurvature_symm x v (P u) (P w)
-
 
 theorem trace_radialCurvatureInFrame (D : LeviCivitaData g) (x : M)
     (P : EuclideanSpace ℝ (Fin n) ≃L[ℝ] TangentSpace (𝓡 n) x)

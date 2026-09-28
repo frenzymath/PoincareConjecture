@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.SelfPairedC
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.PairedCircleStep
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.OrdinaryCounts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

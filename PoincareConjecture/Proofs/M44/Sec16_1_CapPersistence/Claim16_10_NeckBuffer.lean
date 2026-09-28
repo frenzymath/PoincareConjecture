@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_NeckHeigh
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_LengthBarrier
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem neck_ball_subset_middle_band (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 12) {b : ℝ} (hb0 : 0 < b) (hb : b < N.epsilon⁻¹)
@@ -59,9 +47,6 @@ theorem neck_ball_subset_middle_band (N : EpsilonNeck g)
       (m01RescaledMetric (RiemannianMetric.euclideanMetric 3) c hc).edist
         (neckHeightVector N p) (neckHeightVector N x)
     rw [m01RescaledMetric_edist, hdist, ENNReal.ofReal_mul (Real.sqrt_nonneg c)]
-
-
-
 
 theorem neck_ball_subset_carrier (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 12) {p : M} (hp : p ∈ N.central_sphere) :

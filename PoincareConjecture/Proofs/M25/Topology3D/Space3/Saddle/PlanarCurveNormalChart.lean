@@ -6,24 +6,12 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_planar_curve_normal_chart
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))

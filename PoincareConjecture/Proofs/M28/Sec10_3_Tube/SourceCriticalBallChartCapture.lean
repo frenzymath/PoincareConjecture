@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallNeckScales
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ChartBallCapture
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckTerminalBalls
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
 
 theorem tubeCritical_mem_original_ball (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (k : ℕ)
@@ -61,10 +49,6 @@ theorem tubeCritical_mem_original_ball (H : CounterexampleNeckFamily E)
   rwa [← hball'] at hnormal
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem exists_source_criticalBall_neck_chart_capture_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

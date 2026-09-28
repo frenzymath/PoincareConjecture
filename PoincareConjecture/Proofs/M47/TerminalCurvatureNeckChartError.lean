@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialChartMetric
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTensorReadout
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +26,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem terminalCurvature_partial_chart_composed_metric
     (h : RiemannianMetric 3 X)
@@ -74,8 +64,6 @@ theorem terminalCurvature_partial_chart_composed_metric
       (congrArg (fun y : M => h.inner (psi y)
         (mfderiv (𝓡 3) (𝓡 3) psi y (mfderiv (𝓡 3) (𝓡 3) phi x a))
         (mfderiv (𝓡 3) (𝓡 3) psi y (mfderiv (𝓡 3) (𝓡 3) phi x b))) hinv)
-
-
 
 theorem terminalCurvature_neck_composed_coefficient
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
@@ -118,8 +106,6 @@ theorem terminalCurvature_neck_composed_coefficient
       (mfderiv (𝓡 3) (𝓡 3) (psi ∘ N.capPersistenceEuclideanMap q s) x _)
   rw [mfderiv_comp x hpsi hN]
   rfl
-
-
 
 theorem terminalCurvature_neck_chart_error_germ
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)

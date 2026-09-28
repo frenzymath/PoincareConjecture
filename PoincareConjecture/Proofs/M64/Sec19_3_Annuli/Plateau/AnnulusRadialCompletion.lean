@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,37 +8,25 @@ open Set
 
 namespace PoincareConjecture
 
-
-
-
 def m64AnnulusRadialCompletion {M : Type*} (f : LoopPlane → M) (c0 c1 : ℝ → M)
     (p : LoopPlane) : M :=
   if p 1 = 0 then c0 (p 0) else if p 1 = 1 then c1 (p 0) else f p
-
-
 
 theorem m64AnnulusRadialCompletion_lower {M : Type*}
     (f : LoopPlane → M) (c0 c1 : ℝ → M) (x : ℝ) :
     m64AnnulusRadialCompletion f c0 c1 (annulusPoint x 0) = c0 x := by
   simp [m64AnnulusRadialCompletion, annulusPoint]
 
-
-
 theorem m64AnnulusRadialCompletion_upper {M : Type*}
     (f : LoopPlane → M) (c0 c1 : ℝ → M) (x : ℝ) :
     m64AnnulusRadialCompletion f c0 c1 (annulusPoint x 1) = c1 x := by
   simp [m64AnnulusRadialCompletion, annulusPoint]
-
-
 
 theorem m64AnnulusRadialCompletion_interior {M : Type*}
     (f : LoopPlane → M) (c0 c1 : ℝ → M) {p : LoopPlane}
     (hp : p 1 ∈ Ioo (0 : ℝ) 1) :
     m64AnnulusRadialCompletion f c0 c1 p = f p := by
   simp only [m64AnnulusRadialCompletion, if_neg hp.1.ne', if_neg hp.2.ne]
-
-
-
 
 theorem m64AnnulusRadialCompletion_flip {M : Type*}
     (f : LoopPlane → M) (c0 c1 : ℝ → M) :

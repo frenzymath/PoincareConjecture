@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeEnergy
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x y : G.Point}
 
-
-
 theorem pathSquareKinetic_nonneg {a b : ℝ}
     (p : M14BackwardPath G T a b x y) (s : ℝ) : 0 ≤ M14.pathSquareKinetic p s := by
   let v := (2 * s) • p.horizontal_velocity (s ^ 2)
@@ -36,9 +24,6 @@ theorem pathSquareKinetic_nonneg {a b : ℝ}
   by_cases hv : v = 0
   · simp only [hv, map_zero, le_refl]
   · exact (G.spacetime.horizontalMetric.pos (p.curve (s ^ 2)) v hv).le
-
-
-
 
 theorem exists_confined_minimizing_sequence
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

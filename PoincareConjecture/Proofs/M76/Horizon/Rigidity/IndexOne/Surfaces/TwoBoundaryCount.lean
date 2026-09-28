@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.OneBounda
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CircleIncidence
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.CountZeroAnnulus
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar PLAnnularStrip
 

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleHomeom
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.FinitePLPeriodLift
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CutRectangleExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

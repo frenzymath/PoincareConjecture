@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.EuclideanFourierCoordinatesNative
 import Mathlib.Analysis.Fourier.LpSpace
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -117,7 +111,6 @@ theorem nativeWordTerms_eq (a : L.patches) (w : List (Fin d.fieldCount))
     (nativeChartCoefficient_contMDiff d L a) (cutoffNativeField d L a)
     (cutoffNativeField_eq_sum d L a) w hf x
 
-
 def reconstructedCoordinateTuple (a : L.patches) (ab : d.ProbeIndex) (k s : ℕ)
     (hs : s ≤ k) : SpectralHeatNative.State d.SymmetricIndex →L[ℝ]
       (WordIndex (Fin n) s → Lp ℝ 2 d.charts.measure) :=
@@ -140,7 +133,6 @@ theorem reconstructedCoordinateTuple_scaleDecode (a : L.patches) (ab : d.ProbeIn
     (localizedScaleDerivative_scaleDecode d L a ab k l (List.ofFn w.2)
       ((show (List.ofFn w.2).length ≤ s by
         simpa only [List.length_ofFn] using Nat.le_of_lt_succ w.1.isLt).trans hs) x)
-
 
 def nativeWordL2 (ab : d.ProbeIndex) (k : ℕ) (w : List (Fin d.fieldCount))
     (hw : w.length ≤ k) :
@@ -168,7 +160,6 @@ theorem localizedScaleValue_smoothTensorCoordinates (a : L.patches) (ab : d.Prob
     (d.valueCoefficient ab (d.symmetricScaleValue k (d.smoothTensorCoordinates k h hsymm))) = _
   rw [d.symmetricScaleValue_smoothTensorCoordinates]
   exact d.localizedValue_into L a ab h
-
 
 theorem localizedScaleDerivative_smoothTensorCoordinates (a : L.patches)
     (ab : d.ProbeIndex) (k : ℕ) (w : List (Fin n)) (hw : w.length ≤ k)
@@ -247,7 +238,6 @@ theorem chartDifferential_chartFrame (p : M) {x : M}
   exact ((chartDifferentialEquiv p x hx).apply_symm_apply _).trans
     (PiLp.basisFun_apply 2 ℝ (Fin n) i)
 
-
 theorem directionalWord_chartPullback_eventuallyEq (p : M)
     (F : Fin n → SmoothField (n := n) (M := M))
     {x : M} (hx : x ∈ (chartAt E p).source)
@@ -312,7 +302,6 @@ theorem chartWord_localizedSchwartz (a : L.patches) (ab : d.ProbeIndex)
     chartScalar_of_mem a.val.1.val _ ((chartAt E a.val.1.val).map_source hy),
     (chartAt E a.val.1.val).left_inv hy]
 
-
 theorem reconstruction_ordered_localizedSchwartz (a : L.patches) (ab : d.ProbeIndex)
     (h : SmoothTensor (n := n) (M := M)) (w : List (Fin n)) :
     L.reconstructionL2 a ((orderedSchwartzDerivative w
@@ -347,7 +336,6 @@ theorem reconstructedCoordinateTuple_smoothTensorCoordinates (a : L.patches)
     (List.ofFn (wordIndex w hw).2) _ (d.smoothTensorCoordinates k h hsymm)) =ᵐ[_] _
   rw [localizedScaleDerivative_smoothTensorCoordinates, wordIndex_word]
   exact reconstruction_ordered_localizedSchwartz d L a ab h w
-
 
 theorem nativeWordL2_smoothTensorCoordinates (ab : d.ProbeIndex) (k : ℕ)
     (w : List (Fin d.fieldCount)) (hw : w.length ≤ k)
@@ -393,7 +381,6 @@ theorem nativeWordL2_smoothTensorCoordinates (ab : d.ProbeIndex) (k : ℕ)
         (fun a _ => (L.weight_smooth a).mul (scalarProbe_contMDiff d.fields h ab)) x).symm
     _ = _ := congrArg (fun f => directionalWord d.fields w f x) hpartition
 
-
 def nativeProbeTupleL2 (k s : ℕ) (hs : s ≤ k) :
     SpectralHeatNative.State d.SymmetricIndex →L[ℝ]
       (d.ProbeIndex → WordIndex (Fin d.fieldCount) s → Lp ℝ 2 d.charts.measure) :=
@@ -424,7 +411,6 @@ theorem nativeProbeTupleL2_smoothTensorCoordinates (k s : ℕ) (hs : s ≤ k)
 
 def schwartzWordTuple (k : ℕ) (φ : 𝓢(E, ℝ)) : WordIndex (Fin n) k → ScalarL2 n :=
   fun w => (orderedSchwartzDerivative (List.ofFn w.2) φ).toLp 2 volume
-
 
 def finiteJetFrequency (k : ℕ) : (p : ℕ) → (w : List (Fin n)) →
     2 * p + w.length ≤ k →
@@ -490,7 +476,6 @@ theorem finiteJetContinuous_tendsto (q : List (Fin n) → ScalarL2 n) (k p : ℕ
       (by simpa only [List.length_ofFn] using Nat.le_of_lt_succ v.1.isLt)
   simpa only [Function.comp_def, finiteJetContinuous_schwartz] using
     ((finiteJetContinuous k p w hw hp).continuous.tendsto _).comp ht
-
 
 theorem finiteJetContinuous_ae_eq (q : List (Fin n) → ScalarL2 n) (k p : ℕ)
     (w : List (Fin n)) (hw : 2 * p + w.length ≤ k)
@@ -640,7 +625,6 @@ theorem localizedWordContinuous_zero_off (a : L.patches) (ab : d.ProbeIndex)
   exact finiteJetContinuous_zero_off q (2 * p + s) p w (by omega) hp (hq.mono hs)
     (nativeCoordinateSupport_isCompact d L a) hsupport hx
 
-
 def cutoffChartPullback (a : L.patches) : (E →ᵇ ℝ) →L[ℝ] C(M, ℝ) := by
   let C := nativeCutoffs d L a
   let P : (E →ᵇ ℝ) →ₗ[ℝ] C(M, ℝ) := {
@@ -756,7 +740,6 @@ theorem termsL2_ae_eq_termsContinuous {ι : Type*} (μ : Measure M) [IsFiniteMea
     rw [hadd, Pi.add_apply, hc, hqx, hr]
     rfl
 
-
 def nativeWordContinuous (ab : d.ProbeIndex) (k p : ℕ) (w : List (Fin d.fieldCount))
     (hw : 2 * p + w.length ≤ k) (hp : (n : ℝ) < 2 * (2 * (p : ℝ))) :
     SpectralHeatNative.State d.SymmetricIndex →L[ℝ] C(M, ℝ) :=
@@ -807,7 +790,6 @@ theorem nativeWordContinuous_smoothTensorCoordinates (ab : d.ProbeIndex) (k p : 
       (nativeWordL2_smoothTensorCoordinates d L ab k w (by omega) h hsymm))
     (nativeWordContinuous d L ab k p w hw hp (d.smoothTensorCoordinates k h hsymm)).continuous
     (directionalWord_contMDiff d.fields w (scalarProbe_contMDiff d.fields h ab)).continuous) x
-
 
 def nativeProbeTupleContinuous (k s p : ℕ) (hs : 2 * p + s ≤ k)
     (hp : (n : ℝ) < 2 * (2 * (p : ℝ))) :

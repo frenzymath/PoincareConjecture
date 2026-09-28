@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Puncture.Opening
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -61,8 +53,6 @@ private theorem ambient_partial_of_diffeomorph
     continuousOn_toFun := hfs.continuousOn
     continuousOn_invFun := hgs.continuousOn }
   exact ⟨e, rfl, rfl, hfs, hgs, hf, hg⟩
-
-
 
 theorem exists_puncture_ball_opening_partial {δ : ℝ} (hδ : 0 < δ) :
     ∃ e : OpenPartialHomeomorph E3 E3,
@@ -172,8 +162,6 @@ private theorem conjugate_partial
       (congrArg r.symm (b.left_inv (ht hy))).symm ▸ hbriy
     exact (hbriy'.comp (b y) (hriy'.comp (b y) hbiy)).contMDiffWithinAt
   exact ⟨e, hes, het, he, hei, hformula, hiformula⟩
-
-
 
 theorem exists_ball_chart_opening
     (b : OpenPartialHomeomorph E3 M)

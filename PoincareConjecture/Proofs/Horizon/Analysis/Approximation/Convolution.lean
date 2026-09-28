@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.BumpFunction.SmoothApprox
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open ContinuousLinearMap MeasureTheory
@@ -18,7 +10,6 @@ namespace Poincare
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   (μ : Measure E) [μ.IsAddHaarMeasure]
-
 
 theorem lipschitzWith_normed_convolution {f : E → ℝ} {K : ℝ≥0}
     (hf : LipschitzWith K f) (φ : ContDiffBump (0 : E)) :
@@ -47,7 +38,6 @@ theorem lipschitzWith_normed_convolution {f : E → ℝ} {K : ℝ≥0}
         simpa only [Real.dist_eq, dist_sub_right] using hf.dist_le_mul (x - t) (y - t)
     _ = K * dist x y := by rw [integral_mul_const, φ.integral_normed, one_mul]
 
-
 theorem dist_normed_convolution_le_radius {f : E → ℝ} {K : ℝ≥0}
     (hf : LipschitzWith K f) (φ : ContDiffBump (0 : E)) (x : E) :
     dist ((φ.normed μ ⋆[lsmul ℝ ℝ, μ] f) x) (f x) ≤ K * φ.rOut := by
@@ -55,7 +45,6 @@ theorem dist_normed_convolution_le_radius {f : E → ℝ} {K : ℝ≥0}
   intro y hy
   exact (hf.dist_le_mul y x).trans
     (mul_le_mul_of_nonneg_left (Metric.mem_ball.mp hy).le K.coe_nonneg)
-
 
 theorem norm_fderiv_normed_convolution_le {f : E → ℝ} {K : ℝ≥0}
     (hf : LipschitzWith K f) (φ : ContDiffBump (0 : E)) (x : E) :
@@ -65,8 +54,6 @@ theorem norm_fderiv_normed_convolution_le {f : E → ℝ} {K : ℝ≥0}
 end Poincare
 
 namespace Poincare
-
-
 
 theorem exists_contDiff_lipschitz_approx
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

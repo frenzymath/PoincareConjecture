@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_EulerEquation
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEuler
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexPositivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -26,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem secondVariationIdentity_of_squareEuler
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -91,9 +78,6 @@ theorem secondVariationIdentity_of_squareEuler
   change HasDerivAt (fun u => deriv (M14VariationAction V) u) (∫ s in a..b, raw s) 0 at h
   rwa [hvalue] at h
 
-
-
-
 theorem secondVariationIdentity
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -104,9 +88,6 @@ theorem secondVariationIdentity
     (fun _ hs Z => squareRootEulerResidual_eq_zero_of_euler p hCoordinates hM12 E₀ heuler R
       D.base_extension hs Z)
 
-
-
-
 theorem secondVariationStatement
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
@@ -114,9 +95,6 @@ theorem secondVariationStatement
   intro T τ₁ τ₂ x y p R V E₀ heuler
   obtain ⟨D⟩ := exists_variationDerivativeData V
   exact ⟨D, secondVariationIdentity hCoordinates hM04 hM12 V D E₀ heuler⟩
-
-
-
 
 theorem secondVariationIndexForm_nonneg
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -128,9 +106,6 @@ theorem secondVariationIndexForm_nonneg
     (secondVariationIdentity_of_squareEuler hCoordinates hM04 hM12 V D
       (fun _ hs Z => squareRootEulerResidual_eq_zero_of_minimizing hCoordinates hM12 hmin
         D.base_extension hs Z))
-
-
-
 
 theorem fixedEndpointIndexStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

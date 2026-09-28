@@ -1,24 +1,12 @@
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M59
-
-
-
 
 theorem exists_uniform_compact_map_control
     {A B : Type*} [PseudoMetricSpace A] [PseudoMetricSpace B]

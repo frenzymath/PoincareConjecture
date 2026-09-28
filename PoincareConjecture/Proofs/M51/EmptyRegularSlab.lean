@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyFamily
 import PoincareConjecture.Proofs.M51.EmptySlabCopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,8 +55,6 @@ theorem regularSlab_end_le (p q : ℝ) (hpq : p < q)
   let := empty_forward F a ha hp hs.1
     (crossing_empty F a ha hp (lt_of_not_ge hqa) hfree)
   exact isEmptyElim x
-
-
 
 theorem regularSlab_coherent (p q r w : ℝ) (hpq : p < q)
     (hJ : Icc p q ⊆ Ici 0) (hfree : Disjoint F.surgery_times (Ioc p q))

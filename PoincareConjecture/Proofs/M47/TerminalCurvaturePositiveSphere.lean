@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureTransverse
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOpenSaturation
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSaturationBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_bounded_of_parallel_positive_sphere
     {M A : Type*} [TopologicalSpace M] [TopologicalSpace A]

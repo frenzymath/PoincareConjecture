@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicRadialVelocity
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +18,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
   (hsec : D.NonnegativeSectionalCurvature)
 
 include D hsec
-
-
 
 theorem intrinsicRadialAcceleration_bounds {K : ℝ}
     (hK : ∀ x, D.curvatureTensorNorm x ≤ K) (s : ℝ) :
@@ -72,8 +60,6 @@ private theorem intrinsic_slope_bounds {s : ℝ} (hs : 0 < s) :
   exact ⟨axisWarpingSlope_nonneg D hrotation hsec hcomplete hr,
     axisWarpingSlope_le_one D hrotation hsec hr,
     axisWarpingSecond_nonpos D hrotation hsec hr⟩
-
-
 
 theorem intrinsicRadialVelocity_abs_le {K : ℝ} (hK0 : 0 ≤ K)
     (hK : ∀ x, D.curvatureTensorNorm x ≤ K) (s : ℝ) :

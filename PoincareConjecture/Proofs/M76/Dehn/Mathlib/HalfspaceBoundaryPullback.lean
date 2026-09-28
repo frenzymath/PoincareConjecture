@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringPLAtlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +8,6 @@ namespace IsLocalHomeomorph
 
 variable {X M E ι κ : Type*} [TopologicalSpace X] [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem halfspace_boundary_preimage
     {p : X → M} (hp : IsLocalHomeomorph p)
@@ -85,9 +71,6 @@ theorem halfspace_boundary_preimage
   · intro y hy
     rw [hval]
     exact hcut (p y) (hsource hy)
-
-
-
 
 theorem exists_halfspace_coordinate_cover_over
     {p : X → M} (hp : IsLocalHomeomorph p)

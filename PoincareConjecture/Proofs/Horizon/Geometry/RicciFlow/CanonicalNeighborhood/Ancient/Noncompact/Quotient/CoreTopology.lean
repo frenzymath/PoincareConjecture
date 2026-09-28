@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.End
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -74,8 +65,6 @@ theorem frontier_slabCore (C : M27TwistedSphereLineFlowCertificate K)
       rw [C.cover_mem_frontier_slabCore_iff, hq.2, abs_of_nonneg hr]
     rw [heq, C.cover_mem_frontier_slabCore_iff] at hmem
     exact hmem
-
-
 
 theorem slabCore_boundary_local_defining_function
     (C : M27TwistedSphereLineFlowCertificate K) {r : ℝ} (hr : 0 < r)

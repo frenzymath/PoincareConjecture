@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.TestOrder
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Order
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,7 +73,6 @@ private theorem heat_test_domain_le
     heatPowerContinuousTime_of_pos D S1 0 ht,
     heatPowerContinuousTime_of_pos D S2 0 ht] at h
   exact h
-
 
 theorem heatKernelContinuous_domain_mono
     (S1 : Poincare.Manifold.SmoothDomain n Ω1)

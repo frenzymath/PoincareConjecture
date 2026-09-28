@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryStableLength
 import PoincareConjecture.Proofs.M34.Mathlib.FullMeasureOpenImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,9 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T3Space M] [ConnectedSpace M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
   {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
-
-
-
 
 theorem ordinaryProduct_stable_open_volume
     (R : OrdinaryProductRicciGeometry F.metric I)

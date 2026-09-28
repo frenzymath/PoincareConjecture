@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.MetricMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 
 variable {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}
-
-
-
 
 theorem exists_pos_eventually_embedding_edist_le_of_ricci_nonneg
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)
@@ -56,9 +46,6 @@ theorem exists_pos_eventually_embedding_edist_le_of_ricci_nonneg
   exact ((F (G.subsequence k)).ball_subset_ball_of_ricci_nonneg ht
     (S.flow (G.subsequence k)).base R ⟨le_rfl, hst⟩ ⟨hst, le_rfl⟩ hst
     (fun u hu y _ v => hRic u hu y v) hsource).le
-
-
-
 
 theorem exists_pos_eventually_embedding_edist_le_of_isometric_diffeomorph
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)

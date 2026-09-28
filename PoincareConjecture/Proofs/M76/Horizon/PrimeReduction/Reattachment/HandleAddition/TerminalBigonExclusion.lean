@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcSameSide
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalRelativeCompressionContradiction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 namespace PoincareConjecture.M76
@@ -218,6 +210,4 @@ theorem HamiltonMarkedProtectedBall.no_equal_endpoint_outermost_bigon_at_minimum
     hZends hinterZ hnoL hgeom.1 heW heEW hWS whole_ball g hg hgi hgEW hgS
     (hgrim.trans (congrArg (fun A0 => A0 ∪ pAnn '' Z) hmatch))
 
-
 end PoincareConjecture.M76
-

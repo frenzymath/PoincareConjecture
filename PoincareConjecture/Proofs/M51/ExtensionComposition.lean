@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M48.ExtensionEvents
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.style.haveILetI false

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.Distance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +36,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem terminalFlow_reference_intrinsicDiameter
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (t : ℝ) (ht : t ∈ Ico H.reference.tMinus T) (K : Set (F.slice t).carrier)
@@ -61,8 +57,6 @@ theorem terminalFlow_reference_intrinsicDiameter
   rw [hdiam]
   exact (Homothety.metricHomothetyCalculus _ _ _ 1 (by norm_num)
     (H.reference.slice_metric_homothety t ht)).m48_intrinsicDiameter_eq K
-
-
 
 theorem eventually_captured_cap_terminal_intrinsicDiameter_bound
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

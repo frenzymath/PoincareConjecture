@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.UpperCoreLabel
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.UpperCapBandTube
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_saddle_upper_leg
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

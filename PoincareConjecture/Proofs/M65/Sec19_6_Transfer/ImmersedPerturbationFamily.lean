@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationCompos
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.ImmersedAreaTransfer
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {M : Type u} {n : ℕ}
 
-
-
 theorem foldControls_periodic_map
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ)
     (hbeta : ∀ i, Function.Periodic (beta i) curvePeriod)
@@ -41,9 +29,6 @@ theorem foldControls_periodic_map
 
 variable [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {J : Set ℝ}
-
-
-
 
 theorem foldControls_family_smooth (F : RicciFlow 3 M (Icc a b))
     (C : M65SmoothFilledLoopFamily F J)
@@ -65,10 +50,6 @@ theorem foldControls_family_smooth (F : RicciFlow 3 M (Icc a b))
     (fun _ hz => ⟨hz.1, mem_univ _⟩)
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem exists_controlled_loop_family (F : RicciFlow 3 M (Icc a b))
     (C : M65SmoothFilledLoopFamily F J)

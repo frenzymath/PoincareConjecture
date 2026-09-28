@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Covering
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

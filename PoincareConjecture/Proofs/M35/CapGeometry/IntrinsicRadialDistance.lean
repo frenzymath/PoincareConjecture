@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalRadius
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalRadial
 import PoincareConjecture.Proofs.M10.VectorDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -99,7 +88,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
 
 include hrotation hcomplete
 
-
 theorem intrinsicSpatialMetric_edist_zero (x : StandardCapSpace) :
     (intrinsicSpatialMetric g hrotation hcomplete).edist 0 x = ENNReal.ofReal ‖x‖ := by
   apply unit_gauss_edist _ (intrinsicSpatialMetric_inner_zero g hrotation hcomplete)
@@ -111,8 +99,6 @@ theorem intrinsicSpatialMetric_edist_zero (x : StandardCapSpace) :
     real_inner_self_eq_norm_sq]
   field_simp [norm_ne_zero_iff.mpr hy]
   ring
-
-
 
 theorem edist_zero_eq_radialArclength (P : M35StandardCapPredecessors)
     (x : StandardCapSpace) : g.edist 0 x = ENNReal.ofReal (radialArclength g ‖x‖) := by
@@ -130,8 +116,6 @@ theorem edist_zero_eq_radialArclength (P : M35StandardCapPredecessors)
     one_mul, intrinsicSpatialMetric_edist_zero] at hdist
   change g.edist 0 x = ENNReal.ofReal ‖intrinsicSpatialCoordinate g x‖ at hdist
   rwa [intrinsicSpatialCoordinate_norm] at hdist
-
-
 
 theorem ball_zero_eq_radial_ball (P : M35StandardCapPredecessors) (r : ℝ) :
     g.ball 0 r = Metric.ball 0 ((radialArclengthOrderIso g hrotation hcomplete).symm r) := by

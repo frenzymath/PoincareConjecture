@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M63Polygon
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M63ProfileProperties (N : ℕ) : Prop where
   normalization_positive :
@@ -47,9 +36,6 @@ structure M63ProfileProperties (N : ℕ) : Prop where
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 structure M63PolygonEstimates {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
@@ -89,8 +75,6 @@ structure M63PolygonEstimates {F : RicciFlow n M (Set.Icc a b)}
       m62Length F (fun x _ => m63FlattenedPolygon polygon x) t + circumference
   graph_total_curvature : m62TotalCurvature P.flow
     (fun x _ => m63CanonicalRamp P (m63FlattenedPolygon polygon) x) t ≤ (N : ℝ) * Real.pi
-
-
 
 def M63SampledPolygonLengthComparison (F : RicciFlow n M (Set.Icc a b)) : Prop :=
   ∀ t ∈ Set.Icc a b, ∀ N : ℕ, 0 < N →

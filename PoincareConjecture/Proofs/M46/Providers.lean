@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M46
 import PoincareConjecture.Proofs.M15.Providers
 import PoincareConjecture.Proofs.M33.Providers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m46NoncollapseInductionFromMilestones :
     RepairedNoncollapseInductionTheory.{u} :=

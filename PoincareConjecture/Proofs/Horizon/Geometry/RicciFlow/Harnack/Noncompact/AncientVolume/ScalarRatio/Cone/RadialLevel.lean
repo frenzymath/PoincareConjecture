@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularLevelScalar
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +20,6 @@ local instance tangent_finiteDimensional (x : L) :
     FiniteDimensional ℝ (TangentSpace (𝓡 m) x) := by
   change FiniteDimensional ℝ (EuclideanSpace ℝ (Fin m))
   infer_instance
-
-
-
 
 def normalDerivativeShapeOperator (D : LeviCivitaData g)
     (h : RiemannianMetric m L) (F : L → M)
@@ -64,8 +50,6 @@ namespace Poincare.Geometry.Curvature.Hypersurface
 open PoincareConjecture
 
 private abbrev E (k : ℕ) := EuclideanSpace ℝ (Fin k)
-
-
 
 theorem normalDerivativeShapeOperator_eq_shapeOperator_neg
     {m n : ℕ} {g : RiemannianMetric n (E n)} {h : RiemannianMetric m (E m)}
@@ -104,8 +88,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local instance ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 def regularLevelShapeOperator (z : openLevelSet f U c) :
     letI := openLevelSetChartedSpace hf U hreg n c
@@ -167,7 +149,6 @@ theorem inner_regularLevelUnitNormal_self (z : openLevelSet f U c) :
   field_simp
   exact hrq.symm
 
-
 theorem inner_regularLevelUnitNormal_tangent (z : openLevelSet f U c) :
     letI := openLevelSetChartedSpace hf U hreg n c
     letI := isManifold_openLevelSet hf U hreg n c
@@ -181,8 +162,6 @@ theorem inner_regularLevelUnitNormal_tangent (z : openLevelSet f U c) :
   rw [levelUnitNormal]
   simp only [map_smul, smul_apply, smul_eq_mul]
   rw [D.inner_gradient_regularLevelIncl hf U hreg c z v, mul_zero]
-
-
 
 theorem inner_regularLevelShapeOperator (z : openLevelSet f U c) :
     letI := openLevelSetChartedSpace hf U hreg n c
@@ -202,7 +181,6 @@ theorem inner_regularLevelShapeOperator (z : openLevelSet f U c) :
   exact D.inner_connection_unitNormal hf _ (D.regularLevel_levelQ_pos U hreg c z)
     _ _ (D.inner_gradient_regularLevelIncl hf U hreg c z v)
 
-
 theorem inner_regularLevelShapeOperator_eq_levelSecondFundamental
     (z : openLevelSet f U c) :
     letI := openLevelSetChartedSpace hf U hreg n c
@@ -219,8 +197,6 @@ theorem inner_regularLevelShapeOperator_eq_levelSecondFundamental
   rw [D.inner_regularLevelShapeOperator hf U hreg c z u v]
   simp only [levelSecondFundamental, levelProjection,
     D.inner_regularLevelUnitNormal_tangent hf U hreg c z, zero_smul, sub_zero]
-
-
 
 theorem regularLevelShapeOperator_eq_id (z : openLevelSet f U c)
     (hH : ∀ u v, D.hessian f (openLevelIncl f U c z) u v =
@@ -239,8 +215,6 @@ theorem regularLevelShapeOperator_eq_id (z : openLevelSet f U c)
   rw [D.inner_regularLevelShapeOperator hf U hreg c z u v, hH, hQ]
   simp only [Real.sqrt_one, div_one, LinearMap.id_apply]
   rfl
-
-
 
 theorem radialLevelShapeOperator_eq_id
     (hH : ∀ x ∈ U, ∀ u v, D.hessian f x u v = g.inner x u v)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem scalar_le_of_neck_cap_scale_floor
     {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -81,9 +67,6 @@ theorem scalar_le_of_neck_cap_scale_floor
           (hneck K.end_neck (K.end_neck_epsilon.trans hK)) hmax
         _ ≤ max 4 (max 1 C * rho ^ (-2 : ℝ)) := le_max_right _ _
   · exact (le_of_not_gt hx).trans (le_max_left _ _)
-
-
-
 
 theorem exists_positive_neck_cap_curvature_bound_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 < 1 / 2 ∧

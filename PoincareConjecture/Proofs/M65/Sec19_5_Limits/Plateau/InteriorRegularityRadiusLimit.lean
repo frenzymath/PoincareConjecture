@@ -2,16 +2,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Topology.MetricSpace.Cauchy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -43,9 +33,6 @@ private theorem radius_sub_le_power {f : ℝ → ℝ} {C β s r : ℝ}
   dsimp only [g] at h
   linarith only [h]
 
-
-
-
 theorem radius_increment_le_power {f : ℝ → ℝ} {C β s r : ℝ}
     (hβ : 0 < β) (hs : 0 < s) (hsr : s ≤ r)
     (hf : ∀ t ∈ Icc s r, DifferentiableAt ℝ f t)
@@ -60,10 +47,6 @@ theorem radius_increment_le_power {f : ℝ → ℝ} {C β s r : ℝ}
       exact (neg_le_abs _).trans (hb t ht))
   rw [abs_le]
   constructor <;> linarith only [hp, hn]
-
-
-
-
 
 theorem exists_radius_limit {f : ℝ → ℝ} {C β R : ℝ}
     (hC : 0 ≤ C) (hβ : 0 < β) (hR : 0 < R)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem canonical_seed_volume_or_component (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t rho r : ℝ} {x : (F.slice t).carrier}
@@ -64,8 +54,6 @@ theorem canonical_seed_volume_or_component (P : M47Predecessors.{u})
       (min_le_right _ _) (pow_nonneg hr.le 3))).trans hvolume
   | component N hx => exact Or.inr (Or.inl ⟨N, hx⟩)
   | round N hx => exact Or.inr (Or.inr ⟨N, hx⟩)
-
-
 
 theorem canonical_test_volume_or_component (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t rho r : ℝ} {x : (F.slice t).carrier}

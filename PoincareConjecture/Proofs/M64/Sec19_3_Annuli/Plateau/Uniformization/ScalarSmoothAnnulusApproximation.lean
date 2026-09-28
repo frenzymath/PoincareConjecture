@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRegularizedArea
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSmoothGram
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +20,6 @@ private theorem strip_isOpen : IsOpen Strip :=
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem regularizedPullback_comp_gram_le
     (g : RiemannianMetric n M) (f : Plane → M)
@@ -78,11 +62,6 @@ private theorem weighted_density_eq_area
   rw [harea, ← hc]
   dsimp only [a]
   ring
-
-
-
-
-
 
 theorem exists_smooth_open_cylinder_energy_lt_area
     (g : RiemannianMetric n M) (f : Plane → M)

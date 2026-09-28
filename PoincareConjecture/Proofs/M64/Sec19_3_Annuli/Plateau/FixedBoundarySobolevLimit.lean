@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SobolevLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakBoundaryTrace
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +15,6 @@ open Poincare.Analysis.Sobolev.WeakCompactness
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
-
 
 theorem m64Annulus_fixed_boundary_sobolev_subsequence {m : ℕ}
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))

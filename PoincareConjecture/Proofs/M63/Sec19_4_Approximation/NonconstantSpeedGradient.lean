@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedGradient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -23,9 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem curveSpeed_spatial_ratio_integral_of_speed_le [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

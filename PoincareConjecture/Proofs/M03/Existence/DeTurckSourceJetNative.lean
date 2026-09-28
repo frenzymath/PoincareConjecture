@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckRationalJetNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckJetCoordinatesNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -100,7 +94,6 @@ def backgroundContractionExpr (e : Fin n → iota) (i j : Fin n) : Expr iota n :
   Expr.sumFin (fun a => Expr.sumFin (fun b =>
     .mul (inverseExpr false a b) (secondExpr e false true a b i j)))
 
-
 def lowerPerturbationExpr (e : Fin n → iota) (i j : Fin n) : Expr iota n :=
   .add (backgroundContractionExpr e i j) (sourceExpr e true i j)
 
@@ -186,7 +179,6 @@ theorem eval_lieExpr (eraseCurrent : Bool) (i j : Fin n) (x : M) :
     eval_vectorFirstExpr F G e eraseCurrent, valueExpr, firstExpr, nativeValues,
     directionalWord_nil, nativeJet, lieDerivativeJet]
 
-
 theorem eval_sourceExpr (eraseCurrent : Bool) (i j : Fin n) (x : M) :
     (sourceExpr e eraseCurrent i j).eval (nativeValues F G x) =
       ricciDeTurckSource (nativeJet F G e false true x)
@@ -206,14 +198,12 @@ theorem eval_backgroundContractionExpr (i j : Fin n) (x : M) :
   simp only [backgroundContractionExpr, Expr.eval_sumFin, Expr.eval,
     inverseExpr, nativeValues, eval_secondExpr F G e false, secondJetSource]
 
-
 theorem eval_lowerPerturbationExpr (i j : Fin n) (x : M) :
     (lowerPerturbationExpr e i j).eval (nativeValues F G x) =
       secondJetSource (G false x) (nativeJet F G e false true x).second i j +
         ricciDeTurckSource (nativeJet F G e false true x)
           (eraseSecondJet (nativeJet F G e false false x)) i j := by
   rw [lowerPerturbationExpr, Expr.eval, eval_backgroundContractionExpr, eval_lower_sourceExpr]
-
 
 theorem ordered_sourceExpr_native
     (hG : ∀ b, ContMDiff (𝓡 n) 𝓘(ℝ, Fin n → Fin n → ℝ) ∞
@@ -343,7 +333,6 @@ theorem degree_lieExpr_le (eraseCurrent : Bool) (i j : Fin n) :
         (degree_vectorFirstExpr_le e eraseCurrent i k)
   · exact degree_mul_le (show (valueExpr false i k : Expr iota n).degree ≤ 0 from le_rfl)
       (degree_vectorFirstExpr_le e eraseCurrent j k)
-
 
 theorem degree_sourceExpr_le (eraseCurrent : Bool) (i j : Fin n) :
     (sourceExpr e eraseCurrent i j).degree ≤ 2 :=
@@ -485,7 +474,6 @@ theorem currentOrder_lieExpr_lower (i j : Fin n) :
       (show (valueExpr false i k : Expr iota n).metricOrder false ≤ 1 by
         simp [valueExpr, Expr.metricOrder]) (currentOrder_vectorFirstExpr_lower e j k)
 
-
 theorem currentOrder_sourceExpr_lower (i j : Fin n) :
     (sourceExpr e true i j).metricOrder false ≤ 1 :=
   current_add_le
@@ -539,7 +527,6 @@ variable {M : Type v} [TopologicalSpace M] [T2Space M]
   (F : iota → SmoothField (n := n) (M := M)) (C : Cutoffs (n := n) p K)
   (g0 g : RiemannianMetric n M)
 
-
 def compatibleMatrix : Bool → M → Matrix (Fin n) (Fin n) ℝ
   | true => C.matrix g0
   | false => C.matrix g
@@ -566,7 +553,6 @@ theorem nativeJet_compatible_background (x : M) :
 theorem nativeJet_compatible_current (x : M) :
     nativeJet (combinedFields F C) (compatibleMatrix C g0 g) Sum.inl false false x =
       C.jet g x := rfl
-
 
 theorem directionalWord_combined_inr (w : List iota) (f : M → ℝ) :
     directionalWord (combinedFields F C) (w.map Sum.inr) f = directionalWord F w f := by
@@ -611,7 +597,6 @@ theorem eval_lowerPerturbationExpr_compatible (i j : Fin n) (x : M) :
   simpa only [nativeJet_compatible_background, nativeJet_compatible_current, compatibleMatrix] using
     eval_lowerPerturbationExpr (combinedFields F C) (compatibleMatrix C g0 g) Sum.inl i j x
 
-
 theorem ordered_sourceExpr_compatible (i j : Fin n) (w : List iota) (x : M) :
     ((sourceExpr Sum.inl false i j).orderedDerivative (w.map Sum.inr)).eval
         (nativeValues (combinedFields F C) (compatibleMatrix C g0 g) x) =
@@ -634,7 +619,6 @@ theorem ordered_lower_sourceExpr_compatible (i j : Fin n) (w : List iota) (x : M
       ordered_sourceExpr_native (combinedFields F C) (compatibleMatrix C g0 g) Sum.inl
         (compatibleMatrix_contMDiff C g0 g) (compatibleMatrix_det_ne_zero C g0 g)
         true i j (w.map Sum.inr) x
-
 
 theorem ordered_lowerPerturbationExpr_compatible (i j : Fin n) (w : List iota) (x : M) :
     ((lowerPerturbationExpr Sum.inl i j).orderedDerivative (w.map Sum.inr)).eval

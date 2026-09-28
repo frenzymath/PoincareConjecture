@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.IncompressibleBal
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +10,6 @@ namespace PoincareConjecture.M76
 
 variable {X ι σ : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {R Ω : Set X}
-
-
-
-
 
 theorem IsPLIrreducible.of_incompressible_cut
     (hΩ : IsPLIrreducible e Ω) (hR : PLDomain e R) (hRΩ : R ⊆ Ω)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,8 +56,6 @@ private theorem exists_line_geodesic_to_time (g : RiemannianMetric 1 M)
   simpa only [Function.comp_def, id_eq, mul_one, smul_smul, inv_mul_cancel₀ ht, one_smul]
     using hv'.scomp 0 ((hasDerivAt_id (0 : ℝ)).const_mul t⁻¹)
 
-
-
 theorem exists_global_line_geodesic (g : RiemannianMetric 1 M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin 1)) :
     ∃ γ : ℝ → M, g.IsGeodesicOn γ univ ∧ γ 0 = p ∧
@@ -90,8 +80,6 @@ theorem exists_global_line_geodesic (g : RiemannianMetric 1 M)
   refine ⟨q, a, w, ?_⟩
   filter_upwards [hlocal, hgerm t] with u hu heq
   exact ⟨heq.trans hu.1, hu.2⟩
-
-
 
 theorem surjective_global_line_geodesic [PreconnectedSpace M]
     (g : RiemannianMetric 1 M) (hc : MetricComplete g)
@@ -142,8 +130,6 @@ theorem surjective_global_line_geodesic [PreconnectedSpace M]
   calc
     γ c = η 1 := by simpa only [mul_one] using (heq 1 h1).self_of_nhds
     _ = q := hη1
-
-
 
 theorem contMDiff_global_line_geodesic {g : RiemannianMetric 1 M}
     {γ : ℝ → M} (hγ : g.IsGeodesicOn γ univ) :

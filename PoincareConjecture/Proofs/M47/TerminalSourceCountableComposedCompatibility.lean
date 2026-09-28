@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableComposedTail
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +18,6 @@ variable (j : ℕ) (M : {k : ℕ // j ≤ k} → Type u)
   {tau R : ℝ} (htau : 0 < tau)
   (F : ∀ a, RicciFlow 3 (M a) (Icc (-tau) 0))
   (C : ∀ a, TerminalSourceChart ((F a).metric 0) R)
-
-
 
 theorem terminalSourceCountable_composed_compatibility
     (f0 : ℕ → E → V) {Q : {a : ℕ // j ≤ a} → Prop}

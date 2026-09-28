@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Separation
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +10,6 @@ universe u
 namespace Poincare.Gluing
 
 variable {X : Type u} [TopologicalSpace X]
-
-
 
 def twoPieceOverlap (e : OpenPartialHomeomorph X X) (he : e.symm = e) :
     OverlapSystem (fun _ : Bool => X) where
@@ -43,13 +32,9 @@ def twoPieceOverlap (e : OpenPartialHomeomorph X X) (he : e.symm = e) :
         OpenPartialHomeomorph.refl_source, mem_univ, id_eq]
     all_goals simpa only [he] using e.left_inv hx
 
-
-
 theorem twoPieceOverlap_transition_ne (e : OpenPartialHomeomorph X X)
     (he : e.symm = e) {i j : Bool} (hij : i ≠ j) :
     (twoPieceOverlap e he).transition i j = e := if_neg hij
-
-
 
 theorem twoPieceOverlap_closed [T2Space X] (e : OpenPartialHomeomorph X X)
     (he : e.symm = e)
@@ -63,8 +48,6 @@ theorem twoPieceOverlap_closed [T2Space X] (e : OpenPartialHomeomorph X X)
       OpenPartialHomeomorph.refl_apply, id_eq] using
       (isClosed_eq continuous_fst continuous_snd : IsClosed {p : X × X | p.1 = p.2})
   · simpa only [OverlapSystem.Rel, twoPieceOverlap_transition_ne e he hij] using hgraph
-
-
 
 theorem twoPieceOverlap_compactSpace (e : OpenPartialHomeomorph X X)
     (he : e.symm = e) {K : Set X} (hK : IsCompact K)

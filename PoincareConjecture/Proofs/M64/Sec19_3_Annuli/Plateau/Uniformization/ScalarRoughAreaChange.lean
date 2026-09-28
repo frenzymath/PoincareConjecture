@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarDescent
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularCap
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarAreaDensity_comp_localDiffeomorph
     (g : RiemannianMetric n M) (f : Plane → M) {k : Plane → Plane} {p : Plane}

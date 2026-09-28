@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Isometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Laplacian.Linearity
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -24,7 +19,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 noncomputable def metricTwoFormIdentity (g : RiemannianMetric n M) :
     CovariantTensorEvaluation n M 4 := fun x v =>
@@ -98,8 +92,6 @@ private lemma exists_metric_radial_fields (D : LeviCivitaData g) (x : M) :
     rw [← hP ⟨y, hy⟩ v, ← hP ⟨y, hy⟩ w]
     exact (P ⟨y, hy⟩).inner_map_map v w
 
-
-
 lemma tensorLaplacian_scalar_metric (D : LeviCivitaData g) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ) (x : M)
     (v : Fin 2 → TangentSpace (𝓡 n) x) :
@@ -118,7 +110,6 @@ lemma tensorLaplacian_scalar_metric (D : LeviCivitaData g) {φ : M → ℝ}
     rw [hy]
     exact mul_comm _ _
   rw [D.laplacian_eq_of_eventuallyEq he, D.laplacian_const_mul, mul_comm]
-
 
 lemma covariantTensorDerivative_metricTwoFormIdentity (D : LeviCivitaData g) :
     D.covariantTensorDerivative (metricTwoFormIdentity g) = fun _ _ => 0 := by
@@ -146,8 +137,6 @@ lemma tensorLaplacian_metricTwoFormIdentity (D : LeviCivitaData g) :
     covariantTensorDerivative_metricTwoFormIdentity]
   simp [LeviCivitaData.covariantTensorDerivative, mvfderiv]
 
-
-
 noncomputable def tensorBlockDiffusion {I : Type} [Fintype I]
     (D : LeviCivitaData g) (R : CovariantTensorEvaluation n M 4)
     (P : CovariantTensorEvaluation n M 3) (B : CovariantTensorEvaluation n M 2)
@@ -163,8 +152,6 @@ noncomputable def tensorBlockDiffusion {I : Type} [Fintype I]
       W c * D.covariantTensorDerivative P x ![A a b, v a, v b, v c]) +
     2 * (∑ a, ∑ b, ∑ c, ∑ d,
       R x ![v a, v b, v c, v d] * g.inner x (A a b) (A c d))
-
-
 
 lemma tensorBlockDiffusion_perturb {I : Type} [Fintype I]
     (D : LeviCivitaData g) {R : CovariantTensorEvaluation n M 4}
@@ -199,8 +186,6 @@ lemma tensorBlockDiffusion_perturb {I : Type} [Fintype I]
     mul_zero, add_zero, Matrix.cons_val_zero, Matrix.cons_val_one]
   simp only [add_mul, Finset.sum_add_distrib, mul_assoc, ← Finset.mul_sum]
   ring
-
-
 
 theorem perturbed_tensor_block_diffusion_nonneg_at_null [T2Space M]
     {I : Type} [Fintype I] (D : LeviCivitaData g)
@@ -292,8 +277,6 @@ private lemma sum_five_last' {I : Type} [Fintype I] (f : I → I → I → I →
       exact sum_four_last' (f a)
     _ = _ := Finset.sum_comm
 
-
-
 lemma metricTwoFormIdentity_jet_quadratic (g : RiemannianMetric n M) (x : M)
     (V : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)) →
       Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)) →
@@ -309,8 +292,6 @@ lemma metricTwoFormIdentity_jet_quadratic (g : RiemannianMetric n M) (x : M)
   apply Finset.sum_congr rfl
   intro e _
   simpa only [mul_assoc] using twoFormIdentity_quadratic (V e) (hV e)
-
-
 
 theorem perturbed_tensor_block_diffusion_nonneg_in_basis [T2Space M]
     (D : LeviCivitaData g)
@@ -381,8 +362,6 @@ theorem perturbed_tensor_block_diffusion_nonneg_in_basis [T2Space M]
   have h := perturbed_tensor_block_diffusion_nonneg_at_null D hR hP hB hφ ψ x b hp U W hn
     (fun a b => ∑ e, V e a b • g.orthonormalBasis x e)
   simpa only [b, metric_basis_quadratic, metricTwoFormIdentity_jet_quadratic g x V hV] using h
-
-
 
 noncomputable def hamiltonSpatialJetQuadratic (D : LeviCivitaData g) (τ : ℝ) (x : M)
     (U : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)) →
@@ -500,8 +479,6 @@ lemma hamiltonSpatialJetQuadratic_eq_tensorBlockDiffusion
   unfold hamiltonSpatialJetQuadratic tensorBlockDiffusion
   rw [hPorder, hRorder, hVorder]
   ring
-
-
 
 theorem hamiltonSpatialJetQuadratic_nonneg_perturbed_null [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (τ : ℝ)

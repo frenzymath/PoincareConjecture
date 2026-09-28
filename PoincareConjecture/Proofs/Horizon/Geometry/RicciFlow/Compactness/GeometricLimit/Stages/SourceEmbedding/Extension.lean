@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Diffeomorphism.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Separation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.ChartContainment
-
-
-
-
-
-
-

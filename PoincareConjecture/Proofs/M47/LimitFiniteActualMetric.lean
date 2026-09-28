@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointCurvature
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointChartReadout
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointSignedGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +49,6 @@ private local instance actualMetricT3 : T3Space G.limit.carrier.carrier :=
 
 local notation "U" => (fun j : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j))
-
-
 
 theorem limitFinite_actual_endpoint_metric
     (P : M47Predecessors.{u}) (hfinite : H ≠ ⊤)

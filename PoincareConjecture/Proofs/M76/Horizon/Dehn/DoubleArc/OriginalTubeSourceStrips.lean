@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeBranchInverse
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.OriginalStripDoubleLocus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

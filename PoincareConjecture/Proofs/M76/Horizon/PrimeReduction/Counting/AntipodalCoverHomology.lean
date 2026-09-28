@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CocycleHomologyEvaluation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CategoryTheory Limits
@@ -191,7 +183,6 @@ theorem homologyπ_evaluation (R : ModuleCat.{u} (ZMod 2)) :
       2 1 (by simp))
 
 include hτ hne hf hq hs in
-
 
 theorem exists_homology_retract (R : ModuleCat.{u} (ZMod 2))
     (a : E) (L : Path a (τ a)) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RawSphereCutComponents
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalSphereCutComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

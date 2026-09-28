@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingEndpoint
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_focusing_endpoint_le_absoluteTurning_of_continuousOn
     (N : IntrinsicAnnulus) {radius a b C S : ℝ} (hradius : radius ≠ 0)

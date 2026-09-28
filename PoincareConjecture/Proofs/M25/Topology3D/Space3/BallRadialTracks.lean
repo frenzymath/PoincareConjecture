@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartRadialField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowAlgebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem exists_ball_radial_field [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
     (B : BallNeighborhoodChart E F) :
@@ -37,8 +26,6 @@ theorem exists_ball_radial_field [FiniteDimensional ℝ E] [FiniteDimensional �
   refine ⟨W, hW, hWc, hWs, ?_⟩
   intro y hy
   exact (eventually_nhdsSet_iff_forall.mp hag y hy).self_of_nhds
-
-
 
 theorem boundedFlow_eq_chart_radial [CompleteSpace F] (B : BallNeighborhoodChart E F)
     (W : F → F) {K L : ℝ≥0} (hK : LipschitzWith K W) (hL : ∀ y, ‖W y‖ ≤ L)

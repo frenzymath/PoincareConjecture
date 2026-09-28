@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {K : SimplicialComplex ℝ E} {L : SimplicialComplex ℝ F}
   {f : E → F} {g : F → E}
-
-
-
 
 theorem AffineOnFaces.inverse_of_face_images (hf : K.AffineOnFaces f)
     (hleft : LeftInvOn g f K.space)

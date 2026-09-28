@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedTangentProje
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingKernelWeakClosure
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +22,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => ball (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64ContinuousDisk_observed_weak_columns
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

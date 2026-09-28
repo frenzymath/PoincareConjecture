@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.TerminalMetric
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem baseBall_isOpen (S : GeneralizedBlowupSequence.{u}) (k : ℕ) (R : ℝ) :
     IsOpen (S.baseBall k R) := by
@@ -37,8 +25,6 @@ theorem baseBall_isOpen (S : GeneralizedBlowupSequence.{u}) (k : ℕ) (R : ℝ) 
   change IsOpen {x : C.carrier |
     edist (S.base k).2 x < ENNReal.ofReal (R / Real.sqrt (S.scale k))}
   exact isOpen_lt (continuous_const.edist continuous_id) continuous_const
-
-
 
 theorem baseBall_pointed_connected (S : GeneralizedBlowupSequence.{u}) (k : ℕ)
     {R : ℝ} (hR : 0 < R) :
@@ -57,10 +43,6 @@ theorem baseBall_pointed_connected (S : GeneralizedBlowupSequence.{u}) (k : ℕ)
       (div_pos hR (Real.sqrt_pos.mpr (S.base_scalar_pos k)))
   exact ⟨hp, Subtype.connectedSpace
     ⟨⟨(S.base k).2, hp⟩, g.isPreconnected_ball (S.base k).2 _⟩⟩
-
-
-
-
 
 theorem exists_controlled_ordinary_source
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {R T B eta : ℝ}

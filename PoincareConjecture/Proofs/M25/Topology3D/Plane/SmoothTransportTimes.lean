@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothAbsolute
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_curve_transport_times
     {a b ε : ℝ} (hab : a < b) (hε : 0 < ε) :

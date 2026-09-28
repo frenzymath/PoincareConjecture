@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BarrierConstants
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +9,6 @@ open scoped intervalIntegral
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem capScalarIntegral_eq {c a theta : ℝ} (ha : a < 1) (htheta : theta < 1) :
     (∫ t in a..theta, c / (2 * (1 - t))) =
@@ -35,8 +23,6 @@ theorem capScalarIntegral_eq {c a theta : ℝ} (ha : a < 1) (htheta : theta < 1)
     integral_inv_of_pos (sub_pos.mpr htheta) (sub_pos.mpr ha),
     Real.log_div (sub_pos.mpr ha).ne' (sub_pos.mpr htheta).ne']
 
-
-
 theorem capScalarIntegral_lower {c a theta : ℝ} (hc : 0 ≤ c)
     (ha : a ≤ 1 / 2) (htheta : theta < 1) :
     -(c / 2) * (Real.log (1 - theta) + Real.log 2) ≤
@@ -49,10 +35,6 @@ theorem capScalarIntegral_lower {c a theta : ℝ} (hc : 0 ≤ c)
     simpa only [one_div, Real.log_inv] using h
   have hmul := mul_le_mul_of_nonneg_left hlog (by positivity : 0 ≤ c / 2)
   linarith
-
-
-
-
 
 theorem capTopAction_gt {c ell theta a : ℝ} (hc : 0 < c)
     (htheta : 1 / 2 < theta) (hthetaOne : theta < 1)
@@ -73,9 +55,6 @@ theorem capTopAction_gt {c ell theta a : ℝ} (hc : 0 < c)
     exact this.ne'
   exact (hbudget.trans_le (capScalarIntegral_lower hc.le ha hthetaOne)).trans_le
     (intervalIntegral.integral_mono_on_of_le_Ioo haTheta hbarrier hint hscalar)
-
-
-
 
 theorem exists_standardCapTopAction {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) (ell : ℝ) :

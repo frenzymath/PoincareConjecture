@@ -2,16 +2,6 @@ import Mathlib.Topology.Constructions
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X] {P L U : Set X}
-
-
 
 theorem exists_open_inter_of_relative_open (hLP : L ⊆ P)
     (hL : IsOpen ((Subtype.val : P → X) ⁻¹' L)) :
@@ -39,16 +27,12 @@ theorem exists_open_inter_of_relative_open (hLP : L ⊆ P)
     rw [hUL] at hx
     exact hx
 
-
-
 theorem interior_eq_inter_of_eq_inter_open (hU : IsOpen U) (hL : L = P ∩ U) :
     interior L = L ∩ interior P := by
   rw [hL, interior_inter, hU.interior_eq]
   ext x
   exact ⟨fun hx => ⟨⟨interior_subset hx.1, hx.2⟩, hx.1⟩,
     fun hx => ⟨hx.2, hx.1.2⟩⟩
-
-
 
 theorem frontier_eq_inter_of_eq_inter_open (hP : IsClosed P) (hL : IsClosed L)
     (hU : IsOpen U) (hLU : L = P ∩ U) :
@@ -65,15 +49,11 @@ theorem frontier_eq_inter_of_eq_inter_open (hP : IsClosed P) (hL : IsClosed L)
   · rintro ⟨hxL, _, hxnot⟩
     exact ⟨hxL, fun hx => hxnot hx.2⟩
 
-
-
 theorem isCompact_connectedComponentIn_of_mem (hP : IsCompact P)
     {x : X} (hxP : x ∈ P) : IsCompact (connectedComponentIn P x) := by
   let : CompactSpace P := isCompact_iff_compactSpace.mp hP
   rw [connectedComponentIn_eq_image hxP]
   exact isClosed_connectedComponent.isCompact.image continuous_subtype_val
-
-
 
 theorem isOpen_preimage_connectedComponentIn [LocallyConnectedSpace P]
     {x : X} (hxP : x ∈ P) :

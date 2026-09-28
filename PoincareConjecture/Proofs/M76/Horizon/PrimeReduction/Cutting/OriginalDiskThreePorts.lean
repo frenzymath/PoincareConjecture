@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.GlobalExteri
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalExteriorAnnulusDisks
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

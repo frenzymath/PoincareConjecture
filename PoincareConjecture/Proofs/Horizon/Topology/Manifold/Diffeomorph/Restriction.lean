@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace

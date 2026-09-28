@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexCohere
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubePrescribedNullhomotopy
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subdivision.SingularCycles
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w
@@ -23,8 +10,6 @@ open Set Topology CategoryTheory
 open scoped unitInterval Simplicial
 
 namespace Poincare.Topology
-
-
 
 theorem exists_coherent_singularSimplex_boundary_nullhomotopy
     (X : TopCat.{w}) (x : X) (N : ℕ)
@@ -75,8 +60,6 @@ theorem exists_coherent_singularSimplex_boundary_nullhomotopy
     have hyq : y = q ⟨i, z⟩ := Subtype.ext (hy.trans (hqface i z).symm)
     subst y
     exact htrace t i z
-
-
 
 theorem exists_coherent_singularSimplex_nullhomotopies
     (X : TopCat.{w}) [PathConnectedSpace X] (x : X) (N : ℕ)
@@ -146,8 +129,6 @@ theorem exists_coherent_singularSimplex_nullhomotopies
       subst k
       simpa only [K, dif_neg (Nat.not_succ_le_self N), dif_pos (Nat.le_refl N)] using hG s i t z
 
-
-
 theorem exists_singularSimplex_straightening
     (X : TopCat.{w}) [PathConnectedSpace X] (x : X) (n : ℕ)
     (hpi : ∀ (k : ℕ), 1 ≤ k → k ≤ n → Subsingleton (HomotopyGroup.Pi k X x)) :
@@ -210,8 +191,6 @@ theorem exists_singularSimplex_straightening
       ((htrace i 1 z).trans ((K n _ ((TopCat.toSSet.obj X).δ i s)).apply_one z))
   choose r H hr htrace using hext
   exact ⟨K, r, H, hcoh, hr, htrace⟩
-
-
 
 theorem exists_normalized_coherent_singularSimplex_nullhomotopies
     (X : TopCat.{w}) [PathConnectedSpace X] (x : X) (N : ℕ)
@@ -314,8 +293,6 @@ theorem exists_normalized_coherent_singularSimplex_nullhomotopies
         simpa only [K, dif_neg (Nat.not_succ_le_self N)] using
           hGconst (singularConstantSimplex X (N + 1) x) rfl t z
 
-
-
 theorem exists_normalized_singularSimplex_straightening
     (X : TopCat.{w}) [PathConnectedSpace X] (x : X) (n : ℕ)
     (hpi : ∀ (k : ℕ), 1 ≤ k → k ≤ n → Subsingleton (HomotopyGroup.Pi k X x)) :
@@ -399,8 +376,6 @@ theorem exists_normalized_singularSimplex_straightening
         ((htrace i 1 z).trans ((K n _ ((TopCat.toSSet.obj X).δ i s)).apply_one z))
   choose r H hr htrace hfix using hext
   exact ⟨K, r, H, hcoh, hconst, hr, htrace, hfix⟩
-
-
 
 theorem exists_singularSimplex_straightening_extension
     (X : TopCat.{w}) (n : ℕ)

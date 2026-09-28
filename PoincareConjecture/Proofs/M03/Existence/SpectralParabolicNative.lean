@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralEnergyNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +13,6 @@ namespace PoincareConjecture.SpectralHeatNative
 variable {iota : Type*}
 
 abbrev timeMeasure (T : ℝ) : Measure ℝ := volume.restrict (Ioc (0 : ℝ) T)
-
 
 def responseCoeff (lambda : iota → NNReal) (F : ℝ → State iota)
     (t : ℝ) (i : iota) : ℝ :=
@@ -80,8 +70,6 @@ private theorem scalar_lintegral_energy_le {T : ℝ} (hT : 0 ≤ T)
     intervalIntegral.integral_of_le hT, sq, mul_zero, add_zero] using
     spectralMode_energy_le (c := 0) (lambda i).coe_nonneg hT
       (continuousOn_coordinate hF i)
-
-
 
 theorem lintegral_response_energy_le [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))
@@ -157,8 +145,6 @@ theorem memLp_derivativeState [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     ((continuousOn_derivativeCoeff hF lambda i).mono Ioc_subset_Icc_self).aestronglyMeasurable
       measurableSet_Ioc) (derivative_energy_lt_top hT hF lambda)
 
-
-
 theorem derivativeState_add_generatorState [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))
     (lambda : iota → NNReal) :
@@ -176,7 +162,6 @@ theorem derivativeState_add_generatorState [Countable iota] {T : ℝ} (hT : 0 �
     stateOfCoeffs (generatorCoeff lambda F t) i = F t i
   rw [stateOfCoeffs_apply htD, stateOfCoeffs_apply htA]
   exact sub_add_cancel _ _
-
 
 theorem integral_response_energy_le [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))

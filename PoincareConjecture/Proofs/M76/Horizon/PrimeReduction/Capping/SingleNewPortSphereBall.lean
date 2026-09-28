@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.SingleNewPor
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.RealizedCollarEndpointAttachment
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.RetainedBallTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

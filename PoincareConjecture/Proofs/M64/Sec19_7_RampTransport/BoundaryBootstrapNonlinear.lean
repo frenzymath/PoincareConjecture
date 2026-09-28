@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapClassicalJets
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapForcingSecond
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -51,10 +41,6 @@ private theorem vector_partial_smooth {O : Set Plane} (hO : IsOpen O)
     ContDiffOn ℝ ∞ (boundaryVectorPartial i u) O :=
   (hu.fderiv_of_isOpen hO (by simp)).clm_apply contDiffOn_const
 
-
-
-
-
 theorem coordinate_quadraticForcing_memWkp_one
     {O : Set Plane} {T : Set Target} (hO : IsOpen O)
     (hfinite : volume O < ⊤) (hT : IsOpen T)
@@ -77,11 +63,6 @@ theorem coordinate_quadraticForcing_memWkp_one
   exact (quadraticForcing_memWkp_one hO hfinite hT hB (hs.of_le (by simp))
     (fun i => (hVs i).of_le (by simp)) huT (fun _ _ _ => rfl)
     (fun _ _ _ _ => rfl) hBb hDBb hVb hW).1
-
-
-
-
-
 
 theorem coordinate_quadraticForcing_memWkp_two_local
     {W O : Set Plane} {T : Set Target}

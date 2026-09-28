@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SphereSliceControl
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapSlab
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
-
 
 theorem exists_contained_slab_orthogonal_control {L ζ : ℝ} (hL : 0 ≤ L) (hζ : 0 < ζ) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -85,9 +70,6 @@ theorem exists_contained_slab_orthogonal_control {L ζ : ℝ} (hL : 0 ≤ L) (h�
     _ ≤ ‖F s - F s0‖ + ‖F s0 - A q.1‖ := norm_add_le _ _
     _ < ζ / 4 + ζ / 2 := add_lt_add_of_le_of_lt hdisp (hA q)
     _ < ζ := by linarith
-
-
-
 
 theorem exists_middle_overlap_slab_orthogonal_control {L κ ζ : ℝ}
     (hL : 0 ≤ L) (hκ : κ ∈ Ioc 0 1) (hζ : 0 < ζ) :

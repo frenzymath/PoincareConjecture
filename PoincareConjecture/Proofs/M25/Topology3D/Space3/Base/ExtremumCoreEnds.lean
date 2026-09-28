@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCompactSurfac
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreExtrema
 import Mathlib.Data.Fintype.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.morse_rest_cap_sign_and_unique
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -141,7 +131,6 @@ theorem FamilyCutState.morse_rest_cap_sign_and_unique
   have hxac := ((hinter a ha).ge hxa).2
   have hxbc := ((hinter b hb).ge hxb).2
   exact disjoint_left.mp (S.caps_disjoint hne) hxac (hxab ▸ hxbc)
-
 
 theorem FamilyCutState.exists_morse_core_one_end
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

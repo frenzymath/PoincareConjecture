@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.TensorRegularity
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +54,6 @@ theorem tensor_eq_composite (e : GeneralizedFlowCylinder F C a q I U)
   simp only [generalizedCylinderPullback, dif_pos hs, pullbackInner,
     roundCylinderPullback, mfderiv_comp z he hfd, ContinuousLinearMap.comp_apply,
     Function.comp_apply]
-
-
 
 theorem tensor_eq_of_pointMap_eq
     (e : GeneralizedFlowCylinder F C a q I U)

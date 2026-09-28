@@ -1,16 +1,5 @@
 import Mathlib.Analysis.ODE.ExistUnique
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 variable (f : E → E) {K L : ℝ≥0}
-
-
 
 theorem boundedField_intervalSolution (hK : LipschitzWith K f)
     (hL : ∀ x, ‖f x‖ ≤ L) (x : E) (r : ℝ) (hr : 0 < r) :
@@ -39,8 +26,6 @@ theorem boundedField_intervalSolution (hK : LipschitzWith K f)
   obtain ⟨γ, hγ, hd⟩ := hPicard.exists_eq_forall_mem_Icc_hasDerivWithinAt₀
   refine ⟨γ, hγ, fun t ht => ?_⟩
   exact (hd t (Ioo_subset_Icc_self ht)).hasDerivAt (Icc_mem_nhds ht.1 ht.2)
-
-
 
 theorem boundedField_globalSolution (hK : LipschitzWith K f)
     (hL : ∀ x, ‖f x‖ ≤ L) (x : E) :
@@ -81,7 +66,6 @@ theorem boundedField_globalSolution (hK : LipschitzWith K f)
     (hγode (radius t) t ht).congr_of_eventuallyEq heq
 
 omit [CompleteSpace E] in
-
 
 theorem boundedField_solution_unique (hK : LipschitzWith K f) {γ η : ℝ → E}
     (hγ : ∀ t, HasDerivAt γ (f (γ t)) t)

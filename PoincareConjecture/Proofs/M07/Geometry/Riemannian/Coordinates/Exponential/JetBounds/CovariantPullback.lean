@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.M
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Metric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Contraction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -29,8 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasDerivAt_metric_inner_along
     (g : RiemannianMetric n M)
@@ -129,8 +118,6 @@ theorem hasDerivAt_metric_inner_along
       ((isOpen_extChartAt_source a).mem_nhds ha)
     filter_upwards [hnear] with s hs
     exact (chartField_inner g V W hs).symm
-
-
 
 theorem covariantTensorDerivative_metric_pullback_zero
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

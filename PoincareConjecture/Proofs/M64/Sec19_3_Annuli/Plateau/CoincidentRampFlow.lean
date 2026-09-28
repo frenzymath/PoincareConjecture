@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedLabelC2Transport
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFields
 import PoincareConjecture.Statements.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +16,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem coincident_degreeOneRamp_flows_zero_area
     (P : M62.CircleProductData F circumference) (c0 c1 : ℝ → ℝ → P.charts.Point)
@@ -72,8 +57,6 @@ theorem coincident_degreeOneRamp_flows_zero_area
     A.area = 0 ∧ m64LeastAnnulusArea (P.flow.metric t) (fun x => c0 x t) (fun x => c1 x t) = 0
   rw [← htrace]
   exact ⟨A, hA, hinf⟩
-
-
 
 theorem m64AnnulusFlowConclusion_of_coincident_degreeOneRamps
     (G : M63AmbientGeometry F) (h : 0 < circumference)

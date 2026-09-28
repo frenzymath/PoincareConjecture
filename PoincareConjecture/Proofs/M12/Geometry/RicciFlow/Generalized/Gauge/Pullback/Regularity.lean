@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Pullback.Metric
 import PoincareConjecture.Proofs.M12.Geometry.Manifold.ContDiff.LinearMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

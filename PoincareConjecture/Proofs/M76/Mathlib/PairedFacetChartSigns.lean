@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetCentroidSigns
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -41,9 +32,6 @@ private theorem image_centroid_eq (hf : K.AffineOnFaces f) (hi : InjOn f K.space
   apply Finset.affineCombination_congr _ (fun _ _ => rfl)
   intro x hx
   exact hA (subset_convexHull ℝ _ hx)
-
-
-
 
 theorem AffineOnFaces.opposite_centroid_signs
     (hf : K.AffineOnFaces f) (hi : InjOn f K.space)

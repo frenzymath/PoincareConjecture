@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.ImplicitFunction.Uniq
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +28,6 @@ private theorem contDiff_pair
   fin_cases i
   · exact hf
   · exact hg
-
-
 
 theorem exists_smooth_horizontal_section_time
     {H : P × E₂ → E₂} (hH : ContDiff ℝ ∞ H) (hne : ∀ p x, H (p, x) ≠ 0)
@@ -72,8 +61,6 @@ theorem exists_smooth_horizontal_section_time
     · exact Or.inr (Or.inl (hc.trans (hτ q).ge))
   simpa only [EuclideanSpace.coe_proj, Function.comp_def,
     hfixed, Matrix.cons_val_zero] using hd
-
-
 
 theorem exists_horizontal_flow_coordinates
     {H : P × E₂ → E₂} (hH : ContDiff ℝ ∞ H) (hne : ∀ p x, H (p, x) ≠ 0)

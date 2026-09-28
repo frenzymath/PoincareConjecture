@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,9 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 def M45InitialSurgeryControl (epsilon kappa0 : ℝ) : Prop :=
   ∀ F : SurgeryFlowData.{u},

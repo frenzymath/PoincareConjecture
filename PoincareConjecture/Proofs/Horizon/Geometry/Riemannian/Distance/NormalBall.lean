@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalRadius
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalRadial
-
-
-
-
-
-
-

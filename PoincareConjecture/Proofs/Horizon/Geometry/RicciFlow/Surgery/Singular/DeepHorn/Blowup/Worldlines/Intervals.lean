@@ -1,15 +1,11 @@
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Tactic.Linarith
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.DeepHorn
-
-
 
 theorem overlapping_intervals_local {I J : Set ℝ}
     (hI : I.OrdConnected) (hJ : J.OrdConnected)
@@ -88,8 +84,6 @@ theorem overlapping_intervals_local {I J : Set ℝ}
     obtain ⟨delta, hd, hlocal⟩ :=
       hside hJ hI (interior_subset haJ) (interior_subset haI) hsJ hsI
     exact ⟨J, Or.inr rfl, hsJ, delta, hd, fun t ht => hlocal t (ht.symm)⟩
-
-
 
 theorem interval_contains_of_uniform_backward_extension
     {I : Set ℝ} (hI : I.OrdConnected) (hzero : 0 ∈ I)

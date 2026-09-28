@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapClassicalJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,11 +15,6 @@ open Poincare.Analysis.Sobolev
 open Weak Euclidean
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
-
 
 theorem weak_flat_equation_of_classical
     {O : Set Plane} (hO : IsOpen O) {u f : Plane → ℝ}
@@ -92,11 +77,6 @@ theorem weak_flat_equation_of_classical
     have hneg : Integrable (fun z => -(Q 0 z * phi z)) (volume.restrict O) := (hQI 0).neg
     rw [integral_congr_ae hae, integral_sub hneg (hQI 1), integral_neg]
   exact hright.symm
-
-
-
-
-
 
 theorem weak_coordinate_flat_equation_of_classical {n : ℕ}
     {O : Set Plane} (hO : IsOpen O) {u : Plane → EuclideanSpace ℝ (Fin n)}

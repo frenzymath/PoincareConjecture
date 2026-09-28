@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapIntersections
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,11 +10,6 @@ open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
 
-
-
-
-
-
 theorem m64Intrinsic_cap_chord_mem_carrier
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 ≤ r)
     {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) :
@@ -33,11 +17,6 @@ theorem m64Intrinsic_cap_chord_mem_carrier
       F '' {q : ℝ × ℝ | 0 ≤ q.1 ∧ 0 ≤ q.2 ∧ q.1 + q.2 ≤ r} := by
   refine ⟨((1 - t) * r, t * r), ?_, rfl⟩
   exact ⟨mul_nonneg (sub_nonneg.mpr ht.2) hr, mul_nonneg ht.1 hr, by dsimp; nlinarith⟩
-
-
-
-
-
 
 theorem m64Intrinsic_cap_open_chord_avoids_axes
     (H F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -79,11 +58,6 @@ theorem m64Intrinsic_cap_open_chord_avoids_axes
     dsimp at h
     exact (mul_pos (sub_pos.mpr ht.2) hr).ne' h.symm
 
-
-
-
-
-
 theorem m64Intrinsic_caps_loop_contacts_in_positive_axes
     {gamma : ℝ → AnnulusCoordinates} {T r : ℝ}
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -101,11 +75,6 @@ theorem m64Intrinsic_caps_loop_contacts_in_positive_axes
   · have hs' : T - s ∈ Icc (0 : ℝ) r := ⟨by linarith [hs.2], by linarith [hs.1]⟩
     refine ⟨(0, T - s), ⟨(hsmall (T - s) hs').2, Or.inl ⟨rfl, hs'.1⟩⟩, ?_⟩
     simpa only [sub_sub_cancel] using haxis' (T - s)
-
-
-
-
-
 
 theorem m64Intrinsic_cap_chord_loop_contact_parameters
     (H F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

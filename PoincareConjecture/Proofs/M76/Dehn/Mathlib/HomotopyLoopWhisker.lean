@@ -1,24 +1,11 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.InducedMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousMap.Homotopy
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {f g : C(X, Y)}
-
-
-
 
 theorem loop_quotient_eq_whisker (H : f.Homotopy g) {x : X} (rho : Path x x) :
     Path.Homotopic.Quotient.mk (rho.map f.continuous) =

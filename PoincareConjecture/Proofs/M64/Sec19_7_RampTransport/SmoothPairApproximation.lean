@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.TurningStability
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.AnnulusJoinArea
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -29,9 +16,6 @@ namespace PoincareConjecture.M64.RampTransport
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 structure SmoothRampAnnulusApproximation
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -60,9 +44,6 @@ variable [T2Space M] [CompactSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_smooth_ramp_annulus_approximation_of_retraction
     (P : M62.CircleProductData F circumference)
@@ -136,10 +117,6 @@ theorem exists_smooth_ramp_annulus_approximation_of_retraction
     first_turning := hturn0
     annulus := B
     area_error := hBarea }⟩
-
-
-
-
 
 theorem exists_smooth_ramp_annulus_approximation
     (P : M62.CircleProductData F circumference)

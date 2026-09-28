@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.TransportedStaticNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.TransportedEndTopology
 import PoincareConjecture.Proofs.M35.CapGeometry.BoundaryDefiningFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_transported_certificate (N : CapCertificate g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm3_28.FiniteCylinder
 import PoincareConjecture.Proofs.M30.Thm3_28.CompactBuffer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_uniform_curvatureDerivativeNorm_bound_on_terminal_subwindow
     (hShi : LocalCurvatureDerivativeEstimates.{u}) (n m : ℕ)

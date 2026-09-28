@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralFiniteSupport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +10,6 @@ open PoincareConjecture.Proofs.M02.Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
 
 theorem integralSupportHomology_twoPoint_bijective
     {X : Type u} [TopologicalSpace X] [T1Space X] (x y : X) (hxy : x ≠ y) (n : Nat) :

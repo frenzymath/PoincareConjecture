@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckInverseCompositionNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 

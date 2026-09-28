@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.BoundaryC
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open PreAbstractSimplicialComplex.ModTwoCochains

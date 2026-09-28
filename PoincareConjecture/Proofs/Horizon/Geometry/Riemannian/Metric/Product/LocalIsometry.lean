@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryRicci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M P : Type*} [TopologicalSpace M] [TopologicalSpace P]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n+1))) P] [IsManifold (𝓡 (n+1)) ∞ P]
-
 
 theorem ricci_eq_of_line_product_local_isometry
     (g : RiemannianMetric n M) (G : RiemannianMetric (n+1) P)

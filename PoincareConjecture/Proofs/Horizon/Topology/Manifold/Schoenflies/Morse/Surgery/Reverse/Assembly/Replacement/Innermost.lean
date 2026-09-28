@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Reconstruction
 
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -11,8 +9,6 @@ namespace Poincare.Manifold.Schoenflies.SphereSurgeryStep
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem child_filling_avoids_other_boundary_or
     {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)

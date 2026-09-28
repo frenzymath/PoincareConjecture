@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.CompactMinima
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
-
-
 
 theorem minimizingRegion_nonempty_of_slice_comparison
     (hM04 : RicciFlowCurvatureTheory.{0})

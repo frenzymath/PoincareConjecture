@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PlanarDiskCount
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

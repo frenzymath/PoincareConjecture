@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.NeckFlux
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem scalar_le_of_flux_comparison
     {R₁ R₂ α₁ α₂ C : ℝ}
@@ -37,8 +25,6 @@ theorem scalar_le_of_flux_comparison
     _ ≤ (C * α₁) * R₁ := mul_le_mul_of_nonneg_right hα hR₁.le
     _ = α₁ * (C * R₁) := by ring
 
-
-
 theorem scalar_le_twice_of_flux_error
     {R₁ R₂ α₁ α₂ δ : ℝ}
     (hR₁ : 0 < R₁) (hR₂ : 0 < R₂) (hδ : δ ≤ 1 / 3)
@@ -48,8 +34,6 @@ theorem scalar_le_twice_of_flux_error
   have hi := (abs_le.mp hinner).1
   have ho := (abs_le.mp houter).2
   exact scalar_le_of_flux_comparison hR₁ hR₂ (by linarith) (by linarith) hflux
-
-
 
 theorem scale_ge_of_scalar_center_le
     {g : RiemannianMetric 3 M} (N₁ N₂ : EpsilonNeck g) {C : ℝ}

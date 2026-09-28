@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PeriodicNormalMap
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +8,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_periodic_first_contact
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u) {P T : ℝ} (hP : 0 < P)

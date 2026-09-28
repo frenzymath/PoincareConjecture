@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeProductVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeAnnulusFamily
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ForwardMinimalCompetitor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,12 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
-
-
 
 theorem m64FreeCircleProductAnnulus_modulus_exists_forward
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)
@@ -73,10 +54,6 @@ theorem m64FreeCircleProductAnnulus_modulus_exists_forward
   obtain ⟨B, hB⟩ := hadmit h hδ
   exact ⟨B, hB.trans_le hh⟩
 
-
-
-
-
 theorem m64FreeCircleProductAnnulus_modulus_exists_forward_with_curvature_supremum
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)
     {c0 c1 : ℝ → ℝ → P.charts.Point}
@@ -104,11 +81,6 @@ theorem m64FreeCircleProductAnnulus_modulus_exists_forward_with_curvature_suprem
   exact m64FreeCircleProductAnnulus_modulus_exists_forward P hn hcirc hc0 hc1 ht
     sigma0 sigma1 A hr hminimum hconformal hO hdom hA
     (m64CurvatureSupremum_nonneg hbounded) (m64Curvature_le_supremum hbounded)
-
-
-
-
-
 
 theorem m64AnnulusFlow_forward_of_free_modulus_minimum
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Depth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -67,8 +57,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem abs_axialCutoff_sub_le_of_edist_ne_top (N : EpsilonNeck g)
     {φ : ℝ → ℝ} {a b C : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹)
@@ -94,8 +82,6 @@ theorem abs_axialCutoff_sub_le_of_edist_ne_top (N : EpsilonNeck g)
 end EpsilonNeck
 
 universe u
-
-
 
 theorem EpsilonNeck.exists_central_sphere_subset_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

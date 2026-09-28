@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.SpatialBounds
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinFlowJetBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Topology Bundle
 namespace PoincareConjecture.M28
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem eventually_within_bounds_closed_backward_of_curvature
     {n : ℕ} {α : Type*} {M : α → Type*}

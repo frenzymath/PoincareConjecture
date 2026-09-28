@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Scalar.MovingBarrier
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Maximum.CompactSlab
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

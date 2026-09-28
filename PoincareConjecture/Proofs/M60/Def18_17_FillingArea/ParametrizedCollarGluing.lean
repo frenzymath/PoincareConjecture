@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LoopCollar
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarGluing
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzDiskArea
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -24,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m60LoopCollar_lipschitz (g : RiemannianMetric 3 M)
     {γ₀ γ₁ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ₀)
@@ -45,9 +31,6 @@ theorem m60LoopCollar_lipschitz (g : RiemannianMetric 3 M)
   · intro z hz
     exact m60LoopCollar_contMDiffAt C γ₀ γ₁ hC
       (norm_pos_iff.mp (lt_of_lt_of_le (by norm_num : (0 : ℝ) < 1 / 4) hz))
-
-
-
 
 theorem m60Disk_attach_loopCollar (g : RiemannianMetric 3 M)
     {γ₀ γ₁ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ₀)

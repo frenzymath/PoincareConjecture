@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.ModelGram
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M03.MetricInverse
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,23 +26,18 @@ private abbrev CSecond := CE →L[ℝ] CFirst
 local instance : NormedAddCommGroup CSecond := ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ CSecond := ContinuousLinearMap.toNormedSpace
 
-
 def cylinderSphereProjection : CE →L[ℝ] EuclideanSpace ℝ (Fin 2) :=
   (ContinuousLinearMap.fst ℝ (EuclideanSpace ℝ (Fin 2)) ℝ).comp
     cylinderScalarCoordinateEquiv.toContinuousLinearMap
-
 
 def cylinderAxisProjection : CE →L[ℝ] ℝ :=
   (ContinuousLinearMap.snd ℝ (EuclideanSpace ℝ (Fin 2)) ℝ).comp
     cylinderScalarCoordinateEquiv.toContinuousLinearMap
 
-
-
 def cylinderModelMetricCoefficient (x : CE) : MetricCoefficient 3 :=
   (2 * sphereChartConformalFactor (cylinderSphereProjection x)) •
       (innerSL ℝ).bilinearComp cylinderSphereProjection cylinderSphereProjection +
     (innerSL ℝ).bilinearComp cylinderAxisProjection cylinderAxisProjection
-
 
 theorem cylinderModelMetricCoefficient_apply (x v w : CE) :
     cylinderModelMetricCoefficient x v w =
@@ -63,15 +47,11 @@ theorem cylinderModelMetricCoefficient_apply (x v w : CE) :
   simp [cylinderModelMetricCoefficient, cylinderSphereProjection, cylinderAxisProjection,
     ContinuousLinearMap.bilinearComp_apply, innerSL_apply_apply, mul_comm]
 
-
-
 theorem contDiff_cylinderModelMetricCoefficient :
     ContDiff ℝ ∞ cylinderModelMetricCoefficient := by
   exact (contDiff_const.mul
     (contDiff_sphereChartConformalFactor.comp cylinderSphereProjection.contDiff)).smul
       contDiff_const |>.add contDiff_const
-
-
 
 theorem cylinderModelMetricCoefficient_basis
     (q : UnitTwoSphere) (s : ℝ) (x : CE) (a b : Fin 3) :
@@ -85,8 +65,6 @@ theorem cylinderModelMetricCoefficient_basis
   fin_cases a <;> fin_cases b <;>
     simp [roundCylinderCoordinateBasis, cylinderScalarCoordinates, Matrix.diagonal,
       EuclideanSpace.inner_single_left, mul_comm]
-
-
 
 theorem cylinderModelMetricCoefficient_zero_isInvertible :
     (cylinderModelMetricCoefficient 0).IsInvertible := by
@@ -112,11 +90,8 @@ theorem cylinderModelMetricCoefficient_zero_isInvertible :
   · have hp := sq_pos_of_ne_zero ha
     nlinarith [sq_nonneg ‖(cylinderScalarCoordinateEquiv v).1‖]
 
-
 def cylinderModelTwoJet : MetricTwoJet 3 :=
   metricTwoJet cylinderModelMetricCoefficient 0
-
-
 
 theorem exists_cylinder_model_scalar_modulus {delta : ℝ} (hdelta : 0 < delta) :
     ∃ eta : ℝ, 0 < eta ∧ ∀ J : MetricTwoJet 3,

@@ -2,27 +2,16 @@ import PoincareConjecture.Definitions.M11TimeInterval
 import PoincareConjecture.Definitions.M13TimeRescaling
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
 
-
 noncomputable def parabolicTimePoint (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) : I.domain → (parabolicInterval Q hQ a I).domain :=
   fun t ↦ ⟨parabolicTime Q a t.val,
     (parabolicTime_mem_parabolicInterval_iff Q hQ a I t.val).2 t.property⟩
-
 
 noncomputable def parabolicTimePointInv (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) : (parabolicInterval Q hQ a I).domain → I.domain :=
@@ -39,13 +28,10 @@ theorem parabolicTimePointInv_val (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) (s : (parabolicInterval Q hQ a I).domain) :
     (parabolicTimePointInv Q hQ a I s).val = parabolicTimeInv Q a s.val := rfl
 
-
 theorem parabolicInterval_subset (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I J : SpacetimeInterval) (h : I.domain ⊆ J.domain) :
     (parabolicInterval Q hQ a I).domain ⊆ (parabolicInterval Q hQ a J).domain :=
   Set.image_mono h
-
-
 
 structure ParabolicIntervalTransport (T : SpacetimeIntervalSystem)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) where
@@ -70,7 +56,6 @@ namespace ParabolicIntervalTransport
 
 variable {T : SpacetimeIntervalSystem} {Q : ℝ} {hQ : 0 < Q} {a : ℝ}
 
-
 theorem inclusion_commutes (P : ParabolicIntervalTransport T Q hQ a)
     (I J : SpacetimeInterval) (h : I.domain ⊆ J.domain) (t : (T.interval I).Point) :
     P.diffeomorph J (spacetimeIntervalInclusion (T.interval I) (T.interval J) h t) =
@@ -79,7 +64,6 @@ theorem inclusion_commutes (P : ParabolicIntervalTransport T Q hQ a)
         (P.diffeomorph I t) := by
   rw [P.forward_eq J, P.forward_eq I]
   rfl
-
 
 theorem inverse_inclusion_commutes (P : ParabolicIntervalTransport T Q hQ a)
     (I J : SpacetimeInterval) (h : I.domain ⊆ J.domain)

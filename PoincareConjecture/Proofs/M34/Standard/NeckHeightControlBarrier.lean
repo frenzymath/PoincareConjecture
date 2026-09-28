@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlExtension
 import PoincareConjecture.Proofs.M34.Standard.NeckSharpMetricComparisonPath
 import PoincareConjecture.Proofs.M34.Mathlib.LastCrossingLevel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
 
 theorem collar_height_le_pathELength_of_axial_speed
     {A : ℝ} (hA : 0 ≤ A)
@@ -71,9 +60,6 @@ theorem collar_height_le_pathELength_of_axial_speed
       ⟨g.toRiemannianMetric⟩
     exact Manifold.pathELength_mono hu.1 le_rfl
   exact hlength.trans (mul_le_mul' le_rfl hmono)
-
-
-
 
 theorem collar_height_le_pathELength
     {c d b : ℝ} (hc : -N.epsilon⁻¹ < c) (hcd : c < d) (hdb : d < b)

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurfaceMorse
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem RegularSurgeryEvent.retained_central_eq
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -29,8 +16,6 @@ theorem RegularSurgeryEvent.retained_central_eq
     E.child i (p, 0) = parent ((E.retainedChart i) p, 0) := by
   obtain ⟨_, _, _, _, _, _, _, _, _, _, hret⟩ := E.retained_spec i
   simpa only [mul_zero] using hret p hp 0 (by norm_num)
-
-
 
 theorem RegularSurgeryEvent.exists_unique_retained_disc_of_height_avoidance
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -91,8 +76,6 @@ theorem RegularSurgeryEvent.exists_unique_retained_disc_of_height_avoidance
   · exact disjoint_left.mp hcores hkCore hiCore
   · exact hki rfl
 
-
-
 theorem RegularSurgeryEvent.retained_height_critical_iff
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (i : Fin 2)
@@ -143,8 +126,6 @@ theorem RegularSurgeryEvent.retained_height_critical_iff
     exact congrArg
       (fun A : TangentSpace (𝓡 2) (ret p) →L[ℝ] ℝ =>
         A (mfderiv (𝓡 2) (𝓡 2) ret p v)) hfzero
-
-
 
 theorem RegularSurgeryEvent.retained_morse_chart
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

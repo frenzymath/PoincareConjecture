@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_sectionalCurvature_le_of_gaussian
     (N : IntrinsicAnnulus) (K : ℝ)
@@ -32,9 +18,6 @@ theorem m64Intrinsic_sectionalCurvature_le_of_gaussian
     N.connection.sectionalCurvature p u v ≤ K := by
   rw [N.connection.sectionalCurvature_eq_half_scalarCurvature p u v hgram]
   exact hK p hp
-
-
-
 
 theorem m64Intrinsic_curvatureTensor_quadratic_le_of_gaussian
     (N : IntrinsicAnnulus) (K : ℝ)

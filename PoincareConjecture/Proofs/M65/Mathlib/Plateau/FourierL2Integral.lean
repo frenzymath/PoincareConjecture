@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiL2
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.FourierPotential
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +12,6 @@ namespace MeasureTheory.Lp
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
-
-
 
 theorem fourierInv_coe_ae_of_integrable (u : Lp ℂ 2 (volume : Measure E))
     (hu : Integrable (u : E → ℂ)) :
@@ -62,9 +47,6 @@ end MeasureTheory.Lp
 
 namespace Complex
 
-
-
-
 theorem beurlingL2_schwartz_ae (h : 𝓢(ℂ, ℂ)) :
     beurlingL2 (h.toLp 2 volume) =ᵐ[volume]
       𝓕⁻ (fun ξ => (conj ξ / ξ) * (𝓕 h : 𝓢(ℂ, ℂ)) ξ) := by
@@ -90,11 +72,6 @@ theorem beurlingL2_schwartz_ae (h : 𝓢(ℂ, ℂ)) :
     fourierInv_fourier_eq _
   rw [hreps] at hinv
   exact hinv.trans (Eventually.of_forall (Real.fourierInv_congr_ae hu))
-
-
-
-
-
 
 theorem dz_schwartzDbarPotential_beurlingL2_ae (h : 𝓢(ℂ, ℂ)) :
     (fun z => (fderiv ℝ (schwartzDbarPotential h) z 1 -

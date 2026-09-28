@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoMarkedBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLClosedExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -98,11 +89,6 @@ private theorem marked_cap_regions
     cases j <;> assumption
   · intro j
     cases j <;> assumption
-
-
-
-
-
 
 theorem exists_hamilton_indexTwo_relative_placement
     {ι : Type*} [Fintype ι] (hdim : Fintype.card ι = 3)

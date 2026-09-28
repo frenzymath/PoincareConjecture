@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -21,8 +12,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
-
-
 
 noncomputable def handleAmbientRetraction : C(X, R) := by
   let clip : ℝ → Icc (-1 : ℝ) 1 := projIcc (-1) 1 (by norm_num)
@@ -39,7 +28,6 @@ noncomputable def handleAmbientRetraction : C(X, R) := by
       (hclip.comp ((continuous_apply i).comp continuous_fst))).prodMk
         continuous_snd).subtype_mk _⟩
 
-
 theorem handleAmbientRetraction_apply_coe (x : R) :
     handleAmbientRetraction (x : X) = x := by
   apply Subtype.ext
@@ -53,8 +41,6 @@ theorem handleAmbientRetraction_apply_coe (x : R) :
     change (projIcc (-1) 1 (by norm_num) (x.val.1 i) : ℝ) = x.val.1 i
     exact congrArg Subtype.val (projIcc_of_mem (by norm_num) hi)
   · rfl
-
-
 
 theorem handle_ambient_pi1_injective (x : R) :
     Function.Injective (FundamentalGroup.map

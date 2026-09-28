@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +7,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_standard_evolving_neck_initial_buffer
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

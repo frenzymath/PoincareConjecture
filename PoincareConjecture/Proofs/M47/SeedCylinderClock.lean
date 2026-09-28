@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -118,8 +109,6 @@ variable {nextOrigin nextScale : ℝ} {J : Set ℝ}
   (hmem : MapsTo phi J I) (hmono : StrictMonoOn phi J)
   (hclock : ∀ s ∈ J, nextOrigin + s / nextScale = origin + phi s / scale)
 
-
-
 noncomputable def seedCylinderReclock :
     SurgeryFlowCylinder F C nextOrigin nextScale J U where
   scale_pos := hscale
@@ -150,14 +139,10 @@ noncomputable def seedCylinderReclock :
     clock_surgery e (phi s) (hmem hs) (phi t) (hmem ht) _ _
       (hclock s hs) (hclock t ht) hT ht' x hx
 
-
-
 theorem seedCylinderReclock_forward_heq (s : ℝ) (hs : s ∈ J) (x : C.carrier) :
     HEq ((seedCylinderReclock e hscale hJ phi hmem hmono hclock).forward s hs x)
       (e.forward (phi s) (hmem hs) x) := by
   exact clockForward_heq e (phi s) (hmem hs) _ (hclock s hs) x
-
-
 
 theorem seedCylinderReclock_curvature {K : ℝ}
     (hK : ∀ s (hs : s ∈ I), ∀ x ∈ U,

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionUniqueness
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +12,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 variable (u : UnitTwoSphere)
-
-
-
 
 theorem reference_cut_conjugacy
     (surface : Set E3) (V : Set ℝ) (c0 : ℝ)

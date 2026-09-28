@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceIn
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceInnerFillingField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Topology NNReal
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_inner_reference_filling :
     let U : E2 → ℝ := fun v =>

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_2_Constants.ProducerEndpoints
 import PoincareConjecture.Proofs.M45.InitialGeometry
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem initial_curvature_on_free_interval (F : SurgeryFlowData.{u})
     (hunique : RicciFlowUniqueness 3 (F.slice 0).carrier)
@@ -38,8 +27,6 @@ theorem initial_curvature_on_free_interval (F : SurgeryFlowData.{u})
   have heq := initialSlab_curvature_eq F hunique G hG htB S tt ((S.identify tt).symm x)
   have hbound := hRm t ⟨ht.le, htB⟩ ((S.identify tt).symm x)
   simpa only [Diffeomorph.apply_symm_apply] using heq.trans_le hbound
-
-
 
 theorem no_initial_surgery_of_regular_curvature (F : SurgeryFlowData.{u})
     (hbound : ∀ t : ℝ, 0 < t → t ∈ F.time_domain → t ≤ 1 / 16 →
@@ -75,9 +62,6 @@ theorem no_initial_surgery_of_regular_curvature (F : SurgeryFlowData.{u})
     intro s hs hst
     exact Set.disjoint_left.mp hfree hs ⟨hst.1, hst.2.trans_lt ht.2⟩
   exact (not_lt_of_ge (hbound t htpos htF htB' hfree' x)) hx
-
-
-
 
 theorem initialCaptureProducer
     (h03 : ∀ (M : Type u) [TopologicalSpace M] [T2Space M]

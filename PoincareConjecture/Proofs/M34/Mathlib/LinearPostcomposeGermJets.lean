@@ -1,23 +1,11 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis.Calculus
-
-
-
 
 theorem clm_comp_germ_jet_bound
     {𝕜 E F G : Type*} [NontriviallyNormedField 𝕜]

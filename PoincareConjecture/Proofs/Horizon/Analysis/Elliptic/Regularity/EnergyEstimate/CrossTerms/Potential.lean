@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Principal
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -90,7 +82,6 @@ private lemma aestronglyMeasurable_v_test
       (volume : Measure E) :=
     hη_sq_cont.aestronglyMeasurable.mul h_dqu_aesm
   exact aestronglyMeasurable_diffQuot (d := d) k (-h) h_g_aesm
-
 
 theorem c_term_bound_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -456,7 +447,6 @@ theorem c_term_bound_nonsmooth_quantitative
         C * ∫ x in Ω', (u x) ^ 2 ∂(volume : Measure E) := by ring
     linarith
   linarith
-
 
 theorem c_term_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

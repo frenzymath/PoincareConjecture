@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M58
 import PoincareConjecture.Proofs.M60.Filling
 import PoincareConjecture.Statements.M60Area
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m60ShortLoopAreaClaim_from_M58
     (P58 : RepairedShortLoopTrivialityTheory.{u}) :

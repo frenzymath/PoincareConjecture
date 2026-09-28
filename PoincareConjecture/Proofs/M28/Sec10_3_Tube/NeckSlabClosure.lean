@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem closure_region_eq_coordinate_slab (N : EpsilonNeck g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hab : a < b) (hb : b < N.epsilon⁻¹) :

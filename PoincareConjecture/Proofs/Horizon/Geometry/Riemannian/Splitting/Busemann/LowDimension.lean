@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineCoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.GradientBound
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,7 +13,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem not_minimizing_line_dim_zero
     {M : Type*} [TopologicalSpace M] [PreconnectedSpace M]
@@ -44,7 +33,6 @@ section AnyDimension
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem noncompactSpace_of_minimizing_line (g : RiemannianMetric n M) {γ : ℝ → M}
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|) :
@@ -78,8 +66,6 @@ section DimensionOne
 
 variable {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
-
 
 theorem contMDiff_busemann_and_surjective_line_dim_one
     (g : RiemannianMetric 1 M) (hcomplete : MetricComplete g) {γ : ℝ → M}
@@ -118,8 +104,6 @@ theorem contMDiff_busemann_and_surjective_line_dim_one
     refine ⟨a * (e x - e (γ 0)), e.injective ?_⟩
     rw [hcoord]
     rcases ha with rfl | rfl <;> ring
-
-
 
 theorem busemann_properties_dim_one
     (g : RiemannianMetric 1 M) (D : LeviCivitaData g)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FiniteHilbertEquiv
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalFormOperator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

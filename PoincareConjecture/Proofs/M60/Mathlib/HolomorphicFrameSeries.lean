@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.CauchyRiemannPolar
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.Normed.Ring.Units
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,13 +14,8 @@ namespace PoincareConjecture.M60
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V] [CompleteSpace V]
 
-
-
-
 noncomputable def holomorphicFrameSum (A : ℂ → V →L[ℂ] V) (z : ℂ) : V →L[ℂ] V :=
   ∑' j, holomorphicFrameTerm A j z
-
-
 
 theorem summable_holomorphicFrameTerm {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
@@ -47,8 +34,6 @@ theorem summable_holomorphicFrameTerm {A : ℂ → V →L[ℂ] V}
     intro j
     exact (hb j z).2
 
-
-
 theorem hasFDerivAt_holomorphicFrameSum {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
     {a q : ℝ} (ha : 0 ≤ a) (hq : 0 ≤ q) (hq1 : q < 1)
@@ -61,8 +46,6 @@ theorem hasFDerivAt_holomorphicFrameSum {A : ℂ → V →L[ℂ] V}
     (fun j w => ((contDiff_holomorphicFrameTerm hA hc j).differentiable (by simp) w).hasFDerivAt)
     (fun j w => (hb j w).2)
     (summable_holomorphicFrameTerm hA hc ha hq hq1 hsmall hAb hDAb 0).1 z
-
-
 
 theorem contDiff_holomorphicFrameSum {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
@@ -77,8 +60,6 @@ theorem contDiff_holomorphicFrameSum {A : ℂ → V →L[ℂ] V}
     (fun j => (contDiff_holomorphicFrameTerm hA hc j).continuous_fderiv (by simp))
     (summable_geometric_of_lt_one hq hq1)
   exact fun j z => (holomorphicFrameTerm_bounds hA hc ha hq hsmall hAb hDAb j z).2
-
-
 
 theorem norm_holomorphicFrameSum_sub_one_le {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)
@@ -96,8 +77,6 @@ theorem norm_holomorphicFrameSum_sub_one_le {A : ℂ → V →L[ℂ] V}
     simp
   · intro j
     exact (holomorphicFrameTerm_bounds hA hc ha hq hsmall hAb hDAb (j + 1) z).1
-
-
 
 theorem isUnit_holomorphicFrameSum {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)

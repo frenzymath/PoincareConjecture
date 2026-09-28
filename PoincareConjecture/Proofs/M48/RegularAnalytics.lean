@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M48.LimitRadius
 import PoincareConjecture.Proofs.M48.ObservedAnalytics
 import PoincareConjecture.Proofs.M48.RegularSliceTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

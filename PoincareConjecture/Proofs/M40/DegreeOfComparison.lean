@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M40ComparisonHomotopy
 import PoincareConjecture.Proofs.M40.RetainedGeometry
 import PoincareConjecture.Proofs.M40.Mathlib.LocalDegree
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M40
-
-
 
 theorem surgeryThirdHomologyMap_eq_of_homotopic
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
@@ -36,8 +25,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {I : RepairedComparisonHomotopyInput D T hT}
   (Q : RepairedComparisonMapConclusion I.toRepairedComparisonMapInput)
 
-
-
 theorem comparison_homology_bijective :
     Function.Bijective (surgeryThirdHomologyMap Q.map) := by
   let : CompactSpace I.parent.carrier.carrier :=
@@ -50,21 +37,15 @@ theorem comparison_homology_bijective :
   exact PoincareConjecture.Proofs.M40.integralThirdHomologyMap_bijective_of_unique_preimage
     Q.map x (retainedOpenPartialHomeomorph Q) hx (fun _ _ => rfl) huniq
 
-
-
 noncomputable def comparisonHomologyEquiv :
     surgeryThirdHomology I.parent.carrier.carrier ≃ₗ[ℤ]
       surgeryThirdHomology I.child.carrier.carrier :=
   LinearEquiv.ofBijective (surgeryThirdHomologyMap Q.map)
     (comparison_homology_bijective Q)
 
-
-
 noncomputable def comparisonChildOrientation :
     surgeryThirdHomology I.child.carrier.carrier ≃ₗ[ℤ] ULift.{u} ℤ :=
   (comparisonHomologyEquiv Q).symm.trans I.parent_orientation
-
-
 
 theorem comparison_degree_one (z : surgeryThirdHomology I.parent.carrier.carrier) :
     comparisonChildOrientation Q (surgeryThirdHomologyMap Q.map z) =
@@ -72,8 +53,6 @@ theorem comparison_degree_one (z : surgeryThirdHomology I.parent.carrier.carrier
   change I.parent_orientation
     ((comparisonHomologyEquiv Q).symm (comparisonHomologyEquiv Q z)) = _
   rw [LinearEquiv.symm_apply_apply]
-
-
 
 theorem comparison_degree_one_of_homotopic
     {f : C(I.parent.carrier.carrier, I.child.carrier.carrier)}

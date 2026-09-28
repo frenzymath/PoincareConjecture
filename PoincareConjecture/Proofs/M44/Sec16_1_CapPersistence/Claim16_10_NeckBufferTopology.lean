@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 import PoincareConjecture.Proofs.M44.Mathlib.PartialHomeomorphCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def neckPartialDiffeomorph (N : EpsilonNeck g) :
     PartialDiffeomorph IC (𝓡 3) RoundCylinderSpace M ∞ where
   toFun := N.coordinate_map
@@ -43,8 +32,6 @@ noncomputable def neckPartialDiffeomorph (N : EpsilonNeck g) :
   contMDiffOn_toFun := N.coordinate_map_smooth
   contMDiffOn_invFun := N.coordinate_inverse_smooth
 
-
-
 theorem neck_region_eq_image (N : EpsilonNeck g) {b : ℝ} (hb : b < N.epsilon⁻¹) :
     N.region (-b) b = N.coordinate_map '' (univ ×ˢ Ioo (-b) b) := by
   ext x
@@ -57,9 +44,6 @@ theorem neck_region_eq_image (N : EpsilonNeck g) {b : ℝ} (hb : b < N.epsilon�
     refine ⟨neck_coordinate_mem N z hsource, ?_⟩
     rw [neck_inverse_coordinate N z hsource]
     exact hz.2
-
-
-
 
 theorem neck_closure_region [T2Space M] (N : EpsilonNeck g)
     {b : ℝ} (hb0 : 0 < b) (hb : b < N.epsilon⁻¹) :
@@ -81,17 +65,12 @@ theorem neck_closure_region [T2Space M] (N : EpsilonNeck g)
   rw [neck_region_eq_image N hb]
   exact h.symm
 
-
-
 theorem neck_closure_region_subset [T2Space M] (N : EpsilonNeck g)
     {b : ℝ} (hb0 : 0 < b) (hb : b < N.epsilon⁻¹) :
     closure (N.region (-b) b) ⊆ N.carrier := by
   rw [neck_closure_region N hb0 hb]
   rintro _ ⟨z, hz, rfl⟩
   exact neck_coordinate_mem N z ⟨mem_univ _, by linarith [hz.2.1], hz.2.2.trans_lt hb⟩
-
-
-
 
 theorem neck_frontier_region_height [T2Space M] (N : EpsilonNeck g)
     {b : ℝ} (hb0 : 0 < b) (hb : b < N.epsilon⁻¹)

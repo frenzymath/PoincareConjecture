@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.AmbientSlabAvoidance
 import PoincareConjecture.Proofs.M02.Topology.AmbientGridPerturbation
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeTangent
 
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

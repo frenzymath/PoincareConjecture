@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.CompactConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ENNReal NNReal
 

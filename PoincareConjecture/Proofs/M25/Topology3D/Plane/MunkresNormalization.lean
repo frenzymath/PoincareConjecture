@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.MunkresSlide
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_munkres_normalization (h : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))
     {K : Set (ℝ × ℝ)} (hK : IsCompact K) (hfix : ∀ x, x ∉ K → h x = x) :

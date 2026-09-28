@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ModTwoMayerVietorisChains
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -162,7 +155,6 @@ theorem connecting_difference (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     ← difference_transport, ← Category.assoc,
     (openChainSequence_shortExact A B).δ_comp, zero_comp, comp_zero]
 
-
 theorem exact_pair (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (hcover : A ∪ B = Set.univ) (n : ℕ) :
     (ShortComplex.mk _ _ (difference_sum A B hA hB hcover n)).Exact := by
@@ -175,7 +167,6 @@ theorem exact_pair (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (S₂ := ShortComplex.mk _ _ (difference_sum A B hA hB hcover n))
     (difference_transport A B n).symm (sum_transport A B hA hB hcover n)
   exact ShortComplex.exact_of_iso e ((openChainSequence_shortExact A B).homology_exact₂ n)
-
 
 theorem exact_ambient (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (hcover : A ∪ B = Set.univ) (n : ℕ) :
@@ -190,7 +181,6 @@ theorem exact_ambient (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (connecting_transport A B hA hB hcover n)
   exact ShortComplex.exact_of_iso e (hS.homology_exact₃ (n + 1) n rfl)
 
-
 theorem exact_intersection (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (hcover : A ∪ B = Set.univ) (n : ℕ) :
     (ShortComplex.mk _ _ (connecting_difference A B hA hB hcover n)).Exact := by
@@ -202,7 +192,6 @@ theorem exact_intersection (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (S₂ := ShortComplex.mk _ _ (connecting_difference A B hA hB hcover n))
     (connecting_transport A B hA hB hcover n) (difference_transport A B n).symm
   exact ShortComplex.exact_of_iso e (hS.homology_exact₁ (n + 1) n rfl)
-
 
 theorem sum_injective_of_intersection_h1_zero (A B : Set X)
     (hA : IsOpen A) (hB : IsOpen B) (hcover : A ∪ B = Set.univ)
@@ -243,7 +232,6 @@ theorem sum_connectingToKernel (A B : Set X)
   intro x
   apply Subtype.ext
   exact congrArg (fun f => f x) (sum_connecting A B hA hB hcover 0)
-
 
 theorem h1_kernel_shortExact (A B : Set X)
     (hA : IsOpen A) (hB : IsOpen B) (hcover : A ∪ B = Set.univ)

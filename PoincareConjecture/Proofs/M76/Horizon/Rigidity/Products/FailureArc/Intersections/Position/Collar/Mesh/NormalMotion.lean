@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped NNReal
@@ -47,9 +39,6 @@ theorem finitePiecewiseAffineOn_normalMargin (r : ℝ)
     simp only [Prod.norm_def, Real.norm_eq_abs, abs_eq_max_neg]
   have hr := (K.affineOnFaces_affine (ContinuousAffineMap.const ℝ E r)).finitePiecewiseAffineOn hK
   exact (hr.sub hn).positivePart
-
-
-
 
 theorem exists_normal_motion (r c : ℝ) (hc : |c| < 1) :
     ∃ H : E ≃ₜ E,
@@ -99,9 +88,6 @@ theorem exists_normal_motion (r c : ℝ) (hc : |c| < 1) :
     rfl
   · intro p
     simpa only [H.apply_symm_apply] using (hfirst (H.symm p)).symm
-
-
-
 
 theorem exists_normal_motion_avoiding_plane {r c : ℝ}
     (hc : |c| < 1) (hc0 : c ≠ 0) :

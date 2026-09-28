@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeImage
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_BufferBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
 
-
-
 theorem terminalSourceNormal_edist_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M N ∞) (hsource : e.source = univ)
@@ -39,8 +29,6 @@ theorem terminalSourceNormal_edist_le
     (fun z v => (hmetric z v v).symm.le) x y
 
 variable [T3Space M]
-
-
 
 theorem terminalSourceNormal_ball_image
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -71,8 +59,6 @@ theorem terminalSourceNormal_ball_image
 variable [T3Space N] [MeasurableSpace M] [BorelSpace M]
   [MeasurableSpace N] [BorelSpace N]
   [SecondCountableTopology M] [SecondCountableTopology N]
-
-
 
 theorem terminalSourceNormal_ball_volume
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -112,7 +98,6 @@ theorem terminalSourceNormal_ball_volume
 omit [T3Space M] [T3Space N] [MeasurableSpace M] [BorelSpace M]
   [MeasurableSpace N] [BorelSpace N]
   [SecondCountableTopology M] [SecondCountableTopology N] in
-
 
 theorem terminalSourceNormal_compact_ball
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

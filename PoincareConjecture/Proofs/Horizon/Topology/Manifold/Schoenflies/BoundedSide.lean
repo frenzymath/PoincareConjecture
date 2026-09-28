@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallExterior
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.DomainIdentification
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -33,8 +22,6 @@ theorem closure_image_ball (e : OpenPartialHomeomorph E E)
     rw [closure_ball (0 : E) (by norm_num : (1 : Real) ≠ 0)]
     exact e.continuousOn.mono hs
   simpa only [closure_ball (0 : E) (by norm_num : (1 : Real) ≠ 0)] using hf.image_closure
-
-
 
 theorem image_closedBall_eq_closure_of_boundary
     (e : OpenPartialHomeomorph E E) (hdim : 1 < Module.rank Real E)

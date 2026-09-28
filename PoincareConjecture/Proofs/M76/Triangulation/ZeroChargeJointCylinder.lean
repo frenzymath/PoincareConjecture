@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,12 +11,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_joint_finitePL_cylinder
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

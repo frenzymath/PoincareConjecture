@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckJetAffineNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckQuasilinearEstimateNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricProducerNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -73,7 +67,6 @@ theorem orderedDerivative_metricDifferenceExpr
     rw [ih]
     rfl
 
-
 theorem degree_principalTermTailExpr_le (e : Fin n → iota)
     (a b i j : Fin n) (word : List iota) :
     (principalTermTailExpr e a b i j word).degree ≤ word.length + 2 := by
@@ -88,7 +81,6 @@ theorem degree_principalTermTailExpr_le (e : Fin n → iota)
   rw [degree_metricDifferenceExpr]
   simp only [List.length_append, List.length_cons, List.length_nil]
   omega
-
 
 theorem metricOrder_principalTermTailExpr_le (e : Fin n → iota)
     (a b i j : Fin n) (word : List iota) (label : Bool) :
@@ -137,7 +129,6 @@ theorem principalTail_highAtom_order (e : Fin n → iota) (i j : Fin n)
 
 def residualExpr (e : Fin n → iota) (i j : Fin n) : Expr iota n :=
   .add (principalExpr e i j) (lowerPerturbationExpr e i j)
-
 
 def residualTraceExpr (e : Fin n → iota) (i j : Fin n) (word : List iota) : Expr iota n :=
   .add (principalTailExpr e i j word) ((lowerPerturbationExpr e i j).orderedDerivative word)
@@ -205,7 +196,6 @@ theorem eval_inverseDifferenceExpr (a b : Fin n) (x : M) :
       (G false x)⁻¹ a b - (G true x)⁻¹ a b := by
   simp only [inverseDifferenceExpr, Expr.eval, nativeValues, sub_eq_add_neg]
 
-
 theorem inverseDifferenceExpr_eq_zero (a b : Fin n) (x : M)
     (hG : G false x = G true x) :
     (inverseDifferenceExpr a b).eval (nativeValues F G x) = 0 := by
@@ -241,7 +231,6 @@ theorem eval_metricDifferenceExpr (word : List iota) (i j : Fin n) (x : M) :
   have h := metricDifferenceExpr_ordered_eval F G hG hdet word [] i j x
   simpa only [List.append_nil, metricDifferenceExpr, Expr.eval, nativeValues,
     directionalWord_nil, sub_eq_add_neg] using h
-
 
 theorem ordered_principalTermExpr_split (e : Fin n → iota) (a b i j : Fin n)
     (word : List iota) (x : M) :
@@ -290,7 +279,6 @@ theorem eval_principalTopExpr (e : Fin n → iota) (i j : Fin n)
     (metricDifferenceExpr (word ++ [e a, e b]) i j).eval (nativeValues F G x) = _
   rw [eval_inverseDifferenceExpr F G, eval_metricDifferenceExpr F G hG hdet]
 
-
 theorem ordered_residualExpr_split (e : Fin n → iota) (i j : Fin n)
     (word : List iota) (x : M) :
     ((residualExpr e i j).orderedDerivative word).eval (nativeValues F G x) =
@@ -323,7 +311,6 @@ theorem eval_principalExpr_compatible (i j : Fin n) (x : M) :
     ((C.jet g x).second k l i j + -(C.jet g0 x).second k l i j)) = _
   simp only [lowerJetContraction, Cutoffs.secondDifference, Matrix.sub_apply,
     Pi.sub_apply, sub_eq_add_neg]
-
 
 theorem eval_residualExpr_compatible (i j : Fin n) (x : M) :
     (residualExpr Sum.inl i j).eval
@@ -367,7 +354,6 @@ theorem ordered_residualExpr_compatible (i j : Fin n) (word : List iota) (x : M)
         fun y => C.residual g0 g y i j :=
     funext (eval_residualExpr_compatible F C g0 g i j)
   rw [heq, directionalWord_combined_inr]
-
 
 theorem residual_top_trace_compatible (i j : Fin n) (word : List iota) (x : M) :
     directionalWord F word (fun y => C.residual g0 g y i j) x =

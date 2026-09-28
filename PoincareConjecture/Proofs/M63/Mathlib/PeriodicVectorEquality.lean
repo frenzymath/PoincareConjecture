@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicVectorUniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem norm_parabolic_difference_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -40,10 +28,6 @@ theorem norm_parabolic_difference_le
         L * (‖u₁ - u₂‖ + ‖p₁ - p₂‖) :=
       add_le_add (mul_le_mul hA hq₂ (norm_nonneg _) (by positivity)) hB
     _ = _ := by ring
-
-
-
-
 
 theorem periodic_vector_eq_of_parabolic_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -6,8 +6,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 structure SurgeryCanonicalExtension {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (Q : SurgeryNoncollapseExtension.{u} p) where
   rNext : ℝ

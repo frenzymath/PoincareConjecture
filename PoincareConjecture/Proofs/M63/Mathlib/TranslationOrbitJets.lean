@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslation
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem iteratedDeriv_comp_clm {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -29,11 +18,6 @@ theorem iteratedDeriv_comp_clm {E F : Type*}
   rw [iteratedDeriv_eq_iteratedFDeriv,
     A.iteratedFDeriv_comp_left hu le_rfl, iteratedDeriv_eq_iteratedFDeriv]
   rfl
-
-
-
-
-
 
 theorem spatial_jets_of_smooth_translation_orbit
     {L : ℝ} [Fact (0 < L)] {K E : Type*}

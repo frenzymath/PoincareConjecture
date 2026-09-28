@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessEquation
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +23,6 @@ local instance suCompactBoundsTrilinearNormedGroup :
 local instance suCompactBoundsTrilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem suAlphaHessianTerm_bound
     (G : E →L[ℝ] E →L[ℝ] ℝ) (v : Fin 2 → E) (H : Fin 2 → Fin 2 → E)
@@ -85,9 +80,6 @@ theorem suAlphaHessianTerm_bound
     _ = (4 * K * T) * (S / d) := by ring
     _ ≤ (4 * K * T) * (1 / kappa) := by gcongr
     _ = (4 * K / kappa) * T := by ring
-
-
-
 
 theorem suAlphaLowerTerm_bound
     (Gamma : E →L[ℝ] E →L[ℝ] E) (G : E →L[ℝ] E →L[ℝ] ℝ)

@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Statements.M12HorizontalTheory
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M15
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontal_energy_continuousOn
     {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
@@ -44,9 +33,6 @@ theorem horizontal_energy_continuousOn
   have hcomp := hf.continuousOn.comp (continuousOn_id.prodMk hγ) hgraph
   exact hcomp.congr fun s hs => by
     simp only [Function.comp_apply, id_eq, f, E.agrees s hs]
-
-
-
 
 theorem hasDerivAt_horizontal_energy
     (D : SpacetimeHorizontalConnection G.leafwise)
@@ -139,9 +125,6 @@ theorem hasDerivAt_horizontal_energy
   apply hD.congr_of_eventuallyEq
   filter_upwards [hJ] with r hr
   simp only [f, E.agrees r hr]
-
-
-
 
 theorem hasDerivAt_square_energy
     (D : SpacetimeHorizontalConnection G.leafwise)

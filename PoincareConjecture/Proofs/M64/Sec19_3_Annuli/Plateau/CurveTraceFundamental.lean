@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveL2Trace
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.WeakCompactness
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem m64Curve_trace_fundamental_of_strong_approximation
     (w d : ℕ → ℝ → E) (hd : ∀ j, Continuous (d j))
@@ -76,7 +63,6 @@ theorem m64Curve_trace_fundamental_of_strong_approximation
   exact tendsto_nhds_unique ((hW.tendsto_at hx).sub (hW.tendsto_at ⟨le_rfl, hT.le⟩)) hint
 
 omit [CompleteSpace E] in
-
 
 theorem m64Curve_trace_oscillation_sq_le
     (W v : ℝ → E) {T : ℝ} (_hT : 0 < T)

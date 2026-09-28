@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M08.EndpointEulerCoefficients
 import PoincareConjecture.Proofs.M08.WeightedJacobiCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +32,6 @@ private noncomputable local instance bilinearNormedSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem closedChartMomentum_contDiffOn (hC : UniqueDiffOn ℝ C)
     (htime : ∀ s ∈ C, T - s ^ 2 ∈ J)
     {q : ℝ → EuclideanSpace ℝ (Fin n)} (hq : ContDiffOn ℝ ∞ q C)
@@ -56,9 +43,6 @@ theorem closedChartMomentum_contDiffOn (hC : UniqueDiffOn ℝ C)
   let L := (InnerProductSpace.toDual ℝ (EuclideanSpace ℝ (Fin n))).symm.toContinuousLinearEquiv
   exact L.contDiff.comp_contDiffOn ((hB.comp (contDiffOn_id.prodMk hq)
     (fun s hs => ⟨hs, hmap hs⟩)).clm_apply hv)
-
-
-
 
 theorem closedChartConnection_diagonal_pair
     (htime : ∀ s ∈ C, T - s ^ 2 ∈ J) {s : ℝ} (hs : s ∈ C)
@@ -73,9 +57,6 @@ theorem closedChartConnection_diagonal_pair
   rw [M08.chartActionMetric_apply F T hy s, M08.closedChartConnection_apply,
     ← M08.closedChartChristoffel_connection F T htime hy hs]
   exact M08.chartActionMetric_closed_connection_diagonal F T htime hy hs v w
-
-
-
 
 theorem closedChartMomentum_residual_pair (hC : UniqueDiffOn ℝ C)
     (htime : ∀ s ∈ C, T - s ^ 2 ∈ J)

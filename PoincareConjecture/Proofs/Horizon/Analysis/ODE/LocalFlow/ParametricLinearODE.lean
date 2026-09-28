@@ -2,12 +2,3 @@ import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE.ParameterDerivative
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE.Variational
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Inhomogeneous
-
-
-
-
-
-
-
-
-

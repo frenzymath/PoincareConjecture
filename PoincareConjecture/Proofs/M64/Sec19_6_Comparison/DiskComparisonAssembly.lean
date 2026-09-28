@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskConclusion
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -13,9 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64DiskAreaComparison_of_suppliers
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

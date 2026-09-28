@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_RelativeHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,24 +14,15 @@ namespace PoincareConjecture.Proofs.M53
 
 variable {E : Type u} [TopologicalSpace E] (D : Set E) (t : ℝ)
 
-
-
 def cylinderSliceNeighborhood : Set (E × ℝ) :=
   {p | (p.2 = 0 ∨ p.1 ∉ D) ∧ |p.2| < t}
-
-
 
 def cylinderSliceProjection : C(cylinderSliceNeighborhood D t, E) :=
   ⟨fun p => p.val.1, continuous_fst.comp continuous_subtype_val⟩
 
-
-
 def cylinderSliceInclusion (ht : 0 < t) : C(E, cylinderSliceNeighborhood D t) :=
   ⟨fun u => ⟨(u, 0), Or.inl rfl, by simpa using ht⟩,
     (continuous_id.prodMk continuous_const).subtype_mk _⟩
-
-
-
 
 def cylinderSliceHomotopy (ht : 0 < t) :
     ContinuousMap.Homotopy
@@ -69,9 +50,6 @@ def cylinderSliceHomotopy (ht : 0 < t) :
     change (x.val.1, (1 : ℝ) * x.val.2) = x.val
     simp only [one_mul, Prod.mk.eta]
 
-
-
-
 theorem cylinderSliceProjection_relative_homology_isIso (ht : 0 < t) (n : Nat) :
     IsIso (homologyMap (integralRelativeMap (cylinderSliceProjection D t)
       (A := (cylinderSliceProjection D t) ⁻¹' Dᶜ) (B := Dᶜ) (fun _ hx => hx)) n) := by
@@ -86,8 +64,6 @@ theorem cylinderSliceProjection_relative_homology_isIso (ht : 0 < t) (n : Nat) :
     (cylinderSliceProjection D t) (cylinderSliceInclusion D t ht)
     (fun _ hx => hx) (fun _ hx => hx) (cylinderSliceHomotopy D t ht) HY
     (fun _ _ hx => hx) (fun _ _ hx => hx) n
-
-
 
 theorem cylinderSliceInclusion_relative_homology_isIso (ht : 0 < t) (n : Nat) :
     IsIso (homologyMap (integralRelativeMap (cylinderSliceInclusion D t ht)

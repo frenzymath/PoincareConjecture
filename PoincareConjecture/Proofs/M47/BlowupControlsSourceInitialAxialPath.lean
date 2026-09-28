@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlPath
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +41,6 @@ private theorem initial_height_le_intrinsic (N : EpsilonNeck g)
         (ENNReal.ofReal (2 / N.scale) * g.pathELength p 0 1) :=
       mul_le_mul_right hheight _
     _ = g.pathELength p 0 1 := by rw [← mul_assoc, hcancel, one_mul]
-
-
 
 theorem source_initial_old_height_le_path_length
     (R : MetricSurgeryResult g0 I) {y : M}

@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialBallQuotient
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
 
 namespace PoincareConjecture.M76
-
 
 noncomputable def rimCollarThreshold (t : I) : ℝ := 1 - (t : ℝ) / 2
 
@@ -25,12 +15,10 @@ lemma rimCollarThreshold_pos (t : I) : 0 < rimCollarThreshold t := by
   dsimp [rimCollarThreshold]
   linarith
 
-
 noncomputable def rimCollarInnerRadius (t r : I) : I :=
   ⟨min 1 ((r : ℝ) / rimCollarThreshold t),
     le_min zero_le_one (div_nonneg r.property.1 (rimCollarThreshold_pos t).le),
     min_le_left _ _⟩
-
 
 noncomputable def rimCollarDepth (t r : I) : I :=
   ⟨max 0 (min ((r : ℝ) - rimCollarThreshold t) (1 - (r : ℝ))),
@@ -49,9 +37,6 @@ lemma continuous_rimCollarDepth :
   apply Continuous.subtype_mk
   unfold rimCollarThreshold
   fun_prop
-
-
-
 
 theorem exists_radial_rim_insertion
     {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

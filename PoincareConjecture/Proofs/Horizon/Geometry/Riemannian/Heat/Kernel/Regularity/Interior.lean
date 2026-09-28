@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ClassicalEquation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,7 +22,6 @@ theorem memLp_heatPowerContinuous (k : ℕ) (t : ℝ) (ht : 0 < t)
       (g.volumeMeasure.restrict Ω) :=
   (memLp_congr_ae (heatPowerContinuous_ae D S k t ht f)).mpr (Lp.memLp _)
 
-
 theorem eLpNorm_heatPowerContinuous_le (k : ℕ) (t : ℝ) (ht : 0 < t)
     (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω)) :
     (eLpNorm (heatPowerContinuous D S k t ht f : M → ℝ) 2
@@ -41,8 +32,6 @@ theorem eLpNorm_heatPowerContinuous_le (k : ℕ) (t : ℝ) (ht : 0 < t)
     (mul_le_mul_of_nonneg_right
       (norm_heatSpectralPower_le D Ω (Nat.pos_of_ne_zero (NeZero.ne n))
         S.isOpen S.isCompact_closure k ht) (norm_nonneg f))
-
-
 
 theorem eLpNorm_heatPowerContinuous_restrict_le {V : Set M} (hV : V ⊆ Ω)
     (k : ℕ) {a t : ℝ} (ha : 0 < a) (hat : a ≤ t)
@@ -59,8 +48,6 @@ theorem eLpNorm_heatPowerContinuous_restrict_le {V : Set M} (hV : V ⊆ Ω)
   exact div_le_div_of_nonneg_left (Nat.cast_nonneg _) (pow_pos ha k)
     (pow_le_pow_left₀ ha.le hat k)
 
-
-
 theorem iterate_laplacian_heatPowerContinuous (j k : ℕ) (t : ℝ) (ht : 0 < t)
     (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω)) :
     EqOn ((D.laplacian)^[j] (heatPowerContinuous D S k t ht f : M → ℝ))
@@ -76,8 +63,6 @@ theorem iterate_laplacian_heatPowerContinuous (j k : ℕ) (t : ℝ) (ht : 0 < t)
         heatPowerContinuous_laplacian D S (k + j) t ht f x hx]
       simp only [pow_succ, Nat.add_assoc]
       ring
-
-
 
 theorem eLpNorm_iterate_laplacian_heatPowerContinuous_restrict_le
     {V : Set M} (hVm : MeasurableSet V) (hV : V ⊆ Ω) (j k : ℕ)

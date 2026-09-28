@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.CompactSmoothExtension
 import PoincareConjecture.Proofs.M09.SmoothParameterPrimitive
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology intervalIntegral

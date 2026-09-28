@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M45.Mathlib.TwoSidedBoundary
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M45
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem neckRegion_eq_coordinateImage (N : EpsilonNeck g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) :
@@ -39,8 +29,6 @@ theorem neckRegion_eq_coordinateImage (N : EpsilonNeck g) {a b : ℝ}
     refine ⟨M36.neck_coordinate_mem N z hdom, ?_⟩
     simpa only [M36.neck_inverse_coordinate N z hdom, mem_Ioo] using hz.2
 
-
-
 theorem neckRegion_isConnected (N : EpsilonNeck g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ ≤ a) (hab : a < b) (hb : b ≤ N.epsilon⁻¹) :
     IsConnected (N.region a b) := by
@@ -53,8 +41,6 @@ theorem neckRegion_isConnected (N : EpsilonNeck g) {a b : ℝ}
   rw [neckRegion_eq_coordinateImage N ha hb]
   exact (isConnected_univ.prod (isConnected_Ioo hab)).image _
     (N.coordinate_map_smooth.continuousOn.mono hdom)
-
-
 
 theorem neckSphere_subset_closure_region (N : EpsilonNeck g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ ≤ a) (hab : a < b) (hb : b ≤ N.epsilon⁻¹)
@@ -73,8 +59,6 @@ theorem neckSphere_subset_closure_region (N : EpsilonNeck g) {a b : ℝ}
   rw [closure_prod_eq, closure_univ, closure_Ioo hab.ne]
   exact ⟨mem_univ _, (show z.2 = 0 from hz.2).symm ▸ ⟨ha0, hb0⟩⟩
 
-
-
 theorem neckCarrier_subset_halves (N : EpsilonNeck g) :
     N.carrier ⊆ N.region (-N.epsilon⁻¹) 0 ∪ N.central_sphere ∪
       N.region 0 N.epsilon⁻¹ := by
@@ -84,8 +68,6 @@ theorem neckCarrier_subset_halves (N : EpsilonNeck g) :
   · exact Or.inl (Or.inl ⟨hx, hb.1, h⟩)
   · exact Or.inl (Or.inr ((M36.neck_central_iff N).mpr ⟨hx, h⟩))
   · exact Or.inr ⟨hx, h, hb.2⟩
-
-
 
 theorem neckHalves_disjoint_sphere (N : EpsilonNeck g) :
     Disjoint (N.region (-N.epsilon⁻¹) 0) N.central_sphere ∧
@@ -97,8 +79,6 @@ theorem neckHalves_disjoint_sphere (N : EpsilonNeck g) :
   · intro x hx hxB
     have hzero := ((M36.neck_central_iff N).mp hxB).2
     exact (ne_of_gt hx.2.1) hzero
-
-
 
 theorem neck_opposite_sides [PreconnectedSpace M]
     (N : EpsilonNeck g) {K : Set M} (hK : IsClosed K)

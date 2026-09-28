@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCardinalityPolygons
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem mem_closure_punctured_section_of_branching
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

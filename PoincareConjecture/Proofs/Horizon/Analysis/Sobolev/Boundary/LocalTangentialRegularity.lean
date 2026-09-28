@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.LocalEstimate
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +24,6 @@ private theorem diffQuot_indicator_eq_of_mem (v : E → ℝ)
   have hs : x + h • EuclideanSpace.single k 1 ∈ halfSpace d := by
     simpa [halfSpace, PiLp.add_apply, PiLp.smul_apply, hk.symm] using hx
   simp [diffQuot_apply_of_ne k hh, hx, hs]
-
-
 
 theorem exists_tangential_weakPartial_of_local_weakEquation
     (B : SmoothEllipticBilinearForm d univ)

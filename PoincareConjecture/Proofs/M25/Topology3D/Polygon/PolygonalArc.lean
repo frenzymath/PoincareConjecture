@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.AdmissibleVertex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,23 +10,16 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
 
-
-
 def polygonArcBoundary (p : Polygon E (n + 2)) : Set E :=
   ⋃ i : Fin (n + 1), p.edgeSet ℝ i.castSucc
-
-
 
 structure IsSimplePolygonalArc (p : Polygon E (n + 2)) : Prop where
 
   vertices_injective : Function.Injective p
 
-
   edges_inter : ∀ i j : Fin (n + 1), i ≠ j →
     p.edgeSet ℝ i.castSucc ∩ p.edgeSet ℝ j.castSucc ⊆
       {p i.castSucc, p i.succ} ∩ {p j.castSucc, p j.succ}
-
-
 
 def IsAdmissibleArcVertex (p : Polygon E (n + 2)) (k : Fin (n + 2)) : Prop :=
   k ≠ 0 ∧ k ≠ Fin.last (n + 1) ∧
@@ -47,19 +31,14 @@ end Module
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 theorem polygon_arcEdge_eq_segment (p : Polygon E (n + 2)) (i : Fin (n + 1)) :
     p.edgeSet ℝ i.castSucc = segment ℝ (p i.castSucc) (p i.succ) := by
   have hi : finRotate (n + 2) i.castSucc = i.succ := finRotate_of_lt i.isLt
   rw [polygon_edgeSet_eq_segment, hi]
 
-
 theorem polygon_arcEdge_subset_boundary (p : Polygon E (n + 2)) (i : Fin (n + 1)) :
     p.edgeSet ℝ i.castSucc ⊆ polygonArcBoundary p :=
   subset_iUnion (fun j : Fin (n + 1) => p.edgeSet ℝ j.castSucc) i
-
-
 
 theorem polygon_vertex_mem_arcBoundary (p : Polygon E (n + 2)) (k : Fin (n + 2)) :
     p k ∈ polygonArcBoundary p := by
@@ -77,17 +56,12 @@ theorem polygon_vertex_mem_arcBoundary (p : Polygon E (n + 2)) (k : Fin (n + 2))
     rw [polygon_arcEdge_eq_segment, hik]
     exact left_mem_segment ℝ _ _
 
-
-
 theorem polygon_arcBoundary_isCompact (p : Polygon E (n + 2)) :
     IsCompact (polygonArcBoundary p) :=
   isCompact_iUnion (fun i : Fin (n + 1) => polygon_edgeSet_isCompact p i.castSucc)
 
-
 theorem polygon_arcBoundary_isClosed (p : Polygon E (n + 2)) :
     IsClosed (polygonArcBoundary p) := (polygon_arcBoundary_isCompact p).isClosed
-
-
 
 theorem IsSimplePolygonalArc.edge_endpoints_ne {p : Polygon E (n + 2)}
     (hp : IsSimplePolygonalArc p) (i : Fin (n + 1)) : p i.castSucc ≠ p i.succ := by
@@ -96,8 +70,6 @@ theorem IsSimplePolygonalArc.edge_endpoints_ne {p : Polygon E (n + 2)}
   simp only [Fin.val_castSucc, Fin.val_succ] at hh
   omega
 
-
-
 theorem IsSimplePolygonalArc.edgePath_injective {p : Polygon E (n + 2)}
     (hp : IsSimplePolygonalArc p) (i : Fin (n + 1)) :
     Function.Injective (p.edgePath ℝ i.castSucc) := by
@@ -105,8 +77,6 @@ theorem IsSimplePolygonalArc.edgePath_injective {p : Polygon E (n + 2)}
   have hi : finRotate (n + 2) i.castSucc = i.succ := finRotate_of_lt i.isLt
   rw [hi]
   exact hp.edge_endpoints_ne i
-
-
 
 theorem IsSimplePolygonalArc.edge_inter_eq {p : Polygon E (n + 2)}
     (hp : IsSimplePolygonalArc p) {i j : Fin (n + 1)} (hij : i ≠ j) :
@@ -122,8 +92,6 @@ theorem IsSimplePolygonalArc.edge_inter_eq {p : Polygon E (n + 2)}
   · rcases hx.2 with rfl | hx
     · exact left_mem_segment ℝ _ _
     · exact hx ▸ right_mem_segment ℝ _ _
-
-
 
 theorem IsSimplePolygonalArc.vertex_mem_edgeSet_iff {p : Polygon E (n + 2)}
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2)) (i : Fin (n + 1)) :

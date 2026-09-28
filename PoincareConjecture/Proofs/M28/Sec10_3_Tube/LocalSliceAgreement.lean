@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalSliceProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_contained_slice_compact_transport_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -85,8 +72,6 @@ theorem exists_contained_slice_compact_transport_m28 :
   · change (eN.symm ∘ eP) '' P.central_sphere = N.central_sphere
     rw [image_comp, hPsphere, ← hNsphere]
     exact eN.toEquiv.symm_image_image _
-
-
 
 theorem exists_contained_slice_separation_agreement_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

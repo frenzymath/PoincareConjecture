@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.FiniteBufferedChartCover
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +20,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 structure FiniteLeftStageLimit
     {S : GeneralizedBlowupSequence.{u}} {T tau : ℝ}
@@ -98,8 +85,6 @@ private theorem finiteLeft_openCodomain
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 3600000 in
-
-
 
 theorem exists_finiteLeftStageLimit
     {S : GeneralizedBlowupSequence.{u}} {T tau : ℝ} (hT : 0 < T)
@@ -426,8 +411,6 @@ theorem exists_finiteLeftStageLimit
     chart_cover := hcoverO
     chart_source := fun _ _ => rfl
     chart_metric := fun i t ht x v w => hFOchart t ht i x v w }⟩
-
-
 
 theorem FiniteLeftStageLimit.scalarCurvature_tendsto
     {S : GeneralizedBlowupSequence.{u}} {T tau : ℝ}

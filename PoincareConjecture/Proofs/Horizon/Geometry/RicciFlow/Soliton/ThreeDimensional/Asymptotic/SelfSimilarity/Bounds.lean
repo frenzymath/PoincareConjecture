@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.GradientEnerg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -147,8 +137,6 @@ theorem exists_tangentNorm_comparison_on_Icc
       (mul_le_mul_of_nonneg_right
         (Real.exp_le_exp.mpr (mul_le_mul_of_nonneg_left hd hC0)) (Real.sqrt_nonneg _))
 
-
-
 theorem exists_potential_gradient_norm_bound_in_reference_metric_on_Icc
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)
     (hbound : ∀ t : ℝ, t < 0 → ∃ B : ℝ, 0 ≤ B ∧
@@ -164,8 +152,6 @@ theorem exists_potential_gradient_norm_bound_in_reference_metric_on_Icc
   obtain ⟨B, hB, hcompare⟩ := L.exists_tangentNorm_comparison_on_Icc hC hbound a b hb
   exact ⟨B * A, mul_nonneg hB.le hA, fun t ht =>
     (hcompare s hs t ht x _).trans (mul_le_mul_of_nonneg_left (hgrad t ht) hB.le)⟩
-
-
 
 theorem exists_hessian_and_base_gradient_bounds_on_Icc
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_CurvatureDefectBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem abs_scalarCurvature_le_of_metric_error {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon K : ℝ}

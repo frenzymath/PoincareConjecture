@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Interior.Parameter
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.MovedEdgeCrossing
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 open PoincareConjecture.M76.Dehn
@@ -25,7 +23,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   (hAnn : D.K.space = PLAnnularStrip.squareAnnulus 8 1)
 
 include hAnn
-
 
 set_option maxHeartbeats 800000 in
 theorem moved_positive_edge_crossing
@@ -98,4 +95,3 @@ theorem moved_positive_edge_crossing
     (N.motion.map 1 z) hpInterior O hO hpO
 
 end Geometry.OriginalPLTower.PlanarAnnulusBoundaryMotion
-

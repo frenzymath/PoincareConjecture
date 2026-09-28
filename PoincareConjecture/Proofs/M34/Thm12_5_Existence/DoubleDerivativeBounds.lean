@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.CompactDerivativeBounds
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleFlows
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 open Set
 
 namespace PoincareConjecture.M34
-
-
 
 theorem endDouble_initialDerivative_bounds_upto (g0 : StandardInitialMetric)
     (E0 : StandardCapEstimate g0) (k : ℕ) :
@@ -41,8 +29,6 @@ theorem endDouble_initialDerivative_bounds_upto (g0 : StandardInitialMetric)
       · have hjs : j = k + 1 := by omega
         subst j
         exact (ha L hL D q).trans (le_max_right _ _)
-
-
 
 theorem endDouble_flow_curvatureDerivative_bounds (P : RicciFlowCurvatureTheory.{0})
     (g0 : StandardInitialMetric) (E0 : StandardCapEstimate g0)

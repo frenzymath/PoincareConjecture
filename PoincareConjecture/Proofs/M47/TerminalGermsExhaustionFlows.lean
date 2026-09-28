@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsPrecompactFlow
 import PoincareConjecture.Proofs.M47.TerminalGermsDomainCompatibility
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNullLine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_exists_exhaustion_flows
     {n : ℕ} {ι : Type*} {P : ι → Type*} {M : Type*}

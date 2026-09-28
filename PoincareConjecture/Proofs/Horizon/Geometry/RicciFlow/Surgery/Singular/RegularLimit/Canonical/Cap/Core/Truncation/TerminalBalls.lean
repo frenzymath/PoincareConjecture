@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.OldBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.TerminalContainment
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem terminal_closedBall_subset_of_captured_old_ball
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -69,8 +65,6 @@ theorem terminal_closedBall_subset_of_captured_old_ball
     hclosed (hclosureB (closure_mono hsmallball hy))
   exact ⟨hinside, hA.of_isClosed_subset isClosed_closure
     (hinside.trans (H.regularReferencePreimage_subset P04 t ht S hcapture))⟩
-
-
 
 theorem exists_eventually_truncated_cap_core_terminal_ball_containment
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

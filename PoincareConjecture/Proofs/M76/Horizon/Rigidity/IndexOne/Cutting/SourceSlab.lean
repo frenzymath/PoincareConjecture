@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.CircleSlabDomain
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceSurface
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -26,7 +16,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
 
 def sourceSlab (phi : C(H, H)) (a b : ℝ) : Set X :=
   Subtype.val '' {x : R | sourcePhase phi (latticeHandleDomainEquiv (Fin 1) (Fin 2) L x) ∈
@@ -45,8 +34,6 @@ theorem mem_sourceSlab_iff (phi : C(H, H)) (a b : ℝ) (x : R) :
     exact (Subtype.ext heq : y = x) ▸ hy
   · intro hx
     exact ⟨x, hx, rfl⟩
-
-
 
 theorem exists_sourceSlab_with_marked_corners
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

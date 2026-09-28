@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BoundaryAngularTrace
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +14,10 @@ namespace PoincareConjecture.M65StrictTrace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def diskColumn (f : LoopPlane → M) (z : LoopPlane) (i : Fin 2) :
     TangentSpace (𝓡 3) (f z) :=
   mfderivWithin (𝓡 2) (𝓡 3) f loopDiskSet z
     (EuclideanSpace.basisFun (Fin 2) ℝ i)
-
-
 
 theorem diskColumn_continuousOn (f : LoopPlane → M)
     (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet) (i : Fin 2) :
@@ -43,7 +29,6 @@ theorem diskColumn_continuousOn (f : LoopPlane → M)
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem diskColumn_eq_mfderiv (f : LoopPlane → M) {z : LoopPlane}
     (hz : z ∈ Metric.ball (0 : LoopPlane) 1) (i : Fin 2) :
     diskColumn f z i = mfderiv (𝓡 2) (𝓡 3) f z
@@ -53,12 +38,8 @@ theorem diskColumn_eq_mfderiv (f : LoopPlane → M) {z : LoopPlane}
   exact congrArg (fun L : TangentSpace (𝓡 2) z →L[ℝ] TangentSpace (𝓡 3) (f z) =>
     L (EuclideanSpace.basisFun (Fin 2) ℝ i)) (mfderivWithin_of_mem_nhds hmem)
 
-
-
 def diskConformalFactor (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     (z : LoopPlane) : ℝ := g.inner (f z) (diskColumn f z 0) (diskColumn f z 0)
-
-
 
 theorem diskConformalFactor_continuousOn (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet) :
@@ -66,8 +47,6 @@ theorem diskConformalFactor_continuousOn (g : RiemannianMetric 3 M)
   m65Metric_pairing_continuousOn g f (fun z => diskColumn f z 0)
     (fun z => diskColumn f z 0) (diskColumn_continuousOn f hf 0)
     (diskColumn_continuousOn f hf 0)
-
-
 
 theorem diskColumn_inner (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
@@ -104,8 +83,6 @@ theorem diskColumn_inner (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     rw [closure_ball (0 : LoopPlane) one_ne_zero]
     exact Subset.rfl) hz
 
-
-
 theorem diskDifferential_inner_self (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
     (hconf : ∀ z ∈ Metric.ball (0 : LoopPlane) 1,
@@ -129,8 +106,6 @@ theorem diskDifferential_inner_self (g : RiemannianMetric 3 M) (f : LoopPlane �
     add_zero, zero_add, EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_two]
   ring
 
-
-
 theorem diskConformalFactor_eq_zero_iff (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
     (hconf : ∀ z ∈ Metric.ball (0 : LoopPlane) 1,
@@ -147,9 +122,6 @@ theorem diskConformalFactor_eq_zero_iff (g : RiemannianMetric 3 M) (f : LoopPlan
     exact (lt_irrefl 0) hpos
   · intro hd
     simp [diskConformalFactor, diskColumn, hd]
-
-
-
 
 theorem diskDifferential_eq_zero_of_direction (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)

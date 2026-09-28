@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenCapRestriction
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,13 +21,10 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M}
 
-
 def canonicalOpenSet (H : ConnectedNeckCapCover g) : TopologicalSpace.Opens M :=
   ⟨H.canonicalCarrierUnion, H.isOpen_canonicalCarrierUnion⟩
 
 variable [SecondCountableTopology M]
-
-
 
 def restrictToCanonicalUnion (H : ConnectedNeckCapCover g)
     (DV : LeviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet)) :
@@ -83,16 +71,13 @@ def restrictToCanonicalUnion (H : ConnectedNeckCapCover g)
       rintro _ ⟨N, rfl⟩
       exact H.cap_constant_bound N.val N.property.1 }
 
-
 @[simp] theorem restrictToCanonicalUnion_epsilon (H : ConnectedNeckCapCover g)
     (DV : LeviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet)) :
     (H.restrictToCanonicalUnion DV).epsilon = H.epsilon := rfl
 
-
 @[simp] theorem restrictToCanonicalUnion_cap_constant (H : ConnectedNeckCapCover g)
     (DV : LeviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet)) :
     (H.restrictToCanonicalUnion DV).cap_constant = H.cap_constant := rfl
-
 
 @[simp] theorem restrictToCanonicalUnion_X (H : ConnectedNeckCapCover g)
     (DV : LeviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet)) :
@@ -101,13 +86,9 @@ def restrictToCanonicalUnion (H : ConnectedNeckCapCover g)
 
 variable [T2Space M]
 
-
-
 def canonicalOpenConnection (H : ConnectedNeckCapCover g) :
     LeviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet) :=
   Classical.choice (exists_leviCivitaData (intrinsicOpenMetric g H.canonicalOpenSet))
-
-
 
 def canonicalOpenTopology (H : ConnectedNeckCapCover g)
     (P : RepairedNeckCapTopologyTheory.{u}) (hsmall : H.epsilon ≤ P.epsilon₀) :

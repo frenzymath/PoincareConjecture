@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetract
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.General.ControlledRelativeFinitePLApproximation
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval

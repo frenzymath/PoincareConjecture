@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingCutSide
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCollarStrip
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +15,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem ball_subset_collar_core (P : OriginalDiskProduct e R j)
     (hfront : frontier P.cutCarrier = (frontier R \ P.openStrip) ∪ P.endDisks)

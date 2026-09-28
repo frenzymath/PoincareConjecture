@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Topology.Order.ProjIcc
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
-
 open Set MeasureTheory
 open scoped Topology ContDiff
 
@@ -20,9 +10,6 @@ noncomputable section
 set_option autoImplicit false
 
 namespace PoincareConjecture.ConjugateVariation
-
-
-
 
 theorem continuousOn_intervalIntegral_of_continuousOn_prod
     {F : ℝ → ℝ → ℝ} {I : Set ℝ} {a b : ℝ}
@@ -50,9 +37,6 @@ theorem continuousOn_intervalIntegral_of_continuousOn_prod
   change Continuous (fun s : I => ∫ t in a..b, F s t)
   rw [heq]
   exact hc
-
-
-
 
 theorem contDiffOn_two_intervalIntegral_of_contDiffOn_box
     {F : ℝ → ℝ → ℝ} {a b s₀ r : ℝ} (hab : a ≤ b) (hr : 0 < r)

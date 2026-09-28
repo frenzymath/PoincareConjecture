@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Energy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Geodesic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,7 +89,6 @@ private theorem ancient_path_energy_le_distance
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
 theorem scalar_le_exp_distance {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K)
     {a b : ℝ} (hab : a < b) (hb : b ≤ 0) (x y : M) :
@@ -124,8 +114,6 @@ theorem scalar_le_exp_distance {K : AncientKappaSolution n M}
   apply Real.exp_le_exp.mpr
   have h := div_le_div_of_nonneg_right henergy (by norm_num : (0 : ℝ) ≤ 2)
   simpa only [div_div, mul_comm (b - a) 2] using h
-
-
 
 theorem curvature_le_scalar_exp_on_two_time_ball {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K)
@@ -165,7 +153,6 @@ theorem curvature_le_scalar_exp_on_two_time_ball {K : AncientKappaSolution n M}
 end AncientAsymptoticSolitonPredecessors
 
 namespace AncientRescaling
-
 
 theorem curvature_le_scalar_exp_on_two_time_ball
     {K : AncientKappaSolution n M} {τ : ℝ} (R : AncientRescaling K τ)

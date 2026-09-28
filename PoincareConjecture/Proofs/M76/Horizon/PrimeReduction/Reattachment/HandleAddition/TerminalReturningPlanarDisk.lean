@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoun
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalPlanarDiskComplement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalSubdiskUniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

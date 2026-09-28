@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CollarJetMargin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,15 +28,11 @@ noncomputable local instance cylinderCurvatureTwoJetNormedGroup :
 noncomputable local instance cylinderCurvatureTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 theorem evolvingCylinderModelField_zero (t : ℝ) :
     evolvingCylinderModelField t 0 = (2 * (1 - t)) • cylinderHorizontalForm +
       cylinderHeightCovector.smulRight cylinderHeightCovector := by
   rw [evolvingCylinderModelField, cylinderModelField_zero]
   module
-
-
 
 theorem evolvingCylinderModelJet_isInvertible {t : ℝ} (ht : t < 1) :
     (evolvingCylinderModelJet t).1.IsInvertible := by
@@ -70,14 +56,10 @@ theorem evolvingCylinderModelJet_isInvertible {t : ℝ} (ht : t < 1) :
   rw [← hsplit, mul_add]
   exact add_le_add h1 (by simpa only [one_mul] using h2)
 
-
-
 theorem jetChristoffel_evolvingCylinderModelJet (t : ℝ) (u v : E) :
     jetChristoffel (evolvingCylinderModelJet t) u v = 0 := by
   simp [jetChristoffel, evolvingCylinderModelJet, metricTwoJet,
     evolvingCylinderModelField_fderiv, cylinderModelField_fderiv_zero, metricKoszulCovector]
-
-
 
 theorem jetCurvature_evolvingCylinderModelJet (t : ℝ) (u w v z : E) :
     jetCurvature (evolvingCylinderModelJet t) u w v z =
@@ -90,8 +72,6 @@ theorem jetCurvature_evolvingCylinderModelJet (t : ℝ) (u w v z : E) :
     cylinderModelField_fderiv_zero, zero_apply, map_zero, neg_zero, add_zero,
     sub_zero, smul_apply, smul_zero, smul_eq_mul, cylinderModelField_second_fderiv_zero]
   ring
-
-
 
 theorem evolvingCylinderModelJet_inverse_proj {t : ℝ} (ht : t < 1) (i : Fin 3) :
     (evolvingCylinderModelJet t).1.inverse (EuclideanSpace.proj i) =
@@ -112,8 +92,6 @@ theorem evolvingCylinderModelJet_inverse_proj {t : ℝ} (ht : t < 1) (i : Fin 3)
         EuclideanSpace.inner_single_left, PiLp.proj_apply, htime, mul_assoc]
   rw [← heq, (evolvingCylinderModelJet_isInvertible ht).inverse_apply_self]
 
-
-
 theorem jetScalarCurvature_evolvingCylinderModelJet {t : ℝ} (ht : t < 1) :
     jetScalarCurvature (evolvingCylinderModelJet t) = (1 - t)⁻¹ := by
   have htime : 1 - t ≠ 0 := (sub_pos.mpr ht).ne'
@@ -126,8 +104,6 @@ theorem jetScalarCurvature_evolvingCylinderModelJet {t : ℝ} (ht : t < 1) :
   field_simp [htime]
   ring
 
-
-
 theorem evolvingCylinderModelJet_collarGram (t : ℝ) :
     collarJetGram (e 0) (e 2) (evolvingCylinderModelJet t) = 2 * (1 - t) := by
   unfold collarJetGram
@@ -138,8 +114,6 @@ theorem evolvingCylinderModelJet_collarGram (t : ℝ) :
   simp only [add_apply, smul_apply, ContinuousLinearMap.smulRight_apply, smul_eq_mul,
     cylinderHorizontalForm_basis, cylinderHeightCovector_basis]
   simp [cylinderHorizontalGram, roundCylinderCoordinateBasis]
-
-
 
 theorem evolvingCylinderModelJet_mem_collarRegion {C t : ℝ} (hC : 0 < C) (ht : t < 1) :
     evolvingCylinderModelJet t ∈ collarJetRegion C (e 0) (e 2) := by
@@ -156,9 +130,6 @@ theorem evolvingCylinderModelJet_mem_collarRegion {C t : ℝ} (hC : 0 < C) (ht :
       simp [cylinderHorizontalGram, roundCylinderCoordinateBasis]
     rw [hzero, hmixed, mul_zero, zero_mul, sub_self, mul_zero, zero_div, sub_zero]
     exact mul_pos (inv_pos.mpr hC) (inv_pos.mpr (sub_pos.mpr ht))
-
-
-
 
 theorem exists_evolvingCylinder_collar_tolerance {C theta : ℝ}
     (hC : 0 < C) (htheta : theta < 1) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexStrictHalfspaceClosure
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finite_triangulation_closure_affine_neg (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) :

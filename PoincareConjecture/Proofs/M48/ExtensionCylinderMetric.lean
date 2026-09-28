@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.ExtensionCylinder
 import PoincareConjecture.Proofs.M48.SurgeryCylinderSource
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

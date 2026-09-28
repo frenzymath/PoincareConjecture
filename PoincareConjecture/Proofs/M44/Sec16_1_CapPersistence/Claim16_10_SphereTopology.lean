@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.CoveringNullhomotopy
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereBase
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContinuousMap
@@ -18,9 +9,6 @@ open scoped ContinuousMap
 namespace PoincareConjecture.M44
 
 local notation "S2" => Metric.sphere (0 : EuclideanSpace ℝ (Fin 3)) 1
-
-
-
 
 theorem sphere_two_not_contractible : ¬ ContractibleSpace S2 := by
   intro h
@@ -30,9 +18,6 @@ theorem sphere_two_not_contractible : ¬ ContractibleSpace S2 := by
   have hsub := ModuleCat.isZero_iff_subsingleton.mp hzZ
   have h01 := hsub.elim (0 : ULift ℤ) 1
   exact (zero_ne_one : (0 : ℤ) ≠ 1) (congrArg ULift.down h01)
-
-
-
 
 theorem sphere_localHomeomorph_not_nullhomotopic
     {X : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedImageBalls
 import PoincareConjecture.Proofs.M47.SeedSearchBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem seed_search_ball_inclusions
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

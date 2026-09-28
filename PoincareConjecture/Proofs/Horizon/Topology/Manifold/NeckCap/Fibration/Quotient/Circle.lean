@@ -3,16 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture
 
 local instance : Fact (Module.finrank ℝ ℂ = 1 + 1) := ⟨by simp⟩
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 2)) = 1 + 1) := ⟨by simp⟩
-
-
 
 noncomputable def complexCircleDiffeomorph :
     Diffeomorph (𝓡 1) (𝓡 1) Circle UnitCircle ∞ where
@@ -48,7 +36,6 @@ noncomputable def complexCircleDiffeomorph :
         simpa only [comp_apply, Metric.mem_sphere, dist_zero_right,
           ContinuousLinearEquiv.coe_coe, LinearIsometryEquiv.coe_toContinuousLinearEquiv,
           LinearIsometryEquiv.norm_map] using z.property)
-
 
 noncomputable def unitCircleExp (t : ℝ) : UnitCircle :=
   complexCircleDiffeomorph (Circle.exp ((2 * Real.pi) * t))
@@ -91,8 +78,6 @@ theorem isCoveringMap_unitCircleExp : IsCoveringMap unitCircleExp := by
   let e : ℝ ≃ₜ ℝ := (Homeomorph.mulLeft₀ (2 * Real.pi) (ne_of_gt Real.two_pi_pos))
   exact (Circle.isCoveringMap_exp.comp_homeomorph e).homeomorph_comp
     complexCircleDiffeomorph.toHomeomorph
-
-
 
 theorem isLocalDiffeomorph_circleExp : IsLocalDiffeomorph 𝓘(ℝ, ℝ) (𝓡 1) ∞ Circle.exp := by
   intro a

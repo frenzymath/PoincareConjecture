@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.LocalInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 import Mathlib.LinearAlgebra.Matrix.AbsoluteValue
-
-
-
-
-
-
-

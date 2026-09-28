@@ -4,14 +4,6 @@ import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +11,6 @@ open Set Metric
 local notation "I" => Icc (-1 : ℝ) 1
 
 variable {A X : Type*} [TopologicalSpace A] [CompactSpace A] [TopologicalSpace X]
-
-
 
 theorem Continuous.exists_closed_strip_subset {f : A × I → X} (hf : Continuous f)
     {W : Set X} (hW : IsOpen W)

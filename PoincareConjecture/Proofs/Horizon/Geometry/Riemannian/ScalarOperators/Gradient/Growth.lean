@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient.Lev
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Symmetry
 import Mathlib.Analysis.InnerProductSpace.Rayleigh
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem connection_gradient_norm_le_of_hessian_bound
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -56,7 +46,6 @@ theorem connection_gradient_norm_le_of_hessian_bound
     change |inner ℝ (A w) w| ≤ C * inner ℝ w w at h
     simpa only [real_inner_self_eq_norm_sq] using h
   exact (A.le_opNorm v).trans (mul_le_mul_of_nonneg_right hnorm (norm_nonneg v))
-
 
 theorem regularized_gradient_norm_gradient_le_of_hessian_bound
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -98,8 +87,6 @@ theorem regularized_gradient_norm_gradient_le_of_hessian_bound
   exact hsqrt
 
 variable [T3Space M] [ConnectedSpace M]
-
-
 
 theorem gradient_norm_le_base_add_of_hessian_bound
     (D : LeviCivitaData g) (hc : MetricComplete g) {f : M → ℝ}

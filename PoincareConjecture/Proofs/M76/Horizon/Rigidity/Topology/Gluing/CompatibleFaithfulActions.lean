@@ -1,15 +1,6 @@
 import Mathlib.GroupTheory.Coset.Basic
 import Mathlib.Algebra.Group.End
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
@@ -65,7 +56,6 @@ private theorem rightCosetCoordinate_mul (f : H →* G)
   change f (h * p.1) * p.2.out = f h * (f p.1 * p.2.out)
   rw [map_mul, mul_assoc]
 
-
 def regularProduct (G : Type u) [Group G] (K : Type v) :
     G →* Equiv.Perm (G × K) where
   toFun g := Equiv.prodCongr (Equiv.mulLeft g) (Equiv.refl K)
@@ -85,9 +75,6 @@ private def exchangeCoordinates {A B C : Type u} :
   invFun p := ((p.1.1, p.2.2), (p.2.1, p.1.2))
   left_inv _ := rfl
   right_inv _ := rfl
-
-
-
 
 theorem exists_regular_action_exchange {J : Type u} [Group J]
     (f : H →* G) (g : H →* J)
@@ -117,9 +104,6 @@ theorem exists_regular_action_exchange {J : Type u} [Group J]
   rw [he₀]
   exact Prod.ext rfl
     (rightCosetCoordinate_mul g hg h ((e₀.symm p.1).1, (e₁.symm p.2).2))
-
-
-
 
 theorem exists_compatible_faithful_actions {J : Type u} [Group J]
     (f : H →* G) (g : H →* J)

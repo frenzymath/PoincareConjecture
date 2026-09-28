@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.UnitPotential
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +15,6 @@ variable {X : Type*} [MetricSpace X] {p : X} {hc : RayComparison p} {n : ℕ}
   (hne : Nonempty (AsymptoticConePositive p hc))
   (hcover : ∀ z : AsymptoticConeUnitSlice p hc,
     ∃ (d : UnitSliceRadialChartData hc n) (x : d.Level), (d.levelHomeomorph x).1 = z)
-
-
 
 theorem unitSlicePositiveInclusion_inner :
     letI := unitSliceChartedSpace hc n hcover
@@ -93,7 +90,6 @@ variable (hc) [ProperSpace X]
     (hKV : f ⁻¹' {a : AsymptoticConePositive p hc | asymptoticConeRadius hc a.val = 1} ⊆ V)
 
 include hf in
-
 
 theorem unitSlicePreimageInOpen_inner :
     letI := unitSliceChartedSpace hc n hcover

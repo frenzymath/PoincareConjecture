@@ -2,23 +2,12 @@ import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_isCompact_confined_radial_vectors
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]

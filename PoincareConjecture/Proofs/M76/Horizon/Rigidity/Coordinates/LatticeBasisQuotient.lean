@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 namespace PoincareConjecture.M76
-
-
 
 theorem exists_lattice_quotient_homeomorph
     {κ κ' : Type*} [Fintype κ] [Fintype κ']
@@ -36,9 +24,6 @@ theorem exists_lattice_quotient_homeomorph
     change Continuous (fun x : κ' → ℝ =>
       (QuotientAddGroup.mk (A.symm x) : (κ → ℝ) ⧸ L.toAddSubgroup))
     exact QuotientAddGroup.continuous_mk.comp A.symm.continuous
-
-
-
 
 theorem exists_lattice_basis_quotient_homeomorph
     {κ κ' : Type*} [Fintype κ] [Fintype κ'] (σ : κ ≃ κ')

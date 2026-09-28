@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Spheres.TerminalSphericalFamily
 import PoincareConjecture.Proofs.M76.Wall.SingleSphericalFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem hasWallCompactCore
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [ParacompactSpace X]

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.CurveJetDensities
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.PeriodicJetTolerance
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RampInitialBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -31,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_smooth_ramp_density_approximation
     (P : M62.CircleProductData F circumference)

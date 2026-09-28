@@ -3,24 +3,11 @@ import Mathlib.Topology.Algebra.Group.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Topology.IsEmbedding
-
-
-
-
 
 theorem exists_signed_interval_image_homeomorph
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

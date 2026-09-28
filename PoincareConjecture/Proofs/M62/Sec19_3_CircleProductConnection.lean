@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductBracket
 import PoincareConjecture.Proofs.M04.KoszulPairing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem circleProduct_chart_connection
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

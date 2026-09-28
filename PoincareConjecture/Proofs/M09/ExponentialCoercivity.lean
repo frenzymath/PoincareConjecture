@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.GeometricEnergyBound
 import PoincareConjecture.Proofs.M09.ExponentialAction
 import PoincareConjecture.Proofs.M09.FamilySquareRegularization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

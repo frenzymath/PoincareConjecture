@@ -9,13 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
 theorem m67_based_width_transport_of_rebased_family
     {M N : Type u}
     [TopologicalSpace M] [ChartedSpace LoopAmbient M]

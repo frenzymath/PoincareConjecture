@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.FDeriv.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Asymptotics
@@ -24,9 +15,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-
-
-
 theorem hasDerivAt_zero_of_increment_bound {f : ℝ → F} {g : ℝ → G}
     {x C : ℝ} (hf : HasDerivAt f 0 x)
     (hbound : ∀ᶠ y in 𝓝 x, ‖g y - g x‖ ≤ C * ‖f y - f x‖) :
@@ -37,9 +25,6 @@ theorem hasDerivAt_zero_of_increment_bound {f : ℝ → F} {g : ℝ → G}
     IsBigO.of_bound C hbound
   apply HasDerivAt.of_isLittleO
   simpa only [smul_zero, sub_zero] using hbig.trans_isLittleO hsmall
-
-
-
 
 theorem fderiv_apply_eq_zero_of_increment_bound {f : E → F} {g : E → G}
     {x : E} {C : ℝ} (hf : DifferentiableAt ℝ f x)

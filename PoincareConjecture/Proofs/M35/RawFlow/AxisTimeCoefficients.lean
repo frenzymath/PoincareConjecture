@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawJointRegularity
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicRadialVelocity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,7 +41,6 @@ theorem raw_axisWarpingRadius_contDiffOn :
   contDiffOn_snd.mul ((raw_axisAngularCoefficient_contDiffOn G).sqrt
     (fun p _ => (axisAngularCoefficient_pos (G.flow.metric p.1) p.2).ne'))
 
-
 noncomputable def rawAxisSpeedTimeDerivative (t r : ℝ) : ℝ :=
   -(G.flow.connection t).ricci (r • e 2) (e 2) (e 2) /
     axisRadialSpeed (G.flow.metric t) r
@@ -68,7 +58,6 @@ theorem rawAxisSpeedTimeDerivative_contDiffOn :
   exact hr.neg.div (raw_axisRadialSpeed_contDiffOn G)
     (fun p _ => (axisRadialSpeed_pos (G.flow.metric p.1) p.2).ne')
 
-
 theorem raw_axisRadialSpeed_hasDerivWithinAt {t : ℝ} (ht : t ∈ Ico 0 G.lifetime)
     (r : ℝ) : HasDerivWithinAt (fun s => axisRadialSpeed (G.flow.metric s) r)
       (rawAxisSpeedTimeDerivative G t r) (Ico 0 G.lifetime) t := by
@@ -80,7 +69,6 @@ theorem raw_axisRadialSpeed_hasDerivWithinAt {t : ℝ} (ht : t ∈ Ico 0 G.lifet
       -2 * (G.flow.connection t).ricci (r • e 2) (e 2) (e 2) /
         (2 * Real.sqrt (axisRadialCoefficient (G.flow.metric t) r))
   field_simp [(Real.sqrt_pos.mpr (axisRadialCoefficient_pos (G.flow.metric t) r)).ne']
-
 
 theorem raw_axisWarpingRadius_hasDerivWithinAt {t : ℝ} (ht : t ∈ Ico 0 G.lifetime)
     (r : ℝ) : HasDerivWithinAt (fun s => axisWarpingRadius (G.flow.metric s) r)

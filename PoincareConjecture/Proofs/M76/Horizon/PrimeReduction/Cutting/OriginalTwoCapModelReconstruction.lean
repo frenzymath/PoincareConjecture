@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalMarkedDiskGluing
 import Mathlib.Tactic.ClearExcept
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

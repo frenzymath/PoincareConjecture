@@ -7,13 +7,6 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory
@@ -22,9 +15,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_saddle_comparison_parameters
     (h : ℝ) (hh : 0 < h) (hsmall : h < 1 / 1024) :

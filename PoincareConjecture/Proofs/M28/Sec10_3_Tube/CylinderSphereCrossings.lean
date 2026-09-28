@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ universe u
 namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M]
-
-
-
 
 theorem exists_sphere_crossing_of_signed_height
     {U S : Set M} {h : M → ℝ} (hh : ContinuousOn h U)
@@ -42,8 +30,6 @@ theorem exists_sphere_crossing_of_signed_height
     exact (ne_of_gt hb) heq)
   exact ⟨t, ⟨hat, htb⟩, (hzero (γ t) (hγU ht)).mp heq⟩
 
-
-
 theorem exists_sphere_return_after_negative_height
     {U S : Set M} {h : M → ℝ} (hh : ContinuousOn h U)
     (hzero : ∀ x ∈ U, h x = 0 ↔ x ∈ S)
@@ -54,8 +40,6 @@ theorem exists_sphere_return_after_negative_height
   have hsub : Icc t b ⊆ Icc a b := Icc_subset_Icc hat le_rfl
   exact exists_sphere_crossing_of_signed_height hh hzero htb
     (hγ.mono hsub) (fun _ hs => hγU (hsub hs)) ht hb
-
-
 
 theorem exists_sphere_hit_before_positive_height
     {U S : Set M} {h : M → ℝ} (hh : ContinuousOn h U)

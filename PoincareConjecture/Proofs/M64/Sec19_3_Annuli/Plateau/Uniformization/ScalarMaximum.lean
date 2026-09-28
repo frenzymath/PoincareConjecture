@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothe
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,12 +18,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem exists_annular_positive_laplacian_barrier :
     ∃ φ : Plane → ℝ, ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ φ ∧
@@ -82,12 +63,6 @@ theorem exists_annular_positive_laplacian_barrier :
     (alpha ^ 2 * Real.exp (-alpha * f x)) * E x
   have h := mul_pos (Real.exp_pos (-alpha * f x)) (mul_pos halpha hpositive)
   nlinarith
-
-
-
-
-
-
 
 theorem annular_subharmonic_le_boundary {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -141,12 +116,6 @@ theorem annular_subharmonic_le_boundary {H : Plane → ℝ} (hHc : Continuous H)
   have hpositive := mul_pos hepsilon (hφlap y hy)
   linarith [hlap y hyA]
 
-
-
-
-
-
-
 theorem annular_harmonic_range {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hlap : ∀ x ∈ scalarAnnulus, D.laplacian H x = 0)
@@ -173,12 +142,6 @@ theorem annular_harmonic_range {H : Plane → ℝ} (hHc : Continuous H)
         norm_num)
   intro x hx
   exact ⟨neg_nonpos.mp (hl x hx), hu x hx⟩
-
-
-
-
-
-
 
 theorem exists_bounded_annular_harmonic_potential :
     ∃ (H : Plane → ℝ) (u : H1Zero D scalarAnnulus),

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.GradientConvergence.Scaling
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -89,8 +83,6 @@ theorem reducedLengthCoordinateSource_memLp
   have h := (P.reducedLength_coordinate_source_memLp p (mul_pos R.tau_pos hτ)
     e he hei hO hOc hOs).const_mul (Real.sqrt ((1 / s) ^ n) * s)
   exact h.ae_eq (Eventually.of_forall fun x => (R.reducedLengthCoordinateSource_scale p hτ e x).symm)
-
-
 
 theorem reducedLength_weak_coordinate_divergence_le
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) {τ : ℝ} (hτ : 0 < τ)

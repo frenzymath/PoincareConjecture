@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialCylinderScalarLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,8 +54,6 @@ private theorem initial_neck_scalar_realization
     · rfl
   refine ⟨G, DG, fun i j => N.euclidean_realization_coefficient_germ g q hp G hG i j, ?_⟩
   exact hscalar.trans (congrArg D.scalarCurvature (congrArg N.coordinate hcenter))
-
-
 
 theorem exists_initial_cylinder_scalar_control {theta eta : ℝ}
     (htheta : theta < 1) (heta : 0 < eta) :

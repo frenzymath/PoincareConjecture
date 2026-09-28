@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.PartialHomeomorphCompact
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +28,6 @@ theorem terminalSourceShiRadius_pos {a ρ : ℝ} (ha : 0 < a) (hρ : 0 < ρ) :
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem terminalSourceCharts_compact_ball
     (h : RiemannianMetric 3 M) (Φ : PartialDiffeomorph (𝓡 3) (𝓡 3) E M ∞)

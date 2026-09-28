@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SphereLineNormalizedTime
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderLongerWindow
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedLongerNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ private theorem scalar_eq_of_equal_metrics
     D.scalarCurvature x = D'.scalarCurvature x := by
   subst h
   exact D.scalarCurvature_eq D' x
-
-
 
 theorem blowupSequence_far_tip_longer_standard_neck
     (P : M35StandardCapPredecessors)
@@ -98,9 +87,6 @@ theorem blowupSequence_far_tip_longer_standard_neck
     (A.solution.flow.metric 0) N.terminal_neck (N.terminal_center.trans hcenter)
     j hstage gamma epsilon (hdelta.trans_le hdg) he hehalf
     (N.terminal_epsilon.trans_le hdg) hge hlong
-
-
-
 
 theorem blowupSequence_far_tip_prescribed_window
     (P : M35StandardCapPredecessors)

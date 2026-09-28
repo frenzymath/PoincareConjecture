@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
 open scoped Manifold ContDiff Bundle NNReal ENNReal Topology
 
 namespace PoincareConjecture
-
 
 theorem FlowCarrier.volumeMeasure_eq_smul_metricHausdorffVolume
     {n : ℕ} (C : FlowCarrier n) (g : C.metric) :
@@ -32,8 +20,6 @@ theorem FlowCarrier.volumeMeasure_eq_smul_metricHausdorffVolume
       Measure.addHaarScalarFactor (volume : Measure (EuclideanSpace ℝ (Fin n)))
         (Measure.hausdorffMeasure (n : ℝ)) • C.metricHausdorffVolume g := by
   rfl
-
-
 
 theorem PointedRicciFlowCompactnessHypotheses.normalized_noncollapsing
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T) :

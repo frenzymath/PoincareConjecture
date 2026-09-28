@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_StandardGeodesic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,29 +10,21 @@ namespace PoincareConjecture.M44
 
 open M36 RiemannianMetric
 
-
-
 noncomputable def standardRadialExponential (g₀ : StandardInitialMetric)
     (v : StandardCapSpace) : StandardCapSpace :=
   radialEuclideanRadius g₀ (radialSpeed g₀ 0 * ‖v‖) • (‖v‖⁻¹ • v)
-
-
 
 noncomputable def standardRadialLogarithm (g₀ : StandardInitialMetric)
     (x : StandardCapSpace) : StandardCapSpace :=
   (radialArclength g₀ ‖x‖ / radialSpeed g₀ 0) • (‖x‖⁻¹ • x)
 
-
 theorem standardRadialExponential_zero (g₀ : StandardInitialMetric) :
     standardRadialExponential g₀ 0 = 0 := by
   simp [standardRadialExponential]
 
-
 theorem standardRadialLogarithm_zero (g₀ : StandardInitialMetric) :
     standardRadialLogarithm g₀ 0 = 0 := by
   simp [standardRadialLogarithm]
-
-
 
 theorem norm_standardRadialExponential (g₀ : StandardInitialMetric)
     (v : StandardCapSpace) :
@@ -56,8 +38,6 @@ theorem norm_standardRadialExponential (g₀ : StandardInitialMetric)
   simp [standardRadialExponential, norm_smul, Real.norm_eq_abs,
     abs_of_pos hr, norm_ne_zero_iff.mpr hv]
 
-
-
 theorem norm_standardRadialLogarithm (g₀ : StandardInitialMetric)
     (x : StandardCapSpace) :
     ‖standardRadialLogarithm g₀ x‖ = radialArclength g₀ ‖x‖ / radialSpeed g₀ 0 := by
@@ -67,7 +47,6 @@ theorem norm_standardRadialLogarithm (g₀ : StandardInitialMetric)
     div_pos (radialArclength_pos g₀ (norm_pos_iff.mpr hx)) (radialSpeed_pos g₀ 0)
   rw [standardRadialLogarithm, norm_smul, Real.norm_eq_abs, abs_of_pos hr]
   simp [norm_smul, norm_ne_zero_iff.mpr hx]
-
 
 theorem standardRadialLogarithm_exponential (g₀ : StandardInitialMetric)
     (v : StandardCapSpace) :
@@ -88,7 +67,6 @@ theorem standardRadialLogarithm_exponential (g₀ : StandardInitialMetric)
     rw [inv_mul_cancel_left₀ hr, mul_inv_cancel₀ hvnorm]
   rw [hc, one_smul]
 
-
 theorem standardRadialExponential_logarithm (g₀ : StandardInitialMetric)
     (x : StandardCapSpace) :
     standardRadialExponential g₀ (standardRadialLogarithm g₀ x) = x := by
@@ -106,15 +84,11 @@ theorem standardRadialExponential_logarithm (g₀ : StandardInitialMetric)
     field_simp
   rw [hs, one_smul]
 
-
 theorem standardRadialExponential_injective (g₀ : StandardInitialMetric) :
     Function.Injective (standardRadialExponential g₀) := by
   have hleft : Function.LeftInverse (standardRadialLogarithm g₀)
       (standardRadialExponential g₀) := standardRadialLogarithm_exponential g₀
   exact hleft.injective
-
-
-
 
 theorem exists_standard_radial_geodesic (g₀ : StandardInitialMetric)
     (v : StandardCapSpace) :
@@ -150,8 +124,6 @@ theorem exists_standard_radial_geodesic (g₀ : StandardInitialMetric)
   change HasDerivAt γ (standardRadialLogarithm g₀ (standardRadialExponential g₀ v)) 0
     at hd
   simpa only [standardRadialLogarithm_exponential] using hd
-
-
 
 theorem standard_exponential_eq_radial (g₀ : StandardInitialMetric)
     {e : StandardCapSpace → StandardCapSpace} {V : Set StandardCapSpace}

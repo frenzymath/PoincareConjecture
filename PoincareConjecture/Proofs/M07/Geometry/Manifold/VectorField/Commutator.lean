@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.VectorField.Derivation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   [I.Boundaryless]
-
-
 
 theorem mfderiv_mlieBracket_eq_commutator_of_contMDiffAt
     (X Y : (x : M) → TangentSpace I x)
@@ -133,8 +121,6 @@ theorem mfderiv_mlieBracket_eq_commutator_of_contMDiffAt
   exact VectorField.fderiv_apply_lieBracket (n := ∞) hgC
     (by rw [minSmoothness_of_isRCLikeNormedField]; exact WithTop.coe_le_coe.mpr le_top)
     (hdiff Y hY) (hdiff X hX)
-
-
 
 theorem mfderiv_mlieBracket_eq_commutator
     (X Y : (x : M) → TangentSpace I x)

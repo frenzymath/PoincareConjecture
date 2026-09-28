@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckCompatibleJetNative
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -184,7 +176,6 @@ section ChartOutput
 
 variable [T2Space M] [CompactSpace M] {p : M} {K : Set M} (C : Cutoffs (n := n) p K)
 
-
 def dualCoefficient (g0 : RiemannianMetric n M) (V : SmoothField (n := n) (M := M))
     (i : Fin n) (x : M) : ℝ :=
   ∑ k, (C.matrix g0 x)⁻¹ i k * g0.inner x (C.field k x) (V x)
@@ -252,7 +243,6 @@ theorem outputCoefficient_contMDiff (g0 : RiemannianMetric n M) {chi : M → ℝ
   (hchi.mul (dualCoefficient_contMDiff C g0 V i)).mul
     (dualCoefficient_contMDiff C g0 W j)
 
-
 theorem weighted_bilinear_eq (g0 : RiemannianMetric n M) (chi : M → ℝ)
     (hchi : Function.support chi ⊆ K) (V W : SmoothField (n := n) (M := M))
     (B : (x : M) → TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ)
@@ -292,7 +282,6 @@ theorem weighted_source_eq (g0 : RiemannianMetric n M) (chi : M → ℝ)
       exact hx (hchi h)
     simp only [outputCoefficient, hz, zero_mul, Finset.sum_const_zero]
 
-
 theorem weighted_ricciDeTurck_eq (g0 g : RiemannianMetric n M)
     (D : LeviCivitaData g) (B : LeviCivitaData g0) (chi : M → ℝ)
     (hchi : Function.support chi ⊆ K) (V W : SmoothField (n := n) (M := M)) (x : M) :
@@ -307,7 +296,6 @@ theorem weighted_ricciDeTurck_eq (g0 g : RiemannianMetric n M)
     smoothRicciDeTurckTensor_apply]
   exact ricciDeTurckSource_frameMetricJet_eq_intrinsic D B p
     (C.eta_support (C.mem_eta_support hy)) i j
-
 
 theorem ricciDeTurck_eq_sum_chartSources {A : Type*} [Fintype A]
     (centers : A → M) (sets : A → Set M) (cutoffs : ∀ a, Cutoffs (n := n) (centers a) (sets a))
@@ -334,7 +322,6 @@ structure CompatibleChartCover where
   centers : Finset M
   partition : SmoothPartitionOfUnity centers (𝓡 n) M Set.univ
   cutoffs : ∀ a : centers, Cutoffs (n := n) a.val (tsupport (partition a))
-
 
 theorem exists_compatibleChartCover : Nonempty (CompatibleChartCover (n := n) (M := M)) := by
   classical
@@ -422,7 +409,6 @@ def termsL2 {k : ℕ} :
         (ContinuousLinearMap.proj (wordIndex t.word (h t List.mem_cons_self))) +
       termsL2 terms (fun s hs => h s (List.mem_cons_of_mem t hs))
 
-
 theorem termsL2_ae_eq {k : ℕ}
     (terms : List (DirectionalTerm (n := n) (M := M) (iota := iota)))
     (h : ∀ t ∈ terms, t.word.length ≤ k)
@@ -491,7 +477,6 @@ theorem termsContinuous_eq {k : ℕ}
 
 variable {A : Type*} [Fintype A]
 
-
 def packL2 : (A → Lp ℝ 2 μ) →L[ℝ] Lp (A → ℝ) 2 μ := by
   classical
   exact ∑ a : A, ((ContinuousLinearMap.single ℝ (fun _ : A => ℝ) a).compLpL 2 μ).comp
@@ -516,7 +501,6 @@ theorem packL2_ae_eq (Q : A → Lp ℝ 2 μ) (f : A → M → ℝ)
     packL2 μ Q =ᵐ[μ] fun x a => f a x := by
   filter_upwards [packL2_coe μ Q, ae_all_iff.mpr hQ] with x hx h
   exact hx.trans (funext h)
-
 
 def packContinuous : (A → C(M, ℝ)) →L[ℝ] C(M, A → ℝ) := by
   classical

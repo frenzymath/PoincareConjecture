@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.Projectiv
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralEuclideanOrientation
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralCompactOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,20 +13,14 @@ namespace Poincare.Topology.Orientation.ProjectivePlane
 
 open Poincare.Topology
 
-
 abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 def euclideanLocalOrientation : LocalOrientation E3 := by
   exact ⟨exists_integralEuclideanOrientationData.choose,
     exists_integralEuclideanOrientationData.choose_spec.1,
     exists_integralEuclideanOrientationData.choose_spec.2⟩
 
-
 def translation (a : E3) : C(E3, E3) := ⟨fun x => x + a, by fun_prop⟩
-
-
 
 theorem translation_puncture (a : E3) :
     MapsTo (translation a) ({0}ᶜ : Set E3) ({a}ᶜ : Set E3) := by
@@ -43,8 +28,6 @@ theorem translation_puncture (a : E3) :
   apply hx
   change x + a = a at h
   exact add_right_cancel (h.trans (zero_add a).symm)
-
-
 
 theorem translation_preserves_orientation (O : LocalOrientation E3) (a : E3) :
     homologyMap (integralRelativeMap (translation a) (translation_puncture a)) 3

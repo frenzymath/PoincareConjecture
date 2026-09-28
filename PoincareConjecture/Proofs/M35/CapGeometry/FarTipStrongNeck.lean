@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipReflectedExclusion
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +24,6 @@ private theorem null_plane_transport
   cases heq
   obtain ⟨u, v, hu, hv, huv, hR⟩ := hnull
   exact ⟨u, v, hu, hv, huv, (D'.curvatureTensor_eq D x u v u v).trans hR⟩
-
-
-
 
 theorem blowupSequence_far_tip_centered_strong_neck
     (P : M35StandardCapPredecessors)

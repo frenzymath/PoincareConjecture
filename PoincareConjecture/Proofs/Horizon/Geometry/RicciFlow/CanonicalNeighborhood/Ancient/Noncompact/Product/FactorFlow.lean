@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.M27ProductModels
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.FactorMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,7 +71,6 @@ theorem sphere_smooth : RiemannianMetric.IsSmoothFamilyOn C.sphere.metric (Iic 0
   rw [hid, hid]
   simpa only [M27RoundSphereFamily.productInner, mul_zero, add_zero] using
     (C.metric_transport t ht.1 (x, 0) (v, 0) (w, 0)).symm
-
 
 def sphereFlow : RicciFlow 2 UnitTwoSphere (Iic 0) where
   metric := C.sphere.metric

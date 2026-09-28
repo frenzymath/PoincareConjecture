@@ -4,14 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Abs
 import Mathlib.Analysis.Calculus.FDeriv.Comp
 import Mathlib.LinearAlgebra.Determinant
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -62,7 +54,6 @@ theorem contDiff_clmDet : ContDiff ℝ ∞ (fun L : E →L[ℝ] E => L.det) := b
     rfl
   rw [heq]
   exact contDiff_matrixDet.comp hmatrix
-
 
 theorem isInvertible_fderiv_partialHomeomorph (e : OpenPartialHomeomorph E E)
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)
@@ -147,7 +138,6 @@ theorem chartTransitionJacobian_contDiffOn (p q : M) :
       (chartTransition p q).open_source (by simp))
   exact hd.abs (fun z hz =>
     clm_det_ne_zero_of_isInvertible (chartTransition_fderiv_invertible p q hz))
-
 
 theorem chartTransition_map_withDensity (p q : M) :
     Measure.map (chartTransition (n := n) p q)

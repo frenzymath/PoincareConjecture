@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.HomotopyOnInterval
 import PoincareConjecture.Definitions.M53SphereSeparation
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem m60SphereVariation_nullHomotopic_center {v : ℝ × UnitTwoSphere → M}
     {ε s : ℝ} (hε : 0 < ε) (hs : s ∈ Ioo (-ε) ε)
     (hv : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓡 2)) (𝓡 n) ∞ v (Ioo (-ε) ε ×ˢ univ))
@@ -39,9 +29,6 @@ theorem m60SphereVariation_nullHomotopic_center {v : ℝ × UnitTwoSphere → M}
   obtain ⟨_, p, hp⟩ := hnull
   refine ⟨h0, p, ?_⟩
   exact (M60.homotopic_of_continuousOn_interval hε hs hv.continuousOn h0 h1).trans hp
-
-
-
 
 theorem m60EnergyStationary_of_least_energy (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hnull : ¬ IsNullHomotopicSphere f)

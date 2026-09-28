@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CircleLift
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfilePrimitive
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NullLoopHomotopy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,22 +15,13 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 theorem m64_curvePeriod_ne : curvePeriod ≠ 0 := by
   dsimp [curvePeriod]
   positivity
 
-
-
-
 noncomputable def m64AngleLoopCircle : AddCircle curvePeriod ≃ₜ LoopCircle := by
   exact (AddCircle.homeomorphCircle m64_curvePeriod_ne).trans
     m60LoopCircleHomeomorphCircle.symm
-
-
-
 
 theorem m64AngleLoopCircle_apply (x : ℝ) :
     m64AngleLoopCircle (x : AddCircle curvePeriod) = m64LoopCircleParam x := by
@@ -57,9 +36,6 @@ theorem m64AngleLoopCircle_apply (x : ℝ) :
   rw [AddCircle.homeomorphCircle_apply, AddCircle.toCircle_apply_mk]
   simp [curvePeriod]
 
-
-
-
 noncomputable def m64FlatteningCircleHomeomorph
     (N : ℕ) (hN : 0 < N) : LoopCircle ≃ₜ LoopCircle := by
   classical
@@ -72,9 +48,6 @@ noncomputable def m64FlatteningCircleHomeomorph
     m64AngleLoopCircle.symm.trans (e.symm.trans m64AngleLoopCircle)
   exact h
 
-
-
-
 noncomputable def m64CircleReparamFromFlattening
     (N : ℕ) (hN : 0 < N) : CircleReparameterization := {
   map := m64FlatteningCircleHomeomorph N hN
@@ -83,10 +56,6 @@ noncomputable def m64CircleReparamFromFlattening
   right_inverse := (m64FlatteningCircleHomeomorph N hN).right_inv
   continuous_map := (m64FlatteningCircleHomeomorph N hN).continuous
   continuous_inverse := (m64FlatteningCircleHomeomorph N hN).symm.continuous }
-
-
-
-
 
 theorem m64CircleReparamFromFlattening_apply
     (N : ℕ) (hN : 0 < N) (x : ℝ) :
@@ -107,10 +76,6 @@ theorem m64CircleReparamFromFlattening_apply
   rw [← m64AngleLoopCircle_apply x, ← m64AngleLoopCircle_apply (m63Flattening N x)]
   dsimp [h]
   rw [m64AngleLoopCircle.symm_apply_apply, ← he, e.symm_apply_apply]
-
-
-
-
 
 theorem m64_polygon_boundary_eq_flattened_family
     {M : Type u} [TopologicalSpace M]
@@ -153,9 +118,6 @@ theorem m64_polygon_boundary_eq_flattened_family
   rw [← hboundary, hfamily v]
   rfl
 
-
-
-
 theorem m64_raw_boundary_reparam_of_M63
     {M : Type u} [TopologicalSpace M] [T2Space M]
     [SecondCountableTopology M]
@@ -171,10 +133,6 @@ theorem m64_raw_boundary_reparam_of_M63
   refine ⟨boundary, m64CircleReparamFromFlattening A.count A.count_positive, ?_⟩
   exact m64_polygon_boundary_eq_flattened_family A.count_positive
     (A.angular_eq z)
-
-
-
-
 
 theorem m64RawNullLoop_of_boundary_reparam
     {M : Type u} [TopologicalSpace M]

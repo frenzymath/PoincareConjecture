@@ -96,5 +96,3 @@ theorem linear_moving_vector_hasDerivAt {P : ℝ → E →L[ℝ] ℝ}
   simpa only [hd] using hP.hasDerivAt.clm_apply hw
 
 end PoincareConjecture.M08
-
-

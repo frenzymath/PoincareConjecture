@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ChainTrace
 import Mathlib.Algebra.Homology.HomologySequence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,13 +17,10 @@ variable {K : Type u} [CommRing K] [IsDomain K] [IsPrincipalIdealRing K]
 
 omit [IsDomain K] in
 
-
 theorem moduleFinite_cycles [∀ i, Module.Finite K (C.X i)] (i : ℕ) :
     Module.Finite K (C.cycles i) :=
   Module.Finite.of_injective (C.iCycles i).hom
     ((ModuleCat.mono_iff_injective _).mp inferInstance)
-
-
 
 theorem moduleFree_cycles [∀ i, Module.Free K (C.X i)]
     [∀ i, Module.Finite K (C.X i)] (i : ℕ) : Module.Free K (C.cycles i) := by
@@ -44,14 +31,11 @@ theorem moduleFree_cycles [∀ i, Module.Free K (C.X i)]
 
 omit [IsDomain K] in
 
-
 theorem moduleFinite_homology [∀ i, Module.Finite K (C.X i)] (i : ℕ) :
     Module.Finite K (C.homology i) := by
   let := moduleFinite_cycles (C := C) i
   exact Module.Finite.of_surjective (C.homologyπ i).hom
     ((ModuleCat.epi_iff_surjective _).mp inferInstance)
-
-
 
 theorem trace_chains_succ_sub_cycles
     [∀ i, Module.Free K (C.X i)] [∀ i, Module.Finite K (C.X i)]
@@ -98,8 +82,6 @@ theorem trace_chains_succ_sub_cycles
     exact (f.comm (i + 1) i).symm
   · exact congrArg ModuleCat.Hom.hom (homologyπ_naturality f i)
 
-
-
 theorem alternatingTrace_eq_homology_sum_add_cycles
     [∀ i, Module.Free K (C.X i)] [∀ i, Module.Finite K (C.X i)]
     [∀ i, Module.Free K (C.homology i)] (f : C ⟶ C) (N : ℕ) :
@@ -120,9 +102,6 @@ theorem alternatingTrace_eq_homology_sum_add_cycles
       simp only [alternatingTrace, Finset.sum_range_succ] at ih ⊢
       rw [pow_succ]
       linear_combination ih + (-1 : K) ^ (N + 1) * h
-
-
-
 
 theorem alternatingTrace_eq_homology_sum
     [∀ i, Module.Free K (C.X i)] [∀ i, Module.Finite K (C.X i)]

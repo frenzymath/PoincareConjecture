@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.ReducedLength.Recovery
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Constants
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -71,8 +63,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J}
 
-
-
 theorem terminal_square_action_le
     (q : ℝ → M) {W : Set ℝ} (hW : IsOpen W) (hIW : Icc (1 : ℝ) 2 ⊆ W)
     (hq : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) ∞ q W)
@@ -118,9 +108,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J}
   {τmax : ℝ}
-
-
-
 
 theorem reducedLength_two_le_of_terminal_path
     (L : LGeodesicTheory F 0 τmax) (hmax : 2 ≤ τmax)

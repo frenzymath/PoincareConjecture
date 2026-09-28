@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckParameterBackgroundNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckPositiveStateNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckStatePullbackContinuityNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -229,7 +222,6 @@ theorem pulledMetric_inner (g : RiemannianMetric n M)
   rw [smoothPullbackMetric_inner, smoothPullbackMetric_inner, smoothPullback_apply, hmetric]
   ring
 
-
 theorem shiftedRawState_smooth_covariance
     (QB : NativeProbeContinuous (M := M) (iota := Fin d.fieldCount) (2 * r + 2))
     (hQBsmall : ‖QB‖ < K.backgroundRadius)
@@ -269,7 +261,6 @@ theorem shiftedRawState_smooth_covariance
   simp only [pullbackCommutator, ContinuousLinearMap.sub_apply,
     ContinuousLinearMap.comp_apply, map_add]
   abel
-
 
 theorem shiftedRawState_covariance
     (p : ℕ) (hpr : 2 * p ≤ r) (hp : (n : ℝ) < 2 * (2 * (p : ℝ)))
@@ -348,7 +339,6 @@ theorem forcing_shiftedRawState_ae {T : ℝ} (hT : 0 ≤ T)
       fun t => shiftedRawState d K QB kappa (shiftedHighOperator hT d.symmetricParameters F t) :=
   parameterForcing_coe d.symmetricParameters K.coefficientMap K.lowerMap K.correctionMap
     hT QB kappa F
-
 
 theorem nativePullbackForcing_fixedPoint
     (L : FiniteChartLocalizationData d.charts)
@@ -461,7 +451,6 @@ theorem nativePullbackForcing_refl {C : ENNReal} (hC : C ≠ ⊤)
   simpa only [nativePullbackForcing, evenPullback_refl, add_sub_cancel_right] using ht
 
 variable {P : Type} [NormedAddCommGroup P] [NormedSpace ℝ P]
-
 
 theorem exists_locally_continuous_nativePullbackForcing
     {U : Set P} (hU : IsOpen U) (hzero : (0 : P) ∈ U)
@@ -648,7 +637,6 @@ theorem exists_smooth_orbit_of_fixedPoint
   change responseState d.symmetricParameters (u (q p)) t = _
   rw [huf]
   exact responseState_nativePullbackForcing d L (Phi p) hC (hdom0 p hp.1) r hT.le F t.property
-
 
 theorem exists_fixedPoint_with_smooth_orbits
     (s : ℕ) (hsr : 2 * s ≤ r) (hs : (n : ℝ) < 2 * (2 * (s : ℝ)))

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CompactnessFeedJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ noncomputable local instance cylinderFeedCoefficientNorm :
 
 noncomputable local instance cylinderFeedCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 structure CylinderCompactnessSample (g0 : StandardInitialMetric)
     (F : SurgeryFlowData.{u}) (a : ℝ) (ha : a ∈ F.surgery_times)
@@ -87,26 +74,18 @@ variable {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
   {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
   {i : Fin (F.event a ha).cap_count}
 
-
-
 noncomputable def coefficients (D : CylinderCompactnessSample g0 F a ha i) :
     ℝ × E → MetricCoefficient 3 := fun p =>
   (D.ordinary.flow.metric p.1).pullbackCoefficients (targetChart D.chart D.target_point) p.2
-
-
 
 theorem source_eq (D : CylinderCompactnessSample g0 F a ha i) :
     D.chart.source = g0.metric.ball 0 D.radius := by
   rw [D.chart_source, D.standard_initial_eq]
 
-
-
 theorem coefficients_smooth (D : CylinderCompactnessSample g0 F a ha i) :
     ContDiffOn ℝ ∞ D.coefficients (Ico 0 D.lifetime ×ˢ D.chart.source) :=
   contDiffOn_pullbackCoefficients_within D.ordinary.flow D.chart.open_source
     (contMDiffOn_targetChart D.chart D.target_point)
-
-
 
 theorem target_derivative_invertible (D : CylinderCompactnessSample g0 F a ha i)
     {x : E} (hx : x ∈ D.chart.source) :
@@ -115,21 +94,15 @@ theorem target_derivative_invertible (D : CylinderCompactnessSample g0 F a ha i)
     (𝓡 3) (𝓡 3) ∞ hx
   exact ⟨h.mfderivToContinuousLinearEquiv (by simp), rfl⟩
 
-
-
 theorem coefficients_invertible (D : CylinderCompactnessSample g0 F a ha i)
     (t : ℝ) {x : E} (hx : x ∈ D.chart.source) :
     (D.coefficients (t, x)).IsInvertible :=
   (D.ordinary.flow.metric t).isInvertible_pullbackCoefficients
     (D.target_derivative_invertible hx).injective
 
-
-
 theorem coefficients_symmetric (D : CylinderCompactnessSample g0 F a ha i)
     (p : ℝ × E) (v w : E) : D.coefficients p v w = D.coefficients p w v :=
   (D.ordinary.flow.metric p.1).symm _ _ _
-
-
 
 theorem coefficients_evolution (D : CylinderCompactnessSample g0 F a ha i)
     {t : ℝ} (ht : t ∈ Ioo 0 D.lifetime) {x : E} (hx : x ∈ D.chart.source) :
@@ -141,9 +114,6 @@ theorem coefficients_evolution (D : CylinderCompactnessSample g0 F a ha i)
   exact hasDerivAt_pullbackCoefficients_ricci G isOpen_Ioo D.chart.open_source
     (contMDiffOn_targetChart D.chart D.target_point)
     (fun _ hy => D.target_derivative_invertible hy) ht hx
-
-
-
 
 theorem initial_coefficients (D : CylinderCompactnessSample g0 F a ha i)
     {x : E} (hx : x ∈ D.chart.source) :
@@ -161,8 +131,6 @@ theorem initial_coefficients (D : CylinderCompactnessSample g0 F a ha i)
       (physical_birth_pullback_eq F a ha i D.comparison g hg D.chart.open_source hdomain
         (fun y _ => D.chart_eq y) hx)
 
-
-
 theorem initial_spatial_jet (D : CylinderCompactnessSample g0 F a ha i)
     {x : E} (hx : x ∈ D.chart.source) (m : ℕ) :
     iteratedFDeriv ℝ m (fun y => D.coefficients (0, y)) x =
@@ -171,8 +139,6 @@ theorem initial_spatial_jet (D : CylinderCompactnessSample g0 F a ha i)
       D.comparison.normalizedCoefficients :=
     eventually_of_mem (D.chart.open_source.mem_nhds hx) (fun _ hy => D.initial_coefficients hy)
   exact (heq.iteratedFDeriv ℝ m).eq_of_nhds
-
-
 
 def fixedComparison (D : CylinderCompactnessSample g0 F a ha i) :
     SurgeryCapClose g0 ((F.event a ha).local_result i).output
@@ -184,9 +150,6 @@ def fixedComparison (D : CylinderCompactnessSample g0 F a ha i) :
       (((F.event a ha).necks i).neck.scale) D.eta) D.standard_initial_eq) D.comparison
 
 end CylinderCompactnessSample
-
-
-
 
 theorem normalizedCoefficients_cast_initial
     {g0 g1 : StandardInitialMetric} (h : g0 = g1)

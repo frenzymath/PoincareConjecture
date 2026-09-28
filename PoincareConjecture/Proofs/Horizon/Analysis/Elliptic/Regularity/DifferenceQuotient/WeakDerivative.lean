@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.DifferenceQuotient.LocalFunctional
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -166,6 +159,5 @@ theorem hasWeakPartialDeriv_of_diffQuot_uniform_bound_loc
       Lp.enorm_def g_lp
     rw [← h_enorm_eq]
     exact h_enorm_le
-
 
 end Poincare.Analysis.Sobolev

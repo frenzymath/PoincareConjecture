@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Disks.SupportedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
 set_option autoImplicit false
 open Set Geometry unitInterval
 

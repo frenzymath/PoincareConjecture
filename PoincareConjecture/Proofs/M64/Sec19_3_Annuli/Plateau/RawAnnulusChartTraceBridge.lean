@@ -6,20 +6,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCha
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,9 +30,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local instance : IsFiniteMeasure (volume.restrict S) := isFiniteMeasure_restrict.mpr
   ((measure_mono interior_subset).trans_lt m64AnnulusDomain_isCompact.measure_lt_top).ne
-
-
-
 
 theorem interiorCurve_horizontal_fiber_data
     {f d : LoopPlane → E} (hd2 : MemLp d 2 (volume.restrict S))
@@ -99,10 +82,6 @@ private theorem interiorCurve_horizontal_integral_zero
     ← integral_Icc_eq_integral_Ioc]
   exact hzero
 
-
-
-
-
 theorem interiorCurve_horizontal_primitive
     {f d : ℝ → E}
     (hder : ∀ x ∈ Ioo (0 : ℝ) curvePeriod,
@@ -132,9 +111,6 @@ theorem interiorCurve_horizontal_primitive
   · have hF0 : F 0 = c := by simp only [F, intervalIntegral.integral_same, add_zero]
     have hFT : F curvePeriod = c := by simp only [F, hzero', add_zero]
     exact hF0.trans hFT.symm
-
-
-
 
 theorem interiorCurve_horizontal_seam_trace
     {f d : LoopPlane → E} (hd2 : MemLp d 2 (volume.restrict S))
@@ -188,10 +164,6 @@ theorem interiorCurve_horizontal_seam_trace
         (EuclideanSpace.single (0 : Fin 2) 1)) hder hdi hseam'
   exact ⟨F, hF, hEq, hformula, hends⟩
 
-
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_equal_horizontal_seam_traces
     (L : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)
     (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -219,9 +191,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_equal_horizontal_seam_traces
           (L.annulus.classical_columns_of_contMDiffOn he hA 0))
       (hseam := L.annulus.angular_column_integral_eq_zero))
 
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_seam_reader_weak_partial
     (L : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)
     {k' : ℕ} (J : E →L[ℝ] EuclideanSpace ℝ (Fin k'))
@@ -233,10 +202,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_seam_reader_weak_partial
   exact m64WeakPartial_comp_linear L.annulus.seam_extension_memLp.1
     (L.annulus.seam_extension_memLp.2 i)
     (L.annulus.seam_extension_weak_partial i) J j
-
-
-
-
 
 theorem M64FreeWeakPhaseAnnulus.raw_local_chart_columns
     (L : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)
@@ -262,9 +227,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_local_chart_columns
   exact L.annulus.exists_local_chart_columns he.continuous hread
     hA.continuousOn ha
 
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_seam_extension_energy
     (L : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q)
@@ -280,11 +242,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_seam_extension_energy
   exact L.annulus.seam_extension_energy Q hQ hei hb
 
 variable [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem M64ObservedWeakAnnulus.weightedEnergy_eq_metric_integral_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -308,9 +265,6 @@ theorem M64ObservedWeakAnnulus.weightedEnergy_eq_metric_integral_of_contMDiffOn
   rw [h0, h1,
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he Q hdiag hd 0,
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he Q hdiag hd 1]
-
-
-
 
 theorem M64FreeWeakPhaseAnnulus.raw_weightedEnergy_eq_metric_integral
     (L : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 k D)

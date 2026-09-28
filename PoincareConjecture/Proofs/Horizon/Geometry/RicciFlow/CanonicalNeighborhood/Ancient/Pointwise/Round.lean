@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.TimeShift
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +34,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem epsilonRoundComponent_of_roundSlice
     (K : AncientKappaSolution 3 M) {t epsilon : ℝ} (ht : t ≤ 0)
@@ -96,8 +85,6 @@ theorem epsilonRoundComponent_of_roundSlice
   · refine ⟨0, sq_pos_of_pos hepsilon, fun y => ?_⟩
     rw [hmetric]
     simp [round_iterated_metric_derivative_zero, RiemannianMetric.tensorNorm]
-
-
 
 theorem strongCanonicalNeighborhood_of_round
     (K : AncientKappaSolution 3 M) (hround : IsRoundAncientKappaSolution K)

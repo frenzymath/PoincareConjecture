@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryVectorCoeffi
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryInverseMetric
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryComponentPairings
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +16,6 @@ variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin (n + 1))
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem m64WeightedMixedMetric_raised_equation
     {O S : Set LoopPlane} (hO : IsOpen O) (hS : MeasurableSet S)

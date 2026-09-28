@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ParameterizedBallShrinking
 import PoincareConjecture.Proofs.M38.LinearSphereDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,13 +9,10 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def endScaleProfile (c t : ℝ) : ℝ := (1 / 8) * ballShrinkProfile c (8 * t)
-
 
 noncomputable def endScaleInverse (c t : ℝ) : ℝ :=
   (1 / 8) * parameterizedBallShrinkInverse c (8 * t)
-
 
 theorem endScale_left_inverse {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     endScaleInverse c (endScaleProfile c t) = t := by
@@ -32,7 +21,6 @@ theorem endScale_left_inverse {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     ballShrinkProfile c (8 * t) by ring, parameterizedBallShrinkInverse_left hc hc1]
   ring
 
-
 theorem endScale_right_inverse {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     endScaleProfile c (endScaleInverse c t) = t := by
   unfold endScaleInverse endScaleProfile
@@ -40,18 +28,15 @@ theorem endScale_right_inverse {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     parameterizedBallShrinkInverse c (8 * t) by ring, parameterizedBallShrinkInverse_right hc hc1]
   ring
 
-
 theorem endScaleProfile_inner (c : ℝ) {t : ℝ} (ht : t ≤ 5 / 32) :
     endScaleProfile c t = c * t := by
   rw [endScaleProfile, ballShrinkProfile_linear c (8 * t) (by linarith)]
   ring
 
-
 theorem endScaleProfile_outer (c : ℝ) {t : ℝ} (ht : 3 / 16 ≤ t) :
     endScaleProfile c t = t := by
   rw [endScaleProfile, ballShrinkProfile_outer c (8 * t) (by linarith)]
   ring
-
 
 theorem endScaleProfile_strictMono {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     StrictMono (endScaleProfile c) := by
@@ -60,15 +45,12 @@ theorem endScaleProfile_strictMono {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     (ballShrinkProfile_strictMono hc hc1 (mul_lt_mul_of_pos_left hst (by norm_num)))
     (by norm_num)
 
-
 @[simp] theorem endScaleProfile_zero (c : ℝ) : endScaleProfile c 0 = 0 := by
   rw [endScaleProfile_inner c (by norm_num : (0 : ℝ) ≤ 5 / 32)]
   ring
 
-
 @[simp] theorem endScaleProfile_one (c : ℝ) : endScaleProfile c 1 = 1 :=
   endScaleProfile_outer c (by norm_num)
-
 
 theorem endScaleProfile_mem_iff {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     endScaleProfile c t ∈ Set.Ioo (0 : ℝ) 1 ↔ t ∈ Set.Ioo (0 : ℝ) 1 := by
@@ -85,10 +67,8 @@ theorem endScaleProfile_mem_iff {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
 
 variable (A : UnitTwoSphere → ℝ) (k : ℝ)
 
-
 noncomputable def cylinderEndScale (p : RoundCylinderSpace) : RoundCylinderSpace :=
   (p.1, endScaleProfile (k / A p.1) p.2)
-
 
 noncomputable def cylinderEndScaleInverse (p : RoundCylinderSpace) : RoundCylinderSpace :=
   (p.1, endScaleInverse (k / A p.1) p.2)
@@ -102,7 +82,6 @@ theorem cylinderEndScale_coefficient (z : UnitTwoSphere) : 0 < k / A z ∧ k / A
   ⟨div_pos hk (hk.trans (hAk z)), (div_lt_one (hk.trans (hAk z))).mpr (hAk z)⟩
 
 include hA hk hAk
-
 
 theorem cylinderEndScale_smooth :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (cylinderEndScale A k) := by
@@ -119,7 +98,6 @@ theorem cylinderEndScale_smooth :
     ((contDiff_const.mul contDiff_id).contMDiff.comp
       (ballShrinkProfile_joint_smooth.contMDiff.comp hp))
 
-
 theorem cylinderEndScaleInverse_smooth :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (cylinderEndScaleInverse A k) := by
   have hc : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞
@@ -134,7 +112,6 @@ theorem cylinderEndScaleInverse_smooth :
   have hi := parameterizedBallShrinkInverse_smooth.contMDiffOn.comp_contMDiff hp
     (fun p => ⟨cylinderEndScale_coefficient A k hk hAk p.1, Set.mem_univ _⟩)
   exact contMDiff_fst.prodMk ((contDiff_const.mul contDiff_id).contMDiff.comp hi)
-
 
 noncomputable def cylinderEndScaleDiffeomorph :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))

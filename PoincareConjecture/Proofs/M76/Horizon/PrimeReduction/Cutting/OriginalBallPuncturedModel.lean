@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedBallSphereModel
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.CubicalThreeSphere
 

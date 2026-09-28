@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.LocalInverse
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -15,7 +13,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem hasDerivAt_variation
     {q : ℝ × E → E} {u : E → E} {t : ℝ} {v : E}
@@ -62,7 +59,6 @@ theorem hasDerivAt_variation
   apply (hl.congr_of_eventuallyEq he).congr_deriv
   simpa only [Function.comp_def] using hsym.trans hr'.symm
 
-
 theorem fderiv_metric_symm
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
     (hB : DifferentiableAt ℝ B x)
@@ -77,7 +73,6 @@ theorem fderiv_metric_symm
   have h := congrArg (fun L : E →L[ℝ] ℝ => L u)
     (ha.unique (hb.congr_of_eventuallyEq he))
   simpa using h
-
 
 theorem hasDerivAt_geodesic_pairing
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q u J : ℝ → E} {K : E} {t : ℝ}

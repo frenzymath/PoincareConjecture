@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M38.AssemblyTransport
 import PoincareConjecture.Proofs.M38.ComponentDecomposition
 import PoincareConjecture.Proofs.M38.UnionComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_sumAssemblyPair {m n : ℕ}
     {p : Fin m → GeneralizedSliceCarrier.{u}}
@@ -42,10 +31,6 @@ theorem exists_sumAssemblyPair {m n : ℕ}
     (Diffeomorph.sumComm (𝓡 3) A.carrier ∞ T.initial.carrier)
   exact exists_transportAssembly (R'.trans (sumConnectedSumChain T.operations A))
     (Diffeomorph.sumComm (𝓡 3) B.carrier ∞ A.carrier)
-
-
-
-
 
 private theorem exists_classifiedAssemblyModel (m : ℕ)
     (B : Fin (m + 1) → GeneralizedSliceCarrier.{u})
@@ -123,11 +108,6 @@ private theorem exists_classifiedAssemblyModel (m : ℕ)
         · intro j
           rw [Fin.append_right]
           exact hsE j
-
-
-
-
-
 
 theorem exists_classifiedAssembly_of_components (A : GeneralizedSliceCarrier.{u})
     (hA : IsCompact (Set.univ : Set A.carrier))

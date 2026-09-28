@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderPatchBounds
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.LifetimeUpperBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
 
 theorem standardFlowAsymptoticCertificate_of_tail
     {g0 : StandardInitialMetric} (F : MaximalStandardCapFlow g0)
@@ -58,8 +47,6 @@ theorem standardFlowAsymptoticCertificate_of_tail
   simp only [StandardSpacetimeCylinderClose, div_one, zero_add, one_mul]
   convert! hclose using 1
 
-
-
 theorem partialStandardCapFlow_lifetime_le_one (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0) (F : PartialStandardCapFlow g0) :
     F.lifetime ≤ 1 := by
@@ -71,9 +58,6 @@ theorem partialStandardCapFlow_lifetime_le_one (P : RicciFlowCurvatureTheory.{0}
     ContinuousLinearEquiv.ofFinrankEq (by simp)
   exact partialFlow_lifetime_le_one_of_end_jets P E0 F g0.cylindrical_end qH qA qS
     (Classical.choice inferInstance)
-
-
-
 
 theorem standardFlowAsymptoticCertificate_exists (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

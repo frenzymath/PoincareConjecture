@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.FrameCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.FrameChange
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,13 +13,10 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
 
-
-
 noncomputable def surfaceTurningForm (D : LeviCivitaData g)
     (e₁ e₂ T V : (x : S) → TangentSpace (𝓡 2) x) (x : S) : ℝ :=
   g.inner x (D.connection T x (V x))
     (-g.inner x (T x) (e₂ x) • e₁ x + g.inner x (T x) (e₁ x) • e₂ x)
-
 
 theorem contMDiffOn_surfaceTurningForm (D : LeviCivitaData g)
     {U : Set S} (hU : IsOpen U)
@@ -46,8 +36,6 @@ theorem contMDiffOn_surfaceTurningForm (D : LeviCivitaData g)
   have hn := hU.mem_nhds hx
   exact (D.contMDiffAt_inner_covariantDerivativeOnFields (hV.contMDiffAt hn)
     (hT.contMDiffAt hn) (hN.contMDiffAt hn)).contMDiffWithinAt
-
-
 
 theorem integral_unitField_sub_connectionForm_of_angle
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)
@@ -99,8 +87,6 @@ theorem integral_unitField_sub_connectionForm_of_angle
       hunit₂ (γ x) hxu, horth (γ x) hxu, mul_one, mul_zero, zero_add]
   rw [hconn, hcT, hsT]
   rfl
-
-
 
 theorem exists_angle_integral_unitField
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Separation
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

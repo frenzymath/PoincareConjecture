@@ -6,15 +6,6 @@ import Mathlib.Logic.Equiv.Fin.Basic
 import Mathlib.Logic.Equiv.Prod
 import Mathlib.Algebra.Group.Nat.Even
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -204,10 +195,7 @@ private theorem subarc_rescaled_parameter {n k : ℕ} (p : Polygon E (n + 2))
     rw [← hreal]
     ring
 
-
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem IsSimplePolygonalArc.exists_inside_noninterlacing_matching {n m : ℕ}
     {p : Polygon E (n + 2)} {r : Polygon E m}
@@ -368,6 +356,5 @@ theorem IsSimplePolygonalArc.exists_inside_noninterlacing_matching {n m : ℕ}
     simp only [hM i, min_comm, max_comm, and_self]
   · intro i t
     simp only [hM i, AffineMap.lineMap_apply_one_sub]
-
 
 end PoincareConjecture.M25.Topology3D

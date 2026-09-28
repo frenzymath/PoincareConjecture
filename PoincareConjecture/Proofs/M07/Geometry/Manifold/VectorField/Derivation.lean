@@ -16,7 +16,6 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M]
   [IsManifold I ∞ M] [I.Boundaryless]
 
-
 theorem fderiv_comp_extChartAt_symm {f : M → ℝ} {p : M} {z : E}
     (hf : MDifferentiableAt I 𝓘(ℝ, ℝ) f ((extChartAt I p).symm z))
     (hz : z ∈ (extChartAt I p).target) (w : E) :
@@ -31,14 +30,11 @@ theorem fderiv_comp_extChartAt_symm {f : M → ℝ} {p : M} {z : E}
   rw [hcomp]
   rfl
 
-
 theorem isInvertible_mfderiv_extChartAt_symm {p : M} {z : E}
     (hz : z ∈ (extChartAt I p).target) :
     (mfderiv 𝓘(ℝ, E) I (extChartAt I p).symm z).IsInvertible := by
   have h := isInvertible_mfderivWithin_extChartAt_symm (I := I) (x := p) hz
   rwa [I.range_eq_univ, mfderivWithin_univ] at h
-
-
 
 theorem mfderiv_action_eq_fderiv_pullback {h : M → ℝ} {p : M} {z : E}
     (hz : z ∈ (extChartAt I p).target)

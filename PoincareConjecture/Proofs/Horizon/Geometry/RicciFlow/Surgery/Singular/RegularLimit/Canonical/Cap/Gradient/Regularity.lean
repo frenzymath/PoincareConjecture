@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 import Mathlib.Analysis.Normed.Operator.NNNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +49,6 @@ theorem scalarGradientNorm_eq_sqrt_scalarGradientSq
 
 namespace RicciFlowAnalysis
 
-
-
 theorem continuousOn_flow_timeDependentScalarGradientSq
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -101,8 +91,6 @@ theorem continuousOn_scalarGradientNorm (G : RicciFlow 3 M J) :
   have h := (RicciFlowAnalysis.continuousOn_flow_timeDependentScalarGradientSq G
     isOpen_univ G.contMDiffOn_scalarCurvature).sqrt
   simpa only [scalarGradientNorm_eq_sqrt_scalarGradientSq] using h
-
-
 
 theorem tendstoUniformlyOn_scalarGradientNorm (G : RicciFlow 3 M J)
     {T : ℝ} (hT : T ∈ J) {A : Set M} (hA : IsCompact A) :

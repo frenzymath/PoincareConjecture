@@ -1,17 +1,8 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfilePrimitive
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
 
 theorem m63ProfileProperties {N : ℕ} (hN : 0 < N) : M63ProfileProperties N where
   normalization_positive := m63ProfileBase_integral_pos hN

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.CappedSliceValue
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialReducedLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem exists_initial_cappedSliceAction_bound
     (hM04 : RicciFlowCurvatureTheory.{0})

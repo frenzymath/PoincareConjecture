@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.VertexStarChartRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry
 open scoped Topology

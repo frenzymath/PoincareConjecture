@@ -2,17 +2,6 @@ import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.MeasureTheory.Measure.OpenPos
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,10 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64CompactUniform_integral_pairing_tendsto
     {X Y : Type*} [MeasurableSpace X] [TopologicalSpace Y]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.LoopComparison
 import PoincareConjecture.Proofs.M59.Mathlib.PathSpaceHomotopy
 import PoincareConjecture.Proofs.M59.Sec4_1_Whiskering.GenLoopWhisker
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -24,14 +14,9 @@ open PoincareConjecture.Proofs.M02
 
 variable {S X : Type*} [TopologicalSpace S] [TopologicalSpace X]
 
-
-
 def constantMapPath {x y : X} (r : Path x y) :
     Path (ContinuousMap.const S x) (ContinuousMap.const S y) :=
   r.map ContinuousMap.continuous_const'
-
-
-
 
 def loopHomotopyPathCube [LocallyCompactSpace S]
     {N : Type*} [Finite N] {x y : X} {r : Path x y}
@@ -56,8 +41,6 @@ def loopHomotopyPathCube [LocallyCompactSpace S]
     ext z t
     exact congrArg (fun f : C(S, X) => f z) (H.boundary_path t ⟨v, hv⟩)⟩
 
-
-
 theorem loopHomotopyPathCube_zero [LocallyCompactSpace S]
     {N : Type*} [Finite N] {x y : X} {r : Path x y}
     {a : GenLoop N C(S, X) (ContinuousMap.const S x)}
@@ -68,8 +51,6 @@ theorem loopHomotopyPathCube_zero [LocallyCompactSpace S]
   ext v z
   exact congrArg (fun f : C(S, X) => f z) (H.toHomotopy.apply_zero v)
 
-
-
 theorem loopHomotopyPathCube_one [LocallyCompactSpace S]
     {N : Type*} [Finite N] {x y : X} {r : Path x y}
     {a : GenLoop N C(S, X) (ContinuousMap.const S x)}
@@ -79,8 +60,6 @@ theorem loopHomotopyPathCube_one [LocallyCompactSpace S]
       (postcomposeMap_const S (pathEvaluation 1) r.target) (loopHomotopyPathCube H) = b := by
   ext v z
   exact congrArg (fun f : C(S, X) => f z) (H.toHomotopy.apply_one v)
-
-
 
 def pathCubeEvaluationHomotopy
     {N : Type*} [Finite N] {x y : X} (r : Path x y)
@@ -94,8 +73,6 @@ def pathCubeEvaluationHomotopy
   map_one_left _ := rfl
   boundary_path t v := congrArg (fun f : C(I, X) => f t) (GenLoop.boundary a v v.2)
 
-
-
 theorem pathEvaluation_transport (n : Nat) {x y : X} (r : Path x y)
     (a : HomotopyGroup.Pi n C(I, X) r.toContinuousMap) :
     (m59HigherBasepointTransport X n).map r
@@ -106,9 +83,6 @@ theorem pathEvaluation_transport (n : Nat) {x y : X} (r : Path x y)
     (pathCubeEvaluationHomotopy r a))
 
 namespace CubeBoundaryQuotient
-
-
-
 
 theorem loopHomotopyEquiv_homotopyAlong
     [T2Space S] [LocallyCompactSpace S]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusCircleTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMapCircleGreen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ open Proofs.M58 Poincare.Analysis.Sobolev.Weak
 
 local notation "S" => interior m64AnnulusDomain
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
-
 
 theorem m64WeakScalar_local_circle_trace
     {O : Set LoopPlane} (hO : IsOpen O) (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho)

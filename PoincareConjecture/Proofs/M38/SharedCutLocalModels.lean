@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M38
-
-
 
 theorem openCodomain_localDiffeomorphAt
     (A : GeneralizedSliceCarrier.{u}) (U : TopologicalSpace.Opens A.carrier)

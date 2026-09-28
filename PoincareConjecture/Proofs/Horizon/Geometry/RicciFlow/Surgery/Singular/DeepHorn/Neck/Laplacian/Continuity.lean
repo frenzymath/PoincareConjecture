@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Laplacian.Operator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,8 +9,6 @@ open Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem LeviCivitaData.tendsto_scalar_laplacian_of_four_jets
     {n : ℕ} {α : Type*} {l : Filter α}
@@ -39,7 +33,6 @@ theorem LeviCivitaData.tendsto_scalar_laplacian_of_four_jets
     (contMDiffAt_iff_contDiffAt.mp (D.contMDiff_scalarCurvature x))
     hmetric hmetric' hfirst hsecond
 
-
 def RiemannianMetric.scalarMetricFourJet
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (x : EuclideanSpace ℝ (Fin n))
@@ -47,8 +40,6 @@ def RiemannianMetric.scalarMetricFourJet
     (r : Fin 5) → Fin n → Fin n →
       ContinuousMultilinearMap ℝ (fun _ : Fin r.val => EuclideanSpace ℝ (Fin n)) ℝ :=
   fun r i j => iteratedFDeriv ℝ r.val (fun y => g.inner y (b i) (b j)) x
-
-
 
 theorem LeviCivitaData.exists_scalar_laplacian_control_of_metric_fourJet
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

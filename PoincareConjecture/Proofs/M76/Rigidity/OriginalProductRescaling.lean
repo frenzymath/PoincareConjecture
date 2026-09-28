@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem OriginalDiskProduct.exists_rescaled_product (P : OriginalDiskProduct e R j)
     {δ : ℝ} (hδ : 0 < δ) (hδsmall : δ ≤ 1) :

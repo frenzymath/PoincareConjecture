@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +19,6 @@ private theorem eventually_lt_of_negative_derivative
   rw [slope_def_field, sub_zero, div_lt_iff₀ htpos, zero_mul] at ht
   exact sub_neg.mp ht
 
-
-
 theorem not_both_derivatives_neg_at_min_max
     {f g : ℝ → ℝ} {a b : ℝ} (hf : HasDerivAt f a 0) (hg : HasDerivAt g b 0)
     (hmin : IsLocalMin (fun t => max (f t) (g t)) 0) : ¬ (a < 0 ∧ b < 0) := by
@@ -44,8 +32,6 @@ theorem not_both_derivatives_neg_at_min_max
     exact (not_lt_of_ge hmt) (max_lt
       (hft.trans_le (le_max_left _ _)) (hgt.trans_le (le_max_right _ _)))
   exact hfalse.exists.choose_spec
-
-
 
 theorem gradients_eq_neg_of_min_max
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
@@ -82,8 +68,6 @@ theorem gradients_eq_neg_of_min_max
     rw [hc0]
     exact ht hmin
   exact not_both_derivatives_neg_at_min_max hf' hg' hm ⟨hu, hv⟩
-
-
 
 theorem eq_neg_of_min_max_bilinear
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

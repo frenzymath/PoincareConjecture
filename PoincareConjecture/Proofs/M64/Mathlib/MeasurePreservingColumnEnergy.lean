@@ -1,15 +1,6 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,10 +8,6 @@ set_option warningAsError true
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64MeasurePreserving_column_energy_le
     {X Y E F ι : Type*} [MeasurableSpace X] [MeasurableSpace Y]

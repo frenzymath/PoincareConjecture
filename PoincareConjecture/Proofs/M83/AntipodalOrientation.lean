@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M83.ReflectionLocalHomology
 import PoincareConjecture.Proofs.M83.EuclideanOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,16 +12,12 @@ namespace PoincareConjecture.Proofs.M83
 
 open PoincareConjecture.Proofs.M02.Topology
 
-
-
 def negation : C(E3, E3) := ⟨fun x => -x, continuous_neg⟩
 
 private theorem negation_puncture (x : E3) :
     MapsTo negation ({x}ᶜ : Set E3) ({-x}ᶜ : Set E3) := by
   intro z hz he
   exact hz (neg_injective he)
-
-
 
 theorem negation_reverses_orientation (O : LocalOrientation E3) (x : E3) :
     localHomologyMap negation neg_injective x 3 (O.atPoint x) =
@@ -60,8 +47,6 @@ theorem negation_reverses_orientation (O : LocalOrientation E3) (x : E3) :
         (-O.atPoint 0) at h
   rw [map_neg, translation_preserves_orientation] at h
   exact h
-
-
 
 theorem negation_pullback (O : LocalOrientation E3) (x : E3) :
     (O.pullback negation (Homeomorph.neg E3).isOpenEmbedding).atPoint x =

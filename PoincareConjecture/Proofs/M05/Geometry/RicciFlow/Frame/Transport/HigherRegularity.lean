@@ -1,13 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Variational
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
@@ -29,7 +20,6 @@ noncomputable local instance : NormedAddCommGroup (G →L[ℝ] G) :=
 noncomputable local instance : NormedSpace ℝ (G →L[ℝ] G) :=
   ContinuousLinearMap.toNormedSpace
 
-
 private def variationCoeff (A D : G →L[ℝ] G) : (G × G) →L[ℝ] (G × G) :=
   (A.comp (ContinuousLinearMap.fst ℝ G G)).prod
     (D.comp (ContinuousLinearMap.fst ℝ G G) + A.comp (ContinuousLinearMap.snd ℝ G G))
@@ -49,8 +39,6 @@ private theorem variationCoeff_contDiffOn
   exact (ContinuousLinearMap.prodL (𝕜 := ℝ) (E := G × G) (F := G) (G := G) ℝ).contDiff.comp_contDiffOn
     ((hA.clm_comp contDiffOn_const).prodMk
       ((hD.clm_comp contDiffOn_const).add (hA.clm_comp contDiffOn_const)))
-
-
 
 theorem linearODE_contDiffOn_nat
     (n : ℕ) (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
@@ -126,8 +114,6 @@ theorem linearODE_contDiffOn_nat
       exact (contDiffOn_succ_iff_hasFDerivWithinAt_of_uniqueDiffOn hud).mpr
         ⟨by simp, D, hDn, hder⟩
 
-
-
 theorem linearODE_contDiffOn
     (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
     {U : Set P} (hU : IsOpen U)
@@ -139,8 +125,6 @@ theorem linearODE_contDiffOn
   rw [contDiffOn_infty]
   intro n
   exact linearODE_contDiffOn_nat n A hab hU hA Φ hinit hsol
-
-
 
 theorem transportCurveOn_contDiffOn_closed
     {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]

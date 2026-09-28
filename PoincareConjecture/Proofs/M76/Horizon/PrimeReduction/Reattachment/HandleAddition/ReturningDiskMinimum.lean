@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.DiskContactSourceCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Resolution.RetainedCharts
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 namespace PoincareConjecture.M76

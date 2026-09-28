@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.EuclideanModel
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +23,6 @@ theorem roundCylinderEuclideanMetric_scalar_laplacian
   simp
 
 namespace EpsilonNeck
-
-
 
 theorem exists_normalized_scalar_laplacian_control {α : ℝ} (hα : 0 < α) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -85,8 +73,6 @@ theorem exists_normalized_scalar_laplacian_control {α : ℝ} (hα : 0 < α) :
     exact (hbound N hεsmall q hs r hr i j).trans_lt hsmall)
   simpa only [roundCylinderEuclideanMetric_scalar_laplacian, sub_zero] using hlap
 
-
-
 theorem exists_ambient_scalar_laplacian_control {α : ℝ} (hα : 0 < α) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -102,8 +88,6 @@ theorem exists_ambient_scalar_laplacian_control {α : ℝ} (hα : 0 < α) :
   obtain ⟨h, Dh, heq⟩ := N.exists_normalizedEuclideanCoefficients_realization q hs
   rw [← N.normalized_realization_scalar_laplacian D q hs Dh heq]
   exact hcontrol N hε q hs Dh heq
-
-
 
 theorem exists_normalized_scalar_laplacian_lower_bound :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

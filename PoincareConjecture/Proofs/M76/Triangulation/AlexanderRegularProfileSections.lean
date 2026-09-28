@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereSections
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveInduction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Geometry.AlexanderSectionProfile
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem hasDisjointPolygonPresentation_of_sphere_model
     (W : AlexanderSectionProfile E) {D : Set F}
@@ -50,10 +35,6 @@ theorem hasDisjointPolygonPresentation_of_sphere_model
     · simpa only [hB, sub_neg] using hlo
   simpa only [hB, sub_eq_zero] using
     he.hasDisjointPolygonPresentation_of_zero_charge_signs hD hcv hne hdim B hpres hsignsB
-
-
-
-
 
 theorem finite_exceptional_regular_sections
     (W : AlexanderSectionProfile E) {D : Set F}

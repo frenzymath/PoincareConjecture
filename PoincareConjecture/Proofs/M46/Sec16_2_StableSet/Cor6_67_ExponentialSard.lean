@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SurvivalSlice
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_LocalNullity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_survival_criticalValues_null
     (E : M14ExponentialFamily G T x) (htau : 0 ≤ tau)

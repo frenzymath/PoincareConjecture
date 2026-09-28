@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,26 +15,18 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (L : PartialFlowTerminalJets F S)
 
-
-
 noncomputable def closedCoefficients (p : ℝ × StandardCapSpace) : MetricCoefficient 3 :=
   L.reverseCoefficients (S - p.1, p.2)
-
-
 
 theorem closedCoefficients_of_lt {t : ℝ} (ht : t < S) (x : StandardCapSpace) :
     L.closedCoefficients (t, x) = (F.flow.metric t).euclideanCoefficients x := by
   rw [closedCoefficients, L.reverseCoefficients_of_pos (sub_pos.mpr ht), sub_sub_cancel]
-
-
 
 theorem closedCoefficients_of_le {t : ℝ} (ht : S ≤ t) (x : StandardCapSpace) :
     L.closedCoefficients (t, x) = L.coefficients x := by
   simp only [closedCoefficients, reverseCoefficients, not_lt.mpr (sub_nonpos.mpr ht), if_false]
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem closedFiniteSpatialJet (m : ℕ) (t : ℝ) (x : StandardCapSpace) :
     spatialJet m L.closedCoefficients (t, x) =
@@ -56,8 +39,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) (E0 : StandardCapEstimate g0)
 
 include P E0 hS hSF hB hfull
 
-
-
 theorem contDiffOn_closedCoefficients_Ioc :
     ContDiffOn ℝ ∞ L.closedCoefficients (Ioc 0 S ×ˢ univ) := by
   have hpath : ContDiff ℝ ∞ (fun p : ℝ × StandardCapSpace => (S - p.1, p.2)) := by
@@ -65,8 +46,6 @@ theorem contDiffOn_closedCoefficients_Ioc :
   apply (L.contDiffOn_reverseCoefficients P E0 hS hSF hB hfull).comp hpath.contDiffOn
   intro p hp
   exact ⟨⟨sub_nonneg.mpr hp.1.2, sub_lt_self S hp.1.1⟩, mem_univ _⟩
-
-
 
 theorem contDiffOn_closedCoefficients :
     ContDiffOn ℝ ∞ L.closedCoefficients (Icc 0 S ×ˢ univ) := by
@@ -94,8 +73,6 @@ theorem contDiffOn_closedCoefficients :
       ⟨⟨hpos, hp.1.2⟩, mem_univ _⟩).mono_of_mem_nhdsWithin hprod
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem hasDerivWithinAt_closedCoefficients_Ioc {t : ℝ} (ht : t ∈ Ioc 0 S)
     (x : StandardCapSpace) :

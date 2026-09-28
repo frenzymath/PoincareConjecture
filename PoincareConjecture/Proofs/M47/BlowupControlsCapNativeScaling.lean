@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelParallel
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open Proofs.M47
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem cap_native_derivative_linear
     (u : ℝ) (q : UnitTwoSphere) {r : ℕ}
@@ -44,8 +33,6 @@ theorem cap_native_derivative_linear
   have hβ (c v : ℝ) : c * (beta * v) = beta * (c * v) := by ring
   simp_rw [hα, hβ, ← Finset.mul_sum]
   ring
-
-
 
 theorem cap_native_iterated_scalar_mul_succ
     (beta u : ℝ) (hu : u < 1) (B : RoundCylinderTwoTensor)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M72FiniteReconstruction
 import Mathlib.Data.Finite.Sigma
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,11 +10,6 @@ universe u v w
 namespace PoincareConjecture
 
 namespace SmoothDisjointUnionData
-
-
-
-
-
 
 def reindex {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}}
@@ -48,8 +33,6 @@ def reindex {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
       rcases Set.mem_iUnion.mp hx with ⟨i, hi⟩
       exact Set.mem_iUnion.mpr ⟨e.symm i, by simpa using hi⟩
 
-
-
 def reindexOfEq {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {pieces' : Fin n' → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}}
@@ -64,8 +47,6 @@ end SmoothDisjointUnionData
 
 namespace SmoothFiniteConnectedSumAssembly
 
-
-
 def reindex {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}}
     (S : SmoothFiniteConnectedSumAssembly pieces C) (e : Fin n' ≃ Fin n) :
@@ -73,8 +54,6 @@ def reindex {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
   initial := S.initial
   disjoint_union := S.disjoint_union.reindex e
   operations := S.operations
-
-
 
 def reindexOfEq {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {pieces' : Fin n' → GeneralizedSliceCarrier.{u}}
@@ -88,8 +67,6 @@ def reindexOfEq {n n' : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
 
 end SmoothFiniteConnectedSumAssembly
 
-
-
 structure M72IndexedAssembly {ι : Type v}
     (pieces : ι → GeneralizedSliceCarrier.{u}) (C : GeneralizedSliceCarrier.{u}) where
   count : ℕ
@@ -98,16 +75,12 @@ structure M72IndexedAssembly {ι : Type v}
 
 namespace M72IndexedAssembly
 
-
-
 def ofAssembly {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}}
     (S : SmoothFiniteConnectedSumAssembly pieces C) : M72IndexedAssembly pieces C where
   count := n
   index := Equiv.refl (Fin n)
   assembly := S
-
-
 
 def reindex {ι : Type v} {κ : Type w}
     {pieces : ι → GeneralizedSliceCarrier.{u}}
@@ -118,8 +91,6 @@ def reindex {ι : Type v} {κ : Type w}
   count := S.count
   index := S.index.trans e
   assembly := S.assembly.reindexOfEq (Equiv.refl (Fin S.count)) (fun j => he (S.index j))
-
-
 
 noncomputable def transportTarget {ι : Type v}
     {pieces : ι → GeneralizedSliceCarrier.{u}}
@@ -133,12 +104,6 @@ noncomputable def transportTarget {ι : Type v}
 
 end M72IndexedAssembly
 
-
-
-
-
-
-
 instance m72EventIndexFintype {M : Type u} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -147,8 +112,6 @@ instance m72EventIndexFintype {M : Type u} [TopologicalSpace M]
     {N : NormalizedInitialMetric (M := M)}
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I) :
     Fintype (M72EventIndex I L) := inferInstance
-
-
 
 noncomputable instance m72NonSurvivorIndexFintype {M : Type u} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M]
@@ -162,8 +125,6 @@ noncomputable instance m72NonSurvivorIndexFintype {M : Type u} [TopologicalSpace
   unfold M72NonSurvivorIndex
   exact Fintype.ofFinite _
 
-
-
 noncomputable instance m72SummandIndexFintype {M : Type u} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -174,8 +135,6 @@ noncomputable instance m72SummandIndexFintype {M : Type u} [TopologicalSpace M]
     Fintype (M72SummandIndex I L) := by
   unfold M72SummandIndex
   exact inferInstance
-
-
 
 noncomputable def m72SummandEnumeration
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

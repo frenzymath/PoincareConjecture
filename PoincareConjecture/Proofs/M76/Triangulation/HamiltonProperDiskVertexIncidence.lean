@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.vertexBlock_subset_interior
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

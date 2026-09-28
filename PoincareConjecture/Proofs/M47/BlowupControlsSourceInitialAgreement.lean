@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_initial_cylinder_eq_of_terminal
     {F : SurgeryFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}

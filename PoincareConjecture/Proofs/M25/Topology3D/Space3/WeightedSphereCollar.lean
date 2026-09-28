@@ -4,25 +4,12 @@ import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Manifold InnerProductSpace Topology BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 noncomputable def weightedSphereTimeMap
     (j N : UnitTwoSphere → E3) (A : Fin 2 → UnitTwoSphere × ℝ → E3)
@@ -31,9 +18,6 @@ noncomputable def weightedSphereTimeMap
   fun z => j z.1 +
     (∑ i : Fin 2, w i z.1 • (A i (z.1, eps i * z.2) - j z.1)) +
     ((1 - ∑ i : Fin 2, w i z.1) * z.2) • N z.1
-
-
-
 
 theorem weightedSphereTimeMap_properties
     (j N : UnitTwoSphere → E3) (A : Fin 2 → UnitTwoSphere × ℝ → E3)
@@ -150,9 +134,6 @@ theorem weightedSphereTimeMap_properties
       simp only [weightedSphereTimeMap, Fin.sum_univ_two, hi, hother,
         one_smul, zero_smul, zero_add, add_zero, sub_self, zero_mul]
       abel
-
-
-
 
 theorem exists_weighted_sphere_collar
     (j N : UnitTwoSphere → E3) (A : Fin 2 → UnitTwoSphere × ℝ → E3)

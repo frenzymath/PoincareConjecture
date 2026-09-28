@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckGaugeSign
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
@@ -19,7 +10,6 @@ universe u
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [CompleteSpace E]
-
 
 noncomputable def volterraPath (x₀ : E) (f : ℝ → E) (t : ℝ) : E :=
   x₀ + ∫ s in (0 : ℝ)..t, f s
@@ -49,8 +39,6 @@ theorem hasDerivWithinAt_volterraPath_Icc
       (hf.stronglyMeasurableAtFilter_nhdsWithin measurableSet_Icc t)
       (hf t ht)
   exact hderiv.const_add x₀
-
-
 
 theorem continuousOn_volterraPath_Icc
     {x₀ : E} {f : ℝ → E} {T : ℝ}

@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 import PoincareConjecture.Proofs.M09.ActionCongruence
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

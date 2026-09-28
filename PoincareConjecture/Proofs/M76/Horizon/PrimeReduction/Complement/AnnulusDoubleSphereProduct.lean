@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.AnnularBa
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangularRoofModel
 

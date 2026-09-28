@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.StrongNeckTails
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +14,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_closed_half_in_tail (e : TerminalEnd K)
     (A : RepairedNeckCapTopologyTheory.{u})
@@ -78,8 +68,6 @@ theorem exists_closed_half_in_tail (e : TerminalEnd K)
     (e.nested (le_max_left k n₁) hx) (hcapture n le_rfl ⟨x, hx, rfl⟩)
   exact ⟨tube.carrier, Q, tube.carrier_open, side, b, hb,
     hclosed, hsub, n, le_max_left _ _, hcapture⟩
-
-
 
 theorem exists_closed_strong_neck_half_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

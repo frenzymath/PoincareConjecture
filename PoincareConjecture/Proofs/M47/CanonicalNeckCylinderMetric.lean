@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedCylinderSource
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {C B : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem neck_reclock_pullbackInner
     (e : SurgeryFlowCylinder F C origin scale I U)
@@ -49,8 +39,6 @@ theorem neck_reclock_pullbackInner
   rw [hm]
   field_simp [e.scale_pos.ne']
 
-
-
 theorem neck_reclock_cylinderPullback
     (e : SurgeryFlowCylinder F C origin scale I U)
     {nextOrigin nextScale : ℝ} {J : Set ℝ}
@@ -64,8 +52,6 @@ theorem neck_reclock_cylinderPullback
       (nextScale / scale) * surgeryCylinderPullback e coordinate (phi s) z v w := by
   simp only [surgeryCylinderPullback, dif_pos hs, dif_pos (hmem hs)]
   exact neck_reclock_pullbackInner e hscale hJ phi hmem hmono hclock s hs _ _ _
-
-
 
 theorem neck_source_pullbackInner
     (e : SurgeryFlowCylinder F C origin scale I U)
@@ -86,8 +72,6 @@ theorem neck_source_pullbackInner
       (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs ∘ D) x w) = _
   rw [hchain]
   rfl
-
-
 
 theorem neck_source_inverse_pullbackInner
     (e : SurgeryFlowCylinder F C origin scale I U)

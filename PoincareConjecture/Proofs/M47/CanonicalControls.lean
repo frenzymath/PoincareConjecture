@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

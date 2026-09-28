@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.ChartApproximation
 import PoincareConjecture.Proofs.M40.Mathlib.SupportedChartSmoothing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -22,10 +13,6 @@ variable {E F M N : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace M] [ChartedSpace E M]
   [MetricSpace N] [ChartedSpace F N]
-
-
-
-
 
 theorem exists_homotopic_chart_smoothing
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)

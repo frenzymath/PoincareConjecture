@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_BoundaryNaturality
 import PoincareConjecture.Proofs.M53.Mathlib.EvenEquiv
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +15,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem integralRelativeMap_subspace_isIso_of_closed_support
     (f : C(X, Y)) (hf : IsOpenEmbedding f) {A B : Set X} {A' B' K : Set Y}
@@ -52,10 +39,6 @@ theorem integralRelativeMap_subspace_isIso_of_closed_support
     exact ⟨⟨x, hxA⟩, Subtype.ext hx⟩
   exact integralRelativeMap_isIso_of_closed_support fA hfA hrel
     (hK.preimage continuous_subtype_val) hrange (fun _ hx => hKB hx) n
-
-
-
-
 
 theorem even_tripleBoundary_openEmbedding_iff
     (f : C(X, Y)) (hf : IsOpenEmbedding f) {A B : Set X} {A' B' K : Set Y}

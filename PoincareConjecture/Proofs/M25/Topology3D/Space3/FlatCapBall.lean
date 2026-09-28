@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapModel
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +10,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_flatCapBallChart
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2) × ℝ) F)

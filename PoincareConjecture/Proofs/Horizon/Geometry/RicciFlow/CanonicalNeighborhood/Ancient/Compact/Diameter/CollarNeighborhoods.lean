@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.FineNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace RicciFlow.uliftChartedSpace RicciFlow.uliftIsManifold
   AncientKappaSolution.uliftSecondCountable AncientKappaSolution.uliftConnectedSpace
-
-
 
 theorem compact_large_diameter_strong_collar_neighborhoods
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

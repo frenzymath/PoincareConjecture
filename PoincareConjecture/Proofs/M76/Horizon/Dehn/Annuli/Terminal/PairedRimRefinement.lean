@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCompatibleUnion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open PoincareConjecture.M76.Dehn
@@ -23,9 +15,6 @@ local notation "Q2" => sphere (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_refinement_with_paired_embedded_rims
     (K A : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hAK : A ≤ K)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceSmoothness
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 local notation "D" => V →L[ℝ] ℝ
-
-
 
 noncomputable def dualSquaredDifferential (p : D) : D →L[ℝ] ℝ :=
   (2 : ℝ) • (innerSL ℝ ((InnerProductSpace.toDual ℝ V).symm p)).comp
@@ -52,8 +40,6 @@ theorem dualSquaredDifferential_sub (p q : D) :
   ext v
   simp [dualSquaredDifferential, mul_sub]
 
-
-
 theorem graph_derivative_norm_le (q : (V × ℝ) →L[ℝ] ℝ) (p : D) :
     ‖q.comp ((ContinuousLinearMap.id ℝ V).prod p)‖ ≤
       ‖q.comp (ContinuousLinearMap.inl ℝ V ℝ)‖ + |q (0, 1)| * ‖p‖ := by
@@ -76,8 +62,6 @@ theorem graph_derivative_norm_le (q : (V × ℝ) →L[ℝ] ℝ) (p : D) :
         exact mul_le_mul_of_nonneg_right (p.le_opNorm v) (abs_nonneg _)
     _ = _ := by ring
 
-
-
 theorem gaugeSource_fderiv_eq
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}
     (hb : DifferentiableAt ℝ b x) (hu : DifferentiableAt ℝ u x)
@@ -93,8 +77,6 @@ theorem gaugeSource_fderiv_eq
   exact (((hdu.hasFDerivAt.clm_apply hb.hasFDerivAt).add
     ((hasFDerivAt_dual_norm_sq (fderiv ℝ u x)).comp x hdu.hasFDerivAt)).add
     (hG.hasFDerivAt.comp x ((hasFDerivAt_id x).prodMk hu.hasFDerivAt))).fderiv
-
-
 
 theorem gaugeSource_fderiv_norm_le
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}
@@ -130,9 +112,6 @@ theorem gaugeSource_fderiv_norm_le
   change _ ≤ (‖b x‖ + 2 * ‖p‖) * ‖H‖ + ‖p‖ * ‖fderiv ℝ b x‖ +
     ‖q.comp (ContinuousLinearMap.inl ℝ V ℝ)‖ + |q (0, 1)| * ‖p‖
   nlinarith
-
-
-
 
 theorem gaugeSource_weighted_fderiv_bound
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}

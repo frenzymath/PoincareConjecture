@@ -1,13 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.RegularizedMinimum
 
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace Poincare
-
 
 noncomputable def finiteRegularizedMin (δ : ℝ) (hδ : 0 < δ) :
     (n : ℕ) → (Fin (n + 1) → ℝ) → ℝ

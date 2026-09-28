@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRelativeAttachedDiskExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Set
 variable {X Y : Type*}
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension_of_two_attached_disks_and_boundary
     {s q : Set X} {t r : Set Y}

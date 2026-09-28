@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskHarmonicChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M65StrictTrace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_closedDisk_harmonic_chart (D : LeviCivitaData g)
     {f : LoopPlane → M}

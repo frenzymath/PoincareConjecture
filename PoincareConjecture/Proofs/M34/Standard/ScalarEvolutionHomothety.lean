@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Diverge
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +17,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem laplacian_comp_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -67,8 +55,6 @@ theorem laplacian_comp_of_local_homothety
 
 variable [T2Space N]
 
-
-
 theorem laplacian_scalarCurvature_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -89,8 +75,6 @@ theorem laplacian_scalarCurvature_eq_of_local_homothety
   change Q⁻¹ * D.laplacian (D'.scalarCurvature ∘ f) x = _
   rw [hlap]
   field_simp [hQ.ne']
-
-
 
 theorem scalarEvolutionNumerator_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)

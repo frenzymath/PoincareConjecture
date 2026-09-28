@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComparison.Capture
 
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_late_roundComponent_terminal_carrier
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -53,8 +49,6 @@ theorem exists_late_roundComponent_terminal_carrier
   · rw [Subtype.range_coe]
     exact hreg
 
-
-
 theorem frequently_regularRoundComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (hepsilon : H.epsilon ≤ roundComparisonThreshold) (x : H.regularRegion P04)
@@ -84,8 +78,6 @@ theorem frequently_regularRoundComponent
     rw [hcarrier]
     exact hterminal.symm
   exact ⟨NR, hNR, hNR ▸ mem_connectedComponent⟩
-
-
 
 theorem compact_component_of_frequently_roundComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

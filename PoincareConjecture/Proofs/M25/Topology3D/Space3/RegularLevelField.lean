@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowInvariants
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,19 +10,14 @@ open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 def collarHeightLevel (ψ : UnitTwoSphere × ℝ → E3) (u : E3) (t : ℝ) : Set E3 :=
   (fun q : UnitTwoSphere => ψ (q, 0)) '' {q | ⟪u, ψ (q, 0)⟫_ℝ = t}
-
-
 
 theorem collarHeightLevel_compact (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ) :
     IsCompact (collarHeightLevel ψ u t) := by
   have he := (collar_central_contMDiff ψ hψ).continuous
   exact (isClosed_eq (continuous_const.inner he) continuous_const).isCompact.image he
-
-
 
 theorem collar_regular_height_cross_ne_zero
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
@@ -69,9 +53,6 @@ theorem collar_regular_height_cross_ne_zero
     exact congrArg (fun A => A v) hmap.symm
   · intro hz
     exact hreg (hheight.mfderiv.trans hz)
-
-
-
 
 theorem exists_regular_collar_level_field
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

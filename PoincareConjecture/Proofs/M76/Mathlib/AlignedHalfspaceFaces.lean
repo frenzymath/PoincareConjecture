@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_face_in_halfspaces (K : SimplicialComplex ℝ E)
     (H : Finset (E →ᵃ[ℝ] ℝ)) (hH : ∀ A ∈ H, K.RespectsAffineHyperplane A)
@@ -57,9 +44,6 @@ theorem exists_face_in_halfspaces (K : SimplicialComplex ℝ E)
       rcases Finset.mem_insert.mp hB with rfl | hB
       · exact (Finset.mem_filter.mp hv).2.le
       · exact hverts v (Finset.mem_filter.mp hv).1 B hB
-
-
-
 
 theorem AffineOnFaces.mapsTo_of_aligned_halfspaces {K : SimplicialComplex ℝ E}
     {f : E → F} (hf : K.AffineOnFaces f) (H : Finset (E →ᵃ[ℝ] ℝ))

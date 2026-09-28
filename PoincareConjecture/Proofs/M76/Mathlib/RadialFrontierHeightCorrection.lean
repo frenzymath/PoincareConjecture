@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeRadialHeightCorrection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetraction
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,11 +13,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_radial_height_corrected_frontier_relative
     {S P : Set E} {D : Set F} {H : S ≃ₜ frontier D} (hH : H.IsFinitePL)
@@ -182,12 +165,6 @@ theorem IsFinitePL.exists_radial_height_corrected_frontier_relative
     have hyM : (y : F) ∈ M.space := hMs.symm ▸ hyJ
     change (e y : F) = (H x : F)
     exact (hev y).trans ((hfix hyM).trans hy)
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_radial_height_corrected_frontier
     {S P : Set E} {D : Set F} {H : S ≃ₜ frontier D} (hH : H.IsFinitePL)

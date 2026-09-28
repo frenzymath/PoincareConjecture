@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.StaticMetric
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +17,6 @@ variable {M : Type u} {N : Type v}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
-
 
 noncomputable def pullbackEpsilonNeck (K : EpsilonNeck h)
     (he : MetricHomothety g h e 1) (Hcal : MetricHomothetyCalculus g h e 1)
@@ -122,8 +108,6 @@ noncomputable def pullbackEpsilonNeck (K : EpsilonNeck h)
       exact K.center_on_central_sphere
     central_sphere_subset := fun _ hx => K.central_sphere_subset hx
     metric_comparison := hcomparison }
-
-
 
 theorem pullbackEpsilonNeck_region (K : EpsilonNeck h)
     (he : MetricHomothety g h e 1) (Hcal : MetricHomothetyCalculus g h e 1)

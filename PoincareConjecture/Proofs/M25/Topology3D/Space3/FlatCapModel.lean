@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapProfile
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +12,6 @@ variable (a : ℝ → ℝ) (b : E → ℝ)
 variable (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
 variable (ha0 : ∀ z, a z ≠ 0) (hb0 : ∀ x, b x ≠ 0)
 
-
-
 noncomputable def flatCapDiffeomorph :
     Diffeomorph 𝓘(ℝ, E × ℝ) 𝓘(ℝ, E × ℝ) (E × ℝ) (E × ℝ) ∞ :=
   ((ContinuousLinearEquiv.prodComm ℝ E ℝ).toDiffeomorph.trans
@@ -33,19 +19,13 @@ noncomputable def flatCapDiffeomorph :
       ((ContinuousLinearEquiv.prodComm ℝ ℝ E).toDiffeomorph.trans
         (fiberScalingDiffeomorph b hb hb0))
 
-
-
 @[simp] theorem flatCapDiffeomorph_apply (p : E × ℝ) :
     flatCapDiffeomorph a b ha hb ha0 hb0 p =
       (a p.2 • p.1, b (a p.2 • p.1) * p.2) := rfl
 
-
-
 @[simp] theorem flatCapDiffeomorph_symm_apply (p : E × ℝ) :
     (flatCapDiffeomorph a b ha hb ha0 hb0).symm p =
       ((a ((b p.1)⁻¹ * p.2))⁻¹ • p.1, (b p.1)⁻¹ * p.2) := rfl
-
-
 
 theorem flatCapDiffeomorph_cap
     (hafar : ∀ z, 1 / 2 ≤ |z| → a z = 1)
@@ -63,8 +43,6 @@ theorem flatCapDiffeomorph_cap
   congr 1
   rw [mul_left_comm, inv_mul_cancel₀ (Real.sqrt_pos.mpr hp).ne', mul_one]
 
-
-
 theorem flatCapDiffeomorph_cylinder
     (hanear : ∀ z, |z| ≤ 1 / 4 → a z = (Real.sqrt (1 - z ^ 2))⁻¹)
     (hbfar : ∀ x, 1 / 2 ≤ ‖x‖ → b x = 1)
@@ -77,8 +55,6 @@ theorem flatCapDiffeomorph_cylinder
   rw [flatCapDiffeomorph_apply, hanear z hz, smul_smul,
     inv_mul_cancel₀ (Real.sqrt_pos.mpr hp).ne', one_smul,
     hbfar q (by rw [hq]; norm_num), one_mul]
-
-
 
 theorem flatCapDiffeomorph_fst_norm_le
     (hapos : ∀ z, 0 < a z)

@@ -1,20 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Gluing
@@ -78,7 +64,6 @@ theorem OverlapSystem.include_injective (D : OverlapSystem P) (i : I) :
   intro x y h
   have he := (D.include_eq_iff i i x y).mp h
   simpa [D.self] using he.2
-
 
 theorem OverlapSystem.include_mem_range_iff (D : OverlapSystem P) (i j : I)
     (x : P i) :

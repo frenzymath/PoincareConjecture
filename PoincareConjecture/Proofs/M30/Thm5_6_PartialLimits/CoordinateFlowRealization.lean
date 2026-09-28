@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.CoordinateMetricFamily
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.WithinFlowService
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,9 +36,6 @@ private theorem pullbackCoefficients_opensChart
   rfl
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_flow_of_coordinate_coefficients
     (hFlow : WithinBilinearFlowService.{0})

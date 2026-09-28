@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.CollarMatching.Radial
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +21,6 @@ private def affineTubeTime (a b : Real) (hb : b ≠ 0) :
   right_inv t := by field_simp; ring
   contMDiff_toFun := (contDiff_const.add (contDiff_const.mul contDiff_id)).contMDiff
   contMDiff_invFun := ((contDiff_id.sub contDiff_const).div_const b).contMDiff
-
-
 
 theorem exists_reparametrized_sphere_tube
     (T : OpenPartialHomeomorph (S1 × Real) S2)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflection
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskGluingFromAnnulus
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionComplete
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64DiskAreaComparison_of_product
     {M : Type u} [TopologicalSpace M] [T2Space M]

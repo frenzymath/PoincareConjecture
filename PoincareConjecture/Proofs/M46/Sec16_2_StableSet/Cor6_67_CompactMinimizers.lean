@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_MinimizerClosure
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_FiniteBranches
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -36,9 +26,6 @@ private theorem minimizing_parameter_congr
   subst b
   rfl
 
-
-
-
 theorem represented_minimizer_action
     (E : M14ExponentialFamily G T x) {b : ℝ} (hb : 0 < b)
     {y : G.Point} (p : M14BackwardPath G T 0 (b ^ 2) x y)
@@ -56,10 +43,6 @@ theorem represented_minimizer_action
       (htrace (Ioo_subset_Icc_self hs)).symm
   exact ⟨(E.action_eq Z b hZ hb).trans (M14.action_eq_of_curve_eqOn _ _ heq),
     (M14.isMinimizing_iff_of_curve_eqOn _ _ heq).symm⟩
-
-
-
-
 
 theorem exists_compact_minimizing_capture
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -173,10 +156,6 @@ theorem exists_compact_minimizing_capture
     refine ⟨Z, ⟨hZ, hminimal.mp hp, ?_, hact.le.trans (haction q hq p hp)⟩, htrace, hpoint⟩
     rw [hpoint]
     exact hq
-
-
-
-
 
 theorem stable_image_full_measure_of_confined_actions
     (hM04 : RicciFlowCurvatureTheory.{0})

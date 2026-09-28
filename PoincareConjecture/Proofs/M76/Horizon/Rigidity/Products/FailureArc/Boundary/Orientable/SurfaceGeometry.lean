@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.PairedModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.Orientable.OrientationTransport
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry AbstractSimplicialComplex
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn
@@ -79,4 +77,3 @@ theorem MarkedBoundaryPair.exists_common_rim_component_of_localOrientation
   simpa only [hu] using hv
 
 end Geometry.OriginalPLTower
-

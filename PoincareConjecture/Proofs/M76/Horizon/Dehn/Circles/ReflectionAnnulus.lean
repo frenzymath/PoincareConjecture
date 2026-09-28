@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusPeriodMap
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalCrossingResolution
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -23,10 +12,8 @@ namespace Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def reflectionTube (L d : ℝ) : Set C3 :=
   (Icc (-d) d ×ˢ Icc (-d) d) ×ˢ Icc 0 (4 * L)
-
 
 def reflectionTubeSide (L d : ℝ) : Set C3 :=
   {z | z ∈ reflectionTube L d ∧ (|z.1.1| = d ∨ |z.1.2| = d)}
@@ -51,11 +38,6 @@ private theorem finitePL_upper_strip {L d : ℝ} (hL : 0 < L) (hd : 0 < d) (b : 
   have h := (hu.prod_mk hh).prod_mk ht
   change FinitePiecewiseAffineOn (strip b true) K.space at h
   simpa only [hKs, rectangle] using h
-
-
-
-
-
 
 theorem exists_reflection_resolving_annulus
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

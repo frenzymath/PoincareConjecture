@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessTarget
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityFlux
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +27,6 @@ local instance suCompactEquationTrilinearNormedGroup :
 local instance suCompactEquationTrilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 def suCoordinateHessian (u : LoopPlane → E) (x : LoopPlane) (i j : Fin 2) : E :=
   fderiv ℝ (fun y => fderiv ℝ u y (b i)) x (b j)
@@ -60,13 +56,9 @@ private theorem coordinate_quadratic_fderiv
     hsym (fderiv ℝ (fun y => fderiv ℝ u y (b 1)) x d)]
   ring
 
-
-
 def suAlphaHessianTerm (G : E →L[ℝ] E →L[ℝ] ℝ)
     (v : Fin 2 → E) (H : Fin 2 → Fin 2 → E) (d : ℝ) : E :=
   (2 / d) • ∑ i : Fin 2, ∑ k : Fin 2, (G (v k) (H k i)) • v i
-
-
 
 def suAlphaLowerTerm (Gamma : E →L[ℝ] E →L[ℝ] E)
     (G : E →L[ℝ] E →L[ℝ] ℝ) (DG : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
@@ -76,9 +68,6 @@ def suAlphaLowerTerm (Gamma : E →L[ℝ] E →L[ℝ] E)
       (∑ k : Fin 2, G (v k) (v k)) * dlambda i / lambda) • v i
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem suAlphaEquation_nearLaplacian
     (Gamma : E → E →L[ℝ] E →L[ℝ] E)

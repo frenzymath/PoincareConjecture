@@ -177,4 +177,3 @@ theorem HamiltonMarkedProtectedBall.exists_original_lifted_cylinder_angular_map
   exact ⟨P,lift,angular,hends,hlat,hli,hsection,hcorefix,fun _ => rfl⟩
 
 end PoincareConjecture.M76
-

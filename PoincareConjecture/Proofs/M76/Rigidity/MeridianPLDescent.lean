@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.EmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,9 +19,6 @@ local notation "p" => (4 * (128 : ℝ))
 variable {α β : Type*}
   {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}
   {d : β → OpenPartialHomeomorph X (Fin 3 → ℝ)}
-
-
-
 
 theorem polyhedralPL_hamiltonMeridian_signed_composite
     (he : PLDomain e R) (f : C(R, R))
@@ -93,9 +81,6 @@ theorem polyhedralPL_hamiltonMeridian_signed_composite
   have hF := polyhedralPLInCharts_of_finite_cover he.cover he.compatible
     K hK J hJ hcont hPL hcover
   exact hKbox ▸ hF
-
-
-
 
 theorem StandardLatticeHandleAtlas.chartwisePLMap_of_meridianCut
     (hd : StandardLatticeHandleAtlas (Fin 2) (Fin 1) L d)

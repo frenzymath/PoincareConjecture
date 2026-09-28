@@ -10,15 +10,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SmoothRelabeling
 import PoincareConjecture.Proofs.M63.Mathlib.NormalizedSpatialPathBootstrap
 import PoincareConjecture.Proofs.M63.Adapters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +25,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem intrinsic_regularity_of_spatial_jets_and_speed_primitive
     [T2Space M] (F : RicciFlow n M (Icc a b)) {T : ℝ} (_haT : a < T)

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PLBandCutoff
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,11 +12,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_compactly_supported_PL_core_cutoff
     (e : ι → OpenPartialHomeomorph M E)
@@ -125,9 +108,6 @@ theorem exists_compactly_supported_PL_core_cutoff
   exact hwone a has (interior_subset hxQ)
 
 omit [LocallyCompactSpace M] in
-
-
-
 
 theorem isCompact_core_cutoff_superlevel
     {w : M → ℝ} {A C W : Set M} (hw : Continuous w)

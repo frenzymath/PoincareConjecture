@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.LinearAlgebra.Dimension.Finrank
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem ricciNullity_eq_of_local_isometry
     {n : ℕ} {N : Type u} {M : Type v}

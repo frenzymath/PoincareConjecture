@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import Mathlib.Topology.UniformSpace.Compact
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M]
-
-
 
 theorem exists_compact_ball_neighborhood (g : RiemannianMetric n M)
     {A : Set M} (hA : IsCompact A) :
@@ -45,8 +35,6 @@ theorem exists_compact_ball_neighborhood (g : RiemannianMetric n M)
   intro p hp q hq
   apply interior_subset (hεK ?_)
   exact mem_iUnion₂_of_mem hp (hq.trans hδε)
-
-
 
 theorem ball_add_subset_of_ball_subset (g : RiemannianMetric n M)
     (p : M) {r δ : ℝ} (hr : 0 < r) (hδ : 0 < δ)
@@ -81,8 +69,6 @@ theorem ball_add_subset_of_ball_subset (g : RiemannianMetric n M)
     rw [← ENNReal.ofReal_toReal hzfinite]
     apply (ENNReal.ofReal_lt_ofReal_iff hδ).mpr
     linarith
-
-
 
 theorem exists_uniform_precompact_ball_enlargement (g : RiemannianMetric n M)
     {A : Set M} (hA : IsCompact A) :

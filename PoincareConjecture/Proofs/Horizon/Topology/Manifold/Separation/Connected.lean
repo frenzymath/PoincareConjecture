@@ -1,16 +1,6 @@
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Topology
@@ -31,8 +21,6 @@ theorem connectedComponentIn_eq_of_open_partition {A B : Set X}
     · exact False.elim (Set.disjoint_left.mp hdis hx
         (h (mem_connectedComponentIn (Or.inl hx))))
   · exact hconn.subset_connectedComponentIn hx subset_union_left
-
-
 
 theorem isConnected_of_inter_of_frontier_subset {A U : Set X}
     (hA : IsOpen A) (hU : IsOpen U) (hAU : IsConnected (A ∩ U))

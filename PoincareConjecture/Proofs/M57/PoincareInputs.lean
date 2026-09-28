@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M02
 import PoincareConjecture.Proofs.M53
 import PoincareConjecture.Proofs.M57
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
 
 theorem m57PoincareInputsFromTheories
     (hM57 : RepairedTransportTheory.{u})
@@ -34,8 +23,6 @@ theorem m57PoincareInputsFromTheories
         (P.ancestry.path_for T hT x) K C) := by
   exact ⟨fun T hT x =>
     Classical.choice (hM57.poincare_inputs P02 G53 D L P K C T hT x)⟩
-
-
 
 theorem m57PoincareInputsFromMilestones
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)

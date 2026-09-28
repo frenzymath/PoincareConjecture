@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarSmoothFreeApproximation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPeriodicRectangleEquality
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +20,6 @@ local notation "K" => Set.preimage scalarAnnulusDefining (Ici (0 : ℝ))
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 theorem scalarLocal_comp_gram_le
     (g : RiemannianMetric n M) (q : RiemannianMetric 2 Plane)
     {f : Plane → M} {F : Plane → Plane} {p : Plane}
@@ -50,11 +34,6 @@ theorem scalarLocal_comp_gram_le
   exact hmajor _
 
 variable [T2Space M]
-
-
-
-
-
 
 theorem exists_localC1_free_annulus_energy_lt_area_fullStrip
     (g : RiemannianMetric n M) (f : Plane → M)
@@ -143,9 +122,6 @@ theorem exists_localC1_free_annulus_energy_lt_area_fullStrip
       exact hEbound hp
     _ = ∫ x in scalarAnnulus, m60AreaDensity q id x := harea
     _ < (∫ x in scalarAnnulus, m60AreaDensity g f x) + eta := hsmall'
-
-
-
 
 theorem exists_localC1_free_annulus_energy_lt_area
     (g : RiemannianMetric n M) (f : Plane → M)

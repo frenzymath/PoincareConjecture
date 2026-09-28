@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalRayleigh
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalBarrierVelocity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

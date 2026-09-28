@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Contractible.Disjoint.DiskExchange
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open _root_.Dehn

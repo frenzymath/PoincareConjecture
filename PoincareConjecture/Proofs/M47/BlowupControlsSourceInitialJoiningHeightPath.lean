@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoiningHeight
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem source_initial_joining_height_path_length
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

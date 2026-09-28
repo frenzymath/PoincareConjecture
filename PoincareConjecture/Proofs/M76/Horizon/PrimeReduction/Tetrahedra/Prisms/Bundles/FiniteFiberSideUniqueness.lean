@@ -1,14 +1,6 @@
 import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

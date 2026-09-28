@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMapCircleGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeUniformH1
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeRescaled
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,8 +24,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem M64ObservedWeakAnnulus.circle_energy_comparison
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

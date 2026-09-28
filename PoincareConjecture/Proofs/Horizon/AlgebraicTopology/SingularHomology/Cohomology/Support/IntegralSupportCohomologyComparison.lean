@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.IntegralCohomologyExcision
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralMayerVietorisSplit
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

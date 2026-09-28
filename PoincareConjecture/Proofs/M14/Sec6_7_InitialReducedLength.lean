@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_SquareDensity
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -47,8 +37,6 @@ private theorem initial_inner_transport {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem exponential_squareDensity_zero
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {b : ℝ}
     (hb : (Z, b) ∈ E.domain) (hpos : 0 < b) :
@@ -61,9 +49,6 @@ theorem exponential_squareDensity_zero
   simp only [squareRootLIntegrand, zero_pow (by decide : 2 ≠ 0), mul_zero, zero_mul,
     zero_add, hinner]
   ring
-
-
-
 
 theorem tendsto_exponential_reducedLength_zero
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

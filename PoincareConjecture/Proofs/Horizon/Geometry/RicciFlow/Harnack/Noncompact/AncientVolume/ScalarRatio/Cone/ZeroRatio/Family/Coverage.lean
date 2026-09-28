@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Family.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.ChartCoverage
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +11,6 @@ open Set Filter Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem cone_ball_subset_range_of_metricCoordinateBall_normal_chart_limit
     {n : ℕ} {M ι : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -77,8 +64,6 @@ theorem cone_ball_subset_range_of_metricCoordinateBall_normal_chart_limit
   obtain ⟨x, hx⟩ := hcoverage hz
   exact ⟨c x, hx⟩
 
-
-
 theorem metricCoordinateBall_cone_limit_center_eq_ray
     {n : ℕ} {M ι : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -105,9 +90,6 @@ theorem metricCoordinateBall_cone_limit_center_eq_ray
       simpa only [o, hcenter] using hrel k o))
   exact tendsto_nhds_unique
     (continuous_subtype_val.tendsto _ |>.comp (hlim.tendsto_at o)) hactual
-
-
-
 
 theorem cone_balls_subset_ranges_of_normal_chart_family_on_rays
     {n : ℕ} {M ι : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

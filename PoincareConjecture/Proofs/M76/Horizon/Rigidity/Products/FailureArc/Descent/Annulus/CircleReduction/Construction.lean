@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Circles.DetectedRim
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRegionBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.Annuli
@@ -118,4 +109,3 @@ theorem Stage.exists_embedded_marked_planar_annulus
   exact ⟨B, q, hgwhole⟩
 
 end Geometry.OriginalPLTower
-

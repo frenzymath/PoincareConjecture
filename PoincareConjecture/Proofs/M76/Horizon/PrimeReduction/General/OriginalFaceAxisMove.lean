@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Polygons.FinitePLRet
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningFaceRegion
 import PoincareConjecture.Proofs.M76.PrimeReduction.FaceNormalExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangleDiskModel
 
@@ -21,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "Axis" => (Prod.snd : P2 → ℝ) ⁻¹' ({0} : Set ℝ)
-
-
-
 
 theorem exists_original_face_axis_move_with_edge_support
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -234,8 +223,6 @@ theorem exists_original_face_axis_move_with_edge_support
     exact hother ⟨t, ht, ht2, hta⟩
   · intro t ht ht2 hta
     exact hothercard ⟨t, ht, ht2, hta⟩
-
-
 
 theorem exists_original_face_axis_move
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

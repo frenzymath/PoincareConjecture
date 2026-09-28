@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -20,7 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 structure LGeodesicTheory {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) [ConnectedSpace M] where

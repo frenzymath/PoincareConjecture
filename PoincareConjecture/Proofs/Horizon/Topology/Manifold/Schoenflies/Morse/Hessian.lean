@@ -1,8 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -55,8 +53,6 @@ theorem derivative_unit_normal_orthogonal
   rw [real_inner_comm (n a)] at h
   rw [real_inner_comm]
   linarith
-
-
 
 theorem injective_height_hessian_of_regular_normal
     {g n : E -> F} (hg : ContDiff Real ∞ g) (hn : ContDiff Real ∞ n)

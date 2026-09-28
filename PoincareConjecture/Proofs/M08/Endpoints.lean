@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M08.PathCongruence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -19,7 +12,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 theorem squareFamily_left_eq {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : InitialFixedLVariation F T τ₁ τ₂ p) {u : ℝ}
@@ -28,7 +20,6 @@ theorem squareFamily_left_eq {J : Set ℝ} {F : RicciFlow n M J}
   rw [V.square_agrees (Real.sqrt τ₁)
     ⟨le_rfl, Real.sqrt_le_sqrt p.ordered.le⟩ u hu, Real.sq_sqrt p.nonnegative]
   exact V.fixed_left u hu
-
 
 theorem squareFamily_right_eq {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -40,7 +31,6 @@ theorem squareFamily_right_eq {J : Set ℝ} {F : RicciFlow n M J}
     Real.sq_sqrt (p.nonnegative.trans p.ordered.le)]
   exact V.fixed_right u hu
 
-
 theorem squareVariationField_eq_zero_of_constant {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (s : ℝ) (x : M)
@@ -49,7 +39,6 @@ theorem squareVariationField_eq_zero_of_constant {J : Set ℝ} {F : RicciFlow n 
   exact curveVelocity_eq_zero_of_eventually_constant
     (Filter.eventually_of_mem
       (isOpen_Ioo.mem_nhds ⟨neg_neg_of_pos V.radius_pos, V.radius_pos⟩) hfixed)
-
 
 theorem variationEndpointAcceleration_eq_zero_of_constant
     {J : Set ℝ} {F : RicciFlow n M J}
@@ -84,7 +73,6 @@ theorem variationEndpointAcceleration_eq_zero_of_constant
   rw [hderiv, hvelocity 0 hzero]
   simp
 
-
 theorem firstVariationBoundaryTerm_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : FixedEndpointLVariation F T τ₁ τ₂ p) :
@@ -95,7 +83,6 @@ theorem firstVariationBoundaryTerm_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
   have hright := squareVariationField_eq_zero_of_constant V.toLVariation
     (Real.sqrt τ₂) (p.curve τ₂) (fun _ hu ↦ squareFamily_right_eq V hu)
   simp only [firstVariationBoundaryTerm, hleft, hright, map_zero, sub_self]
-
 
 theorem secondVariationBoundaryTerm_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}

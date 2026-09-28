@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlice
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevelUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem convexHull_insert_inter_nonneg_of_zero (A : E →ᵃ[ℝ] ℝ)
     {q : E} (hq : A q = 0) (s : Set E) :
@@ -61,9 +49,6 @@ theorem convexHull_insert_inter_nonneg_of_zero (A : E →ᵃ[ℝ] ℝ)
     · exact fun hx => hx.1
     · rintro rfl
       exact ⟨mem_singleton _, hq.ge⟩
-
-
-
 
 theorem convexHull_pair_inter_nonneg (A : E →ᵃ[ℝ] ℝ) {u v : E}
     (hu : A u < 0) (hv : 0 < A v) :
@@ -110,9 +95,6 @@ theorem convexHull_pair_inter_nonneg (A : E →ᵃ[ℝ] ℝ) {u v : E}
           · exact hv.le)
           ((convex_Ici (0 : ℝ)).affine_preimage A)
       exact hnonneg (by rwa [convexHull_pair])
-
-
-
 
 theorem convexHull_zero_apex_pair_inter_nonneg (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) (hv : 0 < A v) :

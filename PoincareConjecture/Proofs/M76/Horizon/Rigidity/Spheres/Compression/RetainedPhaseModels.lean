@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.SourcePhaseResidualModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -18,7 +9,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {N F : Set X}
-
 
 def transportPhase (M : FrontierResidualModel e N F) {Fnew : Set X} (h : F = Fnew) :
     FrontierResidualModel e N Fnew := h ▸ M
@@ -30,8 +20,6 @@ def transportPhase (M : FrontierResidualModel e N F) {Fnew : Set X} (h : F = Fne
 @[simp] theorem transportPhase_count (M : FrontierResidualModel e N F)
     {Fnew : Set X} (h : F = Fnew) :
     (M.transportPhase h).count = M.count := by cases h; rfl
-
-
 
 def retain (M : FrontierResidualModel e N F) {m : ℕ}
     (keep : Fin m ↪ Fin M.count) (hm : 0 < m) :
@@ -90,8 +78,6 @@ theorem retain_count_le (M : FrontierResidualModel e N F) {m : ℕ}
     (M.retain keep hm).count ≤ M.count := by
   change m ≤ M.count
   simpa using Fintype.card_le_of_injective keep keep.injective
-
-
 
 theorem exists_retained_finset_model (M : FrontierResidualModel e N F)
     (J : Finset (Fin M.count)) (hJ : J.Nonempty) :

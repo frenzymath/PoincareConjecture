@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -114,7 +106,6 @@ theorem mem_rim_of_sourceMap_mem_cutGraph
           mem_iUnion₂.mpr ⟨s, 0, (A.sourceMap) p, hs, rfl⟩, hf.symm⟩
       · exact Or.inl ⟨separatedSheet A.exteriorHeight (s, 1) ((A.sourceMap) p),
           mem_iUnion₂.mpr ⟨s, 1, (A.sourceMap) p, hs, rfl⟩, hf.symm⟩
-
 
 theorem carrier_inter_preimage_cutGraph :
     A.carrier ∩ A.sourceMap ⁻¹' A.cutGraph = A.rim := by

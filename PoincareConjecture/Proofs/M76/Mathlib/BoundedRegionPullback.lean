@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +8,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem pullback_spherical_region_balls (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →

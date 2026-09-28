@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CoordinateNormalExtension
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompactFaceNormalBall
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_original_supported_normal_extension_with_support_coordinates
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -85,8 +72,6 @@ theorem exists_original_supported_normal_extension_with_support_coordinates
     simpa only [OpenPartialHomeomorph.trans_symm_eq_symm_trans_symm,
       OpenPartialHomeomorph.symm_symm, OpenPartialHomeomorph.trans_assoc,
       Homeomorph.symm_toOpenPartialHomeomorph] using hinv
-
-
 
 theorem exists_original_supported_normal_extension
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

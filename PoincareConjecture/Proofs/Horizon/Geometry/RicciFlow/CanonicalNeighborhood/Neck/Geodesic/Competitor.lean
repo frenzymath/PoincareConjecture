@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Chord
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Comparison
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -203,6 +202,5 @@ theorem model_path_length_le
         _ = ENNReal.ofReal (Real.sqrt 2 * (Real.pi + 1)) +
               ENNReal.ofReal |z.2 - w.2| := by
           rw [ENNReal.ofReal_mul (Real.sqrt_nonneg 2)]
-
 
 end PoincareConjecture.EpsilonNeck

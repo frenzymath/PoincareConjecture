@@ -2,16 +2,6 @@ import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_local_inverse_of_det_ne_zero (f : E → E) (x : E)
     (hf : ContDiffAt ℝ 1 f x) (hdet : (fderiv ℝ f x).det ≠ 0) :
@@ -43,9 +31,6 @@ theorem exists_local_inverse_of_det_ne_zero (f : E → E) (x : E)
     hf.mem_toOpenPartialHomeomorph_source hA one_ne_zero, rfl⟩
 
 variable [MeasurableSpace E] [BorelSpace E]
-
-
-
 
 theorem critical_image_null_and_fibers_discrete (mu : Measure E) [IsAddHaarMeasure mu]
     (f : E → E) (U : Set E) (hU : IsOpen U) (hf : ContDiffOn ℝ 1 f U) :
@@ -66,10 +51,6 @@ theorem critical_image_null_and_fibers_discrete (mu : Measure E) [IsAddHaarMeasu
     apply exists_local_inverse_of_det_ne_zero f x (hf.contDiffAt (hU.mem_nhds hx.1))
     intro hdet
     exact hy ⟨x, ⟨hx.1, hdet⟩, hx.2⟩
-
-
-
-
 
 theorem compact_fiber_finite_of_not_critical (mu : Measure E) [IsAddHaarMeasure mu]
     (f : E → E) (U K : Set E) (hU : IsOpen U) (hf : ContDiffOn ℝ 1 f U)

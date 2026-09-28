@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_interior_return_velocity_ne
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -73,9 +57,6 @@ theorem m64Intrinsic_interior_return_velocity_ne
   rw [← hback, h0] at hnorm
   exact (lt_irrefl (1 : ℝ)) hnorm
 
-
-
-
 theorem m64Intrinsic_regular_return_velocity_ne_neg
     (G : RiemannianMetric 2 AnnulusCoordinates)
     {gamma : ℝ → AnnulusCoordinates} {s t : ℝ}
@@ -116,9 +97,6 @@ theorem m64Intrinsic_regular_return_velocity_ne_neg
     rw [two_smul]
     exact add_eq_zero_iff_eq_neg.mpr hder
   exact (smul_eq_zero.mp htwice).resolve_left (by norm_num)
-
-
-
 
 theorem m64Intrinsic_unit_interior_return_transverse
     (G : RiemannianMetric 2 AnnulusCoordinates)

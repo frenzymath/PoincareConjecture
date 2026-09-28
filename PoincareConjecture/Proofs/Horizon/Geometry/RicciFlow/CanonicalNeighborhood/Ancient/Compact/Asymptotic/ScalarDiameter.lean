@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.RescalingGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -34,7 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
 theorem AncientRescaling.metricDiameter_scale {tau : ℝ}
     (R : AncientRescaling K tau) (hcompact : IsCompact (univ : Set M))
     {t : ℝ} (ht : t < 0) :
@@ -46,8 +34,6 @@ theorem AncientRescaling.metricDiameter_scale {tau : ℝ}
   exact ((OrderIso.mulLeft₀ (Real.sqrt (1 / tau))
     (Real.sqrt_pos.mpr (one_div_pos.mpr R.tau_pos))).map_ciSup
       (compact_metricDiameter_bddAbove (K.flow.metric (tau * t)) hcompact)).symm
-
-
 
 theorem AncientRescaling.scalarDiameter_eq {tau : ℝ}
     (R : AncientRescaling K tau) (hcompact : IsCompact (univ : Set M))
@@ -65,9 +51,6 @@ namespace AncientCompactTimeConvergence
 
 variable {S : AncientRescalingSequence K} (G : AncientCompactTimeConvergence S)
 
-
-
-
 theorem tendsto_scalarDiameter_of_noncompact_limit
     (hcompact : IsCompact (univ : Set M))
     (hnoncompact : ¬ IsCompact (univ : Set G.limit.carrier.carrier))
@@ -83,8 +66,6 @@ theorem tendsto_scalarDiameter_of_noncompact_limit
   simpa only [(S.rescaling _).scalarDiameter_eq hcompact ht] using h
 
 end AncientCompactTimeConvergence
-
-
 
 theorem compact_nonround_eventually_large_past_scalarDiameter
     (P : M26CanonicalNeighborhoodPredecessors.{u})

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExten
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Center
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_projective_exterior_matching_ball
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :
@@ -138,8 +125,6 @@ theorem exists_projective_exterior_matching_ball
     · rw [heqfix, hformula, hcq]
       exact hmem _ (e.map_source hzs)
     · rw [heqfix, hformula, hcq, hlift _ hzs, mul_neg, neg_mul]
-
-
 
 theorem exists_projective_exterior_matching_antipodal_balls
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :

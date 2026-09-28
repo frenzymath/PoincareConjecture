@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.FrontierChartSign
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.CompatibleChartLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

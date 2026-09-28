@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCutLinkZeroSection
 import PoincareConjecture.Proofs.M76.Mathlib.CentralLinkSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {n : ℕ}
-
-
-
-
-
 
 theorem original_cut_link_data_of_surface_accumulation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

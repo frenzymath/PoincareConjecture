@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalAlternative
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_ancient_physical_application
     (h04 : RicciFlowCurvatureTheory.{u})

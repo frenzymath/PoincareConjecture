@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapChainIntersection
 import PoincareConjecture.Proofs.M25.Mathlib.CompatibleDiffeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.exists_finite_chain_carrier_diffeomorph :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

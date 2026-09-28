@@ -2,21 +2,9 @@ import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem ContinuousOn.exists_uniform_time_delta
     {X Y : Type*} [PseudoMetricSpace X] [PseudoMetricSpace Y]

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PolynomialInterpolation
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem polynomial_iteratedDeriv_bounds
     {α : Type*} {p : α → ℝ → ℝ}

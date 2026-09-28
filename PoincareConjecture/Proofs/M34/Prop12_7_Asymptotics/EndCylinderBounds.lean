@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderFlow
 import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
-
-
-
 
 theorem endCylinderFlow_chart_coefficients :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -45,9 +31,6 @@ theorem endCylinderFlow_chart_coefficients :
   change (endCylinderMetric e t).inner ⟨x, hx⟩ u v = endCylinderCoefficients e t x u v
   rw [endCylinderMetric_inner, endCylinderParameter, if_pos ht]
 
-
-
-
 theorem endCylinderFlow_iteratedFDeriv :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.isManifold_singleton
@@ -65,9 +48,6 @@ theorem endCylinderFlow_iteratedFDeriv :
     filter_upwards [(endReferenceRegion_isOpen e).mem_nhds hx] with y hy
     exact endCylinderFlow_chart_coefficients e t ht p y hy
   exact (heq.iteratedFDeriv (𝕜 := ℝ) j).eq_of_nhds
-
-
-
 
 theorem endCylinderFlow_compact_bounds {T : ℝ} (hT : T < 1)
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

@@ -4,25 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measu
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set

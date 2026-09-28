@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.LocalRegularizedEquation
 import PoincareConjecture.Proofs.M09.GeometricUniqueness
 import PoincareConjecture.Proofs.M09.WithinODEUniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

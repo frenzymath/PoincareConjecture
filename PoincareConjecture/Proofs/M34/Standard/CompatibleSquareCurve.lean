@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CompatibleCylinderCurve
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,13 +15,9 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {D : SmoothSpacetimeInterval K} {M : Type v} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def compatibleSquareCurve (e : CompatibleSpacetimeCylinder S D M)
     (T : ℝ) (alpha : ℝ → M) : ℝ → S.Point :=
   fun s => e.toSpacetime (D.realParam (T - s ^ 2), alpha s)
-
-
 
 noncomputable def compatibleSquareHorizontal (e : CompatibleSpacetimeCylinder S D M)
     (g : SpacetimeCylinderMetric e) (T : ℝ) (alpha : ℝ → M) (s : ℝ) :
@@ -38,14 +25,10 @@ noncomputable def compatibleSquareHorizontal (e : CompatibleSpacetimeCylinder S 
   g.spatialTangentEquiv (D.realParam (T - s ^ 2)) (alpha s)
     (curveVelocity (n := n) alpha s)
 
-
-
 theorem compatibleSquareCurve_time (e : CompatibleSpacetimeCylinder S D M)
     (T : ℝ) (alpha : ℝ → M) {s : ℝ} (hs : T - s ^ 2 ∈ K.domain) :
     S.timeFunction (compatibleSquareCurve e T alpha s) = T - s ^ 2 :=
   (e.time_eq _).trans (D.realParam_val hs)
-
-
 
 theorem compatibleSquareCurve_smooth (e : CompatibleSpacetimeCylinder S D M)
     (T : ℝ) {alpha : ℝ → M} {A : Set ℝ}
@@ -58,8 +41,6 @@ theorem compatibleSquareCurve_smooth (e : CompatibleSpacetimeCylinder S D M)
     ((D.realParam_smoothOn.comp hc.contMDiffOn hclock).prodMk ha)
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem compatibleSquareCurve_derivative (e : CompatibleSpacetimeCylinder S D M)
     (g : SpacetimeCylinderMetric e) (T : ℝ) {alpha : ℝ → M} {A : Set ℝ}

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Assembly
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -115,7 +109,6 @@ variable [MeasurableSpace S] [BorelSpace S] [T3Space S]
   (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
   (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target)
   {g : RiemannianMetric 2 S}
-
 
 theorem gaussBonnet_band_boundary (hI : Icc a b ⊆ U) (D : LeviCivitaData g) :
     let C := B.faceCoordinates hU hlo hhi

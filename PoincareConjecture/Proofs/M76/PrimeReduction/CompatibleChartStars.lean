@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.RelativeChartStars
 import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {E V X ι κ : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [TopologicalSpace X] [Finite κ]
   {e : ι → OpenPartialHomeomorph X V}
-
-
-
 
 theorem PolyhedralPLInCharts.exists_full_compatible_chart_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

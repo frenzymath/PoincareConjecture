@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanGraphRellichNative
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Approximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +15,6 @@ open Poincare.Analysis.Sobolev.Weak EuclideanGraphRellichNative
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
-
 
 theorem m64WeakSobolev_mem_completedGraph
     {u : E → ℝ} (hw : MemW1pWitness 2 u univ)
@@ -79,9 +66,6 @@ theorem m64WeakSobolev_mem_completedGraph
     simpa only [ENNReal.ofReal_ofNat, Pi.sub_def, hw'] using hfg i
   refine ⟨hu, hg, mem_closure_of_tendsto (hval.prodMk_nhds (tendsto_pi_nhds.mpr hgrad)) ?_⟩
   exact Eventually.of_forall hF
-
-
-
 
 theorem m64WeakSobolev_l2_isCompact
     (u : ℕ → E → ℝ) (hw : ∀ j, MemW1pWitness 2 (u j) univ)

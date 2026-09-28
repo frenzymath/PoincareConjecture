@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.ParametrizedDiskC
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.ProtectedPolygonNeighborhood
 import PoincareConjecture.Proofs.M76.Wall.ProtectedFrontierBicollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval
@@ -22,9 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem PLDomain.exists_innermost_frontier_polygon_step
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

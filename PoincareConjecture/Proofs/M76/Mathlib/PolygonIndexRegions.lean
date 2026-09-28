@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonExteriorIndex
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonUnitJump
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
   (hnv : P.HasNonverticalEdges)
 
 include hP hinj hnv
-
-
-
 
 theorem exists_crossingIndex_region_value :
     ∃ c : ℤ, (c = 1 ∨ c = -1) ∧ ∀ q ∈ (P.boundary ℝ)ᶜ,
@@ -58,16 +47,10 @@ theorem exists_crossingIndex_region_value :
       rwa [← connectedComponentIn_eq hqb]
     simp [hqvalue, hqunbound, hcne.symm]
 
-
-
-
 theorem crossingIndex_eq_zero_iff_unbounded {q : ℝ × ℝ} (hq : q ∈ (P.boundary ℝ)ᶜ) :
     P.crossingIndex q = 0 ↔ ¬ Bornology.IsBounded (connectedComponentIn (P.boundary ℝ)ᶜ q) := by
   obtain ⟨_, _, h⟩ := P.exists_crossingIndex_region_value hP hinj hnv
   exact (h q hq).2
-
-
-
 
 theorem crossingIndex_mem_three {q : ℝ × ℝ} (hq : q ∈ (P.boundary ℝ)ᶜ) :
     P.crossingIndex q = -1 ∨ P.crossingIndex q = 0 ∨ P.crossingIndex q = 1 := by

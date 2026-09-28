@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M38.ClosedSetNesting
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Quotient.Properness
 import Mathlib.GroupTheory.OrderOfElement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem compact_translate_eq_of_subset
     {X G : Type*} [TopologicalSpace X] [Group G] [MulAction G X]
@@ -50,8 +39,6 @@ theorem compact_translate_eq_of_subset
   refine ⟨g ^ m • x, hpow m (mem_image_of_mem _ hx), ?_⟩
   change g • (g ^ m • x) = x
   rw [← mul_smul, ← pow_succ', hgn, one_smul]
-
-
 
 theorem surgeryBall_disjoint_translates_of_disjoint_frontiers
     {A : GeneralizedSliceCarrier.{u}}
@@ -100,8 +87,6 @@ theorem surgeryBall_disjoint_translates_of_disjoint_frontiers
   · exact (hstrict g hg hsub).elim
   · exact (hnoncompact (hcover ▸ hcompact.union hgc)).elim
 
-
-
 theorem exists_surgeryBall_descend_of_disjoint_lifted_frontiers
     {A Q : GeneralizedSliceCarrier.{u}}
     (hA : IsPreconnected (univ : Set A.carrier))
@@ -119,9 +104,6 @@ theorem exists_surgeryBall_descend_of_disjoint_lifted_frontiers
         frontier D.closedBall = q '' frontier B.closedBall :=
   exists_surgeryBall_descend_proper_fibers q hq hfibers B
     (surgeryBall_disjoint_translates_of_disjoint_frontiers hA hnoncompact B hfront)
-
-
-
 
 theorem exists_surgeryBall_descend_lifted_sphere
     {A Q : GeneralizedSliceCarrier.{u}}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Displacement.FiniteExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskInstallation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -154,9 +146,6 @@ theorem exists_hamiltonZero_finite_marked_disk_installation
     rw [hamiltonZeroTargetVectorTranslation_coordinates]
     simp only [Pi.smul_apply, smul_eq_mul, hVphase, mul_zero, AddCircle.coe_zero, add_zero]
     exact (hamiltonZeroThirdCircleMap_ambient phi x).symm
-
-
-
 
 theorem exists_hamiltonZero_source_disk_family_installation
     {ι κ η : Type*} [Fintype η]

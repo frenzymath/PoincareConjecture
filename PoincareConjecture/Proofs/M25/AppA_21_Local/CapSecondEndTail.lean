@@ -9,18 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem CapCertificate.exists_second_end_tail_of_compact_extension
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +9,6 @@ set_option maxSynthPendingDepth 12
 open scoped ContDiff
 
 namespace PoincareConjecture
-
 
 theorem norm_iteratedFDeriv_bilinear_le_nine_of_cylinder_components
     {F : EuclideanSpace ℝ (Fin 3) →
@@ -45,7 +34,6 @@ private theorem norm_iteratedFDeriv_two_sub
       ‖fderiv ℝ (fderiv ℝ F) x - fderiv ℝ (fderiv ℝ G) x‖ := by
   simp only [← dist_eq_norm, iteratedFDeriv_succ_eq_comp_right,
     Function.comp_apply, LinearIsometryEquiv.dist_map, iteratedFDeriv_zero_eq_comp]
-
 
 theorem cylinder_metric_twoJet_norm_sub_le
     {F G : EuclideanSpace ℝ (Fin 3) →

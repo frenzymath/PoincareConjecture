@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.SphereChart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComparison.Component
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,8 +19,6 @@ namespace PoincareConjecture.SingularRegularLimit.RoundComparison
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilin" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem exists_metric_coordinate_error_jet_bound
     {g₀ : RiemannianMetric 3 E} (D₀ : LeviCivitaData g₀) (p : E) (m : ℕ) :
@@ -64,8 +60,6 @@ theorem exists_metric_coordinate_error_jet_bound
     rfl
   have h := hbound B hBsmooth ρ hρ (fun r hr => (hjet r).trans_le (hclose r hr))
   rwa [(heq.iteratedFDeriv ℝ m).eq_of_nhds] at h
-
-
 
 theorem exists_round_initial_coordinate_jet_bound (m : ℕ) :
     ∃ Z : ℝ, 0 < Z ∧

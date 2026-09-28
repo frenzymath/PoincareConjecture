@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalMetric
 import PoincareConjecture.Proofs.M34.Mathlib.InitialModulusContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem partialFlow_contDiffOn_coefficients {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) :
@@ -38,44 +26,30 @@ open SpacetimeBounds
 variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (L : PartialFlowTerminalJets F S)
 
-
-
 noncomputable def reverseCoefficients (p : ℝ × StandardCapSpace) : MetricCoefficient 3 :=
   if 0 < p.1 then (F.flow.metric (S - p.1)).euclideanCoefficients p.2
   else L.coefficients p.2
-
-
 
 theorem reverseCoefficients_of_pos {t : ℝ} (ht : 0 < t) (x : StandardCapSpace) :
     L.reverseCoefficients (t, x) = (F.flow.metric (S - t)).euclideanCoefficients x := by
   simp only [reverseCoefficients, ht, if_true]
 
-
-
 theorem reverseCoefficients_zero (x : StandardCapSpace) :
     L.reverseCoefficients (0, x) = L.coefficients x := by
   simp only [reverseCoefficients, lt_self_iff_false, if_false]
 
-
-
 noncomputable def reverseSpatialJet (m : ℕ) (p : ℝ × StandardCapSpace) :
     StandardCapSpace [×m]→L[ℝ] MetricCoefficient 3 :=
   iteratedFDeriv ℝ m (fun x => L.reverseCoefficients (p.1, x)) p.2
-
-
 
 theorem reverseSpatialJet_of_pos (m : ℕ) {t : ℝ} (ht : 0 < t) (x : StandardCapSpace) :
     L.reverseSpatialJet m (t, x) =
       iteratedFDeriv ℝ m (F.flow.metric (S - t)).euclideanCoefficients x := by
   simp only [reverseSpatialJet, L.reverseCoefficients_of_pos ht]
 
-
-
 theorem reverseSpatialJet_zero (m : ℕ) (x : StandardCapSpace) :
     L.reverseSpatialJet m (0, x) = iteratedFDeriv ℝ m L.coefficients x := by
   simp only [reverseSpatialJet, L.reverseCoefficients_zero]
-
-
 
 theorem contDiffOn_reverseCoefficients_interior (hSF : S ≤ F.lifetime) :
     ContDiffOn ℝ ∞ L.reverseCoefficients (Ioo 0 S ×ˢ univ) := by
@@ -89,13 +63,9 @@ theorem contDiffOn_reverseCoefficients_interior (hSF : S ≤ F.lifetime) :
   intro p hp
   exact L.reverseCoefficients_of_pos hp.1.1 p.2
 
-
-
 theorem contDiffOn_reverseSpatialJet_interior (hSF : S ≤ F.lifetime) (m : ℕ) :
     ContDiffOn ℝ ∞ (L.reverseSpatialJet m) (Ioo 0 S ×ˢ univ) :=
   (L.contDiffOn_reverseCoefficients_interior hSF).iteratedFDeriv_snd_of_isOpen isOpen_univ m
-
-
 
 theorem continuousOn_reverseSpatialJet (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)

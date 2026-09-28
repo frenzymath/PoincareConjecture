@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphCapFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Polygonal
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +10,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_linear_band
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

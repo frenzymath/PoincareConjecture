@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothImageInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M44
 
 variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
 
-
-
-
 theorem regionEquivalence_isOpen_image_interior (e : SurgeryRegionEquivalence A B U V) :
     IsOpen (e.map '' interior U) := by
   have himage : e.map '' interior U ⊆ V := by
@@ -35,9 +22,6 @@ theorem regionEquivalence_isOpen_image_interior (e : SurgeryRegionEquivalence A 
     (e.map_smooth.mono interior_subset) (e.inverse_smooth.mono himage)
     (e.left_inverse.mono interior_subset)
 
-
-
-
 theorem regionEquivalence_isOpen_inverse_image_interior (e : SurgeryRegionEquivalence A B U V) :
     IsOpen (e.inverse '' interior V) := by
   have himage : e.inverse '' interior V ⊆ U := by
@@ -45,9 +29,6 @@ theorem regionEquivalence_isOpen_inverse_image_interior (e : SurgeryRegionEquiva
   exact Poincare.isOpen_image_of_smooth_leftInvOn isOpen_interior
     (e.inverse_smooth.mono interior_subset) (e.map_smooth.mono himage)
     (e.right_inverse.mono interior_subset)
-
-
-
 
 theorem regionEquivalence_image_interior (e : SurgeryRegionEquivalence A B U V) :
     e.map '' interior U = interior V := by
@@ -60,9 +41,6 @@ theorem regionEquivalence_image_interior (e : SurgeryRegionEquivalence A B U V) 
   refine subset_antisymm hmapInt ?_
   intro y hy
   exact ⟨e.inverse y, hinvInt (mem_image_of_mem _ hy), e.right_inverse (interior_subset hy)⟩
-
-
-
 
 noncomputable def regionEquivalenceInteriorChart (e : SurgeryRegionEquivalence A B U V) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞ where
@@ -82,9 +60,6 @@ noncomputable def regionEquivalenceInteriorChart (e : SurgeryRegionEquivalence A
   open_target := isOpen_interior
   contMDiffOn_toFun := e.map_smooth.mono interior_subset
   contMDiffOn_invFun := e.inverse_smooth.mono interior_subset
-
-
-
 
 theorem limit_identify_chart_domains
     {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}

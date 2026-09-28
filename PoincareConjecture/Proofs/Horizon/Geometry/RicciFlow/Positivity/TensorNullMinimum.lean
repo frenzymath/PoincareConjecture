@@ -6,17 +6,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.LinearAlgebra.BilinearForm.Properties
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

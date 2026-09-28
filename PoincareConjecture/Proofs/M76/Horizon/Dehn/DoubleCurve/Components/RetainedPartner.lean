@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedModels
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalResolutionProperness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem RetainedSquareMapFacts.exists_double_locus_copy
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}
@@ -42,9 +32,6 @@ theorem RetainedSquareMapFacts.exists_double_locus_copy
     · rintro ⟨x, ⟨y, heq, hne⟩, rfl⟩
       exact ⟨⟨x, x.property, y, y.property, heq, hne⟩, rfl⟩
   exact ⟨hJ.toHomeomorph.trans (Homeomorph.setCongr hrange), fun _ ↦ rfl⟩
-
-
-
 
 theorem exists_restricted_double_partner
     {X : Type*} {f : V2 → X} {K : Set V2} (hKS : K ⊆ D2)
@@ -78,8 +65,6 @@ theorem exists_restricted_double_partner
   let Q : doubleLocusOn f K ≃ₜ doubleLocusOn f K :=
     ⟨⟨q, q, hq, hq⟩, hqc, hqc⟩
   exact ⟨Q, hq, fun x ↦ ⟨hsub x.property, rfl⟩⟩
-
-
 
 theorem RetainedSquareMapFacts.exists_partner
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}

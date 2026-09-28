@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocality
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderParametrizedJets
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem generalizedCylinderPullback_roundCylinderTensorSmoothOn
     {G : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

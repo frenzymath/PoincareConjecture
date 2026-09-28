@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SquarePathEnergyBound
 import PoincareConjecture.Proofs.M10.PathEnergyDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,13 +14,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 theorem terminalSquareEnergy_nonneg (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) (s : ℝ) : 0 ≤ terminalSquareEnergy G Z s := by
   by_cases hv : curveVelocity (n := n) (G.squareFamily Z) s = 0
   · simp [terminalSquareEnergy, hv]
   · exact ((F.metric T).pos _ _ hv).le
-
 
 theorem edist_squareFamily_le_of_energy
     (G : LExponentialGeometry F T τmax p) (Z : TangentSpace (𝓡 n) p)

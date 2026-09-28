@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCrossings
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Isotopy.Composition
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,11 +19,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
-
 
 theorem exists_vanishing_selected_cylinder_tail
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

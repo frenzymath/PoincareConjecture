@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialSpectralTrace
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.TimeDependentSpectralResidual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,10 +12,6 @@ open SpectralHeatNative QuasilinearDeTurckNative
 
 variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
-
-
-
-
 
 structure CenteredSpectralResidual (lambda : iota → NNReal) (w : State iota) (T : ℝ) where
 
@@ -54,8 +41,6 @@ variable {lambda : iota → NNReal} {w : State iota} {T : ℝ}
 
 omit [BorelSpace (State iota)] in
 
-
-
 theorem ae_norm_le : ∀ᵐ t ∂timeMeasure T, ∀ x,
     ‖N.toFun t x‖ ≤
       ((N.perturbationConstant : ℝ) + N.principalConstant * ‖shiftedBaseMultiplier lambda x‖ +
@@ -71,9 +56,6 @@ theorem ae_norm_le : ∀ᵐ t ∂timeMeasure T, ∀ x,
   calc
     _ ≤ ‖N.toFun t x - N.toFun t 0‖ + ‖N.toFun t 0‖ := norm_le_norm_sub_add _ _
     _ ≤ _ := by nlinarith
-
-
-
 
 theorem memLp_response_source (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     MemLp (fun t => N.toFun t (shiftedHighOperator hT lambda F t)) 2 (timeMeasure T) := by
@@ -116,21 +98,14 @@ theorem memLp_response_source (hT : 0 ≤ T) (F : ForcingSpace iota T) :
   · exact mul_le_mul_of_nonneg_right
       (mul_le_mul_of_nonneg_left ht N.principalConstant.coe_nonneg) (norm_nonneg _)
 
-
-
-
 noncomputable def forcingResidual (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     ForcingSpace iota T :=
   (N.memLp_response_source hT F).toLp (fun t => N.toFun t (shiftedHighOperator hT lambda F t))
-
-
 
 theorem forcingResidual_coe (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     N.forcingResidual hT F =ᵐ[timeMeasure T]
       fun t => N.toFun t (shiftedHighOperator hT lambda F t) :=
   (N.memLp_response_source hT F).coeFn_toLp
-
-
 
 theorem forcingResidual_zero (hT : 0 ≤ T) :
     N.forcingResidual hT 0 = N.zero_memLp.toLp (fun t => N.toFun t 0) := by
@@ -140,9 +115,6 @@ theorem forcingResidual_zero (hT : 0 ≤ T) :
   filter_upwards [h, N.zero_memLp.coeFn_toLp,
     Lp.coeFn_zero (State iota) 2 (timeMeasure T)] with t ht hzero hz
   simp only [ht, hzero, hz, Pi.zero_apply]
-
-
-
 
 theorem norm_forcingResidual_sub_le (hT : 0 ≤ T) (hT1 : T ≤ 1)
     {r : ℝ} (hr : 0 ≤ r) (F G : ForcingSpace iota T)

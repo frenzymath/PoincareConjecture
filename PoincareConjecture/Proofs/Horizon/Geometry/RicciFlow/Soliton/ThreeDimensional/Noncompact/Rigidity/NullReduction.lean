@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.CurvatureNullity
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_null_plane_of_not_ricci_positive
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Chart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Reparametrization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +24,6 @@ private theorem exists_edge_coordinate {v : ℝ × ℝ} (hv : v ≠ 0) :
     simp [h₁]
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem exists_smooth_chart_edge_parameter
     (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -89,8 +81,6 @@ theorem deriv_reparam_ne_zero {γ η : ℝ → S} {φ : ℝ → ℝ} {t : ℝ}
   exact hregular (hv.trans hchain)
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
-
 
 theorem exists_smooth_chart_edge_reparam_of_image_eq
     (e : OpenPartialHomeomorph S (ℝ × ℝ))

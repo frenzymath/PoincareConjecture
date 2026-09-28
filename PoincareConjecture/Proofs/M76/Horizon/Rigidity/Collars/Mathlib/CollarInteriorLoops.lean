@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarInte
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.OneSidedCollarRestriction
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.PathMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaries
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_planar_triangle_boundary_complex (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 2) {t : Finset E}
@@ -61,9 +50,6 @@ theorem exists_planar_triangle_boundary_complex (K : SimplicialComplex ℝ E)
   intro s hs
   obtain ⟨_, p, hsp⟩ := (hfaces s).mp hs
   exact (Finset.card_le_card hsp).trans_eq (K.triangle_erase_is_edge ht hcard p.property).2.1
-
-
-
 
 theorem triangle_frontier_subset_of_edge_carriers (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 2) {t : Finset E}

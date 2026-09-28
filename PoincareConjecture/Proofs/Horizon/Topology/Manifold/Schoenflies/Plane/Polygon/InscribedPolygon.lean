@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.SimplePolygon
 import Mathlib.Algebra.Field.Periodic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -19,12 +10,8 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 def inscribedPolygon (γ : ℝ → E) (s : Fin (n + 1) → ℝ) : Polygon E n :=
   ⟨fun i => γ (s i.castSucc)⟩
-
-
 
 theorem inscribedPolygon_edgePath (γ : ℝ → E) (s : Fin (n + 1) → ℝ)
     (hloop : γ (s (Fin.last n)) = γ (s 0)) (i : Fin n) :
@@ -44,9 +31,6 @@ theorem inscribedPolygon_edgePath (γ : ℝ → E) (s : Fin (n + 1) → ℝ)
         rw [hidx]
     change AffineMap.lineMap (γ (s i.castSucc)) (γ (s (finRotate (m + 1) i).castSucc)) = _
     rw [hnext]
-
-
-
 
 theorem inscribedPolygon_simple_and_bijOn_projection (e : ℂ ≃ₗᵢ[ℝ] E)
     (γ : ℝ → E) (P : E → sphere (0 : E) 1) (hn : 3 ≤ n)

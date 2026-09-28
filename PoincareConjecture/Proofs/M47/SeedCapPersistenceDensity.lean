@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCapBirthDensity
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_cap_persistence_density (g0 : StandardInitialMetric)
     {Rtip Rmax : ℝ} (htip : 0 < Rtip) (hmax : 0 < Rmax) :

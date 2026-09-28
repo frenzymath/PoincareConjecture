@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Gaussian
 
-
-
-
-
-
-
-
-
-
 noncomputable section
-
 
 open Real
 open scoped RealInnerProductSpace

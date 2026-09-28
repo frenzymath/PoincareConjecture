@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.FiniteBallComplement
 import PoincareConjecture.Proofs.M38.ClosedSetNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} {ι : Type*} [Finite ι]
   {U : Set A.carrier}
-
-
 
 theorem region_eq_complement_of_avoiding_fillings
     (hA : IsPreconnected (univ : Set A.carrier))
@@ -83,8 +71,6 @@ theorem region_eq_complement_of_avoiding_fillings
     have hyfront : y ∈ frontier U := ⟨hyclosure, by simpa only [hU.interior_eq] using hyU⟩
     obtain ⟨i, hi⟩ := mem_iUnion.mp (hfrontier ▸ hyfront)
     exact hyout (mem_iUnion.mpr ⟨i, (hclosed i).frontier_subset hi⟩)
-
-
 
 theorem enclosing_ball_or_exact_complement_of_fillings
     (hA : IsPreconnected (univ : Set A.carrier))

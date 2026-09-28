@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoCornerCaps
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_arc_corner_contact_parameter
     {gamma : ℝ → AnnulusCoordinates} {T r t : ℝ}
@@ -48,10 +32,6 @@ theorem m64Intrinsic_arc_corner_contact_parameter
     change T - r ≤ t
     linarith [hs.2]
 
-
-
-
-
 theorem m64Intrinsic_arc_trim_avoids_two_caps
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ}
     (hinj : InjOn gamma (Icc 0 T)) (r : Bool → ℝ)
@@ -70,10 +50,6 @@ theorem m64Intrinsic_arc_trim_avoids_two_caps
       hinj (hrT false) hfront ht' (havoid t ht') false (hcontact false) hmem)
   · exact (not_le_of_gt ht.2) (m64Intrinsic_arc_corner_contact_parameter
       hinj (hrT true) hfront ht' (havoid t ht') true (hcontact true) hmem)
-
-
-
-
 
 theorem m64Intrinsic_corner_separator_union
     {C D W : Set AnnulusCoordinates} (hD : IsClosed D) (hCD : Disjoint C D)

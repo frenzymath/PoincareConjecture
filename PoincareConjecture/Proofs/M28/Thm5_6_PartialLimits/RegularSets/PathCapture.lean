@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CompactStageRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +13,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)] [∀ k, T2Space (M
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {g : ∀ k, RiemannianMetric 3 (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem exists_eventually_regular_path_capture
     (G : RegularPointedMetricConvergence g p) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_NeckFourJe
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarPullback
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M44
 open PoincareConjecture.M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_neck_scalar_evolution_bound (P : M44CapPersistencePredecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -69,9 +56,6 @@ theorem exists_neck_scalar_evolution_bound (P : M44CapPersistencePredecessors.{u
   rw [hscale, abs_div, abs_of_pos (sq_pos_of_pos N.scalar_center_pos)] at hlocal
   exact (div_le_iff₀ (sq_pos_of_pos N.scalar_center_pos)).mp hlocal
 
-
-
-
 theorem canonical_epsilon_fourJet_order {epsilon : ℝ}
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200) :
     epsilon ≤ 1 / 36 ∧ 4 ≤ ⌊epsilon⁻¹⌋₊ := by
@@ -80,9 +64,6 @@ theorem canonical_epsilon_fourJet_order {epsilon : ℝ}
     rw [inv_eq_one_div, le_div_iff₀ hepsilon]
     linarith
   exact hinv
-
-
-
 
 theorem exists_neck_scalar_rate_within (P : M44CapPersistencePredecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

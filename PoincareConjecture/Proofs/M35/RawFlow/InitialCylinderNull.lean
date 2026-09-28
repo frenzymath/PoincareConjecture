@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.InitialCylinderCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,8 +50,6 @@ theorem initialEnd_ricci_null (D : LeviCivitaData g) (q : UnitTwoSphere)
   change D0.ricci p a a = D.ricci (f p) v v at hricci
   rw [heq, hz] at hricci
   exact hricci.symm
-
-
 
 theorem initial_axis_tail_ricci_null (D : LeviCivitaData g) :
     ∃ R : ℝ, 0 < R ∧ ∀ r, R ≤ r → ∃ v : StandardCapSpace,

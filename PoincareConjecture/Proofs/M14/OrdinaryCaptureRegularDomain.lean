@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureDifferential
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureReverseBranches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,9 +24,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hPath : M14PathCalculusConclusion G)
 
 include D hCoordinates hPath
-
-
-
 
 theorem ordinaryCapture_stable_of_regular
     (E : M14ExponentialFamily G t₀.val (e.toSpacetime (t₀, c₀)))
@@ -69,9 +56,6 @@ theorem ordinaryCapture_stable_of_regular
   refine ⟨hW, hd, L '' N, L.toHomeomorph.isOpenMap N hN, ⟨W, hWN, rfl⟩, ?_⟩
   rintro Z ⟨V, hV, rfl⟩
   exact (htransport V hV).1
-
-
-
 
 theorem ordinaryCapture_regular_of_stable
     (E : M14ExponentialFamily G t₀.val (e.toSpacetime (t₀, c₀)))

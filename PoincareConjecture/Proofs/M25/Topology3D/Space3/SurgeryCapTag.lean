@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapProfile
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 structure SurgeryCapProfile where
   horizontal : ℝ → ℝ
@@ -43,8 +29,6 @@ structure SurgeryCapProfile where
     |(surgeryCapModel horizontal vertical horizontal_smooth vertical_smooth
       (fun z => (horizontal_pos z).ne') (fun x => (vertical_pos x).ne') q).2| ≤
         heightBound
-
-
 
 theorem exists_surgery_cap_profile : Nonempty SurgeryCapProfile := by
   obtain ⟨a, ha, ha1, hanear, hafar, habound⟩ :=
@@ -79,22 +63,18 @@ theorem exists_surgery_cap_profile : Nonempty SurgeryCapProfile := by
 
 namespace SurgeryCapProfile
 
-
 noncomputable def model (P : SurgeryCapProfile) : UnitTwoSphere → E2 × ℝ :=
   surgeryCapModel P.horizontal P.vertical P.horizontal_smooth P.vertical_smooth
     (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne')
-
 
 theorem model_eq (P : SurgeryCapProfile) :
     P.model = surgeryCapModel P.horizontal P.vertical P.horizontal_smooth P.vertical_smooth
       (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne') := rfl
 
-
 theorem model_contMDiff (P : SurgeryCapProfile) :
     ContMDiff (𝓡 2) 𝓘(ℝ, E2 × ℝ) ∞ P.model :=
   surgeryCapModel_contMDiff P.horizontal P.vertical P.horizontal_smooth P.vertical_smooth
     (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne')
-
 
 theorem model_fst_norm_le (P : SurgeryCapProfile) (q : UnitTwoSphere) :
     ‖(P.model q).1‖ ≤ 1 :=
@@ -102,18 +82,15 @@ theorem model_fst_norm_le (P : SurgeryCapProfile) (q : UnitTwoSphere) :
     (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne')
     P.horizontal_pos P.horizontal_bound q
 
-
 noncomputable def capMap (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3) (t sigma c l : ℝ) :
     UnitTwoSphere → E3 :=
   surgeryCapMap P.horizontal P.vertical P.horizontal_smooth P.vertical_smooth
     (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne') T t sigma c l
 
-
 @[simp] theorem capMap_apply (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3) (t sigma c l : ℝ) (q : UnitTwoSphere) :
     P.capMap T t sigma c l q = T ((P.model q).1, t + sigma * (c + l * (P.model q).2)) := rfl
-
 
 theorem capMap_contMDiff (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)
@@ -125,8 +102,6 @@ theorem capMap_contMDiff (P : SurgeryCapProfile)
     P.horizontal_pos P.horizontal_bound T hsource hT t sigma c l
 
 end SurgeryCapProfile
-
-
 
 structure SurgeryCapTag (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) where
   profile : SurgeryCapProfile
@@ -172,27 +147,21 @@ namespace SurgeryCapTag
 
 variable {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
 
-
 def sourceCap (C : SurgeryCapTag ψ u) : Set UnitTwoSphere :=
   C.sourceChart '' {q : UnitTwoSphere | (heightCoordinates (q : E3)).2 ≤ 0}
-
 
 def sourceSeam (C : SurgeryCapTag ψ u) : Set UnitTwoSphere :=
   C.sourceChart '' {q : UnitTwoSphere | (heightCoordinates (q : E3)).2 = 0}
 
-
 def cap (C : SurgeryCapTag ψ u) : Set E3 :=
   (fun q : UnitTwoSphere => ψ (q, 0)) '' C.sourceCap
-
 
 def seam (C : SurgeryCapTag ψ u) : Set E3 :=
   (fun q : UnitTwoSphere => ψ (q, 0)) '' C.sourceSeam
 
-
 theorem south_mem_source (C : SurgeryCapTag ψ u) (q : UnitTwoSphere)
     (hq : (heightCoordinates (q : E3)).2 ≤ 0) : q ∈ C.sourceChart.source :=
   C.source_band q (lt_of_le_of_lt hq C.overlap_pos)
-
 
 theorem cap_eq_image (C : SurgeryCapTag ψ u) :
     C.cap = C.profile.capMap C.tube C.cutHeight C.sign C.removal C.scale ''
@@ -204,7 +173,6 @@ theorem cap_eq_image (C : SurgeryCapTag ψ u) :
   intro q hq
   exact C.central_eq q (lt_of_le_of_lt hq C.overlap_pos)
 
-
 theorem seam_eq_image (C : SurgeryCapTag ψ u) :
     C.seam = C.profile.capMap C.tube C.cutHeight C.sign C.removal C.scale ''
       {q : UnitTwoSphere | (heightCoordinates (q : E3)).2 = 0} := by
@@ -215,21 +183,17 @@ theorem seam_eq_image (C : SurgeryCapTag ψ u) :
   intro q hq
   exact C.central_eq q (by rw [hq]; exact C.overlap_pos)
 
-
 theorem sourceCap_isCompact (C : SurgeryCapTag ψ u) : IsCompact C.sourceCap := by
   have hh : Continuous (fun q : UnitTwoSphere => (heightCoordinates (q : E3)).2) :=
     (heightCoordinates.continuous.comp continuous_subtype_val).snd
   exact (isClosed_le hh continuous_const).isCompact.image_of_continuousOn
     (C.sourceChart.continuousOn.mono (fun q hq => C.south_mem_source q hq))
 
-
 theorem sourceSeam_isCompact (C : SurgeryCapTag ψ u) : IsCompact C.sourceSeam := by
   have hh : Continuous (fun q : UnitTwoSphere => (heightCoordinates (q : E3)).2) :=
     (heightCoordinates.continuous.comp continuous_subtype_val).snd
   exact (isClosed_eq hh continuous_const).isCompact.image_of_continuousOn
     (C.sourceChart.continuousOn.mono (fun q hq => C.south_mem_source q hq.le))
-
-
 
 theorem cap_isCompact (C : SurgeryCapTag ψ u) : IsCompact C.cap := by
   rw [C.cap_eq_image]
@@ -238,7 +202,6 @@ theorem cap_isCompact (C : SurgeryCapTag ψ u) : IsCompact C.cap := by
   exact (isClosed_le hh continuous_const).isCompact.image
     (C.profile.capMap_contMDiff C.tube C.tube_source C.tube_smooth
       C.cutHeight C.sign C.removal C.scale).continuous
-
 
 theorem seam_isCompact (C : SurgeryCapTag ψ u) : IsCompact C.seam := by
   rw [C.seam_eq_image]

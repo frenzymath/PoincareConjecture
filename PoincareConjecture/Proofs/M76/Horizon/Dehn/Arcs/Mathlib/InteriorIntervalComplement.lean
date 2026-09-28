@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
-
-
-
 
 theorem exists_complementary_end_intervals
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

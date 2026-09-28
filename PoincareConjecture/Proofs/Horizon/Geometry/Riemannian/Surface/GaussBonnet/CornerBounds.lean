@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MetricCorners
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +10,6 @@ namespace PoincareConjecture
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 theorem RiemannianMetric.cornerAngle_mem_Ioo_of_not_smul
     (g : RiemannianMetric 2 S) (x : S) (v w : TangentSpace (𝓡 2) x)
@@ -45,8 +37,6 @@ theorem RiemannianMetric.cornerAngle_mem_Ioo_of_not_smul
 
 namespace Topology.Surface
 
-
-
 theorem coordinateSectorAngle_mem_Ioo
     (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -72,7 +62,6 @@ theorem coordinateSectorAngle_mem_Ioo
 
 omit [IsManifold (𝓡 2) ∞ S] in
 
-
 theorem coordinateTriangleVelocity_not_smul
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -96,8 +85,6 @@ theorem coordinateTriangleVelocity_not_smul
   rw [map_smul, hval k, hval j, b.coord_apply_eq,
     b.coord_apply_ne hik.symm, b.coord_apply_ne hjk.symm] at hc
   norm_num at hc
-
-
 
 theorem coordinateTriangleAngle_mem_Ioo
     (g : RiemannianMetric 2 S)

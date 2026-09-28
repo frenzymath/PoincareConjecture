@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.SignedJointCross
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (J : SignedJointCross E)
 
-
-
 theorem side_iff_of_zero_and_endpoint_signs
     (mu : Fin 2 → E → ℝ) (hcont : ∀ j, ContinuousOn (mu j) J.disk)
     (hzero : ∀ j z, z ∈ J.disk → (J.coordinate j z = 0 ↔ mu j z = 0))

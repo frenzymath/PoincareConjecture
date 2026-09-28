@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Images
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.RepairPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -32,8 +23,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   (hAnn : D.K.space = PLAnnularStrip.squareAnnulus 8 1)
 
 include hAnn
-
-
 
 theorem positive_contact_nonexceptional
     (hW : W ∩ ((fun z : A × A => D.projected z.1) '' D.repairPairs) ⊆ {D.projected a})
@@ -87,8 +76,6 @@ theorem positive_contact_nonexceptional
   have hcenter : z = D.projected a := hW ⟨(N.chart_inside hzQ).1, hzE⟩
   exact hv0 (hQz.symm.trans ((congrArg N.chart hcenter).trans N.centered))
 
-
-
 theorem exists_positive_target_crossing
     (hW : W ∩ ((fun z : A × A => D.projected z.1) '' D.repairPairs) ⊆ {D.projected a})
     {v : V3} (hv : v ∈ N.source.space) (hvJ : v ∈ interior N.support.space)
@@ -132,4 +119,3 @@ theorem exists_positive_target_crossing
       hTr, hTl⟩
 
 end Geometry.OriginalPLTower.PlanarAnnulusBoundaryMotion
-

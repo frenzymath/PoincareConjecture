@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

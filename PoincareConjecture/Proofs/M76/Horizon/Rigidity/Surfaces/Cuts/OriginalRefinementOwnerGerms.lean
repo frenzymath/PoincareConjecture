@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalOwne
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem affine_mapsTo_of_convex_germ
     (G : V →ᴬ[ℝ] E) {S W : Set V} (hS : Convex ℝ S)
@@ -50,8 +39,6 @@ theorem affine_mapsTo_of_convex_germ
     exact hlocal ⟨hrS, hrW⟩
   have hext := AffineMap.lineMap_mem r⁻¹ hqC hrC
   simpa [AffineMap.lineMap_lineMap_right, ne_of_gt hrpos] using hext
-
-
 
 theorem original_owner_eq_of_affine_germ [FiniteDimensional ℝ V]
     [DecidableEq V] [DecidableEq E]
@@ -95,7 +82,6 @@ theorem original_owner_eq_of_affine_germ [FiniteDimensional ℝ V]
     Finset.eq_of_subset_of_card_le Finset.inter_subset_left (by omega)
   exact Finset.eq_of_subset_of_card_le
     (hinter ▸ Finset.inter_subset_right) (by omega)
-
 
 theorem original_owner_eq_of_affineOnFaces_germ [FiniteDimensional ℝ V]
     [DecidableEq V] [DecidableEq E]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M11.IntervalCharts
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -99,7 +91,6 @@ theorem interval_positive_tangent_smooth (I : SpacetimeInterval) :
   simp only [VectorField.mpullback, ← intervalInclusionDerivative_eq,
     ContinuousLinearMap.inverse_equiv] at hpull
   convert! hpull
-
 
 noncomputable def smoothInterval (I : SpacetimeInterval) : SmoothSpacetimeInterval I where
   chartedSpace := intervalChartedSpace I

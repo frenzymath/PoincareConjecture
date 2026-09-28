@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaEnergyMinimizers
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.Coordinates
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -79,8 +77,6 @@ private theorem density_eq_observed (g : RiemannianMetric n M) (alpha : ℝ)
     rw [he.fderiv_eq]
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem suAlpha_minimizing_local_density_L1 [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha C : ℝ} (ha : 1 ≤ alpha)
@@ -252,8 +248,6 @@ private theorem sphereChart_alpha_density_intrinsic (g : RiemannianMetric n M)
 
 set_option maxHeartbeats 1200000 in
 
-
-
 theorem suAlpha_minimizing_energy_attained [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha C : ℝ} (ha : 1 ≤ alpha)
     (f : ℕ → UnitTwoSphere → M) (hf : ∀ j, ContMDiff (𝓡 2) (𝓡 n) ∞ (f j))
@@ -323,8 +317,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60_exists_weakAlphaSphere
     [CompactSpace M] [T2Space M] [SecondCountableTopology M]

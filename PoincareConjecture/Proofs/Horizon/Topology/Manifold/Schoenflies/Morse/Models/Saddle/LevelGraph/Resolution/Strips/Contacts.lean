@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Hyperbola
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Exterior
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,7 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 def movingContact (r t : Real) (j : Fin 2 × Fin 2) : E2 :=
   WithLp.toLp 2 ![
@@ -91,8 +88,6 @@ theorem movingContact_injective {r t : Real} (hr : 0 < r) (ht : |t| < r ^ 2) :
     have he := negativeLevelContact_injective hr ((neg_le_abs t).trans_lt ht) hjk
     exact Prod.ext (Prod.mk.inj he).1 (Fin.rev_injective (Prod.mk.inj he).2)
 
-
-
 theorem square_boundary_level_eq_movingContact {r t : Real}
     (hr : 0 < r) (ht : |t| < r ^ 2) :
     (closedSquare r \ openSquare r) ∩ {x : E2 | -(x 0) ^ 2 + (x 1) ^ 2 = t} =
@@ -135,8 +130,6 @@ theorem closure_image_openSquare_subset {M : Type*} [TopologicalSpace M] [T2Spac
   closure_minimal (image_mono (openSquare_subset_closedSquare r))
     ((isCompact_closedSquare hr.le).image_of_continuousOn
       (e.continuousOn.mono hrs)).isClosed
-
-
 
 theorem frontier_image_openSquare_level_subset {M : Type*}
     [TopologicalSpace M] [T2Space M]

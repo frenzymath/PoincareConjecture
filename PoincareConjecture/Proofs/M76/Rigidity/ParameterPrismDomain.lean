@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,19 +17,14 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 
-
-
 noncomputable def originalParameterPrismCoordinates : E ≃ᴬ[ℝ] V3 :=
   (ContinuousLinearEquiv.ofFinrankEq (by simp [Module.finrank_prod]) :
     E ≃L[ℝ] V3).toContinuousAffineEquiv
-
-
 
 theorem originalParameterPrism_ballPair :
     IsFinitePLBallPair E (D ×ˢ I)
       ((Q ×ˢ I) ∪ (D ×ˢ ({(-1 : ℝ), 1} : Set ℝ))) :=
   (isFinitePLBallPair_unit_cube (ι := Fin 2)).prod (isFinitePLBallPair_Icc (by norm_num))
-
 
 theorem exists_finite_originalParameterPrism :
     ∃ K : SimplicialComplex ℝ E, K.faces.Finite ∧ K.space = D ×ˢ I := by
@@ -45,15 +32,11 @@ theorem exists_finite_originalParameterPrism :
     originalParameterPrism_ballPair
   exact ⟨K, hK, hKS⟩
 
-
-
 theorem originalParameterPrism_frontier :
     frontier (D ×ˢ I) = (Q ×ˢ I) ∪ (D ×ˢ ({(-1 : ℝ), 1} : Set ℝ)) := by
   rw [frontier_prod_eq, isClosed_closedBall.closure_eq, isClosed_Icc.closure_eq,
     frontier_closedBall _ one_ne_zero, frontier_Icc (by norm_num : (-1 : ℝ) ≤ 1),
     union_comm]
-
-
 
 theorem plDomain_originalParameterPrism :
     PLDomain (fun _ : Unit => (Homeomorph.refl V3).toOpenPartialHomeomorph)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.SquareRimHalves
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.PrescribedTwoIntervalCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,16 +12,12 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
 
-
 def intervalChartPath {E : Type*} [TopologicalSpace E] {U : Set E}
     (p : I01 ≃ₜ U) : Path (p (0 : unitInterval) : E) (p (1 : unitInterval) : E) where
   toFun t := p t
   continuous_toFun := continuous_subtype_val.comp p.continuous
   source' := rfl
   target' := rfl
-
-
-
 
 theorem exists_squareRim_two_interval_normalization
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

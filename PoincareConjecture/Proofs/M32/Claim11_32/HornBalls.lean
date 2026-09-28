@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.Sequence
 import PoincareConjecture.Proofs.M32.Thm11_31.Topology
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem horn_ball_subset_of_boundary_distance
     {F : GeneralizedRicciFlowData.{u}} {T accuracy : ℝ}
@@ -48,8 +32,6 @@ theorem horn_ball_subset_of_boundary_distance
     exact not_lt_of_ge (hboundary _ hz) (hball ht)
   exact horn_subset_carrier_of_isPreconnected horn hpre hmeet havoid
     ⟨1, ⟨zero_le_one, le_rfl⟩, hone⟩
-
-
 
 theorem exists_terminal_horn_ball_radius {K B : ℝ} (hK : 0 < K) (hB : 0 < B) :
     ∃ d : ℝ, 0 < d ∧
@@ -87,8 +69,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
 
 theorem terminalBlowupSequence_baseBalls_subset_horns
     (hM04 : RicciFlowCurvatureTheory.{u}) {K B : ℝ} {accuracy : ℕ → ℝ}

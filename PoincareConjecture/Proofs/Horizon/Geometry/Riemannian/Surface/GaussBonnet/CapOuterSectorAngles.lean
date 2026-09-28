@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.AmbientSectorAngles
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.CapTransversals
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +50,6 @@ theorem secondOuterTip_mem_chart_source (i j : Bool) :
   exact B.coordinates_target _ ((B.coordinates _).map_source
     (B.triangle_subset_source _ (subset_convexHull ℝ _ (mem_range_self 2))))
 
-
-
 theorem firstOuterChord_eq_chart_differential (i j : Bool) :
     B.firstOuterChord i j =
       mfderiv (𝓡 2) (𝓡 2) (chartAt Plane (x (i, j))).symm
@@ -95,8 +87,6 @@ theorem firstOuterChord_eq_chart_differential (i j : Bool) :
   have hout := heq.trans hpoint
   rw [hd0] at hout
   exact hout
-
-
 
 theorem secondOuterChord_eq_chart_differential (i j : Bool) :
     B.secondOuterChord i j =
@@ -139,7 +129,6 @@ theorem secondOuterChord_eq_chart_differential (i j : Bool) :
   rw [hd0] at hout
   exact hout
 
-
 noncomputable def firstOuterChartSpoke (i : Bool) (v : S) : Plane :=
   mfderiv (𝓡 2) (𝓡 2) (chartAt Plane v) (B.firstOuterTip i) (B.firstOuterSpoke i)
 
@@ -175,8 +164,6 @@ theorem secondOuterSpoke_ne_zero (i : Bool) : B.secondOuterSpoke i ≠ 0 := by
   exact coordinateTriangleVelocity_ne_zero (B.coordinates (true, i))
     (rightTriangleBasis B.scale_pos) (B.coordinates_smooth _) (B.coordinates_smooth_symm _)
     (B.triangle_subset_source _) (by decide : (2 : Fin 3) ≠ 0)
-
-
 
 theorem firstOuterChord_eq_common_chart_differential (i : Bool) (v : S)
     (hchart : ∀ j, x (i, j) = v) (j : Bool) :

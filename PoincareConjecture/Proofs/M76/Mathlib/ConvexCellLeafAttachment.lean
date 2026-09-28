@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GeometricCoreAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCoreDecomposition
 import PoincareConjecture.Proofs.M76.Mathlib.SmoothLeafGermGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,11 +14,6 @@ variable {X Y E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ Y] [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_convexCellAttachment
     {P : E → EuclideanSubspace E} {U B : Set E} (hP : IsSmoothLeafFieldOn P U)

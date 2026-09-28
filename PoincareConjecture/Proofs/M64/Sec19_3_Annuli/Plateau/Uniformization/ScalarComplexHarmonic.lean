@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.SecondDerivativeChain
 import Mathlib.Analysis.Complex.Harmonic.Analytic
 import Mathlib.Analysis.Analytic.IsolatedZeros
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +14,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem scalar_harmonicAt_complex_coordinates {u : Plane → ℝ} {z : ℂ}
     (hu : InnerProductSpace.HarmonicAt u (Complex.orthonormalBasisOneI.repr z)) :
@@ -61,10 +44,6 @@ theorem scalar_harmonicAt_complex_coordinates {u : Plane → ℝ} {z : ℂ}
     iteratedFDeriv_two_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.cons_val_fin_one, Pi.zero_apply, hd, hL1, hLI] using h
 
-
-
-
-
 theorem scalar_complex_partial_eq_zero_iff (u : ℂ → ℝ) (z : ℂ) :
     ((fderiv ℝ u z 1 : ℂ) - Complex.I * (fderiv ℝ u z Complex.I : ℂ) = 0) ↔
       fderiv ℝ u z = 0 := by
@@ -85,10 +64,6 @@ theorem scalar_complex_partial_eq_zero_iff (u : ℂ → ℝ) (z : ℂ) :
     simp
   · intro h
     simp [h]
-
-
-
-
 
 theorem scalar_harmonic_differential_alternative {u : ℂ → ℝ} {z : ℂ}
     (hu : InnerProductSpace.HarmonicAt u z) :

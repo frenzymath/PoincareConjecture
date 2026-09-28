@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.TensorNorms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -15,13 +7,11 @@ open Set
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
-
 theorem cylinderStrip_mono {epsilon eta : ℝ} (hepsilon : 0 < epsilon)
     (h : epsilon ≤ eta) : Ioo (-eta⁻¹) eta⁻¹ ⊆ Ioo (-epsilon⁻¹) epsilon⁻¹ := by
   have hinv : eta⁻¹ ≤ epsilon⁻¹ := inv_anti₀ hepsilon h
   intro s hs
   exact ⟨(neg_le_neg hinv).trans_lt hs.1, hs.2.trans_le hinv⟩
-
 
 theorem cylinderOrder_mono {epsilon eta : ℝ} (hepsilon : 0 < epsilon)
     (h : epsilon ≤ eta) : ⌊eta⁻¹⌋₊ ≤ ⌊epsilon⁻¹⌋₊ :=
@@ -33,7 +23,6 @@ namespace PoincareConjecture
 
 open Proofs.M28.NeckAnalysis
 
-
 theorem RoundCylinderTensorSmoothOn.mono_epsilon_m28 {epsilon eta : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B)
     (hepsilon : 0 < epsilon) (h : epsilon ≤ eta) :
@@ -41,8 +30,6 @@ theorem RoundCylinderTensorSmoothOn.mono_epsilon_m28 {epsilon eta : ℝ}
   intro q a b
   apply (hB q a b).mono
   exact Set.prod_mono_right (cylinderStrip_mono hepsilon h)
-
-
 
 theorem RoundCylinderClose.mono_epsilon_m28 {epsilon eta u : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose epsilon u B)
@@ -55,8 +42,6 @@ theorem RoundCylinderClose.mono_epsilon_m28 {epsilon eta u : ℝ}
   exact (roundCylinderJetErrorSquared_mono_order hu B
     (cylinderOrder_mono hepsilon h) z).trans (hjet z (cylinderStrip_mono hepsilon h hz))
 
-
-
 theorem RoundCylinderFamilyClose.mono {epsilon eta : ℝ} {I J : Set ℝ}
     {B : ℝ → RoundCylinderTwoTensor} (hB : RoundCylinderFamilyClose epsilon I B)
     (hepsilon : 0 < epsilon) (h : epsilon ≤ eta) (hJI : J ⊆ I)
@@ -68,9 +53,6 @@ theorem RoundCylinderFamilyClose.mono {epsilon eta : ℝ} {I J : Set ℝ}
   exact (roundCylinderJetErrorSquared_mono_order (hJ u hu) (B u)
     (cylinderOrder_mono hepsilon h) z).trans
     (hjet u (hJI hu) z (cylinderStrip_mono hepsilon h hz))
-
-
-
 
 theorem exists_roundCylinderClose_perturbation_tolerance {epsilon eta : ℝ}
     (hepsilon : 0 < epsilon) (heta : epsilon < eta) :

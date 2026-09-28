@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M09.CoordinateConnectionTime
 import PoincareConjecture.Proofs.M09.CoordinateCompatibility
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,9 +12,6 @@ open PoincareConjecture.Proofs.M09
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem coordinateMetric_time_compatible
     (G : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ) (U : Set (ℝ × E))

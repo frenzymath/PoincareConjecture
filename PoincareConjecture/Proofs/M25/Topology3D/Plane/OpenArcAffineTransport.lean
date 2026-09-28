@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcAffineRounding
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcTubeHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
 
 theorem exists_affine_rounded_openArc_transport {n : ℕ} (a h : ℝ) (hh : 0 < h)
     (Φ : ℝ × ℝ → Polygon (ℝ × ℝ) (n + 2))

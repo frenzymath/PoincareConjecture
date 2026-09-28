@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.SeedScalar
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.SeedNecks
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Seed
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +20,6 @@ local macro "stage[" S:term "," T:term "," M:term "," B:term "]" : term =>
         (($S).flow k).scalar (e.embedding.pointMap s hs y) ≤ $M * ($S).scale k) ∧
       (∀ s hs y, y ∈ ($S).baseBall k A → GeneralizedKappaNoncollapsedAt
         (($S).flow k) (e.embedding.pointMap s hs y) neckNoncollapseConstant 1))
-
-
-
 
 theorem terminalBlowupSequence_exists_cofinal_controlled_stages
     (P : RepairedHornSelectionPredecessors.{u}) :

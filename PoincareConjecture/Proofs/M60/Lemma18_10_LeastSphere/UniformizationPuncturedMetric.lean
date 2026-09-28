@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationLogarithmicPuncture
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationCompactification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ private abbrev Plane := EuclideanSpace ℝ (Fin 2)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_sphere_logarithmic_flattening
     (q : RiemannianMetric 2 UnitTwoSphere) (p : UnitTwoSphere) :
@@ -124,9 +111,6 @@ theorem exists_sphere_logarithmic_flattening
 attribute [-instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem exists_flat_punctured_metric
     (g : RiemannianMetric 2 UnitTwoSphere) (D : LeviCivitaData g)
     (W : UnitTwoSphere → ℝ)
@@ -181,8 +165,6 @@ theorem exists_flat_punctured_metric
   rw [scalarCurvature_conformal_surface Q DQ _ hW0 DG, hL]
   ring
 
-
-
 theorem exists_smooth_puncture_exponential
     (p : UnitTwoSphere) (W : UnitTwoSphere → ℝ)
     (hW : ∀ x ≠ p, ContMDiffAt (𝓡 2) 𝓘(ℝ, ℝ) ∞ W x)
@@ -232,9 +214,6 @@ theorem exists_smooth_puncture_exponential
   · apply (Real.contDiff_exp.contMDiff.contMDiffAt.comp x (hW x hxp)).congr_of_eventuallyEq
     filter_upwards [isOpen_compl_singleton.mem_nhds hxp] with y hy
     simp [A, show y ≠ p from hy]
-
-
-
 
 theorem metricComplete_sphere_puncture
     (g : RiemannianMetric 2 UnitTwoSphere) (G : RiemannianMetric 2 Plane)
@@ -317,9 +296,6 @@ theorem metricComplete_sphere_puncture
   calc
     _ ≤ B * G.tangentNorm x v := by simpa only [hn, mul_left_comm] using hc
     _ ≤ _ := mul_le_mul_of_nonneg_right (by linarith) (Real.sqrt_nonneg _)
-
-
-
 
 theorem exists_punctured_conformal_developing_map
     (q : RiemannianMetric 2 UnitTwoSphere) :

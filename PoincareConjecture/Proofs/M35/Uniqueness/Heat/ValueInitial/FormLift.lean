@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.SpectralLift
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormDualCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,7 +53,6 @@ theorem initialFormPath_memLp (J : V →L[ℝ] H) (hc : IsCompactOperator J)
   let Q : State (EigenIndex J) →L[ℝ] V :=
     (formEigenbasis J hc hd hi).repr.symm.toContinuousLinearEquiv.toContinuousLinearMap
   exact Q.comp_memLp' (initialFormState_memLp _ _ hT)
-
 
 theorem initialFormPath_graph (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

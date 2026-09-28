@@ -3,23 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 universe u v
-
-
-
 
 theorem contDiffOn_spatial_deriv_of_uniqueDiffOn
     {P : Type u} [NormedAddCommGroup P] [NormedSpace ℝ P]

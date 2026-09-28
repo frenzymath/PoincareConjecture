@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBrid
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDiskConnectedLink
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleAdjacency
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -268,7 +260,6 @@ theorem exists_boundary_cycle_for_coherent_signs
     linear_combination (norm := ring_nf) hc (t i) + hh
     simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, neg_zero]
 
-
 def unitSquareSide (i : Fin 4) (r : ℝ) : ℝ × ℝ :=
   ![(r, 0), (1, r), (1 - r, 1), (0, 1 - r)] i
 
@@ -401,7 +392,6 @@ theorem unitSquare_center_interior :
 
 theorem unitSquare_convex : Convex ℝ (PeriodicSquare.squareCarrier 1) :=
   (convex_Icc (0 : ℝ) 1).prod (convex_Icc (0 : ℝ) 1)
-
 
 theorem planar_boundary_cycle_square_side_order
     (K : SimplicialComplex ℝ (ℝ × ℝ))

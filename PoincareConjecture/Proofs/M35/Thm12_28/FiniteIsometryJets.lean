@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -23,8 +13,6 @@ open CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem finite_inverse_metric_jets {ι : Type*} {U : Set E} {n : ℕ}
     (hU : IsOpen U) {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -40,8 +28,6 @@ theorem finite_inverse_metric_jets {ι : Type*} {U : Set E} {n : ℕ}
   intro i x hx
   exact ⟨by simpa only [norm_iteratedFDeriv_zero] using hC i x hx, hell i x hx⟩
 
-
-
 noncomputable def finiteKoszulOperator :
     (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ :=
   let flipL := (ContinuousLinearMap.flipₗᵢ ℝ E E ℝ).toLinearIsometry.toContinuousLinearMap
@@ -51,15 +37,11 @@ noncomputable def finiteKoszulOperator :
     (E →L[ℝ] E →L[ℝ] ℝ) flipL
   (2⁻¹ : ℝ) • (ContinuousLinearMap.id ℝ _ + flipT.comp C - C.comp flipT)
 
-
-
 noncomputable def finiteChristoffelContraction :
     ((E →L[ℝ] ℝ) →L[ℝ] E) →L[ℝ]
       (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] E →L[ℝ] E →L[ℝ] E :=
   (ContinuousLinearMap.compL ℝ E (E →L[ℝ] E →L[ℝ] ℝ) (E →L[ℝ] E)).comp
     (ContinuousLinearMap.compL ℝ E (E →L[ℝ] ℝ) E)
-
-
 
 theorem finite_christoffel_jets {ι : Type*} {U : Set E} {n : ℕ}
     (hU : IsOpen U) {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -81,7 +63,6 @@ theorem finite_christoffel_jets {ι : Type*} {U : Set E} {n : ℕ}
   exact hjC.congr hU fun _ _ _ => rfl
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem finite_jets_of_christoffel_hessian {ι : Type*} {U V : Set E} {r : ℕ}
     (hU : IsOpen U) (hV : IsOpen V)
@@ -150,9 +131,6 @@ theorem finite_jets_of_christoffel_hessian {ι : Type*} {U V : Set E} {r : ℕ}
       ext u v
       exact (hEq i x hx u v).symm
   exact HasUniformJetBoundsOn.succ_of_fderiv hzero (hDj (r + 1) le_rfl)
-
-
-
 
 theorem finite_local_isometry_jets {ι : Type*} {U V : Set E} {n : ℕ}
     (hU : IsOpen U) (hV : IsOpen V) (hVbounded : Bornology.IsBounded V)

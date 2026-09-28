@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinders
 import PoincareConjecture.Definitions.M13TimeRescaling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,7 +25,6 @@ theorem cylinderClock_mem (a q : ℝ) (hq : 0 < q) (J : SpacetimeInterval)
   obtain ⟨s, hs, ht⟩ := t.property
   rw [← ht, parabolicTime_parabolicTimeInv q hq]
   exact hs
-
 
 noncomputable def cylinderClockHomeomorph (a q : ℝ) (hq : 0 < q) (J : SpacetimeInterval) :
     (cylinderPhysicalInterval a q hq J).domain ≃ₜ J.domain where

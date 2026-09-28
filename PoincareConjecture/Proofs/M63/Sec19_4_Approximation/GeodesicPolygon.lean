@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicConcatenation
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.MinimizingGeodesicSide
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfileBase
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
-
-
 
 noncomputable def geodesicPolygonOfSides (hN : 0 < N) (vertices : Polygon M N)
     (side : ∀ j : Fin N, M63MinimizingGeodesicSide g D (m63CellLength N)
@@ -40,9 +28,6 @@ noncomputable def geodesicPolygonOfSides (hN : 0 < N) (vertices : Polygon M N)
     periodic := by
       simpa only [m63_count_mul_cellLength hN, curvePeriod] using h.choose_spec.2.1
     cell_agreement := h.choose_spec.2.2 }
-
-
-
 
 theorem geodesicPolygon_nonempty_of_precompact_balls [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hN : 0 < N)

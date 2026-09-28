@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import Mathlib.Topology.Order.Compact
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
 
 theorem curvatureTensorNorm_eq_abs_scalarCurvature (D : LeviCivitaData g) (x : S) :
     D.curvatureTensorNorm x = |D.scalarCurvature x| := by
@@ -35,13 +32,11 @@ theorem curvatureTensorNorm_eq_abs_scalarCurvature (D : LeviCivitaData g) (x : S
   convert Real.sqrt_sq_eq_abs (D.scalarCurvature x) using 2
   ring
 
-
 theorem continuous_curvatureTensorNorm_surface (D : LeviCivitaData g) :
     Continuous D.curvatureTensorNorm := by
   change Continuous (fun x => D.curvatureTensorNorm x)
   simp_rw [D.curvatureTensorNorm_eq_abs_scalarCurvature]
   exact D.continuous_scalarCurvature.abs
-
 
 theorem exists_pos_curvatureTensorNorm_le_on_surface (D : LeviCivitaData g)
     {K : Set S} (hK : IsCompact K) :
@@ -50,7 +45,6 @@ theorem exists_pos_curvatureTensorNorm_le_on_surface (D : LeviCivitaData g)
   refine ⟨max C 1, lt_of_lt_of_le zero_lt_one (le_max_right _ _), ?_⟩
   intro x hx
   exact (hC (mem_image_of_mem _ hx)).trans (le_max_left _ _)
-
 
 theorem exists_pos_curvatureTensorNorm_le_surface [CompactSpace S] (D : LeviCivitaData g) :
     ∃ C : ℝ, 0 < C ∧ ∀ x, D.curvatureTensorNorm x ≤ C := by

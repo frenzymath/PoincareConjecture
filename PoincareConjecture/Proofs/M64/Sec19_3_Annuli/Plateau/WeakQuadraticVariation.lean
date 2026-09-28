@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaFirstVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,9 +39,6 @@ local instance m64WeakQuadraticVariation_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem m64WeakQuadratic_integral_firstVariation
     (g : RiemannianMetric n M) (b : M)

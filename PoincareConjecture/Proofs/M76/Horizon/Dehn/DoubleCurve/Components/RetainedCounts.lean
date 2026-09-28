@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedPairs
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem retained_double_component_counts
     {E Y X I : Type*} [TopologicalSpace E] [T2Space E]
@@ -68,8 +58,6 @@ theorem retained_double_component_counts
     simp only [V, hvavoid]
     simpa only [P, and_assoc] using hcount (fun i ↦ Disjoint (U i) Q)
 
-
-
 theorem retained_double_component_counts_decrease
     {E Y X I : Type*} [TopologicalSpace E] [T2Space E]
     [TopologicalSpace Y] [T2Space Y] [Finite I]
@@ -104,9 +92,6 @@ theorem retained_double_component_counts_decrease
     intro h
     exact hiK (h hiQ).1
   · exact Set.ncard_le_ncard (fun _ h ↦ h.2.2)
-
-
-
 
 theorem retained_double_component_interior_counts_decrease
     {E Y X I : Type*} [TopologicalSpace E] [T2Space E]

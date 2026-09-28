@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductBounds
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleSpacetimeParallel
 import PoincareConjecture.Proofs.M62.Claim19_11_SlopeLaws
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem nonempty_circleConclusion [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow n M (Set.Icc a b)) {K0 K1 K2 : ℝ}
@@ -42,8 +31,6 @@ theorem nonempty_circleConclusion [T2Space M] [SecondCountableTopology M]
     spacetime_parallel := P.spacetime_parallel T.spacetime
     slope := fun c hc => slope_laws P c hc hP
   }⟩
-
-
 
 theorem nonempty_flowConclusion [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow n M (Set.Icc a b)) (hcompact : IsCompact (Set.univ : Set M)) :

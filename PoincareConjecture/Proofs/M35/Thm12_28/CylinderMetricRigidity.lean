@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderRigidity
 import PoincareConjecture.Proofs.M35.Mathlib.DiffeomorphDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem cylinder_pullbackInner_eq {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {a Q : ℝ} {I : Set ℝ} {U : Set (slice J a).carrier}

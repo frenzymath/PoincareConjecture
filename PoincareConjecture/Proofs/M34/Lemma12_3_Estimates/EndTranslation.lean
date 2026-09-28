@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,12 +7,8 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 def cylinderAxialTranslation (s : ℝ) (z : StandardCylinderSpace) : StandardCylinderSpace :=
   (z.1, z.2 + s)
-
-
 
 theorem cylinderAxialTranslation_contMDiff (s : ℝ) :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞
@@ -29,7 +16,6 @@ theorem cylinderAxialTranslation_contMDiff (s : ℝ) :
   contMDiff_fst.prodMk (contMDiff_snd.add contMDiff_const)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem cylinderAxialTranslation_mfderiv (s : ℝ) (z : StandardCylinderSpace)
     (v : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) :
@@ -52,21 +38,15 @@ theorem cylinderAxialTranslation_mfderiv (s : ℝ) (z : StandardCylinderSpace)
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endAxialTranslation (e : StandardCylindricalEnd g) (s : ℝ)
     (x : StandardCapSpace) : StandardCapSpace :=
   e.coordinate (cylinderAxialTranslation s (e.inverse x))
-
-
 
 theorem endAxialTranslation_coordinate (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 ≤ z.2) :
     endAxialTranslation e s (e.coordinate z) = e.coordinate (z.1, z.2 + s) := by
   rw [endAxialTranslation, e.coordinate_left_inverse ⟨mem_univ _, hz⟩]
   rfl
-
-
 
 theorem endAxialTranslation_contMDiffAt (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < z.2 + s) :
@@ -83,8 +63,6 @@ theorem endAxialTranslation_contMDiffAt (e : StandardCylindricalEnd g) (s : ℝ)
   exact hc.comp (e.coordinate z) (ht.comp (e.coordinate z) (end_inverse_contMDiffAt e hz))
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem endAxialTranslation_mfderiv (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < z.2 + s)
@@ -118,7 +96,6 @@ theorem endAxialTranslation_mfderiv (e : StandardCylindricalEnd g) (s : ℝ)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem endAxialTranslation_metric (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < z.2 + s)
     (u v : TangentSpace (𝓡 3) (e.coordinate z)) :
@@ -130,8 +107,6 @@ theorem endAxialTranslation_metric (e : StandardCylindricalEnd g) (s : ℝ)
     endAxialTranslation_mfderiv e s hz hsz, endAxialTranslation_mfderiv e s hz hsz,
     e.metric_pullback _ hsz.le, end_inverse_metric e hz]
   rfl
-
-
 
 theorem endAxialTranslation_local_isometry (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < z.2 + s) :

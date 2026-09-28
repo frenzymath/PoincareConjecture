@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CoefficientParameterRespo
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialForcingLocalAgreement
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialTraceNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,11 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative DeTurckMetricProducerNative
-
-
-
-
-
 
 theorem exists_smooth_coefficient_parameter_response
     {iota E : Type*} [Countable iota]

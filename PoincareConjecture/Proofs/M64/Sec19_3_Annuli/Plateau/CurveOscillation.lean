@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceEstimate
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -14,9 +8,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem m64Curve_oscillation_sq_le
     (w d : ℝ → E) (hd : Continuous d) (hw : ∀ t, HasDerivAt w (d t) t)

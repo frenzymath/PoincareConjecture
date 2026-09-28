@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 noncomputable def ricciConnectionVariation (D : LeviCivitaData g) :
     CovariantTensorEvaluation n M 3 := fun x v =>

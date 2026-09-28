@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySupportedCom
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityChartEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,11 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem weighted_lower_affine_chart_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

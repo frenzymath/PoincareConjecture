@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalStandardCapCarrier
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceContinuity
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem continuousOn_standard_normalized_tip_distance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta : ℝ}
@@ -38,8 +27,6 @@ theorem continuousOn_standard_normalized_tip_distance {g0 : StandardInitialMetri
     standard.flow.base.flow.contMDiffOn_scalarCurvature.continuousOn.mono
       (fun _ hp => ⟨⟨hp.1.1, hp.1.2.trans_lt htime⟩, mem_univ _⟩)
   exact hdist.mul (Real.continuous_sqrt.comp_continuousOn hscalar)
-
-
 
 theorem exists_compact_standard_tip_locus {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta L : ℝ}

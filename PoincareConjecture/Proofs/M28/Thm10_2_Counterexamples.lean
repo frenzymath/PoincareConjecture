@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M28BoundedDistance
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -17,8 +8,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open Filter
-
-
 
 structure SameTimeCounterexample (epsilon C A D₀ D : ℝ) where
 
@@ -44,9 +33,6 @@ structure SameTimeCounterexample (epsilon C A D₀ D : ℝ) where
 
   scalar_large : D * flow.scalar ⟨time, basepoint⟩ < flow.scalar ⟨time, endpoint⟩
 
-
-
-
 theorem counterexamples_of_not_same_time {epsilon₀ : ℝ}
     (h : ¬ M28SameTimeEstimateStatement.{u} epsilon₀) :
     ∃ epsilon : ℝ, 0 < epsilon ∧ epsilon ≤ epsilon₀ ∧
@@ -67,8 +53,6 @@ theorem counterexamples_of_not_same_time {epsilon₀ : ℝ}
     exact ⟨⟨F, hpinched, t, ht, x, hx, hcanonical, y, hy, hlarge⟩⟩
   exact ⟨fun n ↦ Classical.choice (hex n)⟩
 
-
-
 def counterexampleBlowupSequence {epsilon C A : ℝ}
     (E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
       ((n : ℝ) + 1) ((n : ℝ) + 1)) : GeneralizedBlowupSequence.{u} where
@@ -79,8 +63,6 @@ def counterexampleBlowupSequence {epsilon C A : ℝ}
     apply tendsto_atTop_mono (fun n ↦ (E n).base_lower)
     apply tendsto_atTop_mono (fun n : ℕ ↦ ?_) tendsto_natCast_atTop_atTop
     linarith
-
-
 
 theorem counterexample_ratio_tendsto_atTop {epsilon C A : ℝ}
     (E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A

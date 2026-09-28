@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Model.TerminalAnnulus
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.LabelAlignment
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,8 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -41,8 +33,6 @@ local notation "IP" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem prepared_terminal_labeled_physical_cutCircle_range
     (data : TerminalSaddleData M P p e)
@@ -90,10 +80,6 @@ theorem prepared_terminal_labeled_physical_cutCircle_range
         (H (data.toTerminalSaddleGeometry.flatten (g (terminalActualCutCircle data i q))))) from
           funext hpoint]
   exact terminal_labeled_physical_cutCircle_range data Φ χ H hH hχ hplanar hlabels i
-
-
-
-
 
 theorem exists_buffered_prepared_terminal_lower_cap_replacement
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -233,7 +219,6 @@ theorem exists_buffered_prepared_terminal_lower_cap_replacement
     exact image_congr (fun q _ =>
       (data.toTerminalSaddleGeometry.flatten.symm_apply_apply (m q)).symm)
   exact ⟨K, hK, R, hRfix, hRhalf, by rwa [hcap, ← hmodel]⟩
-
 
 theorem exists_prepared_terminal_lower_cap_replacement
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

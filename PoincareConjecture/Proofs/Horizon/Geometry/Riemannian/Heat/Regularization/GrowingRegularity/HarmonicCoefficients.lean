@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.TimeDerivatives
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Principal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +39,6 @@ theorem principalOperator_holder_bound
       (A * Real.sqrt (2 * (2 * r)) / (C⁻¹) ^ 2) * ‖x - y‖ ^ (1 / 2 : ℝ) :=
   F.h.norm_principalOperator_sub_le_rpow (inv_pos.mpr hC) hA
     (fun z hz v => (F.helliptic z hz v).1) F.hderiv hx hy
-
-
 
 theorem timeDerivative_exhaustionKernel_pullback
     {O : M} {r C A : ℝ} (F : UniformHarmonicLift g O r C A)

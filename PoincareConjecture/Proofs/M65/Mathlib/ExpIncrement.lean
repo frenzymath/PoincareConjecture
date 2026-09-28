@@ -1,18 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Real
-
-
 
 theorem exp_sub_one_le_mul_exp {x L : ℝ} (hx : 0 ≤ x) (hL : x ≤ L) :
     exp x - 1 ≤ x * exp L := by

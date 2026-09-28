@@ -1,13 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 structure OriginalSurfacePairChart
     {X ι : Type*} [TopologicalSpace X]

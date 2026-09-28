@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.SmoothSquarePath
 import PoincareConjecture.Proofs.M09.LocalSmoothPrimitive
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

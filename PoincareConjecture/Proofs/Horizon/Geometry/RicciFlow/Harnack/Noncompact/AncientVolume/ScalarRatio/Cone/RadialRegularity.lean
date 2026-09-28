@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.EndpointAgreement
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.LipschitzGreen
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -182,9 +172,6 @@ private theorem exists_joint_normal_endpoint_coordinates
       (hendd.congr_of_eventuallyEq heq)
   exact ⟨W, Ψ, G, hW, hxW, hΨ, hΨ0, hΨspec, hGW, hGt, hGmap, hGinv⟩
 
-
-
-
 theorem contMDiffAt_of_lipschitz_chart_geodesic_quadratic
     (g : RiemannianMetric n M) (f : M → ℝ) (p : M)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : U ∈ 𝓝 (extChartAt (𝓡 n) p p))
@@ -278,10 +265,6 @@ theorem contMDiffAt_of_lipschitz_chart_geodesic_quadratic
     simpa only [hsecond] using hform
   apply contMDiffAt_iff_source.mpr
   exact (hP.congr_of_eventuallyEq heq).contMDiffAt.contMDiffWithinAt
-
-
-
-
 
 theorem contMDiff_of_locally_lipschitz_geodesic_quadratic
     (g : RiemannianMetric n M) (f : M → ℝ)

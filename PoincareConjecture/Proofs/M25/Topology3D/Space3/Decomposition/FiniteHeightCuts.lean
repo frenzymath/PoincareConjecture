@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import Mathlib.Order.Interval.Set.Infinite
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_regular_separating_height_cuts
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
@@ -59,7 +49,6 @@ theorem exists_regular_separating_height_cuts
     · change g i < f q
       rw [hfq]
       exact (hg i).2
-
 
 theorem exists_separated_regular_height_buffers
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

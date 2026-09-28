@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.CompletedStageChain
 import PoincareConjecture.Proofs.M51.ComposedExtensionReadouts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,33 +16,23 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : Nat}
   (Q : CompletedStageChain S N C F0 k)
 
-
-
 noncomputable def extensionBetween (n m : Nat) (hnm : n <= m) :
     SurgeryFlowExtension (Q.flow n) :=
   ComposedExtension.between Q.flow Q.step Q.step_eq n m hnm
-
-
 
 theorem extensionBetween_eq (n m : Nat) (hnm : n <= m) :
     (Q.extensionBetween n m hnm).extended = Q.flow m :=
   ComposedExtension.between_extended Q.flow Q.step Q.step_eq n m hnm
 
-
-
 theorem stageTime (n m : Nat) (hnm : n <= m) {t : Real}
     (ht : t ∈ (Q.flow n).time_domain) : t ∈ (Q.flow m).time_domain :=
   ComposedExtension.oldTimeBetween Q.flow Q.step Q.step_eq n m hnm ht
-
-
 
 noncomputable def stageIdentify (n m : Nat) (hnm : n <= m) (t : Real)
     (ht : t ∈ (Q.flow n).time_domain) :
     Diffeomorph (𝓡 3) (𝓡 3) ((Q.flow n).slice t).carrier
       ((Q.flow m).slice t).carrier ∞ :=
   ComposedExtension.identifyBetween Q.flow Q.step Q.step_eq n m hnm t ht
-
-
 
 theorem stageIdentify_self (n : Nat) (t : Real)
     (ht : t ∈ (Q.flow n).time_domain) :
@@ -60,8 +41,6 @@ theorem stageIdentify_self (n : Nat) (t : Real)
   simp only [stageIdentify, ComposedExtension.identifyBetween,
     ComposedExtension.between_self]
   rfl
-
-
 
 theorem stageIdentify_comp (n m q : Nat) (hnm : n <= m) (hmq : m <= q)
     (t : Real) (ht : t ∈ (Q.flow n).time_domain)
@@ -73,16 +52,12 @@ theorem stageIdentify_comp (n m q : Nat) (hnm : n <= m) (hmq : m <= q)
     (ComposedExtension.identifyBetween_trans Q.flow Q.step Q.step_eq
       n m q hnm hmq t ht)
 
-
-
 noncomputable def compare (n m : Nat) (t : Real)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain) :
     Diffeomorph (𝓡 3) (𝓡 3) ((Q.flow n).slice t).carrier
       ((Q.flow m).slice t).carrier ∞ :=
   (Q.stageIdentify n (max n m) (le_max_left _ _) t hn).trans
     (Q.stageIdentify m (max n m) (le_max_right _ _) t hm).symm
-
-
 
 theorem compare_common (n m q : Nat) (hnq : n <= q) (hmq : m <= q)
     (t : Real) (hn : t ∈ (Q.flow n).time_domain)
@@ -95,15 +70,11 @@ theorem compare_common (n m q : Nat) (hnq : n <= q) (hmq : m <= q)
   simp only [compare, Diffeomorph.coe_trans, Function.comp_apply,
     Diffeomorph.apply_symm_apply]
 
-
-
 theorem compare_self (n : Nat) (t : Real)
     (ht : t ∈ (Q.flow n).time_domain) (x : ((Q.flow n).slice t).carrier) :
     Q.compare n n t ht ht x = x := by
   exact (Q.stageIdentify n n le_rfl t ht).injective
     (Q.compare_common n n n le_rfl le_rfl t ht ht x)
-
-
 
 theorem compare_comp (n m l : Nat) (t : Real)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain)
@@ -122,16 +93,12 @@ theorem compare_comp (n m l : Nat) (t : Real)
     Q.compare_common n m q hnq hmq t hn hm,
     Q.compare_common n l q hnq hlq t hn hl]
 
-
-
 theorem compare_of_le (n m : Nat) (hnm : n <= m) (t : Real)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain)
     (x : ((Q.flow n).slice t).carrier) :
     Q.compare n m t hn hm x = Q.stageIdentify n m hnm t hn x := by
   simpa only [Q.stageIdentify_self, Diffeomorph.coe_refl, id_eq] using
     Q.compare_common n m m hnm le_rfl t hn hm x
-
-
 
 theorem compare_symm (n m : Nat) (t : Real)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain) :
@@ -141,8 +108,6 @@ theorem compare_symm (n m : Nat) (t : Real)
   change Q.compare n m t hn hm ((Q.compare n m t hn hm).symm x) =
     Q.compare n m t hn hm (Q.compare m n t hm hn x)
   rw [Diffeomorph.apply_symm_apply, Q.compare_comp, Q.compare_self]
-
-
 
 theorem compare_metric (n m : Nat) (t : Real)
     (hn : t ∈ (Q.flow n).time_domain) (hm : t ∈ (Q.flow m).time_domain)

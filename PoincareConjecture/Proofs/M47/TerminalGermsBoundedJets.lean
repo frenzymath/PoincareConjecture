@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M47.TerminalGermsClosedJets
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology NNReal
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalGerms_contDiffOn_closure_of_bounded_jets
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -71,8 +58,6 @@ theorem terminalGerms_contDiffOn_closure_of_bounded_jets
   rw [← hPeq (m + 1) hx]
   have hd := (hdiff m x hx).hasFDerivAt.congr_of_eventuallyEq hlocal
   simpa only [iteratedFDeriv, ContinuousLinearMap.curry_uncurryLeft] using hd
-
-
 
 theorem terminalGerms_contDiffOn_closure_of_source_bounds
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

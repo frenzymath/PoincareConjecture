@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.FixedMap
 import PoincareConjecture.Proofs.M04.ScalarEvolutionCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60_exists_uniform_ricci_bound {J : Set ℝ} (F : RicciFlow n M J)
     (hJ : IsCompact J) (hcompact : IsCompact (univ : Set M)) :
     ∃ D : ℝ, 0 ≤ D ∧ ∀ t ∈ J, ∀ x : M, (F.connection t).ricciNormSq x ≤ D ^ 2 := by
@@ -36,9 +24,6 @@ theorem m60_exists_uniform_ricci_bound {J : Set ℝ} (F : RicciFlow n M J)
     (le_abs_self _).trans ((hC (t, x) ⟨ht, mem_univ x⟩).trans (le_max_left _ _))
   have hlarge : 1 ≤ max C 1 := le_max_right _ _
   nlinarith
-
-
-
 
 theorem m60SphereArea_variation_on_compact {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -14,8 +12,6 @@ universe u v
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finite_bump_partition {K : Set M} (hK : IsCompact K)
     {α : Type v} (U : α → Set M) (hU : ∀ i, IsOpen (U i))
@@ -58,8 +54,6 @@ theorem exists_finite_bump_partition {K : Set M} (hK : IsCompact K)
   refine ⟨s, fun i => c i.val, V, isOpen_iUnion (fun _ => isOpen_interior), hKV,
     ρ, fun i => ?_, fun i => (hsub i).trans (hb i.val)⟩
   exact (b i.val).hasCompactSupport.mono' ((subset_tsupport (ρ i)).trans (hsub i))
-
-
 
 theorem exists_contMDiff_cutoff_of_isCompact {K U : Set M} (hK : IsCompact K)
     (hU : IsOpen U) (hKU : K ⊆ U) :

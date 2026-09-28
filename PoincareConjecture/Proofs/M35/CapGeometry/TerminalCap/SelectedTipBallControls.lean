@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.SelectedBallControls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,9 +7,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_tip_ball_scalar_operator_bounds
     (P : M35StandardCapPredecessors)

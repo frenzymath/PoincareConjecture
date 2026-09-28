@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_ScalarMargin
 import Mathlib.Topology.Sequences
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
 
 structure GluingBadSequence (epsilon : ℝ) where
   beta : ℕ → ℝ
@@ -45,8 +33,6 @@ structure GluingBadSequence (epsilon : ℝ) where
     ((input n).piecewiseTensor (input n).recent_patch.coordinate (time n))
     ⌊epsilon⁻¹⌋₊ (point n)
 
-
-
 def GluingBadSequence.subseq {epsilon : ℝ} (S : GluingBadSequence.{u} epsilon)
     (f : ℕ → ℕ) (hf : StrictMono f) : GluingBadSequence.{u} epsilon where
   beta := S.beta ∘ f
@@ -65,9 +51,6 @@ def GluingBadSequence.subseq {epsilon : ℝ} (S : GluingBadSequence.{u} epsilon)
   point := S.point ∘ f
   point_mem n := S.point_mem (f n)
   bad n := S.bad (f n)
-
-
-
 
 theorem exists_gluing_bad_sequence {epsilon : ℝ} (hepsilon : 0 < epsilon)
     (hnot : ¬ ∃ beta : ℝ, 0 < beta ∧ beta < 1 / 2 ∧
@@ -122,9 +105,6 @@ theorem exists_gluing_bad_sequence {epsilon : ℝ} (hepsilon : 0 < epsilon)
     point_mem := hz
     bad := hbad
   }⟩
-
-
-
 
 theorem exists_gluing_bad_sequence_duration_limit {epsilon : ℝ}
     (hepsilon : 0 < epsilon)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_6_RescalingInitialValue
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialFamily
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialCoherence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 noncomputable def rescalingExponentialFamily (hM04 : RicciFlowCurvatureTheory.{0})
     {T : ℝ} {x : G.Point} (E : M14ExponentialFamily G T x) :
     M14ExponentialFamily (rescalingTransport hM12 hM13 G Q hQ a)
@@ -40,8 +29,6 @@ noncomputable def rescalingExponentialFamily (hM04 : RicciFlowCurvatureTheory.{0
     rw [E.base_time])
 
 include hCoordinates in
-
-
 
 theorem rescalingExponential_domain_iff {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -80,8 +67,6 @@ theorem rescalingExponential_domain_iff {T : ℝ} {x : G.Point}
 
 include hCoordinates in
 
-
-
 theorem rescalingExponential_gamma {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
     (E' : M14ExponentialFamily (rescalingTransport hM12 hM13 G Q hQ a)
@@ -111,7 +96,6 @@ theorem rescalingExponential_gamma {T : ℝ} {x : G.Point}
     exact heq.symm
 
 include hCoordinates in
-
 
 theorem rescalingExponential_originalTime {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

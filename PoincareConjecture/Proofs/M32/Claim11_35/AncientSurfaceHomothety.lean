@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Homothety
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,9 +14,6 @@ namespace PoincareConjecture.M32
 
 variable {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) C] [IsManifold (𝓡 2) ∞ C]
-
-
-
 
 theorem roundSurface_scalarCurvature_eq_one_div_one_sub
     (hM04 : RicciFlowCurvatureTheory.{u}) (A : RicciFlow 2 C (Iic 0))
@@ -87,9 +68,6 @@ theorem roundSurface_scalarCurvature_eq_one_div_one_sub
     linarith
   have h := congrArg Inv.inv hinv
   simpa only [inv_inv, one_div] using h
-
-
-
 
 theorem roundSurface_inner_eq_one_sub_mul
     (A : RicciFlow 2 C (Iic 0))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveMovedBand
 import PoincareConjecture.Proofs.M76.Mathlib.TerminalCollarBandComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.exists_moved_collar_terminal_interval
     {B : Set E} {T R : Set F} {upper bottom : E → ℝ}

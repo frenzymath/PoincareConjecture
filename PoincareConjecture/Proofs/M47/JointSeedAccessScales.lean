@@ -1,19 +1,8 @@
 import PoincareConjecture.Proofs.M47.JointSeedBallScales
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_radial_radius_action_budget {A B a v : ℝ}
     (hA : 1 ≤ A) (hB : 1 ≤ B) (ha : 0 < a) (hav : a ≤ v) :
@@ -27,15 +16,11 @@ theorem jointSeed_radial_radius_action_budget {A B a v : ℝ}
   apply (div_le_iff₀ hv).2
   nlinarith [Real.sq_sqrt ha.le]
 
-
-
 theorem jointSeed_radial_scalar_action_budget {A L v : ℝ}
     (hA : 1 ≤ A) (hL : 0 ≤ L) (hv : 0 ≤ v) (hbudget : A * L * v ≤ 1 / 64) :
     8 * L * v ≤ 1 / 8 := by
   have h := mul_le_mul_of_nonneg_right hA (mul_nonneg hL hv)
   nlinarith
-
-
 
 theorem jointSeed_mid_age_action_normalization {d v L r : ℝ}
     (hd : 0 < d) (hv : 0 < v) (hvd : v ≤ d / 2)

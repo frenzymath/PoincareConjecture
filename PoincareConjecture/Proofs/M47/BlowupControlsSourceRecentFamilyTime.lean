@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNativeEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ namespace PoincareConjecture.M47
 open M44
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
 
 theorem source_recent_inverse_weight_le {u v d : ℝ}
     (hu : u ≤ 0) (hv : v ≤ 0) (hd : 0 ≤ d) (huv : |u - v| ≤ d)
@@ -39,7 +29,6 @@ theorem source_recent_inverse_weight_le {u v d : ℝ}
   · exact hinv
   · change (1 : ℝ) ≤ (1 + d) * 1
     linarith
-
 
 theorem source_recent_tensor_norm_time_le {u v d : ℝ}
     (hu : u ≤ 0) (hv : v ≤ 0) (hd : 0 ≤ d) (huv : |u - v| ≤ d)
@@ -61,7 +50,6 @@ theorem source_recent_tensor_norm_time_le {u v d : ℝ}
       Fintype.card_fin] using hprod
   simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hprod' (sq_nonneg (T a))
 
-
 noncomputable def sourceRecentTimeCorrection (u v : ℝ) (B : RoundCylinderTwoTensor) :
     RoundCylinderTwoTensor :=
   fun z a b => B z a b + EvolvingRoundCylinderMetric u z a b -
@@ -74,7 +62,6 @@ theorem sourceRecentTimeCorrection_coefficient (u v : ℝ) (B : RoundCylinderTwo
       roundCylinderTensorCoefficient B c p a b + roundCylinderGram u c p a b -
         roundCylinderGram v c p a b := rfl
 
-
 theorem sourceRecentTimeCorrection_smooth {epsilon u v : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B) :
     RoundCylinderTensorSmoothOn epsilon (sourceRecentTimeCorrection u v B) := by
@@ -82,7 +69,6 @@ theorem sourceRecentTimeCorrection_smooth {epsilon u v : ℝ}
   simp only [sourceRecentTimeCorrection_coefficient]
   exact ((hB q a b).add (evolving_roundCylinderGram_contDiff u q a b).contDiffOn).sub
     (evolving_roundCylinderGram_contDiff v q a b).contDiffOn
-
 
 theorem sourceRecentTimeCorrection_iteratedDerivative {u v : ℝ}
     (hu : u < 1) (hv : v < 1) (B : RoundCylinderTwoTensor) (q : UnitTwoSphere) (k : ℕ) :
@@ -95,7 +81,6 @@ theorem sourceRecentTimeCorrection_iteratedDerivative {u v : ℝ}
     ring
   rw [← staticCylinderCorrection_iteratedDerivative hu, heq,
     staticCylinderCorrection_iteratedDerivative hv]
-
 
 theorem exists_source_recent_time_energy_tolerance (m : ℕ) :
     ∃ d : ℝ, 0 < d ∧ ∀ {u v : ℝ}, u ≤ 0 → v ≤ 0 → |u - v| ≤ d →

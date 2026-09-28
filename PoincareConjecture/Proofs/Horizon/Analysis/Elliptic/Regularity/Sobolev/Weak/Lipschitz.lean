@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Derivatives
 import Mathlib.Analysis.Calculus.Rademacher
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal NNReal
 namespace Poincare.Analysis.Sobolev.Weak
 
 variable {n : ℕ}
-
 
 theorem hasWeakPartialDeriv_lineDeriv_of_lipschitz
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {C : ℝ≥0} (hf : LipschitzWith C f)
@@ -51,8 +43,6 @@ theorem hasWeakPartialDeriv_lineDeriv_of_lipschitz
         (f := fun y => fderiv ℝ φ y (EuclideanSpace.single i 1))
         (fun ht => hx (hs (tsupport_fderiv_apply_subset ℝ _ ht)))
     rw [hz, mul_zero]
-
-
 
 theorem exists_weakPartials_of_lipschitzOn
     {f : EuclideanSpace ℝ (Fin n) → ℝ}

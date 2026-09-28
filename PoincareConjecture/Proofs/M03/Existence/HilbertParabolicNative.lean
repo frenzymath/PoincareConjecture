@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.HilbertEigenbasisNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralL2ResponseNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.HilbertResolventNative
 variable {V H : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [CompleteSpace V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
-
 
 def InGeneratorGraph (J : V →L[ℝ] H) (u a : H) : Prop := operator J (u + a) = u
 
@@ -79,7 +70,6 @@ theorem inGeneratorGraph_nonneg (J : V →L[ℝ] H) (hnorm : ‖J‖ ≤ 1)
   linarith
 
 open SpectralHeatNative (State timeMeasure)
-
 
 theorem exists_response [SeparableSpace H]
     (J : V →L[ℝ] H) (hc : IsCompactOperator J) (hd : DenseRange J) (hnorm : ‖J‖ ≤ 1)

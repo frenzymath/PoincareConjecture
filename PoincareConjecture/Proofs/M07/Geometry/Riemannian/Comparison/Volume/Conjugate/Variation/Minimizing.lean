@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conju
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Broken
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.MinimalVariation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,8 +34,6 @@ private theorem BrokenRealization.time_subset
   intro t ht
   exact ⟨(R.time_mem i (by omega)).1.trans ht.1,
     ht.2.trans (R.time_mem (i + 1) (by omega)).2⟩
-
-
 
 theorem BrokenRealization.sum_index_nonneg [T2Space M]
     (R : BrokenRealization g γ V₀ V₁ a c b) (D : LeviCivitaData g)
@@ -199,9 +189,6 @@ private theorem BrokenRealization.index_integrable [T2Space M]
     (hVa.differentiableAt (by simp))
     (((R.smooth i hi).of_le (by norm_num)).contDiffAt)
     (R.base i hi t ht) (R.field i hi t ht)).symm
-
-
-
 
 theorem index_nonneg_of_minimizing [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

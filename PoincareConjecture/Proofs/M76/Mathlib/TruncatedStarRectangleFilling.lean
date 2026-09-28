@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TruncatedStarHeightExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem frontier_rectangle_eq_four_sides {a b α β : ℝ}
     (hab : a ≤ b) (hαβ : α ≤ β) :
@@ -36,10 +24,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem IsFinitePL.exists_truncatedStar_rectangle_filling
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

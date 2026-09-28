@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.SelfSimilarity.Evolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.SelfSimilarity.MetricIdentity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
-
-
 
 theorem nonempty_homotheticMetricSlice
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)
@@ -77,8 +65,6 @@ theorem nonempty_homotheticMetricSlice
       (mfderiv (𝓡 3) (𝓡 3) Ψ.symm x v) (mfderiv (𝓡 3) (𝓡 3) Ψ.symm x w) at h
   rw [hinverse v, hinverse w, Ψ.apply_symm_apply] at h
   simpa only [abs_of_neg ht] using h
-
-
 
 def shrinkingSolitonFlow
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

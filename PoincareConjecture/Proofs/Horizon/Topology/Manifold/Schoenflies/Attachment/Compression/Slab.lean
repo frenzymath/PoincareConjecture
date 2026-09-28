@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Local
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Cutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +47,6 @@ private def verticalShift :
 variable {H A : Type*} [NormedAddCommGroup A] [NormedSpace Real A]
   [TopologicalSpace H] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners Real A H}
-
-
 
 theorem exists_slab_compression_with_graph
     (C : Opens M) (e : Diffeomorph I 𝓘(Real, E × Real) C (E × Real) ∞)
@@ -209,8 +197,6 @@ theorem exists_slab_compression_with_graph
       exact hχp (hχone (p.1, (G r).2 + 1) ⟨hmem, hn⟩)
   · rw [hFfix y (fun hk => hyC (hKC hk))]
     exact ⟨hy, hDW (hedge ⟨hy, hyC⟩)⟩
-
-
 
 theorem exists_slab_compression
     (C : Opens M) (e : Diffeomorph I 𝓘(Real, E × Real) C (E × Real) ∞)

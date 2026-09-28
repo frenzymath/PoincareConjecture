@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCoverCoordina
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneFilling
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSquareCircle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,16 +17,12 @@ local notation "C8" => AddCircle (4 * (2 : ℝ))
 local notation "Shell" => Set.prod (Icc (-1 : ℝ) 1)
   (Set.preimage (norm : V2 → ℝ) (Icc (1 : ℝ) 2))
 
-
 noncomputable def meridianProductCoordinates : V ≃ᴬ[ℝ] W :=
   ((ContinuousLinearEquiv.refl ℝ ℝ).prodCongr
     (ContinuousLinearEquiv.finTwoArrow ℝ ℝ)).toContinuousAffineEquiv
 
-
 theorem meridianProductCoordinates_apply (x : V) :
     meridianProductCoordinates x = (x.1, (x.2 0, x.2 1)) := rfl
-
-
 
 theorem squareCircle_zero : (squareCircle (0 : C8) : V2) = ![-1, -1] := by
   have hm : PLAnnularStrip.annulusMap 2 (by norm_num) (0, 0) = (0, 0) := by
@@ -57,10 +44,6 @@ theorem squareCircle_zero : (squareCircle (0 : C8) : V2) = ![-1, -1] := by
     -1 + (PLAnnularStrip.annulusMap 2 (by norm_num) (0, 0)).2] = ![-1, -1]
   rw [hm]
   norm_num
-
-
-
-
 
 theorem exists_physical_retracted_disk_filling
     (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock)

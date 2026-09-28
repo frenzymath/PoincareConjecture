@@ -1,5 +1,3 @@
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.ParameterBounds
 
 open Set

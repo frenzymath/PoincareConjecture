@@ -11,13 +11,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -26,8 +19,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 3000000 in
-
-
 
 theorem exists_saddle_selected_wall_field
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

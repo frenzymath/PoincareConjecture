@@ -1,16 +1,6 @@
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X] {P R : Set X}
-
-
-
 
 theorem frontier_inter_of_frontier_subset_interior
     (hP : IsClosed P) (hR : IsClosed R) (hB : frontier R ⊆ interior P) :
@@ -37,23 +24,16 @@ theorem frontier_inter_of_frontier_subset_interior
       exact ⟨⟨interior_subset (hB hxB), hxR⟩, fun h => hxRi h.2⟩
     · exact ⟨⟨hxP, hxR⟩, fun h => hxPi h.1⟩
 
-
-
 theorem frontier_inter_subset_interior_of_frontier_subset_interior
     (hB : frontier R ⊆ interior P) : frontier P ∩ R ⊆ interior R := by
   intro x hx
   exact (mem_interior_iff_notMem_frontier hx.2).mpr fun hxB => hx.1.2 (hB hxB)
-
-
 
 theorem disjoint_frontier_inter_of_frontier_subset_interior
     (hB : frontier R ⊆ interior P) : Disjoint (frontier R) (frontier P ∩ R) := by
   apply disjoint_left.mpr
   intro x hxB hx
   exact hx.1.2 (hB hxB)
-
-
-
 
 theorem interior_subtype_preimage_of_frontier_subset_interior
     (hB : frontier R ⊆ interior P) :
@@ -83,8 +63,6 @@ theorem interior_subtype_preimage_of_frontier_subset_interior
       exact hyP
     exact hxPi (interior_maximal hUP (hU.inter isOpen_interior) ⟨hxU, hxRi⟩)
   · exact preimage_interior_subset_interior_preimage continuous_subtype_val
-
-
 
 theorem frontier_subtype_preimage_of_frontier_subset_interior
     (hP : IsClosed P) (hB : frontier R ⊆ interior P) :

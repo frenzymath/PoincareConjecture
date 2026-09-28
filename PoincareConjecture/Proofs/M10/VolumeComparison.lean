@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.VolumeTransport
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T3Space M] [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 theorem reducedVolume_le_euclidean
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
@@ -37,7 +28,6 @@ theorem reducedVolume_le_euclidean
     (regularWeightedJacobian_integrable hL hDifferential G hmax hT hwindow hcurvature hτ hτmax)
     (sourceGaussian_integrable n)
     (regularWeightedJacobian_le_sourceGaussian hL hDifferential G hmax hT hwindow hcurvature τ)
-
 
 theorem reducedVolume_antitoneOn
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -54,7 +44,6 @@ theorem reducedVolume_antitoneOn
     (regularWeightedJacobian_integrable hL hDifferential G hmax hT hwindow hcurvature hb.1 hb.2)
     (regularWeightedJacobian_integrable hL hDifferential G hmax hT hwindow hcurvature ha.1 ha.2)
     (fun x ↦ regularWeightedJacobian_antitoneOn hwindow hL hDifferential G x ha hb hab)
-
 
 theorem reducedVolume_tendsto_zero
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M76.Mathlib.PlanarCornerCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentLocalModel
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
 
 theorem AffineIndependent.exists_local_line_segments {a b c : ℝ × ℝ}
     (h : AffineIndependent ℝ ![a, b, c]) :
@@ -43,9 +32,6 @@ theorem AffineIndependent.exists_local_line_segments {a b c : ℝ × ℝ}
     filter_upwards [hnhds] with x hx
     rw [hmap x, mem_reference_corner_iff hx]
     exact (Homeomorph.subContinuousGraph_snd_eq_zero_iff abs continuous_abs (f x)).symm
-
-
-
 
 theorem exists_local_line_of_segment_corner {a b c : ℝ × ℝ}
     (hab : a ≠ b) (hcb : c ≠ b)

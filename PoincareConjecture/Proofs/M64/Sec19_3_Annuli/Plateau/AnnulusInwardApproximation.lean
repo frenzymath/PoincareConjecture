@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.InwardSmoothApproximation
 import PoincareConjecture.Proofs.M64.Mathlib.RestrictedPullbackLp
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -39,10 +27,6 @@ private theorem shifted_halfDisk_mem {x H t : ℝ}
   change 0 < z 0 + x ∧ z 0 + x < curvePeriod ∧ 0 < z 1 + t ∧ z 1 + t < 1
   exact ⟨by linarith, by linarith, hz1, by linarith⟩
 
-
-
-
-
 theorem m64Annulus_halfDisk_ae_mem {x H : ℝ}
     (hx : H < x) (hP : x + H < curvePeriod) (hH : H < 1) :
     ∀ᵐ z ∂volume.restrict (closedBall (0 : LoopPlane) H ∩ {z | 0 ≤ z 1}),
@@ -58,10 +42,6 @@ theorem m64Annulus_halfDisk_ae_mem {x H : ℝ}
     (by simpa using lt_of_le_of_ne hz.2 (Ne.symm hn))
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem m64Annulus_inward_strong_approximation
     {u : LoopPlane → E} {b : ℝ → E}

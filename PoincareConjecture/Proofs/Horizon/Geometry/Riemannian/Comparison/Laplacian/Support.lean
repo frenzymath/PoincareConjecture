@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Inverse
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -71,8 +64,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
-
-
 
 theorem upper_support_of_inverse_branch
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (p q x : M)

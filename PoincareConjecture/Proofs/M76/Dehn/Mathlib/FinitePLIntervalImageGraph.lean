@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_interval_image_graph
     {f : ℝ → E} (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1))

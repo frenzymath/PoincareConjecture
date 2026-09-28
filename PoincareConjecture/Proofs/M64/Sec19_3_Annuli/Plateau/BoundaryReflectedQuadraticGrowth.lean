@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryReflectedEquation
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,11 +9,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64BoundaryReflect_quadratic_growth {N : ℕ} {R C : ℝ}
     (epsilon : Fin N → ℝ) (hepsilon : ∀ j, epsilon j ^ 2 = 1)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,11 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M28
-
-
-
-
-
 
 theorem tendstoUniformlyOn_edist_toReal_of_mutual_inner_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]

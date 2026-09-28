@@ -1,18 +1,9 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M65
-
-
 
 noncomputable def sphereHeight : ContinuousMap LoopTwoSphere unitInterval where
   toFun z := ⟨(z.1 0 + 1) / 2, by
@@ -21,8 +12,6 @@ noncomputable def sphereHeight : ContinuousMap LoopTwoSphere unitInterval where
     obtain ⟨hl, hu⟩ := abs_le.mp h
     constructor <;> linarith⟩
   continuous_toFun := by fun_prop
-
-
 
 noncomputable def sphereHeightSection : ContinuousMap unitInterval LoopTwoSphere where
   toFun u := ⟨!₂[2 * (u : ℝ) - 1, Real.sqrt (1 - (2 * (u : ℝ) - 1) ^ 2), 0], by
@@ -44,8 +33,6 @@ noncomputable def sphereHeightSection : ContinuousMap unitInterval LoopTwoSphere
     apply continuous_pi
     intro i
     fin_cases i <;> fun_prop
-
-
 
 @[simp] theorem sphereHeight_section (u : unitInterval) :
     sphereHeight (sphereHeightSection u) = u := by

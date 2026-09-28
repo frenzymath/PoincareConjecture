@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.DomainResolvent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.WeakEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

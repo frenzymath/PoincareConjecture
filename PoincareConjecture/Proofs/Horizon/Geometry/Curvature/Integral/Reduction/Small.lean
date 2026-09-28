@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +33,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
 
 include hinner
 
-
 theorem measurePreserving_diffeomorph :
     MeasurePreserving e gM.volumeMeasure gN.volumeMeasure := by
   have hm : Measurable (e : M → N) := e.toHomeomorph.measurable
@@ -53,8 +44,6 @@ theorem measurePreserving_diffeomorph :
   rw [Set.image_preimage_eq _ he] at h
   exact h.symm
 
-
-
 theorem integral_ball_diffeomorph (p : M) (r : ℝ) (h : N → ℝ) :
     (∫ x in gM.ball p r, h (e x) ∂gM.volumeMeasure) =
       ∫ x in gN.ball (e p) r, h x ∂gN.volumeMeasure := by
@@ -62,8 +51,6 @@ theorem integral_ball_diffeomorph (p : M) (r : ℝ) (h : N → ℝ) :
     e.toHomeomorph.measurableEmbedding h (gM.ball p r)
   rw [image_ball_diffeomorph gM gN e hinner] at hi
   exact hi.symm
-
-
 
 theorem integral_scalarCurvature_ball_diffeomorph
     (D : LeviCivitaData gM) (D' : LeviCivitaData gN) (p : M) (r : ℝ) :
@@ -78,7 +65,6 @@ theorem integral_scalarCurvature_ball_diffeomorph
 
 omit [T3Space M] [T3Space N] [MeasurableSpace M] [BorelSpace M]
   [MeasurableSpace N] [BorelSpace N] in
-
 
 theorem sectionalCurvature_diffeomorph
     (D : LeviCivitaData gM) (D' : LeviCivitaData gN)
@@ -111,7 +97,6 @@ local instance smallIsManifold : IsManifold (𝓡 n) ∞ (Shrink.{0} M) :=
 local instance smallT3Space : T3Space (Shrink.{0} M) :=
   (Poincare.Topology.SecondCountable.homeomorphShrink M).t3Space
 
-
 def shrink (g : RiemannianMetric n M) : RiemannianMetric n (Shrink.{0} M) :=
   g.pullbackOfLocalDiffeomorph (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm
     (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm.isLocalDiffeomorph
@@ -122,7 +107,6 @@ def shrink (g : RiemannianMetric n M) : RiemannianMetric n (Shrink.{0} M) :=
       (mfderiv (𝓡 n) (𝓡 n) (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm x v)
       (mfderiv (𝓡 n) (𝓡 n) (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm x w) :=
   rfl
-
 
 theorem shrink_preconnectedSpace [PreconnectedSpace M] :
     PreconnectedSpace (Shrink.{0} M) :=
@@ -162,7 +146,6 @@ theorem shrink_sectionalCurvature (g : RiemannianMetric n M)
     (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm (fun _ _ _ => rfl)
     g.shrink.leviCivitaData D x v w
 
-
 theorem shrink_sectionalCurvature_lower_bound (g : RiemannianMetric n M)
     (D : LeviCivitaData g) {κ : ℝ}
     (hsec : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), κ ≤ D.sectionalCurvature x v w) :
@@ -180,8 +163,6 @@ local instance smallMeasurableSpace : MeasurableSpace (Shrink.{0} M) :=
   borel (Shrink.{0} M)
 
 local instance smallBorelSpace : BorelSpace (Shrink.{0} M) := ⟨rfl⟩
-
-
 
 theorem shrink_integral_scalarCurvature_ball (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (x : Shrink.{0} M) (r : ℝ) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseLiftLocalH1
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseWeakLocality
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseCurrentColumns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Proofs.M58
-
-
 
 theorem m64ContinuousPhase_weak_columns
     {O : Set LoopPlane} (hO : IsOpen O)
@@ -69,8 +59,6 @@ theorem m64ContinuousPhase_weak_columns
       m64WeakPartialDeriv_ae_congr EventuallyEq.rfl hAE (hwW i)⟩
   exact ⟨hV, hweak, m64WeakPhase_circle_column_norm_sq hO huLp hV hweak q Z hZ hw k
     (Eventually.of_forall hphase)⟩
-
-
 
 theorem m64ContinuousPhase_disk_memW1p
     {u : LoopPlane → ℝ} {q : LoopPlane → LoopPlane}

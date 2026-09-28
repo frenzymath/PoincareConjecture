@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.BumpFiber
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CompactConjugation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_relative_openTube_graph_transport
     (T : OpenPartialHomeomorph

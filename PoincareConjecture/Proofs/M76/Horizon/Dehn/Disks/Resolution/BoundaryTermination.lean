@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Resolution.MarkedArcStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -20,7 +11,6 @@ local notation "Q2" => sphere (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
-
 
 theorem OrdinaryDoubleCurveModel.double_locus_disjoint_rim_of_boundary_count_zero
     (old : OrdinaryDoubleCurveModel e f R)
@@ -35,7 +25,6 @@ theorem OrdinaryDoubleCurveModel.double_locus_disjoint_rim_of_boundary_count_zer
   obtain ⟨i, hi⟩ := mem_iUnion.mp (old.cover.symm ▸ hx)
   exact Set.notMem_empty i (hempty ▸ (show (old.pieces i ∩ Q2).Nonempty from ⟨x, hi, hq⟩))
 
-
 theorem OrdinaryDoubleCurveModel.isEmbedding_rim_of_boundary_count_zero [T2Space X]
     (old : OrdinaryDoubleCurveModel e f R) (hf : ContinuousOn f D2)
     (hzero : doubleBoundaryComponentCount f D2 Q2 = 0) :
@@ -47,8 +36,6 @@ theorem OrdinaryDoubleCurveModel.isEmbedding_rim_of_boundary_count_zero [T2Space
   exact disjoint_left.mp hd
     ⟨sphere_subset_closedBall x.property, y, sphere_subset_closedBall y.property,
       hxy, fun h ↦ hne (Subtype.ext h)⟩ x.property
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_marked_disk_without_boundary_double_curves
     [T2Space X] {F : Set X}

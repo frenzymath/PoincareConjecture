@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.DiskSublevels
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_boundary_band_cover_of_unique_critical_disk
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

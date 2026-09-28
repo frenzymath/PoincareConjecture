@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedThreeStopVolume
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -15,8 +8,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_three_stop_scales
     (S : RepairedControlledSchedulesData.{u}) (p : SurgeryParameterPrefix S.constants)
@@ -70,8 +61,6 @@ theorem exists_three_stop_scales
       3 * r ≤ 3 * ((Real.sqrt (4 * H))⁻¹ / (24 * B)) :=
         mul_le_mul_of_nonneg_left hrTube (by norm_num)
       _ = (Real.sqrt (4 * H))⁻¹ / (8 * B) := by ring
-
-
 
 theorem exists_uniform_birth_ball_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

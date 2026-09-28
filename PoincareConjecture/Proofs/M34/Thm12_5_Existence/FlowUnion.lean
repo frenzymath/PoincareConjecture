@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.FlowLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M34
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_forwardFlowUnion {ι : Type*} (T : ι → ℝ)
     (F : (i : ι) → RicciFlow n M (Ico 0 (T i))) (i0 : ι)

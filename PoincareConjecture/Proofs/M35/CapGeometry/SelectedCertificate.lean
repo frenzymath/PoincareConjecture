@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCoreVolume
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapSize
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapOperators
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_certificate_of_full_neck_comparisons
     (P : M35StandardCapPredecessors) :

@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,12 +13,9 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
 
-
 def SurgeryTerminalCoreComponents {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (rho : ℝ) : Set M :=
   {x | ∃ y, D.scalarCurvature y ≤ rho⁻¹ ^ 2 ∧ x ∈ connectedComponent y}
-
-
 
 structure SurgeryEndCut {g : RiemannianMetric 3 M} (N : EpsilonNeck g) where
   point : M
@@ -37,8 +27,6 @@ structure SurgeryEndCut {g : RiemannianMetric 3 M} (N : EpsilonNeck g) where
   positive_subset : N.region 0 N.epsilon⁻¹ ⊆ tail
   negative_disjoint : Disjoint (N.region (-N.epsilon⁻¹) 0) tail
 
-
-
 structure SurgeryEventTerminalPolicy
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -49,8 +37,6 @@ structure SurgeryEventTerminalPolicy
     SurgeryTerminalCoreComponents E.limit_connection (P.delta T * P.r T) \
       ⋃ i, (cuts i).tail
 
-
-
 def SurgeryVanishingEventTerminalPolicy
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
@@ -60,17 +46,6 @@ def SurgeryVanishingEventTerminalPolicy
       ∃ s ∈ Set.Ico V.tMinus T,
         ∀ t ∈ Set.Ico s T, L < (V.pre_flow.connection t).scalarCurvature x
 
-
-
-
-
-
-
-
-
-
-
-
 structure SurgeryFlowTerminalPolicyOn
     (F : SurgeryFlowData.{u}) (J : Set ℝ) : Prop where
   nonempty : ∀ T ∈ J, ∀ hT : T ∈ F.surgery_times,
@@ -79,7 +54,6 @@ structure SurgeryFlowTerminalPolicyOn
   vanishing : ∀ T ∈ J, ∀ hT : T ∈ F.surgery_times,
     ∀ [_hT_empty : IsEmpty (F.slice T).carrier],
       SurgeryVanishingEventTerminalPolicy (F.vanishing_event T hT)
-
 
 theorem SurgeryFlowTerminalPolicyOn.restrict
     {F : SurgeryFlowData.{u}} {J K : Set ℝ}

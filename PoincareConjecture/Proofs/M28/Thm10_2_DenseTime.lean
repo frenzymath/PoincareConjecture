@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.ShortPaths
 import PoincareConjecture.Proofs.M28.Generalized.CanonicalAdapters
 import PoincareConjecture.Statements.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -23,9 +12,6 @@ universe u
 
 namespace PoincareConjecture.M28
 
-
-
-
 theorem dense_rebase_radius (A q : ℝ) (hq : 0 < q) :
     ((A + 1) * Real.sqrt 2) * (2 * q) ^ (-1 / 2 : ℝ) =
       (A + 1) * q ^ (-1 / 2 : ℝ) := by
@@ -34,9 +20,6 @@ theorem dense_rebase_radius (A q : ℝ) (hq : 0 < q) :
     Real.sqrt_mul (by norm_num)]
   have htwo : Real.sqrt 2 ≠ 0 := ne_of_gt (Real.sqrt_pos.mpr (by norm_num))
   field_simp
-
-
-
 
 theorem dense_time_of_same_time
     (P : RicciFlowCurvatureTheory.{u}) {epsilon₀ : ℝ}

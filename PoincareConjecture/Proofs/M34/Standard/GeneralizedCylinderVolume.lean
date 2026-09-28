@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 import PoincareConjecture.Proofs.M34.Standard.ScaledTangentComparison
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
-
 
 theorem source_ball_volume_le_of_localization
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexTriangleChains
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.RelativeTetrahedronChains
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,15 +13,11 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 local notation "KA" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 local notation "AA" => A.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
-
-
 noncomputable def subcomplexTopCycles (hAK : A ≤ K) :
     Submodule (ZMod 2) (Module.Dual (ZMod 2) (Triangle KA → ZMod 2)) :=
   Submodule.map
     (LinearMap.funLeft (ZMod 2) (ZMod 2) (K.subcomplexFaceEmbedding A hAK 3)).dualMap
     (LinearMap.ker (edgeCoboundary AA).dualMap)
-
-
 
 theorem subcomplexTopCycles_le_ker (hAK : A ≤ K) :
     K.subcomplexTopCycles A hAK ≤ LinearMap.ker (edgeCoboundary KA).dualMap := by
@@ -43,8 +30,6 @@ theorem subcomplexTopCycles_le_ker (hAK : A ≤ K) :
   rw [hz, map_zero]
 
 open Classical in
-
-
 
 theorem subcomplexTopCycles_inf_tetrahedron_boundaries (hAK : A ≤ K)
     (hcofaces : ∀ t : Triangle KA, (tetrahedronCofaces KA t).card =

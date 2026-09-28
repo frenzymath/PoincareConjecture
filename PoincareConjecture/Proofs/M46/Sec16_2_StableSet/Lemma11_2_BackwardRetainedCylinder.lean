@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_cylinder_backward_across_retained_event
     (P : M44CapPersistencePredecessors.{u})

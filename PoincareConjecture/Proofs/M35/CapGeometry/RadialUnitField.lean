@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +7,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
 
 noncomputable def radialUnitField (g : RiemannianMetric 3 StandardCapSpace)
     (x : StandardCapSpace) : StandardCapSpace :=
@@ -51,7 +41,6 @@ private theorem amplitude_hasDerivAt (g : RiemannianMetric 3 StandardCapSpace)
   rw [Real.sq_sqrt (axisRadialCoefficient_pos g r).le]
   ring
 
-
 theorem radialUnitField_contDiffAt (g : RiemannianMetric 3 StandardCapSpace)
     {x : StandardCapSpace} (hx : x ≠ 0) :
     ContDiffAt ℝ ∞ (radialUnitField g) x := by
@@ -60,8 +49,6 @@ theorem radialUnitField_contDiffAt (g : RiemannianMetric 3 StandardCapSpace)
   have hs := hb.sqrt (axisRadialCoefficient_pos g ‖x‖).ne'
   exact ((hr.mul hs).inv (mul_ne_zero (norm_ne_zero_iff.mpr hx)
     (axisRadialSpeed_pos g ‖x‖).ne')).smul contDiffAt_id
-
-
 
 theorem rotational_inner_position
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -76,7 +63,6 @@ theorem rotational_inner_position
   simp only [real_inner_self_eq_norm_sq, axisCorrectionCoefficient]
   field_simp [norm_ne_zero_iff.mpr hx]
   ring
-
 
 theorem radialUnitField_unit
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -93,8 +79,6 @@ theorem radialUnitField_unit
   field_simp [norm_ne_zero_iff.mpr hx,
     (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g ‖x‖)).ne']
   rw [Real.sq_sqrt (axisRadialCoefficient_pos g ‖x‖).le]
-
-
 
 theorem radialUnitField_projection
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -113,8 +97,6 @@ theorem radialUnitField_projection
   field_simp [norm_ne_zero_iff.mpr hx,
     (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g ‖x‖)).ne']
   rw [Real.sq_sqrt (axisRadialCoefficient_pos g ‖x‖).le]
-
-
 
 theorem radialUnitField_connection
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

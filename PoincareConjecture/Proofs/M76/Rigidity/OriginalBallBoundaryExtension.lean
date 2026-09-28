@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallBoundaryCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +15,6 @@ local notation "Q3" => sphere (0 : V3) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {C S : Set X} {M B : Set E}
-
-
-
 
 theorem ChartwisePLBall.exists_prescribed_boundary_extension
     (b : ChartwisePLBall e C S)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteAffineSectionBound
 import Mathlib.Topology.MetricSpace.Contracting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

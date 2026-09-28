@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_BufferBall
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem local_result_embedding_edist_le
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)
     (x y : (E.local_result i).output.carrier) :
@@ -37,9 +25,6 @@ theorem local_result_embedding_edist_le
       (E.local_result i).metric.edist x y :=
   (E.local_result i).metric.edist_comp_le_of_pullback_bound (metric T)
     (E.local_embed_smooth i) (fun z v => (E.local_metric i z v v).le) x y
-
-
-
 
 theorem local_result_embedding_volume_eq
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)

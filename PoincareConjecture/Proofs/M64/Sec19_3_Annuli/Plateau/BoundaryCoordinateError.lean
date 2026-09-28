@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryErrorLocalization
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem m64BoundaryCoordinate_error_columns
     {u C : LoopPlane → E} {W : Fin 2 → LoopPlane → E} {a : LoopPlane} {R : ℝ}
@@ -63,10 +49,6 @@ theorem m64BoundaryCoordinate_error_columns
     (m64WeakPartial_const_mul hweakC (-1))
   simpa only [neg_one_mul, ← sub_eq_add_neg, PiLp.sub_apply, P, D,
     Function.comp_apply, EuclideanSpace.coe_proj] using h
-
-
-
-
 
 theorem m64BoundaryCoordinate_error_cutoff
     {u C : LoopPlane → E} {W : Fin 2 → LoopPlane → E} {a : LoopPlane} {R : ℝ}

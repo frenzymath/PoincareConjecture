@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalFlowCurvature
 import PoincareConjecture.Proofs.M34.Standard.UniformCanonicalDifferenceFlux
 import PoincareConjecture.Proofs.M34.Standard.CurvatureReactionEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 set_option maxHeartbeats 8000000 in
-
-
-
 
 theorem canonicalDomain_curvature_difference_coordinate_pde
     {n dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

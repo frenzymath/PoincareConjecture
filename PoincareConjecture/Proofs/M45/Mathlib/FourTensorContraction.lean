@@ -4,19 +4,9 @@ import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
 
 theorem Fintype.sum_fun_fin_four {I V : Type*} [Fintype I] [AddCommMonoid V]
     (f : (Fin 4 → I) → V) :
@@ -33,8 +23,6 @@ theorem Fintype.sum_fun_fin_four {I V : Type*} [Fintype I] [AddCommMonoid V]
 
 namespace PoincareConjecture.M45
 
-
-
 theorem sum_sq_contraction_le {I J K : Type*} [Fintype I] [Fintype J] [Fintype K]
     (A : I → K → ℝ) (B : J → K → ℝ) :
     (∑ i, ∑ j, (∑ k, A i k * B j k) ^ 2) ≤
@@ -50,8 +38,6 @@ theorem sum_sq_contraction_le {I J K : Type*} [Fintype I] [Fintype J] [Fintype K
       simp_rw [← Finset.mul_sum]
       rw [← Finset.sum_mul]
 
-
-
 theorem abs_sum_mul_le_cube {I : Type*} [Fintype I]
     (R B : I → ℝ) {N : ℝ} (hN : 0 ≤ N)
     (hR : ∑ i, R i ^ 2 = N ^ 2) (hB : ∑ i, B i ^ 2 ≤ N ^ 4) :
@@ -63,8 +49,6 @@ theorem abs_sum_mul_le_cube {I : Type*} [Fintype I]
     rw [sq_abs]
     nlinarith only [hbound]
   nlinarith only [hsq, abs_nonneg (∑ i, R i * B i), pow_nonneg hN 3]
-
-
 
 theorem four_contraction_energy_le {I : Type*} [Fintype I]
     (R B₁ B₂ B₃ B₄ : I → ℝ) {N : ℝ} (hN : 0 ≤ N)
@@ -78,9 +62,6 @@ theorem four_contraction_energy_le {I : Type*} [Fintype I]
   have h4 := abs_le.mp (abs_sum_mul_le_cube R B₄ hN hR h₄)
   simp only [mul_add, mul_sub, Finset.sum_add_distrib, Finset.sum_sub_distrib]
   linarith
-
-
-
 
 theorem curvature_contraction_sq_le {I : Type*} [Fintype I]
     (R : I → I → I → I → ℝ) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CollarTransitionAdjustment
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {B X : Type*} [MetricSpace B] [LocallyCompactSpace B] [TopologicalSpace X]
-
-
-
 
 theorem exists_collar_patch_alignment
     (c1 c2 : OpenPartialHomeomorph (B × Ico (0 : ℝ) 1) X) (i : B → X)

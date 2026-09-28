@@ -5,22 +5,6 @@ import PoincareConjecture.Definitions.M12GaugeCover
 import PoincareConjecture.Proofs.M12.Analysis.Calculus.SpatialFDerivWithin
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option synthInstance.maxHeartbeats 100000
 set_option maxSynthPendingDepth 12
@@ -38,8 +22,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 section CoordinateCoefficients
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem contDiffOn_spatialCoordinateChristoffel
     {J : Set ℝ} {U : Set E} (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U)
@@ -115,8 +97,6 @@ theorem contDiffOn_spatialCoordinateChristoffel
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem contDiffOn_spatialCoordinateChristoffel_bilinear
     {J : Set ℝ} {U : Set E} (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U)
     {B : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -135,12 +115,6 @@ theorem contDiffOn_spatialCoordinateChristoffel_bilinear
     contDiffOn_spatialCoordinateChristoffel hJ hU hB hInv u v
 
 end CoordinateCoefficients
-
-
-
-
-
-
 
 theorem horizontalRicciCalculus_of_adapted_cover
     (hMetric : M12MetricPredecessors.{u} n)

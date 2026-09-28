@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CollarLevelResidualGluing
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCollarLevelCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PointedWholeLevelComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_ordinary_collar_level_complement
     {B T d b k R : Set E} {upper g : E → ℝ}

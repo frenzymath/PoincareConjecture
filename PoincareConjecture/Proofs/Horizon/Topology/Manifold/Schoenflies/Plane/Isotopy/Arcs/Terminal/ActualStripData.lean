@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric
@@ -12,9 +10,6 @@ open SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 structure ActualStripData
     {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}

@@ -3,15 +3,6 @@ import Mathlib.Tactic.GCongr
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -23,8 +14,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   [SeminormedAddCommGroup F] [NormedSpace 𝕜 F]
   [SeminormedAddCommGroup G] [NormedSpace 𝕜 G]
   [SeminormedAddCommGroup H] [NormedSpace 𝕜 H]
-
-
 
 theorem norm_bilinear_transport_le (L : E →L[𝕜] F) (K : G →L[𝕜] H)
     (A : E →L[𝕜] E →L[𝕜] H) (B : F →L[𝕜] F →L[𝕜] G)
@@ -42,8 +31,6 @@ theorem norm_bilinear_transport_le (L : E →L[𝕜] F) (K : G →L[𝕜] H)
       · exact L.le_opNorm u
       · exact L.le_opNorm v
     _ = (‖K‖ * ‖B‖ * ‖L‖ ^ 2) * ‖u‖ * ‖v‖ := by ring
-
-
 
 theorem norm_trilinear_transport_le (L : E →L[𝕜] F) (K : G →L[𝕜] H)
     (A : E →L[𝕜] E →L[𝕜] E →L[𝕜] H)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.ReducedLengthSemiconcavity
 import PoincareConjecture.Proofs.M10.ChartOperatorBounds
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SourcePoleQuadrantPatches
 import PoincareConjecture.Proofs.M76.Mathlib.LinearPatchHomeomorphisms
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateFourRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry RectangleCornerArcs CoordinateFourRegions
@@ -33,10 +22,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 structure LinearImageQuadrantData (ψ : (ℝ × ℝ) → E)
     (e : E ≃L[ℝ] ((ℝ × ℝ) × ℝ)) (F : Set ((ℝ × ℝ) × ℝ))
@@ -64,12 +49,6 @@ structure LinearImageQuadrantData (ψ : (ℝ × ℝ) → E)
   inner_rim : e '' (ψ '' cornerArc 0 t 0 z) ⊆ arc F (false, i.2) ∪ arc F (true, i.1)
   outer_proper : (e '' (ψ '' cornerArc t 0 z 0)) \ {e (ψ (0, z)), e (ψ (t, 0))} ⊆
     region F i \ (arc F (false, i.2) ∪ arc F (true, i.1))
-
-
-
-
-
-
 
 theorem SourcePoleQuadrantData.linear_image_coordinate_attachment
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {A : E →ₗ[ℝ] ℝ}

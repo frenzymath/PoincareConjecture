@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeFields
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -67,9 +54,6 @@ private theorem cone_field_norm_le
       exact add_le_add ((hA _).trans (mul_le_mul_of_nonneg_left hsub hK)) (hA _)
     _ = _ := by ring
 
-
-
-
 theorem cone_reconstruction_continuous
     {g : C → E}
     {v : ℝ → C} {v0 : C}
@@ -94,9 +78,6 @@ theorem cone_reconstruction_continuous
       (coneCoordinates_mem_closedBall hr h0 (hvb hp.2) hp.1)
   exact ⟨hg.continuousOn.comp hc hmaps,
     (hg.continuousOn_fderiv_of_isOpen isOpen_ball le_rfl).comp hc hmaps⟩
-
-
-
 
 theorem coneCartesianField_memLp
     {g : C → E}

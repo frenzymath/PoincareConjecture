@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.AdjacentCancellation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Cancellation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +10,6 @@ open scoped Manifold ContDiff Bundle Interval
 namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
-
-
 
 theorem chartTriangle_open_image_subset_interior
     (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -33,8 +25,6 @@ theorem chartTriangle_open_image_subset_interior
         (isOpen_lt (continuous_fst.add continuous_snd) continuous_const))
   exact interior_maximal (image_mono hsub)
     (e.isOpen_image_symm_of_subset_target hopen (hsub.trans ht))
-
-
 
 theorem coordinateTriangle_disjoint_open_images
     (F G : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -56,8 +46,6 @@ theorem coordinateTriangle_disjoint_open_images
         (coordinateTriangleChart_target G c hc)
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem integral_coordinateTriangle_shared_vertical_side_pair_eq_zero
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

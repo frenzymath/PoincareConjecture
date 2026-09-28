@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TranslatedOriginalEventBody
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_original_vertex_event_bodies
     {ι : Type*} [Finite ι] [Nonempty ι]

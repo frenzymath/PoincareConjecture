@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.MinimumAmbientOrbit
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.OriginalSkeletonContactCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

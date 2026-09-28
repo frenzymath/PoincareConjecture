@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import Mathlib.Topology.MetricSpace.GromovHausdorff
 import Mathlib.Order.Zorn
 
@@ -13,10 +7,6 @@ open scoped Topology
 namespace Poincare.GromovHausdorff
 
 universe u
-
-
-
-
 
 def IsDeltaNet {X : Type*} [MetricSpace X] (δ : ℝ) (x : X) (L : Set X) : Prop :=
   x ∈ L ∧ (∀ y : X, ∃ z ∈ L, dist y z < δ) ∧
@@ -34,12 +24,6 @@ theorem IsDeltaNet.mono {X : Type*} [MetricSpace X] {x : X} {L : Set X}
 theorem IsDeltaNet.nonempty {X : Type*} [MetricSpace X] {δ : ℝ} {x : X}
     {L : Set X} (hL : IsDeltaNet δ x L) : L.Nonempty :=
   ⟨x, hL.1⟩
-
-
-
-
-
-
 
 theorem exists_isDeltaNet_separated {X : Type*} [MetricSpace X]
     (δ : ℝ) (hδ : 0 < δ) (x : X) :
@@ -107,16 +91,11 @@ theorem exists_isDeltaNet {X : Type*} [MetricSpace X]
   obtain ⟨L, hx, hcover, hsep⟩ := exists_isDeltaNet_separated δ hδ x
   exact ⟨L, ⟨hx, hcover, ⟨δ, hδ, hsep⟩⟩⟩
 
-
-
-
 structure MetricSpaceBundle where
   carrier : Type*
   metric : MetricSpace carrier
 
 instance (X : MetricSpaceBundle) : MetricSpace X.carrier := X.metric
-
-
 
 structure BasedMetricSpaceBundle where
   carrier : Type u
@@ -124,8 +103,6 @@ structure BasedMetricSpaceBundle where
   base : carrier
 
 instance (X : BasedMetricSpaceBundle) : MetricSpace X.carrier := X.metric
-
-
 
 structure PointedCompactMetricSpace where
   carrier : Type*
@@ -139,9 +116,6 @@ namespace PointedCompactMetricSpace
 instance (X : PointedCompactMetricSpace) : MetricSpace X.carrier := X.metric
 instance (X : PointedCompactMetricSpace) : CompactSpace X.carrier := X.compact
 instance (X : PointedCompactMetricSpace) : Nonempty X.carrier := X.nonempty
-
-
-
 
 noncomputable def unpointedGH (X Y : PointedCompactMetricSpace) : ℝ :=
   letI : MetricSpace X.carrier := X.metric
@@ -170,16 +144,9 @@ theorem unpointedGH_triangle (X Y Z : PointedCompactMetricSpace) :
 
 end PointedCompactMetricSpace
 
-
-
 def UnpointedGHConverges (X : ℕ → PointedCompactMetricSpace)
     (Y : PointedCompactMetricSpace) : Prop :=
   Tendsto (fun k => PointedCompactMetricSpace.unpointedGH (X k) Y) atTop (𝓝 0)
-
-
-
-
-
 
 structure RealizationSequence (X Y : Type u) [MetricSpace X] [MetricSpace Y]
     (x : X) (y : Y) where
@@ -192,10 +159,6 @@ structure RealizationSequence (X Y : Type u) [MetricSpace X] [MetricSpace Y]
   hausdorff_tendsto_zero :
     Tendsto (fun k => @Metric.hausdorffDist (ambient k).carrier inferInstance
       (Set.range (left k)) (Set.range (right k))) atTop (𝓝 0)
-
-
-
-
 
 structure VaryingRealizationSequence
     (X : ℕ → BasedMetricSpaceBundle.{u}) (Y : BasedMetricSpaceBundle.{u}) where

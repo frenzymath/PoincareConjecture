@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M62CurveEvolution
 import PoincareConjecture.Proofs.M62.Mathlib.IntegralApproximation
 import PoincareConjecture.Proofs.M62.Mathlib.ForwardIntegralBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem total_curvature_integral_of_regularized_bound {K0 K1 K2 : ℝ}
     (hK0 : 0 ≤ K0) (hK1 : 0 ≤ K1) (hK2 : 0 ≤ K2)
@@ -62,8 +51,6 @@ theorem total_curvature_integral_of_regularized_bound {K0 K1 K2 : ℝ}
   exact intervalIntegral.sub_le_integral_of_hasDeriv_right_of_le hst hRc
     (fun r hr ↦ (hdiff ε hε r (hinterior hr)).hasDerivAt.hasDerivWithinAt)
     hupper.integrableOn_Icc (fun r hr ↦ hbound ε hε r (hinterior hr))
-
-
 
 theorem total_curvature_forward_of_integral_bound {K0 K1 K2 : ℝ}
     (hL : ContinuousOn (m62Length F c) (Set.Icc a b))

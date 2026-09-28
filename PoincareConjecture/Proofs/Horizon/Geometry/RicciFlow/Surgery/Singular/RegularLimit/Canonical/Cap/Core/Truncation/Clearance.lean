@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.NeckBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.RadiusBound
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +42,6 @@ private theorem crossing_frontier {K S : Set M} (hK : IsClosed K)
 
 omit [T2Space M] in
 
-
 theorem calibrated_radius_lt_two_mul_of_scalar_in_ball (C : CapCertificate g)
     {p z : M} {r s : ℝ} (hr : 0 < r) (hs : 0 < s)
     (hball : g.ball p r ⊆ C.carrier)
@@ -64,9 +61,6 @@ theorem calibrated_radius_lt_two_mul_of_scalar_in_ball (C : CapCertificate g)
   have hcancel : s ^ 2 * r⁻¹ ^ 2 * r ^ 2 = s ^ 2 := by field_simp
   rw [hcancel] at hmul
   nlinarith
-
-
-
 
 theorem calibrated_ball_truncated_clearance (C : CapCertificate g)
     (hinterior : interior (C.closed_core ∪ closure (C.end_neck.region (-C.epsilon⁻¹) 0)) =
@@ -170,8 +164,6 @@ theorem calibrated_ball_truncated_clearance (C : CapCertificate g)
     have htotal := (add_le_add hleft hbuffer).trans_eq (Manifold.pathELength_add ht.1 ht.2)
     rw [← ENNReal.ofReal_add hr.le (by positivity)] at htotal
     exact (not_lt_of_ge htotal) hlength
-
-
 
 theorem exists_calibrated_ball_truncated_clearance_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

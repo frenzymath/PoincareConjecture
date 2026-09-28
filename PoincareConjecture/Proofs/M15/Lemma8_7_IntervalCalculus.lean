@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe v
 
 namespace PoincareConjecture.Proofs.M15
-
-
 
 theorem hasDerivWithinAt_comp_realParam
     {K : SpacetimeInterval}
@@ -45,9 +34,6 @@ theorem hasDerivWithinAt_comp_realParam
     (mfderiv (𝓡∂ 1) 𝓘(ℝ, E) f (D.realParam t.val)
       (mfderivWithin 𝓘(ℝ) (𝓡∂ 1) D.realParam K.domain t.val 1)) K.domain t.val at h
   rwa [D.realParam_mfderivWithin_one, D.realParam_coe] at h
-
-
-
 
 theorem eq_of_mfderiv_positiveTangent_eq_zero_on_Icc
     {K : SpacetimeInterval}

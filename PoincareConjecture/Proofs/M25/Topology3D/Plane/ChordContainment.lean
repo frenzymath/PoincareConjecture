@@ -2,23 +2,11 @@ import Mathlib.Analysis.Normed.Affine.AddTorsor
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_uniform_short_chord_mem_open
     {X E : Type*} [PseudoMetricSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]

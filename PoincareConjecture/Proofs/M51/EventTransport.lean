@@ -8,19 +8,6 @@ import PoincareConjecture.Proofs.M48.StaticNeck
 import PoincareConjecture.Proofs.M48.StaticCap
 import PoincareConjecture.Proofs.M48.StaticComponents
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +21,6 @@ namespace PoincareConjecture
 namespace M51EventTransport
 
 variable {A B C D : GeneralizedSliceCarrier.{u}}
-
-
-
-
 
 noncomputable def region
     {U : Set A.carrier} {V : Set B.carrier}
@@ -70,7 +53,6 @@ noncomputable def region
   inverse_smooth := p.symm.contMDiff.comp_contMDiffOn
     (r.inverse_smooth.comp q.symm.contMDiff.contMDiffOn (fun _ hx => hx))
 
-
 @[simp] theorem region_map
     {U : Set A.carrier} {V : Set B.carrier}
     (r : SurgeryRegionEquivalence A B U V)
@@ -78,7 +60,6 @@ noncomputable def region
     (q : Diffeomorph (𝓡 3) (𝓡 3) B.carrier D.carrier ∞)
     (x : C.carrier) :
     (region r p q).map x = q (r.map (p x)) := rfl
-
 
 @[simp] theorem region_inverse
     {U : Set A.carrier} {V : Set B.carrier}
@@ -96,14 +77,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice slice' : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier}
     {metric' : ∀ t, RiemannianMetric 3 (slice' t).carrier} {T : ℝ}
-
-
-
-
-
-
-
-
 
 noncomputable def transport
     (E : SurgeryEventData g₀ K P slice metric T)

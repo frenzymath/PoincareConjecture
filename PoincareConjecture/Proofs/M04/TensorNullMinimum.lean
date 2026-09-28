@@ -6,13 +6,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.LinearAlgebra.BilinearForm.Properties
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -353,4 +346,3 @@ theorem tensorLaplacian_nonneg_at_null (D : LeviCivitaData g)
   exact Finset.sum_nonneg fun i _ ↦ hsecond (g.orthonormalBasis x i)
 
 end PoincareConjecture.M04
-

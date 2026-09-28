@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_FieldRealization
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexAffine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
 
 theorem secondVariationIndexDensity_eq_of_field
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)
@@ -42,8 +32,6 @@ theorem secondVariationIndexDensity_eq_of_field
   rw [secondVariationIndexDensity_eq_pair R V D]
   simp only [pullbackIndexPairDensity, hfield s hs, hd]
 
-
-
 theorem secondVariationIndexForm_eq_of_field
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)
     {Y : ∀ s, G.Horizontal (R.curve s)}
@@ -54,9 +42,6 @@ theorem secondVariationIndexForm_eq_of_field
   apply intervalIntegral.integral_congr_Ioo_of_le (Real.sqrt_le_sqrt p.tau_lt.le)
   intro s hs
   exact secondVariationIndexDensity_eq_of_field V D EY hfield (Ioo_subset_Icc_self hs)
-
-
-
 
 theorem pullback_index_form_nonneg
     (hCoordinates : M12MetricPredecessors.{0} n)

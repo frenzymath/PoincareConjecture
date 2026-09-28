@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Centered
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -21,8 +13,6 @@ local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem zeroSphere_eq_of_positive_side (c : ℝ)
     (hc : c ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -67,8 +57,6 @@ theorem zeroSphere_eq_of_positive_side (c : ℝ)
     have hpair : (p.1, 0) = p := Prod.ext rfl hp.symm
     change (T (p.1, 0) : M) = N.coordinate_map (q, c)
     rw [hpair, ← he, hep, hKzero]
-
-
 
 theorem zeroSphere_eq_of_positive_tail [T2Space M] (U : Opens M) (c : ℝ)
     (hc : c ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ConjugatingFlowFamilyNative
 import Mathlib.Geometry.Manifold.IntegralCurve.Transform
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set
@@ -80,7 +71,6 @@ private theorem autonomous_flow_reverse_smooth
         (fun t : ℝ => -t) := contDiff_neg.contMDiff
     exact (htime.comp contMDiff_fst).prodMk contMDiff_snd
   exact F.smooth.comp hneg
-
 
 noncomputable def autonomousDiffeomorphFamily
     (V : (x : M) → TangentSpace I x) (F : Data V) :

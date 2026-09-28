@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackReparametrization
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y Z H : ∀ s, G.Horizontal (γ s)}
-
-
-
 
 noncomputable def affinePullbackExtension (EY : M14PullbackExtension G γ J Y)
     (EZ : M14PullbackExtension G γ J Z) (c : ℝ) :
@@ -87,9 +74,6 @@ noncomputable def affinePullbackExtension (EY : M14PullbackExtension G γ J Y)
     exact horizontal_parameter_hasDerivAt_of_contMDiffAt W s (γ s)
       ((hW _ (hgraph s hs)).contMDiffAt (hU.mem_nhds (hgraph s hs)))
 
-
-
-
 theorem horizontalCovariantDerivative_affine
     (EY : M14PullbackExtension G γ J Y) (EZ : M14PullbackExtension G γ J Z) (c : ℝ)
     {s : ℝ} (hs : s ∈ J) :
@@ -127,9 +111,6 @@ theorem horizontalCovariantDerivative_affine
   rw [hd, hadd]
   simp only [M14HorizontalCovariantDerivative, add_apply, smul_apply, smul_add]
   abel
-
-
-
 
 theorem horizontalCovariantDerivative_affine_congr
     (EY : M14PullbackExtension G γ J Y) (EZ : M14PullbackExtension G γ J Z)

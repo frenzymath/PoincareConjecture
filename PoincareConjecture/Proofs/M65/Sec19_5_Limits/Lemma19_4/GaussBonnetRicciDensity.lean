@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.IntrinsicRicciTrac
 import PoincareConjecture.Proofs.M04.CurvatureCalculus
 import PoincareConjecture.Proofs.M04.CurvatureEnergyBochner
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +18,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
 
 theorem interior_areaGram (S : M65MinimalDisk g connection gamma)
     {z : LoopPlane} (hz : z ∈ ball (0 : LoopPlane) 1) :
@@ -74,9 +60,6 @@ private theorem interior_ricci_continuousOn (S : M65MinimalDisk g connection gam
   exact hh.continuousAt.continuousWithinAt
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem gaussContraction_integrable (S : M65MinimalDisk g connection gamma) :
     IntegrableOn (fun z => m65PlaneRicciTraceDensity connection S.disk.map z -

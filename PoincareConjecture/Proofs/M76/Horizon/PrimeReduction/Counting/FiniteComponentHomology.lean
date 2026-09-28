@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.FiniteCompl
 import Mathlib.Algebra.Category.ModuleCat.Products
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -93,7 +84,6 @@ theorem finrank_components [Fintype V] (n : ℕ)
 end PoincareConjecture.M76.FiniteComponentHomology
 
 namespace PoincareConjecture.M76
-
 
 theorem PLDomain.finrank_disjoint_components
     {X V : Type u} {ι : Type v} [TopologicalSpace X] [T2Space X] [Fintype V]

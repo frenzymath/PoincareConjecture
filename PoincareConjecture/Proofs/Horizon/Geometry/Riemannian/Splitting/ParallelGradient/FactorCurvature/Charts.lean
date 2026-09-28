@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.CoordinateField
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -42,9 +34,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 (n + 1)) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric (n + 1) M} {h : RiemannianMetric n N}
 
-
-
-
 def TotallyGeodesicAt (g : RiemannianMetric (n + 1) M)
     (h : RiemannianMetric n N) (i : N → M) (y : N) : Prop :=
   let c := extChartAt (𝓡 n) y
@@ -61,9 +50,6 @@ def TotallyGeodesicAt (g : RiemannianMetric (n + 1) M)
     (∀ᶠ a in 𝓝 (c y), ∀ b e, hE.inner a b e =
       gE.inner (F a) (fderiv ℝ F a b) (fderiv ℝ F a e)) ∧
     ∀ u v, secondFundamentalForm DE DhE F (c y) u v = 0
-
-
-
 
 theorem totallyGeodesic_and_curvatureTensor_of_orthogonal_parallel_gradient
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.SurgeryTransitionGeometry
 import PoincareConjecture.Proofs.M36.ConformalAbsorption
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -229,10 +220,6 @@ theorem exists_surgeryTransition_curvature (q : ℝ) (hq : 8 ≤ q) :
   · intro hy1
     exact hposTransport (hnormal.2.2.2 hy1)
 
-
-
-
-
 theorem surgeryPreconformalMetric_collar_curvature (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹)
     (eta : ℝ) (heta : 0 < eta)
@@ -294,10 +281,6 @@ theorem surgeryPreconformalMetric_collar_curvature (g₀ : StandardInitialMetric
     (Real.sqrt_pos.mpr hlambda).ne' (Real.sqrt_pos.mpr hlambda).ne'] at hsec
   rw [sectionalCurvature_eq_of_local_isometry DJ DN hU hT hmetric hy, hsec]
   exact mul_pos (inv_pos.mpr hlambda) (hpositive _ _ hpair')
-
-
-
-
 
 theorem surgeryMetric_scalar_retained (g₀ : StandardInitialMetric) (N : EpsilonNeck g)
     (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)

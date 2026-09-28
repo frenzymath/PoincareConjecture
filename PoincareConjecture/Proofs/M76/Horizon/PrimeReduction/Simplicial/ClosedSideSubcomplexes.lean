@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PuncturedSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexIntrinsicInterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -96,7 +86,6 @@ theorem exists_closed_side_subcomplexes
     · exact fun hs => ⟨hLP hs, hLM hs⟩
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem full_of_closed_side_partition
     (K L P M : SimplicialComplex ℝ E) (hLP : L ≤ P)

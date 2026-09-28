@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeBranchInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_model_interval_parameters
     {V E X : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -74,4 +64,3 @@ theorem exists_model_interval_parameters
         ((hgb 1).symm ▸ (hboundary 1).mpr (Or.inr rfl))⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Range
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Side
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +16,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
 open Reverse
-
-
-
-
 
 theorem exists_supported_nested_boundary_replacement
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -80,9 +61,6 @@ theorem exists_supported_nested_boundary_replacement
         image_sdiff F.injective _ _
       _ = (L '' sphere (0 : E3) 1) \ (g '' ball (0 : E2) 1) := by
         rw [image_filled_sphere_of_image_filled_ball F B L hFL, hFD]
-
-
-
 
 theorem exists_supported_boundary_replacement_of_local_inclusion
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -167,8 +145,6 @@ theorem exists_supported_boundary_replacement_of_local_inclusion
         image_sdiff G.injective _ _
       _ = (L '' sphere (0 : E3) 1) \ (g '' ball (0 : E2) 1) := by
         rw [image_filled_sphere_of_image_filled_ball G B L hGB, hGD]
-
-
 
 theorem exists_supported_boundary_replacement_of_shared_exterior
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

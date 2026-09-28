@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Graph
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
@@ -17,9 +8,6 @@ open AddCircle MeasureTheory
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem periodicH2_secondDerivativeLp_eq
     (u : lp (fun _ : ℤ => ℂ) 2) (g : C(AddCircle L, ℂ))

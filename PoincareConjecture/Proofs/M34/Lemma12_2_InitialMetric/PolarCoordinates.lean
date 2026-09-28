@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Completeness
 import PoincareConjecture.Proofs.M34.Mathlib.SphereRegularity
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,12 +9,8 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def capNorthPole : UnitTwoSphere :=
   ⟨EuclideanSpace.single 0 1, by simp⟩
-
-
 
 noncomputable def capDirection (x : StandardCapSpace) : UnitTwoSphere := by
   classical
@@ -32,13 +19,9 @@ noncomputable def capDirection (x : StandardCapSpace) : UnitTwoSphere := by
       rw [Metric.mem_sphere, dist_zero_right, norm_smul, Real.norm_eq_abs,
         abs_inv, abs_of_nonneg (norm_nonneg x), inv_mul_cancel₀ (norm_ne_zero_iff.mpr hx)]⟩
 
-
-
 theorem capDirection_coe {x : StandardCapSpace} (hx : x ≠ 0) :
     (capDirection x : StandardCapSpace) = ‖x‖⁻¹ • x := by
   simp only [capDirection, dif_neg hx]
-
-
 
 theorem capDirection_smul {r : ℝ} (hr : 0 < r) (u : UnitTwoSphere) :
     capDirection (r • (u : StandardCapSpace)) = u := by
@@ -49,24 +32,16 @@ theorem capDirection_smul {r : ℝ} (hr : 0 < r) (u : UnitTwoSphere) :
   apply Subtype.ext
   rw [capDirection_coe hx, hn, smul_smul, inv_mul_cancel₀ hr.ne', one_smul]
 
-
-
 noncomputable def capCylinderCoordinate (R : ℝ) (z : StandardCylinderSpace) :
     StandardCapSpace := (R + z.2) • (z.1 : StandardCapSpace)
 
-
-
 noncomputable def capCylinderInverse (R : ℝ) (x : StandardCapSpace) :
     StandardCylinderSpace := (capDirection x, ‖x‖ - R)
-
-
 
 theorem capCylinderCoordinate_norm (R : ℝ) (z : StandardCylinderSpace)
     (hz : 0 < R + z.2) : ‖capCylinderCoordinate R z‖ = R + z.2 := by
   rw [capCylinderCoordinate, norm_smul, Real.norm_eq_abs, abs_of_pos hz,
     norm_eq_of_mem_sphere z.1, mul_one]
-
-
 
 theorem capCylinderInverse_coordinate (R : ℝ) (z : StandardCylinderSpace)
     (hz : 0 < R + z.2) : capCylinderInverse R (capCylinderCoordinate R z) = z := by
@@ -76,15 +51,11 @@ theorem capCylinderInverse_coordinate (R : ℝ) (z : StandardCylinderSpace)
     rw [capCylinderCoordinate_norm R z hz]
     ring
 
-
-
 theorem capCylinderCoordinate_inverse (R : ℝ) {x : StandardCapSpace} (hx : x ≠ 0) :
     capCylinderCoordinate R (capCylinderInverse R x) = x := by
   change (R + (‖x‖ - R)) • (capDirection x : StandardCapSpace) = x
   rw [capDirection_coe hx, show R + (‖x‖ - R) = ‖x‖ by ring,
     smul_smul, mul_inv_cancel₀ (norm_ne_zero_iff.mpr hx), one_smul]
-
-
 
 theorem capCylinderCoordinate_image {R : ℝ} (hR : 0 < R) :
     capCylinderCoordinate R '' (univ ×ˢ Ici (0 : ℝ)) =
@@ -101,15 +72,11 @@ theorem capCylinderCoordinate_image {R : ℝ} (hR : 0 < R) :
     change 0 ≤ ‖x‖ - R
     exact sub_nonneg.mpr hx
 
-
-
 theorem capCylinderCoordinate_contMDiff (R : ℝ) :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (capCylinderCoordinate R) := by
   have : Fact (Module.finrank ℝ StandardCapSpace = 2 + 1) := ⟨by simp [StandardCapSpace]⟩
   exact (contMDiff_const.add contMDiff_snd).smul
     (contMDiff_coe_sphere.comp contMDiff_fst)
-
-
 
 theorem capDirection_contMDiffAt {x : StandardCapSpace} (hx : x ≠ 0) :
     ContMDiffAt (𝓡 3) (𝓡 2) ∞ capDirection x := by
@@ -120,8 +87,6 @@ theorem capDirection_contMDiffAt {x : StandardCapSpace} (hx : x ≠ 0) :
     contDiffAt_id).congr_of_eventuallyEq
   filter_upwards [eventually_ne_nhds hx] with y hy
   exact capDirection_coe hy
-
-
 
 theorem capCylinderInverse_contMDiffAt (R : ℝ) {x : StandardCapSpace} (hx : x ≠ 0) :
     ContMDiffAt (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (capCylinderInverse R) x := by

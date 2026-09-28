@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M27ProductModels
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,20 +12,16 @@ namespace PoincareConjecture.M47
 
 variable {X : Type*} [TopologicalSpace X]
 
-
 def limitRP2CompactCollar (h : X ≃ₜ (RealProjectiveTwo × ℝ)) : Set X :=
   h.symm '' ((univ : Set RealProjectiveTwo) ×ˢ Icc (-2 : ℝ) 2)
-
 
 def limitRP2InnerCollar (h : X ≃ₜ (RealProjectiveTwo × ℝ))
     (p : RealProjectiveTwo × Ioo (-1 : ℝ) 1) : X :=
   h.symm (p.1, p.2.val)
 
-
 theorem limitRP2CompactCollar_isCompact (h : X ≃ₜ (RealProjectiveTwo × ℝ)) :
     IsCompact (limitRP2CompactCollar h) := by
   exact (isCompact_univ.prod isCompact_Icc).image h.symm.continuous
-
 
 theorem limitRP2InnerCollar_isOpenEmbedding
     (h : X ≃ₜ (RealProjectiveTwo × ℝ)) :
@@ -42,15 +29,12 @@ theorem limitRP2InnerCollar_isOpenEmbedding
   exact h.symm.isOpenEmbedding.comp
     (Topology.IsOpenEmbedding.id.prodMap isOpen_Ioo.isOpenEmbedding_subtypeVal)
 
-
 theorem limitRP2InnerCollar_mem_compact
     (h : X ≃ₜ (RealProjectiveTwo × ℝ))
     (p : RealProjectiveTwo × Ioo (-1 : ℝ) 1) :
     limitRP2InnerCollar h p ∈ limitRP2CompactCollar h := by
   refine ⟨(p.1, p.2.val), ⟨mem_univ _, ?_⟩, rfl⟩
   constructor <;> linarith [p.2.property.1, p.2.property.2]
-
-
 
 theorem limitRP2InnerCollar_isOpenEmbedding_codRestrict
     (h : X ≃ₜ (RealProjectiveTwo × ℝ)) {U : Set X} (hU : IsOpen U)
@@ -60,8 +44,6 @@ theorem limitRP2InnerCollar_isOpenEmbedding_codRestrict
         hcover (limitRP2InnerCollar_mem_compact h p)⟩ : U)) := by
   exact Topology.IsOpenEmbedding.of_comp _ hU.isOpenEmbedding_subtypeVal
     (limitRP2InnerCollar_isOpenEmbedding h)
-
-
 
 theorem limitRP2_eventually_compact_subset {J : Set ℝ}
     {L : BlowupLimitFlow.{u} J} (E : BlowupExhaustion L)
@@ -73,7 +55,6 @@ theorem limitRP2_eventually_compact_subset {J : Set ℝ}
       exact ⟨max i j, E.space_increasing (le_max_left _ _),
         E.space_increasing (le_max_right _ _)⟩)
   exact eventually_atTop.2 ⟨k, fun j hj => hk.trans (E.space_increasing hj)⟩
-
 
 theorem limitRP2_compactCollar_subset_domain {J : Set ℝ}
     {L : BlowupLimitFlow.{u} J} (E : BlowupExhaustion L)

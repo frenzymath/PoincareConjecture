@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 open scoped Pointwise
 
 namespace Set
-
-
 
 theorem isFinitePLBallPair_coordinate_cube {ι : Type*} [Fintype ι]
     {r : ℝ} (hr : 0 < r) :

@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Coordinates.Jets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -57,8 +47,6 @@ private theorem referenceChart_isLocalDiffeomorphAt
       modelWithCornersSelf_coe_symm, preimage_id, range_id, inter_univ] using hx
   exact d.symm.isLocalDiffeomorphAt (𝓡 3) (𝓡 3) ∞ hxd
 
-
-
 theorem exists_pos_eventually_embedding_image_subset_terminalBall
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcomplete : G.limitCarrier.metricComplete (G.limitFlow.metric 0))
@@ -87,8 +75,6 @@ theorem exists_pos_eventually_embedding_image_subset_terminalBall
     (S.term (G.subsequence k)).flow (0 - 1) 0 (by norm_num) le_rfl
     (S.term (G.subsequence k)).base R hx'
 
-
-
 theorem exists_pos_eventually_embedding_curvatureDerivativeNorm_le
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -102,8 +88,6 @@ theorem exists_pos_eventually_embedding_curvatureDerivativeNorm_le
   obtain ⟨D, hD, hbound⟩ := S.allTime_curvatureDerivativeNorm_le P hcontrol R hR m
   exact ⟨D, hD, himage.mono fun k hk t ht x hx =>
     hbound (G.subsequence k) t ht _ (hk (mem_image_of_mem _ hx))⟩
-
-
 
 theorem eventually_embedding_chart_isLocalDiffeomorphAt
     (q : G.limitCarrier.carrier) {K : Set (EuclideanSpace ℝ (Fin 3))}
@@ -121,8 +105,6 @@ theorem eventually_embedding_chart_isLocalDiffeomorphAt
     ⟨(extChartAt (𝓡 3) q).symm x, hmono hk (hj (mem_image_of_mem _ hx))⟩
   exact (S.referenceChart_isLocalDiffeomorphAt G q (hKc hx)).comp
     (𝓡 3) (S.term (G.subsequence k)).carrier.carrier he
-
-
 
 theorem embedding_coordinateCoefficient_eq_pullbackCoefficients
     (q : G.limitCarrier.carrier) (k : ℕ) (t : ℝ)
@@ -155,8 +137,6 @@ theorem embedding_coordinateCoefficient_eq_pullbackCoefficients
   unfold RiemannianMetric.pullbackCoefficients
   erw [hd]
   rfl
-
-
 
 theorem tendstoUniformlyOn_embedding_coordinate_metricJet
     (q : G.limitCarrier.carrier) (r : ℕ) (a b : Fin 3)
@@ -211,8 +191,6 @@ theorem exists_bilinear_jet_norm_le_components
   have hinner (a : Fin 3) : ‖Q v (b a)‖ ≤ D₂ * (B * ∏ i, ‖v i‖) :=
     h₂ (by positivity) (hc a)
   simpa only [mul_assoc] using h₁ (by positivity) hinner
-
-
 
 theorem exists_eventually_embedding_reference_metric_jet_bound
     (q : G.limitCarrier.carrier) {K : Set (EuclideanSpace ℝ (Fin 3))}
@@ -301,8 +279,6 @@ theorem exists_eventually_embedding_reference_metric_jet_bound
     (by exact_mod_cast le_top : (m : ℕ∞ω) ≤ ∞)] at hderiv
   exact (hderiv ▸ hk a b x hx).trans (hBC a b)
 
-
-
 theorem exists_eventually_embedding_reference_ellipticity
     (q : G.limitCarrier.carrier) {K : Set (EuclideanSpace ℝ (Fin 3))}
     (hK : IsCompact K) (hKc : K ⊆ (extChartAt (𝓡 3) q).target) :
@@ -382,8 +358,6 @@ theorem exists_eventually_embedding_reference_ellipticity
   · nlinarith [hlower x hx v]
   · nlinarith
 
-
-
 theorem exists_eventually_embedding_closed_ellipticity
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -455,9 +429,6 @@ theorem exists_eventually_embedding_closed_ellipticity
       _ ≤ Real.exp (2 * D * d) * (β * ‖v‖ ^ 2) :=
         mul_le_mul_of_nonneg_left hreference.2 (Real.exp_nonneg _)
       _ = (Real.exp (2 * D * d) * β) * ‖v‖ ^ 2 := (mul_assoc _ _ _).symm
-
-
-
 
 theorem exists_eventually_embedding_closed_spatial_jet_bound
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -574,8 +545,6 @@ theorem exists_eventually_embedding_closed_spatial_jet_bound
         constructor <;> linarith [ht.1, ht.2]
       · exact (hprev t ht x hx j (by omega)).trans (le_max_left B E)
 
-
-
 theorem exists_eventually_embedding_open_spacetime_jet_bound
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -659,8 +628,6 @@ theorem exists_eventually_embedding_open_spacetime_jet_bound
   filter_upwards [hbound, eventually_ge_atTop j] with k hk hjk t ht x hx
   exact hk (t, x) ⟨ht, hx, hKc hx, hmono hjk (hj (mem_image_of_mem _ hx))⟩
 
-
-
 theorem eventually_embedding_contDiffOn_terminal
     (q : G.limitCarrier.carrier) {x₀ : EuclideanSpace ℝ (Fin 3)} {ρ : ℝ}
     (hchart : Metric.closedBall x₀ ρ ⊆ (extChartAt (𝓡 3) q).target) :
@@ -686,9 +653,6 @@ theorem eventually_embedding_contDiffOn_terminal
       (G.embedding_smooth k ⟨_, hx.2⟩)).contMDiffAt.contMDiffWithinAt
   exact ((S.term (G.subsequence k)).flow.flow.contDiffOn_pullbackCoefficients_within hU he).mono
     (prod_mono subset_rfl fun x hx => ⟨hchart hx, hmono hjk (hj (mem_image_of_mem _ hx))⟩)
-
-
-
 
 theorem exists_eventually_embedding_terminal_jet_bound
     (P : M23NormalizedKappaCompactnessPredecessors)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexLinearInjectivity
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +17,6 @@ private theorem image_convexHull_linear (Q : E →L[ℝ] F) (s : Set E) :
   simpa only [LinearMap.coe_toAffineMap, ContinuousLinearMap.coe_coe] using
     Q.toLinearMap.toAffineMap.image_convexHull s
 
-
-
 theorem affineIndependent_image_face (Q : E →L[ℝ] F) (hinj : InjOn Q K.space)
     {s : Finset E} (hs : s ∈ K.faces) :
     AffineIndependent ℝ ((↑) : ↥(Q '' (s : Set E)) → F) := by
@@ -42,9 +31,6 @@ theorem affineIndependent_image_face (Q : E →L[ℝ] F) (hinj : InjOn Q K.space
   change AffineIndependent ℝ ((↑) : range (Q ∘ ((↑) : s → E)) → F) at h'
   rw [he] at h'
   exact h'
-
-
-
 
 noncomputable def embeddedLinearImage (K : SimplicialComplex ℝ E)
     (Q : E →L[ℝ] F) (hinj : InjOn Q K.space) : SimplicialComplex ℝ F := by
@@ -71,8 +57,6 @@ noncomputable def embeddedLinearImage (K : SimplicialComplex ℝ E)
     rintro _ ⟨v, hv, rfl⟩
     exact ⟨mem_image_of_mem Q hv.1, mem_image_of_mem Q hv.2⟩
 
-
-
 theorem embeddedLinearImage_faces [DecidableEq F]
     (Q : E →L[ℝ] F) (hinj : InjOn Q K.space) :
     (K.embeddedLinearImage Q hinj).faces =
@@ -83,8 +67,6 @@ theorem embeddedLinearImage_faces [DecidableEq F]
   funext s
   ext y
   simp only [Finset.mem_image]
-
-
 
 theorem embeddedLinearImage_space (Q : E →L[ℝ] F) (hinj : InjOn Q K.space) :
     (K.embeddedLinearImage Q hinj).space = Q '' K.space := by

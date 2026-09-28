@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.RicciPairRegularity
 import PoincareConjecture.Proofs.M03.ConnectionDifference
 import PoincareConjecture.Proofs.M03.ConnectionRateEnergyAlgebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 

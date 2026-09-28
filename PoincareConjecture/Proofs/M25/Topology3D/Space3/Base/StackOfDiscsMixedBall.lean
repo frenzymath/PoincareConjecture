@@ -4,21 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorseCap
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsBallModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_ball_of_morse_disc_and_saved_cap
     (hP : PlanarSchoenfliesService)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M47.PositiveHistoryOrdinary
 import PoincareConjecture.Proofs.M47.PositiveHistoryComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_component_history_of_positive_test_line
     (hC : RicciFlowCurvatureTheory.{u}) {F : SurgeryFlowData.{u}} {J : Set ℝ}
@@ -89,8 +77,6 @@ theorem exists_component_history_of_positive_test_line
   intro s hs
   apply M46.positive_component_cylinder_line e hxU ⟨le_rfl, ha.le⟩ hs hs.1
   rwa [hagree a ⟨le_rfl, ha.le⟩ (hI ⟨le_rfl, ha.le⟩)]
-
-
 
 theorem exists_ordinary_history_of_positive_test_line
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {J : Set ℝ}

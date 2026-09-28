@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementInteg
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,9 +20,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
 namespace M64ObservedWeakAnnulus
-
-
-
 
 theorem vertical_boundary_pairing_coordinate
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -71,9 +57,6 @@ theorem vertical_boundary_pairing_coordinate
     ← (EuclideanSpace.proj (𝕜 := ℝ) b).integral_comp_comm hri] at hh
   simpa only [EuclideanSpace.coe_proj, Function.comp_apply, PiLp.smul_apply,
     smul_eq_mul, ← sq, phi, d] using hh
-
-
-
 
 theorem boundary_coordinate_sq_le_vertical_column
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -121,8 +104,6 @@ theorem boundary_coordinate_sq_le_vertical_column
   change (∫ x in Icc (0 : ℝ) curvePeriod, d x b ^ 2) ≤ _
   linarith
 
-
-
 theorem boundary_observed_sq_le_vertical_column
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (hd : ContDiff ℝ 1 (fun x => e (c1 x) - e (c0 x))) :
@@ -138,9 +119,6 @@ theorem boundary_observed_sq_le_vertical_column
   rw [integral_finsetSum _ (fun b _ => hleft b),
     integral_finsetSum _ (fun b _ => hright b)]
   exact Finset.sum_le_sum fun b _ => A.boundary_coordinate_sq_le_vertical_column hd b
-
-
-
 
 theorem weightedEnergy_ge_vertical_boundary
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

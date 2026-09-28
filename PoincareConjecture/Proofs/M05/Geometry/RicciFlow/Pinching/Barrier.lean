@@ -1,19 +1,9 @@
-
 import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -141,7 +131,6 @@ theorem strictMonoOn_logBarrier {t : ℝ} (ht : 0 ≤ t) :
 
 def scalarRegion (t : ℝ) : Set (ℝ × ℝ) :=
   {p | -3 / (1 + t) ≤ p.1 ∧ (cutoff t ≤ p.2 → logBarrier t p.2 ≤ p.1)}
-
 
 noncomputable def clippedBarrier (t X : ℝ) : ℝ :=
   logBarrier t (max (cutoff t) X)

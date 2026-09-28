@@ -4,14 +4,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Topology.Algebra.GroupWithZero
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 
@@ -34,8 +26,6 @@ theorem isLocalHomeomorph_signed_circle (p : ℝ) (theta : AddCircle p)
     IsLocalHomeomorph (fun t : ℝ => theta + ((sigma * t : ℝ) : AddCircle p)) := by
   exact (Homeomorph.addLeft theta).isLocalHomeomorph.comp
     ((AddCircle.isLocalHomeomorph_coe p).comp (Homeomorph.mulLeft₀ sigma hsigma).isLocalHomeomorph)
-
-
 
 theorem isLocalHomeomorphOn_of_fiberwise_covering
     {E X Y T : Type*} [TopologicalSpace E] [TopologicalSpace X]

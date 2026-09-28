@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Ope
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.CanonicalNeighborhood
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -54,7 +45,6 @@ theorem comparisonTensorComponent_contDiff {k : ℕ}
     rw [Bundle.contMDiffAt_totalSpace]
     exact ⟨contMDiffAt_id, by simpa using contMDiffAt_const (c := e (a i))⟩)
   exact contMDiff_iff_contDiff.mp (contMDiffOn_univ.mp hc)
-
 
 theorem comparisonTensorComponent_covariant {g : RiemannianMetric 3 E}
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation 3 E k}
@@ -124,7 +114,6 @@ theorem exists_comparisonChristoffel_jet_bound (g : RiemannianMetric 3 E)
     Finset.single_le_sum (fun _ _ => Finset.sum_nonneg (fun _ _ =>
       Finset.sum_nonneg (fun _ _ => le_max_right _ _))) (Finset.mem_univ a)
   exact (hc.trans (hb.trans ha)).trans (by dsimp [G]; linarith)
-
 
 theorem exists_comparisonTensorComponent_iterated_bound
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
@@ -236,7 +225,6 @@ theorem exists_comparisonTensorComponent_iterated_bound
         (hds.of_le (by exact_mod_cast le_top)) (hss.of_le (by exact_mod_cast le_top))]
       exact (norm_sub_le _ _).trans ((add_le_add hderiv hsum).trans_eq (by ring))
 
-
 theorem comparison_covariantTensorDerivative_eventuallyEq
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) {k : ℕ}
     {T S : CovariantTensorEvaluation 3 E k} {x : E} (h : ∀ᶠ y in nhds x, T y = S y) :
@@ -281,7 +269,6 @@ theorem comparison_bilinear_isSmooth {B : E → Bilin} (hB : ContDiff ℝ ∞ B)
       simpa using contMDiffAt_iff_contDiffAt.mp h
     exact (contMDiffAt_iff_contDiffAt.mpr
       ((hB.contDiffAt.clm_apply (hXi 0)).clm_apply (hXi 1))).contMDiffWithinAt
-
 
 theorem exists_comparison_smooth_germ {B : E → Bilin} {U : Set E}
     (hU : IsOpen U) (hB : ContDiffOn ℝ ∞ B U) {x : E} (hx : x ∈ U) :
@@ -399,8 +386,6 @@ theorem exists_comparisonTensor_iterated_norm_bound
     simpa only [norm_iteratedFDeriv_zero, Real.norm_eq_abs] using
       hAbound T hT rho hrho x hx (by simpa only [zero_add] using hbase) a
   simpa only [mul_assoc] using hBbound _ x hx (hTm.1 x) (A * rho) (mul_nonneg hA.le hrho) hc
-
-
 
 theorem exists_comparison_covariant_jet_bound
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g)

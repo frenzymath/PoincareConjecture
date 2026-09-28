@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem LinearMap.mem_base_union_convexJoin_iff (L : E →ₗ[ℝ] ℝ)
     {s b : Set E} (hb : b ⊆ s) (hbne : b.Nonempty)
@@ -54,10 +41,6 @@ theorem LinearMap.mem_base_union_convexJoin_iff (L : E →ₗ[ℝ] ℝ)
 namespace Set
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.convexJoin_zero {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (L : E →ₗ[ℝ] ℝ)

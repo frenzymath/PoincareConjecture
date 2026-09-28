@@ -1,18 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.SmoothTime.ForwardBound
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.SmoothTime.Continuity.Main
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology
 universe u
 namespace PoincareConjecture
-
 
 theorem horizon_m66_smooth_time_theory
     (hM61 : M61RawWidthCore.{u})

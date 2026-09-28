@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ open scoped ContDiff RealInnerProductSpace
 namespace PoincareConjecture.M63
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem curveFootpointResidual_partial_at {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     (z : E) (y : ℝ) :
@@ -55,9 +44,6 @@ theorem curveFootpointResidual_partial_at {r : ℝ → E} (hr : ContDiff ℝ ∞
   change s * _ = _ * s
   exact mul_comm _ _
 
-
-
-
 theorem curveFootpoint_denominator_lower {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     {m M B rho eps x y : ℝ} {z : E}
     (hm : 0 < m) (hM : 0 < M) (_hB : 0 ≤ B) (hrho : 0 < rho) (heps : 0 < eps)
@@ -83,9 +69,6 @@ theorem curveFootpoint_denominator_lower {r : ℝ → E} (hr : ContDiff ℝ ∞ 
   have hsquare : m ^ 2 ≤ ‖deriv r y‖ ^ 2 := by
     nlinarith [hlower y, norm_nonneg (deriv r y)]
   nlinarith
-
-
-
 
 theorem existsUnique_curveFootpoint_near {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
     {m M B rho eps x : ℝ} {z : E}

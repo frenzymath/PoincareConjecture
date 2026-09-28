@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Ci
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def intervalFamilyVelocity (f : Real × Real -> E2) (z : Real × Real) : E2 :=
   deriv (fun s => f (z.1, s)) z.2
 
@@ -25,8 +22,6 @@ theorem contDiff_intervalFamilyVelocity {f : Real × Real -> E2}
       fderiv Real (fun s => f (z.1, s)) z.2) :=
     (hf.comp (contDiff_fst.fst.prodMk contDiff_snd)).fderiv contDiff_snd (by simp)
   exact hA.clm_apply contDiff_const
-
-
 
 def intervalNormalThickening (f : Real × Real -> E2) (z : Real × E2) : E2 :=
   f (z.1, z.2 0) + (z.2 1) • circleQuarterTurn (intervalFamilyVelocity f (z.1, z.2 0))

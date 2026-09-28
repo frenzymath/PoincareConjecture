@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M63.Mathlib.ClassicalPrimitive
 import PoincareConjecture.Proofs.M63.Mathlib.ContinuousPartialDerivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem c2_of_adjacent_closed_intervals
     (F : RicciFlow n M (Icc a b))

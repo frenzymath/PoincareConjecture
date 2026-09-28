@@ -162,5 +162,3 @@ theorem index_pair_zero_of_index_zero (hM04 : RicciFlowCurvatureTheory.{u})
   exact hnonneg
 
 end PoincareConjecture.M08
-
-

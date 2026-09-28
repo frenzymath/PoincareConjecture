@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -15,7 +7,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
 
 structure MarkedResolutionOldEndData {X : Type*} [TopologicalSpace X]
     {Fmark : Set X} {τ : C3 → X} {b : ℝ} {t : unitInterval}
@@ -28,8 +19,6 @@ structure MarkedResolutionOldEndData {X : Type*} [TopologicalSpace X]
     τ ((1 - 2 * (s : ℝ), 1 - 2 * (s : ℝ)), (t : ℝ))
   AR_homotopic : AR.Homotopic (d.ra.symm.trans d.rr)
   CL_homotopic : CL.Homotopic (d.rc.symm.trans d.rl)
-
-
 
 theorem nonempty_marked_resolution_old_end_data
     {X : Type*} [TopologicalSpace X] {Fmark : Set X} (τ : C3 → X)
@@ -105,8 +94,6 @@ theorem nonempty_marked_resolution_old_end_data
     congr 1
     ext <;> simp [AffineMap.lineMap_apply, vsub_eq_sub, vadd_eq_add, smul_eq_mul] <;> ring
 
-
-
 theorem old_resolution_end_word_case_a
     {X : Type*} [TopologicalSpace X] {Fmark : Set X} {τ : C3 → X} {b : ℝ}
     (E0 : MarkedResolutionEndData Fmark τ b 0)
@@ -135,8 +122,6 @@ theorem old_resolution_end_word_case_a
     basedPathWord_trans (p.trans E0.ra) (q.trans E1.rr) (q.trans E1.rl),
     basedPathWord_trans (p.trans E0.ra) (q.trans E1.ra) (q.trans E1.rr)]
   simp only [basedPathWord_symm, har0, hcl0, har1, hcl1, inv_one, mul_one]
-
-
 
 theorem old_resolution_end_word_case_b
     {X : Type*} [TopologicalSpace X] {Fmark : Set X} {τ : C3 → X} {b : ℝ}

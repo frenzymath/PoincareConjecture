@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnularRe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnularDiskRealization
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnularContactAlternatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

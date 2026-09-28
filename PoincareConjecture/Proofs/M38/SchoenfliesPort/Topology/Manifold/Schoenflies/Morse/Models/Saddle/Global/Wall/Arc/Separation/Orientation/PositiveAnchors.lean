@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Anchor.Terminal
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,13 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,8 +23,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_positive_anchor_with_contact_label
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
@@ -80,8 +65,6 @@ theorem exists_positive_anchor_with_contact_label
     (fun j => Or.inl (positiveContact_mem_patchArc e hr htr j 0))
   exact ⟨I i, by simpa only [hlabel] using hI i⟩
 
-
-
 theorem exists_positive_anchor_of_recut_strips
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
     (A : AnnularEndFamily v g B C)
@@ -118,8 +101,6 @@ theorem exists_positive_anchor_of_recut_strips
     apply union_subset_union_right
     apply image_mono
     exact prod_mono (Icc_subset_Icc (hinterval _).1 (hinterval _).2) Subset.rfl
-
-
 
 theorem exists_terminal_positive_anchors
     {f : S2 → E3} (M : SphereMorseReduction f)

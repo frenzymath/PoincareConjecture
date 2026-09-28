@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductFrame
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {circumference : ℝ} {C : CircleGeometry circumference}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem productChartField_bracket (P : CircleProductCharts C n M)
     (p : M) (v w : EuclideanSpace ℝ (Fin n)) (r s : ℝ) (q : P.Point)

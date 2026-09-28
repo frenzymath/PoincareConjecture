@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X] {d b : Set X}
-
-
-
 
 theorem IsFinitePLBallPair.exists_preconnected_sdiff_neighborhood
     (hd : IsFinitePLBallPair E d b) {p : X} (hpd : p ∈ d)

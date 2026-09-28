@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Threshold
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Geodesic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,8 +47,6 @@ theorem hasDerivAt_comp_geodesic {g : RiemannianMetric 3 M}
   change deriv (a ∘ γ) t =
     mvfderiv (𝓡 3) a (γ t) (mfderiv 𝓘(ℝ, ℝ) (𝓡 3) γ t 1) at heq
   rwa [heq] at hfirst
-
-
 
 theorem long_geodesics_are_almost_axial_signed {α : ℝ} (hα : 0 < α) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ < 1 / 2 ∧

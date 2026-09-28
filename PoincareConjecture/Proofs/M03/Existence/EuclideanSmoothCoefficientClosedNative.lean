@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanLocalClosedNative
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.EuclideanDerivativeNative
 variable {n : ℕ}
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 def schwartzMultiplierMeasure (μ : Measure ModelE) (η : 𝓢(ModelE, ℝ)) :
     Lp ℝ 2 μ →L[ℝ] Lp ℝ 2 μ :=
@@ -49,7 +39,6 @@ theorem schwartzMultiplierMeasure_toLp_coe (μ : Measure ModelE) (η : 𝓢(Mode
   rw [hmul, hfval]
 
 variable {iota : Type*} [Fintype iota]
-
 
 theorem local_smoothFirstOrder_limit_zero {U : Set ModelE} (hU : IsOpen U)
     (a : iota → ModelE → ℝ) (ha : ∀ i, ContDiffOn ℝ ∞ (a i) U) (v : iota → ModelE)

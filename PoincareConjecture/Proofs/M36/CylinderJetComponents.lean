@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.CylinderTensorNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators

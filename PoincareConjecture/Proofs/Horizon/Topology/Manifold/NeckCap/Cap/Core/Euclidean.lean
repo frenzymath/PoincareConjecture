@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.ModelCoor
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.FromEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,7 +30,6 @@ private theorem isImage_of_subset_carrier (S : Set M) (hS : S ⊆ C.carrier) :
   apply OpenPartialHomeomorph.IsImage.of_image_eq
   rw [hs, inter_eq_right.mpr hS, ht, univ_inter]
 
-
 theorem closure_image_core : closure (e '' C.core) = e '' C.closed_core := by
   have h := (C.isImage_of_subset_carrier e hs ht C.core C.core_subset_carrier).closure.image_eq
   rw [C.closure_core_eq_closed_core, hs,
@@ -57,14 +45,11 @@ theorem interior_image_closed_core : interior (e '' C.closed_core) = e '' C.core
     inter_eq_right.mpr C.core_subset_carrier, ht, univ_inter] at h
   exact h.symm
 
-
 theorem frontier_image_core : frontier (e '' C.core) = e '' C.boundary_sphere := by
   have h := (C.isImage_of_subset_carrier e hs ht C.core C.core_subset_carrier).frontier.image_eq
   rw [C.frontier_core_eq_boundary, hs,
     inter_eq_right.mpr C.boundary_subset, ht, univ_inter] at h
   exact h.symm
-
-
 
 theorem nonempty_smoothDomain_image_core
     (he : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)
@@ -102,8 +87,6 @@ theorem nonempty_smoothDomain_image_core
     Poincare.Manifold.nonempty_smoothDomain_interior (n := 2) hcompact hconn hemb
 
 omit hs ht
-
-
 
 theorem exists_euclidean_core_coordinates (hkind : C.model_kind = .euclidean) :
     ∃ e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)),

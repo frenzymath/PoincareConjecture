@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.WithinInverseSmooth
 import PoincareConjecture.Proofs.M14.Mathlib.TimePreservingHomeomorph
 import PoincareConjecture.Proofs.M14.Mathlib.ConvexLinearApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,11 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
-
-
 
 theorem exists_timePreserving_relative_inverse
     {f : E × ℝ → F × ℝ} {S : Set (E × ℝ)}
@@ -74,9 +59,6 @@ theorem exists_timePreserving_relative_inverse
     exact hinv z hz
 
 omit [NormedSpace ℝ E] [NormedSpace ℝ F] [FiniteDimensional ℝ F] in
-
-
-
 
 theorem timePreserving_image_inter (g : (E × ℝ) ≃ₜ (F × ℝ))
     (hgt : ∀ z, (g z).2 = z.2) (U : Set (E × ℝ)) (C : Set ℝ) :

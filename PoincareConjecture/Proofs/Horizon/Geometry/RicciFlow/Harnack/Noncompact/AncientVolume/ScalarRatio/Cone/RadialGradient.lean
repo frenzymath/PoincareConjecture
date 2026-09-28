@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Symmetry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -63,8 +50,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hasDerivAt_deriv_comp_geodesic
     (D : LeviCivitaData g) {f : M → ℝ} {γ : ℝ → M} {s : Set ℝ}
@@ -153,8 +138,6 @@ private theorem hessian_diagonal_of_unit_geodesic_quadratic
     · exact (g.pos (γ 0) v hv0).le
   simpa only [RiemannianMetric.tangentNorm, Real.sq_sqrt hnonneg] using h
 
-
-
 theorem hessian_eq_metric_of_geodesic_quadratic
     (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -195,8 +178,6 @@ theorem hessian_eq_metric_of_geodesic_quadratic
     add_apply] at hsum hu hv hs ⊢
   linarith
 
-
-
 theorem gradient_homothetic_of_geodesic_quadratic
     (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -218,8 +199,6 @@ end PoincareConjecture.LeviCivitaData
 namespace PoincareConjecture.RicciFlow
 
 universe u
-
-
 
 theorem curvatureTensorNorm_eq_zero_of_terminal_geodesic_quadratic
     {n : ℕ} {M : Type u} [TopologicalSpace M]

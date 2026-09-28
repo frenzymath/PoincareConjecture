@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -420,4 +413,3 @@ theorem second_covariantTensorDerivative_pairedProduct (D : LeviCivitaData g) {r
   linear_combination hprodDir - hprodCov
 
 end PoincareConjecture.M04
-

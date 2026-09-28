@@ -6,14 +6,6 @@ import Mathlib.LinearAlgebra.BilinearForm.Hom
 import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -337,4 +329,3 @@ theorem ricciReaction_nonneg_of_nonnegativeRicciAt_null
       (by simpa only [zero_mul, add_zero] using hu)
 
 end PoincareConjecture.M04
-

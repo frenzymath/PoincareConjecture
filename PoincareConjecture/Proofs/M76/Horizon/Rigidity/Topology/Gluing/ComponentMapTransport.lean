@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.TransportGauge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,7 +23,6 @@ noncomputable def imageComponentTail (f : C(X, Y)) (c : ZerothHomotopy X) :
   componentTails (imageComponent f c) (f c.out)
     ((joined_component_out_iff _ _).mpr rfl)
 
-
 noncomputable def componentMapHom (f : C(X, Y)) (c : ZerothHomotopy X) :
     ComponentGroup X c →* ComponentGroup Y (imageComponent f c) :=
   mappedLoopHom f c.out (imageComponentTail f c)
@@ -41,7 +31,6 @@ theorem componentMapHom_injective (f : C(X, Y)) (c : ZerothHomotopy X)
     (hf : Function.Injective (FundamentalGroup.map f c.out)) :
     Function.Injective (componentMapHom f c) :=
   mappedLoopHom_injective f c.out (imageComponentTail f c) hf
-
 
 noncomputable def componentMapGauge (f : C(X, Y)) (c : ZerothHomotopy X)
     (x : X) (hx : Joined c.out x) : ComponentGroup Y (imageComponent f c) :=
@@ -68,7 +57,6 @@ theorem componentTransport_map_gauge (f : C(X, Y)) (p : C(unitInterval, X))
     (componentTails (imageComponent f c) (f (p 1)) hY₁) (mk p.toPath)
 
 open Classical in
-
 
 theorem componentTransport_map_eq_single (f : C(X, Y)) (p : C(unitInterval, X))
     (c : ZerothHomotopy X) (h₀ : Joined c.out (p 0)) (h₁ : Joined c.out (p 1)) :

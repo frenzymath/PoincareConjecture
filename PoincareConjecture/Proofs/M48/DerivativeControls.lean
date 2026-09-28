@@ -1,18 +1,10 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
 
 theorem SurgeryScalarDerivativeControlOn.restrict
     {F : SurgeryFlowData.{u}} {J J' : Set ℝ} {r C : ℝ}
@@ -20,8 +12,6 @@ theorem SurgeryScalarDerivativeControlOn.restrict
     SurgeryScalarDerivativeControlOn F J' r C := by
   intro a b hab hI hS x t ht hR
   exact h a b hab hI hS x t ⟨hJ ht.1, ht.2⟩ hR
-
-
 
 theorem SurgeryScalarDerivativeControlOn.of_radius_le
     {F : SurgeryFlowData.{u}} {J : Set ℝ} {r r' C : ℝ}

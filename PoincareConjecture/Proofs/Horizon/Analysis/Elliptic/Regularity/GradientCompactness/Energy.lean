@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.FluxBound
 
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +11,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem integral_partial_sq_le_flux_energy
     {O : Set E} (hO : IsOpen O) [IsFiniteMeasure (volume.restrict O)]

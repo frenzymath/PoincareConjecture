@@ -3,18 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.Normed.Group.Tannery
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -42,7 +30,6 @@ theorem norm_coefficient_mul_le (lam : ι → ℝ≥0) (t : ℝ≥0) (i : ι) (r
   rw [norm_mul, Real.norm_of_nonneg (coefficient_pos lam t i).le]
   exact mul_le_of_le_one_left (norm_nonneg _) (coefficient_le_one lam t i)
 
-
 def multiplier (lam : ι → ℝ≥0) (t : ℝ≥0) :
     lp (fun _ : ι => ℝ) 2 →L[ℝ] lp (fun _ : ι => ℝ) 2 :=
   LinearMap.mkContinuous
@@ -66,7 +53,6 @@ def multiplier (lam : ι → ℝ≥0) (t : ℝ≥0) :
 @[simp] theorem multiplier_apply (lam : ι → ℝ≥0) (t : ℝ≥0)
     (x : lp (fun _ : ι => ℝ) 2) (i : ι) :
     multiplier lam t x i = coefficient lam t i * x i := rfl
-
 
 def heat (b : HilbertBasis ι ℝ H) (lam : ι → ℝ≥0) (t : ℝ≥0) : H →L[ℝ] H :=
   b.repr.symm.toContinuousLinearEquiv.toContinuousLinearMap.comp

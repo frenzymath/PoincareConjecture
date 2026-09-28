@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Contacts
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FourContacts.Resolution
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,7 +28,6 @@ private theorem negative_contact_mem (e : OpenPartialHomeomorph E2 M)
   rw [movingContact_eq_negative hr (neg_nonpos.mpr ht.le), neg_neg]
   exact negativeContact_mem_patchArc e hr htr _ _
 
-
 theorem positive_level_connected_of_first_pairing
     (e : OpenPartialHomeomorph E2 M) {h : M → Real} {c r t : Real}
     (hr : 0 < r) (ht : 0 < t) (htr : t < r ^ 2) (hrs : closedSquare r ⊆ e.source)
@@ -56,7 +48,6 @@ theorem positive_level_connected_of_first_pairing
     (fun i => ((positivePatchArc_geometry e hr ht htr hrs).1 i).2) (fun i => hB (E i))
     (fun j => positive_contact_mem e hr ht htr (j.2, j.1))
     (fun j => hE (j.2, j.1) ▸ hb (j.2, j.1))
-
 
 theorem negative_level_connected_of_second_pairing
     (e : OpenPartialHomeomorph E2 M) {h : M → Real} {c r t : Real}
@@ -79,8 +70,6 @@ theorem negative_level_connected_of_second_pairing
     (fun j => negative_contact_mem e hr ht htr j) (fun j => hE j ▸ hb j)
 
 variable [T2Space M]
-
-
 
 theorem positive_level_two_components_of_second_pairing
     (e : OpenPartialHomeomorph E2 M) {h : M → Real} {c r t : Real}

@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.DensityBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Lifting.FiniteFibers
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.Coverage
-
-
-
-
-
-
-

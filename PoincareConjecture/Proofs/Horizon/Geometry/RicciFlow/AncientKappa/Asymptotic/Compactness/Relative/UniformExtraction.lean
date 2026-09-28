@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

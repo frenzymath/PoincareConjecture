@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSurfaceCharts
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,9 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q3" => sphere (0 : V3) 1
-
-
-
 
 theorem exists_finitePL_sphere_pair_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -53,8 +39,6 @@ theorem exists_finitePL_sphere_pair_chart
     HamiltonIndexOne.exists_surface_chart_of_local_ball_pairs hdim K hK hlocal (hKS.symm ▸ hp)
   exact ⟨H, hpH, hHp, hH, hHi, fun x hx => by simpa only [hKS] using hplane x hx⟩
 
-
-
 theorem nonempty_locallyFlat_finitePL_sphere {S : Set V3}
     (b : Q3 ≃ₜ S) (hb : b.IsFinitePL) : Nonempty (LocallyFlatTopologicalSphere S) := by
   let q : ((ℝ × ℝ) × ℝ) ≃L[ℝ] V3 :=
@@ -76,8 +60,6 @@ namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 noncomputable def image {S : Set V3} (s : LocallyFlatTopologicalSphere S)
     (c : OpenPartialHomeomorph V3 V3) (hsource : S ⊆ c.source) :
     LocallyFlatTopologicalSphere (c '' S) where
@@ -97,8 +79,6 @@ noncomputable def image {S : Set V3} (s : LocallyFlatTopologicalSphere S)
         · intro hy
           exact ⟨c.symm x, hy, c.right_inv hx.1⟩
       exact hmem.trans (hplane (c.symm x) hx.2)
-
-
 
 theorem nonempty_inverse_chart_image
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

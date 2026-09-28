@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexHalfspaces
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCentroidSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_subdivision_refines_finite_cover (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)
@@ -52,9 +38,6 @@ theorem exists_subdivision_refines_finite_cover (K : SimplicialComplex ℝ E)
     (fun h v hv => h v (subset_convexHull ℝ _ hv))
     (fun h v hv => h v (subset_convexHull ℝ _ hv))
   exact s.affine_nonpos_on_hull_of_centroid hsne A hside (hi A hA) x hx
-
-
-
 
 theorem exists_common_finite_subdivision (K L : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hL : L.faces.Finite) (hspace : K.space = L.space) :

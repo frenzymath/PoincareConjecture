@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.FixedCylinderJets
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.PullbackTails
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ open PoincareConjecture.M28.tube FiniteHessian
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem forwardCylinderCoordinates_source_coefficients
     {X : Type v} [TopologicalSpace X]
@@ -68,9 +55,6 @@ theorem forwardCylinderCoordinates_source_coefficients
   exact gX.pullbackCoefficients_comp ((he.comp (psi x) hcinv).mdifferentiableAt (by simp))
     (hpsi.differentiableAt (by simp))
 
-
-
-
 theorem forwardCylinderCoordinates_error_germ
     {X : Type v} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -97,10 +81,6 @@ theorem forwardCylinderCoordinates_error_germ
   change g.pullbackCoefficients (cylinderNeckChart N q s) x = _ at hlimit
   rw [hlimit]
   rfl
-
-
-
-
 
 theorem exists_forwardCylinder_metric_error_tail
     {ι : Type*} {X : ι → Type v} [∀ i, TopologicalSpace (X i)]

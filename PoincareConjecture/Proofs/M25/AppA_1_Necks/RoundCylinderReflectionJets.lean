@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.RoundCylinderTensorReflection
 import Mathlib.Analysis.Calculus.FDeriv.Congr
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators Topology ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem roundCylinderTensorDerivative_congrOn
     (u : ℝ)
@@ -36,8 +24,6 @@ theorem roundCylinderTensorDerivative_congrOn
     hmem.mono fun x hx => congrFun (hT hx) _
   unfold roundCylinderTensorDerivative
   rw [hev.fderiv_eq, hT hp]
-
-
 
 theorem roundCylinderIteratedDerivative_axialReflection
     (q : UnitTwoSphere) (B B' : RoundCylinderTwoTensor)
@@ -79,8 +65,6 @@ theorem roundCylinderIteratedDerivative_axialReflection
       (roundCylinderTensorDerivative_axialReflection q
         (roundCylinderIteratedDerivative 0 _ B k) p a)
 
-
-
 theorem roundCylinderJetErrorSquared_axialReflection
     (epsilon : ℝ) (B B' : RoundCylinderTwoTensor)
     (hcoeff : ∀ (q : UnitTwoSphere) (p : RoundCylinderCoordinates),
@@ -115,8 +99,6 @@ theorem roundCylinderJetErrorSquared_axialReflection
   exact roundCylinderTensorNormSquared_axialReflection z.1 p
     (roundCylinderIteratedDerivative 0 c B k (roundCylinderCoordinateReflection p))
 
-
-
 theorem RoundCylinderTensorSmoothOn.axialReflection
     {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}
     (hB : RoundCylinderTensorSmoothOn epsilon B)
@@ -147,8 +129,6 @@ theorem RoundCylinderTensorSmoothOn.axialReflection
     contDiffOn_const.mul ((hB q a b).comp
       roundCylinderCoordinateReflection.contDiff.contDiffOn hmap)
   exact hs.congr fun p hp => hcoeff q p hp a b
-
-
 
 theorem RoundCylinderClose.axialReflection
     {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}

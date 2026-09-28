@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.SliceCylinders
 import PoincareConjecture.Proofs.M35.Mathlib.DiffeomorphDerivative
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem sliceCylinder_pullbackInner {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {a : ℝ} (ha : a ∈ J) (Q : ℝ) (hQ : 0 < Q) (I : Set ℝ)
@@ -38,8 +27,6 @@ theorem sliceCylinder_pullbackInner {J : Set ℝ} (F : RicciFlow 3 StandardCapSp
   exact congrArg (fun r : ℝ => Q * r)
     (metric_pullback F (htime s hs) (e x)
       (mfderiv (𝓡 3) (𝓡 3) e x v) (mfderiv (𝓡 3) (𝓡 3) e x w))
-
-
 
 theorem sliceCylinder_roundCylinderPullback {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) {a : ℝ} (ha : a ∈ J)

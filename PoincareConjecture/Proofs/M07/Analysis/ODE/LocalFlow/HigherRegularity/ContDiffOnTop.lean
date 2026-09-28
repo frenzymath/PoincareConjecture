@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.ParametricLinearODE
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 

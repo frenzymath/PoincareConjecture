@@ -1,22 +1,11 @@
 import Mathlib.Analysis.ConstantSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ENNReal NNReal
 
 namespace PoincareConjecture.M60
-
-
 
 theorem lipschitzOnWith_of_constant_speed {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {s : Set ℝ} {C : ℝ≥0} (hf : HasConstantSpeedOnWith f s C) :
@@ -31,9 +20,6 @@ theorem lipschitzOnWith_of_constant_speed {E : Type*} [PseudoEMetricSpace E]
     _ = C * edist x y := by
       rw [edist_dist, Real.dist_eq, abs_sub_comm, abs_of_nonneg (sub_nonneg.mpr hxy),
         ENNReal.ofReal_mul C.coe_nonneg, ENNReal.ofReal_coe_nnreal]
-
-
-
 
 theorem lipschitzOnWith_variationOnFromTo {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {s : Set ℝ} {C : ℝ≥0} (hf : LipschitzOnWith C f s)
@@ -58,17 +44,11 @@ theorem lipschitzOnWith_variationOnFromTo {E : Type*} [PseudoEMetricSpace E]
       rw [eVariationOn_id_Icc, edist_dist, Real.dist_eq, abs_sub_comm,
         abs_of_nonneg (sub_nonneg.mpr hxy)]
 
-
-
-
 theorem lipschitzOnWith_naturalParameterization {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {s : Set ℝ} (hf : LocallyBoundedVariationOn f s)
     {a : ℝ} (ha : a ∈ s) :
     LipschitzOnWith 1 (naturalParameterization f s a) (variationOnFromTo f s a '' s) :=
   lipschitzOnWith_of_constant_speed (has_unit_speed_naturalParameterization f hf ha)
-
-
-
 
 theorem exists_lipschitz_length_factorization {E : Type*} [EMetricSpace E]
     {f : ℝ → E} {s : Set ℝ} {C : ℝ≥0} (hf : LipschitzOnWith C f s)
@@ -83,9 +63,6 @@ theorem exists_lipschitz_length_factorization {E : Type*} [EMetricSpace E]
     lipschitzOnWith_naturalParameterization hf.locallyBoundedVariationOn ha, ?_⟩
   intro x hx
   exact edist_eq_zero.mp (edist_naturalParameterization_eq_zero hf.locallyBoundedVariationOn ha hx)
-
-
-
 
 theorem lipschitzOnWith_reparameterized_length {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {s : Set ℝ} {phi : ℝ → ℝ} (hphi : MonotoneOn phi s)

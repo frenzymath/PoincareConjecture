@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Basic
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Gluing
@@ -63,7 +56,6 @@ theorem OverlapSystem.quotient_preconnectedSpace
     (IsPreconnected.biUnion_of_reflTransGen (t := (Set.univ : Set I))
       (fun i _ => hs i)
       (fun i _ j _ => (hback i).trans (hconnect j)))
-
 
 theorem OverlapSystem.quotient_connectedSpace
     (D : OverlapSystem P) [∀ i, ConnectedSpace (P i)]

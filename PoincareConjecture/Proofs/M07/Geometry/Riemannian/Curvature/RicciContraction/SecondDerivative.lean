@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma secondCovariantTensorDerivative_ricciEvaluation_eq_sum_riemann
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

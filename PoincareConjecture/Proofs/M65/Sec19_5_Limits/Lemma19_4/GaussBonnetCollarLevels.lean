@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCauchyH
 import Mathlib.MeasureTheory.Integral.Average
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -56,10 +46,6 @@ private theorem exists_collar_level {E : ℝ → ℝ} {a delta : ℝ} {Good : �
       mul_le_mul_of_nonneg_right (by linarith [hrr.1.1]) hrr.2.1
     _ = 2 * ((delta / 2) * E r) := by ring
     _ ≤ _ := mul_le_mul_of_nonneg_left hmean (by norm_num)
-
-
-
-
 
 theorem exists_collar_levels {E : ℝ → ℝ} {a : ℝ} (ha : a < 1)
     (hE : IntegrableOn E (Ioo a 1)) {Good : ℝ → Prop}

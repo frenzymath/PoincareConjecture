@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedCutChart
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveTerminalInterval
 import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabBandCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_terminal_interval
     {S s s' rim : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

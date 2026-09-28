@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanRellichNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M04.RicciEvolutionCoefficients
 import PoincareConjecture.Proofs.M04.RicciEvolutionEndpoints
 import PoincareConjecture.Proofs.M04.RicciEvolutionInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M04
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivWithinAt_ricci_frozen_rhs
     (F : RicciFlow n M J) (t : ℝ) (ht : t ∈ J) (x : M)

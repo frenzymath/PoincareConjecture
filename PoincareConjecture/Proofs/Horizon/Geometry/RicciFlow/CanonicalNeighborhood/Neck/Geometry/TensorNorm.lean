@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Norm
 import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -27,7 +19,6 @@ noncomputable def cylinderSphereVector
 noncomputable def cylinderAxialVector (a : Fin 3) : ℝ :=
   (roundCylinderCoordinateBasis a).2
 
-
 theorem roundCylinderGram_posSemidef (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
     (roundCylinderGram 0 (chartAt (EuclideanSpace ℝ (Fin 2)) q) p).PosSemidef := by
   let c := chartAt (EuclideanSpace ℝ (Fin 2)) q
@@ -42,7 +33,6 @@ theorem roundCylinderGram_posSemidef (q : UnitTwoSphere) (p : RoundCylinderCoord
   rw [hEq]
   exact (Matrix.PosSemidef.smul (Matrix.posSemidef_gram ℝ s) (by norm_num)).add
     (by simpa using Matrix.posSemidef_vecMulVec_self_star t)
-
 
 theorem roundCylinderGram_posDef (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
     (roundCylinderGram 0 (chartAt (EuclideanSpace ℝ (Fin 2)) q) p).PosDef :=
@@ -132,6 +122,5 @@ theorem roundCylinderTensorNormSquared_nonneg (q : UnitTwoSphere) (p : RoundCyli
   exact inverseGram_contraction_nonneg
     (roundCylinderGram 0 (chartAt (EuclideanSpace ℝ (Fin 2)) q) p)
     (roundCylinderGram_posDef q p) T
-
 
 end PoincareConjecture

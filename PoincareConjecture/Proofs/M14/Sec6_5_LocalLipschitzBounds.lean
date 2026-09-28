@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x q0 : G.Point}
-
-
-
 
 theorem exists_survivor_action_neighborhood (E : M14ExponentialFamily G T x)
     {N O : Set G.Point} (hN : IsOpen N) (hqN : q0 ∈ N)

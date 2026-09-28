@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Collars.FinitePL
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 

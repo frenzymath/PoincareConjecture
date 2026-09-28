@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 noncomputable def coordinatePartialDiffeomorph (N : EpsilonNeck g) :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace M ∞ where
@@ -43,8 +32,6 @@ noncomputable def coordinatePartialDiffeomorph (N : EpsilonNeck g) :
   open_target := N.carrier_open
   contMDiffOn_toFun := N.coordinate_map_smooth
   contMDiffOn_invFun := N.coordinate_inverse_smooth
-
-
 
 noncomputable def transportedStandardPatch (N : EpsilonNeck g)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) M StandardCapSpace ∞)

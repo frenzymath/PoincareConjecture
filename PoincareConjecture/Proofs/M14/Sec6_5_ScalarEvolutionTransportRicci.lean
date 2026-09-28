@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +22,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
 
-
-
 theorem ricciNormSq_eq_orthonormal_sum (D : LeviCivitaData g) (x : M)
     {ι : Type*} [Fintype ι] :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -50,8 +39,6 @@ theorem ricciNormSq_eq_orthonormal_sum (D : LeviCivitaData g) (x : M)
       D.normalization_curvatureTensorCalculus.2.1 x) (g.orthonormalBasis x) e
   simpa only [Proofs.M09.tensorBilinear_apply, LeviCivitaData.ricciEvaluation,
     Matrix.cons_val_zero, Matrix.cons_val_one, LeviCivitaData.ricciNormSq] using hb
-
-
 
 theorem ricciNormSq_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

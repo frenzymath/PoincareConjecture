@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeInitialPair
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.FirstNeckGraphFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
 
-
-
-
 theorem isLeast_tube_chain_zero (T : SourceTubeData S) :
     IsLeast T.tube.chain.shape.active 0 := by
   have hlen : 0 < T.list.nodes.length := List.length_pos_iff.mpr T.list.nonempty
@@ -34,10 +22,6 @@ theorem isLeast_tube_chain_zero (T : SourceTubeData S) :
   refine ⟨?_, fun _ hi => hi.1⟩
   change 0 ≤ (0 : ℤ) ∧ (0 : ℤ) ≤ (T.list.nodes.length : ℤ) - 1
   constructor <;> omega
-
-
-
-
 
 theorem initial_graph_negative_region (T : SourceTubeData S)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)

@@ -1,18 +1,6 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.Defs
 
-
 noncomputable section
-
 
 open Set Function Filter Metric Asymptotics Real
 open scoped Topology NNReal

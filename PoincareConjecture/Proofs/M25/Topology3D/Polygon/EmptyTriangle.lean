@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleBaseContact
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.VisibleDiagonal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.normalized_triangle_interior_disjoint_boundary
     (hp : IsSimplePolygon p) (k : Fin n) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -70,8 +57,6 @@ theorem IsSimplePolygon.normalized_triangle_interior_disjoint_boundary
     exact (lt_irrefl 0) hcT.2.1
   · rw [hfs, interior_unitTriangle] at hcT
     exact (lt_irrefl 0) hcT.1
-
-
 
 theorem IsSimplePolygon.normalized_triangle_inter_boundary_eq_corner
     (hp : IsSimplePolygon p) (hn : 3 < n) (k : Fin n) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -187,9 +172,6 @@ theorem IsSimplePolygon.normalized_triangle_inter_boundary_eq_corner
     · rcases hw with hw | hw
       · exact image_mono (polygon_edgeSet_subset_boundary p _) (hpred.symm ▸ hw)
       · exact image_mono (polygon_edgeSet_subset_boundary p _) (hsucc.symm ▸ hw)
-
-
-
 
 theorem IsSimplePolygon.supporting_triangle_of_no_triangle_vertex
     [FiniteDimensional ℝ E] (hp : IsSimplePolygon p)

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 structure ParallelFieldData (F : RicciFlow n M (Icc a b)) (f : M → ℝ) where
   field : ∀ x : M, TangentSpace (𝓡 n) x
   terminal : ∀ x, field x = (F.connection b).gradient f x
@@ -39,8 +25,6 @@ structure ParallelFieldData (F : RicciFlow n M (Icc a b)) (f : M → ℝ) where
     (F.connection t).connection field x u = 0
   ricci_null : ∀ t ∈ Icc a b, ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,
     (F.connection t).ricci x (field x) v = 0
-
-
 
 theorem curvature_eq_zero_of_parallel_field
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -92,9 +76,6 @@ theorem ricci_eq_zero_of_parallel_field
   have hcurv := curvature_eq_zero_of_parallel_field D hD X hX hparallel x v (basis i)
   simp [LeviCivitaData.curvatureTensor, hcurv]
 
-
-
-
 def ParallelFieldData.of_parallel_field
     (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Icc a b)) (f : M → ℝ)
@@ -133,7 +114,6 @@ def ParallelFieldData.of_parallel_field
 
 namespace ParallelFieldData
 
-
 theorem metric_dual_eq
     {F : RicciFlow n M (Icc a b)} {f : M → ℝ}
     (h : ParallelFieldData F f) (hab : a < b) {t : ℝ}
@@ -156,15 +136,6 @@ theorem metric_dual_eq
     (constant_of_derivWithin_zero hdiff hzero b ⟨hab.le, le_rfl⟩).symm
 
 end ParallelFieldData
-
-
-
-
-
-
-
-
-
 
 theorem backward_persistence_of_parallel_field_data
     [T3Space M]

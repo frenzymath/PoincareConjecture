@@ -4,14 +4,6 @@ import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ namespace Poincare.Geometry.Manifold
 
 private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 
-
 theorem mfderiv_eq_zero_of_isLocalMin
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -34,7 +25,6 @@ theorem mfderiv_eq_zero_of_isLocalMin
     apply IsLocalMin.comp_continuous _ (continuousAt_extChartAt_symm (I := 𝓡 n) x)
     simpa only [(extChartAt (𝓡 n) x).left_inv (mem_extChartAt_source x)] using hmin
   exact hchart.hasFDerivAt_eq_zero (RegularLevel.hasFDerivAt_comp_extChartAt_symm hf x)
-
 
 theorem strict_minimum_on_compact_sublevel_component_of_unique_critical
     {n : ℕ} {M : Type*} [TopologicalSpace M]

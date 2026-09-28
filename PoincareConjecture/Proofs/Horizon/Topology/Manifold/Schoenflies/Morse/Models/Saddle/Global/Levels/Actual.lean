@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.PhysicalLevel
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +13,6 @@ open SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem image_strip_slice_of_flattening {X : Type*}
     (g : X → E3) (D : E3 → E3) (v : E3) (F : Real × Real → X)
@@ -38,8 +28,6 @@ theorem image_strip_slice_of_flattening {X : Type*}
     exact ⟨s, hs, (hflat s hs).symm⟩
   · rintro ⟨s, hs, rfl⟩
     exact ⟨F (s, t), ⟨(s, t), ⟨hs, rfl⟩, rfl⟩, hflat s hs⟩
-
-
 
 theorem flattened_fiber_eq_patch_union_strip_slices
     {X : Type*} [TopologicalSpace X] {h : X → Real} {c : Real}
@@ -66,8 +54,6 @@ theorem flattened_fiber_eq_patch_union_strip_slices
   apply iUnion_congr
   intro i
   exact image_strip_slice_of_flattening g D v (F i) (hflat i t ht)
-
-
 
 theorem flattened_exterior_eq_recut_strip_slices
     {X : Type*} [TopologicalSpace X] {h : X → Real} {c r η t : Real}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.OpenRecut
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,17 +14,14 @@ namespace PoincareConjecture.OpenCylinderModel
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
 
-
 theorem coordinate_mem_m28 (T : OpenCylinderModel U)
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (0 : ℝ) 1) :
     T.coordinate z ∈ U := by
   simpa only [T.coordinate_eq] using
     (T.homeomorph (z.1, ⟨z.2, hz⟩)).property
 
-
 def compactSlab (T : OpenCylinderModel U) (a b : ℝ) : Set M :=
   T.coordinate '' (univ ×ˢ Icc a b)
-
 
 theorem isCompact_compactSlab (T : OpenCylinderModel U) {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) : IsCompact (T.compactSlab a b) := by
@@ -43,12 +30,10 @@ theorem isCompact_compactSlab (T : OpenCylinderModel U) {a b : ℝ}
   intro z hz
   exact ⟨mem_univ _, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
 
-
 theorem compactSlab_subset (T : OpenCylinderModel U) {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) : T.compactSlab a b ⊆ U := by
   rintro x ⟨z, hz, rfl⟩
   exact T.coordinate_mem_m28 ⟨ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
-
 
 theorem mem_compactSlab_iff (T : OpenCylinderModel U) {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) {x : M} :
@@ -60,8 +45,6 @@ theorem mem_compactSlab_iff (T : OpenCylinderModel U) {a b : ℝ}
     exact ⟨T.coordinate_mem_m28 hz'.2, by rw [T.left_inverse hz']; exact hz.2⟩
   · rintro ⟨hx, hh⟩
     exact ⟨T.inverse x, ⟨mem_univ _, hh⟩, T.right_inverse hx⟩
-
-
 
 theorem exists_compactSlab_capturing (T : OpenCylinderModel U)
     {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U) :
@@ -89,7 +72,6 @@ theorem exists_compactSlab_capturing (T : OpenCylinderModel U)
     (halow.trans_le (min_le_left _ _)).le.trans (hlow x hx),
     (hhigh' x hx).trans ((le_max_left _ _).trans_lt hhib).le⟩
 
-
 theorem exists_compactSlab_capturing_path (T : OpenCylinderModel U)
     {γ : ℝ → M} (hγ : ContinuousOn γ (Icc (0 : ℝ) 1))
     (hγU : MapsTo γ (Icc (0 : ℝ) 1) U) :
@@ -99,8 +81,6 @@ theorem exists_compactSlab_capturing_path (T : OpenCylinderModel U)
     T.exists_compactSlab_capturing (isCompact_Icc.image_of_continuousOn hγ)
       (by rintro x ⟨t, ht, rfl⟩; exact hγU ht)
   exact ⟨a, b, ha, hab, hb, fun t ht => hcapture ⟨t, ht, rfl⟩⟩
-
-
 
 theorem path_crosses_coordinate_sphere (T : OpenCylinderModel U)
     {γ : ℝ → M} {a b c : ℝ} (hab : a ≤ b)
@@ -125,7 +105,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem isCompact_closedCore_union_slab (T : CappedTubeCertificate g)
     {a b : ℝ} (ha : 0 < a) (hb : b < 1) :
     IsCompact (T.cap.closed_core ∪ T.tube.cylinder.compactSlab a b) ∧
@@ -140,7 +119,6 @@ theorem isCompact_closedCore_union_slab (T : CappedTubeCertificate g)
   · exact (T.tube.cylinder.compactSlab_subset ha hb).trans T.tube_subset
 
 omit [T2Space M] in
-
 
 theorem exists_recut_complement_subset_tube (T : CappedTubeCertificate g) :
     ∃ b : ℝ, 0 < b ∧ b < T.cap.epsilon⁻¹ ∧
@@ -170,9 +148,6 @@ theorem exists_recut_complement_subset_tube (T : CappedTubeCertificate g) :
       exact hx.2 (Or.inr ⟨hxend, hlow, lt_of_not_ge h⟩)
     exact htail ⟨hxend, hsb.trans_le hbcoord, hhigh⟩
   · exact hxtube
-
-
-
 
 theorem exists_compact_recut_union_slab_capturing (T : CappedTubeCertificate g)
     {K : Set M} (hK : IsCompact K) (hKT : K ⊆ T.carrier) :

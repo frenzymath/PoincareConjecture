@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.Uniform
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Blowup
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure PointedScalarModel (n : ℕ) where
   carrier : Type
@@ -46,7 +33,6 @@ attribute [instance] PointedScalarModel.topology PointedScalarModel.measurable
   PointedScalarModel.borel PointedScalarModel.separation PointedScalarModel.charts
   PointedScalarModel.smooth PointedScalarModel.connected
 
-
 def PointedScalarModel.unitBallScalarIntegral {n : ℕ} (A : PointedScalarModel n) : ℝ :=
   ∫ x in A.metric.ball A.point 1, A.connection.scalarCurvature x ∂A.metric.volumeMeasure
 
@@ -63,8 +49,6 @@ variable {n : ℕ}
       ∀ p : M, (∫ x in g.ball p 1, D.scalarCurvature x ∂g.volumeMeasure) ≤ C)
 
 include hfail
-
-
 
 theorem exists_pointedScalarModel_above_of_not_uniform_bound (C : ℝ) :
     ∃ A : PointedScalarModel n, C < A.unitBallScalarIntegral := by
@@ -86,8 +70,6 @@ theorem exists_pointedScalarModel_above_of_not_uniform_bound (C : ℝ) :
       complete := hcompleteN
       sectional_lower := hsecN }
 
-
-
 theorem exists_pointedScalarModels_of_not_uniform_bound :
     ∃ A : ℕ → PointedScalarModel n,
       (∀ j : ℕ, (j : ℝ) < (A j).unitBallScalarIntegral) ∧
@@ -95,8 +77,6 @@ theorem exists_pointedScalarModels_of_not_uniform_bound :
   choose A hA using fun j : ℕ =>
     exists_pointedScalarModel_above_of_not_uniform_bound hfail (j : ℝ)
   exact ⟨A, hA, tendsto_atTop_mono (fun j => (hA j).le) tendsto_natCast_atTop_atTop⟩
-
-
 
 theorem exists_rescaled_counterexample_limit_of_not_uniform_bound
     (hn : 2 ≤ n) (c : ℕ → ℝ) (hc : ∀ j, 1 ≤ c j) :

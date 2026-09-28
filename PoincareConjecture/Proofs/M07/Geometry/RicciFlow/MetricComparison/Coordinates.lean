@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {T' T : ℝ}
-
-
 
 theorem pullbackCoefficients_exp_bounds
     (F : RicciFlow n M (Ioo T' T)) (hT : T' < 0 ∧ 0 < T)

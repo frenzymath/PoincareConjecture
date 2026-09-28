@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderJetTranslation
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderConnectionParameterBounds
 import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparisonCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +14,11 @@ open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 
-
 def neckAxialWeight (lambda : ℝ) (i : Fin 3) : ℝ :=
   if i = 2 then lambda else 1
 
-
 def neckAxialCoordinate (lambda c : ℝ) (p : RoundCylinderCoordinates) :
     RoundCylinderCoordinates := (p.1, lambda * p.2 + c)
-
 
 noncomputable def neckAxialLinearMap (lambda : ℝ) :
     RoundCylinderCoordinates →L[ℝ] RoundCylinderCoordinates :=
@@ -66,7 +55,6 @@ private theorem gram_axial_derivative_zero (u : ℝ) (q : UnitTwoSphere)
   simpa only [zero_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.prod_apply, ContinuousLinearMap.id_apply,
     roundCylinderCoordinateBasis, Matrix.cons_val, Fin.reduceFinMk] using hvalue.symm
-
 
 theorem roundCylinderChristoffel_axial_zero (u : ℝ) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) (a b d : Fin 3)
@@ -107,8 +95,6 @@ theorem roundCylinderChristoffel_axial_zero (u : ℝ) (q : UnitTwoSphere)
     intro j _
     rw [hrow, hcol, gram_axial_derivative_zero]
     simp
-
-
 
 theorem roundCylinderChristoffel_neckAxialCoordinate (lambda c u : ℝ)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (a b d : Fin 3) :

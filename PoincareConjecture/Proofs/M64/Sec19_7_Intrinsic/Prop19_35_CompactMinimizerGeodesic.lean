@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AffineCollision
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactGeodesicRepresentative
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InteriorUnitSpeed
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,12 +10,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold ENNReal
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_smooth_unit_geodesic
     (G : RiemannianMetric 2 AnnulusCoordinates) {U : Set AnnulusCoordinates}

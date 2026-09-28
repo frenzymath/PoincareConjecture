@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Boun
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Separation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.SliceAgreement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_end_neck_separating_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

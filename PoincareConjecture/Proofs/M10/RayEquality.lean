@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M10.VolumeComparison
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem reducedVolume_eq_euclidean_of_le
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -40,7 +29,6 @@ theorem reducedVolume_eq_euclidean_of_le
   rw [← heq]
   exact reducedVolume_antitoneOn hL hDifferential G hmax hT hwindow hcurvature
     ⟨hτ, hτb.trans_lt hbmax⟩ ⟨hb, hbmax⟩ hτb
-
 
 theorem regularWeightedJacobian_ae_eq_gaussian_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -87,7 +75,6 @@ theorem weightedExponentialJacobian_eq_gaussian_of_ae
     (weightedExponentialJacobian_continuous G hτ hτmax) hg
   filter_upwards [heq, hmem] with x hx hxs
   simpa only [regularWeightedJacobian, indicator_of_mem hxs] using hx
-
 
 theorem weightedExponentialJacobian_eq_gaussian_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

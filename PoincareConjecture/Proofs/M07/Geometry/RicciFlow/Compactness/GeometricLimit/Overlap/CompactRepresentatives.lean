@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Topology.Gluing.Basic
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.UniformDistance
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEs
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Operators.LowerOrder
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.H1Profile
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology
@@ -20,7 +13,6 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 def ellipticPowerProfile (a : E → Matrix (Fin d) (Fin d) ℝ)
     (b : Fin d → E → ℝ) (V : Set E) (n : ℕ) (u : E → ℝ) : ℝ≥0∞ :=
@@ -73,8 +65,6 @@ theorem ellipticPowerProfile_ne_top
   exact ((continuous_memLp_on_compact
     (contDiff_iterate_secondOrderOperator ha hb hu j).continuous hVc).mono_measure
       (Measure.restrict_mono subset_closure le_rfl)).eLpNorm_ne_top
-
-
 
 theorem exists_derivativeProfile_le_ellipticPowerProfile [NeZero d]
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Tensors.TensorDerivativeClosure
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -145,7 +134,6 @@ theorem exists_hessian_bilinear_of_contMDiffOn [T2Space M] (D : LeviCivitaData g
   obtain ⟨q0, hq0, heq⟩ := exists_smooth_scalar_localization hU hq hx
   obtain ⟨A, hA⟩ := (isSmoothCovariantTensor_hessian D hq0).1 x
   exact ⟨A, fun v ↦ (hessian_congr_germ D heq.symm (v 0) (v 1)).trans (hA v)⟩
-
 
 theorem hessianOnFields_eq_hessian_of_contMDiff (D : LeviCivitaData g)
     {q : M → ℝ} (hq : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ q)

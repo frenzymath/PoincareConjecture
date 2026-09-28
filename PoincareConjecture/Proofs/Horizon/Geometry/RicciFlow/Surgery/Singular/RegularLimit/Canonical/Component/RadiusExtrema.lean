@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.ScalarPowers
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Supremum
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -12,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 theorem abs_sub_scalar_inf_le {X : Type*} [Nonempty X] (f g : X → ℝ)
     (hg : BddBelow (range g)) (ε : ℝ) (hfg : ∀ x, |f x - g x| ≤ ε) :

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M38.NonseparatingCut
 import PoincareConjecture.Proofs.M38.PartialCutEmpty
 import PoincareConjecture.Proofs.M38.AssemblyTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
-
 
 theorem exists_actualResidualAssembly
     {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}

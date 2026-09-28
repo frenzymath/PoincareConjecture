@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Normalization.Soul
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.EscapingScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -24,8 +15,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)] [∀ k, MeasurableSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)] [∀ k, ConnectedSpace (M k)]
-
-
 
 theorem nonround_curvature_scale_distance_tendsto_atTop_of_services
     (P : NoncompactKappaServices.{u})
@@ -55,8 +44,6 @@ theorem nonround_curvature_scale_distance_tendsto_atTop
       (((K k).flow.metric 0).edist (q k) (p k)).toReal) atTop atTop := by
   exact nonround_curvature_scale_distance_tendsto_atTop_of_services P.noncompactServices K p q hnonround hnormalized hescape
 
-
-
 theorem nonround_normalized_distance_tendsto_atTop_of_services
     (P : NoncompactKappaServices.{u})
     (K : ∀ k, AncientKappaSolution 3 (M k)) (p q : ∀ k, M k)
@@ -82,8 +69,6 @@ theorem nonround_normalized_distance_tendsto_atTop
     Tendsto (fun k => (((N k).target.flow.metric 0).edist (q k) (p k)).toReal)
       atTop atTop := by
   exact nonround_normalized_distance_tendsto_atTop_of_services P.noncompactServices K p q N hnonround hnormalized hescape
-
-
 
 theorem nonround_normalized_soul_distance_tendsto_atTop_of_services
     (P : NoncompactKappaServices.{u})

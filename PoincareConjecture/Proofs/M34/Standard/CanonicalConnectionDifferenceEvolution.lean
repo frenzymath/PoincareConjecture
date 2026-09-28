@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalConnectionTensorRate
 import PoincareConjecture.Proofs.M34.Standard.UniformCanonicalConnectionRate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 variable {n dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
-
 
 theorem canonicalDomain_hasDerivAt_connection_difference_factored
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
@@ -62,9 +49,6 @@ theorem canonicalDomain_hasDerivAt_connection_difference_factored
   rw [hpoint] at hf
   rw [← hf]
   exact canonicalDomain_hasDerivAt_connection_difference_tensor U hU F F' ht ht' p x
-
-
-
 
 theorem canonicalDomain_deriv_connection_difference_coordinate
     {dA : ℕ} (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA))

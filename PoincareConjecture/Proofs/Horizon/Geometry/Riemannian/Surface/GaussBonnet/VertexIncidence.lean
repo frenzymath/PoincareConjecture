@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexContributions
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem coordinate_corner_in_face_is_corner {I : Type*}
     (face : I → SmoothFace S) (F : I → OpenPartialHomeomorph Plane S)
@@ -65,8 +55,6 @@ theorem coordinate_corner_in_face_is_corner {I : Type*}
     · exact ⟨k.succAbove 0, h0.symm⟩
     · exact ⟨k.succAbove 1, (mem_singleton_iff.mp h1).symm⟩
   · exact ⟨w, (mem_singleton_iff.mp (hw ⟨hqj, hqi⟩)).symm⟩
-
-
 
 theorem coordinate_vertex_mem_face_iff {I : Type*}
     (face : I → SmoothFace S) (F : I → OpenPartialHomeomorph Plane S)

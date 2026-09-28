@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -61,10 +51,6 @@ private theorem exists_homeomorph_of_proper_local (f : ℂ → ℂ)
             continuous_toFun := hproper.continuous
             continuous_invFun := g.continuous }, rfl⟩
 
-
-
-
-
 theorem exists_smooth_homeomorph_of_proper_nondegenerate (f : ℂ → ℂ)
     (hf : ContDiff ℝ ∞ f) (hproper : IsProperMap f)
     (hbij : ∀ z, Function.Bijective (fderiv ℝ f z)) :
@@ -81,11 +67,6 @@ theorem exists_smooth_homeomorph_of_proper_nondegenerate (f : ℂ → ℂ)
   apply e.contDiff_symm (f₀' := derivativeEquiv f hbij)
   · simpa only [he] using hD
   · simpa only [he] using hf
-
-
-
-
-
 
 theorem exists_smooth_beltrami_diffeomorphism (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

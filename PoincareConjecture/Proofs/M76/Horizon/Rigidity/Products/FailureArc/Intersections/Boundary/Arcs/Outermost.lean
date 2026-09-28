@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Arcs.ReturningDisk
 import Mathlib.Order.WellFoundedSet
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CocycleSingularValues
 import Mathlib.Algebra.Field.ZMod
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -39,8 +32,6 @@ theorem boundary_singularCochain (c : A.ModTwoEdgeCocycle) (R : ModuleCat.{u} (Z
   simp only [Preadditive.zsmul_comp, singularCochain_simplex, comp_zero]
   simp_rw [← smul_assoc]
   rw [← Finset.sum_smul, c.singularValue_cocycle s, zero_smul]
-
-
 
 noncomputable def homologyEvaluation (c : A.ModTwoEdgeCocycle)
     (R : ModuleCat.{u} (ZMod 2)) :

@@ -1,17 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -19,8 +7,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def SurgeryBallEmbedding.transport
     {A A' : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
@@ -41,8 +27,6 @@ noncomputable def SurgeryBallEmbedding.transport
     exact congrArg d (B.right_inverse (Set.mem_image_of_mem B.map hx))
   open_embedding := d.toHomeomorph.isOpenEmbedding.comp B.open_embedding
 
-
-
 @[simp] theorem SurgeryBallEmbedding.transport_closedBall
     {A A' : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
     (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier A'.carrier ∞) :
@@ -50,9 +34,6 @@ noncomputable def SurgeryBallEmbedding.transport
   change (d ∘ B.map) '' Metric.closedBall 0 1 = d.symm ⁻¹' B.closedBall
   rw [Set.image_comp, d.image_eq_preimage_symm]
   rfl
-
-
-
 
 noncomputable def SurgeryRegionEquivalence.transportSource
     {A A' C : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set C.carrier}
@@ -74,8 +55,6 @@ noncomputable def SurgeryRegionEquivalence.transportSource
     simpa only [Function.comp_apply, Diffeomorph.symm_apply_apply] using E.right_inverse hx
   map_smooth := E.map_smooth.comp d.symm.contMDiff.contMDiffOn (fun _ hx => hx)
   inverse_smooth := d.contMDiff.comp_contMDiffOn E.inverse_smooth
-
-
 
 noncomputable def SmoothConnectedSumData.transportFirst
     {A A' B C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
@@ -121,8 +100,6 @@ noncomputable def SmoothConnectedSumData.transportFirst
   central_disjoint := S.central_disjoint
   cover := S.cover
 
-
-
 noncomputable def SmoothConnectedSumData.transportSecond
     {A B B' C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
     (d : Diffeomorph (𝓡 3) (𝓡 3) B.carrier B'.carrier ∞) :
@@ -166,8 +143,6 @@ noncomputable def SmoothConnectedSumData.transportSecond
     exact S.positive_gluing z s hs
   central_disjoint := S.central_disjoint
   cover := S.cover
-
-
 
 noncomputable def SmoothDisjointUnionData.transportPieces
     {n : ℕ} {pieces pieces' : Fin n → GeneralizedSliceCarrier.{u}}

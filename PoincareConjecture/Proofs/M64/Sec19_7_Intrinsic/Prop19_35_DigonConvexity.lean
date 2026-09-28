@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_DigonRegionCurv
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_DigonCornerCoordinates
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_small_digon_convex_coordinates
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

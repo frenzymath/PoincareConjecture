@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylinder.Jets.CylinderAllOrder
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -57,8 +48,6 @@ theorem centeredCylinderChristoffel_jet_bound (j : ℕ) (a b c : Fin 3) :
   exact (hc.trans (hb.trans ha)).trans (by
     unfold centeredCylinderChristoffelJetBound
     linarith)
-
-
 
 theorem exists_centeredCylinderComponent_jet_bound (j k : ℕ) :
     ∃ C : ℝ, 0 < C ∧
@@ -179,8 +168,6 @@ theorem exists_centeredCylinderComponent_jet_bound (j k : ℕ) :
             _ ≤ ∑ _i : Fin 3, (A + 3 * (2 + (k : ℝ)) * S) * epsilon :=
               Finset.sum_le_sum (fun i _ => hdirection i)
             _ = _ := by simp; ring
-
-
 
 theorem exists_centeredCylinderError_jet_bound (m : ℕ) :
     ∃ C : ℝ, 0 < C ∧

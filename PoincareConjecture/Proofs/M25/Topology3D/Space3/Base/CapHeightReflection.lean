@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightReversalData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem SurgeryCapTag.reverseHeight_spec
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

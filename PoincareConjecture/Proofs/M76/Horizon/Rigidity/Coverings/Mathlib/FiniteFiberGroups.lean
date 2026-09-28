@@ -1,15 +1,6 @@
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Data.Fintype.Perm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace IsCoveringMap

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +16,6 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "W" => (ℝ × V2)
 local notation "C8" => AddCircle (4 * (2 : ℝ))
-
-
 
 theorem exists_finitePL_annulus_twist (alpha : ℝ →ᴬ[ℝ] ℝ)
     (hminus : ((alpha (-1) : ℝ) : C8) = 0)
@@ -162,10 +150,6 @@ theorem exists_finitePL_annulus_twist (alpha : ℝ →ᴬ[ℝ] ℝ)
       · rw [hx, hminus]
       · rw [hx, hplus]
     rw [ha, add_zero, squareCircle.apply_symm_apply]
-
-
-
-
 
 theorem exists_zero_winding_marked_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalFlowRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy Proofs.M03
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_contDiffOn_flow_inverse
     {dH : ℕ} (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH)) :
@@ -41,8 +31,6 @@ theorem canonicalDomain_contDiffOn_flow_inverse
       ((F.metric z.1).inner ((extChartAt (𝓡 n) p).symm z.2) : FH n) :=
     hi.contDiffAt_map_inverse
   exact hinv.comp_contDiffWithinAt z (hg z hz)
-
-
 
 theorem canonicalDomain_contDiffOn_principal_entry
     {dH : ℕ} (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH)) :

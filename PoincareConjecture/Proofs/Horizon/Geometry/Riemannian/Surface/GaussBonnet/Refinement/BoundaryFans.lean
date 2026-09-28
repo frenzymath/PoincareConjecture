@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.VertexAncestry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OldVertices
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem affineBasis_vertex_not_mem_open_edge (b : AffineBasis (Fin 3) ℝ Plane)
     (k v : Fin 3) :
@@ -40,7 +30,6 @@ theorem affineBasis_vertex_not_mem_open_edge (b : AffineBasis (Fin 3) ℝ Plane)
     b.coord_apply_eq, b.coord_apply_ne hij, b.coord_apply] at hc
   split_ifs at hc <;> linarith [hs.1, hs.2]
 
-
 theorem affineBasis_open_edge_subset_frontier (b : AffineBasis (Fin 3) ℝ Plane)
     (k : Fin 3) :
     openSegment ℝ (b (k.succAbove 0)) (b (k.succAbove 1)) ⊆
@@ -54,8 +43,6 @@ theorem affineBasis_open_edge_subset_frontier (b : AffineBasis (Fin 3) ℝ Plane
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem lineRefinementMesh_boundary_vertex_fan_on
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -75,8 +62,6 @@ theorem lineRefinementMesh_boundary_vertex_fan_on
     rw [lineRefinementMesh_vertex_contribution_old_vertex g F M f hF hFi hM t v hv]
     exact hfan t v hv hxA
   · exact lineRefinementMesh_new_boundary_vertex_fan g F M f t hcut (hA hxA) hF hFi hM
-
-
 
 theorem refineByLines_boundary_vertex_fan_on
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -98,9 +83,6 @@ theorem refineByLines_boundary_vertex_fan_on
       (by simpa only [M.lineRefinementMesh_support f] using hA)
       (by simpa only [M.lineRefinementMesh_support f] using hM)
       (lineRefinementMesh_boundary_vertex_fan_on g F M f A hA hF hFi hM hfan) u x hx hxA
-
-
-
 
 theorem single_refineByLines_new_boundary_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -124,8 +106,6 @@ theorem single_refineByLines_new_boundary_vertex_fan
     ⟨hxboundary, hxnew⟩
   intro t v hv hvA
   exact False.elim (hvA.2 (mem_range_self v))
-
-
 
 theorem single_refineByLines_open_edge_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

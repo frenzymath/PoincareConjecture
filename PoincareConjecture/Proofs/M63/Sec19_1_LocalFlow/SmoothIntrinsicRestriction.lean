@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Adapters
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SmoothRelabeling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem intrinsic_regularity_on_shorter_smooth_slab
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

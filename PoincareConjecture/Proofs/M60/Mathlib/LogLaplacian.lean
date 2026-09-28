@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.IntegralRegularization
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem laplacian_log_add (D : LeviCivitaData g) {q : M → ℝ}
     (hq : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ q) (ε : ℝ) (x : M)
@@ -52,9 +42,6 @@ theorem laplacian_log_add (D : LeviCivitaData g) {q : M → ℝ}
     (by change -ε < q x; linarith : q x ∈ Ioi (-ε))
   rw [hfirst (by linarith), hsecond] at h
   simpa only [φ, div_eq_mul_inv, one_mul, mul_one, neg_mul, sub_eq_add_neg, mul_comm] using h
-
-
-
 
 theorem laplacian_log_add_lower_bound (D : LeviCivitaData g) {q k : M → ℝ}
     (hq : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ q) (hnonneg : ∀ x, 0 ≤ q x)

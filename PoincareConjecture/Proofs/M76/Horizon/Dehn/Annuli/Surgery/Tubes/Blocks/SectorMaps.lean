@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalSectorMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Blocks.HalfFaceMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Blocks.SectorBoundary
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 

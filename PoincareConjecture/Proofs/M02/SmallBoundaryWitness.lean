@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.SmallHomologyRepresentative
 import PoincareConjecture.Proofs.M02.IntegralChains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -22,9 +14,6 @@ open PoincareConjecture.Proofs.M02.Topology
 noncomputable section
 
 variable {X : Type u} [TopologicalSpace X] {I : Type v}
-
-
-
 
 theorem exists_integral_small_boundary_witness
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))
@@ -86,7 +75,6 @@ theorem exists_integral_small_boundary_witness
             a ≫ S.f (m + 1) := by
           simpa only [zero_add, add_assoc] using hcomm1'
         simpa only [add_comm] using hcomm1''.symm
-
 
 theorem exists_integral_small_chain_boundary
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.SmoothImageInverse
 import PoincareConjecture.Proofs.M44.Mathlib.PartialHomeomorphCompact
 import PoincareConjecture.Proofs.M36.StandardBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.SurgeryCapClose
 
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
-
-
 
 noncomputable def toPartialDiffeomorph (Q : SurgeryCapClose g₀ S g tip scale eta) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) StandardCapSpace S.carrier ∞ where
@@ -48,8 +37,6 @@ noncomputable def toPartialDiffeomorph (Q : SurgeryCapClose g₀ S g tip scale e
   contMDiffOn_toFun := Q.map_smooth
   contMDiffOn_invFun := Q.inverse_smooth
 
-
-
 theorem closure_image_ball
     (Q : SurgeryCapClose g₀ S g tip scale eta)
     {r : ℝ} (hr : 0 < r) (hrEta : r < eta⁻¹) :
@@ -66,8 +53,6 @@ theorem closure_image_ball
     hcompact hsub
   rw [M36.standard_closure_ball g₀ hr] at h
   exact h.symm
-
-
 
 theorem frontier_image_ball
     (Q : SurgeryCapClose g₀ S g tip scale eta)

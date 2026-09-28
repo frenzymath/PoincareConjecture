@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +13,8 @@ universe u
 
 namespace PoincareConjecture.M28
 
-
 def neckLevelShorteningEpsilon : ℝ :=
   1 / (384 * standardSpherePathCeiling + 1)
-
 
 theorem neckLevelShorteningEpsilon_pos : 0 < neckLevelShorteningEpsilon := by
   have hL := standardSpherePathCeiling_pos
@@ -36,8 +24,6 @@ theorem neckLevelShorteningEpsilon_pos : 0 < neckLevelShorteningEpsilon := by
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem mem_coordinate_sphere_iff (N : EpsilonNeck g) {s : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) (x : M) :
@@ -53,8 +39,6 @@ theorem mem_coordinate_sphere_iff (N : EpsilonNeck g) {s : ℝ}
   · rintro ⟨hx, hheight⟩
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, hheight⟩,
       N.coordinate_map_coordinate_inverse hx⟩
-
-
 
 theorem exists_coordinate_sphere_shortcut (N : EpsilonNeck g) {s : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) {x y : M}
@@ -101,9 +85,6 @@ theorem exists_coordinate_sphere_shortcut (N : EpsilonNeck g) {s : ℝ}
     change N.coordinate_map (γ t, s) = y
     rw [ht]
     exact hqy
-
-
-
 
 theorem exists_neck_level_excursion_replacement (N : EpsilonNeck g)
     (hε : N.epsilon ≤ neckLevelShorteningEpsilon) {s : ℝ}

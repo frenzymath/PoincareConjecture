@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.InitialOperatorInjectivity
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedParameterDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
-
 
 theorem exists_open_initial_sliceDerivative_injective
     {U : Set E} (hU : IsOpen U) {x : E} (hx : x ∈ U)

@@ -1,19 +1,10 @@
 import PoincareConjecture.Statement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem exists_threeSphereCWComplex :
     ∃ C : Topology.CWComplex (Set.univ : Set PoincareConjecture.ThreeSphere),

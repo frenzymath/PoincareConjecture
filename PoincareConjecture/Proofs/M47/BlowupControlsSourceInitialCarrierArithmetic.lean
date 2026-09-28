@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_carrier_factors
     (A0 L : ℝ) (hA0 : 0 < A0) (hL : 1200 ≤ L) :

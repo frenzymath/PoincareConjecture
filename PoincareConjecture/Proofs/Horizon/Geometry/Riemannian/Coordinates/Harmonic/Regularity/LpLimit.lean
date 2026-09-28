@@ -2,14 +2,6 @@ import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -43,7 +35,6 @@ private theorem tendsto_geometric_volume_root (n : ℕ) {A ρ χ : ℝ}
   congr 1
   ring
 
-
 theorem tendsto_shrinking_ball_volume_root {n : ℕ}
     (z : EuclideanSpace ℝ (Fin n)) {ρ χ : ℝ} (hρ : 0 < ρ) (hχ : 1 < χ) :
     Tendsto (fun k : ℕ =>
@@ -59,8 +50,6 @@ theorem tendsto_shrinking_ball_volume_root {n : ℕ}
       ENNReal.toReal_mul, ENNReal.toReal_ofReal (by positivity)]
     simp only [finrank_euclideanSpace_fin, A]
   simpa only [hvol] using tendsto_geometric_volume_root n hA hρ hχ
-
-
 
 theorem continuousAt_abs_le_of_shrinking_eLpNorm {n : ℕ}
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {z : EuclideanSpace ℝ (Fin n)}

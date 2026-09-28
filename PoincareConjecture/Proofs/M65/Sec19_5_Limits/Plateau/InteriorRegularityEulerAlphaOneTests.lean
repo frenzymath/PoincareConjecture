@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerStationarity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open Set Metric Filter MeasureTheory
 open scoped Topology ContDiff Manifold SchwartzMap
 
 namespace PoincareConjecture.M65Euler
-
-
-
 
 theorem vector_firstVariation_eq_sum {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
@@ -80,9 +67,6 @@ theorem vector_firstVariation_eq_sum {N : ℕ}
       rw [Finset.sum_add_distrib, ← Finset.mul_sum]
       ring
 
-
-
-
 theorem vector_firstVariation_eq_zero_of_notMem_tsupport {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (X : LoopPlane → EuclideanSpace ℝ (Fin N))
@@ -96,10 +80,6 @@ theorem vector_firstVariation_eq_zero_of_notMem_tsupport {N : ℕ}
   simp only [map_zero, zero_apply, Finset.sum_const_zero, mul_zero, add_zero]
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem variational_vector_equation {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))

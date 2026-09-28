@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +12,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem isInvertible_of_uniformEllipticity
     {A : E →L[ℝ] E →L[ℝ] ℝ} {a : ℝ} (ha : 0 < a)
@@ -44,7 +32,6 @@ theorem isInvertible_of_uniformEllipticity
   exact ⟨ContinuousLinearEquiv.ofBijective A (LinearMap.ker_eq_bot.mpr hinj)
     (LinearMap.range_eq_top.mpr hsurj), rfl⟩
 
-
 theorem isCompact_bounded_uniformlyElliptic (a C : ℝ) :
     IsCompact {A : E →L[ℝ] E →L[ℝ] ℝ | ‖A‖ ≤ C ∧ ∀ v, a * ‖v‖ ^ 2 ≤ A v v} := by
   let : ProperSpace (E →L[ℝ] E →L[ℝ] ℝ) :=
@@ -63,7 +50,6 @@ theorem isCompact_bounded_uniformlyElliptic (a C : ℝ) :
         (ContinuousLinearMap.apply ℝ (E →L[ℝ] ℝ) v).continuous)
   · exact isBounded_iff_forall_norm_le.mpr ⟨C, fun _ hA => hA.1⟩
 
-
 theorem hasUniformJetBoundsOn_inverse_elliptic
     {a : ℝ} (ha : 0 < a) (C : ℝ) (n : ℕ) :
     HasUniformJetBoundsOn n
@@ -80,7 +66,6 @@ theorem hasUniformJetBoundsOn_inverse_elliptic
   obtain ⟨B, hB⟩ := (isCompact_bounded_uniformlyElliptic (E := E) a C).exists_bound_of_continuousOn hcont
   exact ⟨B, fun _ A hA => hB A hA⟩
 
-
 theorem contDiffOn_inverse_metric {ι : Type*} {U : Set E}
     (hU : IsOpen U) {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ}
     (hA : ∀ i, ContDiffOn ℝ ∞ (A i) U) {a : ℝ} (ha : 0 < a)
@@ -89,7 +74,6 @@ theorem contDiffOn_inverse_metric {ι : Type*} {U : Set E}
   intro x hx
   exact ((isInvertible_of_uniformEllipticity ha (hell i x hx)).contDiffAt_map_inverse.comp x
     ((hA i).contDiffAt (hU.mem_nhds hx))).contDiffWithinAt
-
 
 theorem hasUniformJetBoundsOn_inverse_metric {ι : Type*} {U : Set E}
     (hU : IsOpen U) {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ}

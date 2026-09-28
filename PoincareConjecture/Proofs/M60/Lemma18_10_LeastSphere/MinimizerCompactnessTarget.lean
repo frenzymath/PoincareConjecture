@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessJets
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,16 +16,11 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def SUChartReadable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (e : M → E) : Prop :=
   ∀ p : M, ∃ b : M, p ∈ (extChartAt (𝓡 n) b).source ∧
     ∃ L : E →L[ℝ] EuclideanSpace ℝ (Fin n),
       (fun q => L (e q)) =ᶠ[𝓝 p] (extChartAt (𝓡 n) b)
-
-
-
 
 theorem suCompactObservation_exists [CompactSpace M] [T2Space M] :
     ∃ (d : ℕ) (e : M → EuclideanSpace ℝ (Fin d)),
@@ -67,9 +60,6 @@ theorem suCompactObservation_exists [CompactSpace M] [T2Space M] :
   change f i q • (extChartAt (𝓡 n) (f.c i)) q = _
   rw [show f i q = 1 from hq, one_smul]
 
-
-
-
 theorem suChartReadable_contMDiff
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {e : M → E} (he : SUChartReadable (n := n) e) {f : LoopPlane → M}
@@ -91,10 +81,6 @@ theorem suChartReadable_contMDiff
   change L (e (f x)) = c (f x) at hx
   change f x = c.symm (L (e (f x)))
   rw [hx, c.left_inv hxs]
-
-
-
-
 
 theorem suTarget_C1_subsequence [CompactSpace M] [T2Space M]
     {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

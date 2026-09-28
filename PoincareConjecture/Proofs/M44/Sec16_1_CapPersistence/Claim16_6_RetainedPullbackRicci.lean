@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T b : ℝ}
-
-
-
 
 theorem retained_composition_invertible
     (event : SurgeryEventData g0 K P slice metric T)
@@ -45,9 +33,6 @@ theorem retained_composition_invertible
   rw [mfderiv_comp x (hr.mdifferentiableAt (by simp))
     ((hA.contMDiffAt (hV.mem_nhds hx)).mdifferentiableAt (by simp))]
   exact hri.comp (hi x hx)
-
-
-
 
 theorem retainedPullbackCoefficients_ricci
     (event : SurgeryEventData g0 K P slice metric T)

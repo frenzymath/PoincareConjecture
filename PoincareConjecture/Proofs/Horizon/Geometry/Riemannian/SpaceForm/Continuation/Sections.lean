@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Rigidity
 import Mathlib.Topology.Sheaves.LocalPredicate
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace PoincareConjecture.SpaceForm
 variable {n : ℕ} {M : Type*} {N : Type} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
 
 def isometryPrelocal (g : RiemannianMetric n M) (h : RiemannianMetric n N) :
     TopCat.PrelocalPredicate (fun _ : TopCat.of M => N) where
@@ -30,15 +27,12 @@ def isometryPrelocal (g : RiemannianMetric n M) (h : RiemannianMetric n N) :
     exact ⟨k, hk.mono i.le, fun x hx => hm x (i.le hx),
       fun x => heq ⟨x, i.le x.property⟩⟩
 
-
-
 def isometryPredicate (g : RiemannianMetric n M) (h : RiemannianMetric n N) :
     TopCat.LocalPredicate (fun _ : TopCat.of M => N) :=
   (isometryPrelocal g h).sheafify
 
 abbrev isometryPresheaf (g : RiemannianMetric n M) (h : RiemannianMetric n N) :=
   (TopCat.subsheafToTypes (isometryPredicate g h)).presheaf
-
 
 def sectionExtension [Nonempty N] (U : Opens (TopCat.of M)) (f : U → N) : M → N := by
   classical
@@ -48,8 +42,6 @@ omit [TopologicalSpace N] in
 theorem sectionExtension_apply [Nonempty N] (U : Opens (TopCat.of M))
     (f : U → N) {x : M} (hx : x ∈ U) : sectionExtension U f x = f ⟨x, hx⟩ := by
   simp [sectionExtension, hx]
-
-
 
 theorem sectionExtension_spec [Nonempty N]
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -120,7 +112,6 @@ theorem isometry_eventuallyEq_of_germ_eq [Nonempty N]
   filter_upwards [W.isOpen.mem_nhds hxW] with y hy
   rw [sectionExtension_apply U s.val (iU.le hy), sectionExtension_apply V t.val (iV.le hy)]
   exact congrArg (fun a : (isometryPresheaf g h).obj (op W) => a.val ⟨y, hy⟩) hres
-
 
 theorem isometry_germ_injective [T2Space M] [CompactSpace M] [T2Space N] [Nonempty N]
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter Set
@@ -24,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem integrable_limit_of_monotone_of_integral_le (g : RiemannianMetric n M)
     {F : ℕ → M → ℝ} {U : M → ℝ} {C : ℝ}
@@ -55,8 +42,6 @@ theorem integrable_limit_of_monotone_of_integral_le (g : RiemannianMetric n M)
   rw [integral_eq_lintegral_of_nonneg_ae (ae_of_all _ hUpos) hUm]
   simpa only [ENNReal.toReal_ofReal hC] using ENNReal.toReal_mono ENNReal.ofReal_ne_top hb
 
-
-
 theorem integrable_iSup_of_monotone_of_integral_le (g : RiemannianMetric n M)
     {F : ℕ → M → ℝ} {C : ℝ}
     (hF : ∀ j, Integrable (F j) g.volumeMeasure)
@@ -68,8 +53,6 @@ theorem integrable_iSup_of_monotone_of_integral_le (g : RiemannianMetric n M)
   apply g.integrable_limit_of_monotone_of_integral_le hF hpos hmono ?_ hbound
   intro x
   exact tendsto_atTop_ciSup (hmono x) (hbdd x)
-
-
 
 theorem integral_iSup_of_monotone_of_integral_le (g : RiemannianMetric n M)
     {F : ℕ → M → ℝ} {C : ℝ}
@@ -87,8 +70,6 @@ theorem integral_iSup_of_monotone_of_integral_le (g : RiemannianMetric n M)
   have hbi : BddAbove (range (fun j => ∫ x, F j x ∂g.volumeMeasure)) :=
     ⟨C, forall_mem_range.mpr hbound⟩
   exact tendsto_nhds_unique hl (tendsto_atTop_ciSup hmi hbi)
-
-
 
 theorem integrable_first_moment_limit_of_monotone (g : RiemannianMetric n M)
     {F : ℕ → M → ℝ} {U : M → ℝ} {x : M} {C : ℝ}

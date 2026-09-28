@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.F
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_ball_shrinking_isotopy
     {r R c : Real} (hr : 0 < r) (hrR : r < R) (hc : 0 < c) (hc1 : c ≤ 1) :
@@ -80,8 +69,6 @@ theorem exists_supported_ball_shrinking_isotopy
       exact (hgder t).hasDerivWithinAt)
     (by simp [hi, g])
   exact heq ht
-
-
 
 theorem exists_supported_ball_shrinking
     {r R c : Real} (hr : 0 < r) (hrR : r < R) (hc : 0 < c) (hc1 : c ≤ 1) :

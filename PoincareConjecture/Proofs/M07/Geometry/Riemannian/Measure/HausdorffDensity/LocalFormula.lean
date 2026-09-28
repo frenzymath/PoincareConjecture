@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import Mathlib.MeasureTheory.Integral.IntegrableOn
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

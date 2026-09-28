@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonCompactOverlap
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLChartRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +9,6 @@ namespace OpenPartialHomeomorph
 
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_compact_core_chart_insertion
     (c : ι → OpenPartialHomeomorph M E) (d : OpenPartialHomeomorph M E)

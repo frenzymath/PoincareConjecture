@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -18,7 +9,6 @@ namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 lemma norm_inverse_apply_le_of_ellipticity {B : E →L[ℝ] E →L[ℝ] ℝ}
     {a : ℝ} (ha : 0 < a) (hell : ∀ v, a * ‖v‖ ^ 2 ≤ B v v)
@@ -34,7 +24,6 @@ lemma norm_inverse_apply_le_of_ellipticity {B : E →L[ℝ] E →L[ℝ] ℝ}
     nlinarith
 
 omit [FiniteDimensional ℝ E] in
-
 
 lemma norm_metricKoszulCovector_le (B : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
     (v w : E) : ‖metricKoszulCovector B v w‖ ≤ (3 / 2 : ℝ) * ‖B‖ * ‖v‖ * ‖w‖ := by
@@ -58,8 +47,6 @@ lemma norm_metricKoszulCovector_le (B : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
   rw [metricKoszulCovector, norm_smul]
   norm_num only [Real.norm_eq_abs, abs_inv, abs_of_pos (by norm_num : (0 : ℝ) < 2)]
   nlinarith
-
-
 
 lemma norm_christoffelBilinear_le_of_ellipticity
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (x : E) {a : ℝ}

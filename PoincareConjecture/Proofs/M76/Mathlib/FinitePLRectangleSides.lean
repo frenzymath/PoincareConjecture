@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +7,6 @@ open Set Geometry
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem IsFinitePL.exists_horizontal_interval_chart
     {a b : ℝ} {s : Set E} {e : Icc a b ≃ₜ s} (he : e.IsFinitePL) (c : ℝ) :
@@ -49,9 +37,6 @@ theorem IsFinitePL.exists_horizontal_interval_chart
   have hinv : F.symm z = x := by rw [← hz, F.symm_apply_apply]
   change (e (F.symm z) : E) = e x
   rw [hinv]
-
-
-
 
 theorem IsFinitePL.exists_vertical_interval_chart
     {a b : ℝ} {s : Set E} {e : Icc a b ≃ₜ s} (he : e.IsFinitePL) (c : ℝ) :
@@ -87,10 +72,6 @@ theorem IsFinitePL.exists_vertical_interval_chart
   have hinv : F.symm z = x := by rw [← hz, F.symm_apply_apply]
   change (e (F.symm z) : E) = e x
   rw [hinv]
-
-
-
-
 
 theorem mem_side_iff_of_height {Y : Type*} [TopologicalSpace Y]
     {I J : Set ℝ} {s t : Set Y}

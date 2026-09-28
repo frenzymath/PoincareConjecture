@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Contacts
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,7 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 def movingContactCoordinate {M : Type*} [TopologicalSpace M]
     (e : OpenPartialHomeomorph E2 M)
@@ -27,9 +24,6 @@ theorem movingContactCoordinate_zero {M : Type*} [TopologicalSpace M]
     (hs : (s, 0) ∈ F.source) (hcontact : F (s, 0) = e (contact r j)) :
     movingContactCoordinate e F r j 0 = s := by
   simp only [movingContactCoordinate, movingContact_zero hr, ← hcontact, F.left_inv hs]
-
-
-
 
 theorem exists_movingContactCoordinate_band {M : Type*} [TopologicalSpace M]
     {h : M → Real} {c r a b s : Real}

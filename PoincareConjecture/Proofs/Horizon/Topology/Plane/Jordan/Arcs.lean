@@ -1,53 +1,17 @@
-
-
-
-
-
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Geometry.Euclidean.Sphere.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.Topology.Plane.Jordan.Arcs
 
 open Metric Set Function Real
 
-
 abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 noncomputable def complexLIE : ℂ ≃ₗᵢ[ℝ] Plane :=
   Complex.isometryOfOrthonormal (EuclideanSpace.basisFun (Fin 2) ℝ)
-
-
 
 noncomputable def circleEquivSphere : Circle ≃ sphere (0 : Plane) 1 where
   toFun z := ⟨complexLIE z, by
@@ -59,12 +23,10 @@ noncomputable def circleEquivSphere : Circle ≃ sphere (0 : Plane) 1 where
   left_inv z := by ext; simp [complexLIE.symm_apply_apply]
   right_inv w := by ext; simp [complexLIE.apply_symm_apply]
 
-
 noncomputable def circleHomeoSphere : Circle ≃ₜ sphere (0 : Plane) 1 :=
   Continuous.homeoOfEquivCompactToT2 (f := circleEquivSphere) <| by
     apply Continuous.subtype_mk
     exact complexLIE.continuous.comp continuous_subtype_val
-
 
 noncomputable def spherePlaneHomeoCircle : sphere (0 : Plane) 1 ≃ₜ Circle :=
   circleHomeoSphere.symm
@@ -72,33 +34,23 @@ noncomputable def spherePlaneHomeoCircle : sphere (0 : Plane) 1 ≃ₜ Circle :=
 @[simp] lemma circleHomeoSphere_coe (z : Circle) :
     (circleHomeoSphere z : Plane) = complexLIE z := rfl
 
-
-
-
-
 noncomputable def param (θ : ℝ) : sphere (0 : Plane) 1 := circleHomeoSphere (Circle.exp θ)
 
 @[continuity, fun_prop]
 lemma continuous_param : Continuous param :=
   circleHomeoSphere.continuous.comp Circle.exp.continuous
 
-
 lemma param_eq_iff {s t : ℝ} : param s = param t ↔ ∃ m : ℤ, s = t + m * (2 * π) := by
   unfold param
   rw [circleHomeoSphere.injective.eq_iff, Circle.exp_eq_exp]
 
-
 lemma param_surjective : Surjective param :=
   circleHomeoSphere.surjective.comp Circle.exp_surjective
-
 
 lemma param_periodic : Function.Periodic param (2 * π) := by
   intro θ
   rw [param_eq_iff]
   exact ⟨1, by push_cast; ring⟩
-
-
-
 
 lemma param_injOn {a b : ℝ} (h : b - a < 2 * π) : InjOn param (Icc a b) := by
   intro s hs t ht hst
@@ -117,11 +69,8 @@ lemma param_injOn {a b : ℝ} (h : b - a < 2 * π) : InjOn param (Icc a b) := by
     omega
   rw [hm0] at hm; push_cast at hm; linarith
 
-
 lemma isClosed_arc (a b : ℝ) : IsClosed (param '' Icc a b) :=
   (isCompact_Icc.image continuous_param).isClosed
-
-
 
 noncomputable def arcHomeoIcc {a b : ℝ} (h : b - a < 2 * π) :
     (Icc a b) ≃ₜ (param '' Icc a b) :=
@@ -129,12 +78,9 @@ noncomputable def arcHomeoIcc {a b : ℝ} (h : b - a < 2 * π) :
     (f := Equiv.Set.imageOfInjOn param (Icc a b) (param_injOn h))
     (continuous_induced_rng.2 (continuous_param.comp continuous_subtype_val))
 
-
-
 noncomputable def arcHomeoUnitInterval {a b : ℝ} (hab : a < b) (h : b - a < 2 * π) :
     (param '' Icc a b) ≃ₜ unitInterval :=
   (arcHomeoIcc h).symm.trans (iccHomeoI a b hab)
-
 
 lemma arcHomeoUnitInterval_apply_left {a b : ℝ} (hab : a < b) (h : b - a < 2 * π)
     (hmem : param a ∈ param '' Icc a b) :
@@ -150,7 +96,6 @@ lemma arcHomeoUnitInterval_apply_left {a b : ℝ} (hab : a < b) (h : b - a < 2 *
   show (a - a) / (b - a) = 0
   rw [sub_self, zero_div]
 
-
 lemma arcHomeoUnitInterval_apply_right {a b : ℝ} (hab : a < b) (h : b - a < 2 * π)
     (hmem : param b ∈ param '' Icc a b) :
     arcHomeoUnitInterval hab h ⟨param b, hmem⟩ = 1 := by
@@ -164,11 +109,6 @@ lemma arcHomeoUnitInterval_apply_right {a b : ℝ} (hab : a < b) (h : b - a < 2 
   rw [Homeomorph.trans_apply, hsymm, iccHomeoI_apply_coe, Set.Icc.coe_one]
   show (b - a) / (b - a) = 1
   rw [div_self (by linarith : b - a ≠ 0)]
-
-
-
-
-
 
 theorem arc_interior_isPathConnected {X : Type*} [TopologicalSpace X] {A : Set X}
     (e : A ≃ₜ unitInterval) {x y : X} (hx : x ∈ A) (hy : y ∈ A)
@@ -253,9 +193,6 @@ theorem arc_interior_isPathConnected {X : Type*} [TopologicalSpace X] {A : Set X
   rw [← himg]
   exact hIoo.image hgcont
 
-
-
-
 theorem arc_interior_joinedIn {X : Type*} [TopologicalSpace X] {A : Set X}
     (e : A ≃ₜ unitInterval) {x y : X} (hx : x ∈ A) (hy : y ∈ A)
     (he : ({e ⟨x, hx⟩, e ⟨y, hy⟩} : Set unitInterval) = {0, 1})
@@ -263,11 +200,6 @@ theorem arc_interior_joinedIn {X : Type*} [TopologicalSpace X] {A : Set X}
     (hux : u ∉ ({x, y} : Set X)) (hvx : v ∉ ({x, y} : Set X)) :
     JoinedIn (A \ {x, y}) u v :=
   (arc_interior_isPathConnected e hx hy he).joinedIn u ⟨hu, hux⟩ v ⟨hv, hvx⟩
-
-
-
-
-
 
 theorem sphere_split {x y : sphere (0 : Plane) 1} (hxy : x ≠ y) :
     ∃ A₁ A₂ : Set (sphere (0 : Plane) 1),
@@ -371,11 +303,6 @@ theorem sphere_split {x y : sphere (0 : Plane) 1} (hxy : x ≠ y) :
     isClosed_arc α β, isClosed_arc β (α + 2 * π), hunion, hinter,
     ⟨arcHomeoUnitInterval hmemβ.1 hlen1⟩, ⟨arcHomeoUnitInterval hβlt hlen2⟩, hpc1, hpc2⟩
 
-
-
-
-
-
 theorem jordanCurve_split {K : Type*} [TopologicalSpace K]
     (f : sphere (0 : Plane) 1 ≃ₜ K) {x y : sphere (0 : Plane) 1} (hxy : x ≠ y) :
     ∃ A₁ A₂ : Set K,
@@ -392,10 +319,6 @@ theorem jordanCurve_split {K : Type*} [TopologicalSpace K]
     himg1 ▸ hpc1.image f.continuous, himg2 ▸ hpc2.image f.continuous⟩
   · rw [← image_union, hu, image_univ, f.surjective.range_eq]
   · rw [← Set.image_inter f.injective, hi, Set.image_insert_eq, Set.image_singleton]
-
-
-
-
 
 theorem exists_proper_arc {C : Set (sphere (0 : Plane) 1)}
     (hC : IsClosed C) (hCne : C ≠ univ) :

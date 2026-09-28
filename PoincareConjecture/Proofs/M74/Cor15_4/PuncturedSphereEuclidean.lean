@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesBallSide
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,9 +14,6 @@ open M25.Topology3D
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
-
-
-
 
 noncomputable def puncturedSphereEuclideanOfInverse
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
@@ -100,8 +88,6 @@ noncomputable def puncturedSphereEuclideanOfInverse
           OpenPartialHomeomorph.contDiff_univBall.contMDiff.contMDiffAt
     exact (B.punctureChart_symm_contMDiff d).comp hc
 
-
-
 theorem puncturedSphereEuclideanOfInverse_apply
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
     (Ψ : StandardCapSpace → StandardCapSpace) (hΨ : ContDiff ℝ ∞ Ψ)
@@ -113,7 +99,6 @@ theorem puncturedSphereEuclideanOfInverse_apply
         (Ψ (B.punctureChart d y.1)) := rfl
 
 include d in
-
 
 theorem nonempty_puncturedSphereEuclidean (hS : SchoenfliesService) :
     Nonempty (Diffeomorph (𝓡 3) (𝓡 3)

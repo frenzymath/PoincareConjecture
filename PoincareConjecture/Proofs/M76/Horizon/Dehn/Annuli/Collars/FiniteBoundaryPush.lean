@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryDiskPush
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

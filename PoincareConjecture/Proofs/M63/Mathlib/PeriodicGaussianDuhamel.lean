@@ -5,16 +5,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Partial
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M63
 variable {L : ℝ} [Fact (0 < L)]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
-
-
 theorem continuous_periodicGaussianHeat_action :
     Continuous (fun p : ℝ × C(AddCircle L, E) => periodicGaussianHeat p.1 p.2) := by
   apply continuous_prod_of_continuous_lipschitzWith' _ 1
@@ -39,10 +26,6 @@ theorem continuous_periodicGaussianHeat_action :
     exact (periodicGaussianHeat_properties (f - g)).1 t
   · intro f
     exact (periodicGaussianHeat_properties f).2.2
-
-
-
-
 
 theorem hasDerivAt_periodicGaussianHeat_backward
     {a b ν : ℝ} (_hab : a ≤ b) (hν : 0 < ν)
@@ -239,10 +222,6 @@ theorem hasDerivAt_periodicGaussianHeat_backward
   have hd : HasDerivAt (fun s => periodicGaussianHeat (ν * (t - s)) (h s))
       (periodicGaussianHeat τ (hdot r - ν • h₂ r)) r := hint.2.congr_deriv hvalue
   exact (ContinuousMap.evalCLM ℝ (x : AddCircle L)).hasFDerivAt.comp_hasDerivAt r hd
-
-
-
-
 
 theorem periodicGaussianHeat_duhamel_of_derivative_witnesses
     {a b ν : ℝ} (hab : a ≤ b) (hν : 0 < ν)

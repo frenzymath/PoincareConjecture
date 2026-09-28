@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.MarkedModel
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeBranchInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -21,7 +13,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
 
 theorem OrdinaryIntervalMarkedModel.complete_core_preimage
     (D : OrdinaryIntervalMarkedModel old i) :
@@ -36,8 +27,6 @@ theorem OrdinaryIntervalMarkedModel.complete_core_preimage
   · rintro (h0 | h1)
     · exact ⟨D.source_subset 0 h0.1, h0.2⟩
     · exact ⟨D.source_subset 1 h1.1, h1.2⟩
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_branch_inverses
     (D : OrdinaryIntervalMarkedModel old i) :

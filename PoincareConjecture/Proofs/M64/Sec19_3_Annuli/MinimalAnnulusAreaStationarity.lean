@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ClosedRectangleEnergyVariati
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimumStationarity
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -51,11 +39,6 @@ private theorem hasDerivAt_zero_of_area_energy_squeeze
   simpa only [smul_zero, sub_zero] using hbound.trans_isLittleO
     (show (fun y => F y - F x) =o[𝓝 x] (fun y => y - x) from by
       simpa only [smul_zero, sub_zero] using hF.isLittleO)
-
-
-
-
-
 
 theorem m64Annulus_area_hasDerivAt_zero_of_conformal_minimum
     (A : M64Annulus g c0 c1)
@@ -125,11 +108,6 @@ theorem m64Annulus_area_hasDerivAt_zero_of_conformal_minimum
       filter_upwards [isOpen_Ioo.mem_nhds hzero] with s hs
       exact (hcomparison s hs).2)
 
-
-
-
-
-
 theorem m64AnnulusAreaStationary_of_conformal_minimum
     (A : M64Annulus g c0 c1)
     (hminimum : A.area = m64LeastAnnulusArea g c0 c1)
@@ -188,11 +166,6 @@ theorem m64AnnulusAreaStationary_of_conformal_minimum
     (by
       filter_upwards [isOpen_Ioo.mem_nhds hzero] with s hs
       exact (hcomparison s hs).2)
-
-
-
-
-
 
 theorem m64AnnulusAreaStationary_of_modulus_conformal_minimum
     (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

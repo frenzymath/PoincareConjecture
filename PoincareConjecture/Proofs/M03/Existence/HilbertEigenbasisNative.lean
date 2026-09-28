@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.HilbertResolventNative
 import Mathlib.Analysis.InnerProductSpace.l2Space
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -99,7 +91,6 @@ theorem eigenvectors_total (J : V →L[ℝ] H) (hc : IsCompactOperator J)
   rw [span_eigenvectors, nonzero_eigenspaces_eq_all J hd]
   exact eigenspaces_total J hc
 
-
 def eigenbasis (J : V →L[ℝ] H) (hc : IsCompactOperator J) (hd : DenseRange J) :
     HilbertBasis (EigenIndex J) ℝ H :=
   HilbertBasis.mkOfOrthogonalEqBot (eigenvector_orthonormal J hc) (eigenvectors_total J hc hd)
@@ -131,7 +122,6 @@ def generatorParameters (J : V →L[ℝ] H) (hc : IsCompactOperator J)
 @[simp] theorem generatorParameters_coe (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hnorm : ‖J‖ ≤ 1) (i : EigenIndex J) :
     (generatorParameters J hc hd hnorm i : ℝ) = i.1.val⁻¹ - 1 := rfl
-
 
 theorem orthonormal_index_countable {iota : Type*} [SeparableSpace H]
     {e : iota → H} (he : Orthonormal ℝ e) : Countable iota := by

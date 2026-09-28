@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import Mathlib.Analysis.Convex.Extreme
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*}
-
-
 
 theorem IsExtreme.inter_set [AddCommGroup E] [Module ℝ E]
     {s t : Set E} (h : IsExtreme ℝ s t) (r : Set E) :
@@ -28,9 +17,6 @@ theorem IsExtreme.inter_set [AddCommGroup E] [Module ℝ E]
   exact ⟨h.left_mem_of_mem_openSegment hx.1 hy.1 hz.1 hseg, hx.2⟩
 
 variable [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AffineIndependent.isExtreme_convexHull_finset_subset [FiniteDimensional ℝ E]
     {s t : Finset E} (hs : AffineIndependent ℝ (fun x : (s : Set E) => (x : E)))
@@ -82,9 +68,6 @@ theorem AffineIndependent.isExtreme_convexHull_finset_subset [FiniteDimensional 
   rwa [hzvertices] at hxf
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem isExtreme_convexHull_section_inter [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces)

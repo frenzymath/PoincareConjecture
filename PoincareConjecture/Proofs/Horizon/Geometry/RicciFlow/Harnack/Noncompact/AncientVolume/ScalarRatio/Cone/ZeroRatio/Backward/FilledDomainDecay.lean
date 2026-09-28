@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.DistanceHarnack
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.ZeroRatioDecay
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +9,6 @@ open scoped Topology Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
 
 theorem curvatureTensorNorm_le_later_scalar_of_bounded_ancient_distance_le
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -51,9 +38,6 @@ theorem curvatureTensorNorm_le_later_scalar_of_bounded_ancient_distance_le
   exact (by simpa using hflat : (F.connection a).curvatureTensorNorm x ≤ 0).trans
     (by positivity)
 
-
-
-
 theorem eventually_curvatureTensorNorm_lt_on_of_later_scalar_tendsto_zero
     {n : ℕ} {M : ℕ → Type u} [∀ i, TopologicalSpace (M i)] [∀ i, T3Space (M i)]
     [∀ i, SecondCountableTopology (M i)] [∀ i, ConnectedSpace (M i)]
@@ -82,8 +66,6 @@ theorem eventually_curvatureTensorNorm_lt_on_of_later_scalar_tendsto_zero
   obtain ⟨K, hK, hbound⟩ := hbounded i
   exact ((F i).curvatureTensorNorm_le_later_scalar_of_bounded_ancient_distance_le
     hC (hcomplete i) (hoperator i) hK hbound hab hb x (y i) (hi x hx)).trans_lt hsmall
-
-
 
 theorem ancientRescaleAt_scalarCurvature_tendsto_zero_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -127,9 +109,6 @@ theorem ancientRescaleAt_scalarCurvature_tendsto_zero_of_zero_ratio
   apply hcurv.trans_lt
   norm_num
   linarith
-
-
-
 
 theorem eventually_ancientRescaleAt_filled_domain_curvature_lt_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.Tangential
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Displacement.RetainedRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -227,10 +219,6 @@ theorem exists_hamiltonZero_retained_marked_disk_installation
     rw [hamiltonZeroTargetVectorTranslation_coordinates]
     simp only [Pi.smul_apply, smul_eq_mul, hVphase, mul_zero, AddCircle.coe_zero, add_zero]
     exact (hamiltonZeroThirdCircleMap_ambient phi x).symm
-
-
-
-
 
 theorem exists_hamiltonZero_retained_source_disk_installation
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

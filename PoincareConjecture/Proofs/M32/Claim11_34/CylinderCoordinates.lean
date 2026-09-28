@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.Cylinders
 import PoincareConjecture.Proofs.M32.Claim11_34.IncludedMetricCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -34,7 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem blowupPullbackCoefficient_contDiffOn
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

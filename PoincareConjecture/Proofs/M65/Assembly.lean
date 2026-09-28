@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M65
 import PoincareConjecture.Proofs.M65.Mathlib.IntervalHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {A : M63RawApproximation P.flow P.family zeta}
   {product : M62.CircleProductData P.flow circumference}
 
-
-
 theorem m65ProjectedFamily_homotopic
     (S : M63ProductSolutionFamily product A) (t : Set.Icc t₀ t₁) :
     P.family.Homotopic (S.projected t) := by
@@ -36,8 +24,6 @@ theorem m65ProjectedFamily_homotopic
   rw [S.projected_initial ⟨le_rfl, P.time_ordered⟩] at h
   exact A.homotopic.trans h
 
-
-
 theorem m65ProjectedFamily_initial_area_close
     (S : M63ProductSolutionFamily product A) (c : LoopTwoSphere) :
     |fillingArea (P.flow.metric t₀)
@@ -45,9 +31,6 @@ theorem m65ProjectedFamily_initial_area_close
       fillingArea (P.flow.metric t₀) (P.family c)| < zeta := by
   rw [S.projected_initial ⟨le_rfl, P.time_ordered⟩]
   exact A.area_error c
-
-
-
 
 def m65DeformedFamilyOfProjectedEstimate
     (S : M63ProductSolutionFamily product A)

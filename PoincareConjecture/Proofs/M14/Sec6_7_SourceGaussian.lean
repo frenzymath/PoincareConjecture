@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M14MeasureTransport
 import PoincareConjecture.Proofs.M14.Mathlib.BasisCoordinateVolume
 import PoincareConjecture.Proofs.M10.SourceGaussian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -28,8 +19,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
 
 theorem horizontal_inner_euclideanCoordinates
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
@@ -55,8 +44,6 @@ private theorem horizontalGaussian_comp_coordinates
   have hpow : Real.rpow (2 : ℝ) (n : ℝ) = (2 : ℝ) ^ n := Real.rpow_natCast _ _
   simp only [Function.comp_apply, horizontal_inner_euclideanCoordinates b hb, hpow]
 
-
-
 theorem horizontalGaussian_integrable
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
     (hb : ∀ i j, G.spacetime.horizontalMetric.inner x (b i) (b j) =
@@ -72,8 +59,6 @@ theorem horizontalGaussian_integrable
     h.mpr (by simpa only [Set.preimage_univ, integrableOn_univ] using
       M10.sourceGaussian_integrable n)
 
-
-
 theorem integral_horizontalGaussian
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
     (hb : ∀ i j, G.spacetime.horizontalMetric.inner x (b i) (b j) =
@@ -88,8 +73,6 @@ theorem integral_horizontalGaussian
   simpa only [Set.preimage_univ, setIntegral_univ,
     M10.integral_sourceGaussian, M14HorizontalCoordinateVolume] using h
 
-
-
 theorem measureData_sourceGaussian_integrable
     {T τ : ℝ} {E : M14ExponentialFamily G T x} {H : M14StableSet G T τ x E}
     (D : M14MeasureJacobianData G T τ x E H) :
@@ -97,8 +80,6 @@ theorem measureData_sourceGaussian_integrable
       Real.exp (-G.spacetime.horizontalMetric.inner x Z Z)) D.sourceMeasure := by
   rw [D.source_volume_eq_metric_volume]
   exact horizontalGaussian_integrable D.sourceBasis D.source_basis_orthonormal
-
-
 
 theorem measureData_integral_sourceGaussian
     {T τ : ℝ} {E : M14ExponentialFamily G T x} {H : M14StableSet G T τ x E}

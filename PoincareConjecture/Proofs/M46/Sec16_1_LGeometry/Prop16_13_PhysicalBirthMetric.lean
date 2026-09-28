@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BirthMetric
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_PhysicalScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +32,6 @@ private theorem surgerySlice_pullback_eq_of_identity
   rw [hnear.eq_of_nhds]
   rfl
 
-
-
-
 theorem surgeryCylinder_pullbackInner_zero
     {F : SurgeryFlowData.{u}} {t q : ℝ} {J : Set ℝ}
     {U : Set (F.slice t).carrier} (hU : IsOpen U)
@@ -54,9 +42,6 @@ theorem surgeryCylinder_pullbackInner_zero
   unfold SurgeryFlowCylinder.pullbackInner
   congr 1
   exact surgerySlice_pullback_eq_of_identity hU (by simp) _ hbase hy V W
-
-
-
 
 theorem capComparison_birth_lower_on_physical_ball
     {F : SurgeryFlowData.{u}} {S : MaximalStandardCapFlow F.standard_initial}

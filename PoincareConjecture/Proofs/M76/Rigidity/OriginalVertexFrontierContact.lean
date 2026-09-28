@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBaseSets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem nonboundary_base_contact_empty {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hsF : s ∉ (T.marked 1).faces) :
@@ -37,8 +26,6 @@ theorem nonboundary_base_contact_empty {s : Finset (T.index → ℝ × V3)}
     ((T.marked 2).nonempty_of_mem_faces hs) hnot
 
 open Classical in
-
-
 
 theorem vertex_mem_boundary_of_dual_contact (p : (T.marked 2).vertices)
     {x : T.index → ℝ × V3} (hxN : x ∈ (T.vertexBlock p).space)

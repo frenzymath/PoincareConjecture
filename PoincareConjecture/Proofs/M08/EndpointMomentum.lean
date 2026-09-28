@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M08.WeakVelocity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +36,6 @@ theorem exists_continuous_endpoint_momentum {a b : ℝ} (hab : a < b)
   rw [hFTC] at hadd
   rw [← hadd]
   abel
-
 
 theorem endpoint_velocity_of_momentum {a b : ℝ} (hab : a < b)
     (u d P Q : ℝ → E)

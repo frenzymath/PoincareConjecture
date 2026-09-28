@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M48EpochExtension
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SelectedHoleComplement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.CubicalThreeSphere
 
@@ -18,8 +10,6 @@ local notation "V4" => (Fin 4 → ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "Sphere" => Geometry.CubicalThreeSphere.sphere
 local notation "Cube" => closedBall (0 : V3) 1
-
-
 
 theorem exists_marked_sphere_sides {S : Set V4}
     (e : S ≃ₜ frontier Cube) (he : e.IsFinitePL) (hSS : S ⊆ Sphere)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallScalarLimit
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 theorem tubeCritical_base_scalar_eq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1) (k : ℕ)
     (D : LeviCivitaData (H.tubeCriticalMetric T A1 k)) :
@@ -39,9 +28,6 @@ theorem tubeCritical_base_scalar_eq (H : CounterexampleNeckFamily E)
   exact mul_div_cancel_right₀ _ (H.base_scalar_pos k).ne'
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem regular_limit_base_scalar_eq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)
@@ -70,9 +56,6 @@ theorem regular_limit_base_scalar_eq (H : CounterexampleNeckFamily E)
   exact tendsto_nhds_unique hlimit tendsto_const_nhds
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem regular_limit_base_scale_eq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (hA1 : 0 < A1)

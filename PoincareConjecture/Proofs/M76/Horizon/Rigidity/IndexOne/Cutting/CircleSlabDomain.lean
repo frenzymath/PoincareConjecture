@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.RelativeP
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

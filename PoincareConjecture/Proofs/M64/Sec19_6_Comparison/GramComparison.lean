@@ -1,25 +1,9 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64_gramDet_add_nonneg
     {b00 b01 b11 s00 s01 s11 : ℝ}

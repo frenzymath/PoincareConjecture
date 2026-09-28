@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.FiniteRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 local instance unitVolumeCarrierConnected (C : FlowCarrier.{0} 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
-
-
 
 theorem m23_exists_local_curvature_bound_of_unit_ball_volume
     (P : M23NormalizedKappaCompactnessPredecessors)

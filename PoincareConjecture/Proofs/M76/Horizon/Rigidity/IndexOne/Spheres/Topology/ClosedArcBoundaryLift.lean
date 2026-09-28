@@ -1,21 +1,11 @@
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace AddCircle
 
 variable {Y : Type*} [TopologicalSpace Y]
-
-
 
 theorem exists_lift_in_closed_arc (period : ℝ) [Fact (0 < period)]
     (f : C(Y, AddCircle period)) (lower upper : ℝ)
@@ -41,8 +31,6 @@ theorem exists_lift_in_closed_arc (period : ℝ) [Fact (0 < period)]
   change chart.symm (chart z) ∈ Icc lower upper
   rw [chart.left_inv (hsource hz)]
   exact hz
-
-
 
 theorem exists_boundary_lift_in_closed_arc (period : ℝ) [Fact (0 < period)]
     (f : C(Y, AddCircle period)) {A : Set Y} (lower upper : ℝ)

@@ -1,17 +1,6 @@
 import Mathlib.Probability.Distributions.Gaussian.Multivariate
 import Mathlib.Probability.Distributions.Gaussian.Fernique
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -23,17 +12,14 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
 noncomputable def heatAverage (t : ℝ) (f : V → F) (x : V) : F :=
   ∫ z, f (x + Real.sqrt (2 * t) • z) ∂stdGaussian V
-
 
 noncomputable def gaussianFirstMoment (n : ℕ) : ℝ :=
   ∫ z : EuclideanSpace ℝ (Fin n), ‖z‖ ∂stdGaussian (EuclideanSpace ℝ (Fin n))
 
 theorem gaussianFirstMoment_nonneg : 0 ≤ gaussianFirstMoment n :=
   integral_nonneg (fun _ => norm_nonneg _)
-
 
 theorem radial_weight_translation (x z : V) {a : ℝ} (ha : 0 ≤ a) :
     1 + ‖x‖ ≤ (1 + ‖x + a • z‖) * (1 + a * ‖z‖) := by
@@ -49,15 +35,12 @@ private theorem norm_le_of_weighted_bound {f : V → F} {C : ℝ}
 
 omit [NormedSpace ℝ F] in
 
-
 theorem heatAverage_integrable {f : V → F} (hf : Continuous f) {C : ℝ}
     (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C) (t : ℝ) (x : V) :
     Integrable (fun z => f (x + Real.sqrt (2 * t) • z)) (stdGaussian V) := by
   have hc : Continuous (fun z => f (x + Real.sqrt (2 * t) • z)) := hf.comp (by fun_prop)
   apply Integrable.mono' (integrable_const C) hc.aestronglyMeasurable
   exact Eventually.of_forall (fun z => norm_le_of_weighted_bound hbound _)
-
-
 
 theorem heatAverage_weighted_norm_le {f : V → F} (hf : Continuous f)
     {C : ℝ} (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)
@@ -90,8 +73,6 @@ theorem heatAverage_weighted_norm_le {f : V → F} (hf : Continuous f)
       rw [integral_const_mul, integral_add (integrable_const 1) (hmoment.const_mul a),
         integral_const_mul]
       simp [a, gaussianFirstMoment]
-
-
 
 theorem heatAverage_weighted_norm_le_on_slab {f : V → F} (hf : Continuous f)
     {C T : ℝ} (hC : 0 ≤ C) (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)

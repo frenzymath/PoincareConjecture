@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CutGraphEdgeCocycles
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CocycleHomologyEvaluation
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -55,8 +49,6 @@ theorem incidenceHomologyClass_injective (ends : I → Bool → V) :
   have hv := congrArg (fun f : R ⟶ R => (f (ULift.up 1)).down) he
   change z.val i * 1 = z'.val i * 1 at hv
   simpa using hv
-
-
 
 noncomputable def incidenceHomologyElement (ends : I → Bool → V) :
     LinearMap.ker (incidenceBoundary (K := ZMod 2) ends) →ₗ[ZMod 2]

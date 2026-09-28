@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Gauss
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,10 +14,6 @@ open Poincare.Geometry.Curvature.Hypersurface
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64_secondFundamental_sum_eq_zero_of_harmonic
     {m n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -46,10 +38,6 @@ theorem m64_secondFundamental_sum_eq_zero_of_harmonic
   rw [← heq] at hnormal
   by_contra hne
   exact (ne_of_gt (g.pos (F x) S hne)) hnormal
-
-
-
-
 
 theorem m64_minimal_surface_gaussian_le_sectional
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -88,9 +76,6 @@ theorem m64_minimal_surface_gaussian_le_sectional
   rw [hambient]
   linarith only [hgauss, hnonneg (secondFundamentalForm D Dh F x u u),
     hnonneg (secondFundamentalForm D Dh F x u v)]
-
-
-
 
 theorem m64_harmonic_surface_gaussian_le_sectional
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

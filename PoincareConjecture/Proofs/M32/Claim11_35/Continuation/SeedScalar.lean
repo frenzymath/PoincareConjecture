@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.SliceCurvatureComparison
 import PoincareConjecture.Proofs.M32.Claim11_34.InverseConfinement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,9 +49,6 @@ private theorem seed_zeroSliceEmbedding_pointMap_eq
     continuousOn_toFun := ((G.embedding k).forward_smooth 0 hzero).continuousOn
     continuousOn_invFun := ((G.embedding k).inverse_smooth 0 hzero).continuousOn }
   exact hcast e (by simp) x
-
-
-
 
 theorem blowup_exists_uniform_terminal_scalar_bound
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

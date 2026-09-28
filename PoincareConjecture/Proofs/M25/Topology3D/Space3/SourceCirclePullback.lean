@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_collar_circle_source_pullback
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
@@ -73,9 +58,6 @@ theorem exists_collar_circle_source_pullback
     rw [hd.mfderiv]
     exact congrArg
       (mfderiv (𝓡 2) 𝓘(ℝ, E3) (fun p : UnitTwoSphere => ψ (p, 0)) (q θ)) hab
-
-
-
 
 theorem exists_pole_off_regular_height (h : UnitTwoSphere → ℝ) (t : ℝ)
     (p : UnitTwoSphere) (hreg : mfderiv (𝓡 2) 𝓘(ℝ, ℝ) h p ≠ 0) :

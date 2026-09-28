@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.LocalIdentity
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Substitution.Assembly
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -82,8 +75,6 @@ private theorem energy_le_of_identity {L P C1 C2 C3 R Q : ℝ}
     (hcoer : L ≤ P) (hid : -(P + C1 + C2 + C3) = R) :
     L ≤ |C1| + |C2| + |C3| + |R| + |Q| := by
   linarith [neg_le_abs C1, neg_le_abs C2, neg_le_abs C3, neg_le_abs R, abs_nonneg Q]
-
-
 
 theorem local_tangential_diffQuot_weakGradient_localL2_bound
     {O W : Set E} (B : SmoothEllipticBilinearForm d O)

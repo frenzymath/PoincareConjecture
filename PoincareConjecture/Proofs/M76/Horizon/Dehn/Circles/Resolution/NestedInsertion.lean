@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.BoundaryCor
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.NestedResolvedAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.LocalInjectivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip

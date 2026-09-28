@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralManifoldOrientation
 import PoincareConjecture.Proofs.M53.Mathlib.EvenEquiv
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +13,6 @@ namespace PoincareConjecture.Proofs.M53
 open PoincareConjecture.Proofs.M02.Topology
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X] {d : Nat}
-
-
-
 
 theorem isLocallyConstant_even_integralSupportRestriction
     (A : IntegralLocalHomologyAtlas X d) (K : Set X)
@@ -64,9 +50,6 @@ theorem isLocallyConstant_even_integralSupportRestriction
   exact ((A.localFrame x y hy.1).toAddEquiv.even_apply_iff m).trans
     ((A.localFrame x x (A.mem_baseSet x)).toAddEquiv.even_apply_iff m).symm
 
-
-
-
 theorem even_integralSupportRestriction_iff_of_isPreconnected
     (A : IntegralLocalHomologyAtlas X d) (K : Set X) (hK : IsPreconnected K)
     (a : integralSupportHomology K d) {x y : X} (hx : x ∈ K) (hy : y ∈ K) :
@@ -76,9 +59,6 @@ theorem even_integralSupportRestriction_iff_of_isPreconnected
   exact Iff.of_eq
     ((isLocallyConstant_even_integralSupportRestriction A K a).apply_eq_of_preconnectedSpace
       ⟨x, hx⟩ ⟨y, hy⟩)
-
-
-
 
 theorem even_threeManifoldSupportRestriction_iff_of_isPreconnected
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]

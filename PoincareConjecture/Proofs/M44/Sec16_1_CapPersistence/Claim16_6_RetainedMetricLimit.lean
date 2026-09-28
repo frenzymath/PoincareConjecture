@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +17,6 @@ local notation "basis" => EuclideanSpace.basisFun (Fin 3) ℝ
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
-
 
 theorem retained_surgeryMetricCoefficient
     (event : SurgeryEventData g0 K P slice metric T)
@@ -51,9 +37,6 @@ theorem retained_surgeryMetricCoefficient
       event.retained_metric (f x) (interior_subset hx)
         (mfderiv (𝓡 3) (𝓡 3) f x (basis a)) (mfderiv (𝓡 3) (𝓡 3) f x (basis b))
 
-
-
-
 theorem retained_coefficient_germ
     (event : SurgeryEventData g0 K P slice metric T)
     (q : (slice event.tMinus).carrier) {x : E}
@@ -73,10 +56,6 @@ theorem retained_coefficient_germ
     (isOpen_interior.mem_nhds hret)
   filter_upwards [(isOpen_extChartAt_target (I := 𝓡 3) q).mem_nhds hx, hnear] with y hy hyret
   exact retained_surgeryMetricCoefficient event (hc y hy) hyret a b
-
-
-
-
 
 theorem metric_converges_retention
     (event : SurgeryEventData g0 K P slice metric T) :

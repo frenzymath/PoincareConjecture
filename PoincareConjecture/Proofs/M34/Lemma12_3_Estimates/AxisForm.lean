@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Rotations
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Matrix
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 def capAxisHalfTurn : Matrix.specialOrthogonalGroup (Fin 3) ℝ := by
   refine ⟨!![1, 0, 0; 0, -1, 0; 0, 0, -1], mem_specialOrthogonalGroup_iff.mpr ⟨?_, ?_⟩⟩
@@ -29,8 +16,6 @@ def capAxisHalfTurn : Matrix.specialOrthogonalGroup (Fin 3) ℝ := by
       norm_num [Matrix.mul_apply, Fin.sum_univ_three, Matrix.cons_val_two]
   · norm_num [Matrix.det_fin_three, Matrix.cons_val_two]
 
-
-
 def capAxisQuarterTurn : Matrix.specialOrthogonalGroup (Fin 3) ℝ := by
   refine ⟨!![1, 0, 0; 0, 0, -1; 0, 1, 0], mem_specialOrthogonalGroup_iff.mpr ⟨?_, ?_⟩⟩
   · rw [mem_orthogonalGroup_iff]
@@ -39,8 +24,6 @@ def capAxisQuarterTurn : Matrix.specialOrthogonalGroup (Fin 3) ℝ := by
       norm_num [Matrix.mul_apply, Fin.sum_univ_three, Matrix.cons_val_two]
   · norm_num [Matrix.det_fin_three, Matrix.cons_val_two]
 
-
-
 theorem capAxisHalfTurn_apply (x : StandardCapSpace) :
     standardRotation capAxisHalfTurn x =
       (EuclideanSpace.equiv (Fin 3) ℝ).symm ![x 0, -x 1, -x 2] := by
@@ -48,8 +31,6 @@ theorem capAxisHalfTurn_apply (x : StandardCapSpace) :
   ext i
   fin_cases i <;> simp [standardRotation, capAxisHalfTurn,
     dotProduct, Fin.sum_univ_three]
-
-
 
 theorem capAxisQuarterTurn_apply (x : StandardCapSpace) :
     standardRotation capAxisQuarterTurn x =
@@ -60,7 +41,6 @@ theorem capAxisQuarterTurn_apply (x : StandardCapSpace) :
     dotProduct, Fin.sum_univ_three]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialMetric_inner_rotation (g₀ : StandardInitialMetric)
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x u v : StandardCapSpace) :
@@ -100,7 +80,6 @@ private theorem quarterTurn_second :
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem initialMetric_axis_coefficients (g₀ : StandardInitialMetric) (r : ℝ) :
     let x := EuclideanSpace.single (0 : Fin 3) r
     let b := fun i : Fin 3 => EuclideanSpace.single i (1 : ℝ)
@@ -130,7 +109,6 @@ theorem initialMetric_axis_coefficients (g₀ : StandardInitialMetric) (r : ℝ)
   exact ⟨by linarith, by linarith, by linarith, h22⟩
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialMetric_axis_inner (g₀ : StandardInitialMetric) (r : ℝ)
     (u v : StandardCapSpace) :

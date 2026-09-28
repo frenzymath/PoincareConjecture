@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PhysicalBirthMetric
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open M46
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem seed_cap_birth_tangent_bounds
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

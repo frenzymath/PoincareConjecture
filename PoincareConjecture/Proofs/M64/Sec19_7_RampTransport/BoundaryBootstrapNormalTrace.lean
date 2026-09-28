@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHalfDisk
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +14,6 @@ namespace PoincareConjecture.M64.RampTransport
 
 variable {n : ℕ}
 local notation "Target" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
-
 
 theorem halfDisk_real_trace_tangent {R : ℝ} {H : ℂ → Target}
     (hH : ContDiffOn ℝ 1 H (closedBall (0 : ℂ) R ∩ {z | 0 ≤ z.im}))
@@ -57,10 +42,6 @@ theorem halfDisk_real_trace_tangent {R : ℝ} {H : ℂ → Target}
     simpa only [Function.comp_def, Complex.ofRealCLM_apply, Complex.ofReal_one] using hd
   exact hd'.unique (hdc.congr_of_eventuallyEq heq)
 
-
-
-
-
 theorem metric_normal_axis_zero
     (B : Target →L[ℝ] Target →L[ℝ] ℝ) (L : Target →L[ℝ] Target)
     (tau v : Target) {a : ℝ} (ha : a ≠ 0) (hpos : 0 < B tau tau)
@@ -81,10 +62,6 @@ theorem metric_normal_axis_zero
   have hzero : a * (v 0 * B tau tau) = 0 := by
     simpa only [map_smul, smul_apply, smul_eq_mul, hsplit] using hconf
   exact (mul_eq_zero.mp ((mul_eq_zero.mp hzero).resolve_left ha)).resolve_right hpos.ne'
-
-
-
-
 
 theorem exists_metric_normal_mixed_trace {R : ℝ} (hR : 0 < R)
     {H : ℂ → Target}

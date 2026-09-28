@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chains.IntegralSmallChains
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chains.IntegralSimplexSubdivisionGeometry
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

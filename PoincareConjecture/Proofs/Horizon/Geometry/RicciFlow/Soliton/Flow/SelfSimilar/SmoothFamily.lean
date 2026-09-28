@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Descent
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem movingPullback_contMDiffAt
     (g : RiemannianMetric n M) {F : ℝ → M → M} {t : ℝ} {x : M}
@@ -96,8 +92,6 @@ theorem movingPullback_contMDiffAt
       (mfderiv (𝓡 n) (𝓡 n) (F p.1) p.2 (sT.symm p.2 a))
       (mfderiv (𝓡 n) (𝓡 n) (F p.1) p.2 (sT.symm p.2 b))
   rw [hkey, hkey]
-
-
 
 theorem movingPullback_smul_contMDiffAt
     (g : RiemannianMetric n M) {F : ℝ → M → M} {a : ℝ × M → ℝ}

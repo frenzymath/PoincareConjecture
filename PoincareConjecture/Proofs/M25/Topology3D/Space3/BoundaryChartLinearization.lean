@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartGermNormalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryGermIsotopy
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscShrinking
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_boundary_chart_linearization (v : E) (hv : ‖v‖ = 1)
     (D : BallNeighborhoodChart ((ℝ ∙ v)ᗮ) ((ℝ ∙ v)ᗮ)) :
@@ -44,8 +31,6 @@ theorem exists_boundary_chart_linearization (v : E) (hv : ‖v‖ = 1)
     simpa only [map_zero] using A.continuous.tendsto (0 : (ℝ ∙ v)ᗮ)
   filter_upwards [hAt.eventually hnear, hAt.eventually htrack] with x hx htx
   rw [htx, ← hx, A.symm_apply_apply]
-
-
 
 theorem exists_boundary_disc_affine_image (v : E) (hv : ‖v‖ = 1)
     (D : BallNeighborhoodChart ((ℝ ∙ v)ᗮ) ((ℝ ∙ v)ᗮ)) :

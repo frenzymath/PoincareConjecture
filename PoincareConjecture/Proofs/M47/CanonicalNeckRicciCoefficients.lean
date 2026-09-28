@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapConnectionDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ private theorem frame_tangentNorm (g : RiemannianMetric 3 E) (x : E)
     (v : E) : g.tangentNorm x (e v) = ‖v‖ := by
   change Real.sqrt (g.inner x (e v) (e v)) = ‖v‖
   rw [he, real_inner_self_eq_norm_sq, Real.sqrt_sq (norm_nonneg v)]
-
-
 
 theorem neck_tensor_component_bound (g : RiemannianMetric 3 E) (x : E)
     (e : E ≃L[ℝ] E) (he : ∀ v w : E, g.inner x (e v) (e w) = inner ℝ v w)
@@ -84,7 +74,6 @@ private theorem operator_norm_le_nine (A : E →L[ℝ] E) {gamma : ℝ}
         _ = _ := one_mul _
     _ = _ := by simp; ring
 
-
 theorem neck_frame_inverse_bound {g0 g1 : RiemannianMetric 3 E}
     (x : E) (e : E ≃L[ℝ] E)
     (he : ∀ v w : E, g0.inner x (e v) (e w) = inner ℝ v w)
@@ -115,8 +104,6 @@ theorem neck_frame_inverse_bound {g0 g1 : RiemannianMetric 3 E}
   have hn := hnorm.trans htwo
   refine ⟨hn, fun i j => ?_⟩
   exact (coefficient_le_norm _ i j).trans hn
-
-
 
 theorem neck_frame_inverse_derivative_bound {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (x : E) (e : E ≃L[ℝ] E)

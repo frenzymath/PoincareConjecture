@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M49.SlabVolume
 import PoincareConjecture.Proofs.M49.CalibratedVolume
 import PoincareConjecture.Proofs.M49.Mathlib.ExponentialLeftLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem preEvent_exists_finite_left_limit (H : GeneralizedParabolicRescalingTheory.{u} 3)
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

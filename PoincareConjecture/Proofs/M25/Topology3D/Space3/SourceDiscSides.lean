@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarComplementSides
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem sourceDisc_boundary_image (e : OpenPartialHomeomorph E2 UnitTwoSphere)
     (q : UnitCircle → UnitTwoSphere) (hq : ∀ θ : UnitCircle, e θ.1 = q θ) :
@@ -29,8 +16,6 @@ theorem sourceDisc_boundary_image (e : OpenPartialHomeomorph E2 UnitTwoSphere)
     exact ⟨⟨x, hx⟩, (hq ⟨x, hx⟩).symm⟩
   · rintro ⟨θ, rfl⟩
     exact ⟨θ.1, θ.2, hq θ⟩
-
-
 
 theorem source_disc_collar_halves
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

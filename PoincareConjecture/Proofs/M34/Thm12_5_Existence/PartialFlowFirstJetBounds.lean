@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M34.Standard.ClosedIntervalGronwall
 import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.SpatialEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -24,8 +15,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem partialFlow_compactPullback_firstJet_bound (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

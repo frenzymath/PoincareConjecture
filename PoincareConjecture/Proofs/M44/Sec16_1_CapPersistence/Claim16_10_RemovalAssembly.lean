@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalA
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalCylinderScalar
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,22 +13,14 @@ universe u
 
 namespace PoincareConjecture.M44
 
-
-
-
 noncomputable def laterNeckRemovalCutoff {K D k : ℝ}
     (hK : 0 < K) (hD : 0 < D) (hk : 0 < k) : ℝ :=
   (exists_uniform_neck_exclusion_cutoff.{u} hK hD hk).choose
-
-
 
 theorem laterNeckRemovalCutoff_pos {K D k : ℝ}
     (hK : 0 < K) (hD : 0 < D) (hk : 0 < k) :
     0 < laterNeckRemovalCutoff.{u} hK hD hk :=
   (exists_uniform_neck_exclusion_cutoff.{u} hK hD hk).choose_spec.1
-
-
-
 
 theorem terminal_neck_avoidance_of_geometry
     {K D k : ℝ} (hK : 0 < K) (hD : 0 < D) (hk : 0 < k)
@@ -88,9 +70,6 @@ theorem terminal_neck_avoidance_of_geometry
     intro hgram
     rw [N.connection.sectionalCurvature_eq event.limit_connection]
     exact hplane z u v hgram
-
-
-
 
 theorem disappears_of_terminal_geometry
     (P : M44CapPersistencePredecessors.{u})

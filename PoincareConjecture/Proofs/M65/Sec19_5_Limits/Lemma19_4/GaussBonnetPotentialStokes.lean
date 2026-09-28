@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetLaplaci
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetInteriorLog
 import Mathlib.Analysis.Calculus.Gradient.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +13,6 @@ open Set Filter Metric MeasureTheory InnerProductSpace Complex
 open scoped Topology ContDiff Manifold Laplacian
 
 namespace PoincareConjecture.M65Gauss
-
-
-
-
 
 theorem integral_laplacian_disk_off_countable {u : LoopPlane → ℝ}
     {U S : Set LoopPlane} (hU : IsOpen U) (hS : S.Countable)
@@ -73,12 +58,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
-
 
 theorem exists_interior_curvature_flux (S : M65MinimalDisk g connection gamma) :
     let e := orthonormalBasisOneI.repr.toContinuousLinearEquiv

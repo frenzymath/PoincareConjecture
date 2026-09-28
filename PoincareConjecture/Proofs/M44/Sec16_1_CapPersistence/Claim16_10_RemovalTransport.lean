@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
-
-
 
 def StandardCylinderPatch.sphereInBall {length : ℝ} {center : E}
     (N : StandardCylinderPatch length center) (g0 : StandardInitialMetric) (R : ℝ)
@@ -51,9 +39,6 @@ variable (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
 
 include P hpinch hsource htarget hscalar
 
-
-
-
 theorem terminal_birth_chart_source :
     (f.trans (cylinderTerminalChart e hU hT r hr hr')).source = g0.metric.ball 0 R := by
   ext x
@@ -65,17 +50,12 @@ theorem terminal_birth_chart_source :
     have hxf : x ∈ f.source := hsource.symm ▸ hx
     exact ⟨hxf, htarget ▸ f.map_source hxf⟩
 
-
-
 theorem terminal_birth_chart_contMDiffOn :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞
       (cylinderTerminalChart e hU hT r hr hr' ∘ f) (g0.metric.ball 0 R) := by
   have hq := (f.trans (cylinderTerminalChart e hU hT r hr hr')).contMDiffOn
   rwa [terminal_birth_chart_source P hpinch e hU hT r hr hr' f hsource htarget hscalar]
     at hq
-
-
-
 
 theorem terminal_birth_chart_mfderiv_invertible {x : E} (hx : x ∈ g0.metric.ball 0 R) :
     (mfderiv (𝓡 3) (𝓡 3) (cylinderTerminalChart e hU hT r hr hr' ∘ f) x).IsInvertible := by
@@ -85,17 +65,11 @@ theorem terminal_birth_chart_mfderiv_invertible {x : E} (hx : x ∈ g0.metric.ba
   exact ⟨(q.isLocalDiffeomorphAt (𝓡 3) (𝓡 3) ∞ hxq).mfderivToContinuousLinearEquiv
     (by simp), rfl⟩
 
-
-
-
 noncomputable def terminalBirthBallTransport :
     C(g0.metric.ball 0 R, (F.event (origin + c / scale) hT).terminal.carrier) :=
   ⟨fun x => cylinderTerminalChart e hU hT r hr hr' (f x),
     (terminal_birth_chart_contMDiffOn P hpinch e hU hT r hr hr'
       f hsource htarget hscalar).continuousOn.domRestrict⟩
-
-
-
 
 theorem terminalBirthBallTransport_range :
     range (terminalBirthBallTransport P hpinch e hU hT r hr hr'
@@ -109,8 +83,6 @@ theorem terminalBirthBallTransport_range :
     refine ⟨⟨f.symm x, hsource ▸ f.map_target hxt⟩, ?_⟩
     change cylinderTerminalChart e hU hT r hr hr' (f (f.symm x)) = _
     exact congrArg (cylinderTerminalChart e hU hT r hr hr') (f.right_inv hxt)
-
-
 
 theorem terminalBirthBallTransport_sphere_smooth
     {length : ℝ} {center : E} (N : StandardCylinderPatch length center)
@@ -127,9 +99,6 @@ theorem terminalBirthBallTransport_sphere_smooth
   intro z
   exact (q.contMDiffOn.contMDiffAt (q.open_source.mem_nhds
     (hqsource.symm ▸ hball z))).comp z (StandardCylinderPatch.contMDiff_sphere N z)
-
-
-
 
 theorem terminalBirthBallTransport_sphere_immersion
     {length : ℝ} {center : E} (N : StandardCylinderPatch length center)

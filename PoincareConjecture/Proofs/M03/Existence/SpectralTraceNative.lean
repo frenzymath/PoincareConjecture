@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralResponseNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeStateNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -132,7 +123,6 @@ theorem continuousOn_traceCoeff {T : ℝ} (hT : 0 ≤ T) {F : ℝ → State iota
   have hmode : ContinuousOn (fun t => responseCoeff lambda F t i) (Icc (0 : ℝ) T) := by
     simpa only [responseCoeff, uIcc_of_le hT] using hc
   exact continuousOn_const.mul hmode
-
 
 theorem continuousOn_traceState [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))

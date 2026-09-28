@@ -47,8 +47,6 @@ theorem square_chart_vertical_mem_iff {D s : Set P2}
     rw [hh, hside ⟨z.val.2, z.property.2⟩]
     exact (p ⟨z.val.2, z.property.2⟩).property
 
-
-
 theorem exists_four_interval_disk_chart {D s₀ s₁ l r : Set P2} {a b c d : P2}
     (hD : IsFinitePLBallPair P2 D ((s₀ ∪ s₁) ∪ (l ∪ r)))
     (p₀ : I ≃ₜ s₀) (p₁ : I ≃ₜ s₁) (q₀ : I ≃ₜ l) (q₁ : I ≃ₜ r)

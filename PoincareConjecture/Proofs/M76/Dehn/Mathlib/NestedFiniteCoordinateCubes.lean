@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 open scoped Pointwise
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_finite_coordinate_closedBall
     {ι : Type*} [Fintype ι] (z : ι → ℝ) {r : ℝ} (hr : 0 ≤ r) :
@@ -40,10 +27,6 @@ theorem exists_finite_coordinate_closedBall
   rw [himage]
   change z +ᵥ r • closedBall (0 : ι → ℝ) 1 = closedBall z r
   exact affinity_unitClosedBall hr z
-
-
-
-
 
 theorem exists_nested_finite_coordinate_cubes
     {ι : Type*} [Fintype ι] {O : Set (ι → ℝ)} (hO : IsOpen O)

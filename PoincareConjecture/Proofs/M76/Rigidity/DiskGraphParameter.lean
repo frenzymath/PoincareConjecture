@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_proper_disk_graph_parameter
     {X G ι : Type*} [TopologicalSpace X]

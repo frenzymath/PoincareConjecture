@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaBarrier
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaInputs
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,11 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem embedded_filling_area_inequality_of_attainment_gaussBonnet
     [T2Space M] [CompactSpace M]

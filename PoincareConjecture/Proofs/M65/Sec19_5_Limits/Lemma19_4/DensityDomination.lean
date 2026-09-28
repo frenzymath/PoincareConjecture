@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.ExpIncrement
 import PoincareConjecture.Proofs.M65.Mathlib.AreaDensityMeasurable
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -25,8 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) {K0 K1 K2 : ℝ}
-
-
 
 theorem m65AreaDensity_time_lipschitz_bound
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2) (hK2 : 0 ≤ K2)
@@ -70,9 +59,6 @@ theorem m65AreaDensity_time_lipschitz_bound
   rw [abs_sub_comm] at hreverse
   change -((c * E ^ 2 * j a) * |t - s|) ≤ j t - j s
   linarith
-
-
-
 
 theorem m65PlaneRicciTraceDensity_aestronglyMeasurable
     {f : LoopPlane → M} {domain : Set LoopPlane}

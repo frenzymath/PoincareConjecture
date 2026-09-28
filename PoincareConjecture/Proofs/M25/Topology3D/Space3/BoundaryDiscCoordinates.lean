@@ -2,16 +2,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Normed.Module.Normalize
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,33 +12,25 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable (v : E) (hv : ‖v‖ = 1)
 
-
 noncomputable def radialStereoMap (p : (ℝ ∙ v)ᗮ × ℝ) : E :=
   p.2 • (stereoInvFun hv p.1 : E)
-
-
 
 noncomputable def radialStereoInverse (y : E) : (ℝ ∙ v)ᗮ × ℝ :=
   (stereoToFun v (NormedSpace.normalize y), ‖y‖)
 
-
 def radialStereoTarget : Set E := {y | ⟪v, y⟫_ℝ < ‖y‖}
-
 
 theorem radialStereoTarget_open : IsOpen (radialStereoTarget v) :=
   isOpen_lt (innerSL ℝ v).continuous continuous_norm
-
 
 theorem radialStereoMap_norm (p : (ℝ ∙ v)ᗮ × ℝ) (hp : 0 < p.2) :
     ‖radialStereoMap v hv p‖ = p.2 := by
   simp only [radialStereoMap, norm_smul, norm_eq_of_mem_sphere,
     Real.norm_eq_abs, abs_of_pos hp, mul_one]
 
-
 theorem radialStereoMap_contDiff : ContDiff ℝ ∞ (radialStereoMap v hv) := by
   exact contDiff_snd.smul ((contDiff_stereoInvFunAux (v := v)).comp
     ((ℝ ∙ v)ᗮ.subtypeL.contDiff.comp contDiff_fst))
-
 
 theorem radialStereoTarget_ne_zero {y : E} (hy : y ∈ radialStereoTarget v) : y ≠ 0 := by
   intro h
@@ -56,13 +38,11 @@ theorem radialStereoTarget_ne_zero {y : E} (hy : y ∈ radialStereoTarget v) : y
   change ⟪v, (0 : E)⟫_ℝ < ‖(0 : E)‖ at hy
   simp only [inner_zero_right, norm_zero, lt_self_iff_false] at hy
 
-
 theorem radialStereoTarget_inner_normalize_lt {y : E} (hy : y ∈ radialStereoTarget v) :
     ⟪v, NormedSpace.normalize y⟫_ℝ < 1 := by
   have hpos : 0 < ‖y‖ := norm_pos_iff.mpr (radialStereoTarget_ne_zero v hy)
   rw [NormedSpace.normalize, real_inner_smul_right]
   simpa only [div_eq_mul_inv, mul_comm] using (div_lt_one hpos).mpr hy
-
 
 theorem radialStereoMap_mem_target (p : (ℝ ∙ v)ᗮ × ℝ) (hp : 0 < p.2) :
     radialStereoMap v hv p ∈ radialStereoTarget v := by
@@ -76,7 +56,6 @@ theorem radialStereoMap_mem_target (p : (ℝ ∙ v)ᗮ × ℝ) (hp : 0 < p.2) :
   change ⟪v, p.2 • (stereoInvFun hv p.1 : E)⟫_ℝ < p.2
   rw [real_inner_smul_right]
   simpa only [mul_one] using mul_lt_mul_of_pos_left hlt hp
-
 
 theorem radialStereoInverse_contDiffOn :
     ContDiffOn ℝ ∞ (radialStereoInverse v) (radialStereoTarget v) := by
@@ -93,7 +72,6 @@ theorem radialStereoInverse_contDiffOn :
     contDiffOn_stereoToFun.contDiffAt (hopen.mem_nhds hne)
   exact ((hstereo.comp y hnormalize).prodMk hn).contDiffWithinAt
 
-
 theorem radialStereoInverse_map (p : (ℝ ∙ v)ᗮ × ℝ) (hp : 0 < p.2) :
     radialStereoInverse v (radialStereoMap v hv p) = p := by
   apply Prod.ext
@@ -103,7 +81,6 @@ theorem radialStereoInverse_map (p : (ℝ ∙ v)ᗮ × ℝ) (hp : 0 < p.2) :
       NormedSpace.normalize_eq_self_of_norm_eq_one (norm_eq_of_mem_sphere _)]
     exact stereo_right_inv hv p.1
   · exact radialStereoMap_norm v hv p hp
-
 
 theorem radialStereoMap_inverse {y : E} (hy : y ∈ radialStereoTarget v) :
     radialStereoMap v hv (radialStereoInverse v y) = y := by
@@ -122,7 +99,6 @@ theorem radialStereoMap_inverse {y : E} (hy : y ∈ radialStereoTarget v) :
   rw [heq]
   exact NormedSpace.norm_smul_normalize y
 
-
 noncomputable def radialStereoChart : OpenPartialHomeomorph ((ℝ ∙ v)ᗮ × ℝ) E where
   toFun := radialStereoMap v hv
   invFun := radialStereoInverse v
@@ -137,11 +113,9 @@ noncomputable def radialStereoChart : OpenPartialHomeomorph ((ℝ ∙ v)ᗮ × �
   continuousOn_toFun := (radialStereoMap_contDiff v hv).continuous.continuousOn
   continuousOn_invFun := (radialStereoInverse_contDiffOn v).continuousOn
 
-
 theorem radialStereoChart_contDiffOn :
     ContDiffOn ℝ ∞ (radialStereoChart v hv) (radialStereoChart v hv).source :=
   (radialStereoMap_contDiff v hv).contDiffOn
-
 
 theorem radialStereoChart_symm_contDiffOn :
     ContDiffOn ℝ ∞ (radialStereoChart v hv).symm (radialStereoChart v hv).target :=

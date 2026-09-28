@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M33BranchContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M33RegularHistoryWindow (F : SurgeryFlowData.{u}) where
   interval : Set ℝ
@@ -28,14 +17,9 @@ structure M33RegularHistoryWindow (F : SurgeryFlowData.{u}) where
   slice_nonempty : ∀ t ∈ interval, Nonempty (F.slice t).carrier
   events_finite : (F.surgery_times ∩ interval).Finite
 
-
-
 def m33RegularRegion (F : SurgeryFlowData.{u}) (t : ℝ) : Set (F.slice t).carrier :=
   {x | ∀ hT : t ∈ F.surgery_times,
     x ∈ interior (@SurgeryFlowData.event F t hT ⟨x⟩).retained_post}
-
-
-
 
 structure M33RegularHistoryData {F : SurgeryFlowData.{u}}
     (W : M33RegularHistoryWindow F) where

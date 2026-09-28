@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_JointSmooth
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Comparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem gluingConclusion_of_comparison {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)
@@ -48,9 +36,6 @@ theorem gluingConclusion_of_comparison {epsilon beta : ℝ}
   refine ⟨?_, hp.2.1, cylinderDomain_mono hpos hprod hp.2.2⟩
   exact ⟨lt_of_le_of_lt (neg_le_neg hduration) hp.1.1, hp.1.2⟩
 
-
-
-
 theorem gluingConclusion_of_recent_duration {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)
     (hsmall : beta * epsilon < 1 / 2) (I : M45NeckGluingInput.{u} epsilon beta)
@@ -59,8 +44,6 @@ theorem gluingConclusion_of_recent_duration {epsilon beta : ℝ}
   exact gluingConclusion_of_comparison hepsilon hbeta hbeta_one hsmall I
     (hduration.trans I.durations_ordered.le)
     (recent_piecewise_comparison hepsilon hbeta hbeta_one I hduration)
-
-
 
 theorem gluingProperty_of_short_inputs {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)

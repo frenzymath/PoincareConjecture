@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.EventCappingCharts
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Embedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u v w
 
 namespace PoincareConjecture.M38
-
-
 
 theorem cappingOverlap_include_iff_image {I : Type u} {P : I → Type v} {O : Type w}
     [∀ i, TopologicalSpace (P i)] [TopologicalSpace O]
@@ -41,24 +31,19 @@ theorem cappingOverlap_include_iff_image {I : Type u} {P : I → Type v} {O : Ty
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
 noncomputable def eventCappingInclude (j : EventCappingIndex F T hT)
     (x : eventCappingDomain F T hT j) : CappedDiscardedSpace F T hT P :=
   (eventCappingOverlap F T hT P).include j x
 
-
 theorem eventCappingInclude_openEmbedding (j : EventCappingIndex F T hT) :
     IsOpenEmbedding (eventCappingInclude F T hT P j) :=
   (eventCappingOverlap F T hT P).include_isOpenEmbedding j
-
-
 
 theorem eventCappingMap_old_center (x : eventDiscardedOpen F T hT) :
     eventCappingMap F T hT P (.inl x)
       ⟨chartAt StandardCapSpace x x,
         (chartAt StandardCapSpace x).map_source (mem_chart_source _ x)⟩ = x :=
   (chartAt StandardCapSpace x).left_inv (mem_chart_source _ x)
-
 
 theorem eventCappingMap_old_cover :
     (⋃ x : eventDiscardedOpen F T hT,
@@ -69,8 +54,6 @@ theorem eventCappingMap_old_cover :
   exact ⟨⟨chartAt StandardCapSpace x x,
     (chartAt StandardCapSpace x).map_source (mem_chart_source _ x)⟩,
       eventCappingMap_old_center F T hT P x⟩
-
-
 
 theorem exists_cappedOldInclusion :
     ∃ f : eventDiscardedOpen F T hT → CappedDiscardedSpace F T hT P,
@@ -97,16 +80,12 @@ theorem exists_cappedOldInclusion :
   rw [Function.comp_apply, hH]
   exact hGq x z
 
-
-
 noncomputable def cappedOldInclusion :
     eventDiscardedOpen F T hT → CappedDiscardedSpace F T hT P :=
   Classical.choose (exists_cappedOldInclusion F T hT P)
 
-
 theorem cappedOldInclusion_openEmbedding : IsOpenEmbedding (cappedOldInclusion F T hT P) :=
   (Classical.choose_spec (exists_cappedOldInclusion F T hT P)).1
-
 
 theorem cappedOldInclusion_patch (x : eventDiscardedOpen F T hT)
     (z : eventCappingDomain F T hT (.inl x)) :

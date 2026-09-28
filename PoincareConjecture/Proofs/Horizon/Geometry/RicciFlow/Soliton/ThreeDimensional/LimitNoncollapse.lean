@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

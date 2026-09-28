@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,9 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_finitePL_boundary_disk_collar_parameter
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

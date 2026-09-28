@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Trans
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.AbsoluteDeterminant
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Center
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
-
-
 
 theorem deriv2_polarDensityRoot_le_of_ricci
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

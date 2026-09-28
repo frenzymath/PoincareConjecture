@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import Mathlib.Topology.UniformSpace.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M58
-
-
-
 
 theorem exists_uniform_riemannian_radius
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -47,8 +35,6 @@ theorem exists_uniform_riemannian_radius
   apply hrU
   change g.edist p q < (r : ℝ≥0∞)
   simpa only [ENNReal.ofReal_coe_nnreal] using hpq
-
-
 
 theorem exists_short_loop_diagonal_radius
     {M : Type u} [TopologicalSpace M] [T2Space M]

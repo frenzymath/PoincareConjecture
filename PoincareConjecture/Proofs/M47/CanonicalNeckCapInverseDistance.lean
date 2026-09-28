@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -71,8 +62,6 @@ theorem cap_inverse_toReal_edist_lt_of_target_edist_lt
     (g.edist o (e.symm y)).toReal < C * r := by
   exact ENNReal.toReal_lt_of_lt_ofReal
     (cap_inverse_edist_lt_of_target_edist_lt g h e hf hi ho hC hcover hbound hy)
-
-
 
 theorem cap_inverse_toReal_edist_le
     {n m : ℕ} {M : Type u} {N : Type v}

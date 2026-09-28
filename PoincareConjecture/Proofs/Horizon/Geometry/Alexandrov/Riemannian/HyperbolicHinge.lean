@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.UpperSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.InitialSupport
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem cosh_distance_upper_comparison
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -72,8 +63,6 @@ theorem cosh_distance_upper_comparison
         (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) σ t 1) = 1 :=
       Real.sqrt_eq_one.mp (hspeed t htcc)
     exact ⟨v, hv, htouch, hmajor, by simpa only [hs, mul_one] using hbound⟩
-
-
 
 theorem hyperbolic_hinge
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -150,8 +140,6 @@ private theorem curvature_and_norm_eq_of_local_isometry
     have hh := DE.curvatureTensorNorm_eq_pullback_euclidean D' hcf hif hEf
     simpa only [Function.comp_apply, hp] using hg.symm.trans hh
 
-
-
 theorem curvatureTensor_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -164,8 +152,6 @@ theorem curvatureTensor_eq_of_local_isometry
       (mfderiv (𝓡 n) (𝓡 n) f x u) (mfderiv (𝓡 n) (𝓡 n) f x v)
       (mfderiv (𝓡 n) (𝓡 n) f x w) (mfderiv (𝓡 n) (𝓡 n) f x z) :=
   (curvature_and_norm_eq_of_local_isometry D D' hU hf hmetric hx).1 u v w z
-
-
 
 theorem curvatureTensorNorm_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

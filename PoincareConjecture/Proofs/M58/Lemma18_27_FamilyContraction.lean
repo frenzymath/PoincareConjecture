@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_ContractionEndpoints
 import PoincareConjecture.Proofs.M58.Sec18_4_UniformRadius
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology unitInterval
 universe u
 
 namespace PoincareConjecture.Proofs.M58
-
-
-
 
 theorem exists_short_family_contraction
     {M : Type u} [TopologicalSpace M] [T2Space M]

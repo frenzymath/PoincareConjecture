@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.SpacetimeInverse
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ X]
-
 
 theorem potential_contDiffAt_of_action
     {E : X × ℝ → Y} {A : X × ℝ → ℝ}

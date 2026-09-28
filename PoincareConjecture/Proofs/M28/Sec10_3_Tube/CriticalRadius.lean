@@ -2,15 +2,6 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Order.ConditionallyCompleteLattice.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ universe u
 
 namespace PoincareConjecture.M28.tube
 
-
-
 def eventuallyRadiusBound {X : ℕ → Type u} (d q : ∀ k, X k → ℝ) (r : ℝ) : Prop :=
   ∃ K : ℝ, ∀ᶠ k in atTop, ∀ x : X k, d k x < r → q k x ≤ K
 
@@ -30,8 +19,6 @@ theorem eventuallyRadiusBound_mono {X : ℕ → Type u} {d q : ∀ k, X k → �
     eventuallyRadiusBound d q r := by
   obtain ⟨K, hK⟩ := h
   exact ⟨K, hK.mono fun k hk x hx => hk x (hx.trans_le hrs)⟩
-
-
 
 theorem exists_critical_radius_witnesses {X : ℕ → Type u}
     (d q : ∀ k, X k → ℝ) {r₀ L : ℝ}
@@ -73,9 +60,6 @@ theorem exists_critical_radius_witnesses {X : ℕ → Type u}
   obtain ⟨φ, hφ, hx⟩ := extraction_forall_of_frequently hfreq
   choose x hx using hx
   exact ⟨A, hApos, hAL, hinterior, φ, hφ, x, hx⟩
-
-
-
 
 theorem critical_radius_preserved_by_subsequence {X : ℕ → Type u}
     (d q : ∀ k, X k → ℝ) {A : ℝ} (hA : 0 < A)

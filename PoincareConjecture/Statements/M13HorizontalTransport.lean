@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M13HorizontalTransport
 import PoincareConjecture.Statements.M12HorizontalTheory
 import PoincareConjecture.Statements.M13MetricHomothety
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -23,7 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {A : AdaptedMetricAtlas n X} {R : GeneralizedFlowCarrierConclusion A}
   {Q : ℝ} {hQ : 0 < Q} {a : ℝ}
-
 
 structure ParabolicHorizontalCalculus (P : ParabolicSpacetimeRescaling R Q hQ a) : Prop where
   source_connections : Nonempty (LeafwiseLeviCivitaFamily R.spacetime R.slices)

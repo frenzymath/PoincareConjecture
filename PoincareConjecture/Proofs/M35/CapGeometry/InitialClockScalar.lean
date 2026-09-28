@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialNeckScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem initial_cylinder_center_normalization_tendsto
     {theta : ℝ} (htheta : theta < 1) (delta t : ℕ → ℝ)
@@ -38,8 +27,6 @@ theorem initial_cylinder_center_normalization_tendsto
     (g k) (D k) (x k) (N k) q (hclose k)
   simpa only [Real.dist_eq, hq] using h
 
-
-
 theorem initial_cylinder_center_scalar_tendsto
     {theta : ℝ} (htheta : theta < 1) (delta t : ℕ → ℝ)
     (g : ℕ → RiemannianMetric 3 StandardCapSpace) (D : ∀ k, LeviCivitaData (g k))
@@ -59,8 +46,6 @@ theorem initial_cylinder_center_scalar_tendsto
   intro k
   exact mul_div_cancel_left₀ ((D k).scalarCurvature (x k))
     (sub_pos.mpr ((ht k).2.trans_lt htheta)).ne'
-
-
 
 theorem initial_affine_clock {theta t Q u : ℝ} (ht : t ∈ Icc 0 theta) (hQ : 0 < Q)
     (hu : u ∈ Icc (-t * Q) 0) :

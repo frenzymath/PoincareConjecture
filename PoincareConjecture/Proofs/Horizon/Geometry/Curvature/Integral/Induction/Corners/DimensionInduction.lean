@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.AmbientReduction
 
-
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory
 open PoincareConjecture
 open scoped Manifold ContDiff Bundle

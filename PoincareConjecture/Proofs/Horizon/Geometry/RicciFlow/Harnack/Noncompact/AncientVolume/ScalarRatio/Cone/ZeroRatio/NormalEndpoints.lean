@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.EndpointAgreement
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -79,8 +71,6 @@ private theorem exists_smooth_local_endpoint_inverse
 end Poincare.AncientVolume.ScalarRatio
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_joint_normal_endpoints_in_open
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

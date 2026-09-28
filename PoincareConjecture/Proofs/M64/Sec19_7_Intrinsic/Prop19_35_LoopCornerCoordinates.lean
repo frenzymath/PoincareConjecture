@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ExactCornerRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +8,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Bundle Matrix
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_corner_coordinates
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

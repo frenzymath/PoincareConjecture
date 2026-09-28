@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.FactorMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +21,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {t₀ : ℝ} (ht₀ : t₀ ∈ J)
   (hu : ∀ t ∈ J, RiemannianMetric.HasUnitGradient (F.connection t) f)
   (hz : ∀ t ∈ J, RiemannianMetric.HasZeroHessian (F.connection t) f)
-
-
 
 def parallelGradientFactor :
     letI : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
@@ -61,9 +48,6 @@ def parallelGradientFactor :
   have hRic := (RiemannianMetric.parallelGradient_factor_curvature hf (hu t ht) (hz t ht) y).2.2.1 u v
   rw [hRic]
   exact F.regularLevelMetric_equation hf (⊤ : Opens M) hreg 0 t ht y u v
-
-
-
 
 theorem parallelGradientFactor_geometry [T3Space M] [ConnectedSpace M]
     (hc : ∀ t ∈ J, MetricComplete (F.metric t))

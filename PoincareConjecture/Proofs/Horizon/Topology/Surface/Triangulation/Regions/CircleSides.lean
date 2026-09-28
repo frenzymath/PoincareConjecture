@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.GeneralPosition
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,8 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
-
 
 theorem preconnected_subset_chartDisk_or_compl (q : M) {r : ℝ}
     (hr : 0 < r)
@@ -54,8 +42,6 @@ theorem preconnected_subset_chartDisk_or_compl (q : M) {r : ℝ}
   simpa only [hinterior, hclosed.isOpen_compl.interior_eq] using
     hA.subset_or_subset isOpen_interior isOpen_interior hsep hcover
 
-
-
 theorem connectedComponentIn_subset_chartDisk_or_compl (q : M) {r : ℝ}
     (hr : 0 < r)
     (htarget : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) q q) r ⊆
@@ -71,8 +57,6 @@ theorem connectedComponentIn_subset_chartDisk_or_compl (q : M) {r : ℝ}
     isPreconnected_connectedComponentIn
   exact disjoint_left.mpr fun z hz hzCircle =>
     connectedComponentIn_subset Kᶜ x hz (hcircle hzCircle)
-
-
 
 theorem connectedComponentIn_ne_of_inside_outside_chartDisk (q : M) {r : ℝ}
     (hr : 0 < r)
@@ -90,9 +74,6 @@ theorem connectedComponentIn_ne_of_inside_outside_chartDisk (q : M) {r : ℝ}
   · have hymem : y ∈ connectedComponentIn Kᶜ x := heq.symm ▸ mem_connectedComponentIn hy
     exact houtside (image_mono ball_subset_closedBall (hin hymem))
   · exact hout (mem_connectedComponentIn hx) (image_mono ball_subset_closedBall hinside)
-
-
-
 
 theorem exists_distinct_components_near_chartCircle (q : M) {r : ℝ}
     (hr : 0 < r)

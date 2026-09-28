@@ -1,22 +1,11 @@
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex Real
 open scoped Topology ComplexConjugate
 
 namespace PoincareConjecture.M65Gauss
-
-
 
 theorem boundary_phase_sq {a z : ℂ} (ha : ‖a‖ = 1) (hz : ‖z‖ = 1)
     (hne : z ≠ a) : ((z - a) / (‖z - a‖ : ℂ)) ^ 2 = -z * a := by
@@ -37,16 +26,10 @@ theorem boundary_phase_sq {a z : ℂ} (ha : ‖a‖ = 1) (hz : ‖z‖ = 1)
   exact mul_div_cancel_right₀ _ (pow_ne_zero _ (ofReal_ne_zero.mpr (norm_ne_zero_iff.mpr
     (sub_ne_zero.mpr hne))))
 
-
-
-
 theorem boundary_phase_even {a z : ℂ} (ha : ‖a‖ = 1) (hz : ‖z‖ = 1)
     (hne : z ≠ a) (k : ℕ) :
     ((z - a) / (‖z - a‖ : ℂ)) ^ (2 * k) = (-z * a) ^ k := by
   rw [pow_mul, boundary_phase_sq ha hz hne]
-
-
-
 
 theorem hasDerivAt_boundary_phase (a : ℂ) (k : ℕ) (θ : ℝ) :
     HasDerivAt (fun t : ℝ => (-circleMap 0 1 t * a) ^ k)
@@ -59,9 +42,6 @@ theorem hasDerivAt_boundary_phase (a : ℂ) (k : ℕ) (θ : ℝ) :
   cases k with
   | zero => simp
   | succ k => simp only [Nat.succ_sub_one, pow_succ]; ring
-
-
-
 
 theorem boundary_phase_rotation_integral {a : ℂ} (ha : ‖a‖ = 1) (k : ℕ) :
     (∫ θ in (-Real.pi)..Real.pi,

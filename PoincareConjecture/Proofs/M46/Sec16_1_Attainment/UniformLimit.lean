@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.SquareModulus
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 import Mathlib.Topology.Metrizable.Uniformity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,9 +40,6 @@ private theorem uniform_subsequence_of_compact_range {A Z : Type*}
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
-
-
-
 
 theorem backward_squarePaths_uniform_subsequence
     (p : ℕ → M14BackwardPath G T 0 tau x y) {D : ℝ} (hD : 0 ≤ D)

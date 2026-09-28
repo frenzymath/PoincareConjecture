@@ -12,23 +12,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Producer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.Producer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -42,7 +25,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem KappaNine88Conclusion.mono_constant
     {K : AncientKappaSolution 3 M} {epsilon C C' : ℝ}
     (N : KappaNine88Conclusion K epsilon C) (hC : C ≤ C') :
@@ -50,7 +32,6 @@ theorem KappaNine88Conclusion.mono_constant
   cases N with
   | tube tube => exact .tube tube
   | capped tube => exact .capped (tube.mono_constant hC)
-
 
 theorem KappaNine88Conclusion.ofStrongTube
     {K : AncientKappaSolution 3 M} {epsilon C : ℝ}
@@ -66,8 +47,6 @@ theorem KappaNine88Conclusion.ofStrongTube
       tube_epsilon := tube_epsilon
       carrier_eq_univ := carrier_eq_univ }
   exact ⟨.tube certificate⟩
-
-
 
 theorem KappaNine88Conclusion.ofStrongCappedTube
     {K : AncientKappaSolution 3 M} {epsilon C : ℝ}
@@ -86,8 +65,6 @@ theorem KappaNine88Conclusion.ofStrongCappedTube
       carrier_eq_univ := carrier_eq_univ }
   exact ⟨.capped certificate⟩
 
-
-
 theorem KappaNine88Conclusion.ofCappedTube
     {K : AncientKappaSolution 3 M} {epsilon C : ℝ}
     (tube : CappedTubeCertificate (K.flow.metric 0))
@@ -99,10 +76,6 @@ theorem KappaNine88Conclusion.ofCappedTube
     Nonempty (KappaNine88Conclusion K epsilon C) :=
   ⟨.capped (NoncompactKappa.strongCappedTubeOfCappedTube K le_rfl tube
     hcap htube hconstant hstrong hwhole)⟩
-
-
-
-
 
 theorem noncompactKappaSolutionAlternatives.ofStrongCoverage
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
@@ -126,8 +99,6 @@ theorem noncompactKappaSolutionAlternatives.ofStrongCoverage
     le_rfl hepsilon hle hnoncompact hstrong
   exact ⟨KappaNine88Conclusion.tube tube⟩
 
-
-
 theorem noncompactKappaSolutionAlternatives.ofSphereLine
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -149,8 +120,6 @@ theorem noncompactKappaSolutionAlternatives.ofSphereLine
   obtain ⟨tube⟩ := hthreshold K le_rfl hepsilon hle hnoncompact
     (fun x => C.exists_strongEvolvingNeck le_rfl hepsilon hhalf x)
   exact ⟨KappaNine88Conclusion.tube tube⟩
-
-
 
 theorem noncompactKappaSolutionAlternatives
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

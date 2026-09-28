@@ -1,28 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathRegionPartition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
-
-
-
-
 
 theorem exists_finitePL_disk_cut_of_paths {m n k : ℕ}
     (K : SimplicialComplex ℝ (ℝ × ℝ))

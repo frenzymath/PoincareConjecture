@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCoordinateEstimates
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +28,6 @@ noncomputable local instance initialSphereTwoJetNorm : NormedAddCommGroup
 
 noncomputable local instance initialSphereTwoJetSpace : NormedSpace ℝ
     (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_initial_cylinder_twoJet_control
     (P : M44CapPersistencePredecessors.{u}) (g0 : StandardInitialMetric)

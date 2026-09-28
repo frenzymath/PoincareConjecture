@@ -2,16 +2,12 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Strips.Pa
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SourceStripFibers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Monodromy.PlanarClosing
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ComponentBranchModel.exists_paired_source_strips
     {X ι : Type*} [TopologicalSpace X]

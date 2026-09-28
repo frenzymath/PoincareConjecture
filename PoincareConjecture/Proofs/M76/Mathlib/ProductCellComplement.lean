@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StarConvexCellComplement
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Pointwise
-
-
-
-
-
 
 theorem isSimplyConnected_prod_ball_sdiff_closedBall_zero
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -70,9 +55,6 @@ theorem isSimplyConnected_prod_ball_sdiff_closedBall_zero
   apply (H.isSimplyConnected_preimage (s := W \ C)).mp
   rw [preimage_sdiff, hboxpre]
   exact hsc
-
-
-
 
 theorem isSimplyConnected_product_cell_tube
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

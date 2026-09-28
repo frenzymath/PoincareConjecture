@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarForwardMap
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open Real
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m64PolarForwardMap_det (p : LoopPlane) :
     (fderiv ℝ m64PolarForwardMap p).det = -(p 1 + 1) / 4 := by
@@ -59,9 +47,6 @@ theorem m64PolarForwardMap_det (p : LoopPlane) :
   calc
     _ = (-(p 1 + 1) / 4) * (sin (p 0) ^ 2 + cos (p 0) ^ 2) := by ring
     _ = _ := by rw [sin_sq_add_cos_sq, mul_one]
-
-
-
 
 theorem m64PolarForwardMap_abs_det {p : LoopPlane} (hp : -1 < p 1) :
     |(fderiv ℝ m64PolarForwardMap p).det| = (p 1 + 1) / 4 := by

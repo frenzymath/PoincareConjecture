@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CycleSupportPolygons
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.DisjointCycleCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,6 @@ open Set
 namespace SimpleGraph
 
 variable {V E : Type*} [Finite V] [AddCommGroup E] [Module ℝ E]
-
-
-
-
-
 
 theorem exists_polygons_of_exceptional_degrees_with_cycle_recognition
     (G : SimpleGraph V) (p : V → E) (q : V)
@@ -121,10 +107,6 @@ theorem exists_polygons_of_exceptional_degrees_with_cycle_recognition
     refine disjoint_iUnion_left.mpr (fun C => disjoint_iUnion_right.mpr (fun D => ?_))
     exact hIDisj (i := ⟨⟨H, hH⟩, C⟩) (j := ⟨⟨J, hJ⟩, D⟩)
       (fun heq => hHJ (congrArg (fun i : I => i.1.val) heq))
-
-
-
-
 
 theorem exists_polygons_of_exceptional_degrees (G : SimpleGraph V) (p : V → E) (q : V)
     (hdegree : ∀ v, v ≠ q → (G.neighborSet v).ncard = 2)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactCapSide
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalCarrierUnion
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -64,9 +53,6 @@ private theorem exists_side_of_first_cap_disjoint (T : CappedTubeCertificate g)
       exact disjoint_left.mp hN₁C₀ (N₁.central_sphere_subset (hfront₁ hzfront)) hzC₀
     exact ⟨true, C₁, hC₁, hconn₁, hC₁U, hC₀C₁ hcenter₀,
       hSC₁ N₁.center_on_central_sphere, hSC₁, hfront₁⟩
-
-
-
 
 theorem exists_compact_side_containing_chain_centers (T : CappedTubeCertificate g)
     (i j : ℤ) (hi : i ∈ T.tube.chain.shape.active) (hj : j ∈ T.tube.chain.shape.active)

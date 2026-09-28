@@ -1,16 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,7 +8,6 @@ open scoped BigOperators
 namespace PoincareConjecture.M10
 
 variable {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [Fintype ι]
-
 
 theorem abs_bilinear_self_le_of_basis_bound (b : OrthonormalBasis ι ℝ E)
     (B : E →L[ℝ] E →L[ℝ] ℝ) {K : ℝ}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Manifold
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +21,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem manifoldCovDerivAlong_congr_field
     (g : RiemannianMetric n M) (q : ℝ → M)
     {V W : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ}
@@ -44,7 +34,6 @@ theorem manifoldCovDerivAlong_congr_field
     (h.mono fun s hs => congrArg
       (mfderiv (𝓡 n) (𝓡 n) (extChartAt (𝓡 n) (q t)) (q s)) hs) 1
 
-
 theorem manifoldCovDerivAlong_twice_congr_field
     (g : RiemannianMetric n M) (q : ℝ → M)
     {V W : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ}
@@ -54,8 +43,6 @@ theorem manifoldCovDerivAlong_twice_congr_field
   apply g.manifoldCovDerivAlong_congr_field q
   filter_upwards [h.eventually_nhds] with s hs
   exact g.manifoldCovDerivAlong_congr_field q hs
-
-
 
 theorem radialDifferential_covariant_jacobi
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -106,8 +93,6 @@ theorem radialDifferential_covariant_jacobi
     ((he.contMDiffAt (hU.mem_nhds ht)).mdifferentiableAt (by simp))] at hjac
   exact eq_neg_of_add_eq_zero_left hjac
 
-
-
 theorem isGeodesicOn_all_rays_of_neighborhood
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : U ∈ 𝓝 0)
@@ -127,7 +112,6 @@ theorem isGeodesicOn_all_rays_of_neighborhood
     congr 1
     field_simp
   simpa only [Set.preimage_ofPred_eq, heq] using hscale
-
 
 theorem contDiffAt_chartField_radialDifferential
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -158,7 +142,6 @@ theorem contDiffAt_chartField_radialDifferential
     exact (congrArg (fun A => A (s • w)) hd).symm
   exact (((hf.fderiv_right (by simp)).comp t hline.contDiffAt).clm_apply
     (by fun_prop)).congr_of_eventuallyEq hrep
-
 
 theorem contDiffAt_inverse_frame_field
     {q : ℝ → M}

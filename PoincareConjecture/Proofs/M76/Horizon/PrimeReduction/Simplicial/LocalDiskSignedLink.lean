@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonStrictSigns
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSignPerturbation
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -23,8 +14,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem ncard_link_affine_zero_of_local_segments
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -109,7 +98,6 @@ theorem ncard_link_affine_zero_of_local_segments
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem exists_positive_link_vertex_of_affine_surface_accumulation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     {p : E} (hp : p ∈ K.vertices) (A : E →ᵃ[ℝ] ℝ) (hpA : A p = 0)
@@ -143,9 +131,6 @@ theorem exists_nonzero_vertex_of_finite_affine_zero_section
   obtain ⟨u, v, huv, rfl⟩ := Finset.card_eq_two.mp hs2
   exact huv (hsingle (subset_convexHull ℝ _ (by simp))
     (subset_convexHull ℝ _ (by simp)))
-
-
-
 
 theorem exists_signed_link_polygon_of_local_disk_and_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.GradientCommutation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.VectorGreen
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -79,8 +71,6 @@ private theorem trace_connectionFlux_harmonic_gradient (D : LeviCivitaData g)
     · simp [image_eq_zero_of_notMem_tsupport hx]
   rw [hz, zero_add]
 
-
-
 theorem integrable_ricci_harmonic_gradient (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ}
     {Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -104,8 +94,6 @@ theorem integrable_ricci_harmonic_gradient (D : LeviCivitaData g)
     rw [trace_connectionFlux_harmonic_gradient D hf hZ hharm]
     ring
 
-
-
 theorem integral_inner_connection_harmonic_gradient (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ}
     {Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -125,8 +113,6 @@ theorem integral_inner_connection_harmonic_gradient (D : LeviCivitaData g)
   simp_rw [trace_connectionFlux_harmonic_gradient D hf hZ hharm] at hzero
   rw [integral_add (D.integrable_ricci_harmonic_gradient hf hZ hc hharm) hpair] at hzero
   linarith
-
-
 
 theorem integral_inner_connection_gradient_sub (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ}

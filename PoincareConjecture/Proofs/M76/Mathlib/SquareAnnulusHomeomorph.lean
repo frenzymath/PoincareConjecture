@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusInjectivity
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem exists_annulus_homeomorph {L d : ℝ}
     (hL : 0 < L) (hd : 0 ≤ d) (hwidth : 4 * d < L) :
@@ -30,10 +16,6 @@ theorem exists_annulus_homeomorph {L d : ℝ}
     (injective_annulusMap hL hwidth)
   exact ⟨he.isEmbedding.toHomeomorph.trans
     (Homeomorph.setCongr (range_annulusMap hL hd hwidth)), fun _ => rfl⟩
-
-
-
-
 
 theorem exists_core_fixed_annulus_homeomorph {L d : ℝ}
     (hd : 0 ≤ d) (hwidth : 4 * d < L) :

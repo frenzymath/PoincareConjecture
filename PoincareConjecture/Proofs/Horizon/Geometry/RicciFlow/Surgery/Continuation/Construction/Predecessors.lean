@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Conclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem M33Predecessors.exists_pinched_restart
     (P : M33Predecessors.{u}) {M : Type u} [TopologicalSpace M]
@@ -57,7 +40,6 @@ theorem M33Predecessors.exists_pinched_restart
       (Surgery.OrdinaryRestart.absoluteFlow_initial_pinched P.local_flow.2.1 A a ha D hpinched)
   · intro c hac G hG
     exact Surgery.OrdinaryRestart.absolute_time_le_lifetime ha hac G hG
-
 
 theorem M33Predecessors.regular_history (P : M33Predecessors.{u})
     (F : SurgeryFlowData.{u}) (W : M33RegularHistoryWindow F) :

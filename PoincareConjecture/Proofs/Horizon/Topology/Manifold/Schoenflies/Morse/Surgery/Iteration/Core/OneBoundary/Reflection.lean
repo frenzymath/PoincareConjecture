@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Caps
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 def reflected (D : SphereSurgeryCoreCap v g B) :
     SphereSurgeryCoreCap v (fun p => heightReflection D.unit_v (g p)) ∅ where

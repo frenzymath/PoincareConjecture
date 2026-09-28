@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodMap
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodCutContact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "D" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
-
-
 theorem middlePiece_injective (P : OriginalDiskProduct e R j)
     {a p : ℝ} (H : (D ×ˢ Icc (a / 2) (p - a / 2) : Set E) ≃ₜ P.cutCarrier)
     (u : E → X)
@@ -33,8 +23,6 @@ theorem middlePiece_injective (P : OriginalDiskProduct e R j)
   intro z hz w hw heq
   rw [hvalue ⟨z, hz⟩, hvalue ⟨w, hw⟩] at heq
   exact congrArg Subtype.val (H.injective (Subtype.ext heq))
-
-
 
 theorem eq_of_lowerPiece_eq_middle (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)
@@ -56,8 +44,6 @@ theorem eq_of_lowerPiece_eq_middle (P : OriginalDiskProduct e R j)
     (P.periodCutMap_lower a p u hz.2.2).symm.trans
       (P.periodCutMap_middle ha hgap u hlower hupper hzM)
   exact P.middlePiece_injective H u hvalue hzM hw (hsame.symm.trans heq)
-
-
 
 theorem eq_of_upperPiece_eq_middle (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)

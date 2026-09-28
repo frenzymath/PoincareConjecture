@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricCoreComplex
 import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ open Set Geometry
 namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
-
 
 theorem barycentricFace_eq_image (s : Finset ι) :
     barycentricFace s = faceInclusion s '' stdSimplex ℝ s := by
@@ -38,7 +27,6 @@ theorem barycentricFace_eq_image (s : Finset ι) :
 
 omit [Fintype ι] in
 
-
 theorem faceInclusion_single (s : Finset ι) (i : s) :
     faceInclusion s (Pi.single i 1) = Pi.single i.val 1 := by
   ext j
@@ -48,8 +36,6 @@ theorem faceInclusion_single (s : Finset ι) (i : s) :
   · rw [faceInclusion_apply_notMem s _ hj]
     have hne : i.val ≠ j := fun he => hj (he ▸ i.property)
     simp [hne]
-
-
 
 theorem barycentricFace_eq_convexHull (s : Finset ι) :
     barycentricFace s = convexHull ℝ ((fun i : ι => Pi.single i (1 : ℝ)) '' (s : Set ι)) := by
@@ -63,26 +49,20 @@ theorem barycentricFace_eq_convexHull (s : Finset ι) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def barycentricMap (v : ι → E) : (ι → ℝ) →L[ℝ] E :=
   ∑ i, (ContinuousLinearMap.proj i).smulRight (v i)
 
 omit [DecidableEq ι] in
-
 
 theorem barycentricMap_apply (v : ι → E) (q : ι → ℝ) :
     barycentricMap v q = ∑ i, q i • v i := by
   simp only [barycentricMap, sum_apply, ContinuousLinearMap.smulRight_apply,
     ContinuousLinearMap.proj_apply]
 
-
-
 theorem barycentricMap_single (v : ι → E) (i : ι) : barycentricMap v (Pi.single i 1) = v i := by
   simp [barycentricMap_apply, Pi.single_apply, ite_smul]
 
 omit [DecidableEq ι] in
-
 
 theorem image_barycentricFace (v : ι → E) (s : Finset ι) :
     barycentricMap v '' barycentricFace s = convexHull ℝ (v '' (s : Set ι)) := by
@@ -94,7 +74,6 @@ theorem image_barycentricFace (v : ι → E) (s : Finset ι) :
   simp only [barycentricMap_single]
 
 omit [DecidableEq ι] in
-
 
 theorem injOn_barycentricMap (v : ι → E) (hv : AffineIndependent ℝ v) :
     InjOn (barycentricMap v) (stdSimplex ℝ ι) := by
@@ -110,9 +89,6 @@ namespace Geometry.SimplicialComplex
 open StdSimplexCore
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem image_barycentricSpace (K : SimplicialComplex ℝ E) [Fintype K.vertices] :
     barycentricMap ((↑) : K.vertices → E) ''
@@ -132,9 +108,6 @@ theorem image_barycentricSpace (K : SimplicialComplex ℝ E) [Fintype K.vertices
     obtain ⟨q, hq, rfl⟩ := hxt
     exact ⟨q, mem_iUnion₂.mpr ⟨s, hs, hq⟩, rfl⟩
 
-
-
-
 noncomputable def barycentricHomeomorph (K : SimplicialComplex ℝ E) [Fintype K.vertices]
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) :
     K.vertexAbstractComplex.toPreAbstractSimplicialComplex.barycentricSpace ≃ₜ K.space := by
@@ -152,8 +125,6 @@ noncomputable def barycentricHomeomorph (K : SimplicialComplex ℝ E) [Fintype K
       (f := Equiv.Set.imageOfInjOn (barycentricMap v) A.barycentricSpace hinj)
       (((barycentricMap v).continuous.comp continuous_subtype_val).subtype_mk _)
   exact e.trans (Homeomorph.setCongr K.image_barycentricSpace)
-
-
 
 theorem barycentricHomeomorph_apply (K : SimplicialComplex ℝ E) [Fintype K.vertices]
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E))

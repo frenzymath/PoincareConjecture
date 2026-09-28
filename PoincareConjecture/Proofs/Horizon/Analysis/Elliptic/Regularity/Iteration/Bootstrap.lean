@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.LocalSobolev
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.LocalL2
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -39,7 +32,6 @@ theorem memWkpLocally_differentiatedSource
   intro j _
   exact ((hq i j).smooth_mul (contDiff_partial (hA i j) k)).add
     ((hp j).smooth_mul (contDiff_partial (contDiff_partial (hA i j) k) i))
-
 
 theorem memWkpLocally_add_two_of_weakEquation (k : ℕ)
     {O : Set E} (hO : IsOpen O)
@@ -109,7 +101,6 @@ theorem memWkpLocally_add_two_of_weakEquation (k : ℕ)
         (locally_of_memWkp hW (k := 0) huW.memLp) hPreg hwP
       obtain ⟨Z, hZ, hxZ, hZW, huZ⟩ := hresult x ⟨hxU, hxV⟩
       exact ⟨Z, hZ, hxZ, hZW.trans hWO, huZ⟩
-
 
 theorem memWkpLocally_all_of_weakEigenfunction
     {O : Set E} (hO : IsOpen O)

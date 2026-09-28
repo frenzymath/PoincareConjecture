@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierFourRegions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFourDiskGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,12 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_convex_frontier_marked_decomposition (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

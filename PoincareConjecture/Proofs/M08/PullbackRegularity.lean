@@ -194,4 +194,3 @@ def variationRegularizedGeodesicData {J : Set ℝ} {F : RicciFlow n M J}
   equation s hs W := variation_regularizedEulerResidual_zero V D R hs W
 
 end PoincareConjecture.M08
-

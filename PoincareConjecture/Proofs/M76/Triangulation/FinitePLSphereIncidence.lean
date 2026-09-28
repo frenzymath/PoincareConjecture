@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarPurity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,11 +13,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_height_aligned_surface_complex
     {s : Set E} {C : Set F} {e : s ≃ₜ frontier C} (he : e.IsFinitePL)

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped RealInnerProductSpace
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem periodic_vector_eq_zero_of_parabolic_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

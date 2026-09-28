@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CommonAffineSegmentPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_initial_affine_segment
     {f : E → F} {s : Set E} (hf : FinitePiecewiseAffineOn f s)
@@ -38,10 +25,6 @@ theorem FinitePiecewiseAffineOn.exists_initial_affine_segment
     exact ht.monotone (Fin.le_last _)
   refine ⟨t (1 : Fin (n + 2)), ⟨hδpos, hδle⟩, ?_⟩
   simpa [ht0] using hformula () (0 : Fin (n + 1))
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_positive_initial_slope
     {f : E → ℝ} {s : Set E} (hf : FinitePiecewiseAffineOn f s)

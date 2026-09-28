@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M62Geometry
 import PoincareConjecture.Proofs.M62.Mathlib.LinearChartTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem nonempty_circleProductCharts {circumference : ℝ}
     (C : CircleGeometry circumference) :

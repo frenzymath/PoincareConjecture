@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTransverseC1
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConformalC1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,11 +12,6 @@ open scoped ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Conformal_quadratic_boundary_contDiffOn
     {N : ℕ} {R C H beta Lambda lower upper : ℝ} (hR : 0 < R)

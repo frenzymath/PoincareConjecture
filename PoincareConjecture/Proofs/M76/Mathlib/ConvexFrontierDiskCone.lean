@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeBall
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.convexJoin_zero_of_subset_frontier
     {d q C : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.VolterraPicard
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -19,7 +10,6 @@ open scoped Topology
 noncomputable section
 
 namespace PoincareConjecture
-
 
 def spectralMode (lambda c : ℝ) (f : ℝ → ℝ) (t : ℝ) : ℝ :=
   Real.exp (-lambda * t) *
@@ -79,7 +69,6 @@ theorem hasDerivAt_spectralMode_of_mem_Ioo
   exact (hasDerivWithinAt_spectralMode hf ⟨ht.1.le, ht.2.le⟩).hasDerivAt
     (Icc_mem_nhds ht.1 ht.2)
 
-
 theorem spectralMode_energy_identity
     {lambda c T : ℝ} {f : ℝ → ℝ} (hT : 0 ≤ T)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) :
@@ -129,7 +118,6 @@ theorem spectralMode_energy_identity
       (∫ t in (0 : ℝ)..T, (lambda * u t) ^ 2) + lambda * u T ^ 2 = _
   linarith
 
-
 theorem spectralMode_energy_le
     {lambda c T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) :
@@ -141,8 +129,6 @@ theorem spectralMode_energy_le
     mul_nonneg hlambda (sq_nonneg _)
   linarith
 
-
-
 theorem spectralMode_zero_initial_generator_energy_le
     {lambda T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) :
@@ -153,7 +139,6 @@ theorem spectralMode_zero_initial_generator_energy_le
       (f t - lambda * spectralMode lambda 0 f t) ^ 2 :=
     intervalIntegral.integral_nonneg_of_forall hT (fun _ => sq_nonneg _)
   nlinarith
-
 
 theorem spectralMode_eq_convolution (lambda c t : ℝ) (f : ℝ → ℝ) :
     spectralMode lambda c f t = Real.exp (-lambda * t) * c +
@@ -171,7 +156,6 @@ theorem spectralMode_eq_convolution (lambda c t : ℝ) (f : ℝ → ℝ) :
   dsimp only
   rw [← mul_assoc, he]
 
-
 theorem spectralMode_trace_energy_le
     {lambda c T t : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda)
     (hf : ContinuousOn f (Icc (0 : ℝ) T)) (ht : t ∈ Icc (0 : ℝ) T) :
@@ -187,8 +171,6 @@ theorem spectralMode_trace_energy_le
       (lambda * spectralMode lambda c f s) ^ 2 :=
     intervalIntegral.integral_nonneg_of_forall ht.1 (fun _ => sq_nonneg _)
   linarith
-
-
 
 theorem spectralMode_zero_initial_intermediate_energy_le
     {lambda T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +15,6 @@ open PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 lemma ricci_timeCorrection_hasDerivWithinAt
     (hC : RicciFlowCurvatureTheory.{u}) (J : Set ℝ) (F : RicciFlow n M J)
@@ -43,7 +30,6 @@ lemma ricci_timeCorrection_hasDerivWithinAt
   apply ((hC.ricci_evolution n M J F t ht x u v).fun_div hden
     (mul_ne_zero (by norm_num) hne)).congr_deriv
   field_simp [hne]
-
 
 lemma ricci_timeCorrection_hasDerivAt
     (hC : RicciFlowCurvatureTheory.{u}) (J : Set ℝ) (F : RicciFlow n M J)

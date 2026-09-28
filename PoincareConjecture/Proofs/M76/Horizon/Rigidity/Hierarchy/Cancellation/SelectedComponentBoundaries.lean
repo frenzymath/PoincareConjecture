@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.Injection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -79,7 +71,6 @@ private theorem select_phase_component
       (mem_connectedComponentIn (hiF hy)) hsub
     rwa [(M.component i).2.2.2 y hy] at h
   · exact (M.component i).2.1.isPreconnected.subset_connectedComponentIn hy hiF
-
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "L0" => hamiltonZeroPeriodLattice

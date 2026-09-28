@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteContactEdgeVertex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
 
 namespace PoincareConjecture.M76
-
-
-
-
-
 
 theorem exists_original_arc_edge_interior_endpoint
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]

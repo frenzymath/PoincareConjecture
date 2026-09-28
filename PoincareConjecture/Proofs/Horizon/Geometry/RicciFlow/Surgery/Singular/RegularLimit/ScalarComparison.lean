@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -70,8 +60,6 @@ private theorem exists_last_level_above {f : ℝ → ℝ} {a b H : ℝ} (hab : a
     (neg_le_neg ha) (neg_lt_neg hb)
   exact ⟨c, hc, neg_injective he, fun t ht => neg_lt_neg_iff.mp (hafter t ht)⟩
 
-
-
 theorem scalar_lt_two_mul_of_short_interval {f : ℝ → ℝ} {s T C rho K : ℝ}
     (hC : 0 ≤ C) (hrho : 0 < rho) (hrhoK : rho ≤ K)
     (hf : ContinuousOn f (Icc s T)) (hs : f s < K)
@@ -119,7 +107,6 @@ theorem scalar_lt_two_mul_of_short_interval {f : ℝ → ℝ} {s T C rho K : ℝ
     mul_nonneg (sq_nonneg K) (sub_nonneg.mpr hu.2.le)
   nlinarith
 
-
 theorem scalar_lt_two_mul_of_short_tail {f : ℝ → ℝ} {s T C rho K : ℝ}
     (hC : 0 ≤ C) (hrho : 0 < rho) (hrhoK : rho ≤ K)
     (hf : ContinuousOn f (Ico s T)) (hs : f s < K)
@@ -132,7 +119,6 @@ theorem scalar_lt_two_mul_of_short_tail {f : ℝ → ℝ} {s T C rho K : ℝ}
     (hf.mono (fun z hz => ⟨hz.1, hz.2.trans_lt ht.2⟩)) hs
     (fun z hz => hd z ⟨hz.1, hz.2.trans ht.2⟩)
     ((sub_le_sub_right ht.2.le s).trans_lt hshort) t ⟨ht.1, le_rfl⟩
-
 
 theorem scalar_lt_two_mul_of_short_interval_backward {f : ℝ → ℝ} {s T C rho K : ℝ}
     (hC : 0 ≤ C) (hrho : 0 < rho) (hrhoK : rho ≤ K)

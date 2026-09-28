@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_InitialStage
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_RestartStage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_cap_sequence_full_stage
     (P : M44CapPersistencePredecessors.{u})

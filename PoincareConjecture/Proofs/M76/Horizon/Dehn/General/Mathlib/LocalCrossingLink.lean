@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 import PoincareConjecture.Proofs.M76.Mathlib.CentralLinkSigns
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology Filter unitInterval
@@ -20,8 +12,6 @@ namespace Geometry.OriginalPLTower
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem link_zero_ncard_of_crossing_chart (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
     (hzero : (0 : V3) ∈ K.vertices) (ell : V3 →ₗ[ℝ] ℝ)
@@ -163,8 +153,6 @@ theorem link_zero_ncard_of_crossing_chart (K : SimplicialComplex ℝ V3) (hK : K
         rw [(hminus i hi).2]
         exact ⟨rfl, rfl⟩
   exact K.ncard_link_zero_of_local_segments hK hzero ell hu hv hinter hlocal
-
-
 
 theorem signed_approach_of_crossing_chart (K : SimplicialComplex ℝ V3) (ell : V3 →L[ℝ] ℝ)
     (w : V3) (hw : ell w = 1) (H : OpenPartialHomeomorph V3 C3)

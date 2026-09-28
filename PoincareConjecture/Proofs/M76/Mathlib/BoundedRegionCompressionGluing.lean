@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ namespace Homeomorph
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem exists_finitePL_union_id_of_fixed_overlap
     {P C R : Set X} (e : P ≃ₜ C) (he : e.IsFinitePL)

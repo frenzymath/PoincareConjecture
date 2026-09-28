@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.StageRimHomotopy
 
-
-
 set_option autoImplicit false
 open Set PLAnnularStrip
 
@@ -9,7 +7,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
 
 noncomputable def annulusCylinderHomeomorph : (unitInterval × Circle) ≃ₜ Ann :=
   (Homeomorph.prodComm unitInterval Circle).trans
@@ -39,7 +36,6 @@ theorem annulusCylinderHomeomorph_apply (x : unitInterval × Circle) :
 @[simp] theorem annulusCylinderHomeomorph_one (z : Circle) :
     annulusCylinderHomeomorph (1, z) = annulusRimPoint true z := by
   rw [annulusCylinderHomeomorph_apply, annulusRimCylinder_one]
-
 
 def annulusRims : Set Ann := range (annulusRimPoint false) ∪ range (annulusRimPoint true)
 

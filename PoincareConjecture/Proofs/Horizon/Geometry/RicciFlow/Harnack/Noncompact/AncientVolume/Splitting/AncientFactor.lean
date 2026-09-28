@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.FactorRatio
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +16,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open RiemannianMetric
-
-
-
 
 theorem parallelGradientFactor_ancient_geometry
     {n : ℕ} (hn : 0 < n) {M : Type u}

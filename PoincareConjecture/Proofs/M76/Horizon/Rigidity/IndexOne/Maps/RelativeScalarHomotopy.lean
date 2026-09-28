@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.ScalarTransl
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.BoundaryPhaseCover
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourcePhaseSets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -43,8 +33,6 @@ theorem translatedMap_preimage_boundary (phi : C(H, H)) (w : C(X, ℝ)) :
   ext x
   rfl
 
-
-
 noncomputable def scalarHomotopy (phi : C(H, H)) (w : C(X, ℝ))
     (hw : ∀ x ∈ frontier R, w x = 0) : phi.HomotopyRel (translatedMap phi w) B where
   toFun z := handleTranslation
@@ -73,8 +61,6 @@ theorem scalarHomotopy_fixed (phi : C(H, H)) (w : C(X, ℝ))
     scalarHomotopy phi w hw (t, x) = phi x := by
   change handleTranslation ((t : ℝ) * w _, phi x) = phi x
   rw [hx, mul_zero, handleTranslation_zero]
-
-
 
 theorem translatedMap_relative_properties
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

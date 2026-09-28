@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.InverseTangentMap
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport.TimeBracket
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   (e : MovingSpacetimeGauge F T C) (g : MovingSpacetimeGaugeGeometry e)
 
-
-
 theorem movingGauge_inverse_horizontal (t : T.Point) (x : C)
     (V : F.Horizontal (e.toSpacetime (t, x))) :
     (mfderiv (spacetimeModel n) (spacetimeModel n) e.toSpacetime (t, x)).inverse V.val =
@@ -41,9 +30,6 @@ theorem movingGauge_inverse_horizontal (t : T.Point) (x : C)
 variable {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {L : ModelWithCorners ℝ E H}
   {P : Type w} [TopologicalSpace P] [ChartedSpace H P]
-
-
-
 
 theorem movingGauge_horizontalField_pullback_contMDiffWithinAt
     {b : P → T.Point × C} {Y : ∀ z, F.Horizontal (e.toSpacetime (b z))}

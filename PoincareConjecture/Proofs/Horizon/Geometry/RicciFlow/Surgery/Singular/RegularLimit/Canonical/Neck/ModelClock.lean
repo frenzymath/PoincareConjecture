@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -100,8 +98,6 @@ theorem cylinderNorm_diagonal {u : ℝ} (hu : u ≠ 1) (q : UnitTwoSphere)
     rw [hp, zero_mul, zero_mul]
   · simp
 
-
-
 theorem roundCylinderTensorNormSquared_time_mono {u v : ℝ} (huv : u ≤ v) (hv : v < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates)
     {r : ℕ} (A : (Fin r → Fin 3) → ℝ) :
@@ -132,9 +128,6 @@ theorem roundCylinderTensorNormSquared_time_mono {u v : ℝ} (huv : u ≤ v) (hv
   · exact fun i _ => hw (a i)
   · exact fun i _ => hmono (a i)
 
-
-
-
 theorem roundCylinderChristoffel_time_eq {u : ℝ} (hu : u ≠ 1)
     (q : UnitTwoSphere) :
     roundCylinderChristoffel u (chartAt (EuclideanSpace ℝ (Fin 2)) q) =
@@ -147,8 +140,6 @@ theorem roundCylinderChristoffel_time_eq {u : ℝ} (hu : u ≠ 1)
   fin_cases a <;> fin_cases b <;> fin_cases d <;>
     simp [Matrix.diagonal, cylinderWeight, roundCylinderCoordinateBasis,
       EuclideanSpace.inner_single_left, sphereFactor_fderiv_axis] <;> field_simp
-
-
 
 theorem evolvingRoundCylinderMetric_clock_error
     {q Q : ℝ} (hq : q ≠ 0) (hQ : Q ≠ 0) (t T s : ℝ)

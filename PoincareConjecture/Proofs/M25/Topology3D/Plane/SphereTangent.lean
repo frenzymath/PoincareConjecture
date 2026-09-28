@@ -1,16 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.TwoDim
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -26,9 +16,6 @@ section Sphere
 variable {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
 variable {G : E → F} {c : sphere (0 : E) 1 → F}
 
-
-
-
 theorem mvfderiv_sphere_restriction (q : sphere (0 : E) 1)
     (hG : DifferentiableAt ℝ G (q : E))
     (hGc : ∀ p : sphere (0 : E) 1, G (p : E) = c p) :
@@ -43,9 +30,6 @@ theorem mvfderiv_sphere_restriction (q : sphere (0 : E) 1)
   rw [mfderiv_eq_fderiv]
   ext u
   rfl
-
-
-
 
 theorem fderiv_ne_zero_of_sphere_immersion (q : sphere (0 : E) 1)
     (hG : DifferentiableAt ℝ G (q : E))
@@ -67,9 +51,6 @@ theorem fderiv_ne_zero_of_sphere_immersion (q : sphere (0 : E) 1)
   rw [← hu, hu0, map_zero]
 
 end Sphere
-
-
-
 
 theorem fderiv_rightAngleRotation_ne_zero_of_sphere_immersion
     [Fact (Module.finrank ℝ E = 2)] (o : Orientation ℝ E (Fin 2))

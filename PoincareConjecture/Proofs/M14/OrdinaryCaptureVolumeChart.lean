@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -95,8 +85,6 @@ private theorem captureChart_volume_local
 
 variable [SecondCountableTopology M]
 
-
-
 theorem ordinaryCaptureChart_inverse_measure :
     ((calibratedMetricVolume h).restrict f.target).map f.symm = calibratedMetricVolume g := by
   let μ := ((calibratedMetricVolume h).restrict f.target).map f.symm
@@ -123,15 +111,11 @@ theorem ordinaryCaptureChart_inverse_measure :
     obtain ⟨U, hU, hx, heq⟩ := hlocal x
     exact ⟨U, hU, hx, fun B hB hBU => by rw [one_mul, heq B hB hBU]⟩
 
-
-
 theorem ordinaryCaptureChart_volume_image {A : Set M} (hA : MeasurableSet A) :
     calibratedMetricVolume h (f '' A) = calibratedMetricVolume g A := by
   rw [← M10.map_inverse_restrict_apply f (calibratedMetricVolume h) hA
     (by rw [hsource]; exact subset_univ _),
     ordinaryCaptureChart_inverse_measure g h f hsource hf hfi hmetric]
-
-
 
 theorem ordinaryCaptureChart_measure_map :
     (calibratedMetricVolume g).map f = (calibratedMetricVolume h).restrict f.target := by
@@ -143,8 +127,6 @@ theorem ordinaryCaptureChart_measure_map :
       (hA.preimage hf.continuous.measurable),
     image_preimage_eq_inter_range, hrange, Measure.restrict_apply hA]
 
-
-
 theorem ordinaryCaptureChart_restrict_map {A : Set N}
     (hA : MeasurableSet A) (hAtarget : A ⊆ f.target) :
     ((calibratedMetricVolume g).restrict (f ⁻¹' A)).map f =
@@ -152,9 +134,6 @@ theorem ordinaryCaptureChart_restrict_map {A : Set N}
   rw [← Measure.restrict_map hf.continuous.measurable hA,
     ordinaryCaptureChart_measure_map g h f hsource hf hfi hmetric,
     Measure.restrict_restrict hA, inter_eq_left.mpr hAtarget]
-
-
-
 
 theorem ordinaryCaptureChart_integral {A : Set N}
     (hA : MeasurableSet A) (hAtarget : A ⊆ f.target) (φ : N → ℝ) :

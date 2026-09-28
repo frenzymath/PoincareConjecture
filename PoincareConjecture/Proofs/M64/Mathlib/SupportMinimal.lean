@@ -1,22 +1,9 @@
 import Mathlib.LinearAlgebra.Pi
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Submodule
-
-
-
-
 
 theorem le_of_mem_of_support_minimal
     {k E : Type*} [Field k] [Finite E] (K L : Submodule k (E → k))

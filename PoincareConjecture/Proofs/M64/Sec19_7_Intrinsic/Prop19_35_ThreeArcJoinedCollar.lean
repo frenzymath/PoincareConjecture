@@ -4,10 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JoinedPatchNest
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcPairedChains
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChainPatchCoverage
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,10 +14,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_joined_collar
     (gamma : Bool → ℝ → AnnulusCoordinates) (sigma : ℝ → AnnulusCoordinates)

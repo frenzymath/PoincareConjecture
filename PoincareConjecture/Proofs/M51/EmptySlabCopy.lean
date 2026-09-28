@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EmptyEventCopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -39,7 +31,6 @@ noncomputable def m51_reindexPast (S : SurgeryRegularSlab slice metric p q)
   · intro t
     exact M51EventCopy.diffeomorph_flow_metric_pullback slice metric hp.symm
       (hTau t.1 t.2.2).symm S.flow t.1 (S.identify t) (S.metric_pullback t)
-
 
 theorem m51_reindexPast_transport_heq (S : SurgeryRegularSlab slice metric p q)
     (tau : ℝ → ℝ) (hTau : ∀ t ≤ q, tau t = t) (s t : Set.Icc p q)

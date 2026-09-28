@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGramHessian
 import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGramPath
 import Mathlib.Analysis.Calculus.Deriv.Pi
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +25,6 @@ private theorem ricci_hessian_pair_heq {q r : G.Point} (h : q = r) {τ : ℝ}
   cases h
   cases hV
   rfl
-
-
-
 
 theorem exponentialGram_diagonal_hasDerivWithinAt
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -84,9 +71,6 @@ theorem exponentialGram_diagonal_hasDerivWithinAt
     (exponentialJacobiField_heq_differential hM04 hM12 E Z (v i) hs hpos hsC hs)] at hd'
   exact hd'.congr_of_mem
     (fun r hr => exponentialGram_eq_jacobi_pair hM04 hM12 E v hs hpos hr i i) hsC
-
-
-
 
 theorem exponentialGram_hasDerivAt
     (hCoordinates : M12MetricPredecessors.{0} n)

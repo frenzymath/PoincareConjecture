@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.Confinement
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_scalarCurvature_fixed_cylinder
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -130,8 +120,6 @@ theorem exists_scalarCurvature_fixed_cylinder
   have hzball : z ∈ (F.metric s).ball p r :=
     hzR.trans_le (ENNReal.ofReal_le_ofReal hRr.le)
   exact hlocal s hs z hzball (ENNReal.toReal_lt_of_lt_ofReal hzR).le
-
-
 
 theorem exists_scalarCurvature_large_cylinder
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

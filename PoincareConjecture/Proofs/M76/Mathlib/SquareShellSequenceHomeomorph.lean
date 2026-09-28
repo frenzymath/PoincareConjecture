@@ -2,27 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareShellIdentity
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSequenceIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology Geometry
 
 namespace SquareShell
-
-
-
-
-
 
 theorem exists_sequence_openPartialHomeomorph {a b : ℕ → ℝ} {c d : ℝ}
     (hc : 0 ≤ c) (hd : 0 ≤ d) (ha : StrictAnti a) (hb : StrictAnti b)

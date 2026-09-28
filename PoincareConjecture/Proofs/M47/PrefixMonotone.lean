@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_1_Prefix
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,16 +9,12 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem SurgeryCanonicalOn.restrict
     {F : SurgeryFlowData.{u}} {I J : Set ℝ} {r : ℝ}
     (h : SurgeryCanonicalOn F I r) (hJI : J ⊆ I) :
     SurgeryCanonicalOn F J r := by
   intro t ht
   exact h t (hJI ht)
-
-
 
 theorem SurgeryCanonicalOn.mono_radius
     {F : SurgeryFlowData.{u}} {J : Set ℝ} {r rSmall : ℝ}
@@ -42,8 +26,6 @@ theorem SurgeryCanonicalOn.mono_radius
     pow_le_pow_left₀ (inv_nonneg.mpr hr'.le) hinv 2
   intro t ht htF x hscalar
   exact h t ht htF x (hpow.trans hscalar)
-
-
 
 theorem SurgeryPrefixControls.canonicalOn_prefixFinal
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -58,16 +40,12 @@ theorem SurgeryPrefixControls.canonicalOn_prefixFinal
     hle.trans (p.r_antitone (show j.val ≤ (Fin.last p.i).val from hjlast))
   exact (h.canonical j hjlast).mono_radius hr hrj t ⟨ht.1, hj⟩ htF x hscalar
 
-
-
 theorem SurgeryObservation.interval_subset_of_horizon_le
     {F : SurgeryFlowData.{u}} {Osmall Olarge : SurgeryObservation F}
     (hH : Osmall.H ≤ Olarge.H) :
     surgeryObservationInterval Osmall ⊆ surgeryObservationInterval Olarge := by
   intro t ht
   exact ⟨ht.1, ht.2.trans_le hH⟩
-
-
 
 def SurgeryObservation.restrictTo {F : SurgeryFlowData.{u}}
     (O : SurgeryObservation F) (H : ℝ) (hH : 0 < H) (hle : H ≤ O.H) :
@@ -76,8 +54,6 @@ def SurgeryObservation.restrictTo {F : SurgeryFlowData.{u}}
   H_pos := hH
   interval_subset := fun _ ht => O.interval_subset ⟨ht.1, ht.2.trans_le hle⟩
   standard_flow := O.standard_flow
-
-
 
 theorem SurgeryPrefixControls.restrictObservation
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -99,8 +75,6 @@ theorem SurgeryPrefixControls.restrictObservation
     kappa_schedule := fun j hj t ht => h.kappa_schedule j hj t ⟨hJ ht.1, ht.2⟩
     h_schedule := fun j hj t ht => h.h_schedule j hj t ⟨hJ ht.1, ht.2⟩ }
 
-
-
 theorem SurgeryPostPrefixScales.restrictObservation
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {Osmall Olarge : SurgeryObservation F}
@@ -113,8 +87,6 @@ theorem SurgeryPostPrefixScales.restrictObservation
     delta_le := fun t ht => h.delta_le t ⟨hJ ht.1, ht.2⟩
     h_eq := fun t ht => h.h_eq t ⟨hJ ht.1, ht.2⟩ }
 
-
-
 theorem SurgeryPostPrefixScales.mono_delta
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -126,8 +98,6 @@ theorem SurgeryPostPrefixScales.mono_delta
   delta_le := fun t ht => (h.delta_le t ht).trans hle
   h_eq := h.h_eq
 
-
-
 theorem SurgeryFlowTerminalPolicyOn.restrictObservation
     {F : SurgeryFlowData.{u}} {Osmall Olarge : SurgeryObservation F}
     (h : SurgeryFlowTerminalPolicyOn F (surgeryObservationInterval Olarge))
@@ -136,8 +106,6 @@ theorem SurgeryFlowTerminalPolicyOn.restrictObservation
   SurgeryFlowTerminalPolicyOn.restrict
     (SurgeryObservation.interval_subset_of_horizon_le hH) h
 
-
-
 theorem SurgeryObservationIsNextEpoch.restrictObservation
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {Osmall Olarge : SurgeryObservation F}
@@ -145,9 +113,6 @@ theorem SurgeryObservationIsNextEpoch.restrictObservation
     (hstart : surgeryEpochStart p.i < Osmall.H) :
     SurgeryObservationIsNextEpoch p Osmall :=
   ⟨hstart, hH.trans h.2⟩
-
-
-
 
 theorem SurgeryPrefixControls.noncollapsedOn_before_prefixEnd
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

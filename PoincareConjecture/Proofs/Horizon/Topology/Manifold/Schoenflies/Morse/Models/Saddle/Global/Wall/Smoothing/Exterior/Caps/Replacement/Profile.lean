@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.Cylindrical
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Collar
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +15,6 @@ open Split
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev axis : E3 := EuclideanSpace.single 2 1
-
 
 def planarCapLift (A : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ :=
@@ -96,8 +93,6 @@ theorem planarCapLift_body_slice
     (by rw [axis_inner, hp]; exact ht.2), axis_inner, hp, axis_projection_norm]
   simp only [ht.1, true_and, mem_closedBall_zero_iff]
 
-
-
 theorem exists_profile_cap_with_canonical_collar {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R : Real) :
     ∃ G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,
@@ -163,8 +158,6 @@ private theorem northern_collar_eq_of_slices (G : Diffeomorph (𝓡 3) (𝓡 3) 
   · rintro ⟨hp, ht⟩
     have he := hslices (p 2) ⟨hT p hp, (le_abs_self (p 2)).trans ht.le⟩
     exact ⟨((Set.ext_iff.mp he p).mpr ⟨hp, rfl⟩).1, ht⟩
-
-
 
 theorem exists_profile_cap_common_open_collar {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R : Real) :

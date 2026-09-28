@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.CurvatureEnergy
 import PoincareConjecture.Proofs.M45.Mathlib.CompactCubicComparison
 import PoincareConjecture.Proofs.M04.ShiCutoffMaximum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M45
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem compact_curvature_le_two_of_initial_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]

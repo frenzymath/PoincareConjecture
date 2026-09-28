@@ -17,8 +17,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
 
-
-
 theorem OrdinaryDoubleCurveModel.exists_selfpaired_physical_polygon
     (M : OrdinaryDoubleCurveModel e f R)
     (hf : PolyhedralPLInCharts e f D2) (hinside : MapsTo f D2 R)
@@ -62,9 +60,6 @@ theorem OrdinaryDoubleCurveModel.exists_selfpaired_physical_polygon
       refine ⟨alpha.symm ⟨x, hx⟩, (alpha.symm ⟨x, hx⟩).property, ?_⟩
       rw [← hlval, alpha.apply_symm_apply]
   rw [image_comp (F ∘ f) l, hlimage, image_comp F f, himage, image_comp F f]
-
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_selfpaired_component_axis_model
     (M : OrdinaryDoubleCurveModel e f R)

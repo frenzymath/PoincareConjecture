@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollarC
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapFaces
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerBandChords
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,22 +18,13 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {T : Bool → ℝ} {S : ℝ} {U : Set AnnulusCoordinates}
   (C : M64IntrinsicThreeArcCaps gamma sigma T S U)
 
-
-
-
 theorem first_axis_mem (e : Bool) (s : ℝ) (hs : s ∈ Icc (0 : ℝ) (C.radius e)) :
     C.chart e (s, 0) ∈ C.carrier e :=
   ((C.frontier_contact e).symm.subset (Or.inl ⟨s, hs, (C.first_axis e s).symm⟩)).1
 
-
-
-
 theorem second_axis_mem (e : Bool) (s : ℝ) (hs : s ∈ Icc (0 : ℝ) (C.radius e)) :
     C.chart e (0, s) ∈ C.carrier e :=
   ((C.frontier_contact e).symm.subset (Or.inr ⟨s, hs, (C.second_axis e s).symm⟩)).1
-
-
-
 
 theorem disjoint_of_ne (e f : Bool) (hef : e ≠ f) : Disjoint (C.carrier e) (C.carrier f) := by
   cases e <;> cases f
@@ -76,9 +63,6 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {C : M64IntrinsicThreeArcCaps gamma sigma T S U}
   (D : M64IntrinsicThreeArcCollar C b)
 
-
-
-
 theorem cap_band_outer (e : Bool) (i : D.BandIndex) :
     C.carrier e ∩ (D.bandData i).band.carrier ⊆
       (D.bandData i).band.leftCut ∪ (D.bandData i).band.rightCut := by
@@ -107,9 +91,6 @@ theorem cap_band_outer (e : Bool) (i : D.BandIndex) :
     rcases h with h | h
     · exact Or.inl (optional_subset _ _ h)
     · exact Or.inr (optional_subset _ _ h)
-
-
-
 
 theorem cap_band_lower_tips (e : Bool) (i : D.BandIndex) :
     C.carrier e ∩ (D.bandData i).band.lowerArc ⊆
@@ -198,18 +179,12 @@ theorem cap_band_lower_tips (e : Bool) (i : D.BandIndex) :
       · rw [if_neg hcut] at h
         exact h.elim
 
-
-
-
 theorem band_off_lower (i : D.BandIndex) :
     (D.bandData i).band.carrier \ (D.bandData i).band.lowerArc ⊆ U := by
   rcases i with ⟨e, i⟩ | (e | i)
   · exact (D.joined.chain e).off_lower i
   · exact D.joined.patch.off_lower e
   · exact D.third.off_lower i
-
-
-
 
 theorem cap_face_band_chord (hU : IsOpen U) (A : M64IntrinsicThreeArcCapFaces C)
     (e : Bool) (j : Bool × Bool)

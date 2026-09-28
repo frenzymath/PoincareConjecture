@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SpatialDifferentialJet
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

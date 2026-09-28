@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothGaugeCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -16,8 +7,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 open SmoothRadial
-
-
 
 theorem smoothGaugeForcing_eq_radial {h f₀ xi : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h) (he : Function.Even h) (hzero : h 0 = 0)
@@ -56,8 +45,6 @@ theorem smoothGaugeForcing_eq_radial {h f₀ xi : ℝ → ℝ}
   rw [hexp sigma, hinv]
   field_simp [hr.ne', Real.exp_ne_zero]
   ring
-
-
 
 theorem smoothGaugeDrift_eq_radial {h xi : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h) (he : Function.Even h) {r : ℝ} (hr : 0 < r) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.TriangleRegion
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.NoninterlacingMatching
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcTerminalMatching
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -117,9 +109,6 @@ private theorem exists_positive_terminal_matched_edge {k : ℕ} (hk : 2 ≤ k)
       omega
     · rw [he, he, if_neg hU]
       omega
-
-
-
 
 theorem IsSimplePolygonalArc.exists_terminal_path_good_subarc {n k : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

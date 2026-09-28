@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.Col
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.RestrictedPhaseCollar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.ComplementarySlabDomains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

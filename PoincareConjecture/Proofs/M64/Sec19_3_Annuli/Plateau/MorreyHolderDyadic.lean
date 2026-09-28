@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerDyadicHolder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,8 +8,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64Morrey_dyadic_holder_limit
     {X E : Type*} [MetricSpace X] [NormedAddCommGroup E] [CompleteSpace E]

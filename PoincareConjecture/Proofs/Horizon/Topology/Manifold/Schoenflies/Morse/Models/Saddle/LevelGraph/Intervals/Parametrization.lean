@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.EmbeddedCircle
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Circle.CompactArc.Embedding
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_exterior_interval_parametrizations
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.ScaleAnnuli
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set
@@ -43,8 +35,6 @@ private theorem quarter_gradient_scale_area_seed_le (n : ℕ) {r : ℝ}
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem regularLevel_annular_bounds_with_dimensional_constant_of_quarter_gradient
     {m : ℕ} {M : Type*} [TopologicalSpace M]

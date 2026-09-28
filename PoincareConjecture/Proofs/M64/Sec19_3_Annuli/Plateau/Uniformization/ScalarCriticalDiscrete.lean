@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCriticalLocal
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +12,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem scalarPotential_nonconstant_of_boundary_values {H : Plane → ℝ}
     (hHc : Continuous H)
@@ -46,10 +28,6 @@ theorem scalarPotential_nonconstant_of_boundary_values {H : Plane → ℝ}
   linarith
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarPotential_critical_isolated {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -98,10 +76,6 @@ theorem scalarPotential_critical_isolated {H : Plane → ℝ} (hHc : Continuous 
   rw [hCempty] at hc
   exact hc
 
-
-
-
-
 theorem scalarPotential_critical_finite_on_compact {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hlap : ∀ x ∈ scalarAnnulus, D.laplacian H x = 0)
@@ -114,10 +88,6 @@ theorem scalarPotential_critical_finite_on_compact {H : Plane → ℝ} (hHc : Co
   obtain ⟨p, hp, hacc⟩ := hinf.exists_accPt_of_subset_isCompact hK inter_subset_left
   have hi := scalarPotential_critical_isolated D hHc hHs hlap hinner houter (hKsub hp)
   exact (accPt_iff_frequently_nhdsNE.mp hacc) (hi.mono fun y hy h => hy h.2)
-
-
-
-
 
 theorem scalarPotential_critical_finite_on_levels {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectionConnection
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.IntrinsicFields
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem m65ProjectedTangentJet_pullback (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
     (hreg : M63IntrinsicRegularityOn P.flow c (Icc a b))
@@ -39,9 +29,6 @@ theorem m65ProjectedTangentJet_pullback (P : M62.CircleProductData F circumferen
   rw [m65IntrinsicTangentJet_pullback c hc (Ioo_subset_Icc_self ht),
     map_smul, Prod.smul_fst] at hproj
   exact hproj.symm
-
-
-
 
 theorem m65VerticalTangentJet_hasDerivAt (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

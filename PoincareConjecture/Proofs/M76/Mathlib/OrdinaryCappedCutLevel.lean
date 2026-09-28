@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.OrdinaryCollarCutMembership
 import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +11,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_ordinary_capped_cut_level
     {S B T d b k R s₀ s₁ : Set E} {upper g : E → ℝ}

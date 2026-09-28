@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.MinimizingSegments
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
-
 
 theorem exists_nearest_frontier (g : RiemannianMetric n M)
     {D : Set M} (hD : IsCompact D) (hfront : (frontier D).Nonempty)
@@ -46,7 +33,6 @@ theorem exists_nearest_frontier (g : RiemannianMetric n M)
     ⟨⟨g.inner, g.toContinuousRiemannianMetric.continuous, fun _ _ _ => rfl⟩⟩
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 n) M
   exact ENNReal.toReal_pos (ne_of_gt (edist_pos.mpr hxy)) (g.edist_ne_top x y)
-
 
 theorem ball_subset_interior_of_le_frontier_distance
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -78,7 +64,6 @@ theorem ball_subset_interior_of_le_frontier_distance
   apply hsubset
   exact ⟨1, by simp, hγ1⟩
 
-
 theorem frontier_distance_le_of_not_mem_interior
     (g : RiemannianMetric n M) (hc : MetricComplete g)
     {D : Set M} {x : M} (hx : x ∈ interior D) {r : ℝ}
@@ -88,8 +73,6 @@ theorem frontier_distance_le_of_not_mem_interior
   have hball : q ∈ g.ball x r :=
     (ENNReal.lt_ofReal_iff_toReal_lt (g.edist_ne_top x q)).mpr (lt_of_not_ge h)
   exact hq (g.ball_subset_interior_of_le_frontier_distance hc hx hfront hball)
-
-
 
 theorem exists_unit_speed_minimizing_geodesic_to_frontier
     (g : RiemannianMetric n M) (hc : MetricComplete g)

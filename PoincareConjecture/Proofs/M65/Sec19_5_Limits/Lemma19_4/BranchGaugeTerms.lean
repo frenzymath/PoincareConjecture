@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,13 +12,9 @@ namespace PoincareConjecture.M65Branch
 
 variable {B : Type*} [NormedRing B] [NormedAlgebra ℂ B]
 
-
-
 def cauchyTerm (A : ℂ → B) : ℕ → ℂ → B
   | 0 => fun _ => 1
   | n + 1 => cauchyOperator (fun z => A z * cauchyTerm A n z)
-
-
 
 theorem contDiff_cauchyTerm {A : ℂ → B} (hA : ContDiff ℝ 1 A)
     (hs : HasCompactSupport A) (n : ℕ) : ContDiff ℝ 1 (cauchyTerm A n) := by
@@ -38,17 +24,10 @@ theorem contDiff_cauchyTerm {A : ℂ → B} (hA : ContDiff ℝ 1 A)
 
 variable [CompleteSpace B]
 
-
-
-
 theorem dbar_cauchyTerm_succ {A : ℂ → B} (hA : ContDiff ℝ 1 A)
     (hs : HasCompactSupport A) (n : ℕ) (z : ℂ) :
     dbar (cauchyTerm A (n + 1)) z = A z * cauchyTerm A n z :=
   dbar_cauchyOperator (hA.mul (contDiff_cauchyTerm hA hs n)) hs.mul_right z
-
-
-
-
 
 theorem cauchyTerm_bounds [NormOneClass B] {A : ℂ → B} {R B0 B1 δ : ℝ}
     (hR : 0 < R) (hB0 : 0 ≤ B0) (hB1 : 0 ≤ B1) (hδ : 0 < δ)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverJacobian
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
 
 theorem scalarCoverMap_fderiv_invertible {z : Cover} (hz : z.1 ≠ 0) :
     (fderiv ℝ scalarCoverMap z).IsInvertible := by
@@ -68,20 +54,12 @@ theorem scalarCoverMap_fderiv_invertible {z : Cover} (hz : z.1 ≠ 0) :
   exact ⟨(LinearEquiv.ofBijective A.toLinearMap ⟨hinj, hsurj⟩).toContinuousLinearEquiv,
     rfl⟩
 
-
-
-
-
 theorem scalarCoverMap_map_nhds {z : Cover} (hz : z.1 ≠ 0) :
     map scalarCoverMap (𝓝 z) = 𝓝 (scalarCoverMap z) := by
   obtain ⟨A, hA⟩ := scalarCoverMap_fderiv_invertible hz
   have hstrict := (scalarCoverMap_smooth.contDiffAt (x := z)).hasStrictFDerivAt (by simp)
   rw [← hA] at hstrict
   exact hstrict.map_nhds_eq_of_equiv
-
-
-
-
 
 theorem scalarCoverMap_tendsto_nhdsNE {z : Cover} (hz : z.1 ≠ 0) :
     Tendsto scalarCoverMap (𝓝[≠] z) (𝓝[≠] scalarCoverMap z) := by

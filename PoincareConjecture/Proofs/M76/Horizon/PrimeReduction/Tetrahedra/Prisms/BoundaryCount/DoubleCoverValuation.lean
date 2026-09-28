@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceCountInclusionExclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped BigOperators

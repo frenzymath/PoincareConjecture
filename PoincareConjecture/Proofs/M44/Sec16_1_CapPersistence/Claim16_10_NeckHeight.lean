@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_NeckBuffe
 import PoincareConjecture.Proofs.M36.NeckMetricBound
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem neck_inverse_height_quadratic (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 12) {x : M} (hx : x ∈ N.carrier)
@@ -61,21 +49,14 @@ theorem neck_inverse_height_quadratic (N : EpsilonNeck g)
   have hnonneg : 0 ≤ 1 - 6 * N.epsilon := by linarith
   nlinarith [mul_nonneg hnonneg (add_nonneg (sq_nonneg (v.1 0)) (sq_nonneg (v.1 1)))]
 
-
-
 noncomputable def neckHeightVector (N : EpsilonNeck g) (x : M) : E :=
   (N.coordinate_inverse x).2 • axis
-
-
 
 theorem neckHeightVector_contMDiffAt (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (neckHeightVector N) x := by
   let L : ℝ →L[ℝ] E := (ContinuousLinearMap.id ℝ ℝ).smulRight axis
   exact L.contMDiff.contMDiffAt.comp x (neck_inverse_contMDiffAt N hx).snd
-
-
-
 
 theorem neckHeightVector_mfderiv (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) (w : TangentSpace (𝓡 3) x) :
@@ -87,9 +68,6 @@ theorem neckHeightVector_mfderiv (N : EpsilonNeck g)
     (N.coordinate_inverse x)).comp x hi
   have h := L.hasMFDerivAt.comp x hp
   exact congrArg (fun D => D w) h.mfderiv
-
-
-
 
 theorem neckHeightVector_quadratic (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 12) {x : M} (hx : x ∈ N.carrier)

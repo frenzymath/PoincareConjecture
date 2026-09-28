@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {G : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
 namespace RiemannianMetric
-
-
-
 
 theorem exists_uniform_pullback_extension_with_curvature
     (g : RiemannianMetric n M) (Dg : LeviCivitaData g)

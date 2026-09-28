@@ -3,15 +3,6 @@ import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_physical_scalar_persistence
     (P : M47ScalarPersistencePredecessors.{u})

@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Curvature.Conformal.ConformalPinching
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.LocalIsometryVolume
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +18,6 @@ universe u
 namespace PoincareConjecture
 
 namespace SurgeryVolume
-
 
 theorem calibratedMetricVolume_image_eq_of_injective_isometry_all
     {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
@@ -68,7 +56,6 @@ theorem calibratedMetricVolume_image_eq_of_injective_isometry_all
 end SurgeryVolume
 
 namespace GeneralizedSliceCarrier
-
 
 def openSubset (S : GeneralizedSliceCarrier.{u}) (U : Opens S.carrier) :
     GeneralizedSliceCarrier.{u} where

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Compat.M33SphereNonempty
 import PoincareConjecture.Definitions.M27ProductModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 def slabCore (C : M27TwistedSphereLineFlowCertificate K) (r : ℝ) : Set M :=
   C.cover '' (univ ×ˢ Icc (-r) r)
@@ -45,7 +34,6 @@ theorem cover_mem_slabCore_iff (C : M27TwistedSphereLineFlowCertificate K)
       simpa only [m27TwistedProductInvolution, abs_neg] using abs_le.mpr hq.2
   · intro hp
     exact ⟨p, ⟨mem_univ _, abs_le.mp hp⟩, rfl⟩
-
 
 theorem positiveEnd_isOpenEmbedding (C : M27TwistedSphereLineFlowCertificate K)
     {r : ℝ} (hr : 0 ≤ r) :

@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.ZeroSlicePoint
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.StrongNeck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Embedding
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,10 +44,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem blowup_exists_strongNeck_of_cylinderFamilyClose
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

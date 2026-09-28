@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
   FlowCarrier.measurableSpace FlowCarrier.borelSpace FlowCarrier.secondCountable
-
-
 
 theorem exists_left_endpoint_scalar_bound_threshold
     (hC : RicciFlowCurvatureTheory.{u}) :

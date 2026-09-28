@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_EntryAlternative
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PhysicalTopEntry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem exists_actualFullCapEntry_action_gt
     {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)

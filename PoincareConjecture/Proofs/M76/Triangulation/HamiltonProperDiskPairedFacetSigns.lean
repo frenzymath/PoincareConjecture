@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFacetDeterm
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_affineEquiv_of_injective_full_simplex
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)
@@ -42,10 +30,6 @@ theorem exists_affineEquiv_of_injective_full_simplex
   have hb : Function.Bijective a := a.linear_bijective_iff.mp
     ⟨hl, LinearMap.injective_iff_surjective.mp hl⟩
   exact ⟨AffineEquiv.ofBijective hb, rfl⟩
-
-
-
-
 
 theorem det_mul_pos_of_actual_paired_facet
     (K : SimplicialComplex ℝ E) (hdim : 0 < Module.finrank ℝ E)

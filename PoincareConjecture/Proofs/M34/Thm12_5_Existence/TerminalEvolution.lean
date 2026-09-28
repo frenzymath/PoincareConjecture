@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalReversal
 import PoincareConjecture.Proofs.M34.Standard.InitialEvolutionBootstrap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem partialFlow_hasDerivAt_coefficients {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) {t : ℝ} (ht : t ∈ Ioo 0 F.lifetime)
@@ -64,8 +52,6 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem reverseFiniteSpatialJet_of_pos (m : ℕ) {t : ℝ} (ht : 0 < t)
     (x : StandardCapSpace) :
     spatialJet m L.reverseCoefficients (t, x) = spatialJet m
@@ -75,8 +61,6 @@ theorem reverseFiniteSpatialJet_of_pos (m : ℕ) {t : ℝ} (ht : 0 < t)
   exact L.reverseSpatialJet_of_pos j ht x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem reverseSpatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
     (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S)
@@ -95,8 +79,6 @@ theorem reverseSpatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
     convert! (L.metric P E0 hS hSF hB hfull).inner_isInvertible x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem deriv_reverseCoefficients_eq_neg_operator (hSF : S ≤ F.lifetime)
     {t : ℝ} (ht : t ∈ Ioo 0 S) (x : StandardCapSpace) :
@@ -126,8 +108,6 @@ include P E0 hS hSF hB hfull
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem contDiffOn_reverseSpatialJet (m : ℕ) :
     ContDiffOn ℝ ∞ (L.reverseSpatialJet m) (Ico 0 S ×ˢ univ) :=
   contDiffOn_spatialJets_of_initial_evolution
@@ -139,8 +119,6 @@ theorem contDiffOn_reverseSpatialJet (m : ℕ) :
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem contDiffOn_reverseCoefficients :
     ContDiffOn ℝ ∞ L.reverseCoefficients (Ico 0 S ×ˢ univ) :=
   contDiffOn_of_initial_spatial_jet_evolution
@@ -151,8 +129,6 @@ theorem contDiffOn_reverseCoefficients :
     (fun p hp => L.deriv_reverseCoefficients_eq_neg_operator hSF hp.1 p.2)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem hasDerivWithinAt_reverseCoefficients {t : ℝ} (ht : t ∈ Ico 0 S)
     (x : StandardCapSpace) :

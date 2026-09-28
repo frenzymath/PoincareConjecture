@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,11 +15,6 @@ variable {X Y G ι κ : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   {e : ι → OpenPartialHomeomorph X V3}
   {d : κ → OpenPartialHomeomorph Y V3} {R : Set X} {T : Set Y}
-
-
-
-
-
 
 theorem ChartwisePLMap.polyhedralPLInCharts_boundary_lift
     {f : C(R, T)} (hf : ChartwisePLMap e d f)

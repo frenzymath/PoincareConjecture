@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.GermCorrection
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.CompactChartTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.OrthogonalPath
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Metric
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 private instance sphereDimensionFact : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
-
-
-
 
 theorem exists_sphere_pole_normalization (p : UnitTwoSphere)
     (f : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) :

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +15,6 @@ omit [FiniteDimensional Real E] in
 theorem orthogonal_axis_neg : (Real ∙ v)ᗮ = (Real ∙ (-v))ᗮ := by
   congr 1
   simpa only [Set.neg_singleton] using (Submodule.span_neg (R := Real) ({v} : Set E)).symm
-
 
 def axisNegPlaneEquiv : (Real ∙ v)ᗮ ≃ₗᵢ[Real] (Real ∙ (-v))ᗮ :=
   LinearIsometryEquiv.ofEq _ _ (orthogonal_axis_neg v)
@@ -37,7 +34,6 @@ theorem axisNegPlaneEquiv_projection (x : E) :
   apply Subtype.ext
   rw [coe_axisNegPlaneEquiv]
   simp only [Submodule.coe_orthogonalProjectionOnto_apply, orthogonal_axis_neg v]
-
 
 def axisNegPlaneDiffeomorph
     (A : (Real ∙ v)ᗮ ≃ₘ[Real] (Real ∙ v)ᗮ) :

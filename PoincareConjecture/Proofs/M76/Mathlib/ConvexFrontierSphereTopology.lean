@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierOtherPoint
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ namespace Homeomorph
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem isConnected_of_convex_frontier
     {s : Set X} {C : Set E} (e : s ≃ₜ frontier C)
@@ -35,9 +23,6 @@ theorem isConnected_of_convex_frontier
     isConnected_sphere hrank 0 zero_le_one
   exact isConnected_iff_connectedSpace.mpr
     ((e.trans f).connectedSpace_iff.mpr (isConnected_iff_connectedSpace.mp hunit))
-
-
-
 
 theorem nontrivial_of_convex_frontier
     {s : Set X} {C : Set E} (e : s ≃ₜ frontier C)

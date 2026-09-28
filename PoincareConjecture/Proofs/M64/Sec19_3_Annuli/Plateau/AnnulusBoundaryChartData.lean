@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusBoundaryError
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +21,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem exists_lower_chart_columns
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -79,9 +66,6 @@ theorem exists_lower_chart_columns
     filter_upwards [hobs] with p hp
     exact congrArg (fun v : E => L v j) hp
   exact hwF.restrict isOpen_ball hBO
-
-
-
 
 theorem weighted_exists_lower_critical_coordinates [CompactSpace M] [T2Space M]
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

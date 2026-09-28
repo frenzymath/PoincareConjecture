@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalSecondBianchi
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 lemma covariantTensorDerivative_riemannEvaluation_eq
     (D : LeviCivitaData g) (x : M) (u a b c d : TangentSpace (𝓡 n) x) :
     let X := fun v : TangentSpace (𝓡 n) x =>
@@ -33,7 +25,6 @@ lemma covariantTensorDerivative_riemannEvaluation_eq
           D.curvatureTensor x a b (D.connection (X c) x u) d +
           D.curvatureTensor x a b c (D.connection (X d) x u)) := by
   simp [covariantTensorDerivative, riemannEvaluation, Fin.sum_univ_succ, add_assoc]
-
 
 lemma covariantTensorDerivative_riemannEvaluation_skew_last
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -58,7 +49,6 @@ lemma covariantTensorDerivative_riemannEvaluation_skew_last
     hs x a b c (D.connection (X d) x u)]
   ring
 
-
 lemma covariantTensorDerivative_riemannEvaluation_pair_swap
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u a b c d : TangentSpace (𝓡 n) x) :
@@ -80,7 +70,6 @@ lemma covariantTensorDerivative_riemannEvaluation_pair_swap
     hs x a b c (D.connection (X d) x u)]
   ring
 
-
 lemma covariantTensorDerivative_riemannEvaluation_skew_first
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u a b c d : TangentSpace (𝓡 n) x) :
@@ -89,7 +78,6 @@ lemma covariantTensorDerivative_riemannEvaluation_skew_first
   rw [D.covariantTensorDerivative_riemannEvaluation_pair_swap hD x u a b c d,
     D.covariantTensorDerivative_riemannEvaluation_skew_last hD x u c d a b,
     D.covariantTensorDerivative_riemannEvaluation_pair_swap hD x u c d b a]
-
 
 lemma contMDiffOn_covariantDerivativeOnFields (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)
@@ -101,7 +89,6 @@ lemma contMDiffOn_covariantDerivativeOnFields (D : LeviCivitaData g)
   intro y hy
   exact (D.contMDiffAt_covariantDerivativeOnFields
     (hX.contMDiffAt (hU.mem_nhds hy)) (hY.contMDiffAt (hU.mem_nhds hy))).contMDiffWithinAt
-
 
 lemma covariantTensorDerivative_riemannEvaluation_eq_inner_extend
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

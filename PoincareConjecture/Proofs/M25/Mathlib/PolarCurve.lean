@@ -5,22 +5,9 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Real
-
-
-
 
 theorem polar_parameters_eq_of_mem_Icc
     {a b r1 r2 theta1 theta2 : ℝ}
@@ -56,9 +43,6 @@ theorem polar_parameters_eq_of_mem_Icc
     linarith only [htheta1.2, htheta2.1, hwidth]
   exact ⟨hr, sub_eq_zero.mp
     ((Real.cos_eq_one_iff_of_lt_of_lt hleft hright).mp hcosSub)⟩
-
-
-
 
 theorem polar_deriv_ne_zero_of_pos
     (R theta : ℝ → ℝ) (t : ℝ)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ChartVelocity
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

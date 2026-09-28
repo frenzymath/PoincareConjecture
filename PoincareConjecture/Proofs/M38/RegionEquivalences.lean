@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 def composeRegions {A B C : GeneralizedSliceCarrier.{u}}
     {U : Set A.carrier} {V : Set B.carrier} {W : Set C.carrier}
@@ -42,7 +33,6 @@ def composeRegions {A B C : GeneralizedSliceCarrier.{u}}
     intro x hx
     exact f.inverse_image.subset (Set.mem_image_of_mem _ hx))
 
-
 noncomputable def diffeomorphRegions {A B : GeneralizedSliceCarrier.{u}}
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞)
     (U : Set A.carrier) : SurgeryRegionEquivalence A B U (e '' U) where
@@ -54,8 +44,6 @@ noncomputable def diffeomorphRegions {A B : GeneralizedSliceCarrier.{u}}
   right_inverse := fun _ _ => e.apply_symm_apply _
   map_smooth := e.contMDiff.contMDiffOn
   inverse_smooth := e.symm.contMDiff.contMDiffOn
-
-
 
 noncomputable def transportUnion {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {A B : GeneralizedSliceCarrier.{u}}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedCylinderRecenter
 import PoincareConjecture.Proofs.M47.SeedSearchBalls
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_1_Prefix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem seed_search_old_noncollapsed
     (P : M47Predecessors.{u}) {K0 : MetricSurgeryConstants}

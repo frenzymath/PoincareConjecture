@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPLSuccessor
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -25,12 +14,6 @@ variable {U E V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
-
 
 structure MarkedSurfaceMotionData {s t : Stage e S f r C} (step : Step s t)
     (K K₀ K₁ : SimplicialComplex ℝ V) (j : V → t.Carrier)

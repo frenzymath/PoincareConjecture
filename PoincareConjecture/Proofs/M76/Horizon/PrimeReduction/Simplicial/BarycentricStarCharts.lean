@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSurfaceIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -49,8 +41,6 @@ theorem barycentric_closedStar_space_subset
   obtain ⟨s, hs, hxs⟩ := mem_space_iff.mp hx
   obtain ⟨t, ht, hst⟩ := K.barycentric_closedStar_face_containment hp s hs
   exact (K.closedStar p).convexHull_subset_space ht (hst hxs)
-
-
 
 theorem mem_interior_image_barycentric_closedStar [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) [Fintype K.faces]

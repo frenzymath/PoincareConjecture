@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeMetricEnergy
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCircleEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -23,10 +13,6 @@ universe u
 namespace PoincareConjecture
 
 open M65Interior
-
-
-
-
 
 theorem m65Embedding_uniform_small_circle_replacement
     {M : Type u} [TopologicalSpace M]

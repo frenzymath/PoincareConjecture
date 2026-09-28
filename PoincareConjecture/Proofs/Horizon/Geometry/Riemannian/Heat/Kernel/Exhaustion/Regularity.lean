@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.SpacetimeJets
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Uniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -50,9 +42,6 @@ theorem contDiffOn_coordinateExhaustionKernel [PreconnectedSpace M]
       e₁ e₂ he₁ he₂
   · exact locallyEventuallyBoundedDerivatives_coordinateHeatKernel D hc hk hRic S
       hΩmono hcover T X Y e₁ e₂ he₁ hei₁ he₂ hei₂
-
-
-
 
 theorem tendsto_iteratedFDeriv_coordinateExhaustionKernel [PreconnectedSpace M]
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)
@@ -130,7 +119,6 @@ theorem contDiffOn_chartExhaustionKernel [PreconnectedSpace M]
       exact ⟨ht, hx, hy⟩
     · rintro ⟨ht, hx, hy⟩
       exact ⟨⟨ht, hx⟩, hy⟩
-
 
 theorem contMDiffOn_dirichletExhaustionKernel [PreconnectedSpace M]
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

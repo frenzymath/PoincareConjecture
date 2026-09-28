@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Transport
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
 open scoped Manifold ContDiff
 
 universe v u
 
 namespace Poincare.Manifold
-
 
 @[instance_reducible]
 def uliftChartedSpace (H : Type*) [TopologicalSpace H]
@@ -20,13 +17,11 @@ variable {𝕜 E H : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E
   [NormedSpace 𝕜 E] [TopologicalSpace H] (I : ModelWithCorners 𝕜 E H)
   (M : Type u) [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
 
-
 theorem uliftIsManifold :
     letI : ChartedSpace H (ULift.{v} M) := uliftChartedSpace H M
     IsManifold I ∞ (ULift.{v} M) := by
   let : ChartedSpace H (ULift.{v} M) := uliftChartedSpace H M
   exact HomeomorphTransport.isManifold Homeomorph.ulift.symm I ∞
-
 
 def uliftDiffeomorph :
     letI : ChartedSpace H (ULift.{v} M) := uliftChartedSpace H M

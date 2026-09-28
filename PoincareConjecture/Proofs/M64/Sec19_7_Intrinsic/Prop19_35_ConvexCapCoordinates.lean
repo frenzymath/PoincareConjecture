@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FittedCornerCap
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapChordSigns
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,10 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_convex_cap_coordinates_with_chords
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

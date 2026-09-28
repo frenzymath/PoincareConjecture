@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexPrism
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chains.IntegralChains
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -15,7 +9,6 @@ open scoped Simplicial
 universe w v u
 
 namespace Poincare.Topology
-
 
 theorem singularSimplexFamily_cycle_homology_factorization
     {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]

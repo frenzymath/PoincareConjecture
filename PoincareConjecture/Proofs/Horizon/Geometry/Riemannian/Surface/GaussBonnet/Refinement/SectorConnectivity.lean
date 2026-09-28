@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorComplements
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +10,6 @@ open Poincare.Topology.Plane.Meshes
 namespace PoincareConjecture.Topology.Surface
 
 noncomputable section
-
 
 def coordinateBox (c : AffineBasis (Fin 3) ℝ Plane) (r : ℝ) : Set Plane :=
   {z | -r < c.coord 1 z ∧ c.coord 1 z < r} ∩
@@ -127,8 +119,6 @@ theorem coordinateBox_negativeHalfspace_isPreconnected
     IsPreconnected (coordinateBox c r ∩ {z | c.coord 1 z < 0}) :=
   ((convex_coordinateBox c r).inter
     ((convex_Iio (0 : ℝ)).affine_preimage (c.coord 1))).isPreconnected
-
-
 
 theorem affineBasis_coordinate_reconstruction (c : AffineBasis (Fin 3) ℝ Plane) (z : Plane) :
     c 0 + c.coord 1 z • (c 1 - c 0) + c.coord 2 z • (c 2 - c 0) = z := by

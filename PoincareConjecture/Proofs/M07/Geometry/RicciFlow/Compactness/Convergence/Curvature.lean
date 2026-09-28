@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.CurvatureBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ private theorem bilinear_eq_of_basis {n : ℕ}
   exact h a
 
 namespace FlowCarrier
-
-
 
 theorem curvatureTensorNorm_eq_of_coordinate_germ
     {n : ℕ} (C : FlowCarrier n) (gM : C.metric)
@@ -75,8 +64,6 @@ theorem curvatureTensorNorm_eq_of_coordinate_germ
 end FlowCarrier
 
 namespace SmoothSpacetimeEmbedding
-
-
 
 theorem curvatureTensorNorm_eq_of_coordinate_germ
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
@@ -150,8 +137,6 @@ end SmoothSpacetimeEmbedding
 
 namespace PointedGeometricConvergence
 
-
-
 theorem tendsto_curvatureTensorNorm
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     (G : PointedGeometricConvergence S) (t : ℝ) (ht : t ∈ Ioo T' T)
@@ -220,8 +205,6 @@ theorem tendsto_curvatureTensorNorm
     (G.exhaustion_open k) x (t, p) ht
     ⟨hp, by rw [hcx]; exact G.exhaustion_monotone hjk (hj (mem_singleton x))⟩
     (gd k).1 (gd k).2 hk
-
-
 
 theorem curvatureTensorNorm_le
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

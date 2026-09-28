@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAlexanderConsequences
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangularRoofModel
@@ -131,11 +122,6 @@ private theorem boundary_without_disk_interior
       exact (hbd.symm.subset hxq).1
   · intro hxb
     exact ⟨Or.inl hxb, fun hx => hx.2 (hbd.subset ⟨hxb, hx.1⟩)⟩
-
-
-
-
-
 
 theorem exists_hamilton_indexTwo_cap_regions
     {ι : Type*} [Fintype ι] (hdim : Fintype.card ι = 3)

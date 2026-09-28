@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFamilySelection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,14 +12,10 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 theorem base_scalar_pos (H : CounterexampleNeckFamily E) (k : ℕ) :
     0 < (E (k + H.shift)).flow.scalar
       ⟨(E (k + H.shift)).time, (E (k + H.shift)).basepoint⟩ :=
   lt_of_lt_of_le (by positivity) (E (k + H.shift)).base_lower
-
-
 
 theorem base_scalar_tendsto_atTop (H : CounterexampleNeckFamily E) :
     Tendsto (fun k => (E (k + H.shift)).flow.scalar
@@ -36,16 +23,12 @@ theorem base_scalar_tendsto_atTop (H : CounterexampleNeckFamily E) :
   (counterexampleBlowupSequence E).scalar_diverges.comp
     H.sourceIndex_strictMono.tendsto_atTop
 
-
-
 theorem lower_scalar_pos (H : CounterexampleNeckFamily E) (k : ℕ) :
     0 < (E (k + H.shift)).flow.scalar
       ⟨(E (k + H.shift)).time, (H.segment k).path (H.segment k).lower⟩ := by
   rw [(H.segment k).lower_scalar]
   have hB : 0 < max C 2 := lt_of_lt_of_le (by norm_num) (le_max_right C 2)
   exact mul_pos (mul_pos (by norm_num) (sq_pos_of_pos hB)) (H.base_scalar_pos k)
-
-
 
 theorem lower_scalar_tendsto_atTop (H : CounterexampleNeckFamily E) :
     Tendsto (fun k => (E (k + H.shift)).flow.scalar
@@ -58,8 +41,6 @@ theorem lower_scalar_tendsto_atTop (H : CounterexampleNeckFamily E) :
   convert h using 1
   funext k
   exact (H.segment k).lower_scalar
-
-
 
 theorem retained_ratio_lower (H : CounterexampleNeckFamily E) (k : ℕ) :
     (((k + H.shift : ℕ) : ℝ) + 1) / (32 * (max C 2) ^ 4) <
@@ -74,8 +55,6 @@ theorem retained_ratio_lower (H : CounterexampleNeckFamily E) (k : ℕ) :
   have h := mul_lt_mul_of_pos_left (H.segment k).upper_scalar
     (mul_pos (by norm_num : (0 : ℝ) < 16) (sq_pos_of_pos hB))
   nlinarith only [h]
-
-
 
 theorem retained_ratio_tendsto_atTop (H : CounterexampleNeckFamily E) :
     Tendsto (fun k =>
@@ -94,8 +73,6 @@ theorem retained_ratio_tendsto_atTop (H : CounterexampleNeckFamily E) :
   exact tendsto_atTop_mono (fun k => (H.retained_ratio_lower k).le)
     ((tendsto_div_const_atTop_of_pos
       (by positivity : 0 < 32 * (max C 2) ^ 4)).2 hindex)
-
-
 
 theorem neck_center_scalar_tendsto_atTop (H : CounterexampleNeckFamily E)
     (v : ℕ → ℝ) (hv : ∀ k, v k ∈ Icc (H.segment k).lower (H.segment k).upper) :

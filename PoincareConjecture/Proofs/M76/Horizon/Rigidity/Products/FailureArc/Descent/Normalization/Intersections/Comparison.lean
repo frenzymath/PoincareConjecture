@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.FaceData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -29,10 +19,6 @@ variable {U E V M ι : Type*}
   {B : OpenPartialHomeomorph s.Carrier E} {J : SimplicialComplex ℝ E}
   {U : K.faces → Set t.Carrier} {R Fmark : Set M} {boundary : Bool}
 
-
-
-
-
 theorem MarkedSurfaceMotionData.targets_space_of_prefix_agreement
     (motion : MarkedSurfaceMotionData step K K₀ K₁ j Q B J U R Fmark boundary)
     {jfinal : V → t.Carrier} (heq : EqOn jfinal j K₀.space)
@@ -47,10 +33,6 @@ theorem MarkedSurfaceMotionData.targets_space_of_prefix_agreement
       (heq (K₀.convexHull_subset_space a.property hx)))
   rw [himage]
   exact motion.targets_space a
-
-
-
-
 
 theorem MarkedSurfaceMotionData.coordinate_of_successor_agreement
     (motion : MarkedSurfaceMotionData step K K₀ K₁ j Q B J U R Fmark boundary)

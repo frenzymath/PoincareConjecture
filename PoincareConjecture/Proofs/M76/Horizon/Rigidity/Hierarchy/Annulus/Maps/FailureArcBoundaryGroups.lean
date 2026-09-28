@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.Path
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.SecondPhaseGroups
 import Mathlib.GroupTheory.Commensurable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -149,9 +141,6 @@ private theorem mapOfEq_congr
   subst g
   rfl
 
-
-
-
 theorem boundary_groups_commensurable_of_contracted_arc
     {E₀ E₁ X T Y : Type*}
     [TopologicalSpace E₀] [TopologicalSpace E₁] [TopologicalSpace X]
@@ -221,9 +210,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
-
 
 theorem hamiltonZero_boundary_groups_commensurable_of_failure_arc
     {E₀ E₁ : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]

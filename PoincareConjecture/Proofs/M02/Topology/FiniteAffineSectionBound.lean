@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.FiniteAffineSection
 import PoincareConjecture.Proofs.M02.Topology.FiniteConvexBall
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

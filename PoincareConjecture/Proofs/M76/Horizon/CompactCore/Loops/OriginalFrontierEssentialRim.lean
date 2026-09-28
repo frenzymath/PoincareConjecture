@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.ComponentLoopR
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_original_frontier_essential_rim
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

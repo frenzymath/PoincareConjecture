@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CoreCoefficientReadout
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +17,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X} {eta : ℝ}
-
-
-
-
 
 theorem NeckGeometryCore.norm_frozen_difference_jet_le_of_scale_error
     (V : NeckGeometryCore g eta) (N : EpsilonNeck h) (Q : ℝ) (hQ : 0 < Q)

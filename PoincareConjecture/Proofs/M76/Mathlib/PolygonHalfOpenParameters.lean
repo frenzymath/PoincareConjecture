@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace Polygon
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
 omit [NormedAddCommGroup E] [NormedSpace ℝ E] in
-
-
 
 theorem edge_endpoints_ne_of_injective (P : Polygon E (n + 3))
     (hinj : Function.Injective P) (i : Fin (n + 3)) :
@@ -31,10 +20,6 @@ theorem edge_endpoints_ne_of_injective (P : Polygon E (n + 3))
     (show i + 1 = i + 0 by simpa only [add_zero] using hi)
   have hv := congrArg Fin.val h1
   norm_num at hv
-
-
-
-
 
 theorem eq_of_halfOpen_edge_parameters (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

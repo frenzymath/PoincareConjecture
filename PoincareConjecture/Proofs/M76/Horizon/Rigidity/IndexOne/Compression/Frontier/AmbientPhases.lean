@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.Ph
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.MarkedCoverInjection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.HandleInjection
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.HamiltonIntervalTorus

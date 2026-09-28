@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexSigns
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskBaseFaces
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFullCofaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,11 +15,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_vertex_normal_label
     (T : HamiltonProperDiskTriangulation R D b) (hb : b.IsFinitePL)

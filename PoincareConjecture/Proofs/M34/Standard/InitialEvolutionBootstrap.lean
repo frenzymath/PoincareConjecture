@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.InitialJetDerivative
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 include hΩ hQ hf hc hrange hevol
 
-
-
 theorem contDiffOn_spatialJets_of_initial_evolution (j : ℕ) :
     ContDiffOn ℝ ∞
       (fun p : ℝ × E => iteratedFDeriv ℝ j (fun x => f (p.1, x)) p.2)
@@ -60,16 +49,11 @@ theorem contDiffOn_spatialJets_of_initial_evolution (j : ℕ) :
         exact hasFDerivWithinAt_initialJointJetDerivative hΩ hQ hf hc hrange hevol k hp
   exact contDiffOn_infty.mpr (fun r => hfinite r j)
 
-
-
-
 theorem contDiffOn_of_initial_spatial_jet_evolution :
     ContDiffOn ℝ ∞ f (Ico 0 T ×ˢ univ) := by
   have hzero := contDiffOn_spatialJets_of_initial_evolution hΩ hQ hf hc hrange hevol 0
   exact (continuousMultilinearCurryFin0 ℝ E V).toContinuousLinearEquiv.contDiff.comp_contDiffOn
     hzero
-
-
 
 theorem hasDerivWithinAt_of_initial_spatial_jet_evolution
     {p : ℝ × E} (hp : p ∈ Ico 0 T ×ˢ univ) :

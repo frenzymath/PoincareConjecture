@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Com
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Locality
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,7 +25,6 @@ private theorem scalar_mvfderiv_comp {f : M → ℝ} {F : ℝ → ℝ} {x : M}
   change mvfderiv (𝓡 n) f x v * deriv F (f x) = _
   exact mul_comm _ _
 
-
 theorem contMDiffAt_regularizedMin (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -44,7 +35,6 @@ theorem contMDiffAt_regularizedMin (δ : ℝ) (hδ : 0 < δ)
       (fun y => (f y + h y - Poincare.regularizedAbs δ hδ (f y - h y)) * (2 : ℝ)⁻¹) x :=
     ((hf.add hh).sub ha).mul contMDiffAt_const
   simpa only [Poincare.regularizedMin, div_eq_mul_inv] using hp
-
 
 theorem mvfderiv_regularizedMin (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
@@ -73,8 +63,6 @@ theorem mvfderiv_regularizedMin (δ : ℝ) (hδ : 0 < δ)
   simp only [sub_apply]
   ring
 
-
-
 theorem mvfderiv_regularizedMin_le (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
@@ -91,8 +79,6 @@ theorem mvfderiv_regularizedMin_le (δ : ℝ) (hδ : 0 < δ)
         (mul_le_mul_of_nonneg_left hhB (by linarith))
     _ = B := by ring
 
-
-
 theorem le_mvfderiv_regularizedMin (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
@@ -107,8 +93,6 @@ theorem le_mvfderiv_regularizedMin (δ : ℝ) (hδ : 0 < δ)
         ((1 + deriv (Poincare.regularizedAbs δ hδ) (f x - h x)) / 2) * B := by ring
     _ ≤ _ := add_le_add (mul_le_mul_of_nonneg_left hfB (by linarith))
       (mul_le_mul_of_nonneg_left hhB (by linarith))
-
-
 
 theorem contMDiffOn_regularizedMin (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {U : Set M} (hU : IsOpen U)
@@ -182,8 +166,6 @@ private theorem hessian_comp_at (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ 
   rw [scalar_mvfderiv_comp (hf.mdifferentiableAt (by simp))
     ((hF.deriv' (n := ∞)).differentiable (by simp) (f x))]
 
-
-
 theorem hessian_regularizedMin (D : LeviCivitaData g) (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -214,8 +196,6 @@ theorem hessian_regularizedMin (D : LeviCivitaData g) (δ : ℝ) (hδ : 0 < δ)
   simp only [sub_apply]
   ring
 
-
-
 theorem hessian_regularizedMin_le (D : LeviCivitaData g) (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -239,8 +219,6 @@ theorem hessian_regularizedMin_le (D : LeviCivitaData g) (δ : ℝ) (hδ : 0 < �
       add_le_add (mul_le_mul_of_nonneg_left hfH (by linarith))
         (mul_le_mul_of_nonneg_left hhH (by linarith))
     _ = _ := by ring
-
-
 
 theorem gradient_regularizedMin_norm_le (D : LeviCivitaData g) (δ : ℝ) (hδ : 0 < δ)
     {f h : M → ℝ} {x : M}

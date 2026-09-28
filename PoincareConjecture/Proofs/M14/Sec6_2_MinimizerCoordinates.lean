@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.QuadraticMinimizerRegularity
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -55,9 +46,6 @@ private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem minimizing_gaugeCoordinate_regularity
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hmin : M14IsMinimizing p)

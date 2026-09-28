@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.CornerComponentTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.CornerFamilyTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel

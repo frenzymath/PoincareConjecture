@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import Mathlib.Data.Finset.Powerset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup E] [Module 𝕜 E]
-
-
-
-
 
 theorem ncard_surface_face_chain_extensions (K : SimplicialComplex 𝕜 E)
     (hbound : ∀ u ∈ K.faces, u.card ≤ 3)

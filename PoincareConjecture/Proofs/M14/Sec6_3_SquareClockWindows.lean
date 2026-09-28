@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeClockNeighborhood
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedLeftNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,19 +10,12 @@ universe u
 
 namespace PoincareConjecture.M14
 
-
-
-
 theorem squareClock_admissible_prefix {I : SpacetimeInterval} {T b : ℝ}
     (hT : T ∈ I.domain) (hb : 0 ≤ b) (hclock : T - b ^ 2 ∈ I.domain) :
     ∀ s ∈ Icc 0 b, T - s ^ 2 ∈ I.domain := by
   intro s hs
   have hsq : s ^ 2 ≤ b ^ 2 := (sq_le_sq₀ hs.1 hb).mpr hs.2
   exact I.ordConnected.out hclock hT ⟨by linarith, sub_le_self _ (sq_nonneg s)⟩
-
-
-
-
 
 theorem exists_squareClock_prefix_neighborhood {I : SpacetimeInterval} {T s : ℝ}
     (hT : T ∈ I.domain) (hs : 0 < s) (hclock : T - s ^ 2 ∈ I.domain) :
@@ -47,11 +31,6 @@ theorem exists_squareClock_prefix_neighborhood {I : SpacetimeInterval} {T s : �
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
-
 
 theorem exists_gauge_positive_squareClock_window (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

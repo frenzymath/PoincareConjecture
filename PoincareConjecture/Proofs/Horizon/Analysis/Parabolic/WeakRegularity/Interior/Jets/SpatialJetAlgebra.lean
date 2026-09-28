@@ -1,18 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakProduct
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
@@ -22,7 +8,6 @@ noncomputable section
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Interior
 
 open Canonical
-
 
 def HasSpatialL2Jet {n : ℕ} (U : Set (Spacetime n)) : ℕ → (Spacetime n → ℝ) → Prop
   | 0, u => MemLp u 2 (volume.restrict U)

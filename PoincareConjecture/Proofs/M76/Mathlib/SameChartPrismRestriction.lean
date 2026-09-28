@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LongitudinalPrismCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
 
 namespace CoordinateHalfBoxes
-
-
-
-
 
 theorem longitudinalPrismCoordinates_restrict {r R : ℝ}
     (hr : r ≠ 0) (hR : R ≠ 0) (a b : ℝ) (x : (ℝ × ℝ) × ℝ) :
@@ -35,11 +20,6 @@ end CoordinateHalfBoxes
 namespace OpenPartialHomeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem restrict_fixed_lateral_inverse_box
     (H : OpenPartialHomeomorph E ((ℝ × ℝ) × ℝ))

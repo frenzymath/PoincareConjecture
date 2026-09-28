@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarStrictRange
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +19,6 @@ private theorem exp_linear_lower (a b : ℝ) :
   nlinarith
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem annular_harmonic_linear_boundary_separation
     {H : Plane → ℝ} (hHc : Continuous H)

@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.RicciEndomorphism
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.HalfOpen
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +16,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
 
 def canonicalTransport (F : RicciFlow n M (Ico a b)) (t : ℝ) (x : M) :
     TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x :=
@@ -103,7 +91,6 @@ theorem canonicalTransport_bijective (F : RicciFlow n M (Ico a b))
   · simp only [canonicalTransport, transportIco, dif_neg ht]
     exact Function.bijective_id
 
-
 theorem canonicalTransport_pairing (F : RicciFlow n M (Ico a b))
     (hab : a < b) {t : ℝ} (ht : t ∈ Ico a b) (x : M)
     (v w : TangentSpace (𝓡 n) x) :
@@ -122,7 +109,6 @@ theorem canonicalTransport_pairing (F : RicciFlow n M (Ico a b))
     (fun _ hs => metricBilin_hasDerivWithinAt F x hs)
     (fun s _ => metric_ricciEndomorphism_left F x s)
     (fun _ hs => metric_ricciEndomorphism_right F x hs) ht v w
-
 
 def orthonormalTransport (F : RicciFlow n M (Ico a b)) (t : ℝ) (x : M) :
     TangentSpace (𝓡 n) x ≃L[ℝ] TangentSpace (𝓡 n) x :=

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyExtension
 import PoincareConjecture.Proofs.M48.ExtensionNoncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ namespace PoincareConjecture.M51Empty
 
 variable (F : SurgeryFlowData.{u}) {a : ℝ} (ha : a ∈ F.time_domain)
     [IsEmpty (F.slice a).carrier]
-
 
 theorem pinched (h : SurgeryFlowPinched F) : SurgeryFlowPinched (flow F ha) := by
   intro t ht
@@ -38,8 +28,6 @@ theorem pinched (h : SurgeryFlowPinched F) : SurgeryFlowPinched (flow F ha) := b
       exact isEmptyElim x
     · intro x
       exact isEmptyElim x
-
-
 
 theorem canonical (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (h : SurgeryCanonicalAssumption F) : SurgeryCanonicalAssumption (flow F ha) := by
@@ -59,8 +47,6 @@ theorem canonical (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     subst s
     exact h t hsold
   exact (extension F ha).canonical_on m13 hJ hold t (mem_singleton t) ht x
-
-
 
 theorem noncollapsed (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (h : SurgeryNoncollapsed F) : SurgeryNoncollapsed (flow F ha) := by

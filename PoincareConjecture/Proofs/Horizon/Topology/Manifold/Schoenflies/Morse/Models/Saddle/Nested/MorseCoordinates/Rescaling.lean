@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.MorseCoordinates.Factors
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.CoordinateRescaling
 
-
-
 noncomputable section
 set_option autoImplicit false
 

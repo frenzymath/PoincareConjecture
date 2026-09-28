@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrescribedIntervalDiskMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -21,9 +11,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
-
-
-
 
 theorem prescribed_interval_source_eq_iff
     {E0 E1 : Type*} [TopologicalSpace E0] [TopologicalSpace E1]
@@ -51,8 +38,6 @@ theorem prescribed_interval_source_eq_iff
     have hx' : x = ⟨p0 t, hW0S (p0 t).property⟩ := Subtype.ext hx
     have hy' : y = ⟨p1 t, hW1S (p1 t).property⟩ := Subtype.ext hy
     rw [hx', hy', h0, h1]
-
-
 
 theorem prescribed_interval_source_existsUnique
     {E0 E1 : Type*} [TopologicalSpace E0] [TopologicalSpace E1]

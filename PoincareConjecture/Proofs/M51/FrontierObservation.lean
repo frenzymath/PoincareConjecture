@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,13 +9,10 @@ universe u
 
 namespace PoincareConjecture.M51
 
-
-
 def MaximalTail (F : SurgeryFlowData.{u}) : Prop :=
   F.time_domain = Ici 0 ∨
     ∃ T : ℝ, 0 < T ∧ F.time_domain = Ico 0 T ∧
       Nonempty (RepairedPreterminalSlab F T)
-
 
 theorem maximalTail_of_restart
     {F : SurgeryFlowData.{u}} {T : ℝ} {I : RepairedContinuationInput F T}
@@ -47,7 +36,6 @@ theorem maximalTail_of_restart
     · obtain ⟨L, _⟩ := C.finite_end_slab htop
       exact ⟨L⟩
 
-
 theorem MaximalTail.slab_of_domain_eq {F : SurgeryFlowData.{u}}
     (hF : MaximalTail F) {H : ℝ} (hH : 0 < H)
     (hJ : F.time_domain = Ico 0 H) : Nonempty (RepairedPreterminalSlab F H) := by
@@ -66,8 +54,6 @@ theorem MaximalTail.slab_of_domain_eq {F : SurgeryFlowData.{u}}
         rw [hdomain] at hmem
         exact lt_irrefl T hmem.2
     simpa only [hTH] using hslab
-
-
 
 theorem MaximalTail.observeBefore {F : SurgeryFlowData.{u}}
     (hF : MaximalTail F) (O : SurgeryObservation F) {B : ℝ} (hB : O.H ≤ B) :

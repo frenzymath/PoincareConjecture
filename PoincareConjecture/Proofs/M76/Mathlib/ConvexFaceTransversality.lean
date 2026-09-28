@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Submodule
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsSecantTransverse.disjoint_affineDirection {P : Submodule ℝ E} {S C : Set E}
     (hP : P.IsSecantTransverse S) (hC : Convex ℝ C) (hne : C.Nonempty) (hCS : C ⊆ S) :
@@ -41,9 +29,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem disjoint_faceDirection_of_isSecantTransverse (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) {P : Submodule ℝ E}

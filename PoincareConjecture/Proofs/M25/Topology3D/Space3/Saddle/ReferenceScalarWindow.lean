@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff NNReal Topology Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem reference_scalar_window :
     ∀ (lo hi s t k d : ℝ),

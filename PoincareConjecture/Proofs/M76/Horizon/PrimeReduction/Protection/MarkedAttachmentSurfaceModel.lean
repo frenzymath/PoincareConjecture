@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFiniteModelBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_marked_attachment_surface_model
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

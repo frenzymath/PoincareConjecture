@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoPortCo
 import PoincareConjecture.Proofs.M76.Wall.PLDomainLocalPathConnected
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

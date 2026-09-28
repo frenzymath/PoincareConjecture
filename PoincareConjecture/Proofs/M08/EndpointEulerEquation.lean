@@ -165,4 +165,3 @@ theorem closed_phase_momentum_of_eqOn {J C U : Set ℝ} (F : RicciFlow n M J)
   exact hPd.congr_of_mem hmomentum hs
 
 end PoincareConjecture.M08
-

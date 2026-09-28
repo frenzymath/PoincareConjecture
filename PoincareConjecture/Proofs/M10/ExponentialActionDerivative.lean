@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.ExponentialDifferential
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

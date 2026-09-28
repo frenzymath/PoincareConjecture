@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CutoffIntegralComparison
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 
 namespace MeasureTheory
-
-
 
 theorem exists_integral_cutoff_sq_le_setIntegral
     {X : Type*} [TopologicalSpace X] [MeasurableSpace X] [OpensMeasurableSpace X]

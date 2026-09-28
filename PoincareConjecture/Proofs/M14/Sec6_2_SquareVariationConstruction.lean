@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point}
 
-
-
 noncomputable def backwardFamilyOfSquare (p : M14BackwardPath G T τ₁ τ₂ x y)
     (H : ℝ × ℝ → G.Point) (τ v : ℝ) : G.Point := by
   classical
@@ -36,14 +23,10 @@ noncomputable def backwardFamilyOfSquare (p : M14BackwardPath G T τ₁ τ₂ x 
 
 variable {p : M14BackwardPath G T τ₁ τ₂ x y}
 
-
-
 theorem backwardFamilyOfSquare_eq (H : ℝ × ℝ → G.Point)
     {τ : ℝ} (hτ : τ ∈ Icc τ₁ τ₂) (v : ℝ) :
     backwardFamilyOfSquare p H τ v = H (Real.sqrt τ, v) := by
   simp only [backwardFamilyOfSquare, if_pos hτ]
-
-
 
 theorem backwardFamilyOfSquare_square (H : ℝ × ℝ → G.Point)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) (v : ℝ) :
@@ -64,8 +47,6 @@ private theorem square_slice_smooth {H : ℝ × ℝ → G.Point} {P : Set ℝ}
   hH.comp (contMDiff_id.prodMk (contMDiff_const (c := v))).contMDiffOn
     (fun _ hs => ⟨hs, hv⟩)
 
-
-
 theorem backwardFamilyOfSquare_smooth {H : ℝ × ℝ → G.Point} {P : Set ℝ}
     (hH : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ H
       (M14SqrtParameterInterval τ₁ τ₂ ×ˢ P)) {v : ℝ} (hv : v ∈ P) :
@@ -73,8 +54,6 @@ theorem backwardFamilyOfSquare_smooth {H : ℝ × ℝ → G.Point} {P : Set ℝ}
       (fun τ => backwardFamilyOfSquare p H τ v) (Ioo τ₁ τ₂) :=
   (sqrtPullback_contMDiffOn p.tau_nonneg (square_slice_smooth hH hv)).congr
     (fun _ hτ => backwardFamilyOfSquare_eq H (Ioo_subset_Icc_self hτ) v)
-
-
 
 theorem backwardFamilyOfSquare_time {H : ℝ × ℝ → G.Point} {P : Set ℝ}
     (hclock : ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂, ∀ v ∈ P,
@@ -84,8 +63,6 @@ theorem backwardFamilyOfSquare_time {H : ℝ × ℝ → G.Point} {P : Set ℝ}
   rw [backwardFamilyOfSquare_eq H hτ, hclock _
     ⟨Real.sqrt_le_sqrt hτ.1, Real.sqrt_le_sqrt hτ.2⟩ v hv,
     Real.sq_sqrt (p.tau_nonneg.trans hτ.1)]
-
-
 
 theorem backwardFamilyOfSquare_action_integrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {H : ℝ × ℝ → G.Point} {P : Set ℝ}
@@ -102,8 +79,6 @@ theorem backwardFamilyOfSquare_action_integrable
   apply rawLIntegrand_projectedVelocity_congr
   filter_upwards [isOpen_Ioo.mem_nhds hτ] with t ht
   exact (backwardFamilyOfSquare_eq H (Ioo_subset_Icc_self ht) v).symm
-
-
 
 noncomputable def variationOfSquare (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (R : M14SquareRootPath G p) (H : ℝ × ℝ → G.Point) (r : ℝ) (hr : 0 < r)
@@ -156,8 +131,6 @@ noncomputable def variationOfSquare (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     exact backwardFamilyOfSquare_time hclock (Ioo_subset_Icc_self ht) hv
   · intro s hs v _
     rw [dif_pos hs]
-
-
 
 theorem variationOfSquare_bothEndpointsFixed (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (R : M14SquareRootPath G p) (H : ℝ × ℝ → G.Point) (r : ℝ) (hr : 0 < r)

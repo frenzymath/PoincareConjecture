@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularStageFamily
 import PoincareConjecture.Proofs.M47.TerminalCurvatureActualUniformScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_scalar_one
     (S : RepairedControlledSchedulesData.{u})

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_5_Angles.SelectedEndRayChordLimits
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedRayScalarRadius
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.CenteredNeckRadiusFloor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
-
 
 theorem exists_selected_ray_scalar_sequence_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

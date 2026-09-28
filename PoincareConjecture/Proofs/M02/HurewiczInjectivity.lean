@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M02.SimplexCompression
 import PoincareConjecture.Proofs.M02.HurewiczMap
 import PoincareConjecture.Proofs.M02.Topology.SingularHomologyDetection
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial

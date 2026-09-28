@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.RegularNoncollapse
 import PoincareConjecture.Proofs.M33.HistoryNoncollapse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

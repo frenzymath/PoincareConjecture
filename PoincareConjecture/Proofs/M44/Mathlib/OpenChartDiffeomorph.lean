@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {I : ModelWithCorners 𝕜 E H} {J : ModelWithCorners 𝕜 F G}
   {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace H M] [ChartedSpace G N]
-
-
-
 
 def sourceTargetDiffeomorph (e : PartialDiffeomorph I J M N ∞) :
     Diffeomorph I J (⟨e.source, e.open_source⟩ : Opens M)
@@ -45,9 +33,6 @@ def sourceTargetDiffeomorph (e : PartialDiffeomorph I J M N ∞) :
     intro y
     exact contMDiffAt_subtype_iff.mpr
       (e.contMDiffOn_invFun.contMDiffAt (e.open_target.mem_nhds y.2))
-
-
-
 
 theorem open_inclusion_isLocalDiffeomorph (U : Opens M) :
     IsLocalDiffeomorph I I ∞ (Subtype.val : U → M) := by
@@ -69,24 +54,16 @@ theorem open_inclusion_isLocalDiffeomorph (U : Opens M) :
     contMDiffOn_invFun := hi }
   exact d.isLocalDiffeomorphAt I I ∞ (mem_univ x)
 
-
-
-
 noncomputable def targetChart (e : PartialDiffeomorph I J M N ∞)
     (p : (⟨e.target, e.open_target⟩ : Opens N)) :
     M → (⟨e.target, e.open_target⟩ : Opens N) := by
   classical
   exact fun x => if hx : x ∈ e.source then ⟨e x, e.map_source hx⟩ else p
 
-
-
 theorem targetChart_val (e : PartialDiffeomorph I J M N ∞)
     (p : (⟨e.target, e.open_target⟩ : Opens N)) {x : M} (hx : x ∈ e.source) :
     (targetChart e p x).1 = e x := by
   simp only [targetChart, dif_pos hx]
-
-
-
 
 theorem contMDiffOn_targetChart (e : PartialDiffeomorph I J M N ∞)
     (p : (⟨e.target, e.open_target⟩ : Opens N)) :
@@ -98,9 +75,6 @@ theorem contMDiffOn_targetChart (e : PartialDiffeomorph I J M N ∞)
   · intro y hy
     exact targetChart_val e p hy
   · exact targetChart_val e p hx
-
-
-
 
 noncomputable def targetPartialDiffeomorph (e : PartialDiffeomorph I J M N ∞)
     (p : (⟨e.target, e.open_target⟩ : Opens N)) :

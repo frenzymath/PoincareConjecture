@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularCountableAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilin" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSource_regular_atlas_charts
     (U : ℕ → Set E) (hU : ∀ i, IsOpen (U i)) [∀ i, Nonempty (Piece U i)]
@@ -86,8 +75,6 @@ theorem terminalSource_regular_atlas_charts
     have hgerm : g.pullbackCoefficients (c i).symm =ᶠ[𝓝 y] B0 i :=
       Filter.Eventually.mono ((hU i).mem_nhds hy) (fun _ hz => hcoeff i hz)
     exact (hgerm.iteratedFDeriv (𝕜 := ℝ) m).eq_of_nhds
-
-
 
 theorem terminalSource_regular_chart_approximation
     (U : ℕ → Set E) (hU : ∀ i, IsOpen (U i)) [∀ i, Nonempty (Piece U i)]

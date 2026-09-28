@@ -1,15 +1,5 @@
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function unitInterval
@@ -19,9 +9,6 @@ namespace IsCoveringMap
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
   {p : E → X} (hp : IsCoveringMap p)
 
-
-
-
 noncomputable def identityHomotopyLift {f : C(X, X)}
     (H : (ContinuousMap.id X).Homotopy f) : C(I × E, E) :=
   hp.liftHomotopy
@@ -29,22 +16,15 @@ noncomputable def identityHomotopyLift {f : C(X, X)}
       H.continuous.comp (continuous_fst.prodMk (hp.continuous.comp continuous_snd))⟩
     (ContinuousMap.id E) (fun e => H.apply_zero (p e))
 
-
-
 theorem identityHomotopyLift_lifts {f : C(X, X)}
     (H : (ContinuousMap.id X).Homotopy f) (t : I) (e : E) :
     p (hp.identityHomotopyLift H (t, e)) = H (t, p e) :=
   congrFun (hp.liftHomotopy_lifts _ _ _) (t, e)
 
-
-
 theorem identityHomotopyLift_zero {f : C(X, X)}
     (H : (ContinuousMap.id X).Homotopy f) (e : E) :
     hp.identityHomotopyLift H (0, e) = e :=
   hp.liftHomotopy_zero _ _ _ e
-
-
-
 
 theorem identityHomotopyLift_reverse
     {g : X ≃ₜ X} (H : (ContinuousMap.id X).Homotopy ⟨g, g.continuous⟩)
@@ -66,9 +46,6 @@ theorem identityHomotopyLift_reverse
     · rw [hp.identityHomotopyLift_zero R, symm_zero]
   have h := congrFun hpaths 1
   simpa only [symm_one, identityHomotopyLift_zero, L, K] using h
-
-
-
 
 theorem exists_homeomorph_lift_of_homotopy
     (g : X ≃ₜ X) (H : (ContinuousMap.id X).Homotopy ⟨g, g.continuous⟩) :

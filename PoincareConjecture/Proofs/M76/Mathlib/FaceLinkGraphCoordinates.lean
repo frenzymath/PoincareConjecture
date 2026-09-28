@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import PoincareConjecture.Proofs.M76.Mathlib.ConeSimplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K : SimplicialComplex ℝ E} {s : Finset E} {g : E → ℝ × E}
-
-
-
-
 
 theorem AffineOnFaces.graph_off_face_pos (hg : K.AffineOnFaces g)
     (hgv : ∀ v ∈ K.vertices, g v = if v ∈ s then 0 else (1, v))
@@ -59,10 +45,6 @@ theorem AffineOnFaces.graph_off_face_pos (hg : K.AffineOnFaces g)
   have hvzero : A v = 0 := hv.2
   rw [hAv v hv.1, if_neg hvs] at hvzero
   exact one_ne_zero hvzero
-
-
-
-
 
 theorem AffineOnFaces.graph_off_face_normalized_mem_link (hg : K.AffineOnFaces g)
     (hgv : ∀ v ∈ K.vertices, g v = if v ∈ s then 0 else (1, v))

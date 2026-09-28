@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M09.ExponentialAdaptedFrame
 
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

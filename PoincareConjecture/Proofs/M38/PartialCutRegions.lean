@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M38.PartialCutBalls
 import PoincareConjecture.Proofs.M38.PartialCutSmooth
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +20,6 @@ noncomputable local instance partialRegionChartedSpace :
     ChartedSpace StandardCapSpace (PartialCappedSpace F T hT P S) :=
   partialCappedChartedSpace F T hT P S
 
-
 theorem partialCapPatch_disjoint (a b : S × Bool) (hab : a ≠ b) :
     Disjoint (Set.range (partialCappingInclude F T hT P S (.inr a)))
       (Set.range (partialCappingInclude F T hT P S (.inr b))) := by
@@ -42,20 +34,17 @@ theorem partialCapPatch_disjoint (a b : S × Bool) (hab : a ≠ b) :
     ((cutAttachmentChart F T hT P S a).map_source h.1)
     (h.2.2.symm ▸ (cutAttachmentChart F T hT P S b).map_source h.2.1)
 
-
 theorem partialCapBall_subset_patch (a : S × Bool) :
     (partialCapBall F T hT P S a).closedBall ⊆
       Set.range (partialCappingInclude F T hT P S (.inr a)) := by
   rw [partialCapBall_closedBall]
   exact Set.image_subset_range _ _
 
-
 theorem partialCapBall_disjoint (a b : S × Bool) (hab : a ≠ b) :
     Disjoint (partialCapBall F T hT P S a).closedBall
       (partialCapBall F T hT P S b).closedBall :=
   (partialCapPatch_disjoint F T hT P S a b hab).mono
     (partialCapBall_subset_patch F T hT P S a) (partialCapBall_subset_patch F T hT P S b)
-
 
 theorem partialCapBall_disjoint_old (a : S × Bool) :
     Disjoint (partialCapBall F T hT P S a).closedBall
@@ -78,7 +67,6 @@ theorem partialCapBall_disjoint_old (a : S × Bool) :
     change x ∈ (cutAttachmentChart F T hT P S a).source at hsrc
     rwa [cutAttachmentChart_source] at hsrc
   exact (not_lt_of_ge hx) hnorm
-
 
 theorem partialOldInclusion_range :
     Set.range (partialOldInclusion F T hT P S) =
@@ -107,7 +95,6 @@ theorem partialOldInclusion_range :
               exact ⟨x, le_of_not_gt h, rfl⟩
             exact ⟨cutAttachmentChart F T hT P S a x,
               partialOldInclusion_cap F T hT P S a x hnorm⟩
-
 
 noncomputable def partialOldRegionEquivalence :
     SurgeryRegionEquivalence

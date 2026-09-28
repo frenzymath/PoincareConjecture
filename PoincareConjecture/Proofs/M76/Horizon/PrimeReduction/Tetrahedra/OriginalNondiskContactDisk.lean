@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalBoundaryPolygons
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.RemainingPieceContactDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry

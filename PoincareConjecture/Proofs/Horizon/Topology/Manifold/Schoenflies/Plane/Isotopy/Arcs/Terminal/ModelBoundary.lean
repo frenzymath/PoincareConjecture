@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualDecomposition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCapDisks
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,8 +70,6 @@ theorem terminal_modelBand_eq_image_height_band (d : TerminalSaddleGeometry M P 
       refine ⟨?_, rfl⟩
       rw [hcoord]
       exact mem_image_of_mem _ (mem_image_of_mem _ q.property)
-
-
 
 theorem terminal_model_cap_band_boundary
     (d : TerminalSaddleGeometry M P p e) (i : Fin 3)

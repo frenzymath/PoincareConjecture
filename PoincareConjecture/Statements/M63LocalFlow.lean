@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M63Polygon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,9 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 structure M63LocalCurveTheory (F : RicciFlow n M (Set.Icc a b)) : Prop where
   local_existence : ∀ gamma : ℝ → M,

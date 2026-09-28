@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.EmbeddedParameterCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,12 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E X Y ι κ : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [TopologicalSpace X] [TopologicalSpace Y] {R : Set X} {T : Set Y}
-
-
-
-
-
-
 
 theorem chartwisePLMap_of_open_and_embedded_parameters
     (e : ι → OpenPartialHomeomorph X V3)

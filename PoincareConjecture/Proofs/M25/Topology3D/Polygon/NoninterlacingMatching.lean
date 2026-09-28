@@ -2,22 +2,11 @@ import Mathlib.Logic.Equiv.Fin.Rotate
 import Mathlib.Data.Nat.Find
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 structure IsNoninterlacingMatching {n : ℕ} (m : Fin n → Fin n) : Prop where
 
@@ -164,8 +153,6 @@ private theorem rotate_last_eq_zero {a z : Fin n} (ha : a.val + 1 = n)
     rw [heq, finRotate_last]
     exact Fin.ext hz.symm
 
-
-
 theorem exists_adjacent (hn : 0 < n) :
     ∃ a b : Fin n, a.val + 1 = b.val ∧ m a = b := by
   let z : Fin n := ⟨0, hn⟩
@@ -177,8 +164,6 @@ theorem exists_adjacent (hn : 0 < n) :
     omega
   obtain ⟨a, b, _, _, hab, hmab⟩ := hm.exists_adjacent_interval z u hzu hc
   exact ⟨a, b, hab, hmab⟩
-
-
 
 theorem exists_adjacent_away_first (hn : 4 ≤ n) :
     ∃ a b : Fin n, 0 < a.val ∧ a.val + 1 = b.val ∧ m a = b := by
@@ -195,8 +180,6 @@ theorem exists_adjacent_away_first (hn : 4 ≤ n) :
   · obtain ⟨a, b, ha, _, hab, hmab⟩ :=
       hm.exists_adjacent_before (z := z) rfl (show m z = j from rfl) (by omega)
     exact ⟨a, b, ha, hab, hmab⟩
-
-
 
 theorem exists_two_cyclic_adjacent (hn : 4 ≤ n) :
     ∃ a b : Fin n, m a = finRotate n a ∧ m b = finRotate n b ∧
@@ -238,8 +221,6 @@ theorem exists_two_cyclic_adjacent (hn : 4 ≤ n) :
       rw [harot, hcrot]
       apply Set.disjoint_left.mpr
       rintro x (rfl | rfl) (h | h) <;> change _ = _ at h <;> omega
-
-
 
 theorem exists_cyclic_adjacent_away (hn : 4 ≤ n) (v : Fin n) :
     ∃ a : Fin n, m a = finRotate n a ∧ a ≠ v ∧ finRotate n a ≠ v := by

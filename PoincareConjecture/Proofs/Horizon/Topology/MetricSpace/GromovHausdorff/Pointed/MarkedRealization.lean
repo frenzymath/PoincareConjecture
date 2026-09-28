@@ -1,23 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 import Mathlib.Topology.MetricSpace.GromovHausdorff
-
-
-
-
-
-
-
-
-
-
-
-
 
 open Set TopologicalSpace Metric Function KuratowskiEmbedding Filter
 open scoped Topology NNReal ENNReal lp
@@ -28,13 +10,10 @@ namespace Poincare.GromovHausdorff
 
 universe u v w
 
-
-
 def centeredKuratowskiMap
     {Z : Type v} [MetricSpace Z] [SeparableSpace Z]
     (z0 : Z) : Z -> lp (fun _ : ℕ => ℝ) ∞ :=
   fun z => kuratowskiEmbedding Z z - kuratowskiEmbedding Z z0
-
 
 theorem centeredKuratowskiMap_isometry
     {Z : Type v} [MetricSpace Z] [SeparableSpace Z]
@@ -51,8 +30,6 @@ theorem centeredKuratowskiMap_self
     centeredKuratowskiMap z0 z0 = 0 := by
   simp [centeredKuratowskiMap]
 
-
-
 theorem dist_sub_sub_le_additive
     {E : Type v} [NormedAddCommGroup E]
     (a b c d : E) :
@@ -64,8 +41,6 @@ theorem dist_sub_sub_le_additive
     _ = dist b d + dist a c := by
       rw [dist_sub_left, dist_sub_right]
     _ = dist a c + dist b d := add_comm _ _
-
-
 
 theorem hausdorffDist_centeredKuratowski_comp_le
     {X : Type u} {Y : Type v} {Z : Type w}
@@ -139,8 +114,6 @@ theorem hausdorffDist_centeredKuratowski_comp_le
           _ = Metric.hausdorffDist (Set.range f) (Set.range g) :=
             Metric.hausdorffDist_comm
 
-
-
 noncomputable def centeredPointedGHRealization
     {X Y : FiniteDiameterBasedMetricSpace.{0}}
     {Z : Type} [MetricSpace Z] [SeparableSpace Z]
@@ -158,8 +131,6 @@ noncomputable def centeredPointedGHRealization
     left_base := by simp [Function.comp_apply, centeredKuratowskiMap_self]
     right_base := by simp [Function.comp_apply, centeredKuratowskiMap_self] }
 
-
-
 theorem pointedHausdorffDist_centeredPointedGHRealization_le
     {X Y : FiniteDiameterBasedMetricSpace.{0}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -171,20 +142,10 @@ theorem pointedHausdorffDist_centeredPointedGHRealization_le
         dist (f X.base) (g Y.base) := by
   exact hausdorffDist_centeredKuratowski_comp_le f g hf hg X.base Y.base
 
-
-
-
-
-
-
-
-
-
 def translatedMap
     {E : Type u} [NormedAddCommGroup E]
     {X : Type v} (f : X -> E) (x0 : X) : X -> E :=
   fun x => f x - f x0
-
 
 theorem translatedMap_isometry
     {E : Type u} [NormedAddCommGroup E]
@@ -202,8 +163,6 @@ theorem translatedMap_self
     {X : Type v} (f : X -> E) (x0 : X) :
     translatedMap f x0 x0 = 0 := by
   simp [translatedMap]
-
-
 
 theorem hausdorffDist_vadd_le
     {E : Type u} [NormedAddCommGroup E]
@@ -234,9 +193,6 @@ theorem hausdorffDist_vadd_le
       simpa [add_comm] using
         (add_le_add_left hshift (Metric.hausdorffDist s t))
 
-
-
-
 theorem hausdorffDist_translatedMap_comp_le
     {X : Type u} {Y : Type v} {E : Type w}
     [MetricSpace X] [CompactSpace X] [Nonempty X]
@@ -264,8 +220,6 @@ theorem hausdorffDist_translatedMap_comp_le
   rw [hc] at h
   simpa only [Metric.hausdorffDist_comm, ← Set.range_comp, Function.comp_def] using h
 
-
-
 noncomputable def translatedPointedGHRealization
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     {E : Type u} [NormedAddCommGroup E]
@@ -285,8 +239,6 @@ noncomputable def translatedPointedGHRealization
       change (f X.base - g Y.base) + g Y.base = f X.base
       exact sub_add_cancel _ _ }
 
-
-
 theorem pointedHausdorffDist_translatedPointedGHRealization_le
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace X.carrier] [CompactSpace Y.carrier]
@@ -297,17 +249,6 @@ theorem pointedHausdorffDist_translatedPointedGHRealization_le
       Metric.hausdorffDist (Set.range f) (Set.range g) +
         dist (f X.base) (g Y.base) := by
   exact hausdorffDist_translatedMap_comp_le f g hf hg X.base Y.base
-
-
-
-
-
-
-
-
-
-
-
 
 theorem pointedGHDistance_le_ghDist_add_optimal_marked_displacement
     {X Y : FiniteDiameterBasedMetricSpace.{0}}
@@ -333,11 +274,6 @@ theorem pointedGHDistance_le_ghDist_add_optimal_marked_displacement
             (_root_.GromovHausdorff.optimalGHInjl X.carrier Y.carrier X.base)
             (_root_.GromovHausdorff.optimalGHInjr X.carrier Y.carrier Y.base) := by
       rw [_root_.GromovHausdorff.hausdorffDist_optimal]
-
-
-
-
-
 
 theorem pointedGHConverges_of_ghDist_and_optimal_marked_displacement
     (X : ℕ → FiniteDiameterBasedMetricSpace.{0})

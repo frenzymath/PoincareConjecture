@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConicalHeightExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,11 +12,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [DecidableEq E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_truncatedStar_height_extension
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

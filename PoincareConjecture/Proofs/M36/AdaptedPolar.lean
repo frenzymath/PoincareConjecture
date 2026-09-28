@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.CylindricalSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

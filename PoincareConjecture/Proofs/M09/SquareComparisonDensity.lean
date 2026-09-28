@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothSquarePath
 import PoincareConjecture.Proofs.M09.ChartCurveExtension
 import PoincareConjecture.Proofs.M09.SquareChartMetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

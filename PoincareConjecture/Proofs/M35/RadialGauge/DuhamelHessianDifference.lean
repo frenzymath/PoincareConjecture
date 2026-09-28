@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +33,6 @@ private theorem slab_fderiv_measurable {f : ℝ → V → F} {t : ℝ}
   exact spatial_fderiv_stronglyMeasurable (f := fun s : Icc 0 t => f s.1) hfm
     (fun s => (hf s.1 s.2).differentiable (by simp))
 
-
-
 theorem heatDuhamel_fderiv_slab_eq
     {f : ℝ → V → F} {t : ℝ} (ht : 0 ≤ t)
     (hfm : StronglyMeasurable (fun p : Icc 0 t × V => f p.1.1 p.2))
@@ -71,8 +60,6 @@ theorem heatDuhamel_fderiv_slab_eq
   rw [← heatDuhamel_slabSourceExtension ⟨ht, le_rfl⟩ f, heq]
   rw [show (fun s => fderiv ℝ (g s)) =
     slabSourceExtension t (fun s => fderiv ℝ (f s)) from fderiv_slabSourceExtension t f]
-
-
 
 theorem heatDuhamel_weighted_hessian_difference_bound
     {f g : ℝ → V → F} {t C D H : ℝ} (ht : 0 ≤ t)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothExistence
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gaugeSource_slab_continuous
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T : ℝ}
@@ -60,9 +48,6 @@ private theorem slabSourceExtension_jet_bound {f : ℝ → V → ℝ} {T C : ℝ
       simp only [slabSourceExtension, if_neg hs]
     rw [heq, iteratedFDeriv_fun_zero, Pi.zero_apply, norm_zero]
     exact le_max_right _ _
-
-
-
 
 theorem slab_mild_solution_solves_heat
     {f u : ℝ → V → ℝ} {T t : ℝ}
@@ -104,8 +89,6 @@ theorem slab_mild_solution_solves_heat
   filter_upwards [hloc] with s hs'
   rw [heatDuhamel_slabSourceExtension hs']
   exact hmild s hs' x
-
-
 
 theorem gauge_smooth_mild_solves_heat
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T t : ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadialIntegral
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityOscillation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -25,9 +15,6 @@ open M65Interior
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}
-
-
-
 
 theorem energy_radial (F : M65LocalWeakMap e U) (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
@@ -54,10 +41,6 @@ theorem energy_radial (F : M65LocalWeakMap e U) (g : RiemannianMetric 3 M)
     Measure.restrict_congr_set Ioo_ae_eq_Icc
   filter_upwards [hderiv] with r hr
   simpa only [IntegrableOn, hμ] using hr
-
-
-
-
 
 theorem energy_circle_oscillation (F : M65LocalWeakMap e U) (hU : IsOpen U)
     (g : RiemannianMetric 3 M) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

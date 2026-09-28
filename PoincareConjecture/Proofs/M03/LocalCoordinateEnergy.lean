@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

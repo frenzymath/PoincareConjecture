@@ -3,27 +3,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcNeighborhoodBoundaryContact
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcDualBoundaryAvoidance
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.EdgeChainFaces
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem image_arc_chain_boundary_binaryLevel
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

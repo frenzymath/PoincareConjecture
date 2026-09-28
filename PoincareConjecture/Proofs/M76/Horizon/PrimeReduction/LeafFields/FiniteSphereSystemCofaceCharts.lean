@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalEdgeCofaceCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -43,9 +35,6 @@ theorem hasOriginalEdgeCofaceCharts_finite_sphere_system
     exact hmem.trans (hFS z hz.1)
   · intro z hz
     exact hFL z hz.1
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.of_finite_sphere_system
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryCrossings
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TwoRayStraightening
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval
@@ -33,7 +22,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem OriginalGeneralPositionData.exists_protected_edge_crossed_charts_with_closed_support
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
@@ -620,7 +608,6 @@ theorem OriginalGeneralPositionData.exists_protected_edge_crossed_charts_with_cl
     rw [hright, hvalue]
     exact hlocal (Q y) hy.2.1
 
-
 theorem OriginalGeneralPositionData.exists_protected_edge_crossed_charts
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
     {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
@@ -766,13 +753,7 @@ theorem OriginalGeneralPositionData.exists_protected_edge_crossed_charts
   exact ⟨ha, hb, haQ, hQzero, hQU, hQw, hQPL, hbranches,
     hJ, hJQ, hzeroJ, hρ, hball, hrest⟩
 
-
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem Step.exists_original_protected_edge_crossed_charts
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

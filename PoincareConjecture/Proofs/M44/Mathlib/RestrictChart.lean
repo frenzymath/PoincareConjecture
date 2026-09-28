@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M44.Mathlib.OpenChartDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {I : ModelWithCorners 𝕜 E H} {J : ModelWithCorners 𝕜 F G}
   {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace H M] [ChartedSpace G N]
-
-
-
 
 def restrictChart (e : PartialDiffeomorph I J M N ∞)
     {V : Set M} (hV : IsOpen V) (hsub : V ⊆ e.source) :
@@ -48,9 +37,6 @@ def restrictChart (e : PartialDiffeomorph I J M N ∞)
   contMDiffOn_invFun := e.contMDiffOn_invFun.mono (by
     rintro _ ⟨x, hx, rfl⟩
     exact e.map_source (hsub hx))
-
-
-
 
 theorem targetChart_image_eq_preimage (e : PartialDiffeomorph I J M N ∞)
     (p : (⟨e.target, e.open_target⟩ : TopologicalSpace.Opens N))

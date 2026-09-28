@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M09
 import PoincareConjecture.Proofs.M10
 import PoincareConjecture.Proofs.M14
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m15OrdinaryProvidersFromMilestones (n : ℕ) :
     M14OrdinaryProviders.{u} n := by
@@ -33,10 +22,6 @@ theorem m15OrdinaryProvidersFromMilestones (n : ℕ) :
       ricciFlowCurvatureTheory L
   · intro M _ _ _ _ _ _ _ _ J F T R hT hR hwindow hcurv L D
     exact reducedVolumeMonotonicity F T R hT hR hwindow hcurv L D
-
-
-
-
 
 theorem noncollapsingGeneralizedAndCompact_from_predecessors (n : ℕ) :
     NoncollapsingConclusion.{u} n :=

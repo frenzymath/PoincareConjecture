@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHalfDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,21 +14,15 @@ open M65Branch
 
 variable {n : ℕ}
 
-
-
 def halfDiskFrameDbar (H : ℂ → EuclideanSpace ℝ (Fin n))
     (L : EuclideanSpace ℝ (Fin n) → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ))
     (r : ℝ) (z : ℂ) : (Fin n → ℂ) →L[ℂ] (Fin n → ℂ) :=
   dbarLinear ((fderiv ℝ L (H z)).comp
     (fderivWithin ℝ H (closedBall (0 : ℂ) r ∩ {w | 0 ≤ w.im}) z))
 
-
-
 def halfDiskFramedGradient (H : ℂ → EuclideanSpace ℝ (Fin n))
     (L : EuclideanSpace ℝ (Fin n) → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ))
     (r : ℝ) (z : ℂ) : Fin n → ℂ := L (H z) (halfDiskGradient H r z)
-
-
 
 def halfDiskFramedMatrix {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g) (H : ℂ → EuclideanSpace ℝ (Fin n))
@@ -46,8 +30,6 @@ def halfDiskFramedMatrix {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (r : ℝ) (z : ℂ) : (Fin n → ℂ) →L[ℂ] (Fin n → ℂ) :=
   (halfDiskFrameDbar H L r z + L (H z) * halfDiskHarmonicMatrix D H r z) *
     Ring.inverse (L (H z))
-
-
 
 theorem halfDiskFrameDbar_eq
     {H : ℂ → EuclideanSpace ℝ (Fin n)}
@@ -57,9 +39,6 @@ theorem halfDiskFrameDbar_eq
     halfDiskFrameDbar H L r z = dbar (L ∘ H) z := by
   rw [halfDiskFrameDbar, fderivWithin_of_mem_nhds (halfDisk_mem_nhds hz)]
   exact congrArg dbarLinear (fderiv_comp z hL hH).symm
-
-
-
 
 theorem halfDiskFramed_fields_continuousOn
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -91,8 +70,6 @@ theorem halfDiskFramed_fields_continuousOn
       simpa only [hu] using contDiffAt_ringInverse ℝ (n := 1) u
     exact hi.continuousAt.comp_continuousWithinAt (f := L ∘ H) (hLc z hz)
   exact ⟨hLc.clm_apply hF, (hB.add (hLc.mul hA)).mul hInv⟩
-
-
 
 theorem halfDiskFramed_fields_equation
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

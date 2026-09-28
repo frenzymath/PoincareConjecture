@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.GeometricWalk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricCyclePolygon
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonCycleLoopComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_edgeComponent_essential_polygon
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskTriangulati
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FullSimplexBasis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +14,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_original_triangle_parameter
     (T : HamiltonProperDiskTriangulation R D b)

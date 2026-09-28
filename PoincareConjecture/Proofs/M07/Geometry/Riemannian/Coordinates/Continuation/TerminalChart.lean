@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Topology.UniformSpace.Cauchy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 open scoped Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem exists_terminal_compact_chart_of_tendsto
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -49,7 +40,6 @@ theorem exists_terminal_compact_chart_of_tendsto
   intro t ht
   exact hlγ ⟨lt_trans (lt_of_le_of_lt (le_max_right _ _) hat) ht.1, ht.2⟩
 
-
 theorem exists_left_limit_of_compact_edist_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -78,8 +68,6 @@ theorem exists_left_limit_of_compact_edist_bound
     change ∀ᶠ t in 𝓝[<] b, γ t ∈ S
     filter_upwards [hI] with t ht
     exact hγS ht))
-
-
 
 theorem exists_terminal_compact_chart_of_edist_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]

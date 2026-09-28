@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {ι : Type*} [Finite ι]
-
-
-
 
 theorem exists_subdivision_with_finite_polyhedra
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -71,10 +60,6 @@ theorem exists_subdivision_with_finite_polyhedra
     have hsJ : convexHull ℝ (s : Set E) ⊆ (J i).space :=
       (convexHull_min hst (convex_convexHull ℝ _)).trans ((J i).convexHull_subset_space ht)
     exact mem_space_iff.mpr ⟨s, ⟨hs, hsJ⟩, hxs⟩
-
-
-
-
 
 theorem exists_subdivision_with_finite_full_polyhedra
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

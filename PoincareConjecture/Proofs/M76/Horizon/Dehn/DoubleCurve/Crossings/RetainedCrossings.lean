@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.RawCross
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedSourceGerms
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.OriginalTargetGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -21,8 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem RetainedSourceOpenHomeomorph.transport_branch
     {X : Type*} [TopologicalSpace X] {f g : V2 → X} {K : Set V2} {j : K → V2}
@@ -78,8 +67,6 @@ theorem RetainedSourceOpenHomeomorph.transport_branch
     · rintro ⟨x, ⟨hxS, hxA⟩, rfl⟩
       exact ⟨H.homeomorph ⟨x, hxS⟩, ⟨⟨x, hxS⟩, hxA, rfl⟩, H.keep ⟨x, hxS⟩⟩
 
-
-
 theorem isCompact_square_sdiff_of_relative_open {U : Set V2}
     (hU : IsOpen ((Subtype.val : D2 → V2) ⁻¹' U)) : IsCompact (D2 \ U) := by
   have : CompactSpace D2 := isCompact_iff_compactSpace.mp (isCompact_closedBall _ _)
@@ -92,9 +79,6 @@ theorem isCompact_square_sdiff_of_relative_open {U : Set V2}
       exact ⟨⟨x, hx⟩, hn, rfl⟩
   rw [← heq]
   exact hU.isClosed_compl.isCompact.image continuous_subtype_val
-
-
-
 
 theorem RetainedSourceOpenHomeomorph.transport_crossing
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -228,9 +212,6 @@ theorem RetainedSourceOpenHomeomorph.transport_crossing
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
-
-
 theorem OriginalNormalizedResolutionPairData.exists_raw_crossing_charts
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3}
@@ -291,8 +272,6 @@ theorem OriginalNormalizedResolutionPairData.exists_raw_crossing_charts
       _ = f '' D2 ∩ C'.chart.source := by rw [inter_assoc, inter_eq_right.mpr hCW]
   exact ⟨transport P.gU _ P.retainedUpperCopy factsU HU P.plU.continuousOn hWU,
     transport P.gV _ P.retainedAlternateCopy factsV HV P.plV.continuousOn hWV⟩
-
-
 
 theorem RetainedSourceOpenHomeomorph.exists_raw_crossings
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

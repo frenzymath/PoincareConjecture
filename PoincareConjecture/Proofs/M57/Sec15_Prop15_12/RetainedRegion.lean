@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M39ComparisonMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
 
 theorem m57RetainedRegion_isOpen
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)

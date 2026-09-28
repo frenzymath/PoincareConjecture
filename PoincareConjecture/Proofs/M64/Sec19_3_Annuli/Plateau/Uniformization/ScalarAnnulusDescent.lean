@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarAnnulusClampedLift
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarDescent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,19 +14,11 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
 def scalarAnnulusCoverLift {M : Type*} (f : LoopPlane → M) (z : Cover) : M :=
   f (scalarAnnulusClamp (z.2, z.1 - 1))
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarAnnulus_exists_physical_descent
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) :
@@ -75,9 +54,6 @@ theorem scalarAnnulus_exists_physical_descent
 
 omit [T2Space M] [IsManifold (𝓡 n) ∞ M] in
 
-
-
-
 theorem scalarAnnulusCoverLift_contMDiffAt_of_flat_collars
     {f : LoopPlane → M} {c0 c1 : ℝ → M}
     (hc0 : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 c0)
@@ -104,9 +80,6 @@ theorem scalarAnnulusCoverLift_contMDiffAt_of_flat_collars
     exact (lt_min (by norm_num) (by linarith)).trans_le (le_max_right _ _)
 
 omit [T2Space M] [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem scalarAnnulusDescent_contMDiffAt_of_flat_collars
     {f : LoopPlane → M} {F : Plane → M} {c0 c1 : ℝ → M}

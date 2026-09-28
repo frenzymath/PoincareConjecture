@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquarePathPrefix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b c : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
 
 def prefixVariation (V : M14LVariationData G p R) (hac : a < c) (hcb : c ≤ b) :
     M14LVariationData G (prefixPath p c hac hcb) (prefixSquarePath R hac hcb) := by
@@ -56,8 +46,6 @@ def prefixVariation (V : M14LVariationData G p R) (hac : a < c) (hcb : c ≤ b) 
   apply (V.action_integrable u hu).mono_set
   rw [uIcc_of_le hac.le, uIcc_of_le p.tau_lt.le]
   exact Icc_subset_Icc le_rfl hcb
-
-
 
 theorem variationField_prefixVariation (V : M14LVariationData G p R)
     (hac : a < c) (hcb : c ≤ b) (s : ℝ) :

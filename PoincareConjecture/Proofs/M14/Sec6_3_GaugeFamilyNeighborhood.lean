@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyNeighborhood
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_smooth_gaugeFamily_neighborhood {U : Set E} (hU : IsOpen U)
     {z₀ : E} (hz₀ : z₀ ∈ U) {a c s : ℝ} (has : a < s) (hsc : s ≤ c)

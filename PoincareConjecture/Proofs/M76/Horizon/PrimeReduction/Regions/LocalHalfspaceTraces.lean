@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLEqualityLoci
 import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

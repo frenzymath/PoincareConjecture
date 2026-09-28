@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Incidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem lineRefinementMesh_oldVertex_mem_triangle (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) (v : M.Vertex) (hv : v ∈ t.1) :
@@ -36,8 +26,6 @@ theorem lineRefinementMesh_oldVertex_mem_triangle (M : TriangleMesh)
   exact ⟨⟨s, M.mem_lineRefinementTriangles_iff f |>.mpr ⟨t, hs⟩⟩,
     M.old_vertex_mem_child_of_position_mem f t i hs hmem⟩
 
-
-
 theorem refineByLines_exists_usedVertex (M : TriangleMesh)
     (lines : List (Plane →ᵃ[ℝ] ℝ)) (t : M.Triangle) (v : M.Vertex) (hv : v ∈ t.1) :
     ∃ u : (M.refineByLines lines).Triangle,
@@ -51,8 +39,6 @@ theorem refineByLines_exists_usedVertex (M : TriangleMesh)
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem lineRefinementMesh_vertex_contribution_old_vertex
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -81,8 +67,6 @@ theorem lineRefinementMesh_vertex_contribution_old_vertex
   intro heq
   exact localRefinementBoundaryCuts_ne_usedVertex M f u hqu t v hv
     (F.injOn hqsource hvsource heq)
-
-
 
 theorem refineByLines_vertex_contribution_old_vertex
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

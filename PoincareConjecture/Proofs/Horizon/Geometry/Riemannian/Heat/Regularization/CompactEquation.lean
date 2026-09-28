@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.CompactIntegral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Equation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Analysis.Heat
-
-
 
 theorem integral_mul_kernel_swap
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -59,8 +47,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hasDerivAt_dirichletExhaustionKernel_integral_laplacian
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SliceTangent
 import PoincareConjecture.Proofs.M11.HorizontalCoordinates
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

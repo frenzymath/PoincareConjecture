@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialFrameVariation
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,7 +16,6 @@ open ConnectionVariation Poincare.Riemannian.RadialTransport
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [CompleteSpace E]
-
 
 theorem fderiv_radial_transport
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -49,8 +40,6 @@ private theorem fderiv_radial_parameter (x v : E) (t s : ℝ) :
   rw [fderiv_fun_smul differentiableAt_snd differentiableAt_fst]
   rw [hasFDerivAt_fst.fderiv, hasFDerivAt_snd.fderiv]
   rfl
-
-
 
 theorem radial_connection_eq_integral
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -113,9 +102,6 @@ theorem radial_connection_eq_integral
         (fun z => field Γ v (z.2 • z.1)) (w, 0) (x, t)) = _
     rw [covDerivAlong_radial_field_space hΓ]
   simpa only [hendpoint, one_smul, zero_smul, map_zero, sub_zero, F] using hint.symm
-
-
-
 
 theorem exists_radial_transport_connection_integral
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ) :

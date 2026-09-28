@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.GaugeMetricCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 3
@@ -29,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
 theorem gauge_principal_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
     ContDiffOn ℝ ∞
       (fun z : (ℝ × E) × E =>
@@ -43,9 +29,6 @@ theorem gauge_principal_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
     contDiffWithinAt_fst (fun _ hw => hw.1)
   exact ((hB.clm_apply contDiffWithinAt_snd).clm_apply contDiffWithinAt_snd).inv
     (ne_of_gt (chart_metric_pairing_pos F p z.1.1 hz.1.2 hz.2))
-
-
-
 
 theorem gauge_christoffel_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
     ContDiffOn ℝ ∞
@@ -83,9 +66,6 @@ theorem gauge_christoffel_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
         ((hflip'.comp_contDiffWithinAt hD).clm_apply contDiffWithinAt_snd)).clm_apply
           contDiffWithinAt_snd)).const_smul _
   exact hi.clm_apply hK
-
-
-
 
 theorem gauge_rhs_contDiffOn (F : RicciFlow n M (Icc a b)) (p : M) :
     ContDiffOn ℝ ∞

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.ProfileGeometry
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Extremum.BandStraightening
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -29,8 +21,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem image_minimum_profile_disk {v : E3} (c r : Real)
     (J : E2 ≃ₗᵢ[Real] Hemisphere.Plane v) (f : S2 → E3)
@@ -57,8 +47,6 @@ theorem quadraticMinimumCap_height_le {v : E3} (hv : ‖v‖ = 1)
   have hn : ‖x‖ ≤ 7 * r / 8 := mem_closedBall_zero_iff.mp hx
   nlinarith [norm_nonneg x]
 
-
-
 theorem closed_disk_top_level_eq_boundary (d : E2 → S2) (h : S2 → Real) (b : Real)
     (hboundary : ∀ x ∈ sphere (0 : E2) 1, h (d x) = b)
     (hinterior : ∀ p ∈ d '' ball (0 : E2) 1, h p < b) :
@@ -75,8 +63,6 @@ theorem closed_disk_top_level_eq_boundary (d : E2 → S2) (h : S2 → Real) (b :
     exact ⟨x, mem_sphere_zero_iff_norm.mpr heq, rfl⟩
   · rintro ⟨x, hx, rfl⟩
     exact ⟨⟨x, sphere_subset_closedBall hx, rfl⟩, hboundary x hx⟩
-
-
 
 theorem image_minimum_disk_top_boundary {v : E3} (hv : ‖v‖ = 1)
     {c r b : Real} (hr : 0 < r) (hab : c + (7 * r / 8) ^ 2 < b)

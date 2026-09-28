@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerNearLaplacianDecay
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerHolderRepresentative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -23,8 +14,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suHessianEnergy_entry_bound {E : Type*} [NormedAddCommGroup E]
     {H : Fin 2 → Fin 2 → Plane → E} {S : Set Plane}
     (hH : ∀ i j, MemLp (H i j) 2 (volume.restrict S)) (i j : Fin 2) :
@@ -37,10 +26,6 @@ theorem suHessianEnergy_entry_bound {E : Type*} [NormedAddCommGroup E]
     (Finset.mem_univ j)).trans
     (Finset.single_le_sum (fun k _ =>
       Finset.sum_nonneg fun l _ => sq_nonneg ‖H k l x‖) (Finset.mem_univ i))
-
-
-
-
 
 theorem suNearLaplacian_weak_gradient_holder :
     ∃ δ C : ℝ, 0 < δ ∧ 0 < C ∧ ∀ (m : ℕ)

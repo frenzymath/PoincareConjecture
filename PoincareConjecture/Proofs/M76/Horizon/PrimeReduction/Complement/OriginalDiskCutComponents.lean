@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoPortComponentCarriers
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -143,7 +135,6 @@ theorem exists_two_components_of_disconnected_cut
     cases b with
     | false => exact Or.inl hx
     | true => exact Or.inr hx
-
 
 theorem card_components_of_disconnected_cut
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (hRc : IsConnected R)

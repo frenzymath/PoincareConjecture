@@ -9,22 +9,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_nonnested_reference_end_axis
     (ell gap lambda : ℝ) (hlambda : 0 < lambda) (hgap : lambda < gap) :

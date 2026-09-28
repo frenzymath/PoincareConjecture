@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.CWThreeHomotopyEquivalence
 import PoincareConjecture.Proofs.M02.Topology.SphereGeneratorMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

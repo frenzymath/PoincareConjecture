@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.TrimmedPolarDescent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRoughAreaChange
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRegularizedArea
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,12 +17,8 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
-
-
 def m64TrimmedStripMap (eps : ℝ) (p : Plane) : Plane :=
   annulusPoint (p 0) (eps + (1 - 2 * eps) * p 1)
-
-
 
 def m64TrimmedCylinderFundamental (eps : ℝ) : Set Plane :=
   {p | p 1 ∈ Ioo eps (1 - eps) ∧ p 0 ∈ Ico (0 : ℝ) curvePeriod}
@@ -139,10 +126,6 @@ private theorem trimmedDescent_density
   have hq0 : 0 < q 1 := hq.1
   exact m64TrimmedDescent_standardCylinder hdesc (by linarith)
 
-
-
-
-
 theorem m64TrimmedPolarDescent_area
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
     {F : Plane → M} {eps : ℝ} (hpos : 0 < eps) (hsmall : eps < 1 / 2)
@@ -215,9 +198,6 @@ theorem m64TrimmedPolarDescent_area
   exact setIntegral_mono_set A.area_integrable
     (Eventually.of_forall (m60AreaDensity_nonneg g A.map))
     (Eventually.of_forall (trimmedFundamental_subset hpos))
-
-
-
 
 theorem m64TrimmedPolarDescent_intrinsic_area_le
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSubspaceAvoidance
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
 
 theorem Convex.exists_subset_affineSubspace_of_subset_iUnion
     {s : Set E} (hcv : Convex ℝ s) (hne : s.Nonempty)

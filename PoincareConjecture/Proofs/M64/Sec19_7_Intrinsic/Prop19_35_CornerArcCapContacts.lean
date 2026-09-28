@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCollarB
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConcreteChainEndpoints
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerBandChords
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +39,6 @@ variable {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J �
   {corner : Bool → J} {sigma : ℝ → AnnulusCoordinates} {T : ℝ}
   (D : M64IntrinsicCornerArcCollar C corner sigma T)
 
-
-
-
 theorem cap_band_outer (j : J) (hincident : j = corner false ∨ j = corner true)
     (i : Fin D.chain.count) : C.carrier j ∩ (D.chain.band i).carrier ⊆
       (D.chain.band i).leftCut ∪ (D.chain.band i).rightCut := by
@@ -56,10 +50,6 @@ theorem cap_band_outer (j : J) (hincident : j = corner false ∨ j = corner true
   rcases (D.cap_contact i).subset ⟨hcap, hp.2⟩ with h | h
   · exact Or.inl (optional_subset _ _ h)
   · exact Or.inr (optional_subset _ _ h)
-
-
-
-
 
 theorem cap_band_lower_tips
     (htip : ∀ e : Bool,

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveGradientReaction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ section GeneralDimension
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem contMDiff_scalar_gradient_barrier (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hR : ∀ x, 0 < D.scalarCurvature x) (beta : ℝ) :
@@ -51,9 +38,6 @@ theorem contMDiff_scalar_gradient_barrier (D : LeviCivitaData g)
       beta * D.scalarCurvature y ^ 2
   ring
 
-
-
-
 theorem continuousOn_scalar_gradient_barrier
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)
     (hR : ∀ t ∈ J, ∀ x, 0 < (F.connection t).scalarCurvature x) (beta : ℝ) :
@@ -70,9 +54,6 @@ theorem continuousOn_scalar_gradient_barrier
   exact ((hGjoint.div hRjoint (fun p hp => (hR p.1 hp.1 p.2).ne')).add
     (continuousOn_const.mul (hSjoint.sub ((hRjoint.pow 2).div_const 3)))).sub
       (continuousOn_const.mul (hRjoint.pow 2))
-
-
-
 
 theorem differentiableAt_scalar_gradient_barrier
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)
@@ -97,10 +78,6 @@ end GeneralDimension
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M]
-
-
-
-
 
 theorem scalar_gradient_barrier_evolution_le
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J)

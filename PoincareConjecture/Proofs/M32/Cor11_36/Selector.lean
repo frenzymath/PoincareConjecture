@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Cor11_36.Restriction
 import PoincareConjecture.Proofs.M32.Mathlib.MonotoneSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem hornBoundaryBelow_of_le
     {F : GeneralizedRicciFlowData.{u}} {T epsilon rho sigma : ℝ}
@@ -31,8 +17,6 @@ theorem hornBoundaryBelow_of_le
   intro x hx
   exact (hb x hx).trans (pow_le_pow_left₀ (inv_nonneg.mpr (hr.trans_le hrs).le)
     ((inv_le_inv₀ (hr.trans_le hrs) hr).2 hrs) 2)
-
-
 
 def UniformDeepHornHeight (epsilon C analyticConstant rho delta a : ℝ) : Prop :=
   a ≤ min (rho * delta) (rho / (2 * C)) ∧
@@ -49,9 +33,6 @@ def UniformDeepHornHeight (epsilon C analyticConstant rho delta a : ℝ) : Prop 
             HornBoundaryBelow horn (rho / (2 * H.constant)) →
               Nonempty (DeepHornNeckConclusion Q.extension
                 (terminalAccuracyFactor * H.epsilon) H.constant rho delta horn a)
-
-
-
 
 def UniformDeepHornHeightAtRadius
     (epsilon C analyticConstant r₀ rho delta a : ℝ) : Prop :=
@@ -70,8 +51,6 @@ def UniformDeepHornHeightAtRadius
               Nonempty (DeepHornNeckConclusion Q.extension
                 (terminalAccuracyFactor * H.epsilon) H.constant rho delta horn a)
 
-
-
 theorem uniformDeepHornHeight_mono
     {epsilon C analyticConstant rho sigma delta eta a : ℝ}
     (hC : 0 < C) (hr : 0 < rho) (hd : 0 < delta)
@@ -88,8 +67,6 @@ theorem uniformDeepHornHeight_mono
   obtain ⟨D⟩ := G.2 H (hrs.trans_lt hs) he hconstant hanalytic Q horn
     (hornBoundaryBelow_of_le (div_pos hr hden) hcut hb)
   exact ⟨deepHornConclusion_mono D H.constant_pos hr hrs hd hde⟩
-
-
 
 theorem exists_deepHornScaleSelection_of_uniformHeight
     {epsilon C analyticConstant : ℝ} (hC : 0 < C)
@@ -114,8 +91,6 @@ theorem exists_deepHornScaleSelection_of_uniformHeight
   · intro rho delta hr hd
     exact (hgood rho delta (h rho delta) hr hd (hpos rho delta hr hd) le_rfl).1.trans
       (min_le_right _ _)
-
-
 
 theorem uniformHeight_of_restrictRadius
     {epsilon C analyticConstant : ℝ} (hC : 0 < C)
@@ -144,8 +119,6 @@ theorem uniformHeight_of_restrictRadius
   obtain ⟨D⟩ := hgeom H' rfl he hconstant hanalytic Q' horn
     (hornBoundaryBelow_of_le (div_pos hhalf hden) hcut hboundary)
   exact ⟨deepHornConclusion_mono D H.constant_pos hhalf hhalf_lt.le hd le_rfl⟩
-
-
 
 theorem exists_deepHornScaleSelection_of_fixedRadiusIntervals
     {epsilon C analyticConstant : ℝ} (hC : 0 < C)

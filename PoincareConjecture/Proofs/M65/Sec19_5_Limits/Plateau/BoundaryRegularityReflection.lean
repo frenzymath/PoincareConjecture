@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityLocalMinimum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,20 +10,14 @@ open scoped Topology SchwartzMap ENNReal LineDeriv
 
 namespace PoincareConjecture.M65Boundary
 
-
-
 def boundaryPlaneReflection : LoopPlane ≃ₗᵢ[ℝ] LoopPlane :=
   Complex.orthonormalBasisOneI.repr.symm.trans
     (Complex.conjLIE.trans Complex.orthonormalBasisOneI.repr)
-
-
 
 theorem reflection_coordinates (z : LoopPlane) :
     boundaryPlaneReflection z 0 = z 0 ∧ boundaryPlaneReflection z 1 = -z 1 := by
   simp [boundaryPlaneReflection, Complex.orthonormalBasisOneI_repr_apply,
     Complex.orthonormalBasisOneI_repr_symm_apply]
-
-
 
 theorem reflection_involution (z : LoopPlane) :
     boundaryPlaneReflection (boundaryPlaneReflection z) = z := by
@@ -59,9 +43,6 @@ private theorem reflection_preimage_halfDisk (r : ℝ) :
   ext z
   simp only [mem_preimage, mem_inter_iff, mem_closedBall_zero_iff, mem_ofPred_eq,
     LinearIsometryEquiv.norm_map, (reflection_coordinates _).2, neg_nonneg]
-
-
-
 
 theorem halfDisk_even_memLp {E : Type*} [NormedAddCommGroup E]
     {f : LoopPlane → E} {r : ℝ}
@@ -138,10 +119,6 @@ private theorem reflection_basis (i : Fin 2) :
       EuclideanSpace.basisFun_apply]
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem halfDisk_reflected_localMap_of_green {M : Type*} {N : ℕ}
     (e : M → EuclideanSpace ℝ (Fin N)) (value : LoopPlane → M)
@@ -289,9 +266,6 @@ theorem halfDisk_reflected_localMap_of_green {M : Type*} {N : ℕ}
   }, fun _ => rfl, fun _ _ => rfl⟩
 
 open scoped ContDiff Manifold in
-
-
-
 
 theorem weakDisk_exists_boundary_reflected_minimum
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Support
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -59,7 +50,6 @@ theorem inner_toDomainL2_test (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω))
   change inner ℝ (f x) (toDomainL2 D Ω (φ : H1Zero D Ω) x) = φ x * f x
   rw [hx, hy]
   rfl
-
 
 theorem eq_zero_of_inner_toDomainL2_test_eq_zero
     (hΩ : IsOpen Ω) (hcompact : IsCompact (closure Ω))

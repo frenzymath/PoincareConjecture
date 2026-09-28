@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFluxPeriod
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,60 +13,25 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
-
 def scalarCoverStrip : Set Cover := {z | z.1 ∈ Ioo (1 : ℝ) 2}
-
-
-
-
-
 
 theorem scalarCoverStrip_isOpen : IsOpen scalarCoverStrip :=
   isOpen_Ioo.preimage continuous_fst
 
-
-
-
-
-
 theorem scalarCoverStrip_convex : Convex ℝ scalarCoverStrip :=
   (convex_Ioo (1 : ℝ) 2).linear_preimage (LinearMap.fst ℝ ℝ ℝ)
 
-
-
-
-
-
 def scalarCoverMap (z : Cover) : Plane := scalarCirclePoint z.1 z.2
-
-
-
-
-
 
 theorem scalarCoverMap_smooth : ContDiff ℝ ∞ scalarCoverMap := by
   unfold scalarCoverMap scalarCirclePoint
   fun_prop
-
-
-
-
-
 
 theorem scalarCoverMap_mem {z : Cover} (hz : z ∈ scalarCoverStrip) :
     scalarCoverMap z ∈ scalarAnnulus := by
   change 1 < ‖scalarCirclePoint z.1 z.2‖ ∧ ‖scalarCirclePoint z.1 z.2‖ < 2
   rw [scalarCirclePoint_norm, abs_of_pos (lt_trans zero_lt_one hz.1)]
   exact hz
-
-
-
-
-
 
 theorem scalarCoverMap_periodic (z : Cover) :
     scalarCoverMap (z + (0, 1)) = scalarCoverMap z := by
@@ -89,19 +40,8 @@ theorem scalarCoverMap_periodic (z : Cover) :
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 def scalarCoverForm (H : Plane → ℝ) (z : Cover) : Cover →L[ℝ] ℝ :=
   (scalarConjugateForm D H (scalarCoverMap z)).comp (fderiv ℝ scalarCoverMap z)
-
-
-
-
-
-
 
 theorem scalarCoverForm_smooth_closed {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -132,11 +72,6 @@ theorem scalarCoverForm_smooth_closed {H : Plane → ℝ}
       simp only [minSmoothness_of_isRCLikeNormedField]
       exact WithTop.coe_le_coe.mpr le_top)).eq v w
 
-
-
-
-
-
 theorem scalarCoverForm_periodic (H : Plane → ℝ) (z : Cover) :
     scalarCoverForm D H (z + (0, 1)) = scalarCoverForm D H z := by
   have heq : (fun y : Cover => scalarCoverMap (y + (0, 1))) = scalarCoverMap :=
@@ -145,13 +80,6 @@ theorem scalarCoverForm_periodic (H : Plane → ℝ) (z : Cover) :
     z ((hasFDerivAt_id z).add_const (0, 1))).fderiv
   simp only [Function.comp_def, id_eq, ContinuousLinearMap.comp_id, heq] at hd
   simp only [scalarCoverForm, scalarCoverMap_periodic, ← hd]
-
-
-
-
-
-
-
 
 theorem exists_annular_cover_conjugate {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

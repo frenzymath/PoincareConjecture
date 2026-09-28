@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.BallComparison
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def RiemannianMetric.asymptoticVolumeRatio
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -66,8 +55,6 @@ private theorem tendsto_add_radius_div_pow {f : ℝ → ℝ} {V C : ℝ} {n : �
   have hsum : 0 < r + C := by have := (le_max_right 0 (-C)).trans_lt hr; linarith
   rw [div_pow]
   field_simp
-
-
 
 theorem RicciFlow.asymptoticVolumeRatio_spec
     {m : ℕ} {M : Type u} [TopologicalSpace M]

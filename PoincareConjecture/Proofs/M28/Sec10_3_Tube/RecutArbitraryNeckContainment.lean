@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_neck_frontier_exclusion_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧
@@ -62,10 +50,6 @@ theorem exists_neck_frontier_exclusion_accuracy :
   have hh : (⟨y, hy⟩ : N.carrier) ∈ (univ : Set N.carrier) := mem_univ _
   rw [← hfull] at hh
   exact hh
-
-
-
-
 
 theorem exists_recut_all_necks_model_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.BoundaryR
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
-
 
 lemma abs_inner_deriv_connection_le
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -54,7 +41,6 @@ lemma abs_inner_deriv_connection_le
   obtain ⟨h₂, h₂'⟩ := abs_le.mp (hRic v u w)
   obtain ⟨h₃, h₃'⟩ := abs_le.mp (hRic w u v)
   exact abs_le.mpr ⟨by nlinarith, by nlinarith⟩
-
 
 lemma tangentNorm_deriv_connection_le
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -96,7 +82,6 @@ lemma tangentNorm_deriv_connection_le
   · have ha' : 0 < ‖a‖ := norm_pos_iff.mpr ha
     nlinarith
 
-
 lemma hasDerivAt_hessian
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (f : M → ℝ) (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -118,8 +103,6 @@ lemma hasDerivAt_hessian
   simp only [LeviCivitaData.hessian, LeviCivitaData.hessianOnFields,
     FiberBundle.extend_apply_self, zero_sub, map_zero, add_zero, Function.comp_def] at h'' ⊢
   convert h'' using 1 <;> rfl
-
-
 
 lemma abs_deriv_hessian_le
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -143,8 +126,6 @@ lemma abs_deriv_hessian_le
     exact Real.sq_sqrt (real_inner_self_nonneg)
   rw [← hv]
   ring
-
-
 
 lemma abs_hessian_sub_le
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I)
@@ -226,7 +207,6 @@ lemma abs_hessian_sub_le
       dsimp only [E] at *
       nlinarith
 
-
 lemma gradient_bound_of_initial
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)
     {a b : ℝ} (ha : a ∈ I) (hb : b ∈ I) (O : M)
@@ -242,8 +222,6 @@ lemma gradient_bound_of_initial
   rw [abs_sub_comm a b] at h
   exact (S.gradient_bound x v).trans ((mul_le_mul_of_nonneg_left h S.bound_nonneg).trans_eq
     (by ring))
-
-
 
 lemma hessian_bound_of_initial
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I)
@@ -321,8 +299,6 @@ private lemma edist_le_mul_of_tangentNorm_le
   simpa only [mul_comm] using
     (ENNReal.div_le_iff (ENNReal.ofReal_ne_zero_iff.mpr hC) ENNReal.ofReal_ne_top).mp hdiv
 
-
-
 lemma toReal_edist_le_exp_of_ricci_bound
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)
     {a b : ℝ} (ha : a ∈ I) (hb : b ∈ I) (K : ℝ)
@@ -347,7 +323,6 @@ lemma toReal_edist_le_exp_of_ricci_bound
     simp [htop, hbtop]
   · have h := ENNReal.toReal_mono (ENNReal.mul_ne_top ENNReal.ofReal_ne_top htop) hforward
     simpa only [ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.exp_nonneg _)] using h
-
 
 lemma distance_bounds_of_initial
     (F : RicciFlow n M J) {I : Set ℝ} (hI : Convex ℝ I) (hIJ : I ⊆ J)

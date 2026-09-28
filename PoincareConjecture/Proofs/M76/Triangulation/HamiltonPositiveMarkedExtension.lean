@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductMarkedBoundary
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedProductHalves
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedHalfBallExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,10 +15,6 @@ local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_positive_marked_half_extension {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b) (hb : b.IsFinitePL)

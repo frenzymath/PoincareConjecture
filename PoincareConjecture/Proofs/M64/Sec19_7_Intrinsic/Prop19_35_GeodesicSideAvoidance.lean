@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ClosedContactAvoidance
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicSideAgreement
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,11 +9,6 @@ open Set Filter
 open scoped Topology ENNReal Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_avoids_geodesic_side
     (G : RiemannianMetric 2 AnnulusCoordinates)

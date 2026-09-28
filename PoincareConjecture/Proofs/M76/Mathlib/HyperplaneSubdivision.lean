@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.CentroidMesh
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveAffineCenters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,15 +11,10 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 def RespectsAffineHyperplane (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) : Prop :=
   ∀ s ∈ K.faces,
     (∀ x ∈ convexHull ℝ (s : Set E), A x ≤ 0) ∨
       (∀ x ∈ convexHull ℝ (s : Set E), 0 ≤ A x)
-
-
 
 theorem IsSubdivision.respectsAffineHyperplane {K L : SimplicialComplex ℝ E}
     (hKL : K.IsSubdivision L) {A : E →ᵃ[ℝ] ℝ} (hA : L.RespectsAffineHyperplane A) :
@@ -36,9 +22,6 @@ theorem IsSubdivision.respectsAffineHyperplane {K L : SimplicialComplex ℝ E}
   intro s hs
   obtain ⟨t, ht, hst⟩ := hKL.face_subset s hs
   exact (hA t ht).imp (fun h x hx => h x (hst hx)) (fun h x hx => h x (hst hx))
-
-
-
 
 theorem exists_subdivision_respectsAffineHyperplane (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)
@@ -90,9 +73,6 @@ theorem exists_subdivision_respectsAffineHyperplane (K : SimplicialComplex ℝ E
     intro x hx
     obtain ⟨j, hj, rfl⟩ := Finset.mem_image.mp hx
     exact le_of_not_gt (fun h => hpos ⟨j, hj, h⟩)
-
-
-
 
 theorem exists_subdivision_respectsAffineHyperplanes (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)

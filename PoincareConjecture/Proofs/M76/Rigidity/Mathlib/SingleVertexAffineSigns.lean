@@ -4,15 +4,6 @@ import Mathlib.Data.Sign.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -20,10 +11,6 @@ open Set SignType
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem sign_eqOn_convexHull_of_single_vertex
     (a b : E →ᵃ[ℝ] ℝ) {s : Finset E} {v : E}

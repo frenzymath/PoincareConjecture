@@ -2,16 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -110,7 +100,6 @@ theorem normBoundEntropy_second_hasCompactSupport (C : ℝ) :
   intro s hs
   by_contra hn
   exact hs (normBoundEntropy_second_zero hn)
-
 
 theorem normBoundEntropy_le {C s : ℝ} (hC : 0 ≤ C) (hs : 0 ≤ s) :
     normBoundEntropy C s ≤ s := by

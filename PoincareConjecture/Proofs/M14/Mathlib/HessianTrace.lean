@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.M09.BasisContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem hessian_exists_bilinear (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     (hf : ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) ∞ f x) :
     ∃ B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ,
@@ -33,8 +22,6 @@ theorem hessian_exists_bilinear (D : LeviCivitaData g) (f : M → ℝ) (x : M)
   refine ⟨(g.inner x).comp (D.connection (D.gradient f) x), ?_⟩
   intro v w
   exact D.hessian_eq_inner_connection_gradient hf v w
-
-
 
 theorem laplacian_eq_orthonormal_hessian_trace (D : LeviCivitaData g)
     (f : M → ℝ) (x : M) (hf : ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) ∞ f x)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.Semigroup
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.WeakEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 def EnergyTest.oneSubLaplacianTest (φ : EnergyTest D Ω) : EnergyTest D Ω :=
   ⟨fun x => φ x - D.laplacian φ x,
@@ -52,7 +43,6 @@ theorem domainL2Resolvent_oneSubLaplacianTest (hΩ : IsOpen Ω) (φ : EnergyTest
         toDomainL2 D Ω (φ : H1Zero D Ω) := by
   change toDomainL2 D Ω (domainResolvent D Ω _) = _
   rw [domainResolvent_oneSubLaplacianTest hΩ]
-
 
 theorem domainL2Resolvent_pow_oneSubLaplacianTest (hΩ : IsOpen Ω)
     (m : ℕ) (φ : EnergyTest D Ω) :

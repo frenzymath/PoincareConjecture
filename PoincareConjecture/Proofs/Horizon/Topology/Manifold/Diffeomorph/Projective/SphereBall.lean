@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -123,10 +112,6 @@ private theorem ball_of_positive_collar_side
       (het.trans hps.symm.subset) hfront hside
   refine ⟨b, hbs, hb, hbi, (b.image_sphere_eq_frontier hbs hbK).trans hfront, ?_⟩
   simpa only [hbK] using hanti
-
-
-
-
 
 theorem exists_antipodal_disjoint_sphere_ball
     (F : UnitTwoSphere → UnitThreeSphere)

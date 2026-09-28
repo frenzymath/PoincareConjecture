@@ -9,8 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (J : SignedJointCross E)
 
-
-
 theorem exists_diamond_map :
     ∃ H : signedTubeDiamond ≃ₜ J.disk, H.IsFinitePL ∧
       (∀ b c (x : signedTubeDiamond),

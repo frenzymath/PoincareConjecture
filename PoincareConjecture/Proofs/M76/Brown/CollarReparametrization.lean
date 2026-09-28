@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.SpindleConjugation
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {B : Type*} [MetricSpace B]
-
-
-
 
 noncomputable def positiveSpindleHomeomorph (height : B → ℝ)
     (hc : Continuous height) (hpos : ∀ b, 0 < height b) (hle : ∀ b, height b ≤ 1) :
@@ -65,11 +53,6 @@ theorem positiveSpindleHomeomorph_apply_base (height : B → ℝ)
   · rfl
   · apply Subtype.ext
     exact mul_zero (height b)
-
-
-
-
-
 
 theorem exists_full_collar_of_open_neighborhood {X : Type*} [TopologicalSpace X]
     (e : OpenPartialHomeomorph (B × Ico (0 : ℝ) 1) X) (i : B → X)

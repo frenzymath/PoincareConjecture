@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialBallQuotient
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -20,7 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
-
 noncomputable def halfSourceSquare : C(D, D) :=
   ⟨fun x => ⟨(1 / 2 : ℝ) • (x : V2), by
     have hx : ‖(x : V2)‖ ≤ 1 := by
@@ -29,14 +19,10 @@ noncomputable def halfSourceSquare : C(D, D) :=
     norm_num
     linarith⟩, by fun_prop⟩
 
-
 noncomputable def outerHalfSquare : C(Q × I, D) :=
   (unitSphereRadialMap V2).comp
     ⟨fun z => (⟨(1 + (z.2 : ℝ)) / 2, by
       constructor <;> linarith [z.2.property.1, z.2.property.2]⟩, z.1), by fun_prop⟩
-
-
-
 
 theorem exists_collar_enlarged_square_parameter
     {E : Type*} [TopologicalSpace E] [T2Space E] {B : Set E}
@@ -100,9 +86,6 @@ theorem exists_collar_enlarged_square_parameter
   apply Subtype.ext
   change ((1 + (1 : ℝ)) / 2) • (u : V2) = (u : V2)
   norm_num
-
-
-
 
 theorem exists_collar_enlarged_filling
     {E Y : Type*} [TopologicalSpace E] [T2Space E] [TopologicalSpace Y]

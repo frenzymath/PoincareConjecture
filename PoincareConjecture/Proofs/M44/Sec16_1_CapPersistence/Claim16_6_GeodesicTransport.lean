@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialPhaseBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem pullbackCoefficients_eq_of_comp_germ (g : RiemannianMetric n M)
     {a e : E → M} {f : E → E} {x : E}
@@ -73,9 +61,6 @@ private theorem partialCoordinateChange_metric
   filter_upwards [hc.continuousAt.preimage_mem_nhds (e.open_target.mem_nhds hxe)] with y hy
   exact e.right_inv hy
 
-
-
-
 theorem hasDerivAt_geodesic_in_partialDiffeomorph
     (g : RiemannianMetric n M)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) E M ∞) (p : M)
@@ -117,9 +102,6 @@ theorem hasDerivAt_geodesic_in_partialDiffeomorph
     ((g.contDiffAt_pullbackCoefficients he).differentiableAt (by simp)) hBinv hCinv
     (fun v w => g.symm _ _ _) (partialCoordinateChange_smooth e p hqt hqe)
     hsurj hmetric hq hw
-
-
-
 
 theorem IsGeodesicOn.hasDerivAt_phase_in_partialDiffeomorph
     {g : RiemannianMetric n M} {γ : ℝ → M} {S : Set ℝ}
@@ -174,9 +156,6 @@ end PoincareConjecture.RiemannianMetric
 namespace PoincareConjecture.SurgeryCapClose
 
 universe u
-
-
-
 
 theorem hasDerivAt_normalized_geodesic_phase
     {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}

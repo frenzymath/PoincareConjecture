@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

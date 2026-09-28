@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RawAnnulusChartTrace
 import PoincareConjecture.Proofs.M64.Mathlib.RadialTestVanishing
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -402,12 +389,6 @@ private theorem halfDisk_supported_polar
       rw [halfDisk_polar_integral]
       exact setIntegral_prod _ hpol
 
-
-
-
-
-
-
 theorem M64ObservedWeakAnnulus.polynomial_shell_pairings
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     {x a b R : ℝ} (hb : 0 ≤ b) (hbR : b < R)
@@ -534,10 +515,6 @@ theorem M64ObservedWeakAnnulus.polynomial_shell_pairings
           module
         _ = ∫ p in S, F1 p := hp1.symm
         _ = _ := hi1'.trans hg1
-
-
-
-
 
 private theorem squared_radius_coefficient_ae_zero
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]

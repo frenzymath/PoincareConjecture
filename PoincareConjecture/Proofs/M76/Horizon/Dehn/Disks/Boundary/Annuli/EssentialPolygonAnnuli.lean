@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.NestedPolygonAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.CollarAnnulusLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 open _root_.Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem annulusDepthImage_eq_of_iff
     {E : Type*} [NormedAddCommGroup E] {A B : Set E}
@@ -34,9 +24,6 @@ theorem annulusDepthImage_eq_of_iff
     let p := a.symm ⟨x, hB hx⟩
     have hp : (a p : E) = x := congrArg Subtype.val (a.apply_symm_apply ⟨x, hB hx⟩)
     exact ⟨p, (hlevel p).mpr (hp.symm ▸ hx), hp⟩
-
-
-
 
 theorem exists_essential_polygon_annuli
     {n : ℕ} (P : Polygon P2 (n + 3))

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Norm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem contMDiff_gradient_energy (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞
@@ -39,10 +28,6 @@ theorem contMDiff_gradient_energy (D : LeviCivitaData g) {f : M → ℝ}
   intro x
   have h := ((g.contMDiff x).clm_bundle_apply (hgrad x)).clm_bundle_apply (hgrad x)
   exact (Bundle.contMDiffAt_totalSpace.mp h).2
-
-
-
-
 
 theorem continuousOn_scalar_gradient_energy
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J) :
@@ -80,9 +65,6 @@ theorem continuousOn_scalar_gradient_energy
         (F.connection p.1).scalarCurvature p.2).symm
   simpa only [hid] using htrace
 
-
-
-
 theorem gradient_energy_pairing (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
     g.inner x (D.gradient (fun y => g.inner y (D.gradient f y) (D.gradient f y)) x)
@@ -90,10 +72,6 @@ theorem gradient_energy_pairing (D : LeviCivitaData g) {f : M → ℝ}
   rw [D.inner_gradient, D.mvfderiv_normSq
     ((D.contMDiff_gradient hf x).mdifferentiableAt (by simp)),
     D.hessian_eq_inner_connection_gradient (hf x)]
-
-
-
-
 
 theorem hasDerivAt_scalar_gradient_energy
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)

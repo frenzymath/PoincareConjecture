@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelLinearity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
 
 noncomputable def heatC1Gain (n : ℕ) (t : ℝ) : ℝ :=
   max (t * (1 + Real.sqrt (2 * t) * gaussianFirstMoment n))
@@ -43,7 +34,6 @@ theorem heatC1Gain_mono {s t : ℝ} (hs : 0 ≤ s) (hst : s ≤ t) :
         (mul_nonneg (by norm_num) gaussianFirstMoment_nonneg))
       (mul_le_mul_of_nonneg_left hst gaussianSecondMoment_nonneg)
 
-
 theorem exists_pos_heatC1Gain_lt {e : ℝ} (he : 0 < e) :
     ∃ t : ℝ, 0 < t ∧ heatC1Gain n t < e := by
   have hc : Continuous (heatC1Gain n) := by unfold heatC1Gain; fun_prop
@@ -54,8 +44,6 @@ theorem exists_pos_heatC1Gain_lt {e : ℝ} (he : 0 < e) :
   have hp : ∀ᶠ t : ℝ in 𝓝[>] (0 : ℝ), 0 < t := self_mem_nhdsWithin
   obtain ⟨t, ht, hte⟩ := (hp.and hsmall).exists
   exact ⟨t, ht, hte⟩
-
-
 
 theorem heatDuhamel_c1_bound {f : ℝ → V → F} {C t : ℝ}
     (hC : 0 ≤ C) (ht : 0 ≤ t)
@@ -74,8 +62,6 @@ theorem heatDuhamel_c1_bound {f : ℝ → V → F} {C t : ℝ}
     exact (heatDuhamelGradient_weighted_norm_le hC ht
       (fun s hs => (hf s hs).continuous) hfb x).trans
       (mul_le_mul_of_nonneg_left (le_max_right _ _) hC)
-
-
 
 theorem heatDuhamel_c1_difference_bound {f g : ℝ → V → F} {C D H t : ℝ}
     (hC : 0 ≤ C) (hD : 0 ≤ D) (hH : 0 ≤ H) (ht : 0 ≤ t)

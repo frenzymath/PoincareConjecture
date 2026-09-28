@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -19,9 +11,6 @@ open scoped ContDiff Manifold Topology
 namespace Poincare.Manifold
 
 open Poincare.Analysis.Calculus
-
-
-
 
 theorem exists_smooth_subsequence_of_locallyEventuallyBounded_chart_derivatives
     {n : ℕ} {M : Type*} [TopologicalSpace M]

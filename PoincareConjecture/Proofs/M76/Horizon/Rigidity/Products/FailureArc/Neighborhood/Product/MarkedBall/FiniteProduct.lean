@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

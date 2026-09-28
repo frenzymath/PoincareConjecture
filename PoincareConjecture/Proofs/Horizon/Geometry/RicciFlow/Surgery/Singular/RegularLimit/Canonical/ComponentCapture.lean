@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Pinching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {C : ℝ}
 
-
-
 theorem scalar_sup_le_constant_div_six_mul (N : SingularCComponent g D C)
     {x : M} (hx : x ∈ N.carrier) :
     scalarCurvatureSupOn g D N.carrier ≤ (C / 6) * D.scalarCurvature x := by
@@ -45,7 +33,6 @@ theorem scalar_sup_le_constant_div_six_mul (N : SingularCComponent g D C)
     field_simp [ne_of_gt N.constant_pos]
   rw [heq] at hmul
   linarith
-
 
 theorem scalar_le_constant_div_six_mul (N : SingularCComponent g D C)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier) :
@@ -67,8 +54,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_compact_cComponent_carrier_capture
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

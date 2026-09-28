@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem tendsto_ball_volume_div_pow_at_zero
     (g : RiemannianMetric n M) (p : M) :
@@ -70,7 +59,6 @@ private theorem tendsto_ball_radius_shift {f : ℝ → ℝ} {V C : ℝ}
 
 variable [SecondCountableTopology M]
 
-
 theorem asymptoticVolumeRatio_eq_of_preconnected
     [PreconnectedSpace M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)
@@ -95,7 +83,6 @@ theorem asymptoticVolumeRatio_eq_of_preconnected
     linarith
   exact le_antisymm (hle p q) (hle q p)
 
-
 theorem ball_volume_div_pow_le_euclideanUnitBallVolume
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)
     (hc : MetricComplete g)
@@ -106,8 +93,6 @@ theorem ball_volume_div_pow_le_euclideanUnitBallVolume
   filter_upwards [self_mem_nhdsWithin,
     (eventually_lt_nhds hr).filter_mono nhdsWithin_le_nhds] with s hs hsr
   exact g.antitoneOn_ball_volume_div_pow D hn hc hRic p hs hr hsr.le
-
-
 
 theorem volumeMeasure_ball_eq_euclidean_of_maximal_asymptotic_volume
     [PreconnectedSpace M]

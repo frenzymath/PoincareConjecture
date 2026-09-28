@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M48AnalyticCalibration
 import PoincareConjecture.Definitions.M48EpochExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture
-
 
 theorem SurgeryPrefixControls.delta_le_initial
     {S : RepairedControlledSchedulesData.{u}} {p : SurgeryParameterPrefix S.constants}
@@ -47,7 +36,6 @@ theorem limitRadius_pos {r : ℝ} (hr : 0 < r) : 0 < A.limitRadius r := by
 
 theorem limitRadius_le (r : ℝ) : A.limitRadius r ≤ r := min_le_left _ _
 
-
 theorem threshold_bounds {r Q : ℝ} (hr : 0 < r) (hre : r ≤ S.setup.epsilon)
     (hQ : (A.limitRadius r)⁻¹ ^ 2 ≤ Q) :
     A.component.curvature_threshold ≤ Q ∧ (40000 : ℝ) ≤ Q := by
@@ -65,7 +53,6 @@ theorem threshold_bounds {r Q : ℝ} (hr : 0 < r) (hre : r ≤ S.setup.epsilon)
   constructor
   · nlinarith [A.component.one_le_curvature_threshold]
   · nlinarith
-
 
 theorem component_window {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
     {r t : ℝ} (hr : 0 < r) (hre : r ≤ S.setup.epsilon)
@@ -87,7 +74,6 @@ theorem component_window {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
       _ ≤ 1 / 40000 := one_div_le_one_div_of_le (by norm_num) hlarge
   intro s hs
   exact ⟨by linarith [hs.1], hs.2.trans_lt ht.2⟩
-
 
 theorem cut_scale_lt_radius
     {p : SurgeryParameterPrefix S.constants} {F : SurgeryFlowData.{u}}

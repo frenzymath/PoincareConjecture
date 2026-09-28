@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -37,14 +26,11 @@ namespace DoubleCappedTubeCertificate
 
 omit [T2Space M] in
 
-
 theorem isOpen_carrier (C : DoubleCappedTubeCertificate g) : IsOpen C.carrier := by
   rw [C.carrier_eq_union]
   exact (C.cap₁.carrier_open.union C.tube.carrier_open).union C.cap₂.carrier_open
 
 omit [T2Space M] in
-
-
 
 theorem exists_intrinsic_minimizing_sequence (C : DoubleCappedTubeCertificate g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -61,9 +47,6 @@ theorem exists_intrinsic_minimizing_sequence (C : DoubleCappedTubeCertificate g)
         (𝓝 (intrinsicEDist g C.carrier (γ a) (γ b))) := by
   exact exists_intrinsic_minimizing_sequence_of_path g hab hγ hγC
     (finite_lt_toReal_add_one hfinite)
-
-
-
 
 theorem exists_intrinsic_minimizer (C : DoubleCappedTubeCertificate g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -94,15 +77,12 @@ namespace SphereBundleCircleCertificate
 
 omit [T2Space M] [T3Space M] [MeasurableSpace M] [BorelSpace M] in
 
-
 theorem isOpen_carrier {X : Set M} (C : SphereBundleCircleCertificate g X) :
     IsOpen C.carrier := by
   rw [C.neck_cover]
   exact isOpen_iUnion (fun N => N.val.carrier_open)
 
 omit [T2Space M] [T3Space M] [MeasurableSpace M] [BorelSpace M] in
-
-
 
 theorem exists_intrinsic_minimizing_sequence {X : Set M}
     (C : SphereBundleCircleCertificate g X)
@@ -122,8 +102,6 @@ theorem exists_intrinsic_minimizing_sequence {X : Set M}
     (finite_lt_toReal_add_one hfinite)
 
 omit [T3Space M] [MeasurableSpace M] [BorelSpace M] in
-
-
 
 theorem exists_intrinsic_minimizer {X : Set M}
     (C : SphereBundleCircleCertificate g X)

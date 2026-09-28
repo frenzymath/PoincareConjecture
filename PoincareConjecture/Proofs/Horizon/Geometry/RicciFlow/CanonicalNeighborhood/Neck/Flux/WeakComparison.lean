@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Transition
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.BusemannWeakLaplacian
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +14,6 @@ variable {M : Type*} [MetricSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem integral_busemann_axialTransition_sub_nonneg
     (D : LeviCivitaData g) (hc : MetricComplete g)

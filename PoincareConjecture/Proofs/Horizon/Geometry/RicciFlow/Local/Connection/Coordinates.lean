@@ -3,28 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Kos
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Geometry.Manifold.VectorBundle.Riemannian
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -37,7 +15,6 @@ namespace PoincareConjecture.RicciFlow.Local
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
 
 theorem contMDiffAt_clm_apply_iff
     [IsManifold (𝓡 n) ∞ M]
@@ -65,7 +42,6 @@ theorem contMDiffAt_clm_apply_iff
     simpa only [ContinuousLinearEquiv.coe_coe, ContinuousLinearEquiv.symm_apply_apply] using hb
 
 variable [IsManifold (𝓡 n) ∞ M]
-
 
 theorem contMDiffOn_koszulExpression
     (g : RiemannianMetric n M) {U : Set M} (hU : IsOpen U)
@@ -122,7 +98,6 @@ theorem contMDiffOn_koszulExpression
   funext y
   simp only [trivializationAt_model_space_apply, Pi.add_apply]
   rfl
-
 
 theorem koszul_operator_contMDiffOn
     (g : RiemannianMetric n M)

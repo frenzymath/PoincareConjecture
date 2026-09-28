@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Geodesic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.ChangeCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem IsGeodesicOn.hasDerivAt_in_chart
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}

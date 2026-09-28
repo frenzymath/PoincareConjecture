@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import Mathlib.Tactic.Module
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.FrameForms
 import PoincareConjecture.Proofs.M09.ManifoldTraceDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSlabRegularity
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NestedBallClosure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +16,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
   (H : CounterexampleNeckFamily E)
-
-
-
-
 
 theorem normalizedSlice_fresh_core_compact (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
@@ -108,10 +93,6 @@ theorem normalizedSlice_fresh_core_compact (k : ℕ)
 
 variable (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ)
 
-
-
-
-
 theorem tubeCritical_fresh_core_regular (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
     (rmin : ℝ) (hrmin : 0 < rmin)
@@ -138,10 +119,6 @@ theorem tubeCritical_fresh_core_regular (k : ℕ)
   apply closure_mono
   intro y hy
   exact hy.trans_le (ENNReal.ofReal_le_ofReal hr.le)
-
-
-
-
 
 theorem tubeCritical_fresh_core_component (hA1 : 0 < A1) (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))

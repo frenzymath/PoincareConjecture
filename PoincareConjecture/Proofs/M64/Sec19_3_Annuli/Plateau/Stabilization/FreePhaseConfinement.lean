@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreePhaseVerticalEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.TwoCircleObservation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem M64FreeWeakPhaseAnnulus.exists_strict_modulus_interval
     {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
@@ -89,9 +78,6 @@ namespace M64
 
 variable [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
-
 
 theorem auxiliaryCircle_freeWeakPhase_confined
     (P : M62.CircleProductData F circumference)

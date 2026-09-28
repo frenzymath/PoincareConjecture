@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Basic
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.GeneralizedRicciFlowData
-
 
 theorem isEmbedding_of_local_box {G : GeneralizedRicciFlowData.{u}}
     {X : Type v} [TopologicalSpace X] {J : Set ℝ} {origin scale : ℝ}

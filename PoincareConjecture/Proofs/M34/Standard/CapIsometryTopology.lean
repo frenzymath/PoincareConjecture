@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.RegularSublevelPartialImage
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceModelTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +17,6 @@ variable {M X : Type u} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
   (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞)
-
-
 
 theorem nonempty_diffeomorph_imageModel :
     Nonempty (CapModelEquivalence N.model_kind N.puncture (f '' N.carrier)) := by
@@ -48,8 +37,6 @@ theorem nonempty_diffeomorph_imageModel :
     contMDiffOn_invFun := f.symm.contMDiff.contMDiffOn
   }
   exact ⟨CapModelEquivalence.transport d N.model_equivalence⟩
-
-
 
 theorem diffeomorph_image_boundary_local_defining_function :
     ∀ x ∈ f '' N.boundary_sphere, ∃ U : Set X, ∃ a : X → ℝ,

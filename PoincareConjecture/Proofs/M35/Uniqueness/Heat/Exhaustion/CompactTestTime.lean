@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.DefectHeatTestBo
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

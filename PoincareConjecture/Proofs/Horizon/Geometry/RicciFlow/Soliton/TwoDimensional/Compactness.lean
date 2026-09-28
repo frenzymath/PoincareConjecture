@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.ScalarBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
 namespace LeviCivitaData
 
 variable [PreconnectedSpace M] {g : RiemannianMetric 2 M}
-
 
 theorem compactSpace_of_surface_shrinker (D : LeviCivitaData g)
     (hc : MetricComplete g) {f : M → ℝ} {lambda : ℝ}
@@ -44,7 +36,6 @@ namespace GradientShrinkingSolitonData
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem compactSpace (S : GradientShrinkingSolitonData 2 M) : CompactSpace M := by
   exact S.connection.compactSpace_of_surface_shrinker S.complete S.potential_C2

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Metric
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +28,6 @@ private theorem backwardScalarReaction_eq_slice (q : G.Point) {t : ℝ}
       2 * (G.leafwise.sliceConnection t).ricciNormSq ⟨q, ht⟩ := by
   subst t
   rfl
-
-
-
 
 theorem ordinaryGauge_backwardScalarEvolution (b : G.gaugeCover.index)
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -88,9 +76,6 @@ theorem ordinaryGauge_backwardScalarEvolution (b : G.gaugeCover.index)
     _ = _ := by
       rw [movingGauge_scalarLaplacian H hscalar t x, movingGauge_ricciNormSq H t x]
       ring
-
-
-
 
 theorem backwardScalarEvolution (hM04 : RicciFlowCurvatureTheory.{0})
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (q : G.Point) :

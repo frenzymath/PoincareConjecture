@@ -6,12 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Preservation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Completeness
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -60,8 +54,6 @@ private theorem compact_time_window {I : Set ℝ} (hI : IsCompact I) (hI1 : I �
         linarith [hu.2 ht]
   · exact ⟨-1, 1 / 2, by norm_num, by norm_num, by norm_num,
       fun _ ht => (hne ⟨_, ht⟩).elim⟩
-
-
 
 theorem exists_unscaledPointedLimit (hC : RicciFlowCurvatureTheory.{u}) (q : ℕ → M) :
     ∃ L : AncientPointedGeometricConvergence
@@ -172,7 +164,6 @@ variable {q : ℕ → M}
     (fun _ => G.unscaledSourceFlow.shrink.metric)
     (fun k => equivShrink M (q k)) 1)
 
-
 theorem unscaledPointedLimit_curvature_bound :
     ∃ B : ℝ, 0 ≤ B ∧ ∀ t : ℝ, t < 1 → ∀ x : L.limitCarrier.carrier,
       (L.limitFlow.connection t).curvatureTensorNorm x ≤ B / (1 - t) := by
@@ -204,8 +195,6 @@ theorem unscaledPointedLimit_nonnegativeCurvatureOperator :
   intro k x
   exact (G.unscaledSourceFlow.shrink_nonnegativeCurvatureOperator_iff t x).mpr
     (G.unscaledSourceFlow_nonnegativeCurvatureOperator t ht _)
-
-
 
 theorem unscaledPointedLimit_complete
     (hcomplete : L.limitCarrier.metricComplete (L.limitFlow.metric 0)) :

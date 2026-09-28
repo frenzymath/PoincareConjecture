@@ -1,19 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Normalized
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Surface
 
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
 universe u
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
-
 
 theorem PoincareConjecture.normalizedCornerScalarBound_surface
     {n k : ℕ} (hdim : n = 2+k) (M : Type*)
@@ -39,8 +32,6 @@ theorem PoincareConjecture.normalizedCornerScalarBound_surface
   have hb := gL.leviCivitaData.integral_pos_scalarCurvature_surface_le hK hKnonneg hKsec
   have hI : 0 ≤ ∫ x, K x ∂gL.volumeMeasure := integral_nonneg hKnonneg
   nlinarith [mul_nonneg Real.pi_pos.le hI]
-
-
 
 theorem PoincareConjecture.exists_uniform_normalizedCornerScalarBound_surface :
     ∃ C : ℝ, 0 < C ∧

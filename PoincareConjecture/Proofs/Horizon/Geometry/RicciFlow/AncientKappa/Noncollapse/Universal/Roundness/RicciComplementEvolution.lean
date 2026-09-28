@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.MovingCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.GeometricPreservation.CurvaturePDE
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -155,7 +144,6 @@ private theorem complement_components_evolution [T2Space M]
   filter_upwards [Ioo_mem_nhds ht.1 ht.2] with s hs
   exact complement_eq_cyclic F hcalculus (ht.1.trans ht.2) ⟨hs.1.le, hs.2⟩ x e he i j
 
-
 def transportedRicciComplement (F : RicciFlow 3 M (Ico a b))
     (hcalculus : ∀ s, (F.connection s).CurvatureTensorCalculus) (t : ℝ) (x : M) :
     TensorFiber (TangentSpace (𝓡 3) x) 2 :=
@@ -169,7 +157,6 @@ def transportedRicciComplement (F : RicciFlow 3 M (Ico a b))
     transportedRicciComplement F hcalculus t x v =
       (F.connection t).ricciComplementEvaluation x (fun i => canonicalTransport F t x (v i)) :=
   (F.connection t).ricciComplementTensor_apply (hcalculus t) x _
-
 
 def transportedRicciComplementDiffusion (F : RicciFlow 3 M (Ico a b))
     (hcalculus : ∀ s, (F.connection s).CurvatureTensorCalculus) (t : ℝ) (x : M) :
@@ -187,8 +174,6 @@ def transportedRicciComplementDiffusion (F : RicciFlow 3 M (Ico a b))
       (F.connection t).tensorLaplacian (F.connection t).ricciComplementEvaluation x
         (fun i => canonicalTransport F t x (v i)) :=
   (F.connection t).tensorLaplacianFiber_apply _ x _
-
-
 
 theorem hasDerivAt_transportedRicciComplement [T2Space M]
     (F : RicciFlow 3 M (Ico a b))

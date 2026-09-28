@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.ReciprocalEnclosingBall
 import PoincareConjecture.Proofs.M38.ReciprocalSphereBall
 import PoincareConjecture.Proofs.M38.PolarCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,11 +51,9 @@ private theorem reciprocalInnerShell_bounds {a : ℝ} (ha : 0 < a) (ha8 : a ≤ 
 
 variable {A : GeneralizedSliceCarrier.{u}}
 
-
 noncomputable def reciprocalEnclosingCollarMap (C : SurgeryBallEmbedding A) (a : ℝ)
     (z : RoundCylinderSpace) : A.carrier :=
   C.map (reciprocalInnerShellDiffeomorph (capShellMap 1 a z))
-
 
 noncomputable def reciprocalEnclosingCollarInverse (C : SurgeryBallEmbedding A) (a : ℝ)
     (y : A.carrier) : RoundCylinderSpace :=
@@ -75,7 +63,6 @@ variable (C : SurgeryBallEmbedding A) {a : ℝ} (ha : 0 < a) (ha8 : a ≤ 1 / 8)
 
 include ha ha8
 
-
 theorem reciprocalEnclosingCollar_coordinate_mem {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     reciprocalInnerShellDiffeomorph (capShellMap 1 a z) ∈ Metric.ball 0 2 := by
@@ -83,13 +70,11 @@ theorem reciprocalEnclosingCollar_coordinate_mem {z : RoundCylinderSpace}
   have h := (reciprocalInnerShell_bounds ha ha8 hz).2
   linarith
 
-
 theorem reciprocalEnclosingCollar_coordinates {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     C.inverse (reciprocalEnclosingCollarMap C a z) =
       reciprocalInnerShellDiffeomorph (capShellMap 1 a z) :=
   C.left_inverse (reciprocalEnclosingCollar_coordinate_mem ha ha8 hz)
-
 
 theorem reciprocalEnclosingCollar_norm_bounds {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
@@ -97,7 +82,6 @@ theorem reciprocalEnclosingCollar_norm_bounds {z : RoundCylinderSpace}
       ‖C.inverse (reciprocalEnclosingCollarMap C a z)‖ < 45 / 28 := by
   rw [reciprocalEnclosingCollar_coordinates C ha ha8 hz]
   exact reciprocalInnerShell_bounds ha ha8 hz
-
 
 theorem reciprocalEnclosingCollar_left_inverse :
     Set.LeftInvOn (reciprocalEnclosingCollarInverse C a) (reciprocalEnclosingCollarMap C a)
@@ -109,14 +93,12 @@ theorem reciprocalEnclosingCollar_left_inverse :
     reciprocalInnerShellDiffeomorph.symm_apply_apply]
   exact capShell_left_inverse ha (reciprocalCollar_lt_one ha8) hz
 
-
 theorem reciprocalEnclosingCollar_smooth :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (reciprocalEnclosingCollarMap C a)
       (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :=
   C.map_smooth.comp
     (reciprocalInnerShellDiffeomorph.contMDiff.comp (capShellMap_smooth 1 a)).contMDiffOn
       (fun _ hz => reciprocalEnclosingCollar_coordinate_mem ha ha8 hz)
-
 
 theorem reciprocalEnclosingCollar_inverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (reciprocalEnclosingCollarInverse C a)
@@ -137,7 +119,6 @@ theorem reciprocalEnclosingCollar_inverse_smooth :
   have h := (capShell_mem ha (reciprocalCollar_lt_one ha8) hz).1
   linarith
 
-
 theorem reciprocalEnclosingCollar_open :
     IsOpen (reciprocalEnclosingCollarMap C a '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   let S : Set StandardCapSpace := {x | 1 - a < ‖x‖ ∧ ‖x‖ < 1 + a}
@@ -156,7 +137,6 @@ theorem reciprocalEnclosingCollar_open :
   rw [Set.image_comp, Set.image_comp, capShell_image ha (reciprocalCollar_lt_one ha8)]
   exact smooth_left_inverse_image_open Metric.isOpen_ball C.map_smooth C.inverse_smooth
     C.left_inverse hV hsub
-
 
 noncomputable def reciprocalEnclosingCollar :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace A.carrier ∞ where
@@ -179,18 +159,14 @@ noncomputable def reciprocalEnclosingCollar :
   contMDiffOn_toFun := reciprocalEnclosingCollar_smooth C ha ha8
   contMDiffOn_invFun := reciprocalEnclosingCollar_inverse_smooth C ha ha8
 
-
 theorem reciprocalEnclosingCollar_source :
     (reciprocalEnclosingCollar C ha ha8).source = Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 := rfl
-
 
 theorem reciprocalEnclosingCollar_apply (z : RoundCylinderSpace) :
     reciprocalEnclosingCollar C ha ha8 z = reciprocalEnclosingCollarMap C a z := rfl
 
-
 theorem reciprocalEnclosingCollar_inverse (y : A.carrier) :
     (reciprocalEnclosingCollar C ha ha8).symm y = reciprocalEnclosingCollarInverse C a y := rfl
-
 
 theorem reciprocalEnclosingCollar_coordinate_formula {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
@@ -208,7 +184,6 @@ theorem reciprocalEnclosingCollar_coordinate_formula {z : RoundCylinderSpace}
   change (3 / 2 : ℝ) • reciprocalInnerRadial ((1 - a * z.2) • z.1.val) = _
   rw [reciprocalInnerRadial_ray z.1 hrad, reciprocalInnerOrderIso_annulus hsmall, smul_smul]
 
-
 theorem reciprocalEnclosingCollar_formula {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     reciprocalEnclosingCollarMap C a z =
@@ -216,7 +191,6 @@ theorem reciprocalEnclosingCollar_formula {z : RoundCylinderSpace}
   have h := reciprocalEnclosingCollar_coordinate_formula C ha ha8 hz
   rw [reciprocalEnclosingCollar_coordinates C ha ha8 hz] at h
   exact congrArg C.map h
-
 
 theorem reciprocalEnclosingCollar_negative (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0) :
@@ -227,7 +201,6 @@ theorem reciprocalEnclosingCollar_negative (z : UnitTwoSphere) {s : ℝ}
       (show (z, s) ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 from
         ⟨Set.mem_univ _, hs.1, by linarith [hs.2]⟩),
     reciprocalEnclosingBall_negative C ha ha8 z hs]
-
 
 theorem reciprocalEnclosingCollar_positive_reference (p : sphereCarrier.{u}.carrier)
     (z : UnitTwoSphere) {s : ℝ} (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -241,13 +214,11 @@ theorem reciprocalEnclosingCollar_positive_reference (p : sphereCarrier.{u}.carr
         ⟨Set.mem_univ _, by linarith [hs.1], hs.2⟩),
     reciprocalSphereBall_positive p ha ha8 z hs]
 
-
 theorem reciprocalEnclosingCollar_zero (z : UnitTwoSphere) :
     reciprocalEnclosingCollar C ha ha8 (z, 0) = C.map ((3 / 2 : ℝ) • z.val) := by
   rw [reciprocalEnclosingCollar_apply]
   simpa using reciprocalEnclosingCollar_formula C ha ha8
     (show (z, 0) ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 by constructor <;> simp)
-
 
 theorem reciprocalEnclosingCollar_central :
     reciprocalEnclosingCollar C ha ha8 '' (Set.univ ×ˢ ({0} : Set ℝ)) =
@@ -264,7 +235,6 @@ theorem reciprocalEnclosingCollar_central :
     refine ⟨(capUnitDirection x, 0), ⟨Set.mem_univ _, rfl⟩, ?_⟩
     rw [reciprocalEnclosingCollar_zero C ha ha8, ← hnorm, capUnitDirection_radial]
 
-
 theorem reciprocalEnclosingCollar_full_disjoint_unit :
     Disjoint (reciprocalEnclosingCollar C ha ha8 '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1))
       (C.map '' Metric.ball 0 1) := by
@@ -277,7 +247,6 @@ theorem reciprocalEnclosingCollar_full_disjoint_unit :
   change x = C.inverse (reciprocalEnclosingCollarMap C a z) at heq'
   rw [← heq'] at hbound
   linarith
-
 
 theorem reciprocalEnclosingCollar_central_disjoint :
     Disjoint (reciprocalEnclosingCollar C ha ha8 '' (Set.univ ×ˢ ({0} : Set ℝ)))

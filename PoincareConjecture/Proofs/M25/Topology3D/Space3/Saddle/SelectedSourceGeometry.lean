@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_source_geometry
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

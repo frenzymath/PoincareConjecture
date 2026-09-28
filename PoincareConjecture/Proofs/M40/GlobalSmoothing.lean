@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.FiniteSmoothingIteration
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingPatch
 import PoincareConjecture.Proofs.M40.MetricLocalToGlobal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,10 +16,6 @@ variable {M N : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace N] [T2Space N] [CompactSpace N] [PreconnectedSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
-
-
-
-
 
 theorem exists_smooth_approximation
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N) (f₀ : C(M, N))

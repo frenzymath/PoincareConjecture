@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Scale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold PoincareConjecture.RicciFlow.Splitting
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u v w
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_related_neck_of_static_canonical
     {M : Type v} [TopologicalSpace M] [T3Space M]
@@ -56,9 +45,6 @@ theorem exists_related_neck_of_static_canonical
     exact ⟨K.end_neck, K.end_neck_epsilon.trans hK,
       hratio'.trans (mul_le_mul_of_nonneg_right
         ((hb.le.trans hKC).trans (le_max_right _ _)) hzpos.le)⟩
-
-
-
 
 theorem exists_terminal_curvature_bound_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

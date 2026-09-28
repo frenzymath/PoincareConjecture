@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.PartialWindowService
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +16,6 @@ namespace PoincareConjecture.M30
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_selectedParabolicApplicationData_of_retained_charts
     {M : ℕ → Type u} [∀ k : ℕ, MetricSpace (M k)]

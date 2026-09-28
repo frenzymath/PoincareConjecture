@@ -12,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [DecidableEq E] in
 
-
 theorem exists_boundary_circle_joint
     (A : SimplicialComplex ℝ E) [Fintype A.faces]
     (hbound : ∀ t ∈ A.faces, t.card ≤ 3)
@@ -63,7 +62,6 @@ theorem exists_boundary_circle_joint
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem boundary_circle_joints_disjoint
     (A L : SimplicialComplex ℝ E) [Fintype A.faces]
     (hfull : ∀ t ∈ A.faces, (∀ v ∈ t, v ∈ L.vertices) → t ∈ L.faces)
@@ -91,7 +89,6 @@ theorem boundary_circle_joints_disjoint
       omega)) hnot
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem boundary_circle_joint_subset_vertex_rim
     (A : SimplicialComplex ℝ E) [Fintype A.faces]

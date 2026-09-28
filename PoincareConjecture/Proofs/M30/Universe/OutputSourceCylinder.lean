@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.M30.Universe.OutputSourceLiftJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 noncomputable def liftCylinderOfOrdinaryEmbedding
     {J : Set ℝ} (L : BlowupLimitFlow.{0} J)

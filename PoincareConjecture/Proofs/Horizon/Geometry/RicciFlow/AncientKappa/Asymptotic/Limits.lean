@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Scalar
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +15,6 @@ namespace PoincareConjecture
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.secondCountable
-
-
 
 theorem horizon_ancientAsymptoticSolitonLimits
     (n : ℕ)

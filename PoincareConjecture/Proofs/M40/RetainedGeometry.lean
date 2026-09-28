@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M39ComparisonMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +17,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
 
 local notation "E" => D.flow.event T hT
 
-
-
 theorem retained_injOn : Set.InjOn Q.map I.retained := by
   intro x hx y hy hxy
   apply I.parent.inclusion_openEmbedding.injective
@@ -34,8 +24,6 @@ theorem retained_injOn : Set.InjOn Q.map I.retained := by
     (interior_subset (I.retained_subset x hx))
     (interior_subset (I.retained_subset y hy))
   rw [← Q.retained_agreement x hx, ← Q.retained_agreement y hy, hxy]
-
-
 
 theorem retained_image_not_mem_cap {x : I.parent.carrier.carrier}
     (hx : x ∈ I.retained) (i : Fin (E).cap_count) :
@@ -60,8 +48,6 @@ theorem retained_image_not_mem_cap {x : I.parent.carrier.carrier}
       (hzeq.trans (Q.retained_agreement x hx))
   exact hzfront.2 (hzx.symm ▸ hxpre)
 
-
-
 theorem retained_fiber_eq {x : I.parent.carrier.carrier} (hx : x ∈ I.retained)
     {y : I.parent.carrier.carrier} (hy : Q.map y = Q.map x) : y = x := by
   have hyret : y ∈ I.retained := by
@@ -71,14 +57,10 @@ theorem retained_fiber_eq {x : I.parent.carrier.carrier} (hx : x ∈ I.retained)
     exact retained_image_not_mem_cap Q hx i hi
   exact retained_injOn Q hyret hx hy
 
-
-
 theorem exists_unique_retained_fiber :
     ∃ x ∈ I.retained, ∀ y, Q.map y = Q.map x → y = x := by
   obtain ⟨x, hx⟩ := I.inherited
   exact ⟨x, hx, fun _ hy => retained_fiber_eq Q hx hy⟩
-
-
 
 theorem retained_inverse_apply {x : I.parent.carrier.carrier}
     (hx : x ∈ I.retained) :
@@ -86,8 +68,6 @@ theorem retained_inverse_apply {x : I.parent.carrier.carrier}
   rw [Q.retained_agreement x hx,
     (E).retention.left_inverse (interior_subset (I.retained_subset x hx)),
     I.parent.left_inverse]
-
-
 
 def retainedOpenPartialHomeomorph :
     OpenPartialHomeomorph I.parent.carrier.carrier I.child.carrier.carrier where

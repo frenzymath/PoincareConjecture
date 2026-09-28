@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.SupportedBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped Topology
@@ -80,8 +72,6 @@ theorem selection_coordinates_of_missing_branch
     exact hz.2
   exact hWJ ⟨⟨z, hzN⟩, hzW, rfl⟩
 
-
-
 theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroSecondPhaseSelection
     {E β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {d : β → OpenPartialHomeomorph X0 V3}
@@ -115,7 +105,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroSecondPhaseSelection
           · exact Or.inr (Or.inr h)
           · exact Or.inr (Or.inl h)) x hx'
     · exact selection_coordinates_of_missing_branch hd K hK hY ha hb.continuousOn hg hselect x hx
-
 
 theorem ChartwisePLMap.hamiltonZero_second_phase_selection {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ open Set Geometry
 namespace Finset
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem affine_eq_zero_iff_of_vertex_zeros (s : Finset E)
     (A B : E →ᵃ[ℝ] ℝ) (hA : ∀ v ∈ s, 0 ≤ A v) (hB : ∀ v ∈ s, 0 ≤ B v)
@@ -44,11 +30,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {f : E → E}
-
-
-
-
-
 
 theorem AffineOnFaces.linear_zero_iff_of_positive_vertex_rescaling
     (hf : K.AffineOnFaces f) (r : E → ℝ) (hr : ∀ x ∈ K.vertices, 0 < r x)

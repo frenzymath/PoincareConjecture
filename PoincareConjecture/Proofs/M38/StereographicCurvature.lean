@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.StereographicMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +8,6 @@ open Set Metric
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M38
-
 
 theorem hasFDerivAt_stereoWeight (z : EuclideanSpace ℝ (Fin 3)) :
     HasFDerivAt (fun y : EuclideanSpace ℝ (Fin 3) => 16 / (‖y‖ ^ 2 + 4) ^ 2)
@@ -32,7 +22,6 @@ theorem hasFDerivAt_stereoWeight (z : EuclideanSpace ℝ (Fin 3)) :
   field_simp
   <;> ring
 
-
 theorem threeSphereStereoMetric_fderiv (a : UnitThreeSphere)
     (z u v w : EuclideanSpace ℝ (Fin 3)) :
     fderiv ℝ (fun y => (threeSphereStereoMetric a).inner y v w) z u =
@@ -43,13 +32,10 @@ theorem threeSphereStereoMetric_fderiv (a : UnitThreeSphere)
     innerSL_apply_apply, smul_eq_mul]
   ring
 
-
 noncomputable def stereoChristoffel (z u v : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) :=
   (-2 / (‖z‖ ^ 2 + 4)) •
     (inner ℝ u z • v + inner ℝ v z • u - inner ℝ u v • z)
-
-
 
 theorem threeSphereStereo_connection (a : UnitThreeSphere)
     (D : LeviCivitaData (threeSphereStereoMetric a))
@@ -69,7 +55,6 @@ theorem threeSphereStereo_connection (a : UnitThreeSphere)
   field_simp at hc ⊢
   nlinarith
 
-
 theorem hasFDerivAt_stereoChristoffel_zero (u v : EuclideanSpace ℝ (Fin 3)) :
     HasFDerivAt (fun z => stereoChristoffel z u v)
       ((-1 / 2 : ℝ) • ((innerSL ℝ u).smulRight v + (innerSL ℝ v).smulRight u -
@@ -84,8 +69,6 @@ theorem hasFDerivAt_stereoChristoffel_zero (u v : EuclideanSpace ℝ (Fin 3)) :
   ext w
   simp
   ring
-
-
 
 theorem threeSphereStereo_curvature_zero (a : UnitThreeSphere)
     (D : LeviCivitaData (threeSphereStereoMetric a))

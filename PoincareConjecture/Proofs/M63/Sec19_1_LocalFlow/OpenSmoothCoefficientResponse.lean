@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.OpenSmoothFixedPoint
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothCoefficientResponse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative DeTurckMetricProducerNative
-
-
-
-
 
 theorem exists_open_smooth_coefficient_parameter_response
     {iota E : Type*} [Countable iota]

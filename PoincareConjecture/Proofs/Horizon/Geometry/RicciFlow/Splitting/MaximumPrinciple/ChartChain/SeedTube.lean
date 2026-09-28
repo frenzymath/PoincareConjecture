@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.ChartChain.Geometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
@@ -20,7 +10,6 @@ variable {E H M : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M] [I.Boundaryless]
-
 
 theorem exists_initial_ball_seed {D : Set M} (α : M)
     (hchart : D ⊆ (chartAt H α).source) {v : M → ℝ}
@@ -54,7 +43,6 @@ theorem exists_initial_ball_seed {D : Set M} (α : M)
 
 omit [I.Boundaryless] in
 
-
 theorem exists_lateral_clearance {D : Set M} (hD : IsCompact D) (α : M)
     (hchart : D ⊆ (chartAt H α).source) {a b : ℝ}
     {gamma : ℝ → E} (hg : Continuous gamma)
@@ -83,6 +71,5 @@ theorem exists_lateral_clearance {D : Set M} (hD : IsCompact D) (α : M)
       ((sub_eq_zero.mp heq).trans hxt.symm)
     exact hz.1.2 (heqx ▸ hx))
   exact ⟨rho, hrho, fun x hx hn t ht => hbound (x, t) ⟨⟨hx, hn⟩, ht⟩⟩
-
 
 end PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple.ChartChain

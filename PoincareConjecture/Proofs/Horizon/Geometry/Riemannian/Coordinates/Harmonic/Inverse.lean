@@ -2,16 +2,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Nontrivial E]
 
 omit [FiniteDimensional ℝ E] [Nontrivial E] in
-
 
 lemma approximates_identity_on_ball {f : E → E} {R : ℝ}
     (hf : ContDiffOn ℝ ∞ f (ball 0 R))
@@ -79,7 +68,6 @@ lemma norm_apply_bounds_of_norm_sub_id_le_half {A : E →L[ℝ] E}
 
 omit [Nontrivial E] in
 
-
 lemma norm_fderiv_symm_bounds
     (F : OpenPartialHomeomorph E E) (hF : ContDiffOn ℝ ∞ F F.source)
     (hclose : ∀ x ∈ F.source, ‖fderiv ℝ F x - ContinuousLinearMap.id ℝ E‖ ≤ 1 / 2)
@@ -98,8 +86,6 @@ lemma norm_fderiv_symm_bounds
       rw [hA]; exact hclose _ hy) (A.symm v)
   simp only [ContinuousLinearEquiv.coe_coe, A.apply_symm_apply] at h
   constructor <;> linarith [h.1, h.2]
-
-
 
 lemma exists_inverse_on_ball {f : E → E} {R : ℝ} (hR : 0 < R)
     (hf : ContDiffOn ℝ ∞ f (ball 0 R)) (hf0 : f 0 = 0)

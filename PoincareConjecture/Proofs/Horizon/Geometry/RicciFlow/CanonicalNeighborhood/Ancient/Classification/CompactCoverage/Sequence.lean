@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.CollarSequence
 import PoincareConjecture.Statements.M27Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -31,8 +21,6 @@ attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space
 
 open CompactKappa
-
-
 
 theorem exists_smallBased_without_neighborhoods_strong_collars_of_m27
     (P : M27KappaAlternativePredecessors.{u})
@@ -83,8 +71,6 @@ theorem exists_smallBased_without_neighborhoods_strong_collars_of_m27
     intro x hx hxcore
     obtain ⟨Q, hQ⟩ := hcollar x hx hxcore
     exact ⟨{ Q with }, hQ⟩
-
-
 
 theorem exists_normalized_bad_neighborhood_sequence_strong_collars_of_m27
     (P : M27KappaAlternativePredecessors.{u})

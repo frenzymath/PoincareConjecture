@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_TransitionSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,9 +23,6 @@ noncomputable local instance sampleGluingCoefficientNormedSpace :
   ContinuousLinearMap.toNormedSpace
 
 variable {epsilon : ℝ} (S : GluingBadSequence.{u} epsilon)
-
-
-
 
 theorem GluingBadSequence.identified_error_pointJetsVanish (hepsilon : 0 < epsilon)
     {d : ℝ} (hd : d ∈ Icc (0 : ℝ) 1)
@@ -98,9 +86,6 @@ theorem GluingBadSequence.identified_error_pointJetsVanish (hepsilon : 0 < epsil
   · have ht := S.normalizedOlderTime_eq n
     dsimp only [r, s]
     nlinarith only [ht]
-
-
-
 
 theorem GluingBadSequence.piecewise_error_pointJetsVanish (hepsilon : 0 < epsilon)
     {d : ℝ} (hd : d ∈ Icc (0 : ℝ) 1)

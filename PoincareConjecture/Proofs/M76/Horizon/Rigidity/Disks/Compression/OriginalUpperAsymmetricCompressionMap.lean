@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalRelativeDe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalScalarHomotopy
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -63,9 +51,6 @@ private theorem upper_asymmetric_scalar_phase_mem_arc {rMinus rPlus u theta alph
     linarith [ht.2]
   · intro h
     exact ⟨theta - u, ⟨by linarith [hu.2], by linarith⟩, AddCircle.coe_sub _ _ _⟩
-
-
-
 
 theorem OriginalDiskProduct.exists_hamiltonZero_upper_asymmetric_compression_map {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

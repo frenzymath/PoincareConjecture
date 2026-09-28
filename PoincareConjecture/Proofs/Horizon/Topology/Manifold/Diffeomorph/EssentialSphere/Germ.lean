@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Germ.Angular
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Orientation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -80,8 +72,6 @@ private theorem exists_extension_of_smooth_fixing_zero
   have hpairG : ((D p).1, (G (D p)).2) = G (D p) :=
     Prod.ext (hGfst (D p)).symm rfl
   exact hpairG.trans hGp
-
-
 
 theorem exists_cylinder_collar_extension_of_fixing_zero
     {δ : ℝ} (hδ : 0 < δ)

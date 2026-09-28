@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.FixedCoreFilling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [RegularSpace Y]
-
-
-
-
 
 theorem exists_two_to_one_fiber_map (q : C(X, Y)) (hq : Function.Surjective q)
     (a b : Y) (hab : a ≠ b)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.TerminalFamily
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -85,8 +77,6 @@ private theorem exists_upper_model_terminal_chart
     simpa only [inner_neg_left] using hTh q z (hsub hz)
   · intro q z hz
     exact hTneg q z ⟨by linarith [hz.1], hz.2⟩
-
-
 
 theorem exists_terminal_upper_family_common_preparation_of_prepared
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -276,7 +266,6 @@ theorem exists_terminal_upper_family_common_preparation_of_prepared
   · intro j z hz
     simpa only [hA, neg_neg, AnnularEndFamily.upperCutCircle, Function.comp_apply] using
       hconstant j (-z) ⟨by linarith [hz.2], by linarith [hz.1]⟩
-
 
 end Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 

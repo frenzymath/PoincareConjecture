@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.QuadraticPatch.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.RadialExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -86,7 +84,6 @@ private theorem lowerSphereGraph_horizontal {p : S2} (hp : (p : E3) 2 < 0) :
   · rfl
   · rfl
   · simp [lowerSphereGraph, hs, Real.sqrt_sq_eq_abs, abs_of_neg hp]
-
 
 def lowerSphereChart : OpenPartialHomeomorph E2 S2 where
   toFun := lowerSphereMap

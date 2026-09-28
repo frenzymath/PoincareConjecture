@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.QuarterOverlap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem edist_center_lower_of_not_mem_coordinate_slab (N : EpsilonNeck g)
     {r : ℝ} (hr : r ∈ Ioo 0 N.epsilon⁻¹) {x : M}
@@ -60,8 +45,6 @@ theorem edist_center_lower_of_not_mem_coordinate_slab (N : EpsilonNeck g)
   have hmono : g.pathELength γ 0 t ≤ g.pathELength γ 0 1 :=
     Manifold.pathELength_mono le_rfl ht.2
   exact (not_lt_of_ge (hax.trans hmono)) hlength
-
-
 
 theorem positive_quarter_subset_frontier_neck_inner_slab
     (N N' : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)
@@ -100,8 +83,6 @@ theorem positive_quarter_subset_frontier_neck_inner_slab
     apply (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr
     nlinarith [mul_le_mul_of_nonneg_right hprod hi.le, mul_pos hs hi]
   exact (not_lt_of_ge (hlower.trans hupper)) hlt
-
-
 
 theorem exists_positive_quarter_subset_frontier_neck_inner_slab_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

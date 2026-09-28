@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import Mathlib.Analysis.Convex.Between
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -17,10 +9,7 @@ open scoped Topology ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
 
-
 def planeDet (u v : EuclideanSpace ℝ (Fin 2)) : ℝ := u 0 * v 1 - u 1 * v 0
-
-
 
 theorem exists_smul_of_planeDet_eq_zero {u v : EuclideanSpace ℝ (Fin 2)}
     (hu : u ≠ 0) (hdet : planeDet u v = 0) : ∃ r : ℝ, v = r • u := by
@@ -45,8 +34,6 @@ theorem exists_smul_of_planeDet_eq_zero {u v : EuclideanSpace ℝ (Fin 2)}
       change v 1 = v 0 / u 0 * u 1
       field_simp [hu0]
       nlinarith
-
-
 
 theorem IsSimplePolygon.planeDet_triangle_ne_zero
     {p : Polygon (EuclideanSpace ℝ (Fin 2)) 3} (hp : IsSimplePolygon p) :
@@ -80,7 +67,6 @@ theorem IsSimplePolygon.planeDet_triangle_ne_zero
   · have heq := (hp.vertex_mem_edgeSet_iff 0 1).mp (by
       simpa [polygon_edgeSet_eq_segment] using h.symm.mem_segment)
     exact (by decide : ¬((0 : Fin 3) = 1 ∨ 0 = finRotate 3 1)) heq
-
 
 theorem roundedCorner_radial_factor_pos {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : 0 < δ) (hδsmall : δ < 2 / 9)
@@ -116,8 +102,6 @@ theorem roundedCorner_radial_factor_pos {ρ : ℝ → ℝ} {δ : ℝ}
       rw [hd, htail t ht'.le, abs_of_neg htneg]
       norm_num
 
-
-
 theorem planeDet_roundedCorner_barycenter (a b c : EuclideanSpace ℝ (Fin 2))
     {ρ : ℝ → ℝ} {t : ℝ} (hρ : DifferentiableAt ℝ ρ t) :
     planeDet (roundedCorner ρ b (b - a) (c - b) t - (1 / 3 : ℝ) • (a + b + c))
@@ -127,8 +111,6 @@ theorem planeDet_roundedCorner_barycenter (a b c : EuclideanSpace ℝ (Fin 2))
   simp only [planeDet, roundedCorner, PiLp.add_apply, PiLp.sub_apply, PiLp.smul_apply,
     smul_eq_mul]
   ring
-
-
 
 theorem hasDerivAt_roundedVertexPath {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] {ρ : ℝ → ℝ} (P : ℤ → E) {δ : ℝ}
@@ -156,7 +138,6 @@ theorem hasDerivAt_roundedVertexPath {E : Type*} [NormedAddCommGroup E]
   filter_upwards [isOpen_Ioo.mem_nhds ht] with s hs
   exact roundedVertexPath_eq_local P hδ hδhalf htail hbound i hs
 
-
 noncomputable def triangleBarycenter (p : Polygon (EuclideanSpace ℝ (Fin 2)) 3) :
     EuclideanSpace ℝ (Fin 2) := (1 / 3 : ℝ) • (p 0 + p 1 + p 2)
 
@@ -183,8 +164,6 @@ private theorem planeDet_triangle_corner
   · change planeDet (p 2 - p 1) (p 0 - p 2) = _
     simp only [planeDet, PiLp.sub_apply]
     ring
-
-
 
 theorem planeDet_roundedPolygonParameter_triangle
     (p : Polygon (EuclideanSpace ℝ (Fin 2)) 3) {ρ : ℝ → ℝ} {δ : ℝ}
@@ -215,8 +194,6 @@ theorem planeDet_roundedPolygonParameter_triangle
     (P (i + 1) - P i)) (t - i)) = _
   rw [planeDet_roundedCorner_barycenter _ _ _ (hρ (t - i)), hdet]
 
-
-
 theorem planeDet_roundedPolygonParameter_triangle_mul_pos
     (p : Polygon (EuclideanSpace ℝ (Fin 2)) 3)
     (hp : planeDet (p 1 - p 0) (p 2 - p 1) ≠ 0) {ρ : ℝ → ℝ} {δ : ℝ}
@@ -231,7 +208,6 @@ theorem planeDet_roundedPolygonParameter_triangle_mul_pos
   exact mul_pos (roundedCorner_radial_factor_pos hδ hδsmall htail hbound hder _)
     (sq_pos_of_ne_zero hp)
 
-
 theorem roundedPolygonParameter_triangle_ne_barycenter
     (p : Polygon (EuclideanSpace ℝ (Fin 2)) 3)
     (hp : planeDet (p 1 - p 0) (p 2 - p 1) ≠ 0) {ρ : ℝ → ℝ} {δ : ℝ}
@@ -244,8 +220,6 @@ theorem roundedPolygonParameter_triangle_ne_barycenter
   have hpos := planeDet_roundedPolygonParameter_triangle_mul_pos p hp hδ hδsmall
     htail hbound hρ hder t
   simp [heq, planeDet] at hpos
-
-
 
 theorem IsSimplePolygon.roundedTriangle_radial_transverse
     {p : Polygon (EuclideanSpace ℝ (Fin 2)) 3} (hp : IsSimplePolygon p)

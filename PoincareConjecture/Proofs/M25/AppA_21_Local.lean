@@ -9,15 +9,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapSecondEndTail
 import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalProtectedRestart
 import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalNegativeReturnCircle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +20,6 @@ namespace PoincareConjecture
 
 namespace M25
 
-
-
 def NonseparatingLocalInput : Prop :=
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -41,8 +30,6 @@ def NonseparatingLocalInput : Prop :=
       (∀ x ∈ H.X, ∃ N ∈ H.necks, N.center = x) →
       (∃ N ∈ H.necks, N.center ∈ H.X ∧ N.IsNonseparating) →
       Nonempty (RepairedNeckCapTopologyData g H)
-
-
 
 def FiniteCappedLocalInput : Prop :=
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -81,6 +68,5 @@ def FiniteCappedLocalInput : Prop :=
       Nonempty (RepairedNeckCapTopologyData g H)
 
 end M25
-
 
 end PoincareConjecture

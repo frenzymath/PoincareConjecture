@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.PulledBackAtlas
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainComposition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

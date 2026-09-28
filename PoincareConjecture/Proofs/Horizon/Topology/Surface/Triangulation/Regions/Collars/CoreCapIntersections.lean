@@ -1,13 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.OuterFaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.ConnectedIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Affine.Lines
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.BoundaryContact
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +19,6 @@ namespace ChartCircleArrangementVertexPatch.VertexCapFaces
 
 variable {r : M → ℝ} {p : M} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → M} (B : VertexCapFaces P x)
-
 
 noncomputable def chartChord (i : Bool × Bool) : Set Plane :=
   affineSegment ℝ
@@ -115,7 +108,6 @@ variable (D : FiniteChartRegionDecomposition (M := M))
   (caps : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
 
-
 noncomputable def capCoreContactLines (R : D.regions) : List (Plane →ᵃ[ℝ] ℝ) := by
   classical
   exact (Finset.univ : Finset {a : D.vertices × (Bool × Bool) // region a.1 a.2 = R}).toList.map
@@ -135,9 +127,6 @@ theorem capCoreContactLines_surjective (R : D.regions) :
   intro l hl
   obtain ⟨a, _, rfl⟩ := List.mem_map.mp hl
   exact ((caps a.1.1).chordSupportingLine_spec a.1.2).1
-
-
-
 
 theorem core_cap_boundaryIntersection
     (chart : D.regions → D.centers)
@@ -160,8 +149,6 @@ theorem core_cap_boundaryIntersection
     hregion hassign hcollar hinterior harrangement
   simpa only [hxR] using (caps p).core_contact_of_monochromatic T i
     (by simpa only [hxR] using hsource) (by simpa only [hxR] using hcontact) hmono t
-
-
 
 theorem core_cap_boundaryIntersections
     (chart : D.regions → D.centers)

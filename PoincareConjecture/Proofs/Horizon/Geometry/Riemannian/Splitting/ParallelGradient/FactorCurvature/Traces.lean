@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,8 +73,6 @@ private theorem norm_eq_sum_basis (D : LeviCivitaData g) (x : M)
   rw [expand, expand] at he
   exact congrArg Real.sqrt he
 
-
-
 theorem trace_identities
     (D : LeviCivitaData g) (Dh : LeviCivitaData h) (x : M) (y : N)
     (L : TangentSpace (𝓡 n) y →ₗ[ℝ] TangentSpace (𝓡 (n + 1)) x)
@@ -130,8 +121,6 @@ theorem trace_identities
       (Dh.curvatureTensor y (b i) (b j) (b k) (b l)) ^ 2) = _
     simp only [Fintype.sum_option, hB0, hBi, z₁, z₂, z₃, z₄, zero_pow (by decide : 2 ≠ 0),
       Finset.sum_const_zero, zero_add, hR]
-
-
 
 theorem nonnegativeCurvatureOperator_of_restriction
     (D : LeviCivitaData g) (Dh : LeviCivitaData h) (x : M) (y : N)

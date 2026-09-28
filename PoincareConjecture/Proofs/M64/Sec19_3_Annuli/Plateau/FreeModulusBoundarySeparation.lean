@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakVerticalSeparation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +10,6 @@ open Set MeasureTheory
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem periodic_curves_observed_separation
     {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E]
@@ -63,8 +47,6 @@ theorem periodic_curves_observed_separation
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
-
 
 theorem free_annulus_inverse_modulus_bound_of_disjoint_images
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}

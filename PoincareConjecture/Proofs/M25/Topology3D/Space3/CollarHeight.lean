@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.GaussNormal
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NormalPlane
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularFibers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,15 +9,12 @@ open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 theorem collar_central_contMDiff (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) :
     ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ (fun q : UnitTwoSphere => ψ (q, 0)) := by
   apply contMDiffOn_univ.mp
   exact hψ.1.comp (contMDiff_id.prodMk contMDiff_const).contMDiffOn
     (fun _ _ => ⟨mem_univ _, by norm_num⟩)
-
-
 
 theorem collar_central_mfderiv_injective (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (q : UnitTwoSphere) :
@@ -59,8 +45,6 @@ theorem collar_central_mfderiv_injective (ψ : UnitTwoSphere × ℝ → E3)
   have hb := congrArg (fun A => A b) hmap
   exact ha.trans ((congrArg (mfderiv 𝓘(ℝ, E3) (𝓡 2) k (f q)) hab).trans hb.symm)
 
-
-
 theorem collar_height_critical_iff (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (q : UnitTwoSphere) (n u : UnitTwoSphere)
     (hnormal : ∀ v : TangentSpace (𝓡 2) q,
@@ -85,8 +69,6 @@ theorem collar_height_critical_iff (ψ : UnitTwoSphere × ℝ → E3)
     apply ContinuousLinearMap.ext
     intro v
     exact hcriterion.mpr hsign v
-
-
 
 theorem exists_finite_collar_height_critical_points (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) :

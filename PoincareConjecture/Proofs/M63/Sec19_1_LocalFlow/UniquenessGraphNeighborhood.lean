@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactParameterNeighborhood
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessEmbeddedCurve
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_c2ShrinkingCurve_embedded_C1_neighborhood
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M} {J : Set ℝ}

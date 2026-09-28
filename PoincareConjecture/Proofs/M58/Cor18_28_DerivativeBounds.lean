@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_AreaRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem continuous_disk_derivative_column_norm (g : RiemannianMetric 3 M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 3) 1 F) (i : Fin 2) :
     Continuous (fun z => g.tangentNorm (F z)
@@ -33,8 +22,6 @@ theorem continuous_disk_derivative_column_norm (g : RiemannianMetric 3 M)
     ⟨⟨g.inner, g.contMDiff.continuous, fun _ _ _ => rfl⟩⟩
   exact ((continuous_disk_derivative_column hF i).inner_bundle
     (continuous_disk_derivative_column hF i)).sqrt
-
-
 
 theorem exists_disk_derivative_bound (g : RiemannianMetric 3 M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 3) 1 F) :

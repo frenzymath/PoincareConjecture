@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OrthogonalKernelProjection
 import PoincareConjecture.Proofs.M76.Mathlib.BasisEvaluation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry
 
 variable (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 @[ext] structure EuclideanSubspace where
 
@@ -25,15 +13,10 @@ variable (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
 variable [FiniteDimensional ℝ E]
 
-
-
-
 noncomputable instance EuclideanSubspace.instTopologicalSpace :
     TopologicalSpace (EuclideanSubspace E) :=
   TopologicalSpace.induced (fun K : EuclideanSubspace E => K.subspace.starProjection)
     inferInstance
-
-
 
 theorem EuclideanSubspace.continuous_projector :
     Continuous (fun K : EuclideanSubspace E => K.subspace.starProjection) :=
@@ -41,14 +24,10 @@ theorem EuclideanSubspace.continuous_projector :
 
 variable {E}
 
-
-
 theorem EuclideanSubspace.continuous_iff_projector {X : Type*} [TopologicalSpace X]
     {f : X → EuclideanSubspace E} :
     Continuous f ↔ Continuous (fun x => (f x).subspace.starProjection) :=
   continuous_induced_rng
-
-
 
 theorem EuclideanSubspace.projector_injective :
     Function.Injective (fun K : EuclideanSubspace E => K.subspace.starProjection) := by
@@ -56,10 +35,6 @@ theorem EuclideanSubspace.projector_injective :
   apply EuclideanSubspace.ext
   have h := congrArg (fun Q : E →L[ℝ] E => Q.range) he
   simpa only [Submodule.range_starProjection] using h
-
-
-
-
 
 theorem EuclideanSubspace.continuous_iff_projector_coordinates
     {ι X : Type*} [Finite ι] [TopologicalSpace X] (b : Module.Basis ι ℝ E)

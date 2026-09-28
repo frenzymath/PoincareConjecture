@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalMarkedPLApproximation
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {U X ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [FiniteDimensional ℝ U] [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem PLDomain.exists_marked_PL_approximation
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X} (he : PLDomain e R)

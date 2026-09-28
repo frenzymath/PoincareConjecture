@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcSignedInward
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcInwardOrientation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightJoinOccupiedStrips
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +11,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_straight_join_inward_propagation
     {alpha beta : ℝ → AnnulusCoordinates}

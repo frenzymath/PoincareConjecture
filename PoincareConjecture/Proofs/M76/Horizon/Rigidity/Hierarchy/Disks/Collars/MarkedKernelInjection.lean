@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.Signe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.MarkedRimCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarKernelInjectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 

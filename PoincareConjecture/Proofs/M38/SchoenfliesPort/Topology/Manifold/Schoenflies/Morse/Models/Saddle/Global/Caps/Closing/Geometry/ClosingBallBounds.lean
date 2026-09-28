@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.FilledSides
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Side.Filled
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +24,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem curved_closing_ball_height_le
     {v : E3} (hv : ‖v‖ = 1) (b w : Real) (hw : 0 < w)
@@ -68,8 +58,6 @@ theorem curved_closing_ball_height_le
     rw [hinv]
     linarith
 
-
-
 theorem closing_ball_projection_mem_filling
     {v : E3}
     (A : (Hemisphere.Plane v) ≃ₘ[Real] (Hemisphere.Plane v))
@@ -90,8 +78,6 @@ theorem closing_ball_projection_mem_filling
   intro y hy
   exact ⟨A.symm (P y), mem_closedBall_zero_iff.mpr (hb y hy), A.apply_symm_apply _⟩
 
-
-
 theorem prepared_closing_ball_projection_mem_filling
     {v : E3} {b : Real}
     (A : (Hemisphere.Plane v) ≃ₘ[Real] (Hemisphere.Plane v))
@@ -106,9 +92,6 @@ theorem prepared_closing_ball_projection_mem_filling
   change N y ∈ (N ∘ B) '' closedBall (0 : E3) 1
   rw [image_comp]
   exact mem_image_of_mem N hy
-
-
-
 
 theorem closing_ball_inter_band_subset_closing_disk
     {v : E3} {b c : Real}

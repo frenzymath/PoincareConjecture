@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerLipschi
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerLipschitzTrace
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,11 +15,6 @@ universe u
 namespace PoincareConjecture
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65SpanningDisk_weak_member
     {M : Type u} [TopologicalSpace M] [T2Space M]

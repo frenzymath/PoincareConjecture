@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.MetricExpansion.Variation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Transport.Shift
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem inner_connection_boundedNormalizedGradient_of_tangent
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -50,7 +40,6 @@ theorem inner_connection_boundedNormalizedGradient_of_tangent
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem flow_preserves_potential_differential_of_shift
     {f : M → ℝ} {Φ : ℝ → M → M}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -73,8 +62,6 @@ theorem flow_preserves_potential_differential_of_shift
     mdifferentiableAt_const, mvfderiv_const, add_zero] at hc
   exact (congrArg (fun L => L v) hc).symm
 
-
-
 theorem hasDerivAt_boundedNormalizedGradient_flow_squared_length
     (D : LeviCivitaData g) {f : M → ℝ} {Φ : ℝ → M → M}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -95,8 +82,6 @@ theorem hasDerivAt_boundedNormalizedGradient_flow_squared_length
   rw [D.inner_connection_boundedNormalizedGradient_of_tangent hf ha hx _ htan] at hd
   convert! hd using 1
   ring
-
-
 
 theorem boundedNormalizedGradient_flow_squared_length_monotoneOn
     (D : LeviCivitaData g) {f : M → ℝ} {Φ : ℝ → M → M}
@@ -127,8 +112,6 @@ theorem boundedNormalizedGradient_flow_squared_length_monotoneOn
   exact div_nonneg (mul_nonneg (by norm_num)
     (hhess _ (hhigh r (interior_subset hr)) _ (htan r (interior_subset hr))))
     ((by norm_num : (0 : ℝ) ≤ 1).trans (ha _ (hhigh r (interior_subset hr))))
-
-
 
 theorem boundedNormalizedGradient_flow_expands_level_metric
     (D : LeviCivitaData g) {f : M → ℝ} {Φ : ℝ → M → M}

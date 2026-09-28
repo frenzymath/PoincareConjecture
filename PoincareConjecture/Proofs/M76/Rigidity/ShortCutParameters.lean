@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianParameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem isEmbedding_hamiltonMeridianParameter_of_chart
     {a b : ℝ} (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -56,9 +45,6 @@ theorem isEmbedding_hamiltonMeridianParameter_of_chart
   have hzw := c.injOn hz' hw' hcw
   exact Subtype.ext (congrArg (fun v : D × ℝ => ((v.1 : V2), v.2)) hzw)
 
-
-
-
 theorem hamiltonMeridianParameter_range_mem_nhds_of_chart
     {a b : ℝ} (K : SimplicialComplex ℝ E)
     (hKbox : K.space = D ×ˢ Icc a b)
@@ -85,14 +71,10 @@ theorem hamiltonMeridianParameter_range_mem_nhds_of_chart
   apply Q.injective
   exact (hamiltonMeridianParameter_domainEquiv w.1 w.2).trans ((hc w).symm.trans heq)
 
-
-
 noncomputable def hamiltonMeridianWideBicollar : OpenPartialHomeomorph (D × ℝ) H :=
   (OpenPartialHomeomorph.refl D).prod
     ((AddCircle.shortArcQuotient p 2).trans
       hamiltonSolidTorusCircleEquiv.symm.toOpenPartialHomeomorph)
-
-
 
 theorem hamiltonMeridianWideBicollar_source :
     hamiltonMeridianWideBicollar.source = univ ×ˢ Ioo (-2 : ℝ) 2 := by
@@ -103,14 +85,8 @@ theorem hamiltonMeridianWideBicollar_source :
     (AddCircle.shortArcQuotient p 2) ⁻¹' univ) = _
   rw [preimage_univ, inter_univ, AddCircle.shortArcQuotient_source p (by norm_num)]
 
-
-
 theorem hamiltonMeridianWideBicollar_apply (w : D × ℝ) :
     hamiltonMeridianWideBicollar w = hamiltonMeridianCutMap w := rfl
-
-
-
-
 
 theorem exists_hamiltonMeridian_short_box (x : R) :
     ∃ (a b : ℝ) (K : SimplicialComplex ℝ E) (z : K.space),

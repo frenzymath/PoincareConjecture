@@ -1,18 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Topology.Instances.Matrix
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,7 +40,6 @@ lemma multilinear_apply_basis_expansion
   simp only [A.map_smul_univ, smul_eq_mul]
 
 omit [DecidableEq κ] in
-
 
 theorem multilinear_sum_mul_eq_inverse_gram
     (A B : MultilinearMap ℝ (fun _ : σ => E) ℝ)
@@ -105,7 +92,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   {ι κ σ : Type*} [Fintype ι] [Fintype κ] [Fintype σ] [DecidableEq σ]
 
-
 theorem multilinear_sum_sq_comp_linearIsometryEquiv
     (A : MultilinearMap ℝ (fun _ : σ => F) ℝ) (e : E ≃ₗᵢ[ℝ] F)
     (b : OrthonormalBasis ι ℝ E) (c : OrthonormalBasis κ ℝ F) :
@@ -121,13 +107,10 @@ section Continuity
 variable {ι σ α : Type*} [Fintype ι] [Fintype σ] [DecidableEq ι]
   [DecidableEq σ]
 
-
 noncomputable def tensorNormFromComponents (G : Matrix ι ι ℝ)
     (R : (σ → ι) → ℝ) : ℝ :=
   Real.sqrt (∑ i : σ → ι, ∑ j : σ → ι,
     (∏ r, G⁻¹ (i r) (j r)) * (R i * R j))
-
-
 
 theorem tendsto_tensorNormFromComponents {l : Filter α}
     {Gseq : α → Matrix ι ι ℝ} {G : Matrix ι ι ℝ}
@@ -156,8 +139,6 @@ theorem tendsto_tensorNormFromComponents {l : Filter α}
 
 end Continuity
 
-
-
 theorem tensorNormFromComponents_eq_sqrt_sum
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     {ι κ σ : Type*} [Fintype ι] [Fintype κ] [Fintype σ]
@@ -176,15 +157,12 @@ section VaryingMetrics
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [FiniteDimensional ℝ E]
   {σ : Type*} [Fintype σ] [DecidableEq σ]
 
-
-
 noncomputable def tensorHilbertSchmidtNorm (g : InnerProductSpace.Core ℝ E)
     (A : MultilinearMap ℝ (fun _ : σ => E) ℝ) : ℝ := by
   letI : NormedAddCommGroup E := g.toNormedAddCommGroup
   letI : InnerProductSpace ℝ E := InnerProductSpace.ofCore g.toCore
   exact Real.sqrt (∑ a : σ → Fin (Module.finrank ℝ E),
     (A (fun r => stdOrthonormalBasis ℝ E (a r))) ^ 2)
-
 
 theorem tensorHilbertSchmidtNorm_eq_tensorNormFromComponents
     (g : InnerProductSpace.Core ℝ E)
@@ -196,8 +174,6 @@ theorem tensorHilbertSchmidtNorm_eq_tensorNormFromComponents
   let : NormedAddCommGroup E := g.toNormedAddCommGroup
   let : InnerProductSpace ℝ E := InnerProductSpace.ofCore g.toCore
   exact (tensorNormFromComponents_eq_sqrt_sum A b (stdOrthonormalBasis ℝ E)).symm
-
-
 
 theorem tendsto_tensorHilbertSchmidtNorm
     {α : Type*} {l : Filter α}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.FirstExit
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y]
-
-
-
 
 theorem ball_subset_of_inverse_length_barrier
     (g : RiemannianMetric 3 X) (k : RiemannianMetric 3 Y)
@@ -51,9 +39,6 @@ theorem ball_subset_of_inverse_length_barrier
   rw [hγ0] at hbound
   have hsegment := M36.metric_pathELength_mono g γ (a := 0) (b := 1) le_rfl hc.2
   exact (not_lt_of_ge ((hboundary _ hfront).trans (hbound.trans hsegment))) hlength
-
-
-
 
 theorem isCompact_closure_ball_of_inverse_length_barrier [T2Space X]
     (g : RiemannianMetric 3 X) (k : RiemannianMetric 3 Y)

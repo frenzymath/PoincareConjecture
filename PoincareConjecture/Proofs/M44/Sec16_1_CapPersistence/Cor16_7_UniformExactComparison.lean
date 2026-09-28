@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_AdjustedComparison
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_initial_exact_comparison_threshold
     (g₀ : StandardInitialMetric) {tolerance : ℝ} (htol : 0 < tolerance) :

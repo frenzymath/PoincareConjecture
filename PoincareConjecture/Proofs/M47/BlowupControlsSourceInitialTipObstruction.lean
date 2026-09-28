@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNativeRicci
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSliceChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_neck_slice_not_tip_ricci_lower
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

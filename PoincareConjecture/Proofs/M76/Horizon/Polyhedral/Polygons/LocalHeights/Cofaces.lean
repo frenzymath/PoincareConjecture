@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Graph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
 
 theorem existsUnique_triangleSlice_neighbor_of_coface (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

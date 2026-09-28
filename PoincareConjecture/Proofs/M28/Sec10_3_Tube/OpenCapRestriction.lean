@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricIntrinsicDiameter
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricVolume
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,8 +24,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [SecondCountableTopology M] {g : RiemannianMetric 3 M}
-
-
 
 def restrictOpen (N : CapCertificate g) (V : TopologicalSpace.Opens M)
     (hNV : N.carrier ⊆ (V : Set M))
@@ -201,43 +188,36 @@ def restrictOpen (N : CapCertificate g) (V : TopologicalSpace.Opens M)
         intrinsicOpenMetric_scalarCurvature g V DV N.connection]
       exact hlap x hx }
 
-
 @[simp] theorem restrictOpen_epsilon (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).epsilon = N.epsilon := rfl
-
 
 @[simp] theorem restrictOpen_cap_constant (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).cap_constant = N.cap_constant := rfl
 
-
 @[simp] theorem restrictOpen_connection (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).connection = DV := rfl
-
 
 @[simp] theorem restrictOpen_carrier (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).carrier = (Subtype.val : V → M) ⁻¹' N.carrier := rfl
 
-
 @[simp] theorem restrictOpen_core (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).core = (Subtype.val : V → M) ⁻¹' N.core := rfl
-
 
 @[simp] theorem restrictOpen_closed_core (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DV : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DV).closed_core =
       (Subtype.val : V → M) ⁻¹' N.closed_core := rfl
-
 
 @[simp] theorem restrictOpen_core_radius (N : CapCertificate g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))

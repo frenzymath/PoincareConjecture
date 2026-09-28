@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Wall.InteriorArcPairChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
 
 theorem PLDomain.exists_boundary_interior_arc_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -112,7 +102,6 @@ theorem PLDomain.exists_boundary_interior_arc_chart
   exact ⟨T,ell,psi,b,c,hxT,fun y hy => (hUmW (hTs hy).1).2,
     hT0,hTc,hb,hpb,hc,hpc,hTF,hTL⟩
 
-
 theorem PLDomain.exists_boundary_two_arc_endpoint_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {R : Set X}
@@ -184,7 +173,6 @@ theorem PLDomain.exists_boundary_two_arc_endpoint_chart
   exact ⟨T,ell,psi,a,b,hxT,fun y hy => (hUmW (hTs hy).1).2,
     hT0,hTc,ha,hpa,hb,hpb,hTF,hTL⟩
 
-
 theorem PLDomain.exists_boundary_two_arc_chart_at_first
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {R : Set X}
@@ -255,7 +243,6 @@ theorem PLDomain.exists_boundary_two_arc_chart_at_first
   rw [mem_union,or_iff_left (hTs hy).2]
   exact hTL y hy
 
-
 theorem exists_original_interval_parameter
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X]
@@ -289,9 +276,6 @@ theorem exists_original_interval_parameter
     rw [←hpq ⟨0,⟨le_rfl,zero_le_one⟩⟩,hp0]
   · change f (q 1) = f b
     rw [←hpq ⟨1,⟨zero_le_one,le_rfl⟩⟩,hp1]
-
-
-
 
 theorem PLDomain.exists_boundary_two_interval_loop_chart
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -341,4 +325,3 @@ theorem PLDomain.exists_boundary_two_interval_loop_chart
     simpa only [hpI,hqI,union_comm] using h
 
 end PoincareConjecture.M76
-

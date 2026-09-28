@@ -5,15 +5,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M30
-
-
 
 theorem isLocalDiffeomorph_transverseFlowout
     {n : ℕ} {S : Type u} {Q : Type v}

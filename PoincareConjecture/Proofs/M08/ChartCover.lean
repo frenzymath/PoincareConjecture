@@ -3,19 +3,11 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 
 namespace PoincareConjecture.M08
-
 
 theorem uniform_composition_on_compact_core {X Y : Type*} [MetricSpace X] [UniformSpace Y]
     {a b : ℝ} {K : Set X} (hK : IsCompact K) (B : ℝ × X → Y)

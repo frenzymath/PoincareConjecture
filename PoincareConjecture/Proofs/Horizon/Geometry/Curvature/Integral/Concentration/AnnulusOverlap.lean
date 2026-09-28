@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.GeometricAnnuli
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
 open scoped BigOperators
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem card_geometric_annuli_mem_le
     {A B r₀ q : ℝ} {L : ℕ} (hB : 0 < B) (hr₀ : 0 < r₀)
@@ -39,8 +36,6 @@ theorem card_geometric_annuli_mem_le
     exact (Finset.card_le_card hsub).trans_eq (by simp)
   · rw [Finset.not_nonempty_iff_eq_empty.mp hS, Finset.card_empty]
     exact Nat.zero_le L
-
-
 
 theorem sum_integral_geometric_annuli_le
     {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]
@@ -93,8 +88,6 @@ theorem sum_integral_geometric_annuli_le
       Finset.sum_congr rfl (fun j _ => (integral_indicator (hUm j)).symm)
     _ ≤ _ := hi
 
-
-
 theorem exists_buffered_annulus_overlap :
     ∃ L : ℕ, 0 < L ∧ 3 * (227 / 228 : ℝ) ^ L < 1 / 2 := by
   obtain ⟨L, hL⟩ := exists_pow_lt_of_lt_one (show (0 : ℝ) < 1 / 6 by norm_num)
@@ -104,9 +97,6 @@ theorem exists_buffered_annulus_overlap :
     have hzero : L = 0 := by omega
     norm_num [hzero] at hL
   · linarith
-
-
-
 
 theorem integral_le_of_weighted_geometric_annulus_bounds
     {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]
@@ -170,7 +160,6 @@ theorem integral_le_of_weighted_geometric_annulus_bounds
     _ ≤ C * r₀ ^ m / (1 - q ^ m) + D * ((L : ℝ) * ∫ x in W, K x ∂μ) :=
       add_le_add hgeom (mul_le_mul_of_nonneg_left herr hD)
     _ = _ := by ring
-
 
 theorem integral_le_of_weighted_geometric_annulus_bounds_above_scale
     {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]

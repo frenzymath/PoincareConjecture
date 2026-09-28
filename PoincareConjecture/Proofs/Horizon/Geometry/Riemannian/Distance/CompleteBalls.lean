@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Approximat
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.LengthProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M]
-
-
 
 theorem isCompact_closedBall_of_metricComplete (g : RiemannianMetric n M)
     (hcomplete : MetricComplete g) (p : M) (r : ℝ) :

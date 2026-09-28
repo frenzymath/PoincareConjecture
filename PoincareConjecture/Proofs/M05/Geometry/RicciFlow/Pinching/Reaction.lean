@@ -1,20 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Algebra
 
-
-
-
-
-
-
-
 namespace Poincare
-
-
-
-
-
-
 
 theorem pinchingReactionBarrier
     {lam mu nu : ℝ} {S X : ℝ → ℝ} {t dS dX : ℝ}

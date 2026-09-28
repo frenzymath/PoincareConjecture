@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
-
-
 
 theorem dual_apply_eq_sum_coordinates {κ : Type*} [Fintype κ] [DecidableEq κ]
     (c : Module.Dual (ZMod 2) (κ → ZMod 2)) (f : κ → ZMod 2) :
@@ -35,15 +25,12 @@ variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
 
-
 theorem triangleCoboundary_single (t : Triangle A) (q : Tetrahedron A) :
     triangleCoboundary A (Pi.single t 1) q = if t.val ⊆ q.val then 1 else 0 := by
   rw [triangleCoboundary_apply, Finset.sum_pi_single']
   simp only [tetrahedronTriangles, Finset.mem_filter, Finset.mem_univ, true_and]
 
 open Classical in
-
-
 
 theorem boundary3_single_eq_sum_coordinates
     (c : Module.Dual (ZMod 2) (Tetrahedron A → ZMod 2)) (t : Triangle A) :
@@ -60,8 +47,6 @@ theorem boundary3_single_eq_sum_coordinates
 
 open Classical in
 
-
-
 theorem tetrahedronChain_eq_smul_total_of_coordinates
     (c : Module.Dual (ZMod 2) (Tetrahedron A → ZMod 2)) (r : ZMod 2)
     (h : ∀ q : Tetrahedron A, c (Pi.single q 1) = r) :
@@ -75,7 +60,6 @@ theorem tetrahedronChain_eq_smul_total_of_coordinates
   rw [h q, mul_comm]
 
 open Classical in
-
 
 theorem markedTriangleChain_single (B : Triangle A → Prop) (t : Triangle A) :
     markedTriangleChain A B (Pi.single t 1) = if B t then 1 else 0 := by

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinGauge
 import PoincareConjecture.Proofs.M14.Sec6_1_GaugeEnergy
 import PoincareConjecture.Proofs.M14.Mathlib.BlendEnergyLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
   {q : M14BackwardPath G T τ₁ τ₂ x y}
   {p : M14BackwardPath G T τ₁ c x (q.curve c)} (D : PrefixJoinGauge q p)
-
-
-
 
 theorem blend_energy_properties (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     let f := fun s => (D.lift (p.curve s)).2.val

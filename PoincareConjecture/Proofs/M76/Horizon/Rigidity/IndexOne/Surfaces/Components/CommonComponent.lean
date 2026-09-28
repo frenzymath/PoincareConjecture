@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Componen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.OneRimObstruction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RimComponents
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar
 

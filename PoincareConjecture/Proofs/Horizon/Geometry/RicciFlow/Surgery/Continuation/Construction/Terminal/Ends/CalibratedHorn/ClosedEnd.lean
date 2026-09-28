@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.HalfNormalization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,8 +38,6 @@ theorem isClosed_closedTail_of_isClosed_closedTail
         hx'.2.trans (le_max_right _ _)⟩
     · exact ⟨(min_le_right _ _).trans hx'.2,
         (le_of_lt (lt_of_not_ge hnot)).trans (le_max_left _ _)⟩
-
-
 
 theorem exists_closedHalf_of_closedTail
     (Q P : OpenCylinderModel U) (side : Bool)

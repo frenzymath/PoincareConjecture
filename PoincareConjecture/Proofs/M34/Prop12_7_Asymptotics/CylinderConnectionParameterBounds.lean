@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderFiniteJets
 import PoincareConjecture.Proofs.M34.Mathlib.MatrixInverseSmoothOn
 import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "Q" => Set.prod (Iio (1 : ℝ)) (univ : Set RoundCylinderCoordinates)
-
-
 
 theorem roundCylinderGram_joint_contDiff (q : UnitTwoSphere) (a b : Fin 3) :
     ContDiff ℝ ∞ (fun z : ℝ × RoundCylinderCoordinates =>
@@ -37,15 +25,11 @@ theorem roundCylinderGram_joint_contDiff (q : UnitTwoSphere) (a b : Fin 3) :
   exact ((contDiff_const.mul (contDiff_const.sub contDiff_fst)).mul hρ
     |>.mul contDiff_const).add contDiff_const
 
-
-
 theorem roundCylinderGram_inv_joint_contDiffOn (q : UnitTwoSphere) (a b : Fin 3) :
     ContDiffOn ℝ ∞ (fun z : ℝ × RoundCylinderCoordinates =>
       (roundCylinderGram z.1 (chartAt E₂ q) z.2)⁻¹ a b) Q :=
   ContDiffOn.matrix_inv (fun i j => (roundCylinderGram_joint_contDiff q i j).contDiffOn)
     (fun z hz => roundCylinderGram_det_ne_zero hz.1 q z.2) a b
-
-
 
 theorem roundCylinderChristoffel_joint_contDiffOn (q : UnitTwoSphere) (a b d : Fin 3) :
     ContDiffOn ℝ ∞ (fun z : ℝ × RoundCylinderCoordinates =>
@@ -60,9 +44,6 @@ theorem roundCylinderChristoffel_joint_contDiffOn (q : UnitTwoSphere) (a b d : F
   exact contDiffOn_const.mul (ContDiffOn.sum fun j _ =>
     (roundCylinderGram_inv_joint_contDiffOn q a j).mul
       (((hd d j b).add (hd b j d)).sub (hd b d j)))
-
-
-
 
 theorem roundCylinderChristoffel_uniform_spatial_jet_bound
     {T : ℝ} (hT : T < 1) {K : Set RoundCylinderCoordinates} (hK : IsCompact K) (m : ℕ) :

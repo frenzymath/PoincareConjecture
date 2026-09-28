@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.CappedSphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -45,9 +37,6 @@ private theorem smoothEmbedding_postcompose
     (hf.contMDiff.mdifferentiable (by simp) p)]
   exact (R.mfderivToContinuousLinearEquiv (by simp) (f p)).injective.comp
     (injective_mfderiv_sphere_embedding hf p)
-
-
-
 
 theorem exists_outward_capped_sphere_of_cylindrical_tube_with_disk_and_range_for_small_scale
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

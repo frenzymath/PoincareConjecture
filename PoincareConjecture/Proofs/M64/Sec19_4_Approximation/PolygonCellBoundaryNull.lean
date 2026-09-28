@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellCompact
 import Mathlib.Analysis.Convex.Measure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Topology Bundle ENNReal NNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64PolygonCellSet_convex {N : ℕ} (j : Fin N) :
     Convex ℝ (m64PolygonCellSet j) := by
@@ -56,9 +42,6 @@ theorem m64PolygonCellSet_convex {N : ℕ} (j : Fin N) :
         add_le_add (mul_le_mul_of_nonneg_left hx.2.2.2 ha)
           (mul_le_mul_of_nonneg_left hy.2.2.2 hb)
       _ = 1 := by rw [← add_mul, hab, one_mul]
-
-
-
 
 theorem m64_polygon_cells_cover {N : ℕ} (hN : 0 < N) :
     ∀ p ∈ m64AnnulusDomain, ∃ j : Fin N, p ∈ m64PolygonCellSet j := by
@@ -105,10 +88,6 @@ theorem m64_polygon_cells_cover {N : ℕ} (hN : 0 < N) :
           rw [← hNell, ← hn]
           ring
         _ ≤ ((N - 1 : ℕ) : ℝ) * m63CellLength N + m63CellLength N := le_rfl
-
-
-
-
 
 theorem m64_polygon_cells_interior_ae {N : ℕ} (hN : 0 < N) :
     ∀ᵐ p ∂volume.restrict m64AnnulusDomain,

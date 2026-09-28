@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.AdaptedChart
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

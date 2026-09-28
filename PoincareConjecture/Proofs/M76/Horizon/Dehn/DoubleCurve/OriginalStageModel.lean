@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.OrdinaryModel
 import PoincareConjecture.Proofs.M76.Dehn.OriginalOrdinaryDoubleArcComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology PoincareConjecture.M76.Dehn
@@ -18,8 +10,6 @@ namespace Geometry.OriginalPLTower
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 theorem Step.nonempty_ordinary_double_curve_model
     {M ι : Type*} [TopologicalSpace M]

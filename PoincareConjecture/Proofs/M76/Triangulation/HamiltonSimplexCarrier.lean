@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCompactSimplexPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,18 +11,12 @@ section Carrier
 
 variable {X V : Type*} [TopologicalSpace X] [TopologicalSpace V]
 
-
-
 def hamiltonModelCarrier {D : Set V} {C : Set X} (G : D ≃ₜ C) (B : Set V) : Set X :=
   (fun y : D => (G y : X)) '' (Subtype.val ⁻¹' B)
-
-
 
 theorem hamiltonModelCarrier_mono {D : Set V} {C : Set X} (G : D ≃ₜ C)
     {B Q : Set V} (hBQ : B ⊆ Q) : hamiltonModelCarrier G B ⊆ hamiltonModelCarrier G Q :=
   image_mono (preimage_mono hBQ)
-
-
 
 theorem isCompact_hamiltonModelCarrier {D : Set V} {C : Set X} (G : D ≃ₜ C)
     {B : Set V} (hB : IsCompact B) (hBD : B ⊆ D) : IsCompact (hamiltonModelCarrier G B) := by
@@ -39,8 +24,6 @@ theorem isCompact_hamiltonModelCarrier {D : Set V} {C : Set X} (G : D ≃ₜ C)
     Topology.IsEmbedding.subtypeVal.isInducing.isCompact_preimage' hB
       (by simpa only [Subtype.range_coe] using hBD)
   exact hBsub.image (continuous_subtype_val.comp G.continuous)
-
-
 
 theorem disjoint_hamiltonModelCarrier {D : Set V} {C : Set X} (G : D ≃ₜ C)
     {B Q : Set V} (hBQ : Disjoint B Q) :
@@ -56,10 +39,6 @@ end Carrier
 variable {X V E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem hamilton_face_coordinates
     {C : Set X} (K : SimplicialComplex ℝ V) (G : K.space ≃ₜ C)

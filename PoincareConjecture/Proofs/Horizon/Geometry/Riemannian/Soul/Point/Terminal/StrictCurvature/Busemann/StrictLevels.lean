@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Horoball
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -17,8 +9,6 @@ open scoped Topology
 namespace Poincare.Riemannian.Soul
 
 variable {M : Type*} [MetricSpace M]
-
-
 
 theorem exists_smaller_horoball_level_of_transformed_gap
     {p x : M} {c δ : ℝ} (hδ : 0 < δ)
@@ -40,8 +30,6 @@ theorem exists_smaller_horoball_level_of_transformed_gap
   have hexp : Real.exp (-busemann ray x) < Real.exp (c - r / 2) := by linarith
   have harg := Real.exp_lt_exp.mp hexp
   linarith
-
-
 
 theorem midpoint_mem_interior_horoball_of_uniform_transformed_concavity
     {p : M} {curve : ℝ → M} {a b c δ : ℝ} (hab : a < b) (hδ : 0 < δ)

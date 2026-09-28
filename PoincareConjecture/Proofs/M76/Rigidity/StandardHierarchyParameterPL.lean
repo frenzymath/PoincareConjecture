@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -41,27 +31,17 @@ private theorem finiteAffine_on_ballPair
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKS, _⟩, _⟩, _⟩ := hS
   exact ⟨K, hK, hKS, K.affineOnFaces_affine a⟩
 
-
-
 def hamiltonZeroTorusParameter (z : ℝ × ℝ) : X0 :=
   (0, QuotientAddGroup.mk ![z.1, z.2, 0])
-
-
 
 def hamiltonZeroCutParameter (z : (ℝ × ℝ) × ℝ) : X0 :=
   (0, QuotientAddGroup.mk ![z.1.1, z.1.2, z.2])
 
-
-
 def hamiltonOneAnnulusParameter (z : V1 × ℝ) : X1 :=
   (z.1, QuotientAddGroup.mk ![z.2, 0])
 
-
-
 def hamiltonOneCutParameter (z : (V1 × ℝ) × ℝ) : X1 :=
   (z.1.1, QuotientAddGroup.mk ![z.1.2, z.2])
-
-
 
 theorem hamiltonZeroTorusParameter_eq_surface (s t : ℝ) :
     ((latticeHandleDomainEquiv (Fin 0) (Fin 3) L0).symm
@@ -72,16 +52,12 @@ theorem hamiltonZeroTorusParameter_eq_surface (s t : ℝ) :
   rw [he]
   rfl
 
-
-
 theorem hamiltonZeroCutParameter_eq_cut (s t u : ℝ) :
     ((latticeHandleDomainEquiv (Fin 0) (Fin 3) L0).symm
       (hamiltonZeroHierarchyCut (((s : C0), (t : C0)), u)) : X0) =
         hamiltonZeroCutParameter ((s, t), u) := by
   rw [hamiltonZeroHierarchyCut_coe]
   rfl
-
-
 
 theorem hamiltonOneAnnulusParameter_eq_surface (x : D1) (s : ℝ) :
     ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L1).symm
@@ -92,16 +68,12 @@ theorem hamiltonOneAnnulusParameter_eq_surface (x : D1) (s : ℝ) :
   rw [he]
   rfl
 
-
-
 theorem hamiltonOneCutParameter_eq_cut (x : D1) (s t : ℝ) :
     ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L1).symm
       (hamiltonOneHierarchyCut ((x, (s : C1)), t)) : X1) =
         hamiltonOneCutParameter (((x : V1), s), t) := by
   rw [hamiltonOneHierarchyCut_coe]
   rfl
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_zeroTorusParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}
@@ -125,8 +97,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_zeroTorusParameter
       funext i
       fin_cases i <;> rfl
   rwa [he] at hp
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_zeroCutParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}
@@ -155,8 +125,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_zeroCutParameter
       fin_cases i <;> rfl
   rwa [he] at hp
 
-
-
 theorem StandardLatticeHandleAtlas.polyhedralPL_oneAnnulusParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X1 (Fin 3 → ℝ)}
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L1 d) :
@@ -179,8 +147,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_oneAnnulusParameter
       funext i
       fin_cases i <;> rfl
   rwa [he] at hp
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_oneCutParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X1 (Fin 3 → ℝ)}

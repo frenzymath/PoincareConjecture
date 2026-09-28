@@ -7,22 +7,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceSurfacePullback
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCore
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_connected_upper_level
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

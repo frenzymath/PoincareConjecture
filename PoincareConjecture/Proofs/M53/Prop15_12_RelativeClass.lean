@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_NullHomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralRelativeChains
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -25,9 +15,6 @@ open PoincareConjecture.Proofs.M02.Topology
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem sphereRelativeBoundary_surjective
     (S : SmoothEmbeddedNullHomotopicSphere (M := M)) (n : Nat) (hn : n ≠ 0) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.WeightedKernelEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeGain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory ProbabilityTheory
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {A F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem heatAverage_weighted_vanishes_uniformly
     {f : A → V → F} {C T : ℝ}
@@ -46,8 +35,6 @@ theorem heatAverage_weighted_vanishes_uniformly
     _ = ∫ z, (1 : ℝ) * ((1 + ‖x‖) * ‖f a (x + Real.sqrt (2 * t) • z)‖)
         ∂stdGaussian V := by simp only [one_mul]; rw [integral_const_mul]
     _ < e := h
-
-
 
 theorem heatGradientKernel_weighted_vanishes_uniformly
     {f : A → V → F} {C T : ℝ}

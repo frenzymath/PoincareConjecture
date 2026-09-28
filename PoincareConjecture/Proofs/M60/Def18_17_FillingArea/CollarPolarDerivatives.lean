@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LoopCollar
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m60LoopCollar_polar (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ) :
     m60LoopCollar C γ₀ γ₁ (r • angularPoint t) =
@@ -37,8 +26,6 @@ theorem m60LoopCollar_polar (C : ℝ × (M × M) → M)
     rw [radialNormalization, hnorm, smul_smul, inv_mul_cancel₀ hr.ne', one_smul]
   rw [m60LoopCollar, hnorm, hrad]
   rfl
-
-
 
 theorem m60LoopCollar_mfderiv_radial (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ)
@@ -88,8 +75,6 @@ theorem m60LoopCollar_mfderiv_radial (C : ℝ × (M × M) → M)
   have hv : (-deriv diskTimeProfile r, 0, 0) = -deriv diskTimeProfile r •
       ((1, 0, 0) : ℝ × (LoopAmbient × LoopAmbient)) := by simp
   erw [hv, map_smul]
-
-
 
 theorem m60LoopCollar_mfderiv_angular (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M)) {r : ℝ} (hr : 0 < r) (t : ℝ)

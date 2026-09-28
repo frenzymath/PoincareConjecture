@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.BoundedSpher
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalFiniteSphereCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3CutBallObstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

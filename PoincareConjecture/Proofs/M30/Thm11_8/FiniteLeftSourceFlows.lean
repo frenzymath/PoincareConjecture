@@ -12,15 +12,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,9 +44,6 @@ private theorem openCodomain_localDiffeomorph
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 theorem exists_extended_source_flows_on_generalized_stage
     (hShi : LocalCurvatureDerivativeEstimates.{u})

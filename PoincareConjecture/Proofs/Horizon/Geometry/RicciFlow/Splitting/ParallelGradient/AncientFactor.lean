@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGr
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Nonflatness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Main
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +15,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open RiemannianMetric
-
-
 
 theorem exists_ancientKappaSolution_factor_of_minimizing_line
     {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

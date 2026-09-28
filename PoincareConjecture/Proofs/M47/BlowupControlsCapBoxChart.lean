@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxMetric
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothImageInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
 
 def capBoxDomain (N : EpsilonNeck g) (s : ℝ) : Set E :=
   centeredNeckDomain N s ∩ {p | ‖cylinderHorizontalProjection p‖ < 1}
@@ -45,7 +35,6 @@ private theorem capBoxImage_isOpen (N : EpsilonNeck g) (q : UnitTwoSphere) (s : 
     exact (centeredNeckInverse_contMDiffAt_lift N q s hp.1).contMDiffWithinAt
   · intro p hp
     exact centeredNeckInverse_lift N q s hp.1
-
 
 noncomputable def capBoxChart (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) E M ∞ where
@@ -67,8 +56,6 @@ noncomputable def capBoxChart (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) 
   contMDiffOn_invFun := by
     rintro y ⟨p, hp, rfl⟩
     exact (centeredNeckInverse_contMDiffAt_lift N q s hp.1).contMDiffWithinAt
-
-
 
 theorem capBoxChart_inverse_tangent_bound (N : EpsilonNeck g) (q : UnitTwoSphere)
     (s : ℝ) {p : E} (hp : p ∈ (capBoxChart N q s).source) (v : E) :

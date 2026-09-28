@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedCylinders
 import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ private theorem historyPoint_time_mem (G : GeneralizedRicciFlowData.{u}) (p : G.
   obtain ⟨b, hb, x, hx⟩ := G.box_covers p.1 p.2
   exact m33BoxIntervalSubset G b hb
 
-
-
 def historyPhysicalPoint {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
     (H : M33RegularHistoryRealization G F) (p : G.point) :
     Σ t, (F.slice t).carrier :=
@@ -46,9 +34,6 @@ private theorem preIdentify_congr {F : SurgeryFlowData.{u}}
       ((F.event t hT).pre_identify ⟨z.1, hz⟩).symm z.2 := by
   cases hpz
   rfl
-
-
-
 
 theorem disappearingCap_trace_closure_excludes_top
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}

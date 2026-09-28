@@ -7,14 +7,6 @@ import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Topology.Sequences
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology
@@ -195,4 +187,3 @@ theorem exists_smooth_upper_support_of_bounded_jets
     exact add_le_add hBtrace hμtrace
 
 end PoincareConjecture.M04
-

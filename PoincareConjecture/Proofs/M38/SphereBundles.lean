@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M38
 
 attribute [local instance] SphereBundleCircleModel.carrier_topology
   SphereBundleCircleModel.carrier_charted SphereBundleCircleModel.carrier_manifold
-
-
 
 noncomputable def bundleAlongDiffeomorph (Q : SphereBundleCircleModel.{u})
     {S : GeneralizedSliceCarrier.{u}}
@@ -49,8 +38,6 @@ noncomputable def bundleAlongDiffeomorph (Q : SphereBundleCircleModel.{u})
     · exact d.symm.contMDiff.comp_contMDiffOn hg
     · intro x hx
       exact hp (d x) hx
-
-
 
 noncomputable def componentBundleDiffeomorph (S : GeneralizedSliceCarrier.{u})
     {g : RiemannianMetric 3 S.carrier} {X : Set S.carrier}
@@ -88,8 +75,6 @@ noncomputable def componentBundleDiffeomorph (S : GeneralizedSliceCarrier.{u})
       (fun y _ => hcarrier.symm.subset y.property)
   · apply (ContMDiff.subtypeVal_comp_iff (componentOpen S x) inverse).mp
     exact Q.inverse_smooth
-
-
 
 noncomputable def bundleOnComponent (S : GeneralizedSliceCarrier.{u})
     {g : RiemannianMetric 3 S.carrier} {X : Set S.carrier}

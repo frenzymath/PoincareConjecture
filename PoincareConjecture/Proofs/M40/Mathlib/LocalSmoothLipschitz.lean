@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingRiemannian
 import PoincareConjecture.Proofs.M40.Mathlib.RiemannianVectorNorm
 import PoincareConjecture.Proofs.M01.NormalizationLocalDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set Filter Metric
@@ -29,10 +18,6 @@ variable {E : Type uE} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type uE)]
   [IsRiemannianManifold I M]
   {F : Type uF} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
-
-
-
 
 theorem exists_lipschitzOn_nhds_of_contMDiffAt
     {f : M → F} {x : M} (hf : ContMDiffAt I 𝓘(ℝ, F) 1 f x) :

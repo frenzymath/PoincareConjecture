@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.MarkedDisplacementExtension
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open scoped BigOperators

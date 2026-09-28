@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeFrame
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,14 +11,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 theorem contMDiff_space_slice (C : SpacetimeCharts n M a b)
     (t : OpenTime a b) :
     ContMDiff (M' := C.Point) (𝓡 n) (𝓡 (n + 1)) ∞ (fun p : M => (p, t)) := by
   let := C.chartedSpace
   exact C.from_product_smooth.comp (contMDiff_id.prodMk contMDiff_const)
-
-
 
 theorem mfderiv_space_slice (C : SpacetimeCharts n M a b)
     (t : OpenTime a b) (p : M) (V : TangentSpace (𝓡 n) p) :
@@ -50,8 +38,6 @@ theorem mfderiv_space_slice (C : SpacetimeCharts n M a b)
   simp [horizontal, mfderiv_id, mfderiv_const]
   rfl
 
-
-
 theorem mvfderiv_space_slice (C : SpacetimeCharts n M a b)
     (f : C.Point → ℝ) (q : C.Point)
     (hf : MDifferentiableAt (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f q)
@@ -64,16 +50,12 @@ theorem mvfderiv_space_slice (C : SpacetimeCharts n M a b)
   rw [C.mfderiv_space_slice] at h
   exact h.symm
 
-
-
 theorem liftSpatialField_slice_smooth (C : SpacetimeCharts n M a b)
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p)
     (hB : C.IsSmoothField (C.liftSpatialField B)) (t : OpenTime a b) :
     ContMDiff (𝓡 n) (𝓡 n).tangent ∞ (T% (B t)) := by
   have h := (C.liftSpatialField_smooth_iff B).mp hB
   exact h.comp (contMDiff_id.prodMk (contMDiff_const (c := t)))
-
-
 
 theorem liftSpatialField_slice_smoothAt (C : SpacetimeCharts n M a b)
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p) (q : C.Point)

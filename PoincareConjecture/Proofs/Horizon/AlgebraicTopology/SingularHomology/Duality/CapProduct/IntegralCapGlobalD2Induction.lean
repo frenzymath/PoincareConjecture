@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Coho
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralOpenUnionMayerVietoris
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CompactSupport.IntegralCompactSupportCap
 
-
 set_option autoImplicit false
 
 noncomputable section

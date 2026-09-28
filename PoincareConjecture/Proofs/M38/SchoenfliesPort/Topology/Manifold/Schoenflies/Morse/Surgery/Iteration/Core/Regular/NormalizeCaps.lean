@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Regular.Range
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.TruncatedCap
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,7 +25,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
 
-
 def modelImageAt (D : SphereSurgeryCoreCap v g B) (c : Real) : Set E3 :=
   liftPlaneDiffeomorph D.unit_v c D.scale D.scale_ne_zero D.planeMap ''
     boundedCylinderNorthernCap v
@@ -45,8 +36,6 @@ private theorem height_le_modelImageAt (D : SphereSurgeryCoreCap v g B)
   rw [inner_liftPlaneDiffeomorph]
   have hnonneg := height_nonneg_of_mem_boundedCylinderNorthernCap hz
   nlinarith
-
-
 
 theorem exists_normalization_of_two_truncated_caps
     (D E : SphereSurgeryCoreCap v g B)

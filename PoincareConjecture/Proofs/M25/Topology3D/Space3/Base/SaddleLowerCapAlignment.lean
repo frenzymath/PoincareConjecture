@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleLowerLevelBand
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsPairedAlignment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem SaddleLowerLevelData.exists_fixed_lower_tube_band
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -82,9 +69,6 @@ theorem SaddleLowerLevelData.exists_fixed_lower_tube_band
     linarith [hagap i]
   · intro i z hz
     exact hacircle i z ⟨by linarith [hz.1], by linarith [hz.2]⟩
-
-
-
 
 theorem SaddleLowerLevelData.exists_lower_cap_alignment
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

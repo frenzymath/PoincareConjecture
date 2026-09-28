@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.IntrinsicSpatialSystem
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem m65Exists_finite_chart_cores [T2Space M] {C : Set M} (hC : IsCompact C) :
     ∃ (m : ℕ) (p : Fin m → M) (K : Fin m → Set M),
@@ -49,8 +40,6 @@ theorem m65Exists_finite_chart_cores [T2Space M] {C : Set M} (hC : IsCompact C) 
   obtain ⟨z, hzs, hz⟩ := mem_iUnion₂.mp (hs hy)
   refine ⟨e.symm ⟨z, hzs⟩, ?_⟩
   simpa only [Equiv.apply_symm_apply] using hz
-
-
 
 theorem m65FlowChartMetric_uniform_lower (p : M)
     {K : Set (ℝ × EuclideanSpace ℝ (Fin n))} (hK : IsCompact K)
@@ -105,8 +94,6 @@ theorem m65FlowChartMetric_uniform_lower (p : M)
     _ ≤ max 1 (1 / δ) * Real.sqrt (m65FlowChartMetric F p z v v) :=
       mul_le_mul_of_nonneg_right (le_max_right _ _) (Real.sqrt_nonneg _)
 
-
-
 theorem m65VerticalPairing_abs_le {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (t : ℝ) (q : P.charts.Point)
     (V : TangentSpace (𝓡 (n + 1)) q) :
@@ -119,9 +106,6 @@ theorem m65VerticalPairing_abs_le {circumference : ℝ}
   unfold RiemannianMetric.tangentNorm
   rw [← Real.sqrt_sq_eq_abs ((P.flow.metric t).inner q V (P.charts.circleUnit q))]
   exact Real.sqrt_le_sqrt (sub_nonneg.mp hh)
-
-
-
 
 theorem m65IntrinsicChartField_uniform_zero [T2Space M] {κ : Type*}
     {circumference : κ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))

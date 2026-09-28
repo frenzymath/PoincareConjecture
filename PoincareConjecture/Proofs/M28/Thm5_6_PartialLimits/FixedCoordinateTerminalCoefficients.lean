@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.FixedCoordinateFlowLimit
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateGerms
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +20,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   {e : ∀ k, V → M k}
 
 set_option synthInstance.maxHeartbeats 200000 in
-
-
-
 
 theorem FixedCoordinateFlowLimit.compact_pullbackCoefficients
     (L : FixedCoordinateFlowLimit F V hV e)
@@ -71,9 +59,6 @@ theorem FixedCoordinateFlowLimit.compact_pullbackCoefficients
   refine Eventually.of_forall fun k x hx => ?_
   exact ((F (L.subsequence k)).metric t).pullbackCoefficients_eq_of_eventuallyEq
     (Filter.mem_of_superset (hV.mem_nhds (hKV hx)) (hparam (L.subsequence k)))
-
-
-
 
 theorem FixedCoordinateFlowLimit.compact_coefficient_bounds
     (L : FixedCoordinateFlowLimit F V hV e)

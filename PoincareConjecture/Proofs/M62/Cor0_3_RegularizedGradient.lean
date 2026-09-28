@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M62.Lemma19_6_InteriorRegularity
 import PoincareConjecture.Proofs.M62.Cor0_3_Regularization
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem hasDerivAt_curvatureSquared_parameter (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Ioo a b) (x : ℝ) :
@@ -51,8 +40,6 @@ theorem hasDerivAt_curvatureSquared_parameter (hc : M62ShrinkingCurve F c)
       (m62CurvatureVector F c t) x)]
   ring
 
-
-
 theorem regularized_arcDerivative_eq (hc : M62ShrinkingCurve F c)
     {ε t : ℝ} (hε : 0 < ε) (ht : t ∈ Set.Ioo a b) (x : ℝ) :
     m62ArcDerivative F c t (m62RegularizedCurvature F c ε t) x =
@@ -70,8 +57,6 @@ theorem regularized_arcDerivative_eq (hc : M62ShrinkingCurve F c)
   simp only [m62SpatialNormalDerivative, m62SpatialDerivative, map_sub, sub_apply, map_smul,
     smul_apply, smul_eq_mul, horth, mul_zero, sub_zero]
   field_simp
-
-
 
 theorem regularized_gradient_le (hc : M62ShrinkingCurve F c)
     {ε t : ℝ} (hε : 0 < ε) (ht : t ∈ Set.Ioo a b) (x : ℝ) :

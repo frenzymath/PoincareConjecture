@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.CriticalPoints
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +17,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 private instance : ConnectedSpace S1 := isConnected_iff_connectedSpace.mp
   (isConnected_sphere (by simp [← Module.finrank_eq_rank, E2]) (0 : E2) zero_le_one)
-
 
 theorem standard_critical_level_preconnected :
     IsPreconnected {q : S2 | Saddle.height q = -1} := by

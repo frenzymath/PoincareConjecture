@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeCylinder
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_preserved_history_interior
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

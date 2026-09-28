@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Backward.FilledDomainDecay
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem eventually_past_ball_curvature_lt_of_later_scalar_tendsto_zero
     {n : ℕ} {M : ℕ → Type u} [∀ i, TopologicalSpace (M i)] [∀ i, T3Space (M i)]
@@ -75,8 +63,6 @@ theorem eventually_past_ball_curvature_lt_of_later_scalar_tendsto_zero
   exact ((F i).curvatureTensorNorm_le_of_bounded_ancient_terminal_scalar
     hC (hcomplete i) (hoperator i) hK hbound (hab.le.trans hb) hscal s hs x hx).trans_lt
       hscale
-
-
 
 theorem eventually_ball_volume_lower_bound_of_later_scalar_tendsto_zero
     {n : ℕ} {M : ℕ → Type u} [∀ i, TopologicalSpace (M i)] [∀ i, T3Space (M i)]

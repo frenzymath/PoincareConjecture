@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureCompactBuffers
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCompactCoefficients
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialChartMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,8 +72,6 @@ private theorem quadratic_of_original_chart
         (mfderiv (𝓡 3) (𝓡 3) c.symm (c x) w)) at hpair
   rw [hw, hleft] at hpair
   exact hpair
-
-
 
 theorem terminalCurvature_eventually_compact_tangent
     {ι : Type*}

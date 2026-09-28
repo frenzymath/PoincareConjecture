@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Uniform
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Volume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,10 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem exists_uniform_precompact_exponential_diffeomorph_of_center
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p₀ p : M)
@@ -102,10 +88,6 @@ end PoincareConjecture.RiemannianMetric
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
 
 open Filter
-
-
-
-
 
 theorem eventually_uniform_exponential_diffeomorph_on_controlled_centres
     {n : ℕ} {T' T : ℝ}

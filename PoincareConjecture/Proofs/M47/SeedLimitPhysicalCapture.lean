@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCapture
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u v
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seedLimit_physical_chart_capture_and_volume
     {C : GeneralizedSliceCarrier.{u}} {D : GeneralizedSliceCarrier.{v}}

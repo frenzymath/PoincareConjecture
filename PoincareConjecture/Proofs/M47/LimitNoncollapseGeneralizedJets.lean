@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitMetricJets
 import PoincareConjecture.Proofs.M34.Mathlib.AffineWithinJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier :=
   C.limit.carrier.isManifold
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem limitNoncollapse_generalized_uniform_spatialJetWithin
     (q : C.limit.sliceCarrier.carrier) (j r : ℕ)

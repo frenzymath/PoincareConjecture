@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_AmbientBal
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_AdjustedComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem SurgeryCapClose.isCompact_closure_image_ball
     {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
@@ -35,9 +23,6 @@ theorem SurgeryCapClose.isCompact_closure_image_ball
   apply Q.map_smooth.continuousOn.mono
   intro x hx
   exact hx.trans_lt ((ENNReal.ofReal_lt_ofReal_iff (inv_pos.mpr Q.eta_pos)).mpr hrEta)
-
-
-
 
 theorem local_result_ball_image
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)
@@ -54,10 +39,6 @@ theorem local_result_ball_image
     (E.local_embed_smooth i) (E.local_embed_injective i) (E.local_metric i)
     (E.local_result i).tip hr hcompact
   simpa only [E.local_tip i] using h
-
-
-
-
 
 theorem initial_cap_chart_of_exact_comparison
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)

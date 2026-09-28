@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.CWCellExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,7 +12,6 @@ namespace PoincareConjecture.Proofs.M02.Topology
 noncomputable section
 
 open _root_.Topology.RelCWComplex
-
 
 theorem exists_cw_extension_from_one_skeleton
     {X : Type u} [TopologicalSpace X] [T2Space X]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.InitialData
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_arbitrarily_close_ascent_of_lt_gradient_norm
     {n : ℕ} {M : Type*} [TopologicalSpace M]

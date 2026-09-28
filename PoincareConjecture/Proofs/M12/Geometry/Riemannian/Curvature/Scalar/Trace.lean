@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Contraction
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +17,6 @@ theorem curvatureTensor_diagonal_pair_swap (D : LeviCivitaData g) (x : M)
     D.curvatureTensor x v w v w = D.curvatureTensor x w v w v := by
   rw [D.curvatureTensor_swap_first x v w v w,
     D.curvatureTensor_swap_last x w v v w, neg_neg]
-
 
 theorem scalarCurvature_eq_sum_orthonormalBasis (D : LeviCivitaData g) (x : M)
     {ι : Type*} [Fintype ι]

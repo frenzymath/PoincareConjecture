@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedManifoldConditions
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ section Algebraic
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup E] [Module 𝕜 E] [DecidableEq E]
-
-
 
 theorem closedFaceStar_singleton_eq_closedStar (K : SimplicialComplex 𝕜 E) (p : E) :
     K.closedFaceStar {p} = K.closedStar p := by
@@ -36,15 +25,11 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [DecidableEq E] [DecidableEq F] {K : SimplicialComplex ℝ E} {f : E → F}
 
-
-
 theorem AffineOnFaces.embeddedImage_closedStar_space (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {p : E} (hp : {p} ∈ K.faces) :
     ((hf.embeddedImage hinj).closedStar (f p)).space = f '' (K.closedStar p).space := by
   simpa only [Finset.image_singleton, closedFaceStar_singleton_eq_closedStar] using
     hf.embeddedImage_closedFaceStar_space hinj hp
-
-
 
 theorem AffineOnFaces.embeddedImage_link_space (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {p : E} (hp : {p} ∈ K.faces) :
@@ -53,9 +38,6 @@ theorem AffineOnFaces.embeddedImage_link_space (hf : K.AffineOnFaces f)
     (hf.embeddedImage_faceLink_carrier_vertices hinj hp).1
 
 omit [DecidableEq E] [DecidableEq F] in
-
-
-
 
 theorem AffineOnFaces.embeddedImage_coface_count (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {n k : ℕ}

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Geodesic
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
-
 
 theorem IsGeodesicOn.contMDiffOn (hγ : g.IsGeodesicOn γ s) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) 1 γ s := by
@@ -41,8 +34,6 @@ theorem IsGeodesicOn.contMDiffOn (hγ : g.IsGeodesicOn γ s) :
       (contMDiffOn_iff_contDiffOn.mpr hq) (fun u hu => (hUsub hu).2.1)
   exact ((hcomp.contMDiffAt (hUopen.mem_nhds htU)).congr_of_eventuallyEq
     (h.mono fun u hu => hu.1)).contMDiffWithinAt
-
-
 
 theorem IsGeodesicOn.hasDerivAt_tangentNorm_zero (hγ : g.IsGeodesicOn γ s)
     {t : ℝ} (ht : t ∈ s) :
@@ -74,7 +65,6 @@ theorem IsGeodesicOn.hasDerivAt_tangentNorm_zero (hγ : g.IsGeodesicOn γ s)
   rw [hequ.mfderiv_eq, hequ.self_of_nhds,
     g.tangentNorm_chart_curve p (hcd hu).2.2.1 (hcd hu).2.1, hconst u hu]
 
-
 theorem IsGeodesicOn.exists_constant_tangentNorm {a b : ℝ}
     (hγ : g.IsGeodesicOn γ (Ioo a b)) (hab : a < b) :
     ∃ C : ℝ≥0, ∀ t ∈ Ioo a b,
@@ -86,7 +76,6 @@ theorem IsGeodesicOn.exists_constant_tangentNorm {a b : ℝ}
   exact isOpen_Ioo.is_const_of_deriv_eq_zero (convex_Ioo a b).isPreconnected
     (fun u hu => (hγ.hasDerivAt_tangentNorm_zero hu).differentiableAt.differentiableWithinAt)
     (fun u hu => (hγ.hasDerivAt_tangentNorm_zero hu).deriv) ht ht₀
-
 
 theorem IsGeodesicOn.edist_le_of_tangentNorm_eq {a b : ℝ}
     (hγ : g.IsGeodesicOn γ (Ioo a b)) {C : ℝ≥0}
@@ -120,8 +109,6 @@ theorem IsGeodesicOn.edist_le_of_tangentNorm_eq {a b : ℝ}
   · exact hforward hs ht hst
   · simpa only [edist, Manifold.riemannianEDist_comm, edist_comm] using
       hforward ht hs hts
-
-
 
 theorem IsGeodesicOn.exists_edist_le_mul {a b : ℝ}
     (hγ : g.IsGeodesicOn γ (Ioo a b)) (hab : a < b) :

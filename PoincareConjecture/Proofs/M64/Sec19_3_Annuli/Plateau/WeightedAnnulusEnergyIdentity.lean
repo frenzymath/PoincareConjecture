@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakMinimizer
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.WeightedAreaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64ObservedWeakAnnulus_seed_weightedDensity_eq_ae
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
@@ -49,8 +36,6 @@ theorem m64ObservedWeakAnnulus_seed_weightedDensity_eq_ae
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he B hdiag (hp (interior_subset hm)) 0,
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he B hdiag (hp (interior_subset hm)) 1]
 
-
-
 theorem m64ObservedWeakAnnulus_seed_weightedEnergy_eq
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -69,8 +54,6 @@ theorem m64ObservedWeakAnnulus_seed_weightedEnergy_eq
 
 variable [CompactSpace M] [T2Space M]
 
-
-
 theorem M64Annulus.weightedGramEnergy_integrable
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) (r : ℝ) :
     IntegrableOn (fun p =>
@@ -85,8 +68,6 @@ theorem M64Annulus.weightedGramEnergy_integrable
   change Integrable _ (volume.restrict m64AnnulusDomain)
   rw [m64Annulus_restrict_closed_eq_interior]
   exact (W.weightedEnergy_integrable B hB hei.isEmbedding hb r).congr hae
-
-
 
 theorem m64LeastAnnulusArea_le_seed_weightedEnergy
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
@@ -106,7 +87,6 @@ theorem m64LeastAnnulusArea_le_seed_weightedEnergy
     _ = _ := (m64ObservedWeakAnnulus_seed_weightedEnergy_eq A e he B hdiag W hmap hcol r).symm
 
 omit [T2Space M] in
-
 
 theorem m64ObservedWeakAnnulus_exists_seed_with_weightedEnergy
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

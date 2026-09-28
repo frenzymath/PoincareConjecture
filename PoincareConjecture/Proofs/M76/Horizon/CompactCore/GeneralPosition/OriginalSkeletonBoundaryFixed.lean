@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.Origina
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarBoundaryEdges
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

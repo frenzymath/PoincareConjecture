@@ -4,22 +4,11 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Algebra.Ring.Periodic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_periodic_injection_tolerance {Z E : Type*}
     [TopologicalSpace Z] [MetricSpace E] {K : Set Z} (hK : IsCompact K)

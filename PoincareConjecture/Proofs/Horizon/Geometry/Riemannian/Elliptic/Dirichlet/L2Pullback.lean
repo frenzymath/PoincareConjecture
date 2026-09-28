@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.ChartEnergy
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,7 +15,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem map_coordinate_density (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -41,8 +34,6 @@ theorem map_coordinate_density (g : RiemannianMetric n M)
       filter_upwards [ae_restrict_mem e.open_target.measurableSet] with y hy
       exact e.right_inv hy
     _ = _ := Measure.map_id
-
-
 
 theorem exists_map_compact_coordinate_le (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -81,8 +72,6 @@ theorem exists_map_compact_coordinate_le (g : RiemannianMetric n M)
       rw [Measure.map_smul, g.map_coordinate_density e he hei]
     _ ≤ _ := smul_le_smul_left c⁻¹ Measure.restrict_le_self
 
-
-
 theorem exists_compactL2Pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -109,8 +98,6 @@ theorem exists_compactL2Pullback (g : RiemannianMetric n M)
   dsimp only [Function.comp_apply] at hxR
   rw [hx, hxR, ← hxe]
 
-
-
 def compactL2Pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -118,8 +105,6 @@ def compactL2Pullback (g : RiemannianMetric n M)
     {K : Set (EuclideanSpace ℝ (Fin n))} (hK : IsCompact K) (hKs : K ⊆ e.source) :
     Lp ℝ 2 g.volumeMeasure →L[ℝ] Lp ℝ 2 (volume.restrict K) :=
   (g.exists_compactL2Pullback e he hei hK hKs).choose
-
-
 
 theorem compactL2Pullback_ae (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -130,8 +115,6 @@ theorem compactL2Pullback_ae (g : RiemannianMetric n M)
     (g.compactL2Pullback e he hei hK hKs v : EuclideanSpace ℝ (Fin n) → ℝ)
       =ᵐ[volume.restrict K] fun x => v (e x) :=
   (g.exists_compactL2Pullback e he hei hK hKs).choose_spec v
-
-
 
 theorem ae_comp_on_compact (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -146,8 +129,6 @@ theorem ae_comp_on_compact (g : RiemannianMetric n M)
   exact ae_of_ae_map ((e.continuousOn.mono hKs).aemeasurable hK.measurableSet)
     (hac.ae_eq hfh)
 
-
-
 def localL2Pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -158,8 +139,6 @@ def localL2Pullback (g : RiemannianMetric n M)
   (Lp.LpToLpOfMeasureLeSMul (c := 1) (by simp)
     (by simpa only [one_smul] using Measure.restrict_mono hSK (le_refl volume))).comp
       (g.compactL2Pullback e he hei hK hKs)
-
-
 
 theorem localL2Pullback_ae (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

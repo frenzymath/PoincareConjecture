@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.Clearance
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem edist_lower_of_centered_slab (N : EpsilonNeck g)
     {a w : ℝ} (hw : 0 < w) (ha : -N.epsilon⁻¹ < a - w)
@@ -80,8 +76,6 @@ private theorem crossing_frontier {K S : Set M} (hK : IsClosed K)
     exact hxK (interior_subset (hleft hx))
   · obtain ⟨x, hx, hxK⟩ := hin
     exact hright hx (interior_subset hxK)
-
-
 
 theorem calibrated_ball_same_core_clearance (C : CapCertificate g)
     (hinterior : interior (C.closed_core ∪
@@ -189,8 +183,6 @@ theorem calibrated_ball_same_core_clearance (C : CapCertificate g)
     have htotal := (add_le_add hleft hbuffer).trans_eq (Manifold.pathELength_add ht.1 ht.2)
     rw [← ENNReal.ofReal_add hr.le C.end_neck.scale_pos.le] at htotal
     exact (not_lt_of_ge htotal) hlength
-
-
 
 theorem exists_calibrated_ball_same_core_clearance_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

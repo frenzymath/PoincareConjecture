@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollarBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandChainCompatibility
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +12,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 namespace M64IntrinsicLinearBandData
-
-
-
 
 theorem faces_canonical_of_disjoint (B E : M64IntrinsicLinearBandData)
     (h : Disjoint B.band.carrier E.band.carrier)
@@ -33,9 +26,6 @@ end M64IntrinsicLinearBandData
 
 namespace M64IntrinsicArcBandChain
 
-
-
-
 theorem faces_canonical {gamma : ℝ → AnnulusCoordinates} {a b : ℝ}
     {U : Set AnnulusCoordinates} (E : M64IntrinsicArcBandChain gamma a b U)
     (p q : (i : Fin E.count) × (Fin (E.band i).interface.count × Bool)) (hpq : p ≠ q) :
@@ -49,9 +39,6 @@ theorem faces_canonical {gamma : ℝ → AnnulusCoordinates} {a b : ℝ}
 end M64IntrinsicArcBandChain
 
 namespace M64IntrinsicJoinedBandPatch
-
-
-
 
 theorem faces_canonical {gamma : Bool → ℝ → AnnulusCoordinates} {T b : Bool → ℝ}
     {U : Set AnnulusCoordinates} (P : M64IntrinsicJoinedBandPatch gamma T b U)
@@ -80,10 +67,6 @@ theorem faces_canonical {gamma : Bool → ℝ → AnnulusCoordinates} {T b : Boo
 end M64IntrinsicJoinedBandPatch
 
 namespace M64IntrinsicJoinedArcCollar
-
-
-
-
 
 theorem chain_patch_faces_canonical
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
@@ -129,9 +112,6 @@ theorem chain_patch_faces_canonical
 end M64IntrinsicJoinedArcCollar
 
 namespace M64IntrinsicThreeArcCollar
-
-
-
 
 theorem band_faces_canonical
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}

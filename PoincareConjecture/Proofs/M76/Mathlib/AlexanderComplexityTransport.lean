@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Polygon
 
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_finitePL_image_family (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
     (hPe : ∀ i, (P i).HasSimplicialEdges) (hPi : ∀ i, Function.Injective (P i))

@@ -1,34 +1,19 @@
 import Mathlib.Data.Finset.Card
 import Mathlib.Tactic.Tauto
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Finset
 
 variable {V : Type*} [DecidableEq V]
 
-
-
 def IsBichromaticPair (c : V → Bool) (e : Finset V) : Prop :=
   ∃ x y, c x ≠ c y ∧ e = {x, y}
-
-
 
 theorem IsBichromaticPair.card {c : V → Bool} {e : Finset V}
     (he : IsBichromaticPair c e) : e.card = 2 := by
   obtain ⟨x, y, hxy, rfl⟩ := he
   exact card_pair (fun h => hxy (congrArg c h))
-
-
 
 theorem union_eq_triangle {e f t : Finset V} (he : e.card = 2) (hf : f.card = 2)
     (ht : t.card = 3) (het : e ⊆ t) (hft : f ⊆ t) (hne : e ≠ f) : e ∪ f = t := by
@@ -58,9 +43,6 @@ private theorem other_bichromaticPair_in_triple (c : V → Bool) {x y z : V}
       simpa only [mem_insert, mem_singleton] using hf (mem_insert_of_mem (mem_singleton_self v))
     rcases hu with rfl | rfl | rfl <;> rcases hv with rfl | rfl | rfl <;>
       simp_all only [ne_eq, not_true_eq_false, not_false_eq_true, pair_comm]
-
-
-
 
 theorem IsBichromaticPair.existsUnique_other {c : V → Bool} {e t : Finset V}
     (he : IsBichromaticPair c e) (ht : t.card = 3) (het : e ⊆ t) :
@@ -97,9 +79,6 @@ theorem IsBichromaticPair.existsUnique_other {c : V → Bool} {e t : Finset V}
     rw [pair_comm x y]
     simpa only [← htyxz] using
       other_bichromaticPair_in_triple c hxy.symm hyz hxz hcolor.symm hzcolor
-
-
-
 
 theorem IsBichromaticPair.eq_or_eq_of_subset_triangle {c : V → Bool} {e f g t : Finset V}
     (he : IsBichromaticPair c e) (hf : IsBichromaticPair c f)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckInverseCenterChart
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +13,6 @@ universe u v
 namespace PoincareConjecture.M28
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_inverseStrongNeckCenterChart_scalar_lower_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

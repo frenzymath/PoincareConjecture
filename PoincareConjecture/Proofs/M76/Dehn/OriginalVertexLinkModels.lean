@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryLinkContraction
 import PoincareConjecture.Proofs.M76.Dehn.OriginalInteriorLinkSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem original_chart_stars_vertex_link_models
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (A : SimplicialComplex ℝ E)

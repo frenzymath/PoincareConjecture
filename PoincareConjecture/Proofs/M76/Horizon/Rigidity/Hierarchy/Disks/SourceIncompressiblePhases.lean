@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.BoundaryNo
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ComplementaryThirdSlabs
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Compression.ComplementaryIncompressiblePhases
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

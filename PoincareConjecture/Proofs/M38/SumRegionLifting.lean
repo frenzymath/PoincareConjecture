@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.UnionRefinement
 import PoincareConjecture.Proofs.M38.BallRegionTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,11 +11,9 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 def sumFullRegion {A : GeneralizedSliceCarrier.{u}} (D : GeneralizedSliceCarrier.{u})
     (U : Set A.carrier) : Set (sumCarrier A D).carrier :=
   Sum.inl '' U ∪ Set.range Sum.inr
-
 
 theorem sumMapId_contMDiffOn {A B : GeneralizedSliceCarrier.{u}}
     (D : GeneralizedSliceCarrier.{u}) {U : Set A.carrier} (hU : IsOpen U)
@@ -57,7 +47,6 @@ theorem sumMapId_contMDiffOn {A B : GeneralizedSliceCarrier.{u}}
       filter_upwards [isOpen_range_inr.mem_nhds (Set.mem_range_self x)] with q hq
       obtain ⟨y, rfl⟩ := hq
       rfl
-
 
 def sumRegionEquivalence {A B : GeneralizedSliceCarrier.{u}}
     (D : GeneralizedSliceCarrier.{u}) {U : Set A.carrier} {V : Set B.carrier}
@@ -97,18 +86,15 @@ def sumRegionEquivalence {A B : GeneralizedSliceCarrier.{u}}
   map_smooth := sumMapId_contMDiffOn D hU E.map_smooth
   inverse_smooth := sumMapId_contMDiffOn D hV E.inverse_smooth
 
-
 theorem sumFullRegion_open {A : GeneralizedSliceCarrier.{u}}
     (D : GeneralizedSliceCarrier.{u}) {U : Set A.carrier} (hU : IsOpen U) :
     IsOpen (sumFullRegion D U) :=
   (isOpenMap_inl _ hU).union isOpen_range_inr
 
-
 theorem sumFullRegion_closed {A : GeneralizedSliceCarrier.{u}}
     (D : GeneralizedSliceCarrier.{u}) {U : Set A.carrier} (hU : IsClosed U) :
     IsClosed (sumFullRegion D U) :=
   (isClosedMap_inl _ hU).union isClosed_range_inr
-
 
 theorem sumFullRegion_disjoint_inl {A : GeneralizedSliceCarrier.{u}}
     (D : GeneralizedSliceCarrier.{u}) {U V : Set A.carrier} (h : Disjoint U V) :
@@ -119,25 +105,21 @@ theorem sumFullRegion_disjoint_inl {A : GeneralizedSliceCarrier.{u}}
     exact Set.disjoint_left.mp h ha ((Sum.inl_injective hav).symm ▸ hv)
   · cases hd
 
-
 noncomputable def sumInlBall {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) (D : GeneralizedSliceCarrier.{u}) :
     SurgeryBallEmbedding (sumCarrier A D) :=
   transportSurgeryBallRegion B (sumInlEquivalence A D ⟨B.map 0⟩)
     isOpen_univ isOpen_range_inl (Set.subset_univ _)
 
-
 theorem sumInlBall_map {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) (D : GeneralizedSliceCarrier.{u}) (x : StandardCapSpace) :
     (sumInlBall B D).map x = Sum.inl (B.map x) := rfl
-
 
 theorem sumInlBall_closedBall {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) (D : GeneralizedSliceCarrier.{u}) :
     (sumInlBall B D).closedBall = Sum.inl '' B.closedBall := by
   exact transportSurgeryBallRegion_closedBall B
     (sumInlEquivalence A D ⟨B.map 0⟩) isOpen_univ isOpen_range_inl (Set.subset_univ _)
-
 
 theorem sumInlBall_complement {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) (D : GeneralizedSliceCarrier.{u}) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.LinearGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.RegularBand
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_smooth_exhaustion_approx_with_uniform_radial_gap
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

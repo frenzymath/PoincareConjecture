@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierCoordinateDiagr
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedEquatorRelabeling
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedDiskSourcePoleLabels
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes CoordinateFourRegions
@@ -22,13 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem exists_oriented_quadrant_frontier_map
     {F S d : Set E} (A : E →ₗ[ℝ] ℝ) (hA : A ≠ 0)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.TerminalBlowup.RadialScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,25 +7,18 @@ open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
 noncomputable def axisWarpingRadius (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   r * Real.sqrt (axisAngularCoefficient g r)
 
-
 noncomputable def axisRadialSpeed (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   Real.sqrt (axisRadialCoefficient g r)
-
-
 
 noncomputable def axisWarpingSlope (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   Real.sqrt (axisAngularCoefficient g r) * (1 + r ^ 2 * radialConnectionAlpha g r) /
     axisRadialSpeed g r
 
-
-
 noncomputable def axisWarpingSecond (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   -axisWarpingRadius g r * radialMixedCurvatureFactor g r / axisRadialCoefficient g r
-
 
 theorem axisAngularCoefficient_deriv_eq_connection
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
@@ -56,7 +40,6 @@ private theorem correction_deriv
     pow_one, mul_one]
   ring
 
-
 theorem axisRadialCoefficient_deriv_eq_connection
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
     deriv (axisRadialCoefficient g) r =
@@ -69,17 +52,13 @@ theorem axisRadialCoefficient_deriv_eq_connection
     (axisRadialCoefficient_pos g r).ne', hr.ne']
   ring
 
-
 theorem axisWarpingRadius_pos (g : RiemannianMetric 3 StandardCapSpace)
     {r : ℝ} (hr : 0 < r) : 0 < axisWarpingRadius g r :=
   mul_pos hr (Real.sqrt_pos.mpr (axisAngularCoefficient_pos g r))
 
-
 theorem axisRadialSpeed_pos (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) :
     0 < axisRadialSpeed g r :=
   Real.sqrt_pos.mpr (axisRadialCoefficient_pos g r)
-
-
 
 theorem axisWarpingRadius_hasDerivAt
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
@@ -97,8 +76,6 @@ theorem axisWarpingRadius_hasDerivAt
   field_simp [ha0, hb0]
   rw [Real.sq_sqrt (axisAngularCoefficient_pos g r).le]
   ring
-
-
 
 theorem axisWarpingSlope_hasDerivAt
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
@@ -129,8 +106,6 @@ theorem axisWarpingSlope_hasDerivAt
         Real.sq_sqrt (axisRadialCoefficient_pos g r).le]]
   ring
 
-
-
 theorem radialTangentialCurvatureFactor_eq_warping
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
     radialTangentialCurvatureFactor g r / axisAngularCoefficient g r =
@@ -144,8 +119,6 @@ theorem radialTangentialCurvatureFactor_eq_warping
   simp only [Real.sq_sqrt (axisAngularCoefficient_pos g r).le,
     Real.sq_sqrt (axisRadialCoefficient_pos g r).le]
   ring
-
-
 
 theorem radialMixedCurvatureFactor_eq_warping
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :

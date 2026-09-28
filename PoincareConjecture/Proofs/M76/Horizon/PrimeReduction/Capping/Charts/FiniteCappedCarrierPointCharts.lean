@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.Finit
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.FiniteCapInteriorCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.OriginalModelInteriorBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -62,8 +53,6 @@ private theorem exists_extended_finitePL_point_chart
   · intro y hy
     rw [hQinv]
     exact hqb y ((hQt ▸ hy).1)
-
-
 
 theorem exists_finite_capped_carrier_point_chart
     {X E ι κ : Type*} [TopologicalSpace X]

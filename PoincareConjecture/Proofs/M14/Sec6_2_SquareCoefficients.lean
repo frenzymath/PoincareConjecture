@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_PotentialCoefficient
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,21 +18,15 @@ section Metric
 variable {n : ℕ} (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))
   (g : ℝ → RiemannianMetric n U)
 
-
-
 noncomputable def squareMetricCoefficient (T : ℝ) (x : U)
     (z : ℝ × EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
   Proofs.M11.ordinaryChartMetric g x (T - z.1 ^ 2, z.2)
 
-
-
 theorem squareMetricCoefficient_apply (T : ℝ) (x y : U) (s : ℝ)
     (v w : EuclideanSpace ℝ (Fin n)) :
     squareMetricCoefficient U g T x (s, y.val) v w = (g (T - s ^ 2)).inner y v w :=
   ordinaryChartMetric_openSubset_apply U g x y (T - s ^ 2) v w
-
-
 
 theorem squareMetricCoefficient_contDiffOn {K J : Set ℝ}
     (hg : RiemannianMetric.IsSmoothFamilyOn g K) (T : ℝ) (x : U)
@@ -65,15 +50,11 @@ theorem squareMetricCoefficient_contDiffOn {K J : Set ℝ}
   rw [U.chartAt_target_eq]
   exact hz.2
 
-
-
 theorem squareMetricCoefficient_pos (T : ℝ) (x : U) (s : ℝ)
     {y : EuclideanSpace ℝ (Fin n)} (hy : y ∈ U) (v : EuclideanSpace ℝ (Fin n)) (hv : v ≠ 0) :
     0 < squareMetricCoefficient U g T x (s, y) v v := by
   rw [show y = (⟨y, hy⟩ : U).val from rfl, squareMetricCoefficient_apply]
   exact (g (T - s ^ 2)).pos _ v hv
-
-
 
 theorem backwardMetricCoefficient_square (T : ℝ) (x : U) {s : ℝ} (hs : 0 ≤ s)
     (z : EuclideanSpace ℝ (Fin n)) :
@@ -91,14 +72,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (θ : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
   (x : G.gaugeCover.spatial b)
 
-
-
 noncomputable def squarePotentialCoefficient (z : ℝ × EuclideanSpace ℝ (Fin n)) : ℝ :=
   2 * z.1 ^ 2 * horizontalScalarCurvature G.leafwise
     ((G.gaugeCover.cylinder b).toSpacetime
       (θ z.1, (chartAt (EuclideanSpace ℝ (Fin n)) x).symm z.2))
-
-
 
 theorem squarePotentialCoefficient_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {J : Set ℝ}
@@ -128,17 +105,12 @@ theorem squarePotentialCoefficient_contDiffOn
     (ht.prodMk hs)
   exact (contDiffOn_const.mul (contDiffOn_fst.pow 2)).mul hscalar.contDiffOn
 
-
-
 theorem squarePotentialCoefficient_eq_backward {s : ℝ} (hs : 0 ≤ s)
     (z : EuclideanSpace ℝ (Fin n)) :
     squarePotentialCoefficient b (fun r => θ (r ^ 2)) x (s, z) =
       (2 * s) * backwardPotentialCoefficient b θ x (s ^ 2, z) := by
   simp only [squarePotentialCoefficient, backwardPotentialCoefficient, Real.sqrt_sq hs]
   ring
-
-
-
 
 theorem squareGauge_coefficients_contDiffOn
     {T τ₁ τ₂ : ℝ} {q r : G.Point} (p : M14BackwardPath G T τ₁ τ₂ q r)

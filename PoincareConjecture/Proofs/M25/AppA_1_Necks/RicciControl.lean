@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AmbientRicci
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ModelRicci
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RealizedRicciQuadratic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_normalized_ricci_basis_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -49,9 +35,6 @@ theorem exists_normalized_ricci_basis_control {α : ℝ} (hα : 0 < α) :
   rw [N.realization_ricci_eq q s h D hV h0 hstrip heq,
     roundCylinderEuclideanModelConnection_ricci_zero_basis] at hricci
   exact hricci
-
-
-
 
 theorem exists_normalized_ricci_quadratic_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

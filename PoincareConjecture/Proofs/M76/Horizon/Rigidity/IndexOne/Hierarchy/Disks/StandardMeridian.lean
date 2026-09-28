@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.StandardFrontier
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -175,8 +167,6 @@ private theorem meridianRectangleProjection_sphere (a b : ℝ) (hab : a < b)
     · exact Or.inl ⟨h, by rw [h]; exact hy⟩
     · exact Or.inr ⟨h, by rw [h]; exact hx⟩
 
-
-
 theorem exists_standard_meridian (a b : ℝ) (hab : a < b) (hshort : b < a + p) :
     ∃ (f : C(D2, sourceSlab (ContinuousMap.id H) a b))
       (gamma : C(Q2, frontier (sourceSlab (ContinuousMap.id H) a b)))
@@ -230,8 +220,6 @@ theorem exists_standard_meridian (a b : ℝ) (hab : a < b) (hshort : b < a + p) 
   exact ⟨f, gamma, r, fun _ => rfl, hleft,
     Dehn.squareRimLoop_map_class_ne_one_of_retraction gamma r hleft⟩
 
-
-
 noncomputable def standardSlabMeridianCoordinates (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) : (D2 × C) ≃ₜ sourceSlab (ContinuousMap.id H) a b := by
   let F := meridianRectangle a b hab
@@ -271,8 +259,6 @@ noncomputable def standardSlabMeridianCoordinates (a b : ℝ) (hab : a < b)
     continuous_invFun := by fun_prop }
   exact rect.trans (standardSlabCoordinates a b hshort)
 
-
-
 theorem standardSlabMeridianCoordinates_frontier (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) (z : D2 × C) :
     (standardSlabMeridianCoordinates a b hab hshort z : X) ∈
@@ -282,8 +268,6 @@ theorem standardSlabMeridianCoordinates_frontier (a b : ℝ) (hab : a < b)
     ← meridianRectangleProjection_sphere a b hab]
   change meridianRectangleProjection a b (meridianRectangle a b hab z.1) ∈ Q2 ↔ _
   rw [meridianRectangleProjection_left]
-
-
 
 noncomputable def standardSlabBoundaryCoordinates (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) : (Q2 × C) ≃ₜ frontier (sourceSlab (ContinuousMap.id H) a b) := by
@@ -322,7 +306,6 @@ noncomputable def standardSlabBoundaryCoordinates (a b : ℝ) (hab : a < b)
       rfl
     continuous_toFun := by fun_prop
     continuous_invFun := by fun_prop }
-
 
 theorem standardSlabMeridianCoordinates_coe (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) (x : D2) (t : ℝ) :

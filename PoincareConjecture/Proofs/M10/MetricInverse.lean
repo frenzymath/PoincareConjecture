@@ -2,14 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {Y : Type*} [NormedAddCommGroup Y] [InnerProductSpace ℝ Y]
   [FiniteDimensional ℝ Y]
-
 
 theorem positive_bilinear_isInvertible (B : Y →L[ℝ] Y →L[ℝ] ℝ)
     (hpos : ∀ v : Y, v ≠ 0 → 0 < B v v) : B.IsInvertible := by
@@ -37,11 +28,9 @@ theorem positive_bilinear_isInvertible (B : Y →L[ℝ] Y →L[ℝ] ℝ)
       (f := B.toLinearMap) hdim).mp hinj
   exact ⟨(LinearEquiv.ofBijective B.toLinearMap ⟨hinj, hsurj⟩).toContinuousLinearEquiv, rfl⟩
 
-
 noncomputable def phaseVelocity (B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ)
     (a : ℝ × Y × (Y →L[ℝ] ℝ)) : Y :=
   (2 * Real.sqrt a.1)⁻¹ • (B (a.2.1, a.1)).inverse a.2.2
-
 
 theorem phaseVelocity_contDiffAt {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ}
     {a : ℝ × Y × (Y →L[ℝ] ℝ)} {k : ℕ∞ω}

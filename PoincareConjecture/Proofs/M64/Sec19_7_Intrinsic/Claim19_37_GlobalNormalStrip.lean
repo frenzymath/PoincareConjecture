@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MeasurableNorm
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,11 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_exists_global_measurable_normal_strip
     (K : ℝ) {delta : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1) :

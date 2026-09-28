@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Mathlib.PositivePolar
 import PoincareConjecture.Proofs.M25.Mathlib.CompactBallChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SphereGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric IsManifold
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_antipodal_ball_exterior_chart
     (e : OpenPartialHomeomorph E3 UnitThreeSphere) {r R : ℝ}

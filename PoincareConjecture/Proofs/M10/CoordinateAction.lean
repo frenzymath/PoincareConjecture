@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.EndpointCoordinates
 import PoincareConjecture.Proofs.M10.SmoothMetric
 import PoincareConjecture.Proofs.M10.ActionPotential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def coordinateScalarCurvature (F : RicciFlow n M J) (T : ℝ) (q₀ : M)
     (w : EuclideanSpace ℝ (Fin n) × ℝ) : ℝ :=

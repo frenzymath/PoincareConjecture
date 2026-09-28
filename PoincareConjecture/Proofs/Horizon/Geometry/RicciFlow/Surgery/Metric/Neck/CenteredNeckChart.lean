@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylinder.CylinderModelField
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Collapse.RetainedDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

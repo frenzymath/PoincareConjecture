@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlBarrier
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem exists_cap_exit_neck_tail
     {g h : RiemannianMetric 3 M} (N : CapCertificate g) (E : EpsilonNeck h)

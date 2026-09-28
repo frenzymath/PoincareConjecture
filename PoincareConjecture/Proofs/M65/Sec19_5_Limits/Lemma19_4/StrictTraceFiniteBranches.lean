@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceContinuation
 import Mathlib.Topology.DiscreteSubset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M65StrictTrace
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem not_within_local_zero_of_Jordan_trace (D : LeviCivitaData g)
     {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
@@ -57,8 +44,6 @@ theorem not_within_local_zero_of_Jordan_trace (D : LeviCivitaData g)
 
 omit [T2Space M] in
 
-
-
 theorem isCompact_disk_branches (f : LoopPlane → M)
     (hb : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet)
     (hconf : ∀ z ∈ ball (0 : LoopPlane) 1,
@@ -79,9 +64,6 @@ theorem isCompact_disk_branches (f : LoopPlane → M)
     exact ⟨⟨z, hz⟩, (diskConformalFactor_eq_zero_iff g f hb hconf hz).mpr hd, rfl⟩
   · rintro ⟨w, hw, rfl⟩
     exact ⟨w.property, (diskConformalFactor_eq_zero_iff g f hb hconf w.property).mp hw⟩
-
-
-
 
 theorem finite_disk_branches (D : LeviCivitaData g)
     {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}

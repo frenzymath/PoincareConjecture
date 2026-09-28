@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderEnergy
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem rawCylinder_lift_time_contMDiffOn
     {F : GeneralizedRicciFlowData.{u}}
@@ -53,9 +40,6 @@ theorem rawCylinder_lift_time_contMDiffOn
   apply Subtype.ext
   change (theta t).val = (T.realParam (R.spacetime.timeFunction (gamma t))).val
   exact (hclock t ht).trans (T.realParam_val (hmaps ht)).symm
-
-
-
 
 theorem exists_rawCylinder_energy_lift
     {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)

@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.SphereCover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Topology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,9 +15,6 @@ variable {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) C] [IsManifold (𝓡 2) ∞ C]
   [T2Space C] [T3Space C] [ConnectedSpace C] [CompactSpace C]
   {M : Type v} [TopologicalSpace M]
-
-
-
 
 theorem roundSurface_exists_sphereDiffeomorph_of_no_projective_product
     (g : RiemannianMetric 2 C) (D : LeviCivitaData g)

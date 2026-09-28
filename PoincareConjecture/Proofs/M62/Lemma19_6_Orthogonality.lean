@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_PullbackConnection
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
 theorem spatial_velocity_contMDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Icc a b) :
     ContMDiff (𝓘(ℝ, ℝ)) ((𝓡 n).prod (𝓡 n)) 1
@@ -39,7 +28,6 @@ theorem spatial_velocity_contMDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
     apply contMDiff_vectorSpace_iff_contDiff.mpr
     exact contDiff_const
   exact ((hc.spatial_regular t ht).contMDiff_tangentMap (m := 1) (by norm_num)).comp hone
-
 
 theorem speed_contDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Icc a b) : ContDiff ℝ 1 (curveSpeed F c t) := by
@@ -58,7 +46,6 @@ theorem speed_contDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
     intro x
     exact (Bundle.contMDiffAt_totalSpace.mp (hpair x)).2
   exact hsq.contDiff.sqrt fun x ↦ ((F.metric t).pos _ _ (hc.immersed t ht x)).ne'
-
 
 theorem unitTangent_contMDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Icc a b) :
@@ -83,8 +70,6 @@ theorem unitTangent_contMDiff (hc : M62ShrinkingCurve F c) {t : ℝ}
   simpa only [e.continuousLinearMapAt_apply_of_mem ℝ hy] using
     (e.continuousLinearMapAt ℝ (c y t)).map_smul
       (curveSpeed F c t y)⁻¹ (curveVelocity (fun z ↦ c z t) y)
-
-
 
 theorem curvature_unitTangent_inner_zero (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Icc a b) (x : ℝ) :

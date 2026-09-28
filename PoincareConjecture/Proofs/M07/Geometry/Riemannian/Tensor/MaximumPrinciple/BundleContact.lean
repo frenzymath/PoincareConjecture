@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Metric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -33,7 +22,6 @@ lemma contDiffAt_covariantDerivative
     ContDiffAt ℝ ∞ (fun z => covariantDerivative Γ Y z u) x := by
   exact ((hY.fderiv_right (by simp)).clm_apply contDiffAt_const).add
     ((hΓ.clm_apply contDiffAt_const).clm_apply hY)
-
 
 lemma fderiv_metric_pairing
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
@@ -56,8 +44,6 @@ lemma fderiv_metric_pairing
   simp only [add_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.flip_apply, covariantDerivative, map_add, hc]
   ring
-
-
 
 lemma second_fderiv_metric_pairing_of_zero_jets
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
@@ -134,7 +120,6 @@ lemma second_fderiv_nonpos_of_isLocalMax
   rw [← heq]
   exact PoincareConjecture.LeviCivitaData.deriv_deriv_nonpos_of_isLocalMax hφmax hφcont
 
-
 def coordinateRoughLaplacian {ι : Type*} [Fintype ι]
     (Γ : E → E →L[ℝ] F →L[ℝ] F) (S : E → F)
     (e : ι → E) (b x : E) : F :=
@@ -175,9 +160,6 @@ lemma metric_roughLaplacian_nonpos_of_zero_jets
   exact Finset.sum_nonpos fun i _ => hdd (e i)
 
 variable [FiniteDimensional ℝ E] [CompleteSpace F]
-
-
-
 
 theorem exists_supporting_contact_roughLaplacian_nonpos
     {ι : Type*} [Fintype ι]

@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -34,7 +24,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (B : ∀ p i, ((S p).piece i).FixedStripBandFaces ((K p).graphCuts i) δ r r)
   (cores : D.regions → TriangleMesh)
 
-
 abbrev FittedFaceIndex :=
   (D.vertices × (Bool × Bool)) ⊕
     ((Σ a : D.IncidentGraphPieceIndex chart cut S,
@@ -45,7 +34,6 @@ variable {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p 
   {x : D.vertices → Bool × Bool → M}
   (caps : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
 
-
 noncomputable def fittedFaceCoordinates
     (i : D.FittedFaceIndex chart cut S K B cores) :
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M :=
@@ -53,14 +41,12 @@ noncomputable def fittedFaceCoordinates
     (Sum.elim (fun a => (B a.1.1 a.1.2).faces.faceCoordinates a.2)
       (fun a => (chartAt (EuclideanSpace ℝ (Fin 2)) (chart a.1 : M)).symm)) i
 
-
 noncomputable def fittedFaceBasis
     (i : D.FittedFaceIndex chart cut S K B cores) :
     AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)) :=
   Sum.elim (fun a => rightTriangleBasis (caps a.1).scale_pos)
     (Sum.elim (fun a => (B a.1.1 a.1.2).faces.faceBasis a.2)
       (fun a => meshTriangleBasis (cores a.1) a.2)) i
-
 
 noncomputable def fittedFaceChart
     (i : D.FittedFaceIndex chart cut S K B cores) : M :=

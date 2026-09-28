@@ -3,9 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAnn
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedRimCircleModels
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentParametrization
 
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry

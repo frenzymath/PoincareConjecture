@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.CompactCapture
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_negative_end_compact_capture_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -49,8 +37,6 @@ theorem exists_negative_end_compact_capture_threshold :
     (by rw [EpsilonNeck.reversed_epsilon, C.end_neck_epsilon, C.boundary_neck_epsilon]) hcontact
   simpa only [EpsilonNeck.reversed_epsilon, EpsilonNeck.reversed_region,
     C.end_neck_epsilon, C.boundary_neck_epsilon, neg_div] using h
-
-
 
 theorem exists_compact_truncated_core_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.RadialHessian
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.IndexComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +21,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_parallel_field_jacobi_inner_le_sub_curvature_integral_of_minimizing
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}
@@ -210,8 +195,6 @@ theorem exists_parallel_field_jacobi_inner_le_sub_curvature_integral_of_minimizi
             (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) q t 1) (t • Z t)
             (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) q t 1) := by
         rw [hintegral, ← hyP, hp 1 (h01' ht1)]
-
-
 
 theorem jacobi_inner_lt_of_minimizing_of_curvature_pos
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}

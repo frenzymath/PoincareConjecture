@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Coordinates
 import Mathlib.Analysis.Calculus.Deriv.Slope
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +9,6 @@ open scoped Topology ContDiff
 namespace Poincare.Topology.Plane.Curves
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem graph_transverse_ne_zero
     (A B : E ≃L[ℝ] (ℝ × ℝ)) {v d : E} {r s f' g' : ℝ}
@@ -44,8 +31,6 @@ theorem graph_transverse_ne_zero
   rw [hdc, map_smul, hAv, smul_smul]
   simp only [Prod.smul_fst, Prod.smul_snd, smul_eq_mul, mul_one]
   ring
-
-
 
 theorem graph_transverse_pos_of_eventually_above
     (A B : E ≃L[ℝ] (ℝ × ℝ)) {p v d : E} {r s f' : ℝ} {g : ℝ → ℝ}

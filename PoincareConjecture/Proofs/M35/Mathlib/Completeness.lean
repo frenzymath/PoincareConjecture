@@ -1,19 +1,9 @@
 import Mathlib.Topology.EMetricSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ENNReal Topology
-
-
 
 theorem EMetricSpace.completeSpace_of_topology_eq_edist_le
     {X : Type*} (d₀ d₁ : EMetricSpace X)

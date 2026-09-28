@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Scalar
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ theorem contMDiff_axial_deriv (f : RoundCylinderSpace → ℝ)
   rw [inTangentCoordinates_model_space] at hd
   have hv := hd.clm_apply (contMDiffAt_const (c := (1 : ℝ)))
   simpa only [mfderiv_eq_fderiv, fderiv_eq_deriv_mul, mul_one, a] using hv
-
-
 
 theorem exists_supported_scalar_extension_threshold :
     ∃ δ : ℝ, 0 < δ ∧ ∀ (h : RoundCylinderSpace → ℝ),
@@ -205,8 +195,6 @@ theorem exists_uniform_collar_bound (h : RoundCylinderSpace → ℝ)
   intro q t ht
   exact huv ⟨hu (mem_univ q), hrv (by simpa [Metric.mem_ball, Real.dist_eq] using ht)⟩
 
-
-
 theorem exists_small_smooth_positive_root (α : UnitTwoSphere → ℝ)
     (hα : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ α) (hpos : ∀ q, 0 < α q)
     {δ : ℝ} (hδ : 0 < δ) :
@@ -234,7 +222,6 @@ theorem exists_small_smooth_positive_root (α : UnitTwoSphere → ℝ)
     rw [← Real.exp_nat_mul]
     have hn0 : (n + 1 : ℝ) ≠ 0 := by positivity
     rw [Nat.cast_add, Nat.cast_one, mul_div_cancel₀ _ hn0, Real.exp_log (hpos q)]
-
 
 theorem exists_supported_scaling_extension (α : UnitTwoSphere → ℝ)
     (hα : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ α) (hpos : ∀ q, 0 < α q)
@@ -283,8 +270,6 @@ theorem exists_supported_scaling_extension (α : UnitTwoSphere → ℝ)
         ring
   obtain ⟨r, F, hr, hrR, hFfst, hFout, hFlocal⟩ := hiter N
   exact ⟨r, F, hr, hrR, hFfst, hFout, by simpa only [hpow] using hFlocal⟩
-
-
 
 theorem exists_supported_scalar_collar_extension (h : RoundCylinderSpace → ℝ)
     (hh : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ h)

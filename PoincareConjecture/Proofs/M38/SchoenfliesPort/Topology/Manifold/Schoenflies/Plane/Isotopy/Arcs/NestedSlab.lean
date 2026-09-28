@@ -28,12 +28,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.CompactCutoff
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -44,22 +38,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Nested
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -106,8 +84,6 @@ private theorem common_neighborhood_of_open_patches
         exact hy (Or.inr ⟨b, hb, rfl⟩)
       have hm : g b ∈ f '' A := hmatch.symm ▸ (show g b ∈ g '' B from ⟨b, hb, rfl⟩)
       exact ⟨image_subset_range _ _ hm, hy⟩
-
-
 
 theorem exists_common_neighborhood_of_matching
     {f : S2 → E3} (hf : Continuous f) (hfi : Injective f)
@@ -172,7 +148,6 @@ theorem exists_common_neighborhood_of_matching
     change range f' ∩ U = range g' ∩ U at hlocal
     rwa [hfr, hgr] at hlocal
 
-
 theorem flattened_sphere_eq
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) :
     D '' (T '' (shear (3/10) '' sphere (0 : E3) 1)) =
@@ -185,8 +160,6 @@ theorem flattened_sphere_eq
   · intro hy
     exact ⟨D.symm y, ⟨T.symm (D.symm y), hy, T.apply_symm_apply _⟩,
       D.apply_symm_apply _⟩
-
-
 
 theorem flattened_level_eq
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (t : Real) :
@@ -201,9 +174,6 @@ theorem flattened_level_eq
   constructor <;> rintro ⟨hp, ht⟩ <;> refine ⟨?_, ht⟩
   · simpa only [← ht, hy] using hp
   · simpa only [← ht, hy] using hp
-
-
-
 
 theorem flattened_exterior_level_eq
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (t : Real) (P : Set E3) :
@@ -221,7 +191,6 @@ theorem flattened_exterior_level_eq
     simpa only [← ht, hy] using And.intro (And.intro hp hn) ht
   · rintro ⟨⟨hp, hn⟩, ht⟩
     simpa only [← ht, hy] using And.intro (And.intro hp ht) hn
-
 
 private theorem exists_disjoint_interval_trace_neighborhoods
     {I X : Type*} [Finite I] [TopologicalSpace X] [T2Space X]
@@ -280,9 +249,6 @@ private theorem exists_disjoint_interval_trace_neighborhoods
       exact (hrect i).1 (show (s, t) ∈
         Icc (a i - d) (b i + d) ×ˢ Icc (-d) d from ⟨hs, ht⟩)
     · simpa only [himage] using (hrect i).2
-
-
-
 
 theorem exists_relative_extension_of_central_arc_pair
     {eta : Real} (heta : 0 < eta)
@@ -489,8 +455,6 @@ private theorem image_labeled_exterior_pair
   · intro i
     exact ⟨p i, hpA i, (hfix (hpC i)).symm ▸ hpB i⟩
 
-
-
 theorem image_labeled_exterior_arcs [T2Space X]
     (Q : X ≃ₜ X) (L L' C O : Set X)
     (hOC : O ⊆ C) (hfix : EqOn Q id C) (hlevel : Q '' L = L')
@@ -514,8 +478,6 @@ theorem image_labeled_exterior_arcs [T2Space X]
     (fun i => (hends i).symm ▸ mem_image_of_mem (μ i) ⟨le_rfl, hcd i⟩)
 
 end ExteriorRestriction
-
-
 
 theorem image_recut_interval_of_endpoint_agreement
     {T X Y : Type*} [LinearOrder T]
@@ -557,9 +519,6 @@ theorem image_recut_interval_of_endpoint_agreement
     obtain ⟨x, ⟨s, hs, rfl⟩, heq⟩ := hfull.superset
       (show mu t ∈ mu '' Icc a b from ⟨t, hsub ht, rfl⟩)
     exact ⟨gamma s, ⟨s, (hmem hs (hsub ht) heq).mpr ht, rfl⟩, heq⟩
-
-
-
 
 theorem exists_rebased_arc_pair_matching
     (γ : Fin 2 → Real → E2) (μ : Fin 2 → Real × Real → E2)
@@ -638,10 +597,6 @@ theorem exists_rebased_arc_pair_matching
       · exact ⟨hs.1, hs.2.trans ((horder i).trans (huB.trans hBu))⟩
       · exact ⟨(hlA.trans (hAl.trans (horder i))).trans hs.1, hs.2⟩
     exact hpoint i t ht s hslu (γ i s) (hends i s hs)
-
-
-
-
 
 theorem exists_slab_matching_of_regular_anchor_matches
     {eta : Real} (heta : 0 < eta)
@@ -736,8 +691,6 @@ private theorem exists_small_time_cutoff {ε : Real} (hε : 0 < ε) :
     change χ t * t = t
     rw [χ.one_of_mem_closedBall (by
       simpa only [mem_closedBall, Real.dist_eq, sub_zero] using abs_le.mpr ht), one_mul]
-
-
 
 private theorem exists_cutoff_parameter_family
     (α : Real × Real → Real) (hα : ContDiff Real ∞ α)
@@ -894,9 +847,6 @@ private theorem smooth_strip_transition
   have heq : ((F.symm (q z)).1, z.1) = F.symm (q z) := Prod.ext rfl hsnd.symm
   rw [heq, hback]
 
-
-
-
 private theorem exists_strip_parameter_family_of_endpoint_germ
     (F : OpenPartialHomeomorph (Real × Real) M)
     (hFi : ContMDiffOn I 𝓘(Real, Real × Real) ∞ F.symm F.target)
@@ -947,13 +897,9 @@ private theorem exists_strip_parameter_family_of_endpoint_germ
 
 end Strip
 
-
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
 
 open Poincare.Manifold.Schoenflies.Plane
-
-
-
 
 private theorem smooth_ambient_sphere_lift
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (q0 : S2)
@@ -986,8 +932,6 @@ private theorem ambient_sphere_lift_eq_of_ambient_eq
     unitRadialProjection q0 (F.symm y) = p := by
   rw [hy, F.symm_apply_apply, unitRadialProjection_apply_coe]
 
-
-
 private theorem smooth_model_sphere_lift_of_common_neighborhood
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (q0 : S2)
     (g : S2 → E3) (U : Set E3)
@@ -1003,10 +947,6 @@ private theorem smooth_model_sphere_lift_of_common_neighborhood
   have hactual : y z ∈ range g ∩ U := ⟨hyactual hz, hyU hz⟩
   rw [← hcommon] at hactual
   exact hactual.1
-
-
-
-
 
 theorem exists_stationary_model_strip_coordinates
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (p₀ : S2)
@@ -1097,9 +1037,6 @@ private theorem critical_above_band_is_global_max {p : S2}
   rw [hpq]
   exact hqmax (mem_univ x)
 
-
-
-
 private theorem saddle_bounds_of_exists_higher {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
     (hlower : 1 < height p) (hhigher : ∃ q : S2, height p < height q) :
@@ -1114,8 +1051,6 @@ private theorem saddle_bounds_of_exists_higher {p : S2}
   have hlatitude := critical_latitude_in_saddle_interval_of_height_band hp ⟨hlower.le, hupper⟩
   exact ⟨⟨hlower, saddle_height_lt_fortyone_fortieths hp hlatitude⟩, hlatitude,
     critical_in_height_band_iff_eq_saddle hp hlatitude⟩
-
-
 
 private theorem saddle_bounds_of_local_normal_form {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
@@ -1196,7 +1131,6 @@ private theorem critical_fiber_quadratic_pos
   have hsq : (2 * z₀ - 1) ^ 2 < (1 / 16 : Real) := by
     nlinarith [hz.1, hz.2]
   nlinarith
-
 
 theorem isConnected_critical_level_of_saddle_latitude
     {p : S2} (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
@@ -1330,9 +1264,6 @@ theorem isConnected_critical_level_of_saddle_latitude
       (hconn.image _ (harc (-1)).continuousOn)
   exact ⟨hconnImage.nonempty.of_image,
     Topology.IsInducing.subtypeVal.isPreconnected_image.mp hconnImage.2⟩
-
-
-
 
 theorem critical_fiber_geometry_of_matching
     (f : S2 → E3) (v : E3) (c : Real)
@@ -1470,7 +1401,6 @@ private theorem exists_whole_band_exterior_strips
       exact ⟨⟨hz.1.1.le, hz.1.2.le⟩,
         ⟨by linarith [hq.1], by linarith [hq.2]⟩⟩
 
-
 private theorem exists_exact_whole_level_exterior_strips
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     {p : S2} (hunique : ∀ q, h q = h p →
@@ -1513,8 +1443,6 @@ private theorem exists_exact_whole_level_exterior_strips
       hheight hdisjoint hcentral hends hband
   exact ⟨a, b, a₀, b₀, eta, δ, F, L, A, B, hδ, hδeta, heta_epsilon,
     hδr, hchain, hrect, hF, hFi, hheight, hdisjoint, hL, hzero, hcuts⟩
-
-
 
 theorem exists_exact_nested_exterior_strips
     {p : S2} (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
@@ -1560,7 +1488,6 @@ theorem exists_exact_nested_exterior_strips
   exact exists_exact_whole_level_exterior_strips height_contMDiff hunique
     (isConnected_critical_level_of_saddle_latitude hp hpz).isPreconnected
     d hd0 hdp hd hdi hform hr hrs hepsilon
-
 
 private theorem contDiff_toE2 : ContDiff Real ∞ toE2 := by
   apply (contDiff_piLp 2).mpr
@@ -1656,9 +1583,6 @@ private theorem exists_protected_slab_neighborhood
       simpa only [mem_preimage, heq] using hx
     · exact False.elim ((not_lt_of_ge (abs_le.mpr ht)) hx)
 
-
-
-
 private theorem planar_strip_geometry
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (F : OpenPartialHomeomorph (Real × Real) S2)
@@ -1745,10 +1669,6 @@ private theorem planar_strip_geometry
       simpa only [map_zero, fderiv_apply_one_eq_deriv] using hzero)
     exact one_ne_zero h10
 
-
-
-
-
 private theorem exists_reparametrized_interval_geometry
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
     {l u η ε : Real} (hη : 0 < η) (hε : 0 < ε)
@@ -1822,9 +1742,6 @@ private theorem exists_reparametrized_interval_geometry
       (hμder t (htime t ht) (R t s) (Ioo_subset_Icc_self (hrange t ht s hs)))
   · intro s
     rw [hRzero s]
-
-
-
 
 private theorem exists_stationary_regular_planar_strip
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (p₀ : S2)
@@ -1913,9 +1830,6 @@ private theorem exists_stationary_regular_planar_strip
     simpa only [hRzero] using (hRmatch t (htimer ht) s (hχends s hs)).2
   · intro t ht s hs
     exact (hRmatch t (htimer ht) s (hχends s hs)).1
-
-
-
 
 theorem flattened_exterior_eq_projected_model_strips
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -2297,8 +2211,6 @@ private theorem stripHeightScale_symm_apply {s : Real} (hs : s ≠ 0) (z : Real 
   rw [(stripHeightScale hs).apply_symm_apply, stripHeightScale_apply]
   simp [hs]
 
-
-
 private def physicalHeightStrip {s : Real} (hs : s ≠ 0)
     (F : OpenPartialHomeomorph (Real × Real) S2) :
     OpenPartialHomeomorph (Real × Real) S2 :=
@@ -2452,9 +2364,6 @@ private theorem exists_uniform_inverse_cut_bounds
   have hdr : δ ≤ r / 2 := min_le_right _ _
   exact ⟨by linarith [ht.1], by linarith [ht.2]⟩
 
-
-
-
 private theorem sdiff_eq_of_exterior_coverage
     {E : Type*} (L M P C : Set E) (hML : M ⊆ L)
     (hcover : L \ P ⊆ M) (hPC : P ⊆ C) : L \ C = M \ C := by
@@ -2463,9 +2372,6 @@ private theorem sdiff_eq_of_exterior_coverage
     exact ⟨hcover ⟨hx.1, fun hp => hx.2 (hPC hp)⟩, hx.2⟩
   · intro x hx
     exact ⟨hML hx.1, hx.2⟩
-
-
-
 
 private theorem exists_fixed_trace_exterior_of_moving_cuts
     {ι E : Type*} [Finite ι] {eta : Real} (heta : 0 < eta)
@@ -3034,8 +2940,6 @@ private theorem matching_contact_transfer
     exact hQU ⟨(d (contact r (Lm j)) : E3),
       ⟨contact r (Lm j), (contact_mem hr (Lm j)).1.1, rfl⟩, rfl⟩
 
-
-
 theorem exists_raw_recut_model_strips
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     {p : S2} (hunique : ∀ q, h q = h p →
@@ -3134,8 +3038,6 @@ private theorem exists_raw_nested_recut_strips
     (isConnected_critical_level_of_saddle_latitude hp hpz).isPreconnected
     d hd0 hdp hd hdi hform hr hrs hepsilon
 
-
-
 theorem projected_model_recut_strips
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (h : S2 → Real) (p : S2) (d : OpenPartialHomeomorph E2 S2)
@@ -3190,8 +3092,6 @@ theorem projected_model_recut_strips
     change toE2 (G (F i (z.1, u))) = x
     rw [heq']
     exact (congrArg toE2 hqx).trans (hproject x (scale * u))
-
-
 
 theorem physical_projected_recut_model_strips
     (G₀ D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -3276,7 +3176,6 @@ private theorem physical_projected_nested_recut_strips
 
 end ModelConstruction
 
-
 section SetSlab
 
 private theorem image_exterior_of_level_matching
@@ -3306,9 +3205,6 @@ private theorem image_sdiff_of_relative_matching
 private def arcPairTrace (l u : Fin 2 → Real) (mu : Fin 2 → Real × Real → E2)
     (t : Real) : Set E2 :=
   ⋃ i, (fun s => mu i (t, s)) '' Icc (l i) (u i)
-
-
-
 
 private theorem exists_relative_set_slab_of_regular_level_matching
     {eta : Real} (heta : 0 < eta)
@@ -3595,9 +3491,6 @@ private theorem actual_moving_cuts_and_whole_level_of_flattening
         obtain ⟨i, s, hs, heq⟩ := mem_iUnion.mp hfull
         exact ⟨⟨F i (s, t), (hflat i t ht s hs).trans heq⟩, hyheight⟩
 
-
-
-
 private theorem exists_common_open_neighborhood_of_compact_slices
     {T X Y : Type*} [TopologicalSpace T] [TopologicalSpace X] [TopologicalSpace Y]
     {I : Set T} {C : Set X} (hI : IsCompact I) (hC : IsCompact C)
@@ -3616,13 +3509,10 @@ private theorem exists_common_open_neighborhood_of_compact_slices
   intro t ht x hx
   exact hVW ⟨hIV ht, hx.1⟩
 
-
 private def planarFiber (Z : Set E3) (t : Real) : Set E2 := {x | toE3 x t ∈ Z}
 
 private def flattenedSphereMap (G₀ D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (p : S2) : E3 := D (G₀ p)
-
-
 
 theorem exists_relative_model_slab_transport_of_raw_model_strips
     (G₀ D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -3921,8 +3811,6 @@ theorem exists_relative_model_slab_transport_of_raw_model_strips
       (arcPairTrace l u mu 0) (arcPairTrace l u mu t) C
       (fun x hx => hPsiO t x (hCO hx)) (htrace t ht) Subset.rfl
 
-
-
 private theorem exists_relative_matching_of_model_transport
     {δ : Real} (hδ : 0 < δ) (C K O : Set E2)
     (hK : IsCompact K) (hCO : C ⊆ O) (hKO : Disjoint K O)
@@ -4113,12 +4001,9 @@ private theorem exists_relative_slab_of_raw_model_strips
     hV, hQV, hclosedC, Phi, hPhi, hPhiinv, hfix, hfixO,
     fun t ht x hx => hfixO t x (hCO' (hVC t ht x hx)), hmatch⟩
 
-
 private def nestedSlabMap (T : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ :=
   (Poincare.Manifold.Schoenflies.Saddle.Nested.shear (3 / 10)).trans T
-
-
 
 theorem exists_model_slab_transport_of_central_level
     (G₀ D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -4271,9 +4156,6 @@ theorem exists_model_slab_transport_of_central_level
   · exact hflatclosed ▸ hQV
   · exact hflatclosed ▸ hclosedC
 
-
-
-
 theorem exists_concrete_nested_model_slab_transport
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hDheight : ∀ x : E3, D x 2 = x 2)
@@ -4351,8 +4233,6 @@ theorem exists_concrete_nested_model_slab_transport
     d hd0 hdp hd hdi hform hr hscale hrs hGheight g hg hginj e hmatch
     hU hcommon hQU Fa a aa₀ ab₀ b hachain La hLa heta hFa hactualheight hflat
     S hactual Nreg hNreg hQNreg
-
-
 
 private theorem exists_concrete_nested_slab_matching
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -4444,10 +4324,6 @@ private theorem exists_concrete_nested_slab_matching
   exact ⟨δ, C, K', O', V, hδ, hδη, hC, hCNreg, hK', hO', hCO', hKO',
     hV, hQV, hclosedC, Phi, hPhi, hPhiinv, hfix, hfixO,
     fun t ht x hx => hfixO t x (hCO' (hVC t ht x hx)), hmatch⟩
-
-
-
-
 
 private theorem exists_nested_slab_family_of_negative_regular_matching
     (g : S2 → E3) (hg : Continuous g) (hginj : Injective g)
@@ -4581,8 +4457,6 @@ private theorem exists_nested_slab_family_of_negative_regular_matching
   rw [← (hactual t htη).1, ← hmodel t]
   exact (hmatching t ht).2 _ hPC
 
-
-
 theorem exists_nested_slab_family
     (g : S2 → E3) (hg : Continuous g) (hginj : Injective g)
     (e d : OpenPartialHomeomorph E2 S2) (p : S2)
@@ -4653,8 +4527,6 @@ theorem exists_nested_slab_family
   intro C N hC hN hCN hNNreg ε hε hεeta hcommon t ht ht0
   exact hregular C N hC hN hCN hNNreg ε hε hεeta hcommon t ht (ne_of_lt ht0)
 
-
-
 end SlabMatching
 
 section RegularCircles
@@ -4666,7 +4538,6 @@ open TopologicalSpace Poincare.Geometry.Manifold.RegularLevel
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev axis : E3 := EuclideanSpace.single 2 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
 
 private theorem isConnected_bottom_of_regular_band
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -4702,8 +4573,6 @@ private theorem isConnected_bottom_of_regular_band
   rw [← hrange]
   exact isConnected_range hk
 
-
-
 private theorem exists_smooth_circle_above_nested_saddle
     {p : S2} (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
     (hpz : (p : E3) 2 ∈ Ioo (3 / 5 : Real) (5 / 8))
@@ -4730,8 +4599,6 @@ private theorem exists_smooth_circle_above_nested_saddle
     height_contMDiff a (fun q hq => hregular q ⟨hq.ge, hq.trans_le ha⟩) q hq
   refine ⟨γ, hγ, hinj, hder, ?_⟩
   rw [hrange, hconn.isPreconnected.connectedComponentIn hq]
-
-
 
 private theorem planar_circle_of_spherical_level
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -4800,9 +4667,6 @@ private theorem planar_circle_of_spherical_level
       have heq := congrArg toE2 hxy
       exact heq.trans (by ext i; fin_cases i <;> rfl)
 
-
-
-
 private theorem exists_smooth_planar_circle_positive_nested_level
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hDheight : ∀ x : E3, D x 2 = x 2)
@@ -4833,9 +4697,6 @@ private theorem exists_smooth_planar_circle_positive_nested_level
     Poincare.Geometry.Manifold.isSmoothEmbedding_of_injective_mfderiv hβ hβinj hβder,
     hβrange⟩
 
-
-
-
 theorem exists_uniform_positive_nested_level_circles
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hDheight : ∀ x : E3, D x 2 = x 2)
@@ -4865,8 +4726,6 @@ theorem exists_uniform_positive_nested_level_circles
     exists_smooth_planar_circle_positive_nested_level T D hDheight hp hpz
       hscale ht.1 htupper hGheight
   exact ⟨β, hβ, hβinj, hβder, hβemb, hβ.comp contMDiff_snd, hβrange⟩
-
-
 
 private theorem toE3_toE2_of_height {y : E3} {t : Real} (hy : y 2 = t) :
     toE3 (toE2 y) t = y := by
@@ -5010,8 +4869,6 @@ private theorem exists_one_upperPlanarCutCircle {g : S2 → E3} {B : Set Real} {
   obtain ⟨p, hp, rfl⟩ := hx
   exact ⟨p, (toE3_toE2_of_height ((hD _).trans (hQ hp))).symm⟩
 
-
-
 theorem exists_actual_positive_cut_circle_of_single_upper_end
     {g : S2 → E3} {B : Set Real} {K : Set S2}
     (A : AnnularEndFamily axis g B K)
@@ -5040,8 +4897,6 @@ theorem exists_actual_positive_cut_circle_of_single_upper_end
   have hlev := (heq.superset (mem_iUnion_of_mem i hp)).2
   change g p 2 = A.upperCut
   simpa only [mem_preimage, mem_singleton_iff, zero_add, hcut] using hlev
-
-
 
 private def lowerPlanarCutCircle {g : S2 → E3} {B : Set Real} {K : Set S2}
     (A : AnnularEndFamily axis g B K)
@@ -5184,8 +5039,6 @@ private theorem exists_actual_negative_cut_pair_of_resolved_components
   exact ⟨c, hc, fun i => (hc i).contMDiff.comp contMDiff_snd, hdisj,
     by simpa only [hcut] using hfull, hsub⟩
 
-
-
 theorem exists_uniform_actual_negative_cut_pairs
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -5242,8 +5095,6 @@ theorem exists_uniform_actual_negative_cut_pairs
   exact exists_actual_negative_cut_pair_of_resolved_components A
     (M.tree.embedding_of_mem_leaves hg) D hD e ht (htd.trans_lt hdr) hAlower
     hcard C hC hdisjoint hpatch
-
-
 
 private theorem exists_open_connected_trace_neighborhood
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -5399,7 +5250,6 @@ private theorem exists_common_open_connected_pair_neighborhood
       rw [hNc1, hNd1]
       exact ⟨hconn1, hlocal1⟩
 
-
 private theorem exists_smooth_band_time_retraction {r δ : Real} (hr : 0 ≤ r) (hδ : 0 < δ) :
     ∃ θ : Real → Real, ContDiff Real ∞ θ ∧
       (∀ t, θ t ∈ Ioo (-δ) (r + δ)) ∧ ∀ t ∈ Icc (0 : Real) r, θ t = t := by
@@ -5423,8 +5273,6 @@ private theorem exists_smooth_band_time_retraction {r δ : Real} (hr : 0 ≤ r) 
   · intro t ht
     change τ t * t = t
     rw [hτone t ht, one_mul]
-
-
 
 private theorem exists_circle_families_on_regular_sphere_band
     {ι : Type*} {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -5532,7 +5380,6 @@ private theorem exists_circle_families_on_regular_sphere_band
         rw [hJz, et.apply_symm_apply]
         rfl
 
-
 private theorem sphere_ambient_mfderiv_injective
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (p : S2) :
     Injective (mfderiv (𝓡 2) (𝓡 3) (fun q : S2 => G q) p) := by
@@ -5553,8 +5400,6 @@ private theorem projected_lowerSourceCircle {S : Set E2} (hS : S ⊆ levelSet) :
     simpa only [hfix x hx] using hx
   · intro x hx
     exact ⟨x, hx, hfix x hx⟩
-
-
 
 private theorem exists_nested_planar_circles_below_saddle
     {p : S2} (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
@@ -5697,9 +5542,6 @@ private theorem exists_nested_planar_circles_below_saddle
       rw [image_comp, image_comp]
       exact image_mono hBA
 
-
-
-
 private theorem exists_planar_fiber_of_affine_height
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     {scale c : Real} (hscale : 0 < scale)
@@ -5749,8 +5591,6 @@ private theorem planar_fiber_image
       exact he.symm
     change toE3 (F.symm x) a ∈ S
     exact hxy.symm ▸ hy
-
-
 
 private theorem exists_flattened_nested_circles_negative_level
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -5812,8 +5652,6 @@ private theorem exists_flattened_nested_circles_negative_level
     rw [image_comp, image_comp]
     exact image_mono hBA
 
-
-
 theorem exists_uniform_negative_nested_level_circles
     (T D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hDheight : ∀ x : E3, D x 2 = x 2)
@@ -5843,10 +5681,7 @@ theorem exists_uniform_negative_nested_level_circles
   have hdiv : 1 - height p ≤ t / scale := (le_div_iff₀ hscale).mpr (by nlinarith [ht.1])
   linarith
 
-
-
 end RegularCircles
-
 
 end Poincare.Manifold.Schoenflies.Saddle.Nested
 

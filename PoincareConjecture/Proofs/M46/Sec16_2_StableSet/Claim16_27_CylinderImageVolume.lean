@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinder_inverse_tangentNorm_le_two
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)
@@ -74,8 +63,6 @@ theorem cylinder_inverse_tangentNorm_le_two
   apply (Real.sqrt_le_left (by positivity)).mpr
   nlinarith [Real.sq_sqrt hn]
 
-
-
 theorem cylinder_image_volume_ge_eighth
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)
     (g : RiemannianMetric 3 C.carrier) (s : ℝ) (hs : s ∈ I)
@@ -110,8 +97,6 @@ theorem cylinder_image_volume_ge_eighth
     (F.metric (origin + s / scale)).volumeMeasure (e.forward s hs '' V) at hvol
   simpa only [M15.calibratedMetricVolume_eq_volumeMeasure, ENNReal.ofReal_ofNat,
     show (2 : ℝ≥0∞) ^ (3 : ℕ) = 8 by norm_num] using hvol
-
-
 
 theorem cylinder_image_regular_compact_buffer
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)

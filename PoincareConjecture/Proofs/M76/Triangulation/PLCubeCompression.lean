@@ -4,26 +4,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.ProjectivePLInterpolation
 import PoincareConjecture.Proofs.M76.Mathlib.CoreCompressionSimplices
 import PoincareConjecture.Proofs.M76.Mathlib.CoreFixedInterpolation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_plCubeCompression (ι : Type*) [Fintype ι] :
     ∃ p : OpenPartialHomeomorph (ι → ℝ) (ι → ℝ),

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointComponentLocalHomeomorph
 import PoincareConjecture.Proofs.M76.Horizon.Dependencies.Topology.Covering.Universal.Proper
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

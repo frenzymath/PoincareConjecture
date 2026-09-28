@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedRimRetra
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.OriginalSourceRimChart
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Collars.StageProperAnnulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

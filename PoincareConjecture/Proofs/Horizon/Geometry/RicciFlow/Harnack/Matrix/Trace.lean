@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.LaplacianTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ContractedBianchi
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -26,8 +14,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma hamiltonP_trace (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (v : TangentSpace (𝓡 n) x) :
@@ -47,8 +33,6 @@ lemma hamiltonP_trace (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
   rw [D.sum_covariantTensorDerivative_ricci_eq_scalar_derivative hD x v, hdiv]
   ring
 
-
-
 lemma hamiltonM_trace (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (τ : ℝ) (x : M) :
     (∑ i, hamiltonM D τ x (g.orthonormalBasis x i) (g.orthonormalBasis x i)) =
@@ -64,8 +48,6 @@ lemma hamiltonM_trace (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (fun i j => (hD.2.2.2.1 x (b i) (b j) (b i) (b j)).2.2.2)
     (D.sum_tensorLaplacian_ricci_eq_laplacian_scalar hD x) rfl
 
-
-
 lemma hamilton_trace_eq (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (τ : ℝ) (x : M) (v : TangentSpace (𝓡 n) x) :
     2 * (∑ i, (hamiltonM D τ x (g.orthonormalBasis x i) (g.orthonormalBasis x i) +
@@ -80,8 +62,6 @@ lemma hamilton_trace_eq (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     D.scalarCurvature x / (2 * τ) +
     2 * (mvfderiv (𝓡 n) D.scalarCurvature x v / 2) + D.ricci x v v) = _
   ring
-
-
 
 theorem scalar_harnack_eq_hamilton_trace
     (hC : RicciFlowCurvatureTheory.{u}) (T₀ T₁ : ℝ)
@@ -102,9 +82,6 @@ theorem scalar_harnack_eq_hamilton_trace
   refine ⟨_, hC.scalar_evolution n M (Set.Ioo T₀ T₁) F t ht x, ?_⟩
   exact (hamilton_trace_eq (F.connection t)
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) (t - T₀) x v).symm
-
-
-
 
 theorem finite_differential_of_hamilton_diagonal_nonneg
     (hC : RicciFlowCurvatureTheory.{u}) (T₀ T₁ : ℝ)

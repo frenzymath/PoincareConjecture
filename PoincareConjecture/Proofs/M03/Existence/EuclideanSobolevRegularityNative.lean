@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanSobolevContinuousNative
 import Mathlib.Analysis.Fourier.FourierTransformDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -63,7 +55,6 @@ theorem memLp_momentWeight (j : ℕ) {s : ℝ} (hs : (n : ℝ) < 2 * (s - j)) :
   rw [Real.norm_eq_abs, abs_of_nonneg (sq_nonneg _)]
   exact sq_momentWeight_le j s x
 
-
 theorem integrable_frequencyMoment (j : ℕ) {s : ℝ}
     (hs : (n : ℝ) < 2 * (s - j)) (u : FrequencyL2 n) :
     Integrable (fun x : E => ‖x‖ ^ j * ‖(decayWeight s x : ℂ) * u x‖) volume := by
@@ -99,7 +90,6 @@ theorem integral_frequencyMoment_le (j : ℕ) {s : ℝ}
       ring
     _ = ‖weightedL1 (momentLp j hs) u‖ := (L1.norm_eq_integral_norm _).symm
     _ ≤ _ := norm_weightedL1_le _ _
-
 
 theorem iteratedFDeriv_inverseFourier (k : ℕ) {f : E → ℂ}
     (hf : ∀ j : ℕ, j ≤ k → Integrable (fun x : E => ‖x‖ ^ j * ‖f x‖))
@@ -157,7 +147,6 @@ theorem contDiff_realSobolevRealization (k : ℕ) {s : ℝ}
     (hs : (n : ℝ) < 2 * s) (hsk : (n : ℝ) < 2 * (s - k))
     (u : FrequencyL2 n) : ContDiff ℝ k (realSobolevRealization hs u : E → ℝ) :=
   Complex.reCLM.contDiff.comp (contDiff_sobolevRealization k hs hsk u)
-
 
 theorem norm_iteratedFDeriv_sobolevRealization_le (k : ℕ) {s : ℝ}
     (hs : (n : ℝ) < 2 * s) (hsk : (n : ℝ) < 2 * (s - k))

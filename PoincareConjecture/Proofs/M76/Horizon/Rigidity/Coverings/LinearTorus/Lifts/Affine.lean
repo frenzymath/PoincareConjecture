@@ -4,7 +4,6 @@ set_option autoImplicit false
 
 namespace PoincareConjecture.M76.LinearTorus
 
-
 def affineIntegerMatrixMap (p : ℝ) (A : Matrix (Fin 2) (Fin 2) ℤ)
     (c : AddCircle p × AddCircle p) :
     C(AddCircle p × AddCircle p, AddCircle p × AddCircle p) :=

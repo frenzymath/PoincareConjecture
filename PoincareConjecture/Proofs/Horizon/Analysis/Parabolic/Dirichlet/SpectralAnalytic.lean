@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSm
 import Mathlib.Analysis.Analytic.Basic
 import Mathlib.Analysis.SpecialFunctions.Exponential
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -100,7 +93,6 @@ private theorem heatSeries_sum (b : HilbertBasis ι ℝ H) (lam : ι → ℝ≥0
   rw [show -(lam i : ℝ) * (t + h) = -(lam i : ℝ) * h + -(lam i : ℝ) * t by ring,
     Real.exp_add]
   ring
-
 
 theorem analyticOnNhd_heatPower_zero (b : HilbertBasis ι ℝ H)
     (lam : ι → ℝ≥0) :

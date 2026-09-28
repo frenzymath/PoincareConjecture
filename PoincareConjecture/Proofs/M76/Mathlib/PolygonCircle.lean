@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundaryHomeomorph
 import PoincareConjecture.Proofs.M76.Smoothing.PlanarCircleComplex
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace PoincareConjecture.M76.Smoothing
@@ -39,10 +29,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
 
 theorem nonempty_boundary_homeomorph_circle (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinjP : Function.Injective P) :

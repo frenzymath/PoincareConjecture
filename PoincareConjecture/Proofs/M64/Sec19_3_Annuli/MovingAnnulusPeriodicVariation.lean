@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusFirstVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64MovingAnnulusCurrent_periodic
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}
@@ -76,11 +61,6 @@ theorem m64MovingAnnulusCurrent_periodic
       (0, EuclideanSpace.basisFun (Fin 2) ℝ i))) (htranslate q)
 
 variable [T2Space M] [CompactSpace M] {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64Annulus_periodic_first_variation_of_conformal_minimum
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1)

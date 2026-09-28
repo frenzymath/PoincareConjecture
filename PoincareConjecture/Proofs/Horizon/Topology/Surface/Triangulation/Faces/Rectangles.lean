@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.Rectangle
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_smoothFace_pair_of_coordinate_rectangle_with_boundaries
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -96,7 +84,6 @@ theorem exists_smoothFace_pair_of_coordinate_rectangle_with_boundaries
     congr 1
     ext i
     fin_cases i <;> simp [affineChartSegment]
-
 
 theorem exists_smoothFace_pair_of_coordinate_rectangle
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

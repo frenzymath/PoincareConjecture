@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Ope
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

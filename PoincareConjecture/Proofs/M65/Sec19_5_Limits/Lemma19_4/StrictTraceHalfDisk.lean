@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHarmoni
 import Mathlib.Analysis.Complex.ReImTopology
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
-
-
 
 theorem halfDisk_differential_domain {r : ℝ} (hr : 0 < r) :
     let K := closedBall (0 : ℂ) r ∩ {z | 0 ≤ z.im}
@@ -52,16 +40,12 @@ theorem halfDisk_differential_domain {r : ℝ} (hr : 0 < r) :
   change closure U = K
   rw [← hi, hc.closure_interior_eq_closure_of_nonempty_interior hni, hK.closure_eq]
 
-
-
 def halfDiskGradient {n : ℕ} (H : ℂ → EuclideanSpace ℝ (Fin n)) (r : ℝ)
     (z : ℂ) : Fin n → ℂ :=
   coordinateComplexification
     (fderivWithin ℝ H (closedBall (0 : ℂ) r ∩ {w | 0 ≤ w.im}) z 1) -
       I • coordinateComplexification
         (fderivWithin ℝ H (closedBall (0 : ℂ) r ∩ {w | 0 ≤ w.im}) z I)
-
-
 
 def halfDiskHarmonicMatrix {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g) (H : ℂ → EuclideanSpace ℝ (Fin n)) (r : ℝ) (z : ℂ) :
@@ -72,8 +56,6 @@ def halfDiskHarmonicMatrix {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ
       I • complexifyOperator (M65Gauss.connectionCoefficient D (H z)
         (fderivWithin ℝ H (closedBall (0 : ℂ) r ∩ {w | 0 ≤ w.im}) z I)))
 
-
-
 theorem halfDiskGradient_eq_zero_iff {n : ℕ}
     (H : ℂ → EuclideanSpace ℝ (Fin n)) (r : ℝ) (z : ℂ) :
     halfDiskGradient H r z = 0 ↔
@@ -81,8 +63,6 @@ theorem halfDiskGradient_eq_zero_iff {n : ℕ}
   let T := fderivWithin ℝ H (closedBall (0 : ℂ) r ∩ {w | 0 ≤ w.im}) z
   simpa only [complexGradient, T.fderiv, T, halfDiskGradient] using
     complexGradient_eq_zero_iff T 0
-
-
 
 theorem halfDisk_mem_nhds {r : ℝ} {z : ℂ}
     (hz : z ∈ ball (0 : ℂ) r ∩ {w | 0 < w.im}) :
@@ -92,8 +72,6 @@ theorem halfDisk_mem_nhds {r : ℝ} {z : ℂ}
   intro w hw
   exact ⟨ball_subset_closedBall hw.1, (show 0 < w.im from hw.2).le⟩
 
-
-
 theorem halfDisk_fields_eq {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g) (H : ℂ → EuclideanSpace ℝ (Fin n)) {r : ℝ} {z : ℂ}
     (hz : z ∈ ball (0 : ℂ) r ∩ {w | 0 < w.im}) :
@@ -102,9 +80,6 @@ theorem halfDisk_fields_eq {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ
   simp only [halfDiskGradient, halfDiskHarmonicMatrix,
     fderivWithin_of_mem_nhds (halfDisk_mem_nhds hz), complexGradient, harmonicMatrix,
     and_self]
-
-
-
 
 theorem halfDisk_fields_continuousOn
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -124,9 +99,6 @@ theorem halfDisk_fields_continuousOn
       ((complexifyOperator.continuous.comp_continuousOn
         (hC.clm_apply (hc I))).const_smul I)).const_smul
         (-(2 : ℂ)⁻¹)
-
-
-
 
 theorem halfDisk_fields_equation
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

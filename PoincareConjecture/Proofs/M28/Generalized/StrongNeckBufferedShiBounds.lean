@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Local
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,11 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
-
 
 theorem exists_source_neck_buffered_core_derivative_bound
     (hShi : LocalCurvatureDerivativeEstimates.{u})

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.VolumeSupport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,7 +58,6 @@ variable [T2Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
 theorem terminal_volume_le {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (τ : ℝ) (hτ : 0 ≤ τ) :
     calibratedMetricVolume (K.flow.metric 0) ≤
@@ -75,8 +65,6 @@ theorem terminal_volume_le {K : AncientKappaSolution n M}
   obtain ⟨C⟩ := P.structural
   apply calibratedMetricVolume_mono_of_edist P.harnack
   exact (C.structural M K).edist_monotone (0 - τ) 0 (by linarith) le_rfl
-
-
 
 theorem ae_regular_worldline {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R : ℝ} {p : M}

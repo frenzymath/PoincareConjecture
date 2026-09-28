@@ -1,26 +1,13 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSector
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
 
-
-
 noncomputable def radiusMap (a b c d r : ℝ) : ℝ :=
   c + ((d - c) / (b - a)) * (r - a)
-
-
 
 theorem strictMono_radiusMap {a b c d : ℝ} (hab : a < b) (hcd : c < d) :
     StrictMono (radiusMap a b c d) := by
@@ -30,8 +17,6 @@ theorem strictMono_radiusMap {a b c d : ℝ} (hab : a < b) (hcd : c < d) :
   simpa only [add_comm] using
     add_lt_add_left (mul_lt_mul_of_pos_left (sub_lt_sub_right hrs a) hpos) c
 
-
-
 theorem radiusMap_endpoints {a b c d : ℝ} (hab : a < b) :
     radiusMap a b c d a = c ∧ radiusMap a b c d b = d := by
   constructor
@@ -40,8 +25,6 @@ theorem radiusMap_endpoints {a b c d : ℝ} (hab : a < b) :
     rw [div_mul_cancel₀ _ (sub_ne_zero.mpr hab.ne')]
     ring
 
-
-
 theorem radiusMap_image {a b c d : ℝ} (hab : a < b) (hcd : c < d) :
     radiusMap a b c d '' Icc a b = Icc c d := by
   have hc : Continuous (radiusMap a b c d) := by unfold radiusMap; fun_prop
@@ -49,9 +32,6 @@ theorem radiusMap_image {a b c d : ℝ} (hab : a < b) (hcd : c < d) :
     ((strictMono_radiusMap hab hcd).monotone.monotoneOn _),
     (radiusMap_endpoints (c := c) (d := d) hab).1,
     (radiusMap_endpoints (c := c) (d := d) hab).2]
-
-
-
 
 theorem exists_parameter_radius_homeomorph {a b c d : ℝ}
     (hab : a < b) (hcd : c < d) :

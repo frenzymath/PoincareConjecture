@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedBallImage
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipUnitField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 open Uniqueness
-
-
 
 theorem blowupSequence_far_tip_radial_field_on_limit_ball
     (P : M35StandardCapPredecessors)

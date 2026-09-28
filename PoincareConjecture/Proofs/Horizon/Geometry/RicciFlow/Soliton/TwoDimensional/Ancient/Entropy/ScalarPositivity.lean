@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.ScalarBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +18,6 @@ open Splitting.MaximumPrinciple
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem scalarCurvature_heatLowerContacts_surface {J : Set ℝ} (F : RicciFlow 2 M J) :
     HeatLowerContacts F.connection univ (interior J)
@@ -49,8 +40,6 @@ theorem scalarCurvature_heatLowerContacts_surface {J : Set ℝ} (F : RicciFlow 2
   rw [LeviCivitaData.Dirichlet.laplacian_sub_on (F.connection t) hW hψ hR.contMDiffOn hx] at h
   dsimp only [d, R]
   nlinarith [sq_nonneg ((F.connection t).scalarCurvature x)]
-
-
 
 theorem scalarCurvature_pos_surface_on_Icc [ConnectedSpace M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 2 M (Icc a b))
@@ -82,8 +71,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem scalarCurvature_pos_surface (K : AncientKappaSolution 2 M)
     (t : ℝ) (ht : t ≤ 0) (x : M) : 0 < (K.flow.connection t).scalarCurvature x := by

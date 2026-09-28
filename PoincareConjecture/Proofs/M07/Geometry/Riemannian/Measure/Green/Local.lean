@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChartSupp
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +46,6 @@ theorem fderiv_chartPullback_coordinateGradient
   simp only [mvfderiv, mfderiv_eq_fderiv, NormedSpace.fromTangentSpace,
     ContinuousLinearMap.comp_apply] at h'
   convert! h' using 1
-
-
 
 theorem integral_chartPullback_mul_laplacian_density
     (D : LeviCivitaData g)

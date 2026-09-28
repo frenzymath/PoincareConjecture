@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.WithinEquationCongruence
 import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

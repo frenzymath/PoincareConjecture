@@ -4,17 +4,6 @@ import Mathlib.Data.ENNReal.Real
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,10 +17,6 @@ variable {E H F K M N : Type*}
   [TopologicalSpace M] [ChartedSpace H M]
   [TopologicalSpace N] [ChartedSpace K N]
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
-
-
-
-
 
 theorem exists_smooth_of_finite_local_smoothing
     {ι : Type*} [Finite ι] (W : ι → Set M)

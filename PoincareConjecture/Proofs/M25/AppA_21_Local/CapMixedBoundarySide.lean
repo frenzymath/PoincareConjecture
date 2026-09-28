@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedChainCuts
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCoreContact
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.finite_chain_mixed_boundary_side_alternative
     {M : Type u} [TopologicalSpace M]

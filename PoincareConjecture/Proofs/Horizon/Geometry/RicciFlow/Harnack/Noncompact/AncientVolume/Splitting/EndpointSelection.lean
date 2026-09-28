@@ -3,27 +3,12 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Topology.MetricSpace.Sequences
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
 
 namespace Poincare.AncientVolume.Splitting
-
 
 noncomputable def vertexComparisonCosine {X : Type*} [MetricSpace X]
     (p x y : X) : ℝ :=
@@ -44,8 +29,6 @@ private theorem comparison_cosine_le_of_triangle
   have hbound : d * c ≤ a - b * q := by nlinarith
   have hscaled : d * c ≤ d * (δ - (1 - δ) * q) := by nlinarith
   nlinarith
-
-
 
 theorem exists_farther_vertices_of_convergent_directions
     {X E : Type*} [MetricSpace X] [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -106,8 +89,6 @@ theorem exists_farther_vertices_of_convergent_directions
     simpa using hδ.sub ((tendsto_const_nhds.sub hδ).mul hq)
   exact ⟨m, hm, hfar, tendsto_of_tendsto_of_tendsto_of_le_of_le'
     tendsto_const_nhds hbound (Eventually.of_forall hlower) hupper⟩
-
-
 
 theorem exists_farther_vertices_of_unit_directions
     {X E : Type*} [MetricSpace X] [NormedAddCommGroup E] [InnerProductSpace ℝ E]

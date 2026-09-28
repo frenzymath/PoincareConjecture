@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Rectang
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import Mathlib.Topology.Separation.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -24,8 +15,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 def HamiltonZeroFirstRectangleFaces {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0) (phi : C(H0, H0))
@@ -201,9 +190,6 @@ theorem exists_hamiltonZero_original_first_rectangle_faces
       obtain ⟨i, z, hz⟩ := mem_iUnion.mp hmem
       exact mem_iUnion.mpr ⟨i, z, congrArg Subtype.val hz⟩
 
-
-
-
 theorem exists_hamiltonZero_installed_frontier_tangential_covering
     {E : Type*} [TopologicalSpace E] {K : Set E} (hK : IsCompact K)
     {R : Set X0} {r : ℝ} (hr : 0 ≤ r) (c : E × ℝ → X0)
@@ -249,9 +235,6 @@ theorem exists_hamiltonZero_installed_frontier_tangential_covering
   have hfixed := F.fst_eq_snd (show (x : X0) ∈ (interior R)ᶜ from x.property.2)
   change g (H.symm x) = _
   rw [← hproduct, hval, hfixed]
-
-
-
 
 theorem exists_hamiltonZero_installed_first_rectangle_faces
     {E ι κ : Type*} [TopologicalSpace E]

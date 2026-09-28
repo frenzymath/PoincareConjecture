@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChainLimit
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerVectorMollification
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suContinuous_memLp_ball {E : Type*} [NormedAddCommGroup E]
     {f : Plane → E} {a : Plane} {r : ℝ} {p : ℝ≥0∞}
     (hf : ContinuousOn f (Metric.closedBall a r)) :
@@ -38,8 +27,6 @@ theorem suContinuous_memLp_ball {E : Type*} [NormedAddCommGroup E]
     ((hf.mono Metric.ball_subset_closedBall).aestronglyMeasurable Metric.isOpen_ball.measurableSet)
   filter_upwards [ae_restrict_mem Metric.isOpen_ball.measurableSet] with x hx
   exact (hC x (Metric.ball_subset_closedBall hx)).trans (le_abs_self C)
-
-
 
 theorem suQuadraticDerivative_value_bound {m : ℕ}
     {F : EuclideanSpace ℝ (Fin m) → ℝ} (hF : ContDiff ℝ 1 F)
@@ -78,10 +65,6 @@ private theorem restrict_limit {m : ℕ} {p : ℝ≥0∞} {O : Set Plane}
       _ ≤ _ := eLpNorm_mono_measure _ Measure.restrict_le_self
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hlim
     (fun _ => bot_le) hb
-
-
-
-
 
 theorem suWeakPartial_comp_quadratic {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

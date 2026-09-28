@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawStage
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallMetricIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +22,6 @@ variable {epsilon C A : ℝ}
     (fun k => H.tubeCriticalBase T A1 hA1 (phi k))) (k : ℕ)
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem regularRawStage_coefficients_eq :
     letI := G.limitCarrier.topologicalSpace
@@ -63,9 +50,6 @@ theorem regularRawStage_coefficients_eq :
     (f := G.embedding k ∘ (extChartAt (𝓡 3) q).symm) (x := y) hf using 1
   ext v w
   rfl
-
-
-
 
 theorem regularRawStage_coefficients_germ :
     letI := G.limitCarrier.topologicalSpace

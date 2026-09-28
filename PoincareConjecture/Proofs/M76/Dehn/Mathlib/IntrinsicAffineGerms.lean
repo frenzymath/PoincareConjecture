@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem Set.exists_open_affine_germ_of_mem_intrinsicInterior
     {S : Set E} {p : E} (hp : p ∈ intrinsicInterior ℝ S) :
@@ -40,10 +26,6 @@ theorem Set.exists_open_affine_germ_of_mem_intrinsicInterior
   exact hmem
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_open_maximal_face_affine_germ
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

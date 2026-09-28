@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.DetectedLoops
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteBarycentricCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricWalkPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry.SimplicialComplex

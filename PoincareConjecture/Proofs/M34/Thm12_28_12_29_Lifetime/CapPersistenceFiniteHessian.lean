@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.CoordinateTransition
-
-
-
-
 
 theorem hasUniformJetBoundsOn_of_finite_christoffel_hessian
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

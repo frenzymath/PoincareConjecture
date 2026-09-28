@@ -5,17 +5,6 @@ import PoincareConjecture.Definitions.M60Area
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 import Mathlib.MeasureTheory.Integral.IntegrableOn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +17,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60AreaGram_aestronglyMeasurable_in_chart (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin n)))
@@ -83,9 +69,6 @@ theorem m60AreaGram_aestronglyMeasurable_in_chart (g : RiemannianMetric n M)
   simp only [B, Function.comp_apply, m60AreaGram, hdf, hinner]
   rfl
 
-
-
-
 theorem m60AreaDensity_aestronglyMeasurable_in_chart (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin n)))
     (he : e.MDifferentiable (𝓡 n) (𝓡 n))
@@ -100,9 +83,6 @@ theorem m60AreaDensity_aestronglyMeasurable_in_chart (g : RiemannianMetric n M)
   change AEStronglyMeasurable (fun z => m60AreaDensity g f z) (volume.restrict U)
   simpa [m60AreaDensity, Matrix.det_fin_two] using
     Real.continuous_sqrt.comp_aestronglyMeasurable hmax
-
-
-
 
 theorem m60AreaDensity_aestronglyMeasurableOn (g : RiemannianMetric n M)
     {f : LoopPlane → M} {S : Set LoopPlane} (hS : IsOpen S) (hf : ContinuousOn f S) :

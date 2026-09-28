@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.TwoForm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped BigOperators Manifold ContDiff Bundle
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
-
-
 
 lemma sum_sq_half_wedge_le (A W : I → ℝ) :
     (∑ a, ∑ b, ((A a * W b - W a * A b) / 2) ^ 2) ≤
@@ -36,8 +26,6 @@ lemma sum_sq_half_wedge_le (A W : I → ℝ) :
       ring
 
 variable [DecidableEq I]
-
-
 
 lemma sum_sq_prescribed_jet_le
     (Ric : I → I → ℝ) (W : I → ℝ) (C k : ℝ)
@@ -84,8 +72,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 lemma sum_sq_geometric_prescribed_jet_le
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (K k : ℝ) (hK : 0 ≤ K) (hcurv : D.curvatureDerivativeNorm 0 x ≤ K)
@@ -119,8 +105,6 @@ lemma sum_sq_geometric_prescribed_jet_le
   convert h using 1
   ring
 
-
-
 lemma neg_mul_sum_sq_geometric_prescribed_jet_ge
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (K k ψ : ℝ) (hK : 0 ≤ K) (hcurv : D.curvatureDerivativeNorm 0 x ≤ K)
@@ -139,8 +123,6 @@ lemma neg_mul_sum_sq_geometric_prescribed_jet_ge
   convert h using 1
   · rfl
   · ring
-
-
 
 lemma sum_sq_geometric_prescribed_jet_le_time_bound
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

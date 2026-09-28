@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Mathlib.L1FourierUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -19,10 +8,6 @@ noncomputable section
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64L1Trigonometric_eq_zero {f : ℝ → ℝ}
     (hf : IntegrableOn f (Icc 0 (2 * Real.pi)))

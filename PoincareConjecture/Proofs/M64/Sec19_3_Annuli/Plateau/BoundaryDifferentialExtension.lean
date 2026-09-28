@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryGradientReco
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +15,6 @@ namespace PoincareConjecture.M64Boundary
 
 variable {N : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin N)
-
-
-
-
 
 theorem contDiffOn_halfDisk_of_continuous_differential {R : ℝ} (hR : 0 < R)
     (X : LoopPlane → E)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SquareAnn
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceTriangulationCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

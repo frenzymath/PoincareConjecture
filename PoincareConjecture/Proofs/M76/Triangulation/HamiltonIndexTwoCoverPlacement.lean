@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoCoverCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,9 +21,6 @@ private theorem coordinates_preimage_frontier :
   change coverCoordinates.toHomeomorph ⁻¹' frontier D3 = frontier D
   rw [coverCoordinates.toHomeomorph.preimage_frontier]
   exact congrArg frontier coordinates_preimage_cylinder
-
-
-
 
 theorem cover_conjugate_conditions
     (A : W ≃ₜ W) (hAout : ∀ x : W, 2 ≤ ‖x‖ → A x = x)
@@ -75,9 +63,6 @@ theorem cover_conjugate_conditions
       refine ⟨coverCoordinates x, mem_image_of_mem coverCoordinates hx, ?_⟩
       change coverCoordinates (A (coverCoordinates.symm (coverCoordinates x))) = _
       rw [coverCoordinates.symm_apply_apply]
-
-
-
 
 theorem exists_cover_supported_placement
     (P : Set W) (A : W ≃ₜ W)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Equivale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Equivalence
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -58,7 +52,6 @@ theorem regularLevelMetric_inner_equivOfEq
   simp only [regularLevelMetric_inner]
   rw [hcomp]
   rfl
-
 
 theorem regularLevelMetric_edist_equivOfEq
     (g : RiemannianMetric (n + 1) M) (x y : openLevelSet f U c) :

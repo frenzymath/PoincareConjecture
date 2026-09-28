@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M38.CylinderSeparator
 import PoincareConjecture.Proofs.M38.CirclePullbackComponent
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem sphereBundle_cut_component_precompact
     (Q : GeneralizedSliceCarrier) [CompactSpace Q.carrier] (B : SurgerySphereBundle Q)
@@ -50,8 +39,6 @@ theorem sphereBundle_cut_component_precompact
     (q ⁻¹' (range (fun z : UnitTwoSphere => q (D (z, 0))))ᶜ) a hy
   apply hout
   exact ⟨z, (CirclePullback.projection_vadd B.projection n (D (z, 0))).symm⟩
-
-
 
 theorem sphereBundle_cut_component_injective
     (Q : GeneralizedSliceCarrier) [CompactSpace Q.carrier] (B : SurgerySphereBundle Q)

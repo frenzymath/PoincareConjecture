@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -17,7 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
-
 
 def strictCoordinateWedge (signs : Fin 2 → Bool) : Set V3 :=
   {x | ∀ i : Fin 2, if signs i then 0 < x i.castSucc else x i.castSucc < 0}
@@ -74,7 +65,6 @@ theorem strictCoordinateWedge_smul {signs : Fin 2 → Bool}
   · exact mul_neg_of_pos_of_neg hr hxi
   · exact mul_pos hr hxi
 
-
 theorem isConnected_strictCoordinate_frontier_patch {C : Set V3}
     (hC : IsCompact C) (hcv : Convex ℝ C) (hzero : (0 : V3) ∈ interior C)
     (signs : Fin 2 → Bool) :
@@ -104,8 +94,6 @@ theorem isConnected_strictCoordinate_frontier_patch {C : Set V3}
   exact ((strictCoordinateWedge_convex signs).isConnected
     (strictCoordinateWedge_nonempty signs)).image r hr
 
-
-
 theorem exists_strict_frontier_point_outside_two_closed_sets
     {C J₀ J₁ : Set V3} (hC : IsCompact C) (hcv : Convex ℝ C)
     (hzero : (0 : V3) ∈ interior C) (signs : Fin 2 → Bool)
@@ -122,8 +110,6 @@ theorem exists_strict_frontier_point_outside_two_closed_sets
     (isConnected_strictCoordinate_frontier_patch hC hcv hzero signs).isPreconnected
     J₀ J₁ hJ₀ hJ₁ hcover hmeet₀ hmeet₁
   exact Set.disjoint_left.mp hdisj hy₀ hy₁
-
-
 
 theorem exists_strict_chart_frontier_point_outside_two_compact_sets
     {E : Type*} [NormedAddCommGroup E] {V : Set E} {C : Set V3}

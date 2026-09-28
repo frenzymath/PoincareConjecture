@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosur
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakAverages
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,10 +19,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
-
-
 theorem scalarLipschitz_column_locallyIntegrable {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) (v : Plane) :
     LocallyIntegrable (fun x => fderiv ℝ u x v) volume := by
@@ -45,10 +29,6 @@ theorem scalarLipschitz_column_locallyIntegrable {u : Plane → E} {L : ℝ≥0}
   rw [Real.norm_of_nonneg (mul_nonneg L.coe_nonneg (norm_nonneg v))]
   exact ((fderiv ℝ u x).le_opNorm v).trans
     (mul_le_mul_of_nonneg_right (norm_fderiv_le_of_lipschitz ℝ hu) (norm_nonneg v))
-
-
-
-
 
 theorem scalarLipschitz_column_weakPartial {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) (i : Fin 2) (b : Fin m) (O : Set Plane) :
@@ -65,10 +45,6 @@ theorem scalarLipschitz_column_weakPartial {u : Plane → E} {L : ℝ≥0}
   rw [hd.differentiableAt.lineDeriv_eq_fderiv, hd.fderiv]
   rfl
 
-
-
-
-
 theorem scalarLipschitz_mollifier_column {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) {r : ℝ} (hr : 0 < r) (x : Plane) (i : Fin 2) :
     fderiv ℝ (mollifierEps hr ⋆[lsmul ℝ ℝ, volume] u) x (EuclideanSpace.single i 1) =
@@ -80,10 +56,6 @@ theorem scalarLipschitz_mollifier_column {u : Plane → E} {L : ℝ≥0}
     (by simpa only [Set.indicator_univ] using
       scalarLipschitz_column_locallyIntegrable hu (EuclideanSpace.single i 1))
     (mollifierEps_smooth hr) (mollifierEps_compactSupport hr) x (subset_univ _)
-
-
-
-
 
 theorem scalarLipschitz_mollifier_columns_tendsto_ae
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)
@@ -101,10 +73,6 @@ theorem scalarLipschitz_mollifier_columns_tendsto_ae
   filter_upwards [ha] with x hx
   simp_rw [scalarLipschitz_mollifier_column hu]
   exact hx
-
-
-
-
 
 theorem scalarLipschitz_mollifier_columns_strong
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)

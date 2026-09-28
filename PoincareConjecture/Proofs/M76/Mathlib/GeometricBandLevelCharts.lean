@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.VariableBandEndpointIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLevelChartTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +10,6 @@ namespace Geometry
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_geometric_band_level_charts
     {B : Set E} {lower upper : E → ℝ} {T : Set F} {f : E × ℝ → F}

@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreBandRefinement
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreCapIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,7 +27,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (caps : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
 
-
 noncomputable def fittedCoreRefinementLines (R : D.regions) : List (Plane →ᵃ[ℝ] ℝ) := by
   classical
   exact D.capCoreContactLines caps region R ++
@@ -59,7 +48,6 @@ theorem cap_line_mem_fittedCoreRefinementLines (R : D.regions)
     l ∈ D.fittedCoreRefinementLines chart cut S K B caps region R :=
   List.mem_append_left _ hl
 
-
 structure FittedCoreRefinement (cores : D.regions → TriangleMesh) where
   mesh : D.regions → TriangleMesh
   support : ∀ R, (mesh R).toPlaneComplex.support = (cores R).toPlaneComplex.support
@@ -80,13 +68,10 @@ structure FittedCoreRefinement (cores : D.regions → TriangleMesh) where
       ((caps p).coordinates i) (meshTriangleBasis (mesh (region p i)) t)
       (rightTriangleBasis (caps p).scale_pos)
 
-
 structure FittedCoreRefinementWithAncestry (cores : D.regions → TriangleMesh)
     extends D.FittedCoreRefinement chart cut S K B caps region cores where
   mesh_eq_refineByLines : ∀ R, mesh R = (cores R).refineByLines
     (D.fittedCoreRefinementLines chart cut S K B caps region R)
-
-
 
 theorem exists_fittedCoreRefinement_with_ancestry
     (hx : ∀ p i, x p i = (chart (region p i) : M))
@@ -161,7 +146,6 @@ theorem exists_fittedCoreRefinement_with_ancestry
       (hdisjoint (region p i)) (hboundary (region p i))
       (fun l hl => hmono (region p i) l (D.cap_line_mem_fittedCoreRefinementLines
         chart cut S K B caps region (region p i) l hl)) p i rfl t
-
 
 theorem exists_fittedCoreRefinement
     (hx : ∀ p i, x p i = (chart (region p i) : M))

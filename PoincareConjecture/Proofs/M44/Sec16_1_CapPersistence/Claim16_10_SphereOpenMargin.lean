@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereJet
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_AxialJetMargin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_CylinderPlaneRank
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,14 +30,9 @@ noncomputable local instance sphereOpenTwoJetNorm : NormedAddCommGroup (MetricTw
 noncomputable local instance sphereOpenTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
 
-
-
 noncomputable def sphereCoordinateDifferential (sigma : UnitTwoSphere → E)
     (z x : UnitTwoSphere) : E2 →L[ℝ] E :=
   fderiv ℝ (sigma ∘ (chartAt E2 z).symm) ((chartAt E2 z) x)
-
-
-
 
 theorem continuousAt_sphereCoordinateDifferential {sigma : UnitTwoSphere → E}
     (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma) (z : UnitTwoSphere)
@@ -57,18 +43,12 @@ theorem continuousAt_sphereCoordinateDifferential {sigma : UnitTwoSphere → E}
   exact ((hs.contDiffAt.fderiv_right (m := ∞) (by simp)).continuousAt).comp
     ((chartAt E2 z).continuousOn.continuousAt ((chartAt E2 z).open_source.mem_nhds hx))
 
-
-
-
 def sphereSectionalJetRegion (sigma : UnitTwoSphere → E) (k : ℝ) :
     Set (UnitTwoSphere × MetricTwoJet 3) :=
   {p | ∃ z : UnitTwoSphere, p.1 ∈ (chartAt E2 z).source ∧
     p.2 ∈ sectionalJetLowerRegion k
       (sphereCoordinateDifferential sigma z p.1 (b 0))
       (sphereCoordinateDifferential sigma z p.1 (b 1))}
-
-
-
 
 theorem isOpen_sphereSectionalJetRegion {sigma : UnitTwoSphere → E}
     (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma) (k : ℝ) :
@@ -99,9 +79,6 @@ theorem isOpen_sphereSectionalJetRegion {sigma : UnitTwoSphere → E}
       with p hp hI hGram hLower
   exact ⟨z, hp, hI, hGram, sub_pos.mp hLower⟩
 
-
-
-
 theorem exists_uniform_sphere_jet_margin {sigma : UnitTwoSphere → E}
     (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma) (k : ℝ)
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsCompact K)
@@ -125,9 +102,6 @@ theorem exists_uniform_sphere_jet_margin {sigma : UnitTwoSphere → E}
     (show (z, J t z) ∈ L from ⟨(t, z), ⟨ht, mem_univ z⟩, rfl⟩)
   simpa only [Prod.dist_eq, dist_self, dist_eq_norm, max_eq_right (norm_nonneg _)] using hnear
 
-
-
-
 theorem sphereCoordinateDifferential_eq {sigma : UnitTwoSphere → E}
     (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma) (z : UnitTwoSphere)
     {x : UnitTwoSphere} (hx : x ∈ (chartAt E2 z).source) :
@@ -138,9 +112,6 @@ theorem sphereCoordinateDifferential_eq {sigma : UnitTwoSphere → E}
     mfderiv_comp _ ((hsigma _).mdifferentiableAt (by simp))
       (((M36.sphere_chart_inverse_contMDiff z) _).mdifferentiableAt (by simp))]
   rw [(chartAt E2 z).left_inv hx]
-
-
-
 
 theorem sphere_tangent_mem_coordinate_span {sigma : UnitTwoSphere → E}
     (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma) (z : UnitTwoSphere)
@@ -160,9 +131,6 @@ theorem sphere_tangent_mem_coordinate_span {sigma : UnitTwoSphere → E}
   change mfderiv (𝓡 2) (𝓡 3) sigma x
     (mfderiv (𝓡 2) (𝓡 2) (chartAt E2 z).symm ((chartAt E2 z) x) w) = _
   rw [hw]
-
-
-
 
 theorem sectional_lower_of_sphereJetRegion
     {sigma : UnitTwoSphere → E} (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma)

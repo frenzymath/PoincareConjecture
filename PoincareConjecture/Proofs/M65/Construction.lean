@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.NetConclusion
 import PoincareConjecture.Proofs.M61.Def18_17_Width.FreeClassInfimum
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Continuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -23,18 +12,12 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 theorem m65RawWidthCore_from_closed_predecessors : M61RawWidthCore.{u} := by
   constructor
   · intro M _ _ _ _ _ g hcompact F hnull
     exact m61FamilyWidth_from_M60 g (m60FillingAreaProperties_of_compact g hcompact) F hnull
   · intro M _ _ _ _ _ g hcompact F hnull
     exact m61FreeClassWidth_from_M60 g (m60FillingAreaProperties_of_compact g hcompact) F hnull
-
-
-
 
 def m65ZeroDurationDeformedFamily
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -48,10 +31,6 @@ def m65ZeroDurationDeformedFamily
   terminal_alternative := fun _ => Or.inr (by
     rw [areaComparisonProfile_initial]
     exact le_add_of_nonneg_right hzeta.le)
-
-
-
-
 
 theorem m65Construction
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u})

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinSourceReadout
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem source_exhaustion_spacetime_pullbackCoefficients_tendsto_withinJets
     {ι : Type*} {n : ℕ}

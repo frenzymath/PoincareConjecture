@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapTransitionBand
 import PoincareConjecture.Proofs.M25.Mathlib.SmoothRetainedClamp
 import PoincareConjecture.Proofs.M25.Mathlib.RelativeFiberwiseExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_intrinsic_extended_chain_band_atlas :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

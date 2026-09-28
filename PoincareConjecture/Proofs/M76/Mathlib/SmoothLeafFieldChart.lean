@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmoothTransverseFrames
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFaceTransversality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,11 +13,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_chart_of_smoothLeafField (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)

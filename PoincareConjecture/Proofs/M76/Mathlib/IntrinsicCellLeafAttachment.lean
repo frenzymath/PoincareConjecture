@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCellLeafAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.NestedDirectionCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +10,6 @@ namespace Geometry.EuclideanSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_intrinsicCellAttachment
     {P : E → EuclideanSubspace E} {U B S : Set E} (hP : IsSmoothLeafFieldOn P U)

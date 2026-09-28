@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.AxisGerms
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.VertexGerms
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Coordinates
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,8 +15,6 @@ namespace ChartCircleArrangementVertexPatch
 universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] {r : M → ℝ} {p : M}
-
-
 
 theorem sectorCoordinates_signedAxis (P : ChartCircleArrangementVertexPatch r p)
     (horizontal : Bool) (sign : ℝ) (i : Bool × Bool)
@@ -51,9 +38,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
-
 
 theorem exists_edgeVertexParameters {p : M}
     (P : ChartCircleArrangementVertexPatch D.radius p)

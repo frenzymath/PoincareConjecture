@@ -1,14 +1,6 @@
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M14
 
 variable {A B C : Type*} [TopologicalSpace A] [TopologicalSpace B] [TopologicalSpace C]
-
-
-
 
 theorem exists_open_parameter_tube {K : Set A} {U : Set B} {V : Set C}
     {f : A × B → C} (hK : IsCompact K) (hU : IsOpen U)

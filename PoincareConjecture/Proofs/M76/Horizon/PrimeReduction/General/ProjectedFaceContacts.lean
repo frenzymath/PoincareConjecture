@@ -2,14 +2,6 @@ import Mathlib.Analysis.Convex.Basic
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Algebra.ContinuousAffineMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -17,9 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Prod.snd : V → ℝ) ⁻¹' ({0} : Set ℝ)
-
-
-
 
 theorem projected_face_axis_contacts
     {E : Type*} {G triangle base boundary : Set E}
@@ -37,8 +26,6 @@ theorem projected_face_axis_contacts
   refine ⟨heq, ?_⟩
   rw [heq]
   exact (hfinite.subset (inter_subset_inter_right G hbase)).image R
-
-
 
 theorem projected_face_segment_contacts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M09.SecondOrderLinearization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology
@@ -16,10 +9,6 @@ namespace PoincareConjecture.M14
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem parameterDifferential_secondOrderLinearization
     {C : Set ℝ} {U : Set E} (hC : IsOpen C) (hU : IsOpen U)

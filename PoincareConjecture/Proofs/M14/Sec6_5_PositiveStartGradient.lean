@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartDifferential
 import PoincareConjecture.Proofs.M14.Sec6_5_GradientNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,9 +28,6 @@ private theorem inner_transport {q r : G.Point} (h : q = r) (A : G.Horizontal q)
       G.spacetime.horizontalMetric.inner q A A := by
   cases h
   rfl
-
-
-
 
 theorem positiveStart_gradient_norm_square
     (hCoordinates : M12MetricPredecessors.{0} n)

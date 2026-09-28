@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.FirstBoundaryCol
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceBoundaryAlternative
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.ComplementarySlabDomains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

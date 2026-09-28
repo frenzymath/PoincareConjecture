@@ -5,26 +5,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Embedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Euclidean
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace Poincare
-
-
 
 theorem exists_essential_sphere_collar_extension
     {Y : Type*} [TopologicalSpace Y] [T2Space Y]

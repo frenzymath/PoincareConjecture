@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderGeometry
 import PoincareConjecture.Proofs.M35.Mathlib.StereographicMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M35
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 2 + 1) :=
   ⟨by simp⟩
-
-
 
 theorem sphere_chart_pullback_inner_at (q : UnitTwoSphere)
     (p v w : EuclideanSpace ℝ (Fin 2)) :
@@ -76,8 +66,6 @@ theorem sphere_chart_pullback_inner_at (q : UnitTwoSphere)
   have hLvw : inner ℝ (L v) (L w) = inner ℝ v w := U.symm.inner_map_map v w
   rw [hLp, hLvw]
 
-
-
 theorem roundCylinderGram_eq (u : ℝ) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) :
     roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p =
@@ -96,8 +84,6 @@ theorem roundCylinderGram_eq (u : ℝ) (q : UnitTwoSphere)
     simp [roundCylinderCoordinateBasis, Matrix.diagonal, EuclideanSpace.inner_single_left] <;>
     ring
 
-
-
 theorem roundCylinderGram_apply (u : ℝ) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) (a b : Fin 3) :
     roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b =
@@ -107,8 +93,6 @@ theorem roundCylinderGram_apply (u : ℝ) (q : UnitTwoSphere)
   rw [roundCylinderGram_eq]
   fin_cases a <;> fin_cases b <;>
     simp [Matrix.diagonal, roundCylinderCoordinateBasis, EuclideanSpace.inner_single_left]
-
-
 
 theorem roundCylinderGram_inv_eq {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) :
@@ -122,8 +106,6 @@ theorem roundCylinderGram_inv_eq {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
   have hd : ‖p.1‖ ^ 2 + 4 ≠ 0 := ne_of_gt (by positivity)
   ext i j
   fin_cases i <;> fin_cases j <;> norm_num [Matrix.diagonal] <;> field_simp [h, hd]
-
-
 
 theorem contDiff_roundCylinderGram (u : ℝ) (q : UnitTwoSphere) (a b : Fin 3) :
     ContDiff ℝ ∞ (fun p : RoundCylinderCoordinates =>

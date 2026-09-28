@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem compact_graph_strip
     {K E : Type*} [TopologicalSpace K] [CompactSpace K] [ConnectedSpace K]

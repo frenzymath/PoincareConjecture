@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.SUSubsolutionMeanValue
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 import Mathlib.MeasureTheory.Group.Integral
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,12 +10,10 @@ open scoped Manifold ContDiff ENNReal NNReal
 
 namespace PoincareConjecture.M60
 
-
 def suPlaneLaplacian (u : EuclideanSpace ℝ (Fin 2) → ℝ)
     (x : EuclideanSpace ℝ (Fin 2)) : ℝ :=
   ∑ i, fderiv ℝ (fderiv ℝ u) x (EuclideanSpace.basisFun (Fin 2) ℝ i)
     (EuclideanSpace.basisFun (Fin 2) ℝ i)
-
 
 theorem suPlaneLaplacian_add_left (u : EuclideanSpace ℝ (Fin 2) → ℝ)
     (p x : EuclideanSpace ℝ (Fin 2)) :
@@ -31,7 +21,6 @@ theorem suPlaneLaplacian_add_left (u : EuclideanSpace ℝ (Fin 2) → ℝ)
   have hd : fderiv ℝ (fun y => u (p + y)) = fun y => fderiv ℝ u (p + y) :=
     funext fun _ => fderiv_comp_add_left p
   simp only [suPlaneLaplacian, hd, fderiv_comp_add_left]
-
 
 theorem suSetIntegral_closedBall_add_left (u : EuclideanSpace ℝ (Fin 2) → ℝ)
     (p : EuclideanSpace ℝ (Fin 2)) (r : ℝ) :
@@ -46,8 +35,6 @@ theorem suSetIntegral_closedBall_add_left (u : EuclideanSpace ℝ (Fin 2) → �
       (MeasurableEquiv.addLeft p).measurableEmbedding u (Metric.closedBall p r)
   rw [heq] at h
   exact h
-
-
 
 theorem exists_plane_mean_value_sq :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ (u : EuclideanSpace ℝ (Fin 2) → ℝ),

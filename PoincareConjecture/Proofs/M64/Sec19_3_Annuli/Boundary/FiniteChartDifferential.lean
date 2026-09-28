@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FiniteTargetChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,10 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
 theorem within_chart_derivative (p : M) {f : E → M} {K : Set E} {x : E}
     (hf : MDifferentiableWithinAt 𝓘(ℝ, E) (𝓡 n) f K x)
     (hK : UniqueDiffWithinAt ℝ K x)
@@ -35,10 +26,6 @@ theorem within_chart_derivative (p : M) {f : E → M} {K : Set E} {x : E}
   simpa only [mfderivWithin_eq_fderivWithin] using
     mfderiv_comp_mfderivWithin x hq hf hK.uniqueMDiffWithinAt
 
-
-
-
-
 theorem within_chart_injective (p : M) {f : E → M} {K : Set E} {x : E}
     (hf : MDifferentiableWithinAt 𝓘(ℝ, E) (𝓡 n) f K x)
     (hK : UniqueDiffWithinAt ℝ K x)
@@ -49,9 +36,6 @@ theorem within_chart_injective (p : M) {f : E → M} {K : Set E} {x : E}
   exact ((mdifferentiable_chart (I := 𝓡 n) p).mfderiv hs).injective.comp hinj
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem within_affine_derivative (e : ℂ ≃L[ℝ] E) (a : E)
     {f : E → M} {K : Set ℂ} {S : Set E} {z : ℂ}
@@ -66,10 +50,6 @@ theorem within_affine_derivative (e : ℂ ≃L[ℝ] E) (a : E)
   simpa +instances only [mfderivWithin_eq_fderivWithin,
     hP.hasFDerivWithinAt.fderivWithin hK] using!
     mfderivWithin_comp z hf hPd hmap hK.uniqueMDiffWithinAt
-
-
-
-
 
 theorem within_chart_affine_derivative (p : M) (e : ℂ ≃L[ℝ] E) (a : E)
     {f : E → M} {K : Set ℂ} {S : Set E} {z : ℂ}
@@ -86,10 +66,6 @@ theorem within_chart_affine_derivative (p : M) (e : ℂ ≃L[ℝ] E) (a : E)
   have hcomp := hf.comp z hPd hmap
   simpa +instances only [Function.comp_def, within_affine_derivative e a hf hK hmap] using!
     within_chart_derivative p hcomp hK hs
-
-
-
-
 
 theorem within_chart_metric (g : RiemannianMetric n M) (p : M)
     {gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -116,10 +92,6 @@ theorem within_chart_metric (g : RiemannianMetric n M) (p : M)
     ConjugateVariation.chartCoefficients_apply g p hsrc
       (mfderivWithin 𝓘(ℝ, E) (𝓡 n) f K x v)
       (mfderivWithin 𝓘(ℝ, E) (𝓡 n) f K x w)
-
-
-
-
 
 theorem within_chart_affine_metric (g : RiemannianMetric n M) (p : M)
     (e : ℂ ≃L[ℝ] E) (a : E)

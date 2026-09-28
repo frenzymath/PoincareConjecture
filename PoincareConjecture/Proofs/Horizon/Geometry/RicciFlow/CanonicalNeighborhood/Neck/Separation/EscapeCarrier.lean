@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.EscapeSphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem eventually_disjoint_carrier_compact_of_scale_tendsto_zero
     (D : LeviCivitaData g) {ι : Type*} {l : Filter ι}
@@ -55,7 +44,6 @@ theorem eventually_disjoint_carrier_compact_of_scale_tendsto_zero
   rw [hε i] at hbound
   exact hbound.trans (ENNReal.ofReal_le_ofReal hdiam.le)
 
-
 theorem isCompact_closure_carrier (N : EpsilonNeck g)
     (hcomplete : MetricComplete g) :
     IsCompact (closure N.carrier) := by
@@ -63,8 +51,6 @@ theorem isCompact_closure_carrier (N : EpsilonNeck g)
     ((2 * Real.pi + 2 * N.epsilon⁻¹) * N.scale)
   exact hball.of_isClosed_subset isClosed_closure
     (closure_minimal (fun _ hx => N.edist_center_le_of_mem_carrier hx) hball.isClosed)
-
-
 
 theorem eventually_disjoint_carrier_of_scale_tendsto_zero
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
@@ -75,8 +61,6 @@ theorem eventually_disjoint_carrier_of_scale_tendsto_zero
     ∀ᶠ i in l, Disjoint (N i).carrier (closure N₀.carrier) :=
   eventually_disjoint_carrier_compact_of_scale_tendsto_zero D N hε hscale
     (N₀.isCompact_closure_carrier hcomplete)
-
-
 
 theorem exists_small_neck_disjoint_compact_of_no_scale_lower_bound
     (D : LeviCivitaData g) (ε : ℝ)
@@ -90,8 +74,6 @@ theorem exists_small_neck_disjoint_compact_of_no_scale_lower_bound
   obtain ⟨i, hi, hdisj⟩ := ((hscale.eventually_lt_const hδ).and
     (eventually_disjoint_carrier_compact_of_scale_tendsto_zero D N hε hscale hK)).exists
   exact ⟨N i, hε i, hi, hdisj⟩
-
-
 
 theorem exists_small_neck_disjoint_neck_and_point_of_no_scale_lower_bound
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)

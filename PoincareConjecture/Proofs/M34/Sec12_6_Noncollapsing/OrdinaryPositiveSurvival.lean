@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinarySquareEuler
 import PoincareConjecture.Proofs.M34.Standard.SquareInitialValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ variable {n : ℕ} {I : SpacetimeInterval}
   {F : RicciFlow n (EuclideanSpace ℝ (Fin n)) I.domain}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem ordinaryProduct_positive_survival
     (R : OrdinaryProductRicciGeometry F.metric I)
@@ -56,8 +43,6 @@ theorem ordinaryProduct_positive_survival
   simpa only [Real.sq_sqrt htau.le] using (show ∃ y,
     Nonempty (M14SquareRootInitialValuePath (ordinaryProductLGeometry R hRicci)
       T tau (R.product.productCylinder.toSpacetime (⟨T, hT⟩, p)) y Z) from ⟨y, hy⟩)
-
-
 
 theorem ordinaryProduct_stableSet
     (R : OrdinaryProductRicciGeometry F.metric I)

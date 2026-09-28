@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem isPreconnected_region (N : EpsilonNeck g) {a b : ℝ}
     (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) :
     IsPreconnected (N.region a b) := by
@@ -36,8 +25,6 @@ theorem isPreconnected_region (N : EpsilonNeck g) {a b : ℝ}
   apply N.coordinate_map_smooth.continuousOn.mono
   intro z hz
   exact ⟨mem_univ _, ha.trans_lt hz.2.1, hz.2.2.trans_le hb⟩
-
-
 
 theorem mem_central_sphere_iff_of_mem_carrier (N : EpsilonNeck g) {x : M} (hx : x ∈ N.carrier) :
     x ∈ N.central_sphere ↔ (N.coordinate_inverse x).2 = 0 := by
@@ -53,16 +40,12 @@ theorem mem_central_sphere_iff_of_mem_carrier (N : EpsilonNeck g) {x : M} (hx : 
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, hzero⟩,
       N.coordinate_map_coordinate_inverse hx⟩
 
-
-
 theorem central_sphere_subset_region (N : EpsilonNeck g) {a b : ℝ}
     (ha : a < 0) (hb : 0 < b) : N.central_sphere ⊆ N.region a b := by
   intro x hx
   have hxC := N.central_sphere_subset hx
   have hzero := (N.mem_central_sphere_iff_of_mem_carrier hxC).mp hx
   exact ⟨hxC, by simpa only [hzero] using And.intro ha hb⟩
-
-
 
 theorem region_split_zero (N : EpsilonNeck g) {a b : ℝ}
     (ha : a < 0) (hb : 0 < b) :
@@ -78,9 +61,6 @@ theorem region_split_zero (N : EpsilonNeck g) {a b : ℝ}
     · exact ⟨hx.1, hx.2.1, hx.2.2.trans hb⟩
     · exact N.central_sphere_subset_region ha hb hx
     · exact ⟨hx.1, ha.trans hx.2.1, hx.2.2⟩
-
-
-
 
 theorem exists_region_zero_subset (N : EpsilonNeck g) {U : Set M}
     (hU : IsOpen U) (hS : N.central_sphere ⊆ U) :

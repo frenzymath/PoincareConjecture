@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedGraphImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

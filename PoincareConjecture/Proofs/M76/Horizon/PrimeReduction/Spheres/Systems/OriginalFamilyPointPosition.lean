@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfacePosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -96,4 +89,3 @@ theorem exists_sphere_system_point_avoiding_motion
   exact disjoint_left.mp hAv ((hGA (B p) (interior_subset hpJ)).mp hBpG) hpT
 
 end PoincareConjecture.M76
-

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlabContinuity
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -36,7 +26,6 @@ private theorem spatial_deriv_contDiffOn {F : ℝ → ℝ → ℝ}
   have hh := congrArg (fun L : ℝ →L[ℝ] ℝ => L 1) hd.fderiv
   simpa only [Function.comp_def, Function.uncurry, fderiv_apply_one_eq_deriv,
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.inr_apply] using hh
-
 
 noncomputable def rawIntrinsicAxisJet : ℕ → ℝ → ℝ → ℝ
   | 0, t, r => axisWarpingRadius (G.flow.metric t) r
@@ -65,8 +54,6 @@ variable (P : RicciFlowCurvatureTheory.{0})
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = (G.flow.metric t).inner x u v)
 
-
-
 theorem raw_intrinsic_jet_eq_original (j : ℕ) {t : ℝ} (ht : t ∈ Ico 0 G.lifetime)
     (s : ℝ) :
     iteratedDeriv j (rawWarpingRadius P G hrotation t) s =
@@ -90,8 +77,6 @@ theorem raw_intrinsic_jet_eq_original (j : ℕ) {t : ℝ} (ht : t ∈ Ico 0 G.li
       rw [iteratedDeriv_succ, heq]
       simpa only [Function.comp_def, rawIntrinsicAxisJet, div_eq_mul_inv] using
         (hj.comp s hq).deriv
-
-
 
 theorem raw_intrinsic_jet_continuousOn_slab (j : ℕ) {T : ℝ}
     (hT : 0 ≤ T) (hTlt : T < G.lifetime) :

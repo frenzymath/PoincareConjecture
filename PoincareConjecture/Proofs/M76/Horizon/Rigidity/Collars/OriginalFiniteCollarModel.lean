@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.InwardCompression
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -24,7 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
 
 structure OriginalFiniteCollarModel {X ι : Type*} [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X V3) (R : Set X) where
@@ -83,8 +72,6 @@ theorem coordinates_boundary (M : OriginalFiniteCollarModel e R) (x : X) (hx : x
   rw [← M.boundary_eq _ (M.coordinates_mapsTo hx), M.inverse_coordinates x hx]
 
 end OriginalFiniteCollarModel
-
-
 
 theorem PLDomain.nonempty_original_finite_collar_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

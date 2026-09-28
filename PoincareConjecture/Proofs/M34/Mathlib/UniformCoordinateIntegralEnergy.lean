@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M03.LocalizedDivergenceFlux
 import PoincareConjecture.Proofs.M34.Mathlib.QuantitativeEllipticEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology BigOperators
 open MeasureTheory Set PoincareConjecture.Proofs.M03
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 theorem exists_uniform_coordinate_integral_rate_bound_of_entries
     {n : ℕ} {I : Type*} [Fintype I]

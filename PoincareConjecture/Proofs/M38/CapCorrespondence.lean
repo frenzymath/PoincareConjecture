@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.RiemannianBalls
 import PoincareConjecture.Proofs.M38.Survivors
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem isConnected_cap
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
@@ -38,9 +28,6 @@ theorem isConnected_cap
   exact himage.closure.image ((F.event T hT).local_embed i)
     ((F.event T hT).local_embed_smooth i).continuous.continuousOn
 
-
-
-
 theorem capCorrespondence
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
     [Nonempty (F.slice T).carrier]
@@ -48,7 +35,6 @@ theorem capCorrespondence
       (F.slice (F.event T hT).tMinus) (F.slice T)) :
     RawNonemptyCapCorrespondence F T hT C where
   cap_piece i := exists_survivor_containing C (isConnected_cap F T hT i)
-
 
 def nonemptyWitness
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

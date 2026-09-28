@@ -154,5 +154,4 @@ theorem exists_contDiffOn_frame_ode
   exact (contDiffOn_one_iff_derivWithin (uniqueDiffOn_Icc hab)).2
     ⟨hPdiff, hRderiv⟩
 
-
 end PoincareConjecture.M04

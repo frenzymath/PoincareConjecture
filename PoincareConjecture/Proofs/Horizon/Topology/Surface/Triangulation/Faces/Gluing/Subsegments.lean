@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,8 +11,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem SmoothEdge.exists_open_edge_eq_subsegment (e : SmoothEdge M)
     (hinj : InjOn e.map (Icc (0 : ℝ) 1)) {a b t : ℝ}
@@ -53,8 +41,6 @@ theorem SmoothEdge.exists_open_edge_eq_subsegment (e : SmoothEdge M)
     · exact le_of_not_gt (fun hbs => hq (Or.inr ⟨s, ⟨hbs.le, hs.2⟩, rfl⟩))
   · rintro ⟨hq, s, hs, rfl⟩
     exact ⟨hq, s, hmiddle hs, rfl⟩
-
-
 
 theorem SmoothFace.exists_shared_subsegment_neighborhood
     (f g : SmoothFace M) (i j : Fin 3)
@@ -119,8 +105,6 @@ theorem SmoothFace.exists_shared_subsegment_neighborhood
     · rintro ⟨hqW, hq⟩
       exact ⟨hqW, g.boundary_image_subset_frontier j (image_mono hmiddleg (hshared ▸ hq))⟩
 
-
-
 theorem SmoothFace.mem_interior_union_of_shared_subsegment
     (f g : SmoothFace M) (i j : Fin 3)
     (hfregular : closure (interior f.carrier) = f.carrier)
@@ -182,8 +166,6 @@ theorem SmoothFace.mem_interior_union_of_shared_subsegment
     (hWopen.mem_nhds htW) hpartition hUpath.isConnected.isPreconnected
     hVpath.isConnected.isPreconnected hUpath.nonempty hVpath.nonempty hWdense hfrontf hfrontg
   exact mem_interior_iff_mem_nhds.mpr (Filter.mem_of_superset (hWopen.mem_nhds htW) hcover)
-
-
 
 theorem mem_interior_union_of_coordinate_triangles_shared_subsegment
     (f g : SmoothFace M)

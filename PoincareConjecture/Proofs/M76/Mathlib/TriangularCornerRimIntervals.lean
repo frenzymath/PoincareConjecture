@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularPLCornerLevels
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -35,10 +26,6 @@ private theorem weighted_height_interior_section {m₁ m₂ c : ℝ}
   · change m₁ * x + m₂ * x = c
     dsimp [x]
     field_simp [hs.ne']
-
-
-
-
 
 theorem isFinitePLBallPair_weighted_corner_rim_caps {m₁ m₂ c : ℝ}
     (hm₁ : 0 < m₁) (hm₂ : 0 < m₂) (hc : c ∈ Ioo 0 (min m₁ m₂)) :
@@ -87,10 +74,6 @@ theorem isFinitePLBallPair_weighted_corner_rim_caps {m₁ m₂ c : ℝ}
   rw [hlowset, hnegzeroset, hzeroset] at hlow
   rw [hhighset, hzeroset] at hhigh
   exact ⟨hlow, hhigh⟩
-
-
-
-
 
 theorem exists_small_corner_rim_intervals {f : (ℝ × ℝ) → ℝ}
     (hf : FinitePiecewiseAffineOn f (frontier base)) (hzero : f (0, 0) = 0)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates.Surface
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev P := E2 × Real
 
-
-
 theorem mfderiv_eq_zero_iff_eq_zero_in_morse_coordinates
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     (e : OpenPartialHomeomorph E2 S2)
@@ -37,8 +27,6 @@ theorem mfderiv_eq_zero_iff_eq_zero_in_morse_coordinates
     mfderiv (𝓡 2) 𝓘(Real, Real) h (e x) = 0 ↔ x = 0 := by
   rw [mfderiv_eq_zero_iff_fderiv_of_sphere_coordinates_eqOn hh e he hei hx hform]
   exact Poincare.Analysis.Calculus.Morse.fderiv_diagonal_quadratic_eq_zero_iff c σ hσ x
-
-
 
 theorem height_critical_iff_eq_of_exact_morse_coordinates
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

@@ -1,23 +1,8 @@
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
-
-
-
-
-
 
 theorem ncard_image_lt_of_fixed_source_lift_collision
     {A E X : Type*} {s : Set A} (hs : s.Finite)

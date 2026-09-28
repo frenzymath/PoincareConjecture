@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,14 +8,10 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 theorem collar_radius_bounds {side s : ℝ} (hside : side * side = 1)
     (hs : s ∈ Ioo (-1) 1) : 0 < 1 + side * s ∧ 1 + side * s < 2 := by
   rcases mul_self_eq_one_iff.mp hside with rfl | rfl <;>
     constructor <;> nlinarith [hs.1, hs.2]
-
-
 
 theorem exists_collar_radial_coordinates
     (g : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
@@ -103,8 +89,6 @@ theorem exists_collar_radial_coordinates
     continuousOn_toFun := hf.continuousOn
     continuousOn_invFun := hk.continuous.continuousOn }
   exact ⟨e, rfl, rfl, fun _ => rfl, fun _ => rfl, hf, hk.contMDiffOn⟩
-
-
 
 theorem exists_radial_collar_chart (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ)

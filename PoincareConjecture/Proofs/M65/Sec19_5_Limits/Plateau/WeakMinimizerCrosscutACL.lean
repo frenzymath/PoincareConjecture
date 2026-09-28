@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerSlicing
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,11 +35,6 @@ private theorem m65Crosscut_deriv (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f
   rfl
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65WeakTrace_crosscut_AC
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

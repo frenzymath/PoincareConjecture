@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularAtlasCharts
 import PoincareConjecture.Proofs.M47.TerminalRegularCurvatureApplication
 import PoincareConjecture.Proofs.M47.TerminalRegularScalarCeiling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -57,9 +48,6 @@ local notation "total" => (fun k n => terminalSourceCountableMap hrho e k
 local notation "point" => (fun k : ℕ => (Subtype.mk (center k) mem_connectedComponent : M k))
 
 include data hrho
-
-
-
 
 theorem terminalSource_regular_selected_ceiling
     (P : M46Predecessors.{u}) (htau : ∀ j, 0 < tau j)

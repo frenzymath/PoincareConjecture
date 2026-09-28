@@ -3,25 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Spectrum
 import PoincareConjecture.Proofs.Horizon.LinearAlgebra.CrossProduct.Orthonormal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix
 
 namespace Poincare.Geometry.Curvature.Operator
@@ -33,7 +14,6 @@ private theorem repr_dotProduct (b : OrthonormalBasis (Fin 3) ℝ E) (u v : E) :
   rw [← b.repr.inner_map_map u v, EuclideanSpace.inner_eq_star_dotProduct,
     star_trivial, dotProduct_comm]
 
-
 theorem crossProduct_repr_inner (b : OrthonormalBasis (Fin 3) ℝ E) (u v w z : E) :
     inner ℝ (WithLp.toLp 2 (crossProduct (b.repr u) (b.repr v)) :
         EuclideanSpace ℝ (Fin 3))
@@ -41,7 +21,6 @@ theorem crossProduct_repr_inner (b : OrthonormalBasis (Fin 3) ℝ E) (u v w z : 
       inner ℝ u w * inner ℝ v z - inner ℝ u z * inner ℝ v w := by
   rw [EuclideanSpace.inner_eq_star_dotProduct, star_trivial, dotProduct_comm]
   exact (cross_dot_cross _ _ _ _).trans (by simp only [repr_dotProduct])
-
 
 theorem exists_orthonormal_crossProduct_repr (b : OrthonormalBasis (Fin 3) ℝ E)
     (a : EuclideanSpace ℝ (Fin 3)) (ha : ‖a‖ = 1) :
@@ -60,8 +39,6 @@ theorem exists_orthonormal_crossProduct_repr (b : OrthonormalBasis (Fin 3) ℝ E
     exact huv
   · rw [b.repr.apply_symm_apply, b.repr.apply_symm_apply]
     exact congrArg (WithLp.toLp 2) hcross
-
-
 
 theorem multilinear_eq_curvatureOperator_pairing
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)
@@ -85,8 +62,6 @@ theorem multilinear_eq_curvatureOperator_pairing
   simp only [curvatureOperator, Matrix.toLpLin_apply,
     EuclideanSpace.inner_eq_star_dotProduct, star_trivial]
   exact dotProduct_comm _ _
-
-
 
 theorem algebraic_three_operator_spectrum
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)

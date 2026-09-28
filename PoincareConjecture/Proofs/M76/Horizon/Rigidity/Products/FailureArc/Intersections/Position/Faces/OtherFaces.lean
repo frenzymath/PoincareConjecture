@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalE
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.FaceGraphCrossing
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.OriginalChart.MovedDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -24,10 +13,6 @@ open Set Geometry Module
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_original_planar_other_faces_motion_with_crossings
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -242,6 +227,4 @@ theorem exists_original_planar_other_faces_motion_with_crossings
       (hsigns w ⟨hwM, hwt'⟩).1 (hsigns w ⟨hwM, hwt'⟩).2 hO hwO
     simpa only [hthull] using h
 
-
 end PoincareConjecture.M76
-

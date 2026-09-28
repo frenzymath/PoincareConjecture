@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneStandardBoundaryPair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -61,9 +52,6 @@ private theorem finite_triangulation_of_linear_unit_halfspaces {E : Type*}
     forall_apply_eq_imp_iff, A, AffineMap.coe_sub, Pi.sub_apply,
     LinearMap.coe_toAffineMap, AffineMap.const_apply, sub_nonpos]
 
-
-
-
 theorem isFinitePLBallPair_link_of_halfplane_germ {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [DecidableEq E] (hdim : Module.finrank ℝ E = 2)
@@ -109,10 +97,6 @@ theorem isFinitePLBallPair_link_of_halfplane_germ {E : Type*}
     ((d x : E) ∈ frontier C ∧ B (d x : E) = 0)
   exact ⟨fun hx => ⟨(d x).property.1, (hezero x).mpr hx.2⟩,
     fun hx => ⟨x.property, (hezero x).mp hx.2⟩⟩
-
-
-
-
 
 theorem exists_pair_chart_of_finitePL_halfplane_patch {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

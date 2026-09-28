@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialFieldSystem
 import PoincareConjecture.Proofs.M35.Thm12_28.PointIsometryJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +24,6 @@ local instance retainedRadialGammaNormedGroup : NormedAddCommGroup GammaB := inf
 local instance retainedRadialGammaNormedSpace : NormedSpace ℝ GammaB := inferInstance
 local instance retainedRadialCoefficientNormedGroup : NormedAddCommGroup RadialC := inferInstance
 local instance retainedRadialCoefficientNormedSpace : NormedSpace ℝ RadialC := inferInstance
-
-
 
 theorem radial_pullback_norm_le
     {g G : RiemannianMetric 3 V}
@@ -65,9 +55,6 @@ theorem radial_pullback_norm_le
   simp only [one_div] at hs
   nlinarith only [hs, inv_pos.mpr ha,
     sq_nonneg (‖pullback ℝ f (radialUnitField G) x‖ - 1 / 2)]
-
-
-
 
 theorem retained_radial_field_shape_jets
     {gseq Gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

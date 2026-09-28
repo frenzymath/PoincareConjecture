@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 import PoincareConjecture.Proofs.M08.VariationDerivativeData
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
-
 theorem spatial_velocity_joint_contMDiff (hc : M62ShrinkingCurve F c) :
     ContMDiffOn (𝓘(ℝ, ℝ × ℝ)) ((𝓡 n).prod (𝓡 n)) ∞
       (fun z : ℝ × ℝ ↦ (⟨c z.1 z.2, curveVelocity (fun y ↦ c y z.2) z.1⟩ :
@@ -37,8 +25,6 @@ theorem spatial_velocity_joint_contMDiff (hc : M62ShrinkingCurve F c) :
   have h := M08.contMDiffOn_curveVelocity_fst (isOpen_univ.prod isOpen_Ioo) _ hcurve
   rw [modelWithCornersSelf_prod, ← chartedSpaceSelf_prod]
   exact h
-
-
 
 theorem time_velocity_joint_contMDiff (hc : M62ShrinkingCurve F c) :
     ContMDiffOn (𝓘(ℝ, ℝ × ℝ)) ((𝓡 n).prod (𝓡 n)) ∞
@@ -50,8 +36,6 @@ theorem time_velocity_joint_contMDiff (hc : M62ShrinkingCurve F c) :
   rw [modelWithCornersSelf_prod, ← chartedSpaceSelf_prod]
   exact h
 
-
-
 theorem curvature_joint_contMDiff (hc : M62ShrinkingCurve F c) :
     ContMDiffOn (𝓘(ℝ, ℝ × ℝ)) ((𝓡 n).prod (𝓡 n)) ∞
       (fun z : ℝ × ℝ ↦ (⟨c z.1 z.2, m62CurvatureVector F c z.2 z.1⟩ :
@@ -59,8 +43,6 @@ theorem curvature_joint_contMDiff (hc : M62ShrinkingCurve F c) :
   apply (time_velocity_joint_contMDiff F c hc).congr
   intro z hz
   exact congrArg (Bundle.TotalSpace.mk (c z.1 z.2)) (hc.equation z.2 hz.2 z.1).symm
-
-
 
 theorem metric_pairing_contDiffOn
     (hc : ContMDiffOn (𝓘(ℝ, ℝ × ℝ)) (𝓡 n) ∞
@@ -89,8 +71,6 @@ theorem metric_pairing_contDiffOn
     (hg z hz).clm_bundle_apply₂ (hY z hz) (hZ z hz)
   exact (Bundle.contMDiffWithinAt_totalSpace.mp hp).2
 
-
-
 theorem speed_joint_contDiffOn (hc : M62ShrinkingCurve F c) :
     ContDiffOn ℝ ∞ (fun z : ℝ × ℝ ↦ curveSpeed F c z.2 z.1)
       (Set.univ ×ˢ Set.Ioo a b) := by
@@ -98,8 +78,6 @@ theorem speed_joint_contDiffOn (hc : M62ShrinkingCurve F c) :
   exact (metric_pairing_contDiffOn F c hc.joint_smooth _ _ hX hX).sqrt
     (fun z hz ↦ ((F.metric z.2).pos _ _
       (hc.immersed z.2 (Set.Ioo_subset_Icc_self hz.2) z.1)).ne')
-
-
 
 theorem curvatureSquared_contDiffOn (hc : M62ShrinkingCurve F c) :
     ContDiffOn ℝ ∞ (fun z : ℝ × ℝ ↦ m62CurvatureSquared F c z.2 z.1)

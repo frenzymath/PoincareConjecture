@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckQuarterOverlap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -100,11 +91,6 @@ private theorem neck_positive_quarter_closure_edist_le (N : EpsilonNeck g)
 
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
-
-
-
-
-
 
 theorem exists_source_frontier_three_quarter_accuracy
     (S : CounterexampleNeckSegment E) :
@@ -285,7 +271,5 @@ theorem exists_source_frontier_three_quarter_accuracy
       apply (ENNReal.ofReal_lt_ofReal_iff hTargetPos).mpr
       exact htarget
     exact (not_lt_of_ge (hlower.trans hupper')) hlt
-
-
 
 end PoincareConjecture.M28.CounterexampleNeckSegment

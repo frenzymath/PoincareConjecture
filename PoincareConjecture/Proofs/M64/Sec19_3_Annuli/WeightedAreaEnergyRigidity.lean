@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,10 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m60AreaGram_modulus_conformal_of_density_eq
     (g : RiemannianMetric n M) (f : LoopPlane → M) (p : LoopPlane)
@@ -57,10 +41,6 @@ theorem m60AreaGram_modulus_conformal_of_density_eq
   have hxy : x - y = 0 := sq_eq_zero_iff.mp (by nlinarith [sq_nonneg z])
   have hz : z = 0 := sq_eq_zero_iff.mp (by nlinarith [sq_nonneg (x - y)])
   exact ⟨sub_eq_zero.mp hxy, hz⟩
-
-
-
-
 
 theorem M64Annulus.ae_modulus_conformal_of_weightedEnergy_eq_area
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

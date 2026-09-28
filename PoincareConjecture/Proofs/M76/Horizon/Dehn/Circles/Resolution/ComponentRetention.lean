@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.WholeComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -15,8 +7,6 @@ namespace Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 theorem connected_sides_of_disjoint_closed_collar
     {E : Type*} [TopologicalSpace E] {U A B : Set E}
@@ -41,7 +31,6 @@ private theorem polygon_region_facts {n : ℕ} (P : Polygon V2 (n + 3))
       (subset_univ _)
   exact ⟨hi, hf⟩
 
-
 theorem polygon_collar_boundary_subsets {m n : ℕ}
     (P : Polygon V2 (m + 3)) (I : Polygon V2 (n + 3))
     (hP : P.HasSimplicialEdges) (hPi : Function.Injective P)
@@ -62,8 +51,6 @@ theorem polygon_collar_boundary_subsets {m n : ℕ}
     have hxI : x ∈ closure I.inside := by simpa using hxf.1
     exact ⟨subset_closure (hnest hxI), fun hxi ↦ hxf.2 (hiI.symm ▸ hxi)⟩
 
-
-
 theorem polygon_collar_component_sides {m n : ℕ}
     (P : Polygon V2 (m + 3)) (I : Polygon V2 (n + 3))
     (hI : I.HasSimplicialEdges) (hIi : Function.Injective I)
@@ -75,8 +62,6 @@ theorem polygon_collar_component_sides {m n : ℕ}
   have h := connected_sides_of_disjoint_closed_collar hU isClosed_closure
     (hnest.trans subset_closure) (by simpa only [hi] using havoid)
   simpa only [hi] using h
-
-
 
 theorem polygon_closed_inside_subset_of_boundary_inside {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))
@@ -145,8 +130,6 @@ private theorem polygon_boundary_connected {m : ℕ} (P : Polygon V2 (m + 3))
     AffineEquiv.coe_toAffineMap, LinearEquiv.coe_toAffineEquiv, a.symm_apply_apply,
     image_id'] using h
 
-
-
 theorem disjoint_polygon_collars_source_cases {m₀ n₀ m₁ n₁ : ℕ}
     (P₀ : Polygon V2 (m₀ + 3)) (I₀ : Polygon V2 (n₀ + 3))
     (P₁ : Polygon V2 (m₁ + 3)) (I₁ : Polygon V2 (n₁ + 3))
@@ -177,7 +160,6 @@ theorem disjoint_polygon_collars_source_cases {m₀ n₀ m₁ n₁ : ℕ}
         (subset_closure (hn (hb₀ (P₀.vertex_mem_boundary 0)).1)))
   · exact Or.inr (Or.inr hd)
 
-
 theorem square_annulus_middle_between_polygons {m n : ℕ} {L d : ℝ}
     (hd : 0 < d) {A : Set V2} (c : squareAnnulus L d ≃ₜ A)
     (P : Polygon V2 (m + 3)) (I : Polygon V2 (n + 3))
@@ -205,7 +187,6 @@ theorem square_annulus_middle_between_polygons {m n : ℕ} {L d : ℝ}
   · intro hx
     exact hnotI (hfI ▸ ⟨subset_closure hx, fun hx ↦ hc.2 (hiI ▸ hx)⟩)
 
-
 theorem nested_collar_component_location {m₀ n₀ m₁ n₁ : ℕ}
     (P₀ : Polygon V2 (m₀ + 3)) (I₀ : Polygon V2 (n₀ + 3))
     (P₁ : Polygon V2 (m₁ + 3)) (I₁ : Polygon V2 (n₁ + 3))
@@ -222,8 +203,6 @@ theorem nested_collar_component_location {m₀ n₀ m₁ n₁ : ℕ}
   rcases polygon_collar_component_sides P₀ I₀ hI₀ hI₀i hn₀ hU havoid₀ with hi₀ | ho₀
   · exact Or.inr (Or.inr (fun x hx ↦ ⟨hi₀ hx, ho₁ hx⟩))
   · exact Or.inr (Or.inl (fun x hx ↦ ⟨hUD hx, ho₀ hx⟩))
-
-
 
 theorem nested_collar_component_retained_or_disjoint {m₀ n₀ m₁ n₁ : ℕ}
     (P₀ : Polygon V2 (m₀ + 3)) (I₀ : Polygon V2 (n₀ + 3))
@@ -248,8 +227,6 @@ theorem nested_collar_component_retained_or_disjoint {m₀ n₀ m₁ n₁ : ℕ}
     · exact (hm hx).2 (subset_closure (hn₁ hi))
     · exact ho.2 (hn₀ (subset_closure (hm hx).1))
 
-
-
 theorem disjoint_collar_component_retained_piece {m₀ n₀ m₁ n₁ : ℕ}
     (P₀ : Polygon V2 (m₀ + 3)) (I₀ : Polygon V2 (n₀ + 3))
     (P₁ : Polygon V2 (m₁ + 3)) (I₁ : Polygon V2 (n₁ + 3))
@@ -266,8 +243,6 @@ theorem disjoint_collar_component_retained_piece {m₀ n₀ m₁ n₁ : ℕ}
   · exact Or.inr (Or.inl hi)
   · exact Or.inr (Or.inr (fun x hx ↦ ⟨hUD hx, fun h ↦ h.elim (ho₀ hx) (ho₁ hx)⟩))
 
-
-
 theorem nested_retained_avoids_closed_band {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))
     (hP : P.HasSimplicialEdges) (hPi : Function.Injective P)
@@ -283,8 +258,6 @@ theorem nested_retained_avoids_closed_band {m n : ℕ}
   rcases hk with hQcl | ho
   · exact Or.inr (hfQ ▸ ⟨subset_closure hQcl, fun h ↦ hQnot (hiQ ▸ h)⟩)
   · exact Or.inl (hfP ▸ ⟨subset_closure hPcl, fun h ↦ ho.2 (hiP ▸ h)⟩)
-
-
 
 theorem disjoint_retained_avoids_closed_collars {m₀ n₀ m₁ n₁ : ℕ}
     (P₀ : Polygon V2 (m₀ + 3)) (I₀ : Polygon V2 (n₀ + 3))
@@ -323,9 +296,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
-
-
 
 theorem OrdinaryIntervalMarkedModel.actual_collar_component_geometry
     (D : OrdinaryIntervalMarkedModel old i) (j : Fin 2)
@@ -373,9 +343,6 @@ theorem OrdinaryIntervalMarkedModel.actual_collar_component_geometry
     intro x hx hxC
     exact disjoint_left.mp (old.disjoint hk) hx
       (htrace x (hcarrier.symm.subset hxC) (old.piece_subset_double k hx))
-
-
-
 
 theorem OrdinaryDoubleCurveModel.nested_collar_retention
     (old : OrdinaryDoubleCurveModel e f R) (a b : old.Index)
@@ -429,9 +396,6 @@ theorem OrdinaryDoubleCurveModel.nested_collar_retention
   · apply _root_.Dehn.nested_retained_avoids_closed_band P₀ I₁ hP₀ hP₀i hI₁ hI₁i
     exact disjoint_union_right.mpr
       ⟨hseam₀.mono_right subset_union_left, hseam₁.mono_right subset_union_right⟩
-
-
-
 
 theorem OrdinaryDoubleCurveModel.disjoint_collar_retention
     (old : OrdinaryDoubleCurveModel e f R) (a b : old.Index)

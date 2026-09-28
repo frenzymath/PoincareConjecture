@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_neck_carrier_subset_ball
     {M : Type*} [TopologicalSpace M]

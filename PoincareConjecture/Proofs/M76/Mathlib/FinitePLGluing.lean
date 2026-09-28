@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem finitePiecewiseAffineOn_of_finite_cover (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {ι : Type*} [Finite ι]
@@ -49,8 +36,6 @@ theorem finitePiecewiseAffineOn_of_finite_cover (K : SimplicialComplex ℝ E)
   obtain ⟨a, ha⟩ := hf p.1 p.2.val p.2.property
   exact ⟨a, ha.mono hp⟩
 
-
-
 theorem FinitePiecewiseAffineOn.union {f : E → F} {s u : Set E}
     (hs : FinitePiecewiseAffineOn f s) (hu : FinitePiecewiseAffineOn f u)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hspace : K.space = s ∪ u) :
@@ -72,10 +57,6 @@ theorem FinitePiecewiseAffineOn.union {f : E → F} {s u : Set E}
 end Geometry
 
 namespace Homeomorph
-
-
-
-
 
 theorem exists_union_of_isFinitePL {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

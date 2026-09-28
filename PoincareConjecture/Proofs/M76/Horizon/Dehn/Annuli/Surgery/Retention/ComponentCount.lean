@@ -6,8 +6,6 @@ open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli.SourceCircleDecomposition
 
-
-
 theorem retained_component_count_lt
     {E Y X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace Y] [T2Space Y]

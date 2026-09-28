@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcStraigh
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBoundaryFans
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalInteriorFans
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +14,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_triangle_region_regular_vertex_fan
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))

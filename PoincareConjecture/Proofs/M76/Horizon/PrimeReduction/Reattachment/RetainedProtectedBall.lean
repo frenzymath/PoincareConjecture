@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.RetainedAtlasDomains
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

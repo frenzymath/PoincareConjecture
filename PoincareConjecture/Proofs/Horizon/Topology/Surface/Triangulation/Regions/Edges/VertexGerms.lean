@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
@@ -31,13 +21,10 @@ theorem edge_mem_boundary (a : D.EdgeIndex) (t : ℝ) :
   refine ⟨a.1.1, a.1.1.property, D.edgeCurve a t, ?_, (D.edge_map_eq a t).symm⟩
   exact coordinateCircleArc_mem_sphere _ (D.radius_pos a.1.1 a.1.1.property).le _ _
 
-
 noncomputable def edgeVertexGerm {p : M}
     (P : ChartCircleArrangementVertexPatch D.radius p) (a : D.EdgeIndex) (t₀ d t : ℝ) :
     ℝ × ℝ :=
   collarParameterEquiv (P.coordinates.symm ((D.edge a.1 a.2).map (t₀ + d * t))) - P.center
-
-
 
 theorem exists_edgeVertexGerm_neighborhood {p : M}
     (P : ChartCircleArrangementVertexPatch D.radius p)

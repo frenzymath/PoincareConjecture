@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Backward.MetricJets
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,11 +13,6 @@ open scoped Topology Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
-
-
 
 theorem exists_common_backward_static_metric_jets_of_zero_ratio
     {n : ℕ} {M : Type u} {ι : Type*} [TopologicalSpace M] [T3Space M]

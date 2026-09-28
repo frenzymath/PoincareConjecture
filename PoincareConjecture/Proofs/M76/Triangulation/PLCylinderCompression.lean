@@ -5,26 +5,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactifiedConjugation
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_plCylinderCompression (ι : Type*) [Fintype ι] (J : Finset ι) :
     ∃ p : OpenPartialHomeomorph (ι → ℝ) (ι → ℝ),

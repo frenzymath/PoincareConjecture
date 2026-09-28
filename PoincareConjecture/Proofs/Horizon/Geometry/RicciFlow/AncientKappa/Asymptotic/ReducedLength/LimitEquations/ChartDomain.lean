@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Analysis.Distribution.LocalNonpositive
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.TestOperator
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
-
-
 
 theorem limitReducedLength_heat_pairing_nonpos_on_chart
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

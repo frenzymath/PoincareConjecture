@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SingleNeckCylinder
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem OpenCylinderModel.exists_tail_subset_of_compact_level
     {M : Type u} [TopologicalSpace M]
@@ -166,8 +154,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 open Classical in
 
-
-
 theorem CapCertificate.continuous_saturated_end_height (C : CapCertificate g) :
     let L := C.epsilon⁻¹
     let H : M → ℝ := fun x =>
@@ -297,9 +283,6 @@ theorem CapCertificate.continuous_saturated_end_height (C : CapCertificate g) :
         · rw [hltret ⟨hLr, hlt⟩]
           exact (C.end_neck_lower_cut_topology ⟨hLr, hlt⟩).2.1
       exact hopen.mem_nhds hr
-
-
-
 
 theorem CapCertificate.exists_attachment_of_inter_eq_end_neck
     (C : CapCertificate g) {X : Set M} (T : EpsilonTubeCertificate g X)

@@ -1,30 +1,16 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.CorrectedEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
 noncomputable def radialGaugeDrift (f velocity : ℝ → ℝ) (r : ℝ) : ℝ :=
   2 * deriv f r / f r - 2 / r - velocity r
 
-
 noncomputable def cylinderTargetForcing (f velocity : ℝ → ℝ) (r : ℝ) : ℝ :=
   2 * deriv f r / (r * f r) - velocity r / r
-
-
 
 theorem radialGaugeDrift_hasDerivAt {f velocity : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) {r : ℝ} (hr : r ≠ 0) (hfr : f r ≠ 0)
@@ -41,8 +27,6 @@ theorem radialGaugeDrift_hasDerivAt {f velocity : ℝ → ℝ}
   field_simp [hr, hfr]
   ring
 
-
-
 theorem cylinderTargetForcing_hasDerivAt {f velocity : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) {r : ℝ} (hr : r ≠ 0) (hfr : f r ≠ 0)
     (hv : HasDerivAt velocity (2 * deriv (deriv f) r / f r) r) :
@@ -58,8 +42,6 @@ theorem cylinderTargetForcing_hasDerivAt {f velocity : ℝ → ℝ}
   simp only [id_eq, Pi.mul_apply]
   field_simp [hr, hfr]
   ring
-
-
 
 theorem corrected_forcing_eq_cylinderTargetForcing
     (f f₀ velocity u : ℝ → ℝ) (r : ℝ)

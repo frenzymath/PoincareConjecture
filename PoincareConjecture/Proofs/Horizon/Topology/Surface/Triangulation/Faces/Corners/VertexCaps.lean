@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Intersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.SectorCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapTransversality
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -26,8 +15,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {r : M → ℝ} {p : M}
-
-
 
 structure VertexCapFaces (P : ChartCircleArrangementVertexPatch r p)
     (x : Bool × Bool → M) where
@@ -93,8 +80,6 @@ structure VertexCapFaces (P : ChartCircleArrangementVertexPatch r p)
   mem_neighborhood : p ∈ neighborhood
   neighborhood_subset_carriers : neighborhood ⊆ ⋃ i, (face i).carrier
 
-
-
 theorem exists_vertexCapFaces_at_scale (P : ChartCircleArrangementVertexPatch r p)
     (x : Bool × Bool → M)
     (hchart : ∀ i, P.closedSector i ⊆ (chartAt (EuclideanSpace ℝ (Fin 2)) (x i)).source) :
@@ -158,8 +143,6 @@ theorem exists_vertexCapFaces_at_scale (P : ChartCircleArrangementVertexPatch r 
     mem_neighborhood := hUp
     neighborhood_subset_carriers := hUcover }, rfl⟩
 
-
-
 theorem exists_vertexCapFaces (P : ChartCircleArrangementVertexPatch r p)
     (x : Bool × Bool → M)
     (hchart : ∀ i, P.closedSector i ⊆ (chartAt (EuclideanSpace ℝ (Fin 2)) (x i)).source) :
@@ -197,7 +180,6 @@ theorem carrier_subset_chart (i : Bool × Bool) : (B.face i).carrier ⊆
 
 omit [T2Space M] in
 
-
 theorem first_boundary_agreement {i j : Bool × Bool} (hij : i.1 = j.1) :
     EqOn ((B.face i).boundary 2).map ((B.face j).boundary 2).map (Icc (0 : ℝ) 1) := by
   intro t ht
@@ -208,7 +190,6 @@ theorem first_boundary_agreement {i j : Bool × Bool} (hij : i.1 = j.1) :
 
 omit [T2Space M] in
 
-
 theorem second_boundary_agreement {i j : Bool × Bool} (hij : i.2 = j.2) :
     EqOn ((B.face i).boundary 1).map ((B.face j).boundary 1).map (Icc (0 : ℝ) 1) := by
   intro t ht
@@ -217,8 +198,6 @@ theorem second_boundary_agreement {i j : Bool × Bool} (hij : i.2 = j.2) :
     P.productCoordinates (sectorParameterEquiv P.center j (0, t * B.scale))
   simp only [sectorParameterEquiv_apply, hij, neg_zero, ite_self]
 
-
-
 theorem intersections {i j : Bool × Bool} (hij : i ≠ j) :
     (i.1 = j.1 → (B.face i).carrier ∩ (B.face j).carrier = P.firstSide i B.scale) ∧
     (i.2 = j.2 → (B.face i).carrier ∩ (B.face j).carrier = P.secondSide i B.scale) ∧
@@ -226,8 +205,6 @@ theorem intersections {i j : Bool × Bool} (hij : i ≠ j) :
   P.cap_intersections B.scale_pos.le B.scale_lt_width.le (fun i => (B.face i).carrier)
     B.carrier_subset_sector B.carrier_subset_sector_sides B.firstSide_subset_carrier
     B.secondSide_subset_carrier hij
-
-
 
 theorem intersection_edge_or_vertex {i j : Bool × Bool} (hij : i ≠ j) :
     (∃ k : Fin 3, (B.face i).carrier ∩ (B.face j).carrier =
@@ -250,9 +227,6 @@ theorem intersection_edge_or_vertex {i j : Bool × Bool} (hij : i ≠ j) :
     · rw [B.second_image, B.second_image]
       exact P.secondSide_eq_of_snd_eq hsnd B.scale
   exact Or.inr ((B.intersections hij).2.2 hfst hsnd)
-
-
-
 
 theorem endpoint_transversality (i : Bool × Bool) :
     let f : ℝ → EuclideanSpace ℝ (Fin 2) :=
@@ -287,7 +261,6 @@ theorem endpoint_transversality (i : Bool × Bool) :
       ((hasDerivAt_const B.scale (0 : ℝ)).prodMk (hasDerivAt_id B.scale))).differentiableAt
 
 omit [T2Space M] in
-
 
 theorem capExcess_nonpos_on_carrier (i : Bool × Bool) :
     ∀ z ∈ (B.face i).carrier, capExcess (B.planarCoordinates i) B.scale

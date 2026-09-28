@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Complex.SmoothLogarithm
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -36,8 +26,6 @@ private theorem not_periodic_of_exp_antiperiodic
     linear_combination (hp - hc) / 2
   have := hexp 0
   norm_num [hz] at this
-
-
 
 theorem not_periodic_tangent_logarithm
     {γ : ℝ → ℂ} (hγ : ContDiff ℝ ∞ γ) {P : ℝ} (hP : 0 < P)

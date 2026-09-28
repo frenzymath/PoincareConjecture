@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Forward
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +12,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_forward_integralCurve_of_compact_confinement
     {X : (x : M) → TangentSpace (𝓡 n) x} {U K : Set M} (hU : IsOpen U)

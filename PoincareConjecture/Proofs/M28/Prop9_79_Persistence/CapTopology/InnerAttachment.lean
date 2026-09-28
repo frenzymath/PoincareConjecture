@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem boundary_disjoint_end (N : CapCertificate g) :
     Disjoint N.boundary_sphere N.end_neck.carrier := by
   apply disjoint_left.mpr
@@ -35,15 +26,11 @@ theorem boundary_disjoint_end (N : CapCertificate g) :
 
 omit [T2Space M] in
 
-
 theorem boundary_subset_closed_core_m28 (N : CapCertificate g) :
     N.boundary_sphere ⊆ N.closed_core := by
   intro x hx
   rw [N.closed_core_eq_complement_end]
   exact ⟨N.boundary_subset hx, fun he => disjoint_left.mp N.boundary_disjoint_end hx he⟩
-
-
-
 
 theorem boundary_subset_closure_inner_end (N : CapCertificate g) {c : ℝ}
     (hc : -N.epsilon⁻¹ < c) :

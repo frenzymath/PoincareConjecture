@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RegionSourceMinimizers
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalOpenRegion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_canonical_source_minimizer_accuracy (P : RepairedNeckCapTopologyTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

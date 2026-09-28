@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Statements.M44Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem M44CapPersistencePredecessors.scalar_continuous
     (P : M44CapPersistencePredecessors.{u}) {J : Set ℝ}
@@ -36,8 +25,6 @@ theorem M44CapPersistencePredecessors.scalar_continuous
   have hcontinuous := hregular.continuousOn.comp_continuous hslice hmem
   exact hcontinuous
 
-
-
 theorem SingularCComponent.scalar_le_sup {g : RiemannianMetric 3 M}
     {D : LeviCivitaData g} {C : ℝ} (N : SingularCComponent g D C)
     (hscalar : ContinuousOn D.scalarCurvature N.carrier)
@@ -49,8 +36,6 @@ theorem SingularCComponent.scalar_le_sup {g : RiemannianMetric 3 M}
     exact mem_image_of_mem _ y.2
   exact le_csSup hb (mem_range.mpr ⟨⟨x, hx⟩, rfl⟩)
 
-
-
 theorem SingularCComponent.contains_connected_region {g : RiemannianMetric 3 M}
     {D : LeviCivitaData g} {C : ℝ} (N : SingularCComponent g D C)
     {W : Set M} (hW : IsPreconnected W) {x : M}
@@ -58,9 +43,6 @@ theorem SingularCComponent.contains_connected_region {g : RiemannianMetric 3 M}
   rw [N.component_eq] at hNx ⊢
   rw [connectedComponent_eq hNx]
   exact hW.subset_connectedComponent hx
-
-
-
 
 theorem not_component_of_collar_plane {g : RiemannianMetric 3 M}
     {D : LeviCivitaData g} {C : ℝ} {W : Set M} (hW : IsPreconnected W)

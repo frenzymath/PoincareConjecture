@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem exists_periodicGaussian_c2_jets (f : C(AddCircle L, E))
     (hf : ContDiff ℝ 2 (fun x : ℝ => f (x : AddCircle L))) :

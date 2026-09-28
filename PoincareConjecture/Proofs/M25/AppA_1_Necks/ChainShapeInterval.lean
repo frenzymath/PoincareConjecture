@@ -2,22 +2,11 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Data.Int.ConditionallyCompleteOrder
 import Mathlib.Order.Interval.Set.OrdConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.ChainShape
-
-
 
 theorem exists_active_eq_of_ordConnected (S : Set ℤ)
     (hne : S.Nonempty) (hS : Set.OrdConnected S) :

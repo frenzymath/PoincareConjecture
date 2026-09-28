@@ -1,22 +1,11 @@
 import Mathlib.MeasureTheory.Function.AbsolutelyContinuous
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64AbsolutelyContinuousOnInterval_congr
     {X : Type*} [PseudoMetricSpace X] {f g : ℝ → X} {a b : ℝ}

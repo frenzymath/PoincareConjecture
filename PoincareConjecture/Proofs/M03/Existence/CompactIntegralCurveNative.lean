@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.UniformIntegralCurveNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteChartCommonTimeNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Manifold

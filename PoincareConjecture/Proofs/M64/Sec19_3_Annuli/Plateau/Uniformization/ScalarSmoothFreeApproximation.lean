@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarSmoothAnnulusApproximation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +17,6 @@ local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarModulusEnergyDensity_eq_area
     (g : RiemannianMetric n M) (f : Plane → M) {r : ℝ} (hr : 0 < r) (p : Plane)
@@ -60,11 +44,6 @@ theorem scalarModulusEnergyDensity_eq_area
   ring
 
 variable [T2Space M]
-
-
-
-
-
 
 theorem exists_smooth_free_annulus_energy_lt_area
     (g : RiemannianMetric n M) (f : Plane → M)

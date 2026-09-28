@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.MetricPair
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Coordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,7 +44,6 @@ theorem variationChart_contDiffOn {J : Set ℝ} {F : RicciFlow n M J}
   apply ContMDiffOn.contDiffOn
   rw [modelWithCornersSelf_prod, ← chartedSpaceSelf_prod]
   exact h
-
 
 variable {J : Set ℝ} {F : RicciFlow n M J} {T τ₁ τ₂ : ℝ}
   {p : BackwardTimePath F T τ₁ τ₂}
@@ -117,6 +109,5 @@ theorem variationChart_squareVariationField (V : LVariation F T τ₁ τ₂ p)
       squareVariationField V s := by
   have hzero : (0 : ℝ) ∈ V.parameterDomain := ⟨neg_neg_of_pos V.radius_pos, V.radius_pos⟩
   exact variationChart_partialU_frame V ⟨V.square_contains ⟨hs, hzero⟩, hx⟩
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

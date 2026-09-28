@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MaximalFaceAffineGerm
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 import PoincareConjecture.Proofs.M76.Mathlib.ConeSimplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem zero_mem_and_mem_intrinsicInterior_of_radial_closedStar
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)
@@ -64,11 +49,6 @@ theorem zero_mem_and_mem_intrinsicInterior_of_radial_closedStar
     exact hune ((Finset.insert_eq_of_mem h0u).symm.trans hiueq)
   exact hplink (mem_space_iff.mpr ⟨u, ⟨hu, hzerou, hiu⟩, hpu⟩)
 
-
-
-
-
-
 theorem zero_mem_and_mem_triangle_interior_of_radial_frontier
     (K : SimplicialComplex ℝ E)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 3)
@@ -88,9 +68,6 @@ theorem zero_mem_and_mem_triangle_interior_of_radial_frontier
     (fun hpL => disjoint_left.mp hlink (hC.frontier_subset hpC) hpL)
     (show ρ⁻¹ ∈ Icc (0 : ℝ) 1 from
       ⟨inv_nonneg.mpr hρpos.le, (inv_le_one₀ hρpos).mpr hρ⟩) har
-
-
-
 
 theorem exists_open_eq_triangle_plane_at_radial_frontier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

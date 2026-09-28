@@ -12,8 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 
-
-
 structure ComponentReflectionAnnulusData
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -38,8 +36,6 @@ structure ComponentReflectionAnnulusData
   full_preimage : D2 ∩ f ⁻¹' (tube '' singleReflectionTube L d) = source
   double_trace : source ∩ doubleLocusOn f D2 = old.pieces i
   middle : ∀ p : squareAnnulus L d, (chart p : V2) ∈ old.pieces i ↔ depth L p = 0
-
-
 
 theorem ComponentBranchModel.nonempty_reflected_annulus_of_cyclic_map
     {X ι : Type*} [TopologicalSpace X]

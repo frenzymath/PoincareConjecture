@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CompactifiedPolarMap
 import Mathlib.Analysis.Normed.Module.Ball.RadialEquiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,12 +8,9 @@ open scoped OnePoint
 
 namespace BrownSchoenflies
 
-
 theorem polarRadius_pos {t : ℝ} (ht : -1 < t) (ht' : t < 1) :
     0 < polarRadius t :=
   div_pos (by linarith) (sub_pos.mpr ht')
-
-
 
 noncomputable def polarRadiusHomeomorph : Ioo (-1 : ℝ) 1 ≃ₜ Ioi (0 : ℝ) where
   toFun t := ⟨polarRadius t, polarRadius_pos t.property.1 t.property.2⟩
@@ -67,20 +55,13 @@ noncomputable def polarRadiusHomeomorph : Ioo (-1 : ℝ) 1 ≃ₜ Ioi (0 : ℝ) 
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def regularPolarHomeomorph :
     (sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) ≃ₜ ↥(({0} : Set E)ᶜ) :=
   ((Homeomorph.refl (sphere (0 : E) 1)).prodCongr polarRadiusHomeomorph).trans
     (homeomorphUnitSphereProd E).symm
 
-
 theorem regularPolarHomeomorph_apply (z : sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) :
     (regularPolarHomeomorph z : E) = (polarRadius z.2) • (z.1 : E) := rfl
-
-
-
 
 theorem compactifiedPolar_regular (z : sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) :
     compactifiedPolar (z.1, ⟨(z.2 : ℝ), z.2.property.1.le, z.2.property.2.le⟩) =

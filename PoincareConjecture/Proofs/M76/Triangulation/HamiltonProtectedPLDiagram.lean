@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDiagram
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ namespace PoincareConjecture.M76
 variable {X Y E : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {ι κ : Type*} {R : Set X} {T : Set Y} {U : Set R}
-
-
-
-
 
 theorem ChartwisePLOn.polyhedralPLInCharts_comp
     {d : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}
@@ -73,9 +59,6 @@ theorem ChartwisePLOn.polyhedralPLInCharts_comp
   · exact (hF.comp hqjPL hqL).congr (by
       intro y hy
       exact (hFval (q y) (hqj' y hy) (hqL y hy)).2)
-
-
-
 
 theorem ChartwisePLOn.finitePiecewiseAffineOn_fixed_chart
     {d : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}

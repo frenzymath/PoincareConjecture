@@ -2,22 +2,9 @@ import Mathlib.Algebra.Module.Submodule.Union
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Geometry.Polygon.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem Set.Finite.exists_linearMap_injOn {K E : Type*} [Field K] [Infinite K]
     [AddCommGroup E] [Module K E] {s : Set E} (hs : s.Finite) :
@@ -35,17 +22,11 @@ theorem Set.Finite.exists_linearMap_injOn {K E : Type*} [Field K] [Infinite K]
   have hp := hL p
   exact hp (by change L (x - y) = 0; rw [map_sub, hxy, sub_self])
 
-
-
-
 theorem Set.Finite.exists_continuousLinearMap_injOn {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {s : Set E} (hs : s.Finite) : ∃ L : E →L[ℝ] ℝ, InjOn L s := by
   obtain ⟨L, hL⟩ := hs.exists_linearMap_injOn (K := ℝ)
   exact ⟨⟨L, L.continuous_of_finiteDimensional⟩, hL⟩
-
-
-
 
 theorem Polygon.exists_strict_max_height {E : Type*} [AddCommGroup E] [Module ℝ E]
     {n : ℕ} (P : Polygon E (n + 3)) (hinj : Function.Injective P) :

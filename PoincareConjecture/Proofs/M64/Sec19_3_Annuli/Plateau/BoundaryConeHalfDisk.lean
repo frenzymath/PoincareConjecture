@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeGreenInt
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeFluxIntegral
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeDisk
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -28,9 +15,6 @@ namespace PoincareConjecture.M64BoundaryCone
 open M65Interior M65Boundary
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
-
-
-
 
 theorem halfCone_memLp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {g : C → E}
@@ -59,10 +43,6 @@ theorem halfCone_memLp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     exact hB p hp
   exact ⟨memLp_halfPolarCoordinates hm x, fun i => memLp_halfPolarCoordinates
     (coneCartesianField_memLp hr hρ hK hv hg h0 hvb hd hD i) x⟩
-
-
-
-
 
 theorem halfCone_green_rectangle [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
     {v d : ℝ → C} {v0 : C}
@@ -162,10 +142,6 @@ theorem halfCone_green_rectangle [CompleteSpace C] [ProperSpace C] {g : C → �
   change (∫ p in S, _) = _
   rw [integral_congr_ae heq, integral_add hR hQ, hrad, hang]
 
-
-
-
-
 theorem halfCone_green [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
     {v d : ℝ → C} {v0 : C}
     {r ρ K : ℝ} (hr : 0 < r) (hρ : 0 < ρ) (hK : 0 ≤ K)
@@ -233,9 +209,6 @@ theorem halfCone_green [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
             fderiv ℝ test (polarPlane x p) (EuclideanSpace.basisFun (Fin 2) ℝ i)) :=
       setIntegral_congr_set he.symm
     _ = _ := halfCone_green_rectangle hr hρ hK hv hg h0 hvb hd hinc hD x test ht i
-
-
-
 
 theorem halfCone_derivativeEnergy_le {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ConjugatingFlowFamilyNative
 import Mathlib.Geometry.Manifold.IntegralCurve.UniformTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

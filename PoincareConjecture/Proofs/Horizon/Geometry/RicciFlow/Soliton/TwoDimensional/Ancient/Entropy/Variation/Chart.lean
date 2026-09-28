@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeMeasure
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +13,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_integral_volumeMeasure_image_surface
     (F : RicciFlow 2 M J) {t : ℝ} (ht : t ∈ interior J)

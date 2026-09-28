@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.F
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.SliceIsotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Partition.Sides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +17,6 @@ universe u
 namespace PoincareConjecture
 
 namespace BalancedNeckChain
-
-
-
 
 theorem prepend_no_return_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]
@@ -122,9 +108,6 @@ theorem prepend_no_return_of_epsilon_le :
     rw [P.coordinate_inverse_coordinate_map hz] at hlow
     exact hx.2.2.trans hlow
   exact hTV.mono (fun x hx => mem_iUnion₂.mpr ⟨j, ⟨haj, le_rfl⟩, hx⟩) hquarter
-
-
-
 
 theorem uniform_negative_end_exclusion_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

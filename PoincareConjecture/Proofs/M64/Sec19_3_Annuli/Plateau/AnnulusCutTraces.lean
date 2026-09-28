@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusCutCompletion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -15,9 +7,6 @@ set_option warningAsError true
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64AnnulusCutCompletion_trace {M : Type*} (f g : LoopPlane → M)
     (c : ℝ → M) (hc : Function.Periodic c curvePeriod) (y : ℝ)

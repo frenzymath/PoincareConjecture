@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.FiberwiseLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

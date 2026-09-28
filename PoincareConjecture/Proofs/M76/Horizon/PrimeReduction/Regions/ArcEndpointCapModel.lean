@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.ArcEndpointCaps
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.MarkedHalfspaceModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

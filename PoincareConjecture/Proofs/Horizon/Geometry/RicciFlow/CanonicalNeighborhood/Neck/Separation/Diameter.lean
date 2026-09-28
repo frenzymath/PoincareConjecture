@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBou
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.PathDisplacement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereDistance
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -108,8 +100,6 @@ theorem edist_central_sphere_le_two_pi_mul_scale {x y : M}
   have h := mul_le_mul_of_nonneg_left hs N.scale_pos.le
   nlinarith [mul_le_mul_of_nonneg_right h Real.pi_pos.le]
 
-
-
 theorem edist_coordinate_map_axis_le (q : UnitTwoSphere) {a b : ℝ}
     (ha : a ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (hb : b ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -164,8 +154,6 @@ theorem edist_coordinate_map_axis_le (q : UnitTwoSphere) {a b : ℝ}
     rw [hcomm, abs_of_nonpos (sub_nonpos.mpr hba), neg_sub]
     exact hordered hb ha hba
 
-
-
 theorem edist_central_sphere_le_of_mem_carrier {x y : M}
     (hx : x ∈ N.carrier) (hy : y ∈ N.central_sphere) :
     g.edist x y ≤
@@ -218,16 +206,12 @@ theorem toReal_edist_central_sphere_le_of_mem_carrier {x y : M}
     (N.edist_central_sphere_le_of_mem_carrier hx hy)
   rwa [ENNReal.toReal_ofReal (by positivity)] at h
 
-
-
 theorem toReal_edist_central_sphere_le_of_abs_axis_le_one {x y : M}
     (hx : x ∈ N.carrier) (hy : y ∈ N.central_sphere)
     (haxis : |(N.coordinate_inverse x).2| ≤ 1) :
     (g.edist x y).toReal ≤ (2 * Real.pi + 2) * N.scale := by
   apply (N.toReal_edist_central_sphere_le_of_mem_carrier hx hy).trans
   exact mul_le_mul_of_nonneg_right (by linarith) N.scale_pos.le
-
-
 
 theorem edist_center_le_of_mem_carrier {x : M} (hx : x ∈ N.carrier) :
     g.edist N.center x ≤

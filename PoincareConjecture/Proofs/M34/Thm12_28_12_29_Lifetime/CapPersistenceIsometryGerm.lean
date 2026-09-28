@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.MetricChristoffelGermBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.Hessian
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_local_isometry_germ_jet_bound (n : ℕ) {a K : ℝ}
     (ha : 0 < a) (hK : 1 ≤ K) :

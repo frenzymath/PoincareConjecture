@@ -3,17 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.LeftRight
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,17 +12,11 @@ universe u v
 
 namespace PoincareConjecture.M30
 
-
-
-
 theorem eventually_closed_time_interval_eq {T : ℝ}
     {L : BlowupLimitFlow.{u} (Icc (-T) 0)} (E : BlowupExhaustion L) :
     ∀ᶠ k : ℕ in atTop, Icc (-(E.time k)) 0 = Icc (-T) 0 := by
   filter_upwards [E.time_cofinal (Icc (-T) 0) isCompact_Icc Subset.rfl] with k hk
   exact Subset.antisymm (E.time_subset k) hk
-
-
-
 
 theorem eventually_backward_time_domain_germs {T₀ : ℝ≥0∞}
     {L : BlowupLimitFlow.{u} (blowupBackwardInterval T₀)}

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceSurfacePullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_regular_source_level_family
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

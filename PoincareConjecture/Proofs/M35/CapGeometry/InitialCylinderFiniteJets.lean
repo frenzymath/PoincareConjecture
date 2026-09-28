@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckFiniteMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,9 +36,6 @@ private theorem tendsto_coordinate_jet_of_components {r : ℕ}
     F k (fun j => roundCylinderCoordinateBasis (a j)))
       atTop (𝓝 (fun _ : Fin r → Fin 3 => (0 : ℝ)))
   exact tendsto_pi_nhds.mpr h
-
-
-
 
 theorem cylinder_covariant_error_jets_tendsto_zero
     (epsilon u s : ℕ → ℝ) (B : ℕ → RoundCylinderTwoTensor)
@@ -154,8 +142,6 @@ theorem cylinder_covariant_error_jets_tendsto_zero
       have hb (i : Fin 3) : ‖roundCylinderCoordinateBasis i‖ = 1 := by
         fin_cases i <;> simp [roundCylinderCoordinateBasis, Prod.norm_def]
       simpa only [Fin.init_def, hb, Finset.prod_const_one, mul_one] using h
-
-
 
 theorem cylinder_metric_error_jets_tendsto_zero
     (epsilon u s : ℕ → ℝ) (B : ℕ → RoundCylinderTwoTensor)

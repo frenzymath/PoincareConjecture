@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M10.ScalarUpperContacts
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem second_deriv_sub_quadratic {B : ℝ → ℝ} {c : ℝ}
     (hB : ContDiffAt ℝ 2 B c) (u v ε : ℝ) :
@@ -39,7 +30,6 @@ theorem second_deriv_sub_quadratic {B : ℝ → ℝ} {c : ℝ}
   have h' : deriv (deriv (B - P)) c = deriv (deriv B) c - 2 * ε := by
     simpa only [iteratedDeriv_succ, iteratedDeriv_zero, hddP] using h
   exact h'
-
 
 theorem chord_le_of_upper_contacts {f : ℝ → ℝ}
     (hf : ContinuousOn f (Icc 0 1))

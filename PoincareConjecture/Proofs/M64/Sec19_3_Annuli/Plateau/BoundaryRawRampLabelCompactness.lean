@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRealTraceCompactness
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRampPhaseInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,11 +21,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
-
 
 theorem raw_ramp_label_weak_phase_subsequence
     (P : M62.CircleProductData F circumference) (gamma : ℝ → P.charts.Point)

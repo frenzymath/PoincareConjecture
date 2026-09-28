@@ -97,5 +97,3 @@ theorem pullbackCovariantDerivative_affine_congr {J C : Set ℝ} (F : RicciFlow 
   exact pullbackCovariantDerivative_affine F time EY EZ c hs
 
 end PoincareConjecture.M08
-
-

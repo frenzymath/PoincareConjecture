@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.AffineSectionPositiveFlags
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

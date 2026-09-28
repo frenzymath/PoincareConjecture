@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ExteriorBounds
 import PoincareConjecture.Proofs.M35.RadialGauge.FullForcingDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem radialGaugeForcing_weighted_derivative_bound
     {f f₀ velocity : ℝ → ℝ} (hfs : ContDiff ℝ ∞ f) (hf₀ : ContDiff ℝ ∞ f₀)

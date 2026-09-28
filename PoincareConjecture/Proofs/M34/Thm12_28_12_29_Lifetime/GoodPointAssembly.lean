@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.GoodPointAnalyticAn
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.GoodPointAnalyticLimits
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapBadLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -52,9 +41,6 @@ private theorem threshold_of_eventually_good (E0 : StandardCapEstimate g0)
   exact hbad (D.convergence.subsequence k) hk
 
 end Threshold
-
-
-
 
 theorem standardFlow_chapter11_goodPoint_threshold_of_persistence
     (P : M34StandardCapPredecessors) :

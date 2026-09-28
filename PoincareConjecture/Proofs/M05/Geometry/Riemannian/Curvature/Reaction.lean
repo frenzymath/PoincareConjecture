@@ -1,18 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Curvature
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.Bilinear
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Contraction
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -47,7 +36,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem curvatureB_eq_sum_orthonormalBasis [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -70,8 +58,6 @@ theorem curvatureB_eq_sum_orthonormalBasis [T2Space M]
   simpa only [curvatureB, curvatureTensor_bilinear_first_third_apply,
     hswap _ u _ v, hswap _ w _ z] using h
 
-
-
 theorem movingInput_curvatureB_reaction
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :
@@ -93,8 +79,6 @@ open Poincare.Geometry.Curvature.Operator
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem curvatureB_cyclic_reaction [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

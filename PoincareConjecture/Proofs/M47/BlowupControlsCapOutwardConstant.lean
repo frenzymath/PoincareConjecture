@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardTopology
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlBarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem cap_core_to_axial_intrinsic_lower {c d b : ℝ}
     (hc : -N.epsilon⁻¹ < c) (hcd : c < d) (hdb : d < b)
@@ -66,8 +55,6 @@ private theorem cap_scalarSup_rpow_le_end_scale :
   rw [N.end_neck.scale_eq_scalar, N.end_neck_connection]
   exact hpow
 
-
-
 theorem cap_inverse_accuracy_lt_constant :
     (3 / 4 : ℝ) * N.epsilon⁻¹ < N.cap_constant := by
   have he : 0 < N.epsilon⁻¹ := inv_pos.mpr N.epsilon_pos
@@ -97,8 +84,6 @@ theorem cap_inverse_accuracy_lt_constant :
     (mul_pos N.cap_constant_pos N.end_neck.scale_pos)).mp (hdiam.trans_lt hupper)
   dsimp [b, d] at hreal
   nlinarith [N.end_neck.scale_pos]
-
-
 
 theorem cap_constant_gt_nine_hundred (hsmall : N.epsilon ≤ 1 / 1200) :
     (900 : ℝ) < N.cap_constant := by

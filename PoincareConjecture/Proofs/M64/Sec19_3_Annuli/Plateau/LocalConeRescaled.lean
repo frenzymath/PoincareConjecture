@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakFilling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeAffine
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,44 +22,30 @@ local notation "S" => ball (0 : LoopPlane) 1
 
 namespace M64ObservedConeDisk
 
-
-
 def affineMap (A : M64ObservedConeDisk (n := n) e gamma) (a : LoopPlane) (r : ℝ) :
     LoopPlane → M := A.map ∘ m64ConeNormalize a r
-
-
 
 def affineColumn (A : M64ObservedConeDisk (n := n) e gamma) (a : LoopPlane) (r : ℝ)
     (i : Fin 2) (p : LoopPlane) : E := r⁻¹ • A.column i (m64ConeNormalize a r p)
 
-
-
 theorem affine_continuous (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) (r : ℝ) : Continuous (A.affineMap a r) :=
   A.continuous.comp (m64ConeNormalize_continuous a r)
-
-
 
 theorem affine_boundary (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) (t : ℝ) :
     A.affineMap a r (a + r • angularPoint t) = gamma t := by
   rw [affineMap, Function.comp_apply, m64ConeNormalize_apply a hr, A.boundary]
 
-
-
 theorem affine_memLp (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     MemLp (e ∘ A.affineMap a r) 2 (volume.restrict (ball a r)) :=
   m64ConeNormalize_memLp A.observed_memLp a hr
 
-
-
 theorem affine_column_memLp (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) (i : Fin 2) :
     MemLp (A.affineColumn a r i) 2 (volume.restrict (ball a r)) :=
   (m64ConeNormalize_memLp (Lp.memLp (A.column i)) a hr).const_smul r⁻¹
-
-
 
 theorem affine_tangent (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) (i : Fin 2) :
@@ -84,8 +59,6 @@ theorem affine_tangent (A : M64ObservedConeDisk (n := n) e gamma)
   rw [map_smul, hv]
   rfl
 
-
-
 theorem affine_weak_partial (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) (i : Fin 2) (b : Fin m) :
     HasWeakPartialDeriv i (fun p => A.affineColumn a r i p b)
@@ -95,8 +68,6 @@ theorem affine_weak_partial (A : M64ObservedConeDisk (n := n) e gamma)
     congrFun (m64ConeNormalize_affine a r) p
   simpa only [hN, m64ConeNormalize_preimage_ball a hr, affineMap, affineColumn,
     Function.comp_apply, PiLp.smul_apply, smul_eq_mul] using hh
-
-
 
 theorem affine_green (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r)
@@ -131,8 +102,6 @@ theorem affine_green (A : M64ObservedConeDisk (n := n) e gamma)
     congr 1
     ring
   rw [hleft, hright, ← smul_add, A.green psi hpsi i]
-
-
 
 theorem affine_energy (A : M64ObservedConeDisk (n := n) e gamma)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.SphereDescent
 import PoincareConjecture.Proofs.M59.Mathlib.CubeSphereHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -23,15 +14,11 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def m59NormalizedCube (q : M59SphereQuotient) (x : M)
     (Gamma : FreeTwoSphereFamily (M := M)) (hGamma : M59NormalizedAt q x Gamma) :
     GenLoop (Fin 2) (C1FreeLoopSpace (M := M)) (constantC1Loop x) :=
   ⟨Gamma.class_certificate.cube_representative, fun z hz =>
     (Gamma.class_certificate.boundary_const z hz).trans (congrArg constantC1Loop hGamma.1)⟩
-
-
 
 theorem m59NormalizedCube_agreement (q : M59SphereQuotient) (x : M)
     (Gamma : FreeTwoSphereFamily (M := M)) (hGamma : M59NormalizedAt q x Gamma)
@@ -39,8 +26,6 @@ theorem m59NormalizedCube_agreement (q : M59SphereQuotient) (x : M)
   change Gamma.class_certificate.cube_representative z = Gamma.family (q.map z)
   rw [← hGamma.2]
   exact Gamma.class_certificate.family_agreement z
-
-
 
 theorem m59NormalizedCube_sigma (q : M59SphereQuotient) (x : M)
     (Gamma : FreeTwoSphereFamily (M := M)) (hGamma : M59NormalizedAt q x Gamma) :
@@ -50,8 +35,6 @@ theorem m59NormalizedCube_sigma (q : M59SphereQuotient) (x : M)
   obtain ⟨hbase, _⟩ := hGamma
   subst x
   exact congrArg (Sigma.mk Gamma.basepoint) Gamma.class_certificate.class_eq.symm
-
-
 
 theorem m59SphereHomotopy_of_class_eq (q : M59SphereQuotient) (x : M)
     (Gamma Delta : FreeTwoSphereFamily (M := M))

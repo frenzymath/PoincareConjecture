@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ParametricInverse
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -21,18 +10,12 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*}
 
-
-
 def verticalInterpolation (f : E × ℝ → ℝ) (tau : E → ℝ) (p : E × ℝ) : E × ℝ :=
   (p.1, lineInterpolation (fun x => f (p.1, x)) (tau p.1) p.2)
-
-
 
 theorem verticalInterpolation_eq_self_of_zero {f : E × ℝ → ℝ} {tau : E → ℝ}
     {p : E × ℝ} (htau : tau p.1 = 0) : verticalInterpolation f tau p = p := by
   simp [verticalInterpolation, htau]
-
-
 
 theorem verticalInterpolation_eq_self_of_fixed {f : E × ℝ → ℝ} {tau : E → ℝ}
     {p : E × ℝ} (hf : f p = p.2) : verticalInterpolation f tau p = p := by
@@ -42,8 +25,6 @@ theorem verticalInterpolation_eq_self_of_fixed {f : E × ℝ → ℝ} {tau : E �
 
 variable [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem contDiff_familyLineInterpolation {f : E × ℝ → ℝ} {tau : E → ℝ}
     {n : ℕ∞ω} (hf : ContDiff ℝ n f) (htau : ContDiff ℝ n tau) :
     ContDiff ℝ n (fun p : E × ℝ =>
@@ -51,15 +32,10 @@ theorem contDiff_familyLineInterpolation {f : E × ℝ → ℝ} {tau : E → ℝ
   exact ((contDiff_const.sub (htau.comp contDiff_fst)).mul contDiff_snd).add
     ((htau.comp contDiff_fst).mul hf)
 
-
-
 theorem contDiff_verticalInterpolation {f : E × ℝ → ℝ} {tau : E → ℝ}
     {n : ℕ∞ω} (hf : ContDiff ℝ n f) (htau : ContDiff ℝ n tau) :
     ContDiff ℝ n (verticalInterpolation f tau) :=
   contDiff_fst.prodMk (contDiff_familyLineInterpolation hf htau)
-
-
-
 
 noncomputable def verticalInterpolationDiffeomorph [CompleteSpace E]
     {f : E × ℝ → ℝ} {tau : E → ℝ}
@@ -78,8 +54,6 @@ noncomputable def verticalInterpolationDiffeomorph [CompleteSpace E]
     exact surjective_lineInterpolation
       (hf.continuous.comp (continuous_const.prodMk continuous_id)) a b (hfix z) (tau z)
 
-
-
 @[simp] theorem verticalInterpolationDiffeomorph_apply [CompleteSpace E]
     {f : E × ℝ → ℝ} {tau : E → ℝ}
     (hf : ContDiff ℝ ∞ f) (htau : ContDiff ℝ ∞ tau)
@@ -88,8 +62,6 @@ noncomputable def verticalInterpolationDiffeomorph [CompleteSpace E]
     (a b : ℝ) (hfix : ∀ z x, x ≤ a ∨ b ≤ x → f (z, x) = x) (p : E × ℝ) :
     verticalInterpolationDiffeomorph hf htau htau_range hpos a b hfix p =
       verticalInterpolation f tau p := rfl
-
-
 
 theorem hasCompactSupport_verticalInterpolation_sub_id
     {f : ℝ × ℝ → ℝ} {tau : ℝ → ℝ} (a b c d : ℝ)

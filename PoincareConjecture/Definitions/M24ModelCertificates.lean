@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M20ThreeDimensionalClassification
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 structure M24QuotientFlowTransport {S : GradientShrinkingSolitonData 3 M}
     {G : ShrinkingSolitonFlow S} (q : QuotientSphereLineCertificate G) where
@@ -83,8 +72,6 @@ structure M24QuotientFlowTransport {S : GradientShrinkingSolitonData 3 M}
           (mfderiv (𝓡 3) (𝓡 3) flow_identification x v)
           (mfderiv (𝓡 3) (𝓡 3) flow_identification x w)
 
-
-
 structure M24ProjectivePlaneLineCertificate {S : GradientShrinkingSolitonData 3 M}
     {G : ShrinkingSolitonFlow S} (q : QuotientSphereLineCertificate G) where
   involution_formula :
@@ -107,8 +94,6 @@ structure M24ProjectivePlaneLineCertificate {S : GradientShrinkingSolitonData 3 
     ∀ x : q.product.surface × ℝ,
       product_homeomorph (q.quotient_map x) =
         (Quotient.mk' (q.product.surface_sphere x.1), x.2)
-
-
 
 structure M24TwistedSphereLineCertificate {S : GradientShrinkingSolitonData 3 M}
     {G : ShrinkingSolitonFlow S} (q : QuotientSphereLineCertificate G) where
@@ -141,14 +126,11 @@ structure M24TwistedSphereLineCertificate {S : GradientShrinkingSolitonData 3 M}
       projective_homeomorph (projective_smooth_cover.cover x) =
         ⟨Quotient.mk' x, hx⟩
 
-
 inductive M24QuotientNormalForm {S : GradientShrinkingSolitonData 3 M}
     {G : ShrinkingSolitonFlow S} (q : QuotientSphereLineCertificate G) : Type u where
   | projectivePlaneLine : M24ProjectivePlaneLineCertificate q →
       M24QuotientNormalForm q
   | twistedSphereLine : M24TwistedSphereLineCertificate q → M24QuotientNormalForm q
-
-
 
 structure M24SphericalSpaceFormCertificate {S : GradientShrinkingSolitonData 3 M}
     (G : ShrinkingSolitonFlow S) where
@@ -201,14 +183,12 @@ structure M24SphericalSpaceFormCertificate {S : GradientShrinkingSolitonData 3 M
     (G.flow.connection t).sectionalCurvature x u v =
       (quotient_connection t).sectionalCurvature x u v
 
-
 inductive M24ModelInput
     {S : GradientShrinkingSolitonData 3 M}
     (G : ShrinkingSolitonFlow S) : Type (u + 2) where
   | compactRound : CompactRoundShrinkingModel G → M24ModelInput G
   | sphereLine : SphereLineProductCertificate G → M24ModelInput G
   | quotientSphereLine : QuotientSphereLineCertificate G → M24ModelInput G
-
 
 def M24ModelInput.ofM20Model
     {S : GradientShrinkingSolitonData 3 M}
@@ -219,8 +199,6 @@ def M24ModelInput.ofM20Model
   | .sphereLine certificate => .sphereLine certificate
   | .quotientSphereLine certificate => .quotientSphereLine certificate
 
-
-
 inductive RepairedKappaModelCertificate
     {S : GradientShrinkingSolitonData 3 M}
     (G : ShrinkingSolitonFlow S) : Type (u + 2) where
@@ -230,7 +208,6 @@ inductive RepairedKappaModelCertificate
   | quotientSphereLine (q : QuotientSphereLineCertificate G) :
       M24QuotientFlowTransport q → M24QuotientNormalForm q →
       RepairedKappaModelCertificate G
-
 
 def M24CertificateMatches
     {S : GradientShrinkingSolitonData 3 M}

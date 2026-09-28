@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M12.GeneralizedRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,16 +11,11 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 def surgeryCapExcludedSlice (F : SurgeryFlowData.{u}) (t : ℝ)
     (hT : t ∈ F.surgery_times) [Nonempty (F.slice t).carrier] (R : ℝ) :
     Set (F.slice t).carrier :=
   (⋃ i : Fin (F.event t hT).cap_count,
     (F.metric t).ball ((F.event t hT).caps i).tip (R * F.parameters.h t))ᶜ
-
-
-
 
 theorem surgeryCapExcludedSlice_compact_regular
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)
@@ -81,9 +67,6 @@ theorem surgeryCapExcludedSlice_compact_regular
   apply interior_mono hret
   rw [hclosed.isOpen_compl.interior_eq]
   exact hnocap
-
-
-
 
 theorem regularSliceLift_compact
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

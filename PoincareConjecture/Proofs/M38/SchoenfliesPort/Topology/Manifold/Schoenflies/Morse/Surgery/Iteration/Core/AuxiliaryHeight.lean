@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Collars
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapHeight
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,7 +25,6 @@ private abbrev S2 := sphere (0 : E3) 1
 namespace SphereSurgeryCoreCap
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
 
 def heightCorrection (D : SphereSurgeryCoreCap v g B) (K : Real) (p : S2) : Real := by
   classical
@@ -88,7 +79,6 @@ theorem contMDiff_heightCorrection (D : SphereSurgeryCoreCap v g B)
 private instance : Std.Symm (fun (D E : SphereSurgeryCoreCap v g B) =>
     Disjoint (D.chart '' closedBall 0 1) (E.chart '' closedBall 0 1)) where
   symm _ _ h := h.symm
-
 
 def adjustedHeight (L : List (SphereSurgeryCoreCap v g B))
     (K : SphereSurgeryCoreCap v g B → Real) (p : S2) : Real := by
@@ -182,8 +172,6 @@ private theorem regular_comp_scalar {h : S2 → Real}
   rw [fderiv_eq_deriv_mul] at hw
   exact (mul_eq_zero.mp hw).resolve_left hder
 
-
-
 theorem exists_auxiliary_height_preserving_core_critical_points
     (L : List (SphereSurgeryCoreCap v g B))
     (hpair : L.Pairwise (fun D E => Disjoint
@@ -241,8 +229,6 @@ theorem exists_auxiliary_height_preserving_core_critical_points
     have hnear := hnorm.continuousAt.eventually_lt_const hpt
     filter_upwards [heq, hnear] with q hq hqt
     exact hq.trans (capPhysicalClock_eq_self _ _ _ D.scale_ne_zero hqt.le)
-
-
 
 theorem exists_regular_auxiliary_height
     (L : List (SphereSurgeryCoreCap v g B))

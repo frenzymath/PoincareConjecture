@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.MunkresNormalization
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CompactIsotopyConcat
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.MovingAxisCorrection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem compactPlanarIsotopyProperty_of_axis_preserving_correction
     (hCorrection : ∀ (F : ℝ → (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ)),
@@ -61,9 +50,6 @@ theorem compactPlanarIsotopyProperty_of_axis_preserving_correction
       (fun x hx => hgfix x (fun h' => hx (Or.inl h')))
       (fun z x hx => hHfix z x (fun h' => hx (Or.inr h')))
   exact ⟨M, hM, hMi, hM0, hM1, S'', hS'', hMfix⟩
-
-
-
 
 theorem compactPlanarIsotopyProperty : CompactPlanarIsotopyProperty :=
   compactPlanarIsotopyProperty_of_axis_preserving_correction

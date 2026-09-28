@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsMetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.PointedExhaustion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.MetricExhaustion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,9 +32,6 @@ private theorem pointwise_chart_distance
       Tendsto (fun k => dist (e k i x) (e k j y)) atTop (𝓝 (D i j (x, y))) := by
   intro i j x y
   exact (hD i j).tendstoLocallyUniformlyOn.tendsto_at (mem_univ (x, y))
-
-
-
 
 theorem terminalGerms_complete_terminal_geometry
     (U : ℕ → Set (EuclideanSpace ℝ (Fin 3))) (hU : ∀ i, IsOpen (U i))

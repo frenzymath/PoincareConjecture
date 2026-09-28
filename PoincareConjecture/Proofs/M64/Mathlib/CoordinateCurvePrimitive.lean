@@ -4,18 +4,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,11 +12,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Curve_vector_primitive {m : ℕ} {T : ℝ} (hT : 0 ≤ T)
     (u d : ℝ → EuclideanSpace ℝ (Fin m)) (b0 b1 : EuclideanSpace ℝ (Fin m))

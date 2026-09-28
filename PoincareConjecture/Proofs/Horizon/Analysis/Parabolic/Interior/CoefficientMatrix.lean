@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.FrozenPositiveDefinite
 
-
-
-
-
-
-
-
 noncomputable section
 
 open scoped RealInnerProductSpace BigOperators
@@ -16,7 +9,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {ι F : Type*} [Fintype ι] [DecidableEq ι]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 def coefficientMatrix
     (a : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι) : Matrix ι ι ℝ :=
@@ -84,8 +76,6 @@ theorem norm_matrixLap_coefficientMatrix_le
   rw [matrixLap_coefficientMatrix]
   exact norm_principal_contraction_le a D
 
-
-
 theorem norm_matrixLap_coefficientMatrix_sub_le
     {a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι}
     {D : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι →L[ℝ] F}
@@ -95,7 +85,6 @@ theorem norm_matrixLap_coefficientMatrix_sub_le
       ((Fintype.card ι : ℝ) ^ 2 * H * M) * ‖y - x‖ ^ α := by
   rw [← coefficientMatrix_sub, matrixLap_coefficientMatrix]
   exact norm_freezing_defect_le hH ha hD
-
 
 theorem norm_coefficient_le
     (a : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι)

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Expansion
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

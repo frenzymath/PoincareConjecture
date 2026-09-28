@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryLiftedPath
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T3Space M] [ConnectedSpace M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
   {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
-
-
 
 noncomputable def ordinaryProductCaptureData
     (R : OrdinaryProductRicciGeometry F.metric I)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {n : ℕ} {M N : Type*} [Nonempty M] [TopologicalSpace M] [TopologicalS
 
 omit [Nonempty M] in
 
-
 theorem isOpen_image_of_mfderiv_bijective {f : M → N} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
     (hD : ∀ x ∈ U, Function.Bijective (mfderiv (𝓡 n) (𝓡 n) f x)) :
@@ -36,8 +26,6 @@ theorem isOpen_image_of_mfderiv_bijective {f : M → N} {U : Set M}
     (hf.contMDiffAt (hU.mem_nhds hx)) (hD x hx)]
   exact image_mem_map (hU.mem_nhds hx)
 
-
-
 theorem contMDiffOn_invFunOn_of_mfderiv_bijective {f : M → N} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U) (hinj : InjOn f U)
     (hD : ∀ x ∈ U, Function.Bijective (mfderiv (𝓡 n) (𝓡 n) f x)) :
@@ -47,8 +35,6 @@ theorem contMDiffOn_invFunOn_of_mfderiv_bijective {f : M → N} {U : Set M}
   apply contMDiffAt_of_local_left_inverse (hf.contMDiffAt (hU.mem_nhds hx)) (hD x hx)
   filter_upwards [hU.mem_nhds hx] with z hz
   exact hinj.leftInvOn_invFunOn hz
-
-
 
 noncomputable def partialDiffeomorphOfInjOn
     (f : M → N) (U : Set M) (hU : IsOpen U)

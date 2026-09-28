@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricFullSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex
 
 variable {V : Type*}
-
-
 
 def faceInclusionGraph (A : PreAbstractSimplicialComplex V) : SimpleGraph A.faces where
   Adj s t := s ≠ t ∧ (s.val ⊆ t.val ∨ t.val ⊆ s.val)
@@ -31,8 +19,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
-
-
 noncomputable def faceCentroidVertexEquiv : K.faces ≃ K.barycentricSubdivision.vertices :=
   Equiv.ofBijective
     (fun s => ⟨s.val.centroid ℝ id,
@@ -42,14 +28,10 @@ noncomputable def faceCentroidVertexEquiv : K.faces ≃ K.barycentricSubdivision
       obtain ⟨s, hs, hsp⟩ := (K.mem_barycentricSubdivision_vertices_iff p.val).mp p.property
       exact ⟨⟨s, hs⟩, Subtype.ext hsp⟩⟩
 
-
-
 theorem faceCentroidVertexEquiv_apply_val (s : K.faces) :
     (K.faceCentroidVertexEquiv s).val = s.val.centroid ℝ id := rfl
 
 variable [DecidableEq E]
-
-
 
 theorem barycentric_centroid_pair_face_iff (s t : K.faces) :
     ({s.val.centroid ℝ id, t.val.centroid ℝ id} : Finset E) ∈
@@ -80,9 +62,6 @@ theorem barycentric_centroid_pair_face_iff (s t : K.faces) :
       · exact h.elim Or.inr Or.inl
       · exact Or.inl le_rfl
     · simp only [Finset.image_insert, Finset.image_singleton]
-
-
-
 
 noncomputable def faceCentroidGraphIso :
     K.toPreAbstractSimplicialComplex.faceInclusionGraph ≃g

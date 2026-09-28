@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormWeakHeat
 import PoincareConjecture.Proofs.M03.Existence.SpectralScaleNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -38,8 +29,6 @@ theorem form_adjoint_spectral_decode (J : V →L[ℝ] H) (hc : IsCompactOperator
   exact (eq_div_iff (by positivity)).mpr (sqrt_eigenparameter_mul_shifted J hc hd hn i)
 
 variable [SeparableSpace H]
-
-
 
 theorem formWeakHeat_value_forcing_trace (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

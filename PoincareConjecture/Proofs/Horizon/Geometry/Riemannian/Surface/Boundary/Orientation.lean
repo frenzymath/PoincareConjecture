@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.FrameChange
 import Mathlib.Topology.Algebra.Field
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 noncomputable def frameOrientation (g : RiemannianMetric 2 S) (x : S)
     (e₁ e₂ f₁ f₂ : TangentSpace (𝓡 2) x) : ℝ :=
@@ -68,8 +60,6 @@ theorem continuousOn_frameOrientation (g : RiemannianMetric 2 S) {U : Set S}
     ((hf₂ x hx).inner_bundle (he₂ x hx))).sub
     (((hf₁ x hx).inner_bundle (he₂ x hx)).mul
       ((hf₂ x hx).inner_bundle (he₁ x hx)))).continuousWithinAt
-
-
 
 theorem exists_frameOrientation_sign_on_curve
     (g : RiemannianMetric 2 S) {U : Set S}

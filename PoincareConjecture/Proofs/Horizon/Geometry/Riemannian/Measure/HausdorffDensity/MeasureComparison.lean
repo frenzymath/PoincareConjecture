@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import Mathlib.Geometry.Euclidean.Volume.Measure
 import Mathlib.MeasureTheory.Measure.WithDensity
 import Mathlib.Topology.Compactness.Lindelof
-
-
-
-
-
-
-

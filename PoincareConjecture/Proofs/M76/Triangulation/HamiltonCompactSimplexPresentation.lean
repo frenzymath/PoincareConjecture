@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.FineSimplicialSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ namespace OpenPartialHomeomorph
 variable {M E V ι : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
-
 
 theorem exists_finite_old_chart_simplex_presentation
     (e : ι → OpenPartialHomeomorph M E) {C : Set M}
@@ -80,9 +68,6 @@ theorem exists_finite_old_chart_simplex_presentation
   change InjOn (a x) (convexHull ℝ (range ((↑) : s → V)))
   rw [show range ((↑) : s → V) = (s : Set V) from Subtype.range_coe]
   exact hinj
-
-
-
 
 theorem exists_compact_old_chart_simplex_presentation
     [T2Space M] [LocallyCompactSpace M] [FiniteDimensional ℝ E]

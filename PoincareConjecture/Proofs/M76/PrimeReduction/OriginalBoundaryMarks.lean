@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalStarChartImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem original_model_mem_image_iff
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
@@ -40,8 +30,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem vertex_mem_subcomplex_space_iff
     {K A : SimplicialComplex ℝ E} (hAK : A ≤ K) {p : E}
     (hp : p ∈ K.vertices) : p ∈ A.space ↔ p ∈ A.vertices := by
@@ -56,8 +44,6 @@ theorem vertex_mem_subcomplex_space_iff
       K.subset_of_mem_intrinsicInterior_face hp (hAK hs) hsingleton hps
     exact A.down_closed hs hsub (Finset.singleton_nonempty p)
   · exact fun hpA => A.vertices_subset_space hpA
-
-
 
 theorem exists_vertex_off_full_subcomplex
     {K A : SimplicialComplex ℝ E} (hAK : A ≤ K)

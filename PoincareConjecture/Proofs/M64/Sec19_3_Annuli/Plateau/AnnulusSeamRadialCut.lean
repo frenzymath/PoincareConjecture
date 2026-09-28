@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamDirection
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,11 +13,7 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
 
-
-
 def m64AnnulusAngularCut : Set LoopPlane := {p | p 0 < 0}
-
-
 
 theorem m64AnnulusAngularCut_measurable : MeasurableSet m64AnnulusAngularCut :=
   (isOpen_lt (EuclideanSpace.proj (𝕜 := ℝ) 0).continuous continuous_const).measurableSet
@@ -92,8 +76,6 @@ private theorem radialCutFactor_integral_tendsto {F : LoopPlane → ℝ}
     · have hn : ¬p 0 < 0 := hp
       simp only [hj, if_neg hn, zero_mul, indicator_of_notMem hp]
 
-
-
 theorem m64WeakPartial_radial_angular_indicator
     {u W : LoopPlane → ℝ} (hu : MemLp u 2 volume) (hW : MemLp W 2 volume)
     (hw : HasWeakPartialDeriv (1 : Fin 2) W u univ) :
@@ -130,7 +112,6 @@ theorem m64WeakPartial_radial_angular_indicator
     by_cases hp : p ∈ m64AnnulusAngularCut <;> simp [hp]
 
 open Classical in
-
 
 theorem m64WeakPartial_radial_angular_piecewise
     {u v W Z : LoopPlane → ℝ}

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionEdgeIncidence
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Boundary
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,13 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_regularClosed_frontier_dense_off_finite
     {R V : Set AnnulusCoordinates} (hR : IsClosed R)
@@ -78,13 +59,6 @@ theorem m64Intrinsic_regularClosed_frontier_dense_off_finite
   obtain ⟨w, hwV, hwD, hwR⟩ := hdense.exists_mem_open
     (hDopen.inter hR.isOpen_compl) ⟨z, hzD, hzR⟩
   exact hwR (interior_subset (hinside ⟨hwD, hwV⟩))
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_frontier_eq_unpaired_sides
     {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)

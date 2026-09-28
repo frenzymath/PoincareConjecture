@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step.OtherLevels
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -34,8 +32,6 @@ private theorem retained_eventuallyEq
   intro hK
   exact (not_le_of_gt hqfar) (S.support_subset hK)
 
-
-
 theorem protected_point_survives {p : S2} (hfar : R < |inner Real v (f p) - c|) :
     (p ∈ S.eMinus '' ball 0 1 ∧ S.fMinus =ᶠ[𝓝 p] f) ∨
       (p ∈ S.ePlus '' ball 0 1 ∧ S.fPlus =ᶠ[𝓝 p] f) := by
@@ -54,8 +50,6 @@ theorem protected_point_survives {p : S2} (hfar : R < |inner Real v (f p) - c|) 
       S.retainedMinus_eq hM hfar⟩
   · exact Or.inr ⟨hP, S.retained_eventuallyEq S.fPlus S.ePlus S.ePlus_source
       S.retainedPlus_eq hP hfar⟩
-
-
 
 theorem protected_minus_eventuallyEq {p : S2}
     (hfar : R < |inner Real v (S.fMinus p) - c|) : S.fMinus =ᶠ[𝓝 p] f := by

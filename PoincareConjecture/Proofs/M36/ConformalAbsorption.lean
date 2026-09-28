@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.ConformalPinching
 import PoincareConjecture.Proofs.M36.ConformalScalar
 import PoincareConjecture.Proofs.M36.ProfileBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 universe u
 
 namespace PoincareConjecture.M36
-
-
 
 theorem smoothProfile_absorption_derivatives {C q epsilon s : ℝ}
     (hC : 0 < C) (hq : 8 ≤ q) (hepsilon : 0 < epsilon)
@@ -107,8 +96,6 @@ theorem smoothProfile_absorption_derivatives {C q epsilon s : ℝ}
   have h := (mul_le_mul_of_nonneg_left hlow (sq_nonneg q)).trans hqf
   nlinarith only [h]
 
-
-
 theorem exists_smoothProfile_absorption_threshold {K q C : ℝ}
     (hK : 1 ≤ K) (hq : 8 ≤ q) (hC : 0 < C)
     (hgain : 128 * K * Real.exp q / q ^ 2 < C) :
@@ -191,8 +178,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem laplacian_scalar_profile_germ (D : LeviCivitaData g)
     {F s : M → ℝ} {phi : ℝ → ℝ} {x : M}
     (hphi : ContDiff ℝ ∞ phi) (hs : ContMDiffAt (𝓡 3) 𝓘(ℝ, ℝ) ∞ s x)
@@ -222,8 +207,6 @@ theorem laplacian_scalar_profile_germ (D : LeviCivitaData g)
       rw [Finset.sum_add_distrib, Finset.mul_sum, Finset.mul_sum]
     _ = _ := by rw [hgrad]
 
-
-
 theorem scalarCurvature_positiveScaling_profile
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (F : M → ℝ) (hF : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
@@ -245,11 +228,6 @@ theorem scalarCurvature_positiveScaling_profile
   ring
 
 end Geometry
-
-
-
-
-
 
 theorem exists_conformalAbsorption (K q : ℝ) (hK : 1 ≤ K) (hq : 8 ≤ q) :
     ∃ C0 : ℝ, 100 * q < C0 ∧ ∀ C : ℝ, C0 ≤ C →

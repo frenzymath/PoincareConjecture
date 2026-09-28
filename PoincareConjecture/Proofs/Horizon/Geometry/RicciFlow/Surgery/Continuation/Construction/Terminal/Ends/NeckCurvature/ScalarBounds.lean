@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckCurvature.InverseGram
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxRecDepth 4000

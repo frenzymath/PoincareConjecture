@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.M06
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Controls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ private theorem scalar_eq_of_metric_eq
     D.scalarCurvature z = D'.scalarCurvature z := by
   subst h
   exact D.scalarCurvature_eq D' z
-
-
-
 
 theorem blowupSequence_normalized_ball_scalar_operator_bounds
     (P : M35StandardCapPredecessors)

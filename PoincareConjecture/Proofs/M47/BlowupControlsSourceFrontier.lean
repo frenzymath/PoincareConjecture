@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourcePaths
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {base : ℝ} (ht : base ∈ H.generalized.interval)
-
-
 
 theorem cap_contact_of_not_regular_history
     (hT : base ∈ F.surgery_times) [Nonempty (F.slice base).carrier]
@@ -49,9 +38,6 @@ theorem cap_contact_of_not_regular_history
     intro hT'
     exact hret hnot
   exact mem_iUnion.mp hcap
-
-
-
 
 theorem exists_cap_contact_scalar_of_bounded_distance
     {Q A D : ℝ} (hQ : 0 < Q)
@@ -107,8 +93,6 @@ theorem exists_cap_contact_scalar_of_bounded_distance
       exact ⟨ht'.1.le, le_rfl⟩
     exact closure_minimal hscalarBefore isClosed_Iic
       (hcontinuous.mem_closure_image htClosure)
-
-
 
 theorem exists_zero_age_cap_contact_scalar_bound
     (S : RepairedControlledSchedulesData.{u}) {epsilon C A : ℝ}

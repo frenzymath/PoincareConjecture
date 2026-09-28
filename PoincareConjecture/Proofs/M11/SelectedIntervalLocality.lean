@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M11GeneralizedFlow
 import PoincareConjecture.Proofs.M11.IntervalNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -70,8 +62,6 @@ theorem selectedInterval_product_smoothAt_of_local (K L : SpacetimeInterval)
   apply (hf'.comp (j p.1, p.2) hinv).congr_of_eventuallyEq
   filter_upwards [continuous_fst.continuousAt hj.localInverse_eventuallyEq_right] with q hq
   exact congrArg (fun s => f (s, q.2)) hq.symm
-
-
 
 theorem interval_exists_open_small_neighborhood (I : SpacetimeInterval) (t : I.domain)
     {U : Set I.domain} (hU : U ∈ 𝓝 t) :

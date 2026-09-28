@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapAxialNormalizedJets
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAxialNorm
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAxialArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open Proofs.M47
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem cap_native_axial_normalized_energy_le
     {gamma beta lambda bound : ℝ} (hgamma : 0 ≤ gamma)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinder
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
-
-
 
 noncomputable def ordinaryChapter11MaximalLine
     (R : OrdinaryProductRicciGeometry F.metric I)

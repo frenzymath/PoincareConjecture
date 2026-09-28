@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeVerticalGerms
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ClosedGermGluing
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.PositivePartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
-
 
 theorem gauge_recoveries_glue {m : ℕ} (t : Fin (m + 1) → ℝ) (ht : Monotone t)
     (hab : t 0 < t (Fin.last m)) (gamma : ℝ → G.Point) (hgamma : Continuous gamma)

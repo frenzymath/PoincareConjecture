@@ -2,23 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.Jets
 import PoincareConjecture.Proofs.M32.Claim11_35.ScalarScaling
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -95,9 +78,6 @@ private theorem evolvingRealizationCoefficients_symm
   change (N.scale⁻¹ ^ 2 / (1 - tau)) * (F.metric _).inner _ _ _ =
     (N.scale⁻¹ ^ 2 / (1 - tau)) * (F.metric _).inner _ _ _
   rw [(F.metric _).symm]
-
-
-
 
 theorem exists_strongNeck_evolving_fourJet_realization {delta : ℝ} (hdelta : 0 < delta) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -182,9 +162,6 @@ theorem exists_strongNeck_evolving_fourJet_realization {delta : ℝ} (hdelta : 0
   simp only [Pi.sub_def]
   rw [(herr.iteratedFDeriv ℝ r).self_of_nhds]
   exact (hbound N hquarter htau q hz r hr).trans_lt (herror.trans_le (min_le_left _ _))
-
-
-
 
 theorem strongNeck_evolving_realization_curvatures
     (N : GeneralizedStrongNeck F t epsilon) {tau : ℝ} (htau : tau ∈ Ioc (-1) 0)

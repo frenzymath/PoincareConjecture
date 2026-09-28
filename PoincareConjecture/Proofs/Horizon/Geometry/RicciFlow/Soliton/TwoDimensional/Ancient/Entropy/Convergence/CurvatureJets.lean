@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.ScalarJe
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Pullback
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -105,7 +104,6 @@ private theorem tendsto_fderiv_connection_at_points
   have hd := hp.continuousAt.tendsto.comp (hone.prodMk_nhds htwo)
   exact (continuous_fst.clm_comp continuous_snd).continuousAt.tendsto.comp (hdΦ.prodMk_nhds hd)
 
-
 theorem tendsto_curvatureTensor_of_metric_jets_at_points
     (Dseq : ∀ i, LeviCivitaData (gseq i)) (D : LeviCivitaData g)
     (xseq : α → EuclideanSpace ℝ (Fin n)) (x u v w z : EuclideanSpace ℝ (Fin n))
@@ -132,7 +130,6 @@ theorem tendsto_curvatureTensor_of_metric_jets_at_points
     (hzero.prodMk_nhds hcurv)
   convert! (continuous_fst.clm_apply continuous_snd).continuousAt.tendsto.comp
     (hp.prodMk_nhds (tendsto_const_nhds (x := w))) using 1
-
 
 theorem tendsto_scalarCurvature_of_metric_jets_at_points
     {gseq : α → RiemannianMetric 2 (EuclideanSpace ℝ (Fin 2))}

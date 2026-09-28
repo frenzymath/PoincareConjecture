@@ -11,24 +11,12 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
-
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_relative_exterior_arc_isotopy
     (hP : PlanarSchoenfliesService)

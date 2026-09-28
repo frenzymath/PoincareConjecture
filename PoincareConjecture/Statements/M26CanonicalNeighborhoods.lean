@@ -9,15 +9,6 @@ import PoincareConjecture.Statements.M23NormalizedKappaCompactness
 import PoincareConjecture.Statements.M24ModelCertificates
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,8 +16,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M26BlowupSetupProvider : Prop :=
   ∀ {M : Type u} [TopologicalSpace M]
@@ -45,13 +34,6 @@ def M26AsymptoticClassificationProvider : Prop :=
     ∀ (K : AncientKappaSolution 3 M) (S : AncientRescalingSequence K),
       ∃ L : AncientAsymptoticSolitonLimitData S,
         ThreeDimensionalAsymptoticClassificationCertificate S L
-
-
-
-
-
-
-
 
 structure M26CanonicalNeighborhoodPredecessors : Prop where
   tensor_calculus :

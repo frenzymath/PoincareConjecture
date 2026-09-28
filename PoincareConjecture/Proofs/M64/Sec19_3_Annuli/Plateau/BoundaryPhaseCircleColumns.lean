@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPhaseWeakCha
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.PlanarCircleObservation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +13,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Proofs.M58
-
-
-
-
-
 
 theorem m64WeakPhase_circle_column_norm_sq
     {O : Set LoopPlane} (hO : IsOpen O)

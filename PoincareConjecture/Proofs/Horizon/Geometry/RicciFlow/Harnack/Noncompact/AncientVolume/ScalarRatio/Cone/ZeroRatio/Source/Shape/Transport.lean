@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Shape.Convergence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Hessian
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -64,8 +57,6 @@ private theorem hessian_realized_chart
 variable {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
   [ChartedSpace (E (m + 1)) L] [IsManifold (𝓡 (m + 1)) ∞ L]
   [ChartedSpace (E (m + 2)) M] [IsManifold (𝓡 (m + 2)) ∞ M]
-
-
 
 theorem inner_chartShapeOperator_neg_levelUnitNormal
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
@@ -180,8 +171,6 @@ theorem inner_chartShapeOperator_neg_levelUnitNormal
       (mfderiv (𝓡 (m + 1)) (𝓡 (m + 2)) F x v) by linarith]
   ring
 
-
-
 theorem chartShapeOperator_eigenvalue_mem_Ioo_of_levelShape_bounds
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
     (D : LeviCivitaData g) {F : L → M}
@@ -213,8 +202,6 @@ theorem chartShapeOperator_eigenvalue_mem_Ioo_of_levelShape_bounds
   rw [← hpair] at hpinch
   exact ⟨(mul_lt_mul_iff_left₀ hvpos).mp hpinch.1,
     (mul_lt_mul_iff_left₀ hvpos).mp hpinch.2⟩
-
-
 
 theorem exists_unit_normal_chartShapeOperator_bounds_of_levelHessian
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)
@@ -266,7 +253,6 @@ variable {n : ℕ} {M P : Type*} [TopologicalSpace M] [TopologicalSpace P]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) P] [IsManifold (𝓡 n) ∞ P]
   {g : RiemannianMetric n M} {gP : RiemannianMetric n P}
 
-
 theorem levelQ_comp_of_metric_pullback
     (D : LeviCivitaData g) (DP : LeviCivitaData gP) {e : M → P} {x : M}
     (he : MDifferentiableAt (𝓡 n) (𝓡 n) e x)
@@ -278,8 +264,6 @@ theorem levelQ_comp_of_metric_pullback
     D.levelQ (φ ∘ e) x = DP.levelQ φ (e x) := by
   have hg := D.gradient_comp_eq_mpullback DP he hφ hinv hmetric
   simp only [levelQ, hg, hmetric, VectorField.mpullback, hinv.self_apply_inverse]
-
-
 
 theorem levelShape_bounds_comp_of_metric_pullback
     (D : LeviCivitaData g) (DP : LeviCivitaData gP) {e : M → P} {x : M}
@@ -315,9 +299,6 @@ variable {m : ℕ} {L M P : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) L] [IsManifold (𝓡 (m + 1)) ∞ L]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M] [IsManifold (𝓡 (m + 2)) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) P] [IsManifold (𝓡 (m + 2)) ∞ P]
-
-
-
 
 theorem exists_unit_normal_chartShapeOperator_bounds_of_local_metric_model
     (g : RiemannianMetric (m + 2) M) (h : RiemannianMetric (m + 1) L)

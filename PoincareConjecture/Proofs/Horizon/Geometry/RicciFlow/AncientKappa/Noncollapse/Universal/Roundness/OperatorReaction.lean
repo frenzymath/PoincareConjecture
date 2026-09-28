@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.Reaction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.OperatorReaction.Endomorphism
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.AncientKappaRoundness
 
 local instance : NormedAddCommGroup ThreeMatrix := Matrix.normedAddCommGroup
 local instance : NormedSpace ℝ ThreeMatrix := Matrix.normedSpace
-
 
 theorem operator_reaction_pinching
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

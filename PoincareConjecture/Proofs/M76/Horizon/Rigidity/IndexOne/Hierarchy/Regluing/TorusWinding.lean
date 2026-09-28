@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.Winding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -20,7 +11,6 @@ local notation "C" => AddCircle p
 local notation "T" => (Fin 2 → C)
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
 
 noncomputable def torusIntegerTwist (n : Fin 2 → ℤ) : (I × T) ≃ₜ (I × T) where
   toFun x := (x.1, fun i => x.2 i + ((p * (n i : ℝ) * (x.1 : ℝ) : ℝ) : C))
@@ -38,9 +28,6 @@ theorem torusIntegerTwist_boundary (n : Fin 2 → ℤ) (x : I × T)
     have hn : ((p * (n i : ℝ) : ℝ) : C) = 0 :=
       (AddCircle.coe_eq_zero_iff p).mpr ⟨n i, by simp [zsmul_eq_mul]; ring⟩
     rcases hx with hx | hx <;> simp [torusIntegerTwist, hx, hn]
-
-
-
 
 theorem exists_torus_winding_correction (f : C(I × T, I × T))
     (hzero : ∀ z, f (0, z) = (0, z)) (hone : ∀ z, f (1, z) = (1, z)) :

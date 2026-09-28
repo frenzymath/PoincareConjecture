@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.ThreeDimensional
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped BigOperators Matrix
 
 namespace Poincare.Geometry.Curvature.Operator

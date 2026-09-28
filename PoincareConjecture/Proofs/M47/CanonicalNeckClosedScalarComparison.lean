@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckScalarComparison
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
 theorem scalar_bottom_bounds_of_cylinder_error {R Q epsilon : ℝ}
     (hQ : 0 < Q) (hsmall : epsilon ≤ 1 / 200)
     (herror : |R / Q - 1 / 2| ≤ (16 / 5 : ℝ) * epsilon) :
@@ -30,8 +21,6 @@ theorem scalar_bottom_bounds_of_cylinder_error {R Q epsilon : ℝ}
   have hlower : (121 / 250 : ℝ) ≤ R / Q := by linarith only [hlo, hsmall]
   have hupper : R / Q ≤ (129 / 250 : ℝ) := by linarith only [hhi, hsmall]
   exact ⟨(le_div_iff₀ hQ).mp hlower, (div_le_iff₀ hQ).mp hupper⟩
-
-
 
 theorem ordinary_closed_neck_scalar_difference_le (hC : RicciFlowCurvatureTheory.{u})
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

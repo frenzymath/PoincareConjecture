@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckHalfFlow
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenInclusionDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
   (H : RescaledRawCylinderData (C := F.slice t)
     (U := strongNeckOpen S) (J := strongNeckBackwardInterval)
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
-
-
-
 
 theorem strongNeck_center_chart_height
     (hepsilon : epsilon ≤ (1 / 200 : ℝ)) {R : ℝ} (hR : R < 1 / 8)
@@ -68,9 +56,6 @@ theorem strongNeck_center_chart_height
 variable {M : Type v} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 def inverseStrongNeckCenterChart
     (Phi : PartialDiffeomorph (𝓡 3) (𝓡 3) E3 (strongNeckOpen S) ∞)
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M (F.slice t).carrier ∞) :
@@ -80,15 +65,12 @@ def inverseStrongNeckCenterChart
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 @[simp] theorem inverseStrongNeckCenterChart_apply
     (Phi : PartialDiffeomorph (𝓡 3) (𝓡 3) E3 (strongNeckOpen S) ∞)
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M (F.slice t).carrier ∞) (z : E3) :
     inverseStrongNeckCenterChart S Phi e z = e.symm (Phi z).val := rfl
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem inverseStrongNeckCenterChart_domain
     (hepsilon : epsilon ≤ (1 / 200 : ℝ)) {R : ℝ} (hR : R < 1 / 8)
@@ -133,7 +115,6 @@ theorem inverseStrongNeckCenterChart_domain
     exact (hpoint z hz).1
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem inverseStrongNeckCenterChart_zero
     (Phi : PartialDiffeomorph (𝓡 3) (𝓡 3) E3 (strongNeckOpen S) ∞)

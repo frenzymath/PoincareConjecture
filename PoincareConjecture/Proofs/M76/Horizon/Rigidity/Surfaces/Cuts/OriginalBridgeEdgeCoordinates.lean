@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBrid
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBoundaryOrientationConsumer
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexExtremeFaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -20,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem finite_vertex_numbering (L : SimplicialComplex ℝ E) (hL : L.faces.Finite) :
     ∃ number : E → ℕ, InjOn number L.vertices := by
@@ -52,9 +43,6 @@ theorem unitSquareSide_mem_openSegment_iff (i : Fin 4) (q r s : ℝ) (hrs : r < 
   · rintro ⟨t, ht, rfl⟩
     exact ⟨t, ht, (unitSquareSide_lineMap i r s t).symm⟩
 
-
-
-
 theorem refined_boundary_edge_endpoints_in_original_face
     (K : SimplicialComplex ℝ E) (L : SimplicialComplex ℝ (ℝ × ℝ))
     (F : (ℝ × ℝ) → E) (hF : L.AffineOnFaces F)
@@ -85,8 +73,6 @@ private theorem coordinate_eq_of_strict_combination_zero
     (mul_nonneg hr.le ha)
   have hsb : s * b = 0 := by linarith
   exact ⟨(mul_eq_zero.mp hra).resolve_left hr.ne', (mul_eq_zero.mp hsb).resolve_left hs.ne'⟩
-
-
 
 theorem unitSquare_edge_on_sample_side
     {a b z : ℝ × ℝ} (ha : a ∈ PeriodicSquare.squareCarrier 1)
@@ -128,8 +114,6 @@ theorem unitSquare_edge_on_sample_side
     exact ⟨1 - a.2, 1 - b.2, ⟨by linarith [ha.2.2], by linarith [ha.2.1]⟩,
       ⟨by linarith [hb.2.2], by linarith [hb.2.1]⟩,
       by ext <;> simp [unitSquareSide, he.1], by ext <;> simp [unitSquareSide, he.2]⟩
-
-
 
 theorem exists_ordered_square_sample_edge
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (hL : L.faces.Finite)

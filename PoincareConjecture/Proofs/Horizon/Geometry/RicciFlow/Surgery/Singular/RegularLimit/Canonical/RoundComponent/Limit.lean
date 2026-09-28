@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Upgrade
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Accuracy
 
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_terminal_roundComponent_doubled_of_frequently
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -43,7 +39,6 @@ theorem exists_terminal_roundComponent_doubled_of_frequently
     ((H.frequently_regularRoundComponent P04 hepsilon x hfreq).and_eventually hpert).exists
   let NT := N.changeMetric (H.terminalMetric P04) (herr N hx (hcarrier ▸ subset_rfl))
   exact ⟨NT, hcarrier, hx⟩
-
 
 theorem exists_terminal_roundComponent_of_frequently
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

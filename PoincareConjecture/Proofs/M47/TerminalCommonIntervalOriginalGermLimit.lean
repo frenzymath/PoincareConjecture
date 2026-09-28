@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalCoefficientJets
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,9 +47,6 @@ private local instance originalGermCharts : ChartedSpace E G.limit.carrier.carri
   G.limit.carrier.chartedSpace
 private local instance originalGermManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
-
 
 theorem terminalCommonInterval_original_germ_metric
     (P : M47Predecessors.{u}) (rho : ℕ → ℕ) (hrho : StrictMono rho)

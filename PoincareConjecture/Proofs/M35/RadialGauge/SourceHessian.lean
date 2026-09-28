@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JetCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -25,8 +16,6 @@ noncomputable local instance m35SourceHessianLocal1 :
     NormedAddCommGroup D := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35SourceHessianLocal2 :
     NormedSpace ℝ D := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem gaugeSource_hessian_norm_le
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ}
@@ -92,8 +81,6 @@ theorem gaugeSource_hessian_norm_le
   rw [Real.norm_eq_abs] at h5 hs
   nlinarith
 
-
-
 theorem forcing_graph_fderiv_norm_le
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     {A : V → ℝ → F} {u : V → ℝ} {x : V}
@@ -112,8 +99,6 @@ theorem forcing_graph_fderiv_norm_le
     hh.fderiv
   rw [heq]
   exact graph_derivative_norm_le_general _ _
-
-
 
 theorem gaugeSource_weighted_hessian_bound
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}

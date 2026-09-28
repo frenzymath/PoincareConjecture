@@ -9,22 +9,12 @@ import Mathlib.LinearAlgebra.AffineSpace.Slope
 import Mathlib.Topology.OpenPartialHomeomorph.Defs
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_uniform_monotone_openLine_chords
     (T : OpenPartialHomeomorph

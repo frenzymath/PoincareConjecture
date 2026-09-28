@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem center_ball_subset_carrier_of_axial_cutoff {epsilon u ell : ℝ}
     {x : StandardCapSpace} (N : StandardCylinderPatch epsilon⁻¹ x)
@@ -79,8 +68,6 @@ theorem center_ball_subset_carrier_of_axial_cutoff {epsilon u ell : ℝ}
         rw [ENNReal.ofReal_mul (by norm_num : (0 : ℝ) ≤ 2), ENNReal.ofReal_ofNat]
       _ = ENNReal.ofReal ell := by congr 1; ring
   exact (not_lt_of_ge hax) hstrict
-
-
 
 theorem central_sphere_ball_subset_carrier_of_axial_cutoff {epsilon u ell : ℝ}
     {x : StandardCapSpace} (N : StandardCylinderPatch epsilon⁻¹ x)

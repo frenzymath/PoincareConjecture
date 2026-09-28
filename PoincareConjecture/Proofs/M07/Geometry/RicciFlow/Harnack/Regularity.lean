@@ -5,19 +5,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +15,6 @@ universe u
 namespace Poincare.Geometry.RicciFlow.Harnack
 
 open PoincareConjecture
-
 
 def restrictFlow
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -53,7 +39,6 @@ theorem scalarCurvature_contDiffOn_time
   exact ((hM04.scalar_regular n M J F).comp
     (contMDiffOn_id.prodMk contMDiffOn_const)
     (fun t ht ↦ ⟨ht, mem_univ x⟩)).contDiffOn
-
 
 theorem scalarEvolution_continuousOn_ancient
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -124,7 +109,6 @@ theorem scalarCurvature_mvfderiv_continuousOn_time
     rw [mfderivWithin_univ]
     rfl
   exact heval.continuousWithinAt.congr (fun s _ ↦ heq s) (heq t)
-
 
 theorem ricci_continuousOn_ancient
     {n : ℕ} {M : Type u} [TopologicalSpace M]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSourceWeakChain
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter Metric
@@ -18,8 +10,6 @@ open Poincare.Analysis.Sobolev.Weak
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
 
 theorem suWeakPartial_mul
     {f g : LoopPlane → ℝ} {Df Dg : Fin 2 → LoopPlane → ℝ}
@@ -82,8 +72,6 @@ theorem suWeakPartial_mul
   simpa only [hd, add_apply, smul_apply,
     PiLp.proj_apply, smul_eq_mul, U, W, F, Matrix.cons_val_zero,
     Matrix.cons_val_one, mul_comm, add_comm] using ht
-
-
 
 theorem suWeakDivergence_eq_ae
     {O : Set LoopPlane} (hO : IsOpen O)

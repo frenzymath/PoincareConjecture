@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.LocalCapBoundary
 import PoincareConjecture.Proofs.M38.PolarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
   {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {I : MetricSurgeryInput K g} (R : MetricSurgeryResult g₀ I)
-
-
 
 theorem local_collapse_inverse_image_open {U : Set R.output.carrier}
     (hU : IsOpen U)
@@ -44,10 +33,8 @@ theorem local_collapse_inverse_image_open {U : Set R.output.carrier}
   exact smooth_left_inverse_image_open (local_collapse_collar_open R)
     R.retained_inverse_smooth hinv hleft hU hsub
 
-
 noncomputable def localCapCollar (r c : ℝ) : RoundCylinderSpace → M :=
   R.retained_inverse ∘ R.cap_map ∘ capShellMap r c
-
 
 noncomputable def localCapCollarInverse (r c : ℝ) : M → RoundCylinderSpace :=
   capShellInverse r c ∘ R.cap_inverse ∘ R.collapse
@@ -59,13 +46,10 @@ variable {r c : ℝ} (hc : 0 < c) (hcr : c < r)
 
 include hc hcr hdom
 
-
-
 theorem local_cap_collar_mem {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     localCapCollar R r c z ∈ I.neck.region (-I.neck.epsilon⁻¹) 1 :=
   local_collapse_inverse_mem R (hdom (capShell_mem hc hcr hz)).2
-
 
 theorem local_cap_collar_collapse {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
@@ -74,13 +58,11 @@ theorem local_cap_collar_collapse {z : RoundCylinderSpace}
   obtain ⟨x, _, hx⟩ := (hdom (capShell_mem hc hcr hz)).2
   exact ⟨x, hx⟩
 
-
 theorem local_cap_collar_coordinates {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     R.cap_inverse (R.collapse (localCapCollar R r c z)) = capShellMap r c z := by
   rw [local_cap_collar_collapse R hc hcr hdom hz]
   exact R.cap_left_inverse (hdom (capShell_mem hc hcr hz)).1
-
 
 theorem local_cap_collar_smooth :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (localCapCollar R r c)
@@ -90,7 +72,6 @@ theorem local_cap_collar_smooth :
   · exact fun z hz => (hdom (capShell_mem hc hcr hz)).1
   · exact fun z hz => (hdom (capShell_mem hc hcr hz)).2
 
-
 theorem local_cap_collar_left_inverse :
     Set.LeftInvOn (localCapCollarInverse R r c) (localCapCollar R r c)
       (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) := by
@@ -99,13 +80,11 @@ theorem local_cap_collar_left_inverse :
   rw [local_cap_collar_coordinates R hc hcr hdom hz]
   exact capShell_left_inverse hc hcr hz
 
-
 theorem local_cap_collar_right_inverse :
     Set.LeftInvOn (localCapCollar R r c) (localCapCollarInverse R r c)
       (localCapCollar R r c '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   rintro x ⟨z, hz, rfl⟩
   exact congrArg (localCapCollar R r c) (local_cap_collar_left_inverse R hc hcr hdom hz)
-
 
 theorem local_cap_collar_inverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (localCapCollarInverse R r c)
@@ -129,7 +108,6 @@ theorem local_cap_collar_inverse_smooth :
   have h := capShell_mem hc hcr hz
   linarith [h.1]
 
-
 theorem local_cap_collar_open :
     IsOpen (localCapCollar R r c '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   have hopen : IsOpen {x : StandardCapSpace | r - c < ‖x‖ ∧ ‖x‖ < r + c} :=
@@ -141,7 +119,6 @@ theorem local_cap_collar_open :
     (local_cap_image_open R hopen (fun x hx => (hdom hx).1))
   rintro y ⟨x, hx, rfl⟩
   exact (hdom hx).2
-
 
 theorem local_cap_collar_negative {z : UnitTwoSphere} {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0)

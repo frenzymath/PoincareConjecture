@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLogRegularization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +7,6 @@ open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Annulus_log_normal_trace_tendsto_on_slice
     {a : LoopPlane → ℝ} {O : Set LoopPlane} (hO : IsOpen O)
@@ -70,10 +55,6 @@ theorem m64Annulus_log_normal_trace_tendsto_on_slice
   rw [hnormal]
   dsimp only [F, G]
   field_simp [(hpos x hx).ne']
-
-
-
-
 
 theorem m64Annulus_log_normal_trace_tendsto
     {a : LoopPlane → ℝ} {O : Set LoopPlane} (hO : IsOpen O)

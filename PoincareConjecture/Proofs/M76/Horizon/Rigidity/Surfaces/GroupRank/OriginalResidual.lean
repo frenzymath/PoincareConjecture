@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.GroupRank.OriginalComponent
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.OriginalComponentGenusComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

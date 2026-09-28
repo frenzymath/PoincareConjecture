@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Hessian
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.PotentialRegularity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M] {g : RiemannianMetric (n + 1) M}
-
-
 
 theorem parallelGradient_factor_hessian
     {D : LeviCivitaData g} {r φ : M → ℝ}
@@ -85,8 +73,6 @@ theorem parallelGradient_factor_hessian
     exact (ne_of_gt (g.pos (zeroLevelIncl r y) B hne)) he
   have he := hB φ (hφ (zeroLevelIncl r y))
   simpa only [hBzero, map_zero, add_zero] using he
-
-
 
 theorem parallelGradient_factor_soliton_equation
     {D : LeviCivitaData g} {r φ : M → ℝ} {lambda : ℝ}

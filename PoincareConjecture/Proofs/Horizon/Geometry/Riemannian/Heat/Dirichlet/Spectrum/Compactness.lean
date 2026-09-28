@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.EnergyFlow
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

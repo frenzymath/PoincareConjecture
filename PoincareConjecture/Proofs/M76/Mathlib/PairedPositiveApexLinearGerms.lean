@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveApexLinearCutGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -18,12 +8,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
-
 
 theorem exists_paired_positive_apex_linear_germs
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

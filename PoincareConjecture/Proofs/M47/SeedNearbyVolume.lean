@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedBallChain
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,9 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem seed_nearby_ball_volume
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (q z : M)
@@ -57,8 +46,6 @@ theorem seed_nearby_ball_volume
     exact hvolume.trans (measure_mono hsub)
   exact M46.canonical_controlled_ball_volume g D q hA houter hs hsr hseed hcompact
     (fun y hy => (hcurv y hy).trans_eq hnorm.symm) hseedVolume
-
-
 
 theorem seed_nearby_density_pos {r d k K : ℝ}
     (hr : 0 < r) (hd : 0 < d) (hk : 0 < k) :

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,22 +8,16 @@ open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def levelPaste {X Y : Type*} (h : X → ℝ) (f g : X → Y) (x : X) : Y :=
   if 0 ≤ h x then f x else g x
-
 
 theorem levelPaste_of_nonneg {X Y : Type*} (h : X → ℝ) (f g : X → Y)
     {x : X} (hx : 0 ≤ h x) : levelPaste h f g x = f x := by
   simp only [levelPaste, if_pos hx]
 
-
 theorem levelPaste_of_neg {X Y : Type*} (h : X → ℝ) (f g : X → Y)
     {x : X} (hx : h x < 0) : levelPaste h f g x = g x := by
   simp only [levelPaste, if_neg (not_le.mpr hx)]
-
-
 
 theorem levelPaste_eqOn_upper {X Y : Type*} (h : X → ℝ) (f g : X → Y)
     {d : ℝ} (hd : 0 < d) (heq : ∀ x, |h x| < d → f x = g x) :
@@ -44,8 +27,6 @@ theorem levelPaste_eqOn_upper {X Y : Type*} (h : X → ℝ) (f g : X → Y)
   · exact levelPaste_of_nonneg h f g hp
   · rw [levelPaste_of_neg h f g (lt_of_not_ge hp)]
     exact (heq x (abs_lt.mpr ⟨hx, lt_trans (lt_of_not_ge hp) hd⟩)).symm
-
-
 
 theorem levelPaste_eqOn_lower {X Y : Type*} (h : X → ℝ) (f g : X → Y)
     {d : ℝ} (hd : 0 < d) (heq : ∀ x, |h x| < d → f x = g x) :
@@ -63,8 +44,6 @@ variable {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
 variable [TopologicalSpace X] [ChartedSpace H X]
 variable [TopologicalSpace Y] [ChartedSpace K Y]
 
-
-
 theorem levelPaste_contMDiff (h : X → ℝ) (hh : Continuous h) (f g : X → Y)
     {d : ℝ} (hd : 0 < d) (heq : ∀ x, |h x| < d → f x = g x)
     (hf : ContMDiffOn I J ∞ f {x | -d < h x})
@@ -80,8 +59,6 @@ theorem levelPaste_contMDiff (h : X → ℝ) (hh : Continuous h) (f g : X → Y)
   by_cases hx : -d < h x
   · exact Or.inl hx
   · exact Or.inr (lt_of_le_of_lt (le_of_not_gt hx) (by linarith))
-
-
 
 theorem levelPaste_mfderiv_injective (h : X → ℝ) (hh : Continuous h) (f g : X → Y)
     {d : ℝ} (hd : 0 < d) (heq : ∀ x, |h x| < d → f x = g x)
@@ -104,7 +81,6 @@ theorem levelPaste_mfderiv_injective (h : X → ℝ) (hh : Continuous h) (f g : 
 
 omit [TopologicalSpace X] [ChartedSpace H X] [TopologicalSpace Y] [ChartedSpace K Y] in
 
-
 theorem levelPaste_range (h : X → ℝ) (f g : X → Y)
     (heq : ∀ x, h x = 0 → f x = g x) :
     range (levelPaste h f g) = f '' {x | 0 ≤ h x} ∪ g '' {x | h x ≤ 0} := by
@@ -122,8 +98,6 @@ theorem levelPaste_range (h : X → ℝ) (f g : X → Y)
       · exact ⟨x, levelPaste_of_neg h f g (lt_of_not_ge hp)⟩
 
 omit [TopologicalSpace X] [ChartedSpace H X] [TopologicalSpace Y] [ChartedSpace K Y] in
-
-
 
 theorem levelPaste_injective (h : X → ℝ) (f g : X → Y)
     (hf : InjOn f {x | 0 ≤ h x}) (hg : InjOn g {x | h x ≤ 0})

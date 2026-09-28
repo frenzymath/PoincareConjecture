@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
     {g : RiemannianMetric n M} {p : M} {δ R ρ : ℝ} {N : ℕ}
 
 local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
-
-
 
 theorem unitBallMap_pullbackCoefficients
     (C : RegularNormalChartCover g p δ R ρ N)
@@ -75,8 +63,6 @@ theorem unitBallMap_pullbackCoefficients
       (mfderiv (𝓡 n) (𝓡 n) (C.chart i) ((ρ / 2) • x) w)
   ring
 
-
-
 theorem unitBallMap_lower_coefficients
     (C : RegularNormalChartCover g p δ R ρ N)
     (hρ : 0 < ρ) (hρR : ρ / 2 ≤ R) (i : Fin (N + 1))
@@ -107,8 +93,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
 
 local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
 
-
-
 theorem regularUnitBallMap_eventually_lower_coefficients
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (i : ℕ) :
     ∃ c : ℝ, 0 < c ∧ ∀ᶠ k in atTop,
@@ -122,8 +106,6 @@ theorem regularUnitBallMap_eventually_lower_coefficients
   filter_upwards [eventually_ge_atTop j] with k hk x hx v
   rw [regularUnitBallMap_of_le cover k i hk]
   exact (cover k j hk).unitBallMap_lower_coefficients (hρ j) (hρR j) _ hx v
-
-
 
 theorem regularUnitBallMap_eventually_bounded_derivatives
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j)
@@ -189,9 +171,6 @@ theorem regularUnitBallMap_eventually_bounded_derivatives
   exact (ball_subset_closedBall.trans
     (closedBall_subset_closedBall (half_le_self (hρ j).le)))
       (NormalChartCover.rescale_mem_half_ball (hρ j) ⟨x, hKU hx⟩)
-
-
-
 
 theorem regularUnitBallMap_bounded_derivatives_of_curvature
     (D : ∀ k, LeviCivitaData (g k))

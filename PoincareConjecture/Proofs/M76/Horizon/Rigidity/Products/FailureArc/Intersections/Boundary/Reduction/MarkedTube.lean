@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Reduction.TubeConstruction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Reduction.OrientedTube
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

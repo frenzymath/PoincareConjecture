@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamReplacementTests
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.NonnegativeApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +12,6 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
   Poincare.Analysis.Sobolev.DifferenceQuotient
-
-
 
 theorem m64WeakPartial_compact_directional_test
     {u W psi Z : LoopPlane → ℝ} {i : Fin 2}
@@ -59,8 +46,6 @@ theorem m64WeakPartial_compact_directional_test
   filter_upwards [] with j
   simpa only [Measure.restrict_univ] using (hw (f j) (hf j) (hfc j) (subset_univ _)).symm
 
-
-
 theorem m64WeakColumns_compact_directional_test
     {m : ℕ} {u W : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {psi Z : LoopPlane → ℝ} {i : Fin 2}
@@ -80,8 +65,6 @@ theorem m64WeakColumns_compact_directional_test
   simp only [L, EuclideanSpace.coe_proj, Function.comp_def, PiLp.smul_apply,
     smul_eq_mul, mul_comm] at h ⊢
   linarith
-
-
 
 theorem m64MatchingGreen_compact_directional
     {m : ℕ} {K : Set LoopPlane} (hK : MeasurableSet K)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_SupportedAffineFamily
 import PoincareConjecture.Proofs.M14.Sec6_2_LocalTestVariation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {R : M14SquareRootPath G p} (V : M14LVariationData G p R) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n)) (c : ℝ)
-
-
-
 
 theorem exists_supportedAffineGauge_radius {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -75,9 +62,6 @@ theorem exists_supportedAffineGauge_radius {U : Set G.Point} (hU : IsOpen U)
   intro s hs v hv
   have h := hKr (show (s, v) ∈ tsupport η ×ˢ Ioo (-r) r from ⟨hs, hv⟩)
   exact ⟨h.1.2, h.2⟩
-
-
-
 
 theorem exists_supportedAffineGauge_variation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hfix : M14BothEndpointsFixed V) {U : Set G.Point} (hU : IsOpen U)

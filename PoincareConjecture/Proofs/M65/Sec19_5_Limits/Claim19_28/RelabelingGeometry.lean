@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnect
 import PoincareConjecture.Proofs.M62.Lemma19_6_Orthogonality
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
-
-
 theorem m65UnitTangent_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ} {t x d : ℝ}
     (hphi : HasDerivAt phi d x) (hd : 0 < d) (ht : t ∈ Icc a b) :
@@ -39,8 +30,6 @@ theorem m65UnitTangent_fixed_relabeling (c : ℝ → ℝ → M)
   rw [hvelocity, smul_smul]
   congr 1
   field_simp
-
-
 
 theorem m65SpatialDerivative_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ} {t x d : ℝ}
@@ -59,8 +48,6 @@ theorem m65SpatialDerivative_fixed_relabeling (c : ℝ → ℝ → M)
   congr 1
   field_simp
 
-
-
 theorem m65CurvatureVector_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ}
     (hphi : Differentiable ℝ phi) (hpos : ∀ x, 0 < deriv phi x)
@@ -76,9 +63,6 @@ theorem m65CurvatureVector_fixed_relabeling (c : ℝ → ℝ → M)
   exact m65SpatialDerivative_fixed_relabeling c hc
     ((M62.unitTangent_contMDiff F c hc ht (phi x)).mdifferentiableAt (by simp))
     (hphi x).hasDerivAt (hpos x) ht
-
-
-
 
 theorem m65CurvatureJet_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ}

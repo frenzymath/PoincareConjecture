@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicRetractionApproximation
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_C2_tolerance_for_firstJet_composition
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Terminal.Closeness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Embedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -20,8 +13,6 @@ namespace PoincareConjecture.PointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_buffered_terminal_epsilonNeck_threshold
     (hC : RicciFlowCurvatureTheory.{u}) {ε : ℝ} (hε : 0 < ε) (hεhalf : ε < 1 / 2)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.LiftedSphereCone
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,16 +10,12 @@ namespace Geometry.SeparatedSphereCaps
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq ι]
 
-
 def lift (x : E) : E × (ι → ℝ) := (x, 0)
-
 
 def apex (i : ι) : E × (ι → ℝ) := (0, Pi.single i 1)
 
-
 def cap (i : ι) (S : Set E) : Set (E × (ι → ℝ)) :=
   convexJoin ℝ {apex i} (lift '' S)
-
 
 theorem mem_cap_iff (i : ι) (S : Set E) (z : E × (ι → ℝ)) :
     z ∈ cap i S ↔ ∃ x ∈ S, ∃ t ∈ Icc (0 : ℝ) 1,
@@ -45,7 +33,6 @@ theorem mem_cap_iff (i : ι) (S : Set E) (z : E × (ι → ℝ)) :
       t, 1 - t, ht.1, sub_nonneg.mpr ht.2, by ring, ?_⟩
     simp [apex, lift]
 
-
 theorem cap_inter_lift (i : ι) {S R : Set E} (hSR : S ⊆ R) :
     cap i S ∩ lift '' R = lift '' S := by
   ext z
@@ -60,7 +47,6 @@ theorem cap_inter_lift (i : ι) {S R : Set E} (hSR : S ⊆ R) :
   · rintro ⟨x, hx, rfl⟩
     exact ⟨subset_convexJoin_right (singleton_nonempty _) (mem_image_of_mem lift hx),
       mem_image_of_mem lift (hSR hx)⟩
-
 
 theorem disjoint_caps {i j : ι} (hij : i ≠ j) {S T : Set E}
     (hST : Disjoint S T) : Disjoint (cap i S) (cap j T) := by
@@ -78,8 +64,6 @@ theorem disjoint_caps {i j : ι} (hij : i ≠ j) {S T : Set E}
   exact disjoint_left.mp hST hx (hxy ▸ hy)
 
 variable [FiniteDimensional ℝ E] [Fintype ι]
-
-
 
 theorem isFinitePLBallPair_cap {F : Type*} [NormedAddCommGroup F]
     [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -111,8 +95,6 @@ theorem isFinitePLBallPair_cap {F : Type*} [NormedAddCommGroup F]
     b.toContinuousAffineMap hbi.injOn
   change IsFinitePLBallPair F (b '' _) (b '' _) at hball
   rwa [hcone, hbase] at hball
-
-
 
 theorem exists_finite_capped_complex {F : Type*} [NormedAddCommGroup F]
     [NormedSpace ℝ F] [FiniteDimensional ℝ F]

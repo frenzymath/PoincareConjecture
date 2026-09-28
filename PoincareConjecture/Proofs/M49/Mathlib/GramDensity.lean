@@ -2,14 +2,6 @@ import Mathlib.Topology.Instances.Matrix
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Topology.MetricSpace.Pseudo.Pi
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +9,6 @@ open Set
 namespace Matrix
 
 open scoped Classical in
-
 
 theorem exists_pos_entrywise_sqrt_det_bounds (ι : Type*) [Fintype ι] :
     ∃ eta : ℝ, 0 < eta ∧ ∀ A : Matrix ι ι ℝ,
@@ -42,8 +33,6 @@ theorem exists_pos_entrywise_sqrt_det_bounds (ι : Type*) [Fintype ι] :
   simp only [Matrix.det_one, Real.sqrt_one, Real.dist_eq] at hb
   have hb' := abs_lt.mp hb
   constructor <;> linarith
-
-
 
 theorem exists_pos_entrywise_sqrt_det_lower {ι : Type*} [Fintype ι] [DecidableEq ι]
     (A : Matrix ι ι ℝ) (hA : 0 < Real.sqrt A.det) :

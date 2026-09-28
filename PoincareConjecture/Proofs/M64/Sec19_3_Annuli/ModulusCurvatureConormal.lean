@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusClosedConformality
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCurvatureConormal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64Annulus_modulus_acceleration_conormal_eq
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) (r : ℝ)
@@ -136,10 +120,6 @@ theorem m64Annulus_modulus_acceleration_conormal_eq
     _ = _ := by ring
 
 variable {a b : ℝ}
-
-
-
-
 
 theorem m64Annulus_modulus_curvature_conormal_eq
     (F : RicciFlow n M (Icc a b)) {t : ℝ}

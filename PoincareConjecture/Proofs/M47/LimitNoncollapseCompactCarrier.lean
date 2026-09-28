@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCompactScalar
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCompactMinimum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +28,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier :=
   G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_compact_carrier_curvature_bound
     (P : M47Predecessors.{u}) (schedules : RepairedControlledSchedulesData.{u})

@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMatching
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsPhaseTransition
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackAnnularMatchedIsotopy
     (T G : OpenPartialHomeomorph (ℝ × E2) (ℝ × E2))

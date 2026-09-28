@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Projective.BallComplement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.AntipodalBallComplement
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +20,6 @@ section Transport
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   {p : RealProjectiveThree} {A : Set M}
   (S : StandardPuncturedProjectiveCover M p A)
-
-
 
 theorem exists_cover_of_equivariant_domain_diffeomorph
     (U V : Opens S3) (hU : (U : Set S3) = {x : S3 | Quotient.mk' x ≠ p})
@@ -90,9 +80,6 @@ section BallComplement
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]
   {p : RealProjectiveThree} {A : Set M}
   (S : StandardPuncturedProjectiveCover M p A)
-
-
-
 
 theorem exists_punctured_cover_ball_complement
     (a : S3) (ha : Quotient.mk' a = p)

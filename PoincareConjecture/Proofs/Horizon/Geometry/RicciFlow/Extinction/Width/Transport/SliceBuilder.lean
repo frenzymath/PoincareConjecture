@@ -9,10 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
 noncomputable def m67WidthSliceOfClass
     (S : M59IdentificationSystem.{u})
     {A : GeneralizedSliceCarrier.{u}}

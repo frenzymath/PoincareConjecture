@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2ScalarRegularity
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2SlopeLaws
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem c2_slope_contDiff_of_local (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)
@@ -52,8 +40,6 @@ theorem c2_slope_contDiff_of_local (P : M62.CircleProductData F circumference)
     (m63Slope_contDiffOn Q d hdM).comp_contDiff
       (contDiff_id.prodMk contDiff_const) (fun _ => ⟨mem_univ _, htaut, hts⟩)
   exact (hu.of_le (by decide)).comp hphi
-
-
 
 theorem c2_slope_periodic (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContractionWeighted
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -21,16 +12,12 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   [TopologicalSpace M] [ChartedSpace H M]
 
-
-
 noncomputable def chartContractionSequence
     (L : List (Σ c : M, SmoothBumpFunction I c)) (v : ℝ × (M × M)) : M :=
   match L with
   | [] => v.2.2
   | a :: L => weightedChartContraction I a.1 a.2
       (v.1, v.2.1, chartContractionSequence L v)
-
-
 
 theorem chartContractionSequence_zero
     (L : List (Σ c : M, SmoothBumpFunction I c)) (p q : M) :
@@ -40,8 +27,6 @@ theorem chartContractionSequence_zero
   | cons a L ih =>
     simpa only [chartContractionSequence, weightedChartContraction_zero] using ih
 
-
-
 theorem chartContractionSequence_diagonal
     (L : List (Σ c : M, SmoothBumpFunction I c)) (t : ℝ) (p : M) :
     chartContractionSequence I L (t, p, p) = p := by
@@ -49,8 +34,6 @@ theorem chartContractionSequence_diagonal
   | nil => rfl
   | cons a L ih =>
     simp only [chartContractionSequence, ih, weightedChartContraction_diagonal]
-
-
 
 theorem exists_finite_bump_plateau_cover (hcompact : IsCompact (univ : Set M)) :
     ∃ L : List (Σ c : M, SmoothBumpFunction I c),
@@ -72,8 +55,6 @@ theorem exists_finite_bump_plateau_cover (hcompact : IsCompact (univ : Set M)) :
 
 variable [T2Space M] [I.Boundaryless] [IsManifold I ∞ M]
 
-
-
 theorem contMDiffAt_chartContractionSequence_diagonal
     (L : List (Σ c : M, SmoothBumpFunction I c)) (t : ℝ) (p : M) :
     ContMDiffAt (𝓘(ℝ, ℝ).prod (I.prod I)) I ∞
@@ -89,9 +70,6 @@ theorem contMDiffAt_chartContractionSequence_diagonal
     exact (contMDiffAt_weightedChartContraction_diagonal I a.1 a.2 a.2.contMDiff
       a.2.tsupport_subset_extChartAt_source t p).comp_of_eq hinput (by
         simp only [chartContractionSequence_diagonal])
-
-
-
 
 theorem chartContractionSequence_one_eventually
     (L : List (Σ c : M, SmoothBumpFunction I c)) (p : M)

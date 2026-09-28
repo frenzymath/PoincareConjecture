@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Functionals
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem m60SphereMetric_volume_singleton (g : RiemannianMetric 2 UnitTwoSphere)
     (p : UnitTwoSphere) : g.volumeMeasure {p} = 0 := by
@@ -35,17 +24,12 @@ theorem m60SphereMetric_volume_singleton (g : RiemannianMetric 2 UnitTwoSphere)
   rw [Measure.euclideanHausdorffMeasure_def]
   simp
 
-
-
 theorem m60SphereMetric_pullbackVolumeDensity (g : RiemannianMetric 2 UnitTwoSphere)
     (F : LoopPlane → UnitTwoSphere) (z : LoopPlane) :
     g.pullbackVolumeDensity F z = m60AreaDensity g F z := by
   unfold RiemannianMetric.pullbackVolumeDensity m60AreaDensity
   rw [max_eq_right (m60AreaGram_det_nonneg g F z)]
   rfl
-
-
-
 
 theorem m60SphereMetric_area_diffeomorph (g : RiemannianMetric 2 UnitTwoSphere)
     (phi : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) :
@@ -86,9 +70,6 @@ theorem m60SphereMetric_area_diffeomorph (g : RiemannianMetric 2 UnitTwoSphere)
   apply integral_congr_ae
   exact Filter.Eventually.of_forall fun z =>
     (m60SphereMetric_pullbackVolumeDensity g (phi ∘ m60SphereParameter) z).symm
-
-
-
 
 theorem m60SphereMetric_area_diffeomorph_eq (g : RiemannianMetric 2 UnitTwoSphere)
     (phi : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) :

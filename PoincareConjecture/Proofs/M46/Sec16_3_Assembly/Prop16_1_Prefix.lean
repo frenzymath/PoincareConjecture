@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
 
 theorem exists_epochEntry (i : ℕ) {t : ℝ}
     (ht : t ∈ Ico 0 (surgeryEpochStart i)) :
@@ -30,8 +21,6 @@ theorem exists_epochEntry (i : ℕ) {t : ℝ}
     · refine ⟨Fin.last (i + 1), ?_⟩
       simpa [surgeryEpochEntry] using And.intro (le_of_not_gt hti) ht.2
 
-
-
 theorem noncollapsedOn_mono {F : SurgeryFlowData.{u}} {J : Set ℝ}
     {kappa kappa' : ℝ} (h : SurgeryNoncollapsedOn F J kappa)
     (hle : kappa' ≤ kappa) : SurgeryNoncollapsedOn F J kappa' := by
@@ -39,8 +28,6 @@ theorem noncollapsedOn_mono {F : SurgeryFlowData.{u}} {J : Set ℝ}
   exact (ENNReal.ofReal_le_ofReal
     (mul_le_mul_of_nonneg_right hle (pow_nonneg hr.le 3))).trans
       (h t ht htF x hpositive r hr hleR e hbase hcurv)
-
-
 
 theorem prefix_noncollapsed {K : MetricSurgeryConstants}
     {p : SurgeryParameterPrefix K} {F : SurgeryFlowData.{u}}

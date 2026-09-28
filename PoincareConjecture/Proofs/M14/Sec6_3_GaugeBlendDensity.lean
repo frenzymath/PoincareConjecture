@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeBlend
 import PoincareConjecture.Proofs.M14.Sec6_2_PotentialCoefficient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b)
   (α β : ℝ → G.Point) (x₀ : G.gaugeCover.spatial b)
-
-
-
 
 theorem gaugeBlend_quadraticDensity {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

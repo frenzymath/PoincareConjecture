@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitPositivity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -109,9 +96,6 @@ private theorem curvature_of_ancient_chart_coefficient_limit
     hlocal hmap hmetric hxV] at hscalar
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_normalized_annular_ancient_flow
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

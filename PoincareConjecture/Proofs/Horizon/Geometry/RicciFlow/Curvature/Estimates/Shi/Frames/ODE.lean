@@ -5,10 +5,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -157,6 +153,5 @@ theorem exists_contDiffOn_frame_ode
   refine ⟨P, ?_, hPinit, hPder'⟩
   exact (contDiffOn_one_iff_derivWithin (uniqueDiffOn_Icc hab)).2
     ⟨hPdiff, hRderiv⟩
-
 
 end PoincareConjecture.RicciFlowAnalysis

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.OrdinaryModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -24,14 +15,12 @@ local notation "Q2" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
 
-
 theorem OrdinaryDoubleCurveModel.component_counts (M : OrdinaryDoubleCurveModel e f R) :
     doubleBoundaryComponentCount f D2 Q2 = {i | (M.pieces i ∩ Q2).Nonempty}.ncard ∧
     doubleInteriorComponentCount f D2 Q2 = {i | Disjoint (M.pieces i) Q2}.ncard := by
   have : Finite M.Index := M.finiteIndex
   exact connected_components_mark_counts_of_ambient_partition M.pieces
     (fun i ↦ (M.compact i).isClosed) M.disjoint M.cover M.connected Q2
-
 
 theorem OrdinaryDoubleCurveModel.interval_iff_meets_rim
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) :
@@ -47,7 +36,6 @@ theorem OrdinaryDoubleCurveModel.interval_iff_meets_rim
     · exact hi
     · exact (Set.not_nonempty_iff_eq_empty.mpr (disjoint_iff_inter_eq_empty.mp hd) h).elim
 
-
 theorem OrdinaryDoubleCurveModel.exists_interval_of_boundary_count_pos
     (M : OrdinaryDoubleCurveModel e f R)
     (h : 0 < doubleBoundaryComponentCount f D2 Q2) :
@@ -56,7 +44,6 @@ theorem OrdinaryDoubleCurveModel.exists_interval_of_boundary_count_pos
   rw [M.component_counts.1] at h
   obtain ⟨i, hi⟩ := (Set.ncard_pos (Set.toFinite _)).mp h
   exact ⟨i, (M.interval_iff_meets_rim i).mpr hi⟩
-
 
 theorem OrdinaryDoubleCurveModel.exists_polygon_of_interior_count_pos
     (M : OrdinaryDoubleCurveModel e f R)
@@ -70,7 +57,6 @@ theorem OrdinaryDoubleCurveModel.exists_polygon_of_interior_count_pos
   · have hmeet := (M.interval_iff_meets_rim i).mp hball
     exact (Set.not_nonempty_iff_eq_empty.mpr (disjoint_iff_inter_eq_empty.mp hi) hmeet).elim
   · exact ⟨i, hpoly⟩
-
 
 theorem OrdinaryDoubleCurveModel.counts_zero_iff_double_locus_empty
     (M : OrdinaryDoubleCurveModel e f R) :
@@ -99,7 +85,6 @@ theorem OrdinaryDoubleCurveModel.counts_zero_iff_double_locus_empty
     constructor <;> apply (Set.ncard_eq_zero (Set.toFinite _)).mpr <;>
       exact Set.eq_empty_iff_forall_notMem.mpr (fun i _ ↦ hn i)
 
-
 theorem doubleLocusOn_eq_empty_iff_injOn {E Y : Type*} (g : E → Y) (S : Set E) :
     doubleLocusOn g S = ∅ ↔ InjOn g S := by
   constructor
@@ -111,7 +96,6 @@ theorem doubleLocusOn_eq_empty_iff_injOn {E Y : Type*} (g : E → Y) (S : Set E)
     rintro x ⟨hx, y, hy, hxy, hne⟩
     exact hne (h hx hy hxy)
 
-
 theorem OrdinaryDoubleCurveModel.isEmbedding_of_counts_zero [T2Space X]
     (M : OrdinaryDoubleCurveModel e f R) (hf : ContinuousOn f D2)
     (hb : doubleBoundaryComponentCount f D2 Q2 = 0)
@@ -121,7 +105,6 @@ theorem OrdinaryDoubleCurveModel.isEmbedding_of_counts_zero [T2Space X]
     (M.counts_zero_iff_double_locus_empty.mp ⟨hb, hi⟩)
   exact (hf.domRestrict.isClosedEmbedding
     (fun x y h ↦ Subtype.ext (hinj x.property y.property h))).isEmbedding
-
 
 theorem OrdinaryDoubleCurveModel.isEmbedding_of_PL_counts_zero [T2Space X]
     (M : OrdinaryDoubleCurveModel e f R) (hf : PolyhedralPLInCharts e f D2)

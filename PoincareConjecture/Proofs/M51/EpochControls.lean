@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M51.ObservationControls
 import PoincareConjecture.Proofs.M51.EpochProfiles
 import PoincareConjecture.Proofs.M47.CanonicalControls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M51Numerical
 
 variable (S : RepairedControlledSchedulesData.{u})
   (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)
-
-
 
 theorem continuationControls (n : ℕ) (F : SurgeryFlowData.{u})
     (O : SurgeryObservation F) (delta : ℝ → ℝ)

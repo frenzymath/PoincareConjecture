@@ -1,24 +1,12 @@
-
-
-
 import Mathlib.Analysis.Convex.Basic
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Data.Finset.Sort
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
 open scoped Matrix
 
 namespace Poincare.Topology.Plane
-
 
 theorem exists_affine_line_containing_segment (p q : EuclideanSpace ℝ (Fin 2)) :
     ∃ l : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ,
@@ -47,7 +35,6 @@ theorem exists_affine_line_containing_segment (p q : EuclideanSpace ℝ (Fin 2))
       · simp [l, coordinate]
       · simp [l, coordinate, m, div_mul_cancel₀ _ hne]
 
-
 theorem exists_affine_lines_of_finite_segment_cover {I : Type*} [Finite I]
     (a b : I → EuclideanSpace ℝ (Fin 2)) {s : Set (EuclideanSpace ℝ (Fin 2))}
     (hs : s ⊆ ⋃ i, segment ℝ (a i) (b i)) :
@@ -64,7 +51,6 @@ theorem exists_affine_lines_of_finite_segment_cover {I : Type*} [Finite I]
     obtain ⟨i, hi⟩ := mem_iUnion.mp (hs hz)
     exact mem_iUnion.mpr ⟨l i, mem_iUnion.mpr
       ⟨List.mem_map.mpr ⟨i, by simp, rfl⟩, hcover i hi⟩⟩
-
 
 theorem exists_affine_lines_iUnion {I : Type*} [Finite I]
     (s : I → Set (EuclideanSpace ℝ (Fin 2)))

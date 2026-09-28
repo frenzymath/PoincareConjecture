@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatGradient
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,22 +13,17 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
 noncomputable def heatDuhamel (f : ℝ → V → F) (t : ℝ) (x : V) : F :=
   ∫ s in (0 : ℝ)..t, heatAverage (t - s) (f s) x
 
-
 noncomputable def heatDuhamelGradient (f : ℝ → V → F) (t : ℝ) (x : V) : V →L[ℝ] F :=
   ∫ s in (0 : ℝ)..t, heatGradientKernel (t - s) (f s) x
-
-
 
 theorem intervalIntegrable_backwards_invSqrt (t : ℝ) :
     IntervalIntegrable (fun s : ℝ => (t - s) ^ (-(1 / 2 : ℝ))) volume 0 t := by
   have h := (intervalIntegral.intervalIntegrable_rpow'
     (a := 0) (b := t) (r := -(1 / 2 : ℝ)) (by norm_num)).comp_sub_left t
   simpa using h.symm
-
 
 theorem integral_backwards_invSqrt (t : ℝ) :
     (∫ s in (0 : ℝ)..t, (t - s) ^ (-(1 / 2 : ℝ))) = 2 * Real.sqrt t := by
@@ -45,8 +32,6 @@ theorem integral_backwards_invSqrt (t : ℝ) :
   rw [integral_rpow (Or.inl (by norm_num : (-1 : ℝ) < -(1 / 2 : ℝ)))]
   norm_num [← Real.sqrt_eq_rpow]
   ring
-
-
 
 theorem heatGradientKernel_weighted_norm_le_rpow {f : V → F} (hf : Continuous f)
     {C t : ℝ} (hC : 0 ≤ C) (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)
@@ -61,8 +46,6 @@ theorem heatGradientKernel_weighted_norm_le_rpow {f : V → F} (hf : Continuous 
   rw [Real.rpow_neg ht.le, ← Real.sqrt_eq_rpow]
   apply (inv_le_inv₀ (by positivity) (Real.sqrt_pos.mpr ht)).mpr
   exact Real.sqrt_le_sqrt (by linarith)
-
-
 
 theorem heatDuhamel_weighted_norm_le {f : ℝ → V → F} {C t : ℝ}
     (hC : 0 ≤ C) (ht : 0 ≤ t)
@@ -85,8 +68,6 @@ theorem heatDuhamel_weighted_norm_le {f : ℝ → V → F} {C t : ℝ}
     abs_of_nonneg hw, sub_zero, abs_of_nonneg ht] at h
   change (1 + ‖x‖) * ‖heatDuhamel f t x‖ ≤ _ at h
   nlinarith [h]
-
-
 
 theorem heatDuhamelGradient_weighted_norm_le {f : ℝ → V → F} {C t : ℝ}
     (hC : 0 ≤ C) (ht : 0 ≤ t)

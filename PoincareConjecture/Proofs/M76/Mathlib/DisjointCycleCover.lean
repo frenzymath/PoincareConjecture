@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 import Mathlib.Combinatorics.SimpleGraph.Matching
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem isCycles_of_pairwise_disjoint_segmentCarrier (G : SimpleGraph V) (p : V → E)
     (S : Set (SimpleGraph V)) (hcycles : ∀ H ∈ S, H.IsCycles)
@@ -50,9 +35,6 @@ theorem isCycles_of_pairwise_disjoint_segmentCarrier (G : SimpleGraph V) (p : V 
       exact (hcover v u).mpr ⟨H, hH, hvu⟩
   rw [hneighbors]
   exact hcycles H hH ⟨w, hHvw⟩
-
-
-
 
 theorem IsCycles.ncard_neighbors_eq_zero_or_two {G : SimpleGraph V}
     (hG : G.IsCycles) (v : V) :

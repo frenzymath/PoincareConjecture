@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalCircle
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleSlab
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -35,8 +26,6 @@ private theorem coe_mem_shifted_closedIntervalArc_iff {c a b t : ℝ}
     exact heq ▸ hs
   · intro ht'
     exact ⟨t, ht', rfl⟩
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_shifted_lower_slab_coordinate {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}
@@ -134,8 +123,6 @@ theorem ChartwisePLMap.exists_hamiltonZero_shifted_lower_slab_coordinate {ι κ 
     change f x ∈ Ioo (-(b - a)) (b - a)
     rw [hft]
     constructor <;> linarith [ht.1]
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_shifted_upper_slab_coordinate {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}
@@ -237,4 +224,3 @@ theorem ChartwisePLMap.exists_hamiltonZero_shifted_upper_slab_coordinate {ι κ 
     constructor <;> linarith [ht.2]
 
 end PoincareConjecture.M76
-

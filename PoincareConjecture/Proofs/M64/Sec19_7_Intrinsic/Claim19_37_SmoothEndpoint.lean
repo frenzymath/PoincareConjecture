@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_ExtensionBalls
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +11,6 @@ open scoped Topology Manifold ContDiff Bundle
 namespace PoincareConjecture
 
 open RiemannianMetric
-
-
-
 
 theorem m64Intrinsic_exists_smooth_extended_normal_endpoint (N : IntrinsicAnnulus) :
     ∃ (G : RiemannianMetric 2 AnnulusCoordinates)

@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteContactEdgeVertex
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem arc_neighborhood_boundary_contact
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

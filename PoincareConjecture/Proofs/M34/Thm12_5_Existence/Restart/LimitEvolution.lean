@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.JetContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -28,8 +19,6 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem finiteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
     (x : StandardCapSpace) :
     Tendsto (fun k => spatialJet m
@@ -40,8 +29,6 @@ theorem finiteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
   exact G.spatialJet_tendsto j ht x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem spatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :
@@ -54,8 +41,6 @@ theorem spatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
     (A.compact_sources _ (isCompact_singleton (x := x)))] with k hk
   exact hrange (G.subsequence k) t (Ioo_subset_Icc_self ht) x (mem_singleton x)
     (hk (mem_singleton x))
-
-
 
 theorem timeDeriv_tendsto {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :
     Tendsto (fun k => deriv (fun s => A.coefficients (G.subsequence k) s x) t)
@@ -86,8 +71,6 @@ theorem timeDeriv_tendsto {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSp
       ⟨ht, hk (mem_singleton x)⟩) |>.differentiableAt (by simp))
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem deriv_coefficients_eq_operator (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :

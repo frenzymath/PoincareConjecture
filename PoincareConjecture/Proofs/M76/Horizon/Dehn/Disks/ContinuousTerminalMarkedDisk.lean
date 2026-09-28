@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.MarkedSquarePLApproximation
 import PoincareConjecture.Proofs.M76.Dehn.OriginalTerminalProperDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTowerDescent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 open PoincareConjecture.M76.Dehn
@@ -21,8 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_continuous_terminal_marked_disk
     {M ι : Type*} [TopologicalSpace M] [T2Space M]

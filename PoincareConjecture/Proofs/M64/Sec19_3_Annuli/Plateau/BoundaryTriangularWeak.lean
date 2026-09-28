@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularGreen
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +17,6 @@ local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
 theorem m64Source_comp_test_support
     (T : LoopPlane ≃ₜ LoopPlane) (hpre : T ⁻¹' S = S)
     {phi : LoopPlane → ℝ} (hs : tsupport phi ⊆ S) :
@@ -34,9 +26,6 @@ theorem m64Source_comp_test_support
   have hh : T.symm p ∈ S := hs h
   have himg : T (T.symm p) ∈ T '' S := mem_image_of_mem T hh
   simpa only [m64Source_image_interior T hpre, Homeomorph.apply_symm_apply] using himg
-
-
-
 
 theorem m64TriangularSource_weakPartials
     (T : LoopPlane ≃ₜ LoopPlane) (hT : ContDiff ℝ ∞ T) (hi : ContDiff ℝ ∞ T.symm)
@@ -83,8 +72,6 @@ theorem m64TriangularSource_weakPartials
       -(∫ p in S, (fderiv ℝ T p e1 0 * V0 (T p) + V1 (T p)) * phi p)
     simp only [smul_eq_mul, mul_comm] at h ⊢
     linarith
-
-
 
 theorem m64TriangularSource_weighted_column_memLp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {V : LoopPlane → E}

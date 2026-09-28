@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RawAnnulusObservedLTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialGeometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
-
 
 theorem m64Lower_continuous_trace {m : ℕ}
     {f d U : LoopPlane → EuclideanSpace ℝ (Fin m)}

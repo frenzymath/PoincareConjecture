@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M74
-
-
 
 noncomputable def sphereNormalize (q0 : UnitTwoSphere) (x : StandardCapSpace) :
     UnitTwoSphere := by
@@ -24,8 +14,6 @@ noncomputable def sphereNormalize (q0 : UnitTwoSphere) (x : StandardCapSpace) :
     ⟨‖x‖⁻¹ • x, by
       rw [mem_sphere_zero_iff_norm, norm_smul, Real.norm_eq_abs,
         abs_of_pos (inv_pos.mpr (norm_pos_iff.mpr h)), inv_mul_cancel₀ (norm_ne_zero_iff.mpr h)]⟩
-
-
 
 theorem sphereNormalize_contMDiffAt (q0 : UnitTwoSphere) {x : StandardCapSpace}
     (hx : x ≠ 0) : ContMDiffAt (𝓡 3) (𝓡 2) ∞ (sphereNormalize q0) x := by
@@ -51,8 +39,6 @@ theorem sphereNormalize_contMDiffAt (q0 : UnitTwoSphere) {x : StandardCapSpace}
     exact hf.codRestrict_sphere hunit
   exact (contMDiffAt_subtype_iff (U := U) (f := sphereNormalize q0) (x := ⟨x, hx⟩)).mp
     hdir.contMDiffAt
-
-
 
 theorem sphereNormalize_pos_smul (q0 q : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     sphereNormalize q0 (r • q.1) = q := by

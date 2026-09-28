@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroPunctureEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "T" => ((StableTorus.Circle × StableTorus.Circle) × StableTorus.Circle)
-
-
-
 
 theorem zero_punctured_torus_isConnected :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
@@ -71,8 +59,6 @@ theorem zero_punctured_torus_isConnected :
     rw [AddCircle.centeredCubeQuotient_apply]
     norm_num [a]
   simpa only [hp] using hconn
-
-
 
 theorem zero_punctured_torus_domain_isConnected :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

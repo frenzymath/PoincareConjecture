@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,7 +44,6 @@ theorem ancient_ball_mono (S : ScalarDerivativeServices.{u})
     (C := 1) zero_lt_one (fun x v => by simpa using hmetric x v)
   intro x hx
   exact lt_of_le_of_lt (by simpa using hdist p x) hx
-
 
 theorem uniform_terminal_curvatureDerivative_bound
     (S : ScalarDerivativeServices.{u}) (L : ℝ) (hL : 0 < L) (k : ℕ) :

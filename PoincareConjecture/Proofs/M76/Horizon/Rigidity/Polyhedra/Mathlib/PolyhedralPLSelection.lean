@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Affine.Mathlib.ContinuousA
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -72,8 +63,6 @@ private theorem selection_coordinates
       fun y hy => hagree hy ▸ h₀i y hy, ?_⟩
     exact ((h₀.restrict_finite N hN hNK).finitePiecewiseAffineOn_fixed_chart
       hcompat N hN i h₀i).congr (fun y hy => congrArg (e i) (hagree hy).symm)
-
-
 
 theorem PolyhedralPLInCharts.continuous_selection
     (hcover : ∀ x : X, ∃ i, x ∈ (e i).source)

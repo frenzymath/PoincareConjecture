@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_AreaBound
 import PoincareConjecture.Proofs.M58.Cor18_28_UniformBounds
 import PoincareConjecture.Proofs.M58.Cor18_28_Fillings
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_short_disk_linear_area_bound (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) :
@@ -55,8 +43,6 @@ theorem exists_short_disk_linear_area_bound (g : RiemannianMetric 3 M)
     (fun s hs t => hC _ ⟨hs, hangle t⟩) hA hH
     (fun s hs t => ht _ ⟨hs, hangle t⟩)
     (fun s hs t => hq _ ⟨hs, hangle t⟩) hprofile
-
-
 
 theorem small_loop_filling (g : RiemannianMetric 3 M)
     (hcompact : IsCompact (univ : Set M)) (η : ℝ) (hη : 0 < η) :

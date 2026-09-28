@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FrontierReplacement
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.LocalQuadratic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,10 +45,6 @@ private theorem connector_of_metric_segment
       rw [hd x hx y hy, ENNReal.ofReal_mul ENNReal.toReal_nonneg,
         ENNReal.ofReal_toReal (G.edist_ne_top _ _), mul_comm])
   simpa only [ENNReal.ofReal_toReal (G.edist_ne_top _ _)] using hv
-
-
-
-
 
 theorem m64Intrinsic_exists_geodesic_side_frontier_connectors
     (G : RiemannianMetric 2 AnnulusCoordinates) {alpha : ℝ → AnnulusCoordinates}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Cap.StrongCollar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Unlift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +19,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   BasedKappaSolution.connectedSpace RicciFlow.uliftChartedSpace RicciFlow.uliftIsManifold
   AncientKappaSolution.uliftSecondCountable AncientKappaSolution.uliftConnectedSpace
 
-
 def HasFineExteriorCap
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -40,7 +29,6 @@ def HasFineExteriorCap
     ∃ A : CapCertificate (K.flow.metric 0),
       A.epsilon = epsilon ∧ A.cap_constant ≤ C ∧ p ∈ A.core ∧
       ∀ x : M, x ∉ A.core → ∃ N : StrongEvolvingNeck K 0 delta, N.center = x
-
 
 theorem HasFineExteriorCap.of_ulift
     {M : Type u} [TopologicalSpace M]
@@ -55,8 +43,6 @@ theorem HasFineExteriorCap.of_ulift
   intro x hx
   obtain ⟨N, hN⟩ := hneck (ULift.up x) hx
   exact ⟨K.strongNeckFromUlift N, congrArg ULift.down hN⟩
-
-
 
 theorem exists_noncompact_limit_without_strong_collars
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

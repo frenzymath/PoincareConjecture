@@ -10,8 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
-
 theorem signedSheetStripMap_closing (closing : SignedAxisPermutation)
     (j : Fin 2) (u a b : ℝ) :
     signedSheetStripMap (closing.index j) ((if closing.sign j.rev then u else -u), b) =
@@ -20,8 +18,6 @@ theorem signedSheetStripMap_closing (closing : SignedAxisPermutation)
   cases swap <;> fin_cases j <;> cases h0 : sign 0 <;> cases h1 : sign 1 <;>
     simp [signedSheetStripMap_apply, SignedAxisPermutation.index, jointSheetIndex,
       SignedAxisPermutation.linear_apply, h0, h1, Fin.rev]
-
-
 
 theorem signed_sheet_coordinate_eq_iff (closing : SignedAxisPermutation)
     (j k : Fin 2) (u v : ℝ) :
@@ -34,9 +30,6 @@ theorem signed_sheet_coordinate_eq_iff (closing : SignedAxisPermutation)
     cases h0 : sign 0 <;> cases h1 : sign 1 <;>
     simp [signedSheetStripMap_apply, SignedAxisPermutation.index, jointSheetIndex,
       SignedAxisPermutation.linear_apply, h0, h1, Fin.rev] <;> aesop
-
-
-
 
 theorem source_strip_closing_of_physical_closing
     {X E F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -77,8 +70,6 @@ theorem source_strip_closing_of_physical_closing
   rw [signedSheetStripMap_closing closing j u a b]
   simpa only [signedSheetStripMap_apply] using
     congrArg inverse (hclosing _ (signedSheetStripMap_mem j (hleft u hu)).1).symm
-
-
 
 theorem source_axis_fibers_of_signed_tube
     {E F : Type*} (sigma : P2 × ℝ → E) {a b : ℝ} (hab : a < b)
@@ -133,8 +124,6 @@ theorem source_axis_fibers_of_signed_tube
       exact hclose j
     · rw [hs, ht]
       exact (hclose k).symm
-
-
 
 theorem source_strip_injOn_open_of_signed_tube
     {E F : Type*} (sigma : P2 × ℝ → E) {a b : ℝ}

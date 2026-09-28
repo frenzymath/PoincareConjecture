@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -248,9 +242,7 @@ private theorem innerWeight_factor (z : Real) :
   unfold innerWeight
   ring
 
-
 def outerCircle : S1 → E2 := ovalCircle lowerRoot (3 / 5) outerWeight
-
 
 def innerCircle : S1 → E2 := ovalCircle upperRoot 1 innerWeight
 

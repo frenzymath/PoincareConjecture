@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +14,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem antitoneOn_metric_inner_self_of_ricci_nonneg
     (F : RicciFlow n M J) {a b : ℝ} (hJ : Icc a b ⊆ interior J)
@@ -42,7 +32,6 @@ theorem antitoneOn_metric_inner_self_of_ricci_nonneg
   rw [(hd t (interior_subset ht)).deriv]
   exact mul_nonpos_of_nonpos_of_nonneg (by norm_num) (hRic t (interior_subset ht))
 
-
 theorem tangentNorm_le_of_ricci_nonneg
     (F : RicciFlow n M J) {a b : ℝ} (hJ : Icc a b ⊆ interior J)
     (x : M) (v : TangentSpace (𝓡 n) x)
@@ -50,8 +39,6 @@ theorem tangentNorm_le_of_ricci_nonneg
     {s t : ℝ} (hs : s ∈ Icc a b) (ht : t ∈ Icc a b) (hst : s ≤ t) :
     (F.metric t).tangentNorm x v ≤ (F.metric s).tangentNorm x v :=
   Real.sqrt_le_sqrt (F.antitoneOn_metric_inner_self_of_ricci_nonneg hJ x v hRic hs ht hst)
-
-
 
 theorem ball_subset_ball_of_ricci_nonneg
     (F : RicciFlow n M J) {a b : ℝ} (hJ : Icc a b ⊆ interior J)

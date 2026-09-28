@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Contractible.Di
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.DisjointComponents
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.OpenSourceCopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open _root_.Dehn

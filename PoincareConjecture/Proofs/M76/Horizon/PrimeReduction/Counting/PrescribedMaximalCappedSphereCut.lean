@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalCapp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedSphereCutComparison
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.NewPortComponentAlternatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 open Set Geometry Geometry.SeparatedSphereCaps

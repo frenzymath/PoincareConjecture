@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizedImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ universe u v
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem exists_capNeckNormalizedImage_end_boundary_tolerance {epsilon : ℝ}
     (hepsilon : 0 < epsilon) (hepsilon' : epsilon < 1 / 2) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientCompactJetBounds
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessGraphComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "G" => ℝ × (W × W)
-
-
-
 
 theorem isOpen_curveGraphJetDomain (F : RicciFlow n M (Icc a b))
     {V : Set W} (hV : IsOpen V) {ρ : W → M}
@@ -50,10 +37,6 @@ theorem isOpen_curveGraphJetDomain (F : RicciFlow n M (Icc a b))
   convert hopen using 1
   ext z
   simp only [mem_inter_iff, mem_preimage, mem_ofPred_eq, and_assoc]
-
-
-
-
 
 theorem curveGraphCoefficients_contDiffOn (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -123,11 +106,6 @@ theorem curveGraphCoefficients_contDiffOn (F : RicciFlow n M (Icc a b))
   have hB : ContDiffOn ℝ ∞ B (Icc a b ×ˢ Ω) :=
     ((hA.smul hr₂p).add hB₀).add (hquot.smul hX')
   exact ⟨hA, hB, fun t z hz => hpos t _ hz.1 _ hz.2.1⟩
-
-
-
-
-
 
 theorem curveGraphCoefficients_uniform_bounds (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

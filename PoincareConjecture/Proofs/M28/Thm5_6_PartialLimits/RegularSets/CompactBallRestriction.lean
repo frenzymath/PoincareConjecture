@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NestedBallClosure
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem mem_regularPoints_intrinsicOpenMetric_of_compact_ball
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U)

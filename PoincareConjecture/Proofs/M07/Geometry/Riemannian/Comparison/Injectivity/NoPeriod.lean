@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.OrbitConvexity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem false_of_short_finite_period
     {n : ℕ} (G : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

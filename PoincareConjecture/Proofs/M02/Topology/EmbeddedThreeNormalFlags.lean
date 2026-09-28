@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeFlagCarrier
 import PoincareConjecture.Proofs.M02.Topology.GeometricFlagBounds
 import PoincareConjecture.Proofs.M02.Topology.NormalFiberContraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

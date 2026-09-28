@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.SectionalNormalization
 import PoincareConjecture.Proofs.M13.CurvatureMultilinear
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ open PoincareConjecture.M04
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M]
-
-
 
 theorem sectional_lower_on_independent_pair {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (x : M) (A : ℝ)
@@ -52,8 +41,6 @@ theorem sectional_lower_on_independent_pair {g : RiemannianMetric 3 M}
   have h := hA p q ⟨hp, hq, hpq⟩
   simpa only [LeviCivitaData.sectionalCurvature, hp, hq, hpq, one_mul,
     zero_pow (by decide : 2 ≠ 0), sub_zero, div_one, hvalue] using h
-
-
 
 theorem exists_sectional_lower_near_time_on_compact [CompactSpace M]
     {J : Set ℝ} (F : RicciFlow 3 M J) (t : J) {K : Set M} (hK : IsCompact K)
@@ -100,8 +87,6 @@ theorem exists_sectional_lower_near_time_on_compact [CompactSpace M]
   have h := hfull x hx v w
   simpa only [LeviCivitaData.sectionalCurvature, metricGram, hpair.1, hpair.2.1,
     hpair.2.2, one_mul, zero_pow (by decide : 2 ≠ 0), sub_zero, div_one, mul_one] using h
-
-
 
 theorem component_sectional_bounds_persist [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J) (t : J)

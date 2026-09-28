@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialOlderTensor
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialClosedCylinder
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_retained_limit_metric
     {F : SurgeryFlowData.{u}} {T : ℝ} (hT : T ∈ F.surgery_times)
@@ -71,8 +59,6 @@ theorem source_initial_retained_limit_metric
     (mfderiv (𝓡 3) (𝓡 3) (event.retention.map ∘ event.limit_identify.inverse) x w) = _
   rw [mfderiv_comp x hret hinv]
   exact hm
-
-
 
 theorem source_initial_closed_zero_metric
     {F : SurgeryFlowData.{u}} {T q : ℝ} (hT : T ∈ F.surgery_times)
@@ -119,8 +105,6 @@ private theorem retainedTensor_metric_agreement
       (mfderiv (𝓡 3) (𝓡 3) (f.forward s ht) x v)
       (mfderiv (𝓡 3) (𝓡 3) (f.forward s ht) x w)) (hmap hx)
 
-
-
 theorem source_initial_older_tensor_on_closed_cylinder
     {F : SurgeryFlowData.{u}} {T left : ℝ} (hT : T ∈ F.surgery_times)
     [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
@@ -163,8 +147,6 @@ theorem source_initial_older_tensor_on_closed_cylinder
         (mfderiv Ic (𝓡 3) N.coordinate_map z w)
       simpa only [sourceInitialOlderTensor, if_neg hp, if_neg hs0, surgeryCylinderPullback,
         dif_pos hsOld, dif_pos hs, SurgeryFlowCylinder.pullbackInner, N] using hm.symm
-
-
 
 theorem source_initial_cylinder_affine_pullback
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Metric
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +16,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem contDiffAt_mpullback_gradient
     {D : LeviCivitaData g} {f : M → ℝ}
@@ -40,7 +33,6 @@ theorem contDiffAt_mpullback_gradient
   rw [Bundle.contMDiffAt_totalSpace] at hG
   apply contMDiffAt_iff_contDiffAt.mp
   simpa using hG.2
-
 
 theorem fderiv_mpullback_gradient_eq_neg_christoffel
     {D : LeviCivitaData g} {f : M → ℝ}
@@ -100,8 +92,6 @@ theorem fderiv_mpullback_gradient_eq_neg_christoffel
   simp only [coordinateChristoffel, heq.self_of_nhds, heq.fderiv_eq] at hconn
   exact eq_neg_of_add_eq_zero_left hconn
 
-
-
 theorem mpullback_gradient_eq_chart_gradient
     {D : LeviCivitaData g} {f : M → ℝ} (a : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) a).target) :
@@ -125,8 +115,6 @@ theorem mpullback_gradient_eq_chart_gradient
     (mfderiv (𝓡 n) (𝓡 n) c (c.symm x) (D.gradient f (c.symm x))) =
       D.gradient f (c.symm x) at h
   exact h.symm
-
-
 
 theorem coordinate_gradient_metric_derivative_eq_zero
     {D : LeviCivitaData g} {f : M → ℝ}

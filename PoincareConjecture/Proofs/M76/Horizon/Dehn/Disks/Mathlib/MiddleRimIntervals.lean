@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.InteriorIntervalComplement
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripArmCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem exists_middle_disk_old_rim_intervals
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

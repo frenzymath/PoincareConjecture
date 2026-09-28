@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.SpatialJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,7 +44,6 @@ theorem iterate_laplacian_heat_test_sub
         ((EnergyTest.negLaplacianTest)^[j+1] φ) x)
     simp only [Function.iterate_succ_apply', EnergyTest.negLaplacianTest_apply, pow_succ]
     ring
-
 
 theorem eLpNorm_iterate_laplacian_heat_test_sub_le
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)

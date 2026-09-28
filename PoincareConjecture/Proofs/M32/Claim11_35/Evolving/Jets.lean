@@ -2,25 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.CovariantJets
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Realization
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -35,7 +16,6 @@ namespace PoincareConjecture.M32
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
 
 private noncomputable instance evolvingLinearNormedGroup :
     NormedAddCommGroup (E3 →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
@@ -119,9 +99,6 @@ private theorem parametrizedCoefficients_affine
     ContinuousLinearMap.bilinearComp_apply]
   erw [hd]
   rfl
-
-
-
 
 noncomputable def strongNeckEvolvingCoefficients
     (N : GeneralizedStrongNeck F t epsilon) {tau : ℝ} (htau : tau ∈ Ioc (-1) 0)
@@ -289,9 +266,6 @@ private theorem exists_strongNeck_evolving_scalar_fourJet_bound :
   rw [iteratedFDeriv_const_smul_apply (hsmooth.of_le (by exact_mod_cast le_top)), norm_smul,
     Real.norm_eq_abs]
   exact (mul_le_mul hm hnorm (norm_nonneg _) (by norm_num)).trans_eq (by ring)
-
-
-
 
 theorem exists_strongNeck_evolving_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ},

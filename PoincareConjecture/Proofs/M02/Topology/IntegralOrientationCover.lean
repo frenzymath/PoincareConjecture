@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSupportLocalization
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.FiberBundle.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -55,8 +47,6 @@ theorem exists_open_integralSupportHomology_restrictions_eq [T2Space X]
   rw [map_sub, integralSupportHomologyRestriction_apply_comp,
     integralSupportHomologyRestriction_apply_comp, sub_eq_zero] at he
   exact he
-
-
 
 structure IntegralLocalHomologyAtlas (X : Type u) [TopologicalSpace X] (d : Nat) where
   support : X → Set X

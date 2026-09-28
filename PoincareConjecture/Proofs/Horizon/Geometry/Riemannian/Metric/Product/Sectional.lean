@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Traces
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Sectional
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
@@ -41,7 +34,6 @@ private theorem exists_basis_adjoin
   let a := basisOfOrthonormalOfCardEqFinrank hv hcard
   have ha : Orthonormal ℝ a := by simpa [a] using hv
   refine ⟨a.toOrthonormalBasis ha, ?_, ?_⟩ <;> simp [a, v]
-
 
 theorem PoincareConjecture.RiemannianMetric.FactorCurvature.sectional_lower_bound_of_null_normal
     {n : ℕ} {M S : Type*} [TopologicalSpace M] [TopologicalSpace S]

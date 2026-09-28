@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3RelativeFamilyCenteredExchange
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PrescribedProductCircleGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

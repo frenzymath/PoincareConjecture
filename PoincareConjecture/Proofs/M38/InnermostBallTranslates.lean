@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.FiniteSphereNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem closed_regions_disjoint_of_mutual_frontier_avoidance
     {X : Type*} [TopologicalSpace X] {B C : Set X}
@@ -31,9 +20,6 @@ theorem closed_regions_disjoint_of_mutual_frontier_avoidance
     exact (Set.disjoint_left.mp hCB
       (interior_subset (hinner (hB.frontier_subset hx))) hx).elim
   · exact Set.disjoint_left.mpr (fun _ hx hy => houter hx hy)
-
-
-
 
 theorem sphereBall_disjoint_translate_of_innermost
     (B : SurgeryBallEmbedding sphereCarrier.{u})

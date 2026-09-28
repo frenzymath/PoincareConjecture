@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallFrontierReachability
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeScaleBudget
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,12 +15,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
-
-
-
 
 structure CriticalBallSpine
     (H : CounterexampleNeckFamily E)
@@ -53,9 +37,6 @@ structure CriticalBallSpine
             (5858 / 1000 : ℝ) * H.tubeNodeScale T k i ∧
         ((H.tubeCriticalMetric T A1 k).edist x (gamma t ht.2)).toReal ≤
             (5858 / 1000 : ℝ) * H.tubeNodeScale T k i
-
-
-
 
 theorem criticalBall_access_of_spine
     (H : CounterexampleNeckFamily E)

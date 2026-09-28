@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakPhaseL2
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Density
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +16,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.Weak EuclideanTranslationNative
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
-
-
 
 theorem m64WeakPhase_weighted_l2_isCompact
     (u : ℕ → LoopPlane → ℝ) (hw : ∀ j, MemW1pWitness 2 (u j) S)

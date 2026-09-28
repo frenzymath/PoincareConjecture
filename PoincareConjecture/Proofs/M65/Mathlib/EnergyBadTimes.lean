@@ -2,23 +2,12 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.MeasureTheory.Measure.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral
 
 namespace PoincareConjecture.M65
-
-
-
 
 theorem energy_badTimes_measure_le {energy : ℝ → ℝ} {a b C B : ℝ}
     (hab : a ≤ b) (hnonneg : ∀ t, 0 ≤ energy t)

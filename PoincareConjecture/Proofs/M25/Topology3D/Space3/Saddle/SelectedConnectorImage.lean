@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_connector_image
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

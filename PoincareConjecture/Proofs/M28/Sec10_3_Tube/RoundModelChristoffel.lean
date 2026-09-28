@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundNormalJetConversion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Connection.JetBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussMetricExtension
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,11 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 open PoincareConjecture.CoordinateExponential
 open PoincareConjecture.SpacetimeBounds
-
-
-
-
-
 
 theorem exists_round_model_christoffel_jet_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -103,11 +87,6 @@ theorem exists_round_model_christoffel_jet_bound
   refine ⟨C, hC, ?_⟩
   intro j hj u v
   exact hchrist B 0 hBcont hBnorm hBell hjet j hj u v
-
-
-
-
-
 
 theorem exists_round_model_christoffel_operator_jet_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -188,11 +167,6 @@ theorem exists_round_model_christoffel_operator_jet_bound
   · apply ContinuousLinearMap.opNorm_le_bound _ hC
     intro u
     exact hop u
-
-
-
-
-
 
 theorem round_model_christoffel_zero
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

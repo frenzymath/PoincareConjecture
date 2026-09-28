@@ -1,20 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCover
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -28,15 +13,11 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
 def chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ) : Set M :=
   ⋃ p ∈ s, frontier ((chartAt (EuclideanSpace ℝ (Fin 2)) p).symm ''
     closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) p p) (r p))
 
 variable [T2Space M]
-
-
-
 
 theorem exists_chart_disk_containing_complementary_component
     (s : Finset M) (r : M → ℝ) (hpos : ∀ p ∈ s, 0 < r p)

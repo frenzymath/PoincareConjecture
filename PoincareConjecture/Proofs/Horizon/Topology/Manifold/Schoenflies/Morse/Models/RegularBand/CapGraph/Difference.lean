@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +22,6 @@ theorem contDiffAt_boundedCapHeight_norm_sq {x : E} (hx : ‖x‖ < 1) :
       (contDiff_id.inner Real contDiff_id :
         ContDiff Real ∞ (fun y : E => inner Real y y))
   exact (contDiffAt_boundedCapHeight (by nlinarith [norm_nonneg x])).comp x hsq.contDiffAt
-
-
 
 theorem exists_smooth_cap_height_difference
     (P : Diffeomorph 𝓘(Real, E) 𝓘(Real, E) E E ∞)

@@ -4,15 +4,6 @@ import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
-
-
-
-
 
 theorem exists_closed_uniform_embeddedCurvature_limit
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

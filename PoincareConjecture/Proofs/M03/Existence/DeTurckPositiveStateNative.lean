@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckStateApproximationNative
 import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorBoundsNative
 import PoincareConjecture.Proofs.M03.Existence.MetricPerturbationNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +27,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   (L : FiniteChartLocalizationData d.charts)
 
 local notation "StateD" => State d.SymmetricIndex
-
 
 def emptyProbeCoefficients (k : ℕ) :
     NativeProbeContinuous (M := M) (iota := Fin d.fieldCount) k →L[ℝ]
@@ -105,7 +97,6 @@ private theorem metric_diagonal_nonneg (x : M) (v : TangentSpace (𝓡 n) x) :
   · simp [hv]
   · exact (g0.pos x v hv).le
 
-
 theorem smoothTensor_quarter_bound (r p : ℕ) (hpr : 2 * p ≤ r)
     (hp : (n : ℝ) < 2 * (2 * (p : ℝ)))
     (h : SmoothTensor (n := n) (M := M))
@@ -156,7 +147,6 @@ theorem smallMetricPerturbation_lower_bound (r p : ℕ) (hpr : 2 * p ≤ r)
   have hneg := neg_le_of_abs_le (smoothTensor_quarter_bound d L r p hpr hp h hsymm hsmall x v)
   rw [smallMetricPerturbation_metric_inner]
   linarith
-
 
 theorem exists_positive_smooth_approximation (r p : ℕ) (hpr : 2 * p ≤ r)
     (hp : (n : ℝ) < 2 * (2 * (p : ℝ))) {rho : ℝ} (hrho : 0 < rho)

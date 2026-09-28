@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxBall
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem cap_neck_small_ball_volume (N : EpsilonNeck g) (q : UnitTwoSphere) {z r : ℝ}
     (hz : -N.epsilon⁻¹ < z) (hright : z + 1 < N.epsilon⁻¹)

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.Euler.Dis
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComplement
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.ComponentEulerSum
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped BigOperators

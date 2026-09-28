@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ClosedCylinderQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ namespace BrownSchoenflies
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X]
-
-
-
 
 theorem closed_cylinder_quotient_fibers
     (e : OpenPartialHomeomorph (sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) X)

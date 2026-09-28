@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Equation.Pot
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Equation.TensorSquare
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

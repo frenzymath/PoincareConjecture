@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Mathlib.PathLengthAnchors
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +11,6 @@ namespace PoincareConjecture.M28
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_pathELength_right_anchor_in_ball
     (g : RiemannianMetric n M) {U : Set M} {x : M}
@@ -64,9 +50,6 @@ theorem exists_pathELength_right_anchor_in_ball
   change g.edist x (γ s) < ENNReal.ofReal delta
   exact (htriangle.trans (add_le_add hstart
     (hdist.trans (hsub.trans_eq hlength)))).trans_lt hsum
-
-
-
 
 theorem exists_pathELength_left_anchor_in_ball
     (g : RiemannianMetric n M) {U : Set M} {x : M}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Circle
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_circle_restriction_of_boundary_germ
     (P : PartialDiffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (p : S1) (hp : (p : E2) ∈ P.source)

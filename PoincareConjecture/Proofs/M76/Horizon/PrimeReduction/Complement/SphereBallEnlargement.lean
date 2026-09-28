@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SelectedHoleComplement
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.CubicalThreeSphere
@@ -47,9 +39,6 @@ private theorem finitePL_positive_cube {ρ : ℝ} (hρ : 0 < ρ) :
   have hball := isFinitePLBallPair_of_affine_halfspaces (isCompact_closedBall _ _) H hrep
     ⟨0,ball_subset_interior_closedBall (mem_ball_self hρ)⟩
   simpa only [frontier_closedBall _ hρ.ne'] using hball
-
-
-
 
 theorem IsFinitePLBallPair.exists_sphere_ball_enlargement
     {A r K : Set V4} (hA : IsFinitePLBallPair V3 A r) (hAS : A ⊆ Sphere)
@@ -152,8 +141,6 @@ theorem IsFinitePLBallPair.exists_sphere_ball_enlargement
     exact (hD.isCompact.isClosed.preimage continuous_subtype_val).isOpen_compl
   exact ⟨B,q,hB,sdiff_subset,hAB,hBK,hBopen,
     hB.selected_hole_complement sdiff_subset hBopen⟩
-
-
 
 theorem IsFinitePLBallPair.exists_sphere_ball_enlargement_subset
     {A r O : Set V4} (hA : IsFinitePLBallPair V3 A r) (hAS : A ⊆ Sphere)

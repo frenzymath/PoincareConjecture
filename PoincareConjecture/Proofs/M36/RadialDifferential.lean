@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.RadialArclength
 import PoincareConjecture.Proofs.M36.MetricPathLength
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle RealInnerProductSpace

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleFreeOtherFaceTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -45,7 +38,6 @@ def InCircleFreeNonreturningTriangleGraphPosition
       (C.toSimpleGraph.segmentCarrier (fun v => (v.val : V3)) ∩
         intrinsicFrontier ℝ T).Nonempty
 
-
 theorem InCircleFreeNonreturningTriangleGraphPosition.to_nonreturning
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     {Q : OpenPartialHomeomorph X V3} {S : Set X} {g : E → X}
@@ -69,4 +61,3 @@ theorem InCircleFreeNonreturningTriangleGraphPosition.of_equal_off_closed
   exact ⟨G, hG, hGT, hGc, hp', hi, he, hf, hc', hr, hfree⟩
 
 end PoincareConjecture.M76
-

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.Bootstrap
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.SmoothRepresentative
 
-
-
-
-
-
-
-
 open Set MeasureTheory
 open scoped ContDiff
 

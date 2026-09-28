@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Replacement.ArcExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Replacement.Seam
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -179,5 +177,3 @@ theorem exists_original_union_disk_map_heterogeneous
         (hkhalf i hx).trans (congrArg (f i) hxy)⟩
 
 end PoincareConjecture.M76.Dehn.Annuli.BoundaryUnionDisk
-
-

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAv
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingAE
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -36,10 +26,6 @@ private theorem plane_linear_norm_le (L : LoopPlane →L[ℝ] ℝ) {A : ℝ} (hA
       (hL i) (abs_nonneg _) (norm_nonneg _)
   rw [heq, Real.norm_eq_abs]
   exact (abs_add_le _ _).trans (by nlinarith only [ht 0, ht 1])
-
-
-
-
 
 theorem exists_scalar_holder_representative
     (u : Lp ℝ 2 (volume : Measure LoopPlane))

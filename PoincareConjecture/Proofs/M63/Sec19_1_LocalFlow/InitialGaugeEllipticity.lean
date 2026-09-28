@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.SlopeRegularity
 import PoincareConjecture.Definitions.M63Polygon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {Z : Type v} [TopologicalSpace Z] [CompactSpace Z]
-
-
-
 
 theorem initial_family_speed_bounds (F : RicciFlow n M (Icc a b))
     (gamma : Z → ℝ → M) (t : ℝ)
@@ -76,9 +62,6 @@ theorem initial_family_speed_bounds (F : RicciFlow n M (Icc a b))
   rw [hxy]
   exact ⟨hmin ⟨mem_univ _, Ico_subset_Icc_self hy⟩,
     hmax ⟨mem_univ _, Ico_subset_Icc_self hy⟩⟩
-
-
-
 
 theorem initial_family_principal_bounds (F : RicciFlow n M (Icc a b))
     (gamma : Z → ℝ → M) (t : ℝ)

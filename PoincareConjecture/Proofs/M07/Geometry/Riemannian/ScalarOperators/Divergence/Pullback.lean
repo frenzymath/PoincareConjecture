@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +19,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
   {f : M → N} {x : M} {u : N → ℝ}
 
-
 theorem gradient_comp_eq_mpullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     (hf : MDifferentiableAt (𝓡 n) (𝓡 n) f x)
@@ -46,7 +36,6 @@ theorem gradient_comp_eq_mpullback
   rw [D.inner_gradient, mvfderiv_comp x hu hf, hmetric]
   simp only [ContinuousLinearMap.comp_apply, mpullback, hinv.self_apply_inverse,
     D'.inner_gradient]
-
 
 theorem laplacian_comp_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

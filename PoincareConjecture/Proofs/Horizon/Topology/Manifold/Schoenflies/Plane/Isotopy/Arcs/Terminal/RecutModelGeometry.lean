@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.RecutGeometry
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCutGeometry
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +43,6 @@ def ModelCutCircleData.of_same_filledModel
     intro q hq
     rw [hh]
     exact a.upper_regular q (by simpa only [hF] using hq) }
-
-
 
 theorem exists_terminal_geometry_with_model_cut_circles
     (M : SphereMorseReduction f) (hg : g ∈ M.tree.leaves)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceFramedF
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceFrame
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceTangentExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
-
-
 
 theorem halfDisk_hasDerivAt_diameter
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -43,10 +31,6 @@ theorem halfDisk_hasDerivAt_diameter
     exact ⟨mem_closedBall_zero_iff.mpr hs.le, by simp⟩
   simpa only [Function.comp_def, ofRealCLM_apply, ofReal_one] using
     hdiff.comp_hasDerivAt t ofRealCLM.hasDerivAt hevent
-
-
-
-
 
 theorem halfDisk_rowFrame_reality
     {g : RiemannianMetric 3 LoopAmbient} {H : ℂ → LoopAmbient} {r t : ℝ}

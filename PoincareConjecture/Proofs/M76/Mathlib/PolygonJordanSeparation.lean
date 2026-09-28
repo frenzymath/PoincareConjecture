@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonComplementComponents
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePlanarShear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
   (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
 
 include hP hinj
-
-
-
 
 theorem not_isPreconnected_compl : ¬ IsPreconnected (P.boundary ℝ)ᶜ := by
   obtain ⟨e, he⟩ := (finite_range P).exists_planar_coordinates_injOn_fst
@@ -53,8 +41,6 @@ theorem not_isPreconnected_compl : ¬ IsPreconnected (P.boundary ℝ)ᶜ := by
   rw [← hcompl]
   exact hconn.image e e.continuous.continuousOn
 
-
-
 theorem exists_distinct_two_complement_components :
     ∃ a ∈ (P.boundary ℝ)ᶜ, ∃ b ∈ (P.boundary ℝ)ᶜ,
       connectedComponentIn (P.boundary ℝ)ᶜ a ≠ connectedComponentIn (P.boundary ℝ)ᶜ b ∧
@@ -68,9 +54,6 @@ theorem exists_distinct_two_complement_components :
   apply P.not_isPreconnected_compl hP hinj
   rw [hsingle]
   exact isPreconnected_connectedComponentIn
-
-
-
 
 theorem exists_complementary_regions :
     ∃ U V : Set (ℝ × ℝ), IsOpen U ∧ IsOpen V ∧ IsConnected U ∧ IsConnected V ∧

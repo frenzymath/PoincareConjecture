@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli.SourceCircleDecomposition
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {f : E → X} {S : Set E}
 
-
-
 theorem component_count (M : SourceCircleDecomposition f S) :
     Nat.card (ConnectedComponents (doubleLocusOn f S)) = Nat.card M.Index := by
   have h := (connected_components_mark_counts_of_ambient_partition M.pieces
@@ -19,13 +17,11 @@ theorem component_count (M : SourceCircleDecomposition f S) :
   simpa only [preimage_empty, image_empty, compl_empty, Set.disjoint_empty,
     ofPred_true, Set.ncard_univ] using h
 
-
 theorem exists_component_of_count_pos (M : SourceCircleDecomposition f S)
     (h : 0 < Nat.card (ConnectedComponents (doubleLocusOn f S))) :
     Nonempty M.Index := by
   rw [M.component_count] at h
   exact Nat.card_pos_iff.mp h |>.1
-
 
 theorem component_count_zero_iff_injOn (M : SourceCircleDecomposition f S) :
     Nat.card (ConnectedComponents (doubleLocusOn f S)) = 0 ↔ InjOn f S := by
@@ -43,7 +39,6 @@ theorem component_count_zero_iff_injOn (M : SourceCircleDecomposition f S) :
       obtain ⟨x, hx⟩ := (M.pieces_isConnected i).nonempty
       exact Set.notMem_empty x (h ▸ M.piece_subset_double i hx)⟩
     exact Nat.card_eq_zero.mpr (Or.inl hempty)
-
 
 theorem isEmbedding_of_component_count_zero [TopologicalSpace X] [T2Space X]
     (M : SourceCircleDecomposition f S) (hS : IsCompact S) (hf : ContinuousOn f S)

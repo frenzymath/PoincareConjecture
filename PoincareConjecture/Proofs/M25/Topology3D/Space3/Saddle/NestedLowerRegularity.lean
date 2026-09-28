@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem height_regular (d : ℝ) (q : UnitTwoSphere)
     (hq : (heightCoordinates

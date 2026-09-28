@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingPlane
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,13 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
-
-
 
 theorem exists_radial_height_correction_with_ratio (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)
@@ -86,11 +68,6 @@ theorem exists_radial_height_correction_with_ratio (K : SimplicialComplex ℝ E)
   · intro x
     rw [hef]
     exact hplane x x.property
-
-
-
-
-
 
 theorem exists_radial_height_correction (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)

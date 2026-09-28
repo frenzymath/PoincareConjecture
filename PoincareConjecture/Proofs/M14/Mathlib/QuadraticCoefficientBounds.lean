@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.CompactSpatialJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option synthInstance.maxSize 2048
@@ -19,9 +10,6 @@ open scoped ContDiff NNReal Topology
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_quadratic_coefficient_bounds {a b : ℝ} (hab : a < b)
     {U S : Set E} (hU : IsOpen U) (hS : IsCompact S) (hconvex : Convex ℝ S) (hsub : S ⊆ U)
@@ -51,9 +39,6 @@ theorem exists_quadratic_coefficient_bounds {a b : ℝ} (hab : a < b)
   · exact (le_add_of_nonneg_left (show 0 ≤ K₀ from zero_le)).trans
       (le_add_of_nonneg_right (show 0 ≤ K₂ from zero_le))
   · exact le_add_of_nonneg_left (show 0 ≤ K₀ + K₁ from zero_le)
-
-
-
 
 theorem exists_short_quadratic_interval {m β η : ℝ} (hm : 0 < m) (hη : 0 < η) :
     ∃ d : ℝ, 0 < d ∧ d ≤ η ∧ ∀ b ∈ Ioc (0 : ℝ) d, 0 < m / 4 - β * b ^ 2 := by

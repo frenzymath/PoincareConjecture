@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.GroupRank.FiniteS
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.GroupRank.LatticeWinding
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Models.OriginalComponentGroups
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry AbstractSimplicialComplex
 open PreAbstractSimplicialComplex.ModTwoCochains

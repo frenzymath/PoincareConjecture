@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.BoxSpacetimeTransport
 import PoincareConjecture.Proofs.M28.Generalized.CompactBoxLifetime
 import Mathlib.Topology.Algebra.Group.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -27,8 +17,6 @@ variable (F : GeneralizedRicciFlowData.{u}) {ι : Type v} (b : ι → F.box_inde
     (hJ : ∀ s ∈ J, ∀ i, s ∈ (F.box (b i)).interval)
     (htF : t ∈ F.interval)
     (hJopen : ∃ V : Set ℝ, IsOpen V ∧ J = F.interval ∩ V)
-
-
 
 noncomputable def boxTransportCylinder :
     GeneralizedFlowCylinder F (F.slice t) t 1 {s : ℝ | t + s ∈ J}
@@ -75,8 +63,6 @@ noncomputable def boxTransportCylinder :
       boxTransport_apply F b t (t + s' / 1) ht
         (hJ _ (hphysical s' hs')) (hJF (hphysical s' hs')) i y⟩
 
-
-
 theorem boxTransportCylinder_zero (htJ : t ∈ J)
     (x : (F.slice t).carrier) (hx : x ∈ range (boxEvaluation F b t ht)) :
     (boxTransportCylinder F b t ht J hJF hJ htF hJopen).pointMap
@@ -89,9 +75,6 @@ theorem boxTransportCylinder_zero (htJ : t ∈ J)
     Subtype.ext (by simp)
   exact congrArg (fun s : (F.box (b i)).interval =>
     (⟨s.val, (F.box (b i)).forward s.val s.property y⟩ : F.point)) heq
-
-
-
 
 theorem exists_compact_transport_cylinder
     (F : GeneralizedRicciFlowData.{u}) (t : ℝ) (htF : t ∈ F.interval)

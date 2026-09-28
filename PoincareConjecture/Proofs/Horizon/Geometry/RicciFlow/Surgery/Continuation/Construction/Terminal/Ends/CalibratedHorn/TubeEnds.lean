@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.HalfNormalization
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -75,8 +67,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_proper_closed_tube_tail (e : TerminalEnd K)
     {X : Set (E.extended.slice T).carrier} (hX : IsClosed X)

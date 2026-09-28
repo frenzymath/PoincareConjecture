@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.MonotoneIntervalReplacement
 import PoincareConjecture.Proofs.M64.Mathlib.MonotoneAffineExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -20,12 +9,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Monotone_phase_chord_replacement
     {P D a b : ℝ} (hP : 0 < P) (ha : 0 < a) (hab : a < b) (hb : b < P)

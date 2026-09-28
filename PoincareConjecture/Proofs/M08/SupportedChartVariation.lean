@@ -182,4 +182,3 @@ theorem exists_supportedChartVariation (hM04 : RicciFlowCurvatureTheory.{u})
     supportedChartFamily_at_zero V.toLVariation x η c hsrc hs⟩
 
 end PoincareConjecture.M08
-

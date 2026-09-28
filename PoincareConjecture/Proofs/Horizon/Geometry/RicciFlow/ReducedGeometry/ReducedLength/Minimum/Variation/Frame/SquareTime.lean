@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.AdaptedCoefficient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -143,7 +136,6 @@ theorem chartConnection_pairing_eq_retainedConnection_squareDomain
   rw [fderiv_bilinear_symm _ _ hG hsym (0, w) u v] at hK
   rw [chartConnection_pairing _ _ (chartActionMetric_pos F T x hz)]
   linarith only [hK]
-
 
 theorem chartConnection_eq_retainedConnection_squareDomain
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)

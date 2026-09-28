@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +15,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
-
-
 theorem m64Intrinsic_geodesic_velocity_hasDerivAt
     (g : RiemannianMetric 2 AnnulusCoordinates)
     {gamma : ℝ → AnnulusCoordinates} {I : Set ℝ}
@@ -42,12 +26,6 @@ theorem m64Intrinsic_geodesic_velocity_hasDerivAt
   rw [m64Intrinsic_model_chart_coefficients] at h
   simpa only [extChartAt_model_space_eq_id,
     PartialEquiv.refl_coe, id_eq] using h
-
-
-
-
-
-
 
 theorem m64Intrinsic_connection_reparam_geodesic_eq_zero
     {g : RiemannianMetric 2 AnnulusCoordinates} (D : LeviCivitaData g)
@@ -83,12 +61,6 @@ theorem m64Intrinsic_connection_reparam_geodesic_eq_zero
       (c • deriv gamma (phi t)) = 0
   simp only [map_smul, smul_apply, smul_neg]
   exact neg_add_cancel _
-
-
-
-
-
-
 
 theorem m64Intrinsic_normalized_geodesic_connection_eq_zero
     {g : RiemannianMetric 2 AnnulusCoordinates} (D : LeviCivitaData g)
@@ -132,11 +104,6 @@ theorem m64Intrinsic_normalized_geodesic_connection_eq_zero
       map_smul, smul_eq_mul, hus]
     ring
   rw [hn, Real.sqrt_sq_eq_abs, hs, smul_smul, hcs]
-
-
-
-
-
 
 theorem m64Intrinsic_normalized_geodesic_turning_eq_zero
     {g : RiemannianMetric 2 AnnulusCoordinates} (D : LeviCivitaData g)

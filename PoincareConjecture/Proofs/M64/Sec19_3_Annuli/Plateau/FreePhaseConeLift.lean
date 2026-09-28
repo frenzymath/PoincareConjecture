@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakFilling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseTargetAngle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +15,6 @@ open Proofs.M58
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_cone_real_phase
     (P : M62.CircleProductData F circumference)

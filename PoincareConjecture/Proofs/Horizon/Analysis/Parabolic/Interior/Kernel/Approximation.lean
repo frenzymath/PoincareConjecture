@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Bounded
 import Mathlib.Topology.MetricSpace.HolderNorm
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Filter MeasureTheory Real

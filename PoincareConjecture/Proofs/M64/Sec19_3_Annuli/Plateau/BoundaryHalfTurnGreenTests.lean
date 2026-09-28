@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnTestLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSlice
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +18,6 @@ local notation "mu" => volume.restrict S
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "a" => curvePeriod / 2
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
-
-
-
 
 theorem m64HalfTurnPiece_vertical_green
     {u V : LoopPlane → E} (hu : Integrable u mu) (hV : Integrable V mu)
@@ -80,9 +71,6 @@ theorem m64HalfTurnPiece_vertical_green
   apply tendsto_nhds_unique hl
   exact hr.congr' (Eventually.of_forall fun j =>
     (hgreen _ (m64HalfTurnBlend_contDiff hf hg j)).symm)
-
-
-
 
 theorem m64HalfTurnPiece_seam_green
     {u V : LoopPlane → E} (hu : Integrable u mu) (hV : Integrable V mu) (D : E)

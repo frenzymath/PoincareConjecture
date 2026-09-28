@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem interior_preimage_convex (a : F →ᴬ[ℝ] E) {s : Set E} (hcv : Convex ℝ s)
     (hne : ∃ y, a y ∈ interior s) : interior (a ⁻¹' s) = a ⁻¹' interior s := by
@@ -48,9 +37,6 @@ theorem interior_preimage_convex (a : F →ᴬ[ℝ] E) {s : Set E} (hcv : Convex
   rw [A.interior_nonpos hA] at hxi
   change A x < 0 at hxi
   exact (hAx ▸ hxi).false
-
-
-
 
 theorem frontier_preimage_convex (a : F →ᴬ[ℝ] E) {s : Set E}
     (hs : IsClosed s) (hcv : Convex ℝ s) (hne : ∃ y, a y ∈ interior s) :

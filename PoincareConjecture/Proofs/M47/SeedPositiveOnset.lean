@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryRestriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_seed_positive_onset
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T b : ℝ}
@@ -76,8 +64,6 @@ theorem exists_seed_positive_onset
   · rcases honset with hbirth | hnonpositive
     · exact Or.inl (by linarith only [hbirth])
     · exact Or.inr (fun _ y => hnonpositive y)
-
-
 
 theorem seed_onset_birth_alternative
     {F : SurgeryFlowData.{u}} {T a b : ℝ}

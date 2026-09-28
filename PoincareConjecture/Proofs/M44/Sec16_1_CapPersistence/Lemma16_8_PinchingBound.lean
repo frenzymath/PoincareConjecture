@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -23,8 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem SurgeryPinchedOn.curvature_norm_le
     (P : M44CapPersistencePredecessors.{u}) {g : RiemannianMetric 3 M}
@@ -41,8 +29,6 @@ theorem SurgeryPinchedOn.curvature_norm_le
       simpa only [LeviCivitaData.negativeCurvaturePart, hleast] using hX
     simpa only [LeviCivitaData.negativeCurvaturePart, hleast] using hpinch.2.2 x hx hX'
   exact Poincare.fullNorm_le_of_hamiltonIvey hpinch.1 h12 h23 hscalar hnorm le_rfl hlog
-
-
 
 theorem SurgeryPinchedOn.scaled_curvature_norm_le
     (P : M44CapPersistencePredecessors.{u}) {g : RiemannianMetric 3 M}
@@ -61,8 +47,6 @@ theorem SurgeryPinchedOn.scaled_curvature_norm_le
     _ ≤ 13 * max B (Real.exp 4) := by
       apply mul_le_mul_of_nonneg_left _ (by norm_num)
       exact max_le_max hscalar (by nlinarith [Real.exp_pos (4 : ℝ)])
-
-
 
 theorem SurgeryFlowPinched.cap_curvature_norm_le
     {F : SurgeryFlowData.{u}} (hpinch : SurgeryFlowPinched F)

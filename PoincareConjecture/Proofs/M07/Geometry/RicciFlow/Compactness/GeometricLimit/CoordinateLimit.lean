@@ -7,20 +7,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Subsequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,10 +27,6 @@ local instance (k : ℕ) : IsManifold (𝓡 n) ∞ (S.carrier k).carrier :=
   (S.carrier k).isManifold
 local instance (k : ℕ) : MetricSpace (S.carrier k).carrier :=
   (S.carrier k).metricSpaceOf ((S.flow k).metricAt 0)
-
-
-
-
 
 theorem exists_complete_geometric_limit_of_chart_limits
     (hT : T' < 0 ∧ 0 < T)
@@ -160,9 +142,6 @@ theorem exists_complete_geometric_limit_of_chart_limits
   have hx' := hk x hx
   rw [hbase (σ k)] at hx'
   exact hx'
-
-
-
 
 theorem exists_complete_geometric_limit_of_controlled_charts
     (hT : T' < 0 ∧ 0 < T)

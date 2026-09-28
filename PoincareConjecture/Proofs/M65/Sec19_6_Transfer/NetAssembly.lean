@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.AreaLoops
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ShortLoops
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.CommonCircumference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65CommonTerminalAlternative (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (Set.univ : Set M)) (V : M64ThreeDimensionalFlowConclusion F)

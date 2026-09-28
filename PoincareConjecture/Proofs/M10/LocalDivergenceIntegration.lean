@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.DivergenceIntegration
 import PoincareConjecture.Proofs.M10.SupportedCalculus
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,7 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [Measure.IsAddHaarMeasure μ]
   {ι : Type*} [Fintype ι]
-
 
 theorem integral_mul_trace_fderiv_of_compact_vector
     (b : OrthonormalBasis ι ℝ E) {U : Set E} (hU : IsOpen U)
@@ -56,7 +47,6 @@ theorem integral_mul_trace_fderiv_of_compact_vector
     apply integrable_of_continuousOn_of_tsupport_subset hU hc hs
     · exact hu.continuousOn.mul (continuousOn_const.inner hV.continuous.continuousOn)
     · exact tsupport_mul_subset_right.trans (hinner i)
-
 
 theorem integral_mul_trace_fderiv_of_compact_scalar
     (b : OrthonormalBasis ι ℝ E) {U : Set E} (hU : IsOpen U)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelPrimitive.Global
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [SimplyConnectedSpace M]
-
-
 
 theorem exists_fixed_parallel_unit_field_of_simplyConnected
     (K : AncientKappaSolution 3 M) (x : M) (v w : TangentSpace (𝓡 3) x)
@@ -111,8 +98,6 @@ theorem exists_fixed_parallel_unit_field_of_simplyConnected
       (Eventually.of_forall (hmetric t)) ((hV (s q)).mdifferentiableAt (by simp))]
     rw [(hgeom t ht (s q)).2.2]
     exact map_zero _
-
-
 
 theorem exists_fixed_parallel_coordinate_of_simplyConnected
     (K : AncientKappaSolution 3 M) (x : M) (v w : TangentSpace (𝓡 3) x)

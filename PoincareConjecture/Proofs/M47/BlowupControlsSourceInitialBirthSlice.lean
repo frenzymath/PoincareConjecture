@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRetainedTensor
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoining
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_birth_slice_chart
     {F : SurgeryFlowData.{u}} {T q : ℝ} (hT : T ∈ F.surgery_times)
@@ -65,8 +53,6 @@ theorem exists_source_initial_birth_slice_chart
       (F.event T hT).retention.map ∘ (F.event T hT).limit_identify.inverse := funext hD
   rw [hfun]
   exact source_initial_retained_limit_metric hT i (hnegative hx) v w
-
-
 
 theorem source_initial_birth_slice_capture
     {F : SurgeryFlowData.{u}} {T A : ℝ} (hT : T ∈ F.surgery_times)

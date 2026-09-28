@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Recognition.OriginalFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

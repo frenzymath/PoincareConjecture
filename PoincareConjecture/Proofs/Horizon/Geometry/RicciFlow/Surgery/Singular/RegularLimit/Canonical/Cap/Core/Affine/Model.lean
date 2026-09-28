@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.AxialContraction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelComparison
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +13,6 @@ def space (a s : ℝ) (z : RoundCylinderSpace) : RoundCylinderSpace := (z.1, a *
 def pullback (a s : ℝ) (B : RoundCylinderTwoTensor) : RoundCylinderTwoTensor :=
   fun z v w => B (space a s z) (v.1, a * v.2) (w.1, a * w.2)
 
-
-
 theorem scaled_model_pullback {c a : ℝ} (hca : c * a ^ 2 = 1)
     (s v : ℝ) :
     (fun z x y => c * pullback a s (EvolvingRoundCylinderMetric v) z x y) =
@@ -24,8 +20,6 @@ theorem scaled_model_pullback {c a : ℝ} (hca : c * a ^ 2 = 1)
   funext z x y
   dsimp only [pullback, space, EvolvingRoundCylinderMetric]
   linear_combination x.2 * y.2 * hca
-
-
 
 theorem scaled_model_jetError {c a u : ℝ} (hca : c * a ^ 2 = 1) (hu : u ≠ 1)
     (s v : ℝ) (order : ℕ) (z : RoundCylinderSpace) :
@@ -42,8 +36,6 @@ theorem calibrated_dilation {c : ℝ} (hc : 0 < c) :
     c * (Real.sqrt c)⁻¹ ^ 2 = 1 := by
   rw [inv_pow, Real.sq_sqrt hc.le]
   exact mul_inv_cancel₀ hc.ne'
-
-
 
 theorem normalized_model_jetError {c : ℝ} (hc : 0 < c)
     (s : ℝ) (order : ℕ) (z : RoundCylinderSpace) :

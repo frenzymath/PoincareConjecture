@@ -5,19 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Tensors
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +56,6 @@ private theorem scalarCurvature_nonpos_of_bounded_smoothExhaustion
     have hreaction := mul_le_mul_of_nonneg_right (hbound t ht' x) hnonneg
     nlinarith
   · exact hinit
-
-
 
 theorem scalarCurvature_terminal_nonpos_of_bounded_ancient_slice_nonpos
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -142,8 +127,6 @@ theorem scalarCurvature_terminal_nonpos_of_bounded_ancient_slice_nonpos
   have hx := hresult x (-a) ⟨by linarith, le_rfl⟩
   change (F.connection (-a + a)).scalarCurvature x ≤ 0 at hx
   exact (congrArg (fun t => (F.connection t).scalarCurvature x ≤ 0) (neg_add_cancel a)).mp hx
-
-
 
 theorem scalarCurvature_positive_somewhere_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))

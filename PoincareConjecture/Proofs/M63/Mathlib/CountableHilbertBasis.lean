@@ -2,22 +2,11 @@ import Mathlib.Analysis.InnerProductSpace.l2Space
 import Mathlib.Analysis.RCLike.Lemmas
 import Mathlib.Topology.Algebra.Module.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem secondCountable_of_countable_hilbertBasis
     {iota 𝕜 E : Type*} [Countable iota] [RCLike 𝕜]

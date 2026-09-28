@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M36.ComparisonPullback
 import PoincareConjecture.Proofs.M36.CylinderAllOrderBounds
 import PoincareConjecture.Proofs.M36.SurgeryTransitionMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -267,8 +258,6 @@ theorem comparisonNeckError_centered_germ (g₀ : StandardInitialMetric)
   simp only [sub_apply, ContinuousLinearMap.bilinearComp_apply]
   rw [← herr]
   rfl
-
-
 
 theorem exists_comparisonNeckMetric_jet_bound (g₀ : StandardInitialMetric)
     {K : Set StandardCapSpace} (hK : IsCompact K) (hK0 : ∀ x ∈ K, x ≠ 0)

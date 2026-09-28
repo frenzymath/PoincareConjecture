@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.VanishingMetricErrorJets
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPullbackJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem cylinder_pullback_jet_difference_tendsto_zero_of_bounded
     (f : ℕ → RoundCylinderCoordinates → V) (p : ℕ → RoundCylinderCoordinates)

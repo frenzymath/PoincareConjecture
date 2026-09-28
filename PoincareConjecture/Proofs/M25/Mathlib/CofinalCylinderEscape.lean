@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M25.Mathlib.CofinalCylinderEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_cylinderTail_disjoint_compact_after_of_not_isCompact
     {K W : Type*} [TopologicalSpace K] [TopologicalSpace W]

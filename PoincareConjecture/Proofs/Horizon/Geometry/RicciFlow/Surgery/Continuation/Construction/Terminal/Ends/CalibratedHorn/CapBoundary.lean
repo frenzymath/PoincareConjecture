@@ -5,7 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.NeckConta
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Complement
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.NonFilling
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,8 +17,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem boundary_end_smooth_transport_of_epsilon_le
     (C : CapCertificate g) (hC : C.epsilon ≤ 1 / 200) :
@@ -54,8 +51,6 @@ theorem end_neck_isSeparating_of_epsilon_le (C : CapCertificate g)
   exact (C.boundary_neck.isSeparating_iff_of_homeomorph C.end_neck D.toHomeomorph
     hcomponent hS).mp C.boundary_neck_isSeparating
 
-
-
 theorem exists_compact_filling_end_sphere_of_epsilon_le
     (C : CapCertificate g) (hC : C.epsilon ≤ 1 / 200) :
     ∃ K : Set M, IsCompact K ∧ K ⊆ C.carrier ∧
@@ -73,8 +68,6 @@ theorem exists_compact_filling_end_sphere_of_epsilon_le
   · change (interior (D.toHomeomorph '' C.closed_core)).Nonempty
     rw [← D.toHomeomorph.image_interior, ← C.core_eq_interior_closed_core]
     exact C.core_nonempty.image D
-
-
 
 theorem closed_core_neck_noncontainment_of_epsilon_le
     (C : CapCertificate g) (N : EpsilonNeck g)
@@ -110,8 +103,6 @@ theorem closed_core_neck_noncontainment_of_epsilon_le
     exact C.core_nonempty.image D.symm
   exact N.not_isCompact_of_frontier_eq_central_sphere hcore hfront hint
     (C.closed_core_compact.image D.symm.continuous)
-
-
 
 theorem carrier_subset_core_of_disjoint_boundary_of_epsilon_le
     (C D : CapCertificate g) (hC : C.epsilon ≤ 1 / 200) (hD : D.epsilon ≤ 1 / 200)

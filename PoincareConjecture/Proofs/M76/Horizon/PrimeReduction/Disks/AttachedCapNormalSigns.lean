@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.TaperingCapAnnuli
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -16,8 +8,6 @@ open PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 theorem exists_attached_cap_normal_signs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionMetric
 import PoincareConjecture.Proofs.M25.Mathlib.RoundSphereDistortion
 import PoincareConjecture.Proofs.M25.Mathlib.SphereFrameStability
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +13,6 @@ universe u
 namespace PoincareConjecture.EpsilonNeck
 
 open Poincare.Geometry.Riemannian.SpaceForm
-
-
-
-
 
 theorem exists_contained_slice_diffeomorph_norm_bounds {K : ℝ} (hK : 1 < K) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -97,9 +81,6 @@ theorem exists_contained_slice_diffeomorph_norm_bounds {K : ℝ} (hK : 1 < K) :
     have hmul := mul_le_mul_of_nonneg_left hlow (zero_lt_one.trans hK).le
     simpa only [← mul_assoc, mul_inv_cancel₀ (zero_lt_one.trans hK).ne', one_mul] using hmul
 
-
-
-
 theorem exists_contained_slice_inner_control {η : ℝ} (hη : 0 < η) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -131,10 +112,6 @@ theorem exists_contained_slice_inner_control {η : ℝ} (hη : 0 < η) :
   rw [add_sub_cancel_left, div_mul_eq_mul_div]
   apply (div_lt_iff₀ hden).mpr
   nlinarith [Real.pi_pos]
-
-
-
-
 
 theorem exists_contained_slice_orthogonal_control {ζ : ℝ} (hζ : 0 < ζ) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

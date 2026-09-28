@@ -3,17 +3,6 @@ import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +11,6 @@ open scoped ContDiff Manifold NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem smallPerturbation_invertible_derivative (g : E → E)
     (hg : ContDiff ℝ ∞ g) {L : ℝ≥0} (hL : L < 1) (hlip : LipschitzWith L g)
@@ -37,8 +24,6 @@ theorem smallPerturbation_invertible_derivative (g : E → E)
   change HasFDerivAt (fun y => y + g y) (1 - (-fderiv ℝ g x)) x
   simpa only [sub_neg_eq_add, ContinuousLinearMap.one_def, id_eq] using
     (hasFDerivAt_id x).fun_add (((hg.differentiable (by simp)) x).hasFDerivAt)
-
-
 
 noncomputable def smallPerturbationDiffeomorph (g : E → E)
     (hg : ContDiff ℝ ∞ g) {L : ℝ≥0} (hL : L < 1) (hlip : LipschitzWith L g) :
@@ -64,7 +49,6 @@ noncomputable def smallPerturbationDiffeomorph (g : E → E)
     contMDiff_toFun := he.contMDiff
     contMDiff_invFun := (e.contDiff_symm hA he).contMDiff }
 
-
 theorem smallPerturbationDiffeomorph_apply (g : E → E)
     (hg : ContDiff ℝ ∞ g) {L : ℝ≥0} (hL : L < 1) (hlip : LipschitzWith L g) (x : E) :
     smallPerturbationDiffeomorph g hg hL hlip x = x + g x := rfl
@@ -81,8 +65,6 @@ theorem lipschitz_smul_of_abs_le_one (g : E → E) {L : ℝ≥0}
     |a| * ‖g x - g y‖ ≤ 1 * ‖g x - g y‖ :=
       mul_le_mul_of_nonneg_right ha (norm_nonneg _)
     _ ≤ L * dist x y := by simpa only [one_mul, dist_eq_norm] using hlip.norm_sub_le x y
-
-
 
 theorem exists_smallPerturbation_isotopy (g : E → E)
     (hg : ContDiff ℝ ∞ g) (hgc : HasCompactSupport g)

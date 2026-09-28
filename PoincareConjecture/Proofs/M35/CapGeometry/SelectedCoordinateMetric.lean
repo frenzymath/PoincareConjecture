@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCoordinateJets
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricConnectionJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local instance selectedCoordinateDualNormedGroup : NormedAddCommGroup (V →L[�
 local instance selectedCoordinateDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) := inferInstance
 local instance selectedCoordinateMetricNormedGroup : NormedAddCommGroup B := inferInstance
 local instance selectedCoordinateMetricNormedSpace : NormedSpace ℝ B := inferInstance
-
-
 
 theorem blowupSequence_fixed_coordinate_metric_jets
     (P : M35StandardCapPredecessors)

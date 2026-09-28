@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingExteriorIdentity
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivativeDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,8 +58,6 @@ private theorem norm_even_norm_fderiv {w : ℝ → ℝ}
     Real.norm_eq_abs, innerSL_apply_norm]
   have h := congrArg abs (mul_axisDivision_deriv hw he ‖x‖)
   simpa only [abs_mul, abs_norm, mul_comm] using h
-
-
 
 theorem smoothGaugeForcing_space_norm_eq_radial
     {h f₀ xi : ℝ → ℝ}

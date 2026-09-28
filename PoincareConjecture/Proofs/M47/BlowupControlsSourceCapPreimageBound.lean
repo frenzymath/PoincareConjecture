@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthCenter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_cap_preimage_initial_radius
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

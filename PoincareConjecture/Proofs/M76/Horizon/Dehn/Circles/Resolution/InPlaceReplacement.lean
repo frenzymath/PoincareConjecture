@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OrdinaryModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

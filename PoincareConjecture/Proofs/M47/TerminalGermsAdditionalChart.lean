@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsFiniteDescent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_metric_additional_chart
     {n : ℕ} {ι : Type*} {P : ι → Type*} {M N : Type*}

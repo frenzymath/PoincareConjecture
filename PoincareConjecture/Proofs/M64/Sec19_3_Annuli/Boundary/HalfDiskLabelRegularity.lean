@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.HalfDiskGradientRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.HalfDiskBoundaryFrame
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,11 +16,6 @@ open M65Branch M65StrictTrace
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
-
 
 theorem halfDisk_label_gradient_regular
     {g : RiemannianMetric n E} (D : LeviCivitaData g)

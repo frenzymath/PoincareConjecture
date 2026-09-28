@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.SmoothTime.Comparison
 
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
 universe u
@@ -9,7 +7,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
 
 def m66RestrictInput {a b : ℝ} (P : M65RawFlowInput M a b)
     (t s : Set.Icc a b) (hts : t.1 < s.1) : M65RawFlowInput M t.1 s.1 where
@@ -29,7 +26,6 @@ def m66RestrictInput {a b : ℝ} (P : M65RawFlowInput M a b)
   second_countable := P.second_countable
   family := P.family
   family_null := P.family_null
-
 
 theorem m66_subslab_comparison
     (hM61 : M61RawWidthCore.{u})

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.Ellipticity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem riemannian_ball_subset_of_margin
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -36,9 +24,6 @@ theorem riemannian_ball_subset_of_margin
     rw [← ENNReal.ofReal_add hr hs]
     exact ENNReal.ofReal_le_ofReal hmargin
   exact (Manifold.riemannianEDist_triangle.trans_lt (ENNReal.add_lt_add hq hx)).trans_le hsum
-
-
-
 
 theorem exists_normal_chart_of_local_noncollapse
     {n : ℕ} {M : Type u} [TopologicalSpace M]

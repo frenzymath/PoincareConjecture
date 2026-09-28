@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.FiniteC
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalTargetCells
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.PairedSlabGluing
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -18,8 +16,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem HamiltonZeroPastedTerminalBalls.exists_locally_injective_endpoint
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -167,9 +163,6 @@ theorem ChartwisePLMap.hamiltonZeroHandleMap_of_univ
   rw [hamiltonZeroHandleMap_domain]
   rfl
 
-
-
-
 theorem exists_hamiltonZero_paired_slab_rigid_map
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
     {d : κ → OpenPartialHomeomorph X0 V3}
@@ -280,9 +273,6 @@ theorem exists_hamiltonZero_paired_slab_rigid_map
     intro hi
     obtain ⟨side, hs⟩ := mem_iUnion.mp hi
     exact hx (interior_mono inter_subset_left hs)
-
-
-
 
 theorem HamiltonZeroSourceBoundaryDiskData.exists_relative_locally_injective_map
     {ι κ E : Type*} [TopologicalSpace E]

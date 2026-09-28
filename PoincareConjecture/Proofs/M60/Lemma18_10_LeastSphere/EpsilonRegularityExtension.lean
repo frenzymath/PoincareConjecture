@@ -9,14 +9,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 import Mathlib.Analysis.SpecialFunctions.Pow.Integral
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +20,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem suHarmonicCylinder_pointwise_decay [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -121,8 +111,6 @@ private theorem cylinder_limit_of_column_decay {k : ℕ}
     (u (suCylinderPoint t θ)) (f t) (limUnder atTop f)).trans_lt
     (by linarith only [hangle', hrad, htb.2])
 
-
-
 theorem suHarmonicCylinder_limit [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {φ : LoopPlane → M} (hφ : ContMDiff (𝓡 2) (𝓡 n) ∞ φ) {T : ℝ} (hT : 2 ≤ T)
@@ -173,8 +161,6 @@ theorem suHarmonicCylinder_limit [CompactSpace M] [T2Space M]
   rw [Metric.mem_ball, dist_eq_norm, hp]
   exact hb t ht θ hθ
 
-
-
 theorem suHarmonicPuncture_continuous [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {φ : LoopPlane → M}
     (hφ : ContMDiffOn (𝓡 2) (𝓡 n) ∞ φ (Metric.ball (0 : LoopPlane) 1 \ {0}))
@@ -219,8 +205,6 @@ theorem suHarmonicPuncture_continuous [CompactSpace M] [T2Space M]
   · apply ((continuousAt_update_of_ne hne).mpr ?_).continuousWithinAt
     exact (hφ.contMDiffAt ((Metric.isOpen_ball.sdiff isClosed_singleton).mem_nhds
       ⟨hz, hne⟩)).continuousAt
-
-
 
 theorem suHarmonicPuncture_power_decay [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {φ : LoopPlane → M}
@@ -312,8 +296,6 @@ private theorem puncture_columns_memLp_of_power {k : ℕ}
     (ENNReal.ofReal_pos.mpr (by linarith only [hq])).ne' ENNReal.ofReal_ne_top).mp
   rw [ENNReal.toReal_ofReal (show 0 ≤ q by linarith only [hq])]
   exact hint
-
-
 
 theorem suHarmonicPuncture_chart_integrability [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {φ : LoopPlane → M}
@@ -414,4 +396,3 @@ theorem suHarmonicPuncture_chart_integrability [CompactSpace M] [T2Space M]
   exact hA (mem_image_of_mem _ (Metric.ball_subset_closedBall hz))
 
 end PoincareConjecture.M60
-

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MovingVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +22,6 @@ theorem raw_volumeDensity_contDiff (g : RiemannianMetric n V) :
   intro x
   exact (g.contDiffAt_pullbackVolumeDensity (f := id) contMDiffAt_id
     (by simpa using Function.injective_id)).1
-
 
 theorem integral_density_laplacian_eq_zero {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {f : V → ℝ}

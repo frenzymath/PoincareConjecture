@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInverseChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι G : Type*} [TopologicalSpace X]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
 
 theorem ChartwisePLSphere.exists_locallyPL_inverse_chart_parameterization
     {e : ι → OpenPartialHomeomorph X V3} {S : Set X}

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenTubeTransport
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_positive_openLine_graph_transport
     (T : OpenPartialHomeomorph

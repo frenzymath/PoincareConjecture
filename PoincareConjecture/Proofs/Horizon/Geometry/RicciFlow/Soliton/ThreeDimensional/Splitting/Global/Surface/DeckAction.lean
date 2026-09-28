@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Transition
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +23,6 @@ private instance : ConnectedSpace (UnitSphere 2) := by
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_orthogonal_surface_deck_transformation
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)
@@ -99,7 +87,6 @@ private theorem surfaceMotion_inv
     (x : UnitSphere 2) : sphereMotion L (sphereMotion L⁻¹ x) = x :=
   Subtype.ext (L.apply_symm_apply x)
 
-
 theorem surfaceMotion_injective :
     Function.Injective (fun L : EuclideanSpace ℝ (Fin 3) ≃ₗᵢ[ℝ]
       EuclideanSpace ℝ (Fin 3) => (sphereMotion L : UnitSphere 2 → UnitSphere 2)) := by
@@ -124,7 +111,6 @@ theorem surfaceMotion_injective :
     _ = K (‖v‖ • (x : EuclideanSpace ℝ (Fin 3))) := (K.map_smul _ _).symm
     _ = K v := congrArg K hscale
 
-
 def orthogonalSurfaceDeckGroup (q : UnitSphere 2 → M) :
     Subgroup (EuclideanSpace ℝ (Fin 3) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 3)) where
   carrier := {L | ∀ x, q (sphereMotion L x) = q x}
@@ -137,7 +123,6 @@ def orthogonalSurfaceDeckGroup (q : UnitSphere 2 → M) :
     have h := hL (sphereMotion L⁻¹ x)
     rw [surfaceMotion_inv] at h
     exact h.symm
-
 
 instance orthogonalSurfaceDeckGroup_mulAction (q : UnitSphere 2 → M) :
     MulAction (orthogonalSurfaceDeckGroup q) (UnitSphere 2) where
@@ -178,7 +163,6 @@ theorem orthogonalSurfaceDeckGroup_free (q : UnitSphere 2 → M)
 
 omit [IsManifold (𝓡 2) ∞ M] in
 
-
 theorem orthogonalSurfaceDeckGroup_finite (q : UnitSphere 2 → M)
     (hq : IsLocalDiffeomorph (𝓡 2) (𝓡 2) ∞ q) :
     Finite (orthogonalSurfaceDeckGroup q) := by
@@ -194,7 +178,6 @@ theorem orthogonalSurfaceDeckGroup_finite (q : UnitSphere 2 → M)
   apply Finite.of_injective ev
   intro L K h
   exact orthogonalSurfaceDeckGroup_eval_injective q hq x (congrArg Subtype.val h)
-
 
 theorem orthogonalSurfaceDeckGroup_orbit_iff
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)
@@ -245,8 +228,6 @@ theorem orthogonalSurfaceDeckGroup_smul_eq_neg (q : UnitSphere 2 → M)
   change L.val (x : EuclideanSpace ℝ (Fin 3)) = -x.val
   rw [orthogonalSurfaceDeckGroup_eq_antipodal q hq L hL]
   rfl
-
-
 
 theorem orthogonalSurfaceDeckGroup_fiber_dichotomy
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)

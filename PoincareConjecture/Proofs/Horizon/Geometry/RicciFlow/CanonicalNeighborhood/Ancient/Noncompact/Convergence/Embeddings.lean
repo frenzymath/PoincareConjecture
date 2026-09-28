@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Statement
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.SpacetimeBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,14 +20,11 @@ variable {kappa : ℝ} {source target : BasedKappaSolution kappa}
   (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target)
     (Iic 0 ×ˢ U))
 
-
 theorem contMDiffOn_terminalSpatialMap {t : ℝ} (ht : t ≤ 0) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (fun x => (e.toFun (t, x)).2) U := by
   exact contMDiff_snd.comp_contMDiffOn
     (e.smooth_on.comp (contMDiffOn_const.prodMk contMDiffOn_id)
       (fun x hx => ⟨ht, hx⟩))
-
-
 
 theorem terminal_coefficient_eq_fixed_pullback
     (hU : IsOpen U)
@@ -70,8 +56,6 @@ theorem terminal_coefficient_eq_fixed_pullback
   unfold RiemannianMetric.pullbackCoefficients
   erw [hd]
   rfl
-
-
 
 theorem contDiffOn_terminalCoefficient
     (hU : IsOpen U)

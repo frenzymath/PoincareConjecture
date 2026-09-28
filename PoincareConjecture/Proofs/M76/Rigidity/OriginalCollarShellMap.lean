@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.CollarCoreBoundaryParameter
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +16,6 @@ local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3}
-
-
-
 
 theorem exists_original_collar_shell_map
     (L : SimplicialComplex ℝ E) (c : E × ℝ → X)

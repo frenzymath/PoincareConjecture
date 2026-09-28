@@ -9,7 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "A2" => squareAnnulus 8 1
 
-
 def annulusChartImage {X : Type*} [TopologicalSpace X] {T : Set X} {L d : ℝ}
     (c : squareAnnulus L d ≃ₜ T) (S : Set P2) : Set X :=
   (fun p : squareAnnulus L d ↦ (c p : X)) ''
@@ -20,8 +19,6 @@ theorem annulusChartImage_subset {X : Type*} [TopologicalSpace X]
     annulusChartImage c S ⊆ T := by
   rintro z ⟨p, _, rfl⟩
   exact (c p).property
-
-
 
 theorem exists_transported_boundary_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -84,9 +81,6 @@ theorem exists_transported_boundary_annulus
     refine ⟨q, hq, ?_⟩
     exact (hval q).trans
       (congrArg (fun w : squareAnnulus L d ↦ (c w : E)) (Subtype.ext hqp))
-
-
-
 
 theorem exists_proper_disk_boundary_correction_through_annulus
     {R B T : Set V3} {L d : ℝ} (hR : IsCompact R)

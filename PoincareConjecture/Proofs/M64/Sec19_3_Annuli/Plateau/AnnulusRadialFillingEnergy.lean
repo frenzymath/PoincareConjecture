@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialSmallFilling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +21,6 @@ local notation "S" => ball (0 : LoopPlane) 1
 local notation "K" => closedBall (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
-
 
 theorem m64RadialFilling_energy_le_columns
     (e : M → E) (hei : IsEmbedding e) (F : LoopPlane → M)
@@ -72,9 +58,6 @@ theorem m64RadialFilling_energy_le_columns
       linarith
 
 variable [IsManifold (𝓡 n) ∞ M] [CompactSpace M] [T2Space M]
-
-
-
 
 theorem m64ChartReadable_small_radial_H1_filling_energy
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

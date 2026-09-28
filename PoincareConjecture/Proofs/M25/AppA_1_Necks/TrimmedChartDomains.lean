@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedChainCuts
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedGraphSides
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} {epsilon : ℝ}
 
 open Classical in
-
 
 theorem trimmed_chart_domains
     (C : BalancedNeckChain g epsilon)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.Stability
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.LocalInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare
-
-
 
 theorem exists_injOn_total_map_of_injective_fiber_mfderiv
     {n : ℕ} {M : Type*} [TopologicalSpace M]

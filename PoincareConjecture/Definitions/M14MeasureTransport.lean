@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import Mathlib.LinearAlgebra.Basis.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology intervalIntegral

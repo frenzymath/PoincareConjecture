@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollarC
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapFaces
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCoreMatching
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +13,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 namespace PoincareConjecture.M64IntrinsicThreeArcCollar
 
 open Classical in
-
-
-
 
 theorem exists_matched_core
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}

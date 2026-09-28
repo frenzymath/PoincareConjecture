@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph.Local
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem exists_level_graphs_tendsto_C1
     (F : ℕ → ℝ × N → ℝ) (V : ℕ → Set (ℝ × N)) (hV : ∀ k, IsOpen (V k))

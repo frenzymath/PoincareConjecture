@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreenGeometry
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.Analysis.Normed.Module.Dual
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +14,6 @@ namespace PoincareConjecture
 open Proofs.M58
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem m64Integral_loopDisk_polar_vector (f : LoopPlane → E) (hf : Continuous f) :
     (∫ z in loopDiskSet, f z) =
@@ -48,8 +35,6 @@ theorem m64Integral_loopDisk_polar_vector (f : LoopPlane → E) (hf : Continuous
     _ = ∫ p in Ioc (0 : ℝ) 1 ×ˢ Ioo (-Real.pi) Real.pi,
         p.1 * L (f (p.1 • angularPoint p.2)) := integral_loopDisk_polar _
     _ = _ := by simpa only [map_smul, smul_eq_mul] using L.integral_comp_comm hp
-
-
 
 theorem m64Disk_integral_partial {f : LoopPlane → E} (hf : ContDiff ℝ 1 f) (i : Fin 2) :
     (∫ z in loopDiskSet, fderiv ℝ f z (EuclideanSpace.single i 1)) =
@@ -99,8 +84,6 @@ theorem m64Disk_integral_partial {f : LoopPlane → E} (hf : ContDiff ℝ 1 f) (
       integral_congr_ae (Eventually.of_forall (fun p => (m64DiskFlux_divergence hf i p).symm))
     _ = ∫ t in -Real.pi..Real.pi, angularPoint t i • f (angularPoint t) := hgreen
     _ = _ := by rw [intervalIntegral.integral_of_le hpi, integral_Icc_eq_integral_Ioc]
-
-
 
 theorem m64Disk_green_identity {f : LoopPlane → E} {phi : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hphi : ContDiff ℝ 1 phi) (i : Fin 2) :

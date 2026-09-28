@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_SupportedGaugeFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
 
 theorem backwardGaugeFamily_joint_contMDiffAt
     (hp : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ p.curve (Ioo τ₁ τ₂))
@@ -49,9 +38,6 @@ theorem backwardGaugeFamily_joint_contMDiffAt
     ((G.gaugeCover.spatial b).affineShift_domain_isOpen.mem_nhds hshift)).comp z
       (hL.snd.prodMk hv)
   exact (G.gaugeCover.cylinder b).smooth.contMDiffAt.comp z (hL.fst.prodMk hS)
-
-
-
 
 theorem supportedBackwardGaugeFamily_joint_contMDiffOn
     (hp : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ p.curve (Ioo τ₁ τ₂))
@@ -86,9 +72,6 @@ theorem supportedBackwardGaugeFamily_joint_contMDiffOn
     exact (hbase z hz).congr_of_eventuallyEq
       (heq.filter_mono nhdsWithin_le_nhds) heq.eq_of_nhds
 
-
-
-
 theorem backwardGaugeFamily_parameter_mfderiv (s : ℝ) :
     mfderiv (𝓘(ℝ, ℝ)) (spacetimeModel n) (fun v => backwardGaugeFamily p b lift η v s) 0 1 =
       ((G.gaugeCover.metric b).spatialTangentEquiv
@@ -107,8 +90,6 @@ theorem backwardGaugeFamily_parameter_mfderiv (s : ℝ) :
   simpa only [f, c, t, Function.comp_def, backwardGaugeFamily, zero_smul,
     TopologicalSpace.Opens.affineShift_zero, (G.gaugeCover.metric b).spatialTangentEquiv_eq]
     using hd
-
-
 
 theorem supportedBackwardGaugeFamily_parameter_mfderiv
     (hright : ∀ s ∈ tsupport η,

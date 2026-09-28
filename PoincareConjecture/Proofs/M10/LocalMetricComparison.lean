@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.NormalizedDifferential
 import PoincareConjecture.Proofs.M10.NormedSegmentDistance
 import PoincareConjecture.Proofs.M10.VectorDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Slice
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +14,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 theorem isSmoothEmbedding_collar_center
     {Y : Type*} [TopologicalSpace Y]
     [ChartedSpace E3 Y] [IsManifold (𝓡 3) ∞ Y]
@@ -32,8 +24,6 @@ theorem isSmoothEmbedding_collar_center
     _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ (fun q : S2 => c (q, 0)) :=
   c.isSmoothEmbedding_slice hc hci
     (ContinuousLinearEquiv.ofFinrankEq (by simp)) 0 hsource
-
-
 
 theorem isSmoothEmbedding_collar_center_in_punctured_model
     {Y : Type*} [TopologicalSpace Y]

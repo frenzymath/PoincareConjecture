@@ -2,22 +2,12 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 import Mathlib.Order.ConditionallyCompleteLattice.Finset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_exists_negative_diagonal
     (tau : ℕ → ℝ) (htau : ∀ k, 0 < tau k)
@@ -55,8 +45,6 @@ theorem terminalCurvature_exists_negative_diagonal
   apply hds k i hi (-a k) ⟨(neg_lt_neg (hata k)).le, (neg_neg_of_pos (ha k)).le⟩
   rw [abs_neg, abs_of_pos (ha k)]
   exact (hab k).trans_le (Finset.inf'_le _ (Finset.mem_univ (⟨i, by omega⟩ : Fin (k + 1))))
-
-
 
 theorem terminalCurvature_negative_diagonal_uniform_limit
     {Z : Type*} {Y : ℕ → Type*} [∀ i, PseudoMetricSpace (Y i)]

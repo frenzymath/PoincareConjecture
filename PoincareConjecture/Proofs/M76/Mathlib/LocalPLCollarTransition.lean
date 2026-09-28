@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocalPLAffineHalfspacePasting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem LocallyPiecewiseAffineOn.collar_transition
     {T : E → E} {U : Set E} (hT : LocallyPiecewiseAffineOn T U)

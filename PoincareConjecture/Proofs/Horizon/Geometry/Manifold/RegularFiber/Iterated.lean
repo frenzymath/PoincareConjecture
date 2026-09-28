@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubs
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace
@@ -10,7 +9,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Geometry.Manifold.RegularFiber
-
 
 def iteratedOpenFiberEquiv {M : Type*} [TopologicalSpace M] {k : ℕ}
     (f : M → Fin k → ℝ) (φ : M → ℝ) (U : Opens M)

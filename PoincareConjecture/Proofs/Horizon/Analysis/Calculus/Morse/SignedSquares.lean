@@ -2,14 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.Pow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ theorem contDiff_diagonal_quadratic {n : Nat} (c : Real) (σ : Fin n -> Real) :
     ContDiff Real ∞ (fun x : EuclideanSpace Real (Fin n) => c + ∑ i, σ i * x i ^ 2) :=
   contDiff_const.add (ContDiff.sum (fun i _ =>
     contDiff_const.mul ((EuclideanSpace.proj (𝕜 := Real) i).contDiff.pow 2)))
-
-
 
 theorem fderiv_diagonal_quadratic_eq_zero_iff {n : Nat} (c : Real)
     (σ : Fin n -> Real) (hσ : ∀ i, σ i ≠ 0) (x : EuclideanSpace Real (Fin n)) :

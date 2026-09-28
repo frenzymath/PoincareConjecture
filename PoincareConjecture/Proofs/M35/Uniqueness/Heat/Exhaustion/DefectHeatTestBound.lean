@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.DefectTestIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

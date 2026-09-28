@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X Y ι κ : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {e : ι → OpenPartialHomeomorph X V3}
   {d : κ → OpenPartialHomeomorph Y V3} {R : Set X} {T : Set Y}
-
-
-
 
 theorem ChartwisePLMap.inverse_homeomorph {h : R ≃ₜ T}
     (hh : ChartwisePLMap e d ⟨h, h.continuous⟩) :
@@ -96,9 +84,6 @@ theorem ChartwisePLMap.inverse_homeomorph {h : R ≃ₜ T}
     refine ⟨hay ▸ hai z hz, ?_⟩
     change G (d j y') = e i (h.symm y')
     rw [← hze, hGF z hz, ← hay, hae z hz]
-
-
-
 
 theorem ChartwisePLMap.chartwisePLHomeomorph {h : R ≃ₜ T}
     (hh : ChartwisePLMap e d ⟨h, h.continuous⟩) :

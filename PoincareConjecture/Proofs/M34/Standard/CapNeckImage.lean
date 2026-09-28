@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckImageCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +14,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X} (N : EpsilonNeck g)
-
-
-
 
 noncomputable def imageShift (e : OpenPartialHomeomorph M X)
     (hf : ContMDiffOn (𝓡 3) (𝓡 3) ∞ e e.source)

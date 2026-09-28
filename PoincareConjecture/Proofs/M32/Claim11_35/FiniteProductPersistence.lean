@@ -4,21 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Statements.M32HornSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -32,10 +17,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
-
 
 theorem blowupLimit_busemann_persists_on_closed_slab
     (P : RepairedHornSelectionPredecessors.{u}) {T₀ : ℝ≥0∞}

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.ZeroDimension
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Complete
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
@@ -33,8 +22,6 @@ local instance (k : ℕ) : IsManifold (𝓡 n) ∞ (S.carrier k).carrier :=
   (S.carrier k).isManifold
 local instance (k : ℕ) : MetricSpace (S.carrier k).carrier :=
   (S.carrier k).metricSpaceOf ((S.flow k).metricAt 0)
-
-
 
 theorem exists_complete_geometric_limit
     (hT : T' < 0 ∧ 0 < T) {R ρ a b : ℕ → ℝ} {N : ℕ → ℕ}
@@ -77,9 +64,6 @@ theorem exists_complete_geometric_limit
 end PoincareConjecture.NormalChartCover
 
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
-
-
-
 
 theorem pointedRicciFlowCompactness_of_uniform_normalChartCover_bounds
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

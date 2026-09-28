@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.IntrinsicConnection
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.HarmonicTension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

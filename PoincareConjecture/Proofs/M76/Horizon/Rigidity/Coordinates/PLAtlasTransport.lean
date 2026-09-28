@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +7,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 theorem homeomorph_pullback_chart_transition (h : X ≃ₜ Y)
     (e d : OpenPartialHomeomorph Y (Fin 3 → ℝ)) :
@@ -36,8 +24,6 @@ theorem homeomorph_pullback_chart_transition (h : X ≃ₜ Y)
       (z ∈ e.target ∧ e.symm z ∈ d.source)
     rw [h.apply_symm_apply]
 
-
-
 theorem homeomorph_pullback_chart_cancel (h : X ≃ₜ Y)
     (e : OpenPartialHomeomorph Y (Fin 3 → ℝ)) :
     h.symm.transOpenPartialHomeomorph (h.transOpenPartialHomeomorph e) = e := by
@@ -51,8 +37,6 @@ theorem homeomorph_pullback_chart_cancel (h : X ≃ₜ Y)
   · ext z
     change h (h.symm z) ∈ e.source ↔ z ∈ e.source
     rw [h.apply_symm_apply]
-
-
 
 theorem PLDomain.preimage_homeomorph {α : Type*}
     {e : α → OpenPartialHomeomorph Y (Fin 3 → ℝ)} {R : Set Y}
@@ -79,8 +63,6 @@ namespace Geometry
 
 variable {E X Y α : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 theorem PolyhedralPLInCharts.pullback_homeomorph
     {e : α → OpenPartialHomeomorph Y (Fin 3 → ℝ)} {f : E → Y} {S : Set E}
@@ -109,7 +91,6 @@ open Metric
 variable {X Y α : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {e : α → OpenPartialHomeomorph Y (Fin 3 → ℝ)}
 
-
 theorem ChartwisePLSphere.nonempty_preimage_homeomorph {S : Set Y}
     (hS : Nonempty (ChartwisePLSphere e S)) (h : X ≃ₜ Y) :
     Nonempty (ChartwisePLSphere (fun i => h.transOpenPartialHomeomorph (e i))
@@ -124,7 +105,6 @@ theorem ChartwisePLSphere.nonempty_preimage_homeomorph {S : Set Y}
   intro z
   change h.symm (s.map z) = h.symm (s.parametrization z)
   rw [s.map_eq]
-
 
 theorem ChartwisePLBall.nonempty_preimage_homeomorph {D S : Set Y}
     (hD : Nonempty (ChartwisePLBall e D S)) (h : X ≃ₜ Y) :
@@ -146,8 +126,6 @@ theorem ChartwisePLBall.nonempty_preimage_homeomorph {D S : Set Y}
     change h (h.symm (b.parametrization z)) ∈ S ↔ _
     rw [h.apply_symm_apply]
     exact b.boundary_eq z
-
-
 
 theorem IsPLIrreducible.preimage_homeomorph {R : Set Y}
     (hI : IsPLIrreducible e R) (h : X ≃ₜ Y) :

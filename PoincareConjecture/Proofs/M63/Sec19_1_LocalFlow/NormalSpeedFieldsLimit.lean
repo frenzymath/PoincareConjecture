@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedLimit
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedGradientLimit
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -32,9 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem exists_normal_speed_fields_limits
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

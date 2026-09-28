@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorsePro
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactSmoothChart
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackMorseCap_graph
     (rFlat rOne v0 v1 rho lambda : ℝ)

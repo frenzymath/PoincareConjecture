@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
-
-
-
 
 theorem horizontalCovariantDerivative_eq_zero_of_constant
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)

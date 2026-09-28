@@ -1,13 +1,5 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

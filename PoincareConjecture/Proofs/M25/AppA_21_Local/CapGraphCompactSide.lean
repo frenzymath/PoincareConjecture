@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import PoincareConjecture.Proofs.M25.Mathlib.OppositeCollarComponents
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.outward_graph_compact_side
     {M : Type u} [TopologicalSpace M]

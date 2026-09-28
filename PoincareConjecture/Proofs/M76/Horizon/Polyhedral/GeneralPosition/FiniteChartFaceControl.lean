@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Topology.Algebra.ContinuousAffineMap
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +12,6 @@ namespace OpenPartialHomeomorph
 variable {X E V : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
 
 theorem exists_convex_affine_face_neighborhood (B : OpenPartialHomeomorph X V)
     (s : Finset E) (f : E → X) (A : E →ᴬ[ℝ] V) {Y : Set X} (hY : IsOpen Y)
@@ -52,9 +41,6 @@ theorem exists_convex_affine_face_neighborhood (B : OpenPartialHomeomorph X V)
   · intro x hx
     rw [hcoord hx]
     exact hCW ⟨x, hx, rfl⟩
-
-
-
 
 theorem exists_finite_face_control
     {α κ : Type*} [Finite α] [DecidableEq E]

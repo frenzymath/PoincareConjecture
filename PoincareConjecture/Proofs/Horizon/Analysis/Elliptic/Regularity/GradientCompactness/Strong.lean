@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.Cauchy
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.Identification
 
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +11,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem memLp_two_of_lipschitzOn_compact_closure
     {O U : Set E} (hU : IsOpen U) (hUc : IsCompact (closure U))
@@ -35,8 +27,6 @@ theorem memLp_two_of_lipschitzOn_compact_closure
     filter_upwards [ae_restrict_mem hU.measurableSet] with x hx
     exact hB (mem_image_of_mem _ (subset_closure hx))
   exact ht.mono_exponent le_top
-
-
 
 theorem tendsto_lipschitzPartialL2_of_weak_divergence
     {O U : Set E} (hO : IsOpen O) (hU : IsOpen U)

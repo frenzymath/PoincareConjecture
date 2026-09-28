@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M49.Mathlib.FiniteJumpBalance
 import PoincareConjecture.Proofs.M49.Mathlib.ExponentialLeftLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ENNReal BigOperators
 
 namespace ENNReal
-
-
 
 theorem expWeighted_add_sum_le_of_finite_left_jumps (k : ℝ)
     {V loss : ℝ → ℝ≥0∞} {a b : ℝ} (S : Finset ℝ)

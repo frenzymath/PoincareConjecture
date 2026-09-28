@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_UniformCoo
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ noncomputable local instance initialCoefficientNormedGroup :
 
 noncomputable local instance initialCoefficientNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_uniform_curvature_derivative_bound (m : ℕ) {a : ℝ}
     (ha : 0 < a) (Z : ℝ) :
@@ -58,9 +46,6 @@ theorem exists_uniform_curvature_derivative_bound (m : ℕ) {a : ℝ}
   exact h.trans ((Finset.single_le_sum
     (fun k _ => mul_nonneg (hC k).le hR) (Finset.mem_univ i)).trans
       (le_add_of_nonneg_left zero_le_one))
-
-
-
 
 theorem exists_uniform_pullback_curvature_bound (m : ℕ) {a : ℝ}
     (ha : 0 < a) (Z : ℝ) :

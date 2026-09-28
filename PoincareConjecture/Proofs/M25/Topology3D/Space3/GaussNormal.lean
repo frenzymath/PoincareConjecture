@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereSard
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_sphere_collar_unit_normal (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) :
@@ -66,8 +53,6 @@ theorem exists_sphere_collar_unit_normal (ψ : UnitTwoSphere × ℝ → E3)
     A v⟫_ℝ = 0
   rw [sphereDirection_coe (hn0 q), NormedSpace.normalize, real_inner_smul_left,
     inner_gradient_left, hkernel', mul_zero]
-
-
 
 theorem exists_sphere_collar_regular_normal (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) :

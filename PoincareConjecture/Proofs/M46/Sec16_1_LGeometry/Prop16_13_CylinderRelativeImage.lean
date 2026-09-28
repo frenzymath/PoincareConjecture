@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderOpenImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -57,9 +48,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
-
-
-
 
 theorem rawCylinder_map_nhds_eq_nhdsWithin_clock
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
@@ -114,9 +102,6 @@ theorem rawCylinder_map_nhds_eq_nhdsWithin_clock
       (F.box_openEmbedding D.box).map_nhdsWithin_preimage_eq
         (R.spacetime.timeFunction ⁻¹' K.domain) pB
     _ = _ := congrArg (nhdsWithin · (R.spacetime.timeFunction ⁻¹' K.domain)) hbase.symm
-
-
-
 
 theorem rawCylinder_range_mem_nhdsWithin_clock
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)

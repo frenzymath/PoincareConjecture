@@ -1,23 +1,10 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace ContDiff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem fderiv_stereoInvFunAux_apply (v w a : E) :
     fderiv ℝ (stereoInvFunAux v) w a =
@@ -36,9 +23,6 @@ theorem fderiv_stereoInvFunAux_apply (v w a : E) :
     Function.comp_apply, Pi.add_apply, Pi.smul_apply, id_eq]
   match_scalars <;> field_simp <;> ring
 
-
-
-
 theorem inner_fderiv_stereoInvFunAux (v w a b : E) (hv : ‖v‖ = 1)
     (hw : inner ℝ v w = 0) (ha : inner ℝ v a = 0) (hb : inner ℝ v b = 0) :
     inner ℝ (fderiv ℝ (stereoInvFunAux v) w a)
@@ -54,9 +38,6 @@ theorem inner_fderiv_stereoInvFunAux (v w a b : E) (hv : ‖v‖ = 1)
     add_zero, real_inner_comm a w]
   field_simp
   ring
-
-
-
 
 theorem inner_fderiv_stereoInvFunAux_comp_linearIsometry
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]

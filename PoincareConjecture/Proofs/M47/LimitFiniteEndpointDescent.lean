@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Descent
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Descent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set Poincare.Gluing
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_endpoint_flow_descent
     {n : ℕ} {ι : Type*} [Nonempty ι] {P : ι → Type*} {N : Type*}

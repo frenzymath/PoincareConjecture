@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSliceElimination
 import PoincareConjecture.Proofs.M76.Mathlib.OrdinaryCappedCutLevel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,13 +14,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_protected_ordinary_capped_isotopy
     {S B T d b U R s₀ s₁ : Set E} {upper : E → ℝ}

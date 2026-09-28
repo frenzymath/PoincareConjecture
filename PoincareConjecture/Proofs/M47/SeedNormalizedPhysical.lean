@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M47.SeedM15Subtype
 import PoincareConjecture.Proofs.M47.CanonicalNeckTerminalMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem seedM15_normalized_physical_volume
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

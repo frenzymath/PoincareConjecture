@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.LevelTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +18,6 @@ open Poincare.Geometry.Riemannian.ScalarOperators.Gradient.Flow
 variable {M : Type*} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ConnectedSpace M] [NoncompactSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_smooth_neck_level_transport
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

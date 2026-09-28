@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteHarnackDomain
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
-
 theorem limitNoncollapse_physical_time_mem
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) (k : ℕ) (t : ℝ)
@@ -28,8 +18,6 @@ theorem limitNoncollapse_physical_time_mem
       (S.flow (G.subsequence k)).interval := by
   apply ((S.flow (G.subsequence k)).slice_nonempty_iff _).mp
   exact ⟨(G.embedding k).forward t ht G.limit.base⟩
-
-
 
 theorem limitNoncollapse_eventually_physical_time_pos
     {S : GeneralizedBlowupSequence.{u}} {H : ℝ≥0∞}

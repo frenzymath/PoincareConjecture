@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.CoreClosur
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.InnerAttachment
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -26,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
 
 theorem core_disjoint_end (N : CapCertificate g) : Disjoint N.core N.end_neck.carrier := by
   apply disjoint_left.mpr
@@ -64,9 +54,6 @@ private theorem boundary_region_subset_core_or_end (N : CapCertificate g)
     apply hxY
     rw [N.closed_core_eq_complement_end]
     exact ⟨N.boundary_neck_subset hx.1, hxE⟩
-
-
-
 
 theorem isPreconnected_boundary_region_inter_end (N : CapCertificate g)
     {a b : ℝ} (ha : -N.epsilon⁻¹ ≤ a) (ha0 : a < 0)

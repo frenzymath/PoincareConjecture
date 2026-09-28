@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndLocalDiffeomorph
 import PoincareConjecture.Proofs.M34.Standard.CoordinateVolumeBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 noncomputable def endReferenceDiffeomorph (e : StandardCylindricalEnd g)
     {H : ℝ} (hH : 3 ≤ H) :
@@ -66,8 +56,6 @@ noncomputable def endReferenceDiffeomorph (e : StandardCylindricalEnd g)
     rintro _ ⟨z, hz, rfl⟩
     exact (endAxialTranslation_contMDiffAt e (-(H - 4))
       (by linarith [hz.2.1]) (by linarith [hz.2.1])).contMDiffWithinAt
-
-
 
 theorem endReferenceDiffeomorph_pullback (e : StandardCylindricalEnd g)
     {H : ℝ} (hH : 3 ≤ H) {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e) :

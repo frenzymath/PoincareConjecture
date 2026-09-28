@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallNormalization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport.Chart
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +38,6 @@ private theorem exists_ball_coordinates {n : Nat}
   exact exists_global_extension_of_local_ball_embedding hr (fun x => e.symm (A x))
     (fun x hx y hy hxy => A.injective
       (e.symm.injOn (hA ⟨x, hx, rfl⟩) (hA ⟨y, hy, rfl⟩) hxy)) hloc
-
-
 
 theorem exists_supported_matching_of_balls_in_chart {n : Nat}
     (e : OpenPartialHomeomorph (EuclideanSpace Real (Fin n)) (EuclideanSpace Real (Fin n)))

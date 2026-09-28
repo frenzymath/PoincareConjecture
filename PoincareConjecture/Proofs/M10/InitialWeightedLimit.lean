@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.InitialGram
 import PoincareConjecture.Proofs.M10.InitialActionLimit
 import PoincareConjecture.Proofs.M10.WeightedRays
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

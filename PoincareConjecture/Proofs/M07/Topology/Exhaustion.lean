@@ -1,22 +1,11 @@
 import Mathlib.Topology.Compactness.SigmaCompact
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem iUnion_connectedComponentIn_eq_univ [PreconnectedSpace X]
     [LocallyConnectedSpace X] (U : ℕ → Set X) (hU : ∀ n, IsOpen (U n))
@@ -45,9 +34,6 @@ theorem iUnion_connectedComponentIn_eq_univ [PreconnectedSpace X]
   apply (show IsClopen V from ⟨hclosed, hopen⟩).eq_univ
   obtain ⟨n, hn⟩ := iUnion_eq_univ_iff.mp hcover base
   exact ⟨base, mem_iUnion.mpr ⟨n, mem_connectedComponentIn hn⟩⟩
-
-
-
 
 theorem CompactExhaustion.exists_connected_open_exhaustion [T2Space X]
     [PreconnectedSpace X] [LocallyConnectedSpace X] (K : CompactExhaustion X)
@@ -80,8 +66,6 @@ theorem CompactExhaustion.exists_connected_open_exhaustion [T2Space X]
   apply (K.isCompact (n + (b + 1))).of_isClosed_subset isClosed_closure
   exact closure_minimal
     ((connectedComponentIn_subset _ _).trans interior_subset) (K.isCompact _).isClosed
-
-
 
 theorem exists_connected_open_exhaustion [T2Space X] [PreconnectedSpace X]
     [LocallyConnectedSpace X] [LocallyCompactSpace X] [SecondCountableTopology X]

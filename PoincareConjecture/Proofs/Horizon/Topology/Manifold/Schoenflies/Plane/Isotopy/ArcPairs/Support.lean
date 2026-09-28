@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Interval.RelativeLocal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.ParametricInverse
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +27,6 @@ theorem contDiff_family_symm
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hi
   exact hi.contDiff
 
-
-
 theorem eventuallyEq_of_supported_matching
     {α β : Real → E2} {A K : Set E2} {J : Set Real} {s : Real}
     (hK : IsCompact K) (hKA : Disjoint K A)
@@ -43,9 +39,6 @@ theorem eventuallyEq_of_supported_matching
     hα (hK.isClosed.isOpen_compl.mem_nhds hsK)
   filter_upwards [hnear, self_mem_nhdsWithin] with t ht htJ
   exact (hfix (α t) ht).symm.trans (hmatch t htJ)
-
-
-
 
 theorem exists_planar_arc_isotopy_rel_square_and_arc_of_interval_isotopy
     {ρ a b l l₀ l₁ u₁ u₀ u : Real} (hab : a < b)

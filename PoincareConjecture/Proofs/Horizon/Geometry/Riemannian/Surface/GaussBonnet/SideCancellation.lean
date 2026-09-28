@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.SideIntegrals
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.AdjacentFaces
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,7 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Interval
 
 namespace PoincareConjecture.Topology.Surface
-
 
 def triangleSidePermutation (i : Fin 3) : Equiv.Perm (Fin 3) :=
   Equiv.addRight (-(i + 1))
@@ -49,8 +41,6 @@ private theorem lineMap_image_swap {S : Type*} (F : EuclideanSpace ℝ (Fin 2) �
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem coordinateTriangleTurningIntegral_pair_eq_zero
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

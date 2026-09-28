@@ -9,14 +9,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -57,14 +49,12 @@ abbrev RealProjectiveThree := Quotient realProjectiveThreeSetoid
 abbrev PuncturedRealProjectiveThree (p : RealProjectiveThree) :=
   {q : RealProjectiveThree // q ≠ p}
 
-
 structure StandardProjectiveSmoothCover (Q : Type u) [TopologicalSpace Q]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] where
   cover : UnitThreeSphere → Q
   surjective : Function.Surjective cover
   fibers : ∀ x y, cover x = cover y ↔ x = y ∨ x = -y
   local_diffeomorph : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ cover
-
 
 structure StandardPuncturedProjectiveCover (Q : Type u) [TopologicalSpace Q]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
@@ -75,7 +65,6 @@ structure StandardPuncturedProjectiveCover (Q : Type u) [TopologicalSpace Q]
     (cover x = cover y ↔ x = y ∨ x = -y)
   local_diffeomorph : IsLocalDiffeomorphOn (𝓡 3) (𝓡 3) ∞ cover
     {x | Quotient.mk' x ≠ p}
-
 
 structure OpenCylinderModel (U : Set M) where
   homeomorph : (UnitTwoSphere × Set.Ioo (0 : ℝ) 1) ≃ₜ U
@@ -105,7 +94,6 @@ def SmoothSphereIsotopicIn (U S₀ S₁ : Set M) : Prop :=
       Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ (fun z ↦ H (t, z)) ∧
         Set.range (fun z ↦ H (t, z)) ⊆ U) ∧
     Set.range (fun z ↦ H (0, z)) = S₀ ∧ Set.range (fun z ↦ H (1, z)) = S₁
-
 
 structure SmoothProjectiveDoubleModel (Q : Type u) [TopologicalSpace Q]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] where
@@ -204,7 +192,6 @@ structure EpsilonNeck (g : RiemannianMetric 3 M) where
   central_sphere_subset : central_sphere ⊆ carrier
   metric_comparison : NeckMetricJetComparison g epsilon scale coordinate_map
 
-
 def EpsilonNeck.IsSeparating {g : RiemannianMetric 3 M} (N : EpsilonNeck g) : Prop :=
   (connectedComponent N.center \ N.central_sphere).Nonempty ∧
     ¬ IsConnected (connectedComponent N.center \ N.central_sphere)
@@ -271,10 +258,6 @@ structure CapModelEquivalence (kind : CapModelKind) (p : RealProjectiveThree)
     letI : ChartedSpace (EuclideanSpace ℝ (Fin 3)) model := model_charted
     letI : IsManifold (𝓡 3) ∞ model := model_manifold
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ inverse Set.univ
-
-
-
-
 
 structure CapCertificate (g : RiemannianMetric 3 M) where
   epsilon : ℝ

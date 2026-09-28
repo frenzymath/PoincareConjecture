@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M54.Mathlib.PathMaps
 import PoincareConjecture.Proofs.M59.Mathlib.PathClassTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -22,16 +12,10 @@ namespace PathClassCover
 variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   {x₀ : X}
 
-
-
 def map (f : C(X, Y)) (a : PathClassCover x₀) : PathClassCover (f x₀) :=
   ⟨f a.endpoint, a.pathClass.map f⟩
 
-
-
 @[simp] theorem map_basepoint (f : C(X, Y)) : map f (basepoint x₀) = basepoint (f x₀) := rfl
-
-
 
 theorem map_mem_sheet (f : C(X, Y)) {U : Set X} {V : Set Y}
     (hUV : U ⊆ f ⁻¹' V) {a b : PathClassCover x₀} (hb : b ∈ sheet U a) :
@@ -41,8 +25,6 @@ theorem map_mem_sheet (f : C(X, Y)) {U : Set X} {V : Set Y}
   change b.pathClass.map f = (a.pathClass.map f).trans (.mk (p.map f.continuous))
   rw [he, Path.Homotopic.Quotient.map_trans]
   rfl
-
-
 
 theorem continuous_map [LocallySimplyConnectedSpace X] (f : C(X, Y)) :
     Continuous (map (x₀ := x₀) f) := by
@@ -61,13 +43,9 @@ theorem continuous_map [LocallySimplyConnectedSpace X] (f : C(X, Y)) :
   rw [← sheet_eq_of_mem ha]
   exact map_mem_sheet f hUV hc
 
-
-
 theorem endpoint_surjective [PathConnectedSpace X] (x₀ : X) :
     Function.Surjective (endpoint : PathClassCover x₀ → X) :=
   fun x => ⟨⟨x, .mk (PathConnectedSpace.somePath x₀ x)⟩, rfl⟩
-
-
 
 theorem endpoint_injective [SimplyConnectedSpace X] (x₀ : X) :
     Function.Injective (endpoint : PathClassCover x₀ → X) := by
@@ -76,15 +54,11 @@ theorem endpoint_injective [SimplyConnectedSpace X] (x₀ : X) :
   subst y
   exact congrArg (fun k => PathClassCover.mk x k) (Subsingleton.elim a b)
 
-
-
 noncomputable def endpointHomeomorph [LocallySimplyConnectedSpace X] [SimplyConnectedSpace X]
     (x₀ : X) : PathClassCover x₀ ≃ₜ X :=
   Equiv.toHomeomorphOfContinuousOpen
     (Equiv.ofBijective endpoint ⟨endpoint_injective x₀, endpoint_surjective x₀⟩)
     (continuous_endpoint x₀) (isOpenMap_endpoint x₀)
-
-
 
 @[simp] theorem endpointHomeomorph_apply [LocallySimplyConnectedSpace X] [SimplyConnectedSpace X]
     (x₀ : X) (a : PathClassCover x₀) : endpointHomeomorph x₀ a = a.endpoint := rfl

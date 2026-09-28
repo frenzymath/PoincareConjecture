@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInteriorChart
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,14 +15,9 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 def cylinderSlice {D : Set (E × ℝ)} (e : D ≃ₜ D) (d : Set E) (t : ℝ) :
     Set (E × ℝ) :=
   {z | ∃ p : D, (p : E × ℝ).1 ∈ d ∧ (p : E × ℝ).2 = t ∧ (e p : E × ℝ) = z}
-
-
-
 
 def HasPairedHeightCap {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     (S C d : Set F) (A : F → ℝ) (c : ℝ) : Prop :=
@@ -43,11 +27,6 @@ def HasPairedHeightCap {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     IsFinitePLBallPair ((ℝ × ℝ) × ℝ)
       (frontier (C ×ˢ Icc (-1 : ℝ) 1) \ interior B ×ˢ {1})
       ((d ∪ (S ∩ {x | A x ≤ c})) ×ˢ {(1 : ℝ)})
-
-
-
-
-
 
 theorem exists_paired_height_cap_step
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hcv : Convex ℝ K.space)
@@ -344,9 +323,6 @@ theorem exists_paired_height_cap_step
   simp only [← Set.prod_singleton, G.image_interior, hboundary] at hBE'
   refine ⟨G '' B, hB', (image_mono hBC).trans hGinterior.subset,
     (image_mono hBbelow).trans hGbelow, hBE'.mpr hBE⟩
-
-
-
 
 theorem HasPairedHeightCap.regionBalls_of_terminal
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

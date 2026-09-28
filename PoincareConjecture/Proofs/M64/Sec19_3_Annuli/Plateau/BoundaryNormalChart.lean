@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalCoordi
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Ring.Units
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,10 +48,6 @@ private theorem exists_local_inverse
     exact ContinuousLinearMap.ext fun z => by
       simp [ContinuousLinearEquiv.ofUnit, IsUnit.unit_spec]
   exact (H.contDiffAt_symm hy hd' (hf.contDiffAt (hs.mem_nhds hyf))).contDiffWithinAt
-
-
-
-
 
 theorem m64_exists_smooth_metric_normal_chart {n : ℕ}
     {c : ℝ → EuclideanSpace ℝ (Fin (n + 1))} {I : Set ℝ}

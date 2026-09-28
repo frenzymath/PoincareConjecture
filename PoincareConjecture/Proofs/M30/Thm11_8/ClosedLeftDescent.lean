@@ -25,7 +25,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
   FlowCarrier.secondCountable
 
-
 theorem exists_closed_left_flow_of_local_extensions
     {S : GeneralizedBlowupSequence.{u}} {T : ℝ} (hT : 0 < T)
     (G : GeneralizedBlowupConvergence S (Ioc (-T) 0))

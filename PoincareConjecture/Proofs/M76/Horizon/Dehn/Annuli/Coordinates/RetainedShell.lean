@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Annulus.Coordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Domains.ChartImage
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

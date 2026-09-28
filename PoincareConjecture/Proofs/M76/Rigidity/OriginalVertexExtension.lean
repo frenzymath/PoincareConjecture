@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexHalfGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskPrismPasting
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -30,8 +21,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {P : OriginalLowerProducts T} {p : (T.marked 2).vertices}
 
 open Classical in
-
-
 
 theorem OriginalVertexBand.exists_product (F : OriginalVertexBand P p) :
     ∃ H : (T.diskDualBase {(p : T.index → ℝ × V3)} ×ˢ I :

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.EuclideanCylinder
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderChristoffel
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Convergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem cylinderEuclideanMetric_inner_basis (u : ℝ) (hu : u < 1)
     (p v : EuclideanSpace ℝ (Fin 3)) (a : Fin 3) :
@@ -29,8 +18,6 @@ theorem cylinderEuclideanMetric_inner_basis (u : ℝ) (hu : u < 1)
   rw [cylinderEuclideanCoefficients_apply, cylinderCoordinateEquiv_basis]
   fin_cases a <;> simp [roundCylinderCoordinateBasis, EuclideanSpace.inner_single_right,
     cylinderCoordinateEquiv_fst, cylinderCoordinateEquiv_snd]
-
-
 
 theorem fderiv_cylinderEuclideanMetric_basis (u : ℝ) (hu : u < 1) (q : UnitTwoSphere)
     (p : EuclideanSpace ℝ (Fin 3)) (a b k : Fin 3) :
@@ -48,8 +35,6 @@ theorem fderiv_cylinderEuclideanMetric_basis (u : ℝ) (hu : u < 1) (q : UnitTwo
   exact congrArg (fderiv ℝ (fun p : RoundCylinderCoordinates =>
     roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b)
       (cylinderCoordinateEquiv p)) (cylinderCoordinateEquiv_basis k).symm
-
-
 
 theorem cylinder_connection_component (u : ℝ) (hu : u < 1)
     (D : LeviCivitaData (cylinderEuclideanMetric u hu)) (q : UnitTwoSphere)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimLoop
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -53,9 +45,6 @@ private theorem edge_three_coordinates (t : unitInterval) :
     ring
   · simp [Path.segment_apply, AffineMap.lineMap_apply_module]
     ring
-
-
-
 
 theorem squareRimLoop_coordinates (t : unitInterval) :
     (squareRimLoop t : V2) =

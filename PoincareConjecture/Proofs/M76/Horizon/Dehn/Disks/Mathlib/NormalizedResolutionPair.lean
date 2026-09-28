@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedUpperR
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedAlternateResolution
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
 local notation "i0" => (0 : unitInterval)
 local notation "i1" => (1 : unitInterval)
-
-
 
 theorem exists_normalized_resolution_pair
     {EA EM EC F X ι : Type*}

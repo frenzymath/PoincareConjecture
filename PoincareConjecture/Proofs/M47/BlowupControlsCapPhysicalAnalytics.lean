@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticReadout
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ noncomputable local instance capPhysicalCoefficientNorm :
 
 noncomputable local instance capPhysicalCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem capComparison_analytic_readout
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
@@ -92,8 +82,6 @@ theorem capComparison_analytic_readout
   exact cap_analyticJet_normalizedPullback _
     (F.connection (t + s / ((F.parameters.h t)⁻¹ ^ 2))) hV hcomp
     (fun y hy => (hinv y hy).injective) (sq_pos_of_pos (inv_pos.mpr hheight)) hx
-
-
 
 theorem capComparison_analytic_height_readout
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyHolderAverages
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyHolderDyadic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +14,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak M60
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem m64Morrey_holder_representative {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

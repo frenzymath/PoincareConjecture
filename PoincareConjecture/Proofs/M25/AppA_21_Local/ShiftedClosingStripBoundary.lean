@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ReturnOverlapGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
 
 theorem BalancedNeckChain.exists_shifted_closing_strip_boundary_avoidance :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

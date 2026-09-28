@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapCollarSeparation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ open M45
 variable {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
   {F : MaximalStandardCapFlow g₀} {t epsilon C : ℝ} {x : StandardCapSpace}
 
-
-
 theorem core_ne_univ (N : StandardCapNeighborhood atlas F t epsilon C x) :
     N.closed_core ≠ univ := by
   intro h
@@ -29,8 +19,6 @@ theorem core_ne_univ (N : StandardCapNeighborhood atlas F t epsilon C x) :
   rw [N.closed_core_eq] at hx
   exact hx.2 (N.end_neck.toEpsilonNeck.central_sphere_subset
     N.end_neck.toEpsilonNeck.center_on_central_sphere)
-
-
 
 theorem boundary_end_orientation
     (N : StandardCapNeighborhood atlas F t epsilon C x) :

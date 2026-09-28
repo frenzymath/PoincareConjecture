@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.TangentPLFactorization
 import PoincareConjecture.Proofs.M76.Brown.NormalPairAtlas
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry SignType
@@ -21,7 +15,6 @@ private theorem zero_inverse (h : OpenPartialHomeomorph C3 C3)
     (z : C3) (hz : z ∈ h.target) (hz0 : z.2 = 0) : (h.symm z).2 = 0 := by
   apply (hpair _ (h.map_target hz)).mp
   rwa [h.right_inv hz]
-
 
 def tangentialTransition (h : OpenPartialHomeomorph C3 C3)
     (hpair : ∀ z ∈ h.source, (h z).2 = 0 ↔ z.2 = 0) :
@@ -91,7 +84,6 @@ theorem tangentialTransition_mem_piecewiseAffineGroupoid
       (fun z hz => ⟨⟨mem_univ _, hz⟩, mem_univ _⟩))
 
 variable {X ι : Type*} [TopologicalSpace X] {S : Set X}
-
 
 def atlasTangentialTransition (A : BrownCollar.FlatteningAtlas P2 S ι) (i j : ι) :
     OpenPartialHomeomorph P2 P2 :=

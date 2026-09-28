@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCir
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.CollarExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ open CircleCollar
 private abbrev Circle := CircleCollar.Circle
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem exists_disk_chart_matching_collar
     (e : OpenPartialHomeomorph Plane S2)

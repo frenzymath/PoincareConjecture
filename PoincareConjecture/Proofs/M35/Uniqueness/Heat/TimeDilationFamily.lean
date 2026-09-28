@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.CompactFamilyDerivative
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

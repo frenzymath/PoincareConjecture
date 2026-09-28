@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Compression.Original
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.OriginalSlabProperDisks
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.ComplementarySlabDomains
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 
@@ -62,8 +48,6 @@ private def SourceNonsphericalStage.complexity {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3} {d : κ → OpenPartialHomeomorph X0 V3}
     {phi : C(H0, H0)} {a b : ℝ} (s : SourceNonsphericalStage e d phi a b) : ℕ :=
   s.lowerModel.complexity + s.upperModel.complexity
-
-
 
 theorem exists_hamiltonZero_nonspherical_incompressible_slab {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)
@@ -292,4 +276,3 @@ theorem exists_hamiltonZero_nonspherical_incompressible_slab {ι κ : Type*}
         exact (upper_impossible psi hpsi H Fpsi hdomain hfrontier hother newModel hdecrease).elim
 
 end PoincareConjecture.M76
-

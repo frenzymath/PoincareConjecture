@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.PathVariation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.ArcLength
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -85,9 +75,6 @@ private theorem exists_isometric_arcLength_with_clock
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_intrinsic_arcLength_minimizer
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

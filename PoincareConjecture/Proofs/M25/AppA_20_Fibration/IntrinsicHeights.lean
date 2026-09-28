@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RelativeSuccessorHeight
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicFiniteChain
 import Mathlib.Data.Int.Init
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem BalancedNeckChain.exists_finite_relative_saturated_heights :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

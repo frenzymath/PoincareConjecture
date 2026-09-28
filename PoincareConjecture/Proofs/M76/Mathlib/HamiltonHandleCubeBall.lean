@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
 
 namespace Set
-
-
-
-
 
 theorem isFinitePLBallPair_unit_cube {ι : Type*} [Fintype ι] :
     IsFinitePLBallPair (ι → ℝ) (closedBall (0 : ι → ℝ) 1)

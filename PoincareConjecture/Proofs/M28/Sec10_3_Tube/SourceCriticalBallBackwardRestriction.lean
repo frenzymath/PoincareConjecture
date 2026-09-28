@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardCoefficients
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateGerms
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,14 +23,10 @@ variable {epsilon C A : ℝ}
   {q : G.limitCarrier.carrier} {a : ℝ}
   (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 
-
-
 def limitNeckMap (k : ℕ) : D.limitDomain → strongNeckOpen (D.neck k) :=
   fun x => D.neckMap k ⟨x.val, D.limitDomain_subset_domain x.property⟩
 
 set_option maxHeartbeats 1400000 in
-
-
 
 theorem limitNeckMap_localDiffeomorph (k : ℕ) :
     letI := D.limitDomain_open.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -64,13 +50,9 @@ theorem limitNeckMap_localDiffeomorph (k : ℕ) :
     (H.tubeCritical_chart_original_localDiffeomorph T A1 (D.sourceIndex k)
       D.limitDomain D.limitDomain_open e he) hcapture
 
-
-
 def limitParametrization (k : ℕ) : EuclideanSpace ℝ (Fin 3) → strongNeckOpen (D.neck k) :=
   chartParametrization (fun _ : Unit => D.limitDomain) (fun _ => D.limitDomain_open)
     (i := ()) (D.limitNeckMap k)
-
-
 
 theorem limitParametrization_eq (k : ℕ) :
     EqOn (D.limitParametrization k) (D.parametrization k) D.limitDomain := by
@@ -84,9 +66,6 @@ theorem limitParametrization_eq (k : ℕ) :
       (D.parametrization_apply k ⟨x, D.limitDomain_subset_domain hx⟩).symm
 
 set_option maxHeartbeats 1400000 in
-
-
-
 
 theorem limitParametrization_coefficients_eq (k : ℕ) (t : ℝ) :
     EqOn (((D.sourceFlow k).metric t).pullbackCoefficients (D.limitParametrization k))

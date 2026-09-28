@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.WeakReplacement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Inclusion
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,12 +18,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω₁ Ω₂ : Set M}
 
-
 @[simp] theorem gradientEnergy_inclusion (hΩ : Ω₁ ⊆ Ω₂) (v w : H1Zero D Ω₁) :
     gradientEnergy D Ω₂ (inclusion hΩ v) (inclusion hΩ w) =
       gradientEnergy D Ω₁ v w := by
   simp only [gradientEnergy_apply, inner_inclusion, toL2_inclusion]
-
 
 theorem gradientEnergy_test_inclusion [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) (q : EnergyTest D Ω₂) (v : H1Zero D Ω₁) :
@@ -39,7 +29,6 @@ theorem gradientEnergy_test_inclusion [PreconnectedSpace M]
       -⟪q.laplacianLp, toL2 D Ω₁ v⟫_ℝ := by
   rw [gradientEnergy_symm, gradientEnergy_eq_neg_inner_laplacianLp,
     toL2_inclusion, real_inner_comm]
-
 
 theorem weakPoisson_gradientEnergy_orthogonal [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
@@ -49,8 +38,6 @@ theorem weakPoisson_gradientEnergy_orthogonal [PreconnectedSpace M]
       (inclusion hΩ v) = 0 := by
   simp only [map_add, add_apply, gradientEnergy_test_inclusion,
     gradientEnergy_inclusion, weakPoisson_spec, neg_add_cancel]
-
-
 
 theorem weakPoisson_gradientEnergy_pythagorean [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
@@ -77,7 +64,6 @@ theorem weakPoisson_gradientEnergy_pythagorean [PreconnectedSpace M]
   simp only [map_add, add_apply, horth, horth', gradientEnergy_inclusion,
     add_zero, zero_add]
 
-
 theorem weakPoisson_gradientEnergy_minimizes [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
     (q : EnergyTest D Ω₂) (v : H1Zero D Ω₁) :
@@ -88,7 +74,6 @@ theorem weakPoisson_gradientEnergy_minimizes [PreconnectedSpace M]
         ((q : H1Zero D Ω₂) + inclusion hΩ v) := by
   rw [weakPoisson_gradientEnergy_pythagorean hΩ hP0 hP q v]
   exact le_add_of_nonneg_right (gradientEnergy_self_nonneg _)
-
 
 theorem weakPoisson_gradientEnergy_split [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
@@ -102,7 +87,6 @@ theorem weakPoisson_gradientEnergy_split [PreconnectedSpace M]
   simpa only [map_zero, add_zero, zero_sub, map_neg, neg_apply, neg_neg] using
     weakPoisson_gradientEnergy_pythagorean hΩ hP0 hP q 0
 
-
 theorem weakPoisson_gradientEnergy_le [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
     (q : EnergyTest D Ω₂) :
@@ -111,7 +95,6 @@ theorem weakPoisson_gradientEnergy_le [PreconnectedSpace M]
       ∫ x, g.inner x (D.gradient q x) (D.gradient q x) ∂g.volumeMeasure := by
   rw [← gradientEnergy_coe, weakPoisson_gradientEnergy_split hΩ hP0 hP q]
   exact le_add_of_nonneg_left (gradientEnergy_self_nonneg _)
-
 
 theorem weakPoisson_replacement_gradientEnergy_le [PreconnectedSpace M]
     (hΩ : Ω₁ ⊆ Ω₂) {P : ℝ} (hP0 : 0 ≤ P) (hP : HasTestPoincare D Ω₁ P)
@@ -131,8 +114,6 @@ open LeviCivitaData.Dirichlet
 
 variable {n : ℕ} [NeZero n]
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem exists_weakHarmonicReplacement_energy_on_ball (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,11 +14,8 @@ variable {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
 
 namespace SurgeryCapTag
 
-
 def sourceCapInterior (C : SurgeryCapTag ψ u) : Set UnitTwoSphere :=
   C.sourceChart '' {q : UnitTwoSphere | (heightCoordinates (q : E3)).2 < 0}
-
-
 
 theorem sourceCapInterior_isOpen (C : SurgeryCapTag ψ u) :
     IsOpen C.sourceCapInterior := by
@@ -40,13 +27,11 @@ theorem sourceCapInterior_isOpen (C : SurgeryCapTag ψ u) :
   · intro q hq
     exact C.south_mem_source q hq.le
 
-
 theorem sourceCapInterior_subset (C : SurgeryCapTag ψ u) :
     C.sourceCapInterior ⊆ C.sourceCap := by
   rintro p ⟨q, hq, rfl⟩
   change (heightCoordinates (q : E3)).2 < 0 at hq
   exact ⟨q, hq.le, rfl⟩
-
 
 theorem sourceCap_diff_interior (C : SurgeryCapTag ψ u) :
     C.sourceCap \ C.sourceCapInterior = C.sourceSeam := by
@@ -63,7 +48,6 @@ theorem sourceCap_diff_interior (C : SurgeryCapTag ψ u) :
       (C.south_mem_source q' hq'.le) (C.south_mem_source q hq.le) heq
     subst q'
     exact (not_lt_of_ge hq.ge) hq'
-
 
 theorem sourceCap_isConnected (C : SurgeryCapTag ψ u) :
     IsConnected C.sourceCap := by
@@ -99,7 +83,6 @@ theorem sourceCap_isConnected (C : SurgeryCapTag ψ u) :
   exact hsouth.image C.sourceChart
     (C.sourceChart.continuousOn.mono (fun q hq => C.south_mem_source q hq))
 
-
 theorem sourceSeam_isConnected (C : SurgeryCapTag ψ u) :
     IsConnected C.sourceSeam := by
   have hdim : 1 < Module.rank ℝ E2 :=
@@ -133,8 +116,6 @@ theorem sourceSeam_isConnected (C : SurgeryCapTag ψ u) :
     (C.sourceChart.continuousOn.mono (fun q hq => C.south_mem_source q hq.le))
 
 end SurgeryCapTag
-
-
 
 theorem tagged_source_complement_compact_connected
     {ι : Type*} (s : Finset ι) (C : ι → SurgeryCapTag ψ u)
@@ -171,8 +152,6 @@ theorem tagged_source_complement_compact_connected
   refine ⟨hc, hn, ?_⟩
   intro i hi
   exact (hs i hi).trans (C i).sourceCap_diff_interior
-
-
 
 theorem tagged_retained_core_compact_connected
     (hψ : IsCollarEmbedding ψ)

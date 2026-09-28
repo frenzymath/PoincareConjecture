@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.TwoCapIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.PureTriangleClosedStar
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -29,8 +27,6 @@ variable (K : SimplicialComplex ℝ E) (L : Bool → SimplicialComplex ℝ E)
     ∃ b : Bool, s = {a b} ∨ ∃ t ∈ (L b).faces, s = insert (a b) (t.image z))
 
 include hfaces
-
-
 
 theorem two_cap_link_isConnected_at_base
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -155,7 +151,6 @@ theorem two_cap_link_isConnected_at_base
       | some p => exact hsegmentIn p hi
   exact hcover.symm ▸ hconn
 
-
 theorem two_cap_apex_link_space (hLK : ∀ b, L b ≤ K) (b : Bool) :
     (J.link (a b)).space = z '' (L b).space := by
   have anot (c : Bool) (s : Finset E) : a c ∉ s.image z := by
@@ -205,8 +200,6 @@ theorem two_cap_apex_link_space (hLK : ∀ b, L b ≤ K) (b : Bool) :
         (hfaces _).mpr (Or.inr ⟨b, Or.inr ⟨s, hs, rfl⟩⟩)⟩
     exact (J.link (a b)).convexHull_subset_space hsJ
       ((hconv s).subset (mem_image_of_mem z hxs))
-
-
 
 theorem two_cap_links_isConnected
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

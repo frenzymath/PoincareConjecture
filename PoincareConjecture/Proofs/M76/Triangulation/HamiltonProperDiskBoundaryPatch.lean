@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskBoundaryLin
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Cube" => closedBall (0 : V2) 1
-
-
-
-
 
 theorem exists_boundary_pair_chart_of_actual_disk_charts {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

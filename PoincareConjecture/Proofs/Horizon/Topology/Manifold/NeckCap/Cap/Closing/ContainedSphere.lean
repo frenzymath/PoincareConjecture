@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.EnclosingRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,8 +25,6 @@ private theorem subset_open_of_disjoint_frontier {A U : Set M}
   have heq := hopen.eq_univ ⟨⟨x, hx⟩, hxU⟩
   intro y hy
   exact (show (⟨y, hy⟩ : A) ∈ Subtype.val ⁻¹' U from heq ▸ mem_univ _)
-
-
 
 theorem closed_side_subset_of_transported_boundary_subset (C D : CapCertificate g)
     (e : M ≃ₜ M) (hboundary : e '' D.boundary_sphere ⊆ C.carrier) :
@@ -89,8 +75,6 @@ theorem closed_side_subset_of_transported_boundary_subset (C D : CapCertificate 
       exact disjoint_left.mpr (fun x hx hxF => hext hxF (D.core_subset_closed_core hx))
     rw [← D.closure_core_eq_closed_core]
     exact (image_mono (closure_mono hsub)).trans hVC
-
-
 
 theorem compact_component_of_transported_boundary_subset (C D : CapCertificate g)
     (e : M ≃ₜ M) (hboundary : e '' D.boundary_sphere ⊆ C.carrier)

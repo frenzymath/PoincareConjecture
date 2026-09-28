@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Product
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SupportedCollarCollapse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -122,4 +114,3 @@ theorem exists_hamiltonZero_slab_source_collapse {ι κ : Type*}
       hz.2.2.le.trans hwidth.le⟩
 
 end PoincareConjecture.M76.PrescribedSlab
-

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PeriodicCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -55,8 +48,6 @@ theorem normalized_identity_tube_fibers
       (α + ((β - α) / (4 * L)) * z.2 = β ∧
         α + ((β - α) / (4 * L)) * w.2 = α)) ↔ _
   rw [htime, hstart, hend, hend, hstart]
-
-
 
 theorem exists_normalized_identity_tube
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

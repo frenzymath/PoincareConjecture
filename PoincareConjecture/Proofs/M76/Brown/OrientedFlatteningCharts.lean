@@ -4,15 +4,6 @@ import Mathlib.Topology.Algebra.GroupWithZero
 import Mathlib.Data.Sign.Basic
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -35,8 +26,6 @@ theorem normalScalar_sign (s : SignTypeˣ) (t : ℝ) :
   rw [sign_mul, normalScalar, sign_real_cast]
 
 variable {X P : Type*} [TopologicalSpace X] [TopologicalSpace P]
-
-
 
 noncomputable def orientChart (e : OpenPartialHomeomorph X (P × ℝ)) (s : SignTypeˣ) :
     OpenPartialHomeomorph X (P × ℝ) :=
@@ -73,9 +62,6 @@ namespace BrownCollar.FlatteningAtlas
 
 variable {X P ι : Type*} [TopologicalSpace X] [NormedAddCommGroup P]
   [NormedSpace ℝ P] {S : Set X} (A : FlatteningAtlas P S ι)
-
-
-
 
 theorem exists_oriented_charts (a : ι → S → SignTypeˣ)
     (ha : ∀ i, ContinuousOn (a i) (A.baseSet i))

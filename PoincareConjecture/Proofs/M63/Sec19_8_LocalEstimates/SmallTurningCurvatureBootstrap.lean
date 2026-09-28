@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.SmallSubarcTurningTr
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureOscillationUnderBootstrap
 import Mathlib.Algebra.Field.Periodic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +16,6 @@ open M62
 variable {n : Nat} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
 
 theorem m63SmallSubarcs_curvature_bound
     (F : RicciFlow n M (Icc a b)) (c : Real → Real → M)

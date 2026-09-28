@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorSpectralTranslation
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory PoincareConjecture.SpectralHeatNative
@@ -23,9 +14,6 @@ variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
 
 local notation "V" => State ((ℤ × Fin 2) × ι)
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 noncomputable def vectorPeriodicSecondDerivativeLp :
     V →L[ℝ] Lp W 2 (@haarAddCircle L _) := by
@@ -39,9 +27,6 @@ noncomputable def vectorPeriodicSecondDerivativeLp :
     (periodicH2JetCoordinates (L := L) 1 (by omega))
   exact ∑ i, ((B i |>.comp Complex.reCLM).compLpL 2 haarAddCircle).comp
     ((D.restrictScalars ℝ).comp (C i))
-
-
-
 
 theorem vectorPeriodicSecondDerivativeLp_spec (u : V)
     (hu : DifferentiableAt ℝ

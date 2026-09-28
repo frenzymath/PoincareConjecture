@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M51.InitialUnion
 import PoincareConjecture.Proofs.M51.LiteralTranslation
 import PoincareConjecture.Proofs.M51.OrdinaryGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M51Ordinary
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def onEqualDomain {J K : Set ℝ} (F : RicciFlow n M J)
     (hJK : J = K) : RicciFlow n M K := hJK ▸ F
@@ -66,7 +56,6 @@ theorem initialDomain_eq_Ico (h03 : RicciFlowLocalTheory n M)
       exists_lt_of_lt_csSup (initialLifetimes_nonempty h03 g0) ht.2
     exact ⟨ht.1, T, hT, htT⟩
 
-
 theorem initialUnion_terminal_curvature (h03 : RicciFlowLocalTheory n M)
     (g0 : RiemannianMetric n M) (hA : BddAbove (initialLifetimes g0)) :
     ∀ L s : ℝ, s < sSup (initialLifetimes g0) →
@@ -103,8 +92,6 @@ theorem initialUnion_terminal_curvature (h03 : RicciFlowLocalTheory n M)
   have hlifetime : a + δ ∈ initialLifetimes g0 :=
     ⟨hT.trans hTB, extended, hinitial⟩
   exact (not_le_of_gt hTB) (le_csSup hA hlifetime)
-
-
 
 theorem exists_maximal_initial_flow (h03 : RicciFlowLocalTheory n M)
     (g0 : RiemannianMetric n M) :

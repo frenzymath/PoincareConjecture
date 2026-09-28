@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,10 +21,6 @@ private theorem mapsTo_vertices_of_face_images {f : E → F}
     (Finset.singleton_subset_iff.mpr (hst ⟨x, by simp, rfl⟩)) (Finset.singleton_nonempty _)
 
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_homeomorph_of_vertex_maps (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (hK : K.faces.Finite) (v : E → F) (w : F → E)

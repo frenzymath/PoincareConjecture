@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierDecoder
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle
@@ -19,17 +9,11 @@ open scoped ENNReal
 
 namespace PoincareConjecture.M63
 
-
-
-
 noncomputable def periodicSobolevMoment (L : ℝ) (k j : ℕ) (n : ℤ) : ℂ :=
   (Complex.I * (2 * Real.pi * (n : ℝ) / L : ℝ)) ^ j /
     (Real.sqrt (1 + (2 * Real.pi * (n : ℝ) / L) ^ 2) : ℂ) ^ (k + 1)
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem periodicSobolevMoment_bound {k j : ℕ} (hj : j ≤ k) :
     (∀ n : ℤ, ‖periodicSobolevMoment L k j n‖ ≤
@@ -55,14 +39,9 @@ theorem periodicSobolevMoment_bound {k j : ℕ} (hj : j ≤ k) :
       _ = 1 / ρ := by rw [pow_succ]; field_simp
   exact ⟨hb, (memℓp_periodic_decayWeight (Fact.out : 0 < L)).mono hb⟩
 
-
-
-
 noncomputable def periodicSobolevJet (k j : ℕ) (hj : j ≤ k) :
     lp (fun _ : ℤ => ℂ) 2 →L[ℂ] C(AddCircle L, ℂ) :=
   weightedFourier ⟨periodicSobolevMoment L k j, (periodicSobolevMoment_bound hj).2⟩
-
-
 
 theorem norm_periodicSobolevJet_le (k j : ℕ) (hj : j ≤ k)
     (u : lp (fun _ : ℤ => ℂ) 2) :
@@ -73,10 +52,6 @@ theorem norm_periodicSobolevJet_le (k j : ℕ) (hj : j ≤ k)
   apply lp.norm_mono (by norm_num : (2 : ENNReal) ≠ 0)
   intro n
   exact ((periodicSobolevMoment_bound hj).1 n).trans (Real.le_norm_self _)
-
-
-
-
 
 theorem hasDerivAt_periodicSobolevJet {k j : ℕ} (hj : j < k)
     (u : lp (fun _ : ℤ => ℂ) 2) (x : ℝ) :
@@ -115,9 +90,6 @@ theorem hasDerivAt_periodicSobolevJet {k j : ℕ} (hj : j < k)
     funext fun y => (hs j hj.le y).tsum_eq
   rw [heq, (hs (j + 1) hj x).tsum_eq] at hseries
   exact hseries
-
-
-
 
 theorem periodicSobolevJet_regular (k : ℕ) (u : lp (fun _ : ℤ => ℂ) 2) :
     let U := fun x : ℝ => periodicSobolevJet (L := L) k 0 (Nat.zero_le k) u (x : AddCircle L)

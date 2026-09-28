@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M21AsymptoticVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

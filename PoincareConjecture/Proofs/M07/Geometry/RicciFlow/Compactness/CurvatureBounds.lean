@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.BallTransfer
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.PointedGeometricConvergence
-
-
 
 theorem eventually_curvatureTensorNorm_le
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -50,12 +36,6 @@ theorem eventually_curvatureTensorNorm_le
   have htime := (G.embedding k).spatial_eq_of_mem ht hs (G.exhaustion_monotone hjk hxj)
   rw [htime]
   exact hk s hs t ht _ hball
-
-
-
-
-
-
 
 theorem curvatureTensorNorm_le_of_tendsto
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

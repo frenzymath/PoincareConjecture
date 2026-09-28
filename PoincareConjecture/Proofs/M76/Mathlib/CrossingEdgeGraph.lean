@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BichromaticTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCycleLabels
 import Mathlib.AlgebraicTopology.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,17 +10,11 @@ namespace PreAbstractSimplicialComplex
 
 variable {V : Type*} [DecidableEq V]
 
-
-
-
 def crossingEdgeGraph (A : PreAbstractSimplicialComplex V) (c : V → Bool) :
     SimpleGraph {e : Finset V | e ∈ A.faces ∧ e.IsBichromaticPair c} where
   Adj e f := e ≠ f ∧ ∃ t ∈ A.faces, t.card = 3 ∧ e.val ⊆ t ∧ f.val ⊆ t
   symm := ⟨fun _ _ ⟨hne, t, ht, hcard, he, hf⟩ => ⟨hne.symm, t, ht, hcard, hf, he⟩⟩
   loopless := ⟨fun _ h => h.1 rfl⟩
-
-
-
 
 theorem crossingEdgeGraph_two_neighbors (A : PreAbstractSimplicialComplex V) (c : V → Bool)
     (hcofaces : ∀ e ∈ A.faces, e.IsBichromaticPair c →

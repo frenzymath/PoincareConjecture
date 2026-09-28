@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderRicciFlo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_LocalCurvatureTransport
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ComponentExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {e : SurgeryFlowCylinder F C origin scale I U}
   {f : PartialDiffeomorph (𝓡 3) (𝓡 3) E C.carrier ∞}
 
-
-
 theorem scalar_eq (G : CylinderRicciFlow e f) (hU : IsOpen U) (hmap : f.target ⊆ U)
     (s : ℝ) (hs : s ∈ I) (x : (⟨f.target, f.open_target⟩ : Opens C.carrier)) :
     (G.flow.connection s).scalarCurvature x =
@@ -41,9 +30,6 @@ theorem scalar_eq (G : CylinderRicciFlow e f) (hU : IsOpen U) (hmap : f.target �
     (inv_pos.mpr e.scale_pos) (fun y _ => G.physical_metric_link s hs y) (mem_univ x)
   rw [div_inv_eq_mul] at h
   exact (eq_div_iff e.scale_pos.ne').mpr h.symm
-
-
-
 
 theorem curvatureTensorNorm_eq
     (G : CylinderRicciFlow e f) (hU : IsOpen U) (hmap : f.target ⊆ U)
@@ -58,9 +44,6 @@ theorem curvatureTensorNorm_eq
     (inv_pos.mpr e.scale_pos) (fun y _ => G.physical_metric_link s hs y) (mem_univ x)
   rw [div_inv_eq_mul] at h
   exact (eq_div_iff e.scale_pos.ne').mpr h.symm
-
-
-
 
 theorem scalar_evolution_eq
     (P : M44CapPersistencePredecessors.{u}) (G : CylinderRicciFlow e f)
@@ -82,9 +65,6 @@ theorem scalar_evolution_eq
   rw [inv_pow, div_inv_eq_mul] at h
   exact (eq_div_iff (sq_pos_of_pos e.scale_pos).ne').mpr h.symm
 
-
-
-
 theorem scalar_evolution_bound
     (P : M44CapPersistencePredecessors.{u}) (G : CylinderRicciFlow e f)
     (hU : IsOpen U) (hmap : f.target ⊆ U) (s : ℝ) (hs : s ∈ I)
@@ -100,9 +80,6 @@ theorem scalar_evolution_bound
   rw [scalar_evolution_eq P G hU hmap s hs x, abs_div, abs_of_nonneg (sq_nonneg scale),
     G.scalar_eq hU hmap s hs x, div_pow, ← mul_div_assoc]
   exact div_le_div_of_nonneg_right hbound (sq_nonneg scale)
-
-
-
 
 theorem physical_collar_plane
     (G : CylinderRicciFlow e f) (hU : IsOpen U) (hmap : f.target ⊆ U)
@@ -124,9 +101,6 @@ theorem physical_collar_plane
     (fun y _ => cylinderTargetTransport_invertible e hU f hmap s hs y)
     (inv_pos.mpr e.scale_pos) (fun y _ => G.physical_metric_link s hs y) (mem_univ x)
     K u v horth hmargin
-
-
-
 
 theorem not_component_of_collar
     (P : M44CapPersistencePredecessors.{u}) (G : CylinderRicciFlow e f)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem mesh_exists_used_vertex_of_contribution_ne_zero
     (g : RiemannianMetric 2 S) (M : TriangleMesh) (F : OpenPartialHomeomorph Plane S)
@@ -37,8 +28,6 @@ theorem mesh_exists_used_vertex_of_contribution_ne_zero
   intro heq
   exact hnone ⟨t, M.orderedVertex t k, M.orderedVertex_mem t k, heq⟩
 
-
-
 theorem mesh_used_vertex_preimage (M : TriangleMesh) (F : OpenPartialHomeomorph Plane S)
     (hsource : M.toPlaneComplex.support ⊆ F.source) {z : Plane} (hz : z ∈ F.source)
     (hused : ∃ (t : M.Triangle) (v : M.Vertex), v ∈ t.1 ∧ F (M.position v) = F z) :
@@ -47,9 +36,6 @@ theorem mesh_used_vertex_preimage (M : TriangleMesh) (F : OpenPartialHomeomorph 
   refine ⟨t, v, hv, F.injOn (hsource ?_) hz heq⟩
   rw [TriangleMesh.toPlaneComplex_support]
   exact mem_iUnion₂.mpr ⟨t.1, t.2, subset_convexHull ℝ _ ⟨v, hv, rfl⟩⟩
-
-
-
 
 theorem coordinate_mesh_family_vertex_is_used {I : Type*}
     (M : I → TriangleMesh) (F : I → OpenPartialHomeomorph Plane S)

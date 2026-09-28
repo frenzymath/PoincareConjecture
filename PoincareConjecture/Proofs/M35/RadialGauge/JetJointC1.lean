@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JointC1
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem spatial_jets_joint_c1_of_time_equation
     {u H : ℝ → E → F} {a b : ℝ}

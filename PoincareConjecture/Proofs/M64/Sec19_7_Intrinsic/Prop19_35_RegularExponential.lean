@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalRadius
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +11,6 @@ open Set Filter Manifold
 open scoped Manifold ContDiff Topology ENNReal Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_precompact_ball (N : IntrinsicAnnulus)
     (p : AnnulusCoordinates) :
@@ -50,10 +35,6 @@ theorem m64Intrinsic_exists_precompact_ball (N : IntrinsicAnnulus)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_exists_regular_radial_exponential
     (N : IntrinsicAnnulus) (p : AnnulusCoordinates) :

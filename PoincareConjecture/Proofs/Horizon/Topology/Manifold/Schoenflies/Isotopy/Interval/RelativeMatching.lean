@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Interval.RelativeLocal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.ParametricInverse
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +23,6 @@ private theorem contDiff_planar_diffeomorph_family_symm
   have hi := Poincare.Manifold.contMDiff_diffeomorph_family_symm Psi hm
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hi
   exact hi.contDiff
-
-
-
 
 theorem exists_relative_matching_of_interval_families
     {a b l l₀ l₁ u₁ u₀ u : Real} (hab : a < b)
@@ -151,8 +141,6 @@ theorem exists_relative_matching_of_interval_families
     change (Psi t) ((Omega t).symm (F (t, s))) = g (t, s)
     rw [← hOmegamotion t ht s hs, (Omega t).symm_apply_apply, hF₀ s, hstart s hs]
     exact hPsimotion t ht s hs
-
-
 
 theorem exists_relative_matching_of_interval_families_of_contDiffOn
     {a b l l₀ l₁ u₁ u₀ u : Real} (hab : a < b)

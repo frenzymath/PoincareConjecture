@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
 
 def originalEdgePrism (l u r : ℝ) : Set ((ℝ × ℝ) × ℝ) :=
   (Icc (-r) r ×ˢ Icc (-r) r) ×ˢ Icc l u
@@ -52,10 +43,6 @@ private theorem exists_axis_prism_in_open {l u : ℝ}
   have hwr : w z ≤ r := max_le (abs_le.mpr hz.1.1) (abs_le.mpr hz.1.2)
   by_contra hnot
   exact (not_le_of_gt hrm) ((hbound z ⟨hzC, hnot⟩).trans hwr)
-
-
-
-
 
 theorem exists_whole_original_edge_prism
     {S U : Set ((ℝ × ℝ) × ℝ)} (hS : IsClosed S) (hU : IsOpen U)

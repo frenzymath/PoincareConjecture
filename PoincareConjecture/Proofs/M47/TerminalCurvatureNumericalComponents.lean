@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckConnectionBounds
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRicciFrame
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ private theorem abs_four_terms (a b c d : ℝ) :
   have hsub (x y : ℝ) : |x - y| ≤ |x| + |y| := by
     simpa only [sub_eq_add_neg, abs_neg] using abs_add_le x (-y)
   linarith only [hsub (a - b + c) d, abs_add_le (a - b) c, hsub a b]
-
-
 
 theorem terminalCurvature_numerical_curvature_component
     {g0 g1 : RiemannianMetric 3 E} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

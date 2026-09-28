@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.CanonicalCoreVolumeMargin
 import PoincareConjecture.Proofs.M47.CanonicalAnalyticStability
 import PoincareConjecture.Proofs.M47.CanonicalGeometricMargins
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [CompactSpace M] [SecondCountableTopology M]
-
-
-
 
 theorem eventually_same_cap_certificate
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

@@ -2,23 +2,10 @@ import PoincareConjecture.Proofs.M25.Mathlib.SecondDerivative
 import Mathlib.Tactic.GCongr
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
-
-
-
-
 
 theorem norm_fderiv_fderiv_comp_le_of_contDiffOn
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

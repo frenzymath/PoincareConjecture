@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M08.ActionBounds
 import PoincareConjecture.Proofs.M08.AdmissiblePaths
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral Topology
@@ -36,7 +29,6 @@ theorem backwardActionValues_bddBelow {J : Set ℝ} {F : RicciFlow n M J}
   refine ⟨-(Real.sqrt τ₂ * (n : ℝ) ^ 2 * K) * (τ₂ - τ₁), ?_⟩
   rintro L ⟨p, _, _, rfl⟩
   exact (backwardLLength_coercive hM04 p hτ₂ hK).1
-
 
 theorem exists_backward_minimizing_sequence {J : Set ℝ} {F : RicciFlow n M J}
     [ConnectedSpace M] [T3Space M] {T τmax τ₁ τ₂ : ℝ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalTensorFamilyNorm
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSp
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) X]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ X]
   {J : Set ℝ} {U : Set X}
-
-
 
 theorem contMDiffOn_flow_metricPullback_onFields (F : RicciFlow n M J)
     {f : X → M} (hf : ContMDiff (𝓡 n) (𝓡 n) ∞ f)

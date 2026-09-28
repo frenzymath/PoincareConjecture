@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Wall.ProtectedRegionHomotopies
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponentConnected
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -21,9 +11,6 @@ open Set Geometry Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem protectedRegion_fundamentalGroup_map_eq_one
     {Y X : Type*} [TopologicalSpace Y] [TopologicalSpace X]
@@ -40,10 +27,6 @@ theorem protectedRegion_fundamentalGroup_map_eq_one
     hloops (f a) (p.map f.continuous) (fun t => hf (p t))
   rw [FundamentalGroup.map_apply, ← Path.Homotopic.Quotient.mk_map]
   exact Path.Homotopic.Quotient.eq.mpr hp
-
-
-
-
 
 theorem exists_original_frontier_component_sign_lift
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

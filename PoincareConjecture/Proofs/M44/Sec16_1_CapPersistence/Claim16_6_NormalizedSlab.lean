@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Rescaling
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 
 namespace PoincareConjecture.M44
 
-
-
-
 theorem regularSlab_initial_inner (F : SurgeryFlowData.{u})
     {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b)
     (x : (F.slice a).carrier) (v w : TangentSpace (𝓡 3) x) :
@@ -33,10 +21,6 @@ theorem regularSlab_initial_inner (F : SurgeryFlowData.{u})
   have h := S.metric_pullback ⟨a, le_rfl, S.ordered.le⟩ x v w
   rw [hid, mfderiv_id] at h
   exact h.symm
-
-
-
-
 
 theorem exists_normalized_regularSlab (P : M44CapPersistencePredecessors.{u})
     (F : SurgeryFlowData.{u}) {a T sigma : ℝ} (hT : 0 < T) (hsigma : 0 < sigma)
@@ -69,9 +53,6 @@ theorem exists_normalized_regularSlab (P : M44CapPersistencePredecessors.{u})
   refine ⟨G, hmetric, ?_⟩
   intro x v w
   simpa only [zero_mul, add_zero, regularSlab_initial_inner F S] using hmetric 0 x v w
-
-
-
 
 theorem exists_normalized_regularSlab_for_bound (P : M44CapPersistencePredecessors.{u})
     (F : SurgeryFlowData.{u}) {a T sigma : ℝ} (hT : 0 < T) (hsigma : 0 < sigma)

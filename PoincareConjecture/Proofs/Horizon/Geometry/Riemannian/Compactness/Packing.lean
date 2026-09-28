@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Covering
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Packing.Bounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,10 +14,8 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
 
-
 def toBasedMetricSpace (g : RiemannianMetric n M) (p : M) : BasedMetricSpaceBundle :=
   ⟨M, g.toMetricSpace, p⟩
-
 
 theorem packing_card_le_of_ricci_lower_bound
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n)

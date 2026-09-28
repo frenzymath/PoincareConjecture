@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularStageFamily
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,8 +89,6 @@ private def RegularCountableAtlasOutput : Prop :=
           TerminalSourceCountableAtlasResult (fun n => (U n : Set E)) (fun n => (U n).isOpen)
             (fun k => g (sigma k)) selected D hD (fun _ => (3 / 2 : ℝ≥0))
             he c hc hlower ho hconn B0 (terminalSourceCountableZero (hrho (label 0).1))
-
-
 
 theorem terminalSource_regular_countable_atlas
     (P : M46Predecessors.{u}) (htau : ∀ j, 0 < tau j)

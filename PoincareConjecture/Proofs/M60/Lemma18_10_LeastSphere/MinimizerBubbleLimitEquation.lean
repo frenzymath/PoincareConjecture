@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessSequence
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitWeak
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +32,6 @@ local instance suBubbleEquationTrilinearNormedSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem suNormalized_limit_weakCoordinate
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

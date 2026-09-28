@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularTriangleIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem common_edge_of_singleVertexSlab_intersection (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {α β : ℝ} {q : E}

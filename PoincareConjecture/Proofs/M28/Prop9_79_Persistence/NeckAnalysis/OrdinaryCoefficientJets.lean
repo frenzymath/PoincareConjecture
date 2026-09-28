@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.ReverseCovariantJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
 open FiniteHessian
-
-
-
 
 theorem iteratedFDeriv_roundCylinderGram_axial (u : ℝ) (q : UnitTwoSphere)
     (k : ℕ) (s : ℝ) (a b : Fin 3) :
@@ -39,8 +26,6 @@ theorem iteratedFDeriv_roundCylinderGram_axial (u : ℝ) (q : UnitTwoSphere)
   rw [heq, add_zero] at h
   exact h.symm
 
-
-
 theorem exists_bound_roundCylinderGram_jets (u : ℝ) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (q : UnitTwoSphere) (s : ℝ), ∀ k ≤ m,
       ∀ a b : Fin 3, ‖iteratedFDeriv ℝ k (fun p => roundCylinderGram u
@@ -55,10 +40,6 @@ theorem exists_bound_roundCylinderGram_jets (u : ℝ) (m : ℕ) :
   simp_rw [roundCylinderGram_chosen_chart]
   exact Finset.single_le_sum (f := value) (fun _ _ => norm_nonneg _)
     (Finset.mem_univ (⟨k, Nat.lt_succ_of_le hk⟩, a, b))
-
-
-
-
 
 theorem hasUniformJetBoundsAt_cylinder_coefficients_of_close
     {ι : Type*} {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1)

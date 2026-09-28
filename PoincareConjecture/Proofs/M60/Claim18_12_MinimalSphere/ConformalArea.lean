@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ConformalRicciTrac
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereAreaDensity_eq_conformalFactor_mul (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -46,8 +35,6 @@ theorem m60SphereAreaDensity_eq_conformalFactor_mul (g : RiemannianMetric n M)
   rw [m60SphereConformalFactor_spec g f hc, m60SphereParameter_inner]
   simp
 
-
-
 theorem m60SphereArea_eq_integral_conformalFactor (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hc : M60WeaklyConformal g f) :
@@ -59,16 +46,12 @@ theorem m60SphereArea_eq_integral_conformalFactor (g : RiemannianMetric n M)
   exact Filter.Eventually.of_forall
     (m60SphereAreaDensity_eq_conformalFactor_mul g f (hf.of_le (by simp)) hc)
 
-
-
 theorem m60SphereConformalFactor_integrable (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hc : M60WeaklyConformal g f) :
     Integrable (m60SphereConformalFactor g f) m60RoundSphereMetric.volumeMeasure :=
   (m60SphereConformalFactor_contMDiff g f hf hc).continuous.integrable_of_hasCompactSupport
     (HasCompactSupport.of_compactSpace _)
-
-
 
 theorem m60SphereConformalFactor_ae_pos (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hc : M60WeaklyConformal g f)

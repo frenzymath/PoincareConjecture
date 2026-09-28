@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalStageBoundaryExactness
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalComponentTrees
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z
@@ -26,10 +17,6 @@ variable {U : Type u} {G : Type v} {M : Type w} {ι : Type z}
   [DecidableEq G] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
 
 theorem Stage.relative_region_boundary_trees (st : Stage e S f r C)
     {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

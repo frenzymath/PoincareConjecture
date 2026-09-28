@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedCutGraphCollapse
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalSphereCutComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -16,8 +8,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_original_sphere_cut_graph_collapse
     {X ι κ : Type*} [MetricSpace X] [Fintype κ] [DecidableEq κ]

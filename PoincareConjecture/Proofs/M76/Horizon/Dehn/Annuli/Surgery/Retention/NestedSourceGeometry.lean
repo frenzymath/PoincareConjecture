@@ -8,7 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
 theorem oriented_collar_seams_avoid_of_middle_trace
     {A G : Set P2} {l r : ℝ} (B : OrientedPolygonCollar l r A) (hr : 0 < r)
     (htrace : ∀ p : squareAnnulus l r, (B.chart p : P2) ∈ G → depth l p = 0) :
@@ -25,8 +24,6 @@ theorem oriented_collar_seams_avoid_of_middle_trace
     linarith
   · have hh := (B.inner_depth p).mp (hp.symm ▸ hi)
     linarith
-
-
 
 theorem nested_retained_closed_band
     {A₀ A₁ G : Set P2} {l₀ r₀ l₁ r₁ L d : ℝ}

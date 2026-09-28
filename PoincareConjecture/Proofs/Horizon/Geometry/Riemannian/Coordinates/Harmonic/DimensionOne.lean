@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Orthonormal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
-
 
 lemma pullbackCoefficients_eq_of_gauss_one (g : RiemannianMetric 1 M) (p : M)
     {e : EuclideanSpace ℝ (Fin 1) → M} {U : Set (EuclideanSpace ℝ (Fin 1))}
@@ -55,8 +45,6 @@ lemma pullbackCoefficients_eq_of_gauss_one (g : RiemannianMetric 1 M) (p : M)
           mem_nhdsWithin_of_mem_nhds (hU.mem_nhds hzero)] with z hzne hz
         exact hnonzero z hz hzne)
 
-
-
 theorem exists_exponential_chart_constant_metric_one (g : RiemannianMetric 1 M) (p : M) :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 1)) M,
       (0 : EuclideanSpace ℝ (Fin 1)) ∈ e.source ∧ e 0 = p ∧
@@ -69,8 +57,6 @@ theorem exists_exponential_chart_constant_metric_one (g : RiemannianMetric 1 M) 
   intro x hx v w
   apply g.pullbackCoefficients_eq_of_gauss_one p e.open_source he0 he ?_ hx v w
   exact hgauss
-
-
 
 theorem exists_arclength_chart_one (g : RiemannianMetric 1 M) (p : M) :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 1)) M,

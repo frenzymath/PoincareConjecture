@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcInwardRaySign
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,11 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_arc_signed_inward_ray_transverse_pos
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B p sigma : ℝ}

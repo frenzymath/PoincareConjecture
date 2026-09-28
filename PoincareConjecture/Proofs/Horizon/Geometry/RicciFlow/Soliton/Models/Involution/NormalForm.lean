@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Invol
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.ProjectivePlane
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.Twisted
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -40,8 +32,6 @@ theorem exists_quotientNormalForm
     exact ⟨.projectivePlaneLine ⟨h, e, he⟩⟩
   · obtain ⟨e, cover, he⟩ := q.exists_twistedProjectiveSmoothModel c h
     exact ⟨.twistedSphereLine ⟨c, h, twistedProjectivePuncture, e, cover, he⟩⟩
-
-
 
 theorem exists_refinedQuotientCertificate
     {S : GradientShrinkingSolitonData 3 M} {G : ShrinkingSolitonFlow S}

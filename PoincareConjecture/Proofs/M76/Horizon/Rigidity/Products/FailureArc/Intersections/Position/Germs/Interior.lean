@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalGerm
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Filter
 open scoped Topology

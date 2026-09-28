@@ -1,16 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.CutoffGradient
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter
 open scoped ContDiff Topology
@@ -20,7 +8,6 @@ noncomputable section
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 variable {n : ℕ}
-
 
 theorem exists_uniform_cutoff_gradient_bound
     {a : Fin n → Fin n → Spacetime n → ℝ} {χ : Spacetime n → ℝ} {κ M : ℝ}

@@ -1,24 +1,11 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem four_disk_signed_link_arcs {X : Type*}
     (arc disk : Bool × Bool → Set X) {P marks : Set X} (f : X → ℝ)

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatGradient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Reaction.Symmetry
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

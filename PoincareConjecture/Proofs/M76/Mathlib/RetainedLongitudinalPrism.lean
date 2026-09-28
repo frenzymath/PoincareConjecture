@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 import Mathlib.Analysis.Convex.Join
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.smul_linear_cut_mem_interior
     {S : Set E} {T : Set F} {e : S ≃ₜ T} (he : e.IsFinitePL)
@@ -55,10 +40,6 @@ theorem IsFinitePL.smul_linear_cut_mem_interior
       change L (c • p) = t • L a
       rw [hxval, map_smul])
   exact hmap ▸ he.mem_interior hdim hxint
-
-
-
-
 
 theorem IsFinitePL.longitudinal_axis_mem_interior_of_linear_cones
     {S : Set E} {T : Set ((ℝ × ℝ) × ℝ)} {e : S ≃ₜ T} (he : e.IsFinitePL)
@@ -93,11 +74,6 @@ theorem IsFinitePL.longitudinal_axis_mem_interior_of_linear_cones
 end Homeomorph
 
 namespace IsOpen
-
-
-
-
-
 
 theorem exists_longitudinal_prism_subset
     {U : Set ((ℝ × ℝ) × ℝ)} (hU : IsOpen U) {a b : ℝ}

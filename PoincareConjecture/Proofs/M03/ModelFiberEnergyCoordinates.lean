@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped BigOperators
 

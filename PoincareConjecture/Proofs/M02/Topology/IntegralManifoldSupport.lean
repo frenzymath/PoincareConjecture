@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactGluing
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupport
 import Mathlib.Geometry.Manifold.ChartedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

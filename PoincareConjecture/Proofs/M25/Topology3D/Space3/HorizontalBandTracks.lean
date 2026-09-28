@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable (u : UnitTwoSphere) (F : E3 → E3) {KF LF KV LV : ℝ≥0}
 variable (hKF : LipschitzWith KF F) (hLF : ∀ y, ‖F y‖ ≤ LF)
-
-
 
 theorem horizontalBandFlow_hasDerivAt (m : ℝ) (y : E3) (z : ℝ)
     (hz : ⟪(u : E3), boundedFlow F hKF hLF y (z - m)⟫_ℝ = z) :
@@ -44,8 +30,6 @@ theorem horizontalBandFlow_hasDerivAt (m : ℝ) (y : E3) (z : ℝ)
 variable (hKV : LipschitzWith KV (clockField (horizontalBandField u F)))
 variable (hLV : ∀ p, ‖clockField (horizontalBandField u F) p‖ ≤ LV)
 
-
-
 theorem horizontalBand_clockEvolution_tracks (y : E3) {a b m : ℝ}
     (hm : m ∈ Ioo a b)
     (hheight : ∀ z ∈ Ioo a b,
@@ -58,8 +42,6 @@ theorem horizontalBand_clockEvolution_tracks (y : E3) {a b m : ℝ}
     (fun z => horizontalBandProjection u (boundedFlow F hKF hLF y (z - m))) hm
     (fun z hz => horizontalBandFlow_hasDerivAt u F hKF hLF m y z (hheight z hz))
   simpa only [sub_self, boundedFlow_zero] using heq
-
-
 
 theorem horizontalBand_clockEvolution_lift_tracks (y : E3) {a b m : ℝ}
     (hm : m ∈ Ioo a b)
@@ -85,8 +67,6 @@ variable (hβ : ∀ z ∈ Ioo (m - d) (m + d), β z = 1)
 
 include hβK hβL hFβ hS hd hβ
 
-
-
 theorem horizontalBandFlow_regular_height {y : E3} (hy : y ∈ S)
     (hym : ⟪(u : E3), y⟫_ℝ = m) {z : ℝ} (hz : z ∈ Ioo (m - d) (m + d)) :
     ⟪(u : E3), boundedFlow F hKF hLF y (z - m)⟫_ℝ = z := by
@@ -98,8 +78,6 @@ theorem horizontalBandFlow_regular_height {y : E3} (hy : y ∈ S)
   have heq := regularFlow_height F hKF hLF β hβK hβL H
     (fun x _ => H.differentiableAt) hHb hS m hd hβ hy hym ht
   exact heq.trans (by ring)
-
-
 
 theorem horizontalBand_regular_tracks {y : E3} (hy : y ∈ S)
     (hym : ⟪(u : E3), y⟫_ℝ = m) :

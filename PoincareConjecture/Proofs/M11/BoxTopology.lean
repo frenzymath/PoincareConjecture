@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.IntervalMaps
 import PoincareConjecture.Definitions.M11GeneralizedFlow
 
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -51,7 +47,6 @@ theorem boxHomeomorph_inverse_time (b : AdaptedMetricBox n X time I)
     {p : X} (hp : p ∈ (boxHomeomorph b).target) :
     ((boxHomeomorph b).symm p).1.val = time p := by
   rw [← b.time_toSpacetime, boxHomeomorph_right_inv b hp]
-
 
 theorem box_transition_eventually_eq (b c : AdaptedMetricBox n X time I)
     (p : boxDomain b) {y : EuclideanSpace ℝ (Fin n)}

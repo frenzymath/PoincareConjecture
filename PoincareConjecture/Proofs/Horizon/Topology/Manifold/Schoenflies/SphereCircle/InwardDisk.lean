@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.Disks
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem central_circle_geometry_of_tube
     {ε : Real} (hε : 0 < ε) (T : OpenPartialHomeomorph (S1 × Real) S2)
@@ -53,8 +49,6 @@ theorem central_circle_geometry_of_tube
   have hx := congrArg (fun L => L x) hd
   have hy := congrArg (fun L => L y) hd
   exact hx.trans (h.trans hy.symm)
-
-
 
 theorem exists_inward_disk_of_sphere_tube
     {ε : Real} (hε : 0 < ε) (T : OpenPartialHomeomorph (S1 × Real) S2)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.IsometryLipschitz
 import Mathlib.Analysis.Calculus.Rademacher
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -20,8 +12,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Topology NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem contDiffOn_of_lipschitzOn_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -103,8 +93,6 @@ theorem contDiffOn_of_lipschitzOn_edist_eq
     filter_upwards [htarget] with y hy
     exact congrArg f (hend y hy).symm
   exact hcomposed.congr_of_eventuallyEq heq
-
-
 
 theorem contDiffOn_of_edist_eq
     {n m : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

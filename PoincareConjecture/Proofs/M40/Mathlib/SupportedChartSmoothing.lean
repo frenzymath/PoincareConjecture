@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.ChartPerturbation
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingBlend
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -27,13 +16,9 @@ variable {E F M N : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 def chartSmoothingDisplacement (e : OpenPartialHomeomorph M E)
     (h : OpenPartialHomeomorph N F) (ρ : M → ℝ) (f : M → N) (G : E → F) :
     M → F := fun x => ρ x • (G (e x) - h (f x))
-
-
 
 theorem tsupport_chartSmoothingDisplacement_subset
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -41,14 +26,10 @@ theorem tsupport_chartSmoothingDisplacement_subset
     tsupport (chartSmoothingDisplacement e h ρ f G) ⊆ tsupport ρ :=
   tsupport_smul_subset_left _ _
 
-
-
 noncomputable def supportedChartSmoothing (e : OpenPartialHomeomorph M E)
     (h : OpenPartialHomeomorph N F) (U : Set M) (ρ : M → ℝ)
     (f : M → N) (G : E → F) : M → N :=
   chartPerturb h U f (chartSmoothingDisplacement e h ρ f G)
-
-
 
 theorem supportedChartSmoothing_of_mem
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -61,8 +42,6 @@ theorem supportedChartSmoothing_of_mem
   dsimp [chartSmoothingDisplacement, cutoffBlend]
   module
 
-
-
 theorem supportedChartSmoothing_eventuallyEq
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
     (U : Set M) (ρ : M → ℝ) (f : M → N) (G : E → F)
@@ -70,8 +49,6 @@ theorem supportedChartSmoothing_eventuallyEq
     supportedChartSmoothing e h U ρ f G =ᶠ[𝓝 x] f :=
   chartPerturb_eventuallyEq h U f _ hfU
     (fun hs => hx (tsupport_chartSmoothingDisplacement_subset e h ρ f G hs))
-
-
 
 theorem continuous_chartSmoothingDisplacement
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -88,8 +65,6 @@ theorem continuous_chartSmoothingDisplacement
   exact hc.continuous_of_tsupport_subset hU
     ((tsupport_chartSmoothingDisplacement_subset e h ρ f G).trans hsupp)
 
-
-
 theorem continuous_supportedChartSmoothing
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
     {U : Set M} (hU : IsOpen U) (hUe : U ⊆ e.source)
@@ -102,8 +77,6 @@ theorem continuous_supportedChartSmoothing
   continuous_chartPerturb h hU hf
     (continuous_chartSmoothingDisplacement e h hU hUe hρ hf hG hsupp hfU)
     ((tsupport_chartSmoothingDisplacement_subset e h ρ f G).trans hsupp) hfU hrange
-
-
 
 noncomputable def supportedChartSmoothingHomotopy
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -131,8 +104,6 @@ variable {E H F K M N : Type*}
   [TopologicalSpace N] [ChartedSpace K N]
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
 
-
-
 theorem contMDiffAt_supportedChartSmoothing_of_contMDiffAt
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
     {U : Set M} (hU : IsOpen U) (hUe : U ⊆ e.source)
@@ -155,8 +126,6 @@ theorem contMDiffAt_supportedChartSmoothing_of_contMDiffAt
       (hhf.add ((hρ x).smul (hGe.sub hhf))) hh' (hrange x hx)
   · exact hf.congr_of_eventuallyEq
       (supportedChartSmoothing_eventuallyEq e h U ρ f G hfU (fun hs => hx (hsupp hs)))
-
-
 
 theorem contMDiffAt_supportedChartSmoothing_of_eventuallyEq_one
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)
@@ -186,8 +155,6 @@ variable {E F M N : Type*}
   [TopologicalSpace M] [PseudoMetricSpace N]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem dist_supportedChartSmoothing_le
     (e : OpenPartialHomeomorph M E) (h : OpenPartialHomeomorph N F)

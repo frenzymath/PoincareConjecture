@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedBlowupVolumeSequence
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_blowup_test_radius_below {A tau B : ℝ}
     (hA : 0 < A) (htau : 0 < tau) (hB : 0 ≤ B) :
@@ -32,8 +21,6 @@ theorem exists_seed_blowup_test_radius_below {A tau B : ℝ}
   refine ⟨rho, hpositive, min_le_left _ _, ?_, ?_⟩
   · exact (pow_le_pow_left₀ hpositive.le hle 2).trans htime
   · exact hbound.trans (pow_le_pow_left₀ (inv_pos.mpr hr).le hinverse 2)
-
-
 
 theorem seed_preliminary_sequence_terminal_volume
     (F : ℕ → SurgeryFlowData.{u}) (W : ∀ n, M33RegularHistoryWindow (F n))

@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M49
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M]
-
-
 
 theorem isOpen_metric_ball (g : RiemannianMetric n M) (p : M) (r : ℝ) :
     IsOpen (g.ball p r) := by
@@ -37,8 +27,6 @@ theorem isOpen_metric_ball (g : RiemannianMetric n M) (p : M) (r : ℝ) :
     rw [edist_comm]
   rw [he]
   exact Metric.isOpen_eball
-
-
 
 theorem closure_metric_ball_subset_ball (g : RiemannianMetric n M) (p : M)
     {r R : ℝ} (hR : 0 < R) (hrR : r < R) :

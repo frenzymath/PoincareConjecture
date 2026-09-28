@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_finitePL_capped_proper_arc_map
     {C p n q w : Set E} {D P N Q W : Set F} {a b : E} {A B : F}

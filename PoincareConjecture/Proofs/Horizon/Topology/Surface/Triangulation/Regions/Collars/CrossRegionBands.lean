@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.BandIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.ConnectedIntersections
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -158,7 +148,6 @@ private theorem arrangement_iff_height_zero {q : M} (hq : q ∈ B.faces.carrier)
   rw [hinv, collarParameterEquiv.apply_symm_apply]
   exact hzero z.1 hz.1 z.2 hz.2.1 (hz.2.2.trans_lt (B.height_bounds hz.1).2)
 
-
 theorem lower_carrier_inter_arrangement (i : Fin B.faces.interface.count) :
     (B.faces.pair i).lower.carrier ∩ chartDiskBoundaryUnion D.centers D.radius =
       ((B.faces.pair i).lower.boundary 2).map '' Icc (0 : ℝ) 1 := by
@@ -192,8 +181,6 @@ theorem upper_carrier_inter_arrangement_subset_vertex (i : Fin B.faces.interface
   exact (B.faces.pair i).upper_bottom_vertex hq
     ((B.arrangement_iff_height_zero hzero (subset_iUnion
       (fun j => (B.faces.face j).carrier) (i, true) hq)).mp hK)
-
-
 
 theorem face_arrangement_trace (i : Fin B.faces.interface.count × Bool) :
     IsPreconnected ((B.faces.face i).carrier ∩ chartDiskBoundaryUnion D.centers D.radius) ∧
@@ -235,8 +222,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (B : ∀ p i, ((S p).piece i).FixedStripBandFaces ((K p).graphCuts i) δ r r)
 
 set_option maxHeartbeats 600000 in
-
-
 
 theorem cross_region_band_faces_coordinate_intersection
     (hcut : ∀ e t, cut e t ∈ Ioo (0 : ℝ) (1 / 3))

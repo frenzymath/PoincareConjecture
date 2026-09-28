@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteFlagBounds
 import PoincareConjecture.Proofs.M02.Topology.FiniteSimplexAltitude
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

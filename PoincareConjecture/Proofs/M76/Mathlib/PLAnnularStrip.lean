@@ -1,32 +1,16 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLAnnularStripCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentStripProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
 
-
-
 def rectangle (L d : ℝ) : Set (ℝ × ℝ) := Icc 0 L ×ˢ Icc (-d) d
-
-
 
 def trapezoid (L d : ℝ) : Set (ℝ × ℝ) :=
   {p | p.2 ∈ Icc (-d) d ∧ p.1 ∈ Icc p.2 (L - p.2)}
-
-
 
 theorem stripMap_injOn {L d : ℝ} (hwidth : 4 * d < L) :
     InjOn (stripMap L) (rectangle L d) := by
@@ -38,8 +22,6 @@ theorem stripMap_injOn {L d : ℝ} (hwidth : 4 * d < L) :
   have h₁ : coordinate L p.1 p.2 = coordinate L q.1 q.2 := congrArg Prod.fst hpq
   rw [← h₂] at h₁
   exact Prod.ext ((strictMonoOn_coordinate ht).injOn hp.1 hq.1 h₁) h₂
-
-
 
 theorem stripMap_image {L d : ℝ} (hwidth : 4 * d < L) :
     stripMap L '' rectangle L d = trapezoid L d := by
@@ -58,11 +40,6 @@ theorem stripMap_image {L d : ℝ} (hwidth : 4 * d < L) :
     rw [← coordinate_image_Icc hlt] at hx
     obtain ⟨s, hs, he⟩ := hx
     exact ⟨(s, p.2), ⟨hs, ht⟩, Prod.ext he rfl⟩
-
-
-
-
-
 
 theorem exists_finitePL_strip_homeomorph {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.RetainedDifferential
 import PoincareConjecture.Proofs.M36.MetricPullback
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

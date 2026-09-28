@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M08.PathBasics
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.GCongr
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +35,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 theorem scalarCurvature_abs_le_tensorNorm {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (x : M) :
     |D.scalarCurvature x| ≤ (n : ℝ) ^ 2 * D.curvatureTensorNorm x := by
@@ -67,11 +58,9 @@ theorem scalarCurvature_abs_le_tensorNorm {g : RiemannianMetric n M}
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
       ring
 
-
 noncomputable def backwardLPotential {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (γ : ℝ → M) (τ : ℝ) : ℝ :=
   Real.sqrt τ * (F.connection (T - τ)).scalarCurvature (γ τ)
-
 
 noncomputable def backwardLKinetic {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (γ : ℝ → M) (τ : ℝ) : ℝ :=
@@ -90,7 +79,6 @@ theorem backwardLIntegrand_eq_potential_add_kinetic {J : Set ℝ}
     backwardLIntegrand F T γ τ =
       backwardLPotential F T γ τ + backwardLKinetic F T γ τ := by
   exact mul_add _ _ _
-
 
 theorem backwardLPotential_continuousOn {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (hM04 : RicciFlowCurvatureTheory.{u})
@@ -139,7 +127,6 @@ theorem backwardLPotential_abs_le {J : Set ℝ} {F : RicciFlow n M J}
     _ ≤ Real.sqrt τ₂ * ((n : ℝ) ^ 2 * K) :=
       mul_le_mul_of_nonneg_left hscalar (Real.sqrt_nonneg _)
     _ = _ := by ring
-
 
 theorem backwardLLength_coercive {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax τ₁ τ₂ K : ℝ} (hM04 : RicciFlowCurvatureTheory.{u})

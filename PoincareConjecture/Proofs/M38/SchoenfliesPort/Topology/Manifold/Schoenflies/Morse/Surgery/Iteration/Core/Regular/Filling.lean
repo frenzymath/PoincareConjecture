@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Regular.Orientation
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.Filling
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -40,8 +32,6 @@ private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
 namespace SphereSurgeryCoreCap
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_ambient_filling_of_capped_annular_core
     (D E : SphereSurgeryCoreCap v g B)
@@ -161,8 +151,6 @@ end SphereSurgeryCoreCap
 
 namespace SphereSurgeryPath
 
-
-
 theorem exists_ambient_filling_of_regular_core_of_cap_complement
     {v : E3} {f g : S2 → E3} (P : SphereSurgeryPath v f g)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
@@ -212,8 +200,6 @@ theorem exists_ambient_filling_of_regular_core_of_cap_complement
       · exact Or.inr (mem_iUnion_of_mem E (mem_iUnion_of_mem hE hyE))
   exact SphereSurgeryCoreCap.exists_ambient_filling_of_capped_annular_core D E hg hDE
     hDscale hEscale F hδ hFs hF hFi hheight (hboundary D hD) (hboundary E hE) hrange
-
-
 
 theorem exists_ambient_filling_of_regular_core
     {v : E3} {f g : S2 → E3} (P : SphereSurgeryPath v f g)

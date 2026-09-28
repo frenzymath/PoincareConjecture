@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem saddle_crosscut_cells_inside_outside
     (B : BallNeighborhoodChart E2 E2)

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Noncompact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -197,8 +185,6 @@ private theorem disjoint_frontier_of_compact_complement [T2Space M]
     (Filter.inter_mem hnhds (hL.isClosed.isOpen_compl.mem_nhds hxout))
   exact hy.2 (hmiddle y hyV hy.1.1 hy.1.2)
 
-
-
 theorem eq_of_subset_isCompact_complement [T2Space M]
     {U V : Set M} (T : OpenCylinderModel U) (W : OpenCylinderModel V)
     (hU : IsOpen U) (hV : IsOpen V) (hVU : V ⊆ U)
@@ -212,7 +198,6 @@ theorem eq_of_subset_isCompact_complement [T2Space M]
   exact (show (⟨x, hx⟩ : U) ∈ Subtype.val ⁻¹' V from heq ▸ mem_univ _)
 
 end OpenCylinderModel
-
 
 theorem OpenCylinderModel.not_isCompact_carrier {U : Set M}
     (T : OpenCylinderModel U) : ¬ IsCompact U := by
@@ -234,8 +219,6 @@ theorem EpsilonTubeCertificate.not_whole_of_isCompact {X : Set M}
   exact T.cylinder.not_isCompact_carrier
     (Set.eq_univ_of_univ_subset hwhole ▸ hcompact)
 
-
-
 theorem CappedTubeCertificate.not_isCompact_carrier
     (T : CappedTubeCertificate g) : ¬ IsCompact T.carrier := by
   intro hcompact
@@ -254,8 +237,6 @@ theorem CappedTubeCertificate.not_isCompact_carrier
   have hcarrier : T.carrier = T.cap.carrier := by
     rw [T.carrier_eq_union, union_eq_left.mpr htube]
   exact T.cap.not_isCompact_carrier (hcarrier ▸ hcompact)
-
-
 
 theorem GlobalNeckCapConclusion.closed_or_fibration_of_isCompact
     {epsilon C : ℝ} (conclusion : GlobalNeckCapConclusion g epsilon C)

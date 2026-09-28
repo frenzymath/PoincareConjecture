@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalTubeChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +11,6 @@ variable (V : ℝ × E2 → E2) {K L : ℝ≥0}
 variable (hK : LipschitzWith K (clockField V)) (hL : ∀ p, ‖clockField V p‖ ≤ L)
 variable (hV : ContDiff ℝ ∞ V) (hsV : HasCompactSupport V)
 variable (χ : ℝ → ℝ) (hχ : ContDiff ℝ ∞ χ) (c : ℝ)
-
-
 
 noncomputable def localizedClockGraphDiffeomorph (s : ℝ) :
     Diffeomorph 𝓘(ℝ, E2 × ℝ) 𝓘(ℝ, E2 × ℝ) (E2 × ℝ) (E2 × ℝ) ∞ := by
@@ -42,17 +29,11 @@ noncomputable def localizedClockGraphDiffeomorph (s : ℝ) :
 local notation "G" => localizedClockGraphDiffeomorph V hK hL hV hsV χ hχ c
 local notation "Xi" => clockEvolution V hK hL
 
-
-
 theorem localizedClockGraphDiffeomorph_apply (s : ℝ) (p : E2 × ℝ) :
     G s p = (Xi c (c + s * χ p.2 * (p.2 - c)) p.1, p.2) := rfl
 
-
-
 theorem localizedClockGraphDiffeomorph_symm_apply (s : ℝ) (p : E2 × ℝ) :
     (G s).symm p = (Xi (c + s * χ p.2 * (p.2 - c)) c p.1, p.2) := rfl
-
-
 
 theorem localizedClockGraphDiffeomorph_contDiff :
     ContDiff ℝ ∞ (fun p : ℝ × (E2 × ℝ) => G p.1 p.2) ∧
@@ -66,18 +47,12 @@ theorem localizedClockGraphDiffeomorph_contDiff :
     ((clockEvolution_contDiff V hK hL hV hsV).comp
       ((ha.prodMk contDiff_const).prodMk contDiff_snd.fst)).prodMk contDiff_snd.snd⟩
 
-
-
 theorem localizedClockGraphDiffeomorph_zero (p : E2 × ℝ) : G 0 p = p := by
   simp only [localizedClockGraphDiffeomorph_apply, zero_mul, add_zero,
     clockEvolution_self, Prod.eta]
 
-
-
 theorem localizedClockGraphDiffeomorph_height (s : ℝ) (p : E2 × ℝ) :
     (G s p).2 = p.2 ∧ ((G s).symm p).2 = p.2 := ⟨rfl, rfl⟩
-
-
 
 theorem localizedClockGraphDiffeomorph_fixed_cylinder
     {B : Set E2} (hzero : ∀ z : ℝ, ∀ x ∈ B, V (z, x) = 0)
@@ -91,16 +66,12 @@ theorem localizedClockGraphDiffeomorph_fixed_cylinder
     · exact clockEvolution_eq_self V hK hL x (fun t => hzero t x hx) _ _
     · rfl
 
-
-
 theorem localizedClockGraphDiffeomorph_fixed_of_cutoff_zero
     (s z : ℝ) (x : E2) (hz : χ z = 0) :
     G s (x, z) = (x, z) ∧ (G s).symm (x, z) = (x, z) := by
   constructor <;> simp only [localizedClockGraphDiffeomorph_apply,
     localizedClockGraphDiffeomorph_symm_apply, hz, mul_zero, zero_mul,
     add_zero, clockEvolution_self]
-
-
 
 theorem localizedClockGraphDiffeomorph_tsupport_subset (s : ℝ) :
     tsupport (fun p => G s p - p) ⊆ (Prod.snd '' tsupport V) ×ˢ tsupport χ ∧
@@ -134,8 +105,6 @@ theorem localizedClockGraphDiffeomorph_tsupport_subset (s : ℝ) :
         (localizedClockGraphDiffeomorph_fixed_of_cutoff_zero V hK hL hV hsV χ hχ c
           s p.2 p.1 (image_eq_zero_of_notMem_tsupport hz)).2)
 
-
-
 theorem localizedClockGraphDiffeomorph_hasCompactSupport
     (hsχ : HasCompactSupport χ) (s : ℝ) :
     HasCompactSupport (fun p => G s p - p) ∧
@@ -145,8 +114,6 @@ theorem localizedClockGraphDiffeomorph_hasCompactSupport
   have hs := localizedClockGraphDiffeomorph_tsupport_subset V hK hL hV hsV χ hχ c s
   exact ⟨hcompact.of_isClosed_subset (isClosed_tsupport _) hs.1,
     hcompact.of_isClosed_subset (isClosed_tsupport _) hs.2⟩
-
-
 
 theorem localizedClockGraphDiffeomorph_mem_symm_image
     (S0 : Set (E2 × ℝ)) (s : ℝ) (p : E2 × ℝ) :

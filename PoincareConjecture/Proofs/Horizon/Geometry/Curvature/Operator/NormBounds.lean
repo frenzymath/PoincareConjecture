@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.CoefficientBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators Manifold ContDiff Bundle
@@ -79,7 +67,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace LeviCivitaData
 
-
 theorem abs_curvatureTensor_component_le_of_operator_bound
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x : M) (K : ℝ)
     (hK : 0 ≤ K) (hoperator : CurvatureOperatorBound D K x)
@@ -103,7 +90,6 @@ theorem abs_curvatureTensor_component_le_of_operator_bound
   exact Poincare.Geometry.Curvature.Operator.abs_component_le_of_operator_bound
     R K hK hfirst hlast hpair hoperator i j k l
 
-
 theorem curvatureTensorNorm_le_of_operator_bound
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x : M) (K : ℝ)
     (hK : 0 ≤ K) (hoperator : CurvatureOperatorBound D K x)
@@ -116,7 +102,6 @@ theorem curvatureTensorNorm_le_of_operator_bound
       D x K hK (abs_curvatureTensor_component_le_of_operator_bound
         D x K hK hoperator hcalculus)
 
-
 theorem per_slice_curvatureTensorNorm_bound
     {J : Set ℝ} (F : RicciFlow n M J) (t : ℝ) (K : ℝ)
     (hK : 0 ≤ K)
@@ -126,7 +111,6 @@ theorem per_slice_curvatureTensorNorm_bound
   intro x
   exact curvatureTensorNorm_le_of_operator_bound (F.connection t) x K hK
     (hoperator x) hcalculus
-
 
 theorem per_slice_curvatureTensorNorm_bound_of_curvature_theory
     (hM04 : RicciFlowCurvatureTheory.{u})

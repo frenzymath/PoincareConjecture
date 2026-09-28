@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeJointMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedHalfFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPrismRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CylindricalContactNormals
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_OppositeGeodesicJoin
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_nonembedded_normal_strip_has_embedded_geodesic
     (N : IntrinsicAnnulus)

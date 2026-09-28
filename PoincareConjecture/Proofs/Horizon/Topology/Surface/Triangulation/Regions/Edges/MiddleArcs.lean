@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Endpoints
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -22,12 +12,10 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
 
-
 def middleArc (cut : D.EdgeIndex → Bool → ℝ) (a : D.EdgeIndex) : Set M :=
   (D.edge a.1 a.2).map '' Icc (cut a false) (1 - cut a true)
 
 omit [T2Space M] in
-
 
 theorem middleArc_parameters {cut : D.EdgeIndex → Bool → ℝ}
     (hcut : ∀ a b, cut a b ∈ Ioo (0 : ℝ) (1 / 3)) (a : D.EdgeIndex) :
@@ -89,7 +77,6 @@ theorem edge_subset_endpoint_segments_union_middleArc
     exact ⟨t, ⟨(lt_of_not_ge h1).le, ht.2⟩, rfl⟩
 
 omit [T2Space M] in
-
 
 theorem boundary_subset_endpoint_cover_union_middleArcs
     {cut : D.EdgeIndex → Bool → ℝ} {C : Set M}

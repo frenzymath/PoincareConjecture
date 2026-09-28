@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.FiniteHistory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
 
 theorem exists_active_prefix_of_double_pair
     {X Y : Type*} {n : ℕ} (P : ℕ → Set X) (F : Fin n → Set X)

@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SignedAxisPermutations
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace Polygon
-
 
 theorem transverse_strip_side_labels {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)
@@ -85,7 +74,6 @@ theorem transverse_strip_side_labels {n : ℕ}
     exact False.elim (Set.disjoint_left.mp P.disjoint_inside_outside hzI
       ((hcover ⟨hzU, hzI.1⟩).elim (fun h ↦ hAo h) (fun h ↦ hBo h)))
 
-
 theorem exchanged_strip_signs_eq {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)
     (hinjP : Function.Injective P) {r a b : ℝ} (hr : 0 < r) (hab : a < b)
@@ -152,8 +140,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 
-
-
 theorem signed_axis_closing_swaps_of_connected_source
     {X : Type*} [TopologicalSpace X] [T2Space X]
     (closing : SignedAxisPermutation) {a b : ℝ} (hab : a < b)
@@ -177,7 +163,6 @@ theorem signed_axis_closing_swaps_of_connected_source
         ⟨axis 1 a, hcover.symm ▸ Or.inr h1, h1⟩
     have h := (hfib 0 1 s hsI t htI).mp (hsx.trans htx.symm)
     simp [SignedAxisPermutation.index, jointSheetIndex, hs] at h
-
 
 theorem exchanged_source_strip_signs_eq {n : ℕ}
     (P : Polygon V2 (n + 3)) (hP : P.HasSimplicialEdges)
@@ -204,8 +189,6 @@ theorem exchanged_source_strip_signs_eq {n : ℕ}
   change e (phi j x) ∈ (P.affineImage _).boundary ℝ ↔ x.1 = 0
   rw [P.affineImage_boundary]
   exact e.injective.mem_set_image.trans (haxis j x hx)
-
-
 
 theorem signed_axis_closing_classification_from_source_strips {n : ℕ}
     (P : Polygon V2 (n + 3)) (hP : P.HasSimplicialEdges)
@@ -236,8 +219,6 @@ theorem signed_axis_closing_classification_from_source_strips {n : ℕ}
       phi hPL (hinj 0) haxis closing.sign ?_⟩
     intro j u hu
     simpa [SignedAxisPermutation.index, jointSheetIndex, hs] using hclose j u hu
-
-
 
 theorem signed_axis_closing_eq_refl_of_paired_sheets
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -287,8 +268,6 @@ theorem signed_axis_closing_eq_refl_of_paired_sheets
 
 namespace SignedAxisPermutation
 
-
-
 def reflectionFrame (a : SignedAxisPermutation) : SignedAxisPermutation :=
   ⟨false, ![true, a.sign 0]⟩
 
@@ -297,7 +276,6 @@ theorem reflectionFrame_conjugate (a : SignedAxisPermutation)
     a.linear (a.reflectionFrame.linear x) = a.reflectionFrame.linear (x.2, x.1) := by
   cases h0 : a.sign 0 <;>
     simp [linear_apply, reflectionFrame, hswap, ← hsign, h0]
-
 
 noncomputable def reflectionCoordinates (a : SignedAxisPermutation) : P2 ≃L[ℝ] P2 :=
   signedSquareToDiamond.trans a.reflectionFrame.linear

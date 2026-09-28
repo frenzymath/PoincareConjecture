@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsUniverseMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_lifted_chart_jets
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X]
@@ -78,8 +68,6 @@ theorem terminalSource_regular_lifted_chart_jets
     exact heq hy
   exact (hgerm.iteratedFDeriv (𝕜 := ℝ) m).eq_of_nhds
 
-
-
 theorem terminalSource_regular_lifted_source_jets
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X]
     [IsManifold (𝓡 3) ∞ X] (g : RiemannianMetric 3 X)
@@ -121,8 +109,6 @@ theorem terminalSource_regular_lifted_source_jets
   simp_rw [hmaps]
   exact (hjet i m K hK hKc).congr_right
     (fun x hx => (hc.2.2.2 m x (hKc hx)).symm)
-
-
 
 theorem terminalSource_regular_lifted_exhaustion
     {X : Type v} [TopologicalSpace X] (V : ℕ → Set X)

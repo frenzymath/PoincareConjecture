@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +9,6 @@ open scoped Topology Manifold ContDiff ENNReal Bundle
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.Riemannian.Soul
-
-
-
 
 theorem exists_continuous_convex_exhaustion
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

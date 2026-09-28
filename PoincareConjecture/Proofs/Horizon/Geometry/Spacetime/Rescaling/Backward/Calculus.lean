@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.BackwardEn
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

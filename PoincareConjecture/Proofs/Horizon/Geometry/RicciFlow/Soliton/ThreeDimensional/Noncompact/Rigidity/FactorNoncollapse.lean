@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.FactorFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Volume
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 namespace PoincareConjecture
 
 namespace RiemannianMetric
-
 
 theorem parallelGradient_factor_kappaNoncollapsed
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -75,8 +62,6 @@ end RiemannianMetric
 namespace RicciFlow
 
 open RiemannianMetric
-
-
 
 theorem parallelGradientFactor_kappaNoncollapsed
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

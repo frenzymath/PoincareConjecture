@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.Source
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.FiniteCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -28,8 +19,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_exact_source_slab_meridian
     {α β : Type*}

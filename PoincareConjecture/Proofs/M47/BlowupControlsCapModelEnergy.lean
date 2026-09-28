@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem cap_model_derivative_norm_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hu : u < 1)
@@ -52,8 +42,6 @@ theorem cap_model_derivative_norm_le
       (D0.iteratedCovariantTensorDerivative H k)
       (M35.cylinderCoordinateEquiv.symm (0, s)) := Real.sqrt_nonneg _
   exact (sq_le_sq₀ hnonneg hepsilon.le).mp hsq
-
-
 
 theorem cap_model_twoDerivative_energy_le_jet
     (u : ℝ) (hu : u < 1) (B : RoundCylinderTwoTensor)

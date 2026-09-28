@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingCovector
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingDerivativeBianchi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -21,11 +12,9 @@ namespace PoincareConjecture.M35.Uniqueness
 
 local notation:max "V" n:max => EuclideanSpace ℝ (Fin n)
 
-
 noncomputable def killingRicciCovector {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) : CovariantTensorEvaluation n (V n) 1 :=
   fun x v => D.ricci x (v 0) (X x)
-
 
 theorem isSmoothCovariantTensor_killingRicciCovector {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
@@ -37,7 +26,6 @@ theorem isSmoothCovariantTensor_killingRicciCovector {n : ℕ}
   intro U hU Y hY
   exact M04.contMDiffOn_ricci D hU (hY 0)
     (euclidean_field_contMDiff hX).contMDiffOn
-
 
 theorem killingRicciCovector_derivative {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
@@ -76,8 +64,6 @@ theorem killingRicciCovector_derivative {n : ℕ}
     D.ricci x (D.connection (fun _ => b) x a) (X x) =
       D.covariantTensorDerivative (killingRicciCovector D X) x ![a, b] at hA
   linarith only [hR, hA]
-
-
 
 theorem killingRicciCovector_derivative_frame {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)

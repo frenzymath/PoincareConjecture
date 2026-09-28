@@ -5,15 +5,6 @@ import Mathlib.Analysis.Matrix.Normed
 import Mathlib.Analysis.Normed.Field.Lemmas
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,12 +15,10 @@ namespace PoincareConjecture.DeTurckNative
 
 variable {n : ℕ}
 
-
 structure MetricJet2 where
   value : Matrix (Fin n) (Fin n) ℝ
   first : Fin n → Matrix (Fin n) (Fin n) ℝ
   second : Fin n → Fin n → Matrix (Fin n) (Fin n) ℝ
-
 
 def coordinateMetricJet {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
     (e : Fin n → V) (G : V → Matrix (Fin n) (Fin n) ℝ) (y : V) :
@@ -91,46 +80,30 @@ theorem coordinateMetricJet_second_contDiffOn
   intro i
   exact contDiffOn_pi.mpr fun j => hsecond a b i j
 
-
-
-
 def secondJetSource (G : Matrix (Fin n) (Fin n) ℝ)
     (H : Fin n → Fin n → Matrix (Fin n) (Fin n) ℝ)
     (i j : Fin n) : ℝ :=
   ∑ a, ∑ b, G⁻¹ a b * H a b i j
 
-
 def eraseSecondJet (q : MetricJet2 (n := n)) : MetricJet2 (n := n) :=
   { value := q.value, first := q.first, second := 0 }
-
-
-
 
 def lowerOrderSource (background : MetricJet2 (n := n))
     (q : MetricJet2 (n := n)) (i j : Fin n) : ℝ :=
   ∑ a, (q.first a i j - background.first a i j)
 
-
 def chartSource (background q : MetricJet2 (n := n)) (i j : Fin n) : ℝ :=
   secondJetSource q.value q.second i j + lowerOrderSource background q i j
 
-
 def nonsingularMetricJets : Set (MetricJet2 (n := n)) :=
   {q | q.value.det ≠ 0}
-
-
-
-
-
 
 def christoffelJet (q : MetricJet2 (n := n)) (k i j : Fin n) : ℝ :=
   (1 / 2 : ℝ) * ∑ l, q.value⁻¹ k l *
     (q.first i l j + q.first j l i - q.first l i j)
 
-
 def inverseFirst (q : MetricJet2 (n := n)) (a k l : Fin n) : ℝ :=
   -∑ u, ∑ v, q.value⁻¹ k u * q.first a u v * q.value⁻¹ v l
-
 
 def christoffelSecond (q : MetricJet2 (n := n))
     (a k i j : Fin n) : ℝ :=
@@ -140,22 +113,18 @@ def christoffelSecond (q : MetricJet2 (n := n))
       q.value⁻¹ k l *
         (q.second a i l j + q.second a j l i - q.second a l i j))
 
-
 def mixedCurvatureJet (q : MetricJet2 (n := n))
     (i j k l : Fin n) : ℝ :=
   christoffelSecond q i l j k - christoffelSecond q j l i k +
     ∑ m, (christoffelJet q m j k * christoffelJet q l i m -
       christoffelJet q m i k * christoffelJet q l j m)
 
-
 def ricciJet (q : MetricJet2 (n := n)) (i j : Fin n) : ℝ :=
   ∑ k, mixedCurvatureJet q k i j k
-
 
 def deTurckVector (background q : MetricJet2 (n := n)) (k : Fin n) : ℝ :=
   ∑ a, ∑ b, q.value⁻¹ a b *
     (christoffelJet q k a b - christoffelJet background k a b)
-
 
 def deTurckVectorFirst (background q : MetricJet2 (n := n))
     (a k : Fin n) : ℝ :=
@@ -165,26 +134,21 @@ def deTurckVectorFirst (background q : MetricJet2 (n := n))
       q.value⁻¹ u v *
         (christoffelSecond q a k u v - christoffelSecond background a k u v))
 
-
 def lieDerivativeJet (background q : MetricJet2 (n := n)) (i j : Fin n) : ℝ :=
   ∑ k,
     (deTurckVector background q k * q.first k i j +
       q.value k j * deTurckVectorFirst background q i k +
       q.value i k * deTurckVectorFirst background q j k)
 
-
 def ricciDeTurckSource (background q : MetricJet2 (n := n))
     (i j : Fin n) : ℝ :=
   -2 * ricciJet q i j + lieDerivativeJet background q i j
-
-
 
 def secondJetChristoffel (A : Matrix (Fin n) (Fin n) ℝ)
     (H : Fin n → Fin n → Matrix (Fin n) (Fin n) ℝ)
     (a i j k : Fin n) : ℝ :=
   (1 / 2 : ℝ) * ∑ l, A k l *
     (H a i l j + H a j l i - H a l i j)
-
 
 def ricciDeTurckSecondJet (G : Matrix (Fin n) (Fin n) ℝ)
     (H : Fin n → Fin n → Matrix (Fin n) (Fin n) ℝ)
@@ -381,7 +345,6 @@ private theorem deTurckVectorFirst_split
           christoffelSecond background a k i j))
   ring
 
-
 theorem ricciDeTurckSource_split
     (background q : MetricJet2 (n := n)) (i j : Fin n) :
     ricciDeTurckSource background q i j =
@@ -399,8 +362,6 @@ theorem ricciDeTurckSource_split
   dsimp only [eraseSecondJet]
   ring
 
-
-
 theorem ricciDeTurckSource_quasilinear
     (background q : MetricJet2 (n := n))
     (hG : q.value.IsSymm) (hdet : q.value.det ≠ 0)
@@ -413,7 +374,6 @@ theorem ricciDeTurckSource_quasilinear
   rw [ricciDeTurckSource_split,
     ricciDeTurckSecondJet_eq q.value hG hdet q.second hHm hHd]
 
-
 def ricciDeTurckLowerOrder (background q : MetricJet2 (n := n))
     (i j : Fin n) : ℝ :=
   ricciDeTurckSource background q i j - secondJetSource q.value q.second i j
@@ -425,9 +385,6 @@ theorem ricciDeTurckSource_decomp (background q : MetricJet2 (n := n))
         ricciDeTurckLowerOrder background q i j := by
   simp only [ricciDeTurckLowerOrder]
   ring
-
-
-
 
 theorem continuousAt_matrix_inv_of_posDef
     (G : Matrix (Fin n) (Fin n) ℝ) (hG : G.PosDef) :

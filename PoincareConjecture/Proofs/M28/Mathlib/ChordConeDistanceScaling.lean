@@ -1,18 +1,9 @@
 import PoincareConjecture.Proofs.M28.Mathlib.ChordConeDistance
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 namespace PoincareConjecture.M28
-
-
 
 theorem chordConeDistance_mul (h : ℝ) (hh : 0 ≤ h) (r s d : ℝ) :
     chordConeDistance (h * r) (h * s) d = h * chordConeDistance r s d := by

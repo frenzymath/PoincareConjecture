@@ -3,23 +3,11 @@ import Mathlib.Tactic.GCongr
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem quadratic_action_remainder_lower_bound
     (B₀ B₁ DBw : E →L[ℝ] E →L[ℝ] ℝ) (v d w : E)

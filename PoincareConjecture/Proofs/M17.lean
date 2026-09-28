@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M17BlowupSetup
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Rescaling.Construction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,24 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem ancientBlowupSequenceSetup (n : ℕ)
     (M : Type u) [TopologicalSpace M]
@@ -48,7 +22,6 @@ theorem ancientBlowupSequenceSetup (n : ℕ)
     AncientBlowupSetupConclusion K reference tau := by
   exact horizon_ancientBlowupSequenceSetup n M K reference tau tau_pos
     tau_tendsto hM10 hM13
-
 
 theorem ancientBlowupSequenceSetupTheory (n : ℕ)
     (hM10 : ∀ (M : Type u) [TopologicalSpace M]

@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialProfileCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
 
 noncomputable def radialScaleMap (h : ℝ → ℝ) (x : StandardCapSpace) : StandardCapSpace :=
   h ‖x‖ • x
@@ -52,7 +43,6 @@ private theorem scalar_scale_hessian {S : StandardCapSpace → ℝ}
     ContinuousLinearMap.smulRight_apply, smul_apply,
     ContinuousLinearMap.id_apply, id_eq, add_assoc] using h
 
-
 theorem radialScaleMap_fderiv {h : ℝ → ℝ} (hh : ContDiff ℝ ∞ h)
     {x : StandardCapSpace} (hx : x ≠ 0) (v : StandardCapSpace) :
     fderiv ℝ (radialScaleMap h) x v = h ‖x‖ • v +
@@ -62,7 +52,6 @@ theorem radialScaleMap_fderiv {h : ℝ → ℝ} (hh : ContDiff ℝ ∞ h)
   change HasFDerivAt (radialScaleMap h) _ x at hd
   rw [hd.fderiv]
   rfl
-
 
 theorem radialScaleMap_hessian {h : ℝ → ℝ} (hh : ContDiff ℝ ∞ h)
     (he : Function.Even h) {x : StandardCapSpace} (hx : x ≠ 0)

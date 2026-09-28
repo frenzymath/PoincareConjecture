@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.MetricCoordinates
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -28,7 +20,6 @@ theorem metricCoordinates_inner (g : RiemannianMetric n M) (q : M)
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact (metricCoordinates g q).inner_map_map v w
-
 
 theorem metricCoordinates_basis_inner (g : RiemannianMetric n M) (q : M) (i j : Fin n) :
     g.inner q (metricCoordinates g q (EuclideanSpace.basisFun (Fin n) ℝ i))
@@ -52,7 +43,6 @@ theorem sum_metricCoordinates_basis (g : RiemannianMetric n M) (q : M)
     OrthonormalBasis.repr_symm_single, OrthonormalBasis.reindex_apply]
   exact Equiv.sum_comp (finCongr hdim).symm (fun i ↦ f (g.orthonormalBasis q i))
 
-
 theorem sum_metricCoordinates_ricci (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (q : M) :
     (∑ i : Fin n, D.ricci q
@@ -60,7 +50,6 @@ theorem sum_metricCoordinates_ricci (g : RiemannianMetric n M) (D : LeviCivitaDa
       (metricCoordinates g q (EuclideanSpace.basisFun (Fin n) ℝ i))) =
         D.scalarCurvature q :=
   sum_metricCoordinates_basis g q (fun v ↦ D.ricci q v v)
-
 
 theorem sum_metricCoordinates_hessian (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (f : M → ℝ) (q : M) :

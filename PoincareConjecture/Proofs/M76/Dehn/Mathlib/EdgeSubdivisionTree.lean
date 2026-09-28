@@ -1,16 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Acyclic
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -19,8 +9,6 @@ namespace SimpleGraph
 
 variable {V : Type*} (G : SimpleGraph V)
 
-
-
 def incidenceSubdivision : SimpleGraph (V ⊕ G.edgeSet) where
   Adj x y := match x, y with
     | Sum.inl v, Sum.inr e => v ∈ e.val
@@ -28,9 +16,6 @@ def incidenceSubdivision : SimpleGraph (V ⊕ G.edgeSet) where
     | _, _ => False
   symm := ⟨by intro x y; cases x <;> cases y <;> exact id⟩
   loopless := ⟨by intro x; cases x <;> exact id⟩
-
-
-
 
 theorem reachable_incidenceSubdivision {v w : V} (h : G.Reachable v w) :
     G.incidenceSubdivision.Reachable (Sum.inl v) (Sum.inl w) := by
@@ -44,8 +29,6 @@ theorem reachable_incidenceSubdivision {v w : V} (h : G.Reachable v w) :
     have hright : G.incidenceSubdivision.Adj (Sum.inr e) (Sum.inl v) :=
       Sym2.mem_mk_right u v
     exact hleft.reachable.trans (hright.reachable.trans ih)
-
-
 
 theorem Connected.incidenceSubdivision (hG : G.Connected) :
     G.incidenceSubdivision.Connected := by
@@ -62,8 +45,6 @@ theorem Connected.incidenceSubdivision (hG : G.Connected) :
   obtain ⟨v, hx⟩ := attached x
   obtain ⟨w, hy⟩ := attached y
   exact hx.trans ((G.reachable_incidenceSubdivision (hG.preconnected v w)).trans hy.symm)
-
-
 
 noncomputable def incidenceSubdivisionEdgeEquiv :
     (Σ e : G.edgeSet, {v : V // v ∈ e.val}) ≃ G.incidenceSubdivision.edgeSet := by
@@ -91,8 +72,6 @@ noncomputable def incidenceSubdivisionEdgeEquiv :
         exact Sym2.eq_swap
       · exact hxy.elim
 
-
-
 theorem card_incidenceSubdivision_edges [Finite V] :
     Nat.card G.incidenceSubdivision.edgeSet = 2 * Nat.card G.edgeSet := by
   classical
@@ -107,8 +86,6 @@ theorem card_incidenceSubdivision_edges [Finite V] :
   rw [← Nat.card_congr G.incidenceSubdivisionEdgeEquiv, Nat.card_sigma]
   simp only [hfiber, Finset.sum_const, Finset.card_univ, smul_eq_mul,
     Nat.card_eq_fintype_card, Nat.mul_comm]
-
-
 
 theorem IsTree.incidenceSubdivision [Finite V] (hG : G.IsTree) :
     G.incidenceSubdivision.IsTree := by

@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeCap
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeComponent
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeRound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem regular_history_canonical_control
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

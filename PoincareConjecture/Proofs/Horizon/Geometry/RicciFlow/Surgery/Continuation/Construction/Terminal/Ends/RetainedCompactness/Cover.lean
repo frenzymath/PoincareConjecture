@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CutTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.EndCorrespondence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ} {H : SingularTimeAssumptions G T M}
   (Q : SingularLimitConclusion H) (rho : ℝ)
-
-
 
 theorem isCompact_core_diff_of_end_tail_cover
     {V : Set (Q.extension.extended.slice T).carrier} (hV : IsOpen V)
@@ -51,8 +41,6 @@ theorem isCompact_core_diff_of_end_tail_cover
   rw [heq]
   exact points.isCompact_biUnion hpieces
 
-
-
 theorem isCompact_retained_of_end_cut_cover {ι : Type*}
     (N : ι → EpsilonNeck (Q.extension.extended.metric T))
     (cuts : ∀ i, SurgeryEndCut (N i))
@@ -66,8 +54,6 @@ theorem isCompact_retained_of_end_cut_cover {ι : Type*}
   intro K hK e
   obtain ⟨i, n, hn⟩ := hcover K hK e
   exact ⟨n, fun x hx => mem_iUnion.mpr ⟨i, hn hx⟩⟩
-
-
 
 theorem isCompact_retained_of_horn_end_cover {ι : Type*} {epsilon delta : ℝ}
     (horn : ι → StrongHorn Q.extension epsilon)

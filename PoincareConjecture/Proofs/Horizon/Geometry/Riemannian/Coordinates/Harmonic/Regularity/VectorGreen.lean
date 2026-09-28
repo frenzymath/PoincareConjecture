@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +19,6 @@ private theorem apply_eq_sum_basis
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
 
-
 theorem trace_connection_eq_sum_fderiv_add (D : LeviCivitaData g)
     {V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
     {x : EuclideanSpace ℝ (Fin n)} (hV : DifferentiableAt ℝ V x) :
@@ -44,7 +36,6 @@ theorem trace_connection_eq_sum_fderiv_add (D : LeviCivitaData g)
     (f := fun i => (fderiv ℝ V x (EuclideanSpace.basisFun (Fin n) ℝ i)) i)
     (g := fun i => (D.euclideanConnection (EuclideanSpace.basisFun (Fin n) ℝ i)
       (V x) x) i)
-
 
 theorem density_mul_trace_connection_eq_divergence (D : LeviCivitaData g)
     {V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -72,8 +63,6 @@ theorem density_mul_trace_connection_eq_divergence (D : LeviCivitaData g)
   rw [Finset.sum_add_distrib, ← apply_eq_sum_basis, ← Finset.mul_sum,
     D.fderiv_density_eq_connection_trace, D.trace_connection_eq_sum_fderiv_add hV]
   ring
-
-
 
 theorem integral_mul_trace_connection_density (D : LeviCivitaData g)
     {u : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -122,7 +111,6 @@ private theorem integral_retained_eq_density
     (Filter.Eventually.of_forall fun _ => ENNReal.ofReal_lt_top)]
   simp only [ENNReal.toReal_ofReal (hs _).2.le, smul_eq_mul, mul_comm]
 
-
 theorem integral_mul_trace_connection (D : LeviCivitaData g)
     {u : EuclideanSpace ℝ (Fin n) → ℝ}
     {V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -146,8 +134,6 @@ private theorem integral_fderiv_compact_eq_zero
     (by simpa using hf.continuous.integrable_of_hasCompactSupport hc)
     (fun _ _ => differentiableAt_const 1) (fun x _ => hf.differentiable one_ne_zero x)
   simpa using h
-
-
 
 theorem integral_trace_connection_eq_zero (D : LeviCivitaData g)
     {V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}

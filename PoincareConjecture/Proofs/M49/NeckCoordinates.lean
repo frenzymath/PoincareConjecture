@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,15 +11,11 @@ universe u
 
 namespace PoincareConjecture.M49
 
-
-
 noncomputable def cylinderCoordinateEquiv :
     EuclideanSpace ℝ (Fin 3) ≃L[ℝ] RoundCylinderCoordinates :=
   EuclideanSpace.finAddEquivProd.trans
     ((ContinuousLinearEquiv.refl ℝ (EuclideanSpace ℝ (Fin 2))).prodCongr
       (PiLp.equivOfUnique 2 ℝ (fun _ : Fin 1 => ℝ)))
-
-
 
 theorem cylinderCoordinateEquiv_apply (x : EuclideanSpace ℝ (Fin 3)) :
     cylinderCoordinateEquiv x = (WithLp.toLp 2 ![x 0, x 1], x 2) := by
@@ -36,8 +23,6 @@ theorem cylinderCoordinateEquiv_apply (x : EuclideanSpace ℝ (Fin 3)) :
   · ext i
     fin_cases i <;> rfl
   · rfl
-
-
 
 theorem cylinderCoordinateEquiv_basis (i : Fin 3) :
     cylinderCoordinateEquiv (EuclideanSpace.basisFun (Fin 3) ℝ i) =
@@ -57,8 +42,6 @@ theorem cylinderCoordinateEquiv_basis (i : Fin 3) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 def epsilonNeckChart (N : EpsilonNeck g) :
     OpenPartialHomeomorph RoundCylinderSpace M where
@@ -84,8 +67,6 @@ def epsilonNeckChart (N : EpsilonNeck g) :
   continuousOn_toFun := N.coordinate_map_smooth.continuousOn
   continuousOn_invFun := N.coordinate_inverse_smooth.continuousOn
 
-
-
 theorem epsilonNeckChart_image_region (N : EpsilonNeck g) (a b : ℝ)
     (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) :
     epsilonNeckChart N '' (univ ×ˢ Ioo a b) = N.region a b := by
@@ -101,15 +82,11 @@ theorem epsilonNeckChart_image_region (N : EpsilonNeck g) (a b : ℝ)
   · intro hx
     exact ⟨e.symm x, ⟨mem_univ _, hx.2⟩, e.right_inv hx.1⟩
 
-
-
 noncomputable def epsilonNeckEuclideanChart (N : EpsilonNeck g) (q : UnitTwoSphere) :
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M :=
   (cylinderCoordinateEquiv.toHomeomorph.toOpenPartialHomeomorph.trans
     ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm.prod
       (OpenPartialHomeomorph.refl ℝ))).trans (epsilonNeckChart N)
-
-
 
 theorem epsilonNeckEuclideanChart_source (N : EpsilonNeck g) (q : UnitTwoSphere) :
     (epsilonNeckEuclideanChart N q).source = cylinderCoordinateEquiv ⁻¹'
@@ -117,8 +94,6 @@ theorem epsilonNeckEuclideanChart_source (N : EpsilonNeck g) (q : UnitTwoSphere)
         Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) := by
   ext x
   simp [epsilonNeckEuclideanChart, epsilonNeckChart]
-
-
 
 theorem epsilonNeckEuclideanChart_contMDiffOn (N : EpsilonNeck g) (q : UnitTwoSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (epsilonNeckEuclideanChart N q)
@@ -142,8 +117,6 @@ theorem epsilonNeckEuclideanChart_contMDiffOn (N : EpsilonNeck g) (q : UnitTwoSp
     N.coordinate_map_smooth.contMDiffAt
       ((isOpen_univ.prod isOpen_Ioo).mem_nhds ⟨mem_univ _, hx0.2⟩)
   exact (hN.comp x hpair).contMDiffWithinAt
-
-
 
 theorem epsilonNeckEuclideanChart_symm_contMDiffOn
     (N : EpsilonNeck g) (q : UnitTwoSphere) :

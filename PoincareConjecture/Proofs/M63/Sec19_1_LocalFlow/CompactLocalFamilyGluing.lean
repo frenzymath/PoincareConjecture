@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFields
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Locality
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_compact_c2_family_of_local_families
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

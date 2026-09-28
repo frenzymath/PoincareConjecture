@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_SharpIndexDefect
 import PoincareConjecture.Proofs.M14.Sec6_5_IndexStationary
 import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x y : G.Point} {p : M14BackwardPath G T 0 τ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem adaptedHessianPair_eq_of_index_equality
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,19 +1,8 @@
-
-
-
 import Mathlib.Analysis.Convex.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.Lattice
 import Mathlib.Topology.UniformSpace.HeineCantor
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -78,10 +67,6 @@ private theorem affineInterpolation_eq_lineMap (a b u v t : ℝ) :
   simp only [affineInterpolation, AffineMap.coe_mk, AffineMap.lineMap_apply,
     smul_eq_mul, vadd_eq_add, vsub_eq_sub]
   ring
-
-
-
-
 
 theorem exists_piecewiseAffine_between
     {lo hi : ℝ → ℝ} {a b ya yb : ℝ} (hab : a < b)

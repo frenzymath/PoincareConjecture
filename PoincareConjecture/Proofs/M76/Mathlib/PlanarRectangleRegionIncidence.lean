@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
 
 namespace Geometry
-
-
-
-
 
 theorem inter_image_rectangle_eq_half_of_open_image
     {f : (ℝ × ℝ) → (ℝ × ℝ)} {r : ℝ} (hr : 0 < r)
@@ -109,10 +95,6 @@ theorem inter_image_rectangle_eq_half_of_open_image
   · have hresult := hD.inter_union_closure_eq_of_sides h.1 h.2 hLR
     rw [union_comm (closure (f '' R₀)), himage, hclR] at hresult
     exact Or.inr hresult
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.inter_image_rectangle_eq_half
     {f : (ℝ × ℝ) → (ℝ × ℝ)} {r : ℝ} (hr : 0 < r)

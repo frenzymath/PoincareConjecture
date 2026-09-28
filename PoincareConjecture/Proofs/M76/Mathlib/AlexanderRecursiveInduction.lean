@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicBranchingSection
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexitySum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Geometry
 
 variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 structure AlexanderSectionProfile where
 
@@ -39,13 +26,8 @@ variable {E}
 
 namespace AlexanderSectionProfile
 
-
-
-
 noncomputable def complexity (P : AlexanderSectionProfile E) : ℕ :=
   ∑ c ∈ P.finite_support.toFinset, P.charge c
-
-
 
 theorem charge_le_complexity (P : AlexanderSectionProfile E) (c : ℝ) :
     P.charge c ≤ P.complexity := by
@@ -56,9 +38,6 @@ theorem charge_le_complexity (P : AlexanderSectionProfile E) (c : ℝ) :
   · exact Finset.single_le_sum (fun _ _ => Nat.zero_le _)
       (P.finite_support.mem_toFinset.mpr hc)
 
-
-
-
 theorem complexity_eq_zero_iff (P : AlexanderSectionProfile E) :
     P.complexity = 0 ↔ ∀ c, P.charge c = 0 := by
   classical
@@ -68,9 +47,6 @@ theorem complexity_eq_zero_iff (P : AlexanderSectionProfile E) :
   · intro h
     simp only [complexity, h, Finset.sum_const_zero]
 
-
-
-
 theorem exists_nonzero_charge (P : AlexanderSectionProfile E)
     (hP : P.complexity ≠ 0) : ∃ c : ℝ, P.charge c ≠ 0 := by
   classical
@@ -79,9 +55,6 @@ theorem exists_nonzero_charge (P : AlexanderSectionProfile E)
   exact hP (P.complexity_eq_zero_iff.mpr h)
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_branching_section (P : AlexanderSectionProfile E)
     (hP : P.complexity ≠ 0) :
@@ -101,10 +74,6 @@ theorem exists_branching_section (P : AlexanderSectionProfile E)
   exact ⟨c, m, n, Q, q, hc, hm, hQ, hcover, hpair, hbranch, hcount, hq, hacc⟩
 
 omit [FiniteDimensional ℝ E] in
-
-
-
-
 
 theorem binary_induction {Admissible : AlexanderSectionProfile E → Prop}
     {Q : Set E → Prop}

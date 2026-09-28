@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.AlgebraicSpectrum
 import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import PoincareConjecture.Definitions.Ch04.Pinching
-
-
-
-
-
-
-
-
-
-
 
 open scoped Manifold ContDiff Bundle BigOperators
 
@@ -22,7 +11,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 theorem three_dimensional_curvature_spectrum
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

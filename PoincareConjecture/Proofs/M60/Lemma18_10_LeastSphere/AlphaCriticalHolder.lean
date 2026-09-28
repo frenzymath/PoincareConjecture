@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalLowerTerm
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAffineHolder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +18,6 @@ local instance suHolderMetricSpace {E : Type*} [NormedAddCommGroup E] [NormedSpa
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem suWeakAlphaCoordinate_holder_of_initial_gain
     {n : ℕ} {M : Type*} [TopologicalSpace M]

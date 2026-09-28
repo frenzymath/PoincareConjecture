@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.CoreSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Replacement.Terminal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,7 +68,6 @@ private theorem exists_lower_model_terminal_chart
     exact ⟨hz.1, hsub hz.2⟩
   · intro q z hz
     exact hTneg q z ⟨by linarith [hz.1], hz.2⟩
-
 
 theorem exists_terminal_lower_family_common_preparation_of_prepared
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -234,10 +231,6 @@ theorem exists_terminal_lower_family_common_preparation_of_prepared
     simpa only [hC, add_zero, m] using hh
   · intro j z hz
     exact hconstant j z hz
-
-
-
-
 
 theorem exists_terminal_lower_family_common_preparation
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

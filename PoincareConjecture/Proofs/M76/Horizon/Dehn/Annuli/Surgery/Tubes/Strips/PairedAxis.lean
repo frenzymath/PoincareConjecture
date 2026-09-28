@@ -15,8 +15,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
   {old : SourceCircleDecomposition f S} {i : old.Index}
 
-
-
 theorem ComponentBranchModel.graph_mem_axis_pair_iff
     (D : ComponentBranchModel (e := e) (R := R) old i)
     {w : E} (hw : w ∈ S) (hcore : f w ∈ D.core) :
@@ -29,8 +27,6 @@ theorem ComponentBranchModel.graph_mem_axis_pair_iff
     · rintro ⟨v, hv, hfv⟩
       exact ⟨v, hv, congrArg D.graph hfv⟩
   rw [hphysical, old.piece_image_preimage i w hw]
-
-
 
 theorem ComponentBranchModel.source_strip_selected_pair_iff
     (D : ComponentBranchModel (e := e) (R := R) old i)
@@ -49,8 +45,6 @@ theorem ComponentBranchModel.source_strip_selected_pair_iff
   rw [← D.graph_mem_axis_pair_iff h.1 hcore, h.2.2,
     haxis _ (signedSheetStripMap_mem j hz)]
   fin_cases j <;> simp [signedSheetStripMap_apply]
-
-
 
 theorem ComponentBranchModel.source_strip_axis_pair_cover
     (D : ComponentBranchModel (e := e) (R := R) old i)

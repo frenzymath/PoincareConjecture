@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeNormalization
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +15,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
 def tubeNodeScale (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) (i : ℤ) : ℝ :=
   Real.sqrt ((E (k + H.shift)).flow.scalar
@@ -36,7 +26,6 @@ variable (H : CounterexampleNeckFamily E)
 
 theorem tubeNodeScale_pos (i : ℤ) : 0 < H.tubeNodeScale T k i :=
   mul_pos (Real.sqrt_pos.mpr (H.base_scalar_pos k)) ((T k).list.node i).2.scale_pos
-
 
 theorem tubeNodeScale_le {i : ℤ} (hi : i ∈ (T k).list.active) :
     H.tubeNodeScale T k i ≤ (4 * max C 2)⁻¹ := by
@@ -64,7 +53,6 @@ theorem tubeNodeScale_le {i : ℤ} (hi : i ∈ (T k).list.active) :
   change Real.sqrt Q * N.scale ≤ (4 * max C 2)⁻¹
   rw [inv_eq_one_div]
   exact (le_div_iff₀ (by positivity : 0 < 4 * max C 2)).mpr hproduct
-
 
 theorem tube_edge_scale_cost_le {i : ℤ} (hi : i ∈ (T k).list.active)
     (hnext : i + 1 ∈ (T k).list.active) :
@@ -101,8 +89,6 @@ theorem tube_edge_scale_cost_le {i : ℤ} (hi : i ∈ (T k).list.active)
       ring
     _ ≤ _ := mul_le_mul_right hedge _
 
-
-
 theorem tube_prefix_scale_cost_le (n : ℕ) (hn : n < (T k).list.nodes.length) :
     ENNReal.ofReal (∑ i ∈ Finset.range n,
       (0.99 : ℝ) * H.tubeNodeScale T k (i : ℤ) * epsilon⁻¹) ≤
@@ -132,8 +118,6 @@ theorem tube_prefix_scale_cost_le (n : ℕ) (hn : n < (T k).list.nodes.length) :
     exact (add_le_add (ih (by omega))
       (H.tube_edge_scale_cost_le T k hi hnext)).trans_eq (by
         simpa only [RiemannianMetric.pathELength, Nat.cast_add, Nat.cast_one] using hadd)
-
-
 
 theorem tube_scale_sum_bound :
     ∑ i ∈ Finset.range ((T k).list.nodes.length - 1),

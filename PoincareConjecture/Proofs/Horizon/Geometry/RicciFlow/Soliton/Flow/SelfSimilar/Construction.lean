@@ -7,12 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   (hadd : ∀ s t x, Φ (s + t) x = Φ s (Φ t x))
   (hs : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 n)) (𝓡 n) ∞ (Function.uncurry Φ))
 
-
 def timeMap (t : ℝ) : Diffeomorph (𝓡 n) (𝓡 n) M M ∞ where
   toFun := Φ t
   invFun := Φ (-t)
@@ -38,8 +31,6 @@ def timeMap (t : ℝ) : Diffeomorph (𝓡 n) (𝓡 n) M M ∞ where
   contMDiff_invFun := hs.comp (contMDiff_const.prodMk contMDiff_id)
 
 variable (g : RiemannianMetric n M)
-
-
 
 def metric (t : ℝ) : RiemannianMetric n M :=
   if ht : t < 0 then
@@ -115,8 +106,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 def flowOfCompleteGradientFlow (S : GradientShrinkingSolitonData n M)
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ S.potential)

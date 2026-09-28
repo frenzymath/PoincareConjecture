@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.CornerBands.Coordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

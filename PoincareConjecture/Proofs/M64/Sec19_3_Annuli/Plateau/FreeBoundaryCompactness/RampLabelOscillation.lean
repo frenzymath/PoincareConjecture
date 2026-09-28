@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.FreeTraceSubsequence
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem positive_ramp_lift_uniform_lower_slope
     (P : M62.CircleProductData F circumference) (gamma : ℝ → P.charts.Point)
@@ -51,9 +39,6 @@ theorem positive_ramp_lift_uniform_lower_slope
     exact hmin (Ico_subset_Icc_self hy)
   intro x y hxy
   exact mul_sub_le_image_sub_of_le_deriv (L.regular.differentiable (by norm_num)) hbound hxy
-
-
-
 
 theorem free_ramp_lower_label_logarithmic_constant
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)

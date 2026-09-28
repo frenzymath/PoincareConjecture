@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.Tube
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [Fact (Module.finrank ℝ E = 2)]
-
-
 
 theorem exists_ambient_rounded_polygon_of_smooth_circle
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))

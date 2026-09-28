@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M36.CylinderJetEstimates
 import PoincareConjecture.Proofs.M36.StandardCapTransfer
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -58,7 +49,6 @@ theorem scalarCurvature_eq_of_local_isometry (D : LeviCivitaData g)
   exact D.curvatureTensor_eq_of_local_isometry D' hU hf hmetric hx
     (g.orthonormalBasis x i) (g.orthonormalBasis x j)
     (g.orthonormalBasis x i) (g.orthonormalBasis x j)
-
 
 structure CylinderPointBounds (D : LeviCivitaData g) (s : X → ℝ) (x : X)
     (B : ℝ) : Prop where

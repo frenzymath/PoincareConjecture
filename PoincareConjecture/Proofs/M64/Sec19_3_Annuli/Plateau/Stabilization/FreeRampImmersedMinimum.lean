@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusAffinePhase
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FinitePhaseImmersion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RelabelAreaRange
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,10 +16,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
-
-
 
 theorem auxiliaryCircle_free_ramp_immersed_minimum
     (P : M62.CircleProductData F circumference)

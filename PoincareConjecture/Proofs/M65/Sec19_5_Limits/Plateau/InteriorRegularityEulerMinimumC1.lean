@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerC1
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRepresentative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,11 +12,6 @@ open scoped Topology ContDiff Manifold
 universe u
 
 namespace PoincareConjecture.M65Euler
-
-
-
-
-
 
 theorem minimum_representative_contMDiffOn {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -62,10 +47,6 @@ theorem minimum_representative_contMDiffOn {M : Type u} [TopologicalSpace M]
     apply contMDiffAt_iff_contDiffAt.mpr
     rwa [heqX] at hX1
   exact hq1.contMDiffWithinAt
-
-
-
-
 
 theorem exists_C1_representative {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

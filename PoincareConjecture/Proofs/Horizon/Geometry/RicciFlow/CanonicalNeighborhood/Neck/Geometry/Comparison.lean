@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle ENNReal

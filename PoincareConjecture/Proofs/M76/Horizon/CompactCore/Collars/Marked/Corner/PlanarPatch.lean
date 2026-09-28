@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Corner.F
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Corner.PhysicalLift
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Corner.NormalizedLift
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

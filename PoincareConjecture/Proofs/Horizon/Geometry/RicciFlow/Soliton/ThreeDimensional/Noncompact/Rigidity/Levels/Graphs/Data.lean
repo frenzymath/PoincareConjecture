@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graphs.Embeddings
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph.Metric
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,15 +30,12 @@ variable {M : Type u} [TopologicalSpace M]
   {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N] [IsManifold (𝓡 2) ∞ N]
 
-
 def potentialLevelGraphMap
     (e : (N × ℝ) ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ L.limitCarrier.carrier)
     (u : N → ℝ) (k : ℕ) (y : N) : M :=
   G.unscaledOriginalEmbedding L (B.subsequence k) (e (y, u y))
 
 variable [T3Space N] [MeasurableSpace N] [BorelSpace N]
-
-
 
 structure PotentialLevelGraphs
     (h : RiemannianMetric 2 N)

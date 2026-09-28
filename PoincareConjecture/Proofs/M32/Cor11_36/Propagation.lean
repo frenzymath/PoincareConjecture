@@ -5,20 +5,6 @@ import PoincareConjecture.Proofs.M32.Neck.NearbyTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -38,9 +24,6 @@ private theorem center_mem_middleHalf
   rw [hc.2]
   have hi := inv_pos.mpr N.epsilon_pos
   constructor <;> linarith
-
-
-
 
 theorem exists_hornCut_propagation :
     ∃ tau : ℝ, 0 < tau ∧ tau ≤ 1 / 200 ∧

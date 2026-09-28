@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.Ribbon.BoundaryChart
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Crossing
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,7 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.CircleAttachmentGerm
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 def ribbonTransverseReflection : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
   toFun x := WithLp.toLp 2 ![x 0, -x 1]
@@ -37,8 +34,6 @@ def ribbonTransverseReflection : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
 
 @[simp] theorem ribbonTransverseReflection_apply (s t : Real) :
     ribbonTransverseReflection (WithLp.toLp 2 ![s, t]) = WithLp.toLp 2 ![s, -t] := rfl
-
-
 
 theorem ribbon_inward_germ_of_exterior_edge
     (A R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -82,8 +77,6 @@ theorem ribbon_inward_germ_of_exterior_edge
   exact ⟨A.symm (R (WithLp.toLp 2 ![0, t])),
     mem_ball_zero_iff.mpr ht, A.apply_symm_apply _⟩
 
-
-
 theorem exists_filling_adapted_to_exterior_ribbon_edge
     (A R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     {w : Real} (hw : 0 < w)
@@ -100,7 +93,6 @@ theorem exists_filling_adapted_to_exterior_ribbon_edge
   exists_filling_adapted_to_ribbon_edge A R hw hedge
     (ribbon_inward_germ_of_exterior_edge A R hw hedge houtside)
 
-
 theorem ribbon_positive_inward_germ_of_negative_exterior_edge
     (A R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     {w : Real} (hw : 0 < w)
@@ -116,8 +108,6 @@ theorem ribbon_positive_inward_germ_of_negative_exterior_edge
     (ribbonTransverseReflection.trans R) hw
     (by simpa using hedge) (by simpa using hneg.eventually houtside)
   simpa using hneg.eventually hin
-
-
 
 theorem exists_filling_adapted_to_negative_exterior_ribbon_edge
     (A R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.SmoothTransitionSpeed
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -18,12 +9,8 @@ namespace Real
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def smoothSegment (a b : ℝ) (z : E) (s : ℝ) : E :=
   smoothTransition ((s - a) / (b - a)) • z
-
-
 
 theorem smoothSegment_norm_le (a b : ℝ) (z : E) (s : ℝ) :
     ‖smoothSegment a b z s‖ ≤ ‖z‖ := by
@@ -31,24 +18,17 @@ theorem smoothSegment_norm_le (a b : ℝ) (z : E) (s : ℝ) :
     abs_of_nonneg (smoothTransition.nonneg _)]
   exact mul_le_of_le_one_left (norm_nonneg z) (smoothTransition.le_one _)
 
-
 theorem smoothSegment_left (a b : ℝ) (z : E) : smoothSegment a b z a = 0 := by
   simp [smoothSegment]
-
-
 
 theorem smoothSegment_right {a b : ℝ} (hab : a ≠ b) (z : E) :
     smoothSegment a b z b = z := by
   simp [smoothSegment, sub_ne_zero.mpr hab.symm]
 
-
-
 theorem smoothSegment_contDiff (a b : ℝ) (z : E) :
     ContDiff ℝ ∞ (smoothSegment a b z) := by
   exact ((smoothTransition.contDiff (n := (⊤ : ℕ∞))).comp
     ((contDiff_id.sub contDiff_const).div_const _)).smul contDiff_const
-
-
 
 theorem smoothSegment_hasDerivAt (a b : ℝ) (z : E) (s : ℝ) :
     HasDerivAt (smoothSegment a b z)
@@ -60,8 +40,6 @@ theorem smoothSegment_hasDerivAt (a b : ℝ) (z : E) (s : ℝ) :
   simpa only [Function.comp_apply, id_eq, one_div, div_eq_mul_inv,
     one_mul] using
     ((ht _).hasDerivAt.comp s harg).smul_const z
-
-
 
 theorem smoothSegment_deriv_norm_le {a b C : ℝ} (hab : a < b)
     (hC : ∀ x : ℝ, |deriv smoothTransition x| ≤ C) (z : E) (s : ℝ) :

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M38.Survivors
 import PoincareConjecture.Proofs.M38.WholeComponentAssembly
 import PoincareConjecture.Proofs.M38.RefinedVanishingReconstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem standard_components_conclusion {S A B : GeneralizedSliceCarrier.{u}}
     [IsEmpty B.carrier] (hS : IsCompact (Set.univ : Set S.carrier))
@@ -65,10 +53,6 @@ theorem standard_components_conclusion {S A B : GeneralizedSliceCarrier.{u}}
       initial := A
       disjoint_union := transportUnion D e
       operations := .refl } }⟩
-
-
-
-
 
 theorem canonical_vanishing_reconstruction
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u})

@@ -1,20 +1,11 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Real
-
 
 theorem le_exp_mul_of_hasDerivAt_le {f f' : ℝ → ℝ} {a b k : ℝ}
     (hab : a ≤ b) (hc : ContinuousOn f (Icc a b))

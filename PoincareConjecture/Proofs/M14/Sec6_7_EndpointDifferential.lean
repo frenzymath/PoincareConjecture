@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M14MeasureTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -33,8 +25,6 @@ private theorem tangent_transport_val {p q : G.Point} (h : p = q)
       (h ▸ v : TangentSpace (spacetimeModel n) q)) = v := by
   cases h
   rfl
-
-
 
 theorem endpointTangentDifferential_eq_mfderiv
     (Z : G.Horizontal x) (hZ : Z ∈ H.carrier) :

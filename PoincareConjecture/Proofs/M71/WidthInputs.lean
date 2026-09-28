@@ -2,18 +2,6 @@ import PoincareConjecture.Definitions.M71FiniteExtinction
 import PoincareConjecture.Proofs.M67.InitialClass
 import PoincareConjecture.Proofs.M69.Inputs
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

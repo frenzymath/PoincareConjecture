@@ -3,14 +3,6 @@ import Mathlib.AlgebraicTopology.SingularHomology.HomotopyInvariance
 import Mathlib.Algebra.Category.ModuleCat.Abelian
 import Mathlib.Algebra.Category.ModuleCat.Colimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory AlgebraicTopology
 
@@ -29,7 +21,6 @@ noncomputable def moduleHomologyMap (f : C(X, Y)) (n : ℕ) :
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem moduleHomologyMap_section_comp (q : C(X, Y)) (s : C(Y, X))
     (H : (q.comp s).Homotopic (ContinuousMap.id Y)) (n : ℕ) :
     moduleHomologyMap A s n ≫ moduleHomologyMap A q n =
@@ -47,7 +38,6 @@ theorem moduleHomologyMap_section_comp (q : C(X, Y)) (s : C(Y, X))
       rw [CategoryTheory.Functor.map_id, HomologicalComplex.homologyMap_id]
       rfl
 
-
 theorem moduleHomologyMap_section_injective (q : C(X, Y)) (s : C(Y, X))
     (H : (q.comp s).Homotopic (ContinuousMap.id Y)) (n : ℕ) :
     Function.Injective (moduleHomologyMap A s n) := by
@@ -60,9 +50,6 @@ end PoincareConjecture.M76.CutGraph
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_original_cut_homology_retract
     {K : Type v} [Ring K] (A : ModuleCat.{u} K)

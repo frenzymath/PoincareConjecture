@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Definitions.M13TimeRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,9 +28,6 @@ private theorem physicalClock_eq (origin scale : ℝ) (hscale : 0 < scale) (s : 
 
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I J : Set ℝ} {U : Set C.carrier}
-
-
-
 
 noncomputable def physicalTime
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -107,9 +94,6 @@ noncomputable def physicalTime
           (show (⟨origin + (scale * s') / scale, hb⟩ : (F.box b).interval) =
             ⟨origin + s' / 1, hb'⟩ from Subtype.ext ht)
     exact eq_of_heq (Sigma.mk.inj_iff.mp hpoints).2
-
-
-
 
 @[simp] theorem physicalTime_pointMap
     (e : GeneralizedFlowCylinder F C origin scale I U)

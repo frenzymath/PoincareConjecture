@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiniteCover
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -94,8 +86,6 @@ theorem integral_le_of_geometric_annulus_bounds
     _ ≤ C * r₀ ^ m * (1 - q ^ m)⁻¹ :=
       mul_le_mul_of_nonneg_left hsum (mul_nonneg hC (pow_nonneg hr₀.le _))
     _ = C * r₀ ^ m / (1 - q ^ m) := by rw [div_eq_mul_inv]
-
-
 
 theorem integral_le_of_geometric_annulus_bounds_above_scale
     {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]

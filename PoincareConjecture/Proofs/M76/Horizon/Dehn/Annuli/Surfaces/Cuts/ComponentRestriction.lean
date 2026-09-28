@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedCom
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.IncidentJointSigns
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -26,7 +24,6 @@ theorem face_mem_edgeComponent_of_hull_inter
       (Finset.singleton_subset_iff.mpr hvs) (Finset.singleton_nonempty _)
   exact K.edgeComponentComplex_coface C hvC ht (Finset.singleton_subset_iff.mpr hvt)
 
-
 theorem barycentric_face_mem_edgeComponent_of_hull_inter
     (K : SimplicialComplex ℝ E) [Fintype K.faces]
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -45,8 +42,6 @@ theorem barycentric_face_mem_edgeComponent_of_hull_inter
   rw [(K.edgeComponentComplex C).barycentricSubdivision_isSubdivision.space_eq]
   exact (K.edgeComponentComplex C).convexHull_subset_space hsC
     (hts (Finset.centroid_mem_convexHull _ (K.barycentricSubdivision.nonempty_of_mem_faces ht)))
-
-
 
 theorem barycentricNeighborhood_edgeComponent
     (K : SimplicialComplex ℝ E) [Fintype K.faces]
@@ -76,8 +71,6 @@ theorem barycentricNeighborhood_edgeComponent
     obtain ⟨s, hs, _, hcent⟩ := hcoarse x hx
     exact ((K.edgeComponentComplex C).mem_barycentricSubdivision_vertices_iff x).mpr
       ⟨s, hs, hcent⟩
-
-
 
 theorem closed_cut_edgeComponent_space
     (K : SimplicialComplex ℝ E) [Fintype K.faces]

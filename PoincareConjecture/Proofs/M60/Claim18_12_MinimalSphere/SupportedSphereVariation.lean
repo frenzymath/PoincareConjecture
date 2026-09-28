@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.SupportedChartExtension
 import PoincareConjecture.Proofs.M60.Mathlib.SupportedChartVariation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.StereographicConformal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,15 +15,11 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
-
-
 noncomputable def m60SupportedSphereVariation (b : M) (f : UnitTwoSphere → M)
     (V : LoopPlane → EuclideanSpace ℝ (Fin n)) : ℝ × UnitTwoSphere → M :=
   let c := chartAt (EuclideanSpace ℝ (Fin n)) b
   M60.supportedChartVariation c (f ⁻¹' c.source) f
     (M60.supportedChartExtension m60SphereChart V)
-
-
 
 theorem m60SphereDisplacement_parameter (V : LoopPlane → EuclideanSpace ℝ (Fin n))
     (z : LoopPlane) :
@@ -42,14 +29,10 @@ theorem m60SphereDisplacement_parameter (V : LoopPlane → EuclideanSpace ℝ (F
   rw [M60.supportedChartExtension_of_mem m60SphereChart V (m60SphereChart.map_target hz)]
   exact congrArg V (m60SphereChart.right_inv hz)
 
-
-
 theorem m60SupportedSphereVariation_zero (b : M) (f : UnitTwoSphere → M)
     (V : LoopPlane → EuclideanSpace ℝ (Fin n)) (p : UnitTwoSphere) :
     m60SupportedSphereVariation b f V (0, p) = f p :=
   M60.supportedChartVariation_zero _ _ f _ (fun _ hp => hp) p
-
-
 
 theorem m60SupportedSphereVariation_parameter (b : M) (f : UnitTwoSphere → M)
     (V : LoopPlane → EuclideanSpace ℝ (Fin n)) (s : ℝ) (z : LoopPlane)
@@ -59,8 +42,6 @@ theorem m60SupportedSphereVariation_parameter (b : M) (f : UnitTwoSphere → M)
         (chartAt (EuclideanSpace ℝ (Fin n)) b (f (m60SphereParameter z)) + s • V z) := by
   rw [m60SupportedSphereVariation, M60.supportedChartVariation_of_mem _ _ f _ s hz,
     m60SphereDisplacement_parameter]
-
-
 
 theorem m60SupportedSphereVariation_eq_of_notMem_tsupport (b : M)
     (f : UnitTwoSphere → M) (V : LoopPlane → EuclideanSpace ℝ (Fin n))
@@ -74,9 +55,6 @@ theorem m60SupportedSphereVariation_eq_of_notMem_tsupport (b : M)
       rw [m60SphereDisplacement_parameter, image_eq_zero_of_notMem_tsupport hz, smul_zero])
 
 variable [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60SupportedSphereVariation_exists_interval (b : M) (f : UnitTwoSphere → M)
     (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

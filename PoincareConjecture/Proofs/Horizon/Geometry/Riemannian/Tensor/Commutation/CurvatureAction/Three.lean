@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.CurvatureAction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

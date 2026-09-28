@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TimeOperatorJets
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FiniteHilbertOperator
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.VectorDivergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

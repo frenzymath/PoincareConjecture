@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Standardization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
-
-
 
 theorem exists_outward_ball_coordinate_collar
     (b : OpenPartialHomeomorph E3 M)

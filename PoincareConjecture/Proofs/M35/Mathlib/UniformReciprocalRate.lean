@@ -1,19 +1,9 @@
 import PoincareConjecture.Proofs.M35.Mathlib.HighCurvatureInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
-
-
 
 theorem exists_uniform_final_reciprocal_bound
     {X : Type*} {f f' : X → ℝ → ℝ} {A H : ℝ} (hA : 0 < A) (hH : 0 < H)
@@ -39,8 +29,6 @@ theorem exists_uniform_final_reciprocal_bound
   have htime : A * H * (1 - t) ≤ A * H * τ :=
     mul_le_mul_of_nonneg_left (by linarith [ht.1]) (mul_pos hA hH).le
   linarith
-
-
 
 theorem exists_uniform_reciprocal_bound_of_early_floor
     {X : Type*} {f : X → ℝ → ℝ} {A B τ : ℝ}

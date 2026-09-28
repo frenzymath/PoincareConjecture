@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.AreaGrowth
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem regularLevel_annular_bounds_of_gradient_hessian_bounds
     {m : ℕ} {M : Type*} [TopologicalSpace M]

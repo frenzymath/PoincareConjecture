@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseInner
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseRetainedBases
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CyclicRetainedComparisonAE
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,11 +14,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_comparison_of_actual_normal_geometry
     (N : IntrinsicAnnulus) {K delta r q mu alpha h : ℝ}

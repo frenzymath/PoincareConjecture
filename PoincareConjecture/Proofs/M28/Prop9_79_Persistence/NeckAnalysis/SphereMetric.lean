@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.SphereGram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators InnerProductSpace
@@ -57,18 +48,13 @@ private theorem stereoInvFunAux_fderiv_inner
   field_simp [hd]
   ring
 
-
-
 noncomputable def sphereChartConformalFactor (x : EuclideanSpace ℝ (Fin 2)) : ℝ :=
   16 / (‖x‖ ^ 2 + 4) ^ 2
-
 
 theorem sphereChartConformalFactor_pos (x : EuclideanSpace ℝ (Fin 2)) :
     0 < sphereChartConformalFactor x := by
   unfold sphereChartConformalFactor
   positivity
-
-
 
 theorem sphere_chart_inverse_inner_at (q : UnitTwoSphere)
     (x v w : EuclideanSpace ℝ (Fin 2)) :
@@ -123,8 +109,6 @@ theorem sphere_chart_inverse_inner_at (q : UnitTwoSphere)
   simpa only [hnorm, hinner, sphereChartConformalFactor] using
     stereoInvFunAux_fderiv_inner (↑(-q)) (A x) (A v) (A w)
       (norm_eq_of_mem_sphere (-q)) (horth x) (horth v) (horth w)
-
-
 
 theorem roundCylinderGram_chosen_chart (u : ℝ) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) :

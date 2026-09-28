@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Coho
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralSupportUniv
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.BoundaryBasics
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubeCoordinates
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_continuous_polygon_family_inverse
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -94,9 +82,6 @@ theorem exists_continuous_polygon_family_inverse
   refine ⟨hmem, hval, ?_⟩
   intro y hy hq
   exact (hbij z z.2).injOn hy hmem (hq.trans hval.symm)
-
-
-
 
 theorem exists_continuous_polygon_family_normal_graph
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

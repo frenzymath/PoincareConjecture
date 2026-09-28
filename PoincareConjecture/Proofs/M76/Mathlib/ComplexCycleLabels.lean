@@ -1,31 +1,16 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCycleLabels
 import Mathlib.AlgebraicTopology.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace AbstractSimplicialComplex
 
 variable {V : Type*} [DecidableEq V]
 
-
-
-
 def edgeGraph (A : AbstractSimplicialComplex V) : SimpleGraph V where
   Adj x y := x ≠ y ∧ {x, y} ∈ A.faces
   symm := ⟨fun _ _ h => ⟨h.1.symm, by simpa only [Finset.pair_comm] using h.2⟩⟩
   loopless := ⟨fun _ h => h.1 rfl⟩
-
-
-
 
 theorem mem_faces_iff_singleton_or_edge (A : AbstractSimplicialComplex V)
     (hdim : ∀ s ∈ A.faces, s.card ≤ 2) (s : Finset V) :
@@ -43,10 +28,6 @@ theorem mem_faces_iff_singleton_or_edge (A : AbstractSimplicialComplex V)
     · exact hxy.2
 
 variable [Finite V]
-
-
-
-
 
 theorem exists_cyclic_face_labels (A : AbstractSimplicialComplex V)
     (hdim : ∀ s ∈ A.faces, s.card ≤ 2) (hc : A.edgeGraph.Connected)

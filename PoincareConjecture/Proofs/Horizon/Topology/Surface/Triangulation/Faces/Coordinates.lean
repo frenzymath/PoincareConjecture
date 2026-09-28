@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -50,7 +40,6 @@ private theorem segment_image (a b : EuclideanSpace ℝ (Fin 2)) :
 
 omit [T2Space M] in
 
-
 theorem exists_smoothEdge_of_smooth_coordinates
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -82,8 +71,6 @@ theorem exists_smoothEdge_of_smooth_coordinates
     exact smul_left_injective ℝ hba (add_left_cancel heq)
   · simp [e, affineChartSegment]
   · simp [e, affineChartSegment]
-
-
 
 theorem exists_smoothFace_of_smooth_coordinates
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

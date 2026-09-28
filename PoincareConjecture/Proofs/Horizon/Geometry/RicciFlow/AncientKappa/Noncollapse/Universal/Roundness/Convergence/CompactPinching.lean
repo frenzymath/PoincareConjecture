@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ namespace PoincareConjecture.AncientKappaRoundness
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem round_curvature_contractions
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -62,8 +51,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
-
-
 
 theorem eventually_rescaling_ricciComplement_mem
     (G : AncientCompactTimeConvergence S)

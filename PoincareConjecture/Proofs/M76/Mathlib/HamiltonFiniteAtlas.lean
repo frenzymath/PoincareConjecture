@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonOverlapCorrection
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteChartCover
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace OpenPartialHomeomorph
 
 variable {M E κ : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_finite_compatible_family_of_compact_cores
     (hlocal : HasSupportedPLOverlapStraightening (M := M) (E := E))
@@ -86,10 +71,6 @@ variable {M E : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [ChartedSpace E M]
 
-
-
-
-
 theorem exists_finite_piecewiseAffine_chart_cover
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening (M := M) (E := E)) :
     ∃ s : Finset (OpenPartialHomeomorph M E),
@@ -107,10 +88,6 @@ theorem exists_finite_piecewiseAffine_chart_cover
   obtain ⟨hyt, hxy⟩ := mem_iUnion.mp hy
   exact mem_iUnion.mp (hcover (mem_iUnion.mpr
     ⟨y, mem_iUnion.mpr ⟨hyt, subset_closure hxy⟩⟩))
-
-
-
-
 
 theorem exists_piecewiseAffine_chartedSpace
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening (M := M) (E := E)) :

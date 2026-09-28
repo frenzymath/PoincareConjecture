@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.UniformCircleIntegra
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +15,6 @@ namespace PoincareConjecture
 open Proofs.M58 Poincare.Analysis.Sobolev.WeakCompactness
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem m64Disk_green_of_weak_limits
     (a : LoopPlane) {r : ℝ} (hr : 0 < r)

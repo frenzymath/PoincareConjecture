@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.BaseCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ConvexAffineSectionBallPair
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +14,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
-
-
-
 
 theorem frontier_vertex_ballPair (p : (T.marked 2).vertices)
     (hpfront : (p : E) ∈ (T.marked 1).space) :
@@ -89,4 +84,3 @@ theorem frontier_vertex_ballPair (p : (T.marked 2).vertices)
   simpa only [hbody, hrim] using hball
 
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

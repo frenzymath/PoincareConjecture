@@ -1,13 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.ThreeDimensional
-
-
-
-
-
-
-
-
 
 open scoped BigOperators Matrix
 

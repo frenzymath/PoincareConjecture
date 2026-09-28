@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.EdgeImages
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 
-
-
 set_option autoImplicit false
 open Set Geometry Filter
 open scoped Topology

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RadiusSelection
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ namespace Poincare.CurvatureIntegral
 
 variable {X : Type*} [MetricSpace X]
 
-
 theorem HasLocalDistanceAscent.mono {c c' : ℝ} {p y : X}
     (h : HasLocalDistanceAscent c' p y) (hcc' : c ≤ c') :
     HasLocalDistanceAscent c p y := by
@@ -26,14 +18,12 @@ theorem HasLocalDistanceAscent.mono {c c' : ℝ} {p y : X}
   obtain ⟨z, hz, hgain⟩ := h s hs
   exact ⟨z, hz, (mul_le_mul_of_nonneg_right hcc' dist_nonneg).trans_lt hgain⟩
 
-
 theorem HasLocalDistanceAscent.of_subtype {U : Set X} {c : ℝ} {p y : U}
     (h : HasLocalDistanceAscent c p y) :
     HasLocalDistanceAscent c p.val y.val := by
   intro s hs
   obtain ⟨z, hz, hgain⟩ := h s hs
   exact ⟨z.val, hz, hgain⟩
-
 
 theorem hasLocalDistanceAscent_subtype_iff {U : Set X} (hU : IsOpen U)
     (c : ℝ) (p y : U) :
@@ -47,7 +37,6 @@ theorem hasLocalDistanceAscent_subtype_iff {U : Set X} (hU : IsOpen U)
     exact hz.trans_le (min_le_right _ _))
   exact ⟨⟨z, hzU⟩, hz.trans_le (min_le_left _ _), hgain⟩
 
-
 theorem hasLocalDistanceAscent_ballModel_iff
     (X : Poincare.GromovHausdorff.BasedMetricSpaceBundle) {L : ℝ} (hL : 0 < L)
     (c : ℝ) (p y : (Poincare.GromovHausdorff.ballModel X L hL).carrier) :
@@ -57,8 +46,6 @@ theorem hasLocalDistanceAscent_ballModel_iff
 end Poincare.CurvatureIntegral
 
 namespace Poincare.GromovHausdorff
-
-
 
 theorem isCompact_closedBall_ballModel
     (X : BasedMetricSpaceBundle) [ProperSpace X.carrier]

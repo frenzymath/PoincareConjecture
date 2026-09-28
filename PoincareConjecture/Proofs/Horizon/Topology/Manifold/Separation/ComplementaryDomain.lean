@@ -1,14 +1,6 @@
 import Mathlib.Topology.Clopen
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem complementary_domain [T2Space X] {Y K : Set X}
     (hY : IsClopen Y) (hYcompact : IsCompact Y)
@@ -48,8 +38,6 @@ theorem complementary_domain [T2Space X] {Y K : Set X}
     exact hx ⟨hxY, hxK⟩
   · rintro ⟨hxK, hxi⟩
     exact ⟨⟨hKY hxK, hxi⟩, fun hx => hx.2 hxK⟩
-
-
 
 theorem complementary_domain_subset {Y K D : Set X}
     (henclose : Y \ D ⊆ interior K) : Y \ interior K ⊆ D := by

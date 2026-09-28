@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveOscillation
 import Mathlib.Topology.MetricSpace.Cauchy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,8 +11,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem m64Curve_value_sq_le_h1
     (w d : ℝ → E) (hd : Continuous d) (hw : ∀ t, HasDerivAt w (d t) t)
@@ -56,8 +43,6 @@ theorem m64Curve_value_sq_le_h1
       (le_div_iff₀ hT).mpr (by nlinarith only [hi])
     _ = _ := by dsimp only [Q]; field_simp
 
-
-
 theorem m64Curve_uniformCauchy_of_h1
     (w d : ℕ → ℝ → E) (hd : ∀ j, Continuous (d j))
     (hw : ∀ j t, HasDerivAt (w j) (d j t) t) {T : ℝ} (hT : 0 < T)
@@ -80,8 +65,6 @@ theorem m64Curve_uniformCauchy_of_h1
     ((hd p.1).sub (hd p.2)) (fun t => (hw p.1 t).sub (hw p.2 t)) hT hx
   rw [dist_eq_norm]
   nlinarith [norm_nonneg (w p.1 x - w p.2 x)]
-
-
 
 theorem m64Curve_continuous_representative_of_h1
     (w d : ℕ → ℝ → E) (hd : ∀ j, Continuous (d j))

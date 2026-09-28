@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.ScaledPicard
 import PoincareConjecture.Proofs.M09.SmoothImplicit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

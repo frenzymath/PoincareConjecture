@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Graph
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +23,6 @@ private instance : ConnectedSpace UnitTwoSphere := by
   apply isConnected_iff_connectedSpace.mp
   exact isConnected_sphere
     (by rw [← Module.finrank_eq_rank]; norm_num) 0 (by norm_num)
-
-
 
 theorem exists_regularLevel_component_parametrization
     (N : EpsilonNeck g) {f : M → ℝ}

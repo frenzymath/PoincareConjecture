@@ -2,22 +2,11 @@ import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.LinearAlgebra.Matrix.Gershgorin
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped InnerProductSpace BigOperators
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem norm_lower_bound_of_opposite_pair
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -28,7 +17,6 @@ theorem norm_lower_bound_of_opposite_pair
   have hupper := mul_le_mul_of_nonneg_left hw (norm_nonneg v)
   nlinarith [neg_le_abs ⟪v, w⟫_ℝ]
 
-
 theorem strainer_parameter_bounds (k : ℕ) {δ : ℝ}
     (hδ : 0 ≤ δ) (hsmall : δ ≤ 1 / (8 * ((k : ℝ) + 1))) :
     δ < 1 / 2 ∧ (k : ℝ) * δ < (1 - 2 * δ) ^ 2 := by
@@ -36,8 +24,6 @@ theorem strainer_parameter_bounds (k : ℕ) {δ : ℝ}
   have hmul := (le_div_iff₀ (by positivity : (0 : ℝ) < 8 * ((k : ℝ) + 1))).mp hsmall
   have hproduct : 0 ≤ (k : ℝ) * δ := mul_nonneg hk hδ
   constructor <;> nlinarith [sq_nonneg δ]
-
-
 
 theorem linearIndependent_of_strainer_pairs
     {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [Fintype ι]
@@ -70,7 +56,6 @@ theorem linearIndependent_of_strainer_pairs
       Real.norm_eq_abs, abs_of_nonneg (sq_nonneg ‖v i‖)] using
       (sq_le_sq₀ (by linarith : 0 ≤ 1 - 2 * δ) (norm_nonneg (v i))).mpr (hnorm i)
   exact (hsum.trans_lt hsmall).trans_le hdiag
-
 
 theorem surjective_inner_family_of_linearIndependent
     {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [Fintype ι]

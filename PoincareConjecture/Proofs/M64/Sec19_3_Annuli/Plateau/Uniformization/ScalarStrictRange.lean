@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRadialBarriers
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,12 +15,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem annular_harmonic_affine_comparison {H φ : Plane → ℝ}
     (hHc : Continuous H) (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -57,12 +39,6 @@ theorem annular_harmonic_affine_comparison {H φ : Plane → ℝ}
   change 0 ≤ D.laplacian (fun y => φ y - a * H y) x
   rw [h]
   exact hφlap x hx
-
-
-
-
-
-
 
 theorem annular_harmonic_strict_range {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -106,12 +82,6 @@ theorem annular_harmonic_strict_range {H : Plane → ℝ} (hHc : Continuous H)
   constructor
   · nlinarith
   · nlinarith
-
-
-
-
-
-
 
 theorem exists_strict_annular_harmonic_potential :
     ∃ (H : Plane → ℝ) (u : H1Zero D scalarAnnulus),

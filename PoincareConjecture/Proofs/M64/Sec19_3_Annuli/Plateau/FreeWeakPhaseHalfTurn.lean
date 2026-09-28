@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseHalf
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnObserved
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ScalarPhaseGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -42,10 +30,6 @@ local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "T" => m64AnnulusHalfTurn
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem exists_halfTurn
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem tangentNorm_chart_curve
     (g : RiemannianMetric n M) (p : M)
@@ -47,7 +38,6 @@ theorem tangentNorm_chart_curve
   rw [hvel]
   rfl
 
-
 theorem pathELength_chart_curve_of_energy
     (g : RiemannianMetric n M) (p : M)
     {q w : ℝ → EuclideanSpace ℝ (Fin n)} {a b R : ℝ}
@@ -65,8 +55,6 @@ theorem pathELength_chart_curve_of_energy
     filter_upwards [ae_restrict_mem measurableSet_Icc] with t ht
     rw [g.tangentNorm_chart_curve p (hq t ht) (hU t ht), henergy t ht]
   rw [lintegral_congr_ae hfn, lintegral_const, Measure.restrict_apply_univ, Real.volume_Icc]
-
-
 
 theorem edist_chart_curve_le_of_energy
     (g : RiemannianMetric n M) (p : M)

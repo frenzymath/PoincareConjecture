@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M38
 
 private instance cylinderNonempty : Nonempty RoundCylinderSpace :=
   ⟨(capUnitDirection (0 : StandardCapSpace), 0)⟩
-
 
 noncomputable def monodromyPolarDiffeomorph :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
@@ -39,8 +29,6 @@ attribute [local instance] monodromyChartedSpace monodromy_isManifold
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
-
 theorem monodromyDeck_polar (n : ℤ) (p : RoundCylinderSpace) :
     monodromyDeck phi n (monodromyPolarPoint p) =
       monodromyPolarPoint ((phi.toEquiv ^ (-n)) p.1, p.2 + (n : ℝ)) := by
@@ -53,10 +41,8 @@ theorem monodromyDeck_polar (n : ℤ) (p : RoundCylinderSpace) :
       rw [monodromyDeck_direction, monodromyPolarPoint_direction,
         monodromyDeck_logRadius, monodromyPolarPoint_logRadius, add_comm (n : ℝ)]
 
-
 noncomputable def monodromyCylinder (p : RoundCylinderSpace) : MonodromyQuotient phi :=
   mq (monodromyPolarPoint p)
-
 
 theorem monodromyCylinder_eq_iff (p q : RoundCylinderSpace) :
     monodromyCylinder phi p = monodromyCylinder phi q ↔
@@ -75,18 +61,15 @@ theorem monodromyCylinder_eq_iff (p q : RoundCylinderSpace) :
     refine ⟨n, ?_⟩
     rw [monodromyDeck_polar, ← hz, ← hs]
 
-
 theorem monodromyCylinder_endpoint (z : UnitTwoSphere) :
     monodromyCylinder phi (z, 1) = monodromyCylinder phi (phi z, 0) := by
   have h := (monodromy_quotient_deck phi (-1) (monodromyPolarPoint (z, 1))).symm
   simpa only [monodromyCylinder, monodromyDeck_polar, neg_neg, zpow_one,
     Int.cast_neg, Int.cast_one, add_neg_cancel, Diffeomorph.coe_toEquiv] using h
 
-
 theorem monodromyCylinder_projection (p : RoundCylinderSpace) :
     monodromyProjection phi (monodromyCylinder phi p) = circlePeriodMap p.2 := by
   rw [monodromyCylinder, monodromyProjection_mk, monodromyPolarPoint_logRadius]
-
 
 theorem monodromyCylinder_injective_strip (a b : ℝ) (hwidth : b - a ≤ 1) :
     Set.InjOn (monodromyCylinder phi) (Set.univ ×ˢ Set.Ioo a b) := by
@@ -100,7 +83,6 @@ theorem monodromyCylinder_injective_strip (a b : ℝ) (hwidth : b - a ≤ 1) :
   apply Prod.ext
   · simpa only [hn, neg_zero, zpow_zero, Equiv.Perm.one_apply] using hz
   · simpa only [hn, Int.cast_zero, add_zero] using hs
-
 
 theorem monodromy_quotient_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ mq := by
@@ -121,37 +103,30 @@ theorem monodromy_quotient_localDiffeomorph :
   · intro y _
     exact (congrFun ((monodromy_quotient_localHomeomorph phi).localInverseAt_symm x) y).symm
 
-
 theorem monodromyCylinder_localDiffeomorph :
     IsLocalDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (monodromyCylinder phi) := by
   intro p
   exact (monodromyPolarDiffeomorph.isLocalDiffeomorph p).comp (𝓡 3)
     (MonodromyQuotient phi) (monodromy_quotient_localDiffeomorph phi (monodromyPolarPoint p))
 
-
 noncomputable def monodromyStripInverse (a b : ℝ) :
     MonodromyQuotient phi → RoundCylinderSpace :=
   Function.invFunOn (monodromyCylinder phi) (Set.univ ×ˢ Set.Ioo a b)
-
 
 theorem monodromyStripInverse_left (a b : ℝ) (hwidth : b - a ≤ 1) :
     Set.LeftInvOn (monodromyStripInverse phi a b) (monodromyCylinder phi)
       (Set.univ ×ˢ Set.Ioo a b) :=
   (monodromyCylinder_injective_strip phi a b hwidth).leftInvOn_invFunOn
 
-
 theorem monodromyStripInverse_mem (a b : ℝ) {q : MonodromyQuotient phi}
     (hq : q ∈ monodromyCylinder phi '' (Set.univ ×ˢ Set.Ioo a b)) :
     monodromyStripInverse phi a b q ∈ Set.univ ×ˢ Set.Ioo a b :=
   Function.invFunOn_mem hq
 
-
 theorem monodromyStripInverse_right (a b : ℝ) :
     Set.LeftInvOn (monodromyCylinder phi) (monodromyStripInverse phi a b)
       (monodromyCylinder phi '' (Set.univ ×ˢ Set.Ioo a b)) :=
   fun _ hq => Function.invFunOn_eq hq
-
-
 
 theorem monodromyStripInverse_smooth (a b : ℝ) (hwidth : b - a ≤ 1) :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (monodromyStripInverse phi a b)
@@ -178,7 +153,6 @@ theorem monodromyStripInverse_smooth (a b : ℝ) (hwidth : b - a ≤ 1) :
     (monodromyStripInverse_mem phi a b hzimage) hsz
   rw [monodromyStripInverse_right phi a b hzimage, hlocal.localInverse_right_inv hz]
 
-
 noncomputable def monodromyStripChart (a b : ℝ) (hwidth : b - a ≤ 1) :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
       RoundCylinderSpace (MonodromyQuotient phi) ∞ where
@@ -195,7 +169,6 @@ noncomputable def monodromyStripChart (a b : ℝ) (hwidth : b - a ≤ 1) :
     (isOpen_univ.prod isOpen_Ioo)
   contMDiffOn_toFun := (monodromyCylinder_localDiffeomorph phi).contMDiff.contMDiffOn
   contMDiffOn_invFun := monodromyStripInverse_smooth phi a b hwidth
-
 
 theorem monodromy_unit_strip_image :
     monodromyCylinder phi '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) =

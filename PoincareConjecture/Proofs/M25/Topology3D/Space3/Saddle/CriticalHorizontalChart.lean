@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem collar_horizontal_mfderiv_injective_at_critical
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
@@ -50,9 +38,6 @@ theorem collar_horizontal_mfderiv_injective_at_critical
   · change (heightPlaneCoordinates u (J v)).2 = (heightPlaneCoordinates u (J w)).2
     rw [heightPlaneCoordinates_snd, heightPlaneCoordinates_snd]
     exact (hzero v).trans (hzero w).symm
-
-
-
 
 theorem exists_collar_critical_horizontal_chart
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

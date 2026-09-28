@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff BigOperators Topology
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem roundCylinderIteratedDerivative_eq_of_eqOn_cylinder
     {epsilon : ℝ} {B D : RoundCylinderTwoTensor}
@@ -56,8 +44,6 @@ theorem roundCylinderIteratedDerivative_eq_of_eqOn_cylinder
         roundCylinderChristoffel u (chartAt E₂ q) x d (a 0) (a i.succ) * v)
         (ih hx (Function.update (fun j => a j.succ) i d))
 
-
-
 theorem roundCylinderJetErrorSquared_eq_of_eqOn_cylinder
     {epsilon : ℝ} {B D : RoundCylinderTwoTensor}
     (hBD : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
@@ -76,8 +62,6 @@ end PoincareConjecture.M34
 
 namespace PoincareConjecture.RoundCylinderTensorSmoothOn
 
-
-
 theorem congr_cylinder {epsilon : ℝ} {B D : RoundCylinderTwoTensor}
     (hB : RoundCylinderTensorSmoothOn epsilon B)
     (hBD : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
@@ -91,8 +75,6 @@ theorem congr_cylinder {epsilon : ℝ} {B D : RoundCylinderTwoTensor}
 end PoincareConjecture.RoundCylinderTensorSmoothOn
 
 namespace PoincareConjecture.RoundCylinderFamilyClose
-
-
 
 theorem congr_cylinder {epsilon : ℝ} {I : Set ℝ}
     {B D : ℝ → RoundCylinderTwoTensor}

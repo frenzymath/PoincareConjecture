@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.WeakEnergy
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,9 +11,6 @@ namespace MeasureTheory.Lp
 variable {X E F : Type*} [MeasurableSpace X] {mu : Measure X}
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
-
-
 
 theorem coefficientL2_adjoint [CompleteSpace E] [CompleteSpace F] (A : X → E →L[ℝ] F)
     (hA : AEStronglyMeasurable A mu) (C : ℝ)
@@ -42,9 +29,6 @@ theorem coefficientL2_adjoint [CompleteSpace E] [CompleteSpace F] (A : X → E �
     coefficientL2_ae (fun x => (A x).adjoint) hstar C hstarbound v] with x hx hxstar
   rw [hx, hxstar, ContinuousLinearMap.adjoint_inner_left]
 
-
-
-
 theorem norm_sq_coefficientL2 (A : X → E →L[ℝ] F)
     (hA : AEStronglyMeasurable A mu) (C : ℝ)
     (hbound : ∀ᵐ x ∂mu, ‖A x‖ ≤ C) (u : Lp E 2 mu) :
@@ -53,10 +37,6 @@ theorem norm_sq_coefficientL2 (A : X → E →L[ℝ] F)
   apply integral_congr_ae
   filter_upwards [coefficientL2_ae A hA C hbound u] with x hx
   rw [hx]
-
-
-
-
 
 theorem integral_norm_sq_clm_le_of_weak [CompleteSpace E] [CompleteSpace F]
     {A : ℕ → X → E →L[ℝ] F} {A0 : X → E →L[ℝ] F}

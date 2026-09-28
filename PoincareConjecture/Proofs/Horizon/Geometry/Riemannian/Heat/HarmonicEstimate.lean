@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.RescaledEstimate
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Principal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -18,9 +10,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
-
 
 theorem exists_uniform_harmonic_heat_second_derivative_bound
     (n : ℕ) (hn : 1 ≤ n) {r a b G : ℝ}

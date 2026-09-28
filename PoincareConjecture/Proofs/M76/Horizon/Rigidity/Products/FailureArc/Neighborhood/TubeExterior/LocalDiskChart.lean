@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Rigidity.SourceDiskPairCharts
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

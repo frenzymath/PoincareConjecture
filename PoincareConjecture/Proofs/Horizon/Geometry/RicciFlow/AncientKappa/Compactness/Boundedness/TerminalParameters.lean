@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.TerminalJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Parametrized.LinearEquiv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -53,9 +46,6 @@ private theorem parameter_quadratic_bounds
     apply (div_le_iff₀ (sq_pos_of_pos hinv)).mpr
     nlinarith [mul_le_mul_of_nonneg_left hvlower₂ ha.le]
   · exact (hT (L v)).2.trans ((mul_le_mul_of_nonneg_left hvupper₂ hb).trans_eq (by ring))
-
-
-
 
 theorem exists_eventually_terminal_parametrizedJet_time_constant
     (P : M23NormalizedKappaCompactnessPredecessors)

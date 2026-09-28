@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.PositiveGradientBarrier
 import PoincareConjecture.Proofs.M47.PositiveGradientThresholds
 import PoincareConjecture.Proofs.M47.PositiveWeightedBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +16,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [CompactSpace M] [SecondCountableTopology M]
-
-
-
-
-
 
 theorem exists_uniform_scalar_gradient_bound
     (hC : RicciFlowCurvatureTheory.{u}) {T : ℝ} (hT : 0 < T)

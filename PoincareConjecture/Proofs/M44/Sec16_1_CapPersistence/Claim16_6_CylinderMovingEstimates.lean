@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +24,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   {a : ℕ → ℝ} {ha : ∀ k, a k ∈ (F k).surgery_times}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
-
-
-
-
 
 theorem eventually_cylinder_open_spatial_estimates
     (P : M44CapPersistencePredecessors.{u})
@@ -97,9 +83,6 @@ theorem eventually_cylinder_open_spatial_estimates
   exact ⟨fun s hs => (hpair s hs s hs).1, fun j hj =>
     ⟨fun s hs => ((hpair s hs s hs).2 j hj).1,
       fun s hs t ht => ((hpair s hs t ht).2 j hj).2⟩⟩
-
-
-
 
 theorem eventually_cylinder_open_jet_modulus
     (P : M44CapPersistencePredecessors.{u})

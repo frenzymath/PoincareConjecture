@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousLinearMap
-
-
-
 
 theorem exists_two_halfspace_shear
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

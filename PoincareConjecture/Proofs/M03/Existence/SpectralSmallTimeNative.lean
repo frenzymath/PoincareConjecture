@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralTraceNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralL2ResponseNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,7 +8,6 @@ noncomputable section
 open MeasureTheory Set
 
 namespace PoincareConjecture.SpectralHeatNative
-
 
 theorem integral_sq_le_time_mul_integral_sq {T : ℝ} (hT : 0 ≤ T)
     {f : ℝ → ℝ} (hf : IntervalIntegrable f volume 0 T)
@@ -64,7 +54,6 @@ theorem norm_integral_sq_le_time_energy {E : Type*} [NormedAddCommGroup E]
 
 variable {iota : Type*} [Countable iota]
 
-
 theorem norm_responseState_sq_le_time_energy {T t : ℝ} {F : ℝ → State iota}
     (hF : MemLp F 2 (timeMeasure T)) (lambda : iota → NNReal)
     (ht : t ∈ Icc (0 : ℝ) T) :
@@ -95,7 +84,6 @@ theorem memLp_responseState_of_memLp {T : ℝ} (hT : 0 ≤ T)
     ((hc.mono Ioc_subset_Icc_self).aestronglyMeasurable measurableSet_Ioc)).mpr
   exact (hc.norm.pow 2).integrableOn_Icc.mono_set Ioc_subset_Icc_self
 
-
 theorem integral_response_sq_le_time_sq {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
     (lambda : iota → NNReal) :
@@ -122,7 +110,6 @@ theorem memLp_traceState {T : ℝ} (hT : 0 ≤ T) {F : ℝ → State iota}
   apply (memLp_two_iff_integrable_sq_norm
     ((hc.mono Ioc_subset_Icc_self).aestronglyMeasurable measurableSet_Ioc)).mpr
   exact (hc.norm.pow 2).integrableOn_Icc.mono_set Ioc_subset_Icc_self
-
 
 theorem integral_trace_sq_le_time {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))

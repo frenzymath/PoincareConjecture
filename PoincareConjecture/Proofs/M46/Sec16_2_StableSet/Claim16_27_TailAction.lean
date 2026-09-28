@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SeedScales
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem seed_square_tail_action_le {tau d H C : ℝ} {density : ℝ → ℝ}
     (htau : 0 ≤ tau) (hd : 0 ≤ d) (hH : tau + d ≤ H) (hC : 0 ≤ C)
@@ -42,8 +32,6 @@ theorem seed_square_tail_action_le {tau d H C : ℝ} {density : ℝ → ℝ}
       Real.sq_sqrt (add_nonneg htau hd), Real.sq_sqrt htau]
     ring
   exact h.trans_eq heq
-
-
 
 theorem seed_tail_coefficient_bound {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
     seedImageDelay B r *

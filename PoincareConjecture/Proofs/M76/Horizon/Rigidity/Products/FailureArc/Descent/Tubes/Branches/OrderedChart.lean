@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.RawChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "V3" => (Fin 3 → ℝ)
-
 
 theorem RawSourceCrossing.exists_ordered
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

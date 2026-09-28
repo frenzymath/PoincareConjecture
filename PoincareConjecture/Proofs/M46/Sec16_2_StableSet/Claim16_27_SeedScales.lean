@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallTestScale
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M46
 
-
 noncomputable def seedCylinderDuration (B r : ℝ) : ℝ := r ^ 2 / (64 * B)
 
-
 noncomputable def seedImageDelay (B r : ℝ) : ℝ := r ^ 2 / (2048 * B)
-
 
 noncomputable def seedImageRadius (B r : ℝ) : ℝ := r / (256 * B)
 
@@ -65,8 +54,6 @@ theorem seedImageRadius_le {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
   apply (div_le_iff₀ (by positivity : 0 < 256 * B)).mpr
   nlinarith
 
-
-
 theorem seedImageRadius_sq_le_delay_div {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
     seedImageRadius B r ^ 2 ≤ seedImageDelay B r / 32 := by
   have hBpos : 0 < B := zero_lt_one.trans_le hB
@@ -83,8 +70,6 @@ theorem seedImageRadius_sq_le_duration {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
   have hd := seedImageDelay_lt_duration hB hr
   linarith
 
-
-
 theorem seedImageDelay_metric_short {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
     6 * (52 * r⁻¹ ^ 2) * seedImageDelay B r ≤ 1 / 2 := by
   have hBpos : 0 < B := zero_lt_one.trans_le hB
@@ -96,8 +81,6 @@ theorem seedImageDelay_metric_short {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
   apply (div_le_iff₀ (by positivity : 0 < 256 * B)).mpr
   linarith
 
-
-
 theorem seedImageRadius_curvature_bound {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
     52 * r⁻¹ ^ 2 ≤ (seedImageRadius B r)⁻¹ ^ 2 := by
   have hBsq : 1 ≤ B ^ 2 := one_le_pow₀ hB
@@ -107,7 +90,6 @@ theorem seedImageRadius_curvature_bound {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) 
     simp [seedImageRadius, div_eq_mul_inv]
   rw [hinv, mul_pow, mul_pow]
   nlinarith only [hi, hmul]
-
 
 theorem seedImageDelay_scalar_short {B r : ℝ} (hB : 1 ≤ B) (hr : 0 < r) :
     4 * r⁻¹ ^ 2 * seedImageDelay B r ≤ 1 / 512 := by

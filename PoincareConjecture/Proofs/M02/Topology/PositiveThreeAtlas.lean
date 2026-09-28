@@ -1,7 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.Topology
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCapBoundary
 import PoincareConjecture.Proofs.M02.Topology.IntegralChainSupport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits

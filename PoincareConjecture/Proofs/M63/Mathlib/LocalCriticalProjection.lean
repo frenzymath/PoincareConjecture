@@ -2,15 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M63
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
-
-
-
-
 
 theorem hasFDerivAt_criticalProjection {f : E → F} {c : E}
     (hf : ContDiffAt ℝ 2 f c) :
@@ -45,11 +32,6 @@ theorem hasFDerivAt_criticalProjection {f : E → F} {c : E}
   convert! hdf.hasFDerivAt.clm_apply hr using 1
   simp only [sub_self, map_zero, add_zero, ad]
   rfl
-
-
-
-
-
 
 theorem exists_local_criticalProjection [FiniteDimensional ℝ E]
     {f : E → F} {s : Set E} {c : E} (hs : IsOpen s) (hc : c ∈ s)

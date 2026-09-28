@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.OpenTimeQuotientFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.JetBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.SpacetimeMetricConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_quotientFlow_of_controlled_charts_on_open_time
     {n : ℕ}

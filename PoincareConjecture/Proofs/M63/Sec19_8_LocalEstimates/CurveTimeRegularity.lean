@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -23,9 +13,6 @@ open M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m63FixedPullback_time_joint_contMDiff [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (c : ℝ → ℝ → M)

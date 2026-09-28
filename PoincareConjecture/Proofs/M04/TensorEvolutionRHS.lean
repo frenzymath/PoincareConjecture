@@ -15,11 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {J : Set ℝ}
 
-
-
-
-
-
 theorem curvatureTensor_second_derivative_commutator
     (D : LeviCivitaData g) (x : M)
     (a b c d e f : TangentSpace (𝓡 n) x) :
@@ -41,7 +36,6 @@ theorem curvatureTensor_second_derivative_commutator
   rw [hab, hba] at h
   simpa only [LeviCivitaData.iteratedCovariantTensorDerivative] using h
 
-
 theorem curvature_firstVariation_rhs_eq_frozen
     (D : LeviCivitaData g) (x : M)
     (a b c d : TangentSpace (𝓡 n) x) :
@@ -55,7 +49,6 @@ theorem curvature_firstVariation_rhs_eq_frozen
       D.tensorLaplacian D.riemannEvaluation x ![a, b, c, d] +
         D.curvatureReaction x a b c d := by
   exact curvature_firstVariation_eq_laplacian_add_reaction D x a b c d
-
 
 theorem hasDerivAt_curvatureTensor_frozen_rhs
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M)

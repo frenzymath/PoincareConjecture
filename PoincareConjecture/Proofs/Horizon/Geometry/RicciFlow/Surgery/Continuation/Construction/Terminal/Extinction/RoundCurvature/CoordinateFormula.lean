@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Ricci
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,7 +49,6 @@ theorem metric_fderiv_eq_connection_pairings (D : LeviCivitaData g)
   change 2 * g.inner x (D.euclideanConnection a c x) b = _ at h₂
   linarith
 
-
 theorem curvatureTensor_eq_second_deriv_add_connection_pairings (D : LeviCivitaData g)
     (x u b v c : EuclideanSpace ℝ (Fin n)) :
     D.curvatureTensor x u b v c =
@@ -104,7 +96,6 @@ theorem inner_inverse_eq_sum_inverseCoefficients (x : EuclideanSpace ℝ (Fin n)
     (A (EuclideanSpace.basisFun (Fin n) ℝ i) * g.inverseCoefficients x j i) = _
   rw [g.inverseCoefficients_symm x j i]
   ring
-
 
 theorem curvatureTensor_eq_second_deriv_add_firstKind (D : LeviCivitaData g)
     (x u b v c : EuclideanSpace ℝ (Fin n)) :

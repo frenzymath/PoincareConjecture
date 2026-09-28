@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.HilbertExtraction
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +16,6 @@ open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
-
-
-
 
 theorem exists_weak_potential_of_smooth_gradient_limit
     {O : Set LoopPlane} (hO : IsOpen O)
@@ -105,9 +94,6 @@ private theorem scalar_toLp_norm_sq (u : LoopPlane → ℝ) (hu : MemLp u 2 mu) 
   apply integral_congr_ae
   filter_upwards [hu.coeFn_toLp] with p hp
   simp only [hp, Real.norm_eq_abs, sq_abs]
-
-
-
 
 theorem annulus_exists_weak_potential_of_smooth_gradient_limit
     (F : ℕ → LoopPlane → ℝ) (hF : ∀ j, ContDiff ℝ 1 (F j))

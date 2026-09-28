@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.FiniteLoopValueNet
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.UniformCloseLoopAnnuli
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64FamilyAnnulusNets_of_compact
     {M : Type u} [TopologicalSpace M] [T2Space M]

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Distribution
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Classical
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem contMDiff_of_distance_lipschitz_of_weak_harmonic
     (D : LeviCivitaData g) (hn : 0 < n) {f : M → ℝ} (hf : Continuous f)
@@ -77,8 +64,6 @@ theorem contMDiff_of_distance_lipschitz_of_weak_harmonic
   simpa only [modelWithCornersSelf_coe, range_id, contMDiffWithinAt_univ,
     extChartAt_coe_symm, modelWithCornersSelf_coe_symm, Function.comp_def, id_eq, e] using
     (hsmooth.contDiffAt (hO.mem_nhds (Metric.mem_ball_self hr))).contMDiffAt
-
-
 
 theorem smooth_harmonic_of_distance_lipschitz_of_weak_harmonic
     (D : LeviCivitaData g) (hn : 0 < n) {f : M → ℝ} (hf : Continuous f)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDualRegion
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalRegionClosed
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MaximalFaceDual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +15,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
 
-
-
-
 theorem triangle_base_eq_singleton {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 3) :
     T.dualRegion s ∩ (T.marked 2).space = {s.centroid ℝ id} := by
@@ -38,17 +27,12 @@ theorem triangle_base_eq_singleton {s : Finset (T.index → ℝ × V3)}
     rw [hcard]
     exact T.disk_face_card_le ht)).symm
 
-
-
-
 theorem disk_triangle_not_boundary {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 3) :
     s ∉ (T.marked 1).faces := by
   intro hsB
   have hbound := T.rim_face_card_le ((T.disk_face_mem_boundary_iff hs).mp hsB)
   omega
-
-
 
 theorem boundary_edge_base_contact {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 2)
@@ -67,7 +51,6 @@ theorem boundary_edge_base_contact {s : Finset (T.index → ℝ × V3)}
     exact T.rim_face_card_le ht)).symm
 
 open Classical in
-
 
 theorem dualRegion_subset_rim_of_ssubset {s t : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hst : s ⊂ t) :
@@ -94,7 +77,6 @@ theorem dualRegion_subset_rim_of_ssubset {s t : Finset (T.index → ℝ × V3)}
 
 open Classical in
 
-
 theorem dualRegion_inter (s t : Finset (T.index → ℝ × V3)) :
     T.dualRegion s ∩ T.dualRegion t = T.dualRegion (s ∪ t) := by
   classical
@@ -107,8 +89,6 @@ theorem dualRegion_inter (s t : Finset (T.index → ℝ × V3)) :
     have hxt := h.symm.subset hx.1
     exact ⟨⟨hxt.1, hx.2⟩, hxt.2, hx.2⟩
 
-
-
 theorem dualRegion_eq_empty_of_not_disk_face {s : Finset (T.index → ℝ × V3)}
     (hne : s.Nonempty) (hverts : (s : Set (T.index → ℝ × V3)) ⊆ (T.marked 2).vertices)
     (hs : s ∉ (T.marked 2).faces) : T.dualRegion s = ∅ := by
@@ -120,7 +100,6 @@ theorem dualRegion_eq_empty_of_not_disk_face {s : Finset (T.index → ℝ × V3)
   rw [he, empty_inter]
 
 open Classical in
-
 
 theorem dualRegion_inter_boundary [T2Space X] (s : Finset (T.index → ℝ × V3)) :
     let : Fintype (T.marked 1).faces := (T.marked_finite 1).fintype

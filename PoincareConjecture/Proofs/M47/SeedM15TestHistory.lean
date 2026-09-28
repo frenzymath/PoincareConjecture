@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.HalfRadiusHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 structure SeedM15TestHistory {F : SurgeryFlowData.{u}}
     (T : ℝ) (hT : 0 < T) (hTF : T ∈ F.time_domain)
@@ -52,8 +42,6 @@ private theorem history_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
 
 theorem seedM15_testHistory (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {T r : ℝ} (hT : 0 < T) (hTF : T ∈ F.time_domain)

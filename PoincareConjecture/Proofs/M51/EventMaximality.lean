@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M51.EventLimitEquivalence
 import PoincareConjecture.Proofs.M51.CompactMetricLimit
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.SurgeryFlowData
-
-
 
 theorem lastRegularStart (F : SurgeryFlowData.{u}) {T : ℝ}
     (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier] :
@@ -53,7 +42,6 @@ theorem lastRegularStart (F : SurgeryFlowData.{u}) {T : ℝ}
   have hmem : t ∈ s := Finset.mem_insert_of_mem
     (hfinite.mem_toFinset.mpr ⟨hts, ha0.trans ht.1.le, ht.2⟩)
   exact (Finset.le_max' _ _ hmem).not_gt ht.1
-
 
 theorem event_regularLimit_ne_univ (F : SurgeryFlowData.{u})
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3) {T : ℝ}
@@ -96,7 +84,6 @@ theorem event_regularLimit_ne_univ (F : SurgeryFlowData.{u})
   have hnorm := H.curvature_norm_eq (E.pre_flow.connection t) (F.connection t) (e.symm x)
   rw [e.apply_symm_apply, div_one] at hnorm
   exact hx.not_ge (hnorm.trans_le (hbound t hcollar (e.symm x)))
-
 
 theorem event_retainedPre_ne_univ (F : SurgeryFlowData.{u})
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3) {T : ℝ}

@@ -2,15 +2,6 @@ import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,13 +15,9 @@ namespace PoincareConjecture.Proofs.M59
 
 variable (F : Type u) [TopologicalSpace F] [DiscreteTopology F]
 
-
-
 theorem discreteSimplex_eq {n : ℕ} (f : C(stdSimplex ℝ (Fin (n + 1)), F))
     (x y : stdSimplex ℝ (Fin (n + 1))) : f x = f y :=
   PreconnectedSpace.constant inferInstance f.continuous
-
-
 
 def discreteSingularEvaluation : TopCat.toSSet.obj (TopCat.of F) ⟶
     (SimplicialObject.const (Type u)).obj F where
@@ -43,8 +30,6 @@ def discreteSingularEvaluation : TopCat.toSSet.obj (TopCat.of F) ⟶
       ((TopCat.of F).toSSetObjEquiv n s) (stdSimplex.vertex 0)
     exact discreteSimplex_eq F _ _ _
 
-
-
 def discreteSingularConstant : (SimplicialObject.const (Type u)).obj F ⟶
     TopCat.toSSet.obj (TopCat.of F) where
   app n := ↾fun a => ((TopCat.of F).toSSetObjEquiv n).symm (ContinuousMap.const _ a)
@@ -53,9 +38,6 @@ def discreteSingularConstant : (SimplicialObject.const (Type u)).obj F ⟶
     intro a
     apply ((TopCat.of F).toSSetObjEquiv m).injective
     rfl
-
-
-
 
 def discreteSingularIso : TopCat.toSSet.obj (TopCat.of F) ≅
     (SimplicialObject.const (Type u)).obj F where

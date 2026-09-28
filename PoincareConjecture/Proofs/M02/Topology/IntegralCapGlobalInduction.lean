@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenUnionMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCap
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenMV
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

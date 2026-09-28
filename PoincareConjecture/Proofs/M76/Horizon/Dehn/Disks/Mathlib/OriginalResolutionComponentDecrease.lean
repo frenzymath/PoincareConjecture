@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalNormaliz
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.OriginalResolution
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedCounts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +13,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem OriginalNormalizedResolutionPairData.component_counts_decrease
     {F X ι I : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

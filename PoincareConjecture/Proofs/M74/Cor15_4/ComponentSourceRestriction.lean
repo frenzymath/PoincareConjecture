@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Event.Regions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,15 +12,11 @@ namespace PoincareConjecture
 
 namespace SurgeryRegionEquivalence
 
-
-
 theorem isOpenEmbedding_map {P B : GeneralizedSliceCarrier.{u}} {W : Set B.carrier}
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W) :
     Topology.IsOpenEmbedding E.map :=
   hW.isOpenEmbedding_subtypeVal.comp (E.toHomeomorph.isOpenEmbedding.comp
     (Homeomorph.Set.univ P.carrier).symm.isOpenEmbedding)
-
-
 
 noncomputable def factorThrough {P B X : GeneralizedSliceCarrier.{u}}
     {U V : Set X.carrier} (F : SurgeryRegionEquivalence P X univ U)
@@ -72,8 +57,6 @@ noncomputable def factorThrough {P B X : GeneralizedSliceCarrier.{u}}
   inverse_smooth := F.inverse_smooth.comp (E.map_smooth.mono (subset_univ _))
     (fun _ hx => hx)
 
-
-
 noncomputable def restrictSource {A B : GeneralizedSliceCarrier.{u}}
     {U U' : Set A.carrier} {V : Set B.carrier}
     (E : SurgeryRegionEquivalence A B U V) (hU : U' ⊆ U) :
@@ -99,13 +82,9 @@ namespace SurgeryBallEmbedding
 
 variable {P B : GeneralizedSliceCarrier.{u}} {W : Set B.carrier}
 
-
-
 theorem closedBall_subset_of_chart_subset (b : SurgeryBallEmbedding B)
     (hchart : b.map '' ball (0 : StandardCapSpace) 2 ⊆ W) : b.closedBall ⊆ W :=
   (image_mono (closedBall_subset_ball (by norm_num : (1 : ℝ) < 2))).trans hchart
-
-
 
 noncomputable def restrictToRegion (b : SurgeryBallEmbedding B)
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W)
@@ -139,8 +118,6 @@ noncomputable def restrictToRegion (b : SurgeryBallEmbedding B)
     rw [hcomp]
     exact b.open_embedding
 
-
-
 theorem map_restrictToRegion_map (b : SurgeryBallEmbedding B)
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W)
     (hchart : b.map '' ball (0 : StandardCapSpace) 2 ⊆ W)
@@ -148,15 +125,11 @@ theorem map_restrictToRegion_map (b : SurgeryBallEmbedding B)
     E.map ((b.restrictToRegion E hW hchart).map x) = b.map x :=
   E.right_inverse (hchart (mem_image_of_mem _ hx))
 
-
-
 theorem restrictToRegion_closedBall (b : SurgeryBallEmbedding B)
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W)
     (hchart : b.map '' ball (0 : StandardCapSpace) 2 ⊆ W) :
     (b.restrictToRegion E hW hchart).closedBall = E.inverse '' b.closedBall := by
   exact image_comp E.inverse b.map (Metric.closedBall 0 1)
-
-
 
 theorem restrictToRegion_closedBall_preimage (b : SurgeryBallEmbedding B)
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W)
@@ -170,8 +143,6 @@ theorem restrictToRegion_closedBall_preimage (b : SurgeryBallEmbedding B)
     rwa [E.right_inverse (b.closedBall_subset_of_chart_subset hchart hy)]
   · intro hx
     exact ⟨E.map x, hx, E.left_inverse (mem_univ x)⟩
-
-
 
 theorem map_restrictToRegion_closedBall (b : SurgeryBallEmbedding B)
     (E : SurgeryRegionEquivalence P B univ W) (hW : IsOpen W)
@@ -187,9 +158,6 @@ theorem map_restrictToRegion_closedBall (b : SurgeryBallEmbedding B)
       E.right_inverse (b.closedBall_subset_of_chart_subset hchart hy)⟩
 
 end SurgeryBallEmbedding
-
-
-
 
 noncomputable def SurgeryRegionEquivalence.puncture
     {P B : GeneralizedSliceCarrier.{u}} {W : Set B.carrier}
@@ -233,15 +201,11 @@ namespace SmoothDisjointUnionData
 variable {n m : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
   {sides : Fin m → GeneralizedSliceCarrier.{u}} {X : GeneralizedSliceCarrier.{u}}
 
-
-
 noncomputable def pieceInSide (D : SmoothDisjointUnionData pieces X)
     (E : SmoothDisjointUnionData sides X) (i : Fin n) (j : Fin m)
     (hsub : D.region i ⊆ E.region j) :
     SurgeryRegionEquivalence (pieces i) (sides j) univ ((E.identify j).map ⁻¹' D.region i) :=
   (D.identify i).factorThrough (E.identify j) hsub
-
-
 
 theorem pieceInSide_region_isClopen (D : SmoothDisjointUnionData pieces X)
     (E : SmoothDisjointUnionData sides X) (i : Fin n) (j : Fin m) :

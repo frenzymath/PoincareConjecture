@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.Selection.Deri
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ComponentRestriction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.DerivedCutSurface
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -22,7 +20,6 @@ variable {L : Submodule ℤ V2} {α : Type*}
 
 open Classical in
 set_option maxHeartbeats 1200000 in
-
 
 theorem PairedMarkedBoundary.exists_common_component_cut_collars
     (P : PairedMarkedBoundary L retained d) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T2Space M]
-
-
 
 theorem exists_seed_spatial_path (g : RiemannianMetric n M) (x : M)
     {rho : ℝ} (hrho : 0 < rho) {z : M} (hz : z ∈ closure (g.ball x rho)) :

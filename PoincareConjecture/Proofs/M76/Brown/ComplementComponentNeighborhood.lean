@@ -1,15 +1,5 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,16 +8,11 @@ namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S C : Set X}
 
-
-
 theorem complement_component_closed_representation {x : X} (hx : x ∈ Sᶜ) :
     ∃ F : Set X, IsClosed F ∧ connectedComponentIn Sᶜ x = F ∩ Sᶜ := by
   obtain ⟨F, hF, hrep⟩ :=
     (isClosed_connectedComponent (x := (⟨x, hx⟩ : ↥(Sᶜ)))).image_val
   exact ⟨F, hF, (connectedComponentIn_eq_image hx).trans hrep⟩
-
-
-
 
 theorem complement_component_meets_neighborhood [PreconnectedSpace X]
     [LocallyConnectedSpace X] (hS : IsClosed S) (hne : S.Nonempty)
@@ -54,9 +39,6 @@ theorem complement_component_meets_neighborhood [PreconnectedSpace X]
   obtain ⟨s, hs⟩ := hne
   have hsD : s ∈ connectedComponentIn Sᶜ x := hall.symm ▸ mem_univ s
   exact (connectedComponentIn_subset Sᶜ x hsD) hs
-
-
-
 
 theorem frontier_complement_component_subset [LocallyConnectedSpace X]
     (hS : IsClosed S) {x : X} (hx : x ∈ Sᶜ) :

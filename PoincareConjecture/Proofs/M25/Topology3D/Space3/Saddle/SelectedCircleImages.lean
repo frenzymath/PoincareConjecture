@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_circle_images
     (q : Fin 2 → UnitCircle → UnitTwoSphere)

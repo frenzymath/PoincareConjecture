@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ConformalArea
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ScaledRicciTrace
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,14 +17,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def m60SphereIntrinsicRicciTrace (D : LeviCivitaData g)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) : ℝ :=
   m60RoundSphereMetric.tensorTrace
     (M60.tensorPullbackEvaluation (n := 2) f D.ricciEvaluation) p (fun i => Fin.elim0 i)
-
-
 
 theorem m60SphereIntrinsicRicciTrace_contMDiff (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)
@@ -48,8 +34,6 @@ theorem m60SphereIntrinsicRicciTrace_contMDiff (D : LeviCivitaData g)
     (mfderiv (𝓡 2) (𝓡 n) f p (m60RoundSphereMetric.orthonormalBasis p i)))
   simpa [contMDiffOn_univ, RiemannianMetric.tensorTrace,
     M60.tensorPullbackEvaluation, LeviCivitaData.ricciEvaluation] using h
-
-
 
 theorem m60SphereIntrinsicRicciTrace_eq_basis (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M) (p : UnitTwoSphere) :
@@ -74,8 +58,6 @@ theorem m60SphereIntrinsicRicciTrace_eq_basis (D : LeviCivitaData g)
     Matrix.cons_val_zero, Matrix.cons_val_one]
     using h
 
-
-
 theorem m60ScalarCurvature_contMDiff (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ D.scalarCurvature := by
@@ -86,16 +68,10 @@ theorem m60ScalarCurvature_contMDiff (D : LeviCivitaData g)
   simpa [contMDiffOn_univ, RiemannianMetric.tensorTrace, LeviCivitaData.scalarCurvature,
     LeviCivitaData.ricciEvaluation] using h
 
-
-
-
 noncomputable def m60SphereCurvatureContribution (D : LeviCivitaData g)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) : ℝ :=
   m60SphereIntrinsicRicciTrace D f p -
     (D.scalarCurvature (f p) / 2) * m60SphereConformalFactor g f p
-
-
-
 
 theorem m60SphereCurvatureContribution_contMDiff (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)
@@ -104,8 +80,6 @@ theorem m60SphereCurvatureContribution_contMDiff (D : LeviCivitaData g)
   (m60SphereIntrinsicRicciTrace_contMDiff D hD f hf).sub
     (((m60ScalarCurvature_contMDiff D hD).comp hf).div_const 2 |>.mul
       (m60SphereConformalFactor_contMDiff g f hf hc))
-
-
 
 theorem m60SphereCurvatureContribution_integrable (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)

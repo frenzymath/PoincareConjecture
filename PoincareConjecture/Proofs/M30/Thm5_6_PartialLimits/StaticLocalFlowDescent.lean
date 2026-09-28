@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Descent
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe uI uU uM
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_flow_of_common_metric_chart_limits
     {n : ℕ} {ι : Type uI} [Nonempty ι] {U : ι → Type uU} {M : Type uM}

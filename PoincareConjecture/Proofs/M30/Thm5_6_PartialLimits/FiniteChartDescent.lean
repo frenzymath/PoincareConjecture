@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construc
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Descent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe uI uU uM
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_finite_extension_of_covering_chart_flows
     {n : ℕ} {ι : Type uI} [Nonempty ι]

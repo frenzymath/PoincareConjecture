@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_DisappearingTop
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem rawCylinder_range_subset_history_capTrace
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}
@@ -51,9 +39,6 @@ theorem rawCylinder_range_subset_history_capTrace
       H.forward (origin + s.val / scale) _ (d.forward s.val s.property w.2.val)⟩
   exact congrArg (fun x => (⟨origin + s.val / scale, x⟩ : Σ t, (F.slice t).carrier))
     (hforward s.val s.property w.2.val w.2.property).symm
-
-
-
 
 theorem rawCylinder_closure_excludes_disappearing_top
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}

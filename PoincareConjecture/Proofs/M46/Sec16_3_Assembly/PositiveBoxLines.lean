@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveFlowPieces
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem positive_component_history_box_line
     {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
@@ -77,8 +68,6 @@ theorem positive_component_history_box_line
       have heq := H.surgery_compatibility q t htbox ht.1 v hvbox ⟨hvm.le, hvt⟩ x
       exact heq ▸ hp
   exact hQb hb
-
-
 
 theorem positive_component_history_box_connected
     {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}

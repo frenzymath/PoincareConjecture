@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSuperlevelDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricRealization
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore
@@ -20,9 +9,6 @@ open Set StdSimplexCore
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem vertexSubcomplex_eq_of_full
     {K L : SimplicialComplex ℝ E} (hLK : L ≤ K)
@@ -34,9 +20,6 @@ theorem vertexSubcomplex_eq_of_full
   · exact le_vertexSubcomplex hLK Subset.rfl
 
 open scoped Classical in
-
-
-
 
 theorem image_barycentric_vertexSubcomplex
     (K : SimplicialComplex ℝ E) [Fintype K.vertices] (V : Set E) :

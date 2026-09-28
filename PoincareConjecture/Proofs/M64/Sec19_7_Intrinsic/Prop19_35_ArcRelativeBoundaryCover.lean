@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RelativeBoundaryCover
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +9,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_arc_smooth_edge
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B p : ℝ}
@@ -115,9 +100,6 @@ theorem m64Intrinsic_exists_arc_smooth_edge
       · by_contra hn
         exact hznot (Or.inl ⟨t, Or.inr ⟨(lt_of_not_ge hn).le, ht.2⟩, rfl⟩)
     · exact False.elim (hznot (Or.inr hzC))
-
-
-
 
 theorem m64Intrinsic_exists_arc_relative_cover_of_local_frontier
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B p : ℝ}

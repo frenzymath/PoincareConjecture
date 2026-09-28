@@ -1,25 +1,11 @@
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M65Gauss
-
-
-
-
 
 theorem even_order_of_monotone_derivative {f q : ℝ → ℝ} {m : ℕ}
     (hmono : Monotone f ∨ Antitone f) (hq : ContinuousAt q 0) (hq0 : q 0 ≠ 0)

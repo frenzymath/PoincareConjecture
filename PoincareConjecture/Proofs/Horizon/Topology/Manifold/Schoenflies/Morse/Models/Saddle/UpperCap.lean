@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LowerCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,7 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 def upperAbscissa (t : Real) : Real := t / Real.sqrt (1 + Real.sqrt (1 + t^2))
 
@@ -57,8 +54,6 @@ theorem upperAbscissa_inverse (x : Real) :
   rw [heq, Real.sqrt_sq_eq_abs, abs_of_pos (by positivity : 0 < x^2+1),
     show 1 + (x^2+1) = x^2+2 by ring]
   exact mul_div_cancel_right₀ _ (ne_of_gt (Real.sqrt_pos.mpr (by positivity)))
-
-
 
 def upperCap (q : E2) : E3 :=
   vector (upperAbscissa (q 0)) (q 1)
@@ -121,7 +116,6 @@ theorem upperCap_height_ge_iff {q : E2} (hq : q ∈ ball (0 : E2) 1) :
         (upperAbscissa (q 0))^2 - 1/2)]
   · nlinarith [sq_nonneg (upperAbscissa (q 0))]
 
-
 def upperCoordinates (p : E3) : E2 := WithLp.toLp 2 ![p 0 * Real.sqrt ((p 0)^2+2), p 1]
 
 theorem upperCoordinates_contDiff : ContDiff Real ∞ upperCoordinates := by
@@ -165,7 +159,6 @@ theorem upperCoordinates_norm_sq (p : E3) :
   change (p 0 * Real.sqrt ((p 0)^2+2))^2 + (p 1)^2 = _
   rw [mul_pow, Real.sq_sqrt (by positivity)]
   ring
-
 
 theorem upperCap_image_closedBall :
     upperCap '' closedBall (0 : E2) (Real.sqrt (3/4)) =

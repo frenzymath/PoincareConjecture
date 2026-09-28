@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.CoreBoundarySectors
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.PolygonalCores
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ namespace PoincareConjecture.Topology.Surface
 section LocalSupports
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem core_eventuallyEq_compl_interior
     {U A C : Set X} (hU : IsOpen U) (hC : IsClosed C)
@@ -42,8 +33,6 @@ theorem core_eventuallyEq_compl_interior
   · intro hi
     have hcl : z ∈ closure Aᶜ := by rw [closure_compl]; exact hi
     exact closure_minimal hsub hC (hU.inter_closure ⟨hz, hcl⟩)
-
-
 
 theorem finite_closed_union_eventuallyEq_incident
     {I : Type*} [Finite I] (A : I → Set X) (hA : ∀ i, IsClosed (A i)) (q : X) :
@@ -66,7 +55,6 @@ theorem finite_closed_union_eventuallyEq_incident
     obtain ⟨i, hi⟩ := mem_iUnion.mp h
     exact mem_iUnion.mpr ⟨i.1, hi⟩
 
-
 theorem support_eventuallyEq_interior {A B : Set X} {q : X}
     (h : A =ᶠ[𝓝 q] B) : interior A =ᶠ[𝓝 q] interior B := by
   obtain ⟨V, hV, hVo, hqV⟩ := mem_nhds_iff.mp h
@@ -74,8 +62,6 @@ theorem support_eventuallyEq_interior {A B : Set X} {q : X}
   apply propext
   apply Filter.EventuallyEq.mem_interior_iff
   exact Filter.mem_of_superset (hVo.mem_nhds hz) hV
-
-
 
 theorem core_eventuallyEq_compl_incident_interior
     {I : Type*} [Finite I] (A : I → Set X) (hA : ∀ i, IsClosed (A i))
@@ -95,8 +81,6 @@ theorem core_eventuallyEq_compl_incident_interior
 end LocalSupports
 
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
-
-
 
 theorem coordinate_core_support_eventuallyEq_compl_interior
     (F : OpenPartialHomeomorph Plane S) (M : TriangleMesh)
@@ -125,9 +109,6 @@ theorem coordinate_core_support_eventuallyEq_compl_interior
     propext_iff.mp hz
   rw [hmem, hint] at he
   exact he
-
-
-
 
 theorem coordinate_core_support_eventuallyEq_compl_incident_interior
     {I : Type*} [Finite I] (A : I → Set S) (hA : ∀ i, IsClosed (A i))
@@ -162,8 +143,6 @@ theorem coordinate_core_support_eventuallyEq_compl_incident_interior
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
 omit [T2Space S] in
-
-
 
 theorem meshVertexAngleContribution_restriction_eq_tangent_selection
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

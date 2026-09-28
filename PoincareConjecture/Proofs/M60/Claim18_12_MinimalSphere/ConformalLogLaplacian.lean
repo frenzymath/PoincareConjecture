@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.SecondDirectionalDerivative
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ConformalArea
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.StereographicLogDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereAreaDensity_contDiff (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -39,9 +28,6 @@ theorem m60SphereAreaDensity_contDiff (g : RiemannianMetric n M)
       ((m60SphereConformalFactor_contMDiff g f hf hc).comp m60SphereParameter_contMDiff)
   exact hq.mul (contDiff_const.div (((contDiff_norm_sq ℝ).add contDiff_const).pow 2)
     (by intro z; positivity))
-
-
-
 
 theorem m60Sphere_logConformalFactor_laplacian
     (D : LeviCivitaData m60RoundSphereMetric) (g : RiemannianMetric n M)

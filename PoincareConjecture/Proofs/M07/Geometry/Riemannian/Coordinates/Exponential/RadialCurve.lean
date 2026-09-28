@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Scaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem IsGeodesicOn.comp_mul {γ : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) (a : ℝ) :
@@ -37,8 +26,6 @@ theorem IsGeodesicOn.comp_mul {γ : ℝ → M} {s : Set ℝ}
     (B := g.pullbackCoefficients (extChartAt (𝓡 n) p).symm)
     (c := a) (t := u) hphase
   exact ⟨hu.1, hu.2.1, hd.fst, hd.snd⟩
-
-
 
 theorem exponential_eq_geodesic_of_initial_data [T2Space M]
     (p : M) {R : ℝ}
@@ -76,8 +63,6 @@ theorem exponential_eq_geodesic_of_initial_data [T2Space M]
     (by rw [hd'.deriv, hηd.deriv, map_smul])
   simpa only [mul_one, hη1] using (heq 1 (by simp)).self_of_nhds.symm
 
-
-
 theorem isGeodesicOn_radial_of_initial_data [T2Space M]
     (p : M) {R : ℝ}
     (L : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -114,8 +99,6 @@ theorem isGeodesicOn_radial_of_initial_data [T2Space M]
       (by simpa only [hscale] using huv)
     rw [hscale] at heq
     exact ⟨heq.trans hu.1, hu.2⟩
-
-
 
 theorem exists_orthonormal_radial_exponential_of_precompact_ball [T2Space M]
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)

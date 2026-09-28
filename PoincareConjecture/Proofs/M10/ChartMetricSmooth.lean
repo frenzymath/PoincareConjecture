@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M10.MetricInverse
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Analysis.Calculus.ContDiff.CPolynomial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle

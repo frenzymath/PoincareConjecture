@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_TimeJoin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem ordinaryFlows_timeJoin
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

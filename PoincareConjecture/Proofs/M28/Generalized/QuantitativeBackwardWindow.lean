@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LimitData
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 set_option linter.unusedSectionVars false
@@ -29,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
   {epsilon K : ℝ} {U : Set M} {x : M}
 
-
 def quantitativeBackwardInterval (d : ℝ) (hd : 0 < d) : SpacetimeInterval where
   domain := Icc (-d) 0
   ordConnected := ordConnected_Icc
@@ -47,7 +36,6 @@ theorem quantitative_scale_duration_eq_half
   rw [N.duration_eq]
   field_simp [N.neck.scale_pos.ne']
 
-
 structure NormalizedBackwardWindow
     (N : QuantitativeBackwardNeck g D epsilon K U x) where
   Q : ℝ
@@ -64,7 +52,6 @@ structure NormalizedBackwardWindow
     letI := N.model.carrier.secondCountable
     OrdinaryParabolicRescaling (I := quantitativeBackwardInterval
       N.model.duration N.model.duration_pos) N.model.flow Q Q_pos 0
-
 
 theorem exists_normalized_backward_window
     (N : QuantitativeBackwardNeck g D epsilon K U x) :

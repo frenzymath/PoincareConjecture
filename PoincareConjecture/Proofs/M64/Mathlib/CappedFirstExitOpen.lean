@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousFirstExit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_exists_capped_first_exit_open
     {X : Type*} [TopologicalSpace X] {q : ℝ → X} (hq : Continuous q)
@@ -56,9 +42,6 @@ theorem m64_exists_capped_first_exit_open
       by_contra hRU
       exact hleave ⟨R, ⟨hdR.le, le_rfl⟩, hRU⟩
 
-
-
-
 theorem m64_capped_first_exit_open_unique
     {X : Type*} [TopologicalSpace X] {q : ℝ → X} {U : Set X} (hU : IsOpen U)
     {R b d : ℝ} (hb : 0 < b) (hd : 0 < d) (hbR : b ≤ R) (hdR : d ≤ R)
@@ -78,10 +61,6 @@ theorem m64_capped_first_exit_open_unique
     · exact False.elim ((not_lt_of_ge (hcap ▸ hbR)) hlt)
     · rw [frontier, hU.interior_eq] at hfront
       exact False.elim (hfront.2 hinside)
-
-
-
-
 
 theorem m64_capped_first_exit_open_mono
     {X : Type*} [TopologicalSpace X] {q : ℝ → X} {U V : Set X}

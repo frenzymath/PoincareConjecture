@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckExitTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem exists_first_axial_exit_of_mem {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) {a : ℝ} (hal : a < length)

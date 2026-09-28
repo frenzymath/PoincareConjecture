@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.SliceChart
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +15,6 @@ variable {m k : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {f : M → Fin k → ℝ}
   (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) ∞ f) (c : Fin k → ℝ)
   (hreg : ∀ x : M, f x = c → Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) f x))
-
 
 def fiberChart (z : (f ⁻¹' {c} : Set M)) :
     OpenPartialHomeomorph (f ⁻¹' {c} : Set M) (EuclideanSpace ℝ (Fin m)) :=
@@ -41,7 +34,6 @@ theorem fiberChart_symm_val (z : (f ⁻¹' {c} : Set M))
     ((fiberChart (m := m) hf c hreg z).symm y : M) =
       (adaptedChart (m := m) hf z (hreg z z.2)).symm (c, y) :=
   sliceChart_symm_val f c _ _ z hy
-
 
 @[reducible] def fiberChartedSpace :
     ChartedSpace (EuclideanSpace ℝ (Fin m)) (f ⁻¹' {c} : Set M) where
@@ -77,7 +69,6 @@ theorem contDiffOn_fiberChart_trans (z w : (f ⁻¹' {c} : Set M)) :
       fiberChart_symm_val hf c hreg z hv.1]
   · rw [OpenPartialHomeomorph.trans_apply, fiberChart_apply,
       fiberChart_symm_val hf c hreg z hy.1]
-
 
 theorem isManifold_fiber :
     let := fiberChartedSpace (m := m) hf c hreg

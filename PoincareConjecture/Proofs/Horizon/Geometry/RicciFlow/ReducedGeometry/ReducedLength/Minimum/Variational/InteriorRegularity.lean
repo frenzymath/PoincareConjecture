@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.PartitionLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.LocalMinimality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +18,6 @@ variable {M : Type*} [MetricSpace M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [ConnectedSpace M]
 
 set_option maxHeartbeats 800000 in
-
 
 theorem minimizing_uniform_limit_contMDiffOn (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ)
@@ -64,7 +55,6 @@ theorem minimizing_uniform_limit_contMDiffOn (K : AncientKappaSolution 2 M)
     (Icc_mem_nhds hjs hsj)).contMDiffWithinAt
 
 set_option maxHeartbeats 800000 in
-
 
 theorem minimizing_uniform_limit_contMDiffOn_Icc (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ)

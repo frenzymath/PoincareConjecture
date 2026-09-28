@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Smoothing.LinkIncidencePlanes
 import PoincareConjecture.Proofs.M76.Smoothing.SmallNormalFacePlanes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem contractible_positiveFaceStarPlanes (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) (hfinite : K.faces.Finite)

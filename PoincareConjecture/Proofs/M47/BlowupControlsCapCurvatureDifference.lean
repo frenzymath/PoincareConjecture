@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeDerivative
 import PoincareConjecture.Proofs.M03.MetricDifferenceEvolution
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem cap_curvature_difference_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)
@@ -41,8 +29,6 @@ theorem cap_curvature_difference_normal
       ((D0.contDiffAt_euclideanConnection x u w).differentiableAt (by simp))]
   simp only [sub_apply, hzero, sub_zero]
   abel
-
-
 
 theorem cap_ricci_difference_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalFrontierZero
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFrontierEndpoints
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,9 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   {T : OriginalProperDiskTriangulation e R j}
-
-
-
 
 theorem OriginalLowerProducts.exists_frontier_vertex_product (P : OriginalLowerProducts T)
     (p : (T.marked 2).vertices)

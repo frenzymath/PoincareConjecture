@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Replacement.Map
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 namespace PoincareConjecture.M76
@@ -192,9 +181,6 @@ private theorem exists_nonextendable_original_replacement_branch
   have hh := hHU i ⟨x,hxi⟩
   have hxq' : (H i ⟨x,hxA⟩ : E) ∈ q := hh.symm ▸ x.property
   exact (hF i ⟨_,hxq'⟩).trans ((congrArg (k i) hh).trans (hkeep i hxA))
-
-
-
 
 theorem exists_essential_original_returning_disk_branch
     {X ι E F : Type*} [TopologicalSpace X] [T2Space X]

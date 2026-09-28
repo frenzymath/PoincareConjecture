@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Fronti
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Frontier.Endpoints
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedProduct
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {T : CoorientedSurfaceStars E}
-
-
-
 
 theorem SurfaceLowerProducts.exists_frontier_vertex_product (P : SurfaceLowerProducts T)
     (p : (T.marked 2).vertices)
@@ -171,4 +166,3 @@ theorem SurfaceLowerProducts.exists_frontier_vertex_product (P : SurfaceLowerPro
     · exact hkeep true he
 
 end Geometry.SimplicialComplex
-

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +27,6 @@ private theorem partialChart_isLocalDiffeomorph
   exact (Poincare.isLocalDiffeomorph_opensSubtypeVal (𝓡 n) U x).comp (𝓡 n) M
     ⟨Φ, hU x.property, Set.eqOn_refl _ _⟩
 
-
-
 def pullbackToPartialChart {J : Set ℝ} (F : RicciFlow n M J)
     (Φ : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
     (U : Opens (EuclideanSpace ℝ (Fin n)))
@@ -47,7 +34,6 @@ def pullbackToPartialChart {J : Set ℝ} (F : RicciFlow n M J)
   F.pullbackWithConnection (fun x : U => Φ x) (partialChart_isLocalDiffeomorph Φ U hU)
     (fun t => ((F.metric t).pullbackOfLocalDiffeomorph (fun x : U => Φ x)
       (partialChart_isLocalDiffeomorph Φ U hU)).openEuclideanLeviCivitaData U)
-
 
 theorem pullbackToPartialChart_inner {J : Set ℝ} (F : RicciFlow n M J)
     (Φ : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
@@ -78,8 +64,6 @@ theorem pullbackToPartialChart_inner {J : Set ℝ} (F : RicciFlow n M J)
     (mfderiv (𝓡 n) (𝓡 n) (fun y : U => Φ y) x w) = _
   rw [hc']
   rfl
-
-
 
 theorem exists_ancient_limit_of_partial_chart_coefficients
     {ρ : ℝ} (hρ : 0 < ρ) (Fseq : ℕ → RicciFlow n M (Iic 0))

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_SampleRest
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialScalarBound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialTwoJet
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,9 +28,6 @@ noncomputable local instance initialSampleTwoJetNorm :
 noncomputable local instance initialSampleTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
-
 theorem CylinderCompactnessSample.initial_fixed_coefficients
     {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
     {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
@@ -50,9 +37,6 @@ theorem CylinderCompactnessSample.initial_fixed_coefficients
   dsimp only [CylinderCompactnessSample.fixedComparison]
   rw [normalizedCoefficients_cast_initial D.standard_initial_eq D.comparison]
   exact D.initial_coefficients hx
-
-
-
 
 theorem exists_global_initial_sample_scalar_bound
     {g0 : StandardInitialMetric} (estimate : StandardCapEstimate g0) :
@@ -73,9 +57,6 @@ theorem exists_global_initial_sample_scalar_bound
   exact fun y => hscalar _ _ _ _ _ D.fixedComparison heta
     (D.ordinary.flow.metric 0) (D.ordinary.flow.connection 0)
     (targetPartialDiffeomorph D.chart D.target_point) hsub hlink y (mem_univ y)
-
-
-
 
 theorem initial_sample_curvature_bound (P : M44CapPersistencePredecessors.{u})
     {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
@@ -101,10 +82,6 @@ theorem initial_sample_curvature_bound (P : M44CapPersistencePredecessors.{u})
     (inv_pos.mpr D.cylinder.scale_pos).le hnormalized hR
   simpa only [D.ordinary.curvatureTensorNorm_eq hU D.chart_target_subset 0 hzero y,
     div_eq_mul_inv, mul_comm] using h
-
-
-
-
 
 theorem exists_initial_sample_bound (P : M44CapPersistencePredecessors.{u})
     (g0 : StandardInitialMetric) (estimate : StandardCapEstimate g0)

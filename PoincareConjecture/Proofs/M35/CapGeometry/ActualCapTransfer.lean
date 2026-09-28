@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCertificate
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedFullStaticNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_certificate
     (P : M35StandardCapPredecessors) :

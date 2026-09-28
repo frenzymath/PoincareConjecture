@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleSlabPhaseSigns
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CollarCollapseHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -59,11 +49,6 @@ end CollarCollapse
 namespace AddCircle
 
 open Classical in
-
-
-
-
-
 
 theorem adjusted_phase_levels_iff {E : Type*} [TopologicalSpace E]
     (p : ℝ) [Fact (0 < p)] {B : Set E} {a b eta delta r : ℝ}

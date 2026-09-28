@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiCoordinates
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,9 +10,6 @@ open MeasureTheory Filter Set Metric
 open scoped Topology ContDiff Interval
 
 namespace Complex
-
-
-
 
 def beltramiRadialPrimitive (A : ℂ → ℂ →L[ℝ] ℂ) (z : ℂ) : ℂ :=
   ∫ t in (0 : ℝ)..1, A (t • z) z
@@ -63,10 +50,6 @@ private theorem hasDerivAt_radialBoundaryTerm (A : ℂ → ℂ →L[ℝ] ℂ)
     Function.comp_apply, id_eq]
   exact _root_.add_comm _ _
 
-
-
-
-
 theorem hasFDerivAt_beltramiRadialPrimitive (A : ℂ → ℂ →L[ℝ] ℂ)
     (hA : ContDiff ℝ ∞ A)
     (hclosed : ∀ x u v, fderiv ℝ A x u v = fderiv ℝ A x v u) (z : ℂ) :
@@ -103,9 +86,6 @@ theorem hasFDerivAt_beltramiRadialPrimitive (A : ℂ → ℂ →L[ℝ] ℂ)
       ((hDz.clm_apply continuous_const).intervalIntegrable (0 : ℝ) 1)
     simpa only [one_smul, zero_smul, sub_zero] using hFTC
   exact heq ▸ hderiv
-
-
-
 
 theorem contDiff_beltramiRadialPrimitive (A : ℂ → ℂ →L[ℝ] ℂ)
     (hA : ContDiff ℝ ∞ A)

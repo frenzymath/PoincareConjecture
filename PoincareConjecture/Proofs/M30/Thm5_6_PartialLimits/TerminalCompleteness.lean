@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Completeness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space
-
-
-
-
 
 theorem metricComplete_terminal_of_closed_slab_curvature_bound
     {n : ℕ} (C : FlowCarrier.{u} n) {J : Set ℝ}

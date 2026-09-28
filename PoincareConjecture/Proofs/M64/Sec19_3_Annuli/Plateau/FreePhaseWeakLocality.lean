@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem m64WeakPartial_of_local
     {O : Set LoopPlane} (hO : IsOpen O) {u v : LoopPlane → ℝ} {i : Fin 2}

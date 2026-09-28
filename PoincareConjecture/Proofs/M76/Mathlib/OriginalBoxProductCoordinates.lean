@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCyclicProductCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -16,10 +7,6 @@ open Set CoordinateHalfBoxes
 namespace Homeomorph
 
 variable {E ι : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem original_box_product_coordinates
     (F : ι → ((ℝ × ℝ) × ℝ) → E) {B S : Set E} {r : ℝ}

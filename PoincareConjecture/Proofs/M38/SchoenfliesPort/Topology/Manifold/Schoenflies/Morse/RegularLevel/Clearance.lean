@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Tube
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,15 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -32,8 +17,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
-
-
 
 theorem exists_open_cylinder_avoiding_compact
     {D K : Set E} (hD : IsCompact D) (hK : IsCompact K) (hdisjoint : Disjoint D K)
@@ -56,8 +39,6 @@ theorem exists_open_cylinder_avoiding_compact
   have hdist : dist (y + t • v) y ≤ d / 2 := by
     simpa only [dist_eq_norm, add_sub_cancel_left] using hnorm
   exact (dist_triangle (y + t • v) y z).trans_lt (by linarith)
-
-
 
 theorem exists_open_cylinder_clearance_of_compact_embedding
     {M : Type*} [TopologicalSpace M] [CompactSpace M]
@@ -86,10 +67,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : EuclideanSpace Real (Fin 2)) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
-
 
 theorem exists_regular_tube_disk_clearance
     {f : S2 -> E3} (hf : Continuous f) (hinj : Function.Injective f)

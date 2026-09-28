@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PiecewiseArea
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRegularity
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
-
 
 theorem m60DiskGluing_of_collar (g : RiemannianMetric 3 M)
     {γ γ' : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ)

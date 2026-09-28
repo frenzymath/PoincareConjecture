@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ChartConnectionLocal
 import PoincareConjecture.Proofs.M09.SquareChartCurvature
 import PoincareConjecture.Proofs.M09.CoordinateBianchi
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

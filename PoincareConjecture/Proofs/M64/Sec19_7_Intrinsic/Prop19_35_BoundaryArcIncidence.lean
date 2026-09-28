@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryArcTopology
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.ClosedCover
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,12 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_real_boundary_two_sides
     {X : Type*} [TopologicalSpace X] (C : OpenPartialHomeomorph ℝ X)
@@ -109,13 +90,6 @@ theorem m64Intrinsic_real_boundary_two_sides
       exact closure_mono subset_union_left hAclosure
     · exact subset_closure (hpartition ▸ ⟨hz, hzp⟩)
 
-
-
-
-
-
-
-
 theorem m64Intrinsic_real_boundary_closed_cover_incidence
     {X I : Type*} [TopologicalSpace X] [T2Space X] [Finite I]
     (hcharts : ∀ x : X, ∃ C : OpenPartialHomeomorph ℝ X, x ∈ C.target)
@@ -141,12 +115,6 @@ theorem m64Intrinsic_real_boundary_closed_cover_incidence
       A hclosed hregular hdisjoint hcover (hW.mem_nhds hpW) hpartition
       hU hV hUne hVne hpU hpV hdense hfront hp
   exact ⟨i, j, hij, hmembers⟩
-
-
-
-
-
-
 
 theorem m64Intrinsic_exactly_two_boundary_arcs
     {X I : Type*} [TopologicalSpace X] [T2Space X] [Finite I]

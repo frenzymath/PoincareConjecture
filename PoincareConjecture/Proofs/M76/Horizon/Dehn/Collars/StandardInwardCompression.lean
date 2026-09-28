@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.StandardBoundaryCollar
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.InwardCompression
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -18,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_standard_inward_compression
     {R : Set V3} (hR : IsCompact R) (hRne : R.Nonempty)

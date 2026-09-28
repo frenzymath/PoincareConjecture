@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.Limit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Limit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,9 +56,6 @@ end PoincareConjecture.SingularTimeAssumptions
 namespace PoincareConjecture.SingularRegularLimit
 
 open RoundComparison
-
-
-
 
 theorem exists_terminal_canonical_or_frequent_cap_threshold
     (P04 : RicciFlowCurvatureTheory.{u}) :

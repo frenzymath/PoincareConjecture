@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ClosedStarSectionChart
 import PoincareConjecture.Proofs.M76.Mathlib.SmallClosedStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {ι : Type*} [Finite ι] [Nonempty ι]
-
-
 
 theorem exists_finitePL_closedStar_half_body
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

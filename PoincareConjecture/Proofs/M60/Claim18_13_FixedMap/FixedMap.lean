@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import PoincareConjecture.Proofs.M60.Mathlib.DominatedDerivative
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m60FixedMapAreaProperties_of_ricci_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]

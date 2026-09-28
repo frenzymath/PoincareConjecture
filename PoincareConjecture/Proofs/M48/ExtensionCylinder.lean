@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M48.ExtensionEvents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.SurgeryFlowExtension
 
 variable {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
   {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
-
 
 noncomputable def pushCylinder (d : SurgeryFlowCylinder F C a q J U) :
     SurgeryFlowCylinder E.extended C a q J U := by
@@ -85,8 +76,6 @@ theorem pushCylinder_forward (d : SurgeryFlowCylinder F C a q J U)
     (s : ℝ) (hs : s ∈ J) (x : C.carrier) :
     (E.pushCylinder d).forward s hs x =
       E.identify (a + s / q) (d.time_subset ⟨s, hs, rfl⟩) (d.forward s hs x) := rfl
-
-
 
 noncomputable def pullCylinder
     (d : SurgeryFlowCylinder E.extended C a q J U)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +12,6 @@ namespace PlanarFamilyGraphChart
 variable {c : ℝ → UnitCircle → E2} {a b : ℝ}
 variable {D : PlanarSchoenfliesFamilyData c a b}
 variable (G : PlanarFamilyGraphChart D)
-
-
 
 theorem ambientChart_image (u : UnitTwoSphere) (z : ℝ) (X : Set E2) :
     G.ambientChart u '' (X ×ˢ ({z} : Set ℝ)) =
@@ -45,8 +33,6 @@ theorem ambientChart_image (u : UnitTwoSphere) (z : ℝ) (X : Set E2) :
     refine ⟨(x, z), ⟨hx, rfl⟩, ?_⟩
     rw [G.ambientChart_apply, hxy]
     simpa only [Prod.fst, Prod.snd] using hpoint
-
-
 
 theorem ambientChart_boundary_image (u : UnitTwoSphere) (z : ℝ)
     (hz : z ∈ Icc a b) :

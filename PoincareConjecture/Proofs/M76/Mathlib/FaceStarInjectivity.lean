@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace LinearMap
 
 variable {E F : Type*} [AddCommGroup E] [Module ℝ E]
   [AddCommGroup F] [Module ℝ F]
-
-
-
 
 theorem injOn_of_secant_rescaling (Q : E →ₗ[ℝ] F) {S T : Set E}
     (hQ : InjOn Q S)
@@ -42,9 +30,6 @@ namespace Set
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [AddCommGroup F] [Module ℝ F]
 
-
-
-
 theorem injOn_add_direction_iff {C S : Set E} {p : E}
     (hp : p ∈ intrinsicInterior ℝ C) (hstar : ∀ q ∈ C, StarConvex ℝ q S)
     (Q : E →ₗ[ℝ] F) :
@@ -64,9 +49,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [AddCommGroup F] [Module ℝ F]
-
-
-
 
 theorem injOn_closedFaceStar_tangent_iff (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (Q : E →ₗ[ℝ] F) :

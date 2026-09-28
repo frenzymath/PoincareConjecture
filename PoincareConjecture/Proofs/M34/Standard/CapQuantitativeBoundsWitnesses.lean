@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapQuantitativeBounds
 import PoincareConjecture.Proofs.M34.Standard.CapQuantitativeBoundsConstants
 import PoincareConjecture.Proofs.M34.Standard.CapQuantitativeBoundsGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 variable {X : Type*} [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
   {h : RiemannianMetric 3 X}
-
-
 
 theorem scalarCurvatureSupOn_bounds_of_interval (D : LeviCivitaData h)
     {V : Set X} (hne : V.Nonempty) {a b : ℝ}
@@ -49,9 +38,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [MeasurableSpace X] [BorelSpace X] [T3Space X]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
 
 theorem image_recut_quantitative_bounds
     {C K : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)

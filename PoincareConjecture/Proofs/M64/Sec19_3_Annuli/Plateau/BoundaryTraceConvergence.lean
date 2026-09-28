@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceInterpolation
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -57,8 +46,6 @@ private theorem cauchySeq_of_trace_interpolation
   have hcollar : 8 * delta * C ≤ epsilon ^ 2 / 4 := by nlinarith
   apply (sq_lt_sq₀ dist_nonneg hepsilon.le).mp
   nlinarith [sq_pos_of_pos hepsilon]
-
-
 
 theorem m64Annulus_lower_trace_cauchySeq
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ j, ContDiff ℝ 1 (f j))

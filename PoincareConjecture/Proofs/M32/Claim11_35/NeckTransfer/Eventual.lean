@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.NeckTransfer.Record
 import PoincareConjecture.Proofs.M32.Claim11_34.ForwardComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +14,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
-
 
 theorem blowup_eventually_strongNecks_of_cylinderFamilyClose
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

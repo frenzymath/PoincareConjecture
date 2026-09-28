@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.GraphSlope
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff ENNReal NNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem sphere_height_oscillation_of_intrinsic_slope
     {h : UnitTwoSphere → ℝ} (hsmooth : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ h)
@@ -58,9 +45,6 @@ theorem sphere_height_oscillation_of_intrinsic_slope
         change _ = ENNReal.ofReal (K : ℝ) * ENNReal.ofReal Real.pi
         rw [ENNReal.ofReal_coe_nnreal]
   exact (ENNReal.ofReal_le_ofReal_iff (mul_nonneg hα.le Real.pi_pos.le)).mp hbound
-
-
-
 
 theorem coordinate_graph_height_bound
     {M : Type u} [TopologicalSpace M]

@@ -4,17 +4,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -73,11 +62,9 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def segmentPathSpeed (g : RiemannianMetric n M)
     (γ : ℝ → M) (a b t : ℝ) : ℝ :=
   g.tangentNorm (γ t) (mfderivWithin 𝓘(ℝ, ℝ) (𝓡 n) γ (Icc a b) t 1)
-
 
 noncomputable def segmentPathEnergy (g : RiemannianMetric n M)
     (γ : ℝ → M) (a b : ℝ) : ℝ :=
@@ -139,8 +126,6 @@ theorem pathELength_eq_ofReal_integral_segmentPathSpeed
   exact (MeasureTheory.ofReal_integral_eq_lintegral_ofReal
     (continuousOn_segmentPathSpeed g hγ hab).integrableOn_Icc
     (Eventually.of_forall (segmentPathSpeed_nonneg g γ a b))).symm
-
-
 
 theorem edist_le_sqrt_sum_segmentPathEnergy
     (g : RiemannianMetric n M) (N : ℕ) (τ : ℕ → ℝ)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalTerminalPair
 import PoincareConjecture.Proofs.M76.Dehn.FullMarkedTerminalStars
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRimFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u w z
@@ -25,10 +16,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {U : Type u} {M : Type w} {ι : Type z}
   [NormedAddCommGroup U] [NormedSpace ℝ U] [FiniteDimensional ℝ U]
   [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]
-
-
-
-
 
 theorem exists_original_terminal_chart_stars
     (e : ι → OpenPartialHomeomorph M V3)

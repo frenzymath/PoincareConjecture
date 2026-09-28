@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_ObservedCages
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_21_ObservedAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
 
 theorem capAvoidanceProducer_of_parameters
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

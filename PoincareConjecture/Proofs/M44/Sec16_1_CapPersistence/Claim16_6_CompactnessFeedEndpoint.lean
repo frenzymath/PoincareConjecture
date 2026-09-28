@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M44.Mathlib.CompactTimeLimit
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem continuousOn_birth_spatialJet
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -36,9 +23,6 @@ theorem continuousOn_birth_spatialJet
     (show Icc (0 : ℝ) T ⊆ Ico 0 B from fun _ hs => ⟨hs.1, hs.2.trans_lt hTB⟩)
     ordConnected_Icc (Icc_infinite hT).nontrivial
   exact continuousOn_pullback_spatialJet hT G hU he m
-
-
-
 
 theorem continuousWithinAt_birth_of_compact_uniform
     {X Y : Type*} [MetricSpace X] [ProperSpace X] [PseudoMetricSpace Y]
@@ -68,10 +52,6 @@ theorem continuousWithinAt_birth_of_compact_uniform
   simpa only [Function.comp_def, neg_neg] using
     hleft'.comp (f := fun p : ℝ × X => (-p.1, p.2)) (x := (0, x))
       hreflect.continuousWithinAt hmap
-
-
-
-
 
 theorem continuousWithinAt_birth_of_uniform_modulus
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]

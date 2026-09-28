@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphComp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CocyclePathIntegral
 import Mathlib.Algebra.CharP.Two
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set StdSimplexCore
 
@@ -82,8 +74,6 @@ theorem indexAt_of_vertex (c : A.ModTwoEdgeCocycle) (x : A.barycentricSpace)
   by_contra h
   simp [Pi.single_eq_of_ne h] at hpos
 
-
-
 theorem pathValue_closedFace_vertices (c : A.ModTwoEdgeCocycle)
     {s : Finset J} (hs : s ∈ A.faces) {i j : J} (hi : i ∈ s) (hj : j ∈ s)
     {x y : A.barycentricSpace} (p : Path x y)
@@ -123,8 +113,6 @@ theorem weightedCocycle_pathValue_segment (ends : I → Bool → V) (w : I → Z
   change (Path.segmentIn _ a b hseg t : Ambient V I) ∈ barycentricFace s
   exact Path.segmentIn_mem_convex (convex_barycentricFace s) a b hseg
     (ha ▸ single_mem_barycentricFace hj) (hb ▸ single_mem_barycentricFace hk) t
-
-
 
 theorem weightedCocycle_pathValue_edge (ends : I → Bool → V) (w : I → ZMod 2) (i : I) :
     (weightedCocycle ends w).pathValue (complexEdgePath ends i) = w i := by

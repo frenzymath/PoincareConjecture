@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M38.CollaredChartFilling
 import PoincareConjecture.Proofs.M38.ProjectiveCutIdentification
 import PoincareConjecture.Proofs.M38.ShortCollarConnectedSum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_projectiveDouble_first_filled_side
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :
@@ -53,8 +40,6 @@ theorem exists_projectiveDouble_first_filled_side
   intro z s hs
   rw [hmatch z s hs, hformula]
 
-
-
 theorem exists_projectiveDouble_second_filled_side
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :
     ∃ (r : ℝ) (D : SurgeryBallEmbedding projectiveCarrier.{u})
@@ -70,9 +55,6 @@ theorem exists_projectiveDouble_second_filled_side
   have h := hmatch z (-s) (by constructor <;> linarith [hs.1, hs.2])
   change C.collar (z, - -s) = E.map (D.map ((1 - -s) • z.val)) at h
   simpa only [neg_neg, sub_neg_eq_add] using h
-
-
-
 
 theorem exists_projectiveDouble_connectedSum
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :

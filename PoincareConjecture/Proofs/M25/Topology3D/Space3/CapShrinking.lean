@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CapPreservation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_cap_shrinking_isotopy (u : E) (hu : ‖u‖ = 1)
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)

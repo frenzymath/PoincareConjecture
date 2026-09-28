@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped BigOperators
 namespace Finset
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem mem_convexHull_zero_vertices (s : Finset E) (A : E →ᵃ[ℝ] ℝ)
     (hA : ∀ v ∈ s, 0 ≤ A v) {x : E}

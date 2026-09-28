@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Collars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,23 +11,15 @@ namespace PoincareConjecture.SmoothConnectedSumData
 
 variable {A B C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
 
-
-
 def selectedFirstRegion (U : Set A.carrier) : Set C.carrier :=
   S.first_region ∩ S.first_identify.inverse ⁻¹' U
-
-
 
 def selectedSecondRegion (V : Set B.carrier) : Set C.carrier :=
   S.second_region ∩ S.second_identify.inverse ⁻¹' V
 
-
-
 def selectedComponentRegion (U : Set A.carrier) (V : Set B.carrier) : Set C.carrier :=
   S.selectedFirstRegion U ∪ S.selectedSecondRegion V ∪
     S.collar '' (univ ×ˢ ({0} : Set ℝ))
-
-
 
 theorem selectedFirstRegion_eq_image (U : Set A.carrier) :
     S.selectedFirstRegion U =
@@ -52,8 +35,6 @@ theorem selectedFirstRegion_eq_image (U : Set A.carrier) :
     rw [S.first_identify.left_inverse ha]
     exact hU
 
-
-
 theorem selectedSecondRegion_eq_image (V : Set B.carrier) :
     S.selectedSecondRegion V =
       S.second_identify.map '' (S.second_ball.closedBallᶜ ∩ V) := by
@@ -68,19 +49,13 @@ theorem selectedSecondRegion_eq_image (V : Set B.carrier) :
     rw [S.second_identify.left_inverse hb]
     exact hV
 
-
-
 theorem selectedFirstRegion_open {U : Set A.carrier} (hU : IsOpen U) :
     IsOpen (S.selectedFirstRegion U) :=
   S.first_identify.inverse_smooth.continuousOn.isOpen_inter_preimage S.first_open hU
 
-
-
 theorem selectedSecondRegion_open {V : Set B.carrier} (hV : IsOpen V) :
     IsOpen (S.selectedSecondRegion V) :=
   S.second_identify.inverse_smooth.continuousOn.isOpen_inter_preimage S.second_open hV
-
-
 
 theorem selectedComponentRegion_compl (U : Set A.carrier) (V : Set B.carrier) :
     (S.selectedComponentRegion U V)ᶜ =
@@ -102,16 +77,12 @@ theorem selectedComponentRegion_compl (U : Set A.carrier) (V : Set B.carrier) :
     · exact hx.2 hy.2
     · exact Set.disjoint_left.mp S.central_disjoint hy (Or.inr hx.1)
 
-
-
 theorem selectedComponentRegion_closed {U : Set A.carrier} {V : Set B.carrier}
     (hU : IsClosed U) (hV : IsClosed V) :
     IsClosed (S.selectedComponentRegion U V) := by
   rw [← isOpen_compl_iff, S.selectedComponentRegion_compl]
   exact (S.selectedFirstRegion_open hU.isOpen_compl).union
     (S.selectedSecondRegion_open hV.isOpen_compl)
-
-
 
 theorem negative_mem_selectedFirstRegion {U : Set A.carrier}
     (hU : S.first_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ U)
@@ -128,9 +99,6 @@ theorem negative_mem_selectedFirstRegion {U : Set A.carrier}
   simpa only [mem_ball_zero_iff, norm_smul, Real.norm_eq_abs,
     abs_of_pos (lt_trans zero_lt_one hr.1), mem_sphere_zero_iff_norm.mp z.property,
     mul_one] using hr.2
-
-
-
 
 theorem positive_mem_selectedSecondRegion {V : Set B.carrier}
     (hV : S.second_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ V)
@@ -149,8 +117,6 @@ theorem positive_mem_selectedSecondRegion {V : Set B.carrier}
     abs_of_pos (lt_trans zero_lt_one hr.1),
     mem_sphere_zero_iff_norm.mp (S.sphere_gluing z).property, mul_one] using hr.2
 
-
-
 theorem collarBand_subset_selectedComponentRegion {U : Set A.carrier} {V : Set B.carrier}
     (hU : S.first_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ U)
     (hV : S.second_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ V) :
@@ -161,8 +127,6 @@ theorem collarBand_subset_selectedComponentRegion {U : Set A.carrier} {V : Set B
   · subst s
     exact Or.inr (mem_image_of_mem _ ⟨mem_univ z, mem_singleton 0⟩)
   · exact Or.inl (Or.inr (S.positive_mem_selectedSecondRegion hV z ⟨h, hs.2.2⟩))
-
-
 
 theorem selectedComponentRegion_eq_union_collarBand {U : Set A.carrier} {V : Set B.carrier}
     (hU : S.first_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ U)
@@ -181,8 +145,6 @@ theorem selectedComponentRegion_eq_union_collarBand {U : Set A.carrier} {V : Set
     · exact Or.inl (Or.inl hx)
     · exact Or.inl (Or.inr hx)
     · exact S.collarBand_subset_selectedComponentRegion hU hV hx
-
-
 
 theorem selectedComponentRegion_isClopen {U : Set A.carrier} {V : Set B.carrier}
     (hU : IsClopen U) (hV : IsClopen V)

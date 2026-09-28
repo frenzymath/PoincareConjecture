@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.Continuity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -136,8 +129,6 @@ private theorem finite_exists_local_distance_exp_comparison
   simpa only [ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.exp_nonneg _)] using
     ENNReal.toReal_mono hfinite hdist
 
-
-
 theorem continuousWithinAt_toReal_edist_of_ricci_nonneg_of_finite
     [T3Space M] (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b : ℝ} (hJ : Icc a b ⊆ interior J)
@@ -202,7 +193,6 @@ theorem continuousWithinAt_toReal_edist_of_ricci_nonneg_of_finite
   · filter_upwards [self_mem_nhdsWithin, hnear.filter_mono nhdsWithin_le_nhds] with q hq hqy
     exact hcompare p.1 hp q.1 hq.1 q.2 hqy
 
-
 theorem continuousOn_toReal_edist_of_ricci_nonneg_of_finite
     [T3Space M] (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b : ℝ} (hJ : Icc a b ⊆ interior J)
@@ -218,8 +208,6 @@ theorem continuousOn_toReal_edist_of_ricci_nonneg_of_finite
   exact (continuousWithinAt_toReal_edist_of_ricci_nonneg_of_finite hC F hJ
     hcomplete hRic O hp.1 (hfinite p.2 hp.2)).mono
     (Set.prod_mono (fun _ h => h) (fun _ _ => mem_univ _))
-
-
 
 theorem edist_ne_top_of_terminal_of_ricci_nonneg
     [T3Space M] (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -253,8 +241,6 @@ theorem edist_ne_top_of_terminal_of_ricci_nonneg
           (fun σ hσ => hRic σ hσ z v) hτ hb hτ.2) hCnonneg)) hOball hqball
   exact ne_top_of_le_ne_top
     (ENNReal.mul_ne_top ENNReal.ofReal_ne_top hq) hdist
-
-
 
 theorem continuousOn_toReal_edist_on_terminal_closedBall_of_ricci_nonneg
     [T3Space M] (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

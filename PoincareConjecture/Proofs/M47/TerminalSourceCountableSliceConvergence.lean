@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableClosedLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceCountable_slice_convergence
     {tau : ℝ} (htau : 0 < tau) {U : Set E} (hU : IsOpen U)
@@ -53,8 +42,6 @@ theorem terminalSourceCountable_slice_convergence
   · have htzero : t = 0 := le_antisymm ht.2 (le_of_not_gt ht0)
     subst t
     simpa only [lt_self_iff_false, if_false] using hzero
-
-
 
 theorem terminalSourceCountable_negative_slice_convergence
     (j : ℕ) (M : {k : ℕ // j ≤ k} → Type u)

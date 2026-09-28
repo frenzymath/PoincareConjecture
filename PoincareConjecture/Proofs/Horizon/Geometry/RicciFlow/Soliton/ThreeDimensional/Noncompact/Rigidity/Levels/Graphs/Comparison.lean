@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.MetricExpansion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.LevelCurvature
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,15 +43,12 @@ namespace PotentialLevelGraphs
 
 variable (A : G.PotentialLevelGraphs L B h e base)
 
-
 def center (k : ℕ) : M := q (L.subsequence (B.subsequence (k + A.offset)))
-
 
 def level (k : ℕ) : ℝ := S.potential (A.center k)
 
 theorem potential_map (k : ℕ) (y : N) : S.potential (A.map k y) = A.level k :=
   A.graph_level k y
-
 
 def levelMap {a : ℝ}
     (hQ : ∀ x, a < S.potential x → 1 ≤ S.connection.levelQ S.potential x)
@@ -76,8 +66,6 @@ theorem levelMap_injective {a : ℝ}
   apply A.graph_injective k
   exact congrArg (openLevelIncl S.potential
     (S.metric.regularDomain S.potential_contMDiff) (A.level k)) hxy
-
-
 
 theorem scalarCurvature_lt_one
     (hD : S.connection.CurvatureTensorCalculus) {a : ℝ}
@@ -101,8 +89,6 @@ theorem scalarCurvature_lt_one
   · exact hQ (A.map k y) (by rw [A.potential_map]; exact hk)
 
 variable [CompactSpace N] [ConnectedSpace N]
-
-
 
 theorem area_le_of_center_flow {a : ℝ}
     (hQ : ∀ x, a < S.potential x → 1 ≤ S.connection.levelQ S.potential x)
@@ -136,8 +122,6 @@ theorem area_le_of_center_flow {a : ℝ}
       (A.metric_inner i) (A.metric_inner j) base base hbase
   exact harea
 
-
-
 theorem monotone_area_of_center_flow {a : ℝ}
     (hQ : ∀ x, a < S.potential x → 1 ≤ S.connection.levelQ S.potential x)
     (hR : ∀ x, a < S.potential x → S.connection.scalarCurvature x ≤ 1)
@@ -153,8 +137,6 @@ theorem monotone_area_of_center_flow {a : ℝ}
   intro i j hij
   exact A.area_le_of_center_flow hQ hR h0 hΦ hadd hs hebase i j (hhigh i)
     (hlevel hij) (hcenter i j hij)
-
-
 
 theorem area_le_limit_of_center_flow {a : ℝ}
     (hQ : ∀ x, a < S.potential x → 1 ≤ S.connection.levelQ S.potential x)

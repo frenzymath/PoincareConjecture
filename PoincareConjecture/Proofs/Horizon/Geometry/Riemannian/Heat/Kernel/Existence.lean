@@ -4,22 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.AllTimeMoment
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Conservation.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

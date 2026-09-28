@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.PrescribedPhaseShear
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.StageRimHomotopy
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -40,9 +38,6 @@ private theorem exists_annulus_unit_twist :
   have heq : s + (0 + 32) / 2 + (32 - 0) / (2 * 1) * (u : ℝ) =
       s + 32 * (t : ℝ) := by dsimp [u]; ring
   rw [heq]
-
-
-
 
 theorem exists_integer_annulus_twist (n : ℤ) :
     ∃ T : Ann ≃ₜ Ann, T.IsFinitePL ∧

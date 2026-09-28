@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.Retain
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedAnnulusEnergyIdentity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem auxiliaryCircle_projected_gram_diagonal_le
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -51,8 +38,6 @@ theorem auxiliaryCircle_projected_gram_diagonal_le
   rw [P.metric_eq]
   exact le_add_of_nonneg_right
     ((P.circle.metricOnPoints.toRiemannianMetric.toCore (f z).2).re_inner_nonneg _)
-
-
 
 theorem auxiliaryCircle_projected_weightedEnergy [T2Space M] [CompactSpace M]
     (P : M62.CircleProductData F circumference) (time : ℝ)

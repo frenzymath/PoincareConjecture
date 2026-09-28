@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +36,6 @@ theorem contMDiff_ricciNormSq {g : RiemannianMetric n M}
     ∑ i, ∑ j, D.ricci x (g.orthonormalBasis x i) (g.orthonormalBasis x j) *
       D.ricci x (g.orthonormalBasis x i) (g.orthonormalBasis x j)
   simp only [pow_two]
-
 
 theorem hasDerivAt_ricciNormSq
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -138,8 +130,6 @@ theorem hasDerivAt_ricciNormSq
   apply htime'.hasDerivAt.congr_deriv
   dsimp only [D, b] at heq
   linarith only [heq]
-
-
 
 theorem normalizedRicciNormSq_heat_equation
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

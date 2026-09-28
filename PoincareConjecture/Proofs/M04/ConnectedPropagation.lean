@@ -2,10 +2,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Filter

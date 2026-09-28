@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

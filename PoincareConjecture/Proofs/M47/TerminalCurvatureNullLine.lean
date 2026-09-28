@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureAmbientRank
 import PoincareConjecture.Proofs.M47.TerminalCurvatureAmbientParallel
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOrientationCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
 
-
-
 theorem terminalCurvature_exhaustion_triple
     {M : Type*} [TopologicalSpace M] (U : ℕ → Opens M)
     (hmono : Monotone fun i => (U i : Set M))
@@ -37,8 +25,6 @@ theorem terminalCurvature_exhaustion_triple
   exact ⟨max i (max j k), hmono (le_max_left _ _) hi,
     hmono ((le_max_left _ _).trans (le_max_right _ _)) hj,
     hmono ((le_max_right _ _).trans (le_max_right _ _)) hk⟩
-
-
 
 theorem terminalCurvature_null_line_of_finite_germs
     {M : Type u} [TopologicalSpace M] [T2Space M]

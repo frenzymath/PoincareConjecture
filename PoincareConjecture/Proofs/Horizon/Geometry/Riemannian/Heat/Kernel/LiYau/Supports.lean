@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem liYau_cutoff_bound_of_lower_supports
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

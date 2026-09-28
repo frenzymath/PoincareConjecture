@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.EdgeMultiplicity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem affineTriangle_shared_edge_mem_interior_union
     (b c : AffineBasis (Fin 3) ℝ Plane) (h0 : b 0 = c 0) (h1 : b 1 = c 1)
@@ -74,8 +65,6 @@ theorem affineTriangle_shared_edge_mem_interior_union
     · exact hzc1.le
     · exact hcz2
 
-
-
 theorem localRefinementBoundaryCuts_mem_interior_of_other_parent (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -102,8 +91,6 @@ theorem localRefinementBoundaryCuts_mem_interior_of_other_parent (M : TriangleMe
   · rw [hcrange]
     exact meshTriangleBasis_subset_support M u
 
-
-
 theorem localRefinementBoundaryCuts_parent_card_eq_one (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -126,8 +113,6 @@ theorem localRefinementBoundaryCuts_parent_card_eq_one (M : TriangleMesh)
         (localRefinementBoundaryCuts_geometry M f t hq).1
   rw [heq, Finset.card_singleton]
 
-
-
 theorem localRefinementBoundaryCuts_card_eq_one (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -138,8 +123,6 @@ theorem localRefinementBoundaryCuts_card_eq_one (M : TriangleMesh)
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem lineRefinementMesh_new_boundary_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

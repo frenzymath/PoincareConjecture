@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_StrictPrefix
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,17 +12,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ σ : ℝ} {x : G.Point}
 
-
-
 theorem stableSet_nonempty_of_allowed (E : M14ExponentialFamily G T x)
     (hτ : 0 < τ) (hallowed : T - τ ∈ I.domain) :
     Nonempty (M14StableSet G T τ x E) := by
   have hrange : range G.spacetime.timeFunction = I.domain := G.spacetime.time_range
   obtain ⟨q, hq⟩ := hrange.symm ▸ hallowed
   exact ⟨stableSetOfSlicePoint E hτ ⟨q, hq⟩⟩
-
-
-
 
 theorem stableSet_past_allowed (E : M14ExponentialFamily G T x)
     (H : M14StableSet G T τ x E) : Icc (T - τ) T ⊆ I.domain := by
@@ -43,8 +28,6 @@ theorem stableSet_past_allowed (E : M14ExponentialFamily G T x)
   have hright : T ∈ I.domain := hrange ▸
     (show T ∈ range G.spacetime.timeFunction from ⟨x, E.base_time⟩)
   exact I.ordConnected.out hleft hright
-
-
 
 theorem stableSet_carrier_mono_backward
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -60,8 +43,6 @@ theorem stableSet_carrier_mono_backward
   · exact stableInitialVector_prefix hCoordinates hM04 hM12 E Hσ.tau_pos hlt
       ((H.carrier_exact Z).mp hZ)
 
-
-
 theorem exists_stableSet_backward
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -71,8 +52,6 @@ theorem exists_stableSet_backward
   obtain ⟨Hσ⟩ := stableSet_nonempty_of_allowed E hσ
     (stableSet_past_allowed E H ⟨sub_le_sub_left hle T, sub_le_self T hσ.le⟩)
   exact ⟨Hσ, stableSet_carrier_mono_backward hCoordinates hM04 hM12 E H Hσ hle⟩
-
-
 
 theorem stableSet_backward_star
     (hCoordinates : M12MetricPredecessors.{0} n)

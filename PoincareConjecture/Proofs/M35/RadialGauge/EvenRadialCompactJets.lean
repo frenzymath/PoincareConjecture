@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,8 +62,6 @@ private theorem divided_gradient_jets_bounded {A : Type*} {f : A → ℝ → ℝ
       exact (mul_le_mul_of_nonneg_right ht.2 (abs_nonneg r)).trans
         (by simpa only [one_mul] using hr)
     simpa only [iteratedDeriv_succ', smul_eq_mul] using hCb a (t * r) htr
-
-
 
 theorem even_radial_compact_jets_bounded {A : Type*} {f : A → ℝ → ℝ}
     {R : ℝ} (hR : 0 ≤ R) (hf : ∀ a, ContDiff ℝ ∞ (f a))

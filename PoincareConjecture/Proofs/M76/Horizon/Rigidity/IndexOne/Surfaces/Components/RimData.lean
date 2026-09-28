@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Componen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.ComponentCollar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CollarTransport
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar
 

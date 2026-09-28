@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.CompactMaximum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Parabolic
-
-
-
 
 theorem nonpos_of_deriv_le_mul_at_max_interior
     {A : Type*} [TopologicalSpace A] [CompactSpace A]

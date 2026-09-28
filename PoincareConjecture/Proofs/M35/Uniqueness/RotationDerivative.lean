@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawCoordinateOperator
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +39,6 @@ theorem radialConnection_beta_identity
   field_simp [(axisAngularCoefficient_pos g r).ne',
     (axisRadialCoefficient_pos g r).ne', hr.ne']
   ring
-
-
 
 theorem radialConnection_alpha_weighted_bound
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

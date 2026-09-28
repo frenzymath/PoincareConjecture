@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SphereSurgeryNonbounding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -88,4 +81,3 @@ theorem ChartwisePLSphere.nonbounding_of_ball_patch_replacement
     p hp hpi hcontact hdT hS'out hTout hboundary hfill)
 
 end PoincareConjecture.M76
-

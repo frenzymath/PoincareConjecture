@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 structure CapPersistenceCounterexample {constants : MetricSurgeryConstants}
     (setup : SurgeryControlSetup constants) (start rNext A eta theta cutoff : ℝ) where
@@ -56,9 +44,6 @@ structure CapPersistenceCounterexample {constants : MetricSurgeryConstants}
   failure : ¬ @SurgeryCapPersistenceAlternative flow observation time is_surgery
     birth_nonempty cap A eta theta
 
-
-
-
 theorem counterexamples_at_positive_cutoffs
     {constants : MetricSurgeryConstants} (setup : SurgeryControlSetup constants)
     (start rNext A eta theta : ℝ)
@@ -85,9 +70,6 @@ theorem counterexamples_at_positive_cutoffs
     exact hnone ⟨⟨F, O, hmodel, hscales, hadmissible, hpinch, hcanonical, t, hT, hn,
       hobs, hstart, hdelta, i, hfailure⟩⟩
   exact ⟨fun n => Classical.choice (hbad (cutoffs n) (hcutoffs n))⟩
-
-
-
 
 theorem counterexample_birth_delta_tendsto_zero
     {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.CornerFamilyTransport
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -46,8 +38,6 @@ theorem cornerMap_image_arc_component {ι : Type*} (c : Fin 3) (D : ι → Set (
     connectedComponentIn (cornerMap c '' (base \ ⋃ i, cornerMap c '' D i)) (cornerMap c x) at h
   rw [cornerMap_image_arc_complement] at h
   simpa only [cornerMap_image_image] using h
-
-
 
 theorem exists_corner_image_square_chart (c : Fin 3) {M : Set (ℝ × ℝ)}
     (C : (Icc (0 : ℝ) 1 ×ˢ Icc (0 : ℝ) 1 : Set (ℝ × ℝ)) ≃ₜ M)

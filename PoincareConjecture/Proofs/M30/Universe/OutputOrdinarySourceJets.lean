@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M30.Universe.OutputSourceLiftJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -96,10 +79,6 @@ private theorem rawCoefficient_eq_ordinary
         (EuclideanSpace.basisFun (Fin 3) ℝ b))
   rw [hdf, hdc, hmetric p.1 hp.1 (a0 x)]
   rfl
-
-
-
-
 
 theorem liftCylinder_iteratedFDerivWithin_ordinaryCoefficient
     {J : Set ℝ} (L : BlowupLimitFlow.{0} J)

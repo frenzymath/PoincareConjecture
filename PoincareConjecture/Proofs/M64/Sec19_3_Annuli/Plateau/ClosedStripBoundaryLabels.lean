@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ClosedC1BoundaryLabels
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64ClosedStripTrace_label_contDiff
     {e : M → EuclideanSpace ℝ (Fin m)} (he : ContMDiff (𝓡 n) (𝓡 m) ∞ e)

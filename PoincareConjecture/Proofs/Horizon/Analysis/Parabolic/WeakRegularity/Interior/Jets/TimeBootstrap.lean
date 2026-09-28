@@ -1,19 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.TimeSpatialJetAlgebra
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialTimeDerivative
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
@@ -91,6 +77,5 @@ theorem time_spatial_jet_of_spatial_jet_and_weak_equation
     obtain ⟨T, hT, hTw⟩ := exists_forced_time_spatial_weak_derivative
       hU hC hprincipalc hdriftc hzerothc hureg (HasTimeSpatialL2Jet.zero U m k) hforced
     exact ⟨hu.of_le (by omega), T, hT, hTw⟩
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

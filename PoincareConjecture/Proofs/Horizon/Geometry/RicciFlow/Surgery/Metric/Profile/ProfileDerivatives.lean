@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Profi
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -63,7 +55,6 @@ theorem smoothProfile_second_deriv {C q epsilon : ℝ} (hq : 0 < q) (s : ℝ) :
     deriv (deriv (smoothProfile C q epsilon)) s =
       (q ^ 2 / s ^ 4 - 2 * q / s ^ 3) * smoothProfile C q epsilon s :=
   (smoothProfile_deriv_hasDerivAt hq s).deriv
-
 
 theorem smoothProfile_iteratedDeriv_eq_zero {C q epsilon s : ℝ}
     (hq : 0 < q) (hs : s ≤ 0) (n : ℕ) :

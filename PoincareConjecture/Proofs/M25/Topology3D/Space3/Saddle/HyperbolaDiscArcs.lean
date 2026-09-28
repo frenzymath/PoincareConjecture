@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_hyperbola_disc_arcs
     (rho delta : ℝ) (hrho : 0 < rho) (hdelta : 0 < delta)

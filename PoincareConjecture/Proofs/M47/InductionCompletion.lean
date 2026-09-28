@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.InductionAncientContradiction
 import PoincareConjecture.Proofs.M47.InductionFiniteContradiction
 import PoincareConjecture.Proofs.M47.Induction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem canonicalExtension
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -66,8 +55,6 @@ theorem canonicalExtension
       rw [← ENNReal.ofReal_toReal htop]
       exact (ENNReal.ofReal_lt_ofReal_iff hT).mpr hlarge
     exact limitFinite_longer_slab_false hdec htheta hH hslab
-
-
 
 theorem canonicalInduction
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

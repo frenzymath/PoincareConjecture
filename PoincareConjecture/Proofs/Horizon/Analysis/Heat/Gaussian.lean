@@ -2,14 +2,6 @@ import Mathlib.Probability.Distributions.Gaussian.Real
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory ProbabilityTheory Filter
@@ -39,7 +31,6 @@ theorem integral_abs_standardGaussian_le_one :
   simpa only [Pi.add_apply, integral_div, integral_add hsq (integrable_const (1 : ℝ)),
     integral_sq_standardGaussian, integral_const, probReal_univ, smul_eq_mul,
     one_mul, show (1 + 1) / (2 : ℝ) = 1 by norm_num] using h
-
 
 noncomputable def gaussianAverage (f : ℝ → ℝ) (t x : ℝ) : ℝ :=
   ∫ z, f (x + Real.sqrt (2 * t) * z) ∂ProbabilityTheory.gaussianReal 0 1
@@ -120,8 +111,6 @@ theorem tendstoUniformly_gaussianAverage {L : ℝ≥0} {f : ℝ → ℝ}
   rw [Real.dist_eq, abs_sub_comm]
   exact (abs_gaussianAverage_sub_le hf t x).trans_lt ht
 
-
-
 theorem hasDerivAt_gaussianAverage {L : ℝ≥0} {f : ℝ → ℝ}
     (hf : LipschitzWith L f) (hdf : Differentiable ℝ f) (t x : ℝ) :
     HasDerivAt (gaussianAverage f t) (gaussianAverage (deriv f) t x) x := by
@@ -141,8 +130,6 @@ theorem hasDerivAt_gaussianAverage {L : ℝ≥0} {f : ℝ → ℝ}
     simpa only [mul_one, Function.comp_def, id_eq] using!
       (hdf (a + Real.sqrt (2 * t) * z)).hasDerivAt.comp a
         ((hasDerivAt_id a).add_const (Real.sqrt (2 * t) * z))
-
-
 
 theorem abs_deriv_gaussianAverage_le {L : ℝ≥0} {f : ℝ → ℝ}
     (hf : LipschitzWith L f) (t x : ℝ) :

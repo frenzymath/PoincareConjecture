@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.TransverseReturn
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE.LocalFlow
@@ -19,8 +10,6 @@ open Set Filter Metric
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem eq_flowBox_of_section
     {V : E → E} (hV : ContDiff ℝ ∞ V) {γ : ℝ → E}
@@ -44,8 +33,6 @@ theorem eq_flowBox_of_section
     (fun t ht => ⟨mem_univ _, he s t (hbox ⟨hs, ht⟩)⟩)
     (show (0 : ℝ) ∈ Ioo (-ε) ε from ⟨by linarith, hε⟩)
   simpa only [add_zero] using ha
-
-
 
 theorem flowBox_transverse_returns_of_clusterPt
     {V : E → E} (hV : ContDiff ℝ ∞ V) {γ : ℝ → E}
@@ -127,9 +114,6 @@ private theorem exists_wider_rectangle
         ⟨⟨le_of_not_gt hsl, le_of_not_gt hsr⟩, rfl⟩
       simpa only [Prod.dist_eq, dist_self, Real.dist_eq, sub_zero,
         max_le_iff, hδ.le, true_and] using huδ
-
-
-
 
 theorem exists_isolated_flowBox_return
     {V : E → E} (hV : ContDiff ℝ ∞ V) {γ : ℝ → E}

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsEndpoint
 import Mathlib.Analysis.Normed.Group.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_uniform_endpoint_bound
     {X F : Type*} [NormedAddCommGroup F]
@@ -31,8 +20,6 @@ theorem terminalGerms_uniform_endpoint_bound
     ∀ t ∈ Ioo a 0, ∀ x ∈ U, ‖Bminus (t, x) - B0 x‖ ≤ C * |t| := by
   intro t ht x hx
   exact le_of_tendsto (((hminus t ht x hx).sub (hzero x hx)).norm) (hbound t ht x hx)
-
-
 
 theorem terminalGerms_joint_endpoint_continuity
     {X F : Type*} [TopologicalSpace X] [NormedAddCommGroup F]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFrontierScale
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeCommonOrientation
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceBalancedChainAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem exists_later_negative_cut_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧
@@ -71,8 +60,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem two_source_edges_pathELength_lower
     {N P Q R T : EpsilonNeck g} {γ : ℝ → M} {tN tQ tR tP : ℝ}
     (H₀ : SourceEdgeCommonOrientationPacket N P Q (γ := γ) tN tQ)
@@ -111,7 +98,6 @@ theorem two_source_edges_pathELength_lower
     nlinarith [mul_pos N.scale_pos hA]
   exact ((ENNReal.ofReal_le_ofReal hreal).trans hsum).trans
     (Manifold.pathELength_mono le_rfl hRP)
-
 
 theorem SourceEdgePacket.later_negative_cut {N Q : EpsilonNeck g} {epsilon : ℝ}
     (H : SourceEdgePacket N Q epsilon) :

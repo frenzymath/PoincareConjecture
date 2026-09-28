@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Co
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -29,13 +19,11 @@ variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 theorem covDerivAlong_congr_base
     (A : E → E →L[ℝ] E →L[ℝ] E) {u u' : P → E} (V : P → E)
     {p : P} (h : u =ᶠ[𝓝 p] u') (d : P) :
     covDerivAlong A u V d p = covDerivAlong A u' V d p := by
   simp only [covDerivAlong, h.fderiv_eq, h.eq_of_nhds]
-
 
 theorem covDerivAlong_change_coordinates
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {u V : P → E} {p : P}
@@ -62,7 +50,6 @@ theorem covDerivAlong_change_coordinates
   simp only [covDerivAlong, map_add]
   abel
 
-
 theorem covDerivAlong_change_coordinatesOn [FiniteDimensional ℝ E]
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {U W : Set E}
     (hU : IsOpen U) (hW : IsOpen W)
@@ -88,7 +75,6 @@ theorem covDerivAlong_change_coordinatesOn [FiniteDimensional ℝ E]
     (hf.contDiffAt (hU.mem_nhds hp))
     (surjective_of_pullback_isInvertible (hBinv _ hp) (hmetric _ hp))
     (Filter.mem_of_superset (hU.mem_nhds hp) hmetric) hu hV d
-
 
 theorem covDerivAlong_covDerivAlong_change_coordinatesOn
     [FiniteDimensional ℝ E] [CompleteSpace E]
@@ -149,8 +135,6 @@ private theorem coordinateCurvature_congr_germ
   simp only [coordinateCurvature, (hΓ' v w).fderiv_eq, (hΓ' u w).fderiv_eq,
     hΓ.self_of_nhds]
 
-
-
 theorem coordinateCurvature_in_chart (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (a : M) {z : M}
     (hz : z ∈ (extChartAt (𝓡 n) a).source)
@@ -206,9 +190,6 @@ theorem coordinateCurvature_in_chart (g : RiemannianMetric n M)
   rw [(hi p hp).self_apply_inverse, hid', hid', hid', hid']
   exact congrArg (fun y => D.curvature y u v w) (c.left_inv hz)
 
-
-
-
 noncomputable def manifoldCovDerivAlong (g : RiemannianMetric n M)
     (u : P → M) (V : (q : P) → TangentSpace (𝓡 n) (u q)) (d p : P) :
     TangentSpace (𝓡 n) (u p) :=
@@ -226,7 +207,6 @@ private theorem smooth_chart_transition (a b : M) {x : EuclideanSpace ℝ (Fin n
   exact (contMDiffAt_extChartAt' (by simpa only [extChartAt_source] using hb)).comp x
     ((contMDiffOn_extChartAt_symm a).contMDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 n) a).mem_nhds hx))
-
 
 theorem chart_transition_tangent (a b : M) {z : M}
     (ha : z ∈ (extChartAt (𝓡 n) a).source)
@@ -288,7 +268,6 @@ private theorem chart_metric_transition (g : RiemannianMetric n M) (a b : M)
 
 set_option maxHeartbeats 2000000 in
 
-
 theorem covDerivAlong_chart_change (g : RiemannianMetric n M) (a b : M)
     {u V : P → EuclideanSpace ℝ (Fin n)} {p : P}
     (ha : u p ∈ (extChartAt (𝓡 n) a).target)
@@ -323,8 +302,6 @@ theorem covDerivAlong_chart_change (g : RiemannianMetric n M) (a b : M)
     (smooth_chart_transition a b ha hb)
     (surjective_of_pullback_isInvertible (g.isInvertible_chartCoefficients a ha)
       hmetric.self_of_nhds) hmetric hu hV d
-
-
 
 theorem manifoldCovDerivAlong_in_chart (g : RiemannianMetric n M) (a : M)
     {u : P → M} {V : (q : P) → TangentSpace (𝓡 n) (u q)} {p : P}

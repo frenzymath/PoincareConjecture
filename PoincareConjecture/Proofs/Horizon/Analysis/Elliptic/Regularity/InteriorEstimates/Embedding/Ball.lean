@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Embedding.Cutoff
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Embedding.Tower
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Metric
@@ -20,8 +12,6 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem smooth_jet_le_l2_derivativeProfile {x₀ : E} {R : ℝ} (hR : 0 < R) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ {u : E → ℝ}, ContDiff ℝ (⊤ : ℕ∞) u →

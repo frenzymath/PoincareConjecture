@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondRadiusM
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedRadiusPrismEndpointOrder
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.PrescribedAxisRestriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

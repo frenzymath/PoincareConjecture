@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BirthNeighborhood
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_WindowAvoidance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem backwardPath_reaches_future_neighborhood
     {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)

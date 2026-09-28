@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.TangentTurning
 import Mathlib.Analysis.Complex.Isometry
 import Mathlib.Topology.Order.Monotone
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Function Metric
@@ -97,8 +86,6 @@ private theorem exists_least_period_integralCurve
   have hδu : δ ≤ u := le_of_not_gt (fun h => hsep u hu h huret)
   exact (not_le_of_gt huP) (csInf_le hSbdd (show u ∈ S from ⟨hδu, huret⟩))
 
-
-
 theorem injective_integralCurve_of_nonvanishing
     {V : EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)}
     (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)
@@ -130,8 +117,6 @@ theorem injective_integralCurve_of_nonvanishing
   · exact False.elim (hno a b hab heq)
   · exact hab
   · exact False.elim (hno b a hab heq.symm)
-
-
 
 theorem injOn_integralCurve_Icc_of_nonvanishing
     {V : EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)}

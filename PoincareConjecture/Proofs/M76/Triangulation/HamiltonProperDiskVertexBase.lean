@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarMarkedCutCharts
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,8 +19,6 @@ local notation "V" => ((ℝ × ℝ) × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
 
-
-
 theorem HamiltonProperDiskTriangulation.diskVertexBlock_eq_inter
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
     T.diskVertexBlock p = (T.vertexBlock p).space ∩ D := by
@@ -40,8 +29,6 @@ theorem HamiltonProperDiskTriangulation.diskVertexBlock_eq_inter
   simpa only [HamiltonProperDiskTriangulation.diskVertexBlock,
     HamiltonProperDiskTriangulation.vertexBlock, T.disk_space] using
     T.ambient.barycentricDualBlock_space_inter_subcomplex T.disk T.disk_le {(p : E)}
-
-
 
 theorem HamiltonProperDiskTriangulation.vertex_base_rim_eq
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
@@ -289,15 +276,10 @@ private theorem vertex_base_certificates
     refine ⟨?_, fun hp => (hpfront hp).elim⟩
     rwa [T.vertex_base_rim_eq, hfront, union_empty]
 
-
-
 theorem HamiltonProperDiskTriangulation.vertex_base_ballPair
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
     IsFinitePLBallPair P2 (T.diskVertexBlock p) (T.dualRegionRim {(p : E)} ∩ D) :=
   (vertex_base_certificates T p).1
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_boundary_vertex_base_intervals
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

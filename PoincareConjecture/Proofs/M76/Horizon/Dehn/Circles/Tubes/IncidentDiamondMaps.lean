@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.JointCoordinateM
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.OriginalIncidentJoints
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedCoordinateSectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

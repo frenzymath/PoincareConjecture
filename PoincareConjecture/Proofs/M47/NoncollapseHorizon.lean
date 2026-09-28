@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.NoncollapseHorizonTested
 import PoincareConjecture.Proofs.M47.SeedSearchAncestors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem surgeryNoncollapsedOn_closed_horizon
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}
@@ -51,8 +40,6 @@ theorem surgeryNoncollapsedOn_closed_horizon
     exact hinterior (T + s / 1)
       ⟨has, by simpa only [div_one] using add_lt_of_neg_right T hslt⟩
       hsF (e.forward s hs x) hsnonpositive q hq hqepsilon d hdbased hdcurv
-
-
 
 theorem surgeryVolumeControlOn_closed_horizon
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

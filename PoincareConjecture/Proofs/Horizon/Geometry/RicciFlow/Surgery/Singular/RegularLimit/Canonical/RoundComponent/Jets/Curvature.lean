@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem terminalFlow_curvatureDerivativeNorm_of_ne
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     {t : ℝ} (ht : t ≠ T) (k : ℕ) (x : H.regularRegion P04) :
@@ -37,8 +33,6 @@ theorem terminalFlow_curvatureDerivativeNorm_of_ne
   · intro y _ v w
     rw [Poincare.Geometry.Manifold.RegularLevel.mfderiv_opens_subtypeVal]
     exact H.terminalMetricFamily_inner_of_ne P04 ht y v w
-
-
 
 theorem exists_terminalFlow_curvature_derivative_tail_on_compact
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.ScalarGradientNorm
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem chapter11GoodPoint_of_scalar_bounds
     {G : GeneralizedRicciFlowData.{u}} {epsilon C A : ℝ} (p : G.point)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedCapCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.HamiltonMarkedCapCoordinates
 variable {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E]
   {D S : Set X} {eps : ℝ} {g : S × Ico (0 : ℝ) eps → X}
   (c d : HamiltonMarkedCapCoordinates (E := E) (D := D) g)
-
-
 
 theorem transition_nonneg (hg : ∀ p, g p ∈ D)
     (p : ℝ × E) (hp : p ∈ (c.chart.symm.trans d.chart).source) (ht : 0 ≤ p.1) :
@@ -48,9 +37,6 @@ theorem transition_nonneg (hg : ∀ p, g p ∈ D)
   · change q = d.original (c.original.symm p)
     rw [← hpinv]
     exact hdq.symm
-
-
-
 
 theorem transition_nonpos (hg : ∀ p, g p ∈ D) (hinj : Function.Injective g)
     (p : ℝ × E) (hp : p ∈ (c.chart.symm.trans d.chart).source) (ht : p.1 ≤ 0) :

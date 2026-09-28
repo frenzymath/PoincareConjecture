@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_CurvatureDefectBound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundScalarLower
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,10 +9,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem scalarCurvature_three_le_of_round_metric_error {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}

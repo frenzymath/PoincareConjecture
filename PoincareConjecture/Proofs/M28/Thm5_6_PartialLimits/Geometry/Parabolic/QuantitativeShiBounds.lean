@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.Qua
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Local
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
   {epsilon K : ℝ} {U : Set M}
-
-
-
-
 
 theorem exists_uniform_normalized_neck_derivative_bound
     (hShi : LocalCurvatureDerivativeEstimates.{0})

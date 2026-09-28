@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.BufferedCollar
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.StandardEnd
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
 
 theorem standardEnd_of_openPartialHomeomorph
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

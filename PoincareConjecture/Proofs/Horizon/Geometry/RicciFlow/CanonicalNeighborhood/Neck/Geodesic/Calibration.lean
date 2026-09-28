@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 
-
 set_option autoImplicit false
 
 open Set

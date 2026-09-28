@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.GeneralBoundaryFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +12,6 @@ open Classical
 
 namespace PoincareConjecture.Topology.Surface
 
-
 theorem wedge_restriction_support_subset (M : TriangleMesh)
     (l m : Plane →ᵃ[ℝ] ℝ) :
     (M.restrictTriangles (fun t => M.triangleCarrier t ⊆
@@ -28,8 +21,6 @@ theorem wedge_restriction_support_subset (M : TriangleMesh)
   rw [TriangleMesh.toPlaneComplex_support] at hz
   obtain ⟨t, ht, hzt⟩ := mem_iUnion₂.mp hz
   exact ((M.mem_restrictTriangles_triangles _).mp ht).2 hzt
-
-
 
 theorem mem_wedge_restriction_of_mem_interior (M : TriangleMesh)
     (l m : Plane →ᵃ[ℝ] ℝ) (hl : M.IsMonochromatic l) (hm : M.IsMonochromatic m)
@@ -75,8 +66,6 @@ theorem mem_wedge_restriction_of_mem_interior (M : TriangleMesh)
     hp0 ▸ hp.continuousAt.tendsto.mono_left nhdsWithin_le_nhds
   exact N.toPlaneComplex.isCompact_support.isClosed.mem_of_tendsto hpq hpathN
 
-
-
 theorem wedge_restriction_support_eventuallyEq (M : TriangleMesh)
     (l m : Plane →ᵃ[ℝ] ℝ) (hl : M.IsMonochromatic l) (hm : M.IsMonochromatic m)
     {v : Plane} (hlv : 0 < l.linear v) (hmv : 0 < m.linear v)
@@ -88,8 +77,6 @@ theorem wedge_restriction_support_eventuallyEq (M : TriangleMesh)
   apply propext
   exact ⟨fun h => wedge_restriction_support_subset M l m h,
     fun h => mem_wedge_restriction_of_mem_interior M l m hl hm hlv hmv hz h.1 h.2⟩
-
-
 
 theorem wedge_restriction_edge_exists_other_parent
     (M : TriangleMesh) (l m : Plane →ᵃ[ℝ] ℝ)
@@ -145,8 +132,6 @@ theorem wedge_restriction_edge_exists_other_parent
   exact mesh_edge_exists_other_parent_of_interior N t ha hb hab
     (by rw [openSegment_eq_image_lineMap]; exact ⟨s, ⟨hspos, hslt⟩, rfl⟩) hN
 
-
-
 theorem mesh_usedVertex_not_mem_open_edge (M : TriangleMesh)
     (t u : M.Triangle) {a b c : M.Vertex}
     (ha : a ∈ t.1) (hb : b ∈ t.1) (hab : a ≠ b) (hc : c ∈ u.1) :
@@ -166,8 +151,6 @@ theorem mesh_usedVertex_not_mem_open_edge (M : TriangleMesh)
   apply hbad
   simpa only [show (2 : Fin 3).succAbove 0 = 0 from rfl,
     show (2 : Fin 3).succAbove 1 = 1 from rfl, hd0, hd1, hk] using hseg
-
-
 
 theorem mesh_edge_endpoint_eq_of_same_positive_ray (M : TriangleMesh)
     (t u : M.Triangle) {a b c : M.Vertex}
@@ -194,8 +177,6 @@ theorem mesh_edge_endpoint_eq_of_same_positive_ray (M : TriangleMesh)
     exact sub_left_injective he
   · exact False.elim (mesh_usedVertex_not_mem_open_edge M t u hat hbt hab hcu
       (hbetween hv hgt hc hb))
-
-
 
 theorem halfspace_mesh_edge_parent_unique (M : TriangleMesh)
     (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l)
@@ -277,8 +258,6 @@ theorem convexSector_boundary_edge_angleSign
     map_add, map_smul, map_smul, add_comm,
     o.oangle_sign_smul_add_smul_right, sign_eq_one_iff.mpr h2pos, one_mul,
     o.oangle_rev, Real.Angle.sign_neg, SignType.coe_neg]
-
-
 
 theorem convexSector_sum_edge_potential_eq_zero_or_boundary
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -380,8 +359,6 @@ theorem convexSector_sum_edge_potential_eq_zero_or_boundary
   · left
     exact Finset.sum_eq_zero fun b _ => hzero (fun hb => hex ⟨b, hb⟩)
 
-
-
 theorem convexSector_sum_linearCorner_coe_eq_zero_or_angle
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
     (h1 : M.IsMonochromatic (c.coord 1)) (h2 : M.IsMonochromatic (c.coord 2))
@@ -424,8 +401,6 @@ section MetricSector
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem convexSector_restriction_support_eventuallyEq
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
     (h1 : M.IsMonochromatic (c.coord 1)) (h2 : M.IsMonochromatic (c.coord 2))
@@ -442,8 +417,6 @@ theorem convexSector_restriction_support_eventuallyEq
     rcases hi with rfl | rfl <;> norm_num [AffineBasis.coord_apply, Fin.ext_iff]
   exact wedge_restriction_support_eventuallyEq M (c.coord 1) (c.coord 2)
     h1 h2 (hv 1 (Or.inl rfl)) (hv 2 (Or.inr rfl)) hq
-
-
 
 theorem convexSector_complement_restriction_support_eventuallyEq
     (M : TriangleMesh) (c : AffineBasis (Fin 3) ℝ Plane)
@@ -503,7 +476,6 @@ theorem convexSector_complement_restriction_support_eventuallyEq
     · exact Or.inl (hn1 z hzt)
   · exact fun h => h.elim (hcover 1 (Or.inl rfl) h1 hz) (hcover 2 (Or.inr rfl) h2 hz)
 
-
 theorem meshVertexAngleContribution_restrictTriangles_mono
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (P Q : Finset M.Vertex → Prop)
@@ -526,8 +498,6 @@ theorem meshVertexAngleContribution_restrictTriangles_mono
   · simp only [hp, hPQ t.1 t.2 hp, if_true, le_refl]
   · simp only [hp, if_false]
     split_ifs <;> first | exact hn | exact le_refl 0
-
-
 
 theorem single_refineByLines_convexSector_vertex_fan_of_monochromatic
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -622,8 +592,6 @@ theorem single_refineByLines_convexSector_vertex_fan_of_monochromatic
     rw [hrepr, hθrepr] at h
     exact h
 
-
-
 theorem single_refineByLines_restrict_convexSector_vertex_fan_of_support_eventuallyEq
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b c : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -659,8 +627,6 @@ theorem single_refineByLines_restrict_convexSector_vertex_fan_of_support_eventua
   rw [hglue]
   exact single_refineByLines_convexSector_vertex_fan_of_monochromatic
     g F b c lines h1 h2 hF hFi hb u a hau haint ha0
-
-
 
 theorem single_refineByLines_restrict_convexSector_vertex_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -709,8 +675,6 @@ theorem single_refineByLines_restrict_convexSector_vertex_fan_of_source
     coordinateTangentMetric_inner, map_smul, smul_apply]
   rfl
 
-
-
 theorem single_refineByLines_convexSector_complement_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b c : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -744,8 +708,6 @@ theorem single_refineByLines_convexSector_complement_vertex_fan
       {z | 0 ≤ c.coord 1 z ∧ 0 ≤ c.coord 2 z})) (F (M.position a)) = _
   rw [hw, hall] at hsum
   linarith
-
-
 
 theorem single_refineByLines_restrict_reflexSector_vertex_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -805,8 +767,6 @@ theorem single_refineByLines_restrict_reflexSector_vertex_fan_of_source
   rw [mfderiv_id]
   simp only [G, RiemannianMetric.cornerAngle, coordinateTangentMetric_inner, map_smul, smul_apply]
   rfl
-
-
 
 theorem meshVertexAngleContribution_restrictTriangles_union_add_inter
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

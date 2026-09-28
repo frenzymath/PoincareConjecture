@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.ComplementarySlabDomains
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainIntersection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -18,8 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem PLDomain.preimage_of_eq_off_closed
     {X Y ι : Type*} [TopologicalSpace X] [TopologicalSpace Y]

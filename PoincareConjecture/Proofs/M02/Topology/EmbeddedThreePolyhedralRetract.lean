@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeNearest
 import PoincareConjecture.Proofs.M02.Topology.FinitePolyhedralNeighborhood
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamSobolevTe
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ open scoped ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
-
 
 theorem m64WeakPartial_ae_zero_off_closed
     {K : Set LoopPlane} (hK : IsClosed K) {u W : LoopPlane → ℝ} {i : Fin 2}
@@ -41,8 +30,6 @@ theorem m64WeakPartial_ae_zero_off_closed
     ((hW.restrict Kᶜ).locallyIntegrable (by norm_num))
     (locallyIntegrable_zero (μ := volume.restrict Kᶜ))
   exact (ae_restrict_iff' hK.measurableSet.compl).mp heq
-
-
 
 theorem m64WeakPhase_compact_green
     {K S : Set LoopPlane} (hK : IsCompact K) (hKS : K ⊆ S)

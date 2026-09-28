@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakPhaseFlu
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +12,8 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture
 
-
-
-
 def m64BoundaryRadialCutoff (a : LoopPlane) (R : ℝ) (p : LoopPlane) : ℝ :=
   Real.smoothTransition ((4 / 3 : ℝ) * (1 - ‖R⁻¹ • (p - a)‖ ^ 2))
-
-
-
 
 theorem m64BoundaryRadialCutoff_contDiff (a : LoopPlane) (R : ℝ) :
     ContDiff ℝ ∞ (m64BoundaryRadialCutoff a R) := by
@@ -39,20 +22,11 @@ theorem m64BoundaryRadialCutoff_contDiff (a : LoopPlane) (R : ℝ) :
     ((contDiff_norm_sq ℝ).comp (by fun_prop :
       ContDiff ℝ ∞ (fun p : LoopPlane => R⁻¹ • (p - a)))))
 
-
-
-
 theorem m64BoundaryRadialCutoff_nonneg (a : LoopPlane) (R : ℝ) (p : LoopPlane) :
     0 ≤ m64BoundaryRadialCutoff a R p := Real.smoothTransition.nonneg _
 
-
-
-
 theorem m64BoundaryRadialCutoff_le_one (a : LoopPlane) (R : ℝ) (p : LoopPlane) :
     m64BoundaryRadialCutoff a R p ≤ 1 := Real.smoothTransition.le_one _
-
-
-
 
 theorem m64BoundaryRadialCutoff_eq_one {a p : LoopPlane} {R : ℝ}
     (hR : 0 < R) (hp : ‖p - a‖ ≤ R / 2) : m64BoundaryRadialCutoff a R p = 1 := by
@@ -63,9 +37,6 @@ theorem m64BoundaryRadialCutoff_eq_one {a p : LoopPlane} {R : ℝ}
       inv_mul_cancel₀ hR.ne']
   nlinarith [norm_nonneg (R⁻¹ • (p - a))]
 
-
-
-
 theorem m64BoundaryRadialCutoff_eq_zero {a p : LoopPlane} {R : ℝ}
     (hR : 0 < R) (hp : R ≤ ‖p - a‖) : m64BoundaryRadialCutoff a R p = 0 := by
   apply Real.smoothTransition.zero_of_nonpos
@@ -75,9 +46,6 @@ theorem m64BoundaryRadialCutoff_eq_zero {a p : LoopPlane} {R : ℝ}
       inv_mul_cancel₀ hR.ne']
   nlinarith
 
-
-
-
 theorem m64BoundaryRadialCutoff_antitone_radius {a p q : LoopPlane} {R : ℝ}
     (_hR : 0 < R) (hpq : ‖p - a‖ ≤ ‖q - a‖) :
     m64BoundaryRadialCutoff a R q ≤ m64BoundaryRadialCutoff a R p := by
@@ -86,9 +54,6 @@ theorem m64BoundaryRadialCutoff_antitone_radius {a p q : LoopPlane} {R : ℝ}
     simp only [norm_smul]
     exact mul_le_mul_of_nonneg_left hpq (norm_nonneg _)
   nlinarith [norm_nonneg (R⁻¹ • (p - a)), norm_nonneg (R⁻¹ • (q - a))]
-
-
-
 
 theorem m64BoundaryRadialCutoff_fderiv_eq_zero {a p : LoopPlane} {R : ℝ}
     (hR : 0 < R) (hp : ‖p - a‖ ≤ R / 2 ∨ R ≤ ‖p - a‖) :
@@ -103,18 +68,12 @@ theorem m64BoundaryRadialCutoff_fderiv_eq_zero {a p : LoopPlane} {R : ℝ}
       rw [m64BoundaryRadialCutoff_eq_zero hR hp]
       exact m64BoundaryRadialCutoff_nonneg a R q)
 
-
-
-
 theorem m64BoundaryRadialCutoff_hasCompactSupport (a : LoopPlane) {R : ℝ}
     (hR : 0 < R) : HasCompactSupport (m64BoundaryRadialCutoff a R) := by
   apply HasCompactSupport.intro (isCompact_closedBall a R)
   intro p hp
   apply m64BoundaryRadialCutoff_eq_zero hR
   exact le_of_lt (by simpa only [Metric.mem_closedBall, dist_eq_norm, not_le] using hp)
-
-
-
 
 theorem m64BoundaryRadialCutoff_column_integrable (a : LoopPlane) {R : ℝ}
     (hR : 0 < R) (i : Fin 2) : Integrable (fun p =>
@@ -128,9 +87,6 @@ theorem m64BoundaryRadialCutoff_column_integrable (a : LoopPlane) {R : ℝ}
   apply (hc.pow 2).integrable_of_hasCompactSupport
   simpa only [pow_two] using (hcompact.mul_right (f' := fun p =>
     fderiv ℝ (m64BoundaryRadialCutoff a R) p (EuclideanSpace.single i 1)))
-
-
-
 
 theorem m64BoundaryRadialCutoff_column_scaling (a p : LoopPlane) {R : ℝ}
     (_hR : 0 < R) (i : Fin 2) :
@@ -148,10 +104,6 @@ theorem m64BoundaryRadialCutoff_column_scaling (a p : LoopPlane) {R : ℝ}
   rw [fderiv_comp p ((m64BoundaryRadialCutoff_contDiff 0 1).differentiable (by simp) _)
     hd.differentiableAt, ContinuousLinearMap.comp_apply, hd.fderiv]
   simp
-
-
-
-
 
 theorem m64BoundaryRadialCutoff_column_energy (a : LoopPlane) {R : ℝ}
     (hR : 0 < R) (i : Fin 2) :

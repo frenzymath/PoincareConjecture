@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.LongLimitCertificates
 import PoincareConjecture.Proofs.M30.Generalized.BlowupSubsequence
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 structure M30LongContractService : Prop where
   slab : ∃ epsilonLong : ℝ, 0 < epsilonLong ∧
@@ -46,8 +33,6 @@ structure M30LongContractService : Prop where
       M30LimitNoncollapsedAtScale L.limit kappa r₀) ∧
     (∀ (L : GeneralizedBlowupConvergence S (blowupBackwardInterval T₀))
       (h : T₀ = ⊤), BlowupLimitNoncollapsed (h ▸ L.limit) kappa)
-
-
 
 theorem exists_longLimitStatement_of_controlService
     (P : M30ControlledBlowupPredecessors.{u})

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalRadius
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalRadial
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_exponential_endpoint_edist_le_tangentNorm
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
@@ -54,9 +40,6 @@ theorem exists_exponential_endpoint_edist_le_tangentNorm
   rw [hnorm]
   exact hdist
 
-
-
-
 theorem radial_geodesic_subarc_edist_le_tangentNorm
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
     (hcompact : IsCompact (closure (g.ball p R)))
@@ -80,8 +63,6 @@ theorem radial_geodesic_subarc_edist_le_tangentNorm
     exact (chartCoefficients_self g p v v).symm
   rw [hnorm]
   exact h
-
-
 
 theorem exists_exponential_chart_gauss_radial_lower_bound
     (g : RiemannianMetric n M) (p : M) :
@@ -121,9 +102,6 @@ theorem exists_exponential_chart_gauss_radial_lower_bound
         (mfderiv (𝓡 n) (𝓡 n) e v w))
   rw [← hgauss v hv w]
   exact hCS
-
-
-
 
 theorem exists_tangentBall_edist_eq_of_gauss
     (g : RiemannianMetric n M) (p : M)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.CylinderModel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +18,6 @@ local instance neckCurvatureEuclideanCylinderChartedSpace :
 local instance neckCurvatureEuclideanCylinderIsManifold :
     IsManifold (𝓡 3) ∞ RoundCylinderSpace :=
   RiemannianMetric.lineProductIsManifold (n := 2) (M := UnitTwoSphere)
-
 
 def roundCylinderEuclideanParametrization (q : UnitTwoSphere)
     (x : EuclideanSpace ℝ (Fin 3)) : RoundCylinderSpace :=
@@ -52,7 +41,6 @@ theorem roundCylinderEuclideanParametrization_mfderiv (q : UnitTwoSphere)
   rw [T.mfderiv_eq] at h
   exact h
 
-
 theorem roundCylinderEuclideanParametrization_inner (q : UnitTwoSphere)
     (x v w : EuclideanSpace ℝ (Fin 3)) :
     roundCylinderEuclideanMetric.inner x v w =
@@ -66,7 +54,6 @@ theorem roundCylinderEuclideanParametrization_inner (q : UnitTwoSphere)
     ((RiemannianMetric.lineModelEquiv 2).symm v)
     ((RiemannianMetric.lineModelEquiv 2).symm w)).symm
 
-
 theorem roundCylinderEuclideanMetric_scalarCurvature
     (D : LeviCivitaData roundCylinderEuclideanMetric)
     (x : EuclideanSpace ℝ (Fin 3)) : D.scalarCurvature x = 1 := by
@@ -75,8 +62,6 @@ theorem roundCylinderEuclideanMetric_scalarCurvature
     (contMDiff_roundCylinderEuclideanParametrization q).contMDiffOn
     (fun y _ v w => roundCylinderEuclideanParametrization_inner q y v w) (mem_univ x),
     roundCylinderMetric_scalarCurvature]
-
-
 
 theorem roundCylinderEuclideanMetric_ricci
     (D : LeviCivitaData roundCylinderEuclideanMetric)
@@ -96,7 +81,6 @@ theorem roundCylinderEuclideanMetric_ricci
     ((RiemannianMetric.lineModelEquiv 2).symm v)
     ((RiemannianMetric.lineModelEquiv 2).symm w)
 
-
 theorem roundCylinderEuclideanMetric_ricci_zero
     (D : LeviCivitaData roundCylinderEuclideanMetric)
     (v w : EuclideanSpace ℝ (Fin 3)) :
@@ -104,7 +88,6 @@ theorem roundCylinderEuclideanMetric_ricci_zero
       ((RiemannianMetric.lineModelEquiv 2).symm w).1⟫_ℝ := by
   rw [roundCylinderEuclideanMetric_ricci]
   norm_num
-
 
 theorem roundCylinderEuclideanMetric_ricci_zero_basis
     (D : LeviCivitaData roundCylinderEuclideanMetric) (i j : Fin 3) :

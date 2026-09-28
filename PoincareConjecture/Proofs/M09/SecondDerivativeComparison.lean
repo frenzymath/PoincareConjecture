@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M09.SecondDerivativeComposition
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ConvexTargetRestriction
 import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -47,10 +45,6 @@ private theorem relative_affine_postcomp
       (((e i).symm.trans H).trans a.toHomeomorph.toOpenPartialHomeomorph).source :=
     ha.comp (hH i).1
   simpa only [OpenPartialHomeomorph.trans_assoc] using hh
-
-
-
-
 
 theorem PLDomain.exists_signed_relative_frontier_chart
     {X ι : Type*} [TopologicalSpace X]

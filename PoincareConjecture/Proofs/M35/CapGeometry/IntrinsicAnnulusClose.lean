@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicAnnulusJets
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem intrinsic_annulus_eventually_close
     (g : ℕ → RiemannianMetric 3 StandardCapSpace)

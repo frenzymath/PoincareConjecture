@@ -30,10 +30,6 @@ private theorem two_connected_carriers_eq_or_swap
   · exact Or.inr (hcase hB hA hAB.symm hneA
       (hcover.trans (union_comm _ _)) ⟨x, hx, hxB⟩)
 
-
-
-
-
 theorem SourceCircleDecomposition.paired_source_strip_components
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] {f : E → X} {S : Set E}

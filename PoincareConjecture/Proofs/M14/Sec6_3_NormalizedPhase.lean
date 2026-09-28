@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PhasePath
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_initialValuePath_of_normalized_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -81,9 +69,6 @@ theorem exists_initialValuePath_of_normalized_phase
   rw [hβ₀, hv₀, map_smul, ContinuousLinearEquiv.apply_symm_apply] at hvzero
   have ht : HEq (hR₀ ▸ R.horizontal_velocity 0) (R.horizontal_velocity 0) := eqRec_heq _ _
   exact eq_of_heq (ht.trans hvzero)
-
-
-
 
 theorem exists_initialValuePath_of_momentum_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

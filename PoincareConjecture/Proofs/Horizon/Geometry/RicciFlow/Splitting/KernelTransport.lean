@@ -5,19 +5,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -85,9 +72,6 @@ private lemma inverse_regularized_mem_kernel (A : E →L[ℝ] E)
   rw [hB.inverse_apply_eq.mpr hsolve.symm]
   exact z.property
 
-
-
-
 theorem exists_local_smooth_kernel_section
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     {A : F → E →L[ℝ] E} {U : Set F} (hU : IsOpen U)
@@ -148,8 +132,6 @@ private lemma regularized_section_hasDerivWithinAt_zero
     have heq := (hprod.derivWithin hJu).symm.trans (hconst.derivWithin hJu)
     simpa only [hann (y t) hnull, zero_add, map_zero] using heq
   simpa only [hzero] using hyD
-
-
 
 theorem kernel_eq_of_derivative_annihilates
     {A D : ℝ → E →L[ℝ] E} {J : Set ℝ} {k : ℕ}

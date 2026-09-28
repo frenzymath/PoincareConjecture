@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.TensorHilbertNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 200000
@@ -141,7 +132,6 @@ namespace Data
 
 variable {g : RiemannianMetric n M} (d : Data g)
 
-
 def transposeSmooth (h : SmoothTensor (n := n) (M := M)) :
     SmoothTensor (n := n) (M := M) :=
   smoothDecode g d.fields
@@ -207,7 +197,6 @@ theorem coefficientTransposeL2_mem_value (v : d.Value) :
         (tensorToLp d.fields d.charts.measure h) ∈ _
     rw [d.coefficientTransposeL2_tensorToLp h]
     exact (intoTensorL2 d.fields d.charts.measure (d.transposeSmooth h)).property
-
 
 def valueTranspose : d.Value ≃ₗᵢ[ℝ] d.Value where
   toFun v := ⟨coefficientTransposeL2 (Fin d.fieldCount) d.charts.measure v,
@@ -291,7 +280,6 @@ theorem formTranspose_inner (v w : d.Form) :
     (E := firstOrderGraph d.fields d.charts.measure)
     (E' := firstOrderGraph d.fields d.charts.measure) d.formTranspose v (d.formTranspose w)
   rwa [d.formTranspose_involutive] at h
-
 
 theorem formTranspose_solution (f : d.Value) :
     d.formTranspose (solution d.inclusion f) = solution d.inclusion (d.valueTranspose f) := by
@@ -416,7 +404,6 @@ theorem formSymmetrize_inner (x y : d.Form) :
   apply involutionProjection_inner (E := firstOrderGraph d.fields d.charts.measure)
     d.formTranspose d.formTranspose_involutive x y
 
-
 def symmetricValue : Submodule ℝ d.Value :=
   (d.valueTranspose.toContinuousLinearEquiv.toContinuousLinearMap - ContinuousLinearMap.id ℝ d.Value).ker
 
@@ -455,7 +442,6 @@ theorem inclusion_formSymmetrize (x : d.Form) :
 theorem valueSymmetrize_resolvent (x : d.Value) :
     d.valueSymmetrize (d.resolvent x) = d.resolvent (d.valueSymmetrize x) := by
   rw [valueSymmetrize_apply, valueSymmetrize_apply, map_smul, map_add, d.valueTranspose_resolvent]
-
 
 theorem generatorGraph_valueSymmetrize {x a : d.Value} (ha : d.GeneratorGraph x a) :
     d.GeneratorGraph (d.valueSymmetrize x) (d.valueSymmetrize a) := by
@@ -506,7 +492,6 @@ theorem inclusion_mem_symmetricValue (x : d.SymmetricForm) :
   apply (d.mem_symmetricValue_iff _).mpr
   rw [← d.inclusion_formTranspose, (d.mem_symmetricForm_iff _).mp x.property]
 
-
 def symmetricInclusion : d.SymmetricForm →L[ℝ] d.SymmetricValue :=
   (d.inclusion.comp d.symmetricForm.subtypeL).codRestrict d.symmetricValue
     d.inclusion_mem_symmetricValue
@@ -531,7 +516,6 @@ theorem norm_symmetricInclusion_le_one : ‖d.symmetricInclusion‖ ≤ 1 := by
   rw [one_mul]
   exact norm_graphValue_le d.fields d.charts.measure (x : d.Form)
 
-
 theorem symmetricInclusion_denseRange : DenseRange d.symmetricInclusion := by
   let P : d.Value →L[ℝ] d.SymmetricValue :=
     d.valueSymmetrize.codRestrict d.symmetricValue d.valueSymmetrize_mem
@@ -547,7 +531,6 @@ theorem symmetricInclusion_denseRange : DenseRange d.symmetricInclusion := by
 
 def symmetricResolvent : d.SymmetricValue →L[ℝ] d.SymmetricValue :=
   operator (V := ↥d.symmetricForm) (H := ↥d.symmetricValue) d.symmetricInclusion
-
 
 theorem symmetricSolution_coe (f : d.SymmetricValue) :
     ((solution (V := ↥d.symmetricForm) (H := ↥d.symmetricValue)
@@ -611,7 +594,6 @@ def symmetricParameters : d.SymmetricIndex → NNReal := by
   · exact d.symmetricInclusion_denseRange
   · exact d.norm_symmetricInclusion_le_one
 
-
 def symmetricScaleValue (k : ℕ) : SpectralHeatNative.State d.SymmetricIndex →L[ℝ] d.SymmetricValue := by
   apply scaleValue (V := ↥d.symmetricForm) (H := ↥d.symmetricValue) d.symmetricInclusion (k := k)
   · exact d.symmetricInclusion_compact
@@ -631,7 +613,6 @@ theorem symmetricScaleValue_injective (k : ℕ) : Function.Injective (d.symmetri
     d.symmetricBasis.repr.symm (SpectralHeatNative.scaleDecode d.symmetricParameters k y) at hxy
   apply SpectralHeatNative.scaleDecode_injective d.symmetricParameters k
   exact d.symmetricBasis.repr.symm.injective hxy
-
 
 theorem symmetricValue_coefficients (u : d.SymmetricValue) :
     ∀ᵐ x ∂d.charts.measure, ∀ a b : Fin d.fieldCount,
@@ -674,7 +655,6 @@ def intoSymmetricValue (h : SmoothTensor (n := n) (M := M))
     rw [d.transposeSmooth_apply, hsymm x w v]
   rw [ht]
 
-
 theorem symmetricGeneratorGraph_smoothTensorLaplacian
     (h : SmoothTensor (n := n) (M := M))
     (hsymm : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), h x v w = h x w v) :
@@ -683,7 +663,6 @@ theorem symmetricGeneratorGraph_smoothTensorLaplacian
         (smoothTensorLaplacian_symm d.fields d.charts g h hsymm)) := by
   apply (d.symmetricGeneratorGraph_iff _ _).mpr
   exact inGeneratorGraph_smoothTensorLaplacian d.fields d.charts g d.parseval h
-
 
 def shiftedSmoothTensor (h : SmoothTensor (n := n) (M := M)) :
     SmoothTensor (n := n) (M := M) :=
@@ -775,7 +754,6 @@ theorem symmetricBasis_shiftedSmoothPower (k : ℕ) (h : SmoothTensor (n := n) (
       (d.shiftedSmoothPower_symm k h hsymm) i, ih, pow_succ]
     ring
 
-
 theorem scaleDecode_shiftedSmoothPower (k : ℕ) (h : SmoothTensor (n := n) (M := M))
     (hsymm : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), h x v w = h x w v) :
     SpectralHeatNative.scaleDecode d.symmetricParameters (2 * k)
@@ -823,7 +801,6 @@ def smoothTensorCoordinates (m : ℕ) (h : SmoothTensor (n := n) (M := M))
   SpectralHeatNative.scaleEncode d.symmetricParameters m
     (d.symmetricBasis.repr (d.intoSymmetricValue h hsymm)) (d.inScale_smoothTensor m h hsymm)
 
-
 theorem inScale_smoothTensorCoordinates (m k : ℕ) (h : SmoothTensor (n := n) (M := M))
     (hsymm : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), h x v w = h x w v) :
     SpectralHeatNative.InScale d.symmetricParameters k (d.smoothTensorCoordinates m h hsymm) := by
@@ -842,7 +819,6 @@ theorem symmetricScaleValue_smoothTensorCoordinates (m : ℕ)
   rw [smoothTensorCoordinates, SpectralHeatNative.scaleDecode_scaleEncode,
     LinearIsometryEquiv.symm_apply_apply]
 
-
 theorem smoothTensorCoordinates_even_norm_sq (r : ℕ)
     (h : SmoothTensor (n := n) (M := M))
     (hsymm : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), h x v w = h x w v) :
@@ -852,7 +828,6 @@ theorem smoothTensorCoordinates_even_norm_sq (r : ℕ)
     LinearIsometryEquiv.norm_map]
   change ‖tensorToLp d.fields d.charts.measure (d.shiftedSmoothPower r h)‖ ^ 2 = _
   exact tensorToLp_norm_sq d.fields d.charts.measure _
-
 
 def residualCoordinates (m : ℕ) {g' : RiemannianMetric n M}
     (D : LeviCivitaData g') (B : LeviCivitaData g)
@@ -887,7 +862,6 @@ theorem inScale_residualCoordinates (m k : ℕ) {g' : RiemannianMetric n M}
     (hsymm : ∀ (x : M) (v w : TangentSpace (𝓡 n) x), h x v w = h x w v) :
     SpectralHeatNative.InScale d.symmetricParameters k (d.residualCoordinates m D B h hsymm) :=
   d.inScale_smoothTensorCoordinates m k _ _
-
 
 def initialResidualCoordinates (m : ℕ) (B : LeviCivitaData g) :
     SpectralHeatNative.State d.SymmetricIndex :=

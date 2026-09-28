@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.PlaneMapRegularity
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,8 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65Edist_le_of_derivative_bound (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -62,8 +52,6 @@ theorem m65Edist_le_of_derivative_bound (g : RiemannianMetric n M)
       hdist.trans (ENNReal.ofReal_le_ofReal hint)
     _ = ENNReal.ofReal K * ENNReal.ofReal ‖x - y‖ := by
       rw [ENNReal.ofReal_mul' (norm_nonneg _), norm_sub_rev]
-
-
 
 theorem m65Exists_compact_lipschitz_constant (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)

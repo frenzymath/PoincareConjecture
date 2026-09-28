@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_RegularBirthLift
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_RegularCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +18,6 @@ private theorem ordinary_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
-
-
 
 theorem exists_compact_ordinary_history_trace
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

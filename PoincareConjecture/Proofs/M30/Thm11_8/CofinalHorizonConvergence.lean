@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.CofinalSourceDiagonal
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardGeneralizedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_backward_convergence_of_finite_prefixes
     (hShi : LocalCurvatureDerivativeEstimates.{0})

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainKernel
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped BigOperators
 

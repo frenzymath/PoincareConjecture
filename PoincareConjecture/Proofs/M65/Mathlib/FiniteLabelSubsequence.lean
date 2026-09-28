@@ -2,21 +2,11 @@ import Mathlib.Data.Fintype.Pigeonhole
 import Mathlib.Order.Filter.Cofinite
 import Mathlib.Order.Filter.AtTopBot.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 
 namespace PoincareConjecture.M65
-
-
 
 theorem exists_constant_subsequence_of_mem_finset {α : Type*} (values : Finset α)
     (labels : ℕ → α) (hlabels : ∀ i, labels i ∈ values) :

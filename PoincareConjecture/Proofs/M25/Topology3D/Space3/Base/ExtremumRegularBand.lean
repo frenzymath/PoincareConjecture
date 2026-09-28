@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreEnds
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsLevels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem FamilyCutState.exists_morse_rest_regular_band
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -261,8 +250,6 @@ theorem FamilyCutState.exists_morse_rest_regular_band
     exact sub_eq_zero.mp ((mul_eq_zero.mp hz).resolve_left hsne)
   exact ⟨a, ha, hsign, howner, hcard, horder, hpositive, hnegative, hRimage.symm,
     hcompact, hconnected, hreg, hband, hregular, hnewLevel, holdLevel⟩
-
-
 
 theorem FamilyCutState.exists_morse_rest_circle_family
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

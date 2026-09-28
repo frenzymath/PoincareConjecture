@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcBandCom
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapBandContacts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MatchedRegionParents
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +13,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture.M64IntrinsicThreeArcCollar
-
-
-
-
 
 theorem exists_coordinate_parents
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}

@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.SegmentSubdivision
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SegmentSides
 import Mathlib.Tactic.Abel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem finRotate_symm_ne_apply_of_three_le {n : ℕ} (hn : 3 ≤ n) (i : Fin n) :
     (finRotate n).symm i ≠ finRotate n i := by
@@ -38,8 +26,6 @@ theorem finRotate_symm_ne_apply_of_three_le {n : ℕ} (hn : 3 ≤ n) (i : Fin n)
   omega
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem IsSimplePolygon.exists_local_two_segments {p : Polygon E n}
     (hp : IsSimplePolygon p) (q : E) (hq : q ∈ p.boundary ℝ) :
@@ -100,8 +86,6 @@ theorem IsSimplePolygon.exists_local_two_segments {p : Polygon E n}
     change z ∈ ⋃ j, p.edgeSet ℝ j ↔ _
     rw [hlocal z hz, hsplit.1, ← polygon_edgeSet_eq_segment]
     simp only [mem_singleton_iff, exists_eq_left]
-
-
 
 theorem IsSimplePolygon.hasLocalTwoSides [FiniteDimensional ℝ E] {p : Polygon E n}
     (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) :

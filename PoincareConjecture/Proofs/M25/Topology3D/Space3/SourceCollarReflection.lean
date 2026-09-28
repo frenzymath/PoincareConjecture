@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceTubeChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def circleTimeReflection :
     Diffeomorph ((𝓡 1).prod 𝓘(ℝ, ℝ)) ((𝓡 1).prod 𝓘(ℝ, ℝ))
@@ -30,8 +19,6 @@ noncomputable def circleTimeReflection :
     (contDiff_id.neg.contMDiff.comp contMDiff_snd)
   contMDiff_invFun := contMDiff_fst.prodMk
     (contDiff_id.neg.contMDiff.comp contMDiff_snd)
-
-
 
 theorem exists_reflected_source_collar
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.WithinSmoothCompactness
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinLocalFlows
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.CoordinateFamily
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +23,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 structure FixedCoordinateFlowLimit where
 
@@ -67,10 +56,6 @@ structure FixedCoordinateFlowLimit where
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_fixedCoordinateFlowLimit_of_within_bounds
     (htau : 0 < tau) (hconv : Convex ℝ V)

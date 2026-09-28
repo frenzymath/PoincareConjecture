@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ScalarMinimum
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.CompactSlab
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem m60SphereRicciTrace_integral_lower_bound {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (f : UnitTwoSphere → M) (hf : M60BranchedMinimalSphere g f)
@@ -38,9 +26,6 @@ theorem m60SphereRicciTrace_integral_lower_bound {g : RiemannianMetric 3 M}
   obtain ⟨S⟩ := m01_exists_leviCivitaData m60RoundSphereMetric
   exact m60SphereRicciTrace_integral_lower_bound_of_harmonic D hD S f hf
     (m60EnergyStationary_chartHarmonic g f hf.smooth hf.energy_stationary) ρ hρ
-
-
-
 
 theorem m60MinimalSphereVariationProperties_of_compact {a b : ℝ} (hab : a < b)
     (F : RicciFlow 3 M (Icc a b)) (hcompact : IsCompact (univ : Set M))

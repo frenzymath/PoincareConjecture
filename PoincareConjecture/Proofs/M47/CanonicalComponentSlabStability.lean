@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalComponentPersistence
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeComponent
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {a b : ℝ}
-
-
 
 theorem eventually_regularSlab_component_control
     (hC : RicciFlowCurvatureTheory.{u}) (S : SurgeryRegularSlab F.slice F.metric a b)
@@ -42,8 +32,6 @@ theorem eventually_regularSlab_component_control
   change (S.identify s).symm (S.identify s x) ∈ P.carrier
   rw [(S.identify s).symm_apply_apply, hPcarrier]
   exact hx
-
-
 
 theorem regularSlab_limit_not_component
     (hC : RicciFlowCurvatureTheory.{u}) (S : SurgeryRegularSlab F.slice F.metric a b)

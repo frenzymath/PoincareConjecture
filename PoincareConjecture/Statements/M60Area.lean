@@ -4,16 +4,6 @@ import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Definitions.Ch19.RampEstimates
 import PoincareConjecture.Statements.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +13,6 @@ open MeasureTheory
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M60SphereAreaProperties
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -36,9 +24,6 @@ structure M60SphereAreaProperties
   area_le_energy : m60SphereArea g f ≤ m60SphereEnergy g f
   conformal_equality : M60WeaklyConformal g f →
     m60SphereArea g f = m60SphereEnergy g f
-
-
-
 
 structure M60FillingAreaProperties
     {M : Type u} [TopologicalSpace M]
@@ -57,8 +42,6 @@ structure M60FillingAreaProperties
     (fun γ : C1FreeLoopSpace (M := M) => fillingArea g γ)
     {γ | IsNullHomotopicLoop γ}
 
-
-
 def M60LeastSphereAreaConclusion
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -68,8 +51,6 @@ def M60LeastSphereAreaConclusion
       m60SphereArea g f < e₀ → IsNullHomotopicSphere f) ∧
     ∃ f : UnitTwoSphere → M, M60BranchedMinimalSphere g f ∧
       ¬ IsNullHomotopicSphere f ∧ m60SphereArea g f = e₀
-
-
 
 structure M60FixedMapAreaProperties
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -96,8 +77,6 @@ structure M60FixedMapAreaProperties
     m60SphereArea (F.metric t) f ≤
       Real.exp (4 * D * |t - s|) * m60SphereArea (F.metric s) f
 
-
-
 structure M60MinimalSphereVariationProperties
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -112,8 +91,6 @@ structure M60MinimalSphereVariationProperties
       areaDerivative ≤ -4 * Real.pi - (ρ / 2) * m60SphereArea (F.metric t) f) ∧
     areaDerivative ≤ -4 * Real.pi -
       (m60ScalarMinimum (F.connection t) / 2) * m60SphereArea (F.metric t) f
-
-
 
 structure M60AreaCore : Prop where
   sphere_functionals : ∀ {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -146,8 +123,6 @@ structure M60AreaCore : Prop where
       M60BranchedMinimalSphere (F.metric t) f →
         M60MinimalSphereVariationProperties F f t
 
-
-
 def M60ShortLoopAreaClaim : Prop :=
   ∀ {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -157,9 +132,6 @@ def M60ShortLoopAreaClaim : Prop :=
       ∀ γ : C1FreeLoopSpace (M := M), freeLoopLength g γ < ζ →
         ∃ D : LipschitzSpanningDisk g γ, D.area < η ∧
           fillingArea g γ ≤ D.area ∧ fillingArea g γ < η
-
-
-
 
 structure M60AreaTheory : Prop extends M60AreaCore.{u} where
   short_loop : M60ShortLoopAreaClaim.{u}

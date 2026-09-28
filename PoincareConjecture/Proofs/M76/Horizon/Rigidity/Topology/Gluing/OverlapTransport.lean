@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.FamilyRegularActions
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.ComponentMapTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped unitInterval
@@ -19,7 +10,6 @@ namespace PoincareConjecture.M76.IncompressibleGluing
 universe u
 
 variable {G J : Type u} [Group G] [Group J]
-
 
 def regularSecond (G J : Type u) [Group G] [Group J] :
     J →* Equiv.Perm (G × J) :=
@@ -60,7 +50,6 @@ private theorem exists_component_exchange
 variable {W U V : Type u} [TopologicalSpace W] [TopologicalSpace U] [TopologicalSpace V]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_overlap_transport_frame
     (f : C(W, U)) (g : C(W, V))

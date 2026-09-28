@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Ring.Units
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +11,6 @@ namespace Poincare.Analysis.Calculus
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem eventually_contDiffAt_localInverse
     {f : E → F} {x : E} (hf : ∀ᶠ y in 𝓝 x, ContDiffAt ℝ ∞ f y)

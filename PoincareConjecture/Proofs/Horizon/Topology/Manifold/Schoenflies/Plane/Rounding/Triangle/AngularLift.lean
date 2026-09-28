@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Triangle.Equilateral
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.PeriodicFiber
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +8,6 @@ open Set Function Filter
 open scoped Topology ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
 
 theorem hasDerivAt_rotatingArgument {γ : ℝ → ℂ} {v : ℂ} {t : ℝ}
     (hγ : HasDerivAt γ v t) (a : ℝ)
@@ -48,7 +39,6 @@ theorem hasDerivAt_rotatingArgument {γ : ℝ → ℂ} {v : ℂ} {t : ℝ}
     simp [Complex.log_im]
   · simpa only [Complex.imCLM_apply, Pi.mul_apply, mul_one] using hd.symm
 
-
 theorem hasDerivAt_equilateralCorner {ρ : ℝ → ℝ} {s : ℝ}
     (hρ : DifferentiableAt ℝ ρ s) :
     HasDerivAt (equilateralCorner ρ)
@@ -58,7 +48,6 @@ theorem hasDerivAt_equilateralCorner {ρ : ℝ → ℝ} {s : ℝ}
   convert! hre.add (him.mul_const Complex.I) using 1
   push_cast
   ring
-
 
 theorem equilateralCorner_logDeriv_im_pos {ρ : ℝ → ℝ} {δ s : ℝ}
     (hδ : 0 < δ) (hδsmall : δ < 2 / 9)
@@ -81,8 +70,6 @@ theorem equilateralCorner_logDeriv_im_pos {ρ : ℝ → ℝ} {δ s : ℝ}
     Complex.ofReal_re, Complex.I_im, Complex.I_re, Complex.add_re, Complex.mul_re,
     mul_zero, mul_one, add_zero, zero_add, sub_zero]
   nlinarith [mul_pos hsqrt hfactor]
-
-
 
 theorem deriv_roundedEquilateralAngle_pos {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : 0 < δ) (hδsmall : δ < 2 / 9)
@@ -123,8 +110,6 @@ theorem deriv_roundedEquilateralAngle_pos {ρ : ℝ → ℝ} {δ : ℝ}
     (equilateralVertex j * equilateralCorner ρ (t - j))).im
   rw [mul_div_mul_left _ _ (show equilateralVertex j ≠ 0 from Circle.coe_ne_zero _)]
   exact equilateralCorner_logDeriv_im_pos hδ hδsmall htail hbound (hρ _) hder hs
-
-
 
 theorem exists_smooth_inverse_roundedEquilateralAngle {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : 0 < δ) (hδsmall : δ < 2 / 9)
@@ -171,8 +156,6 @@ theorem exists_smooth_inverse_roundedEquilateralAngle {ρ : ℝ → ℝ} {δ : �
     change G (0, c * (s + 2 * Real.pi)) = G (0, c * s) + 3
     rw [hscale]
     exact (hi 0 (c * s)).2.2
-
-
 
 theorem norm_mul_exp_rotatingArgument (z : ℂ) (a : ℝ) :
     (‖z‖ : ℂ) * (Circle.exp (a + Complex.arg (z * (Circle.exp (-a) : ℂ))) : ℂ) = z := by

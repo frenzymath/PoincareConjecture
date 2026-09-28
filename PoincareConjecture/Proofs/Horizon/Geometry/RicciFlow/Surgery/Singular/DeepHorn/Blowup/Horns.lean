@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Volume.SmallBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Blowup.Controlled.Theory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -33,8 +25,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
 
 theorem terminalBlowupSequence_baseBalls_subset_horns
     (hM04 : RicciFlowCurvatureCalculus.{u}) {K B epsilon : ℝ}
@@ -61,8 +51,6 @@ theorem terminalBlowupSequence_baseBalls_subset_horns
   intro y hy
   apply hinside
   exact lt_of_lt_of_le hy (ENNReal.ofReal_le_ofReal hradius.le)
-
-
 
 noncomputable def terminalBlowupSequence_commonControls
     (hM04 : RicciFlowCurvatureCalculus.{u})
@@ -125,8 +113,6 @@ noncomputable def terminalBlowupSequence_commonControls
     obtain ⟨N, rfl⟩ := hk y hy
     exact N.noncollapsed_at_center hnecke 1
 
-
-
 theorem terminalBlowupSequence_short_limit
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (hM29 : DenseGeneralizedBoundedDistanceTheory.{u})
@@ -152,9 +138,6 @@ theorem terminalBlowupSequence_short_limit
     (terminalBlowupSequence_commonControls H Q x hpos hdiv hM04 hM29
       hepsilon_pos hepsilon_small hnecke hC_pos hK hB hepsilon hC hconstant
       hcutoff hscale horn hx hboundary)
-
-
-
 
 theorem terminalBlowupSequence_short_limit_of_hornBoundaryBelow
     (hM04 : RicciFlowCurvatureCalculus.{u})

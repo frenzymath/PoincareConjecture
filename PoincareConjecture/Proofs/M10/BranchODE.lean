@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.BranchCalculus
 import PoincareConjecture.Proofs.M10.NoncriticalOpen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M10
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X] [NormedAddCommGroup Y] [InnerProductSpace ℝ Y]
   [FiniteDimensional ℝ Y]
-
 
 theorem eventually_hasDerivAt_actionBranchPhase
     {E : X × ℝ → Y} {A : X × ℝ → ℝ}

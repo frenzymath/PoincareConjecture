@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMetricDifferences
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.DifferentiatedEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 open Poincare.Analysis.Sobolev.Euclidean
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64TangentialHessian_of_integral_diffQuot_bound
     {n : ℕ} {O : Set LoopPlane} (hO : IsOpen O) (hc : IsCompact (closure O))

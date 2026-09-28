@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -247,8 +239,6 @@ theorem finite_composition_tendsto_smoothly_id
           (fun x _ => ⟨univ, isOpen_univ, mem_univ x, hLs.mono fun _ hk => hk.contDiffOn⟩)
           (fun m K hK _ => hjet i List.mem_cons_self m K hK)
           (fun m K hK _ => hLj m K hK) m hK (subset_univ K)
-
-
 
 theorem tendstoUniformlyOn_comp_jet
     {d : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

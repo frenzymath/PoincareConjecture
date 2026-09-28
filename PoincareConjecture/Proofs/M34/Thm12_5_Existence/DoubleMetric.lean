@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleManifold
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Construction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Filter Poincare.Gluing
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 noncomputable def endDoublePieceMetric (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -32,8 +20,6 @@ noncomputable def endDoublePieceMetric (e : StandardCylindricalEnd g)
   let := endDoublePiece_isManifold e hL
   exact g.pullbackOfLocalDiffeomorph Subtype.val
     (endDoublePiece_subtypeVal_isLocalDiffeomorph e hL)
-
-
 
 theorem endDoublePieceMetric_inner (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -48,7 +34,6 @@ theorem endDoublePieceMetric_inner (e : StandardCylindricalEnd g)
   rfl
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem endDoubleTransition_mfderiv_subtypeVal (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -81,7 +66,6 @@ theorem endDoubleTransition_mfderiv_subtypeVal (e : StandardCylindricalEnd g)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem endDoubleTransition_metric (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     let := endDoublePieceChartedSpace e hL
@@ -108,8 +92,6 @@ theorem endDoubleTransition_metric (e : StandardCylindricalEnd g)
   rw [← hxz]
   exact endAxialReflection_metric e (2 * L) (by linarith) (by linarith) _ _
 
-
-
 theorem endDoubleMetrics_compatible (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     let := endDoublePiece_nonempty e hL
@@ -134,8 +116,6 @@ theorem endDoubleMetrics_compatible (e : StandardCylindricalEnd g)
     rw [ht] at hx ⊢
     exact endDoubleTransition_metric e hL x hx u v
 
-
-
 noncomputable def endDoubleMetric (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : RiemannianMetric 3 (EndDouble e hL) := by
   let := endDoublePiece_nonempty e hL
@@ -143,8 +123,6 @@ noncomputable def endDoubleMetric (e : StandardCylindricalEnd g)
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (endDoubleOverlap e hL) (endDoubleOverlap_smooth e hL)
     (fun _ => endDoublePieceMetric e hL) (endDoubleMetrics_compatible e hL)
-
-
 
 theorem endDoubleMetric_preserves (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) :

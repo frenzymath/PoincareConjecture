@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.LocalRegions.CapChain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.OutgoingChain
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.CompactKappa
-
-
 
 theorem exists_outgoing_chain_with_neck_free_frontier_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 1000 ∧
@@ -62,9 +48,6 @@ theorem exists_outgoing_chain_with_neck_free_frontier_threshold :
     b hb hnext (hcenter.symm ▸ hpositive)
     (by rw [hcenter]; exact fun h => hout (Or.inr h))
   exact hnext ((hmax S hS hext).1 hnew)
-
-
-
 
 theorem exists_finite_outgoing_chain_non_strong_endpoint_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 1000 ∧

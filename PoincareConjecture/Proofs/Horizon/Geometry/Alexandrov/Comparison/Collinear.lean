@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.LowerCurvature
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 namespace Poincare.Alexandrov
-
-
 
 theorem comparisonAngle_add_eq_pi {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     comparisonAngle a b (a + b) = Real.pi := by
@@ -29,7 +19,6 @@ theorem comparisonAngle_add_eq_pi {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     ring
   rw [hquot, Real.arccos_neg_one]
 
-
 theorem comparisonAngle_self_zero {a : ℝ} (ha : 0 < a) :
     comparisonAngle a a 0 = 0 := by
   have hs : Real.sinh a * Real.sinh a ≠ 0 :=
@@ -37,8 +26,6 @@ theorem comparisonAngle_self_zero {a : ℝ} (ha : 0 < a) :
   have hnum : Real.cosh a * Real.cosh a - 1 = Real.sinh a * Real.sinh a := by
     nlinarith only [Real.cosh_sq_sub_sinh_sq a]
   rw [comparisonAngle, Real.cosh_zero, hnum, div_self hs, Real.arccos_one]
-
-
 
 theorem CurvatureGEnegOne.comparisonAngle_add_le_pi_of_between
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X) {p y z q : X}
@@ -70,8 +57,6 @@ theorem CurvatureGEnegOne.comparisonAngle_add_le_pi_of_between
   simp only [v, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val] at hfour
   rw [hbetween, comparisonAngle_add_eq_pi hyz hyq] at hfour
   linarith only [hfour]
-
-
 
 theorem CurvatureGEnegOne.comparisonAngle_le_pi_sub_of_between
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X) {p y z q : X}

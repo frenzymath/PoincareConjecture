@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundSurfaceParallel
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.M35
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem surface_ricci_of_sectional
     {M : Type*} [TopologicalSpace M] [ChartedSpace E2 M]
@@ -58,8 +47,6 @@ theorem surface_ricci_of_sectional
   simp only [map_add, map_smul, LinearMap.add_apply, LinearMap.smul_apply,
     add_apply, smul_apply, smul_eq_mul, M13.ricciLinear_apply, hricci]
   ring
-
-
 
 theorem surface_scalar_of_sectional
     {M : Type*} [TopologicalSpace M] [ChartedSpace E2 M]

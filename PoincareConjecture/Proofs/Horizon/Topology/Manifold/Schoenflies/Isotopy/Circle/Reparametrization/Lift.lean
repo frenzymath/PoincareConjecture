@@ -3,8 +3,6 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 
 open PoincareConjecture
-
-
 
 theorem contDiff_circle_lift {f : Real → S1}
     (hf : ContMDiff 𝓘(Real, Real) (𝓡 1) ∞ f)
@@ -38,8 +34,6 @@ theorem contDiff_circle_lift {f : Real → S1}
     (H.localInverse.open_target.mem_nhds H.localInverse_mem_target)] with s hs
   rw [← hlift s]
   exact (H.localInverse_left_inv hs).symm
-
-
 
 theorem exists_real_diffeomorph_lift_circle
     (q : Diffeomorph (𝓡 1) (𝓡 1) S1 S1 ∞) :
@@ -72,8 +66,6 @@ theorem exists_real_diffeomorph_lift_circle
       (q.symm.contMDiff.comp contMDiff_unitCircleExp) K.continuous hKt).contMDiff }
   exact ⟨D, hLt⟩
 
-
-
 theorem add_one_of_strictMono_circle_lift {L : Real → Real}
     (hL : Continuous L) (hm : StrictMono L)
     (hperiod : ∀ t, unitCircleExp (L (t + 1)) = unitCircleExp (L t))
@@ -100,7 +92,6 @@ theorem add_one_of_strictMono_circle_lift {L : Real → Real}
   have : (0 : Int) < k := by exact_mod_cast hk0
   have : (k : Int) < 1 := by exact_mod_cast hk1
   omega
-
 
 theorem deriv_real_diffeomorph_ne_zero (L : Real ≃ₘ[Real] Real) (t : Real) :
     deriv L t ≠ 0 := by

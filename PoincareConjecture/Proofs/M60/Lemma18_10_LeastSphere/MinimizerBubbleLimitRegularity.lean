@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitHarmonic
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
-
 
 theorem suWeakPlaneCoordinates_smooth_harmonic
     (g : RiemannianMetric n M)

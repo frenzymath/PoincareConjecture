@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EndpointMeasure
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,15 +9,10 @@ open scoped Topology Manifold ContDiff Bundle Matrix ENNReal
 
 namespace PoincareConjecture
 
-
-
 def m64IntrinsicEndpointParameters
     (e : AnnulusCoordinates → AnnulusCoordinates) (height : ℝ → ℝ) (S : Set ℝ) : Set ℝ :=
   {b | b ∈ Ico (0 : ℝ) rampPeriod ∧
     ∃ a ∈ S, e !₂[a, height a] = intrinsicAnnulusBoundary 2 b}
-
-
-
 
 theorem m64Intrinsic_endpoint_chart_measure_le
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

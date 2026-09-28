@@ -4,22 +4,9 @@ import Mathlib.Logic.Relation
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.OriginalTriangleCopies
-
 
 def reversingCornerStep (pair : Fin 4 → Fin 4) (i j : Fin 4) : Prop :=
   j = pair i + 1
@@ -40,8 +27,6 @@ private theorem eqvGen_function_fixed {α : Type*} (f : α → α)
   | symm a b hab ih => exact ih.symm
   | trans a b c hab hbc ihab ihbc => exact ihab.trans ihbc
 
-
-
 theorem reversing_pairing_adjacent_corner_isolated (pair : Fin 4 → Fin 4)
     (hpair : Function.Involutive pair) (i : Fin 4) (hi : pair i = i + 1)
     {j : Fin 4} (h : Relation.EqvGen (reversingCornerStep pair) (i + 1) j) :
@@ -53,7 +38,6 @@ theorem reversing_pairing_adjacent_corner_isolated (pair : Fin 4 → Fin 4)
   exact (eqvGen_function_fixed (fun x ↦ pair x + (1 : Fin 4)) hinj
     (by rw [hnext]) h).mp rfl
 
-
 theorem reversing_pairing_not_adjacent (pair : Fin 4 → Fin 4)
     (hpair : Function.Involutive pair)
     (hcorners : ∀ i j, Relation.EqvGen (reversingCornerStep pair) i j) :
@@ -62,8 +46,6 @@ theorem reversing_pairing_not_adjacent (pair : Fin 4 → Fin 4)
   have he := reversing_pairing_adjacent_corner_isolated pair hpair i hi
     (hcorners (i + 1) i)
   fin_cases i <;> norm_num at he
-
-
 
 theorem reversing_one_vertex_pairing_opposite (pair : Fin 4 → Fin 4)
     (hpair : Function.Involutive pair) (hfixed : ∀ i, pair i ≠ i)
@@ -84,7 +66,6 @@ theorem reversing_one_vertex_pairing_opposite (pair : Fin 4 → Fin 4)
   generalize he : pair i = j at h0 h1 h3 ⊢
   fin_cases i <;> fin_cases j <;>
     first | exact (h0 rfl).elim | exact (h1 rfl).elim | exact (h3 rfl).elim | rfl
-
 
 theorem opposite_pairing_all_corners (pair : Fin 4 → Fin 4)
     (hpair : ∀ i, pair i = i + 2) :

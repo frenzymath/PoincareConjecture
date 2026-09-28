@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Oriented
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Decomposition
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -49,8 +40,6 @@ private theorem integrable_busemann_flux_of_compact_complement
   rw [hgrad]
   simp
 
-
-
 theorem exists_outward_axialTransition_flux
     (D : LeviCivitaData g) (hc : MetricComplete g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)
@@ -86,8 +75,6 @@ theorem exists_outward_axialTransition_flux
     simp
   · exact integrable_busemann_flux_of_compact_complement D hc hdist hm hray hT hcompact
       (fun x => (N.axialTransition_mem_Icc hψrange x).2)
-
-
 
 theorem exists_outward_profiles_busemann_flux_comparison
     (D : LeviCivitaData g) (hc : MetricComplete g)

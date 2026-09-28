@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedGlobalFlow
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedSourceBounds
 import PoincareConjecture.Proofs.M28.Generalized.OrdinaryDerivativeRescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
   (Q : ℝ) (hQ : 0 < Q) (tau : ℝ) (htau : 0 < tau)
   (hwindow : tau ≤ 5 * (Q * S.scale ^ 2) / 8)
 
-
-
 theorem GeneralizedStrongNeck.buffered_global_flow_curvatureTensorNorm
     (s : ℝ) (x : strongNeckOpen S) :
     ((GeneralizedStrongNeck.buffered_global_flow S H Q hQ tau htau hwindow).connection
@@ -47,8 +36,6 @@ theorem GeneralizedStrongNeck.buffered_global_flow_curvatureTensorNorm
   rw [htime] at h
   exact h
 
-
-
 theorem GeneralizedStrongNeck.buffered_global_flow_curvatureDerivativeNorm
     (s : ℝ) (m : ℕ) (x : strongNeckOpen S) :
     ((GeneralizedStrongNeck.buffered_global_flow S H Q hQ tau htau hwindow).connection
@@ -62,9 +49,6 @@ theorem GeneralizedStrongNeck.buffered_global_flow_curvatureDerivativeNorm
     simp only [parabolicTimeInv, zero_add]
   rw [htime] at h
   exact h
-
-
-
 
 theorem exists_strongNeck_buffered_global_bounds_accuracy
     (hShi : LocalCurvatureDerivativeEstimates.{u}) :

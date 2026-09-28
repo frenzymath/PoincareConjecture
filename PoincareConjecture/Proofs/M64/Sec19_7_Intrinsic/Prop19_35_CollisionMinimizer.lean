@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CollisionBoundaryCompetitor
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InteriorGeodesic
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_exists_short_collision_minimizer
     (N : IntrinsicAnnulus) {K : Set AnnulusCoordinates} (hK : IsCompact K)

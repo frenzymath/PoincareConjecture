@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M51.HorizonCount
 import PoincareConjecture.Proofs.M51.LastSlab
 import PoincareConjecture.Proofs.M51.EmptyControlledExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ universe u
 namespace PoincareConjecture.M51
 
 open M51Numerical
-
 
 theorem epochStage_of_controlledPrefix
     {S : RepairedControlledSchedulesData.{u}}
@@ -113,7 +101,6 @@ theorem epochStage_of_controlledPrefix
       (by simpa only [O, RepairedGlobalControlledPrefix.observation, prefix_index] using hhi)
       hfront, rfl, rfl⟩
 
-
 theorem controlledPrefix_epoch
     {S : RepairedControlledSchedulesData.{u}}
     {N : RepairedNoncollapseInductionData S}
@@ -135,7 +122,6 @@ theorem controlledPrefix_epoch
   · have hi : epochIndex H - 2 + 2 = epochIndex H := by omega
     rw [hi]
     exact (lt_epochStart_index H).le
-
 
 theorem controlledPrefix_start
     {S : RepairedControlledSchedulesData.{u}}

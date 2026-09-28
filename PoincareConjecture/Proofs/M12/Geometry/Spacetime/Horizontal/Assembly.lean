@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.ConnectionSmooth
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Choice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -82,8 +73,6 @@ theorem horizontalRicciCalculus_of_joint_regularity
   · intro D' U hU V hV p hp
     exact D.rawHorizontalCovariantDerivative_eq D'
       ((hV.contMDiffAt (hU.mem_nhds hp)).mdifferentiableAt (by simp))
-
-
 
 theorem horizontalRicciCalculus_of_curvature_regularity
     (hMetric : M12MetricPredecessors.{u} n)

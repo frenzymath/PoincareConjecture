@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.PlanarSlices
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,7 +38,6 @@ theorem mem_tangentPlanarDiffeomorph_sphere_iff {t : Real}
     rw [hq]
     ext i
     fin_cases i <;> rfl
-
 
 def tangentPlanarWallNeighborhood (t : Real) : Set E2 :=
   {y | |y 0| < 1 ∧ (y 1) ^ 2 + t ^ 2 < 1 / 4}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.LocalScalarOperatorRealization
 import PoincareConjecture.Proofs.M35.Thm12_28.TerminalMetricConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_cylinder_scalar_operator_realization {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)

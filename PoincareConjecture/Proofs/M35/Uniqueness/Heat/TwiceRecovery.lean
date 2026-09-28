@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.SecondTimeCompatibility
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TwiceDifferentiatedHeat
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

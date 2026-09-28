@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_pushed_focusing_norm_le_inv_kappa
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

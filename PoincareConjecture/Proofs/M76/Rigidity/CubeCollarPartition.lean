@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +12,6 @@ local notation "B0" => closedBall (0 : V3) (7 / 8)
 local notation "Q" => sphere (0 : V3) 1
 local notation "Q0" => sphere (0 : V3) (7 / 8)
 local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
-
-
-
 
 theorem cube_collar_partition : B0 ∪ T = B ∧ B0 ∩ T = Q0 ∧ Q ⊆ T := by
   refine ⟨?_, ?_, ?_⟩

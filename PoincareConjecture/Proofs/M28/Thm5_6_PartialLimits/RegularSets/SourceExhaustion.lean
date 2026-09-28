@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.SourceCore
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Exhaustion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.FlowCarrier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_regular_pointed_source_exhaustion
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

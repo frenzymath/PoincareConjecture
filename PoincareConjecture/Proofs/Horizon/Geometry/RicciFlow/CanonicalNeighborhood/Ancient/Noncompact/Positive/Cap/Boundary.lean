@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Collars.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Geometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -59,7 +48,6 @@ theorem boundary_local_defining_function {x : M} (hx : x ∈ H.source.central_sp
         ∃ d : TangentSpace (𝓡 3) x, d ≠ 0 ∧ mvfderiv (𝓡 3) f x d ≠ 0 :=
   G.buffered_boundary_local_defining_function H.source H.source_height H.outer_height_pos hx
 
-
 theorem negative_end_region :
     H.endNeck.region (-epsilon⁻¹) (-epsilon⁻¹ / 2) =
       H.source.region 0 (H.a * epsilon⁻¹ / 2) := by
@@ -85,8 +73,6 @@ theorem negative_end_region :
       nlinarith
     · apply (div_lt_iff₀ ha).mpr
       nlinarith
-
-
 
 theorem boundary_subset_negative_end_closure : H.source.central_sphere ⊆
     closure (H.endNeck.region (-epsilon⁻¹) (-epsilon⁻¹ / 2)) := by

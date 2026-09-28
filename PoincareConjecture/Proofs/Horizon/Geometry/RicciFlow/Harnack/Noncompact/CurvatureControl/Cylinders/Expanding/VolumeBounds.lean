@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.LimitLowerBound
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem eventually_buffered_ball_volume_lower_bound_of_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -99,8 +90,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t3Space
 
-
-
 theorem ball_volume_lower_bound_of_metricComplete_zero
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
     (F : ∀ k, RicciFlow n (C k).carrier (J k)) {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -132,8 +121,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
   PoincareConjecture.smallMeasurableSpace PoincareConjecture.smallBorelSpace PoincareConjecture.smallT3Space
-
-
 
 theorem small_ancient_limit_ball_volume_lower_bound
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

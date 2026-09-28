@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ComponentCount
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,13 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -57,8 +44,6 @@ private theorem index_two_component_family
     ⟨hinj, hcards⟩), heq⟩
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {K : Set S2}
-
-
 
 theorem exists_lowerCutCircle_equiv_of_two_components
     (A : AnnularEndFamily v g B K)

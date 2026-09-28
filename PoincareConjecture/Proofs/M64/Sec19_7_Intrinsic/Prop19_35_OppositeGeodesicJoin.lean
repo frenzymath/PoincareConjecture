@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CrossRayTangents
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +21,6 @@ private theorem geodesic_germ_congr
   refine ⟨p, q, w, ?_⟩
   filter_upwards [hlocal, heq] with y hy hey
   exact ⟨hey.trans hy.1, hy.2⟩
-
-
-
 
 theorem m64Intrinsic_opposite_meeting_smooth_geodesic_join
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -146,10 +131,6 @@ theorem m64Intrinsic_opposite_meeting_smooth_geodesic_join
         rw [hgr (s + t - x) (by linarith [hx.2])]
         congr 1
         ring
-
-
-
-
 
 theorem m64Intrinsic_opposite_first_contact_embedded_join
     (G : RiemannianMetric 2 AnnulusCoordinates)

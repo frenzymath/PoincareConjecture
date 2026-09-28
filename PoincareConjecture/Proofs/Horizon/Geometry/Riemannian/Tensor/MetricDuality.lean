@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 
-
 set_option autoImplicit false
 open scoped BigOperators
 
@@ -36,7 +35,6 @@ namespace PoincareConjecture.IsSmoothCovariantTensor
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 lemma update_eq_sum (g : RiemannianMetric n M) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)

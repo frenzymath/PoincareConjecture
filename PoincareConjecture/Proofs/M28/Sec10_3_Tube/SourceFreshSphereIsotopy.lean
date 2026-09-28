@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphSide
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalPairIsotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_source_fresh_sphere_isotopy_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 1000 : ℝ) ∧

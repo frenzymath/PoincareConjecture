@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -31,14 +22,6 @@ structure CorrectedA19Conclusion (g : RiemannianMetric 3 M)
     (tube.chain.neck i).center ∈ H.X
   contains_X : H.X ⊆ tube.carrier
   separating_necks : ∀ N ∈ H.necks, N.IsSeparating
-
-
-
-
-
-
-
-
 
 inductive CorrectedA20Conclusion (g : RiemannianMetric 3 M)
     (H : NeckOnlyCover g)
@@ -166,9 +149,6 @@ structure NeckCapTopologyTheory (g : RiemannianMetric 3 M) where
     AppendixA21Theory g H
   a25 : ∀ (H : ConnectedNeckCapCover g), H.epsilon ≤ epsilon₀ →
     ∀ hwhole, AppendixA25Theory g H hwhole
-
-
-
 
 structure UniversalNeckCapTopologyTheory where
   epsilon₀ : ℝ

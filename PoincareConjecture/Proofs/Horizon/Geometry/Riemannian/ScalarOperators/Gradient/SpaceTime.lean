@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.SpatialDeriv
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Matrix
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricDuality
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +32,6 @@ private lemma eventually_basis_extend {ι : Type} (x : M)
   rw [Bundle.Trivialization.symm_continuousLinearEquivAt_eq,
     Bundle.Trivialization.symmL_apply _ hy]
   rfl
-
 
 theorem contMDiffAt_gradient_normSq_spacetime (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t : ℝ} {x : M}

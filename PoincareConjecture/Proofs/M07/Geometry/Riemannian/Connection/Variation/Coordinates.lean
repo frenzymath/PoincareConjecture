@@ -1,45 +1,6 @@
-
-
-
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter
 open scoped Topology ContDiff
@@ -53,15 +14,6 @@ namespace PoincareConjecture.ConnectionVariation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
-
-
-
-
-
 def covDerivAlong (Γ : E → E →L[ℝ] E →L[ℝ] E) (u V : P → E) (d : P) (p : P) : E :=
   fderiv ℝ V p d + Γ (u p) (fderiv ℝ u p d) (V p)
 
@@ -69,29 +21,18 @@ theorem covDerivAlong_def (Γ : E → E →L[ℝ] E →L[ℝ] E) (u V : P → E)
     covDerivAlong Γ u V d p
       = fderiv ℝ V p d + Γ (u p) (fderiv ℝ u p d) (V p) := rfl
 
-
-
-
-
-
-
-
 def christoffelCurvature (Γ : E → E →L[ℝ] E →L[ℝ] E) (x : E) (X Y Z : E) : E :=
   fderiv ℝ Γ x X Y Z - fderiv ℝ Γ x Y X Z + Γ x X (Γ x Y Z) - Γ x Y (Γ x X Z)
-
-
 
 theorem covDerivAlong_congr (Γ : E → E →L[ℝ] E →L[ℝ] E) (u : P → E)
     {V W : P → E} {p : P} (h : V =ᶠ[𝓝 p] W) (d : P) :
     covDerivAlong Γ u V d p = covDerivAlong Γ u W d p := by
   rw [covDerivAlong_def, covDerivAlong_def, h.fderiv_eq, h.eq_of_nhds]
 
-
 theorem covDerivAlong_zero (Γ : E → E →L[ℝ] E →L[ℝ] E) (u : P → E) (d p : P) :
     covDerivAlong Γ u (fun _ => (0 : E)) d p = 0 := by
   rw [covDerivAlong_def]
   simp
-
 
 theorem contDiffAt_covDerivAlong
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P → E} {p : P}
@@ -101,7 +42,6 @@ theorem contDiffAt_covDerivAlong
   have hdu := (hu.fderiv_right (m := ∞) (by simp)).clm_apply (contDiffAt_const (c := d))
   have hdV := (hV.fderiv_right (m := ∞) (by simp)).clm_apply (contDiffAt_const (c := d))
   exact hdV.add (((hΓ.comp p hu).clm_apply hdu).clm_apply hV)
-
 
 theorem covDerivAlong_comp_curve
     (Γ : E → E →L[ℝ] E →L[ℝ] E) {u V : P → E} {c : ℝ → P}
@@ -113,12 +53,6 @@ theorem covDerivAlong_comp_curve
   have hVc := hV.hasFDerivAt.comp_hasDerivAt t hc
   simp only [covDerivAlong, fderiv_eq_smul_deriv, one_smul,
     huc.deriv, hVc.deriv, Function.comp_apply]
-
-
-
-
-
-
 
 theorem fderiv_covDerivAlong_apply {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P → E}
     {p : P} (hu : ContDiffAt ℝ 2 u p) (hV : ContDiffAt ℝ 2 V p)
@@ -167,16 +101,6 @@ theorem fderiv_covDerivAlong_apply {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V :
     Function.comp_apply, ContinuousLinearMap.flip_apply]
   abel
 
-
-
-
-
-
-
-
-
-
-
 theorem covDerivAlong_comm {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P → E} {p : P}
     (hu : ContDiffAt ℝ 2 u p) (hV : ContDiffAt ℝ 2 V p)
     (hΓ : DifferentiableAt ℝ Γ (u p)) (d₁ d₂ : P) :
@@ -193,13 +117,6 @@ theorem covDerivAlong_comm {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P → E
   simp only [map_add, christoffelCurvature]
   rw [hVs, hus]
   abel
-
-
-
-
-
-
-
 
 theorem covDerivAlong_fderiv_symm {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P → E}
     {p : P} (hu : ContDiffAt ℝ 2 u p)
@@ -220,18 +137,6 @@ theorem covDerivAlong_fderiv_symm {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P 
   simp only [ContinuousLinearMap.flip_apply]
   rw [(hu.isSymmSndFDerivAt (by simp)).eq d₁ d₂,
     hΓsymm (fderiv ℝ u p d₁) (fderiv ℝ u p d₂)]
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem covDerivAlong_geodesic_family_jacobi {Γ : E → E →L[ℝ] E →L[ℝ] E}
     {u : P → E} {p : P} {ds dt : P}

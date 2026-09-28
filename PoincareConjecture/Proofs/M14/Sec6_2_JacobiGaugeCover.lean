@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Proofs.M08.OverlappingIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem exists_squareRoot_gauge_neighborhood {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -50,9 +38,6 @@ theorem exists_squareRoot_gauge_neighborhood {s : ℝ}
     exact hright _ (hmap hr)
   · intro r hr
     exact (hclock _ (hmap hr)).trans (R.curve_time r hr.1)
-
-
-
 
 theorem exists_overlapping_squareRoot_gauges :
     ∃ (m : ℕ) (t : Fin (m + 1) → ℝ) (b : Fin m → G.gaugeCover.index)

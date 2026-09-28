@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
-
-
 
 noncomputable def transported {kind : CapModelKind} {p : RealProjectiveThree}
     {U : Set M} (C : CapModelEquivalence kind p U)
@@ -104,9 +93,6 @@ private theorem image_frontier_compact {X Y : Type*} [TopologicalSpace X]
   have ht : frontier (e '' S) ⊆ e '' S := himagecompact.isClosed.frontier_subset
   have h := (actual_image_relation e hS).frontier.image_eq
   rwa [inter_eq_right.mpr (hs.trans hS), inter_eq_right.mpr (ht.trans htarget)] at h
-
-
-
 
 theorem transported_core_topology
     {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]

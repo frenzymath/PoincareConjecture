@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.An
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.RectangleIsotopy
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.Lift
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Geometry PLAnnularStrip
@@ -139,8 +137,6 @@ theorem exists_finitePL_cut_rectangle_of_fixed_radial
   rw [cutRectangleProjection_val] at h
   exact h.trans (congrArg (fun y : Ann => (G y : P2))
     (Subtype.ext (cutRectangleProjection_val x)))
-
-
 
 theorem exists_joint_PL_annulus_isotopy_of_fixed_radial
     (G : Ann ≃ₜ Ann) (hG : G.IsFinitePL)

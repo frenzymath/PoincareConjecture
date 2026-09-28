@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.JointSeedBallContainment
 import PoincareConjecture.Proofs.M47.JointSeedRadialPath
 import PoincareConjecture.Proofs.M47.JointSeedJoin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J}
-
-
-
 
 theorem jointSeed_mid_age_reducedLength_on_birth_ball
     (hM04 : RicciFlowCurvatureTheory.{u}) {T d eta v K B r : ℝ}
@@ -115,9 +102,6 @@ theorem jointSeed_mid_age_reducedLength_on_birth_ball
         (2 * Real.sqrt (d - v / 2)) + eps := by
     rw [add_div, mul_div_cancel_right₀ _ hden.ne']
   exact hred.trans ((div_le_div_of_nonneg_right hcost' hden.le).trans_eq hquot)
-
-
-
 
 theorem jointSeed_mid_age_ball_access [CompactSpace M]
     (hM04 : RicciFlowCurvatureTheory.{u}) {T d eta v A B L a : ℝ}

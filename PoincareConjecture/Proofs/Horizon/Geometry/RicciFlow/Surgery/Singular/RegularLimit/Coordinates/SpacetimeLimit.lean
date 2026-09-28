@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.BoundarySmooth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.Convergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -29,15 +22,12 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def extendedCoordinateCoefficients
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (q : M) (p : ℝ × EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   if p.1 = T then H.terminalCoordinateCoefficients P04 q p.2
   else (H.reference.flow.metric p.1).pullbackCoefficients (extChartAt (𝓡 3) q).symm p.2
-
-
 
 theorem exists_smooth_terminal_spacetime_coordinates
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

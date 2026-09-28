@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionPairSe
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndUniqueness
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.DisjointIntervalUniqueness
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,8 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "D2" => closedBall (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem original_resolution_pair_excluded
     {X : Type*} [TopologicalSpace X] {Z : Set X} {base : Z}

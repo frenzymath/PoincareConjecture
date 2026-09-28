@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Model
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.SingularRegularLimit
 
 open RiemannianMetric
-
-
 
 theorem exists_modelVolume_ratio_margin {κ ρ L : ℝ} (hκ : 0 ≤ κ) (hρ : 0 < ρ) :
     ∃ cmax : ℝ, 1 < cmax ∧ ∀ c : ℝ, 1 < c → c < cmax →

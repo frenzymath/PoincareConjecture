@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialBoundaryEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialUniformPowerGrowth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,8 +18,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 local notation "L" => m64AnnulusLowerStrip
 local notation "v" => m64AnnulusRadialTranslation
-
-
 
 theorem lower_extension_column_bound
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -60,8 +47,6 @@ theorem lower_extension_column_bound
       simpa [Function.comp_apply, Fin.ext_iff] using hcol
     rw [hcol']
     simpa using hD
-
-
 
 theorem lower_smooth_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

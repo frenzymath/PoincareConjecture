@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EndpointChart
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology Manifold ContDiff Bundle Matrix ENNReal
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_endpoint_projection_length_le
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

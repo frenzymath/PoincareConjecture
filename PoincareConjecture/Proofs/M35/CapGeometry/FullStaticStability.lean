@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.FullNeckJetDifference
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckStrictMargin
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckFiniteMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem full_neck_rescaled_coefficient_jets_uniform
     {epsilon : ℝ} {C : RoundCylinderTwoTensor}
@@ -94,8 +83,6 @@ theorem full_neck_rescaled_coefficient_jets_uniform
   have hnorm := hlim.norm
   rw [norm_zero] at hnorm
   exact (not_le.mpr heta) (ge_of_tendsto hnorm (Eventually.of_forall (fun k => hbad k)))
-
-
 
 theorem eventually_full_static_close_of_rescaled_coefficients
     {epsilon : ℝ} {C : RoundCylinderTwoTensor}

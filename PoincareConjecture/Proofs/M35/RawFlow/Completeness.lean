@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 import PoincareConjecture.Proofs.M35.Mathlib.Completeness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem edist_le_mul_edist_of_tangentNorm_le
     (g h : RiemannianMetric n M) {C : ℝ} (hC : 0 < C)
@@ -48,8 +38,6 @@ theorem edist_le_mul_edist_of_tangentNorm_le
   simpa only [mul_comm] using (ENNReal.div_le_iff
     (ENNReal.ofReal_pos.mpr hC).ne' ENNReal.ofReal_ne_top).mp hdiv
 
-
-
 theorem metricComplete_of_tangentNorm_le [T3Space M]
     (g h : RiemannianMetric n M) (hg : MetricComplete g)
     {C : ℝ} (hC : 0 < C)
@@ -66,8 +54,6 @@ theorem metricComplete_of_tangentNorm_le [T3Space M]
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.PartialStandardCapFlow
-
-
 
 theorem complete (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) {t : ℝ} (ht : t ∈ Set.Ico 0 G.lifetime) :

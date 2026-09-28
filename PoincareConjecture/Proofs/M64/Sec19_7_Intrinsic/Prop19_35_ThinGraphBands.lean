@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SeparatedArcStrips
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +10,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_thin_graph_bands
     (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)

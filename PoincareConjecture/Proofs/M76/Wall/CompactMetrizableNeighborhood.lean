@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import Mathlib.Topology.Metrizable.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_metrizable_open_neighborhood
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

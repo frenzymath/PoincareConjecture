@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph.Convergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit.ProductConvergence
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +33,6 @@ variable {M : Type u} [TopologicalSpace M]
   {N : Type*} [TopologicalSpace N] [T3Space N] [CompactSpace N]
   [MeasurableSpace N] [BorelSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N] [IsManifold (𝓡 2) ∞ N]
-
-
 
 theorem exists_potentialLevelGraphs
     (hD : S.connection.CurvatureTensorCalculus) (p : M)

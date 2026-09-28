@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusFamily
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusPeriodicVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusBoundaryConormalBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {c0 c1 : ℝ → M}
-
-
-
-
-
-
 
 theorem m64Annulus_exists_forward_competitors_of_curvature_motion
     (F : RicciFlow n M (Icc a b)) {t : ℝ}

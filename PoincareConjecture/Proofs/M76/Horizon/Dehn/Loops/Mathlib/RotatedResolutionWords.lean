@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionEndWordCalculation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
 
 variable {X : Type*} [TopologicalSpace X] {b x y : X}
-
-
 
 theorem basedPathWord_cycle (p : Path b x) (q : Path b y)
     (a : Path x y) (c : Path y x) :
@@ -23,8 +12,6 @@ theorem basedPathWord_cycle (p : Path b x) (q : Path b y)
       (basedPathWord p q a)⁻¹ * basedPathWord p p (a.trans c) * basedPathWord p q a := by
   rw [basedPathWord_trans q p q, basedPathWord_trans p q p]
   group
-
-
 
 theorem basedPathWord_cycle_mem_iff
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -41,12 +28,9 @@ open PoincareConjecture.M76.Dehn
 
 variable {X : Type*} [TopologicalSpace X] {b x y : X}
 
-
 theorem whiskeredLoopClass_congr (p : Path b x) {a c : Path x x}
     (h : a.Homotopic c) : p.whiskeredLoopClass a = p.whiskeredLoopClass c := by
   exact inv_injective (basedPathWord_congr p p h)
-
-
 
 theorem whiskeredLoopClass_cycle (p : Path b x) (q : Path b y)
     (a : Path x y) (c : Path y x) :
@@ -55,15 +39,11 @@ theorem whiskeredLoopClass_cycle (p : Path b x) (q : Path b y)
   have h := congrArg Inv.inv (basedPathWord_cycle p q a c)
   simpa only [basedPathWord_loop, inv_inv, mul_inv_rev, mul_assoc] using h
 
-
-
 theorem whiskeredLoopClass_cycle_mem_iff
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
     (p : Path b x) (q : Path b y) (a : Path x y) (c : Path y x) :
     q.whiskeredLoopClass (c.trans a) ∈ J ↔ p.whiskeredLoopClass (a.trans c) ∈ J := by
   simpa only [basedPathWord_loop, J.inv_mem_iff] using basedPathWord_cycle_mem_iff J p q a c
-
-
 
 theorem whiskeredLoopClass_cycle_mem_iff_of_homotopic
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -73,8 +53,6 @@ theorem whiskeredLoopClass_cycle_mem_iff_of_homotopic
     q.whiskeredLoopClass rotated ∈ J ↔ p.whiskeredLoopClass old ∈ J := by
   rw [whiskeredLoopClass_congr q hrotated, whiskeredLoopClass_congr p hold]
   exact whiskeredLoopClass_cycle_mem_iff J p q a c
-
-
 
 theorem whiskeredLoopClass_cycle_excluded_of_homotopic
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -91,8 +69,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {X : Type*} [TopologicalSpace X] {b x y : X}
 
-
-
 theorem resolution_cycle_excluded_exact
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
     (pA : Path b x) (pC : Path b y)
@@ -103,8 +79,6 @@ theorem resolution_cycle_excluded_exact
       pC.whiskeredLoopClass (c₁.trans a₁) ∉ J :=
   hout.imp (fun h hm ↦ h ((Path.whiskeredLoopClass_cycle_mem_iff J pA pC a₀ c₀).mp hm))
     (fun h hm ↦ h ((Path.whiskeredLoopClass_cycle_mem_iff J pA pC a₁ c₁).mp hm))
-
-
 
 theorem resolution_cycle_excluded
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -119,8 +93,6 @@ theorem resolution_cycle_excluded
     (Path.whiskeredLoopClass_cycle_excluded_of_homotopic J pA pC a₁ c₁ hOld₁ hNew₁)
 
 variable {z0 z1 a0 a1 c0 c1 l0 l1 r0 r1 : X}
-
-
 
 theorem rotated_resolution_end_words_case_a
     (p : Path b z0) (q : Path b z1)
@@ -164,8 +136,6 @@ theorem rotated_resolution_end_words_case_a
       basedPathWord_trans (p.trans rc0) (p.trans rl0) (p.trans ra0),
       basedPathWord_trans (p.trans rc0) (p.trans rr0) (p.trans rl0)]
     simp only [basedPathWord_symm, hl0, hr0, hl1, hr1, inv_one, one_mul, mul_one]
-
-
 
 theorem rotated_resolution_end_words_case_b
     (p : Path b z0) (q : Path b z1)

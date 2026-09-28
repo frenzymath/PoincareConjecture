@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTomiBootstrap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory
@@ -83,11 +74,6 @@ private theorem small_pairing_neighborhood {N : ℕ}
     _ = E z / 2 := by ring
 
 set_option maxHeartbeats 1400000 in
-
-
-
-
-
 
 theorem quadratic_holder_contDiffAt {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f v : Fin N → LoopPlane → ℝ)

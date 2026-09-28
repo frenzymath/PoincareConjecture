@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem two_le_dimension (K : AncientKappaSolution n M)
     (hcalculus : (K.flow.connection 0).CurvatureTensorCalculus) : 2 ≤ n := by
@@ -53,7 +42,6 @@ theorem two_le_dimension (K : AncientKappaSolution n M)
       ((K.flow.metric 0).orthonormalBasis x k)).1
     linarith
   simp [LeviCivitaData.curvatureTensorNorm, hcomponent]
-
 
 theorem closed_cylinder_volume_lower_bound (K : AncientKappaSolution n M)
     (t : ℝ) (ht : t ≤ 0) (p : M) (r : ℝ) (hr : 0 < r)

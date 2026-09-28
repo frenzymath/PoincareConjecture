@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.Plane
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold
 
 open Set
-
-
 
 theorem exists_sphere_diffeomorph_isotopy
     (d : Diffeomorph (𝓡 2) (𝓡 2)

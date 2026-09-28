@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingField
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot_Ioc
     {R kappa : ℝ} (hR : 0 < R) (hkappa : 0 < kappa)
@@ -50,10 +33,6 @@ theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot_Ioc
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_polarDensity_log_derivative_ge_sqrt_max_cot_Ioc
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)
@@ -103,10 +82,6 @@ theorem m64Intrinsic_polarDensity_log_derivative_ge_sqrt_max_cot_Ioc
     (fun s hs => m64Intrinsic_polarDensity_jacobi N hU h0 he hgeo hmetric theta
       htheta hb hsub hs (hi s ⟨hs.1.le, hs.2.le⟩))
     (fun s hs => (hK (e (s • theta)) (hmap s hs)).trans hKkappa) ht
-
-
-
-
 
 theorem m64Intrinsic_focusing_pairing_ge_of_gaussian_upper_Ioc
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

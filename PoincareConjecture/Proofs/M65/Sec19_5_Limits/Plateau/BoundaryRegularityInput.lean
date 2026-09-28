@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityGl
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalNormalization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.Attainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65PlateauBoundaryRegularityInput_proved
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

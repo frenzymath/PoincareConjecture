@@ -1,26 +1,11 @@
-
-
-
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.InnerProductSpace.PiL2
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
-
 
 theorem exists_local_straightening
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} {t : ℝ}

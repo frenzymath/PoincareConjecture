@@ -1,12 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MetricTrace
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 universe u
 
 namespace PoincareConjecture
-
 
 def bilinearOfTensorCons {E : Type*} [AddCommGroup E] [Module ℝ E] {k : ℕ}
     (A : MultilinearMap ℝ (fun _ : Fin (k + 2) => E) ℝ) (v : Fin k → E) :
@@ -45,7 +36,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace RiemannianMetric
 
-
 noncomputable def tensorTrace (g : RiemannianMetric n M) {k : ℕ}
     (T : CovariantTensorEvaluation n M (k + 2)) : CovariantTensorEvaluation n M k :=
   fun x v => ∑ i, T x (Fin.cons (g.orthonormalBasis x i)
@@ -54,8 +44,6 @@ noncomputable def tensorTrace (g : RiemannianMetric n M) {k : ℕ}
 end RiemannianMetric
 
 namespace LeviCivitaData
-
-
 
 lemma covariantTensorDerivative_tensorTrace (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M (k + 2)} (hT : IsSmoothCovariantTensor T)
@@ -133,7 +121,6 @@ lemma covariantTensorDerivative_tensorTrace (D : LeviCivitaData g) {k : ℕ}
   intro i hi
   simp only [S, X, V, Matrix.cons_val_zero, Matrix.cons_val_one]
   ring
-
 
 lemma covariantTensorDerivative_tensorLaplacian (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) {k : ℕ}

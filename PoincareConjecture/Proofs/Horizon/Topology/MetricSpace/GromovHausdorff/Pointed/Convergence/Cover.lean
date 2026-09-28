@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,7 +7,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set Filter Topology
 universe u v
 namespace Poincare.GromovHausdorff
-
 
 theorem ball_one_subset_iUnion_of_near_realization
     {X Y : BasedMetricSpaceBundle.{u}} {s t R ε : ℝ}
@@ -51,7 +44,6 @@ theorem ball_one_subset_iUnion_of_near_realization
   change dist x (u i).val ≤ dist (Q.left xj) (Q.right w) +
     dist w.val (y i).val + dist (Q.left (u i)) (Q.right (y i)) at htr
   linarith
-
 
 theorem eventually_ball_one_subset_iUnion_of_pointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}

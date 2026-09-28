@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +19,6 @@ private theorem forward_heq_of_time_eq
     HEq (e.forward s hs x) (e.forward t ht x) := by
   cases hst
   rfl
-
 
 theorem terminalCommonInterval_physical_eq
     {F : SurgeryFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}
@@ -79,8 +69,6 @@ theorem terminalCommonInterval_physical_eq
     exact (hfread (a / Q) ⟨le_rfl, haQ⟩).trans (forward_heq_of_time_eq f _ _ hparam y)
   exact eq_of_heq (hea.symm.trans ((heq_of_eq hagree).trans hfa))
 
-
-
 theorem terminalCommonInterval_generalized_eq
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
     (H : M33RegularHistoryData W) {C D : GeneralizedSliceCarrier.{u}}
@@ -107,7 +95,6 @@ theorem terminalCommonInterval_generalized_eq
   have hagree := terminalCommonInterval_physical_eq ep fp ha hI hJ x hx y hy hphysical
   rw [hep _ _ x hx, hfp _ _ y hy] at hagree
   exact (H.history.forward_openEmbedding _ _).injective hagree
-
 
 theorem terminalCommonInterval_pullback_eq
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

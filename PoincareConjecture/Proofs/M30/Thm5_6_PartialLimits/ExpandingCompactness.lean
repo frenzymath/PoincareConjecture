@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ExpandingNormalConverg
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.DiagonalCovering
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Subsequence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem exists_complete_reference_convergence_of_expanding_bounds
     {n : ℕ} {s' s : ℝ} (hn : 1 ≤ n)

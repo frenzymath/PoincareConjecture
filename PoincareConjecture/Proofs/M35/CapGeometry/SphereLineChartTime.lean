@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.M27ProductChartMetric
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundProductRicci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,13 +18,10 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
-
 theorem sphereLineChart_contMDiff (N : M27SphereLineFlowCertificate K)
     (q : UnitTwoSphere) : ContMDiff (𝓡 3) (𝓡 3) ∞
       (N.identification ∘ cylinderChart q) :=
   N.identification.contMDiff.comp (cylinderChart_contMDiff q)
-
 
 theorem sphereLineChart_invertible (N : M27SphereLineFlowCertificate K)
     (q : UnitTwoSphere) (x : V) :
@@ -43,7 +32,6 @@ theorem sphereLineChart_invertible (N : M27SphereLineFlowCertificate K)
   rw [mfderiv_comp x (N.identification.contMDiff.mdifferentiable (by simp) _)
     ((cylinderChart_contMDiff q).mdifferentiable (by simp) x)]
   exact hNi.comp (cylinderChart_mfderiv_invertible q x)
-
 
 noncomputable def sphereLineChartMetric (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (q : UnitTwoSphere) : RiemannianMetric 3 V :=
@@ -60,11 +48,9 @@ noncomputable def sphereLineChartMetric (N : M27SphereLineFlowCertificate K)
         (hz.trans (map_zero (mfderiv (𝓡 3) (𝓡 3)
           (N.identification ∘ cylinderChart q) x)).symm))))
 
-
 noncomputable def sphereLineChartConnection (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (q : UnitTwoSphere) : LeviCivitaData (sphereLineChartMetric N t q) :=
   (sphereLineChartMetric N t q).euclideanLeviCivitaData
-
 
 theorem sphereLineChartMetric_product (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (q : UnitTwoSphere) (x u v : V) :
@@ -81,8 +67,6 @@ theorem sphereLineChartMetric_product (N : M27SphereLineFlowCertificate K)
     ((cylinderChart_contMDiff q).mdifferentiable (by simp) x), N.metric_transport t ht]
   rw [M27RoundSphereFamily.productInner, mfderiv_cylinderChart, mfderiv_cylinderChart]
   rfl
-
-
 
 theorem sphereLineChartMetric_hasDerivWithinAt (N : M27SphereLineFlowCertificate K)
     (t : ℝ) (ht : t ≤ 0) (q : UnitTwoSphere) (x u v : V) :

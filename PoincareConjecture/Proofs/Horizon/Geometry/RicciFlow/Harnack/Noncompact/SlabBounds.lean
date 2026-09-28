@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.Exhaustion.Proper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -129,9 +119,6 @@ private theorem exists_curvatureDerivativeNorm_bound_on_buffered_slab_on_set
   apply div_le_div_of_nonneg_left hDpos.le (Real.rpow_pos_of_pos hδ _)
   exact Real.rpow_le_rpow hδ.le (by linarith [ht.1]) (by positivity)
 
-
-
-
 theorem exists_curvatureDerivativeNorm_bound_on_buffered_slab
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b δ K : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J) (hδ : 0 < δ)
@@ -145,8 +132,6 @@ theorem exists_curvatureDerivativeNorm_bound_on_buffered_slab
       hcomplete (fun t ht x _ => hbound t ht x) (fun _ _ _ _ => trivial) k
   exact ⟨C, hCpos, fun t ht x => hderiv t ht x (mem_univ x)⟩
 
-
-
 theorem exists_curvatureDerivativeNorm_bound_on_buffered_slab_component
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (O : M)
     {a b δ K : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J) (hδ : 0 < δ)
@@ -159,8 +144,6 @@ theorem exists_curvatureDerivativeNorm_bound_on_buffered_slab_component
   exact F.exists_curvatureDerivativeNorm_bound_on_buffered_slab_on_set hC
     {x | (F.metric a).edist O x ≠ ⊤} hab hJ hδ hcomplete hbound
     (fun x hx => (F.metric a).ball_subset_finite_distance_component O x hx 1) k
-
-
 
 theorem exists_curvatureDerivativeNorm_two_bound_on_buffered_slab
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -178,8 +161,6 @@ theorem exists_curvatureDerivativeNorm_two_bound_on_buffered_slab
   refine ⟨C₀ + C₁ + C₂, by positivity, ?_⟩
   intro t ht x j hj
   interval_cases j <;> linarith [h₀ t ht x, h₁ t ht x, h₂ t ht x]
-
-
 
 theorem exists_curvatureDerivativeNorm_two_bound_on_buffered_slab_component
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (O : M)
@@ -211,9 +192,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
-
 theorem exists_hamilton_quadratic_lower_bound_on_buffered_slab
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {a b δ K : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J) (hδ : 0 < δ)
@@ -241,7 +219,6 @@ theorem exists_hamilton_quadratic_lower_bound_on_buffered_slab
   exact hamilton_quadratic_lower_bound_of_bound (F.connection t)
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) hτ x
     (hcurv t ht x) (hderiv t ht x) U W hU
-
 
 theorem exists_hamilton_quadratic_lower_bound_on_buffered_slab_component
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (O : M)
@@ -273,9 +250,6 @@ theorem exists_hamilton_quadratic_lower_bound_on_buffered_slab_component
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) hτ x
     (hcurv t ht x hx) (hderiv t ht x hx) U W hU
 
-
-
-
 theorem exists_compact_hamilton_perturbation_pos_of_buffered_curvature_bound
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) {O : M}
     (S : RicciFlow.SmoothExhaustion F O)
@@ -306,8 +280,6 @@ theorem exists_compact_hamilton_perturbation_pos_of_buffered_curvature_bound
   intro t ht x j hj
   exact hderiv t (by simpa only [add_neg_cancel] using ⟨ht.1.le, ht.2⟩) x j hj
 
-
-
 theorem hamiltonBlockPos_on_bounded_slab_of_smoothExhaustion
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁)) (O : M)
@@ -330,8 +302,6 @@ theorem hamiltonBlockPos_on_bounded_slab_of_smoothExhaustion
     (fun s hs => hcurv s (hsub hs)) t ⟨hc.2, ht.2⟩ x
   intro s hs y j hj
   exact hderiv s ⟨by linarith [hs.1], hs.2⟩ y j hj
-
-
 
 theorem hamiltonBlockPos_on_bounded_slab_component_of_smoothExhaustion
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
@@ -359,8 +329,6 @@ theorem hamiltonBlockPos_on_bounded_slab_component_of_smoothExhaustion
     (fun s hs => hcurv s (hsub hs)) t ⟨hc.2, ht.2⟩ x hx
   intro s hs y hy j hj
   exact hderiv s ⟨by linarith [hs.1], hs.2⟩ y hy j hj
-
-
 
 theorem scalar_harnack_on_bounded_slab_component_of_smoothExhaustion
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

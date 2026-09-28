@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.KarpLi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Bochner.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -34,12 +24,10 @@ namespace ConservativeHeatKernelData
 
 variable {g : RiemannianMetric n M}
 
-
 lemma integrable_kernel (H : ConservativeHeatKernelData g) (x : M) {t : ℝ}
     (ht : 0 < t) :
     Integrable (fun y ↦ H.kernel x y t) (volumeMeasure g) := by
   exact integrable_of_integral_eq_one (H.mass_one x t ht)
-
 
 lemma integrable_weighted_of_distance_lipschitz
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
@@ -66,7 +54,6 @@ lemma integrable_weighted_of_distance_lipschitz
       exact mul_le_mul_of_nonneg_right hsum (le_of_lt (H.positive x y t ht))
     _ = |f x| * H.kernel x y t +
         L * ((g.edist x y).toReal * H.kernel x y t) := by ring
-
 
 lemma abs_kernel_integral_sub_le_integral_distance
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
@@ -107,8 +94,6 @@ lemma abs_kernel_integral_sub_le_integral_distance
   rw [hsub, integral_const_mul] at havg
   simpa [Real.norm_eq_abs, mul_assoc, mul_left_comm, mul_comm] using havg
 
-
-
 theorem regularization_displacement_bound
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
     {L C : ℝ} (hL : 0 ≤ L)
@@ -119,9 +104,6 @@ theorem regularization_displacement_bound
     |(∫ y, f y * H.kernel x y t ∂volumeMeasure g) - f x| ≤ L * C := by
   exact (H.abs_kernel_integral_sub_le_integral_distance hf hLip x ht).trans
     (mul_le_mul_of_nonneg_left (hC x t ht ht1) hL)
-
-
-
 
 theorem tendstoUniformly_kernel_integral
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
@@ -148,8 +130,6 @@ theorem tendstoUniformly_kernel_integral
   exact ((H.abs_kernel_integral_sub_le_integral_distance hf hLip x ht).trans
     (mul_le_mul_of_nonneg_left (le_ciSup hb x) hL)).trans_lt hεt
 
-
-
 theorem kernel_integral_linear_growth
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
     {L C : ℝ} (hL : 0 ≤ L)
@@ -170,8 +150,6 @@ theorem kernel_integral_linear_growth
   rw [sub_add_cancel] at h
   linarith
 
-
-
 theorem continuousOn_kernel_evolution
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
     {L : ℝ} (hL : 0 ≤ L)
@@ -188,9 +166,6 @@ theorem continuousOn_kernel_evolution
     self_mem_nhdsWithin] with t ht ht0
   intro x
   simpa only [hrep t ht0 x] using ht x
-
-
-
 
 theorem integrable_gaussian_kernel_evolution_energy [PreconnectedSpace M]
     (H : ConservativeHeatKernelData g) (hcomplete : MetricComplete g)
@@ -228,7 +203,6 @@ theorem integrable_gaussian_kernel_evolution_energy [PreconnectedSpace M]
 
 end ConservativeHeatKernelData
 
-
 theorem integrable_of_distance_lipschitz (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : Continuous f) {L : ℝ}
     (hLip : ∀ x y, |f y - f x| ≤ L * (g.edist x y).toReal)
@@ -243,8 +217,6 @@ theorem integrable_of_distance_lipschitz (g : RiemannianMetric n M)
     _ ≤ |f x| + |f y - f x| := abs_add_le _ _
     _ ≤ |f x| + L * (g.edist x y).toReal := by linarith [hLip x y]
 
-
-
 theorem abs_integral_sub_le_integral_distance (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : Continuous f) {L : ℝ}
     (hLip : ∀ x y, |f y - f x| ≤ L * (g.edist x y).toReal)
@@ -258,8 +230,6 @@ theorem abs_integral_sub_le_integral_distance (g : RiemannianMetric n M)
   have havg := norm_integral_le_of_norm_le (hμ.const_mul L) hbound
   rw [integral_sub hint (integrable_const _), integral_const_mul] at havg
   simpa [Real.norm_eq_abs] using havg
-
-
 
 theorem tendstoUniformly_integral_of_distance_moment (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : Continuous f) {L : ℝ} (hL : 0 ≤ L)
@@ -287,7 +257,6 @@ namespace PoincareConjecture.LeviCivitaData
 open Set Poincare.Analysis.Heat
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem heat_gradient_bound_of_gaussian_energy_of_initial_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -385,8 +354,6 @@ theorem heat_gradient_bound_of_gaussian_energy_of_initial_bound
     simp only [mul_zero, Real.exp_zero, one_mul, sub_nonpos]
     exact Real.sqrt_le_sqrt (by have := hzero x; change q (0, x) ≤ B ^ 2 at this; linarith)
 
-
-
 theorem heat_gradient_bound_of_gaussian_energy
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -422,9 +389,6 @@ end PoincareConjecture.LeviCivitaData
 namespace PoincareConjecture.RiemannianMetric.ConservativeHeatKernelData
 
 open Set
-
-
-
 
 theorem kernel_evolution_gradient_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]

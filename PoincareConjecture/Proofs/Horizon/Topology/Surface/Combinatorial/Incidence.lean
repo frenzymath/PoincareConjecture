@@ -1,6 +1,3 @@
-
-
-
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Algebra.Field.ZMod
 import Mathlib.Algebra.CharP.Two
@@ -8,34 +5,14 @@ import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Logic.Relation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Surface.Combinatorial.Incidence
 
 open Matrix
 
-
-
-
 def EndpointConnected {V E : Type*} (ends : E → V × V) : Prop :=
   ∀ v w, Relation.EqvGen (fun a b => ∃ e, ends e = (a, b)) v w
-
 
 noncomputable def incidenceMatrix {V E : Type*}
     (ends : E → V × V) : Matrix E V (ZMod 2) := by
@@ -52,9 +29,6 @@ theorem incidenceMatrix_mulVec_apply {V E : Type*} [Fintype V]
   simp_rw [add_mul]
   rw [Finset.sum_add_distrib]
   simp
-
-
-
 
 theorem mem_ker_incidenceMatrix_iff {V E : Type*} [Fintype V] [Nonempty V]
     (ends : E → V × V) (hc : EndpointConnected ends) (x : V → ZMod 2) :
@@ -87,8 +61,6 @@ theorem mem_ker_incidenceMatrix_iff {V E : Type*} [Fintype V] [Nonempty V]
     funext e
     simp only [Matrix.mulVecLin_apply, incidenceMatrix_mulVec_apply]
     exact CharTwo.add_self_eq_zero c
-
-
 
 private lemma rank_add_ker_eq_card {V E : Type*} [Fintype V] [Fintype E]
     (A : Matrix E V (ZMod 2)) :
@@ -132,10 +104,6 @@ private lemma rank_ge_card_sub_one {V E : Type*} [Fintype V] [Fintype E]
       _ = 1 := finrank_span_singleton hone
   have hrank := rank_add_ker_eq_card (incidenceMatrix ends)
   omega
-
-
-
-
 
 theorem eulerCount_le_two {V E F : Type*}
     [Fintype V] [Fintype E] [Fintype F] [Nonempty V] [Nonempty F]

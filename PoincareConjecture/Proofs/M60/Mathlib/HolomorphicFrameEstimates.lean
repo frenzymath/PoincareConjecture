@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyTransformKernel
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,16 +9,10 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M60
 
-
-
 noncomputable def cauchyKernelNorm : ℝ := ∫ w : ℂ, ‖cauchyTransformKernel w‖
-
-
 
 theorem cauchyKernelNorm_nonneg : 0 ≤ cauchyKernelNorm :=
   integral_nonneg (fun _ => norm_nonneg _)
-
-
 
 theorem norm_fderiv_cauchyTransform_le
     {W : Type*} [NormedAddCommGroup W] [NormedSpace ℂ W]
@@ -48,15 +33,11 @@ theorem norm_fderiv_cauchyTransform_le
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V]
 
-
-
 theorem contDiff_operator_mul {A B : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hB : ContDiff ℝ 1 B) :
     ContDiff ℝ 1 (fun z => A z * B z) :=
   ((ContinuousLinearMap.compL ℂ V V V).bilinearRestrictScalars ℝ).isBoundedBilinearMap.contDiff.comp
     (hA.prodMk hB)
-
-
 
 theorem norm_fderiv_operator_mul_le
     {A B : ℂ → V →L[ℂ] V} {z : ℂ}
@@ -81,14 +62,10 @@ theorem norm_fderiv_operator_mul_le
       · exact (fderiv ℝ A z).le_opNorm d
     _ = (‖A z‖ * ‖fderiv ℝ B z‖ + ‖fderiv ℝ A z‖ * ‖B z‖) * ‖d‖ := by ring
 
-
-
 noncomputable def holomorphicFrameTerm (A : ℂ → V →L[ℂ] V) :
     ℕ → ℂ → V →L[ℂ] V
   | 0 => fun _ => 1
   | j + 1 => cauchyTransform (fun z => A z * holomorphicFrameTerm A j z)
-
-
 
 theorem contDiff_holomorphicFrameTerm {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A) (j : ℕ) :
@@ -96,8 +73,6 @@ theorem contDiff_holomorphicFrameTerm {A : ℂ → V →L[ℂ] V}
   induction j with
   | zero => exact contDiff_const
   | succ j ih => exact contDiff_cauchyTransform (contDiff_operator_mul hA ih) hc.mul_right
-
-
 
 theorem holomorphicFrameTerm_bounds {A : ℂ → V →L[ℂ] V}
     (hA : ContDiff ℝ 1 A) (hc : HasCompactSupport A)

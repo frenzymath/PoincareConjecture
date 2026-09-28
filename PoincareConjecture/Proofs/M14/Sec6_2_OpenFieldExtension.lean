@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.PullbackSectionSmooth
 import PoincareConjecture.Proofs.M14.Sec6_2_ProductExtension
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,11 +16,8 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
 
-
 set_option backward.isDefEq.respectTransparency false in
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_pullbackExtension_of_isOpen (hJ : IsOpen J)
     (hY : ContMDiffOn (𝓘(ℝ, ℝ))

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.ParametricInverse
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.PlaneArcs.Compression
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
-
 
 theorem exists_supported_family_extension
     (U : Opens E2)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.ConvexFrontierSides
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ClosedJordanSide
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

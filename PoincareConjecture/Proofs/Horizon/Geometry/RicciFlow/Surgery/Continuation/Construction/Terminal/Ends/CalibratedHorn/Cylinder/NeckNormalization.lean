@@ -6,12 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Balanced
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Connected
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +17,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem cylinder_at_neck_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]
@@ -91,8 +83,6 @@ theorem cylinder_at_neck_of_epsilon_le :
   have hcancel : G.symm '' (G '' (C.neck j).central_sphere) = (C.neck j).central_sphere :=
     G.toEquiv.symm_image_image _
   rw [image_comp, hcancel, hEsphere]
-
-
 
 theorem openCylinderModel_at_neck_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

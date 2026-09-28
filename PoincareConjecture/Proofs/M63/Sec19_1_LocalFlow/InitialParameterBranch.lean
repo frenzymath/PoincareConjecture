@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialForcingAgreement
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.StrictCenteredInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,9 +9,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M63.CenteredSpectralResidual
 
 open SpectralHeatNative QuasilinearDeTurckNative DeTurckMetricProducerNative
-
-
-
 
 theorem exists_initial_parameter_branch
     {iota E : Type*} [Countable iota] [NormedAddCommGroup E] [NormedSpace ℝ E]

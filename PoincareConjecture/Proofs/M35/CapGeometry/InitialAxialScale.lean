@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialNeckScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_initial_axial_scale_control {theta epsilon : ℝ}
     (htheta : theta < 1) (he : 0 < epsilon) :

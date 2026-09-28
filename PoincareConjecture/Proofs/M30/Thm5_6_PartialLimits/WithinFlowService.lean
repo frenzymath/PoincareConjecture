@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 def WithinBilinearFlowService : Prop :=
   ∀ {n : ℕ} {M : Type u} [TopologicalSpace M]

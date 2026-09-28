@@ -1,22 +1,5 @@
 import PoincareConjecture.Definitions.M82PrimeFactors
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

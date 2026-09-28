@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_IntervalLift
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace H]
   (IM : ModelWithCorners ℝ E H) {N : Type v} [TopologicalSpace N] [ChartedSpace H N]
-
-
-
 
 theorem exists_smooth_gaugeLift_of_maps (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

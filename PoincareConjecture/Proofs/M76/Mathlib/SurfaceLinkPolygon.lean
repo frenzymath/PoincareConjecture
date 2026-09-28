@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PureEdgeComplexPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem ncard_link_neighbors_eq_triangle_cofaces (K : SimplicialComplex ℝ E)
     (q : E) (v : (K.link q).vertices) :
@@ -37,10 +25,6 @@ theorem ncard_link_neighbors_eq_triangle_cofaces (K : SimplicialComplex ℝ E)
       _ = K.faceLink {q, v.val} := by
         simpa only [Finset.singleton_union] using K.faceLink_faceLink _ _ hdisj
   rw [hlink, K.ncard_faceLink_vertices_eq_cofaces, Finset.card_pair hqv]
-
-
-
-
 
 theorem exists_surface_link_polygon (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)

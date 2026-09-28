@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckUniformTimeJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCylinderReadout
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem metric_chart_pullback_apply
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -59,8 +48,6 @@ theorem metric_chart_pullback_apply
           (mfderiv 𝓘(ℝ, E) (𝓡 n) phi x w))
             ((extChartAt (𝓡 n) a).left_inv ha))
 
-
-
 theorem neck_metric_coefficient_fixed_native_chart
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
     [IsManifold (𝓡 3) ∞ M] (g : RiemannianMetric 3 M)
@@ -90,8 +77,6 @@ theorem neck_metric_coefficient_fixed_native_chart
   simp only [roundCylinderTensorCoefficient, roundCylinderPullback]
   exact congrArg₂ (fun v1 w1 : E₃ =>
     g.inner (coordinate ((chartAt E₂ q).symm p.1, p.2)) v1 w1) hv hw
-
-
 
 theorem metric_jets_bounded_on_compact_time_space
     {n : ℕ} {M : Type u} [TopologicalSpace M]

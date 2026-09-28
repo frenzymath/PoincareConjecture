@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.CubeCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

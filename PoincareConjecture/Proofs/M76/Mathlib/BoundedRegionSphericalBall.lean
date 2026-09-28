@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +9,6 @@ namespace Set
 variable {V E F : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem IsFinitePLBallPair.prod_singleton {s b : Set E}
     (hs : IsFinitePLBallPair V s b) (z : F) :

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenMVRepres
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenMVTail
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyLifting
 
-
-
 set_option autoImplicit false
 
 noncomputable section

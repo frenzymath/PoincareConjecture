@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_finite_subcomplex_neighborhood (K : SimplicialComplex ℝ E)
     {x : E} (hx : x ∈ interior K.space)
@@ -53,10 +41,6 @@ theorem exists_finite_subcomplex_neighborhood (K : SimplicialComplex ℝ E)
 
 variable [FiniteDimensional ℝ E] {K : SimplicialComplex ℝ E} {f : E → F}
 
-
-
-
-
 theorem AffineOnFaces.locallyPiecewiseAffineOn_of_local_faces
     (hf : K.AffineOnFaces f)
     (hlocal : ∀ x ∈ interior K.space, ∃ U ∈ 𝓝 x,
@@ -68,9 +52,6 @@ theorem AffineOnFaces.locallyPiecewiseAffineOn_of_local_faces
   obtain ⟨R, hR, hxR, hRK, hfR⟩ := hfL.exists_finite_neighborhood hL
     isCompact_singleton isOpen_interior (singleton_subset_iff.mpr ⟨hxL, hx⟩)
   exact ⟨R, hR, hxR (mem_singleton x), fun _ hy => (hRK hy).2, hfR⟩
-
-
-
 
 theorem AffineOnFaces.locallyPiecewiseAffineOn_of_locallyFinite
     (hf : K.AffineOnFaces f)

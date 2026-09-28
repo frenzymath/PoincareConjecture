@@ -4,15 +4,6 @@ import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M38
 private instance complexCircleDimension : Fact (Module.finrank ℝ ℂ = 1 + 1) := ⟨by simp⟩
 private instance euclideanCircleDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 2)) = 1 + 1) := ⟨by simp⟩
-
-
 
 noncomputable def circleCoordinates :
     Diffeomorph (𝓡 1) (𝓡 1) Circle UnitCircle ∞ where
@@ -46,16 +35,12 @@ noncomputable def circleCoordinates :
         simpa only [Function.comp_apply, Metric.mem_sphere, dist_zero_right,
           LinearIsometryEquiv.norm_map] using z.property)
 
-
 noncomputable def circlePeriodMap (s : ℝ) : UnitCircle :=
   circleCoordinates (Circle.exp (2 * Real.pi * s))
-
 
 theorem circlePeriodMap_smooth : ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) ∞ circlePeriodMap :=
   circleCoordinates.contMDiff.comp
     (contMDiff_circleExp.comp (contDiff_const.mul contDiff_id).contMDiff)
-
-
 
 theorem circlePeriodMap_eq_iff (s t : ℝ) :
     circlePeriodMap s = circlePeriodMap t ↔ ∃ n : ℤ, s = t + (n : ℝ) := by
@@ -77,7 +62,6 @@ theorem circlePeriodMap_eq_iff (s t : ℝ) :
   · rintro ⟨n, rfl⟩
     exact ⟨n, by ring⟩
 
-
 theorem circlePeriodMap_surjective : Function.Surjective circlePeriodMap := by
   intro b
   obtain ⟨s, hs⟩ := Circle.exp_surjective (circleCoordinates.symm b)
@@ -87,40 +71,30 @@ theorem circlePeriodMap_surjective : Function.Surjective circlePeriodMap := by
   dsimp [circlePeriodMap]
   rw [hscale, hs, Diffeomorph.apply_symm_apply]
 
-
 noncomputable def circleComplex (b : UnitCircle) : ℂ := (circleCoordinates.symm b).val
-
 
 theorem circleComplex_smooth : ContMDiff (𝓡 1) 𝓘(ℝ, ℂ) ∞ circleComplex :=
   contMDiff_coe_sphere.comp circleCoordinates.symm.contMDiff
-
 
 theorem circleRatio_smooth (b0 : UnitCircle) :
     ContMDiff (𝓡 1) 𝓘(ℝ, ℂ) ∞ (fun b => circleComplex b / circleComplex b0) := by
   have hdiv : ContDiff ℝ ∞ (fun z : ℂ => z / circleComplex b0) := contDiff_id.div_const _
   exact hdiv.contMDiff.comp circleComplex_smooth
 
-
 def circleLiftArc (b0 : UnitCircle) : Set UnitCircle :=
   {b | circleComplex b / circleComplex b0 ∈ Complex.slitPlane}
 
-
 theorem circleLiftArc_open (b0 : UnitCircle) : IsOpen (circleLiftArc b0) :=
   Complex.isOpen_slitPlane.preimage (circleRatio_smooth b0).continuous
-
 
 theorem circleLiftArc_self (b0 : UnitCircle) : b0 ∈ circleLiftArc b0 := by
   change (circleCoordinates.symm b0 : ℂ) / (circleCoordinates.symm b0 : ℂ) ∈ Complex.slitPlane
   rw [div_self (Circle.coe_ne_zero _)]
   exact Complex.one_mem_slitPlane
 
-
-
 noncomputable def circleAngleLift (b0 b : UnitCircle) : ℝ :=
   (Complex.arg (circleComplex b0) +
     (Complex.log (circleComplex b / circleComplex b0)).im) / (2 * Real.pi)
-
-
 
 theorem circleAngleLift_spec (b0 b : UnitCircle) :
     circlePeriodMap (circleAngleLift b0 b) = b := by
@@ -143,7 +117,6 @@ theorem circleAngleLift_spec (b0 b : UnitCircle) :
       (circleCoordinates.symm b / circleCoordinates.symm b0) = circleCoordinates.symm b := by
     simp
   rw [hm, Diffeomorph.apply_symm_apply]
-
 
 theorem circleAngleLift_smooth (b0 : UnitCircle) :
     ContMDiffOn (𝓡 1) 𝓘(ℝ, ℝ) ∞ (circleAngleLift b0) (circleLiftArc b0) := by

@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.R
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

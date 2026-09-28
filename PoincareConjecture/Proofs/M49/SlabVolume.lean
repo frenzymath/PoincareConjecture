@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.VolumeEvolution
 import PoincareConjecture.Proofs.M49.Lemma17_12_EventHistory
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem pinched_scalar_ge_neg_six {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -32,9 +21,6 @@ theorem pinched_scalar_ge_neg_six {M : Type u} [TopologicalSpace M]
   apply le_trans _ (ht.2.1 x (mem_univ x))
   apply (le_div_iff₀ hd).mpr
   nlinarith [ht.1]
-
-
-
 
 theorem volume_univ_eq_of_metric_isometry {n : ℕ}
     (H : GeneralizedParabolicRescalingTheory.{u} n)
@@ -52,8 +38,6 @@ theorem volume_univ_eq_of_metric_isometry {n : ℕ}
   rw [image_univ_of_surjective (f := (f : M → N)) f.surjective, Real.one_rpow,
     ENNReal.ofReal_one, one_mul] at he
   exact he
-
-
 
 theorem regularSlab_volume_le_exp_mul (H : GeneralizedParabolicRescalingTheory.{u} 3)
     {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -82,8 +66,6 @@ theorem regularSlab_volume_le_exp_mul (H : GeneralizedParabolicRescalingTheory.{
   rw [← he]
   exact pinched_scalar_ge_neg_six (hpinched r rt.2) _
 
-
-
 theorem regular_volume_le_exp_mul (H : GeneralizedParabolicRescalingTheory.{u} 3)
     (F : SurgeryFlowData.{u}) {a b : ℝ} (hab : a ≤ b)
     (hJ : Icc a b ⊆ F.time_domain) (hevents : Disjoint F.surgery_times (Ioc a b))
@@ -94,8 +76,6 @@ theorem regular_volume_le_exp_mul (H : GeneralizedParabolicRescalingTheory.{u} 3
   · exact regularSlab_volume_le_exp_mul H F.connection
       (F.regular_slabs a b hlt hJ hevents) hpinched ⟨le_rfl, hab⟩ ⟨hab, le_rfl⟩ hab
   · simp
-
-
 
 theorem preEvent_volume_le_exp_mul (H : GeneralizedParabolicRescalingTheory.{u} 3)
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopNormalNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_arc_normal_neighborhood
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B a b : ℝ}

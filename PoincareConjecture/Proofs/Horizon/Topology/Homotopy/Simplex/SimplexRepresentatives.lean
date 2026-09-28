@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Hurewicz.HurewiczMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Set Topology
@@ -16,7 +8,6 @@ open scoped Simplicial unitInterval
 universe w
 
 namespace Poincare.Topology
-
 
 theorem stdSimplex_face_map_range (n : ℕ) (i : Fin (n + 2)) :
     range (stdSimplex.map (S := ℝ) i.succAbove) =
@@ -50,7 +41,6 @@ theorem stdSimplex_face_map_range (n : ℕ) (i : Fin (n + 2)) :
       rw [hfilter, Finset.sum_singleton]
       rfl
 
-
 theorem singularSimplex_constant_faces_iff_boundary (X : TopCat.{w}) (n : ℕ)
     (s : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X) :
     (∀ i : Fin (n + 2), (TopCat.toSSet.obj X).δ i s = singularConstantSimplex X n x) ↔
@@ -77,7 +67,6 @@ theorem singularSimplex_constant_faces_iff_boundary (X : TopCat.{w}) (n : ℕ)
     rw [stdSimplex_face_map_range] at hz
     exact hz
 
-
 theorem exists_genLoop_of_singularSimplex_constant_faces (X : TopCat.{w}) (n : ℕ)
     (s : (TopCat.toSSet.obj X) _⦋n + 1⦌) (x : X)
     (hface : ∀ i : Fin (n + 2), (TopCat.toSSet.obj X).δ i s = singularConstantSimplex X n x) :
@@ -98,7 +87,6 @@ theorem exists_genLoop_of_singularSimplex_constant_faces (X : TopCat.{w}) (n : �
     ContinuousMap.comp_apply, ContinuousMap.coe_mk]
   change X.toSSetObjEquiv _ s (e.symm (e z)) = X.toSSetObjEquiv _ s z
   exact congrArg (X.toSSetObjEquiv _ s) (e.symm_apply_apply z)
-
 
 theorem exists_genLoop_quotient_map (n : ℕ) {Q X : Type*}
     [TopologicalSpace Q] [TopologicalSpace X]

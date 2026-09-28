@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.CollarBottomImageClosure
 import PoincareConjecture.Proofs.M76.Mathlib.OrdinaryCapRimSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.ordinary_rim_mem_closure_above
     {S s d b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β t : ℝ}
@@ -43,10 +31,6 @@ theorem AlexanderCollarSlab.ordinary_rim_mem_closure_above
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.ordinary_cap_mem_both_height_closures
     {S s d b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β t : ℝ}

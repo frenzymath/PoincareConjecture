@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Construction.SelectedStep
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Reduction.MarkedEndpoints
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip _root_.Dehn
 

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDomainBoundaryCollar
 import PoincareConjecture.Proofs.M76.Rigidity.CircleSlabInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
 
 theorem PLDomain.exists_opposite_small_boundary_collars
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

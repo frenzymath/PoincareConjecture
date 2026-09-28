@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Carrier
 import Mathlib.Topology.Compactness.SigmaCompact
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularNormalStage
 import PoincareConjecture.Proofs.M47.TerminalRegularNormalMaps
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,12 +15,9 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
 def terminalRegularStageSource (F : SurgeryFlowData.{u}) (base Q A : ℝ)
     (center : (F.slice base).carrier) : TopologicalSpace.Opens (F.slice base).carrier :=
   ⟨(F.metric base).ball center (A / Real.sqrt Q), M04.initial_ball_isOpen _ _ _⟩
-
-
 
 structure TerminalRegularStageData
     (S : RepairedControlledSchedulesData.{u}) (B : M47ComponentAnalyticBounds.{u} S.setup.C)
@@ -117,8 +105,6 @@ structure TerminalRegularStageData
   good : ∀ i, TerminalSourceJetsG4Good S B p O H
     (terminalRegularStageSource F base Q A center) cylinder flow
       (rNext := r) (L := L) (eta := 1) (cover.chart i)
-
-
 
 theorem terminalSource_regular_stage_family
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

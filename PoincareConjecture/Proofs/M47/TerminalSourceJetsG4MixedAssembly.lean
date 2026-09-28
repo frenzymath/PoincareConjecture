@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsG4Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceJetsG4_eventually_mixed
     {α : Type v} (l : Filter α)

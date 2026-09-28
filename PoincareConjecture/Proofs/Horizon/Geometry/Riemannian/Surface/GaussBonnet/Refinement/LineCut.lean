@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Fans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Permutation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
 
 def coordinateLineCutParentBasis
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) :
@@ -47,7 +38,6 @@ theorem coordinateLineCutParameter_mem
   ⟨affineCutPoint.parameter_pos f _ _ h0 h1,
     affineCutPoint.parameter_lt_one f _ _ h0 h1⟩
 
-
 def coordinateLineCutBasis
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ)
@@ -67,7 +57,6 @@ def coordinateLineCutBasis
     simp [coordinateLineCutBasis, Equiv.swap_apply_def,
       affineCutPoint, triangleCutParameter]
 
-
 theorem coordinateLineCutBasis_edgeModelPosition
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ)
@@ -86,7 +75,6 @@ theorem coordinateLineCutBasis_hull_subset
   simp only [coordinateLineCutBasis, AffineBasis.coe_reindex, EquivLike.range_comp]
   rw [← coordinateLineCutParentBasis_hull b]
   exact coordinateSplitBasis_hull_subset _ _ i
-
 
 theorem coordinateLineCutBasis_hull_edgeModelPosition
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -109,8 +97,6 @@ theorem coordinateLineCutBasis_hull_edgeModelPosition
     · exact ⟨1, coordinateLineCutBasis_edgeModelPosition b f h0 h1 i 1⟩
     · exact ⟨2, coordinateLineCutBasis_edgeModelPosition b f h0 h1 i 2⟩
 
-
-
 theorem coordinateLineCutBasis_edgeVertices (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -122,7 +108,6 @@ theorem coordinateLineCutBasis_edgeVertices (M : TriangleMesh)
   rw [M.edgeVertices_val]
   exact coordinateLineCutBasis_edgeModelPosition _ f h0 h1 i k
 
-
 theorem coordinateLineCutBasis_mem_edgeMeshFor (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -133,8 +118,6 @@ theorem coordinateLineCutBasis_mem_edgeMeshFor (M : TriangleMesh)
   classical
   rw [M.edgeMeshFor_triangles]
   cases i <;> simp [TriangleMesh.edgePatternTriangles]
-
-
 
 theorem coordinateLineCutBasis_cellCarrier (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -154,8 +137,6 @@ theorem coordinateLineCutBasis_cellCarrier (M : TriangleMesh)
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem coordinateLineCutBasis_angle (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -168,8 +149,6 @@ theorem coordinateLineCutBasis_angle (g : RiemannianMetric 2 S)
         ((if i then (Equiv.swap 1 2).trans (Equiv.swap 0 1)
           else Equiv.swap 0 1).symm k) :=
   coordinateTriangleAngle_reindex g F _ _ k
-
-
 
 theorem sum_coordinateLineCutBasis_angles (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -187,8 +166,6 @@ theorem sum_coordinateLineCutBasis_angles (g : RiemannianMetric 2 S)
   simp only [coordinateLineCutBasis, sum_coordinateTriangleAngle_reindex]
   rw [sum_coordinateSplitBasis_angles g F _ hF hFi hb']
   simp only [coordinateLineCutParentBasis, sum_coordinateTriangleAngle_reindex]
-
-
 
 theorem coordinateLineCutBasis_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -213,8 +190,6 @@ theorem coordinateLineCutBasis_vertex_contribution (g : RiemannianMetric 2 S)
   simp only [coordinateLineCutBasis, coordinateTriangle_vertex_contribution_reindex]
   rw [coordinateSplitBasis_vertex_contribution g F _ hF hFi hb', hq]
   simp only [coordinateLineCutParentBasis, coordinateTriangle_vertex_contribution_reindex]
-
-
 
 theorem coordinateLineCutBasis_new_vertex_fan (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

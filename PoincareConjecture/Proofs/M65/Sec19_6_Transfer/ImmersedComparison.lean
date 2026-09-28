@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFilled
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedWeightedComparison
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,11 +14,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b circumference : ℝ}
-
-
-
-
-
 
 theorem m65ImmersedFillingAreaComparison_of_diskComparison
     (F : RicciFlow 3 M (Icc a b)) (P : M62.CircleProductData F circumference)
@@ -84,10 +69,6 @@ theorem m65ImmersedFillingAreaComparison_of_diskComparison
   have hnonpos : A0 t - m65RestartedAreaProfile F s (A0 s) t ≤ 0 := by
     nlinarith [m65AreaWeight_pos F t]
   exact sub_nonpos.mp hnonpos
-
-
-
-
 
 theorem m65ImmersedFillingAreaComparison_of_embedded
     (F : RicciFlow 3 M (Icc a b)) (V : M64ThreeDimensionalFlowConclusion F)

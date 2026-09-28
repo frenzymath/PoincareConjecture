@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceWholeNeckBackwardData
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,23 +25,15 @@ variable {epsilon C A : ℝ}
     EpsilonNeck G.limitMetric}
   (D : WholeNeckBackwardData H W G sigma V)
 
-
-
 def sourceIndex (k : ℕ) : ℕ :=
   W.high_index (G.subsequence (sigma (k + D.offset)))
-
-
 
 def normalization (k : ℕ) : ℝ :=
   (E (D.sourceIndex k + H.shift)).flow.scalar
     ⟨(E (D.sourceIndex k + H.shift)).time, (E (D.sourceIndex k + H.shift)).basepoint⟩
 
-
-
 theorem normalization_pos (k : ℕ) : 0 < D.normalization k :=
   H.base_scalar_pos (D.sourceIndex k)
-
-
 
 theorem half_window (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -64,8 +48,6 @@ theorem half_window (k : ℕ) :
     D.normalization k * (D.neck k).scale ^ 2 at h
   linarith only [h]
 
-
-
 def sourceFlow (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -77,8 +59,6 @@ def sourceFlow (k : ℕ) :
   exact GeneralizedStrongNeck.buffered_global_flow (D.neck k) (D.raw k)
     (D.normalization k) (D.normalization_pos k) (V.scale ^ 2 / 2)
     (half_pos (sq_pos_of_pos V.scale_pos)) (D.half_window k)
-
-
 
 theorem sourceFlow_metric_at_zero (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -102,8 +82,6 @@ theorem sourceFlow_metric_at_zero (k : ℕ) :
     (D.neck k) (D.raw k) (D.normalization k) (D.normalization_pos k)
     (V.scale ^ 2 / 2) (half_pos (sq_pos_of_pos V.scale_pos)) (D.half_window k)
 
-
-
 theorem sourceFlow_metric_eq_restriction (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -117,8 +95,6 @@ theorem sourceFlow_metric_eq_restriction (k : ℕ) :
   exact GeneralizedStrongNeck.buffered_global_flow_metric_eq_restriction
     (D.neck k) (D.raw k) (D.normalization k) (D.normalization_pos k)
     (V.scale ^ 2 / 2) (half_pos (sq_pos_of_pos V.scale_pos)) (D.half_window k)
-
-
 
 theorem sourceFlow_physical_time_mem (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace

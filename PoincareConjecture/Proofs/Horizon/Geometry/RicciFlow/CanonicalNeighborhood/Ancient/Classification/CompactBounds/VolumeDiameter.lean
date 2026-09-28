@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Twisted.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Main
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace PoincareConjecture
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space RicciFlow.smallMeasurableSpace
   RicciFlow.smallBorelSpace
-
-
 
 theorem normalized_compact_uniform_scalar_upper
     (P : M27KappaAlternativePredecessors.{u})
@@ -64,8 +51,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem compact_volume_le_of_metricDiameter_lt
     (P : M27KappaAlternativePredecessors.{u}) (K : AncientKappaSolution 3 M)
     (hcompact : IsCompact (univ : Set M)) (p : M)
@@ -76,8 +61,6 @@ theorem compact_volume_le_of_metricDiameter_lt
     (fun x _ => compact_mem_ball_of_metricDiameter_lt (K.flow.metric 0) hcompact hdiam p x)
 
 end VolumeComparison
-
-
 
 theorem normalized_compact_volume_diameter_bounds
     (P : M27KappaAlternativePredecessors.{u})

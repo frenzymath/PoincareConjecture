@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,15 +15,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {γ γ' : ℝ → G.Point} {J : Set ℝ}
   {Y : ∀ s, G.Horizontal (γ s)} {Y' : ∀ s, G.Horizontal (γ' s)}
 
-
-
 def pullbackExtensionCongr (E : M14PullbackExtension G γ J Y)
     (hγ : γ = γ') (hY : ∀ s ∈ J, HEq (Y s) (Y' s)) :
     M14PullbackExtension G γ' J Y' := by
   subst γ'
   exact { E with agrees := fun s hs => (E.agrees s hs).trans (eq_of_heq (hY s hs)) }
-
-
 
 theorem horizontalCovariantDerivative_congr
     (E : M14PullbackExtension G γ J Y) (hγ : γ = γ')
@@ -45,8 +33,6 @@ private theorem section_apply_heq (S : HorizontalSection G.spacetime)
     {q r : G.Point} (h : q = r) : HEq (S q) (S r) := by
   cases h
   rfl
-
-
 
 def pullbackExtensionCongrOn (E : M14PullbackExtension G γ J Y)
     (hγ : Set.EqOn γ γ' J) (hY : ∀ s ∈ J, HEq (Y s) (Y' s)) :
@@ -76,8 +62,6 @@ private theorem pullbackDerivative_heq (S : ℝ → HorizontalSection G.spacetim
   cases h
   cases hv
   rfl
-
-
 
 theorem horizontalCovariantDerivative_congrOn
     (E : M14PullbackExtension G γ J Y) (hγ : Set.EqOn γ γ' J)

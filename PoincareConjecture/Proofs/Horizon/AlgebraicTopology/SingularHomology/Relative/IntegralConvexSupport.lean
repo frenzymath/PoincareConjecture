@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Maye
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphere.IntegralSphereVanishing
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphere.IntegralSphereBase
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

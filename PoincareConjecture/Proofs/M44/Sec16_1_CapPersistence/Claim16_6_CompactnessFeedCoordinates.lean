@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.FiniteDimensional
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M44
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V]
-
-
-
-
 
 theorem exists_common_coordinate_limit
     {U : ℕ → Set E} (hU : ∀ i, IsOpen (U i)) (f : ℕ → E → V)
@@ -65,8 +51,6 @@ theorem exists_common_coordinate_limit
     exact fun x _ => congrArg (fun g => iteratedFDeriv ℝ m g x) hk
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ V] in
-
-
 
 theorem coordinate_limits_eq_on_overlap
     {f : ℕ → E → V} {b c : E → V} {U W : Set E}

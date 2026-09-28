@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.NestedComponents
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +12,6 @@ namespace PoincareConjecture.TerminalComponentPath
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} (K : TerminalComponentPath E)
-
-
 
 theorem exists_end_meeting_of_not_isCompact {A : Set K.component}
     (hclosed : IsClosed A) (hnot : ¬ IsCompact A) :
@@ -50,8 +41,6 @@ theorem exists_end_meeting_of_not_isCompact {A : Set K.component}
   refine ⟨e, fun n => nonempty_iff_ne_empty.mpr ?_⟩
   intro heq
   exact htrace n ∅ isCompact_empty (heq ▸ subset_rfl)
-
-
 
 theorem isCompact_diff_of_end_tail_cover {V : Set (E.extended.slice T).carrier}
     (hV : IsOpen V)

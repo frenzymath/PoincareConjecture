@@ -4,14 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -38,8 +30,6 @@ private theorem exists_support_interval {K : Set ℝ} {l r : ℝ}
   intro x hx
   exact ⟨hca.trans_le (ha.2 (mem_insert_of_mem _ hx)),
     (hb.2 (mem_insert_of_mem _ hx)).trans_lt hbd⟩
-
-
 
 theorem exists_compactSupport_primitive {φ : ℝ → ℝ} {l r : ℝ}
     (hφ : ContDiff ℝ ∞ φ) (hc : HasCompactSupport φ)
@@ -106,8 +96,6 @@ private theorem integrable_mul_test {C φ : ℝ → ℝ} {l r : ℝ}
   exact (hφ.continuousOn.mul hC).continuous_of_tsupport_subset isOpen_Ioo
     (tsupport_mul_subset_left.trans hs)
 
-
-
 theorem eqOn_const_of_integral_deriv_mul_eq_zero {C : ℝ → ℝ} {l r : ℝ}
     (hlr : l < r) (hC : ContinuousOn C (Ioo l r))
     (hweak : ∀ η : ℝ → ℝ, ContDiff ℝ ∞ η → HasCompactSupport η →
@@ -145,9 +133,6 @@ theorem eqOn_const_of_integral_deriv_mul_eq_zero {C : ℝ → ℝ} {l r : ℝ}
     Measure.eqOn_open_of_ae_eq ((ae_restrict_iff' measurableSet_Ioo).mpr hae)
       isOpen_Ioo hcont continuousOn_const
   exact ⟨c, fun x hx => sub_eq_zero.mp (hzero hx)⟩
-
-
-
 
 theorem intervalIntegral_eq_sub_of_weakDerivative {A B : ℝ → ℝ} {l r a b : ℝ}
     (hA : ContinuousOn A (Ioo l r)) (hB : ContinuousOn B (Ioo l r))
@@ -195,9 +180,6 @@ theorem intervalIntegral_eq_sub_of_weakDerivative {A B : ℝ → ℝ} {l r a b :
   change B b - (∫ x in a..b, A x) = c at hcb
   rw [hFa] at hca
   linarith
-
-
-
 
 theorem intervalIntegral_eq_sub_of_weakDerivative_Icc {A B : ℝ → ℝ} {a b : ℝ}
     (hab : a < b) (hA : ContinuousOn A (Icc a b)) (hB : ContinuousOn B (Icc a b))

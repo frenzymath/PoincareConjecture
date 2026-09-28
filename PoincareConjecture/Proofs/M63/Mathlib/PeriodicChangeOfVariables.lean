@@ -2,22 +2,11 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped intervalIntegral
 
 namespace Function.Periodic
-
-
 
 theorem integral_deriv_smul_comp_eq {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {f : ℝ → E} {p : ℝ} (hper : Function.Periodic f p) (hf : Continuous f)

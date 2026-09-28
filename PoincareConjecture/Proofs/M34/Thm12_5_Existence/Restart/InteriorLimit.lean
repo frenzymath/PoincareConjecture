@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.LocalExtraction
 import PoincareConjecture.Proofs.M34.Mathlib.CompatibleSmoothLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 open SpacetimeBounds
-
-
 
 structure MetricInteriorCoefficientLimit
     {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
@@ -41,8 +30,6 @@ structure MetricInteriorCoefficientLimit
       (fun k => iteratedFDeriv ℝ m
         (fun p : ℝ × StandardCapSpace => A.coefficients (subsequence k) p.1 p.2))
       (iteratedFDeriv ℝ m coefficients) atTop K
-
-
 
 theorem metricInteriorCoefficientLimit_exists
     {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}

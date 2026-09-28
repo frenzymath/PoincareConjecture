@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.OriginalDiskStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -18,10 +8,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem isFinitePLBallPair_original_interior_star
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.OrdinaryCylinder
 import PoincareConjecture.Proofs.M11.BoxCylinderMetric
 import PoincareConjecture.Proofs.M11.CylinderMetricEvaluation
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalComplexEdgeGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem inter_image_symm_eq_inter_diff
     {X : Type*} [TopologicalSpace X] (G : X ≃ₜ X)
@@ -46,8 +33,6 @@ theorem inter_image_symm_eq_inter_diff
     apply G.injective
     simpa [hfix hret]
 
-
-
 theorem inter_image_symm_eq_of_fixed
     {X : Type*} [TopologicalSpace X] (G : X ≃ₜ X)
     {A S : Set X}
@@ -67,15 +52,12 @@ theorem inter_image_symm_eq_of_fixed
     apply G.injective
     simpa [hfix hxa]
 
-
 theorem ncard_inter_image_symm_eq_of_fixed
     {X : Type*} [TopologicalSpace X] (G : X ≃ₜ X)
     {A S : Set X}
     (hfix : EqOn G id A) :
     (A ∩ (G.symm '' S)).ncard = (A ∩ S).ncard := by
   rw [inter_image_symm_eq_of_fixed G hfix]
-
-
 
 theorem ncard_untouched_edge_contacts_after_supported_move
     {X ι : Type*} [TopologicalSpace X] [Fintype ι]
@@ -84,9 +66,6 @@ theorem ncard_untouched_edge_contacts_after_supported_move
     ∀ i, (edges i ∩ (G.symm '' S)).ncard = (edges i ∩ S).ncard := by
   intro i
   exact ncard_inter_image_symm_eq_of_fixed G (hfixed i)
-
-
-
 
 theorem ncard_inter_image_symm_eq_sub_two
     {X : Type*} [TopologicalSpace X] (G : X ≃ₜ X)

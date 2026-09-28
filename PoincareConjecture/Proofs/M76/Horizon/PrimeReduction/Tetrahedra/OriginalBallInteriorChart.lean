@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInverseChart
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

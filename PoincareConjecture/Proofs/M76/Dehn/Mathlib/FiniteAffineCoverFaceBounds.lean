@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFiniteAffineCover
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem face_card_le_of_finite_affine_cover
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M56.PointGroups
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m56SurvivorSelection {A B : GeneralizedSliceCarrier.{u}}
     (C : SurgeryTopologyConclusion A B) (x : B.carrier) :

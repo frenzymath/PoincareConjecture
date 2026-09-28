@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedThreeStopAncestors
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SmallCurvature
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem seed_observed_search_bounds
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.AuxiliaryEnergy
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_MinimizingSequence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
-
-
 
 theorem backward_squarePath_velocity_clock (p : M14BackwardPath G T 0 tau x y)
     {s : ℝ} (hs : s ∈ Ioo 0 (Real.sqrt tau)) :
@@ -60,9 +50,6 @@ theorem backward_squarePath_velocity_clock (p : M14BackwardPath G T 0 tau x y)
   rw [hchain, map_smul, map_add, map_neg, hclock, hhorizontal]
   simp only [smul_eq_mul, add_zero, mul_neg, mul_one]
 
-
-
-
 theorem backward_squarePath_auxiliary_speed (p : M14BackwardPath G T 0 tau x y)
     {s : ℝ} (hs : s ∈ Ioo 0 (Real.sqrt tau)) :
     M14.auxiliarySpacetimeForm G.spacetime (p.curve (s ^ 2))
@@ -74,9 +61,6 @@ theorem backward_squarePath_auxiliary_speed (p : M14BackwardPath G T 0 tau x y)
   rw [M14.auxiliarySpacetimeForm_apply, hproj, backward_squarePath_velocity_clock p hs]
   unfold M14.pathSquareKinetic
   ring
-
-
-
 
 theorem backward_squarePath_edist_le_energy (p : M14BackwardPath G T 0 tau x y)
     {D a b C : ℝ}

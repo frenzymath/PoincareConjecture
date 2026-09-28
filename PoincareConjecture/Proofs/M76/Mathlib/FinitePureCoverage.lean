@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralCoverageCriterion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ section Incidence
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
 
-
-
-
 def HasTwoFullCofaces (K : SimplicialComplex 𝕜 E) (n : ℕ) (s : Finset E) : Prop :=
   ∃ t ∈ K.faces, ∃ u ∈ K.faces,
     s ⊆ t ∧ s ⊆ u ∧ t.card = n + 1 ∧ u.card = n + 1 ∧ t ≠ u
@@ -36,9 +23,6 @@ end Incidence
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem covers_convex_open_of_paired_facets (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)
@@ -94,9 +78,6 @@ theorem covers_convex_open_of_paired_facets (K : SimplicialComplex ℝ E)
     obtain ⟨t, ht, u, hu, hst, hsu, htcard, hucard, htu⟩ :=
       hpair s hs hsfacet ⟨x, intrinsicInterior_subset hxs, hxU⟩
     exact K.mem_interior_space_of_paired_facet hsfacet ht hu htcard hucard hst hsu htu hxs
-
-
-
 
 theorem mem_interior_space_of_paired_facets_at (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)

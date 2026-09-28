@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBoundaryMembership
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskParameter
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
 
 theorem inverse_region_image :
     (fun x => (T.inverse x : X)) '' (T.marked 0).space = R := by
@@ -41,7 +31,6 @@ theorem inverse_region_image :
 
 include T in
 
-
 theorem isCompact_region : IsCompact R := by
   rw [← T.inverse_region_image]
   exact ((T.marked 0).isCompact_space_of_finite (T.marked_finite 0)).image_of_continuousOn
@@ -52,10 +41,7 @@ variable [T2Space X]
 
 include T in
 
-
 theorem isClosed_region : IsClosed R := T.isCompact_region.isClosed
-
-
 
 theorem boundary_space_subset_region : (T.marked 1).space ⊆ (T.marked 0).space := by
   rw [T.boundary_space, T.region_space]

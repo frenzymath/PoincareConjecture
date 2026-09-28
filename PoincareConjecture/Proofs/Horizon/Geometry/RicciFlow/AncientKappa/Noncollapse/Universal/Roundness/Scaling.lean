@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +35,6 @@ private theorem ricciComplementEvaluation_eq_inner_operator
           ![v, w] := congrArg (fun T : TensorFiber (TangentSpace (𝓡 3) x) 2 => T ![v, w])
             (TensorFiber.operatorTensorEquiv.apply_symm_apply (D.ricciComplementTensor hD x)).symm
     _ = _ := rfl
-
 
 theorem ricciComplement_mem_tensorPinchingCone_iff
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -96,8 +86,6 @@ private theorem ricciComplementEvaluation_smul_pair
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {τ : ℝ}
-
-
 
 theorem ricciComplement_mem_of_rescaling
     (R : AncientRescaling K τ) {t : ℝ} (ht : t < 0)

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Com
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -36,7 +24,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
 
 theorem exists_two_cap_euclidean_enclosing_ball (C D : CapCertificate g)
     (hkind : D.model_kind = .euclidean)
@@ -171,9 +158,6 @@ private theorem exists_radial_collar_in_cap_overlap (C D : CapCertificate g)
       abs_of_pos (Real.exp_pos _)] at hx
     have hexp : Real.exp z.2 ≤ 1 := by simpa using hx
     exact (not_le_of_gt (Real.one_lt_exp_iff.mpr hz.2.1)) hexp
-
-
-
 
 theorem exists_two_cap_euclidean_ball_decomposition (C D : CapCertificate g)
     (hkind : D.model_kind = .euclidean)

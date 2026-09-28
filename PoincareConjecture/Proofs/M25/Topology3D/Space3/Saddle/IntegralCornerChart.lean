@@ -4,25 +4,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_integral_corner_chart :
     let z : ℝ → ℝ := fun t => Real.smoothTransition (3 * t - 1)

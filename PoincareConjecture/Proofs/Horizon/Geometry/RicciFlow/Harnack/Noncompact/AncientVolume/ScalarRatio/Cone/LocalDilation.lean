@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.QuadraticIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +8,6 @@ open scoped Topology
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X]
-
-
 
 theorem potential_eq_of_local_radial_variation
     (f : X → ℝ) (x z y : X)
@@ -69,8 +57,6 @@ theorem potential_eq_of_local_radial_variation
     nlinarith [hzero]
   rw [hbetween]
   nlinarith [hcancel]
-
-
 
 theorem potential_interpolation_of_local_radial_variation
     (f : X → ℝ) (x z y : X) {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshNeck
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SeparatingLimitCover
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_retained_positive_side_tube_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +14,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
 
 def planarProjection {v : E3} (J : E2 ≃ₗᵢ[Real] (Real ∙ v)ᗮ) (y : E3) : E2 :=
   J.symm ((Real ∙ v)ᗮ.orthogonalProjectionOnto y)
@@ -37,9 +34,6 @@ private theorem projection_height_decomposition {v : E3} (hv : ‖v‖ = 1)
     y = (J (planarProjection J y) : E3) + inner Real v y • v := by
   simpa [planarProjection, add_comm] using
     ((Poincare.Geometry.Euclidean.heightCoordinates hv).apply_symm_apply y).symm
-
-
-
 
 theorem exists_planar_clearance
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M08.WeightedJacobiCoefficients
 import PoincareConjecture.Proofs.M09.CoordinateConnectionBilinear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (x : M)
 
-
-
-
 theorem chartActionMetric_pos_of_target {z : ℝ × EuclideanSpace ℝ (Fin n)}
     (hz : z.2 ∈ (extChartAt (𝓡 n) x).target)
     (v : EuclideanSpace ℝ (Fin n)) (hv : v ≠ 0) :
@@ -33,17 +21,11 @@ theorem chartActionMetric_pos_of_target {z : ℝ × EuclideanSpace ℝ (Fin n)}
   apply M08.metricInChart_pos _ _ v hv
   simpa only [extChartAt_source] using (extChartAt (𝓡 n) x).map_target hz
 
-
-
-
 theorem chartActionMetric_symm_of_target {z : ℝ × EuclideanSpace ℝ (Fin n)}
     (hz : z.2 ∈ (extChartAt (𝓡 n) x).target) (v w : EuclideanSpace ℝ (Fin n)) :
     M08.chartActionMetric F T x z v w = M08.chartActionMetric F T x z w v := by
   apply M08.metricInChart_symm _ _ v w
   simpa only [extChartAt_source] using (extChartAt (𝓡 n) x).map_target hz
-
-
-
 
 theorem closedChartConnection_eq_open {C : Set ℝ} {s : ℝ}
     (hC : C ∈ 𝓝 s) {q : EuclideanSpace ℝ (Fin n)}
@@ -75,9 +57,6 @@ theorem closedChartConnection_eq_open {C : Set ℝ} {s : ℝ}
       (M08.chartMetricDualInverse_left F T x hq _).symm
     _ = _ := by rw [heq, M08.chartMetricDualInverse_left F T x hq]
 
-
-
-
 theorem closedChartConnection_eventuallyEq_open {C : Set ℝ} {s : ℝ}
     (hC : C ∈ 𝓝 s) {q : EuclideanSpace ℝ (Fin n)}
     (hq : q ∈ (extChartAt (𝓡 n) x).target) :
@@ -87,9 +66,6 @@ theorem closedChartConnection_eventuallyEq_open {C : Set ℝ} {s : ℝ}
   filter_upwards [(isOpen_interior.prod (isOpen_extChartAt_target (I := 𝓡 n) x)).mem_nhds
     (show (s, q) ∈ interior C ×ˢ (extChartAt (𝓡 n) x).target from ⟨hs, hq⟩)] with z hz
   exact closedChartConnection_eq_open F T x (mem_interior_iff_mem_nhds.mp hz.1) hz.2
-
-
-
 
 theorem closedChartConnection_fderivWithin_eq_open {C : Set ℝ} {s : ℝ}
     (hC : C ∈ 𝓝 s) {q : EuclideanSpace ℝ (Fin n)}

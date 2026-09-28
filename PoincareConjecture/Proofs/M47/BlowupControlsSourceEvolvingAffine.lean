@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckBufferedFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open Proofs.M47 M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem source_neck_affine_weighted_jet_le
     {lambda : ℝ} (hlambda : lambda ∈ Icc (0 : ℝ) 1)
@@ -48,8 +37,6 @@ theorem source_neck_affine_weighted_jet_le
   apply h.trans_eq
   dsimp only [f']
   rw [iteratedFDeriv_comp_add_right, hpoint]
-
-
 
 theorem source_neck_affine_coefficient_error_bound
     {epsilon lambda c K : ℝ} (hepsilon : 0 < epsilon)
@@ -113,8 +100,6 @@ theorem source_neck_affine_coefficient_error_bound
   rw [hfun]
   exact (source_neck_affine_weighted_jet_le ⟨hlambda.1.le, hlambda.2.le⟩ c _ hw
     f (0, z) j hf).trans (herror q _ haxis j hj i l)
-
-
 
 theorem exists_source_neck_family_coefficient_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (D : ℝ → RoundCylinderTwoTensor)

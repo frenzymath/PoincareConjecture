@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.SignedCharts
 import PoincareConjecture.Proofs.M76.Brown.BicollarOpenHalves
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_side_collars_of_closed_cover
     {X : Type*} [MetricSpace X] {N M : Set X}
@@ -59,8 +47,6 @@ theorem exists_side_collars_of_closed_cover
       negative_base := fun x => congrArg (Subtype.val : M → X) (hcm x) }
   exact ⟨C, rfl, rfl⟩
 
-
-
 theorem frontier_eq_of_closed_cover_side_collars
     {X : Type*} [TopologicalSpace X] {N M : Set X}
     (hN : IsClosed N) (hM : IsClosed M) (hcover : N ∪ M = univ)
@@ -97,8 +83,6 @@ theorem frontier_eq_of_closed_cover_side_collars
     by_contra hxM
     exact hx (interior_mono hcomp (hM.isOpen_compl.interior_eq.symm ▸ hxM))
 
-
-
 theorem nonempty_openFrontierCollapse_of_closed_cover_local_collars
     {X : Type*} [MetricSpace X] {N M : Set X}
     (hN : IsClosed N) (hM : IsClosed M) (hcover : N ∪ M = univ)
@@ -129,9 +113,6 @@ theorem nonempty_openFrontierCollapse_of_closed_cover_local_collars
   obtain ⟨U, hU, H, hbase, hp, hm, hz⟩ := hcollar
   exact ⟨hfront, hother, nonempty_openFrontierCollapse_of_open_bicollar hN
     (hfront.symm ▸ hcompact) (hfront.symm ▸ hne) hU H hbase hp hm hz⟩
-
-
-
 
 theorem closed_cover_sides_pi1_injective
     {X : Type*} [MetricSpace X] {N M : Set X}

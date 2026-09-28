@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Rigidity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.SphereMotions
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem sphere_motion_comp_local_isometry
     (g : RiemannianMetric n M) {f : M → UnitSphere n} {U : Set M}
@@ -45,8 +36,6 @@ theorem sphere_motion_comp_local_isometry
   rw [mfderiv_comp x (O.contMDiffAt.mdifferentiableAt (by simp))
     ((hf.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp))]
   exact (hfmetric x hx v w).trans (hOmetric (f x) _ _).symm
-
-
 
 theorem exists_sphere_motion_of_local_isometries [T2Space M] [CompactSpace M]
     (g : RiemannianMetric n M) {f k : M → UnitSphere n} {U : Set M}

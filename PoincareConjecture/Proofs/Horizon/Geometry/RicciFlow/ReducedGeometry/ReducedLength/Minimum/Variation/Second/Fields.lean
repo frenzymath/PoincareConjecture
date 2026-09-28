@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Chart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.SquareTime
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -104,6 +97,5 @@ theorem variationCovariantVelocity_chart (V : LVariation F T τ₁ τ₂ p)
   variationBaseField_pullback_chart V x _
     (coordinatePartialS_contDiffOn (variationChartDomain_open V x) _ (variationChart_contDiffOn V x))
     _ (fun r hr hx ↦ variationChart_baseVelocity V hr hx) D.velocity_extension hs hx ht
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

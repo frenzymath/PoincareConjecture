@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RawInnerNormalReturn
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +16,6 @@ private theorem affine_image_Icc (x d l u : ℝ) (hlu : l ≤ u) :
   change ((fun t => x + t) ∘ fun t => d * t) '' Icc l u = _
   rw [← uIcc_of_le hlu, image_comp, image_const_mul_uIcc, image_const_add_uIcc]
   rfl
-
-
-
-
-
 
 theorem m64Intrinsic_affine_inner_circle_properties
     (N : IntrinsicAnnulus) (x d : ℝ) (hd : d ≠ 0) :
@@ -49,12 +40,6 @@ theorem m64Intrinsic_affine_inner_circle_properties
   simp only [intrinsicBoundarySpeed, RiemannianMetric.tangentNorm,
     m64Intrinsic_curveVelocity_eq_deriv, hz, map_zero, Real.sqrt_zero] at hpos
   exact (lt_irrefl (0 : ℝ)) hpos
-
-
-
-
-
-
 
 theorem m64Intrinsic_affine_inner_circle_subarc
     (N : IntrinsicAnnulus) {x d D r l u : ℝ} (hD : 0 ≤ D)

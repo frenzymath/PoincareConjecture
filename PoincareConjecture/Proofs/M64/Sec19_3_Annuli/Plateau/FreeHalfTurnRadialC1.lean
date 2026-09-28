@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreeRa
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeRadialCompletion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseInteriorSmooth
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -31,9 +22,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "T" => m64AnnulusHalfTurn
-
-
-
 
 theorem auxiliaryCircle_free_ramp_halfTurn_radial_contMDiffOn
     (P : M62.CircleProductData F circumference)

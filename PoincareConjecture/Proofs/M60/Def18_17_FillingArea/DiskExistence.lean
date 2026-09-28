@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.RelativeSmoothing
 import PoincareConjecture.Proofs.M58.Cor18_28_Fillings
 import Mathlib.Geometry.Manifold.Metrizable
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -26,8 +16,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [SecondCountableTopology M]
-
-
 
 theorem m60_exists_c1_disk_of_null (γ : C1FreeLoopSpace (M := M))
     (hnull : IsNullHomotopicLoop γ) :
@@ -57,15 +45,11 @@ theorem m60_exists_c1_disk_of_null (γ : C1FreeLoopSpace (M := M))
     norm_num
   exact (hEq hz).trans (hboundary z)
 
-
-
 theorem m60_exists_lipschitz_disk_of_null (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (hnull : IsNullHomotopicLoop γ) :
     Nonempty (LipschitzSpanningDisk g γ) := by
   obtain ⟨F, hF, hboundary⟩ := m60_exists_c1_disk_of_null γ hnull
   exact ⟨Proofs.M58.spanningDiskOfC1 g γ F hF hboundary⟩
-
-
 
 theorem m60FillingData_of_null (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (hnull : IsNullHomotopicLoop γ) :

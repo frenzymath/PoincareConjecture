@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.PrescribedIrreducibleCappedDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalExteriorNonspherical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 open Set Metric Geometry Geometry.SeparatedSphereCaps

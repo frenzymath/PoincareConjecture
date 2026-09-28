@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M35
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 2 + 1) :=
   ⟨by simp⟩
 
-
 theorem sphere_chart_center (q : UnitTwoSphere) :
     chartAt (EuclideanSpace ℝ (Fin 2)) q q = 0 := by
   change stereographic' 2 (-q) q = 0
@@ -32,12 +22,9 @@ theorem sphere_chart_center (q : UnitTwoSphere) :
     2 (ne_zero_of_mem_unit_sphere (-q))).repr 0 = 0
   exact map_zero _
 
-
 theorem sphere_chart_target (q : UnitTwoSphere) :
     (chartAt (EuclideanSpace ℝ (Fin 2)) q).target = univ :=
   stereographic'_target (-q)
-
-
 
 theorem sphere_chart_pullback_inner (q : UnitTwoSphere)
     (v w : EuclideanSpace ℝ (Fin 2)) :
@@ -91,8 +78,6 @@ theorem sphere_chart_pullback_inner (q : UnitTwoSphere)
   rw [hderiv]
   exact U.symm.inner_map_map v w
 
-
-
 theorem roundCylinderGram_center (u : ℝ) (q : UnitTwoSphere) (s : ℝ) :
     roundCylinderGram u (chartAt (EuclideanSpace ℝ (Fin 2)) q)
       (chartAt (EuclideanSpace ℝ (Fin 2)) q q, s) =
@@ -110,8 +95,6 @@ theorem roundCylinderGram_center (u : ℝ) (q : UnitTwoSphere) (s : ℝ) :
   fin_cases i <;> fin_cases j <;>
     simp [roundCylinderCoordinateBasis, Matrix.diagonal,
       EuclideanSpace.inner_single_left]
-
-
 
 theorem roundCylinderGram_inv_center {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) :

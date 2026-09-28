@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Operations
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +25,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem jacobi_inner_le_of_minimizing_sectional_lower_bound
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}

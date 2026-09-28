@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.NumericalPrefixes
 import PoincareConjecture.Proofs.M45.PrefixWitness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -84,7 +76,6 @@ theorem delta_antitone : Antitone (delta S N C) := by
 theorem delta_le_seed (j : ℕ) : delta S N C j ≤ S.Delta0 :=
   (delta_antitone S N C (Nat.zero_le j)).trans_eq (delta_zero S N C)
 
-
 theorem r_next (n : ℕ) : r S N C (n + 2) = (canonical S N C n).rNext := by
   rw [r_agrees S N C (n + 1) (n + 2) le_rfl]
   change ((prefixAt S N C n).nextPrefix (noncollapse S N C n)
@@ -105,7 +96,6 @@ theorem kappa_next (n : ℕ) :
   congr 1
   apply Fin.ext
   simp only [Fin.val_last, prefix_index]
-
 
 theorem delta_next (n : ℕ) :
     delta S N C (n + 1) = (canonical S N C n).deltaNext := by
@@ -135,8 +125,6 @@ theorem height_antitone (j : ℕ) :
       (mul_nonneg (delta_pos S N C (j + 1)).le (r_pos S N C (j + 1)).le)
       (mul_nonneg (delta_pos S N C j).le (r_pos S N C j).le) hprod)
 
-
-
 noncomputable def schedule : GlobalSurgerySchedule S.constants where
   setup := S.setup
   epoch := surgeryEpochEntry
@@ -165,8 +153,6 @@ noncomputable def schedule : GlobalSurgerySchedule S.constants where
   kappa_le := fun j => kappa_antitone S N C (Nat.le_succ j)
   overlap_bound := height_antitone S N C
 
-
-
 theorem prefix_agreement (n : ℕ) (j : Fin ((prefixAt S N C n).i + 1)) :
     (schedule S N C).r j.val = (prefixAt S N C n).r j ∧
     (schedule S N C).kappa j.val = (prefixAt S N C n).kappa j ∧
@@ -177,8 +163,6 @@ theorem prefix_agreement (n : ℕ) (j : Fin ((prefixAt S N C n).i + 1)) :
     omega
   exact ⟨r_agrees S N C n j.val hj, kappa_agrees S N C n j.val hj,
     delta_le_prefix S N C n j.val hj⟩
-
-
 
 theorem restriction_agrees (i : ℕ) (hi : 0 < i) (j : Fin (i + 1)) :
     let p := (schedule S N C).parameterPrefix i hi
@@ -204,8 +188,6 @@ theorem overlap_eq (n : ℕ) :
     Nat.add_sub_cancel, Nat.add_one_ne_zero, if_false]
   exact (Set.Ico_union_Ico_eq_Ico (hmono (Nat.le_succ n))
     (hmono (Nat.le_succ (n + 1)))).symm
-
-
 
 theorem control_overlap (control : ℝ → ℝ)
     (hcontrol : ∀ j : ℕ, ∀ t ∈ surgeryEpochEntry j,

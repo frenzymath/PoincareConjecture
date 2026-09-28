@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Compact
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,8 +8,6 @@ open Set Metric Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_velocity_agreeing_on_finite_disjoint_compacts
     {ι E F : Type*} [Finite ι] [NormedAddCommGroup E] [NormedSpace Real E]

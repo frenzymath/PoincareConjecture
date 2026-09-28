@@ -1,14 +1,6 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology
 namespace Poincare.Parabolic
 
 variable {M E : Type*} [TopologicalSpace M] [UniformSpace E]
-
-
 
 theorem tendsto_joint_initial_of_tendstoUniformly
     {F : ℝ × M → E} {f : M → E} {x : M}
@@ -30,8 +20,6 @@ theorem tendsto_joint_initial_of_tendstoUniformly
     intro u hu
     exact tendsto_fst.eventually (hlim u hu)
   exact hprod.tendsto_comp hf tendsto_snd
-
-
 
 theorem continuousOn_nonneg_of_tendstoUniformly
     {F : ℝ × M → E} {f : M → E}
@@ -53,8 +41,6 @@ theorem continuousOn_nonneg_of_tendstoUniformly
     · exact tendsto_joint_initial_of_tendstoUniformly hlim hf.continuousAt
   · exact (hF.continuousAt ((isOpen_Ioi.prod isOpen_univ).mem_nhds
       ⟨ht, mem_univ x⟩)).continuousWithinAt
-
-
 
 theorem continuousOn_initialExtension_of_tendstoUniformly
     {F : ℝ × M → E} {f : M → E}

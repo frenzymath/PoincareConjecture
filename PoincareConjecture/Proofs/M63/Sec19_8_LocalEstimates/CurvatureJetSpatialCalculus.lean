@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SmoothRelabeling
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureVectorEvolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -26,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63ArcDerivative_metric_pairing
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -66,8 +52,6 @@ theorem m63ArcDerivative_metric_pairing
   rw [m62ArcDerivative, hpair.deriv]
   simp only [m62SpatialDerivative, map_smul, smul_apply, smul_eq_mul, mul_add]
 
-
-
 theorem m63CurvatureJetSquared_joint_contDiff [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) (i : ℕ) :
@@ -77,9 +61,6 @@ theorem m63CurvatureJetSquared_joint_contDiff [T2Space M]
   exact metric_pairing_contDiffOn F c hc.joint_smooth
     (fun z => m63CurvatureJet F c i z.2 z.1)
     (fun z => m63CurvatureJet F c i z.2 z.1) hjet hjet
-
-
-
 
 theorem m63CurvatureJetSquared_arcSecond_eq [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -126,9 +107,6 @@ theorem m63CurvatureJetSquared_arcSecond_eq [T2Space M]
       (fun y => 2 * P y) from funext hArc, hscale, hpair]
   ring
 
-
-
-
 theorem m63CurvatureJet_one_tangent
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Ioo a b) (x : ℝ) :
@@ -147,9 +125,6 @@ theorem m63CurvatureJet_one_tangent
   change 0 = (F.metric t).inner (c x t) (m63CurvatureJet F c 1 t x)
     (spatialUnitTangent F c t x) + m62CurvatureSquared F c t x at hpair
   linarith
-
-
-
 
 theorem m63CurvatureJetSquared_periodic [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

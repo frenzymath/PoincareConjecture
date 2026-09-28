@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.BoundaryRegularization
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskConclusion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ExactBoundaryDisk_of_disk
     {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -32,9 +18,6 @@ theorem m64ExactBoundaryDisk_of_disk
     ∃ D' : LipschitzSpanningDisk g gamma,
       (∀ z : LoopCircle, D'.map z = gamma z) ∧ D'.area = D.area := by
   exact m60Disk_regularize_boundary g D
-
-
-
 
 theorem m64DiskGluingConclusion_of_parametrized_estimates
     {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -64,9 +47,6 @@ theorem m64DiskGluingConclusion_of_parametrized_estimates
     obtain ⟨E1, hE1, harea⟩ := m64ExactBoundaryDisk_of_disk D1
     obtain ⟨D0, hD0⟩ := hreverse eta heta E1 hE1
     exact ⟨D0, by simpa only [harea] using hD0⟩
-
-
-
 
 theorem m64DiskAreaComparison_of_parametrized_suppliers
     {M : Type u} [TopologicalSpace M] [T2Space M]

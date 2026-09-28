@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bigons.Support
 
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 set_option backward.isDefEq.respectTransparency false

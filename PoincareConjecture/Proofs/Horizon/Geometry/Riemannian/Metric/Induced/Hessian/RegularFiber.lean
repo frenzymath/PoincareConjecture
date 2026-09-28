@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Hess
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +22,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance fiberHessian_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem exists_normal_hessian_correction_openRegularFiberMetric
     {g : RiemannianMetric (m + k) M} (D : LeviCivitaData g)
@@ -73,9 +64,6 @@ theorem exists_normal_hessian_correction_openRegularFiberMetric
       mvfderiv_const, zero_apply, sub_zero]
   rw [hz] at hi
   linarith
-
-
-
 
 theorem exists_hessian_restriction_coefficients_openRegularFiberMetric
     {g : RiemannianMetric (m + k) M} (D : LeviCivitaData g)

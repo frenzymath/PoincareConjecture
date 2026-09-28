@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.SubsetRank
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.RiemannianLimit
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle
 open Poincare.Alexandrov
 namespace PoincareConjecture
-
-
 
 theorem exists_maximal_rank_corner_counterexample_limit
     (m k : ℕ) (hn : 1 ≤ m+k) (θ : ℝ) (hθ : 0 < θ) :

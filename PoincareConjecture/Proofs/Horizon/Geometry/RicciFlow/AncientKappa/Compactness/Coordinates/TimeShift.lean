@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Normalized
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 namespace AncientPointedGeometricConvergence
-
-
 
 theorem pullback_metric_CInfinity_translate
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {g : ∀ k, ℝ → (C k).metric}
@@ -82,8 +72,6 @@ theorem pullback_metric_CInfinity_translate
     rfl
   rwa [hf, hl] at hs
 
-
-
 def translate
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {g : ∀ k, ℝ → (C k).metric}
     {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -131,8 +119,6 @@ namespace NormalizedKappaSolutionSequence
 
 local instance timeShiftSourceConnected {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
     (k : ℕ) : ConnectedSpace (S.term k).carrier.carrier := (S.term k).connectedSpace
-
-
 
 theorem interiorLimit_pullback_metric_CInfinity_unshifted
     {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)

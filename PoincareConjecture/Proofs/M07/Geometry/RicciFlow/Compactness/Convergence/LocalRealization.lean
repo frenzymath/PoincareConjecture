@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.SpatialJets
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
@@ -50,8 +43,6 @@ end RiemannianMetric
 
 namespace FlowCarrier
 
-
-
 theorem iteratedFDeriv_coordinateCoefficient_eq_of_eventuallyEq
     {n : ℕ} (C : FlowCarrier n) (q : C.carrier)
     (B : ∀ _t : ℝ, ∀ x : C.carrier, C.tangent x → C.tangent x → ℝ)
@@ -70,8 +61,6 @@ theorem iteratedFDeriv_coordinateCoefficient_eq_of_eventuallyEq
     filter_upwards [h] with x hx
     exact hx a b
   exact (heq.iteratedFDeriv ℝ r).self_of_nhds
-
-
 
 theorem exists_local_coordinate_realization {n : ℕ} (C : FlowCarrier n)
     (g : C.metric) (q : C.carrier) (t : ℝ) (p : EuclideanSpace ℝ (Fin n))
@@ -110,8 +99,6 @@ theorem exists_local_coordinate_realization {n : ℕ} (C : FlowCarrier n)
 end FlowCarrier
 
 namespace SmoothSpacetimeEmbedding
-
-
 
 theorem exists_local_coordinate_realization
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
@@ -180,8 +167,6 @@ theorem exists_local_coordinate_realization
 end SmoothSpacetimeEmbedding
 
 namespace PointedGeometricConvergence
-
-
 
 theorem eventually_exists_local_coordinate_realization
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

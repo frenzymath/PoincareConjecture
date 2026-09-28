@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceCapProjection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_outer_cap_graph
     (F : ℝ → Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)

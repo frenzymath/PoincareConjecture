@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocallyInjectiveFiberDescent
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace IsLocallyInjective
-
-
-
-
 
 theorem convex_cell_overlap
     {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

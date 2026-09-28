@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentHeight
 import PoincareConjecture.Proofs.M76.Mathlib.ContinuousGraphShear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PlanarSegment
-
-
 
 theorem fst_mem_uIoo_of_mem_segment {a b q : ℝ × ℝ} (hab : a.1 ≠ b.1)
     (hq : q ∈ segment ℝ a b) (hqa : q ≠ a) (hqb : q ≠ b) :
@@ -38,8 +28,6 @@ theorem fst_mem_uIoo_of_mem_segment {a b q : ℝ × ℝ} (hab : a.1 ≠ b.1)
     exact mem_uIoo_of_gt (lt_of_le_of_ne hm.1.1 hqb'.symm)
       (lt_of_le_of_ne hm.1.2 hqa')
 
-
-
 theorem exists_local_line_of_nonvertical {a b q : ℝ × ℝ} (hab : a.1 ≠ b.1)
     (hq : q ∈ segment ℝ a b) (hqa : q ≠ a) (hqb : q ≠ b) :
     ∃ e : (ℝ × ℝ) ≃ₜ (ℝ × ℝ), (e q).2 = 0 ∧
@@ -54,9 +42,6 @@ theorem exists_local_line_of_nonvertical {a b q : ℝ × ℝ} (hab : a.1 ≠ b.1
   filter_upwards [hnhds] with x hx
   rw [mem_segment_iff hab, hzero x]
   exact and_iff_right (uIoo_subset_uIcc_self hx)
-
-
-
 
 theorem exists_local_line {a b q : ℝ × ℝ}
     (hq : q ∈ segment ℝ a b) (hqa : q ≠ a) (hqb : q ≠ b) :

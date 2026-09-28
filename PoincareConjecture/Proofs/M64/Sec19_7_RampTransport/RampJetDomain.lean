@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.PeriodicSmoothApproxi
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductIdentities
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -31,16 +18,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
   {W : Type v} [NormedAddCommGroup W] [NormedSpace ℝ W]
 
-
-
 noncomputable def rampJetCurrent (P : M62.CircleProductData F circumference)
     (time : ℝ) (rho : W → P.charts.Point) (z : W × W × W) : ℝ :=
   (P.flow.metric time).inner (rho z.1)
     (mfderiv 𝓘(ℝ, W) (𝓡 (n + 1)) rho z.1 z.2.1)
     (P.charts.circleUnit (rho z.1))
-
-
-
 
 theorem rampJetCurrent_continuousOn
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -72,8 +54,6 @@ theorem rampJetCurrent_continuousOn
   rw [FiberBundle.continuousWithinAt_totalSpace] at h
   exact h.2
 
-
-
 theorem rampJetCurrent_actual
     (P : M62.CircleProductData F circumference) (time : ℝ)
     {e : P.charts.Point → W} (he : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, W) ∞ e)
@@ -94,9 +74,6 @@ theorem rampJetCurrent_actual
     mfderiv (𝓡 (n + 1)) 𝓘(ℝ, W) e (gamma x) (curveVelocity gamma x) at hd
   dsimp only [rampJetCurrent, Function.comp_apply]
   rw [hd, hleft, hre]
-
-
-
 
 theorem ramp_iff_circle_current_positive
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -125,9 +102,6 @@ theorem ramp_iff_circle_current_positive
       (P.charts.circleUnit (gamma x))
     rw [map_smul, smul_apply, smul_eq_mul]
     exact mul_pos (inv_pos.mpr hspeed) (hcurrent x)
-
-
-
 
 theorem exists_periodic_smooth_ramp_approximation
     [FiniteDimensional ℝ W]

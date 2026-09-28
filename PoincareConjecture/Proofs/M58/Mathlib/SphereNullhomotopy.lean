@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M02.CubeSphere
 import PoincareConjecture.Proofs.M02.CubePrescribedNullhomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace PoincareConjecture.Proofs.M58
-
-
-
 
 theorem homotopic_const_of_cube_quotient
     {S X : Type*} [TopologicalSpace S] [T2Space S] [TopologicalSpace X]
@@ -65,9 +52,6 @@ theorem homotopic_const_of_cube_quotient
   · intro s
     obtain ⟨b, rfl⟩ := hq s
     exact (hF 1 b).trans (H.apply_one b)
-
-
-
 
 theorem sphere_homotopic_const_of_pi_trivial
     {X : Type*} [TopologicalSpace X] [PathConnectedSpace X]

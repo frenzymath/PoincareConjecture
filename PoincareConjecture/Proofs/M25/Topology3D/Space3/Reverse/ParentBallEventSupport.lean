@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventContainment
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.exists_reunion_core_tube_buffer
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -62,7 +52,6 @@ theorem RegularSurgeryEvent.exists_reunion_core_tube_buffer
   apply disjoint_left.mpr
   rintro y hy ⟨p, hp, rfl⟩
   exact (hbuffer hp).2 hy
-
 
 theorem RegularSurgeryEvent.closedAnnulus_inter_closedRegion_subset_cap
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -223,7 +212,6 @@ theorem RegularSurgeryEvent.closedAnnulus_inter_closedRegion_subset_cap
   · exact hmid (image_mono ball_subset_closedBall (hin hmidP))
   · exact hout hyP hy.1
 
-
 theorem RegularSurgeryEvent.mid_outside_of_movable_child
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u)
@@ -351,7 +339,6 @@ theorem RegularSurgeryEvent.mid_outside_of_movable_child
   have hmid : T (0, 0) ∉ (A j).closedRegion :=
     hLout ⟨(0, 0), ⟨rfl, by linarith only [hal], le_rfl⟩, rfl⟩
   simpa only [T, hTformula, mul_zero, add_zero] using hmid
-
 
 theorem RegularSurgeryEvent.exists_compression_support_domain
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

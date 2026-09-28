@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.CocycleFaceSh
 import PoincareConjecture.Proofs.M76.Mathlib.ComplexCycleLabels
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore

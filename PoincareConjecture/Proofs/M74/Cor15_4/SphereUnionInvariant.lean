@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M74ConnectedSumReduction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -24,17 +13,11 @@ namespace SmoothDisjointUnionData
 variable {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
   {C : GeneralizedSliceCarrier.{u}}
 
-
-
-
 theorem region_eq_univ_of_isConnected (D : SmoothDisjointUnionData pieces C)
     (hC : IsConnected (Set.univ : Set C.carrier)) (i : Fin n)
     (hi : (D.region i).Nonempty) : D.region i = Set.univ := by
   let : PreconnectedSpace C.carrier := ⟨hC.isPreconnected⟩
   exact IsClopen.eq_univ ⟨D.region_closed i, D.region_open i⟩ hi
-
-
-
 
 theorem exists_diffeomorph_of_isConnected (D : SmoothDisjointUnionData pieces C)
     (hC : IsConnected (Set.univ : Set C.carrier)) :
@@ -62,19 +45,12 @@ end SmoothDisjointUnionData
 
 namespace M74
 
-
-
-
-
 def SphereUnion (C : GeneralizedSliceCarrier.{u}) : Prop :=
   ∃ (n : ℕ) (pieces : Fin n → GeneralizedSliceCarrier.{u}),
     Nonempty (SmoothDisjointUnionData pieces C) ∧
       ∀ i, Nonempty (Diffeomorph (𝓡 3) (𝓡 3) (pieces i).carrier ThreeSphere ∞)
 
 namespace SphereUnion
-
-
-
 
 theorem of_disjointUnion {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}} (D : SmoothDisjointUnionData pieces C)
@@ -83,18 +59,12 @@ theorem of_disjointUnion {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{
     SphereUnion C :=
   ⟨n, pieces, ⟨D⟩, hpieces⟩
 
-
-
-
 theorem initial {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}} (A : SmoothFiniteConnectedSumAssembly pieces C)
     (hpieces : ∀ i,
       Nonempty (Diffeomorph (𝓡 3) (𝓡 3) (pieces i).carrier ThreeSphere ∞)) :
     SphereUnion A.initial :=
   of_disjointUnion A.disjoint_union hpieces
-
-
-
 
 theorem nonempty_diffeomorph_threeSphere {C : GeneralizedSliceCarrier.{u}}
     (h : SphereUnion C) (hC : IsConnected (Set.univ : Set C.carrier)) :

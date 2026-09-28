@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroProtectedCoreCons
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedHandleComparison
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedAtlasCorrection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,17 +19,9 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : Fin 0 ↪ Fin 0 
 local notation "D" => coordinateCylinder J
 local notation "pi" => latticeCoordinateProjection (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 
-
-
-
 instance hamiltonZeroLatticeHandleT2 : T2Space W := by
   let : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
   exact hamiltonZeroHandleProductEquiv.isEmbedding.t2Space
-
-
-
-
-
 
 theorem exists_hamilton_zero_handle_straightening
     (h : OpenPartialHomeomorph CubeShell.Ambient V3) (hsource : h.source = univ)

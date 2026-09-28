@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.ProjectiveDoubleModel
 import PoincareConjecture.Proofs.M25.AppA_21_Local.ClosedComponentPacking
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -265,9 +255,6 @@ private theorem positive_double_of_cut_covers
     refine ⟨N.coordinate_map_mem (hdom hzO), ?_⟩
     rw [N.coordinate_inverse_coordinate_map (hdom hzO)]
     exact ⟨by nlinarith [mul_pos heta hz.2.1], (hheight hzO).2⟩
-
-
-
 
 theorem capCertificates_nonempty_projective_double_of_positive_compact_side
     (C1 C2 : ClosedModelCapData g)

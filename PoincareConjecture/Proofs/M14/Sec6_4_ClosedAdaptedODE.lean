@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedJacobiODE
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (x : M)
 
-
-
 noncomputable def closedCoordinateAdaptedOperator (C : Set ℝ)
     (q : ℝ → EuclideanSpace ℝ (Fin n)) (s : ℝ) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
@@ -31,8 +20,6 @@ noncomputable def closedCoordinateAdaptedOperator (C : Set ℝ)
     (1 / 2 : ℝ) • ((M08.chartMetricDualInverse F T x (s, q s)).comp
       (M08.timeWithinFDeriv C (extChartAt (𝓡 n) x).target
         (M08.chartActionMetric F T x) (s, q s)))
-
-
 
 theorem closedCoordinateAdaptedOperator_contDiffOn
     {C : Set ℝ} (hC : UniqueDiffOn ℝ C) (htime : ∀ s ∈ C, T - s ^ 2 ∈ J)
@@ -50,9 +37,6 @@ theorem closedCoordinateAdaptedOperator_contDiffOn
     hpoint hmap
   exact hΓ.neg.sub ((contDiffOn_const (c := (1 / 2 : ℝ))).smul (hB.clm_comp hH))
 
-
-
-
 theorem exists_closedCoordinateAdapted_solution
     {a b t₀ : ℝ} (hab : a < b) (htime : ∀ s ∈ Icc a b, T - s ^ 2 ∈ J)
     {q : ℝ → EuclideanSpace ℝ (Fin n)} (hq : ContDiffOn ℝ ∞ q (Icc a b))
@@ -65,9 +49,6 @@ theorem exists_closedCoordinateAdapted_solution
     htime hq hmem
   obtain ⟨v, hv₀, hvd⟩ := M08.exists_linear_interval_solution _ hL.continuousOn ht₀ v₀
   exact ⟨v, hv₀, M08.linear_interval_solution_contDiffOn _ hL hvd, hvd⟩
-
-
-
 
 theorem closedCoordinateAdapted_solution_unique
     {a b t₀ : ℝ} (hab : a < b) (htime : ∀ s ∈ Icc a b, T - s ^ 2 ∈ J)

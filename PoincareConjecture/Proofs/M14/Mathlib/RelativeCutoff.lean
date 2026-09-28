@@ -1,23 +1,12 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem contDiffOn_smul_of_tsupport_subset
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

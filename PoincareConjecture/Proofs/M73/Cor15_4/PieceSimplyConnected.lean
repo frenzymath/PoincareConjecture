@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Reconstruction
 import PoincareConjecture.Proofs.M55.Mathlib.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -24,10 +10,6 @@ universe u
 namespace PoincareConjecture
 
 set_option linter.style.haveILetI false in
-
-
-
-
 
 theorem SmoothFiniteConnectedSumAssembly.piece_simplyConnected
     {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}

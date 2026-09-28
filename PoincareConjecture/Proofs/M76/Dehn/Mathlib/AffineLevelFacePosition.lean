@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineFacePosition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
 
 theorem affine_level_span_eq_or_disjoint
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

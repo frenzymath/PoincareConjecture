@@ -3,23 +3,11 @@ import Mathlib.Topology.MetricSpace.Pseudo.Basic
 import Mathlib.Tactic.ByContra
 import Mathlib.Tactic.Push
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Metric
-
-
-
 
 theorem totallyBounded_univ_of_finite_pair_collision
     {Y : Type*} [PseudoMetricSpace Y]
@@ -69,9 +57,6 @@ theorem totallyBounded_univ_of_finite_pair_collision
 end Metric
 
 namespace UniformSpace.Completion
-
-
-
 
 theorem compactSpace_of_totallyBounded_univ
     {Y : Type*} [PseudoMetricSpace Y] (hY : TotallyBounded (univ : Set Y)) :

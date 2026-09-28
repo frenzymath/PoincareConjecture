@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylinder.CylinderCoefficientField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000
@@ -19,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.TerminalNeck
-
-
 
 theorem exists_fullDomainCylinder_coefficient_tolerance
     {ε : ℝ} (hε : 0 < ε) {B₀ : RoundCylinderTwoTensor}
@@ -97,8 +86,6 @@ private theorem centered_error_contDiffAt_of_tensorSmooth
     isOpen_Ioo).mem_nhds hp
   exact ((hB z.1 a b).contDiffAt hn).sub (contDiff_roundCylinderGram 0 z.1 a b).contDiffAt
 
-
-
 theorem norm_coefficientJet_le_centeredDifferenceJet
     {ε : ℝ} {B₀ B₁ : RoundCylinderTwoTensor}
     (hB₀ : RoundCylinderTensorSmoothOn ε B₀) (hB₁ : RoundCylinderTensorSmoothOn ε B₁)
@@ -151,8 +138,6 @@ theorem norm_coefficientJet_le_centeredDifferenceJet
   simpa only [Finset.prod_const, Finset.card_univ, Fintype.card_fin] using
     mul_le_mul_of_nonneg_right hnorm (pow_nonneg (norm_nonneg _) j)
 
-
-
 theorem exists_fullDomainCylinder_comparison_tolerance
     {ε : ℝ} (hε : 0 < ε) {B₀ : RoundCylinderTwoTensor}
     (hclose : RoundCylinderClose ε 0 B₀) :
@@ -185,8 +170,6 @@ theorem exists_fullDomainCylinder_comparison_tolerance
     _ ≤ η * C ^ ⌊ε⁻¹⌋₊ := mul_le_mul (hjet z hz j hj) hpower
       (pow_nonneg (norm_nonneg _) _) hη.le
     _ = η₀ := div_mul_cancel₀ _ (ne_of_gt (pow_pos hCpos _))
-
-
 
 theorem eventually_roundCylinderClose_of_centeredDifferenceJets
     {ι : Type*} {l : Filter ι} {ε : ℝ} (hε : 0 < ε)

@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCoreConstruc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedAtlasCorrection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonFiniteHandleCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,10 +22,6 @@ local notation "W" => ((Fin 2 ⊕ Fin 1) → ℝ)
 local notation "J" => Finset.univ.map (Function.Embedding.inl : Fin 2 ↪ Fin 2 ⊕ Fin 1)
 local notation "D" => coordinateCylinder J
 local notation "pi" => latticeCoordinateProjection (Fin 2) (Fin 1) L
-
-
-
-
 
 theorem exists_hamilton_indexTwo_handle_straightening
     (h : OpenPartialHomeomorph (V2 × V1) V3)
@@ -141,10 +127,6 @@ theorem exists_hamilton_indexTwo_handle_straightening
         apply hPiN x
         rwa [← hdata])
   exact ⟨B, hB, hBH⟩
-
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_two_of_named_inputs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

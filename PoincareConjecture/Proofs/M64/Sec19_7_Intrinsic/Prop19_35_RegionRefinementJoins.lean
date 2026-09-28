@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionRefinemen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OldVertices
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Cells
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,11 +12,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 open PoincareConjecture.Topology.Surface.Euler
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_compatible_region_refinement_with_join_vertices
     {I : Type*} [Finite I]

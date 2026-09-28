@@ -13,7 +13,6 @@ open Barrier ChartChain
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem positive_along_chart_path
     {D : Set M} (hD : IsCompact D) (α : M)
     (hchart : D ⊆ (chartAt (EuclideanSpace ℝ (Fin n)) α).source)
@@ -64,7 +63,6 @@ theorem positive_along_chart_path
   · intro x hx hn t ht
     exact (min_le_right _ _).trans (hclear x hx hn t ht)
 
-
 theorem positive_of_connected
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
     {g : ℝ → RiemannianMetric n M} {J : Set ℝ}
@@ -113,8 +111,6 @@ theorem positive_of_connected
   simpa only [S.cut_last, Path.target, timeCut_last a b S.count_pos] using
     hprop S.count le_rfl
 
-
-
 theorem positive_of_connected_on_Icc
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
     {g : ℝ → RiemannianMetric n M} (conn : ∀ t, LeviCivitaData (g t))
@@ -128,8 +124,6 @@ theorem positive_of_connected_on_Icc
     0 < v q b :=
   positive_of_connected hU hconn conn hg (uniqueDiffOn_Icc hab) hab Subset.rfl
     hv hvs hnonneg hp hq hpos
-
-
 
 theorem eq_zero_before_of_eq_zero
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
@@ -150,8 +144,6 @@ theorem eq_zero_before_of_eq_zero
     (fun x hx s hs => hvs x hx s ⟨ht.1.trans_lt hs.1, hs.2⟩)
     (fun x hx s hs => hnonneg x hx s (hsub hs)) hp hq (lt_of_not_ge hn)
   exact (ne_of_gt hpos) hzero
-
-
 
 theorem eq_zero_on_Icc_of_eq_zero
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
@@ -174,8 +166,6 @@ theorem eq_zero_on_Icc_of_eq_zero
     (show ContinuousOn (v p) (closure (Ico a b)) by simpa [closure_Ico hab.ne] using hc)
     (show ContinuousOn (fun _ : ℝ => (0 : ℝ)) (closure (Ico a b)) from continuousOn_const)
   exact le_antisymm (hclosed (by simpa [closure_Ico hab.ne] using ht)) (hnonneg p hp t ht)
-
-
 
 theorem eq_zero_at_positive_time_iff
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)

@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.MetricFamilyExtraction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.Descent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Descent
-
-
-
-
-
-
-

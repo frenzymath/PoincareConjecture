@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapFrameNorm
 import PoincareConjecture.Proofs.M47.BlowupControlsCapMetricError
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +22,6 @@ theorem cap_frameInverseGram_symm (g : RiemannianMetric 3 M) (x : M)
   apply Finset.sum_congr rfl
   intro k _
   exact mul_comm _ _
-
 
 theorem cap_frameError_components_norm (g0 g1 : RiemannianMetric 3 M) (x : M)
     (e : V ≃L[ℝ] TangentSpace (𝓡 3) x)
@@ -68,8 +59,6 @@ theorem cap_inverseError_tensor_norm_le (g0 g1 : RiemannianMetric 3 M) (x : M)
   have h := cap_frameInverseGram_component_error_le g1 x e
   dsimp only at h
   rwa [cap_frameError_components_norm g0 g1 x e he] at h
-
-
 
 theorem cap_inverseError_components (g0 g1 : RiemannianMetric 3 M) (x : M)
     (e : V ≃L[ℝ] TangentSpace (𝓡 3) x)

@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusRadialFli
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ScalarPhaseGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseSeamObservation
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -32,10 +27,6 @@ local notation "T" => m64AnnulusRadialFlip
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem exists_radial_flip
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k degree)
@@ -144,9 +135,6 @@ theorem exists_radial_flip
     phase_boundary := hboundary'
     phase_seam := hseam' }
   exact ⟨B, hO, rfl, rfl, rfl, hcol, henergy⟩
-
-
-
 
 theorem exists_radial_flip_minimum
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k degree)

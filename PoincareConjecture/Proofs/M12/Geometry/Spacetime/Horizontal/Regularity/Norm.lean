@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Norm
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -102,7 +95,6 @@ private theorem horizontalCurvatureNormSq_inverse_gram
   unfold horizontalCurvatureNormSq horizontalCurvatureNorm LeviCivitaData.curvatureTensorNorm
   exact Real.sq_sqrt (Finset.sum_nonneg fun _ _ => Finset.sum_nonneg fun _ _ =>
     Finset.sum_nonneg fun _ _ => Finset.sum_nonneg fun _ _ => sq_nonneg _)
-
 
 theorem horizontalCurvatureNormSq_smooth_of_riemann
     (D : LeafwiseLeviCivitaFamily F S)

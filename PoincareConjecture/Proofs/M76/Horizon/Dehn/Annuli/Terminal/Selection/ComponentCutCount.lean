@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.Selection.CommonCutCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.Euler.CollarCutCount
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

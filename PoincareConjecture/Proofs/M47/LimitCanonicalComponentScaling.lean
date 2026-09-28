@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalComponentSectionalStability
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ private theorem sectional_lower_of_positive_gram (D : LeviCivitaData g)
   have h := hA p q ⟨hp, hq, hpq⟩
   simpa only [LeviCivitaData.sectionalCurvature, hp, hq, hpq, one_mul,
     zero_pow (by decide : 2 ≠ 0), sub_zero, div_one, hvalue] using h
-
-
 
 noncomputable def limitCanonical_component_unscale (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) {C : ℝ}

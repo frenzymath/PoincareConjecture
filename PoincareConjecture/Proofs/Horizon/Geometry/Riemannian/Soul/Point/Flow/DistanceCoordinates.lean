@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.RadiusReparametrization
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -34,8 +23,6 @@ private theorem distance_pos_off_center (x : {x : M // x ≠ p}) :
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact ENNReal.toReal_pos (ne_of_gt (edist_pos.mpr x.property.symm))
     (g.edist_ne_top p x)
-
-
 
 def of_monotone_trajectories
     (F : (UnitTwoSphere × Ioi (0 : ℝ)) ≃ₜ {x : M // x ≠ p})

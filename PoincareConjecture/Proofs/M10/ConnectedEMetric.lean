@@ -1,20 +1,11 @@
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M10
-
 
 theorem edist_ne_top_of_preconnected {X : Type*} [EMetricSpace X] [PreconnectedSpace X]
     (x y : X) : edist x y ≠ ⊤ := by

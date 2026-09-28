@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.IdentityAnnulus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 namespace Dehn
-
-
 
 theorem identity_resolving_strip_images_disjoint
     {X : Type*} {L d b : ℝ} (hb : 0 < b) (hbd : b ≤ d)
@@ -34,8 +22,6 @@ theorem identity_resolving_strip_images_disjoint
   have hh := congrArg Prod.snd h
   change max |p.2| b = -max |q.2| b at hh
   linarith [le_max_right |p.2| b, le_max_right |q.2| b]
-
-
 
 theorem exists_identity_resolving_annulus_pair
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

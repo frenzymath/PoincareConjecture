@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.FullCutComponentAssembly
 import PoincareConjecture.Proofs.M38.ActualResidualAssembly
 import PoincareConjecture.Proofs.M38.EventConclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
-
 
 theorem exists_fullCutRefinedAssembly_of_nonempty
     (hD : Nonempty (cappedDiscardedCarrier F T hT P).carrier) {m n : ℕ}
@@ -46,8 +34,6 @@ theorem exists_fullCutRefinedAssembly_of_nonempty
     ((Diffeomorph.sumComm (𝓡 3) (cappedDiscardedCarrier F T hT P).carrier ∞
       (F.slice T).carrier).trans (fullCutSumDiffeomorph F T hT P))
 
-
-
 theorem exists_fullCutRefinedAssembly
     (hcount : 0 < (F.event T hT).cap_count) {m n : ℕ}
     {piecesB : Fin m → GeneralizedSliceCarrier.{u}}
@@ -58,11 +44,6 @@ theorem exists_fullCutRefinedAssembly
       (partialCappedCarrier F T hT P Set.univ)) :=
   exists_fullCutRefinedAssembly_of_nonempty F T hT P
     (cappedDiscardedCarrier_nonempty_of_cap_count_pos F T hT P hcount) UB S
-
-
-
-
-
 
 theorem nonempty_discarded_reconstruction_of_assembly
     (hD : Nonempty (cappedDiscardedCarrier F T hT P).carrier) {n : ℕ}
@@ -80,8 +61,6 @@ theorem nonempty_discarded_reconstruction_of_assembly
   exact ⟨nonemptyWitness F T hT (eventAssemblyConclusion rB UB hregionB
     (F.slices_compact T (F.surgery_times_subset hT))
     D hDcompact hDconnected hDstandard beta Q)⟩
-
-
 
 theorem positive_cap_reconstruction_of_discarded_assembly
     (hcount : 0 < (F.event T hT).cap_count) {n : ℕ}

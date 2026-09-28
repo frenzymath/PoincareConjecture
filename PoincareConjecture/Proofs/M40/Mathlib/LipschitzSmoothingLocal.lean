@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothing
 import Mathlib.Topology.UrysohnsLemma
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Metric MeasureTheory
@@ -23,9 +11,6 @@ namespace PoincareConjecture.M40
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_continuous_compactSupport_extension
     {f : E → F} {K U : Set E} (hK : IsCompact K) (hU : IsOpen U)
@@ -44,10 +29,6 @@ theorem exists_continuous_compactSupport_extension
 
 variable [MeasurableSpace E] [BorelSpace E] [CompleteSpace F]
   {μ : Measure E} [μ.IsAddHaarMeasure]
-
-
-
-
 
 theorem exists_radius_normalizedConvolution_dist_lt
     {f : E → F} {K : Set E} (hf : Continuous f) (hK : IsCompact K)
@@ -68,10 +49,6 @@ theorem exists_radius_normalizedConvolution_dist_lt
   have hxK : x ∈ cthickening 1 K := self_subset_cthickening _ hx
   exact (hfδ y hyK x hxK (hyr.trans_le (min_le_right _ _))).le
 
-
-
-
-
 theorem exists_small_normalizedConvolution
     {f : E → F} {K : Set E} (hf : Continuous f) (hK : IsCompact K)
     {ε R : ℝ} (hε : 0 < ε) (hR : 0 < R) :
@@ -88,10 +65,6 @@ theorem exists_small_normalizedConvolution
     normalizedConvolution_contDiff φ hf.locallyIntegrable,
     happrox φ (hsmin.le.trans (min_le_left _ _))⟩
 
-
-
-
-
 theorem exists_radius_normalizedConvolution_dist_lt_uniform
     {f : E → F} (hf : UniformContinuous f) {ε : ℝ} (hε : 0 < ε) :
     ∃ r : ℝ, 0 < r ∧ ∀ φ : ContDiffBump (0 : E), φ.rOut ≤ r →
@@ -104,9 +77,6 @@ theorem exists_radius_normalizedConvolution_dist_lt_uniform
     (half_lt_self hε)
   intro y hy
   exact (hfr (hy.trans_le hφ)).le
-
-
-
 
 theorem exists_small_normalizedConvolution_uniform
     {f : E → F} (hf : UniformContinuous f)

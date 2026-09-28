@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
 open Filter Set
 open scoped Topology ContDiff
 

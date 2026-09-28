@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartTransitionJacobianNative
 import PoincareConjecture.Proofs.M03.Existence.ChartDirectionalNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -47,7 +39,6 @@ theorem chartWeightDensity_nonneg (p q : M) {φ : M → ℝ} (hφ : ∀ x, 0 ≤
     exact mul_nonneg (hφ _) (chartTransitionJacobian_nonneg p q z)
   · rw [chartWeightDensity_of_notMem p q φ hz]
 
-
 theorem chartWeightDensity_pos_of_weight_pos (p q : M) {φ : M → ℝ}
     (hsupport : tsupport φ ⊆ (chartAt E q).source) {z : E}
     (hz : z ∈ (chartAt E p).target) (hφ : 0 < φ ((chartAt E p).symm z)) :
@@ -57,7 +48,6 @@ theorem chartWeightDensity_pos_of_weight_pos (p q : M) {φ : M → ℝ}
   have hzU : z ∈ chartTransitionDomain p q := ⟨hz, hxq⟩
   rw [chartWeightDensity_of_mem p q φ hzU]
   exact mul_pos hφ (chartTransitionJacobian_pos p q hzU)
-
 
 theorem chartWeightDensity_contDiffOn (p q : M) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ)
@@ -92,7 +82,6 @@ theorem chartWeightDensity_contDiffOn (p q : M) {φ : M → ℝ}
 namespace FiniteChartData
 
 variable (d : FiniteChartData (n := n) (M := M))
-
 
 def chartDensity (p : M) (z : E) : ℝ :=
   ∑ i : d.centers, chartWeightDensity p i.val (d.weight i) z

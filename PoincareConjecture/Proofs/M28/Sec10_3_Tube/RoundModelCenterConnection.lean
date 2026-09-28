@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelTensorConnection
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -119,9 +110,6 @@ section RoundModel
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem norm_round_model_christoffel_fderiv_le_two
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -234,9 +222,6 @@ theorem norm_round_model_christoffel_fderiv_le_two
   rw [hΓeq.fderiv_eq]
   exact norm_fderiv_gauss_connection_le_of_curvature hΓd hΓsymm hΓradial hΓzero
     (by norm_num) hΓcurv u
-
-
-
 
 theorem norm_round_model_tensor_connection_fderiv_le_universal
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RadiusLimitAscent
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +10,6 @@ open Poincare.GromovHausdorff
 universe u
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem eq_base_of_pointConverges_badAscentRadius_zero_at_scaled_spire
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -58,8 +47,6 @@ theorem eq_base_of_pointConverges_badAscentRadius_zero_at_scaled_spire
   rw [dist_comm] at hspireBound
   have hscaled := mul_le_mul_of_nonneg_left hhalf hκ.le
   linarith only [hscaled, hspireBound, hlimitBound, hρb]
-
-
 
 theorem tendsto_dist_base_zero_of_badAscentRadius_zero_at_scaled_spire
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -122,7 +109,6 @@ theorem tendsto_dist_base_zero_of_badAscentRadius_zero_at_scaled_spire
     (Eventually.of_forall (fun j => le_of_not_gt (hφbad (ψ j))))
   exact (not_le_of_gt hε) hεle
 
-
 theorem eq_base_of_pointConverges_badAscentRadius_zero_at_spire
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
     [∀ j, ProperSpace (X j).carrier] [ProperSpace Y.carrier]
@@ -145,7 +131,6 @@ theorem eq_base_of_pointConverges_badAscentRadius_zero_at_spire
   exact eq_base_of_pointConverges_badAscentRadius_zero_at_scaled_spire (κ := 1)
     zero_lt_one hL hρ (by simpa only [one_mul] using hρb) hbcap hroom δ hδ hpos S u u0 hu hbound hc hcc' B hmax
     (fun y hy => by simpa only [one_mul] using hspire y hy) ha
-
 
 theorem tendsto_dist_base_zero_of_badAscentRadius_zero_at_spire
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MeridianBandCarrier
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,7 +18,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {N : Set X} {j : V2 → X}
 
-
 theorem polyhedral_marked_parameter_cap (P : OriginalDiskProduct e N j)
     (s : ℝ) {t : ℝ} (ht : t ∈ I) :
     PolyhedralPLInCharts e (fun z : W => P.map (z.1, t)) (D ×ˢ ({s} : Set ℝ)) := by
@@ -34,7 +31,6 @@ theorem polyhedral_marked_parameter_cap (P : OriginalDiskProduct e N j)
   have h := P.polyhedral.comp_finitePiecewiseAffineOn K hK hA hmap
   change PolyhedralPLInCharts e (fun z : W => P.map (z.1, t)) K.space at h
   exact hKS ▸ h
-
 
 theorem polyhedral_markedCutFrontierMap (P : OriginalDiskProduct e N j)
     (he : PLDomain e N) (q : W → X) {l u : ℝ} (hlu : l < u)

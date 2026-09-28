@@ -4,13 +4,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Algebra.Monoid
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -133,4 +126,3 @@ theorem contMDiffOn_flow_connection_pairing (F : RicciFlow n M J)
   simpa only [Pi.add_apply, Pi.sub_apply, mul_comm] using! hk
 
 end PoincareConjecture.M04
-

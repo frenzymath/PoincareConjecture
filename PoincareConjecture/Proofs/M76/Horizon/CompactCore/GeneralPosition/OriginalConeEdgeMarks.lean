@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.ConeEdges
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeMarks
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaryComplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

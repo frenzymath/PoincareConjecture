@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereStandardEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,22 +12,16 @@ namespace PoincareConjecture.SurgeryBallEmbedding
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
 
-
-
 theorem image_closedBall_isClosed {r : ℝ} (hr2 : r < 2) :
     IsClosed (B.map '' Metric.closedBall (0 : StandardCapSpace) r) :=
   ((isCompact_closedBall (0 : StandardCapSpace) r).image_of_continuousOn
     (B.map_smooth.continuousOn.mono (closedBall_subset_ball hr2))).isClosed
-
-
 
 theorem radiusExterior_subset_punctureChart_source {r : ℝ} (hr : 0 < r) :
     (B.map '' Metric.closedBall (0 : StandardCapSpace) r)ᶜ ⊆ (B.punctureChart d).source := by
   intro x hx
   apply B.map_ball_compl_subset_punctureChart_source d hr
   exact fun hxball => hx (image_mono ball_subset_closedBall hxball)
-
-
 
 theorem punctureChart_radiusExterior_isOpen {r : ℝ} (hr : 0 < r) (hr2 : r < 2) :
     IsOpen ((B.punctureChart d) '' (B.map '' Metric.closedBall (0 : StandardCapSpace) r)ᶜ) :=
@@ -48,16 +33,12 @@ private theorem radius_sphere_mem_ball {r : ℝ} (hr2 : r < 2)
   rw [mem_ball_zero_iff, mem_sphere_zero_iff_norm.mp hx]
   exact hr2
 
-
-
 theorem radiusSphere_image_mem_source {r : ℝ} (hr : 0 < r) (hr2 : r < 2)
     {x : StandardCapSpace} (hx : x ∈ sphere 0 r) :
     B.map x ∈ (B.punctureChart d).source := by
   apply (B.map_mem_punctureChart_source_iff d (radius_sphere_mem_ball hr2 hx)).mpr
   apply norm_pos_iff.mp
   rwa [mem_sphere_zero_iff_norm.mp hx]
-
-
 
 theorem punctureChart_radiusSides_disjoint {r : ℝ} (hr : 0 < r) :
     Disjoint ((B.punctureChart d) ''
@@ -71,8 +52,6 @@ theorem punctureChart_radiusSides_disjoint {r : ℝ} (hr : 0 < r) :
     (B.radiusExterior_subset_punctureChart_source d hr hb) (hay.trans hby.symm)
   subst b
   exact hb (image_mono ball_subset_closedBall ha)
-
-
 
 theorem punctureChart_radiusSides_union {r : ℝ} (hr : 0 < r) (hr2 : r < 2) :
     ((B.punctureChart d) ''
@@ -114,9 +93,6 @@ theorem punctureChart_radiusSides_union {r : ℝ} (hr : 0 < r) (hr2 : r < 2) :
       refine ⟨(B.punctureChart d).symm y, ⟨⟨x, mem_ball_zero_iff.mpr hn, hxa⟩, ?_⟩, hay⟩
       simpa only [B.punctureChart_source d, mem_compl_iff] using has
     · exact Or.inr ⟨_, ha, hay⟩
-
-
-
 
 theorem map_mem_radiusExterior_iff {r : ℝ} (hr2 : r < 2)
     {x : StandardCapSpace} (hx : x ∈ ball 0 2) :

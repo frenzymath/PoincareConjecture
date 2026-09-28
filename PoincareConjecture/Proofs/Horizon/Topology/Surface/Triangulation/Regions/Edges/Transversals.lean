@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.OrientedGraphs
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseDirections
 import Mathlib.Analysis.Calculus.Deriv.Prod
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +10,6 @@ open scoped ContDiff Topology Manifold
 open Poincare.Topology.Plane.Curves
 
 namespace Poincare.Topology.Plane.Curves
-
-
 
 theorem linear_graph_tangent
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {f : ℝ → E}
@@ -53,8 +40,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 variable (D : FiniteChartRegionDecomposition (M := M))
 
 omit [T2Space M] in
-
-
 
 theorem exists_common_graph_transversal (e : D.EdgeIndex) (R : D.regions)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

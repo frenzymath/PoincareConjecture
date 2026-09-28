@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFinitePhysicalCoherence
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointExtraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ private noncomputable local instance finiteEndpointCompatBilinAdd :
     NormedAddCommGroup V := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance finiteEndpointCompatBilinSpace :
     NormedSpace ℝ V := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_physical_compatibility
     (F : ℕ → SurgeryFlowData.{u}) (C : GeneralizedSliceCarrier.{u})

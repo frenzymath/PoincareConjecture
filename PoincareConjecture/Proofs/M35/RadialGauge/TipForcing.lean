@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.CorrectedEquation
 import Mathlib.Analysis.Analytic.IsolatedZeros
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +8,7 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
 noncomputable def expSlope (z : ℝ) : ℝ := dslope Real.exp 0 z
-
 
 theorem expSlope_contDiff : ContDiff ℝ ∞ expSlope := by
   rw [contDiff_iff_contDiffAt]
@@ -36,19 +24,15 @@ theorem expSlope_contDiff : ContDiff ℝ ∞ expSlope := by
     filter_upwards [isOpen_ne.mem_nhds hz] with x hx
     simp [expSlope, dslope_of_ne _ hx, slope_def_field, div_eq_mul_inv]
 
-
 theorem expSlope_zero : expSlope 0 = 1 := by
   simp [expSlope, dslope_same, Real.deriv_exp]
-
 
 theorem mul_expSlope (z : ℝ) : z * expSlope z = Real.exp z - 1 := by
   simpa only [sub_zero, smul_eq_mul, Real.exp_zero, expSlope] using
     sub_smul_dslope Real.exp 0 z
 
-
 noncomputable def exponentialForcingQuotient (w d : ℝ) : ℝ :=
   -2 * d * expSlope (2 * w * d)
-
 
 theorem exponentialForcingQuotient_eq {w : ℝ} (hw : w ≠ 0) (d : ℝ) :
     exponentialForcingQuotient w d = (1 - Real.exp (2 * w * d)) / w := by
@@ -57,12 +41,9 @@ theorem exponentialForcingQuotient_eq {w : ℝ} (hw : w ≠ 0) (d : ℝ) :
   unfold exponentialForcingQuotient
   nlinarith only [h]
 
-
 theorem exponentialForcingQuotient_zero (d : ℝ) :
     exponentialForcingQuotient 0 d = -2 * d := by
   simp [exponentialForcingQuotient, expSlope_zero]
-
-
 
 theorem exponentialForcingQuotient_contDiff :
     ContDiff ℝ ∞ (fun p : ℝ × ℝ => exponentialForcingQuotient p.1 p.2) := by
@@ -70,14 +51,10 @@ theorem exponentialForcingQuotient_contDiff :
   exact ((contDiff_const.mul contDiff_snd).mul
     (expSlope_contDiff.comp ((contDiff_const.mul contDiff_fst).mul contDiff_snd)))
 
-
-
-
 noncomputable def correctedForcing
     (n sigma w d hW h0W xi : ℝ) : ℝ :=
   (n - 1) * exponentialForcingQuotient w d + 2 * (n - 1) * hW -
     2 * (n - 1) * Real.exp (2 * w * d + 2 * sigma) * h0W - xi
-
 
 theorem correctedForcing_eq (n sigma d hW h0W xi : ℝ) {w : ℝ} (hw : w ≠ 0) :
     correctedForcing n sigma w d hW h0W xi =
@@ -86,13 +63,9 @@ theorem correctedForcing_eq (n sigma d hW h0W xi : ℝ) {w : ℝ} (hw : w ≠ 0)
   rw [correctedForcing, exponentialForcingQuotient_eq hw]
   ring
 
-
-
 theorem correctedForcing_restart (n w hW xi : ℝ) :
     correctedForcing n 0 w 0 hW hW xi = -xi := by
   simp [correctedForcing, exponentialForcingQuotient]
-
-
 
 theorem correctedForcing_contDiff
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

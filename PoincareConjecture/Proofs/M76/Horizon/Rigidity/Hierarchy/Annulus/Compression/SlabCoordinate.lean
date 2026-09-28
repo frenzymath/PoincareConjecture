@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SecondCo
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,8 +16,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem locallyPL_hamiltonZero_second_circle_coordinate
     {ι κ : Type*} (e : ι → OpenPartialHomeomorph X0 V3)
@@ -75,9 +64,6 @@ theorem locallyPL_hamiltonZero_second_circle_coordinate
     rw [hqformula y hy]
     rfl
   exact ⟨V, ⟨hzK, hz⟩, hlocal.mono (hU.inter hV) inter_subset_right⟩
-
-
-
 
 theorem exists_hamiltonZero_shifted_lower_second_slab_coordinate
     {ι κ : Type*} (e : ι → OpenPartialHomeomorph X0 V3)

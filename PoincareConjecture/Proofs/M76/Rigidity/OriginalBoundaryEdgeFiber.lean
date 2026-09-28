@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleFiber
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFrontierEdgeCofaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_boundary_edge_fiber
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

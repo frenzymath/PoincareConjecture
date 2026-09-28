@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Homology.Local
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Euclidean.PositiveLinearHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,9 +10,6 @@ open CategoryTheory HomologicalComplex Set
 namespace Poincare.Topology.Orientation.ProjectivePlane
 
 open Poincare.Topology
-
-
-
 
 theorem positiveLinear_relativeHomologyMap
     (L : EuclideanSpace Real (Fin 3) ≃L[Real] EuclideanSpace Real (Fin 3))

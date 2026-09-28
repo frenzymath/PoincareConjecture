@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TimePreservingFibers
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_axis_pointwise_correction
     (F : ℝ → ((ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ)))

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 
-
 set_option autoImplicit false
 open Set TopologicalSpace Function Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff

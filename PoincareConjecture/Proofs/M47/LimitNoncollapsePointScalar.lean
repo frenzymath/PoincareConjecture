@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseMovingCurvature
 import PoincareConjecture.Proofs.M34.Standard.ScalarMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitNoncollapse_eventually_point_scalar
     (P : M47Predecessors.{u}) (t : ℝ) (ht : t ∈ J)

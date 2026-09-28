@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +17,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
 namespace OriginalDiskProduct
-
-
 
 theorem exterior_rectangle_interior (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip))
@@ -53,8 +43,6 @@ theorem exterior_rectangle_interior (P : OriginalDiskProduct e R j)
   · linarith [hw.2.1, hz.2.2]
   · linarith [hw.2.2, hz.2.1]
 
-
-
 theorem exterior_closed_rectangle_closure (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip))
     {a b : ℝ} (ha : -1 ≤ a) (hb : b ≤ 1) (hab : a < b)
@@ -70,8 +58,6 @@ theorem exterior_closed_rectangle_closure (P : OriginalDiskProduct e R j)
   have h := hc.image_closure.trans
     (closure_mono (P.exterior_rectangle_interior hR hopen ha hb hout))
   rwa [hclosure] at h
-
-
 
 theorem endDisks_subset_closure_interior_cut (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip)) :

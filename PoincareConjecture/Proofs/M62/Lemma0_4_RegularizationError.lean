@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Cor0_3_Regularization
 import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -22,11 +13,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
 theorem length_nonneg (t : ℝ) : 0 ≤ m62Length F c t := by
   exact intervalIntegral.integral_nonneg_of_forall
     (by unfold curvePeriod; positivity) (speed_nonneg F c t)
-
 
 theorem regularization_error {ε t : ℝ} (hε : 0 ≤ ε)
     (hv : IntervalIntegrable (curveSpeed F c t) MeasureTheory.volume 0 curvePeriod)

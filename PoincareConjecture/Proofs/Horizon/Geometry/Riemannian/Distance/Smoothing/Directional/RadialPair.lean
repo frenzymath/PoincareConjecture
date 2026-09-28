@@ -1,19 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.Radial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
-
 
 theorem PoincareConjecture.LeviCivitaData.abs_mvfderiv_endpoint_pair_le_of_hessian_le_with_gap
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -85,8 +75,6 @@ theorem PoincareConjecture.LeviCivitaData.abs_mvfderiv_endpoint_pair_le_of_hessi
   change |F 1| ≤ _ ∧ |H 1| ≤ _
   constructor <;> apply abs_le.mpr <;> constructor <;> linarith
 
-
-
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
@@ -117,13 +105,10 @@ theorem PoincareConjecture.LeviCivitaData.abs_mvfderiv_endpoint_pair_le_of_hessi
     hU hf hh hγ hγU hr hη hC hspeed hpair hhessf hhessh
   simpa only [hlevel, sub_self, abs_zero, add_zero] using hb
 
-
-
 namespace PoincareConjecture.RiemannianMetric
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 theorem exists_distance_upper_support_gradient_pair_abs_le_with_gap
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -197,8 +182,6 @@ theorem exists_distance_upper_support_gradient_pair_abs_le_with_gap
       _ = 2 * η + |f (γ 1) - f (γ 0)| / d + C * d / 2 := by field_simp
   exact ⟨U, rho, hU, hxU, hrho, htouch, hupper, hgrad, hunit,
     htransfer f hfbound, htransfer h hhbound⟩
-
-
 
 theorem exists_distance_upper_support_gradient_pair_abs_le
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

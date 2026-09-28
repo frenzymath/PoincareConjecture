@@ -4,21 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.NormBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarIntegral
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
-
 
 theorem exists_initial_unit_ball_volume_lower_bound_on_component
     (hM04 : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (hn : 1 ≤ n)
@@ -67,11 +49,6 @@ theorem exists_initial_unit_ball_volume_lower_bound_on_component
   intro x hx
   have h := hvolume ⟨x, hx⟩
   rwa [F.restrictComponent_volumeMeasure_ball] at h
-
-
-
-
-
 
 theorem exists_right_unit_ball_volume_lower_bound_on_component
     (hM04 : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (hn : 1 ≤ n)

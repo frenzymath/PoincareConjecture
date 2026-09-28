@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.GramComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,9 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
   {circumference : ℝ} (P : M62.CircleProductData F circumference)
-
-
-
 
 theorem m64CircleProduct_projected_density_le
     (t : ℝ) (f : LoopPlane → P.charts.Point) (z : LoopPlane)

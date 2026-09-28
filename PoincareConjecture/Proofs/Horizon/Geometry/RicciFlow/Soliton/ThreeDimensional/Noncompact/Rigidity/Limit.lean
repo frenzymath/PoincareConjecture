@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Measure
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Volume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -138,7 +130,6 @@ namespace ShrinkingSolitonFlow
 
 variable {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
 
-
 def ancientSourceFlow : RicciFlow 3 M (Iic 0) :=
   G.flow.translate (-1)
     (by rintro _ ⟨t, ht, rfl⟩; change t + -1 < 0; linarith [show t ≤ 0 from ht])
@@ -146,7 +137,6 @@ def ancientSourceFlow : RicciFlow 3 M (Iic 0) :=
 
 theorem ancientSourceFlow_metric_zero : G.ancientSourceFlow.metric 0 = S.metric := by
   simpa only [ancientSourceFlow, RicciFlow.translate, zero_add] using G.at_minus_one
-
 
 theorem ancientSourceFlow_uniformCurvatureBound :
     ∃ B : ℝ, 0 ≤ B ∧ ∀ t : ℝ, t ≤ 0 → ∀ x : M,
@@ -165,7 +155,6 @@ theorem ancientSourceFlow_uniformCurvatureBound :
     _ ≤ B := by
       have hinv : |t + -1|⁻¹ ≤ 1 := (inv_le_one₀ hc).mpr hc1
       nlinarith
-
 
 def ancientSource : AncientKappaSolution 3 M where
   flow := G.ancientSourceFlow
@@ -205,7 +194,6 @@ theorem ancientSource_metric_zero : G.ancientSource.flow.metric 0 = S.metric :=
   G.ancientSourceFlow_metric_zero
 
 end ShrinkingSolitonFlow
-
 
 theorem GradientShrinkingSolitonData.exists_ancientSource
     (S : GradientShrinkingSolitonData 3 M) :

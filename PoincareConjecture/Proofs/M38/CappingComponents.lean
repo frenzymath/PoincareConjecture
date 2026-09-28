@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.CappingComponentLabels
 import PoincareConjecture.Proofs.M38.CappingCarrier
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 theorem cappedCapPatch_component (i : Fin (F.event T hT).cap_count)
     (x : capDoubleBall) :
@@ -41,9 +31,6 @@ theorem cappedCapPatch_component (i : Fin (F.event T hT).cap_count)
   apply hconnected.subset_connectedComponent ?_ (Set.mem_range_self x)
   rw [hpoint]
   exact Set.mem_range_self _
-
-
-
 
 noncomputable def cappedComponentsHomeomorph :
     ConnectedComponents (eventDiscardedOpen F T hT) ≃ₜ
@@ -73,17 +60,13 @@ noncomputable def cappedComponentsHomeomorph :
   continuous_invFun :=
     (cappedComponentLabel_continuous F T hT P).connectedComponentsLift_continuous
 
-
 theorem cappedComponentsHomeomorph_apply (x : eventDiscardedOpen F T hT) :
     cappedComponentsHomeomorph F T hT P (ConnectedComponents.mk x) =
       ConnectedComponents.mk (cappedOldInclusion F T hT P x) := rfl
 
-
 theorem cappedComponentsHomeomorph_symm_apply (q : CappedDiscardedSpace F T hT P) :
     (cappedComponentsHomeomorph F T hT P).symm (ConnectedComponents.mk q) =
       cappedComponentLabel F T hT P q := rfl
-
-
 
 theorem cappedOldInclusion_preimage_component (x : eventDiscardedOpen F T hT) :
     cappedOldInclusion F T hT P ⁻¹'
@@ -100,7 +83,6 @@ theorem cappedOldInclusion_preimage_component (x : eventDiscardedOpen F T hT) :
       (ConnectedComponents.coe_eq_coe'.mpr hy)
 
 include P in
-
 
 theorem eventDiscardedOpen_finite_components :
     Finite (ConnectedComponents (eventDiscardedOpen F T hT)) := by

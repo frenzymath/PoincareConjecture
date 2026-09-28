@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Data.Nat.Choose.Sum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

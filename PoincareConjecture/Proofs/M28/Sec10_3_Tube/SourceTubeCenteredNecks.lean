@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCapExclusion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNecks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_source_tube_centered_strong_necks_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

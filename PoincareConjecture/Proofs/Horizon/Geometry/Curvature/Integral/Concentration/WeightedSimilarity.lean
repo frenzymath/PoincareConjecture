@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Similarity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +17,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem RiemannianMetric.setIntegral_scaled_weight_eq_of_metric_similarity
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -51,8 +44,6 @@ theorem RiemannianMetric.setIntegral_scaled_weight_eq_of_metric_similarity
   rw [div_eq_mul_inv]
   ring
 
-
-
 theorem LeviCivitaData.normalized_pos_scalar_integral_le_of_metric_similarity
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (hn : 2 ≤ n)
     (e : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ N) {a : ℝ} (ha : 1 ≤ a)
@@ -79,8 +70,6 @@ theorem LeviCivitaData.normalized_pos_scalar_integral_le_of_metric_similarity
   nlinarith only [mul_nonneg hA (sub_nonneg.mpr hF)]
 
 end Integral
-
-
 
 theorem tendsto_normalized_pos_scalar_integral_of_metric_similarities
     {n : ℕ} {M N : ℕ → Type*}

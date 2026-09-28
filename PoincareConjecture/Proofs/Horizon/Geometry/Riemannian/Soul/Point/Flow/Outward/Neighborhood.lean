@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.Out
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactHessian
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +29,6 @@ private theorem concave_increment_ge
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_common_inward_potential_neighborhood_of_squared_distance_gap
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -189,8 +177,6 @@ theorem exists_common_inward_potential_neighborhood_of_squared_distance_gap
   have hupper' : rho (γ s) - rho y < 3 * a * s / 4 := by
     nlinarith only [hquad', hBss, hbad, mul_pos ha hs]
   exact (not_lt_of_ge hincrement.le) hupper'
-
-
 
 theorem exists_common_inward_potential_neighborhood
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

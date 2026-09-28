@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.StereographicCurvature
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,32 +11,21 @@ namespace PoincareConjecture.M34
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def stereographicCylinderScale (t : ℝ) : ℝ :=
   if t < 1 then 2 * (1 - t) else 2
-
-
 
 theorem stereographicCylinderScale_pos (t : ℝ) : 0 < stereographicCylinderScale t := by
   unfold stereographicCylinderScale
   split_ifs with ht <;> linarith
 
-
-
 noncomputable def stereographicCylinderFlowMetric (t : ℝ) : RiemannianMetric 3 E3 :=
   stereographicCylinderMetric (stereographicCylinderScale t) (stereographicCylinderScale_pos t)
-
-
 
 theorem stereographicCylinderFlowMetric_inner {t : ℝ} (ht : t < 1) (x u v : E3) :
     (stereographicCylinderFlowMetric t).inner x u v =
       stereographicCylinderCoefficients (2 * (1 - t)) x u v := by
   change stereographicCylinderCoefficients (stereographicCylinderScale t) x u v = _
   simp only [stereographicCylinderScale, ht, if_true]
-
-
-
 
 theorem stereographicCylinderFlowMetric_smooth :
     RiemannianMetric.IsSmoothFamilyOn stereographicCylinderFlowMetric (Iio 1) := by
@@ -65,8 +44,6 @@ theorem stereographicCylinderFlowMetric_smooth :
   · intro t ht x u v
     exact stereographicCylinderFlowMetric_inner ht x u v
 
-
-
 theorem stereographicCylinderFlowMetric_hasDerivAt {t : ℝ} (ht : t < 1)
     (x u v : E3) :
     HasDerivAt (fun s => (stereographicCylinderFlowMetric s).inner x u v)
@@ -81,8 +58,6 @@ theorem stereographicCylinderFlowMetric_hasDerivAt {t : ℝ} (ht : t < 1)
     rw [stereographicCylinderFlowMetric_inner hs, stereographicCylinderCoefficients_apply]
   convert! h.congr_of_eventuallyEq he using 1
   ring
-
-
 
 noncomputable def stereographicCylinderFlow : RicciFlow 3 E3 (Iio 1) where
   metric := stereographicCylinderFlowMetric

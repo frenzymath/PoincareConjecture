@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedVertexPath
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -126,12 +115,6 @@ theorem openArcRoundedFamily_fderiv_regular
     fderiv ℝ (openArcRoundedFamily ρ P z) t 1 ≠ 0 := by
   simpa only [fderiv_apply_one_eq_deriv] using
     openArcRoundedFamily_regular data z t
-
-
-
-
-
-
 
 theorem openArcRoundedFamily_injective_of_separation
     (data : OpenArcRoundedData ρ P)

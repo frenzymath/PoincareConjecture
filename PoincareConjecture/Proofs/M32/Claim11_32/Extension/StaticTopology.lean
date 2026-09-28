@@ -1,18 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem homeomorph_preimage_connectedComponent {X Y : Type u}
     [TopologicalSpace X] [TopologicalSpace Y] (e : X ≃ₜ Y) (y : Y) :
@@ -36,8 +21,6 @@ variable {M N : Type u}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   (e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞)
-
-
 
 noncomputable def pullbackCapModelEquivalence {kind : CapModelKind}
     {p : RealProjectiveThree} {U : Set N} (K : CapModelEquivalence kind p U) :
@@ -66,8 +49,6 @@ noncomputable def pullbackCapModelEquivalence {kind : CapModelKind}
     let := K.model_charted
     exact e.symm.contMDiff.comp_contMDiffOn K.inverse_smooth
 
-
-
 noncomputable def pullbackSmoothClosedComponentModel {kind : ClosedComponentKind}
     {U : Set N} (K : SmoothClosedComponentModel kind U) :
     SmoothClosedComponentModel kind (e ⁻¹' U) where
@@ -94,8 +75,6 @@ noncomputable def pullbackSmoothClosedComponentModel {kind : ClosedComponentKind
     let := K.model_topology
     let := K.model_charted
     exact K.inverse_smooth.comp e.contMDiff.contMDiffOn (fun _ hx => hx)
-
-
 
 noncomputable def pullbackClosedComponentCertificate {kind : ClosedComponentKind}
     {U : Set N} (K : ClosedComponentCertificate kind U) :

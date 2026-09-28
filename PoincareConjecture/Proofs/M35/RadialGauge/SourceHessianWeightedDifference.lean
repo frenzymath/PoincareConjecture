@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessianDifference
 import PoincareConjecture.Proofs.M35.RadialGauge.ForcingGraphDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 

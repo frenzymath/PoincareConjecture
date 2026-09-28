@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -30,10 +20,6 @@ private theorem scalarCurvature_eq_of_metric
     D.scalarCurvature x = D'.scalarCurvature x := by
   unfold LeviCivitaData.scalarCurvature LeviCivitaData.ricci
   simp_rw [D.horizon_curvatureTensor_eq D' x]
-
-
-
-
 
 theorem exists_neck_scale_lower_bound_of_compact
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

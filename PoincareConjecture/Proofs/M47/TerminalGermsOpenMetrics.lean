@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {n : ℕ} {M P N : Type*}
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ P] [IsManifold (𝓡 n) ∞ N]
 
 omit [IsManifold (𝓡 n) ∞ N] in
-
 
 theorem terminalGerms_open_metric_compatibility
     (q : M → N) (r : P → N)
@@ -79,7 +69,6 @@ theorem terminalGerms_open_metric_compatibility
 
 omit [TopologicalSpace P] [ChartedSpace (EuclideanSpace ℝ (Fin n)) P]
   [IsManifold (𝓡 n) ∞ P] in
-
 
 theorem terminalGerms_open_terminal_metric
     (q : M → N) (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q)

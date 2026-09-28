@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartedBallInvariance
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldFlowTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem exists_sharedBoundary_preserving_isotopy (A B : BallNeighborhoodChart E F)
     (V : E → E) (hV : ContDiff ℝ ∞ V) (hVc : HasCompactSupport V)

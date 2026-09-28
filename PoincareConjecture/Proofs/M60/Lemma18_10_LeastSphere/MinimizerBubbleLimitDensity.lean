@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessTarget
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessWeakLimit
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,9 +58,6 @@ private theorem gram_eq_reader
   rw [← hread.self_of_nhds] at hpair
   exact hpair.symm
 
-
-
-
 theorem suObserved_density_tendsto
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))
     (he : ContMDiff (𝓡 n) (𝓡 d) 1 e) (hei : IsClosedEmbedding e)
@@ -114,9 +109,6 @@ theorem suObserved_density_tendsto
   · simpa only [m60EnergyDensity, Matrix.trace_fin_two] using
       ((hgram 0 0).add (hgram 1 1)).const_mul (1 / 2 : ℝ)
 
-
-
-
 theorem suObserved_disk_integrals_tendsto
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))
     (he : ContMDiff (𝓡 n) (𝓡 d) 1 e) (hei : IsClosedEmbedding e)
@@ -152,9 +144,6 @@ theorem suObserved_disk_integrals_tendsto
       rw [Real.norm_of_nonneg (m60EnergyDensity_nonneg g (f j) z)]
       exact hbound j z
     · exact Eventually.of_forall fun z => (ht z).2
-
-
-
 
 theorem suObserved_total_energy_le
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

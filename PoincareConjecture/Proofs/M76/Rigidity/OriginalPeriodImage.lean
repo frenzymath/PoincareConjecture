@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodMap
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem image_periodCutMap (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)

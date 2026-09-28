@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.ProtectedSourceRimCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -20,7 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "D" => closedBall (0 : V2) 1
 
-
 noncomputable def threeQuarterSquare : C(D, D) :=
   ⟨fun x => ⟨(3 / 4 : ℝ) • (x : V2), by
     have hx : ‖(x : V2)‖ ≤ 1 := by
@@ -29,10 +19,6 @@ noncomputable def threeQuarterSquare : C(D, D) :=
     norm_num
     linarith⟩,
     by fun_prop⟩
-
-
-
-
 
 theorem PLDomain.exists_protected_inner_square_filling
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

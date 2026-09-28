@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricConnectionJets
 import PoincareConjecture.Proofs.M03.Existence.FrameDeTurckDerivativeNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -45,14 +37,11 @@ private theorem inverseGramEntry_contDiffAt {n : ℕ}
       (g.euclideanCoefficients x) hgram.contDiffAt
   exact contDiffAt_pi.mp (contDiffAt_pi.mp h i) j
 
-
 theorem inverseGram_contDiffAt {n : ℕ} (g : RiemannianMetric n (E n))
     (x : E n) (b : Module.Basis (Fin n) ℝ (E n)) (i j : Fin n) :
     ContDiffAt ℝ ∞
       (fun y => (Matrix.of (fun a c => g.inner y (b a) (b c)))⁻¹ i j) x :=
   (inverseGramEntry_contDiffAt g x b i j).comp x (g.contDiffAt_euclideanCoefficients x)
-
-
 
 theorem inverseGram_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerResidual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
 
-
-
 theorem squareRoot_curve_eqOn (R S : M14SquareRootPath G p) :
     Set.EqOn R.curve S.curve (M14SqrtParameterInterval τ₁ τ₂) :=
   fun s hs => (R.agrees s hs).trans (S.agrees s hs).symm
@@ -36,8 +25,6 @@ private theorem horizontalProjection_heq {q r : G.Point} (h : q = r)
   cases h
   cases hv
   rfl
-
-
 
 theorem squareRoot_horizontalVelocity_heq (R S : M14SquareRootPath G p)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -63,8 +50,6 @@ private theorem squareEulerPair_heq {q r : G.Point} (h : q = r)
   cases hV
   cases hW
   rfl
-
-
 
 theorem squareRootEulerResidual_congr (R S : M14SquareRootPath G p)
     (E : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂)

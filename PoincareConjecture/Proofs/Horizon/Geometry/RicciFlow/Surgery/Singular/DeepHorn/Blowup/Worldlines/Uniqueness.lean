@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Spacetime.GeneralizedCylinderRestriction
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.GeneralizedFlowCylinder
 
 variable {F : GeneralizedRicciFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I J : Set ℝ} {U : Set C.carrier} {V : Set D.carrier}
-
-
 
 theorem pointMap_eq_on_interval
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -66,8 +55,6 @@ theorem pointMap_eq_on_interval
   intro t ht
   have hmem : (⟨t, ht⟩ : I) ∈ {t : I | f t = g t} := by rw [huniv]; exact mem_univ _
   exact hmem
-
-
 
 theorem pointMap_eq_on_overlap
     (e : GeneralizedFlowCylinder F C origin scale I U)

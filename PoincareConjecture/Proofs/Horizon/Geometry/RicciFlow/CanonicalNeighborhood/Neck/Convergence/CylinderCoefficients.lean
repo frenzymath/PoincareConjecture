@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CovariantJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -85,8 +78,6 @@ private theorem contDiffAt_cylinder_pullback_inner
   simp at hh
   convert! contMDiffAt_iff_contDiffAt.mp hh using 1
 
-
-
 theorem roundCylinderTensorSmoothOn_smul_pullback
     {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -120,8 +111,6 @@ namespace PointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
 
 theorem smooth_convergence_cylinder_coefficients
     {a b : ℝ} {S : PointedFlowSequence 3 a b}
@@ -192,9 +181,6 @@ theorem smooth_convergence_cylinder_coefficients
     apply (hjet m K hK (subset_univ K)).congr
     filter_upwards [heq] with k hk x hx
     exact ((Poincare.Analysis.Calculus.eqOn_iteratedFDeriv_of_isOpen hW hk m) (hKW hx)).symm
-
-
-
 
 theorem tendstoUniformlyOn_cylinder_covariant_derivative
     {a b : ℝ} {S : PointedFlowSequence 3 a b}

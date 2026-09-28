@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Covering.Completene
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {n : ℕ} {M E : Type*} [TopologicalSpace M] [TopologicalSpace E]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) E]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ E]
   [T3Space M] [T3Space E] [CompactSpace M] [PreconnectedSpace E]
-
-
 
 theorem compactSpace_covering_of_compact_positive_sectional
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -47,7 +36,6 @@ theorem compactSpace_covering_of_compact_positive_sectional
   rw [Dh.ricci_eq_of_local_isometry D isOpen_univ hq.contMDiffOn
     (fun y _ u v => hmetric y u v) (mem_univ x), hmetric]
   exact hRic _ _
-
 
 theorem finite_covering_fiber_of_compact_positive_sectional
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -74,8 +62,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [CompactSpace M] [ConnectedSpace M]
 
-
-
 theorem compactSpace_of_positive_sectional
     (g : PoincareConjecture.RiemannianMetric 3 M) (D : PoincareConjecture.LeviCivitaData g)
     (hc : PoincareConjecture.MetricComplete g)
@@ -95,8 +81,6 @@ theorem compactSpace_of_positive_sectional
   let h := g.pullbackOfLocalDiffeomorph q hq
   exact g.compactSpace_covering_of_compact_positive_sectional D h h.leviCivitaData
     (by norm_num) hc hsec q hq.contMDiff (isCoveringMap x₀) (fun _ _ _ => rfl)
-
-
 
 theorem finite_fundamentalGroup_of_positive_sectional
     (g : PoincareConjecture.RiemannianMetric 3 M) (D : PoincareConjecture.LeviCivitaData g)

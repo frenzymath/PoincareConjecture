@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.PathLengthComparison
 import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ namespace PoincareConjecture.M47
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_comparison_tip_distance_lt
     {g0 : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}

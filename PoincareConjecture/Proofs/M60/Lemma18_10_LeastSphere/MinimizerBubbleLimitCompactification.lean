@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitHarmonic
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,18 +12,15 @@ universe u
 
 namespace PoincareConjecture.M60
 
-
 theorem suAnnularReflection_involutive : Function.Involutive suAnnularReflection := by
   intro p
   apply Subtype.ext
   exact (ℝ ∙ m60SpherePole.val)ᗮ.reflection_reflection p.val
 
-
 theorem suSphereParameter_zero : m60SphereParameter 0 = -m60SpherePole := by
   let : Fact (Module.finrank ℝ LoopAmbient = 2 + 1) := ⟨by simp [LoopAmbient]⟩
   apply Subtype.ext
   simp [m60SphereParameter, m60SphereChart, stereographic'_symm_apply]
-
 
 theorem suAnnularReflection_pole : suAnnularReflection m60SpherePole = -m60SpherePole := by
   apply Subtype.ext
@@ -36,18 +31,14 @@ private theorem parameter_ne_pole (z : LoopPlane) : m60SphereParameter z ≠ m60
     m60SphereChart.map_target (by simp [m60SphereChart])
   simpa only [m60SphereChart, stereographic'_source, mem_compl_iff, mem_singleton_iff] using h
 
-
 def suSphereFromPlane {M : Type u} (f : LoopPlane → M) (p : M) : UnitTwoSphere → M :=
   fun x => if x = m60SpherePole then p else f (m60SphereChart x)
-
 
 theorem suSphereFromPlane_parameter {M : Type u} (f : LoopPlane → M) (p : M) :
     suSphereFromPlane f p ∘ m60SphereParameter = f := by
   funext z
   simp only [Function.comp_apply, suSphereFromPlane, if_neg (parameter_ne_pole z)]
   exact congrArg f (m60SphereChart.right_inv (by simp [m60SphereChart]))
-
-
 
 theorem suSphereFromPlane_inverted {M : Type u} (f : LoopPlane → M) (p : M) :
     suSphereFromPlane f p ∘ (suAnnularReflection ∘ m60SphereParameter) =
@@ -73,8 +64,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem suSphereFromPlane_smooth (f : LoopPlane → M) (p : M)
     (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -120,12 +109,9 @@ theorem suSphereFromPlane_smooth (f : LoopPlane → M) (p : M)
     have hyp : y ≠ m60SpherePole := by simpa [m60SphereChart] using hy
     simp only [suSphereFromPlane, if_neg hyp, Function.comp_apply]
 
-
 theorem suSphereFromPlane_energy (g : RiemannianMetric n M) (f : LoopPlane → M) (p : M) :
     m60SphereEnergy g (suSphereFromPlane f p) = ∫ z, m60EnergyDensity g f z := by
   simp only [m60SphereEnergy, m60SphereEnergyDensity, suSphereFromPlane_parameter]
-
-
 
 theorem suSphereFromPlane_harmonic (g : RiemannianMetric n M) (f : LoopPlane → M) (p : M)
     (hh : SUPlaneHarmonic g f) : M60SphereChartHarmonic g (suSphereFromPlane f p) := by

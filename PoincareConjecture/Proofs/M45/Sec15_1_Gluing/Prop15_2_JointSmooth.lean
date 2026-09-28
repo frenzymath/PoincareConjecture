@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_RecentNeck
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Normalization
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_CylinderCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +15,6 @@ namespace PoincareConjecture.M45NeckGluingInput
 open M36 M45
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem piecewiseTensor_joint_smooth {epsilon beta : ℝ}
     (I : M45NeckGluingInput.{u} epsilon beta)

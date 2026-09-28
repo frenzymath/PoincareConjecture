@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalExhaustionMap
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 universe u v w
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_metric_eq_of_chart_readouts
     {M : Type u} [TopologicalSpace M]

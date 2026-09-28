@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M77Transport
 import PoincareConjecture.Proofs.M02
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,7 +10,6 @@ universe u
 namespace PoincareConjecture
 
 set_option linter.style.haveILetI false
-
 
 theorem m77TransportTopologicalHypotheses : M77TransportStatement.{u} := by
   intro M _ _ _ _ _ _ P S

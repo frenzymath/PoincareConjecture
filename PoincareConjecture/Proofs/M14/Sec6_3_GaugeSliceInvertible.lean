@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeParameterDifferential
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,10 +25,6 @@ private theorem horizontal_bijective_iff_heq {p q : G.Point} (h : p = q)
   cases h
   have hAB : A = B := ContinuousLinearMap.ext (fun W => eq_of_heq (heq W))
   rw [hAB]
-
-
-
-
 
 theorem exponential_gauge_slice_bijective (E : M14ExponentialFamily G T x)
     (b : G.gaugeCover.index) {U : Set (G.Horizontal x)} (hU : IsOpen U) {C : Set ℝ}

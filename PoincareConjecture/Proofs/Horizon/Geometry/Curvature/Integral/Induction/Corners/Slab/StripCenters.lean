@@ -1,8 +1,6 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic
 
-
-
 open Set
 namespace Poincare.CurvatureIntegral
 theorem exists_normalized_strip_centers :

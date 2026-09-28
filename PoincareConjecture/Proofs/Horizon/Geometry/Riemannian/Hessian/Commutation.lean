@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.VectorField.Commutator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private lemma hessian_eq_mvfderiv_on_field (D : LeviCivitaData g)
   have h := D.hessianOnFields_eq_inner_connection_gradient hf
     (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) a) hZ
   simpa only [hessianOnFields, FiberBundle.extend_apply_self] using h.symm
-
-
 
 theorem covariantTensorDerivative_hessian_commutator (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

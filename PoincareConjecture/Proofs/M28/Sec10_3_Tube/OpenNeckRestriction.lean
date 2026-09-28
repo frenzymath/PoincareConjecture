@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegion
 import PoincareConjecture.Proofs.M28.Generalized.CylinderComparisonCongruence
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +17,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem intrinsicOpenMetric_scalarCurvature (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M)
@@ -50,13 +37,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 def openRestrictionCenter (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)
     (hNV : N.carrier ⊆ (V : Set M)) : V :=
   ⟨N.center, hNV (N.central_sphere_subset N.center_on_central_sphere)⟩
-
-
 
 def openRestrictionCarrierHomeomorph (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M)) :
@@ -72,21 +55,15 @@ def openRestrictionCarrierHomeomorph (N : EpsilonNeck g)
     (continuous_subtype_val.comp continuous_subtype_val).subtype_mk
       (fun x => x.property)
 
-
-
 def openRestrictionCoordinate (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M)) :
     NeckDomain N.epsilon ≃ₜ ((Subtype.val : V → M) ⁻¹' N.carrier) :=
   N.coordinate.trans (N.openRestrictionCarrierHomeomorph V hNV)
 
-
-
 def openRestrictionMap (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)
     (hNV : N.carrier ⊆ (V : Set M)) : RoundCylinderSpace → V :=
   (V.openPartialHomeomorphSubtypeCoe ⟨N.openRestrictionCenter V hNV⟩).symm ∘
     N.coordinate_map
-
-
 
 theorem openRestrictionMap_val_on_strip (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
@@ -99,8 +76,6 @@ theorem openRestrictionMap_val_on_strip (N : EpsilonNeck g)
     simpa only [e, TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe_target]
       using hNV (N.coordinate_map_mem_of_axial z hz))
 
-
-
 theorem openRestrictionCoordinate_eq_map (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (z : NeckDomain N.epsilon) :
@@ -111,8 +86,6 @@ theorem openRestrictionCoordinate_eq_map (N : EpsilonNeck g)
   rw [N.openRestrictionMap_val_on_strip V hNV _ z.2.property]
   exact N.coordinate_map_eq z
 
-
-
 theorem openRestrictionMap_smooth (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M)) :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞
@@ -122,8 +95,6 @@ theorem openRestrictionMap_smooth (N : EpsilonNeck g)
     ⟨N.openRestrictionCenter V hNV⟩).comp N.coordinate_map_smooth
       (fun z hz => hNV (N.coordinate_map_mem_of_axial z hz.2))
 
-
-
 theorem openRestrictionInverse_smooth (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞
@@ -132,8 +103,6 @@ theorem openRestrictionInverse_smooth (N : EpsilonNeck g)
   exact N.coordinate_inverse_smooth.comp
     (contMDiff_subtype_val (I := 𝓡 3) (U := V)).contMDiffOn
     (fun _ hx => hx)
-
-
 
 theorem openRestriction_central_sphere_eq (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M)) :
@@ -158,8 +127,6 @@ theorem openRestriction_central_sphere_eq (N : EpsilonNeck g)
     rw [N.openRestrictionMap_val_on_strip V hNV z (by simpa [hz0] using hzero),
       N.central_sphere_eq]
     exact ⟨z, hz, rfl⟩
-
-
 
 theorem openRestriction_tensor_eq_on_strip (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
@@ -210,8 +177,6 @@ theorem openRestriction_tensor_eq_on_strip (N : EpsilonNeck g)
     hderiv_v, hderiv_w, N.openRestrictionMap_val_on_strip V hNV z hz]
   rfl
 
-
-
 def restrictOpen (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)
     (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
@@ -257,64 +222,46 @@ def restrictOpen (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)
     intro z hz v w
     rw [N.openRestriction_tensor_eq_on_strip V hNV z hz v w]⟩
 
-
-
 @[simp] theorem restrictOpen_epsilon (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).epsilon = N.epsilon := rfl
-
-
 
 @[simp] theorem restrictOpen_scale (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).scale = N.scale := rfl
 
-
-
 @[simp] theorem restrictOpen_connection (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).connection = DU := rfl
-
-
 
 @[simp] theorem restrictOpen_center_val (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     ((N.restrictOpen V hNV DU).center : M) = N.center := rfl
 
-
-
 @[simp] theorem restrictOpen_carrier (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).carrier = Subtype.val ⁻¹' N.carrier := rfl
-
-
 
 @[simp] theorem restrictOpen_central_sphere (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).central_sphere = Subtype.val ⁻¹' N.central_sphere := rfl
 
-
-
 @[simp] theorem restrictOpen_region (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) (a b : ℝ) :
     (N.restrictOpen V hNV DU).region a b = Subtype.val ⁻¹' N.region a b := rfl
-
-
 
 @[simp] theorem restrictOpen_coordinate_inverse (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))
     (DU : LeviCivitaData (intrinsicOpenMetric g V)) :
     (N.restrictOpen V hNV DU).coordinate_inverse =
       N.coordinate_inverse ∘ Subtype.val := rfl
-
-
 
 theorem restrictOpen_coordinate_map_val_on_strip (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hNV : N.carrier ⊆ (V : Set M))

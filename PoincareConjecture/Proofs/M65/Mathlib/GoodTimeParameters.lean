@@ -2,19 +2,9 @@ import PoincareConjecture.Proofs.M65.Mathlib.FineGrid
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M65
-
-
-
 
 theorem exists_goodTime_grid_parameters {a b C delta ell d K : ℝ}
     (hab : a < b) (hdelta : 0 < delta) (hell : 0 < ell) (hd : 0 < d) (hK : 0 ≤ K) :

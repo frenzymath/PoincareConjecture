@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPotential
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPoissonSmooth
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,21 +17,9 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 theorem scalarAnnulus_isOpen : IsOpen scalarAnnulus :=
   (isOpen_lt continuous_const continuous_norm).inter
     (isOpen_lt continuous_norm continuous_const)
-
-
-
-
-
-
-
 
 theorem laplacian_zero_of_smooth_distribution {Ω : Set Plane} (hΩ : IsOpen Ω)
     {U : Plane → ℝ} (hU : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ U Ω)
@@ -92,13 +68,6 @@ theorem laplacian_zero_of_smooth_distribution {Ω : Set Plane} (hΩ : IsOpen Ω)
       (x := x) (by simpa only [Pi.mul_apply, b.eq_one, one_mul] using mul_ne_zero hRx hRx)
     exact hpos.ne' hzero
   exact (D.laplacian_eq_of_eventuallyEq hVU).symm.trans hRx
-
-
-
-
-
-
-
 
 theorem exists_annular_smooth_harmonic_potential :
     ∃ (H : Plane → ℝ) (w : H1Zero D scalarAnnulus),

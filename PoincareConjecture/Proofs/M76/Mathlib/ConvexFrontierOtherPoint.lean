@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem IsCompact.exists_ne_frontier_point {C : Set E}
     (hC : IsCompact C) (hcv : Convex ℝ C) (hne : (interior C).Nonempty)

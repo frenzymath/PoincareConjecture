@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryCollar
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Gauss
 
 open M65Branch M65StrictTrace
-
-
-
-
 
 theorem exists_subordinate_uniform_subdivision {ι : Type*} {a b : ℝ}
     (hab : a < b) (U : ι → Set ℝ) (hU : ∀ i, IsOpen (U i))
@@ -61,10 +47,6 @@ theorem exists_subordinate_uniform_subdivision {ι : Type*} {a b : ℝ}
       (a + (b - a) * ((i : ℝ) + 1) / N) - (a + (b - a) * (i : ℝ) / N) =
         (b - a) / N := by ring
   exact (sub_le_sub_right ht.2 _).trans_lt (hwidth ▸ hstep)
-
-
-
-
 
 theorem boundaryCoordinate_angular_radius (a t h : ℝ) :
     let e := orthonormalBasisOneI.repr.toContinuousLinearEquiv
@@ -101,12 +83,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
-
 
 theorem exists_angular_collar (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.MetricPullbackForm
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SphereTangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ local instance (p : UnitTwoSphere) : NormedAddCommGroup (TangentSpace (𝓡 2) p
 
 local instance (p : UnitTwoSphere) : InnerProductSpace ℝ (TangentSpace (𝓡 2) p) :=
   inferInstanceAs (InnerProductSpace ℝ LoopPlane)
-
-
 
 noncomputable def m60RoundSphereMetric : RiemannianMetric 2 UnitTwoSphere where
   inner := M60.metricPullbackForm (n := 2) sphereAmbientMetric (fun p : UnitTwoSphere => p.1)
@@ -50,8 +39,6 @@ noncomputable def m60RoundSphereMetric : RiemannianMetric 2 UnitTwoSphere where
     let : Fact (Module.finrank ℝ LoopAmbient = 2 + 1) := ⟨by simp [LoopAmbient]⟩
     exact M60.metricPullbackForm_contMDiffAt sphereAmbientMetric
       ((contMDiff_coe_sphere (n := 2) (m := ∞)) p)
-
-
 
 theorem m60RoundSphereMetric_inner (p : UnitTwoSphere)
     (v w : TangentSpace (𝓡 2) p) :

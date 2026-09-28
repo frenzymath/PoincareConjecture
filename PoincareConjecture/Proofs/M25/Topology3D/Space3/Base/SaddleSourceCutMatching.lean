@@ -2,20 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleExteriorPortMa
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleSourceDiscGeometry
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SourceCircleCut
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_one_circle_exterior_matching
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

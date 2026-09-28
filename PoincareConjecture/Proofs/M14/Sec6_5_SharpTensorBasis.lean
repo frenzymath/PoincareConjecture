@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_SharpHessianBilinear
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Trace
 import Mathlib.LinearAlgebra.BilinearForm.Hom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem ricci_add_bilinear_eq_of_basis
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (q : G.Point)

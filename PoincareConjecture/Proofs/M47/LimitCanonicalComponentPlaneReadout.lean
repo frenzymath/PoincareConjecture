@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalComponentSectionalStability
 import PoincareConjecture.Proofs.M34.Standard.LocalPullbackRealization
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_PullbackPlane
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,8 +56,6 @@ private theorem model_pair_independent {p : E × E} (hp : p ∈ modelOrthonormal
       · exact (hij rfl).elim
   exact horth.linearIndependent
 
-
-
 theorem limitCanonical_component_model_jet_lower
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) E M ∞)
@@ -94,8 +82,6 @@ theorem limitCanonical_component_model_jet_lower
   exact (lt_div_iff₀ hgram).mp hbound
 
 omit [T2Space M] in
-
-
 
 theorem limitCanonical_component_all_planes_of_model_jets
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -140,7 +126,6 @@ theorem limitCanonical_component_all_planes_of_model_jets
   simpa only [metricGram, hmetric x hxW] using h
 
 omit [T2Space M] in
-
 
 theorem limitCanonical_component_curvature_of_model_jets
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)

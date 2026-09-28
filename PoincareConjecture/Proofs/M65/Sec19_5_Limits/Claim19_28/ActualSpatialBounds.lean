@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.IntrinsicFiniteRanges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem m65ActualIntrinsicSpatialBounds {κ : Type*}
     (hcompact : IsCompact (univ : Set M)) {circumference : κ → ℝ}

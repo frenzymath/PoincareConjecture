@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.RadialProfile
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,15 +10,11 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def capRadialMap (f : ℝ → ℝ) (x : StandardCapSpace) : StandardCapSpace :=
   (f ‖x‖ / ‖x‖) • x
 
-
 @[simp] theorem capRadialMap_zero (f : ℝ → ℝ) : capRadialMap f 0 = 0 := by
   simp [capRadialMap]
-
-
 
 theorem capRadialMap_norm (f : ℝ → ℝ) (hf0 : f 0 = 0)
     (hf : ∀ t, 0 ≤ t → 0 ≤ f t) (x : StandardCapSpace) :
@@ -36,8 +24,6 @@ theorem capRadialMap_norm (f : ℝ → ℝ) (hf0 : f 0 = 0)
   rw [capRadialMap, norm_smul, Real.norm_eq_abs,
     abs_of_nonneg (div_nonneg (hf _ (norm_nonneg x)) (norm_nonneg x)),
     div_mul_cancel₀ _ (norm_ne_zero_iff.mpr hx)]
-
-
 
 theorem capRadialMap_left_inverse (e : ℝ ≃o ℝ) (he0 : e 0 = 0) :
     Function.LeftInverse (capRadialMap e.symm) (capRadialMap e) := by
@@ -54,14 +40,11 @@ theorem capRadialMap_left_inverse (e : ℝ ≃o ℝ) (he0 : e 0 = 0) :
     field_simp [hpos.ne', norm_ne_zero_iff.mpr hx]
   rw [hscalar, one_smul]
 
-
 theorem capRadialMap_eq_smul (f : ℝ → ℝ) (c : ℝ) (x : StandardCapSpace)
     (h : f ‖x‖ = c * ‖x‖) : capRadialMap f x = c • x := by
   by_cases hx : x = 0
   · simp [hx]
   rw [capRadialMap, h, mul_div_cancel_right₀ _ (norm_ne_zero_iff.mpr hx)]
-
-
 
 theorem capRadialMap_smooth (f : ℝ → ℝ) (hf : ContDiff ℝ ∞ f)
     (a c : ℝ) (ha : 0 < a) (hlinear : ∀ t, t ≤ a → f t = c * t) :
@@ -79,12 +62,10 @@ theorem capRadialMap_smooth (f : ℝ → ℝ) (hf : ContDiff ℝ ∞ f)
       contDiffAt_norm ℝ hx
     exact ((hf.contDiffAt.comp x hn).div hn (norm_ne_zero_iff.mpr hx)).smul contDiffAt_id
 
-
 @[simp] theorem capRadialOrderIso_symm_zero {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     (capRadialOrderIso r c hc hcr).symm 0 = 0 := by
   apply (capRadialOrderIso r c hc hcr).injective
   simp
-
 
 noncomputable def capRadialDiffeomorph (r c : ℝ) (hc : 0 < c) (hcr : c < r) :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ where
@@ -101,14 +82,12 @@ noncomputable def capRadialDiffeomorph (r c : ℝ) (hc : 0 < c) (hcr : c < r) :
         rw [capRadialOrderIso_symm_linear hc hcr t ht]
         exact div_eq_inv_mul t c))
 
-
 theorem capRadialDiffeomorph_norm {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (x : StandardCapSpace) :
     ‖capRadialDiffeomorph r c hc hcr x‖ = capRadialProfile r c ‖x‖ := by
   apply capRadialMap_norm _ (by simp)
   intro t ht
   simpa using (capRadialProfile_strictMono hc hcr).monotone ht
-
 
 theorem capRadialDiffeomorph_closedBall {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     capRadialDiffeomorph r c hc hcr '' Metric.closedBall 0 1 = Metric.closedBall 0 r := by
@@ -130,7 +109,6 @@ theorem capRadialDiffeomorph_closedBall {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
   simpa only [capRadialProfile_one] using
     ((capRadialProfile_strictMono hc hcr).le_iff_le (a := ‖x‖) (b := 1)).symm
 
-
 theorem capRadialDiffeomorph_ball_two {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     capRadialDiffeomorph r c hc hcr '' Metric.ball 0 2 = Metric.ball 0 (r + c) := by
   ext y
@@ -151,8 +129,6 @@ theorem capRadialDiffeomorph_ball_two {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     rw [capRadialProfile_affine r c 2 (by norm_num)]
     ring
   rw [← htwo, (capRadialProfile_strictMono hc hcr).lt_iff_lt]
-
-
 
 theorem capRadialDiffeomorph_smul {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (z : UnitTwoSphere) (t : ℝ) (ht : 1 / 2 ≤ t) :

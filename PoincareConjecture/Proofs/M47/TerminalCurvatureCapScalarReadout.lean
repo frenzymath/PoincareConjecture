@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureStaticGeometry
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_cap_target_scalar_comparison
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

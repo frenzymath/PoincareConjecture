@@ -3,15 +3,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -19,9 +10,6 @@ set_option maxSynthPendingDepth 8
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem curvatureForm_eq_zero_of_planes
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
@@ -41,9 +29,6 @@ theorem curvatureForm_eq_zero_of_planes
     linarith only [h]
   linarith only [htwo a b c d, htwo b a c d,
     hfirst b a c d, hfirst c b a d, hcyclic a b c d]
-
-
-
 
 theorem curvatureForm_eq_of_planes
     (R S : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

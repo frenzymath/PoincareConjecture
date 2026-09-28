@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderCoefficientField
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8

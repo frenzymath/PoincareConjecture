@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Cylinder
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Algebra.GroupWithZero
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,7 +12,6 @@ universe u
 noncomputable section
 
 namespace PoincareConjecture.GeneralizedRicciFlowData
-
 
 def sliceDiffeomorphOfTimeEq (F : GeneralizedRicciFlowData.{u}) {s t : ℝ} (h : s = t) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice s).carrier (F.slice t).carrier ∞ := by
@@ -52,7 +49,6 @@ include e in
 theorem physical_clock_eq (t : ℝ) : a + ((t - a) * q) / q = t := by
   rw [mul_div_cancel_right₀ _ e.scale_pos.ne']
   ring
-
 
 def forwardAtTime (t : ℝ) (ht : (t - a) * q ∈ I) : C.carrier → (F.slice t).carrier :=
   F.sliceDiffeomorphOfTimeEq (e.physical_clock_eq t) ∘ e.forward ((t - a) * q) ht
@@ -105,7 +101,6 @@ theorem forwardAtTime_embedding :
     exact e.forwardAtTime_point _ _ _
   rw [heq]
   exact e.embedding.comp ((clock.isEmbedding.restrict hclock).prodMap Topology.IsEmbedding.id)
-
 
 theorem forwardAtTime_vertical_compatibility (t : ℝ) (ht : (t - a) * q ∈ I)
     (x : C.carrier) (hx : x ∈ U) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapTipDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open Proofs.M46
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_inverse_tangent_bound
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
@@ -83,8 +72,6 @@ theorem source_initial_inverse_tangent_bound
   refine ⟨mul_nonneg hLambda.le (Real.sqrt_nonneg _), ?_⟩
   rw [mul_pow, Real.sq_sqrt hV]
   exact hbound
-
-
 
 theorem source_initial_inverse_tip_distance
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

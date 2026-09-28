@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RiemannianLink
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem asymptoticCone_volume_le_normalized_ball_volume
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -42,8 +31,6 @@ theorem asymptoticCone_volume_le_normalized_ball_volume
     (g.rayComparison_of_metricComplete D hc hsec p) n hL
   rw [g.toMetricSpace_ball] at h
   exact h
-
-
 
 theorem asymptoticCone_volume_le_asymptoticVolumeRatio
     [SecondCountableTopology M]

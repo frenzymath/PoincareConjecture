@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Connection
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.RadialLength
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,21 +8,15 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 theorem initialRadialCoefficient_eq (g₀ : StandardInitialMetric) (r : ℝ) :
     initialRadialCoefficient g₀ r = initialRadialSpeed g₀ r ^ 2 :=
   (Real.sq_sqrt (initialCoefficients_pos g₀ r).1.le).symm
-
-
 
 theorem initialAngularCoefficient_eq (g₀ : StandardInitialMetric) {r : ℝ} (hr : r ≠ 0) :
     initialAngularCoefficient g₀ r = initialWarping g₀ r ^ 2 / r ^ 2 := by
   unfold initialWarping
   rw [mul_pow, Real.sq_sqrt (initialCoefficients_pos g₀ r).2.le]
   field_simp
-
-
 
 theorem initialRadialCoefficient_hasDerivAt (g₀ : StandardInitialMetric) (r : ℝ) :
     HasDerivAt (initialRadialCoefficient g₀)
@@ -43,8 +27,6 @@ theorem initialRadialCoefficient_hasDerivAt (g₀ : StandardInitialMetric) (r : 
   rw [he]
   convert! h using 1
   norm_num
-
-
 
 theorem initialAngularCoefficient_hasDerivAt (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : r ≠ 0) :
@@ -62,8 +44,6 @@ theorem initialAngularCoefficient_hasDerivAt (g₀ : StandardInitialMetric)
   field_simp
   ring
 
-
-
 theorem initialRankOneCoefficient_hasDerivAt (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : r ≠ 0) :
     HasDerivAt (initialRankOneCoefficient g₀)
@@ -80,8 +60,6 @@ theorem initialRankOneCoefficient_hasDerivAt (g₀ : StandardInitialMetric)
   field_simp
   ring
 
-
-
 theorem initialChristoffelA_eq (g₀ : StandardInitialMetric) {r : ℝ}
     (hr : r ≠ 0) (hf : initialWarping g₀ r ≠ 0) :
     initialChristoffelA g₀ r =
@@ -89,8 +67,6 @@ theorem initialChristoffelA_eq (g₀ : StandardInitialMetric) {r : ℝ}
   rw [initialChristoffelA, (initialAngularCoefficient_hasDerivAt g₀ hr).deriv,
     initialAngularCoefficient_eq g₀ hr]
   field_simp
-
-
 
 theorem initialChristoffelB_eq (g₀ : StandardInitialMetric) {r : ℝ} (hr : r ≠ 0) :
     initialChristoffelB g₀ r = 1 / r ^ 2 -
@@ -101,8 +77,6 @@ theorem initialChristoffelB_eq (g₀ : StandardInitialMetric) {r : ℝ} (hr : r 
     initialRankOneCoefficient, initialRadialCoefficient_eq, initialAngularCoefficient_eq g₀ hr]
   field_simp
   ring
-
-
 
 theorem initialChristoffelC_eq (g₀ : StandardInitialMetric) {r : ℝ}
     (hr : r ≠ 0) (hf : initialWarping g₀ r ≠ 0) :

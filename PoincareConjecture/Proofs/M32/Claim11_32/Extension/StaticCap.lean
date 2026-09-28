@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.StaticNeck
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.StaticTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +17,6 @@ variable {M N : Type u}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
-
 
 noncomputable def pullbackCapCertificate (K : CapCertificate h)
     (he : MetricHomothety g h e 1) (Hcal : MetricHomothetyCalculus g h e 1)

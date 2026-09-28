@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CutoffResidual
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CylinderCutoff
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false

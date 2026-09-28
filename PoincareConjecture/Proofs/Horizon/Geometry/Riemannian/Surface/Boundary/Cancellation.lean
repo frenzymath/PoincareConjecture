@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Normalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,8 +45,6 @@ variable (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)
 
 include hU he₁ he₂ hT hV hu₁ hu₂ ho hab hφ hφ' hγ hγU hW heq hvelocity hZ hdet
 
-
-
 theorem integral_surfaceTurningForm_change_reparam :
     (∫ t in a..b, D.surfaceTurningForm f₁ f₂ W Z (γ (φ t))) =
       δ * ∫ s in φ a..φ b, D.surfaceTurningForm e₁ e₂ T V (γ s) := by
@@ -76,8 +66,6 @@ theorem integral_surfaceTurningForm_change_reparam :
       intervalIntegral.integral_const_mul _ _
     _ = _ := congrArg (δ * ·) (intervalIntegral.integral_deriv_smul_comp' hφ hφ' hcont)
 
-
-
 theorem integral_surfaceTurningForm_pair_eq_zero {c d : ℝ}
     (hendpoints : (δ = -1 ∧ φ a = c ∧ φ b = d) ∨
       (δ = 1 ∧ φ a = d ∧ φ b = c)) :
@@ -90,8 +78,6 @@ theorem integral_surfaceTurningForm_pair_eq_zero {c d : ℝ}
   · rw [ha, hb, one_mul, intervalIntegral.integral_symm d c, add_neg_cancel]
 
 omit heq in
-
-
 
 theorem integral_normalized_surfaceTurningForm_pair_eq_zero {c d : ℝ}
     (hregular : ∀ t ∈ Ioo a b, Z (γ (φ t)) ≠ 0)

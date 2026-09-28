@@ -10,8 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "Sq" => (I ×ˢ I : Set P2)
 
-
-
 structure NestedShellSquareCharts {S T : Set P2} (D : NestedShellDissection S T) where
   chart : (j : Fin 2) → Sq ≃ₜ D.disk j
   finitePL : ∀ j, (chart j).IsFinitePL

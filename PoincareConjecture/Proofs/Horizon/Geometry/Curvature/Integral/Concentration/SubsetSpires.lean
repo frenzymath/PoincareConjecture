@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.MaximalRadius
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_finite_punctured_ball_cover_on_subset
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)
@@ -58,8 +49,6 @@ theorem exists_finite_punctured_ball_cover_on_subset
     · exact hxy
     · intro h
       exact hne (Subtype.ext (mem_singleton_iff.mp h))
-
-
 
 theorem exists_maximal_regular_radius_finite_punctured_cover_on_subset
     {X : Type*} [MetricSpace X]

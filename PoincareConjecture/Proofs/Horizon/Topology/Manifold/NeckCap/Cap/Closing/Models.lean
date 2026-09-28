@@ -9,20 +9,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.P
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.CollarFilling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,8 +17,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_two_cap_closed_model_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -67,8 +51,6 @@ theorem exists_two_cap_closed_model_threshold :
         C.nonempty_mixed_cap_closedComponentCertificate D hC hD hcompact hcomponent⟩
     | puncturedProjective =>
       exact C.nonempty_two_projective_cap_closedComponentCertificate D hC hD hcompact hcomponent
-
-
 
 theorem exists_double_capped_tube_closed_model_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

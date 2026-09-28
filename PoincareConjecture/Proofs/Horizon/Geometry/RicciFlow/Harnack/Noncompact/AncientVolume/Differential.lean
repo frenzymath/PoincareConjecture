@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.BoundedFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 universe u
-
 
 theorem PoincareConjecture.RicciFlow.ancient_differential_of_bounded_ancient
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

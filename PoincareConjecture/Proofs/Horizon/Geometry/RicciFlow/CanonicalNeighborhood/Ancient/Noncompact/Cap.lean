@@ -2,19 +2,6 @@ import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Ch01.ScalarOperators
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -52,15 +39,12 @@ private theorem evolution_expression_eq (D D' : LeviCivitaData g) (x : M) :
   rw [scalar_function_eq D D', D.laplacian_eq D']
   simp only [LeviCivitaData.ricciNormSq, LeviCivitaData.ricci, D.horizon_curvatureTensor_eq D']
 
-
 noncomputable def neckWithConnection (N : EpsilonNeck g) (D : LeviCivitaData g) :
     EpsilonNeck g :=
   { N with
     connection := D
     scalar_center_pos := by rw [← N.connection.scalarCurvature_eq D]; exact N.scalar_center_pos
     scale_eq_scalar := by rw [← N.connection.scalarCurvature_eq D]; exact N.scale_eq_scalar }
-
-
 
 noncomputable def capWithConnection (cap : CapCertificate g) (D : LeviCivitaData g) :
     CapCertificate g := by
@@ -93,8 +77,6 @@ noncomputable def capWithConnection (cap : CapCertificate g) (D : LeviCivitaData
     simpa only [hscalar] using h
 
 variable [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 noncomputable def strongCapOfCap (K : AncientKappaSolution 3 M) {t epsilon C : ℝ}
     (ht : t ≤ 0) (cap : CapCertificate (K.flow.metric t))
@@ -147,8 +129,6 @@ noncomputable def strongCapOfCap (K : AncientKappaSolution 3 M) {t epsilon C : �
     apply ENNReal.ofReal_le_ofReal
     apply mul_le_mul_of_nonneg_right _ (pow_nonneg (cap'.core_radius_pos y hy).le _)
     exact ((inv_le_inv₀ hC cap'.cap_constant_pos).2 hconstant).trans hb.le
-
-
 
 noncomputable def strongCappedTubeOfCappedTube (K : AncientKappaSolution 3 M)
     {t epsilon C : ℝ} (ht : t ≤ 0)

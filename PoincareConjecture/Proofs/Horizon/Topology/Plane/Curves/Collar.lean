@@ -1,17 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.LocalStraightening
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Topology.Separation.Hausdorff
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -19,7 +8,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
 
 noncomputable def quarterTurn : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] EuclideanSpace ℝ (Fin 2) :=
   (Complex.orthonormalBasisOneI.repr.toContinuousLinearEquiv.symm.trans
@@ -38,7 +26,6 @@ theorem inner_quarterTurn_self (v : EuclideanSpace ℝ (Fin 2)) :
   rw [E.inner_map_map]
   exact real_inner_I_smul_self ℂ (E.symm v)
 
-
 noncomputable def normalStrip (f : ℝ → EuclideanSpace ℝ (Fin 2))
     (q : ℝ × ℝ) : EuclideanSpace ℝ (Fin 2) :=
   f q.1 + q.2 • quarterTurn (deriv f q.1)
@@ -46,13 +33,11 @@ noncomputable def normalStrip (f : ℝ → EuclideanSpace ℝ (Fin 2))
 @[simp] theorem normalStrip_axis (f : ℝ → EuclideanSpace ℝ (Fin 2)) (t : ℝ) :
     normalStrip f (t, 0) = f t := by simp [normalStrip]
 
-
 theorem contDiff_normalStrip {f : ℝ → EuclideanSpace ℝ (Fin 2)}
     (hf : ContDiff ℝ ∞ f) : ContDiff ℝ ∞ (normalStrip f) := by
   exact (hf.comp contDiff_fst).add
     (contDiff_snd.smul ((quarterTurn.contDiff.comp
       (contDiff_infty_iff_deriv.mp hf).2).comp contDiff_fst))
-
 
 theorem exists_strictFDerivAt_normalStrip_axis
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)
@@ -93,8 +78,6 @@ theorem exists_strictFDerivAt_normalStrip_axis
   intro q
   simpa [n] using hL q
 
-
-
 theorem exists_local_normal_collar
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)
     {t : ℝ} (hregular : deriv f t ≠ 0) :
@@ -115,8 +98,6 @@ theorem exists_local_normal_collar
     exact hd.hasFDerivAt
   · rw [hinverse]
     exact hcont
-
-
 
 theorem exists_normal_collar
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)
@@ -158,9 +139,6 @@ theorem exists_normal_collar
   intro t ht
   obtain ⟨L, _, hd⟩ := exists_strictFDerivAt_normalStrip_axis hf (hregular t ht)
   exact ⟨L, hd⟩
-
-
-
 
 theorem exists_normal_collar_coordinates
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)

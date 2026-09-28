@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckMixedForcingNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckPrincipalForcingNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteChartCommonTimeNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -118,7 +111,6 @@ theorem entryReconstruction_word (f : A.centers → (Fin n × Fin n) → M → �
   intro ij _
   exact (outputWordTerms_eq F A g0 a ab ij word (hf a ij) x).symm
 
-
 theorem sourceWord_eq (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (B : LeviCivitaData g0) (ab : iota × iota) (word : List iota) (x : M) :
     directionalWord F word
@@ -140,7 +132,6 @@ variable [MeasurableSpace M] [BorelSpace M] (μ : Measure M) [IsFiniteMeasure μ
 
 abbrev ChartSourceTuples (k : ℕ) :=
   A.centers → (Fin n × Fin n) → WordIndex iota k → Lp ℝ 2 μ
-
 
 def sourceOutputWordL2 {k : ℕ} (ab : iota × iota) (word : List iota)
     (hw : word.length ≤ k) :
@@ -207,7 +198,6 @@ theorem sourceOutputWordL2_ae_eq {k : ℕ} (ab : iota × iota) (word : List iota
     (sourceEntry A g0 g) hQ] with x hx
   exact hx.trans (sourceWord_eq F A g0 g D B ab word x).symm
 
-
 def sourceOutputL2 (k : ℕ) :
     ChartSourceTuples (iota := iota) A μ k →L[ℝ] NativeProbeL2 (iota := iota) μ k :=
   ContinuousLinearMap.pi (fun ab => ContinuousLinearMap.pi (fun w =>
@@ -261,14 +251,12 @@ def matrixEntryContinuous (i j : Fin n) :
     (B : C(M, Matrix (Fin n) (Fin n) ℝ)) (x : M) :
     matrixEntryContinuous (M := M) i j B x = B x i j := rfl
 
-
 def principalHighWordL2 {k : ℕ} (word : List iota) (hw : word.length ≤ k)
     (c d i j : Fin n) : NativeProbeL2 (iota := iota) μ (k + 2) →L[ℝ] Lp ℝ 2 μ :=
   matrixDifferenceWordL2 F C g0 μ
     (word.map Sum.inr ++ [Sum.inl c, Sum.inl d])
     (by simpa only [List.length_append, List.length_map, List.length_cons, List.length_nil]
       using Nat.add_le_add_right hw 2) i j
-
 
 def principalTopWordL2 {k : ℕ} (word : List iota) (hw : word.length ≤ k)
     (i j : Fin n) : C(M, Matrix (Fin n) (Fin n) ℝ) →L[ℝ]
@@ -334,7 +322,6 @@ theorem principalTopWordL2_ae_eq
   rw [houter]
   simp only [hinner, hterms]
 
-
 def operatorPi {I : Type*} [Fintype I] {Z : Type*} {W : Type*}
     [NormedAddCommGroup Z] [NormedSpace ℝ Z]
     [NormedAddCommGroup W] [NormedSpace ℝ W] :
@@ -379,7 +366,6 @@ theorem principalChartTopL2_apply (k : ℕ)
     principalChartTopL2 F A g0 μ k B Q a ij w =
       principalTopWordL2 F g0 μ (A.cutoffs a) (List.ofFn w.2)
         (by simpa only [List.length_ofFn] using Nat.le_of_lt_succ w.1.isLt) ij.1 ij.2 (B a) Q := rfl
-
 
 def principalOutputL2 (k : ℕ) :
     (A.centers → C(M, Matrix (Fin n) (Fin n) ℝ)) →L[ℝ]

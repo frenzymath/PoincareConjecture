@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonOverlapCorrection
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
@@ -17,9 +8,6 @@ open Set Topology Geometry
 universe u v w
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem nonempty_supportedPLOverlapCorrection_of_covered
     {M : Type u} {E : Type v} {ι : Type w}

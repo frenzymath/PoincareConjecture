@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Terminal
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -55,8 +47,6 @@ theorem isCompact_model_terminal_cap
   rw [data.modelDisk_image] at hd
   exact hd.image ((data.toTerminalSaddleGeometry.flatten.contMDiff.continuous).comp
     (data.toTerminalSaddleGeometry.filledModel.contMDiff.continuous.comp continuous_subtype_val))
-
-
 
 theorem exists_terminal_rim_neighborhood_avoiding_other_caps
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

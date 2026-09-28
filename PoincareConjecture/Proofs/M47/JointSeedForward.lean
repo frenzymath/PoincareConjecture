@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.JointSeedWorldline
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_forward_scalar_comparison
     {u : ℝ → ℝ} {a b A L : ℝ} (hab : a ≤ b) (hA : 0 ≤ A) (hL : 0 < L)
@@ -43,8 +32,6 @@ theorem jointSeed_forward_scalar_comparison
     refine ⟨-z, ?_, by simpa only [abs_neg] using hestimate⟩
     simpa only [zero_sub, mul_neg_one, Function.comp_def] using
       hz.comp w ((hasDerivAt_const w (a + b)).sub (hasDerivAt_id w))
-
-
 
 theorem jointSeed_forward_of_evolution_bound
     (P : M47ScalarPersistencePredecessors.{u})

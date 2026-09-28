@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutLabels
 import PoincareConjecture.Proofs.M38.EventForest
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,17 +18,14 @@ namespace EventSpanningForest
 
 variable (H : EventSpanningForest F T hT P) (e : H.graph.edgeSet)
 
-
 def CutComponent : Type u := (H.graph.deleteEdges {e.val}).ConnectedComponent
 
 instance : TopologicalSpace (H.CutComponent e) := ⊥
 
 instance : DiscreteTopology (H.CutComponent e) := ⟨rfl⟩
 
-
 noncomputable def cutVertexLabel (v : EventCutVertex F T hT) : H.CutComponent e :=
   (H.graph.deleteEdges {e.val}).connectedComponentMk v
-
 
 theorem cutVertexLabel_other (f : H.graph.edgeSet) (hfe : f ≠ e) :
     H.cutVertexLabel e (cutSideVertex F T hT P (H.capEdge f) false) =
@@ -47,7 +35,6 @@ theorem cutVertexLabel_other (f : H.graph.edgeSet) (hfe : f ≠ e) :
     exact ⟨f.property, fun h => hfe (Subtype.ext h)⟩
   exact SimpleGraph.ConnectedComponent.connectedComponentMk_eq_of_adj
     ((H.graph.deleteEdges {e.val}).mem_edgeSet.mp hm)
-
 
 theorem cutVertexLabel_edge_ne :
     H.cutVertexLabel e (cutSideVertex F T hT P (H.capEdge e) false) ≠
@@ -62,7 +49,6 @@ theorem cutVertexLabel_edge_ne :
   intro heq
   exact hnr (SimpleGraph.ConnectedComponent.exact heq)
 
-
 theorem cutVertexLabel_uncut (S : Set (Fin (F.event T hT).cap_count))
     (he : H.capEdge e ∈ S) (hS : Sᶜ ⊆ H.selectedCaps)
     (i : Fin (F.event T hT).cap_count) (hi : i ∉ S) :
@@ -75,7 +61,6 @@ theorem cutVertexLabel_uncut (S : Set (Fin (F.event T hT).cap_count))
     exact hi (hfi ▸ he)
   rw [← hfi]
   exact H.cutVertexLabel_other e f hfe
-
 
 theorem cut_centers_separated (S : Set (Fin (F.event T hT).cap_count))
     (he : H.capEdge e ∈ S) (hS : Sᶜ ⊆ H.selectedCaps) :

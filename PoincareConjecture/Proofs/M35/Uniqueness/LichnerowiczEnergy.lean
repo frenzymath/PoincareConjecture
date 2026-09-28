@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M04.CurvatureEnergyBochner
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 import PoincareConjecture.Proofs.M35.RawFlow.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 noncomputable def lichnerowiczReaction (D : LeviCivitaData g)
     (H : CovariantTensorEvaluation n M 2) : CovariantTensorEvaluation n M 2 :=
   fun x v =>
@@ -33,8 +23,6 @@ noncomputable def lichnerowiczReaction (D : LeviCivitaData g)
         g.orthonormalBasis x q]) -
     ∑ j, ∑ q, D.ricci x (v j) (g.orthonormalBasis x q) *
       H x (Function.update v j (g.orthonormalBasis x q))
-
-
 
 theorem hasDerivAt_lichnerowicz_normSq {J : Set ℝ} (F : RicciFlow n M J)
     (H : ℝ → CovariantTensorEvaluation n M 2)
@@ -122,9 +110,6 @@ theorem hasDerivAt_lichnerowicz_normSq {J : Set ℝ} (F : RicciFlow n M J)
   rw [hsplit]
   ring
 
-
-
-
 theorem lichnerowicz_curvature_pairing_le (D : LeviCivitaData g)
     {H : CovariantTensorEvaluation n M 2} (hH : IsSmoothCovariantTensor H)
     (x : M) {K : ℝ} (hK : 0 ≤ K) (hRm : D.curvatureTensorNorm x ≤ K) :
@@ -191,8 +176,6 @@ theorem lichnerowicz_curvature_pairing_le (D : LeviCivitaData g)
       Finset.sum_le_sum fun a _ => Finset.sum_le_sum fun p _ =>
         Finset.sum_le_sum fun q _ => hterm a p q
     _ = _ := by simp [hdim, N, mul_assoc]; ring
-
-
 
 theorem lichnerowicz_normSq_heat_le {J : Set ℝ} (F : RicciFlow n M J)
     (H : ℝ → CovariantTensorEvaluation n M 2)

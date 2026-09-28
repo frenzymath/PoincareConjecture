@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralStrictHalfspaceClosure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_protected_slice_polyhedron (K R : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hR : R.faces.Finite) (A : E →ᵃ[ℝ] ℝ)

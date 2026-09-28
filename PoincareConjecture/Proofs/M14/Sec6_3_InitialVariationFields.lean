@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,9 +31,6 @@ private theorem horizontal_heq_of_val_eq {q r : G.Point} (h : q = r)
   cases h
   exact heq_of_eq (Subtype.ext hv)
 
-
-
-
 theorem initialVectorVariation_field_zero (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
     (V : M14LVariationData G (E.path Z s hs hpos) (E.square_path Z s hs hpos))
@@ -54,9 +42,6 @@ theorem initialVectorVariation_field_zero (E : M14ExponentialFamily G T x)
   apply variationField_eq_zero_of_constant V
   intro u _
   rw [hV 0 hzero u, hV 0 hzero 0, E.gamma_at_zero, E.gamma_at_zero]
-
-
-
 
 theorem initialVectorVariation_field_terminal (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)

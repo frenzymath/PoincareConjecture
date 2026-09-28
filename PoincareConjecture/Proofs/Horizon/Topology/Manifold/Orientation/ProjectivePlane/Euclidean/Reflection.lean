@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.Projectiv
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.IntegralCompactCohomologyOpenMap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Euclidean.PositiveLinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ open Poincare.Topology
 
 variable {E : Type u} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem sphereReflection_homology_neg (n : Nat) [Fact (Module.finrank Real E = n + 1)]
     (p : sphere (0 : E) 1) (k : Nat) :
@@ -61,14 +51,12 @@ theorem sphereReflection_homology_neg (n : Nat) [Fact (Module.finrank Real E = n
 
 omit [FiniteDimensional Real E] in
 
-
 theorem linearIsometry_puncture (R : E ≃ₗᵢ[Real] E) :
     MapsTo (⟨R, R.continuous⟩ : C(E, E)) ({0}ᶜ : Set E) ({0}ᶜ : Set E) := by
   intro x hx h
   exact hx (R.injective (h.trans R.map_zero.symm))
 
 omit [FiniteDimensional Real E] in
-
 
 theorem radialHomology_naturality (R : E ≃ₗᵢ[Real] E) (k : Nat) :
     homologyMap (integralChainsFunctor.map (TopCat.ofHom
@@ -83,8 +71,6 @@ theorem radialHomology_naturality (R : E ≃ₗᵢ[Real] E) (k : Nat) :
   ext x
   change ‖R x.val‖⁻¹ • R x.val = R (‖x.val‖⁻¹ • x.val)
   rw [R.norm_map, map_smul]
-
-
 
 theorem reflection_relativeHomologyMap
     (p : sphere (0 : EuclideanSpace Real (Fin 3)) 1) :
@@ -111,10 +97,6 @@ theorem reflection_relativeHomologyMap
   apply (cancel_mono (integralRelativeBoundary ({0}ᶜ : Set E) 2)).mp
   rw [integralRelativeBoundary_naturality, hP]
   simp only [Preadditive.comp_neg, Preadditive.neg_comp, Category.comp_id, Category.id_comp]
-
-
-
-
 
 theorem neg_relativeHomologyMap :
     homologyMap (integralRelativeMap

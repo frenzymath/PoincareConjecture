@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.M13IntervalGeometry
 import PoincareConjecture.Definitions.M13MetricHomothety
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,7 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {A : AdaptedMetricAtlas n X}
-
 
 structure ParabolicSpacetimeRescaling (R : GeneralizedFlowCarrierConclusion A)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) where

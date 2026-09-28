@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Affine.Translation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelComparison
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -10,9 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RoundCylinderTranslation
-
-
-
 
 theorem close_scaled_pullback_of_full_domain {ε δ c bound : ℝ}
     (hε : 0 < ε) (hεδ : 2 * ε ≤ δ) (s : ℝ)
@@ -40,9 +35,6 @@ theorem close_scaled_pullback_of_full_domain {ε δ c bound : ℝ}
     simp only [sub_zero, mul_one, div_one] at hscale
     have hmul := mul_le_mul_of_nonneg_left hold (show 0 ≤ 2 * c ^ 2 by positivity)
     exact hscale.trans (by nlinarith)
-
-
-
 
 theorem close_scaled_pullback_of_linear_error {ε δ c A : ℝ}
     (hε : 0 < ε) (hεδ : 2 * ε ≤ δ) (hc : 0 ≤ c) (hcmax : c ≤ 2)

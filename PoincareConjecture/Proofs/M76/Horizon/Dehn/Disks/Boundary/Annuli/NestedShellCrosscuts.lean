@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceRegions
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem exists_first_exit_parameter {X : Type*} [TopologicalSpace X]
     {U : Set X} (hU : IsOpen U) (f : ℝ → X) (hf : Continuous f)
@@ -37,8 +27,6 @@ theorem exists_first_exit_parameter {X : Type*} [TopologicalSpace X]
   rw [closure_Ico htpos.ne]
   exact ⟨htpos.le, le_rfl⟩
 
-
-
 theorem exists_horizontal_support_points {S : Set (ℝ × ℝ)} (hS : IsCompact S)
     (hne : (interior S).Nonempty) :
     ∃ a ∈ frontier S, ∃ b ∈ frontier S, a.1 < b.1 ∧
@@ -60,10 +48,6 @@ theorem exists_horizontal_support_points {S : Set (ℝ × ℝ)} (hS : IsCompact 
     ((hstrict z hz).1.trans (hstrict z hz).2), hbounds⟩
   · exact fun hi ↦ (lt_irrefl a.1) (hstrict a hi).1
   · exact fun hi ↦ (lt_irrefl b.1) (hstrict b hi).2
-
-
-
-
 
 theorem exists_nested_horizontal_crosscuts {S T : Set (ℝ × ℝ)}
     (hS : IsCompact S) (hSne : (interior S).Nonempty) (hT : IsCompact T)

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.ThreePointPins
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace Complex
-
-
-
-
 
 theorem exists_plateau_threePoint_normalization {p q r : ℂ}
     (hp : ‖p‖ = 1) (hq : ‖q‖ = 1) (hr : ‖r‖ = 1)

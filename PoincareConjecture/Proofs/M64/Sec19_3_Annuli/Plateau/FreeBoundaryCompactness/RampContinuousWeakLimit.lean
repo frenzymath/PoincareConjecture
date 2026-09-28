@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.FreeEnergyLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedAnnulusEnergyIdentity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +18,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
 local notation "mu" => volume.restrict (interior m64AnnulusDomain)
-
-
-
 
 theorem free_ramp_observed_continuous_energy_limit
     (P : M62.CircleProductData F circumference) (t : ℝ)

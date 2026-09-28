@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorLipschitz
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledInterpolatorVertical
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m64_sampled_interpolator_annulus
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

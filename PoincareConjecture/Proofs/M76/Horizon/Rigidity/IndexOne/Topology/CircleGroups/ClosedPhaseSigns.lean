@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLAtlasTransitionSigns
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLAtlasSignCover
 import Mathlib.Analysis.Calculus.FDeriv.Affine
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ open scoped Topology
 universe u
 
 namespace Poincare.Topology.Orientation.ProjectivePlane
-
-
 
 theorem positivePLOpenPartialOrientation
     (O : LocalOrientation E3) (c : OpenPartialHomeomorph E3 E3)
@@ -89,7 +76,6 @@ theorem positivePLOpenPartialOrientation
   have heq := congrArg (Q.basis x) hcomp.symm
   simpa only [LinearEquiv.apply_symm_apply, LocalOrientation.basis_one] using heq
 
-
 theorem negativePLOpenPartialOrientation
     (O : LocalOrientation E3) (c : OpenPartialHomeomorph E3 E3)
     (hc : c ∈ piecewiseAffineGroupoid E3) [LocallyCompactSpace c.source]
@@ -134,7 +120,6 @@ theorem negativePLOpenPartialOrientation
 
 namespace LocalOrientation
 
-
 theorem comparison_eq_one_or_neg_one
     {X : Type*} [TopologicalSpace X] (O P : LocalOrientation X) (x : X) :
     (P.basis x).symm (O.atPoint x) = 1 ∨
@@ -146,7 +131,6 @@ theorem comparison_eq_one_or_neg_one
     simpa only [smul_eq_mul, mul_comm] using h
   simpa only [e, LinearEquiv.trans_apply, basis_one] using
     Int.eq_one_or_neg_one_of_mul_eq_one hmul
-
 
 theorem comparison_pullback
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
@@ -163,7 +147,6 @@ theorem comparison_pullback
   rw [map_zsmul, map_pullback, map_pullback, ← basis_apply,
     LinearEquiv.apply_symm_apply]
 
-
 theorem pullback_smul_at
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
     [T2Space X] [T2Space Y] [LocallyCompactSpace X]
@@ -177,7 +160,6 @@ theorem pullback_smul_at
   rw [map_zsmul, map_pullback, map_pullback, h]
 
 end LocalOrientation
-
 
 theorem plOpenPartialOrientation
     (O : LocalOrientation E3) (c : OpenPartialHomeomorph E3 E3)
@@ -193,7 +175,6 @@ theorem plOpenPartialOrientation
   | zero => exact (hn hs).elim
   | pos => simpa using positivePLOpenPartialOrientation O c hc x hs
   | neg => simpa using negativePLOpenPartialOrientation O c hc x hs
-
 
 theorem plOrientation_of_coordinate_factorization
     {X : Type} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
@@ -221,7 +202,6 @@ theorem plOrientation_of_coordinate_factorization
       (LocalOrientation.pullback_congr O (ci.comp q) f
         (c.open_source.isOpenEmbedding_subtypeVal.comp hq) hf hsource x)))
 
-
 noncomputable def chartOrientationComparison
     {X : Type} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
     (P : LocalOrientation X) (O : LocalOrientation E3)
@@ -240,7 +220,6 @@ theorem chartOrientationComparison_eq_one_or_neg_one
     chartOrientationComparison P O c x = 1 ∨
       chartOrientationComparison P O c x = -1 := by
   exact LocalOrientation.comparison_eq_one_or_neg_one _ _ x
-
 
 theorem chartOrientationComparison_transition
     {X : Type} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
@@ -324,8 +303,6 @@ theorem chartOrientationComparison_transition
   have hn := plLocalSign_ne_zero t hcd (q z)
   change lj = s * li
   cases hs : plLocalSign t hcd (q z) <;> simp_all [s]
-
-
 
 theorem exists_plAtlas_labels_of_localOrientation
     {X : Type} {ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]

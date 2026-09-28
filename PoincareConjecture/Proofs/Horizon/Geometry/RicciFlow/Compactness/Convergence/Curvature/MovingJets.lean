@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -61,8 +60,6 @@ private theorem exists_shifted_metric_germ
       simp +instances only [hd y (hWU hy)]
       rfl) h0W
   simpa only [zero_add] using hh
-
-
 
 theorem tendsto_curvatureTensorNorm_of_moving_scalar_pullback_jets
     {α : Type*} {l : Filter α} [l.NeBot] {n : ℕ}

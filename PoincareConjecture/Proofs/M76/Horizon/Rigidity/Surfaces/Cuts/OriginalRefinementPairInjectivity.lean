@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.CutMapOrient
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutRectangle
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -55,8 +47,6 @@ theorem marked_rectangle_interior_off_rim
   · exact (ne_of_gt hx'.1.1) ((hleft _).mp hi)
 
 include hbound
-
-
 
 theorem sourceMap_comp_injOn_triangle_pair
     (C : Sq ≃ₜ A.carrier)

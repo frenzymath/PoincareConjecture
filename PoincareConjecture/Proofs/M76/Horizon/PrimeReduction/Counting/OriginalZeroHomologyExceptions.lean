@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalCoordinateCutHomology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 
-
-
 set_option autoImplicit false
 open Set CategoryTheory Limits
 namespace PoincareConjecture.M76

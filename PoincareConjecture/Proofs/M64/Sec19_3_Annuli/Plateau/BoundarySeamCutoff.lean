@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakSeamFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,12 +15,8 @@ local notation "aP" => annulusPoint curvePeriod 0
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
 def m64BoundarySeamCutoff (R : ℝ) (N : ℕ) (p : LoopPlane) : ℝ :=
   m64BoundaryAveragedCutoff 0 R N p + m64BoundaryAveragedCutoff aP R N p
-
-
 
 theorem m64BoundarySeamCutoff_contDiff (R : ℝ) (N : ℕ) :
     ContDiff ℝ ∞ (m64BoundarySeamCutoff R N) :=
@@ -57,13 +43,9 @@ private theorem averaged_zero_of_coordinate {a p : LoopPlane} {R : ℝ}
   exact hp.trans (by simpa only [PiLp.sub_apply, Real.norm_eq_abs] using
     PiLp.norm_apply_le (p - a) i)
 
-
-
 theorem m64BoundarySeamCutoff_nonneg (R : ℝ) (N : ℕ) (p : LoopPlane) :
     0 ≤ m64BoundarySeamCutoff R N p := add_nonneg
   (m64BoundaryAveragedCutoff_nonneg 0 R N p) (m64BoundaryAveragedCutoff_nonneg aP R N p)
-
-
 
 theorem m64BoundarySeamCutoff_le_one {R : ℝ} (hR : 0 < R) (hRP : 2 * R < P)
     {N : ℕ} (hN : 0 < N) (p : LoopPlane) : m64BoundarySeamCutoff R N p ≤ 1 := by
@@ -82,8 +64,6 @@ theorem m64BoundarySeamCutoff_le_one {R : ℝ} (hR : 0 < R) (hRP : 2 * R < P)
     exact m64BoundaryAveragedCutoff_le_one aP R hN p
   · simp only [m64BoundarySeamCutoff, m64BoundaryAveragedCutoff_eq_zero hR N hd, add_zero]
     exact m64BoundaryAveragedCutoff_le_one 0 R hN p
-
-
 
 theorem m64BoundarySeamCutoff_bottom_profile {R : ℝ} (hR : 0 < R) (hRP : 2 * R < P)
     {N : ℕ} (hN : 0 < N) :
@@ -146,8 +126,6 @@ theorem m64BoundarySeamCutoff_bottom_profile {R : ℝ} (hR : 0 < R) (hRP : 2 * R
       abs_of_nonpos (sub_nonpos.mpr ht.2), abs_of_nonpos (sub_nonpos.mpr hs.2)]
     linarith
 
-
-
 theorem m64BoundarySeamCutoff_top_zero {R : ℝ} (hR : 0 < R) (hR1 : R < 1)
     (N : ℕ) (t : ℝ) : m64BoundarySeamCutoff R N (annulusPoint t 1) = 0 := by
   have h0 := averaged_zero_of_coordinate (a := (0 : LoopPlane)) (p := annulusPoint t 1)
@@ -156,16 +134,12 @@ theorem m64BoundarySeamCutoff_top_zero {R : ℝ} (hR : 0 < R) (hR1 : R < 1)
     hR N 1 (by simpa [annulusPoint] using hR1.le)
   simp only [m64BoundarySeamCutoff, h0, h1, add_zero]
 
-
-
 theorem m64BoundarySeamCutoff_top_fderiv {R : ℝ} (hR : 0 < R) (hR1 : R < 1)
     (N : ℕ) (t : ℝ) : fderiv ℝ (m64BoundarySeamCutoff R N) (annulusPoint t 1) = 0 := by
   apply IsLocalMin.fderiv_eq_zero
   exact Filter.Eventually.of_forall (fun p => by
     rw [m64BoundarySeamCutoff_top_zero hR hR1]
     exact m64BoundarySeamCutoff_nonneg R N p)
-
-
 
 theorem m64BoundarySeamCutoff_periodic_derivative {R : ℝ} (hR : 0 < R) (hRP : R < P)
     (N : ℕ) (s : ℝ) :
@@ -194,8 +168,6 @@ theorem m64BoundarySeamCutoff_periodic_derivative {R : ℝ} (hR : 0 < R) (hRP : 
     exact ((m64BoundarySeamCutoff_contDiff R N).differentiable
       (by simp) _).hasFDerivAt.comp_hasDerivAt t hpd
   exact (hd P s).deriv.symm.trans ((congrArg (fun f : ℝ → ℝ => deriv f s) heq).trans (hd 0 s).deriv)
-
-
 
 theorem m64BoundarySeamCutoff_column_energy_le {R : ℝ} (hR : 0 < R)
     {N : ℕ} (hN : 0 < N) (i : Fin 2) :

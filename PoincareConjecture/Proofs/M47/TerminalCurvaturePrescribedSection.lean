@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureAmbientParallel
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.UnitCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem terminalCurvature_prescribed_parallel_section
     {n : ℕ} {M : Type u} [TopologicalSpace M]

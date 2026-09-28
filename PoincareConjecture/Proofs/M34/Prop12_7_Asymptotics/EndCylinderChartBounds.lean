@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndCompactSlabs
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,12 +13,8 @@ namespace PoincareConjecture.M34
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 def endCylinderChartRegion : Set E₃ :=
   Metric.ball 0 6 ∩ {x : E₃ | x 2 ∈ Ioo (3 : ℝ) 5}
-
-
 
 theorem endCylinderChartRegion_isOpen : IsOpen endCylinderChartRegion :=
   Metric.isOpen_ball.inter
@@ -94,8 +80,6 @@ private theorem endStereographicChart_sequence_jet_bounds (q : ℕ → UnitTwoSp
     rw [endCylinderAuxMetric_zero, mfderiv_eq_fderiv] at h
     norm_num [endCylinderParameter] at h
     convert! h using 1
-
-
 
 theorem endStereographicChart_uniform_jet_bounds (m : ℕ) :
     ∃ C : ℝ, ∀ (q : UnitTwoSphere) x, x ∈ endCylinderChartRegion →

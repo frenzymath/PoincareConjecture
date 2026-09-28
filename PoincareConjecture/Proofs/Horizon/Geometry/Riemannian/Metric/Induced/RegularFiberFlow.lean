@@ -2,20 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Function TopologicalSpace
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_openFiber_normalizedGradient_curve_ending_at
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -125,9 +117,6 @@ theorem PoincareConjecture.RiemannianMetric.exists_openFiber_normalizedGradient_
     rwa [hsym]
   apply (htri.trans (add_le_add hx hlen')).trans
   rw [← ENNReal.ofReal_add hr (div_nonneg (sub_nonneg.mpr ht.2) hl.le)]
-
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_uniform_openFiber_normalizedGradient_manifoldFlow
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.ScalarGradientTransport
 import PoincareConjecture.Proofs.M48.LaplacianTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ universe u v w
 namespace PoincareConjecture
 
 namespace M48
-
 
 theorem preimage_value_range {X : Type u} {Y : Type v} {Z : Type w}
     (e : X ≃ Y) (U : Set Y) (a : X → Z) (b : Y → Z)
@@ -77,7 +68,6 @@ theorem m48_volume_eq (U : Set N) :
     Set.image_preimage_eq _ (show Function.Surjective e from e.surjective)] using
     (H.volume_image (e ⁻¹' U)).symm
 
-
 theorem m48_intrinsicEDist_eq (U : Set N) (x y : M) :
     intrinsicEDist g (e ⁻¹' U) x y = intrinsicEDist h U (e x) (e y) := by
   unfold intrinsicEDist
@@ -111,7 +101,6 @@ theorem m48_intrinsicDiameter_eq (U : Set N) :
       ⟨e.symm y, by simp [y.property]⟩), ?_⟩
     simpa using H.m48_intrinsicEDist_eq U (e.symm x) (e.symm y)
 
-
 theorem m48_scalarGradient_eq (he : MetricHomothety g h e 1)
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :
     scalarGradientNorm g D x = scalarGradientNorm h D' (e x) := by
@@ -141,7 +130,6 @@ theorem m48_scalarGradient_eq (he : MetricHomothety g h e 1)
       simpa only [L.apply_symm_apply, one_mul, v.property] using hi.symm
     refine ⟨⟨L.symm v.1, hv⟩, ?_⟩
     simpa only [L.apply_symm_apply] using congrArg abs (hd (L.symm v.1)).symm
-
 
 theorem m48_scalarEvolution_eq (he : MetricHomothety g h e 1)
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :

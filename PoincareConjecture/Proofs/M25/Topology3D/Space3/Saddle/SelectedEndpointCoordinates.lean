@@ -4,24 +4,12 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter Metric
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_selected_endpoint_coordinates
     (delta eta0 : ℝ) (hdelta : 0 < delta) (heta0 : 0 < eta0)

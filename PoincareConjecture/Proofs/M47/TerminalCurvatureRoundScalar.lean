@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScal
 import PoincareConjecture.Proofs.M45.Ch9_Models.MetricRealization
 import PoincareConjecture.Proofs.M45.Ch9_Models.NeckBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_scalar_le_of_round_error {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}
@@ -87,8 +77,6 @@ theorem terminalCurvature_scalar_le_of_round_error {g h : RiemannianMetric 3 E}
         ∑ _j : Fin (Module.finrank ℝ (TangentSpace (𝓡 3) x)), (8 : ℝ) :=
       Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm _ _ (hb i) (hb j)
     _ = 72 := by norm_num [hdim]
-
-
 
 theorem terminalCurvature_round_scalar_upper
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

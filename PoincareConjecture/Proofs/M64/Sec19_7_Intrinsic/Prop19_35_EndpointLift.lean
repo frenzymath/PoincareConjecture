@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MeasurableNormalStrip
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarInverse
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_boundary_lift_speed_le
     (N : IntrinsicAnnulus)
@@ -63,9 +48,6 @@ theorem m64Intrinsic_boundary_lift_speed_le
   rw [mul_pow, mul_pow, sq_abs]
   nlinarith only [h, hdiscard]
 
-
-
-
 theorem m64Intrinsic_normal_coordinate_differential
     {u : ℝ × ℝ → AnnulusCoordinates} {a t : ℝ}
     (hu : DifferentiableAt ℝ u (a, t)) (v : AnnulusCoordinates) :
@@ -81,10 +63,6 @@ theorem m64Intrinsic_normal_coordinate_differential
   change fderiv ℝ (u ∘ P) !₂[a, t] v = fderiv ℝ u (a, t) (v 0, v 1)
   rw [hchain.fderiv]
   rfl
-
-
-
-
 
 theorem m64Intrinsic_exists_normal_endpoint_lift
     (N : IntrinsicAnnulus) {u : ℝ × ℝ → AnnulusCoordinates}

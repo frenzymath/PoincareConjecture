@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Based
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.StrongNeck
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +22,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   BasedKappaSolution.connectedSpace
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space
-
-
 
 theorem AncientKappaSolution.exists_strongNeck_far_on_ray_of_services
     (P : NoncompactKappaServices.{u})
@@ -129,8 +116,6 @@ theorem AncientKappaSolution.exists_strongNeck_far_on_ray
       ∃ N : StrongEvolvingNeck K 0 epsilon, N.center = q := by
   exact AncientKappaSolution.exists_strongNeck_far_on_ray_of_services P.noncompactServices K p hno hdist ray hray hzero hε hεsmall L
 
-
-
 theorem AncientKappaSolution.exists_strongNeck_arbitrarily_far_of_services
     (P : NoncompactKappaServices.{u})
     {M : Type u} [TopologicalSpace M]
@@ -170,8 +155,6 @@ theorem AncientKappaSolution.exists_strongNeck_arbitrarily_far
     ∃ q : M, L < ((K.flow.metric 0).edist p q).toReal ∧
       ∃ N : StrongEvolvingNeck K 0 epsilon, N.center = q := by
   exact AncientKappaSolution.exists_strongNeck_arbitrarily_far_of_services P.noncompactServices K p hno hε hεsmall L
-
-
 
 theorem AncientKappaSolution.exists_strongNeck_far_from_soul_of_services
     (P : NoncompactKappaServices.{u})

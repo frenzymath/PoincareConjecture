@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Covering.LocalDiffeom
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_exists_smooth_cover_lift
     {n k : ℕ} {M N A : Type*}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSlabCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_actual_slab_coefficients
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

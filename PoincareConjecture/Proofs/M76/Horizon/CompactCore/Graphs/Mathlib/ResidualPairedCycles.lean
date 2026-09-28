@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Graphs.Mathlib.ResidualFundamentalCycle
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TreeCotreeResidualEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace AbstractSimplicialComplex
-
-
-
 
 theorem exists_paired_cycles_of_residual_edge
     {V : Type*} [Fintype V] [DecidableEq V] (A : AbstractSimplicialComplex V)

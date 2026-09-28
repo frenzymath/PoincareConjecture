@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Branches.OrderedChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
 
 theorem isCompact_sdiff_of_open_in_source
     {E : Type*} [TopologicalSpace E] {sourceSet P L : Set E}
@@ -32,8 +23,6 @@ theorem isCompact_sdiff_of_open_in_source
       exact ⟨⟨x, hx⟩, hn, rfl⟩
   rw [← heq]
   exact ho.isClosed_compl.isCompact.image continuous_subtype_val
-
-
 
 theorem RawSourceCrossing.exists_finite_branch_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

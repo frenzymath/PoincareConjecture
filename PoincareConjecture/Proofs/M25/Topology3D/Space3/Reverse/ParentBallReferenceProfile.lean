@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapProfile
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,18 +8,13 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def referenceCapScale (a : ℝ) : ℝ :=
   Real.sqrt ((1 + a) / (1 - a))
-
 
 theorem referenceCapScale_pos (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
     0 < referenceCapScale a := by
   apply Real.sqrt_pos.mpr
   exact div_pos (by linarith [ha.1]) (by linarith [ha.2])
-
-
 
 theorem referenceCapScale_sq (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
     (referenceCapScale a) ^ 2 * (1 - a) = 1 + a := by
@@ -122,11 +104,6 @@ private theorem profile_base_comparison (c H a c₂ : ℝ)
     have hmul := mul_le_mul_of_nonneg_left
       (show 1 + z ≤ 1 + a by linarith only [hzu, hc₂a]) hH
     exact hmul.trans hHac.le
-
-
-
-
-
 
 theorem exists_reference_cap_profile (a ε : ℝ)
     (ha : a ∈ Ioo (1 / 2 : ℝ) 1) (hε : 0 < ε) :
@@ -287,9 +264,6 @@ theorem exists_reference_cap_profile (a ε : ℝ)
         _ = c / (1 + z) := by ring
   exact ⟨H, c₁, c₂, hH1, hHε, hH3, hHa, hc₁, hc₁c₂, hc₂a,
     α, hα, hαpos, hαright, hαrad, hαcompare⟩
-
-
-
 
 theorem reference_profile_horizontal_norm_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

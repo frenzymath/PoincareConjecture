@@ -4,19 +4,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,10 +11,6 @@ open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_regular_curve_locally_injective
     {gamma : ℝ → AnnulusCoordinates} {s : ℝ}
@@ -57,10 +40,6 @@ theorem m64Intrinsic_regular_curve_locally_injective
       rw [show f x = f y from congrArg (fun z => z i) heq]
     _ = y := hball hy
 
-
-
-
-
 theorem m64Intrinsic_regular_return_separation
     {gamma : ℝ → AnnulusCoordinates} {a b : ℝ}
     (hlocal : ∀ s ∈ Icc a b, ∃ U : Set ℝ, IsOpen U ∧ s ∈ U ∧ InjOn gamma U) :
@@ -80,10 +59,6 @@ theorem m64Intrinsic_regular_return_separation
     rw [mem_ball, Real.dist_eq, abs_of_pos (sub_pos.mpr hst)]
     exact lt_of_not_ge hn
   exact hst.ne ((hi p.val p.property) (hp (mem_ball_self hepsilon)) (hp htball) heq)
-
-
-
-
 
 theorem m64Intrinsic_exists_first_return_interval
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {a b : ℝ}
@@ -120,9 +95,6 @@ theorem m64Intrinsic_exists_first_return_interval
   change p.2 ≤ y at hlength
   exact not_le_of_gt hy.2 hlength
 
-
-
-
 theorem m64Intrinsic_exists_simple_return_interval
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {a b : ℝ}
     (hlocal : ∀ s ∈ Icc a b, ∃ U : Set ℝ, IsOpen U ∧ s ∈ U ∧ InjOn gamma U)
@@ -131,9 +103,6 @@ theorem m64Intrinsic_exists_simple_return_interval
   obtain ⟨s, t, has, hst, htb, heq, hinj⟩ :=
     m64Intrinsic_exists_first_return_interval hg hlocal hnot
   exact ⟨s, t, has, hst, htb, heq, hinj.mono (Ico_subset_Ico_left has)⟩
-
-
-
 
 theorem m64Intrinsic_exists_simple_regular_loop
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {a b : ℝ}

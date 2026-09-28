@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.JoinedPathIntersections
 import PoincareConjecture.Proofs.M76.PrimeReduction.MidpointClosingPath
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcNesting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace Polygon
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
 
 theorem exists_polygon_of_returning_path {n : ℕ} (p : Fin (n + 2) → V)
     (hp : Function.Injective p)

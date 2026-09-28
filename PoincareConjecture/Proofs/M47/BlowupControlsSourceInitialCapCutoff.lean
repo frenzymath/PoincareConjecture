@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsWindow
 import PoincareConjecture.Proofs.M47.CanonicalCapComparisonTolerance
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSearchClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_search_cap_duration
     {A m rate theta : ℝ} (hA : 0 < A) (hm : 0 < m)
@@ -45,8 +34,6 @@ theorem exists_source_initial_search_cap_duration
       (min_le_right d0 (rate * theta / (16 * L)))
     change d * (16 * L) ≤ rate * theta at h
     nlinarith only [h]
-
-
 
 theorem exists_source_initial_cap_anchor_cutoff
     (S : RepairedControlledSchedulesData.{u})

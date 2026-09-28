@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckUniformTimeComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem normalized_neck_clock_distance_le (t t0 Q Q0 : ℝ)
     {u : ℝ} (hu : u ∈ Icc (-1 : ℝ) 0) :
@@ -33,8 +22,6 @@ theorem normalized_neck_clock_distance_le (t t0 Q Q0 : ℝ)
     _ ≤ |t - t0| + 1 * |Q⁻¹ - Q0⁻¹| :=
       add_le_add le_rfl (mul_le_mul_of_nonneg_right huabs (abs_nonneg _))
     _ = _ := by rw [one_mul]
-
-
 
 theorem eventually_normalized_neck_clock_in_buffer
     {X : Type*} [TopologicalSpace X] {T R : X → ℝ} {p0 : X}

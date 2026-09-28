@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.Levels
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Surgery.Terminal
-
-
 
 theorem exists_finset_component_representatives {X : Type u} [TopologicalSpace X]
     [LocallyConnectedSpace X] (K : Set X) (hK : IsCompact K) :
@@ -49,8 +37,6 @@ variable {M : Type u} [TopologicalSpace M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
 
-
-
 theorem exists_low_curvature_component_representatives
     (Q : SingularLimitConclusion H) (rho : ℝ) :
     ∃ R : Finset (Q.extension.extended.slice T).carrier,
@@ -63,7 +49,6 @@ theorem exists_low_curvature_component_representatives
     simpa only [Q.terminal_scalar_eq] using Q.isCompact_scalar_sublevel (rho⁻¹ ^ 2)
   obtain ⟨R, hR, hcover⟩ := Surgery.Terminal.exists_finset_component_representatives _ hK
   exact ⟨R, fun y hy => hR hy, hcover⟩
-
 
 theorem finite_low_curvature_components (Q : SingularLimitConclusion H) (rho : ℝ) :
     {A : Set (Q.extension.extended.slice T).carrier |

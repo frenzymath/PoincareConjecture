@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Distance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ theorem intrinsicEDist_mono (hUV : U ⊆ V) :
   apply sInf_le_sInf
   rintro L ⟨γ, hγ, h0, h1, hU, hL⟩
   exact ⟨γ, hγ, h0, h1, hU.trans hUV, hL⟩
-
-
 
 theorem intrinsicEDist_le_pathELength_on {γ : ℝ → M} {a b : ℝ} (hab : a < b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 3) 1 γ (Icc a b))
@@ -53,8 +42,6 @@ theorem intrinsicEDist_le_pathELength_on {γ : ℝ → M} {a b : ℝ} (hab : a <
   simpa only [hη0, hη1] using Manifold.pathELength_comp_of_monotoneOn
     zero_le_one (show MonotoneOn η (Icc 0 1) by intro s _ t _ hst; dsimp [η]; gcongr)
     (by dsimp [η]; fun_prop) (by simpa only [hη0, hη1] using hγ.mdifferentiableOn one_ne_zero)
-
-
 
 theorem exists_locally_constant_intrinsic_path {r : ℝ≥0∞}
     (hr : intrinsicEDist g U x y < r) {a b : ℝ} (hab : a < b) :

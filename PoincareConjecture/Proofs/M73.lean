@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M73.Cor15_4.FactorKind
 import PoincareConjecture.Proofs.M73.Cor15_4.SphereBundleExclusion
 import PoincareConjecture.Proofs.M73.Thm1_11.KillingHopf
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -18,15 +10,6 @@ universe u
 namespace PoincareConjecture
 
 set_option linter.style.haveILetI false in
-
-
-
-
-
-
-
-
-
 
 theorem m73SphereFactors : M73SphereFactorStatement.{u} := by
   intro M _ _ _ _ _ _ _ _ _ N I C

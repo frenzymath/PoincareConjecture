@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothe
 import PoincareConjecture.Proofs.M60.Mathlib.UniformizationLocalInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +22,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [CompactSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_isothermal_chart_compact_surface
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g) (p : M) :

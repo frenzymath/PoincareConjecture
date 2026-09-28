@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.IndexedCovering
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +23,6 @@ private theorem exists_surjective_fin_with_base {α : Type*} [Fintype α]
   refine ⟨Fin.cases a (Function.invFun e), rfl, ?_⟩
   intro x
   exact ⟨(e x).succ, Function.leftInverse_invFun e.injective x⟩
-
-
-
 
 theorem exists_normalChartCover_of_normal_charts
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

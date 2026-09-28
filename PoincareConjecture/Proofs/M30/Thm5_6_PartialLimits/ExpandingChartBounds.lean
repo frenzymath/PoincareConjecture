@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ExpandingWindowInput
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.Bounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Analysis.Calculus
@@ -23,10 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 set_option backward.isDefEq.respectTransparency false in
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
-
 
 theorem referenceNormalChartCoefficients_on_expanding_time_domains
     {n : ℕ} {s' s : ℝ}

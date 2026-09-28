@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M09.ComparisonLaplacian
 import PoincareConjecture.Proofs.M09.HarnackIntegral
 import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

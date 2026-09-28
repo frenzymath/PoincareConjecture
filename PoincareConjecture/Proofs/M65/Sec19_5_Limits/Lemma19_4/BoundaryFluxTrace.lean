@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FluxIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65Metric_pairing_continuousOn (g : RiemannianMetric n M)
     (f : LoopPlane → M) (V W : (z : LoopPlane) → TangentSpace (𝓡 n) (f z))
@@ -37,15 +26,11 @@ theorem m65Metric_pairing_continuousOn (g : RiemannianMetric n M)
     ⟨⟨g.inner, g.contMDiff.continuous, fun _ _ _ => rfl⟩⟩
   exact hV.inner_bundle hW
 
-
-
 noncomputable def m65PlaneTraceFlux (g : RiemannianMetric n M)
     (f : LoopPlane → M) (V : (z : LoopPlane) → TangentSpace (𝓡 n) (f z))
     (E : (z : LoopPlane) → Fin 2 → TangentSpace (𝓡 n) (f z))
     (z : LoopPlane) : LoopPlane :=
   WithLp.toLp 2 (fun i => g.inner (f z) (V z) (E z i))
-
-
 
 theorem m65PlaneTraceFlux_continuousOn (g : RiemannianMetric n M)
     (f : LoopPlane → M) (V : (z : LoopPlane) → TangentSpace (𝓡 n) (f z))
@@ -57,8 +42,6 @@ theorem m65PlaneTraceFlux_continuousOn (g : RiemannianMetric n M)
   exact (PiLp.continuous_toLp 2 (fun _ : Fin 2 => ℝ)).comp_continuousOn
     (continuousOn_pi.mpr fun i => m65Metric_pairing_continuousOn g f V (fun z => E z i)
       hV (hE i))
-
-
 
 theorem m65PlaneTraceFlux_inner (g : RiemannianMetric n M)
     (f : LoopPlane → M) (V : (z : LoopPlane) → TangentSpace (𝓡 n) (f z))

@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M39.Mathlib.BilinearComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +21,6 @@ variable {A B : GeneralizedSliceCarrier.{u}}
   {g : ℝ → RiemannianMetric 3 A.carrier}
   {gT : RiemannianMetric 3 B.carrier}
   {f : A.carrier → B.carrier} {U : Set A.carrier} {T : ℝ}
-
-
-
 
 theorem metricLimit_eventually_coefficient_bound
     (hlim : SurgeryMetricLimitOn A B g gT f U T)
@@ -71,8 +59,6 @@ variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier}
 
 include hU
 
-
-
 theorem limitIdentification_mfderiv_injective {x : A.carrier} (hx : x ∈ U) :
     Function.Injective (mfderiv (𝓡 3) (𝓡 3) e.map x) := by
   have hmap := (e.map_smooth x hx).contMDiffAt (hU.mem_nhds hx)
@@ -89,9 +75,6 @@ theorem limitIdentification_mfderiv_injective {x : A.carrier} (hx : x ∈ U) :
     intro v
     exact congrArg (fun L => L v) hd
   exact hleft.injective
-
-
-
 
 theorem limit_chart_coefficients_pos
     (gT : RiemannianMetric 3 B.carrier) (q : A.carrier) {p : E₃}
@@ -127,9 +110,6 @@ theorem limit_chart_coefficients_pos
       (limitIdentification_mfderiv_injective e hU hreg) _ hz
   exact (injective_iff_map_eq_zero _).mp hchartinj _ hzero
 
-
-
-
 theorem metricLimit_eventually_chart_comparison
     {g : ℝ → RiemannianMetric 3 A.carrier}
     {gT : RiemannianMetric 3 B.carrier} {T : ℝ}
@@ -154,9 +134,6 @@ theorem metricLimit_eventually_chart_comparison
   · intro a b r hr
     exact metricLimit_eventually_coefficient_bound hlim hq hK hchart hreg a b hr
   · exact hk
-
-
-
 
 theorem metric_comparison_of_chart_comparison
     (g : RiemannianMetric 3 A.carrier) (gT : RiemannianMetric 3 B.carrier)
@@ -203,9 +180,6 @@ theorem metric_comparison_of_chart_comparison
   erw [hv, hcx] at hb
   exact hb
 
-
-
-
 theorem metricLimit_eventually_local_comparison
     {g : ℝ → RiemannianMetric 3 A.carrier}
     {gT : RiemannianMetric 3 B.carrier} {T : ℝ}
@@ -240,9 +214,6 @@ theorem metricLimit_eventually_local_comparison
     simpa only [mem_preimage, c.left_inv hp.2.1] using hh
   exact metric_comparison_of_chart_comparison e hU (g p.1) gT x hp.2.1 hy
     (hp.1 (c p.2) hp.2.2) v
-
-
-
 
 theorem metricLimit_eventually_compact_comparison
     {g : ℝ → RiemannianMetric 3 A.carrier}

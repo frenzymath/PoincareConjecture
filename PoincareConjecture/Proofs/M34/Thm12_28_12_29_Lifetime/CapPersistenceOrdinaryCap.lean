@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizedImageWrappers
 import PoincareConjecture.Proofs.M34.Standard.CapImageAnalyticBounds
 import PoincareConjecture.Proofs.M34.Standard.CapImageCertificate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,9 +37,6 @@ private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     SecondCountableTopology L.carrier.carrier := L.carrier.secondCountable
 private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     ConnectedSpace L.carrier.carrier := L.connectedSpace
-
-
-
 
 theorem exists_ordinary_cap_persistence_accuracy {epsilon : ℝ}
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200) :

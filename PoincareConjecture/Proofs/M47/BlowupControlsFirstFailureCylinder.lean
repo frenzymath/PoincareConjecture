@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsFirstFailure
 import PoincareConjecture.Proofs.M47.BlowupControlsCylinderBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ variable (S : RepairedControlledSchedulesData.{u})
     F.parameters.delta u ≤ B.delta S.setup.standard_initial S.constants)
 
 include hInitial hConstants hC hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap
-
-
 
 theorem first_failure_cylinder_analytic_estimate
     (h04 : RicciFlowCurvatureTheory.{u}) {W : M33RegularHistoryWindow F}
@@ -66,8 +55,6 @@ theorem first_failure_cylinder_analytic_estimate
   exact first_failure_generalized_analytic_estimate S B p O hInitial hConstants hC
     hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap h04 H ht hTime q.2 hScalar
 
-
-
 theorem first_failure_cylinder_scalar_bound
     (h04 : RicciFlowCurvatureTheory.{u}) {W : M33RegularHistoryWindow F}
     (H : M33RegularHistoryData W) {Z : GeneralizedSliceCarrier.{u}} {U : Set Z.carrier}
@@ -81,8 +68,6 @@ theorem first_failure_cylinder_scalar_bound
       simpa only [neg_neg] using hShort)
   exact first_failure_cylinder_analytic_estimate S B p O hInitial hConstants hC
     hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap h04 H e hL
-
-
 
 theorem first_failure_cylinder_curvature_bounds
     (P : M46Predecessors.{u}) {W : M33RegularHistoryWindow F}

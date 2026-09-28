@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.ArcNeighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Coordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -24,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 omit [T2Space M] in
-
 
 theorem SmoothEdge.exists_two_sided_neighborhood (e : SmoothEdge M) (p : M)
     (hinj : InjOn e.map (Icc (0 : ℝ) 1))
@@ -87,8 +76,6 @@ theorem SmoothEdge.exists_two_sided_neighborhood (e : SmoothEdge M) (p : M)
   · simpa only [f, Function.comp_apply, c.left_inv ht_source] using
       (c.continuousAt_symm ht_target).continuousWithinAt.mem_closure_image htclosure.2
 
-
-
 theorem exists_two_sided_edge_family_neighborhood {I : Type v} [Finite I]
     (edge : I → SmoothEdge M) (i : I) (p : M)
     (hinj : InjOn (edge i).map (Icc (0 : ℝ) 1))
@@ -129,8 +116,6 @@ theorem exists_two_sided_edge_family_neighborhood {I : Type v} [Finite I]
       · exact (hWs hx).2 (mem_iUnion.mpr ⟨⟨j, hji⟩, hj⟩)
   exact ⟨W, U, V, hWopen, htW, fun _ h => (hWs h).1, hUopen, hVopen,
     hUpath, hVpath, hdisjoint, hdiff.trans hpartition, htclosure⟩
-
-
 
 theorem exists_two_sided_edge_family_neighborhood_of_endpoint_intersections
     {I : Type v} [Finite I] (edge : I → SmoothEdge M) (i : I) (p : M)

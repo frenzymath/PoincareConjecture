@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
@@ -18,10 +8,6 @@ namespace PoincareConjecture
 private theorem boundary_norm_sq (v : LoopAmbient) :
     ‖v‖ ^ 2 = v 0 ^ 2 + v 1 ^ 2 + v 2 ^ 2 := by
   simp only [EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_three]
-
-
-
-
 
 theorem m65Boundary_transverse_derivative_bound
     (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
@@ -72,9 +58,6 @@ theorem m65Boundary_transverse_derivative_bound
   apply (le_div_iff₀ hlower).mpr
   change (‖v‖ ^ 2 + ‖w‖ ^ 2) * lower ≤ 2 * upper * T
   nlinarith
-
-
-
 
 theorem m65Boundary_transverse_derivative_bound_axis
     (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)

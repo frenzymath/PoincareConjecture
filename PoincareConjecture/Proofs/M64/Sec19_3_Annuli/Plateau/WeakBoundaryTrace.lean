@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleGreenIdentity
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.WeakCompactness
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem m64Annulus_weak_fixed_boundary_identity
     (f : ℕ → LoopPlane → F) (hf : ∀ j, ContDiff ℝ 1 (f j))

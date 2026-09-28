@@ -3,14 +3,6 @@ import PoincareConjecture.Definitions.M13TimeRescaling
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CanonicalAlignment
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +24,6 @@ open Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_relative_cap_alignment_of_compatible_normalizations
     {v : E3} (hv : ‖v‖ = 1)
@@ -80,7 +70,6 @@ theorem exists_relative_cap_alignment_of_compatible_normalizations
   · change (N₂.symm ∘ F ∘ N₁) '' C₁ = C₂
     rw [image_comp, image_comp, himage₁, himage, ← himage₂, image_image]
     simp only [N₂.symm_apply_apply, image_id']
-
 
 theorem exists_buffered_relative_cap_alignment_of_compatible_normalizations
     {v : E3} (hv : ‖v‖ = 1)

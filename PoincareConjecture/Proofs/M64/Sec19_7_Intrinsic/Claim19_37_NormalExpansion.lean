@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_InitialDerivative
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalStripModel
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +14,6 @@ open ConnectionVariation
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_exists_uniform_normal_expansion_subinterval_radius
     (K : ℝ) {delta alpha : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1)
@@ -126,8 +109,6 @@ theorem m64Intrinsic_exists_uniform_normal_expansion_subinterval_radius
     (curveVelocity (n := 2) (fun s => u (s, t)) a) (W t)
   rw [hWnorm, mul_one] at hpair
   exact ⟨hW, hWunit, hWorth, hlower, hlower.trans ((le_abs_self _).trans hpair)⟩
-
-
 
 theorem m64Intrinsic_exists_uniform_normal_expansion_radius
     (K : ℝ) {delta alpha : ℝ} (hdelta : 0 < delta) (hdelta1 : delta < 1)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SourcePoleFrontierPatches
 import PoincareConjecture.Proofs.M76.Mathlib.SourceQuadrantPatchIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes RectangleCornerArcs
@@ -20,10 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 structure SourcePoleQuadrantData (ψ : (ℝ × ℝ) → E) (F S g : Set E)
     (p q : E) (A : E →ₗ[ℝ] ℝ) (t z : ℝ) : Prop where
@@ -47,11 +32,6 @@ structure SourcePoleQuadrantData (ψ : (ℝ × ℝ) → E) (F S g : Set E)
   other_notMem : q ∉ ψ '' (uIcc 0 t ×ˢ uIcc 0 z)
   vertical_other_notMem : q ∉ ψ '' ({0} ×ˢ uIcc 0 z)
   horizontal_other_notMem : q ∉ ψ '' (uIcc 0 t ×ˢ {0})
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.source_pole_quadrant_data
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} {p q : E} {r : ℝ}
@@ -123,9 +103,6 @@ theorem FinitePiecewiseAffineOn.source_pole_quadrant_data
   · intro heq
     exact ht (congrArg Prod.fst (hinj heq)).symm
 
-
-
-
 theorem source_pole_opposite_axis_contacts
     {ψ : (ℝ × ℝ) → E} (hinj : Function.Injective ψ) {p : E}
     (hψzero : ψ 0 = p) {r : ℝ} (hr : 0 ≤ r) :
@@ -157,11 +134,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_source_pole_quadrant_patches
     {C S : Set E} (H : Finset (E →ₗ[ℝ] ℝ))

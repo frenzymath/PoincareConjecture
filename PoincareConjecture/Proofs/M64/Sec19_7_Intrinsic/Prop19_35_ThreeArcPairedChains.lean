@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapAvoidance
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PairedCapPatchChains
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_paired_chains
     (gamma : Bool → ℝ → AnnulusCoordinates) (sigma : ℝ → AnnulusCoordinates)

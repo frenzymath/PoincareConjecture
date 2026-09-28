@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialLineKernel
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeParameterDifferential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +21,6 @@ private theorem projected_horizontal_heq {q r : G.Point} (h : q = r)
     HEq (G.spacetime.horizontalProjection q v) w := by
   cases h
   rw [eq_of_heq hv, G.spacetime.horizontalProjection_identity]
-
-
-
 
 theorem exponentialLine_differential_gauge (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (j : G.gaugeCover.index)

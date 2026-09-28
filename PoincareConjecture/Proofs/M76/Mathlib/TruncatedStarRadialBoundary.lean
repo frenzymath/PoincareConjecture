@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialStar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -19,16 +9,11 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
 
-
-
-
 def truncatedStarBoundary (K : SimplicialComplex ℝ E) (L : E →ₗ[ℝ] ℝ)
     (α β : ℝ) : Set E :=
   ((K.closedStar 0).space ∩ {x | L x = α}) ∪
     ((K.closedStar 0).space ∩ {x | L x = β}) ∪
     ((K.link 0).space ∩ {x | L x ∈ Icc α β})
-
-
 
 theorem truncatedStarBoundary_subset_band (K : SimplicialComplex ℝ E)
     (L : E →ₗ[ℝ] ℝ) {α β : ℝ} (hαβ : α ≤ β) :
@@ -46,8 +31,6 @@ theorem truncatedStarBoundary_subset_band (K : SimplicialComplex ℝ E)
   · obtain ⟨s, hs, hxs⟩ := mem_space_iff.mp hx.1
     exact ⟨convexHull_subset_space (K.link_le_closedStar 0 hs) hxs, hx.2⟩
 
-
-
 theorem zero_notMem_truncatedStarBoundary (K : SimplicialComplex ℝ E)
     (L : E →ₗ[ℝ] ℝ) {α β : ℝ} (hα : α < 0) (hβ : 0 < β) :
     (0 : E) ∉ K.truncatedStarBoundary L α β := by
@@ -55,10 +38,6 @@ theorem zero_notMem_truncatedStarBoundary (K : SimplicialComplex ℝ E)
   · exact hα.ne (by simpa only [map_zero] using (show L 0 = α from h.2).symm)
   · exact hβ.ne (by simpa only [map_zero] using (show L 0 = β from h.2))
   · exact K.zero_notMem_link_space h.1
-
-
-
-
 
 theorem eq_one_of_smul_mem_truncatedStarBoundary
     (K : SimplicialComplex ℝ E) (L : E →ₗ[ℝ] ℝ) {α β : ℝ}
@@ -89,9 +68,6 @@ theorem eq_one_of_smul_mem_truncatedStarBoundary
     have hbound : r * a ≤ r := by
       simpa only [mul_one] using mul_le_mul_of_nonneg_left ha.2 hr.1.le
     exact le_antisymm hr.2 (hprod ▸ hbound)
-
-
-
 
 theorem injOn_normalize_truncatedStarBoundary (K : SimplicialComplex ℝ E)
     (L : E →ₗ[ℝ] ℝ) {α β : ℝ} (hα : α < 0) (hβ : 0 < β) :

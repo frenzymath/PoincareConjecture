@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.LocalCalculus
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -73,8 +64,6 @@ theorem contMDiffAt_tensor_apply_along
   rw [A.map_sum]
   simp only [A.map_smul_univ, smul_eq_mul]
 
-
-
 theorem contDiffAt_covariantTensor_pullback
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     {f : E → M} {x : E}
@@ -85,8 +74,6 @@ theorem contDiffAt_covariantTensor_pullback
   apply contMDiffAt_tensor_apply_along hT hf
   intro i
   exact RiemannianMetric.contMDiffAt_mfderiv_const_vector hf (v i)
-
-
 
 theorem isSmoothCovariantTensor_pullback
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)

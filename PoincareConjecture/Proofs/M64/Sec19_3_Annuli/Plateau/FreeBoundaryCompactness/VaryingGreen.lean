@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 open Poincare.Analysis.Sobolev.WeakCompactness
-
-
-
 
 theorem weak_affine_identity_of_tendsto
     {H F : Type*} [NormedAddCommGroup H] [NormedSpace ℝ H]
@@ -51,9 +36,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
-
-
-
 theorem annulus_weak_green_of_varying_boundary
     {u v : ℕ → Lp E 2 mu} {U V : Lp E 2 mu}
     (hu : WeakConverges u U) (hv : WeakConverges v V) (i : Fin 2)
@@ -76,9 +58,6 @@ theorem annulus_weak_green_of_varying_boundary
   simpa only [testIntegral_apply] using weak_affine_identity_of_tendsto hu hv
     (testIntegral phi hp) (testIntegral dphi hdp) hc
     (fun j => by simpa only [testIntegral_apply] using hseq j)
-
-
-
 
 theorem weighted_trace_integral_tendsto
     (u : ℕ → ℝ → E) (v : ℝ → E)

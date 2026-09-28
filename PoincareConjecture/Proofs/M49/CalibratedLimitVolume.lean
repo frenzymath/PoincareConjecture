@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.CalibratedTransport
 import PoincareConjecture.Proofs.M49.Mathlib.FatouSum
 import PoincareConjecture.Proofs.M49.Mathlib.PartialChartMeasurable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,8 +17,6 @@ variable {n : ℕ} {M : Type u} {N : Type v} {ι : Type w}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {l : Filter ι} [IsCountablyGenerated l] [NeBot l]
-
-
 
 theorem calibratedVolume_chart_le_liminf
     (g : ι → RiemannianMetric n M) (gT : RiemannianMetric n N)
@@ -62,8 +51,6 @@ theorem calibratedVolume_chart_le_liminf
       congr 1
       funext t
       exact (M10.calibratedMetricVolume_image_eq_lintegral (g t) e0 h0 h0i hC hC0).symm
-
-
 
 theorem calibratedVolume_le_liminf_of_chart_cover
     (g : ι → RiemannianMetric n M) (gT : RiemannianMetric n N)

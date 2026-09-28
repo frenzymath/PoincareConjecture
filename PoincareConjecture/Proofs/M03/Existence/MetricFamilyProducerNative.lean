@@ -12,14 +12,6 @@ import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -391,8 +383,6 @@ def pullbackData {J : Set ℝ} {g0 : RiemannianMetric n M}
   baseInitial := hg0
   diffeoInitial := hPhi0
 
-
-
 structure DeTurckConjugatingData (g0 : RiemannianMetric n M) where
   T : ℝ
   hT : 0 < T
@@ -424,8 +414,6 @@ structure DeTurckConjugatingData (g0 : RiemannianMetric n M) where
     jointDerivative t x u v (0, 1) = -pulledLie pullback t x u v
 
 namespace DeTurckConjugatingData
-
-
 
 def ofFamilies {g0 : RiemannianMetric n M} {T : ℝ} (hT : 0 < T)
     (g : ℝ → RiemannianMetric n M)

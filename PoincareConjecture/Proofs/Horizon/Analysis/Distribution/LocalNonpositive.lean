@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,9 +11,6 @@ namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
-
 
 theorem integrableOn_integral_nonpos_of_locally_test_nonpos
     (μ : Measure E) {D : Set E} (A : (E → ℝ) → E → ℝ)

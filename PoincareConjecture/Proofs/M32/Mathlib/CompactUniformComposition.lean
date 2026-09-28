@@ -1,23 +1,11 @@
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem tendstoUniformlyOn_comp_of_isCompact_image
     {A B C I : Type*} [UniformSpace B] [UniformSpace C]

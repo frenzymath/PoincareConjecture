@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcParameter
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedVertexPath
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OppositeCoordinate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem roundedVertexPath_abs_eq_edge {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] (P : ℤ → E)
@@ -78,19 +66,13 @@ private theorem continuous_roundedVertexPath_abs {Z : Type*}
 
 variable {n : ℕ}
 
-
-
 noncomputable def openArcExtendedVertex (p : Polygon (ℝ × ℝ) (n + 2))
     (j : ℤ) : ℝ × ℝ :=
   if 0 ≤ j ∧ j ≤ (n + 1 : ℕ) then p (polygonIntegerIndex (n + 2) j)
   else ((j : ℝ), 0)
 
-
-
 noncomputable def openArcLinearParameter (p : Polygon (ℝ × ℝ) (n + 2)) : ℝ → ℝ × ℝ :=
   roundedVertexPath abs (openArcExtendedVertex p)
-
-
 
 theorem openArcExtendedVertex_nat (p : Polygon (ℝ × ℝ) (n + 2))
     (i : Fin (n + 2)) : openArcExtendedVertex p (i.val : ℤ) = p i := by
@@ -99,8 +81,6 @@ theorem openArcExtendedVertex_nat (p : Polygon (ℝ × ℝ) (n + 2))
     · exact Int.natCast_nonneg _
     · exact_mod_cast (show i.val ≤ n + 1 by omega)
   simp only [openArcExtendedVertex, if_pos hi, polygonIntegerIndex_nat]
-
-
 
 theorem openArcExtendedVertex_of_nonpos (p : Polygon (ℝ × ℝ) (n + 2))
     (h0 : p 0 = (0, 0)) {j : ℤ} (hj : j ≤ 0) :
@@ -111,8 +91,6 @@ theorem openArcExtendedVertex_of_nonpos (p : Polygon (ℝ × ℝ) (n + 2))
       openArcExtendedVertex_nat p 0
   · have hnot : ¬ (0 ≤ j ∧ j ≤ (n + 1 : ℕ)) := by omega
     exact if_neg hnot
-
-
 
 theorem openArcExtendedVertex_of_ge (p : Polygon (ℝ × ℝ) (n + 2))
     (hN : p (Fin.last (n + 1)) = (((n + 1 : ℕ) : ℝ), 0))
@@ -125,8 +103,6 @@ theorem openArcExtendedVertex_of_ge (p : Polygon (ℝ × ℝ) (n + 2))
   · have hnot : ¬ (0 ≤ j ∧ j ≤ (n + 1 : ℕ)) := by omega
     exact if_neg hnot
 
-
-
 theorem contDiff_openArcExtendedVertex {V : Type*} [NormedAddCommGroup V]
     [NormedSpace ℝ V] {p : V → Polygon (ℝ × ℝ) (n + 2)}
     (hp : ∀ i, ContDiff ℝ ∞ (fun z => p z i)) (j : ℤ) :
@@ -135,8 +111,6 @@ theorem contDiff_openArcExtendedVertex {V : Type*} [NormedAddCommGroup V]
   · simpa only [openArcExtendedVertex, if_pos hj] using hp (polygonIntegerIndex (n + 2) j)
   · simpa only [openArcExtendedVertex, if_neg hj] using
       (contDiff_const : ContDiff ℝ ∞ (fun _ : V => ((j : ℝ), (0 : ℝ))))
-
-
 
 theorem continuous_openArcLinearParameter {Z : Type*} [TopologicalSpace Z]
     {p : Z → Polygon (ℝ × ℝ) (n + 2)} (hp : ∀ i, Continuous (fun z => p z i)) :
@@ -168,8 +142,6 @@ private theorem exists_openArc_edge {u : ℝ} (hu : u ∈ Icc (0 : ℝ) (n + 1 :
     rw [hval]
     exact ⟨Int.floor_le u, (Int.lt_floor_add_one u).le⟩
 
-
-
 theorem openArcLinearParameter_eq_polygon (p : Polygon (ℝ × ℝ) (n + 2))
     {u : ℝ} (hu : u ∈ Icc (0 : ℝ) (n + 1 : ℕ)) :
     openArcLinearParameter p u = polygonLinearParameter p u := by
@@ -187,8 +159,6 @@ theorem openArcLinearParameter_eq_polygon (p : Polygon (ℝ × ℝ) (n + 2))
     polygonLinearParameter_eq_edge p (i.val : ℤ) hi', hindex]
   have hnext : finRotate (n + 2) i.castSucc = i.succ := finRotate_of_lt i.isLt
   rw [Polygon.edgePath, hnext]
-
-
 
 theorem openArcLinearParameter_of_nonpos (p : Polygon (ℝ × ℝ) (n + 2))
     (h0 : p 0 = (0, 0)) {u : ℝ} (hu : u ≤ 0) :
@@ -210,8 +180,6 @@ theorem openArcLinearParameter_of_nonpos (p : Polygon (ℝ × ℝ) (n + 2))
       AffineMap.lineMap_apply_module']
     simp only [Int.cast_add, Int.cast_one]
     ext <;> dsimp <;> ring
-
-
 
 theorem openArcLinearParameter_of_ge (p : Polygon (ℝ × ℝ) (n + 2))
     (hN : p (Fin.last (n + 1)) = (((n + 1 : ℕ) : ℝ), 0))
@@ -242,8 +210,6 @@ private theorem openArcLinearParameter_fst_bounds (p : Polygon (ℝ × ℝ) (n +
   rw [hnext]
   have h := (convex_Icc (0 : ℝ) (n + 1 : ℕ)).lineMap_mem (hp i.castSucc) (hp i.succ) ht
   simpa only [AffineMap.lineMap_apply_module, Prod.fst_add, Prod.smul_fst] using h
-
-
 
 theorem openArcLinearParameter_injective (p : Polygon (ℝ × ℝ) (n + 2))
     (hp : IsSimplePolygonalArc p) (h0 : p 0 = (0, 0))
@@ -277,8 +243,6 @@ theorem openArcLinearParameter_injective (p : Polygon (ℝ × ℝ) (n + 2))
     · exact (hno s t hs ht heq).elim
     · rw [hout s hs, hout t ht] at heq
       exact congrArg Prod.fst heq
-
-
 
 theorem exists_positive_corner_functional_of_injective_vertexPath
     (P : ℤ → ℝ × ℝ) (hP : Injective (roundedVertexPath abs P)) (i : ℤ) :
@@ -326,8 +290,6 @@ theorem exists_positive_corner_functional_of_injective_vertexPath
     ring
   rw [heq]
   exact neg_pos.mpr hneg
-
-
 
 theorem openArcExtendedVertex_secondDiff_zero (p : Polygon (ℝ × ℝ) (n + 2))
     (h0 : p 0 = (0, 0)) (hN : p (Fin.last (n + 1)) = (((n + 1 : ℕ) : ℝ), 0))

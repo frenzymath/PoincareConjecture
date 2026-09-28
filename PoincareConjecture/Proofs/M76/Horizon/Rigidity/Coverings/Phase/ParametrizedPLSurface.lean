@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.Parametriz
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.OriginalTargetPL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.PhaseMap
 
-
-
 set_option autoImplicit false
 open Geometry
 

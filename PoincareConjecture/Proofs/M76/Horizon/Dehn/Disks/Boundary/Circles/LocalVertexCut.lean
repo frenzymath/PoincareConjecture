@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_boundary_circle_vertex_cut
     (A L : SimplicialComplex ℝ E) [Fintype A.faces] [Fintype L.faces]

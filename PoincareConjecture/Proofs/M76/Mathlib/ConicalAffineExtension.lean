@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConicalVertexMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +12,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [DecidableEq E] [DecidableEq F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
-
-
 
 theorem AffineOnFaces.exists_cone_extension_affine (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) (hK : K.faces.Finite)
@@ -94,10 +80,6 @@ theorem AffineOnFaces.exists_cone_extension_affine (hf : K.AffineOnFaces f)
     (hFv (le_coneAtZero hlinK hradK hx)).trans (hv x (vertices_subset_space hx))
   refine ⟨F, e, hF, ?_, heq, he⟩
   exact (hFv (zero_mem_coneAtZero_vertices hlinK hradK)).trans (by simp [v])
-
-
-
-
 
 theorem AffineOnFaces.exists_cone_extension (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) (hK : K.faces.Finite)

@@ -3,26 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Evolution.MetricTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Evolution.JacobianEvolution
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,8 +15,6 @@ namespace PoincareConjecture.SurgeryVolume
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J)
-
-
 
 theorem pullbackJacobian_continuousOn_time
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n)) :
@@ -55,7 +33,6 @@ theorem pullbackJacobian_continuousOn_time
     (continuous_id.matrix_det.continuousAt.comp_continuousWithinAt hmatrix)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem pullbackJacobian_hasDerivAt
     (f : EuclideanSpace ℝ (Fin n) → M) (x : EuclideanSpace ℝ (Fin n))

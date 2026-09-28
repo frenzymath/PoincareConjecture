@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.HorizontalInclusion
 import PoincareConjecture.Proofs.M11.TangentEvaluation
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InjectiveStripA
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaLoss
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,10 +41,6 @@ private theorem normal_coordinate_differential_injective
   rw [mfderiv_eq_fderiv]
   apply LinearMap.ker_eq_bot.mp
   exact LinearMap.ker_eq_bot.mpr hfd
-
-
-
-
 
 theorem m64Intrinsic_exists_embedded_collar_area_bound (N : IntrinsicAnnulus) :
     ∃ (u : ℝ × ℝ → AnnulusCoordinates) (r c : ℝ),
@@ -162,9 +144,6 @@ theorem m64Intrinsic_exists_embedded_collar_area_bound (N : IntrinsicAnnulus) :
   rw [lintegral_const_mul' _ _ ENNReal.ofReal_ne_top,
     m64Intrinsic_parameter_strip_integral hS hheight hspeed.measurable] at hintegral
   exact hintegral
-
-
-
 
 theorem m64Intrinsic_exists_embedded_collar_area_cutoff (N : IntrinsicAnnulus) :
     ∃ (u : ℝ × ℝ → AnnulusCoordinates) (rho c : ℝ),

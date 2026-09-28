@@ -1,20 +1,8 @@
 import Mathlib.Order.Filter.AtTopBot.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
-
-
-
 
 theorem Filter.exists_strictMono_constant_label_witness
     {Z : ℕ → Type*} (P label : ∀ k, Z k → Prop)

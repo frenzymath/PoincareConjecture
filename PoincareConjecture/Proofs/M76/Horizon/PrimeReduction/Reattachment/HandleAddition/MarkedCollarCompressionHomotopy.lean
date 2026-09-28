@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.InwardCompression
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.Dehn
@@ -144,4 +136,3 @@ theorem exists_inward_collar_compression_homotopy
       rw [hGfix t x hx']
 
 end PoincareConjecture.M76.Dehn
-

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.EndCorrespondence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.TerminalPolicy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +52,6 @@ private theorem exists_endCut_of_positive_frontier_region (N : EpsilonNeck g)
   · rw [heq]
     exact hdis.mono_left hneg
 
-
-
 theorem exists_oriented_endCut_of_frontier_region (N : EpsilonNeck g)
     (hsep : N.IsSeparating) {V : Set M} (hVo : IsOpen V) (hVc : IsConnected V)
     (hfV : frontier V = N.central_sphere)
@@ -87,9 +77,6 @@ namespace PoincareConjecture.HornEndCut
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta rho : ℝ}
   {E : GeneralizedFlowExtension F T} {horn : StrongHorn E epsilon}
   {N : TerminalStrongNeck E delta}
-
-
-
 
 theorem exists_oriented_surgeryEndCut_or_compact_filling (cut : HornEndCut horn N rho)
     (hdelta : delta < 1 / 2) (hN : N.carrier ⊆ horn.carrier) :

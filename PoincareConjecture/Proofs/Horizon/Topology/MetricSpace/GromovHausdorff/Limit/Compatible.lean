@@ -1,24 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Packing.Compactness
 import Mathlib.Topology.MetricSpace.Gluing
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 open Set Metric
 
@@ -28,9 +9,6 @@ namespace Poincare.GromovHausdorff
 
 universe u
 
-
-
-
 structure CompatiblePointedCompactSystem where
   stage : ℕ → PointedCompactMetricSpace.{u}
   transition : ∀ n, (stage n).carrier → (stage (n + 1)).carrier
@@ -39,15 +17,11 @@ structure CompatiblePointedCompactSystem where
 
 namespace CompatiblePointedCompactSystem
 
-
-
 def inductiveLimit
     (S : CompatiblePointedCompactSystem.{u}) : BasedMetricSpaceBundle.{u} :=
   { carrier := Metric.InductiveLimit S.transition_isometry
     metric := inferInstance
     base := Metric.toInductiveLimit S.transition_isometry 0 (S.stage 0).base }
-
-
 
 def stageMap (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     (S.stage n).carrier → S.inductiveLimit.carrier :=
@@ -57,12 +31,10 @@ theorem stageMap_isometry (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     Isometry (S.stageMap n) :=
   Metric.toInductiveLimit_isometry S.transition_isometry n
 
-
 theorem stageMap_succ_comp_transition
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     S.stageMap (n + 1) ∘ S.transition n = S.stageMap n :=
   Metric.toInductiveLimit_commute S.transition_isometry n
-
 
 theorem stageMap_base (S : CompatiblePointedCompactSystem.{u}) :
     ∀ n, S.stageMap n (S.stage n).base = S.inductiveLimit.base := by
@@ -77,15 +49,12 @@ theorem stageMap_base (S : CompatiblePointedCompactSystem.{u}) :
       rw [Function.comp_apply, S.transition_base n] at hcomm
       exact hcomm.trans ih
 
-
-
 def completedLimit
     (S : CompatiblePointedCompactSystem.{u}) : BasedMetricSpaceBundle.{u} :=
   { carrier := UniformSpace.Completion S.inductiveLimit.carrier
     metric := inferInstance
     base := (S.inductiveLimit.base :
       UniformSpace.Completion S.inductiveLimit.carrier) }
-
 
 def stageEmbedding (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     (S.stage n).carrier → S.completedLimit.carrier :=
@@ -97,7 +66,6 @@ theorem stageEmbedding_isometry
     Isometry (S.stageEmbedding n) :=
   UniformSpace.Completion.coe_isometry.comp (S.stageMap_isometry n)
 
-
 theorem stageEmbedding_succ_comp_transition
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     S.stageEmbedding (n + 1) ∘ S.transition n = S.stageEmbedding n := by
@@ -108,7 +76,6 @@ theorem stageEmbedding_succ_comp_transition
       UniformSpace.Completion S.inductiveLimit.carrier) ∘ S.stageMap n
   rw [S.stageMap_succ_comp_transition n]
 
-
 theorem stageEmbedding_base
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     S.stageEmbedding n (S.stage n).base = S.completedLimit.base := by
@@ -118,14 +85,10 @@ theorem stageEmbedding_base
       UniformSpace.Completion S.inductiveLimit.carrier)
   rw [S.stageMap_base n]
 
-
 theorem isCompact_range_stageEmbedding
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
     IsCompact (Set.range (S.stageEmbedding n)) :=
   isCompact_range (S.stageEmbedding_isometry n).continuous
-
-
-
 
 theorem dense_iUnion_range_stageEmbedding
     (S : CompatiblePointedCompactSystem.{u}) :
@@ -166,10 +129,6 @@ theorem dense_iUnion_range_stageEmbedding
   rw [hsets] at hcompletion
   exact hcompletion
 
-
-
-
-
 def stageRealization (S : CompatiblePointedCompactSystem.{u}) (m n : ℕ) :
     PointedGHRealization
       (S.stage m).toFiniteDiameterBasedMetricSpace
@@ -182,8 +141,6 @@ def stageRealization (S : CompatiblePointedCompactSystem.{u}) (m n : ℕ) :
     left_base := S.stageEmbedding_base m
     right_base := S.stageEmbedding_base n }
 
-
-
 theorem pointedGHDistance_stage_le_common_realization
     (S : CompatiblePointedCompactSystem.{u}) (m n : ℕ) :
     pointedGHDistance
@@ -191,7 +148,6 @@ theorem pointedGHDistance_stage_le_common_realization
         (S.stage n).toFiniteDiameterBasedMetricSpace ≤
       pointedHausdorffDist (S.stageRealization m n) :=
   pointedGHDistance_le_realization (S.stageRealization m n)
-
 
 theorem range_stageEmbedding_mono_succ
     (S : CompatiblePointedCompactSystem.{u}) (n : ℕ) :
@@ -201,9 +157,6 @@ theorem range_stageEmbedding_mono_succ
   refine ⟨S.transition n x, ?_⟩
   have hcomm := congrFun (S.stageEmbedding_succ_comp_transition n) x
   simpa [Function.comp_apply] using hcomm
-
-
-
 
 theorem properSpace_completedLimit_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -227,4 +180,3 @@ theorem properSpace_completedLimit_of_radial_stage_coverage
 end CompatiblePointedCompactSystem
 
 end Poincare.GromovHausdorff
-

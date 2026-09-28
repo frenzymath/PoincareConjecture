@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingPlane
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {f : E → E}
-
-
-
 
 theorem AffineOnFaces.linear_nonneg_iff_of_positive_vertex_rescaling
     (hf : K.AffineOnFaces f) (r : E → ℝ) (hr : ∀ x ∈ K.vertices, 0 < r x)

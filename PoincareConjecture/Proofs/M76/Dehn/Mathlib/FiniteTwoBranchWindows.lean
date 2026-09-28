@@ -1,23 +1,9 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactDoubleRelation
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
-
-
-
-
-
 
 theorem IsLocalHomeomorph.exists_finite_twoBranchWindows
     {D X Y : Type*} [TopologicalSpace D] [TopologicalSpace X] [TopologicalSpace Y]

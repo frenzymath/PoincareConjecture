@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicNonisolatedZeroSigns
 import PoincareConjecture.Proofs.M76.Mathlib.RaisingCappedHeightSigns
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +8,6 @@ open Set
 namespace Geometry.AlexanderCollarSlab
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem mem_both_zero_height_closures_of_nonisolated
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q x : E} {β γ : ℝ}
@@ -46,11 +31,6 @@ namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
 
-
-
-
-
-
 theorem not_mem_closure_punctured_level_of_cap_singleton
     {s d b : Set E} (H : E ≃ₜ E) (A : E → ℝ)
     (hs : IsClosed s) (hinter : d ∩ s ⊆ b)
@@ -73,11 +53,6 @@ theorem not_mem_closure_punctured_level_of_cap_singleton
   · exact (hx.2 (hsingle.subset ⟨⟨y, hyd, hyx⟩, hx.1.2⟩)).elim
 
 variable [T2Space E]
-
-
-
-
-
 
 theorem mem_both_zero_height_closures_of_raising_deleted_cut
     {S s s' d : Set E} (H : E ≃ₜ E) (A : E → ℝ)
@@ -107,10 +82,6 @@ theorem mem_both_zero_height_closures_of_raising_deleted_cut
     apply closure_mono _ himage
     rintro y ⟨z, hz, rfl⟩
     exact ⟨⟨z, Or.inl hz.1, rfl⟩, hz.2.trans_le (hraise z)⟩
-
-
-
-
 
 theorem nonisolated_zero_height_signs_of_raising_deleted_cut
     {S s s' d : Set E} (H : E ≃ₜ E) (A : E → ℝ)

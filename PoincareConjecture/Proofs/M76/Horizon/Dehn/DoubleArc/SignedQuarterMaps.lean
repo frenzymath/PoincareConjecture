@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeJointMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_signed_quarter_map_on_radii
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

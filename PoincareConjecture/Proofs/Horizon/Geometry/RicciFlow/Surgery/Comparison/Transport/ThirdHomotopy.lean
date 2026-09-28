@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Comparison.Topology.HomotopyFunctoriality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -22,15 +13,9 @@ noncomputable section
 
 variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
 theorem surgeryHomotopyMap_eq_postcomp (n : ℕ) (f : C(X, Y)) (x : X) :
     surgeryHomotopyMap (n := n + 1) f (show f x = f x from rfl) =
       Poincare.Topology.homotopyGroupPostcomp n f x := rfl
-
-
-
-
 
 theorem surgeryHomotopyMap_eq_of_homotopic [SimplyConnectedSpace Y]
     {x : X} {y : Y} {n : ℕ} (f g : C(X, Y)) (hf : f x = y) (hg : g x = y)
@@ -50,9 +35,6 @@ theorem surgeryHomotopyMap_eq_of_homotopic [SimplyConnectedSpace Y]
     intro t z
     exact congrArg (fun w => H (t, w)) (a.property z.val z.property)
 
-
-
-
 theorem surgeryHomotopyMap_bijective_of_homotopyEquiv
     [SimplyConnectedSpace X] [SimplyConnectedSpace Y]
     {x : X} {y : Y} (n : ℕ) (f : C(X, Y)) (hf : f x = y)
@@ -62,8 +44,6 @@ theorem surgeryHomotopyMap_bijective_of_homotopyEquiv
   subst y
   rw [surgeryHomotopyMap_eq_postcomp]
   exact Topology.homotopyGroupPostcomp_bijective_of_homotopyEquiv n e x
-
-
 
 theorem surgeryPiThree_bijective_of_homotopyEquiv
     [SimplyConnectedSpace X] [SimplyConnectedSpace Y]

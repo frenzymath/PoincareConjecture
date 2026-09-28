@@ -2,15 +2,6 @@ import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter MeasureTheory
@@ -19,9 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M60
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} {f g : X → ℝ}
-
-
-
 
 theorem tendsto_integral_regularized_ratio
     (hf : AEMeasurable f μ) (hpos : ∀ᵐ x ∂μ, 0 < f x) (hg : Integrable g μ) :
@@ -46,9 +34,6 @@ theorem tendsto_integral_regularized_ratio
       (by simpa using hx.ne')
     simpa [hx.ne'] using hlim.mul_const (g x)
 
-
-
-
 theorem measure_le_integral_of_regularized_ratios [IsFiniteMeasure μ]
     (hf : AEMeasurable f μ) (hpos : ∀ᵐ x ∂μ, 0 < f x) (hg : Integrable g μ)
     (hineq : ∀ ε : ℝ, 0 < ε →
@@ -58,9 +43,6 @@ theorem measure_le_integral_of_regularized_ratios [IsFiniteMeasure μ]
   simp only [mul_one, integral_const, smul_eq_mul] at hleft
   apply le_of_tendsto_of_tendsto hleft (tendsto_integral_regularized_ratio hf hpos hg)
   exact Eventually.of_forall fun m => hineq _ (by positivity)
-
-
-
 
 theorem log_regularization_inequality {a ε b c q : ℝ}
     (ha : 0 < a) (he : 0 < ε) (hq : 0 ≤ q)

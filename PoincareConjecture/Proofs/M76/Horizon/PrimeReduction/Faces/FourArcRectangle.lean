@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRectangleBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "I" => Icc (0 : ℝ) 1
 local notation "Square" => (I ×ˢ I : Set (ℝ × ℝ))
-
-
-
 
 theorem exists_four_arc_rectangle
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

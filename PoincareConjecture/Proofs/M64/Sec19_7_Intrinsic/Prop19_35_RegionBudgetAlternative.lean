@@ -1,27 +1,9 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBudgetChoice
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBudgetDisjunction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_region_budget_alternative
     {K delta area curvature turning : ℝ}

@@ -2,16 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Pointed
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem exists_ancient_window_of_isCompact {T : ℝ} (hT : 0 < T)
     {K : Set ℝ} (hK : IsCompact K) (hKT : K ⊆ Iio T) :
@@ -30,15 +26,11 @@ theorem exists_ancient_window_of_isCompact {T : ℝ} (hT : 0 < T)
   have htu := hu.2 (mem_insert_of_mem 0 ht)
   constructor <;> linarith
 
-
-
 theorem exists_source_window_tail {J : ℕ → Set ℝ} {a b : ℝ}
     (h : ∀ᶠ k in Filter.atTop, Icc a b ⊆ J k) :
     ∃ N : ℕ, ∀ k, Ioo a b ⊆ J (k + N) := by
   obtain ⟨N, hN⟩ := Filter.eventually_atTop.mp h
   exact ⟨N, fun k ↦ Ioo_subset_Icc_self.trans (hN (k + N) (by omega))⟩
-
-
 
 noncomputable def FlowCarrier.basedWindow {n : ℕ} (C : FlowCarrier n)
     {J : Set ℝ} {a b : ℝ}
@@ -55,8 +47,6 @@ noncomputable def FlowCarrier.basedWindow {n : ℕ} (C : FlowCarrier n)
     spacetimeVectorField := fun _ _ ↦ (1, 0)
     spacetimeVectorField_time := fun _ _ ↦ rfl
     spacetimeVectorField_spatial_zero := fun _ _ ↦ rfl }
-
-
 
 noncomputable def sourceWindowSequence {n : ℕ} (C : ℕ → FlowCarrier n)
     {J : ℕ → Set ℝ} {a b : ℝ}

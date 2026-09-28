@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.SupportedMov
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 import Mathlib.Data.Set.Card.Arithmetic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped BigOperators

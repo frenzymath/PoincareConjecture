@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.LocalControl
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

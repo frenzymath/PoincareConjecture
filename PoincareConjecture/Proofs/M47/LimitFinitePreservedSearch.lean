@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedRetainedSearch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_exists_preserved_search
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

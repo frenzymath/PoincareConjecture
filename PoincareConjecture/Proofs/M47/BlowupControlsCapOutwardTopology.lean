@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecutFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem cap_outward_core_eq_complement {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
@@ -58,8 +47,6 @@ theorem cap_outward_core_eq_complement {b : ℝ}
           N.end_neck.coordinate_map_coordinate_inverse he⟩
     · exact Or.inl (Or.inl (N.closed_core_eq_complement_end ▸ ⟨hx, he⟩))
 
-
-
 theorem cap_outward_sphere_subset_tail_closure {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
     N.end_neck.coordinate_map '' (univ ×ˢ ({b} : Set ℝ)) ⊆
@@ -78,7 +65,6 @@ theorem cap_outward_sphere_subset_tail_closure {b : ℝ}
     (by simpa only [N.end_neck_epsilon] using hb.le) (by rw [N.end_neck_epsilon])] at hcl
   exact hcl
 
-
 theorem cap_outward_core_interior {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
     interior (closure (N.recutCarrier b)) = N.recutCarrier b := by
@@ -96,7 +82,6 @@ theorem cap_outward_core_interior {b : ℝ}
       exact (hyK.2 hytail).elim
   · exact interior_maximal subset_closure (N.recutCarrier_isOpen hb hb')
 
-
 theorem cap_outward_core_frontier {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
     frontier (closure (N.recutCarrier b)) =
@@ -104,8 +89,6 @@ theorem cap_outward_core_frontier {b : ℝ}
   rw [frontier, closure_closure, cap_outward_core_interior N hb hb']
   have h := N.recutCarrier_frontier_eq_axial_sphere hb hb'
   rwa [frontier, (N.recutCarrier_isOpen hb hb').interior_eq] at h
-
-
 
 theorem cap_outward_core_geometry {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :

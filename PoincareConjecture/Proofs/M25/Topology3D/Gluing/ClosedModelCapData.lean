@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CapStandardEnd
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapBasics
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,12 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
-
 
 structure ClosedModelCapData
     {M : Type u} [TopologicalSpace M]
@@ -64,7 +50,6 @@ structure ClosedModelCapData
   core_nonempty : core.Nonempty
   core_subset_closed_core : core ⊆ closed_core
   carrier_connected : IsConnected carrier
-
 
 noncomputable def ClosedModelCapData.ofCapCertificate
     {M : Type u} [TopologicalSpace M]
@@ -203,7 +188,6 @@ theorem ClosedModelCapData.ofCapCertificate_end_chart_tail
     refine ⟨hx, ?_⟩
     simpa only [EpsilonNeck.coordinatePartialHomeomorph_symm_apply,
       mem_Ioo] using hheight
-
 
 structure ClosedModelCapTubeAttachment
     {M : Type u} [TopologicalSpace M]

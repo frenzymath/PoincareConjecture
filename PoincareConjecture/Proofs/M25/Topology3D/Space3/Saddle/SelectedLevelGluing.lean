@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -18,10 +8,7 @@ open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 set_option linter.unusedVariables false in
-
-
 
 theorem saddle_selected_level_gluing
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

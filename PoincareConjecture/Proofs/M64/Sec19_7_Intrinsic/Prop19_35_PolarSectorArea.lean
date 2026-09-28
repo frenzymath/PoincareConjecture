@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerTangentCo
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,11 +21,6 @@ private theorem radial_lintegral {R : ℝ} (hR : 0 < R) :
     ← integral_Ioc_eq_integral_Ioo, ← intervalIntegral.integral_of_le hR.le,
     integral_id]
   norm_num
-
-
-
-
-
 
 theorem m64Intrinsic_polar_sector_volume
     {R a d : ℝ} (hR : 0 < R) (ha : -Real.pi ≤ a) (hd : d ≤ Real.pi) :

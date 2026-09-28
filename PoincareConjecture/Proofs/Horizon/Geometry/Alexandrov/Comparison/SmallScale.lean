@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.ComparisonAngle
 import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology
@@ -52,8 +43,6 @@ private theorem tendsto_cosh_mul_sub_one_div_sq
   · congr 1
     ring
 
-
-
 theorem tendsto_comparisonAngle_mul_of_tendsto_zero
     {ι : Type*} {l : Filter ι} {t a b d : ι → ℝ} {a₀ b₀ d₀ : ℝ}
     (ht : Tendsto t l (𝓝 0)) (htne : ∀ᶠ j in l, t j ≠ 0)
@@ -91,7 +80,6 @@ theorem tendsto_comparisonAngle_mul_of_tendsto_zero
     ring
   exact Real.continuous_arccos.continuousAt.tendsto.comp hratio
 
-
 theorem tendsto_comparisonAngle_mul_zero_right
     {a b d : ℝ} (ha : 0 < a) (hb : 0 < b) :
     Tendsto (fun t : ℝ => comparisonAngle (t * a) (t * b) (t * d)) (𝓝[>] 0)
@@ -101,8 +89,6 @@ theorem tendsto_comparisonAngle_mul_zero_right
     tendsto_const_nhds tendsto_const_nhds tendsto_const_nhds ha hb
   filter_upwards [self_mem_nhdsWithin] with t ht
   exact ne_of_gt ht
-
-
 
 theorem exists_pos_comparisonAngle_gt_of_euclidean_angle_ge
     {θ θ' : ℝ} (hθ : 0 < θ) (hθθ' : θ < θ') (hθ'pi : θ' < Real.pi) :

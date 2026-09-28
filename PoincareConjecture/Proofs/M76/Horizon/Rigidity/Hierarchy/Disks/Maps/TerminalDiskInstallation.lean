@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.InstalledS
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.TerminalGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskFamilyInstallation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -27,8 +19,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 def HamiltonZeroInstalledTerminalDiskFamily {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)

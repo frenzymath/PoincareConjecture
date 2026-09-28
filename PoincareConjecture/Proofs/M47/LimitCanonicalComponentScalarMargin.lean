@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentCurvature
 import PoincareConjecture.Proofs.M47.LimitCanonicalAlternative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
 
 theorem limitCanonical_component_eventually_sectional_fields
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

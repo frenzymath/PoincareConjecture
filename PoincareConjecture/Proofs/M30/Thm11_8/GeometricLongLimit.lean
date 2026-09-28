@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.AnalyticSuppliers
 import PoincareConjecture.Proofs.M30.Thm11_8.GeometricLongConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -16,9 +8,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_geometric_long_convergence
     (P : M30ControlledBlowupPredecessors.{u})

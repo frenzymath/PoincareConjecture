@@ -1,16 +1,6 @@
-
-
-
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 import Mathlib.Topology.Compactness.Compact
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -25,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M]
 
-
 structure SmoothEdge (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
     [IsManifold (𝓡 2) ∞ M] where
@@ -33,7 +22,6 @@ structure SmoothEdge (M : Type u) [TopologicalSpace M]
   smooth : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 2) ∞ map (Icc (0 : ℝ) 1)
   regular : ∀ t ∈ Ioo (0 : ℝ) 1,
     Function.Injective (mfderiv (𝓘(ℝ, ℝ)) (𝓡 2) map t)
-
 
 structure SmoothFace (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
@@ -50,7 +38,6 @@ structure SmoothFace (M : Type u) [TopologicalSpace M]
   carrier_subset_chart : carrier ⊆ (chartAt (EuclideanSpace ℝ (Fin 2)) chart).source
   boundary : Fin 3 → SmoothEdge M
   boundary_carrier : frontier carrier = ⋃ i, (boundary i).map '' Icc (0 : ℝ) 1
-
 
 structure FiniteSmoothTriangulation where
   (faces edges vertices : Type)
@@ -72,14 +59,6 @@ structure FiniteSmoothTriangulation where
     (∃ e, (face f).carrier ∩ (face g).carrier = (edge e).map '' Icc (0 : ℝ) 1) ∨
     (∃ v, (face f).carrier ∩ (face g).carrier ⊆ {vertex v})
 
-
-
-
-
-
-
-
-
 structure FiniteSmoothTriangulationWithCoordinates where
   triangulation : FiniteSmoothTriangulation (M := M)
   coordinates : triangulation.faces → OpenPartialHomeomorph
@@ -98,7 +77,6 @@ structure FiniteSmoothTriangulationWithCoordinates where
     ((triangulation.face f).boundary k).map '' Icc (0 : ℝ) 1 =
       coordinates f '' affineSegment ℝ (basis f (k.succAbove 0))
         (basis f (k.succAbove 1))
-
 
 theorem FiniteSmoothTriangulation.incident_iff
     (T : FiniteSmoothTriangulation (M := M)) (e : T.edges) (f : T.faces) :

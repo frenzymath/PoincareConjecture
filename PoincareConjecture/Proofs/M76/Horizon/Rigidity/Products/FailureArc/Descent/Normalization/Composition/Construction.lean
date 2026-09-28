@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Composition.BoundaryRepair
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Composition.Schedule
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -19,8 +17,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C} {step : Step s t}
   {K₀ A₀ : SimplicialComplex ℝ P2} {j : P2 → t.Carrier} {R Fmark : Set M}
-
-
 
 theorem MarkedSurfacePositionData.nonempty_finite_marked_annulus_repairs
     (D : MarkedSurfacePositionData step K₀ A₀ j R Fmark)

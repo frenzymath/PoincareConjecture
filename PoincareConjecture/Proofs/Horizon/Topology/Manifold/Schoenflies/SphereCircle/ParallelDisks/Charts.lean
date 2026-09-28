@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImage
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

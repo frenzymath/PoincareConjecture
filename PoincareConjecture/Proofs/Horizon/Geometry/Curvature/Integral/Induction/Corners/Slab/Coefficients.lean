@@ -1,8 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-
-
 open Set
 namespace Poincare.CurvatureIntegral
 theorem exists_uniform_slab_coefficient (d : ℕ) {ℓ V H : ℝ}

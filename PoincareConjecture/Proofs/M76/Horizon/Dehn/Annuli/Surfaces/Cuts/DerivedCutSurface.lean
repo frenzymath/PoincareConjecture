@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.DerivedComplementLinks
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSurfaceIncidence
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -11,7 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 open Classical in
-
 
 theorem derived_closed_cut_surface_incidence
     (K L : SimplicialComplex ℝ E) [Fintype K.faces] (hLK : L ≤ K)

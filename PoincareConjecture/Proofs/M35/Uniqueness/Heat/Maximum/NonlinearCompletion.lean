@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.NonlinearLp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -135,8 +127,6 @@ theorem nonlinearSupportedTest_graph_limit {K : Set V} (hK : IsCompact K)
     (fun j => nonlinearTestSchwartz_partial_cauchy T hT hT0 X hc
       (EuclideanSpace.single j (1 : ℝ)) hC (hspace j) hval hvalLip hv.cauchySeq (hd j))
   exact ⟨v, hvlim, nonlinear_test_value_limit hK T hT hT0 hC hLip u f hv v hvlim⟩
-
-
 
 theorem exists_nonlinear_dirichlet_test {K : Set V} (hK : IsCompact K)
     (T : V × Z → ℝ) (hT : ContDiff ℝ ∞ T) (hT0 : ∀ x, T (x, 0) = 0)

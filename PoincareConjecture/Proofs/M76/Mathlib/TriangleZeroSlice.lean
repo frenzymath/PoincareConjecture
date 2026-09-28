@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OneSidedSimplexSlice
 import PoincareConjecture.Proofs.M76.Mathlib.CrossingPointSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem exists_opposite_vertices_of_regular_zero (A : E →ᵃ[ℝ] ℝ) {s : Set E}
     (hreg : ∀ u ∈ s, A u ≠ 0) {x : E} (hx : x ∈ convexHull ℝ s) (hAx : A x = 0) :
@@ -40,9 +27,6 @@ theorem exists_opposite_vertices_of_regular_zero (A : E →ᵃ[ℝ] ℝ) {s : Se
   obtain ⟨u, hu, hAu⟩ := hneg
   obtain ⟨v, hv, hAv⟩ := hpos
   exact ⟨u, hu, v, hv, hAu, hAv⟩
-
-
-
 
 theorem convexHull_insert_pair_inter_zero (A : E →ᵃ[ℝ] ℝ) {u w v : E}
     (hu : A u < 0) (hw : A w < 0) (hv : 0 < A v) :
@@ -89,9 +73,6 @@ private theorem exists_edges_of_two_negative (A : E →ᵃ[ℝ] ℝ) {u w v : E}
   · rw [A.straddlingPoint_eq_zeroCrossing he hu hv Finset.coe_pair,
       A.straddlingPoint_eq_zeroCrossing hf hw hv Finset.coe_pair, ht]
     exact A.convexHull_insert_pair_inter_zero hu hw hv
-
-
-
 
 theorem exists_straddling_edges_triangle (A : E →ᵃ[ℝ] ℝ) {t : Finset E}
     (ht : t.card = 3) (hreg : ∀ u ∈ t, A u ≠ 0)

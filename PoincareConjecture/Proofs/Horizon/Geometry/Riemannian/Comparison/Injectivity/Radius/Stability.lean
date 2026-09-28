@@ -1,15 +1,6 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Topology
 
 namespace Poincare
-
-
 
 theorem eventually_injOn_of_locally_injective_total_map
     {P E X : Type*} [TopologicalSpace P] [TopologicalSpace E]

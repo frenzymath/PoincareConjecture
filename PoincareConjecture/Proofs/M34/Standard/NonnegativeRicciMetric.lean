@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Basic
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem inner_self_antitoneOn_of_nonnegative_ricci
     {n : ℕ} {M : Type*} [TopologicalSpace M]

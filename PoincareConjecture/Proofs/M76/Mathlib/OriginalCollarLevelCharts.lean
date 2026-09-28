@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralHeightBandSection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLevelChartTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem IsFinitePL.exists_original_collar_level_chart
     {B : Set E} {T : Set F} {upper : E → ℝ}

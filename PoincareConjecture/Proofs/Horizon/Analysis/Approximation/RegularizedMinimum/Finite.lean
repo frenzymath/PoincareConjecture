@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.RegularizedMinimum.Finite.Weights
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -95,7 +88,6 @@ theorem hasDerivAt_finiteRegularizedMin_update
   exact ((contDiff_finiteRegularizedMin δ hδ n).differentiable (by simp) _).hasFDerivAt.comp_hasDerivAt
     t (hasDerivAt_update f i t)
 
-
 theorem finiteRegularizedMin_update_eq
     (δ : ℝ) (hδ : 0 < δ) (n : ℕ) (f : Fin (n + 1) → ℝ) (i j : Fin (n + 1))
     (hji : j ≠ i) (t : ℝ)
@@ -113,7 +105,6 @@ theorem finiteRegularizedMin_update_eq
     simp only [Function.update_self]
     change f j + 2 * n * δ < s at hs
     linarith
-
 
 theorem finiteRegularizedMin_update_eventuallyEq
     (δ : ℝ) (hδ : 0 < δ) (n : ℕ) (f : Fin (n + 1) → ℝ) (i : Fin (n + 1))

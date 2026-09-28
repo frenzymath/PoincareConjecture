@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerTangentCones
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteConeFan
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,11 +25,6 @@ private theorem exists_metric_complex_coordinates
   intro v w
   exact (E.toLinearIsometry.angle_map v w).trans
     (cornerAngle_eq_innerProduct_angle g q v w).symm
-
-
-
-
-
 
 theorem m64Intrinsic_metric_fan_angle_sum
     {I : Type*} [Fintype I]
@@ -87,12 +69,6 @@ theorem m64Intrinsic_metric_fan_angle_sum
     (fun i h => hy i (L.injective (h.trans L.map_zero.symm)))
     (fun i => by simpa only [hLangle] using hangle i) hcomplex
   simpa only [hLangle] using hsum
-
-
-
-
-
-
 
 theorem m64Intrinsic_coordinate_interior_vertex_angle_sum
     {I : Type*} [Fintype I]

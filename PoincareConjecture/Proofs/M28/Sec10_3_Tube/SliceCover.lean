@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSlice
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PositiveComponent
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapAlternatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.M28
 
 variable {F : GeneralizedRicciFlowData.{u}} {t epsilon epsilon₀ C : ℝ}
-
-
-
 
 noncomputable def testedSliceNeckCapCover
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ epsilon₀)
@@ -71,8 +59,6 @@ noncomputable def testedSliceNeckCapCover
   · rintro N ⟨S, rfl, _⟩
     rfl
 
-
-
 theorem testedSliceNeckCapCover_neck_provenance
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ epsilon₀)
     (hthreshold : epsilon₀ ≤ 1 / 200) (hC : 0 < C)
@@ -87,10 +73,6 @@ theorem testedSliceNeckCapCover_neck_provenance
     ∃ S : GeneralizedStrongNeck F t epsilon,
       N = strongNeck_top S (lt_of_le_of_lt (hsmall.trans hthreshold) (by norm_num)) ∧
         S.center ∈ X := hN
-
-
-
-
 
 theorem exists_tested_path_neck_cap_cover
     (P : RicciFlowCurvatureTheory.{u})

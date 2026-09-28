@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarIntegratedTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFluxBound
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,11 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
-
-
 
 theorem scalar_integral_mul_sq_le {alpha : Type*} [MeasurableSpace alpha]
     {mu : Measure alpha} {f g : alpha → ℝ} (hf : MemLp f 2 mu) (hg : MemLp g 2 mu) :
@@ -61,28 +44,12 @@ private theorem circle_memLp {f : ℝ → ℝ} (hc : ContinuousOn f (Icc (0 : �
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 def scalarCoverRadialTotalEnergy (H : Plane → ℝ) : ℝ :=
   ∫ z in Ioo (1 : ℝ) 2 ×ˢ Ioo (0 : ℝ) 1,
     (fderiv ℝ (H ∘ scalarCoverMap) z (1, 0)) ^ 2
 
-
-
-
-
-
 def scalarCoverCircleDifferentialEnergy (H : Plane → ℝ) (r : ℝ) : ℝ :=
   ∫ t in Ioo (0 : ℝ) 1, ‖fderiv ℝ H (scalarCoverMap (r, t))‖ ^ 2
-
-
-
-
-
-
 
 theorem scalarCover_boundary_flux_sq_bound {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)
-
-
 
 theorem partialFlow_exp_bounds (P : RicciFlowCurvatureTheory.{0})
     {t K : ℝ} (ht : t ∈ Ico 0 F.lifetime) (hK : 0 ≤ K)
@@ -33,8 +22,6 @@ theorem partialFlow_exp_bounds (P : RicciFlowCurvatureTheory.{0})
   rw [F.initial_metric] at h
   norm_num at h ⊢
   exact h
-
-
 
 theorem partialFlow_initial_tangentNorm_le (P : RicciFlowCurvatureTheory.{0})
     {t K : ℝ} (ht : t ∈ Ico 0 F.lifetime) (hK : 0 ≤ K)
@@ -56,8 +43,6 @@ theorem partialFlow_initial_tangentNorm_le (P : RicciFlowCurvatureTheory.{0})
   have hsqrt := Real.sqrt_le_sqrt hmetric
   rw [hexp, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (Real.exp_nonneg _)] at hsqrt
   exact hsqrt
-
-
 
 theorem partialFlow_complete (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 F.lifetime) : MetricComplete (F.flow.metric t) := by

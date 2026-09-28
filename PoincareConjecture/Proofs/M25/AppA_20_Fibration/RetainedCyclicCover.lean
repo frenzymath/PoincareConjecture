@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.NonseparatingCompactUnion
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ReturnOverlapGeometry
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SameUpToReversalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem exists_retained_cyclic_cover_of_nonseparating :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

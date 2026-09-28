@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalIsomet
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncollapse.Volume.LocalVolume
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +47,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem eventually_terminal_calibratedVolume_comparison
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     {A : Set (H.regularRegion P04)} (hA : IsCompact A) {c : ℝ} (hc : 1 < c) :
@@ -79,7 +68,6 @@ theorem eventually_terminal_calibratedVolume_comparison
       (H.terminalMetric P04) ((H.terminalFlow P04).metric t)
       isOpen_interior hS (hSA.trans hAB) hcpos
       (fun x hx v => (ht x (interior_subset hx) v).2)⟩
-
 
 theorem terminalFlow_reference_calibratedVolume
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.LinearPoleCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finitePL_convex_frontier_cube_pole (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

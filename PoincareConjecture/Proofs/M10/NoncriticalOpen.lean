@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M10
 variable {S X Y : Type*} [TopologicalSpace S]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem eventually_bijective_of_continuousAt {D : S → X →L[ℝ] Y} {s₀ : S}
     (hD : ContinuousAt D s₀) (h₀ : Function.Bijective (D s₀)) :

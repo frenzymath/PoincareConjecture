@@ -1,16 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -56,7 +46,6 @@ private theorem orthogonalThreeMatrix_apply
     rw [OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr]
   rw [hrepr x, hrepr (L.toLinearEquiv.toLinearMap x)] at h
   exact h
-
 
 private theorem orthogonalThreeMatrix_det_eq_neg_one
     (L : EuclideanSpace ℝ (Fin 3) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 3))
@@ -121,8 +110,6 @@ private theorem orthogonalThreeDet_injective : Function.Injective (orthogonalThr
   apply (orthogonalThreeDet_eq_one_iff H hfree _).mp
   rw [map_mul, ← hLK, ← map_mul, inv_mul_cancel, map_one]
 
-
-
 theorem free_orthogonalThree_subgroup_card_le_two : Nat.card H ≤ 2 := by
   classical
   let f : H → Fin 2 := fun L => if L = 1 then 0 else 1
@@ -138,8 +125,6 @@ theorem free_orthogonalThree_subgroup_card_le_two : Nat.card H ≤ 2 := by
         exact (orthogonalThreeMatrix_det_eq_neg_one L.val (hfree L hL)).trans
           (orthogonalThreeMatrix_det_eq_neg_one K.val (hfree K hK)).symm
   simpa using Nat.card_le_card_of_injective f hf
-
-
 
 theorem free_orthogonalThree_subgroup_eq_antipodal (L : H) (hL : L ≠ 1) :
     L.val = LinearIsometryEquiv.neg ℝ := by

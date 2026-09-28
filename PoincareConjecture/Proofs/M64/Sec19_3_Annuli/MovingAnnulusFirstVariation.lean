@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusDivergence
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapLocalFlux
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
-
 
 theorem m64AnnulusEnergy_intrinsic_boundary_first_variation
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1)

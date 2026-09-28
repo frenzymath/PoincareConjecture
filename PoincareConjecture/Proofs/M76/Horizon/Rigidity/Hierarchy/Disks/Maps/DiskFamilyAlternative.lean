@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.HomeomorphicDiskFamilyInstallation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.DiskBoundaryFailure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -86,4 +78,3 @@ theorem exists_hamiltonZero_disk_family_homeomorphic_or_failure_arc
       halpha hbeta ha hb hfirst hsecond (theta i) (hthird i) hi⟩
 
 end PoincareConjecture.M76
-

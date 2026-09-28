@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicCircleShift
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakFilling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveTraceFundamental
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +14,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
 
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem m64Periodic_H1_shift
     (w : ℕ → ℝ → E) (hw : ∀ j, ContDiff ℝ 1 (w j))

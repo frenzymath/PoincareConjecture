@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappingRegions
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 noncomputable def cappedDiscardedRegionEquivalence (i : Fin (F.event T hT).cap_count) :
     SurgeryRegionEquivalence (cappedDiscardedCarrier F T hT P)
@@ -44,14 +34,10 @@ noncomputable def cappedDiscardedRegionEquivalence (i : Fin (F.event T hT).cap_c
     (F.slice (F.event T hT).tMinus) (eventDiscardedOpen F T hT)
     (Classical.choice (P i).discarded_nonempty))
 
-
-
 theorem cappedDiscardedRegionEquivalence_map (i : Fin (F.event T hT).cap_count)
     (q : (cappedDiscardedCarrier F T hT P).carrier) :
     (cappedDiscardedRegionEquivalence F T hT P i).map q =
       (cappedOldInverse F T hT P q).val := rfl
-
-
 
 theorem cappedDiscardedRegionEquivalence_positive
     (i : Fin (F.event T hT).cap_count) (z : UnitTwoSphere) (s : ℝ)

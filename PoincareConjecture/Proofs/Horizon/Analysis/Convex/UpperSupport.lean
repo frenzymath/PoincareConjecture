@@ -8,22 +8,12 @@ import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare.Analysis
-
-
 
 theorem nonneg_second_deriv_of_local_min {u : ℝ → ℝ} {x : ℝ}
     (hu : ContDiffAt ℝ 2 u x) (hmin : IsLocalMin u x) :
@@ -57,10 +47,6 @@ theorem nonneg_second_deriv_of_local_min {u : ℝ → ℝ} {x : ℝ}
   have hpos : 0 ≤ (u (x + r / 2) - u x) / (x + r / 2 - x) :=
     div_nonneg (sub_nonneg.mpr (hball hy).1) (sub_nonneg.mpr hxy.le)
   exact (not_lt_of_ge hpos) hslope
-
-
-
-
 
 theorem concaveOn_of_approximate_upper_support {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b))
@@ -137,7 +123,6 @@ theorem concaveOn_of_approximate_upper_support {f : ℝ → ℝ} {a b : ℝ}
     nlinarith
   nlinarith
 
-
 theorem second_deriv_sub_quadratic {u : ℝ → ℝ} {x : ℝ}
     (hu : ContDiffAt ℝ 2 u x) (C : ℝ) :
     deriv (deriv (fun t => u t - C * t ^ 2)) x = deriv (deriv u) x - 2 * C := by
@@ -154,8 +139,6 @@ theorem second_deriv_sub_quadratic {u : ℝ → ℝ} {x : ℝ}
   rw [hfirst.deriv_eq, deriv_fun_sub hud (by fun_prop)]
   simp
 
-
-
 theorem concaveOn_sub_quadratic_of_approximate_upper_support
     {f : ℝ → ℝ} {a b C : ℝ} (hf : ContinuousOn f (Icc a b))
     (hsupport : ∀ x ∈ Ioo a b, ∀ ε : ℝ, 0 < ε →
@@ -170,9 +153,6 @@ theorem concaveOn_sub_quadratic_of_approximate_upper_support
   · exact hb.mono fun y hy => sub_le_sub_right hy _
   · rw [second_deriv_sub_quadratic hu]
     linarith
-
-
-
 
 theorem le_affine_of_concaveOn_of_upper_support
     {f u : ℝ → ℝ} {a b q : ℝ} (hab : a < b)
@@ -194,9 +174,6 @@ theorem le_affine_of_concaveOn_of_upper_support
     exact div_le_div_of_nonneg_right (sub_le_sub_right hyu _) (sub_nonneg.mpr hya.le)
   rw [slope_def_field, div_le_iff₀ (sub_pos.mpr hab)] at hle
   linarith
-
-
-
 
 theorem two_parameter_chord_lower_bound
     {F : ℝ → ℝ → ℝ} {a b : ℝ}

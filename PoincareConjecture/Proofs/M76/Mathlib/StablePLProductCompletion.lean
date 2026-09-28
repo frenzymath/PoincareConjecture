@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartFiberCompression
 import PoincareConjecture.Proofs.M76.Mathlib.StableProductCompletion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLFiberCompression
-
-
-
-
-
 
 theorem exists_stable_PL_product_completion
     {E F X Y ι κ : Type*}

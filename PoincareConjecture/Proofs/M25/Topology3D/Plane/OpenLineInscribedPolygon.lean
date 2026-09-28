@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.InscribedIntervals
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PolygonalArc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -16,8 +8,6 @@ open Set Function
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem isSimplePolygonalArc_and_bijOn_of_ordered_projection
     {n : ℕ} (p : Polygon E (n + 2)) (P : E → ℝ) (m : Fin (n + 2) → ℝ)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M01.NormalizationEuclideanVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Metric Set

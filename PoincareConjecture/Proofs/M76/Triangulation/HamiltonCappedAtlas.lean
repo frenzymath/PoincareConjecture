@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedCapInteriorComp
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonCapRetainedCompatibility
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonBrownInteriorChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -57,11 +48,6 @@ private theorem cap_disjoint_compatible
   apply LocallyPiecewiseAffineOn.locality
   intro p hp
   exact False.elim (Set.disjoint_left.mp h (c.map_target hp.1) hp.2)
-
-
-
-
-
 
 theorem exists_marked_brown_cap_PL_domain
     {Y : Set X} [Nonempty Y] (hY : IsOpen Y)

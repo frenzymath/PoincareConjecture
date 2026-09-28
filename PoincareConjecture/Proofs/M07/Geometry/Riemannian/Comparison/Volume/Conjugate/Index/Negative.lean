@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Index.Uniqueness
 
 set_option autoImplicit false
@@ -15,7 +6,6 @@ open Set
 open scoped ContDiff RealInnerProductSpace
 
 noncomputable section
-
 
 namespace Poincare.ODE.Jacobi
 

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.AxisDivisionFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -65,8 +55,6 @@ private theorem evenNormFamily_hasFDerivAt
       exact hasFDerivAt_even_norm (profileFamily_slice_contDiff hf hq.1) (he q.1 hq.1) q.2)
     (htc.continuousAt (hW.mem_nhds ⟨hp, mem_univ _⟩))
     (hqc.continuousAt (hW.mem_nhds ⟨hp, mem_univ _⟩))).hasFDerivAt
-
-
 
 theorem evenNorm_family_contDiffOn
     {f : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)

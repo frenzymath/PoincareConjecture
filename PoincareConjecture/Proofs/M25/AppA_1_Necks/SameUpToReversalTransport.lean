@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem EpsilonNeck.exists_signed_retained_interval_of_sameUpToReversal
     {M : Type u} [TopologicalSpace M]

@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.FinitePLEssentialCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
 
 namespace AddCircle
-
-
 
 theorem nat_eq_one_of_homotopic_homeomorph
     {p : ℝ} [Fact (0 < p)] (f : C(AddCircle p, AddCircle p))
@@ -51,19 +41,14 @@ local notation "Q2" => sphere (0 : V2) 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
 
-
 noncomputable def annulusSquareRimParameter : Circle ≃ₜ Q2 :=
   (AddCircle.homeomorphAddCircle (4 * (8 : ℝ)) (4 * (2 : ℝ))
     (by norm_num) (by norm_num)).trans HamiltonIndexOne.squareCircle
-
-
 
 noncomputable def annulusRadialSquareRimMap (gamma : C(Q2, Ann)) : C(Circle, Circle) :=
   ⟨fun z => (annulusCylinderHomeomorph.symm (gamma (annulusSquareRimParameter z))).2,
     (annulusCylinderHomeomorph.symm.continuous.comp
       (gamma.continuous.comp annulusSquareRimParameter.continuous)).snd⟩
-
-
 
 theorem exists_finitePL_essential_annulus_radial_homeomorph_homotopy
     (gamma : C(Q2, Ann)) (hinj : Function.Injective gamma)
@@ -96,8 +81,6 @@ theorem exists_finitePL_essential_annulus_radial_homeomorph_homotopy
     rw [annulusCylinderHomeomorph.symm_apply_apply]
     rfl
 
-
-
 theorem exists_finitePL_essential_annulus_signed_radial_lift
     (gamma : C(Q2, Ann)) (hinj : Function.Injective gamma)
     (f : V2 → P2) (hf : FinitePiecewiseAffineOn f Q2)
@@ -115,8 +98,6 @@ theorem exists_finitePL_essential_annulus_signed_radial_lift
     (annulusRadialSquareRimMap gamma) q H
   refine ⟨L, hL, ?_⟩
   simpa only [show (4 : ℝ) * 8 = 32 by norm_num] using hperiod
-
-
 
 theorem finitePL_essential_annulus_positive_degree_eq_one
     (gamma : C(Q2, Ann)) (hinj : Function.Injective gamma)

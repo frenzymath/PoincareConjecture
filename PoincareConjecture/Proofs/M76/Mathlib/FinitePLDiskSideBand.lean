@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ local notation "I" => Icc (0 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_disk_side_band_map
     {B q : Set E} (hB : IsFinitePLBallPair (ℝ × ℝ) B q)

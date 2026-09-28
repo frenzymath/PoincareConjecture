@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedPureDomainModel
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalChartStarFaceCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3ChangeRealization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

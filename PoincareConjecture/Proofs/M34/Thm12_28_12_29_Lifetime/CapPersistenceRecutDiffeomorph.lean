@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.CapPersistenceAxialCompression
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceAxialMap
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceModelTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 noncomputable def recutDiffeomorph {c b : ℝ}
     (hc : -N.epsilon⁻¹ < c) (hcb : c < b) (hb : b < N.epsilon⁻¹)
@@ -126,9 +112,6 @@ noncomputable def recutDiffeomorph {c b : ℝ}
     · have hfixed (f : ℝ → ℝ) : N.axialMap f x = x := by
         simp only [axialMap, if_neg heX]
       exact (congrArg (N.axialMap e) (hfixed e.symm)).trans (hfixed e)
-
-
-
 
 theorem nonempty_recutModelEquivalence {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :

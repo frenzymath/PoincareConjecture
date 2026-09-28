@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
-
-
-
 
 theorem exists_supportedBackwardGaugeTest_at {s : ℝ} (hs : s ∈ Ioo τ₁ τ₂)
     (W : G.Horizontal (p.curve s)) :

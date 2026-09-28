@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Coordinates
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,7 +34,6 @@ theorem terminalNeckEmbedding_center_mem_central_image
       G.terminalNeckEmbedding e N ε k '' (univ ×ˢ ({0} : Set ℝ)) := by
   rw [G.terminalNeckEmbedding_central_sphere_image]
   exact mem_image_of_mem _ N.center_on_central_sphere
-
 
 theorem terminalNeckEmbedding_coordinates_of_source
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) {ε : ℝ} (hε : 0 < ε) (k : ℕ)
@@ -89,8 +79,6 @@ theorem terminalNeckEmbedding_coordinates_of_source
     exact ⟨hz.1, by simpa only [mem_singleton_iff.mp hz.2] using
       (show (0 : ℝ) ∈ Ioo (-ε⁻¹) ε⁻¹ from ⟨neg_neg_of_pos hpos, hpos⟩)⟩
 
-
-
 theorem terminalNeckEmbedding_full_source
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (k : ℕ)
     (hN : N.carrier ⊆ G.exhaustion k) :
@@ -99,8 +87,6 @@ theorem terminalNeckEmbedding_full_source
   apply inter_eq_right.mpr
   intro z hz
   exact ⟨hz, hN (N.coordinate_map_mem hz)⟩
-
-
 
 theorem terminalNeckEmbedding_target_eq_image_region
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) {ε : ℝ} (k : ℕ)
@@ -155,8 +141,6 @@ theorem terminalNeckEmbedding_full_inverse_image
   rw [N.coordinate_map_coordinate_inverse hx] at h
   exact h
 
-
-
 theorem terminalNeckEmbedding_full_region
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (k : ℕ)
     (hN : N.carrier ⊆ G.exhaustion k) (a b : ℝ) :
@@ -176,8 +160,6 @@ theorem terminalNeckEmbedding_full_region
     rw [G.terminalNeckEmbedding_full_inverse_image e N k hN hy,
       G.terminalNeckEmbedding_full_target e N k hN]
     exact ⟨mem_image_of_mem _ hy, ha, hb⟩
-
-
 
 theorem eventually_terminalNeckEmbedding_full
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (hN : IsCompact (closure N.carrier)) :

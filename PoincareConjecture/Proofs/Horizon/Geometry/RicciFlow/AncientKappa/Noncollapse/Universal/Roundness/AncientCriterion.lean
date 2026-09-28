@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
-
 
 theorem einstein_zero_of_negative
     {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)
@@ -56,8 +45,6 @@ theorem einstein_zero_of_negative
         (K.flow.metric t).inner x v w) (Iio 0) := fun t ht => hnegative t ht x v w
   exact heq.of_subset_closure hRic ((hR.div_const 3).mul hg) Iio_subset_Iic_self
     (by rw [closure_Iio]) (by simp)
-
-
 
 theorem isRoundAncientKappaSolution_of_early_pinching [CompactSpace M]
     {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)

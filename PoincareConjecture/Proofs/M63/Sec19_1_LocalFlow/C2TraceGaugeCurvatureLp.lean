@@ -5,15 +5,6 @@ import Mathlib.Analysis.Fourier.AddCircle
 import Mathlib.Topology.CompactOpen
 import Mathlib.Topology.UniformSpace.CompactConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem ambientCurve_curvature_label_affine (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -122,10 +109,6 @@ theorem ambientCurve_curvature_label_affine (F : RicciFlow n M (Icc a b))
   simp only [add_apply, smul_apply,
     ContinuousLinearMap.id_apply, ContinuousLinearMap.smulRight_apply, add_smul]
   abel
-
-
-
-
 
 theorem exists_cauchySeq_ambientCurvature_labelVelocity_L2
     (F : RicciFlow n M (Icc a b))

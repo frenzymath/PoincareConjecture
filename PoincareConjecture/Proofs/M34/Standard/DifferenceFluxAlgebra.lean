@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M03.CompactFiniteCoefficient
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,47 +12,28 @@ noncomputable section
 
 namespace PoincareConjecture.M34.DifferenceEnergy
 
-
-
 abbrev V (n : ℕ) := EuclideanSpace ℝ (Fin n)
-
 
 abbrev FH (n : ℕ) := V n →L[ℝ] V n →L[ℝ] ℝ
 
-
-
 abbrev FA (n : ℕ) := V n →L[ℝ] V n →L[ℝ] V n
-
 
 abbrev FS (n : ℕ) := V n →L[ℝ] V n →L[ℝ] V n →L[ℝ] V n
 
-
-
 abbrev Gamma (n : ℕ) := Fin n → Fin n → Fin n → ℝ
-
-
 
 abbrev Raw (n : ℕ) := Fin n → Fin n → Fin n → Fin n → ℝ
 
-
 abbrev Flux (n : ℕ) := Fin n → Raw n
 
-
-
 abbrev Inverse (n : ℕ) := (V n →L[ℝ] ℝ) →L[ℝ] V n
-
-
 
 def raw {n : ℕ} (T : FS n) (l j k m : Fin n) : ℝ :=
   EuclideanSpace.proj l (T (EuclideanSpace.single j 1)
     (EuclideanSpace.single k 1) (EuclideanSpace.single m 1))
 
-
-
 def ag {n : ℕ} (T : FA n) (i j l : Fin n) : ℝ :=
   EuclideanSpace.proj l (T (EuclideanSpace.single j 1) (EuclideanSpace.single i 1))
-
-
 
 def curvatureAction {n : ℕ} (gamma : Gamma n) (d : Fin n) : Raw n →ₗ[ℝ] Raw n where
   toFun T l j k m := ∑ p : Fin n,
@@ -80,8 +49,6 @@ def curvatureAction {n : ℕ} (gamma : Gamma n) (d : Fin n) : Raw n →ₗ[ℝ] 
     apply Finset.sum_congr rfl
     intro p _
     ring
-
-
 
 def divergenceAction {n : ℕ} (gamma : Gamma n) : Flux n →ₗ[ℝ] Raw n where
   toFun T l j k m := ∑ i : Fin n,
@@ -100,8 +67,6 @@ def divergenceAction {n : ℕ} (gamma : Gamma n) : Flux n →ₗ[ℝ] Raw n wher
     apply Finset.sum_congr rfl
     intro p _
     ring
-
-
 
 def curvatureContraction {n dS : ℕ} (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
     Raw n →ₗ[ℝ] (Fin dS → ℝ) where
@@ -124,8 +89,6 @@ def curvatureContraction {n dS : ℕ} (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (F
     intro m _
     ring
 
-
-
 def metricFlux {n : ℕ} (I0 I1 : Inverse n) (kp : Flux n) : FH n →ₗ[ℝ] Flux n where
   toFun H i l j k m := ∑ d : Fin n,
     -EuclideanSpace.proj i (I0 (H (I1 (EuclideanSpace.proj d)))) * kp d l j k m
@@ -140,8 +103,6 @@ def metricFlux {n : ℕ} (I0 I1 : Inverse n) (kp : Flux n) : FH n →ₗ[ℝ] Fl
     apply Finset.sum_congr rfl
     intro d _
     ring
-
-
 
 def connectionFlux {n : ℕ} (I0 : Inverse n) (R1 : Raw n) : FA n →ₗ[ℝ] Flux n where
   toFun A i l j k m := ∑ d : Fin n,
@@ -163,8 +124,6 @@ def connectionFlux {n : ℕ} (I0 : Inverse n) (R1 : Raw n) : FA n →ₗ[ℝ] Fl
     intro b _
     ring
 
-
-
 def curvatureFlux {n : ℕ} (I0 : Inverse n) (gamma : Gamma n) : FS n →ₗ[ℝ] Flux n where
   toFun S i l j k m := ∑ d : Fin n,
     EuclideanSpace.proj i (I0 (EuclideanSpace.proj d)) * curvatureAction gamma d (raw S) l j k m
@@ -185,8 +144,6 @@ def curvatureFlux {n : ℕ} (I0 : Inverse n) (gamma : Gamma n) : FS n →ₗ[ℝ
     intro b _
     ring
 
-
-
 def principalFlux {n dS : ℕ} (I0 : Inverse n)
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
     (Fin dS × Fin n → ℝ) →ₗ[ℝ] Flux n where
@@ -203,8 +160,6 @@ def principalFlux {n dS : ℕ} (I0 : Inverse n)
     apply Finset.sum_congr rfl
     intro beta _
     ring
-
-
 
 def connectionRemainder {n : ℕ} (vp : Flux n) : FA n →ₗ[ℝ] Raw n where
   toFun A := divergenceAction (ag A) vp
@@ -229,8 +184,6 @@ def connectionRemainder {n : ℕ} (vp : Flux n) : FA n →ₗ[ℝ] Raw n where
       intro b _
       ring
 
-
-
 def curvatureDifferenceFlux {n : ℕ} (I0 I1 : Inverse n) (gamma : Gamma n)
     (R1 : Raw n) (kp : Flux n) (H : FH n) (A : FA n) (S : FS n) : Flux n :=
   fun i l j k m => ∑ d : Fin n,
@@ -239,8 +192,6 @@ def curvatureDifferenceFlux {n : ℕ} (I0 I1 : Inverse n) (gamma : Gamma n)
       -EuclideanSpace.proj i (I0 (H (I1 (EuclideanSpace.proj d)))) * kp d l j k m +
       EuclideanSpace.proj i (I0 (EuclideanSpace.proj d)) *
         curvatureAction (ag A) d R1 l j k m)
-
-
 
 theorem curvatureDifferenceFlux_eq {n : ℕ} (I0 I1 : Inverse n) (gamma : Gamma n)
     (R1 : Raw n) (kp : Flux n) (H : FH n) (A : FA n) (S : FS n) :

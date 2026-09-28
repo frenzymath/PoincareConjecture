@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.F
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 import Mathlib.Data.List.ChainOfFn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem finite_cylinder_with_middle_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

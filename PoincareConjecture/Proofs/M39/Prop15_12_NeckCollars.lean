@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import PoincareConjecture.Proofs.M39.Prop15_12_RegularControl
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,24 +16,15 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P slice metric T)
 
-
-
 def preNeckRegion (i : Fin E.cap_count) (a b : ℝ) :
     Set (slice E.tMinus).carrier :=
   E.limit_identify.inverse '' (E.necks i).neck.region a b
 
-
-
 def preNeckSphere (i : Fin E.cap_count) : Set (slice E.tMinus).carrier :=
   E.limit_identify.inverse '' (E.necks i).neck.central_sphere
 
-
-
 def preNeckCarrier (i : Fin E.cap_count) : Set (slice E.tMinus).carrier :=
   E.limit_identify.inverse '' (E.necks i).neck.carrier
-
-
-
 
 theorem limitInverse_image_eq (V : Set E.terminal.carrier) :
     E.limit_identify.inverse '' V =
@@ -57,23 +37,17 @@ theorem limitInverse_image_eq (V : Set E.terminal.carrier) :
   · rintro ⟨hx, hV⟩
     exact ⟨E.limit_identify.map x, hV, E.limit_identify.left_inverse hx⟩
 
-
-
 theorem preNeckRegion_isOpen (i : Fin E.cap_count) (a b : ℝ) :
     IsOpen (preNeckRegion E i a b) := by
   rw [preNeckRegion, limitInverse_image_eq]
   exact E.limit_identify.map_smooth.continuousOn.isOpen_inter_preimage
     E.regular_limit_open (M36.neck_region_isOpen _ a b)
 
-
-
 theorem preNeckCarrier_isOpen (i : Fin E.cap_count) :
     IsOpen (preNeckCarrier E i) := by
   rw [preNeckCarrier, limitInverse_image_eq]
   exact E.limit_identify.map_smooth.continuousOn.isOpen_inter_preimage
     E.regular_limit_open (E.necks i).neck.carrier_open
-
-
 
 theorem neckRegion_eq_coordinateImage (i : Fin E.cap_count) {a b : ℝ}
     (ha : -(E.necks i).neck.epsilon⁻¹ ≤ a)
@@ -91,9 +65,6 @@ theorem neckRegion_eq_coordinateImage (i : Fin E.cap_count) {a b : ℝ}
       ⟨hz.1, lt_of_le_of_lt ha hz.2.1, lt_of_lt_of_le hz.2.2 hb⟩
     refine ⟨M36.neck_coordinate_mem _ z hdom, ?_⟩
     simpa only [M36.neck_inverse_coordinate _ z hdom, mem_Ioo] using hz.2
-
-
-
 
 theorem preNeckRegion_isConnected (i : Fin E.cap_count) {a b : ℝ}
     (ha : -(E.necks i).neck.epsilon⁻¹ ≤ a) (hab : a < b)
@@ -113,8 +84,6 @@ theorem preNeckRegion_isConnected (i : Fin E.cap_count) {a b : ℝ}
   exact hneck.image _
     (E.limit_identify.inverse_smooth.continuousOn.mono (subset_univ _))
 
-
-
 theorem preNeckCarrier_eq_region (i : Fin E.cap_count) :
     preNeckCarrier E i = preNeckRegion E i
       (-(E.necks i).neck.epsilon⁻¹) (E.necks i).neck.epsilon⁻¹ := by
@@ -123,8 +92,6 @@ theorem preNeckCarrier_eq_region (i : Fin E.cap_count) :
   exact ⟨fun hx => ⟨hx, ((E.necks i).neck.coordinate_inverse_mem x hx).2⟩,
     fun hx => hx.1⟩
 
-
-
 theorem preNeckCarrier_isConnected (i : Fin E.cap_count) :
     IsConnected (preNeckCarrier E i) := by
   rw [preNeckCarrier_eq_region]
@@ -132,28 +99,19 @@ theorem preNeckCarrier_isConnected (i : Fin E.cap_count) :
   have hpos := inv_pos.mpr (E.necks i).neck.epsilon_pos
   linarith
 
-
-
 theorem preNeckRegion_subset_carrier (i : Fin E.cap_count) (a b : ℝ) :
     preNeckRegion E i a b ⊆ preNeckCarrier E i :=
   image_mono (M36.neck_region_subset _ a b)
 
-
-
 theorem preNeckSphere_subset_carrier (i : Fin E.cap_count) :
     preNeckSphere E i ⊆ preNeckCarrier E i :=
   image_mono (E.necks i).neck.central_sphere_subset
-
-
 
 theorem preNeckSphere_isCompact (i : Fin E.cap_count) :
     IsCompact (preNeckSphere E i) := by
   rw [preNeckSphere, (E.necks i).neck.central_sphere_eq]
   simpa only [positiveNeckControl, Icc_self] using
     positiveNeckControl_compact E i (inv_pos.mpr (E.necks i).neck.epsilon_pos)
-
-
-
 
 theorem preNeckSphere_subset_closure_region (i : Fin E.cap_count) {a b : ℝ}
     (ha : -(E.necks i).neck.epsilon⁻¹ ≤ a) (hab : a < b)
@@ -177,8 +135,6 @@ theorem preNeckSphere_subset_closure_region (i : Fin E.cap_count) {a b : ℝ}
     exact ⟨mem_univ _, hz0.symm ▸ ⟨ha0, hb0⟩⟩
   exact map_mem_closure (continuousOn_univ.mp E.limit_identify.inverse_smooth.continuousOn)
     hyclosure (mapsTo_image _ _)
-
-
 
 theorem preNeckCarrier_sdiff_sphere (i : Fin E.cap_count) :
     preNeckCarrier E i \ preNeckSphere E i =
@@ -212,8 +168,6 @@ theorem preNeckCarrier_sdiff_sphere (i : Fin E.cap_count) :
   rw [← image_sdiff hinj, hsplit, image_union]
   rfl
 
-
-
 theorem preNeckCarrier_subset_parent (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus))
     (hmeet : (C.inclusion ⁻¹' preNeckSphere E i).Nonempty) :
@@ -227,32 +181,22 @@ theorem preNeckCarrier_subset_parent (i : Fin E.cap_count)
   rw [C.range_eq_component, connectedComponent_eq hxC]
   exact hsub
 
-
-
 def parentNeckRegion (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) (a b : ℝ) : Set C.carrier.carrier :=
   C.inclusion ⁻¹' preNeckRegion E i a b
-
-
 
 def parentNeckSphere (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) : Set C.carrier.carrier :=
   C.inclusion ⁻¹' preNeckSphere E i
 
-
 def parentNeckCarrier (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) : Set C.carrier.carrier :=
   C.inclusion ⁻¹' preNeckCarrier E i
-
-
 
 theorem parentNeckRegion_isOpen (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) (a b : ℝ) :
     IsOpen (parentNeckRegion E i C a b) :=
   (preNeckRegion_isOpen E i a b).preimage C.inclusion_openEmbedding.continuous
-
-
-
 
 theorem parentNeckRegion_isConnected (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus))
@@ -265,9 +209,6 @@ theorem parentNeckRegion_isConnected (i : Fin E.cap_count)
     ((preNeckRegion_subset_carrier E i a b).trans
       (preNeckCarrier_subset_parent E i C hmeet))
 
-
-
-
 theorem parentNeckSphere_subset_closure_region (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) {a b : ℝ}
     (ha : -(E.necks i).neck.epsilon⁻¹ ≤ a) (hab : a < b)
@@ -276,9 +217,6 @@ theorem parentNeckSphere_subset_closure_region (i : Fin E.cap_count)
   intro x hx
   exact C.inclusion_openEmbedding.isOpenMap.preimage_closure_subset_closure_preimage
     (preNeckSphere_subset_closure_region E i ha hab hb ha0 hb0 hx)
-
-
-
 
 theorem parentNeck_collarData (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus))

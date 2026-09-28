@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M09.SecondPullbackCoordinate
 import PoincareConjecture.Proofs.M09.InitialJacobiDerivative
 import PoincareConjecture.Proofs.M09.InitialVariationDifferential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

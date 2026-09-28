@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.GaugeEquation
 import PoincareConjecture.Proofs.M35.RadialGauge.LaplacianFamily
 import PoincareConjecture.Proofs.M35.RadialGauge.TimeSpatialJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 

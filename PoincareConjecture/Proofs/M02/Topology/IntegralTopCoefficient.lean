@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactGluing
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportLocalization
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControl
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,9 +7,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem scalar_displacement_le_pathELength
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -54,9 +43,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
-
 
 theorem height_displacement_le_pathELength
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)

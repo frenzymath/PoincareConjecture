@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandEndpointGeometry
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,10 +32,6 @@ private theorem cut_mem_open_edge
   have hs0 : s ≠ 0 := fun h => hzp (hsz.symm.trans (h ▸ hbase))
   have hs1 : s ≠ 1 := fun h => hzt (hsz ▸ (h.symm ▸ endpoint_one_mem_top B right))
   exact ⟨s, ⟨lt_of_le_of_ne hs.1 (Ne.symm hs0), lt_of_le_of_ne hs.2 hs1⟩, hsz⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_matched_band_join_frontier_neighborhood
     {F F' : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}

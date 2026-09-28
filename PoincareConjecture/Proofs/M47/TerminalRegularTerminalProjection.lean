@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularStageFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   (data : TerminalRegularStageData S B p O H base Q r A tau0 tau K L a R rho N center)
   (h0 : (0 : ℝ) ∈ Icc (-tau) 0)
 
-
-
 theorem terminalSource_regular_terminal_sigma (i : Fin (N + 1))
     (x : terminalSourceCountableDomain rho) :
     (⟨base, (data.maps i x).val⟩ : (t : ℝ) × (F.slice t).carrier) =
@@ -50,8 +39,6 @@ theorem terminalSource_regular_terminal_sigma (i : Fin (N + 1))
   change (⟨base, j z⟩ : (t : ℝ) × (F.slice t).carrier) = _ at hpoint
   rw [hj] at hpoint
   exact hpoint
-
-
 
 theorem terminalSource_regular_terminal_projection :
     let physical : Poincare.connectedComponentOpens E center →

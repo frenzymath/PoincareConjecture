@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem metric_lipschitz_nhds_of_contMDiffAt
     (g : RiemannianMetric n M) {f : E → M} {x : E}
@@ -69,8 +56,6 @@ theorem metric_lipschitz_nhds_of_contMDiffAt
     ((2 * C : ℝ≥0) : ℝ≥0∞) * edist y z at hh
   simpa only [chi.left_inv (hVsub hy).1.2, chi.left_inv (hVsub hz).1.2,
     edist_dist, dist_eq_norm] using hh
-
-
 
 theorem compact_metric_control_near_diagonal
     (g : RiemannianMetric n M) {rho : E → M} {K O : Set E}

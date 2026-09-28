@@ -1,22 +1,5 @@
 import PoincareConjecture.Definitions.M74ConnectedSumReduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

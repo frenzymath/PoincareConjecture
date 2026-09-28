@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Compactness
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
 
-
 theorem eventually_exhaustion_eq_univ (G : AncientCompactTimeConvergence S)
     (hcompact : CompactSpace G.limit.carrier.carrier) :
     ∀ᶠ k in atTop, G.exhaustion k = univ := by
@@ -33,7 +26,6 @@ theorem eventually_exhaustion_eq_univ (G : AncientCompactTimeConvergence S)
   have hmono : Monotone G.exhaustion := monotone_nat_of_le_succ G.exhaustion_increasing
   filter_upwards [eventually_ge_atTop j] with k hk
   exact eq_univ_of_univ_subset (hj.trans (hmono hk))
-
 
 theorem exists_spatialDiffeomorph_of_exhaustion_eq_univ
     (G : AncientCompactTimeConvergence S) (hcompact : CompactSpace G.limit.carrier.carrier)
@@ -63,7 +55,6 @@ theorem exists_spatialDiffeomorph_of_exhaustion_eq_univ
       ⟨f G.limit.base, mem_range_self G.limit.base⟩
   have hsurj : Function.Surjective f := range_eq_univ.mp hu
   exact ⟨hlocal.diffeomorphOfBijective ⟨hinj, hsurj⟩, fun _ => rfl⟩
-
 
 theorem eventually_exists_spatialDiffeomorph
     (G : AncientCompactTimeConvergence S) (hcompact : CompactSpace G.limit.carrier.carrier) :

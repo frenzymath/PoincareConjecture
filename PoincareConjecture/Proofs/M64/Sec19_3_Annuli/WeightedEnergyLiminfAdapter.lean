@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.EnergyAttainment
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.WeakDirichletLowerSemicontinuity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -28,11 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 structure M64WeightedColumnLiminfInput
     {S : M64AnnulusMinimizingSequenceCertificate
@@ -65,10 +47,6 @@ structure M64WeightedColumnLiminfInput
     (∫ p in m64AnnulusDomain,
       m64AnnulusWeakEnergyDensity g C.limit.gradient p) =
       (‖column_limit 0‖ ^ 2 + ‖column_limit 1‖ ^ 2) / 2
-
-
-
-
 
 theorem M64WeightedColumnLiminfInput.toWeakEnergyCertificate
     {S : M64AnnulusMinimizingSequenceCertificate

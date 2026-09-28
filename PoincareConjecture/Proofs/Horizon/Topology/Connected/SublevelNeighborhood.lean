@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.SublevelEndpoint
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Filter
@@ -9,8 +7,6 @@ open scoped Topology
 
 namespace Poincare.Topology
 variable {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
-
-
 
 theorem exists_open_neighborhood_sublevel_component
     {f : X → ℝ} (hf : Continuous f) (p : X) (a : ℝ)

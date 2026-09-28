@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Data.Set.Finite.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace Finset
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem eq_vertex_of_generic_affine_minimum
     (s : Finset E) (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A (s : Set E))
@@ -47,10 +34,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
-
-
 theorem minimum_section_eq_singleton_of_generic_vertices
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A K.vertices)
     {p : E} (hp : p ∈ K.vertices) (hmin : ∀ v ∈ K.vertices, A p ≤ A v) :
@@ -74,8 +57,6 @@ theorem minimum_section_eq_singleton_of_generic_vertices
     exact hA (hverts hv.1) hp (sub_eq_zero.mp hv.2)
   simpa only [convexHull_singleton] using convexHull_mono hsub hz
 
-
-
 theorem maximum_section_eq_singleton_of_generic_vertices
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A K.vertices)
     {p : E} (hp : p ∈ K.vertices) (hmax : ∀ v ∈ K.vertices, A v ≤ A p) :
@@ -84,10 +65,6 @@ theorem maximum_section_eq_singleton_of_generic_vertices
   simpa only [AffineMap.coe_neg, Pi.neg_apply, neg_le_neg_iff, neg_inj] using
     K.minimum_section_eq_singleton_of_generic_vertices (-A) hnegA hp
       (fun v hv => neg_le_neg (hmax v hv))
-
-
-
-
 
 theorem exists_unique_extreme_sections_of_generic_vertices
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hne : K.space.Nontrivial)

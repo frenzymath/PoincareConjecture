@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SliceCapGeometry
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.EpsilonNeck
 
 open M35.OrdinaryRealization
-
-
 
 noncomputable def toOrdinarySlice (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -86,8 +76,6 @@ noncomputable def toOrdinarySlice (P : M35StandardCapPredecessors)
         ((sliceDiffeomorph ht).symm ∘ N.coordinate_map) z v w)
     rw [slice_roundCylinderPullback]
     exact N.metric_comparison.close
-
-
 
 theorem toOrdinarySlice_region (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)

@@ -9,8 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (J : SignedJointCross E)
 
-
-
 theorem incident_quarter_geometry
     (mu : Fin 2 → E → ℝ) (swap : Bool) (eta signs : Fin 2 → Bool)
     (hzero : ∀ j z, z ∈ J.disk →

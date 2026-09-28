@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeFeet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Geometry Geometry.SimplicialComplex
@@ -18,8 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_signed_frontier_point_avoiding_closed_positive_set
     {C J : Set V3} (hC : IsCompact C) (hcv : Convex ℝ C)
@@ -77,8 +66,6 @@ theorem exists_signed_frontier_point_avoiding_closed_positive_set
       rw [hwi]
       simpa only [hs, ↓reduceIte, mul_one] using (hrad t).1
 
-
-
 theorem exists_signed_chart_frontier_point_avoiding_compact_joint
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {V J : Set E} {C : Set V3} (theta : V ≃ₜ C)
@@ -114,8 +101,6 @@ theorem exists_signed_chart_frontier_point_avoiding_compact_joint
     simpa only [htheta] using hysigns i
 
 open Classical in
-
-
 
 theorem exists_original_endpoint_sector_exterior_point
     {E X κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -4,17 +4,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,8 +67,6 @@ private lemma positive_time_germ {F : ℝ × M → ℝ}
     ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x) :=
   hF.contMDiffAt ((isOpen_Ioi.prod isOpen_univ).mem_nhds ⟨ht, mem_univ x⟩)
 
-
-
 theorem hasDerivAt_cutoff_square_integral
     {F : ℝ × M → ℝ}
     (hF : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (Ioi 0 ×ˢ univ))
@@ -112,9 +99,6 @@ theorem hasDerivAt_cutoff_square_integral
       (contMDiffAt_id.prodMk contMDiffAt_const)).contDiffAt.differentiableAt (by simp)
     simpa only [Function.comp_def, id_eq, Pi.pow_def] using
       (h.pow 2).hasDerivAt.const_mul (η x ^ 2)
-
-
-
 
 theorem integrated_heat_energy_cutoff_estimate (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}
@@ -170,7 +154,6 @@ theorem integrated_heat_energy_cutoff_estimate (D : LeviCivitaData g)
     · simp [hv]
     · exact (g.pos x _ hv).le
 
-
   have hQm : StronglyMeasurable (fun t ↦ Q (max a t)) := by
     apply StronglyMeasurable.integral_prod_right
     apply Measurable.stronglyMeasurable
@@ -212,9 +195,6 @@ theorem integrated_heat_energy_cutoff_estimate (D : LeviCivitaData g)
   rw [hFTC] at hi
   have hEb : 0 ≤ E b := integral_nonneg (fun x ↦ mul_nonneg (sq_nonneg _) (sq_nonneg _))
   exact ⟨hQint, by change (∫ t in a..b, Q t) ≤ E a + 4 * ∫ t in a..b, W t; linarith⟩
-
-
-
 
 theorem integrated_heat_energy_cutoff_estimate_from_zero (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}

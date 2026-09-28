@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M33RegularHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -55,8 +46,6 @@ theorem SurgeryFlowCylinder.regular_image_smaller_closed
   refine ⟨hs', e.regular_image_of_earlier hs' ?_⟩
   exact ⟨(-r ^ 2 + s) / 2, ⟨by linarith [hs.1], by nlinarith [hs.2]⟩,
     by linarith [hs.1]⟩
-
-
 
 theorem SurgeryFlowCylinder.terminal_ball_regular {t r : ℝ}
     (x : (F.slice t).carrier) (hr : 0 < r)

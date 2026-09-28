@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.ChartComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalFormula
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,7 +13,6 @@ universe u
 namespace PoincareConjecture.RiemannianMetric
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem volumeMeasure_image_eq_lintegral_pullbackVolumeDensity
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -63,8 +51,6 @@ theorem volumeMeasure_image_eq_lintegral_pullbackVolumeDensity
     exact ⟨A, hdet, U, hU, hxU, hUe,
       fun z hz w hw ↦ (hcomp z hz w hw).1,
       fun z hz w hw ↦ (hcomp z hz w hw).2⟩
-
-
 
 theorem map_restrict_volumeMeasure_symm
     {n : ℕ} {M : Type u} [TopologicalSpace M]

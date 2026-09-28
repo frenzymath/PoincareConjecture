@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureTrilinear
 import PoincareConjecture.Proofs.M03.ConnectionNativeTime
 import PoincareConjecture.Proofs.M03.RicciHessianCommutator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -460,7 +452,6 @@ theorem ricciFlow_iteratedCurvature_connection_correction_two_contractions
     intro l _
     ac_rfl
 
-
 end PoincareConjecture.Proofs.M03
 
 section CollectedSuccessorEvaluations
@@ -468,7 +459,6 @@ section CollectedSuccessorEvaluations
 set_option maxHeartbeats 4000000
 
 namespace PoincareConjecture.Proofs.M03.CurvatureResidualPattern
-
 
 theorem sum_spatialPatterns_evaluate {ι V : Type*} [Fintype ι]
     (k : ℕ) (a : ι → ι → ℝ)
@@ -502,7 +492,6 @@ theorem sum_spatialPatterns_evaluate {ι V : Type*} [Fintype ι]
   simp only [mul_add, mul_sub, Finset.mul_sum, Finset.sum_add_distrib,
     Finset.sum_sub_distrib, Finset.sum_neg_distrib, hswap, mul_assoc]
   ring
-
 
 theorem sum_connectionPatterns_evaluate {ι V : Type*} [Fintype ι]
     (k : ℕ) (a : ι → ι → ℝ)
@@ -538,7 +527,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 namespace CurvatureResidualPattern
-
 
 noncomputable def residualPatterns :
     (k : ℕ) → List (CurvatureResidualPattern k)

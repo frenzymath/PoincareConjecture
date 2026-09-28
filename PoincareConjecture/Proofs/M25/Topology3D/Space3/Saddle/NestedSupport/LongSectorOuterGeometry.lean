@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorTemplates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_nested_raised_long_return_midpoint_inside
     (kappa : OpenPartialHomeomorph E2 E2)
@@ -51,9 +38,6 @@ theorem saddle_nested_raised_long_return_midpoint_inside
   exact Or.inl hi
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem raisedReturn_physical_end_formulas
     (kappa : OpenPartialHomeomorph E2 E2)
@@ -128,9 +112,6 @@ theorem raisedReturn_physical_end_formulas
       ring
     rw [raisedReturnPhysicalCurve, raisedReturnPlanarCurve,
       raisedReturn_right_formula h hh hsmall t ht, ha, hp0]
-
-
-
 
 theorem saddle_nested_raised_long_return_original_germs
     (kappa : OpenPartialHomeomorph E2 E2)

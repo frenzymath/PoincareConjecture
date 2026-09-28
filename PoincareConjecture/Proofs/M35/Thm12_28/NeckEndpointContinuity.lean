@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCompactness
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [ConnectedSpace M] {g : RiemannianMetric 3 M}
-
-
 
 theorem axial_dist_le_between (N : EpsilonNeck g) (q : UnitTwoSphere)
     {s t : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -56,8 +45,6 @@ theorem axial_dist_le_between (N : EpsilonNeck g) (q : UnitTwoSphere)
   · simpa only [abs_of_nonpos (sub_nonpos.mpr hst), neg_sub] using hbound s t hs ht hst
   · simpa only [abs_of_nonneg (sub_nonneg.mpr hts), dist_comm] using hbound t s ht hs hts
 
-
-
 theorem axial_lipschitzOn (N : EpsilonNeck g) (q : UnitTwoSphere) :
     letI : MetricSpace M := Proofs.M09.selectedMetricSpace g
     LipschitzOnWith ⟨2 * N.scale, mul_nonneg (by norm_num) N.scale_pos.le⟩
@@ -69,8 +56,6 @@ theorem axial_lipschitzOn (N : EpsilonNeck g) (q : UnitTwoSphere) :
     2 * N.scale * dist s t
   rw [Real.dist_eq]
   exact N.axial_dist_le_between q hs ht
-
-
 
 theorem exists_axial_limit (N : EpsilonNeck g) (hcomplete : MetricComplete g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Icc (-N.epsilon⁻¹) N.epsilon⁻¹) :

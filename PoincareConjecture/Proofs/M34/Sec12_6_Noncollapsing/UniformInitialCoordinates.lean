@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M34.Standard.CenteredCoordinates
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EnergyCutoffs
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem uniform_initial_coordinates_of_cylindrical_end
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g) :
@@ -80,8 +68,6 @@ theorem uniform_initial_coordinates_of_cylindrical_end
     simp only [M10.pullbackJacobian, hform z hz]
   rw [hform z hz, hjac]
   exact hbound (x + z) hxz
-
-
 
 theorem uniform_initial_coordinate_volume
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g) :

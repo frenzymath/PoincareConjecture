@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Isolation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.ContactGerms
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_saddle_level_exterior
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -76,8 +66,6 @@ theorem exists_saddle_level_exterior
     exact fun hy => hyout (image_mono (openSquare_subset_closedSquare r) hy)
   · intro i
     simpa only [hep] using exists_contact_halfInterval e he hei hr hrs hform i
-
-
 
 theorem unique_on_level_of_unique_in_band
     {h : S2 → Real} {p : S2} {a b : Real} (hp : h p ∈ Icc a b)

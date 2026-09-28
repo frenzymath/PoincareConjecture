@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.ChartwiseRademacher
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T2Space M]
-
-
-
 
 theorem m60_ae_mdifferentiable_of_metric_lipschitzOn (g : RiemannianMetric n M)
     {f : LoopPlane → M} {S : Set LoopPlane} (hS : IsOpen S)
@@ -45,9 +33,6 @@ theorem m60_ae_mdifferentiable_of_metric_lipschitzOn (g : RiemannianMetric n M)
     change g.edist (f x) (f y) ≤ _
     simpa only [edist_dist, dist_eq_norm, ENNReal.ofReal_eq_coe_nnreal hL] using hf x hx y hy
   exact M60.ae_mdifferentiableAt_of_lipschitzOn volume hS hLip
-
-
-
 
 theorem m60_ae_mdifferentiable_of_disk_lipschitz (g : RiemannianMetric n M)
     {f : LoopPlane → M} {L : ℝ} (hL : 0 ≤ L)

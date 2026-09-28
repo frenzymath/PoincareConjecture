@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,14 +9,9 @@ open scoped Topology
 
 namespace PoincareConjecture.M44
 
-
-
 theorem height_le_delta_sq_epsilon (P : SurgeryParameters) {t : ℝ} (ht : 0 ≤ t) :
     P.h t ≤ P.delta t ^ 2 * P.epsilon :=
   (P.h_le t ht).trans (mul_le_mul_of_nonneg_left (P.r_le_epsilon t ht) (sq_nonneg _))
-
-
-
 
 theorem exists_surgery_height_cutoff {epsilon R : ℝ} (hepsilon : 0 < epsilon) (hR : 0 < R) :
     ∃ deltaBar : ℝ, 0 < deltaBar ∧ ∀ (P : SurgeryParameters),
@@ -43,8 +29,6 @@ theorem exists_surgery_height_cutoff {epsilon R : ℝ} (hepsilon : 0 < epsilon) 
   rw [heq] at hh
   exact hh.trans ((mul_le_mul_of_nonneg_right hsq hepsilon.le).trans (by linarith))
 
-
-
 theorem exists_surgery_normalization_cutoff {epsilon r : ℝ}
     (hepsilon : 0 < epsilon) (hr : 0 < r) :
     ∃ deltaBar : ℝ, 0 < deltaBar ∧ ∀ (P : SurgeryParameters),
@@ -60,9 +44,6 @@ theorem exists_surgery_normalization_cutoff {epsilon r : ℝ}
   have hratio : P.h t / r ≤ 1 := (div_le_one hr).mpr hhr
   have hratio0 : 0 ≤ P.h t / r := (div_pos hh0 hr).le
   constructor <;> nlinarith
-
-
-
 
 theorem surgery_height_tendsto_zero {ι : Type*} {l : Filter ι}
     (P : ι → SurgeryParameters) (t : ι → ℝ) (ht : ∀ i, 0 ≤ t i)

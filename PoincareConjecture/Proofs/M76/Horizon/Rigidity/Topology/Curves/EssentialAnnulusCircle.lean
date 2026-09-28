@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.BoundaryComp
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.StageRimHomotopy
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Metric Geometry PLAnnularStrip
 
 namespace AddCircle
-
-
 
 theorem exists_signed_period_lift_of_homotopic_homeomorph
     {p : ℝ} [Fact (0 < p)] (f : C(AddCircle p, AddCircle p))
@@ -98,10 +88,6 @@ private theorem exists_outer_rim_homeomorph :
     exact ⟨z, Subtype.ext (congrArg (fun x : Ann => (x : P2)) hz)⟩
   exact ⟨Continuous.homeoOfEquivCompactToT2
     (f := Equiv.ofBijective f ⟨hfi, hfs⟩) hf, fun _ => rfl⟩
-
-
-
-
 
 theorem exists_essential_polygon_rim_homotopy
     {n : ℕ} (P : Polygon P2 (n + 3))
@@ -197,9 +183,6 @@ theorem exists_essential_polygon_rim_homotopy
       rw [annulusRimCylinder_one, hq true]
       rfl
   exact ⟨r, ⟨hhom.some.symm⟩⟩
-
-
-
 
 theorem exists_essential_polygon_signed_radial_lift
     {n : ℕ} (P : Polygon P2 (n + 3))

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardJets
 import PoincareConjecture.Proofs.M28.Mathlib.WithinSmoothCompactness
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,30 +24,21 @@ variable {epsilon C A : ℝ}
   {q : G.limitCarrier.carrier} {a : ℝ}
   (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 
-
-
 def limitDomain : Set (EuclideanSpace ℝ (Fin 3)) := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact ball (extChartAt (𝓡 3) q q) D.radius
 
-
 theorem limitDomain_open : IsOpen D.limitDomain := isOpen_ball
 
-
-
 theorem limitDomain_convex : Convex ℝ D.limitDomain := convex_ball _ _
-
 
 instance limitDomain_nonempty : Nonempty D.limitDomain := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact ⟨⟨extChartAt (𝓡 3) q q, mem_ball_self D.radius_pos⟩⟩
 
-
 theorem limitDomain_subset_testSet : D.limitDomain ⊆ D.testSet := ball_subset_closedBall
-
-
 
 theorem limitDomain_subset_domain : D.limitDomain ⊆ D.domain :=
   D.limitDomain_subset_testSet.trans D.testSet_subset_domain
@@ -65,9 +46,6 @@ theorem limitDomain_subset_domain : D.limitDomain ⊆ D.domain :=
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2000000 in
-
-
-
 
 theorem exists_backward_coefficient_limit {K : ℝ} (hK : 0 ≤ K)
     (hcurv : ∀ k t, t ∈ Icc (-(a / 8)) 0 → ∀ x : strongNeckOpen (D.neck k),

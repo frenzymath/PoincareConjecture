@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseBoundaryTar
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryParameterWindow
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.BoundaryRampRegularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -33,10 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
-
 
 theorem auxiliaryCircle_free_ramp_boundary_angular_comparison
     (P : M62.CircleProductData F circumference)

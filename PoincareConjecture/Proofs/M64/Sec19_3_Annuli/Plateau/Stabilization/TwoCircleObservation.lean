@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.OriginalCircleObservation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set Topology
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
 
 theorem planarCircleObservation_injective {circumference : ℝ}
     (C : M62.CircleGeometry circumference) :
@@ -35,8 +25,6 @@ theorem planarCircleObservation_injective {circumference : ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_observation_with_two_circles
     (P : M62.CircleProductData F circumference)
@@ -85,7 +73,6 @@ theorem auxiliaryCircle_observation_with_two_circles
     simp only [ContinuousLinearMap.comp_apply, hL1, hR1]
 
 omit [T2Space M] [CompactSpace M] in
-
 
 theorem auxiliaryCircle_exists_separating_reader {m : ℕ}
     (P : M62.CircleProductData F circumference)

@@ -1,21 +1,11 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem tendsto_iteratedFDeriv_comp_of_jets
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

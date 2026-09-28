@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PairedSourcePolePatches
 import PoincareConjecture.Proofs.M76.Mathlib.ActualCutPoleSideTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,12 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_paired_inward_source_pole_patches
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

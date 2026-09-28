@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapData
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem ClosedModelCapData.exists_pullback
     {M : Type u} [TopologicalSpace M]

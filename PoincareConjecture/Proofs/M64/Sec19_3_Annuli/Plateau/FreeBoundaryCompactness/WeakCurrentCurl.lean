@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.InnerStrongApproximation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCharts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,9 +24,6 @@ private theorem restrict_supported_test {O K : Set E}
   apply setIntegral_eq_of_subset_of_forall_sdiff_eq_zero hO hKO
   intro p hp
   rw [image_eq_zero_of_notMem_tsupport (fun h => hp.2 (hpsi h)), zero_mul]
-
-
-
 
 theorem weak_planar_current_test_identity
     {O : Set E} (hO : IsOpen O) (u : E → E) (V : Fin 2 → E → E)
@@ -99,9 +85,6 @@ theorem weak_planar_current_test_identity
 
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
-
 
 theorem observedWeakAnnulus_circle_current_closed
     (e : M → EuclideanSpace ℝ (Fin m)) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

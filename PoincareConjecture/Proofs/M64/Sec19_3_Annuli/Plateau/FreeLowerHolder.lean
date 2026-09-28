@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedLowerHolder
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LowerContinuousTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakRepresentative
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -33,9 +24,6 @@ local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
 local instance : IsFiniteMeasure (volume.restrict S) := isFiniteMeasure_restrict.mpr
   ((measure_mono interior_subset).trans_lt m64AnnulusDomain_isCompact.measure_lt_top).ne
-
-
-
 
 theorem lower_representative_trace
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)
@@ -68,9 +56,6 @@ theorem lower_representative_trace
   exact m64Lower_continuous_trace hO hsub hU hf h0 hobs
     ((Lp.memLp (A.annulus.column 1)).integrable (by norm_num))
     (hpoint.mono fun x hx s hs => (hx s hs).1)
-
-
-
 
 theorem lower_target_holder_representative
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CapStandardEnd
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapData
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capModelEquivalence_exists_puncturedProjective_cover
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -79,9 +64,6 @@ theorem capModelEquivalence_exists_puncturedProjective_cover
     exact (P.local_diffeomorph x).comp (𝓡 3) M
       ⟨e.symm, mem_univ _, fun _ _ => rfl⟩
 
-
-
-
 theorem closedModelCapData_exists_puncturedProjective_cover
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
     [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
@@ -92,9 +74,6 @@ theorem closedModelCapData_exists_puncturedProjective_cover
       M C.puncture C.carrier) :=
   capModelEquivalence_exists_puncturedProjective_cover
     C.carrier_open C.model_equivalence hkind
-
-
-
 
 theorem capCertificate_exists_puncturedProjective_cover
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

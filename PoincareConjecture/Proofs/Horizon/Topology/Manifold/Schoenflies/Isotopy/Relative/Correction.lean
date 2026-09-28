@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Relative.HalfSpace
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +10,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_correction_of_halfspace_agreement
     (l : E →L[Real] Real) (v : E) (hlv : l v = 1) (c : Real)
@@ -41,8 +37,6 @@ theorem exists_supported_correction_of_halfspace_agreement
   refine ⟨K, hK, G, hfix, hhalf, hpoint, ?_⟩
   rw [image_image]
   exact image_congr hpoint
-
-
 
 theorem exists_supported_correction_of_halfspace_agreement_preserving_linear
     (l : E →L[Real] Real) (v : E) (hlv : l v = 1) (c : Real)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureExtension
 import PoincareConjecture.Proofs.M03.CurvatureDifferenceTime
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators

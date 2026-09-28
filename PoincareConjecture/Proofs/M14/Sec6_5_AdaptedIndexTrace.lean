@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.HessianTrace
 import PoincareConjecture.Proofs.M09.AdaptedIndexTrace
 import PoincareConjecture.Proofs.M04.SecondBianchi
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem covariantRicci_divergence_orthonormal_trace
     (hM04 : RicciFlowCurvatureTheory.{u}) (D : LeviCivitaData g) (q : M)
@@ -42,16 +32,12 @@ theorem covariantRicci_divergence_orthonormal_trace
     (M04.riemann_second_bianchi D q) A
   linarith
 
-
-
 noncomputable def sliceIndexDensity (D : LeviCivitaData g) (q : M) (s : ℝ)
     (A Y W : TangentSpace (𝓡 n) q) : ℝ :=
   g.inner q W W + D.curvatureTensor q Y A A Y +
     2 * s ^ 2 * D.hessian D.scalarCurvature q Y Y -
     4 * s * ricciDerivativePairing D q Y A Y +
     2 * s * ricciDerivativePairing D q A Y Y
-
-
 
 theorem sliceIndexDensity_adapted_trace (hM04 : RicciFlowCurvatureTheory.{u})
     (D : LeviCivitaData g) (q : M) (s : ℝ) (A : TangentSpace (𝓡 n) q) (f fp : ℝ) :
@@ -104,8 +90,6 @@ theorem sliceIndexDensity_adapted_trace (hM04 : RicciFlowCurvatureTheory.{u})
     Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
   rw [hRic, hSquare, hR, ← hHtrace, hDiv, hDir]
   ring
-
-
 
 theorem sliceIndexDensity_adapted_trace_of_pair (hM04 : RicciFlowCurvatureTheory.{u})
     (D : LeviCivitaData g) (q : M) (s : ℝ) (A : TangentSpace (𝓡 n) q) (f fp : ℝ) :

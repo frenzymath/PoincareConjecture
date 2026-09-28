@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcParameter
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryArcTurningDifferential
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -61,10 +46,6 @@ private theorem abs_integral_le_of_open_arc_parameter
         (integral_image_eq_integral_abs_deriv_smul measurableSet_Ioo hderiv hinj density).symm
     _ = ∫ s in lo..hi, density s := by
       rw [intervalIntegral.integral_of_le hle, integral_Ioc_eq_integral_Ioo]
-
-
-
-
 
 theorem m64Intrinsic_coordinate_side_boundary_arc_turning_bound
     (N : IntrinsicAnnulus)

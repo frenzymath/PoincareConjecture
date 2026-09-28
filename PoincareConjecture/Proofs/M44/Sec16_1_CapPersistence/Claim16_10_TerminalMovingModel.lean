@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.CompactTimeModulus
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +26,6 @@ noncomputable local instance movingSphereTwoJetNorm : NormedAddCommGroup
 
 noncomputable local instance movingSphereTwoJetSpace : NormedSpace ℝ
     (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_terminal_sphere_twoJet_tail
     {g0 : StandardInitialMetric} (S : RepairedStandardCapExistenceData g0)

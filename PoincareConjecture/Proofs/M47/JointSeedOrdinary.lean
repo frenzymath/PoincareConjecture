@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M14GeneralizedLGeometry
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.CompactCurvatureBound
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_completeBoundedCurvatureOn
     {M : Type u} [TopologicalSpace M]
@@ -39,9 +28,6 @@ theorem jointSeed_completeBoundedCurvatureOn
     have hnorm : 0 ≤ (F.connection s).curvatureTensorNorm x := Real.sqrt_nonneg _
     rw [abs_of_nonneg hnorm]
     exact (hK ⟨(s, x), ⟨hs, mem_univ x⟩, rfl⟩).trans (le_max_right _ _)
-
-
-
 
 theorem exists_jointSeed_low_action_path
     (P : M14OrdinaryProviders.{u} 3)

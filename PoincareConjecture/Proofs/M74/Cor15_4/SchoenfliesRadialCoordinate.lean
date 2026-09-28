@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereEuclidean
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -19,19 +10,13 @@ universe u
 
 namespace PoincareConjecture.M74
 
-
-
 noncomputable def schoenfliesBoundaryParam (s : ℝ) : ℝ := (1 - 2 * s) / (2 - s)
-
-
 
 theorem schoenfliesBoundaryParam_mem {s : ℝ} (hs : s ∈ Ioo (-1 / 8 : ℝ) (1 / 8)) :
     schoenfliesBoundaryParam s ∈ Ioo (1 / 4 : ℝ) 1 := by
   have hd : 0 < 2 - s := by linarith [hs.2]
   exact ⟨(lt_div_iff₀ hd).mpr (by linarith [hs.2]),
     (div_lt_iff₀ hd).mpr (by linarith [hs.1])⟩
-
-
 
 theorem shift_schoenfliesBoundaryParam {s : ℝ} (hs : s ∈ Ioo (-1 / 8 : ℝ) (1 / 8)) :
     shiftCollarParam (-schoenfliesBoundaryParam s) = s := by
@@ -40,8 +25,6 @@ theorem shift_schoenfliesBoundaryParam {s : ℝ} (hs : s ∈ Ioo (-1 / 8 : ℝ) 
     ring
   rw [heq]
   exact shift_unshiftCollarParam ⟨by linarith [hs.1], by linarith [hs.2]⟩
-
-
 
 theorem schoenfliesBoundaryParam_strictAntiOn :
     StrictAntiOn schoenfliesBoundaryParam (Ioo (-1 / 8 : ℝ) (1 / 8)) := by
@@ -59,20 +42,14 @@ open M74 M25.Topology3D
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
 
-
-
 noncomputable def shiftedSchoenfliesRadius
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) (s : ℝ) : ℝ :=
   D.radial (schoenfliesBoundaryParam s)
-
-
 
 theorem shiftedSchoenfliesRadius_zero
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) :
     B.shiftedSchoenfliesRadius d D 0 = D.radial (1 / 2) := by
   norm_num [shiftedSchoenfliesRadius, schoenfliesBoundaryParam]
-
-
 
 theorem shiftedSchoenfliesRadius_mem
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) {s : ℝ}
@@ -80,8 +57,6 @@ theorem shiftedSchoenfliesRadius_mem
     B.shiftedSchoenfliesRadius d D s ∈ Ioo (0 : ℝ) D.radius := by
   have ht := schoenfliesBoundaryParam_mem hs
   exact ⟨D.radial_pos _ ⟨ht.1.le, ht.2⟩, D.radial_lt _ ⟨ht.1.le, ht.2⟩⟩
-
-
 
 theorem shiftedSchoenfliesRadius_chart
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) (q : UnitTwoSphere)
@@ -94,8 +69,6 @@ theorem shiftedSchoenfliesRadius_chart
   simpa only [shiftedSchoenfliesRadius, shiftedPunctureCollar, Function.comp_apply,
     shiftCollar, neg_one_mul,
     shift_schoenfliesBoundaryParam hs] using h
-
-
 
 theorem shiftedSchoenfliesRadius_inverse
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
@@ -110,8 +83,6 @@ theorem shiftedSchoenfliesRadius_inverse
     abs_of_pos (B.shiftedSchoenfliesRadius_mem d D hs).1,
     mem_sphere_zero_iff_norm.mp (D.boundary_map q).2, mul_one]
   exact (B.shiftedSchoenfliesRadius_mem d D hs).2
-
-
 
 theorem shiftedSchoenfliesRadius_contDiffAt
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))
@@ -137,8 +108,6 @@ theorem shiftedSchoenfliesRadius_contDiffAt
   rw [B.shiftedSchoenfliesRadius_inverse d D Ψ hleft q ht, norm_smul, Real.norm_eq_abs,
     abs_of_pos (B.shiftedSchoenfliesRadius_mem d D ht).1,
     mem_sphere_zero_iff_norm.mp (D.boundary_map q).2, mul_one]
-
-
 
 theorem shiftedSchoenfliesRadius_strictAntiOn
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) :
@@ -213,9 +182,6 @@ private theorem radialHeightInverse_contDiffAt
     rw [heq, B.left_inverse (original_radial_mem_ball hs q)]
     exact original_radial_nonzero hs q
   exact ((contDiffAt_norm ℝ hne).comp r hi.contDiffAt).sub contDiffAt_const
-
-
-
 
 theorem shiftedSchoenfliesRadius_deriv_neg
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))

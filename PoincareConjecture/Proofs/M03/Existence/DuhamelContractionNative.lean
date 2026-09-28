@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.VolterraPicard
 import PoincareConjecture.Proofs.M03.Existence.VolterraContractionNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,9 +12,6 @@ universe u
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [CompleteSpace E]
 
-
-
-
 structure DuhamelSource (T : ℝ) where
   field : ℝ → E
   continuous : ContinuousOn field (Ico (0 : ℝ) T)
@@ -36,7 +22,6 @@ structure DuhamelSource (T : ℝ) where
 namespace DuhamelSource
 
 variable {T : ℝ} (S : DuhamelSource (E := E) T)
-
 
 noncomputable def path (x₀ : E) (t : ℝ) : E :=
   x₀ + ∫ s in (0 : ℝ)..t, S.field s
@@ -76,9 +61,6 @@ theorem path_distance_le
 
 end DuhamelSource
 
-
-
-
 structure DuhamelStateSource (T : ℝ) where
   field : ℝ → E → E
   continuous : ContinuousOn (Function.uncurry field)
@@ -91,7 +73,6 @@ structure DuhamelStateSource (T : ℝ) where
 namespace DuhamelStateSource
 
 variable {T : ℝ} (S : DuhamelStateSource (E := E) T)
-
 
 noncomputable def operator (x₀ : E) (u : ℝ → E) (t : ℝ) : E :=
   x₀ + ∫ s in (0 : ℝ)..t, S.field s (u s)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalE
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OpenPuncturedSphereConnected
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.PLDomainInteriorConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.CubicalThreeSphere
 
@@ -20,8 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
 local notation "Sphere" => Geometry.CubicalThreeSphere.sphere
 local notation "Cube" => closedBall (0 : V3) 1
-
-
 
 theorem exists_punctured_sphere_of_spherical_frontier {ι : Type*} [Finite ι]
     (S : ι → Set V4) (e : ∀ i, S i ≃ₜ frontier Cube)
@@ -92,9 +81,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
 local notation "Sphere" => Geometry.CubicalThreeSphere.sphere
 local notation "Cube" => closedBall (0 : V3) 1
-
-
-
 
 theorem PLDomain.exists_punctured_sphere_of_spherical_frontier
     {ι κ : Type*} [Finite κ] {a : ι → OpenPartialHomeomorph Sphere V3}

@@ -2,17 +2,6 @@ import Mathlib.Topology.MetricSpace.Isometry
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +11,6 @@ open scoped Topology NNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X]
-
-
 
 def basedMinimizingRays (p : X) : Set (ℝ≥0 → X) :=
   {γ | γ 0 = p ∧ Isometry γ}
@@ -37,8 +24,6 @@ theorem isClosed_basedMinimizingRays (p : X) :
     exact isClosed_iInter fun s => isClosed_iInter fun t =>
       isClosed_eq ((continuous_apply s).dist (continuous_apply t)) continuous_const
   simpa only [basedMinimizingRays, isometry_iff_dist_eq, ofPred_and] using h0.inter hdist
-
-
 
 theorem isCompact_basedMinimizingRays [ProperSpace X] (p : X) :
     IsCompact (basedMinimizingRays p) := by

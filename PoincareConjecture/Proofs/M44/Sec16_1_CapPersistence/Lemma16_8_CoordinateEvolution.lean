@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTime
 import PoincareConjecture.Proofs.M44.Mathlib.ClosedTimeGronwall
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.SpatialEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M44
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 def closedSlabInterior {a b : ℝ} (hab : a < b) (F : RicciFlow n M (Icc a b)) :
     RicciFlow n M (Ioo a b) where
@@ -47,9 +35,6 @@ private theorem norm_deriv_zeroth_jet
       (c (deriv (fun s => f s x) t)) t :=
     c.toContinuousLinearEquiv.toContinuousLinearMap.hasFDerivAt.comp_hasDerivAt t hf.hasDerivAt
   rw [hd.deriv, c.norm_map]
-
-
-
 
 theorem closed_metric_zeroth_jet_estimates [T2Space M]
     {l r b K : ℝ} (hlr : l < r) (hb : 0 ≤ b) (hK : 0 ≤ K)
@@ -88,9 +73,6 @@ theorem closed_metric_zeroth_jet_estimates [T2Space M]
       (G.differentiableAt_pullbackCoefficients_time isOpen_Ioo hU he ht hx)]
     exact G.norm_deriv_pullbackCoefficients_le isOpen_Ioo hU he ht hx hb hK
       (hupper t (Ioo_subset_Icc_self ht) x hx) (hcurv t (Ioo_subset_Icc_self ht) x hx)
-
-
-
 
 theorem exists_closed_spatial_succ_estimates
     (n q : ℕ) (K : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

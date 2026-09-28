@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingSegment
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingTransport
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuedPolar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_varying_focusing_arc_length_le_turning
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)
@@ -151,9 +133,6 @@ theorem m64Intrinsic_varying_focusing_arc_length_le_turning
   · exact haorth
   · exact hborth
 
-
-
-
 theorem m64Intrinsic_pushed_radial_field_orthogonal
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}
     {x : AnnulusCoordinates} (he : DifferentiableAt ℝ e x) {a : ℝ}
@@ -172,11 +151,6 @@ theorem m64Intrinsic_pushed_radial_field_orthogonal
     exact (he'.comp_hasDerivAt 1 hline).deriv
   rw [hvelocity] at horth
   simp only [map_smul, smul_apply, smul_eq_mul, horth, mul_zero]
-
-
-
-
-
 
 theorem m64Intrinsic_exists_polar_focusing_map
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

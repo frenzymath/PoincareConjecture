@@ -9,8 +9,6 @@ namespace Poincare.Manifold
 
 open Poincare.Analysis
 
-
-
 theorem manifold_criticalImage_null_of_euclidean
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E]

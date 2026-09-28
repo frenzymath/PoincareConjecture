@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem graph_face_contacts_subset_vertices
     (hdim : ∀ s ∈ K.faces, s.card ≤ 2) {s t : Finset E}
@@ -44,10 +31,6 @@ theorem graph_face_contacts_subset_vertices
   exact K.down_closed hs
     (Finset.singleton_subset_iff.mpr (Finset.mem_inter.mp h).1)
     (Finset.singleton_nonempty x)
-
-
-
-
 
 theorem pair_mem_faces_of_segment_avoids_vertices [DecidableEq E]
     (hK : K.faces.Finite) (hdim : ∀ s ∈ K.faces, s.card ≤ 2)

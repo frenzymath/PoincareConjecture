@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M04.TensorNormBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M34.Standard.CalibratedMetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_standard_slab_metric_bound {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta : ℝ}
@@ -49,8 +39,6 @@ theorem exists_standard_slab_metric_bound {g0 : StandardInitialMetric}
   have h := M04.abs_ricci_le_curvatureTensorNorm (standard.flow.connection tau) x w
   norm_num only [Nat.cast_ofNat] at h
   exact h.trans (mul_le_mul_of_nonneg_right (by dsimp only [K]; linarith) hinner)
-
-
 
 theorem exists_standard_initial_distance_factor {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta : ℝ}

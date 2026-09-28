@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem tangentNorm_mfderiv_radial_eq
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
@@ -49,7 +37,6 @@ theorem tangentNorm_mfderiv_radial_eq
   rw [one_smul, hd1]
 
 omit [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem pullbackVolumeDensity_eq_one_of_radial_speed
     [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.SurgeryMetric
 import PoincareConjecture.Proofs.M36.IntrinsicIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

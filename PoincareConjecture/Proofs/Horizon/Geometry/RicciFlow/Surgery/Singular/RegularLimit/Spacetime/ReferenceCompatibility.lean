@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geo
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -26,8 +19,6 @@ theorem spacetime_forward_eq (R : SingularTimeReference F T M)
     (t : Set.Ico R.tMinus T) (y : M) :
     R.spacetime_forward (t, y) = (⟨t, R.forward t t.property y⟩ : F.point) := by
   exact Sigma.ext (R.spacetime_time (t, y)) (R.spacetime_spatial (t, y))
-
-
 
 theorem forward_eq_of_eq (R : SingularTimeReference F T M)
     (b : F.box_index) (x : (F.box b).carrier.carrier) (y : M)

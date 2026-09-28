@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 import PoincareConjecture.Proofs.M47.SeedImageBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {F : SurgeryFlowData.{u}} {C B : GeneralizedSliceCarrier.{u}}
   (e : SurgeryFlowCylinder F C origin scale I U)
   (D : PartialDiffeomorph (𝓡 3) (𝓡 3) B.carrier C.carrier ∞)
   (V : Set B.carrier) (hV : V ⊆ D.source) (hmaps : MapsTo D V U)
-
-
 
 noncomputable def seedCylinderSource : SurgeryFlowCylinder F B origin scale I V := by
   have himage (s : ℝ) (hs : s ∈ I) :
@@ -67,11 +56,8 @@ noncomputable def seedCylinderSource : SurgeryFlowCylinder F B origin scale I V 
     rw [e.left_inverse s hs (hmaps hx)]
     exact congrArg (fun z => e.forward s hs (D z)) (D.left_inv (hV hx))
 
-
-
 theorem seedCylinderSource_forward (s : ℝ) (hs : s ∈ I) (x : B.carrier) :
     (seedCylinderSource e D V hV hmaps).forward s hs x = e.forward s hs (D x) := rfl
-
 
 theorem seedCylinderSource_curvature {K : ℝ}
     (hK : ∀ s (hs : s ∈ I), ∀ x ∈ U,

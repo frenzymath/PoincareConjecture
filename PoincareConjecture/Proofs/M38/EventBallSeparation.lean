@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.RetainedComponentLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ namespace EventCapCoordinates
 
 variable {i : Fin (F.event T hT).cap_count} (P : EventCapCoordinates F T hT i)
 
-
-
 theorem retained_ball_inverse_negative (x : eventCapComplementOpen F T hT)
     (hx : x.val ∈ P.ball.map '' Metric.ball (0 : StandardCapSpace) 2) :
     (F.event T hT).retention.inverse x.val ∈
@@ -43,8 +33,6 @@ theorem retained_ball_inverse_negative (x : eventCapComplementOpen F T hT)
 end EventCapCoordinates
 
 variable (F T hT) (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 theorem retained_ball_patches_disjoint (i j : Fin (F.event T hT).cap_count) (hij : i ≠ j) :
     Disjoint ((P i).ball.map '' Metric.ball (0 : StandardCapSpace) 2)

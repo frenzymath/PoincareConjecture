@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Region
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualVertexFaceContainment
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,8 +22,6 @@ noncomputable def vertexBlock (p : (T.marked 2).vertices) : SimplicialComplex �
 theorem vertexBlock_subset_star (p : (T.marked 2).vertices) :
     (T.vertexBlock p).space ⊆ (T.ambient.closedStar p).space :=
   T.dualBlock_subset_star p (Finset.mem_singleton_self _)
-
-
 
 theorem vertexBlock_chart (p : (T.marked 2).vertices) :
     (T.vertexBlock p).faces.Finite ∧ (p : E) ∈ (T.vertexBlock p).vertices ∧
@@ -89,12 +85,10 @@ theorem vertexBlock_chart (p : (T.marked 2).vertices) :
     interior_maximal hsub (isOpen_interior.inter hbad.isOpen_compl)
       ⟨T.star_interior p, hpnot⟩⟩
 
-
 theorem vertex_base_eq_inter (p : (T.marked 2).vertices) :
     T.surfaceBase {(p : E)} = (T.vertexBlock p).space ∩ (T.marked 2).space := by
   change ((T.vertexBlock p).space ∩ (T.marked 0).space) ∩ (T.marked 2).space = _
   rw [inter_assoc, inter_eq_right.mpr T.surface_subset_region]
-
 
 theorem vertex_base_rim_eq (p : (T.marked 2).vertices) :
     T.dualRegionRim {(p : E)} ∩ (T.marked 2).space =

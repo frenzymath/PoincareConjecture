@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimitives
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stackDiscTransition_spec
     (T G : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))

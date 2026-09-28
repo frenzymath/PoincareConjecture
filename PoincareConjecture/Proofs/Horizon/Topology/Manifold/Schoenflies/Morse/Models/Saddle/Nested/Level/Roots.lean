@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Shear
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -78,7 +76,6 @@ theorem levelRadicand_eq_zero_iff (z : Real) :
       · exact Or.inr (Or.inr (Or.inl (sub_eq_zero.mp hp)))
     · exact Or.inr (Or.inr (Or.inr (sub_eq_zero.mp hp).symm))
   · rintro (rfl | rfl | rfl | rfl) <;> simp
-
 
 theorem levelRadicand_nonneg_iff (z : Real) :
     0 ≤ levelRadicand z ↔ z ∈ Icc lowerRoot (3 / 5) ∨ z ∈ Icc upperRoot 1 := by

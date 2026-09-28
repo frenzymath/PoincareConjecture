@@ -4,7 +4,6 @@ open scoped ContDiff Topology
 
 namespace Poincare.Analysis
 
-
 theorem scalar_flat_image_null
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] {V s : Set E} {f : E → ℝ} {n : ℕ}

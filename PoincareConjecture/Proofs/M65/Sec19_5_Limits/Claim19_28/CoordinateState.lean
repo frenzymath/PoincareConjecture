@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.CoordinateOperator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,15 +15,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 noncomputable def m65ProjectedChartState (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (p : M) (z : ℝ × ℝ) :
     M65ProjectedChartStateSpace n :=
   (z.1, ((chartAt (EuclideanSpace ℝ (Fin n)) p) (c z.2 z.1).1,
     (curveSpeed P.flow c z.1 z.2, m62Slope P c z.1 z.2)))
-
-
 
 noncomputable def m65ProjectedChartJet (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (p : M) (z : ℝ × ℝ) :
@@ -39,8 +27,6 @@ noncomputable def m65ProjectedChartJet (P : M62.CircleProductData F circumferenc
   (m65ProjectedChartState P c p z,
     deriv (fun x => m65ProjectedChartState P c p (z.1, x)) z.2,
     deriv (deriv (fun x => m65ProjectedChartState P c p (z.1, x))) z.2)
-
-
 
 theorem m65ProjectedChartState_contDiffAt
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -67,8 +53,6 @@ theorem m65ProjectedChartState_contDiffAt
   have hu := ((m65Slope_joint_contDiffOn P c hc).contDiffAt hnear).comp (t, x) hswap
   exact contDiffAt_fst.prodMk (hq.prodMk (hv.prodMk hu))
 
-
-
 theorem m65ProjectedChartState_spatial_deriv
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) (p : M) {t x : ℝ} (ht : t ∈ Ioo a b)
@@ -83,8 +67,6 @@ theorem m65ProjectedChartState_spatial_deriv
   have hu := (m65Slope_hasDerivAt P c hc
     (Ioo_subset_Icc_self ht) x).differentiableAt.hasDerivAt
   exact ((hasDerivAt_const x t).prodMk (hq.prodMk (hv.prodMk hu))).deriv
-
-
 
 theorem m65ProjectedChartState_spatial_second [T2Space M]
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

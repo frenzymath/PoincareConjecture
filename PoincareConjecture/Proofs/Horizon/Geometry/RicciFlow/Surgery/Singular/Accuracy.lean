@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -21,7 +12,6 @@ namespace StrongHorn
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta : ℝ}
   {E : GeneralizedFlowExtension F T}
-
 
 noncomputable def restrictAccuracy (H : StrongHorn E epsilon)
     (hed : epsilon ≤ delta) : StrongHorn E delta where
@@ -62,7 +52,6 @@ namespace StrongDoubleHorn
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
 noncomputable def restrictAccuracy (H : StrongDoubleHorn E epsilon)
     (hed : epsilon ≤ delta) : StrongDoubleHorn E delta where
   basepoint := H.basepoint
@@ -95,7 +84,6 @@ namespace SingularRoundComponent
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {epsilon delta : ℝ}
-
 
 noncomputable def restrictAccuracy (N : SingularRoundComponent g epsilon)
     (hed : epsilon ≤ delta) : SingularRoundComponent g delta where

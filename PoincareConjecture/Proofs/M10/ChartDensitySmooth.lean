@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartMetricSmooth
 import PoincareConjecture.Proofs.M10.DeterminantCalculus
 import PoincareConjecture.Proofs.M10.MetricCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M10
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem pullbackJacobian_contDiffAt_of_form (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {y : EuclideanSpace ℝ (Fin n)} {k : ℕ∞ω}

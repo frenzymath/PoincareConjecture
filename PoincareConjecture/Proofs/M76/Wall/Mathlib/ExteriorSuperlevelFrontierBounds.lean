@@ -2,24 +2,11 @@ import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem exterior_superlevel_frontier_subsets
     {X : Type*} [TopologicalSpace X] {C L R : Set X}

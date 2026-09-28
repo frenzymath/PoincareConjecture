@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Spectral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -83,9 +71,6 @@ private theorem integral_heatKernelContinuous_test_le_shifted_solution
   rw [hFpos t ht, heatPowerContinuousTime_of_pos D S 0 ht] at h
   rwa [integral_heatKernelContinuous_test D S t ht x φ]
 
-
-
-
 theorem heatKernelContinuousTime_le_of_nonnegative_heat_solution
     (D : LeviCivitaData g) {Ω : Set M} (S : Poincare.Manifold.SmoothDomain n Ω)
     {u : M → ℝ → ℝ} {y : M}
@@ -144,10 +129,6 @@ theorem heatKernelContinuousTime_le_of_nonnegative_heat_solution
       exact hnonneg x t ht
   · rw [heatKernelContinuous_zero D S t ht x y (Or.inl hx)]
     exact hnonneg x t ht
-
-
-
-
 
 theorem dirichletExhaustionKernel_le_of_nonnegative_heat_solution
     (D : LeviCivitaData g) {Ω : ℕ → Set M}

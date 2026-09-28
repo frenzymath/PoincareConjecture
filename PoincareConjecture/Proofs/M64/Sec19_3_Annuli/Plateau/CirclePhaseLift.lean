@@ -2,25 +2,11 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M63.Mathlib.CircleLift
 import PoincareConjecture.Proofs.M63.Mathlib.LocalDiffeomorphLift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64CircleAnnulus_exists_phase {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CircleSphere
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.MemberCircleCut
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76

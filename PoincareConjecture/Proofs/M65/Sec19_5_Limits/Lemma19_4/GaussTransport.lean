@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussEquation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +15,6 @@ variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
-
-
-
 
 theorem gauss_curvatureTensor_transport
     (D : LeviCivitaData g) (DE : LeviCivitaData gE) (D' : LeviCivitaData h)

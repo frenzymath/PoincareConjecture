@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M44.Mathlib.UniformCompactComposition
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Topology
-
-
 
 theorem TendstoUniformlyOn.prodMk_same
     {P E F ι : Type*} [UniformSpace E] [UniformSpace F] {l : Filter ι}
@@ -25,8 +14,6 @@ theorem TendstoUniformlyOn.prodMk_same
     TendstoUniformlyOn (fun i x => (fseq i x, gseq i x)) (fun x => (f x, g x)) l K := by
   intro u hu
   exact (tendsto_id.prodMk tendsto_id).eventually ((hf.prodMk hg) u hu)
-
-
 
 theorem tendstoUniformlyOn_fderiv_of_iteratedFDeriv_one
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -45,9 +32,6 @@ theorem tendstoUniformlyOn_fderiv_of_iteratedFDeriv_one
   simpa only [Function.comp_def, he] using
     (continuousMultilinearCurryFin1 ℝ E F).isometry.uniformContinuous.comp_tendstoUniformlyOn h
 
-
-
-
 theorem tendstoUniformlyOn_iteratedFDeriv_fderiv
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] {l : Filter ι}
@@ -64,8 +48,6 @@ theorem tendstoUniformlyOn_iteratedFDeriv_fderiv
   have hc := (continuousMultilinearCurryRightEquiv' ℝ j E F).isometry.uniformContinuous
   simpa only [Function.comp_def, he] using hc.comp_tendstoUniformlyOn h
 
-
-
 theorem TendstoUniformlyOn.eventually_mapsTo_of_compact_image
     {P E ι : Type*} [MetricSpace E] {l : Filter ι}
     {fseq : ι → P → E} {f : P → E} {K : Set P} {U : Set E}
@@ -78,8 +60,6 @@ theorem TendstoUniformlyOn.eventually_mapsTo_of_compact_image
   intro x hx
   exact hthick (mem_cthickening_of_dist_le (fseq i x) (f x) delta (f '' K)
     (mem_image_of_mem f hx) (by simpa only [dist_comm] using (hi x hx).le))
-
-
 
 theorem tendstoUniformlyOn_fderiv_comp_of_compact
     {E F G ι : Type*}

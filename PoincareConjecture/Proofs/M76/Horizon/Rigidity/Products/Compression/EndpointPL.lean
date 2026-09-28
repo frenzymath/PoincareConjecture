@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.ParameterPL
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarChartTransfer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -183,4 +175,3 @@ theorem exists_hamiltonZero_adjusted_map_PL {ι κ : Type*}
     rho, hrho, hrhor, hpre, hpreA, hpreB⟩
 
 end PoincareConjecture.M76.PrescribedSlab
-

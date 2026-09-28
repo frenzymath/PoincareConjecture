@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.RelativeChartMetric
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.RelativeMetricReadout
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,9 +16,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem eventually_compact_relative_inner_bounds (G : RegularPointedMetricConvergence g p) :
     letI := G.limitCarrier.topologicalSpace

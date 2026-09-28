@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BoundaryFluxTrace
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskTraceDivergence
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskTraceIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65Integral_motionDensity_eq_boundary_of_trace
     {a b : ℝ} (F : RicciFlow n M (Icc a b)) (u : ℝ → LoopPlane → M)

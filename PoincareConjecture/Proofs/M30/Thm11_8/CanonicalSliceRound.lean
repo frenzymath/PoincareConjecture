@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Co
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem round_component_subset_normalized_ball
     {X : Type u} [TopologicalSpace X] [T3Space X]

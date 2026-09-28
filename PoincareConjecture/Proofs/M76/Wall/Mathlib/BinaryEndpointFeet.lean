@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcNeighborhoodBoundaryContact
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryNeighborhoodImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem image_arc_feet_binaryLevel
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

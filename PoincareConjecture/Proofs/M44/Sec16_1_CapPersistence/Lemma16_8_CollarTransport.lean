@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ variable {M N : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ N]
-
-
-
 
 theorem exists_collar_plane_of_positiveGram [T2Space M] {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (x : M) (C : ℝ) (u v : TangentSpace (𝓡 3) x)
@@ -50,9 +38,6 @@ theorem exists_collar_plane_of_positiveGram [T2Space M] {g : RiemannianMetric 3 
         zero_pow (by decide : 2 ≠ 0), sub_zero, div_one]
     _ = D.sectionalCurvature x u v := hvalue
     _ < C⁻¹ * D.scalarCurvature x := hmargin
-
-
-
 
 theorem exists_collar_plane_of_homothety [T2Space M] [T2Space N]
     {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}

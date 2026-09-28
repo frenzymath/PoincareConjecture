@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.LimitNoncompact
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCompactness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem blowupSequence_limit_not_projective (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -57,9 +45,6 @@ theorem blowupSequence_limit_not_projective (P : M35StandardCapPredecessors)
     K.cover_local_diffeomorph
   intro p
   exact ((K.cover_fibers p (-p.1, p.2)).mpr (Or.inr rfl)).symm
-
-
-
 
 theorem exists_limit_cap_or_neck_constants (P : M35StandardCapPredecessors) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

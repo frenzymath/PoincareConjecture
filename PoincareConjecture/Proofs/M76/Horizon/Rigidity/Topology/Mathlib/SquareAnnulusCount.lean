@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Geometry.SimplicialComplex

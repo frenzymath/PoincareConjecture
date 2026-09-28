@@ -1,3 +1,1 @@
 import PoincareConjecture.Definitions.M33RegularHistory
-
-

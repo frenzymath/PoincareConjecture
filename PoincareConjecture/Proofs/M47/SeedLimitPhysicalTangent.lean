@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem seedLimit_physical_chart_tangent_norm
     {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
@@ -49,8 +39,6 @@ private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carri
   G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem seedLimit_eventually_physical_tangent_comparison
     (F : ℕ → SurgeryFlowData.{u})

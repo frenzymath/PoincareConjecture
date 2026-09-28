@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.L2Pairing
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Approximation
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter

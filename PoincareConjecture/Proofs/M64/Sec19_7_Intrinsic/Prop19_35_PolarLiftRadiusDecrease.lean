@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UnitTangentInde
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.LinearAlgebra.AffineSpace.Ordered
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +15,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem m64Intrinsic_inner_pos_of_cornerAngle_acute
     (G : RiemannianMetric 2 AnnulusCoordinates) (p v w : AnnulusCoordinates)
     (hangle : G.cornerAngle p v w < Real.pi / 2) : 0 < G.inner p v w := by
@@ -32,9 +25,6 @@ theorem m64Intrinsic_inner_pos_of_cornerAngle_acute
   exact pos_of_mul_pos_right
     (pos_of_mul_pos_right h (inv_nonneg.mpr (Real.sqrt_nonneg _)))
     (inv_nonneg.mpr (Real.sqrt_nonneg _))
-
-
-
 
 theorem m64Intrinsic_polar_lift_norm_sq_derivative
     (N : IntrinsicAnnulus)
@@ -58,10 +48,6 @@ theorem m64Intrinsic_polar_lift_norm_sq_derivative
     (2 * N.metric.euclideanCoefficients (e (u s)) (fderiv ℝ e (u s) (u s)) db) s
   rw [hpair]
   exact hu.norm_sq
-
-
-
-
 
 theorem m64Intrinsic_polar_lift_radius_decreases_left
     (N : IntrinsicAnnulus)

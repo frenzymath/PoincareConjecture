@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.BoundedSpeedSmooth
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Forward
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +11,6 @@ namespace Poincare.ODE
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_forward_solution_of_bounded_speed
     {F : E → E} (hF : ContDiff ℝ ∞ F) {C : ℝ} (hC : 0 ≤ C)
@@ -41,8 +30,6 @@ theorem exists_forward_solution_of_bounded_speed
           (fun t ht => ⟨(hα t ht).1, (hα t ht).2.2⟩)
         exact ⟨ε, hε, β, hβ0.trans hα0, hβ, fun _ _ => mem_univ _⟩)
   exact ⟨δ, hδ, γ, hγ0, fun t ht => (hγ t ht).2⟩
-
-
 
 theorem exists_global_solution_of_bounded_speed
     {F : E → E} (hF : ContDiff ℝ ∞ F) {C : ℝ} (hC : 0 ≤ C)
@@ -73,7 +60,6 @@ theorem exists_global_solution_of_bounded_speed
   rcases lt_or_ge (-δ) t with ht | ht
   · exact Or.inl ht
   · exact Or.inr (lt_of_le_of_lt ht (by linarith))
-
 
 theorem exists_global_solution_of_eq_const_off_compact
     {F : E → E} (hF : ContDiff ℝ ∞ F) {K : Set E} (hK : IsCompact K)

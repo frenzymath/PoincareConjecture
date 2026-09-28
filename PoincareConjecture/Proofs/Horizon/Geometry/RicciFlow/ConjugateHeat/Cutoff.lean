@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Cutoff
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,8 +42,6 @@ theorem backward_gradient_norm_le_of_nonnegative_ricci
   apply ((F.connection t).abs_mvfderiv_le_gradient_norm f x v).trans
   apply mul_le_mul_of_nonneg_left _ (Real.sqrt_nonneg _)
   exact Real.sqrt_le_sqrt (F.metric_inner_le_of_nonnegative_ricci hRic hst ht x v)
-
-
 
 theorem exists_backward_intrinsic_ball_cutoff [T3Space M] [PreconnectedSpace M]
     (hRic : ∀ t < 0, ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,

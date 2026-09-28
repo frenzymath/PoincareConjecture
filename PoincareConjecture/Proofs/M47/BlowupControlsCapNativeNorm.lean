@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseMetric
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLeviCivita
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem cap_native_frameInverseGram (q : UnitTwoSphere) (s : ℝ) (i j : Fin 3) :
     M04.frameInverseGram (M35.cylinderEuclideanMetric 0 (by norm_num))
@@ -51,8 +40,6 @@ theorem cap_native_frameInverseGram (q : UnitTwoSphere) (s : ℝ) (i j : Fin 3) 
   fin_cases i <;> fin_cases j <;>
     norm_num [b, EuclideanSpace.inner_single_left, Matrix.diagonal] at hp ⊢ <;> linarith
 
-
-
 theorem cap_native_tensorNorm_sq (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
     (T : CovariantTensorEvaluation 3 E₃ r)
     (hT : ∃ A : MultilinearMap ℝ (fun _ : Fin r => E₃) ℝ,
@@ -78,8 +65,6 @@ theorem cap_native_tensorNorm_sq (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
         (M35.cylinderCoordinateEquiv.symm (0, s)) (ContinuousLinearMap.id ℝ E₃) (a j) (b j)) = _
   simp only [cap_native_frameInverseGram q s]
   ring
-
-
 
 theorem cap_native_tensorNorm (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
     (T : CovariantTensorEvaluation 3 E₃ r)

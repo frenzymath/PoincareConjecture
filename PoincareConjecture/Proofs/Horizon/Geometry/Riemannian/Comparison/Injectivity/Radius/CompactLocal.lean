@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.LowerSemicontinuity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.TwoGeodesics
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_pos_eventually_le_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -95,8 +86,6 @@ theorem exists_pos_eventually_le_truncatedInjectivityRadius
   change r ≤ g.truncatedInjectivityRadius hc C (c.symm (c q)) at hq
   simpa only [c.left_inv hqc] using hq
 
-
-
 theorem exists_pos_le_truncatedInjectivityRadius_on_isCompact_of_complete
     (g : RiemannianMetric n M) (hc : MetricComplete g)
     {C : ℝ} (hC : 0 < C) {S : Set M} (hS : IsCompact S) :
@@ -110,8 +99,6 @@ theorem exists_pos_le_truncatedInjectivityRadius_on_isCompact_of_complete
   intro p hp
   obtain ⟨q, hq, hpq⟩ := Set.mem_iUnion₂.mp (hs hp)
   exact ((Finset.fold_min_le (r q)).mpr (Or.inr ⟨q, hq, le_rfl⟩)).trans hpq
-
-
 
 theorem exists_local_distance_ascent_of_lt_truncatedInjectivityRadius
     [PreconnectedSpace M] (g : RiemannianMetric n M) (hc : MetricComplete g)

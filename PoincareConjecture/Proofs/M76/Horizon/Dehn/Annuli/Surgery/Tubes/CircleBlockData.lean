@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.ComponentBranchModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.ComponentCircleBlocks
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -15,8 +13,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] {S : Set E}
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
   {old : SourceCircleDecomposition f S} {i : old.Index}
-
-
 
 structure ComponentCircleBlockData (D : ComponentBranchModel (e := e) (R := R) old i)
     [Fintype D.complex.faces] {n : ℕ} (p : Fin (n + 3) → D.sample → ℝ × V3) where
@@ -54,6 +50,4 @@ structure ComponentCircleBlockData (D : ComponentBranchModel (e := e) (R := R) o
   axis : ∀ j (z : ↥(signedTubeDiamond ×ˢ Icc (0 : ℝ) 1)),
     (z : P2 × ℝ).1 = (0, 0) ↔ (map j z : D.sample → ℝ × V3) ∈ D.axis.space
 
-
 end PoincareConjecture.M76.Dehn.Annuli
-

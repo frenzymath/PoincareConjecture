@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMonotoneFlux
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,11 +23,6 @@ private theorem norm_annulusPoint_sub_lower (t x : ℝ) :
     fin_cases i <;> simp [annulusPoint]
   rw [heq]
   simpa only [Real.norm_eq_abs] using PiLp.norm_single 2 (fun _ : Fin 2 => ℝ) 0 (t - x)
-
-
-
-
-
 
 theorem m64WeakPhase_monotone_gap_sq_le
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b : ℝ → ℝ)

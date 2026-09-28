@@ -2,27 +2,12 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_fiberwise_transition_band
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

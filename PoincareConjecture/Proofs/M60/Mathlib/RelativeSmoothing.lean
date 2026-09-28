@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M60.Mathlib.RelativeChartSmoothing
 import PoincareConjecture.Proofs.M60.Mathlib.FiniteRelativeSmoothing
 import PoincareConjecture.Proofs.M60.Mathlib.FiniteRelativeCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_c1_eqOn_compl_of_compact
     {E F N : Type*}

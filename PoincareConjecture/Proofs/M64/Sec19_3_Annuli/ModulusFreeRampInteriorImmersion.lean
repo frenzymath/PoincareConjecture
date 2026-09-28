@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeRampCirclePositiv
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSmoothGram
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCirclePositivity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -95,10 +82,6 @@ private theorem injective_of_positive_columns {E : Type*} [NormedAddCommGroup E]
       _ = 0 := by rw [hv0, hv1, zero_smul, zero_smul, add_zero]
   intro v w hvw
   exact sub_eq_zero.mp (hker (v - w) (by rw [map_sub, hvw, sub_self]))
-
-
-
-
 
 theorem m64FreeRampModulusMinimum_mfderiv_injective
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

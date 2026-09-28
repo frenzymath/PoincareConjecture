@@ -10,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
 
-
-
 theorem ComponentBranchModel.exists_signed_joint_cross
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionCollarCompression
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionCompressionGluing
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBoundaryCollarTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.excision_of_boundary_collar
     {B s C b c d e q : Set X}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,15 +17,10 @@ local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
-
 noncomputable def hamiltonMeridianCutMap : C(D × ℝ, H) :=
   ⟨fun z => (z.1, hamiltonSolidTorusCircleEquiv.symm (z.2 : AddCircle p)),
     continuous_fst.prodMk (hamiltonSolidTorusCircleEquiv.symm.continuous.comp
       ((AddCircle.continuous_mk' p).comp continuous_snd))⟩
-
-
 
 theorem hamiltonMeridianCutMap_apply (x : D) (t : ℝ) :
     hamiltonMeridianCutMap (x, t) =
@@ -43,22 +28,16 @@ theorem hamiltonMeridianCutMap_apply (x : D) (t : ℝ) :
   change (x, hamiltonSolidTorusCircleEquiv.symm (t : AddCircle p)) = _
   rw [hamiltonSolidTorusCircleEquiv_symm_coe]
 
-
-
 theorem hamiltonMeridianCutMap_zero (x : D) :
     hamiltonMeridianCutMap (x, 0) = hamiltonStandardMeridian L x := by
   rw [hamiltonMeridianCutMap_apply]
   rfl
-
-
 
 theorem hamiltonMeridianCutMap_period (x : D) :
     hamiltonMeridianCutMap (x, p) = hamiltonStandardMeridian L x := by
   change (x, hamiltonSolidTorusCircleEquiv.symm ((p : ℝ) : AddCircle p)) = (x, 0)
   rw [AddCircle.coe_period]
   exact Prod.ext rfl (hamiltonSolidTorusCircleEquiv_symm_coe 0)
-
-
 
 theorem hamiltonMeridianCutMap_image :
     hamiltonMeridianCutMap '' (univ ×ˢ Icc 0 p) = univ := by
@@ -72,16 +51,11 @@ theorem hamiltonMeridianCutMap_image :
     change (z.1, hamiltonSolidTorusCircleEquiv.symm (t : AddCircle p)) = z
     rw [he, hamiltonSolidTorusCircleEquiv.symm_apply_apply]
 
-
-
-
 theorem hamiltonMeridianCutMap_preimage_boundary :
     hamiltonMeridianCutMap ⁻¹' latticeHandleBoundary (Fin 2) (Fin 1) L =
       {x : D | ‖(x : V2)‖ = 1} ×ˢ univ := by
   ext z
   rfl
-
-
 
 theorem hamiltonMeridianCutMap_mem_meridian (x : D) {t : ℝ}
     (ht : t ∈ Icc 0 p) :
@@ -94,8 +68,6 @@ theorem hamiltonMeridianCutMap_mem_meridian (x : D) {t : ℝ}
   rw [← hzero, hamiltonSolidTorusCircleEquiv.symm.injective.eq_iff]
   exact AddCircle.coe_eq_zero_iff_endpoints ht
 
-
-
 theorem hamiltonMeridianCutMap_eq_iff (x y : D) {t u : ℝ}
     (ht : t ∈ Icc 0 p) (hu : u ∈ Icc 0 p) :
     hamiltonMeridianCutMap (x, t) = hamiltonMeridianCutMap (y, u) ↔
@@ -105,15 +77,10 @@ theorem hamiltonMeridianCutMap_eq_iff (x y : D) {t u : ℝ}
   rw [Prod.mk.injEq, hamiltonSolidTorusCircleEquiv.symm.injective.eq_iff,
     AddCircle.coe_eq_coe_iff_eq_or_endpoints ht hu]
 
-
-
-
 noncomputable def hamiltonMeridianOpenCut : OpenPartialHomeomorph (D × ℝ) H :=
   (OpenPartialHomeomorph.refl D).prod
     ((AddCircle.openPartialHomeomorphCoe p 0).trans
       hamiltonSolidTorusCircleEquiv.symm.toOpenPartialHomeomorph)
-
-
 
 theorem hamiltonMeridianOpenCut_source :
     hamiltonMeridianOpenCut.source = univ ×ˢ Ioo 0 p := by
@@ -123,8 +90,6 @@ theorem hamiltonMeridianOpenCut_source :
   change univ ×ˢ (Ioo 0 (0 + p) ∩
     (AddCircle.openPartialHomeomorphCoe p 0) ⁻¹' univ) = _
   rw [preimage_univ, inter_univ, zero_add]
-
-
 
 theorem hamiltonMeridianOpenCut_target :
     hamiltonMeridianOpenCut.target = (hamiltonStandardMeridianSet L)ᶜ := by
@@ -142,26 +107,17 @@ theorem hamiltonMeridianOpenCut_target :
     apply hamiltonSolidTorusCircleEquiv.injective
     exact hz
 
-
-
 theorem hamiltonMeridianOpenCut_apply (z : D × ℝ) :
     hamiltonMeridianOpenCut z = hamiltonMeridianCutMap z := rfl
-
-
-
 
 theorem hamiltonMeridianCut_ballPair :
     IsFinitePLBallPair (V2 × ℝ) (D ×ˢ Icc 0 p)
       ((sphere (0 : V2) 1 ×ˢ Icc 0 p) ∪ (D ×ˢ {(0 : ℝ), p})) :=
   isFinitePLBallPair_unit_cube.prod (isFinitePLBallPair_Icc (by norm_num))
 
-
-
 def hamiltonMeridianCutAmbientMap (z : V2 × ℝ) :
     LatticeHandleAmbient (Fin 2) (Fin 1) L :=
   (z.1, QuotientAddGroup.mk (fun _ : Fin 1 => z.2))
-
-
 
 theorem hamiltonMeridianCutMap_ambient_apply (x : D) (t : ℝ) :
     (((hamiltonMeridianCutMap (x, t)).1 : V2),
@@ -169,9 +125,6 @@ theorem hamiltonMeridianCutMap_ambient_apply (x : D) (t : ℝ) :
         hamiltonMeridianCutAmbientMap (x, t) := by
   rw [hamiltonMeridianCutMap_apply]
   rfl
-
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_meridianCut
     {β : Type*}

@@ -5,14 +5,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Pow
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,9 +13,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_nestedReference_buffered_morse_chart
     (w : ℝ) (hw_lower : 1 / 2 < w) (hw_upper : w < 3 / 4)

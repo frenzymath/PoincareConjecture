@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.RadialEquality
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Collapse.PolarInverse
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology RealInnerProductSpace

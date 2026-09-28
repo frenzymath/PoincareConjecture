@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RadialBounds
 import PoincareConjecture.Proofs.M34.Mathlib.RegularizedNorm
 import PoincareConjecture.Proofs.M34.Mathlib.GradientDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare Manifold
 open scoped Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capRiemannianMetric_regularizedRadius_speed {a e : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (he : 0 < e) (x v : StandardCapSpace) :
@@ -48,7 +37,6 @@ theorem capRiemannianMetric_regularizedRadius_speed {a e : ℝ} (ha : 0 < a)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem capRiemannianMetric_regularizedRadius_edist {a e : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (he : 0 < e) (x y : StandardCapSpace) :
     edist (regularizedNorm e x) (regularizedNorm e y) ≤
@@ -74,7 +62,6 @@ theorem capRiemannianMetric_regularizedRadius_edist {a e : ℝ} (ha : 0 < a)
   exact capRiemannianMetric_regularizedRadius_speed ha hapi he z v
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capRiemannianMetric_edist_le {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (x y : StandardCapSpace) :
@@ -102,9 +89,6 @@ theorem capRiemannianMetric_edist_le {a : ℝ} (ha : 0 < a)
       exact capRiemannianMetric_tangentNorm_le ha hapi z v
     _ = _ := one_mul _
 
-
-
-
 theorem capRiemannianMetric_radius_le_edist {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (x : StandardCapSpace) :
     ENNReal.ofReal ‖x‖ ≤ (capRiemannianMetric a ha hapi).edist 0 x := by
@@ -124,16 +108,12 @@ theorem capRiemannianMetric_radius_le_edist {a : ℝ} (ha : 0 < a)
   dsimp [e] at hs
   linarith
 
-
-
 theorem capRiemannianMetric_edist_zero {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (x : StandardCapSpace) :
     (capRiemannianMetric a ha hapi).edist 0 x = ENNReal.ofReal ‖x‖ := by
   apply le_antisymm
   · simpa only [edist_dist, dist_zero_left] using capRiemannianMetric_edist_le ha hapi 0 x
   · exact capRiemannianMetric_radius_le_edist ha hapi x
-
-
 
 theorem capRiemannianMetric_ball_zero {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (r : ℝ) :
@@ -142,9 +122,6 @@ theorem capRiemannianMetric_ball_zero {a : ℝ} (ha : 0 < a)
   simp only [RiemannianMetric.ball, Set.mem_ofPred_eq, capRiemannianMetric_edist_zero ha hapi,
     Metric.mem_ball, dist_zero_right]
   exact ENNReal.ofReal_lt_ofReal_iff_of_nonneg (norm_nonneg x)
-
-
-
 
 theorem capRiemannianMetric_closedBall_zero {a r : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (hr : 0 ≤ r) :

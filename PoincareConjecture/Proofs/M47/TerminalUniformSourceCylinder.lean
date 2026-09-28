@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceBoundedCapCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceZeroCapCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,9 +50,6 @@ private theorem uniformSource_zero_contact
   intro hn
   obtain ⟨i, z, ⟨y, rfl⟩, hz⟩ := htarget
   exact ⟨i, y.1, y.2, hz⟩
-
-
-
 
 theorem exists_first_failure_uniform_source_cylinder_of_pointwise
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

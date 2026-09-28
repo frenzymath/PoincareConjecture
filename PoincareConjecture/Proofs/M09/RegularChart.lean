@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.RegularDomainOpen
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

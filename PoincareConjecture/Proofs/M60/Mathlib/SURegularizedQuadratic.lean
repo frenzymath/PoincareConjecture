@@ -12,8 +12,6 @@ namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem suBilinear_diagonal_convex (B : E →L[ℝ] E →L[ℝ] ℝ)
     (hB : ∀ v, 0 ≤ B v v) : ConvexOn ℝ univ (fun v => B v v) := by
   refine ⟨convex_univ, ?_⟩
@@ -26,7 +24,6 @@ theorem suBilinear_diagonal_convex (B : E →L[ℝ] E →L[ℝ] ℝ)
   change B (a • v + b • w) (a • v + b • w) ≤ a * B v v + b * B w w
   have := mul_nonneg (mul_nonneg ha hb) (hB (v - w))
   linarith
-
 
 def suRegularizedQuadratic (B : E →L[ℝ] E →L[ℝ] ℝ) (c p : ℝ) (v : E) : ℝ :=
   (c + B v v) ^ p
@@ -66,8 +63,6 @@ theorem suRegularizedQuadratic_measurable
   exact (Real.continuous_rpow_const hp).measurable.comp
     ((hc.comp measurable_fst).add (hquad.measurable.comp
       ((hB.comp measurable_fst).prodMk measurable_snd)))
-
-
 
 theorem suRegularizedQuadratic_le_liminf
     (B : X → E →L[ℝ] E →L[ℝ] ℝ) (hB : Measurable B)

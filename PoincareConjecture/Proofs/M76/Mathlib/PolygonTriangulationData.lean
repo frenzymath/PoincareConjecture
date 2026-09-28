@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegions
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonReindex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
 
 structure IsTriangulation {n : ℕ} (P : Polygon (ℝ × ℝ) n)
     (K : SimplicialComplex ℝ (ℝ × ℝ)) : Prop where
@@ -33,9 +21,6 @@ structure IsTriangulation {n : ℕ} (P : Polygon (ℝ × ℝ) n)
 
   pure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3
 
-
-
-
 theorem IsTriangulation.vertices_eq {n : ℕ} {P : Polygon (ℝ × ℝ) n}
     {K : SimplicialComplex ℝ (ℝ × ℝ)} (h : P.IsTriangulation K) : K.vertices = range P := by
   classical
@@ -43,8 +28,6 @@ theorem IsTriangulation.vertices_eq {n : ℕ} {P : Polygon (ℝ × ℝ) n}
   rintro x ⟨i, rfl⟩
   apply K.down_closed (h.edge_mem i) _ (Finset.singleton_nonempty _)
   simp [edgeVertices]
-
-
 
 theorem IsTriangulation.of_reindex {m n : ℕ} {P : Polygon (ℝ × ℝ) n}
     {K : SimplicialComplex ℝ (ℝ × ℝ)} (e : Fin m ≃ Fin n)

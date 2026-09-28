@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CanonicalDo
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.BilinearJets
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Poincare.Gluing Poincare.Analysis.Calculus
@@ -55,8 +47,6 @@ theorem canonical_pullbackMetric_coefficients
       (mfderiv (𝓡 n) (𝓡 n) (chartParametrization U hU e) x w)
   rw [chartParametrization_apply, hd]
   rfl
-
-
 
 theorem exists_ricciFlow_on_coordinate_limit
     {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)]

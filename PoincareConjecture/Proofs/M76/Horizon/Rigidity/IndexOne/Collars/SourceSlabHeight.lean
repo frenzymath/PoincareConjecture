@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.OldBoundaryStrips
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.RealLiftPL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,8 +13,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
-
 
 noncomputable def sourceSlabHeight (phi : C(H, H)) (a b : ℝ)
     (ha : 0 ≤ a) (hb : b < p) : C(sourceSlab phi a b, ℝ) where
@@ -50,8 +40,6 @@ theorem sourceSlabHeight_coe (phi : C(H, H)) (a b : ℝ)
         ⟨z.val, sourceSlab_subset phi a b z.property⟩) :=
   congrArg Subtype.val ((closedPhaseIntervalCoordinates a b ha hb).apply_symm_apply _)
 
-
-
 theorem sourceSlabHeight_eq_iff (phi : C(H, H)) (a b : ℝ)
     (ha : 0 ≤ a) (hb : b < p) (z : sourceSlab phi a b) {t : ℝ} (ht : t ∈ Icc a b) :
     sourceSlabHeight phi a b ha hb z = t ↔ (z : X) ∈ sourceSurface phi (t : C) := by
@@ -63,8 +51,6 @@ theorem sourceSlabHeight_eq_iff (phi : C(H, H)) (a b : ℝ)
   rw [← AddCircle.coe_eq_coe_iff_of_mem_Ico hzI htI, sourceSlabHeight_coe]
   exact (mem_sourceSurface_iff phi (t : C)
     ⟨z.val, sourceSlab_subset phi a b z.property⟩).symm
-
-
 
 theorem finitePiecewiseAffineOn_sourceSlabHeight
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

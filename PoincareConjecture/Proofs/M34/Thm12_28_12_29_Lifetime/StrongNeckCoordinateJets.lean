@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.NeckLocalJetBounds
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderParametrizedJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckAmbientExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E₃ M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
-
 
 theorem exists_local_parametrization_jet_bound
     (a : M) (q₀ : UnitTwoSphere) (s₀ R : ℝ) (m : ℕ)

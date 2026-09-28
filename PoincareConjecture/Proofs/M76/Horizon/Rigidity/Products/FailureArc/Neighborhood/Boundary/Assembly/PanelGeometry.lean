@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.Assembly.PanelFamily
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Geometry Topology

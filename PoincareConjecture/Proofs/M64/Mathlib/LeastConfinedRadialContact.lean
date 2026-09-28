@@ -2,20 +2,12 @@ import PoincareConjecture.Proofs.M64.Mathlib.CompactDistinctLiftFibers
 import PoincareConjecture.Proofs.M64.Mathlib.CompactRadialConfinement
 import PoincareConjecture.Proofs.M64.Mathlib.RadialEndpointUniqueness
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_least_noncanonical_confined_ray
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
@@ -53,11 +45,6 @@ theorem m64_exists_least_noncanonical_confined_ray
   intro u hu w hw heq hne
   exact hmin (show (u, w) ∈ {p : ℝ × E | p.1 ∈ Icc 0 B ∧ p.2 ∈ C ∧
     e p.2 = e (p.1 • theta) ∧ p.2 ≠ p.1 • theta} from ⟨hu, hw, heq, hne⟩)
-
-
-
-
-
 
 theorem m64_least_confined_contact_has_only_endpoint_contacts
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import PoincareConjecture.Proofs.M58.Cor18_28_AreaRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Real Bundle
@@ -21,8 +12,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M58
 
-
-
 theorem exists_diskTimeProfile_derivative_bound :
     ∃ H : ℝ, 0 ≤ H ∧ ∀ r ∈ Icc (0 : ℝ) 1, |deriv diskTimeProfile r| ≤ H := by
   obtain ⟨H, hH⟩ := isCompact_Icc.exists_bound_of_continuousOn
@@ -31,8 +20,6 @@ theorem exists_diskTimeProfile_derivative_bound :
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem polar_contraction_area_density_le (g : RiemannianMetric 3 M)
     (C : ℝ × (M × M) → M) (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -71,8 +58,6 @@ theorem polar_contraction_area_density_le (g : RiemannianMetric 3 M)
       mul_le_mul (mul_le_mul hprofile htime (norm_nonneg _) hH)
         (hlast _) (norm_nonneg _) (mul_nonneg hH hA)
     _ = _ := by ring
-
-
 
 theorem contractionDiskMap_area_le (g : RiemannianMetric 3 M)
     (C : ℝ × (M × M) → M) (p : M) (γ : C1FreeLoopSpace (M := M))

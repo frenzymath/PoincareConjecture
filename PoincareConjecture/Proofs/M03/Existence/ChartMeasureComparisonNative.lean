@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -47,7 +39,6 @@ theorem weightedChartMeasure_lower (e : OpenPartialHomeomorph M ModelE) (φ : C(
   have h := Measure.map_mono_of_aemeasurable
     (weightedSourceMeasure_lower e φ hA hAt hbound) (chartInverse_aemeasurable e φ)
   simpa only [Measure.map_smul, weightedChartMeasure] using h
-
 
 theorem exists_local_weightedChartMeasure_lower (e : OpenPartialHomeomorph M ModelE)
     (φ : C(M, ℝ)) {x : M} (hx : x ∈ e.source) (hpos : 0 < φ x) :

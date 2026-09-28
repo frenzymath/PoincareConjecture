@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Terminal.Neck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.LimitScalar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -21,8 +14,6 @@ namespace PoincareConjecture.AncientPointedGeometricConvergence
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.secondCountable
   RicciFlow.smallCarrier RicciFlow.smallChartedSpace RicciFlow.smallIsManifold
-
-
 
 theorem exists_ancient_terminal_epsilonNeck_threshold
     (hC : RicciFlowCurvatureTheory.{u}) {ε : ℝ} (hε : 0 < ε) (hεhalf : ε < 1 / 2) :

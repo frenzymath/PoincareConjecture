@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.StripAnnulusChart
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularTraceChart
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularArcGradient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,11 +19,6 @@ open M65Branch M65StrictTrace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M] [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem annulus_strip_boundary_coordinate_c2 (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (x : ℝ) (upper : Bool)

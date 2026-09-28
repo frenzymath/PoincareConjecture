@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M51.EpochStage
 import PoincareConjecture.Proofs.M51.HorizonCount
 import PoincareConjecture.Proofs.M48.ExtensionMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,14 +19,11 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {N : RepairedNoncollapseInductionData S} {C : RepairedCanonicalInductionData S N}
   {n : ℕ} {F : SurgeryFlowData.{u}} (X : EpochStage S N C n F)
 
-
 theorem initial_volume_eq (H13 : GeneralizedParabolicRescalingTheory.{u} 3) :
     calibratedMetricVolume (X.extension.extended.metric 0) univ =
       calibratedMetricVolume (F.metric 0) univ := by
   simpa only [preimage_univ] using
     ((X.extension.metric_calculus H13 0 F.zero_mem).m48_volume_eq univ).symm
-
-
 
 theorem observedVolumeControls (H13 : GeneralizedParabolicRescalingTheory.{u} 3) :
     RepairedObservedVolumeControls X.extension.extended X.observation where
@@ -47,9 +36,6 @@ theorem observedVolumeControls (H13 : GeneralizedParabolicRescalingTheory.{u} 3)
   zero_cap_discard := X.extension.extended.zeroCapDiscard H13
 
 end EpochStage
-
-
-
 
 theorem uniformEpochEventCount
     (S : RepairedControlledSchedulesData.{u})

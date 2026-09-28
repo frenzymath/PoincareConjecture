@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceM
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 import PoincareConjecture.Proofs.M15.Lemma8_7_CylinderCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem compatibleCylinder_range_mem_nhdsWithin_timeDomain
     {n : ℕ} {X : Type u} [TopologicalSpace X]

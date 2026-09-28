@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportingFrame
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.LocalSides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem IsSimplePolygon.exists_supporting_vertex_away_edge {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.InteriorCapture
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +35,6 @@ private theorem reversed_inner_slab (N : EpsilonNeck g) :
   simp only [reversed_carrier, reversed_epsilon, reversed_coordinate_inverse]
   constructor <;> rintro ⟨hx, h₁, h₂⟩ <;> refine ⟨hx, ?_, ?_⟩ <;> linarith
 
-
-
 theorem negative_quarter_subset_frontier_neck_inner_slab
     (N N' : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)
     (heq : N'.epsilon = N.epsilon)
@@ -65,7 +48,6 @@ theorem negative_quarter_subset_frontier_neck_inner_slab
   simpa only [reversed_region, reversed_epsilon, neg_div] using h'
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem overlap_subset_inner_slabs_of_quarter_capture (N N' : EpsilonNeck g)
     (hwithin : N.carrier ∩ N'.carrier ⊆
@@ -103,7 +85,6 @@ private theorem mem_inner_slab_or_quarter (N : EpsilonNeck g) {x : M}
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
 
-
 theorem union_subset_inner_slabs_union_outer_quarters (N N' : EpsilonNeck g)
     (hpos : N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹ ⊆ N'.carrier)
     (hneg : N'.region (-N'.epsilon⁻¹) (-N'.epsilon⁻¹ / 2) ⊆ N.carrier)
@@ -135,7 +116,6 @@ namespace BalancedNeckChain
 variable {ε : ℝ} (C : BalancedNeckChain g ε)
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem mem_inner_slab_or_missing_neighbor_quarter
     (hcapture : ∀ i ∈ C.shape.active, i + 1 ∈ C.shape.active →
@@ -173,7 +153,6 @@ theorem mem_inner_slab_or_missing_neighbor_quarter
     · exact Or.inr (Or.inr ⟨hnext, hpositive⟩)
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem carrier_subset_iUnion_inner_slabs_of_neighbors
     (hcapture : ∀ i ∈ C.shape.active, i + 1 ∈ C.shape.active →

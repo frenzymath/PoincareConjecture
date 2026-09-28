@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.Bac
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.MixedBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,18 +26,12 @@ variable {epsilon C A : ℝ}
   {q : G.limitCarrier.carrier} {a : ℝ}
   (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 
-
-
 def testSet : Set (EuclideanSpace ℝ (Fin 3)) := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
   exact closedBall (extChartAt (𝓡 3) q q) D.radius
 
-
-
 theorem testSet_compact : IsCompact D.testSet := isCompact_closedBall _ _
-
-
 
 theorem testSet_subset_domain : D.testSet ⊆ D.domain :=
   closedBall_subset_ball (by linarith [D.radius_pos])
@@ -55,8 +39,6 @@ theorem testSet_subset_domain : D.testSet ⊆ D.domain :=
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem terminal_jet_bounds (m : ℕ) :
     ∃ B : ℝ, 0 ≤ B ∧ ∀ᶠ k in atTop, ∀ x ∈ D.testSet,
@@ -77,8 +59,6 @@ theorem terminal_jet_bounds (m : ℕ) :
   exact hk x hx
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem terminal_ellipticity :
     ∃ alpha beta : ℝ, 0 < alpha ∧ 0 < beta ∧ ∀ᶠ k in atTop, ∀ x ∈ D.testSet,
@@ -102,8 +82,6 @@ theorem terminal_ellipticity :
 
 set_option maxHeartbeats 1600000 in
 
-
-
 theorem evolving_ellipticity {K : ℝ} (hK : 0 ≤ K)
     (hcurv : ∀ k t, t ∈ Icc (-(a / 8)) 0 → ∀ x : strongNeckOpen (D.neck k),
       ((D.sourceFlow k).connection t).curvatureTensorNorm x ≤ K) :
@@ -125,9 +103,6 @@ theorem evolving_ellipticity {K : ℝ} (hK : 0 ≤ K)
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem mixed_jet_bounds {K : ℝ} (hK : 0 ≤ K)
     (hcurv : ∀ k t, t ∈ Icc (-(a / 8)) 0 → ∀ x : strongNeckOpen (D.neck k),

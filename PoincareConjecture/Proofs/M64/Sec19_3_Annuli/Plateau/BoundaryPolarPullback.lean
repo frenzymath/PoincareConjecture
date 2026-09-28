@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryPolarEnergy
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M64
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem boundaryPolarStrip_integrable
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -63,9 +51,6 @@ theorem boundaryPolarStrip_integrable
   change IntegrableOn (fun p => (J p)⁻¹ • (J p • F (P p))) S at hi
   rwa [heq] at hi
 
-
-
-
 theorem boundaryPolarStrip_memLp_two
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (x : ℝ) {rho : ℝ} (hrho : 0 < rho) {F : LoopPlane → E}
@@ -78,9 +63,6 @@ theorem boundaryPolarStrip_memLp_two
   have hi := boundaryPolarStrip_integrable x hrho (hF.integrable (by norm_num))
   apply (memLp_two_iff_integrable_sq_norm hi.aestronglyMeasurable).mpr
   exact boundaryPolarStrip_integrable x hrho hF.norm.integrable_sq
-
-
-
 
 theorem boundaryPolarStrip_ae (x : ℝ) {rho : ℝ} (hrho : 0 < rho)
     {q : LoopPlane → Prop} (hq : ∀ᵐ p ∂volume.restrict (upperBoundaryShell x rho), q p) :

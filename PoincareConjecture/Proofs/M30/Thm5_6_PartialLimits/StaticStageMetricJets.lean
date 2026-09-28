@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +19,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k} {A : ℝ}
   (G : PartialPointedMetricConvergence g p A)
-
-
-
-
 
 theorem tendstoUniformlyOn_static_stage_metric_jets (j N : ℕ) :
     let Y : TopologicalSpace.Opens G.limitCarrier.carrier :=

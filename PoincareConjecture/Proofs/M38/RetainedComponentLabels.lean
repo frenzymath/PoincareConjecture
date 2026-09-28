@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RetainedAnnuli
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,21 +14,16 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
 def retainedPatch : Option (Fin (F.event T hT).cap_count) →
     TopologicalSpace.Opens (F.slice T).carrier
   | none => eventCapComplementOpen F T hT
   | some i => ⟨(P i).ball.map '' Metric.ball 0 2, (P i).ball_patch_open⟩
-
-
 
 noncomputable def retainedPatchLabel (j : Option (Fin (F.event T hT).cap_count)) :
     C(retainedPatch F T hT P j, ConnectedComponents (eventCapComplementOpen F T hT)) :=
   match j with
   | none => ⟨ConnectedComponents.mk, ConnectedComponents.continuous_coe⟩
   | some i => ContinuousMap.const _ (ConnectedComponents.mk (P i).retainedAnnularPoint)
-
-
 
 theorem retainedPatchLabel_on_complement (j : Option (Fin (F.event T hT).cap_count))
     (x : (F.slice T).carrier) (hxj : x ∈ retainedPatch F T hT P j)
@@ -45,8 +32,6 @@ theorem retainedPatchLabel_on_complement (j : Option (Fin (F.event T hT).cap_cou
   cases j with
   | none => rfl
   | some i => exact ((P i).retained_annulus_component_eq ⟨x, hx⟩ hxj).symm
-
-
 
 theorem retained_ball_overlap (i j : Fin (F.event T hT).cap_count) (hij : i ≠ j)
     (x : (F.slice T).carrier)
@@ -65,7 +50,6 @@ theorem retained_ball_overlap (i j : Fin (F.event T hT).cap_count) (hij : i ≠ 
     exact ⟨z, by simpa only [Metric.mem_closedBall, dist_zero_right] using hle, rfl⟩
   exact Set.disjoint_left.mp ((F.event T hT).cap_disjoint i j hij)
     (hcap i hxi) (hcap j hxj)
-
 
 theorem retainedPatchLabel_agree (j k : Option (Fin (F.event T hT).cap_count))
     (x : (F.slice T).carrier) (hxj : x ∈ retainedPatch F T hT P j)
@@ -86,8 +70,6 @@ theorem retainedPatchLabel_agree (j k : Option (Fin (F.event T hT).cap_count))
               rfl
             · exact (hx (retained_ball_overlap F T hT P i j hij x hxj hxk)).elim
 
-
-
 theorem retainedPatch_cover (x : (F.slice T).carrier) :
     ∃ j, (retainedPatch F T hT P j : Set (F.slice T).carrier) ∈ 𝓝 x := by
   by_cases hx : x ∈ eventCapComplementOpen F T hT
@@ -101,14 +83,11 @@ theorem retainedPatch_cover (x : (F.slice T).carrier) :
     refine ⟨some i, (P i).ball_patch_open.mem_nhds ?_⟩
     exact ⟨z, Metric.closedBall_subset_ball (by norm_num : (1 : ℝ) < 2) hz, rfl⟩
 
-
 noncomputable def postRetainedComponentLabel :
     C((F.slice T).carrier, ConnectedComponents (eventCapComplementOpen F T hT)) :=
   ContinuousMap.liftCover (fun j => retainedPatch F T hT P j)
     (retainedPatchLabel F T hT P) (retainedPatchLabel_agree F T hT P)
     (retainedPatch_cover F T hT P)
-
-
 
 theorem postRetainedComponentLabel_old (x : eventCapComplementOpen F T hT) :
     postRetainedComponentLabel F T hT P x.val = ConnectedComponents.mk x :=
@@ -118,8 +97,6 @@ theorem postRetainedComponentLabel_old (x : eventCapComplementOpen F T hT) :
     (φ := retainedPatchLabel F T hT P)
     (hφ := retainedPatchLabel_agree F T hT P) (hS := retainedPatch_cover F T hT P)
     (i := (none : Option (Fin (F.event T hT).cap_count))) x
-
-
 
 theorem postRetainedComponentLabel_cap (i : Fin (F.event T hT).cap_count)
     (x : (F.slice T).carrier) (hx : x ∈ (P i).ball.map '' Metric.ball 0 2) :

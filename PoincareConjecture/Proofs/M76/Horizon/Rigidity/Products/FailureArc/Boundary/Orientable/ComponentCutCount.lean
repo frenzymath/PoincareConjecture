@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.Orientable.CommonCutCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.Euler.CollarCutCount
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -15,7 +13,6 @@ namespace Geometry.OriginalPLTower
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
 
 variable {X ι : Type} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {g : (V1 × V2) → X}
@@ -79,4 +76,3 @@ theorem MarkedBoundaryPair.common_component_cut_surfaceEulerCount_generic
     P.derived_collars_disjoint_generic c hc B hB hBdis gamma hgamma
 
 end Geometry.OriginalPLTower
-

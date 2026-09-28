@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InwardBandChain
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -33,10 +21,6 @@ private theorem transverse_inner (u w : AnnulusCoordinates) :
   simp [EuclideanSpace.inner_eq_star_dotProduct, dotProduct, Fin.sum_univ_two,
     hu.1, hu.2, hw.1, hw.2]
   ring
-
-
-
-
 
 theorem m64Intrinsic_graph_transverse_direction
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)
@@ -82,10 +66,6 @@ theorem m64Intrinsic_graph_transverse_direction
     rw [hvector, real_inner_smul_right] at hsep
     exact (mul_pos_iff_of_pos_left hd).mp hsep
 
-
-
-
-
 theorem m64Intrinsic_exists_arc_transverse_graph
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)
     {a b : ℝ} (hab : a < b) {v : AnnulusCoordinates}
@@ -122,10 +102,6 @@ theorem m64Intrinsic_exists_arc_transverse_graph
   exact exists_transverseGraphCuts G.open_target hf G.open_target hf
     (hmonoG ha hb hab) (G.map_source ha) (G.map_source hb)
     (htrans a (left_mem_Icc.mpr hab.le)).1 (htrans b (right_mem_Icc.mpr hab.le)).1
-
-
-
-
 
 theorem m64Intrinsic_exists_arc_transverse_cut_subdivision
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

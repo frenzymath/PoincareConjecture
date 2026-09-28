@@ -4,11 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Conne
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.Riesz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.Smoothness
 import Mathlib.Geometry.Manifold.VectorBundle.Tensoriality
-
-
-
-
-
-
-
-

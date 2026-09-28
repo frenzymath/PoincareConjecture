@@ -1,24 +1,12 @@
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ENNReal
 
 namespace Poincare
-
-
 
 theorem minimizing_prefix_le_average_of_shortcut
     {X : Type*} [PseudoEMetricSpace X] {γ : ℝ → X} {p q : X}

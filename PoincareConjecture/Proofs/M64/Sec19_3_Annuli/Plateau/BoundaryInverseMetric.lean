@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalChart
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetMetric
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,16 +13,8 @@ namespace PoincareConjecture
 variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
-
 def m64BoundaryMetricInverse (G : E →L[ℝ] E →L[ℝ] ℝ) : E →L[ℝ] E :=
   Ring.inverse (InnerProductSpace.continuousLinearMapOfBilin G)
-
-
-
-
 
 theorem m64BoundaryMetricInverse_smooth {U : Set E}
     {G : E → E →L[ℝ] E →L[ℝ] ℝ} (hG : ContDiffOn ℝ ∞ G U)
@@ -44,10 +25,6 @@ theorem m64BoundaryMetricInverse_smooth {U : Set E}
     exact contDiffOn_const.clm_comp hG
   · exact fun x hx => ReducedLengthMinimum.Variational.positive_form_operator_isUnit
       (G x) (hpos x hx)
-
-
-
-
 
 theorem m64BoundaryMetricInverse_pairing
     (G : E →L[ℝ] E →L[ℝ] ℝ) (hpos : ∀ v : E, v ≠ 0 → 0 < G v v)
@@ -63,10 +40,6 @@ theorem m64BoundaryMetricInverse_pairing
       (InnerProductSpace.continuousLinearMapOfBilin_apply G _ _).symm
     _ = inner ℝ w v := by rw [hinv]
     _ = inner ℝ v w := real_inner_comm _ _
-
-
-
-
 
 theorem m64BoundaryMetricInverse_tangent_column
     (G : EuclideanSpace ℝ (Fin (n + 1)) →L[ℝ]

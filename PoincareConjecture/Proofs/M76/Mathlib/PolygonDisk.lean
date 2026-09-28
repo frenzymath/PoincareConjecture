@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Polygon
-
-
-
-
 
 theorem isUnitBallPair_closed_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
@@ -27,19 +14,12 @@ theorem isUnitBallPair_closed_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3)
     P.isFinitePLBallPair_closed_inside hP hinj
   exact (isUnitBallPair_of_compact_convex hC hcv hne).of_homeomorph hb e hboundary
 
-
-
-
-
 theorem exists_closed_inside_homeomorph_closedBall {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
     ∃ e : closure P.inside ≃ₜ closedBall (0 : ℝ × ℝ) 1,
       ∀ x : closure P.inside, (x : ℝ × ℝ) ∈ P.boundary ℝ ↔
         (e x : ℝ × ℝ) ∈ sphere (0 : ℝ × ℝ) 1 :=
   (P.isUnitBallPair_closed_inside hP hinj).2
-
-
-
 
 theorem exists_closed_inside_extension {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))

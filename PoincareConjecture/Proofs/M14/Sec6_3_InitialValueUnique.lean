@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_EulerUnique
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ σ : ℝ} {x y z : G.Point} {Z : G.Horizontal x}
 
 include hM04 hM12
-
-
-
 
 theorem initialValuePath_square_eqOn
     (P : M14SquareRootInitialValuePath G T τ x y Z)
@@ -54,9 +42,6 @@ theorem initialValuePath_square_eqOn
   intro s hs
   exact (hsame s (by simpa only [M14SqrtParameterInterval, Real.sqrt_zero] using hs)).1
 
-
-
-
 theorem initialValuePath_curve_eqOn
     (P : M14SquareRootInitialValuePath G T τ x y Z)
     (Q : M14SquareRootInitialValuePath G T σ x z Z) :
@@ -70,8 +55,6 @@ theorem initialValuePath_curve_eqOn
     ⟨hs.1, hs.2.trans (Real.sqrt_le_sqrt (min_le_right τ σ))⟩
   rw [Real.sq_sqrt ht.1] at hp hq
   exact hp.symm.trans ((initialValuePath_square_eqOn hM04 hM12 P Q hs).trans hq)
-
-
 
 theorem initialValuePath_endpoint_eq
     (P : M14SquareRootInitialValuePath G T τ x y Z)

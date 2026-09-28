@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.NormalModel
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

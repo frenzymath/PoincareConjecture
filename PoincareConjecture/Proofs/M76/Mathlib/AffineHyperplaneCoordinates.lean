@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace AffineMap
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_zeroLevel_coordinates (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ F + 1) :

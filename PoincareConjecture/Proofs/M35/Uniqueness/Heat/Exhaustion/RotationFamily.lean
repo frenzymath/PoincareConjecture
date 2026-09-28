@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.RotationMaximum
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.UniformInitialTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

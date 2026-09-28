@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.V
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.CylinderGluing
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
 
 theorem exists_axial_expansion (a : ℝ) {δ d : ℝ} (hδ : 0 < δ) (hd : 0 ≤ d) :
     ∃ D : Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞,
@@ -65,8 +56,6 @@ theorem exists_axial_expansion (a : ℝ) {δ d : ℝ} (hδ : 0 < δ) (hd : 0 ≤
   refine ⟨D, hD, ?_⟩
   intro q s t hst
   simpa only [hD] using hkmono hst
-
-
 
 theorem exists_supported_axial_shift {l b c r : ℝ}
     (hlb : l < b) (hbc : b < c) (hcr : c < r) :

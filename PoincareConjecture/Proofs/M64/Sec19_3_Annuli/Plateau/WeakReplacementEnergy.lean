@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusReplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem m64Observed_energyDensity_integrable
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q)
@@ -52,9 +38,6 @@ theorem m64Observed_energyDensity_integrable
     have hmul := mul_le_mul_of_nonneg_right (hb (f p)) (sq_nonneg ‖V i p‖)
     nlinarith
   exact ((hi 0).add (hi 1)).div_const 2
-
-
-
 
 theorem m64WeakAnnulusReplacement_energy
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
@@ -82,8 +65,6 @@ theorem m64WeakAnnulusReplacement_energy
   rw [integral_congr_ae heq]
   exact m64Integral_piecewise_of_subset hK hKS
     (m64Observed_energyDensity_integrable Q hQ hb f hf V hV) (A.energy_integrable Q hQ hei hb)
-
-
 
 theorem M64ObservedWeakAnnulus.local_energy_le_of_matching_flux
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.SharedCutRegions
 import PoincareConjecture.Proofs.M38.SharedCutLocalModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ noncomputable local instance sharedSmoothChartedSpace
     (U : Set (Fin (F.event T hT).cap_count)) :
     ChartedSpace StandardCapSpace (PartialCappedSpace F T hT P U) :=
   partialCappedChartedSpace F T hT P U
-
 
 theorem sharedCutPatch_localDiffeomorph (j : SharedCutIndex F T hT P S R) :
     letI : Nonempty (sharedCutDomain F T hT P S R hSR j) :=
@@ -61,7 +52,6 @@ theorem sharedCutPatch_localDiffeomorph (j : SharedCutIndex F T hT P S R) :
         (hi.comp (𝓡 3) (PartialCappedSpace F T hT P S) ho)
   | inr a =>
       exact partialCappingInclude_localDiffeomorph F T hT P S (.inr a)
-
 
 theorem sharedCutComparison_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (sharedCutComparison F T hT P S R hSR) := by

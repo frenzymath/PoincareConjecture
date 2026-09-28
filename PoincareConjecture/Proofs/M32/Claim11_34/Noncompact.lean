@@ -4,23 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.Sequence
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +17,6 @@ namespace PoincareConjecture.M32
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
 
-
-
 theorem blowup_exists_exhaustion_superset
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J)
@@ -44,8 +25,6 @@ theorem blowup_exists_exhaustion_superset
   hK.elim_directed_cover G.exhaustion.space G.exhaustion.space_open
     (fun x _ => G.exhaustion.space_covers.symm ▸ mem_univ x)
     G.exhaustion.space_increasing.directed_le
-
-
 
 theorem horn_isPreconnected_carrier
     {F : GeneralizedRicciFlowData.{u}} {T accuracy : ℝ}
@@ -62,8 +41,6 @@ theorem horn_isPreconnected_carrier
       (Subtype.val : horn.carrier → (E.extended.slice T).carrier)
       continuous_subtype_val.continuousOn
 
-
-
 theorem horn_carrier_not_subset_compact
     {F : GeneralizedRicciFlowData.{u}} {T accuracy : ℝ}
     {E : GeneralizedFlowExtension F T} (horn : StrongHorn E accuracy)
@@ -75,9 +52,6 @@ theorem horn_carrier_not_subset_compact
   apply hsub
   have hmem := (horn.coordinate (s, ⟨t, ht0.le, ht1⟩)).property
   rwa [horn.coordinate_eq] at hmem
-
-
-
 
 theorem blowupLimit_not_isCompact_of_source_regions
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -126,8 +100,6 @@ theorem blowupLimit_not_isCompact_of_source_regions
   have hmeet : (U j ∩ f '' univ).Nonempty :=
     ⟨(S.base (G.subsequence j)).2, hbase j, G.limit.base, mem_univ _, hfbase⟩
   exact hescape j (f '' univ) hK ((hU j).subset_isClopen ⟨hK.isClosed, hfo⟩ hmeet)
-
-
 
 theorem terminalBlowupSequence_limit_not_isCompact
     {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

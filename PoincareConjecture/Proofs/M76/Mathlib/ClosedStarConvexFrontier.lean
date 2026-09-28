@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialComplexFrontierChart
 import PoincareConjecture.Proofs.M76.Mathlib.TruncatedStarConeCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -21,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem radial_frontier_section_eq_closedStar_inter
     (K : SimplicialComplex ℝ E) {C : Set E}
@@ -64,9 +49,6 @@ theorem radial_frontier_section_eq_closedStar_inter
 
 variable [FiniteDimensional ℝ E]
 
-
-
-
 theorem exists_finitePL_link_convex_frontier_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)
@@ -80,10 +62,6 @@ theorem exists_finitePL_link_convex_frontier_chart
     (K.injOn_normalize_link) hC hcv hzero L hL hrep
   have heq := K.radial_frontier_section_eq_closedStar_inter hC.isClosed hcv hzero hdisj
   exact ⟨e.trans (Homeomorph.setCongr heq), he.setCongr rfl heq⟩
-
-
-
-
 
 theorem exists_polygon_closedStar_convex_frontier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

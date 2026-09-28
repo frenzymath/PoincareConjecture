@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactMaximumPrinciple
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Extrema
 import Mathlib.Algebra.Field.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Parabolic
-
-
-
 
 theorem periodic_nonpos_of_deriv_le_mul_at_localMax
     {F V : ℝ → ℝ → ℝ} {p K a b : ℝ} (hp : 0 < p) (hab : a < b)
@@ -51,10 +37,6 @@ theorem periodic_nonpos_of_deriv_le_mul_at_localMax
   rw [hxy]
   exact hcompact ⟨y, Ico_subset_Icc_self hy⟩ t ht
 
-
-
-
-
 theorem periodic_nonpos_of_parabolic_le
     {F V A B C : ℝ → ℝ → ℝ} {p K a b : ℝ} (hp : 0 < p) (hab : a < b)
     (hF : ContinuousOn (Function.uncurry F) (univ ×ˢ Icc a b))
@@ -81,9 +63,6 @@ theorem periodic_nonpos_of_parabolic_le
   have h := hpde x t ht
   rw [hfirst, mul_zero, add_zero] at h
   linarith
-
-
-
 
 theorem periodic_le_of_parabolic_le_barrier
     {F V A B : ℝ → ℝ → ℝ} {H H' D : ℝ → ℝ} {p K a b : ℝ}
@@ -115,9 +94,6 @@ theorem periodic_le_of_parabolic_le_barrier
     (fun x => sub_nonpos.mpr (hinit x))
   intro x t ht
   exact sub_nonpos.mp (hzero x t ht)
-
-
-
 
 theorem periodic_le_affine_mul_exp
     {F V A B : ℝ → ℝ → ℝ} {p K d R a b : ℝ}
@@ -152,10 +128,6 @@ theorem periodic_le_affine_mul_exp
     have h := Real.one_le_exp_iff.mpr (mul_nonneg hK (sub_nonneg.mpr ht.1.le))
     nlinarith
   · simpa using hinit
-
-
-
-
 
 theorem periodic_exp_le_of_parabolic_ge
     {F V A B C : ℝ → ℝ → ℝ} {p K L m a b : ℝ}
@@ -199,9 +171,6 @@ theorem periodic_exp_le_of_parabolic_ge
   intro x t ht
   exact sub_nonpos.mp (hzero x t ht)
 
-
-
-
 theorem weighted_deriv_eq
     {f w : ℝ → ℝ} {x : ℝ} (hw : DifferentiableAt ℝ w x)
     (hf' : DifferentiableAt ℝ (deriv f) x) :
@@ -210,10 +179,6 @@ theorem weighted_deriv_eq
   change w x * deriv (w * deriv f) x = _
   rw [deriv_mul hw hf']
   ring
-
-
-
-
 
 theorem weighted_deriv_nonpos_of_isLocalMax
     {f w : ℝ → ℝ} {x : ℝ} (hmax : IsLocalMax f x)
@@ -224,9 +189,6 @@ theorem weighted_deriv_nonpos_of_isLocalMax
   rw [deriv_mul hw hf', hmax.deriv_eq_zero, mul_zero, zero_add, ← mul_assoc]
   exact mul_nonpos_of_nonneg_of_nonpos (mul_self_nonneg _) <|
     PoincareConjecture.LeviCivitaData.deriv_deriv_nonpos_of_isLocalMax hmax hf
-
-
-
 
 theorem periodic_le_affine_mul_exp_of_weighted_parabolic_le
     {F V w B : ℝ → ℝ → ℝ} {p K d R a b : ℝ}
@@ -250,9 +212,6 @@ theorem periodic_le_affine_mul_exp_of_weighted_parabolic_le
   have h := hpde x t ht
   rw [weighted_deriv_eq (hw x t ht) (hspace x t ht)] at h
   nlinarith
-
-
-
 
 theorem periodic_exp_le_of_weighted_parabolic_ge
     {F V w B C : ℝ → ℝ → ℝ} {p K L m a b : ℝ}

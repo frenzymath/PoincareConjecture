@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Centered
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.CenteredScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +8,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.CylinderGluing
-
 
 theorem exists_cylinder_collar (U : Opens RoundCylinderSpace)
     (hzero : ∀ q : UnitTwoSphere, (q, (0 : ℝ)) ∈ U) :
@@ -44,8 +31,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem exists_affine_neck_coordinates
     (f : UnitTwoSphere → ℝ) (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)

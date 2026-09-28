@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorBundle.Tangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem contMDiff_modelTangentMk
     {𝕜 E H : Type*} [NontriviallyNormedField 𝕜]

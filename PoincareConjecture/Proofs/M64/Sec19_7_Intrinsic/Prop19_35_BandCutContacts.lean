@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandBoundaryGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +15,6 @@ section Band
 variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
-
 
 theorem m64Intrinsic_band_endpoint_mem_lower_iff (right : Bool)
     {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) :
@@ -53,10 +39,6 @@ theorem m64Intrinsic_band_endpoint_mem_lower_iff (right : Bool)
   · rintro rfl
     exact ⟨e, he, by simp only [zero_mul]⟩
 
-
-
-
-
 theorem m64Intrinsic_band_positive_endpoint_subset_region (right : Bool)
     {U : Set AnnulusCoordinates} (hregion : B.carrier \ B.lowerArc ⊆ U) :
     (B.endpointEdge right).map '' Ioc (0 : ℝ) 1 ⊆ U := by
@@ -67,10 +49,6 @@ theorem m64Intrinsic_band_positive_endpoint_subset_region (right : Bool)
   intro h
   exact ht.1.ne' ((m64Intrinsic_band_endpoint_mem_lower_iff B right
     (Ioc_subset_Icc_self ht)).mp h)
-
-
-
-
 
 theorem m64Intrinsic_band_cut_contact_subset_base (right : Bool)
     {U K : Set AnnulusCoordinates} (hregion : B.carrier \ B.lowerArc ⊆ U)
@@ -94,10 +72,6 @@ variable (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
     (collarParameterEquiv.trans L).toHomeomorph.toOpenPartialHomeomorph
     lo a b ua wa ub wb ra rb)
 
-
-
-
-
 theorem m64Intrinsic_band_left_endpoint_zero :
     (B.endpointEdge false).map 0 = L (a, lo a) := by
   rw [B.endpointEdge_map]
@@ -105,10 +79,6 @@ theorem m64Intrinsic_band_left_endpoint_zero :
   rw [zero_mul]
   have h := m64Intrinsic_band_left_parameter L B B.cuts.left.zero_mem_source
   simpa only [B.cuts.left.parameter_zero, zero_smul, add_zero] using h
-
-
-
-
 
 theorem m64Intrinsic_band_right_endpoint_zero :
     (B.endpointEdge true).map 0 = L (b, lo b) := by

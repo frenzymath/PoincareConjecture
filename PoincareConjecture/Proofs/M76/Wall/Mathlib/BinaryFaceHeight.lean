@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryFaceCenters
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,9 +29,6 @@ private theorem binaryFaceCenter_value (hf : K.AffineOnFaces f)
   intro v hv
   rw [ha (subset_convexHull ℝ _ hv)]
 
-
-
-
 theorem AffineOnFaces.binaryFaceCenter_const (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) (A : Set E) (b : ℝ)
     (hb : ∀ v ∈ s, f v = b) : f (s.binaryFaceCenter A) = b := by
@@ -50,9 +38,6 @@ theorem AffineOnFaces.binaryFaceCenter_const (hf : K.AffineOnFaces f)
       Finset.sum_congr rfl (fun v hv => congrArg (s.binaryFaceWeights A v * ·) (hb v hv))
     _ = b := by
       rw [← Finset.sum_mul, s.sum_binaryFaceWeights (K.nonempty_of_mem_faces hs) A, one_mul]
-
-
-
 
 theorem AffineOnFaces.binaryFaceCenter_mixed (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) (A : Set E) :
@@ -82,9 +67,6 @@ theorem AffineOnFaces.binaryFaceCenter_mixed (hf : K.AffineOnFaces f)
         _ = (1 / 2 : ℝ) * (((s.filter (fun x => x ∈ A)).card : ℝ) *
             ((s.filter (fun x => x ∈ A)).card : ℝ)⁻¹) := by ring
         _ = (1 / 2 : ℝ) := by rw [mul_inv_cancel₀ hp, mul_one]
-
-
-
 
 theorem exists_binary_face_height [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (A : Set E) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 import Mathlib.Topology.Algebra.Indicator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_locallyPL_supported_graph_extension {Q U : Set E}
     (hQ : IsCompact Q) (hU : IsOpen U) (hQU : Q ⊆ U) :

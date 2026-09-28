@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.ClosedIntervalGronwall
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.SpatialEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,16 +14,12 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, TopologicalSpace (Mfamily k)] [∀ k, ChartedSpace StandardCapSpace (Mfamily k)]
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)] (A : MetricFlowApproximation ginit Mfamily)
 
-
-
 noncomputable def interiorFlow (k : ℕ) : RicciFlow 3 (Mfamily k) (Ioo 0 A.time) := by
   have hne : (Ioo 0 A.time).Nontrivial := by
     refine ⟨A.time / 3, ⟨?_, ?_⟩, 2 * A.time / 3, ⟨?_, ?_⟩, ?_⟩ <;>
       linarith [A.time_pos]
   exact Poincare.Geometry.RicciFlow.Harnack.restrictFlow (A.flow k)
     Ioo_subset_Icc_self ordConnected_Ioo hne
-
-
 
 theorem spatialJet_norm_le_exp (k m : ℕ) {x : StandardCapSpace}
     (hx : x ∈ A.source k) {C : ℝ} (hC : 0 ≤ C)
@@ -54,7 +40,6 @@ theorem spatialJet_norm_le_exp (k m : ℕ) {x : StandardCapSpace}
   · exact ht
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_compact_spatialJet_bounds (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

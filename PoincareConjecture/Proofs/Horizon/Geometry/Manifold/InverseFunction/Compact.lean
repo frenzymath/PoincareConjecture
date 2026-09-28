@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 import Mathlib.Topology.Connected.Clopen
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Geometry.Manifold
-
-
 
 theorem surjective_of_compact_of_bijective_mfderiv
     {E F : Type*}

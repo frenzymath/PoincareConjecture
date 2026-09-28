@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationVeloci
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRegularity
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b : ℝ}
-
-
-
 
 theorem metric_pairing_contDiffOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ)))
@@ -50,9 +38,6 @@ theorem metric_pairing_contDiffOn (F : RicciFlow 3 M (Icc a b))
         ((F.metric w.2.2).inner (c w) (Y w) (Z w))) U z :=
     (hg z hz).clm_bundle_apply₂ (hY z hz) (hZ z hz)
   exact (Bundle.contMDiffWithinAt_totalSpace.mp hp).2
-
-
-
 
 theorem smul_field_contMDiffOn
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)
@@ -79,8 +64,6 @@ theorem smul_field_contMDiffOn
   simpa only [e.continuousLinearMapAt_apply_of_mem ℝ hw] using
     (e.continuousLinearMapAt ℝ (c w)).map_smul (v w) (Y w)
 
-
-
 theorem speed_contDiffOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)
     (hTime : ∀ z ∈ U, z.2.2 ∈ Icc a b)
@@ -92,9 +75,6 @@ theorem speed_contDiffOn (F : RicciFlow 3 M (Icc a b))
   have hX := angular_velocity_contMDiffOn c U hU hc
   exact (metric_pairing_contDiffOn F c U hTime hc _ _ hX hX).sqrt
     (fun z hz => ((F.metric z.2.2).pos _ _ (himm z hz)).ne')
-
-
-
 
 theorem unitTangent_contMDiffOn (F : RicciFlow 3 M (Icc a b))
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)

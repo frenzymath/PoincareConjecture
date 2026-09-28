@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ElementaryFields
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ForwardMinimalCompetitor
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimalAnnulusInterface
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,11 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
 
-
-
-
-
-
 structure M64MinimalAnnulusFamily
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
     (c0 c1 : ℝ → ℝ → P.charts.Point) (rate : ℝ → ℝ) where
@@ -47,9 +28,6 @@ structure M64MinimalAnnulusFamily
       ∃ B : M64Annulus (P.flow.metric (t + h))
           (fun x => c0 x (t + h)) (fun x => c1 x (t + h)),
         B.area ≤ m64FlowAnnulusArea P c0 c1 t + h * (rate t + eta)
-
-
-
 
 theorem m64AnnulusFlow_forward_of_minimal_family
     {circumference : ℝ} {P : M62.CircleProductData F circumference}
@@ -66,10 +44,6 @@ theorem m64AnnulusFlow_forward_of_minimal_family
   intro eta heta
   simpa only [hmin] using E.competitor t ht eta heta
 
-
-
-
-
 theorem m64AnnulusFlow_elementary_fields_of_minimal_family
     {circumference : ℝ} {P : M62.CircleProductData F circumference}
     {c0 c1 : ℝ → ℝ → P.charts.Point} {rate : ℝ → ℝ}
@@ -85,10 +59,6 @@ theorem m64AnnulusFlow_elementary_fields_of_minimal_family
   apply m64AnnulusFlow_elementary_fields
   intro t ht
   exact ⟨(E.data t ht).annulus⟩
-
-
-
-
 
 theorem m64AnnulusFlow_elementary_fields_of_minimal_data
     {circumference : ℝ} {P : M62.CircleProductData F circumference}

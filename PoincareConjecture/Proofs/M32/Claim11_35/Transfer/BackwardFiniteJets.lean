@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.Model
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.FiniteJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,11 +70,6 @@ private theorem backward_error_le_zero {t : ℝ} (ht : t ≤ 0)
   intro k _
   rw [backward_iterated_eq_zero (lt_of_le_of_lt ht zero_lt_one)]
   exact backward_center_norm_le_zero ht _ _ _
-
-
-
-
-
 
 theorem exists_backwardRoundCylinderJetErrorSquared_bound (R : ℝ) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (t : ℝ), t ∈ Icc (-1) 0 →

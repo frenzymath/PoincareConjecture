@@ -2,15 +2,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace Poincare
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_last_visit_of_isClosed {S : Set X} (hS : IsClosed S)
     {gamma : ℝ → X} {a b : ℝ} (hab : a ≤ b)
@@ -33,10 +21,6 @@ theorem exists_last_visit_of_isClosed {S : Set X} (hS : IsClosed S)
   refine ⟨t, ht.1, ht.2, ?_⟩
   intro u hu huS
   exact (not_lt_of_ge (hmax ⟨⟨ht.1.1.trans hu.1.le, hu.2⟩, huS⟩)) hu.1
-
-
-
-
 
 theorem exists_last_visit_component {S U : Set X} (hS : IsClosed S)
     {gamma : ℝ → X} {a b : ℝ} (hab : a ≤ b)

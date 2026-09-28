@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentReadout
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceLongRecent
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_5_OverlapCaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,8 +17,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem exists_source_standard_initial_neck_long_canonical_neighborhood
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

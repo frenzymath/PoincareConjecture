@@ -1,17 +1,5 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +7,6 @@ set_option warningAsError true
 open Set MeasureTheory
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Interval_local_flux {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {f g : ℝ → E} {P x r : ℝ} (hr : 0 ≤ r) (hx : 0 ≤ x - r) (hP : x + r ≤ P)

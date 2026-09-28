@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import PoincareConjecture.Proofs.M38.ThreeSphereConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M38
 section Lift
 
 variable (X : Type v) [TopologicalSpace X] [ChartedSpace StandardCapSpace X]
-
 
 @[instance_reducible]
 noncomputable def threeManifoldLiftChartedSpace :
@@ -39,7 +29,6 @@ noncomputable def threeManifoldLiftChartedSpace :
   chart_mem_atlas p := ⟨p.down, rfl⟩
 
 variable [IsManifold (𝓡 3) ∞ X]
-
 
 theorem threeManifold_lift_isManifold :
     letI : ChartedSpace StandardCapSpace (ULift.{u} X) := threeManifoldLiftChartedSpace X
@@ -58,14 +47,12 @@ theorem threeManifold_lift_isManifold :
 
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
 
-
 theorem threeManifold_down_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (ULift.down : ULift.{u} X → X) := by
   intro p
   apply contMDiffAt_iff_target.mpr
   refine ⟨continuous_uliftDown.continuousAt, ?_⟩
   exact contMDiffAt_extChartAt (I := 𝓡 3) (x := p)
-
 
 theorem threeManifold_up_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (ULift.up : X → ULift.{u} X) := by
@@ -81,7 +68,6 @@ attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isMa
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 noncomputable def sphereCarrier : GeneralizedSliceCarrier.{u} := by
   letI : MeasurableSpace (ULift.{u} UnitThreeSphere) := borel (ULift.{u} UnitThreeSphere)
   exact {
@@ -94,7 +80,6 @@ noncomputable def sphereCarrier : GeneralizedSliceCarrier.{u} := by
     t2Space := inferInstance
     t3Space := inferInstance
     secondCountable := Homeomorph.ulift.secondCountableTopology }
-
 
 noncomputable def euclideanCarrier : GeneralizedSliceCarrier.{u} := by
   letI : MeasurableSpace (ULift.{u} StandardCapSpace) := borel (ULift.{u} StandardCapSpace)
@@ -109,7 +94,6 @@ noncomputable def euclideanCarrier : GeneralizedSliceCarrier.{u} := by
     t3Space := inferInstance
     secondCountable := Homeomorph.ulift.secondCountableTopology }
 
-
 theorem threeSphereStereo_smooth (p : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (stereographic' 3 p) ({p}ᶜ : Set UnitThreeSphere) := by
   have hatlas : stereographic' 3 p ∈ atlas StandardCapSpace UnitThreeSphere := ⟨p, rfl⟩
@@ -117,15 +101,12 @@ theorem threeSphereStereo_smooth (p : UnitThreeSphere) :
     IsManifold.subset_maximalAtlas hatlas
   simpa only [stereographic'_source] using contMDiffOn_of_mem_maximalAtlas hmax
 
-
 noncomputable def spherePunctureMap (p x : sphereCarrier.{u}.carrier) :
     euclideanCarrier.{u}.carrier := ULift.up (stereographic' 3 p.down x.down)
-
 
 noncomputable def spherePunctureInverse (p : sphereCarrier.{u}.carrier)
     (y : euclideanCarrier.{u}.carrier) : sphereCarrier.{u}.carrier :=
   ULift.up (threeSphereStereoInverse p.down y.down)
-
 
 theorem spherePunctureInverse_ne (p : sphereCarrier.{u}.carrier)
     (y : euclideanCarrier.{u}.carrier) : spherePunctureInverse p y ≠ p := by
@@ -135,7 +116,6 @@ theorem spherePunctureInverse_ne (p : sphereCarrier.{u}.carrier)
     simpa only [stereographic'_source, Set.mem_compl_iff, Set.mem_singleton_iff] using hm
   intro heq
   exact hn (congrArg ULift.down heq)
-
 
 theorem spherePuncture_left_inverse (p : sphereCarrier.{u}.carrier) :
     Set.LeftInvOn (spherePunctureInverse p) (spherePunctureMap p)
@@ -147,7 +127,6 @@ theorem spherePuncture_left_inverse (p : sphereCarrier.{u}.carrier) :
   exact (stereographic' 3 p.down).left_inv (by
     simpa only [stereographic'_source, Set.mem_compl_iff, Set.mem_singleton_iff] using hn)
 
-
 theorem spherePuncture_right_inverse (p : sphereCarrier.{u}.carrier) :
     Set.LeftInvOn (spherePunctureMap p) (spherePunctureInverse p)
       (Set.univ : Set euclideanCarrier.{u}.carrier) := by
@@ -156,14 +135,12 @@ theorem spherePuncture_right_inverse (p : sphereCarrier.{u}.carrier) :
   change stereographic' 3 p.down (threeSphereStereoInverse p.down y.down) = y.down
   exact (stereographic' 3 p.down).right_inv (by simp)
 
-
 theorem spherePunctureMap_image (p : sphereCarrier.{u}.carrier) :
     spherePunctureMap p '' ({p}ᶜ : Set sphereCarrier.{u}.carrier) = Set.univ := by
   apply Set.Subset.antisymm (Set.subset_univ _)
   intro y hy
   exact ⟨spherePunctureInverse p y, spherePunctureInverse_ne p y,
     spherePuncture_right_inverse p hy⟩
-
 
 theorem spherePunctureInverse_image (p : sphereCarrier.{u}.carrier) :
     spherePunctureInverse p '' (Set.univ : Set euclideanCarrier.{u}.carrier) = {p}ᶜ := by
@@ -172,7 +149,6 @@ theorem spherePunctureInverse_image (p : sphereCarrier.{u}.carrier) :
     exact spherePunctureInverse_ne p y
   · intro x hx
     exact ⟨spherePunctureMap p x, Set.mem_univ _, spherePuncture_left_inverse p hx⟩
-
 
 theorem spherePunctureMap_smooth (p : sphereCarrier.{u}.carrier) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (spherePunctureMap p)
@@ -183,16 +159,11 @@ theorem spherePunctureMap_smooth (p : sphereCarrier.{u}.carrier) :
       {p}ᶜ {p.down}ᶜ from fun x hx heq => hx (ULift.ext _ _ heq))
   exact (threeManifold_up_contMDiff StandardCapSpace).comp_contMDiffOn hs
 
-
 theorem spherePunctureInverse_smooth (p : sphereCarrier.{u}.carrier) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (spherePunctureInverse p) :=
   (threeManifold_up_contMDiff UnitThreeSphere).comp
     ((threeSphereStereoLocalDiffeomorph p.down).contMDiff.comp
       (threeManifold_down_contMDiff StandardCapSpace))
-
-
-
-
 
 noncomputable def spherePunctureEquivalence (p : sphereCarrier.{u}.carrier) :
     SurgeryRegionEquivalence sphereCarrier.{u} euclideanCarrier.{u} {p}ᶜ Set.univ where
@@ -205,10 +176,8 @@ noncomputable def spherePunctureEquivalence (p : sphereCarrier.{u}.carrier) :
   map_smooth := spherePunctureMap_smooth p
   inverse_smooth := (spherePunctureInverse_smooth p).contMDiffOn
 
-
 theorem spherePunctureEquivalence_map (p x : sphereCarrier.{u}.carrier) :
     (spherePunctureEquivalence p).map x = ULift.up (stereographic' 3 p.down x.down) := rfl
-
 
 theorem spherePunctureEquivalence_inverse (p : sphereCarrier.{u}.carrier)
     (y : euclideanCarrier.{u}.carrier) :

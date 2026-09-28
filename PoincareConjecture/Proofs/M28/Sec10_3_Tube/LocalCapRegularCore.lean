@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.CoreClosur
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCapBoundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema.FiniteRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

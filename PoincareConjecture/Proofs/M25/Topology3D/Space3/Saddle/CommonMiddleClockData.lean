@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonRadialEvolution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff NNReal Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_saddle_common_middle_clock_data
     (e delta : ℝ) (he : 0 < e) (heSmall : e < 1 / 512)

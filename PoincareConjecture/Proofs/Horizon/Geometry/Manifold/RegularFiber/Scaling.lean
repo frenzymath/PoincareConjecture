@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.UniversalProperty
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
 set_option autoImplicit false
 open Set Function TopologicalSpace
 open scoped Manifold ContDiff Topology

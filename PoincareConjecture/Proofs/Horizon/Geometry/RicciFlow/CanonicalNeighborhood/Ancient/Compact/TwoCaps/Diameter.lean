@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def twoCapDiameterConstant (B : ℝ) : ℝ :=
   2 * B / B ^ (-1 / 2 : ℝ) + 1
@@ -39,7 +27,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] [ConnectedSpace M]
   {g : RiemannianMetric 3 M}
 
-
 theorem intersection_nonempty_of_cover (A B : CapCertificate g)
     (hcover : A.carrier ∪ B.carrier = univ) :
     (A.carrier ∩ B.carrier).Nonempty := by
@@ -52,7 +39,6 @@ theorem intersection_nonempty_of_cover (A B : CapCertificate g)
   exact ⟨z, hz⟩
 
 omit [ConnectedSpace M] in
-
 
 theorem curvature_scale_le_div (A : CapCertificate g) (D : LeviCivitaData g)
     {B : ℝ} (hB : 0 < B) (hconstant : A.cap_constant ≤ B)
@@ -75,8 +61,6 @@ theorem curvature_scale_le_div (A : CapCertificate g) (D : LeviCivitaData g)
   rw [Real.mul_rpow hB.le hzpos.le] at hpow
   apply (le_div_iff₀ (Real.rpow_pos_of_pos hB _)).mpr
   simpa only [mul_comm] using hpow
-
-
 
 theorem metricDiameter_lt_of_two_cap_cover (A B : CapCertificate g)
     (D : LeviCivitaData g) {C : ℝ} (hC : 0 < C)

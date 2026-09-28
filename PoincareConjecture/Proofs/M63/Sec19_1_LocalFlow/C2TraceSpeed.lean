@@ -4,16 +4,6 @@ import PoincareConjecture.Statements.Ch19.CurveEvolution
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -44,10 +34,6 @@ private theorem normalizationCoefficient_abs_le (hc : M62ShrinkingCurve F c)
       rw [abs_of_nonneg (curvatureSquared_nonneg F c t x)]
     _ ≤ K2 + R := add_le_add hRic hR
 
-
-
-
-
 theorem normalizationCoefficient_intervalIntegrable (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 R : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     (x : ℝ) (hR : ∀ r ∈ Ioo a b, m62CurvatureSquared F c r x ≤ R)
@@ -72,10 +58,6 @@ theorem normalizationCoefficient_intervalIntegrable (hc : M62ShrinkingCurve F c)
   have hr' : r ∈ Ioo a b := ⟨hs.1.trans_lt hr.1, hr.2.trans_le ht.2⟩
   exact normalizationCoefficient_abs_le F c hc hBounds x hr' (hR r hr')
 
-
-
-
-
 theorem curveSpeed_log_eq_integral (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 R : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     (x : ℝ) (hR : ∀ r ∈ Ioo a b, m62CurvatureSquared F c r x ≤ R)
@@ -99,10 +81,6 @@ theorem curveSpeed_log_eq_integral (hc : M62ShrinkingCurve F c)
     (normalizationCoefficient_intervalIntegrable F c hc hBounds x hR hs ht hst).neg
   rw [intervalIntegral.integral_neg] at hFTC
   linarith
-
-
-
-
 
 theorem curveSpeed_exp_bounds (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 R : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)

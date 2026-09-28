@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Producer
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.CurvatureBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
 
 theorem PointedGeometricConvergence.complete_interior
     {n : ℕ} {T' T : ℝ}
@@ -32,8 +21,6 @@ theorem PointedGeometricConvergence.complete_interior
   obtain ⟨K, hK, hbound⟩ := G.curvatureTensorNorm_le H A hA
   exact ⟨K, hK, fun s hs t ht x hx => hbound s hs x hx t ht⟩
 
-
-
 theorem pointedRicciFlowCompactness_of_geometric_limit
     {n : ℕ} {T' T : ℝ}
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
@@ -41,8 +28,6 @@ theorem pointedRicciFlowCompactness_of_geometric_limit
     (hcomplete : G.limitCarrier.metricComplete (G.limitFlow.metricAt 0)) :
     Nonempty (PointedRicciFlowCompactnessConclusion H) :=
   ⟨⟨G, G.complete_interior hcomplete⟩⟩
-
-
 
 theorem pointedRicciFlowCompactness_of_geometric_limit_and_curvature_tendsto
     {n : ℕ} {T' T : ℝ}

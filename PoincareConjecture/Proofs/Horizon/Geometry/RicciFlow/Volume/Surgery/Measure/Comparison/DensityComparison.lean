@@ -1,24 +1,6 @@
 import PoincareConjecture.Proofs.M10.DensityComparison
 import Mathlib.MeasureTheory.Measure.WithDensity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -27,7 +9,6 @@ open scoped ENNReal NNReal
 namespace PoincareConjecture.SurgeryVolume.Measure
 
 variable {X : Type*} [MeasurableSpace X]
-
 
 theorem withDensity_comparison_of_local_bounds (μ : Measure X)
     {J : X → ℝ} {A : Set X} (hA : MeasurableSet A)

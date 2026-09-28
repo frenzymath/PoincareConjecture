@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeVolume
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +20,6 @@ variable {epsilon C A : ℝ}
   (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))
   (Acrit : ℝ)
 
-
 def tubeCriticalRegion (k : ℕ) : TopologicalSpace.Opens (T k).carrierOpen := by
   let g := H.tubeMetric T k
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : (T k).carrierOpen → Type _) :=
@@ -44,15 +33,12 @@ def tubeCriticalRegion (k : ℕ) : TopologicalSpace.Opens (T k).carrierOpen := b
   change IsOpen {x | edist (H.tubeBase T k) x < ENNReal.ofReal Acrit}
   exact isOpen_lt (continuous_const.edist continuous_id) continuous_const
 
-
 @[simp] theorem tubeCriticalRegion_coe (k : ℕ) :
     (H.tubeCriticalRegion T Acrit k : Set (T k).carrierOpen) =
       (H.tubeMetric T k).ball (H.tubeBase T k) Acrit := rfl
 
-
 def tubeCriticalMetric (k : ℕ) : RiemannianMetric 3 (H.tubeCriticalRegion T Acrit k) :=
   intrinsicOpenMetric (H.tubeMetric T k) (H.tubeCriticalRegion T Acrit k)
-
 
 def tubeCriticalBase (hA : 0 < Acrit) (k : ℕ) : H.tubeCriticalRegion T Acrit k := by
   refine ⟨H.tubeBase T k, ?_⟩
@@ -61,18 +47,14 @@ def tubeCriticalBase (hA : 0 < Acrit) (k : ℕ) : H.tubeCriticalRegion T Acrit k
   simpa only [RiemannianMetric.edist, Manifold.riemannianEDist_self] using
     ENNReal.ofReal_pos.mpr hA
 
-
 @[simp] theorem tubeCriticalBase_val (hA : 0 < Acrit) (k : ℕ) :
     (H.tubeCriticalBase T Acrit hA k : (T k).carrierOpen) = H.tubeBase T k := rfl
-
 
 theorem tubeCriticalRegion_connected (hA : 0 < Acrit) (k : ℕ) :
     ConnectedSpace (H.tubeCriticalRegion T Acrit k) := by
   apply Subtype.connectedSpace
   refine ⟨⟨H.tubeBase T k, (H.tubeCriticalBase T Acrit hA k).property⟩, ?_⟩
   exact (H.tubeMetric T k).isPreconnected_ball (H.tubeBase T k) Acrit
-
-
 
 theorem tubeCritical_ball_eq_preimage (hA : 0 < Acrit) (k : ℕ)
     {r : ℝ} (hr : r ≤ Acrit) :
@@ -82,8 +64,6 @@ theorem tubeCritical_ball_eq_preimage (hA : 0 < Acrit) (k : ℕ)
   apply intrinsicOpenMetric_ball_eq_preimage
   intro x hx
   exact hx.trans_le (ENNReal.ofReal_le_ofReal hr)
-
-
 
 theorem tubeCritical_base_edist (hA : 0 < Acrit) (k : ℕ)
     (q : H.tubeCriticalRegion T Acrit k) :
@@ -116,8 +96,6 @@ theorem tubeCritical_base_edist (hA : 0 < Acrit) (k : ℕ)
   · rw [tubeCriticalMetric, intrinsicOpenMetric_edist]
     exact RiemannianMetric.edist_le_intrinsicEDist (H.tubeMetric T k)
       (H.tubeCriticalRegion T Acrit k) (H.tubeBase T k) (q : (T k).carrierOpen)
-
-
 
 theorem tubeCritical_base_regular (hA : 0 < Acrit)
     (hbase : (4 * max C 2)⁻¹ * epsilon⁻¹ / 8 ≤ Acrit) (k : ℕ) :
@@ -174,15 +152,11 @@ theorem tubeCritical_base_regular (hA : 0 < Acrit)
   intro q hq
   exact ⟨⟨q, hclosure hq⟩, rfl⟩
 
-
-
 theorem tubeCritical_volume_eq (k : ℕ) :
     (H.tubeCriticalMetric T Acrit k).volumeMeasure univ =
       (H.tubeMetric T k).volumeMeasure (H.tubeCriticalRegion T Acrit k : Set _) :=
   intrinsicOpenMetric_volumeMeasure_univ (H.tubeMetric T k)
     (H.tubeCriticalRegion T Acrit k)
-
-
 
 theorem exists_tubeCritical_volume_bound :
     ∃ V : ℝ, 0 < V ∧ ∀ k,

@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Positivity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Geodesic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -128,8 +114,6 @@ private theorem exists_path_spacetimeEnergy_le_distance
 
 variable [T3Space M] [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
 
-
-
 theorem scalarCurvature_le_exp_distance_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
     (hcomplete : ∀ t ≤ 0, MetricComplete (F.metric t))
@@ -166,8 +150,6 @@ theorem scalarCurvature_le_exp_distance_of_bounded_ancient
   have h := div_le_div_of_nonneg_right henergy (by norm_num : (0 : ℝ) ≤ 2)
   simpa only [div_div, mul_comm (b - a) 2] using h
 
-
-
 theorem scalarCurvature_le_exp_of_bounded_ancient_distance_le
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
     (hcomplete : ∀ t ≤ 0, MetricComplete (F.metric t))
@@ -186,8 +168,6 @@ theorem scalarCurvature_le_exp_of_bounded_ancient_distance_le
   apply Real.exp_le_exp.mpr
   exact div_le_div_of_nonneg_right
     (pow_le_pow_left₀ ENNReal.toReal_nonneg hD 2) (by positivity)
-
-
 
 theorem curvatureTensorNorm_le_exp_of_bounded_ancient_distance_le
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))

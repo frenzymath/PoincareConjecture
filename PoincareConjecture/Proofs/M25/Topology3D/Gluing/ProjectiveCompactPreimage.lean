@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D.StandardPuncturedProjectiveCover
-
-
-
 
 theorem compact_preimage_topology
     {Q : Type u} [TopologicalSpace Q]

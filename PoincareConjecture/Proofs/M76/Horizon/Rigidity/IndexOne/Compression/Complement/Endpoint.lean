@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.Step
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Frontier.Disks
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

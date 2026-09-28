@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem round_forward_mfderiv_isInvertible
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -87,8 +72,6 @@ theorem round_forward_mfderiv_isInvertible
   exact ⟨(LinearEquiv.ofBijective
     (mfderiv (𝓡 3) (𝓡 3) N.forward x).toLinearMap hbij).toContinuousLinearEquiv, rfl⟩
 
-
-
 theorem round_gauss_model_scalar_eq_six
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -100,9 +83,6 @@ theorem round_gauss_model_scalar_eq_six
     jetScalarCurvature (metricTwoJet (N.model_metric.pullbackCoefficients e) x) = 6 := by
   rw [jetScalarCurvature_metricTwoJet_pullback N.model_connection hU he hi hx]
   exact N.model_scalar_eq_six (e x)
-
-
-
 
 theorem round_gauss_source_scalar_eq
     [T2Space M]

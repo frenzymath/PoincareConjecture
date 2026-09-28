@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,8 +33,6 @@ theorem existsUnique_edge_intrinsicInterior_of_not_vertex
     (J.subset_of_mem_intrinsicInterior_face ht hs hqt (intrinsicInterior_subset hqs)) (by omega)
 
 variable [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem refined_boundary_edge_has_unmarked_vertex
     (J R B : SimplicialComplex ℝ E) (hJ : J.faces.Finite)

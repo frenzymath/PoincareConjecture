@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import Mathlib.Topology.Order.Compact
 import Mathlib.Analysis.Convex.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +11,6 @@ namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_finite_orbit_energy_center
     {m : ℕ} (hm : 0 < m) {r δ : ℝ} (hr : 0 ≤ r)
@@ -56,8 +42,6 @@ theorem exists_finite_orbit_energy_center
       _ = (m : ℝ) * δ ^ 2 := by simp
   exact hterm.trans ((hmin hzero).trans hsum)
 
-
-
 theorem eq_of_strictConvexOn_curve_of_isMinOn
     {X : Type*} {K : Set X} {F : X → ℝ} {x y : X}
     (hx : IsMinOn F K x) (hy : IsMinOn F K y)
@@ -78,7 +62,6 @@ theorem eq_of_strictConvexOn_curve_of_isMinOn
   have h := (hstrict hne).eq_of_isMinOn hmin0 hmin1 (by simp) (by simp)
   norm_num at h
 
-
 theorem sum_iterate_eq_of_period
     {X : Type*} (d : X → X) (F : X → ℝ) {m : ℕ} {y : X}
     (hperiod : d^[m] y = y) :
@@ -96,9 +79,6 @@ theorem sum_iterate_eq_of_period
   have h := htel m
   rw [hperiod] at h
   linarith
-
-
-
 
 theorem exists_two_finite_orbit_energy_minimizers
     {m : ℕ} (hm : 0 < m) {r δ : ℝ} (hr : 0 < r)

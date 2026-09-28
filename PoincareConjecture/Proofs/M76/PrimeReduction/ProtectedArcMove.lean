@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.RelativeProperArcExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +8,6 @@ namespace PoincareConjecture.M76
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_protected_rim_fixed_arc_move
     {s q w W : Set E} {a b : E}

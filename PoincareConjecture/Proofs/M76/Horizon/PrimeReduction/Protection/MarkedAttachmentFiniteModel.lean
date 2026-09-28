@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAtt
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.SharedBoundaryConeUnion
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 
@@ -32,9 +22,6 @@ theorem ChartwisePLBall.frontier_inter_eq_of_subset
     change x ∈ closure D ∧ x ∉ interior D
     refine ⟨subset_closure hxD, ?_⟩
     exact fun hx => hxR.2 (interior_mono hDR hx)
-
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_finite_marked_attaching_model
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

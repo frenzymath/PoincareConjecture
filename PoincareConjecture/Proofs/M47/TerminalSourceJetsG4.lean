@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsFirstFailureCylinder
 import PoincareConjecture.Proofs.M47.TerminalSourceCharts
 import PoincareConjecture.Proofs.M47.TerminalSourceRealizationHistory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSourceJetsG4_on_chart
     (S : RepairedControlledSchedulesData.{u})
@@ -90,8 +78,6 @@ theorem terminalSourceJetsG4_on_chart
   rw [hnorm s hs (C.chart z)]
   apply (div_le_iff₀ e.scale_pos).2
   exact (le_abs_self _).trans hcurv
-
-
 
 theorem terminalSourceJetsG4_realized
     (P₄₇ : M47Predecessors.{u})

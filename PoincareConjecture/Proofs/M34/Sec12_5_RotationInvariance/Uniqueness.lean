@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.IndexedEnergyBou
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.IndexedEnergyZero
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteNeighborEnergyZero
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem partialStandardCapFlow_metric_unique (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

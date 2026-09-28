@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.FlowLocality
 import PoincareConjecture.Proofs.M34.Standard.RicciOperatorEvaluation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,47 +19,30 @@ variable {S τ : ℝ}
   (G : RicciFlow 3 StandardCapSpace (Icc 0 S))
   (H : RicciFlow 3 StandardCapSpace (Ico 0 τ))
 
-
-
-
 noncomputable def metricConnection (t : ℝ) :
     Σ g : RiemannianMetric 3 StandardCapSpace, LeviCivitaData g :=
   if t < S then ⟨G.metric t, G.connection t⟩
   else ⟨H.metric (t - S), H.connection (t - S)⟩
 
-
 noncomputable def metric (t : ℝ) : RiemannianMetric 3 StandardCapSpace :=
   (metricConnection G H t).1
 
-
-
 noncomputable def connection (t : ℝ) : LeviCivitaData (metric G H t) :=
   (metricConnection G H t).2
-
-
 
 theorem metricConnection_of_lt {t : ℝ} (ht : t < S) :
     metricConnection G H t = ⟨G.metric t, G.connection t⟩ := by
   simp only [metricConnection, ht, if_true]
 
-
-
 theorem metric_of_lt {t : ℝ} (ht : t < S) : metric G H t = G.metric t := by
   simp only [metric, metricConnection_of_lt G H ht]
-
-
 
 theorem connection_of_lt {t : ℝ} (ht : t < S) :
     HEq (connection G H t) (G.connection t) :=
   (Sigma.mk.inj_iff.mp (metricConnection_of_lt G H ht)).2
 
-
-
 theorem metric_of_le {t : ℝ} (ht : S ≤ t) : metric G H t = H.metric (t - S) := by
   simp only [metric, metricConnection, not_lt.mpr ht, if_false]
-
-
-
 
 theorem metric_coefficients (t : ℝ) :
     (metric G H t).euclideanCoefficients = fun x => coefficients G H (t, x) := by
@@ -80,8 +53,6 @@ theorem metric_coefficients (t : ℝ) :
 variable (hS : 0 < S) (hτ : 0 < τ) (hinit : H.metric 0 = G.metric S)
 
 include hS hτ hinit
-
-
 
 theorem coefficients_smooth :
     ContDiffOn ℝ ∞ (coefficients G H) (Ico 0 (S + τ) ×ˢ univ) := by
@@ -104,8 +75,6 @@ theorem coefficients_smooth :
       ((isOpen_Ioo.prod isOpen_univ).mem_nhds ⟨⟨hpos, hp.1.2⟩, hp.2⟩)
       |>.contDiffWithinAt
 
-
-
 theorem metric_smooth :
     RiemannianMetric.IsSmoothFamilyOn (metric G H) (Ico 0 (S + τ)) := by
   apply RiemannianMetric.isSmoothFamilyOn_of_constant_chart (fun _ _ => rfl)
@@ -119,8 +88,6 @@ theorem metric_smooth :
     exact congrArg (fun A => A x u v) (metric_coefficients G H t)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem metric_equation {t : ℝ} (ht : t ∈ Ico 0 (S + τ))
     (x u v : StandardCapSpace) :
@@ -151,8 +118,6 @@ theorem metric_equation {t : ℝ} (ht : t ∈ Ico 0 (S + τ))
     rw [hfunction]
     simpa only [map_zero, add_zero, zero_add, hop] using h.hasDerivWithinAt
 
-
-
 noncomputable def flow : RicciFlow 3 StandardCapSpace (Ico 0 (S + τ)) where
   metric := metric G H
   connection := connection G H
@@ -161,8 +126,6 @@ noncomputable def flow : RicciFlow 3 StandardCapSpace (Ico 0 (S + τ)) where
     ⟨hS.le, lt_add_of_pos_right S hτ⟩, hS.ne⟩
   smooth := metric_smooth G H hS hτ hinit
   equation t ht x u v := metric_equation G H hS hτ hinit (t := t) ht x u v
-
-
 
 theorem flow_complete
     (hG : ∀ t ∈ Icc 0 S, MetricComplete (G.metric t))
@@ -175,8 +138,6 @@ theorem flow_complete
     exact hG t ⟨ht.1, htS.le⟩
   · rw [metric_of_le G H (not_lt.mp htS)]
     exact hH (t - S) ⟨sub_nonneg.mpr (not_lt.mp htS), by linarith [ht.2]⟩
-
-
 
 theorem flow_abs_curvature_le {B C : ℝ}
     (hG : ∀ t ∈ Icc 0 S, ∀ x : StandardCapSpace, |(G.connection t).curvatureTensorNorm x| ≤ B)

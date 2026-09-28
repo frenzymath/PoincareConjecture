@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcEnd
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondCoordinateRadii
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedPrismReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

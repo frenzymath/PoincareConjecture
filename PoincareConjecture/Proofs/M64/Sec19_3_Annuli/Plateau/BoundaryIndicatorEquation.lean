@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthTest
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,10 +8,6 @@ open Set Filter MeasureTheory Metric
 open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64ScalarBoundary_indicator_equation
     {U O : Set LoopPlane} (hU : MeasurableSet U) (hO : IsOpen O) (hOU : O ⊆ U)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -28,8 +19,6 @@ theorem Delta0_pos : 0 < B.Delta0 := by
 theorem Delta0_le_setup : B.Delta0 ≤ B.constants.delta₀ := by
   rw [B.calibration.delta_zero_eq]
   exact (min_le_right _ _).trans ((min_le_left _ _).trans B.calibration.delta₁₃_le)
-
-
 
 def initialPrefix : SurgeryParameterPrefix B.constants where
   setup := B.setup
@@ -63,9 +52,6 @@ def initialPrefix : SurgeryParameterPrefix B.constants where
 
 theorem initialPrefix_seedCompatible : B.SeedCompatible B.initialPrefix :=
   ⟨rfl, rfl, rfl⟩
-
-
-
 
 noncomputable def restrictDelta (d : ℝ) (hd : 0 < d) :
     RepairedControlledSchedulesData.{u} := by

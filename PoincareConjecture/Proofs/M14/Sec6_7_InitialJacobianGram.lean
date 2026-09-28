@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialJacobianPair
 import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGram
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +22,6 @@ private theorem metric_pair_transport {q r : G.Point} (h : q = r)
       G.spacetime.horizontalMetric.inner r (h ▸ v) (h ▸ w) := by
   cases h
   rfl
-
-
-
 
 theorem tendsto_exponentialGram_scaled_zero
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -4,23 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_polyhedralPL_path_in_open
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

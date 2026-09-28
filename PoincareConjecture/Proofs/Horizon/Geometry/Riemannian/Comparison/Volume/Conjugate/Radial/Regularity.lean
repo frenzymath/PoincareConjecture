@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Manifold
-
-
-
-
-
-
-

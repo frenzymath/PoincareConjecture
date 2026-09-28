@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.CompactDivergence
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerOrder
 import PoincareConjecture.Proofs.M04.ScalarChainRule
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -41,8 +32,6 @@ def fieldGradientSq {g : RiemannianMetric n V} (D : LeviCivitaData g)
 theorem fieldNormSq_contDiff (g : RiemannianMetric n V) {X : V → V}
     (hX : ContDiff ℝ ∞ X) : ContDiff ℝ ∞ (fieldNormSq g X) :=
   ((contDiff_iff_contDiffAt.mpr g.contDiffAt_euclideanCoefficients).clm_apply hX).clm_apply hX
-
-
 
 theorem fieldTraceHessian_contDiff {g : RiemannianMetric n V} (D : LeviCivitaData g)
     {X : V → V} (hX : ContDiff ℝ ∞ X) : ContDiff ℝ ∞ (fieldTraceHessian D X) := by
@@ -91,7 +80,6 @@ def fieldEntropyDissipation {g : RiemannianMetric n V} (D : LeviCivitaData g)
   2 * deriv φ (fieldNormSq g X x) * fieldGradientSq D X x +
     deriv (deriv φ) (fieldNormSq g X x) * M04.scalarGradientSq g (fieldNormSq g X) x +
       D.scalarCurvature x * φ (fieldNormSq g X x)
-
 
 theorem fieldEntropy_balance {g : RiemannianMetric n V} (D : LeviCivitaData g)
     {X : V → V} {φ : ℝ → ℝ} (hX : ContDiff ℝ ∞ X) (hφ : ContDiff ℝ ∞ φ) (x : V) :

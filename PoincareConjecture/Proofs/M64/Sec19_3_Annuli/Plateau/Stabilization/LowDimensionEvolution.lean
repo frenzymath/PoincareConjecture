@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ZeroDi
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.NonemptyEvolution
 import PoincareConjecture.Statements.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +12,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem annulus_area_eq_zero_of_dimension_lt_two
     (hn : n < 2) (g : RiemannianMetric n M) {c0 c1 : ℝ → M}
@@ -50,8 +36,6 @@ theorem annulus_area_eq_zero_of_dimension_lt_two
 
 variable [T2Space M] [CompactSpace M] {a b : ℝ}
   {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem annulusFlowConclusion_of_dimension_zero
     (hn : n = 0) (G : M63AmbientGeometry F) (h : 0 < circumference)
@@ -86,8 +70,6 @@ theorem annulusFlowConclusion_of_dimension_zero
     simpa using heta.le
   · intro s t hs ht _
     rw [hzero t ht, hzero s hs, mul_zero]
-
-
 
 theorem annulusEvolution_of_dimension_zero
     (hn : n = 0) (G : M63AmbientGeometry F) : M64AnnulusEvolution G := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
-
-
-
 
 theorem exists_homeomorph_collar_level
     (L : SimplicialComplex ℝ E) (hL : L.faces.Finite) (c : E × ℝ → X)
@@ -57,9 +45,6 @@ theorem exists_homeomorph_collar_level
       subst v
       exact ⟨z, hz, rfl⟩
   exact ⟨H.trans (Homeomorph.setCongr himage), fun _ => rfl⟩
-
-
-
 
 theorem ChartwisePLSphere.nonempty_collar_level
     (s : ChartwisePLSphere e (frontier R))

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M10.MinimizingLifts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {J : Set ℝ} {F : RicciFlow n C J} {T τmax τ : ℝ} {p q : C}
-
-
 
 theorem ordinaryCapture_harnackDensity_congr {γ δ : ℝ → C} {s : ℝ}
     (h : γ =ᶠ[𝓝 s] δ) (d : ℝ → ℝ) :
@@ -44,9 +31,6 @@ theorem ordinaryCapture_harnackDensity_congr {γ δ : ℝ → C} {s : ℝ}
       2 * (F.connection (T - s)).ricci v.1 v.2 v.2) hphase
   unfold reducedHarnackDensity
   exact hvalue
-
-
-
 
 noncomputable def ordinaryCaptureReplaceRegularPath
     (r : ReducedLengthRegularPoint F T τmax p q τ) (a : BackwardTimePath F T 0 τ)
@@ -83,8 +67,6 @@ noncomputable def ordinaryCaptureReplaceRegularPath
       eventuallyEq_of_mem (isOpen_Ioo.mem_nhds hso) (heq.mono Ioo_subset_Icc_self)
     exact congrArg (fun b : ℝ => s * Real.sqrt s * b)
       (ordinaryCapture_harnackDensity_congr hnear r.path_scalar_time_derivative))
-
-
 
 theorem ordinaryCaptureReplaceRegularPath_curve
     (r : ReducedLengthRegularPoint F T τmax p q τ) (a : BackwardTimePath F T 0 τ)

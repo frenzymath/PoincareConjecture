@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.TargetChartEstimate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem m60HarmonicChart_laplacian_lower (D : LeviCivitaData g)
     (b : M) {φ : LoopPlane → M} {a : LoopPlane → ℝ} {O : Set LoopPlane}

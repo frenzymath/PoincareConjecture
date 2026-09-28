@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Gap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.Ribbon.ExteriorEdge
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -87,9 +75,6 @@ private theorem exists_filled_coincidence_of_exterior_edge
     refine ⟨mem_image_of_mem F hx, ?_⟩
     rw [← hFc]
     exact mem_image_of_mem F hz
-
-
-
 
 theorem exists_filled_coincidence_of_shared_unnested_ribbon
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

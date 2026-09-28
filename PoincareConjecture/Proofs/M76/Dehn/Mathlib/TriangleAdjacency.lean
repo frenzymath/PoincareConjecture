@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleCofaceConstancy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -15,8 +7,6 @@ open Set PreAbstractSimplicialComplex.ModTwoCochains
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*}
-
-
 
 def triangleGraph (A : PreAbstractSimplicialComplex ι) : SimpleGraph (Triangle A) where
   Adj q r := q ≠ r ∧ ∃ e : Edge A, e.val ⊆ q.val ∧ e.val ⊆ r.val
@@ -31,8 +21,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
 
 theorem triangleGraph_preconnected_of_links
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)
@@ -52,8 +40,6 @@ theorem triangleGraph_preconnected_of_links
         fun h => h.trans hadj.reachable.symm⟩
   exact heq ▸ SimpleGraph.Reachable.refl q
 
-
-
 theorem triangleGraph_connected_of_links
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)
     (hconn : K.vertexAbstractComplex.edgeGraph.Connected)
@@ -66,8 +52,6 @@ theorem triangleGraph_connected_of_links
   exact ⟨K.triangleGraph_preconnected_of_links hpure hconn.preconnected hlinks⟩
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem triangleGraph_connected_of_isConnected
     (hK : K.faces.Finite)

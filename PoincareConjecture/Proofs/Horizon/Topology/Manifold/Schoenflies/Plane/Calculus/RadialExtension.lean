@@ -1,17 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +12,6 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def unitRadialProjection (q0 : sphere (0 : E) 1) (x : E) :
     sphere (0 : E) 1 := by
   classical
@@ -33,20 +20,14 @@ noncomputable def unitRadialProjection (q0 : sphere (0 : E) 1) (x : E) :
       rw [mem_sphere_zero_iff_norm, norm_smul, Real.norm_eq_abs, abs_inv,
         abs_of_nonneg (norm_nonneg x), inv_mul_cancel₀ (norm_ne_zero_iff.mpr hx)]⟩
 
-
-
 @[simp] theorem unitRadialProjection_zero (q0 : sphere (0 : E) 1) :
     unitRadialProjection q0 0 = q0 := by
   simp [unitRadialProjection]
-
-
 
 theorem unitRadialProjection_coe_of_ne_zero (q0 : sphere (0 : E) 1)
     {x : E} (hx : x ≠ 0) :
     (unitRadialProjection q0 x : E) = ‖x‖⁻¹ • x := by
   simp [unitRadialProjection, hx]
-
-
 
 @[simp] theorem unitRadialProjection_apply_coe (q0 q : sphere (0 : E) 1) :
     unitRadialProjection q0 (q : E) = q := by
@@ -54,13 +35,9 @@ theorem unitRadialProjection_coe_of_ne_zero (q0 : sphere (0 : E) 1)
   rw [unitRadialProjection_coe_of_ne_zero q0 (ne_zero_of_mem_unit_sphere q)]
   simp [norm_eq_of_mem_sphere q]
 
-
-
 noncomputable def radialFamilyExtension {G : Type*} (q0 : sphere (0 : E) 1)
     (c : ℝ → sphere (0 : E) 1 → G) (p : ℝ × E) : G :=
   c p.1 (unitRadialProjection q0 p.2)
-
-
 
 @[simp] theorem radialFamilyExtension_apply_sphere {G : Type*}
     (q0 : sphere (0 : E) 1) (c : ℝ → sphere (0 : E) 1 → G)
@@ -74,8 +51,6 @@ section InnerProduct
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)] {m : ℕ∞ω}
-
-
 
 theorem contMDiffOn_unitRadialProjection (q0 : sphere (0 : E) 1) :
     ContMDiffOn 𝓘(ℝ, E) (𝓡 n) m (unitRadialProjection q0) ({0} : Set E)ᶜ := by
@@ -100,8 +75,6 @@ theorem contMDiffOn_unitRadialProjection (q0 : sphere (0 : E) 1) :
   intro x hx
   exact ((contMDiffAt_subtype_iff (U := U) (f := unitRadialProjection q0)
     (x := ⟨x, hx⟩)).mp (hS ⟨x, hx⟩)).contMDiffWithinAt
-
-
 
 theorem contDiffOn_radialFamilyExtension {F : Type*}
     [NormedAddCommGroup F] [NormedSpace ℝ F]

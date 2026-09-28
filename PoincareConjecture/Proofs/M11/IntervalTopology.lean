@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M11AdaptedAtlas
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,7 +18,6 @@ theorem interval_interior_nonempty (I : SpacetimeInterval) :
 
 theorem interval_uniqueDiffOn (I : SpacetimeInterval) : UniqueDiffOn ℝ I.domain :=
   uniqueDiffOn_convex (interval_convex I) (interval_interior_nonempty I)
-
 
 theorem interval_mem_frontier_iff (I : SpacetimeInterval) {t : ℝ} (ht : t ∈ I.domain) :
     t ∈ frontier I.domain ↔ IsLeast I.domain t ∨ IsGreatest I.domain t := by
@@ -57,7 +48,6 @@ theorem interval_mem_frontier_iff (I : SpacetimeInterval) {t : ℝ} (ht : t ∈ 
       have : t ∈ interior (Iic t) := interior_mono (fun _ hy ↦ hmax.2 hy) hInt
       simp only [interior_Iic, mem_Iio, lt_self_iff_false] at this
 
-
 theorem interval_exists_local_segment (I : SpacetimeInterval) {t : ℝ}
     (ht : t ∈ I.domain) :
     ∃ a b : ℝ, a < b ∧ t ∈ Icc a b ∧ Icc a b ⊆ I.domain ∧
@@ -86,7 +76,6 @@ theorem interval_exists_local_segment (I : SpacetimeInterval) {t : ℝ}
       mem_nhdsWithin_of_mem_nhds (Iio_mem_nhds htb)] with s hs hsb
     exact ⟨le_of_not_gt (fun hst ↦ hleft ⟨s, hs, hst⟩), hsb.le⟩
 
-
 theorem interval_exists_segment_germ (I : SpacetimeInterval) {t : ℝ}
     (ht : t ∈ I.domain) :
     ∃ a b : ℝ, a < b ∧ t ∈ Icc a b ∧ Icc a b ⊆ I.domain ∧
@@ -96,7 +85,6 @@ theorem interval_exists_segment_germ (I : SpacetimeInterval) {t : ℝ}
   apply le_antisymm
   · exact le_inf nhdsWithin_le_nhds (Filter.le_principal_iff.mpr hmem)
   · exact nhdsWithin_mono t hsub
-
 
 theorem interval_frontier_of_relatively_open (I J : SpacetimeInterval)
     (hopen : ∃ U : Set ℝ, IsOpen U ∧ J.domain = I.domain ∩ U)

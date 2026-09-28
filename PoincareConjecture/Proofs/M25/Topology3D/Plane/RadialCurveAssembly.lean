@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.CurveFamilyTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialCalculus
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -42,8 +33,6 @@ private theorem periodic_ne_of_short_gap {F : Type*} {γ : ℝ → F} {T : ℝ}
   · have hsame' : γ u = γ (v - T) := hsame.trans (hper.sub_eq v).symm
     have huv' := hinj ⟨hu0, huT⟩ ⟨by linarith, by linarith⟩ hsame'
     linarith
-
-
 
 theorem radial_circle_lift_add_period
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -177,9 +166,6 @@ theorem radial_circle_lift_add_period
   have htB : B t ∈ Ico (B 0) (B 0 + 2 * Real.pi) :=
     ⟨hmono.monotone ht.1, hBT ▸ hmono ht.2⟩
   exact hmono.injective (injOn_sphereCircleParameter_Ico e (by linarith) hsB htB heq)
-
-
-
 
 theorem exists_radial_curve_ambient_straightening
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

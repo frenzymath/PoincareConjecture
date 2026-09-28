@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationCurvat
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnection
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b : ℝ}
-
-
-
 
 theorem angular_velocity_periodic (gamma : C1FreeLoopSpace (M := M)) :
     Function.Periodic (fun x =>
@@ -43,9 +31,6 @@ theorem angular_velocity_periodic (gamma : C1FreeLoopSpace (M := M)) :
   exact hh0.trans (congrArg (fun f : ℝ → M =>
     (curveVelocity (n := 3) f x : LoopAmbient)) he)
 
-
-
-
 theorem time_velocity_periodic (loops : ℝ → C1FreeLoopSpace (M := M)) (t : ℝ) :
     Function.Periodic (fun x =>
       (curveVelocity (n := 3) (fun q => periodicFreeLoop (loops q) x) t : LoopAmbient))
@@ -53,9 +38,6 @@ theorem time_velocity_periodic (loops : ℝ → C1FreeLoopSpace (M := M)) (t : �
   intro x
   exact congrArg (fun c : ℝ → M => (curveVelocity (n := 3) c t : LoopAmbient))
     (funext (fun q => Proofs.M58.periodic_periodicFreeLoop (loops q) x))
-
-
-
 
 theorem curvature_periodic (F : RicciFlow 3 M (Icc a b))
     (loops : ℝ → C1FreeLoopSpace (M := M)) (t : ℝ) :
@@ -105,9 +87,6 @@ theorem curvature_periodic (F : RicciFlow 3 M (Icc a b))
       (congrArg (fun w => (e.symmL ℝ (c x) w +
         (F.connection t).connection (FiberBundle.extend LoopAmbient (Y x))
           (c x) (curveVelocity c x) : LoopAmbient)) hd))
-
-
-
 
 theorem residual_periodic (F : RicciFlow 3 M (Icc a b))
     (loops : ℝ → C1FreeLoopSpace (M := M)) (t : ℝ) :

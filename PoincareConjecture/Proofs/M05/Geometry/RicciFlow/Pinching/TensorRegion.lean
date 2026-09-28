@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.RegionTopology
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.OperatorFiber
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -20,7 +9,6 @@ namespace Poincare.HamiltonIvey
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 def tensorRegion (hn : Module.finrank ℝ E = 3) (t : ℝ) : Set (TensorFiber E 2) :=
   operatorTensorEquiv.symm ⁻¹' continuousRegion hn t
@@ -60,7 +48,6 @@ theorem isClosed_tensorRegion_spacetime (hn : Module.finrank ℝ E = 3) :
     IsClosed {p : ℝ × TensorFiber E 2 | 0 ≤ p.1 ∧ p.2 ∈ tensorRegion hn p.1} :=
   (isClosed_continuousRegion_spacetime hn).preimage
     (continuous_fst.prodMk (operatorTensorEquiv.symm.continuous.comp continuous_snd))
-
 
 theorem tensorRegion_transport_equiv_iff
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]

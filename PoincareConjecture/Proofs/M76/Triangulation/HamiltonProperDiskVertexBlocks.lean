@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskTriangulati
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Filter
@@ -24,8 +15,6 @@ local notation "V" => ((ℝ × ℝ) × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
 
 noncomputable def HamiltonProperDiskTriangulation.vertexBlock
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :
@@ -57,9 +46,6 @@ private theorem dual_vertex_face_in_original_star
       (i.val.centroid_mem_convexHull (K.nonempty_of_mem_faces i.property))
 
 omit [FiniteDimensional ℝ E] in
-
-
-
 
 theorem HamiltonProperDiskTriangulation.vertexBlock_centered_chart
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) :

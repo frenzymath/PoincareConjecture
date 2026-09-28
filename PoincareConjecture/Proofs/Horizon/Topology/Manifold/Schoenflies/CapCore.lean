@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Neighborh
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.BoundarySphere
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
-
-
 
 theorem exists_euclidean_closed_core_ball_neighborhood
     (hkind : C.model_kind = .euclidean) :

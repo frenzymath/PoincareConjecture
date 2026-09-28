@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointStageFlow
 import PoincareConjecture.Proofs.M47.TerminalGermsExhaustionOperator
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNullLine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ private noncomputable local instance endpointSignedBilinAdd :
     NormedAddCommGroup Bilin := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance endpointSignedBilinSpace :
     NormedSpace ℝ Bilin := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_signed_stage
     {N : ℕ} {P : Fin (N + 1) → Type*} {M : Type*}
@@ -95,8 +84,6 @@ private local instance endpointSignedManifold :
 
 local notation "U" => (fun m : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m))
-
-
 
 theorem limitFinite_endpoint_original_signed_germs
     (Fraw : ℕ → SurgeryFlowData.{u})

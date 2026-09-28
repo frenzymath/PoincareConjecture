@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.CurvatureAction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.Contractions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 lemma covariantTensorDerivative_tensorLaplacian_commutator_raw
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -89,8 +81,6 @@ lemma covariantTensorDerivative_tensorLaplacian_commutator_raw
   simp only [tensorLaplacian, iteratedCovariantTensorDerivative,
     Matrix.Fin.cons_vecCons, ← Finset.sum_sub_distrib, ← Finset.sum_neg_distrib]
   exact Finset.sum_congr rfl (fun i _ => hpoint _)
-
-
 
 lemma covariantTensorDerivative_tensorLaplacian_commutator_two
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

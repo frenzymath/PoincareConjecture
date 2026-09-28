@@ -1,22 +1,9 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology
-
-
-
-
 
 theorem hasDerivAt_of_ae_continuous_primitive
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

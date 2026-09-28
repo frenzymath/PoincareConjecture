@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereFixedDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactSmoothChart
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,27 +11,22 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 noncomputable def sphereInterpolation (f : E → E) (p : ℝ × E) : ℝ × E :=
   (p.1, p.2 + Real.smoothTransition p.1 • (f p.2 - p.2))
-
 
 theorem sphereInterpolation_fixed (f : E → E) (t : ℝ) {x : E} (hx : f x = x) :
     sphereInterpolation f (t, x) = (t, x) := by
   simp only [sphereInterpolation, hx, sub_self, smul_zero, add_zero]
-
 
 theorem sphereInterpolation_zero (f : E → E) (x : E) :
     sphereInterpolation f (0, x) = (0, x) := by
   simp only [sphereInterpolation, Real.smoothTransition.zero_of_nonpos le_rfl,
     zero_smul, add_zero]
 
-
 theorem sphereInterpolation_one (f : E → E) (x : E) :
     sphereInterpolation f (1, x) = (1, f x) := by
   simp only [sphereInterpolation, Real.smoothTransition.one_of_one_le le_rfl,
     one_smul, add_sub_cancel]
-
 
 theorem sphereInterpolation_contDiffOn (f : E → E) {U : Set E}
     (hf : ContDiffOn ℝ ∞ f U) :
@@ -51,8 +35,6 @@ theorem sphereInterpolation_contDiffOn (f : E → E) {U : Set E}
     ((Real.smoothTransition.contDiff.comp contDiff_fst).contDiffOn.smul
       ((hf.comp contDiff_snd.contDiffOn (fun _ hp => hp.2)).sub
         contDiff_snd.contDiffOn)))
-
-
 
 theorem sphereInterpolation_hasFDerivAt (f : E → E) (t : ℝ) {x : E}
     (hf : DifferentiableAt ℝ f x) (hx : f x = x) :
@@ -79,8 +61,6 @@ theorem sphereInterpolation_hasFDerivAt (f : E → E) (t : ℝ) {x : E}
     rw [hx, sub_self, smul_zero, add_zero]
     module
 
-
-
 theorem sphereInterpolation_invertible_derivative [FiniteDimensional ℝ E]
     (f : E → E) (t : ℝ) {x : E} (hx : ‖x‖ = 1)
     (hf : DifferentiableAt ℝ f x)
@@ -97,8 +77,6 @@ theorem sphereInterpolation_invertible_derivative [FiniteDimensional ℝ E]
     ((ContinuousLinearMap.id ℝ ℝ).prodMap (B : E →L[ℝ] E)) (t, x)
   rw [hB]
   exact sphereInterpolation_hasFDerivAt f t hf (hfixed.self_of_nhds hx)
-
-
 
 theorem exists_sphereInterpolation_chart [FiniteDimensional ℝ E]
     (f : E → E) {U : Set E} (hU : IsOpen U) (hSU : sphere (0 : E) 1 ⊆ U)

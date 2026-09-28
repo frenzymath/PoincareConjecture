@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Continuity
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.FixedMap
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.MinimalVariation
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -12,10 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m60AreaCore_of_leastSphere
     (tensor : ∀ (n : ℕ) (M : Type u) [TopologicalSpace M]

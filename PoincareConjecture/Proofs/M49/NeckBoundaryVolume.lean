@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.NeckCoordinates
 import PoincareConjecture.Proofs.M49.NullVolume
 import PoincareConjecture.Proofs.M49.Mathlib.EuclideanNull
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -26,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Q : Type v} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] [IsManifold (𝓡 3) ∞ Q]
   [T3Space Q] [SecondCountableTopology Q] [MeasurableSpace Q] [BorelSpace Q]
-
-
 
 theorem calibratedMetricVolume_image_central_sphere_eq_zero
     (h : RiemannianMetric 3 Q) (N : EpsilonNeck g) {f : M → Q}

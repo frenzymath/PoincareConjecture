@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.Geometry
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

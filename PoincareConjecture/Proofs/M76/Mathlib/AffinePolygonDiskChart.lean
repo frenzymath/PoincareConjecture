@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.StandardTriangleDiskChart
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLTriangleFilling
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInnermostDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -19,9 +10,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_affine_disk_chart {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -45,9 +33,6 @@ theorem exists_affine_disk_chart {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     rw [← hx]
     exact ha.mem_set_image
   exact hmem.trans ((hfb (ea.symm x)).trans (hgb (f (ea.symm x))))
-
-
-
 
 theorem exists_innermost_affine_disk_chart {ι : Type*} [Finite ι] [Nonempty ι]
     (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))

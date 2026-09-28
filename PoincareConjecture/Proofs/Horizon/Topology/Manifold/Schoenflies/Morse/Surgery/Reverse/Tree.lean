@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.MorseReduction
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Reconstruction
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem SphereSurgeryTree.exists_ambient_ball_of_leaf_fillings
     {v : E3} {A : Finset Real} {f : S2 -> E3}
@@ -29,8 +25,6 @@ theorem SphereSurgeryTree.exists_ambient_ball_of_leaf_fillings
       B '' sphere (0 : E3) 1 = range g) hleaves
   rintro g c R _ _ S ⟨Bminus, hminus⟩ ⟨Bplus, hplus⟩
   exact S.exists_ambient_ball_of_children Bminus Bplus hminus hplus
-
-
 
 theorem SphereMorseReduction.exists_ambient_ball_of_leaf_fillings
     {f : S2 -> E3} (M : SphereMorseReduction f)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Ray
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem not_short_chord_of_opposing_vertices
     {n : ℕ} {M : Type u} [MetricSpace M] [ConnectedSpace M]

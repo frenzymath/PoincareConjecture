@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralCapBoundary
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralChainSupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits

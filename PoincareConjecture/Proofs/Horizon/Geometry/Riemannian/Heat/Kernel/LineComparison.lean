@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Ext
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.GaussianSemigroup
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -18,9 +10,6 @@ open scoped Topology ContDiff NNReal
 open Poincare.Analysis.Heat
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem nonpos_of_real_heat_subsolution
     {u ut : ℝ → ℝ → ℝ} {a b B : ℝ}
@@ -111,8 +100,6 @@ private theorem continuous_gaussianAverage_of_bounded
     exact Eventually.of_forall fun z => hB _
   · exact integrable_const B
   · exact Eventually.of_forall fun z => hf.comp (by fun_prop)
-
-
 
 theorem gaussianAverage_le_nonnegative_supersolution
     {f : ℝ → ℝ} {L : ℝ≥0} (hf : LipschitzWith L f)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCapBallChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.TwoCapOuterChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesBallMatching
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_exists_projective_matched_ball
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

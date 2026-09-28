@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -141,7 +135,6 @@ theorem boundary_sphere_not_mem_interior (horn : StrongHorn E epsilon)
   have hzero : (0 : ℝ) ∈ interior (Ici (0 : ℝ)) := mem_interior_iff_mem_nhds.mpr hhalf
   simp only [interior_Ici, mem_Ioi, lt_self_iff_false] at hzero
 
-
 theorem frontier_carrier_eq_boundary (horn : StrongHorn E epsilon) :
     frontier horn.carrier = horn.boundary_sphere := by
   apply Subset.antisymm horn.frontier_carrier_subset_boundary
@@ -161,7 +154,6 @@ theorem boundary_subset_closure_interior_part (horn : StrongHorn E epsilon) :
         ⟨mem_univ _, neg_lt_zero.mpr horn.collar_pos, by norm_num⟩)).continuousAt
   · rw [closure_prod_eq, closure_univ, closure_Ioo (by norm_num : (0 : ℝ) ≠ 1)]
     exact ⟨mem_univ _, le_rfl, by norm_num⟩
-
 
 theorem boundary_neck_isSeparating (horn : StrongHorn E epsilon)
     {delta : ℝ} (N : TerminalStrongNeck E delta) (hdelta : delta < 1 / 2)

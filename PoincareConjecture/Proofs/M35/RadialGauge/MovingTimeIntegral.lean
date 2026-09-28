@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeLipschitz
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Topology NNReal
 namespace PoincareConjecture.M35.RadialGauge
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem moving_time_integral_hasDerivAt {H : ℝ → ℝ → F} {A : ℝ → F}
     {K : ℝ≥0} {t : ℝ} (ht : 0 ≤ t)

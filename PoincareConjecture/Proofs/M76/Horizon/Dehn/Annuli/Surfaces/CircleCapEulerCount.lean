@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.FinitePL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PLSurfaceCount
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -23,7 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
 
 theorem circle_surfaceEulerCount (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (gamma : Q2 ≃ₜ K.space) (hgamma : gamma.IsFinitePL) :
@@ -55,7 +46,6 @@ theorem circle_surfaceEulerCount (K : SimplicialComplex ℝ E) (hK : K.faces.Fin
     (CompressionCylinder.square_rim_surfaceEulerCount Square hSquare hSquares)
 
 open Classical in
-
 
 theorem exists_two_circle_cap_triangulation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

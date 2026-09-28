@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.ProtectedRegion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.MarkedRims
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

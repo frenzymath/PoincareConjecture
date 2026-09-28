@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {K E : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
   [AddCommGroup E] [Module K E]
-
-
-
 
 theorem cross_inter_subset_of_common_face (C D : SimplicialComplex K E)
     (d : Finset E) (hdC : d ∈ C.faces) (hdD : d ∈ D.faces)
@@ -43,9 +31,6 @@ theorem cross_inter_subset_of_common_face (C D : SimplicialComplex K E)
   exact convexHull_mono hsub hx
 
 omit [IsStrictOrderedRing K]
-
-
-
 
 def unionOfCompatible (C D : SimplicialComplex K E)
     (hcross : ∀ s ∈ C.faces, ∀ t ∈ D.faces,
@@ -72,23 +57,15 @@ variable (C D : SimplicialComplex K E)
     convexHull K (s : Set E) ∩ convexHull K (t : Set E) ⊆
       convexHull K ((s : Set E) ∩ t))
 
-
-
 theorem faces_unionOfCompatible : (C.unionOfCompatible D hcross).faces = C.faces ∪ D.faces := rfl
-
-
 
 theorem space_unionOfCompatible : (C.unionOfCompatible D hcross).space = C.space ∪ D.space := by
   ext x
   simp only [mem_space_iff, faces_unionOfCompatible, mem_union]
   aesop
 
-
-
 theorem vertices_unionOfCompatible :
     (C.unionOfCompatible D hcross).vertices = C.vertices ∪ D.vertices := rfl
-
-
 
 theorem finite_faces_unionOfCompatible (hC : C.faces.Finite) (hD : D.faces.Finite) :
     (C.unionOfCompatible D hcross).faces.Finite := hC.union hD

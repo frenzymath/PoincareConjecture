@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryArithme
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +10,6 @@ open Set
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_spherical_wronskian_nonneg
     {R : ℝ} (hR : 0 < R) (hRpi : R ≤ Real.pi)
@@ -60,9 +45,6 @@ theorem m64Intrinsic_spherical_wronskian_nonneg
   simpa only [Real.sin_zero, Real.cos_zero, hzero, mul_zero, mul_one, sub_zero]
     using hmono ⟨le_rfl, hR.le⟩ ht ht.1
 
-
-
-
 theorem m64Intrinsic_spherical_wronskian_nonneg_of_jacobi
     {R : ℝ} (hR : 0 < R) (hRpi : R ≤ Real.pi)
     {J J' J'' k : ℝ → ℝ}
@@ -79,10 +61,6 @@ theorem m64Intrinsic_spherical_wronskian_nonneg_of_jacobi
   intro t ht
   have hprod := mul_nonneg (sub_nonneg.mpr (hk t ht)) (hpos t ht)
   nlinarith [hjac t ht]
-
-
-
-
 
 theorem m64Intrinsic_scaled_spherical_wronskian_nonneg_of_jacobi
     {R κ : ℝ} (hR : 0 < R) (hκ : 0 ≤ κ) (hRpi : κ * R ≤ Real.pi)
@@ -149,8 +127,6 @@ theorem m64Intrinsic_scaled_spherical_wronskian_nonneg_of_jacobi
   simpa only [Real.sin_zero, Real.cos_zero, hzero, mul_zero, mul_one, sub_zero]
     using hmono ⟨le_rfl, hR.le⟩ ht ht.1
 
-
-
 theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot
     {R κ : ℝ} (hR : 0 < R) (hκ : 0 < κ) (hRpi : κ * R ≤ Real.pi)
     {J J' J'' k : ℝ → ℝ}
@@ -173,10 +149,6 @@ theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot
   apply (div_le_div_iff₀ hsin (hpos t ht)).mpr
   nlinarith
 
-
-
-
-
 theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot_of_gaussian
     (N : IntrinsicAnnulus) (K κ : ℝ)
     (hK : N.GaussianCurvatureBound K)
@@ -196,9 +168,6 @@ theorem m64Intrinsic_scaled_jacobi_log_derivative_ge_cot_of_gaussian
   exact m64Intrinsic_scaled_jacobi_log_derivative_ge_cot hR hκ hRpi hJ hJ'
     hJ'' hzero hpos hjac
     (fun s hs => (hK (q s) (hmap s hs)).trans hKκ) ht
-
-
-
 
 theorem m64Intrinsic_jacobi_log_derivative_ge_sqrt_max_cot_of_gaussian
     (N : IntrinsicAnnulus) (K : ℝ)
@@ -229,9 +198,6 @@ theorem m64Intrinsic_jacobi_log_derivative_ge_sqrt_max_cot_of_gaussian
     (Real.sqrt (max K 1)) hK hκ hKκ hR hRpi hmap hJ hJ' hJ'' hzero hpos
     hjac ht
 
-
-
-
 theorem m64Intrinsic_jacobi_log_derivative_ge_cot
     {R : ℝ} (hR : 0 < R) (hRpi : R ≤ Real.pi)
     {J J' J'' k : ℝ → ℝ}
@@ -251,9 +217,6 @@ theorem m64Intrinsic_jacobi_log_derivative_ge_cot
     Real.sin_pos_of_pos_of_lt_pi ht.1 (ht.2.trans_le hRpi)
   apply (div_le_div_iff₀ hsin (hpos t ht)).mpr
   nlinarith
-
-
-
 
 theorem m64Intrinsic_focusing_base_length_le_turning
     {R L T : ℝ} (hR : 0 < R) (hRquarter : R ≤ Real.pi / 4)
@@ -281,9 +244,6 @@ theorem m64Intrinsic_focusing_base_length_le_turning
     hendpoint.trans hturn
   exact (le_of_mul_le_mul_left hprod hcos)
 
-
-
-
 theorem m64Intrinsic_focusing_base_length_lt_of_small_turning
     (N : IntrinsicAnnulus) {delta r R L a b : ℝ}
     (hturning : N.SmallBoundaryTurning delta r)
@@ -307,8 +267,6 @@ theorem m64Intrinsic_focusing_base_length_lt_of_small_turning
   exact lt_of_le_of_lt hbase
     (hsmall a b hab hperiod hsub)
 
-
-
 theorem m64Intrinsic_scaled_focusing_base_length_le_turning
     {R κ L T : ℝ} (hR : 0 < R) (hκ : 0 < κ)
     (hangle : κ * R ≤ Real.pi / 4)
@@ -317,8 +275,6 @@ theorem m64Intrinsic_scaled_focusing_base_length_le_turning
     L ≤ T := by
   exact m64Intrinsic_focusing_base_length_le_turning
     (mul_pos hκ hR) hangle hL hT hendpoint
-
-
 
 theorem m64Intrinsic_scaled_focusing_base_length_lt_of_small_turning
     (N : IntrinsicAnnulus) {delta r R κ L a b : ℝ}
@@ -342,10 +298,6 @@ theorem m64Intrinsic_scaled_focusing_base_length_lt_of_small_turning
           delta := by
     simpa only [IntrinsicAnnulus.SmallBoundaryTurning] using hturning
   exact lt_of_le_of_lt hbase (hsmall a b hab hperiod hsub)
-
-
-
-
 
 theorem m64Intrinsic_jacobi_log_derivative_ge_cot_of_gaussian
     (N : IntrinsicAnnulus) (hK : N.GaussianCurvatureBound 1)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {g : ℝ → RiemannianMetric n M}
-
 
 theorem IsSmoothFamilyOn.contDiffWithinAt_inner_time
     (hg : IsSmoothFamilyOn g J) {t : ℝ} (ht : t ∈ J)
@@ -44,7 +36,6 @@ theorem IsSmoothFamilyOn.contDiffWithinAt_inner_time
     (show MapsTo (fun s : ℝ => (s, x)) J (J ×ˢ univ) from
       fun s hs => ⟨hs, mem_univ _⟩)
   simpa [X, Y, Function.comp_def] using h'.contDiffWithinAt
-
 
 theorem IsSmoothFamilyOn.hasDerivAt_inner
     (hg : IsSmoothFamilyOn g J) (hJ : IsOpen J) {t : ℝ} (ht : t ∈ J)

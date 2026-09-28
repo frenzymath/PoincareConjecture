@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.HorizontalComposition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Replacement.Upper
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,12 +20,10 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 def terminalCapProtectedHalfspace (data : TerminalSaddleData M P p e) (i : Fin 3) : Set E3 :=
   match data.labels i with
   | .inl _ => {y | data.ends.lowerCut ≤ inner Real (M.v : E3) y}
   | .inr _ => {y | inner Real (M.v : E3) y ≤ data.ends.upperCut}
-
 
 def terminalCapBufferedProtectedHalfspace (data : TerminalSaddleData M P p e)
     (i : Fin 3) (η : Real) : Set E3 :=
@@ -65,9 +61,6 @@ theorem physical_modelBand_subset_terminalCapProtectedHalfspace
   rcases j with j | j
   · simpa only [terminalCapProtectedHalfspace, hlabel, mem_ofPred_eq] using hheight.1
   · simpa only [terminalCapProtectedHalfspace, hlabel, mem_ofPred_eq] using hheight.2
-
-
-
 
 theorem exists_flat_terminal_cap_replacement_of_prepared
     (data : TerminalSaddleData M P p e) (i : Fin 3)
@@ -112,9 +105,6 @@ theorem exists_flat_terminal_cap_replacement_of_prepared
     rw [hcancel, hRcap, image_image]
     change (fun y => d.flatten (d.flatten.symm y)) '' d.modelCaps i = d.modelCaps i
     simp only [Diffeomorph.apply_symm_apply, image_id']
-
-
-
 
 theorem exists_buffered_prepared_terminal_cap_replacements
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -194,7 +184,6 @@ theorem exists_buffered_prepared_terminal_cap_replacements
   exact ⟨L, hL, R, hRfix, ⟨η, hη, hbuffer⟩, hRcap,
     exists_flat_terminal_cap_replacement_of_prepared data i H E F R hK hL hFfix hFband
       (hFcap i) hRfix hhalf hRcap⟩
-
 
 theorem exists_prepared_terminal_cap_replacements
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

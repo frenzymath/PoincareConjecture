@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusCurveDisplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalChart
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +9,6 @@ open Set
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem exists_small_chart_displacement_disjoint
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -84,14 +67,6 @@ theorem exists_small_chart_displacement_disjoint
   exact Set.disjoint_left.mp hvdisjoint
     (show u0 x ∈ range u0 from ⟨x, rfl⟩)
     (show u0 x ∈ range (fun x => u1 x + v) from ⟨y, heq'.symm⟩)
-
-
-
-
-
-
-
-
 
 theorem exists_small_chart_displacement_disjoint_smooth
     {n : ℕ} {M : Type*} [TopologicalSpace M]

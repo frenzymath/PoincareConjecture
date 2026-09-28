@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -66,8 +58,6 @@ variable [MeasurableSpace M] [BorelSpace M]
   [T2Space N] [T3Space N] [SecondCountableTopology N] [ConnectedSpace N]
   {K : AncientKappaSolution 3 M} {L : AncientKappaSolution 3 N}
   {t epsilon : ℝ}
-
-
 
 def pullbackCarrier (A : StrongEvolvingNeck L t epsilon)
     (e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞)
@@ -142,9 +132,6 @@ theorem pullbackCarrier_spacetime_coordinate
     (s : Ioc (t - A.duration) t) :
     (A.pullbackCarrier e he).spacetime_coordinate s =
       e.symm ∘ A.spacetime_coordinate s := rfl
-
-
-
 
 def ofPullbackFlow (hflow : L.flow = K.flow.pullbackDiffeomorph e.symm) :
     StrongEvolvingNeck K t epsilon := by

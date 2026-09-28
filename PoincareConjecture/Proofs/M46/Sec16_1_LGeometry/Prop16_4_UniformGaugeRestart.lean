@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_UniformRestart
 import PoincareConjecture.Proofs.M14.Sec6_3_LocalEulerPath
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem exists_gaugeEulerPath_uniform_restart_neighborhood
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

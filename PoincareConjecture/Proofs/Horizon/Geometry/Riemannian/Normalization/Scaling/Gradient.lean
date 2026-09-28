@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -86,8 +79,6 @@ theorem rescaledMetric_hessian_const_mul
     (rescaledMetric_connection g D c hc).hessian (fun y => a * f y) x v w =
       a * D.hessian f x v w := by
   exact D.hessian_const_mul a f x v w
-
-
 
 theorem rescaledMetric_hessian_sqrt_mul_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (c : ℝ) (hc : 0 < c)

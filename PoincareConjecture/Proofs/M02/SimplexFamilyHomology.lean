@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.SimplexPrism
 import PoincareConjecture.Proofs.M02.IntegralChains
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -16,7 +9,6 @@ open scoped Simplicial
 universe w v u
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem singularSimplexFamily_cycle_homology_factorization
     {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]

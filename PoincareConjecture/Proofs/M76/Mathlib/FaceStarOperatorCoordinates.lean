@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.OrthogonalCylinderCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarInjectivity
 import PoincareConjecture.Proofs.M76.Mathlib.TangentCylinderSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap
@@ -20,9 +11,6 @@ namespace ContinuousLinearMap
 
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
-
 
 theorem injOn_centered_image_iff (Q : E →L[ℝ] F) (e : E ≃L[ℝ] G) (p : E) (S : Set E) :
     InjOn (Q.comp e.symm.toContinuousLinearMap) ((fun x => e (x - p)) '' S) ↔
@@ -48,15 +36,10 @@ namespace Submodule
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 noncomputable def frameWithTangent (L : Submodule ℝ E) (J : F →L[ℝ] ↥(Lᗮ)) :
     (F × L) →L[ℝ] E :=
   L.normalTangentEquiv.symm.toContinuousLinearMap.comp
     (J.prodMap (ContinuousLinearMap.id ℝ L))
-
-
 
 theorem injective_frameWithTangent (L : Submodule ℝ E) {J : F →L[ℝ] ↥(Lᗮ)}
     (hJ : Function.Injective J) : Function.Injective (L.frameWithTangent J) := by
@@ -71,9 +54,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 noncomputable def faceStarCylinderHomeomorph (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (p : E)
@@ -97,9 +77,6 @@ noncomputable def faceStarCylinderHomeomorph (K : SimplicialComplex ℝ E)
   rw [← L.image_normalTangentCoordinates_add p S]
   exact ((Q.injOn_centered_image_iff L.normalTangentEquiv p (S + (L : Set E))).trans
     (K.injOn_closedFaceStar_tangent_iff hs Q.toLinearMap)).symm
-
-
-
 
 theorem contractible_faceStarFrameEmbeddingSpace (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (p : E)

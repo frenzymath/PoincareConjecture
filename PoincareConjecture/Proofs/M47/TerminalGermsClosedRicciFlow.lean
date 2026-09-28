@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateRicci
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -39,8 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 include Fseq hg hspace htime
 
-
-
 theorem terminalGerms_equation_of_included_jets
     (D : ∀ t, LeviCivitaData (g t)) :
     ∀ t ∈ J, ∀ (x : M) (v w : TangentSpace (𝓡 3) x),
@@ -60,8 +49,6 @@ theorem terminalGerms_equation_of_included_jets
   rw [← hlimit]
   exact ((hg.contDiffWithinAt_inner_time ht x v w).differentiableWithinAt
     (by simp)).hasDerivWithinAt
-
-
 
 theorem terminalGerms_exists_closed_ricciFlow :
     ∃ F : RicciFlow 3 M J, F.metric = g := by

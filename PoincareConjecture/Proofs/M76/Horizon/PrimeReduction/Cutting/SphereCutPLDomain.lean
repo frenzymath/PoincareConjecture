@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ConvexTargetRestriction
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,8 +17,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3}
-
-
 
 theorem ChartwisePLSphere.exists_regular_boundary_halfspace_chart
     {S D A : Set X} (s : ChartwisePLSphere e S)
@@ -68,10 +57,6 @@ theorem ChartwisePLSphere.exists_regular_boundary_halfspace_chart
       simp
     · intro y hy
       simpa using hneg y hy
-
-
-
-
 
 theorem PLDomain.sdiff_open_of_two_sphere_frontiers
     {R U Sm Sp : Set X} (he : PLDomain e R)
@@ -119,10 +104,6 @@ theorem PLDomain.sdiff_open_of_two_sphere_frontiers
         exact (hhalf y hy.1).mp h.1
       · intro h
         exact ⟨(hhalf y hy.1).mpr h, fun hu => hy.2 (subset_closure hu)⟩
-
-
-
-
 
 theorem ChartwisePLSphere.plDomain_bicollar_cut
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

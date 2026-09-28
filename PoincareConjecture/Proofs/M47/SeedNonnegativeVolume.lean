@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_VolumeBoundary
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem seed_nonnegative_ball_volume
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (q : M)

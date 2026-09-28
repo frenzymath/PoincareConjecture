@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Rigidity.ParameterPrismDomain
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -90,6 +83,5 @@ theorem PLDomain.isOpen_original_proper_product
     exact hinside hx
   have hopen := hR.isOpen_relative_sdiff_of_frontier_subset hBreg hBR hZ.isClosed hfront
   rwa [← hTimage] at hopen
-
 
 end PoincareConjecture.M76

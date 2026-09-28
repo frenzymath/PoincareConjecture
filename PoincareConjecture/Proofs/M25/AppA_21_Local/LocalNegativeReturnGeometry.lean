@@ -11,19 +11,7 @@ open scoped Manifold ContDiff ENNReal
 universe u
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem NeckOnlyCover.exists_local_negative_return_geometry :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

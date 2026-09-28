@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalRadius
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +29,6 @@ private abbrev tubeScalar
     ∀ k, (T k).carrierOpen → ℝ :=
   fun k x => (H.tubeConnection T k).scalarCurvature x
 
-
-
-
 def CriticalBallFrontierMargin
     (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ)
@@ -53,10 +38,6 @@ def CriticalBallFrontierMargin
       (H.tubeCriticalMetric T A1 k)
       (H.tubeCriticalBase T A1 hA1 k) delta,
       tubeDistance H T k x ≤ A1 - delta / 2
-
-
-
-
 
 theorem eventually_scalar_le_on_critical_regularComponent
     (H : CounterexampleNeckFamily E)
@@ -77,10 +58,6 @@ theorem eventually_scalar_le_on_critical_regularComponent
   filter_upwards [hK, hmargin] with k hk hm x hx
   apply hk x
   exact (hm x hx).trans_lt (by linarith)
-
-
-
-
 
 def CriticalBallLocalShi
     (H : CounterexampleNeckFamily E)
@@ -132,10 +109,6 @@ private theorem tube_distance_lt_of_tube_ball
         rw [← ENNReal.ofReal_add hA_delta hdelta4]
         ring_nf
   exact ENNReal.toReal_lt_of_lt_ofReal hsum
-
-
-
-
 
 theorem hcurv_on_criticalBall
     (H : CounterexampleNeckFamily E)

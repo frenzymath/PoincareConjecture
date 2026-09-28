@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenProtectedFrontier
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_connected_protected_PL_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

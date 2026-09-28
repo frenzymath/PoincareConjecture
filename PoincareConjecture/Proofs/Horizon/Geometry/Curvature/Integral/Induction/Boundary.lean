@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.RegularLevels
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SectionalIntegral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M]
   [IsManifold (𝓡 (m + 2)) ∞ M]
   {g : RiemannianMetric (m + 2) M}
-
-
 
 theorem integral_scalarCurvature_posPart_le_regularLevels_area
     (D : LeviCivitaData g)

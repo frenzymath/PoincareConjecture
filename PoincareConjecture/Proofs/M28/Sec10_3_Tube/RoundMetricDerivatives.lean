@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundMetricEllipticity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,7 +23,6 @@ noncomputable def roundMetricError
     CovariantTensorEvaluation 3 N.model.carrier 2 :=
   fun y a => N.scale * singularMetricPullback g N.forward y a -
     N.model_metric.inner y (a 0) (a 1)
-
 
 theorem round_metric_error_smooth
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -80,7 +70,6 @@ theorem round_metric_error_smooth
         ⟨N.model_metric.toRiemannianMetric⟩
       exact (hX 0).inner_bundle (hX 1)
   exact (hpull.const_mul N.scale).sub hmodel
-
 
 theorem round_metric_covariant_error_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

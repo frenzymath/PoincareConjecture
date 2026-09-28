@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarDiskConvexContainment
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem IsFinitePLBallPair.eq_of_same_planar_rim {d e q : Set (ℝ × ℝ)}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (he : IsFinitePLBallPair (ℝ × ℝ) e q) :
@@ -30,10 +18,6 @@ theorem IsFinitePLBallPair.eq_of_same_planar_rim {d e q : Set (ℝ × ℝ)}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.eq_of_same_rim_in_affine_plane {d e q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (he : IsFinitePLBallPair (ℝ × ℝ) e q)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ namespace OpenPartialHomeomorph
 variable {E M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [ProperSpace E]
   [TopologicalSpace M] [T2Space M] [ConnectedSpace M] [LocallyConnectedSpace M]
-
-
 
 theorem isConnected_compl_image_closedBall
     (e : OpenPartialHomeomorph E M) (hdim : 1 < Module.rank Real E)

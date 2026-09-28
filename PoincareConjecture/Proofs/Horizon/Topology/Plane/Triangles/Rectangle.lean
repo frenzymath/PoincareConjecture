@@ -1,17 +1,6 @@
-
-
-
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 import Mathlib.Analysis.Convex.Between
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -62,12 +51,10 @@ private theorem upper_independent (hab : a < b) (hcd : c < d) :
     exact sub_ne_zero.mpr (ne_of_lt hcd)
   fin_cases i <;> simp_all
 
-
 def rectangleLowerBasis (hab : a < b) (hcd : c < d) : AffineBasis (Fin 3) ℝ E2 :=
   ⟨![!₂[a, c], !₂[b, c], !₂[b, d]], lower_independent hab hcd,
     (lower_independent hab hcd).affineSpan_eq_top_iff_card_eq_finrank_add_one.mpr
       (by simp [E2, finrank_euclideanSpace])⟩
-
 
 def rectangleUpperBasis (hab : a < b) (hcd : c < d) : AffineBasis (Fin 3) ℝ E2 :=
   ⟨![!₂[a, c], !₂[a, d], !₂[b, d]], upper_independent hab hcd,
@@ -87,7 +74,6 @@ private theorem coord_eq_of_combination (B : AffineBasis (Fin 3) ℝ E2)
   rw [← hz]
   exact B.coord_apply_combination_of_mem (Finset.mem_univ i) hw
 
-
 theorem rectangleLowerBasis_coord (hab : a < b) (hcd : c < d) (z : E2) (i : Fin 3) :
     (rectangleLowerBasis hab hcd).coord i z =
       ![1 - (z 0 - a) / (b - a),
@@ -98,7 +84,6 @@ theorem rectangleLowerBasis_coord (hab : a < b) (hcd : c < d) (z : E2) (i : Fin 
   · ext j
     fin_cases j <;> simp [Fin.sum_univ_succ] <;>
       field_simp [ne_of_gt (sub_pos.mpr hab), ne_of_gt (sub_pos.mpr hcd)] <;> ring
-
 
 theorem rectangleUpperBasis_coord (hab : a < b) (hcd : c < d) (z : E2) (i : Fin 3) :
     (rectangleUpperBasis hab hcd).coord i z =
@@ -111,7 +96,6 @@ theorem rectangleUpperBasis_coord (hab : a < b) (hcd : c < d) (z : E2) (i : Fin 
     fin_cases j <;> simp [Fin.sum_univ_succ] <;>
       field_simp [ne_of_gt (sub_pos.mpr hab), ne_of_gt (sub_pos.mpr hcd)] <;> ring
 
-
 theorem mem_rectangleLowerBasis_convexHull (hab : a < b) (hcd : c < d) (z : E2) :
     z ∈ convexHull ℝ (range (rectangleLowerBasis hab hcd)) ↔
       0 ≤ (z 1 - c) / (d - c) ∧
@@ -123,7 +107,6 @@ theorem mem_rectangleLowerBasis_convexHull (hab : a < b) (hcd : c < d) (z : E2) 
     and_true]
   constructor <;> intro h <;> rcases h with ⟨h0, h1, h2⟩ <;> constructor <;> try linarith
   all_goals constructor <;> linarith
-
 
 theorem mem_rectangleUpperBasis_convexHull (hab : a < b) (hcd : c < d) (z : E2) :
     z ∈ convexHull ℝ (range (rectangleUpperBasis hab hcd)) ↔
@@ -143,7 +126,6 @@ private theorem normalized_mem_Icc_iff (hab : a < b) (x : ℝ) :
     div_le_iff₀ (sub_pos.mpr hab), zero_mul, one_mul]
   constructor <;> rintro ⟨h0, h1⟩ <;> constructor <;> linarith
 
-
 theorem rectangle_triangle_union (hab : a < b) (hcd : c < d) :
     convexHull ℝ (range (rectangleLowerBasis hab hcd)) ∪
       convexHull ℝ (range (rectangleUpperBasis hab hcd)) =
@@ -160,7 +142,6 @@ theorem rectangle_triangle_union (hab : a < b) (hcd : c < d) :
     rcases le_total ((z 1 - c) / (d - c)) ((z 0 - a) / (b - a)) with h | h
     · exact Or.inl ⟨hy0, h, hx1⟩
     · exact Or.inr ⟨hx0, h, hy1⟩
-
 
 theorem rectangle_triangle_inter (hab : a < b) (hcd : c < d) :
     convexHull ℝ (range (rectangleLowerBasis hab hcd)) ∩
@@ -189,7 +170,6 @@ theorem rectangle_triangle_inter (hab : a < b) (hcd : c < d) :
     · exact segment_subset_convexHull
         (show (!₂[a, c] : E2) ∈ range (rectangleUpperBasis hab hcd) from ⟨0, rfl⟩)
         (show (!₂[b, d] : E2) ∈ range (rectangleUpperBasis hab hcd) from ⟨2, rfl⟩) hz
-
 
 theorem rectangle_triangle_diagonal_parametrization (hab : a < b) (hcd : c < d) :
     (fun t : ℝ =>

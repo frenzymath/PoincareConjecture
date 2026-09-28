@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.PureEdgeInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem isFinitePLBallPair_boundary_edge_link_of_local_incidence
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)
@@ -109,10 +99,6 @@ theorem isFinitePLBallPair_boundary_edge_link_of_local_incidence
     (J.connected_edgeGraph_of_isConnected hJ hconn)
     (fun v => by rw [hdegree]; split_ifs <;> omega) hsome
   rwa [hboundary, ← hLspace] at hball
-
-
-
-
 
 theorem isFinitePLBallPair_boundary_edge_link
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K)

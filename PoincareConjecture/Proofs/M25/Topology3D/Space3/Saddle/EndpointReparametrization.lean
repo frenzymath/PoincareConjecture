@@ -8,15 +8,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter MeasureTheory Metric
@@ -24,12 +15,9 @@ open scoped ContDiff Manifold Topology BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 set_option maxHeartbeats 1500000 in
 
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_saddle_endpoint_reparametrizations
     (n : ℕ) (eta : ℝ) (heta : 0 < eta) (hetaSmall : eta < 1 / 8)

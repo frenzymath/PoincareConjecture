@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,7 @@ namespace PoincareConjecture.SmoothConnectedSumData
 
 variable {A B C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
 
-
-
 def collarBand (a b : ℝ) : Set C.carrier := S.collar '' (univ ×ˢ Ioo a b)
-
-
 
 theorem collarBand_simplyConnected (a b : ℝ) (hab : a < b)
     (ha : -1 ≤ a) (hb : b ≤ 1) : IsSimplyConnected (S.collarBand a b) := by
@@ -41,16 +28,12 @@ theorem collarBand_simplyConnected (a b : ℝ) (hab : a < b)
     SurgeryCoordinates.cylinder_interval_simplyConnected a b hab
   exact e.symm.toHomotopyEquiv.simplyConnectedSpace
 
-
-
 theorem negative_mem_first (z : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 0) :
     S.collar (z, s) ∈ S.first_region := by
   rw [S.negative_gluing z s hs]
   apply S.first_identify.map_image.subset
   exact mem_image_of_mem _ (S.first_ball.radial_mem_complement z (by
     constructor <;> linarith [hs.1, hs.2]))
-
-
 
 theorem positive_mem_second (z : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (0 : ℝ) 1) :
     S.collar (z, s) ∈ S.second_region := by
@@ -59,14 +42,10 @@ theorem positive_mem_second (z : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (0 : �
   exact mem_image_of_mem _ (S.second_ball.radial_mem_complement (S.sphere_gluing z) (by
     constructor <;> linarith [hs.1, hs.2]))
 
-
-
 theorem central_not_mem (z : UnitTwoSphere) :
     S.collar (z, 0) ∉ S.first_region ∪ S.second_region := by
   exact fun h => Set.disjoint_left.mp S.central_disjoint
     (mem_image_of_mem S.collar ⟨mem_univ z, mem_singleton 0⟩) h
-
-
 
 theorem first_cover : S.first_region ∪ (S.second_region ∪ S.collarBand (-1) 1) = univ := by
   apply eq_univ_of_forall
@@ -79,8 +58,6 @@ theorem first_cover : S.first_region ∪ (S.second_region ∪ S.collarBand (-1) 
   · have hs0 : s = 0 := hs.2
     subst s
     exact Or.inr (Or.inr (mem_image_of_mem _ ⟨mem_univ z, by constructor <;> norm_num⟩))
-
-
 
 theorem first_overlap :
     S.first_region ∩ (S.second_region ∪ S.collarBand (-1) 1) = S.collarBand (-1) 0 := by
@@ -99,12 +76,8 @@ theorem first_overlap :
     exact ⟨S.negative_mem_first z hs.2, Or.inr (mem_image_of_mem _
       ⟨mem_univ z, hs.2.1, lt_trans hs.2.2 zero_lt_one⟩)⟩
 
-
-
 theorem second_cover : S.second_region ∪ (S.first_region ∪ S.collarBand (-1) 1) = univ := by
   rw [← union_assoc, union_comm S.second_region S.first_region, union_assoc, S.first_cover]
-
-
 
 theorem second_overlap :
     S.second_region ∩ (S.first_region ∪ S.collarBand (-1) 1) = S.collarBand 0 1 := by

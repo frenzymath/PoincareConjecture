@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_positive_isometry (x y : StandardCapSpace) (h : ‖x‖ = ‖y‖) :
     ∃ e : StandardCapSpace ≃ₗᵢ[ℝ] StandardCapSpace,
@@ -56,13 +46,9 @@ theorem exists_positive_isometry (x y : StandardCapSpace) (h : ‖x‖ = ‖y‖
   · change b (a x) = y
     rw [ha, hb]
 
-
-
 theorem standardRotation_eq_toEuclideanLin
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) :
     standardRotation A = A.1.toEuclideanLin := rfl
-
-
 
 theorem exists_standardRotation (x y : StandardCapSpace) (h : ‖x‖ = ‖y‖) :
     ∃ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ, standardRotation A x = y := by

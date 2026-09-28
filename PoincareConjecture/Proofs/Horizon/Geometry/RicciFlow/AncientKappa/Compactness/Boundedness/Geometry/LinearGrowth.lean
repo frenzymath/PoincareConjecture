@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.Minimizi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import Mathlib.Analysis.Convex.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_distance_le_mul_of_compact_convex_sublevel
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -68,8 +56,6 @@ theorem exists_distance_le_mul_of_compact_convex_sublevel
   exact (not_lt_of_ge hsecant) (hlarge.trans hstrict)
 
 open Poincare.Riemannian.Soul
-
-
 
 theorem exists_distance_le_mul_busemannExhaustion
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

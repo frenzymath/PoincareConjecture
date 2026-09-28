@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.CapCompactness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Topology.Escaping
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +12,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension G T} {K : TerminalComponentPath E} (e : TerminalEnd K)
-
-
 
 theorem exists_tail_subset_coordinateTail {epsilon : ℝ}
     (horn : StrongHorn E epsilon) (n : ℕ)
@@ -34,7 +25,6 @@ theorem exists_tail_subset_coordinateTail {epsilon : ℝ}
   exact (horn.carrier_subset_prefix_union_tail b (htail ⟨y, hyn, rfl⟩)).resolve_left
     (fun h => disjoint_left.mp (hk _ (le_max_right _ _)) ⟨y, hy, rfl⟩ h)
 
-
 theorem exists_tail_subset_hornEndCut {epsilon delta rho : ℝ}
     {horn : StrongHorn E epsilon} {N : TerminalStrongNeck E delta}
     (cut : HornEndCut horn N rho) (n : ℕ)
@@ -43,8 +33,6 @@ theorem exists_tail_subset_hornEndCut {epsilon delta rho : ℝ}
   obtain ⟨m, hnm, hm⟩ := e.exists_tail_subset_coordinateTail horn n htail
     cut.tail_level cut.tail_level_lt_one
   exact ⟨m, hnm, hm.trans cut.contains_tail⟩
-
-
 
 theorem exists_coordinateTail_subset {epsilon : ℝ}
     (horn : StrongHorn E epsilon) (hcomponent : horn.carrier ⊆ K.component)
@@ -89,8 +77,6 @@ namespace PoincareConjecture.HornEndCut
 variable {G : GeneralizedRicciFlowData.{u}} {T epsilon delta rho : ℝ}
   {E : GeneralizedFlowExtension G T} {horn : StrongHorn E epsilon}
   {N : TerminalStrongNeck E delta}
-
-
 
 theorem carrier_eq_escapingComponent (cut : HornEndCut horn N rho) :
     cut.carrier = horn.escapingComponent N.central_sphere N.isCompact_central_sphere := by

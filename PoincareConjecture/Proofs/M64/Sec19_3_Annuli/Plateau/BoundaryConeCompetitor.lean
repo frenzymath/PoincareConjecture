@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeTarget
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConePhaseGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,10 +14,6 @@ namespace PoincareConjecture.M64BoundaryCone
 open Proofs.M58
 
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
-
 
 theorem exists_target_phase_halfCone {n m N : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

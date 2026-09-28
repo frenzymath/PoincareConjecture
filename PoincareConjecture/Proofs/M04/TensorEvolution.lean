@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.RicciEvolutionEndpoints
 import PoincareConjecture.Proofs.M04.RicciEvolutionInterior
 import PoincareConjecture.Proofs.M04.RiemannEvolutionEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,7 +16,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 theorem hasDerivWithinAt_curvatureTensor (F : RicciFlow n M J)
     (t : ℝ) (ht : t ∈ J) (x : M) (u v w z : TangentSpace (𝓡 n) x) :
@@ -39,7 +29,6 @@ theorem hasDerivWithinAt_curvatureTensor (F : RicciFlow n M J)
     (M04.continuousOn_curvatureTensor_evolution F x u v w z)
     (fun s hs ↦ M04.hasDerivAt_curvatureTensor_evolution F hs x u v w z) t ht
 
-
 theorem hasDerivWithinAt_ricci (F : RicciFlow n M J)
     (t : ℝ) (ht : t ∈ J) (x : M) (u v : TangentSpace (𝓡 n) x) :
     HasDerivWithinAt (fun s ↦ (F.connection s).ricci x u v)
@@ -52,4 +41,3 @@ theorem hasDerivWithinAt_ricci (F : RicciFlow n M J)
     (fun s hs ↦ M04.hasDerivAt_ricci_evolution F hs x u v) t ht
 
 end PoincareConjecture.RicciFlow
-

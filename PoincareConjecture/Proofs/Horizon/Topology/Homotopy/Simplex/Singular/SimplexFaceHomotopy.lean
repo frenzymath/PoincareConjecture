@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.SingularComplex.Singu
 import Mathlib.Topology.Homotopy.Affine
 import Mathlib.AlgebraicTopology.SimplicialSet.KanComplex.MulStruct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -18,7 +10,6 @@ open scoped Topology
 universe u
 
 namespace Poincare.Topology
-
 
 theorem stdSimplex_adjacent_faces_eq_of_zero (n : Nat) (i : Fin (n + 1))
     (z : stdSimplex Real (Fin (n + 1))) (hz : z i = 0) :
@@ -34,8 +25,6 @@ theorem stdSimplex_adjacent_faces_eq_of_zero (n : Nat) (i : Fin (n + 1))
       (Fin.castSucc_lt_succ_iff.mpr le_rfl) t
     rw [Fin.pred_succ, Fin.castPred_castSucc] at h
     exact h
-
-
 
 theorem stdSimplex_adjacent_faces_homotopicRel
     {X : Type u} [TopologicalSpace X] (n : Nat) (i : Fin (n + 1))
@@ -109,7 +98,6 @@ theorem stdSimplex_adjacent_faces_homotopicRel
       exact (hzero _ hj0 hj1 ⟨H (t, z), hm (t, z)⟩ ht).trans
         (hzero _ hj0 hj1 (a z) ha).symm
 
-
 theorem singular_const_apply (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))
     (z : stdSimplex Real (Fin (n + 1))) :
@@ -121,7 +109,6 @@ theorem singular_const_apply (X : TopCat.{u}) (n : Nat)
   rw [TopCat.toSSetObjEquiv_naturality_apply]
   change X.toSSetObjEquiv _ x _ = X.toSSetObjEquiv _ x default
   exact congrArg (X.toSSetObjEquiv _ x) (Subsingleton.elim _ _)
-
 
 theorem singular_relStruct_homotopicRel (X : TopCat.{u}) (n : Nat)
     (x : (TopCat.toSSet.obj X).obj (Opposite.op (SimplexCategory.mk 0)))

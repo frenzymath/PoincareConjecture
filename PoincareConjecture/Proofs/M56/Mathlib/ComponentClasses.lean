@@ -1,17 +1,8 @@
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
 
 theorem m56ComponentClass_map {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     {f : X → Y} (hf : Continuous f) {x y : X}

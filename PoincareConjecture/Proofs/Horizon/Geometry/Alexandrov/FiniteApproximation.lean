@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,8 +7,6 @@ open Set Filter Topology
 open Poincare.GromovHausdorff
 
 namespace Poincare.Alexandrov
-
-
 
 theorem exists_approximating_maps_of_pointedGHConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace} {Y : FiniteDiameterBasedMetricSpace}
@@ -38,8 +29,6 @@ theorem exists_approximating_maps_of_pointedGHConverges
       simpa using hδ.const_mul 2)
   rw [← (R j).left_isometry.dist_eq, ← (R j).right_isometry.dist_eq]
   exact (dist_dist_dist_le _ _ _ _).trans (by linarith [hf j x, hf j y])
-
-
 
 theorem eventually_injective_of_tendsto_dist
     {ι : Type*} [Finite ι] {X : ℕ → Type*} [∀ j, MetricSpace (X j)]

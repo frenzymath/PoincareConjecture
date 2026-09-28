@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCircleCurrent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,10 +24,6 @@ private theorem periodic_add (A : M64Annulus g c0 c1) (p : LoopPlane) :
     ext i
     fin_cases i <;> simp [annulusPoint, add_comm]
   rw [hshift, A.periodic, hp]
-
-
-
-
 
 theorem m64Annulus_mfderiv_periodic (A : M64Annulus g c0 c1) (p : LoopPlane) :
     mfderiv (𝓡 2) (𝓡 n) A.map (annulusPoint curvePeriod 0 + p) =
@@ -75,10 +58,6 @@ theorem m64Annulus_mfderiv_periodic (A : M64Annulus g c0 c1) (p : LoopPlane) :
       mfderiv_zero_of_not_mdifferentiableAt hnot]
 
 variable {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_periodic
     (P : M62.CircleProductData F circumference) (t : ℝ)

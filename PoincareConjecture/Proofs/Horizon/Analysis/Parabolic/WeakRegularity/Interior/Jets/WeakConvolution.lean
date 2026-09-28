@@ -1,20 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Mollification
 import Mathlib.Topology.MetricSpace.Thickening
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory Metric
 open scoped ContDiff Topology
@@ -70,8 +55,6 @@ private theorem exists_translated_compact_buffer {η : Spacetime n → ℝ}
   have he : y - (z - w + y) = w - z := by abel
   simpa only [dist_eq_norm, he] using (mem_ball.mp hw).le
 
-
-
 theorem contDiffAt_lebesgueConvolution_locallyIntegrableOn
     {n : ℕ} {U : Set (Spacetime n)} {η u : Spacetime n → ℝ}
     {z : Spacetime n} (hU : IsOpen U)
@@ -86,8 +69,6 @@ theorem contDiffAt_lebesgueConvolution_locallyIntegrableOn
   apply (contDiff_lebesgueConvolution hi.locallyIntegrable hη hηc).contDiffAt.congr_of_eventuallyEq
   filter_upwards [hV.mem_nhds hzV] with w hw
   exact (convolution_indicator_eq (hsupport w hw)).symm
-
-
 
 theorem fderiv_lebesgueConvolution_locallyIntegrableOn
     {n : ℕ} {U : Set (Spacetime n)} {η u : Spacetime n → ℝ}
@@ -107,7 +88,6 @@ theorem fderiv_lebesgueConvolution_locallyIntegrableOn
   rw [he.fderiv_eq, fderiv_lebesgueConvolution hi.locallyIntegrable hη hηc]
   exact convolution_indicator_eq
     ((translated_support_mono (tsupport_fderiv_apply_subset ℝ v) z).trans (hsupport z hzV))
-
 
 theorem fderiv_lebesgueConvolution_eq_weakDerivative
     {n : ℕ} {U : Set (Spacetime n)} {u g η : Spacetime n → ℝ}

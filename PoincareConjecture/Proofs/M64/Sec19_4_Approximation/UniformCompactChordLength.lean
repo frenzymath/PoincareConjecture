@@ -7,18 +7,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.CompactProductCover
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,11 +19,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
-
-
 
 theorem m64_exists_uniform_sampled_chord_length
     {M : Type u} [TopologicalSpace M] [T2Space M]

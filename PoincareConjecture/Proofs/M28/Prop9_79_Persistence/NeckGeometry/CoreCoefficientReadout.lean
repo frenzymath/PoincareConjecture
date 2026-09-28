@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckTransfer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMetricBounds
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.AffineReadout
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +20,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X} {eta : ℝ}
-
-
-
 
 theorem NeckGeometryCore.frozen_difference_germ (V : NeckGeometryCore g eta)
     (N : EpsilonNeck h) (Q : ℝ) (hQ : 0 < Q)
@@ -79,10 +66,6 @@ theorem NeckGeometryCore.frozen_difference_germ (V : NeckGeometryCore g eta)
         (V.coordinate_map ∘ (cylinderSphereParametrization q ∘ cylinderScalarCoordinates s)) x v w -
       Q * h.pullbackCoefficients (cylinderNeckChart N q s) x v w)
   rw [mul_sub, ← mul_assoc, hnormal]
-
-
-
-
 
 theorem NeckGeometryCore.norm_frozen_difference_jet_le (V : NeckGeometryCore g eta)
     (N : EpsilonNeck h) (Q : ℝ) (hQ : 0 < Q)

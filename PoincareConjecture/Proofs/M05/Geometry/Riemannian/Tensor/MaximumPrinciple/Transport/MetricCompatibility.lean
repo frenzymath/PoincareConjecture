@@ -1,16 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Chart
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Jets
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Metric
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -26,8 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 lemma chartMetric_eq_inner_constantCoordinateField (p : M) {x : M}
     (hx : x ∈ (extChartAt (𝓡 n) p).source)
     (v w : EuclideanSpace ℝ (Fin n)) :
@@ -41,8 +30,6 @@ lemma chartMetric_eq_inner_constantCoordinateField (p : M) {x : M}
   congr 2
   congr 1
   exact (extChartAt (𝓡 n) p).left_inv hx
-
-
 
 theorem chartMetric_compatibility (D : LeviCivitaData g) (p : M)
     {z : EuclideanSpace ℝ (Fin n)} (hz : z ∈ (extChartAt (𝓡 n) p).target)
@@ -106,7 +93,6 @@ theorem chartMetric_compatibility (D : LeviCivitaData g) (p : M)
       (D.covariantDerivativeOnFields (constantCoordinateField p a) W x)) x)
   rw [hlift, hlift]
 
-
 def centeredMetricCoefficients (g : RiemannianMetric n M) (p : M)
     (z : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
@@ -116,7 +102,6 @@ lemma contDiffOn_centeredMetricCoefficients (g : RiemannianMetric n M) (p : M) :
     ContDiffOn ℝ ∞ (centeredMetricCoefficients g p) (centeredChartDomain p) := by
   exact (g.contDiffOn_chartCoefficients p).comp
     (contDiff_const.add contDiff_id).contDiffOn (fun _ hz => hz)
-
 
 theorem centeredMetric_compatibility (D : LeviCivitaData g) (p : M)
     {z : EuclideanSpace ℝ (Fin n)} (hz : z ∈ centeredChartDomain p)
@@ -148,8 +133,6 @@ lemma centeredMetric_eq_inner_lift (g : RiemannianMetric n M) (p : M)
   rw [show extChartAt (𝓡 n) p p +
     (extChartAt (𝓡 n) p x - extChartAt (𝓡 n) p p) = extChartAt (𝓡 n) p x by abel]
   exact chartMetric_eq_inner_constantCoordinateField p hx _ _
-
-
 
 theorem inner_radialParallelFields (D : LeviCivitaData g) (p : M)
     {r : ℝ} (hr : Metric.ball (0 : EuclideanSpace ℝ (Fin n)) r ⊆ centeredChartDomain p)

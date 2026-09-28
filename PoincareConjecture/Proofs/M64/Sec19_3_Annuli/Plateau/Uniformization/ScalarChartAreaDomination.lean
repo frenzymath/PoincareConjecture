@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarChartAreaLimit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +19,6 @@ variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
-
 
 theorem scalarC1_composed_area_bound
     (g : RiemannianMetric n M) {f : E → M} {U Q : Set E} (hU : IsOpen U)
@@ -79,10 +64,6 @@ theorem scalarC1_composed_area_bound
   simp only [m60EnergyDensity, Matrix.trace_fin_two]
   linarith [hdiag 0, hdiag 1]
 
-
-
-
-
 theorem scalarC1_composed_area_integrable
     (g : RiemannianMetric n M) {f : E → M} {U : Set E} (hU : IsOpen U)
     (hf : ContMDiffOn (𝓡 m) (𝓡 n) 1 f U)
@@ -106,10 +87,6 @@ theorem scalarC1_composed_area_integrable
     ae_restrict_of_ae (hu.ae_differentiableAt (μ := volume))] with x hx hdx
   rw [Real.norm_of_nonneg (m60AreaDensity_nonneg _ _ _)]
   exact hbound u hu x (mem_image_of_mem u hx) hdx
-
-
-
-
 
 theorem scalarC1_composed_area_integral_tendsto
     (g : RiemannianMetric n M) {f : E → M} {U Q : Set E} (hU : IsOpen U)

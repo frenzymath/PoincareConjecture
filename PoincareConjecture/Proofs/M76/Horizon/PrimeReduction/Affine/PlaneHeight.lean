@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -18,8 +10,6 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_defining_height_of_finrank_two
     (P : AffineSubspace ℝ E) (hdim : finrank ℝ E = 3)
@@ -53,7 +43,6 @@ theorem exists_defining_height_of_finrank_two
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem exists_nonzero_height_vertex_of_span_union_eq_top
     (P : AffineSubspace ℝ E) (hP : P ≠ ⊤)
     (A : E →ᵃ[ℝ] ℝ) (hA : ∀ x, A x = 0 ↔ x ∈ P)
@@ -72,8 +61,6 @@ open Filter
 open scoped Topology
 
 namespace Set
-
-
 
 theorem eventually_mem_iff_mem_affineSpan_of_intrinsicInterior
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

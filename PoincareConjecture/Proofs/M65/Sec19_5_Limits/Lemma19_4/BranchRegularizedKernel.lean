@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyKernel
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,20 +9,14 @@ open scoped Topology
 
 namespace PoincareConjecture.M65Branch
 
-
-
 def regularizedCauchyKernel (δ : ℝ) (z : ℂ) : ℂ :=
   star z / ((max (‖z‖ ^ 2) (δ ^ 2) : ℝ) : ℂ)
-
-
 
 theorem norm_regularizedCauchyKernel {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
     ‖regularizedCauchyKernel δ z‖ = ‖z‖ / max (‖z‖ ^ 2) (δ ^ 2) := by
   have hm : 0 < max (‖z‖ ^ 2) (δ ^ 2) := (sq_pos_of_pos hδ).trans_le (le_max_right _ _)
   simp only [regularizedCauchyKernel, norm_div, norm_star, Complex.norm_real,
     Real.norm_eq_abs, abs_of_pos hm]
-
-
 
 theorem continuous_regularizedCauchyKernel {δ : ℝ} (hδ : 0 < δ) :
     Continuous (regularizedCauchyKernel δ) := by
@@ -41,8 +25,6 @@ theorem continuous_regularizedCauchyKernel {δ : ℝ} (hδ : 0 < δ) :
   intro z
   apply Complex.ofReal_ne_zero.mpr
   exact ne_of_gt ((sq_pos_of_pos hδ).trans_le (le_max_right _ _))
-
-
 
 theorem norm_regularizedCauchyKernel_le {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
     ‖regularizedCauchyKernel δ z‖ ≤ δ⁻¹ := by
@@ -57,9 +39,6 @@ theorem norm_regularizedCauchyKernel_le {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
   · exact (mul_le_mul_of_nonneg_left h (norm_nonneg z)).trans (by
       nlinarith [le_max_left (‖z‖ ^ 2) (δ ^ 2)])
 
-
-
-
 theorem norm_regularizedCauchyKernel_le_inv {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
     ‖regularizedCauchyKernel δ z‖ ≤ ‖z‖⁻¹ := by
   by_cases hz : z = 0
@@ -71,17 +50,12 @@ theorem norm_regularizedCauchyKernel_le_inv {δ : ℝ} (hδ : 0 < δ) (z : ℂ) 
       (sq_pos_of_pos hr) (le_max_left _ _)
     _ = ‖z‖⁻¹ := by field_simp
 
-
-
 theorem regularizedCauchyKernel_eq_inv {δ : ℝ} (hδ : 0 < δ) {z : ℂ}
     (hz : δ ≤ ‖z‖) : regularizedCauchyKernel δ z = z⁻¹ := by
   have hsq : δ ^ 2 ≤ ‖z‖ ^ 2 := (sq_le_sq₀ hδ.le (norm_nonneg z)).mpr hz
   rw [regularizedCauchyKernel, max_eq_left hsq, Complex.inv_def z,
     Complex.normSq_eq_norm_sq, Complex.ofReal_inv]
   rfl
-
-
-
 
 theorem norm_sub_regularizedCauchyKernel_le {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
     ‖z⁻¹ - regularizedCauchyKernel δ z‖ ≤

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_first_neck_collar_subarc (N : EpsilonNeck g)
     {r : ℝ} (hr : 0 < r) (hrA : r < N.epsilon⁻¹)
@@ -85,8 +73,6 @@ theorem exists_first_neck_collar_subarc (N : EpsilonNeck g)
   by_contra hsmall
   have hinside := abs_lt.mp (lt_of_not_ge hsmall)
   exact hc.2 ⟨hcN, hinside⟩
-
-
 
 theorem exists_first_half_neck_subarc (N : EpsilonNeck g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)

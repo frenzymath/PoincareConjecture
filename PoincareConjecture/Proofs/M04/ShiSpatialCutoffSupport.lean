@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M04.ShiNativeDistanceSupport
 import PoincareConjecture.Proofs.M04.ShiCappedDistance
 import PoincareConjecture.Proofs.M04.ShiCutoffProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -109,4 +101,3 @@ theorem exists_shi_spatial_cutoff_lower_support [T2Space M]
       simpa only [herr, mul_assoc] using hcomp.2
 
 end PoincareConjecture.M04
-

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_MetricJacobian
 import PoincareConjecture.Proofs.M10.ChartIntegralTransport
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
 
 theorem measureJacobianData (H : M14StableSet G T τ x E) :
     Nonempty (M14MeasureJacobianData G T τ x E H) := by
@@ -93,8 +82,6 @@ theorem measureJacobianData (H : M14StableSet G T τ x E) :
   have htargetIntegral := M10.integralOn_calibrated_eq_pullback
     (G.slices (T - τ)).metricOnPoints e he hei hρ hφae
   exact ⟨hsource.trans htarget.symm, hsourceIntegral.trans htargetIntegral.symm⟩
-
-
 
 theorem measureTransportStatement (G : GeneralizedLGeometryTransport n X time I) :
     M14MeasureTransportStatement G :=

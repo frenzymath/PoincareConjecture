@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalLocalBoxGluing
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalSpherePatchReplacement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -19,8 +11,6 @@ local notation "Box" => Set.prod Square (Icc (-1 : ℝ) 1)
 local notation "Minus" => Set.prod Square (Icc (-1 : ℝ) 0)
 local notation "Plus" => Set.prod Square (Icc (0 : ℝ) 1)
 local notation "Base" => Set.prod Square ({0} : Set ℝ)
-
-
 
 theorem ChartwisePLBall.patch_pair_chart_off_old_sphere
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -85,9 +75,6 @@ theorem ChartwisePLBall.patch_pair_chart_off_old_sphere
   · intro y hy
     exact hF y (hPs.subset hy).1
 
-
-
-
 theorem ChartwisePLBall.patch_pair_chart_of_glued_side_boxes
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {Q T S F A r E : Set X}
@@ -125,4 +112,3 @@ theorem ChartwisePLBall.patch_pair_chart_of_glued_side_boxes
     (fun y hy => (hvalues y hy).1) (fun y hy => (hvalues y hy).2)
 
 end PoincareConjecture.M76
-

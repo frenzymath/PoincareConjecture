@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ActualGraphCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_actual_component_interval
     (J : SimplicialComplex ℝ E) (hJ : J.faces.Finite)

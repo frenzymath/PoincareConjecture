@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandEndpointFaces
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -81,11 +68,6 @@ private theorem band_faces_compatible_of_intersection
       rw [← B.face_carrier_eq_coordinates, ← B'.face_carrier_eq_coordinates]
       exact disjoint_iff_inter_eq_empty.mpr (not_nonempty_iff_eq_empty.mp hne)
 
-
-
-
-
-
 theorem m64Intrinsic_band_faces_canonical_compatibility
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
     {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
@@ -97,12 +79,6 @@ theorem m64Intrinsic_band_faces_canonical_compatibility
   rcases B.face_intersection i j hij with ⟨k, l, hedge, hinter⟩ | ⟨v, hv⟩
   · exact Or.inl ⟨k, l, hinter, congrArg (fun e => e.map '' Icc (0 : ℝ) 1) hedge⟩
   · exact Or.inr ⟨B.vertex v, hv⟩
-
-
-
-
-
-
 
 theorem m64Intrinsic_shared_cut_bands_canonical_compatibility
     {F G : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}

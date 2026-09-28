@@ -1,22 +1,8 @@
-
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FunProp
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -34,9 +20,6 @@ private lemma nonneg_deriv_of_max_on_interval {f : ℝ → ℝ} {f' a b t : ℝ}
   have h := hmax.localize.hasFDerivWithinAt_nonpos hd.hasFDerivWithinAt hcone
   change (a - t) * f' ≤ 0 at h
   nlinarith [ht.1]
-
-
-
 
 theorem nonpos_of_deriv_le_mul_at_max
     {A : Type*} [TopologicalSpace A] [CompactSpace A]

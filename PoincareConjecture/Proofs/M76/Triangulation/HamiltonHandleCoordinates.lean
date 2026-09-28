@@ -1,31 +1,17 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerHandleCorrection
 import Mathlib.Logic.Equiv.Sum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
 
-
-
 noncomputable def hamiltonHandleSplit (J : Finset (Fin 3)) :
     ((J ⊕ {i : Fin 3 // i ∉ J}) → ℝ) ≃ᴬ[ℝ] (Fin 3 → ℝ) := by
   classical
   exact (LinearEquiv.piCongrLeft' ℝ (fun _ : J ⊕ {i : Fin 3 // i ∉ J} => ℝ)
     (Equiv.sumCompl (fun i : Fin 3 => i ∈ J))).toAffineEquiv.toContinuousAffineEquiv
-
-
 
 theorem hamiltonHandleSplit_norm (J : Finset (Fin 3))
     (x : (J ⊕ {i : Fin 3 // i ∉ J}) → ℝ) : ‖hamiltonHandleSplit J x‖ = ‖x‖ := by
@@ -42,8 +28,6 @@ theorem hamiltonHandleSplit_norm (J : Finset (Fin 3))
     have hi := norm_le_pi_norm (a x) (b i)
     change ‖x (b.symm (b i))‖ ≤ ‖a x‖ at hi
     simpa only [b.symm_apply_apply] using hi
-
-
 
 theorem hamiltonHandleSplit_mem_cylinder (J : Finset (Fin 3))
     (x : (J ⊕ {i : Fin 3 // i ∉ J}) → ℝ) :
@@ -64,10 +48,6 @@ theorem hamiltonHandleSplit_mem_cylinder (J : Finset (Fin 3))
     change |x ((Equiv.sumCompl (fun i : Fin 3 => i ∈ J)).symm j)| ≤ 1 at h
     rw [Equiv.sumCompl_symm_apply_of_pos j.property] at h
     exact h
-
-
-
-
 
 theorem exists_hamilton_correction_in_original_coordinates
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.RawCrossingCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -36,8 +28,6 @@ structure ProjectedDiskCrossing {X Y ι : Type*} [TopologicalSpace X] [Topologic
     ((∀ z ∈ chart.source, z ∈ R ↔ 0 ≤ chart z 2) ∧
       ∀ z ∈ chart.source, z ∈ frontier R ↔ chart z 2 = 0)
 
-
-
 def ProjectedDiskCrossing.transport
     {X Y ι : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     {e : ι → OpenPartialHomeomorph Y V3} {p : X → Y} {d g : V2 → X}
@@ -55,8 +45,6 @@ def ProjectedDiskCrossing.transport
   left_image := fun z hz ↦ (himage B.window.left.source z hz).trans (B.left_image z hz)
   right_image := fun z hz ↦ (himage B.window.right.source z hz).trans (B.right_image z hz)
   region := B.region
-
-
 
 theorem ProjectedDiskCrossing.nonempty_raw
     {X Y ι : Type*} [TopologicalSpace X] [TopologicalSpace Y]

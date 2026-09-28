@@ -13,12 +13,6 @@ import PoincareConjecture.Proofs.M36
 import PoincareConjecture.Proofs.M44
 import PoincareConjecture.Proofs.M44.Providers
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlabContinuity
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlopeBounds
 import PoincareConjecture.Proofs.M35.RadialGauge.PolynomialComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,8 +36,6 @@ theorem raw_initial_slope_support :
     rfl
   rw [htransport _ _ _ _ _ _ G.initial_metric]
   exact hslope s hs
-
-
 
 theorem raw_intrinsic_slope_polynomial_decay {T : ℝ} (hT : 0 < T)
     (hTlt : T < G.lifetime) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedTimeContact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.Barriers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {J : Set ℝ} {F : RicciFlow n M J} {O : M}
-
-
 
 theorem deriv_perturbedHamiltonFixedQuadratic_pos
     (hC : RicciFlowCurvatureTheory.{u}) (S : RicciFlow.SmoothExhaustion F O)

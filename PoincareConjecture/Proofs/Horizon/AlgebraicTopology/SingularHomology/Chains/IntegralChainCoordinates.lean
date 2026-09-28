@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralRelativeChains
 import Mathlib.LinearAlgebra.Finsupp.LSum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

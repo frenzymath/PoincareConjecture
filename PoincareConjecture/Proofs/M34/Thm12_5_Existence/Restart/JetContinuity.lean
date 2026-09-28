@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.MetricBounds
 import PoincareConjecture.Proofs.M34.Mathlib.InitialModulusContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,30 +18,20 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   {A : MetricFlowApproximation ginit Mfamily}
   (G : MetricInteriorCoefficientLimit A)
 
-
-
 noncomputable def closedCoefficients (p : ℝ × StandardCapSpace) : MetricCoefficient 3 :=
   if p.1 ∈ Ioo 0 A.time then G.coefficients p else ginit.euclideanCoefficients p.2
-
-
 
 theorem closedCoefficients_of_mem {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :
     G.closedCoefficients (t, x) = G.coefficients (t, x) := by
   simp only [closedCoefficients, ht, if_true]
 
-
-
 theorem closedCoefficients_zero (x : StandardCapSpace) :
     G.closedCoefficients (0, x) = ginit.euclideanCoefficients x := by
   simp [closedCoefficients]
 
-
-
 noncomputable def closedSpatialJet (m : ℕ) (p : ℝ × StandardCapSpace) :
     StandardCapSpace [×m]→L[ℝ] MetricCoefficient 3 :=
   iteratedFDeriv ℝ m (fun y => G.closedCoefficients (p.1, y)) p.2
-
-
 
 theorem closedSpatialJet_of_mem (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
     (x : StandardCapSpace) :
@@ -58,21 +39,15 @@ theorem closedSpatialJet_of_mem (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
       iteratedFDeriv ℝ m (fun y => G.coefficients (t, y)) x := by
   simp only [closedSpatialJet, closedCoefficients, ht, if_true]
 
-
-
 theorem closedSpatialJet_zero (m : ℕ) (x : StandardCapSpace) :
     G.closedSpatialJet m (0, x) = iteratedFDeriv ℝ m ginit.euclideanCoefficients x := by
   simp only [closedSpatialJet, G.closedCoefficients_zero]
-
-
 
 theorem contDiffOn_closedSpatialJet_interior (m : ℕ) :
     ContDiffOn ℝ ∞ (G.closedSpatialJet m) (Ioo 0 A.time ×ˢ univ) := by
   apply (G.smooth.iteratedFDeriv_snd_of_isOpen isOpen_univ m).congr
   intro p hp
   exact G.closedSpatialJet_of_mem m hp.1 p.2
-
-
 
 theorem continuousOn_closedSpatialJet (P : RicciFlowCurvatureTheory.{0}) (m : ℕ) :
     ContinuousOn (G.closedSpatialJet m) (Ico 0 A.time ×ˢ univ) := by

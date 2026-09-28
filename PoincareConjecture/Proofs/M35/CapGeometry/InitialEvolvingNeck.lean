@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.InitialNormalizedPatch
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialNeckMargin
 import PoincareConjecture.Proofs.M35.Prop12_31.ScalarPositivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_initial_evolving_necks {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta epsilon : ℝ}
@@ -70,8 +58,6 @@ theorem exists_initial_evolving_necks {g₀ : StandardInitialMetric}
     close := hclose
   }
   exact ⟨N', hdisjoint⟩
-
-
 
 theorem initial_neck_alternative_outside_compact {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta epsilon : ℝ}

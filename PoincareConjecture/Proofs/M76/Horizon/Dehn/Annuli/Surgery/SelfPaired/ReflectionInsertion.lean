@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip

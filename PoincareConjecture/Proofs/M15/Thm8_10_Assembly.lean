@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Thm8_10_LateVolume
 import PoincareConjecture.Proofs.M15.Thm8_10_EarlyVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
 
 theorem compactTheorem810
     (hM04 : RicciFlowCurvatureTheory.{u})

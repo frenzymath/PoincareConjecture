@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Germs.Boundary
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.PairChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Filter Topology
 open scoped Topology

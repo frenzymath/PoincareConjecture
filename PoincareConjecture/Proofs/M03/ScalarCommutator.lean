@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.ConnectionFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

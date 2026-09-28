@@ -1,19 +1,8 @@
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_homeomorph_lift {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
     [SimplyConnectedSpace E] [LocallyPathConnectedSpace E]

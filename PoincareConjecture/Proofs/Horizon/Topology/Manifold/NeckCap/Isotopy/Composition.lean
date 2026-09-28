@@ -4,15 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,7 +14,6 @@ namespace PoincareConjecture.SmoothSphereIsotopicIn
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {U S₀ S₁ S₂ : Set M}
-
 
 theorem symm (h : SmoothSphereIsotopicIn U S₀ S₁) :
     SmoothSphereIsotopicIn U S₁ S₀ := by
@@ -38,9 +28,6 @@ theorem symm (h : SmoothSphereIsotopicIn U S₀ S₁) :
     exact hembed (1 - t) (htime ht)
   · simpa only [sub_zero] using hone
   · simpa only [sub_self] using hzero
-
-
-
 
 theorem trans (h₀₁ : SmoothSphereIsotopicIn U S₀ S₁)
     (h₁₂ : SmoothSphereIsotopicIn U S₁ S₂) :

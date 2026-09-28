@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceTargetArc
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +20,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric 3 M}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem boundary_differential_zero_alternative (D : LeviCivitaData g)
     {f : LoopPlane → M}

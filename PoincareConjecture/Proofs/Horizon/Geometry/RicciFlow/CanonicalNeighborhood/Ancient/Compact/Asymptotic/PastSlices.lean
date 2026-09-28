@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Asymptotic.ScalarDiameter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem compact_nonround_exists_earlier_large_scalarDiameter
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -50,8 +36,6 @@ theorem compact_nonround_exists_earlier_large_scalarDiameter
     (hdiam.and (hscale.eventually (eventually_gt_atTop (-min b 0)))).exists
   refine ⟨-B.sequence.scale (L.convergence.subsequence k), ?_, p, hp⟩
   simpa only [Function.comp_apply, neg_neg] using neg_lt_neg hk
-
-
 
 theorem compact_nonround_exists_large_past_scalarDiameter
     (P : M26CanonicalNeighborhoodPredecessors.{u})

@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusFamily
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M64
-
-
 
 theorem uniform_time_zero_jet_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

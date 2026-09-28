@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
     HasDerivAt (fun s => (g s).inner x v w) (-2 * (D t).ricci x v w) t)
 
 include hg hinterval hnontrivial hequation
-
-
 
 theorem terminalGerms_equation_of_interior :
     ∀ t ∈ J, ∀ (x : M) (v w : TangentSpace (𝓡 n) x),
@@ -54,8 +42,6 @@ theorem terminalGerms_equation_of_interior :
     (continuousOn_const.mul (terminalGerms_continuousOn_ricci hg D x v w))
     interior_subset hdense
   exact ((hm t ht).differentiableWithinAt (by simp)).hasDerivWithinAt.congr_deriv (heq ht)
-
-
 
 theorem terminalGerms_exists_flow_of_interior :
     ∃ F : RicciFlow n M J, F.metric = g := by

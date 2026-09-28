@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Compl
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.Interior
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainExterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

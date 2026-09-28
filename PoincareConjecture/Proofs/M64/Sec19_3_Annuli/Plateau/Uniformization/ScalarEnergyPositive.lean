@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,11 +15,6 @@ namespace PoincareConjecture.M64Uniformization
 open LeviCivitaData.Dirichlet
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
-
 
 theorem scalarAnnulus_isConnected : IsConnected scalarAnnulus := by
   have hs : IsConnected (Metric.sphere (0 : Plane) 1) :=
@@ -61,12 +43,6 @@ theorem scalarAnnulus_isConnected : IsConnected scalarAnnulus := by
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 theorem exists_nonzero_annular_gradient {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hnon : ¬ ∃ c : ℝ, EqOn H (fun _ => c) scalarAnnulus) :
@@ -88,13 +64,6 @@ theorem exists_nonzero_annular_gradient {H : Plane → ℝ}
   obtain ⟨c, hc⟩ := scalarAnnulus_isOpen.exists_is_const_of_fderiv_eq_zero
     scalarAnnulus_isConnected.isPreconnected hdiff hzero
   exact hnon ⟨c, hc⟩
-
-
-
-
-
-
-
 
 theorem exists_positive_local_annular_energy {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -142,14 +111,6 @@ theorem exists_positive_local_annular_energy {H : Plane → ℝ}
     exact hintegrable
   · rw [hfun]
     exact hpositive
-
-
-
-
-
-
-
-
 
 theorem exists_annular_positive_energy_harmonic_potential :
     ∃ (H : Plane → ℝ) (w : H1Zero D scalarAnnulus) (χ : EnergyTest D scalarAnnulus),

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Nested.Limit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Nested.SourceGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,7 +60,6 @@ theorem originalNestedSpatialInverse_contMDiffAt (S : AncientRescalingSequence K
     (equivShrink M).apply_symm_apply _
   rw [← he] at hs
   exact hs.comp _ (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).contMDiff.contMDiffAt
-
 
 noncomputable def nestedAncientEmbedding (S : AncientRescalingSequence K)
     (P : AncientAsymptoticSolitonPredecessors K) (j k : ℕ)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalTreeNe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.RetainedEdgeFibers
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.DualEdgePassage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -200,7 +192,6 @@ theorem residualBridge_isFinitePLInterval [Fintype K.barycentricSubdivision.face
   have h := isFinitePLBallPair_affine_interval (show (0 : ℝ) < 1 by norm_num) A hinj
   simpa only [A, ContinuousAffineMap.coe_lineMap_eq, AffineMap.lineMap_apply_zero,
     AffineMap.lineMap_apply_one, ← segment_eq_image_lineMap, residualBridge] using h
-
 
 theorem residualBridge_lineMap_spec [Fintype K.barycentricSubdivision.faces]
     (e : Edge K.vertexAbstractComplex.toPreAbstractSimplicialComplex)

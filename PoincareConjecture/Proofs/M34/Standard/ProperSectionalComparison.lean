@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M34.Standard.ProperBarrierComparison
 import PoincareConjecture.Proofs.M10.ScalarBound
 import PoincareConjecture.Proofs.M10.LaplacianLinearity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open M04
-
-
-
 
 theorem nonnegativeSectionalCurvature_of_proper_barrier
     {T B C : ℝ} (hT : 0 < T) (hB : 0 ≤ B) (hC : 0 ≤ C)

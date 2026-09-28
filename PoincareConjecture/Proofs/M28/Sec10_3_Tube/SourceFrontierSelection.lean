@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckRegion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckSegment
 
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
-
-
-
 
 theorem exists_neck_scale_lower (S : CounterexampleNeckSegment E) :
     ∃ h : ℝ, 0 < h ∧ ∀ N ∈ S.cover.necks, h ≤ N.scale := by
@@ -60,9 +48,6 @@ theorem exists_neck_scale_lower (S : CounterexampleNeckSegment E) :
     rw [inv_eq_one_div]
     apply (div_le_iff₀ hR).mpr
     nlinarith only [hsq, hmul]
-
-
-
 
 theorem exists_neck_parameter_margin (S : CounterexampleNeckSegment E) :
     ∃ d : ℝ, 0 < d ∧ ∀ s ∈ Icc S.lower S.upper,
@@ -106,10 +91,6 @@ theorem exists_neck_parameter_margin (S : CounterexampleNeckSegment E) :
     rw [hcenter]
     exact hball.trans_le (ENNReal.ofReal_le_ofReal hrad)
   exact (N.small_ball_subset_middle N.center_on_central_sphere hsmall).1
-
-
-
-
 
 theorem exists_frontier_neck_selection (S : CounterexampleNeckSegment E) :
     ∃ N : ℝ → EpsilonNeck (E.flow.metric E.time),

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.Depth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.ClosedSet
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +15,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_smooth_exhaustion_approx_on_compact
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

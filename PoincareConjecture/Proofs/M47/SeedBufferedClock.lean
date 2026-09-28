@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M47.SeedBlowupVolumeScales
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_blowup_eventually_clock_in_buffer
     (t Q : ℕ → ℝ) {a w T : ℝ} (hw : 0 < w) (_hT : 0 ≤ T)

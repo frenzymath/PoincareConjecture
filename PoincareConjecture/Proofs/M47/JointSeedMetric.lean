@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M35.TerminalBlowup.RicciTrace
 import PoincareConjecture.Proofs.M34.Standard.NonnegativeRicciMetric
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem jointSeed_metric_upper_of_nonnegative_sectional
     (F : RicciFlow n M J) {b t : ℝ} (hbt : b ≤ t) (hJ : Icc b t ⊆ J)
     (hsec : ∀ s ∈ Icc b t, ∀ x : M, ∀ v w : TangentSpace (𝓡 n) x,
@@ -36,9 +24,6 @@ theorem jointSeed_metric_upper_of_nonnegative_sectional
   exact F.inner_self_antitoneOn_of_nonnegative_ricci (convex_Icc b t) hJ x v
     (fun s hs => M04.nonneg_ricci_of_nonnegativeSectionalAt
       (F.connection s) x (hsec s hs x) v) ⟨le_rfl, hbt⟩ ⟨hbt, le_rfl⟩ hbt
-
-
-
 
 theorem jointSeed_metric_lower_of_scalar_bound
     (F : RicciFlow n M J) {b t K : ℝ} (hbt : b ≤ t) (hJ : Icc b t ⊆ J)
@@ -83,8 +68,6 @@ theorem jointSeed_metric_lower_of_scalar_bound
     congr 1
     ring
   rwa [← mul_assoc, hcancel, one_mul] at hmul
-
-
 
 theorem jointSeed_early_metric_bounds
     (F : RicciFlow n M J) {b v A L : ℝ} {U : Set M}

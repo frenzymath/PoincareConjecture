@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_moved_disk_neighborhood
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

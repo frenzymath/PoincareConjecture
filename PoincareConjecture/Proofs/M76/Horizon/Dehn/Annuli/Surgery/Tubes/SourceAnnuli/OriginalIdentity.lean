@@ -10,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem ComponentBranchModel.nonempty_original_identity_annuli
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}
@@ -47,8 +45,6 @@ theorem ComponentBranchModel.nonempty_original_identity_annuli
   · simpa [t, Nat.add_assoc, add_assoc] using haxis
   · simpa [t, Nat.add_assoc, add_assoc] using haxisImage
 
-
-
 theorem SourceCircleDecomposition.nonempty_identity_annuli
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}
@@ -67,4 +63,3 @@ theorem SourceCircleDecomposition.nonempty_identity_annuli
   exact D.nonempty_original_identity_annuli hcore hfront hmate hd hwidth
 
 end PoincareConjecture.M76.Dehn.Annuli
-

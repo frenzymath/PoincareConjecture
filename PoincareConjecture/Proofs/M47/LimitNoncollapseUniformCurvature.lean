@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseMovingCurvature
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carri
 local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 local instance : T3Space G.limit.carrier.carrier := G.limit.carrier.t3Space
 local instance : SecondCountableTopology G.limit.carrier.carrier := G.limit.carrier.secondCountable
-
-
-
 
 theorem limitNoncollapse_generalized_compact_curvature_lt
     (P : M47Predecessors.{u})

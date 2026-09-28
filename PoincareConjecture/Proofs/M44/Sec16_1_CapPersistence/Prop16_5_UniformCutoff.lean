@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_FiniteContinuation
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_SequenceContradiction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_cap_persistence_cutoff
     (P : M44CapPersistencePredecessors.{u})

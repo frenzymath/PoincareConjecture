@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CurvatureJetRealization
 import PoincareConjecture.Proofs.M03.ConnectionNativeTime
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,14 +13,10 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def raisedCurvatureTwoJet {n : ℕ} (J : MetricTwoJet n)
     (u v w : EuclideanSpace ℝ (Fin n)) : EuclideanSpace ℝ (Fin n) :=
   J.1.inverse (∑ i : Fin n,
     (jetCurvature J u v (EuclideanSpace.single i 1) w) • EuclideanSpace.proj i)
-
-
 
 theorem contDiffAt_raisedCurvatureTwoJet {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) (u v w : EuclideanSpace ℝ (Fin n)) :
@@ -44,14 +28,10 @@ theorem contDiffAt_raisedCurvatureTwoJet {n : ℕ} {J : MetricTwoJet n}
   intro i _
   exact (contDiffAt_jetCurvature hJ _ _ _ _).smul contDiffAt_const
 
-
-
 noncomputable def inverseMetricJetArray (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 2)
     (i j : Fin n) : ℝ :=
   EuclideanSpace.proj i ((twoJetProjection n J).1.inverse (EuclideanSpace.proj j))
-
-
 
 noncomputable def connectionJetArray (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 2)
@@ -59,16 +39,11 @@ noncomputable def connectionJetArray (n : ℕ)
   EuclideanSpace.proj l (jetChristoffel (twoJetProjection n J)
     (EuclideanSpace.single i 1) (EuclideanSpace.single j 1))
 
-
-
-
 noncomputable def raisedCurvatureJetArray (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 2)
     (l j k m : Fin n) : ℝ :=
   EuclideanSpace.proj l (raisedCurvatureTwoJet (twoJetProjection n J)
     (EuclideanSpace.single j 1) (EuclideanSpace.single k 1) (EuclideanSpace.single m 1))
-
-
 
 theorem contDiffOn_inverseMetricJetArray (n : ℕ) :
     ContDiffOn ℝ ∞ (inverseMetricJetArray n) (jetRicciFlowDomain n) := by
@@ -84,8 +59,6 @@ theorem contDiffOn_inverseMetricJetArray (n : ℕ) :
   exact ((EuclideanSpace.proj i).contDiff.contDiffAt.comp J
     (hI.clm_apply contDiffAt_const)).contDiffWithinAt
 
-
-
 theorem contDiffOn_connectionJetArray (n : ℕ) :
     ContDiffOn ℝ ∞ (connectionJetArray n) (jetRicciFlowDomain n) := by
   apply contDiffOn_pi.mpr
@@ -99,8 +72,6 @@ theorem contDiffOn_connectionJetArray (n : ℕ) :
     (v := fun _ => EuclideanSpace.single j 1) contDiffAt_const contDiffAt_const).comp J
       (twoJetProjection n).contDiff.contDiffAt
   exact ((EuclideanSpace.proj l).contDiff.contDiffAt.comp J hΓ).contDiffWithinAt
-
-
 
 theorem contDiffOn_raisedCurvatureJetArray (n : ℕ) :
     ContDiffOn ℝ ∞ (raisedCurvatureJetArray n) (jetRicciFlowDomain n) := by
@@ -117,16 +88,10 @@ theorem contDiffOn_raisedCurvatureJetArray (n : ℕ) :
     (EuclideanSpace.single m 1)).comp J (twoJetProjection n).contDiff.contDiffAt
   exact ((EuclideanSpace.proj l).contDiff.contDiffAt.comp J hR).contDiffWithinAt
 
-
-
-
 noncomputable def differenceEnergyJetBackground (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 3) :=
   ((inverseMetricJetArray n (truncate 2 J), connectionJetArray n (truncate 2 J)),
     (raisedCurvatureJetArray n (truncate 2 J), prolong 2 (raisedCurvatureJetArray n) J))
-
-
-
 
 theorem contDiffOn_differenceEnergyJetBackground (n : ℕ) :
     ContDiffOn ℝ ∞ (differenceEnergyJetBackground n) (curvatureJetDomain n 1) := by
@@ -140,9 +105,6 @@ theorem contDiffOn_differenceEnergyJetBackground (n : ℕ) :
   have hdR := contDiffOn_prolong (isOpen_jetRicciFlowDomain n)
     (contDiffOn_raisedCurvatureJetArray n)
   exact (hi.prodMk hΓ).prodMk (hR.prodMk hdR)
-
-
-
 
 theorem differenceEnergyJetBackground_bound (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
     ∃ C : ℝ, 1 ≤ C ∧
@@ -161,9 +123,6 @@ theorem differenceEnergyJetBackground_bound (n : ℕ) {a : ℝ} (ha : 0 < a) (H 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem raisedCurvatureTwoJet_metricTwoJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
     (x u v w : EuclideanSpace ℝ (Fin n)) :
@@ -172,8 +131,6 @@ theorem raisedCurvatureTwoJet_metricTwoJet {n : ℕ}
   unfold raisedCurvatureTwoJet
   simp_rw [jetCurvature_metricTwoJet D]
   exact Proofs.M03.inverse_bilinear_reconstruct (g.inner_isInvertible x) _
-
-
 
 theorem connectionJetArray_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -184,8 +141,6 @@ theorem connectionJetArray_spatialJet {n : ℕ}
         (D.euclideanConnection (EuclideanSpace.single i 1) (EuclideanSpace.single j 1) x) := by
   simp only [connectionJetArray, twoJetProjection_spatialJet, jetChristoffel_metricTwoJet D]
 
-
-
 theorem raisedCurvatureJetArray_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) (l j k m : Fin n) :
@@ -195,9 +150,6 @@ theorem raisedCurvatureJetArray_spatialJet {n : ℕ}
         (EuclideanSpace.single k 1) (EuclideanSpace.single m 1)) := by
   simp only [raisedCurvatureJetArray, twoJetProjection_spatialJet,
     raisedCurvatureTwoJet_metricTwoJet D]
-
-
-
 
 theorem hasFDerivAt_raisedCurvatureJetArray {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -218,9 +170,6 @@ theorem hasFDerivAt_raisedCurvatureJetArray {n : ℕ}
   funext y l j k m
   exact (raisedCurvatureJetArray_spatialJet D y l j k m).symm
 
-
-
-
 noncomputable def differenceEnergyBackground {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) :=
@@ -234,9 +183,6 @@ noncomputable def differenceEnergyBackground {n : ℕ}
       fderiv ℝ (fun y l j k m => EuclideanSpace.proj l
         (D.curvature y (EuclideanSpace.single j 1)
           (EuclideanSpace.single k 1) (EuclideanSpace.single m 1))) x))
-
-
-
 
 theorem differenceEnergyJetBackground_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -256,9 +202,6 @@ theorem differenceEnergyJetBackground_spatialJet {n : ℕ}
     · funext l j k m
       exact raisedCurvatureJetArray_spatialJet D x l j k m
     · exact (hasFDerivAt_raisedCurvatureJetArray D x).fderiv.symm
-
-
-
 
 theorem differenceEnergyBackground_bound_of_metric_jets
     (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :

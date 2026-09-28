@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,7 +59,6 @@ theorem not_compactSpace_puncturedRealProjectiveThree (p : RealProjectiveThree) 
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
 
 theorem CapModelEquivalence.not_isCompact_carrier {kind : CapModelKind}
     {p : RealProjectiveThree} {carrier : Set M}

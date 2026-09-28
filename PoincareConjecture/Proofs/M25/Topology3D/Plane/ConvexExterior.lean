@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Convex.GaugeRescale
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +8,6 @@ open Set Metric
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem isPathConnected_compl_closedBall_of_one_lt_rank (hdim : 1 < Module.rank ℝ E)
     (c : E) (r : ℝ) : IsPathConnected (closedBall c r)ᶜ := by
@@ -50,8 +37,6 @@ theorem isPathConnected_compl_closedBall_of_one_lt_rank (hdim : 1 < Module.rank 
     exact hprod.image (continuous_const.add (continuous_snd.smul continuous_fst))
   · rw [closedBall_eq_empty.mpr hr, compl_empty]
     exact (convex_univ : Convex ℝ (univ : Set E)).isPathConnected ⟨0, mem_univ 0⟩
-
-
 
 theorem isPathConnected_compl_closure_of_convex (hdim : 1 < Module.rank ℝ E)
     {s : Set E} (hc : Convex ℝ s) (hne : (interior s).Nonempty)

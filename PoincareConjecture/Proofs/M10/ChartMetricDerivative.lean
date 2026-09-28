@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.ChartMetricSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -20,12 +12,10 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem pullbackMetricForm_symm (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin n) → M) (y v w : EuclideanSpace ℝ (Fin n)) :
     pullbackMetricForm g f y v w = pullbackMetricForm g f y w v :=
   g.symm _ _ _
-
 
 theorem fderiv_bilinear_apply {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {y : E} (hB : DifferentiableAt ℝ B y)
@@ -35,7 +25,6 @@ theorem fderiv_bilinear_apply {E : Type*} [NormedAddCommGroup E] [NormedSpace �
     (hasFDerivAt_const w y)
   have heq := congrArg (fun L : E →L[ℝ] ℝ ↦ L d) hd.fderiv
   simpa only [ContinuousLinearMap.comp_zero, zero_add, ContinuousLinearMap.flip_apply] using heq
-
 
 theorem pullbackMetricForm_fderiv_symm (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {y : EuclideanSpace ℝ (Fin n)}

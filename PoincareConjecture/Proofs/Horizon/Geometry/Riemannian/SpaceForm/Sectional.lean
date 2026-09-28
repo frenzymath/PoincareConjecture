@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Curvature
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem sectionalCurvature_eq_of_orthonormal (D : LeviCivitaData g)
     (x : M) (c : ℝ)
@@ -94,7 +87,6 @@ theorem sectionalCurvature_eq_of_orthonormal (D : LeviCivitaData g)
       _ = c * (g.inner x u u * g.inner x z z) := by rw [hsec]
   exact (div_eq_iff hgram).mpr hnum
 
-
 theorem ricci_of_constant_sectional (D : LeviCivitaData g)
     (x : M) (c : ℝ)
     (hc : ∀ a b : TangentSpace (𝓡 n) x,
@@ -120,7 +112,6 @@ theorem ricci_of_constant_sectional (D : LeviCivitaData g)
     simp [TangentSpace]
   rw [hdim]
   ring
-
 
 theorem scalarCurvature_of_constant_sectional (D : LeviCivitaData g)
     (x : M) (c : ℝ)

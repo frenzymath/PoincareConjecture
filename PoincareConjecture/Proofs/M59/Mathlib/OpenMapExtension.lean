@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -25,20 +16,15 @@ variable {E H X F K M : Type*}
   {J : ModelWithCorners ℝ F K}
   [TopologicalSpace M] [ChartedSpace K M]
 
-
-
 def openMapExtension (U : TopologicalSpace.Opens X) (g : U → M) (p : M) (x : X) : M := by
   classical
   exact if hx : x ∈ U then g ⟨x, hx⟩ else p
 
 omit [TopologicalSpace M] in
 
-
 theorem openMapExtension_apply (U : TopologicalSpace.Opens X) (g : U → M) (p : M) (x : U) :
     openMapExtension U g p x.val = g x := by
   simp only [openMapExtension, dif_pos x.property]
-
-
 
 theorem contMDiffAt_openMapExtension (U : TopologicalSpace.Opens X) (g : U → M) (p : M)
     (x : U) {n : ℕ∞ω} (hg : ContMDiffAt I J n g x) :

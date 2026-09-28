@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicIsolatedStarSign
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem mem_closure_punctured_zero_section_of_both_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -55,11 +41,6 @@ theorem mem_closure_punctured_zero_section_of_both_signs
       intro heq
       simp only [heq, map_zero, lt_self_iff_false] at hxL
     exact lt_asymm hxL (hmax x ⟨hxS, hxball⟩ hxzero)
-
-
-
-
-
 
 theorem mem_closure_punctured_level_of_both_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

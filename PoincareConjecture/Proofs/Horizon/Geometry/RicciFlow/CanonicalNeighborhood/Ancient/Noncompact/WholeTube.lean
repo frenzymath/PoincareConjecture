@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Elimination
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Cap
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 def wholeNeckCover (K : AncientKappaSolution 3 M) {t epsilon epsilon₀ : ℝ}
     (hepsilon : 0 < epsilon) (hthreshold : 0 < epsilon₀)
@@ -53,8 +40,6 @@ def wholeNeckCover (K : AncientKappaSolution 3 M) {t epsilon epsilon₀ : ℝ}
     exact N.terminal_epsilon
   cap_epsilon := by simp
   cap_constant_bound := by simp }
-
-
 
 theorem exists_wholeStrongTube_threshold (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

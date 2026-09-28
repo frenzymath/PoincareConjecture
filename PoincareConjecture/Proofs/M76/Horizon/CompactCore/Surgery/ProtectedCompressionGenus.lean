@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.InteriorCompres
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ExteriorCompressionGenus
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.ProtectedDiskCutSide
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains

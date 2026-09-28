@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InnerReturnRegi
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJordanRegions
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalContactComparison
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +9,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_nested_inner_return_region
     {U V : Set AnnulusCoordinates}

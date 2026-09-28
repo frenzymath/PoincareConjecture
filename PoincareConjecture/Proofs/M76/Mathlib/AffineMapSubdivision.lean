@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexHalfspaces
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCentroidSign
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
 
 theorem AffineOnFaces.exists_subdivision_mapsTo_cover (hf : K.AffineOnFaces f)
     (hfinite : K.faces.Finite) {N : ℕ} (hN : ∀ s ∈ K.faces, s.card ≤ N + 1)

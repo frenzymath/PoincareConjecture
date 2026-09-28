@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DouglasMorreyInterface
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.HarmonicBranchConnected
 import PoincareConjecture.Proofs.M60.Mathlib.ManifoldDerivativeEquiv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem m64Annulus_finite_branch_set_of_global_harmonic_chart
     (A : M64Annulus g c0 c1) (b : M) (u : ℂ → E)

@@ -1,14 +1,6 @@
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X] {K L R S : Set X}
-
-
 
 theorem mem_interior_subtype_preimage_iff_of_mem_interior
     (x : R) (hx : (x : X) ∈ interior R) :
@@ -42,9 +32,6 @@ theorem mem_interior_subtype_preimage_iff_of_mem_interior
     exact interior_maximal hUL (hU.inter isOpen_interior) ⟨hxU, hx⟩
   · exact fun h => preimage_interior_subset_interior_preimage continuous_subtype_val h
 
-
-
-
 theorem exists_open_eq_of_relative_interior
     (hKL : K ⊆ L) (hLR : L ⊆ R) (x : R)
     (hx : x ∈ interior ((Subtype.val : R → X) ⁻¹' K)) :
@@ -66,9 +53,6 @@ theorem exists_open_eq_of_relative_interior
     have hyK : (⟨y, hyR⟩ : R) ∈
         (Subtype.val : R → X) ⁻¹' K := interior_subset hyrel
     exact hKL hyK
-
-
-
 
 theorem protected_frontier_eq_of_relative_frontier
     (hR : IsClosed R) (hL : IsClosed L) (hLR : L ⊆ R)

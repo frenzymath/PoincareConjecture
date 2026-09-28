@@ -1,21 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem AddCircle.isConnected_compl_singleton {p : ℝ} [Fact (0 < p)] (x : AddCircle p) :
     IsConnected ({x}ᶜ : Set (AddCircle p)) := by
@@ -26,8 +14,6 @@ theorem AddCircle.isConnected_compl_singleton {p : ℝ} [Fact (0 < p)] (x : AddC
     rw [← e.image_source_eq_target]
     exact (isConnected_Ioo (lt_add_of_pos_right a (Fact.out : 0 < p))).image
       e e.continuousOn
-
-
 
 theorem Circle.isConnected_compl_singleton (q : Circle) :
     IsConnected ({q}ᶜ : Set Circle) := by

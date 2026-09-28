@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRaisedSourceIntegrable
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -38,10 +28,6 @@ local instance m64BoundaryMetricSource_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
 theorem m64WeightedMetricSource_bound (w : Fin 2 → ℝ)
     (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (V : Fin 2 → E)
     {L Lambda : ℝ} (hLambda : 0 ≤ Lambda)
@@ -61,10 +47,6 @@ theorem m64WeightedMetricSource_bound (w : Fin 2 → ℝ)
   norm_num only [abs_div, abs_neg, abs_one]
   have hs := (abs_add_le _ _).trans (add_le_add (hh 0) (hh 1))
   nlinarith
-
-
-
-
 
 theorem m64WeightedMetricSource_integrable
     {S : Set LoopPlane} (hS : MeasurableSet S) {U K : Set E}
@@ -93,10 +75,6 @@ theorem m64WeightedMetricSource_integrable
       ((ContinuousLinearMap.apply ℝ ℝ («E» := E)).memLp_of_bilin
         (p := 2) (q := 2) 1 (hV i) hfirst)
   exact (((hquad 0).const_mul (w 0)).add ((hquad 1).const_mul (w 1))).const_mul (-1 / 2)
-
-
-
-
 
 theorem m64BoundaryMetricRaisedSource_data
     {S : Set LoopPlane} (hS : MeasurableSet S) {U K : Set E}

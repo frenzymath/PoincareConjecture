@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.RadialFrameComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.FrameEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
-
 
 theorem exists_small_radial_frame_of_gauss {R K ε : ℝ}
     (hR : 0 < R) (hK : 0 ≤ K) (hε : 0 < ε) :

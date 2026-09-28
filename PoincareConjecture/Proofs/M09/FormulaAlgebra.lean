@@ -2,13 +2,6 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M09

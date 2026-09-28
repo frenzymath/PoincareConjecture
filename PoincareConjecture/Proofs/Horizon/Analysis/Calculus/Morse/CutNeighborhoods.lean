@@ -1,16 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.RegularCuts
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Analysis.Calculus.Morse
-
-
 
 theorem exists_isolating_cut_radius {A : Set Real} (hA : A.Finite) (c : Real) :
     ∃ R : Real, 0 < R ∧ ∀ k ∈ A, k ≠ c -> R < |k - c| := by
@@ -24,8 +20,6 @@ theorem exists_isolating_cut_radius {A : Set Real} (hA : A.Finite) (c : Real) :
     exact (hball hlt) ⟨hk, hkc⟩
   rw [Real.dist_eq] at hd
   linarith
-
-
 
 theorem exists_isolating_cut_radius_with_closed_heights
     {A B : Set Real} (hA : A.Finite) (hB : IsClosed B) (c : Real) (hc : c ∉ B) :

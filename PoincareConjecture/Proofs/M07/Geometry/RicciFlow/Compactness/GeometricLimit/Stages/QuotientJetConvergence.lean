@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.FlowCarrier
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -20,8 +11,6 @@ open Set Filter Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem pullback_metric_CInfinity_of_quotient_coefficient_jets
     {ι : Type*} [Countable ι] {n : ℕ} {T' T : ℝ}

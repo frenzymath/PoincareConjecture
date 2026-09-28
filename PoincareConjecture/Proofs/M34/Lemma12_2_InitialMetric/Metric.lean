@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.SmoothInnerProduct
 import Mathlib.Analysis.LocallyConvex.Bounded
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Bornology
@@ -18,12 +9,8 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def capMetricInnerTangent (a : ℝ) (x : StandardCapSpace) :
     TangentSpace (𝓡 3) x →L[ℝ] TangentSpace (𝓡 3) x →L[ℝ] ℝ := capMetricInner a x
-
-
 
 theorem capMetricInner_isVonNBounded {a : ℝ} (ha : 0 ≤ a)
     (hapi : a ≤ Real.pi / 2) (x : StandardCapSpace) :
@@ -43,8 +30,6 @@ theorem capMetricInner_isVonNBounded {a : ℝ} (ha : 0 ≤ a)
   have hrootnonneg := Real.sqrt_nonneg (1 / c)
   rw [Metric.mem_ball, dist_zero_right]
   nlinarith [norm_nonneg v]
-
-
 
 theorem capMetricInner_contMDiff {a : ℝ} (ha : 0 < a) :
     ContMDiff (𝓡 3) ((𝓡 3).prod 𝓘(ℝ,
@@ -71,9 +56,6 @@ theorem capMetricInner_contMDiff {a : ℝ} (ha : 0 < a) :
     Bundle.Trivial.continuousLinearMapAt_trivialization, TangentBundle.symmL_model_space,
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.id_apply, capMetricInnerTangent]
   rfl
-
-
-
 
 noncomputable def capRiemannianMetric (a : ℝ) (ha : 0 < a) (hapi : a ≤ Real.pi / 2) :
     RiemannianMetric 3 StandardCapSpace where

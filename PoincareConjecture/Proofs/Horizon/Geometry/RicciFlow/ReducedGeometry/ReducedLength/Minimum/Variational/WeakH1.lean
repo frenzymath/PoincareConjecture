@@ -5,18 +5,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationTh
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Topology
@@ -29,8 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E]
 section SmoothPrimitive
 
 variable [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem smooth_primitive_fixed_endpoints {a b : ℝ} (hab : a < b)
     (u₀ u₁ : E) (q : ℝ → E) (hq : ContDiff ℝ ∞ q) :
@@ -72,7 +58,6 @@ end SmoothPrimitive
 
 variable [InnerProductSpace ℝ E] [CompleteSpace E]
 
-
 noncomputable abbrev IntervalL2 (E : Type*) [NormedAddCommGroup E] (a b : ℝ) :=
   Lp E 2 (volume.restrict (Icc a b))
 
@@ -81,7 +66,6 @@ theorem intervalL2_intervalIntegrable {a b : ℝ} (hab : a ≤ b) (v : IntervalL
     IntervalIntegrable v volume a b := by
   apply (intervalIntegrable_iff_integrableOn_Icc_of_le hab).mpr
   exact MemLp.integrable (by norm_num) (Lp.memLp v)
-
 
 theorem primitive_of_deriv {a b : ℝ} {u d : ℝ → E}
     (hu : ContinuousOn u (Icc a b))
@@ -108,8 +92,6 @@ private theorem integral_as_setIntegral {a b t : ℝ} (ht : t ∈ Icc a b)
     (∫ s in Icc a t, v s ∂volume.restrict (Icc a b)) = ∫ s in a..t, v s := by
   rw [Measure.restrict_restrict_of_subset (Icc_subset_Icc_right ht.2),
     integral_Icc_eq_integral_Ioc, intervalIntegral.integral_of_le ht.1]
-
-
 
 theorem primitive_of_weak_limit {a b : ℝ}
     (u : ℕ → ℝ → E) (g : ℝ → E) (v : ℕ → IntervalL2 E a b) (w : IntervalL2 E a b)
@@ -138,8 +120,6 @@ theorem primitive_of_weak_limit {a b : ℝ}
     simpa only [inner_add_right, hprimitive _ _ ht] using hsum
   exact tendsto_nhds_unique
     (Filter.Tendsto.inner (𝕜 := ℝ) tendsto_const_nhds (hpoint t ht)) hsum'
-
-
 
 theorem primitive_ae_hasDerivAt {a b : ℝ} (hab : a ≤ b)
     (u : ℝ → E) (w : IntervalL2 E a b)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionDomainPullback
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem mapTension_eq_neg_pushedDeTurck
     (g b : RiemannianMetric n V) (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞)
     (D : LeviCivitaData g) (B : LeviCivitaData b)
@@ -36,8 +24,6 @@ theorem mapTension_eq_neg_pushedDeTurck
   have hid : (Φ : V → V) ∘ (Φ.symm : V → V) = id := funext Φ.apply_symm_apply
   rw [hid, Φ.symm_apply_apply, mapTension_id] at h
   exact h.symm
-
-
 
 theorem mapTension_original_intrinsic
     (g b : RiemannianMetric 3 StandardCapSpace)

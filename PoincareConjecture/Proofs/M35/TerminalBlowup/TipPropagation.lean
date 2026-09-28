@@ -5,25 +5,12 @@ import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 import PoincareConjecture.Proofs.M09.HessianTrace
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem scalar_tendsto_at_origin_of_tendsto_off_origin
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

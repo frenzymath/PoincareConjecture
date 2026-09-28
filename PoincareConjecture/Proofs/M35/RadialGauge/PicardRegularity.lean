@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.TimeSmoothness
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelMeasurability
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardContraction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,7 +14,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
 structure PicardSlabControl (T eta : ℝ) (u : ℝ → V → ℝ) : Prop where
   measurable : StronglyMeasurable (fun p : Icc 0 T × V => u p.1.1 p.2)
   smooth : ∀ s ∈ Icc 0 T, ContDiff ℝ ∞ (u s)
@@ -33,8 +22,6 @@ structure PicardSlabControl (T eta : ℝ) (u : ℝ → V → ℝ) : Prop where
   weighted : ∀ s ∈ Icc 0 T, ∀ x,
     (1 + ‖x‖) * ‖u s x‖ ≤ eta ∧
     (1 + ‖x‖) * ‖fderiv ℝ (u s) x‖ ≤ eta
-
-
 
 theorem PicardSlabControl.source
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T eta : ℝ}
@@ -78,9 +65,6 @@ theorem PicardSlabControl.source
   intro k
   obtain ⟨C, hC⟩ := hbounded k
   exact ⟨C, fun s hs => hC ⟨s, hs⟩⟩
-
-
-
 
 theorem PicardSlabControl.duhamel
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ}
@@ -155,8 +139,6 @@ theorem PicardSlabControl.duhamel
     have hgain : (B * eta + eta ^ 2 + L * eta + C) * heatC1Gain (n + 1) s ≤ eta :=
       (mul_le_mul_of_nonneg_left (heatC1Gain_mono hs.1 hs.2) hS).trans hsmall
     exact ⟨h.1.trans hgain, h.2.trans hgain⟩
-
-
 
 theorem gaugePicard_slab_control
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B L C : ℝ}

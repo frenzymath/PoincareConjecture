@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactMetricComparison
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +12,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem tangentNorm_pullback_le_of_quadratic_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N) (f : M → N)
@@ -36,8 +26,6 @@ theorem tangentNorm_pullback_le_of_quadratic_le
     apply (le_div_iff₀ hQ).mpr
     simpa only [mul_comm Q] using hbound
   exact (Real.sqrt_le_sqrt hdiv).trans_eq (Real.sqrt_mul (div_nonneg hA hQ.le) _)
-
-
 
 theorem pathELength_comp_le_of_tangentNorm_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N) (f : M → N)
@@ -64,8 +52,6 @@ theorem pathELength_comp_le_of_tangentNorm_le
   exact (ENNReal.ofReal_le_ofReal
     (hnorm.trans_le (hbound (gamma s) (himage hsI) _))).trans_eq (ENNReal.ofReal_mul hC)
 
-
-
 theorem intrinsicEDist_image_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N) (f : M → N)
     {U : Set M} (hU : IsOpen U) (hf : ContMDiffOn (𝓡 3) (𝓡 3) ∞ f U)
@@ -89,8 +75,6 @@ theorem intrinsicEDist_image_le
     exact ⟨gamma s, hmaps hs, rfl⟩
   exact (mul_le_mul' le_rfl (hd.trans hlength)).trans_eq
     (ENNReal.inv_mul_cancel_left hc0 ENNReal.ofReal_ne_top)
-
-
 
 theorem intrinsicDiameter_image_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N) (f : M → N)

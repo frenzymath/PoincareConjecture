@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.Hessian.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,8 +33,6 @@ private theorem endpoint_curvature_coefficient_le_neg {κ ρ C : ℝ}
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_transverse_distance_upper_support_of_endpoint_ball_curvature
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -97,9 +87,6 @@ theorem exists_transverse_distance_upper_support_of_endpoint_ball_curvature
   have hca : -(κ * ρ / 6) ≤ -a := neg_le_neg (min_le_left _ _)
   exact (hhess w).trans (mul_le_mul_of_nonneg_right (hc.trans hca) htrans)
 
-
-
-
 theorem exists_uniform_transverse_distance_upper_support
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
@@ -123,9 +110,6 @@ theorem exists_uniform_transverse_distance_upper_support
     lt_of_lt_of_le (by positivity) (le_max_left _ _), ?_⟩
   exact fun p hp => g.exists_transverse_distance_upper_support_of_endpoint_ball_curvature
     D hcomplete hsec x hκ hρ hball p hp
-
-
-
 
 theorem exists_uniform_transverse_distance_upper_support_on_edist_ball
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

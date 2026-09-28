@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Canonica
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -20,7 +13,6 @@ open Set Filter Bundle
 open scoped Manifold ContDiff Topology BigOperators
 
 namespace PoincareConjecture.SingularRegularLimit.RoundComparison
-
 
 def roundComparisonThreshold : ℝ := min roundScalarTolerance (1 / 200)
 
@@ -57,7 +49,6 @@ theorem forward_mfderiv_injective (N : SingularRoundComponent g epsilon)
   rw [← hchain] at h
   exact h
 
-
 def normalizedMetric (N : SingularRoundComponent g epsilon) :
     RiemannianMetric 3 N.model.carrier :=
   RiemannianMetric.Induced.pullbackMetric (rescaledMetric g N.scale N.scale_pos)
@@ -77,8 +68,6 @@ theorem normalizedMetric_scalar (N : SingularRoundComponent g epsilon)
     (rescaledMetric_connection g D N.scale N.scale_pos) isOpen_univ
     N.forward_smooth.contMDiffOn (fun _ _ _ _ => rfl) (mem_univ x)
   simpa only [rescaledMetric_scalarCurvature] using h
-
-
 
 theorem normalizedMetric_error_norm_lt (N : SingularRoundComponent g epsilon)
     {r : ℕ} (hr : r ≤ ⌊epsilon⁻¹⌋₊) (x : N.model.carrier) :
@@ -102,8 +91,6 @@ theorem normalizedMetric_error_norm_lt (N : SingularRoundComponent g epsilon)
         N.model_metric.inner y (v 0) (v 1)) r) x) ^ 2 < epsilon ^ 2 at hs
   nlinarith [N.epsilon_pos]
 
-
-
 theorem normalized_scalar_close (N : SingularRoundComponent g epsilon)
     (D : LeviCivitaData g) (hepsilon : epsilon ≤ roundComparisonThreshold)
     (x : N.model.carrier) :
@@ -120,8 +107,6 @@ theorem normalized_scalar_close (N : SingularRoundComponent g epsilon)
       (N.normalizedMetric_error_norm_lt (hr.trans htwo) x).trans_le
         (hepsilon.trans (min_le_left _ _)))
   rwa [N.normalizedMetric_scalar D x] at h
-
-
 
 theorem scalar_le_two_mul (N : SingularRoundComponent g epsilon)
     (D : LeviCivitaData g) (hepsilon : epsilon ≤ roundComparisonThreshold)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalAssembly
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoherence
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalDiagonal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +22,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (W : ∀ k, M33RegularHistoryWindow (
     ((H k).history.forward (t k) (ht k) (x k))) atTop atTop)
 
 local notation "V" => regularHistoryBlowupSequence F W H t ht x hPositive hDiverges
-
 
 theorem terminalCommonInterval_coherent_row
     (k n : ℕ) (T B : ℕ → ℝ) (hT : Monotone T) {A eta : ℝ}
@@ -57,8 +48,6 @@ theorem terminalCommonInterval_coherent_row
     congrArg (fun z => (⟨t k + s / (V).scale k, z⟩ : (H k).generalized.point)) hagree
   rw [hpoint]
   exact f.curvature_bound s hs y hy
-
-
 
 theorem terminalCommonInterval_actual_diagonal
     (T B : ℕ → ℝ) (hT : Monotone T)

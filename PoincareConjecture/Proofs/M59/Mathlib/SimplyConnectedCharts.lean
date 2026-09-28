@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Geometry.Manifold.ChartedSpace
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ universe u v
 
 namespace LocallySimplyConnectedSpace
 
-
-
 instance of_normedSpace {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] :
     LocallySimplyConnectedSpace E where
   exists_open_simplyConnected x U hx hU := by
@@ -31,8 +20,6 @@ instance of_normedSpace {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] 
       (convex_ball x r).contractibleSpace ⟨x, mem_ball_self hr⟩
     exact ⟨ball x r, isOpen_ball, (inferInstance : SimplyConnectedSpace (ball x r)),
       mem_ball_self hr, hsub⟩
-
-
 
 theorem of_convex {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {s : Set E} (hs : Convex ℝ s) : LocallySimplyConnectedSpace s where
@@ -46,12 +33,8 @@ theorem of_convex {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
     have hsc := Topology.IsEmbedding.subtypeVal.isSimplyConnected_image.mp him
     exact ⟨ball x r, isOpen_ball, hsc, mem_ball_self hr, hsub⟩
 
-
-
 instance unitInterval : LocallySimplyConnectedSpace I :=
   of_convex (convex_Icc (0 : ℝ) 1)
-
-
 
 theorem exists_of_openPartialHomeomorph
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
@@ -81,8 +64,6 @@ theorem exists_of_openPartialHomeomorph
   simpa only [e.left_inv hy.1] using h
 
 end LocallySimplyConnectedSpace
-
-
 
 theorem ChartedSpace.locallySimplyConnectedSpace
     (H : Type u) [TopologicalSpace H] [LocallySimplyConnectedSpace H]

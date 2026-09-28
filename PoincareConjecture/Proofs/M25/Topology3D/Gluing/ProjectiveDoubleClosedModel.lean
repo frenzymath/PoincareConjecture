@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveDoubleClosedMod
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCompactSide
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCapCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem capCertificates_exists_closed_component_of_projective_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

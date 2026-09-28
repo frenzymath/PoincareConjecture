@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ExponentialDilation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators

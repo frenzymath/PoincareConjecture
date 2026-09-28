@@ -2,22 +2,11 @@ import PoincareConjecture.Definitions.M48ParameterExtension
 import PoincareConjecture.Definitions.M48EpochExtension
 import PoincareConjecture.Proofs.M48.DerivativeControls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem RepairedControlledSchedulesData.SeedCompatible.nextPrefix
     {S : RepairedControlledSchedulesData.{u}}
@@ -64,9 +53,6 @@ private theorem epochEntry_exists
       · refine ⟨Fin.last (n + 1), ?_⟩
         have hprev' : surgeryEpochStart n ≤ t := le_of_not_gt hprev
         simpa [surgeryEpochEntry, Nat.succ_ne_zero] using And.intro hprev' htn
-
-
-
 
 theorem SurgeryPrefixControls.nextPrefix
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -181,10 +167,6 @@ theorem SurgeryPrefixControls.nextPrefix
     | cast j =>
         exact old.h_schedule j (Nat.le_of_lt_succ j.isLt)
 
-
-
-
-
 theorem SurgeryPrefixControls.noncollapsedAssumptionOn
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {Q : SurgeryNoncollapseExtension.{u} p}
@@ -216,8 +198,6 @@ theorem SurgeryPrefixControls.noncollapsedAssumptionOn
     have hk := old.kappa_schedule j hjold t hjobs
     simpa [hk] using hv
 
-
-
 theorem SurgeryPrefixControls.nextPrefix_of_extension
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {Q : SurgeryNoncollapseExtension.{u} p} {R : SurgeryCanonicalExtension p Q}
@@ -240,10 +220,6 @@ theorem SurgeryPrefixControls.nextPrefix_of_extension
   · simpa only [E.parameters_eq] using next_kappa
   · simpa only [E.parameters_eq] using next_h
   · simpa only [E.parameters_eq] using overlap_delta
-
-
-
-
 
 theorem RepairedEpochExtensionData.nextPrefix_with_derivative
     {S : RepairedControlledSchedulesData.{u}}
@@ -288,7 +264,6 @@ theorem RepairedEpochExtensionData.nextPrefix_with_derivative
       hnextkappa,
       derivative E O'⟩
 
-
 theorem RepairedEpochExtensionData.nextPrefix
     {S : RepairedControlledSchedulesData.{u}}
     {N : RepairedNoncollapseInductionData S}
@@ -322,8 +297,6 @@ theorem RepairedEpochExtensionData.nextPrefix
     returned_old.nextPrefix_of_extension E hcanonical hnoncollapsed
       controls.next_r controls.next_kappa controls.next_h controls.overlap_delta,
       hnextkappa⟩
-
-
 
 theorem SurgeryPrefixControls.canonicalAssumptionOn
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

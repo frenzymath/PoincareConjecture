@@ -1,14 +1,5 @@
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S U V : Set X}
-
-
-
 
 theorem closure_region_eq_compl (hdis : Disjoint U V) (hunion : U ∪ V = Sᶜ)
     (hfront : frontier U = S) : closure U = Vᶜ := by
@@ -33,16 +21,12 @@ theorem closure_region_eq_compl (hdis : Disjoint U V) (hunion : U ∪ V = Sᶜ)
     · exact Or.inr hxS
     · exact Or.inl ((hunion.symm.subset hxS).resolve_right hxV)
 
-
-
 theorem interior_closure_region (hdis : Disjoint U V) (hunion : U ∪ V = Sᶜ)
     (hfrontU : frontier U = S) (hfrontV : frontier V = S) : interior (closure U) = U := by
   have hUV : closure U = Vᶜ := closure_region_eq_compl hdis hunion hfrontU
   have hVU : closure V = Uᶜ :=
     closure_region_eq_compl hdis.symm ((union_comm V U).trans hunion) hfrontV
   rw [hUV, interior_compl, hVU, compl_compl]
-
-
 
 theorem frontier_closure_region (hU : IsOpen U) (hdis : Disjoint U V)
     (hunion : U ∪ V = Sᶜ) (hfrontU : frontier U = S) (hfrontV : frontier V = S) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalM30Map
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carri
   G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem terminalCommonInterval_m30_terminal_tangent
     {K : Set G.limit.sliceCarrier.carrier} (hK : IsCompact K)

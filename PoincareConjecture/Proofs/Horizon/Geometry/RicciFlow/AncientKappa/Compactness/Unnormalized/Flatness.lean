@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000
@@ -31,8 +21,6 @@ local instance flatnessCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.c
 variable (C : ℕ → FlowCarrier.{0} 3)
   (K : ∀ k, AncientKappaSolution 3 (C k).carrier) (p : ∀ k, (C k).carrier)
   (G : AncientPointedGeometricConvergence C (fun k t => (K k).flow.metric (t - 1)) p 1)
-
-
 
 theorem interiorLimit_base_curvatureTensorNorm_eq_zero
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -58,8 +46,6 @@ theorem interiorLimit_base_curvatureTensorNorm_eq_zero
   apply le_of_tendsto_of_tendsto hconv (hscalar.comp G.subsequence_strictMono.tendsto_atTop)
   exact Eventually.of_forall fun k => P.past_norm_le_scalar (C (G.subsequence k)).carrier
     (K (G.subsequence k)) (s - 1) 0 (by linarith) le_rfl (p (G.subsequence k))
-
-
 
 theorem interiorLimit_flat_of_base_scalar_tendsto_zero
     (P : M23NormalizedKappaCompactnessPredecessors)

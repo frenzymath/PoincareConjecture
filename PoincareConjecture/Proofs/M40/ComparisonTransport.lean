@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M40.HomotopyEquivalence
 import PoincareConjecture.Proofs.M40.PiThree
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,9 +13,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {T : ℝ} {hT : T ∈ D.flow.surgery_times}
   [Nonempty (D.flow.slice T).carrier]
   {I : RepairedComparisonHomotopyInput D T hT}
-
-
-
 
 noncomputable def comparisonHomotopyConclusion
     (P : RepairedClosedTopologyProvider.{u})

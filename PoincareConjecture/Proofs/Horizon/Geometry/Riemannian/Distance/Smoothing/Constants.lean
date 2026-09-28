@@ -1,12 +1,8 @@
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_distance_smoothing_parameter {H eta : ℝ} (hH : 0 ≤ H) (heta : 0 < eta) :
     ∃ t : ℝ, 0 < t ∧ t ≤ 1 / 4 ∧

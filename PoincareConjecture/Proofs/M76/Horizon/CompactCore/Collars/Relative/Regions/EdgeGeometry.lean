@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Region
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.EdgeBase
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSignedDiskCut
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -14,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem edge_region_ball (p : (T.marked 2).vertices) {s : Finset E}
     (hps : (p : E) ∈ s) (hs : s ∈ (T.marked 2).faces) (hscard : s.card = 2) :

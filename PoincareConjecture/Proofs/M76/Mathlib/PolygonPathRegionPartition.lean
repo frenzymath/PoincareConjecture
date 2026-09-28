@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonDiagonalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
-
 
 theorem crossingIndex_three_paths {m n k : ℕ}
     (u : Fin (m + 2) → ℝ × ℝ) (v : Fin (n + 2) → ℝ × ℝ)
@@ -34,13 +20,6 @@ theorem crossingIndex_three_paths {m n k : ℕ}
         (ofPaths w v).crossingIndex q := by
   exact Fin.cyclicEdgeSum_three_paths (fun a b => PlanarSegment.crossingContribution a b q)
     (fun a b => PlanarSegment.crossingContribution_swap a b q) u v w huv hvu hwu hwv
-
-
-
-
-
-
-
 
 theorem region_partition_three_paths {m n k : ℕ}
     (u : Fin (m + 4) → ℝ × ℝ) (v : Fin (n + 4) → ℝ × ℝ)

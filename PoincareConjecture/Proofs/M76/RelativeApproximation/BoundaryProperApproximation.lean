@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.RelativeApproximation.RetainedModelApproxim
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorComposite
 import PoincareConjecture.Proofs.M76.RelativeApproximation.Mathlib.InteriorHomotopyPasting
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -20,9 +9,6 @@ open Set Geometry unitInterval
 namespace PoincareConjecture.M76
 
 variable {X ι κ : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem hasRelativeBoundaryProperPLApproximation
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))

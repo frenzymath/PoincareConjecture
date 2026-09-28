@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.AreaComparisonProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -19,9 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {t₀ t₁ : ℝ} (F : RicciFlow 3 M (Set.Icc t₀ t₁))
-
-
-
 
 theorem m65AreaAlternative_transfer {a0 a1 b0 b1 e0 e1 eta t : ℝ}
     (hinitial : |b0 - a0| ≤ e0) (hterminal : a1 ≤ b1 + e1)

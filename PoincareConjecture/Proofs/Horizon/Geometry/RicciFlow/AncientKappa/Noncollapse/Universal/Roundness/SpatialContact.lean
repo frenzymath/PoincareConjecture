@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.TensorCone
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.CarrierContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
-
 
 theorem tensorLaplacian_nonpos_at_round_pinching_contact
     (D : LeviCivitaData g) (p : M) (c : ℝ) :

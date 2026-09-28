@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Arcs.SquareInversion
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,8 +8,6 @@ open Set Metric
 namespace Poincare.Manifold.Schoenflies.PlaneArcs
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
 
 theorem exterior_square_crossing {r : Real} (hr : 0 < r)
     (α β : Real → E2)
@@ -67,7 +58,6 @@ theorem exterior_square_crossing {r : Real} (hr : 0 < r)
     squareInversion_injOn hr (hr.trans_le (hαout _ (hθI hs)))
       (hr.trans_le (hβout _ (hθI ht))) heq⟩
 
-
 def squareCorner (r : Real) (i : Fin 2 × Fin 2) : E2 :=
   WithLp.toLp 2 ![if i.1 = 0 then r else -r, if i.2 = 0 then r else -r]
 
@@ -75,8 +65,6 @@ theorem squareGauge_corner {r : Real} (hr : 0 < r) (i : Fin 2 × Fin 2) :
     squareGauge (squareCorner r i) = r := by
   rcases i with ⟨i, j⟩
   fin_cases i <;> fin_cases j <;> simp [squareGauge, squareCorner, abs_of_pos hr]
-
-
 
 theorem not_disjoint_exterior_opposite_corners {r : Real} (hr : 0 < r)
     (α β : Real → E2)

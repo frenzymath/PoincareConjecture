@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient.LevelDistance
 
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology

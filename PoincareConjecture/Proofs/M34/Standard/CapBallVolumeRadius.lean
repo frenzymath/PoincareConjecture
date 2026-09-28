@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem scalar_normalized_radius_sqrt_bounds
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (y : M)
@@ -57,8 +46,6 @@ theorem scalar_normalized_radius_sqrt_bounds
   · apply (sq_le_sq₀ hr.le hsqrt.le).mp
     rwa [Real.sq_sqrt hB.le]
 
-
-
 theorem scalar_normalized_radius_bounds
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (y : M)
     {r B : ℝ} (hr : 0 < r) (hB : 1 ≤ B)
@@ -81,8 +68,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 theorem core_radius_sqrt_bounds_of_normalized_base
     {o : M} (ho : o ∈ N.carrier) (hnormal : N.connection.scalarCurvature o = 1)
     {C : ℝ} (hC : N.cap_constant ≤ C) {y : M} (hy : y ∈ N.core) :
@@ -92,8 +77,6 @@ theorem core_radius_sqrt_bounds_of_normalized_base
   intro x hx
   exact N.scalar_bounds_of_normalized_base ho hnormal hC
     (N.core_ball_subset y hy (subset_closure hx))
-
-
 
 theorem core_radius_bounds_of_normalized_base
     {o : M} (ho : o ∈ N.carrier) (hnormal : N.connection.scalarCurvature o = 1)

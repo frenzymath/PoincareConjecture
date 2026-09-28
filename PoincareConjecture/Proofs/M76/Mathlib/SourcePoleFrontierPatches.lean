@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralFrontierDiskPatches
 import PoincareConjecture.Proofs.M76.Mathlib.LinearFrontierGermTarget
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
 
 namespace CoordinateHalfBoxes
-
-
-
 
 noncomputable def radialLastToCut (σ : ℝ) (hσ : σ ≠ 0) :
     ((ℝ × ℝ) × ℝ) ≃L[ℝ] ((ℝ × ℝ) × ℝ) :=
@@ -31,9 +17,6 @@ noncomputable def radialLastToCut (σ : ℝ) (hσ : σ ≠ 0) :
       (LinearEquiv.smulOfNeZero ℝ ℝ σ hσ)).prodCongr
         (LinearEquiv.refl ℝ ℝ))).toContinuousLinearEquiv
 
-
-
-
 theorem radialLastToCut_apply (σ : ℝ) (hσ : σ ≠ 0) (x : (ℝ × ℝ) × ℝ) :
     radialLastToCut σ hσ x = ((x.1.1, σ * x.2), x.1.2) := rfl
 
@@ -43,13 +26,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem exists_source_pole_frontier_patch
     {C S : Set E} (H : Finset (E →ₗ[ℝ] ℝ))

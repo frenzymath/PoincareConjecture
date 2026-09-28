@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,10 +15,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] {n : ℕ}
-
-
-
-
 
 theorem polygon_collar_annulus_topology
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Dom
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LinearPostcompose
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -136,8 +129,6 @@ private theorem roundCylinderTensorDerivative_convergence
         (hT (Function.update (fun k => a k.succ) i j))))
   simpa [roundCylinderTensorDerivative, hChristoffelEq] using hd.sub hU hs
 
-
-
 theorem roundCylinderIteratedDerivative_smooth_convergence
     (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -183,8 +174,6 @@ theorem roundCylinderIteratedDerivative_smooth_convergence
   intro m K hK hKU
   exact ((h k a).jets m K hK hKU).congr_right (fun _ _ => by simp)
 
-
-
 theorem tendstoUniformlyOn_roundCylinderIteratedDerivative
     (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -213,8 +202,6 @@ theorem tendstoUniformlyOn_roundCylinderIteratedDerivative
     zero_apply] using
     (ContinuousMultilinearMap.uniformContinuous_eval_const
       (0 : Fin 0 → RoundCylinderCoordinates)).comp_tendstoUniformlyOn h
-
-
 
 theorem roundCylinderIteratedDerivative_smooth_convergence_of_changing_charts
     (u : ℝ)
@@ -264,11 +251,6 @@ theorem roundCylinderIteratedDerivative_smooth_convergence_of_changing_charts
   refine ⟨(h k a).local_smooth, ?_⟩
   intro m K hK hKU
   exact ((h k a).jets m K hK hKU).congr_right (fun _ _ => by simp)
-
-
-
-
-
 
 theorem roundCylinderIteratedDerivative_smooth_zero_convergence_of_changing_charts
     (u : ℝ)

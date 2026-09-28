@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundModelCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M44
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g h : RiemannianMetric 3 M}
-
-
-
-
 
 theorem sectional_half_le_of_round_plane_error (D : LeviCivitaData h)
     (x : M) {epsilon : ℝ} (hepsilon : 0 ≤ epsilon) (hsmall : epsilon ≤ 1 / 200)
@@ -78,9 +65,6 @@ theorem sectional_half_le_of_round_plane_error (D : LeviCivitaData h)
   rw [LeviCivitaData.sectionalCurvature, horth.1, horth.2.1, horth.2.2]
   norm_num only [one_mul, zero_pow (by norm_num : (2 : ℕ) ≠ 0), sub_zero, div_one]
   linarith
-
-
-
 
 theorem scalarCurvature_three_le_of_sectional_half (D : LeviCivitaData h) (x : M)
     (hsec : ∀ u v : TangentSpace (𝓡 3) x,

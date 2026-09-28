@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SupportedGaugeFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (R : M14SquareRootPath G p) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
 
 theorem gaugeShiftFamily_contMDiffWithinAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -51,8 +40,6 @@ theorem gaugeShiftFamily_contMDiffWithinAt {U : Set G.Point} (hU : IsOpen U)
       z (hL.snd.prodMk hv)
   exact (G.gaugeCover.cylinder b).smooth.contMDiffAt.comp_contMDiffWithinAt z
     (hL.fst.prodMk hS)
-
-
 
 theorem supportedGaugeFamily_contMDiffOn_closed {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

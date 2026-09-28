@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphSides
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
-
-
 
 theorem exists_path_point_on_cap_boundary_sphere
     (K : CapCertificate g) (W : EpsilonNeck g)
@@ -67,8 +54,6 @@ theorem exists_path_point_on_cap_boundary_sphere
     exact hvgraph
 
 omit [T2Space M] in
-
-
 
 theorem exists_path_point_on_cap_boundary_sphere_signed
     (K : CapCertificate g) (W : EpsilonNeck g)

@@ -1,24 +1,11 @@
 import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Homeomorph
-
-
-
-
 
 theorem edge_membership_iff {E : Type*} [TopologicalSpace E]
     {B S C : Set E} {I : Set ℝ} (H : (B ×ˢ I : Set (E × ℝ)) ≃ₜ S)

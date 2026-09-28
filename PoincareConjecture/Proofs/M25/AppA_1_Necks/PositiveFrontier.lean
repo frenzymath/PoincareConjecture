@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SharpDepth
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem mem_closure_final_tail_of_mem_positive_closure
     {M : Type u} [TopologicalSpace M]
@@ -55,9 +40,6 @@ theorem mem_closure_final_tail_of_mem_positive_closure
   have hmem := closure_mono hcover hy
   rw [closure_union, hK.isClosed.closure_eq] at hmem
   exact hmem.resolve_left (fun hx => hyout (hKsub hx))
-
-
-
 
 theorem edist_le_positive_frontier
     {M : Type u} [TopologicalSpace M]
@@ -103,10 +85,6 @@ theorem edist_le_positive_frontier
   have hclosed : IsClosed {z | g.edist x z ≤ R} :=
     isClosed_le (continuous_const.edist continuous_id) continuous_const
   exact closure_minimal hbound hclosed htail
-
-
-
-
 
 theorem exists_positive_frontier_quarter_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.Algebra.SMul
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace Poincare.Manifold
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M]
-
-
-
 
 theorem exists_diffeomorph_of_local_radial_flow
     (Φ : ℝ → M → M)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCylinderExterior
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarPLDiskUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +12,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_affine_height_coordinates (A : F →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)
     (hdim : Module.finrank ℝ F = Module.finrank ℝ E + 1) (c : ℝ) :
@@ -86,10 +72,6 @@ theorem exists_affine_height_coordinates (A : F →ᵃ[ℝ] ℝ) (hA : A.linear 
   rw [f.apply_symm_apply] at h
   linarith
 
-
-
-
-
 theorem HasPairedHeightCap.affine_image {S C d : Set E} {A : E → ℝ} {a : ℝ}
     (hcap : HasPairedHeightCap S C d A a) (f : E ≃ᴬ[ℝ] F)
     (A' : F → ℝ) (b : ℝ) (hcut : ∀ x, A' (f x) ≤ b ↔ A x ≤ a) :
@@ -116,9 +98,6 @@ theorem HasPairedHeightCap.affine_image {S C d : Set E} {A : E → ℝ} {a : ℝ
   · rintro _ ⟨x, hx, rfl⟩
     exact (hcut x).mpr (hBbelow hx)
 
-
-
-
 theorem hasPairedHeightCap_affine_height_iff
     (f : (E × ℝ) ≃ᴬ[ℝ] F) (A : F → ℝ) (c t : ℝ)
     (hheight : ∀ p, A (f p) = c + p.2) {S C : Set F} {d : Set (E × ℝ)} :
@@ -138,9 +117,6 @@ theorem hasPairedHeightCap_affine_height_iff
       exact add_le_add_iff_left c
     have hforward := h.affine_image f A (c + t) hcut
     simpa only [f.image_preimage] using hforward
-
-
-
 
 theorem isFinitePLBallPair_cylinderSlice (K : SimplicialComplex ℝ E) {r t : ℝ}
     (e : (K.space ×ˢ Icc (-r) r : Set (E × ℝ)) ≃ₜ (K.space ×ˢ Icc (-r) r))
@@ -176,10 +152,6 @@ theorem isFinitePLBallPair_cylinderSlice (K : SimplicialComplex ℝ E) {r t : �
       exact Prod.ext rfl hpt.symm
   have hpair := hdi.image_of_subset hg hdiD hginj
   rwa [himage d hdK, himage q (hd.1.trans hdK)] at hpair
-
-
-
-
 
 theorem affine_cylinderSlice_eq_disk
     (K : SimplicialComplex ℝ E) {r t c : ℝ}
@@ -229,11 +201,6 @@ theorem affine_cylinderSlice_eq_disk
     change A (f (e p : E × ℝ)) = c + t
     rw [hcoord, heheight, hpt]
   exact hslice.eq_of_same_rim_in_affine_plane hactual A hA hdim hplane hactualplane
-
-
-
-
-
 
 theorem exists_affine_paired_height_cap_step
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hcv : Convex ℝ K.space)

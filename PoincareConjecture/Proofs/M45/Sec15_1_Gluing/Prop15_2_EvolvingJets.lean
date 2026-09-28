@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingComponents
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M45
 open M36 M44
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_correctedCylinderComponent_jet_bound (j k : ℕ) :
     ∃ C : ℝ, 0 < C ∧
@@ -146,9 +134,6 @@ theorem exists_correctedCylinderComponent_jet_bound (j k : ℕ) :
             _ ≤ ∑ _i : Fin 3, (A + 3 * (2 + (k : ℝ)) * S) * epsilon :=
               Finset.sum_le_sum (fun i _ => hdirection i)
             _ = _ := by simp; ring
-
-
-
 
 theorem exists_evolvingCylinderError_jet_bound (m : ℕ) :
     ∃ C : ℝ, 0 < C ∧

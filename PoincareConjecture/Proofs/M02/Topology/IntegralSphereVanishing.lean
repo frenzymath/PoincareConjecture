@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereHomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralAmbientRelative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Metric

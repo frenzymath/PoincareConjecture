@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Localization
 import Mathlib.Analysis.Calculus.FDeriv.Bilinear
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -85,8 +78,6 @@ def unitSpatialBump : ContDiffBump (0 : E) where
   rIn_pos := by norm_num
   rIn_lt_rOut := by norm_num
 
-
-
 theorem exists_unit_cutoff_derivative_bounds :
     ∃ C₁ C₂ : ℝ, 0 ≤ C₁ ∧ 0 ≤ C₂ ∧
       (∀ x : E, ‖fderiv ℝ (unitSpatialBump (E := E) : E → ℝ) x‖ ≤ C₁) ∧
@@ -139,7 +130,6 @@ theorem hasCompactSupport_rescaled_unit_cutoff {r : ℝ} (hr : 0 < r) (center : 
     (tsupport_rescaled_unit_cutoff_subset hr center)
 
 end FiniteDimension
-
 
 def timeCutoff (T s : ℝ) : ℝ :=
   rescaledCutoff (unitSpatialBump (E := ℝ)) T T s

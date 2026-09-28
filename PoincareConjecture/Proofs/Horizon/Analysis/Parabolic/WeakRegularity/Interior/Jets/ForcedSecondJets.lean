@@ -1,20 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.ForcedHessianEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.L2DerivativeLimit
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakConvolution
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open Poincare.Analysis.Convolution

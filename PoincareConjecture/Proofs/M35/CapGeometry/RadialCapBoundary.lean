@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialPatch
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
 
 include hrotation hcomplete P
 
-
-
 theorem radial_boundary_neck_frontier (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length) :
     frontier (closure (g.ball 0 a)) =
@@ -41,8 +29,6 @@ theorem radial_boundary_neck_frontier (q₀ : UnitTwoSphere) (a b length : ℝ)
       (radialArclengthOrderIso g hrotation hcomplete).symm.strictMono ha
   rw [closure_ball_zero_eq_radial_closedBall g hrotation hcomplete P ha,
     frontier_closedBall 0 hr.ne', intrinsicRadialAnnulusPatch_centralSphere]
-
-
 
 theorem radial_boundary_neck_subset_outer_ball (q₀ : UnitTwoSphere)
     (a b b' length : ℝ) (hb' : 0 < b') (hl : 0 < length)
@@ -59,8 +45,6 @@ theorem radial_boundary_neck_subset_outer_ball (q₀ : UnitTwoSphere)
     ENNReal.ofReal_lt_ofReal_iff_of_nonneg hs]
   have hwidth := mul_lt_mul_of_pos_right hspeed hl
   linarith only [hx.2, hwidth]
-
-
 
 theorem mem_interior_radial_core {s : ℝ} (hs : 0 < s)
     {x : StandardCapSpace} (hx : radialArclength g ‖x‖ < s) :

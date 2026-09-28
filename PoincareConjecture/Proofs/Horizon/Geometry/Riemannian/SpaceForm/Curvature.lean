@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Sectional
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +42,6 @@ lemma curvatureTensor_radial_of_constant_sectional (D : LeviCivitaData g)
     map_add, add_apply, g.symm x w u] at h
   nlinarith [hu, hw, hsym]
 
-
-
 theorem curvatureTensor_of_constant_sectional (D : LeviCivitaData g)
     (x : M) (K : ℝ)
     (hsec : ∀ u v : TangentSpace (𝓡 n) x,
@@ -64,7 +55,6 @@ theorem curvatureTensor_of_constant_sectional (D : LeviCivitaData g)
     map_add, add_apply, g.symm x z v, g.symm x z u, g.symm x v u,
     g.symm x w u, g.symm x w v] at h
   nlinarith
-
 
 theorem radialCurvature_of_constant_sectional (D : LeviCivitaData g)
     (x : M) (K : ℝ)

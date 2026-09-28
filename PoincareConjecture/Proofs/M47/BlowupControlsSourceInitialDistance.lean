@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBuffer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M47
-
-
 
 theorem standard_tip_distance_lower_of_ball_disjoint
     (g : RiemannianMetric 3 StandardCapSpace) {U : Set StandardCapSpace}
@@ -68,8 +57,6 @@ theorem standard_tip_distance_lower_of_ball_disjoint
     rw [ENNReal.ofReal_add ha.le hr.le, add_comm]
     exact (add_le_add hprefix hsuffix).trans_eq (M36.metric_pathELength_add g p hs.1 hs.2)
   exact not_lt_of_ge htotal hlength
-
-
 
 theorem standard_initial_neck_tip_distance_lower
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

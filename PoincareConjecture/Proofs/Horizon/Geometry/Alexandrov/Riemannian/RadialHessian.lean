@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.Gauss
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Geodesic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -101,8 +94,6 @@ theorem radial_pairing_le_hyperbolic
   rw [hpair] at hbound
   exact hbound
 
-
-
 theorem radial_pairing_le_hyperbolic_sharp
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hsec : ∀ x u v, -1 ≤ D.sectionalCurvature x u v)
@@ -155,7 +146,6 @@ private theorem second_deriv_sq {r : ℝ → ℝ} {t : ℝ}
   rw [hfirst.deriv_eq, hd]
   ring
 
-
 theorem deriv2_norm_le_hyperbolic
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hsec : ∀ x u v, -1 ≤ D.sectionalCurvature x u v)
@@ -201,8 +191,6 @@ theorem deriv2_norm_le_hyperbolic
   apply (mul_le_mul_iff_of_pos_left hrpos).mp
   change r t * deriv (deriv r) t ≤ _
   nlinarith only [heq, hb]
-
-
 
 theorem deriv2_inverse_radius_le_hyperbolic
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LogarithmicContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -16,9 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem uniformEquicontinuous_of_monotone_logarithmic_gap
     {I : Type*} (f : I → ℝ → ℝ) (hmono : ∀ i, Monotone (f i))

@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.SobolevLocalization
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Embedding.Continuous
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,12 +31,6 @@ private theorem mem_closure_halfSpace {x : Plane} (hx : x 0 = 0) : x ∈ closure
       abs_of_pos (half_pos hε)]
     linarith
 
-
-
-
-
-
-
 theorem smooth_representative_zero_on_halfSpace_boundary
     {u v : Plane → ℝ} (huc : HasCompactSupport u)
     (hu0 : Weak.MemW01p 2 u halfSpace) (hv : ContDiff ℝ ∞ v)
@@ -72,13 +53,6 @@ theorem smooth_representative_zero_on_halfSpace_boundary
   exact hxEq.trans (hzero x hx.le)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
-
 
 theorem H1Zero_smooth_annular_trace_zero (w : H1Zero D scalarAnnulus)
     {V : Plane → ℝ} (hV : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ V)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,16 +10,12 @@ universe u
 
 namespace PoincareConjecture.Proofs.M47
 
-
-
 def canonicalFailureTimes (F : SurgeryFlowData.{u})
     (O : SurgeryObservation F) (r : ℝ) : Set ℝ :=
   {t | t ∈ surgeryObservationInterval O ∧
     ∃ x : (F.slice t).carrier,
       r⁻¹ ^ 2 ≤ (F.connection t).scalarCurvature x ∧
       ¬ SurgeryCanonicalControl F t x F.parameters.epsilon F.parameters.C}
-
-
 
 theorem canonicalFailureTimes_nonempty_iff
     (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) (r : ℝ) :
@@ -44,8 +31,6 @@ theorem canonicalFailureTimes_nonempty_iff
     by_contra hbad
     exact hnone ⟨t, ht, x, hscalar, hbad⟩
 
-
-
 theorem canonicalFailureTimes_lower_bound
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F} {T0 r : ℝ}
     (hold : SurgeryCanonicalOn F (Ico 0 T0) r) :
@@ -54,9 +39,6 @@ theorem canonicalFailureTimes_lower_bound
   apply le_of_not_gt
   intro hbefore
   exact hbad (hold t ⟨ht.1, hbefore⟩ (O.interval_subset ht) x hscalar)
-
-
-
 
 theorem exists_canonicalFailureInfimum
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F} {T0 r : ℝ}

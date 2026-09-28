@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalStarNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E X V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X] [TopologicalSpace V]
-
-
-
 
 theorem exists_original_open_neighborhood_inside_closedStar
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

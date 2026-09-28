@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.WeakReplacementFluxDefect
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ScalarPhaseGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -36,10 +24,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "I" => Icc (0 : ℝ) curvePeriod
-
-
-
-
 
 theorem exists_phase_boundary_replacement
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

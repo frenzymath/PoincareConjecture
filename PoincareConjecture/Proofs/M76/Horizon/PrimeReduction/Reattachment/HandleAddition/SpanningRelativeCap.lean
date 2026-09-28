@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningProtectedCorner
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Transport.RetainedDiskProduct
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

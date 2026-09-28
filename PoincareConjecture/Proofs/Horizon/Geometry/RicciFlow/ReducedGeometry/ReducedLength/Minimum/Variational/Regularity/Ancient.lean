@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity.Euler
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ open ReducedLengthMinimum.Variational
 variable {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem chart_minimum_contMDiffOn (K : AncientKappaSolution 2 M)
     {a b : ℝ} (hab : a < b) (x : M) (γ : ℝ → M)

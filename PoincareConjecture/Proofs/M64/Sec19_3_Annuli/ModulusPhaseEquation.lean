@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CirclePhaseDifferential
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusCircleCurrent
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64CirclePhase_modulus_equation
     (P : M62.CircleProductData F circumference) (t : ℝ)

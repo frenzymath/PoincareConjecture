@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_CornerStationarity
 import PoincareConjecture.Proofs.M14.Sec6_3_MeetingVariations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,9 +31,6 @@ private theorem horizontal_inner_heq {z z' : G.Point} (h : z = z')
   cases hv
   cases hw
   rfl
-
-
-
 
 theorem squareVelocity_eq_of_minimizing_corner
     (hCoordinates : M12MetricPredecessors.{0} n)

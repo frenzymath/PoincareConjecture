@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderSlabCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def cylinderTimeCoefficients
     (e : SurgeryFlowCylinder F C origin scale I U) (f : E → C.carrier)
     (r : ℝ) (hr : r ∈ I) (p : ℝ × E) : E →L[ℝ] E →L[ℝ] ℝ := by
@@ -34,17 +23,11 @@ noncomputable def cylinderTimeCoefficients
     cylinderPhysicalCoefficients e f (scale * (p.1 - origin)) hs p.2
   else cylinderPhysicalCoefficients e f r hr p.2
 
-
-
-
 theorem cylinder_clock_parameter
     (e : SurgeryFlowCylinder F C origin scale I U) (t : ℝ) :
     origin + (scale * (t - origin)) / scale = t := by
   field_simp [ne_of_gt e.scale_pos]
   ring
-
-
-
 
 theorem cylinder_parameter_mem_ico
     (e : SurgeryFlowCylinder F C origin scale I U) (B t : ℝ) :
@@ -59,17 +42,11 @@ theorem cylinder_parameter_mem_ico
     apply (div_lt_div_iff_of_pos_right e.scale_pos).mp
     linarith [h.2]
 
-
-
-
 theorem cylinder_parameter_time_mem
     (e : SurgeryFlowCylinder F C origin scale I U) {t : ℝ}
     (ht : scale * (t - origin) ∈ I) : t ∈ F.time_domain := by
   have h := e.time_subset (mem_image_of_mem (fun s => origin + s / scale) ht)
   rwa [cylinder_clock_parameter e] at h
-
-
-
 
 theorem cylinderTimeCoefficients_at
     (e : SurgeryFlowCylinder F C origin scale I U) (f : E → C.carrier)
@@ -83,9 +60,6 @@ theorem cylinderTimeCoefficients_at
   simp only [cylinderTimeCoefficients, dif_pos hs']
   simp only [heq]
 
-
-
-
 theorem cylinderTimeCoefficients_spatial_smooth
     (e : SurgeryFlowCylinder F C origin scale I U)
     {f : E → C.carrier} {V : Set E} (hV : IsOpen V)
@@ -98,8 +72,6 @@ theorem cylinderTimeCoefficients_spatial_smooth
   · simpa only [cylinderTimeCoefficients, dif_neg hs] using
       cylinderPhysicalCoefficients_smooth e hV hf hmap r hr
 
-
-
 theorem cylinderTimeCoefficients_symm
     (e : SurgeryFlowCylinder F C origin scale I U) (f : E → C.carrier)
     (r : ℝ) (hr : r ∈ I) (t : ℝ) (x v w : E) :
@@ -108,9 +80,6 @@ theorem cylinderTimeCoefficients_symm
   unfold cylinderTimeCoefficients
   split_ifs
   all_goals exact cylinderPhysicalCoefficients_symm e f _ _ x v w
-
-
-
 
 theorem cylinderTimeCoefficients_pos
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)
@@ -121,9 +90,6 @@ theorem cylinderTimeCoefficients_pos
   unfold cylinderTimeCoefficients
   split_ifs
   all_goals exact cylinderPhysicalCoefficients_pos e hU f hmap _ _ hx v hv
-
-
-
 
 theorem cylinderTimeCoefficients_eq_slab
     (e : SurgeryFlowCylinder F C origin scale I U)

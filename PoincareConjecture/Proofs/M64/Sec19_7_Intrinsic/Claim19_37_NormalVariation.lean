@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_BoundaryNormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.GeodesicFlow
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.InitialData
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_isGeodesicOn_of_phase
     (N : IntrinsicAnnulus) {phase : ℝ → AnnulusCoordinates × AnnulusCoordinates}
@@ -52,9 +37,6 @@ theorem m64Intrinsic_isGeodesicOn_of_phase
         simpa [coordinateGeodesicField] using (hphase t ht).hasFDerivAt.snd.hasDerivAt)
   simpa only [extChartAt_model_space_eq_id, PartialEquiv.refl_symm,
     PartialEquiv.refl_coe, id_eq] using! h
-
-
-
 
 theorem m64Intrinsic_exists_local_geodesic_variation
     (N : IntrinsicAnnulus) {gamma velocity : ℝ → AnnulusCoordinates}
@@ -99,9 +81,6 @@ theorem m64Intrinsic_exists_local_geodesic_variation
     exact m64Intrinsic_isGeodesicOn_of_phase N isOpen_Ioo (hphase x hx)
   · intro x hx t ht
     exact (hflow (initial x) hx t ht).2.2
-
-
-
 
 theorem m64Intrinsic_exists_local_normal_geodesic_variation
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) :

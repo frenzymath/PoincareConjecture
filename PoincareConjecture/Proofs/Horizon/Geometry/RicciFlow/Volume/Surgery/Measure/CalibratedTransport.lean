@@ -4,25 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.MeasureGluing
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -35,7 +16,6 @@ namespace PoincareConjecture.SurgeryVolume.Measure
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem calibratedMetricVolume_image_eq_withDensity (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -90,7 +70,6 @@ theorem calibratedMetricVolume_image_eq_withDensity (g : RiemannianMetric n M)
     exact ⟨V, hVo, hxV, fun B hB hBV ↦ (hbound B hB hBV).2⟩
   have h := measure_eq_of_local_comparisons c hc hforward hreverse hA hAsource
   rwa [map_inverse_restrict_apply e μ hA hAsource] at h
-
 
 theorem calibratedMetricVolume_image_eq_lintegral (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

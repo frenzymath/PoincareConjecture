@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Jacobi.Basic
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +32,6 @@ theorem isJacobiSolOn_spherical (A : E →L[ℝ] E) {c : ℝ} (hc : c ≠ 0)
     simpa only [Pi.add_def, Function.comp_def, map_add, map_smul, h₀, h₁, smul_zero, zero_add,
       smul_smul, ← neg_smul, heq] using
       ((hasDerivAt_const t w₀).add hs).hasDerivWithinAt
-
 
 theorem IsJacobiSolOn.eq_spherical
     {A : E →L[ℝ] E} {c b : ℝ} (hc : c ≠ 0)

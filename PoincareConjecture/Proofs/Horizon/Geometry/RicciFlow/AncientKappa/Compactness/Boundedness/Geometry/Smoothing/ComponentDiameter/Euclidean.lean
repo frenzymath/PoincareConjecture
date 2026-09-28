@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Bounded
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -48,8 +39,6 @@ private theorem bounded_side_subset_ball
     by_contra h
     exact Set.disjoint_left.mp hdis hx (hright (le_of_not_gt h))
 
-
-
 theorem exists_critical_point_of_bounded_constant_boundary
     {A : Set CoordinateThree} (hA : IsOpen A) (hne : A.Nonempty)
     (hbounded : Bornology.IsBounded A) {f : CoordinateThree → ℝ}
@@ -78,9 +67,6 @@ theorem exists_critical_point_of_bounded_constant_boundary
     exact hxc ▸ hmax hw
   exact ⟨z, hz, (hzmax.isLocalMax
     (Filter.mem_of_superset (hA.mem_nhds hz) subset_closure)).fderiv_eq_zero⟩
-
-
-
 
 theorem exists_critical_point_in_ball_of_compact_connected_level_collar
     {Y : Type*} [TopologicalSpace Y] [CompactSpace Y] [ConnectedSpace Y]

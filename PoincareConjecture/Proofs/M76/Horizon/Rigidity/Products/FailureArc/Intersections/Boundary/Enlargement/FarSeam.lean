@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripHalfDiskComplement
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

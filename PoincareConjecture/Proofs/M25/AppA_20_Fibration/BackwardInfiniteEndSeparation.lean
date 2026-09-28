@@ -4,23 +4,11 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RelativeSuccessorHeight
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Data.Int.Init
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_terminal_isSeparating_of_backward_chain :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

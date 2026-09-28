@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarRegularity
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,14 +15,10 @@ open Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 noncomputable def m60LoopCollar (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M)) (z : LoopPlane) : M :=
   C (1 - diskTimeProfile ‖z‖, γ₁.extension (radialNormalization z),
     γ₀.extension (radialNormalization z))
-
-
 
 theorem m60LoopCollar_inner (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M)) (h0 : ∀ p q, C (0, p, q) = q)
@@ -40,17 +26,12 @@ theorem m60LoopCollar_inner (C : ℝ × (M × M) → M)
     m60LoopCollar C γ₀ γ₁ z = γ₀.extension (radialNormalization z) := by
   rw [m60LoopCollar, diskTimeProfile_eq_one (norm_nonneg z) hz, sub_self, h0]
 
-
-
 theorem m60LoopCollar_boundary (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M))
     (h1 : ∀ z : LoopCircle, C (1, γ₁ z, γ₀ z) = γ₁ z) (z : LoopCircle) :
     m60LoopCollar C γ₀ γ₁ z = γ₁ z := by
   rw [m60LoopCollar, z.property, diskTimeProfile_one, sub_zero,
     radialNormalization_of_norm_eq_one z.property, γ₀.boundary, γ₁.boundary, h1]
-
-
-
 
 theorem m60LoopCollar_contMDiffAt (C : ℝ × (M × M) → M)
     (γ₀ γ₁ : C1FreeLoopSpace (M := M))
@@ -70,9 +51,6 @@ theorem m60LoopCollar_contMDiffAt (C : ℝ × (M × M) → M)
   exact (hC _ ht q).comp_of_eq hinput (by
     change (1 - diskTimeProfile ‖z‖, γ₁.extension q.val, γ₀.extension q.val) = _
     rw [γ₀.boundary, γ₁.boundary])
-
-
-
 
 theorem m60LoopCollar_matches_disk (g : RiemannianMetric 3 M)
     {γ₀ γ₁ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ₀)

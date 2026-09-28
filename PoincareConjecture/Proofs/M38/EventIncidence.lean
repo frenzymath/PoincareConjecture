@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.RetainedBoundary
 import PoincareConjecture.Proofs.M38.CappingComponents
 import Mathlib.Combinatorics.Graph.Simple
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
 
 def EventCutVertex : Type u :=
   ConnectedComponents (eventRetainedInteriorOpen F T hT) ⊕
@@ -38,7 +29,6 @@ theorem eventCutVertex_finite : Finite (EventCutVertex F T hT) := by
   exact inferInstanceAs (Finite
     (ConnectedComponents (eventRetainedInteriorOpen F T hT) ⊕
       ConnectedComponents (eventDiscardedOpen F T hT)))
-
 
 noncomputable def eventIncidenceGraph :
     Graph (EventCutVertex F T hT) (Fin (F.event T hT).cap_count) where
@@ -69,20 +59,14 @@ noncomputable def eventIncidenceGraph :
     intro i x y h
     exact Set.mem_univ _
 
-
 theorem eventIncidenceGraph_edges : (eventIncidenceGraph F T hT P).edgeSet = Set.univ := rfl
 
-
-
 theorem eventIncidenceGraph_vertices : (eventIncidenceGraph F T hT P).vertexSet = Set.univ := rfl
-
 
 theorem eventIncidenceGraph_link (i : Fin (F.event T hT).cap_count) :
     (eventIncidenceGraph F T hT P).IsLink i
       (Sum.inl (ConnectedComponents.mk (P i).retainedAttachmentPoint))
       (Sum.inr (ConnectedComponents.mk (P i).attachmentPoint)) := Or.inl ⟨rfl, rfl⟩
-
-
 
 theorem eventIncidenceGraph_loopless : (eventIncidenceGraph F T hT P).Loopless := by
   refine ⟨?_⟩
@@ -91,16 +75,12 @@ theorem eventIncidenceGraph_loopless : (eventIncidenceGraph F T hT P).Loopless :
   · exact Sum.inl_ne_inr (hx.symm.trans hy)
   · exact Sum.inr_ne_inl (hx.symm.trans hy)
 
-
-
 noncomputable def eventCappedVertexEquiv :
     EventCutVertex F T hT ≃
       (ConnectedComponents (F.slice T).carrier ⊕
         ConnectedComponents (CappedDiscardedSpace F T hT P)) :=
   Equiv.sumCongr (retainedComponentsHomeomorph F T hT P).toEquiv
     (cappedComponentsHomeomorph F T hT P).toEquiv
-
-
 
 theorem eventCappedVertexEquiv_retained (i : Fin (F.event T hT).cap_count) :
     eventCappedVertexEquiv F T hT P
@@ -110,14 +90,10 @@ theorem eventCappedVertexEquiv_retained (i : Fin (F.event T hT).cap_count) :
     ((F.event T hT).retention.map (P i).retainedAttachmentPoint.val)) = _
   rw [(P i).retainedAttachmentPoint_image]
 
-
-
 theorem eventCappedVertexEquiv_discarded (i : Fin (F.event T hT).cap_count) :
     eventCappedVertexEquiv F T hT P
         (Sum.inr (ConnectedComponents.mk (P i).attachmentPoint)) =
       Sum.inr (ConnectedComponents.mk (cappedOldInclusion F T hT P (P i).attachmentPoint)) := rfl
-
-
 
 noncomputable def eventVertexPreComponent :
     EventCutVertex F T hT → ConnectedComponents (F.slice (F.event T hT).tMinus).carrier :=
@@ -131,8 +107,6 @@ noncomputable def eventVertexPreComponent :
 namespace EventCapCoordinates
 
 variable {F T hT} {i : Fin (F.event T hT).cap_count} (Q : EventCapCoordinates F T hT i)
-
-
 
 theorem attaching_points_pre_component_eq :
     ConnectedComponents.mk Q.retainedAttachmentPoint.val =
@@ -153,8 +127,6 @@ theorem attaching_points_pre_component_eq :
   exact ConnectedComponents.coe_eq_coe'.mpr (hc.subset_connectedComponent hpos hneg)
 
 end EventCapCoordinates
-
-
 
 theorem eventIncidenceGraph_pre_component {i : Fin (F.event T hT).cap_count}
     {x y : EventCutVertex F T hT} (h : (eventIncidenceGraph F T hT P).IsLink i x y) :

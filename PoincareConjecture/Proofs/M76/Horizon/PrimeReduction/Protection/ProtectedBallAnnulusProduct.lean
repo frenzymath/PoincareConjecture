@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnulusSp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AttachmentAnnulusProduct
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.AnnularBallProduct
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

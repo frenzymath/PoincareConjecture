@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryConeRepl
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryHalfDiskComparison
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeMetricEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -28,10 +15,6 @@ namespace PoincareConjecture.M64FreeWeakPhaseAnnulus
 open Proofs.M58
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
-
 
 theorem lower_halfDisk_angular_energy_comparison {n m N : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

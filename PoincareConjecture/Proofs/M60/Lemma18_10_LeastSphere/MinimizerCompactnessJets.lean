@@ -3,8 +3,6 @@ import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.UniformSpace.CompleteSeparated
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,10 +12,6 @@ open scoped Topology ContDiff
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
-
-
 
 theorem suC1_compactOpen_subsequence
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationClock
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 theorem exists_variation_velocity_parameter_extension (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     Nonempty (M14PullbackExtension G (fun u => V.squareFamily s u) V.parameterDomain
@@ -38,8 +27,6 @@ theorem exists_variation_velocity_parameter_extension (V : M14LVariationData G p
   apply exists_pullbackExtension_of_isOpen hP
   exact (variationSquareVelocity_smooth V).comp
     ((contMDiff_const (c := s)).prodMk contMDiff_id).contMDiffOn (fun _ hu => ⟨hs, hu⟩)
-
-
 
 theorem variationSquareVelocity_eq_surfaceHorizontalFst (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) (u : ℝ) :
@@ -54,9 +41,6 @@ private theorem horizontal_transport_heq {q r : G.Point} (h : q = r)
   rfl
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem variation_covariantDerivative_commute
     (hCoordinates : M12MetricPredecessors.{0} n)

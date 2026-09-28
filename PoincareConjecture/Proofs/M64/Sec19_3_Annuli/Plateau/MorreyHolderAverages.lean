@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageDerivative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak M60
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem m64Morrey_mollifier_gradient_bound {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

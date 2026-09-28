@@ -1,22 +1,10 @@
 import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology NNReal
-
-
 
 theorem dist_le_gronwall_of_vectorField_error
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -43,8 +31,6 @@ theorem dist_le_gronwall_of_vectorField_error
   simp only [add_zero, sub_zero] at h
   exact h.trans ((gronwallBound_mono hδ hε K.coe_nonneg) ht.2)
 
-
-
 theorem tendsto_gronwallBound_errors_zero
     {ι : Type*} {l : Filter ι} {δ ε : ι → ℝ} {K T : ℝ}
     (hδ : Tendsto δ l (𝓝 0)) (hε : Tendsto ε l (𝓝 0)) :
@@ -55,9 +41,6 @@ theorem tendsto_gronwallBound_errors_zero
   · simp only [gronwallBound_of_K_ne_0 hK]
     simpa using (hδ.mul_const (Real.exp (K * T))).add
       ((hε.div_const K).mul_const (Real.exp (K * T) - 1))
-
-
-
 
 theorem tendstoUniformlyOn_ode_of_vectorField_error
     {E P ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroApexSlice
 import PoincareConjecture.Proofs.M76.Mathlib.CrossingPointSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,19 +9,12 @@ namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
-
-
 theorem convexHull_zero_apex_pair_inter_zero (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) (hv : 0 < A v) :
     convexHull ℝ (insert q ({u, v} : Set E)) ∩ {x | A x = 0} =
       segment ℝ q (A.zeroCrossing u v) := by
   rw [A.convexHull_insert_inter_zero_of_zero hq,
     A.convexHull_pair_inter_zero hu hv, convexHull_pair]
-
-
-
 
 theorem convexHull_zero_apex_pair_inter_zero_of_pos (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : 0 < A u) (hv : 0 < A v) :
@@ -44,19 +28,12 @@ theorem convexHull_zero_apex_pair_inter_zero_of_pos (A : E →ᵃ[ℝ] ℝ) {q u
     exact (hx.2 ▸ hpos).false
   rw [A.convexHull_insert_inter_zero_of_zero hq, hbase, insert_empty_eq, convexHull_singleton]
 
-
-
-
 theorem convexHull_zero_apex_pair_inter_zero_of_neg (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) (hv : A v < 0) :
     convexHull ℝ (insert q ({u, v} : Set E)) ∩ {x | A x = 0} = {q} := by
   simpa only [AffineMap.coe_neg, Pi.neg_apply, neg_eq_zero] using
     (-A).convexHull_zero_apex_pair_inter_zero_of_pos
       (by simpa using hq) (neg_pos.mpr hu) (neg_pos.mpr hv)
-
-
-
-
 
 theorem exceptional_triangle_slice_eq_singleton_or_segment
     [DecidableEq E] (A : E →ᵃ[ℝ] ℝ) {t : Finset E} (ht : t.card = 3) {q : E}

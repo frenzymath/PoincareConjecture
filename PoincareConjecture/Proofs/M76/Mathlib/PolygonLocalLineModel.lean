@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarCornerLocalModel
 import PoincareConjecture.Proofs.M76.Mathlib.LocalPlanarSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
   (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
 
 include hP hinj
-
-
-
 
 theorem exists_local_line_model {q : ℝ × ℝ} (hq : q ∈ P.boundary ℝ) :
     ∃ e : (ℝ × ℝ) ≃ₜ (ℝ × ℝ), (e q).2 = 0 ∧
@@ -62,9 +50,6 @@ theorem exists_local_line_model {q : ℝ × ℝ} (hq : q ∈ P.boundary ℝ) :
     refine ⟨e, he, ?_⟩
     filter_upwards [P.eventually_boundary_iff_single_edge hP hinj hqv hi, hlocal] with x hx hy
     exact hx.trans (by simpa only [edgeSet, affineSegment_eq_segment] using hy)
-
-
-
 
 theorem hasLocalComplementarySides_boundary :
     (P.boundary ℝ).HasLocalComplementarySides :=

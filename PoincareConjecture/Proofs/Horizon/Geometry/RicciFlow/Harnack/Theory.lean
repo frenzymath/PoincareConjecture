@@ -1,3 +1,1 @@
 import PoincareConjecture.Statements.Ch04.Harnack
-
-

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
-
-
-
-
 
 theorem exists_uniform_embeddedCurvature_heat_error
     (F : RicciFlow n M (Icc a b)) (hab : a < b)
@@ -256,9 +243,6 @@ theorem exists_uniform_embeddedCurvature_heat_error
   intro t ht
   exact le_on_closure hinterior (by simpa only [closure_Ioo hab.ne] using hleft)
     hright.continuousOn (by simpa only [closure_Ioo hab.ne] using ht)
-
-
-
 
 theorem embeddedCurvature_uniform_initial_trace_on_compact_data
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

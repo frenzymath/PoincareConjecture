@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialBranchTranslation
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,10 +9,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative
-
-
-
-
 
 theorem contDiffAt_initialResponseTrace_spectral_orbit
     {L : ℝ} {ι : Type*} [Fintype ι] {T : ℝ} (hT : 0 ≤ T)

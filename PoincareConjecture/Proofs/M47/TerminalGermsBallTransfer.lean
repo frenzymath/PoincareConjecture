@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.MetricComparison
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_pathELength_le_two
     {M : Type u} [TopologicalSpace M]
@@ -62,8 +52,6 @@ theorem terminalGerms_pathELength_le_two
       rw [lintegral_const_mul']
       · norm_num
       · exact ENNReal.ofReal_ne_top
-
-
 
 theorem terminalGerms_eventually_mem_ball
     {M : Type u} [TopologicalSpace M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonBrownBoundaryChart
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerMissingSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -28,10 +19,6 @@ variable {X α : Type*} [TopologicalSpace X] [T2Space X]
   {e : α → OpenPartialHomeomorph U V3} {K S : Set U}
 
 local notation "R" => ((Subtype.val : U → X) ⁻¹' H)
-
-
-
-
 
 theorem PLDomain.brown_relative_wall_complement
     (brown : HasBrownLocallyFlatSphereBalls)

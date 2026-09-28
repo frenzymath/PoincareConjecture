@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.ParametrizedJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -31,8 +23,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_movingTime_parametrized_jets_at_of_chart_bound_on_compact
     (hconv : M23TerminalMetricConvergence G e)
@@ -127,7 +117,6 @@ theorem eventually_movingTime_parametrized_jets_at_of_chart_bound_on_compact
       (congrArg (fun T : E →L[ℝ] E →L[ℝ] ℝ => T v w) hlimit)
   rw [← (heq.iteratedFDeriv ℝ j).self_of_nhds]
   exact hkb i j hj
-
 
 theorem eventually_movingTime_parametrized_jets_at_of_chart_bound
     (hconv : M23TerminalMetricConvergence G e)

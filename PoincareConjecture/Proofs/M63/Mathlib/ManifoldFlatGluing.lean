@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M63.Mathlib.FlatJetGluing
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped ContDiff Manifold Topology
-
-
-
 
 theorem contMDiffAt_piecewise_comp_of_flat
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

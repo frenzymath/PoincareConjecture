@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapStop
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalar
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapReclock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_finite_source_included_cap_comparison_cutoff
     (P : M44CapPersistencePredecessors.{u}) {g0 : StandardInitialMetric}

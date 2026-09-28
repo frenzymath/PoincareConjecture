@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Models.MarkedModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Models.Parameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -51,7 +43,6 @@ theorem SourceIntervalMarkedModel.selected_clip (D : SourceIntervalMarkedModel o
     interior_subset (D.core_neighborhood ⟨x, hx, rfl⟩))
 
 omit [T2Space X] in
-
 
 theorem SourceIntervalMarkedModel.exists_arc_parameters
     (D : SourceIntervalMarkedModel old i)

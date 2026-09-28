@@ -4,15 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,10 +11,8 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def reunionAxialCutoff (ε Z : ℝ) : ℝ :=
   Real.smoothTransition (-2 * Z / ε - 1)
-
 
 theorem reunionAxialCutoff_spec (ε : ℝ) (hε : 0 < ε) :
     ContDiff ℝ ∞ (reunionAxialCutoff ε) ∧
@@ -53,10 +42,8 @@ theorem reunionAxialCutoff_spec (ε : ℝ) (hε : 0 < ε) :
       (div_le_iff₀ hε).mpr (by nlinarith only [hZ])
     linarith only [hdiv]
 
-
 noncomputable def reunionAxialHeight (a lambda ε t Z : ℝ) : ℝ :=
   lambda * Z - 2 * a * Real.smoothTransition t * reunionAxialCutoff ε Z
-
 
 theorem reunionAxialHeight_spec (a lambda ε : ℝ)
     (ha : 0 < a) (hlambda : 0 < lambda) (hε : 0 < ε) :
@@ -133,7 +120,6 @@ theorem reunionAxialHeight_spec (a lambda ε : ℝ)
     simp only [reunionAxialHeight, Real.smoothTransition.zero, mul_zero, zero_mul, sub_zero]
   · intro Z
     simp only [reunionAxialHeight, Real.smoothTransition.one, mul_one]
-
 
 theorem exists_reunion_axial_spacetime_diffeomorph (a lambda ε : ℝ)
     (ha : 0 < a) (hlambda : 0 < lambda) (hε : 0 < ε) :

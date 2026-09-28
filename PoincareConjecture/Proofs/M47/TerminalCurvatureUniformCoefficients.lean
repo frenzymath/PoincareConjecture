@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoefficientBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M47
 open M34 PoincareConjecture.Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem terminalCurvature_exists_uniform_neck_coefficient_bound (epsilon : ℝ) :
     ∃ L : ℝ, 1 ≤ L ∧ ∀ D : RoundCylinderTwoTensor,

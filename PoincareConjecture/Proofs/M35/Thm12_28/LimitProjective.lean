@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.EvenImmersion
 import PoincareConjecture.Proofs.M35.Thm12_28.PolarCoordinates
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderImmersion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem cylinder_excludes_antipodal_product {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)
@@ -75,9 +63,6 @@ theorem cylinder_excludes_antipodal_product {J : Set ℝ}
   exact ((hinj₀ _ (hvalid x hx)).comp
     ((hc (spherePolarMap q₀ x)).mfderivToContinuousLinearEquiv (by simp)).injective).comp
       (spherePolarMap_mfderiv_injective q₀ hx0)
-
-
-
 
 theorem blowupSequence_limit_no_antipodal_product (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

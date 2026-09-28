@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsTubeEndFamily
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMatching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -18,7 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
 
 theorem exists_stackTwoTubeMatchedChart
     (Tm0 Tp0 : OpenPartialHomeomorph P P)

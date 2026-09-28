@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckInnerExit
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckBufferedBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem inner_slab_ball_subset_carrier {epsilon u ell L : ℝ}
     {x y : StandardCapSpace} (N : StandardCylinderPatch epsilon⁻¹ x)

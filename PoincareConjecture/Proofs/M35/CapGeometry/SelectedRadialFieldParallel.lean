@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedRadialFieldExtraction
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialFieldLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ local instance selectedParallelDualNormedGroup : NormedAddCommGroup (V →L[ℝ]
 local instance selectedParallelDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) := inferInstance
 local instance selectedParallelMetricNormedGroup : NormedAddCommGroup B := inferInstance
 local instance selectedParallelMetricNormedSpace : NormedSpace ℝ B := inferInstance
-
-
 
 theorem blowupSequence_coordinate_radial_limit_parallel
     (P : M35StandardCapPredecessors)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SuccessiveCutDomains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,24 +14,19 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S R : Set (Fin (F.event T hT).cap_count)) (hSR : S ⊆ R)
 
-
 abbrev SharedCutIndex := eventCutOpen F T hT P R ⊕ (S × Bool)
-
 
 def sharedCutIndex : SharedCutIndex F T hT P S R → PartialCappingIndex F T hT P R
   | .inl y => .inl y
   | .inr a => .inr (successiveCapIndex F T hT S R hSR a)
 
-
 noncomputable def sharedCutDomain (j : SharedCutIndex F T hT P S R) :
     TopologicalSpace.Opens StandardCapSpace :=
   partialCappingDomain F T hT P R (sharedCutIndex F T hT P S R hSR j)
 
-
 noncomputable def sharedCutInclude (j : SharedCutIndex F T hT P S R) :
     sharedCutDomain F T hT P S R hSR j → PartialCappedSpace F T hT P R :=
   partialCappingInclude F T hT P R (sharedCutIndex F T hT P S R hSR j)
-
 
 noncomputable def sharedCutPatch (j : SharedCutIndex F T hT P S R) :
     sharedCutDomain F T hT P S R hSR j → PartialCappedSpace F T hT P S :=
@@ -48,11 +35,9 @@ noncomputable def sharedCutPatch (j : SharedCutIndex F T hT P S R) :
       partialCappingMap F T hT P R (.inl y)
   | .inr a => partialCappingInclude F T hT P S (.inr a)
 
-
 theorem sharedCutInclude_openEmbedding (j : SharedCutIndex F T hT P S R) :
     IsOpenEmbedding (sharedCutInclude F T hT P S R hSR j) :=
   partialCappingInclude_openEmbedding F T hT P R (sharedCutIndex F T hT P S R hSR j)
-
 
 theorem sharedCutPatch_openEmbedding (j : SharedCutIndex F T hT P S R) :
     IsOpenEmbedding (sharedCutPatch F T hT P S R hSR j) := by
@@ -62,7 +47,6 @@ theorem sharedCutPatch_openEmbedding (j : SharedCutIndex F T hT P S R) :
         ((successiveOldInclusion_openEmbedding F T hT P S R hSR).comp
           (partialCappingMap_old_openEmbedding F T hT P R y))
   | inr a => exact partialCappingInclude_openEmbedding F T hT P S (.inr a)
-
 
 theorem sharedCut_old_cap_iff (y : eventCutOpen F T hT P R) (a : S × Bool)
     (x : capDoubleBall) :
@@ -75,7 +59,6 @@ theorem sharedCut_old_cap_iff (y : eventCutOpen F T hT P R) (a : S × Bool)
   intro hx
   rw [← successive_attachment F T hT P S R hSR a x hx]
   exact (successiveOldInclusion_openEmbedding F T hT P S R hSR).injective.eq_iff
-
 
 theorem sharedCutPatch_eq_iff (j k : SharedCutIndex F T hT P S R)
     (x : sharedCutDomain F T hT P S R hSR j) (y : sharedCutDomain F T hT P S R hSR k) :

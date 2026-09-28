@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M11.IntervalTopology
 import Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem gauge_has_earlier_time (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

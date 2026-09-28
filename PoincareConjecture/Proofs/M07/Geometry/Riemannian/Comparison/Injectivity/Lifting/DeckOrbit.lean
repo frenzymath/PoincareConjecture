@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.LoopPowers
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.SmoothDeck
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eqOn_deck_motion_comp_lift
     {f : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}
@@ -54,8 +42,6 @@ theorem eqOn_deck_motion_comp_lift
       (hdproj (hlmem t t.property)).trans (hproj t.property)) 0 (Subtype.ext hzero)
   intro t ht
   exact congrArg Subtype.val (congrFun heq ⟨t, ht⟩)
-
-
 
 theorem deck_motion_maps_loop_powers
     {f : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}
@@ -115,7 +101,6 @@ theorem deck_motion_maps_loop_powers
 omit [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem deck_motion_iterates_controlled
     {f : EuclideanSpace ℝ (Fin n) → M} {R a : ℝ}
     {v : EuclideanSpace ℝ (Fin n)}
@@ -166,8 +151,6 @@ theorem deck_motion_iterates_controlled
         rw [Function.iterate_succ_apply']
         exact (hdproj (himem hx)).trans (hiproj hx)
 
-
-
 theorem deck_motion_iterate_eqOn_id_of_return
     {f : EuclideanSpace ℝ (Fin n) → M} {R a : ℝ}
     (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f (Metric.ball 0 R))
@@ -209,8 +192,6 @@ theorem deck_motion_iterate_eqOn_id_of_return
   intro x hx
   exact congrArg Subtype.val (congrFun heq ⟨x, hx⟩)
 
-
-
 theorem loop_powers_eq_iterate
     {E : Type*} [Zero E] {N : ℕ} (d : E → E) (y : Fin (N + 1) → E)
     (hzero : y 0 = 0) (hstep : ∀ i : Fin N, d (y i.castSucc) = y i.succ) :
@@ -223,9 +204,6 @@ theorem loop_powers_eq_iterate
       exact hstep ⟨i, by omega⟩
   intro i
   exact h i (by omega)
-
-
-
 
 theorem loop_power_collision_produces_return
     {f : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}

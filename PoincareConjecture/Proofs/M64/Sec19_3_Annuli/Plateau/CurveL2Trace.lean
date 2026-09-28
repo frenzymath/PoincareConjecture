@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveH1Compactness
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -57,9 +46,6 @@ private theorem l2_pair_integral_tendsto {X : Type*} [MeasurableSpace X] {mu : M
     zero_pow (by decide : 2 ≠ 0), l2_sq_sub] using hh
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem m64Curve_continuous_trace_of_l2_approximation
     (w d : ℕ → ℝ → E) (hd : ∀ j, Continuous (d j))

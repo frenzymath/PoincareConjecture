@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedMetric
 import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedGluing
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,9 +21,6 @@ private noncomputable def horizontalAdaptedEncoding (s : ℝ) :
     EuclideanSpace ℝ (Fin n) ≃ G.Horizontal (R.curve s) :=
   (VectorBundle.continuousLinearEquivAt ℝ (EuclideanSpace ℝ (Fin n))
     G.Horizontal (R.curve s)).symm.toEquiv
-
-
-
 
 theorem exists_horizontalUnitAdaptedField
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

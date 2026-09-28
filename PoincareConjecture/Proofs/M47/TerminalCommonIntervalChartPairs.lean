@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoordinateExtraction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCommonInterval_countable_chart_pairs
     {M : Type u} {N : Type v}

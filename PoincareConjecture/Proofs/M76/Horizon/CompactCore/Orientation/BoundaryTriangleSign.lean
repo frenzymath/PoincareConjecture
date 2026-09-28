@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.ConvexBoundarySign
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Union
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -63,8 +52,6 @@ theorem image_core_eq_or_eq_exterior_of_boundary_transport (e : M ≃ₜ M)
   · exact Or.inl (himage.trans (C.core_eq_connectedComponentIn hcore).symm)
   · exact Or.inr (himage.trans (C.exterior_eq_connectedComponentIn hext).symm)
 
-
-
 theorem union_eq_component_of_boundary_transport (e : M ≃ₜ M)
     (hboundary : e '' D.boundary_sphere = C.boundary_sphere)
     (hcarrier : e '' D.carrier = D.carrier) (hcore : e '' D.core ≠ C.core) :
@@ -97,8 +84,6 @@ theorem isCompact_union_of_boundary_transport (e : M ≃ₜ M)
   rw [C.union_eq_component_of_boundary_transport D e hboundary hcarrier hcore, ← hclosed]
   exact C.closed_core_compact.union (D.closed_core_compact.image e.continuous)
 
-
-
 theorem image_core_ne_of_fixed_frontier_point (e : M ≃ₜ M) {x : M}
     (hx : x ∈ frontier C.carrier) (hxD : x ∈ D.closed_core) (hfix : e x = x) :
     e '' D.core ≠ C.core := by
@@ -120,8 +105,6 @@ theorem compact_component_of_fixed_frontier_point (e : M ≃ₜ M)
   have hcore := C.image_core_ne_of_fixed_frontier_point D e hx hxD hfix
   exact ⟨C.union_eq_component_of_boundary_transport D e hboundary hcarrier hcore,
     C.isCompact_union_of_boundary_transport D e hboundary hcarrier hcore⟩
-
-
 
 theorem compact_component_of_boundary_transport_fixed_outside (e : M ≃ₜ M)
     (hboundary : e '' C.boundary_sphere = D.boundary_sphere)

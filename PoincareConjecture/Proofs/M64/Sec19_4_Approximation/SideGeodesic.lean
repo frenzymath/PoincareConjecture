@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicEquation
 import PoincareConjecture.Definitions.M63Polygon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ open Proofs.M09
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem m64_isGeodesicOn_of_pullback_velocity_eq_zero
     (D : LeviCivitaData g) {gamma : ℝ → M} {U : Set ℝ}
@@ -95,10 +81,6 @@ theorem m64_isGeodesicOn_of_pullback_velocity_eq_zero
   filter_upwards [hV.mem_nhds htV] with s hs
   rw [he]
   exact ⟨(c.left_inv hs.2).symm, c.map_source hs.2, hqd s hs, hode s hs⟩
-
-
-
-
 
 theorem m64MinimizingSide_isGeodesicOn
     {D : LeviCivitaData g} {ell : ℝ} {p q : M}

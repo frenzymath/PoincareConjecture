@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusChartDisp
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +13,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal NNReal
 namespace PoincareConjecture.M64
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem exists_chart_displaced_boundary_collar
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -10,16 +10,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetraction
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -452,13 +442,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 open Classical in
-
-
-
-
-
-
-
 
 theorem FaceMotionData.exists_original_pair_incidence
     {s t : Stage e S f r C} {step : Step s t}

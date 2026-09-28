@@ -2,14 +2,6 @@ import Mathlib.MeasureTheory.Measure.MeasureSpace
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 import Mathlib.Topology.MetricSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,8 +10,6 @@ open scoped ENNReal
 namespace Poincare.MeasureTheory
 
 variable {X : Type*} [PseudoEMetricSpace X] [MeasurableSpace X] [BorelSpace X]
-
-
 
 theorem card_mul_le_measure_of_separated_balls
     (μ : Measure X) (s : Finset X) {r v : ℝ≥0∞} {U : Set X}
@@ -42,8 +32,6 @@ theorem card_mul_le_measure_of_separated_balls
       (measure_biUnion_finset hdisj (fun _ _ => Metric.isOpen_eball.measurableSet)).symm
     _ ≤ μ U := measure_mono (iUnion₂_subset hsub)
 
-
-
 theorem card_le_measure_div_of_separated_balls
     (μ : Measure X) (s : Finset X) {r : ℝ≥0∞} {v : ℝ} {U : Set X}
     (hv : 0 < v) (hU : μ U ≠ ⊤)
@@ -56,8 +44,6 @@ theorem card_le_measure_div_of_separated_balls
   rw [ENNReal.toReal_mul, ENNReal.toReal_natCast,
     ENNReal.toReal_ofReal hv.le] at hreal
   exact (le_div_iff₀ hv).mpr hreal
-
-
 
 theorem card_le_inv_of_relative_ball_measure
     (μ : Measure X) (s : Finset X) {r : ℝ≥0∞} {c : ℝ} {U : Set X}

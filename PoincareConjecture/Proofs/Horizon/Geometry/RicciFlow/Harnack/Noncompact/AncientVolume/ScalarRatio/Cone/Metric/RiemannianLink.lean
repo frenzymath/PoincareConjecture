@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.MinimizingRay
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 def basedMinimizingRayOfEdist (g : RiemannianMetric n M) {p : M}
     (ray : ℝ → M) (hzero : ray 0 = p)
@@ -47,8 +36,6 @@ theorem rayExtension_basedMinimizingRayOfEdist (g : RiemannianMetric n M) {p : M
     letI := g.toMetricSpace
     rayExtension (g.basedMinimizingRayOfEdist ray hzero hmin) t = ray t := by
   simp only [rayExtension, basedMinimizingRayOfEdist, Real.coe_toNNReal t ht]
-
-
 
 theorem rayComparison_of_metricComplete
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -72,8 +59,6 @@ theorem nonempty_basedMinimizingRays [NoncompactSpace M]
     Nonempty (basedMinimizingRays p) := by
   obtain ⟨ray, hzero, hmin⟩ := g.exists_minimizing_ray_of_metricComplete hc p
   exact ⟨g.basedMinimizingRayOfEdist ray hzero hmin⟩
-
-
 
 theorem asymptoticLink_nonempty_compact [NoncompactSpace M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

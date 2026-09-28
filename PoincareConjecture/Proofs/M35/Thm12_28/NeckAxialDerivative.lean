@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,15 +12,11 @@ variable {length : ℝ} {center : StandardCapSpace}
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem axial_contMDiffAt (N : StandardCylinderPatch length center)
     {y : StandardCapSpace} (hy : y ∈ N.carrier) :
     ContMDiffAt (𝓡 3) 𝓘(ℝ, ℝ) ∞ (fun z => (N.inverse z).2) y :=
   contMDiffAt_snd.comp y
     ((N.inverse_smooth y hy).contMDiffAt (N.carrier_open.mem_nhds hy))
-
-
 
 theorem axial_mfderiv_chart (N : StandardCylinderPatch length center)
     (q : UnitTwoSphere) {p : EuclideanSpace ℝ (Fin 3)}
@@ -59,8 +46,6 @@ theorem axial_mfderiv_chart (N : StandardCylinderPatch length center)
     ((N.euclideanChart_contMDiffAt q hp).mdifferentiableAt (by simp)),
     hL] at hderiv
   exact congrArg (fun A => A v) hderiv
-
-
 
 theorem axial_derivative_bound {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

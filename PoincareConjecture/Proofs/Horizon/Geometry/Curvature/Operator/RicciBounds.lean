@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,7 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {g : RiemannianMetric n M}
-
 
 theorem ricci_eq_sum_frame (D : LeviCivitaData g) (x : M)
     (v w : TangentSpace (𝓡 n) x) :
@@ -47,7 +37,6 @@ theorem ricci_eq_sum_frame (D : LeviCivitaData g) (x : M)
   change inner ℝ (b j) w * (inner ℝ (b i) v * D.ricci x (b i) (b j)) =
     D.ricci x (b i) (b j) * inner ℝ (b i) v * inner ℝ (b j) w
   ring
-
 
 theorem ricci_bounds_of_nonnegative_curvatureOperator
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

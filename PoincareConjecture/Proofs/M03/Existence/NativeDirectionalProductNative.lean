@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.TensorFirstOrderGraphNative
 import Mathlib.Topology.Order.Compact
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -57,7 +50,6 @@ theorem scalarDirectional_mul_sq_le (V : SmoothField (n := n) (M := M))
 
 variable {iota : Type v} [Fintype iota]
 
-
 theorem directional_energy_mul_le (F : iota → SmoothField (n := n) (M := M))
     {ψ f : M → ℝ} {x : M}
     (hψ : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) ψ x)
@@ -77,7 +69,6 @@ theorem directional_energy_mul_le (F : iota → SmoothField (n := n) (M := M))
         Finset.card_univ, nsmul_eq_mul]
       ring
 
-
 theorem exists_scalarDirectional_bound [CompactSpace M]
     (F : iota → SmoothField (n := n) (M := M))
     {ψ : M → ℝ} (hψ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ψ) :
@@ -93,7 +84,6 @@ theorem exists_scalarDirectional_bound [CompactSpace M]
   intro i x
   exact (hb i x).trans ((le_max_left (b i) 0).trans
     (Finset.single_le_sum (fun j _ => le_max_right (b j) 0) (Finset.mem_univ i)))
-
 
 def smoothFieldBracket (V W : SmoothField (n := n) (M := M)) :
     SmoothField (n := n) (M := M) := by
@@ -127,7 +117,6 @@ private theorem directional_eq_chart_derivative (p : M)
     (he.mdifferentiableAt_symm hz) (chartField p V z)
   rw [mfderiv_eq_fderiv] at hchain
   exact (hchain.trans (congrArg (mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f (e.symm z)) hvinv)).symm
-
 
 theorem chartField_smoothFieldBracket (p : M)
     (V W : SmoothField (n := n) (M := M))
@@ -178,8 +167,6 @@ theorem chartField_smoothFieldBracket (p : M)
     _ = _ := by
       rw [← VectorField.mlieBracketWithin_univ,
         VectorField.mlieBracketWithin_eq_lieBracketWithin, VectorField.lieBracketWithin_univ]
-
-
 
 theorem scalarDirectional_bracket (V W : SmoothField (n := n) (M := M))
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
@@ -239,8 +226,6 @@ private theorem directional_add (V : SmoothField (n := n) (M := M))
       scalarDirectional V f x + scalarDirectional V q x := by
   exact congrArg (fun L : TangentSpace (𝓡 n) x →L[ℝ] ℝ => L (V x)) (mfderiv_add hf hq)
 
-
-
 theorem scalarDirectional_principal_commutator
     (X V W : SmoothField (n := n) (M := M)) {a f : M → ℝ}
     (ha : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ a)
@@ -288,7 +273,6 @@ theorem scalarDirectional_sub (V : SmoothField (n := n) (M := M))
       scalarDirectional V f x - scalarDirectional V q x := by
   exact congrArg (fun L : TangentSpace (𝓡 n) x →L[ℝ] ℝ => L (V x)) (mfderiv_sub hf hq)
 
-
 def bracketCoefficient (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M)) (i j k : iota) (x : M) : ℝ :=
   g.inner x (F k x) (smoothFieldBracket (F i) (F j) x)
@@ -326,7 +310,6 @@ theorem exists_bracketCoefficient_bound [CompactSpace M]
   intro i j k x
   exact (hc (i, j, k) x).trans ((le_max_left _ _).trans
     (Finset.single_le_sum (fun q _ => le_max_right (c q) 0) (Finset.mem_univ (i, j, k))))
-
 
 def directionalWord (F : iota → SmoothField (n := n) (M := M)) :
     List iota → (M → ℝ) → M → ℝ
@@ -385,7 +368,6 @@ theorem scalarDirectional_finsetSum_smooth {jota : Type*} (s : Finset jota)
   rw [hderiv.mfderiv]
   simp only [ContinuousLinearMap.sum_apply]
   rfl
-
 
 structure DirectionalTerm where
   coefficient : M → ℝ

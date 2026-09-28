@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.RadiusLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -93,9 +83,6 @@ theorem terminal_ball_volume_le_earlier_ball_of_cylinder
   exact hfixed.trans (ENNReal.toReal_mono
     ((F.metric a).ball_volume_ne_top_of_metricComplete (hcomplete a ha) p ρ)
     (measure_mono hsub))
-
-
-
 
 theorem terminal_unit_ball_volume_le_buffered_ball_of_cylinder
     {m : ℕ} {M : Type u} [TopologicalSpace M]

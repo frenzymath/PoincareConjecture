@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNormalizedJets
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNormalizedSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +15,6 @@ open Proofs.M47 M36 M44
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem exists_source_initial_own_scalar_family_tolerance
     {epsilon omegaMax C L : ℝ} (hepsilon : 0 < epsilon)

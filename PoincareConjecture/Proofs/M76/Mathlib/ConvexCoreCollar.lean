@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +8,6 @@ open scoped Topology
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [TopologicalSpace E]
   [T2Space E] [IsTopologicalAddGroup E] [ContinuousSMul ℝ E]
-
-
-
 
 theorem IsCompact.exists_convex_innerCore {C U : Set E} (hC : IsCompact C)
     (hc : Convex ℝ C) (hi : (interior C).Nonempty) (hU : IsOpen U)

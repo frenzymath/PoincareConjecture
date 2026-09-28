@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Ray
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -57,8 +48,6 @@ private theorem exists_frontier_time {curve : ℝ → M} {a b : ℝ}
     ⟨curve a, ⟨a, ⟨le_rfl, hab⟩, rfl⟩, hA.interior_eq.symm ▸ ha⟩
   exact hb (interior_subset (hsub ⟨b, ⟨hab, le_rfl⟩, rfl⟩))
 
-
-
 theorem IsMinimizingOn.exists_frontier_distance_le_of_mem
     {curve : ℝ → M} {L : ℝ} (hcurve : IsMinimizingOn curve (Icc 0 L))
     {A : Set M} (hA : IsOpen A) (hout : curve L ∉ A)
@@ -75,7 +64,6 @@ theorem IsMinimizingOn.exists_frontier_distance_le_of_mem
   rw [hcurve ht huI, abs_of_nonpos (by linarith [hu.1])]
   linarith
 
-
 theorem IsRay.exists_later_frontier_time {ray : ℝ → M} (hray : IsRay ray)
     {A : Set M} (hA : IsOpen A) (hAc : IsCompact (closure A))
     {t : ℝ} (ht : 0 ≤ t) (hmem : ray t ∈ A) :
@@ -90,8 +78,6 @@ theorem IsRay.exists_later_frontier_time {ray : ℝ → M} (hray : IsRay ray)
   subst u
   exact huf.2 (hA.interior_eq.symm ▸ hmem)
 
-
-
 theorem IsRay.time_le_of_mem_compact_side {ray : ℝ → M} (hray : IsRay ray)
     {A : Set M} (hA : IsOpen A) (hAc : IsCompact (closure A))
     {D : ℝ} (hdiam : ∀ x ∈ frontier A, ∀ y ∈ frontier A, dist x y ≤ D)
@@ -101,8 +87,6 @@ theorem IsRay.time_le_of_mem_compact_side {ray : ℝ → M} (hray : IsRay ray)
   have hbound := hdiam (ray s) hstart (ray u) hu
   rw [hray hs (hs.trans (hst.trans htu.le)), abs_of_nonpos (by linarith)] at hbound
   linarith
-
-
 
 theorem IsRay.exists_frontier_distance_le_of_mem_compact_side
     {ray : ℝ → M} (hray : IsRay ray) {A : Set M}
@@ -118,8 +102,6 @@ theorem IsRay.exists_frontier_distance_le_of_mem_compact_side
   refine ⟨ray u, hu, ?_⟩
   rw [hray (hs.trans hst) hu0, abs_of_nonpos (by linarith)]
   linarith
-
-
 
 theorem IsRay.exists_frontier_distance_le_half_diameter
     {ray : ℝ → M} (hray : IsRay ray) {A : Set M}

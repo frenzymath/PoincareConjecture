@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
-
-
 
 theorem closure_ball_subset_ball_of_lt
     (g : RiemannianMetric n M) (o : M) {r s : ℝ} (hs : 0 < s) (hrs : r < s) :
@@ -35,10 +24,6 @@ theorem closure_ball_subset_ball_of_lt
     · exact isClosed_le (continuous_const.edist continuous_id) continuous_const
   intro x hx
   exact (hcl hx).trans_lt ((ENNReal.ofReal_lt_ofReal_iff hs).mpr hrs)
-
-
-
-
 
 theorem closure_normalized_ball_subset_of_collar
     (g : RiemannianMetric n M) {Y V : Set M} (hY : IsClosed Y) (hYV : Y ⊆ V)

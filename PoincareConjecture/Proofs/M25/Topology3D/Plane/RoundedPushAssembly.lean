@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedPolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PeriodicCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CurveFamilyTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_supported_rounded_polygon_push
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

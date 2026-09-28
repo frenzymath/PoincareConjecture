@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_backwardFlow_of_interior_and_closed
     {n : ℕ} {M : Type u} [TopologicalSpace M]

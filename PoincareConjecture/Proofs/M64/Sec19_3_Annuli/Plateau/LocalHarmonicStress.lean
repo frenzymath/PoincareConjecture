@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUHopfCoordinates
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSmoothGram
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +16,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64ChartPairing_eq_gram (g : RiemannianMetric n M) (q : M)
     {u : LoopPlane → EuclideanSpace ℝ (Fin n)} {f : LoopPlane → M}
@@ -59,9 +44,6 @@ theorem m64ChartPairing_eq_gram (g : RiemannianMetric n M) (q : M)
       (fderiv ℝ u p (EuclideanSpace.basisFun (Fin 2) ℝ i)))
     (mfderiv (𝓡 n) (𝓡 n) c.symm (u p)
       (fderiv ℝ u p (EuclideanSpace.basisFun (Fin 2) ℝ j)))) hp
-
-
-
 
 theorem m64LocalHarmonicMap_stress_cauchyRiemann (g : RiemannianMetric n M) (q : M)
     {u : LoopPlane → EuclideanSpace ℝ (Fin n)} {f : LoopPlane → M}

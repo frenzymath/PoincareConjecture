@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarDerivativeJets
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 import Mathlib.Analysis.Normed.Operator.NNNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation:max "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem scalarGradientNorm_eq_gradient_norm
     {M : Type*} [TopologicalSpace M]
@@ -55,8 +45,6 @@ theorem scalarGradientNorm_eq_gradient_norm
   change sSup _ = ‖v‖
   rw [hset, (innerSL ℝ v).sSup_sphere_eq_norm, innerSL_apply_norm]
 
-
-
 theorem scalar_fderiv_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
     (Dseq : ∀ k, LeviCivitaData (gseq k)) (D : LeviCivitaData g)
@@ -74,8 +62,6 @@ theorem scalar_fderiv_tendsto_of_metric_jets {n : ℕ}
   have h := (C.continuous.tendsto _).comp
     (scalarCurvature_jets_tendsto_of_metric_jets Dseq D pseq p 1 hjet)
   simpa only [Function.comp_def, heq] using h
-
-
 
 theorem scalarGradientNorm_tendsto_of_metric_jets
     {gseq : ℕ → RiemannianMetric 3 (E 3)} {g : RiemannianMetric 3 (E 3)}

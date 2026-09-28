@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteNerveChains
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ChainTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M59
 
 open M02.Topology
-
-
-
 
 theorem normalizedIntegralChainMap_diagonal_zero {X : SSet.{u}}
     (f : X ⟶ X) (n : ℕ)
@@ -54,9 +42,6 @@ theorem normalizedIntegralChainMap_diagonal_zero {X : SSet.{u}}
       ((X.mem_degenerate_iff_notMem_nonDegenerate _).mpr hs)]
     change (normalizedIntegralChainCoordinates X n 0) s = 0
     simp only [map_zero, Finsupp.zero_apply]
-
-
-
 
 theorem normalizedIntegralChainMap_alternatingTrace_zero {X : SSet.{u}}
     (f : X ⟶ X) (N : ℕ) [∀ i, Finite (X.nonDegenerate i)]

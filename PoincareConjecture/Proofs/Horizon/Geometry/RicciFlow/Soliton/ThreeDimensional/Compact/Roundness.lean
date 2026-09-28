@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.Einstein
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.RicciPositive
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -82,8 +72,6 @@ theorem einstein_at_time_of_compact_ricci_pos
   (G.flow.connection t).ricci_eq_scalar_div_three_mul_inner_of_norm_eq x
     (G.ricciNormSq_eq_scalarSq_div_three_of_compact_ricci_pos hC hRic ht x) u v
 
-
-
 theorem compactRoundModel_of_ricci_pos
     (hC : RicciFlowCurvatureTheory.{u}) (G : ShrinkingSolitonFlow S)
     (hRic : ∀ x : M, ∀ v : TangentSpace (𝓡 3) x, v ≠ 0 → 0 < S.connection.ricci x v v) :
@@ -96,8 +84,6 @@ theorem compactRoundModel_of_ricci_pos
   intro x
   exact S.connection.scalarCurvature_pos_of_ricci_pos
     (hC.tensor_calculus 3 M S.metric S.connection) x (hRic x)
-
-
 
 theorem compactRoundModel
     (hC : RicciFlowCurvatureTheory.{u}) (G : ShrinkingSolitonFlow S) :

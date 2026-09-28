@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.GluingTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Worldlines
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -132,8 +125,6 @@ theorem extendedBox_vertical_compatibility
           have hxy := ((H.regularBox P04 hΩ).forward_openEmbedding t ht).injective heq
           exact congrArg ((H.regularBox P04 hΩ).forward s hs) hxy
 
-
-
 def nonemptyExtendedFlow (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (hΩ : H.reference.regularLimitSet.Nonempty) :
     GeneralizedRicciFlowData.{u} where
@@ -154,7 +145,6 @@ def nonemptyExtendedFlow (H : SingularTimeAssumptions F T M)
   box_openEmbedding := H.extendedBox_openEmbedding P04 hΩ
   box_covers := H.extendedBox_covers P04 hΩ
   vertical_compatibility := H.extendedBox_vertical_compatibility P04 hΩ
-
 
 def nonemptyExtension (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (hΩ : H.reference.regularLimitSet.Nonempty) :

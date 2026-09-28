@@ -2,11 +2,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Tensorial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
-
-
-
-
-
-
-
-

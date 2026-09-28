@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Semiconcavity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,9 +61,6 @@ private theorem squared_distance_gap_le_upper_support_differential
     (by simp only [hγ0, htouch]) hmajor hderiv
   simp only [hγ0, hγL, zero_pow (by decide : 2 ≠ 0), sub_zero] at h
   nlinarith only [h]
-
-
-
 
 theorem exists_distance_upper_support_with_common_inward_derivative
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

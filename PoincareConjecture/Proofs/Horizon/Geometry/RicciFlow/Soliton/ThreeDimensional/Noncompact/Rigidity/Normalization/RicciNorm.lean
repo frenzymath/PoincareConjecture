@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Norm
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvolution
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +39,6 @@ private theorem ricciNormSq_eq_sum_frame (D : LeviCivitaData g)
   have he := multilinear_sum_mul_orthonormalBasis_eq A A (g.orthonormalBasis x) b
   rw [hs, hs] at he
   exact he
-
-
 
 theorem ricciNormSq_eq_half_scalar_sq_of_null_direction
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -93,8 +84,6 @@ theorem ricciNormSq_eq_half_scalar_sq_of_null_direction
   rw [D.ricciNormSq_eq_sum_frame hD x b, hR]
   simp [hric, Fin.sum_univ_succ]
   ring
-
-
 
 theorem ricciNormSq_eq_half_scalar_sq_of_parallel_gradient
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

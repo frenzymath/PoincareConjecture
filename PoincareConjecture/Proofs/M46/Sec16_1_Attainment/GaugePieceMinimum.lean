@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePieceRecovery
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeWeakMinimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem actionValue_le_gauge_pieces (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} (htau : 0 < tau) (gamma : ℝ → G.Point) (hgamma : Continuous gamma)
@@ -44,9 +33,6 @@ theorem actionValue_le_gauge_pieces (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
   obtain ⟨p, hp⟩ := gauge_piece_recovery_sequence hM12 htau gamma hgamma hclock R
     u hu hleft hright w hprimitive
   exact ge_of_tendsto hp (Eventually.of_forall (fun k => M14.actionValue_le_action hfinite (p k)))
-
-
-
 
 theorem gauge_piece_minimum (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} (htau : 0 < tau) (gamma : ℝ → G.Point) (hgamma : Continuous gamma)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.CompactMetricMinimizer
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,11 +8,6 @@ open Set Filter
 open scoped Topology ENNReal NNReal
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_compact_constrained_minimizer
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)
@@ -103,10 +86,6 @@ theorem m64Intrinsic_exists_compact_constrained_minimizer
   · intro τ' hc' h0' h1' hconf'
     rw [hνlength]
     exact hmin τ' hc' h0' h1' hconf'
-
-
-
-
 
 theorem m64Intrinsic_exists_unit_speed_constrained_minimizer
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)

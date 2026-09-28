@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Cutting.Finite
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalFaceArcModels
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -95,8 +86,6 @@ theorem exists_exceptions_of_actual_rectangle_family
     exact ⟨k,hxk,fun j hj => hunique x j k hj hxk⟩
   · rintro ⟨k,hk,_⟩ hx
     exact hx ⟨k,((hfmem x k).mpr hk).symm⟩
-
-
 
 theorem exists_original_face_rectangle_exceptions
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

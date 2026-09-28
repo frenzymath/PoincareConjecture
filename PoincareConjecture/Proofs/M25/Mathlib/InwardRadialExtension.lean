@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Mathlib.PositiveRadialExtension
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace Real
-
-
-
 
 theorem exists_smooth_inward_radial_chart
     {f : ℝ → ℝ} {d a b c R : ℝ}

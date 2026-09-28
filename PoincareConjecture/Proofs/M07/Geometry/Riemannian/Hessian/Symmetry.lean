@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.VectorField.Commutator
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,13 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
-
-
-
 
 lemma hessianOnFields_symm_of_commutator
     (D : LeviCivitaData g) (f : M → ℝ)

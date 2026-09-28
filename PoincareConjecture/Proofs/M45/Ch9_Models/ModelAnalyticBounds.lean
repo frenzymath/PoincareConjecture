@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Ch9_Models.RoundBounds
 import PoincareConjecture.Proofs.M45.Ch12_Standard.StandardNecks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem model_analytic_bounds_nonempty : Nonempty M45ModelAnalyticBounds.{u} := by
   obtain ⟨Cg, hCg, hgradient⟩ :=
@@ -43,9 +31,6 @@ theorem model_analytic_bounds_nonempty : Nonempty M45ModelAnalyticBounds.{u} := 
     exact model_neck_analytic hCg hCe
       (fun gE DE => hgradient gE DE 0) (fun gE DE => hevolution gE DE 0)
       (F.metric t) (F.connection t) (N.staticAtZero hzero).toEpsilonNeck hsmall
-
-
-
 
 noncomputable def modelAnalyticBounds : M45ModelAnalyticBounds.{u} :=
   Classical.choice model_analytic_bounds_nonempty

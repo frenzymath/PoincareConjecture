@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedPolygon
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.Complex.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -20,19 +12,13 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def triangleComplexAffineMap (b : AffineBasis (Fin 3) ℝ E) : E →ᵃ[ℝ] ℂ :=
   Complex.equivRealProdCLM.symm.toLinearMap.toAffineMap.comp
     ((b.coord 1 - AffineMap.const ℝ E (1 / 3)).prod
       (b.coord 2 - AffineMap.const ℝ E (1 / 3)))
 
-
-
 theorem triangleComplexAffineMap_apply (b : AffineBasis (Fin 3) ℝ E) (x : E) :
     triangleComplexAffineMap b x = ⟨b.coord 1 x - 1 / 3, b.coord 2 x - 1 / 3⟩ := rfl
-
-
 
 theorem exists_triangle_coordinate_diffeomorph [FiniteDimensional ℝ E]
     (b : AffineBasis (Fin 3) ℝ E) :
@@ -79,8 +65,6 @@ theorem exists_triangle_coordinate_diffeomorph [FiniteDimensional ℝ E]
       right_inv := hCJ }
     contMDiff_toFun := hC.contMDiff
     contMDiff_invFun := hJ.contMDiff }, fun _ => rfl⟩
-
-
 
 theorem triangleComplexAffineMap_roundedPolygon {n : ℕ} [NeZero n]
     (b : AffineBasis (Fin 3) ℝ E) (ρ : ℝ → ℝ) (p : Polygon E n) (t : ℝ) :

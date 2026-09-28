@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_PrefixVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem realized_seed_of_regular_image (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {window : M33RegularHistoryWindow F}

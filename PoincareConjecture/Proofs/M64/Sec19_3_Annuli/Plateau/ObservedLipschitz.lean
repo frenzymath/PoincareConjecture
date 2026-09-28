@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture
 
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_observation_edist_bound [CompactSpace M]
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))
@@ -50,8 +37,6 @@ theorem m64_observation_edist_bound [CompactSpace M]
   rw [ENNReal.coe_nnreal_eq]
   change edist (e x) (e y) ≤ ENNReal.ofReal (B + 1) * g.edist x y
   simpa only [RiemannianMetric.euclideanMetric_edist] using hd
-
-
 
 theorem m64Annulus_observed_lipschitzOn [CompactSpace M]
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

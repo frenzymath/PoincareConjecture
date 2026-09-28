@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.CanonicalDomain
-
-
-
-
-
-
-

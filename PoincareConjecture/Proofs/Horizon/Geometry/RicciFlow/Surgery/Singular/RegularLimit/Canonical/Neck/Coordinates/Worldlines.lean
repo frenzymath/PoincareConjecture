@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Cylinder
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

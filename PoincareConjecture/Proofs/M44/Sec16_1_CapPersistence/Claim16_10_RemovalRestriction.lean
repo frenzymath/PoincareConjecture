@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 def restrictCylinderSource
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -43,9 +31,6 @@ def restrictCylinderSource
     e.pre_retained_at_surgery s hs hT t ht ht' x (hVU hx)
   surgery_compatibility s hs hT _ t ht ht' x hx :=
     e.surgery_compatibility s hs hT t ht ht' x (hVU hx)
-
-
-
 
 theorem disappears_restrict_source
     {F : SurgeryFlowData.{u}} {origin scale tPlus : ℝ} {I : Set ℝ}

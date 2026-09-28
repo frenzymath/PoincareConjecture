@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyParameterPL
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -65,8 +57,6 @@ theorem hamiltonZero_box_projection_injOn
     (hcoe hsecond hx.1.2 hy.1.2 (congrArg (fun z => z.1.2) h)))
     (hcoe hfirst hx.2 hy.2 (congrArg Prod.snd h))
 
-
-
 theorem ChartwisePLMap.finitePL_hamiltonZero_box_lift
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {e : ι → OpenPartialHomeomorph X0 V3} {d : κ → OpenPartialHomeomorph X0 V3}
@@ -95,8 +85,6 @@ theorem ChartwisePLMap.finitePL_hamiltonZero_box_lift
   apply (Q0).injective
   rw [(Q0).apply_symm_apply]
   exact hvalue z hz
-
-
 
 theorem exists_hamiltonZero_finitePL_boundary_coordinates
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

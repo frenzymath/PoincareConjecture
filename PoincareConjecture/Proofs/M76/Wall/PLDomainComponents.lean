@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenDomainFrontier
 import PoincareConjecture.Proofs.M76.Wall.PLDomainLocalPathConnected
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {P L : Set X}
-
-
 
 theorem PLDomain.of_relative_clopen_subset (hP : PLDomain e P)
     (hLP : L ⊆ P) (hL : IsClosed L)
@@ -45,9 +34,6 @@ theorem PLDomain.of_relative_clopen_subset (hP : PLDomain e P)
     rw [hLU]
     exact ⟨fun h => (hhalf y hy.1).mp h.1,
       fun h => ⟨(hhalf y hy.1).mpr h, hy.2⟩⟩
-
-
-
 
 theorem PLDomain.connectedComponentIn [T2Space X] (hP : PLDomain e P)
     (hPc : IsCompact P) {x : X} (hxP : x ∈ P) :

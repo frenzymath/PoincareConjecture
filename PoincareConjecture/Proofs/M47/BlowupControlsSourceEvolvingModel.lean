@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineFields
 import PoincareConjecture.Proofs.M47.CanonicalNeckBufferedFamily
 import PoincareConjecture.Proofs.M45.Ch12_Standard.StandardNecks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open Proofs.M47
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem exists_standard_evolving_neck_spatial_restriction
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
@@ -70,8 +59,6 @@ theorem exists_standard_evolving_neck_spatial_restriction
     funext p
     simp only [Function.comp_apply, neckAxialInverse, sub_zero, div_one]
 
-
-
 theorem standard_evolving_neck_unit_family
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
     {atlas : StandardCylinderAtlas} {v gamma : ℝ} {z : StandardCapSpace}
@@ -91,8 +78,6 @@ theorem standard_evolving_neck_unit_family
   obtain ⟨hsmooth, B, hB, hbound⟩ := N.close
   exact ⟨fun u hu => hsmooth u (hI hu), B, hB,
     fun u hu => hbound u (hI hu)⟩
-
-
 
 theorem exists_standard_evolving_model_jet_buffer
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

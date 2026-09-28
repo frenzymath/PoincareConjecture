@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeRampInteriorImmer
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimalAnnulusAreaStationarity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -58,10 +45,6 @@ variable (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference)
 
 include hcirc hc0 hc1 hp0 hp1 hr0 hr1 hr hminimum hconformal hA
 
-
-
-
-
 theorem m64FreeRampModulusMinimum_branchSet_empty : m64AnnulusBranchSet A = ∅ := by
   have hi := m64FreeRampModulusMinimum_mfderiv_injective P hcirc t hc0 hc1 hp0 hp1
     hr0 hr1 sigma0 sigma1 A hr hminimum hconformal hA
@@ -74,10 +57,6 @@ theorem m64FreeRampModulusMinimum_branchSet_empty : m64AnnulusBranchSet A = ∅ 
     rfl
   have hcoord := congrArg (fun z : LoopPlane => z 0) he
   norm_num at hcoord
-
-
-
-
 
 theorem m64FreeRampModulusMinimum_branchAwareFirstVariation :
     M64AnnulusBranchAwareFirstVariationCertificate A := by

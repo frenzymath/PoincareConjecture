@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylin
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylinder.Vertical
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,14 +16,12 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
 def overlapCoordinateDomain (N P : EpsilonNeck g) : Set RoundCylinderSpace :=
   N.cylinderDomain ∩ N.coordinate_map ⁻¹' P.carrier
 
 theorem overlapCoordinateDomain_isOpen (N P : EpsilonNeck g) :
     IsOpen (N.overlapCoordinateDomain P) :=
   N.coordinate_map_smooth.continuousOn.isOpen_inter_preimage N.cylinderDomain_open P.carrier_open
-
 
 def overlapBarrierCoordinate (N Q : EpsilonNeck g) (z : RoundCylinderSpace) : ℝ :=
   (N.epsilon⁻¹ - (N.coordinate_inverse (Q.coordinate_map z)).2)⁻¹ -
@@ -52,8 +39,6 @@ theorem overlapBarrierCoordinate_contMDiffAt (N Q : EpsilonNeck g)
   have hQ : Q.epsilon⁻¹ + z.2 ≠ 0 := by linarith [hz.1.2.1]
   exact ((contMDiffAt_const.sub htrans).inv₀ hN).sub
     ((contMDiffAt_const.add contMDiffAt_snd).inv₀ hQ)
-
-
 
 theorem overlapBarrierCoordinate_hasDerivAt (N Q : EpsilonNeck g) (q : UnitTwoSphere)
     {t : ℝ} (ht : (q, t) ∈ Q.overlapCoordinateDomain N) :
@@ -97,8 +82,6 @@ theorem overlapBarrierCoordinate_isLocalDiffeomorphOn (N Q : EpsilonNeck g)
   exact (N.overlapBarrierCoordinate_hasDerivAt Q z.1 (by simpa using hz)).deriv.symm ▸
     N.overlapBarrierCoordinate_hasDerivAt Q z.1 (by simpa using hz)
 
-
-
 theorem overlapBarrier_isLocalDiffeomorphOn (N Q : EpsilonNeck g)
     (hpositive : ∀ z ∈ Q.overlapCoordinateDomain N,
       0 < deriv (fun t => (N.coordinate_inverse (Q.coordinate_map (z.1, t))).2) z.2) :
@@ -125,8 +108,6 @@ theorem overlapBarrier_isLocalDiffeomorphOn (N Q : EpsilonNeck g)
   change ((Q.coordinate_inverse y).1, N.overlapBarrier Q y) =
     ((Q.coordinate_inverse y).1, N.overlapBarrierCoordinate Q (Q.coordinate_inverse y))
   simp only [overlapBarrier, overlapBarrierCoordinate, Q.coordinate_map_coordinate_inverse hy]
-
-
 
 theorem overlapBarrierMap_isLocalDiffeomorph (N Q : EpsilonNeck g)
     (hpositive : ∀ z ∈ Q.overlapCoordinateDomain N,

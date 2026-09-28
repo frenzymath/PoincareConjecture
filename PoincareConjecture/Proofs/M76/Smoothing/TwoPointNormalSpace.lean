@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TwoRayProjection
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry ContinuousLinearMap
@@ -17,8 +8,6 @@ open Set Geometry ContinuousLinearMap
 namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem rightInverse_rayFrame_iff (u : E) (Q : E →L[ℝ] ℝ) :
     Function.RightInverse (toSpanSingleton ℝ u) Q ↔ Q u = 1 := by
@@ -29,8 +18,6 @@ theorem rightInverse_rayFrame_iff (u : E) (Q : E →L[ℝ] ℝ) :
     change Q (r • u) = r
     rw [map_smul, h, smul_eq_mul, mul_one]
 
-
-
 theorem convex_twoPointOperatorSet (u v : E) :
     Convex ℝ {Q : E →L[ℝ] ℝ | Q u = 1 ∧ Q v < 0} := by
   intro Q hQ R hR a b ha hb hab
@@ -39,9 +26,6 @@ theorem convex_twoPointOperatorSet (u v : E) :
     rw [hQ.1, hR.1, mul_one, mul_one, hab]
   · change a * Q v + b * R v < 0
     exact convex_Iio (0 : ℝ) hQ.2 hR.2 ha hb hab
-
-
-
 
 noncomputable def twoPointFrameEmbeddingHomeomorph (u v : E)
     (hv : LinearIndependent ℝ ![u, v]) :
@@ -60,10 +44,6 @@ namespace PoincareConjecture.M76.Smoothing
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
-
 theorem nonempty_twoPointOperatorSet (u v : E) (hv : LinearIndependent ℝ ![u, v]) :
     ({Q : E →L[ℝ] ℝ | Q u = 1 ∧ Q v < 0} : Set (E →L[ℝ] ℝ)).Nonempty := by
   let V := Submodule.span ℝ (range ![u, v])
@@ -77,9 +57,6 @@ theorem nonempty_twoPointOperatorSet (u v : E) (hv : LinearIndependent ℝ ![u, 
     simp [Q, A, Module.Basis.coord_apply]
   · rw [← hone]
     simp [Q, A, Module.Basis.coord_apply]
-
-
-
 
 theorem contractible_twoPointFrameEmbeddingSpace (u v : E)
     (hv : LinearIndependent ℝ ![u, v]) :

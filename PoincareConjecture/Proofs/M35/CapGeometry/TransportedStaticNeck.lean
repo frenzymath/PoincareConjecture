@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ private theorem scalar_scale_inv_sq {Q : ℝ} (hQ : 0 < Q) :
     (Q ^ (-1 / 2 : ℝ))⁻¹ ^ 2 = Q := by
   rw [← Real.rpow_neg hQ.le, ← Real.rpow_natCast, ← Real.rpow_mul hQ.le]
   norm_num
-
-
-
 
 noncomputable def transportedStatic (N : EpsilonNeck g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)
@@ -86,8 +73,6 @@ noncomputable def transportedStatic (N : EpsilonNeck g)
     rw [scalar_scale_inv_sq hscalar]
     exact hclose
 
-
-
 theorem transportedStatic_carrier (N : EpsilonNeck g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)
     (phi : PartialDiffeomorph (𝓡 3) (𝓡 3) M StandardCapSpace ∞)
@@ -104,8 +89,6 @@ theorem transportedStatic_carrier (N : EpsilonNeck g)
       N.carrier := N.coordinatePartialDiffeomorph.toOpenPartialHomeomorph.image_source_eq_target
   rw [image_comp, hcoordinate]
 
-
-
 theorem transportedStatic_central_sphere (N : EpsilonNeck g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)
     (phi : PartialDiffeomorph (𝓡 3) (𝓡 3) M StandardCapSpace ∞)
@@ -117,8 +100,6 @@ theorem transportedStatic_central_sphere (N : EpsilonNeck g)
     (N.transportedStatic h D phi hU hscalar hclose).central_sphere = phi '' N.central_sphere := by
   change (phi ∘ N.coordinate_map) '' (univ ×ˢ ({0} : Set ℝ)) = _
   rw [image_comp, N.central_sphere_eq]
-
-
 
 theorem transportedStatic_region (N : EpsilonNeck g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)

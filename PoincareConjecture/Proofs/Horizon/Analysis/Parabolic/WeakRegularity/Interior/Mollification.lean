@@ -1,21 +1,7 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Producer
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.UniformMollification
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter ContinuousLinearMap
 open scoped ContDiff Topology Convolution
@@ -30,10 +16,6 @@ local instance : (volume : Measure (Spacetime n)).IsAddHaarMeasure := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
 
-
-
-
-
 theorem tendstoUniformly_lebesgueConvolution
     {u : Spacetime n → ℝ} (hu : UniformContinuous u)
     {ρ : ℕ → ContDiffBump (0 : Spacetime n)}
@@ -44,9 +26,6 @@ theorem tendstoUniformly_lebesgueConvolution
     (Poincare.Analysis.Convolution.tendstoUniformly_normed_convolution
       volume hu hρ)
 
-
-
-
 theorem tendstoUniformlyOn_lebesgueConvolution
     {u : Spacetime n → ℝ} (hu : UniformContinuous u)
     {ρ : ℕ → ContDiffBump (0 : Spacetime n)}
@@ -55,13 +34,6 @@ theorem tendstoUniformlyOn_lebesgueConvolution
     TendstoUniformlyOn
       (fun k => lebesgueConvolution ((ρ k).normed volume) u) u atTop K :=
   (tendstoUniformly_lebesgueConvolution hu hρ).tendstoUniformlyOn
-
-
-
-
-
-
-
 
 theorem tendstoUniformlyOn_lebesgueConvolution_of_eqOn
     {u u' : Spacetime n → ℝ} {V K : Set (Spacetime n)}
@@ -90,8 +62,6 @@ theorem tendstoUniformlyOn_lebesgueConvolution_of_eqOn
   rw [hconv, ← hval]
   exact hk z hz
 
-
-
 theorem tendstoUniformly_lebesgueConvolution_of_continuous_compactSupport
     {u : Spacetime n → ℝ} (hu : Continuous u) (huc : HasCompactSupport u)
     {ρ : ℕ → ContDiffBump (0 : Spacetime n)}
@@ -101,8 +71,6 @@ theorem tendstoUniformly_lebesgueConvolution_of_continuous_compactSupport
   (tendstoUniformlyOn_univ.mp (tendstoUniformlyOn_lebesgueConvolution_of_eqOn
     (huc.uniformContinuous_of_continuous hu) (subset_rfl : (Set.univ : Set (Spacetime n)) ⊆ Set.univ)
     (fun _ _ => rfl) hρ (Filter.Eventually.of_forall (fun _ _ _ => subset_univ _))))
-
-
 
 theorem tendstoUniformlyOn_lebesgueConvolution_of_continuous_compactSupport
     {u : Spacetime n → ℝ} (hu : Continuous u) (huc : HasCompactSupport u)
@@ -466,11 +434,6 @@ theorem WeakSolutionOn.mollification_commutator
     spatial_const_mul hφ, spatial_const_mul (smooth_spatial hφ _), Pi.sub_apply,
     Finset.sum_sub_distrib]
   ring
-
-
-
-
-
 
 private theorem spatial_mul_rule {f g : Spacetime n → ℝ}
     (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)

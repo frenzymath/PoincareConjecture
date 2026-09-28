@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusPeriodicHarmonicMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.PeriodicHarmonicTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -108,10 +97,6 @@ private theorem modulus_operator_translate (r : ℝ) (f : LoopPlane → ℝ)
     simpa only [iteratedFDeriv_two_apply, Matrix.cons_val_zero,
       Matrix.cons_val_one, Matrix.cons_val_fin_one] using hcomp'
   rw [h00, h11]
-
-
-
-
 
 theorem m64PeriodicModulus_equation_on_strip_of_open_regularity
     {r : ℝ} {f : LoopPlane → ℝ}
@@ -222,9 +207,6 @@ theorem m64PeriodicModulus_equation_on_strip_of_open_regularity
       · exact ⟨lt_of_le_of_ne hq.1 (Ne.symm hq0), hq0lt⟩
       · exact ⟨by simpa [hq1] using hp.1, by simpa [hq1] using hp.2⟩
     exact hp_eq.trans (heq q hqint)
-
-
-
 
 theorem m64PeriodicModulus_equation_on_strip
     {r : ℝ} {f : LoopPlane → ℝ}

@@ -1,18 +1,8 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem cap_tip_distance_bound
     {epsilon D Acap Q h a dBirth dModel Rmodel : ℝ}
@@ -72,8 +62,6 @@ theorem cap_tip_distance_bound
   have h := mul_le_mul_of_nonneg_left hdistQ
     (by norm_num : 0 ≤ (101 / 100 : ℝ) ^ 2)
   nlinarith only [hproduct, h, inv_pos.mpr he]
-
-
 
 theorem cap_tip_distance_margin
     {epsilon beta D Acap Q h a dBirth dModel Rmodel : ℝ}

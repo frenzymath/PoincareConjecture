@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_finite_nonnegative_zero_pair
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (ell : E →ᵃ[ℝ] ℝ) :

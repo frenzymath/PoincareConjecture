@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedMixedBounds
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedExtension
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.secondCountable
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_finite_terminal_extension_of_big_window_bounds
     (hShi : LocalCurvatureDerivativeEstimates.{0})

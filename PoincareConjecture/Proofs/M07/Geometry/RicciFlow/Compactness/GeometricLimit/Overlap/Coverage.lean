@@ -3,15 +3,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
@@ -49,8 +40,6 @@ variable {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]
 
 include hD he
 
-
-
 theorem exists_zero_of_eventually_mem_image
     {i j : ι} {x : X i} {K : Set (X j)} (hK : IsCompact K) (hne : K.Nonempty)
     (himage : ∀ᶠ k in atTop, e k i x ∈ e k j '' K) :
@@ -75,8 +64,6 @@ theorem exists_zero_of_eventually_mem_image
   dsimp only [Function.comp_apply]
   rw [← hye (σ k) hk]
   exact (he (σ k) j).dist_le_mul _ _
-
-
 
 theorem exists_zero_nhds [∀ i, LocallyCompactSpace (X i)]
     (hopen : ∀ k i, Topology.IsOpenEmbedding (e k i))

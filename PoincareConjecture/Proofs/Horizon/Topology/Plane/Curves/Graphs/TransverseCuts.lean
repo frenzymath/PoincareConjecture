@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.ObliqueStrip
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,13 +48,11 @@ private theorem exists_local_interval_inverse
     (ne_of_gt (hWpos _ hys))
   exact (G.contDiffAt_symm hy hd.hasFDerivAt hgat).contDiffWithinAt
 
-
 def transverseCutHeight (lo : ℝ → ℝ) (a u w r : ℝ) : ℝ :=
   lo a + r * w - lo (a + r * u)
 
 @[simp] theorem transverseCutHeight_zero (lo : ℝ → ℝ) (a u w : ℝ) :
     transverseCutHeight lo a u w 0 = 0 := by simp [transverseCutHeight]
-
 
 structure TransverseCutCoordinates (lo : ℝ → ℝ) (a u w : ℝ) where
   parameter : OpenPartialHomeomorph ℝ ℝ
@@ -75,7 +62,6 @@ structure TransverseCutCoordinates (lo : ℝ → ℝ) (a u w : ℝ) where
   strictMono : StrictMonoOn parameter parameter.source
   smooth : ContDiffOn ℝ ∞ parameter parameter.source
   smooth_symm : ContDiffOn ℝ ∞ parameter.symm parameter.target
-
 
 theorem exists_transverseCutCoordinates {lo : ℝ → ℝ} {U : Set ℝ}
     (hU : IsOpen U) (hlo : ContDiffOn ℝ ∞ lo U) {a u w : ℝ} (ha : a ∈ U)
@@ -119,7 +105,6 @@ theorem zero_mem_target : (0 : ℝ) ∈ C.parameter.target := by
 
 @[simp] theorem inverse_zero : C.parameter.symm 0 = 0 := by
   simpa only [C.parameter_zero] using C.parameter.left_inv C.zero_mem_source
-
 
 noncomputable def horizontal (z : ℝ) : ℝ := a + C.parameter.symm z * u
 
@@ -178,7 +163,6 @@ theorem exists_small_positive_parameters {δ : ℝ} (hδ : 0 < δ) :
 
 end TransverseCutCoordinates
 
-
 structure TransverseGraphCuts (lo : ℝ → ℝ) (a b ua wa ub wb : ℝ) where
   left : TransverseCutCoordinates lo a ua wa
   right : TransverseCutCoordinates lo b ub wb
@@ -186,8 +170,6 @@ structure TransverseGraphCuts (lo : ℝ → ℝ) (a b ua wa ub wb : ℝ) where
   radius_pos : 0 < radius
   height_subset : Ioo (-radius) radius ⊆ left.parameter.target ∩ right.parameter.target
   separated : ∀ z ∈ Ioo (-radius) radius, left.horizontal z < right.horizontal z
-
-
 
 theorem exists_transverseGraphCuts {lo : ℝ → ℝ} {Ua Ub : Set ℝ}
     (hUa : IsOpen Ua) (hloA : ContDiffOn ℝ ∞ lo Ua)
@@ -219,9 +201,7 @@ namespace TransverseGraphCuts
 variable {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
   (P : TransverseGraphCuts lo a b ua wa ub wb)
 
-
 noncomputable abbrev A : ℝ → ℝ := P.left.horizontal
-
 
 noncomputable abbrev B : ℝ → ℝ := P.right.horizontal
 
@@ -245,8 +225,6 @@ theorem right_line_identity {z : ℝ} (hz : z ∈ Ioo (-P.radius) P.radius) :
       (b + P.right.parameter.symm z * ub, lo b + P.right.parameter.symm z * wb) :=
   P.right.line_identity (P.height_subset hz).2
 
-
-
 theorem exists_small_positive_cut_lengths :
     ∃ ε > 0, ∀ ra ∈ Ioo (0 : ℝ) ε, ∀ rb ∈ Ioo (0 : ℝ) ε,
       ra ∈ P.left.parameter.source ∧ rb ∈ P.right.parameter.source ∧
@@ -264,8 +242,6 @@ theorem exists_small_positive_cut_lengths :
   exact ⟨ha.1, hb.1, ha.2, hb.2, P.left.horizontal_parameter ha.1,
     P.right.horizontal_parameter hb.1, P.left.parameter.left_inv ha.1,
     P.right.parameter.left_inv hb.1⟩
-
-
 
 noncomputable def coordinates {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X) :
     OpenPartialHomeomorph (ℝ × ℝ) (ℝ × ℝ) :=

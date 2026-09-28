@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonGerms
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +22,6 @@ private theorem region_dichotomy {X : Type*} [TopologicalSpace X] {G C : Set X}
   · right
     intro hxC
     exact disjoint_left.mp havoid hx (by rw [hC.frontier_eq]; exact ⟨hxC, hin⟩)
-
-
 
 theorem connector_image_subset_annulus_of_nested_closed
     {X : Type*} [TopologicalSpace X] {C₀ C₁ : Set X}
@@ -53,8 +49,6 @@ theorem connector_image_subset_annulus_of_nested_closed
     · exact h
   exact fun x hx => ⟨hin hx, hout hx⟩
 
-
-
 theorem connector_image_subset_annulus_of_nested_disks
     (A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (hnest : B '' closedBall 0 1 ⊆ A '' ball 0 1)
@@ -79,8 +73,6 @@ theorem connector_image_subset_annulus_of_nested_disks
     ((isCompact_closedBall _ _).image B.continuous).isClosed
     (hi.symm ▸ hnest) hβ ((hf A).symm ▸ hβ₀) hβ₁
     (by simpa only [hf A, hf B] using havoid)
-
-
 
 theorem compact_ribbon_inter_inner_disk
     (A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -159,8 +151,6 @@ private def ribbonEdgeCoordinates (s : Real) (i : Fin 2) :
     · split_ifs
       · exact (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
       · exact contDiff_const.sub (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
-
-
 
 theorem exists_filled_coincidence_of_shared_nested_ribbon
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

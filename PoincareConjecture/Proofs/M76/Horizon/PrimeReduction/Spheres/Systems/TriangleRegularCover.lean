@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.FiniteSph
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalContactIntervalGerm
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTriangleMixedSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module Filter
@@ -55,7 +45,6 @@ private theorem member_subedge_two_segment_germs
   exact h.exists_triangle_interior_two_segment_germs_of_affine_chart
     sS hgi hSV hpq hwp hwq hs hy' Q hQ A hmap hA
 
-
 private theorem sphere_system_subedge_two_segment_germs
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -92,9 +81,6 @@ private theorem sphere_system_subedge_two_segment_germs
   refine ⟨u, v, hu, hv, hinter, ?_⟩
   filter_upwards [hg, hO.mem_nhds hxO] with z hzg hzO
   exact (and_congr_left (fun _ => hOi z hzO)).trans hzg
-
-
-
 
 theorem exists_original_sphere_system_triangle_regular_cover
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -256,4 +242,3 @@ theorem exists_original_sphere_system_triangle_regular_cover
   exact hU.2.2 x ⟨hx.1, hxU⟩
 
 end PoincareConjecture.M76
-

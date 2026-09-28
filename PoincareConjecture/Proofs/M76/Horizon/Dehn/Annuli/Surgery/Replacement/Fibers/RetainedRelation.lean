@@ -13,8 +13,6 @@ local notation "Left" => Set.prod Q (Icc (-1 : ℝ) (-1 / 2))
 local notation "Middle" => Set.prod Q (Icc (-1 / 2 : ℝ) 0)
 local notation "Right" => Set.prod Q (Icc (0 : ℝ) 1)
 
-
-
 theorem exists_resolving_retained_copy_relation
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {O I : Set E} {f : E → X} {g : (V2 × ℝ) → X} (hdis : Disjoint O I)

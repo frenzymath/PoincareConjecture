@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.SquareRimHalves
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

@@ -4,24 +4,11 @@ import PoincareConjecture.Proofs.M63.Mathlib.ContinuousPartialDerivatives
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
-
-
-
-
 
 theorem contDiffOn_infty_of_spatial_jets_and_equation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

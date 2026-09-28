@@ -3,8 +3,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Tactic.NormNum
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 set_option autoImplicit false
 open Set Topology
 
@@ -86,8 +84,6 @@ theorem whole_ends_of_frontier_recognition
     rw [hboundary, union_comm]
     exact componentIn_union_eq (hcompact _).isClosed (hcompact _).isClosed hdis.symm
       (hconnected _) (mem_range_self x)
-
-
 
 theorem exists_product_on_marked_whole_boundary
     {X : Type*} [TopologicalSpace X] [T2Space X]

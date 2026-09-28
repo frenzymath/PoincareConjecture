@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplyConnectedDiskExtension
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Metric
 
 namespace Set
-
-
-
-
 
 theorem IsUnitBallPair.exists_continuous_disk_extension
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

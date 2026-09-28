@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLiftDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,14 +13,10 @@ namespace PoincareConjecture.Proofs.M59
 
 open M02.Topology
 
-
-
 theorem finite_nerve_degree (J : Type u) [PartialOrder J] [Finite J] (n : ℕ) :
     Finite ((nerve J) _⦋n⦌) :=
   Finite.of_injective (fun s : (nerve J) _⦋n⦌ => s.obj)
     (fun _ _ h => nerve.ext_of_isThin h)
-
-
 
 theorem finite_nerve_hasDimensionLT (J : Type u) [PartialOrder J] [Fintype J] :
     (nerve J).HasDimensionLT (Fintype.card J) where
@@ -47,8 +34,6 @@ variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
 
 include hp
 
-
-
 theorem finiteLift_nonDegenerate [Finite J] (n : ℕ) :
     Finite ((singularLiftSSet p (nerve J) χ).nonDegenerate n) := by
   let := finite_nerve_degree J n
@@ -56,7 +41,6 @@ theorem finiteLift_nonDegenerate [Finite J] (n : ℕ) :
   exact inferInstance
 
 omit [CompactSpace E] [T2Space X] in
-
 
 theorem finiteLift_normalizedChain_isZero [Fintype J] (n : ℕ)
     (hn : Fintype.card J ≤ n) :

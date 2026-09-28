@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_StablePrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₀ τ : ℝ} {x : G.Point}
-
-
-
 
 theorem mem_jointDomain_of_stable_extension
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -43,9 +31,6 @@ theorem mem_jointDomain_of_stable_extension
     obtain ⟨H⟩ := stableSet_nonempty E hτs ⟨W, hstable.choose⟩
     exact ⟨s ^ 2, H, hτs, (H.carrier_exact W).mpr hstable, (Real.sqrt_sq hs.1.le).symm⟩
   exact ⟨hgraph ⟨hZ, hc⟩, U, hU, ⟨hZ, hc⟩, fun _ hz => hgraph hz.1⟩
-
-
-
 
 theorem strictPrefix
     (hCoordinates : M12MetricPredecessors.{0} n)

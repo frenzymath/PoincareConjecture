@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalShiHomothetyCurvature
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricCurvatureNaturality
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceBounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ private theorem homothety_norm_factor {Q : ℝ} (hQ : 0 < Q) (m : ℕ) :
   have hcancel : Q * (Real.sqrt Q)⁻¹ ^ 2 = 1 := by
     rw [inv_pow, Real.sq_sqrt hQ.le, mul_inv_cancel₀ hQ.ne']
   rw [← mul_assoc, hcancel, one_mul]
-
-
 
 theorem GeneralizedStrongNeck.scaled_curvatureDerivativeNorm
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
@@ -75,8 +63,6 @@ theorem GeneralizedStrongNeck.scaled_curvatureDerivativeNorm
     contMDiff_subtype_val.contMDiffOn hinv hmetric m (mem_univ x)
   rw [← hlocal, scale_curvatureDerivativeNorm_eq G DG a ha m x,
     homothety_norm_factor ha m]
-
-
 
 theorem inverse_sqrt_le_of_normalized_scalar
     {a R K : ℝ} (ha : 0 < a) (hnormalized : a * R = 1) (hR : R ≤ K) :

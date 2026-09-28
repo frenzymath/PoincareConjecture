@@ -1,22 +1,10 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
-
-
-
 
 theorem IsOpen.frontier_connectedComponentIn_subset_compl {F : Set X}
     (hF : IsOpen F) (x : X) :
@@ -30,10 +18,6 @@ theorem IsOpen.frontier_connectedComponentIn_subset_compl {F : Set X}
   apply hy.2
   rw [hEq]
   exact mem_connectedComponentIn hyF
-
-
-
-
 
 theorem exists_separating_components_of_collar [ConnectedSpace X]
     {S U N P : Set X} (hS : IsClosed S) (hSne : S.Nonempty)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Interior.Dense
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Interior.LocalPathConnected
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Metric
@@ -82,7 +75,6 @@ private theorem exists_preconnected_interior_nhds (x : M) :
   rw [heq]
   exact ((convex_ball _ _).inter I.convex_range.interior).isPreconnected.image
     (extChartAt I x).symm ((continuousOn_extChartAt_symm x).mono hC)
-
 
 theorem isPathConnected_manifoldInterior [ConnectedSpace M] :
     IsPathConnected (I.interior M) := by

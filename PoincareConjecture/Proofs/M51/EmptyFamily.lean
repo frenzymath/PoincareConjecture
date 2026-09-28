@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EmptyTail
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -51,8 +43,6 @@ theorem empty_forward (ha : a ∈ F.time_domain) {s t : ℝ}
     (representative_mem F a ha hs) (representative_mem F a ha (hs.trans hst))
     (min_le_min_right _ hst) he
 
-
-
 theorem crossing_empty (ha : a ∈ F.time_domain) [IsEmpty (F.slice a).carrier]
     {p q : ℝ} (hp : 0 ≤ p) (haq : a < q)
     (hfree : Disjoint F.surgery_times (Ioc p q)) :
@@ -67,8 +57,6 @@ theorem crossing_empty (ha : a ∈ F.time_domain) [IsEmpty (F.slice a).carrier]
       ⟨fun x => isEmptyElim (S.identify ⟨a, hpa.le, le_rfl⟩ x)⟩
     simpa only [slice, min_eq_left hpa.le] using he
   · exact empty_after F a (le_of_not_gt hpa)
-
-
 
 noncomputable def emptyFlow (A : GeneralizedSliceCarrier.{u}) [IsEmpty A.carrier]
     (g : RiemannianMetric 3 A.carrier) (C : LeviCivitaData g)

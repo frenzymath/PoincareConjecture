@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.MarkedPuncturedDoubleSphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.CubicalThreeSphere
@@ -19,9 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_punctured_ball_sphere_model
     {ι : Type*} [Finite ι] {B S : Set E} (hB : IsFinitePLBallPair V3 B S)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Ordering
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +16,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 def meshVertexAngleContribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (M : TriangleMesh) (x : S) : ℝ :=
@@ -36,7 +27,6 @@ section Reindex
 variable (M : TriangleMesh) {V : Type} [Fintype V] [DecidableEq V]
   (p : V → EuclideanSpace ℝ (Fin 2)) (hp : Function.Injective p)
   (e : M.Vertex ↪ V) (he : ∀ v, p (e v) = M.position v)
-
 
 def meshReindexTriangleEquiv : M.Triangle ≃ (M.reindex p hp e he).Triangle :=
   Equiv.ofBijective (fun t => ⟨t.1.map e, Finset.mem_image.mpr ⟨t.1, t.2, rfl⟩⟩) (by
@@ -61,8 +51,6 @@ theorem range_meshTriangleBasis_reindex (t : M.Triangle) :
   · rintro ⟨u, hu, rfl⟩
     exact ⟨e u, ⟨u, hu, rfl⟩, he u⟩
 
-
-
 theorem meshVertexAngleContribution_reindex (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S) (x : S) :
     meshVertexAngleContribution g F (M.reindex p hp e he) x =
@@ -75,8 +63,6 @@ theorem meshVertexAngleContribution_reindex (g : RiemannianMetric 2 S)
     (range_meshTriangleBasis_reindex M p hp e he t) x
 
 end Reindex
-
-
 
 theorem meshVertexAngleContribution_single (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -96,8 +82,6 @@ theorem meshVertexAngleContribution_single (g : RiemannianMetric 2 S)
   change p '' ((Finset.univ : Finset (Fin 3)) : Set (Fin 3)) = range p
   simp
 
-
-
 theorem unchangedMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (M : TriangleMesh) (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ)
@@ -107,8 +91,6 @@ theorem unchangedMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
         coordinateTriangleAngle g F (affineBasisOfTriangle (M.position ∘ v) hv) k else 0 := by
   rw [TriangleMesh.unchangedMeshFor, meshVertexAngleContribution_reindex]
   exact meshVertexAngleContribution_single g F _ hv x
-
-
 
 theorem edgeNegativeMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -126,8 +108,6 @@ theorem edgeNegativeMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
   rw [TriangleMesh.edgeNegativeMeshFor, meshVertexAngleContribution_reindex]
   simpa only [meshVertexAngleContribution, affineCutPoint.neg] using
     edgeMeshFor_vertex_contribution g F M (-f) v hv hF hFi hb (by simpa) (by simpa) x
-
-
 
 theorem strictNegativeMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

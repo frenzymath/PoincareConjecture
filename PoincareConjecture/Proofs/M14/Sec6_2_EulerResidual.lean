@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_FirstVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 theorem horizontalRicci_smul_right (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : G.Point) (v w : G.Horizontal q) (c : ℝ) :
     horizontalRicci G.leafwise q v (c • w) = c * horizontalRicci G.leafwise q v w := by
@@ -36,8 +25,6 @@ theorem horizontalRicci_smul_right (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   rw [H.ricci_symmetric q v, heval, H.ricci_symmetric q v w, heval]
   simpa only [smul_eq_mul, Matrix.vecCons] using A.cons_smul ![v] c w
 
-
-
 theorem squareRootEulerResidual_smul (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂)
       R.horizontal_velocity) (s c : ℝ) (W : G.Horizontal (R.curve s)) :
@@ -45,9 +32,6 @@ theorem squareRootEulerResidual_smul (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   simp only [M14SquareRootEulerResidual, map_smul, Submodule.coe_smul,
     horizontalRicci_smul_right hM12, smul_eq_mul]
   ring
-
-
-
 
 theorem squareRootEulerResidual_extension_independent
     (E₁ E₂ : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂)
@@ -59,15 +43,10 @@ theorem squareRootEulerResidual_extension_independent
     ((R.smooth.mono R.interval_subset s hs).mdifferentiableWithinAt (by simp))
   simp only [M14SquareRootEulerResidual, hd]
 
-
-
-
 noncomputable def variationEulerDensity (V : M14LVariationData G p R) (s : ℝ) : ℝ :=
   derivWithin (variationBoundaryPair V) (M14SqrtParameterInterval τ₁ τ₂) s -
     M08.variationParameterDeriv (M14SqrtParameterInterval τ₁ τ₂) V.parameterDomain
       (variationActionDensity V) (s, 0)
-
-
 
 theorem variationEulerDensity_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (V : M14LVariationData G p R) :
@@ -82,9 +61,6 @@ theorem variationEulerDensity_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u}
     (variationActionDensity_contDiffOn hM12 V)).comp
       (contDiffOn_id.prodMk contDiffOn_const) (fun _ hs => ⟨hs, hzero⟩)
   exact ((variationBoundaryPair_contDiffOn V).derivWithin hC (m := ∞) (by simp)).sub hraw
-
-
-
 
 theorem variationEulerDensity_eq_residual (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)

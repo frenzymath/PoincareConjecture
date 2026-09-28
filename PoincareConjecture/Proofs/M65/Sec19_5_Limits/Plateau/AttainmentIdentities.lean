@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConform
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorGram
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter Metric Bundle
@@ -26,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
 
-
-
-
 structure M65InteriorDiskRepresentative (connection : LeviCivitaData g)
     (F : M65WeakDisk e γ) (f : LoopPlane → M) : Prop where
   smooth : ContMDiffOn (𝓡 2) (𝓡 3) ∞ f (ball (0 : LoopPlane) 1)
@@ -37,9 +25,6 @@ structure M65InteriorDiskRepresentative (connection : LeviCivitaData g)
     (fun z => fderiv ℝ (e ∘ f) z (EuclideanSpace.basisFun (Fin 2) ℝ i)) =ᵐ[
       volume.restrict (ball (0 : LoopPlane) 1)] F.derivative i
   harmonic : ∀ z ∈ ball (0 : LoopPlane) 1, m65PlaneTension connection f z = 0
-
-
-
 
 theorem m65Attainment_gram_ae (F : M65WeakDisk e γ) {f : LoopPlane → M}
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
@@ -61,9 +46,6 @@ theorem m65Attainment_gram_ae (F : M65WeakDisk e γ) {f : LoopPlane → M}
   intro i j
   rw [← hvalue, hchain i, hchain j, m65EmbeddingMetric_image g e (f z) (hinj (f z))]
   rfl
-
-
-
 
 theorem m65Attainment_area_eq (F : M65WeakDisk e γ) {f : LoopPlane → M}
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
@@ -88,9 +70,6 @@ theorem m65Attainment_area_eq (F : M65WeakDisk e γ) {f : LoopPlane → M}
       (m65EmbeddingMetric g e (F.value z) (F.derivative 0 z) (F.derivative 1 z)) ^ 2)
   rw [max_eq_right (m65AreaGram_posSemidef g f z).det_nonneg,
     Matrix.det_fin_two, hsymm, ← pow_two, hz 0 0, hz 1 1, hz 0 1]
-
-
-
 
 theorem m65Attainment_conformal (F : M65WeakDisk e γ) {f : LoopPlane → M}
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

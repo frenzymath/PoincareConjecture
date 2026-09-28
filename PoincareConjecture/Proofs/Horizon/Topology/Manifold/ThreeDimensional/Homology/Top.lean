@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Rela
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralManifoldOrientation
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralManifoldSupport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

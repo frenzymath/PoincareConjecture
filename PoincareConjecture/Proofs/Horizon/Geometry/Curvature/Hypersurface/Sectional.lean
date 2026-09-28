@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Gauss
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.ShapeOperator
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
@@ -62,8 +56,6 @@ theorem fderiv_injective_of_pullback_metric {m n : ℕ}
     rw [hmetric, hz] at hp
     simp at hp
   exact sub_eq_zero.mp hab'
-
-
 
 theorem gauss_sectionalCurvature_of_eventually {m : ℕ}
     {g : RiemannianMetric (m + 1) (E (m + 1))} {h : RiemannianMetric m (E m)}
@@ -137,9 +129,6 @@ theorem metric_symmetric_operator_extrinsic_determinant_lower_bound {m : ℕ}
     simp [E]
   exact symmetric_operator_extrinsic_determinant_lower_bound hdim A' hA' β
     (fun i => hupper _ (hA'.hasEigenvalue_eigenvalues hdim i)) hβ u v hu hv huv
-
-
-
 
 theorem sectionalCurvature_lower_bound_of_eventually {m : ℕ}
     {g : RiemannianMetric (m + 2) (E (m + 2))}

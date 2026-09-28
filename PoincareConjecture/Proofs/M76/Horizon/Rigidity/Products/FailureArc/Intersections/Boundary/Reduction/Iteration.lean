@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Reduction.Canonical
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Construction.Iteration
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

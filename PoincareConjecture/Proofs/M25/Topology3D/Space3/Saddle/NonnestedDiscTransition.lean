@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimit
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionUniqueness
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_saddle_nonnested_disc_transition
     (U V : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalGrowthNormalized
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +40,6 @@ local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ ((E × E) →L[ℝ] (E × E) →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 def suAlphaPairMetricDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :
     (E × E) →L[ℝ] (E × E) →L[ℝ] E →L[ℝ] ℝ :=
@@ -63,7 +52,6 @@ theorem suAlphaPairMetricDerivative_apply
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (D : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (v w : E × E) (a : E) :
     suAlphaPairMetricDerivative D v w a = D a v.1 w.1 + D a v.2 w.2 := rfl
-
 
 theorem suAlphaPairMetric_contDiffOn
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -94,8 +82,6 @@ theorem suAlphaPairMetricDerivative_contDiffOn
   exact (((hD.clm_apply contDiffOn_const).clm_apply contDiffOn_const).clm_apply
     contDiffOn_const).add (((hD.clm_apply contDiffOn_const).clm_apply
       contDiffOn_const).clm_apply contDiffOn_const)
-
-
 
 def suAlphaCoordinateFlux {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -163,8 +149,6 @@ theorem suAlphaCoordinateSource_apply
   congr 3
   rw [div_eq_mul_inv, mul_comm]
 
-
-
 theorem SUWeakAlphaCoordinate.coordinateFlux_pairing
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -194,9 +178,6 @@ theorem SUWeakAlphaCoordinate.coordinateSource_pairing
   simp only [SUWeakAlphaCoordinate.naturalWeight, Fin.sum_univ_two]
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem suAlphaCoordinate_natural_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -353,9 +334,6 @@ theorem suAlphaCoordinate_natural_bounds
     exact ⟨hf'.trans (by gcongr; linarith), hs'.trans (by gcongr; linarith)⟩
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem SUWeakAlphaCoordinate.natural_difference_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]

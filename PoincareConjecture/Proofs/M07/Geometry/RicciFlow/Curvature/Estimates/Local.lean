@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Theory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
 

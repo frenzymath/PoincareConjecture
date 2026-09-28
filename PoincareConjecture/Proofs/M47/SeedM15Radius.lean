@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedM15Ordinary
 import PoincareConjecture.Proofs.M47.OldRecentSplit
 import PoincareConjecture.Statements.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem seedM15_ordinary_radius_volume
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
@@ -69,9 +57,6 @@ theorem seedM15_ordinary_radius_volume
   exact volume_lower_of_reduced_ball (F.metric T) x hr.le htheta.2
     (seedM15_ordinary_volume hM12 hM13 hM14 hOrdinary U hbt F x
       (hage.trans_le hageTau) htauAge htauTop A hA haccess hvolume hrsmall hrtau hcurvSmall)
-
-
-
 
 theorem exists_seedM15_ordinary_volume_constant
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

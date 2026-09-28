@@ -2,16 +2,6 @@ import Mathlib.Analysis.Calculus.ImplicitContDiff
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -21,21 +11,13 @@ namespace PoincareConjecture.M63
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 noncomputable def curveFootpointResidual (r : ℝ → E) (z : E × ℝ) : ℝ :=
   ⟪z.1 - r z.2, deriv r z.2⟫
-
-
 
 theorem curveFootpointResidual_contDiff {r : ℝ → E} (hr : ContDiff ℝ ∞ r) :
     ContDiff ℝ ∞ (curveFootpointResidual r) := by
   exact (contDiff_fst.sub (hr.comp contDiff_snd)).inner ℝ
     ((contDiff_infty_iff_deriv.mp hr).2.comp contDiff_snd)
-
-
-
-
 
 theorem curveFootpointResidual_partial {r : ℝ → E} (hr : ContDiff ℝ ∞ r) (x : ℝ) :
     (fderiv ℝ (curveFootpointResidual r) (r x, x)).comp
@@ -66,11 +48,6 @@ theorem curveFootpointResidual_partial {r : ℝ → E} (hr : ContDiff ℝ ∞ r)
   intro y
   change y * (-‖deriv r x‖ ^ 2) = (-‖deriv r x‖ ^ 2) * y
   exact mul_comm _ _
-
-
-
-
-
 
 theorem exists_curveFootpoint_germ [CompleteSpace E]
     {r : ℝ → E} (hr : ContDiff ℝ ∞ r) {x : ℝ} (hx : deriv r x ≠ 0) :

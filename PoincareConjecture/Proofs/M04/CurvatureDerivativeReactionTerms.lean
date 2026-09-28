@@ -11,14 +11,6 @@ import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -533,6 +525,5 @@ theorem tensorHeatCorrection_expansion (D : LeviCivitaData g) (m : ℕ) :
         (D.iteratedCovariantTensorDerivative D.riemannEvaluation m) =
         reactionListEvaluation D L := by
   exact ⟨correctionTerms m, correctionTerms_length m, correctionTerms_eval D m⟩
-
 
 end PoincareConjecture.M04

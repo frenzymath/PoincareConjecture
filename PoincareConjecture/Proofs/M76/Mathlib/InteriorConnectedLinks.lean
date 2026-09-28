@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSubspaceAvoidance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,11 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem isConnected_faceLink_of_hull_meets_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

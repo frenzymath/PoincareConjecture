@@ -6,8 +6,6 @@ open scoped BigOperators
 
 namespace PoincareConjecture.Proofs.M03
 
-
-
 theorem exists_finite_compact_family_four_array_square_sum_bound
     {X I D H A S M : Type*} [TopologicalSpace X]
     [Fintype I] [Fintype D] [Fintype H] [Fintype A] [Fintype S]

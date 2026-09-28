@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphe
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Graph
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_graph_isSmoothEmbedding (f : UnitTwoSphere → ℝ)
     (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
     (hdom : ∀ q, f q ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -38,8 +23,6 @@ theorem coordinate_graph_isSmoothEmbedding (f : UnitTwoSphere → ℝ)
   N.coordinatePartialHomeomorph.isSmoothEmbedding_graph N.coordinate_map_smooth
     N.coordinate_inverse_smooth (RiemannianMetric.lineModelEquiv 2) f hf
       (fun q => ⟨mem_univ q, hdom q⟩)
-
-
 
 theorem coordinate_graphs_isotopic (f₀ f₁ : UnitTwoSphere → ℝ)
     (hf₀ : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f₀)

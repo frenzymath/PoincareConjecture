@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMeridianBand
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,10 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
-
 
 theorem standardMeridianBandMap_product_properties {width : ℝ}
     (hwidth : 0 < width) (hsmall : width ≤ (1 / 4 : ℝ)) :

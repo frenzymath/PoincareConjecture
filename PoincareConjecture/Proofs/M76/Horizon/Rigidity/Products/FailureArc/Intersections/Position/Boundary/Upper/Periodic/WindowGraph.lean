@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import Mathlib.Topology.Perfect
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

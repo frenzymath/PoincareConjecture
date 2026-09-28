@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Metric MeasureTheory ContinuousLinearMap
@@ -26,10 +14,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
   {μ : Measure E} [μ.IsAddHaarMeasure]
 
-
-
-
-
 theorem normalizedConvolution_map (φ : ContDiffBump (0 : E))
     (B : F →L[ℝ] G) {f : E → F} (hf : LocallyIntegrable f μ) (x : E) :
     B (normalizedConvolution μ φ f x) =
@@ -41,11 +25,6 @@ theorem normalizedConvolution_map (φ : ContDiffBump (0 : E))
     ∫ t, φ.normed μ t • B (f (x - t)) ∂μ
   rw [← B.integral_comp_comm hi]
   simp only [map_smul]
-
-
-
-
-
 
 theorem normalizedConvolution_lipschitzOn_of_translated_bound
     {X : Type*} [PseudoMetricSpace X] (φ : ContDiffBump (0 : E))
@@ -81,10 +60,6 @@ theorem normalizedConvolution_lipschitzOn_of_translated_bound
       · rw [notMem_support.mp ht, zero_mul, zero_mul]
     _ = (L : ℝ) * dist x y := by
       rw [integral_mul_const, φ.integral_normed, one_mul]
-
-
-
-
 
 theorem normalizedConvolution_norm_fderiv_le_of_translated_bound
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

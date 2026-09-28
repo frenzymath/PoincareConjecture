@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {E : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {C : Set ℝ} {U : Set E} {γ : ℝ × E → G.Point}
-
-
-
 
 theorem squareFamilyVelocity_contMDiffOn (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
     (hγ : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, E))) (spacetimeModel n) ∞ γ (C ×ˢ U)) :
@@ -47,9 +35,6 @@ theorem squareFamilyVelocity_contMDiffOn (hC : UniqueDiffOn ℝ C) (hU : IsOpen 
   exact hproj.comp_contMDiffOn htan
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem squareFamilyDensity_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)

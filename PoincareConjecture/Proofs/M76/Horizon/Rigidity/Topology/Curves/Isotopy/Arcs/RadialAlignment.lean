@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.TerminalStrip
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.SupportedAnnularDisk
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry PLAnnularStrip Topology unitInterval

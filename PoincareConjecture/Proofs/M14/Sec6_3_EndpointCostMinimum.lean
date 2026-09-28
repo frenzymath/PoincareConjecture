@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_EndpointCost
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCornerComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 namespace GaugeEndpointFamily
 
 variable (D : GaugeEndpointFamily f U T 0 b c 0 j lift)
-
-
 
 theorem cost_zero_eq_action (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hc : c ∈ Ioo 0 b) (m : M14BackwardPath G T 0 (b ^ 2) x y)
@@ -60,9 +49,6 @@ theorem cost_zero_eq_action (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hd.mono (fun _ hs => ⟨hc.1.le.trans hs.1, hs.2⟩)).intervalIntegrable_of_Icc hc.2.le
   simpa only [cost, prefixAction, tailAction, squareFamilyAction, add_zero, α] using
     (intervalIntegral.integral_add_adjacent_intervals hpre htail).trans htotal
-
-
-
 
 theorem cost_isLocalMin (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hc : c ∈ Ioo 0 b) (m : M14BackwardPath G T 0 (b ^ 2) x y)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Regions.Model
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.SliceShift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M}
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {epsilon D R : ℝ}
   (G : SoulNeckRegion K S epsilon D R)
-
-
 
 theorem exists_closed_side_expansion (Q : EpsilonNeck (K.flow.metric 0))
     (hsphere : Q.central_sphere = G.neck.terminal_neck.central_sphere)
@@ -74,8 +62,6 @@ theorem exists_closed_side_expansion (Q : EpsilonNeck (K.flow.metric 0))
     refine ⟨Q.coordinate_map (q, 0), mem_range_self q, ?_⟩
     simpa only [sub_zero, zero_add] using
       hlocal (q, 0) ⟨mem_univ _, neg_neg_of_pos hL, hL⟩ (by simpa using hrho)
-
-
 
 theorem exists_side_expansion (Q : EpsilonNeck (K.flow.metric 0))
     (hsphere : Q.central_sphere = G.neck.terminal_neck.central_sphere)
@@ -151,8 +137,6 @@ theorem exists_side_expansion (Q : EpsilonNeck (K.flow.metric 0))
     apply (hinside x hxQ).mpr
     rw [((Q.mem_central_sphere_iff x).mp (hsphere.symm ▸ hfrontx)).2]
     exact hb
-
-
 
 theorem nonempty_expanded_side_capModel (Q : EpsilonNeck (K.flow.metric 0))
     (hsphere : Q.central_sphere = G.neck.terminal_neck.central_sphere)

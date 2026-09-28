@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace OpenPartialHomeomorph
 variable {M E F ι : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem compatible_of_piecewiseAffine_cover
     (e : ι → OpenPartialHomeomorph M E)
@@ -44,11 +30,6 @@ theorem compatible_of_piecewiseAffine_cover
     simpa only [trans_symm_eq_symm_trans_symm, symm_symm] using
       (piecewiseAffineGroupoid E).symm (hT i)
   exact (piecewiseAffineGroupoid E).compatible_of_mem_maximalAtlas (hmem H hH) (hmem H' hH')
-
-
-
-
-
 
 theorem exists_piecewiseAffine_hypersurface_cover
     (e : ι → OpenPartialHomeomorph M E)
@@ -87,10 +68,6 @@ theorem exists_piecewiseAffine_hypersurface_cover
     exact affine_hypersurface_transition_mem (H x) (H y) (q x) (q y) (a x) (r y)
       (hsource y) (htarget x) (hforward y) (hinverse x)
       (compatible_of_piecewiseAffine_cover e hcompat hcover (H x) (H y) (hH x) (hH y))
-
-
-
-
 
 theorem exists_piecewiseAffine_hypersurface_chartedSpace
     (e : ι → OpenPartialHomeomorph M E)

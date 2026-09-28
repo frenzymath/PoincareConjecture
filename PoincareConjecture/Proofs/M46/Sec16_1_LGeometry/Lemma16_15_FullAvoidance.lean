@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_CapBirthAvoidance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem CapBarrierWindow.avoids_early_inner_of_initial_scalar
     {F : GeneralizedRicciFlowData.{u}} {G : FlowBoxRicciGeometry F}
@@ -55,9 +44,6 @@ theorem CapBarrierWindow.avoids_early_inner_of_initial_scalar
     exact Q.avoids_early_inner hM12 hmu hA hh hc htheta hbudget0 ha hside htop
       hseparation p (hscalar a ⟨ha.le, hab.le.trans hb.2⟩ le_rfl) hbudget
       ⟨hab, hb.2⟩ w hinner hinnerTime
-
-
-
 
 theorem CapBarrierOriginData.avoids_birth_of_initial_scalar
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

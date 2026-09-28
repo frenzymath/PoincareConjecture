@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [SecondCountableTopology M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem terminalSourceNormal_exists_finite_chart_cover
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (p0 : M)

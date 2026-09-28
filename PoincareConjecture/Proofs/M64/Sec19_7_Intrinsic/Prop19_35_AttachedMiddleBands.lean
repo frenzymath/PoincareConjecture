@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ObstacleStripCh
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcObstacleBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcStripNeighborhood
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +11,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_attached_middle_bands
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T a b : ℝ}

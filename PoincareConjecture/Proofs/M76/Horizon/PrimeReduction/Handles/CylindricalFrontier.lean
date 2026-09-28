@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionFrontier
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

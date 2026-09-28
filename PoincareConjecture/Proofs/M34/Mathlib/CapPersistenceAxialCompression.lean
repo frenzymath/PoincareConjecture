@@ -6,15 +6,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Order.Hom.Set
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -38,9 +29,6 @@ private theorem surjective_of_deriv_lower_bound {f : ℝ → ℝ} {C : ℝ}
     have hb : x * C ≤ b - f 0 := (le_div_iff₀ hC).mp (hx.trans (min_le_right _ _))
     have hg := mul_sub_le_image_sub_of_le_deriv hf hd hx0
     nlinarith
-
-
-
 
 theorem exists_smooth_orderIso_compression {c b A : ℝ} (hcb : c < b) (hbA : b < A) :
     ∃ e : ℝ ≃o ℝ, ContDiff ℝ ∞ (e : ℝ → ℝ) ∧

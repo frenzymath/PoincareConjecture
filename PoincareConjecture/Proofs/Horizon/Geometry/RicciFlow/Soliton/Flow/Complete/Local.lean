@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Pullback
 import Mathlib.Geometry.Manifold.IntegralCurve.UniformTime
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_smooth_localFlow
     {X : (x : M) → TangentSpace (𝓡 n) x}

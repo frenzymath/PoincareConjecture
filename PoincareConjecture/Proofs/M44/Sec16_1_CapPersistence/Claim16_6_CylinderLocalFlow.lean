@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderEv
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalStopping
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale B : ℝ} {U : Set C.carrier}
-
-
-
 
 theorem cylinderTimeCoefficients_local_smooth_ricci
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

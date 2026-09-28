@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Domain.Cal
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Domain.BallNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Complete
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

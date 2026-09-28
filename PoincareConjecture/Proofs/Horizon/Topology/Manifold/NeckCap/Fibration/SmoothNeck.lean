@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Covering.LocalDiffeom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Topology
@@ -25,8 +15,6 @@ variable {M E : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace E] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) E]
   [IsManifold (𝓡 3) ∞ E] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 noncomputable def liftedCoordinateMap (F : NeckDomain N.epsilon → E) (e : E)
     (z : RoundCylinderSpace) : E :=
@@ -55,7 +43,6 @@ theorem liftedCoordinateMap_continuousOn (F : C(NeckDomain N.epsilon, E)) (e : E
 omit [TopologicalSpace E] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) E]
   [IsManifold (𝓡 3) ∞ E] in
 
-
 theorem projection_liftedCoordinateMap {p : E → M}
     (F : NeckDomain N.epsilon → E) (e : E)
     (hF : p ∘ F = (fun z => (N.coordinate z : M)))
@@ -65,7 +52,6 @@ theorem projection_liftedCoordinateMap {p : E → M}
   exact (congr_fun hF (z.1, ⟨z.2, hz⟩)).trans (N.coordinate_map_eq _)
 
 omit [IsManifold (𝓡 3) ∞ E] in
-
 
 theorem liftedCoordinateMap_contMDiffOn {p : E → M}
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p)
@@ -87,8 +73,6 @@ theorem liftedCoordinateMap_contMDiffOn {p : E → M}
     (hU.mem_nhds hz) |>.preimage_mem_nhds
       (hlocal.localInverse.open_target.mem_nhds hlocal.localInverse_mem_target)] with y hy
   exact (hlocal.localInverse_left_inv hy).symm
-
-
 
 theorem liftedCoordinateMap_pullback {p : E → M}
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p)
@@ -118,7 +102,6 @@ theorem liftedCoordinateMap_pullback {p : E → M}
     (((mfderiv (𝓡 3) (𝓡 3) p (N.liftedCoordinateMap F e z)).comp
       (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) (N.liftedCoordinateMap F e) z)) w) = _
   rw [hd, N.projection_liftedCoordinateMap F e hF hz]
-
 
 theorem liftedCoordinateMap_metricComparison {p : E → M}
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p)

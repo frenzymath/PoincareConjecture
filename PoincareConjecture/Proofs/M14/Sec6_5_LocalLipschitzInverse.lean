@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedProductInverse
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeSliceInvertible
 import PoincareConjecture.Proofs.M14.Sec6_3_BackwardClock
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,9 +20,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 theorem exists_survivor_local_inverse (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hsurv : (Z, s) ∈ E.domain) (hpos : 0 < s)

@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompatibleChartPLMaps
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_finite_PL_boundary_chart_cover
     {M E ι : Type*} [TopologicalSpace M]

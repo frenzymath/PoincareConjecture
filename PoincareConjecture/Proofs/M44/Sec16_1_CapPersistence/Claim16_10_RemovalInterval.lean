@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_InitialCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_MaximalCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 def restrictCylinderInterval
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -47,9 +35,6 @@ def restrictCylinderInterval
   surgery_compatibility s hs hT _ t ht ht' :=
     e.surgery_compatibility s (hJI hs) hT t (hJI ht) ht'
 
-
-
-
 theorem exists_based_cylinder_of_duration_le
     {F : SurgeryFlowData.{u}} {origin scale b c : ℝ}
     {U : Set (F.slice origin).carrier}
@@ -59,9 +44,6 @@ theorem exists_based_cylinder_of_duration_le
       ∀ h x, x ∈ U → HEq (e'.forward 0 h x) x := by
   let e' := restrictCylinderInterval e (Ico_subset_Ico_right hbc) ordConnected_Ico
   exact ⟨e', fun h x hx => hinitial _ x hx⟩
-
-
-
 
 theorem exists_based_cylinder_of_maximal_duration_bound
     (F : SurgeryFlowData.{u}) {origin scale b B : ℝ}

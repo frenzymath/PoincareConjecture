@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.ChartedSpace
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +16,6 @@ variable {m k : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {f : M → Fin k → ℝ}
   (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) ∞ f) (c : Fin k → ℝ)
   (hreg : ∀ x : M, f x = c → Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) f x))
-
 
 theorem contMDiff_fiber_val :
     let := fiberChartedSpace (m := m) hf c hreg
@@ -46,7 +38,6 @@ theorem contMDiff_fiber_val :
     exact fiberChart_symm_val hf c hreg z hv
   rw [contMDiffAt_iff_source]
   exact ((hi.comp y hp).congr_of_eventuallyEq hev).contMDiffWithinAt
-
 
 theorem injective_mfderiv_fiber_val (z : (f ⁻¹' {c} : Set M)) :
     let := fiberChartedSpace (m := m) hf c hreg
@@ -71,8 +62,6 @@ theorem injective_mfderiv_fiber_val (z : (f ⁻¹' {c} : Set M)) :
     (mfderiv 𝓘(ℝ, E) (𝓡 m) (fun x => (e x).2) (z : M) ∘L
       mfderiv (𝓡 m) 𝓘(ℝ, E) ((↑) : (f ⁻¹' {c} : Set M) → M) z) v at h
   rwa [← hcomp] at h
-
-
 
 theorem range_mfderiv_fiber_val (z : (f ⁻¹' {c} : Set M)) :
     let := fiberChartedSpace (m := m) hf c hreg

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedSph
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -120,9 +112,6 @@ theorem exists_original_punctured_model_boundary_spheres
       dsimp only [x]
       rw [G.apply_symm_apply,C.apply_symm_apply]
     exact ⟨x, (hphysical i x).mpr (hvalue.symm ▸ hz), hvalue⟩
-
-
-
 
 theorem HasPuncturedSphereModel.exists_boundary_spheres
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

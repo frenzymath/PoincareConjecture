@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem roundCylinderJetErrorSquared_neckAxialTensorPullback_le
     {lambda u theta epsilon : ℝ} (hlambda : lambda ∈ Icc (0 : ℝ) 1)

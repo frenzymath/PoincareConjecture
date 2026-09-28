@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineMinimum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -21,10 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_convex_frontier_radial_data (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s t : Set E} (hs : IsCompact s) (ht : IsCompact t)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Stereographic.Transition
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +10,6 @@ open scoped Manifold ContDiff Topology InnerProductSpace
 open Poincare.Geometry.Riemannian.SpaceForm Poincare.Analysis.Calculus
 
 namespace PoincareConjecture
-
 
 noncomputable def roundCylinderCoordinateTransition (p q : UnitTwoSphere) :
     RoundCylinderCoordinates → RoundCylinderCoordinates :=
@@ -49,8 +42,6 @@ theorem norm_roundCylinderCoordinateTransition_fst_le_two (p q : UnitTwoSphere)
     nlinarith
   exact norm_sphere_chart_le_two_of_nonneg_inner p z hinner
 
-
-
 theorem exists_compact_roundCylinderCoordinateTransition_target
     (p : UnitTwoSphere) (q : ℕ → UnitTwoSphere)
     (hpq : ∀ i, ‖(q i : EuclideanSpace ℝ (Fin 3)) - p‖ < 1 / 2)
@@ -68,8 +59,6 @@ theorem exists_compact_roundCylinderCoordinateTransition_target
     exact ⟨by simpa only [Metric.mem_closedBall, dist_zero_right] using
       norm_roundCylinderCoordinateTransition_fst_le_two p (q i) (hpq i) (hKU hx),
       by change x.2 ∈ Prod.snd '' K; exact mem_image_of_mem Prod.snd hx⟩
-
-
 
 theorem exists_uniform_roundCylinderCoordinateTransition_jet_bound
     (p : UnitTwoSphere) (q : ℕ → UnitTwoSphere)
@@ -113,8 +102,6 @@ theorem exists_uniform_roundCylinderCoordinateTransition_jet_bound
         ((le_max_left D 0).trans (le_max_right _ _)))
         (Finset.prod_nonneg fun _ _ => norm_nonneg _))
 
-
-
 theorem roundCylinderCoordinateTransition_chart_inverse (p q : UnitTwoSphere)
     (hpq : ‖(q : EuclideanSpace ℝ (Fin 3)) - p‖ < 1 / 2)
     {x : RoundCylinderCoordinates}
@@ -125,8 +112,6 @@ theorem roundCylinderCoordinateTransition_chart_inverse (p q : UnitTwoSphere)
       ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm x.1, x.2) := by
   exact Prod.ext ((chartAt (EuclideanSpace ℝ (Fin 2)) p).left_inv
     (sphere_chart_transition_mapsTo_ball p q hpq x.1 hx.1).1) rfl
-
-
 
 theorem roundCylinderCoordinateTransition_chart_inverse_eventuallyEq
     (p q : UnitTwoSphere)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Coordin
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.OpenDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CanonicalDomain
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +14,6 @@ open Set Filter Metric TopologicalSpace
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_smoothFamily_of_ancient_coefficients
     {n : ℕ} (U : Opens (EuclideanSpace ℝ (Fin n)))
@@ -157,9 +144,6 @@ private theorem scalar_slices_of_bilinear_jets
     hρ _ _ (fun k => hs _ (hseq k)) (hs _ hB) ht hx r (hj r),
     Poincare.AncientVolume.tendsto_derivWithin_time_slice_of_halfCylinder hρ _ _
       (fun k => hs _ (hseq k)) (hs _ hB) ht (ball_subset_closedBall hx) (hj 1)⟩
-
-
-
 
 theorem exists_of_ancient_halfCylinder_coefficients
     {n : ℕ} {ρ : ℝ} (hρ : 0 < ρ)

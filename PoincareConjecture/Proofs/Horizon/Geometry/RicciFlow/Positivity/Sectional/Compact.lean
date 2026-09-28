@@ -9,17 +9,6 @@ import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -157,7 +146,6 @@ private theorem sectional_lower_of_model_pairs (D : LeviCivitaData g) (c y : M)
   have h := hall (e.continuousLinearMapAt ℝ y u) (e.continuousLinearMapAt ℝ y v)
   rw [hdiag] at h
   simpa only [f, e.symmL_continuousLinearMapAt hy] using sub_nonneg.mp h
-
 
 end PoincareConjecture.RicciFlowAnalysis
 

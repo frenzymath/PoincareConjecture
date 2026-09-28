@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingValue
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -50,9 +41,6 @@ private theorem averagingTest_fderiv {r : ℝ} (hr : 0 < r) (x z v : LoopPlane) 
   rw [hd.fderiv]
   simp
 
-
-
-
 theorem averagingValue_fderiv_of_weak
     (u : Lp ℝ 2 (volume : Measure LoopPlane))
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane))
@@ -82,10 +70,6 @@ theorem averagingValue_fderiv_of_weak
   filter_upwards with z
   change d i z * averagingKernel r (x - z) = _
   ring
-
-
-
-
 
 theorem averagingValue_radius_of_weak
     (u : Lp ℝ 2 (volume : Measure LoopPlane))

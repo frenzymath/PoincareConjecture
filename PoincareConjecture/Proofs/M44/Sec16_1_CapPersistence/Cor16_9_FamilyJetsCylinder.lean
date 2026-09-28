@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderRicciFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +21,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
   {e : SurgeryFlowCylinder F C origin scale I U}
   {f : PartialDiffeomorph (𝓡 3) (𝓡 3) E C.carrier ∞}
-
-
-
 
 theorem CylinderRicciFlow.pullback_eq_cylinder
     (G : CylinderRicciFlow e f) (hmap : f.target ⊆ U)
@@ -64,9 +53,6 @@ theorem CylinderRicciFlow.pullback_eq_cylinder
     (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs ∘ f) x w) = _
   rw [mfderiv_comp x hde hdf]
   rfl
-
-
-
 
 theorem CylinderRicciFlow.metricJetError_eq_cylinder
     (G : CylinderRicciFlow e f) (hmap : f.target ⊆ U)

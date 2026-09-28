@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.CircleSlabDomain
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -89,4 +87,3 @@ theorem plDomain_relative_shifted_circle_slab
       ring
 
 end PoincareConjecture.M76.HamiltonIntervalTorus
-

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCur
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem hessian_coordinate_eq_neg_connectionCoefficient (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) (i : Fin n) :
@@ -71,8 +61,6 @@ private theorem abs_inner_le_upper (x : EuclideanSpace ℝ (Fin n))
     _ = (Real.sqrt b) ^ 2 * ‖u‖ * ‖v‖ := by ring
     _ = _ := by rw [Real.sq_sqrt hb]
 
-
-
 theorem norm_connectionCoefficient_apply_le_of_coordinate_hessian_bound
     (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) {b L : ℝ}
     (hb : 0 ≤ b) (hL : 0 ≤ L)
@@ -120,8 +108,6 @@ theorem norm_connectionCoefficient_apply_le_of_coordinate_hessian_bound
         mul_pow, Real.sq_sqrt (Nat.cast_nonneg n)]
       ring
 
-
-
 theorem norm_fderiv_euclideanCoefficients_le_of_coordinate_hessian_bound
     (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) {b L : ℝ}
     (hb : 0 ≤ b) (hL : 0 ≤ L)
@@ -151,8 +137,6 @@ theorem norm_fderiv_euclideanCoefficients_le_of_coordinate_hessian_bound
       · exact hconn u v
       · exact hconn u w
     _ = _ := by ring
-
-
 
 theorem norm_fderiv_euclideanCoefficients_le_of_coordinate_hessian_normSq_bound
     (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) {b L : ℝ}

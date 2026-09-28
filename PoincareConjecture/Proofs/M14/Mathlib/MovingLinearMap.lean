@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold
@@ -19,9 +10,7 @@ variable {E H M V W : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace M] [ChartedSpace H M]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [NormedAddCommGroup W] [NormedSpace ℝ W]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem moving_linearMap_comp_hasDerivAt {f : M → V →L[ℝ] W}
     {γ : ℝ → M} {v : ℝ → V} {s : ℝ} {k : V}

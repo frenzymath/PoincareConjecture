@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SUHopfCauchyRiemann
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.HarmonicSphereCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60AreaGram_entry_contDiff (g : RiemannianMetric n M)
     {φ : LoopPlane → M} (hφ : ContMDiff (𝓡 2) (𝓡 n) ∞ φ) (i j : Fin 2) :
@@ -60,9 +49,6 @@ theorem m60AreaGram_entry_contDiff (g : RiemannianMetric n M)
   dsimp only [m60AreaGram]
   rw [hd i, hd j]
   exact (chartCoefficients_apply g (φ p) hq _ _).symm
-
-
-
 
 theorem m60SphereHopf_cauchyRiemann (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

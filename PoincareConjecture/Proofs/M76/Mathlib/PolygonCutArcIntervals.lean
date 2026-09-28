@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearChain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
 
 namespace Set
-
-
-
 
 theorem isFinitePLBallPair_two_segments
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -73,9 +61,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
-
 theorem cutArc_eq_segments (P : Polygon E n) (t : Fin n → ℝ)
     (ht : ∀ i, t i ∈ Icc (0 : ℝ) 1) (i : Fin n) :
     P.cutArc t i = segment ℝ (P.edgeCut t i) (P (finRotate n i)) ∪
@@ -92,10 +77,6 @@ theorem cutArc_eq_segments (P : Polygon E n) (t : Fin n → ℝ)
       lineMap_apply_zero, affineSegment_eq_segment]
     rfl
   exact congrArg₂ (· ∪ ·) htail hhead
-
-
-
-
 
 theorem cutArc_ballPair [FiniteDimensional ℝ E]
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.EventSeedGeometry
 import PoincareConjecture.Proofs.M47.SeedTube
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem old_cap_contact_distance_lt
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

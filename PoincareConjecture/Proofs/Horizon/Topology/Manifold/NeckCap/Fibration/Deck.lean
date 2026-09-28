@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Covering
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Quotient.Properness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Topology
@@ -16,8 +8,6 @@ open Function Set Topology
 namespace Poincare.Topology
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] {p : E → X}
-
-
 
 theorem exists_covering_transformation [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] (hp : IsCoveringMap p)
@@ -44,8 +34,6 @@ theorem exists_covering_transformation [SimplyConnectedSpace E]
       continuous_invFun := G.continuous }
   exact ⟨d, hF, hF₀⟩
 
-
-
 theorem exists_nonidentity_covering_transformation [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] (hp : IsCoveringMap p) (hsurj : Surjective p)
     (hbase : ¬ SimplyConnectedSpace X) :
@@ -59,7 +47,6 @@ theorem exists_nonidentity_covering_transformation [SimplyConnectedSpace E]
   refine ⟨d, hd, ?_⟩
   intro h
   exact hne (by simpa only [h, Homeomorph.refl_apply, id_eq] using hde)
-
 
 def deckTransformations (p : E → X) : Subgroup (E ≃ₜ E) where
   carrier := {d | p ∘ d = p}
@@ -83,7 +70,6 @@ instance deckTransformations_continuousConstSMul :
     ContinuousConstSMul (deckTransformations p) E where
   continuous_const_smul d := d.1.continuous
 
-
 theorem deckTransformations_isCancelSMul [PreconnectedSpace E] (hp : IsCoveringMap p) :
     IsCancelSMul (deckTransformations p) E where
   right_cancel' a b e he := by
@@ -91,8 +77,6 @@ theorem deckTransformations_isCancelSMul [PreconnectedSpace E] (hp : IsCoveringM
     apply Homeomorph.ext
     exact congr_fun (hp.eq_of_comp_eq a.1.continuous b.1.continuous
       (a.2.trans b.2.symm) e he)
-
-
 
 theorem finite_deckTransformations_mem_compact [PreconnectedSpace E] [T1Space X]
     (hp : IsCoveringMap p) (e : E) {K : Set E} (hK : IsCompact K) :
@@ -112,8 +96,6 @@ theorem finite_deckTransformations_mem_compact [PreconnectedSpace E] [T1Space X]
   have hh := Set.Finite.preimage (f := f) hinj.injOn hfin
   exact hh
 
-
-
 theorem isQuotientCoveringMap_deckTransformations [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] (hp : IsCoveringMap p) (hsurj : Surjective p) :
     IsQuotientCoveringMap p (deckTransformations p) := by
@@ -128,14 +110,11 @@ theorem isQuotientCoveringMap_deckTransformations [SimplyConnectedSpace E]
     rw [← hd]
     exact congr_fun d.2 e₂
 
-
-
 theorem deckTransformations_properlyDiscontinuousSMul [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] [T2Space X]
     (hp : IsCoveringMap p) (hsurj : Surjective p) :
     ProperlyDiscontinuousSMul (deckTransformations p) E :=
   (isQuotientCoveringMap_deckTransformations hp hsurj).properlyDiscontinuousSMul
-
 
 theorem finite_deckTransformations_inter_compact [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] [T2Space X]
@@ -144,8 +123,6 @@ theorem finite_deckTransformations_inter_compact [SimplyConnectedSpace E]
     {d : deckTransformations p | (d.1 '' K ∩ L).Nonempty}.Finite := by
   let := deckTransformations_properlyDiscontinuousSMul hp hsurj
   exact finite_disjoint_inter_image hK hL
-
-
 
 theorem locallyFinite_deck_translates_compact [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] [LocallyCompactSpace E] [T2Space X]

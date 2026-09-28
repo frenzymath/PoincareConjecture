@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.LocalNormalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.SphereMotions
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,8 +63,6 @@ private theorem exists_orthogonal_extension (p q : S2)
     rw [hT, hnormal, zero_smul, zero_add]
     exact congrArg (fun w => (B w : E3))
       ((ℝ ∙ (p : E3))ᗮ.orthogonalProjectionOnto_mem_subspace_eq_self v)
-
-
 
 theorem exists_orthogonal_chart_map (p q : S2) (Q : E2 ≃ₗᵢ[ℝ] E2) :
     ∃ A : E3 ≃ₗᵢ[ℝ] E3,

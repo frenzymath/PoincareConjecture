@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M65.Mathlib.EnergyBadTimes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral
 
 namespace PoincareConjecture.M65
-
-
 
 theorem exists_energy_le_in_window {energy : ℝ → ℝ} {a b s t C B : ℝ}
     (has : a ≤ s) (hst : s < t) (htb : t ≤ b)

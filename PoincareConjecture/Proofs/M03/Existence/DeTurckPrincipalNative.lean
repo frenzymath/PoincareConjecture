@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartJetSource
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSymbol
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

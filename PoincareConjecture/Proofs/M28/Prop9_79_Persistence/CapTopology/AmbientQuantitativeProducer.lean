@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.ConditionalInputProducer
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutDiameter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
-
 
 theorem eventually_exists_quantitative_cap_recut_of_ambient_differential_bound
     (N : CapCertificate g) {delta : ℕ → ℝ}
@@ -68,9 +55,6 @@ theorem eventually_exists_quantitative_cap_recut_of_ambient_differential_bound
       (hk e hsource htarget') hball')
 
 omit [T2Space M] in
-
-
-
 
 theorem eventually_exists_old_tensor_conditional_cap_persistence_of_ambient_differential_bound
     (N : CapCertificate g) {eta : ℝ}

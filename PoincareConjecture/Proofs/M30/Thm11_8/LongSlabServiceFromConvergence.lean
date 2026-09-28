@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.LongSlabService
 import PoincareConjecture.Proofs.M30.Generalized.BlowupSubsequence
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem longSlabControlService_of_convergence
     (hC : RicciFlowCurvatureTheory.{u})

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeChartScalarLocalization
 import PoincareConjecture.Proofs.M03.Existence.ChartPullbackEnergyNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanMollificationNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -32,7 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {iota : Type v} [Fintype iota]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem cutoff_chart_gradient_sq_le (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))
@@ -76,7 +67,6 @@ theorem cutoff_chart_gradient_sq_le (g : RiemannianMetric n M)
     positivity
 
 variable [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem exists_cutoff_chart_gradientEnergy_bound (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))

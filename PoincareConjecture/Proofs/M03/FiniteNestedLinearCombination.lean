@@ -6,8 +6,6 @@ open scoped BigOperators
 
 namespace PoincareConjecture.Proofs.M03
 
-
-
 theorem sum_two_mul_nested_linear_combination_le
     {I L J K : Type*} [Fintype I] [Fintype L] [Fintype J] [Fintype K]
     (c : I → L → J → K → ℝ) (a : I → ℝ)

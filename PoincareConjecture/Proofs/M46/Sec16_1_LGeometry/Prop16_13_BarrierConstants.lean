@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M44.StandardScalar
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_capTopBarrierTime (c : ℝ) (hc : 0 < c) (ell : ℝ) :
     ∃ theta : ℝ, 1 / 2 < theta ∧ theta < 1 ∧
@@ -45,10 +31,6 @@ theorem exists_capTopBarrierTime (c : ℝ) (hc : 0 < c) (ell : ℝ) :
   rw [heq]
   exact lt_of_le_of_lt (le_max_left ell 0) (lt_add_one _)
 
-
-
-
-
 theorem exists_capSideBarrierRadius (ell lowerRadius : ℝ) :
     ∃ A0 : ℝ, 0 < A0 ∧ lowerRadius ≤ A0 ∧
       ∀ A : ℝ, A0 ≤ A → ell < A ^ 2 / 75 := by
@@ -66,8 +48,6 @@ theorem exists_capSideBarrierRadius (ell lowerRadius : ℝ) :
   have hnonneg : 0 ≤ A := (by positivity : 0 ≤ 10 * Real.sqrt q).trans hlarge
   have hbound : 100 * q ≤ A ^ 2 := by nlinarith
   nlinarith
-
-
 
 theorem exists_standardCapTopBarrier {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) :

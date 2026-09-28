@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.B
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem exists_smooth_slice_shift {b c : ℝ}
     (hb : b ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -24,14 +15,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem contMDiff_positive_rpow {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x) (p : ℝ) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => f x ^ p) := by
   intro x
   exact (Real.contDiffAt_rpow_const_of_ne (hpos x).ne').contMDiffAt.comp x (hf x)
-
-
 
 theorem gradient_positive_rpow (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x)
@@ -48,8 +36,6 @@ private theorem mvfderiv_positive_rpow (D : LeviCivitaData g) {f : M → ℝ}
       p * f x ^ (p - 1) * mvfderiv (𝓡 n) f x v := by
   rw [← D.inner_gradient, gradient_positive_rpow D hf hpos p]
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
-
-
 
 theorem hessian_positive_rpow (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x)
@@ -81,8 +67,6 @@ theorem hessian_positive_rpow (D : LeviCivitaData g) {f : M → ℝ}
     D.hessian_eq_inner_connection_gradient (hf x)]
   simp only [add_apply, smul_apply, ContinuousLinearMap.smulRight_apply,
     map_add, map_smul, smul_eq_mul, D.inner_gradient, hderiv]
-
-
 
 theorem laplacian_positive_rpow (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x)

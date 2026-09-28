@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierVer
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBase
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +14,6 @@ local notation "V" => (V2 × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.frontier_vertex_zero_data
     (T : HamiltonProperDiskTriangulation R D b) {c : E ≃ᴬ[ℝ] V}

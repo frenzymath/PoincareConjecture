@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Normal
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureTensor
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +31,6 @@ private theorem exists_negative_slab (t : ℝ) (ht : t < 0) :
   · exact ⟨by linarith [min_le_left t (-1)], le_max_left t (-1)⟩
   · exact ⟨by linarith [min_le_right t (-1)], le_max_right t (-1)⟩
 
-
-
 theorem ricciKernel_eq_minus_one_of_constant_nullity
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iio 0))
     (hsec : ∀ t < 0, (F.connection t).NonnegativeSectionalCurvature)
@@ -59,8 +48,6 @@ theorem ricciKernel_eq_minus_one_of_constant_nullity
     (hdim s (hs.2.trans_lt hb) y).trans (hdim a (hab.trans hb) y).symm
   exact (ricciKernel_eq_initial_of_constant_nullity hC hab F' hsec' hdim' t hta x).trans
     (ricciKernel_eq_initial_of_constant_nullity hC hab F' hsec' hdim' (-1) hma x).symm
-
-
 
 theorem parallel_gradient_persists_on_negative_times
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iio 0))
@@ -131,8 +118,6 @@ open RicciFlow.Splitting
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem ricci_eq_scalar_transverse_of_null_direction
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -205,8 +190,6 @@ open RiemannianMetric
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem inner_eq_transverse_scale_on_negative_times
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow 3 M (Iio 0))
     (hsec : ∀ t < 0, (F.connection t).NonnegativeSectionalCurvature)
@@ -256,8 +239,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
 
-
-
 theorem scalarCurvature_eq_neg_inv_of_initial_scalar_one
     (hscalar : ∀ x : M, S.connection.scalarCurvature x = 1)
     (t : ℝ) (ht : t < 0) (x : M) :
@@ -265,8 +246,6 @@ theorem scalarCurvature_eq_neg_inv_of_initial_scalar_one
   obtain ⟨E⟩ := G.self_similar t ht
   rw [E.scalarCurvature (abs_pos.mpr ht.ne) S.connection, hscalar, mul_one,
     abs_of_neg ht, inv_neg]
-
-
 
 theorem inner_eq_transverse_scale_of_initial_scalar_one
     (hC : RicciFlowCurvatureTheory.{u})
@@ -295,9 +274,6 @@ theorem inner_eq_transverse_scale_of_initial_scalar_one
     inner_eq_transverse_scale_on_negative_times hC G.flow hsec
       (fun s hs y => (hdim s hs y).trans (hdim (-1) (by norm_num) y).symm)
       (G.scalarCurvature_eq_neg_inv_of_initial_scalar_one hscalar) hr hu hz t ht x u v
-
-
-
 
 theorem ancientSourceFlow_connection_zero_eq_unscaled
     (G : ShrinkingSolitonFlow S) :

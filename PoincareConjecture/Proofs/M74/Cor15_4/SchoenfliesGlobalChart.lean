@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.PunctureRadiusPartition
 import PoincareConjecture.Proofs.M74.Cor15_4.ShiftedPunctureCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +14,6 @@ open M74 M25.Topology3D
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
-
-
 
 theorem shiftedPunctureCollar_central_image :
     B.shiftedPunctureCollar d '' (univ ×ˢ {0}) =
@@ -45,8 +34,6 @@ theorem shiftedPunctureCollar_central_image :
     refine ⟨(q, 0), ⟨mem_univ _, mem_singleton 0⟩, ?_⟩
     norm_num [shiftedPunctureCollar, shiftCollar, shiftCollarParam, punctureCollar, q, smul_smul]
 
-
-
 theorem shiftedPunctureCollar_positive_mem_radiusExterior (q : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (0 : ℝ) 1) :
     B.shiftedPunctureCollar d (q, s) ∈
@@ -66,8 +53,6 @@ theorem shiftedPunctureCollar_positive_mem_radiusExterior (q : UnitTwoSphere) {s
   · change ‖(1 + shiftCollarParam s) • q.1‖ < 2
     rw [hn]
     linarith [ht.2]
-
-
 
 theorem shiftedSchoenflies_inside_eq_radiusExterior {δ : ℝ}
     (D : SchoenfliesData (B.shiftedPunctureCollar d) δ) :
@@ -124,8 +109,6 @@ theorem shiftedSchoenflies_inside_eq_radiusExterior {δ : ℝ}
     exact Or.inr hy
   have hyT : y ∈ T := ⟨mem_univ _, fun h => h.elim hyD hyS⟩
   exact Set.disjoint_left.mp hUV (hTU hyT) hy
-
-
 
 theorem shiftedSchoenflies_chart_image_univ {δ : ℝ}
     (D : SchoenfliesData (B.shiftedPunctureCollar d) δ) :

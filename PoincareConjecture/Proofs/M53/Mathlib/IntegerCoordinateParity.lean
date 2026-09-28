@@ -2,22 +2,9 @@ import PoincareConjecture.Proofs.M53.Mathlib.EvenEquiv
 import Mathlib.Algebra.Group.Int.Even
 import Mathlib.Algebra.Group.Hom.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace AddMonoidHom
-
-
-
 
 theorem even_apply_of_integer_coordinates
     {D A T : Type*} [AddCommGroup D] [AddCommGroup A] [AddCommGroup T]

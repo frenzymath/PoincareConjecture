@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonSmoothJets
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +22,6 @@ theorem radialNeckWeight_support_geometry (g₀ : StandardInitialMetric)
   intro hz
   rw [hz, standardSurgeryHeight_zero] at hheight
   linarith [g₀.cylindrical_end.radius_pos]
-
 
 set_option maxHeartbeats 800000 in
 theorem exists_radialWeightedError_jet_bound

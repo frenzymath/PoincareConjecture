@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricProducerNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M35.Uniqueness
 open DeTurckNative
 
 variable {n : ℕ}
-
-
 
 theorem native_deTurck_difference (background : MetricJet2 (n := n))
     (p q : MetricLowerJet n) (Q S : MetricSecondJet n)
@@ -42,9 +31,6 @@ theorem native_deTurck_difference (background : MetricJet2 (n := n))
   simp only [lowerJetContraction_sub_left, lowerJetContraction_sub_right,
     Matrix.sub_apply, Matrix.add_apply, fixedPrincipalRemainder] at hij ⊢
   linarith only [hij]
-
-
-
 
 theorem exists_native_deTurck_difference_bound
     (B : Set (ChartState (n := n))) (K : Set (MetricLowerJet n))

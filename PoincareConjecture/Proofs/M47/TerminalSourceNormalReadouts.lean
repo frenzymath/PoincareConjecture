@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalDistance
 import PoincareConjecture.Proofs.M47.TerminalSourceChartsEllipticity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace E M] [ChartedSpace E N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N] [T3Space M]
-
-
 
 theorem terminalSourceNormal_buffered_readouts
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

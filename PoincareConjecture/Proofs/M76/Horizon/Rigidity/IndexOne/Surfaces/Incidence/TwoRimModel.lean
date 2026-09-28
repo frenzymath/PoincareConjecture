@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Incidence.CompressedModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimParametrization.Subcomplexes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,7 +17,6 @@ local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "Q2" => Metric.sphere (0 : V2) 1
 
 open Classical in
-
 
 theorem exists_compressed_sourceSurface_two_rim_incidence_model
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

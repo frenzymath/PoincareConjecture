@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.RoundedVertexPath
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.ChordEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -18,8 +9,6 @@ open scoped Topology ContDiff
 namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasDerivAt_roundedVertexPath_local {ρ : ℝ → ℝ} (P : ℤ → E) {δ : ℝ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -36,8 +25,6 @@ theorem hasDerivAt_roundedVertexPath_local {ρ : ℝ → ℝ} (P : ℤ → E) {�
   apply h.congr_of_eventuallyEq
   filter_upwards [isOpen_Ioo.mem_nhds ht] with s hs
   exact roundedVertexPath_eq_local P hδ hδhalf htail hbound i hs
-
-
 
 theorem dist_roundedCorner_le_of_vertex_dist_le {ρ : ℝ → ℝ}
     (p u v y : E) {ε δ t : ℝ} (_hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -67,8 +54,6 @@ theorem dist_roundedCorner_le_of_vertex_dist_le {ρ : ℝ → ℝ}
       add_le_add (add_le_add (mul_le_mul_of_nonneg_left hp hk)
         (mul_le_mul_of_nonneg_left hu ha)) (mul_le_mul_of_nonneg_left hv hb)
     _ = ε := by dsimp [k, a, b]; ring
-
-
 
 theorem exists_uniform_rounded_sampling_estimates {X : Type*} [PseudoMetricSpace X]
     {K : Set X} (hK : IsCompact K) {c d : X → ℝ → E} {l u : ℝ}

@@ -1,15 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Continuity
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -83,8 +72,6 @@ private theorem contMDiffWithinAt_ricciComplement_fields
     (hG.clm_bundle_apply₂ (F₃ := ℝ) (E₃ := fun _ : M => ℝ) hX hY)).2
   exact ((hR.div_const 2).mul hpair).sub
     (contMDiffWithinAt_ricci_spacetime_fields F ht hx X Y hX hY)
-
-
 
 theorem exists_scaled_transportedRicciComplementTensor_local_coordinates
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})

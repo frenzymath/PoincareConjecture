@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Boc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Localization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +34,6 @@ private lemma weighted_bochner_integrand (D : LeviCivitaData g)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 lemma integrable_weighted_bochner (D : LeviCivitaData g)
     {w f : M → ℝ} (hw : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ w)
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hwc : HasCompactSupport w) :
@@ -60,8 +50,6 @@ lemma integrable_weighted_bochner (D : LeviCivitaData g)
         (D.continuous_inner_gradient (D.contMDiff_laplacian hf) hf)).integrable_of_hasCompactSupport
         hwc.mul_right
   · exact (D.integrable_mul_laplacian hw (D.contMDiff_inner_gradient hf hf) hwc).const_mul _
-
-
 
 theorem integral_weighted_bochner (D : LeviCivitaData g)
     {w f : M → ℝ} (hw : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ w)

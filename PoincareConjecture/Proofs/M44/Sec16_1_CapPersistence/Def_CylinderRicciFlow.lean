@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedCylinderFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_TargetMetricTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
-
 structure CylinderRicciFlow
     (e : SurgeryFlowCylinder F C origin scale I U)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) E C.carrier ∞) where
@@ -41,10 +29,6 @@ structure CylinderRicciFlow
       (mfderiv (𝓡 3) (𝓡 3) (cylinderTargetTransport e f s hs) y v)
       (mfderiv (𝓡 3) (𝓡 3) (cylinderTargetTransport e f s hs) y w)
 
-
-
-
-
 theorem exists_cylinderRicciFlow
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
     {B : ℝ} (e : SurgeryFlowCylinder F C origin scale (Ico 0 B) U)
@@ -54,9 +38,6 @@ theorem exists_cylinderRicciFlow
   obtain ⟨G, hcoeff⟩ := exists_normalized_cylinder_physical_flow P hpinch e hU hB f hmap
   exact ⟨⟨G, fun s hs => cylinderTargetTransport_metric e hU f hmap s hs (G.metric s)
     (fun p => hcoeff p s hs)⟩⟩
-
-
-
 
 theorem CylinderRicciFlow.physical_metric_link
     {e : SurgeryFlowCylinder F C origin scale I U}

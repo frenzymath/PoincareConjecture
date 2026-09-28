@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.PartialDiffeomorphOnOpens
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +18,6 @@ variable {X : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem edist_eq_intrinsicOpenMetric_of_diffeomorph_pullback
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 N)
@@ -49,15 +39,12 @@ theorem edist_eq_intrinsicOpenMetric_of_diffeomorph_pullback
 
 omit [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ N] in
 
-
 theorem diffeomorph_openImageMap_isLocalDiffeomorph
     (W : TopologicalSpace.Opens N) (D : X ≃ₘ⟮𝓡 3, 𝓡 3⟯ W) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ ((Subtype.val : W → N) ∘ D) := by
   intro x
   exact (D.isLocalDiffeomorph x).comp (𝓡 3) N
     (openSubtype_isLocalDiffeomorph W (D x))
-
-
 
 theorem pullbackOfLocalDiffeomorph_edist_openImage
     (h : RiemannianMetric 3 N) (W : TopologicalSpace.Opens N)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Identities
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -71,7 +64,6 @@ namespace LeviCivitaData
 
 variable {g : RiemannianMetric n M}
 
-
 theorem contMDiffAt_one_gradient_of_C2 (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f x) :
     ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) 1
@@ -88,7 +80,6 @@ theorem contMDiffAt_one_gradient_of_C2 (D : LeviCivitaData g)
   simp [inTangentCoordinates, ContinuousLinearMap.inCoordinates, mvfderiv,
     NormedSpace.fromTangentSpace]
   rfl
-
 
 theorem hessian_eq_inner_connection_gradient_of_C2 (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f x)
@@ -113,7 +104,6 @@ theorem hessian_eq_inner_connection_gradient_of_C2 (D : LeviCivitaData g)
   simp only [D.inner_gradient, FiberBundle.extend_apply_self] at h
   simpa only [hessian, hessianOnFields, FiberBundle.extend_apply_self] using
     sub_eq_iff_eq_add.mpr h
-
 
 theorem mvfderiv_gradient_normSq_of_C2 (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f x)
@@ -143,7 +133,6 @@ namespace GradientShrinkingSolitonData
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem potential_gradient_C1 (S : GradientShrinkingSolitonData n M) :
     ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) 1
       (T% (S.connection.gradient S.potential)) :=
@@ -158,7 +147,6 @@ variable {M₂ : Type u} [TopologicalSpace M₂]
   [MeasurableSpace M₂] [BorelSpace M₂] [T2Space M₂] [T3Space M₂]
   [SecondCountableTopology M₂] [ConnectedSpace M₂]
 
-
 theorem connection_gradient_potential (S : GradientShrinkingSolitonData 2 M₂)
     (x : M₂) (v : TangentSpace (𝓡 2) x) :
     S.connection.connection (S.connection.gradient S.potential) x v =
@@ -168,7 +156,6 @@ theorem connection_gradient_potential (S : GradientShrinkingSolitonData 2 M₂)
   rw [← S.connection.hessian_eq_inner_connection_gradient_of_C2 (S.potential_C2 x),
     S.hessian_potential_eq_scalar]
   simp
-
 
 theorem mvfderiv_potential_gradient_normSq (S : GradientShrinkingSolitonData 2 M₂)
     (x : M₂) (v : TangentSpace (𝓡 2) x) :

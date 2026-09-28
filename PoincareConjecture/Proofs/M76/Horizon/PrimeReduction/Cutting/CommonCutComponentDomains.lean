@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ThreePortCom
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.KneserConnectivityCases
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

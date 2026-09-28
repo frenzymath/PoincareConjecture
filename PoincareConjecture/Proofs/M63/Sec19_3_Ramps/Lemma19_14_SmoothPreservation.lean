@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Cor19_13_DegreePreservation
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Lemma19_14_RatioBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,10 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m63SmoothRampPreservation
     {n : ℕ} {M : Type u} [TopologicalSpace M]

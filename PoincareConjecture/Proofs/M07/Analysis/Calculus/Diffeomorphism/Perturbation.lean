@@ -2,13 +2,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology NNReal
@@ -91,8 +84,6 @@ theorem norm_fderiv_cutoff_perturbation_sub_id_le
         (fderiv ℝ χ x).smulRight (f x - x))) x at hd
   rw [hd.fderiv, add_sub_cancel_left]
   exact (norm_add_le _ _).trans_eq (by rw [norm_smul, ContinuousLinearMap.norm_smulRight_apply])
-
-
 
 theorem eventually_exists_cutoff_diffeomorphism_of_contDiffAt
     {χ : E → ℝ} (hχ : ContDiff ℝ ∞ χ) (hχcompact : HasCompactSupport χ)
@@ -180,8 +171,6 @@ theorem eventually_contDiffAt_on_compact_of_locally_eventually_smooth
     obtain ⟨V, hV, hxV, hVsmooth⟩ := hlocal x (hKΩ hx)
     exact ⟨V, mem_nhdsWithin_of_mem_nhds (hV.mem_nhds hxV),
       hVsmooth.mono fun _ hk _ hy => hk.contDiffAt (hV.mem_nhds hy)⟩
-
-
 
 theorem eventually_exists_local_transition_correction
     {U V : Set E} (hU : IsOpen U) (hV : IsOpen V)

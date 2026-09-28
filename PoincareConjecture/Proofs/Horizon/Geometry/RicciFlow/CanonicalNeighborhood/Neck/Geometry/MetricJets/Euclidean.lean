@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.EuclideanModel
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.DomainChange
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
 
 def roundCylinderEuclideanBasis : Module.Basis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 3)) :=
   (EuclideanSpace.basisFun (Fin 3) ℝ).toBasis.reindex ((finRotate 3).symm)
@@ -38,7 +27,6 @@ def roundCylinderEuclideanBasis : Module.Basis (Fin 3) ℝ (EuclideanSpace ℝ (
   | simp [roundCylinderEuclideanBasis, RiemannianMetric.lineModelEquiv,
       roundCylinderCoordinateBasis, Poincare.EuclideanSpace.euclideanConsCLE,
       EuclideanSpace.basisFun_apply]
-
 
 def roundCylinderEuclideanCoefficients (x : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
@@ -63,7 +51,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 def normalizedEuclideanCoefficients (N : EpsilonNeck g) (q : UnitTwoSphere)
     (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) :
@@ -94,8 +81,6 @@ theorem normalizedEuclideanCoefficients_basis_eventuallyEq
   simpa only [Function.comp_def, map_zero, add_zero, normalizedEuclideanCoefficients,
     ContinuousLinearMap.bilinearComp_apply, ContinuousLinearEquiv.coe_coe,
     lineModelEquiv_symm_roundCylinderEuclideanBasis] using h
-
-
 
 theorem exists_normalizedEuclideanCoefficients_scalar_twoJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

@@ -1,20 +1,9 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.TensorConnection
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureReaction
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Laplacian.Product
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.LaplacianTrace.Four
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.LaplacianRegularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Scaling
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -228,8 +217,6 @@ private theorem cyclic_eq_half_double_trace_sub_ricci
   · linarith [hlast 2 0 1 0, hpair 2 0 0 1]
   · linarith [hswap 0 1, hswap 0 2, hswap 1 2]
 
-
-
 theorem tensorLaplacian_ricciComplement_apply_orthonormalBasis
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -301,8 +288,6 @@ private theorem exists_canonicalTransport_orthonormalBasis
     rw [Module.Basis.coe_toOrthonormalBasis]
     rfl⟩
 
-
-
 theorem transportPullback_ricciComplement_eq_cyclic [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow 3 M (Ico a b))
     (hab : a < b) {t : ℝ} (ht : t ∈ Ico a b) (x : M)
@@ -323,9 +308,6 @@ theorem transportPullback_ricciComplement_eq_cyclic [T2Space M]
   simp only [LeviCivitaData.ricciComplementTensor_apply, curvatureMatrix, hq] at h
   convert h using 1
   rfl
-
-
-
 
 theorem canonicalTransport_hasDerivAt_ricciComplement_cyclic [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow 3 M (Ico a b))
@@ -358,8 +340,6 @@ theorem canonicalTransport_hasDerivAt_ricciComplement_cyclic [T2Space M]
     (e (pairSecond j))).congr_of_eventuallyEq
   filter_upwards [Ioo_mem_nhds ht.1 ht.2] with s hs
   exact transportPullback_ricciComplement_eq_cyclic hC F hab ⟨hs.1.le, hs.2⟩ x e he i j
-
-
 
 theorem canonicalTransport_hasDerivAt_ricciComplement [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow 3 M (Ico a b))

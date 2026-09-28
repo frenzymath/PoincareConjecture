@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetricComparison
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderImageVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem controlled_cylinder_seed_image
     (P : M44CapPersistencePredecessors.{u})

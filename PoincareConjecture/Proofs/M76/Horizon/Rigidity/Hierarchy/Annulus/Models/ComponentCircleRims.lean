@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RimComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.ModelComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric PoincareConjecture.M76
 

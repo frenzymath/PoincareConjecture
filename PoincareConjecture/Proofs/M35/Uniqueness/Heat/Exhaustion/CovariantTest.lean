@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectTensor
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawCoordinateOperator
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

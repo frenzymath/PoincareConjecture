@@ -5,24 +5,12 @@ import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_uniform_axis_derivative_bound (F : ℝ × (ℝ × ℝ) → ℝ × ℝ)
     (hF : ContDiff ℝ ∞ F) {K : Set (ℝ × ℝ)} (hK : IsCompact K)
@@ -89,9 +77,6 @@ theorem exists_uniform_axis_derivative_bound (F : ℝ × (ℝ × ℝ) → ℝ ×
         exact hfix z x hx
       rw [heq.fderiv_eq, fderiv_id, sub_self, norm_zero]
       exact htol.le
-
-
-
 
 theorem exists_supported_strip_extension (F : ℝ × (ℝ × ℝ) → ℝ × ℝ)
     (hF : ContDiff ℝ ∞ F) {K : Set (ℝ × ℝ)} (hK : IsCompact K)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,16 +10,12 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
 
-
-
 theorem endAxialTranslation_zero_reference {x : StandardCapSpace}
     (hx : x ∈ endReferenceRegion e) : endAxialTranslation e 0 x = x := by
   obtain ⟨z, hz, rfl⟩ := hx
   have hh : 3 < z.2 := hz.2.1
   rw [endAxialTranslation_coordinate e 0 (by linarith)]
   simp
-
-
 
 theorem endAxialTranslation_comp_reference (r : ℝ) (hr : -3 < r) (s : ℝ)
     {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e) :
@@ -41,8 +28,6 @@ theorem endAxialTranslation_comp_reference (r : ℝ) (hr : -3 < r) (s : ℝ)
     endAxialTranslation_coordinate e (r + s) (by linarith)]
   simp only [add_assoc]
 
-
-
 theorem endAxialTranslation_mfderiv_zero_reference {x : StandardCapSpace}
     (hx : x ∈ endReferenceRegion e) :
     mfderiv (𝓡 3) (𝓡 3) (endAxialTranslation e 0) x =
@@ -54,8 +39,6 @@ theorem endAxialTranslation_mfderiv_zero_reference {x : StandardCapSpace}
   rw [mfderiv_id] at hh
   convert hh using 1
   rfl
-
-
 
 theorem endAxialTranslation_mfderiv_comp_reference (r : ℝ) (hr : -3 < r)
     (s : ℝ) (hs : -3 < s) {x : StandardCapSpace}
@@ -75,8 +58,6 @@ theorem endAxialTranslation_mfderiv_comp_reference (r : ℝ) (hr : -3 < r)
   have hh := heq.mfderiv_eq (I := 𝓡 3) (I' := 𝓡 3)
   rw [mfderiv_comp x (hd s hs _ hshift) (hd r hr _ hx)] at hh
   exact hh.symm
-
-
 
 theorem endAxialTranslation_inverse_mfderiv (r : ℝ) (hr : -3 < r) (hneg : -3 < -r)
     {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e)

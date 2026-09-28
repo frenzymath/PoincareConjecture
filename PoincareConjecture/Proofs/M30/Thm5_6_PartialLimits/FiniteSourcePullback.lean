@@ -1,18 +1,6 @@
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem pullback_source_metric_eq_shifted_pointed_metric
     {n : ℕ} {T : ℝ}

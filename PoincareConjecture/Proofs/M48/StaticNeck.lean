@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.StaticMetric
 import PoincareConjecture.Proofs.M48.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +18,6 @@ variable {M : Type u} {N : Type v}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
 
 noncomputable def EpsilonNeck.m48_pullback (K : EpsilonNeck h)
     (he : MetricHomothety g h e 1) (H : MetricHomothetyCalculus g h e 1)
@@ -118,7 +109,6 @@ noncomputable def EpsilonNeck.m48_pullback (K : EpsilonNeck h)
       exact K.center_on_central_sphere
     central_sphere_subset := fun _ hx => K.central_sphere_subset hx
     metric_comparison := hcomparison }
-
 
 theorem EpsilonNeck.m48_pullback_region (K : EpsilonNeck h)
     (he : MetricHomothety g h e 1) (H : MetricHomothetyCalculus g h e 1)

@@ -6,16 +6,6 @@ import Mathlib.Data.Int.Init
 import Mathlib.Order.Interval.Set.LinearOrder
 import Mathlib.Algebra.Order.Archimedean.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +16,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 open Classical in
-
 
 theorem exists_intrinsic_trimmed_chain_image_atlas :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

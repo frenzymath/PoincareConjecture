@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.CompatibleEndDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_endTransition_density_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

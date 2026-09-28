@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Compact
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E] [NormedAddCommGroup F] [NormedSpace Real F]
   {n : Nat} [Fact (Module.finrank Real E = n + 1)]
-
-
 
 theorem exists_contDiff_extension_sphere
     (f : sphere (0 : E) 1 -> F)

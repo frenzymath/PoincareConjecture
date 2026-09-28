@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularity
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRescaling
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,15 +14,11 @@ universe u
 
 namespace PoincareConjecture.M60
 
-
-
 theorem suRescale_fderiv {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (u : LoopPlane → E) (a : LoopPlane) (s : ℝ) (z : LoopPlane) :
     fderiv ℝ (fun y => u (a + s • y)) z = s • fderiv ℝ u (a + s • z) := by
   change fderiv ℝ (fun y => (fun w => u (a + w)) (s • y)) z = _
   rw [fderiv_comp_smul (f := fun w => u (a + w)) s, fderiv_comp_add_left]
-
-
 
 theorem suRescale_second_fderiv {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (u : LoopPlane → E) (a : LoopPlane) (s : ℝ) (z v w : LoopPlane) :
@@ -42,8 +29,6 @@ theorem suRescale_second_fderiv {E : Type*} [NormedAddCommGroup E] [NormedSpace 
   rw [fderiv_const_smul_field, Pi.smul_apply,
     suRescale_fderiv (fun y => fderiv ℝ u y v) a s z]
   simp only [smul_apply, smul_smul, pow_two]
-
-
 
 theorem suRescale_closedBall (a : LoopPlane) {s : ℝ} (hs : 0 < s) (R : ℝ) :
     (fun z : LoopPlane => a + s • z) '' Metric.closedBall 0 R =
@@ -72,7 +57,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem suRescale_mfderiv (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) (s : ℝ) (z : LoopPlane) :
     mfderiv (𝓡 2) (𝓡 n) (fun y => f (a + s • y)) z =
@@ -86,8 +70,6 @@ theorem suRescale_mfderiv (f : LoopPlane → M)
   simp only [ContinuousLinearMap.comp_apply, smul_apply, map_smul]
   rfl
 
-
-
 theorem suRescale_areaGram (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) (s : ℝ) (z : LoopPlane) :
     m60AreaGram g (fun y => f (a + s • y)) z = s ^ 2 • m60AreaGram g f (a + s • z) := by
@@ -97,8 +79,6 @@ theorem suRescale_areaGram (g : RiemannianMetric n M) (f : LoopPlane → M)
   ring_nf
   rfl
 
-
-
 theorem suRescale_energyDensity (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) (s : ℝ) (z : LoopPlane) :
     m60EnergyDensity g (fun y => f (a + s • y)) z =
@@ -107,8 +87,6 @@ theorem suRescale_energyDensity (g : RiemannianMetric n M) (f : LoopPlane → M)
   rw [suRescale_areaGram g f hf]
   simp only [Matrix.trace_smul, smul_eq_mul]
   ring
-
-
 
 theorem suRescale_areaDensity (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) (s : ℝ) (z : LoopPlane) :
@@ -120,8 +98,6 @@ theorem suRescale_areaDensity (g : RiemannianMetric n M) (f : LoopPlane → M)
   rw [max_eq_right (mul_nonneg (sq_nonneg _) (m60AreaGram_det_nonneg g f (a + s • z))),
     max_eq_right (m60AreaGram_det_nonneg g f (a + s • z)),
     Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq_eq_abs, abs_of_nonneg (sq_nonneg s)]
-
-
 
 theorem suRescale_integral (F : LoopPlane → ℝ) (a : LoopPlane)
     {s : ℝ} (hs : 0 < s) (S : Set LoopPlane) :
@@ -144,8 +120,6 @@ theorem suRescale_integral (F : LoopPlane → ℝ) (a : LoopPlane)
       exact ⟨s • w, ⟨w, hw, rfl⟩, rfl⟩
   rw [← ht, hset]
 
-
-
 theorem suRescale_energyIntegral (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) {s : ℝ} (hs : 0 < s)
     (S : Set LoopPlane) :
@@ -154,8 +128,6 @@ theorem suRescale_energyIntegral (g : RiemannianMetric n M) (f : LoopPlane → M
   simp_rw [suRescale_energyDensity g f hf]
   exact suRescale_integral _ a hs S
 
-
-
 theorem suRescale_areaIntegral (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : MDifferentiable (𝓡 2) (𝓡 n) f) (a : LoopPlane) {s : ℝ} (hs : 0 < s)
     (S : Set LoopPlane) :
@@ -163,8 +135,6 @@ theorem suRescale_areaIntegral (g : RiemannianMetric n M) (f : LoopPlane → M)
       ∫ z in (fun w => a + s • w) '' S, m60AreaDensity g f z := by
   simp_rw [suRescale_areaDensity g f hf]
   exact suRescale_integral _ a hs S
-
-
 
 theorem suRescale_covDerivAlong
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -182,9 +152,6 @@ theorem suRescale_covDerivAlong
   rw [hd]
   simp only [smul_apply, map_smul, smul_add, smul_smul]
   module
-
-
-
 
 theorem suRescale_weightedEuler
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

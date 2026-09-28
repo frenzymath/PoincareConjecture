@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.E
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,14 +16,12 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] {J : Set ℝ}
   {F : RicciFlow n M J} {O : M}
 
-
 lemma SmoothExhaustion.hasDerivAt_exp_mul
     (S : SmoothExhaustion F O) (ε A t : ℝ) (x : M) :
     HasDerivAt (fun s => ε * Real.exp (A * s) * S.toFun x)
       (A * (ε * Real.exp (A * t) * S.toFun x)) t := by
   simpa only [id_eq, mul_one, mul_assoc, mul_comm, mul_left_comm] using
     (((hasDerivAt_id t).const_mul A).exp.const_mul ε).mul_const (S.toFun x)
-
 
 lemma SmoothExhaustion.le_exp_mul
     (S : SmoothExhaustion F O) {ε A t : ℝ}
@@ -44,7 +32,6 @@ lemma SmoothExhaustion.le_exp_mul
     ε ≤ ε * Real.exp (A * t) := by nlinarith
     _ ≤ ε * Real.exp (A * t) * S.toFun x := by
       nlinarith [S.one_le x, mul_nonneg hε (Real.exp_nonneg (A * t))]
-
 
 lemma SmoothExhaustion.exp_mul_heat_gt
     (S : SmoothExhaustion F O) {ε C A t : ℝ}
@@ -64,8 +51,6 @@ lemma SmoothExhaustion.exp_mul_heat_gt
     linarith [S.laplacian_le ht x]
   have h := mul_lt_mul_of_pos_left hstrict (mul_pos hε (Real.exp_pos (A * t)))
   nlinarith
-
-
 
 lemma SmoothExhaustion.exists_small_exp_mul
     (S : SmoothExhaustion F O) {K : Set M} (hK : IsCompact K)
@@ -87,8 +72,6 @@ lemma SmoothExhaustion.exists_small_exp_mul
       mul_le_mul (mul_le_mul_of_nonneg_left he hε.le) hh
         (by linarith [S.one_le x]) (by positivity)
     _ = η := by dsimp [ε]; field_simp
-
-
 
 lemma SmoothExhaustion.exists_exp_barrier_coefficients
     (S : SmoothExhaustion F O) {K : Set M} (hK : IsCompact K)
@@ -151,9 +134,6 @@ lemma SmoothExhaustion.exists_exp_barrier_coefficients
       _ ≤ ε * Real.exp (A * t) * S.toFun x := by
         nlinarith [S.one_le x, mul_pos hε (Real.exp_pos (A * t))]
 
-
-
-
 lemma SmoothExhaustion.exp_mul_div_heat_gt
     (S : SmoothExhaustion F O) {ε δ C A t : ℝ}
     (hε : 0 < ε) (hA : C + (n : ℝ) * S.bound < A)
@@ -199,8 +179,6 @@ lemma SmoothExhaustion.exp_mul_div_heat_gt
   rw [← mul_div_assoc]
   linarith only [hdivide, hsmall']
 
-
-
 lemma SmoothExhaustion.exp_mul_div_quadratic_heat_gt
     (S : SmoothExhaustion F O) {ε δ C A t u w : ℝ}
     (hε : 0 < ε) (hδpos : 0 < δ) (hA : C + (n : ℝ) * S.bound < A)
@@ -233,8 +211,6 @@ lemma SmoothExhaustion.exp_mul_div_quadratic_heat_gt
       (mul_pos hu (sq_pos_of_ne_zero hn))
   · exact add_pos_of_pos_of_nonneg (mul_pos hw' (sq_pos_of_ne_zero hn))
       (mul_nonneg hu.le (sq_nonneg _))
-
-
 
 lemma SmoothExhaustion.isCompact_exp_mul_sublevel
     (S : SmoothExhaustion F O)

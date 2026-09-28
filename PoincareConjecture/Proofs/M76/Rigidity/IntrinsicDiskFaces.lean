@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
-
-
 
 theorem intrinsic_disk_parameter_image {X E : Type*}
     (F : X → E) (j : V2 → X) (u : E → V2)
@@ -35,9 +24,6 @@ theorem intrinsic_disk_parameter_image {X E : Type*}
       exact hz
     · intro z hz
       exact ⟨F (j z), ⟨j z, ⟨z, hz, rfl⟩, rfl⟩, hu ⟨z, hz⟩⟩
-
-
-
 
 theorem intrinsic_disk_face_dimensions
     {X E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

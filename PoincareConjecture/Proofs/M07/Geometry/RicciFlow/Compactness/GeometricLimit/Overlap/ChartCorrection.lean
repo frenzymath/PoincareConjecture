@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operati
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
@@ -172,7 +164,6 @@ theorem eventually_exists_source_chart_correction
 
 include hD he hc hlower hopen hconn hsmooth in
 
-
 theorem exists_eventual_source_chart_correction_on_compact
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives
       (Subtype.val '' overlap (fun i j => D i j) i j)
@@ -257,7 +248,6 @@ include hD hc hlower hopen in
 omit [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M k)] in
 
-
 theorem source_chart_correction_fixes_agreement
     (i j : ι) (k : ℕ) {χ : EuclideanSpace ℝ (Fin n) → ℝ}
     {a : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -273,7 +263,6 @@ theorem source_chart_correction_fixes_agreement
   simp only [sub_self, smul_zero, add_zero]
 
 include hD he hc hlower hopen hconn hsmooth in
-
 
 theorem exists_smooth_relative_source_chart_corrections_on_compact
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives
@@ -320,7 +309,6 @@ theorem exists_smooth_relative_source_chart_corrections_on_compact
 
 include hD he hc hlower hopen hconn hsmooth in
 
-
 theorem exists_smooth_source_chart_corrections_on_compact
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives
       (Subtype.val '' overlap (fun i j => D i j) i j)
@@ -347,8 +335,6 @@ theorem exists_smooth_source_chart_corrections_on_compact
   exact ha.mono fun _ hk => ⟨hk.1, hk.2.1, hk.2.2.1, hk.2.2.2.1, hk.2.2.2.2.1⟩
 
 include hD he hc hlower hopen hconn hsmooth in
-
-
 
 theorem exists_smooth_source_chart_corrections_for_compact_pieces
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives

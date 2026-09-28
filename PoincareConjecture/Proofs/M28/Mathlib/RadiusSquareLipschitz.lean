@@ -2,19 +2,9 @@ import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped NNReal
-
-
 
 theorem LipschitzWith.half_sq_of_abs_le
     {X : Type*} [PseudoMetricSpace X] {r : X → ℝ}

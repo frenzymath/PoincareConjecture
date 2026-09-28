@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.SpatialRegularity
 import PoincareConjecture.Proofs.M30.Generalized.SpatialTopology
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem regularAt_of_slice_identity (F : GeneralizedRicciFlowData.{u})
     {s t : ℝ} (ht : t = s)
@@ -39,9 +26,6 @@ theorem regularAt_of_slice_identity (F : GeneralizedRicciFlowData.{u})
   exact Function.bijective_id
 
 namespace Cylinder
-
-
-
 
 theorem exists_of_singleton_family
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

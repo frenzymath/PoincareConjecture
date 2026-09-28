@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CirclePhaseFibers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,12 +18,6 @@ private theorem strict_signs_of_nonneg_zero {h t : ℝ}
       have hhn : h ≠ 0 := fun hh => (ne_of_gt ht) (hzero.mp hh)
       exact lt_of_le_of_ne (hnonneg.mpr ht.le) (Ne.symm hhn)
   · simpa only [not_le] using not_congr hnonneg
-
-
-
-
-
-
 
 theorem exists_phase_representative_signs {E : Type*} [TopologicalSpace E]
     (p : ℝ) [Fact (0 < p)] {B : Set E} {a b eta delta : ℝ}

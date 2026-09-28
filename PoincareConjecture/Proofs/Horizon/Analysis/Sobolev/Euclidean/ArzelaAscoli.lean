@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Convolution
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

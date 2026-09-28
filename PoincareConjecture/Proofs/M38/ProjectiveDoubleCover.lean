@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveDoubleFibers
 import PoincareConjecture.Proofs.M38.CylinderDihedralCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ universe u
 namespace PoincareConjecture.M38
 
 attribute [local instance] cylinderDihedralAction
-
-
 
 theorem exists_projectiveDouble_cylinder_cover
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :

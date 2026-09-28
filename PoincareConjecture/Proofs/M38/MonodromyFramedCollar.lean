@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyLiftedCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M38
 variable (beta theta : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
   {k : ℝ} (hk : 0 < k)
 
-
 noncomputable def monodromyCylinderFrame :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       RoundCylinderSpace RoundCylinderSpace ∞ where
@@ -34,13 +25,11 @@ noncomputable def monodromyCylinderFrame :
   contMDiff_invFun := (theta.symm.contMDiff.comp contMDiff_fst).prodMk
     ((contDiff_id.div_const k).contMDiff.comp contMDiff_snd)
 
-
 noncomputable def monodromyFramedCollar (a : ℝ) (hwidth : 2 * (k * a) ≤ 1) :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace
       (monodromyCarrier.{u} beta).carrier ∞ :=
   (monodromyCylinderFrame theta hk).toPartialDiffeomorph.trans
     (monodromyLiftedCollar beta (k * a) hwidth)
-
 
 theorem monodromyFramedCollar_source (a : ℝ) (hwidth : 2 * (k * a) ≤ 1) :
     (monodromyFramedCollar.{u} beta theta hk a hwidth).source =
@@ -58,19 +47,16 @@ theorem monodromyFramedCollar_source (a : ℝ) (hwidth : 2 * (k * a) ≤ 1) :
     · nlinarith [mul_lt_mul_of_pos_left hlo hk]
     · exact mul_lt_mul_of_pos_left hhi hk
 
-
 theorem monodromyFramedCollar_apply (a : ℝ) (hwidth : 2 * (k * a) ≤ 1)
     (z : RoundCylinderSpace) :
     monodromyFramedCollar.{u} beta theta hk a hwidth z =
       monodromyLiftedCylinder beta (theta z.1, k * z.2) := rfl
-
 
 theorem monodromyFramedCollar_inverse (a : ℝ) (hwidth : 2 * (k * a) ≤ 1)
     (q : (monodromyCarrier.{u} beta).carrier) :
     (monodromyFramedCollar beta theta hk a hwidth).symm q =
       (theta.symm (monodromyStripInverse beta (-(k * a)) (k * a) q.down).1,
         (monodromyStripInverse beta (-(k * a)) (k * a) q.down).2 / k) := rfl
-
 
 theorem monodromyFramedCollar_central (a : ℝ) (hwidth : 2 * (k * a) ≤ 1) :
     comparisonCentralSphere (monodromyFramedCollar.{u} beta theta hk a hwidth) =
@@ -103,12 +89,10 @@ theorem monodromyLiftedCylinder_shift (z : UnitTwoSphere) (t : ℝ) :
     neg_neg, zpow_one, Int.cast_neg, Int.cast_one, Diffeomorph.coe_toEquiv,
     show (1 + t) + -1 = t by ring] using h
 
-
 noncomputable def attachingMonodromy
     (theta0 theta1 g : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞) :
     Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞ :=
   theta0.symm.trans (g.trans theta1)
-
 
 theorem attachingMonodromy_angle
     (theta0 theta1 g : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
@@ -116,7 +100,6 @@ theorem attachingMonodromy_angle
     attachingMonodromy theta0 theta1 g (theta0 z) = theta1 (g z) := by
   change theta1 (g (theta0.symm (theta0 z))) = _
   rw [theta0.symm_apply_apply]
-
 
 theorem attachingMonodromy_negative
     (theta0 theta1 g : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)

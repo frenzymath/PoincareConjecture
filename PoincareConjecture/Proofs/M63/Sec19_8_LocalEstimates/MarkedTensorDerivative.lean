@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.MarkedTensorContraction
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurveTensorLeibniz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -26,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 noncomputable def m63MarkedTensorTerm
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)
     {k : Nat} (T : CovariantTensorEvaluation n M k)
@@ -39,17 +28,12 @@ noncomputable def m63MarkedTensorTerm
   (F.connection t).iteratedCovariantTensorDerivative T A.order (c x t)
     (fun i => if i = A.test then Z x else K (A.jet i))
 
-
 noncomputable def m63MarkedTensorExpression
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)
     {k : Nat} (T : CovariantTensorEvaluation n M k)
     (P : List (Int × MarkedTensorContraction k)) (t : ℝ)
     (Z : (y : ℝ) -> TangentSpace (𝓡 n) (c y t)) (x : ℝ) : ℝ :=
   (P.map (fun q => (q.1 : ℝ) * m63MarkedTensorTerm F c T q.2 t Z x)).sum
-
-
-
-
 
 theorem m63HasDerivAt_markedTensorExpression [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)

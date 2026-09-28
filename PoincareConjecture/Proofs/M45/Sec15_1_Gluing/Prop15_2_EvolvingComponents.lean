@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Comparison
 import PoincareConjecture.Proofs.M36.CylinderAllOrderBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open M36 M44
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem evolvingCylinderInverseWeight_lower {t : ℝ} (ht : t ∈ Set.Icc (-1 : ℝ) 0)
     (i : Fin 3) : (1 / 4 : ℝ) ≤ evolvingCylinderInverseWeight t i := by
   have hp : 0 < 2 * (1 - t) := by linarith [ht.2]
@@ -34,9 +23,6 @@ theorem evolvingCylinderInverseWeight_lower {t : ℝ} (ht : t ∈ Set.Icc (-1 : 
   · exact hb
   · exact hb
   · norm_num [evolvingCylinderInverseWeight]
-
-
-
 
 theorem evolvingTensorNormSquared_controls_component {t : ℝ}
     (ht : t ∈ Set.Icc (-1 : ℝ) 0) {r : ℕ}
@@ -62,9 +48,6 @@ theorem evolvingTensorNormSquared_controls_component {t : ℝ}
       norm_num
     _ ≤ _ := mul_le_mul_of_nonneg_left hbound (by positivity)
 
-
-
-
 theorem evolving_derivative_norm_le_jet {t : ℝ} (ht : t < 1)
     (B : RoundCylinderTwoTensor) {k order : ℕ} (hk : k ≤ order)
     (z : RoundCylinderSpace) :
@@ -80,9 +63,6 @@ theorem evolving_derivative_norm_le_jet {t : ℝ} (ht : t < 1)
   · intro j _
     exact evolvingTensorNormSquared_nonneg ht z.1 z.2 _
   · exact Finset.mem_range.mpr (Nat.lt_succ_of_le hk)
-
-
-
 
 theorem correctedCylinderComponent_bound {epsilon t : ℝ} (hepsilon : 0 ≤ epsilon)
     (ht : t ∈ Set.Icc (-1 : ℝ) 0) {B : RoundCylinderTwoTensor}
@@ -106,9 +86,6 @@ theorem correctedCylinderComponent_bound {epsilon t : ℝ} (hepsilon : 0 ≤ eps
   rw [sq_abs, mul_pow, ← pow_mul, mul_comm (2 + k) 2, pow_mul]
   norm_num only [show (2 : ℝ) ^ 2 = 4 by norm_num]
   exact hs
-
-
-
 
 theorem correctedCylinderComponent_contDiffAt {epsilon t : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn epsilon B)

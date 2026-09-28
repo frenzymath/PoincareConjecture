@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceOrientedTransfer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedScale
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {M : Type v} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 structure SourceEdgeCommonOrientationPacket
     (N P Q : EpsilonNeck g) {γ : ℝ → M} (tN tP : ℝ) : Prop where
@@ -59,8 +48,6 @@ structure SourceEdgeCommonOrientationPacket
       g.edist N.center Q.center ∧
     g.edist N.center Q.center ≤
       ENNReal.ofReal ((1.01 : ℝ) * N.scale * N.epsilon⁻¹)
-
-
 
 theorem exists_source_edge_common_orientation_packet :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ (1 / 10000 : ℝ) ∧

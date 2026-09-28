@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlImage
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalizedBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {m : ℕ} [ChartedSpace (EuclideanSpace ℝ (Fin m)) X] [IsManifold (𝓡 m) ∞ X]
   [T3Space X] {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem normalized_ball_closure_subset_image_recutCarrier
     (h : RiemannianMetric m X) (e : OpenPartialHomeomorph M X)
@@ -62,10 +48,6 @@ theorem normalized_ball_closure_subset_image_recutCarrier
       hcapture hbound _ ho
     exact (mul_le_mul_of_nonneg_left hs.le
       (mul_nonneg (div_nonneg (by norm_num) N.end_neck.scale_pos.le) hA.le)).trans hshort
-
-
-
-
 
 theorem exists_normalized_ball_in_image_recutCarrier [ConnectedSpace X]
     (h : RiemannianMetric m X) (hcomplete : MetricComplete h)

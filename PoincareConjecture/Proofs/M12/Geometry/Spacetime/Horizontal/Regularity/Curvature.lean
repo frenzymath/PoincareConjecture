@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +34,6 @@ theorem restrictHorizontalSection_leafwise
     (rawLeafwiseCovariantDerivative D W x.val (V x.val)) = _
   rw [leafwise_eq_on_slice D W x.val x.property]
   exact (S t).tangentEquiv x |>.symm_apply_apply _
-
 
 theorem horizontalRiemann_eq_leafwise_commutator
     (hMetric : M12MetricPredecessors.{u} n)

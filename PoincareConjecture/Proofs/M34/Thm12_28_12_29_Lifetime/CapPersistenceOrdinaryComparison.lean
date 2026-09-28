@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapOrdinaryEmbeddin
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCompactMetricComparison
 import PoincareConjecture.Proofs.M34.Standard.QuadraticTangentComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,8 +25,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem capPersistence_eventually_ordinary_tangent_comparison
     (p : ℕ → (G).point) (hp : ∀ k, 0 < (G).scalar (p k))

@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.MiddleFrontier
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicFiniteChain
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem N1b_initial_isSeparating_of_forward_chain :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

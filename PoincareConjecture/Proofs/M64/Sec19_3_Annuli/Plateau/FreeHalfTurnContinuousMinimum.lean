@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseHalfTurnMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseContinuity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,10 +21,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "T" => m64AnnulusHalfTurn
-
-
-
-
 
 theorem auxiliaryCircle_free_phase_halfTurn_continuous_minimum
     (P : M62.CircleProductData F circumference)

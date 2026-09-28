@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.LocalJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65FamilyJets_on_delayedCell (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (hlt : circumference < 1)
@@ -51,9 +41,6 @@ theorem m65FamilyJets_on_delayedCell (C : M63FamilyConclusion G Gamma zeta)
     hwindow hlength henergy hscale t hlocal i x
   exact hjet.trans (div_le_div_of_nonneg_left (C.derivative_estimates.constant_nonnegative i)
     (pow_pos hstep _) (pow_le_pow_left₀ hstep.le hsep.le _))
-
-
-
 
 theorem m65FamilyJets_on_enlargedDelayedCell (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (hlt : circumference < 1)

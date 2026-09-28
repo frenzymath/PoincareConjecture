@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalCapCertificate
 import PoincareConjecture.Proofs.M47.LimitCanonicalAlternativeCases
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterv
     BorelSpace G.limit.carrier.carrier := G.limit.carrier.borelSpace
 private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterval ⊤)) :
     T3Space G.limit.carrier.carrier := G.limit.carrier.t3Space
-
-
 
 theorem limitCanonical_eventually_cap_control
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

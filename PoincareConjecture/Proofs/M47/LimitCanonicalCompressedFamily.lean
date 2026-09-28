@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckOrdinaryFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ variable {J : Set ℝ} (L : BlowupLimitFlow.{u} J)
 private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
 
 theorem limitCanonical_exists_compressed_limit_family
     (N : EpsilonNeck (L.flow.metric 0)) (hcenter : N.center = L.base)

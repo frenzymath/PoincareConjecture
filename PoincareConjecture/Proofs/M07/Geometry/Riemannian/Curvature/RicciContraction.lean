@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Derivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MetricTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

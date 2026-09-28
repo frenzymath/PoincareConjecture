@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.InstalledSecondSlabHierarchy
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ChartwiseRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -192,9 +183,6 @@ theorem exists_hamiltonZero_disjoint_slab_installation
     · exact (H false).prop t x (fun h => hx (interior_mono (hNR false) h))
     · exact (H true).prop t x (fun h => hx (interior_mono (hNR true) h))
 
-
-
-
 structure HamiltonZeroThirdPhaseComponents {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
     (psi : C(H0, H0)) (a b : ℝ) : Prop where
@@ -343,9 +331,6 @@ theorem HamiltonZeroTerminalThirdPhaseData.congr
   · intro t ht
     simpa only [hsets] using h.disks t ht
 
-
-
-
 def HamiltonZeroSupportedThirdRealization {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
     (phi : C(H0, H0)) (R : Set X0) (chi : C(H0, H0)) (a b : ℝ) : Prop :=
@@ -402,9 +387,6 @@ theorem exists_hamiltonZero_simultaneous_terminal_second_slab_hierarchies
     (terminal s).congr (geometry.slabs s).1.closed (heq s),
     psi s, A s, hA s, hAN s, hfixed s, hfirst s, hsecond s, hPL s,
     Hbase s, Hidentity s, HH s, terminal s, heq s⟩
-
-
-
 
 theorem exists_hamiltonZero_source_simultaneous_terminal_hierarchies
     {E ι κ : Type*} [TopologicalSpace E] [Zero E]

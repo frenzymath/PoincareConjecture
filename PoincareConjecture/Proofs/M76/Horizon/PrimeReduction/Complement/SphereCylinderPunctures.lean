@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -65,8 +55,6 @@ private theorem boundary_sdiff_cap (b : Bool) :
         · intro h
           have := hx.2.symm.trans h.1.2
           norm_num at this
-
-
 
 theorem exists_marked_punctured_sphere_model :
     ∃ (A r : Bool → Set V4)

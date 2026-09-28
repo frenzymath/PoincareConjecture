@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_finite_neighborhood_subset_normed {S U : Set E}
     (hS : IsCompact S) (hU : IsOpen U) (hSU : S ⊆ U) :
@@ -45,9 +34,6 @@ theorem exists_finite_neighborhood_subset_normed {S U : Set E}
     change e.symm z = y at he
     rwa [← he, e.apply_symm_apply]
 
-
-
-
 theorem exists_finite_refinement_of_space_subset (J K : SimplicialComplex ℝ E)
     (hJ : J.faces.Finite) (hK : K.faces.Finite) (hJK : J.space ⊆ K.space) :
     ∃ R : SimplicialComplex ℝ E, R.faces.Finite ∧ R.IsSubdivision J ∧
@@ -67,10 +53,6 @@ theorem exists_finite_refinement_of_space_subset (J K : SimplicialComplex ℝ E)
   refine ⟨R, hR, hRJ, fun s hs => ?_⟩
   obtain ⟨i, hi⟩ := href s hs
   exact ⟨i.val, i.property, hi⟩
-
-
-
-
 
 theorem AffineOnFaces.exists_finite_neighborhood {K : SimplicialComplex ℝ E}
     {f : E → F} (hf : K.AffineOnFaces f) (hK : K.faces.Finite)

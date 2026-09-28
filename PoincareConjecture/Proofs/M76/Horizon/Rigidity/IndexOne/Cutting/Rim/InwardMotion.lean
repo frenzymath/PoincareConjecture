@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.SignedCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
@@ -46,8 +38,6 @@ private theorem inwardHeight_one_pos {u : ℝ} (hu : 0 ≤ u) :
   · subst u
     norm_num [inwardHeight]
   · exact h.trans_le (le_inwardHeight 1 u)
-
-
 
 theorem exists_inward_motion_of_open_bicollar
     {X : Type*} [TopologicalSpace X] [T2Space X] {S U : Set X}

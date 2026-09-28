@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCapBirthBridge
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminal_cap_branch_positive_birth
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
@@ -97,8 +87,6 @@ private theorem zero_contact_of_based
   intro hn
   obtain ⟨i, z, ⟨y, rfl⟩, hz⟩ := htarget
   exact ⟨i, y.1, y.2, hz⟩
-
-
 
 theorem terminal_cap_branch_zero_birth
     (S : RepairedControlledSchedulesData.{u}) {Asearch : ℝ} (hAsearch : 0 < Asearch) :

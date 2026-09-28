@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_CapVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,10 +9,7 @@ universe u
 
 namespace PoincareConjecture.Proofs.M47
 
-
-
 noncomputable def seedBallStepLoss (A : ℝ) : ℝ := (Real.cosh A)⁻¹ ^ 2 / 8
-
 
 theorem seedBallStepLoss_bounds (A : ℝ) :
     0 < seedBallStepLoss A ∧ seedBallStepLoss A ≤ 1 := by
@@ -38,8 +25,6 @@ theorem seedBallStepLoss_bounds (A : ℝ) :
 variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem seed_ball_volume_step (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (x y : M) {A r k : ℝ} (hA : 0 < A) (hr : 0 < r) (hk : 0 < k)
@@ -67,8 +52,6 @@ theorem seed_ball_volume_step (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
   congr 1
   ring
 
-
-
 theorem seed_ball_volume_chain (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (centers : ℕ → M) (N : ℕ) {A r k : ℝ}
     (hA : 0 < A) (hr : 0 < r) (hk : 0 < k)
@@ -91,8 +74,6 @@ theorem seed_ball_volume_chain (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
         (hstep N (Nat.lt_succ_self N)) (hcompact N (Nat.lt_succ_self N))
         (hcurv N (Nat.lt_succ_self N)) hbefore
       simpa only [pow_succ', mul_assoc] using hnext
-
-
 
 theorem seed_ball_volume_chain_of_le (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (centers : ℕ → M) {N K : ℕ} (hNK : N ≤ K)

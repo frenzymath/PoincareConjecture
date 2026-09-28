@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

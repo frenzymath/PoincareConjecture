@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M39.Prop15_12_ExtensionData
 import PoincareConjecture.Proofs.M39.Prop15_12_MapConstruction
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -75,10 +65,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   (I : RepairedComparisonMapInput D T hT)
 
 local notation "E" => D.flow.event T hT
-
-
-
-
 
 theorem comparisonExtension_of_branches (B : ComparisonBranches I) :
     Nonempty (ComparisonExtension I) := by

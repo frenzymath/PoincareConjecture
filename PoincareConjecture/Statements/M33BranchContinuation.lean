@@ -5,53 +5,6 @@ import PoincareConjecture.Statements.Ch04.Pinching
 import PoincareConjecture.Statements.M31SingularRegularLimit
 import PoincareConjecture.Statements.M32HornSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -59,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M33Predecessors : Prop where
   local_flow : ∀ {M : Type u} [TopologicalSpace M]

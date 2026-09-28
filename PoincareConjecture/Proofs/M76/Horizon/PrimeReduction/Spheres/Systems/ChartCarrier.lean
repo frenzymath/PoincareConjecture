@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalSphereChartCarrier
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.CommonSubcomplexUnion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_finite_sphere_system_chart_carrier
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

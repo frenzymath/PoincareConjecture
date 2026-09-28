@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Relative.Extraction
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

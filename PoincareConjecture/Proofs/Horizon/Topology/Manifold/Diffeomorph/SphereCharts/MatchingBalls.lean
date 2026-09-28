@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.RadialTransition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.MatchingBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.SphereCharts
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem nonempty_diffeomorph_of_matching_balls
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -81,8 +69,6 @@ theorem nonempty_diffeomorph_of_matching_balls
     (radialSphereBallChart_contMDiff v r).1 (oppositeRadialSphereBallChart_contMDiff v r).1
     (radialSphereBallChart_contMDiff v r).2 (oppositeRadialSphereBallChart_contMDiff v r).2 htrans
   exact ⟨d⟩
-
-
 
 theorem nonempty_diffeomorph_of_matching_balls_in_open
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M]

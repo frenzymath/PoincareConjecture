@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Covering
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,9 +8,6 @@ open scoped ENNReal Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_finset_cover_of_local_volume_bounds
     {n : ℕ} {M : Type u} [TopologicalSpace M]

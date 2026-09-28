@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonDiagonalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.FrontierPieceMembership
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem boundary_membership_split {m n : ℕ} (u : Fin (m + 2) → ℝ × ℝ)
     (v : Fin (n + 2) → ℝ × ℝ)

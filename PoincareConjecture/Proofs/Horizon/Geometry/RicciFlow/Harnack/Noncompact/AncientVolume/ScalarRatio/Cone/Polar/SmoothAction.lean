@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.Orbits
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 namespace Poincare.AncientVolume.ScalarRatio.UnitSliceRadialChartData
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
-
-
 
 theorem exists_uniform_radialOrbit_interval (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) :
@@ -69,9 +60,6 @@ theorem exists_uniform_radialOrbit_interval (d : UnitSliceRadialChartData hcompa
   rw [d.ambientChart.right_inv (htarget s hs), d.ambientChart.right_inv (htarget t ht),
     dist_asymptoticConeDilation_same_point, Real.coe_toNNReal _ (hpos s hs),
     Real.coe_toNNReal _ (hpos t ht), add_sub_add_left_eq_sub, mul_comm]
-
-
-
 
 theorem contDiffAt_radialOrbit_joint_zero (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) :
@@ -126,8 +114,6 @@ theorem contDiffAt_radialOrbit_joint_zero (d : UnitSliceRadialChartData hcompari
     (by norm_num : (0 : ℝ) ∈ Ioo (-1 : ℝ) 2)
     (by norm_num : (1 : ℝ) ∈ Ioo (-1 : ℝ) 2) hpnt hv
   simpa only [Γ, mul_one] using contMDiffAt_iff_contDiffAt.mp hend
-
-
 
 theorem fderiv_radialOrbit_joint_zero (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source)

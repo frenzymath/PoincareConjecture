@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +7,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem intrinsic_collar_orbit_sq_tendsto_two
     (g : ℕ → RiemannianMetric 3 StandardCapSpace)

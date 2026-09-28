@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.Mathlib.NormalizedEdgeCoordi
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Analysis.Convex.Segment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

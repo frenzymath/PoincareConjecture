@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalExteriorPLDomains
 import PoincareConjecture.Proofs.M76.Wall.OriginalExteriorFrontierImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -20,10 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
-
-
 
 theorem PLDomain.original_binary_exterior_domains
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

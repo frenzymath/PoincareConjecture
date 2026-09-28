@@ -11,9 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m73UnitCircleHomeomorph : Circle ≃ₜ UnitCircle where
   toFun z := ⟨Complex.orthonormalBasisOneI.repr z.1,
     mem_sphere_zero_iff_norm.mpr (by
@@ -36,8 +33,6 @@ noncomputable def m73UnitCircleHomeomorph : Circle ≃ₜ UnitCircle where
         change ‖Complex.orthonormalBasisOneI.repr.symm z.1‖ = 1
         rw [LinearIsometryEquiv.norm_map]
         exact mem_sphere_zero_iff_norm.mp z.property))
-
-
 
 theorem m73UnitCircle_covering :
     IsCoveringMap (m73UnitCircleHomeomorph ∘ Circle.exp) := by
@@ -117,10 +112,6 @@ private theorem SurgerySphereBundle.projection_isOpenMap
   change B.projection x ∈ U
   rw [hxy]
   exact hyU
-
-
-
-
 
 theorem SurgerySphereBundle.not_simplyConnectedSpace
     {C : GeneralizedSliceCarrier.{u}} (B : SurgerySphereBundle C)

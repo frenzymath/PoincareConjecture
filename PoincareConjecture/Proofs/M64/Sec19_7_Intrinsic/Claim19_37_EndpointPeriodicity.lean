@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalPeriodicity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MeasurableContact
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +9,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_normal_endpoint_periodic
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -53,9 +40,6 @@ theorem m64Intrinsic_normal_endpoint_periodic
     (convex_Icc (0 : ℝ) 1).isPreconnected (t₀ := 0) (by simp)
     (sigma 0) (by simp) hzero hvel
   simpa only [hendpoint, hlast] using (heq 1 (by simp)).self_of_nhds
-
-
-
 
 theorem m64Intrinsic_first_contact_height_periodic
     {u : ℝ × ℝ → AnnulusCoordinates} {height : ℝ → ℝ} {R : ℝ}

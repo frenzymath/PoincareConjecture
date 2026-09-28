@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,8 +23,6 @@ theorem edgeComponentComplex_connectedComponentIn
       (hD' (mem_connectedComponentIn (hsub hx))) hx
   subst D'
   exact hD'.antisymm ((K.edgeComponentComplex_isPathConnected D).isConnected.isPreconnected.subset_connectedComponentIn hx hsub)
-
-
 
 theorem exists_source_component_of_model
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) {S : Set X}

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Spheres.Mi
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Compression.MarkedCorners
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.MarkedCoverSideInjection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -137,4 +130,3 @@ theorem hamiltonZero_third_slabs_pi1_injective
   | true => exact hinjR.2
 
 end PoincareConjecture.M76
-

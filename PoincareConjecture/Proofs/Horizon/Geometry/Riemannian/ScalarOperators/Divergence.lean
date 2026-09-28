@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.Horizon.Analysis.Matrix.Determinant
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Analysis.InnerProductSpace.Trace
-
-
-
-
-
-
-

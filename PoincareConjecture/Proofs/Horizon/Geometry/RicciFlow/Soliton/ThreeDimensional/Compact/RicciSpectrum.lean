@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.PinchingAlgebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_positive_ricci_spectrum (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
@@ -100,8 +91,6 @@ theorem exists_positive_ricci_spectrum (D : LeviCivitaData g)
     rw [hcubic] at h
     simpa only [C, b, Fin.sum_univ_three] using h
 
-
-
 theorem ricciNormSq_eq_scalarSq_div_three_of_reaction_nonneg
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (hRic : ∀ v : TangentSpace (𝓡 3) x, v ≠ 0 → 0 < D.ricci x v v)
@@ -147,8 +136,6 @@ theorem scalarSq_div_three_le_ricciNormSq_of_ricci_pos
   obtain ⟨a, b, c, _, _, _, hR, hS, _⟩ := D.exists_positive_ricci_spectrum hD x hRic
   rw [hR, hS]
   exact sub_nonneg.mp (Poincare.ThreeDimensionalRicciPinching.traceFreeNormSq_nonneg a b c)
-
-
 
 theorem ricci_eq_scalar_div_three_mul_inner_of_norm_eq
     (D : LeviCivitaData g) (x : M)

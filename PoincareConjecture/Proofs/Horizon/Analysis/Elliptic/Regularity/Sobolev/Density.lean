@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.FrechetKolmo
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Rellich
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Mollifier
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function
@@ -360,7 +353,6 @@ theorem hasWeakPartialDeriv_indicator_chosenWeakPartial_univ
     _ = -∫ x in Ω, g x * (χ x * ψ x) := hIBP_Ω
     _ = -∫ x in Ω, g x * ψ x := by rw [hRHS_eq]
     _ = -∫ x : E, Ω.indicator g x * ψ x := by rw [hRHS_E]
-
 
 omit [NeZero d] in
 theorem MemWkp.extend_zero {k : ℕ} {p : ℝ≥0∞} (hp : 1 ≤ p) {Ω V : Set E} (hΩ : IsOpen Ω) (hV : IsOpen V) (hΩV : Ω ⊆ V)

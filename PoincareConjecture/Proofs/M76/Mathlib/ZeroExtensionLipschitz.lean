@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteClosedCoverLipschitz
 import Mathlib.Topology.Algebra.Indicator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped NNReal
-
-
-
-
 
 theorem LipschitzOnWith.indicator_of_eq_zero_frontier {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedAddCommGroup F]

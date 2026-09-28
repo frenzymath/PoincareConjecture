@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.HilbertEigenbasisNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralShiftedNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -121,7 +113,6 @@ theorem sqrt_eigenparameter_mul_shifted (J : V →L[ℝ] H) (hc : IsCompactOpera
   rw [hproduct, Real.sqrt_one]
 
 open SpectralHeatNative (ForcingSpace)
-
 
 def formResponsePath [SeparableSpace H]
     (J : V →L[ℝ] H) (hc : IsCompactOperator J) (hd : DenseRange J)

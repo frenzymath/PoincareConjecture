@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M47
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem standard_initial_neck_birth_native_upper
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

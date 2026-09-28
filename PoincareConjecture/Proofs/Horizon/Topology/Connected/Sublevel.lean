@@ -2,13 +2,6 @@ import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Order.Basic
 import Mathlib.Topology.MetricSpace.ProperSpace.Real
 
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology
 set_option autoImplicit false
@@ -17,8 +10,6 @@ set_option backward.isDefEq.respectTransparency false
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X] [T1Space X] [LocallyConnectedSpace X]
-
-
 
 theorem mem_interior_sublevel_component_or_eq_singleton_of_strict_extremum
     {f : X → ℝ} {O : Set X} (hO : IsOpen O) (hf : ContinuousOn f O)

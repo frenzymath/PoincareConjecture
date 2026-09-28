@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +16,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
 theorem scalarCoverMap_surjective_of_ne_zero {p : Plane} (hp : p ≠ 0) :
     ∃ z : Cover, 0 < z.1 ∧ scalarCoverMap z = p := by
   have hp0 : 0 < ‖p‖ := norm_pos_iff.mpr hp
@@ -39,10 +24,6 @@ theorem scalarCoverMap_surjective_of_ne_zero {p : Plane} (hp : p ≠ 0) :
   obtain ⟨t, -, ht⟩ := Proofs.M58.exists_angularPoint ⟨‖p‖⁻¹ • p, hunit⟩
   refine ⟨(‖p‖, t / (2 * Real.pi)), hp0, ?_⟩
   rw [scalarCoverMap_polar_relation, ht, smul_inv_smul₀ hp0.ne']
-
-
-
-
 
 theorem scalarCoverMap_fiber_of_pos {z w : Cover} (hz : 0 < z.1) (hw : 0 < w.1)
     (heq : scalarCoverMap z = scalarCoverMap w) :
@@ -65,10 +46,6 @@ theorem scalarCoverMap_fiber_of_pos {z w : Cover} (hz : 0 < z.1) (hw : 0 < w.1)
   apply mul_left_cancel₀ (mul_ne_zero (by norm_num : (2 : ℝ) ≠ 0) Real.pi_ne_zero)
   linear_combination hk
 
-
-
-
-
 theorem scalarCoverMap_exists_smooth_localInverse {z : Cover} (hz : z.1 ≠ 0) :
     ∃ q : Plane → Cover, ContDiffAt ℝ ∞ q (scalarCoverMap z) ∧
       q (scalarCoverMap z) = z ∧ ∀ᶠ p in 𝓝 (scalarCoverMap z), scalarCoverMap (q p) = p := by
@@ -80,10 +57,6 @@ theorem scalarCoverMap_exists_smooth_localInverse {z : Cover} (hz : z.1 ≠ 0) :
   let q := hC.localInverse hD (by simp)
   refine ⟨q, hC.to_localInverse hD (by simp), hC.localInverse_apply_image hD (by simp), ?_⟩
   exact (hC.hasStrictFDerivAt' hD (by simp)).eventually_right_inverse
-
-
-
-
 
 theorem scalar_exists_periodic_cover_descent {Y : Type*} (f : Cover → Y)
     (hperiod : ∀ r t : ℝ, f (r, t + 1) = f (r, t)) :
@@ -111,10 +84,6 @@ theorem scalar_exists_periodic_cover_descent {Y : Type*} (f : Cover → Y)
       simpa only [add_zero, mul_one, Prod.eta] using hh.symm
     _ = f z := congrArg f hk.symm
 
-
-
-
-
 theorem scalarCoverDescent_local_germ {Y : Type*} {f : Cover → Y} {F : Plane → Y}
     (hdesc : ∀ z : Cover, 0 < z.1 → F (scalarCoverMap z) = f z)
     {z : Cover} (hz : 0 < z.1) :
@@ -128,10 +97,6 @@ theorem scalarCoverDescent_local_germ {Y : Type*} {f : Cover → Y} {F : Plane �
   filter_upwards [hright, hpositive] with p hp hpos
   exact (congrArg F hp.symm).trans (hdesc _ hpos)
 
-
-
-
-
 theorem scalarCoverDescent_continuousOn {Y : Type*} [TopologicalSpace Y]
     {f : Cover → Y} {F : Plane → Y} (hf : Continuous f)
     (hdesc : ∀ z : Cover, 0 < z.1 → F (scalarCoverMap z) = f z) :
@@ -140,10 +105,6 @@ theorem scalarCoverDescent_continuousOn {Y : Type*} [TopologicalSpace Y]
   obtain ⟨z, hz, rfl⟩ := scalarCoverMap_surjective_of_ne_zero hp
   obtain ⟨q, hq, -, heq⟩ := scalarCoverDescent_local_germ hdesc hz
   exact ((hf.continuousAt.comp hq.continuousAt).congr_of_eventuallyEq heq).continuousWithinAt
-
-
-
-
 
 theorem scalarCoverDescent_locallyLipschitzOn {Y : Type*} [PseudoEMetricSpace Y]
     {f : Cover → Y} {F : Plane → Y} (hf : LocallyLipschitz f)
@@ -165,10 +126,6 @@ theorem scalarCoverDescent_locallyLipschitzOn {Y : Type*} [PseudoEMetricSpace Y]
   have hyvalue : F y = (f ∘ q) y := hy.2
   rw [hxvalue, hyvalue]
   exact hcomp hx hy
-
-
-
-
 
 theorem scalarCoverDescent_contMDiffAt
     {n : ℕ} {M : Type*} [TopologicalSpace M]

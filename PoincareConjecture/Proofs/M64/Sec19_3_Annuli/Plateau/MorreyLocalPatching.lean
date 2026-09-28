@@ -1,17 +1,6 @@
 import Mathlib.MeasureTheory.Measure.OpenPos
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,9 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Morrey_patch_representatives
     {X Y : Type*} [TopologicalSpace X] [SecondCountableTopology X]

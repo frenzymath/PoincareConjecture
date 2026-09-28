@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarAnnulusRegularity
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarForwardGeometry
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarForwardJacobian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Annulus_polar_area_le
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

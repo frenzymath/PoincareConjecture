@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M48.RegularTimeAnalytics
 import PoincareConjecture.Proofs.M48.RegularReference
 import PoincareConjecture.Proofs.M48.LimitCalibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

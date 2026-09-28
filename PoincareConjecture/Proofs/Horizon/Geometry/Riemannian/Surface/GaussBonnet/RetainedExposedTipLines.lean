@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedExposedTipGerms
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.AffineRaySectors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -17,8 +10,6 @@ open scoped Topology Manifold ContDiff Bundle
 open Poincare.Topology.Plane.Meshes Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem two_positive_rays_eq_affine_line_of_not_independent
     (a : Plane) (d : Bool → Plane) (l : Plane →ᵃ[ℝ] ℝ)
@@ -68,7 +59,6 @@ theorem chordSupportingLine_outer_tips (i j : Bool) :
   · simpa only [mem_ofPred_eq, B.sector_first_tip_eq] using h₁
   · simpa only [mem_ofPred_eq, B.sector_second_tip_eq] using h₂
 
-
 theorem first_outer_rays_eq_line_of_not_independent (i : Bool) (v : S)
     (hchart : ∀ j, x (i, j) = v)
     (hind : ¬ LinearIndependent ℝ
@@ -92,7 +82,6 @@ theorem first_outer_rays_eq_line_of_not_independent (i : Bool) (v : S)
     exact sub_ne_zero.mpr (Ne.symm h)
   · change l.linear (F (B.secondOuterTip false) -ᵥ F (B.firstOuterTip i)) = 0
     rw [l.linearMap_vsub, vsub_eq_sub, he.1, he.2, sub_self]
-
 
 theorem second_outer_rays_eq_line_of_not_independent (i : Bool) (v : S)
     (hchart : ∀ j, x (j, i) = v)
@@ -128,7 +117,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem exists_core_halfspace_of_contact_line_frontier
     (R : T.decomposition.regions) {z : Plane}
     (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l)
@@ -154,8 +142,6 @@ theorem exists_core_halfspace_of_contact_line_frontier
       change (T.refined.mesh R).toPlaneComplex.support w = (0 ≤ -l w)
       change (T.refined.mesh R).toPlaneComplex.support w = (l w ≤ 0) at hw
       simpa only [neg_nonneg] using hw
-
-
 
 theorem exists_core_halfspace_at_collinear_first_outer_tip
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}
@@ -190,8 +176,6 @@ theorem exists_core_halfspace_at_collinear_first_outer_tip
   exact T.decomposition.chordSupportingLine_mem_capCoreContactLines T.caps T.region
     (hregion (i, false) (((T.caps p).firstOuterTip_mem_carrier_iff i (i, false)).mpr rfl))
 
-
-
 theorem exists_core_halfspace_at_collinear_second_outer_tip
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}
     (hz : z ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -225,8 +209,6 @@ theorem exists_core_halfspace_at_collinear_second_outer_tip
   exact T.decomposition.chordSupportingLine_mem_capCoreContactLines T.caps T.region
     (hregion (false, i) (((T.caps p).secondOuterTip_mem_carrier_iff i (false, i)).mpr rfl))
 
-
-
 theorem core_contribution_at_collinear_first_outer_tip
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)
     (R : T.decomposition.regions) (i : Bool)
@@ -248,8 +230,6 @@ theorem core_contribution_at_collinear_first_outer_tip
     T.exists_core_halfspace_at_collinear_first_outer_tip p R i hz
       (hzq.trans htip) hregion hband hind
   exact T.core_contribution_at_straight_canonical_vertex g R q hzq hz l hl hlines hlz hlocal
-
-
 
 theorem core_contribution_at_collinear_second_outer_tip
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)

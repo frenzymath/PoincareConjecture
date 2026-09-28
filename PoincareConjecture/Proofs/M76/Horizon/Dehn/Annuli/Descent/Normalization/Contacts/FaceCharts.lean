@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Contacts.Carriers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Contacts.TriangleCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -29,8 +20,6 @@ variable {U V M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
 namespace OriginalRelativeNormalization
 
 variable (D : OriginalRelativeNormalization step K j R boundary)
-
-
 
 theorem exists_projected_face_crossing
     (hcard : ∀ a ∈ K.faces, a.card ≤ 3)

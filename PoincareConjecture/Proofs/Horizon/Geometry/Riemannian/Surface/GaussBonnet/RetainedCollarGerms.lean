@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapGluing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (T : RetainedCoordinateTriangulation (M := S))
 
 omit [T2Space S] in
-
 
 theorem band_unique_away_from_endpoint_cuts
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -94,7 +86,6 @@ theorem last_band_rightCut_eq_chordSegment (p : T.decomposition.IncidentEdgeInde
 
 omit [T2Space S] in
 
-
 theorem not_mem_region_caps_of_band_away_from_endpoint_cuts
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     {q : S} (hq : q ∈ (T.bands p i).faces.carrier)
@@ -113,8 +104,6 @@ theorem not_mem_region_caps_of_band_away_from_endpoint_cuts
     · subst i
       exact hr (T.last_band_rightCut_eq_chordSegment p ▸ h)
     · exact h
-
-
 
 theorem collar_germ_of_band_away_from_endpoint_cuts
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -152,8 +141,6 @@ theorem collar_germ_of_band_away_from_endpoint_cuts
     exact he' ▸ ha
   · intro h
     exact mem_iUnion.mpr ⟨⟨⟨p, i⟩, rfl⟩, h⟩
-
-
 
 theorem coordinate_collar_germ_of_band_away_from_endpoint_cuts
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -200,8 +187,6 @@ theorem strip_point_not_mem_endpoint_cuts
     have heq := (((T.graphs p).piece i).strip ((T.chains p).graphCuts i)).injOn hws hts he
     exact ht.2.ne (congrArg Prod.fst heq).symm
 
-
-
 theorem collar_germ_at_interior_strip_point
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     {t z : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -215,7 +200,6 @@ theorem collar_germ_at_interior_strip_point
   exact mem_image_of_mem _ ⟨⟨ht.1.le, ht.2.le⟩, hz⟩
 
 omit [T2Space S] in
-
 
 theorem band_positive_height_mem_region
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)

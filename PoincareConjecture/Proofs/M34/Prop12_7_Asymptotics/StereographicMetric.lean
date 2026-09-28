@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,34 +9,22 @@ namespace PoincareConjecture.M34
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def stereographicCylinderDenominator (x : E3) : ℝ := 4 + x 0 ^ 2 + x 1 ^ 2
-
-
 
 noncomputable def stereographicCylinderDensity (x : E3) : ℝ :=
   16 / stereographicCylinderDenominator x ^ 2
-
-
 
 noncomputable def stereographicCylinderAngular : E3 →L[ℝ] E3 →L[ℝ] ℝ :=
   (EuclideanSpace.proj 0).smulRight (EuclideanSpace.proj 0) +
     (EuclideanSpace.proj 1).smulRight (EuclideanSpace.proj 1)
 
-
-
 noncomputable def stereographicCylinderAxial : E3 →L[ℝ] E3 →L[ℝ] ℝ :=
   (EuclideanSpace.proj 2).smulRight (EuclideanSpace.proj 2)
-
-
 
 noncomputable def stereographicCylinderCoefficients (b : ℝ) (x : E3) :
     E3 →L[ℝ] E3 →L[ℝ] ℝ :=
   (b * stereographicCylinderDensity x) • stereographicCylinderAngular +
     stereographicCylinderAxial
-
-
 
 theorem stereographicCylinderCoefficients_apply (b : ℝ) (x u v : E3) :
     stereographicCylinderCoefficients b x u v =
@@ -55,19 +34,13 @@ theorem stereographicCylinderCoefficients_apply (b : ℝ) (x u v : E3) :
     ContinuousLinearMap.smulRight_apply, smul_eq_mul]
   rfl
 
-
-
 theorem stereographicCylinderDenominator_pos (x : E3) :
     0 < stereographicCylinderDenominator x := by
   dsimp only [stereographicCylinderDenominator]
   positivity
 
-
-
 theorem stereographicCylinderDensity_pos (x : E3) : 0 < stereographicCylinderDensity x :=
   div_pos (by norm_num) (sq_pos_of_pos (stereographicCylinderDenominator_pos x))
-
-
 
 theorem stereographicCylinderDensity_contDiff : ContDiff ℝ ∞ stereographicCylinderDensity := by
   have hd : ContDiff ℝ ∞ stereographicCylinderDenominator := by
@@ -77,17 +50,12 @@ theorem stereographicCylinderDensity_contDiff : ContDiff ℝ ∞ stereographicCy
   exact contDiff_const.div (hd.pow 2) (fun x =>
     (sq_pos_of_pos (stereographicCylinderDenominator_pos x)).ne')
 
-
-
-
 theorem stereographicCylinderCoefficients_contDiff :
     ContDiff ℝ ∞ (fun z : ℝ × E3 => stereographicCylinderCoefficients z.1 z.2) := by
   have : IsBoundedSMul ℝ (E3 →L[ℝ] E3 →L[ℝ] ℝ) :=
     NormedSpace.toIsBoundedSMul (𝕜 := ℝ) (E := E3 →L[ℝ] E3 →L[ℝ] ℝ)
   exact (contDiff_fst.mul (stereographicCylinderDensity_contDiff.comp contDiff_snd)).smul
     contDiff_const |>.add contDiff_const
-
-
 
 theorem stereographicCylinderCoefficients_pos {b : ℝ} (hb : 0 < b)
     (x u : E3) (hu : u ≠ 0) : 0 < stereographicCylinderCoefficients b x u u := by
@@ -106,8 +74,6 @@ theorem stereographicCylinderCoefficients_pos {b : ℝ} (hb : 0 < b)
       exact add_pos_of_pos_of_nonneg (mul_pos hc hp) (mul_self_nonneg _)
   · have hp : 0 < u 0 * u 0 + u 1 * u 1 := by nlinarith [sq_pos_of_ne_zero h0]
     exact add_pos_of_pos_of_nonneg (mul_pos hc hp) (mul_self_nonneg _)
-
-
 
 noncomputable def stereographicCylinderMetric (b : ℝ) (hb : 0 < b) : RiemannianMetric 3 E3 :=
   RiemannianMetric.ofEuclideanCoefficients (stereographicCylinderCoefficients b)

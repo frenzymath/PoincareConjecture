@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarClosedCylinder
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarClosedBoundaryLifts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 local notation "ClosedStrip" => Set.preimage (fun p : Plane => p 1) (Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem exists_lipschitz_free_modulus_conformal_cylinder (g : RiemannianMetric 2 Plane) :
     ∃ r : ℝ, 0 < r ∧ ∃ (K : ℝ≥0) (F : Plane → Plane)

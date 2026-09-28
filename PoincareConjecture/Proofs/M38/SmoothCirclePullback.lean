@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.CirclePullback
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Covering.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def circlePullbackCarrier (Q : GeneralizedSliceCarrier.{u})
     (π : Q.carrier → UnitCircle) (hπ : ContMDiff (𝓡 3) (𝓡 1) ∞ π) :
@@ -45,11 +35,9 @@ noncomputable def circlePullbackCarrier (Q : GeneralizedSliceCarrier.{u})
     t3Space := inferInstanceAs (T3Space {p : Q.carrier × ℝ // π p.1 = unitCircleExp p.2})
     secondCountable := inferInstance }
 
-
 def circlePullbackProjection (Q : GeneralizedSliceCarrier.{u})
     (π : Q.carrier → UnitCircle) (hπ : ContMDiff (𝓡 3) (𝓡 1) ∞ π) :
     (circlePullbackCarrier Q π hπ).carrier → Q.carrier := CirclePullback.projection π
-
 
 def circlePullbackHeight (Q : GeneralizedSliceCarrier.{u})
     (π : Q.carrier → UnitCircle) (hπ : ContMDiff (𝓡 3) (𝓡 1) ∞ π) :
@@ -58,13 +46,11 @@ def circlePullbackHeight (Q : GeneralizedSliceCarrier.{u})
 variable (Q : GeneralizedSliceCarrier.{u})
   (π : Q.carrier → UnitCircle) (hπ : ContMDiff (𝓡 3) (𝓡 1) ∞ π)
 
-
 theorem circlePullback_projection_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞
       (circlePullbackProjection Q π hπ) :=
   Poincare.Manifold.LocalHomeomorphLift.isLocalDiffeomorph
     (CirclePullback.projection_isLocalHomeomorph π hπ.continuous) (𝓡 3) ∞
-
 
 theorem circlePullback_height_smooth :
     ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞

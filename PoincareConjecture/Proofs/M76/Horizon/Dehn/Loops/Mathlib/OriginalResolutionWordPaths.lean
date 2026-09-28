@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalExterior
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.TubeArmOrientation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_original_resolution_word_paths
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

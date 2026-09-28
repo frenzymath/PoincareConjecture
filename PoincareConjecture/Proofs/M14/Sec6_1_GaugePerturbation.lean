@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_SupportedGaugeFamily
 import PoincareConjecture.Proofs.M08.SquareVariationConstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
 
 theorem exists_supportedBackwardGauge_radius {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -61,8 +50,6 @@ theorem exists_supportedBackwardGauge_radius {U : Set G.Point} (hU : IsOpen U)
   exact ⟨r, hr, fun t ht v hv => (hKr (show (t, v) ∈ tsupport η ×ˢ Ioo (-r) r
     from ⟨ht, hv⟩)).2⟩
 
-
-
 noncomputable def pathOfSupportedGaugePerturbation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -87,9 +74,6 @@ noncomputable def pathOfSupportedGaugePerturbation (hM12 : GeneralizedRicciGauge
   · intro t ht
     exact supportedBackwardGaugeFamily_eq_of_not_tsupport p b lift η
       (fun hs => ht (Ioo_subset_Icc_self (hsupport hs))) v
-
-
-
 
 theorem isLocalMin_middleAction_supportedBackwardGauge
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hmin : M14IsMinimizing p)

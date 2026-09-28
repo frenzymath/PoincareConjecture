@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,17 +12,12 @@ open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture
 
-
-
 def roundCylinderCrossSectionVolumeMeasure : Measure UnitTwoSphere :=
   (rescaledMetric (Poincare.Geometry.Riemannian.SpaceForm.roundSphereMetric 2)
     2 (by norm_num)).volumeMeasure
 
-
 def roundCylinderCrossSectionArea : ℝ≥0∞ :=
   roundCylinderCrossSectionVolumeMeasure univ
-
-
 
 theorem roundCylinderVolumeMeasure_eq_prod :
     roundCylinderVolumeMeasure = roundCylinderCrossSectionVolumeMeasure.prod volume := by
@@ -65,7 +47,6 @@ theorem roundCylinderVolumeMeasure_eq_prod :
   simpa only [he, Measure.map_id, roundCylinderVolumeMeasure,
     roundCylinderCrossSectionVolumeMeasure, h] using hpres.map_eq.symm
 
-
 theorem roundCylinderCrossSectionArea_pos : 0 < roundCylinderCrossSectionArea := by
   let h : RiemannianMetric 2 UnitTwoSphere :=
     rescaledMetric (Poincare.Geometry.Riemannian.SpaceForm.roundSphereMetric 2)
@@ -76,18 +57,14 @@ theorem roundCylinderCrossSectionArea_pos : 0 < roundCylinderCrossSectionArea :=
   exact (h.volumeMeasure_ball_pos q (R := 1) zero_lt_one).trans_le
     (measure_mono (subset_univ _))
 
-
 theorem roundCylinderCrossSectionArea_lt_top : roundCylinderCrossSectionArea < ⊤ := by
   exact (rescaledMetric (Poincare.Geometry.Riemannian.SpaceForm.roundSphereMetric 2)
     2 (by norm_num)).volumeMeasure_lt_top_of_isCompact isCompact_univ
-
 
 theorem roundCylinderCrossSectionArea_toReal_pos :
     0 < roundCylinderCrossSectionArea.toReal :=
   ENNReal.toReal_pos roundCylinderCrossSectionArea_pos.ne'
     roundCylinderCrossSectionArea_lt_top.ne
-
-
 
 theorem lintegral_roundCylinder_axial_profile
     {F : ℝ → ℝ≥0∞} (hF : Measurable F) (S : Set ℝ) :
@@ -101,8 +78,6 @@ theorem lintegral_roundCylinder_axial_profile
       (hF.comp measurable_snd).aemeasurable]
   simp only [Measure.restrict_univ, lintegral_const,
     roundCylinderCrossSectionArea, mul_comm]
-
-
 
 theorem integral_roundCylinder_axial_profile (F : ℝ → ℝ) (S : Set ℝ) :
     (∫ z in (univ : Set UnitTwoSphere) ×ˢ S,

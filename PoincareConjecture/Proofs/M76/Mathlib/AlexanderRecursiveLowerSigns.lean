@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRetainedSigns
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRimLevel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.ordinary_lower_band_mem_both_height_closures
     {S s s' d rim TX TY : Set E} {A : E →ᵃ[ℝ] ℝ} {q p : E} {β t : ℝ}

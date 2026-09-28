@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M62.Cor0_3_AmbientBounds
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
-
 
 theorem exists_uniform_embedding_derivative_bounds
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

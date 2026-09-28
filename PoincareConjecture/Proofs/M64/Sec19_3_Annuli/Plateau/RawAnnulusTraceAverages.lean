@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +24,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E
 
 omit [CompleteSpace E] in
 
-
-
 theorem m64Annulus_continuous_smul_integrable {f : LoopPlane → E}
     {c : LoopPlane → ℝ} (hf : Integrable f mu) (hc : Continuous c) :
     Integrable (fun p => c p • f p) mu := by
@@ -44,9 +31,6 @@ theorem m64Annulus_continuous_smul_integrable {f : LoopPlane → E}
   exact hf.bdd_smul C hc.aestronglyMeasurable (by
     filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hp
     exact hC p (interior_subset hp))
-
-
-
 
 theorem m64Annulus_vertical_average_pairing {f : LoopPlane → E}
     {theta : ℝ → ℝ} (hf : Integrable f mu) (htheta : Continuous theta) :
@@ -63,9 +47,6 @@ theorem m64Annulus_vertical_average_pairing {f : LoopPlane → E}
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
-
-
-
 
 theorem M64ObservedWeakAnnulus.radial_green_average
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -119,9 +100,6 @@ theorem M64ObservedWeakAnnulus.radial_green_average
       exact Eventually.of_forall fun x => by
         simp [phi, annulusPoint, smul_sub, mul_smul]
 
-
-
-
 theorem M64ObservedWeakAnnulus.radial_trace_averages
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (h0 : Integrable (e ∘ c0) nu) (h1 : Integrable (e ∘ c1) nu) :
@@ -137,10 +115,6 @@ theorem M64ObservedWeakAnnulus.radial_trace_averages
       sub_neg_eq_add, zero_add, show ∀ s : ℝ, -1 + s = s - 1 from fun s => by ring,
       sub_self] using hlow
   · simpa only [one_smul, one_mul, zero_add, zero_smul, sub_zero] using hupp
-
-
-
-
 
 theorem M64ObservedWeakAnnulus.angular_column_integral_eq_zero
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :

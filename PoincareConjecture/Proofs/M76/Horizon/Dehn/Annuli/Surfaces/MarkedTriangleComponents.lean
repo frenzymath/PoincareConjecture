@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTriangleGraph
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 
@@ -21,14 +9,12 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K L : SimplicialComplex ℝ E)
 
-
 def markedTriangleGraph : SimpleGraph (Triangle K.toPreAbstractSimplicialComplex) where
   Adj q r := q ≠ r ∧ ∃ s ∈ K.faces, s.card = 2 ∧ s ∉ L.faces ∧ s ⊆ q.val ∧ s ⊆ r.val
   symm := ⟨by
     rintro q r ⟨hqr, s, hs, hcard, hmark, hsq, hsr⟩
     exact ⟨hqr.symm, s, hs, hcard, hmark, hsr, hsq⟩⟩
   loopless := ⟨fun _ h ↦ h.1 rfl⟩
-
 
 def markedTriangleComponent (C : (K.markedTriangleGraph L).ConnectedComponent) :
     SimplicialComplex ℝ E where
@@ -68,8 +54,6 @@ theorem markedTriangleComponent_pure
   exact ⟨t.val, (K.markedTriangleComponent_triangle_iff L C t).mpr ht,
     t.property.2, hst⟩
 
-
-
 theorem markedTriangleComponent_unmarked_coface
     (C : (K.markedTriangleGraph L).ConnectedComponent)
     {s t : Finset E} (hs : s ∈ (K.markedTriangleComponent L C).faces)
@@ -95,7 +79,6 @@ theorem markedTriangleComponent_unmarked_cofaces
   · exact fun ht ↦ ⟨K.markedTriangleComponent_unmarked_coface L C hs hsc hmark
       ht.1 ht.2.1 ht.2.2, ht.2⟩
 
-
 theorem markedTriangleComponent_one_coface_marked
     (hcofaces : ∀ s ∈ K.faces, s.card = 2 →
       {t : Finset E | t ∈ K.faces ∧ t.card = 3 ∧ s ⊆ t}.ncard = 2)
@@ -107,7 +90,6 @@ theorem markedTriangleComponent_one_coface_marked
   rw [K.markedTriangleComponent_unmarked_cofaces L C hs hsc hmark,
     hcofaces s hs.1 hsc] at hone
   omega
-
 
 theorem exists_markedTriangleComponent_of_face
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -133,8 +115,6 @@ theorem markedTriangleComponent_space
     exact (K.markedTriangleComponent L C).convexHull_subset_space
       ((K.markedTriangleComponent_triangle_iff L C t.val).mpr t.property) hxt
 
-
-
 theorem markedTriangleComponent_isConnected
     (C : (K.markedTriangleGraph L).ConnectedComponent) :
     IsConnected (K.markedTriangleComponent L C).space := by
@@ -153,8 +133,6 @@ theorem markedTriangleComponent_isConnected
     obtain ⟨_, s, hs, _, _, hsq, hsr⟩ := hqr
     obtain ⟨p, hp⟩ := K.nonempty_of_mem_faces hs
     exact ⟨p, subset_convexHull ℝ _ (hsq hp), subset_convexHull ℝ _ (hsr hp)⟩
-
-
 
 theorem markedTriangleComponent_edge_coface_count
     (hK : K.faces.Finite)

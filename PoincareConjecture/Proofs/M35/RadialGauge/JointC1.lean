@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Calculus.FDeriv.Partial
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem joint_contDiffOn_one_of_partials
     {J : Set ℝ} (hJ : IsOpen J) {u H : ℝ → E → F}
@@ -58,8 +46,6 @@ theorem joint_contDiffOn_one_of_partials
   refine ⟨fun p hp => (hd hp).differentiableAt.differentiableWithinAt, by simp, ?_⟩
   apply contDiffOn_zero.mpr
   exact hDc.congr (fun p hp => (hd hp).fderiv)
-
-
 
 theorem joint_contDiffOn_one_of_slab_partials
     {u H : ℝ → E → F} {a b : ℝ}

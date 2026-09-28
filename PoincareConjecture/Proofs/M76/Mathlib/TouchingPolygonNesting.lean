@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedPolygonBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem boundary_sdiff_subset_inside_or_outside {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))
@@ -30,10 +18,6 @@ theorem boundary_sdiff_subset_inside_or_outside {m n : ℕ}
   rw [← P.compl_boundary_eq_inside_union_outside]
   rintro x ⟨hxQ, hxq⟩ hxP
   exact hxq (hinter ⟨hxP, hxQ⟩)
-
-
-
-
 
 theorem inside_subset_or_disjoint_boundary_of_singleton_inter {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))

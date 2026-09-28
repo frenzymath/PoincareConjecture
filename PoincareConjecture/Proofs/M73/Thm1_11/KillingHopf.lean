@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Quotient.Covering
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.style.haveILetI false
@@ -26,8 +16,6 @@ universe u
 namespace PoincareConjecture
 
 open Poincare.Geometry.Riemannian.SpaceForm
-
-
 
 theorem SurgeryPositiveSpaceform.nonempty_diffeomorph_threeSphere
     {C : GeneralizedSliceCarrier.{u}} (S : SurgeryPositiveSpaceform C)

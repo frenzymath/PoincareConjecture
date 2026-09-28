@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Synge.Di
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Synge.ParallelField
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Synge.Variation.PositiveCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,9 +43,6 @@ private theorem deriv_chart_eq_velocity {q : ℝ → M} {t : ℝ} {p : M}
     rfl
   rw [hid] at hv
   exact hv
-
-
-
 
 theorem not_minimum_displacement_of_negative_holonomy
     (D : LeviCivitaData g) (F : M ≃ₘ⟮𝓡 3, 𝓡 3⟯ M)

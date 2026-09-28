@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set

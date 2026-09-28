@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M34.Standard.CalibratedMetricComparison
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -48,8 +39,6 @@ private theorem ricci_tensorNorm_eq_sqrt {g : RiemannianMetric 3 M}
       simp only [Fintype.sum_prod_type]
       rfl
 
-
-
 theorem abs_ricci_le_sqrt_ricciNormSq {g : RiemannianMetric 3 M}
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 3) x) :
     |D.ricci x v v| ≤ Real.sqrt (D.ricciNormSq x) * g.inner x v v := by
@@ -64,8 +53,6 @@ theorem abs_ricci_le_sqrt_ricciNormSq {g : RiemannianMetric 3 M}
   have hN := Real.sqrt_nonneg (D.ricciNormSq x)
   have hproduct := mul_nonneg hN hV
   nlinarith [sq_abs (D.ricci x v v), abs_nonneg (D.ricci x v v)]
-
-
 
 theorem exists_compact_slab_ricci_bound [CompactSpace M]
     {a b : ℝ} (F : RicciFlow 3 M (Icc a b)) :
@@ -88,9 +75,6 @@ theorem exists_compact_slab_ricci_bound [CompactSpace M]
     · exact ((F.metric t).pos x v hzero).le
   exact (abs_ricci_le_sqrt_ricciNormSq (F.connection t) x v).trans
     (mul_le_mul_of_nonneg_right hnorm hv)
-
-
-
 
 theorem exists_compact_slab_metric_volume_comparison
     [CompactSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Extension
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Initial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
@@ -37,7 +28,6 @@ variable {ι : Type*} {n : ℕ}
       ∀ k i, IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (e k i))
 
 include hD he hc hlower hopen hconn hsmooth in
-
 
 theorem exists_local_source_models_near_compact
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives
@@ -147,8 +137,6 @@ theorem exists_local_source_models_near_compact
   exact hKV
 
 include hD he hc hlower hopen hconn hsmooth in
-
-
 
 theorem exists_pointed_source_embeddings_near_compact
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives

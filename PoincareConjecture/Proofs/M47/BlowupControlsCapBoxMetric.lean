@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.SurgeryTransitionMetric
 import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem cap_box_model_metric_bounds {p : E}
     (hp : ‖cylinderHorizontalProjection p‖ ≤ 1) (v : E) :
@@ -60,8 +49,6 @@ theorem cap_box_model_metric_bounds {p : E}
   · nlinarith [mul_le_mul_of_nonneg_right hcoeff.1 hH]
   · nlinarith [mul_le_mul_of_nonneg_right hcoeff.2 hH]
 
-
-
 theorem cap_box_model_pullback (q : UnitTwoSphere) (s : ℝ) (p v w : E) :
     EvolvingRoundCylinderMetric 0 (centeredCylinderLift q s p)
       (mfderiv (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) (centeredCylinderLift q s) p v)
@@ -78,8 +65,6 @@ theorem cap_box_model_pullback (q : UnitTwoSphere) (s : ℝ) (p v w : E) :
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem cap_box_neck_tangent_bounds (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ)
     {p : E} (hp : p ∈ centeredNeckDomain N s)

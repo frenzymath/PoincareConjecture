@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubpolyhedronZeroSet
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -41,9 +32,6 @@ private theorem finitePL_id_inner_cube : FinitePiecewiseAffineOn (id : V3 → V3
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ := hball
   exact (hKs.trans himage) ▸
     (K.affineOnFaces_affine (ContinuousAffineMap.id ℝ V3)).finitePiecewiseAffineOn hK
-
-
-
 
 theorem exists_finitePL_cube_push_fixing_subpolyhedron
     (J : SimplicialComplex ℝ V3) (hJ : J.faces.Finite) (hJS : J.space ⊆ S) :

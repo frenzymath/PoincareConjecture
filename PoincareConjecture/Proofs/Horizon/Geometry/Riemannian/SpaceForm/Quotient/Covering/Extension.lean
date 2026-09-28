@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Quotient.Covering.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Rigidity
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_ambient_motion_of_local_round_isometry
     {k : UnitSphere n → UnitSphere n} {U : Set (UnitSphere n)}
@@ -43,8 +41,6 @@ theorem exists_ambient_motion_of_local_round_isometry
     (fun x _ v w => (sphereMotion_inner L x v w).symm) hkm hp hLp ?_⟩
   ext v
   exact hLd v
-
-
 
 theorem extend_inverse_round_isometry
     (g : RiemannianMetric n M) {k : UnitSphere n → M} {U : Set (UnitSphere n)}

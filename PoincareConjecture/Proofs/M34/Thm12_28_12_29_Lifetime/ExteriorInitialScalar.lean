@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.ExteriorInitialJets
 import PoincareConjecture.Proofs.M34.Standard.PullbackCurvatureJetBound
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -20,9 +10,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_exists_exterior_initial_scalar_bound
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

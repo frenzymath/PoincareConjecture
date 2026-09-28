@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M10.MetricDualDerivative
 import PoincareConjecture.Proofs.M10.SupportedCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,9 @@ namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
 noncomputable def weightedMetricDual (B : E → E →L[ℝ] E →L[ℝ] ℝ)
     (ρ f : E → ℝ) (x : E) : E :=
   ρ x • (B x).inverse (fderiv ℝ f x)
-
 
 theorem weightedMetricDual_contDiffAt
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ f : E → ℝ} {x : E}
@@ -42,7 +31,6 @@ theorem tsupport_weightedMetricDual_subset
   by_contra hnot
   apply hx
   simp only [weightedMetricDual, fderiv_of_notMem_tsupport ℝ hnot, map_zero, smul_zero]
-
 
 theorem weightedMetricDual_contDiff_of_tsupport_subset
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ f : E → ℝ} {U : Set E}

@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusPhaseEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusAffinePhase
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusPeriodicHarmonicTransport
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64Annulus_exists_nonzero_affine_phase
     (P : M62.CircleProductData F circumference) (t : ℝ)

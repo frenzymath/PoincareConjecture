@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoun
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -28,10 +19,6 @@ private theorem finite_identity_of_ball
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_compact_half_normal_extension
     {s q : Set E} (hs : IsFinitePLBallPair (ℝ × ℝ) s q)

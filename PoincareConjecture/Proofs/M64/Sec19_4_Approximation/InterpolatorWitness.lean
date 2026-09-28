@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.HorizontalColumn
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 n) ∞ M]
 
 omit [T2Space M] in
-
-
 
 theorem m64_interpolator_side_of_short_pair
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -73,12 +59,6 @@ theorem m64_interpolator_side_of_short_pair
   refine ⟨side, ?_⟩
   intro t
   rfl
-
-
-
-
-
-
 
 theorem m64_interpolator_annulus_witness_of_columns
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

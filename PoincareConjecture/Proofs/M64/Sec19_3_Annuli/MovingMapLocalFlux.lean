@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CovariantBoundaryFlux
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +16,6 @@ private theorem annulusPoint_mem_of_intervals {O : Set LoopPlane}
   apply hdom
   change 0 ≤ x ∧ x ≤ curvePeriod ∧ 0 ≤ s ∧ s ≤ 1
   exact ⟨hx.1, hx.2, hs.1, hs.2⟩
-
-
-
 
 theorem m64Annulus_integral_vertical_derivative_of_contDiffOn
     {O : Set LoopPlane} (hO : IsOpen O) (hdom : m64AnnulusDomain ⊆ O)
@@ -60,9 +46,6 @@ theorem m64Annulus_integral_vertical_derivative_of_contDiffOn
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt
     (fun s hs => hder s (by simpa only [uIcc_of_le zero_le_one] using hs))
     (hd.intervalIntegrable_of_Icc zero_le_one)
-
-
-
 
 theorem m64Annulus_integral_horizontal_derivative_of_contDiffOn
     {O : Set LoopPlane} (hO : IsOpen O) (hdom : m64AnnulusDomain ⊆ O)
@@ -146,10 +129,6 @@ private theorem integral_covariant_pairing_on_eq_integral_derivative
     ((hV.contDiffAt (hO.mem_nhds hpo)).differentiableAt (by simp))
     ((hW.contDiffAt (hO.mem_nhds hpo)).differentiableAt (by simp))
     (hcompat p hpo) d).symm
-
-
-
-
 
 theorem m64Annulus_covariant_boundary_flux_on
     (hO : IsOpen O) (hdom : m64AnnulusDomain ⊆ O)

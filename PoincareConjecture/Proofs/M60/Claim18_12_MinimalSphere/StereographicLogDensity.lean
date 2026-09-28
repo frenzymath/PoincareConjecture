@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M60.Mathlib.LogQuadraticDerivative
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundLaplacian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped ContDiff BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem m60SphereParameter_logDensity_contDiff :
     ContDiff ℝ ∞ (fun z : LoopPlane => Real.log (16 / (‖z‖ ^ 2 + 4) ^ 2)) := by
@@ -25,8 +15,6 @@ theorem m60SphereParameter_logDensity_contDiff :
       (by intro z; positivity)
   · intro z
     positivity
-
-
 
 theorem m60SphereParameter_logDensity_laplacian (z : LoopPlane) :
     (∑ i : Fin 2, fderiv ℝ (fun y => fderiv ℝ

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalTangentCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.GeneralBoundaryFans
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_inverse_coordinate_derivative_apply
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -58,11 +40,6 @@ private theorem corner_linear_decomposition
   simpa only [add_sub_cancel_right, hcoord,
     b.coord_apply_ne (by decide : (1 : Fin 3) ≠ 0),
     b.coord_apply_ne (by decide : (2 : Fin 3) ≠ 0), add_zero] using h
-
-
-
-
-
 
 theorem m64Intrinsic_coordinate_corner_tangent_cone
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)

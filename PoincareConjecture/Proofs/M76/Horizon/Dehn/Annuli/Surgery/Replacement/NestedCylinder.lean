@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Collars.Retaine
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.Properness
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.Fibers.TubeContacts
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open _root_.Dehn
@@ -23,8 +21,6 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
   (e : ι → OpenPartialHomeomorph X F)
   {l r L d : ℝ} {A : Fin 2 → Set P2}
   (B : ∀ k, OrientedPolygonCollar l r (A k)) (j : Fin 2)
-
-
 
 structure NestedResolvingCylinder (f : P2 → X) (τ : (P2 × ℝ) → X) where
   outer : Cyl ≃ₜ (annulusSquare L (-d) \ (B j).outer.inside : Set P2)

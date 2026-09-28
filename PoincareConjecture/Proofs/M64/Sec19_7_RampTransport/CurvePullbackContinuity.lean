@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.ChartCurveProjection
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64_pullback_norm_continuousAt_of_chart
     (D : LeviCivitaData g) {c : ℝ → M} {x : ℝ}
@@ -64,10 +56,6 @@ theorem m64_pullback_norm_continuousAt_of_chart
     hz.continuousAt.eventually hB.eventually_nhds] with s hcs hvs hss hfs hBs
   exact (m64_pullback_norm_chart_metric D p DE (hcs.mdifferentiableAt (by norm_num))
     hss hvs hfs hBs)
-
-
-
-
 
 theorem m64_pushforward_pullback_norm_continuous
     (D : LeviCivitaData g) {j : EuclideanSpace ℝ (Fin m) → M}

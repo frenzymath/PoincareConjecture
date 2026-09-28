@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Symmetry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -26,8 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma iteratedCovariantTensorDerivative_scalar_swap
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -46,11 +35,6 @@ lemma iteratedCovariantTensorDerivative_scalar_swap
   rw [← D.hessian_eq_covariantTensorDerivative f x u v,
     ← D.hessian_eq_covariantTensorDerivative f x v u]
   exact D.hessian_symm hf x u v
-
-
-
-
-
 
 noncomputable def covariantCurvatureAction (D : LeviCivitaData g) {k : ℕ}
     (T : CovariantTensorEvaluation n M k) (x : M)
@@ -113,7 +97,6 @@ lemma neg_covariantCurvatureAction_three (D : LeviCivitaData g)
           T x ![a, b, D.curvature x u v c] := by
   rw [D.covariantCurvatureAction_three T x u v a b c]
   ring
-
 
 lemma covariantCurvatureAction_swap
     (D : LeviCivitaData g) {k : ℕ} (T : CovariantTensorEvaluation n M k)

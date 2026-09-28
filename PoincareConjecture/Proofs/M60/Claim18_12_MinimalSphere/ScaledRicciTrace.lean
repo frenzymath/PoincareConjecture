@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ThreeDimensionalTrace
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.RicciQuadratic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
 
 theorem m60Curvature_plane_smul (D : LeviCivitaData g) (x : M)
     (c d : ℝ) (u v : TangentSpace (𝓡 3) x) :
@@ -41,8 +32,6 @@ theorem m60Curvature_plane_smul (D : LeviCivitaData g) (x : M)
     rw [M04.curvatureTensor_swap_first, M04.curvatureTensor_swap_last, neg_neg]
   rw [hfirst, hswap u (d • v), hfirst, hswap v u]
   ring
-
-
 
 theorem m60Ricci_plane_trace_equal_length (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) (u v : TangentSpace (𝓡 3) x)

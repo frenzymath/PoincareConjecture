@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverSurjective
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarNormalizedCoverMap_fiber_finite {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)
@@ -56,10 +40,6 @@ theorem scalarNormalizedCoverMap_fiber_finite {H : Plane → ℝ} {V : Cover →
     hdV hP.ne' hz.1).2
   exact (accPt_iff_frequently_nhdsNE.mp hacc) (hi.mono fun y hy hyK =>
     hy (hyK.2.trans hz.2.symm))
-
-
-
-
 
 theorem scalarNormalizedCover_fiber_finite {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)

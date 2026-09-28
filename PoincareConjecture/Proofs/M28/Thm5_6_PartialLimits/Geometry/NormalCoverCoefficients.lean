@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.NormalCoverCh
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +22,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
 
 local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
 
-
-
 theorem partialUnitBallMap_eventually_lower_coefficients
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (ha : ∀ j, 0 < a j)
     (i : ℕ) :
@@ -48,8 +36,6 @@ theorem partialUnitBallMap_eventually_lower_coefficients
   filter_upwards [eventually_ge_atTop j] with k hk t ht x hx v
   rw [partialUnitBallMap_of_le cover k i hk]
   exact (cover k j hk).unitBallMap_lower_coefficients (hρ j) (hρR j) _ ht hx v
-
-
 
 theorem partialUnitBallMap_eventually_bounded_derivatives
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j)

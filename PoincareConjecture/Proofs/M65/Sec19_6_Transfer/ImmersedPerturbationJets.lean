@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationVelocity
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,10 +11,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M65Perturbation
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
-
-
-
-
 
 theorem slice_jet_contDiffOn (f : P × (ℝ × ℝ) → LoopAmbient)
     (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) (j : ℕ) :

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveLowerSigns
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveTerminalSigns
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicOrdinaryLevels
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,12 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_intrinsic_deformation_with_band_geometry
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

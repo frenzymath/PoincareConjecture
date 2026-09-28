@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackBound
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.IndexedSupportIntegral
 import PoincareConjecture.Proofs.M34.Standard.UniformFamilyEnergyBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem partialFlows_capDifferenceEnergy_bounds (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

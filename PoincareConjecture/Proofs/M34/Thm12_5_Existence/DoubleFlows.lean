@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleCurvature
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 import PoincareConjecture.Statements.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 open Set
 
 namespace PoincareConjecture.M34
-
-
 
 instance endDouble_t3Space {g : RiemannianMetric 3 StandardCapSpace}
     (e : StandardCylindricalEnd g) {L : ℝ} (hL : 1 < L) : T3Space (EndDouble e hL) := by
@@ -32,8 +19,6 @@ instance endDouble_t3Space {g : RiemannianMetric 3 StandardCapSpace}
   let : NormalSpace (EndDouble e hL) := NormalSpace.of_compactSpace_r1Space
   let : T4Space (EndDouble e hL) := {}
   exact T4Space.t3Space
-
-
 
 theorem exists_uniform_endDouble_flows (P : M34StandardCapPredecessors)
     (g0 : StandardInitialMetric) (E0 : StandardCapEstimate g0) :

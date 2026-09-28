@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 import PoincareConjecture.Proofs.M09.WithinGeometricUniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

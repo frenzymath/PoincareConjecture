@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Universa
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem isLocalDiffeomorph_into_level_of_ambient_immersion
     (F : N → openLevelSet f U c)
@@ -60,7 +50,6 @@ theorem isLocalDiffeomorph_into_level_of_ambient_immersion
   exact ⟨hFi, (LinearMap.injective_iff_surjective (f := A.toLinearMap)).mp hFi⟩
 
 include hf hreg in
-
 
 theorem range_eq_level_component_of_compact_immersion
     [T2Space M] [CompactSpace N] [ConnectedSpace N]

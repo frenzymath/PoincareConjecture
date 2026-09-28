@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.CompactUniqueLift
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuousPolarLift
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuedPolar
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +10,6 @@ open Set Metric
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_continuous_confined_boundary_lift
     {e : AnnulusCoordinates → AnnulusCoordinates} {R a b radius : ℝ}

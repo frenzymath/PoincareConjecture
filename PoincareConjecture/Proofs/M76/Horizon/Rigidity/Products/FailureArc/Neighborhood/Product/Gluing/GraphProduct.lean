@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreGraph
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology

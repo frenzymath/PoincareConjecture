@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Composition.Family
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.DiskChangeImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -126,4 +118,3 @@ theorem nonempty_projected_crossing
 
 end FiniteMarkedSurfaceRepairs
 end Geometry.OriginalPLTower
-

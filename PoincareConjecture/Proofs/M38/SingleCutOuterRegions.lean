@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SingleCutHandleCoordinates
 import PoincareConjecture.Proofs.M38.ReciprocalEnclosingCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -101,9 +92,7 @@ theorem singleCut_enclosing_partition :
           simpa only [Metric.mem_sphere, dist_zero_right] using heq, rfl⟩
     · exact Or.inl (Or.inl hclosed)
 
-
 def singleCutExteriorRegion : Set (X).carrier := (E).map '' (D).closedBallᶜ
-
 
 def singleCutOuterSphere : Set (X).carrier := (E).map '' J
 
@@ -115,10 +104,8 @@ noncomputable def singleCutExteriorIdentify :
   restrictRegions E (D).closedBallᶜ
     (singleCut_enclosingExterior_subset_shared F T hT P S i hi C ha ha8 hB₀ hB₁)
 
-
 theorem singleCutExteriorIdentify_map (x : (A).carrier) :
     (singleCutExteriorIdentify F T hT P S i hi C ha ha8 hB₀ hB₁).map x = (E).map x := rfl
-
 
 theorem singleCutExteriorIdentify_inverse (x : (X).carrier) :
     (singleCutExteriorIdentify F T hT P S i hi C ha ha8 hB₀ hB₁).inverse x =
@@ -190,7 +177,6 @@ theorem singleCutOuterRegions_image_partition :
 
 include hB₀ hB₁ in
 
-
 theorem singleCutOuterRegions_cover :
     singleCutExteriorRegion F T hT P S i C ha ha8 ∪
       (singleCutHandleOpen F T hT P S i C ∪ comparisonCentralSphere c) ∪
@@ -208,7 +194,6 @@ theorem singleCutOuterRegions_cover :
     · exact Or.inl (Or.inl houter)
     · exact Or.inl (Or.inr (Or.inl hinner))
     · exact Or.inr hsphere
-
 
 theorem singleCutOuterSphere_collar :
     singleCutOuterSphere F T hT P S i C =

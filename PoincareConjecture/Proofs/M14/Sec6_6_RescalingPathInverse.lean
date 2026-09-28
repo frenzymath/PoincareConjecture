@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +38,6 @@ private theorem inverseHorizontal_metric (p : G.Point)
   erw [h]
   field_simp
 
-
-
 theorem rescalingInverseRawIntegrand
     (γ : ℝ → (rescalingTransport hM12 hM13 G Q hQ a).Point)
     (v : ∀ t, (rescalingTransport hM12 hM13 G Q hQ a).Horizontal (γ t)) (t : ℝ) :
@@ -63,8 +53,6 @@ theorem rescalingInverseRawIntegrand
   ring_nf
   rw [Real.sq_sqrt hQ.le]
   ring
-
-
 
 noncomputable def rescalingPathInverse
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -152,8 +140,6 @@ private theorem backwardPath_ext {G : GeneralizedLGeometryTransport n X time I}
   funext s
   exact Subtype.ext (hv s)
 
-
-
 theorem rescalingPath_right_inverse
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (p : M14BackwardPath (rescalingTransport hM12 hM13 G Q hQ a)
@@ -171,8 +157,6 @@ theorem rescalingPath_right_inverse
             (p.horizontal_velocity (Q * (s / Q))))).val = _
     rw [map_smul, ContinuousLinearEquiv.apply_symm_apply, smul_smul,
       inv_mul_cancel₀ hQ.ne', one_smul, mul_div_cancel₀ _ hQ.ne']
-
-
 
 theorem rescalingPath_minimizing_iff
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CurvatureMetricJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ local instance radialLimitDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) :=
 local instance radialLimitMetricNormedGroup : NormedAddCommGroup (V →L[ℝ] V →L[ℝ] ℝ) :=
   inferInstance
 local instance radialLimitMetricNormedSpace : NormedSpace ℝ (V →L[ℝ] V →L[ℝ] ℝ) := inferInstance
-
-
 
 theorem parallel_unit_of_metric_and_field_jets
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

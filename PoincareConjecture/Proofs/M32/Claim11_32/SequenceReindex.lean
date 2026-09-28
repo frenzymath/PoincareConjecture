@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.Sequence
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 import Mathlib.Order.Filter.AtTopBot.Tendsto
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -28,41 +15,27 @@ section Reindex
 
 variable (S : GeneralizedBlowupSequence.{u}) (phi : ℕ → ℕ) (hphi : StrictMono phi)
 
-
-
 def blowupSequenceComp : GeneralizedBlowupSequence.{u} where
   flow k := S.flow (phi k)
   base k := S.base (phi k)
   base_scalar_pos k := S.base_scalar_pos (phi k)
   scalar_diverges := S.scalar_diverges.comp hphi.tendsto_atTop
 
-
-
 @[simp] theorem blowupSequenceComp_flow (k : ℕ) :
     (blowupSequenceComp S phi hphi).flow k = S.flow (phi k) := rfl
-
-
 
 @[simp] theorem blowupSequenceComp_base (k : ℕ) :
     (blowupSequenceComp S phi hphi).base k = S.base (phi k) := rfl
 
-
-
 @[simp] theorem blowupSequenceComp_scale (k : ℕ) :
     (blowupSequenceComp S phi hphi).scale k = S.scale (phi k) := rfl
-
-
 
 @[simp] theorem blowupSequenceComp_baseBall (k : ℕ) (A : ℝ) :
     (blowupSequenceComp S phi hphi).baseBall k A = S.baseBall (phi k) A := rfl
 
-
-
 theorem blowupSequenceComp_comp (psi : ℕ → ℕ) (hpsi : StrictMono psi) :
     blowupSequenceComp (blowupSequenceComp S phi hphi) psi hpsi =
       blowupSequenceComp S (phi ∘ psi) (hphi.comp hpsi) := rfl
-
-
 
 def blowupSequenceComp_commonControls {epsilon C kappa r₀ mu : ℝ}
     (H : M30CommonBlowupControls S epsilon C kappa r₀ mu) :
@@ -98,9 +71,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
-
 
 theorem terminalBlowupSequence_comp (phi : ℕ → ℕ) (hphi : StrictMono phi) :
     blowupSequenceComp (terminalBlowupSequence H Q x hpos hdiv) phi hphi =

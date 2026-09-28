@@ -3,16 +3,6 @@ import Mathlib.Geometry.Polygon.Basic
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,14 +11,8 @@ namespace SimpleGraph
 
 variable {V E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
-
 def segmentCarrier (G : SimpleGraph V) (p : V → E) : Set E :=
   {x | ∃ v w, G.Adj v w ∧ x ∈ segment ℝ (p v) (p w)}
-
-
-
 
 theorem segmentCarrier_eq_iUnion_components (G : SimpleGraph V) (p : V → E) :
     G.segmentCarrier p = ⋃ C : G.ConnectedComponent,
@@ -43,9 +27,6 @@ theorem segmentCarrier_eq_iUnion_components (G : SimpleGraph V) (p : V → E) :
   · intro hx
     obtain ⟨C, v, w, hvw, hx⟩ := mem_iUnion.mp hx
     exact ⟨v.val, w.val, hvw, hx⟩
-
-
-
 
 theorem pairwise_disjoint_component_segmentCarrier (G : SimpleGraph V) (p : V → E)
     (hinj : Function.Injective p)
@@ -71,9 +52,6 @@ theorem pairwise_disjoint_component_segmentCarrier (G : SimpleGraph V) (p : V �
   have h : x ∈ convexHull ℝ (({p v.val, p w.val} : Set E) ∩ {p a.val, p b.val}) :=
     hinter hvw hab ⟨hx, hy⟩
   simp only [hempty, convexHull_empty, notMem_empty] at h
-
-
-
 
 theorem segmentCarrier_eq_polygonBoundary (G : SimpleGraph V) (p : V → E)
     {n : ℕ} (e : Fin (n + 3) ≃ V)

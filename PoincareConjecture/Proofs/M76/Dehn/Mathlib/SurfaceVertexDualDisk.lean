@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SurfaceLinkPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonClosedStarDisk
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseLinkSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
-
-
-
 theorem connected_barycentric_vertex_link_of_pure_triangles
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
     (hlinks : ∀ p ∈ K.vertices, IsConnected (K.link p).space)
@@ -37,8 +24,6 @@ theorem connected_barycentric_vertex_link_of_pure_triangles
   unfold barycentricSubdivision
   exact K.connected_derived_faceCenter_link_of_pure_triangles _ _ hpure hlinks ⟨s, hs⟩
 
-
-
 theorem isConnected_barycentric_vertex_link_of_pure_triangles
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
     (hlinks : ∀ p ∈ K.vertices, IsConnected (K.link p).space)
@@ -46,10 +31,6 @@ theorem isConnected_barycentric_vertex_link_of_pure_triangles
     IsConnected (K.barycentricSubdivision.link p).space :=
   ((K.barycentricSubdivision.link p).isPathConnected_space_of_connected_edgeGraph
     (K.connected_barycentric_vertex_link_of_pure_triangles hpure hlinks hp)).isConnected
-
-
-
-
 
 theorem isFinitePLBallPair_barycentricDualBlock_vertex
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

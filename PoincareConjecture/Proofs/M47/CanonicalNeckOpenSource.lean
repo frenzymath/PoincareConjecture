@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCylinderSource
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {C : GeneralizedSliceCarrier.{u}}
 
-
 noncomputable def neckOpenSourceCarrier (U : TopologicalSpace.Opens C.carrier) :
     GeneralizedSliceCarrier.{u} where
   carrier := U
@@ -33,7 +24,6 @@ noncomputable def neckOpenSourceCarrier (U : TopologicalSpace.Opens C.carrier) :
   t2Space := inferInstance
   t3Space := inferInstance
   secondCountable := inferInstance
-
 
 noncomputable def neckOpenSourceInclusion (U : TopologicalSpace.Opens C.carrier) (q : U) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) (neckOpenSourceCarrier U).carrier C.carrier ∞ := by
@@ -53,8 +43,6 @@ noncomputable def neckOpenSourceInclusion (U : TopologicalSpace.Opens C.carrier)
 
 variable {F : SurgeryFlowData.{u}} {origin scale : ℝ} {I : Set ℝ}
 
-
-
 noncomputable def neckOpenSourceCylinder (U : TopologicalSpace.Opens C.carrier) (q : U)
     (e : SurgeryFlowCylinder F C origin scale I U) :
     SurgeryFlowCylinder F (neckOpenSourceCarrier U) origin scale I univ :=
@@ -65,8 +53,6 @@ theorem neckOpenSourceCylinder_forward (U : TopologicalSpace.Opens C.carrier) (q
     (e : SurgeryFlowCylinder F C origin scale I U)
     (s : ℝ) (hs : s ∈ I) (x : U) :
     (neckOpenSourceCylinder U q e).forward s hs x = e.forward s hs x.val := rfl
-
-
 
 theorem neckOpenSourceCylinder_pullbackInner (U : TopologicalSpace.Opens C.carrier) (q : U)
     (e : SurgeryFlowCylinder F C origin scale I U)

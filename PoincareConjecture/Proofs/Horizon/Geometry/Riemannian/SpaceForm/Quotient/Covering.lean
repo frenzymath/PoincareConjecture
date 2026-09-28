@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ universe u
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_spherical_covering
     {M : Type u} [TopologicalSpace M]

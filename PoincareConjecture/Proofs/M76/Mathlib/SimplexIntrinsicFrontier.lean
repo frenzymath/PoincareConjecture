@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricRealization
 import PoincareConjecture.Proofs.M76.Mathlib.StdSimplexCoreBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 namespace StdSimplexCore
 
 variable {ι E : Type*} [Fintype ι] [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem injOn_barycentricMap_affineSpan (v : ι → E) (hv : AffineIndependent ℝ v) :
     InjOn (barycentricMap v) (affineSpan ℝ (stdSimplex ℝ ι)) := by
@@ -32,8 +22,6 @@ theorem injOn_barycentricMap_affineSpan (v : ι → E) (hv : AffineIndependent �
 variable [Nonempty ι]
 
 omit [Fintype ι] in
-
-
 
 theorem intrinsicFrontier_convexHull_range [Finite ι] (v : ι → E)
     (hv : AffineIndependent ℝ v) :
@@ -81,9 +69,6 @@ namespace AffineIndependent
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
-
-
-
 theorem mem_intrinsicFrontier_convexHull_finset {s : Finset E} (hs : s.Nonempty)
     (hv : AffineIndependent ℝ ((↑) : s → E)) (x : E) :
     x ∈ intrinsicFrontier ℝ (convexHull ℝ (s : Set E)) ↔
@@ -105,8 +90,6 @@ theorem mem_intrinsicFrontier_convexHull_finset {s : Finset E} (hs : s.Nonempty)
   simp only [Subtype.exists, exists_prop]
 
 omit [DecidableEq E] in
-
-
 
 theorem convexHull_subset_intrinsicFrontier {s t : Finset E}
     (hv : AffineIndependent ℝ ((↑) : s → E)) (ht : t ⊂ s) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.SingularPrism
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory
@@ -16,7 +8,6 @@ open scoped Simplicial
 universe w v u
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem singularPrism_piece_eq_of_two_source_agree {A B X : TopCat.{w}}
     {f g : A ⟶ X} {p q : B ⟶ X} (H : TopCat.Homotopy f g) (K : TopCat.Homotopy p q)
@@ -72,7 +63,6 @@ theorem singularPrism_piece_eq_of_two_source_agree {A B X : TopCat.{w}}
 
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
 
-
 noncomputable def singularSimplexPrism (R : C) (X : TopCat.{w}) {n : ℕ}
     {s t : (TopCat.toSSet.obj X) _⦋n⦌}
     (H : ContinuousMap.Homotopy (X.toSSetObjEquiv _ s) (X.toSSetObjEquiv _ t)) :
@@ -82,7 +72,6 @@ noncomputable def singularSimplexPrism (R : C) (X : TopCat.{w}) {n : ℕ}
     H.compContinuousMap ⟨Homeomorph.ulift, Homeomorph.ulift.continuous⟩
   (TopCat.toSSet.obj D).ιChainComplex (⟨𝟙 D⟩ : (TopCat.toSSet.obj D) _⦋n⦌) ≫
     (H'.toSSet.toSimplicialObjectHomotopy.sSetChainComplexMap R).hom n (n + 1)
-
 
 theorem singularSimplexPrism_boundary (R : C) (X : TopCat.{w}) {n : ℕ}
     {s t : (TopCat.toSSet.obj X) _⦋n + 1⦌}
@@ -146,12 +135,10 @@ theorem singularSimplexPrism_boundary (R : C) (X : TopCat.{w}) {n : ℕ}
   rw [Category.assoc, hcomm]
   abel
 
-
 noncomputable def singularSimplexFamilyMap (R : C) (X : TopCat.{w}) {n : ℕ}
     (r : (TopCat.toSSet.obj X) _⦋n⦌ → (TopCat.toSSet.obj X) _⦋n⦌) :
     ((TopCat.toSSet.obj X).chainComplex R).X n ⟶ ((TopCat.toSSet.obj X).chainComplex R).X n :=
   Sigma.desc fun s => (TopCat.toSSet.obj X).ιChainComplex (r s)
-
 
 noncomputable def singularSimplexFamilyPrism (R : C) (X : TopCat.{w}) {n : ℕ}
     (r : (TopCat.toSSet.obj X) _⦋n⦌ → (TopCat.toSSet.obj X) _⦋n⦌)
@@ -159,7 +146,6 @@ noncomputable def singularSimplexFamilyPrism (R : C) (X : TopCat.{w}) {n : ℕ}
     ((TopCat.toSSet.obj X).chainComplex R).X n ⟶
       ((TopCat.toSSet.obj X).chainComplex R).X (n + 1) :=
   Sigma.desc fun s => singularSimplexPrism R X (H s)
-
 
 theorem singularSimplexFamilyPrism_boundary (R : C) (X : TopCat.{w}) {n : ℕ}
     (r : (TopCat.toSSet.obj X) _⦋n + 1⦌ → (TopCat.toSSet.obj X) _⦋n + 1⦌)
@@ -200,7 +186,6 @@ theorem singularSimplexFamilyPrism_boundary (R : C) (X : TopCat.{w}) {n : ℕ}
   simpa only [Preadditive.comp_add, Preadditive.comp_sub, Category.comp_id,
     ← Category.assoc, htop, SSet.ιChainComplex_d, Preadditive.sum_comp,
     Preadditive.zsmul_comp, hlower, hmap] using hb
-
 
 theorem singularSimplexFamily_cycle_difference_boundary (R : C) (X : TopCat.{w}) {n : ℕ}
     (r : (TopCat.toSSet.obj X) _⦋n + 1⦌ → (TopCat.toSSet.obj X) _⦋n + 1⦌)

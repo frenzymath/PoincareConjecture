@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 
 namespace Set
-
-
 
 theorem IsCompact.exists_closed_normal_interval
     {Y : Type*} [TopologicalSpace Y] {D : Set Y} (hD : IsCompact D)
@@ -40,10 +29,6 @@ namespace OpenPartialHomeomorph
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X]
-
-
-
-
 
 theorem exists_compact_face_normal_product
     (B : OpenPartialHomeomorph X E)

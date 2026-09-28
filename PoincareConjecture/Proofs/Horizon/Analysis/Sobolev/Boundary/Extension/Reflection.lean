@@ -5,18 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +21,6 @@ variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
 def coordinateSign (i : Fin d) : ℝ := if i = 0 then -1 else 1
-
 
 def reflect : E ≃ₗᵢ[ℝ] E where
   toFun x := WithLp.toLp 2 (fun i => coordinateSign i * x i)
@@ -76,10 +63,8 @@ private theorem reflect_single (i : Fin d) :
     simp [reflect]
   · simp [reflect, hj]
 
-
 def evenReflect (u : E → ℝ) (x : E) : ℝ :=
   (halfSpace d).indicator u x + (halfSpace d).indicator u (reflect x)
-
 
 def reflectedPartial (i : Fin d) (g : E → ℝ) (x : E) : ℝ :=
   (halfSpace d).indicator g x + coordinateSign i * (halfSpace d).indicator g (reflect x)
@@ -369,7 +354,6 @@ theorem hasWeakPartialDeriv_evenReflect {p : ℝ≥0∞} (hp : 1 ≤ p)
     dsimp only [ψ]
     rw [reflected_test_partial hφ]
 
-
 noncomputable def evenReflectMemW1pWitness {p : ℝ≥0∞} (hp : 1 ≤ p) (_hp_top : p ≠ ⊤)
     {u : E → ℝ} (hw : MemW1pWitness p u (halfSpace d)) :
     MemW1pWitness p (evenReflect u) Set.univ where
@@ -384,8 +368,6 @@ theorem evenReflectMemW1pWitness_weakGrad {p : ℝ≥0∞} (hp : 1 ≤ p) (hp_to
     {u : E → ℝ} (hw : MemW1pWitness p u (halfSpace d)) (i : Fin d) (x : E) :
     (evenReflectMemW1pWitness hp hp_top hw).weakGrad x i =
       reflectedPartial i (fun y => hw.weakGrad y i) x := rfl
-
-
 
 theorem memW1p_evenReflect {p : ℝ≥0∞} (hp : 1 ≤ p) (hp_top : p ≠ ⊤)
     {u : E → ℝ} (hu : MemW1p p u (halfSpace d)) :

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.FrozenEvolution
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.LowerDerivatives
 
-
-
-
-
-
-
-
-
-
 noncomputable section
-
 
 open Asymptotics Filter Matrix MeasureTheory Real Set
 open scoped NNReal RealInnerProductSpace Topology
 
 namespace Poincare.Parabolic.Interior.Kernel
-
 
 variable {V F : Type*}
   [NormedAddCommGroup V] [InnerProductSpace Real V] [FiniteDimensional Real V]

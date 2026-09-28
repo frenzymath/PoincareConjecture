@@ -5,25 +5,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonConvexContainment
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem IsFinitePLBallPair.eq_closure_polygon_inside {n : ℕ}
     {d : Set (ℝ × ℝ)} (P : Polygon (ℝ × ℝ) (n + 3))
@@ -38,10 +24,6 @@ theorem IsFinitePLBallPair.eq_closure_polygon_inside {n : ℕ}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.subset_convex_of_planar_polygon_boundary {n : ℕ}
     {d C : Set E} (P : Polygon E (n + 3))

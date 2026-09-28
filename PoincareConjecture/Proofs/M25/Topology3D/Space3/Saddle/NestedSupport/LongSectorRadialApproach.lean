@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.Long
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,9 +10,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_saddle_nested_shared_radial_exterior_approach
     (kappa : OpenPartialHomeomorph E2 E2)

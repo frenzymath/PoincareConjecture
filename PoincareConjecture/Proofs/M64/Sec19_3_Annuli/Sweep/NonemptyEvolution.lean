@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.AnnulusJoin
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.SweptAnnulus
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ElementaryFields
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
 
 theorem m64Annulus_nonempty_of_c2_sweeps
     (hcompact : IsCompact (univ : Set M))
@@ -44,8 +30,6 @@ theorem m64Annulus_nonempty_of_c2_sweeps
   obtain ⟨C, _⟩ := m64Annulus_join S0 B
   obtain ⟨D, _⟩ := m64Annulus_join C S1
   exact ⟨D⟩
-
-
 
 theorem m64AnnulusFlow_nonempty_of_initial
     (hcompact : IsCompact (univ : Set M))
@@ -63,8 +47,6 @@ theorem m64AnnulusFlow_nonempty_of_initial
   intro t ht
   exact m64Annulus_nonempty_of_c2_sweeps hcompactP hc0 hc1
     ⟨le_rfl, ht.1.trans ht.2⟩ ht A
-
-
 
 theorem m64AnnulusFlow_nonnegative_of_initial
     (hcompact : IsCompact (univ : Set M))

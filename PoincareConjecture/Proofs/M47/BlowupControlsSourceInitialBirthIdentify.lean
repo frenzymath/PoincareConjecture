@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthSlice
 import PoincareConjecture.Proofs.M47.CanonicalNeckPartialIsometry
 import PoincareConjecture.Proofs.M47.CanonicalNeckOpenSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem exists_source_initial_birth_identification
     {C X : GeneralizedSliceCarrier.{u}}

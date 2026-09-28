@@ -1,29 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedRadialNormalization
 import PoincareConjecture.Proofs.M76.Smoothing.PlanarCycleConfigurationSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Smoothing
 
-
-
-
 noncomputable def cycleFrame (n : ℕ) (theta : ℝ) (i : Fin (n + 3)) : ℂ :=
   if i = 0 then 1 else Circle.exp theta
-
-
 
 theorem fixedCycleVertexValues_iff {n : ℕ} {theta : ℝ}
     (v : (cyclicEdgeComplex n).RadialEmbedding ℂ) :
@@ -46,14 +31,8 @@ theorem fixedCycleVertexValues_iff {n : ℕ} {theta : ℝ}
       subst i
       simpa only [cycleFrame, if_neg hne] using hone
 
-
-
-
 abbrev FixedEdgeCycleSpace (n : ℕ) (theta : ℝ) :=
   (cyclicEdgeComplex n).FixedRadialEmbedding ({0, 1} : Set (Fin (n + 3))) (cycleFrame n theta)
-
-
-
 
 noncomputable def fixedUnitCycleHomeomorph (n : ℕ) (theta : ℝ) :
     (cyclicEdgeComplex n).FixedUnitRadialEmbedding ({0, 1} : Set (Fin (n + 3)))
@@ -69,10 +48,6 @@ noncomputable def fixedUnitCycleHomeomorph (n : ℕ) (theta : ℝ) :
   · rintro ⟨hzero, hone⟩
     exact ⟨congrArg (fun z : Circle => (z : ℂ)) hzero,
       congrArg (fun z : Circle => (z : ℂ)) hone⟩
-
-
-
-
 
 theorem contractible_fixedEdgeCycleSpace (n : ℕ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) : ContractibleSpace (FixedEdgeCycleSpace n theta) := by

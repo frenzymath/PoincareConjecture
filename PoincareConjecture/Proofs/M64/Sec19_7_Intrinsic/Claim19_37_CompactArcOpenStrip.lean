@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalLocalCha
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +14,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_exists_open_normal_strip_on_compact_arc
     (N : IntrinsicAnnulus) {a b : ℝ} (ha : 0 < a)

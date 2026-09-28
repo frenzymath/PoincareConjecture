@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Potential
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Source
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -89,7 +81,6 @@ theorem nirenbergMasterYoungConstant_nonneg
   · refine le_max_of_le_left ?_
     refine mul_nonneg ?_ (sq_nonneg _)
     exact mul_nonneg (by linarith) hε₀.le
-
 
 theorem nirenberg_master_inequality_after_young_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -451,7 +442,6 @@ theorem nirenberg_master_inequality_after_young_nonsmooth_quantitative
   rw [h_const_eq]
   linarith
 
-
 theorem nirenberg_master_inequality_absorbed_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
     {u f : E → ℝ}
@@ -536,7 +526,6 @@ theorem nirenberg_master_inequality_absorbed_nonsmooth_quantitative
     ∂(volume : Measure E) with hI_def
   have h_lam_split : B.lam * I - (B.lam / 2) * I = (B.lam / 2) * I := by ring
   linarith [h_main]
-
 
 theorem nirenberg_diffQuot_g_localL2_bound_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -701,7 +690,6 @@ theorem nirenberg_diffQuot_g_localL2_bound_quantitative
     mul_le_mul_of_nonneg_left h_int_le h_lam_half_nn
   exact h_step1.trans h_main
 
-
 theorem nirenberg_master_inequality_after_young_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
     {u f : E → ℝ}
@@ -784,7 +772,6 @@ theorem nirenberg_master_inequality_after_young_nonsmooth
     h_fderiv_eta hΩ' hΩ'_closure hΩ'_compact hh_supp_in_Ω' k
     h_FK_diffQuot_u_bound h_v_test_sq_bound h_master_nonsmooth hh hh_le
 
-
 theorem nirenberg_master_inequality_absorbed_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
     {u f : E → ℝ}
@@ -862,7 +849,6 @@ theorem nirenberg_master_inequality_absorbed_nonsmooth
     (d := d) B hu_l2 hf_l2_loc hg_l2 hη hη_supp hη_range hN
     h_fderiv_eta hΩ' hΩ'_closure hΩ'_compact hh_supp_in_Ω' k
     h_FK_diffQuot_u_bound h_v_test_sq_bound h_master_nonsmooth hh hh_le
-
 
 theorem nirenberg_diffQuot_g_localL2_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

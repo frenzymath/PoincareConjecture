@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M49.CalibratedVolume
 import PoincareConjecture.Proofs.M49.Mathlib.ExponentialLeftLimit
 import PoincareConjecture.Proofs.M49.RegularLimitVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +11,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem preEvent_exists_finite_left_limit_direct
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
@@ -37,8 +25,6 @@ theorem preEvent_exists_finite_left_limit_direct
     (F.event T hT).tMinus_lt (sliceVolume_lt_top F hstart).ne
     (fun s hs t ht hst => preEvent_volume_le_exp_mul_direct F T hT hpinched hs ht hst)
   exact ⟨L, hL, hlim.mono_left (nhdsWithin_mono _ inter_subset_right)⟩
-
-
 
 theorem event_regular_limit_volume_le_left_limit_direct
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

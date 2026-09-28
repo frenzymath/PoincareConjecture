@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Euclidean
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -163,8 +152,6 @@ theorem exists_small_neck_of_unbounded_scalarCurvature_of_euclidean
     (Real.lt_sqrt (inv_nonneg.mpr hρ.le)).mpr hi
   exact (div_lt_iff₀ (Real.sqrt_pos.mpr (hQ (G.subsequence i)))).mpr
     (by have := mul_lt_mul_of_pos_left hsqrt hρ; simpa only [mul_inv_cancel₀ hρ.ne'] using this)
-
-
 
 theorem exists_small_neck_of_unbounded_scalarCurvature
     (P : ThreeDimensionalClassificationPredecessors.{u})

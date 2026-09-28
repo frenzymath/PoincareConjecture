@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallGraphOrienta
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SeparatingNeckComponents
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +17,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem eventually_initial_graph_labels_on_component (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)
@@ -80,10 +66,6 @@ theorem eventually_initial_graph_labels_on_component (H : CounterexampleNeckFami
   exact H.eventually_initial_graph_labels_along_path W G L j hstage hsigma f hf hpath
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_initial_limit_scalar_upper_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

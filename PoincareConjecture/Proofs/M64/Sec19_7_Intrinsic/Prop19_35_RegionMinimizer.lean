@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometr
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.PathVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,18 +25,10 @@ namespace PoincareConjecture
     EMetricSpace.ofRiemannianMetric (𝓡 2) AnnulusCoordinates
   exact EMetricSpace.toMetricSpace (fun x y => G.edist_ne_top x y)
 
-
-
-
-
 def m64IntrinsicCurveVariation (G : RiemannianMetric 2 AnnulusCoordinates)
     (γ : ℝ → AnnulusCoordinates) (a b : ℝ) : ℝ≥0∞ :=
   @eVariationOn ℝ _ AnnulusCoordinates
     (intrinsicDistanceMetric G).toEMetricSpace.toPseudoEMetricSpace γ (Icc a b)
-
-
-
-
 
 theorem m64Intrinsic_curveVariation_affine
     (G : RiemannianMetric 2 AnnulusCoordinates) (γ : ℝ → AnnulusCoordinates) (a b : ℝ) :
@@ -78,10 +58,6 @@ theorem m64Intrinsic_curveVariation_affine
       hf.continuousOn.image_Icc_of_antitoneOn zero_le_one hanti, hf0, hf1,
       min_eq_right hba, max_eq_left hba]
 
-
-
-
-
 theorem m64Intrinsic_exists_join_with_variation
     (G : RiemannianMetric 2 AnnulusCoordinates) {f g : ℝ → AnnulusCoordinates}
     (hf : ContinuousOn f (Icc 0 1)) (hg : ContinuousOn g (Icc 0 1))
@@ -95,10 +71,6 @@ theorem m64Intrinsic_exists_join_with_variation
     (intrinsicDistanceMetric G).toEMetricSpace.toPseudoEMetricSpace
   exact m64_exists_join_with_variation hf hg hjoin
 
-
-
-
-
 theorem m64Intrinsic_curveVariation_le_pathELength
     (G : RiemannianMetric 2 AnnulusCoordinates) {γ : ℝ → AnnulusCoordinates}
     {a b : ℝ} (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 2) 1 γ (Icc a b)) :
@@ -107,10 +79,6 @@ theorem m64Intrinsic_curveVariation_le_pathELength
   let : PseudoEMetricSpace AnnulusCoordinates :=
     (intrinsicDistanceMetric G).toEMetricSpace.toPseudoEMetricSpace
   exact G.eVariationOn_le_pathELength_of_edist_le hγ (fun _ _ _ _ => le_rfl)
-
-
-
-
 
 theorem m64Intrinsic_curveVariation_le_of_edist_le
     (G : RiemannianMetric 2 AnnulusCoordinates) {γ : ℝ → AnnulusCoordinates}
@@ -129,11 +97,6 @@ theorem m64Intrinsic_curveVariation_le_of_edist_le
     simpa only [edist_dist, Real.dist_eq] using h
   rw [ENNReal.ofReal_eq_coe_nnreal hC]
   exact Poincare.MetricCurves.eVariationOn_le_of_lipschitzOnWith hlip
-
-
-
-
-
 
 theorem m64Intrinsic_exists_compact_region_shortest_curve
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}
@@ -173,11 +136,6 @@ theorem m64Intrinsic_exists_compact_region_shortest_curve
       ← ENNReal.ofReal_mul hL] at h
     exact h
   · exact hγmin
-
-
-
-
-
 
 theorem m64Intrinsic_exists_embedded_region_minimizer
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

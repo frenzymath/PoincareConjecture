@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeDualSigns
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleDualSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry SignType
@@ -21,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
 
 theorem sign_eq_on_dualRegion
     (p q : (T.marked 2).vertices) {s : Finset (T.index → ℝ × V3)}
@@ -46,8 +36,6 @@ theorem sign_eq_on_dualRegion
   · exact T.sign_eq_on_edge_dualRegion p q hs hcard hps hqs
   · let : Fintype T.ambient.faces := T.finite.fintype
     exact (T.sign_eq_on_triangle_dualBlock p q hs hcard hps hqs).mono inter_subset_left
-
-
 
 theorem dualRegion_halves_eq
     (p q : (T.marked 2).vertices) {s : Finset (T.index → ℝ × V3)}
@@ -74,9 +62,6 @@ theorem dualRegion_halves_eq
     rw [← sign_nonpos_iff (a := T.height p x),
       ← sign_nonpos_iff (a := T.height q x), hsign]
 
-
-
-
 theorem positive_dualRegion_restriction
     {s t : Finset (T.index → ℝ × V3)} (ht : t ∈ (T.marked 2).faces)
     (hst : s ⊆ t) (p q : (T.marked 2).vertices)
@@ -89,8 +74,6 @@ theorem positive_dualRegion_restriction
     exact h.subset ⟨hx.2, hx.1.2⟩
   · intro x hx
     exact ⟨⟨T.dualRegion_antitone hst hx.1, (h.symm.subset hx).2⟩, hx.1⟩
-
-
 
 theorem negative_dualRegion_restriction
     {s t : Finset (T.index → ℝ × V3)} (ht : t ∈ (T.marked 2).faces)

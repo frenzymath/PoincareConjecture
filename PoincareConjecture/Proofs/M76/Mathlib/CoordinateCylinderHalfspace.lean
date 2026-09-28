@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHeightShear
 import PoincareConjecture.Proofs.M76.Mathlib.PLBandCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -68,9 +59,6 @@ private theorem exists_affine_minimum
         exact ⟨i, Finset.mem_insert_self _ _, rfl⟩
       · intro y
         simp
-
-
-
 
 theorem exists_coordinateCylinder_halfspace_chart
     {ι : Type*} [Fintype ι] (J : Finset ι) {x : ι → ℝ}

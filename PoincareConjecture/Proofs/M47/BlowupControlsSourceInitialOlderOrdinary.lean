@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceRealization
 import PoincareConjecture.Proofs.M47.CanonicalNeckSourceTransfer
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingNeck
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -68,8 +58,6 @@ private theorem olderOrdinary_native_readout
   rw [hv, hw, hcoordinate z hz] at hr
   simpa only [roundCylinderPullback, surgeryCylinderPullback, dif_pos hs,
     SurgeryFlowCylinder.pullbackInner] using hr
-
-
 
 theorem exists_source_initial_older_ordinary
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

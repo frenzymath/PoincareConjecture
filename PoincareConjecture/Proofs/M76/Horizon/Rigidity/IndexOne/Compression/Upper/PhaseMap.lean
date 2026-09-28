@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Suppo
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.RelativeScalarHomotopy
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -27,8 +17,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_upper_asymmetric_relative_compression_map
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
@@ -209,6 +197,5 @@ theorem exists_upper_asymmetric_relative_compression_map
       by_cases hxR : x ∈ R
       · rw [hfixed ⟨x, hxR⟩ hx]
       · simp only [hxR, false_and]
-
 
 end PoincareConjecture.M76.HamiltonIntervalTorus

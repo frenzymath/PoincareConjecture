@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.RelativeCompactPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_protected_face_carrier_within
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -88,7 +74,6 @@ theorem exists_protected_face_carrier_within
   · intro y hy
     obtain ⟨x, _, hyN⟩ := mem_iUnion₂.mp (hP₀O hy)
     exact hNΩ x hyN
-
 
 theorem exists_protected_face_carrier
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

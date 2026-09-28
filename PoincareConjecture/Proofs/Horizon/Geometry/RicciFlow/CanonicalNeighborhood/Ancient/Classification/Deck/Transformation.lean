@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M27ProductModels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,7 +38,6 @@ theorem deck_symm : q ∘ d.symm = q := by
   have h := congrFun hdeck (d.symm p)
   simpa only [Function.comp_apply, d.apply_symm_apply] using h.symm
 
-
 def deckDiffeomorph :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       (UnitTwoSphere × ℝ) (UnitTwoSphere × ℝ) ∞ where
@@ -65,7 +56,6 @@ variable [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   {K : AncientKappaSolution 3 M}
 
 include hq hdeck in
-
 
 theorem deck_productInner (F : M27RoundSphereFamily)
     (hmetric : ∀ t, t ≤ 0 → ∀ p : UnitTwoSphere × ℝ,

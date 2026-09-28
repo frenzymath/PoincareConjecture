@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.MeasureTheory.Measure.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -109,9 +101,6 @@ private theorem symmetric_gaussian_le_one_sided
       dsimp [α]
       rw [Real.exp_neg]
       ring
-
-
-
 
 theorem exists_gaussian_normalization_constant
     (n : ℕ) (A B c A0 : ℝ)

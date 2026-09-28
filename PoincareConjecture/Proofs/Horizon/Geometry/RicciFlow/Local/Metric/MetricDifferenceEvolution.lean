@@ -2,27 +2,6 @@ import PoincareConjecture.Proofs.M03.MetricDifferenceEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Curvature.Calculus.CurvatureTrilinear
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 

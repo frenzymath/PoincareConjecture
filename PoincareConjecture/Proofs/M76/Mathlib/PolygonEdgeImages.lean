@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Polygon
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] {n : ℕ}
-
-
-
 
 theorem hasSimplicialEdges_of_injective_edge_images (P : Polygon E n) (Q : Polygon F n)
     (hn : 3 ≤ n) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

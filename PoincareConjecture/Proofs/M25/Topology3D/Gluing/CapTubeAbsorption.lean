@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartUnion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 structure CapTubeChartExtension
     {M : Type u} [TopologicalSpace M]
@@ -91,8 +81,6 @@ theorem glued_inverse_smooth (H : CapTubeChartExtension cap tube) :
   simpa only [glued, glueOpenCharts_target] using h
 end CapTubeChartExtension
 
-
-
 structure CapTubeAbsorptionData
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -132,7 +120,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} {X : Set M}
   {cap : ClosedModelCapData g} {tube : EpsilonTubeCertificate g X}
 
-
 noncomputable def toClosedModelCapData
     (D : CapTubeAbsorptionData cap tube) : ClosedModelCapData g :=
   { epsilon := cap.epsilon
@@ -166,8 +153,6 @@ theorem toClosedModelCapData_puncture
     (D : CapTubeAbsorptionData cap tube) :
     (D.toClosedModelCapData).puncture = cap.puncture := D.puncture_eq
 end CapTubeAbsorptionData
-
-
 
 noncomputable def ClosedModelCapData.absorb_tube
     {M : Type u} [TopologicalSpace M]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Compression.MarkedBall
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.DiskComplement
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_ball_along_sphere_disk_with_boundary_intersection
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
@@ -112,8 +100,6 @@ theorem exists_ball_along_sphere_disk_with_boundary_intersection
       rw [hFp] at hpball
       exact (not_lt_of_ge (le_of_eq (mem_sphere.mp p.property).symm)) (mem_ball.mp hpball)
     exact ⟨x, by rw [← closedBall_sdiff_ball]; exact ⟨hx, hxnot⟩, rfl⟩
-
-
 
 theorem exists_ball_along_sphere_disk
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

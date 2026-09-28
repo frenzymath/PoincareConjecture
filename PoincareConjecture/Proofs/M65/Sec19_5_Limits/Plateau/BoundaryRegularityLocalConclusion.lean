@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHe
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHeinzC1
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHeinzChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M65Boundary
 open M65Euler
 
 set_option maxHeartbeats 1800000 in
-
-
-
 
 theorem weakDisk_boundary_local_contMDiff
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

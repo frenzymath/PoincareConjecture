@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M10.EuclideanGreen
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -36,8 +29,6 @@ theorem tsupport_trace_fderiv_subset (V : E → E) :
   by_contra hnot
   apply hx
   simp only [fderiv_of_notMem_tsupport ℝ hnot, ContinuousLinearMap.toLinearMap_zero, map_zero]
-
-
 
 theorem integrable_mul_trace_weighted_test {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {U : Set E} (hU : IsOpen U)

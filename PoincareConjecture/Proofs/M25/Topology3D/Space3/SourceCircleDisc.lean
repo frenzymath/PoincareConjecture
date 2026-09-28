@@ -3,18 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -25,14 +13,10 @@ namespace PoincareConjecture.M25.Topology3D
 local instance sourceCircle_stereographic_dimension : Fact (Module.finrank ℝ E3 = 2 + 1) :=
   ⟨by simp [E3]⟩
 
-
-
 theorem stereographic'_contMDiffOn (v : UnitTwoSphere) :
     ContMDiffOn (𝓡 2) 𝓘(ℝ, E2) ∞ (stereographic' 2 v) (stereographic' 2 v).source := by
   have hatlas : stereographic' 2 v ∈ atlas E2 UnitTwoSphere := ⟨v, rfl⟩
   exact contMDiffOn_of_mem_maximalAtlas (IsManifold.subset_maximalAtlas hatlas)
-
-
 
 theorem stereographic'_symm_contMDiff (v : UnitTwoSphere) :
     ContMDiff 𝓘(ℝ, E2) (𝓡 2) ∞ (stereographic' 2 v).symm := by
@@ -42,8 +26,6 @@ theorem stereographic'_symm_contMDiff (v : UnitTwoSphere) :
     contMDiffOn_symm_of_mem_maximalAtlas (IsManifold.subset_maximalAtlas hatlas)
   apply contMDiffOn_univ.mp
   simpa only [stereographic'_target] using hi
-
-
 
 theorem isPlanarEmbedding_stereographic_projection
     (q : UnitCircle → UnitTwoSphere) (hq : ContMDiff (𝓡 1) (𝓡 2) ∞ q)
@@ -73,9 +55,6 @@ theorem isPlanarEmbedding_stereographic_projection
     apply hqd θ
     rw [hd.mfderiv]
     exact congrArg (mfderiv 𝓘(ℝ, E2) (𝓡 2) σ.symm (g θ)) hab
-
-
-
 
 theorem exists_source_circle_disc_chart (hP : PlanarSchoenfliesService)
     (q : UnitCircle → UnitTwoSphere) (hq : ContMDiff (𝓡 1) (𝓡 2) ∞ q)

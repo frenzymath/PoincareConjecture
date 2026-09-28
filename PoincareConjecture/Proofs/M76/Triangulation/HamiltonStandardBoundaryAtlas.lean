@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinderHalfspace
 import Mathlib.Topology.Algebra.Module.Equiv
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +17,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ)
 
 omit [Fintype κ] in
-
-
 
 theorem standardLatticeHandleAtlas_of_affine_cover
     [Finite κ]
@@ -101,9 +90,6 @@ theorem standardLatticeHandleAtlas_of_affine_cover
   · intro y hy
     rw [hell]
     exact (himage.apply_mem_iff hy.1).symm.trans (hhalf (q y) hy.2)
-
-
-
 
 theorem exists_standard_lattice_handle_atlas [DiscreteTopology L]
     (hdim : Fintype.card ι + Fintype.card κ = 3) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ variable {n : ℕ} {M N : Type*}
   [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
-
-
 
 theorem terminalGerms_openChartMap_mfderiv
     (q : M → N) (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q)
@@ -40,8 +28,6 @@ theorem terminalGerms_openChartMap_mfderiv
   exact congrArg (fun A => A v) h
 
 variable [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem terminalGerms_open_metric_readout
     (q : M → N) (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q)

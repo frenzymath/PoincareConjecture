@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem AffineOnFaces.exists_uniform_convex_lipschitzOnWith
     {K : SimplicialComplex ℝ E} {f : E → F}
@@ -58,17 +46,11 @@ namespace Geometry
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem FinitePiecewiseAffineOn.exists_uniform_convex_lipschitzOnWith
     {f : E → F} {S : Set E} (hf : FinitePiecewiseAffineOn f S) :
     ∃ L : ℝ≥0, ∀ s : Set E, s ⊆ S → Convex ℝ s → LipschitzOnWith L f s := by
   obtain ⟨K, hK, rfl, hfaces⟩ := hf
   exact hfaces.exists_uniform_convex_lipschitzOnWith hK
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_uniform_vertical_lipschitzOnWith
     {f : E × ℝ → F} {B : Set E} {α β : ℝ}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPush
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.Admissible
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.TriangleRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsSimplePolygonalArc.consecutive_subarc_closed_region {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)
@@ -160,9 +148,6 @@ theorem IsSimplePolygonalArc.consecutive_subarc_closed_region {n : ℕ}
     refine ⟨hTsub hx, ?_⟩
     rw [hq.closure_polygonInterior hdim, hboundary]
     exact Or.inr (Or.inl hx)
-
-
-
 
 theorem IsSimplePolygonalArc.exists_admissible_between_of_visible_subarc {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

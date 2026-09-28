@@ -1,17 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseCuts
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.AdjacentStrips
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Convex.Segment
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +27,6 @@ theorem parameter_image_Icc {r : ℝ} (hr : 0 ≤ r) (hrs : r ∈ C.parameter.so
   simpa only [C.parameter_zero] using
     (C.parameter.continuousOn.mono hI).image_Icc_of_monotoneOn hr
       (C.strictMono.monotoneOn.mono hI)
-
-
 
 theorem inverse_ray_image_Icc (p d : E) {r : ℝ} (hr : 0 ≤ r)
     (hrs : r ∈ C.parameter.source) :
@@ -66,7 +54,6 @@ namespace Poincare.Topology.Plane.Curves.TransverseGraphCuts
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
   (P : TransverseGraphCuts lo a b ua wa ub wb)
-
 
 noncomputable def linearCoordinates (L : (ℝ × ℝ) ≃L[ℝ] E)
     {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X) :
@@ -98,8 +85,6 @@ theorem linearCoordinates_axis_mem_source (L : (ℝ × ℝ) ≃L[ℝ] E)
   rw [P.A_zero, P.B_zero]
   apply hI
   constructor <;> nlinarith [ht.1, ht.2]
-
-
 
 theorem linearCoordinates_axis_fderiv (L : (ℝ × ℝ) ≃L[ℝ] E)
     {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)
@@ -185,8 +170,6 @@ namespace Poincare.Topology.Plane.Curves
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem exists_adjacent_linear_oblique_width
     {lo₁ lo₂ : ℝ → ℝ} {a₁ b₁ ua₁ wa₁ ub₁ wb₁ a₂ b₂ ua₂ wa₂ ub₂ wb₂ : ℝ}
     (P : TransverseGraphCuts lo₁ a₁ b₁ ua₁ wa₁ ub₁ wb₁)
@@ -254,9 +237,6 @@ private theorem image_subgraph_slice (F : ℝ × ℝ → E) (h : ℝ → ℝ)
     exact ⟨z, hz, rfl⟩
   · rintro ⟨z, hz, rfl⟩
     exact ⟨(t, z), ⟨⟨ht, hz⟩, rfl⟩, rfl⟩
-
-
-
 
 theorem exists_adjacent_linear_oblique_intersection
     {lo₁ lo₂ : ℝ → ℝ} {a₁ b₁ ua₁ wa₁ ub₁ wb₁ a₂ b₂ ua₂ wa₂ ub₂ wb₂ : ℝ}

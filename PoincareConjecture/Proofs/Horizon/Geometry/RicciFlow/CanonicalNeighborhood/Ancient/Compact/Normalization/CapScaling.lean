@@ -7,13 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Analytics.ScalarGradientTransport
 import Mathlib.Data.Real.Pointwise
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

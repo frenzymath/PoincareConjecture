@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRecenter
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ open Set
 namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 def HasBranchingCollars (W : AlexanderSectionProfile E) : Prop :=
   ∀ c : ℝ, W.charge c ≠ 0 →
@@ -41,10 +26,6 @@ def HasBranchingCollars (W : AlexanderSectionProfile E) : Prop :=
             (W.height - AffineMap.const ℝ E c) q β) ∧
           Nonempty (AlexanderCollarSlab W.carrier
             (-(W.height - AffineMap.const ℝ E c)) q γ)
-
-
-
-
 
 theorem HasBranchingCollars.recenter {W : AlexanderSectionProfile E}
     (hW : W.HasBranchingCollars) (c : ℝ) : (W.recenter c).HasBranchingCollars := by
@@ -67,11 +48,6 @@ theorem HasBranchingCollars.recenter {W : AlexanderSectionProfile E}
   · rwa [hsection]
   · intro ε hε
     simpa only [recenter_carrier, hheight] using hcollars ε hε
-
-
-
-
-
 
 theorem exists_event_support_gap (W : AlexanderSectionProfile E)
     {C : Set ℝ} (hC : C.Finite) {ε : ℝ} (hε : 0 < ε) :

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiberAnnuli
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedAnnularConcentration
 
-
 open Set Filter MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -231,6 +230,5 @@ theorem exists_subseq_openFiber_critical_ambient_ball_weighted_scalar_integral_t
     (hmeas _ _ _) hsub (hKn _) (fun x _ => hsec _ x) (hiCrit (ψ j) i)
     ((hKi _).mono_set (hDoubleBuffer _ i))
   linarith
-
 
 end PoincareConjecture.RiemannianMetric

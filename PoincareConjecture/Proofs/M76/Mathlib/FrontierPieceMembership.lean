@@ -1,22 +1,8 @@
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
-
 
 theorem frontier_mem_iff_of_subset {X : Type*} [TopologicalSpace X]
     {s t d : Set X} (hts : t ⊆ s) (hfront : frontier t ⊆ frontier s ∪ d)

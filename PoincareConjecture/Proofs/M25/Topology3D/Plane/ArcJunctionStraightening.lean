@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcStraightWeight
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcLocalStraightening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -256,9 +248,6 @@ private theorem junction_delete_index_bridge {n : ℕ}
     apply Fin.ext
     rw [hval, coe_finRotate_of_ne_last hql, coe_finRotate_of_ne_last hll]
     split_ifs at hqv ⊢ <;> omega
-
-
-
 
 theorem exists_local_polygonalArc_junction_straightening {n : ℕ}
     (hdim : Module.finrank ℝ E = 2)

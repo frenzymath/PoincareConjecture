@@ -3,23 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture.M65
-
-
 
 theorem abs_sq_sub_sq_le_weighted_mass {f v : ℝ → ℝ} {a b K : ℝ}
     (hf : Differentiable ℝ f) (hv : Continuous v) (hK : 0 ≤ K)
@@ -61,8 +50,6 @@ theorem abs_sq_sub_sq_le_weighted_mass {f v : ℝ → ℝ} {a b K : ℝ}
   · rw [abs_sub_comm]
     exact hordered hx hy hxy
   · exact hordered hy hx hyx
-
-
 
 theorem sq_le_weighted_average_sq_add_mass {f v : ℝ → ℝ} {a b K : ℝ}
     (hab : a ≤ b) (hf : Differentiable ℝ f) (hv : Continuous v) (hK : 0 ≤ K)

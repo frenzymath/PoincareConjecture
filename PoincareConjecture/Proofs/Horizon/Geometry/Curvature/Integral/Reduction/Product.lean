@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.U
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.ThreeDimensional
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
@@ -44,7 +36,6 @@ private theorem integral_product_halfCylinder
   norm_num at hh ⊢
   exact hh
 end PoincareConjecture.RiemannianMetric
-
 
 namespace PoincareConjecture.RiemannianMetric
 private theorem halfBall_pos_scalar_integral_le_of_product
@@ -98,7 +89,6 @@ private theorem halfBall_pos_scalar_integral_le_of_product
 
 end PoincareConjecture.RiemannianMetric
 
-
 namespace PoincareConjecture.RiemannianMetric
 private theorem unitBall_scalar_integral_le_of_halfBall_pos_bound
     {M : Type*} [TopologicalSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
@@ -123,7 +113,6 @@ private theorem unitBall_scalar_integral_le_of_halfBall_pos_bound
 end PoincareConjecture.RiemannianMetric
 
 universe u
-
 
 theorem PoincareConjecture.exists_uniform_unitBall_scalar_integral_bound_two :
     ∃ C : ℝ, 0 < C ∧

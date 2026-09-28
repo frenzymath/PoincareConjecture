@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Polygons.TriangleFiber
 
-
-
 set_option autoImplicit false
 
 open Set

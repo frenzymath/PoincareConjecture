@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelOrientation
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +18,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
-
 theorem every_terminal_geometry_has_unmatched_slice_of_one_lower_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
     (hunique : ∀ q ∈ P.core,
@@ -40,8 +31,6 @@ theorem every_terminal_geometry_has_unmatched_slice_of_one_lower_end
   intro d'
   exact exists_unmatched_terminal_slice_of_one_lower_end hg d' hunique hform
     (one_lower_end_independent_of_terminal_geometry hg d d' hunique hcount)
-
-
 
 theorem no_terminal_matching_choice_of_one_lower_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)

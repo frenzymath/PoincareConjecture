@@ -4,14 +4,6 @@ import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -61,7 +53,6 @@ theorem memLp_product_field (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G)
     (B.aestronglyMeasurable_comp₂
       (continuous_pathExtension hT A).aestronglyMeasurable hV.aestronglyMeasurable)
   exact Eventually.of_forall (norm_product_field_le hT B A V)
-
 
 def product (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G)
     (A : TimePath E T) (V : TimeL2 F T) : TimeL2 G T :=
@@ -135,7 +126,6 @@ def productLinearMap (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G) :
   LinearMap.mk₂ ℝ (product hT B) (product_add_left hT B)
     (product_smul_left hT B) (product_add_right hT B) (product_smul_right hT B)
 
-
 def productOperator (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G) :
     TimePath E T →L[ℝ] TimeL2 F T →L[ℝ] TimeL2 G T :=
   (productLinearMap hT B).mkContinuous₂ ‖B‖ (fun A V => by
@@ -162,7 +152,6 @@ theorem product_sub_decomposition (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G)
         (map_sub (productOperator hT B) A C)
   rw [hright, hleft]
   abel
-
 
 theorem norm_product_sub_le (hT : 0 ≤ T) (B : E →L[ℝ] F →L[ℝ] G)
     (A C : TimePath E T) (V W : TimeL2 F T) :

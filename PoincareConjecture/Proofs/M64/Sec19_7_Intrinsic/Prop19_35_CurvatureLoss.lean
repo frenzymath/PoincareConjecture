@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TotalTurning
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,15 +8,10 @@ open scoped intervalIntegral
 
 namespace PoincareConjecture
 
-
-
 def m64IntrinsicHighCurvatureLength (N : IntrinsicAnnulus) (alpha : ℝ) : ℝ :=
   ∫ x in Ioc (0 : ℝ) rampPeriod ∩
     {x | alpha < intrinsicGeodesicCurvature N.metric N.connection 1 x},
     intrinsicBoundarySpeed N.metric 1 x
-
-
-
 
 theorem m64Intrinsic_continuous_geodesicCurvature
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) :
@@ -42,14 +23,9 @@ theorem m64Intrinsic_continuous_geodesicCurvature
   funext x
   exact (mul_div_cancel_right₀ _ (m64Intrinsic_boundarySpeed_pos N hradius x).ne').symm
 
-
-
 theorem m64IntrinsicHighCurvatureLength_nonneg (N : IntrinsicAnnulus) (alpha : ℝ) :
     0 ≤ m64IntrinsicHighCurvatureLength N alpha := by
   exact integral_nonneg (fun _ => Real.sqrt_nonneg _)
-
-
-
 
 theorem m64Intrinsic_high_curvature_length_mul_le_turning
     (N : IntrinsicAnnulus) (alpha : ℝ) :
@@ -86,9 +62,6 @@ theorem m64Intrinsic_high_curvature_length_mul_le_turning
   rw [intrinsicGeodesicCurvatureIntegral,
     intervalIntegral.integral_of_le (show (0 : ℝ) ≤ rampPeriod from Real.two_pi_pos.le)]
   exact htotal
-
-
-
 
 theorem m64Intrinsic_high_curvature_length_lt
     (N : IntrinsicAnnulus) {delta r alpha : ℝ} (hdelta : 0 < delta) (hr : 0 < r)

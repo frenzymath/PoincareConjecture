@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.Blocks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalBlockExtension
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -13,8 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (T : CoorientedSurfaceStars E)
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_vertex_half_chart (p : (T.marked 2).vertices) (w : ℝ) (hw : w ≠ 0) :
     ∃ (boundary : Bool) (g : E → C3),

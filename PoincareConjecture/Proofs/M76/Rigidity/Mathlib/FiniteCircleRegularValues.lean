@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleRegularLevel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_finite_exceptional_circle_values
     {M E ι : Type*} [TopologicalSpace M] [CompactSpace M]
@@ -74,9 +63,6 @@ end OpenPartialHomeomorph
 
 namespace AddCircle
 
-
-
-
 theorem exists_representative_in_interval_avoiding_finite
     (p : ℝ) [Fact (0 < p)] {Z : Set (AddCircle p)} (hZ : Z.Finite)
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ p) :
@@ -91,9 +77,6 @@ theorem exists_representative_in_interval_avoiding_finite
   obtain ⟨c, ⟨t, ht, rfl⟩, hc⟩ :=
     ((Ioo_infinite hab).image hinj).exists_notMem_finite hZ
   exact ⟨t, ht, hc⟩
-
-
-
 
 theorem exists_two_representatives_avoiding_finite
     (p : ℝ) [Fact (0 < p)] {Z : Set (AddCircle p)} (hZ : Z.Finite) :

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.CompleteFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -37,7 +30,6 @@ theorem zeroLevelSet_nonempty_of_integralCurve
     Nonempty (zeroLevelSet f) := by
   refine ⟨⟨⟨γ (-f x), Set.mem_univ _⟩, ?_⟩⟩
   simpa using integralCurve_hits_zero hf hunit hγ hγ0
-
 
 theorem zeroLevelSet_nonempty [T3Space M] [Nonempty M]
     {g : RiemannianMetric (n + 1) M} {D : LeviCivitaData g}

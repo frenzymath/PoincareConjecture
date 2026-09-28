@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ExponentialDilation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
@@ -17,8 +8,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E F A : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem dilated_rapid_profile_jets_bounded {f : A → E → F} {eta : ℝ}
     (heta : 0 ≤ eta) (hf : ∀ a, ContDiff ℝ ∞ (f a))

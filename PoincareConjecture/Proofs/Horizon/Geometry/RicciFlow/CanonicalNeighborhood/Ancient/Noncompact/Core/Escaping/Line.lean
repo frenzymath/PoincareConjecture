@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Escaping.Segments
 import Mathlib.Order.Filter.Ultrafilter.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
-
-
 
 theorem M23TerminalExtension.exists_minimizing_line_of_source_arcs
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
@@ -87,8 +75,6 @@ theorem M23TerminalExtension.exists_minimizing_line_of_source_arcs
       ((hinverse s t).mono_left Nat.hyperfilter_le_atTop)
   rw [← ENNReal.ofReal_toReal (g.edist_ne_top (γ s) (γ t))]
   exact congrArg ENNReal.ofReal hd
-
-
 
 theorem M23TerminalExtension.exists_minimizing_line_of_nearby_necks
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
@@ -179,7 +165,6 @@ theorem M23TerminalExtension.exists_minimizing_line_of_nearby_necks
     filter_upwards [hradius.eventually_ge_atTop |s|,
       hradius.eventually_ge_atTop |t|] with k hs ht
     rw [hdist k s t hs ht, ENNReal.toReal_ofReal (abs_nonneg _)]
-
 
 theorem M23TerminalExtension.exists_minimizing_line_of_escaping_souls
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

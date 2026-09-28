@@ -1,15 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.TransportInterval
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Curvature
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem exists_curvature_transport (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M (Ico a b)) (hab : a < b) (x : M) :

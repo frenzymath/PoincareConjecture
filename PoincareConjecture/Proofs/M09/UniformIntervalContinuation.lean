@@ -2,13 +2,6 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology

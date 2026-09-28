@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_ControlledCylin
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalBall
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SmallCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem exists_full_low_scalar_ball_cylinder
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

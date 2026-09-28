@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.UnitTimeCanonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem exists_bounded_tip_cap_threshold_of_selected
     (P : M35StandardCapPredecessors)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.SourceInco
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Spheres.MinimalRemoval
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.IrreducibleSlabs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -113,4 +105,3 @@ theorem exists_hamiltonZero_boundary_meeting_third_hierarchy
       (fun y hy => (connectedComponentIn_eq hy).symm)
 
 end PoincareConjecture.M76
-

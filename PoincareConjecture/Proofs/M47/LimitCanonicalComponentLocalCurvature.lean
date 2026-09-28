@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalComponentSectionalConvergence
 import PoincareConjecture.Proofs.M47.TerminalCurvatureActualUniformScalar
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +25,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 private local instance : T2Space G.limit.carrier.carrier := G.limit.carrier.t2Space
-
-
 
 theorem limitCanonical_component_neighborhood_curvature
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

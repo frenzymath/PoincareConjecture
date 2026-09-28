@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.CurvatureRicciSecondDerivative
 import PoincareConjecture.Proofs.M03.CurvatureDerivativeCommutator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -197,19 +189,15 @@ theorem ricci_second_covariant_derivative_commutator
 
 end PoincareConjecture.Proofs.M03
 
-
-
 section LiteralSuccessorPatterns
 
 set_option maxHeartbeats 4000000
 
 namespace PoincareConjecture.Proofs.M03.CurvatureResidualPattern
 
-
 def literalRead {V : Type*} {k : ℕ} (P : V) (Z : Fin (k + 3) → V)
     (z : V) (ends : Fin 4 → V) : (Fin (k + 5) ⊕ Fin 4) → V :=
   Sum.elim (Fin.cons P (Fin.snoc Z z)) ends
-
 
 def co1Slots (k : ℕ) : (Fin 4 ⊕ Fin (k + 5)) ≃ (Fin (k + 5) ⊕ Fin 4) where
   toFun
@@ -236,7 +224,6 @@ def co1Slots (k : ℕ) : (Fin 4 ⊕ Fin (k + 5)) ≃ (Fin (k + 5) ⊕ Fin 4) whe
       · simp
       · refine Fin.lastCases ?_ (fun l => ?_) j <;> simp
     · fin_cases i <;> simp
-
 
 def co5Slots (k : ℕ) : (Fin 5 ⊕ Fin (k + 4)) ≃ (Fin (k + 5) ⊕ Fin 4) where
   toFun
@@ -717,10 +704,8 @@ theorem evaluate_bIn3 (l : Fin (k + 3)) :
 
 end Evaluation
 
-
 def coefficientMass {k : ℕ} (ps : List (CurvatureResidualPattern k)) : ℕ :=
   (ps.map (fun r => r.2.2.1.natAbs)).sum
-
 
 def spatialPatterns (k : ℕ) : List (CurvatureResidualPattern (k + 1)) :=
   [co1 k, co2 k] ++
@@ -728,7 +713,6 @@ def spatialPatterns (k : ℕ) : List (CurvatureResidualPattern (k + 1)) :=
     [co5 k, co3 k] ++
     (List.finRange (k + 3)).map (co6 k) ++
     (List.finRange (k + 3)).map (co7 k)
-
 
 def connectionPatterns (k : ℕ) : List (CurvatureResidualPattern (k + 1)) :=
   [bOut1 k, bOut2 k, bOut3 k] ++
@@ -833,7 +817,6 @@ section LiteralBasePatterns
 set_option maxHeartbeats 4000000
 
 namespace PoincareConjecture.Proofs.M03.CurvatureResidualPattern
-
 
 private abbrev S4 := Fin 4 ⊕ Fin 4
 
@@ -966,7 +949,6 @@ theorem basePatterns_evaluate
   apply Finset.sum_congr rfl
   intro γ _
   ring
-
 
 end PoincareConjecture.Proofs.M03.CurvatureResidualPattern
 

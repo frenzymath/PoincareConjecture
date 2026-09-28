@@ -1,20 +1,8 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BarrierConstants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_initialSafeDuration {rho budget : ℝ} (hrho : 0 < rho)
     (hbudget : 0 ≤ budget) :
@@ -36,10 +24,6 @@ theorem exists_initialSafeDuration {rho budget : ℝ} (hrho : 0 < rho)
   refine ⟨a, ha, by nlinarith [sq_nonneg rho], by nlinarith [sq_nonneg rho], ?_⟩
   apply (lt_div_iff₀ (mul_pos (by norm_num) (Real.sqrt_pos.mpr ha))).mpr
   nlinarith [Real.sqrt_pos.mpr ha, sq_pos_of_pos hrho]
-
-
-
-
 
 theorem exists_metricCapSideRadius {mu : ℝ} (hmu : 0 < mu) (ell lowerRadius : ℝ) :
     ∃ A : ℝ, 0 < A ∧ lowerRadius < A / 2 ∧ ell < mu * A ^ 2 / 4 := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FrameProjectionFormula
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
 
-
-
 theorem contDiffAt_kernelProjectionFormula (Q : E →L[ℝ] F)
     (hQ : Function.Surjective Q) {n : ℕ∞ω} :
     ContDiffAt ℝ n (kernelProjectionFormula : (E →L[ℝ] F) → E →L[ℝ] E) Q := by
@@ -31,8 +20,6 @@ theorem contDiffAt_kernelProjectionFormula (Q : E →L[ℝ] F)
     contDiffAt_id.clm_comp hadj
   have hi := (Q.isInvertible_self_comp_adjoint_of_surjective hQ).contDiffAt_map_inverse.comp Q hS
   exact contDiffAt_const.sub ((hadj.clm_comp hi).clm_comp contDiffAt_id)
-
-
 
 theorem contDiffAt_frameProjectionFormula (J : F →L[ℝ] E) (P : E →L[ℝ] E)
     (hP : Function.Injective (perpendicularFrame J P)) {n : ℕ∞ω} :
@@ -51,9 +38,6 @@ end ContinuousLinearMap
 variable {X E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem ContDiffOn.ker_starProjection {Q : X → E →L[ℝ] F} {U : Set X} {n : ℕ∞ω}
     (hQ : ContDiffOn ℝ n Q U) (hsurj : ∀ x ∈ U, Function.Surjective (Q x)) :

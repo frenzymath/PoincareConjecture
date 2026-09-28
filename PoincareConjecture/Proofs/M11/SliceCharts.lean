@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SliceTopology
 import PoincareConjecture.Proofs.M11.BoxTransitions
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

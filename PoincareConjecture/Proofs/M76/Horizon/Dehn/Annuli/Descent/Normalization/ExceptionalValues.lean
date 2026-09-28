@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.ActualIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -36,7 +26,6 @@ def faceIntersection (i : Fin D.length) (a b : Finset V3) : AffineSubspace ℝ V
 def exceptionalCoordinates (i : Fin D.length) (a b : Finset V3) : Set V3 :=
   {z | z ∈ D.faceIntersection i a b ∧
     Module.finrank ℝ (D.faceIntersection i a b).direction = 0}
-
 
 def exceptionalValues : Set s.Carrier :=
   ⋃ i : Fin D.length, ⋃ old : (D.prior i.val).faces,
@@ -65,9 +54,6 @@ theorem exceptionalValues_finite : D.exceptionalValues.Finite := by
   exact ((D.motions i).subdivision_finite.subset (D.motions i).free_le).biUnion
     fun a _ ↦ ((D.motions i).targets_finite old).biUnion
       fun b _ ↦ (D.exceptionalCoordinates_finite i a b).image _
-
-
-
 
 theorem exists_triangle_interiors_of_not_exceptional
     (hcard : ∀ a ∈ K.faces, a.card ≤ 3)

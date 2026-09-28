@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +8,6 @@ open scoped Topology
 universe u v w
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem eventually_bilinear_quadratic_error_le
     {X : Type u} {E : Type v} {I : Type w}

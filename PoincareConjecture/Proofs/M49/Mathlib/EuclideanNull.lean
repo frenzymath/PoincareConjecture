@@ -1,21 +1,11 @@
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 
 namespace EuclideanSpace
-
-
 
 theorem volume_coordinate_hyperplane {ι : Type*} [Fintype ι] (i : ι) (a : ℝ) :
     volume {x : EuclideanSpace ℝ ι | x i = a} = 0 := by

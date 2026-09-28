@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusFiber
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem stripRotation_circle_coordinate {L d : ℝ} (hwidth : 4 * d < L)
     {p q : ℝ × ℝ} (hp : p ∈ rectangle L d) (hq : q ∈ rectangle L d)
@@ -89,10 +75,6 @@ theorem stripRotation_circle_coordinate {L d : ℝ} (hwidth : 4 * d < L)
   · congr 1
     have h := hsame (by linarith)
     norm_num [h]
-
-
-
-
 
 theorem injective_annulusMap {L d : ℝ} (hL : 0 < L) (hwidth : 4 * d < L) :
     Function.Injective (fun p : AddCircle (4 * L) × Icc (-d) d =>

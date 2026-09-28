@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.CurvatureN
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,7 +40,6 @@ private theorem positive_plane_coefficients (D : LeviCivitaData g) (x : M)
     exact (mul_eq_zero.mp hh).resolve_right (neg_ne_zero.mpr (ne_of_gt hpos))
   exact ⟨ha0, hb0⟩
 
-
 theorem terminalCurvature_null_not_mem_positive_plane
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (hsec : ∀ u w : TangentSpace (𝓡 n) x, 0 ≤ D.curvatureTensor x u w u w)
@@ -64,8 +54,6 @@ theorem terminalCurvature_null_not_mem_positive_plane
     (by rw [hab]; exact hzero w u w) (by rw [hab]; exact hzero u u w)
   apply hv
   simp only [← hab, hc.1, hc.2, zero_smul, zero_add]
-
-
 
 theorem terminalCurvature_positive_plane_transverse
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

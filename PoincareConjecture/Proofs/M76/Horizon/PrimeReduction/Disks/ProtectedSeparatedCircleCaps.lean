@@ -1,23 +1,9 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.NonnegativeNormalDisplacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_protected_separated_circle_caps
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

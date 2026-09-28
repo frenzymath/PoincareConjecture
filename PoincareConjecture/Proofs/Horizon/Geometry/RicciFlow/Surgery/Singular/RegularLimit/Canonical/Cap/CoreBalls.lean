@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.CompactComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem regularReferencePreimage_ball_eq
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -59,9 +49,6 @@ theorem regularReferencePreimage_ball_eq
       (H.reference.forward t ht z) < ENNReal.ofReal r ↔
     (H.reference.flow.metric t).edist (x : M) (z : M) < ENNReal.ofReal r
   rw [hdist]
-
-
-
 
 theorem eventually_cap_core_ball_comparison
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

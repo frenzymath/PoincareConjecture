@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalFloorScale
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,7 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem terminalCommonInterval_after_finite_germ_floor
     (S : RepairedControlledSchedulesData.{u})

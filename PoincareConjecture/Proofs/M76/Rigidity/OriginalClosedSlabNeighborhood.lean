@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedSlabLevelPreimages
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleAvoidance
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SignedPhaseArcMembership
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,11 +16,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 open Classical in
-
-
-
-
-
 
 theorem exists_hamiltonZero_adjusted_neighborhood {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

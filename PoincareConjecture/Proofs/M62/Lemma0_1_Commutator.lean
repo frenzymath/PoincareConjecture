@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_1_SpeedEvolution
 import PoincareConjecture.Proofs.M62.Mathlib.MixedDerivatives
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem arc_time_commutator (hc : M62ShrinkingCurve F c)
     (f : ℝ × ℝ → ℝ)

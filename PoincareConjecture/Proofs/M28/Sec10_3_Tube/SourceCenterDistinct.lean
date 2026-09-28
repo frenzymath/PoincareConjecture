@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizerSubsegments
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeCommonOrientation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem intrinsicEDist_self_of_mem (g : RiemannianMetric 3 M)
     {U : Set M} {x : M} (hx : x ∈ U) : intrinsicEDist g U x x = 0 := by
   apply le_antisymm ?_ (show (0 : ℝ≥0∞) ≤ intrinsicEDist g U x x from zero_le)
@@ -34,9 +22,6 @@ theorem intrinsicEDist_self_of_mem (g : RiemannianMetric 3 M)
     (γ := fun _ : ℝ => x) (a := 0) (b := 0) le_rfl contMDiffOn_const
     (fun _ _ => hx)
   simpa only [RiemannianMetric.pathELength, Manifold.pathELength_self] using h
-
-
-
 
 theorem SourceEdgeCommonOrientationPacket.center_ne_later_center
     {g : RiemannianMetric 3 M} {N raw Q P : EpsilonNeck g}

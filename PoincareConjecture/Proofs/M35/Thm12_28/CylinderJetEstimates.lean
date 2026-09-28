@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderOrdinaryJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem roundCylinderInverseWeight_lower {u : ℝ} (hlo : -1 ≤ u) (hu : u < 1)
     (a : Fin 3) :
@@ -30,8 +19,6 @@ private theorem basis_inner_abs_le (a b : Fin 3) :
     |inner ℝ (roundCylinderCoordinateBasis a).1 (roundCylinderCoordinateBasis b).1| ≤ 1 := by
   fin_cases a <;> fin_cases b <;>
     norm_num [roundCylinderCoordinateBasis, EuclideanSpace.inner_single_left]
-
-
 
 theorem abs_fderiv_roundCylinderChristoffel_center_le {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) (i a b d : Fin 3) :
@@ -63,8 +50,6 @@ end PoincareConjecture.M35
 
 namespace PoincareConjecture.RoundCylinderClose
 
-
-
 theorem component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (he : 0 < epsilon)
     (hlo : -1 ≤ u) (hu : u < 1)
@@ -93,8 +78,6 @@ theorem component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
   have hpos := pow_pos (by norm_num : (0 : ℝ) < 1 / 4) (2 + k)
   nlinarith
 
-
-
 theorem first_component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (he : 0 < epsilon)
     (hlo : -1 ≤ u) (hu : u < 1)
@@ -111,8 +94,6 @@ theorem first_component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     at hjet
   norm_num at hjet
   exact hjet
-
-
 
 theorem second_error_component_abs_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (he : 0 < epsilon)

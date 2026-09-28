@@ -2,22 +2,11 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_finite_contact_buffer {S : Set ℝ} (hS : S.Finite)
     {u v : ℝ} (hcontact : Icc u v ∩ S = {u, v}) :
@@ -49,8 +38,6 @@ theorem exists_finite_contact_buffer {S : Set ℝ} (hS : S.Finite)
   · intro x hx
     have hxi := hcontact.symm.subset hx
     exact ⟨⟨hau.trans hxi.1.1, hxi.1.2.trans hvb⟩, hxi.2⟩
-
-
 
 theorem exists_continuous_endpoint_contact_buffer {S : Set ℝ} (hS : S.Finite)
     {f g : ℝ → ℝ} (hf : ContinuousAt f 0) (hg : ContinuousAt g 0)

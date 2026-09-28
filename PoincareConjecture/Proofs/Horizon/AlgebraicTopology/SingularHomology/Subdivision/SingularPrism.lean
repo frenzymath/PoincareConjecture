@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subdivision.SingularCycles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory
@@ -17,7 +10,6 @@ universe w v u
 namespace Poincare.Topology
 
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
-
 
 theorem simplicialPrism_onSimplex (R : C) {X Y : SSet.{w}}
     {f g : X ⟶ Y} (H : SimplicialObject.Homotopy f g)
@@ -33,7 +25,6 @@ theorem simplicialPrism_onSimplex (R : C) {X Y : SSet.{w}}
   congr 1
   change Sigma.ι (fun _ : X _⦋n⦌ => R) s ≫ (sigmaConst.obj R).map (H.h i) = _
   simp [sigmaConst, Sigma.map', SSet.ιChainComplex]
-
 
 theorem simplicialPrism_difference_boundary (R : C) {X Y : SSet.{w}}
     {f g p q : X ⟶ Y} (H : SimplicialObject.Homotopy f g)
@@ -60,7 +51,6 @@ theorem simplicialPrism_difference_boundary (R : C) {X Y : SSet.{w}}
   simp only [Preadditive.comp_add, SSet.ι_chainComplexMap_f] at hH hK
   simp only [Preadditive.sub_comp, Category.assoc, hH, hK, hside]
   abel
-
 
 theorem singularPrism_piece_eq_of_agree {X Y : TopCat.{w}}
     {f g p q : X ⟶ Y} (H : TopCat.Homotopy f g) (K : TopCat.Homotopy p q)
@@ -91,7 +81,6 @@ theorem singularPrism_piece_eq_of_agree {X Y : TopCat.{w}}
       ((X ⊗ TopCat.I).toSSetObjEquiv _ productSimplex z).1)
   rw [hspace]
   exact hagree _ _
-
 
 theorem singularPrism_boundary_of_constant_faces (R : C) {X Y : TopCat.{w}}
     {f g : X ⟶ Y} (H : TopCat.Homotopy f g) {n : ℕ}

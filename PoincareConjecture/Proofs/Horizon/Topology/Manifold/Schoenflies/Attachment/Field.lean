@@ -1,17 +1,5 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +8,6 @@ open scoped ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
-
-
 
 theorem exists_vertical_graph_field
     (b : E -> Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b) :

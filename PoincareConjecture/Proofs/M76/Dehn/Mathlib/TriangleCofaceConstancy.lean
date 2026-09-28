@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCochainIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
 
 theorem triangle_coface_constancy_of_link
     (a : Triangle K.toPreAbstractSimplicialComplex → Y)
@@ -79,9 +69,6 @@ theorem triangle_coface_constancy_of_link
   obtain ⟨v, hv⟩ := hvertex r hsr
   exact (hnext u q (c u) hu (hc u)).trans
     ((hconstant u v).trans (hnext v (c v) r (hc v) hv))
-
-
-
 
 theorem triangle_label_constant
     (a : Triangle K.toPreAbstractSimplicialComplex → Y)

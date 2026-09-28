@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.GradientEnerg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.LaplacianTime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Bochner
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalAssembly
 import PoincareConjecture.Definitions.M45NeckGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open PoincareConjecture.Proofs.M47
-
-
 
 theorem neckGluing_family_close {epsilon beta : ℝ}
     (hglue : M45NeckGluingProperty.{u} epsilon beta)
@@ -39,8 +27,6 @@ theorem neckGluing_family_close {epsilon beta : ℝ}
     exact hsmooth s hs
   · rw [hpull s hs]
     exact herror s hs z hz
-
-
 
 theorem surgeryCanonicalControl_of_neck_gluing_family {epsilon beta : ℝ}
     (hglue : M45NeckGluingProperty.{u} epsilon beta)

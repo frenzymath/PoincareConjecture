@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Graph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +49,6 @@ private theorem annulus_gram_diagonal_le_lipschitz
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem annulus_phase_lipschitzOn
     (P : M62.CircleProductData F circumference) (t : ℝ)

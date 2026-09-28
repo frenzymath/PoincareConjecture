@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.PreferredHessian
 import PoincareConjecture.Proofs.M10.LineSecondDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,14 +13,12 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem isLocalMin_preferredCoordinates {f : M → ℝ} {q : M} (hmin : IsLocalMin f q) :
     IsLocalMin (f ∘ (extChartAt (𝓡 n) q).symm) (extChartAt (𝓡 n) q q) := by
   have hi := (contMDiffOn_extChartAt_symm (I := 𝓡 n) (n := 1) q).contMDiffAt
     (extChartAt_target_mem_nhds (I := 𝓡 n) q)
   apply IsLocalMin.comp_continuous _ hi.continuousAt
   simpa only [extChartAt_to_inv] using hmin
-
 
 theorem mvfderiv_eq_zero_of_isLocalMin_hessian {f : M → ℝ} {q : M}
     (hf : MDifferentiableAt (𝓡 n) (𝓘(ℝ, ℝ)) f q) (hmin : IsLocalMin f q) :
@@ -37,7 +27,6 @@ theorem mvfderiv_eq_zero_of_isLocalMin_hessian {f : M → ℝ} {q : M}
   rw [← preferredChart_scalar_derivative q hf v,
     (isLocalMin_preferredCoordinates hmin).fderiv_eq_zero]
   rfl
-
 
 theorem hessian_self_nonneg_of_isLocalMin (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {f : M → ℝ} {q : M} (hf : ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) 2 f q)
@@ -56,7 +45,6 @@ theorem hessian_self_nonneg_of_isLocalMin (g : RiemannianMetric n M) (D : LeviCi
   rw [FiberBundle.extend_apply_self, preferredField_second_scalar_derivative q hf v,
     hzero, zero_apply, sub_zero]
   exact second_fderiv_nonneg_of_isLocalMin hcoord (isLocalMin_preferredCoordinates hmin) v
-
 
 theorem laplacian_nonneg_of_isLocalMin (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {f : M → ℝ} {q : M} (hf : ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) 2 f q)

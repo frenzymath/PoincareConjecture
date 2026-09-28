@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.RelativeBilinearComparison
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.RelativeMetricReadout
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,9 +77,6 @@ private theorem eventually_generalized_chart_relative_inner
     (g.pullbackCoefficients c.symm x) (A k x) halpha htau (hlower x hx)
     (by simpa only [dist_eq_norm, norm_sub_rev] using (hk x hx).le) v
 
-
-
-
 theorem eventually_generalized_relative_inner
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) {t : ℝ} (ht : t ∈ J)
@@ -128,9 +114,6 @@ theorem eventually_generalized_relative_inner
     ((generalizedSliceHomeomorph_contMDiffAt G (k + N) t (hNt k) (hstage hx)).mdifferentiableAt
       (by simp)) _ v
   exact hk q hq _ (mem_image_of_mem _ hxD)
-
-
-
 
 theorem eventually_generalized_tangent_comparison
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

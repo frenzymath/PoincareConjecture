@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.CubeSectorSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,9 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsCompact.exists_finite_convex_neighborhood {S : Set E} (hS : IsCompact S) :
     ∃ K : SimplicialComplex ℝ E, K.faces.Finite ∧ Convex ℝ K.space ∧

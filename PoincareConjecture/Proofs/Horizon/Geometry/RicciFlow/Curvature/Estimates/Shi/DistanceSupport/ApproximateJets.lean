@@ -7,18 +7,6 @@ import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Topology.Sequences
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology

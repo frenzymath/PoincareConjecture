@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerSmooth
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -57,9 +48,6 @@ private theorem horizontal_ricci_heq {q r : G.Point} (h : q = r)
   cases ha
   cases hb
   rfl
-
-
-
 
 theorem eulerResidual_eq_zero_of_minimizing
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -125,9 +113,6 @@ theorem eulerResidual_eq_zero_of_minimizing
   rw [horizontal_inner_heq hpoint hDX hZ, horizontal_scalar_heq hpoint hZ,
     horizontal_inner_heq hpoint hX hZ, horizontal_ricci_heq hpoint hX hZ] at heuler
   exact heuler
-
-
-
 
 theorem minimizerEulerStatement (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) : M14MinimizerEulerStatement G := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.TubeExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,14 +10,11 @@ namespace PoincareConjecture.M38
 
 variable {S : Type u} [TopologicalSpace S]
 
-
 def cylinderHeight (x : S × Set.Ioo (0 : ℝ) 1) : ℝ := x.2.val
-
 
 theorem cylinderHeight_continuous :
     Continuous (cylinderHeight (S := S)) :=
   continuous_subtype_val.comp continuous_snd
-
 
 theorem cylinder_compact_height_bounds {K : Set (S × Set.Ioo (0 : ℝ) 1)}
     (hK : IsCompact K) :
@@ -46,7 +34,6 @@ theorem cylinder_compact_height_bounds {K : Set (S × Set.Ioo (0 : ℝ) 1)}
   have hu : cylinderHeight z ≤ cylinderHeight y := hmax hz
   constructor <;> linarith
 
-
 theorem cylinder_slab_compact [CompactSpace S] {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) :
     IsCompact {x : S × Set.Ioo (0 : ℝ) 1 |
@@ -65,13 +52,11 @@ theorem cylinder_slab_compact [CompactSpace S] {a b : ℝ}
   rw [← hr]
   exact isCompact_range hf
 
-
 theorem cylinder_level_compact [CompactSpace S] {a : ℝ} (ha : a ∈ Set.Ioo (0 : ℝ) 1) :
     IsCompact {x : S × Set.Ioo (0 : ℝ) 1 | cylinderHeight x = a} := by
   convert cylinder_slab_compact (S := S) ha.1 ha.2 using 1
   ext x
   exact ⟨fun h => ⟨h.ge, h.le⟩, fun h => le_antisymm h.2 h.1⟩
-
 
 theorem cylinder_tails_preconnected [PreconnectedSpace S] {a : ℝ}
     (ha : a ∈ Set.Ioo (0 : ℝ) 1) :
@@ -114,9 +99,6 @@ theorem cylinder_tails_preconnected [PreconnectedSpace S] {a : ℝ}
     simpa only [Set.image_univ] using isPreconnected_univ.image gL hgL.continuousOn
   · rw [← hR]
     simpa only [Set.image_univ] using isPreconnected_univ.image gR hgR.continuousOn
-
-
-
 
 theorem no_cylinder_homeomorph_compact_compl [CompactSpace S] [ConnectedSpace S]
     [T2Space S] {K : Set (S × Set.Ioo (0 : ℝ) 1)}

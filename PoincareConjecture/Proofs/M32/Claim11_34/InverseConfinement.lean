@@ -1,26 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -105,16 +85,12 @@ private theorem eventually_ball_confinement_package
   rw [blowup_zeroSliceEmbedding_base, blowup_zeroSourceMetric_ball] at hcover
   exact ⟨hsmall.trans hsource, hcover⟩
 
-
-
 theorem blowup_eventually_baseBall_subset_zeroSliceEmbedding_image_ball
     (G : GeneralizedBlowupConvergence S J) {r C : ℝ} (hr : 0 < r) (hC : 1 < C) :
     ∀ᶠ k in atTop, S.baseBall (G.subsequence k) r ⊆
       blowup_zeroSliceEmbedding G k ''
         (G.limit.flow.metric 0).ball G.limit.base (C * r) :=
   (eventually_ball_confinement_package G hr hC).mono fun _ hk => hk.2
-
-
 
 theorem blowup_eventually_zeroSliceEmbedding_inverse_ball
     (G : GeneralizedBlowupConvergence S J) {r C : ℝ} (hr : 0 < r) (hC : 1 < C) :

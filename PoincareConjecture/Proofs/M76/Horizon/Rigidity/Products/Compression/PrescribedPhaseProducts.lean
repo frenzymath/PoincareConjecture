@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.PhaseProducts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedSlabPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,7 +16,6 @@ local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
 open Classical in
-
 
 theorem exists_hamiltonZero_prescribed_phase_products {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

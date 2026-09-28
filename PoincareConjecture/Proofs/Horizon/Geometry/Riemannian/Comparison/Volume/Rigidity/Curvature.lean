@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.Symmetry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,16 +44,12 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem ricci_nonneg_of_nonnegative_curvatureOperator
     (D : LeviCivitaData g) (x : M) (hoperator : D.NonnegativeCurvatureOperator x)
     (v : TangentSpace (𝓡 n) x) : 0 ≤ D.ricci x v v := by
   unfold ricci
   exact Finset.sum_nonneg fun i _ =>
     D.curvatureTensor_self_nonneg_of_nonnegative_curvatureOperator x hoperator v _
-
-
 
 theorem ricci_self_eq_zero_of_nonnegative_curvatureOperator_of_scalar_eq_zero
     [T2Space M]
@@ -74,8 +60,6 @@ theorem ricci_self_eq_zero_of_nonnegative_curvatureOperator_of_scalar_eq_zero
   have hupper := D.ricci_le_scalarCurvature_mul_inner_of_nonneg x hRic v
   rw [hscalar, zero_mul] at hupper
   exact le_antisymm hupper (hRic v)
-
-
 
 theorem curvatureTensor_self_eq_zero_of_nonnegative_curvatureOperator_of_scalar_eq_zero
     [T2Space M]
@@ -95,8 +79,6 @@ theorem curvatureTensor_self_eq_zero_of_nonnegative_curvatureOperator_of_scalar_
     simp_rw [hswap]
     exact D.ricci_self_eq_zero_of_nonnegative_curvatureOperator_of_scalar_eq_zero
       x hoperator hscalar v
-
-
 
 theorem curvatureTensor_eq_zero_of_nonnegative_curvatureOperator_of_scalar_eq_zero
     [T2Space M]

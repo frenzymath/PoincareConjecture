@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiHolomorphic
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,10 +9,6 @@ open Filter Set
 open scoped Topology ContDiff ComplexConjugate
 
 namespace Complex
-
-
-
-
 
 theorem fderiv_beltramiCircleReflect_tendsto (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
     (hf : AnalyticAt ℂ (f : ℂ → ℂ) 0) (hd : deriv (f : ℂ → ℂ) 0 ≠ 0) :

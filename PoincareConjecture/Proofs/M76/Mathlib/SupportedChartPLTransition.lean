@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem supported_chart_transition_mem_piecewiseAffineGroupoid
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

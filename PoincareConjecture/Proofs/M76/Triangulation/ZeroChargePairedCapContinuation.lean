@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargePairedCapStep
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,12 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
-
 
 theorem HasPairedHeightCap.continue_of_local_steps
     {S C : Set E} (A : E → ℝ) (d : ℝ → Set E) {a b : ℝ} (hab : a ≤ b)
@@ -65,10 +48,6 @@ theorem HasPairedHeightCap.continue_of_local_steps
         abs_le.mpr ⟨by linarith [hright.1], by linarith [hright.2]⟩
       exact hstep c (t n) (t (n + 1)) (t n).property (t (n + 1)).property hl hr hn ih
   simpa only [htN N le_rfl] using hcap N
-
-
-
-
 
 theorem regionBalls_of_paired_local_steps [FiniteDimensional ℝ E]
     {S C T : Set E} (A : E → ℝ) (d : ℝ → Set E) {a b : ℝ} (hab : a ≤ b)

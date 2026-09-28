@@ -3,18 +3,6 @@ import PoincareConjecture.Definitions.M64Approximation
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.RawLoopLength
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m64_compact_family_speed_bound
     (g : RiemannianMetric 3 M)
@@ -59,9 +43,6 @@ theorem m64_compact_family_speed_bound
   exact (hS0 (mem_range_self (z, (⟨x, hx⟩ : Icc (0 : ℝ) curvePeriod)))).trans
     (le_max_left _ _)
 
-
-
-
 theorem m64_exists_mesh_threshold {S r : ℝ} (hr : 0 < r) :
     ∃ N0 : ℕ, 0 < N0 ∧ ∀ N : ℕ, N0 ≤ N →
       2 * S * m63CellLength N < r := by
@@ -81,10 +62,6 @@ theorem m64_exists_mesh_threshold {S r : ℝ} (hr : 0 < r) :
   rw [← mul_div_assoc]
   apply (div_lt_iff₀ hNreal).mpr
   nlinarith only [hprod]
-
-
-
-
 
 theorem m64_uniform_sampled_polygon_short
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -106,9 +83,6 @@ theorem m64_uniform_sampled_polygon_short
     (Proofs.M58.periodic_periodicFreeLoop (Gamma z))
     hsampled hS (hbound z) x).trans_lt
       ((ENNReal.ofReal_lt_ofReal_iff hr).mpr (hmesh N hN0N))
-
-
-
 
 theorem m64_uniform_compact_sampled_polygon_short
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

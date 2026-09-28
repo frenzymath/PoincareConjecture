@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCappedProperArc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneConeExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_conical_boundary_pair_chart
     (hdim : Module.finrank ℝ E = Module.finrank ℝ F)

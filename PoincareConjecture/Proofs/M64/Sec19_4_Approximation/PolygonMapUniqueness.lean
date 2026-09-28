@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.M63Polygon
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProfileBase
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
-
-
-
 
 theorem m64_polygon_map_eq_of_side_map_eq
     (P Q : M63GeodesicPolygon g D N) (hN : 0 < N)

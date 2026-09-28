@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Germ.SphereDifferential
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +35,6 @@ private theorem bijective_convex_of_intertwining
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem bijective_fderiv_homotopy_of_ambient_ball_boundary
     (B D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

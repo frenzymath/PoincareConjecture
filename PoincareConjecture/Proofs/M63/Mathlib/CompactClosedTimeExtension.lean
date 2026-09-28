@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +12,6 @@ namespace PoincareConjecture.M63
 
 variable {E : Type u} {F : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_closedTime_compact_state_extension {C : Set ℝ} {K U : Set E}
     (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

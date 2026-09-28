@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CircularSubsetTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +11,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem pointed_collar_cut_side (P : Polygon E (n + 3))
     (hPe : P.HasSimplicialEdges) (hPi : Function.Injective P)

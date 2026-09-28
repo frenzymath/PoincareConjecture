@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Analysis.Normed.Affine.AddTorsor
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -31,10 +22,6 @@ private theorem exists_pos_smul_add_mem_of_isOpen {U : Set E} (hU : IsOpen U)
   rw [dist_eq_norm, add_sub_cancel_right, norm_smul, Real.norm_eq_abs, abs_of_pos ht]
   nlinarith
 
-
-
-
-
 theorem IsOpen.affine_le_on_closure_of_le_frontier [FiniteDimensional ℝ E]
     {U : Set E} (hU : IsOpen U) (hbounded : Bornology.IsBounded U)
     (A : E →ᵃ[ℝ] ℝ) (v : E) (hv : 0 < A.linear v) {a : ℝ}
@@ -54,10 +41,6 @@ theorem IsOpen.affine_le_on_closure_of_le_frontier [FiniteDimensional ℝ E]
     rw [hheight] at hle
     linarith [mul_pos ht hv]
   exact (hmax hx).trans (hfront y hyfront)
-
-
-
-
 
 theorem IsOpen.eq_empty_of_bounded_frontier_subset_affine_level [FiniteDimensional ℝ E]
     {U : Set E} (hU : IsOpen U) (hbounded : Bornology.IsBounded U)

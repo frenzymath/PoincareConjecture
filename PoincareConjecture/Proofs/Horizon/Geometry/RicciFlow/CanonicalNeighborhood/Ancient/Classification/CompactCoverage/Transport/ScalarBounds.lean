@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Main
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Lift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem uniformKappaCapDerivativeBounds_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :
@@ -53,8 +39,6 @@ theorem uniformKappaCapDerivativeBounds_of_m27
 attribute [local instance] AncientKappaSolution.uliftSecondCountable
   AncientKappaSolution.uliftConnectedSpace
 
-
-
 theorem uniformKappaCapDerivativeBounds_small_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :
     ∃ D : ℝ, 0 < D ∧
@@ -83,8 +67,6 @@ theorem uniformKappaCapDerivativeBounds_small_of_m27
   simpa only [L, AncientKappaSolution.ulift_flow, RicciFlow.ulift_scalarGradientNorm,
     RicciFlow.ulift_scalarEvolution, RicciFlow.ulift_scalarCurvature] using
     hderivatives t ht (ULift.up.{u} x)
-
-
 
 theorem uniformKappaCapDerivativeFields_small_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

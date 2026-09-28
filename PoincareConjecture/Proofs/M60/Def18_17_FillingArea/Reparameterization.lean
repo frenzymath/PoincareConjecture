@@ -1,12 +1,5 @@
 import PoincareConjecture.Statements.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -14,7 +7,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
 
 def CircleReparameterization.symm (r : CircleReparameterization) :
     CircleReparameterization where
@@ -24,7 +16,6 @@ def CircleReparameterization.symm (r : CircleReparameterization) :
   right_inverse := r.left_inverse
   continuous_map := r.continuous_inverse
   continuous_inverse := r.continuous_map
-
 
 def CircleReparameterization.trans (r s : CircleReparameterization) :
     CircleReparameterization where
@@ -40,16 +31,12 @@ def CircleReparameterization.trans (r s : CircleReparameterization) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m60ReparameterizedLoops_symm {γ₁ γ₂ : C1FreeLoopSpace (M := M)}
     (h : ReparameterizedLoops γ₁ γ₂) : ReparameterizedLoops γ₂ γ₁ := by
   obtain ⟨r, hr⟩ := h
   refine ⟨r.symm, fun z => ?_⟩
   change γ₂ z = γ₁ (r.inverse z)
   rw [hr, r.right_inverse]
-
-
 
 def m60Disk_reparameterize {g : RiemannianMetric 3 M}
     {γ₁ γ₂ : C1FreeLoopSpace (M := M)} (r : CircleReparameterization)
@@ -66,14 +53,10 @@ def m60Disk_reparameterize {g : RiemannianMetric 3 M}
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
 theorem m60Disk_reparameterize_area {g : RiemannianMetric 3 M}
     {γ₁ γ₂ : C1FreeLoopSpace (M := M)} (r : CircleReparameterization)
     (h : ∀ z, γ₁ z = γ₂ (r.map z)) (D : LipschitzSpanningDisk g γ₁) :
     (m60Disk_reparameterize r h D).area = D.area := rfl
-
-
 
 theorem m60DiskAreas_eq_of_reparameterized (g : RiemannianMetric 3 M)
     {γ₁ γ₂ : C1FreeLoopSpace (M := M)} (h : ReparameterizedLoops γ₁ γ₂) :
@@ -86,8 +69,6 @@ theorem m60DiskAreas_eq_of_reparameterized (g : RiemannianMetric 3 M)
     rintro a ⟨D, rfl⟩
     exact ⟨m60Disk_reparameterize r hr D, rfl⟩
   exact Set.Subset.antisymm (forward h) (forward (m60ReparameterizedLoops_symm h))
-
-
 
 theorem m60FillingArea_eq_of_reparameterized (g : RiemannianMetric 3 M)
     {γ₁ γ₂ : C1FreeLoopSpace (M := M)} (h : ReparameterizedLoops γ₁ γ₂) :

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalChar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalCapNeighborhood
 import Mathlib.Order.Filter.Bases.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 namespace PoincareConjecture.M76

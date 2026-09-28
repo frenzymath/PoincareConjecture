@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Disks.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.DiskSphereCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.EnclosingRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -57,8 +49,6 @@ theorem nonempty_enclosing_region
 end PoincareConjecture.M76.Dehn.ProtectedDisks
 
 namespace PoincareConjecture.M76
-
-
 
 theorem hasHamiltonProtectedDehnDisks
     (L : Submodule ℤ (Fin 1 → ℝ)) [DiscreteTopology L] {α : Type*}

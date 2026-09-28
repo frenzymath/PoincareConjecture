@@ -1,29 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_compact_PL_scalar_neighborhood_model
     {M E ι : Type*} [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]

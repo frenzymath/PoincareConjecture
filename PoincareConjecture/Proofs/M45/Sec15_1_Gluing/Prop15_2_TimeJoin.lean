@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_SpatialJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M45
 
 open SpacetimeBounds
-
-
-
-
 
 theorem ricciCoefficients_timeJoin {n : ℕ} {a T b : ℝ}
     (hTb : T < b) {U : Set (EuclideanSpace ℝ (Fin n))}

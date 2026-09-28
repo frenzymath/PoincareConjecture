@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M04.CurvatureEnergyHeat
 import PoincareConjecture.Proofs.M04.ShiCutoffMaximum
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
 theorem continuousOn_flow_curvatureTensorNorm (F : RicciFlow n M J) :
     ContinuousOn (fun p : ℝ × M => (F.connection p.1).curvatureTensorNorm p.2)
       (J ×ˢ univ) := by
@@ -34,8 +23,6 @@ theorem continuousOn_flow_curvatureTensorNorm (F : RicciFlow n M J) :
   dsimp only
   rw [LeviCivitaData.curvatureDerivativeNorm_zero]
   exact (Real.sqrt_sq (Real.sqrt_nonneg _)).symm
-
-
 
 theorem hasDerivWithinAt_flow_curvatureEnergy (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ J) (x : M) :
@@ -48,8 +35,6 @@ theorem hasDerivWithinAt_flow_curvatureEnergy (F : RicciFlow n M J)
   have hdiff := h.contDiffOn.differentiableOn (by simp) t ht
   simpa only [Function.comp_def, LeviCivitaData.curvatureDerivativeNorm_zero]
     using hdiff.hasDerivWithinAt
-
-
 
 theorem curvatureEnergy_velocity_le_at_maximum (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ J) (x : M)
@@ -70,8 +55,6 @@ theorem curvatureEnergy_velocity_le_at_maximum (F : RicciFlow n M J)
   have hheat := M04.curvatureEnergy_heat_inequality F ht x
   nlinarith [sq_nonneg ((F.connection t).curvatureDerivativeNorm 1 x)]
 
-
-
 theorem compact_curvatureTensorNorm_le_quadraticGrowthBarrier [CompactSpace M]
     {T B : ℝ} (F : RicciFlow n M (Icc 0 T)) (hT : 0 < T) (hB : 0 < B)
     (hden : 16 * (n : ℝ) ^ 6 * B * T < 1)
@@ -88,8 +71,6 @@ theorem compact_curvatureTensorNorm_le_quadraticGrowthBarrier [CompactSpace M]
       hasDerivWithinAt_flow_curvatureEnergy F ht x) _ hinit
   intro t ht x hmax
   exact curvatureEnergy_velocity_le_at_maximum F ⟨ht.1.le, ht.2⟩ x hmax
-
-
 
 theorem compact_curvatureTensorNorm_le_twice [CompactSpace M]
     {T B : ℝ} (F : RicciFlow n M (Ico 0 T)) (hB : 0 < B)

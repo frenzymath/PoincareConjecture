@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.Domain
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +13,6 @@ namespace Poincare.VolumeComparison
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [MeasurableSpace E] [BorelSpace E] [FiniteDimensional ℝ E] [Nontrivial E]
-
 
 theorem integral_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} (hf : Integrable f μ) :
@@ -79,8 +68,6 @@ theorem integral_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
         _ = _ := integral_subtype_comap measurableSet_Ioi
           (fun t : ℝ => t ^ (Module.finrank ℝ E - 1) * f (t • (θ : E)))
 
-
-
 theorem setIntegral_ball_eq_polar (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} (r : ℝ) (hf : IntegrableOn f (Metric.ball 0 r) μ) :
     (∫ x in Metric.ball 0 r, f x ∂μ) =
@@ -118,8 +105,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem map_pullbackDensity_eq_restrict_image
     (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M}
@@ -150,8 +135,6 @@ theorem map_pullbackDensity_eq_restrict_image
   · exact (hf.contMDiffAt (hU.mem_nhds (hsU (Subtype.coe_image_subset _ _ hx)))).mdifferentiableAt
       (by simp)
 
-
-
 theorem integral_image_eq_integral_pullbackDensity
     (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M}
@@ -177,7 +160,6 @@ theorem integral_image_eq_integral_pullbackDensity
   intro x _
   simp [pullbackVolumeDensity, ENNReal.toReal_ofReal, Real.sqrt_nonneg,
     smul_eq_mul, mul_comm]
-
 
 theorem integrableOn_image_iff_pullbackDensity
     (g : RiemannianMetric n M)
@@ -208,8 +190,6 @@ theorem integrableOn_image_iff_pullbackDensity
     change (ENNReal.ofReal _).toReal = _
     exact ENNReal.toReal_ofReal (Real.sqrt_nonneg _)
   simpa [IntegrableOn, ENNReal.coe_toNNReal, NNReal.smul_def, hcoe, mul_comm] using h
-
-
 
 theorem integral_image_inter_ball_eq_polar
     (g : RiemannianMetric n M) (hn : 1 ≤ n)
@@ -250,8 +230,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem ae_ball_eq_image_sdiff_terminal
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)
     {e : EuclideanSpace ℝ (Fin n) → M} {R r : ℝ}
@@ -278,9 +256,6 @@ theorem ae_ball_eq_image_sdiff_terminal
     exact ⟨v, ⟨⟨hvS, fun hvT => hx ⟨v, hvT, rfl⟩⟩, hvr⟩, rfl⟩
   · rintro ⟨v, ⟨⟨hvS, _⟩, hvr⟩, rfl⟩
     exact ⟨v, ⟨hvS, hvr⟩, rfl⟩
-
-
-
 
 theorem integral_ball_eq_polar_of_injOn
     (g : PoincareConjecture.RiemannianMetric n M) (p : M) (hn : 1 ≤ n)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialEmbeddingSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace
@@ -17,8 +8,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {A : AbstractSimplicialComplex ι} {v : ι → E}
-
-
 
 theorem IsRadialEmbedding.linearIndependent_face_image (hv : A.IsRadialEmbedding v)
     {s : Finset ι} (hs : s ∈ A.faces) :
@@ -30,9 +19,6 @@ theorem IsRadialEmbedding.linearIndependent_face_image (hv : A.IsRadialEmbedding
     exact ⟨s, hs, Finset.coe_image⟩
   have h : LinearIndependent ℝ ((↑) : ↥(s.image v : Set E) → E) := hlin _ hsi
   rwa [Finset.coe_image] at h
-
-
-
 
 theorem IsRadialEmbedding.vertex_mem_normalize_face_iff (hv : A.IsRadialEmbedding v)
     {s : Finset ι} (hs : s ∈ A.faces) (i : ι) :

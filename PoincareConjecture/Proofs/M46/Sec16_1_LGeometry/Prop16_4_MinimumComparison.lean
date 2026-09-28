@@ -1,23 +1,11 @@
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem right_slope_bound_of_upper_competitor {f phi : ℝ → ℝ} {t d v : ℝ}
     (hphi : HasDerivAt phi d t) (heq : phi t = f t)
@@ -33,9 +21,6 @@ theorem right_slope_bound_of_upper_competitor {f phi : ℝ → ℝ} {t d v : ℝ
   rw [slope_def_field, slope_def_field, heq]
   exact div_le_div_of_nonneg_right (sub_le_sub_right hs.2.1 _)
     (sub_pos.mpr hst).le
-
-
-
 
 theorem minimum_le_of_right_upper_competitors {f : ℝ → ℝ} {a b c : ℝ}
     (ha : 0 < a) (hf : ContinuousOn f (Icc a b)) (hstart : f a ≤ c)

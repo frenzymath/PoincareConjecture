@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureMovingNeckImage
 import PoincareConjecture.Proofs.M47.TerminalCurvatureChartScalar
 import PoincareConjecture.Proofs.M47.TerminalCurvatureScalarNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,8 +19,6 @@ open M34 SpacetimeBounds SpacetimeBounds.Bootstrap
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilinear" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalCurvature_eventually_image_neck_on_finite_cover
     {ι : Type*} [Finite ι] [Nonempty ι]

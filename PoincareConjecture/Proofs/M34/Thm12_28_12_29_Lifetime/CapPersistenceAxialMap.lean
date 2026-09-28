@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecutOpen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,22 +12,16 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 noncomputable def axialMap (f : ℝ → ℝ) (x : M) : M := by
   classical
   exact if x ∈ N.end_neck.carrier then
     N.end_neck.coordinate_map ((N.end_neck.coordinate_inverse x).1,
       f (N.end_neck.coordinate_inverse x).2) else x
 
-
-
 theorem axialMap_eq_self_of_mem_closed_core (f : ℝ → ℝ) {x : M}
     (hx : x ∈ N.closed_core) : N.axialMap f x = x := by
   rw [N.closed_core_eq_complement_end] at hx
   simp only [axialMap, if_neg hx.2]
-
-
 
 theorem axialMap_eq_self_on_recut {f : ℝ → ℝ} {c : ℝ}
     (hf : ∀ s ≤ c, f s = s) : EqOn (N.axialMap f) id (N.recutCarrier c) := by
@@ -46,9 +30,6 @@ theorem axialMap_eq_self_on_recut {f : ℝ → ℝ} {c : ℝ}
   · exact N.axialMap_eq_self_of_mem_closed_core f hx
   · simp only [axialMap, if_pos hx.1, hf _ hx.2.2.le]
     exact N.end_neck.coordinate_map_coordinate_inverse hx.1
-
-
-
 
 theorem axialMap_contMDiffOn {f : ℝ → ℝ} {c : ℝ} {S : Set M}
     (hc : -N.epsilon⁻¹ < c) (hc' : c < N.epsilon⁻¹) (hS : S ⊆ N.carrier)

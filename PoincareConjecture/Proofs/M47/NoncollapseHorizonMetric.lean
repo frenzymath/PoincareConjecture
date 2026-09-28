@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryOrdinary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem horizon_cylinder_metric_comparison
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T a K : ℝ}

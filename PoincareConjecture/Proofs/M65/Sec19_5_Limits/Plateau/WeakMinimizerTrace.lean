@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskDivergence
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakDerivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -18,15 +8,9 @@ open scoped Topology SchwartzMap LineDeriv InnerProductSpace ContDiff intervalIn
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m65DiskTestL2 (test : 𝓢(LoopPlane, ℝ)) :
     Lp ℝ 2 (volume.restrict loopDiskSet) :=
   ((test.memLp 2 volume).restrict loopDiskSet).toLp test
-
-
-
 
 noncomputable def m65DiskBoundaryTest (test : 𝓢(LoopPlane, ℝ)) (i : Fin 2) (θ : ℝ) : ℝ :=
   test (Proofs.M58.angularPoint θ) * Proofs.M58.angularPoint θ i
@@ -40,17 +24,9 @@ private theorem m65DiskBoundaryTest_memLp (test : 𝓢(LoopPlane, ℝ)) (i : Fin
   exact (memLp_two_iff_integrable_sq hc.aestronglyMeasurable).mpr
     ((hc.pow 2).continuousOn.integrableOn_compact isCompact_Icc)
 
-
-
-
 noncomputable def m65DiskBoundaryTestL2 (test : 𝓢(LoopPlane, ℝ)) (i : Fin 2) :
     Lp ℝ 2 (volume.restrict (Icc (-Real.pi) Real.pi)) :=
   (m65DiskBoundaryTest_memLp test i).toLp (m65DiskBoundaryTest test i)
-
-
-
-
-
 
 def M65DiskWeakTrace (u : Lp ℝ 2 (volume.restrict loopDiskSet))
     (d : Fin 2 → Lp ℝ 2 (volume.restrict loopDiskSet))
@@ -59,10 +35,6 @@ def M65DiskWeakTrace (u : Lp ℝ 2 (volume.restrict loopDiskSet))
     ⟪d i, m65DiskTestL2 test⟫_ℝ +
       ⟪u, m65DiskTestL2 (∂_{EuclideanSpace.basisFun (Fin 2) ℝ i} test)⟫_ℝ =
         ⟪b, m65DiskBoundaryTestL2 test i⟫_ℝ
-
-
-
-
 
 theorem m65DiskWeakTrace_of_limit
     {u : ℕ → Lp ℝ 2 (volume.restrict loopDiskSet)}
@@ -122,11 +94,6 @@ private theorem m65C1_diskGreen (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f)
       simp only [X, real_inner_smul_left, B, EuclideanSpace.basisFun_inner,
         m65DiskBoundaryTest]
       ring
-
-
-
-
-
 
 theorem m65DiskWeakTrace_of_C1 (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f)
     (hfL2 : MemLp f 2 (volume.restrict loopDiskSet))

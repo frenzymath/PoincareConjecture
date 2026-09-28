@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCutGeometry
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,7 +35,6 @@ theorem terminalModelBoundaryCircle_continuous
     · exact a.upper_smooth.continuous
   exact d.flatten.continuous.comp
     (d.filledModel.continuous.comp (continuous_subtype_val.comp hc))
-
 
 theorem terminal_model_image_height_level (d : TerminalSaddleGeometry M P p e) (z : Real) :
     (fun q : S2 => d.flatten (d.filledModel q)) ''
@@ -94,7 +91,6 @@ theorem iUnion_range_terminalModelBoundaryCircle
   simp_rw [hr]
   rw [← image_iUnion, hi, image_union,
     terminal_model_image_height_level, terminal_model_image_height_level]
-
 
 theorem range_terminalModelBoundaryCircle
     (d : TerminalSaddleGeometry M P p e) {η : Real} (a : ModelCutCircleData d η)

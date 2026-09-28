@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RayApproximation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_uniform_sublinear_ray_approximation
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -56,8 +42,6 @@ theorem exists_uniform_sublinear_ray_approximation
         g.toponogov_equal_radius_of_edist_segments D hc hsec ha hα0 hβ0 hα hβ)
   obtain ⟨k, hk⟩ := (hlim.eventually_lt_const hε).exists
   exact (not_lt_of_ge (hbad (σ k) ray hray0 hray)) hk
-
-
 
 theorem exists_uniform_ray_approximation_on_annuli
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

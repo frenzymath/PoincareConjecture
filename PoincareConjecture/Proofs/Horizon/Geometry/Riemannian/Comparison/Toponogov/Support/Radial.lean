@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Jacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,8 +45,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem radialVariation_endpoint_pairing_eq
     (g : RiemannianMetric n M)
@@ -103,8 +91,6 @@ theorem radialVariation_endpoint_pairing_eq
   linarith
 
 set_option maxHeartbeats 1200000 in
-
-
 
 theorem radial_pairing_le_of_nonnegative_sectional [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -177,9 +163,6 @@ theorem radial_pairing_le_of_nonnegative_sectional [T2Space M]
     (show EuclideanSpace ℝ (Fin n) from mfderiv (𝓡 n) (𝓡 n) e v w))
       (one_smul ℝ v)
   exact hbound.trans_eq hpair
-
-
-
 
 theorem deriv2_norm_sq_le_of_minimizing_radial [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

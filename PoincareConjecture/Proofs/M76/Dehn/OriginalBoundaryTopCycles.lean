@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BoundaryTopCycleEquiv
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 noncomputable def original_boundary_topCycleEquiv
     (K A : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hAK : A ≤ K)

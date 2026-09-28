@@ -1,19 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Compatible
-
-
-
-
-
-
-
-
-
 
 open Set Filter Metric
 
@@ -25,8 +10,6 @@ universe u
 
 namespace CompatiblePointedCompactSystem
 
-
-
 theorem properSpace_completedLimit_of_nat_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ n : ℕ,
@@ -37,13 +20,6 @@ theorem properSpace_completedLimit_of_nat_stage_coverage
   intro R
   obtain ⟨n, hn⟩ := exists_nat_ge R
   exact ⟨n, (Metric.closedBall_subset_closedBall hn).trans (hcover n)⟩
-
-
-
-
-
-
-
 
 theorem properSpace_completedLimit_of_cofinal_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -60,9 +36,6 @@ theorem properSpace_completedLimit_of_cofinal_stage_coverage
   obtain ⟨n, hn⟩ := Filter.eventually_atTop.1 hev
   exact ⟨n, (Metric.closedBall_subset_closedBall (hn n le_rfl)).trans
     (hcover n)⟩
-
-
-
 
 theorem properSpace_completedLimit_of_eventually_cofinal_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -84,9 +57,6 @@ theorem properSpace_completedLimit_of_eventually_cofinal_stage_coverage
   have hrad : R ≤ r n := hM n hMn
   exact ⟨n, (Metric.closedBall_subset_closedBall hrad).trans (hN n hNn)⟩
 
-
-
-
 theorem range_stageEmbedding_mono
     (S : CompatiblePointedCompactSystem.{u}) {n m : ℕ} (hnm : n ≤ m) :
     Set.range (S.stageEmbedding n) ⊆ Set.range (S.stageEmbedding m) := by
@@ -94,10 +64,6 @@ theorem range_stageEmbedding_mono
   | refl => exact Set.Subset.rfl
   | @step m hnm ih =>
       exact ih.trans (S.range_stageEmbedding_mono_succ m)
-
-
-
-
 
 theorem properSpace_completedLimit_of_eventually_nat_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -115,10 +81,6 @@ theorem properSpace_completedLimit_of_eventually_nat_stage_coverage
   have hcov := hN n hnN
   refine ⟨n, (Metric.closedBall_subset_closedBall ?_).trans hcov⟩
   exact le_trans hnR (by exact_mod_cast hnr)
-
-
-
-
 
 theorem iUnion_range_stageEmbedding_eq_univ_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -139,4 +101,3 @@ theorem iUnion_range_stageEmbedding_eq_univ_of_radial_stage_coverage
 end CompatiblePointedCompactSystem
 
 end Poincare.GromovHausdorff
-

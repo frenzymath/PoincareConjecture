@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ZeroDimensionalBase
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_annulus_ricciTraceDensity_supremum_le
     (P : M62.CircleProductData F circumference)
@@ -41,8 +28,6 @@ theorem auxiliaryCircle_annulus_ricciTraceDensity_supremum_le
   · exact auxiliaryCircle_annulus_ricciTraceDensity_abs_le P Q
       (Nat.one_le_iff_ne_zero.mpr hn) time (m64CurvatureSupremum_nonneg hbounded)
       (m64Curvature_le_supremum hbounded) f z
-
-
 
 theorem auxiliaryCircle_annulus_ricciTraceIntegral_supremum_le
     (P : M62.CircleProductData F circumference)
@@ -62,8 +47,6 @@ theorem auxiliaryCircle_annulus_ricciTraceIntegral_supremum_le
   · exact auxiliaryCircle_annulus_ricciTraceIntegral_abs_le P Q
       (Nat.one_le_iff_ne_zero.mpr hn) time (m64CurvatureSupremum_nonneg hbounded)
       (m64Curvature_le_supremum hbounded) f harea htrace
-
-
 
 theorem auxiliaryCircle_annulus_area_variation_on_compact
     (P : M62.CircleProductData F circumference)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,19 +10,15 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
 def terminalSourceCountableDomain (rho : ℝ) : Opens E :=
   ⟨Metric.ball 0 (rho / 2), Metric.isOpen_ball⟩
-
 
 def terminalSourceCountableZero {rho : ℝ} (hrho : 0 < rho) :
     terminalSourceCountableDomain rho :=
   ⟨0, Metric.mem_ball_self (half_pos hrho)⟩
 
-
 noncomputable def terminalSourceCountableScaleFactor (rho0 rho : ℝ) : ℝ :=
   min 1 (rho0 / (2 * rho))
-
 
 theorem terminalSourceCountableScaleFactor_bounds {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) :
@@ -55,7 +43,6 @@ private theorem scaled_norm_lt {rho0 rho : ℝ} (h0 : 0 < rho0) (hrho : 0 < rho)
   rw [norm_smul, Real.norm_of_nonneg hlambda.le]
   exact (mul_lt_mul_of_pos_left hx hlambda).trans_le hbound
 
-
 noncomputable def terminalSourceCountableScaleMap {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) :
     terminalSourceCountableDomain rho → terminalSourceCountableDomain rho0 :=
@@ -64,7 +51,6 @@ noncomputable def terminalSourceCountableScaleMap {rho0 rho : ℝ}
     rw [sub_zero]
     exact (scaled_norm_lt h0 hrho x).trans (by linarith only [h0])⟩
 
-
 theorem terminalSourceCountableScaleMap_zero {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) :
     terminalSourceCountableScaleMap h0 hrho (terminalSourceCountableZero hrho) =
@@ -72,12 +58,10 @@ theorem terminalSourceCountableScaleMap_zero {rho0 rho : ℝ}
   apply Subtype.ext
   exact smul_zero _
 
-
 theorem terminalSourceCountableScaleMap_norm_lt {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) (x : terminalSourceCountableDomain rho) :
     ‖(terminalSourceCountableScaleMap h0 hrho x : E)‖ < rho0 / 4 :=
   scaled_norm_lt h0 hrho x
-
 
 theorem terminalSourceCountableScaleMap_dist {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) (x y : terminalSourceCountableDomain rho) :
@@ -88,7 +72,6 @@ theorem terminalSourceCountableScaleMap_dist {rho0 rho : ℝ}
     (terminalSourceCountableScaleFactor rho0 rho • (y : E)) = _
   rw [dist_smul₀, Real.norm_of_nonneg (terminalSourceCountableScaleFactor_bounds h0 hrho).1.le]
   rfl
-
 
 theorem terminalSourceCountableScaleMap_geometry {rho0 rho : ℝ}
     (h0 : 0 < rho0) (hrho : 0 < rho) :

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.HilbertExtraction
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +11,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
-
-
-
 
 theorem m64Bounded_pointwise_l2_tendsto
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
@@ -60,8 +46,6 @@ theorem m64Bounded_pointwise_l2_tendsto
   apply tendsto_iff_norm_sub_tendsto_zero.mpr
   simpa only [Real.sqrt_sq_eq_abs, abs_norm, Real.sqrt_zero] using hsq.sqrt
 
-
-
 theorem m64Weak_limit_norm_sq_le
     {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]
     {u : ℕ → H} {v : H} (hu : WeakConverges u v)
@@ -78,8 +62,6 @@ theorem m64Weak_limit_norm_sq_le
 variable {m : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64Plane_two_columns_subsequence
     {S : Set LoopPlane} (V : ℕ → Fin 2 → LoopPlane → E)
@@ -119,8 +101,6 @@ private theorem coordinate_test_apply
     with p hp
   simp only [hp, smul_eq_mul]
 
-
-
 theorem m64Plane_weak_partial_closed
     {S : Set LoopPlane} {u v : ℕ → Lp E 2 (volume.restrict S)}
     {U V : Lp E 2 (volume.restrict S)}
@@ -143,8 +123,6 @@ theorem m64Plane_weak_partial_closed
       simpa only [dphi, mul_comm] using hw j phi hphi hc hs)
   rw [coordinate_test_apply, coordinate_test_apply] at hlim
   simpa only [dphi, mul_comm] using hlim
-
-
 
 theorem m64Plane_c1_weak_partial
     {S : Set LoopPlane} (hS : IsOpen S) {f : LoopPlane → E} (hf : ContDiff ℝ 1 f)

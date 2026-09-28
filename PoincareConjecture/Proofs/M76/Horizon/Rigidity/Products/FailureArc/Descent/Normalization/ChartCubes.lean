@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPairedRegionCharts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +13,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
 
 theorem Step.exists_marked_surface_chart_cube
     {s t : Stage e S f r C} (step : Step s t) {R : Set M}

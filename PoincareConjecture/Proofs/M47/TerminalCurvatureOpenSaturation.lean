@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureFlowDifferential
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_sphere_saturation_open
     {M A : Type*} [TopologicalSpace M] [TopologicalSpace A]

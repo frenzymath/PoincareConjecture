@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.LowerArcFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ChainJunctionFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -35,7 +28,6 @@ theorem edge_point_mem_arrangement (e : T.decomposition.EdgeIndex) {t : ℝ}
   exact mem_iUnion.mpr ⟨e, mem_image_of_mem _ ht⟩
 
 omit [T2Space S] in
-
 
 theorem band_contains_open_edge_point (e : T.decomposition.EdgeIndex) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) (p : T.decomposition.IncidentEdgeIndex)
@@ -120,8 +112,6 @@ theorem band_bottom_vertices_eq_edge (p : T.decomposition.IncidentEdgeIndex)
       omega
     rwa [hl] at h
 
-
-
 theorem band_lower_open_contribution (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     (q : Euler.CoordinateVertex T.refinement.coordinates T.refinement.basis)
@@ -171,7 +161,6 @@ theorem band_lower_open_contribution (g : RiemannianMetric 2 S)
 
 omit [T2Space S] in
 
-
 theorem band_lower_junction_contribution (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (i j : Fin (T.graphs p).count)
     (hij : i.succ = j.castSucc) :
@@ -205,8 +194,6 @@ private theorem cut_interval_unique_of_open (p : T.decomposition.IncidentEdgeInd
   · exact hji
   · have hle : i.succ ≤ j.castSucc := hij
     exact False.elim (not_lt_of_ge (((T.graphs p).cut_strictMono.monotone hle).trans hj.1) hi.2)
-
-
 
 theorem band_side_contribution_on_open_trimmed_edge (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex)
@@ -278,8 +265,6 @@ theorem band_side_contribution_on_open_trimmed_edge (g : RiemannianMetric 2 S)
     · simp
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem canonical_vertex_fan_on_open_trimmed_edge_of_not_mem_caps
     (g : RiemannianMetric 2 S) (e : T.decomposition.EdgeIndex)

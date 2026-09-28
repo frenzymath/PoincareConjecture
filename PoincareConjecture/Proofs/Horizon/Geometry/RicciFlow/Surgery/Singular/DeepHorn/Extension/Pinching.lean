@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.BoundedDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Fubini
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Poincare.Coarea Poincare.EuclideanSpace
 open scoped ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem lintegral_euclideanCons_image_tail {n : ℕ}
     {s : Set (EuclideanSpace ℝ (Fin n))} {t : Set ℝ}
@@ -28,8 +20,6 @@ theorem lintegral_euclideanCons_image_tail {n : ℕ}
   change (∫⁻ z in t ×ˢ s, ρ z.2 ∂volume.prod volume) = _
   rw [← Measure.prod_restrict, lintegral_prod _ hρ.comp_snd]
   simp only [lintegral_const, Measure.restrict_apply_univ]
-
-
 
 theorem measure_eq_prod_of_local_rectangles
     {X Y : Type*} [TopologicalSpace X] [SecondCountableTopology X]

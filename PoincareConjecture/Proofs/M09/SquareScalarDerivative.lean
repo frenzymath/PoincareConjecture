@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ParametricCurveDerivative
 import PoincareConjecture.Proofs.M09.ScalarTimeDerivative
 import PoincareConjecture.Proofs.M09.SquareTimeFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

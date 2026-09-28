@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralImageOpenDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.HomotopyConnectedRange
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace IsCoveringMap
-
-
-
-
 
 theorem exists_polyhedralPL_lift
     {D E M X ι : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]
@@ -51,11 +38,6 @@ theorem exists_polyhedralPL_lift
     rw [hg ⟨x, hx⟩]
     exact congrFun hpG ⟨x, hx⟩
   exact ⟨g, (hg v0).trans hG0, hpg, hf.lift d hcenter hval S hS hgc hpg⟩
-
-
-
-
-
 
 theorem exists_polyhedralPL_open_successor
     {D E M X ι : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]

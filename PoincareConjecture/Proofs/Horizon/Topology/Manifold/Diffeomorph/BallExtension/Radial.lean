@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExten
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,7 +18,6 @@ local notation "SphereModel" => ModelWithCorners.prod 𝓘(ℝ, ℝ) (𝓡 2)
 private instance : Fact (Module.finrank ℝ E3 = 2 + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
 def sphereRadialMap (f : ℝ → S2 → S2) (x : E3) : E3 :=
   if h : x = 0 then 0 else
     ‖x‖ • (f ‖x‖ ⟨‖x‖⁻¹ • x, by
@@ -39,13 +27,11 @@ def sphereRadialMap (f : ℝ → S2 → S2) (x : E3) : E3 :=
     sphereRadialMap f 0 = 0 := by
   simp [sphereRadialMap]
 
-
 @[simp] theorem norm_sphereRadialMap (f : ℝ → S2 → S2) (x : E3) :
     ‖sphereRadialMap f x‖ = ‖x‖ := by
   by_cases hx : x = 0
   · simp [hx]
   · simp [sphereRadialMap, hx, norm_smul]
-
 
 theorem sphereRadialMap_smul (f : ℝ → S2 → S2) (p : S2) {r : ℝ}
     (hr : 0 < r) :
@@ -59,7 +45,6 @@ theorem sphereRadialMap_smul (f : ℝ → S2 → S2) (p : S2) {r : ℝ}
   apply Subtype.ext
   simp [smul_smul, hr.ne']
 
-
 theorem sphereRadialMap_leftInverse (f g : ℝ → S2 → S2)
     (hgf : ∀ r, Function.LeftInverse (g r) (f r)) :
     Function.LeftInverse (sphereRadialMap g) (sphereRadialMap f) := by
@@ -72,8 +57,6 @@ theorem sphereRadialMap_leftInverse (f g : ℝ → S2 → S2)
     rw [hfx, sphereRadialMap_smul g _ (norm_pos_iff.mpr hx), hgf]
     simp [p, smul_smul, norm_ne_zero_iff.mpr hx]
 
-
-
 theorem sphereRadialMap_eq_linearIsometry (f : ℝ → S2 → S2)
     (A : E3 ≃ₗᵢ[ℝ] E3) {x : E3}
     (hf : ∀ p : S2, (f ‖x‖ p : E3) = A p) :
@@ -82,7 +65,6 @@ theorem sphereRadialMap_eq_linearIsometry (f : ℝ → S2 → S2)
   · simp [hx]
   · simp only [sphereRadialMap, dif_neg hx, hf, map_smul]
     simp [smul_smul, norm_ne_zero_iff.mpr hx]
-
 
 theorem contMDiffAt_sphereRadialMap (f : ℝ → S2 → S2)
     (hf : ContMDiff SphereModel (𝓡 2) ∞ (fun z : ℝ × S2 => f z.1 z.2))
@@ -108,7 +90,6 @@ theorem contMDiffAt_sphereRadialMap (f : ℝ → S2 → S2)
     exact hn.smul (contMDiff_coe_sphere.comp (hf.comp (hn.prodMk hp)))
   exact (contMDiffAt_subtype_iff (x := (⟨x, hx⟩ : U))).mp h.contMDiffAt
 
-
 theorem contMDiff_sphereRadialMap (f : ℝ → S2 → S2)
     (hf : ContMDiff SphereModel (𝓡 2) ∞ (fun z : ℝ × S2 => f z.1 z.2))
     (A : E3 ≃ₗᵢ[ℝ] E3) {a : ℝ} (ha : 0 < a)
@@ -121,8 +102,6 @@ theorem contMDiff_sphereRadialMap (f : ℝ → S2 → S2)
     filter_upwards [Metric.ball_mem_nhds (0 : E3) ha] with y hy
     exact sphereRadialMap_eq_linearIsometry f A (hA ‖y‖ (by simpa using hy))
   · exact contMDiffAt_sphereRadialMap f hf hx
-
-
 
 def sphereRadialDiffeomorph
     (f : ℝ → Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞)
@@ -142,7 +121,6 @@ def sphereRadialDiffeomorph
     rw [A.apply_symm_apply, ← hA r hr ((f r).symm p)]
     simp)
 
-
 theorem image_closedBall_eq_of_norm_eq (e : E3 ≃ E3)
     (he : ∀ x, ‖e x‖ = ‖x‖) (r : ℝ) :
     e '' Metric.closedBall 0 r = Metric.closedBall 0 r := by
@@ -154,8 +132,6 @@ theorem image_closedBall_eq_of_norm_eq (e : E3 ≃ E3)
     refine ⟨e.symm y, ?_, e.apply_symm_apply y⟩
     have hnorm : ‖e.symm y‖ = ‖y‖ := by simpa using (he (e.symm y)).symm
     simpa only [Metric.mem_closedBall, dist_zero_right, hnorm] using hy
-
-
 
 theorem exists_sphere_diffeomorph_extension_of_isotopy
     (d : Diffeomorph (𝓡 2) (𝓡 2) S2 S2 ∞)

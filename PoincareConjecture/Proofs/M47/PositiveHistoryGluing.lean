@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M47Positive
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_closed_flow_of_initial_overlap
     {a b c : ℝ} (hac : a < c) (hcb : c ≤ b)

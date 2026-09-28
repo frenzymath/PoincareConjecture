@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_RegularCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem SurgeryRegularSlab.transport_initial
     {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -32,8 +21,6 @@ theorem SurgeryRegularSlab.transport_initial
   simp only [SurgeryRegularSlab.transport, hi]
 
 namespace SurgeryFlowData
-
-
 
 theorem regular_identify_coherent (F : SurgeryFlowData.{u}) {a b c t : ℝ}
     (hab : a < b) (hJ : Icc a b ⊆ F.time_domain)
@@ -50,8 +37,6 @@ theorem regular_identify_coherent (F : SurgeryFlowData.{u}) {a b c t : ℝ}
 variable (F : SurgeryFlowData.{u}) {a b : ℝ}
   (hJ : Ico a b ⊆ F.time_domain) (hS : Disjoint F.surgery_times (Ioo a b))
 
-
-
 noncomputable def regularIdentifyIco (t : Ico a b) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice a).carrier (F.slice t.1).carrier ∞ := by
   have hac : a < (t.1 + b) / 2 := by linarith [t.2.1, t.2.2]
@@ -64,8 +49,6 @@ noncomputable def regularIdentifyIco (t : Ico a b) :
   exact (F.regular_slabs a ((t.1 + b) / 2) hac hK hT).identify
     ⟨t.1, t.2.1, by linarith [t.2.2]⟩
 
-
-
 theorem regularIdentifyIco_eq (t : Ico a b) {c : ℝ}
     (hac : a < c) (hK : Icc a c ⊆ F.time_domain)
     (hT : Disjoint F.surgery_times (Ioc a c)) (ht : t.1 ∈ Icc a c)
@@ -74,8 +57,6 @@ theorem regularIdentifyIco_eq (t : Ico a b) {c : ℝ}
       (F.regular_slabs a c hac hK hT).identify ⟨t.1, ht⟩ x := by
   unfold regularIdentifyIco
   exact F.regular_identify_coherent _ _ _ hac hK hT _ ht x
-
-
 
 theorem regularIdentifyIco_transport {c d : ℝ} (hcd : c < d)
     (hK : Icc c d ⊆ F.time_domain) (hT : Disjoint F.surgery_times (Ioc c d))
@@ -102,8 +83,6 @@ theorem regularIdentifyIco_transport {c d : ℝ} (hcd : c < d)
 
 variable {q : ℝ} (hq : 0 < q) {I : Set ℝ} (hI : I.OrdConnected)
   (htime : ∀ s ∈ I, a + s / q ∈ Ico a b) (U : Set (F.slice a).carrier)
-
-
 
 noncomputable def regularCylinderIco : SurgeryFlowCylinder F (F.slice a) a q I U := by
   have event_at_birth (s : ℝ) (hs : s ∈ I) (hT : a + s / q ∈ F.surgery_times) :
@@ -149,8 +128,6 @@ noncomputable def regularCylinderIco : SurgeryFlowCylinder F (F.slice a) a q I U
     have hbefore := ht'.2
     rw [event_at_birth s hs hT] at hbefore
     exact ((not_lt_of_ge (htime t ht).1) hbefore).elim
-
-
 
 theorem regularCylinderIco_initial (hzero : (0 : ℝ) ∈ I) (x : (F.slice a).carrier) :
     HEq ((F.regularCylinderIco hJ hS hq hI htime U).forward 0 hzero x) x := by

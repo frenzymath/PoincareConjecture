@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.ClosedP
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -40,9 +31,6 @@ private theorem exists_continuousMap_closed_paste
   exact ⟨⟨g, heq ▸ hgc'⟩, hgin, hgout⟩
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_finite_originalPL_relative_pasting
     {X Y ι κ η : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]

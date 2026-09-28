@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ParallelTensorProduct
 import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ open M04
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem curvature_tensorLaplacian_ge_variable_sectional_barrier
     (D : LeviCivitaData g) {h : M → ℝ} (hh : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ h)

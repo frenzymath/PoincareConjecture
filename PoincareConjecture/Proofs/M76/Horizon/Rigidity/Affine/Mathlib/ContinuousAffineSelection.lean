@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem Convex.eqOn_zero_or_affine_of_selection_nonpos
     {C : Set E} (hC : Convex ℝ C) (A : E →ᴬ[ℝ] ℝ)
@@ -63,8 +50,6 @@ theorem Convex.eqOn_zero_or_affine_of_selection_nonpos
     have hzero : A x = 0 := le_antisymm (hA x hx) (not_lt.mp (fun h => hne ⟨x, hx, h⟩))
     exact (hselect x hx).elim id (fun h => h.trans hzero)
 
-
-
 theorem Convex.eqOn_zero_or_affine_of_selection
     {C : Set E} (hC : Convex ℝ C) (A : E →ᴬ[ℝ] ℝ)
     (hA : (∀ x ∈ C, A x ≤ 0) ∨ (∀ x ∈ C, 0 ≤ A x))
@@ -81,8 +66,6 @@ theorem Convex.eqOn_zero_or_affine_of_selection
       (fun h x hx => neg_injective (h hx))
 
 namespace Geometry
-
-
 
 theorem FinitePiecewiseAffineOn.continuous_selection_zero
     {f g : E → ℝ} {C : Set E} (hf : FinitePiecewiseAffineOn f C)
@@ -111,8 +94,6 @@ theorem FinitePiecewiseAffineOn.continuous_selection_zero
   · exact ⟨ContinuousAffineMap.const ℝ E 0, hz⟩
   · exact ⟨A tK, ha⟩
 
-
-
 theorem FinitePiecewiseAffineOn.continuous_selection [FiniteDimensional ℝ E]
     {f₀ f₁ g : E → ℝ} {C : Set E} (h₀ : FinitePiecewiseAffineOn f₀ C)
     (h₁ : FinitePiecewiseAffineOn f₁ C) (hg : ContinuousOn g C)
@@ -123,8 +104,6 @@ theorem FinitePiecewiseAffineOn.continuous_selection [FiniteDimensional ℝ E]
       intro x hx
       exact (hselect x hx).imp (fun h => by simp [h]) (fun h => by rw [h]))
   exact (hd.add h₀).congr (fun x _ => sub_add_cancel (g x) (f₀ x))
-
-
 
 theorem FinitePiecewiseAffineOn.continuous_selection_pi
     [FiniteDimensional ℝ E] {ι : Type*} [Fintype ι]

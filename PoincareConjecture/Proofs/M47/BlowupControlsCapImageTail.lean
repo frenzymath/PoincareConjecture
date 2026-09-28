@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalCoreBallTail
 import PoincareConjecture.Proofs.M34.Mathlib.PartialImageTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [MeasurableSpace X] [BorelSpace X] [T3Space X]
-
-
 
 theorem exists_cap_image_exit_neck_tail
     {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {origin scale c : ℝ}
   {U V : Set (F.slice origin).carrier}
-
-
 
 theorem cap_preterminal_retained_of_terminal_avoidance
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -65,8 +54,6 @@ theorem cap_preterminal_retained_of_terminal_avoidance
   have hall := event.all_lost_of_avoids_necks hpre havoidPre
     ⟨pre x, mem_image_of_mem pre hx, hnot⟩
   exact (hall (mem_image_of_mem pre hyU)) hretained
-
-
 
 theorem cap_preterminal_retained_of_terminal_geometry
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

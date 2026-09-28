@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Euclidean
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SchoenfliesFromBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem schoenfliesService_from_main : SchoenfliesService := by
   intro ψ hψ δ hδ hδ1

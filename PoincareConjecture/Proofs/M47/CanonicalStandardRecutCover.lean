@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalStandardMetricBounds
 import PoincareConjecture.Proofs.M47.CanonicalStandardRecut
 import PoincareConjecture.Proofs.M35.RawFlow.Completeness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem standard_metric_complete {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {s : ℝ}
@@ -38,9 +25,6 @@ theorem standard_metric_complete {g0 : StandardInitialMetric}
   have h := hcompare s ⟨hs.1, le_rfl⟩ 0 ⟨le_rfl, hs.1⟩ x w
   have hinitial : standard.flow.metric 0 = g0.metric := standard.flow.base.initial_metric
   rwa [hinitial] at h
-
-
-
 
 theorem standard_tip_locus_setup_cap (S : RepairedControlledSchedulesData.{u})
     {s : ℝ} (hs : s ∈ Ico 0 S.cap_persistence.standard_cap.flow.base.lifetime)

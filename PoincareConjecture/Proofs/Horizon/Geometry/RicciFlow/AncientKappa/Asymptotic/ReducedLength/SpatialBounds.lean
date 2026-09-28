@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem reducedLengthGradientNormSq_eq_gradient_norm_sq {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (f : M × ℝ → ℝ) (τ : ℝ) (q : M) :
@@ -54,7 +42,6 @@ variable [MeasurableSpace M] [BorelSpace M]
 namespace RiemannianMetric
 
 omit [T2Space M] [SecondCountableTopology M] [ConnectedSpace M] in
-
 
 theorem ae_mem_open_in_coordinates (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -96,7 +83,6 @@ end RiemannianMetric
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
 theorem regular_reducedLength_spatial_eventuallyEq {K : AncientKappaSolution n M}
     {R τ : ℝ} {p q : M} (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
     (fun x => reducedLength K.flow 0 p x τ) =ᶠ[𝓝 q]
@@ -106,13 +92,11 @@ theorem regular_reducedLength_spatial_eventuallyEq {K : AncientKappaSolution n M
   filter_upwards [hn] with x hx
   exact (r.representative_eq (x, τ) hx).symm
 
-
 theorem regular_reducedLength_spatial_smooth {K : AncientKappaSolution n M}
     {R τ : ℝ} {p q : M} (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
     ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => reducedLength K.flow 0 p x τ) q :=
   r.representative_space_smooth.congr_of_eventuallyEq
     (regular_reducedLength_spatial_eventuallyEq r)
-
 
 theorem regular_reducedLength_differential_bound {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
@@ -138,8 +122,6 @@ theorem regular_reducedLength_differential_bound {K : AncientKappaSolution n M}
   unfold mvfderiv
   rw [heq.mfderiv_eq]
   exact hd.trans (mul_le_mul_of_nonneg_right hnorm (Real.sqrt_nonneg _))
-
-
 
 theorem regular_sqrt_reducedLength_differential_bound {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
@@ -176,8 +158,6 @@ theorem regular_sqrt_reducedLength_differential_bound {K : AncientKappaSolution 
     _ ≤ 1 / (2 * Real.sqrt l) *
         (Real.sqrt (3 * l / τ) * (K.flow.metric (0 - τ)).tangentNorm q v) := h
     _ = _ := by rw [← mul_assoc, heq]
-
-
 
 theorem sqrt_reducedLength_coordinates_locallyLipschitz
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -221,8 +201,6 @@ theorem sqrt_reducedLength_coordinates_locallyLipschitz
       (hWL.comp (hpairLip.mono (fun _ ht => ht.1.1)) (fun _ ht => ht.1.2))
     exact fun _ ht => ht.2
 
-
-
 theorem ae_regular_in_coordinates {K : AncientKappaSolution n M}
     {R τ : ℝ} {p : M} (D : ReducedLengthMeasureData K.flow 0 R p)
     (hτ : 0 < τ) (hτR : τ < R)
@@ -234,8 +212,6 @@ theorem ae_regular_in_coordinates {K : AncientKappaSolution n M}
     (D.regularDomain_open.preimage (continuous_id.prodMk continuous_const))
   rw [← calibratedMetricVolume_eq_volumeMeasure]
   exact D.slice_complement_null τ hτ hτR
-
-
 
 theorem regular_sqrt_reducedLength_coordinate_derivative
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

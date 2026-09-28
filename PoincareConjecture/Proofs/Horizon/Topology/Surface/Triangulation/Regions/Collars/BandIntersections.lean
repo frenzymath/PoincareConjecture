@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.CompatibleCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Coordinates
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -128,7 +117,6 @@ private theorem cell_eq_first_of_zero {i : Fin B.interface.count}
 
 omit [T2Space M] in
 
-
 theorem face_inter_rightCut_subset_endpoint
     (i : Fin B.interface.count × Bool) (hi : i ≠ (B.lastCell, false)) :
     (B.face i).carrier ∩ B.rightCut ⊆ {B.vertex (B.lastCell.succ, true)} := by
@@ -153,7 +141,6 @@ theorem face_inter_rightCut_subset_endpoint
 
 omit [T2Space M] in
 
-
 theorem face_inter_leftCut_subset_endpoint
     (i : Fin B.interface.count × Bool) (hi : i ≠ (B.firstCell, true)) :
     (B.face i).carrier ∩ B.leftCut ⊆ {B.vertex (B.firstCell.castSucc, false)} := by
@@ -174,8 +161,6 @@ theorem face_inter_leftCut_subset_endpoint
 variable {G : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo' : ℝ → ℝ} {a' b' ua' wa' ub' wb' ra' rb' : ℝ}
   (B' : ObliqueBandFaces G lo' a' b' ua' wa' ub' wb' ra' rb')
-
-
 
 theorem endpoint_faces_intersection_of_shared_cut
     (hinter : B.carrier ∩ B'.carrier = B.rightCut) (hcut : B.rightCut = B'.leftCut) :
@@ -201,9 +186,6 @@ theorem endpoint_faces_intersection_of_shared_cut
           ((B'.pair B'.firstCell).upper.boundary_image_subset_frontier 2
             (B'.left_edge_image.symm ▸ hq'))
   exact ⟨heq, heq.trans B.right_edge_image.symm, heq.trans (hcut.trans B'.left_edge_image.symm)⟩
-
-
-
 
 theorem face_intersection_of_shared_endpoint_cut
     (hinter : B.carrier ∩ B'.carrier = B.rightCut) (hcut : B.rightCut = B'.leftCut)
@@ -252,8 +234,6 @@ theorem face_intersection_of_shared_endpoint_cut
     · exact Or.inr (Or.inr (disjoint_iff_inter_eq_empty.mpr
         (not_nonempty_iff_eq_empty.mp hnonempty)))
 
-
-
 theorem face_coordinate_intersection
     (i j : Fin B.interface.count × Bool) (hij : i ≠ j) :
     CoordinateTriangleBoundaryIntersection (B.faceCoordinates i) (B.faceCoordinates j)
@@ -298,8 +278,6 @@ variable {S : D.OrientedEdgeGraphSubdivision e R C a b}
   {δ r : ℝ}
   (B : ∀ i : Fin S.count, (S.piece i).FixedStripBandFaces (K.graphCuts i) δ r r)
 
-
-
 theorem adjacent_faces_intersection (i j : Fin S.count) (hij : i.succ = j.castSucc)
     (hseparate : ∀ t ∈ Icc (0 : ℝ) 1, ∀ s ∈ Icc (0 : ℝ) 1,
       ∀ z w : ℝ, |z| < δ → |w| < δ →
@@ -338,7 +316,6 @@ variable (D)
 
 omit [T2Space M] in
 
-
 theorem separated_graph_band_faces_disjoint
     (hseparate : ∀ i j : D.IncidentGraphPieceIndex chart cut S,
       D.IncidentGraphPiecesSeparated chart cut S i j → Disjoint
@@ -354,9 +331,6 @@ theorem separated_graph_band_faces_disjoint
       (B i.1 i.2).carrier_subset_open_strip)
     ((subset_iUnion (fun w => ((B j.1 j.2).faces.face w).carrier) w).trans
       (B j.1 j.2).carrier_subset_open_strip)
-
-
-
 
 theorem incident_band_faces_intersection
     (hadjacent : ∀ p (i j : Fin (S p).count), i.succ = j.castSucc →
@@ -405,8 +379,6 @@ theorem incident_band_faces_intersection
       ⟨p, i⟩ ⟨p, j⟩ (Or.inr ⟨rfl, hgap⟩) v w))
   · exact Or.inr (Or.inr (D.separated_graph_band_faces_disjoint chart cut S K B hseparate
       i j (Or.inl he) v w))
-
-
 
 theorem incident_band_faces_coordinate_intersection
     (hadjacent : ∀ p (i j : Fin (S p).count), i.succ = j.castSucc →

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeFrame
 import PoincareConjecture.Proofs.M09.ChartVectorField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,22 +15,17 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 def productChartField (C : SpacetimeCharts n M a b)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ)
     (q : C.Point) : TangentSpace (𝓡 (n + 1)) q :=
   C.horizontal q (PoincareConjecture.Proofs.M09.chartVectorField p v q.1) +
     r • C.timeVector q
 
-
 theorem productChartField_split (C : SpacetimeCharts n M a b)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ) (q : C.Point) :
     C.split q (C.productChartField p v r q) =
       (PoincareConjecture.Proofs.M09.chartVectorField p v q.1, r) := by
   simp [productChartField, horizontal, timeVector]
-
-
 
 theorem productChartField_eq_mpullback (C : SpacetimeCharts n M a b)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ) (q : C.Point)
@@ -102,8 +88,6 @@ theorem productChartField_eq_mpullback (C : SpacetimeCharts n M a b)
     ((mfderiv (𝓡 n) (𝓡 n) (chartAt E p) q.1).inverse v), r) = (v, r)
   rw [hi.self_apply_inverse]
 
-
-
 theorem productChartField_contMDiffOn (C : SpacetimeCharts n M a b)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ) :
     ContMDiffOn (𝓡 (n + 1)) (𝓡 (n + 1)).tangent ∞
@@ -141,8 +125,6 @@ theorem productChartField_contMDiffOn (C : SpacetimeCharts n M a b)
     erw [C.split_mfderiv_from_product]
     exact (C.split z).apply_symm_apply (B z.1, 0)
   exact (hH.add_section ((C.timeVector_smooth q).const_smul_section (a := r))).contMDiffWithinAt
-
-
 
 theorem productChartField_bracket (C : SpacetimeCharts n M a b)
     (p : M) (v w : EuclideanSpace ℝ (Fin n)) (r s : ℝ) (q : C.Point)

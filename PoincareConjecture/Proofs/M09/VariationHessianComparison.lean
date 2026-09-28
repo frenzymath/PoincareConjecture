@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.HessianCurveChainRule
 import PoincareConjecture.Proofs.M09.SecondDerivativeComparison
 import PoincareConjecture.Proofs.M09.SpatialContact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

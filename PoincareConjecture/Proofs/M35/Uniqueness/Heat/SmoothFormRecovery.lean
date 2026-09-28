@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ShiftedEllipticInverse
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

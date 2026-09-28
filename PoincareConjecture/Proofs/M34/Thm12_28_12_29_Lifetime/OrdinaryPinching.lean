@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M13.PinchingIsometry
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Definitions.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
-
-
 
 theorem ordinaryChapter11_nonnegative
     (R : OrdinaryProductRicciGeometry F.metric I)

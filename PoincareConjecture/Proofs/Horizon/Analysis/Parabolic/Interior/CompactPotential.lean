@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Pote
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.CenteredRealization
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.SeparatedEstimate
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -153,9 +146,6 @@ theorem fderiv_fderiv_heatDuh_eq_heatD2Duh {f : V × ℝ → F}
     Kernel.heatSupHessian_apply hpos]
   rfl
 
-
-
-
 theorem norm_hessian_le_of_centered_heatResidual {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
     (hzero : ∀ y, f (y, 0) = 0) {t K : ℝ} (ht : 0 < t)
@@ -174,8 +164,6 @@ theorem norm_hessian_le_of_centered_heatResidual {f : V × ℝ → F}
     (hasCompactSupport_heatResidual hc) ht, Kernel.heatD2Duh_comm t w v]
   exact Kernel.norm_heatD2Duh_le_of_centered_bound hα0 hα1 ht
     (fun s y => heatResidual f (y, s)) x hsource v w
-
-
 
 theorem norm_hessian_le_of_centered_add_time_gap_heatResidual {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)

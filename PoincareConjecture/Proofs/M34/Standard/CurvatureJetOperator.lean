@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Curvature.Recurrence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,18 +13,12 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 def curvatureJetDomain (n m : ℕ) :
     Set (Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + m)) :=
   (baseProjection 2 m) ⁻¹' jetRicciFlowDomain n
 
-
 theorem isOpen_curvatureJetDomain (n m : ℕ) : IsOpen (curvatureJetDomain n m) :=
   (isOpen_jetRicciFlowDomain n).preimage (baseProjection 2 m).continuous
-
-
-
 
 noncomputable def curvatureJetComponents (n : ℕ) : (m : ℕ) →
     Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + m) →
@@ -55,8 +39,6 @@ noncomputable def curvatureJetComponents (n : ℕ) : (m : ℕ) →
           curvatureJetComponents n m (truncate (2 + m) J) (Function.update (Fin.tail I) i a)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem contDiffOn_curvatureJetComponents (n m : ℕ) :
     ContDiffOn ℝ ∞ (curvatureJetComponents n m) (curvatureJetDomain n m) := by

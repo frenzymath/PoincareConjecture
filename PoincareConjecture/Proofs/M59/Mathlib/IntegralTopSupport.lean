@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSupportUniv
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactGluing
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M59
 open M02.Topology
 
 variable {X : Type u} [TopologicalSpace X]
-
-
 
 theorem integralDisjointToRelativeHomology_mono
     (U V : Set X) (hU : IsOpen U) (hV : IsOpen V) (hUV : Disjoint U V)
@@ -48,8 +37,6 @@ theorem integralDisjointToRelativeHomology_mono
     (hS.homology_exact₁ (n + 1) n rfl).mono_g (hQ.eq_zero_of_src _)
   rw [← integralPairInclusion_projection, homologyMap_comp]
   infer_instance
-
-
 
 theorem exists_integralSubspaceHomology_lift (U : Set X) (n : Nat)
     (z : (integralChains X).cycles n)
@@ -82,8 +69,6 @@ theorem exists_integralSubspaceHomology_lift (U : Set X) (n : Nat)
   rw [← ConcreteCategory.comp_apply, homologyπ_naturality, ConcreteCategory.comp_apply,
     hcycles]
 
-
-
 theorem exists_integralHomology_compact_open_lift [T2Space X] [LocallyCompactSpace X]
     (n : Nat) (a : integralHomology X n) :
     ∃ U : Set X, IsOpen U ∧ IsCompact (closure U) ∧
@@ -105,16 +90,12 @@ theorem exists_integralHomology_compact_open_lift [T2Space X] [LocallyCompactSpa
   obtain ⟨b, hb⟩ := exists_integralSubspaceHomology_lift (interior L) n z hc
   exact ⟨interior L, isOpen_interior, hclosure, b, hb.trans hz⟩
 
-
-
 theorem integralToRelativeHomology_restriction {A B : Set X} (hAB : A ⊆ B)
     (n : Nat) (a : integralHomology X n) :
     homologyMap (integralRelativeRestriction hAB) n (integralToRelativeHomology A n a) =
       integralToRelativeHomology B n a := by
   rw [← ConcreteCategory.comp_apply, ← homologyMap_comp,
     integralRelativeRestriction_projection]
-
-
 
 theorem integralHomology_eq_zero_of_point_restrictions [T2Space X] [LocallyCompactSpace X]
     (n : Nat)
@@ -146,8 +127,6 @@ theorem integralHomology_eq_zero_of_point_restrictions [T2Space X] [LocallyCompa
     rw [map_zero, homologyMap_comp, ConcreteCategory.comp_apply, hb]
     exact hrelative
   rw [← hb, hbzero, map_zero]
-
-
 
 theorem exists_integralHomology_point_restriction_zero
     (hnoncompact : ¬IsCompact (univ : Set X)) (n : Nat) (a : integralHomology X n) :

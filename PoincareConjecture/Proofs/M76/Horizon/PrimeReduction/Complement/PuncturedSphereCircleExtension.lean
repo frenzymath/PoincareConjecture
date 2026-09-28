@@ -6,16 +6,6 @@ import Mathlib.Topology.TietzeExtension
 import Mathlib.Topology.LocallyFinite
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,8 +17,6 @@ local notation "Circle" => AddCircle (1 : ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem IsFinitePLBallPair.rim_lifting_topology {D B : Set E}
     (hD : IsFinitePLBallPair V3 D B) :
@@ -48,8 +36,6 @@ theorem IsFinitePLBallPair.rim_lifting_topology {D B : Set E}
   exact ⟨isCompact_iff_compactSpace.mpr inferInstance,
     H.toHomotopyEquiv.simplyConnectedSpace, H.isOpenEmbedding.locallyPathConnectedSpace⟩
 
-
-
 theorem IsFinitePLBallPair.exists_circle_extension {D B : Set E}
     (hD : IsFinitePLBallPair V3 D B) (f : C(B, Circle)) :
     ∃ g : C(D, Circle), ∀ x : B, g ⟨x, hD.1 x.property⟩ = f x := by
@@ -68,8 +54,6 @@ theorem IsFinitePLBallPair.exists_circle_extension {D B : Set E}
   have hy : G y = F y := DFunLike.congr_fun hG y
   rw [hy]
   exact congrFun hF y
-
-
 
 theorem exists_circle_extension_finite_caps {ι : Type*} [Finite ι]
     {P : Set E} (hP : IsClosed P) (D B : ι → Set E)
@@ -112,9 +96,6 @@ theorem exists_circle_extension_finite_caps {ι : Type*} [Finite ι]
       (fun i => (hD i).isCompact.isClosed) hFDc
   refine ⟨⟨fun x => F x, (hFPc.union_of_isClosed hFU hP
     (isClosed_iUnion_of_finite fun i => (hD i).isCompact.isClosed)).domRestrict⟩, hFP⟩
-
-
-
 
 theorem exists_circle_extension_closed_punctured_carrier {ι : Type*} [Finite ι]
     {S : Set E} (D B : ι → Set E)
@@ -165,7 +146,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
 local notation "Circle" => AddCircle (1 : ℝ)
 
-
 theorem simplyConnectedSpace_sphere : SimplyConnectedSpace sphere := by
   let c : V4 ≃L[ℝ] EuclideanSpace ℝ (Fin 4) :=
     ContinuousLinearEquiv.ofFinrankEq (by simp)
@@ -174,9 +154,6 @@ theorem simplyConnectedSpace_sphere : SimplyConnectedSpace sphere := by
   let : SimplyConnectedSpace (Metric.sphere (0 : EuclideanSpace ℝ (Fin 4)) 1) :=
     Poincare.Topology.sphere_simplyConnectedSpace_of_two_lt_finrank (by simp)
   exact H.toHomotopyEquiv.simplyConnectedSpace
-
-
-
 
 theorem exists_circle_extension_punctured_sphere_of_isOpen {ι : Type*} [Finite ι]
     (D B : ι → Set V4) (hD : ∀ i, IsFinitePLBallPair V3 (D i) (B i))
@@ -203,9 +180,6 @@ theorem exists_circle_extension_punctured_sphere_of_isOpen {ι : Type*} [Finite 
     exact isClosed_frontier.isClosedMap_subtype_val _ hU.isClosed_compl
   exact Set.exists_circle_extension_closed_punctured_carrier D B hD hDS hdis hclosed f
 
-
-
-
 theorem circle_map_loop_nullhomotopic_of_isOpen {ι : Type*} [Finite ι]
     (D B : ι → Set V4) (hD : ∀ i, IsFinitePLBallPair V3 (D i) (B i))
     (hDS : ∀ i, D i ⊆ sphere)
@@ -227,9 +201,6 @@ theorem circle_map_loop_nullhomotopic_of_isOpen {ι : Type*} [Finite ι]
   change (gamma.map (g.comp inc).continuous).Homotopic (Path.refl ((g.comp inc) x)) at h
   rwa [hgf] at h
 
-
-
-
 theorem exists_circle_extension_punctured_sphere {ι : Type*} [Finite ι]
     (D B : ι → Set V4) (hD : ∀ i, IsFinitePLBallPair V3 (D i) (B i))
     (hDU : ∀ i, D i ⊆ upper \ seam)
@@ -242,9 +213,6 @@ theorem exists_circle_extension_punctured_sphere {ι : Type*} [Finite ι]
     exact lower_ball.isClosed_punctured_double upper_ball lower_inter_upper D B hD hDU
   exact Set.exists_circle_extension_closed_punctured_carrier D B hD
     (fun i x hx => (hDU i hx).1.1) hdis hclosed f
-
-
-
 
 theorem circle_map_loop_nullhomotopic {ι : Type*} [Finite ι]
     (D B : ι → Set V4) (hD : ∀ i, IsFinitePLBallPair V3 (D i) (B i))

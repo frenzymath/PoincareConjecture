@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetShift
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,21 +19,15 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point ×
     G.gaugeCover.spatial j) (χ : ℝ → ℝ) (d : P → EuclideanSpace ℝ (Fin n))
 
-
-
-
 noncomputable def gaugeTranslateFamily (z : ℝ × P) : G.Point :=
   (G.gaugeCover.cylinder j).toSpacetime ((lift (f z)).1,
     (G.gaugeCover.spatial j).affineShift (lift (f z)).2 (χ z.1 • d z.2))
-
-
 
 noncomputable def supportedGaugeTranslateFamily (z : ℝ × P) : G.Point := by
   classical
   exact if z.1 ∈ tsupport χ then gaugeTranslateFamily f j lift χ d z else f z
 
 omit [NormedAddCommGroup P] [NormedSpace ℝ P] in
-
 
 theorem supportedGaugeTranslateFamily_eq_gauge {z : ℝ × P}
     (hz : (G.gaugeCover.cylinder j).toSpacetime (lift (f z)) = f z) :
@@ -51,9 +37,6 @@ theorem supportedGaugeTranslateFamily_eq_gauge {z : ℝ × P}
   · simp only [supportedGaugeTranslateFamily, if_neg hs, gaugeTranslateFamily,
       image_eq_zero_of_notMem_tsupport hs, zero_smul,
       TopologicalSpace.Opens.affineShift_zero, Prod.mk.eta, hz]
-
-
-
 
 theorem supportedGaugeTranslateFamily_contMDiffOn {C : Set ℝ} {U : Set P} {V : Set G.Point}
     (hf : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, P))) (spacetimeModel n) ∞ f (C ×ˢ U))

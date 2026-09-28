@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexCoreRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι]
 
-
-
 theorem face_threshold_bound (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) : (Fintype.card s : ℝ) * η < 1 := by
   apply lt_of_le_of_lt (mul_le_mul_of_nonneg_right ?_ hη) hbound
@@ -27,9 +15,6 @@ theorem face_threshold_bound (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
   exact_mod_cast (show s.card ≤ Fintype.card ι from Finset.card_le_univ s)
 
 variable [DecidableEq ι]
-
-
-
 
 theorem faceRegion_base_mem_intrinsicFrontier (s : Finset ι) (hs : s.Nonempty)
     {η : ℝ} (hη : 0 ≤ η) (hbound : (Fintype.card ι : ℝ) * η < 1)
@@ -43,9 +28,6 @@ theorem faceRegion_base_mem_intrinsicFrontier (s : Finset ι) (hs : s.Nonempty)
   refine ⟨((faceRegionProductHomeomorph s hη hbound).symm q).1.property, ⟨i, hi⟩, ?_⟩
   change η + (q.val i - η) / _ = η
   rw [he, sub_self, zero_div, add_zero]
-
-
-
 
 theorem faceRegion_base_mem_intrinsicFrontier_of_overlap (s t : Finset ι)
     (hs : s.Nonempty) {η : ℝ} (hη : 0 ≤ η)

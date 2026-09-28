@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Length
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem pathELength_le_ofReal_halfEnergy (g : RiemannianMetric 3 M)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -54,8 +43,6 @@ theorem pathELength_le_ofReal_halfEnergy (g : RiemannianMetric 3 M)
     intervalIntegral.integral_const] at h
   simpa only [v, smul_eq_mul, div_eq_mul_inv, one_mul] using h
 
-
-
 theorem intrinsicOpenEDist_triangle (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {p q r : M}
     (hp : p ∈ U) (hq : q ∈ U) (hr : r ∈ U) :
@@ -72,8 +59,6 @@ theorem intrinsicOpenEDist_triangle (g : RiemannianMetric 3 M)
     (intrinsicOpenMetric g U).edist pU qU +
       (intrinsicOpenMetric g U).edist qU rU at h
   simpa only [intrinsicOpenMetric_edist, pU, qU, rU] using h
-
-
 
 theorem intrinsicEDist_le_ofReal_prefix_halfEnergy
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

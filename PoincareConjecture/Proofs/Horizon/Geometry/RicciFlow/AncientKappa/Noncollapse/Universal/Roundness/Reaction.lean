@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.OperatorReaction.Scalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.AncientKappaRoundness
-
 
 theorem reaction_ratio_boundary {c μ ν : ℝ} (hc : 1 ≤ c) (hν : 0 ≤ ν)
     (horder : ν ≤ μ) :
@@ -24,7 +13,6 @@ theorem reaction_ratio_boundary {c μ ν : ℝ} (hc : 1 ≤ c) (hν : 0 ≤ ν)
   have hp : 0 ≤ 2 * (c - 1) * ν * (c + 1) * (μ - ν) := by
     positivity
   nlinarith
-
 
 private theorem nonneg_of_linear_supersolution {a b : ℝ} (hab : a ≤ b)
     {f c d : ℝ → ℝ} (hf : ContinuousOn f (Icc a b))
@@ -58,7 +46,6 @@ private theorem nonneg_of_linear_supersolution {a b : ℝ} (hab : a ≤ b)
   intro t ht
   exact (mul_nonneg_iff_of_pos_left (Real.exp_pos _)).mp (hg t ht)
 
-
 theorem reaction_nonneg {a b : ℝ} (hab : a ≤ b) {lam mu nu : ℝ → ℝ}
     (hlam : ContinuousOn lam (Icc a b))
     (hmu : ContinuousOn mu (Icc a b))
@@ -86,8 +73,6 @@ theorem reaction_nonneg {a b : ℝ} (hab : a ≤ b) {lam mu nu : ℝ → ℝ}
       exact (mul_nonpos_of_nonneg_of_nonpos (abs_nonneg _) hneg.le).trans
         (mul_nonneg_of_nonpos_of_nonpos hlam0 hmu0)
   nlinarith [sq_nonneg (nu t)]
-
-
 
 theorem reaction_pinching {a b c : ℝ} (hab : a ≤ b) (hc : 1 ≤ c)
     {lam mu nu : ℝ → ℝ}

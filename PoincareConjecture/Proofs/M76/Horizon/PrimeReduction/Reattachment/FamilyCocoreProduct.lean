@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.FamilyCocoreSection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.CocorePositionedProduct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76
@@ -103,4 +96,3 @@ theorem exists_sphere_family_cocore_positioned_product
       (Set.nonempty_iff_ne_empty.mpr hempty))
 
 end PoincareConjecture.M76
-

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.ComponentEstimateBackward
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_open_region_seed_search
     (F : SurgeryFlowData.{u}) {origin a : ℝ} (ha : a ≤ 0)

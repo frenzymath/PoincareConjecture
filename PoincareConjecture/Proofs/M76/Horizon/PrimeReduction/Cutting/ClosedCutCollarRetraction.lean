@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarEndRetraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

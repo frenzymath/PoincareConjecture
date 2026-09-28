@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureCapturedScaledCap
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCapCaptureAssembly
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourcePointScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_scaled_cap_readout_of_source_balls
     {ι : Type*}
@@ -104,8 +93,6 @@ theorem terminalCurvature_eventually_scaled_cap_readout_of_source_balls
   have hleft : (phi k).symm (phi k x) = x := (phi k).left_inv hxsource
   rw [hleft] at hWscalar
   exact ⟨W, hWepsilon, hWconnection, hWcenter, hWscalar, hWmap⟩
-
-
 
 theorem terminalCurvature_eventually_scaled_source_cap_readout
     {ι : Type*}

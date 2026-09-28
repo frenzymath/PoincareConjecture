@@ -3,24 +3,12 @@ import Mathlib.Analysis.Normed.Field.Basic
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace Poincare.Alexandrov
-
-
 
 theorem exists_distance_increment_witness_of_local_ascent
     {X : Type*} [MetricSpace X] {p y : X} (hpy : p ≠ y) (K : ℝ)

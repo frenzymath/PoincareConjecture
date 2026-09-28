@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionArcTurnin
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcSideClassification
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 open Classical in
-
-
 
 theorem m64Intrinsic_two_arc_region_curvature_turning_ge_pi_div_two
     {I : Type*} [Fintype I] (N : IntrinsicAnnulus)
@@ -124,10 +112,6 @@ theorem m64Intrinsic_two_arc_region_curvature_turning_ge_pi_div_two
   rw [integral_div]
   change Real.pi / 2 ≤ curvature / 2 + turning
   linarith only [htotal, hdefect]
-
-
-
-
 
 theorem m64Intrinsic_circle_geodesic_region_curvature_lower_bound
     {I : Type*} [Finite I] (N : IntrinsicAnnulus)

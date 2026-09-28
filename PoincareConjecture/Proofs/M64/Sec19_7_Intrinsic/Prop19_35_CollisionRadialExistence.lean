@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ClosedBaseGeodesics
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuedPolar
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,12 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_collision_radial_vectors_with_normal_sides
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}
@@ -138,11 +128,6 @@ theorem m64Intrinsic_exists_collision_radial_vectors_with_normal_sides
     exact hqconf ⟨mul_nonneg hT.le ht.1,
       (mul_le_mul_of_nonneg_left ht.2 hT.le).trans_eq (mul_one T)⟩
   · simpa only [one_smul, mul_one, hqT] using hreadout 1 (by norm_num)
-
-
-
-
-
 
 theorem m64Intrinsic_exists_collision_radial_vectors
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

@@ -1,14 +1,6 @@
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,16 +9,12 @@ namespace AddCircle
 
 variable {p : ℝ} [Fact (0 < p)]
 
-
-
 theorem injOn_coe_complementaryInterval {a : ℝ} (ha : 0 < a) :
     InjOn (fun t : ℝ => (t : AddCircle p)) (Icc a (p - a)) := by
   intro t ht u hu heq
   apply (coe_eq_coe_iff_of_mem_Ico (a := 0) (p := p) ?_ ?_).mp heq
   · exact ⟨by linarith [ht.1], by linarith [ht.2]⟩
   · exact ⟨by linarith [hu.1], by linarith [hu.2]⟩
-
-
 
 theorem image_coe_complementaryInterval {a : ℝ}
     (ha : 0 < a) (hap : a < p / 2) :
@@ -63,7 +51,6 @@ theorem image_coe_complementaryInterval {a : ℝ}
     exact ⟨t, ⟨hat, hta⟩, htz⟩
 
 omit [Fact (0 < p)] in
-
 
 theorem coe_period_sub (a : ℝ) :
     ((p - a : ℝ) : AddCircle p) = ((-a : ℝ) : AddCircle p) := by

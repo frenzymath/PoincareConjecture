@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceGluedPhysicalLocal
 import PoincareConjecture.Proofs.M47.CanonicalNeckInverseScaling
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_RecentNeck
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -69,9 +58,6 @@ private theorem initialComposed_pullback
   unfold SurgeryFlowCylinder.pullbackInner
   rw [hc]
   rfl
-
-
-
 
 theorem source_initial_positive_age_canonical
     (P : M47Predecessors.{u}) {epsilon beta : ℝ}

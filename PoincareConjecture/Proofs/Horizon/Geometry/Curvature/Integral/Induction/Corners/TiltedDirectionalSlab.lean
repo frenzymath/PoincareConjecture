@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.DirectionalPair
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.TiltedSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace
@@ -17,8 +8,6 @@ open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology BigOperators
 
 universe u
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_directional_tilted_regular_fiber_slabs
     {m k : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

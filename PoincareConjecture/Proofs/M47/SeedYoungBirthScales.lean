@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.FirstFailureWindow
 import PoincareConjecture.Proofs.M47.SeedObservedScaledDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_young_birth_scale
     {A alpha B lambda : ℝ} (hA : 1 ≤ A) (halpha : 0 < alpha)
@@ -78,8 +67,6 @@ theorem exists_seed_young_birth_scale
       _ ≤ 2 * (M / d) := mul_le_mul_of_nonneg_left
         (div_le_div_of_nonneg_right hMB hd.le) (by norm_num)
   exact ⟨hH, hlevel, hr, hradius, hscalar, heq⟩
-
-
 
 theorem seed_young_birth_search_window
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

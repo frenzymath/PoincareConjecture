@@ -2,18 +2,6 @@ import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Definitions.Ch18.FiniteExtinction
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -27,11 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [T3Space M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
-
-
-
-
-
 
 theorem m71FirstEmptySurgery
     (G : GlobalSurgeryFlowCertificate N)

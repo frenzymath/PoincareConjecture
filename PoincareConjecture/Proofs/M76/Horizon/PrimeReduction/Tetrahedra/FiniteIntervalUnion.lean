@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

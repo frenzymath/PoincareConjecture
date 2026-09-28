@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MetricInteriorFan
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -99,11 +87,6 @@ private theorem complex_sector_angle_sum
     ENNReal.toReal_ofReal hnonneg, ENNReal.toReal_ofReal huv.1.le] at hreal
   linarith
 
-
-
-
-
-
 theorem m64Intrinsic_metric_sector_fan_angle_sum
     {I : Type*} [Fintype I]
     (g : RiemannianMetric 2 AnnulusCoordinates) (q : AnnulusCoordinates)
@@ -159,10 +142,6 @@ theorem m64Intrinsic_metric_sector_fan_angle_sum
     (fun i => by simpa only [hangleL] using hangle i)
     (hne hu) (hne hv) (by simpa only [hangleL] using huv) hcomplex
   simpa only [hangleL] using hsum
-
-
-
-
 
 theorem m64Intrinsic_metric_reflex_fan_angle_sum
     {I : Type*} [Fintype I]

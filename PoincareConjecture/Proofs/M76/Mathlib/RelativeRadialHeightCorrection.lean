@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialHeightCorrection
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalPlaneExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem exists_radial_height_correction_fixed_subcomplex
     (K L : SimplicialComplex ℝ E) (hLK : L ≤ K) (hK : K.faces.Finite)
@@ -58,10 +42,6 @@ theorem exists_radial_height_correction_fixed_subcomplex
   · rw [if_neg hBx, hφL hx, div_self hBx, one_smul]
 
 omit [FiniteDimensional ℝ E] in
-
-
-
-
 
 theorem AffineOnFaces.eqOn_linear_on_convexJoin_of_eqOn_base
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

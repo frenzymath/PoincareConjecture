@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 import PoincareConjecture.Proofs.M35.Thm12_28.CurvatureMetricJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Matrix.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +39,6 @@ private theorem curvatureDerivative_const
   rw [he, he, he, he]
   rw [mvfderiv, mfderiv_eq_fderiv]
   rfl
-
-
 
 theorem abs_radial_covariant_curvature_derivative_le
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -107,9 +96,6 @@ theorem axis_connection_radial {r : ℝ} (hr : 0 < r) :
   fin_cases i <;> simp [e, EuclideanSpace.inner_single_right]
   ring
 
-
-
-
 theorem radialMixedSectional_hasDerivAt {r : ℝ} (hr : 0 < r) :
     HasDerivAt (fun s => radialMixedCurvatureFactor g s / axisRadialCoefficient g s)
       (D.covariantTensorDerivative D.riemannEvaluation (r • e 2)
@@ -159,9 +145,6 @@ theorem radialMixedSectional_hasDerivAt {r : ℝ} (hr : 0 < r) :
     field_simp [(axisAngularCoefficient_pos g s).ne', (axisRadialCoefficient_pos g s).ne']
   exact hquot'.congr_of_eventuallyEq heq.symm
 
-
-
-
 theorem abs_deriv_radialMixedSectional_le
     (hD : D.CurvatureTensorCalculus) {r : ℝ} (hr : 0 < r) :
     |deriv (fun s => radialMixedCurvatureFactor g s / axisRadialCoefficient g s) r| ≤
@@ -195,8 +178,6 @@ theorem abs_deriv_radialMixedSectional_le
         Real.sq_sqrt (axisRadialCoefficient_pos g r).le]
       dsimp only [axisRadialSpeed]
       ring
-
-
 
 theorem abs_radialMixedSectional_sub_le_arclength
     (hD : D.CurvatureTensorCalculus) {a b L : ℝ} (ha : 0 < a) (hab : a ≤ b)

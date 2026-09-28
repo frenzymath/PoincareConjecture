@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.ParabolicNoncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.ScalarBuffer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +17,6 @@ variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
 
 local instance constructionSourceConnected (k : ℕ) : ConnectedSpace (S.term k).carrier.carrier :=
   (S.term k).connectedSpace
-
-
 
 theorem exists_complete_noncollapsed_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors)

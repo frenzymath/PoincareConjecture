@@ -2,23 +2,12 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem abs_deriv_le_of_forward_interval
     {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) {x h B M : ℝ}
@@ -46,8 +35,6 @@ theorem abs_deriv_le_of_forward_interval
   have htriangle := abs_add_le (deriv f x - deriv f z) (deriv f z)
   rw [sub_add_cancel, abs_sub_comm] at htriangle
   linarith only [htriangle, hchange, hlength, hmean]
-
-
 
 theorem polynomial_deriv_bound
     {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) (n : ℕ) {C M : ℝ}

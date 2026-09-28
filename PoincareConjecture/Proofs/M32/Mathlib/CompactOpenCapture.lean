@@ -1,23 +1,11 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem compact_open_not_subset_partial_target
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalLevels.Uniqueness
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -113,7 +111,6 @@ theorem critical_height_lt_one_of_large_latitude {p : S2}
       ((p : E3) 2 - ((p : E3) 2)^2 + (3 / 10) * (p : E3) 0) *
         (2 * (p : E3) 2 - 1) := mul_nonneg (by linarith) (by linarith)
   nlinarith
-
 
 theorem critical_latitude_in_saddle_interval_of_height_band {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)

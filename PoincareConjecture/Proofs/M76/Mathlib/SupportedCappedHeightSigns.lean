@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveFixedSlabs
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem mem_both_height_closures_of_supported_capped_cut
     {S s s' d : Set E} (H : E ≃ₜ E) (A : E → ℝ) (hA : Continuous A)
@@ -55,11 +41,6 @@ theorem mem_both_height_closures_of_supported_capped_cut
     exact ⟨⟨y, Or.inl hys, hfix y hy.1.1.le⟩, hy.2.2⟩
   obtain ⟨hlo, hhi⟩ := hsource x (hunion.subset (Or.inl hxs)) hxC
   exact ⟨hlocal hlo, hlocal hhi⟩
-
-
-
-
-
 
 theorem finite_exceptional_height_signs_of_supported_capped_cut
     {S s s' d F : Set E} (H : E ≃ₜ E) (A : E → ℝ) (hA : Continuous A)

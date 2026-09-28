@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CollarTran
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ variable {n : ℕ} {M N : Type*}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem curvatureTensorNorm_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -47,10 +37,6 @@ theorem curvatureTensorNorm_eq_of_local_homothety
   rw [← hnorm]
   exact M13.homothety_curvatureTensorNorm_eq g (m01RescaledMetric g Q hQ)
     (Diffeomorph.refl (𝓡 n) M ∞) Q hQ (rescaledMetric_identity_homothety hQ) D DQ x
-
-
-
-
 
 theorem sectionalCurvature_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -83,9 +69,6 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y] [T2Space X] [T2Space Y]
-
-
-
 
 theorem exists_collar_plane_of_local_homothety
     {gX : RiemannianMetric 3 X} {gY : RiemannianMetric 3 Y}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Interval.Normal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Localized
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +22,6 @@ private theorem continuous_intervalAxis : Continuous intervalAxis := by
     · exact contDiff_id
     · exact contDiff_const
   exact h.continuous
-
-
-
 
 theorem exists_ambient_isotopy_of_interval_isotopy_within
     {a b l u : Real} {U : Set E2} (hU : IsOpen U)
@@ -64,8 +59,6 @@ theorem exists_ambient_isotopy_of_interval_isotopy_within
         exact htrace t ht s hs)
   refine ⟨S, hS, hSU, Phi, hi, hs, hfix, fun t ht s hs => ?_⟩
   simpa only [heq] using hmotion t ht (intervalAxis s) (mem_image_of_mem intervalAxis hs)
-
-
 
 theorem exists_ambient_isotopy_of_interval_isotopy
     {a b l u : Real} (f : Real × Real -> E2) (hf : ContDiff Real ∞ f)

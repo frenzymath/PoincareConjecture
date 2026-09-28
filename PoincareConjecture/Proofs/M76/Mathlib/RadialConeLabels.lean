@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι κ E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {A : AbstractSimplicialComplex ι} {B : AbstractSimplicialComplex κ}
-
-
-
 
 theorem RadialEmbedding.complex_eq_of_reindex (v : A.RadialEmbedding E)
     (w : B.RadialEmbedding E) (e : κ ≃ ι)
@@ -41,9 +29,6 @@ theorem RadialEmbedding.complex_eq_of_reindex (v : A.RadialEmbedding E)
     refine ⟨r, (hfaces r).mpr (hr'.symm ▸ hs), ?_⟩
     exact ht.trans (hr' ▸ (himage r).symm)
 
-
-
-
 theorem RadialEmbedding.cone_eq_of_reindex (v : A.RadialEmbedding E)
     (w : B.RadialEmbedding E) (e : κ ≃ ι)
     (hfaces : ∀ s : Finset κ, s ∈ B.faces ↔ s.map e.toEmbedding ∈ A.faces)
@@ -54,9 +39,6 @@ theorem RadialEmbedding.cone_eq_of_reindex (v : A.RadialEmbedding E)
   change (t.Nonempty ∧ (t.erase 0 = ∅ ∨ t.erase 0 ∈ w.complex.faces)) ↔
     (t.Nonempty ∧ (t.erase 0 = ∅ ∨ t.erase 0 ∈ v.complex.faces))
   rw [he]
-
-
-
 
 theorem RadialEmbedding.subtype_basis_span_cone_space (v : A.RadialEmbedding E)
     (hv : LinearIndependent ℝ v.val) :

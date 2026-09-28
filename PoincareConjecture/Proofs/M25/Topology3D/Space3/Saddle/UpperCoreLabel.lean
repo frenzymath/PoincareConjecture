@@ -4,22 +4,12 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function Metric
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_upper_core_label
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

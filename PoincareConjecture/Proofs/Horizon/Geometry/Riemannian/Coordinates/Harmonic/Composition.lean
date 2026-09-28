@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -22,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 lemma pullbackCoefficients_comp_of_eq (g : RiemannianMetric n M)
     {h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -41,8 +33,6 @@ lemma pullbackCoefficients_comp_of_eq (g : RiemannianMetric n M)
   rw [mfderiv_comp x he hf]
   exact congrArg (fun B => B (mfderiv (𝓡 n) (𝓡 n) f x u)
     (mfderiv (𝓡 n) (𝓡 n) f x v)) hmetric
-
-
 
 def UniformHarmonicLift.comp
     {h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

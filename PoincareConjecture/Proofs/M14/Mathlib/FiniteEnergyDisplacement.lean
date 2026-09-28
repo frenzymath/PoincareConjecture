@@ -2,16 +2,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.DistLEIntegral
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [NormedSpace ℝ E] in
-
-
 
 theorem integral_norm_le_sqrt_energy {d : ℝ → E} {a b : ℝ} (hab : a ≤ b)
     (hd : MemLp d 2 (volume.restrict (Icc a b))) :
@@ -36,9 +24,6 @@ theorem integral_norm_le_sqrt_energy {d : ℝ → E} {a b : ℝ} (hab : a ≤ b)
   simpa only [mul_one, Real.rpow_two, one_pow, ← Real.sqrt_eq_rpow,
     setIntegral_const, smul_eq_mul, mul_one, Real.volume_real_Icc_of_le hab,
     integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le hab] using h
-
-
-
 
 theorem norm_sub_sq_le_interval_energy {f : ℝ → E} {a b : ℝ} (hab : a ≤ b)
     (hf : ContinuousOn f (Icc a b)) (hdf : DifferentiableOn ℝ f (Ioo a b))
@@ -56,8 +41,6 @@ theorem norm_sub_sq_le_interval_energy {f : ℝ → E} {a b : ℝ} (hab : a ≤ 
   rw [mul_pow, Real.sq_sqrt henergy, Real.sq_sqrt (sub_nonneg.mpr hab), mul_comm] at hsq
   exact hsq
 
-
-
 theorem norm_sub_sq_le_total_interval_energy {f : ℝ → E} {a b s : ℝ}
     (hf : ContinuousOn f (Icc a b)) (hdf : DifferentiableOn ℝ f (Ioo a b))
     (hd : MemLp (deriv f) 2 (volume.restrict (Icc a b))) (hs : s ∈ Icc a b) :
@@ -72,9 +55,6 @@ theorem norm_sub_sq_le_total_interval_energy {f : ℝ → E} {a b s : ℝ}
   exact h.trans (mul_le_mul_of_nonneg_left
     (intervalIntegral.integral_mono_interval hs.1 hs.2 le_rfl
       (ae_of_all _ (fun _ => sq_nonneg _)) he) (sub_nonneg.mpr hs.2))
-
-
-
 
 theorem tendsto_endpoint_displacement_quotient {f : ℝ → E} {a b : ℝ} (hab : a ≤ b)
     (hf : ContinuousOn f (Icc a b)) (hdf : DifferentiableOn ℝ f (Ioo a b))

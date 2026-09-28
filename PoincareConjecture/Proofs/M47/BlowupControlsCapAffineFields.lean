@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckConstructor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem capAffineNeck_full_fields (N : EpsilonNeck g)
     {epsilon lambda c : ℝ} (hepsilon : 0 < epsilon)
@@ -55,9 +45,6 @@ theorem capAffineNeck_full_fields (N : EpsilonNeck g)
     have hzc : z.2 = c := hz.2
     refine ⟨(z.1, 0), ⟨mem_univ _, rfl⟩, ?_⟩
     simp only [Function.comp_apply, neckAxialSpaceMap, mul_zero, zero_add, ← hzc]
-
-
-
 
 theorem cap_affine_left_sphere_subset_negative_closure (N E : EpsilonNeck g)
     {epsilon lambda c b : ℝ} (hepsilon : 0 < epsilon) (hlambda : 0 < lambda)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.MarkedLens
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.CapTruncation
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,10 +32,6 @@ theorem radialBody_markedLens_bounds (v : E3) (hv : ‖v‖ = 1)
   constructor
   · exact (mul_le_mul_of_nonneg_right htr (norm_nonneg _)).trans hb.1
   · exact (mul_le_mul_of_nonneg_right htr (abs_nonneg _)).trans hb.2
-
-
-
-
 
 theorem exists_transported_marked_lens
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
@@ -105,8 +99,6 @@ theorem exists_transported_marked_lens
   · intro p
     change T (B p) = _
     rw [hB]
-
-
 
 theorem lens_inter_replacement_eq_marked_disk
     {v : E3} (c s : Real)

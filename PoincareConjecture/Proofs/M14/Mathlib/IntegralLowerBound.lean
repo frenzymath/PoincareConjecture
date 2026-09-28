@@ -1,21 +1,10 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
 
 namespace MeasureTheory
-
-
-
 
 theorem mul_le_setIntegral_of_measure_le {α : Type*} [MeasurableSpace α]
     {μ : Measure α} {S : Set α} {f : α → ℝ} {c V : ℝ}

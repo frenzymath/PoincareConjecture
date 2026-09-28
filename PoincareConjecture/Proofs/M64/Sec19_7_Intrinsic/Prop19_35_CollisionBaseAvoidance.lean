@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleConvexi
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LastTailTransverse
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NoLastContactTail
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,13 +11,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix ENNReal
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_short_collision_minimizer_avoids_base
     (N : IntrinsicAnnulus) {base alpha beta : ℝ → AnnulusCoordinates}

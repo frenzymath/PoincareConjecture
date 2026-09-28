@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ variable {E F H H' M X : Type*}
   [TopologicalSpace H] [TopologicalSpace H']
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F H'}
   [TopologicalSpace M] [TopologicalSpace X] [ChartedSpace H M] [ChartedSpace H' X]
-
-
-
 
 theorem exists_regular_sublevel_on_image
     {m : ℕ∞ω} (hm : 1 ≤ m)

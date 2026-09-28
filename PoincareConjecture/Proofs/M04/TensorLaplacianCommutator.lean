@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.TensorLaplacianDerivative
 import PoincareConjecture.Proofs.M04.ThirdCovariantDerivativeCommutator
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -110,6 +103,5 @@ theorem covariantTensorDerivative_tensorLaplacian_commutator
   rw [← Finset.sum_sub_distrib]
   simp_rw [hpoint]
   simp only [Finset.sum_sub_distrib, Finset.sum_neg_distrib, ← Finset.mul_sum, b, K]
-
 
 end PoincareConjecture.M04

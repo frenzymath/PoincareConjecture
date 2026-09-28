@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.B
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Prefix
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.SliceIsotopy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -107,8 +96,6 @@ theorem exists_prefix_neck_extension_with_transition :
   apply hcollar' _ (B.coordinate_map_mem hz)
   · simpa only [B.coordinate_inverse_coordinate_map hz] using hlow
   · simpa only [B.coordinate_inverse_coordinate_map hz] using hhigh
-
-
 
 theorem exists_prefix_neck_extension :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawEllipticity
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +30,6 @@ private theorem smooth_det {G : V → Matrix (Fin n) (Fin n) ℝ}
   funext x
   exact Matrix.det_apply' (G x)
 
-
 theorem raw_inverseGram_entry_contDiff (g : RiemannianMetric n V) (i j : Fin n) :
     ContDiff ℝ ∞ (fun x => (rawCoordinateGram g x)⁻¹ i j) := by
   have hG := rawCoordinateGram_contDiff g
@@ -63,9 +53,6 @@ theorem raw_inverseGram_entry_contDiff (g : RiemannianMetric n V) (i j : Fin n) 
   simpa only [Matrix.inv_def, Ring.inverse_eq_inv', Matrix.smul_apply, smul_eq_mul,
     Pi.inv_apply] using!
     (hdet.inv hn).mul ha
-
-
-
 
 theorem exists_raw_principal_schwartz_coefficients (g : RiemannianMetric n V)
     {K : Set V} (hK : IsCompact K) :

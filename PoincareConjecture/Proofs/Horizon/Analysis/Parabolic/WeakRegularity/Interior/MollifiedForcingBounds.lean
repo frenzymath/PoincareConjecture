@@ -1,20 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.DivergenceMollification
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.FluxCommutator
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory
 open Poincare.Analysis.Convolution

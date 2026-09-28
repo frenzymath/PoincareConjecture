@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSlice
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +14,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem m64TriangularSource_boundary_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -57,9 +48,6 @@ theorem m64TriangularSource_boundary_integral
     (m64TriangularCofactorTest_at_source T hT hi hsecond phi (annulusPoint x s)).2]
   rfl
 
-
-
-
 theorem m64TriangularSource_preserves_seam
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (T : LoopPlane ≃ₜ LoopPlane) (hT : ContDiff ℝ ∞ T) (hi : ContDiff ℝ ∞ T.symm)
@@ -87,9 +75,6 @@ theorem m64TriangularSource_preserves_seam
     intro s hss
     simpa only [Function.comp_apply, hz, hP] using hs s hss)]
   simp only [Function.comp_apply, hP]
-
-
-
 
 theorem m64TriangularSource_preserves_boundary
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckMetricComparison
 import PoincareConjecture.Proofs.M34.Standard.PathLengthComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,16 +18,11 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_map_inverse_eq {x : M} (hx : x ∈ N.carrier) :
     N.coordinate_map (N.coordinate_inverse x) = x := by
   have h := congrArg (fun z : N.carrier => (z : M)) (N.coordinate_inverse_right x hx)
   rw [N.coordinate_map_eq] at h
   exact h
-
-
-
 
 theorem coordinate_map_inverse_mfderiv {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) :
@@ -52,9 +39,6 @@ theorem coordinate_map_inverse_mfderiv {x : M} (hx : x ∈ N.carrier)
   have hd := heq.mfderiv_eq (I := 𝓡 3) (I' := 𝓡 3)
   rw [mfderiv_comp x hm hi, mfderiv_id] at hd
   exact congrArg (fun A : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) => A v) hd
-
-
-
 
 theorem coordinate_inverse_axial_le_tangentNorm {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) :

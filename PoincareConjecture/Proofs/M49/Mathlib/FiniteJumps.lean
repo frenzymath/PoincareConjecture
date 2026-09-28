@@ -2,20 +2,10 @@ import Mathlib.Data.Finset.Max
 import Mathlib.Topology.Order.Monotone
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
 
 theorem le_of_finite_left_jumps {β : Type*} [Preorder β] [TopologicalSpace β]
     [OrderClosedTopology β] {f : ℝ → β} {a b : ℝ} (S : Finset ℝ)

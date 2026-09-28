@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -50,11 +40,6 @@ private theorem sphere_graph_image
   rw [hJs, hKs, image_comp, himage]
 
 variable [T2Space X]
-
-
-
-
-
 
 theorem PLDomain.exists_arc_neighborhood_model
     {L : Set X} (he : PLDomain e L) (hL : IsCompact L)

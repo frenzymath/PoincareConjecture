@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +13,6 @@ namespace PoincareConjecture.M32
 
 variable {F : GeneralizedRicciFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I J : Set ℝ} {U : Set C.carrier} {V : Set D.carrier}
-
-
-
 
 theorem cylinder_pointMap_eq_on_interval
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -75,8 +57,6 @@ theorem cylinder_pointMap_eq_on_interval
     rw [huniv]
     exact mem_univ _
   exact hmem
-
-
 
 theorem cylinder_pointMap_eq_on_overlap
     (e : GeneralizedFlowCylinder F C origin scale I U)

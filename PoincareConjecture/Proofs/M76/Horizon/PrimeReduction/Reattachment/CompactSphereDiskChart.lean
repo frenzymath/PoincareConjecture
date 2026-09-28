@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Circ
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalDiskBicollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.MarkedProductInteriorChart
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalArcNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Wall.OriginalArcComplexDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -22,10 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
-
 
 theorem PLDomain.exists_starred_arc_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

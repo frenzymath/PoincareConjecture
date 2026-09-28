@@ -4,22 +4,12 @@ import Mathlib.Topology.Compactification.OnePoint.Sphere
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
-
 
 theorem exists_cube_closedBall_homeomorph {N : Type*} [Fintype N] :
     ∃ e : (I^N) ≃ₜ closedBall (0 : N → ℝ) 1,
@@ -81,8 +71,6 @@ theorem exists_cube_closedBall_homeomorph {N : Type*} [Fintype N] :
       constructor <;> linarith
     exact (ne_of_lt hlt) hn
 
-
-
 theorem exists_onePoint_quotient_of_isOpen
     {K : Type*} [TopologicalSpace K] [T2Space K] [CompactSpace K]
     (U : Set K) (hU : IsOpen U) (hne : Uᶜ.Nonempty) :
@@ -134,8 +122,6 @@ theorem exists_onePoint_quotient_of_isOpen
     simp [q, hx, hy, hxy]
   · simp [q, hx, hy]
 
-
-
 theorem exists_cube_sphere_quotient_of_card_eq
     {N ι : Type*} [Fintype N] [Nonempty N] [Fintype ι]
     (hdim : Fintype.card N + 1 = Fintype.card ι) :
@@ -174,8 +160,6 @@ theorem exists_cube_sphere_quotient_of_card_eq
   intro x y
   change eS (q (e x)) = eS (q (e y)) ↔ _
   rw [eS.injective.eq_iff, hfibers, e.injective.eq_iff, hboundary, hboundary]
-
-
 
 theorem exists_sphere_genLoopEquiv
     {N ι X : Type*} [Fintype N] [Nonempty N] [Fintype ι]

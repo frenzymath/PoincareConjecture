@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapRecovery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +16,6 @@ open Weak Euclidean BoundaryTangential NirenbergEuclidean
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => halfSpace 2
-
-
-
-
-
 
 theorem normalDerivative_memWkp_add_two_of_weak_equation
     (k : ℕ) (B : SmoothEllipticBilinearForm 2 univ)
@@ -63,11 +48,6 @@ theorem normalDerivative_memWkp_add_two_of_weak_equation
     hWH hv i
   filter_upwards [eventually_all.mpr hp] with z hz
   simp only [hz]
-
-
-
-
-
 
 theorem local_neumann_memWkp_add_three
     (k : ℕ) {W V : Set Plane} (hW : IsOpen W) (hWc : IsCompact (closure W))

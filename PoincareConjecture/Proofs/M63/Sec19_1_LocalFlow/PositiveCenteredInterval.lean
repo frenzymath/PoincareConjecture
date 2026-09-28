@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredSpectralResponse
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PositiveSpectralInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,9 +15,6 @@ variable {iota : Type*} [Countable iota]
   {lambda : iota → NNReal} {w : State iota} {T0 T : ℝ}
   (N : CenteredSpectralResidual lambda w T0)
 
-
-
-
 def restrict (hT : T ≤ T0) : CenteredSpectralResidual lambda w T where
   toFun := N.toFun
   measurable := N.measurable
@@ -36,10 +24,6 @@ def restrict (hT : T ≤ T0) : CenteredSpectralResidual lambda w T where
   principalConstant := N.principalConstant
   lowerConstant := N.lowerConstant
   mixed := ae_mono (Measure.restrict_mono (Ioc_subset_Ioc le_rfl hT) le_rfl) N.mixed
-
-
-
-
 
 theorem exists_positive_interval (hT0 : 0 < T0)
     (heps : (N.perturbationConstant : ℝ) < 1 / 2) :

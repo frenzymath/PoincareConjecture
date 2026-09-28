@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +22,6 @@ private theorem apply_eq_sum_coordinates
   simpa only [map_sum, map_smul, smul_eq_mul, OrthonormalBasis.coe_toBasis,
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
-
-
 
 theorem integral_mul_laplacian_chart_density
     (D : LeviCivitaData g)
@@ -115,8 +102,6 @@ theorem integral_mul_laplacian_chart_density
     exact setIntegral_congr_fun e.open_source.measurableSet (fun x hx => (hright x hx).symm)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem integral_mul_laplacian_of_tsupport_subset_chart
     (D : LeviCivitaData g)

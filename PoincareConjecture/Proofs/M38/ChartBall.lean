@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import PoincareConjecture.Proofs.M38.SmoothChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Metric
@@ -16,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_surgeryBall_in_open (A : GeneralizedSliceCarrier.{u})
     (p : A.carrier) {O : Set A.carrier} (hO : IsOpen O) (hp : p ∈ O) :

@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M27KappaAlternatives
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

@@ -4,24 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import Mathlib.Topology.Path
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
 
 theorem PolyhedralPLInCharts.exists_initial_chart_vector
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

@@ -5,13 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter Metric
@@ -22,8 +15,6 @@ namespace PoincareConjecture.M25.Topology3D
 set_option maxHeartbeats 1000000 in
 
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_saddle_comparison_circle_assembly
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))

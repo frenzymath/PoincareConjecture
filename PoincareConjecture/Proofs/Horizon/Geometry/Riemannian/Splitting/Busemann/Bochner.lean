@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Bochner
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem connection_gradient_eq_zero_of_harmonic_of_constant_normSq
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -62,8 +53,6 @@ theorem connection_gradient_eq_zero_of_harmonic_of_constant_normSq
     intro i
     exact hbase i
   exact congrArg (fun L => L v) hlin
-
-
 
 theorem hessian_eq_zero_of_harmonic_of_constant_normSq
     (D : LeviCivitaData g) {f : M → ℝ}

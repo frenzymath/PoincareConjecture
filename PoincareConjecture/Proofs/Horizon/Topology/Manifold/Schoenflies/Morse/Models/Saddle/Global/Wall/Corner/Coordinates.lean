@@ -2,15 +2,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Corner
 
 abbrev E3 := EuclideanSpace Real (Fin 3)
 abbrev Coordinates := Real × (Real × Real)
-
 
 def straighten : Diffeomorph (𝓡 3) 𝓘(Real, Coordinates) E3 Coordinates ∞ where
   toFun p := (p 0, p 1, p 2 + (p 0)^2 - (p 1)^2)
@@ -118,7 +108,6 @@ theorem interior_body :
   change (0 < p 2 + (p 0)^2 - (p 1)^2) ↔
     ((p 1)^2 - (p 0)^2 < p 2)
   constructor <;> intro h <;> nlinarith
-
 
 theorem wall_above_graph_mem_interior_union {p : E3}
     (hx : p 0 = 0) (hz : (p 1)^2 < p 2) :

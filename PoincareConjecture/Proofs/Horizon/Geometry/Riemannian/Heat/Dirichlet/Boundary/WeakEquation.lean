@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.SobolevLocalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.DivergenceEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +56,6 @@ private theorem weakPartial_eq_coordinateDerivative
     localCoordinateDerivative_weak e he hei hK hKs hOK hO u i hφ hc hs)
     (hp.locallyIntegrable (by norm_num))
     ((Lp.memLp _).locallyIntegrable (by norm_num))
-
-
 
 theorem weakEigen_localized_divergence
     (e : OpenPartialHomeomorph E M)

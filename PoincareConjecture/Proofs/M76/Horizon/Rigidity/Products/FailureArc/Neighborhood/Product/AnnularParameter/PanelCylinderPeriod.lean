@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.CyclicPanels.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.AnnularParameter.OriginalCylinder
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry PLAnnularStrip
@@ -25,13 +23,6 @@ local notation "Rect" => (I ×ˢ I : Set P2)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R W : Set X}
   {S T C D : Set P2} {f₀ f₁ : P2 → X}
-
-
-
-
-
-
-
 
 theorem exists_marked_panel_cylinder_with_period
     (U : OriginalIntervalTube e R W S T C D f₀ f₁)

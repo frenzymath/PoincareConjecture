@@ -1,15 +1,11 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
 open scoped Manifold ContDiff Topology
 
 namespace Poincare
-
-
 
 theorem isLocalDiffeomorph_opensSubtypeVal
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

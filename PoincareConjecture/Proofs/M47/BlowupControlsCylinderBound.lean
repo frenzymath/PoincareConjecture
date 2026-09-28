@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCylinderDerivative
 import PoincareConjecture.Proofs.M47.BlowupControlsPinching
 import PoincareConjecture.Proofs.M47.JointSeedReciprocal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {G : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c A L : ℝ} {U : Set C.carrier}
-
-
 
 theorem normalizedCylinderScalar_le
     (h04 : RicciFlowCurvatureTheory.{u})
@@ -54,8 +43,6 @@ theorem normalizedCylinderScalar_le
     _ ≤ (A * G.scalar p ^ 2) / scale ^ 2 :=
       div_le_div_of_nonneg_right h.2.2 (sq_nonneg scale)
     _ = _ := by rw [div_pow]; ring
-
-
 
 theorem normalizedCylinder_curvature_bounds
     (P : M46Predecessors.{u}) (hPinched : generalizedHamiltonIveyPinched G)

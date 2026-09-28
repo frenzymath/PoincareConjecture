@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [SecondCountableTopology M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m65FamilyFillingData_from_M64 (hM64 : M64ComparisonTheory.{u})
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (compact : IsCompact (Set.univ : Set M))
@@ -32,8 +21,6 @@ theorem m65FamilyFillingData_from_M64 (hM64 : M64ComparisonTheory.{u})
   obtain ⟨N, _, hN⟩ := (hM64.2.1 M g D compact).raw_family Gamma hnull 1 zero_lt_one
   obtain ⟨A, _⟩ := hN N le_rfl
   exact ⟨A.source_filling z⟩
-
-
 
 theorem m65ProjectedDisk_nonempty (hM64 : M64ComparisonTheory.{u})
     {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}

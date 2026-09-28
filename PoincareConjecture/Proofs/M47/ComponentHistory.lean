@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem capFree_post_component_subset_interior
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -41,8 +28,6 @@ theorem capFree_post_component_subset_interior
   intro hcap
   obtain ⟨i, hi⟩ := mem_iUnion.1 hcap
   exact Set.disjoint_left.1 (hfree i) hy hi
-
-
 
 theorem capFree_inverse_component_subset_interior
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -63,8 +48,6 @@ theorem capFree_inverse_component_subset_interior
   have hcap : z ∈ (E.caps i).carrier :=
     (E.caps i).carrier_compact.isClosed.closure_eq ▸ frontier_subset_closure hpostfront
   exact Set.disjoint_left.1 (hfree i) hz hcap
-
-
 
 theorem capFree_inverse_image_component
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -99,8 +82,6 @@ theorem capFree_inverse_image_component
   exact Set.Subset.antisymm (hconnected.subset_connectedComponent hpoint)
     ((show IsClopen _ from ⟨hcompact.isClosed, hopen⟩).connectedComponent_subset hpoint)
 
-
-
 theorem capFree_pre_component_subset_interior
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
     (hC : IsCompact (connectedComponent x))
@@ -108,8 +89,6 @@ theorem capFree_pre_component_subset_interior
     connectedComponent (E.retention.inverse x) ⊆ interior E.retained_pre := by
   rw [← capFree_inverse_image_component E hC hfree]
   exact capFree_inverse_component_subset_interior E hfree
-
-
 
 theorem capFree_pre_component_compact
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -119,8 +98,6 @@ theorem capFree_pre_component_compact
   rw [← capFree_inverse_image_component E hC hfree]
   exact hC.image_of_continuousOn (E.retention.inverse_smooth.continuousOn.mono
     ((capFree_post_component_subset_interior E hfree).trans interior_subset))
-
-
 
 theorem capFree_limit_image_component
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -156,8 +133,6 @@ theorem capFree_limit_image_component
   exact Set.Subset.antisymm (hconnected.subset_connectedComponent hpoint)
     ((show IsClopen _ from ⟨hcompact.isClosed, hopen⟩).connectedComponent_subset hpoint)
 
-
-
 def capFreeComponentEquivalence
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
     (hC : IsCompact (connectedComponent x))
@@ -186,8 +161,6 @@ def capFreeComponentEquivalence
   · intro hy
     exact ⟨E.retention.inverse y, ⟨y, hy, rfl⟩, E.retention.right_inverse (hpost hy)⟩
 
-
-
 theorem capFree_terminal_inverse_image_component
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
     (hC : IsCompact (connectedComponent x))
@@ -206,8 +179,6 @@ theorem capFree_terminal_inverse_image_component
   · intro hy
     exact ⟨E.limit_identify.map y, ⟨y, hy, rfl⟩, E.limit_identify.left_inverse (hpre hy)⟩
 
-
-
 theorem capFree_terminal_component_compact
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
     (hC : IsCompact (connectedComponent x))
@@ -219,8 +190,6 @@ theorem capFree_terminal_component_compact
   rw [← capFree_limit_image_component E hC hfree]
   exact (capFree_pre_component_compact E hC hfree).image_of_continuousOn
     (E.limit_identify.map_smooth.continuousOn.mono hpre)
-
-
 
 def capFreeTerminalComponentEquivalence
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}
@@ -273,8 +242,6 @@ def capFreeTerminalComponentEquivalence
   · exact E.limit_identify.map_smooth.comp
       (E.retention.inverse_smooth.mono hpost)
       (fun _ hy => E.retained_pre_subset (hpre (hpostPre hy)))
-
-
 
 theorem capFree_terminal_component_metric
     (E : SurgeryEventData g₀ K P slice metric T) {x : (slice T).carrier}

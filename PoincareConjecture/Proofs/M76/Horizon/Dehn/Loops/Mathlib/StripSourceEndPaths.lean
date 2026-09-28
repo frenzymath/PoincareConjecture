@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionStripBoundary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,8 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def stripSourceCorner (t : unitInterval) (positive : Bool) : source :=
   ⟨((t : ℝ), if positive then 1 else -1), t.property, by cases positive <;> norm_num⟩
-
 
 def stripSourceEndPath (t : unitInterval) :
     Path (stripSourceCorner t false) (stripSourceCorner t true) where
@@ -35,13 +24,11 @@ def stripSourceEndPath (t : unitInterval) :
 theorem stripSourceEndPath_val (t s : unitInterval) :
     (stripSourceEndPath t s : P2) = ((t : ℝ), 2 * (s : ℝ) - 1) := rfl
 
-
 theorem stripSourceEndPath_mem_ends (t : unitInterval)
     (ht : (t : ℝ) = 0 ∨ (t : ℝ) = 1) (s : unitInterval) :
     (stripSourceEndPath t s : P2) ∈ stripEnds := by
   refine ⟨?_, (stripSourceEndPath t s).property.2⟩
   simpa only [stripSourceEndPath_val, mem_insert_iff, mem_singleton_iff] using ht
-
 
 theorem stripSourceEndPath_maps_to_mark
     {X : Type*} {Z : Set X} (τ : C3 → X)
@@ -51,8 +38,6 @@ theorem stripSourceEndPath_maps_to_mark
     τ (resolutionMap b alternatePair positive (stripSourceEndPath t s)) ∈ Z :=
   resolution_strip_ends_in_mark τ hτmark hb alternatePair positive
     (stripSourceEndPath_mem_ends t ht s)
-
-
 
 theorem stripSourceEndPath_upper_value
     {X : Type*} [TopologicalSpace X] {Z : Set X} {τ : C3 → X}

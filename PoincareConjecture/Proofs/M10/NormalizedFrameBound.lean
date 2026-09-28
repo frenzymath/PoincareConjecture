@@ -1,20 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem normalized_metric_vector_norm_sq_le (B : E →L[ℝ] E →L[ℝ] ℝ)
     (hi : B.IsInvertible) (C : E ≃L[ℝ] E)

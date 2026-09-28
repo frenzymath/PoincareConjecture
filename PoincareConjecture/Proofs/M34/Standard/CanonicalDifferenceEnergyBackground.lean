@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalMetricRealization
 import PoincareConjecture.Proofs.M34.Standard.DifferenceEnergyJetOperators
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxAlgebra
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 noncomputable def canonicalDomain_differenceEnergyBackground :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -48,8 +36,6 @@ noncomputable def canonicalDomain_differenceEnergyBackground :
       fderiv ℝ (fun y l j k m => EuclideanSpace.proj l
         (D.curvature (r y) (EuclideanSpace.single j 1)
           (EuclideanSpace.single k 1) (EuclideanSpace.single m 1))) x))
-
-
 
 theorem canonicalDomain_differenceEnergyBackground_realization :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -95,8 +81,6 @@ theorem canonicalDomain_differenceEnergyBackground_realization :
         (EuclideanSpace.single k 1) (EuclideanSpace.single m 1)) = _
       rw [hcurv y hy]
 
-
-
 theorem canonicalDomain_differenceEnergyJetBackground :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -113,9 +97,6 @@ theorem canonicalDomain_differenceEnergyJetBackground :
   congr 1
   funext j
   exact ((hB.iteratedFDeriv (𝕜 := ℝ) j).eq_of_nhds).symm
-
-
-
 
 theorem canonicalDomain_differenceEnergyBackground_bound
     (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :

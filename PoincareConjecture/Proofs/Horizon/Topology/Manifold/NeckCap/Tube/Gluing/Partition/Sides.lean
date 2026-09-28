@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.P
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Ends
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Partition.UpperSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -203,8 +194,6 @@ theorem union_eq_graph_half_union_successor_upper (A B : EpsilonNeck g)
   · apply disjoint_left.mpr
     intro x hxA hxB
     exact hxA.2 ⟨hxA.1, (hside x ⟨hxA.1, hxB.1⟩).mp hxB.2.1⟩
-
-
 
 theorem graph_half_partition (A B : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)

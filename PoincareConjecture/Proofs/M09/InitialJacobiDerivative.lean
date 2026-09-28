@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.VariationRegularField
 import PoincareConjecture.Proofs.M09.InitialVariationJet
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

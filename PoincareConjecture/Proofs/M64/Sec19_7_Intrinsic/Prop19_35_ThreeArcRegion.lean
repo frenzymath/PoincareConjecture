@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CrossRayRegion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,9 +7,6 @@ open Set Function
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_region
     {base alpha beta : ℝ → AnnulusCoordinates} {a b A u L : ℝ}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapMetricScaling
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryGeometry
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
-
 
 theorem ordinaryChapter11_canonicalControl_of_normalized_cap
     (p : (G).point) {Q epsilon C : ℝ} (hQ : 0 < Q)

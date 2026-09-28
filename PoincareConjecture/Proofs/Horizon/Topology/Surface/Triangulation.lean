@@ -1,6 +1,3 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartTriangles
@@ -41,26 +38,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.PolygonalCores
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Closure
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -73,9 +50,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M]
-
-
-
 
 theorem exists_finite_chart_cover (hM : IsCompact (Set.univ : Set M)) :
     ∃ (s : Finset M), (⋃ x ∈ s, (chartAt (EuclideanSpace ℝ (Fin 2)) x).source) =
@@ -95,18 +69,10 @@ theorem exists_finite_chart_cover (hM : IsCompact (Set.univ : Set M)) :
   · intro x hx
     exact hsu hx
 
-
 theorem exists_finite_chart_cover_of_compact_space [CompactSpace M] :
     ∃ (s : Finset M), (⋃ x ∈ s, (chartAt (EuclideanSpace ℝ (Fin 2)) x).source) =
       (univ : Set M) :=
   exists_finite_chart_cover (isCompact_univ : IsCompact (univ : Set M))
-
-
-
-
-
-
-
 
 theorem exists_finite_smooth_triangulation_with_retained_coordinates
     [CompactSpace M] :
@@ -364,13 +330,11 @@ theorem exists_finite_smooth_triangulation_with_retained_coordinates
     core_back := hcoreBack
     core_frontier := fun R q hq => (hcoreInter R () hq).1 }⟩
 
-
 theorem exists_finite_smooth_triangulation_with_coordinates
     [CompactSpace M] :
     Nonempty (FiniteSmoothTriangulationWithCoordinates (M := M)) := by
   obtain ⟨T⟩ := exists_finite_smooth_triangulation_with_retained_coordinates (M := M)
   exact T.refinement.nonempty_triangulationWithCoordinates T.parent_smooth T.parent_symm_smooth
-
 
 theorem exists_finite_smooth_triangulation
     [CompactSpace M] : Nonempty (FiniteSmoothTriangulation (M := M)) := by

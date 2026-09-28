@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Transport
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.LowerBound
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,12 +12,10 @@ namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 def jacobiCurvature (B : E → E →L[ℝ] E →L[ℝ] ℝ) (x v : E) : E →L[ℝ] E :=
   let Γ := christoffelBilinear B
   ((fderiv ℝ Γ x).flip v).flip v - (fderiv ℝ Γ x v).flip v +
     (Γ x).flip (Γ x v v) - (Γ x v).comp ((Γ x).flip v)
-
 
 theorem jacobiCurvature_apply
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
@@ -37,7 +23,6 @@ theorem jacobiCurvature_apply
     jacobiCurvature B x v u = coordinateCurvature B x u v v := by
   rw [coordinateCurvature_eq_christoffelCurvature hΓ]
   rfl
-
 
 def parallelJacobiCoefficient (B : E → E →L[ℝ] E →L[ℝ] ℝ)
     (q : ℝ → E) (P : ℝ → E →L[ℝ] E) (t : ℝ) : E →L[ℝ] E :=
@@ -62,7 +47,6 @@ theorem contDiffAt_jacobiCurvature [CompleteSpace E]
   unfold jacobiCurvature
   fun_prop
 
-
 theorem contDiffOn_parallelJacobiCoefficient [CompleteSpace E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {I T : Set ℝ}
     {q : ℝ → E} {P : ℝ → E →L[ℝ] E}
@@ -83,8 +67,6 @@ theorem contDiffOn_parallelJacobiCoefficient [CompleteSpace E]
     (hPi t ht).contDiffAt_map_inverse.comp_contDiffWithinAt t (hP t ht)
   exact hi.clm_comp (hC.contDiffWithinAt.clm_comp (hP t ht))
 
-
-
 theorem inverse_parallel_hasDerivWithinAt [CompleteSpace E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q J : ℝ → E}
     {P : ℝ → E →L[ℝ] E} {a b t : ℝ} (hab : a < b) (ht : t ∈ Icc a b)
@@ -99,8 +81,6 @@ theorem inverse_parallel_hasDerivWithinAt [CompleteSpace E]
   simpa only [alongCovariantDerivative, ConnectionAlongCurve.parallelCoefficient,
     neg_apply, christoffelBilinear_apply, sub_neg_eq_add,
     fderiv_eq_smul_deriv, one_smul] using h
-
-
 
 theorem isJacobiSolOn_inverse_parallel [CompleteSpace E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q J : ℝ → E}
@@ -126,8 +106,6 @@ theorem isJacobiSolOn_inverse_parallel [CompleteSpace E]
     simpa only [hjac t ht, map_neg, parallelJacobiCoefficient,
       ContinuousLinearMap.comp_apply, (hinv t ht).self_apply_inverse,
       jacobiCurvature_apply (hΓ t ht)] using h
-
-
 
 theorem exists_parallel_jacobi_reduction [CompleteSpace E] [FiniteDimensional ℝ E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {I : Set ℝ} {q J : ℝ → E}

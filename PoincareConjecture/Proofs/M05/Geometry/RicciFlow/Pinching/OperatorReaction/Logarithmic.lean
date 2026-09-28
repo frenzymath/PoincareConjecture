@@ -1,21 +1,9 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Persistence
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
 open scoped BigOperators
-
-
 
 theorem operator_reaction_logarithmic_pinching
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningCapProductCoordinates
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -11,9 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "Disk" => Metric.closedBall (0 : V2) 1
 local notation "Band" => Icc (-1 : ℝ) 1
 local notation "J" => Icc (0 : ℝ) 1
-
-
-
 
 theorem RelativeFrontierDiskProduct.exists_confined_base_extension
     {X ι V : Type*} [TopologicalSpace X]
@@ -149,8 +144,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "Base" => Set.prod Band J
 local notation "Plus" => Set.prod (Set.prod J Band) J
 
-
-
 theorem RelativeFrontierDiskProduct.exists_cap_quarter_box
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {D W O K : Set X}
@@ -206,8 +199,6 @@ theorem RelativeFrontierDiskProduct.exists_cap_quarter_box
     exact (hkW (L z) (hLmap hz)).trans (haW (z.1.2,z.2) ⟨hz.1.2,hz.2⟩)
   · intro z hz
     exact (hkCap (L z) (hLmap hz)).trans (haCap (z.1.2,z.2) ⟨hz.1.2,hz.2⟩)
-
-
 
 theorem RelativeFrontierDiskProduct.exists_cap_side_box
     {X ι : Type*} [TopologicalSpace X]

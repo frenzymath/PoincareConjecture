@@ -5,20 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PrecompactData
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.BallDiffeomorphism
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +13,6 @@ open Set Function MeasureTheory
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 def localInjectivityRadius (n : ℕ) (K R v : ℝ) : ℝ :=
   let s := min R (Poincare.ODE.Jacobi.comparisonRadius K)
@@ -47,9 +31,6 @@ theorem localInjectivityRadius_lt (n : ℕ) (K : ℝ) {R : ℝ} (hR : 0 < R) (v 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_precompact_exponential_injective_of_noncollapse
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)
@@ -127,10 +108,6 @@ theorem exists_precompact_exponential_injective_of_noncollapse
       i.val (by omega) (y i) (hyp i).2)
   have hmass := packingMass_lt_count_mul_volume n s hw
   exact (not_lt_of_ge hpack) (hmass.trans_le (mul_le_mul_right hsmallvol _))
-
-
-
-
 
 theorem exists_uniform_precompact_exponential_diffeomorph
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)

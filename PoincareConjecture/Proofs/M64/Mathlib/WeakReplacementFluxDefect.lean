@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -20,10 +8,6 @@ noncomputable section
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64WeakReplacement_flux_defect
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]

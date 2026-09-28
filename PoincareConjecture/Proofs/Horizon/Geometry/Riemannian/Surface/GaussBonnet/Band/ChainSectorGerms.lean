@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointSectorGerms
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,11 +33,9 @@ variable {M : Type*} [TopologicalSpace M]
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
-
 noncomputable def ambientEndpointCut (right : Bool) : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ :=
   (B.faces.endpointCutFunctional right).comp
     (G.frame.trans collarParameterEquiv.symm).toContinuousLinearMap.toLinearMap.toAffineMap
-
 
 noncomputable def ambientEndpointTop (right : Bool) : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ :=
   (B.faces.topLineFunctional (if right then B.faces.lastCell else B.faces.firstCell)).comp
@@ -99,7 +90,6 @@ theorem ambient_last_vertex (hab : a ≤ b) :
   rw [B.faces.interface.last_vertex, map_add, map_smul, G.frame.apply_symm_apply, hbase]
   ext <;> simp [smul_eq_mul]
 
-
 theorem ambient_carrier_first_top_eventually_iff (hab : a ≤ b) :
     ∀ᶠ z in 𝓝 (C.symm ((D.edge e.1 e.2).map a) + ra • G.frame.symm (ua, wa)),
       z ∈ C.symm '' B.faces.carrier ↔
@@ -112,7 +102,6 @@ theorem ambient_carrier_first_top_eventually_iff (hab : a ≤ b) :
   filter_upwards [hlocal] with z hz
   rw [mem_chart_image_iff_mem_linearGraphCoordinates_image C G.frame B.faces.carrier]
   exact hz
-
 
 theorem ambient_carrier_last_top_eventually_iff (hab : a ≤ b) :
     ∀ᶠ z in 𝓝 (C.symm ((D.edge e.1 e.2).map b) + rb • G.frame.symm (ub, wb)),
@@ -151,8 +140,6 @@ private theorem linear_functional_eq_first_coordinate
     ext <;> simp
   conv_lhs => rw [hv]
   rw [map_add, map_smul, map_smul, hf, smul_eq_mul, smul_eq_mul, mul_zero, add_zero]
-
-
 
 theorem adjacent_cut_functionals_opposite
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :
@@ -231,8 +218,6 @@ theorem adjacent_cut_functionals_opposite
   rw [linear_functional_eq_first_coordinate L f hfd, neg_neg]
   ring
 
-
-
 theorem adjacent_top_carrier_eventually_iff_affine_sectors
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :
     ∀ᶠ z in 𝓝 (C.symm ((D.edge e.1 e.2).map (S.cut i.succ)) + r • K.direction i.succ),
@@ -247,8 +232,6 @@ theorem adjacent_top_carrier_eventually_iff_affine_sectors
   rw [hpoint] at hj
   filter_upwards [hi, hj] with z hiz hjz
   rw [image_union, mem_union, hiz, hjz]
-
-
 
 theorem adjacent_top_carrier_eventually_iff_common_cut
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalComponentCurvature
 import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +21,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_component_scalar_convergence
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})
@@ -54,9 +42,6 @@ theorem limitCanonical_component_scalar_convergence
     G P F R hcompact a hsec heta] with k hk x _hx
   rw [Real.dist_eq, abs_sub_comm]
   exact (hk.2.2 x).2.2
-
-
-
 
 theorem limitCanonical_component_scalar_radius_convergence
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

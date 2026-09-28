@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.SmoothGaugeCoefficients
 import PoincareConjecture.Proofs.M35.RadialGauge.AxisDivisionJets
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarJetContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 open SmoothRadial
-
-
 
 theorem smoothGaugeForcing_parametric_continuous
     {A E : Type*} [TopologicalSpace A] [NormedAddCommGroup E] [InnerProductSpace ℝ E]

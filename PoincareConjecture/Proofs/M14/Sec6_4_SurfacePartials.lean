@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M08.SecondVariationCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (Γ : ℝ × E → E →L[ℝ] E →L[ℝ] E)
 
 include hΩ hq hp
-
-
-
 
 theorem coordinateCovariantU_partialU_eq_slice :
     M08.coordinateCovariantU Γ q (M08.coordinatePartialU q) p =
@@ -45,9 +33,6 @@ theorem coordinateCovariantU_partialU_eq_slice :
     Γ (p.1, q p) (fderiv ℝ q p (0, 1)) (fderiv ℝ q p (0, 1)) = _
   rw [← (M08.coordinateSlice_snd_hasDerivAt _ hYd).deriv, heq.deriv_eq,
     ← (M08.coordinateSlice_snd_hasDerivAt q hqd).deriv]
-
-
-
 
 theorem coordinateCovariantS_partialU_eq_slice {S : Set ℝ} (hS : S ∈ 𝓝 p.1) :
     M08.coordinateCovariantS Γ q (M08.coordinatePartialU q) p =
@@ -70,9 +55,6 @@ theorem coordinateCovariantS_partialU_eq_slice {S : Set ℝ} (hS : S ∈ 𝓝 p.
     ← (M08.coordinateSlice_fst_hasDerivAt q hqd).deriv,
     ← (M08.coordinateSlice_snd_hasDerivAt q hqd).deriv,
     derivWithin_of_mem_nhds hS, derivWithin_of_mem_nhds hS]
-
-
-
 
 theorem coordinateCovariantS_partialS_eq_slice {S : Set ℝ} (hS : S ∈ 𝓝 p.1) :
     M08.coordinateCovariantS Γ q (M08.coordinatePartialS q) p =

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Spectral.Counting.ChartLocalization
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,7 +24,6 @@ variable (D : LeviCivitaData g) (Ω : Set M)
   (hρs : ∀ i, tsupport (ρ i : M → ℝ) ⊆
     (chartAt (EuclideanSpace ℝ (Fin n)) (i : M)).source)
 
-
 def partitionLocalization (i : s) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ]
       Lp ℝ 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
@@ -41,7 +33,6 @@ def partitionLocalization (i : s) :
     (ρ i) (ρ i).contMDiff (hρc i) (hρs i)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_partition_norm_bound :
     ∃ C ≥ 0, ∀ u : H1Zero D Ω,

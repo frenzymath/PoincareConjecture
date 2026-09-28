@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartFormula
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartLaplacian
 import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerEuler
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
-
-
 
 theorem positiveStartCorrectionStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_EpochWindow
 import PoincareConjecture.Proofs.M15.Thm8_10_StableSurvival
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem stableSource_of_actual_seed_comparisons
     (P : M46Predecessors.{u}) {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

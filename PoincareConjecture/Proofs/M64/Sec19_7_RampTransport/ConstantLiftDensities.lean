@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.CurveLift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem constantLift_immersed
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma)
@@ -38,8 +24,6 @@ theorem constantLift_immersed
   rw [hx, map_zero] at hsplit
   exact himm x (congrArg Prod.fst hsplit).symm
 
-
-
 theorem constantLift_curvature
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) (time : ℝ)
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 2 gamma)
@@ -49,8 +33,6 @@ theorem constantLift_curvature
   unfold m62Curvature m62CurvatureSquared
   rw [auxiliaryCircle_curvatureVector_eq P q (fun y _ => gamma y) time hgamma himm x]
   exact congrArg Real.sqrt (auxiliaryCircle_section_metric P time q _ _ _)
-
-
 
 theorem constantLift_arcLength
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) (time : ℝ)
@@ -64,16 +46,12 @@ theorem constantLift_arcLength
   exact auxiliaryCircle_curveSpeed_eq P q (fun y _ => gamma y) time x
     (hgamma.mdifferentiableAt (by norm_num))
 
-
-
 theorem constantLift_length
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) (time : ℝ)
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma) :
     m62Length P.flow (fun y _ => auxiliaryCircleSection P q (gamma y)) time =
       m62Length F (fun y _ => gamma y) time :=
   constantLift_arcLength P q time hgamma 0 curvePeriod
-
-
 
 theorem constantLift_arcTotalCurvature
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) (time : ℝ)
@@ -89,8 +67,6 @@ theorem constantLift_arcTotalCurvature
   rw [constantLift_curvature P q time hgamma himm x,
     auxiliaryCircle_curveSpeed_eq P q (fun y _ => gamma y) time x
       (hgamma.mdifferentiableAt (by norm_num))]
-
-
 
 theorem constantLift_totalCurvature
     (P : M62.CircleProductData F circumference) (q : P.circle.Point) (time : ℝ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedVertexLinkFaces
 import PoincareConjecture.Proofs.M76.Mathlib.OrderComplexMapImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
-
 
 theorem derived_link_space_eq_flag_range {p : E} (hp : {p} ∈ K.faces)
     [Fintype (K.link p).faces] :
@@ -45,10 +33,6 @@ theorem derived_link_space_eq_flag_range {p : E} (hp : {p} ∈ K.faces)
   · rintro ⟨a, ha, hchain, hx⟩
     exact convexHull_subset_space
       ((K.derivedSubdivision_link_faces c hc hp _).mpr ⟨a, ha, hchain, rfl⟩) hx
-
-
-
-
 
 theorem isConnected_derived_original_vertex_link {p : E} (hp : {p} ∈ K.faces)
     (hconn : IsConnected (K.link p).space) :

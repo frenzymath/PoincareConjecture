@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.ConnectionFamily
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -157,7 +149,6 @@ theorem contMDiffOn_family_vector_of_metric_pair
     exact congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) =>
       L (C q)) (hGinv q hq).inverse_comp_self
   exact Bundle.contMDiffWithinAt_totalSpace.mpr ⟨contMDiffWithinAt_snd, hC⟩
-
 
 section FiniteSpatialJets
 

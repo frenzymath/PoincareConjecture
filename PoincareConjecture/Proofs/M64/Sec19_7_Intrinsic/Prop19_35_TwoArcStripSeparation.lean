@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoCornerArcStrips
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open scoped Topology
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_two_arc_interior_disjoint
     {alpha beta : ℝ → AnnulusCoordinates} {A B : ℝ}
@@ -38,10 +22,6 @@ theorem m64Intrinsic_two_arc_interior_disjoint
     exact ht.1.ne' he
   · have he := hai ⟨ht.1.le, ht.2.le⟩ ⟨(ht.1.trans ht.2).le, le_rfl⟩ hA
     exact ht.2.ne he
-
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_strip_width
     {ι κ : Type*} [Finite ι] [Finite κ]

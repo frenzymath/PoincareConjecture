@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvaturePositiveSphere
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNeckLift
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem exists_terminalCurvature_null_cover_bound :
     ∃ delta : ℝ, 0 < delta ∧

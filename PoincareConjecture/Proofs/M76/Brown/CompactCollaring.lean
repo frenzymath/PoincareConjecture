@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CollarPatchGluing
 import PoincareConjecture.Proofs.M76.Brown.CollarReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {B X : Type*} [MetricSpace B] [CompactSpace B] [Nonempty B] [MetricSpace X]
-
-
-
-
-
 
 theorem exists_full_collar_of_compact_local_patches
     (i : B → X) (hi : Function.Injective i)

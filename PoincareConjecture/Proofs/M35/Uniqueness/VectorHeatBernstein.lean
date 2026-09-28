@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingGradientEnergy
 import PoincareConjecture.Proofs.M35.Uniqueness.ScalarJetLinearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem vector_heat_bernstein_subsolution
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

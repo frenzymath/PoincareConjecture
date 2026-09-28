@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.LiftedFamilies.Transfer
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NormalizedFreeHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ open Proofs.M02 Proofs.M59
 variable {M E : Type*} [TopologicalSpace M] [TopologicalSpace E]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] [T2Space M]
   [SimplyConnectedSpace E]
-
-
-
-
 
 theorem m59_normalized_classes_eq_of_cover_deck
     (hcompact : IsCompact (univ : Set M)) (q : M59SphereQuotient)

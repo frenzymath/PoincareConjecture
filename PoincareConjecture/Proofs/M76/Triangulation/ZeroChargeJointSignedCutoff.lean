@@ -1,38 +1,18 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointCutoff
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.ZeroChargeJoint
 
-
-
-
 noncomputable def transverseTimeAmplitude (R epsilon z : ℝ) : ℝ :=
   max 0 ((epsilon / R) * (R - |z|))
-
-
-
 
 noncomputable def signedTimeCutoff (R epsilon t z : ℝ) : ℝ :=
   max (-transverseTimeAmplitude R epsilon z)
     (min t (transverseTimeAmplitude R epsilon z))
-
-
 
 theorem transverseTimeAmplitude_mem {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (z : ℝ) :
@@ -44,8 +24,6 @@ theorem transverseTimeAmplitude_mem {R epsilon : ℝ} (hR : 0 < R)
         (div_nonneg hepsilon hR.le)
     _ = epsilon := div_mul_cancel₀ _ hR.ne'
 
-
-
 theorem signedTimeCutoff_mem {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (t z : ℝ) :
     signedTimeCutoff R epsilon t z ∈ Icc (-epsilon) epsilon := by
@@ -53,8 +31,6 @@ theorem signedTimeCutoff_mem {R epsilon : ℝ} (hR : 0 < R)
   refine ⟨(neg_le_neg ha.2).trans (le_max_left _ _), ?_⟩
   exact max_le ((neg_nonpos.mpr ha.1).trans hepsilon)
     ((min_le_right _ _).trans ha.2)
-
-
 
 theorem signedTimeCutoff_core {R epsilon t : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (ht : t ∈ Icc (-epsilon) epsilon) :
@@ -64,9 +40,6 @@ theorem signedTimeCutoff_core {R epsilon t : ℝ} (hR : 0 < R)
       div_mul_cancel₀ _ hR.ne', max_eq_right hepsilon]
   rw [signedTimeCutoff, ha, min_eq_left ht.2, max_eq_right ht.1]
 
-
-
-
 theorem signedTimeCutoff_eq_zero_of_radius_le {R epsilon : ℝ}
     (hR : 0 < R) (hepsilon : 0 ≤ epsilon) (t z : ℝ) (hz : R ≤ |z|) :
     signedTimeCutoff R epsilon t z = 0 := by
@@ -75,15 +48,11 @@ theorem signedTimeCutoff_eq_zero_of_radius_le {R epsilon : ℝ}
       (div_nonneg hepsilon hR.le) (sub_nonpos.mpr hz))
   simp only [signedTimeCutoff, ha, neg_zero, max_eq_left (min_le_right t 0)]
 
-
-
 theorem signedTimeCutoff_at_zero {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (z : ℝ) :
     signedTimeCutoff R epsilon 0 z = 0 := by
   have ha := (transverseTimeAmplitude_mem hR hepsilon z).1
   simp only [signedTimeCutoff, min_eq_left ha, max_eq_right (neg_nonpos.mpr ha)]
-
-
 
 theorem transverseTimeAmplitude_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (z w : ℝ) :
@@ -99,9 +68,6 @@ theorem transverseTimeAmplitude_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
     rw [heq, abs_mul, abs_of_nonneg hratio]
     exact mul_le_mul_of_nonneg_left
       (by simpa only [abs_sub_comm w z] using abs_abs_sub_abs_le_abs_sub w z) hratio
-
-
-
 
 theorem signedTimeCutoff_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (t z w : ℝ) :
@@ -119,11 +85,6 @@ theorem signedTimeCutoff_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem signedTimeCutoff_finitePiecewiseAffineOn
     {S : Set E} {t z : E → ℝ} (ht : FinitePiecewiseAffineOn t S)

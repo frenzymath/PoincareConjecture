@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemispher
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,8 +16,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 variable {v : E3}
 
 private theorem sqrt_two_pos : 0 < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
-
-
 
 def capSweepAffine (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, Hemisphere.Plane v × Real) (𝓡 3)
@@ -107,11 +94,9 @@ theorem capSweepAffine_mem_sphere (hv : ‖v‖ = 1) (p : Hemisphere.Plane v × 
   have h := capSweepAffine_norm_sq hv p
   constructor <;> intro hp <;> nlinarith [norm_nonneg (capSweepAffine hv p)]
 
-
 def unitBallSweepRange (hv : ‖v‖ = 1) : TopologicalSpace.Opens E3 :=
   ⟨(capSweepAffine hv).symm ⁻¹' sweepTarget,
     isOpen_sweepTarget.preimage (capSweepAffine hv).symm.continuous⟩
-
 
 def unitBallSweepParametrization (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, Hemisphere.Plane v × Real) (𝓡 3)
@@ -122,7 +107,6 @@ def unitBallSweepParametrization (hv : ‖v‖ = 1) :
         change (capSweepAffine hv).symm (capSweepAffine hv p) ∈ sweepTarget ↔ _
         rw [Diffeomorph.symm_apply_apply]
         rfl))
-
 
 def unitBallSweepChart (hv : ‖v‖ = 1) :
     Diffeomorph (𝓡 3) 𝓘(Real, Hemisphere.Plane v × Real)

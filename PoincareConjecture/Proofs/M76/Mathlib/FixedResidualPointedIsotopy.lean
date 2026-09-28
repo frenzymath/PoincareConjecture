@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedUpperPointedIsotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,13 +8,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_global_finitePL_and_signs
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
@@ -117,9 +101,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_global_
   rw [hpval, hmem, hresidual, hpbase]
   exact hphi.symm
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_global_finitePL
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -182,9 +163,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_global_
       Q hQ hQd J hJ hJR hRzero hresidual hU hdU
   exact ⟨r, hr, hmin, hmax, hrest⟩
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_rim_intervals
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -246,11 +224,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual_with_rim_int
       Q hQ hQd J hJ hJR hRzero hresidual hU hdU
   exact ⟨r, hr, hmin, hmax, hrsub, hrsuper, g, hgT, hgn, hgr, hgQ, hgR, hgU, hgtop,
     ε, hε, H, hrest⟩
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_residual
     {B T d b U R : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

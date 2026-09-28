@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyIdentify
 import PoincareConjecture.Proofs.M51.EmptyVanishingCopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_strongNeck_buffer_or_cap
     {F : SurgeryFlowData.{u}} {T epsilon l H : ℝ}

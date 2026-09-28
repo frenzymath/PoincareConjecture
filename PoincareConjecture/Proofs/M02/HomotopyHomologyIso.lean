@@ -1,15 +1,6 @@
 import Mathlib.AlgebraicTopology.SingularHomology.HomotopyInvariance
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -24,7 +15,6 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
 noncomputable section
 
 variable {X Y : TopCat.{w}}
-
 
 theorem singularHomologyMap_isIso_of_homotopyEquiv
     (R : C) (n : ℕ) (e : ContinuousMap.HomotopyEquiv X Y) :
@@ -51,7 +41,6 @@ theorem singularHomologyMap_isIso_of_homotopyEquiv
     rw [← SSet.homologyMap_comp, ← TopCat.toSSet.map_comp]
     convert hright' using 1
     simp
-
 
 noncomputable def singularHomologyIso_of_homotopyEquiv
     (R : C) (n : ℕ) (e : ContinuousMap.HomotopyEquiv X Y) :

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalConfinedSphereBall
 
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76
@@ -37,7 +35,6 @@ theorem closure_subset_closedBall_of_frontier_subset
   rw [heq,norm_smul,Real.norm_eq_abs,abs_of_pos (by linarith : 0 < 1 + δ)] at hle
   nlinarith [mul_pos hδ hyn]
 
-
 open Geometry
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
@@ -66,7 +63,6 @@ private theorem finitePLBallPair_double_cube :
       exact ⟨neg_le.mp (hs (Sum.inr i)),hs (Sum.inl i)⟩
   exact isFinitePLBallPair_of_affine_halfspaces (isCompact_closedBall _ _) H hrep
     ⟨0,ball_subset_interior_closedBall (mem_ball_self (by norm_num : (0 : ℝ) < 2))⟩
-
 
 theorem ChartwisePLSphere.exists_original_closed_ball_filling
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

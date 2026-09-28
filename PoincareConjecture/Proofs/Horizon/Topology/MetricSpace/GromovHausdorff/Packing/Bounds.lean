@@ -1,28 +1,8 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Basic
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 
 namespace Poincare.GromovHausdorff
-
-
-
-
-
 
 structure PackingWitness {X : Type*} [MetricSpace X]
     (x : X) (δ R : ℝ) (n : ℕ) where
@@ -32,9 +12,6 @@ structure PackingWitness {X : Type*} [MetricSpace X]
   pairwise_disjoint :
     Pairwise (fun i j => Disjoint (Metric.ball (center i) δ)
       (Metric.ball (center j) δ))
-
-
-
 
 theorem PackingWitness.center_separated {X : Type*} [MetricSpace X]
     {x : X} {δ R : ℝ} {n : ℕ} (w : PackingWitness x δ R n)
@@ -57,12 +34,6 @@ theorem PackingWitness.center_injective {X : Type*} [MetricSpace X]
   by_contra hne
   have hsep := w.center_separated hδ hne
   exact (not_le_of_gt hδ) (by simpa [hij] using hsep)
-
-
-
-
-
-
 
 def packingWitness_of_separated_centers {X : Type*} [MetricSpace X]
     (x : X) {δ R : ℝ} (hδ : 0 < δ) {n : ℕ} (c : Fin n → X)
@@ -93,16 +64,9 @@ def packingWitness_of_separated_centers {X : Type*} [MetricSpace X]
         _ = 2 * δ := by ring
     exact (not_lt_of_ge (hsep hij)) hlt
 
-
 def packingAdmissible {X : Type*} [MetricSpace X]
     (x : X) (δ R : ℝ) : Set ℕ :=
   {n | Nonempty (PackingWitness x δ R n)}
-
-
-
-
-
-
 
 theorem exists_packing_bound_of_totallyBounded_closedBall
     {X : Type*} [MetricSpace X] (x : X) {δ R : ℝ} (hδ : 0 < δ)
@@ -146,21 +110,15 @@ theorem exists_packing_bound_of_totallyBounded_closedBall
     exact (not_lt_of_ge hsep) hlt
   simpa using Fintype.card_le_of_injective choose hchoose_inj
 
-
-
 noncomputable def packingNumber {X : Type*} [MetricSpace X]
     (x : X) (δ R : ℝ) : WithTop ℕ :=
   sSup ((fun n : ℕ => (n : WithTop ℕ)) '' packingAdmissible x δ R)
-
-
 
 theorem PackingWitness.card_le_packingNumber {X : Type*} [MetricSpace X]
     {x : X} {δ R : ℝ} {n : ℕ} (w : PackingWitness x δ R n) :
     (n : WithTop ℕ) ≤ packingNumber x δ R := by
   unfold packingNumber
   exact le_sSup ⟨n, ⟨w⟩, rfl⟩
-
-
 
 theorem packingNumber_le_of_bound {X : Type*} [MetricSpace X]
     (x : X) (δ R : ℝ) {N : ℕ}
@@ -170,10 +128,6 @@ theorem packingNumber_le_of_bound {X : Type*} [MetricSpace X]
   refine sSup_le ?_
   rintro z ⟨n, hn, rfl⟩
   exact WithTop.coe_le_coe.mpr (hN n hn)
-
-
-
-
 
 theorem finite_of_subset_ball_packing_bound {X : Type*} [MetricSpace X]
     (x : X) {δ R : ℝ} {N : ℕ} (hδ : 0 < δ)
@@ -221,10 +175,6 @@ theorem finite_of_subset_ball_packing_bound {X : Type*} [MetricSpace X]
   rw [hCcard] at hle
   exact (Nat.not_succ_le_self N) hle
 
-
-
-
-
 theorem ncard_le_of_finite_subset_ball_packing_bound
     {X : Type*} [MetricSpace X]
     (x : X) {δ R : ℝ} {N : ℕ} (hδ : 0 < δ)
@@ -265,10 +215,6 @@ theorem ncard_le_of_finite_subset_ball_packing_bound
     exact ⟨packingWitness_of_separated_centers x hδ c hc hsep'⟩
   have hle := hN T.card hw
   simpa [T, Set.ncard_eq_toFinset_card S hSfin] using hle
-
-
-
-
 
 theorem exists_finite_ball_cover_of_uniform_packing_bound_with_card
     {X : Type*} [MetricSpace X] (x : X) {R η : ℝ} {N : ℕ}
@@ -315,8 +261,6 @@ theorem exists_finite_ball_cover_of_uniform_packing_bound_with_card
   rw [Subtype.dist_eq] at hdist
   exact hdist
 
-
-
 theorem exists_finite_ball_cover_of_uniform_packing_bound
     {X : Type*} [MetricSpace X] (x : X) {R η : ℝ} (hR : 0 < R) (hη : 0 < η)
     (hpack : ∀ (δ R : ℝ), 0 < δ → ∃ N : ℕ,
@@ -328,9 +272,6 @@ theorem exists_finite_ball_cover_of_uniform_packing_bound
     exists_finite_ball_cover_of_uniform_packing_bound_with_card
       x hR hη hN
   exact ⟨L, hLfin, hLcover⟩
-
-
-
 
 theorem exists_finite_closedBall_cover_of_uniform_packing_bound_with_card
     {X : Type*} [MetricSpace X] (x : X) {R η : ℝ} {N : ℕ}
@@ -381,9 +322,6 @@ theorem exists_finite_closedBall_cover_of_uniform_packing_bound_with_card
   intro y hy
   obtain ⟨z, hz, hyz⟩ := hcover₀ y
   exact Set.mem_iUnion₂.mpr ⟨z, hz, hyz⟩
-
-
-
 
 theorem totallyBounded_closedBall_of_uniform_packing_bound
     {X : Type*} [MetricSpace X] (x : X) {R : ℝ} (hR : 0 ≤ R)
@@ -481,25 +419,17 @@ theorem packingAdmissible_mono_scale {X : Type*} [MetricSpace X]
       rw [Metric.mem_ball] at hz ⊢
       exact lt_of_lt_of_le hz hδ
 
-
 theorem packingNumber_mono_radius {X : Type*} [MetricSpace X]
     (x : X) {δ R₁ R₂ : ℝ} (hR : R₁ ≤ R₂) :
     packingNumber x δ R₁ ≤ packingNumber x δ R₂ := by
   unfold packingNumber
   exact sSup_le_sSup (Set.image_mono (packingAdmissible_mono_radius x hR))
 
-
 theorem packingNumber_mono_scale {X : Type*} [MetricSpace X]
     (x : X) {δ₁ δ₂ R : ℝ} (hδ : δ₂ ≤ δ₁) :
     packingNumber x δ₁ R ≤ packingNumber x δ₂ R := by
   unfold packingNumber
   exact sSup_le_sSup (Set.image_mono (packingAdmissible_mono_scale x hδ))
-
-
-
-
-
-
 
 theorem exists_common_subseq_tendsto_fin
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)
@@ -522,11 +452,6 @@ theorem exists_common_subseq_tendsto_fin
   have hcoord := happly.comp hconv
   simpa [g, Function.comp_def] using hcoord
 
-
-
-
-
-
 theorem PackingWitness.exists_common_subseq_tendsto_centers
     {X : Type*} [MetricSpace X] {x : X} {δ R : ℝ} {m : ℕ}
     (hball : IsCompact (Metric.closedBall x R))
@@ -539,10 +464,6 @@ theorem PackingWitness.exists_common_subseq_tendsto_centers
   intro n i
   exact Metric.mem_closedBall.mpr
     (le_of_lt (Metric.mem_ball.mp ((w n).center_mem i)))
-
-
-
-
 
 theorem exists_subseq_tendsto_countable_family
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)

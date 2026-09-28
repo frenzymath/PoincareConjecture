@@ -3,26 +3,13 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlabComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace CubeShell
 
-
-
 abbrev Ambient := (ℝ × ℝ) × ℝ
-
-
 
 def coordinate (i : Fin 3) : Ambient →L[ℝ] ℝ :=
   ![(ContinuousLinearMap.fst ℝ ℝ ℝ).comp
@@ -31,22 +18,13 @@ def coordinate (i : Fin 3) : Ambient →L[ℝ] ℝ :=
       (ContinuousLinearMap.fst ℝ (ℝ × ℝ) ℝ),
     ContinuousLinearMap.snd ℝ (ℝ × ℝ) ℝ] i
 
-
-
 def vector (v : Fin 3 → ℝ) : Ambient := ((v 0, v 1), v 2)
-
-
 
 theorem coordinate_vector (v : Fin 3 → ℝ) (i : Fin 3) :
     coordinate i (vector v) = v i := by
   fin_cases i <;> rfl
 
-
-
 theorem vector_coordinate (x : Ambient) : vector (fun i => coordinate i x) = x := rfl
-
-
-
 
 theorem norm_le_iff (x : Ambient) (r : ℝ) :
     ‖x‖ ≤ r ↔ ∀ i : Fin 3, |coordinate i x| ≤ r := by
@@ -61,12 +39,8 @@ theorem norm_le_iff (x : Ambient) (r : ℝ) :
   · intro h
     exact ⟨⟨h 0, h 1⟩, h 2⟩
 
-
-
 theorem abs_coordinate_le_norm (x : Ambient) (i : Fin 3) :
     |coordinate i x| ≤ ‖x‖ := (norm_le_iff x ‖x‖).mp le_rfl i
-
-
 
 theorem exists_abs_coordinate_eq_norm (x : Ambient) :
     ∃ i : Fin 3, |coordinate i x| = ‖x‖ := by
@@ -75,14 +49,10 @@ theorem exists_abs_coordinate_eq_norm (x : Ambient) :
   exact ⟨i, le_antisymm (abs_coordinate_le_norm x i)
     ((norm_le_iff x _).mpr (fun j => hi j (Finset.mem_univ j)))⟩
 
-
-
 def signedCoordinate (i : Fin 3 ⊕ Fin 3) : Ambient →L[ℝ] ℝ :=
   match i with
   | .inl j => coordinate j
   | .inr j => -coordinate j
-
-
 
 theorem signedCoordinate_le_norm (x : Ambient) (i : Fin 3 ⊕ Fin 3) :
     signedCoordinate i x ≤ ‖x‖ := by
@@ -90,17 +60,12 @@ theorem signedCoordinate_le_norm (x : Ambient) (i : Fin 3 ⊕ Fin 3) :
   | inl j => exact (le_abs_self _).trans (abs_coordinate_le_norm x j)
   | inr j => exact (neg_le_abs _).trans (abs_coordinate_le_norm x j)
 
-
-
 theorem exists_signedCoordinate_eq_norm (x : Ambient) :
     ∃ i : Fin 3 ⊕ Fin 3, signedCoordinate i x = ‖x‖ := by
   obtain ⟨i, hi⟩ := exists_abs_coordinate_eq_norm x
   rcases le_total 0 (coordinate i x) with h | h
   · exact ⟨.inl i, (abs_of_nonneg h).symm.trans hi⟩
   · exact ⟨.inr i, (abs_of_nonpos h).symm.trans hi⟩
-
-
-
 
 theorem finitePiecewiseAffineOn_norm (K : SimplicialComplex ℝ Ambient)
     (hK : K.faces.Finite) : FinitePiecewiseAffineOn (norm : Ambient → ℝ) K.space := by
@@ -114,13 +79,7 @@ theorem finitePiecewiseAffineOn_norm (K : SimplicialComplex ℝ Ambient)
   intro x _
   rfl
 
-
-
 def shell (a b : ℝ) : Set Ambient := {x | ‖x‖ ∈ Icc a b}
-
-
-
-
 
 theorem exists_finite_shell_complex (a : ℝ) {b : ℝ} (hb : 0 < b) :
     ∃ K : SimplicialComplex ℝ Ambient, K.faces.Finite ∧ K.space = shell a b := by

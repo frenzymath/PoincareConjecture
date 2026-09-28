@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarBoundaryExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexCone
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem IsFinitePL.exists_closedStar_section_extension_radial
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,20 +15,15 @@ open Poincare.Topology
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
-
 def capBody (v : E3) : Set E3 :=
   radialClosedBody (boundedCylinderRadius v) ∩ {y | 0 ≤ inner Real v y}
-
 
 def baseDisk (v : E3) : Set E3 :=
   closedBall (0 : E3) 1 ∩ {y | inner Real v y = 0}
 
-
 def capSide (v w : E3) : Set E3 := capBody v ∩ {y | inner Real w y ≤ 0}
 
-
 def wallSection (v w : E3) : Set E3 := capBody v ∩ {y | inner Real w y = 0}
-
 
 def radialCoordinates (v : E3) : E3 ≃ₜ E3 :=
   radialHomeomorph (boundedCylinderRadius v)
@@ -152,8 +140,6 @@ theorem capSide_inter (v w : E3) :
     exact ⟨hy, by linarith⟩
   · rintro ⟨hy, hw⟩
     exact ⟨⟨hy, hw.le⟩, hy, by rw [hw]; norm_num⟩
-
-
 
 theorem wallSection_eq_radial_halfDisk (v w : E3) :
     wallSection v w =

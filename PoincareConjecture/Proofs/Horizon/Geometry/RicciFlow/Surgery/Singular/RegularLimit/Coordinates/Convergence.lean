@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.Control
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.SmoothLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -29,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 noncomputable def terminalCoordinateCoefficients
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (q : M) (z : EuclideanSpace ℝ (Fin 3)) :
@@ -46,7 +36,6 @@ noncomputable def terminalCoordinateCoefficients
       (mfderiv (𝓡 3) (𝓡 3) c.symm z) (mfderiv (𝓡 3) (𝓡 3) c.symm z)
     else 0
 
-
 theorem terminalCoordinateCoefficients_apply
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (q : M) {z : EuclideanSpace ℝ (Fin 3)}
@@ -59,7 +48,6 @@ theorem terminalCoordinateCoefficients_apply
   simp only [terminalCoordinateCoefficients, dif_pos hz,
     ContinuousLinearMap.bilinearComp_apply]
   rfl
-
 
 theorem tendsto_terminalCoordinateCoefficients
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -84,8 +72,6 @@ theorem tendsto_terminalCoordinateCoefficients
   · congr 1
     ext v w
     exact H.terminalCoordinateCoefficients_apply P04 q hz v w
-
-
 
 theorem exists_smooth_terminal_coordinate_limit
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -117,7 +103,6 @@ theorem exists_smooth_terminal_coordinate_limit
     refine ⟨B, ?_⟩
     filter_upwards [Ico_mem_nhdsLT hsT] with t ht z hz
     exact hB t ht z (Metric.ball_subset_closedBall (hK hz))
-
 
 theorem contDiffAt_terminalCoordinateCoefficients
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.CompactMaximum
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Parabolic
-
-
-
 
 theorem pos_of_deriv_pos_at_first_zero_of_pos_outside_compact
     {X : Type*} [TopologicalSpace X]

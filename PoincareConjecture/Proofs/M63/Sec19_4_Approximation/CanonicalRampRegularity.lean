@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
-
-
 
 theorem canonicalRamp_periodic (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} (hgamma : Function.Periodic gamma curvePeriod) :
@@ -35,8 +24,6 @@ theorem canonicalRamp_periodic (P : M62.CircleProductData F circumference)
     rw [hshift, AddCircle.coe_add_period]
     rfl
 
-
-
 theorem canonicalRamp_contMDiff (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} {k : WithTop ℕ∞} (hk : k ≤ ∞)
     (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) k gamma) :
@@ -48,8 +35,6 @@ theorem canonicalRamp_contMDiff (P : M62.CircleProductData F circumference)
     contMDiff_iff_contDiff.mpr ((contDiff_const.mul contDiff_id).div_const _)
   exact (P.charts.from_product_smooth.of_le hk).comp
     (hgamma.prodMk ((P.circle.quotient_smooth.of_le hk).comp hphi))
-
-
 
 theorem canonicalRamp_velocity (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} {x : ℝ} (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma x) :
@@ -85,9 +70,6 @@ theorem canonicalRamp_velocity (P : M62.CircleProductData F circumference)
         (P.circle.quotient_smooth.mdifferentiableAt (by simp)) hphi).trans
         (congrArg ((circumference / curvePeriod) • ·) (P.circle.frame_quotient (phi x)).symm)
     exact h.symm.trans hvelocity
-
-
-
 
 theorem canonicalRamp_degree_one (P : M62.CircleProductData F circumference)
     (gamma : ℝ → M) :

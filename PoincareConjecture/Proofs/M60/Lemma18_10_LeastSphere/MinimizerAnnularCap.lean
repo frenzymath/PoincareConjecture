@@ -7,15 +7,6 @@ import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 import Mathlib.Geometry.Euclidean.Inversion.Calculus
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,32 +19,21 @@ namespace PoincareConjecture.M60
 
 local instance : Fact (Module.finrank ℝ LoopAmbient = 2 + 1) := ⟨by simp [LoopAmbient]⟩
 
-
-
 def suAnnularReflection (p : UnitTwoSphere) : UnitTwoSphere :=
   ⟨(ℝ ∙ m60SpherePole.val)ᗮ.reflection p.val, by
     simpa only [mem_sphere_zero_iff_norm, LinearIsometryEquiv.norm_map] using p.property⟩
-
-
 
 theorem suAnnularReflection_smooth :
     ContMDiff (𝓡 2) (𝓡 2) ∞ suAnnularReflection := by
   exact (((ℝ ∙ m60SpherePole.val)ᗮ.reflection.toContinuousLinearMap.contDiff).contMDiff.comp
     contMDiff_coe_sphere).codRestrict_sphere _
 
-
-
 def suAnnularCap (R : ℝ) (z : LoopPlane) : UnitTwoSphere :=
   suAnnularReflection (m60SphereParameter ((4 / R ^ 2) • z))
-
-
 
 theorem suAnnularCap_smooth (R : ℝ) : ContMDiff (𝓡 2) (𝓡 2) ∞ (suAnnularCap R) :=
   suAnnularReflection_smooth.comp (m60SphereParameter_contMDiff.comp
     (((4 / R ^ 2) • ContinuousLinearMap.id ℝ LoopPlane).contDiff.contMDiff))
-
-
-
 
 theorem suAnnularReflection_parameter {z : LoopPlane} (hz : z ≠ 0) :
     suAnnularReflection (m60SphereParameter z) =
@@ -98,8 +78,6 @@ theorem suAnnularReflection_parameter {z : LoopPlane} (hz : z ≠ 0) :
     hnorm, map_smul, Submodule.coe_smul_of_tower, smul_smul]
   rw [smul_neg, ← neg_smul, hfirst, hlast]
 
-
-
 theorem suAnnularCap_eq_inversion {R : ℝ} (hR : 0 < R)
     {z : LoopPlane} (hz : z ≠ 0) :
     suAnnularCap R z = m60SphereParameter ((R ^ 2 / ‖z‖ ^ 2) • z) := by
@@ -109,14 +87,10 @@ theorem suAnnularCap_eq_inversion {R : ℝ} (hR : 0 < R)
   congr 2
   field_simp
 
-
-
 theorem suAnnularCap_boundary {R : ℝ} (hR : 0 < R)
     {z : LoopPlane} (hz : ‖z‖ = R) : suAnnularCap R z = m60SphereParameter z := by
   have hz0 : z ≠ 0 := norm_ne_zero_iff.mp (hz.trans_ne hR.ne')
   rw [suAnnularCap_eq_inversion hR hz0, hz, div_self (pow_ne_zero 2 hR.ne'), one_smul]
-
-
 
 theorem suAnnularCap_relative_homotopy
     {Y : Type*} [TopologicalSpace Y] (v : C(UnitTwoSphere, Y)) (hv : v.Nullhomotopic)
@@ -136,8 +110,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 open scoped Bundle in
-
-
 
 theorem suAreaDensity_comp_plane (g : RiemannianMetric n M)
     {f : LoopPlane → M} {k : LoopPlane → LoopPlane} {z : LoopPlane}
@@ -200,9 +172,6 @@ private theorem annular_inversion_image {R : ℝ} (hR : 0 < R) :
       exact (div_lt_iff₀ (hR.trans hzr)).mpr (by nlinarith only [hzr, hR])
     · exact fun h => hz0 ((EuclideanGeometry.inversion_eq_center hR.ne').mp h)
 
-
-
-
 theorem suAnnularCap_area (g : RiemannianMetric n M)
     {v : UnitTwoSphere → M} (hv : ContMDiff (𝓡 2) (𝓡 n) 1 v)
     {R : ℝ} (hR : 0 < R) :
@@ -247,9 +216,6 @@ theorem suAnnularCap_area (g : RiemannianMetric n M)
       setIntegral_congr_fun hS (fun z hz => by simpa only [smul_eq_mul] using heq z hz)
     _ = ∫ z in k '' S, m60AreaDensity g F z := hj.symm
     _ = _ := by rw [annular_inversion_image hR]; rfl
-
-
-
 
 theorem suSphereArea_chart (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (c : UnitTwoSphere) :

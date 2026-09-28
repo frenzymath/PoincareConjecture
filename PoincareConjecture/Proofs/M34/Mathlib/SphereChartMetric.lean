@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M34.Mathlib.StereographicDifferential
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,18 +9,12 @@ open scoped Manifold ContDiff RealInnerProductSpace
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
 
-
-
-
 theorem contMDiff_sphere_chart_symm {m : ℕ∞ω} (q : sphere (0 : E) 1) :
     ContMDiff (𝓡 n) (𝓡 n) m (chartAt (EuclideanSpace ℝ (Fin n)) q).symm := by
   have ht : (chartAt (EuclideanSpace ℝ (Fin n)) q).target = univ :=
     stereographic'_target (-q)
   rw [← contMDiffOn_univ, ← ht]
   exact contMDiffOn_chart_symm
-
-
-
 
 theorem inner_fderiv_sphere_chart_symm (q : sphere (0 : E) 1)
     (x a b : EuclideanSpace ℝ (Fin n)) :
@@ -53,9 +36,6 @@ theorem inner_fderiv_sphere_chart_symm (q : sphere (0 : E) 1)
     (norm_eq_of_mem_sphere v)
   intro a
   exact Submodule.mem_orthogonal_singleton_iff_inner_right.mp (U.symm a).property
-
-
-
 
 theorem inner_mfderiv_sphere_chart_symm (q : sphere (0 : E) 1)
     (x a b : EuclideanSpace ℝ (Fin n)) :

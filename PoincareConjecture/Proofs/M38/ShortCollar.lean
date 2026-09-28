@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +13,8 @@ namespace PoincareConjecture.M38
 variable {A : GeneralizedSliceCarrier.{u}}
   (c : PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace A.carrier ∞)
 
-
 noncomputable def shortCollar (a : ℝ) (z : RoundCylinderSpace) : A.carrier :=
   c (z.1, a * z.2)
-
 
 noncomputable def shortCollarInverse (a : ℝ) (x : A.carrier) : RoundCylinderSpace :=
   ((c.symm x).1, (c.symm x).2 / a)
@@ -34,7 +24,6 @@ variable {ε a : ℝ} (ha : 0 < a) (haε : a ≤ ε)
 
 include ha haε hc
 
-
 theorem shortCollar_source {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) : (z.1, a * z.2) ∈ c.source := by
   rw [hc]
@@ -43,7 +32,6 @@ theorem shortCollar_source {z : RoundCylinderSpace}
     nlinarith
   · have h := mul_lt_mul_of_pos_left hz.2.2 ha
     nlinarith
-
 
 theorem shortCollar_left_inverse :
     Set.LeftInvOn (shortCollarInverse c a) (shortCollar c a)
@@ -59,19 +47,16 @@ theorem shortCollar_left_inverse :
   · rfl
   · exact mul_div_cancel_left₀ z.2 ha.ne'
 
-
 theorem shortCollar_right_inverse :
     Set.LeftInvOn (shortCollar c a) (shortCollarInverse c a)
       (shortCollar c a '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   rintro _ ⟨z, hz, rfl⟩
   exact congrArg (shortCollar c a) (shortCollar_left_inverse c ha haε hc hz)
 
-
 theorem shortCollar_image_subset :
     shortCollar c a '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) ⊆ c.target := by
   rintro _ ⟨z, hz, rfl⟩
   exact c.map_source (shortCollar_source c ha haε hc hz)
-
 
 theorem shortCollar_smooth :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (shortCollar c a)
@@ -80,7 +65,6 @@ theorem shortCollar_smooth :
     (contMDiff_fst.prodMk
       ((contDiff_const.mul contDiff_id).contMDiff.comp contMDiff_snd)).contMDiffOn
     (fun _ hz => shortCollar_source c ha haε hc hz)
-
 
 theorem shortCollarInverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (shortCollarInverse c a)
@@ -107,7 +91,6 @@ theorem shortCollar_image :
     · exact (div_lt_iff₀ ha).mpr (by linarith [hz.2.2])
     · change c (z.1, a * (z.2 / a)) = c z
       rw [mul_div_cancel₀ _ ha.ne']
-
 
 theorem shortCollar_open :
     IsOpen (shortCollar c a '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by

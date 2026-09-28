@@ -1,14 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,21 +8,15 @@ open scoped intervalIntegral
 
 namespace Real
 
-
-
 theorem hasDerivAt_affine_smoothTransition (s t y : ℝ) :
     HasDerivAt (fun r => s + (t - s) * smoothTransition r)
       ((t - s) * deriv smoothTransition y) y :=
   (((smoothTransition.contDiff (n := 1)).differentiable one_ne_zero y).hasDerivAt.const_mul
     (t - s)).const_add s
 
-
-
 theorem affine_smoothTransition_deriv_nonneg {s t : ℝ} (hst : s ≤ t) (y : ℝ) :
     0 ≤ (t - s) * deriv smoothTransition y :=
   mul_nonneg (sub_nonneg.mpr hst) smoothTransition.monotone.deriv_nonneg
-
-
 
 theorem integral_affine_smoothTransition {s t : ℝ} (hst : s ≤ t)
     {f : ℝ → ℝ} (hf : ContinuousOn f (Icc s t)) :

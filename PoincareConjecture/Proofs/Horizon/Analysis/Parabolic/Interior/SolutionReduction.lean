@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CoefficientMatrix
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -28,8 +21,6 @@ theorem fderiv_fderiv_spatialSlice_eq_of_eventuallyEq
   exact (hs.fderiv (𝕜 := ℝ)).fderiv_eq (𝕜 := ℝ)
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
-
 
 theorem exists_compact_interior_heat_solution
     (a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι)

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem subset_of_preconnected_closed_union
     {X : Type*} [TopologicalSpace X] {L R J : Set X}
@@ -27,8 +17,6 @@ theorem subset_of_preconnected_closed_union
   · obtain ⟨z, _, hzL, hzR⟩ :=
       isPreconnected_closed_iff.mp hJ L R hL hR hsub hJL ⟨x, hx, hxR⟩
     exact (Set.disjoint_left.mp hLR hzL hzR).elim
-
-
 
 theorem disjoint_closed_components_unique
     {X : Type*} [TopologicalSpace X] {L R J K : Set X}
@@ -51,8 +39,6 @@ theorem disjoint_closed_components_unique
     · exact (Set.disjoint_left.mp hLR (hJLsub hxJ) hxR).elim
     · exact hxK
 
-
-
 theorem disjoint_finitePL_intervals_unique
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {L R J K PL PR PJ PK : Set E}
@@ -62,7 +48,6 @@ theorem disjoint_finitePL_intervals_unique
     (hJL : (J ∩ L).Nonempty) (hKR : (K ∩ R).Nonempty) : J = L ∧ K = R :=
   disjoint_closed_components_unique hL.isCompact.isClosed hR.isCompact.isClosed hLR
     hJ.isConnected.isPreconnected hK.isConnected.isPreconnected hcover hJL hKR
-
 
 theorem isPreconnected_of_interval_chart
     {X : Type*} [TopologicalSpace X] {J : Set X}
@@ -77,8 +62,6 @@ theorem isPreconnected_of_interval_chart
       obtain ⟨t, ht⟩ := q.surjective ⟨x, hx⟩
       exact ⟨t, congrArg Subtype.val ht⟩
   simpa only [Function.comp_def, hrange] using h
-
-
 
 theorem disjoint_interval_charts_unique
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantPairing
 import PoincareConjecture.Proofs.M60.Mathlib.PositiveBilinearPair
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ open Poincare.Riemannian.RadialTransport
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem conformal_pairing_derivatives
     {Γ : P → P →L[ℝ] E →L[ℝ] E} {G : P → E →L[ℝ] E →L[ℝ] ℝ}
@@ -51,8 +41,6 @@ theorem conformal_pairing_derivatives
   rw [hYZ.fderiv_eq, fderiv_const_apply, zero_apply,
     htor, hsymm (Y p)] at h4
   exact ⟨by linarith, by linarith, by linarith, by linarith⟩
-
-
 
 theorem conformal_pairing_gradient_bound
     {Γ : P → P →L[ℝ] E →L[ℝ] E} {G : P → E →L[ℝ] E →L[ℝ] ℝ}

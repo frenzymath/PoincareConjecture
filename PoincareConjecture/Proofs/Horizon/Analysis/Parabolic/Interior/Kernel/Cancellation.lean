@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Gaus
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.Topology.MetricSpace.HolderNorm
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real

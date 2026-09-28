@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.TubeAnnulus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open _root_.Dehn

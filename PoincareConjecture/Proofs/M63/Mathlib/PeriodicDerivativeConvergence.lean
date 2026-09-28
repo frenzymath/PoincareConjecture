@@ -5,15 +5,6 @@ import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.UniformSpace.CompactConvergence
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ open scoped Topology NNReal
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_derivative_limit
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

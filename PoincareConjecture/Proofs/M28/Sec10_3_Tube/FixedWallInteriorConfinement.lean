@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedInteriorWall
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.InteriorEndpointNeckConfinement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Isotopy.Composition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,12 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
-
-
 
 theorem exists_fixed_wall_interior_confinement
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

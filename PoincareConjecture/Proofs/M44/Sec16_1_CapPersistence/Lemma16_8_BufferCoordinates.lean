@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PhysicalBu
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M44
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem physicalBufferFlow_curvatureTensorNorm {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
     (t : ℝ) (x : (⟨e.target, e.open_target⟩ : Opens M)) :
@@ -33,9 +22,6 @@ theorem physicalBufferFlow_curvatureTensorNorm {J : Set ℝ} (F : RicciFlow n M 
       (F.connection t).curvatureTensorNorm x.1 := by
   simpa only [LeviCivitaData.curvatureDerivativeNorm_zero] using
     physicalBufferFlow_curvatureDerivativeNorm F e t 0 x
-
-
-
 
 theorem physicalBufferFlow_pullbackCoefficients {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
@@ -67,9 +53,6 @@ theorem physicalBufferFlow_pullbackCoefficients {J : Set ℝ} (F : RicciFlow n M
   change mfderiv (𝓡 n) (𝓡 n) Subtype.val (targetChart e p x)
     (mfderiv (𝓡 n) (𝓡 n) (targetChart e p) x w) = mfderiv (𝓡 n) (𝓡 n) e x w at hw
   rw [hv, hw, targetChart_val e p hx]
-
-
-
 
 theorem physicalBufferFlow_pullbackJets {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)

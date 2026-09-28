@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralTraceOperatorNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 

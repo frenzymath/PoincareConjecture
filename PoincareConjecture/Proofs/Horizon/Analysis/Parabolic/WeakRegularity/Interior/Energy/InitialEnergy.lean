@@ -1,19 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.LocalMollified
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.KernelBuffer
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.WeakCompactExtension
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open Poincare.Analysis.Convolution

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckUniformTimeComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem neck_buffer_metric_jets_uniform_time_delta
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]

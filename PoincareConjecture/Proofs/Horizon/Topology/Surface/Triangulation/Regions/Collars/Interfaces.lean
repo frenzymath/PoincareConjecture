@@ -1,16 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.ChordRemainders
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Affine.Lines
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.OuterFaces
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -30,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {dLeft dRight : D.IncidentEdgeIndex → EuclideanSpace ℝ (Fin 2)}
   (K : ∀ p, (S p).CutChain (dLeft p) (dRight p)) {δ r : ℝ}
   (B : ∀ p i, ((S p).piece i).FixedStripBandFaces ((K p).graphCuts i) δ r r)
-
 
 def graphBandTopsInRegion (R : D.regions) : Set M :=
   ⋃ a : {a : D.IncidentGraphPieceIndex chart cut S // a.1.1.1 = R},
@@ -69,8 +59,6 @@ variable {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p 
   {x : D.vertices → Bool × Bool → M}
   (caps : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
-
-
 
 def fittedRegionInterface (R : D.regions) : Set M :=
   D.vertexCapChordRemainders caps region R r ∪ D.graphBandTopsInRegion chart cut S K B R
@@ -156,7 +144,6 @@ private theorem inverse_band_coordinates {q : ℝ × ℝ}
 
 omit [T2Space M] in
 
-
 theorem exists_polygonalTop_chart_lines :
     ∃ lines : List (Plane →ᵃ[ℝ] ℝ), (∀ l ∈ lines, Function.Surjective l) ∧
       C.symm '' B.faces.polygonalTop ⊆ ⋃ l ∈ lines, {z | l z = 0} := by
@@ -204,8 +191,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {r : M → ℝ} {p : M} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → M} (B : VertexCapFaces P x)
-
-
 
 theorem exists_chord_chart_line (i : Bool × Bool) :
     ∃ l : Plane →ᵃ[ℝ] ℝ, Function.Surjective l ∧
@@ -260,7 +245,6 @@ theorem exists_vertexCapChordsInRegion_chart_lines
   simpa only [hx, a.property] using hcover
 
 omit [T2Space M] in
-
 
 theorem exists_fittedRegionInterface_chart_lines
     (hx : ∀ p i, x p i = (chart (region p i) : M)) (hr : 0 ≤ r) (R : D.regions) :

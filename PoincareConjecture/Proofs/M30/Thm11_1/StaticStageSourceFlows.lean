@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ComponentSourcePullbac
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.ControlledSource
 import PoincareConjecture.Proofs.M30.Thm3_28.TerminalBuffer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem exists_source_flows_on_static_stage
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

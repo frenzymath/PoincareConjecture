@@ -4,10 +4,6 @@ import PoincareConjecture.Proofs.M11.CylinderMetric
 import PoincareConjecture.Proofs.M11.SourceRestriction
 import PoincareConjecture.Statements.M11CompatibleOperations
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

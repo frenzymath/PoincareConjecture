@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Submersion.FiniteDime
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +15,6 @@ variable {m k : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Fact (Module.finrank ℝ E = m + k)]
   {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
   {f : M → Fin k → ℝ}
-
-
-
 
 theorem exists_adaptedChart
     (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) ∞ f) (x : M)
@@ -58,7 +47,6 @@ theorem exists_adaptedChart
     change f (d.symm (a.symm y)) = y.1
     change f (d.symm (a.symm y)) = (e (a.symm y)).1 at h
     simpa [a] using h
-
 
 def adaptedChart
     (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) ∞ f) (x : M)

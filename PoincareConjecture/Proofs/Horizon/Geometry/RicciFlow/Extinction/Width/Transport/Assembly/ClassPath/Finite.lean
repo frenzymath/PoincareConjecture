@@ -26,9 +26,6 @@ theorem M67OrdinaryBetween.trans {J : Type u} [LinearOrder J]
   · exact Set.disjoint_left.mp hab.2 ht ⟨htc.1, htb⟩
   · exact Set.disjoint_left.mp hbc.2 ht ⟨lt_of_not_ge htb, htc.2⟩
 
-
-
-
 theorem m67_finite_transport_section
     {J : Type u} [LinearOrder J] (zero : J) (hzero : ∀ t : J, zero ≤ t)
     (events : Finset J) (hzero_event : zero ∉ events)

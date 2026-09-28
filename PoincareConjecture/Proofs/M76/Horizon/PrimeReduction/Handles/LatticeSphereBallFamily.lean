@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.LatticeSpher
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.QuotientRegionNesting
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.OutermostSphereBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

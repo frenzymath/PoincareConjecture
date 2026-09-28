@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Co
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.Right
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Lines
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +17,7 @@ private abbrev E2 := EuclideanSpace ℝ (Fin 2)
 private noncomputable def unitTriangleBasis : AffineBasis (Fin 3) ℝ E2 :=
   rightTriangleBasis (show (0 : ℝ) < 1 by norm_num)
 
-
 def standardTriangleVertex : Fin 3 → ℝ × ℝ := ![(0, 0), (1, 0), (0, 1)]
-
-
 
 noncomputable def triangleParameterEquiv (b : AffineBasis (Fin 3) ℝ E2) :
     (ℝ × ℝ) ≃ᴬ[ℝ] E2 :=
@@ -83,7 +73,6 @@ theorem triangleParameterEquiv_image (b : AffineBasis (Fin 3) ℝ E2) :
   exact triangleAffineEquiv_image_convexHull unitTriangleBasis b unitTriangleBasis.ind b.ind
 
 variable {S : Type*} [TopologicalSpace S]
-
 
 noncomputable def coordinateTriangleChart (F : OpenPartialHomeomorph E2 S)
     (b : AffineBasis (Fin 3) ℝ E2) : OpenPartialHomeomorph S (ℝ × ℝ) :=

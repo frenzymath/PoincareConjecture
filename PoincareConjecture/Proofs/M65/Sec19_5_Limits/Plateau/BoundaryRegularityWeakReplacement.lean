@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerClass
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -97,9 +87,6 @@ variable {M : Type*} [TopologicalSpace M] {N : ℕ}
   {e : M → EuclideanSpace ℝ (Fin N)} {gamma : LoopCircle → M}
 
 open Classical in
-
-
-
 
 theorem exists_boundary_replacement (F : M65WeakDisk e gamma)
     (he : Continuous e) (hgamma : Continuous gamma)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphe
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.MFDeriv.Zero
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ variable (F : M27RoundSphereFamily) {c : ℝ}
         F.productInner t p v w)
 
 include F hscale hmetric
-
-
 
 theorem preserves_tangent_forms_of_calibrated_product
     (p : UnitTwoSphere × ℝ) (v w : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) p) :
@@ -96,8 +86,6 @@ theorem cross_mfderiv_eq_zero_of_calibrated_product
     apply ContinuousLinearMap.ext
     intro a
     exact (F.preserves_tangent_kernels_of_calibrated_product hscale hmetric (s, z) (a, 0)).2 rfl
-
-
 
 theorem exists_smooth_factors_of_calibrated_product
     (hf : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ f) :

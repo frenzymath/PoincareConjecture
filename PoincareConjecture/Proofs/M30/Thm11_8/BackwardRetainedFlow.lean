@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.BackwardFlowGluing
 import PoincareConjecture.Proofs.M30.Mathlib.InteriorTerminalJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_backward_flow_on_retained_carrier
     (hShi : LocalCurvatureDerivativeEstimates.{0})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_LowScalarPoint
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem MinimizingRegion.all_minimizers_in_cage
     {X : Type u} [TopologicalSpace X] {time : X → ℝ} {I : SpacetimeInterval}
@@ -34,8 +23,6 @@ theorem MinimizingRegion.all_minimizers_in_cage
   obtain ⟨htime, competitor, hcompetitor⟩ := (M.region_exact y).mp hy
   exact confinement.paths_mem _ (sub_pos.mpr htime.2)
     (sub_le_sub_left htime.1 T) y path ((hmin competitor).trans_lt hcompetitor)
-
-
 
 theorem MinimizingRegion.short_path
     {X : Type u} [TopologicalSpace X] {time : X → ℝ} {I : SpacetimeInterval}
@@ -58,8 +45,6 @@ theorem MinimizingRegion.short_path
   exact ⟨y, path, hmin, hshort, confinement.paths_mem _ (sub_pos.mpr hstart)
     le_rfl y path (hshort.trans_lt confinement.barrier_large)⟩
 
-
-
 theorem regular_history_scalar_lower (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -79,8 +64,6 @@ theorem regular_history_scalar_lower (P : M46Predecessors.{u})
   rw [M13.originalSlice_scalar R.geometry P.m13 t y,
     ← R.history.scalar_pullback t ht y]
   exact hfloor.trans (hp.2.1 _ (mem_univ _))
-
-
 
 theorem regular_history_path_scalar_lower (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

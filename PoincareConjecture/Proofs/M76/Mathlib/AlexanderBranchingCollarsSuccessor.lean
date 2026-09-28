@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBranchingCollars
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderDistantBranchingCollars
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderSelectedBranchingCollars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +10,6 @@ namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem HasBranchingCollars.of_supported_capped_cut
     {W : AlexanderSectionProfile E} (hW : W.HasBranchingCollars)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CanonicalConstants
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,8 +8,6 @@ namespace PoincareConjecture.StandardCapNeighborhood
 
 variable {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
   {F : MaximalStandardCapFlow g₀} {t epsilon C : ℝ} {x : StandardCapSpace}
-
-
 
 theorem intrinsicDiameter_lt_add_one
     (N : StandardCapNeighborhood atlas F t epsilon C x) :
@@ -35,14 +25,10 @@ theorem intrinsicDiameter_lt_add_one
   apply (ENNReal.ofReal_lt_ofReal_iff (mul_pos (by linarith [N.constant_pos]) hp)).2
   nlinarith
 
-
-
 theorem scalarRatio_uniform (N : StandardCapNeighborhood atlas F t epsilon C x) :
     ∃ bound : ℝ, bound < C + 1 ∧ ∀ y ∈ N.carrier, ∀ z ∈ N.carrier,
       (F.connection t).scalarCurvature z ≤ bound * (F.connection t).scalarCurvature y := by
   exact ⟨C, by linarith, fun y hy z hz => (N.scalar_ratio y hy z hz).le⟩
-
-
 
 theorem volume_lt_add_one (N : StandardCapNeighborhood atlas F t epsilon C x) :
     calibratedMetricVolume (F.metric t) N.carrier < ENNReal.ofReal (C + 1) *
@@ -52,8 +38,6 @@ theorem volume_lt_add_one (N : StandardCapNeighborhood atlas F t epsilon C x) :
   exact N.volume_bound.trans_le (ENNReal.ofReal_le_ofReal
     (mul_le_mul_of_nonneg_right (by linarith : C ≤ C + 1)
       (Real.rpow_nonneg N.scalarSup_pos.le _)))
-
-
 
 theorem exists_uniform_coreRadii (N : StandardCapNeighborhood atlas F t epsilon C x) :
     ∃ radius : StandardCapSpace → ℝ,
@@ -86,15 +70,11 @@ theorem exists_uniform_coreRadii (N : StandardCapNeighborhood atlas F t epsilon 
     C⁻¹, ?_, fun y hy => (hspec y hy).2.2.2.2.le⟩
   exact (inv_lt_inv₀ (by linarith [N.constant_pos]) N.constant_pos).2 (by linarith)
 
-
-
 theorem gradient_uniform (N : StandardCapNeighborhood atlas F t epsilon C x) :
     ∃ bound : ℝ, bound < C + 1 ∧ ∀ y ∈ N.carrier,
       scalarGradientNorm (F.metric t) (F.connection t) y ≤
         bound * (F.connection t).scalarCurvature y ^ (3 / 2 : ℝ) := by
   exact ⟨C, by linarith, fun y hy => (N.gradient_bound y hy).le⟩
-
-
 
 theorem scalarEvolution_uniform (N : StandardCapNeighborhood atlas F t epsilon C x) :
     ∃ bound : ℝ, bound < C + 1 ∧ ∀ y ∈ N.carrier,

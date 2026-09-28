@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectedTangent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -20,8 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem m65Projection_tangentNorm_le (P : M62.CircleProductData F circumference)
     (t : ℝ) (q : P.charts.Point) (V : TangentSpace (𝓡 (n + 1)) q) :
     (F.metric t).tangentNorm q.1 (P.charts.split q V).1 ≤
@@ -30,8 +21,6 @@ theorem m65Projection_tangentNorm_le (P : M62.CircleProductData F circumference)
   apply Real.sqrt_le_sqrt
   rw [m65Projection_inner_self]
   exact sub_le_self _ (sq_nonneg _)
-
-
 
 theorem m65Projection_speed_sq (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -58,8 +47,6 @@ theorem m65Projection_speed_sq (P : M62.CircleProductData F circumference)
   rw [M62.speed_sq, hchain, m65Projection_inner_self, hpair, ← M62.speed_sq]
   ring
 
-
-
 theorem m65Projection_speed_bounds (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
     {t : ℝ} (ht : t ∈ Icc a b) (x : ℝ) (hslope : |m62Slope P c t x| ≤ 1 / 2) :
@@ -76,8 +63,6 @@ theorem m65Projection_speed_bounds (P : M62.CircleProductData F circumference)
       (sub_nonneg.mpr hu)]
   · nlinarith [mul_nonneg (sq_nonneg (curveSpeed P.flow c t x))
       (sq_nonneg (m62Slope P c t x))]
-
-
 
 theorem m65Projection_timeVelocity_le_curvature (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

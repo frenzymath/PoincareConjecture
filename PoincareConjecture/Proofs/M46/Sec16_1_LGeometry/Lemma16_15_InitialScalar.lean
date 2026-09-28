@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_TestedCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem TestedSafeCylinder.initial_scalar_bound
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}

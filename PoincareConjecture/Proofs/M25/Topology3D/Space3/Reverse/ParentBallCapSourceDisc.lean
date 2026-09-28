@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleDisc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] sourceCircle_stereographic_dimension
-
-
 
 theorem exists_child_cap_source_disc
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

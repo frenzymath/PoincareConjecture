@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.SurgeryEventRebuild
-
 
 abbrev SliceMetric := (S : GeneralizedSliceCarrier.{u}) × RiemannianMetric 3 S.carrier
 
@@ -29,7 +20,6 @@ theorem relabel_heq {C : SliceMetric.{u} → Sort v} {s t : SliceMetric.{u}}
     (h : s = t) (x : C s) : HEq (relabel h x) x := by
   subst t
   rfl
-
 
 noncomputable def identify (s t : SliceMetric.{u}) (h : s = t) :
     Diffeomorph (𝓡 3) (𝓡 3) s.1.carrier t.1.carrier ∞ := by
@@ -96,7 +86,6 @@ theorem diffeomorph_apply {s s' t t' : SliceMetric.{u}}
   subst s'
   subst t'
   rfl
-
 
 noncomputable def flow {s t : SliceMetric.{u}} (h : s = t) {J : Set ℝ}
     (B : RicciFlow 3 s.1.carrier J) : RicciFlow 3 t.1.carrier J := h ▸ B

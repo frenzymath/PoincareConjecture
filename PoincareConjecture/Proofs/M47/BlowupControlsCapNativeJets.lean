@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeDerivative
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem cap_native_iterated_metricDifference
     (u : ℝ) (hu : u < 1) (g1 : RiemannianMetric 3 E₃)
@@ -77,8 +66,6 @@ theorem cap_native_iterated_metricDifference
       intro j _
       congr 1
       exact (heq (Function.update (fun l => a l.succ) i j)).self_of_nhds
-
-
 
 theorem cap_native_metricDifference_norm_sq
     (g1 : RiemannianMetric 3 E₃)

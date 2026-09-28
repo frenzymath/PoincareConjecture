@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodLateral
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCutProjection
 import PoincareConjecture.Proofs.M76.Rigidity.SolidTorusPLRegluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,9 +23,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "H0" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B0" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
-
 
 theorem exists_period_PL_regluing {α β : Type*}
     {e : α → OpenPartialHomeomorph X V3}

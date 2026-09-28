@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularSlicePolygons
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,16 +12,11 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem finite_regularSliceGraph_components (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) :
     Finite (K.regularSliceGraph A).ConnectedComponent := by
   let : Finite (K.regularCrossingEdges A) := (K.finite_regularCrossingEdges A hK).to_subtype
   infer_instance
-
-
-
-
 
 theorem exists_regularSlice_polygonal_circles (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) (hreg : ∀ v ∈ K.vertices, A v ≠ 0)

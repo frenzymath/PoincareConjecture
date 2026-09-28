@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
 open Poincare.Analysis.Calculus
-
-
-
 
 theorem norm_iteratedFDeriv_succ_le_of_frame
     {𝕜 E F ι : Type*} [NontriviallyNormedField 𝕜]

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.BilinearPerturbation
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set

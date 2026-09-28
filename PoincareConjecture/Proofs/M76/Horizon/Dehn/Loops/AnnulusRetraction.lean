@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusDepth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology PLAnnularStrip
 
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_square_annulus_middle_retraction {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) :
@@ -48,8 +37,6 @@ theorem exists_square_annulus_middle_retraction {L d : ℝ}
   change e ((e.symm p).1, z) = p
   rw [hz, e.apply_symm_apply]
 
-
-
 theorem exists_annulus_middle_retraction
     {X : Type*} [TopologicalSpace X] {S T : Set X} {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) (hST : S ⊆ T)
@@ -69,8 +56,6 @@ theorem exists_annulus_middle_retraction
   apply Subtype.ext
   change (a (r0 (a.symm ⟨x, hST x.property⟩)) : X) = x
   rw [hfix _ hx, a.apply_symm_apply]
-
-
 
 theorem squareRimLoop_class_ne_one_in_annulus_neighborhood
     {X : Type*} [TopologicalSpace X] {S F T : Set X} {L d : ℝ}

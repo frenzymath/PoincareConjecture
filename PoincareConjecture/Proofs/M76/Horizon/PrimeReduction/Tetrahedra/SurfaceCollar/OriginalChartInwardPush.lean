@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCo
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.TensorCommutator
 import PoincareConjecture.Proofs.M04.TensorNullMinimum
 import PoincareConjecture.Proofs.M04.RiemannRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -354,6 +347,5 @@ theorem thirdCovariantTensorDerivative_commutator (D : LeviCivitaData g)
   rw [mvfderiv_sub hf1 hf2, sub_apply, hdf1, hdf2] at he
   simp only [mvfderiv_fun_neg, neg_apply, hsum, hInserted] at he
   exact he
-
 
 end PoincareConjecture.M04

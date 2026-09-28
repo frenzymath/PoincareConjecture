@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.DominatedPrimitiveConvergence
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.ContinuousMap.Algebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -28,10 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 local notation "X" => C(AddCircle curvePeriod, ℝ)
-
-
-
-
 
 theorem exists_uniform_normalSpeed_limit
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

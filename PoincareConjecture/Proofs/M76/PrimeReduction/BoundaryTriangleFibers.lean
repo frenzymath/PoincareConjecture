@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryTriangleProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "I" => Icc (0 : ℝ) 1
 
-
-
-
 structure BoundaryTriangleFibers where
   map : Finset E → ℝ → E
   piecewiseAffine : ∀ s ∈ L.faces, s.card = 3 → FinitePiecewiseAffineOn (map s) I
@@ -31,8 +20,6 @@ structure BoundaryTriangleFibers where
   boundary : ∀ s ∈ L.faces, s.card = 3 → ∀ r ∈ I, map s r ∈ L.space ↔ r = 0
   formula : ∀ s ∈ L.faces, s.card = 3 → ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 4 ∧
     ∀ r ∈ I, map s r = AffineMap.lineMap (s.centroid ℝ id) (t.centroid ℝ id) r
-
-
 
 theorem exists_boundary_triangle_fibers [Finite L.faces] (hLK : L ≤ K)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 4)

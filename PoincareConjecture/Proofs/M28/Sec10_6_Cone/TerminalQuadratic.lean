@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_6_Cone.TerminalHomothetic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RadialRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RadialGradient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem no_positive_terminal_scalar_of_quadratic_potential
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -29,7 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
 
 include hK hmono hbdd
 
-
 theorem tendsto_setIntegral_supremum (B : Set M) {t : ℝ} (ht : 0 < t) (x : M) :
     Tendsto (fun j => ∫ y in B, K j t x y ∂g.volumeMeasure) atTop
       (𝓝 (∫ y in B, dirichletExhaustionKernel K t x y ∂g.volumeMeasure)) := by
@@ -38,8 +29,6 @@ theorem tendsto_setIntegral_supremum (B : Set M) {t : ℝ} (ht : 0 < t) (x : M) 
     ((mass hK hmono hbdd ht x).1.integrableOn)
     (ae_of_all _ (hmono t ht x))
     (ae_of_all _ (fun y => tendsto_supremum hmono hbdd ht x y))
-
-
 
 theorem integrableOn_integral_supremum_and_tendsto
     [PreconnectedSpace M] {A B : Set M} (hA : g.volumeMeasure A < ⊤)
@@ -81,8 +70,6 @@ theorem integrableOn_integral_supremum_and_tendsto
   exact ⟨hconst.mono' hUm (ae_of_all _ hUbound),
     tendsto_integral_of_dominated_convergence (fun _ => (1 : ℝ)) hm hconst
       (fun j => ae_of_all _ (hbound j)) (ae_of_all _ hl)⟩
-
-
 
 theorem setIntegral_setIntegral_le_of_uniform_bound
     [PreconnectedSpace M] {A B : Set M} (hA : g.volumeMeasure A < ⊤)

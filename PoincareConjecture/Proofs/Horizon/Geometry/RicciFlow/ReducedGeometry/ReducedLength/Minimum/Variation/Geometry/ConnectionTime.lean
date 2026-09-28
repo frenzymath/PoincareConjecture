@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Variation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.AdaptedCoefficient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.CoefficientRegularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +36,6 @@ local instance connectionTimeBilinearSpace :
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem connection_time_deriv_eq_extend
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) {y : M}
     {Y : (z : M) → TangentSpace (𝓡 n) z}
@@ -83,8 +67,6 @@ theorem connection_time_deriv_eq_extend
     ((F.connection t).connection Z y)
   exact h₁.unique (h₂.congr_of_eventuallyEq (Eventually.of_forall heq))
 
-
-
 theorem connection_time_deriv_pairing
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) {y : M}
     {Y : (z : M) → TangentSpace (𝓡 n) z}
@@ -100,8 +82,6 @@ theorem connection_time_deriv_pairing
     F.inner_deriv_connection_extend_of_equation ht]
   unfold backwardConnectionVariationPairing ricciDerivativePairing
   ring
-
-
 
 theorem squareTime_connection_deriv_pairing
     {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) {s : ℝ}
@@ -126,8 +106,6 @@ theorem squareTime_connection_deriv_pairing
   simp only [map_smul, smul_apply, smul_eq_mul]
   rw [connection_time_deriv_pairing F ht hY]
   ring
-
-
 
 theorem chartConnectionBilinear_time_pairing
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)

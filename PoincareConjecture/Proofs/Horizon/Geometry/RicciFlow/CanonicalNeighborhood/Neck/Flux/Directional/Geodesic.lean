@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Axial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -74,8 +65,6 @@ private theorem mfderiv_reverse_apply_one
     erw [mfderiv_eq_fderiv, hd']
   rw [hd]
   exact (mfderiv 𝓘(ℝ, ℝ) (𝓡 3) γ (L - t)).map_neg 1
-
-
 
 theorem long_neck_geodesics_are_almost_axial_signed {α : ℝ} (hα : 0 < α) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧

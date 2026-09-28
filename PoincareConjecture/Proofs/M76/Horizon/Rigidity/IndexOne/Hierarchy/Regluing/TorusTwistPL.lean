@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundar
 import PoincareConjecture.Proofs.M76.Rigidity.EmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped Topology
@@ -32,7 +23,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "T" => (Fin 2 → C)
 local notation "W" => ((Fin 1 ⊕ Fin 2) → ℝ)
-
 
 noncomputable def torusHandleCoordinates : H ≃ₜ (unitInterval × T) :=
   (originalIntervalCoordinates.symm.trans (iccHomeoI (-1 : ℝ) 1 (by norm_num))).prodCongr
@@ -60,7 +50,6 @@ theorem torusHandleCoordinates_boundary (x : H) :
   · left; linarith
   · right; linarith
   · left; linarith
-
 
 noncomputable def handleIntegerTwist (n : Fin 2 → ℤ) : H ≃ₜ H :=
   (torusHandleCoordinates.trans (torusIntegerTwist n)).trans torusHandleCoordinates.symm
@@ -103,7 +92,6 @@ theorem handleIntegerTwist_symm (n : Fin 2 → ℤ) :
   · rfl
   · funext i
     simp [torusIntegerTwist, mul_neg, neg_mul, sub_eq_add_neg]
-
 
 noncomputable def handleIntegerTwistAffineLift (n : Fin 2 → ℤ) : (V1 × V2) →ᴬ[ℝ] W :=
   (ContinuousLinearMap.pi fun i : Fin 1 ⊕ Fin 2 => match i with
@@ -181,8 +169,6 @@ private theorem standard_chartwisePLMap_of_affine_lifts
   exact ⟨K, q, z, hK, hq, hiq, hqz,
     Filter.mem_of_superset (hU.mem_nhds hxU) hUrange, hqPL, hfqPL⟩
 
-
-
 theorem chartwisePLMap_handleIntegerTwist
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d) (n : Fin 2 → ℤ) :
@@ -211,8 +197,6 @@ theorem chartwisePLMap_handleIntegerTwist
       latticeCoordinateProjection (Fin 1) (Fin 2) L (handleIntegerTwistAffineLift n (a z))
   rw [hinput]
   exact (handleIntegerTwistAffineLift_projection n x (a z).2).symm
-
-
 
 theorem chartwisePLHomeomorph_handleIntegerTwist
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}

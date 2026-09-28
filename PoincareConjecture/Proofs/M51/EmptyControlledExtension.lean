@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M51.EmptyControls
 import PoincareConjecture.Proofs.M51.EmptyPolicy
 import PoincareConjecture.Definitions.M51GlobalSchedule
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

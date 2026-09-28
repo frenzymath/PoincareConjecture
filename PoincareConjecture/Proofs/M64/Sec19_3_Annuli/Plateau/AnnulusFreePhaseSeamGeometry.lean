@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamWeakExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,27 +15,19 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
 
-
-
 def m64AnnulusAffineSeamExtend (u : LoopPlane → ℝ) (D : ℝ) (p : LoopPlane) : ℝ :=
   if p 0 < 0 then u (v + p) - D else u p
-
-
 
 theorem m64AnnulusAffineSeamExtend_right (u : LoopPlane → ℝ) (D : ℝ)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusAffineSeamExtend u D p = u p := by
   simp only [m64AnnulusAffineSeamExtend,
     not_lt.mpr ((m64AnnulusInterior_coordinates p).mp hp).1.le, ↓reduceIte]
 
-
-
 theorem m64AnnulusAffineSeamExtend_left (u : LoopPlane → ℝ) (D : ℝ)
     {p : LoopPlane} (hp : p ∈ m64AnnulusSeamLeft) :
     m64AnnulusAffineSeamExtend u D p = u (v + p) - D := by
   simp only [m64AnnulusAffineSeamExtend,
     ((m64AnnulusSeamLeft_coordinates p).mp hp).2.1, ↓reduceIte]
-
-
 
 theorem m64AnnulusAffineSeamExtend_sub (u : LoopPlane → ℝ) (D : ℝ)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusAffineSeamExtend u D (p - v) = u p - D := by
@@ -51,8 +36,6 @@ theorem m64AnnulusAffineSeamExtend_sub (u : LoopPlane → ℝ) (D : ℝ)
     change v + (p - v) ∈ S
     simpa only [heq] using hp
   rw [m64AnnulusAffineSeamExtend_left u D hm, heq]
-
-
 
 theorem m64AnnulusAffineSeamExtend_memLp {u : LoopPlane → ℝ}
     (hu : MemLp u 2 (volume.restrict S)) (D : ℝ) :
@@ -77,8 +60,6 @@ theorem m64AnnulusAffineSeamExtend_memLp {u : LoopPlane → ℝ}
   · have hns : p ∉ S := fun hs => Set.disjoint_left.mp m64AnnulusSeam_disjoint hs hl
     simp only [F, Pi.add_apply, indicator_of_notMem hns, indicator_of_mem hl, zero_add,
       m64AnnulusAffineSeamExtend_left u D hl]
-
-
 
 theorem m64AnnulusAffineSeam_integral_mul {u psi : LoopPlane → ℝ}
     (hu : MemLp u 2 (volume.restrict S)) (D : ℝ)

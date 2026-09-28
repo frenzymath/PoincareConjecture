@@ -3,22 +3,11 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem radial_cross_norm_sq (x u v : E) :
     ‖inner ℝ x u • v - inner ℝ x v • u‖ ^ 2 =
@@ -28,8 +17,6 @@ theorem radial_cross_norm_sq (x u v : E) :
   simp only [inner_sub_left, inner_sub_right, real_inner_smul_left, real_inner_smul_right]
   rw [real_inner_comm u v]
   ring
-
-
 
 theorem radial_gram_nonneg {x : E} (hx : x ≠ 0) (u v : E) :
     0 ≤ inner ℝ u u * inner ℝ v v - inner ℝ u v ^ 2 -
@@ -49,8 +36,6 @@ theorem radial_gram_nonneg {x : E} (hx : x ≠ 0) (u v : E) :
     ring
   rw [← hi]
   nlinarith only [real_inner_mul_inner_self_le U V]
-
-
 
 theorem radial_pairing_gram (c b : ℝ) (x u v : E) :
     (c * inner ℝ u u + b * (inner ℝ x u * inner ℝ x u)) *

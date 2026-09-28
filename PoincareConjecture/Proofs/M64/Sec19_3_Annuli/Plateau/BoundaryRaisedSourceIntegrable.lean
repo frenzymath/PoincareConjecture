@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRaisedSource
 import Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -34,11 +22,6 @@ local instance m64BoundaryRaisedSourceIntegrable_bilinearGroup :
 local instance m64BoundaryRaisedSourceIntegrable_bilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
-
 
 theorem m64BoundaryRaisedSource_integrable
     {S : Set LoopPlane} (hS : MeasurableSet S)

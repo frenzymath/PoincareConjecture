@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderTwoJet
 import PoincareConjecture.Proofs.M36.CylinderTensorNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open M36
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem evolving_roundCylinderGram_chart (t : ℝ) (theta : UnitTwoSphere) (p : V) :
     roundCylinderGram t (chartAt E₂ theta) p =
@@ -46,8 +34,6 @@ theorem evolving_roundCylinderGram_chart (t : ℝ) (theta : UnitTwoSphere) (p : 
     simp [roundCylinderCoordinateBasis, Matrix.diagonal, cylinderSphereFactor,
       EuclideanSpace.basisFun, EuclideanSpace.inner_single_left] <;> ring
 
-
-
 theorem evolving_roundCylinderGram_entry (t : ℝ) (theta : UnitTwoSphere) (p : V)
     (i j : Fin 3) :
     roundCylinderGram t (chartAt E₂ theta) p i j =
@@ -58,16 +44,12 @@ theorem evolving_roundCylinderGram_entry (t : ℝ) (theta : UnitTwoSphere) (p : 
     simp [cylinderHorizontalGram, roundCylinderCoordinateBasis, Matrix.diagonal,
       EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
 
-
-
 theorem evolving_roundCylinderGram_contDiff (t : ℝ) (theta : UnitTwoSphere)
     (i j : Fin 3) :
     ContDiff ℝ ∞ (fun p => roundCylinderGram t (chartAt E₂ theta) p i j) := by
   simp only [evolving_roundCylinderGram_entry]
   exact ((contDiff_const.mul cylinderSphereFactor_contDiff).mul contDiff_const).add
     contDiff_const
-
-
 
 theorem evolving_roundCylinderGram_fderiv (t : ℝ) (theta : UnitTwoSphere) (p w : V)
     (i j : Fin 3) :
@@ -87,8 +69,6 @@ theorem evolving_roundCylinderGram_fderiv (t : ℝ) (theta : UnitTwoSphere) (p w
   simpa [mul_comm, mul_left_comm, mul_assoc] using
     congrArg (fun L : V →L[ℝ] ℝ => L w) hd.fderiv
 
-
-
 theorem evolving_roundCylinderGram_inv {t : ℝ} (ht : t < 1)
     (theta : UnitTwoSphere) (p : V) :
     (roundCylinderGram t (chartAt E₂ theta) p)⁻¹ =
@@ -106,8 +86,6 @@ theorem evolving_roundCylinderGram_inv {t : ℝ} (ht : t < 1)
 
 set_option maxHeartbeats 800000 in
 
-
-
 theorem evolving_roundCylinderChristoffel_eq {t : ℝ} (ht : t < 1)
     (theta : UnitTwoSphere) (p : V) (a b d : Fin 3) :
     roundCylinderChristoffel t (chartAt E₂ theta) p a b d =
@@ -122,8 +100,6 @@ theorem evolving_roundCylinderChristoffel_eq {t : ℝ} (ht : t < 1)
       cylinderChristoffelLinear, cylinderHorizontalCovector, cylinderHorizontalGram,
       roundCylinderCoordinateBasis, EuclideanSpace.basisFun, real_inner_comm] <;>
     field_simp [hne, htime] <;> ring
-
-
 
 theorem evolving_roundCylinderTensorDerivative_eq {t : ℝ} (ht : t < 1)
     (theta : UnitTwoSphere) {r : ℕ} (T : V → (Fin r → Fin 3) → ℝ) :

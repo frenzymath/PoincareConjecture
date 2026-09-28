@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.RicciCont
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
-
-
-
-
-
-
-

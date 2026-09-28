@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleEvolution
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,7 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
 
 theorem exists_stackCapScaleTransport (C : SurgeryCapTag psi u)
     (hpsi : IsCollarEmbedding psi) (K L : Set E3) (hK : IsCompact K) (hL : IsCompact L)
@@ -208,7 +197,6 @@ theorem exists_stackCapScaleTransport (C : SurgeryCapTag psi u)
       range_comp' F (fun q => psi (q, 0))
     _ = K ∪ Cnew.cap ∪ L := by
       rw [hcover, image_union, image_union, (hcore 1).1, ← hcap, hFimageL]
-
 
 theorem exists_stackCapTag_transport_of_fixed_neighborhood
     (D : SurgeryCapTag psi u)

@@ -3,14 +3,6 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Algebra.Group.Units
 import Mathlib.Topology.Instances.Sign
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -22,9 +14,6 @@ theorem signUnit_mul_self (s : SignTypeˣ) : s * s = 1 := by
   exact mul_inv_cancel₀ s.ne_zero
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 noncomputable def twoOpenSignCore (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (hcover : A ∪ B = univ) (c : X → SignTypeˣ) (hc : ContinuousOn c (A ∩ B)) :
@@ -60,15 +49,10 @@ noncomputable def twoOpenSignCore (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
         cases i <;> cases j <;> cases k <;> dsimp <;>
           first | rfl | rw [← mul_assoc, signUnit_mul_self, one_mul] }
 
-
-
 theorem twoOpenSignCore_isCoveringMap (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)
     (hcover : A ∪ B = univ) (c : X → SignTypeˣ) (hc : ContinuousOn c (A ∩ B)) :
     IsCoveringMap (twoOpenSignCore A B hA hB hcover c hc).proj :=
   FiberBundle.isCoveringMap
-
-
-
 
 theorem exists_two_open_sign_section [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]
     [Nonempty X] (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)

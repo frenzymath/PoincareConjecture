@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ChainTopSectors
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -137,8 +131,6 @@ variable {D : FiniteChartRegionDecomposition (M := M)} {e : D.EdgeIndex} {R : D.
   {dLeft dRight : Plane} (K : S.CutChain dLeft dRight)
   {δ r : ℝ}
   (B : ∀ i : Fin S.count, (S.piece i).FixedStripBandFaces (K.graphCuts i) δ r r)
-
-
 
 theorem adjacent_top_refined_fan_add_outward_angles
     (g : RiemannianMetric 2 M)

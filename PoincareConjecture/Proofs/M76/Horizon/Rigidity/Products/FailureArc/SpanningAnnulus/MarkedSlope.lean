@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Polyhe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.OpenMarks
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.EssentialAnnulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -31,8 +23,6 @@ theorem boundaryLoopIterate_range_subset {X : Type*} [TopologicalSpace X] {x : X
   | succ n hn =>
     rw [boundaryLoopIterate, Path.trans_range]
     exact union_subset Subset.rfl hn
-
-
 
 theorem exists_marked_PL_annulus_of_commensurable_open_marks
     {E₀ E₁ X ι : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]
@@ -88,8 +78,6 @@ theorem exists_marked_PL_annulus_of_commensurable_open_marks
     change (f (inc true (squareRimLoop s)) : X) = _
     rw [hinc₁, hf₁]
 
-
-
 theorem exists_essential_marked_PL_annulus_of_commensurable_open_marks
     {E₀ E₁ X ι : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]
     [TopologicalSpace X] [T2Space X]
@@ -144,6 +132,4 @@ theorem exists_essential_marked_PL_annulus_of_commensurable_open_marks
   rw [hrim]
   exact (gamma₀ b u).property
 
-
 end PoincareConjecture.M76
-

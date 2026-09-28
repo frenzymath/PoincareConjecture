@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JointContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gaugePicard_slab_continuous
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T : ℝ}
@@ -54,8 +43,6 @@ theorem gaugePicard_slab_continuous
           (fun s ht => ((hs k).2.1 s ht).continuous) hb,
         heatDuhamel_fderiv_slab_continuous (hs k).1
           (fun s ht => ((hs k).2.1 s ht).of_le (by simp)) hb hdb⟩
-
-
 
 theorem gaugePicard_limit_joint_continuous
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ} {T C : ℝ}

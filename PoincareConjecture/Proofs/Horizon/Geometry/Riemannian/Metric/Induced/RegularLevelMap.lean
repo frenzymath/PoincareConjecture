@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace
@@ -23,7 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f)
   (n : ℕ) [Fact (Module.finrank ℝ E = n + 1)]
   (U : Opens M) (hreg : ∀ x ∈ U, mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0) (c : ℝ)
-
 
 theorem contMDiffOn_into_openLevelSet_iff (F : N → openLevelSet f U c)
     {V : Set N} (hV : IsOpen V) :
@@ -50,7 +43,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
 theorem regularLevelMetric_tangentNorm (g : RiemannianMetric (n + 1) M)
     (x : openLevelSet f U c) (v : EuclideanSpace ℝ (Fin n)) :
     letI := openLevelSetChartedSpace hf U hreg n c
@@ -58,7 +50,6 @@ theorem regularLevelMetric_tangentNorm (g : RiemannianMetric (n + 1) M)
     (regularLevelMetric hf U hreg c g).tangentNorm x v =
       g.tangentNorm (openLevelIncl f U c x)
         (mfderiv (𝓡 n) (𝓡 (n + 1)) (openLevelIncl f U c) x v) := rfl
-
 
 theorem regularLevelMetric_tangentNorm_mfderiv
     {E' : Type*} [NormedAddCommGroup E'] [NormedSpace ℝ E']

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3SelectedCapProductCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

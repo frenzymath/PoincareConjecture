@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -61,8 +53,6 @@ private theorem inner_coordinateChristoffel
     (hinv.self_apply_inverse (metricKoszulCovector (fderiv ℝ B x) u v))
   simpa [coordinateChristoffel, metricKoszulCovector] using h
 
-
-
 theorem coordinateChristoffel_change_coordinates
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
     (hB : DifferentiableAt ℝ B x) (hC : DifferentiableAt ℝ C (f x))
@@ -89,8 +79,6 @@ theorem coordinateChristoffel_change_coordinates
   rw [hsecond]
   rw [hCsymm (fderiv ℝ f x w), hCsymm (fderiv ℝ f x u)]
   ring
-
-
 
 theorem hasDerivAt_geodesic_change_coordinates
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {q w : ℝ → E} {t : ℝ}
@@ -180,7 +168,6 @@ private theorem chart_coefficients_transition (g : RiemannianMetric n M) (p r : 
     hpoint.symm
 
 set_option maxHeartbeats 2000000 in
-
 
 theorem hasDerivAt_chart_geodesic_change_coordinates (g : RiemannianMetric n M) (p r : M)
     {q w : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ}

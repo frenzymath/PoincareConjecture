@@ -2,24 +2,6 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -47,15 +29,9 @@ private theorem tendsto_distance_add_of_squared_comparison
     tendsto_of_tendsto_of_tendsto_of_le_of_le' hlow tendsto_const_nhds hlower hupp
   simpa only [Real.sqrt_sq (hd _), Real.sqrt_sq (add_nonneg hs ht)] using hsq.sqrt
 
-
-
-
 noncomputable def segmentComparisonCosine {X : Type*} [MetricSpace X]
     (minus plus : ℝ → X) (a b : ℝ) : ℝ :=
   (a ^ 2 + b ^ 2 - dist (minus a) (plus b) ^ 2) / (2 * a * b)
-
-
-
 
 theorem exists_two_sided_arcs_of_minimizing_segments
     {X : ℕ → Type*} [∀ i, MetricSpace (X i)]

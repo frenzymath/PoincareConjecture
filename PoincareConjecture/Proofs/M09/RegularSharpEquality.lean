@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M09.SharpLowerContact
 import PoincareConjecture.Proofs.M09.RegularContactFormulas
 
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

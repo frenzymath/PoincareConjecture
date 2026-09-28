@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.CocycleFaceSheets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology

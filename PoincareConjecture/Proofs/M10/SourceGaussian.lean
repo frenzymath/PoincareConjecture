@@ -1,20 +1,11 @@
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 
 namespace PoincareConjecture.M10
-
 
 theorem euclideanGaussian_integrable (n : ℕ) :
     Integrable (fun Z : EuclideanSpace ℝ (Fin n) ↦ Real.exp (-‖Z‖ ^ 2)) := by
@@ -23,16 +14,13 @@ theorem euclideanGaussian_integrable (n : ℕ) :
   simpa only [zero_mul, add_zero, neg_one_mul, ← Complex.ofReal_pow,
     ← Complex.ofReal_neg, RCLike.re_eq_complex_re, Complex.exp_ofReal_re] using hc.re
 
-
 theorem sourceGaussian_integrable (n : ℕ) :
     Integrable (fun Z : EuclideanSpace ℝ (Fin n) ↦ (2 : ℝ) ^ n * Real.exp (-‖Z‖ ^ 2)) :=
   (euclideanGaussian_integrable n).const_mul _
 
-
 theorem sourceGaussian_pos (n : ℕ) (Z : EuclideanSpace ℝ (Fin n)) :
     0 < (2 : ℝ) ^ n * Real.exp (-‖Z‖ ^ 2) :=
   mul_pos (pow_pos (by norm_num) n) (Real.exp_pos _)
-
 
 theorem integral_sourceGaussian (n : ℕ) :
     (∫ Z : EuclideanSpace ℝ (Fin n), (2 : ℝ) ^ n * Real.exp (-‖Z‖ ^ 2)) =

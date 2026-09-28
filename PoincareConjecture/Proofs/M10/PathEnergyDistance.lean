@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.CurveEnergy
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M10
-
 
 theorem integral_sqrt_le_sqrt_energy {a b : ℝ} (hab : a ≤ b) {E : ℝ → ℝ}
     (hE : ContinuousOn E (Icc a b)) (hpos : ∀ s, 0 ≤ E s) :

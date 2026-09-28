@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev axis : E3 := EuclideanSpace.single 2 1
-
-
 
 theorem exists_scaled_saddle_transport {v : E3} (hv : ‖v‖ = 1)
     (c : Real) {s : Real} (hs : 0 < s)

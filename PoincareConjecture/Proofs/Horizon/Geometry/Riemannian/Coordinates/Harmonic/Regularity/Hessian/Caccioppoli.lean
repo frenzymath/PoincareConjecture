@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.PowerEstimate
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.CompactSupport
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,9 +45,6 @@ private theorem integrable_hessian_power_derivative_pairing (D : LeviCivitaData 
   intro x hx
   by_contra hx'
   exact hx (by simp [RiemannianMetric.tensorPairingThree, image_eq_zero_of_notMem_tsupport hx'])
-
-
-
 
 theorem regularized_hessian_power_caccioppoli (D : LeviCivitaData g)
     {f η : EuclideanSpace ℝ (Fin n) → ℝ}

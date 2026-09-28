@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformCompactChordPa
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonChordLength
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledPolygon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_uniform_compact_approximation
     {M : Type u} [TopologicalSpace M] [T2Space M]

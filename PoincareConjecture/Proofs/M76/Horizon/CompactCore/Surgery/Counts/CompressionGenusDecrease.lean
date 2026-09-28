@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionComp
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.OriginalComponentGenusComparison
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.General.IndexedCompressionComplexity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -27,8 +17,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
 open Classical in
-
-
 
 theorem compressionComplexity_decreases
     {Eold Enew X ι : Type*}

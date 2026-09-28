@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalCutSideCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SignedCoordinateCorner
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +15,6 @@ local notation "D" => closedBall (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem OriginalDiskProduct.exists_cap_halfspace_chart
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (he : PLDomain e R)

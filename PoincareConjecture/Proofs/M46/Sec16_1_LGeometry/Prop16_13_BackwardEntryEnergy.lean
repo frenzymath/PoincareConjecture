@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_SideAction
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_ActualPositiveAction
 import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ open PoincareConjecture.Proofs.M12
 
 variable {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)
 
-
-
 theorem backwardPath_realizedKinetic_eq {T a b : ℝ} {x y : G.toLGeometry.Point}
     (p : M14BackwardPath G.toLGeometry T a b x y) {s : ℝ} (hs : s ∈ Ioo a b) :
     realizedHorizontalForm G.realization (p.curve s)
@@ -39,9 +28,6 @@ theorem backwardPath_realizedKinetic_eq {T a b : ℝ} {x y : G.toLGeometry.Point
       (M14.projectedCurveVelocity G.toLGeometry p.curve s)
       (M14.projectedCurveVelocity G.toLGeometry p.curve s) = _
   rw [← M14.backwardPath_velocity_eq_projected p hs]
-
-
-
 
 theorem exists_backwardCap_birthEnergy
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

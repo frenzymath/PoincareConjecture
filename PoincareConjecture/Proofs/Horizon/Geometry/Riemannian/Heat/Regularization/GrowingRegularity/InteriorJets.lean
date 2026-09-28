@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.TimeDerivatives
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.MixedJets
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -91,8 +81,6 @@ theorem exists_static_heat_mixed_jet_bound
       (Finset.mem_range.mpr (Nat.lt_succ_of_le hl))).trans (le_add_of_nonneg_right zero_le_one)
   simpa only [mul_assoc] using
     hspace ((Q + 1) * B) (mul_nonneg (by positivity) hB) hslice hpowers x hx
-
-
 
 theorem exists_static_heat_spacetime_jet_bound
     {lam Λ H : ℝ} (hlam : 0 < lam) (hlamΛ : lam ≤ Λ) (hH : 0 ≤ H)

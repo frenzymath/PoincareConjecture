@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.CanonicalDomainInclusion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M28
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem exists_localNonnegativeBackwardModel_of_chart_flow
     {M : Type*} [TopologicalSpace M]

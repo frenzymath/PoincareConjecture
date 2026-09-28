@@ -8,16 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderNonisolatedProfileSigns
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedNonisolatedHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBranchingCollarsSuccessor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,16 +16,6 @@ namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_ordinary_decreasing_deformations_with_level_bounds (W : AlexanderSectionProfile E)
     {q : E} {β γ : ℝ}
@@ -317,10 +297,6 @@ theorem exists_ordinary_decreasing_deformations_with_level_bounds (W : Alexander
       (fun x hx => (hslab x hx).2) hC (finite_singleton _) hglobal
       (fun x hx hxA hxzero hxr => hsignsG x hx hxA hxzero hxr)
     simpa only [image_singleton, union_singleton] using hG
-
-
-
-
 
 theorem exists_ordinary_decreasing_deformations (W : AlexanderSectionProfile E)
     {q : E} {β γ : ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalSliceSegments
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,15 +8,10 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
 
-
-
 def exceptionalOriginalVertices (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (q : E) : Option (K.strictCrossingEdges A) → Finset E
   | none => {q}
   | some e => e.val
-
-
-
 
 theorem exceptionalSliceGraph_adj_some_iff (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (q : E) (e : K.strictCrossingEdges A)
@@ -55,10 +41,6 @@ theorem exceptionalSliceGraph_adj_some_iff (K : SimplicialComplex ℝ E)
         rw [Finset.union_self, AffineMap.StraddlesZero.card A e.property.2] at hcard
         omega
       exact ⟨hne, e.val ∪ f.val, ht, hcard, Finset.subset_union_left, Finset.subset_union_right⟩
-
-
-
-
 
 theorem existsUnique_exceptional_neighbor_of_coface (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0)

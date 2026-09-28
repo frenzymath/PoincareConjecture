@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M34.Standard.CompleteDerivativeBounds
 import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem standardInitial_derivative_bounds_upto {g0 : StandardInitialMetric}
     (E0 : StandardCapEstimate g0) (k : ℕ) :
@@ -41,9 +29,6 @@ theorem standardInitial_derivative_bounds_upto {g0 : StandardInitialMetric}
       · have : j = k + 1 := by omega
         subst j
         exact (ha x).trans (le_max_right _ _)
-
-
-
 
 theorem partialFlow_curvatureDerivative_bound (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

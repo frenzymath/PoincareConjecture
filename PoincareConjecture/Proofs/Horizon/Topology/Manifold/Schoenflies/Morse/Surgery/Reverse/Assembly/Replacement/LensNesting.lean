@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Placement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Annulus.Clearance
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
 namespace Reverse
-
-
 
 theorem not_mem_open_body_of_projection_mem_circle
     {v : E3} (A : Diffeomorph 𝓘(Real, Hemisphere.Plane v) 𝓘(Real, Hemisphere.Plane v)
@@ -42,9 +38,6 @@ end Reverse
 namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
-
-
-
 
 theorem capMinus_lens_subset_filling
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -112,7 +105,6 @@ theorem capMinus_lens_subset_filling
     simpa [line, Hemisphere.Plane,
       Submodule.orthogonalProjectionOnto_orthogonalComplement_singleton_eq_zero] using hc
   · exact ⟨v, mem_sphere_zero_iff_norm.mpr S.unit_v⟩
-
 
 theorem capPlus_lens_subset_filling
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

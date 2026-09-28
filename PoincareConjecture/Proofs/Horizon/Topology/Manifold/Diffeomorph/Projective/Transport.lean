@@ -3,8 +3,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +18,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} {N : Type v} [TopologicalSpace M] [ChartedSpace E3 M]
   [TopologicalSpace N] [ChartedSpace E3 N]
   {p : RealProjectiveThree} {A : Set M}
-
-
 
 def transport (S : StandardPuncturedProjectiveCover M p A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞) :
@@ -48,8 +44,6 @@ private theorem open_inclusion_inverse_smooth
   · intro y hy
     exact i.right_inv (by simpa [i] using hy)
   · exact i.right_inv (by simpa [i] using hx)
-
-
 
 def inOpen (S : StandardPuncturedProjectiveCover M p A)
     (Y : Opens M) [Nonempty Y] (hAY : A ⊆ Y) :

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.CapScaling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,7 +35,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 def CapCertificate.rescale (A : CapCertificate g) (c : ℝ) (hc : 0 < c) :
     CapCertificate (rescaledMetric g c hc) := by
@@ -125,7 +122,6 @@ def CapCertificate.rescale (A : CapCertificate g) (c : ℝ) (hc : 0 < c) :
 section MetricCast
 
 omit [T2Space M]
-
 
 def CapCertificate.castMetric {h : RiemannianMetric 3 M} (e : g = h)
     (A : CapCertificate g) : CapCertificate h := e ▸ A

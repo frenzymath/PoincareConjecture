@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialHeatParameterOpera
 import PoincareConjecture.Proofs.M63.Mathlib.CompactPathComposition
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMixedForcingNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative TimeL2BilinearNative
   DeTurckMetricProducerNative
-
-
-
-
 
 theorem exists_contDiff_initialForcing
     {iota E : Type*} [Countable iota] [NormedAddCommGroup E] [NormedSpace ℝ E]

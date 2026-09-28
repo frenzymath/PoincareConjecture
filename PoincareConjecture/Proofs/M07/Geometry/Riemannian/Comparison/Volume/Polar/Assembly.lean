@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Domain
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Injectivity
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem volumeMeasure_ball_eq_polar_of_injOn
     (g : PoincareConjecture.RiemannianMetric n M) (p : M) (hn : 1 ≤ n)
@@ -71,8 +58,6 @@ theorem volumeMeasure_ball_eq_polar_of_injOn
     g hn Metric.isOpen_ball he hSD (fun _ hx => hx.1.1) hinj r
   rw [hball]
   simpa only [S, T] using hpolar
-
-
 
 theorem exists_precompact_polar_volume
     (g : PoincareConjecture.RiemannianMetric n M) (p : M) (hn : 1 ≤ n) {R : ℝ}

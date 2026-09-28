@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCuts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.end_neck_isSeparating
     {M : Type u} [TopologicalSpace M]

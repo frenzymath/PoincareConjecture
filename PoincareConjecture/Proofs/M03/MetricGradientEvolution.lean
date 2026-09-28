@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M03.ConnectionFamily
 import PoincareConjecture.Proofs.M03.CurvatureHom
 import PoincareConjecture.Proofs.M03.CurvatureRicciSecondDerivative
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -126,7 +109,6 @@ theorem hasDerivAt_ricciFlow_metric_spatial_derivative
 
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 200000
-
 
 theorem curvature_iterated_bochner_local_frame
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (k : ℕ) (x0 : M) :
@@ -675,7 +657,6 @@ theorem curvature_iterated_bochner_local_frame
   congr 1 <;> apply Finset.sum_congr rfl <;> intro i _ <;>
     apply Finset.sum_congr rfl <;> intro j _ <;> ring
 
-
 theorem curvature_iterated_bochner_next_energy
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (k : ℕ) (x0 : M) {x : M}
     (hx : x ∈ (trivializationAt (EuclideanSpace ℝ (Fin n))
@@ -760,7 +741,6 @@ theorem curvature_iterated_bochner_next_energy
   by_cases hv : kb γ = 0
   · simp [hv]
   · exact le_of_lt (g.pos x (kb γ) hv)
-
 
 set_option maxHeartbeats 4000000 in
 set_option synthInstance.maxHeartbeats 200000 in

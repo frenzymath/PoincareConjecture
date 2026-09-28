@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.ChartBarrierHessian
 import PoincareConjecture.Proofs.M10.ContactSemiconcavity
 import PoincareConjecture.Proofs.M10.Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric

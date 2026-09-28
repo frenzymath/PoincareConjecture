@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SharedJointBranc
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Joints.JointCross
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Branches.Transition
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -29,9 +27,6 @@ theorem ComponentBranchModel.joint_subset_star
   obtain ⟨w, hw, hvw⟩ := D.complex.exists_original_star_face_of_vertex_dual_face
     (D.axis_le (D.axis.face_subset_vertices hs hps)) hv
   exact (D.complex.closedStar p).convexHull_subset_space hw (hvw hzv)
-
-
-
 
 theorem ComponentBranchModel.exists_joint_sheet_swap
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

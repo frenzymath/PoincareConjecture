@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,19 +25,15 @@ private theorem sphere_chart_target (q : UnitTwoSphere) :
   change (stereographic' 2 (-q)).target = univ
   exact stereographic'_target (-q)
 
-
-
 def neckVolumeModelChart (q : UnitTwoSphere) (s : ℝ) :
     OpenPartialHomeomorph E RoundCylinderSpace :=
   ((cylinderScalarCoordinateEquiv.toHomeomorph.trans
       (Homeomorph.addRight (0, s))).toOpenPartialHomeomorph).trans
     ((chartAt E2 q).symm.prod (OpenPartialHomeomorph.refl ℝ))
 
-
 theorem neckVolumeModelChart_apply (q : UnitTwoSphere) (s : ℝ) (x : E) :
     neckVolumeModelChart q s x =
       cylinderSphereParametrization q (cylinderScalarCoordinates s x) := rfl
-
 
 theorem neckVolumeModelChart_source (q : UnitTwoSphere) (s : ℝ) :
     (neckVolumeModelChart q s).source = univ := by
@@ -57,8 +42,6 @@ theorem neckVolumeModelChart_source (q : UnitTwoSphere) (s : ℝ) :
     (cylinderScalarCoordinates s x).1 ∈ (chartAt E2 q).target ∧
     (cylinderScalarCoordinates s x).2 ∈ (univ : Set ℝ)) ↔ x ∈ (univ : Set E)
   simp only [sphere_chart_target, mem_univ, and_self]
-
-
 
 theorem neckVolumeModelChart_zero (q : UnitTwoSphere) (s : ℝ) :
     neckVolumeModelChart q s 0 = (q, s) := by
@@ -86,18 +69,13 @@ private def neckCoordinateHomeomorph (N : EpsilonNeck g) :
   open_source := isOpen_univ.prod isOpen_Ioo
   open_target := N.carrier_open
 
-
-
 def neckVolumeChart (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     OpenPartialHomeomorph E M :=
   (neckVolumeModelChart q s).trans (neckCoordinateHomeomorph N)
 
-
 theorem neckVolumeChart_apply (N : EpsilonNeck g) (q : UnitTwoSphere)
     (s : ℝ) (x : E) :
     neckVolumeChart N q s x = cylinderNeckChart N q s x := rfl
-
-
 
 theorem neckVolumeChart_source (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     (neckVolumeChart N q s).source = cylinderNeckChartDomain N q s := by
@@ -110,15 +88,11 @@ theorem neckVolumeChart_source (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ)
   rw [neckVolumeModelChart_apply, sphere_chart_target]
   rfl
 
-
 theorem neckVolumeChart_smooth (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (neckVolumeChart N q s)
       (neckVolumeChart N q s).source := by
   rw [neckVolumeChart_source]
   exact contMDiffOn_cylinderNeckChart N q s
-
-
-
 
 theorem neckVolumeChart_symm_smooth (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) :

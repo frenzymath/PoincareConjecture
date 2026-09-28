@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.CylinderEnds
 import PoincareConjecture.Proofs.M38.CapModelTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -23,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [T2Space M]
 
 omit [T2Space M] in
-
 
 theorem cylinder_union_not_compact {U V : Set M} (hU : IsOpen U)
     (hUnc : ¬ IsCompact U) (C : OpenCylinderModel V)
@@ -74,7 +64,6 @@ variable [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space
 
 omit [T2Space M] in
 
-
 theorem capped_tube_not_compact (C : CappedTubeCertificate g)
     (hcap : ¬ IsCompact C.cap.carrier) : ¬ IsCompact C.carrier := by
   rw [C.carrier_eq_union]
@@ -82,7 +71,6 @@ theorem capped_tube_not_compact (C : CappedTubeCertificate g)
     C.attachment.overlap_model
 
 omit [T2Space M] in
-
 
 theorem no_capped_tube_containing_compact_component
     (x : M) (hx : IsCompact (connectedComponent x))

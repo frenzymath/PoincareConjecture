@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLMarkedCycle
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimFinitePL
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +13,6 @@ local notation "Q" => sphere (0 : V2) 1
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
-
 
 theorem exists_marked_square_image_cycle {a : V2 → E}
     (ha : FinitePiecewiseAffineOn a Q) (gamma : C(Q, X))

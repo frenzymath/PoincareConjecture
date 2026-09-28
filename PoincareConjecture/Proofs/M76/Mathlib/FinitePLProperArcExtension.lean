@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLAttachedDiskExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension_of_proper_arc
     {s q w : Set E} {t r W : Set F} {a b : E} {A B : F}

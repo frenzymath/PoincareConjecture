@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Limit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +22,6 @@ def IsExtension (C D : BalancedNeckChain g ε) : Prop :=
     (hCD : C.IsExtension D) (hDE : D.IsExtension E) : C.IsExtension E :=
   ⟨hCD.1.trans hDE.1, hCD.2.1.trans hDE.2.1,
     fun i hi => (hCD.2.2 i hi).trans (hDE.2.2 i (hCD.1 hi))⟩
-
-
 
 theorem exists_directed_limit {ι : Type*} [Nonempty ι]
     (C : ι → BalancedNeckChain g ε) (hdir : Directed IsExtension C) :

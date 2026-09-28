@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidea
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,13 +33,11 @@ private theorem smoothCovectorCLM_apply
   fin_cases i
   rfl
 
-
 def tensorCovectorDual (_D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
     (hα : IsSmoothCovariantTensor α) (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) :=
   (g.euclideanCoefficients x).inverse (smoothCovectorCLM hα x)
-
 
 theorem inner_tensorCovectorDual (D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
@@ -56,7 +46,6 @@ theorem inner_tensorCovectorDual (D : LeviCivitaData g)
   have h := congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ => L v)
     ((g.inner_isInvertible x).self_apply_inverse (smoothCovectorCLM hα x))
   exact h.trans (smoothCovectorCLM_apply hα x v)
-
 
 theorem contDiff_tensorCovectorDual (D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
@@ -86,7 +75,6 @@ theorem contDiff_tensorCovectorDual (D : LeviCivitaData g)
     rfl
   rw [heq] at h
   exact h.contMDiffAt
-
 
 theorem covariantTensorDerivative_covector_eq_inner_connection (D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
@@ -135,7 +123,6 @@ theorem covariantTensorDerivative_covector_eq_inner_connection (D : LeviCivitaDa
   rw [ht, hd]
   ring
 
-
 theorem trace_connection_tensorCovectorDual (D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
     (hα : IsSmoothCovariantTensor α) (x : EuclideanSpace ℝ (Fin n)) :
@@ -155,7 +142,6 @@ theorem trace_connection_tensorCovectorDual (D : LeviCivitaData g)
   rw [g.symm]
   exact (D.covariantTensorDerivative_covector_eq_inner_connection hα x _ _).symm
 
-
 theorem hasCompactSupport_tensorCovectorDual (D : LeviCivitaData g)
     {α : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 1}
     (hα : IsSmoothCovariantTensor α)
@@ -170,7 +156,6 @@ theorem hasCompactSupport_tensorCovectorDual (D : LeviCivitaData g)
     rw [smoothCovectorCLM_apply]
     exact congrFun hzero ![v]
   exact hx (by simp [tensorCovectorDual, hclm])
-
 
 theorem covariantTensorDerivative_eq_zero_of_eventually_zero (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) k}
@@ -193,7 +178,6 @@ theorem covariantTensorDerivative_eq_zero_of_eventually_zero (D : LeviCivitaData
   rw [hd, mvfderiv_const]
   simp [hx]
 
-
 theorem hasCompactSupport_covariantTensorDerivative (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) k}
     (hc : HasCompactSupport (fun x (v : Fin k → EuclideanSpace ℝ (Fin n)) => T x v)) :
@@ -204,7 +188,6 @@ theorem hasCompactSupport_covariantTensorDerivative (D : LeviCivitaData g)
   by_contra hx'
   exact hx (D.covariantTensorDerivative_eq_zero_of_eventually_zero
     (notMem_tsupport_iff_eventuallyEq.mp hx'))
-
 
 theorem contMDiff_tensorPairingThree_derivative (D : LeviCivitaData g)
     {F : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 3}
@@ -227,7 +210,6 @@ theorem contMDiff_tensorPairingThree_derivative (D : LeviCivitaData g)
   rw [hempty]
   rw [D.tensorTrace_derivative_tensorPairingCovector hF hZ]
   ring
-
 
 theorem integral_tensorDivergence_pairing (D : LeviCivitaData g)
     {F : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 3}
@@ -274,7 +256,6 @@ theorem integral_tensorDivergence_pairing (D : LeviCivitaData g)
       image_eq_zero_of_notMem_tsupport hx'])
   rw [integral_add hleft hright] at hdiv
   linarith
-
 
 theorem integral_tensorLaplacian_pairing (D : LeviCivitaData g)
     {T Z : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}

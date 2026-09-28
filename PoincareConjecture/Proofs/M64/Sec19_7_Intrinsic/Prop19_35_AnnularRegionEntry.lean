@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcDefiningFunc
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalRegularity
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,11 +36,6 @@ private theorem circle_radial_tangent_decomposition (p : ℝ) (w : AnnulusCoordi
   · change (Real.cos p * w 0 + Real.sin p * w 1) * Real.sin p +
         (-Real.sin p * w 0 + Real.cos p * w 1) * Real.cos p = w 1
     linear_combination (w 1) * (Real.sin_sq_add_cos_sq p)
-
-
-
-
-
 
 theorem m64Intrinsic_inward_curve_enters_annular_region
     {a b p : ℝ}

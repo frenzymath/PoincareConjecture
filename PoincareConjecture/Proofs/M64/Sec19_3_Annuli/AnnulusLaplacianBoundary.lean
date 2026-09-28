@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapLocalFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,10 +7,6 @@ open Set MeasureTheory
 open scoped ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Annulus_laplacian_integral_eq_boundary
     {f : LoopPlane → ℝ} {O : Set LoopPlane} (hO : IsOpen O)

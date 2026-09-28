@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M62.Mathlib.ParameterIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Topology intervalIntegral
 
 universe u v
-
-
-
-
-
 
 theorem hasDerivAt_of_dense_parameter_set
     {Z : Type u} [TopologicalSpace Z]

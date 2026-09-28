@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteActualBoundJets
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointHighPoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,8 +55,6 @@ private local instance actualBoundConnected : ConnectedSpace G.limit.carrier.car
 
 local notation "U" => (fun j : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j))
-
-
 
 theorem limitFinite_actual_endpoint_bound
     (P : M47Predecessors.{u}) (sched : RepairedControlledSchedulesData.{u})

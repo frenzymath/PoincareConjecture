@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_SupportedAffineField
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexAffine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -46,9 +36,6 @@ variable (hCoordinates : M12MetricPredecessors.{0} n)
 
 include hCoordinates hM04 hM12 hmin hfix hzero hU hlift hright hη hsupport hsrc hZ EZ
 
-
-
-
 theorem index_pair_supportedGauge_eq_zero :
     (∫ s in Real.sqrt τ₁..Real.sqrt τ₂,
       pullbackIndexPairDensity R D.variation_extension EZ s) = 0 := by
@@ -60,9 +47,6 @@ theorem index_pair_supportedGauge_eq_zero :
   refine ⟨W, hfixW, fun s hs => ?_⟩
   exact variationField_supportedAffineGauge_eq V W b lift η c Z hW hZ hU hlift hright hη
     hsupport hsrc hs
-
-
-
 
 theorem jacobiResidual_supportedGauge_integral_eq_zero (hfixZ : M14BothEndpointsFixed Z) :
     let Q := jacobiFieldDataOfExtension

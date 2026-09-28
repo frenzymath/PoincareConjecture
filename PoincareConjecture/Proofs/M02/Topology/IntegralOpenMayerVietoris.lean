@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietoris
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

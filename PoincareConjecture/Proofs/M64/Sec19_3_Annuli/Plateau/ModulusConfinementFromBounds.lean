@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "S" => m64AnnulusDomain
-
-
 
 theorem m64WeightedModulusConfinement_of_two_sided_lower_bounds
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

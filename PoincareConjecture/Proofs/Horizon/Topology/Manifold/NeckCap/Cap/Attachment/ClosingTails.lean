@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.ChainTail
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.FiniteChain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem exists_opposite_cylinder_tails_of_compact_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -134,9 +121,6 @@ theorem exists_opposite_cylinder_tails_of_compact_closing_threshold :
     · exact ⟨true, ⟨1 - a, hb01, hp.trans (interior_subset.trans hKC)⟩,
         a, ha01, houtside (T.tail_subset false ha01) hneg hn⟩
     · exact (hnotBothOut hn hp).elim
-
-
-
 
 theorem exists_finite_chain_opposite_attachment_tails_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.SliceIdentifications
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,7 +33,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 def terminalSource (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :
@@ -107,7 +98,6 @@ theorem extended_terminal_scalar_proper_and_bounded_below
 end PoincareConjecture.SingularTimeAssumptions
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 def terminalComponentPath {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     (E : GeneralizedFlowExtension F T) (x : (E.extended.slice T).carrier) :

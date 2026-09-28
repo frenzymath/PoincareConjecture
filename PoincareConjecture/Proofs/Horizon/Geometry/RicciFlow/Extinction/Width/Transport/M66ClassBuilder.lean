@@ -9,10 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
 noncomputable def m66ClassData_of_m59_representation
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

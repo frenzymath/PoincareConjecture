@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SliceLift
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x y : G.Point}
-
-
 
 theorem minimizing_initialValuePath (LG : GeneralizedLGeometryConclusion G)
     (p : M14BackwardPath G T 0 tau x y) (hp : M14IsMinimizing p) :
@@ -56,8 +44,6 @@ private theorem initialValuePath_cast_curve {b : ℝ} {Z : G.Horizontal x}
   cases h
   rfl
 
-
-
 theorem initialValue_exponential_branch
     (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} (Q : M14SquareRootInitialValuePath G T tau x y Z) :
@@ -77,8 +63,6 @@ theorem initialValue_exponential_branch
   exact ⟨hsurvive, htrace,
     (htrace ⟨Q.path.tau_lt.le, le_rfl⟩).symm.trans Q.path.curve_end⟩
 
-
-
 theorem minimizing_exponential_branch (LG : GeneralizedLGeometryConclusion G)
     (E : M14ExponentialFamily G T x)
     (p : M14BackwardPath G T 0 tau x y) (hp : M14IsMinimizing p) :
@@ -89,8 +73,6 @@ theorem minimizing_exponential_branch (LG : GeneralizedLGeometryConclusion G)
   obtain ⟨hsurvive, htrace, hend⟩ := initialValue_exponential_branch E Q
   rw [hQ] at htrace
   exact ⟨Z, hsurvive, htrace, hend⟩
-
-
 
 theorem survival_domain_open (E : M14ExponentialFamily G T x) (s : ℝ) :
     IsOpen {Z | (Z, s) ∈ E.domain} := by
@@ -103,8 +85,6 @@ theorem survival_domain_open (E : M14ExponentialFamily G T x) (s : ℝ) :
   intro W hW
   exact hsub ⟨hW, (E.domain_admissible hZ).1, (E.domain_admissible hZ).2⟩
 
-
-
 noncomputable def survivalSliceMap (E : M14ExponentialFamily G T x)
     (tau : ℝ) (htau : 0 ≤ tau) (q0 : (G.slices (T - tau)).Point)
     (Z : G.Horizontal x) : (G.slices (T - tau)).Point := by
@@ -113,15 +93,11 @@ noncomputable def survivalSliceMap (E : M14ExponentialFamily G T x)
     ⟨E.gamma Z (Real.sqrt tau), by simpa only [Real.sq_sqrt htau] using E.clock Z _ hZ⟩
   else q0
 
-
-
 theorem survivalSliceMap_val (E : M14ExponentialFamily G T x)
     (htau : 0 ≤ tau) (q0 : (G.slices (T - tau)).Point)
     {Z : G.Horizontal x} (hZ : (Z, Real.sqrt tau) ∈ E.domain) :
     (survivalSliceMap E tau htau q0 Z).val = E.gamma Z (Real.sqrt tau) := by
   simp only [survivalSliceMap, dif_pos hZ]
-
-
 
 theorem survivalSliceMap_smooth (E : M14ExponentialFamily G T x)
     (htau : 0 ≤ tau) (q0 : (G.slices (T - tau)).Point)
@@ -141,8 +117,6 @@ theorem survivalSliceMap_smooth (E : M14ExponentialFamily G T x)
   apply ((hgamma Z hZ).contMDiffAt ((survival_domain_open E _).mem_nhds hZ)).congr_of_eventuallyEq
   filter_upwards [(survival_domain_open E (Real.sqrt tau)).mem_nhds hZ] with W hW
   exact survivalSliceMap_val E htau q0 hW
-
-
 
 theorem survivalSliceMap_differential (E : M14ExponentialFamily G T x)
     (htau : 0 ≤ tau) (q0 : (G.slices (T - tau)).Point)
@@ -177,8 +151,6 @@ private theorem bijective_iff_of_horizontal_val_eq {a b : G.Point} (h : a = b)
   cases h
   have heq : A = B := ContinuousLinearMap.ext (fun W => Subtype.ext (hval W))
   rw [heq]
-
-
 
 theorem survivalSliceMap_differential_bijective_iff
     (E : M14ExponentialFamily G T x) (htau : 0 ≤ tau)

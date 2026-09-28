@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.CriticalPoints
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalLevels.Cardinality
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -202,9 +200,6 @@ private theorem existsUnique_critical_in_cap_of_central_point
     by_cases hji : j = i
     · simpa only [hji] using he.symm
     · exact (disjoint_left.mp (hdis j i hji) (hqK j) (he ▸ hy.1)).elim
-
-
-
 
 theorem existsUnique_critical_in_terminal_model_cap
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

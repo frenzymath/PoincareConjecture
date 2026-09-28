@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,9 +13,6 @@ namespace Poincare.VolumeComparison
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem image_localMinimizingSet_eq_ball
     (g : PoincareConjecture.RiemannianMetric n M) (p : M) {R : ℝ}
@@ -95,7 +81,6 @@ theorem image_localMinimizingSet_eq_ball
     simpa only [heq] using hspeed.symm
 
 omit [T2Space M] in
-
 
 theorem image_localMinimizingSet_inter_ball
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)

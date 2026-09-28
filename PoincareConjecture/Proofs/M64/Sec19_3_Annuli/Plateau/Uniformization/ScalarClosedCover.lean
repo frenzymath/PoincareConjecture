@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarInverseLipschitz
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
-
 theorem scalarPotentialStrip_closure :
     closure scalarPotentialStrip = {y : Cover | y.1 ∈ Icc (0 : ℝ) 1} := by
   have hprod : scalarPotentialStrip = Ioo (0 : ℝ) 1 ×ˢ (univ : Set ℝ) := by
@@ -41,12 +24,6 @@ theorem scalarPotentialStrip_closure :
   simp
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem exists_scalar_closed_cover_extension
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)

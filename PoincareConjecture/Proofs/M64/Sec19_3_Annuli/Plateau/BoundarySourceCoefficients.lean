@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceVariations
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64HorizontalSourceInverse_tendsto
     (tau : ℝ → ℝ ≃ₜ ℝ) (theta : ℝ → ℝ) {C : ℝ}
@@ -40,9 +26,6 @@ theorem m64HorizontalSourceInverse_tendsto
   rw [Real.norm_eq_abs, heq, abs_neg, abs_mul]
   exact mul_le_mul_of_nonneg_left (hC _) (abs_nonneg t)
 
-
-
-
 theorem m64HorizontalSource_coefficient_deriv
     (tau : ℝ → ℝ ≃ₜ ℝ) {theta : ℝ → ℝ} (htheta : ContDiff ℝ 1 theta)
     {C : ℝ} (hC : ∀ x, |theta x| ≤ C)
@@ -57,8 +40,6 @@ theorem m64HorizontalSource_coefficient_deriv
   simp only [slope, zero_mul, add_zero, sub_zero, vsub_eq_sub, add_sub_cancel_left,
     smul_eq_mul, Function.comp_apply]
   rw [← mul_assoc, inv_mul_cancel₀ ht0, one_mul]
-
-
 
 theorem m64HorizontalSource_inverse_coefficient_deriv
     (tau : ℝ → ℝ ≃ₜ ℝ) {theta : ℝ → ℝ} (htheta : ContDiff ℝ 1 theta)

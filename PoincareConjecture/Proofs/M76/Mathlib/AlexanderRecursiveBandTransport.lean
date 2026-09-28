@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlabComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,9 +14,6 @@ variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ V] {S : Set E} {T : Set V} {F : S ≃ₜ T}
 
 omit [FiniteDimensional ℝ V] in
-
-
-
 
 theorem IsFinitePL.exists_affineBand_restriction (hF : F.IsFinitePL)
     (A : E →ᵃ[ℝ] ℝ) (B : V →ᵃ[ℝ] ℝ)
@@ -49,9 +36,6 @@ theorem IsFinitePL.exists_affineBand_restriction (hF : F.IsFinitePL)
 
 omit [FiniteDimensional ℝ V] in
 
-
-
-
 theorem IsFinitePL.exists_affineLevel_restriction (hF : F.IsFinitePL)
     (A : E →ᵃ[ℝ] ℝ) (B : V →ᵃ[ℝ] ℝ)
     (hheight : ∀ x : S, B (F x) = A x) (a : ℝ) :
@@ -68,11 +52,6 @@ theorem IsFinitePL.exists_affineLevel_restriction (hF : F.IsFinitePL)
   exact ⟨F.restrictSubsets inter_subset_left inter_subset_left hmem,
     hF.restrictSubsets inter_subset_left inter_subset_left hmem J hJ hJS,
     fun _ => rfl⟩
-
-
-
-
-
 
 theorem IsFinitePL.exists_regularSlab_transport (hF : F.IsFinitePL)
     (A : E →ᵃ[ℝ] ℝ) (B : V →ᵃ[ℝ] ℝ)

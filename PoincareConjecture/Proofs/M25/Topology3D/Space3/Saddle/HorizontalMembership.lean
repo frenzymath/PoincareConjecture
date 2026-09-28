@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BoundedHeightTracks
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandTracks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -28,8 +18,6 @@ local notation "H" => InnerProductSpace.toDual ℝ E3 (u : E3)
 local notation "P" => horizontalBandProjection u
 local notation "lft" => horizontalBandLift u
 local notation "Xi" => clockEvolution (horizontalBandField u F) hKV hLV
-
-
 
 theorem horizontalBand_clockEvolution_mem_iff_of_height_tracks
     {S A : Set E3} {τ c z : ℝ} (hτ : 0 < τ)
@@ -68,8 +56,6 @@ theorem horizontalBand_clockEvolution_mem_iff_of_height_tracks
       htrack c x (hstart hy) hz
     rw [heq]
     exact hS _ hy _
-
-
 
 theorem horizontalBand_clockEvolution_mem_iff_of_margin
     {S A : Set E3} {N W : Set E2} {τ c b ε δ : ℝ}

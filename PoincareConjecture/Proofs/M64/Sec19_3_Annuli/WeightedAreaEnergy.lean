@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,10 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m60AreaDensity_le_weightedGram (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) {r : ℝ} (hr : 0 < r) :
@@ -46,10 +31,6 @@ theorem m60AreaDensity_le_weightedGram (g : RiemannianMetric n M)
   rw [Matrix.det_fin_two, m60AreaGram_symm g f z 1 0]
   nlinarith [sq_nonneg (r * m60AreaGram g f z 0 0 - r⁻¹ * m60AreaGram g f z 1 1),
     sq_nonneg (m60AreaGram g f z 0 1)]
-
-
-
-
 
 theorem M64Annulus.area_le_weightedGramEnergy
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

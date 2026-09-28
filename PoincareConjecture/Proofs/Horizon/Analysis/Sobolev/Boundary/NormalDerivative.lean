@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.WeakDerivatives
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -190,8 +184,6 @@ private theorem normal_coefficient_pos [NeZero d]
   have hbound : B.lam ≤ B.a x 0 0 := by
     simpa [matMulE, Matrix.mulVec, dotProduct, EuclideanSpace.inner_single_left] using h
   exact B.hlam_pos.trans_le hbound
-
-
 
 theorem memWkp_two_of_tangential_weakDerivatives [NeZero d]
     (B : SmoothEllipticBilinearForm d univ) {O : Set E} (hO : IsOpen O)

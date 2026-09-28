@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.We
 import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology

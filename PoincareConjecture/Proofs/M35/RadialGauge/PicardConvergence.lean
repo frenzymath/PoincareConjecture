@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardIteration
 import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter MeasureTheory ProbabilityTheory
 open scoped Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem exists_weighted_geometric_limit {A F : Type*}
     [NormedAddCommGroup F] [CompleteSpace F]
@@ -55,9 +45,6 @@ theorem exists_weighted_geometric_limit {A F : Type*}
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
 
 theorem exists_gaugePicard_c1_limit
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {eta T : ℝ}

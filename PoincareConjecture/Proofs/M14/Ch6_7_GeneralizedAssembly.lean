@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SourceCoverageAssembly
 import PoincareConjecture.Proofs.M14.Sec6_6_Rescaling
 import PoincareConjecture.Proofs.M14.OrdinaryCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
-
 
 theorem generalizedLGeometryConclusion_of_smallTimeCoverage
     (hCoordinates : M12MetricPredecessors.{0} n)

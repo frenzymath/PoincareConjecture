@@ -4,49 +4,11 @@ import PoincareConjecture.Proofs.M13.Rescaling
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M13.OrdinaryProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem generalizedParabolicRescaling (n : ℕ)
     (hEquation : GeneralizedRicciGaugeTheory.{u} n) :
@@ -67,12 +29,6 @@ theorem generalizedParabolicRescaling (n : ℕ)
     exact M13.ordinaryParabolicRescaling I F Q hQ a
   · intro M _ _ _ _ I F Q hQ a R source target
     exact M13.ordinaryParabolicProductComparison F Q hQ a R source target
-
-
-
-
-
-
 
 theorem generalizedParabolicRescaling_from_M12 (n : ℕ) :
     GeneralizedParabolicRescalingTheory.{u} n :=

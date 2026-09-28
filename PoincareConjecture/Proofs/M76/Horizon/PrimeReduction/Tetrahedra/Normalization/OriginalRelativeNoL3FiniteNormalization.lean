@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normaliza
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normalization.NoL3ZeroExcessRelativeDisks
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.OriginalTetrahedralCutFamily
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

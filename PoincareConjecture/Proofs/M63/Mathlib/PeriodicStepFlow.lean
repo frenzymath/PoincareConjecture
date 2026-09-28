@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactScalarStepFlow
 import Mathlib.Algebra.Order.ToIntervalMod
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter Manifold
 open scoped Topology ContDiff Bundle
-
-
-
 
 theorem exists_periodic_step_flow {L : ℝ} (hL : 0 < L)
     {k : ℕ} (hk : 1 ≤ k) (Y : ℝ → ℝ → ℝ)

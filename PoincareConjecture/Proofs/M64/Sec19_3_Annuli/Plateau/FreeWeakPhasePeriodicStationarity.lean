@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseHalfTur
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseLocalizedStationarity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressTwoCuts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +26,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "a" => curvePeriod / 2
 local notation "T" => m64AnnulusHalfTurn
-
-
-
 
 theorem periodic_source_stress_eq_zero
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

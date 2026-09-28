@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -67,10 +59,6 @@ private theorem marked_rectangle_isConnected
   rw [← himage]
   exact ((isConnected_Icc (show (0 : ℝ) ≤ 1 by norm_num)).prod
     (isConnected_Ioo (show (0 : ℝ) < 1 by norm_num))).image f (hf.continuousOn.mono hsub)
-
-
-
-
 
 theorem exists_component_rectangle_between_consecutive_corner_arcs
     {ι : Type*} (a b : ι → ℝ) (d : ι → Set (ℝ × ℝ))
@@ -151,10 +139,6 @@ theorem exists_component_rectangle_between_consecutive_corner_arcs
     · exact (connectedComponentIn_subset _ _ hy).2 (mem_iUnion.mpr ⟨i, hyi⟩)
     · exact (connectedComponentIn_subset _ _ hy).2 (mem_iUnion.mpr ⟨j, hyj⟩)
   · exact hconn.isPreconnected.subset_connectedComponentIn hx hregion
-
-
-
-
 
 theorem exists_component_rectangle_of_boundary_adjacency
     {ι : Type*} (d r : ι → Set (ℝ × ℝ))

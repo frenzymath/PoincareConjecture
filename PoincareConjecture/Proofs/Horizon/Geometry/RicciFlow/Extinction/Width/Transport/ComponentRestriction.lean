@@ -12,9 +12,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def selectedComponentInclusionLocalDiffeomorph
     {A : GeneralizedSliceCarrier.{u}}
     (C : SurgerySelectedComponent A) :
@@ -72,8 +69,6 @@ noncomputable def selectedComponentInclusionLocalDiffeomorph
     refine ⟨(mfderiv (𝓡 3) (𝓡 3) g (f x)) y, ?_⟩
     exact congrArg (fun L => L y) hcomp2''
   exact ⟨by simpa [f] using hinj, by simpa [f] using hsurj⟩
-
-
 
 noncomputable def selectedComponentRicciFlow
     {A : GeneralizedSliceCarrier.{u}}

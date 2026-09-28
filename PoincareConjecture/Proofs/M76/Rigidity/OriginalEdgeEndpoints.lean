@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleFibers
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBoundaryEdgeFiber
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeZeroArcs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   {T : OriginalProperDiskTriangulation e R j}
-
-
-
 
 structure OriginalEdgeEndpoints (F : OriginalTriangleFibers T)
     (s : Finset (T.index → ℝ × V3)) where
@@ -66,9 +55,6 @@ private theorem original_edge_base_of_two_rim_marks
     · exact pair_comm _ _
     · exact False.elim (hxy rfl)
   exact ⟨he.symm ▸ hB, hQ.trans he.symm⟩
-
-
-
 
 theorem OriginalTriangleFibers.exists_edge_endpoints [T2Space X]
     (F : OriginalTriangleFibers T)

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalFiniteIntersectionCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AffineSubspace
-
-
-
 
 theorem finite_of_finrank_direction_eq_zero
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -39,11 +26,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem FaceMotionData.finite_edge_comparison_intersection
     {s t : Stage e S f r C} {step : Step s t}

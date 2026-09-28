@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CoordinateFormula
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.CapAngles
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,18 +15,15 @@ variable {S : Type*} [TopologicalSpace S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p} {x : Bool × Bool → S}
   (B : VertexCapFaces P x)
 
-
 noncomputable def firstChartField (i : Bool × Bool) (y : S) : TangentSpace (𝓡 2) y :=
   mpullback (𝓡 2) 𝓘(ℝ, ℝ × ℝ)
     (coordinateTriangleChart (B.coordinates i) (rightTriangleBasis B.scale_pos))
     (fun _ => (1, 0)) y
 
-
 noncomputable def secondChartField (i : Bool × Bool) (y : S) : TangentSpace (𝓡 2) y :=
   mpullback (𝓡 2) 𝓘(ℝ, ℝ × ℝ)
     (coordinateTriangleChart (B.coordinates i) (rightTriangleBasis B.scale_pos))
     (fun _ => (0, 1)) y
-
 
 noncomputable def secondUnitField (g : RiemannianMetric 2 S) (i : Bool × Bool) (y : S) :
     TangentSpace (𝓡 2) y :=
@@ -49,7 +40,6 @@ theorem secondUnitField_smooth (g : RiemannianMetric 2 S) (i : Bool × Bool) :
     (v := (0, 1)) (by norm_num)).1
   simpa only [coordinateTriangleChart_source, secondUnitField, secondChartField] using h
 
-
 theorem first_chart_map (i : Bool × Bool) (t : ℝ) :
     (coordinateTriangleChart (B.coordinates i) (rightTriangleBasis B.scale_pos)).symm (t, 0) =
       ((B.face i).boundary 2).map t := by
@@ -63,7 +53,6 @@ theorem first_chart_map (i : Bool × Bool) (t : ℝ) :
   change B.coordinates i (affineChartSegment (rightTriangleBasis B.scale_pos 0)
     (rightTriangleBasis B.scale_pos 1) t) = _
   simp only [affineChartSegment, AffineMap.lineMap_apply, vsub_eq_sub, vadd_eq_add, add_comm]
-
 
 theorem second_chart_map (i : Bool × Bool) (t : ℝ) :
     (coordinateTriangleChart (B.coordinates i) (rightTriangleBasis B.scale_pos)).symm (0, t) =
@@ -168,7 +157,6 @@ theorem coordinate_angle_zero (g : RiemannianMetric 2 S) (i : Bool × Bool) :
     (coordinateTriangleVelocity (B.coordinates i) (rightTriangleBasis B.scale_pos) 0 2) = _
   dsimp only [TangentSpace] at hfirst hsecond ⊢
   rw [hfirst, hsecond, B.coordinate_vertex_zero]
-
 
 theorem sum_coordinate_angles (g : RiemannianMetric 2 S) :
     (∑ i : Bool, ∑ j : Bool,

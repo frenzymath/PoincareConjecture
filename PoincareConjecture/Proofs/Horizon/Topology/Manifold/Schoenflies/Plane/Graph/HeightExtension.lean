@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.RadialExtension
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_smooth_ambient_height_extension
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

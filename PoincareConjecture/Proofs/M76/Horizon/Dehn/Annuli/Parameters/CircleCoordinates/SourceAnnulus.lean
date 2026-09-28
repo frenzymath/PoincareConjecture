@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleCoordinates.SquareCircle
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric PLAnnularStrip
 
@@ -22,8 +14,6 @@ local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
 local notation "Rect" => rectangle (4 * (8 : ℝ)) 1
 local notation "Square" => _root_.Dehn.annulusSquare 8 0
-
-
 
 theorem exists_source_square_annulus_coordinates :
     ∃ (j : Circle ≃ₜ Q2) (H : source ≃ₜ Ann),

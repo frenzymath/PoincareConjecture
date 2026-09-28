@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Composition.Disjoint
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartRegion
 
-
-
 set_option autoImplicit false
 open Set
 

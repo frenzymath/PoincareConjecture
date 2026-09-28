@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import Mathlib.Analysis.InnerProductSpace.TwoDim
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +18,6 @@ private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
 
 private def circleOrientation : Orientation Real E2 (Fin 2) :=
   (EuclideanSpace.basisFun (Fin 2) Real).toBasis.orientation
-
 
 def circleQuarterTurn : E2 ≃ₗᵢ[Real] E2 := circleOrientation.rightAngleRotation
 
@@ -52,10 +44,8 @@ private theorem eq_smul_circleQuarterTurn_of_inner_eq_zero
       inner_self_circleQuarterTurn, mul_one, mul_zero, add_zero] using h.symm
   exact ⟨b.repr v 1, by simpa [hz] using hrepr⟩
 
-
 def circleNormal (A : E2 →L[Real] E2) (p : E2) : E2 :=
   circleQuarterTurn (A (circleQuarterTurn p))
-
 
 theorem inner_circleNormal_apply_eq_zero
     (A : E2 →L[Real] E2) (p v : E2) (hp : inner Real p p = 1)
@@ -63,7 +53,6 @@ theorem inner_circleNormal_apply_eq_zero
   obtain ⟨a, rfl⟩ := eq_smul_circleQuarterTurn_of_inner_eq_zero p v hp hv
   simp only [map_smul, inner_smul_right, circleNormal,
     inner_circleQuarterTurn_self, mul_zero]
-
 
 theorem circleNormal_ne_zero
     (A : E2 →L[Real] E2) (p : E2) (hp : inner Real p p = 1)
@@ -86,7 +75,6 @@ theorem circleNormal_ne_zero
   apply circleQuarterTurn.injective
   simpa only [circleNormal, map_zero] using h
 
-
 theorem injective_tangent_add_circleNormal
     (A : E2 →L[Real] E2) (p : E2) (hp : inner Real p p = 1)
     (hA : InjOn A {v | inner Real p v = 0}) :
@@ -108,8 +96,6 @@ theorem injective_tangent_add_circleNormal
     apply hA (hproj u) (hproj v)
     exact add_right_cancel (huv.trans (by rw [huv']))
   rwa [huv', sub_left_inj] at hproj_eq
-
-
 
 theorem injOn_fderiv_extension_tangent_circle {f : S1 → E2}
     (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ f)

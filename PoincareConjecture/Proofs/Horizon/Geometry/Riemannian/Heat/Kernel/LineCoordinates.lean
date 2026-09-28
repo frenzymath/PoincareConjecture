@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Data
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Real
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -25,7 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
   {g : RiemannianMetric 1 M}
-
 
 theorem inner_gradient_eq_one_of_metric_coordinate (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
@@ -44,7 +33,6 @@ theorem inner_gradient_eq_one_of_metric_coordinate (D : LeviCivitaData g)
   have h := (hmetric (D.gradient f x) v).symm.trans (D.inner_gradient f x v)
   rw [D.inner_gradient]
   exact mul_right_cancel₀ hdf (h.trans (one_mul _).symm)
-
 
 theorem hessian_eq_zero_of_unit_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ f)
@@ -67,14 +55,11 @@ theorem hessian_eq_zero_of_unit_gradient (D : LeviCivitaData g)
   rw [D.hessian_eq_inner_connection_gradient (hf x)] at hz ⊢
   simp only [map_smul, smul_eq_mul, hz, mul_zero]
 
-
 theorem laplacian_eq_zero_of_unit_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ f)
     (hunit : ∀ x, g.inner x (D.gradient f x) (D.gradient f x) = 1) (x : M) :
     D.laplacian f x = 0 := by
   simp only [laplacian, D.hessian_eq_zero_of_unit_gradient hf hunit, Finset.sum_const_zero]
-
-
 
 theorem hasDerivAt_realHeatKernel_comp_of_unit_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ f)
@@ -94,8 +79,6 @@ theorem hasDerivAt_realHeatKernel_comp_of_unit_gradient (D : LeviCivitaData g)
   rw [D.laplacian_comp hf hK, D.laplacian_eq_zero_of_unit_gradient hf hunit,
     hunit, mul_zero, mul_one, zero_add]
   exact (realHeatKernel_properties ht).2.2.2 (f x)
-
-
 
 theorem hasDerivAt_realHeatKernel_shift_comp_of_unit_gradient
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -117,8 +100,6 @@ theorem hasDerivAt_realHeatKernel_shift_comp_of_unit_gradient
     norm_num
   exact D.hasDerivAt_realHeatKernel_comp_of_unit_gradient hqf hunitq ht x
 
-
-
 theorem hasDerivAt_realHeatKernel_of_metric_coordinate
     (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ f)
@@ -135,8 +116,6 @@ section ConservativeData
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
 open PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_conservativeHeatKernelData_of_metric_line_coordinate
     (g : RiemannianMetric 1 M) (e : M ≃ ℝ)
@@ -185,7 +164,6 @@ theorem exists_conservativeHeatKernelData_of_metric_line_coordinate
 end ConservativeData
 
 omit [IsManifold (𝓡 1) ∞ M] in
-
 
 theorem contMDiffOn_realHeatKernel_coordinate {e : M → ℝ}
     (he : ContMDiff (𝓡 1) 𝓘(ℝ, ℝ) ∞ e) :

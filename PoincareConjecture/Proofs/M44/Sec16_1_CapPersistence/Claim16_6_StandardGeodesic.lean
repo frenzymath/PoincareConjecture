@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Exponentia
 import PoincareConjecture.Proofs.M36.StandardBalls
 import PoincareConjecture.Proofs.M36.RadialEquality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,13 +13,10 @@ namespace PoincareConjecture.M44
 
 open M36 RiemannianMetric
 
-
 theorem standard_radial_arclength_nonneg (g₀ : StandardInitialMetric)
     (x : StandardCapSpace) : 0 ≤ radialArclength g₀ ‖x‖ := by
   simpa only [radialArclength_zero] using
     (radialArclength_strictMono g₀).monotone (norm_nonneg x)
-
-
 
 theorem standard_segment_radial_arclength (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {x : StandardCapSpace} (hγ0 : γ 0 = 0)
@@ -43,16 +31,12 @@ theorem standard_segment_radial_arclength (g₀ : StandardInitialMetric)
     (standard_radial_arclength_nonneg g₀ (γ t))
     (mul_nonneg ht.1 (standard_radial_arclength_nonneg g₀ x))).mp h
 
-
-
 theorem standard_geodesic_hasDerivAt (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {I : Set ℝ}
     (hγ : g₀.metric.IsGeodesicOn γ I) {t : ℝ} (ht : t ∈ I) :
     HasDerivAt γ (deriv γ t) t := by
   exact ((contMDiffAt_iff_contDiffAt.mp (hγ.contMDiffAt ht)).differentiableAt
     (by simp)).hasDerivAt
-
-
 
 theorem standard_segment_energy (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {x : StandardCapSpace} {ε : ℝ}
@@ -83,9 +67,6 @@ theorem standard_segment_energy (g₀ : StandardInitialMetric)
   have hs := hCt.trans hC0.symm
   have hsq := congrArg (fun r : ℝ => r ^ 2) hs
   simpa only [tangentNorm, Real.sq_sqrt (metric_inner_nonneg _ _ _)] using hsq
-
-
-
 
 theorem standard_segment_radial_velocity (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {x : StandardCapSpace} {ε : ℝ}
@@ -125,8 +106,6 @@ theorem standard_segment_radial_velocity (g₀ : StandardInitialMetric)
   simp only [smul_smul, mul_inv_cancel₀ hR.ne', one_smul] at hv
   convert hd using 1
   simpa only [R, div_eq_mul_inv, smul_smul, mul_assoc] using hv.symm
-
-
 
 theorem standard_segment_formula (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {x : StandardCapSpace} {ε : ℝ}
@@ -177,8 +156,6 @@ theorem standard_segment_formula (g₀ : StandardInitialMetric)
         rw [smul_smul, inv_mul_cancel₀ (norm_ne_zero_iff.mpr hx), one_smul]
       _ = ‖x‖⁻¹ • x := congrArg (fun v => ‖x‖⁻¹ • v) hend.symm
   simpa only [hd, R] using hclosed
-
-
 
 theorem standard_segment_initial_velocity (g₀ : StandardInitialMetric)
     {γ : ℝ → StandardCapSpace} {x : StandardCapSpace} {ε : ℝ}

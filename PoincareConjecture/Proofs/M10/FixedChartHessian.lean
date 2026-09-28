@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M10.HessianTensorial
 import PoincareConjecture.Proofs.M10.PreferredMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -88,7 +79,6 @@ theorem fixedChart_second_scalar_derivative {f : M → ℝ} (q₀ : M) {q : M}
     hEval.fderiv
   simpa only [ContinuousLinearMap.comp_zero, zero_add, ContinuousLinearMap.flip_apply,
     K, l] using hEq
-
 
 theorem fixedChart_hessian_formula (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {f : M → ℝ} (q₀ : M) {q : M}

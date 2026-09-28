@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 local notation "V3" => (Fin 3 → ℝ)
 
 abbrev NormalPlane := {j : Fin 3 // j ≠ 0} → ℝ
-
-
 
 noncomputable def flatteningAtlas {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     BrownCollar.FlatteningAtlas NormalPlane S S := by
@@ -41,9 +31,6 @@ noncomputable def flatteningAtlas {S : Set V3} (hS : LocallyFlatTopologicalSpher
       indexAt := id
       mem_source_at := fun x => (hA x).1 }
 
-
-
-
 theorem lifting_connectedness {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     SimplyConnectedSpace S ∧ LocallyPathConnectedSpace S := by
   let c : V3 ≃L[ℝ] EuclideanSpace ℝ (Fin 3) :=
@@ -57,9 +44,6 @@ theorem lifting_connectedness {S : Set V3} (hS : LocallyFlatTopologicalSphere S)
       (M := sphere (0 : EuclideanSpace ℝ (Fin 3)) 1)
   exact ⟨H.toHomotopyEquiv.simplyConnectedSpace,
     H.isOpenEmbedding.locallyPathConnectedSpace⟩
-
-
-
 
 theorem exists_coherent_normal_units {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     ∃ a : S → S → SignTypeˣ,

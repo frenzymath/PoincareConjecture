@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Products.DiskBlockCoverCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

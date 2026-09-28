@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.ChartSphereI
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.SphereLocalFlatness
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatBoundedRegion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -32,14 +22,11 @@ variable (L : Submodule ℤ V1) {α : Type*}
 local notation "pi" => hamiltonMarkedProjection (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 
-
 def sphereSet : Set (LatticeHandleAmbient (Fin 2) (Fin 1) L) :=
   (⋃ b, T.surface b) ∪ hamiltonAttachingBlock (Fin 2) (Fin 1) L (3 / 2)
 
-
 def sourceSphere : Set E :=
   (D2 ×ˢ closedBall (0 : V1) 2) ∩ pi ⁻¹' sphereSet L T
-
 
 def sourceProtectedDisks : Set E :=
   (D2 ×ˢ closedBall (0 : V1) 2) ∩ pi ⁻¹' (⋃ b, T.surface b)
@@ -222,8 +209,6 @@ theorem sourceProtectedDisks_isCompact
   exact (hT.image_of_continuousOn ((e retained.index).continuousOn.mono hs)).image_of_continuousOn
     (h.symm.continuousOn.mono ht)
 
-
-
 theorem nonempty_locallyFlat_sourceSphere [DiscreteTopology L]
     (he : PLDomain e R)
     (hsource : D2 ×ˢ (univ : Set V1) ⊆ h.source)
@@ -243,8 +228,6 @@ theorem nonempty_locallyFlat_sourceSphere [DiscreteTopology L]
   change Nonempty (LocallyFlatTopologicalSphere
     (a '' (h.symm '' ((e retained.index) '' sphereSet L T)))) at hflat
   rwa [sourceSphere_image_eq L T retained hsource] at hflat
-
-
 
 theorem exists_source_bounded_side [DiscreteTopology L]
     (he : PLDomain e R)

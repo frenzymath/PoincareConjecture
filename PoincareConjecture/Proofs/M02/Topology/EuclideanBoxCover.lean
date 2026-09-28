@@ -4,13 +4,6 @@ import Mathlib.Topology.Algebra.Field
 import Mathlib.Topology.Order.MonotoneContinuity
 import Mathlib.Topology.Bases
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

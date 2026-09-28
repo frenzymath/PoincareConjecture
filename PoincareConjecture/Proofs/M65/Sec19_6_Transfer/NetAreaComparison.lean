@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FillingWitnesses
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.AnnularInfimum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta mu : ℝ}
-
-
 
 theorem m65NetFillingDifference (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (Set.univ : Set M))

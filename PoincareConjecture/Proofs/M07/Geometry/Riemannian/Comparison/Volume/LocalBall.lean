@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal NNReal Topology
 namespace PoincareConjecture.RiemannianMetric
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem eventually_volumeMeasure_ball_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]

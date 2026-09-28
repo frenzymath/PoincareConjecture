@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.CurvatureDensity
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem inner_self_eq_frameCoordinates_sq
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ : TangentSpace (𝓡 2) x}
     (he₁ : g.inner x e₁ e₁ = 1) (he₂ : g.inner x e₂ e₂ = 1)
@@ -24,7 +18,6 @@ theorem inner_self_eq_frameCoordinates_sq
   have h := LeviCivitaData.gramDet_eq_frameDet_sq g x he₁ he₂ horth v e₁
   simp only [he₁, horth, mul_one, mul_zero, zero_sub, neg_sq] at h
   linarith
-
 
 theorem eq_frameCoordinates_smul
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ : TangentSpace (𝓡 2) x}
@@ -45,7 +38,6 @@ theorem eq_frameCoordinates_smul
   have hz : r = 0 := inner_self_eq_zero.mp hr
   exact sub_eq_zero.mp hz
 
-
 theorem inner_eq_frameCoordinates
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ : TangentSpace (𝓡 2) x}
     (he₁ : g.inner x e₁ e₁ = 1) (he₂ : g.inner x e₂ e₂ = 1)
@@ -55,8 +47,6 @@ theorem inner_eq_frameCoordinates
   conv_lhs => rw [g.eq_frameCoordinates_smul x he₁ he₂ horth w]
   simp only [map_add, map_smul, smul_eq_mul]
   ring
-
-
 
 theorem aligned_frame_coordinates
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ X Y : TangentSpace (𝓡 2) x}

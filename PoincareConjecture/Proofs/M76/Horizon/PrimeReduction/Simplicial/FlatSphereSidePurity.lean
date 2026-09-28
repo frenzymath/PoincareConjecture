@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FinitePLB
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.VertexStarSideCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FullSubcomplexStars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -19,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_tetrahedral_coface_of_flat_side_stars
     (K T P N : SimplicialComplex ℝ E) (hK : K.faces.Finite)

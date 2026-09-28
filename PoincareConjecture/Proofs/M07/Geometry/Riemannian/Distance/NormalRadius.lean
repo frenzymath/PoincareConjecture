@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -31,7 +24,6 @@ private theorem inner_self_nonneg (g : RiemannianMetric n M) (p : M)
   · simp [hv]
   · exact (g.pos p v hv).le
 
-
 theorem hasFDerivAt_regularized_tangentNorm
     (g : RiemannianMetric n M) (p : M) {ε : ℝ} (hε : 0 < ε)
     (v : EuclideanSpace ℝ (Fin n)) :
@@ -50,7 +42,6 @@ theorem hasFDerivAt_regularized_tangentNorm
   rw [g.symm p w v]
   ring
 
-
 theorem contDiff_regularized_tangentNorm
     (g : RiemannianMetric n M) (p : M) {ε : ℝ} (hε : 0 < ε) :
     ContDiff ℝ ∞ (fun w : EuclideanSpace ℝ (Fin n) =>
@@ -62,7 +53,6 @@ theorem contDiff_regularized_tangentNorm
     fun_prop
   · intro w
     exact (add_pos_of_nonneg_of_pos (inner_self_nonneg g p w) hε).ne'
-
 
 theorem regularized_tangentNorm_mfderiv_le
     (g : RiemannianMetric n M) (p : M)
@@ -131,8 +121,6 @@ theorem regularized_tangentNorm_mfderiv_le
   apply (sq_le_sq₀ (abs_nonneg _) (mul_nonneg hunonneg hsnonneg)).mp
   rw [sq_abs, mul_pow, hu, hs]
   nlinarith [mul_nonneg hε.le hnonneg]
-
-
 
 theorem exists_ball_tangentNorm_inverse_le_edist [T2Space M]
     (g : RiemannianMetric n M) (p : M)

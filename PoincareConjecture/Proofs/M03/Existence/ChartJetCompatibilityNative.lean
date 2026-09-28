@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartJetSource
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

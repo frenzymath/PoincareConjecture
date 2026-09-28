@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedBlowupVolumeScales
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_blowup_volume_test {F : SurgeryFlowData.{u}}
     {t Q tau rho B : ℝ} (hQ : 0 < Q) (hrho : 0 < rho)

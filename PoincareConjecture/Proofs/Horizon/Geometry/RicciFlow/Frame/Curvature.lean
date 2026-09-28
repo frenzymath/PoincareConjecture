@@ -5,10 +5,3 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Ring
-
-
-
-
-
-
-

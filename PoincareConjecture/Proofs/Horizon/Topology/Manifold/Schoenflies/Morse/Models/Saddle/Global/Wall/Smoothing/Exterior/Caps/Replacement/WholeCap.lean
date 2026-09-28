@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Levels
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.HeightCorrection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev axis : E3 := EuclideanSpace.single 2 1
-
-
 
 theorem exists_relative_canonical_cap_replacement_of_cylindrical_coordinates
     (A : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -140,8 +136,6 @@ theorem exists_relative_canonical_cap_replacement_of_cylindrical_coordinates
   · change (E ∘ T) '' (LA '' boundedCylinderNorthernCap axis) = G '' S
     rw [image_comp, hTcap]
     exact hEcap
-
-
 
 theorem exists_relative_profile_cap_replacement {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R : Real) :

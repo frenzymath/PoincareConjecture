@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTargetChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerChartBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,10 +47,6 @@ private theorem bounded_straight_chart_extension
     rw [hAq, hHq]
 
 set_option maxHeartbeats 1400000 in
-
-
-
-
 
 theorem continuous_boundary_straight_weak_chart
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

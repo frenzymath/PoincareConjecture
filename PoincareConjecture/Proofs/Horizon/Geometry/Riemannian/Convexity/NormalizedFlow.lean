@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.NormalizedGradient
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open PoincareConjecture Filter Set
 open scoped ContDiff Topology Manifold Bundle
 
 namespace Poincare.Geometry.Riemannian.Convexity
-
-
 
 theorem exists_local_normalizedNegGradient_integralCurve
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -32,8 +22,6 @@ theorem exists_local_normalizedNegGradient_integralCurve
   exact (contMDiffAt_normalizedNegGradient D hf hregular).of_le (by simp)
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem hasDerivAt_comp_normalizedNegGradient
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -49,7 +37,6 @@ theorem hasDerivAt_comp_normalizedNegGradient
     simp [mvfderiv, mfderiv_eq_fderiv, NormedSpace.fromTangentSpace] at he
     convert! he using 1
   exact h.congr_deriv he
-
 
 theorem comp_normalizedNegGradient_eq_sub
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -68,8 +55,6 @@ theorem comp_normalizedNegGradient_eq_sub
     (fun t _ => (hl t).hasDerivWithinAt)
     (fun t ht => (hd t ht).continuousAt.continuousWithinAt)
     (fun t _ => (hl t).continuousAt.continuousWithinAt) (by simp)
-
-
 
 theorem normalized_flow_preserves_level_differential
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin n) → ℝ}

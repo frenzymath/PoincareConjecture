@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Reaction
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -124,8 +112,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem curvature_ricci_contraction_eq_cubic
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

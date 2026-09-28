@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -97,7 +89,6 @@ theorem preferredField_scalar_derivative {f : M → ℝ} (q : M)
   rw [mfderiv_eq_fderiv] at hc
   rw [preferredField_eq_inverseChartDerivative q v hx]
   exact hc
-
 
 theorem preferredChart_scalar_derivative {f : M → ℝ} (q : M)
     (hf : MDifferentiableAt (𝓡 n) (𝓘(ℝ, ℝ)) f q) (v : TangentSpace (𝓡 n) q) :

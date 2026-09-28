@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.CocycleSections
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TerminalCocycleExactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w
@@ -21,9 +12,6 @@ namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
   {ι : Type v} [Fintype ι] {A : PreAbstractSimplicialComplex ι}
   {Z : Type w} [TopologicalSpace Z]
-
-
-
 
 theorem isCoboundary_of_marked_terminal_common_deformation
     (c : A.ModTwoEdgeCocycle) (hvertex : ∀ i : ι, {i} ∈ A.faces)

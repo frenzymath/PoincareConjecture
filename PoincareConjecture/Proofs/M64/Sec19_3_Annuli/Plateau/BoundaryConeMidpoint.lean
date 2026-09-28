@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeHalfDisk
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeH1Radius
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,14 +15,8 @@ variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
 
 open M65Interior
 
-
-
-
 def halfConeDiameter (r : ℝ) (a b : C) (s : ℝ) : C :=
   AffineMap.lineMap b a ((s + r) / (2 * r))
-
-
-
 
 theorem midpoint_cone_diameter {r : ℝ} (hr : r ≠ 0)
     (v : ℝ → C) (s : ℝ) :
@@ -50,19 +30,12 @@ theorem midpoint_cone_diameter {r : ℝ} (hr : r ≠ 0)
     simp only [coneCoordinates, halfConeDiameter, AffineMap.lineMap_apply_module, hratio] <;>
     module
 
-
-
-
 theorem midpoint_mem_closedBall {ρ : ℝ} {a b : C}
     (ha : a ∈ closedBall 0 ρ) (hb : b ∈ closedBall 0 ρ) :
     (1 / 2 : ℝ) • (a + b) ∈ closedBall 0 ρ := by
   have h := (convex_closedBall (0 : C) ρ) ha hb
     (by norm_num : 0 ≤ (1 / 2 : ℝ)) (by norm_num : 0 ≤ (1 / 2 : ℝ)) (by norm_num)
   simpa only [smul_add] using h
-
-
-
-
 
 theorem midpoint_halfCone_green [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
     {v d : ℝ → C} {r ρ K : ℝ}
@@ -152,9 +125,6 @@ theorem midpoint_halfCone_green [CompleteSpace C] [ProperSpace C] {g : C → ℝ
   refine ⟨hgreen.1, ?_⟩
   simpa [polarPlane, m, e, h, L, sub_eq_add_neg] using hgreen.2
 
-
-
-
 theorem midpoint_angular_energy_le {v d : ℝ → C}
     (hv : ContinuousOn v (Icc (0 : ℝ) Real.pi))
     (hd : MemLp d 2 (volume.restrict (Icc (0 : ℝ) Real.pi)))
@@ -195,9 +165,6 @@ theorem midpoint_angular_energy_le {v d : ℝ → C}
   rw [integral_add hm hd.norm.integrable_sq]
   dsimp only [E] at hle'
   nlinarith only [hle']
-
-
-
 
 theorem midpoint_halfCone_derivativeEnergy_le
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

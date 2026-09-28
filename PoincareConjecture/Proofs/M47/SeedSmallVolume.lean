@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallBallVolume
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem seed_small_volume_of_larger_cylinder
     {F : SurgeryFlowData.{u}} {T rho r k : ℝ} (hTF : T ∈ F.time_domain)

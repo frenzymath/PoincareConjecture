@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M04.TensorCommutator
 import PoincareConjecture.Proofs.M04.RiemannDifferentialContractions
 import PoincareConjecture.Definitions.Ch03.CurvatureReaction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -348,4 +341,3 @@ theorem hasDerivAt_curvatureTensor_evolution (F : RicciFlow n M J)
     (curvature_firstVariation_eq_laplacian_add_reaction (F.connection t) x u v w z)
 
 end PoincareConjecture.M04
-

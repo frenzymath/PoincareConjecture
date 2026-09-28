@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SecondLogDerivative
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem second_fderiv_log_norm_sq_add (c : ℝ) (hc : 0 < c) (p v : E) :
     fderiv ℝ (fun q => fderiv ℝ (fun r => Real.log (‖r‖ ^ 2 + c)) q v) p v =

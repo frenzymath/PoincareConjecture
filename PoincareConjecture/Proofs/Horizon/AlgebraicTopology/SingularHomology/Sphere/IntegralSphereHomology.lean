@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homo
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homology.IntegralHomologyEquiv
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereOpenCover
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,7 +22,6 @@ def intersectionPreimageHomeomorph
   right_inv _ := rfl
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
-
 
 def integralSphereHomologySuccIso (n : Nat) :
     integralHomology (sphere (0 : EuclideanSpace Real (Fin (n + 3))) 1) (n + 2) ≅

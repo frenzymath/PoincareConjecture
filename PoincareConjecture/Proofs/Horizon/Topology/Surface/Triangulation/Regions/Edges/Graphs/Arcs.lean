@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Data
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Subdivision
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -29,7 +18,6 @@ namespace OrientedEdgeGraphSubdivision
 variable {D} {e : D.EdgeIndex} {R : D.regions}
   {C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M} {a b : ℝ}
   (S : D.OrientedEdgeGraphSubdivision e R C a b)
-
 
 def pieceArc (i : Fin S.count) : Set M :=
   (D.edge e.1 e.2).map '' Icc (S.cut i.castSucc) (S.cut i.succ)
@@ -56,7 +44,6 @@ theorem isCompact_pieceArc (i : Fin S.count) : IsCompact (S.pieceArc i) :=
   isCompact_Icc.image_of_continuousOn ((D.edge e.1 e.2).smooth.continuousOn.mono
     ((S.piece_interval_unit i).trans Ioo_subset_Icc_self))
 
-
 theorem pieceArc_eq_graph_image (i : Fin S.count) :
     S.pieceArc i =
       (fun x => C ((S.piece i).frame.symm (x, (S.piece i).lower x))) ''
@@ -64,13 +51,11 @@ theorem pieceArc_eq_graph_image (i : Fin S.count) :
           ((S.piece i).parameter (S.cut i.succ)) :=
   (S.piece i).graph_image.symm
 
-
 theorem iUnion_pieceArc :
     (⋃ i, S.pieceArc i) = (D.edge e.1 e.2).map '' Icc a b := by
   simp only [pieceArc, ← image_iUnion]
   rw [iUnion_Icc_consecutive S.count_pos S.cut S.cut_strictMono.monotone,
     S.cut_first, S.cut_last]
-
 
 theorem pieceArc_inter_of_adjacent {i j : Fin S.count}
     (hnext : (i : ℕ) + 1 = (j : ℕ)) :
@@ -88,7 +73,6 @@ theorem pieceArc_inter_of_adjacent {i j : Fin S.count}
     obtain rfl := mem_singleton_iff.mp hq
     exact ⟨S.pieceArc_right_mem i, by simpa only [hindex] using S.pieceArc_left_mem j⟩
 
-
 theorem disjoint_pieceArc_of_gap {i j : Fin S.count}
     (hgap : (i : ℕ) + 1 < (j : ℕ)) :
     Disjoint (S.pieceArc i) (S.pieceArc j) := by
@@ -101,7 +85,6 @@ theorem disjoint_pieceArc_of_gap {i j : Fin S.count}
   subst u
   exact (not_lt_of_ge (hu.1.trans ht.2)) hlt
 
-
 theorem disjoint_pieceArc_of_nonadjacent {i j : Fin S.count}
     (hne : i ≠ j) (hnext : (i : ℕ) + 1 ≠ (j : ℕ))
     (hprev : (j : ℕ) + 1 ≠ (i : ℕ)) :
@@ -110,7 +93,6 @@ theorem disjoint_pieceArc_of_nonadjacent {i j : Fin S.count}
   rcases lt_or_gt_of_ne hval with hlt | hgt
   · exact S.disjoint_pieceArc_of_gap (by omega)
   · exact (S.disjoint_pieceArc_of_gap (by omega : (j : ℕ) + 1 < (i : ℕ))).symm
-
 
 theorem pieceArc_inter_subset_right {i j : Fin S.count} (hij : i < j) :
     S.pieceArc i ∩ S.pieceArc j ⊆ {(D.edge e.1 e.2).map (S.cut i.succ)} := by

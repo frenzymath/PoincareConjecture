@@ -3,14 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.Order.Compact
 import Mathlib.Algebra.QuadraticDiscriminant
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,11 +15,8 @@ namespace Poincare.RicciFlow.Splitting
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 def frameTrace {k : ℕ} (A : E →L[ℝ] E) (v : Fin k → E) : ℝ :=
   ∑ i, inner ℝ (A (v i)) (v i)
-
-
 
 def partialTrace (k : ℕ) (A : E →L[ℝ] E) : ℝ :=
   sInf (frameTrace A '' {v : Fin k → E | Orthonormal ℝ v})
@@ -145,8 +134,6 @@ theorem partialTrace_nonneg {k : ℕ} (hk : k ≤ Module.finrank ℝ E)
   rw [← hmin]
   exact Finset.sum_nonneg fun i _ => hA.inner_nonneg_left (v i)
 
-
-
 theorem partialTrace_eq_zero_iff_kernel_frame {k : ℕ}
     (hk : k ≤ Module.finrank ℝ E) {A : E →L[ℝ] E} (hA : A.IsPositive) :
     partialTrace k A = 0 ↔
@@ -162,7 +149,6 @@ theorem partialTrace_eq_zero_iff_kernel_frame {k : ℕ}
     apply le_antisymm _ (partialTrace_nonneg hk hA)
     have hframe : frameTrace A v = 0 := by simp [frameTrace, hker]
     simpa only [hframe] using partialTrace_le_frameTrace A hv
-
 
 theorem partialTrace_eq_zero_iff {k : ℕ} (hk : k ≤ Module.finrank ℝ E)
     {A : E →L[ℝ] E} (hA : A.IsPositive) :

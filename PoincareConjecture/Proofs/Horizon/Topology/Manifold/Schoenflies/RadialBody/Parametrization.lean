@@ -2,13 +2,6 @@ import Mathlib.Analysis.Normed.Module.Ball.RadialEquiv
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,14 +12,12 @@ namespace Poincare.Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
 
-
 def radialMap (r : sphere (0 : E) 1 → Real) (x : E) : E := by
   classical
   exact if hx : x = 0 then 0 else r ((homeomorphUnitSphereProd E) ⟨x, hx⟩).1 • x
 
 @[simp] theorem radialMap_zero (r : sphere (0 : E) 1 → Real) : radialMap r 0 = 0 := by
   simp [radialMap]
-
 
 theorem radialMap_smul (r : sphere (0 : E) 1 → Real)
     (p : sphere (0 : E) 1) {t : Real} (ht : 0 ≤ t) :
@@ -58,7 +49,6 @@ private theorem exists_eq_norm_smul (x : E) :
 
 variable [ProperSpace E]
 
-
 theorem continuous_radialMap {r : sphere (0 : E) 1 → Real} (hr : Continuous r) :
     Continuous (radialMap r) := by
   have hrestr : Continuous (fun x : ({0}ᶜ : Set E) => radialMap r x) := by
@@ -88,7 +78,6 @@ theorem continuous_radialMap {r : sphere (0 : E) 1 → Real} (hr : Continuous r)
     · simpa using tendsto_const_nhds.mul (tendsto_norm (x := (0 : E)))
   · exact hon.continuousAt (isOpen_compl_singleton.mem_nhds hx)
 
-
 def radialHomeomorph (r : sphere (0 : E) 1 → Real) (hr : Continuous r)
     (hpos : ∀ p, 0 < r p) : E ≃ₜ E where
   toFun := radialMap r
@@ -106,10 +95,8 @@ def radialHomeomorph (r : sphere (0 : E) 1 → Real) (hr : Continuous r)
   continuous_toFun := continuous_radialMap hr
   continuous_invFun := continuous_radialMap (hr.inv₀ (fun p => (hpos p).ne'))
 
-
 def radialClosedBody (r : sphere (0 : E) 1 → Real) : Set E :=
   {x | ∃ p : sphere (0 : E) 1, ∃ t : Real, 0 ≤ t ∧ t ≤ r p ∧ x = t • (p : E)}
-
 
 def radialOpenBody (r : sphere (0 : E) 1 → Real) : Set E :=
   {x | ∃ p : sphere (0 : E) 1, ∃ t : Real, 0 ≤ t ∧ t < r p ∧ x = t • (p : E)}

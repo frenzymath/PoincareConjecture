@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M33BranchContinuation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
 
 theorem RepairedPreterminalSlab.exists_regular_reference
     {F : SurgeryFlowData.{u}} {T : ℝ} (P : RepairedPreterminalSlab F T)
@@ -60,7 +51,6 @@ theorem core_map_bijective : Function.Bijective B.core_map := by
     funext (fun x => (B.referenceCoreEquiv_apply x).symm)
   rw [h]
   exact B.referenceCoreEquiv.bijective
-
 
 theorem reference_identify_last_slab (t : Set.Ico H.reference.tMinus T)
     (x : (F.slice I.last_slab.start).carrier) :

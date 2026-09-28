@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M38.OneCapAssembly
 import PoincareConjecture.Proofs.M38.AssemblyTransport
 import PoincareConjecture.Proofs.M38.ComponentAssemblyRefinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture.M38
 
 attribute [local instance] SmoothClosedComponentModel.model_topology
   SmoothClosedComponentModel.model_charted SmoothClosedComponentModel.model_manifold
-
-
 
 noncomputable def closedComponentModelCarrier (A : GeneralizedSliceCarrier.{u})
     (x : A.carrier) {kind : ClosedComponentKind}
@@ -46,8 +34,6 @@ noncomputable def closedComponentModelCarrier (A : GeneralizedSliceCarrier.{u})
     t3Space := e.t3Space
     secondCountable := e.symm.secondCountableTopology }
 
-
-
 theorem exists_projectiveDouble_assembly
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier) :
     Nonempty (SmoothFiniteConnectedSumAssembly
@@ -57,8 +43,6 @@ theorem exists_projectiveDouble_assembly
     ⟨S.first_ball.map 0⟩
   let U := oneCapDisjointUnion projectiveCarrier.{u} projectiveCarrier.{u} hnon hnon
   exact ⟨U.toAssembly.tail ⟨projectiveCarrier, projectiveCarrier, ⟨U⟩, ⟨S⟩⟩⟩
-
-
 
 theorem exists_projectiveComponent_assembly
     (A : GeneralizedSliceCarrier.{u}) (x : A.carrier)
@@ -70,9 +54,6 @@ theorem exists_projectiveComponent_assembly
   obtain ⟨S⟩ := exists_projectiveDouble_assembly Q
     (Classical.choice C.smooth_model.standard_smooth)
   exact exists_transportAssembly S (componentClosedModelDiffeomorph A x C.smooth_model).symm
-
-
-
 
 theorem whole_canonical_component_assembly
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u}) (t : ℝ)

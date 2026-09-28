@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import PoincareConjecture.Proofs.M25.Mathlib.SmoothSlice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_slice_isSmoothEmbedding {s : ℝ}
     (hs : s ∈ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞
@@ -30,8 +20,6 @@ theorem coordinate_slice_isSmoothEmbedding {s : ℝ}
   N.coordinatePartialHomeomorph.m25_isSmoothEmbedding_slice N.coordinate_map_smooth
     N.coordinate_inverse_smooth (RiemannianMetric.lineModelEquiv 2) s
       (fun q => ⟨Set.mem_univ q, hs⟩)
-
-
 
 theorem coordinate_zero_range :
     Set.range (fun q : UnitTwoSphere => N.coordinate_map (q, 0)) = N.central_sphere := by
@@ -44,8 +32,6 @@ theorem coordinate_zero_range :
     have ht' : t = 0 := ht
     subst t
     exact ⟨q, hx⟩
-
-
 
 theorem m25_central_sphere_isotopic_self :
     SmoothSphereIsotopicIn N.carrier N.central_sphere N.central_sphere := by

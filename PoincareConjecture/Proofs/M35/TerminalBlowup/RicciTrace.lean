@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
-
-
-
 
 theorem ricci_le_scalar_mul_inner_of_nonnegative_sectional
     {n : ℕ} {M : Type*} [TopologicalSpace M]

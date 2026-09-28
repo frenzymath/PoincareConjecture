@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCapData
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +9,6 @@ open scoped Topology ContDiff Matrix
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M64IntrinsicFiniteCornerCaps {J : Type*}
     (alpha beta : J → ℝ → AnnulusCoordinates) (A B : J → ℝ)
@@ -76,19 +68,12 @@ structure M64IntrinsicFiniteCornerCaps {J : Type*}
 
 namespace M64IntrinsicFiniteCornerCaps
 
-
-
-
 abbrev carrier {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}
     {U : Set AnnulusCoordinates} (C : M64IntrinsicFiniteCornerCaps alpha beta A B U)
     (j : J) : Set AnnulusCoordinates :=
   m64IntrinsicOccupiedCapFamily (C.cap j) (C.radius j) (C.positive j)
 
 end M64IntrinsicFiniteCornerCaps
-
-
-
-
 
 theorem m64Intrinsic_exists_finite_corner_cap_data
     {J : Type*} [Finite J] (alpha beta : J → ℝ → AnnulusCoordinates)

@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonComplementComponents
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import Mathlib.GroupTheory.Perm.Fin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem planar_boundary_edge_unique_triangle
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -47,8 +36,6 @@ theorem planar_boundary_edge_unique_triangle
     union_subset (K.convexHull_subset_space ht) (K.convexHull_subset_space hu)
   exact hxfront.2 (interior_mono hsub hxint)
 
-
-
 theorem planar_boundary_edge_iff_unique_triangle
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hdim : Module.finrank ℝ E = 2) (hcv : Convex ℝ K.space)
@@ -67,8 +54,6 @@ theorem planar_boundary_edge_iff_unique_triangle
     K.hasTwoFullCofaces_of_hull_meets_interior hK hcv hs (hsc.trans hdim.symm)
       ⟨x, hx, hxint⟩
   exact huv ((huniq u ⟨hu, hsu, by omega⟩).trans (huniq v ⟨hv, hsv, by omega⟩).symm)
-
-
 
 theorem exists_planar_boundary_cycle
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite)
@@ -100,9 +85,6 @@ theorem exists_planar_boundary_cycle
   intro j
   have he := (hedges {P j, P (finRotate (n + 3) j)}).mpr ⟨j, rfl⟩
   exact planar_boundary_edge_unique_triangle K hK (by simp) hcv hne he.1 he.2
-
-
-
 
 theorem exists_planar_boundary_dart_cycle
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothJoinAction
 import PoincareConjecture.Proofs.M09.ExponentialAction
 import PoincareConjecture.Proofs.M09.FamilySlices
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

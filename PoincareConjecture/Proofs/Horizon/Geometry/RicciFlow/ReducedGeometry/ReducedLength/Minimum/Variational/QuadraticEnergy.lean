@@ -2,25 +2,11 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace PoincareConjecture.ReducedLengthMinimum.Variational
-
-
 
 theorem quadratic_energy_support {H : Type*} [NormedAddCommGroup H]
     [NormedSpace ℝ H] (v : ℕ → H) (w : H) (C : ℝ) (hC : 0 ≤ C)
@@ -60,8 +46,6 @@ theorem quadratic_energy_support {H : Type*} [NormedAddCommGroup H]
   simp only [sub_apply] at herr
   linarith
 
-
-
 theorem quadratic_energy_le_of_weak_limit {H : Type*} [NormedAddCommGroup H]
     [NormedSpace ℝ H] (v : ℕ → H) (w : H) (C : ℝ) (hC : 0 ≤ C)
     (hbound : ∀ k, ‖v k‖ ≤ C)
@@ -74,8 +58,6 @@ theorem quadratic_energy_le_of_weak_limit {H : Type*} [NormedAddCommGroup H]
   obtain ⟨ell, hlim, hell⟩ := quadratic_energy_support v w C hC hbound hweak Q Qk hpositive hQ
   exact le_of_tendsto_of_tendsto hlim he (Filter.Eventually.of_forall
     (fun k => (hell k).trans (henergy k)))
-
-
 
 theorem finite_quadratic_action_le {ι : Type*} [Fintype ι] {H : ι → Type*}
     [∀ i, NormedAddCommGroup (H i)] [∀ i, NormedSpace ℝ (H i)]

@@ -2,28 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexIntrinsicInterior
 import PoincareConjecture.Proofs.M76.Mathlib.AffinePlaneGermRigidity
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRegionSideTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem Continuous.exists_uniform_segments_in_open
     {u v : ℝ → E} (hu : Continuous u) (hv : Continuous v)
@@ -51,10 +35,6 @@ theorem Continuous.exists_uniform_segments_in_open
 
 namespace Geometry.SimplicialComplex
 
-
-
-
-
 theorem exists_open_triangle_plane_neighborhood_of_segment
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 3)
@@ -78,10 +58,6 @@ theorem exists_open_triangle_plane_neighborhood_of_segment
     exact (show x ∈ K.space ↔ x ∈ affineSpan ℝ (s : Set E) from
       ⟨fun h => ((hKU y).subset ⟨h, hxy⟩).1,
         fun h => ((hKU y).symm.subset ⟨h, hxy⟩).1⟩).trans (hplane x)
-
-
-
-
 
 theorem exists_uniform_transverse_segments_avoiding_carrier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -110,11 +86,6 @@ theorem exists_uniform_transverse_segments_avoiding_carrier
   exact hz0 (heq.symm.trans hxC)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_uniform_planar_disk_side_transport
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

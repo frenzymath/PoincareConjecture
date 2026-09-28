@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedBi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T b : ℝ}
 
-
-
-
 noncomputable def retainedChartCoefficients
     (event : SurgeryEventData g0 K P slice metric T)
     (G : RicciFlow 3 (slice T).carrier (Icc T b))
@@ -46,9 +34,6 @@ noncomputable def retainedChartCoefficients
   else
     (G.metric p.1).pullbackCoefficients
       (event.retention.map ∘ (extChartAt (𝓡 3) q).symm) p.2
-
-
-
 
 theorem retained_inverse_coordinates_smooth
     (event : SurgeryEventData g0 K P slice metric T)
@@ -60,8 +45,6 @@ theorem retained_inverse_coordinates_smooth
   (event.retention.map_smooth.mono interior_subset).comp
     ((contMDiffOn_extChartAt_symm q).mono hchart)
     (fun _x hx => hret (mem_image_of_mem _ hx))
-
-
 
 theorem retainedChartCoefficients_smooth_before
     (event : SurgeryEventData g0 K P slice metric T)
@@ -76,9 +59,6 @@ theorem retainedChartCoefficients_smooth_before
   intro p hp
   simp only [retainedChartCoefficients, if_pos hp.1.2]
 
-
-
-
 theorem retainedChartCoefficients_smooth_after
     (event : SurgeryEventData g0 K P slice metric T)
     (G : RicciFlow 3 (slice T).carrier (Icc T b))
@@ -92,9 +72,6 @@ theorem retainedChartCoefficients_smooth_after
   apply hs.congr
   intro p hp
   simp only [retainedChartCoefficients, if_neg (not_lt_of_ge hp.1.1)]
-
-
-
 
 theorem retainedChartCoefficients_continuous_spatialJets
     (event : SurgeryEventData g0 K P slice metric T)
@@ -116,9 +93,6 @@ theorem retainedChartCoefficients_continuous_spatialJets
   intro t ht hT x hx
   simpa only [retainedChartCoefficients, if_pos hT, lt_self_iff_false, if_false, hbirth]
     using hbound t ht hT x hx
-
-
-
 
 theorem retainedChartCoefficients_spatial_smooth
     (event : SurgeryEventData g0 K P slice metric T)

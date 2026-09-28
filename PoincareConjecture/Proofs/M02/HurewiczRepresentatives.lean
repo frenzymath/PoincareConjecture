@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M02.IntegralChains
 import PoincareConjecture.Proofs.M02.CubeSphere
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Set Topology
@@ -22,8 +14,6 @@ open scoped Simplicial Topology unitInterval
 universe w v u
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem homotopyGroupSingularHomologyMap_surjective (X : TopCat.{w})
     [PathConnectedSpace X] (x : X) (n : ℕ)
@@ -76,8 +66,6 @@ theorem homotopyGroupSingularHomologyMap_surjective (X : TopCat.{w})
   obtain ⟨q, hq⟩ := MonoidHom.mem_range.mp hh
   exact ⟨q, congrArg Multiplicative.toAdd hq⟩
 
-
-
 theorem isZero_integral_singularHomology_of_homotopy_vanishing (X : TopCat.{w})
     [PathConnectedSpace X] (x : X) (n : ℕ)
     (hpi : ∀ (k : ℕ), 1 ≤ k → k ≤ n + 1 → Subsingleton (HomotopyGroup.Pi k X x)) :
@@ -96,8 +84,6 @@ theorem isZero_integral_singularHomology_of_homotopy_vanishing (X : TopCat.{w})
   apply e.symm.injective
   rw [← hp, ← hq, Subsingleton.elim p q]
 
-
-
 theorem isZero_integral_singularHomology_one (X : TopCat.{w}) [SimplyConnectedSpace X] :
     IsZero ((TopCat.toSSet.obj X).homology
       (ModuleCat.of ℤ (ULift.{w} ℤ)) 1) := by
@@ -108,8 +94,6 @@ theorem isZero_integral_singularHomology_one (X : TopCat.{w}) [SimplyConnectedSp
   subst k
   exact ⟨fun p q => HomotopyGroup.pi1EquivFundamentalGroup.injective
     (Subsingleton.elim _ _)⟩
-
-
 
 theorem exists_quotient_integral_homology_representatives (X : TopCat.{w})
     [PathConnectedSpace X] (x : X) (n : ℕ)
@@ -148,8 +132,6 @@ theorem exists_quotient_integral_homology_representatives (X : TopCat.{w})
         genLoopSingularHomologyClass R X p := by
     simpa only [genLoopSingularHomologyClass, hs, hbase'] using hnat
   exact hclass.trans ha
-
-
 
 theorem exists_sphere_class_representing_integral_homology (X : TopCat.{w})
     [PathConnectedSpace X] (x : X) (n : ℕ)

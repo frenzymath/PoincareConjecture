@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakInequalityLipschitz
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.LipschitzDerivatives
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -18,8 +10,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem compact_lipschitz_comparison_test
     {O : Set E} {u v φ : E → ℝ} {A B ε : ℝ≥0}
@@ -65,8 +55,6 @@ theorem compact_lipschitz_comparison_test
       add_le_add (mul_le_mul (hφ1 x) hq (abs_nonneg _) (by norm_num))
         (mul_le_mul (hzB y) hp (abs_nonneg _) (by positivity))
     _ = ((B + A + 2 * ε * C : ℝ≥0) : ℝ) * dist x y := by push_cast; ring
-
-
 
 theorem weakInequality_comparison_test
     {O : Set E} (hO : IsOpen O) {F : Fin d → E → ℝ} {f u v φ : E → ℝ}

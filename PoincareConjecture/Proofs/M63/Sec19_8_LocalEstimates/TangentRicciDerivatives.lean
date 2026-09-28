@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurveTensorLeibniz
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -24,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63TangentRicci_arc_derivatives [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

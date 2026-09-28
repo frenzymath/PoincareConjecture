@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.SeparatedMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_injective_region_chart
     {X Y ι : Type*} [TopologicalSpace X]

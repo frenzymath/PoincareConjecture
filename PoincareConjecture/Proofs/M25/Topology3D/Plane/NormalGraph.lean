@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubeCoordinates
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem curveAnnularTube_smooth_normal_graph
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -5,10 +5,3 @@ import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Separation.Basic
-
-
-
-
-
-
-

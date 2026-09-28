@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +10,6 @@ namespace OpenPartialHomeomorph
 variable {E V : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
 
 theorem mem_piecewiseAffineGroupoid_transition_of_finitePL_representatives
     {T : Set E} (Q Q' : OpenPartialHomeomorph T V)
@@ -48,8 +37,6 @@ theorem mem_piecewiseAffineGroupoid_transition_of_finitePL_representatives
   change f' (g y) = Q' (Q.symm y)
   rw [← hQg y hy.1]
   exact (hff (hQs (Q.symm y) hy')).trans (hQf (Q.symm y) hy').symm
-
-
 
 theorem mem_piecewiseAffineGroupoid_transition_of_closed_ball_charts
     {T : Set E} (Q Q' : OpenPartialHomeomorph T V)

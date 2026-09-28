@@ -40,10 +40,6 @@ theorem m67_alpha_transport_of_based_postcomposition
   subst z
   exact ⟨L, p, m67ConstantLoopPath p, rfl⟩
 
-
-
-
-
 theorem m67_event_class_datum_exists
     {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
     {t : ℝ} {ht : t ∈ D.flow.surgery_times}

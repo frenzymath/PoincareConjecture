@@ -3,9 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleBandCom
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCapBandContacts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MatchedRegionParents
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,10 +13,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture.M64IntrinsicTriangleCollar
-
-
-
-
 
 theorem exists_coordinate_parents
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}

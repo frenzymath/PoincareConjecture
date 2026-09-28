@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeEndpointImageFace
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineIntersectionRanks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -99,7 +88,6 @@ theorem RelativeFaceMotionData.coordinate_of_successor_agreement
   exact Q.right_inv (hJQ hinside)
 
 omit [FiniteDimensional ℝ V] in
-
 
 theorem RelativeFaceMotionData.exists_position_faces_at_intersection
     (motion : RelativeFaceMotionData step K K₀ K₁ j Q B J N R)

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.FromEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Truncation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem exists_height_sublevel_halfspace_chart (N : EpsilonNeck g)
     {K : Set M} {t : ℝ} {x : M} (hx : x ∈ N.carrier)
@@ -70,8 +61,6 @@ theorem exists_height_sublevel_halfspace_chart (N : EpsilonNeck g)
   rw [hefirst y hy.1, (hVsub hy.2).2, hK y (hVsub hy.2).1]
   change 0 ≤ -(N.coordinate_inverse y).2 - -t ↔ (N.coordinate_inverse y).2 ≤ t
   constructor <;> intro h <;> linarith
-
-
 
 theorem nonempty_smoothDomain_of_height_sublevel (N : EpsilonNeck g)
     {K : Set M} {t : ℝ} (hcompact : IsCompact K)
@@ -123,8 +112,6 @@ theorem nonempty_smoothDomain_of_height_sublevel (N : EpsilonNeck g)
 end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_finite_chain_smoothDomain_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

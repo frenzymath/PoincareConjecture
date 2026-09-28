@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder.Reflection.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -35,7 +27,6 @@ theorem neg_mem_interval {epsilon t : ℝ}
     (ht : t ∈ Ioo (-epsilon⁻¹) epsilon⁻¹) : -t ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ := by
   constructor <;> linarith [ht.1, ht.2]
 
-
 def domain (epsilon : ℝ) : NeckDomain epsilon ≃ₜ NeckDomain epsilon where
   toFun z := (z.1, ⟨-(z.2 : ℝ), neg_mem_interval z.2.property⟩)
   invFun z := (z.1, ⟨-(z.2 : ℝ), neg_mem_interval z.2.property⟩)
@@ -46,8 +37,6 @@ def domain (epsilon : ℝ) : NeckDomain epsilon ≃ₜ NeckDomain epsilon where
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem roundCylinderPullback_comp (g : RiemannianMetric 3 M)
     (f : RoundCylinderSpace → M) :

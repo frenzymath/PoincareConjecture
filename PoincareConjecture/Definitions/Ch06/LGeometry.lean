@@ -7,19 +7,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -32,10 +19,8 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def curveVelocity (γ : ℝ → M) (τ : ℝ) : TangentSpace (𝓡 n) (γ τ) :=
   (mfderiv (𝓘(ℝ, ℝ)) (𝓡 n) γ τ) 1
-
 
 structure SmoothAlongCurveExtensionOn (I : Set ℝ) (γ : ℝ → M)
     (Y : ∀ τ, TangentSpace (𝓡 n) (γ τ)) where
@@ -44,13 +29,11 @@ structure SmoothAlongCurveExtensionOn (I : Set ℝ) (γ : ℝ → M)
   agrees_near : ∀ τ (hτ : τ ∈ I), ∃ δ > 0, ∀ σ ∈ I, |σ - τ| < δ →
     extension τ hτ (γ σ) = Y σ
 
-
 structure PointwiseSectionExtensionOn (I : Set ℝ) (γ : ℝ → M)
     (Y : ∀ τ, TangentSpace (𝓡 n) (γ τ)) where
   extension : ∀ τ, τ ∈ I → Cₛ^∞⟮(𝓡 n); EuclideanSpace ℝ (Fin n),
     (TangentSpace (𝓡 n) : M → Type _)⟯
   agrees_at : ∀ τ (hτ : τ ∈ I), extension τ hτ (γ τ) = Y τ
-
 
 noncomputable def alongCovariantDerivative {J : Set ℝ} (F : RicciFlow n M J)
     (time : ℝ → ℝ) (γ : ℝ → M)
@@ -60,11 +43,9 @@ noncomputable def alongCovariantDerivative {J : Set ℝ} (F : RicciFlow n M J)
     TangentSpace (𝓡 n) (γ τ) :=
   (F.connection (time τ)).connection (E.extension τ hτ) (γ τ) (V τ)
 
-
 noncomputable def curveVelocityWithin (γ : ℝ → M) (I : Set ℝ) (s : ℝ) :
     TangentSpace (𝓡 n) (γ s) :=
   (mfderivWithin (𝓘(ℝ, ℝ)) (𝓡 n) γ I s) 1
-
 
 structure ParametricAlongCurveExtensionOn (I : Set ℝ) (γ : ℝ → M)
     (Y : ∀ s, TangentSpace (𝓡 n) (γ s)) where
@@ -77,7 +58,6 @@ structure ParametricAlongCurveExtensionOn (I : Set ℝ) (γ : ℝ → M)
       z.2 (extension z.1 z.2)) domain
   agrees : ∀ s ∈ I, extension s (γ s) = Y s
 
-
 noncomputable def pullbackCovariantDerivative {J : Set ℝ} (F : RicciFlow n M J)
     (time : ℝ → ℝ) (γ : ℝ → M)
     (Y : ∀ s, TangentSpace (𝓡 n) (γ s)) (I : Set ℝ)
@@ -87,12 +67,10 @@ noncomputable def pullbackCovariantDerivative {J : Set ℝ} (F : RicciFlow n M J
     (F.connection (time s)).connection (E.extension s) (γ s)
       (curveVelocityWithin (n := n) γ I s)
 
-
 noncomputable def scalarCurvatureDifferential {J : Set ℝ} (F : RicciFlow n M J)
     (time : ℝ → ℝ) (γ : ℝ → M) (τ : ℝ) :
     TangentSpace (𝓡 n) (γ τ) →L[ℝ] ℝ :=
   mvfderiv (𝓡 n) (fun y ↦ (F.connection (time τ)).scalarCurvature y) (γ τ)
-
 
 noncomputable def backwardLIntegrand {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (γ : ℝ → M) (τ : ℝ) : ℝ :=
@@ -100,11 +78,9 @@ noncomputable def backwardLIntegrand {J : Set ℝ} (F : RicciFlow n M J)
     (F.metric (T - τ)).inner (γ τ) (curveVelocity (n := n) γ τ)
       (curveVelocity (n := n) γ τ))
 
-
 noncomputable def backwardLLength {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (γ : ℝ → M) : ℝ :=
   ∫ τ in τ₁..τ₂, backwardLIntegrand F T γ τ
-
 
 structure BackwardTimePath {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) where
@@ -118,7 +94,6 @@ structure BackwardTimePath {J : Set ℝ} (F : RicciFlow n M J)
   l_integrable : IntervalIntegrable (backwardLIntegrand F T curve)
     MeasureTheory.volume τ₁ τ₂
 
-
 noncomputable def backwardEulerResidual {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (γ : ℝ → M) (I : Set ℝ)
     (E : ParametricAlongCurveExtensionOn I γ (curveVelocityWithin (n := n) γ I))
@@ -131,12 +106,10 @@ noncomputable def backwardEulerResidual {J : Set ℝ} (F : RicciFlow n M J)
       (curveVelocityWithin (n := n) γ I τ) W +
     2 * (F.connection (T - τ)).ricci (γ τ) (curveVelocityWithin (n := n) γ I τ) W
 
-
 def backwardEulerLagrange {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (γ : ℝ → M) (I : Set ℝ)
     (E : ParametricAlongCurveExtensionOn I γ (curveVelocityWithin (n := n) γ I)) (τ : ℝ) : Prop :=
   ∀ W : TangentSpace (𝓡 n) (γ τ), backwardEulerResidual F T γ I E τ W = 0
-
 
 def IsBackwardLGeodesic {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂) : Prop :=
@@ -145,13 +118,10 @@ def IsBackwardLGeodesic {J : Set ℝ} (F : RicciFlow n M J)
     ∀ τ ∈ Set.Ioo τ₁ τ₂,
       backwardEulerLagrange F T p.curve (Set.Ioo τ₁ τ₂) E τ
 
-
 def squareReparameterizedCurve (γ : ℝ → M) : ℝ → M := fun s ↦ γ (s ^ 2)
-
 
 def sqrtParameterInterval (τ₁ τ₂ : ℝ) : Set ℝ :=
   Set.Icc (Real.sqrt τ₁) (Real.sqrt τ₂)
-
 
 structure SqrtRegularPath {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂) where
@@ -161,7 +131,6 @@ structure SqrtRegularPath {J : Set ℝ} {F : RicciFlow n M J}
   interval_subset : sqrtParameterInterval τ₁ τ₂ ⊆ domain
   smooth : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) ∞ curve domain
   agrees : ∀ s ∈ sqrtParameterInterval τ₁ τ₂, curve s = p.curve (s ^ 2)
-
 
 noncomputable def regularizedEulerResidual {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (α : ℝ → M) (I : Set ℝ)
@@ -174,12 +143,10 @@ noncomputable def regularizedEulerResidual {J : Set ℝ} (F : RicciFlow n M J)
     4 * s * (F.connection (T - s ^ 2)).ricci
       (α s) (curveVelocityWithin (n := n) α I s) W
 
-
 def regularizedLGeodesicEquation {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (α : ℝ → M) (I : Set ℝ)
     (E : ParametricAlongCurveExtensionOn I α (curveVelocityWithin (n := n) α I)) (s : ℝ) : Prop :=
   ∀ W : TangentSpace (𝓡 n) (α s), regularizedEulerResidual F T α I E s W = 0
-
 
 structure RegularizedLGeodesicData {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂) where
@@ -190,13 +157,11 @@ structure RegularizedLGeodesicData {J : Set ℝ} {F : RicciFlow n M J}
     regularizedLGeodesicEquation F T path.curve (sqrtParameterInterval τ₁ τ₂)
       velocity_extension s
 
-
 def IsMinimizingBackwardLPath {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂) : Prop :=
   ∀ q : BackwardTimePath F T τ₁ τ₂,
     q.curve τ₁ = p.curve τ₁ → q.curve τ₂ = p.curve τ₂ →
       backwardLLength F T τ₁ τ₂ p.curve ≤ backwardLLength F T τ₁ τ₂ q.curve
-
 
 structure LVariation {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂) where
@@ -216,47 +181,39 @@ structure LVariation {J : Set ℝ} (F : RicciFlow n M J)
     IntervalIntegrable (backwardLIntegrand F T (fun τ ↦ family τ u))
       MeasureTheory.volume τ₁ τ₂
 
-
 def LVariation.parameterDomain {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) : Set ℝ := Set.Ioo (-V.radius) V.radius
 
-
 def LVariation.baseSquareCurve {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) : ℝ → M := fun s ↦ V.squareFamily s 0
-
 
 structure InitialFixedLVariation {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂)
     extends LVariation F T τ₁ τ₂ p where
   fixed_left : ∀ u ∈ Set.Ioo (-radius) radius, family τ₁ u = p.curve τ₁
 
-
 structure FixedEndpointLVariation {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂)
     extends InitialFixedLVariation F T τ₁ τ₂ p where
   fixed_right : ∀ u ∈ Set.Ioo (-radius) radius, family τ₂ u = p.curve τ₂
-
 
 noncomputable def variationLLength {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (u : ℝ) : ℝ :=
   backwardLLength F T τ₁ τ₂ (fun τ ↦ V.family τ u)
 
-
 noncomputable def variationField {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (τ : ℝ) : TangentSpace (𝓡 n) (p.curve τ) :=
   (V.at_zero τ) ▸ curveVelocity (fun u ↦ V.family τ u) 0
-
 
 noncomputable def squareVariationField {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (s : ℝ) :
     TangentSpace (𝓡 n) (V.baseSquareCurve s) :=
   curveVelocity (fun u ↦ V.squareFamily s u) 0
-
 
 structure LVariationDerivativeData {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -269,7 +226,6 @@ structure LVariationDerivativeData {J : Set ℝ} {F : RicciFlow n M J}
     ParametricAlongCurveExtensionOn V.parameterDomain (V.squareFamily s)
       (curveVelocityWithin (n := n) (V.squareFamily s) V.parameterDomain)
 
-
 noncomputable def firstVariationBoundaryTerm {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) : ℝ :=
@@ -278,14 +234,12 @@ noncomputable def firstVariationBoundaryTerm {J : Set ℝ} {F : RicciFlow n M J}
     (squareVariationField V s)
   B (Real.sqrt τ₂) - B (Real.sqrt τ₁)
 
-
 noncomputable def firstVariationResidualIntegral {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (D : LVariationDerivativeData V) : ℝ :=
   ∫ s in Real.sqrt τ₁..Real.sqrt τ₂,
     -regularizedEulerResidual F T V.baseSquareCurve (sqrtParameterInterval τ₁ τ₂)
       D.velocity_extension s (squareVariationField V s)
-
 
 noncomputable def variationEndpointAcceleration {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -295,7 +249,6 @@ noncomputable def variationEndpointAcceleration {J : Set ℝ} {F : RicciFlow n M
   pullbackCovariantDerivative F (fun _ ↦ T - s ^ 2) (V.squareFamily s)
     (curveVelocityWithin (n := n) (V.squareFamily s) V.parameterDomain) V.parameterDomain
     (D.endpoint_extension s hs) 0
-
 
 noncomputable def secondVariationBoundaryTerm {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -307,17 +260,14 @@ noncomputable def secondVariationBoundaryTerm {J : Set ℝ} {F : RicciFlow n M J
   B (Real.sqrt τ₂) ⟨Real.sqrt_le_sqrt (le_of_lt p.ordered), le_rfl⟩ -
     B (Real.sqrt τ₁) ⟨le_rfl, Real.sqrt_le_sqrt (le_of_lt p.ordered)⟩
 
-
 noncomputable def ricciDerivativePairing {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (x : M) (U V W : TangentSpace (𝓡 n) x) : ℝ :=
   D.covariantTensorDerivative D.ricciEvaluation x ![U, V, W]
-
 
 noncomputable def backwardConnectionVariationPairing {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (x : M) (U V W : TangentSpace (𝓡 n) x) : ℝ :=
   ricciDerivativePairing D x U V W + ricciDerivativePairing D x V U W -
     ricciDerivativePairing D x W U V
-
 
 noncomputable def secondVariationIndexDensity {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -334,12 +284,10 @@ noncomputable def secondVariationIndexDensity {J : Set ℝ} {F : RicciFlow n M J
     4 * s * ricciDerivativePairing connection x Y A Y +
     2 * s * ricciDerivativePairing connection x A Y Y
 
-
 noncomputable def secondVariationIndexForm {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (V : LVariation F T τ₁ τ₂ p) (D : LVariationDerivativeData V) : ℝ :=
   ∫ s in Real.sqrt τ₁..Real.sqrt τ₂, secondVariationIndexDensity V D s
-
 
 structure SqrtRegularField {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -352,7 +300,6 @@ structure SqrtRegularField {J : Set ℝ} {F : RicciFlow n M J}
     (pullbackCovariantDerivative F (fun r ↦ T - r ^ 2) R.curve field
       (sqrtParameterInterval τ₁ τ₂) extension)
 
-
 noncomputable def SqrtRegularField.firstDerivative {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     {R : SqrtRegularPath p} {Y : ∀ τ, TangentSpace (𝓡 n) (p.curve τ)}
@@ -360,14 +307,12 @@ noncomputable def SqrtRegularField.firstDerivative {J : Set ℝ} {F : RicciFlow 
   pullbackCovariantDerivative F (fun r ↦ T - r ^ 2) R.curve Q.field
     (sqrtParameterInterval τ₁ τ₂) Q.extension s
 
-
 noncomputable def SqrtRegularField.secondDerivative {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     {R : SqrtRegularPath p} {Y : ∀ τ, TangentSpace (𝓡 n) (p.curve τ)}
     (Q : SqrtRegularField R Y) (s : ℝ) : TangentSpace (𝓡 n) (R.curve s) :=
   pullbackCovariantDerivative F (fun r ↦ T - r ^ 2) R.curve Q.firstDerivative
     (sqrtParameterInterval τ₁ τ₂) Q.derivative_extension s
-
 
 noncomputable def regularizedJacobiResidual {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -384,14 +329,12 @@ noncomputable def regularizedJacobiResidual {J : Set ℝ} {F : RicciFlow n M J}
     4 * s * ricciDerivativePairing connection x (Q.field s) A W +
     4 * s * connection.ricci x (Q.firstDerivative s) W
 
-
 def IsLJacobiField {J : Set ℝ} (F : RicciFlow n M J)
     (T τ₁ τ₂ : ℝ) (p : BackwardTimePath F T τ₁ τ₂)
     (Y : ∀ τ, TangentSpace (𝓡 n) (p.curve τ)) : Prop :=
   ∃ R : RegularizedLGeodesicData p, ∃ Q : SqrtRegularField R.path Y,
     Y τ₁ = 0 ∧ ∀ s ∈ sqrtParameterInterval τ₁ τ₂,
       ∀ W : TangentSpace (𝓡 n) (R.path.curve s), regularizedJacobiResidual R Q s W = 0
-
 
 def HasLJacobiInitialDerivative {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -404,13 +347,11 @@ def HasLJacobiInitialDerivative {J : Set ℝ} {F : RicciFlow n M J}
           (congrArg p.curve (Real.sq_sqrt p.nonnegative))
     Q.firstDerivative (Real.sqrt τ₁) = hbase.symm ▸ Z
 
-
 def CompleteBoundedCurvatureOn {J : Set ℝ} (F : RicciFlow n M J)
     (I : Set ℝ) [T3Space M] : Prop :=
   (∀ t ∈ I, MetricComplete (F.metric t)) ∧
     ∃ K : ℝ, 0 ≤ K ∧ ∀ t ∈ I, ∀ x : M,
       |(F.connection t).curvatureTensorNorm x| ≤ K
-
 
 noncomputable def reducedLength {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (p q : M) (τ : ℝ) : ℝ :=

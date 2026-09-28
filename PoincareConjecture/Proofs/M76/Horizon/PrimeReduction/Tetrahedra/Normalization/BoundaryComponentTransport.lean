@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalCarrierComponentTransport
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

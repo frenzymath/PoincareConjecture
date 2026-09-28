@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzArea
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionIntegrability
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.AreaDensityProduct
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -31,31 +19,18 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 def m64AnnulusInterior : Set LoopPlane :=
   (@WithLp.ofLp 2 (Fin 2 → ℝ)) ⁻¹' (Set.pi Set.univ
     (fun i : Fin 2 => Set.Ioo ((0 : Fin 2 → ℝ) i)
       (![curvePeriod, 1] i)))
 
-
-
-
 theorem isOpen_m64AnnulusInterior : IsOpen m64AnnulusInterior := by
   apply (isOpen_set_pi Set.finite_univ (fun _ _ => isOpen_Ioo)).preimage
   exact PiLp.continuous_ofLp 2 _
 
-
-
-
 theorem m64AnnulusDomain_ae_eq_interior :
     m64AnnulusDomain =ᵐ[volume] m64AnnulusInterior := by
   exact m64AnnulusDomain_ae_eq_boxInterior
-
-
-
-
 
 theorem m64Annulus_of_lipschitz
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}
@@ -112,8 +87,6 @@ theorem m64Annulus_of_lipschitz
 
 omit [T2Space M] in
 
-
-
 theorem m64PiecewiseC1Annulus_of_cuts
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) {k : ℕ} (hk : 0 < k)
@@ -128,8 +101,6 @@ theorem m64PiecewiseC1Annulus_of_cuts
 
 omit [T2Space M] in
 
-
-
 theorem m64GeodesicAnnulus_of_sides
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
     {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)
@@ -140,9 +111,6 @@ theorem m64GeodesicAnnulus_of_sides
     M64GeodesicAnnulus D A := by
   intro x
   exact ⟨side x, fun s _ => hmap x s⟩
-
-
-
 
 theorem m64AnnulusWitness_of_lipschitz
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -184,9 +152,6 @@ theorem m64AnnulusWitness_of_lipschitz
 
 omit [T2Space M] in
 
-
-
-
 theorem exists_m63MinimizingGeodesicSide_of_interpolator
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {p q : M} {r : ℝ} {H : ℝ × (M × M) → M}
@@ -227,8 +192,6 @@ theorem exists_m63MinimizingGeodesicSide_of_interpolator
 
 omit [T2Space M] [IsManifold (𝓡 n) ∞ M] in
 
-
-
 theorem contMDiffOn_interpolator_slice
     {U : Set (M × M)} {H : ℝ × (M × M) → M}
     (hH : ContMDiffOn
@@ -253,8 +216,6 @@ theorem contMDiffOn_interpolator_slice
   simpa only [i, Function.comp_def] using hc
 
 omit [T2Space M] [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem m64_contMDiffOn_interpolator_strip
     {U : Set (M × M)} {V : Set ℝ} {H : ℝ × (M × M) → M}
@@ -320,14 +281,8 @@ theorem m64_contMDiffOn_interpolator_strip
   exact hcomp.congr (fun p hp =>
     congrArg (fun q => H (p 1, gamma (p 0), q)) (hupper p hp))
 
-
-
-
 noncomputable def m64PolygonCut (N : ℕ) : Fin (N + 1) → ℝ :=
   fun j => (j.val : ℝ) * m63CellLength N
-
-
-
 
 theorem m64PolygonCut_strictMono {N : ℕ} (hN : 0 < N) :
     StrictMono (m64PolygonCut N) := by
@@ -337,30 +292,19 @@ theorem m64PolygonCut_strictMono {N : ℕ} (hN : 0 < N) :
   dsimp [m64PolygonCut]
   exact mul_lt_mul_of_pos_right hreal (m63CellLength_pos hN)
 
-
-
-
 theorem m64PolygonCut_zero {N : ℕ} : m64PolygonCut N 0 = 0 := by
   simp [m64PolygonCut]
-
-
-
 
 theorem m64PolygonCut_last {N : ℕ} (hN : 0 < N) :
     m64PolygonCut N (Fin.last N) = curvePeriod := by
   simp only [m64PolygonCut, Fin.val_last]
   exact m63_count_mul_cellLength hN
 
-
-
-
 noncomputable def m64PolygonCellSet {N : ℕ} (j : Fin N) : Set LoopPlane :=
   {p | m63CellLeft N j ≤ p 0 ∧ p 0 ≤ m63CellLeft N j + m63CellLength N ∧
     0 ≤ p 1 ∧ p 1 ≤ 1}
 
 omit [T2Space M] in
-
-
 
 theorem m64_polygon_cell_contMDiffOn
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
@@ -403,12 +347,6 @@ theorem m64_polygon_cell_contMDiffOn
   exact m64_contMDiffOn_interpolator_strip hH hgamma
     (polygon.side j).smooth htime hleft hpair' hupper
 
-
-
-
-
-
-
 theorem m64PolygonCut_cellSet {N : ℕ} (j : Fin N) :
     {p : LoopPlane |
       m64PolygonCut N j.castSucc ≤ p 0 ∧
@@ -432,8 +370,6 @@ theorem m64PolygonCut_cellSet {N : ℕ} (j : Fin N) :
     exact ⟨hleft, hright', h0, h1⟩
 
 omit [T2Space M] in
-
-
 
 theorem m64_polygon_piecewiseC1_of_interpolator
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -461,11 +397,7 @@ theorem m64_polygon_piecewiseC1_of_interpolator
   rw [hmap, m64PolygonCut_cellSet]
   exact m64_polygon_cell_contMDiffOn polygon hH hgamma hpair j
 
-
-
 omit [T2Space M] in
-
-
 
 theorem m64AnnulusIntegral_le_of_ae_column_bounds
     {g : RiemannianMetric n M} {f : LoopPlane → M}
@@ -487,9 +419,6 @@ theorem m64AnnulusIntegral_le_of_ae_column_bounds
     Real.sqrt_nonneg _
   exact (m60AreaDensity_le_tangentNorm_product g f z).trans
     (mul_le_mul hz0 hz1 h1 hK0)
-
-
-
 
 theorem m64AnnulusIntegral_le_of_lipschitzOn_and_ae_column_bounds
     (g : RiemannianMetric n M) {f : LoopPlane → M}
@@ -528,9 +457,6 @@ theorem m64AnnulusIntegral_le_of_lipschitzOn_and_ae_column_bounds
   refine m64AnnulusIntegral_le_of_ae_column_bounds hK0 ?_ hInt hcol0 hcol1
   rw [hmeasure]
   exact hfinite
-
-
-
 
 theorem m64AnnulusWitness_of_lipschitz_columns
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

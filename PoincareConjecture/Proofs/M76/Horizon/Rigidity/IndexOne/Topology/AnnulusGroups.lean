@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import Mathlib.Analysis.Convex.MetricSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIntervalTorus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "D" => closedBall (0 : V1) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 noncomputable def annulusProjectionHomotopyEquiv (b : D) :
     ContinuousMap.HomotopyEquiv (D × C) C := by
@@ -52,14 +42,11 @@ noncomputable def annulusProjectionHomotopyEquiv (b : D) :
         have h : q.comp s = ContinuousMap.id C := by ext x; rfl
         rw [h] }
 
-
 theorem annulus_projection_pi1_bijective (x : D × C) :
     Function.Bijective (FundamentalGroup.map
       (⟨Prod.snd, continuous_snd⟩ : C(D × C, C)) x) :=
   FundamentalGroup.map_bijective_of_homotopyEquiv
     (annulusProjectionHomotopyEquiv x.1) x
-
-
 
 theorem annulus_section_pi1_bijective (b : D) (c : C) :
     Function.Bijective (FundamentalGroup.map

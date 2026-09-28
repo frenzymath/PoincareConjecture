@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleAdjacency
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainCoordinates
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -20,7 +11,6 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
-
 
 theorem triangleCofaces_eq_pair_of_distinct
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)
@@ -36,7 +26,6 @@ theorem triangleCofaces_eq_pair_of_distinct
   exact hcofaces e
 
 open Classical in
-
 
 theorem boundary2_ker_coordinates_eq
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)
@@ -58,7 +47,6 @@ theorem boundary2_ker_coordinates_eq
 
 open Classical in
 
-
 theorem boundary2_ker_eq_smul_total
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)
     (hconn : (triangleGraph A).Preconnected)
@@ -69,7 +57,6 @@ theorem boundary2_ker_eq_smul_total
     (fun t => boundary2_ker_coordinates_eq A hcofaces hconn c hc t q)
 
 open Classical in
-
 
 theorem boundary2_ker_eq_bot_of_one_coface
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)
@@ -88,7 +75,6 @@ theorem boundary2_ker_eq_bot_of_one_coface
 
 open Classical in
 
-
 noncomputable def boundary2KerEquiv
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)
     (hconn : (triangleGraph A).Preconnected) (q : Triangle A) :
@@ -106,16 +92,12 @@ noncomputable def boundary2KerEquiv
   map_add' _ _ := rfl
   map_smul' _ _ := rfl
 
-
-
 theorem finrank_boundary2_ker_of_two_cofaces
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)
     (hconn : (triangleGraph A).Connected) :
     Module.finrank (ZMod 2) (LinearMap.ker (edgeCoboundary A).dualMap) = 1 := by
   let q : Triangle A := Classical.choice hconn.nonempty
   simpa using (boundary2KerEquiv A hcofaces hconn.preconnected q).finrank_eq
-
-
 
 theorem finrank_boundary2_ker_of_one_coface
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)

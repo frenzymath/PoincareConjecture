@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.WeakEquation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.WeakToStrong
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

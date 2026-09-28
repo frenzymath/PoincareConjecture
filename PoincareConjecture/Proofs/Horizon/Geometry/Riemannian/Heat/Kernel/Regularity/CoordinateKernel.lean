@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kern
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Spectral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,7 +19,6 @@ variable {n d : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "F" => EuclideanSpace ℝ (Fin d)
 
-
 def coordinateKernelDomain (T : F →L[ℝ] ℝ) (X Y : F →L[ℝ] E)
     (e₁ e₂ : OpenPartialHomeomorph E M) : Set F :=
   {z | 0 < T z ∧ X z ∈ e₁.source ∧ Y z ∈ e₂.source}
@@ -41,13 +31,11 @@ theorem isOpen_coordinateKernelDomain (T : F →L[ℝ] ℝ) (X Y : F →L[ℝ] E
   (isOpen_lt continuous_const T.continuous).inter
     ((e₁.open_source.preimage X.continuous).inter (e₂.open_source.preimage Y.continuous))
 
-
 def coordinateHeatKernel [NeZero n] (D : LeviCivitaData g)
     {Ω : Set M} (S : Poincare.Manifold.SmoothDomain n Ω)
     (T : F →L[ℝ] ℝ) (X Y : F →L[ℝ] E)
     (e₁ e₂ : OpenPartialHomeomorph E M) : F → ℝ :=
   fun z => heatKernelContinuousTime D S (T z) (e₁ (X z)) (e₂ (Y z))
-
 
 def coordinateExhaustionKernel [NeZero n] (D : LeviCivitaData g)
     {Ω : ℕ → Set M} (S : ∀ q, Poincare.Manifold.SmoothDomain n (Ω q))
@@ -118,8 +106,6 @@ theorem eventually_contDiffOn_coordinateHeatKernel [NeZero n] (D : LeviCivitaDat
       (hq₁.trans (hΩmono ((le_max_left _ _).trans hq)))
   · exact (image_mono subset_closure).trans
       (hq₂.trans (hΩmono ((le_max_right _ _).trans hq)))
-
-
 
 theorem locally_eventually_smooth_coordinateHeatKernel [NeZero n] (D : LeviCivitaData g)
     {Ω : ℕ → Set M} (S : ∀ q, Poincare.Manifold.SmoothDomain n (Ω q))

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalCoordinateCutHomology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalZeroHomologyExceptions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory Limits
 namespace PoincareConjecture.M76.PrismBelt

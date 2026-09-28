@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedRadiusPrism
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

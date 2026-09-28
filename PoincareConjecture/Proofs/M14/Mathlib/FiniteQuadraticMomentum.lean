@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyMomentum
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +32,6 @@ private noncomputable local instance trilinearNormedGroup :
 
 private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem contDiffOn_of_finite_quadratic_momentum {a b : ℝ} (hab : a < b)
     {S : Set E} (hS : IsOpen S)

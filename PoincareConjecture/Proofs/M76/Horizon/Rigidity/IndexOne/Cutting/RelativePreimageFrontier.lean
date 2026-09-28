@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.RelativeEndpointChart
 
-
-
-
 set_option autoImplicit false
 open Set
 

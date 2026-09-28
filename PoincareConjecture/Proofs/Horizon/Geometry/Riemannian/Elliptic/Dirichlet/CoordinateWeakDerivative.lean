@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakDerivativeLimit
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,7 +41,6 @@ theorem coordinateDerivative_memLp
   exact MemLp.of_bound (hd.aestronglyMeasurable hK.measurableSet) C
     ((ae_restrict_mem hK.measurableSet).mono fun x hx => hC x hx)
 
-
 def coordinateDerivativeL2
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -65,7 +58,6 @@ theorem coordinateDerivativeL2_ae
     (coordinateDerivativeL2 e he hK hKs v f : EuclideanSpace ℝ (Fin n) → ℝ)
       =ᵐ[volume.restrict K] fun x => fderiv ℝ (fun y => f (e y)) x v :=
   (coordinateDerivative_memLp e he hK hKs v f).coeFn_toLp
-
 
 def coordinateDerivativeLinear
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -104,7 +96,6 @@ def coordinateDerivativeLinear
     exact congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ => L v)
       (fderiv_const_mul hf' c)
 
-
 theorem exists_coordinateDerivative_bound
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -121,7 +112,6 @@ theorem exists_coordinateDerivative_bound
   rw [Poincare.Analysis.Sobolev.norm_toLp_sq_eq_integral, mul_pow, Real.sq_sqrt hC.le]
   exact hbound f
 
-
 def coordinateDerivativeCLM
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -134,7 +124,6 @@ def coordinateDerivativeCLM
     (exists_coordinateDerivative_bound e he hei hK hKs v).choose_spec
 
 end EnergyTest
-
 
 def coordinateDerivative
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -155,8 +144,6 @@ def coordinateDerivative
     coordinateDerivative e he hei hK hKs v (f : H1Zero D Ω) =
       EnergyTest.coordinateDerivativeL2 e he hK hKs v f := by
   exact Poincare.Analysis.Dirichlet.completionMap_coe _ _
-
-
 
 def localCoordinateDerivative
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -188,8 +175,6 @@ theorem localCoordinateDerivative_coe_ae
   exact (Lp.coeFn_LpToLpOfMeasureLeSMul (c := 1) (by simp)
     (by simpa only [one_smul] using hrestrict) _).trans
       ((EnergyTest.coordinateDerivativeL2_ae e he hK hKs v f).filter_mono (ae_mono hrestrict))
-
-
 
 theorem localCoordinateDerivative_weak
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

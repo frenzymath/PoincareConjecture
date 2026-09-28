@@ -3,15 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,14 +11,11 @@ open scoped ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
 
-
 def modelS (κ t : ℝ) : ℝ :=
   if κ = 0 then t else Real.sinh (Real.sqrt κ * t) / Real.sqrt κ
 
-
 def euclideanUnitBallVolume (n : ℕ) : ℝ :=
   (volume (Metric.ball (0 : EuclideanSpace ℝ (Fin n)) 1)).toReal
-
 
 def modelVolume (n : ℕ) (κ r : ℝ) : ℝ :=
   n * euclideanUnitBallVolume n *
@@ -128,7 +116,6 @@ theorem hasDerivAt_modelVolume (n : ℕ) (κ r : ℝ) :
     (intervalIntegrable_modelS_pow n κ 0 r)
     ((continuous_modelS κ).pow (n - 1)).aestronglyMeasurable.stronglyMeasurableAtFilter
     ((continuous_modelS κ).pow (n - 1)).continuousAt).const_mul _
-
 
 theorem tendsto_modelVolume_div_euclidean {n : ℕ} (hn : 1 ≤ n)
     {κ : ℝ} (hκ : 0 ≤ κ) :

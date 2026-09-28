@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SourceCanonical
 import PoincareConjecture.Proofs.M47.SeedSequenceOfInitial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem exists_seed_regular_counterexample_sequence
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

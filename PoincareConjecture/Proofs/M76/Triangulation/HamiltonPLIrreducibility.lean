@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -18,10 +9,6 @@ open Set
 namespace PoincareConjecture.M76
 
 variable {X : Type u} [TopologicalSpace X] {ι : Type v}
-
-
-
-
 
 def IsPLIrreducible (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))
     (R : Set X) : Prop :=

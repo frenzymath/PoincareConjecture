@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TwoRayStraightening
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousLinearMap
-
-
-
 
 theorem exists_height_of_distinct_rays
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -58,9 +46,6 @@ theorem exists_height_of_distinct_rays
     · change ell v = 1
       simp only [ell, LinearMap.sub_apply, LinearMap.smul_apply, hetav,
         smul_zero, sub_zero, hpsi]
-
-
-
 
 theorem exists_straightening_of_distinct_rays
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

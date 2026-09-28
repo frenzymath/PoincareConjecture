@@ -1,13 +1,5 @@
 import Mathlib.Data.Bool.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76

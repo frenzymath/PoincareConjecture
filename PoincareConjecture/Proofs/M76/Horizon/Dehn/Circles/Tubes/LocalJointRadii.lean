@@ -8,8 +8,6 @@ open Set Geometry
 
 namespace Geometry.SimplicialComplex
 
-
-
 theorem dual_interval_eq_centroid_segments
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) [Fintype K.faces]

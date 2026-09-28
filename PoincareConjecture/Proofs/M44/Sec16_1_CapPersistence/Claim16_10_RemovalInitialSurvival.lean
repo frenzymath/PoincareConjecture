@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalSu
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_InitialSphereControl
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderCutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,11 +31,6 @@ noncomputable local instance initialSurvivalTwoJetNorm : NormedAddCommGroup
 
 noncomputable local instance initialSurvivalTwoJetSpace : NormedSpace ℝ
     (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
-
 
 theorem exists_initial_outer_survival_cutoff
     (P : M44CapPersistencePredecessors.{u})

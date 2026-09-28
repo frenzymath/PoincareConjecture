@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFiniteAffineCover
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.card_le_two_of_convexHull_subset
     {S : Set E} {a : ℕ} (h : HasAlexanderCurvePresentation S a)
@@ -71,10 +57,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_ne_height_on_triangle_of_presentation
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) {c : ℝ} {a : ℕ}

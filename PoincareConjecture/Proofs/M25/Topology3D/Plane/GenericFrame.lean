@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.GenericProjection
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_linearMap_prod_bijective {K : Type*} [Field K]
     (H : (K × K) →ₗ[K] K) (hH : H ≠ 0) :
@@ -49,8 +37,6 @@ theorem exists_linearMap_prod_bijective {K : Type*} [Field K]
       exact Prod.ext hx (mul_right_cancel₀ hB (add_left_cancel hh))
     exact ⟨LinearMap.fst K K K, hinj, LinearMap.injective_iff_surjective.mp hinj⟩
 
-
-
 theorem exists_linearEquiv_snd_eq {K E : Type*} [Field K] [AddCommGroup E] [Module K E]
     [FiniteDimensional K E] (hdim : Module.finrank K E = 2)
     (H : E →ₗ[K] K) (hH : H ≠ 0) :
@@ -70,16 +56,12 @@ theorem exists_linearEquiv_snd_eq {K E : Type*} [Field K] [AddCommGroup E] [Modu
   change H (e0.symm (e0 x)) = H x
   rw [e0.symm_apply_apply]
 
-
-
 theorem exists_continuousLinearEquiv_snd_eq {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (hdim : Module.finrank ℝ E = 2) (H : E →ₗ[ℝ] ℝ) (hH : H ≠ 0) :
     ∃ e : E ≃L[ℝ] (ℝ × ℝ), ∀ x, (e x).2 = H x := by
   obtain ⟨e, he⟩ := exists_linearEquiv_snd_eq hdim H hH
   exact ⟨e.toContinuousLinearEquiv, he⟩
-
-
 
 theorem exists_continuousLinearEquiv_snd_injective_comp_finite {E I : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [Finite I]

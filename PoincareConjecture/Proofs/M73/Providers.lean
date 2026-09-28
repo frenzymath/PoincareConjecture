@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M72
 import PoincareConjecture.Proofs.M73
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -15,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m73SphereFactors_from_M72
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

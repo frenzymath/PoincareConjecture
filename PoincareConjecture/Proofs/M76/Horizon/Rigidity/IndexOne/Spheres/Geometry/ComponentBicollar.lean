@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalBallBicollarSides
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -52,8 +44,6 @@ private theorem opposite_sides_of_local_frontier
     · exact Or.inr ⟨hNi, hPo⟩
     · exact (hy.elim (fun h => disjoint_left.mp hPo h (interior_subset hyint))
         (fun h => disjoint_left.mp hNo h (interior_subset hyint))).elim
-
-
 
 theorem ChartwisePLSphere.bicollar_component_sides
     {E X ι : Type*} [TopologicalSpace E] [TopologicalSpace X]
@@ -102,8 +92,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem exists_isolating_open_of_source_component
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -161,8 +149,6 @@ theorem exists_isolating_open_of_source_component
 
 end HamiltonIntervalTorus
 
-
-
 theorem ChartwisePLSphere.exists_small_component_bicollar
     {X ι : Type*} [MetricSpace X]
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {R N S U : Set X}
@@ -205,9 +191,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
-
 
 theorem exists_closed_source_component_bicollar
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

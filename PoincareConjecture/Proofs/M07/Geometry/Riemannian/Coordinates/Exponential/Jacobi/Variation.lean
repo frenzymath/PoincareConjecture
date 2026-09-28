@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Defs
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 
-
-
 noncomputable section
 
 set_option autoImplicit false

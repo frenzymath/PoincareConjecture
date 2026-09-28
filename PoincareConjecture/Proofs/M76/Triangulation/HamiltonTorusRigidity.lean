@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,13 +11,6 @@ namespace PoincareConjecture.M76
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   (L : Submodule ℤ (κ → ℝ))
   {α β : Type*}
-
-
-
-
-
-
-
 
 def HasHamiltonRelativeTorusRigidity [DiscreteTopology L] [IsZLattice ℝ L]
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ))

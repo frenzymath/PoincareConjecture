@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupport
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportEmbeddingHomologyIso
 
-
-
 set_option autoImplicit false
 
 noncomputable section

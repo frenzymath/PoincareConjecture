@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.InitialOriginalPLTower
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoverTowerCount
 import Mathlib.Order.WellFounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z a b
@@ -27,10 +17,6 @@ variable {U : Type u} {E : Type v} {M : Type w} {ι : Type z}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
 
 theorem exists_terminal_reachable
     {G : Type b} [NormedAddCommGroup G] [NormedSpace ℝ G]
@@ -70,10 +56,6 @@ theorem exists_terminal_reachable
   obtain ⟨n, ⟨step⟩⟩ := exists_step_of_two_sheet_cover t hS v0 hr hrPL hp htwo
   have hn : n ∈ A := ht.tail ⟨step⟩
   exact Function.not_lt_argminOn m A hn (hdecrease step)
-
-
-
-
 
 theorem exists_original_terminal_stage [T2Space M] [LocallyCompactSpace M]
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)

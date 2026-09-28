@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Fine
-
-
-
-
-
-
-
 
 namespace Poincare.Topology.Plane.Meshes
 
@@ -28,7 +18,6 @@ private theorem mem_of_mem_convexHull_of_supporting_affine_zeros
   obtain ⟨y, hy⟩ := convexHull_nonempty_iff.mp ⟨x, hxBoth⟩
   exact hunique y hy.1.2 hy.2 ▸ hy.1.1
 
-
 noncomputable def vertexCuts (S : Finset Plane) : List (Plane →ᵃ[ℝ] ℝ) :=
   S.toList.flatMap fun x => [verticalCut (x 0), horizontalCut (x 1)]
 
@@ -45,8 +34,6 @@ theorem horizontalCut_mem_vertexCuts {S : Finset Plane} {x : Plane} (hx : x ∈ 
 namespace TriangleMesh
 
 variable (M : TriangleMesh)
-
-
 
 theorem mem_triangle_vertices_of_monochromatic
     {f g : Plane →ᵃ[ℝ] ℝ} (hf : M.IsMonochromatic f) (hg : M.IsMonochromatic g)
@@ -70,7 +57,6 @@ theorem mem_triangle_vertices_of_monochromatic
   · obtain ⟨v, hv, rfl⟩ := hy
     exact hg' v hv
 
-
 noncomputable def refineAtVertices (S : Finset Plane) : TriangleMesh :=
   M.refineByLines (vertexCuts S)
 
@@ -81,7 +67,6 @@ theorem refineAtVertices_subdivides (S : Finset Plane) :
 theorem refineAtVertices_support (S : Finset Plane) :
     (M.refineAtVertices S).toPlaneComplex.support = M.toPlaneComplex.support :=
   M.refineByLines_support (vertexCuts S)
-
 
 theorem refineAtVertices_mem_triangle_vertices (S : Finset Plane)
     {x : Plane} (hxS : x ∈ S) {t : Finset (M.refineAtVertices S).Vertex}
@@ -97,7 +82,6 @@ theorem refineAtVertices_mem_triangle_vertices (S : Finset Plane)
   · simpa using sub_eq_zero.mp hy0
   · simpa using sub_eq_zero.mp hy1
 
-
 theorem refineAtVertices_exists_incident_triangle (S : Finset Plane)
     {x : Plane} (hxS : x ∈ S) (hx : x ∈ M.toPlaneComplex.support) :
     ∃ t ∈ (M.refineAtVertices S).triangles,
@@ -108,7 +92,6 @@ theorem refineAtVertices_exists_incident_triangle (S : Finset Plane)
   obtain ⟨t, ht, hxt⟩ := mem_iUnion₂.mp hx'
   obtain ⟨v, hv, hvx⟩ := M.refineAtVertices_mem_triangle_vertices S hxS ht hxt
   exact ⟨t, ht, v, hv, hvx⟩
-
 
 theorem exists_subdivision_with_vertices (S : Finset Plane)
     (hS : (S : Set Plane) ⊆ M.toPlaneComplex.support) :

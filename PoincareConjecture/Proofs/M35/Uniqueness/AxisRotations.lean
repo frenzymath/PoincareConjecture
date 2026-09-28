@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialKilling
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ private theorem matrix_action_mul (A B : Matrix (Fin 3) (Fin 3) ℝ)
   change WithLp.toLp 2 ((A * B) *ᵥ x.ofLp) =
     WithLp.toLp 2 (A *ᵥ (B *ᵥ x.ofLp))
   rw [Matrix.mulVec_mulVec]
-
-
 
 theorem exists_axis_rotation (x : StandardCapSpace) :
     ∃ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ,
@@ -70,8 +58,6 @@ theorem exists_axis_rotation (x : StandardCapSpace) :
       rw [matrix_action_mul, hJu, haction]
       exact hL
 
-
-
 theorem standardRotation_inner
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x y : StandardCapSpace) :
     inner ℝ (standardRotation A x) (standardRotation A y) = inner ℝ x y := by
@@ -80,18 +66,14 @@ theorem standardRotation_inner
   change (A.1 *ᵥ y.ofLp) ⬝ᵥ (A.1 *ᵥ x.ofLp) = y.ofLp ⬝ᵥ x.ofLp
   rw [Matrix.dotProduct_mulVec, Matrix.vecMul_mulVec, hAA, Matrix.vecMul_one]
 
-
-
 theorem standardRotation_mul
     (A B : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x : StandardCapSpace) :
     standardRotation (A * B) x = standardRotation A (standardRotation B x) :=
   matrix_action_mul A.1 B.1 x
 
-
 theorem standardRotation_one (x : StandardCapSpace) : standardRotation 1 x = x := by
   change Matrix.toEuclideanLin (1 : Matrix (Fin 3) (Fin 3) ℝ) x = x
   simp
-
 
 theorem standardRotation_inv_apply
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x : StandardCapSpace) :

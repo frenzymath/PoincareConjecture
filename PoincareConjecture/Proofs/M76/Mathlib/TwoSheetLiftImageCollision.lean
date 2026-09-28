@@ -2,29 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.TwoSheetCoverInvolution
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringDeformationRetraction
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace IsCoveringMap
-
-
-
-
-
 
 theorem exists_two_sheet_lift_image_collision
     {A E X : Type*} [TopologicalSpace A] [TopologicalSpace E] [TopologicalSpace X]

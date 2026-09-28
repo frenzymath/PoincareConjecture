@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureSourcePointScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_earlier_canonical
     {ι : Type*} (S : ℕ → SurgeryFlowData.{u}) (b t Q r : ℕ → ℝ)

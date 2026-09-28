@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.InnermostReturn
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.OuterStrandContacts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.ProjectedFaceContacts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Module TriangleDiskModel
 
@@ -138,10 +129,6 @@ private theorem ribbon_end_trace_mem_open_base {r : ℝ} (hr : 0 < r)
     rintro _ ⟨c, hc, rfl⟩
     exact (hbase c hc).1
   simpa only [interior_Icc] using interior_mono hsub hopen
-
-
-
-
 
 theorem exists_original_sphere_system_returning_replacement_strands_with_other_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -518,7 +505,6 @@ theorem exists_original_sphere_system_returning_replacement_strands_with_other_f
   obtain ⟨hstrandPL, hstrandInj, _⟩ := hstrands c (Ioo_subset_Icc_self hc)
   exact ⟨c, abs_lt.mpr hc, hcδ, hcne, hleft, hright, hstrandPL, hstrandInj,
     hwball, hball, hcontact, haxiscontact, hdis, axis, haxisPL, haxisfix⟩
-
 
 theorem exists_original_sphere_system_returning_replacement_strands
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

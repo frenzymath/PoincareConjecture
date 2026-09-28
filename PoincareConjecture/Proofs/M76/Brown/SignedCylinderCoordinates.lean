@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.SpindleHeight
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

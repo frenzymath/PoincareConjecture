@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPicardSmooth
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPicardEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {a b : ℝ}
-
-
-
-
 
 theorem closedODEFamily_contDiffAt (hab : a < b) (t₀ : Icc a b)
     (f : ℝ × E → E) (hf : ContDiffOn ℝ ∞ f (Icc a b ×ˢ univ))

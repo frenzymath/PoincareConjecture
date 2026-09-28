@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskAlternative
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.ExtendedFailureArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -28,8 +19,6 @@ local notation "Rim" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 def HamiltonZeroBoundaryFailureArc {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0) (phi : C(H0, H0)) : Prop :=
   ∃ (P : ℝ → X0) (k : C(unitInterval, X0)),
@@ -40,8 +29,6 @@ def HamiltonZeroBoundaryFailureArc {ι : Type*}
     Nonempty (((hamiltonZeroAmbientMap phi).comp k).HomotopyRel
       (ContinuousMap.const unitInterval (hamiltonZeroAmbientMap phi (k 0)))
       ({0, 1} : Set unitInterval))
-
-
 
 theorem HamiltonZeroBoundaryFailureArc.of_exterior_homotopy
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
@@ -63,8 +50,6 @@ theorem HamiltonZeroBoundaryFailureArc.of_exterior_homotopy
     (G.fst_eq_snd ((hkfront 0).mpr (Or.inl rfl)).2).symm
   refine ⟨P, k, hPL, hPk, hk, hkR, hkfront, hkint, ?_⟩
   exact ⟨(H.trans F).cast rfl (congrArg (ContinuousMap.const unitInterval) heq)⟩
-
-
 
 theorem hamiltonZero_boundary_failure_of_installed_folded_annulus
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
@@ -108,7 +93,6 @@ theorem hamiltonZero_boundary_failure_of_installed_folded_annulus
     hj.comp (hi i), hkR, hkfront, hkint,
     ⟨(ContinuousMap.HomotopyRel.refl ((hamiltonZeroAmbientMap phi).comp k) _).cast rfl heq⟩⟩
 
-
 def HamiltonZeroTerminalHomeomorphicDisks {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
     (R : Set X0) (phi : C(H0, H0)) (u v alpha beta a b : ℝ) : Prop :=
@@ -125,8 +109,6 @@ def HamiltonZeroTerminalHomeomorphicDisks {ι κ : Type*}
           j i '' Disk) ∧
     HamiltonZeroHomeomorphicDiskInstallation e d R phi j
       (fun i => ((if i.1 then v else u : ℝ) : C0)) alpha beta a b
-
-
 
 def HamiltonZeroSourceBoundaryDiskData {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Axis
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.SelectedChartStars
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -130,6 +121,4 @@ theorem SourceCircleDecomposition.exists_component_axis_model_with_raw_branches
     · simpa only [sources, if_true] using (hT true).2.1
     · exact (hM (.inr true)).2.1.trans (hT true).2.2.2.symm
 
-
 end PoincareConjecture.M76.Dehn.Annuli
-

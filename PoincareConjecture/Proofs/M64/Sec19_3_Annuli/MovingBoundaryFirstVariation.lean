@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DouglasMorreyInterface
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MinimalAnnulusFamily
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -43,13 +27,6 @@ private theorem annulusForward_of_quotient_tendsto
   filter_upwards [hev] with h hh
   exact le_of_lt hh
 
-
-
-
-
-
-
-
 structure M64MovingBoundaryFirstVariationCertificate
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
     (c0 c1 : ℝ → ℝ → P.charts.Point) (rate : ℝ → ℝ) where
@@ -74,10 +51,6 @@ structure M64MovingBoundaryFirstVariationCertificate
         (𝓝[>] 0) (𝓝 d)
 
 namespace M64MovingBoundaryFirstVariationCertificate
-
-
-
-
 
 noncomputable def to_minimal_annulus_family
     {circumference : ℝ} {P : M62.CircleProductData F circumference}

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLArc
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.RelativeFilledFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem isConnected_exterior_of_connected_relative_compl
     {X : Type*} [TopologicalSpace X] {R L : Set X}
@@ -52,10 +39,6 @@ end Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_arc_in_filled_complement
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

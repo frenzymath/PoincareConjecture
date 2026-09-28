@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.GeodesicFlow
 
-
-
-
-
-
-
-
 noncomputable section
 
 namespace PoincareConjecture.CoordinateExponential
@@ -15,7 +8,6 @@ open Set Metric
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 def velocityScale (c : ℝ) : E × E →L[ℝ] E × E :=
   (ContinuousLinearMap.fst ℝ E E).prod (c • ContinuousLinearMap.snd ℝ E E)
@@ -43,8 +35,6 @@ theorem coordinateGeodesicField_velocityScale
     coordinateGeodesicField B (velocityScale c z) =
       c • velocityScale c (coordinateGeodesicField B z) := by
   ext <;> simp [coordinateGeodesicField, coordinateChristoffel_smul_smul, smul_smul]
-
-
 
 theorem hasDerivAt_velocityScale
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {γ : ℝ → E × E} {c t : ℝ}

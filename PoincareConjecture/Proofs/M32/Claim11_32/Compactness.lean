@@ -1,20 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -30,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions F T M}
 
-
-
 theorem terminalScalarSublevel_isCompact (Q : SingularLimitConclusion H) (q : ℝ) :
     IsCompact {x | (Q.extension.extended.connection T).scalarCurvature x ≤ q} := by
   obtain ⟨L, hL⟩ := Q.scalar_lower
@@ -40,8 +24,6 @@ theorem terminalScalarSublevel_isCompact (Q : SingularLimitConclusion H) (q : �
     exact ⟨fun hx => ⟨hL x, hx⟩, fun hx => hx.2⟩
   rw [← Q.terminal_scalar_eq, heq]
   exact Q.scalar_proper _ isCompact_Icc
-
-
 
 theorem terminalClosure_isCompact_of_scalarBound (Q : SingularLimitConclusion H)
     (U : Set (Q.extension.extended.slice T).carrier) (q : ℝ)

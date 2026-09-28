@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -19,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem tendsto_curvatureTensorNorm_of_partialDiffeomorph_metric_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinderScalar_continuousOn_slab
     (P : M44CapPersistencePredecessors.{u})
@@ -42,9 +32,6 @@ theorem cylinderScalar_continuousOn_slab
   apply (hf.comp hclock.continuousOn hVtime).congr
   intro s hs
   exact cylinderScalar_eq_slab e hx hab hJ hfree r s hr (hVI hs) hr' (hVtime hs)
-
-
-
 
 theorem cylinderScalar_hasDerivAt_slab
     (P : M44CapPersistencePredecessors.{u})

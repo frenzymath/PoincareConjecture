@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,7 +58,6 @@ theorem reversed_metric_comparison :
   have hreflect := contMDiff_space.mdifferentiable (by simp) z
   simp only [B, generalizedCylinderPullback, dif_pos hs, pullback, Function.comp_apply,
     mfderiv_comp z hcoord hreflect, ContinuousLinearMap.comp_apply, mfderiv_space_apply]
-
 
 def reversed : GeneralizedStrongNeck F t epsilon :=
   { N with
@@ -142,7 +130,6 @@ namespace HornEndCut
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta rho : ℝ}
   {E : GeneralizedFlowExtension F T} {H : StrongHorn E epsilon}
   {N : TerminalStrongNeck E delta} (C : HornEndCut H N rho)
-
 
 def reversed : HornEndCut H N.reversed rho where
   point := C.point

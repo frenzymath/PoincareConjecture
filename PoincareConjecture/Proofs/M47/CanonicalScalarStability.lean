@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -33,8 +23,6 @@ private theorem continuous_scalar_timeSubtype (hC : RicciFlowCurvatureTheory.{u}
     (fun z => ⟨z.1.property, mem_univ z.2⟩)
   exact h
 
-
-
 theorem scalar_uniform_near_time_on_compact (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) {K : Set M} (hK : IsCompact K)
     (t : J) {eta : ℝ} (heta : 0 < eta) :
@@ -52,8 +40,6 @@ theorem scalar_uniform_near_time_on_compact (hC : RicciFlowCurvatureTheory.{u})
       (F.connection t.val).scalarCurvature x| < eta
     simpa only [sub_self, abs_zero] using heta))
 
-
-
 theorem continuous_scalarSup_on_compact (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) {K : Set M} (hK : IsCompact K) :
     Continuous (fun t : J => scalarCurvatureSupOn (F.metric t.val) (F.connection t.val) K) := by
@@ -61,8 +47,6 @@ theorem continuous_scalarSup_on_compact (hC : RicciFlowCurvatureTheory.{u})
     (f := fun (t : J) x => (F.connection t.val).scalarCurvature x)
     (continuous_scalar_timeSubtype hC F)
   simpa only [scalarCurvatureSupOn, image_eq_range] using h
-
-
 
 theorem continuous_scalarInf_on_compact (hC : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (F : RicciFlow 3 M J) {K : Set M} (hK : IsCompact K) :
@@ -74,8 +58,6 @@ theorem continuous_scalarInf_on_compact (hC : RicciFlowCurvatureTheory.{u})
   simpa only [image_eq_range] using h
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem cap_uniform_scalar_lower {g : RiemannianMetric 3 M} (N : CapCertificate g) :
     ∃ m : ℝ, 0 < m ∧ ∃ b : ℝ, 1 ≤ b ∧ b < N.cap_constant ∧
@@ -98,9 +80,6 @@ theorem cap_uniform_scalar_lower {g : RiemannianMetric 3 M} (N : CapCertificate 
   intro x hx
   exact (div_le_iff₀ hbpos).mpr (by
     simpa only [mul_comm] using hratio x hx x0 hxcarrier)
-
-
-
 
 theorem cap_scalar_ratio_persists [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J)

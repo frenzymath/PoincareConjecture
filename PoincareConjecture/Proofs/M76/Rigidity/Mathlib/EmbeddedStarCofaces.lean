@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem faceLink_ncard_eq_two_of_embedded_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -53,9 +42,6 @@ theorem faceLink_ncard_eq_two_of_embedded_star
     rw [← K.closedFaceStar_singleton_eq_closedStar]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hNl] at hlink
-
-
-
 
 theorem exists_paired_facet_of_embedded_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

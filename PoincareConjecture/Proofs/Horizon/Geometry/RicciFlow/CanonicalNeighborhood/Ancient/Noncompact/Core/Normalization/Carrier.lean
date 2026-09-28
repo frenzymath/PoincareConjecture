@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Based
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Geodesic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +40,6 @@ theorem MetricHomothety.symm_one : MetricHomothety h g e.symm 1 := by
     (mfderiv (𝓡 3) (𝓡 3) e.symm y v) (mfderiv (𝓡 3) (𝓡 3) e.symm y w)
   rw [hv v, hv w, e.apply_symm_apply, one_mul] at hm
   simpa only [one_mul] using hm.symm
-
-
 
 def RiemannianMetric.PointSoulData.mapIsometry (P : RiemannianMetric.PointSoulData g) :
     RiemannianMetric.PointSoulData h where
@@ -93,7 +81,6 @@ def RiemannianMetric.PointSoulData.mapIsometry (P : RiemannianMetric.PointSoulDa
     (P : RiemannianMetric.PointSoulData g) :
     (P.mapIsometry e he).center = e P.center := rfl
 
-
 theorem RiemannianMetric.PointSoulData.mapIsometry_edist
     (P : RiemannianMetric.PointSoulData g) (x : M) :
     h.edist (e x) (P.mapIsometry e he).center = g.edist x P.center := by
@@ -120,7 +107,6 @@ variable {M : Type u} [TopologicalSpace M]
   (hkappa : 0 < kappa) (hnoncollapsed : AncientKappaNoncollapsed K.flow kappa)
   (hnormalized : (K.flow.connection 0).scalarCurvature q = 1)
 
-
 def pointSoulToSmallBased (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :
     RiemannianMetric.PointSoulData
       ((K.toSmallBased q hkappa hnoncollapsed hnormalized).flow.flow.metric 0) :=
@@ -131,8 +117,6 @@ def pointSoulToSmallBased (P : RiemannianMetric.PointSoulData (K.flow.metric 0))
     (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :
     (K.pointSoulToSmallBased q hkappa hnoncollapsed hnormalized P).center =
       equivShrink M P.center := rfl
-
-
 
 theorem pointSoulToSmallBased_edist
     (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :

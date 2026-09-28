@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M51.OpenVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology ENNReal
@@ -23,7 +13,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
 theorem retainedPre_isClopen_of_zero_caps
     (E : SurgeryEventData g₀ K P slice metric T) (hzero : E.cap_count = 0) :
     IsClopen E.retained_pre := by
@@ -33,7 +22,6 @@ theorem retainedPre_isClopen_of_zero_caps
   intro x hx
   obtain ⟨i, _⟩ := Set.mem_iUnion.mp hx
   exact Nat.not_lt_zero i.val (hzero ▸ i.isLt)
-
 
 theorem discardedComponent_of_zero_caps
     (E : SurgeryEventData g₀ K P slice metric T)

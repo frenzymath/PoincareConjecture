@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusPeriodMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalCrossingResolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -22,14 +12,11 @@ namespace Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def identityTube (L d : ℝ) : Set C3 :=
   (Icc (-d) d ×ˢ Icc (-d) d) ×ˢ Icc 0 (4 * L)
 
-
 def identityTubeSide (L d : ℝ) : Set C3 :=
   {z | z ∈ identityTube L d ∧ (|z.1.1| = d ∨ |z.1.2| = d)}
-
 
 def identityTubeAxis (L d : ℝ) : Set C3 :=
   {z | z ∈ identityTube L d ∧ z.1 = (0, 0)}
@@ -39,7 +26,6 @@ private theorem abs_resolution_height (b : ℝ) (positive : Bool) (u : ℝ) :
   cases positive <;> simp only [signedHeight, Bool.false_eq_true, if_false,
     if_true, height, abs_neg,
     abs_of_nonneg (le_max_of_le_left (abs_nonneg u))]
-
 
 theorem identity_strip_mapsTo {L d b : ℝ} (hbd : b ≤ d) (positive : Bool) :
     MapsTo (strip b positive) (rectangle (4 * L) d) (identityTube L d) := by
@@ -74,9 +60,6 @@ private theorem finitePL_signed_period_strip {L d : ℝ} (hL : 0 < L) (hd : 0 < 
   have h := (hu.prod_mk hh).prod_mk ht
   change FinitePiecewiseAffineOn (strip b positive) K.space at h
   simpa only [hKs, rectangle] using h
-
-
-
 
 theorem exists_identity_resolving_annulus
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

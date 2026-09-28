@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialCircleTraces
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +10,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m64LowerExtension_circle_fixed_trace
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -70,8 +56,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 gamma : ℝ → M}
 
-
-
 theorem M64ObservedWeakAnnulus.lower_circle_fixed_trace
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (hei : IsClosedEmbedding e) (hc0 : Continuous c0) (hgamma : Continuous gamma)
@@ -82,8 +66,6 @@ theorem M64ObservedWeakAnnulus.lower_circle_fixed_trace
       (Icc (0 : ℝ) Real.pi) := by
   let : T2Space M := hei.isEmbedding.t2Space
   exact m64LowerExtension_circle_fixed_trace hc0 hgamma ha hr htrace
-
-
 
 theorem M64ObservedWeakAnnulus.lower_circle_endpoints
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

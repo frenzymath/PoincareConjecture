@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_CompactPerturbation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ c τ₂ : ℝ} {x z₁ z₂ y : G.Point}
-
-
 
 theorem joinedCurve_action_integrable (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ c x z₁) (q : M14BackwardPath G T c τ₂ z₂ y)
@@ -62,9 +50,6 @@ theorem joinedCurve_action_integrable (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     exact hright t ht.le)
   exact hleftNew.trans (hmiddle.trans hrightNew)
 
-
-
-
 noncomputable def pathOfC1Join (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ c x z₁) (q : M14BackwardPath G T c τ₂ z₂ y)
     (γ : ℝ → G.Point) {a b : ℝ}
@@ -92,8 +77,6 @@ noncomputable def pathOfC1Join (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     filter_upwards [isOpen_Ioo.mem_nhds hs] with t ht
     exact hclock t (Ioo_subset_Icc_self ht)
   action_integrable := joinedCurve_action_integrable hM12 p q γ ha hac hcb hb hγ hleft hright
-
-
 
 theorem action_pathOfC1Join (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (p : M14BackwardPath G T τ₁ c x z₁) (q : M14BackwardPath G T c τ₂ z₂ y)

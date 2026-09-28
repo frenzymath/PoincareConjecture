@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,7 +22,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include D in
 
-
 theorem ordinaryCapture_slice_range (t : (G.timeIntervals.interval K).Point) :
     range (movingGaugeSliceMap e.toMovingSpacetimeGauge G.slices t) =
       {q : (G.slices t.val).Point | q.val ∈ range e.toSpacetime} := by
@@ -42,8 +32,6 @@ theorem ordinaryCapture_slice_range (t : (G.timeIntervals.interval K).Point) :
   · intro hq
     refine ⟨D.point_map q.val, Subtype.ext ?_⟩
     exact ordinaryCapture_point_reconstruct D hq t q.property
-
-
 
 def ordinaryCaptureSliceChart (t : (G.timeIntervals.interval K).Point) :
     OpenPartialHomeomorph C (G.slices t.val).Point where
@@ -65,18 +53,12 @@ def ordinaryCaptureSliceChart (t : (G.timeIntervals.interval K).Point) :
   continuousOn_invFun :=
     D.point_map_continuous.comp continuous_subtype_val.continuousOn (fun _ hq => hq)
 
-
-
 theorem ordinaryCaptureSliceChart_source (t : (G.timeIntervals.interval K).Point) :
     (ordinaryCaptureSliceChart D hCoordinates t).source = univ := rfl
-
-
 
 theorem ordinaryCaptureSliceChart_smooth (t : (G.timeIntervals.interval K).Point) :
     ContMDiff (𝓡 n) (𝓡 n) ∞ (ordinaryCaptureSliceChart D hCoordinates t) :=
   ((ordinaryCapture_movingCalculus D hCoordinates).slice_localDiffeomorph t).contMDiff
-
-
 
 theorem ordinaryCaptureSliceChart_symm_smooth (t : (G.timeIntervals.interval K).Point) :
     ContMDiffOn (𝓡 n) (𝓡 n) ∞ (ordinaryCaptureSliceChart D hCoordinates t).symm
@@ -96,8 +78,6 @@ theorem ordinaryCaptureSliceChart_symm_smooth (t : (G.timeIntervals.interval K).
     exact (congrArg f.symm h).symm.trans (f.left_inv (mem_univ _))
   exact ((hl.localInverse_contMDiffOn.contMDiffAt
     (hl.localInverse_open_source.mem_nhds hq')).congr_of_eventuallyEq hagree).contMDiffWithinAt
-
-
 
 theorem ordinaryCaptureSliceChart_metric (t : (G.timeIntervals.interval K).Point)
     (c : C) (v w : TangentSpace (𝓡 n) c) :

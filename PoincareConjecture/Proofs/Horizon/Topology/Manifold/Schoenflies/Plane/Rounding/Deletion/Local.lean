@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.RoundedPolygon
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Reduction.DeleteVertex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,7 +58,6 @@ theorem polygonDeleteVertex_last_integer (p : Polygon E (n + 4)) {j : ℤ}
     polygonIntegerIndex_eq_mk hj (show j < n + 4 by omega)]
   rfl
 
-
 theorem roundedPolygon_delete_last_eq_of_interior (p : Polygon E (n + 4))
     {ρ : ℝ → ℝ} {δ : ℝ} (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
     (htail : ∀ s, δ ≤ |s| → ρ s = |s|)
@@ -83,7 +73,6 @@ theorem roundedPolygon_delete_last_eq_of_interior (p : Polygon E (n + 4))
   rw [polygonDeleteVertex_last_integer p (by omega) (by omega),
     polygonDeleteVertex_last_integer p (by omega) (by omega),
     polygonDeleteVertex_last_integer p (by omega) (by omega)]
-
 
 theorem roundedPolygon_delete_last_eq_at_zero (p : Polygon E (n + 4))
     (hmid : p (Fin.last (n + 3)) =
@@ -143,7 +132,6 @@ theorem roundedPolygonParameter_eq_at_last (p : Polygon E (n + 2))
   simp only [Nat.cast_add, Nat.cast_one] at hidx hidxprev hidxnext ⊢
   simp only [hidx, hidxprev, hidxnext, Int.cast_add, Int.cast_natCast, Int.cast_one]
 
-
 theorem roundedPolygon_delete_last_eq_at_penultimate_parameter (p : Polygon E (n + 4))
     {ρ : ℝ → ℝ} {δ : ℝ} (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
     (htail : ∀ s, δ ≤ |s| → ρ s = |s|)
@@ -160,7 +148,6 @@ theorem roundedPolygon_delete_last_eq_at_penultimate_parameter (p : Polygon E (n
   simp only [polygonDeleteVertex_last_apply, Nat.cast_add, Nat.cast_one, Fin.castSucc_zero]
   congr 2
   ring
-
 
 theorem roundedPolygon_delete_last_eq_at_last (p : Polygon E (n + 4))
     (hmid : p (Fin.last (n + 3)) =
@@ -194,7 +181,6 @@ theorem roundedPolygon_delete_last_eq_at_last (p : Polygon E (n + 4))
     hc, hmid, midpoint_eq_smul_add, invOf_eq_inv]
   simp only [roundedCorner, Nat.cast_add, Nat.cast_ofNat]
   module
-
 
 theorem roundedPolygon_delete_last_eq_at_penultimate (p : Polygon E (n + 4))
     (hmid : p (Fin.last (n + 3)) =

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.NormalizedActionDerivative
 import PoincareConjecture.Proofs.M09.ExponentialActionDifferential
 import PoincareConjecture.Proofs.M09.ParametricCurveDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.NativeChartMeasureData
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureDetectionNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -54,7 +46,6 @@ theorem sourcePositiveRegion_cover :
   exact d.weight_support_subset i (subset_tsupport (d.weight i) hi.ne')
 
 end FiniteChartData
-
 
 structure FiniteChartLocalizationData (d : FiniteChartData (n := n) (M := M)) where
   patches : Finset (d.centers × ℕ)
@@ -126,7 +117,6 @@ theorem supportImage_compact (a : L.patches) : IsCompact (L.supportImage a) :=
 end FiniteChartLocalizationData
 
 variable [T2Space M] [CompactSpace M]
-
 
 theorem exists_finiteChartLocalizationData (d : FiniteChartData (n := n) (M := M)) :
     Nonempty (FiniteChartLocalizationData d) := by

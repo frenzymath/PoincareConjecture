@@ -10,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem ComponentIdentityAnnuliData.exists_oriented_collars
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem EpsilonNeck.closure_ball_four_scale_subset
     (N : EpsilonNeck g) (hepsilon : N.epsilon ≤ 1 / 200)
@@ -73,15 +62,12 @@ theorem EpsilonNeck.closure_ball_four_scale_subset
   exact (closure_minimal hball (N.isCompact_closedCollar h32).isClosed).trans
     (N.closedCollar_subset_carrier h32)
 
-
 theorem CapCertificate.closure_ball_boundary_scale_subset (A : CapCertificate g)
     {x : M} (hx : x ∈ A.boundary_sphere) :
     closure (g.ball x (4 * A.boundary_neck.scale)) ⊆ A.carrier := by
   apply (A.boundary_neck.closure_ball_four_scale_subset ?_ ?_).trans A.boundary_neck_subset
   · simpa only [A.boundary_neck_epsilon] using A.epsilon_le_threshold
   · simpa only [A.boundary_eq_neck_sphere] using hx
-
-
 
 theorem EpsilonNeck.exists_scalar_radius_boundary_buffer :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

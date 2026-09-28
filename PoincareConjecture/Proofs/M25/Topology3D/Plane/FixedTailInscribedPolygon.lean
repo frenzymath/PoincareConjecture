@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenLineChords
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenLineInscribedPolygon
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -67,8 +59,6 @@ private theorem simple_axis_mesh {n : ℕ} (p : Polygon (ℝ × ℝ) (n + 2))
     exact ((continuous_id.mul continuous_const).add continuous_const).continuousOn
   simpa only [he, zero_mul, zero_add, one_mul, sub_add_cancel] using
     hc.image_Icc_of_monotoneOn (by norm_num) (hmono i).monotoneOn
-
-
 
 theorem exists_fixedTail_openLine_inscribed_polygon_fine
     (C : ℝ × ℝ → ℝ × ℝ) {R ε : ℝ} (hR : 0 < R) (hε : 0 < ε)
@@ -212,8 +202,6 @@ theorem exists_fixedTail_openLine_inscribed_polygon_fine
         exact hz.imp le_of_lt le_of_lt
       rw [hstat z hz' (m v)]
       exact ⟨hvlo, hvhi⟩
-
-
 
 theorem exists_fixedTail_openLine_inscribed_polygon
     (C : ℝ × ℝ → ℝ × ℝ) {R : ℝ} (hR : 0 < R)

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceMetri
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceChartMetric
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_neck_partial_chart_jet_bound_uniform
     {epsilon : ℝ} (m : ℕ) (hm : m + 1 ≤ Nat.floor epsilon⁻¹)
@@ -125,8 +114,6 @@ theorem terminalCurvature_exists_neck_partial_chart_jet_bound_uniform
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem terminalCurvature_exists_neck_partial_chart_jet_bound
     {epsilon : ℝ} (m : ℕ) (hm : m + 1 ≤ Nat.floor epsilon⁻¹)

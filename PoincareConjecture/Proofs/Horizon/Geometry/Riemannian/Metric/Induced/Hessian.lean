@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +15,6 @@ namespace Poincare.Geometry.Curvature.Hypersurface
 variable {m n : ℕ}
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
-
 
 theorem hessian_comp_eq_add_secondFundamentalForm
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -108,8 +100,6 @@ private theorem hessian_realized_chart (D : LeviCivitaData g)
     D.hessian φ ((extChartAt (𝓡 n) x).symm (extChartAt (𝓡 n) x x)) u v at he
   erw [hp] at he
   exact he
-
-
 
 theorem exists_normal_hessian_correction
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

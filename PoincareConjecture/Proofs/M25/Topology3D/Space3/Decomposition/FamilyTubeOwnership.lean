@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_family_tube_owner
     (n : ℕ) (psi : Fin n → UnitTwoSphere × ℝ → E3)

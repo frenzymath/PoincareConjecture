@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.InteriorIntervalComplement
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

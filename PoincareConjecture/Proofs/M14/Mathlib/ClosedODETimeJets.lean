@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathJointSmooth
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathSubstitution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,15 +12,11 @@ variable {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [FiniteDimensional ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {a b : ℝ}
 
-
-
-
 noncomputable def closedODETimeJet (C : Set ℝ) (f : ℝ × E → E) : ℕ → ℝ × E → E
   | 0 => Prod.snd
   | j + 1 => fun z => fderivWithin ℝ (closedODETimeJet C f j) (C ×ˢ univ) z (1, f z)
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem closedODETimeJet_contDiffOn {C : Set ℝ} (hC : UniqueDiffOn ℝ C)
     (f : ℝ × E → E) (hf : ContDiffOn ℝ ∞ f (C ×ˢ univ)) (j : ℕ) :
@@ -39,10 +26,6 @@ theorem closedODETimeJet_contDiffOn {C : Set ℝ} (hC : UniqueDiffOn ℝ C)
   | succ j ih =>
     exact (ih.fderivWithin (hC.prod uniqueDiffOn_univ) (by simp)).clm_apply
       (contDiffOn_const.prodMk hf)
-
-
-
-
 
 theorem closedODEFamily_joint_contDiff (hab : a < b) (t₀ : Icc a b)
     {U : Set P} (hU : IsOpen U) (f : ℝ × E → E)

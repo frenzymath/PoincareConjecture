@@ -1,18 +1,6 @@
 import PoincareConjecture.Statements.M64Approximation
 import PoincareConjecture.Proofs.M63.Adapters
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -28,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta : ℝ}
 
-
-
-
 theorem m64AppliedFamilyEstimates_from_M63
     (analytic : M63AnalyticConclusion F G) (C : M63FamilyConclusion G Gamma zeta) :
     M64AppliedFamilyEstimates G C := by
@@ -41,9 +26,6 @@ theorem m64AppliedFamilyEstimates_from_M63
     analytic.product_estimates circumference h b hab le_rfl
       ((C.solutions circumference h).curve z)
       (m63C2_of_m62 ((C.solutions circumference h).shrinking z))⟩
-
-
-
 
 theorem m64EvolvingApproximation_from_M63
     [T2Space M] [SecondCountableTopology M]
@@ -62,10 +44,6 @@ theorem m64EvolvingApproximation_from_M63
            approximation_eq := hC
            estimates := m64AppliedFamilyEstimates_from_M63 analytic C }⟩
 
-
-
-
-
 theorem m64FamilyInitialLength (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (z : LoopTwoSphere) :
     m62Length (G.product circumference h).flow
@@ -80,9 +58,6 @@ theorem m64FamilyInitialLength (C : M63FamilyConclusion G Gamma zeta)
           (curveVelocity (n := 3 + 1) gamma x))
     (funext ((C.solutions circumference h).initial_eq z))
 
-
-
-
 theorem m64FamilyEnergyIntegrable (C : M63FamilyConclusion G Gamma zeta)
     (E : M64AppliedFamilyEstimates G C)
     (circumference : ℝ) (h : 0 < circumference) (z : LoopTwoSphere) :
@@ -94,9 +69,6 @@ theorem m64FamilyEnergyIntegrable (C : M63FamilyConclusion G Gamma zeta)
             ((C.solutions circumference h).curve z) t x)
       MeasureTheory.volume a b :=
   (E.curve_estimates circumference h z).energy_integrable
-
-
-
 
 theorem m64FamilyEnergyBound (C : M63FamilyConclusion G Gamma zeta)
     (E : M64AppliedFamilyEstimates G C)

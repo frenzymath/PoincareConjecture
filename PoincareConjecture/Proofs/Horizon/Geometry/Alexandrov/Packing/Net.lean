@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.Collinea
 import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,8 +24,6 @@ theorem ComparisonAnglePackingBound.card_le
       hs _ (e i).property _ (e j).property (fun heq =>
         hij (e.injective (Subtype.ext heq))))
   simpa only [Fintype.card_coe] using hcard
-
-
 
 theorem ComparisonAnglePackingBound.exists_finite_cover
     (h : ComparisonAnglePackingBound X α N) (p : X) :
@@ -74,8 +64,6 @@ theorem ComparisonAnglePackingBound.exists_finite_cover
   have hle := hmax hinsert (Finset.card_le_card (Finset.subset_insert y s))
   rw [Finset.card_insert_of_notMem hys] at hle
   omega
-
-
 
 theorem ComparisonAnglePackingBound.exists_angle_net
     (h : ComparisonAnglePackingBound X α N) (hα : 0 ≤ α) (p : X) :

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.QuarterOverlap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_scale_comparison_at_common_closure :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -50,8 +37,6 @@ theorem exists_scale_comparison_at_common_closure :
     apply (mul_le_mul_iff_left₀ hQ).mp
     nlinarith
 
-
-
 theorem edist_le_of_mem_closure_positive_quarter_pair
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -68,8 +53,6 @@ theorem edist_le_of_mem_closure_positive_quarter_pair
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact closure_minimal (fun z hz => N.edist_le_of_mem_closure_positive_quarter hε hz hy)
     (isClosed_le (continuous_id.edist continuous_const) continuous_const) hx
-
-
 
 theorem exists_closure_positive_quarter_subset_of_central_sphere_contact :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -118,7 +101,6 @@ theorem exists_closure_positive_quarter_subset_of_central_sphere_contact :
   rw [← ENNReal.ofReal_add (by positivity) (by positivity)] at hupper
   have hlt := (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr hnum
   exact (not_lt_of_ge (hlower.trans hupper)) hlt
-
 
 theorem exists_positive_quarter_subset_of_central_sphere_contact :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

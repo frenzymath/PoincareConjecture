@@ -3,27 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddCircle
-
-
-
-
-
 
 theorem exists_supported_cylinder_quarterTurn_of_lt (p : ℝ) [Fact (0 < p)] (hp : 4 < p)
     {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR1 : R < 1) :
@@ -123,10 +107,6 @@ theorem exists_supported_cylinder_quarterTurn_of_lt (p : ℝ) [Fact (0 < p)] (hp
         (piecewiseAffineGroupoid ℝ).id_mem
     exact Q.supported_chart_transition_mem_piecewiseAffineGroupoid A B H F
       hK hKS hHout hFQ hFout hHPL hAQ hBQ hAB
-
-
-
-
 
 theorem exists_supported_cylinder_quarterTurn (p : ℝ) [Fact (0 < p)] (hp : 4 < p) :
     ∃ F : (AddCircle p × ℝ) ≃ₜ (AddCircle p × ℝ),

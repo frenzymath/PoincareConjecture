@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M39ComparisonMap
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,19 +16,14 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   [Nonempty (D.flow.slice T).carrier]
   (I : RepairedComparisonMapInput D T hT)
 
-
-
 noncomputable def retainedMap : I.parent.carrier.carrier → I.child.carrier.carrier :=
   fun x => I.child.inverse ((D.flow.event T hT).retention.map (I.parent.inclusion x))
-
-
 
 theorem inclusion_retainedMap {x : I.parent.carrier.carrier} (hx : x ∈ I.retained) :
     I.child.inclusion (retainedMap I x) =
       (D.flow.event T hT).retention.map (I.parent.inclusion x) := by
   obtain ⟨y, hy⟩ := I.retained_to_child x hx
   rw [retainedMap, ← hy, I.child.left_inverse]
-
 
 theorem retainedMap_injOn : Set.InjOn (retainedMap I) I.retained := by
   intro x hx y hy hxy
@@ -49,7 +35,6 @@ theorem retainedMap_injOn : Set.InjOn (retainedMap I) I.retained := by
       (interior_subset (I.retained_subset x hx)),
     (D.flow.event T hT).retention.left_inverse
       (interior_subset (I.retained_subset y hy))] at h
-
 
 theorem retainedMap_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (retainedMap I) I.retained := by
@@ -66,8 +51,6 @@ theorem retainedMap_smooth :
       (I.parent.inclusion_smooth.contMDiffOn (s := I.retained))
       (fun x hx => interior_subset (hpre hx))
   exact I.child.inverse_smooth.comp hs (fun x hx => I.retained_to_child x hx)
-
-
 
 theorem retainedMap_metric (x : I.parent.carrier.carrier) (hx : x ∈ I.retained)
     (v w : TangentSpace (𝓡 3) x) :
@@ -101,8 +84,6 @@ theorem retainedMap_metric (x : I.parent.carrier.carrier) (hx : x ∈ I.retained
   exact (D.flow.event T hT).retained_metric (I.parent.inclusion x)
     (interior_subset (I.retained_subset x hx)) _ _
 
-
-
 theorem eqOn_retainedMap
     {f : I.parent.carrier.carrier → I.child.carrier.carrier}
     (hf : ∀ x ∈ I.retained, I.child.inclusion (f x) =
@@ -111,8 +92,6 @@ theorem eqOn_retainedMap
   intro x hx
   exact I.child.inclusion_openEmbedding.injective
     ((hf x hx).trans (inclusion_retainedMap I hx).symm)
-
-
 
 theorem extension_retained_smooth
     {f : I.parent.carrier.carrier → I.child.carrier.carrier}
@@ -129,8 +108,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P slice metric T)
-
-
 
 theorem retention_map_mem_post {x : (slice E.tMinus).carrier}
     (hx : x ∈ E.retained_pre) : E.retention.map x ∈ E.retained_post := by
@@ -154,16 +131,12 @@ noncomputable def retainedHomeomorph : E.retained_pre ≃ₜ E.retained_post whe
   continuous_toFun := E.retention.map_smooth.continuousOn.domRestrict.subtype_mk _
   continuous_invFun := E.retention.inverse_smooth.continuousOn.domRestrict.subtype_mk _
 
-
-
 theorem preSphere_subset_retained (i : Fin E.cap_count) :
     E.limit_identify.inverse '' (E.necks i).neck.central_sphere ⊆ E.retained_pre := by
   intro x hx
   apply E.retained_pre_compact.isClosed.frontier_subset
   rw [E.pre_boundary]
   exact Set.mem_iUnion.mpr ⟨i, hx⟩
-
-
 
 theorem neckCentralSphere_isConnected (i : Fin E.cap_count) :
     IsConnected (E.necks i).neck.central_sphere := by
@@ -192,14 +165,10 @@ theorem neckCentralSphere_isConnected (i : Fin E.cap_count) :
   rw [← hset]
   exact isConnected_range hf
 
-
-
 theorem preSphere_isConnected (i : Fin E.cap_count) :
     IsConnected (E.limit_identify.inverse '' (E.necks i).neck.central_sphere) := by
   exact (neckCentralSphere_isConnected E i).image E.limit_identify.inverse
     (E.limit_identify.inverse_smooth.continuousOn.mono (Set.subset_univ _))
-
-
 
 theorem neckCentralSphere_isCompact (i : Fin E.cap_count) :
     IsCompact (E.necks i).neck.central_sphere := by
@@ -212,14 +181,10 @@ theorem neckCentralSphere_isCompact (i : Fin E.cap_count) :
   have hs : z.2 = 0 := hz.2
   exact ⟨hz.1, hs ▸ ⟨neg_lt_zero.mpr hpos, hpos⟩⟩
 
-
-
 theorem preSphere_isCompact (i : Fin E.cap_count) :
     IsCompact (E.limit_identify.inverse '' (E.necks i).neck.central_sphere) := by
   exact (neckCentralSphere_isCompact E i).image_of_continuousOn
     (E.limit_identify.inverse_smooth.continuousOn.mono (Set.subset_univ _))
-
-
 
 theorem preSphere_subset_parent (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus))
@@ -235,8 +200,6 @@ theorem preSphere_subset_parent (i : Fin E.cap_count)
   rw [C.range_eq_component, connectedComponent_eq hC]
   exact hsub
 
-
-
 theorem parentSphere_isConnected (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus))
     (hmeet : (C.inclusion ⁻¹'
@@ -247,23 +210,17 @@ theorem parentSphere_isConnected (i : Fin E.cap_count)
     C.inclusion_openEmbedding.injective C.inclusion_openEmbedding.isOpenMap
     (preSphere_subset_parent E i C hmeet)
 
-
-
 theorem parentSphere_isClosed (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice E.tMinus)) :
     IsClosed (C.inclusion ⁻¹'
       (E.limit_identify.inverse '' (E.necks i).neck.central_sphere)) :=
   (preSphere_isCompact E i).isClosed.preimage C.inclusion_openEmbedding.continuous
 
-
-
 theorem cap_frontier_isConnected (i : Fin E.cap_count) :
     IsConnected (frontier (E.caps i).carrier) := by
   rw [← E.boundary_correspondence i]
   exact (preSphere_isConnected E i).image E.retention.map
     (E.retention.map_smooth.continuousOn.mono (preSphere_subset_retained E i))
-
-
 
 theorem retention_mem_cap_iff (i : Fin E.cap_count)
     {x : (slice E.tMinus).carrier} (hx : x ∈ E.retained_pre) :
@@ -287,8 +244,6 @@ theorem retention_mem_cap_iff (i : Fin E.cap_count)
     rw [← E.boundary_correspondence i]
     exact ⟨x, hsphere, rfl⟩
 
-
-
 theorem mem_retainedInterior_iff (x : (slice E.tMinus).carrier)
     (hx : x ∈ E.retained_pre) :
     x ∈ interior E.retained_pre ↔ ∀ i, E.retention.map x ∉ (E.caps i).carrier := by
@@ -304,8 +259,6 @@ theorem mem_retainedInterior_iff (x : (slice E.tMinus).carrier)
     rw [E.pre_boundary] at hboundary
     obtain ⟨i, hi⟩ := Set.mem_iUnion.mp hboundary
     exact hcaps i ((retention_mem_cap_iff E i hx).mpr hi)
-
-
 
 theorem retention_image_interior :
     E.retention.map '' interior E.retained_pre =
@@ -323,8 +276,6 @@ theorem retention_image_interior :
     refine ⟨x, (mem_retainedInterior_iff E x hx).mpr ?_, rfl⟩
     intro i hi
     exact hcaps (Set.mem_iUnion.mpr ⟨i, hi⟩)
-
-
 
 theorem retention_mfderiv_bijective {x : (slice E.tMinus).carrier}
     (hx : x ∈ interior E.retained_pre) :
@@ -355,8 +306,6 @@ theorem retention_mfderiv_bijective {x : (slice E.tMinus).carrier}
   exact ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (f := (mfderiv (𝓡 3) (𝓡 3) E.retention.map x).toLinearMap) rfl).mp hinj⟩
 
-
-
 theorem retention_image_isOpen {U : Set (slice E.tMinus).carrier}
     (hU : IsOpen U) (hsub : U ⊆ interior E.retained_pre) :
     IsOpen (E.retention.map '' U) := by
@@ -368,13 +317,9 @@ theorem retention_image_isOpen {U : Set (slice E.tMinus).carrier}
     (retention_mfderiv_bijective E (hsub hx))]
   exact Filter.image_mem_map (hU.mem_nhds hx)
 
-
-
 noncomputable def localComparison (i : Fin E.cap_count) :
     (slice E.tMinus).carrier → (slice T).carrier :=
   fun x => E.local_embed i ((E.local_result i).collapse (E.limit_identify.map x))
-
-
 
 theorem localComparison_continuousOn (i : Fin E.cap_count) :
     ContinuousOn (localComparison E i)
@@ -384,8 +329,6 @@ theorem localComparison_continuousOn (i : Fin E.cap_count) :
       (E.limit_identify.map_smooth.continuousOn.mono Set.inter_subset_left)
       (fun _ hx => hx.2))
 
-
-
 theorem localComparison_eq_retention (i : Fin E.cap_count)
     {x : (slice E.tMinus).carrier} (hx : x ∈ E.regular_limit)
     (hn : E.limit_identify.map x ∈
@@ -393,8 +336,6 @@ theorem localComparison_eq_retention (i : Fin E.cap_count)
     localComparison E i x = E.retention.map x := by
   exact (E.local_retention i _ hn).trans
     (congrArg E.retention.map (E.limit_identify.left_inverse hx))
-
-
 
 theorem localComparison_positive_mem_cap (i : Fin E.cap_count)
     {x : (slice E.tMinus).carrier}
@@ -404,8 +345,6 @@ theorem localComparison_positive_mem_cap (i : Fin E.cap_count)
   rw [← E.local_cap_image i]
   exact ⟨_, (E.local_result i).collapse_positive_cap ⟨_, hx, rfl⟩, rfl⟩
 
-
-
 theorem localComparison_central_mem_cap (i : Fin E.cap_count)
     {x : (slice E.tMinus).carrier}
     (hx : E.limit_identify.map x ∈ (E.necks i).neck.central_sphere) :
@@ -414,8 +353,6 @@ theorem localComparison_central_mem_cap (i : Fin E.cap_count)
   refine ⟨_, frontier_subset_closure ?_, rfl⟩
   rw [← (E.local_result i).cap_boundary]
   exact ⟨_, hx, rfl⟩
-
-
 
 theorem localComparison_constant_tail (i : Fin E.cap_count) :
     ∃ b : ℝ, 0 < b ∧ b < (E.necks i).neck.epsilon⁻¹ ∧
@@ -427,8 +364,6 @@ theorem localComparison_constant_tail (i : Fin E.cap_count) :
   refine ⟨b, hb, hbell, fun x hx hs => ?_⟩
   dsimp only [localComparison]
   rw [htail _ hx hs, E.local_tip]
-
-
 
 theorem local_embed_range_subset_child (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
@@ -446,8 +381,6 @@ theorem local_embed_range_subset_child (i : Fin E.cap_count)
   rw [C.range_eq_component] at hz ⊢
   exact hsub.trans (by rw [connectedComponent_eq hz])
 
-
-
 theorem local_embed_range_subset_child_of_negative (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
     {z : E.terminal.carrier}
@@ -457,16 +390,12 @@ theorem local_embed_range_subset_child_of_negative (i : Fin E.cap_count)
   apply local_embed_range_subset_child E i C
   exact ⟨(E.local_result i).collapse z, (E.local_retention i z hz).symm ▸ hc⟩
 
-
-
 theorem cap_subset_child (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion) :
     (E.caps i).carrier ⊆ Set.range C.inclusion := by
   rw [← E.local_cap_image i]
   exact (Set.image_subset_range _ _).trans hC
-
-
 
 theorem cap_tip_mem_child (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
@@ -475,15 +404,10 @@ theorem cap_tip_mem_child (i : Fin E.cap_count)
   rw [← E.local_tip i]
   exact hC (Set.mem_range_self _)
 
-
-
-
 noncomputable def localChildComparison (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T)) :
     (slice E.tMinus).carrier → C.carrier.carrier :=
   C.inverse ∘ localComparison E i
-
-
 
 theorem inclusion_localChildComparison (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
@@ -496,8 +420,6 @@ theorem inclusion_localChildComparison (i : Fin E.cap_count)
   change C.inclusion y = localComparison E i x at hy
   rw [← hy, C.left_inverse]
 
-
-
 theorem localChildComparison_continuousOn (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
     (hC : Set.range (E.local_embed i) ⊆ Set.range C.inclusion) :
@@ -507,8 +429,6 @@ theorem localChildComparison_continuousOn (i : Fin E.cap_count)
   intro x _
   exact hC (Set.mem_range_self _)
 
-
-
 theorem localChildComparison_eq_retention (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
     {x : (slice E.tMinus).carrier} (hx : x ∈ E.regular_limit)
@@ -516,8 +436,6 @@ theorem localChildComparison_eq_retention (i : Fin E.cap_count)
       (E.necks i).neck.region (-(E.necks i).neck.epsilon⁻¹) 0) :
     localChildComparison E i C x = C.inverse (E.retention.map x) :=
   congrArg C.inverse (localComparison_eq_retention E i hx hn)
-
-
 
 theorem localChildComparison_constant_tail (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T)) :
@@ -538,8 +456,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   [Nonempty (D.flow.slice T).carrier]
   (I : RepairedComparisonMapInput D T hT)
 
-
-
 theorem retainedMap_target_open :
     IsOpen (I.child.inclusion '' retainedMap I '' I.retained) := by
   rw [Set.image_image]
@@ -553,8 +469,6 @@ theorem retainedMap_target_open :
   rintro _ ⟨x, hx, rfl⟩
   exact I.retained_subset x hx
 
-
-
 theorem extension_retained_target_open
     {f : I.parent.carrier.carrier → I.child.carrier.carrier}
     (hf : ∀ x ∈ I.retained, I.child.inclusion (f x) =
@@ -562,8 +476,6 @@ theorem extension_retained_target_open
     IsOpen (I.child.inclusion '' f '' I.retained) := by
   rw [(eqOn_retainedMap I hf).image_eq]
   exact retainedMap_target_open I
-
-
 
 theorem extension_retained_metric
     {f : I.parent.carrier.carrier → I.child.carrier.carrier}

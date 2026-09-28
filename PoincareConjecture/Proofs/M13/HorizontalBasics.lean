@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M13.Geometry
 import PoincareConjecture.Proofs.M13.TangentIsometry
 import PoincareConjecture.Definitions.M13HorizontalTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

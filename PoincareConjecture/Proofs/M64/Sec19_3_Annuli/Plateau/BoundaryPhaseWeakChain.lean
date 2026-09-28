@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCriticalEmbe
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChain
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.Euclidean
 open Poincare.Analysis.Sobolev.EuclideanEmbedding
-
-
-
-
 
 theorem m64WeakPhase_local_memLp_four
     {u : LoopPlane → ℝ} {a : LoopPlane} {r R : ℝ}
@@ -55,10 +40,6 @@ theorem m64WeakPhase_local_memLp_four
   filter_upwards [ae_restrict_mem measurableSet_ball] with p hp
   change chi p * u p = u p
   rw [hone p (ball_subset_closedBall hp), one_mul]
-
-
-
-
 
 theorem m64WeakPhase_scalar_C1_chain
     {u : LoopPlane → ℝ} {V : Fin 2 → LoopPlane → ℝ} {a : LoopPlane} {r R : ℝ}
@@ -110,11 +91,6 @@ theorem m64WeakPhase_scalar_C1_chain
   have hc := M60.suWeakPartial_comp_quadratic hr hr' hU hW hweak hG hK hGbound i
   simp only [hderiv, smul_apply, smul_eq_mul] at hc
   exact hc
-
-
-
-
-
 
 theorem m64WeakPhase_scalar_C1_column
     {O : Set LoopPlane} (hO : IsOpen O)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyRiemannPolar
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex MeasureTheory
@@ -26,9 +17,6 @@ private theorem continuous_polar_differential {f : ℂ → V}
   simp only [circleMap_zero]
   fun_prop
 
-
-
-
 theorem continuous_deriv_polar_radius {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (z : ℂ) :
     Continuous (fun p : ℝ × ℝ =>
@@ -39,8 +27,6 @@ theorem continuous_deriv_polar_radius {f : ℂ → V}
   apply Continuous.clm_apply h
   simp only [circleMap_zero]
   fun_prop
-
-
 
 theorem continuous_deriv_polar_angle {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (z : ℂ) :
@@ -53,8 +39,6 @@ theorem continuous_deriv_polar_angle {f : ℂ → V}
   fun_prop
 
 variable [CompleteSpace V]
-
-
 
 theorem integral_deriv_polar_angle {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (z : ℂ) (r : ℝ) :
@@ -72,8 +56,6 @@ theorem integral_deriv_polar_angle {f : ℂ → V}
     congr 1
     ring
   rw [he, sub_self]
-
-
 
 theorem integral_deriv_polar_radius {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (z : ℂ) (θ : ℝ) :

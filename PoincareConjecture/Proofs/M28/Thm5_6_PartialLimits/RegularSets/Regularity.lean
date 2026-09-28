@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.LocalNormalCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,49 +13,33 @@ namespace PoincareConjecture.M28
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def regularPoints (g : RiemannianMetric n M) (δ : ℝ) : Set M :=
   {p | ∀ r : ℝ, r < δ → IsCompact (closure (g.ball p r))}
 
-
-
 def regularComponent (g : RiemannianMetric n M) (p : M) (δ : ℝ) : Set M :=
   connectedComponentIn (regularPoints g δ) p
-
-
 
 theorem regularPoints_antitone (g : RiemannianMetric n M) :
     Antitone (regularPoints g) := by
   intro δ ε hδε p hp r hr
   exact hp r (hr.trans_le hδε)
 
-
-
 theorem regularComponent_antitone (g : RiemannianMetric n M) (p : M) :
     Antitone (regularComponent g p) := by
   intro δ ε hδε
   exact connectedComponentIn_mono p (regularPoints_antitone g hδε)
 
-
-
 theorem regularComponent_subset (g : RiemannianMetric n M) (p : M) (δ : ℝ) :
     regularComponent g p δ ⊆ regularPoints g δ :=
   connectedComponentIn_subset _ _
-
-
 
 theorem mem_regularComponent (g : RiemannianMetric n M) {p : M} {δ : ℝ}
     (hp : p ∈ regularPoints g δ) : p ∈ regularComponent g p δ :=
   mem_connectedComponentIn hp
 
-
-
 theorem isPreconnected_regularComponent (g : RiemannianMetric n M) (p : M) (δ : ℝ) :
     IsPreconnected (regularComponent g p δ) :=
   isPreconnected_connectedComponentIn
-
-
 
 theorem isConnected_regularComponent (g : RiemannianMetric n M) {p : M} {δ : ℝ}
     (hp : p ∈ regularPoints g δ) : IsConnected (regularComponent g p δ) :=
@@ -75,8 +49,6 @@ private theorem ball_eq_empty_of_nonpos (g : RiemannianMetric n M)
     (p : M) {r : ℝ} (hr : r ≤ 0) : g.ball p r = ∅ := by
   ext x
   simp [RiemannianMetric.ball, ENNReal.ofReal_eq_zero.mpr hr]
-
-
 
 theorem mem_regularPoints_of_mem_ball (g : RiemannianMetric n M)
     {p q : M} {δ a : ℝ} (hp : p ∈ regularPoints g δ) (ha : 0 ≤ a)
@@ -90,8 +62,6 @@ theorem mem_regularPoints_of_mem_ball (g : RiemannianMetric n M)
       (le_refl (a + r))
     exact (hp (a + r) (by linarith)).of_isClosed_subset isClosed_closure
       (closure_mono hsub)
-
-
 
 theorem ball_subset_regularComponent (g : RiemannianMetric n M)
     {p q : M} {δ ε a : ℝ} (hq : q ∈ regularComponent g p δ)
@@ -114,8 +84,6 @@ theorem ball_subset_regularComponent (g : RiemannianMetric n M)
   change g.ball q a ⊆ connectedComponentIn (regularPoints g ε) p
   rw [heq]
   exact hsub
-
-
 
 theorem isClosed_regularPoints [T3Space M] (g : RiemannianMetric n M) (δ : ℝ) :
     IsClosed (regularPoints g δ) := by
@@ -151,8 +119,6 @@ theorem isClosed_regularPoints [T3Space M] (g : RiemannianMetric n M) (δ : ℝ)
     exact (hqreg (r + 2 * a) (by dsimp [a]; linarith)).of_isClosed_subset
       isClosed_closure (closure_mono hsub)
 
-
-
 theorem isClosed_regularComponent [T3Space M] (g : RiemannianMetric n M)
     (p : M) (δ : ℝ) : IsClosed (regularComponent g p δ) := by
   by_cases hp : p ∈ regularPoints g δ
@@ -163,8 +129,6 @@ theorem isClosed_regularComponent [T3Space M] (g : RiemannianMetric n M)
   · change IsClosed (connectedComponentIn (regularPoints g δ) p)
     rw [connectedComponentIn_eq_empty hp]
     exact isClosed_empty
-
-
 
 theorem closure_ball_subset_regularComponent [T3Space M] (g : RiemannianMetric n M)
     {p q : M} {δ ε a : ℝ} (hq : q ∈ regularComponent g p δ)

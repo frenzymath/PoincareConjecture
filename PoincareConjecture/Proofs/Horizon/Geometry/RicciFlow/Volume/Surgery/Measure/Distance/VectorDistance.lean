@@ -2,25 +2,6 @@ import PoincareConjecture.Proofs.M10.VectorDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Distance.IntrinsicLipschitz
 import Mathlib.Analysis.Normed.Module.HahnBanach
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

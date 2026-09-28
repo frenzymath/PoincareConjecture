@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M49.CylinderCoordinateBox
 import PoincareConjecture.Proofs.M49.NeckChartJacobian
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
-
 
 theorem exists_uniform_positive_half_neck_volume :
     ∃ c d : ℝ, 0 < c ∧ 0 < d ∧

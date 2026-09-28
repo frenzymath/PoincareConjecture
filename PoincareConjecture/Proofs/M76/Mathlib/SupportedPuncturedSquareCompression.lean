@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedSquareCompression
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology Geometry
 
 namespace SquareShell
-
-
-
-
-
 
 theorem exists_supported_punctured_square_compression {r R B : ℝ}
     (hr : 0 < r) (hrR : r < R) (hRB : R < B) :

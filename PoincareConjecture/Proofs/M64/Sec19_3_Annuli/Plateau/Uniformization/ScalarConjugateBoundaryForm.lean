@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarClosedCover
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,11 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
-
 theorem scalarCoverStrip_closure :
     closure scalarCoverStrip = {z : Cover | z.1 ∈ Icc (1 : ℝ) 2} := by
   have hprod : scalarCoverStrip = Ioo (1 : ℝ) 2 ×ˢ (univ : Set ℝ) := by
@@ -39,31 +22,15 @@ theorem scalarCoverStrip_closure :
   ext z
   simp
 
-
-
-
-
-
 def scalarConjugateFormOfDifferential (g : RiemannianMetric 2 Plane)
     (J : Plane → Plane →L[ℝ] ℝ) (x : Plane) : Plane →L[ℝ] ℝ :=
   M60.rotatedFlux
     (fun y => g.pullbackVolumeDensity id y * ((g.euclideanCoefficients y).inverse (J y)) 0)
     (fun y => g.pullbackVolumeDensity id y * ((g.euclideanCoefficients y).inverse (J y)) 1) x
 
-
-
-
-
-
 def scalarCoverFormOfDifferential (g : RiemannianMetric 2 Plane)
     (J : Plane → Plane →L[ℝ] ℝ) (z : Cover) : Cover →L[ℝ] ℝ :=
   (scalarConjugateFormOfDifferential g J (scalarCoverMap z)).comp (fderiv ℝ scalarCoverMap z)
-
-
-
-
-
-
 
 theorem scalarConjugateFormOfDifferential_continuousOn
     (g : RiemannianMetric 2 Plane) {J : Plane → Plane →L[ℝ] ℝ} {S : Set Plane}
@@ -87,11 +54,6 @@ theorem scalarConjugateFormOfDifferential_continuousOn
   exact ((hrho.continuousOn.mul (hcoord 1)).neg.smul continuousOn_const).add
     ((hrho.continuousOn.mul (hcoord 0)).smul continuousOn_const)
 
-
-
-
-
-
 theorem scalarCoverFormOfDifferential_periodic (g : RiemannianMetric 2 Plane)
     (J : Plane → Plane →L[ℝ] ℝ) (z : Cover) :
     scalarCoverFormOfDifferential g J (z + (0, 1)) = scalarCoverFormOfDifferential g J z := by
@@ -104,11 +66,6 @@ theorem scalarCoverFormOfDifferential_periodic (g : RiemannianMetric 2 Plane)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 theorem scalarConjugateFormOfDifferential_eq
     {H : Plane → ℝ} {J : Plane → Plane →L[ℝ] ℝ} {x : Plane}
     (hJ : J x = fderiv ℝ H x) :
@@ -120,12 +77,6 @@ theorem scalarConjugateFormOfDifferential_eq
     rfl
   simp only [scalarConjugateFormOfDifferential, scalarConjugateForm, M60.rotatedFlux,
     scalarMetricFlux, hgrad]
-
-
-
-
-
-
 
 theorem exists_scalarCoverForm_boundary_extension
     {H : Plane → ℝ} (hHc : Continuous H)

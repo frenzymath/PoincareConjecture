@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Stereogra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Definitions
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -44,7 +37,6 @@ private theorem sphereCoefficients_smooth : ContDiff ℝ ∞ sphereCoefficients 
       (fun x => by positivity)
   exact hs.smul contDiff_const
 
-
 def sphereReferenceMetric : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=
   RiemannianMetric.ofEuclideanCoefficients sphereCoefficients sphereCoefficients_smooth
     (fun x v w => by change _ * ⟪v, w⟫_ℝ = _ * ⟪w, v⟫_ℝ; rw [real_inner_comm])
@@ -73,14 +65,11 @@ theorem sphereReferenceMetric_scalar : sphereReferenceMetric.leviCivitaData.scal
   norm_num at hs
   exact hs
 
-
 def roundScalarTolerance : ℝ :=
   scalarTolerance sphereReferenceMetric.leviCivitaData 0 (α := 1) (by norm_num)
 
 theorem roundScalarTolerance_pos : 0 < roundScalarTolerance :=
   scalarTolerance_pos sphereReferenceMetric.leviCivitaData 0 (by norm_num)
-
-
 
 theorem scalar_close_of_unit_curvature
     {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]

@@ -4,10 +4,3 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.MetricSpace.HausdorffDistance
-
-
-
-
-
-
-

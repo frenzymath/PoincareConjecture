@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

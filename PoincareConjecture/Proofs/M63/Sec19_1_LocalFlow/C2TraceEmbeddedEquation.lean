@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceEmbeddedCalculus
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceCurvatureError
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem hasDerivAt_embeddedCurvature_spatial
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -93,10 +80,6 @@ theorem hasDerivAt_embeddedCurvature_spatial
   ext i
   simp only [PiLp.add_apply, PiLp.smul_apply, smul_eq_mul]
   ring
-
-
-
-
 
 theorem hasDerivAt_embeddedCurvature_time
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -244,10 +227,6 @@ theorem hasDerivAt_embeddedCurvature_time
   simp only [PiLp.add_apply, PiLp.sub_apply, PiLp.smul_apply, smul_eq_mul]
   field_simp [hv]
   ring
-
-
-
-
 
 theorem embeddedCurvature_derivative_remainder_bounds
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimit
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitRegularity
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitDensity
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +24,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
-
 
 theorem suUnboundedGradient_sphereLimit
     (g : RiemannianMetric n M)

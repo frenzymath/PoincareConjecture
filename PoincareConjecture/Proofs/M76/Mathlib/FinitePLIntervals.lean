@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
 
 theorem isFinitePLBallPair_Icc {a b : ℝ} (hab : a < b) :
     IsFinitePLBallPair ℝ (Icc a b) {a, b} := by
@@ -30,9 +20,6 @@ theorem isFinitePLBallPair_Icc {a b : ℝ} (hab : a < b) :
   rw [← frontier_Icc hab.le]
   exact isFinitePLBallPair_of_compact_convex isCompact_Icc (convex_Icc a b)
     (by rw [interior_Icc]; exact nonempty_Ioo.mpr hab) K hK hKs
-
-
-
 
 theorem isFinitePLBallPair_affine_interval {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

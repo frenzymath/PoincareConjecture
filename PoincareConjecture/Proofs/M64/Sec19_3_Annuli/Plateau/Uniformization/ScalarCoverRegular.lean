@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPotentialNoncritical
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
 theorem scalarNormalizedCoverMap_det_pos {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hdV : ∀ z ∈ scalarCoverStrip, HasFDerivAt V (scalarCoverForm D H z) z)
@@ -45,10 +29,6 @@ theorem scalarNormalizedCoverMap_det_pos {H : Plane → ℝ} {V : Cover → ℝ}
   exact div_pos (mul_pos (mul_pos
     (mul_pos (mul_pos (by norm_num) Real.pi_pos) (zero_lt_one.trans hz.1)) hrho)
       (g.pos _ _ hgrad)) hP
-
-
-
-
 
 theorem scalarNormalizedCoverMap_fderiv_invertible {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -67,10 +47,6 @@ theorem scalarNormalizedCoverMap_fderiv_invertible {H : Plane → ℝ} {V : Cove
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank rfl).mp hinj
   exact ⟨(LinearEquiv.ofBijective A.toLinearMap ⟨hinj, hsurj⟩).toContinuousLinearEquiv, rfl⟩
 
-
-
-
-
 theorem scalarNormalizedCoverMap_smooth {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hVs : ContDiffOn ℝ ∞ V scalarCoverStrip) (P : ℝ) :
@@ -81,11 +57,6 @@ theorem scalarNormalizedCoverMap_smooth {H : Plane → ℝ} {V : Cover → ℝ}
     ext z
     exact div_eq_inv_mul (V z) P
   exact (scalarCoverPotential_smooth hHs).prodMk hVn
-
-
-
-
-
 
 theorem exists_smooth_annular_cover_chart :
     ∃ (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ)

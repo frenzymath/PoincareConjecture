@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.SpaceTime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,8 +45,6 @@ private lemma gradient_normSq_eq_chart (D : LeviCivitaData g)
   rw [hB.inverse_apply_eq.mpr hBA.symm, hd]
   simp only [ContinuousLinearMap.comp_apply, D.inner_gradient]
   exact congrArg (mvfderiv (𝓡 n) f y) (hA.self_apply_inverse (D.gradient f y)).symm
-
-
 
 theorem tendsto_gradient_normSq_of_initial_chart_derivative (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {f : M → ℝ} {x : M}
@@ -117,8 +108,6 @@ theorem tendsto_gradient_normSq_of_initial_chart_derivative (D : LeviCivitaData 
       d p ((B (e p.2)).inverse (d p)) at hh
   rw [e.left_inv hp] at hh
   exact hh.symm
-
-
 
 theorem continuousOn_gradient_normSq_of_initial_chart_derivative (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {f : M → ℝ}

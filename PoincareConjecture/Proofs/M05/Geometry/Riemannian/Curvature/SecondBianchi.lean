@@ -1,18 +1,8 @@
-
 import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Module
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -27,11 +17,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 noncomputable def covariantDerivativeOnFields (D : LeviCivitaData g)
     (X Y : (x : M) → TangentSpace (𝓡 n) x) (x : M) :=
   D.connection Y x (X x)
-
 
 noncomputable def curvatureDerivativeOnFields (D : LeviCivitaData g)
     (X Y Z W : (x : M) → TangentSpace (𝓡 n) x) (x : M) :=
@@ -236,7 +224,6 @@ lemma curvatureDerivativeOnFields_expand (D : LeviCivitaData g)
   rw [curvatureDerivativeOnFields, D.connection_curvatureOnFields hY hZ hW]
   rfl
 
-
 theorem second_bianchi_on_fields (D : LeviCivitaData g)
     {X Y Z W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hX : ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X))
@@ -287,7 +274,6 @@ lemma mvfderiv_inner_on_fields (D : LeviCivitaData g)
     ⟨g.toRiemannianMetric⟩
   exact D.metricCompatible.mvfderiv_inner_eq X hY hZ
 
-
 lemma inner_curvatureDerivativeOnFields (D : LeviCivitaData g)
     {X Y Z V W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hY : ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% Y))
@@ -307,7 +293,6 @@ lemma inner_curvatureDerivativeOnFields (D : LeviCivitaData g)
     covariantDerivativeOnFields]
   abel
 
-
 theorem second_bianchi_inner_on_fields (D : LeviCivitaData g)
     {X Y Z W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (v : TangentSpace (𝓡 n) x)
@@ -320,7 +305,6 @@ theorem second_bianchi_inner_on_fields (D : LeviCivitaData g)
       g.inner x (D.curvatureDerivativeOnFields Z X Y W x) v = 0 := by
   have h := congrArg (fun w => g.inner x w v) (D.second_bianchi_on_fields hX hY hZ hW)
   simpa only [map_add, add_apply, map_zero, zero_apply] using h
-
 
 lemma koszul_identity (D : LeviCivitaData g)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -378,7 +362,6 @@ lemma contMDiffAt_mlieBracket
   have : IsManifold (𝓡 n) (∞ + 1) M := by simpa using
     (inferInstance : IsManifold (𝓡 n) ∞ M)
   exact hX.mlieBracket_vectorField hY (by simp)
-
 
 lemma contMDiffAt_inner_covariantDerivativeOnFields (D : LeviCivitaData g)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}

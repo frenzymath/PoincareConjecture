@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.InteriorFiniteJets
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricDomainNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanSobolevRegularityNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothTargetCoupling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -20,18 +10,14 @@ open SmoothRadial
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 noncomputable def smoothGaugeDrift (h xi : ℝ → ℝ) (x : E) : E :=
   (2 * axisDivision (deriv h) ‖x‖ - xi ‖x‖) • x
-
-
 
 noncomputable def smoothGaugeForcing (h f₀ xi : ℝ → ℝ) (x : E) (sigma : ℝ) : ℝ :=
   2 * axisDivision (deriv h) ‖x‖ -
     2 * smoothEvenQuadratic (fun r => Real.exp (-2 * h r)) ‖x‖ -
     2 * Real.exp (2 * sigma) * targetQuadraticRemainder f₀ ‖Real.exp sigma • x‖ *
       Real.exp (-2 * h ‖x‖) - xi ‖x‖
-
 
 theorem smoothGaugeDrift_contDiff {h xi : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h) (he : Function.Even h)
@@ -41,8 +27,6 @@ theorem smoothGaugeDrift_contDiff {h xi : ℝ → ℝ}
     contDiff_even_norm (axisDivision_contDiff (contDiff_infty_iff_deriv.mp hh).2)
       (axisDivision_deriv_even hh he)
   exact ((contDiff_const.mul hD).sub (contDiff_even_norm hxi hxie)).smul contDiff_id
-
-
 
 theorem smoothGaugeForcing_contDiff {h f₀ xi : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h) (he : Function.Even h)
@@ -71,12 +55,9 @@ theorem smoothGaugeForcing_contDiff {h f₀ xi : ℝ → ℝ}
       (((contDiff_const.mul hfactor).mul hscaled).mul hcurrent)).sub
     ((contDiff_even_norm hxi hxie).comp contDiff_fst)
 
-
 theorem smoothGaugeDrift_equivariant (h xi : ℝ → ℝ) (Q : E ≃ₗᵢ[ℝ] E) (x : E) :
     smoothGaugeDrift h xi (Q x) = Q (smoothGaugeDrift h xi x) := by
   simp only [smoothGaugeDrift, Q.norm_map, map_smul]
-
-
 
 theorem smoothGaugeForcing_invariant (h f₀ xi : ℝ → ℝ)
     (Q : E ≃ₗᵢ[ℝ] E) (x : E) (sigma : ℝ) :

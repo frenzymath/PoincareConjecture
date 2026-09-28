@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.AnnulusRetraction
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -37,9 +28,6 @@ theorem finitePiecewiseAffineOn_standard_disk
     K hK (hKs ▸ hj) () (by intro x hx; trivial)
   change FinitePiecewiseAffineOn j K.space at h
   rwa [hKs] at h
-
-
-
 
 theorem exists_standard_essential_boundary_disk
     {R S : Set V3} (hR : IsCompact R)

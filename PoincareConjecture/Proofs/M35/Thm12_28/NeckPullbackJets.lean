@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.MetricChartCancellation
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 import PoincareConjecture.Proofs.M35.Mathlib.FiniteJetOperations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 namespace PoincareConjecture.M35
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem metric_pullback_cylinder_chart_sum
     {M N : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
@@ -83,9 +71,6 @@ theorem metric_pullback_cylinder_chart_sum
       intro b _
       ring
 
-
-
-
 theorem roundCylinderPullback_coefficient_eq_chart_sum
     {M N : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
     [TopologicalSpace N] [ChartedSpace E3 N] [IsManifold (𝓡 3) ∞ N]
@@ -137,9 +122,6 @@ theorem roundCylinderPullback_coefficient_eq_chart_sum
     (hv (roundCylinderCoordinateBasis a)).symm (hv (roundCylinderCoordinateBasis b)).symm
   exact hpair.trans (metric_pullback_cylinder_chart_sum g F (coordinate ∘ K) c p
     (roundCylinderCoordinateBasis a) (roundCylinderCoordinateBasis b) hp hF (hc.comp p (hK p)))
-
-
-
 
 theorem cylinder_pullback_jet_difference_tendsto_zero
     (f : ℕ → RoundCylinderCoordinates → E3) (f₀ : RoundCylinderCoordinates → E3)

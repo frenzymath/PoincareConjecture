@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ParametricConvexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCoreCollar
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ namespace ContinuousMap
 
 variable {E B Z : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace B] [LocallyCompactSpace B] [TopologicalSpace Z]
-
-
-
 
 theorem exists_parametric_convexCore_replacement {D : Set E}
     (hD : IsCompact D) (hc : Convex ℝ D) (hi : (interior D).Nonempty)
@@ -77,9 +65,6 @@ theorem exists_parametric_convexCore_replacement {D : Set E}
   change (if hy : x ∈ D then (e (⟨x, hy⟩, b) : Z) else f (x, b)) ∈ T
   rw [dif_pos hx]
   exact (e (⟨x, hx⟩, b)).property
-
-
-
 
 theorem exists_parametric_convexCore_replacement_near_compl {C U : Set E}
     (hC : IsCompact C) (hc : Convex ℝ C) (hi : (interior C).Nonempty)

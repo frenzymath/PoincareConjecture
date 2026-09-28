@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,26 +22,18 @@ noncomputable local instance modelCylinderCoefficientNormedGroup :
 noncomputable local instance modelCylinderCoefficientNormedSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
 
-
-
 noncomputable def modelCylinderDenominator (x : E) : ℝ :=
   ‖(cylinderEuclideanEquiv x).1‖ ^ 2 + 4
-
-
 
 theorem modelCylinderDenominator_pos (x : E) : 0 < modelCylinderDenominator x := by
   unfold modelCylinderDenominator
   positivity
-
-
 
 theorem modelCylinderDenominator_hasFDerivAt (x : E) :
     HasFDerivAt modelCylinderDenominator (2 • H x) x := by
   have h := (((hasStrictFDerivAt_norm_sq (cylinderHorizontalProjection x)).hasFDerivAt.comp x
     cylinderHorizontalProjection.hasFDerivAt).add_const 4)
   convert! h using 1
-
-
 
 theorem model_evolvingCylinderField (t : ℝ) (x : E) :
     evolvingCylinderModelField t x =
@@ -60,15 +43,11 @@ theorem model_evolvingCylinderField (t : ℝ) (x : E) :
   dsimp only [modelCylinderDenominator]
   module
 
-
-
 theorem model_evolvingCylinderField_apply (t : ℝ) (x u v : E) :
     evolvingCylinderModelField t x u v =
       (32 * (1 - t) / modelCylinderDenominator x ^ 2) * H u v + Z u * Z v := by
   rw [model_evolvingCylinderField]
   rfl
-
-
 
 theorem model_evolvingCylinderField_first (t : ℝ) (x v a b : E) :
     fderiv ℝ (evolvingCylinderModelField t) x v a b =
@@ -76,8 +55,6 @@ theorem model_evolvingCylinderField_first (t : ℝ) (x v a b : E) :
   rw [evolvingCylinderModelField_fderiv]
   simp only [smul_apply, smul_eq_mul, cylinderModelField_fderiv, modelCylinderDenominator]
   ring
-
-
 
 theorem modelCylinderDerivativeFactor_hasFDerivAt (t : ℝ) (x : E) :
     HasFDerivAt (fun p => -128 * (1 - t) / modelCylinderDenominator p ^ 3)
@@ -97,8 +74,6 @@ theorem modelCylinderDerivativeFactor_hasFDerivAt (t : ℝ) (x : E) :
 
 set_option maxHeartbeats 800000 in
 
-
-
 theorem model_evolvingCylinderField_second (t : ℝ) (x u v a b : E) :
     fderiv ℝ (fderiv ℝ (evolvingCylinderModelField t)) x u v a b =
       (768 * (1 - t) / modelCylinderDenominator x ^ 4) * H x u * H x v * H a b +
@@ -114,48 +89,32 @@ theorem model_evolvingCylinderField_second (t : ℝ) (x u v a b : E) :
     smul_apply, add_apply, smul_eq_mul, mul_add, mul_assoc, mul_comm,
     mul_left_comm, add_comm] using hv
 
-
-
 theorem model_horizontal_symm (u v : E) : H u v = H v u := by
   rw [cylinderHorizontalForm_apply, cylinderHorizontalForm_apply, real_inner_comm]
-
-
 
 @[simp] theorem model_horizontal_vertical_left (v : E) : H (e 2) v = 0 := by
   rw [cylinderHorizontalForm_apply, cylinderEuclideanEquiv_basis]
   simp [roundCylinderCoordinateBasis]
 
-
-
 @[simp] theorem model_horizontal_vertical_right (v : E) : H v (e 2) = 0 := by
   rw [model_horizontal_symm, model_horizontal_vertical_left]
 
-
-
 noncomputable def modelHorizontalVector (v : E) : E := v - Z v • e 2
-
-
 
 @[simp] theorem model_horizontalVector_left (u v : E) :
     H (modelHorizontalVector u) v = H u v := by
   simp only [modelHorizontalVector, map_sub, map_smul, sub_apply, smul_apply,
     smul_eq_mul, model_horizontal_vertical_left, mul_zero, sub_zero]
 
-
-
 @[simp] theorem model_horizontalVector_right (u v : E) :
     H u (modelHorizontalVector v) = H u v := by
   simp only [modelHorizontalVector, map_sub, map_smul, smul_eq_mul,
     model_horizontal_vertical_right, mul_zero, sub_zero]
 
-
-
 @[simp] theorem model_horizontalVector_height (v : E) : Z (modelHorizontalVector v) = 0 := by
   simp only [modelHorizontalVector, map_sub, map_smul, smul_eq_mul]
   rw [cylinderHeightCovector_basis]
   simp [roundCylinderCoordinateBasis]
-
-
 
 theorem model_evolvingCylinderField_isInvertible {t : ℝ} (ht : t < 1) (x : E) :
     (evolvingCylinderModelField t x).IsInvertible := by
@@ -178,8 +137,6 @@ theorem model_evolvingCylinderField_isInvertible {t : ℝ} (ht : t < 1) (x : E) 
   change min a 1 * ‖v‖ ^ 2 ≤ a * H v v + Z v * Z v
   rw [← hsplit, mul_add]
   exact add_le_add h1 (by simpa only [one_mul] using h2)
-
-
 
 theorem model_evolvingCylinder_christoffel {t : ℝ} (ht : t < 1) (x u v : E) :
     jetChristoffel (metricTwoJet (evolvingCylinderModelField t) x) u v =
@@ -206,8 +163,6 @@ theorem model_evolvingCylinder_christoffel {t : ℝ} (ht : t < 1) (x u v : E) :
     (metricKoszulCovector (fderiv ℝ (evolvingCylinderModelField t) x) u v) = w
   rw [← heq, (model_evolvingCylinderField_isInvertible ht x).inverse_apply_self]
 
-
-
 theorem model_evolvingCylinder_christoffel_horizontal {t : ℝ} (ht : t < 1)
     (x u v w : E) :
     H (jetChristoffel (metricTwoJet (evolvingCylinderModelField t) x) u v) w =
@@ -217,8 +172,6 @@ theorem model_evolvingCylinder_christoffel_horizontal {t : ℝ} (ht : t < 1)
   simp only [map_smul, map_add, map_sub, smul_apply, add_apply, sub_apply,
     smul_eq_mul, model_horizontalVector_left]
 
-
-
 theorem model_evolvingCylinder_christoffel_horizontal_right {t : ℝ} (ht : t < 1)
     (x u v w : E) :
     H w (jetChristoffel (metricTwoJet (evolvingCylinderModelField t) x) u v) =
@@ -226,21 +179,15 @@ theorem model_evolvingCylinder_christoffel_horizontal_right {t : ℝ} (ht : t < 
         (H x u * H v w + H x v * H u w - H u v * H x w) := by
   rw [model_horizontal_symm, model_evolvingCylinder_christoffel_horizontal ht]
 
-
-
 theorem model_evolvingCylinder_christoffel_height {t : ℝ} (ht : t < 1) (x u v : E) :
     Z (jetChristoffel (metricTwoJet (evolvingCylinderModelField t) x) u v) = 0 := by
   rw [model_evolvingCylinder_christoffel ht]
   simp only [map_smul, map_add, map_sub, smul_eq_mul, model_horizontalVector_height,
     mul_zero, add_zero, sub_zero]
 
-
-
 noncomputable def modelCylinderInverseWeight (t : ℝ) (x : E) : Fin 3 → ℝ :=
   ![(32 * (1 - t) / modelCylinderDenominator x ^ 2)⁻¹,
     (32 * (1 - t) / modelCylinderDenominator x ^ 2)⁻¹, 1]
-
-
 
 theorem model_evolvingCylinder_inverse_proj {t : ℝ} (ht : t < 1) (x : E) (i : Fin 3) :
     (evolvingCylinderModelField t x).inverse (EuclideanSpace.proj i) =

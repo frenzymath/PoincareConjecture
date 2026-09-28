@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Div
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import Mathlib.Analysis.Calculus.FDeriv.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +28,6 @@ private theorem fderiv_norm_apply_eq {x : EuclideanSpace ℝ (Fin n)} (hx : x �
   apply (eq_div_iff (norm_ne_zero_iff.mpr hx)).mpr
   linarith
 
-
 theorem sum_fderiv_mul_coordinate {a : EuclideanSpace ℝ (Fin n) → ℝ}
     {x : EuclideanSpace ℝ (Fin n)} (ha : DifferentiableAt ℝ a x) :
     (∑ i, fderiv ℝ (fun y => a y * WithLp.ofLp y i) x
@@ -59,8 +50,6 @@ theorem sum_fderiv_mul_coordinate {a : EuclideanSpace ℝ (Fin n) → ℝ}
   rw [Finset.sum_add_distrib]
   simpa [mul_comm] using congrArg (fun r => r + (n : ℝ) * a x) hs
 
-
-
 theorem sum_fderiv_density_radial {ρ : EuclideanSpace ℝ (Fin n) → ℝ}
     {x : EuclideanSpace ℝ (Fin n)} (hρ : DifferentiableAt ℝ ρ x) (hx : x ≠ 0) :
     (∑ i, fderiv ℝ (fun y => (ρ y / ‖y‖) * WithLp.ofLp y i) x
@@ -80,8 +69,6 @@ theorem sum_fderiv_density_radial {ρ : EuclideanSpace ℝ (Fin n) → ℝ}
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_radial_coordinate (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

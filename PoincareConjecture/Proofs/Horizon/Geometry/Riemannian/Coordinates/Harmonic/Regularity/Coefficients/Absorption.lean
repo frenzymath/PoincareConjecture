@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.Stationary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.DivergenceEstimate
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,10 +23,6 @@ private theorem holderWith_half_of_norm_sub_le
     ← ENNReal.coe_mul, ENNReal.coe_le_coe, ← NNReal.coe_le_coe]
   simpa only [coe_nndist, NNReal.coe_mul, NNReal.coe_rpow, NNReal.coe_div,
     NNReal.coe_one, NNReal.coe_ofNat, dist_eq_norm] using hf x y
-
-
-
-
 
 theorem exists_uniform_small_divergence_gradient_halfHolder {n : ℕ} (hn : 2 ≤ n) :
     let V := EuclideanSpace ℝ (Fin n)

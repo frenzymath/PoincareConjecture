@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compress
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ThirdPhaseCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.MarkedSurfaceResidualModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -121,9 +111,6 @@ private theorem model_complexity_eq_of_surface_eq
     [T2Space X0] : M.complexity = M'.complexity := by
   subst F'
   exact M.complexity_eq_of_same_surface M' (subset_univ _)
-
-
-
 
 theorem exists_hamiltonZero_both_third_phase_kernel_control
     {ι κ : Type*} (e : ι → OpenPartialHomeomorph X0 V3)

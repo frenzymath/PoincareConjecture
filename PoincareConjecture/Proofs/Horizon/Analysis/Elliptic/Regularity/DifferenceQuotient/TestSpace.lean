@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Difference
 import Mathlib.Analysis.Normed.Lp.SmoothApprox
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -52,7 +44,6 @@ theorem exists_smooth_cutoff
     exact (hη_one_iff x).1 hx
   · rw [tsupport, hη_support]
     exact (Metric.closure_thickening_subset_cthickening δ K).trans hδΩ
-
 
 omit [NeZero d] in
 private lemma smoothCSSupportedIn_zero_mem (Ω'' : Set E) :

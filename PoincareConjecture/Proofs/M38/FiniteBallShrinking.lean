@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.SurgeryBallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,7 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 theorem exists_disjoint_open_of_finite_compact
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -47,8 +36,6 @@ theorem exists_disjoint_open_of_finite_compact
     exact (hUV i j hij).mono
       (inter_subset_left.trans (iInter_subset _ j))
       (inter_subset_right.trans (iInter_subset _ i))
-
-
 
 theorem exists_disjoint_surgeryBall_widths
     {A : GeneralizedSliceCarrier.{u}} {ι : Type*} [Finite ι]

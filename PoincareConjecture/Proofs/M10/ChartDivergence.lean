@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartMetricDual
 import PoincareConjecture.Proofs.M10.ChartDensityDerivative
 import PoincareConjecture.Proofs.M10.WeightedTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

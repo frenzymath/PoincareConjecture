@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicCuts
 import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} {epsilon : ℝ}
 
 open Classical in
-
 
 theorem intrinsic_trimmed_chart_domains
     (C : BalancedNeckChain g epsilon)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +23,6 @@ local instance inheritanceSourceConnected (k : ℕ) : ConnectedSpace (S.term k).
 variable (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
   (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
 theorem interiorLimit_nonnegativeCurvatureOperator :
     ∀ t : ℝ, t < 1 → ∀ x : G.limitCarrier.carrier,
       (G.limitFlow.connection t).NonnegativeCurvatureOperator x := by
@@ -51,8 +38,6 @@ theorem interiorLimit_nonnegativeCurvatureOperator :
     change t < 1 at ht
     exact Eventually.of_forall fun k x =>
       (S.term k).flow.nonnegative_curvature_operator (t - 1) (by linarith) x
-
-
 
 theorem interiorLimit_complete
     (P : M23NormalizedKappaCompactnessPredecessors)

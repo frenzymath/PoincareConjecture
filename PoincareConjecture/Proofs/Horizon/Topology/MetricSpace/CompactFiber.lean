@@ -1,16 +1,12 @@
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped Topology
 
 namespace Poincare.Topology
-
-
 
 theorem exists_closedBand_subset_of_fiber_subset_open
     {X : Type*} [TopologicalSpace X] [CompactSpace X]

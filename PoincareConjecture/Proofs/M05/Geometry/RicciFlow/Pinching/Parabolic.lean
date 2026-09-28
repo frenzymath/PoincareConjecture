@@ -1,18 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.RegionTopology
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Logarithmic
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Reaction
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 

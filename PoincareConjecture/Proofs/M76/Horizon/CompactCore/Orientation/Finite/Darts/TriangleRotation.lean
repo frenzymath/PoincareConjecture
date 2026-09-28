@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.TriangleIndex
 import Mathlib.GroupTheory.Perm.Fin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains

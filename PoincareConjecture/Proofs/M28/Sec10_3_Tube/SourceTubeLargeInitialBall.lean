@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.FirstTwoNeckScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeInitialPair
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRadius
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem exists_source_tube_large_initial_bound_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧
@@ -104,8 +94,6 @@ theorem exists_source_tube_large_initial_bound_accuracy :
   rw [H.tube_scalar_eq, H.normalizedSlice_scalar_eq]
   apply (div_le_iff₀ hc).mpr
   nlinarith only [hscalar]
-
-
 
 theorem exists_actual_source_tube_large_critical_radius_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.NearbyOpenLineTransport
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_compact_openLine_homotopy_transport
     (D : (ℝ × ℝ) × ℝ → ℝ × ℝ) {R : ℝ} (hR : 0 < R)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Maximum.CompactDomain
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

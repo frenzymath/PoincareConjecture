@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedTime
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedZero
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,12 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_successor_time
     {S s s' b d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

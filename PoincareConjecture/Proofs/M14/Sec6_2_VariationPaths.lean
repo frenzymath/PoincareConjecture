@@ -3,15 +3,6 @@ import PoincareConjecture.Statements.M14PathCalculus
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
 
 def variationPath (V : M14LVariationData G p R) {u : ℝ} (hu : u ∈ V.parameterDomain)
     (hx : V.family τ₁ u = x) (hy : V.family τ₂ u = y) :
@@ -63,8 +52,6 @@ def variationPath (V : M14LVariationData G p R) {u : ℝ} (hu : u ∈ V.paramete
       (hsqrt.prodMk contMDiffOn_const) (hmaps.mono_left Set.Ioo_subset_Icc_self)).congr
         (fun τ hτ => (hagrees τ (Set.Ioo_subset_Icc_self hτ)).symm)
 
-
-
 theorem variationAction_zero (V : M14LVariationData G p R) :
     M14VariationAction V 0 = M14BackwardLAction G p := by
   have hz : (0 : ℝ) ∈ V.parameterDomain := by
@@ -73,8 +60,6 @@ theorem variationAction_zero (V : M14LVariationData G p R) :
   let q := variationPath V hz ((V.family_at_zero τ₁).trans p.curve_start)
     ((V.family_at_zero τ₂).trans p.curve_end)
   exact action_eq_of_curve_eqOn q p (fun τ _ => V.family_at_zero τ)
-
-
 
 theorem isLocalMin_variationAction (V : M14LVariationData G p R)
     (hmin : M14IsMinimizing p) (hfix : M14BothEndpointsFixed V) :
@@ -90,8 +75,6 @@ theorem isLocalMin_variationAction (V : M14LVariationData G p R)
   exact hmin (variationPath V hu
     (((V.left_endpoint_fixed_spec.mp hfix.1) u hu).trans p.curve_start)
     (((V.right_endpoint_fixed_spec.mp hfix.2) u hu).trans p.curve_end))
-
-
 
 theorem hasDerivAt_variationAction_eq_zero (V : M14LVariationData G p R)
     (hmin : M14IsMinimizing p) (hfix : M14BothEndpointsFixed V)

@@ -4,17 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology

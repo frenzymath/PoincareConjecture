@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem scaleLeviCivitaData_scalarCurvature (D : LeviCivitaData g)
     [T2Space M] (Q : ℝ) (hQ : 0 < Q) (x : M) :
@@ -39,8 +27,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem scaleMetric_normalized_pullback (N : EpsilonNeck g) (Q : ℝ) (hQ : 0 < Q) :
     (fun z v w => (Real.sqrt Q * N.scale)⁻¹ ^ 2 *
       roundCylinderPullback (M13.scaleSmoothMetric g Q hQ) N.coordinate_map z v w) =
@@ -49,8 +35,6 @@ theorem scaleMetric_normalized_pullback (N : EpsilonNeck g) (Q : ℝ) (hQ : 0 < 
   simp only [roundCylinderPullback, M13.scaleSmoothMetric_inner, mul_inv_rev, mul_pow]
   field_simp [hQ.ne']
   rw [Real.sq_sqrt hQ.le]
-
-
 
 noncomputable def scaleMetric [T2Space M] (N : EpsilonNeck g) (Q : ℝ) (hQ : 0 < Q) :
     EpsilonNeck (M13.scaleSmoothMetric g Q hQ) where

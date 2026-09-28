@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_RegularStableEndpoint
 import PoincareConjecture.Proofs.M14.Sec6_5_DeltaAlgebra
 import PoincareConjecture.Proofs.M14.Sec6_5_SharpHessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,9 +36,6 @@ private theorem sharp_tensor_endpoint_transport {T τ : ℝ} (f : G.Point → �
           G.spacetime.horizontalMetric.inner y v w / (2 * τ) := by
   subst y
   exact hq
-
-
-
 
 theorem regularFormulaData_nonempty
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -137,9 +124,6 @@ theorem regularFormulaData_nonempty
   apply sharp_tensor_slice_transport (M14ReducedLengthAt G T 0 x)
     (H.endpoint_slice_map Z) ⟨(E.square_path Z s hs hpos).curve s, hq⟩ hslice
   exact reducedLengthHessian_joint_sharp hCoordinates hM04 hM12 E hs hpos hz hp hq hequality
-
-
-
 
 theorem regularFormulaStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

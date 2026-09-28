@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.BoundedCurvatureC2Endpoin
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2AdjacentIntervals
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.IntrinsicC2LocalExistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem c2ShrinkingCurve_continuation
     [T2Space M] (F : RicciFlow n M (Icc a b))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteSliceChart
 import PoincareConjecture.Proofs.M47.LimitNoncollapseUniformCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +34,6 @@ private local instance anchorBoundsCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance anchorBoundsManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_eventually_physical_anchor_bounds
     (P : M47Predecessors.{u}) (t : ℝ) (ht : t ∈ blowupBackwardInterval H)

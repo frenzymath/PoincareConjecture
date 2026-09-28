@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.UniformizationPositiveForms
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +28,6 @@ local instance uniformizationTangentNormedSpace (p : UnitTwoSphere) : NormedSpac
 local instance uniformizationCotangentContinuousAdd :
     ∀ p : UnitTwoSphere, ContinuousAdd (T p →L[ℝ] ℝ) :=
   fun _ => inferInstanceAs (ContinuousAdd (E →L[ℝ] ℝ))
-
-
 
 theorem spherePullbackForm_contMDiffAt_zero
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -68,8 +58,6 @@ theorem spherePullbackForm_contMDiffAt_zero
       (mem_baseSet_trivializationAt F TM (f p)))
   filter_upwards [hx, hy] with x hx hy
   exact metricPullbackForm_coordinates g f hx hy
-
-
 
 theorem eventually_positive_sphere_form (B : (p : UnitTwoSphere) → V p)
     {p : UnitTwoSphere}
@@ -112,8 +100,6 @@ theorem eventually_positive_sphere_form (B : (p : UnitTwoSphere) → V p)
   have h := hx (e.continuousLinearMapAt ℝ x v) hne
   rw [hC_apply hxe, e.symmL_continuousLinearMapAt (R := ℝ) hxe] at h
   exact h
-
-
 
 theorem exists_local_smooth_symmetric_sphere_form (p : UnitTwoSphere) (B : V p)
     (hB : ∀ v w, B v w = B w v) :

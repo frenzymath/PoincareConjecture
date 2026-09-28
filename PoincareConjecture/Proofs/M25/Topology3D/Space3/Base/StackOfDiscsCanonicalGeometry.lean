@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonicalProfiles
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem stackCanonicalMeridian_formula
     (rFlat rOne v0 v1 : ℝ)
@@ -96,7 +88,6 @@ theorem stackCanonicalMeridian_formula
         ((stackCanonicalHorizontal v0 v1 v * Real.sqrt (1 - v ^ 2)) ^ 2) * v = _
       rw [hbfar _ hRsq, Real.smoothTransition.one_of_one_le harg]
       ring
-
 
 theorem stackCanonicalMeridian_regular
     (rFlat rOne v0 v1 : ℝ)
@@ -232,7 +223,6 @@ theorem stackCanonicalMeridian_regular
         (mul_nonneg (neg_nonneg.mpr hkp) (sub_nonneg.mpr hrle))
         (mul_pos hkpos (div_pos (neg_pos.mpr hvneg) hrpos))
 
-
 theorem stackCanonicalModel_southern_geometry
     (rFlat rOne v0 v1 : ℝ)
     (hrFlat : 0 < rFlat) (hradii : rFlat < rOne) (hrOne : rOne < 1)
@@ -334,7 +324,6 @@ theorem stackCanonicalModel_southern_geometry
       rw [hn, ha, ← hroot, inv_mul_cancel₀ hrootpos.ne']
     rw [hM, hbfar _ (by rw [hunit]; exact hrOne.le), one_mul, ha]
 
-
 theorem stackCanonicalModel_flat_disc
     (rFlat rOne v0 v1 : ℝ)
     (hrFlat : 0 < rFlat) (hradii : rFlat < rOne) (hrOne : rOne < 1)
@@ -403,7 +392,6 @@ theorem stackCanonicalModel_flat_disc
       rw [hdisc _ hx]
       exact Prod.ext rfl hz.symm
 
-
 theorem stackCanonicalModel_reflection_height
     (rFlat rOne v0 v1 : ℝ)
     (hrFlat : 0 < rFlat) (hradii : rFlat < rOne) (hrOne : rOne < 1)
@@ -438,7 +426,6 @@ theorem stackCanonicalModel_reflection_height
     change (M (p.1, -p.2)).2 ≤ 0 at hhi
     rw [hreflection] at hlo hhi
     exact abs_le.mpr ⟨by linarith only [hhi], by linarith only [hlo]⟩
-
 
 theorem exists_stackCanonicalRadii (d : ℝ) (hd : 0 < d) :
     ∃ rFlat rOne v0 v1 : ℝ,

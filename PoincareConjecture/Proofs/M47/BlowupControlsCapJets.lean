@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_IntrinsicScalar
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_PhysicalScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ noncomputable local instance capJetTwoJetNorm : NormedAddCommGroup (MetricTwoJet
 
 noncomputable local instance capJetTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
 
 theorem exists_actualCap_twoJet_bound {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A : ℝ}

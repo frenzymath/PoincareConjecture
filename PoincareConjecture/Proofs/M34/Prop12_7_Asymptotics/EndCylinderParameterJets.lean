@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderParameterBo
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderJets
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,8 +15,6 @@ open DifferenceEnergy Poincare.Analysis.Calculus
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def endCylinderParameterDifference (e : StandardCylindricalEnd g)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (j : ℕ) (t : ℝ)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
@@ -33,8 +22,6 @@ noncomputable def endCylinderParameterDifference (e : StandardCylindricalEnd g)
   (F.metric t).parametrizedCoefficients
       (endAxialTranslation e j ∘ endSphereCylinderMap e q) p -
     evolvingRoundCylinderModelCoefficients t p
-
-
 
 theorem endCylinderParameterDifference_eq_pullback (e : StandardCylindricalEnd g)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (j : ℕ) (t : ℝ)
@@ -80,8 +67,6 @@ theorem endCylinderParameterDifference_eq_pullback (e : StandardCylindricalEnd g
   simp only [mfderiv_eq_fderiv] at h
   convert! h using 1
 
-
-
 theorem endCylinderParameterDifference_jet_eq (e : StandardCylindricalEnd g)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (j : ℕ) (t : ℝ)
     (q : UnitTwoSphere) {p : RoundCylinderCoordinates} (hp : 2 < p.2) (m : ℕ) :
@@ -96,9 +81,6 @@ theorem endCylinderParameterDifference_jet_eq (e : StandardCylindricalEnd g)
     filter_upwards [(isOpen_lt continuous_const continuous_snd).mem_nhds hp] with y hy
     exact endCylinderParameterDifference_eq_pullback e F j t q hy
   exact (heq.iteratedFDeriv ℝ m).self_of_nhds
-
-
-
 
 theorem partialFlow_endCylinderParameterDifference_iteratedFDeriv_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

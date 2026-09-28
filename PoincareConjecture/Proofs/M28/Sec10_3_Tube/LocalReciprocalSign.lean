@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalForwardTransfer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

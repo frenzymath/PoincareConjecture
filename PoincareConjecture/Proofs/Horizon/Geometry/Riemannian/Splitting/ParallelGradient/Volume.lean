@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Volume.Measure
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Volume.Balls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,7 +27,6 @@ variable {n : ℕ} {N M : Type*} [TopologicalSpace N] [TopologicalSpace M]
 
 include hmetric
 
-
 theorem volumeMeasure_ball_le_productIsometry (y : N) (r : ℝ) (hr : 0 < r) :
     g.volumeMeasure (g.ball (e (y, 0)) r) ≤
       ENNReal.ofReal (2 * r) * h.volumeMeasure (h.ball y r) := by
@@ -50,7 +39,6 @@ theorem volumeMeasure_ball_le_productIsometry (y : N) (r : ℝ) (hr : 0 < r) :
     _ = _ := by
       rw [Measure.prod_prod, Real.volume_Ioo, show r - -r = 2 * r by ring, mul_comm]
 
-
 theorem volumeMeasure_factor_lower_bound (y : N) (r κ : ℝ) (hr : 0 < r)
     (hlower : ENNReal.ofReal (κ * r ^ (n + 1)) ≤
       g.volumeMeasure (g.ball (e (y, 0)) r)) :
@@ -62,8 +50,6 @@ theorem volumeMeasure_factor_lower_bound (y : N) (r κ : ℝ) (hr : 0 < r)
   exact hlower.trans (volumeMeasure_ball_le_productIsometry h g e hmetric y r hr)
 
 end Product
-
-
 
 theorem exists_parallelGradient_volumeSplitting
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

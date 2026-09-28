@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourcePhaseSets
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.PhaseArc
 
-
-
 set_option autoImplicit false
 open Set
 

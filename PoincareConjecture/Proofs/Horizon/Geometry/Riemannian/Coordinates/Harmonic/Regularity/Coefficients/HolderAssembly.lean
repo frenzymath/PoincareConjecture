@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ open scoped ContDiff BigOperators
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem norm_bilinear_le_dim_sq_mul_of_entries
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -67,15 +58,12 @@ theorem norm_bilinear_le_dim_sq_mul_of_entries
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
       ring
 
-
 theorem abs_bilinear_basis_apply_le_norm
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
     (i j : Fin n) :
     |B (EuclideanSpace.basisFun (Fin n) ℝ i) (EuclideanSpace.basisFun (Fin n) ℝ j)| ≤ ‖B‖ := by
   simpa only [Real.norm_eq_abs, OrthonormalBasis.norm_eq_one, mul_one] using
     B.le_opNorm₂ (EuclideanSpace.basisFun (Fin n) ℝ i) (EuclideanSpace.basisFun (Fin n) ℝ j)
-
-
 
 theorem fderiv_bilinear_field_apply
     {A : EuclideanSpace ℝ (Fin n) →
@@ -86,8 +74,6 @@ theorem fderiv_bilinear_field_apply
   have h := (hA.hasFDerivAt.clm_apply (hasFDerivAt_const u x)).clm_apply
     (hasFDerivAt_const v x)
   simpa using congrArg (fun L => L w) h.fderiv
-
-
 
 theorem norm_fderiv_bilinear_field_entry_le
     {A : EuclideanSpace ℝ (Fin n) →
@@ -100,8 +86,6 @@ theorem norm_fderiv_bilinear_field_entry_le
   rw [fderiv_bilinear_field_apply hA, Real.norm_eq_abs]
   exact (abs_bilinear_basis_apply_le_norm (fderiv ℝ A x w) i j).trans
     ((fderiv ℝ A x).le_opNorm w)
-
-
 
 theorem norm_fderiv_bilinear_field_sub_le_of_entry_derivatives
     {A : EuclideanSpace ℝ (Fin n) →
@@ -132,8 +116,6 @@ theorem norm_fderiv_bilinear_field_sub_le_of_entry_derivatives
     (mul_nonneg hM (norm_nonneg w)) hb
   simpa only [B, mul_assoc] using hbound
 
-
-
 theorem norm_fderiv_bilinear_field_sub_le_of_entry_halfHolder
     {A : EuclideanSpace ℝ (Fin n) →
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ}
@@ -156,8 +138,6 @@ end PoincareConjecture.HarmonicCoordinates
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ}
-
-
 
 theorem norm_fderiv_euclideanCoefficients_sub_le_of_entry_halfHolder
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) {R H : ℝ} (hH : 0 ≤ H)

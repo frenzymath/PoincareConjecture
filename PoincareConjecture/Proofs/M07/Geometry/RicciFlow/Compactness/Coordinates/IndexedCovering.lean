@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.Covering
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.JetBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option synthInstance.maxHeartbeats 100000
@@ -20,7 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
 
 structure NormalChartCover {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -54,7 +42,6 @@ structure NormalChartCover {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 namespace NormalChartCover
 
-
 def HasMetricJetBound {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     {g : ℝ → RiemannianMetric n M} {p : M} {T' T A R ρ a b : ℝ} {N : ℕ}
@@ -79,7 +66,6 @@ private theorem exists_surjective_fin_with_zero {α : Type*} [Fintype α]
   exact ⟨(e x).succ, Function.leftInverse_invFun e.injective x⟩
 
 namespace PointedRicciFlowCompactnessHypotheses
-
 
 theorem eventually_nonempty_normalChartCover
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -129,7 +115,6 @@ theorem eventually_nonempty_normalChartCover
     compact_image := fun i => hcompact (f i)
     cover := hcoverFixed }⟩
 
-
 theorem eventually_normalChartCover_metric_jet_bound_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
     (hShi : LocalCurvatureDerivativeEstimates.{0})
@@ -157,7 +142,6 @@ theorem eventually_normalChartCover_metric_jet_bound_of_local_derivative_estimat
   obtain ⟨L, hL, hderiv⟩ := C.normalized i
   exact hk (C.centre i) (C.centre_mem i) L (C.chart i) (C.source i) (C.target i)
     (C.map_zero i) hL hderiv (C.radial_geodesic i) x hx
-
 
 theorem eventually_normalChartCover_metric_jet_bound
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.NumericalAnnularCover
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Topology

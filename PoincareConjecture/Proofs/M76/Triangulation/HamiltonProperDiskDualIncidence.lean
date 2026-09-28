@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexIncid
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierStars
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.dualBlock_subset_interior
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}
@@ -68,9 +55,6 @@ theorem HamiltonProperDiskTriangulation.dualBlock_subset_interior
 
 variable [FiniteDimensional ℝ E]
 
-
-
-
 theorem HamiltonProperDiskTriangulation.frontier_face_card_le
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)
     {s : Finset E} (hs : s ∈ T.boundary.faces) : s.card ≤ 3 := by
@@ -87,9 +71,6 @@ theorem HamiltonProperDiskTriangulation.frontier_face_card_le
     (T.region.isCompact_space_of_finite (T.finite.subset T.region_le)).isClosed
   rw [T.boundary_space, interior_frontier hRclosed] at hxint
   exact hxint
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_frontier_edge_triangle_cofaces
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}

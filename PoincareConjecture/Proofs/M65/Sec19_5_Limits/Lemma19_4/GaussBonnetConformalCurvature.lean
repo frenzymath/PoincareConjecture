@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalConnectionTrace
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +25,6 @@ private theorem conformal_metric_pair
   change (∑ i : Fin 2, e.repr v i * h.euclideanCoefficients x (e i) (e k)) = c * v k
   simp_rw [hp]
   fin_cases k <;> simp [e, mul_comm]
-
-
-
 
 theorem connectionCoefficient_conformal_log
     {h : RiemannianMetric 2 LoopPlane} (D : LeviCivitaData h)
@@ -79,11 +66,6 @@ private theorem fderiv_coordinate {F : LoopPlane → LoopPlane} {x : LoopPlane}
     (fderiv ℝ F x u) k = fderiv ℝ (fun y => F y k) x u := by
   have hd := (EuclideanSpace.proj k).hasFDerivAt.comp x hF.hasFDerivAt
   exact (congrArg (fun L => L u) hd.fderiv).symm
-
-
-
-
-
 
 theorem curvatureTensor_conformal_log
     {h : RiemannianMetric 2 LoopPlane} (D : LeviCivitaData h)

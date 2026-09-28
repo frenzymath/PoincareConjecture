@@ -2,15 +2,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -18,7 +9,6 @@ open Filter Topology
 open scoped ContDiff
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ContDiffAt.exists_hasDerivAt_mixed
     {K E : Type*} [NontriviallyNormedField K] [IsRCLikeNormedField K]

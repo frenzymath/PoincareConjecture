@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveWeightedMaximum
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Coefficients
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.CompactMaximum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +15,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [CompactSpace M] [SecondCountableTopology M]
-
-
-
-
 
 theorem exists_uniform_weighted_ricci_bound
     (hC : RicciFlowCurvatureTheory.{u}) {T : ℝ} (hT : 0 < T)
@@ -116,9 +101,6 @@ theorem exists_uniform_weighted_ricci_bound
   have hcomp := Poincare.Parabolic.nonpos_of_deriv_le_mul_at_max hW hderiv hmax
     (fun y => sub_nonpos.mpr (hinit y))
   exact sub_nonpos.mp (hcomp x t ⟨ht.1, le_rfl⟩)
-
-
-
 
 theorem exists_uniform_normalized_ricci_bound
     (hC : RicciFlowCurvatureTheory.{u}) {T : ℝ} (hT : 0 < T)

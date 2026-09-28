@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.MollifierBasics
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter ContinuousLinearMap
@@ -58,7 +50,6 @@ theorem second_fderiv_normed_convolution (κ : ContDiffBump (0 : E)) {f : E → 
     funext (fderiv_normed_convolution κ hc (hf.of_le (by norm_num)))
   rw [hfirst]
   exact fderiv_normed_convolution κ (hc.fderiv ℝ) (hf.fderiv_right (by norm_num)) x
-
 
 theorem normed_convolution_jets_tendsto {κ : ℕ → ContDiffBump (0 : E)}
     (hκ : Tendsto (fun j ↦ (κ j).rOut) atTop (𝓝 0)) {f : E → F}

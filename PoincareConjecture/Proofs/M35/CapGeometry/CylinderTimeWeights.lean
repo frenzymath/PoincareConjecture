@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem roundCylinderTensorNormSquared_mono_time {u v : ℝ}
     (huv : u ≤ v) (hv : v < 1) (q : UnitTwoSphere) (s : ℝ)
@@ -40,8 +30,6 @@ theorem roundCylinderTensorNormSquared_mono_time {u v : ℝ}
   apply mul_le_mul_of_nonneg_right _ (sq_nonneg (T a))
   exact Finset.prod_le_prod (fun i _ => (roundCylinderInverseWeight_pos hu (a i)).le)
     (fun i _ => hw (a i))
-
-
 
 theorem roundCylinderTensorNormSquared_zero_le_half (q : UnitTwoSphere) (s : ℝ)
     {r : ℕ} (T : (Fin r → Fin 3) → ℝ) :
@@ -70,8 +58,6 @@ theorem roundCylinderTensorNormSquared_zero_le_half (q : UnitTwoSphere) (s : ℝ
     simpa only [Finset.prod_mul_distrib, Finset.prod_const, Finset.card_univ,
       Fintype.card_fin] using hprod
   simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hprod' (sq_nonneg (T a))
-
-
 
 theorem roundCylinderTensorNormSquared_linear_le {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s A B : ℝ) {r : ℕ} (T S : (Fin r → Fin 3) → ℝ) :

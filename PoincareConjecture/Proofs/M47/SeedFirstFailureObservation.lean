@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.PrefixMonotone
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem seed_firstFailure_observedInputs
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

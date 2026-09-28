@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Coefficients
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,14 +15,10 @@ namespace Poincare.Geometry.Curvature.Hypersurface
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 def covariantDerivativeAlongMap (D : LeviCivitaData g)
     (F W : E → EuclideanSpace ℝ (Fin n)) (x : E) (v : E) :
     EuclideanSpace ℝ (Fin n) :=
   fderiv ℝ W x v + D.connectionCoefficient (F x) (fderiv ℝ F x v) (W x)
-
-
 
 theorem covariantDerivativeAlongMap_metricCompatible (D : LeviCivitaData g)
     {F V W : E → EuclideanSpace ℝ (Fin n)} {x : E}
@@ -60,8 +47,6 @@ theorem covariantDerivativeAlongMap_metricCompatible (D : LeviCivitaData g)
   simp only [covariantDerivativeAlongMap, map_add, add_apply]
   abel
 
-
-
 theorem connectionCoefficient_symm (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
     D.connectionCoefficient x u v = D.connectionCoefficient x v u := by
@@ -79,15 +64,11 @@ theorem connectionCoefficient_symm (D : LeviCivitaData g)
     sub_self] at ht
   exact sub_eq_zero.mp ht
 
-
-
 def covariantHessianMap (D : LeviCivitaData g)
     (F : E → EuclideanSpace ℝ (Fin n)) (x u v : E) :
     EuclideanSpace ℝ (Fin n) :=
   fderiv ℝ (fderiv ℝ F) x u v +
     D.connectionCoefficient (F x) (fderiv ℝ F x u) (fderiv ℝ F x v)
-
-
 
 theorem covariantHessianMap_symm (D : LeviCivitaData g)
     {F : E → EuclideanSpace ℝ (Fin n)} {x : E}
@@ -97,8 +78,6 @@ theorem covariantHessianMap_symm (D : LeviCivitaData g)
     simp only [minSmoothness_of_isRCLikeNormedField]
     exact WithTop.coe_le_coe.mpr le_top)
   rw [covariantHessianMap, covariantHessianMap, hs u v, connectionCoefficient_symm]
-
-
 
 theorem covariantDerivativeAlongMap_fderiv_const (D : LeviCivitaData g)
     {F : E → EuclideanSpace ℝ (Fin n)} {x : E}
@@ -113,14 +92,10 @@ theorem covariantDerivativeAlongMap_fderiv_const (D : LeviCivitaData g)
 
 variable {m : ℕ} {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
 
-
-
 def secondFundamentalForm (D : LeviCivitaData g) (D' : LeviCivitaData h)
     (F : EuclideanSpace ℝ (Fin m) → EuclideanSpace ℝ (Fin n))
     (x u v : EuclideanSpace ℝ (Fin m)) : EuclideanSpace ℝ (Fin n) :=
   covariantHessianMap D F x u v - fderiv ℝ F x (D'.connectionCoefficient x u v)
-
-
 
 theorem secondFundamentalForm_eq_covariantDerivativeAlongMap
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -140,8 +115,6 @@ theorem secondFundamentalForm_eq_covariantDerivativeAlongMap
     LeviCivitaData.connectionCoefficient_apply]
   abel
 
-
-
 theorem secondFundamentalForm_symm (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : EuclideanSpace ℝ (Fin m) → EuclideanSpace ℝ (Fin n)}
     {x : EuclideanSpace ℝ (Fin m)} (hF : ContDiffAt ℝ ∞ F x)
@@ -149,8 +122,6 @@ theorem secondFundamentalForm_symm (D : LeviCivitaData g) (D' : LeviCivitaData h
     secondFundamentalForm D D' F x u v = secondFundamentalForm D D' F x v u := by
   rw [secondFundamentalForm, secondFundamentalForm, covariantHessianMap_symm D hF,
     connectionCoefficient_symm D']
-
-
 
 theorem secondFundamentalForm_normal (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : EuclideanSpace ℝ (Fin m) → EuclideanSpace ℝ (Fin n)}

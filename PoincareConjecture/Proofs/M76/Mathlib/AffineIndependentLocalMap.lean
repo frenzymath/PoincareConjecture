@@ -1,13 +1,5 @@
 import Mathlib.LinearAlgebra.AffineSpace.Independent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Affine
@@ -17,8 +9,6 @@ namespace AffineIndependent
 variable {ι 𝕜 E F P Q : Type*} [Ring 𝕜] [Nontrivial 𝕜]
   [AddCommGroup E] [Module 𝕜 E] [AffineSpace E P]
   [AddCommGroup F] [Module 𝕜 F] [AffineSpace F Q]
-
-
 
 theorem map_of_injOn_affineSpan {p : ι → P} (hp : AffineIndependent 𝕜 p)
     (f : P →ᵃ[𝕜] Q) (hf : InjOn f (affineSpan 𝕜 (range p))) :

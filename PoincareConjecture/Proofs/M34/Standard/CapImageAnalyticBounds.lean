@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceBoundaryScalar
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem exists_image_scalarAnalytic_tolerance {C eta : ℝ}
     (hC : 0 < C) (heta : 0 < eta) :

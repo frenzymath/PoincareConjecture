@@ -1,22 +1,11 @@
 import PoincareConjecture.Definitions.M57Transport
 import PoincareConjecture.Proofs.M57.Sec18_Prop18_18.EventInput
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m57PoincareAncestryInput
     (P02 : RepairedClosedTopologyProvider.{u}) (G53 : RepairedSphereSeparationTheory.{u})

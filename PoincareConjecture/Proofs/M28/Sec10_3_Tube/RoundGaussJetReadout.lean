@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussErrorJets
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ open PoincareConjecture.SpacetimeBounds
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
 
 theorem coefficient_fderiv_evaluation
     {B : GaussErrorE → MetricCoefficient 3} {x : GaussErrorE}
@@ -92,8 +83,6 @@ private theorem metricTwoJet_norm_le_of_component_bounds
   change max ‖B 0‖ (max ‖fderiv ℝ B 0‖ ‖fderiv ℝ (fderiv ℝ B) 0‖) ≤ _
   exact max_le (h0.trans hbound) (max_le (h1.trans hbound) h2)
 
-
-
 theorem round_gauss_error_coefficient_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -115,8 +104,6 @@ theorem round_gauss_error_coefficient_le
     roundGaussErrorCoefficients_apply N he ![v, w]]
   simpa [LeviCivitaData.iteratedCovariantTensorDerivative,
     Fin.prod_univ_succ, hnorm, mul_assoc] using h
-
-
 
 theorem round_gauss_error_two_jet_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -181,8 +168,6 @@ theorem metricTwoJet_sub_of_smooth
   rw [hder.self_of_nhds, hder.fderiv_eq, fderiv_fun_sub hDF hDG]
   rfl
 
-
-
 theorem round_gauss_error_two_jet_eq_sub
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -195,8 +180,6 @@ theorem round_gauss_error_two_jet_eq_sub
     ((g.contDiffAt_pullbackCoefficients ((N.forward_smooth (e 0)).comp 0 he)).const_smul
       N.scale)
     (N.model_metric.contDiffAt_pullbackCoefficients he)
-
-
 
 theorem round_gauss_two_jet_dist_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

@@ -3,14 +3,6 @@ import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,9 +11,6 @@ open scoped Topology
 universe u v w z
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem continuous_of_approximating_pool_subsequences
     {K : Type u} [TopologicalSpace K] [SequentialSpace K]

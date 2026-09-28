@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem limitCanonical_intrinsicEDist_univ (g : RiemannianMetric 3 M) (x y : M) :
     intrinsicEDist g univ x y = g.edist x y := by
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
@@ -39,8 +28,6 @@ theorem limitCanonical_intrinsicEDist_univ (g : RiemannianMetric 3 M) (x y : M) 
   have hpath : intrinsicEDist g univ x y ≤ g.pathELength gamma 0 1 :=
     sInf_le ⟨gamma, hgamma, hg0, hg1, subset_univ _, rfl⟩
   exact hpath.trans_lt hlength
-
-
 
 theorem limitCanonical_intrinsicDiameter_univ
     [T3Space M] [ConnectedSpace M] [CompactSpace M]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.EvenNormFamily
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicInverseFamily
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialCoordinate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,7 +22,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
 
 include hrotation in
 
-
 theorem raw_intrinsicSpatialCoordinate_contDiffOn :
     ContDiffOn ℝ ∞
       (fun p : ℝ × StandardCapSpace => intrinsicSpatialCoordinate (G.flow.metric p.1) p.2)
@@ -47,8 +36,6 @@ theorem raw_intrinsicSpatialCoordinate_contDiffOn :
   have hlift := evenNorm_family_contDiffOn (E := StandardCapSpace)
     (f := fun t => axisDivision (radialArclength (G.flow.metric t))) isOpen_Ioo hq he
   exact hlift.smul contDiffOn_snd
-
-
 
 noncomputable def rawIntrinsicSpatialDiffeomorph (t : ℝ) :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ :=
@@ -74,8 +61,6 @@ theorem rawIntrinsicSpatialDiffeomorph_symm_apply {t : ℝ}
   simp only [rawIntrinsicSpatialDiffeomorph, dif_pos ht]
   rfl
 
-
-
 theorem rawIntrinsicSpatialDiffeomorph_contDiffOn :
     ContDiffOn ℝ ∞
       (fun p : ℝ × StandardCapSpace => rawIntrinsicSpatialDiffeomorph P G hrotation p.1 p.2)
@@ -83,8 +68,6 @@ theorem rawIntrinsicSpatialDiffeomorph_contDiffOn :
   apply (raw_intrinsicSpatialCoordinate_contDiffOn G hrotation).congr
   intro p hp
   exact rawIntrinsicSpatialDiffeomorph_apply P G hrotation ⟨hp.1.1.le, hp.1.2⟩ p.2
-
-
 
 theorem rawIntrinsicSpatialDiffeomorph_symm_contDiffOn :
     ContDiffOn ℝ ∞

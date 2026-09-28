@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeConfinementEnergy
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousFirstExit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b)
-
-
-
 
 theorem squarePath_mapsTo_gauge_core_of_energy
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {U K : Set G.Point}

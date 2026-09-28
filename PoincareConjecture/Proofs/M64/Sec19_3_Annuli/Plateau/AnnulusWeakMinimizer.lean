@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMinimizerExistence
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusEnergyIdentity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M] [T2Space M]
-
-
 
 theorem m64Annulus_exists_weak_energy_minimizer
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A0 : M64Annulus g c0 c1) :
@@ -52,8 +39,6 @@ theorem m64Annulus_exists_weak_energy_minimizer
   intro A
   obtain ⟨W, -, henergy⟩ := m64ObservedWeakAnnulus_exists_seed_with_energy A e he1 B hdiag
   exact (hL W).trans_eq henergy
-
-
 
 theorem M64Annulus.energy_integrable
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) :

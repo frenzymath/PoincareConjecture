@@ -3,15 +3,6 @@ import Mathlib.Analysis.Normed.Group.Continuity
 import Mathlib.Topology.Algebra.ConstMulAction
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -21,32 +12,22 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def alexanderFamily (e : E ≃ₜ E) (t : ℝ) : E ≃ₜ E := by
   classical
   exact if ht : t = 0 then Homeomorph.refl E else
     (Homeomorph.smulOfNeZero t ht).symm.trans (e.trans (Homeomorph.smulOfNeZero t ht))
 
-
-
 @[simp] theorem alexanderFamily_zero (e : E ≃ₜ E) :
     e.alexanderFamily 0 = Homeomorph.refl E := by
   simp [alexanderFamily]
-
-
 
 theorem alexanderFamily_apply_of_ne_zero (e : E ≃ₜ E) {t : ℝ} (ht : t ≠ 0) (x : E) :
     e.alexanderFamily t x = t • e (t⁻¹ • x) := by
   simp [alexanderFamily, ht]
 
-
-
 @[simp] theorem alexanderFamily_one (e : E ≃ₜ E) : e.alexanderFamily 1 = e := by
   ext x
   simp [alexanderFamily_apply_of_ne_zero e one_ne_zero]
-
-
 
 theorem alexanderFamily_symm (e : E ≃ₜ E) (t : ℝ) :
     (e.alexanderFamily t).symm = e.symm.alexanderFamily t := by
@@ -54,8 +35,6 @@ theorem alexanderFamily_symm (e : E ≃ₜ E) (t : ℝ) :
   · simp [ht]
   · ext x
     simp [alexanderFamily, ht]
-
-
 
 theorem norm_alexanderFamily_sub_le (e : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖e x - x‖ ≤ C) (t : ℝ) (x : E) :
@@ -68,8 +47,6 @@ theorem norm_alexanderFamily_sub_le (e : E ≃ₜ E) {C : ℝ}
         rw [smul_sub, smul_inv_smul₀ ht]
       _ = ‖t‖ * ‖e (t⁻¹ • x) - t⁻¹ • x‖ := norm_smul _ _
       _ ≤ ‖t‖ * C := mul_le_mul_of_nonneg_left (hC _) (norm_nonneg _)
-
-
 
 theorem continuous_alexanderFamily (e : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖e x - x‖ ≤ C) :
@@ -89,8 +66,6 @@ theorem continuous_alexanderFamily (e : E ≃ₜ E) {C : ℝ}
     apply hformula.congr_of_eventuallyEq
     filter_upwards [continuous_fst.continuousAt.eventually_ne hp] with q hq
     exact e.alexanderFamily_apply_of_ne_zero hq q.2
-
-
 
 theorem continuous_alexanderFamily_symm (e : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖e x - x‖ ≤ C) :

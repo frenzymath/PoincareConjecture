@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.LocalBound
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -139,7 +129,6 @@ lemma log_harnack_of_gradient_bound_on (D : LeviCivitaData g)
   rw [Real.log_div (ne_of_gt (ha.trans hab)) ha.ne']
   dsimp only [K, δ] at hend
   linarith
-
 
 lemma log_harnack_of_gradient_bound (D : LeviCivitaData g)
     {f : ℝ × M → ℝ}

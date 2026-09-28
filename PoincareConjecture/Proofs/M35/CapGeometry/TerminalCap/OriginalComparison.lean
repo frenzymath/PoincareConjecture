@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialAnnulusComparison
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.AngularRadius
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +52,6 @@ end PoincareConjecture.M35.Uniqueness
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 open Uniqueness
-
-
 
 theorem RadialAnnulusComparison.original {g₀ : StandardInitialMetric}
     {E : RepairedStandardCapExistenceData g₀} {t : ℝ}

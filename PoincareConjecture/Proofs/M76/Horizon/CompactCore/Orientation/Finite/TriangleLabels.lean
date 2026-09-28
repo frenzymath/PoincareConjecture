@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.LabeledTriangleSign
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.FrontierStarCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

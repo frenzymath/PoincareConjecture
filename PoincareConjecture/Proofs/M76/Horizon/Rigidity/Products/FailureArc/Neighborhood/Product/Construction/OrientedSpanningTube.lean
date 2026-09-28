@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.Construction.FromEndpointModels
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Oriented.Tube
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Poincare.Topology.Orientation.ProjectivePlane
 open Set Metric Geometry Topology PLAnnularStrip

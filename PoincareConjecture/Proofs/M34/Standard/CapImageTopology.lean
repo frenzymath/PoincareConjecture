@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.PartialImageTopology
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecutFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,16 +13,12 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 theorem image_core_compact_and_interior (e : OpenPartialHomeomorph M X)
     (hsource : N.closed_core ⊆ e.source) :
     IsCompact (e '' N.closed_core) ∧ e '' N.core = interior (e '' N.closed_core) := by
   refine ⟨N.closed_core_compact.image_of_continuousOn (e.continuousOn.mono hsource), ?_⟩
   rw [N.core_eq_interior_closed_core]
   exact e.image_interior_eq_of_subset_source hsource
-
-
 
 theorem image_core_frontier_eq [T2Space X] (e : OpenPartialHomeomorph M X)
     (hsource : N.closed_core ⊆ e.source) :
@@ -41,8 +28,6 @@ theorem image_core_frontier_eq [T2Space X] (e : OpenPartialHomeomorph M X)
   apply e.image_frontier_eq_of_isCompact
   · simpa only [N.closed_core_compact.isClosed.closure_eq] using N.closed_core_compact
   · simpa only [N.closed_core_compact.isClosed.closure_eq] using hsource
-
-
 
 theorem image_recut_complement_end_eq (e : OpenPartialHomeomorph M X) {b : ℝ}
     (hsource : N.recutCarrier b ⊆ e.source) :
@@ -61,17 +46,12 @@ theorem image_recut_complement_end_eq (e : OpenPartialHomeomorph M X) {b : ℝ}
   · rintro ⟨hx, hnot⟩
     exact hx.resolve_right hnot
 
-
-
 theorem image_boundary_eq_recut_end_frontier (e : OpenPartialHomeomorph M X)
     {b : ℝ} (hb : -N.epsilon⁻¹ < b) (hsource : N.recutCarrier b ⊆ e.source) :
     e '' N.boundary_sphere = e '' N.recutCarrier b ∩
       frontier (e '' N.end_neck.region (-N.epsilon⁻¹) b) := by
   rw [N.boundary_eq_recut_end_frontier hb]
   exact e.image_inter_frontier_eq_of_subset_source hsource (fun _ hx => hsource (Or.inr hx))
-
-
-
 
 theorem image_boundary_subset_inner_end_closure (e : OpenPartialHomeomorph M X)
     {b c : ℝ} (hc : -N.epsilon⁻¹ < c) (hcb : c ≤ b)

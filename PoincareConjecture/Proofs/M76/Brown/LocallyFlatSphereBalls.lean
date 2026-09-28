@@ -1,23 +1,9 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatCompactifiedBall
 import PoincareConjecture.Proofs.M76.Brown.FiniteCompactificationBallPair
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem hasBrownLocallyFlatSphereBalls : HasBrownLocallyFlatSphereBalls := by
   intro S hS

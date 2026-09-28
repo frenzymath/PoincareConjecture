@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponentConnected
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem iUnion_edgeComponentComplex_space :
     (⋃ C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent,
@@ -43,9 +30,6 @@ theorem iUnion_edgeComponentComplex_space :
       K.edgeComponentComplex_coface C hvC hs (Finset.singleton_subset_iff.mpr hvs)
     exact mem_iUnion.mpr ⟨C, (K.edgeComponentComplex C).convexHull_subset_space hsC hxs⟩
 
-
-
-
 theorem pairwise_disjoint_edgeComponentComplex_space :
     Pairwise (fun C D : K.vertexAbstractComplex.edgeGraph.ConnectedComponent =>
       Disjoint (K.edgeComponentComplex C).space (K.edgeComponentComplex D).space) := by
@@ -62,9 +46,6 @@ theorem pairwise_disjoint_edgeComponentComplex_space :
   exact disjoint_left.mp
     (K.vertexAbstractComplex.edgeGraph.pairwise_disjoint_supp_connectedComponent hCD)
     haC (hab.symm ▸ hbD)
-
-
-
 
 theorem exists_edgeComponentComplex_of_isConnected
     (hK : K.faces.Finite) {s : Set E} (hs : IsConnected s) (hsK : s ⊆ K.space) :

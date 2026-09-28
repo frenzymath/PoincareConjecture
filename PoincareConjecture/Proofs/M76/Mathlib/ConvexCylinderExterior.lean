@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalPartition
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,11 +14,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem isFinitePLBallPair_nested_convex_cylinderExterior
     (K : SimplicialComplex ℝ (E × ℝ)) (hK : K.faces.Finite)

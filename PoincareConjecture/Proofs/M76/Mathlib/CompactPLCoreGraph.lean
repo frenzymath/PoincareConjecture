@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLGraphBlock
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPLProduct
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,11 +11,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_locallyPL_graph_separating_compact_core
     (e : ι → OpenPartialHomeomorph M E)

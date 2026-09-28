@@ -186,5 +186,3 @@ theorem chartFrame_connection_koszul (g : RiemannianMetric n M) (D : LeviCivitaD
   linarith
 
 end PoincareConjecture.M08
-
-

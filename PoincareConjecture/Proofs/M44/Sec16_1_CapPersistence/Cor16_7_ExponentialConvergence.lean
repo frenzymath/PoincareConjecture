@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Exponentia
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ModelInverse
 import PoincareConjecture.Proofs.M44.Mathlib.NearIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +28,6 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
 
-
-
 theorem firstVariation_endpoint_derivative (D : NormalizedCapExponential Q R)
     {p : E} (hp : p ∈ ball 0 R) (v : E) :
     (firstVariation D.phase (p, v) 1).2.1 = fderiv ℝ D.coordinateMap p v := by
@@ -48,8 +36,6 @@ theorem firstVariation_endpoint_derivative (D : NormalizedCapExponential Q R)
     (D.coordinateMap_smooth.contDiffAt (isOpen_ball.mem_nhds hp)) v
 
 end NormalizedCapExponential
-
-
 
 theorem standardFramePhase_firstVariation_endpoint_derivative
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (p v : E) :
@@ -63,10 +49,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (tip : (n : ℕ) → (S n).carrier) (scale eta : ℕ → ℝ) {R : ℝ}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
-
-
-
-
 
 theorem tendstoUniformlyOn_initial_exponentials_C1
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
@@ -105,9 +87,6 @@ theorem tendstoUniformlyOn_initial_exponentials_C1
     simpa only [Function.comp_apply, (D n).firstVariation_endpoint_derivative hp z.2,
       standardFramePhase_firstVariation_endpoint_derivative g₀ L z.1 z.2] using hn z hz
 
-
-
-
 theorem tendstoUniformlyOn_fderiv_adjusted_exponentials
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
     (hL : Tendsto (fun n => fderiv ℝ (D n).coordinateMap 0) atTop
@@ -131,9 +110,6 @@ theorem tendstoUniformlyOn_fderiv_adjusted_exponentials
   have hid : fderiv ℝ (id : E → E) = fun _ => ContinuousLinearMap.id ℝ E :=
     funext fun _ => fderiv_id
   simpa only [heq, hid] using hder
-
-
-
 
 theorem eventually_injOn_initial_exponentials
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

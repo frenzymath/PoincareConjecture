@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularSpatialDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +29,6 @@ private theorem horizontal_heq_of_val_eq {q r : G.Point} (h : q = r)
     {v : G.Horizontal q} {w : G.Horizontal r} (hv : v.val = w.val) : HEq v w := by
   cases h
   exact heq_of_eq (Subtype.ext hv)
-
-
 
 theorem initialVectorVariation_field_at (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s r : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
@@ -79,8 +68,6 @@ theorem initialVectorVariation_field_at (E : M14ExponentialFamily G T x)
   apply horizontal_heq_of_val_eq (exponential_square_curve_eq E Z hs hpos hr)
   exact hval.trans (hchain.trans (E.differential_pointwise_mfderiv Z r hrsurv W).symm)
 
-
-
 theorem initialVectorVariation_initialFixed (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
     (V : M14LVariationData G (E.path Z s hs hpos) (E.square_path Z s hs hpos))
@@ -93,9 +80,6 @@ theorem initialVectorVariation_initialFixed (E : M14ExponentialFamily G T x)
   have h := V.square_agrees 0 hzero u hu
   simpa only [zero_pow (by decide : 2 ≠ 0), hV 0 hzero u, E.gamma_at_zero,
     (E.path Z s hs hpos).curve_start] using h.symm
-
-
-
 
 theorem initialVectorVariation_action_germ (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)

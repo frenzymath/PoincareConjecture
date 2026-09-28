@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedTangentCoercivity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 structure M64ObservedWeakAnnulus (e : M → E) (c0 c1 : ℝ → M) where
   map : LoopPlane → M
@@ -52,33 +38,23 @@ namespace M64ObservedWeakAnnulus
 
 variable {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
-
-
 def value (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : Lp E 2 mu :=
   A.observed_memLp.toLp (e ∘ A.map)
-
-
 
 def energy (B : M → E →L[ℝ] E →L[ℝ] ℝ)
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : ℝ :=
   ∫ p in S, (B (A.map p) (A.column 0 p) (A.column 0 p) +
     B (A.map p) (A.column 1 p) (A.column 1 p)) / 2
 
-
-
 theorem energy_nonneg (B : M → E →L[ℝ] E →L[ℝ] ℝ)
     (hB : ∀ q v, 0 ≤ B q v v) (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : 0 ≤ A.energy B :=
   integral_nonneg fun p => div_nonneg (add_nonneg (hB _ _) (hB _ _)) (by norm_num)
-
-
 
 theorem map_aestronglyMeasurable (hei : IsEmbedding e)
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :
     AEStronglyMeasurable A.map mu := by
   let : TopologicalSpace.PseudoMetrizableSpace M := hei.isInducing.pseudoMetrizableSpace
   exact hei.aestronglyMeasurable_comp_iff.mp A.observed_memLp.aestronglyMeasurable
-
-
 
 theorem column_energy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
     (hei : IsEmbedding e) {K : ℝ} (hb : ∀ q, ‖B q‖ ≤ K)
@@ -96,8 +72,6 @@ theorem column_energy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : C
   have hmul := mul_le_mul_of_nonneg_right (hb (A.map p)) (sq_nonneg ‖A.column i p‖)
   nlinarith
 
-
-
 theorem energy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
     (hei : IsEmbedding e) {K : ℝ} (hb : ∀ q, ‖B q‖ ≤ K)
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :
@@ -105,8 +79,6 @@ theorem energy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuo
       B (A.map p) (A.column 1 p) (A.column 1 p)) / 2) S volume :=
   ((A.column_energy_integrable B hB hei hb 0).add
     (A.column_energy_integrable B hB hei hb 1)).div_const 2
-
-
 
 theorem column_norm_sq_le_energy
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)

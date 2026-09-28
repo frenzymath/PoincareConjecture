@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Volume.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Stereographic.Transition
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,24 +16,19 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
 noncomputable def axialCoordinate (N : EpsilonNeck g) : M → ℝ :=
   fun x => (N.coordinate_inverse x).2
-
-
 
 noncomputable def finSuccModelEquiv :
     EuclideanSpace ℝ (Fin (2 + 1)) ≃L[ℝ] EuclideanSpace ℝ (Fin 3) :=
   (LinearIsometryEquiv.piLpCongrLeft 2 ℝ ℝ
     (finCongr (by norm_num))).toContinuousLinearEquiv
 
-
 noncomputable def axialLinearCoordinate :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   (ContinuousLinearMap.snd ℝ (EuclideanSpace ℝ (Fin 2)) ℝ).comp
     ((RiemannianMetric.lineModelEquiv 2).symm.toContinuousLinearMap.comp
       (finSuccModelEquiv.symm.toContinuousLinearMap))
-
 
 noncomputable def euclideanNeckChart (N : EpsilonNeck g) (q : UnitTwoSphere) :
     letI := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)

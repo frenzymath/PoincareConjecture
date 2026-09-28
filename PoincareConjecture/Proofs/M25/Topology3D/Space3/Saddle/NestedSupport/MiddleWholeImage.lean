@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.TwoBandLabelMatchi
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionUniqueness
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ open scoped ContDiff Manifold InnerProductSpace Matrix
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem saddle_nested_transported_tube
     (u : UnitTwoSphere) (K0 : D3)
@@ -60,9 +49,7 @@ theorem saddle_nested_transported_tube
     rw [image_image]
     rfl
 
-
 set_option linter.unusedVariables false in
-
 
 theorem saddle_nested_middle_whole_image
     (u : UnitTwoSphere) (K0 : D3)

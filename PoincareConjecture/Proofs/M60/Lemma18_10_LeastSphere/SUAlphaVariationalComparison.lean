@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 namespace M60
-
 
 def suAlphaPairMetric {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) : (E × E) →L[ℝ] (E × E) →L[ℝ] ℝ :=
@@ -82,8 +79,6 @@ theorem suAlphaPairMetric_norm {E : Type*} [NormedAddCommGroup E] [NormedSpace �
       (norm_snd_le w) (norm_nonneg w.2) (mul_nonneg (norm_nonneg B) (norm_nonneg v)))
   exact (norm_add_le _ _).trans (by linarith)
 
-
-
 theorem suAlpha_midpoint_gap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (hB : ∀ v, 0 ≤ B v v)
     {c alpha : ℝ} (hc : 0 ≤ c) (ha : 1 ≤ alpha) (v w : E) :
@@ -105,8 +100,6 @@ theorem suAlpha_midpoint_gap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ
   dsimp only [suRegularizedQuadratic]
   dsimp only [smul_eq_mul] at hconv
   exact hsplit.trans (by linarith)
-
-
 
 theorem suAlpha_paired_blend_gap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (hB : ∀ v, 0 ≤ B v v)
@@ -154,9 +147,6 @@ theorem suAlpha_scale_le {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
         ← Real.rpow_natCast, ← Real.rpow_mul ht0]
       rfl
 
-
-
-
 theorem suAlpha_add_cutoff_error {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) (hB : ∀ v, 0 ≤ B v v)
     {c alpha s : ℝ} (hc : 0 ≤ c) (ha : 1 ≤ alpha) (hs : 0 < s) (v w : E) :
@@ -191,9 +181,6 @@ theorem suAlpha_add_cutoff_error {E : Type*} [NormedAddCommGroup E] [NormedSpace
   rw [← heq]
   exact (suAlpha_scale_le B hB hc (by linarith) (by linarith) _).trans
     (mul_le_mul_of_nonneg_left hcv' (Real.rpow_nonneg hsp.le _))
-
-
-
 
 theorem suAlpha_paired_replacement_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -243,8 +230,6 @@ theorem suAlpha_paired_replacement_bound
   change _ ≤ T * (S * _) at hh1 hh2
   change _ ≤ T * S * (T * _ + T * _) at hbase
   nlinarith
-
-
 
 theorem suAlpha_paired_weighted_power_gap
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -316,7 +301,6 @@ theorem suAlpha_paired_weighted_power_gap
 
 open scoped ENNReal in
 
-
 theorem suWeakLp_memLp_of_power_bound
     {X F : Type*} [MeasurableSpace X] {mu : Measure X}
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -357,8 +341,6 @@ theorem suWeakLp_memLp_of_power_bound
     exact hbound
 
 open scoped ENNReal in
-
-
 
 theorem suStrongLp_of_subseq_weak_and_power_cauchy
     {X F : Type*} [MeasurableSpace X] {mu : Measure X}
@@ -415,8 +397,6 @@ theorem suStrongLp_of_weak_and_power_cauchy
     Tendsto (fun j => eLpNorm (fun x => (u j - v) x) (ENNReal.ofReal p) mu)
       atTop (𝓝 0) :=
   suStrongLp_of_subseq_weak_and_power_cauchy hp strictMono_id hw hcauchy
-
-
 
 theorem suAlpha_pair_energy_gap
     (g : RiemannianMetric n M) (alpha : ℝ)

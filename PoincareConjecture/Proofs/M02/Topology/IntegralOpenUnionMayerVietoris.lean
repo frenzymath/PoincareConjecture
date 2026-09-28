@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietorisConnectingClass
 import PoincareConjecture.Proofs.M02.Topology.IntegralRelativeChains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

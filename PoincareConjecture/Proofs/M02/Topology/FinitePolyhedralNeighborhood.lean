@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.AmbientSimplicialGrid
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

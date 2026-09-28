@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereInterpolation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CircleRadialChart
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,11 +12,9 @@ namespace PoincareConjecture.M25.Topology3D
 local notation "P" => (ℝ × E2)
 local notation "SP" => (ℝ × (ℝ × E2))
 
-
 noncomputable def stackAnnularInterpolation
     (g : P → E2) (p : SP) : SP :=
   (p.1, (p.2.1, p.2.2 + Real.smoothTransition p.1 • (g p.2 - p.2.2)))
-
 
 theorem stackAnnularInterpolation_invertible_derivative
     (g : P → E2) (U : Set P) (hU : IsOpen U)
@@ -106,7 +94,6 @@ theorem stackAnnularInterpolation_invertible_derivative
   change HasFDerivAt (stackAnnularInterpolation g) (V : SP →L[ℝ] SP) (t, (z, q))
   rw [hV]
   exact hd
-
 
 theorem exists_stackAnnularInterpolationChart
     (g : P → E2) (U : Set P) (hU : IsOpen U)

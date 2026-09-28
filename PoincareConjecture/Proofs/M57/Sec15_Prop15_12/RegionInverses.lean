@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,15 +10,11 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m57Component_inverse_right
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
     {x : A.carrier} (hx : x ∈ range C.inclusion) : C.inclusion (C.inverse x) = x := by
   obtain ⟨y, rfl⟩ := hx
   exact congrArg C.inclusion (C.left_inverse y)
-
-
 
 theorem m57RegionInverse_localDiffeomorph
     {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
@@ -51,9 +39,6 @@ theorem m57RegionInverse_localDiffeomorph
       contMDiffOn_toFun := e.inverse_smooth
       contMDiffOn_invFun := e.map_smooth }
   exact ⟨d, hy, fun _ _ => rfl⟩
-
-
-
 
 theorem m57ComponentInverse_localDiffeomorph
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)

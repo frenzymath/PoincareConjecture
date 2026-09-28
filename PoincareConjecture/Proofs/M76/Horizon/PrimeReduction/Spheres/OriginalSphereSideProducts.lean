@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.SphereSideEdgeLinks
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -22,8 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem ChartwisePLSphere.exists_original_side_products
     {X ι : Type*} [MetricSpace X]
@@ -213,4 +200,3 @@ theorem ChartwisePLSphere.exists_original_side_products
     hNpure, hNedge, hpureP, hpureM, hfacets, hstars⟩
 
 end PoincareConjecture.M76
-

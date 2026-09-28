@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import PoincareConjecture.Proofs.M60.Mathlib.OrthonormalPairExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open Poincare.Geometry.Curvature.Operator
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem m60Ricci_plane_trace_basis (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) :
@@ -58,8 +47,6 @@ theorem m60Ricci_plane_trace_basis (D : LeviCivitaData g)
   rw [hswap 1 0] at h1
   rw [hswap 2 0] at hs'
   linarith
-
-
 
 theorem m60Ricci_plane_trace (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) (u v : TangentSpace (𝓡 3) x)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceCapAlternative
 import PoincareConjecture.Proofs.M47.CanonicalStandardRecutCover
 import PoincareConjecture.Proofs.M47.CanonicalStandardCapCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem standard_cap_alternative_setup_recut
     (S : RepairedControlledSchedulesData.{u}) {v : ℝ}
@@ -53,9 +42,6 @@ theorem standard_cap_alternative_setup_recut
   refine ⟨H, hHe, ?_, hHD.trans refined.connection_eq, hcore refined.contains⟩
   rw [hHC, refined.constant_eq, S.calibration.setup_C_eq]
   exact le_max_right _ _
-
-
-
 
 theorem exists_source_standard_cap_canonical_neighborhood
     (S : RepairedControlledSchedulesData.{u}) {theta v : ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEs
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Filter Topology
@@ -84,8 +76,6 @@ theorem principal_equation_restrict
       apply integral_congr_ae
       filter_upwards [ae_restrict_mem hU.measurableSet] with x hx
       simp [hx]
-
-
 
 theorem exists_hessian_integral_le_of_weakEquation
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)

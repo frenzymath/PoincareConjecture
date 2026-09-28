@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckBufferTimeModulus
 import PoincareConjecture.Proofs.M47.CanonicalNeckSpatialTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ open M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
 
 theorem neck_metric_coefficient_axial_pullback
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
@@ -53,8 +44,6 @@ private theorem axial_weight_product_abs_le_one {lambda : ℝ}
     · norm_num
   rw [abs_mul]
   exact (mul_le_mul (hw i) (hw l) (abs_nonneg _) zero_le_one).trans_eq (one_mul _)
-
-
 
 theorem norm_iteratedFDeriv_weighted_neck_compression_le
     {lambda : ℝ} (hlambda : lambda ∈ Icc 0 1) (w : ℝ) (hw : |w| ≤ 1)
@@ -102,8 +91,6 @@ private theorem coefficient_smooth_at_axial_point
   apply ((chartAt E₂ q).open_target.prod isOpen_Ioo).mem_nhds
   exact ⟨by rw [roundCylinder_sphereChart_target]; trivial, hs⟩
 
-
-
 theorem compressed_neck_metric_coefficient_contDiffAt
     {g0 : RiemannianMetric 3 M} (N : EpsilonNeck g0) (g : RiemannianMetric 3 M)
     (lambda c : ℝ) (q : UnitTwoSphere) (z : ℝ) (i l : Fin 3)
@@ -124,8 +111,6 @@ theorem compressed_neck_metric_coefficient_contDiffAt
     exact neck_metric_coefficient_axial_pullback g N.coordinate_map lambda c q y i l
   rw [heq]
   exact contDiffAt_const.mul hcomp
-
-
 
 theorem compressed_neck_metric_coefficient_jets_bounded
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -160,8 +145,6 @@ theorem compressed_neck_metric_coefficient_jets_bounded
   rw [heq]
   exact h.trans (by
     simpa only [f, neckAxialCoordinate, add_zero] using hbound t ht q _ hshort j hj i l)
-
-
 
 theorem compressed_neck_metric_jets_uniform_time_delta [T3Space M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

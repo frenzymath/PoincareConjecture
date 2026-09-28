@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormDualResponse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +33,6 @@ theorem norm_formWeakHeatOperator_le (J : V →L[ℝ] H) (hc : IsCompactOperator
       (ContinuousLinearMap.norm_compLpL_le _ |>.trans hB)
       (ContinuousLinearMap.opNorm_nonneg _)
       (by positivity)).trans_eq (mul_one _))
-
-
 
 theorem formWeakHeat_equation (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

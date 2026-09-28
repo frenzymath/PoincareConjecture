@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalTransfer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N] [T3Space M]
-
-
 
 theorem terminalSourceNormal_edist_eq_on_buffer
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

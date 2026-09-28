@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.TimeWindows
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -25,8 +13,6 @@ namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space
-
-
 
 theorem eventually_referenceNormalChartCover_extension
     {n : ℕ} {T' T S' S : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -50,8 +36,6 @@ theorem eventually_referenceNormalChartCover_extension
   exact ⟨cover.extendTimeOfCurvatureBoundOnBall hS H.time_bounds (Subset.refl _)
     hA.le hR.le hρR ha.le hb.le hK hk, rfl⟩
 
-
-
 theorem eventually_referenceNormalChartCover_ellipticity
     {n : ℕ} {T' T S' S : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
     (hS : S' < 0 ∧ 0 < S)
@@ -72,8 +56,6 @@ theorem eventually_referenceNormalChartCover_ellipticity
   intro cover
   obtain ⟨wide, hchart⟩ := hk cover
   simpa only [hchart] using wide.coefficients
-
-
 
 theorem eventually_referenceNormalChartCover_spacetime_jet_bound
     {n : ℕ} {T' T S' S : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -98,8 +80,6 @@ theorem eventually_referenceNormalChartCover_spacetime_jet_bound
   intro cover
   obtain ⟨wide, hchart⟩ := hextk cover
   simpa only [hchart] using hjetsk wide
-
-
 
 theorem referenceNormalChartCover_contDiffOn
     {n : ℕ} {T' T S' S : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

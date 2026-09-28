@@ -6,14 +6,6 @@ import Mathlib.CategoryTheory.Limits.Shapes.Preorder.Basic
 import Mathlib.CategoryTheory.Limits.Types.ColimitTypeFiltered
 import Mathlib.Topology.Sets.Compacts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

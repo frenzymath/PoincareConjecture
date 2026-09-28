@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapTipFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.IndependentFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +33,6 @@ theorem cap_tip_mem_arrangement (e : T.decomposition.EdgeIndex) (terminal : Bool
   exact ⟨e, mem_image_of_mem _ (Ioo_subset_Icc_self (T.cap_tip_parameter_mem e terminal))⟩
 
 omit [T2Space S] in
-
 
 theorem band_contains_cap_tip (e : T.decomposition.EdgeIndex) (terminal : Bool)
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -134,7 +127,6 @@ theorem cap_tip_mem_original_cap (e : T.decomposition.EdgeIndex) (terminal : Boo
   · exact ⟨(T.rightCap (T.incidentSide e false)).sector,
       (T.rightCap (T.incidentSide e false)).tip_mem_cap⟩
 
-
 theorem cap_parent_contribution_eq_zero_at_other_cap_tip (g : RiemannianMetric 2 S)
     (e : T.decomposition.EdgeIndex) (terminal : Bool) (p : T.decomposition.vertices)
     (hp : p ≠ T.decomposition.edgeEndpoint e terminal) (s : Bool × Bool) :
@@ -151,7 +143,6 @@ theorem cap_parent_contribution_eq_zero_at_other_cap_tip (g : RiemannianMetric 2
   exact disjoint_left.mp (T.caps_disjoint_of_vertices_ne p _ hp s t) hq ht
 
 omit [T2Space S] in
-
 
 theorem band_parent_contribution_eq_zero_at_other_cap_tip (g : RiemannianMetric 2 S)
     (e : T.decomposition.EdgeIndex) (terminal : Bool)
@@ -171,8 +162,6 @@ theorem band_parent_contribution_eq_zero_at_other_cap_tip (g : RiemannianMetric 
   exact hpi (T.band_contains_cap_tip e terminal p i (mem_iUnion.mpr ⟨s, hq⟩))
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem vertex_fan_at_cap_tip (g : RiemannianMetric 2 S)
     (e : T.decomposition.EdgeIndex) (terminal : Bool) :

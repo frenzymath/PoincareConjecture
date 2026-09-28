@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace Topology
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 set_option maxHeartbeats 3000000 in
 
 set_option linter.unusedVariables false in
-
 
 theorem exists_saddle_selected_wall_germs
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

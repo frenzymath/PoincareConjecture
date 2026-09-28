@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M08.EndpointMomentum
 import PoincareConjecture.Proofs.M08.ChartRegularity
 import Mathlib.Analysis.ODE.PicardLindelof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +10,6 @@ open scoped ContDiff Topology intervalIntegral
 namespace ODE
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem contDiffOn_of_finite_energy_momentum {a b : ℝ} (hab : a < b)
     {S : Set E} (A : ℝ × E → E →L[ℝ] E) (F : ℝ → E × E → E)

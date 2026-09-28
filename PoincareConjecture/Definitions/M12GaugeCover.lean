@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
-
 structure SpacetimeGaugeCover (F : GeneralizedFlowSpacetime n X time I)
     (D : SpacetimeIntervalSystem) where
   index : Type u
@@ -32,7 +21,6 @@ structure SpacetimeGaugeCover (F : GeneralizedFlowSpacetime n X time I)
   local_diffeomorph : ∀ b,
     IsLocalDiffeomorph (spacetimeModel n) (spacetimeModel n) ∞ (cylinder b).toSpacetime
   covers : ∀ p : F.Point, ∃ b, ∃ q, (cylinder b).toSpacetime q = p
-
 
 noncomputable def GeneralizedFlowCarrierConclusion.gaugeCover
     {A : AdaptedMetricAtlas n X} (R : GeneralizedFlowCarrierConclusion A) :

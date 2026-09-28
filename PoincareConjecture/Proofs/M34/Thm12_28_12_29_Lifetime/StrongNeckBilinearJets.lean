@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckFiniteBilinearJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.UniformOrdinarySpatialJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def blowupCoordinateBilinear
     {G : GeneralizedRicciFlowData.{u}} {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
     {origin scale : ℝ} {K : Set ℝ} {U : Set L.sliceCarrier.carrier}
@@ -33,8 +21,6 @@ noncomputable def blowupCoordinateBilinear
     (q : L.sliceCarrier.carrier) (s : ℝ) (y : E₃) : E₃ →L[ℝ] E₃ →L[ℝ] ℝ :=
   ContinuousLinearMap.piLpBilinearFromCoordinates (p := 2) (q := 2) (𝕜 := ℝ)
     (fun a b => blowupPullbackCoefficient e q a b (s, y))
-
-
 
 noncomputable def limitCoordinateBilinear
     {J : Set ℝ} (L : BlowupLimitFlow.{u} J) (q : L.sliceCarrier.carrier)
@@ -54,8 +40,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
-
-
 theorem ordinaryChapter11Cylinder_coefficient_spatial_contDiffAt
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
     {origin scale : ℝ} {K : Set ℝ} {U : Set L.sliceCarrier.carrier}
@@ -73,8 +57,6 @@ theorem ordinaryChapter11Cylinder_coefficient_spatial_contDiffAt
     (ordinaryChapter11Cylinder_coefficient_contDiffOn R e hU hK hs q a b).comp
       (contDiff_const.prodMk contDiff_id).contDiffOn (fun _ hz => ⟨hs, hz⟩)
   exact hslice.contDiffAt (hW.mem_nhds hy)
-
-
 
 theorem ordinaryChapter11_uniform_bilinear_metricJets
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

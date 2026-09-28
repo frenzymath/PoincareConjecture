@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RoundSurfaceRicci
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 import Mathlib.LinearAlgebra.Basis.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem product_ricci
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
@@ -87,8 +77,6 @@ theorem product_ricci
         (cylinderCoordinateEquiv v).1 0 = _
   rw [hz, add_zero]
   exact (M13.ricci_eq_sum_basis Dh a b2 _ _).symm
-
-
 
 theorem round_product_ricci
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}

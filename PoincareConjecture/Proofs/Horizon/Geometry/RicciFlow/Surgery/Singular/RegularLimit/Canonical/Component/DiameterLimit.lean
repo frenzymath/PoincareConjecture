@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.RadiusExtrema
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem frequently_cComponent_intrinsicDiameter_bounds
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -102,8 +93,6 @@ private theorem strict_doubled_diameter_bounds
   · apply hupper.trans_lt
     apply (ENNReal.ofReal_lt_ofReal_iff (mul_pos (mul_pos (by norm_num) hC) hb)).mpr
     nlinarith [mul_pos hC hb]
-
-
 
 theorem terminal_intrinsicDiameter_bounds_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

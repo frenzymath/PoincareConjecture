@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutCancellation
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,18 +16,12 @@ variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
-
-
 theorem m64Intrinsic_band_height_mem_source {x z : ℝ} (hx : x ∈ Icc (0 : ℝ) 1)
     (hz : z ∈ Icc (0 : ℝ) (B.height x)) :
     collarParameterEquiv.symm (x, z) ∈ B.coordinates.source := by
   apply B.band_subset_source
   rw [B.band_eq_subgraph]
   simpa only [mem_ofPred_eq, collarParameterEquiv.apply_symm_apply] using ⟨hx, hz⟩
-
-
-
 
 theorem m64Intrinsic_band_bottom_image :
     (fun t => B.coordinates (collarParameterEquiv.symm (t, 0))) '' Icc (0 : ℝ) 1 =
@@ -55,10 +38,6 @@ theorem m64Intrinsic_band_bottom_image :
   rw [ObliqueBandFaces.lowerArc, ← hi, image_image]
   exact image_congr (fun t _ => B.coordinates_bottom t)
 
-
-
-
-
 theorem m64Intrinsic_band_top_disjoint_lower : Disjoint B.polygonalTop B.lowerArc := by
   apply disjoint_left.mpr
   intro p hp hplower
@@ -73,9 +52,6 @@ theorem m64Intrinsic_band_top_disjoint_lower : Disjoint B.polygonalTop B.lowerAr
   have hz := congrArg (fun q => (collarParameterEquiv q).2) hxy
   simp only [collarParameterEquiv.apply_symm_apply] at hz
   exact (B.height_pos hx).ne' hz
-
-
-
 
 theorem m64Intrinsic_band_top_subset_region {U : Set AnnulusCoordinates}
     (hregion : B.carrier \ B.lowerArc ⊆ U) : B.polygonalTop ⊆ U := by
@@ -95,10 +71,6 @@ variable (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
     (collarParameterEquiv.trans L).toHomeomorph.toOpenPartialHomeomorph
     lo a b ua wa ub wb ra rb)
 
-
-
-
-
 theorem m64Intrinsic_band_left_cut :
     B.leftCut = segment ℝ (L (a, lo a)) (L (a, lo a) + ra • L (ua, wa)) := by
   change (fun q : ℝ × ℝ => L (collarParameterEquiv (collarParameterEquiv.symm q))) ''
@@ -110,10 +82,6 @@ theorem m64Intrinsic_band_left_cut :
   congr 1
   rw [← map_smul, ← map_add]
   rfl
-
-
-
-
 
 theorem m64Intrinsic_band_right_cut :
     B.rightCut = segment ℝ (L (b, lo b)) (L (b, lo b) + rb • L (ub, wb)) := by
@@ -129,10 +97,6 @@ theorem m64Intrinsic_band_right_cut :
 
 end LinearBand
 
-
-
-
-
 theorem m64Intrinsic_ray_image_eq_segment (p d : AnnulusCoordinates) {r : ℝ} (hr : 0 ≤ r) :
     (fun u : ℝ => p + u • d) '' Icc (0 : ℝ) r = segment ℝ p (p + r • d) := by
   have himage : (fun t : ℝ => t * r) '' Icc (0 : ℝ) 1 = Icc (0 : ℝ) r := by
@@ -143,10 +107,6 @@ theorem m64Intrinsic_ray_image_eq_segment (p d : AnnulusCoordinates) {r : ℝ} (
   apply image_congr
   intro t _
   module
-
-
-
-
 
 theorem m64Intrinsic_segment_base_eq_of_same_direction {p q d : AnnulusCoordinates}
     (heq : segment ℝ p (p + d) = segment ℝ q (q + d)) : p = q := by

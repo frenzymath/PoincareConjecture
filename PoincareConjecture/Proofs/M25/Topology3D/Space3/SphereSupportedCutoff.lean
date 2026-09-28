@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Manifold Topology BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem contMDiffOn_sphere_supported_smul
     (w : UnitTwoSphere → ℝ) (hw : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ w)
@@ -42,9 +29,6 @@ theorem contMDiffOn_sphere_supported_smul
       filter_upwards [hnear] with y hy
       rw [image_eq_zero_of_notMem_tsupport hy, zero_smul]
     exact (contMDiffAt_const.congr_of_eventuallyEq hzero).contMDiffWithinAt
-
-
-
 
 theorem exists_two_sphere_cutoffs
     (K V : Fin 2 → Set UnitTwoSphere)

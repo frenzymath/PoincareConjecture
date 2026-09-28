@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
 
 theorem closure_inside_subset_convex {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

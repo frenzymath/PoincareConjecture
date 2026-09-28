@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.ChartShrinking
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -10,8 +8,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_ball_shrinking_in_open_region {n : Nat}
     (A : Diffeomorph (𝓡 n) (𝓡 n)

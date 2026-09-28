@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.RetainedLevelComponents
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AdjacentCutCover
 import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem graph_sides_in_height_preserving_chart
     (N N' : EpsilonNeck g) (hsep : N.IsSeparating)

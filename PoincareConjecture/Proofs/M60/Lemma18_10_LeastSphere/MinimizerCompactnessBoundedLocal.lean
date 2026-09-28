@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessUnbounded
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "e" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
 
 theorem suBoundedGradient_normalization
     (g : RiemannianMetric n M) (f : ℕ → UnitTwoSphere → M)
@@ -63,10 +58,6 @@ theorem suBoundedGradient_normalization
       nlinarith [sq_nonneg ‖s • z‖]
     have hh := (div_le_iff₀ (suRoundFactor_smooth_pos.2 (s • z))).mp (hupper z)
     nlinarith
-
-
-
-
 
 theorem suBoundedGradient_chart_limit [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M)

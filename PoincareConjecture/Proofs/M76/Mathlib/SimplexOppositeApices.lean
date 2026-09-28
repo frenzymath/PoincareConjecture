@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexFaceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexFacetNeighborhood
 import Mathlib.Topology.Algebra.Affine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ namespace AffineBasis
 
 variable {ι E : Type*} [Finite ι] [DecidableEq ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem coord_ne_zero_of_affineSpan_update_eq_top (b : AffineBasis ι ℝ E)
     (i : ι) (q : E) (hfull : affineSpan ℝ (range (Function.update b i q)) = ⊤) :
@@ -47,9 +35,6 @@ theorem coord_ne_zero_of_affineSpan_update_eq_top (b : AffineBasis ι ℝ E)
   have hz := b.coord_eq_zero_of_mem_affineSpan_image (s := {j | j ≠ i})
     (i := i) (by simp) hbi
   simp at hz
-
-
-
 
 theorem coord_neg_of_common_facet_intersection (b : AffineBasis ι ℝ E)
     (i : ι) (q x : E) (hqi : b.coord i q ≠ 0)
@@ -107,9 +92,6 @@ theorem coord_neg_of_common_facet_intersection (b : AffineBasis ι ℝ E)
   have hz := hinter y ⟨hyold, hynew⟩
   rw [hyi] at hz
   exact (mul_pos ht hpos).ne' hz
-
-
-
 
 theorem mem_interior_union_of_common_facet_intersection (b : AffineBasis ι ℝ E)
     (i : ι) (q x : E) (hfull : affineSpan ℝ (range (Function.update b i q)) = ⊤)

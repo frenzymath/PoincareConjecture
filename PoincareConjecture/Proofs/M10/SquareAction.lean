@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.SquareComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def squareKineticEnergy (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) (s : ℝ) : ℝ :=
@@ -78,7 +69,6 @@ theorem squareKineticEnergy_eq_speed
   simp only [map_smul, smul_apply, smul_eq_mul]
   rw [backwardMetricCoordinates_apply p (G.gamma Z (s ^ 2), s ^ 2) hq]
   ring
-
 
 theorem squareAction_hasDerivAt
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)

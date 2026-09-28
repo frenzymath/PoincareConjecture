@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ParitySeparation
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ExteriorComponent
 import Mathlib.Analysis.LocallyConvex.WithSeminorms
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,16 +12,12 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ} {p : Polygon E n}
 
-
-
 theorem IsSimplePolygon.frontier_compl_component_eq (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) {x : E} (hx : x ∉ p.boundary ℝ) :
     frontier (connectedComponentIn (p.boundary ℝ)ᶜ x) = p.boundary ℝ := by
   have hn : 0 < n := lt_of_lt_of_le (by decide : 0 < 3) hp.three_le
   exact (hp.hasLocalTwoSides hdim).frontier_compl_component_eq
     (polygon_boundary_isClosed p) (polygon_boundary_isConnected p hn) hx
-
-
 
 theorem IsSimplePolygon.exists_two_compl_components (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
@@ -45,8 +29,6 @@ theorem IsSimplePolygon.exists_two_compl_components (hp : IsSimplePolygon p)
   exact (hp.hasLocalTwoSides hdim).exists_two_distinct_compl_components
     (polygon_boundary_isClosed p) (polygon_boundary_isConnected p hn)
     (hp.not_isPreconnected_compl hdim)
-
-
 
 theorem IsSimplePolygon.exists_inside_outside (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPhaseCircleC
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCharts
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
-
-
 theorem real_phase_column_norm_sq
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (R : E →L[ℝ] LoopPlane) (k : ℝ)
@@ -50,10 +35,6 @@ theorem real_phase_column_norm_sq
     (fun i => R.comp_memLp' (Lp.memLp (A.column i)))
     (fun i j => m64WeakPartial_comp_linear A.observed_memLp (Lp.memLp (A.column i))
       (A.weak_partial i) R j) k hphase
-
-
-
-
 
 theorem real_phase_column_integral_le_norm_sq
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -78,11 +59,6 @@ theorem real_phase_column_integral_le_norm_sq
       rw [div_mul_eq_mul_div, le_div_iff₀ hsq]
       nlinarith
     _ = _ := by rw [integral_const_mul, ← LpFiniteCoordinatesNative.l2_norm_sq]
-
-
-
-
-
 
 theorem real_phase_column_integral_le_weightedEnergy
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

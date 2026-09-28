@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierPLNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.CubeSectorSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,14 +12,10 @@ variable {ι : Type*} [Fintype ι]
 
 omit [Fintype ι] in
 
-
 theorem signedCubeCoordinate_ne_zero (i : ι ⊕ ι) : signedCubeCoordinate i ≠ 0 := by
   intro h
   have hv := congrArg (fun L : (ι → ℝ) →ₗ[ℝ] ℝ => L (fun _ => 1)) h
   cases i <;> simp [signedCubeCoordinate] at hv
-
-
-
 
 theorem closedBall_eq_signedCube_halfspaces :
     Metric.closedBall (0 : ι → ℝ) 1 = {x | ∀ i, signedCubeCoordinate i x ≤ 1} := by
@@ -51,9 +38,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsCompact.exists_finitePL_cube_homeomorph {s : Set E} (hs : IsCompact s)
     (hcv : Convex ℝ s) (hne : (interior s).Nonempty)

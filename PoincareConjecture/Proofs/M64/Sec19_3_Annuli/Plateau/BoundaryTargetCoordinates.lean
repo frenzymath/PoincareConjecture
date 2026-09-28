@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderCenteredI
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCurveStraightening
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerReconstruction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +11,6 @@ open Set Filter Metric
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ChartReadable_bounded_boundary_chart {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]

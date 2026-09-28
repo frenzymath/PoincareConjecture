@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ForestCutSeparation
 import PoincareConjecture.Proofs.M38.SeparatingCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M38.EventSpanningForest
 variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
   [Nonempty (F.slice T).carrier] {P : ∀ i, EventCapCoordinates F T hT i}
   (H : EventSpanningForest F T hT P)
-
 
 theorem reverse_finset (J : Finset (Fin (F.event T hT).cap_count))
     (hJ : (J : Set (Fin (F.event T hT).cap_count)) ⊆ H.selectedCaps) :
@@ -59,7 +50,6 @@ theorem reverse_finset (J : Finset (Fin (F.event T hT).cap_count))
     have hstep := singleCut_separating_step F T hT P S (H.capEdge e) hiS hcenters
     rw [hinsert] at hstep
     exact Relation.ReflTransGen.tail hprev hstep
-
 
 theorem reverse_selected :
     Relation.ReflTransGen SmoothConnectedSumStep

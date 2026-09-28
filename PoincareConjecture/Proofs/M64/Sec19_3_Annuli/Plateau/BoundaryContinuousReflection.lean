@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryReflectedEquation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakClassical
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,12 +13,8 @@ open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
 
-
-
 def m64ContinuousBoundaryReflect (epsilon : ℝ) (u : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   if 0 ≤ p 0 then u p else epsilon * u (reflect p)
-
-
 
 theorem m64ContinuousBoundaryReflect_continuous {u : LoopPlane → ℝ}
     (hu : Continuous u) (epsilon : ℝ)
@@ -49,8 +34,6 @@ theorem m64ContinuousBoundaryReflect_continuous {u : LoopPlane → ℝ}
   rw [hr]
   exact hface p hp.symm
 
-
-
 theorem m64ContinuousBoundaryReflect_ae (epsilon : ℝ) (u : LoopPlane → ℝ) :
     m64ContinuousBoundaryReflect epsilon u =ᵐ[volume] m64BoundaryReflect epsilon u := by
   have hcoord : ∀ᵐ p : LoopPlane ∂volume, p 0 ≠ 0 :=
@@ -65,8 +48,6 @@ theorem m64ContinuousBoundaryReflect_ae (epsilon : ℝ) (u : LoopPlane → ℝ) 
     simp [m64ContinuousBoundaryReflect, m64BoundaryReflect, halfSpace, hpos,
       not_le.mpr hneg, hpneg]
 
-
-
 theorem m64ContinuousBoundaryReflect_eq_on_closedHalfSpace
     (epsilon : ℝ) (u : LoopPlane → ℝ) :
     EqOn (m64ContinuousBoundaryReflect epsilon u) u {p : LoopPlane | 0 ≤ p 0} := by
@@ -74,16 +55,11 @@ theorem m64ContinuousBoundaryReflect_eq_on_closedHalfSpace
   change 0 ≤ p 0 at hp
   simp only [m64ContinuousBoundaryReflect, if_pos hp]
 
-
-
 theorem m64ContinuousBoundaryReflect_memLp {u : LoopPlane → ℝ} {p : ℝ≥0∞}
     (hu : MemLp u p (volume.restrict (halfSpace 2))) (epsilon : ℝ) :
     MemLp (m64ContinuousBoundaryReflect epsilon u) p volume :=
   (memLp_congr_ae (m64ContinuousBoundaryReflect_ae epsilon u)).mpr
     (m64BoundaryReflect_memLp hu epsilon)
-
-
-
 
 theorem m64EvenBoundaryReflect_weak {u v : LoopPlane → ℝ} (i : Fin 2)
     (hu : MemLp u 2 (volume.restrict (halfSpace 2)))

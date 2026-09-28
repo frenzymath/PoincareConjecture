@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveScalarPowers
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.QuotientMaximum
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Linearity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +26,6 @@ private theorem gradient_const_mul (D : LeviCivitaData g)
   rw [D.inner_gradient, mvfderiv_const_mul]
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
 
-
-
-
 theorem contMDiff_weighted_ricci_defect (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hR : ∀ x, 0 < D.scalarCurvature x) (p : ℝ) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun y =>
@@ -53,9 +40,6 @@ theorem contMDiff_weighted_ricci_defect (D : LeviCivitaData g)
       one_mul, mul_comm] using hSs.sub (hc.smul (hRs.pow 2))
   exact hDs.div₀ (contMDiff_positive_rpow hRs hR p)
     (fun y => (Real.rpow_pos_of_pos (hR y) p).ne')
-
-
-
 
 theorem weighted_ricci_gradient_bound (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hR : ∀ y, 0 < D.scalarCurvature y)
@@ -143,9 +127,6 @@ private theorem weighted_time_nonpos {R S A G C U Lr Ls Lq dq p : ℝ}
     nlinarith only [htime, hspace, hgrad, hr, hL]
   exact nonpos_of_mul_nonpos_left hmul hU
 
-
-
-
 theorem differentiableAt_weighted_ricci_defect
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -158,10 +139,6 @@ theorem differentiableAt_weighted_ricci_defect
   have hdS := F.hasDerivAt_ricciNormSq hC ht x
   exact ((hdS.sub ((hdR.pow 2).div_const 3)).div
     (hdR.rpow_const (Or.inl hR.ne')) (Real.rpow_pos_of_pos hR p).ne').differentiableAt
-
-
-
-
 
 theorem weighted_ricci_deriv_nonpos_at_localMax
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)

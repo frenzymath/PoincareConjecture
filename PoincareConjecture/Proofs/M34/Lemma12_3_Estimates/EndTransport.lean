@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndTranslation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -20,7 +11,6 @@ namespace PoincareConjecture.M34
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem end_curvatureDerivativeNorm_translate (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) (s : ℝ) {z : StandardCylinderSpace}
@@ -39,8 +29,6 @@ theorem end_curvatureDerivativeNorm_translate (D : LeviCivitaData g)
       (LinearMap.range_eq_top.mpr hbij.2), rfl⟩
   have h := D.curvatureDerivativeNorm_eq_pullback D hU hf hinv hmetric k hzU
   simpa only [endAxialTranslation_coordinate e s hz.le] using h
-
-
 
 theorem end_scalarCurvature_translate (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) (s : ℝ) {z : StandardCylinderSpace}

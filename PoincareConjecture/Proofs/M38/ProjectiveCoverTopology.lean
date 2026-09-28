@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveDoubleBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,15 +11,12 @@ variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
 
-
 theorem puncturedProjective_quotient :
     IsQuotientMap ({q : RealProjectiveThree | q ≠ p}.restrictPreimage
       (Quotient.mk' : UnitThreeSphere → RealProjectiveThree)) := by
   let : T2Space RealProjectiveThree := projective_t2
   exact projective_open_quotient.isQuotientMap.restrictPreimage_isOpen
     (isOpen_ne_fun continuous_id continuous_const)
-
-
 
 theorem puncturedProjectiveCover_quotient
     (C : StandardPuncturedProjectiveCover Q p U) :
@@ -49,8 +38,6 @@ theorem puncturedProjectiveCover_quotient
   intro y
   obtain ⟨x, hx, he⟩ := C.image_eq.symm.subset y.2
   exact ⟨⟨x, hx⟩, Subtype.ext he⟩
-
-
 
 theorem exists_puncturedProjectiveCover_homeomorph
     (C : StandardPuncturedProjectiveCover Q p U) :
@@ -90,20 +77,16 @@ theorem exists_puncturedProjectiveCover_homeomorph
       ⟨hfquot, hfinj⟩).isOpenMap)
   exact ⟨e, fun x hx => congrArg Subtype.val (hcomp ⟨x, hx⟩)⟩
 
-
 noncomputable def puncturedProjectiveCoverHomeomorph
     (C : StandardPuncturedProjectiveCover Q p U) :
     PuncturedRealProjectiveThree p ≃ₜ U :=
   Classical.choose (exists_puncturedProjectiveCover_homeomorph C)
-
 
 theorem puncturedProjectiveCoverHomeomorph_apply
     (C : StandardPuncturedProjectiveCover Q p U)
     (x : UnitThreeSphere) (hx : Quotient.mk' x ≠ p) :
     (puncturedProjectiveCoverHomeomorph C ⟨Quotient.mk' x, hx⟩).1 = C.cover x :=
   Classical.choose_spec (exists_puncturedProjectiveCover_homeomorph C) x hx
-
-
 
 theorem puncturedProjectiveCover_compact_lift
     (C : StandardPuncturedProjectiveCover Q p U) {K : Set U} (hK : IsCompact K) :
@@ -134,8 +117,6 @@ theorem puncturedProjectiveCover_compact_lift
   rw [heq]
   exact (hL.isClosed.preimage continuous_quotient_mk').isCompact
 
-
-
 theorem puncturedProjectiveCover_end_neighborhood [CompactSpace Q]
     (C : StandardPuncturedProjectiveCover Q p U) {S O : Set Q}
     (hboundary : closure U ⊆ U ∪ S) (hO : IsOpen O) (hS : S ⊆ O) :
@@ -163,8 +144,6 @@ theorem puncturedProjectiveCover_end_neighborhood [CompactSpace Q]
     apply hx
     exact ⟨hn, subset_closure (C.image_eq.subset (Set.mem_image_of_mem C.cover hn)), hnot⟩
 
-
-
 theorem projectiveDouble_first_end_neighborhood (C : SmoothProjectiveDoubleModel Q)
     {O : Set Q} (hO : IsOpen O) (hS : C.sphere ⊆ O) :
     ∃ W : Set UnitThreeSphere, IsOpen W ∧
@@ -173,8 +152,6 @@ theorem projectiveDouble_first_end_neighborhood (C : SmoothProjectiveDoubleModel
   let : CompactSpace Q := isCompact_univ_iff.mp C.compact
   exact puncturedProjectiveCover_end_neighborhood C.first_model
     (by rw [(projectiveDouble_region_closures C).1]) hO hS
-
-
 
 theorem projectiveDouble_second_end_neighborhood (C : SmoothProjectiveDoubleModel Q)
     {O : Set Q} (hO : IsOpen O) (hS : C.sphere ⊆ O) :

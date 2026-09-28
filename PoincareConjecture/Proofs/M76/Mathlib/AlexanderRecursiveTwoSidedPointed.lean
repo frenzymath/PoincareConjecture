@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursivePointedCompletion
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveNegativeSuccessor
 import PoincareConjecture.Proofs.M76.Mathlib.FixedNegativeCutHeightSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_two_sided_successor_and_signs
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}
@@ -104,9 +91,6 @@ theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_two_sided_suc
   exact ⟨s, s', hlabels, hs, hs', hss, hssinter, hside, happroach,
     H, hglobal, hPL, hball, hfixR, hneg, hfixU, hfixSlab, hhigh,
     hraise, hzero, hsuccessor, hnegative, hsigns, hlevels⟩
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_two_sided_successor
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

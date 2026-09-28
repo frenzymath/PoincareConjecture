@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslation
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem hasDerivAt_periodicTranslation (f g : C(AddCircle L, E))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L))
@@ -65,9 +52,6 @@ theorem hasDerivAt_periodicTranslation (f g : C(AddCircle L, E))
   rw [heq]
   exact hrem
 
-
-
-
 theorem contDiff_periodicTranslation_nat (k : ℕ) (f : C(AddCircle L, E))
     (hf : ContDiff ℝ k (fun x : ℝ => f (x : AddCircle L))) :
     ContDiff ℝ k (fun a : ℝ => periodicTranslation a f) := by
@@ -105,9 +89,6 @@ theorem contDiff_periodicTranslation_nat (k : ℕ) (f : C(AddCircle L, E))
       rw [hderivEq]
       exact (ih g hu1).neg
     simpa only [Nat.cast_add, Nat.cast_one] using hgoal
-
-
-
 
 theorem contDiff_periodicTranslation (f : C(AddCircle L, E))
     (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle L))) :

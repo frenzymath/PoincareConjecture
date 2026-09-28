@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCohomologyExcision
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietorisSplit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

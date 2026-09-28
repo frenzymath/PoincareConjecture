@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsAnnularEvolution
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapEndCaller
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
-
 
 theorem exists_stackAnnularMatchedChart
     (T G : OpenPartialHomeomorph P P)

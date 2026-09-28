@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialJacobi
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialGaugeNeighborhood
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialGaugeVelocity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,9 +19,6 @@ private theorem horizontal_t2Space {p : G.Point} : T2Space (G.Horizontal p) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal p
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 theorem initialValuePath_differential_initialDerivative
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

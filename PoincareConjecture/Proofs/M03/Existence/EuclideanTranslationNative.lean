@@ -4,15 +4,6 @@ import Mathlib.MeasureTheory.Group.Integral
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -65,7 +56,6 @@ theorem continuous_segment_derivative {f : E → ℝ} (hf : ContDiff ℝ 1 f)
   ((hf.continuous_fderiv one_ne_zero).comp
     (continuous_const.add (continuous_id.smul continuous_const))).clm_apply continuous_const
 
-
 theorem translation_eq_integral_derivative {f : E → ℝ} (hf : ContDiff ℝ 1 f)
     (x h : E) :
     f (x + h) - f x = ∫ s in (0 : ℝ)..1, fderiv ℝ f (x + s • h) h := by
@@ -107,7 +97,6 @@ theorem integrable_segment_derivative_sq {f : E → ℝ} (hf : ContDiff ℝ 1 f)
     rw [heq]
     exact integrable_const _
 
-
 theorem integral_translation_sq_le_directional {f : E → ℝ}
     (hf : ContDiff ℝ 1 f) (hfL2 : MemLp f 2 volume)
     (h : E) (hD : MemLp (fun x => fderiv ℝ f x h) 2 volume) :
@@ -145,7 +134,6 @@ theorem linearFunctional_eq_sum (L : E →L[ℝ] ℝ) (h : E) :
   have heq := congrArg L hb
   simpa only [map_sum, map_smul, smul_eq_mul, EuclideanSpace.basisFun_repr,
     EuclideanSpace.basisFun_apply] using heq.symm
-
 
 theorem linearFunctional_sq_le (L : E →L[ℝ] ℝ) (h : E) :
     (L h) ^ 2 ≤ ‖h‖ ^ 2 * ∑ i, (L (EuclideanSpace.single i 1)) ^ 2 := by
@@ -185,7 +173,6 @@ theorem integral_directional_sq_le_coordinates {f : E → ℝ}
     _ = _ := by
       rw [integral_const_mul, integral_finsetSum Finset.univ
         (fun i _ => (hcoord i).integrable_sq)]
-
 
 theorem translateLp_sub_norm_sq_le_coordinates {f : E → ℝ}
     (hf : ContDiff ℝ 1 f) (hfL2 : MemLp f 2 volume)

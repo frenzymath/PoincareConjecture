@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem m01_mvfderiv_inner (D : LeviCivitaData g)
     (X Y Z : (x : M) → TangentSpace (𝓡 n) x) {x : M}
     (hY : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% Y) x)
@@ -34,7 +24,6 @@ theorem m01_mvfderiv_inner (D : LeviCivitaData g)
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact D.metricCompatible.mvfderiv_inner_eq X hY hZ
-
 
 theorem m01_koszul (D : LeviCivitaData g)
     (X Y Z : (x : M) → TangentSpace (𝓡 n) x) {x : M}
@@ -58,7 +47,6 @@ theorem m01_koszul (D : LeviCivitaData g)
     g.symm x (Z x) (D.connection X x (Y x)),
     g.symm x (D.connection X x (Z x)) (Y x)]
   ring
-
 
 theorem m01_connection_eq_at (D D' : LeviCivitaData g)
     (Y : (x : M) → TangentSpace (𝓡 n) x) {x : M}

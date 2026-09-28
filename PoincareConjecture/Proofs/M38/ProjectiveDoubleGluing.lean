@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveDoubleSideCovers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -21,32 +12,26 @@ namespace PoincareConjecture.M38
 variable {A : GeneralizedSliceCarrier.{u}} (C : SmoothProjectiveDoubleModel A.carrier)
   (f g : RoundCylinderSpace → A.carrier)
 
-
 noncomputable def projectiveDoubleCycle (p : RoundCylinderSpace) : A.carrier :=
   if p.2 < 1 then f p else if p.2 = 1 then C.collar (p.1, 0)
   else if p.2 < 3 then g (p.1, 2 - p.2)
   else if p.2 = 3 then C.collar (-p.1, 0) else f (p.1, p.2 - 4)
 
-
 theorem projectiveDoubleCycle_first {p : RoundCylinderSpace} (hp : p.2 < 1) :
     projectiveDoubleCycle C f g p = f p := by simp only [projectiveDoubleCycle, if_pos hp]
-
 
 theorem projectiveDoubleCycle_one (z : UnitTwoSphere) :
     projectiveDoubleCycle C f g (z, 1) = C.collar (z, 0) := by
   simp only [projectiveDoubleCycle, lt_self_iff_false, if_false, if_true]
-
 
 theorem projectiveDoubleCycle_second {p : RoundCylinderSpace} (hp : p.2 ∈ Ioo (1 : ℝ) 3) :
     projectiveDoubleCycle C f g p = g (p.1, 2 - p.2) := by
   simp only [projectiveDoubleCycle, if_neg (not_lt.mpr hp.1.le),
     if_neg (ne_of_gt hp.1), if_pos hp.2]
 
-
 theorem projectiveDoubleCycle_three (z : UnitTwoSphere) :
     projectiveDoubleCycle C f g (z, 3) = C.collar (-z, 0) := by
   norm_num [projectiveDoubleCycle]
-
 
 theorem projectiveDoubleCycle_last {p : RoundCylinderSpace} (hp : 3 < p.2) :
     projectiveDoubleCycle C f g p = f (p.1, p.2 - 4) := by
@@ -96,7 +81,6 @@ theorem projectiveDoubleCycle_second_collar
     congr 2
     ring
 
-
 theorem projectiveDoubleCycle_closing (z : UnitTwoSphere) {t : ℝ}
     (ht : t ∈ Ioo (-1 : ℝ) 1) :
     projectiveDoubleCycle C f g (z, 4 + t) = projectiveDoubleCycle C f g (z, t) := by
@@ -107,7 +91,6 @@ theorem projectiveDoubleCycle_closing (z : UnitTwoSphere) {t : ℝ}
   · rfl
   · change 4 + t - 4 = t
     ring
-
 
 noncomputable def cylinderAffineChange (a b : ℝ) (ha : a ≠ 0) :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -133,7 +116,6 @@ noncomputable def cylinderAffineChange (a b : ℝ) (ha : a ≠ 0) :
 
 private instance sphereDimension : Fact (Module.finrank ℝ StandardCapSpace = 2 + 1) := ⟨by simp⟩
 
-
 noncomputable def cylinderAngularAntipode :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       RoundCylinderSpace RoundCylinderSpace ∞ where
@@ -145,7 +127,6 @@ noncomputable def cylinderAngularAntipode :
   contMDiff_invFun := (contMDiff_neg_sphere.comp contMDiff_fst).prodMk contMDiff_snd
 
 include hr hrsmall hf hg in
-
 
 theorem projectiveDoubleCycle_localDiffeomorph
     (hfl : IsLocalDiffeomorphOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ f

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCutEndpointSigns
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCutApexLinearGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap CoordinateHalfBoxes
@@ -19,12 +9,6 @@ namespace ContinuousAffineEquiv
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_positive_apex_linear_germ_of_forward_tail
     (f : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] E) (A : E →ₗ[ℝ] ℝ)
@@ -82,11 +66,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_positive_apex_linear_germ_of_oriented_cut
     (P : Polygon E (n + 3)) (hinj : Function.Injective P)

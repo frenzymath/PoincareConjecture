@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteOrderComplex
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,12 +15,8 @@ open M02.Topology
 
 variable {J : Type u} [PartialOrder J] [Fintype J]
 
-
-
 def orderComplexStar (s : Finset J) : Set (J → ℝ) :=
   {z | z ∈ (finiteOrderComplex J).space ∧ ∀ i ∈ s, 0 < z i}
-
-
 
 theorem orderComplexStar_chain {s : Finset J} (h : (orderComplexStar s).Nonempty) :
     ∀ i ∈ s, ∀ j ∈ s, i ≤ j ∨ j ≤ i := by
@@ -40,7 +26,6 @@ theorem orderComplexStar_chain {s : Finset J} (h : (orderComplexStar s).Nonempty
     (ne_of_gt (hpos i hi)) (ne_of_gt (hpos j hj))
 
 open scoped Classical in
-
 
 theorem orderComplexStar_barycenter_mem (s : Finset J) (hne : s.Nonempty)
     (hchain : ∀ i ∈ s, ∀ j ∈ s, i ≤ j ∨ j ≤ i) :
@@ -61,8 +46,6 @@ theorem orderComplexStar_barycenter_mem (s : Finset J) (hne : s.Nonempty)
       exact hchain i his j hjs
   · intro i hi
     simpa only [if_pos hi] using inv_pos.mpr hcard
-
-
 
 theorem orderComplexStar_starConvex (s : Finset J) (c : J → ℝ)
     (hc : c ∈ orderComplexStar s) (hsupp : ∀ i ∉ s, c i = 0) :
@@ -95,8 +78,6 @@ theorem orderComplexStar_starConvex (s : Finset J) (c : J → ℝ)
       simpa only [← ha0, hb1, zero_mul, one_mul, zero_add] using hzi
     · exact add_pos_of_pos_of_nonneg (mul_pos ha0 hci) (mul_nonneg hb hzi.le)
 
-
-
 theorem orderComplexStar_contractible (s : Finset J) (hne : s.Nonempty)
     (h : (orderComplexStar s).Nonempty) : ContractibleSpace (orderComplexStar s) := by
   classical
@@ -107,9 +88,6 @@ theorem orderComplexStar_contractible (s : Finset J) (hne : s.Nonempty)
     intro i hi
     simp only [c, if_neg hi])).contractibleSpace h
 
-
-
-
 def orderComplexStarHomeomorph (s : Finset J) :
     orderComplexStar s ≃ₜ
       {z : (finiteOrderComplex J).space | ∀ i ∈ s, 0 < z.val i} where
@@ -119,8 +97,6 @@ def orderComplexStarHomeomorph (s : Finset J) :
   right_inv _ := rfl
   continuous_toFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
   continuous_invFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
-
-
 
 theorem orderComplex_vertexStarIntersection_contractible (s : Finset J)
     (hne : s.Nonempty)
@@ -133,13 +109,9 @@ theorem orderComplex_vertexStarIntersection_contractible (s : Finset J)
   let := orderComplexStar_contractible s hne hs
   exact e.contractibleSpace_iff.mp inferInstance
 
-
-
 theorem isOpen_orderComplex_vertexStar (i : J) :
     IsOpen {z : (finiteOrderComplex J).space | 0 < z.val i} :=
   isOpen_lt continuous_const ((continuous_apply i).comp continuous_subtype_val)
-
-
 
 theorem orderComplex_vertexStars_cover (z : (finiteOrderComplex J).space) :
     ∃ i, 0 < z.val i := by

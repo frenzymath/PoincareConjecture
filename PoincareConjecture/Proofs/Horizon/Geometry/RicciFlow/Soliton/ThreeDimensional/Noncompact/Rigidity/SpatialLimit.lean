@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SmallRescaledLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +21,6 @@ attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
   [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 structure SpatialLineLimit (F : RicciFlow 3 M (Iic 0)) (t₀ : ℝ) (p : M) where
   centers : ℕ → M
@@ -61,7 +47,6 @@ structure SpatialLineLimit (F : RicciFlow 3 M (Iic 0)) (t₀ : ℝ) (p : M) wher
   line : letI := convergence.limitCarrier.metricSpaceOf (convergence.limitFlow.metric 0)
     ∃ γ : ℝ → convergence.limitCarrier.carrier, Isometry γ ∧ γ 0 = convergence.base
 
-
 theorem SpatialLineLimit.scalarCurvature_pos
     {F : RicciFlow 3 M (Iic 0)} {t₀ : ℝ} {p : M}
     (L : SpatialLineLimit F t₀ p) (hC : RicciFlowCurvatureTheory.{u}) :
@@ -87,7 +72,6 @@ theorem SpatialLineLimit.scalarCurvature_pos
   linarith
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_spatialLineLimit_of_unbounded_scalar_ratio
     [NoncompactSpace M] (hC : RicciFlowCurvatureTheory.{u})

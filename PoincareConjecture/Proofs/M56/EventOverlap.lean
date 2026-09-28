@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 import PoincareConjecture.Proofs.M49.EventComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ namespace PoincareConjecture
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem m56Event_negative_interior
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)
@@ -48,8 +38,6 @@ theorem m56Event_negative_interior
     (E.necks i).neck.region (-(E.necks i).neck.epsilon⁻¹) 0
   rwa [E.limit_identify.right_inverse (mem_univ z)]
 
-
-
 theorem m56Event_cap_meets_retainedInterior
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)
     {y : (slice T).carrier} (hy : y ∈ (E.caps i).carrier) :
@@ -68,8 +56,6 @@ theorem m56Event_cap_meets_retainedInterior
   refine ⟨E.limit_identify.inverse z, m56Event_negative_interior E i hz, ?_⟩
   rw [← E.local_retention i z hz]
   exact hc.subset_connectedComponent hyc (mem_range_self _)
-
-
 
 theorem m56Event_component_meets_retainedInterior
     (E : SurgeryEventData g0 K P slice metric T) (y : (slice T).carrier) :

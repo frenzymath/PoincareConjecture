@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapTrans
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsLevels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -18,7 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
 
 theorem exists_stackTwoCapCanonicalNormalization
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

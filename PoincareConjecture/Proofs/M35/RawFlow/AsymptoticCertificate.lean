@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RawFlow.InitialDerivativeBounds
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.PartialAsymptoticPatches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M35.Uniqueness
-
 
 abbrev RawMaximalAsymptoticProducer : Prop :=
   ∀ (_P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -25,7 +14,6 @@ abbrev RawMaximalAsymptoticProducer : Prop :=
     0 < epsilon → t₀ ∈ Ico 0 F.base.lifetime →
       Nonempty (StandardFlowAsymptoticCertificate A F epsilon t₀)
 
-
 def PartialFlowCylinderEnd (A : StandardCylinderAtlas) {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) (epsilon t₀ : ℝ) : Prop :=
   0 < epsilon ∧ t₀ ∈ Ico 0 G.lifetime ∧
@@ -33,7 +21,6 @@ def PartialFlowCylinderEnd (A : StandardCylinderAtlas) {g₀ : StandardInitialMe
       ∀ x : StandardCapSpace, x ∉ K →
         ∃ N : StandardCylinderPatch epsilon⁻¹ x,
           StandardSpacetimeCylinderClose A G.flow.metric epsilon 0 1 (Icc 0 t₀) N
-
 
 abbrev RawPartialAsymptoticProducer : Prop :=
   ∀ (_P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -49,8 +36,6 @@ theorem rawMaximalAsymptoticProducer : RawMaximalAsymptoticProducer := by
 theorem rawPartialAsymptoticProducer : RawPartialAsymptoticProducer := by
   intro P g₀ E₀ G A epsilon t₀ he ht
   exact ⟨he, ht, M34.partialStandardCapFlow_asymptoticPatches_exists P E₀ G A he ht⟩
-
-
 
 theorem partialFlowCylinderEnd_iff_maximal_certificate
     (A : StandardCylinderAtlas) {g₀ : StandardInitialMetric}

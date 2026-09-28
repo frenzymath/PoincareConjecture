@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.M12GeneralizedEquation
 import PoincareConjecture.Statements.M12MetricPredecessors
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -41,7 +30,6 @@ theorem source_secondCountableTopology (e : MovingSpacetimeGauge F T C) :
   exact (e.spatial_isEmbedding ⟨t, ht⟩).secondCountableTopology
 
 end MovingSpacetimeGauge
-
 
 theorem M12MetricPredecessors.exists_gaugeMetricLeviCivitaFamily
     (h : M12MetricPredecessors.{v} n) {e : MovingSpacetimeGauge F T C}

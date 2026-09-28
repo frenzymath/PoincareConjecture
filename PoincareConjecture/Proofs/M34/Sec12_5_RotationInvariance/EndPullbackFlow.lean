@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndLocalDiffeomorph
 import PoincareConjecture.Proofs.M34.Standard.CanonicalPullbackCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,16 +11,12 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
 
-
-
 theorem endReferenceTranslation_contMDiffOn {s : ℝ} (hs : -3 < s) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (endAxialTranslation e s) (endReferenceRegion e) := by
   rintro _ ⟨z, hz, rfl⟩
   have hh : 3 < z.2 := hz.2.1
   exact (endAxialTranslation_contMDiffAt e s (by linarith)
     (by linarith)).contMDiffWithinAt
-
-
 
 theorem endReferenceTranslation_metric {s : ℝ} (hs : -3 < s)
     {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e)
@@ -41,8 +28,6 @@ theorem endReferenceTranslation_metric {s : ℝ} (hs : -3 < s)
   have hh : 3 < z.2 := hz.2.1
   exact endAxialTranslation_metric e s (by linarith) (by linarith) u v
 
-
-
 theorem endReferenceTranslation_mfderiv_isInvertible {s : ℝ} (hs : -3 < s)
     {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e) :
     (mfderiv (𝓡 3) (𝓡 3) (endAxialTranslation e s) x).IsInvertible := by
@@ -53,8 +38,6 @@ theorem endReferenceTranslation_mfderiv_isInvertible {s : ℝ} (hs : -3 < s)
   exact ⟨ContinuousLinearEquiv.ofBijective L (LinearMap.ker_eq_bot.mpr hbij.1)
     (LinearMap.range_eq_top.mpr hbij.2), rfl⟩
 
-
-
 noncomputable def endPullbackFlow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (s : ℝ) (hs : -3 < s) :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -63,8 +46,6 @@ noncomputable def endPullbackFlow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpac
     RicciFlow 3 (endReferenceRegion e) J :=
   F.pullbackToCanonicalDomain (endReferenceRegion e) (endReferenceRegion_isOpen e)
     (fun x => endAxialTranslation e s x) (endReferenceTranslation_isLocalDiffeomorph e hs)
-
-
 
 theorem endPullbackFlow_inner {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (s : ℝ) (hs : -3 < s) :
@@ -77,8 +58,6 @@ theorem endPullbackFlow_inner {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
   canonicalDomain_flow_inner (endReferenceRegion e) (endReferenceRegion_isOpen e)
     (endAxialTranslation e s) (endReferenceTranslation_contMDiffOn e hs)
     (endReferenceTranslation_isLocalDiffeomorph e hs) F
-
-
 
 theorem endPullbackFlow_chart_coefficients {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (s : ℝ) (hs : -3 < s) :
@@ -97,8 +76,6 @@ theorem endPullbackFlow_chart_coefficients {J : Set ℝ} (F : RicciFlow 3 Standa
     (endReferenceRegion_isOpen e) (endAxialTranslation e s)
     (endReferenceTranslation_contMDiffOn e hs)
     (endReferenceTranslation_isLocalDiffeomorph e hs) (F.metric t) p ⟨x, hx⟩
-
-
 
 theorem endPullbackFlow_iteratedFDeriv {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (s : ℝ) (hs : -3 < s) :

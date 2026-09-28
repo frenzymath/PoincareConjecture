@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.FromEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -33,15 +21,10 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_two_cap_euclidean_complementary_balls (C D : CapCertificate g)
     (hC : C.model_kind = .euclidean) (hD : D.model_kind = .euclidean)

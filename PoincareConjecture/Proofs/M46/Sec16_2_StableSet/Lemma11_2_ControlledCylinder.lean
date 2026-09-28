@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_LowScalarRetain
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_InitialCylinder
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_scalar_controlled_backward_cylinder
     (P : M44CapPersistencePredecessors.{u}) (S : RepairedControlledSchedulesData.{u})

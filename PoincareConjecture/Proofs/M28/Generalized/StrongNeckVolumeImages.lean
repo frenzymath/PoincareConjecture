@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeDensity
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeDomain
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ private abbrev E := EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem normalized_neck_chart_edist_le (N : EpsilonNeck g)
     (hscale : N.scale = 1) (hsmall : N.epsilon ≤ (1 / 200 : ℝ))
@@ -61,8 +50,6 @@ theorem normalized_neck_chart_edist_le (N : EpsilonNeck g)
     Poincare.riemannianEDist_le_mul_edist_of_convex
       (convex_closedBall (0 : E) 1) hsmooth hbound hx hy
 
-
-
 theorem normalized_neck_chart_ball_subset (N : EpsilonNeck g)
     (hscale : N.scale = 1) (hsmall : N.epsilon ≤ (1 / 200 : ℝ))
     {S : ℝ} (hS : S ≤ N.epsilon⁻¹ / 16) (q : UnitTwoSphere) {s : ℝ}
@@ -82,9 +69,6 @@ theorem normalized_neck_chart_ball_subset (N : EpsilonNeck g)
     ← ENNReal.ofReal_mul (by norm_num : (0 : ℝ) ≤ 4)]
   apply (ENNReal.ofReal_lt_ofReal_iff hδ).mpr
   linarith
-
-
-
 
 theorem normalized_neck_chart_image_volume_bounds
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

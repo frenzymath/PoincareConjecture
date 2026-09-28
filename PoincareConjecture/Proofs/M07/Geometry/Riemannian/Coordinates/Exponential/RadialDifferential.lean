@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem radialVariation_field_eq
     {e : EuclideanSpace ℝ (Fin n) → M} (v w : EuclideanSpace ℝ (Fin n)) (t : ℝ)
@@ -67,8 +53,6 @@ theorem radialVariation_field_one
   rw [show (1 : ℝ) • v = v from one_smul ℝ v,
     show (1 : ℝ) • w = w from one_smul ℝ w] at h
   exact h
-
-
 
 theorem radialVariation_initial_covariantDerivative
     (g : RiemannianMetric n M)
@@ -150,8 +134,6 @@ theorem radialVariation_initial_covariantDerivative
   rw [hdw]
   exact (isInvertible_mfderiv_extChartAt (I := 𝓡 n)
     (mem_extChartAt_source (e 0))).inverse_apply_self _
-
-
 
 theorem radialVariation_initial_tangentNorm
     (g : RiemannianMetric n M)

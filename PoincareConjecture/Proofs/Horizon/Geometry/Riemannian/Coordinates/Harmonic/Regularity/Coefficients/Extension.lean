@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.Lipschitz
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -17,9 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.HarmonicCoordinates
-
-
-
 
 theorem exists_uniform_divergence_error_extension {n : ℕ} (hn : 2 ≤ n)
     {ε : ℝ} (hε : 0 < ε) :

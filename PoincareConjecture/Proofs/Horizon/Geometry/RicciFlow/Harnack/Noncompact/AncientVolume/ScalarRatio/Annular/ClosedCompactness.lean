@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Extend
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -188,8 +180,6 @@ private theorem smooth_of_closed_jet_limits
     exact ((hderiv m x hx).congr (heq m) (heq m hx)).differentiableWithinAt
   exact ⟨F, contDiffOn_of_continuousOn_differentiableOn
     (fun m _ => (hdiff m).continuousOn) (fun m _ => hdiff m), heq⟩
-
-
 
 theorem exists_smooth_subsequence_on_closed_convex
     {Ω : Set X} (hclosed : IsClosed Ω) (hconvex : Convex ℝ Ω)

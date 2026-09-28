@@ -1,23 +1,11 @@
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology ENNReal
 
 namespace MeasureTheory.Lp
-
-
-
 
 theorem ae_mem_of_tendsto_of_isClosed
     {X E : Type*} [MeasurableSpace X] {mu : Measure X}

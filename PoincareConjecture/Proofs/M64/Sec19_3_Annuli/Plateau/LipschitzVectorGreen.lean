@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzRectangleGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzObservedColumns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64_lipschitz_vector_green_integrable {f : LoopPlane → E} {phi : LoopPlane → ℝ}
     {K : ℝ≥0} (hf : LipschitzOnWith K f m64AnnulusDomain)
@@ -42,8 +30,6 @@ theorem m64_lipschitz_vector_green_integrable {f : LoopPlane → E} {phi : LoopP
     intro b
     simpa only [IntegrableOn, PiLp.smul_apply, smul_eq_mul] using
       (m64_lipschitz_green_integrable (m64_lipschitz_coordinate hf b) hphi i).2
-
-
 
 theorem m64Annulus_vertical_green_lipschitzOn_vector
     {f : LoopPlane → E} {phi : LoopPlane → ℝ} {K : ℝ≥0}
@@ -77,8 +63,6 @@ theorem m64Annulus_vertical_green_lipschitzOn_vector
       fun p hp => congrArg (fun t : ℝ => phi p * t) hp)
   rw [← hc]
   exact m64Annulus_vertical_green_lipschitzOn (m64_lipschitz_coordinate hf b) hphi
-
-
 
 theorem m64Annulus_horizontal_green_lipschitzOn_vector
     {f : LoopPlane → E} {phi : LoopPlane → ℝ} {K : ℝ≥0}
@@ -114,8 +98,6 @@ theorem m64Annulus_horizontal_green_lipschitzOn_vector
       fun p hp => congrArg (fun t : ℝ => phi p * t) hp)
   rw [← hc]
   exact m64Annulus_horizontal_green_lipschitzOn (m64_lipschitz_coordinate hf b) hphi
-
-
 
 theorem m64Annulus_periodic_green_lipschitzOn_vector
     {f : LoopPlane → E} {phi : LoopPlane → ℝ} {K : ℝ≥0}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_ExponentialConvergence
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ namespace NormalizedCapExponential
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
-
-
-
 
 theorem coordinateMap_fderiv (D : NormalizedCapExponential Q R)
     {x : E} (hx : x ∈ ball 0 R) :
@@ -49,9 +37,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (tip : (n : ℕ) → (S n).carrier) (scale eta : ℕ → ℝ) {R : ℝ}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
-
-
-
 
 theorem eventually_bijective_mfderiv_initial_exponentials
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
@@ -83,9 +68,6 @@ theorem eventually_bijective_mfderiv_initial_exponentials
   change Function.Bijective A
   exact ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (f := A.toLinearMap) rfl).mp hinj⟩
-
-
-
 
 theorem eventually_initial_exponential_charts
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

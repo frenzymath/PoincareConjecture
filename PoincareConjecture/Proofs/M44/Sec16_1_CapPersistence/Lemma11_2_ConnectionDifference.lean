@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,28 +14,18 @@ open M36 CoordinateExponential
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
-
 noncomputable def connectionDifference (g h : RiemannianMetric 3 E) (x : E) :
     E →L[ℝ] E →L[ℝ] E :=
   christoffelBilinear h.euclideanCoefficients x -
     christoffelBilinear g.euclideanCoefficients x
 
-
-
 noncomputable def metricError (g h : RiemannianMetric 3 E) :
     CovariantTensorEvaluation 3 E 2 :=
   fun x v => h.inner x (v 0) (v 1) - g.inner x (v 0) (v 1)
 
-
-
 theorem metricError_isSmooth (g h : RiemannianMetric 3 E) :
     IsSmoothCovariantTensor (metricError g h) :=
   (isSmoothCovariantTensor_metric h).sub (isSmoothCovariantTensor_metric g)
-
-
-
 
 theorem fderiv_bilinear_eq_covariant {g : RiemannianMetric 3 E}
     (D : LeviCivitaData g) {B : E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -60,9 +41,6 @@ theorem fderiv_bilinear_eq_covariant {g : RiemannianMetric 3 E}
     ConnectionVariation.covDerivAlong_def, Fin.sum_univ_two, Function.update,
     add_assoc] using hh
 
-
-
-
 theorem covariant_metric_eq_error {g : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (h : RiemannianMetric 3 E) :
     D.covariantTensorDerivative (fun x v => h.inner x (v 0) (v 1)) =
@@ -74,9 +52,6 @@ theorem covariant_metric_eq_error {g : RiemannianMetric 3 E}
   have hz := D.covariantTensorDerivative_metric_eq_zero x (v 0) (v 1) (v 2)
   have hv : v = ![v 0, v 1, v 2] := by ext i; fin_cases i <;> rfl
   rw [hv, hz, sub_zero]
-
-
-
 
 theorem inner_connectionDifference {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x u v w : E) :
@@ -110,8 +85,6 @@ theorem inner_connectionDifference {g h : RiemannianMetric 3 E}
     ring!
   simp only [connectionDifference, sub_apply, map_sub]
   linarith! only [hcancel]
-
-
 
 theorem connectionDifference_symm (g h : RiemannianMetric 3 E) (x u v : E) :
     connectionDifference g h x u v = connectionDifference g h x v u := by

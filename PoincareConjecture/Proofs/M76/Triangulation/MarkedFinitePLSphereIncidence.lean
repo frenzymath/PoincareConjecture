@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.PrescribedSubdivisionVertices
 import PoincareConjecture.Proofs.M76.Mathlib.SubdivisionVertices
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_marked_height_aligned_surface_complex
     {s : Set E} {C : Set F} {e : s ≃ₜ frontier C} (he : e.IsFinitePL)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_UniformSliceImage
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerRestart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture.Proofs.M46
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem closedODE_exists_uniform_restart_neighborhood
     {a b : ℝ} (hab : a < b) (t₀ : Icc a b)
@@ -56,10 +44,6 @@ universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem exists_closedChartEulerPhase_uniform_restart_neighborhood
     {J : Set ℝ} (F : RicciFlow n M J) (hM04 : RicciFlowCurvatureTheory.{u})

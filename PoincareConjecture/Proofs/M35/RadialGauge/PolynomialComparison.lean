@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PolynomialBarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem halfLine_le_polynomialBarrier
     {p velocity reaction : ℝ → ℝ → ℝ} {T K V M N A : ℝ}
@@ -96,15 +85,11 @@ theorem halfLine_le_polynomialBarrier
   intro t ht r hr
   exact sub_nonpos.mp (hcomparison t ht r hr)
 
-
-
 theorem polynomialBarrier_nat_eq (N : ℕ) (A L t r : ℝ) :
     polynomialBarrier N A L t r = A * Real.exp (L * t) / (1 + r ^ 2) ^ N := by
   unfold polynomialBarrier
   rw [Real.exp_sub, Real.exp_nat_mul, Real.exp_log (by positivity)]
   ring
-
-
 
 theorem halfLine_polynomial_bound_of_initial_support
     {p velocity reaction : ℝ → ℝ → ℝ} {T K V R : ℝ}

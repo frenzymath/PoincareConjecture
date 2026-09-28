@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.TriangleRefinementOwners
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -77,8 +67,6 @@ theorem exists_original_chart_triangle_heights
   exact ⟨ell, owner, A, hell, hside, howner, hformula, hzero,
     K.compatibleTriangleZeroSets_of_common_preimage A f F (fun t ht _ => hzero t ht),
     K.triangleZeroSet_eq_preimage A f F hpure (fun t ht _ => hzero t ht)⟩
-
-
 
 theorem original_chart_triangle_formula
     {E V X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

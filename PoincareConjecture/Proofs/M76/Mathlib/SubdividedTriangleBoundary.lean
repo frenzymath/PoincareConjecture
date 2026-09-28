@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SubdividedTrianglePolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,12 +33,8 @@ private theorem iUnion_horizontal_segments (n : ℕ) :
 
 namespace Polygon
 
-
-
 def referenceTriangle (n : ℕ) : Polygon (ℝ × ℝ) 3 :=
   ⟨![(0, 0), ((n : ℝ) + 1, 0), (0, 1)]⟩
-
-
 
 theorem affineIndependent_referenceTriangle (n : ℕ) :
     AffineIndependent ℝ (referenceTriangle n) := by
@@ -62,9 +49,6 @@ theorem affineIndependent_referenceTriangle (n : ℕ) :
     · simp [S]
     · simp [S]
   exact h.comm_right.comm_left
-
-
-
 
 theorem boundary_subdividedTriangle (n : ℕ) :
     (subdividedTriangle n).boundary ℝ = (referenceTriangle n).boundary ℝ := by
@@ -81,15 +65,11 @@ theorem boundary_subdividedTriangle (n : ℕ) :
   simp [boundary, referenceTriangle, edgeSet, Fin.exists_fin_succ,
     affineSegment_eq_segment, or_assoc]
 
-
-
 theorem boundary_subdividedTriangle_eq_frontier (n : ℕ) :
     (subdividedTriangle n).boundary ℝ =
       frontier (convexHull ℝ (range (referenceTriangle n))) := by
   rw [boundary_subdividedTriangle,
     (referenceTriangle n).frontier_convexHull_triangle (affineIndependent_referenceTriangle n)]
-
-
 
 theorem closure_inside_subdividedTriangle (n : ℕ) :
     closure (subdividedTriangle n).inside = convexHull ℝ (range (referenceTriangle n)) := by

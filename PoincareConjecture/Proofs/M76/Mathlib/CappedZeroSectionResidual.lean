@@ -1,21 +1,8 @@
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
-
-
-
-
 
 theorem capped_zero_section_eq_residual {X : Type*} {s s' b d R Z : Set X}
     (hsection : (s ∪ s') ∩ Z = b ∪ R) (hbd : b ⊆ d)

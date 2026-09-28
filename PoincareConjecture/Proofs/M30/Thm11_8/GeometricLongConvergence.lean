@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.BackwardGeneralizedConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Universe
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_geometric_long_generalizedBlowupConvergence
     (P : M30ControlledBlowupPredecessors.{u})

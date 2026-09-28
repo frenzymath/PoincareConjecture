@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteSegmentCorrespondence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import Mathlib.Algebra.Order.Floor.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem nat_unit_segments_inter (i j : ℕ) :
     segment ℝ (i : ℝ) (i + 1) ∩ segment ℝ (j : ℝ) (j + 1) ⊆
@@ -38,9 +26,6 @@ theorem nat_unit_segments_inter (i j : ℕ) :
     apply subset_convexHull ℝ _
     exact ⟨Or.inl (by linarith [hj.2, hi.1]),
       Or.inr (by change x = (j : ℝ) + 1; linarith [hj.2, hi.1])⟩
-
-
-
 
 theorem iUnion_nat_unit_segments (n : ℕ) :
     (⋃ i : Fin (n + 1), segment ℝ (i.val : ℝ) (i.val + 1)) = Icc 0 (n + 1 : ℝ) := by
@@ -64,11 +49,6 @@ theorem iUnion_nat_unit_segments (n : ℕ) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem isFinitePLBallPair_linear_chain (p : Fin (n + 2) → E)
     (hp : Function.Injective p)

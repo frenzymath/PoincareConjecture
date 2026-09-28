@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceTubeChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem source_collar_slice_smooth_immersion
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

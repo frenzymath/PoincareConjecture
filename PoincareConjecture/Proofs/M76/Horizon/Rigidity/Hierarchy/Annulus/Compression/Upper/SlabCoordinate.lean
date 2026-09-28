@@ -15,9 +15,6 @@ local notation "C0" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
-
 theorem exists_hamiltonZero_shifted_upper_second_slab_coordinate
     {ι κ : Type*} (e : ι → OpenPartialHomeomorph X0 V3)
     (d : κ → OpenPartialHomeomorph X0 V3)

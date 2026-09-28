@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -98,10 +84,6 @@ private theorem exists_unit_loop_between_arcs
           congr 1
           ring
   exact ⟨loop, hcont, hclosed, hinj, himage⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_simple_loop_between_arcs
     {alpha beta : ℝ → AnnulusCoordinates} {A B : ℝ} (hA : 0 < A) (hB : 0 < B)

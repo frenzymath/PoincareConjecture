@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocalPLHalfspaceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem LocallyPiecewiseAffineOn.affine_halfspace_paste
     {f g : E → F} {U : Set E} (hf : LocallyPiecewiseAffineOn f U)

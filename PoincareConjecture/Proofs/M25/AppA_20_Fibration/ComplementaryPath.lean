@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_complementary_path_finite_middle_cover
     {M : Type u} [TopologicalSpace M]

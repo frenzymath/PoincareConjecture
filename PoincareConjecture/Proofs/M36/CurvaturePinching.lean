@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch13.MetricSurgery
 import PoincareConjecture.Proofs.M04.CurvatureAlgebra
 import PoincareConjecture.Proofs.M36.PinchingTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

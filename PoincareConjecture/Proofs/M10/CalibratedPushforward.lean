@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 import Mathlib.MeasureTheory.Integral.Lebesgue.Map
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem map_pullbackJacobian_eq_calibratedMetricVolume (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -42,7 +34,6 @@ theorem map_pullbackJacobian_eq_calibratedMetricVolume (g : RiemannianMetric n M
   have himage := calibratedMetricVolume_image_eq_withDensity g e he hei hA inter_subset_right
   rw [image_preimage_inter, e.image_source_eq_target] at himage
   exact himage.symm
-
 
 theorem lintegral_calibratedMetricVolume_eq_pullbackJacobian
     (g : RiemannianMetric n M)

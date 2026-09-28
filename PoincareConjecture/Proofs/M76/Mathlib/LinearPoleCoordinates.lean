@@ -1,20 +1,8 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearEquiv
-
-
-
 
 theorem exists_apply_eq_one {ι : Type*} [Finite ι]
     {v : ι → ℝ} (hv : v ≠ 0) :

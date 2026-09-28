@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.BicollarOpenHalves
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S A C K : Set X}
-
-
-
 
 theorem exists_bicollar_restriction
     (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C) (hC : IsOpen C)

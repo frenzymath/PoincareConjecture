@@ -1,8 +1,6 @@
 import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Constructions
 
-
-
 set_option autoImplicit false
 open Set
 

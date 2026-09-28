@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.LineInteriorFamily
 import PoincareConjecture.Proofs.M09.SmoothSquareAction
 import PoincareConjecture.Proofs.M09.SquareActionComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -8,18 +8,6 @@ import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bornology Bundle Manifold
@@ -74,7 +62,6 @@ theorem normalization_isVonNBounded_of_posDef {F : Type*} [NormedAddCommGroup F]
     rw [show ‖v‖ = Real.sqrt (‖v‖ ^ 2) by rw [Real.sqrt_sq (norm_nonneg _)]]
     exact Real.sqrt_lt_sqrt (sq_nonneg _) h2
   linarith [Real.sqrt_nonneg (1 / c)]
-
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -207,16 +194,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {N : Type u} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
 
-
-
-
-
-
-
-
-
-
-
 noncomputable def rescaledMetric (g : RiemannianMetric n N) (c : ℝ) (hc : 0 < c) :
     RiemannianMetric n N where
   inner x := c • g.inner x
@@ -244,8 +221,6 @@ theorem rescaledMetric_inner (g : RiemannianMetric n N) (c : ℝ) (hc : 0 < c)
     (x : N) (v w : TangentSpace (𝓡 n) x) :
     (rescaledMetric g c hc).inner x v w = c * g.inner x v w := by
   rfl
-
-
 
 noncomputable def rescaledMetric_connection (g : RiemannianMetric n N)
     (D : LeviCivitaData g) (c : ℝ) (hc : 0 < c) :

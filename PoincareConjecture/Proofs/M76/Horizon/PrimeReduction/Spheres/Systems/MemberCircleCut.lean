@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem ChartwisePLSphere.exists_parameter_circle_cut
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

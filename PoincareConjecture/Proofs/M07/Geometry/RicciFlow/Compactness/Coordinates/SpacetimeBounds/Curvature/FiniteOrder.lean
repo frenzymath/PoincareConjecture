@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Curvature.JetBounds
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +15,6 @@ open CoordinateExponential
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_uniform_coordinate_curvature_jet_bound
     (n q l : ℕ) (c : ℝ) (hc : 0 ≤ c) (K B : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j) :

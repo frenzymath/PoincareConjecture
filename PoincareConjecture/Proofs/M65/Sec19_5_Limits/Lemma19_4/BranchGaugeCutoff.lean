@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeTransform
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 variable {B : Type*} [NormedRing B] [NormedAlgebra ℂ B]
-
-
-
-
 
 theorem exists_small_compact_coefficient {A : ℂ → B} {s : Set ℂ}
     (hs : IsOpen s) (h0 : (0 : ℂ) ∈ s) (hA : ContDiffOn ℝ 1 A s) :

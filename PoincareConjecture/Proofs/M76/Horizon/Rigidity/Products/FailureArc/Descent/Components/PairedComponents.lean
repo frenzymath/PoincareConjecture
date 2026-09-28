@@ -10,8 +10,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 open scoped Topology

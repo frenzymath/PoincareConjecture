@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BoundaryMotionTrac
 import PoincareConjecture.Proofs.M09.CurvePhase
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle BigOperators Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m65LoopDisk_uniqueMDiffOn : UniqueMDiffOn (𝓡 2) loopDiskSet := by
   apply UniqueDiffOn.uniqueMDiffOn
@@ -30,9 +18,6 @@ theorem m65LoopDisk_uniqueMDiffOn : UniqueMDiffOn (𝓡 2) loopDiskSet := by
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65BoundaryColumnTrace_eq_mfderivWithin
     (f : LoopPlane → M) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet)
@@ -66,9 +51,6 @@ theorem m65BoundaryColumnTrace_eq_mfderivWithin
     exact Subset.rfl)
   exact congrArg (fun q : TangentBundle (𝓡 n) M =>
     (show EuclideanSpace ℝ (Fin n) from q.2)) (hall hz)
-
-
-
 
 theorem m65BoundaryCurve_velocity_of_trace
     (f : LoopPlane → M) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet)

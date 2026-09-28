@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,12 +15,9 @@ include hK
 
 omit [NormedSpace ℝ E] [CompleteSpace E] in
 
-
 theorem clockField_slice_lipschitz (t : ℝ) : LipschitzWith K (fun x => V (t, x)) := by
   simpa only [one_mul, mul_one, Function.comp_def, clockField] using
     LipschitzWith.prod_snd.comp (hK.comp (LipschitzWith.prodMk_left t))
-
-
 
 theorem clockEvolution_tracks (γ : ℝ → E) {a b s : ℝ} (hs : s ∈ Ioo a b)
     (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (V (t, γ t)) t) :
@@ -42,8 +29,6 @@ theorem clockEvolution_tracks (γ : ℝ → E) {a b s : ℝ} (hs : s ∈ Ioo a b
   · exact fun t ht => ⟨hγ t ht, mem_univ _⟩
   · exact clockEvolution_self V hK hL s (γ s)
 
-
-
 theorem clockEvolution_eq_self (x : E) (hx : ∀ u, V (u, x) = 0) (s t : ℝ) :
     clockEvolution V hK hL s t x = x := by
   have hs : s ∈ Ioo (min s t - 1) (max s t + 1) :=
@@ -52,8 +37,6 @@ theorem clockEvolution_eq_self (x : E) (hx : ∀ u, V (u, x) = 0) (s t : ℝ) :
     ⟨by linarith [min_le_right s t], by linarith [le_max_right s t]⟩
   exact clockEvolution_tracks V hK hL (fun _ => x) hs
     (fun u _ => by rw [hx]; exact hasDerivAt_const u x) ht
-
-
 
 theorem clockEvolution_support_subset (s t : ℝ) :
     Function.support (fun x => clockEvolution V hK hL s t x - x) ⊆
@@ -65,8 +48,6 @@ theorem clockEvolution_support_subset (s t : ℝ) :
     intro hp
     exact hxS ⟨(u, x), hp, rfl⟩
   exact hx (sub_eq_zero.mpr (clockEvolution_eq_self V hK hL x hz s t))
-
-
 
 theorem clockEvolution_hasCompactSupport (hV : HasCompactSupport V) (s t : ℝ) :
     HasCompactSupport (fun x => clockEvolution V hK hL s t x - x) := by

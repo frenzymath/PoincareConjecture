@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Se
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Frame.Chart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +14,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem chartField_transition
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -49,7 +41,6 @@ theorem chartField_transition
 
 omit [IsManifold (𝓡 2) ∞ S] in
 
-
 theorem chartField_eq_coordinates
     (e : OpenPartialHomeomorph S (ℝ × ℝ)) (x : S) (v : ℝ × ℝ) :
     mpullback (𝓡 2) 𝓘(ℝ, ℝ × ℝ) e (fun _ => v) x =
@@ -58,8 +49,6 @@ theorem chartField_eq_coordinates
   have hv : v = v.1 • (1, 0) + v.2 • (0, 1) := by ext <;> simp
   unfold mpullback
   conv_lhs => rw [hv, map_add, map_smul, map_smul]
-
-
 
 theorem chartTriangle_frameOrientation_mul_tangent_neg
     (g : RiemannianMetric 2 S) (e f : OpenPartialHomeomorph S (ℝ × ℝ))

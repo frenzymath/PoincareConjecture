@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorTemplatesScalar
 import PoincareConjecture.Proofs.M25.Mathlib.PolarCurve
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,11 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
-
 
 theorem exists_saddle_nested_raised_long_return
     (kappa : OpenPartialHomeomorph E2 E2)

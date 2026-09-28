@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_EndpointEnergy
 import Mathlib.Topology.UniformSpace.UniformEmbedding
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,15 +18,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [T3Space M] in
 
-
 theorem referenceSpeedSq_congr_of_eventuallyEq (g : RiemannianMetric n M)
     {gamma eta : ℝ → M} {r : ℝ} (h : gamma =ᶠ[𝓝 r] eta) :
     M08.referenceSpeedSq g gamma r = M08.referenceSpeedSq g eta r := by
   unfold M08.referenceSpeedSq curveVelocity
   rw [h.mfderiv_eq, h.eq_of_nhds]
-
-
-
 
 theorem exists_continuous_birthCurve_extension [CompactSpace M]
     (g : RiemannianMetric n M) {gamma : ℝ → M} {a b : ℝ} (hab : a < b)

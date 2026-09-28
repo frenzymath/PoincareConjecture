@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportDirectedUnio
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCapNaturality
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenHomeomorphData
 
-
-
 set_option autoImplicit false
 
 noncomputable section

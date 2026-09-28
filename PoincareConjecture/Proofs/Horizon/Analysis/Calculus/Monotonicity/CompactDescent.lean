@@ -1,26 +1,12 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Semicontinuity.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare
-
-
 
 theorem lower_bound_of_stationary_descent
     {X : Type*} [TopologicalSpace X] {f b : X → ℝ} {m C : ℝ}

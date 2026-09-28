@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 def closedAncientInterval : SpacetimeInterval :=
   ⟨Iic 0, ordConnected_Iic, ⟨-1, by norm_num, 0, by simp, by norm_num⟩⟩
@@ -90,7 +76,6 @@ namespace AncientKappaSolution
 variable (K : AncientKappaSolution n M) {Q b : ℝ} (hQ : 0 < Q) (hb : b ≤ 0)
   (R : OrdinaryParabolicRescaling (I := closedAncientInterval) K.flow Q hQ b)
 
-
 def closedRescaledFlow : RicciFlow n M (Iic 0) :=
   Poincare.Geometry.RicciFlow.Harnack.restrictFlow R.flow
     (by
@@ -110,7 +95,6 @@ theorem closedRescaledFlow_curvature_norm (s : ℝ) (x : M) :
   simpa only [Diffeomorph.coe_refl, id_eq] using
     (K.closedRescaledFlow_metric_calculus hQ hb R s).curvature_norm_eq
       (K.flow.connection (b + s / Q)) ((K.closedRescaledFlow hQ hb R).connection s) x
-
 
 def closedRescale : AncientKappaSolution n M where
   flow := K.closedRescaledFlow hQ hb R
@@ -167,7 +151,6 @@ theorem closedRescale_curvature_norm (s : ℝ) (x : M) :
       (K.flow.connection (b + s / Q)).curvatureTensorNorm x / Q :=
   K.closedRescaledFlow_curvature_norm hQ hb R s x
 
-
 theorem closedRescale_ball_volume_lower_bound_iff (p : M) (r κ : ℝ) :
     (ENNReal.ofReal (κ * (Real.sqrt Q * r) ^ n) ≤
       calibratedMetricVolume ((K.closedRescale hQ hb R).flow.metric 0)
@@ -176,8 +159,6 @@ theorem closedRescale_ball_volume_lower_bound_iff (p : M) (r κ : ℝ) :
         calibratedMetricVolume (K.flow.metric b) ((K.flow.metric b).ball p r) := by
   simpa only [zero_div, add_zero, Diffeomorph.coe_refl, id_eq, closedRescale] using
     (K.closedRescaledFlow_metric_calculus hQ hb R 0).ball_volume_lower_bound_iff hQ p r κ
-
-
 
 theorem closedRescale_closed_curvature_bound (p : M) (r : ℝ)
     (hcurv : ∀ s ∈ Icc (b - r ^ 2) b, ∀ x ∈ (K.flow.metric b).ball p r,
@@ -205,7 +186,6 @@ theorem closedRescale_closed_curvature_bound (p : M) (r : ℝ)
   rw [← hradius]
   exact div_le_div_of_nonneg_right hbound hQ.le
 
-
 def closedTimeShift (b : ℝ) (hb : b ≤ 0)
     (R : OrdinaryParabolicRescaling (I := closedAncientInterval) K.flow 1 zero_lt_one b) :
     AncientKappaSolution n M :=
@@ -214,7 +194,6 @@ def closedTimeShift (b : ℝ) (hb : b ≤ 0)
 @[simp] theorem closedTimeShift_kappa (b : ℝ) (hb : b ≤ 0)
     (R : OrdinaryParabolicRescaling (I := closedAncientInterval) K.flow 1 zero_lt_one b) :
     (K.closedTimeShift b hb R).kappa = K.kappa := rfl
-
 
 theorem closedTimeShift_metric (b : ℝ) (hb : b ≤ 0)
     (R : OrdinaryParabolicRescaling (I := closedAncientInterval) K.flow 1 zero_lt_one b)

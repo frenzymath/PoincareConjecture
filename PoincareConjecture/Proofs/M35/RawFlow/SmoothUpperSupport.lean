@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.QuadraticJet
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +45,6 @@ theorem exists_smooth_quadratic_upper_support
     rw [show q = quadraticJet (f x) (fderiv ℝ f x) A x from rfl,
       quadraticJet_second_fderiv _ _ _ hA]
     rfl
-
-
 
 theorem exists_smooth_upper_support_laplacian {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

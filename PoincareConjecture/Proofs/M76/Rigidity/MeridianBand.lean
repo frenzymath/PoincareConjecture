@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCut
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBandCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,14 +19,10 @@ local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
 theorem continuous_hamiltonMeridianCutAmbientMap :
     Continuous hamiltonMeridianCutAmbientMap :=
   continuous_fst.prodMk (QuotientAddGroup.continuous_mk.comp
     (continuous_pi fun _ : Fin 1 => continuous_snd))
-
-
 
 theorem injOn_hamiltonMeridianBand :
     InjOn hamiltonMeridianCutAmbientMap (Q ×ˢ I) := by
@@ -50,21 +38,14 @@ theorem injOn_hamiltonMeridianBand :
     exact ⟨by linarith [hw.2.1], by linarith [hw.2.2]⟩
   exact Prod.ext hfst ((AddCircle.shortArcQuotient p 2).injOn hzs hws hsnd)
 
-
-
 theorem mapsTo_hamiltonMeridianBand_frontier :
     MapsTo hamiltonMeridianCutAmbientMap (Q ×ˢ I) (frontier R) := by
   intro z hz
   rw [latticeHandleDomain, frontier_prod_univ_eq, frontier_closedBall _ one_ne_zero]
   exact ⟨hz.1, mem_univ _⟩
 
-
-
 theorem hamiltonMeridianBand_zero (z : V2) :
     hamiltonMeridianCutAmbientMap (z, 0) = hamiltonStandardMeridianMap L z := rfl
-
-
-
 
 theorem isOpen_hamiltonMeridianBand_image :
     IsOpen ((Subtype.val : frontier R → X) ⁻¹'
@@ -99,8 +80,6 @@ theorem isOpen_hamiltonMeridianBand_image :
       exact hamiltonSolidTorusCircleEquiv.injective hty
   rw [heq]
   exact hU.preimage (continuous_snd.comp continuous_subtype_val)
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_meridianBand
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFullCofaces
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [DecidableEq V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_full_coface_of_faceAffine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)
@@ -59,9 +45,6 @@ theorem exists_full_coface_of_faceAffine_vertex_stars
     have hwveq := hinj (S.subset_space hu hwu) (S.subset_space hsS hvs) hwv
     exact hwveq ▸ hwu
   · exact (Finset.card_image_iff.mpr (hinj.mono (S.subset_space hu))).symm.trans htcard
-
-
-
 
 theorem exists_full_coface_of_affine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

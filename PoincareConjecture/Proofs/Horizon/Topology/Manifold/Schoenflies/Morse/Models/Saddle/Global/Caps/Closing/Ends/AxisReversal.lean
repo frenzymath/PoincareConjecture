@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CanonicalAlignment
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapAxisReversal
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -38,8 +36,6 @@ theorem terminalCylinder_axis_neg {v : E3}
     refine ⟨(axisNegPlaneEquiv v x, -t),
       ⟨mem_image_of_mem _ hx, by constructor <;> linarith [ht.1, ht.2]⟩, ?_⟩
     simp only [coe_axisNegPlaneEquiv, neg_smul, smul_neg, neg_neg]
-
-
 
 theorem complete_canonical_cap_axis_neg {v : E3} (hv : ‖v‖ = 1)
     (A : (Hemisphere.Plane v) ≃ₘ[Real] (Hemisphere.Plane v))

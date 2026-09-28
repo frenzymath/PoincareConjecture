@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSurfaceIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [DecidableEq E] in
 
-
 theorem iUnion_vertex_dualBlocks_space :
     (⋃ p ∈ K.vertices, (K.barycentricDualBlock {p}).space) = K.space := by
   rw [← K.barycentricNeighborhood_space_eq_iUnion_dualBlocks K]
@@ -33,8 +22,6 @@ theorem iUnion_vertex_dualBlocks_space :
 
 omit [DecidableEq E] in
 
-
-
 theorem barycentricDualBlock_space_eq_centroid_of_maximal
     {s : Finset E} (hs : s ∈ K.faces)
     (hmax : ∀ t ∈ K.faces, s ⊆ t → t = s) :
@@ -42,15 +29,10 @@ theorem barycentricDualBlock_space_eq_centroid_of_maximal
   simpa only [inter_self] using K.dualBlocks_inter_eq_centroid_of_no_common_coface
     K K le_rfl le_rfl hs hs (fun t ht _ hst => hmax t ht hst)
 
-
-
-
 theorem vertex_dualBlocks_space_inter (p q : E) :
     (K.barycentricDualBlock {p}).space ∩ (K.barycentricDualBlock {q}).space =
       (K.barycentricDualBlock {p, q}).space := by
   simpa only [Finset.singleton_union] using K.barycentricDualBlock_space_inter {p} {q}
-
-
 
 theorem dualEdge_space_subset_vertex_links {p q : E}
     (hp : p ∈ K.vertices) (hq : q ∈ K.vertices) (hpq : p ≠ q) :
@@ -61,9 +43,6 @@ theorem dualEdge_space_subset_vertex_links {p q : E}
     K.barycentricDualBlock_singleton_eq_closedStar hp,
     K.barycentricDualBlock_singleton_eq_closedStar hq]
   exact K.barycentric_closedStars_inter_subset_links hp hq hpq
-
-
-
 
 theorem barycentric_vertex_link_space_eq_iUnion_dualEdges
     {p : E} (hp : p ∈ K.vertices) :

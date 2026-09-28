@@ -4,22 +4,11 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_two_band_label_matching
     (U V : Fin 2 → (E2 × ℝ) → E3) (H : E3 → ℝ)

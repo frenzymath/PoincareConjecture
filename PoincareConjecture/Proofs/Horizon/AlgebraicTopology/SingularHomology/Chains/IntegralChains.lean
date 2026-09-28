@@ -4,15 +4,6 @@ import Mathlib.Algebra.Category.ModuleCat.Colimits
 import Mathlib.Algebra.Category.ModuleCat.EpiMono
 import Mathlib.Algebra.Module.ULift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -21,7 +12,6 @@ open scoped Simplicial
 universe w v u
 
 namespace Poincare.Topology
-
 
 noncomputable def integralCoefficientHomEquiv (M : ModuleCat.{w} ℤ) :
     (ModuleCat.of ℤ (ULift.{w} ℤ) ⟶ M) ≃+ M :=
@@ -45,7 +35,6 @@ theorem integralCoefficientHomEquiv_symm_apply (M : ModuleCat.{w} ℤ)
     f a = f (a.down • (ULift.up (1 : ℤ) : ULift.{w} ℤ)) := congrArg f ha
     _ = a.down • f (ULift.up 1) := map_zsmul f.hom.toAddMonoidHom _ _
     _ = a.down • m := congrArg (a.down • ·) hf
-
 
 theorem exists_integral_simplicial_chain_coefficients (X : SSet.{w}) (n : ℕ)
     (z : ModuleCat.of ℤ (ULift.{w} ℤ) ⟶
@@ -82,7 +71,6 @@ theorem exists_integral_simplicial_chain_coefficients (X : SSet.{w}) (n : ℕ)
       apply ULift.ext
       simp
 
-
 theorem exists_integral_simplicial_homology_cycle (X : SSet.{w}) (n : ℕ)
     (h : ModuleCat.of ℤ (ULift.{w} ℤ) ⟶
       X.homology (ModuleCat.of ℤ (ULift.{w} ℤ)) (n + 1)) :
@@ -111,7 +99,6 @@ theorem exists_integral_simplicial_homology_cycle (X : SSet.{w}) (n : ℕ)
     (integralCoefficientHomEquiv (K.cycles (n + 1))).apply_symm_apply y
   rw [hu]
   exact hy
-
 
 theorem singularHomologyMap_const_eq_zero
     {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]

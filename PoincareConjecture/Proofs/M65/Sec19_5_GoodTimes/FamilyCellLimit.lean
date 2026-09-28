@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.FamilyCellNormalization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SmoothLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65CurvatureTensorNorm_le_of_ambient_bounds
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -67,10 +56,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem m65FamilyCell_exists_smooth_limit (C : M63FamilyConclusion G Gamma zeta)
     (compact : IsCompact (univ : Set M))

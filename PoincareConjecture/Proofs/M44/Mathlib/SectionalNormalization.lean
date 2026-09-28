@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SectionalPolarization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem exists_orthonormal_curvature_quotient
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

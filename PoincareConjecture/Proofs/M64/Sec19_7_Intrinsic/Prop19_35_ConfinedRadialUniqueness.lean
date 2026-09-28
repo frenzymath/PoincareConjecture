@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EarliestConfinedContact
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConfinedDigonPerturbation
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +9,6 @@ open Set Filter Metric
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_confined_radial_eq_canonical
     (N : IntrinsicAnnulus) {K kappa R B : ℝ} (hK : N.GaussianCurvatureBound K)

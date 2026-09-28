@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedSphereCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CenteredCollarRawMarks
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

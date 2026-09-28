@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubeFamily
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereSmoothRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_end_aligned_stack
     (e : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))

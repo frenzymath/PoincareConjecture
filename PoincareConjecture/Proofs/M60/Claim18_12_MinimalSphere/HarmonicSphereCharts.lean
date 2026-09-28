@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.TargetChartEstimate
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ConformalLogLaplacian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ open CoordinateExponential ConnectionVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 def M60SphereChartHarmonic (g : RiemannianMetric n M) (f : UnitTwoSphere → M) : Prop :=
   ∀ (b : M) (z : LoopPlane), f (m60SphereParameter z) ∈ (extChartAt (𝓡 n) b).source →
     let u := (extChartAt (𝓡 n) b) ∘ (f ∘ m60SphereParameter)
@@ -42,9 +30,6 @@ def M60SphereChartHarmonic (g : RiemannianMetric n M) (f : UnitTwoSphere → M) 
 variable {N : Type u} [TopologicalSpace N] [T2Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
   {g : RiemannianMetric 3 N}
-
-
-
 
 theorem m60SphereAreaDensity_curvature_inequality (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → N)
@@ -85,8 +70,6 @@ theorem m60SphereAreaDensity_curvature_inequality (D : LeviCivitaData g)
   dsimp only
   convert! hgeom using 1
   ring
-
-
 
 theorem m60Sphere_logAreaDensity_curvature_inequality (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → N)

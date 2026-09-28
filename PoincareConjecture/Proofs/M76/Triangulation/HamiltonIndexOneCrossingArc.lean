@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneAngularLift
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSquareCircle
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval
@@ -21,9 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "C8" => AddCircle (4 * (2 : ℝ))
-
-
-
 
 theorem exists_zero_winding_crossing_arc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.SourceDiskNormalLabels
 import PoincareConjecture.Proofs.M76.Rigidity.IntrinsicDiskChartStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry SignType
@@ -25,8 +16,6 @@ local notation "Q" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
-
-
 
 structure OriginalProperDiskTriangulation
     (e : ι → OpenPartialHomeomorph X V3) (R : Set X) (j : V2 → X) where
@@ -142,9 +131,6 @@ structure OriginalProperDiskTriangulation
   star_interior : ∀ p : (marked 2).vertices,
     chart (chart_index p) (inverse p) ∈
       interior ((fun x => chart (chart_index p) (inverse x)) '' (ambient.closedStar p).space)
-
-
-
 
 theorem exists_original_proper_disk_triangulation [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X}

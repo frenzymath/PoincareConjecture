@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.EndOrientation
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.EndCount
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.SaddleLevel
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ open SphereSurgeryCoreCap Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 def FullPlanarFamily {f : S2 → E3} {p : S2} (s : TerminalInputData f p) : Prop :=
   ∃ data : TerminalSaddleData s.reduction s.path p s.chart,
@@ -91,8 +81,6 @@ private theorem transfer_one_lower_end
       (show IsConnected ((fun q => -h q) ⁻¹' {-A.lowerCut}) by
         simpa only [preimage, mem_singleton_iff, neg_inj] using hbottom)
     simpa only [preimage, mem_singleton_iff, neg_inj] using hn
-
-
 
 theorem exists_original_or_reflected_planar_family
     {f : S2 → E3} {p : S2} (s : TerminalInputData f p) :

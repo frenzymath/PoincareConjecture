@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.VertexOrbitCount
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.PermutationOrbitSign
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains AbstractSimplicialComplex

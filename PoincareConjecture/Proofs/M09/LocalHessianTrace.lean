@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M09.HessianTrace
 import PoincareConjecture.Proofs.M09.LocalCenteredHessian
 
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

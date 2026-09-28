@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SourceSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularDistance
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
 
 theorem exists_radial_decrement_of_metricComplete
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p x : M)
@@ -43,9 +33,6 @@ theorem exists_radial_decrement_of_metricComplete
   · have h := hγ d ⟨hd.le, le_rfl⟩ r ⟨hr.le, hrd.le⟩
     rw [hγd, abs_of_pos (show 0 < d - r from sub_pos.mpr hrd)] at h
     exact h
-
-
-
 
 theorem exists_radial_calibration_of_normal_chart_limits
     (g : ℕ → RiemannianMetric n M) (hc : ∀ k, MetricComplete (g k))
@@ -163,7 +150,6 @@ theorem exists_radial_calibration_of_normal_chart_limits
   rw [hvalue, ha, show Real.sqrt (2 * f z) - (1 - a) * Real.sqrt (2 * f z) =
     a * Real.sqrt (2 * f z) by ring, mul_pow, Real.sq_sqrt hnonneg]
   ring
-
 
 theorem radial_lipschitz_of_distance_and_potential_limits
     (g : ℕ → RiemannianMetric n M)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceRealizationCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,16 +55,12 @@ private theorem normalMap_exists
   simp only [mem_univ, true_and, iff_true]
   exact x.property
 
-
-
 noncomputable def terminalSourceNormal_terminalMap
     {S : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}} {b Q : ℝ} {I : Set ℝ}
     (U : TopologicalSpace.Opens C.carrier) (p : U)
     (e : SurgeryFlowCylinder S C b Q I U) (h0 : (0 : ℝ) ∈ I) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) U (S.slice b).carrier ∞ :=
   (normalMap_exists U p e h0).choose
-
-
 
 theorem terminalSourceNormal_terminal_map
     {S : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}} {b Q : ℝ} {I : Set ℝ}
@@ -89,8 +77,6 @@ theorem terminalSourceNormal_terminal_map
   have hsource : j.source = univ := hj.1
   rw [hsource, image_univ] at ht
   exact ht.symm
-
-
 
 theorem terminalSourceNormal_terminal_readouts
     {S : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}} {b Q : ℝ} {I J : Set ℝ}

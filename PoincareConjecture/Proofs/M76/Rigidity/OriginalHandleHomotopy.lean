@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarChartTransfer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,14 +11,10 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 
-
-
 noncomputable def hamiltonZeroHandleMap (h : C(X0, X0)) : C(H0, H0) :=
   ⟨fun x => hamiltonZeroAmbientEquiv (h (hamiltonZeroAmbientEquiv.symm x)),
     hamiltonZeroAmbientEquiv.continuous.comp
       (h.continuous.comp hamiltonZeroAmbientEquiv.symm.continuous)⟩
-
-
 
 theorem hamiltonZeroAmbientMap_handle (h : C(X0, X0)) :
     hamiltonZeroAmbientMap (hamiltonZeroHandleMap h) = h := by
@@ -39,8 +25,6 @@ theorem hamiltonZeroAmbientMap_handle (h : C(X0, X0)) :
   rw [hamiltonZeroAmbientEquiv.symm_apply_apply,
     hamiltonZeroAmbientEquiv.symm_apply_apply]
 
-
-
 theorem hamiltonZeroHandleMap_ambient (phi : C(H0, H0)) :
     hamiltonZeroHandleMap (hamiltonZeroAmbientMap phi) = phi := by
   apply ContinuousMap.ext
@@ -50,16 +34,10 @@ theorem hamiltonZeroHandleMap_ambient (phi : C(H0, H0)) :
   rw [hamiltonZeroAmbientEquiv.apply_symm_apply,
     hamiltonZeroAmbientEquiv.apply_symm_apply]
 
-
-
 theorem hamiltonZeroHandleMap_domain (h : C(X0, X0)) :
     latticeHandleMapInDomain (Fin 0) (Fin 3) L0 (hamiltonZeroHandleMap h) =
       hamiltonZeroAmbientMapInDomain h := by
   rw [← hamiltonZeroAmbientMapInDomain_original, hamiltonZeroAmbientMap_handle]
-
-
-
-
 
 noncomputable def hamiltonZeroHandleHomotopy (phi : C(H0, H0))
     (G : C(unitInterval × X0, X0))
@@ -84,16 +62,12 @@ noncomputable def hamiltonZeroHandleHomotopy (phi : C(H0, H0))
     rw [hamiltonZeroHandleBoundary_eq_empty] at hx
     exact False.elim hx
 
-
-
 theorem hamiltonZeroHandleHomotopy_apply (phi : C(H0, H0))
     (G : C(unitInterval × X0, X0))
     (hzero : ∀ y : X0, G (0, y) = hamiltonZeroAmbientMap phi y)
     (t : unitInterval) (x : H0) :
     hamiltonZeroHandleHomotopy phi G hzero (t, x) =
       hamiltonZeroAmbientEquiv (G (t, hamiltonZeroAmbientEquiv.symm x)) := rfl
-
-
 
 theorem hamiltonZeroHandleHomotopy_fixed_image (phi : C(H0, H0))
     (G : C(unitInterval × X0, X0))
@@ -109,8 +83,6 @@ theorem hamiltonZeroHandleHomotopy_fixed_image (phi : C(H0, H0))
   change hamiltonZeroAmbientEquiv (hamiltonZeroAmbientEquiv.symm
     (phi (hamiltonZeroAmbientEquiv y))) = phi (hamiltonZeroAmbientEquiv y)
   exact hamiltonZeroAmbientEquiv.apply_symm_apply _
-
-
 
 theorem hamiltonZeroHandleHomotopy_fixed_exterior (phi : C(H0, H0))
     (G : C(unitInterval × X0, X0))

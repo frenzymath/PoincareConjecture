@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Models
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,12 +13,10 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {U : Set M} (T : OpenCylinderModel U)
 
-
 theorem coordinate_mem {z : RoundCylinderSpace} (hz : z ∈ univ ×ˢ Ioo (0 : ℝ) 1) :
     T.coordinate z ∈ U := by
   have h := (T.homeomorph (z.1, ⟨z.2, hz.2⟩)).property
   rwa [T.coordinate_eq] at h
-
 
 theorem mem_tail_iff (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) {x : M} :
     x ∈ T.tail side a ↔ x ∈ U ∧
@@ -58,7 +45,6 @@ theorem mem_tail_iff (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) {x : M
       exact ⟨T.inverse x, ⟨mem_univ _, hlt, (T.inverse_mem x hx).2.2⟩,
         T.right_inverse hx⟩
 
-
 theorem tail_subset (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     T.tail side a ⊆ U := fun _ hx => ((T.mem_tail_iff side ha).mp hx).1
 
@@ -80,7 +66,6 @@ theorem isConnected_carrier : IsConnected U := by
   exact (isConnected_univ.prod (isConnected_Ioo (by norm_num : (0 : ℝ) < 1))).image
     T.coordinate T.coordinate_smooth.continuousOn
 
-
 theorem isConnected_tail (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     IsConnected (T.tail side a) := by
   cases side
@@ -91,19 +76,16 @@ theorem isConnected_tail (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     apply T.coordinate_smooth.continuousOn.mono
     exact fun _ hz => ⟨mem_univ _, ha.1.trans hz.2.1, hz.2.2⟩
 
-
 theorem coordinate_slab_subset {a b : ℝ} (ha : 0 < a) (hb : b < 1) :
     T.coordinate '' (univ ×ˢ Icc a b) ⊆ U := by
   rintro _ ⟨z, hz, rfl⟩
   exact T.coordinate_mem ⟨mem_univ _, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
-
 
 theorem isCompact_coordinate_slab {a b : ℝ} (ha : 0 < a) (hb : b < 1) :
     IsCompact (T.coordinate '' (univ ×ˢ Icc a b)) := by
   apply (isCompact_univ.prod isCompact_Icc).image_of_continuousOn
   apply T.coordinate_smooth.continuousOn.mono
   exact fun _ hz => ⟨mem_univ _, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
-
 
 theorem diff_tails_subset_coordinate_slab {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) (1 / 2)) :
     U \ (T.tail false a ∪ T.tail true (1 - a)) ⊆
@@ -116,8 +98,6 @@ theorem diff_tails_subset_coordinate_slab {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) (1
     exact hout (Or.inl ((T.mem_tail_iff false haone).mpr ⟨hx, lt_of_not_ge h⟩))
   · by_contra h
     exact hout (Or.inr ((T.mem_tail_iff true hcomplement).mpr ⟨hx, lt_of_not_ge h⟩))
-
-
 
 theorem exists_tails_disjoint_of_isCompact {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U) :
     ∃ a ∈ Ioo (0 : ℝ) (1 / 2),

@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.InnerProductSpace.Symmetric
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,7 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
 
 theorem hasDerivAt_operator_inverse
     {J : ℝ → E →L[ℝ] E} {J' : E →L[ℝ] E} {t : ℝ}
@@ -55,8 +44,6 @@ theorem hasDerivAt_operator_inverse
       (eq_neg_of_add_eq_zero_right hh)
   exact hQ ▸ hdiff.hasDerivAt
 
-
-
 theorem hasDerivAt_jacobi_logarithmicDerivative
     {J V : ℝ → E →L[ℝ] E} {K : E →L[ℝ] E} {t : ℝ}
     (hJ : HasDerivAt J (V t) t)
@@ -77,7 +64,6 @@ end Normed
 section InnerProduct
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem hasDerivAt_jacobi_wronskian
     {J V : ℝ → E →L[ℝ] E} {K : E →L[ℝ] E} {t : ℝ}
@@ -102,7 +88,6 @@ theorem hasDerivAt_jacobi_wronskian
     ring
   exact hz ▸ (hJu.inner ℝ hVv).sub (hVu.inner ℝ hJv)
 
-
 theorem jacobi_wronskian_eq_zero
     {J V K : ℝ → E →L[ℝ] E} {b t : ℝ}
     (hJ : ∀ s ∈ Set.Icc 0 b, HasDerivAt J (V s) s)
@@ -116,8 +101,6 @@ theorem jacobi_wronskian_eq_zero
       (hK s hs) u v).hasDerivWithinAt)
     (C := 0) (fun _ _ => by simp) (convex_Icc (0 : ℝ) b) h0 ht
   simpa [hzero] using hh
-
-
 
 theorem inner_jacobi_eq_time_mul
     {J V K : ℝ → E →L[ℝ] E} {b t : ℝ} (v u : E)
@@ -156,8 +139,6 @@ theorem inner_jacobi_eq_time_mul
     (fun s hs => (hdiff s hs).hasDerivWithinAt)
     (C := 0) (fun _ _ => by simp) (convex_Icc (0 : ℝ) b) h0 ht
   exact sub_eq_zero.mp (by simpa [hzero] using hh)
-
-
 
 theorem isSymmetric_jacobi_logarithmicDerivative
     [CompleteSpace E]

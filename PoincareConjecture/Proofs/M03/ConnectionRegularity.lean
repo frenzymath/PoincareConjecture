@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Ch01.Koszul
 import PoincareConjecture.Proofs.M03.ConnectionCoordinates
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem contMDiffOn_connection (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)
@@ -41,7 +29,6 @@ theorem contMDiffOn_connection (D : LeviCivitaData g)
   intro X Y Z x hX hY hZ
   have hk := D.koszul X Y Z hX hY hZ
   linarith only [hk]
-
 
 theorem contMDiffOn_connection_apply (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)

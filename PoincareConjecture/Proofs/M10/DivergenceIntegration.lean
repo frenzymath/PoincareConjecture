@@ -2,14 +2,6 @@ import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [Measure.IsAddHaarMeasure μ]
-
 
 theorem integral_mul_trace_fderiv {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {u : E → ℝ} {V : E → E}

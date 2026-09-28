@@ -5,22 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCoreG
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySourceAtlasHistory
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySourceMorse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_terminal_collar_morse_family
     (hP : PlanarSchoenfliesService)

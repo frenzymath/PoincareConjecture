@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianRim
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +8,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLMap.polyhedralPLInCharts_boundary_fixed
     {X G ι κ : Type*} [TopologicalSpace X]
@@ -49,8 +37,6 @@ local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
-
-
 theorem exists_finite_hamiltonBoundaryCylinder :
     ∃ K : SimplicialComplex ℝ (V2 × ℝ),
       K.faces.Finite ∧ K.space = Q ×ˢ Icc (0 : ℝ) p := by
@@ -62,8 +48,6 @@ theorem exists_finite_hamiltonBoundaryCylinder :
   refine ⟨K, hK, ?_⟩
   rw [hKspace, hJQ, hCp]
 
-
-
 theorem StandardLatticeHandleAtlas.polyhedralPL_boundaryCylinder
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}
     (hd : StandardLatticeHandleAtlas (Fin 2) (Fin 1) L d) :
@@ -73,10 +57,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_boundaryCylinder
     hKA.subset.trans (prod_mono sphere_subset_closedBall subset_rfl)
   have h := hd.polyhedralPL_meridianCut.restrict_finite K hK hKcut
   rwa [hKA] at h
-
-
-
-
 
 theorem polyhedralPL_source_hamiltonBoundaryCylinder
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

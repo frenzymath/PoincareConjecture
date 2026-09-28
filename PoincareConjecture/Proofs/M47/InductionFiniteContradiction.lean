@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointService
 import PoincareConjecture.Proofs.M47.LimitFiniteUniformSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,8 +72,6 @@ variable
             (F (G.subsequence k)).parameters.C)
 
 include hbad capBudget in
-
-
 
 theorem induction_exists_finite_horizon_extension
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

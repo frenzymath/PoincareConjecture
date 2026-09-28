@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialBallQuotient
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -18,9 +9,6 @@ namespace ContinuousMap
 
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace Y]
-
-
-
 
 theorem Nullhomotopic.exists_closedBall_extension (f : C(sphere (0 : E) 1, Y))
     (hf : f.Nullhomotopic) :
@@ -55,9 +43,6 @@ theorem Nullhomotopic.exists_closedBall_extension (f : C(sphere (0 : E) 1, Y))
       (hq.lift_comp H.symm.toContinuousMap hfactor)).trans (H.symm.apply_one x)
 
 variable [ContractibleSpace Y]
-
-
-
 
 theorem exists_closedBall_extension_of_contractible (f : C(sphere (0 : E) 1, Y)) :
     ∃ g : C(closedBall (0 : E) 1, Y),

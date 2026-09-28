@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M32.Thm11_31.SeedEndCut.Seed
 import PoincareConjecture.Proofs.M32.Cor11_36.Propagation
 import PoincareConjecture.Proofs.M32.Thm11_31.Levels
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem exists_deepHornConclusion_of_contained_necks :
     ∃ tau : ℝ, 0 < tau ∧ tau ≤ 1 / 200 ∧

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Distance.NewScale
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +16,6 @@ namespace PoincareConjecture.BalancedNeckChain
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {ε : ℝ}
-
-
 
 theorem exists_prepend (C : BalancedNeckChain g ε) {a : ℤ}
     (ha : a ∈ C.shape.active) (hprev : a - 1 ∉ C.shape.active)
@@ -148,9 +138,6 @@ theorem exists_prepend (C : BalancedNeckChain g ε) {a : ℤ}
   change i ∈ J.active
   rw [hJ]
   exact mem_insert_of_mem _ hi
-
-
-
 
 theorem exists_prepend_at_outer_frontier_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

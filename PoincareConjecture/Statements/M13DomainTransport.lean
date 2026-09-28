@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M13DomainTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,7 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {A : AdaptedMetricAtlas n X} {R : GeneralizedFlowCarrierConclusion A}
   {Q : ℝ} {hQ : 0 < Q} {a : ℝ}
   {P : ParabolicSpacetimeRescaling R Q hQ a}
-
 
 structure ParabolicDomainCalculus (D : ParabolicDomainTransport.{u, v} P) : Prop where
   worldline_image : ∀ (K : SpacetimeInterval)

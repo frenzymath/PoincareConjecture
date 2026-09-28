@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M09.UniqueMinimizingVectors
 import PoincareConjecture.Proofs.M09.FamilyPhaseIdentification
 import PoincareConjecture.Proofs.M09.InverseChartVector
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

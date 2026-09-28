@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceConverg
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakBoundaryTrace
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +17,6 @@ open Poincare.Analysis.Sobolev.WeakCompactness
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
-
 
 theorem m64WeakPhase_lower_trace_tendsto
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ j, ContDiff ℝ 1 (f j))

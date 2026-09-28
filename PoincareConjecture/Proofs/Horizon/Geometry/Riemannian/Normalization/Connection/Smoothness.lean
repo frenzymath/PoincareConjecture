@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Conne
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.Riesz
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Geometry.Manifold.VectorBundle.Riemannian
-
-
-
-
-
-
-

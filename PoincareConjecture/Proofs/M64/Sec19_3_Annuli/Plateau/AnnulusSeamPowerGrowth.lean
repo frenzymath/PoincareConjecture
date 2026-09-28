@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamContraction
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyGrowthPower
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusSeamDomain
-
-
 
 theorem seam_column_disk_energy_le
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -57,8 +44,6 @@ theorem seam_column_disk_energy_le
   fin_cases i <;> simp only [Fin.zero_eta, Fin.mk_one] at hc ⊢ <;> nlinarith
 
 variable [IsManifold (𝓡 n) ∞ M] [CompactSpace M] [T2Space M]
-
-
 
 theorem seam_uniform_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -98,8 +83,6 @@ theorem seam_uniform_column_power_growth
       A.seam_column_disk_energy_le Q hQ hei.isEmbedding hb hpos hC hcoercive a r (hball r hr.2) i
     _ ≤ 2 * C * (K * r ^ beta) := mul_le_mul_of_nonneg_left hsmall (by positivity)
     _ = _ := by ring
-
-
 
 theorem seam_local_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_BoundaryNormal
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +10,6 @@ open Set Metric
 open scoped Topology ContDiff Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_signed_normal_collar
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)

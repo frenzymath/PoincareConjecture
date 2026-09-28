@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.FixedCoordinateFlowCur
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching.OperatorPositivity
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -76,10 +66,6 @@ private theorem coordinateFlow_nonnegative_of_defect_tendsto
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_simultaneous_nonnegative_coordinateFlowLimits
     (htau : 0 < tau) (F : ∀ k, RicciFlow 3 (M k) (Icc (-tau) 0))

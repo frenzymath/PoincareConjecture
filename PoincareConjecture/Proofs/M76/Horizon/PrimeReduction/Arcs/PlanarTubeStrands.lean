@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -22,9 +14,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "D" => Dehn.signedTubeDiamond
-
-
-
 
 theorem exists_planar_signed_tube_ribbon
     {T triangle sphere : Set V3}

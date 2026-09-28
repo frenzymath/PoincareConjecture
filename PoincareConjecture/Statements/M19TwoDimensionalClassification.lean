@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M19TwoDimensionalClassification
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Statements.M18AsymptoticSoliton
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -33,15 +24,12 @@ structure TwoDimensionalClassificationPredecessors : Prop where
     ∀ (K : AncientKappaSolution 2 M) (S : AncientRescalingSequence K),
       AncientAsymptoticSolitonConclusion S
 
-
-
 structure TwoDimensionalAsymptoticRoundTheory
     (K : AncientKappaSolution 2 M) : Prop where
   classify :
     ∀ S : AncientRescalingSequence K,
       ∃ L : AncientAsymptoticSolitonLimitData S,
         TwoDimensionalAsymptoticRoundCertificate S L
-
 
 structure TwoDimensionalClassificationTheory : Prop where
   asymptotic_round : ∀ K : AncientKappaSolution 2 M,

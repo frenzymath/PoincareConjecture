@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.SourceCol
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimGroup
 import Mathlib.Topology.Metrizable.Uniformity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -28,8 +19,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 
 private instance : Fact (0 < (4 * (128 : ℝ))) := ⟨by norm_num⟩
-
-
 
 theorem sourcePhase_frontier_signed_data
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3)
@@ -139,8 +128,6 @@ theorem sourcePhase_frontier_signed_data
       G' psi lambda w z hpw hpz hlz hN' hS' hO' x.val hxG'
     exact ⟨T, hxT, hTS, hTO⟩
   exact ⟨hSF, hSc, hOc, hcover, hrim, hcompact, hne, hlocal⟩
-
-
 
 theorem sourcePhase_frontier_pi1_injective
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3)

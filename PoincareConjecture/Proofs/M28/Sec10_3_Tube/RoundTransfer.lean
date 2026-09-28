@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -35,7 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 open PoincareConjecture.SpacetimeBounds
 
-
 noncomputable def roundMetricJetNorm
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon) (j : ℕ)
@@ -44,10 +31,6 @@ noncomputable def roundMetricJetNorm
     (N.model_connection.iteratedCovariantTensorDerivative
       (fun y v => N.scale * singularMetricPullback g N.forward y v -
         N.model_metric.inner y (v 0) (v 1)) j) x
-
-
-
-
 
 theorem roundMetricJetNorm_lt
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -61,19 +44,11 @@ theorem roundMetricJetNorm_lt
       (fun y v => N.scale * singularMetricPullback g N.forward y v)
       ⌊epsilon⁻¹⌋₊ j x (hj.trans horder) N.epsilon_pos (hmetric x) hbound)
 
-
-
-
 noncomputable def jetScalarCurvature (J : MetricTwoJet 3) : ℝ :=
   ∑ i : Fin 3, ∑ j : Fin 3,
     EuclideanSpace.proj j (J.1.inverse (EuclideanSpace.proj i)) *
       jetRicci J (EuclideanSpace.basisFun (Fin 3) ℝ i)
         (EuclideanSpace.basisFun (Fin 3) ℝ j)
-
-
-
-
-
 
 theorem contDiffAt_jetScalarCurvature
     {J : MetricTwoJet 3} (hJ : J.1.IsInvertible) :
@@ -95,12 +70,6 @@ theorem contDiffAt_jetScalarCurvature
     (EuclideanSpace.basisFun (Fin 3) ℝ i)
     (EuclideanSpace.basisFun (Fin 3) ℝ j))
 
-
-
-
-
-
-
 theorem exists_jetScalarCurvature_modulus
     {J : MetricTwoJet 3} (hJ : J.1.IsInvertible)
     {delta : ℝ} (hdelta : 0 < delta) :
@@ -114,11 +83,6 @@ theorem exists_jetScalarCurvature_modulus
   intro K hdist
   have hdist' := hK hdist
   simpa [Real.dist_eq] using hdist'
-
-
-
-
-
 
 theorem exists_jetScalarCurvature_uniform_modulus
     {K : Set (MetricTwoJet 3)} (hK : IsCompact K)
@@ -147,10 +111,6 @@ theorem exists_jetScalarCurvature_uniform_modulus
     exact hnear (by simpa [dist_comm] using hLJ)
   simpa [Real.dist_eq, abs_sub_comm] using hp hJ
 
-
-
-
-
 theorem round_scalar_ratio_of_normalized_close
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -174,18 +134,11 @@ theorem round_scalar_ratio_of_normalized_close
     exact (lt_div_iff₀ hscale).mp hylower
   linarith
 
-
-
-
 theorem jetRicci_metricTwoJet_eq
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))}
     (D : LeviCivitaData g) (x u v : EuclideanSpace ℝ (Fin 3)) :
     jetRicci (metricTwoJet g.euclideanCoefficients x) u v = D.ricci x u v := by
   exact jetRicci_metricTwoJet D x u v
-
-
-
-
 
 theorem LeviCivitaData.scalarCurvature_eq_inverse_gram_m28
     {n : ℕ} {X : Type u} [TopologicalSpace X]
@@ -250,10 +203,6 @@ theorem jetScalarCurvature_metricTwoJet_eq
   intro j _
   congr 1
   exact RiemannianMetric.inverseCoefficients_eq_inverse_gram_m28 g x i j
-
-
-
-
 
 theorem jetScalarCurvature_metricTwoJet_pullback
     {M : Type u} [TopologicalSpace M]

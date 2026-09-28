@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -26,7 +24,6 @@ noncomputable def closedArcCoordinates (p a b : ℝ) [Fact (0 < p)]
     (hgap : b < a + p) (z : closedIntervalArc p a b) :
     (((closedArcCoordinates p a b hgap).symm z : ℝ) : AddCircle p) = z :=
   congrArg Subtype.val ((closedArcCoordinates p a b hgap).apply_symm_apply z)
-
 
 noncomputable def liftToClosedArc {Y : Type*} [TopologicalSpace Y]
     {p a b : ℝ} [Fact (0 < p)] (hgap : b < a + p)

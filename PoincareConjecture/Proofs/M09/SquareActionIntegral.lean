@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M09.SqrtActionIntegrability
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral

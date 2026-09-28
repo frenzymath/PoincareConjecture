@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusSqua
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyParameterPL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.PhaseMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -90,9 +83,6 @@ theorem exists_PL_torus_parametrization_of_square_map
   rw [Homeomorph.apply_symm_apply]
   change (((z.1 : C0), (z.2 : C0)), (t : C0)) = _
   exact Prod.ext rfl htval
-
-
-
 
 theorem exists_PL_torus_parametrization_of_source_square_map
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

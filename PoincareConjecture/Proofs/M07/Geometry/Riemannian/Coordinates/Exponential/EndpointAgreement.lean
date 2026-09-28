@@ -65,8 +65,6 @@ theorem hasFDerivAt_endpoint_of_comparison
   have heq := endpoint_agreement_of_comparison g p e he0 hep hed Γ hcmp hgeo hinit hvel
   exact hed.congr_of_eventuallyEq (heq.fun_comp (extChartAt (𝓡 n) p))
 
-
-
 theorem exists_exponential_chart_eq_endpoint_nhds
     (g : RiemannianMetric n M) (p : M)
     (Γ : EuclideanSpace ℝ (Fin n) → ℝ → M)
@@ -112,8 +110,6 @@ theorem exists_exponential_chart_eq_endpoint_nhds
     intro t ht
     constructor <;> linarith [ht.1, ht.2]
   exact ⟨η, fun t ht => hηgeo t (hI ht), hη0, hc.2.1, hηv⟩
-
-
 
 theorem geodesic_endpoint_zero_and_hasFDerivAt
     (g : RiemannianMetric n M) (p : M)

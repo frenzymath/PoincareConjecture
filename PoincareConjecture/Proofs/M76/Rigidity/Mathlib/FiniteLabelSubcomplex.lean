@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace Y] [T1Space Y]
 
-
-
 theorem finite_label_eq_on_face (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) {D : Set Y} (hD : D.Finite)
     (hf : MapsTo f K.space D) {s : Finset E} (hs : s ∈ K.faces)
@@ -30,8 +19,6 @@ theorem finite_label_eq_on_face (K : SimplicialComplex ℝ E)
   exact (convex_convexHull ℝ (s : Set E)).isPreconnected.constant_of_mapsTo
     hD.isDiscrete (hc.mono (K.convexHull_subset_space hs))
     (fun _ hz => hf (K.convexHull_subset_space hs hz)) hx hy
-
-
 
 theorem vertexSubcomplex_space_eq_finite_label (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) {D : Set Y} (hD : D.Finite)
@@ -53,8 +40,6 @@ theorem vertexSubcomplex_space_eq_finite_label (K : SimplicialComplex ℝ E)
     exact (K.finite_label_eq_on_face hc hD hf hs
       (subset_convexHull ℝ _ hv) hxs).trans hxa
 
-
-
 theorem two_label_subcomplex_cover (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) (a b : Y)
     (hf : MapsTo f K.space ({a, b} : Set Y)) :
@@ -72,8 +57,6 @@ theorem two_label_subcomplex_cover (K : SimplicialComplex ℝ E)
     · exact hx.1
     · exact hx.1
 
-
-
 theorem finite_label_subcomplex_disjoint (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) {D : Set Y} (hD : D.Finite)
     (hf : MapsTo f K.space D) {a b : Y} (hab : a ≠ b) :
@@ -84,8 +67,6 @@ theorem finite_label_subcomplex_disjoint (K : SimplicialComplex ℝ E)
   apply disjoint_left.mpr
   intro x hx hy
   exact hab (hx.2.symm.trans hy.2)
-
-
 
 theorem isClopen_finite_label_level (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) {D : Set Y} (hD : D.Finite)
@@ -107,8 +88,6 @@ theorem isClopen_finite_label_level (K : SimplicialComplex ℝ E)
   rw [hlevel]
   exact (hother.preimage hcrestrict).isOpen_compl
 
-
-
 theorem affineOnFaces_finite_label (K : SimplicialComplex ℝ E)
     {f : E → Y} (hc : ContinuousOn f K.space) {D : Set Y} (hD : D.Finite)
     (hf : MapsTo f K.space D) (w : Y → ℝ) :
@@ -119,8 +98,6 @@ theorem affineOnFaces_finite_label (K : SimplicialComplex ℝ E)
   intro x hx
   exact congrArg w (K.finite_label_eq_on_face hc hD hf hs hx
     (subset_convexHull ℝ _ hv))
-
-
 
 theorem finitePiecewiseAffineOn_finite_label (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {f : E → Y} (hc : ContinuousOn f K.space)

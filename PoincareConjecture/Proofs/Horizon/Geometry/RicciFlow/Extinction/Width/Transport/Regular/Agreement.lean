@@ -10,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m67_regular_width_agreement
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)
     {W : RepairedEventChildWitness D.flow} {T : ℝ}

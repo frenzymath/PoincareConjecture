@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Manifold
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Inverse
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -71,8 +64,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem deriv2_lift_eq_neg_christoffel
     (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M} {u : ℝ → EuclideanSpace ℝ (Fin n)}
@@ -133,8 +124,6 @@ theorem deriv2_lift_eq_neg_christoffel
     -coordinateChristoffel C (c (e (u t))) (deriv (c ∘ γ) t) (deriv (c ∘ γ) t)
   rw [hpt]
   exact hode
-
-
 
 theorem pullback_velocity_inner_eq_of_lift
     (g : RiemannianMetric n M)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.ClosingBallBounds
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.SeparatedClosures
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_prepared_curved_closing_cap_point
     {v : E3} (hv : ‖v‖ = 1) (b w : Real) (hw : 0 < w)
@@ -34,8 +30,6 @@ theorem exists_prepared_curved_closing_cap_point
     exact Reverse.inner_capCoordinates hv A (0, b + w)
   · rw [Q.apply_symm_apply]
     exact Reverse.projection_capCoordinates hv A (0, b + w)
-
-
 
 theorem disjoint_closing_balls_of_disjoint_prepared_fillings
     {v : E3} (hv : ‖v‖ = 1) (b u w : Real) (hu : 0 < u) (hw : 0 < w)

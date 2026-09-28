@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallBoundaryExtension
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +19,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
-
-
-
 
 theorem exists_meridianCutPrism_extension (P : OriginalDiskProduct e R j)
     (he : PLDomain e R) (hR : IsCompact R)

@@ -1,23 +1,11 @@
-
-
-
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Compactness.Compact
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
 
 theorem finite_connectedComponents_of_finite_preconnected_cover
     {X I : Type*} [TopologicalSpace X] [Finite I] (U : I → Set X)
@@ -30,7 +18,6 @@ theorem finite_connectedComponents_of_finite_preconnected_cover
   have hfinite := finite_iUnion (fun i => (hi i).finite)
   rw [← image_iUnion, hcover, image_univ, ConnectedComponents.range_coe] at hfinite
   exact finite_univ_iff.mp hfinite
-
 
 theorem finite_connectedComponents_of_finite_preconnected_cover_set
     {X I : Type*} [TopologicalSpace X] [Finite I] {S : Set X} (U : I → Set X)
@@ -53,7 +40,6 @@ private def mapComponents {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y
     apply ConnectedComponents.coe_eq_coe'.mpr
     exact hf.mapsTo_connectedComponent y (connectedComponent_eq_iff_mem.mp hxy))
 
-
 theorem finite_connectedComponents_of_continuous_surjective
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     [Finite (ConnectedComponents X)] {f : X → Y}
@@ -65,7 +51,6 @@ theorem finite_connectedComponents_of_continuous_surjective
   obtain ⟨x, rfl⟩ := hsurj y
   exact ⟨ConnectedComponents.mk x, rfl⟩
 
-
 theorem finite_connectedComponents_image_of_continuousOn
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     {S : Set X} [Finite (ConnectedComponents S)] {f : X → Y}
@@ -75,8 +60,6 @@ theorem finite_connectedComponents_image_of_continuousOn
     (f := g) (hf.domRestrict.subtype_mk _)
   rintro ⟨y, x, hx, rfl⟩
   exact ⟨⟨x, hx⟩, rfl⟩
-
-
 
 theorem finite_connectedComponents_compl_of_locally_finite
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsCompact K)

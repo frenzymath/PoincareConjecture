@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.Lower.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.Lower.TrichotomyTransfer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,8 +28,6 @@ private theorem independent_of_metric_orthonormal
   subst r
   simp only [zero_smul] at hr
   simp [← hr] at ha
-
-
 
 theorem noncompactKappaUniformCoreEstimates_of_trichotomy_of_services
     (P : NoncompactKappaServices.{u})

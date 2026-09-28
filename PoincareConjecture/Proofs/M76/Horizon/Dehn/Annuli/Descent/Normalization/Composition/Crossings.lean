@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Repairs.FiniteSchedule
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.DiskChangeImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval

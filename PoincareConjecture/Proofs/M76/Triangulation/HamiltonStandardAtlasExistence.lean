@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 import Mathlib.Topology.Covering.Quotient
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M76
 
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   (L : Submodule ℤ (κ → ℝ)) [DiscreteTopology L]
-
-
-
 
 theorem exists_standard_lattice_coordinate_cover
     (hdim : Fintype.card ι + Fintype.card κ = 3) :
@@ -53,9 +41,6 @@ theorem exists_standard_lattice_coordinate_cover
   obtain ⟨d, hdcover, hdcompat, hdformula⟩ :=
     p.exists_piecewiseAffine_quotient_cover hp hsurj a
   exact ⟨d, hdcover, hdcompat, fun j => ⟨a.symm, fun z _ => hdformula j z⟩⟩
-
-
-
 
 theorem exists_zero_standard_lattice_handle_atlas [IsEmpty ι]
     (hdim : Fintype.card κ = 3) :

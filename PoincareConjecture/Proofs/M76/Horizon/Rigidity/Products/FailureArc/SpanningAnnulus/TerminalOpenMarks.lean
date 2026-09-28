@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.Terminal
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.MarkedSlope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology Geometry
 open Geometry.OriginalPLTower
@@ -60,4 +52,3 @@ theorem exists_commensurable_terminal_spanning_annulus_in_open_marks
   exact ⟨g, S, hg, hS, hSs, hrest⟩
 
 end PoincareConjecture.M76
-

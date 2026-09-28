@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedBilinearLimit
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_TwoJetModulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +26,6 @@ noncomputable local instance terminalTwoJetNorm :
 
 noncomputable local instance terminalTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem tendsto_twoJet_of_surgeryMetricLimitOn
     {A B : GeneralizedSliceCarrier.{u}}

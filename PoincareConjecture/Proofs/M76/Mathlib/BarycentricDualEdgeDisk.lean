@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.InteriorEdgeLinkPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonClosedStarDisk
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [DecidableEq E] in
 
-
 theorem faceCentroid_mem_barycentricDualBlock_vertices
     {s : Finset E} (hs : s ∈ K.faces) :
     s.centroid ℝ id ∈ (K.barycentricDualBlock s).vertices := by
@@ -32,9 +21,6 @@ theorem faceCentroid_mem_barycentricDualBlock_vertices
   intro x hx
   have hx' := Finset.mem_singleton.mp hx
   exact ⟨s, hs, Subset.rfl, hx'.symm⟩
-
-
-
 
 theorem barycentricDualBlock_closedStar_faceCentroid
     {s : Finset E} (hs : s ∈ K.faces) :
@@ -69,10 +55,6 @@ theorem barycentricDualBlock_closedStar_faceCentroid
       · exact hf.2 x hx
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem isFinitePLBallPair_barycentricDualBlock_of_interior_edge
     (h3 : Module.finrank ℝ E = 3) {s : Finset E}

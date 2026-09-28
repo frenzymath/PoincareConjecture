@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Interior
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Interior.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

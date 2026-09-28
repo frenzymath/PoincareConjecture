@@ -5,22 +5,11 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Push
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Parabolic
-
-
 
 theorem exists_point_with_doubling_bound
     {X : Type*} (S : Set X) (size radius time : X → ℝ)

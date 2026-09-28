@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalDiskSe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.SingleTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeBall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +12,6 @@ open Dehn.Annuli TriangleDiskModel
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem interval_cone_isFinitePLBallPair {s : Set E} {a b : E}
     (hs : IsFinitePLBallPair ℝ s {a, b}) (L : E →ₗ[ℝ] ℝ)
@@ -169,8 +160,6 @@ theorem capSector_inter_of_disjoint {A B : Set E} (hA : A.Nonempty) (hB : B.None
     simp [mem_capSector_iff]
   rw [he, union_empty]
 
-
-
 theorem capSector_isFinitePLBallPair_spokes {A : Set E} {a b : E}
     (hA : IsFinitePLBallPair ℝ A {a, b}) :
     IsFinitePLBallPair (ℝ × ℝ) (boundaryCircleCap true A)
@@ -179,8 +168,6 @@ theorem capSector_isFinitePLBallPair_spokes {A : Set E} {a b : E}
   have hp : ({a, b} : Set E) = {a} ∪ {b} := by ext z; simp [or_comm]
   have h := capSector_isFinitePLBallPair hA
   rwa [hp, capSector_union, capSector_singleton, capSector_singleton] at h
-
-
 
 theorem exists_four_prescribed_cap_sectors
     {d q : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

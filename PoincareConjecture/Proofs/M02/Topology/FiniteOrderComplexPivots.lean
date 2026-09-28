@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteOrderComplex
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

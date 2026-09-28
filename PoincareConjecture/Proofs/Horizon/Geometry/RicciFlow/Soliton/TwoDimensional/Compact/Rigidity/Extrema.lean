@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 theorem scalar_add_laplacian_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ}

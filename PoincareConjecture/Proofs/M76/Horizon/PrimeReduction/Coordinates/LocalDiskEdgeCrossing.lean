@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VerticalTrianglePairCrossing
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoCofaceCarrierGerm
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -169,10 +160,6 @@ private theorem affine_height_edge_coordinates
   exact ⟨F, hFp, hFpheight,
     (congrArg F.symm haxisu).symm.trans (F.symm_apply_apply _),
     (congrArg F.symm haxisv).symm.trans (F.symm_apply_apply _)⟩
-
-
-
-
 
 theorem exists_transverse_edge_crossing_chart_of_local_disk
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)

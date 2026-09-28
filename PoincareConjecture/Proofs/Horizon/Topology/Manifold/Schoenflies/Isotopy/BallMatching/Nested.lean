@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.B
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_matching_inside_ball {n : Nat}
     (A B C : Diffeomorph (𝓡 n) (𝓡 n)
@@ -49,9 +45,6 @@ theorem exists_supported_matching_inside_ball {n : Nat}
     exists_supported_matching_of_balls_in_chart e hes he hei A B (by norm_num)
       (het.symm ▸ hA) (het.symm ▸ hB)
   exact ⟨K, hK, het ▸ hKe, D, hfix, hD⟩
-
-
-
 
 theorem exists_matching_of_nested_balls {n : Nat}
     (A₀ A₁ B₀ B₁ : Diffeomorph (𝓡 n) (𝓡 n)

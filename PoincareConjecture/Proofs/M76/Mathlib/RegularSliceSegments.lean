@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularSliceCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ private theorem crossing_label_choices (K : SimplicialComplex ℝ E) (A : E →�
     g = e ∨ g = f :=
   ((e.property.2).eq_or_eq_of_subset_triangle f.property.2 g.property.2 ht het hft hgt
     (fun h => hne (Subtype.ext h))).imp Subtype.ext Subtype.ext
-
-
-
 
 theorem regularSliceGraph_segment_inter (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (hreg : ∀ v ∈ K.vertices, A v ≠ 0) {e f g k : K.regularCrossingEdges A}

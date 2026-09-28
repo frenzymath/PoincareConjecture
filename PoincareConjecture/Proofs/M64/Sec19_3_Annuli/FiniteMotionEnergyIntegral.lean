@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionEnergyTrace
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,9 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
-
 theorem m64AnnulusMotionEnergyTrace_ae_eq (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)
     (Phi : ℝ × M → N)
@@ -38,10 +31,6 @@ theorem m64AnnulusMotionEnergyTrace_ae_eq (F : RicciFlow k N (Icc a b))
   rw [m64Annulus_restrict_closed_eq_interior]
   filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hp
   exact m64AnnulusMotionEnergyTrace_eq F time hT hO Phi hPhi r hf hfO hs hp
-
-
-
-
 
 theorem m64AnnulusMotionEnergy_integrable (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)
@@ -58,11 +47,6 @@ theorem m64AnnulusMotionEnergy_integrable (F : RicciFlow k N (Icc a b))
     hE.comp (continuous_const.prodMk continuous_id).continuousOn (fun _ hp => ⟨hs, hp⟩)
   exact (hc.integrableOn_compact m64AnnulusDomain_isCompact).congr
     (m64AnnulusMotionEnergyTrace_ae_eq F time hT hO Phi hPhi r hf hfO hs)
-
-
-
-
-
 
 theorem m64AnnulusMotionEnergy_hasDerivAt (F : RicciFlow k N (Icc a b))
     (time : ℝ) {epsilon : ℝ} (hepsilon : 0 < epsilon)

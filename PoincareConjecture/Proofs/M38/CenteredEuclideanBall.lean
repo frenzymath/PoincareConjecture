@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.EuclideanBallCylinder
 import PoincareConjecture.Proofs.M38.OpenPointMotion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
-
-
 
 theorem exists_euclideanBallCenterMotion
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :
@@ -63,7 +52,6 @@ theorem exists_euclideanBallCenterMotion
   intro y hy
   exact hfix y (not_lt.mpr hy)
 
-
 theorem surgeryBall_exists_euclideanCompactBound
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :
     ∃ R : ℝ, 0 < R ∧ ∀ y ∈ B.map '' Metric.closedBall 0 (3 / 2), ‖y.down‖ ≤ R := by
@@ -72,9 +60,6 @@ theorem surgeryBall_exists_euclideanCompactBound
     (surgeryBall_closedImage_compact B (3 / 2) (by norm_num)).image continuous_uliftDown
   obtain ⟨R, hR, hbound⟩ := hc.isBounded.exists_pos_norm_le
   exact ⟨R, hR, fun y hy => hbound y.down ⟨y, hy, rfl⟩⟩
-
-
-
 
 theorem exists_centeredEuclideanBallNormalization
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :
@@ -115,9 +100,6 @@ theorem exists_centeredEuclideanBallNormalization
     apply e.injective
     change e (e.symm y) = e y
     rw [e.apply_symm_apply, hfix y hy]
-
-
-
 
 theorem exists_centeredEuclideanBallCylinder
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :

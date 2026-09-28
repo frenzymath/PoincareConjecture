@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Contacts.IntervalGerms
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTriangleMixedSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module Filter
@@ -53,9 +43,6 @@ private theorem original_subedge_two_segment_germs
     simpa only [Finset.coe_pair, convexHull_pair] using hy
   exact h.exists_surface_interior_two_segment_germs_of_affine_chart
     hAtlas hgi hSV hpq hwp hwq hs hy' Q hQ A hmap hA
-
-
-
 
 theorem exists_original_planar_triangle_regular_cover
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -222,4 +209,3 @@ theorem exists_original_planar_triangle_regular_cover
   exact hU.2.2 x ⟨hx.1, hxU⟩
 
 end PoincareConjecture.M76
-

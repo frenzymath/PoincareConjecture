@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.InteriorCurveTraces
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfDiskPolynomialGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,30 +15,14 @@ open Proofs.M58
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
-
-
-
 def m64BoundaryHalfDiskPlusWeight (theta : ℝ) : ℝ :=
   (1 + Real.cos theta) / 2
-
-
-
-
 
 def m64BoundaryHalfDiskMinusWeight (theta : ℝ) : ℝ :=
   (1 - Real.cos theta) / 2
 
-
-
-
-
 def m64BoundaryHalfDiskPlusDerivative (theta : ℝ) : ℝ :=
   -Real.sin theta / 2
-
-
-
-
 
 def m64BoundaryHalfDiskMinusDerivative (theta : ℝ) : ℝ :=
   Real.sin theta / 2
@@ -246,15 +217,7 @@ private theorem m64BoundaryHalfDisk_primitive_package
   intro theta
   simp only [F, intervalIntegral.integral_same, add_zero]
 
-
-
-
 set_option maxHeartbeats 2000000 in
-
-
-
-
-
 
 theorem m64BoundaryHalfDisk_cosine_endpoint_transport
     {U W : ℝ → E} {bPlus bMinus : E}

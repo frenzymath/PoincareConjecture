@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LinearIndependentFaceRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +13,6 @@ open PoincareConjecture.M76.PrimeReduction
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem isFinitePLBallPair_closedStar_zero_of_interval
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

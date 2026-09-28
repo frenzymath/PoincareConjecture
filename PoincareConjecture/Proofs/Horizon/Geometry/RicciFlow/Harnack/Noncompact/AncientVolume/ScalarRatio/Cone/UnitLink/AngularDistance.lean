@@ -6,14 +6,6 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem tangentNorm_deriv_of_edist_affine_segment
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -87,7 +77,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} {hc : RayComparison p} {n : ℕ}
 
-
 def asymptoticConeUnitDirection (hc : RayComparison p)
     (x : AsymptoticConeUnitSlice p hc) (a : AsymptoticCone p hc) :
     AsymptoticConeUnitSlice p hc :=
@@ -98,9 +87,6 @@ theorem asymptoticConeUnitDirection_val (x : AsymptoticConeUnitSlice p hc)
     (asymptoticConeUnitDirection hc x a).1 =
       asymptoticConeDilation hc (asymptoticConeRadius hc a)⁻¹ a := by
   simp only [asymptoticConeUnitDirection, dif_pos ha, asymptoticConeNormalize]
-
-
-
 
 theorem radial_angular_energy_of_metric_arc
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
@@ -241,8 +227,6 @@ theorem radial_angular_energy_of_metric_arc
   rw [RiemannianMetric.tangentNorm, Real.sq_sqrt hnonneg] at hsq
   exact hsq.symm.trans henergy
 
-
-
 theorem tangentNorm_unitDirection_of_metric_segment
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
       ∃ (d : UnitSliceRadialChartData hc n) (z : d.Level), (d.levelHomeomorph z).1 = x)
@@ -354,9 +338,6 @@ private theorem twice_arctan_eq_arccos_chord {D : ℝ} (hD : 0 ≤ D) (hD2 : D <
   · exact mul_nonneg (by norm_num) (Real.arctan_nonneg.mpr (div_nonneg hD (by positivity)))
   · linarith [Real.arctan_lt_pi_div_two (D / (2 * k))]
 
-
-
-
 theorem pathELength_unitDirection_of_metric_segment
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
       ∃ (d : UnitSliceRadialChartData hc n) (z : d.Level), (d.levelHomeomorph z).1 = x)
@@ -406,9 +387,6 @@ theorem pathELength_unitDirection_of_metric_segment
       _ = 2 * Real.arctan (D / (2 * Real.sqrt (1 - D ^ 2 / 4))) := by rw [Real.arctan_neg]; ring
       _ = _ := twice_arctan_eq_arccos_chord hD hD2
   rw [hresult]
-
-
-
 
 theorem unitSlice_metric_edist_le_angle_of_metric_segment
     (hcover : ∀ x : AsymptoticConeUnitSlice p hc,
@@ -484,8 +462,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem unitSlice_metric_edist_le_angle_of_metricComplete
     {m n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

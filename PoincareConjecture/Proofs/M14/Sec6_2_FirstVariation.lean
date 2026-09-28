@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_VariationDensity
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationBoundary
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -24,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
 
 theorem firstVariation_density_identity
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -49,8 +38,6 @@ theorem firstVariation_density_identity
   rw [hvalue, hB]
   unfold M14SquareRootEulerResidual M14SquareRootVelocity
   ring
-
-
 
 theorem firstVariationIdentity
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -103,8 +90,6 @@ theorem firstVariationIdentity
   have h := hasDerivAt_variationAction_integral hM12 V hzero
   change HasDerivAt (M14VariationAction V) (∫ s in a..b, raw s) 0 at h
   rwa [hvalue] at h
-
-
 
 theorem firstVariationStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

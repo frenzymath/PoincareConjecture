@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -67,7 +58,6 @@ theorem separatedSheet_distinct_eq_iff (h : ι → E → ℝ) {i j : ι} (hij : 
       by simpa [separatedSheet, hij, hij.symm] using hj.symm⟩
   · rintro ⟨rfl, hi, hj⟩
     simp [separatedSheet, hi, hj]
-
 
 theorem exists_separating_disk_heights {u r d : ι → Set E} {a b : ι → E}
     (hu : ∀ i, IsFinitePLBallPair (ℝ × ℝ) (u i) (r i))
@@ -190,9 +180,6 @@ theorem separatedRim_insert (h : ι → E → ℝ) {b : Set E} {u r d : ι → S
   have ha := @havoid x
   tauto
 
-
-
-
 theorem separated_disks_isFinitePLBallPair (h : ι → E → ℝ)
     {s b : Set E} {u r d : ι → Set E} {a z : ι → E}
     (hs : IsFinitePLBallPair (ℝ × ℝ) s b)
@@ -242,8 +229,6 @@ theorem projection_separatedCarrier (h : ι → E → ℝ) (s : Set E)
     · exact ⟨zeroSheet (ι := ι) x, Or.inl ⟨x, hx, rfl⟩, rfl⟩
     · obtain ⟨i, hi, hx⟩ := mem_iUnion₂.mp hx
       exact ⟨separatedSheet h i x, Or.inr (mem_iUnion₂.mpr ⟨i, hi, x, hx, rfl⟩), rfl⟩
-
-
 
 theorem exists_separated_disks
     {s b : Set E} {u r d : ι → Set E} {a z : ι → E}

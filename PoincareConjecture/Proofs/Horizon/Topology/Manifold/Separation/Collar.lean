@@ -4,15 +4,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Topology
@@ -22,7 +13,6 @@ variable {Y X : Type*} [TopologicalSpace Y] [ConnectedSpace Y]
   (e : (Y × Ioo (-r) r) ≃ₜ U)
 
 include hr
-
 
 theorem isConnected_collar_negative :
     IsConnected ((fun z => (e z : X)) '' {z | (z.2 : ℝ) < 0}) := by
@@ -40,7 +30,6 @@ theorem isConnected_collar_negative :
   rw [hset]
   exact (isConnected_univ.prod hc).image _
     (continuous_subtype_val.comp e.continuous).continuousOn
-
 
 theorem isConnected_collar_positive :
     IsConnected ((fun z => (e z : X)) '' {z | 0 < (z.2 : ℝ)}) := by

@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch13.MetricSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

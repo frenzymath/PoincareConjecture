@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitFinitePreservedEndpoint
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +32,6 @@ private local instance openEndpointCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance openEndpointManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_eventually_preserved_open_endpoint_search
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

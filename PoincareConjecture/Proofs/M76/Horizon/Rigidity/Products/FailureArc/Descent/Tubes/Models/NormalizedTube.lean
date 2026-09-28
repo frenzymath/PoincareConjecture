@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Models.TubeModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.NormalizedSignedTubeMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -18,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
 local notation "tubeSet" => PolygonalCrossingResolution.tube
-
-
 
 theorem SourceDoubleComponents.exists_normalized_interval_tube
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

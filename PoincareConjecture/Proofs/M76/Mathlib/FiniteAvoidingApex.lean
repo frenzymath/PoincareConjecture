@@ -4,27 +4,13 @@ import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Submodule
 
-
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_ne_zero_forall_notMem_span_pair
     {E ι : Type*} [AddCommGroup E] [Module ℝ E]
@@ -56,10 +42,6 @@ theorem exists_ne_zero_forall_notMem_span_pair
 
 end Submodule
 
-
-
-
-
 theorem zero_notMem_convexHull_triple_of_notMem_span_pair
     {E : Type*} [AddCommGroup E] [Module ℝ E]
     {a b y : E} (hedge : (0 : E) ∉ segment ℝ a b)
@@ -85,9 +67,6 @@ theorem zero_notMem_convexHull_triple_of_notMem_span_pair
       rw [hsy]
       exact S.sub_mem S.zero_mem (S.smul_mem t hxS)
     exact hy ((S.smul_mem_iff hs).mp hsyS)
-
-
-
 
 theorem exists_ne_zero_forall_zero_notMem_convexHull_triple
     {E ι : Type*} [AddCommGroup E] [Module ℝ E]

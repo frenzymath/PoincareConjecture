@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessBounds
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,7 +36,6 @@ local instance suCompactLocalChristoffelNormedGroup : NormedAddCommGroup (E →L
 local instance suCompactLocalChristoffelNormedSpace : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E) :=
   ContinuousLinearMap.toNormedSpace
 
-
 def suNormalizedAlphaCoordinateSource (g : RiemannianMetric n M) (p : M)
     (u : LoopPlane → E) (lambda : LoopPlane → ℝ) (rho c : ℝ) (x : LoopPlane) : E :=
   let G := g.pullbackCoefficients (extChartAt (𝓡 n) p).symm
@@ -48,10 +45,6 @@ def suNormalizedAlphaCoordinateSource (g : RiemannianMetric n M) (p : M)
     V (lambda x) (fun i => fderiv ℝ lambda x (b i)) d c
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem suAlphaChart_uniform_nearLaplacian
     (g : RiemannianMetric n M) (p : M) {K : Set E}

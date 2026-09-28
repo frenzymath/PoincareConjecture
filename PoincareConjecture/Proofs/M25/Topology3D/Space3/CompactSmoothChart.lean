@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothOpenChart
 import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem exists_smoothChart_near_compact (f : E → E) {K U : Set E}
     (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

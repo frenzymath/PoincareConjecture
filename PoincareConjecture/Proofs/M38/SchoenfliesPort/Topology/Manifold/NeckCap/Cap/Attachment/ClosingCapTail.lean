@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Core.TruncatedDomain
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 open _root_.PoincareConjecture.CapCertificate
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -31,8 +15,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_positive_tail_disjoint_compact_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -81,8 +63,6 @@ theorem exists_positive_tail_disjoint_compact_threshold :
   rcases hKs hxK with hc | hneg
   · exact disjoint_left.mp (CapCertificate.disjoint_closed_core_end C) hc hxpos.1
   · exact (not_lt_of_ge hneg.2.2.le) hxpos.2.1
-
-
 
 theorem exists_second_cap_tail_of_compact_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

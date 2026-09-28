@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M04.RiemannRegularity
 import PoincareConjecture.Proofs.M04.TensorNorm
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -98,4 +94,3 @@ theorem abs_ricci_le_curvatureTensorNorm {g : RiemannianMetric n M}
     _ = _ := by simp [hdim, mul_assoc]
 
 end PoincareConjecture.M04
-

@@ -3,17 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter Topology
 
 namespace Poincare.TimeInterval
@@ -40,7 +29,6 @@ private theorem scale_tendsto : Tendsto scale atTop (𝓝 1) := by
   change Tendsto (fun n : ℕ => (n + 1 : ℝ) / (n + 2)) atTop (𝓝 1)
   simpa only [one_mul, div_one, add_comm] using
     tendsto_add_mul_div_add_mul_atTop_nhds (1 : ℝ) 2 1 (d := 1) one_ne_zero
-
 
 def exhaustion (a b : ℝ) (n : ℕ) : Set ℝ := Icc (a * scale n) (b * scale n)
 
@@ -86,8 +74,6 @@ theorem iUnion_exhaustion {a b : ℝ} (ha : a < 0) (hb : 0 < b) :
   apply subset_antisymm (iUnion_subset fun n => exhaustion_subset_Ioo ha hb n)
   rw [← iUnion_interior_exhaustion ha hb]
   exact iUnion_mono fun _ => interior_subset
-
-
 
 theorem exists_exhaustion_superset {a b : ℝ} (ha : a < 0) (hb : 0 < b)
     {K : Set ℝ} (hK : IsCompact K) (hKab : K ⊆ Ioo a b) :

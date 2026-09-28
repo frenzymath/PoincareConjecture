@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compactness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Norm
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -41,7 +34,6 @@ theorem potential_slice_smooth (L : AncientAsymptoticSolitonLimitData S)
       (show (x, t) ∈ Set.univ ×ˢ Set.Iio 0 from ⟨Set.mem_univ x, ht⟩))).comp x
       (contMDiffAt_id.prodMk contMDiffAt_const)
 
-
 theorem compactSpace (L : AncientAsymptoticSolitonLimitData S) :
     let C := L.convergence.limit.carrier
     letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -66,7 +58,6 @@ theorem compactSpace (L : AncientAsymptoticSolitonLimitData S) :
     linarith
   · exact L.convergence.limit.nonnegative_curvature_operator (-1) (by norm_num)
   · exact L.nonflat_at (-1) (by norm_num)
-
 
 theorem bounded_curvature (L : AncientAsymptoticSolitonLimitData S) :
     let C := L.convergence.limit.carrier

@@ -11,16 +11,6 @@ import PoincareConjecture.Definitions.M31SingularRegularLimit
 import PoincareConjecture.Definitions.M32HornSelection
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,10 +18,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M45ScheduleCalibration
     (K : MetricSurgeryConstants)
@@ -51,7 +37,6 @@ structure M45ScheduleCalibration
   epsilon₁₀_le : epsilon₁₀ ≤ 1 / 200
   two_epsilon_le_bounded_distance : 2 * setup.epsilon ≤ epsilon₁₀
 
-
   bounded_distance :
     ∀ eta : ℝ, 0 < eta → eta ≤ epsilon₁₀ →
       ∀ C' : ℝ, 0 < C' → ∀ a : ℝ, 0 ≤ a →
@@ -63,11 +48,7 @@ structure M45ScheduleCalibration
               generalizedEarlierStrongCanonicalNeighborhoods F eta C' t x →
               RepairedBoundedDistanceEstimate F a D t x
 
-
   bounded_distance_dense : M28DenseTimeEstimateStatement.{u} epsilon₁₀
-
-
-
 
   appendixA : RepairedNeckCapTopologyTheory.{u}
   common_epsilon : ℝ
@@ -92,7 +73,6 @@ structure M45ScheduleCalibration
           (g₀.cylindrical_end.radius + 5))⁻¹)
           (min (epsilon₁ / 2) (min (epsilonPrime / 2) epsilon₁₀)))
 
-
   beta : ℝ
   beta_pos : 0 < beta
   beta_lt_half : beta < 1 / 2
@@ -103,7 +83,6 @@ structure M45ScheduleCalibration
   Ckappa_pos : 0 < Ckappa
   Cstandard_pos : 0 < Cstandard
   setup_C_eq : setup.C = max Ckappa (Cstandard + 1)
-
 
   model_analytics : M45ModelAnalyticBounds.{u}
 
@@ -117,7 +96,6 @@ structure M45ScheduleCalibration
         ∀ eta : ℝ, (eta = setup.epsilon ∨ eta = 2 * setup.epsilon) →
           ∀ t, t ≤ 0 → ∀ x : M, M27StrongCanonicalNeighborhood K t x eta Ckappa
 
-
   kappa_derivatives :
     ∀ {M : Type u} [TopologicalSpace M]
       [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -129,7 +107,6 @@ structure M45ScheduleCalibration
       ∀ x : StandardCapSpace,
         StandardCanonicalAlternative P.standard_cap.atlas P.standard_cap.flow t x
           (beta * setup.epsilon / 3) Cstandard
-
 
   cap_refinement : ∀ t : ℝ, ∀ x : StandardCapSpace,
     ∀ N : StandardCapNeighborhood P.standard_cap.atlas P.standard_cap.flow t
@@ -154,7 +131,6 @@ structure M45ScheduleCalibration
               ENNReal.ofReal (kappa0 * r ^ 3) ≤
                 calibratedMetricVolume (F.metric t) ((F.metric t).ball x r))
 
-
   initial_capture : M45InitialSurgeryControl.{u} setup.epsilon kappa0
 
   delta₁₃ : ℝ
@@ -166,15 +142,11 @@ structure M45ScheduleCalibration
         (min P.standard_cap.initial_estimate.core_volume_constant⁻¹
           P.standard_cap.initial_estimate.scalar_constant⁻¹))
 
-
-
   analytic_constant : ℝ
   analytic_constant_pos : 0 < analytic_constant
 
-
   horn_selection : ∀ A : ℝ, 0 < A →
     Nonempty (M32DeepHornScaleSelection.{u} setup.epsilon setup.C A)
-
 
   horn_selector :
     M32DeepHornScaleSelection.{u} setup.epsilon setup.C analytic_constant
@@ -189,8 +161,6 @@ structure RepairedControlledSchedulesData where
   kappa0 : ℝ
   Delta0 : ℝ
 
-
-
   standard_initial : StandardInitialMetric
   setup_standard_initial_eq : setup.standard_initial = standard_initial
   cap_persistence : RepairedCapPersistenceData.{u} standard_initial
@@ -201,8 +171,6 @@ structure RepairedControlledSchedulesData where
   calibration :
     M45ScheduleCalibration.{u} constants setup kappa0 Delta0 standard_initial
       cap_persistence setup_standard_initial_eq cap_constants_eq
-
-
 
 structure RepairedControlledSchedulesData.SeedCompatible
     (S : RepairedControlledSchedulesData.{u})

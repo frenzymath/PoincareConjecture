@@ -1,15 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +8,6 @@ open scoped Topology NNReal
 universe u v
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem lipschitzOnWith_of_attained_lower_envelope
     {E : Type u} [PseudoMetricSpace E] {ι : Type v}
@@ -40,9 +28,6 @@ theorem lipschitzOnWith_of_attained_lower_envelope
   have hright := (abs_le.mp hjLip).2
   apply abs_le.mpr
   constructor <;> linarith
-
-
-
 
 theorem finite_smooth_lower_envelope_locally_lipschitz
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

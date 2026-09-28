@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableJetBounds
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -60,8 +51,6 @@ private theorem time_difference_bound {tau D : ℝ} (htau : 0 < tau)
     _ = ‖f (0, x) - f (t, x)‖ := norm_sub_rev _ _
     _ ≤ D * (0 - t) := h
     _ = D * |t| := by rw [zero_sub, abs_of_neg ht.2]
-
-
 
 theorem terminalSourceCountable_g4_closed_bounds (j : ℕ)
     (S : RepairedControlledSchedulesData.{u})

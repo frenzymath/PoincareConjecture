@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,7 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 local notation "I" => Icc (0 : ℝ) 1
 
 omit [Fintype K.faces] [Fintype L.faces] in
-
 
 theorem boundary_edge_union_triangle [DecidableEq E]
     (hLcard : ∀ u ∈ L.faces, u.card ≤ 3)
@@ -40,8 +30,6 @@ theorem boundary_edge_union_triangle [DecidableEq E]
     exact hne (Finset.eq_of_subset_of_card_le hts (by omega)).symm
   exact ⟨huL, by have := hLcard _ huL; omega⟩
 
-
-
 theorem boundary_triangle_base_singleton
     (hLcard : ∀ u ∈ L.faces, u.card ≤ 3) {u : Finset E}
     (hu : u ∈ L.faces) (huc : u.card = 3) :
@@ -49,8 +37,6 @@ theorem boundary_triangle_base_singleton
   apply L.barycentricDualBlock_space_eq_singleton_of_maximal hu
   intro v hv huv
   exact (Finset.eq_of_subset_of_card_le huv (by rw [huc]; exact hLcard v hv)).symm
-
-
 
 theorem BoundaryEdgeFamily.agrees (P : BoundaryEdgeFamily T)
     (hLK : L ≤ K) (hLcard : ∀ u ∈ L.faces, u.card ≤ 3)
@@ -76,8 +62,6 @@ theorem BoundaryEdgeFamily.agrees (P : BoundaryEdgeFamily T)
   have heq : x = ((s ∪ t).centroid ℝ id, x.2) := Prod.ext hxc rfl
   rw [heq, P.keep_triangle s hs hsc _ huL Finset.subset_union_left huc _ hx.2,
     P.keep_triangle t ht htc _ huL Finset.subset_union_right huc _ hx.2]
-
-
 
 theorem BoundaryEdgeFamily.overlap_image (P : BoundaryEdgeFamily T)
     (hLK : L ≤ K) (hLcard : ∀ u ∈ L.faces, u.card ≤ 3)

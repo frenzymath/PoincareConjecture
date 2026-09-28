@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeConvexChartSides
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeRegionClosure
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

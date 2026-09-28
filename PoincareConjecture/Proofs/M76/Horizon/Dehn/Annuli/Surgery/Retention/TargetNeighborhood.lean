@@ -5,8 +5,6 @@ open Set
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem exists_retained_target_neighborhood
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y]
     [TopologicalSpace X] [T2Space X]
@@ -51,8 +49,6 @@ theorem exists_retained_target_neighborhood
     · rintro ⟨⟨x, hx, rfl⟩, hw⟩
       let a : U := ⟨x, hcutF x hx hw⟩
       exact ⟨⟨H a, hVT (H a).property, hkeep a⟩, hw⟩
-
-
 
 theorem source_double_fiber_subset
     {E X : Type*} {f : E → X} {S U : Set E}

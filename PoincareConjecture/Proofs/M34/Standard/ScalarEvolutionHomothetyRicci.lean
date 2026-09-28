@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem ricci_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -41,8 +31,6 @@ theorem ricci_eq_of_local_homothety
     (mfderiv (𝓡 n) (𝓡 n) f x u) (mfderiv (𝓡 n) (𝓡 n) f x v)
   simp only [Diffeomorph.coe_refl, mfderiv_id, id_eq] at hs
   exact hlocal.trans hs
-
-
 
 theorem ricciNormSq_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)

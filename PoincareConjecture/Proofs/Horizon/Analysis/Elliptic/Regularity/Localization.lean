@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalIntegrability
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Witnesses
 
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Topology
@@ -17,7 +11,6 @@ namespace Poincare.Analysis.Elliptic
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem memLp_mul_of_compact_memLp
     {O : Set E} {u χ : E → ℝ}
@@ -33,7 +26,6 @@ theorem memLp_mul_of_compact_memLp
   rw [← heq]
   exact (memLp_indicator_iff_restrict (isClosed_tsupport χ).measurableSet).mpr hlocal
 
-
 theorem memLp_cutoff_weakPartial
     {O : Set E} {u g χ : E → ℝ} (i : Fin n)
     (hu : ∀ K, IsCompact K → K ⊆ O → MemLp u 2 (volume.restrict K))
@@ -46,7 +38,6 @@ theorem memLp_cutoff_weakPartial
     ((hχ.continuous_fderiv (by simp)).clm_apply continuous_const)
     (hχc.fderiv_apply (𝕜 := ℝ) (EuclideanSpace.single i 1))
   exact (tsupport_fderiv_apply_subset ℝ (EuclideanSpace.single i 1)).trans hχO
-
 
 theorem hasWeakPartialDeriv_cutoff
     {O : Set E} {u g χ : E → ℝ} (i : Fin n)
@@ -112,7 +103,6 @@ theorem hasWeakPartialDeriv_cutoff
   rw [integral_add hint3 hint2]
   linarith
 
-
 theorem memW1p_cutoff
     {O : Set E} {u χ : E → ℝ} {p : Fin n → E → ℝ}
     (hu : ∀ K, IsCompact K → K ⊆ O → MemLp u 2 (volume.restrict K))
@@ -123,7 +113,6 @@ theorem memW1p_cutoff
   refine ⟨?_, fun i => ⟨_, ?_, hasWeakPartialDeriv_cutoff i hu (hp i) (hweak i) hχ hχc hχO⟩⟩
   · simpa only [Measure.restrict_univ] using memLp_mul_of_compact_memLp hu hχ.continuous hχc hχO
   · simpa only [Measure.restrict_univ] using memLp_cutoff_weakPartial i hu (hp i) hχ hχc hχO
-
 
 theorem cutoff_eqOn_of_eq_one
     {V : Set E} (hV : IsOpen V) {χ u : E → ℝ} {p : Fin n → E → ℝ}

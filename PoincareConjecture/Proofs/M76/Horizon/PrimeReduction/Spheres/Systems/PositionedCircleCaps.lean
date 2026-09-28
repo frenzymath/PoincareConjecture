@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PositionedCircleDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalCircleCaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -68,9 +60,6 @@ theorem exists_sphere_system_circle_caps_of_physical_crossings
   refine ⟨B, hwB, hBO.trans inter_subset_left, hBw, ?_, hBL⟩
   intro x hx
   exact (hMlocal x (interior_subset (hBO hx).2)).symm.trans (hBS x hx)
-
-
-
 
 theorem exists_positioned_sphere_system_circle_caps
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -170,6 +159,5 @@ theorem exists_positioned_sphere_system_circle_caps
   refine ⟨B, hwB, hBO, hBw, hBS, ?_⟩
   intro x hx
   exact (hBT x hx.2).mp (intrinsicInterior_subset (hDT (hD.1 hx.1)))
-
 
 end PoincareConjecture.M76

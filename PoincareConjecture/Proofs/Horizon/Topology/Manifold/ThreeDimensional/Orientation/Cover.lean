@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -57,7 +45,6 @@ theorem transitionDet_ne_zero (i j : atlas (EuclideanSpace ℝ (Fin 3)) M)
   intro hzero
   rw [hzero, mul_zero] at hinverse
   exact one_ne_zero hinverse
-
 
 noncomputable def core : FiberBundleCore (atlas (EuclideanSpace ℝ (Fin 3)) M) M Bool := by
   classical
@@ -110,8 +97,6 @@ noncomputable def core : FiberBundleCore (atlas (EuclideanSpace ℝ (Fin 3)) M) 
         Bool.xor_assoc, Bool.xor_comm (decide (transitionDet M j k x < 0))]
   }
 
-
-
 theorem transitionDet_indexAt (i : atlas (EuclideanSpace ℝ (Fin 3)) M)
     (x : M) (hx : x ∈ i.1.source) :
     transitionDet M ((core M).indexAt x) i x =
@@ -121,9 +106,7 @@ theorem transitionDet_indexAt (i : atlas (EuclideanSpace ℝ (Fin 3)) M)
   rw [MDifferentiableAt.mfderiv (mdifferentiableAt_atlas (I := 𝓡 3) i.2 hx)]
   rfl
 
-
 abbrev TotalSpace := (core M).TotalSpace
-
 
 abbrev proj : TotalSpace M → M := fun p => p.proj
 
@@ -133,7 +116,6 @@ theorem proj_surjective : Function.Surjective (proj M) := fun x => ⟨⟨x, fals
 
 theorem isQuotientMap : IsQuotientMap (proj M) :=
   (isCoveringMap M).isQuotientMap (proj_surjective M)
-
 
 theorem isCompact_preimage_of_subset_baseSet
     (i : atlas (EuclideanSpace ℝ (Fin 3)) M) {K : Set M}
@@ -150,7 +132,6 @@ theorem isCompact_preimage_of_subset_baseSet
       exact hq.1
   rw [heq]
   exact (hK.prod isCompact_univ).image_of_continuousOn (e.symm.continuousOn.mono hsub)
-
 
 theorem compactSpace [CompactSpace M] : CompactSpace (TotalSpace M) := by
   classical
@@ -172,7 +153,6 @@ theorem compactSpace [CompactSpace M] : CompactSpace (TotalSpace M) := by
   rw [← heq]
   exact s.isCompact_biUnion fun x _ =>
     isCompact_preimage_of_subset_baseSet M ((core M).indexAt x) (hcompact x) (hsub x)
-
 
 theorem nonempty_orientationCompatibleAtlas_of_section
     (s : C(M, TotalSpace M)) (hs : ∀ x, proj M (s x) = x) :
@@ -226,7 +206,6 @@ theorem nonempty_orientationCompatibleAtlas_of_section
       fderivWithin_univ, ContinuousLinearMap.det, Function.comp_def] at hpositive ⊢
     convert! hpositive
 
-
 def flip (p : TotalSpace M) : TotalSpace M := ⟨p.proj, !p.2⟩
 
 @[simp] theorem proj_flip (p : TotalSpace M) : proj M (flip M p) = proj M p := rfl
@@ -264,7 +243,6 @@ theorem continuous_flip : Continuous (flip M) := by
         change p.proj ∈ (core M).baseSet ((core M).indexAt p.proj)
         exact (core M).mem_baseSet_at p.proj)))
 
-
 noncomputable def flipHomeomorph : TotalSpace M ≃ₜ TotalSpace M where
   toFun := flip M
   invFun := flip M
@@ -285,8 +263,6 @@ private theorem continuous_fiberDescend {Y : Type*} [TopologicalSpace Y]
     · rfl
     · exact (hflip ⟨x, false⟩).symm
   rwa [heq]
-
-
 
 theorem nonempty_orientationCompatibleAtlas_of_flip_separating
     (f : TotalSpace M → Bool) (hf : Continuous f)
@@ -312,8 +288,6 @@ theorem nonempty_orientationCompatibleAtlas_of_flip_separating
   change proj M (select ⟨x, false⟩) = x
   dsimp [select]
   split <;> rfl
-
-
 
 theorem connectedSpace_of_not_nonempty_orientationCompatibleAtlas [ConnectedSpace M]
     (hno : ¬ Nonempty (PoincareConjecture.OrientationCompatibleAtlas M)) :

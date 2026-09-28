@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarFourJet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +26,6 @@ noncomputable local instance constantScalarTwoJetNormedSpace (n : ℕ) :
     NormedSpace ℝ (MetricTwoJet n) := Prod.normedSpace
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem model_jetScalarLaplacian_eq_zero_of_const {n : ℕ}
     (B : E n → MetricCoefficient n) (x : E n) (hB : ContDiffAt ℝ ∞ B x)

@@ -2,19 +2,11 @@ import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Integral.Prod
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.FinSucc
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Poincare.EuclideanSpace
 
 namespace Poincare.Coarea
-
 
 def euclideanConsEquiv (n : ℕ) :
     (ℝ × EuclideanSpace ℝ (Fin n)) ≃ᵐ EuclideanSpace ℝ (Fin (n + 1)) :=
@@ -28,7 +20,6 @@ lemma euclideanConsEquiv_apply {n : ℕ} (p : ℝ × EuclideanSpace ℝ (Fin n))
   simp [euclideanConsEquiv, euclideanCons, MeasurableEquiv.piFinSuccAbove_symm_apply,
     Fin.insertNthEquiv]
   exact ⟨rfl, rfl⟩
-
 
 theorem volumePreserving_euclideanConsEquiv (n : ℕ) :
     MeasurePreserving (euclideanConsEquiv n) := by
@@ -60,12 +51,10 @@ theorem integrable_euclideanCons_ae {F : EuclideanSpace ℝ (Fin (n + 1)) → E}
     ∀ᵐ t : ℝ, Integrable (fun y : EuclideanSpace ℝ (Fin n) => F (euclideanCons t y)) :=
   (integrable_euclideanCons_iff.mpr hF).prod_right_ae
 
-
 theorem integrable_integral_euclideanCons {F : EuclideanSpace ℝ (Fin (n + 1)) → E}
     (hF : Integrable F) :
     Integrable (fun t : ℝ => ∫ y : EuclideanSpace ℝ (Fin n), F (euclideanCons t y)) :=
   (integrable_euclideanCons_iff.mpr hF).integral_prod_left
-
 
 theorem integral_eq_integral_euclideanCons {F : EuclideanSpace ℝ (Fin (n + 1)) → E}
     (hF : Integrable F) :
@@ -74,7 +63,6 @@ theorem integral_eq_integral_euclideanCons {F : EuclideanSpace ℝ (Fin (n + 1))
     (∫ x, F x) = ∫ p : ℝ × EuclideanSpace ℝ (Fin n), F (euclideanCons p.1 p.2) := by
       simpa using ((volumePreserving_euclideanConsEquiv n).integral_comp' F).symm
     _ = _ := integral_prod _ (integrable_euclideanCons_iff.mpr hF)
-
 
 theorem setIntegral_eq_integral_euclideanCons
     {F : EuclideanSpace ℝ (Fin (n + 1)) → E}
@@ -99,7 +87,6 @@ theorem integrableOn_euclideanCons_ae
   filter_upwards [integrable_euclideanCons_ae (hF.integrable_indicator hs)] with t ht
   rw [← integrable_indicator_iff (hs.preimage (measurable_euclideanCons t))]
   exact ht
-
 
 theorem integrable_setIntegral_euclideanCons
     {F : EuclideanSpace ℝ (Fin (n + 1)) → E}

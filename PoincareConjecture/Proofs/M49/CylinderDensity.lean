@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,16 +10,12 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M49
 
-
-
 theorem roundCylinderGram_eq_zero_line (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
     (p : RoundCylinderCoordinates) :
     roundCylinderGram u c p = roundCylinderGram u c (p.1, 0) := rfl
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem continuousAt_roundCylinderGram (u : ℝ) (q : UnitTwoSphere)
     {p : RoundCylinderCoordinates}

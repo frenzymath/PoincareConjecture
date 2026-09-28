@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMarkedCut
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneStandardDiskProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCutRegluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -62,10 +53,6 @@ private theorem map_mem_endDisks_iff {B : Set W}
     simpa only [hxy] using hyends
   · intro hends
     exact ⟨x, ⟨hx.1, hends⟩, rfl⟩
-
-
-
-
 
 theorem exists_marked_shell_map_of_disk_product {B : Set W}
     {e : frontier squareShell ≃ₜ frontier (complementaryRegion B)}

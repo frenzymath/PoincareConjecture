@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CircleTube
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -17,8 +9,6 @@ open Dehn
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_coordinate_identity_circle_tube
     (P : Fin 3 → SimplicialComplex ℝ V3) (hP : ∀ i, (P i).faces.Finite)

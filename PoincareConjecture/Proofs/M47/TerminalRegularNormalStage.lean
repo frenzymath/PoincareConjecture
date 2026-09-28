@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularSourceCompactness
 import PoincareConjecture.Proofs.M47.TerminalRegularSourceRealization
 import PoincareConjecture.Proofs.M47.TerminalSourcePhysicalStage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +30,6 @@ private def RegularNormalStageOutput
       g.inner z w w' = Q * h.inner (j z)
         (mfderiv (𝓡 3) (𝓡 3) j z w) (mfderiv (𝓡 3) (𝓡 3) j z w')) ∧
     h.ball (j p0) (6 * R / Real.sqrt Q) ⊆ j.target
-
-
 
 theorem terminalSource_regular_normal_stage
     {a R r K v A : ℝ} (hK : 0 ≤ K) (ha : 0 < a) (hr : 0 < r) (hv : 0 < v)

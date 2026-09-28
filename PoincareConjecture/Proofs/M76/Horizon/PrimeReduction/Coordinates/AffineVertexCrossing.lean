@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -79,10 +70,6 @@ private theorem exists_centered_affine_height_coordinates
   change A (L z +ᵥ p) = z.2
   rw [A.map_vadd, hp]
   exact (add_zero _).trans (hheight z)
-
-
-
-
 
 theorem exists_affine_vertex_crossing_chart_of_local_disk
     (K L : SimplicialComplex ℝ V3) (hK : K.faces.Finite) (hLK : L ≤ K)

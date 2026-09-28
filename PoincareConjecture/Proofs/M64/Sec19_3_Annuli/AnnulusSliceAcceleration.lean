@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceDifferential
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CoordinateGaugeEquation
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +17,6 @@ open Proofs.M09 CoordinateExponential ConnectionVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64Annulus_slice_acceleration_in_chart
     (D : LeviCivitaData g) (b : M) {f : LoopPlane → M}

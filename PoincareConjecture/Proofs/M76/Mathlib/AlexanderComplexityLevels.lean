@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityTransport
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +11,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
 
 theorem exists_nonzero_cut_level_family_transport
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

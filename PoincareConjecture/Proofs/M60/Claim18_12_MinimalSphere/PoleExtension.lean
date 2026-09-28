@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.ChartedDenseComplement
 import PoincareConjecture.Proofs.M60.Mathlib.ScalarGradientSquare
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m60RoundSphere_extend_regular_inequality
     (D : LeviCivitaData m60RoundSphereMetric) {q k : UnitTwoSphere → ℝ}

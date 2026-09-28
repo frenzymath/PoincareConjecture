@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicVectorEquality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,18 +9,10 @@ namespace PoincareConjecture.M63
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
-
-
 noncomputable def curveGraphLower (A : ℝ) (b₀ r₁ r₂ r₃ U P : E) : E :=
   A • r₂ + b₀ +
     (-(A * (⟪r₂, r₁⟫ - 2 * ⟪P, r₂⟫ - ⟪U, r₃⟫) + ⟪b₀, r₁⟫) /
       ⟪r₁ + P, r₁⟫) • (r₁ + P)
-
-
-
-
 
 theorem graph_acceleration_projection
     {r₁ r₂ r₃ U P Q eta b₀ : E} {A lambda : ℝ}
@@ -61,18 +42,11 @@ theorem graph_acceleration_projection
       abel
     _ = _ := by rw [hcoeff]; abel
 
-
-
-
 theorem graph_acceleration_recovery
     {Q eta B V r₁ : E} {A : ℝ} (hA : A ≠ 0)
     (hgraph : eta - (⟪eta, r₁⟫ / ⟪V, r₁⟫) • V = A • Q + B) :
     Q = A⁻¹ • (eta - (⟪eta, r₁⟫ / ⟪V, r₁⟫) • V - B) := by
   rw [hgraph, add_sub_cancel_right, smul_smul, inv_mul_cancel₀ hA, one_smul]
-
-
-
-
 
 theorem continuousOn_graph_acceleration
     {Z : Type*} [TopologicalSpace Z] {s : Set Z}

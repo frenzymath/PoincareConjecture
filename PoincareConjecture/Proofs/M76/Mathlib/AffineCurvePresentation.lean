@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCharge
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Set
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem HasAlexanderCurvePresentation.affine_image {S : Set E} {a : ℕ}
     (h : HasAlexanderCurvePresentation S a) (f : E →ᵃ[ℝ] F)

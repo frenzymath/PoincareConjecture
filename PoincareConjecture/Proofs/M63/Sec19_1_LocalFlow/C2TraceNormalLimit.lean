@@ -9,16 +9,6 @@ import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Analysis.Normed.Group.AddCircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,11 +30,6 @@ local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem normalCurve_c2_of_uniform_embedded_field_limits
     (F : RicciFlow n M (Icc a b)) {e : M → W}

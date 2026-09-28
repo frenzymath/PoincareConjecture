@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TwoSheetLiftImageCollision
 import PoincareConjecture.Proofs.M76.Mathlib.FixedSourceLiftVertexCount
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w z
@@ -22,10 +10,6 @@ universe w z
 open Set Topology
 
 namespace Geometry
-
-
-
-
 
 theorem exists_finite_marks_strict_two_sheet_count
     {U V ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
@@ -66,11 +50,6 @@ theorem exists_finite_marks_strict_two_sheet_count
     ((congrArg p hab).trans ((hTp (g b)).trans (hpg b)))
   exact Set.ncard_image_lt_of_fixed_source_lift_collision hS
     (fun u _ => hpg u) ha hb hne heq
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_strict_two_sheet_count
     {U V : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]

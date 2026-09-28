@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
 
 theorem continuousOn_time_ite
     {E V : Type*} [TopologicalSpace E] [TopologicalSpace V]
@@ -42,9 +31,6 @@ theorem continuousOn_time_ite
       exact not_lt.mp hp'
     exact ⟨⟨hle, hp.1.1.2⟩, hp.1.2⟩
 
-
-
-
 theorem iteratedFDeriv_time_ite
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -53,8 +39,6 @@ theorem iteratedFDeriv_time_ite
       if p.1 < c then iteratedFDeriv ℝ j (fun x => f (p.1, x)) p.2
       else iteratedFDeriv ℝ j (fun x => g (p.1, x)) p.2 := by
   by_cases ht : p.1 < c <;> simp only [ht, if_true, if_false]
-
-
 
 theorem continuousOn_spatialJet_time_ite
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -74,8 +58,6 @@ theorem continuousOn_spatialJet_time_ite
   apply h.congr
   intro p _hp
   exact iteratedFDeriv_time_ite f g c j p
-
-
 
 theorem contDiffOn_time_ite_off_time
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

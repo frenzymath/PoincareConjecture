@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Origin
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalEmbeddedRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.StageAnnulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology Geometry
 open Geometry.OriginalPLTower
@@ -24,8 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
-
-
 
 theorem exists_terminal_spanning_annulus_of_essential_source
     {ι : Type} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}

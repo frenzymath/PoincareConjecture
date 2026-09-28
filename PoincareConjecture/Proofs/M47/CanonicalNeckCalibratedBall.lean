@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCalibratedAxial
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
 
 theorem standardNeck_ball_subset_of_axial_cutoff
     {epsilon u ell : ℝ} {x : StandardCapSpace}
@@ -82,7 +73,6 @@ theorem standardNeck_ball_subset_of_axial_cutoff
       _ = ENNReal.ofReal ell := by congr 1; ring
   exact (not_lt_of_ge hax) hstrict
 
-
 theorem standardNeck_center_ball_subset_calibrated
     {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)
@@ -96,7 +86,6 @@ theorem standardNeck_center_ball_subset_calibrated
   convert h using 1
   congr 1
   ring
-
 
 theorem standardNeck_central_ball_subset_calibrated
     {epsilon u : ℝ} {x : StandardCapSpace}

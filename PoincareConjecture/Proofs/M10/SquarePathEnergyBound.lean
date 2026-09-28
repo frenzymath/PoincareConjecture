@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M10.SquarePathEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem integral_terminalSquareEnergy_le
     (G : LExponentialGeometry F T τmax p) (Z : TangentSpace (𝓡 n) p)

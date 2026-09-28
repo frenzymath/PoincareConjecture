@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCoreSectors
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.AmbientSectorAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +24,6 @@ variable {S : Type*} [TopologicalSpace S]
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
-
 theorem ambientEndpointTop_first_base_ne_zero (hab : a ≤ b) :
     B.ambientEndpointTop false (C.symm ((D.edge e.1 e.2).map a)) ≠ 0 := by
   have hbase := G.graph_coordinates a (G.interval_source (left_mem_Icc.mpr hab))
@@ -41,8 +33,6 @@ theorem ambientEndpointTop_first_base_ne_zero (hab : a ≤ b) :
       (G.frame (C.symm ((D.edge e.1 e.2).map a))).1 ≠ 0
   rw [hbase]
   exact sub_ne_zero.mpr h.symm
-
-
 
 theorem ambient_first_endpoint_independent (hab : a ≤ b) :
     LinearIndependent ℝ
@@ -80,8 +70,6 @@ theorem ambient_first_endpoint_independent (hab : a ≤ b) :
     rw [hr, zero_mul, hz] at hbad
     norm_num at hbad
 
-
-
 theorem exists_ambient_first_complementary_coordinates (hab : a ≤ b) :
     ∃ c : AffineBasis (Fin 3) ℝ Plane,
       c 0 = C.symm ((D.edge e.1 e.2).map a) + ra • G.frame.symm (ua, wa) ∧
@@ -90,8 +78,6 @@ theorem exists_ambient_first_complementary_coordinates (hab : a ≤ b) :
   exact exists_affineBasis_coords_of_independent_functionals _ _ _
     (by change -(B.ambientEndpointCut false _) = 0; rw [hz.1, neg_zero]) hz.2
     (B.ambient_first_endpoint_independent hab)
-
-
 
 theorem ambientEndpointCut_last_outward_zero :
     (B.ambientEndpointCut true).linear
@@ -132,8 +118,6 @@ theorem ambientEndpointCut_last_outward_zero :
     B.faces.interface.height_last, ← B.faces.height_one]
   exact hz
 
-
-
 theorem ambient_last_endpoint_independent :
     LinearIndependent ℝ
       (![(-B.ambientEndpointCut true).linear, (B.ambientEndpointTop true).linear] :
@@ -166,8 +150,6 @@ theorem ambient_last_endpoint_independent :
     rw [hr, zero_mul, hz] at hbad
     norm_num at hbad
 
-
-
 theorem exists_ambient_last_complementary_coordinates (hab : a ≤ b) :
     ∃ c : AffineBasis (Fin 3) ℝ Plane,
       c 0 = C.symm ((D.edge e.1 e.2).map b) + rb • G.frame.symm (ub, wb) ∧
@@ -185,8 +167,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   {radius : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch radius p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
-
-
 
 theorem chordSupportingLine_endpoint_direction (s : Bool × Bool) (vertical : Bool) :
     B.chordSupportingLine s (B.chordEndpoint s vertical) = 0 ∧
@@ -219,7 +199,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem first_attachment_cut_eq_smul_cap_line (p : T.decomposition.IncidentEdgeIndex) :
     ∃ r : ℝ, r ≠ 0 ∧ (T.bands p (T.graphs p).firstPiece).ambientEndpointCut false =
       r • (T.caps (T.decomposition.edgeEndpoint p.1.2 false)).chordSupportingLine
@@ -240,7 +219,6 @@ theorem first_attachment_cut_eq_smul_cap_line (p : T.decomposition.IncidentEdgeI
 
 omit [T2Space S] in
 
-
 theorem first_upper_attachment_mem_region (p : T.decomposition.IncidentEdgeIndex) :
     (chartAt Plane (T.chart p.1.1 : S)).symm
       (chartAt Plane (T.chart p.1.1 : S)
@@ -258,8 +236,6 @@ theorem first_upper_attachment_mem_region (p : T.decomposition.IncidentEdgeIndex
     OpenPartialHomeomorph.symm_symm, (T.graphs p).firstPiece_castSucc,
     (T.graphs p).cut_first, (T.chains p).first,
     FiniteChartRegionDecomposition.edgeFromEndpoint, Bool.false_eq_true, ite_false] using h
-
-
 
 theorem exists_first_attachment_core_sector (p : T.decomposition.IncidentEdgeIndex)
     (hr : T.length < 1) :
@@ -308,7 +284,6 @@ theorem exists_first_attachment_core_sector (p : T.decomposition.IncidentEdgeInd
 
 set_option maxHeartbeats 600000 in
 
-
 theorem exists_first_attachment_core_fan (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
     let B := T.bands p (T.graphs p).firstPiece
@@ -347,7 +322,6 @@ theorem exists_first_attachment_core_fan (g : RiemannianMetric 2 S)
 
 omit [T2Space S] in
 
-
 theorem last_attachment_cut_eq_smul_cap_line (p : T.decomposition.IncidentEdgeIndex) :
     ∃ r : ℝ, r ≠ 0 ∧ (T.bands p (T.graphs p).lastPiece).ambientEndpointCut true =
       r • (T.caps (T.decomposition.edgeEndpoint p.1.2 true)).chordSupportingLine
@@ -368,7 +342,6 @@ theorem last_attachment_cut_eq_smul_cap_line (p : T.decomposition.IncidentEdgeIn
 
 omit [T2Space S] in
 
-
 theorem last_upper_attachment_mem_region (p : T.decomposition.IncidentEdgeIndex) :
     (chartAt Plane (T.chart p.1.1 : S)).symm
       (chartAt Plane (T.chart p.1.1 : S)
@@ -386,8 +359,6 @@ theorem last_upper_attachment_mem_region (p : T.decomposition.IncidentEdgeIndex)
     OpenPartialHomeomorph.symm_symm, (T.graphs p).lastPiece_succ,
     (T.graphs p).cut_last, (T.chains p).last,
     FiniteChartRegionDecomposition.edgeFromEndpoint, ite_true] using h
-
-
 
 theorem exists_last_attachment_core_sector (p : T.decomposition.IncidentEdgeIndex)
     (hr : T.length < 1) :
@@ -435,7 +406,6 @@ theorem exists_last_attachment_core_sector (p : T.decomposition.IncidentEdgeInde
   simp
 
 set_option maxHeartbeats 600000 in
-
 
 theorem exists_last_attachment_core_fan (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :

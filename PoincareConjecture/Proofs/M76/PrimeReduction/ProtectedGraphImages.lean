@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X G ι : Type*} [TopologicalSpace X]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
 
 theorem ChartwisePLBall.exists_finite_graph_images
     {e : ι → OpenPartialHomeomorph X V3} {D S : Set X}

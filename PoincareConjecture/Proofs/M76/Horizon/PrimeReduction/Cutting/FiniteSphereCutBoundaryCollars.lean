@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphereCutPLD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.FiniteCutPLDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.FiniteSphereBicollars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_finite_sphere_cut_boundary_collars
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]
@@ -99,9 +86,6 @@ theorem exists_finite_sphere_cut_boundary_collars
     intro x hx
     exact ⟨hx.1, fun hi => hx.2 (mem_iUnion.mpr ⟨i, hi⟩)⟩
   exact (hopen η hη hηone).preimage (continuous_inclusion hsub)
-
-
-
 
 theorem exists_original_finite_cut_boundary_collars
     {X ι κ : Type*} [MetricSpace X] [Finite κ]
@@ -195,6 +179,5 @@ theorem exists_original_finite_cut_boundary_collars
   have hcompact := (finite_collar_cut_geometry hR hO hclosedInside hclosedDisjoint).1
   have hPL := he.sdiff_iUnion_of_disjoint_collar_closures hR hO hclosedInside hclosedDisjoint hcut
   exact ⟨t, F, N, HB, c, δ, hFmodel, hmodel, hdisjoint, d, hd, hcompact, hPL, hddata⟩
-
 
 end PoincareConjecture.M76

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,16 +8,10 @@ namespace SimpleGraph
 
 variable {V E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 theorem segmentCarrier_mono {G H : SimpleGraph V} (hGH : G ≤ H) (p : V → E) :
     G.segmentCarrier p ⊆ H.segmentCarrier p := by
   rintro x ⟨v, w, hvw, hx⟩
   exact ⟨v, w, hGH hvw, hx⟩
-
-
-
-
 
 theorem segmentCarrier_inter_subset_of_support_inter (G H J : SimpleGraph V)
     (hHG : H ≤ G) (hJG : J ≤ G) (p : V → E) (q : V)

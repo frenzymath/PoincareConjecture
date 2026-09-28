@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Functional
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

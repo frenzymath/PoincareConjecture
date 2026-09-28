@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryDifferentialLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarInverseConformal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +15,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
 
 theorem annular_harmonic_differential_extension
     {H : Plane → ℝ} (hHc : Continuous H)
@@ -66,10 +49,6 @@ theorem annular_harmonic_differential_extension
     obtain ⟨L, hLn, hL⟩ := hboundary x hx hxA
     rwa [extendFrom_eq hx hL]
 
-
-
-
-
 theorem annular_harmonic_uniform_differential_bounds
     {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -100,11 +79,6 @@ theorem annular_harmonic_uniform_differential_bounds
   intro x hx
   rw [← hJeq hx]
   exact ⟨hmin (subset_closure hx), hmax (subset_closure hx)⟩
-
-
-
-
-
 
 theorem scalar_cover_potential_uniform_differential_bounds
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)

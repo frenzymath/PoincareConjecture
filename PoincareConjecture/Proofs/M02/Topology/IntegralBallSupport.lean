@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSphereVanishing
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereBase
 import Mathlib.Algebra.Homology.HomologySequenceLemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Metric HomologicalComplex

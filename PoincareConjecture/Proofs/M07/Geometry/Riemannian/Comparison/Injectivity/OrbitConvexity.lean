@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.LocalIsometry
 import Mathlib.Analysis.Convex.Deriv
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {γ : ℝ → EuclideanSpace ℝ (Fin n)} {I : Set ℝ}
-
-
 
 theorem inner_zero_of_gauss
     (hgauss : ∀ x w : EuclideanSpace ℝ (Fin n), g.inner x x w = inner ℝ x w)
@@ -58,8 +47,6 @@ private theorem IsGeodesicOn.source_ode
   simpa only [extChartAt_model_space_eq_id, PartialEquiv.refl_symm,
     PartialEquiv.refl_coe, hcoeff, id_eq] using
     hγ.hasDerivAt_in_chart hI (γ t) (by simp) t ht
-
-
 
 theorem IsGeodesicOn.deriv_ne_zero_of_endpoints_ne
     (hγ : g.IsGeodesicOn γ I) (hI : IsOpen I) {a b : ℝ} (hab : a ≤ b)
@@ -106,7 +93,6 @@ private theorem IsGeodesicOn.differentiableAt_deriv_norm_sq
   exact (((hγ.source_ode hI ht).1.differentiableAt.inner ℝ
     (hγ.source_ode hI ht).2.differentiableAt).const_mul 2).congr_of_eventuallyEq heq
 
-
 theorem IsGeodesicOn.convexOn_norm_sq
     (D : LeviCivitaData g)
     (hgauss : ∀ x w : EuclideanSpace ℝ (Fin n), g.inner x x w = inner ℝ x w)
@@ -128,8 +114,6 @@ theorem IsGeodesicOn.convexOn_norm_sq
     exact (sq_nonneg _).trans (hγ.norm_sq_le_deriv2_norm_sq D hgauss hnorm hI
       (hsub (interior_subset ht)) (hsmall t (interior_subset ht)) (hcurv t (interior_subset ht)))
 
-
-
 theorem IsGeodesicOn.strictConvexOn_norm_sq
     (D : LeviCivitaData g)
     (hgauss : ∀ x w : EuclideanSpace ℝ (Fin n), g.inner x x w = inner ℝ x w)
@@ -149,8 +133,6 @@ theorem IsGeodesicOn.strictConvexOn_norm_sq
       (norm_pos_iff.mpr (hγ.deriv_ne_zero_of_endpoints_ne hI hab hsub hne ht'))
     exact hpos.trans_le (hγ.norm_sq_le_deriv2_norm_sq D hgauss hnorm hI
       (hsub ht') (hsmall t ht') (hcurv t ht'))
-
-
 
 theorem strictConvexOn_sum_norm_sq_of_geodesics
     (D : LeviCivitaData g)

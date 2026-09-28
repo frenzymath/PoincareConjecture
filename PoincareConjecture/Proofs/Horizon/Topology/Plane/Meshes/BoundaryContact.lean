@@ -1,21 +1,9 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.PolygonalDomains
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
 
 namespace Poincare.Topology.Plane.Meshes
-
 
 noncomputable def cornerSeparator (b : AffineBasis (Fin 3) ℝ Plane) : Plane →ᵃ[ℝ] ℝ :=
   b.coord 1 - b.coord 2
@@ -35,8 +23,6 @@ theorem cornerSeparator_surjective (b : AffineBasis (Fin 3) ℝ Plane) :
   exact ⟨AffineMap.lineMap (b 0) (b 1) t, by
     rw [AffineMap.apply_lineMap, cornerSeparator_zero, cornerSeparator_one]
     simp [AffineMap.lineMap_apply_ring]⟩
-
-
 
 theorem inter_corner_eq_one_side
     (b : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}
@@ -74,8 +60,6 @@ theorem inter_corner_eq_one_side
       · exact ⟨hzK, hz⟩
     · exact inter_subset_inter_right K subset_union_right
 
-
-
 theorem inter_segment_eq_empty_or_subsegment {K : Set Plane}
     (hclosed : IsClosed K) (hconvex : Convex ℝ K) (p q : Plane) :
     K ∩ segment ℝ p q = ∅ ∨
@@ -98,8 +82,6 @@ theorem inter_segment_eq_empty_or_subsegment {K : Set Plane}
       (eq_Icc_of_connected_compact ⟨hA, hAconvex.isPreconnected⟩ hAcompact))
   · left
     rw [himage, Set.not_nonempty_iff_eq_empty.mp hA, image_empty]
-
-
 
 theorem inter_piece_eq_empty_or_corner_subsegment
     (b : AffineBasis (Fin 3) ℝ Plane) {K A : Set Plane}
@@ -129,7 +111,6 @@ namespace TriangleMesh
 
 variable (T : TriangleMesh)
 
-
 theorem IsMonochromatic.triangleCarrier_halfspace {l : Plane →ᵃ[ℝ] ℝ}
     (hmono : T.IsMonochromatic l) (t : T.Triangle) :
     (∀ z ∈ T.triangleCarrier t.1, 0 ≤ l z) ∨
@@ -146,7 +127,6 @@ theorem IsMonochromatic.triangleCarrier_halfspace {l : Plane →ᵃ[ℝ] ℝ}
       exact hneg v hv
     · exact (convex_Iic (0 : ℝ)).affine_preimage l
 
-
 theorem IsMonochromatic.inter_corner_eq_one_side
     (b : AffineBasis (Fin 3) ℝ Plane)
     (hmono : T.IsMonochromatic (cornerSeparator b)) (t : T.Triangle) :
@@ -156,15 +136,12 @@ theorem IsMonochromatic.inter_corner_eq_one_side
         T.triangleCarrier t.1 ∩ segment ℝ (b 0) (b 2) :=
   Meshes.inter_corner_eq_one_side b (hmono.triangleCarrier_halfspace T t)
 
-
 theorem IsMonochromatic.inter_zero_subset_frontier {l : Plane →ᵃ[ℝ] ℝ}
     (hmono : T.IsMonochromatic l) (hsurj : Function.Surjective l) (t : T.Triangle) :
     T.triangleCarrier t.1 ∩ {z | l z = 0} ⊆ frontier (T.triangleCarrier t.1) := by
   intro z hz
   exact ⟨subset_closure hz.1, fun hi => disjoint_left.mp
     (hmono.interior_disjoint_zero T hsurj t) hi hz.2⟩
-
-
 
 theorem exists_refinement_with_single_side_contacts
     {I : Type*} [Finite I] (b : I → AffineBasis (Fin 3) ℝ Plane) :
@@ -187,9 +164,6 @@ theorem exists_refinement_with_single_side_contacts
     T.refineByLines_isMonochromatic_of_mem lines (by simp [lines])
   exact ⟨S, T.refineByLines_support lines, T.refineByLines_subdivides lines, hmono,
     fun t i => (hmono i).inter_corner_eq_one_side S (b i) t⟩
-
-
-
 
 theorem exists_refinement_with_corner_contact_subsegments
     {I : Type*} [Finite I] (b : I → AffineBasis (Fin 3) ℝ Plane) (A : I → Set Plane)
@@ -248,8 +222,6 @@ theorem exists_refinement_with_corner_contact_subsegments
       (convex_convexHull ℝ _) ((hcorner i).triangleCarrier_halfspace S t) (hsides i) htc
 
 end TriangleMesh
-
-
 
 theorem exists_triangleMesh_of_frontier_in_lines_with_monochromatic
     {U : Set Plane} (hU : IsOpen U) (hbounded : Bornology.IsBounded U)

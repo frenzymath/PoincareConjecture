@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ControlledContraction
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ParametrizedCollarGluing
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarArea
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m60_exists_small_parametrized_collar
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

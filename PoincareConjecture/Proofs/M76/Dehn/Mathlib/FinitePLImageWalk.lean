@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PartitionedGraphWalkPaths
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLIntervalImageGraph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_image_graph_walk
     {f : ℝ → E} (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1)) :

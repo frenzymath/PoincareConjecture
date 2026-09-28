@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Convex.Between
 import Mathlib.Analysis.InnerProductSpace.PiL2
@@ -10,42 +5,19 @@ import Mathlib.Analysis.Normed.Affine.AddTorsor
 import Mathlib.LinearAlgebra.AffineSpace.Independent
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.Topology.Plane.Meshes
-
 
 abbrev Plane : Type :=
   EuclideanSpace ℝ (Fin 2)
 
-
 def IsTriangle (C : Set Plane) : Prop :=
   ∃ p : Fin 3 → Plane, AffineIndependent ℝ p ∧ C = convexHull ℝ (Set.range p)
-
 
 theorem plane_ext {p q : Plane} (h0 : p 0 = q 0) (h1 : p 1 = q 1) : p = q := by
   ext i
   fin_cases i
   · exact h0
   · exact h1
-
-
 
 theorem affineIndependent_finset_coe {ι : Type*} {f : ι → Plane}
     (hf : AffineIndependent ℝ f) {S : Finset Plane} (hS : ∀ a ∈ S, a ∈ Set.range f) :
@@ -62,7 +34,6 @@ theorem affineIndependent_finset_coe {ι : Type*} {f : ι → Plane}
   rw [heq]
   exact hf.comp_embedding ⟨g, hinj⟩
 
-
 theorem affineIndependent_finset_of_card_le_two (A : Finset Plane) (hcard : A.card ≤ 2) :
     AffineIndependent ℝ ((↑) : A → Plane) := by
   interval_cases h : A.card
@@ -78,7 +49,6 @@ theorem affineIndependent_finset_of_card_le_two (A : Finset Plane) (hcard : A.ca
     rcases hx with rfl | rfl
     · exact ⟨0, rfl⟩
     · exact ⟨1, rfl⟩
-
 
 theorem segment_inter_segment_of_affineIndependent {x y z : Plane}
     (h : AffineIndependent ℝ ![x, y, z]) :
@@ -116,8 +86,6 @@ theorem segment_inter_segment_of_affineIndependent {x y z : Plane}
   simpa [Finset.coe_insert, Finset.coe_singleton, convexHull_pair, convexHull_singleton]
     using hmain.symm
 
-
-
 theorem exists_mem_openSegment_inter_ball {a b : Plane} (hab : a ≠ b)
     {r : ℝ} (hr : 0 < r) :
     ∃ x : Plane, x ∈ openSegment ℝ a b ∧ x ∈ Metric.ball a r := by
@@ -141,8 +109,6 @@ theorem exists_mem_openSegment_inter_ball {a b : Plane} (hab : a ≠ b)
       field_simp [hd.ne']
     rw [hcalc] at hmul
     linarith
-
-
 
 theorem endpoint_not_mem_openSegment_of_mem_segment {a b x y : Plane}
     (hab : a ≠ b) (hxy : x ≠ y) (hx : x ∈ segment ℝ a b)
@@ -178,8 +144,6 @@ theorem endpoint_not_mem_openSegment_of_mem_segment {a b x y : Plane}
   have ht0 : t = 0 := (mul_eq_zero.mp htermT0).resolve_left hu.1.ne'
   apply hxy
   rw [hs0, ht0]
-
-
 
 theorem segment_subset_of_midpoint_mem_openSegment
     {P Q A B : Plane} (hPQ : P ≠ Q)
@@ -264,8 +228,6 @@ theorem segment_subset_of_midpoint_mem_openSegment
     rw [segment_symm] at hp hq
     exact (convex_segment A B).segment_subset hp hq
 
-
-
 theorem endpoint_secondCoords_eq_zero_of_two_axis_points {a b x y : Plane}
     (_ : a ≠ b) (hxy : x ≠ y) (hx : x ∈ segment ℝ a b)
     (hy : y ∈ segment ℝ a b) (hx0 : x 1 = 0) (hy0 : y 1 = 0) :
@@ -292,9 +254,6 @@ theorem endpoint_secondCoords_eq_zero_of_two_axis_points {a b x y : Plane}
     nlinarith
   exact ⟨ha, hba.trans ha⟩
 
-
-
-
 structure PlaneComplex where
 
   Vertex : Type
@@ -315,16 +274,11 @@ structure PlaneComplex where
 
   down_closed : ∀ s ∈ simplexes, ∀ s' ⊆ s, s'.Nonempty → s' ∈ simplexes
 
-
   affineIndependent : ∀ s ∈ simplexes, AffineIndependent ℝ fun v : s => position v
-
 
   face_inter : ∀ s ∈ simplexes, ∀ t ∈ simplexes,
     convexHull ℝ (position '' s) ∩ convexHull ℝ (position '' t) =
       convexHull ℝ (position '' ((s ∩ t : Finset Vertex) : Set Vertex))
-
-
-
 
 structure TriangleMesh where
 
@@ -352,7 +306,6 @@ namespace TriangleMesh
 
 variable (M : TriangleMesh)
 
-
 noncomputable def single (p : Fin 3 → Plane) (hp : AffineIndependent ℝ p) : TriangleMesh where
   Vertex := Fin 3
   position := p
@@ -370,7 +323,6 @@ noncomputable def single (p : Fin 3 → Plane) (hp : AffineIndependent ℝ p) : 
     subst s
     subst t
     simp
-
 
 noncomputable def mapAffineEquiv (e : Plane ≃ᵃ[ℝ] Plane) : TriangleMesh where
   Vertex := M.Vertex
@@ -392,8 +344,6 @@ noncomputable def mapAffineEquiv (e : Plane ≃ᵃ[ℝ] Plane) : TriangleMesh wh
       ← e.toAffineMap.image_convexHull]
     have hinj : Function.Injective e.toAffineMap := e.injective
     rw [← Set.image_inter hinj, hinter]
-
-
 
 noncomputable def reposition (position' : M.Vertex → Plane)
     (hposition_injective : Function.Injective position')
@@ -421,8 +371,6 @@ noncomputable def reposition (position' : M.Vertex → Plane)
     (M.reposition position' hposition_injective haffineIndependent htriangle_inter).triangles =
       M.triangles := rfl
 
-
-
 noncomputable def eraseTriangle (t : Finset M.Vertex) : TriangleMesh where
   Vertex := M.Vertex
   position := M.position
@@ -447,8 +395,6 @@ theorem card_eraseTriangle_triangles {t : Finset M.Vertex} (ht : t ∈ M.triangl
   rw [Finset.card_erase_of_mem ht]
   have : 0 < M.triangles.card := Finset.card_pos.mpr ⟨t, ht⟩
   omega
-
-
 
 noncomputable def reindex {V' : Type} [Fintype V'] [DecidableEq V']
     (position' : V' → Plane) (hposition_injective : Function.Injective position')
@@ -494,8 +440,6 @@ noncomputable def reindex {V' : Type} [Fintype V'] [DecidableEq V']
     rw [← Finset.map_inter, himage]
     exact hinter
 
-
-
 noncomputable def restrictTriangles (p : Finset M.Vertex → Prop) [DecidablePred p] :
     TriangleMesh where
   Vertex := M.Vertex
@@ -517,7 +461,6 @@ noncomputable def restrictTriangles (p : Finset M.Vertex → Prop) [DecidablePre
 theorem mapAffineEquiv_triangles (e : Plane ≃ᵃ[ℝ] Plane) :
     (M.mapAffineEquiv e).triangles = M.triangles := rfl
 
-
 def faces : Finset (Finset M.Vertex) :=
   M.triangles.biUnion fun t => t.powerset.filter (·.Nonempty)
 
@@ -525,7 +468,6 @@ theorem mem_faces_iff {s : Finset M.Vertex} :
     s ∈ M.faces ↔ s.Nonempty ∧ ∃ t ∈ M.triangles, s ⊆ t := by
   simp only [faces, Finset.mem_biUnion, Finset.mem_filter, Finset.mem_powerset]
   aesop
-
 
 noncomputable def toPlaneComplex : PlaneComplex where
   Vertex := M.Vertex
@@ -633,10 +575,8 @@ namespace PlaneComplex
 
 variable (K : PlaneComplex)
 
-
 def cellCarrier (s : Finset K.Vertex) : Set Plane :=
   convexHull ℝ (K.position '' s)
-
 
 def support : Set Plane :=
   ⋃ s ∈ K.simplexes, K.cellCarrier s
@@ -648,10 +588,8 @@ theorem cellCarrier_subset_support {s : Finset K.Vertex} (hs : s ∈ K.simplexes
 theorem isCompact_cellCarrier (s : Finset K.Vertex) : IsCompact (K.cellCarrier s) :=
   Set.Finite.isCompact_convexHull (𝕜 := ℝ) (s.finite_toSet.image K.position)
 
-
 theorem isCompact_support : IsCompact K.support :=
   K.simplexes.finite_toSet.isCompact_biUnion fun s _ => K.isCompact_cellCarrier s
-
 
 noncomputable def mapAffineEquiv (e : Plane ≃ᵃ[ℝ] Plane) : PlaneComplex where
   Vertex := K.Vertex
@@ -701,14 +639,11 @@ theorem mapAffineEquiv_support (e : Plane ≃ᵃ[ℝ] Plane) :
   · rintro ⟨y, ⟨s, hs, hy⟩, rfl⟩
     exact ⟨s, hs, y, hy, rfl⟩
 
-
 def cells : Finset (Finset K.Vertex) :=
   K.simplexes.filter fun s => s.card = 3
 
-
 def edges : Finset (Finset K.Vertex) :=
   K.simplexes.filter fun s => s.card = 2
-
 
 noncomputable def oneSkeleton : PlaneComplex where
   Vertex := K.Vertex
@@ -765,8 +700,6 @@ theorem oneSkeleton_isGraph :
   intro s hs
   exact (K.mem_oneSkeleton_simplexes.mp hs).2
 
-
-
 noncomputable def subordinateTo (L K : PlaneComplex) : PlaneComplex := by
   classical
   exact {
@@ -815,7 +748,6 @@ theorem subordinateTo_support_subset (L K : PlaneComplex) :
   obtain ⟨-, t, ht, hst⟩ := (L.mem_subordinateTo_simplexes_iff K).mp hs
   exact ⟨t, ht, hst hxs⟩
 
-
 noncomputable def restrictToSet (K : PlaneComplex) (A : Set Plane) : PlaneComplex := by
   classical
   exact {
@@ -853,7 +785,6 @@ theorem restrictToSet_support_subset (K : PlaneComplex) (A : Set Plane) :
   obtain ⟨s, hs, hxs⟩ := hx
   exact (K.mem_restrictToSet_simplexes_iff A).mp hs |>.2 hxs
 
-
 def IsPure2 : Prop :=
   ∀ s ∈ K.simplexes, ∃ t ∈ K.simplexes, s ⊆ t ∧ t.card = 3
 
@@ -886,8 +817,6 @@ theorem eraseTriangle_support_subset (t : Finset M.Vertex) :
   obtain ⟨s, hs, hps⟩ := hp
   obtain ⟨_, hsM⟩ := Finset.mem_erase.mp hs
   exact ⟨s, hsM, hps⟩
-
-
 
 theorem support_eq_eraseTriangle_union_triangleCarrier {t : Finset M.Vertex}
     (ht : t ∈ M.triangles) :
@@ -935,8 +864,6 @@ theorem toPlaneComplex_isPure2 : M.toPlaneComplex.IsPure2 := by
   exact ⟨t, M.mem_faces_iff.mpr ⟨Finset.card_pos.mp (by rw [M.card_triangle t ht]; omega),
       t, ht, subset_rfl⟩, hst, M.card_triangle t ht⟩
 
-
-
 theorem toPlaneComplex_cells : M.toPlaneComplex.cells = M.triangles := by
   ext s
   constructor
@@ -953,8 +880,6 @@ theorem toPlaneComplex_cells : M.toPlaneComplex.cells = M.triangles := by
     exact ⟨M.mem_faces_iff.mpr ⟨Finset.card_pos.mp (by
       rw [M.card_triangle s hs]
       omega), s, hs, subset_rfl⟩, M.card_triangle s hs⟩
-
-
 
 theorem mapAffineEquiv_support (e : Plane ≃ᵃ[ℝ] Plane) :
     (M.mapAffineEquiv e).toPlaneComplex.support = e '' M.toPlaneComplex.support := by
@@ -981,7 +906,6 @@ theorem mapAffineEquiv_support (e : Plane ≃ᵃ[ℝ] Plane) :
     exact ⟨y, ⟨t, ht, hyt⟩, rfl⟩
   · rintro ⟨y, ⟨t, ht, hyt⟩, rfl⟩
     exact ⟨t, ht, by rw [hcarrier]; exact ⟨y, hyt, rfl⟩⟩
-
 
 theorem reindex_support {V' : Type} [Fintype V'] [DecidableEq V']
     (position' : V' → Plane) (hposition_injective : Function.Injective position')
@@ -1016,8 +940,6 @@ end TriangleMesh
 namespace PlaneComplex
 
 variable (K : PlaneComplex)
-
-
 
 def Subdivides (K' K : PlaneComplex) : Prop :=
   K'.support = K.support ∧
@@ -1058,37 +980,25 @@ theorem subordinateTo_subdivides (L K : PlaneComplex)
 
 end PlaneComplex
 
-
 def IsAffineOn (f : Plane → Plane) (A : Set Plane) : Prop :=
   ∃ g : Plane →ᵃ[ℝ] Plane, Set.EqOn f g A
-
-
-
-
-
 
 def IsPLOn (K : PlaneComplex) (f : Plane → Plane) : Prop :=
   ∃ K' : PlaneComplex, K'.Subdivides K ∧
     ∀ s' ∈ K'.simplexes, IsAffineOn f (K'.cellCarrier s')
 
-
 def IsPLEmbeddingOn (K : PlaneComplex) (f : Plane → Plane) : Prop :=
   IsPLOn K f ∧ Set.InjOn f K.support
-
-
 
 def IsPLOnSet (A : Set Plane) (f : Plane → Plane) : Prop :=
   ∃ K : PlaneComplex, K.support = A ∧ IsPLOn K f
 
 namespace IsAffineOn
 
-
 theorem mono {f : Plane → Plane} {A B : Set Plane} (hf : IsAffineOn f A) (hBA : B ⊆ A) :
     IsAffineOn f B := by
   obtain ⟨g, hfg⟩ := hf
   exact ⟨g, hfg.mono hBA⟩
-
-
 
 theorem comp {f g : Plane → Plane} {A B : Set Plane}
     (hg : IsAffineOn g B) (hf : IsAffineOn f A) (hmap : Set.MapsTo f A B) :
@@ -1099,13 +1009,10 @@ theorem comp {f g : Plane → Plane} {A B : Set Plane}
   change g (f x) = G (F x)
   rw [hfF hx, hgG (by rw [← hfF hx]; exact hmap hx)]
 
-
 theorem continuousOn {f : Plane → Plane} {A : Set Plane} (hf : IsAffineOn f A) :
     ContinuousOn f A := by
   obtain ⟨g, hfg⟩ := hf
   exact g.continuous_of_finiteDimensional.continuousOn.congr fun x hx => hfg hx
-
-
 
 theorem image_segment {f : Plane → Plane} {A : Set Plane} (hf : IsAffineOn f A)
     {x y : Plane} (hsegment : segment ℝ x y ⊆ A) :
@@ -1118,7 +1025,6 @@ theorem image_segment {f : Plane → Plane} {A : Set Plane} (hf : IsAffineOn f A
     _ = segment ℝ (f x) (f y) := by
       rw [hfg (hsegment (left_mem_segment ℝ x y)),
         hfg (hsegment (right_mem_segment ℝ x y))]
-
 
 theorem image_convexHull {f : Plane → Plane} {A : Set Plane}
     (hf : IsAffineOn f (convexHull ℝ A)) :
@@ -1133,7 +1039,6 @@ end IsAffineOn
 
 namespace IsPLOn
 
-
 theorem of_affineOn_support {K : PlaneComplex} {f : Plane → Plane}
     (hf : IsAffineOn f K.support) : IsPLOn K f := by
   refine ⟨K, PlaneComplex.Subdivides.refl K, ?_⟩
@@ -1141,12 +1046,10 @@ theorem of_affineOn_support {K : PlaneComplex} {f : Plane → Plane}
   obtain ⟨g, hfg⟩ := hf
   exact ⟨g, hfg.mono (K.cellCarrier_subset_support hs)⟩
 
-
 theorem of_subdivision {K' K : PlaneComplex} {f : Plane → Plane}
     (hsubdivision : K'.Subdivides K) (hf : IsPLOn K' f) : IsPLOn K f := by
   obtain ⟨L, hL, haffine⟩ := hf
   exact ⟨L, hL.trans hsubdivision, haffine⟩
-
 
 theorem continuousOn {K : PlaneComplex} {f : Plane → Plane} (hf : IsPLOn K f) :
     ContinuousOn f K.support := by
@@ -1160,7 +1063,6 @@ theorem continuousOn {K : PlaneComplex} {f : Plane → Plane} (hf : IsPLOn K f) 
     (haffine s.1 s.2).continuousOn
   have hglued := hlocal.continuousOn_iUnion hclosed hcontinuous
   simpa only [PlaneComplex.support, carriers, Set.iUnion_subtype] using hglued
-
 
 theorem affineConjugate {K : PlaneComplex} {f : Plane → Plane} (hf : IsPLOn K f)
     (source target : Plane ≃ᵃ[ℝ] Plane) :
@@ -1193,8 +1095,6 @@ theorem mem_simplexes_of_mem_cells {t : Finset K.Vertex} (ht : t ∈ K.cells) :
 theorem card_of_mem_cells {t : Finset K.Vertex} (ht : t ∈ K.cells) : t.card = 3 :=
   (Finset.mem_filter.mp ht).2
 
-
-
 noncomputable def toTriangleMesh : TriangleMesh where
   Vertex := K.Vertex
   position := K.position
@@ -1208,7 +1108,6 @@ noncomputable def toTriangleMesh : TriangleMesh where
 @[simp] theorem toTriangleMesh_position : K.toTriangleMesh.position = K.position := rfl
 
 @[simp] theorem toTriangleMesh_triangles : K.toTriangleMesh.triangles = K.cells := rfl
-
 
 theorem toTriangleMesh_support (hpure : K.IsPure2) :
     K.toTriangleMesh.toPlaneComplex.support = K.support := by
@@ -1225,7 +1124,6 @@ theorem toTriangleMesh_support (hpure : K.IsPure2) :
     obtain ⟨t, ht, hst, htcard⟩ := hpure s hs
     have htcell : t ∈ K.cells := Finset.mem_filter.mpr ⟨ht, htcard⟩
     exact ⟨t, htcell, convexHull_mono (Set.image_mono hst) hxs⟩
-
 
 theorem toTriangleMesh_toPlaneComplex_subdivides (hpure : K.IsPure2) :
     K.toTriangleMesh.toPlaneComplex.Subdivides K := by

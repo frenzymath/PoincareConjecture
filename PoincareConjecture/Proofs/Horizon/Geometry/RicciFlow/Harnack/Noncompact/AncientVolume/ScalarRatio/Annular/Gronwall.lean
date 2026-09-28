@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Gronwall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set
 
 namespace PoincareConjecture.SpacetimeBounds
-
-
 
 theorem norm_le_exp_of_affine_deriv_bound_Icc
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

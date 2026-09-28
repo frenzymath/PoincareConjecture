@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M35.RawFlow.InitialCylinderNull
 import PoincareConjecture.Proofs.M35.RawFlow.AxisRicciForm
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarpingBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem initial_intrinsic_slope_support (g₀ : StandardInitialMetric)
     (H : StandardCapEstimate g₀) :

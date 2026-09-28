@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Services
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 structure RegionBounds {K : AncientKappaSolution 3 M}
     {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {epsilon D R : ℝ}
@@ -112,8 +99,6 @@ theorem uniform_regionBounds_of_services
     core_ball_fields := ⟨radius, kappa, (inv_anti₀ hCball hballC).trans_lt hstrict, hradius⟩
     gradient_bound := ⟨B, hB.trans_le hderivC, fun x _ => (hfields x).2.1⟩
     laplacian_bound := ⟨B, hB.trans_le hderivC, fun x _ => (hfields x).2.2⟩ }
-
-
 
 theorem uniform_regionBounds
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

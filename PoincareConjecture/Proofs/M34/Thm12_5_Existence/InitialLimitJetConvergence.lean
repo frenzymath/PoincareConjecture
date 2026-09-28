@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialRicciFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -22,8 +13,6 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {g0 : StandardInitialMetric} {A : CompactCapApproximation g0}
   (G : InteriorCoefficientLimit A)
-
-
 
 theorem closedSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
     (x : StandardCapSpace) :
@@ -42,8 +31,6 @@ theorem closedSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem closedFiniteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.time)
     (x : StandardCapSpace) :
     Tendsto (fun k => spatialJet m
@@ -54,8 +41,6 @@ theorem closedFiniteSpatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ico 0 A.t
   exact G.closedSpatialJet_tendsto j ht x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem metricTwoJet_tendsto (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :

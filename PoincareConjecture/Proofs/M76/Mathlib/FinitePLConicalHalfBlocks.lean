@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarHalfspaceCuts
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [Nontrivial F] [DecidableEq E]
   {ι κ : Type*} [Finite ι] [Nonempty ι] [Finite κ]
-
-
-
-
 
 theorem AffineOnFaces.isFinitePLBallPair_conical_halfspaces
     {K : SimplicialComplex ℝ E} {f : E → F}

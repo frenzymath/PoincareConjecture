@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   (hc : IsCoveringMap (unitRicciKernelProjection D))
   (p : UnitRicciKernel D)
   (hp : unitRicciKernelReverse D p ∈ connectedComponent p)
-
 
 def unitRicciKernelComponentReverse :
     letI := unitRicciKernelChartedSpace D hc

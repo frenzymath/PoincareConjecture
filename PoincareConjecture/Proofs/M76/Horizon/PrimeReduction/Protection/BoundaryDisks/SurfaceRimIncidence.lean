@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.MarkedChartSubdivision
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry
 open scoped Topology
@@ -92,7 +85,6 @@ theorem marked_surface_planar_halfspace_stars_of_rim_equations
     simp only [hz, true_and] at hm
     rw [har hz, ← hm]
     exact (hB x (hsub hx)).symm
-
 
 open Classical in
 theorem exists_surface_rim_incidence_subdivision

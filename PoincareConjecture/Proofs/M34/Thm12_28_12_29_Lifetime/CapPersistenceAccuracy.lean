@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTransferTolerance
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem capPersistence_exists_common_neck_accuracy (epsilon tau eta : ℝ)
     (hepsilon : 0 < epsilon) (htau : 0 < tau) (heta : 0 < eta) :

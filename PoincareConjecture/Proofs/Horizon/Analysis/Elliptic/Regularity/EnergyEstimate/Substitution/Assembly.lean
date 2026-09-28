@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.DifferenceQuotient.NirenbergBound
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.DifferenceQuotient.WeakDerivative
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -45,7 +38,6 @@ private theorem diffQuot_flux
   intro i _
   simp only [translate]
   ring
-
 
 theorem flux_pairing_expansion
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -159,13 +151,6 @@ private theorem energy_le_of_flux_identity {L P C1 C2 C3 R Q : ℝ}
     (hcoer : L ≤ P) (hid : -(P + C1 + C2 + C3) = R) :
     L ≤ |C1| + |C2| + |C3| + |R| + |Q| := by
   linarith [neg_le_abs C1, neg_le_abs C2, neg_le_abs C3, neg_le_abs R, abs_nonneg Q]
-
-
-
-
-
-
-
 
 theorem diffQuot_weakGradient_localL2_bound
     {Ω V : Set E} (B : SmoothEllipticBilinearForm d Ω) (hV : IsOpen V)

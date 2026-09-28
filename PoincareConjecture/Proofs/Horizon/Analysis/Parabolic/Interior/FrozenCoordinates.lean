@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactRepresentation
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.FrozenPositiveDefinite
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,7 +12,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {V F : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 def spatialPullback (L : V ≃L[ℝ] V) (f : V × ℝ → F) (p : V × ℝ) : F :=
   f (L p.1, p.2)

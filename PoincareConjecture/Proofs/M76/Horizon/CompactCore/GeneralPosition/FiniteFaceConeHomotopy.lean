@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangl
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.FiniteSubcomplexHomotopyGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

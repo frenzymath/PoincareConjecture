@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatEnergy
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicLieMetricNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ open Uniqueness DeTurckNative
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 theorem metricLieDerivative_euclidean_pair {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {W : V → V} (hW : ContDiff ℝ ∞ W) (x u v : V) :

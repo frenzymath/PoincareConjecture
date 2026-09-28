@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Ar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

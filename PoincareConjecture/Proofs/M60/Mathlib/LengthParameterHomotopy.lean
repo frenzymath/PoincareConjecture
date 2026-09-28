@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M60.Mathlib.PeriodicLengthParameter
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped NNReal
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem lipschitzWith_lengthParameter_comp_homeomorph
     {E : Type*} [PseudoEMetricSpace E] {f : ℝ → E}
@@ -36,20 +24,14 @@ theorem lipschitzWith_lengthParameter_comp_homeomorph
     variationOnFromTo.add hf (mem_univ 0) (mem_univ (H 0)) (mem_univ (H t))
   simpa only [zero_add, heq] using h
 
-
-
 def lengthParameterInterpolation (a b : ℝ → ℝ) (p : ℝ × ℝ) : ℝ :=
   (1 - p.1) * a p.2 + p.1 * b p.2
-
-
 
 theorem lengthParameterInterpolation_mem {a b : ℝ → ℝ} {S : Set ℝ}
     (hS : Convex ℝ S) (ha : ∀ t, a t ∈ S) (hb : ∀ t, b t ∈ S)
     {u t : ℝ} (hu : u ∈ Icc (0 : ℝ) 1) :
     lengthParameterInterpolation a b (u, t) ∈ S := by
   exact hS (ha t) (hb t) (sub_nonneg.mpr hu.2) hu.1 (sub_add_cancel 1 u)
-
-
 
 theorem lengthParameterInterpolation_add_period {a b : ℝ → ℝ} {T L : ℝ}
     (ha : ∀ t, a (t + T) = a t + L) (hb : ∀ t, b (t + T) = b t + L)
@@ -59,9 +41,6 @@ theorem lengthParameterInterpolation_add_period {a b : ℝ → ℝ} {T L : ℝ}
   dsimp only [lengthParameterInterpolation]
   rw [ha, hb]
   ring
-
-
-
 
 theorem periodic_lengthParameterInterpolation
     {E : Type*} {beta : ℝ → E} {a b : ℝ → ℝ} {S : Set ℝ} {T L : ℝ}
@@ -74,8 +53,6 @@ theorem periodic_lengthParameterInterpolation
   change beta (lengthParameterInterpolation a b (u, t + T)) = _
   rw [lengthParameterInterpolation_add_period ha hb]
   exact hbeta _ (lengthParameterInterpolation_mem hS haS hbS hu)
-
-
 
 theorem locallyLipschitz_lengthParameterInterpolation
     {a b : ℝ → ℝ} {A B : ℝ≥0} (ha : LipschitzWith A a) (hb : LipschitzWith B b) :

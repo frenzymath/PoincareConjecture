@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Groups.HomotopyMap
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexCube
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subdivision.SingularHomologyClass
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -18,12 +11,10 @@ universe w v u
 
 namespace Poincare.Topology
 
-
 noncomputable def genLoopSingularSimplex (X : TopCat.{w}) {n : ℕ} {x : X}
     (p : GenLoop (Fin n) X x) : (TopCat.toSSet.obj X) _⦋n⦌ :=
   let coordinates := Classical.choose (exists_stdSimplex_cube_pair_homeomorph n)
   (X.toSSetObjEquiv _).symm (p.val.comp ⟨coordinates, coordinates.continuous⟩)
-
 
 theorem genLoopSingularSimplex_face (X : TopCat.{w}) {n : ℕ} {x : X}
     (p : GenLoop (Fin (n + 1)) X x) (i : Fin (n + 2)) :
@@ -39,12 +30,10 @@ theorem genLoopSingularSimplex_face (X : TopCat.{w}) {n : ℕ} {x : X}
   change FunOnFinite.linearMap ℝ ℝ i.succAbove (z : Fin (n + 1) → ℝ) i = 0
   simp [FunOnFinite.linearMap_apply_apply, Fin.succAbove_ne]
 
-
 theorem genLoopSingularSimplex_const (X : TopCat.{w}) (n : ℕ) (x : X) :
     genLoopSingularSimplex X (GenLoop.const : GenLoop (Fin n) X x) =
       singularConstantSimplex X n x := by
   exact (X.toSSetObjEquiv _).injective (ContinuousMap.ext (fun _ => rfl))
-
 
 theorem genLoopSingularSimplex_map {X Y : TopCat.{w}} (f : X ⟶ Y)
     {n : ℕ} {x : X} (p : GenLoop (Fin n) X x) :
@@ -55,13 +44,11 @@ theorem genLoopSingularSimplex_map {X Y : TopCat.{w}} (f : X ⟶ Y)
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
   [CategoryWithHomology C]
 
-
 noncomputable def genLoopSingularHomologyClass (R : C) (X : TopCat.{w})
     {n : ℕ} {x : X} (p : GenLoop (Fin (n + 1)) X x) :
     R ⟶ (TopCat.toSSet.obj X).homology R (n + 1) :=
   singularSimplexHomologyClass R X (genLoopSingularSimplex X p) x
     (genLoopSingularSimplex_face X p)
-
 
 theorem genLoopSingularHomologyClass_eq_of_homotopic (R : C) (X : TopCat.{w})
     {n : ℕ} {x : X} {p q : GenLoop (Fin (n + 1)) X x}
@@ -88,7 +75,6 @@ theorem genLoopSingularHomologyClass_eq_of_homotopic (R : C) (X : TopCat.{w})
   change H (time, e (stdSimplex.map i.succAbove z)) = x
   exact (H.eq_fst time hb).trans (GenLoop.boundary p _ hb)
 
-
 noncomputable def homotopyGroupSingularHomologyMap (R : C) (X : TopCat.{w})
     (n : ℕ) (x : X) :
     HomotopyGroup.Pi (n + 1) X x →
@@ -96,12 +82,10 @@ noncomputable def homotopyGroupSingularHomologyMap (R : C) (X : TopCat.{w})
   Quotient.lift (genLoopSingularHomologyClass R X)
     (fun _ _ h => genLoopSingularHomologyClass_eq_of_homotopic R X h)
 
-
 theorem homotopyGroupSingularHomologyMap_mk (R : C) (X : TopCat.{w})
     {n : ℕ} {x : X} (p : GenLoop (Fin (n + 1)) X x) :
     homotopyGroupSingularHomologyMap R X n x ⟦p⟧ =
       genLoopSingularHomologyClass R X p := rfl
-
 
 theorem homotopyGroupSingularHomologyMap_one (R : C) (X : TopCat.{w})
     (n : ℕ) (x : X) :
@@ -110,7 +94,6 @@ theorem homotopyGroupSingularHomologyMap_one (R : C) (X : TopCat.{w})
   exact (show singularSimplexHomologyClass R X (genLoopSingularSimplex X GenLoop.const) x
     (genLoopSingularSimplex_face X GenLoop.const) = 0 by
       simp only [genLoopSingularSimplex_const, singularSimplexHomologyClass_const])
-
 
 theorem homotopyGroupSingularHomologyMap_naturality (R : C)
     {X Y : TopCat.{w}} (f : X ⟶ Y) (n : ℕ) (x : X)

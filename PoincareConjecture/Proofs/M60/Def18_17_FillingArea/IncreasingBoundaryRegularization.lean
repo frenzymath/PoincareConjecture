@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularLengthArea
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.BoundaryCurveLipschitz
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Bundle NNReal ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60Disk_regularize_of_increasing_lift
     {M : Type u} [TopologicalSpace M] [T2Space M]

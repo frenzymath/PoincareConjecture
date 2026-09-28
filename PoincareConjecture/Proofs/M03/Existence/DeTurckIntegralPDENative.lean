@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckSpatialRecoveryNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckPullbackForcingNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckEndpointCalculusNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -180,7 +173,6 @@ theorem value_eq_of_coefficients (v w : d.Value)
   ext ab
   exact hx ab
 
-
 theorem toLp_zeroProbe (z : State d.SymmetricIndex) (ab : d.ProbeIndex) :
     ContinuousMap.toLp 2 d.charts.measure ℝ (zeroProbe d L r p hpr hp ab z) =
       d.valueCoefficient ab (d.symmetricScaleValue (2 * r) z : d.Value) := by
@@ -230,7 +222,6 @@ theorem smoothTensorCoordinates_eq_of_probes
   intro ab x
   rw [probeEvaluation_smoothTensorCoordinates]
   exact hprobe ab x
-
 
 theorem evenCoordinatesPath_scaleDecode_two
     {K : Type*} [TopologicalSpace K] [CompactSpace K]
@@ -372,7 +363,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [CompactSpace M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   {g0 : RiemannianMetric n M} (d : Data g0) {r : ℕ} (A : NativeParameterData d r)
 
-
 theorem spatialVelocity_smoothTensorCoordinates
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (B : LeviCivitaData g0)
     (h : SmoothTensor (n := n) (M := M))
@@ -432,7 +422,6 @@ theorem recoveredTensor_traceCoordinates_norm_le (hT1 : T ≤ 1) (t : Icc (0 : �
 
 variable (A : NativeParameterData d r)
 
-
 theorem recovered_responseVelocity_eq (hT1 : T ≤ 1)
     (hsmall : 2 * ‖F‖ ≤ A.radius)
     (g : ℝ → RiemannianMetric n M)
@@ -450,7 +439,6 @@ theorem recovered_responseVelocity_eq (hT1 : T ≤ 1)
   exact spatialVelocity_smoothTensorCoordinates d A (g t) D B (h t) (hs t)
     (hmetric t)
     ((recoveredTensor_traceCoordinates_norm_le d L r p hpr hp hT F hspatial hT1 t).trans hsmall)
-
 
 theorem recoveredTensor_hasDerivWithinAt (hT1 : T ≤ 1)
     (hfix : A.spatialResidual.forcingResidual hT F = F) (hsmall : 2 * ‖F‖ ≤ A.radius)
@@ -479,7 +467,6 @@ theorem recoveredTensor_hasDerivWithinAt (hT1 : T ≤ 1)
   intro s hsT
   rw [IccExtend_of_mem hT _ hsT, recoveredTensor_apply]
   exact (tensorEvaluation_apply d L r p hpr hp (u ⟨s, hsT⟩) x v w).symm
-
 
 theorem recoveredTensor_integral_equation (hT1 : T ≤ 1)
     (hfix : A.spatialResidual.forcingResidual hT F = F) (hsmall : 2 * ‖F‖ ≤ A.radius)
@@ -528,7 +515,6 @@ theorem recoveredMetric_hasDerivWithinAt (hT1 : T ≤ 1)
   intro s hsT
   rw [IccExtend_of_mem hT _ hsT]
   exact hmetric ⟨s, hsT⟩ x v w
-
 
 theorem recoveredMetric_deTurckEquation (hT1 : T ≤ 1)
     (hfix : A.spatialResidual.forcingResidual hT F = F) (hsmall : 2 * ‖F‖ ≤ A.radius)

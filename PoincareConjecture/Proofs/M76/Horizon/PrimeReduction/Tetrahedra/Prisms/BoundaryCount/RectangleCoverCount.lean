@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBall
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.CommonSubcomplexUnion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.Euler.DisjointUnion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped BigOperators

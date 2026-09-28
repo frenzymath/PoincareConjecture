@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem chartCoefficients_center (g : RiemannianMetric n M) (p : M)
     (v w : EuclideanSpace ℝ (Fin n)) :
@@ -37,7 +27,6 @@ theorem chartCoefficients_center (g : RiemannianMetric n M) (p : M)
   rw [extChartAt_to_inv]
 
 open scoped Bundle in
-
 
 theorem exists_orthonormal_coordinate_frame (g : RiemannianMetric n M) (p : M) :
     ∃ L : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n),
@@ -56,8 +45,6 @@ theorem exists_orthonormal_coordinate_frame (g : RiemannianMetric n M) (p : M) :
   rw [g.chartCoefficients_center]
   change inner ℝ (b.repr.symm v) (b.repr.symm w) = inner ℝ v w
   exact b.repr.symm.inner_map_map v w
-
-
 
 theorem pullbackCoefficients_zero_of_orthonormal
     (g : RiemannianMetric n M) (p : M)

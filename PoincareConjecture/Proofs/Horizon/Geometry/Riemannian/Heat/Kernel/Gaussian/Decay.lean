@@ -6,22 +6,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.LeviCivitaData
 
 open Filter Set
 open scoped Topology
-
 
 theorem gaussian_bound_of_smooth_weight_bounds {I V d r t : ℝ} (ht : 0 < t)
     (hbound : ∀ a : ℝ, 0 ≤ a → ∀ ε : ℝ, 0 < ε →
@@ -57,8 +47,6 @@ private theorem sq_max_sub_two_sqrt_lower_bound {d t : ℝ}
       (sq_le_sq₀ hd (by positivity)).mpr (by linarith)
     nlinarith
 
-
-
 theorem exp_neg_sq_max_sub_two_sqrt_le {d t : ℝ}
     (hd : 0 ≤ d) (ht : 0 < t) :
     Real.exp (-(max (d - 2 * Real.sqrt t) 0) ^ 2 / (48 * t)) ≤
@@ -72,8 +60,6 @@ theorem exp_neg_sq_max_sub_two_sqrt_le {d t : ℝ}
     ring
   rw [hscale]
   linarith [sq_max_sub_two_sqrt_lower_bound hd ht]
-
-
 
 theorem gaussian_bound_of_double_ball_bounds (n : ℕ) {d t V W C h I : ℝ}
     (hd : 0 ≤ d) (ht : 0 < t) (ht1 : t ≤ 1)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FiniteSmoothBranches
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereSard
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -19,15 +8,12 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 theorem sphere_ne_antipode (u : UnitTwoSphere) : u ≠ -u := by
   intro h
   have hi := congrArg (fun p : UnitTwoSphere => ⟪(u : E3), (p : E3)⟫_ℝ) h
   simp only [coe_neg_sphere, inner_neg_right, real_inner_self_eq_norm_sq,
     norm_eq_of_mem_sphere, one_pow] at hi
   norm_num at hi
-
-
 
 theorem exists_opposite_normal_branches (N : UnitTwoSphere → UnitTwoSphere)
     (hN : ContMDiff (𝓡 2) (𝓡 2) ∞ N) (u : UnitTwoSphere)

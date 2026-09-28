@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ExtendByIdentity
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Function.Injective
 
 variable {X : Type*} {f : X → X}
-
-
-
 
 theorem preimage_eq_self_of_eqOn_compl (hf : Injective f) {U : Set X}
     (hfix : EqOn f id Uᶜ) : f ⁻¹' U = U := by
@@ -39,12 +26,6 @@ end Function.Injective
 namespace OpenPartialHomeomorph
 
 variable {M E : Type*} [TopologicalSpace M] [TopologicalSpace E]
-
-
-
-
-
-
 
 theorem exists_supported_overlap_chart_correction
     (c : OpenPartialHomeomorph M E) {U K : Set M}

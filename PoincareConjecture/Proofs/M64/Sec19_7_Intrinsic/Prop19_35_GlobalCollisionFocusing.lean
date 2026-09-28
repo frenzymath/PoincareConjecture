@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AnnularCollisio
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PrescribedCollisionDisk
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,11 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_embedded_normal_collision_cyclic_focusing
     (N : IntrinsicAnnulus) {K delta r q mu curvatureCutoff h : ℝ}

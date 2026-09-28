@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CommonCutCom
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalExteriorCapSpheres
 import Mathlib.Data.Fin.VecNotation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 

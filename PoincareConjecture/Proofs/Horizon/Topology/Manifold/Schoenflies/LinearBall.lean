@@ -2,17 +2,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +13,8 @@ namespace Poincare.Manifold.Schoenflies.LinearBall
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
 
-
 def denominator (A : E ≃L[Real] E) (x : E) : Real :=
   1 + ‖A x‖ ^ 2 - ‖x‖ ^ 2
-
 
 def map (A : E ≃L[Real] E) (x : E) : E :=
   (Real.sqrt (denominator A x))⁻¹ • A x
@@ -100,8 +87,6 @@ theorem map_mem_closedBall_iff (A : E ≃L[Real] E) {x : E}
   · intro h
     have hs := hle.mpr (by nlinarith [norm_nonneg x])
     nlinarith [norm_nonneg (map A x)]
-
-
 
 def neighborhood (A : E ≃L[Real] E) : OpenPartialHomeomorph E E where
   toFun := map A

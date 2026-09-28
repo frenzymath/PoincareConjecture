@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.FrameAngle
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Stokes.Chart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +29,6 @@ theorem chartField_ne_zero
   have h := congrArg (mfderiv (𝓡 2) 𝓘(ℝ, ℝ × ℝ) e x) hzero
   simp only [mpullback, hinv.self_apply_inverse, map_zero] at h
   exact hv h
-
 
 theorem normalized_chartField_properties
     (g : RiemannianMetric 2 S) (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -82,8 +74,6 @@ theorem mfderiv_chart_line
   simp only [ContinuousLinearMap.comp_apply, mfderiv_eq_fderiv, hd.hasFDerivAt.fderiv,
     ContinuousLinearMap.toSpanSingleton_apply, one_smul] at h
   exact h
-
-
 
 theorem integral_chart_edge_turning
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

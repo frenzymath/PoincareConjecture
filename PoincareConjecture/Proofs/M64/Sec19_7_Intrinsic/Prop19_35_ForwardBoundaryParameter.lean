@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParameters
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_forward_boundary_parameter
     {a : ℝ} (ha : a ∈ Ico (0 : ℝ) rampPeriod) {x : AnnulusCoordinates}

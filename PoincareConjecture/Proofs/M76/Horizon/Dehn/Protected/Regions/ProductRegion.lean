@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.CoordinateBounds
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.CoreSide
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 

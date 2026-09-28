@@ -9,8 +9,6 @@ namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem suRegularizedQuadratic_metric_comparison
     (B A : E →L[ℝ] E →L[ℝ] ℝ) {a d c p : ℝ}
     (ha : 0 < a) (hd : ‖B - A‖ ≤ d) (hc : 0 ≤ c) (hp : 0 ≤ p)
@@ -43,9 +41,6 @@ variable {X : Type*} [MeasurableSpace X] {mu : Measure X}
 
 local instance : MeasurableSpace (E →L[ℝ] E →L[ℝ] ℝ) := borel _
 local instance : BorelSpace (E →L[ℝ] E →L[ℝ] ℝ) := ⟨rfl⟩
-
-
-
 
 theorem suMovingRegularizedQuadratic_le_liminf
     (B : X → E →L[ℝ] E →L[ℝ] ℝ)

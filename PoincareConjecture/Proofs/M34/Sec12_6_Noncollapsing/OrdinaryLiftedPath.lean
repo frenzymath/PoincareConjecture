@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProjectedPath
 import PoincareConjecture.Proofs.M34.Standard.CompatibleCylinderCurve
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,22 +16,16 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
   (hRicci : IntrinsicGeneralizedRicciEquation R.leafwiseConnection)
 
-
-
 noncomputable def ordinaryLiftedCurve (T : ℝ) (gamma : ℝ → M) :
     ℝ → R.product.spacetime.Point := fun s =>
   R.product.productCylinder.toSpacetime
     ((R.product.timeIntervals.interval I).realParam (T - s), gamma s)
-
-
 
 noncomputable def ordinaryLiftedHorizontal (T : ℝ) (gamma : ℝ → M) (s : ℝ) :
     R.product.spacetime.Horizontal (ordinaryLiftedCurve R T gamma s) :=
   R.product.productMetric.spatialTangentEquiv
     ((R.product.timeIntervals.interval I).realParam (T - s)) (gamma s)
     (curveVelocity gamma s)
-
-
 
 theorem ordinaryLiftedCurve_integrand (T : ℝ) (gamma : ℝ → M) {s : ℝ}
     (hs : T - s ∈ I.domain) :
@@ -63,8 +48,6 @@ theorem ordinaryLiftedCurve_integrand (T : ℝ) (gamma : ℝ → M) {s : ℝ}
   rw [← hscalar, ← hmetric]
   rfl
 
-
-
 theorem ordinaryLiftedCurve_regular {T a b : ℝ} (q : BackwardTimePath F T a b) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) 1
       (ordinaryLiftedCurve R T q.curve) (Ioo a b) := by
@@ -74,7 +57,6 @@ theorem ordinaryLiftedCurve_regular {T a b : ℝ} (q : BackwardTimePath F T a b)
     ((hclock.of_le (by simp)).prodMk q.regular)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryLiftedCurve_derivative {T a b : ℝ} (q : BackwardTimePath F T a b)
     {s : ℝ} (hs : s ∈ Ioo a b) :
@@ -97,8 +79,6 @@ theorem ordinaryLiftedCurve_derivative {T a b : ℝ} (q : BackwardTimePath F T a
     mfderivWithin_eq_mfderiv (isOpen_Ioo.uniqueMDiffWithinAt hs) hq] at hv
   rw [neg_one_smul] at hv
   convert! hv using 1
-
-
 
 noncomputable def ordinaryLiftedPath {T a b : ℝ} (q : BackwardTimePath F T a b) :
     M14BackwardPath (ordinaryProductLGeometry R hRicci) T a b

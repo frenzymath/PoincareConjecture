@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory Set
@@ -19,10 +11,6 @@ open scoped BigOperators
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem exists_periodicH1_core_composition {ι : Type*} [Fintype ι]
     (Φ : (ι → ℂ) → ℂ) (Φ1 : (ι → ℂ) → (ι → ℂ) →L[ℝ] ℂ)

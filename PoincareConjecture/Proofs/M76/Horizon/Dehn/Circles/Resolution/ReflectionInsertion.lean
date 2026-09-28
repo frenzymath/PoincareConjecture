@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusComplemen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusFrontier
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn.PolygonalCrossingResolution

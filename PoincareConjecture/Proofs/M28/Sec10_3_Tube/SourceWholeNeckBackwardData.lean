@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallWholeNeighborhoodProducer
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedGlobalBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 1600000 in
-
-
 
 structure WholeNeckBackwardData
     (H : CounterexampleNeckFamily E) (W : CriticalBallSourcePacket H)
@@ -98,9 +86,6 @@ structure WholeNeckBackwardData
         3 * epsilon⁻¹ / 4
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_whole_neck_backward_data
     (H : CounterexampleNeckFamily E) (W : CriticalBallSourcePacket H)

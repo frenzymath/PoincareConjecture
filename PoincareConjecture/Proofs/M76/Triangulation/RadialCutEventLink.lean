@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexCone
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryCone
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace
@@ -23,11 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem exists_radial_cut_event_link
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

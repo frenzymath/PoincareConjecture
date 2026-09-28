@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicVectorUniqueness
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,15 +13,9 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def retractionParabolicDefect (r : E → E)
     (A : ℝ → E → E → ℝ) (B : ℝ → E → E → E) (t : ℝ) (z v : E) : E :=
   A t z v • fderiv ℝ (fderiv ℝ r) z v v + B t z v - fderiv ℝ r z (B t z v)
-
-
-
 
 theorem fderiv_retraction_comp {r : E → E} {U : Set E}
     (hU : IsOpen U) (hr : ContDiffOn ℝ 1 r U) (hmap : MapsTo r U U)
@@ -47,10 +32,6 @@ theorem fderiv_retraction_comp {r : E → E} {U : Set E}
 end Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
-
 
 theorem periodic_retraction_preservation
     {r : E → E} {U : Set E} {S : Set (E × E)}

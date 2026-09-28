@@ -1,20 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Packing.Compactness
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Extraction.Marked
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 open scoped Topology NNReal ENNReal lp
@@ -22,16 +7,6 @@ open scoped Topology NNReal ENNReal lp
 noncomputable section
 
 namespace Poincare.GromovHausdorff
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_subseq_marked_closedBall_realizations_of_uniform_packing_bounds
     (X : ℕ → BasedMetricSpaceBundle.{0})
@@ -99,6 +74,5 @@ theorem exists_subseq_marked_closedBall_realizations_of_uniform_packing_bounds
   refine ⟨S, ?_, ?_⟩
   · simpa [A, Function.comp_def] using hS
   · simpa [A, Function.comp_def] using hpointed
-
 
 end Poincare.GromovHausdorff

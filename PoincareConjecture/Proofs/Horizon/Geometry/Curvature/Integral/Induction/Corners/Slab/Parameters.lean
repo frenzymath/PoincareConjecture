@@ -1,7 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
-
 open Set
 namespace Poincare.CurvatureIntegral
 

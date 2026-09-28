@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.TangentialTes
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -95,8 +88,6 @@ private theorem tendsto_integral_normalCutoff_mul {f : E → ℝ}
         (one_mul _)
   · filter_upwards [ae_restrict_mem isOpen_halfSpace.measurableSet] with x hx
     simpa using (normalCutoff_tendsto hx).mul_const (f x)
-
-
 
 theorem hasWeakPartialDeriv_indicator_halfSpace
     {w g : E → ℝ} (k : Fin d) (hk : k ≠ 0)

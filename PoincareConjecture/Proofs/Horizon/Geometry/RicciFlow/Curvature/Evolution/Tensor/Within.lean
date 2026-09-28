@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.RicciEvolutionEndpoints
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.RicciEvolutionInterior
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Tensor.RiemannEvolutionEndpoints
-
-
-
-
-
-
-

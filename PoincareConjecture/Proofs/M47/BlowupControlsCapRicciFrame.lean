@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapConnectionDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,8 +43,6 @@ theorem cap_connectionDifference_compose_frame
   change inner ℝ (b l) (e.symm (B v w)) * inner ℝ (b k) (e.symm (B u (e (b l)))) =
     inner ℝ (b k) (e.symm (B u (e (b l)))) * inner ℝ (b l) (e.symm (B v w))
   ring
-
-
 
 theorem cap_ricci_difference_connection_frame
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

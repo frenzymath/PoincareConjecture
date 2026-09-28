@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.TimeSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Topology
@@ -36,8 +28,6 @@ private noncomputable def initialBackwardSubpath (K : AncientKappaSolution 2 M)
     rw [uIcc_of_le hτ.le, uIcc_of_le (hτ.le.trans hu)]
     exact Icc_subset_Icc_right hu)
 
-
-
 theorem monotoneOn_spatial_minimum_action (K : AncientKappaSolution 2 M) (p : M) :
     MonotoneOn (fun τ => 2 * Real.sqrt τ * K.spatialReducedLengthInfimum p τ) (Ioi 0) := by
   intro τ hτ u _hu hu
@@ -64,8 +54,6 @@ theorem monotoneOn_spatial_minimum_action (K : AncientKappaSolution 2 M) (p : M)
       backwardLLength K.flow 0 0 τ path.curve := by
     simpa only [mul_comm] using hbound
   exact hbound'.trans hpath
-
-
 
 theorem exists_spatial_minimum_action_increment_bound (K : AncientKappaSolution 2 M)
     (p : M) {B : ℝ} (hB : 0 < B) :
@@ -109,8 +97,6 @@ theorem exists_spatial_minimum_action_increment_bound (K : AncientKappaSolution 
   have hact := (le_div_iff₀ hden).mp (hsupport u hu)
   nlinarith
 
-
-
 theorem exists_lipschitzOn_spatial_minimum_action (K : AncientKappaSolution 2 M)
     (p : M) {B : ℝ} (hB : 0 < B) :
     ∃ C : ℝ≥0, LipschitzOnWith C
@@ -127,8 +113,6 @@ theorem exists_lipschitzOn_spatial_minimum_action (K : AncientKappaSolution 2 M)
   · have hmono := K.monotoneOn_spatial_minimum_action p hu.1 hτ.1 hut
     rw [abs_of_nonneg (sub_nonneg.mpr hmono), abs_of_nonneg (sub_nonneg.mpr hut)]
     exact hbound u τ hu.1 hut hτ.2
-
-
 
 theorem continuousOn_spatialReducedLengthInfimum (K : AncientKappaSolution 2 M)
     (p : M) : ContinuousOn (K.spatialReducedLengthInfimum p) (Ioi 0) := by

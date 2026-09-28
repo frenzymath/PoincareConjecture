@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainMaps
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M76
 
 variable {X : Type u} [TopologicalSpace X]
   {ι : Type v} {κ : Type w}
-
-
-
-
 
 def HasRelativeBoundaryProperPLApproximation [T2Space X]
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))

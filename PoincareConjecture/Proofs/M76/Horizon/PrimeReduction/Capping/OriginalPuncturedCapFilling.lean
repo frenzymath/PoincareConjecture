@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PrescribedPu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PhysicalPuncturedSphereCapFilling
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3ChangeRealization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

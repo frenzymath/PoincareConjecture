@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.UniformTube
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -25,9 +13,6 @@ variable {E F M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
-
 
 theorem exists_manifold_source_regular_neighborhood (f : M → F) {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn 𝓘(ℝ, E) 𝓘(ℝ, F) ∞ f U)
@@ -56,9 +41,6 @@ theorem exists_manifold_source_regular_neighborhood (f : M → F) {U : Set M}
     exact hed.mfderiv_bijective hy
 
 variable [CompactSpace M]
-
-
-
 
 theorem exists_compact_product_regular_tube (C : M × ℝ → F) {U : Set (M × ℝ)}
     (hU : IsOpen U) (hzero : ∀ p : M, (p, (0 : ℝ)) ∈ U)

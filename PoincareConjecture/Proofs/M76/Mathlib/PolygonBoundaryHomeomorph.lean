@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -37,9 +29,6 @@ private theorem vertex_assignment_preserves_faces (P : Polygon E n) (Q : Polygon
     exact Finset.mem_insert_of_mem (Finset.mem_singleton_self _)
 
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_simplicial_homeomorph (P : Polygon E (n + 3)) (Q : Polygon F (n + 3))
     (hP : P.HasSimplicialEdges) (hQ : Q.HasSimplicialEdges)
@@ -75,9 +64,6 @@ theorem exists_simplicial_homeomorph (P : Polygon E (n + 3)) (Q : Polygon F (n +
     exact (hfv (by rw [P.simplicialComplex_vertices]; exact mem_range_self i)).trans (hv i)
   · intro i
     exact (hgw (by rw [Q.simplicialComplex_vertices]; exact mem_range_self i)).trans (hw i)
-
-
-
 
 theorem nonempty_boundary_homeomorph (P : Polygon E (n + 3)) (Q : Polygon F (n + 3))
     (hP : P.HasSimplicialEdges) (hQ : Q.HasSimplicialEdges)

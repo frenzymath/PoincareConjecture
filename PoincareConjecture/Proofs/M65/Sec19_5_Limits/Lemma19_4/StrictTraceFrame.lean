@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexConne
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,15 +14,11 @@ namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
 
-
-
 def rowFrame (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
     (V : LoopAmbient) (j : Fin 3) : LoopAmbient →L[ℝ] LoopAmbient :=
   (EuclideanSpace.equiv (Fin 3) ℝ).symm.toContinuousLinearMap.comp
     (ContinuousLinearMap.pi fun k => if k = j then G V else
       EuclideanSpace.proj k - (V k / V j) • EuclideanSpace.proj j)
-
-
 
 theorem rowFrame_apply (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
     (V W : LoopAmbient) (j k : Fin 3) :
@@ -41,9 +27,6 @@ theorem rowFrame_apply (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
     EuclideanSpace.equiv, PiLp.coe_symm_continuousLinearEquiv, PiLp.toLp_apply,
     ContinuousLinearMap.pi_apply]
   split_ifs <;> rfl
-
-
-
 
 theorem rowFrame_injective (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
     (V : LoopAmbient) (j : Fin 3) (hV : V j ≠ 0)
@@ -71,9 +54,6 @@ theorem rowFrame_injective (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
   apply sub_eq_zero.mp
   apply hzero
   rw [map_sub, heq, sub_self]
-
-
-
 
 theorem contDiffOn_rowFrame
     {G : LoopAmbient → LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ}
@@ -103,8 +83,6 @@ theorem contDiffOn_rowFrame
   ext k
   exact rowFrame_apply (G q) (V q) W j k
 
-
-
 def boundaryReflection (j : Fin 3) : (Fin 3 → ℂ) ≃ₗᵢ[ℝ] (Fin 3 → ℂ) := by
   let e (k : Fin 3) : ℂ ≃ₗᵢ[ℝ] ℂ :=
     if k = j then conjLIE else conjLIE.trans (LinearIsometryEquiv.neg ℝ)
@@ -114,15 +92,11 @@ def boundaryReflection (j : Fin 3) : (Fin 3 → ℂ) ≃ₗᵢ[ℝ] (Fin 3 → �
       simp only [Pi.norm_def, LinearEquiv.piCongrRight_apply,
         LinearIsometryEquiv.coe_toLinearEquiv, LinearIsometryEquiv.nnnorm_map] }
 
-
-
 theorem boundaryReflection_apply (j : Fin 3) (v : Fin 3 → ℂ) (k : Fin 3) :
     boundaryReflection j v k = if k = j then star (v k) else -star (v k) := by
   simp only [boundaryReflection, LinearIsometryEquiv.coe_mk,
     LinearEquiv.piCongrRight_apply]
   split_ifs <;> rfl
-
-
 
 theorem boundaryReflection_smul (j : Fin 3) (c : ℂ) (v : Fin 3 → ℂ) :
     boundaryReflection j (c • v) = star c • boundaryReflection j v := by
@@ -130,17 +104,12 @@ theorem boundaryReflection_smul (j : Fin 3) (c : ℂ) (v : Fin 3 → ℂ) :
   simp only [boundaryReflection_apply, Pi.smul_apply, smul_eq_mul, star_mul]
   split_ifs <;> ring
 
-
-
 theorem boundaryReflection_involutive (j : Fin 3) :
     Function.Involutive (boundaryReflection j) := by
   intro v
   ext k
   simp only [boundaryReflection_apply]
   split_ifs <;> simp
-
-
-
 
 theorem rowFrame_boundary_columns
     (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
@@ -167,8 +136,6 @@ theorem rowFrame_boundary_columns
     field_simp
     ring
 
-
-
 theorem boundaryReflection_of_rows (j : Fin 3) (X Y : LoopAmbient)
     (hY : Y j = 0) (hX : ∀ k, k ≠ j → X k = 0) :
     boundaryReflection j (coordinateComplexification X - I • coordinateComplexification Y) =
@@ -181,9 +148,6 @@ theorem boundaryReflection_of_rows (j : Fin 3) (X Y : LoopAmbient)
   · subst k
     simp [hY]
   · simp [hk, hX k hk]
-
-
-
 
 theorem rowFrame_boundary_reflection
     (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)
@@ -198,8 +162,6 @@ theorem rowFrame_boundary_reflection
   obtain ⟨hY, hX⟩ := rowFrame_boundary_columns G V X Y j hV hpos hX hdiag hmixed
   simpa only [map_sub, map_smul, complexifyOperator_real] using
     boundaryReflection_of_rows j (rowFrame G V j X) (rowFrame G V j Y) hY hX
-
-
 
 theorem complexifyOperator_injective {n : ℕ}
     (L : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -231,8 +193,6 @@ theorem complexifyOperator_injective {n : ℕ}
   apply sub_eq_zero.mp
   apply hzero
   rw [map_sub, hvw, sub_self]
-
-
 
 theorem rowFrame_complex_isUnit
     (G : LoopAmbient →L[ℝ] LoopAmbient →L[ℝ] ℝ)

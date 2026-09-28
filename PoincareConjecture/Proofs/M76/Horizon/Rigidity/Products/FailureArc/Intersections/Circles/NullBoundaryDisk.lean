@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.EssentialRegions
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.StageRimHomotopy
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open _root_.Dehn

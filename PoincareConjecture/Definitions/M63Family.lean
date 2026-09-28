@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.M63Polygon
 import PoincareConjecture.Definitions.M61Width
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,9 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ}
-
-
-
 
 structure M63RawApproximation (F : RicciFlow 3 M (Set.Icc a b))
     (Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)))
@@ -52,9 +38,6 @@ structure M63RawApproximation (F : RicciFlow 3 M (Set.Icc a b))
       freeLoopLength (F.metric a) (Gamma z) - freeLoopLength (F.metric a) (family z) < zeta
   area_error : ∀ z,
     |fillingArea (F.metric a) (family z) - fillingArea (F.metric a) (Gamma z)| < zeta
-
-
-
 
 structure M63ProductSolutionFamily
     {F : RicciFlow 3 M (Set.Icc a b)}

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Reconstruction
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Correction.CapEdge
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,16 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -61,7 +45,6 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
 theorem capMinus_inter_retained :
     (S.gMinus '' closedBall (0 : E2) 1) ∩
       ((fun p => S.D (f p)) '' (S.eMinus '' closedBall 0 1)) =
@@ -70,7 +53,6 @@ theorem capMinus_inter_retained :
   · rw [S.fMinus_range]
     exact subset_union_left
   · exact S.range_minus_open_capMinus
-
 
 theorem capPlus_inter_retained :
     (S.gPlus '' closedBall (0 : E2) 1) ∩
@@ -87,7 +69,6 @@ private theorem tube_not_mem_open_retained (q : S1) {t : Real}
   have hmem : S.T (q, t) ∈ S.T '' (univ ×ˢ Icc (-S.a) S.a) :=
     mem_image_of_mem S.T ⟨mem_univ q, ht⟩
   rwa [S.slab_eq] at hmem
-
 
 theorem tube_not_mem_retainedMinus (q : S1) {t : Real}
     (ht : t ∈ Ioo (-S.a) S.a) :
@@ -116,7 +97,6 @@ theorem tube_not_mem_retainedMinus (q : S1) {t : Real}
   have := congrArg Prod.snd (S.T.injOn hqs hts heq')
   exact (ne_of_lt ht.1) this
 
-
 theorem tube_not_mem_retainedPlus (q : S1) {t : Real}
     (ht : t ∈ Ioo (-S.a) S.a) :
     S.T (q, t) ∉ S.ePlus '' closedBall (0 : E2) 1 := by
@@ -143,8 +123,6 @@ theorem tube_not_mem_retainedPlus (q : S1) {t : Real}
       by linarith [S.a_lt_quarter_ε, S.a_pos]⟩
   have := congrArg Prod.snd (S.T.injOn hqs hts heq')
   exact (ne_of_lt ht.2) this.symm
-
-
 
 theorem middle_cylinder_disjoint_retained {l u : Real}
     (hl : -S.a < l) (hu : u < S.a) :
@@ -173,7 +151,6 @@ theorem middle_cylinder_disjoint_retained {l u : Real}
   · have heq' := S.prepared_embedding.isEmbedding.injective heq
     exact S.tube_not_mem_retainedPlus q ht' (heq' ▸ hp)
 
-
 theorem isCompact_retained_union :
     IsCompact (((fun p => S.D (f p)) '' (S.eMinus '' closedBall 0 1)) ∪
       ((fun p => S.D (f p)) '' (S.ePlus '' closedBall 0 1))) := by
@@ -183,8 +160,6 @@ theorem isCompact_retained_union :
     (S.ePlus.continuousOn.mono S.ePlus_source)
   exact (hminus.image S.prepared_embedding.contMDiff.continuous).union
     (hplus.image S.prepared_embedding.contMDiff.continuous)
-
-
 
 theorem exists_middle_cylinder_neighborhood {l u : Real}
     (hl : -S.a < l) (hu : u < S.a) :

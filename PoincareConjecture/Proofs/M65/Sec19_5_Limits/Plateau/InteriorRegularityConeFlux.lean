@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarMeasure
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PolarDivergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -20,15 +9,11 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
 
-
-
 noncomputable def coneRadialFlux (g : EuclideanSpace ℝ (Fin 3) → ℝ)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3)) (v : ℝ → EuclideanSpace ℝ (Fin 3))
     (x : LoopPlane) (test : LoopPlane → ℝ) (i : Fin 2) (s θ : ℝ) : ℝ :=
   s * Proofs.M58.angularPoint θ i * g (coneCoordinates r v0 v s θ) *
     test (polarPlane x (s, θ))
-
-
 
 noncomputable def coneAngularFlux (g : EuclideanSpace ℝ (Fin 3) → ℝ)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3)) (v : ℝ → EuclideanSpace ℝ (Fin 3))
@@ -52,8 +37,6 @@ private theorem polar_frame_coordinate (A : LoopPlane →L[ℝ] ℝ) (θ : ℝ) 
         Proofs.M58.angularVector θ i • Proofs.M58.angularVector θ) := by
       simp only [map_add, map_smul, smul_eq_mul]
     _ = _ := congrArg A hframe
-
-
 
 theorem coneRadialFlux_hasDerivAt {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3)) (v : ℝ → EuclideanSpace ℝ (Fin 3))
@@ -79,10 +62,6 @@ theorem coneRadialFlux_hasDerivAt {g : EuclideanSpace ℝ (Fin 3) → ℝ}
   convert! hprod using 1
   simp only [Function.comp_def, Pi.mul_apply, smul_eq_mul, one_mul, id_eq]
   ring
-
-
-
-
 
 theorem coneAngularFlux_hasDerivAt {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))
@@ -114,9 +93,6 @@ theorem coneAngularFlux_hasDerivAt {g : EuclideanSpace ℝ (Fin 3) → ℝ}
   convert! hprod using 1
   simp only [Function.comp_def, Pi.mul_apply, map_smul, smul_eq_mul]
   ring
-
-
-
 
 theorem coneFlux_derivative_sum {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +12,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M44
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
-
 
 theorem eventually_coordinate_spacetime_jet_bound
     {alpha : Type*} (l : Filter alpha) (n : ℕ)

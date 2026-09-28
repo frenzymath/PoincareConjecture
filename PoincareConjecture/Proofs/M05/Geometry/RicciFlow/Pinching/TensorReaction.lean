@@ -1,18 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.ReactionSupport
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TensorRegion
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.ConvexSupport
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -25,7 +13,6 @@ open scoped ContDiff Topology NNReal InnerProductSpace
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 noncomputable def tensorReaction (T : TensorFiber E 2) : TensorFiber E 2 :=
   operatorTensorEquiv
     ((endomorphismReaction (operatorTensorEquiv.symm T).toLinearMap).toContinuousLinearMap)
@@ -36,7 +23,6 @@ noncomputable def tensorReaction (T : TensorFiber E 2) : TensorFiber E 2 :=
   simp only [LinearMap.coe_toContinuousLinearMap] at hA
   simp only [tensorReaction, hA, LinearMap.coe_toContinuousLinearMap,
     operatorTensorEquiv_apply]
-
 
 noncomputable def scaledTensorReaction (t : ℝ) (T : TensorFiber E 2) : TensorFiber E 2 :=
   (1 + t)⁻¹ • (T + tensorReaction T)
@@ -142,7 +128,6 @@ theorem tensorReaction_support_nonpos
     ((1 + t)⁻¹ • (A +
       (endomorphismReaction A.toLinearMap).toContinuousLinearMap))) ≤ 0 at h
   simpa [tensorReaction, A, l', map_add, map_smul] using h
-
 
 theorem scaledTensorReaction_inner_nonpos
     (hn : Module.finrank ℝ E = 3) {t : ℝ} (ht : 0 ≤ t)

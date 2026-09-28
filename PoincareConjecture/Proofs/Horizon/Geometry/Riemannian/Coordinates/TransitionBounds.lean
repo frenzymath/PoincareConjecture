@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transition.Hessian
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelBounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness
-
-
-
-
-
-
-

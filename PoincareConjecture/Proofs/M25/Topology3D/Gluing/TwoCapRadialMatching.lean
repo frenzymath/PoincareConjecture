@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Mathlib.MonotoneIntervalChart
 import PoincareConjecture.Proofs.M25.Mathlib.InwardRadialExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesRadial
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
 
 theorem exists_inward_matching_radial_chart
     {ψ : UnitTwoSphere × ℝ → E3}

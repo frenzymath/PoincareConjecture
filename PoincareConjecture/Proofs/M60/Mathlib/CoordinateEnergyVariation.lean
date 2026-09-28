@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Density
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -22,8 +14,6 @@ open ConnectionVariation ConjugateVariation
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasDerivAt_affine_coordinate_energy
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}
@@ -56,8 +46,6 @@ theorem hasDerivAt_affine_coordinate_energy
   rw [hΓsymm (V p), hBsymm (fderiv ℝ u p d),
     hBsymm (fderiv ℝ u p d)]
   ring
-
-
 
 theorem hasDerivAt_coordinate_energy
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}

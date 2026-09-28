@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerSlicing
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +20,6 @@ private theorem m65Product_vertical_line (x y : ℝ) :
     ring
   · change y = 0 + y * 1
     ring
-
-
-
-
-
 
 theorem m65WeakPair_vertical_AC
     (u d : Lp ℝ 2 (volume : Measure LoopPlane))

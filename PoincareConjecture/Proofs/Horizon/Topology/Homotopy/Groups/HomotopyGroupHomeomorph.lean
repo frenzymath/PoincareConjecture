@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Groups.HomotopyPostcomposition
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v

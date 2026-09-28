@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.FiniteRectangleBelt
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskPrismExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

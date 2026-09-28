@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeInterpolator
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceEstimate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
 
 theorem m64_local_cone_vertical_column_eq_slice {f : LoopPlane → M} {p : LoopPlane}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f p) :
@@ -44,8 +31,6 @@ theorem m64_local_cone_vertical_column_eq_slice {f : LoopPlane → M} {p : LoopP
   exact hc.symm
 
 variable [IsManifold (𝓡 n) ∞ M] [T2Space M]
-
-
 
 theorem m64_exists_local_cone_rectangles
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M)) :

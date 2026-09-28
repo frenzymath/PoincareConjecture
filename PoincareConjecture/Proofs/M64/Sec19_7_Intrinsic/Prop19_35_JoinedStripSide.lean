@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphStripSide
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_joined_graph_strips_inside
     (L R : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)

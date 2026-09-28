@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarCutCarrier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TwoSidedCollarFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Collars.SourceAlternatives
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.EssentialRegions
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open _root_.Dehn
@@ -19,9 +17,6 @@ theorem oriented_collar_interior {A : Set P2} {l r : ℝ}
   rw [sdiff_eq, interior_inter, interior_compl,
     B.outer.interior_closure_inside B.outer_simplicial B.outer_injective]
   rfl
-
-
-
 
 theorem exists_essential_collar_complement_annuli
     {A : Set P2} {l r L d : ℝ} (B : OrientedPolygonCollar l r A)

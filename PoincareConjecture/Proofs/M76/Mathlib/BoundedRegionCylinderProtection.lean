@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +9,6 @@ open Set Geometry
 namespace Set
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
 
 theorem cylinder_frontier_sdiff_top_interior {D : Set E} (hD : IsClosed D) :
     frontier (D ×ˢ Icc (-1 : ℝ) 1) \ interior D ×ˢ {1} =
@@ -56,9 +42,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finite_triangulation_cylinder_nonTop
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

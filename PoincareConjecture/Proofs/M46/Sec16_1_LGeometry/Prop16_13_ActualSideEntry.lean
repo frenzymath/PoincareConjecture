@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BackwardEntryEnergy
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_EntryFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
 
 theorem actualCapSideEntry_action_lower
     {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)

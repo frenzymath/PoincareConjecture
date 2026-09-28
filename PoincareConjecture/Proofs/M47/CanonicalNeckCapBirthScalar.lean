@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapScalarRatio
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalScalarComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem cap_birth_scalar_le_initial
     {F : SurgeryFlowData.{u}}
@@ -65,8 +54,6 @@ theorem cap_birth_scalar_le_initial
   rw [hstandardScalar] at h
   exact h.trans (mul_le_mul_of_nonneg_left
     (standard.initial_estimate.scalar_bounds z).2 (by norm_num))
-
-
 
 theorem strongNeck_scale_mul_height_sq_le
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T epsilon : ℝ}

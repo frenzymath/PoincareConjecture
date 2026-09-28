@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUHarmonicEnergyGap
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.Stationarity
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ namespace PoincareConjecture
 
 open CoordinateExponential ConnectionVariation ConjugateVariation M60
 
-
-
 theorem m60Sphere_chartInverse_contMDiff (p : UnitTwoSphere) :
     ContMDiff (𝓡 2) (𝓡 2) ∞ (chartAt LoopPlane p).symm := by
   have ht : (chartAt LoopPlane p).target = univ := by
@@ -38,9 +27,6 @@ theorem m60Sphere_chartInverse_contMDiff (p : UnitTwoSphere) :
     change (stereographic' 2 (-p)).target = univ
     simp
   exact contMDiffOn_univ.mp (ht ▸ contMDiffOn_chart_symm (I := 𝓡 2))
-
-
-
 
 theorem m60SphereChart_transition_data (p : UnitTwoSphere) (z : LoopPlane)
     (hz : (chartAt LoopPlane p).symm z ∈ m60SphereChart.source) :
@@ -151,9 +137,6 @@ private theorem chartTension_continuousAt {n : ℕ}
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60SphereChartHarmonic_in_atlas (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -377,8 +360,6 @@ private theorem chart_differential_eq_zero_iff
   · intro h
     rw [h, ContinuousLinearMap.zero_comp, ContinuousLinearMap.comp_zero]
 
-
-
 theorem m60SphereBranchSet_local_alternative (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hharm : M60SphereChartHarmonic g f) (p : UnitTwoSphere) :
@@ -440,8 +421,6 @@ theorem m60SphereBranchSet_local_alternative (g : RiemannianMetric n M)
 
 variable [T2Space M]
 
-
-
 theorem m60SphereBranchSet_finite_of_chartHarmonic (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hharm : M60SphereChartHarmonic g f) (hnonconst : ∃ p q, f p ≠ f q) :
@@ -464,7 +443,6 @@ theorem m60SphereBranchSet_finite_of_chartHarmonic (g : RiemannianMetric n M)
   exact hpq ((hc p).trans (hc q).symm)
 
 omit [T2Space M] in
-
 
 theorem m60WeaklyConformal_injective_off_branchSet (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hc : M60WeaklyConformal g f) (p : UnitTwoSphere)
@@ -496,9 +474,6 @@ theorem m60WeaklyConformal_injective_off_branchSet (g : RiemannianMetric n M)
   apply sub_eq_zero.mp
   apply hzero
   rw [map_sub, hvw, sub_self]
-
-
-
 
 theorem m60BranchedMinimalSphere_of_energyStationary (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

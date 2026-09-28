@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.RicciIntegralCutoff
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Integral.ExponentialMoments
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

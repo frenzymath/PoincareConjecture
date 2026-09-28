@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussEquation
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -20,8 +12,6 @@ open Filter
 open scoped ContDiff Manifold Bundle Topology InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M65Gauss
-
-
 
 theorem exists_orthonormalBasis_adjoin
     {V W : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
@@ -52,8 +42,6 @@ theorem exists_orthonormalBasis_adjoin
   let a := basisOfOrthonormalOfCardEqFinrank hv hcard
   have ha : Orthonormal ℝ a := by simpa [a] using hv
   refine ⟨a.toOrthonormalBasis ha, ?_, ?_⟩ <;> simp [a, v]
-
-
 
 theorem gauss_scalarCurvature {m : ℕ}
     {g : RiemannianMetric (m + 1) (EuclideanSpace ℝ (Fin (m + 1)))}

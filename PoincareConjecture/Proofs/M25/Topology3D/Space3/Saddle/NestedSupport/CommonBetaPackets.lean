@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.Nest
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.NestedArcComposition
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 structure CommonBetaPacketInput where
   kappa : OpenPartialHomeomorph E2 E2
@@ -109,10 +96,6 @@ structure CommonBetaPacketInput where
   hTracks : ∀ i, ∀ t ∈ Ioo (l - eta) (r + eta),
     c i (q t) = alpha i t
 
-
-
-
-
 structure CommonBetaThreePacketInput where
   packetInput : Fin 3 → CommonBetaPacketInput
   Kcommon : Set E2
@@ -133,10 +116,6 @@ structure CommonBetaThreePacketInput where
   hTar : ETar =
     (packetInput 2).alpha 0 '' Icc (0 : ℝ) 1 ∪
       (packetInput 1).alpha 1 '' Icc (0 : ℝ) 1
-
-
-
-
 
 theorem exists_saddle_common_beta_packet
     (hP : PlanarSchoenfliesService) (I : CommonBetaPacketInput) :
@@ -265,9 +244,6 @@ theorem exists_saddle_common_beta_packet
     hNpositive := hNpositive
   }
   exact ⟨packet, rfl, rfl, rfl⟩
-
-
-
 
 theorem exists_saddle_common_beta_raw_pair
     (hP : PlanarSchoenfliesService) (I : CommonBetaThreePacketInput) :

@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem exists_oriented_boundary_joint
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [DecidableEq E] (A : SimplicialComplex ℝ E) [Fintype A.faces]

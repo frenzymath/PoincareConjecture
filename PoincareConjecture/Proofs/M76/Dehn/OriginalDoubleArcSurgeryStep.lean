@@ -7,21 +7,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierInteriorChartMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartEdgePrism
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -189,12 +174,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 open Classical in
-
-
-
-
-
-
 
 theorem Step.exists_original_protected_branch_operation_with_closed_support
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}
@@ -503,12 +482,6 @@ theorem Step.exists_original_protected_branch_operation_with_closed_support
   · simpa only [hTD] using hEs
 
 open Classical in
-
-
-
-
-
-
 
 theorem Step.exists_original_protected_branch_operation
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

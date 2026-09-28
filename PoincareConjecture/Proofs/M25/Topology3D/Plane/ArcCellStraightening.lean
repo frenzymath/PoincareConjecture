@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcStraightWeight
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcDeformationLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,8 +36,6 @@ private theorem arcCell_center_indices {n : ℕ} (i : Fin (n + 1)) :
   · have hmid : i.castSucc.succ = i.succ.castSucc := Fin.ext rfl
     rw [hright, hmid]
     exact (finRotate_of_lt i.succ.isLt).symm
-
-
 
 theorem exists_relative_polygonalArc_cell_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

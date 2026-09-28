@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Integral.IntegrableOn
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [MeasurableSpace X] [BorelSpace X] [MeasurableSpace Y] [BorelSpace Y]
-
 
 theorem map_inverse_restrict_apply (e : OpenPartialHomeomorph X Y) (μ : Measure Y)
     {A : Set X} (hA : MeasurableSet A) (hAsource : A ⊆ e.source) :

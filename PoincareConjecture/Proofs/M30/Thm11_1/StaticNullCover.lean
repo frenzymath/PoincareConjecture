@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.UnitCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PoincareConjecture.RicciFlow.Splitting
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem unitRicciKernel_doubleCover_of_local_unit_sections
     {n : ℕ} {M : Type u} [TopologicalSpace M]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Multiply
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Filter Topology
@@ -17,7 +10,6 @@ namespace Poincare.Analysis.Elliptic.Iteration
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def partialDeriv (i : Fin n) (f : E → ℝ) : E → ℝ :=
   fun x => (fderiv ℝ f x) (EuclideanSpace.single i 1)
@@ -65,7 +57,6 @@ theorem integrable_mul_partial_test {O : Set E} {f φ : E → ℝ}
     (hφ : ContDiff ℝ ∞ φ) (hφc : HasCompactSupport φ) (i : Fin n) :
     Integrable (fun x => f x * partialDeriv i φ x) (volume.restrict O) :=
   integrable_mul_test hf (contDiff_partial hφ i) (hasCompactSupport_partial hφc i)
-
 
 theorem weakPartial_comm_ae
     {O : Set E} (hO : IsOpen O) {u p q r s : E → ℝ} {i j : Fin n}

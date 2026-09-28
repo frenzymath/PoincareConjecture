@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.FramePermutation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Locality
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 noncomputable def coordinateTriangleSideField
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) (i j : Fin 3)
@@ -26,14 +19,12 @@ noncomputable def coordinateTriangleSideField
   mpullback (𝓡 2) 𝓘(ℝ, ℝ × ℝ) (coordinateTriangleChart F b)
     (fun _ => standardTriangleVertex j - standardTriangleVertex i) x
 
-
 noncomputable def coordinateTriangleSideUnitField (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) (i j : Fin 3)
     (x : S) : TangentSpace (𝓡 2) x :=
   (Real.sqrt (g.inner x (coordinateTriangleSideField F b i j x)
     (coordinateTriangleSideField F b i j x)))⁻¹ • coordinateTriangleSideField F b i j x
-
 
 theorem coordinateTriangleSideUnitField_smooth (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -54,7 +45,6 @@ theorem coordinateTriangleSideUnitField_smooth (g : RiemannianMetric 2 S)
     coordinateTriangleChart_source] using h
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem coordinateTriangle_side_velocity
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

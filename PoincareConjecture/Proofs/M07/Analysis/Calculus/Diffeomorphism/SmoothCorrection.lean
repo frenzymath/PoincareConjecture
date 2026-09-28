@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniqueness
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology Manifold
 
 namespace Poincare.Analysis.Calculus
-
-
 
 theorem exists_smooth_relative_correction_sequence
     {d : ℕ} {V K : Set (EuclideanSpace ℝ (Fin d))}

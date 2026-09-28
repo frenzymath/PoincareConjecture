@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_OrdinaryProduct
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.RealTime
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval}
-
-
 
 theorem ordinaryProduct_backwardPath_lift
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

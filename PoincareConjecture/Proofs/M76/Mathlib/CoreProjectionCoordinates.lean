@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoreProjectionAlgebra
 import PoincareConjecture.Proofs.M76.Mathlib.CoreRegionBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped ContDiff
 namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
-
-
 
 theorem residualMass_eq_boxScale_mul (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) (q : faceRegion s η) :
@@ -37,8 +24,6 @@ theorem residualMass_eq_boxScale_mul (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
 
 omit [DecidableEq ι] in
 
-
-
 theorem residualMass_pos_of_mem_faceRegion (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) (q : faceRegion s η) :
     0 < residualMass s η q.val := by
@@ -49,9 +34,6 @@ theorem residualMass_pos_of_mem_faceRegion (s : Finset ι) {η : ℝ} (hη : 0 �
     ((faceRegionBoxHomeomorph s hη) q).property.2.1
   rw [residualMass_eq_boxScale_mul s hη hbound q]
   exact mul_pos ha (sub_pos.mpr (face_threshold_bound s hη hbound))
-
-
-
 
 theorem projectToFace_eq_boxBase (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) (q : faceRegion s η) :
@@ -66,16 +48,11 @@ theorem projectToFace_eq_boxBase (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
   rw [residualMass_eq_boxScale_mul s hη hbound q, Fintype.card_coe,
     mul_div_mul_right _ _ hden]
 
-
-
-
 theorem projectToFace_mem_core (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) (q : faceRegion s η) :
     (fun i : s => projectToFace s η q.val i) ∈ stdSimplexCore s η := by
   rw [projectToFace_eq_boxBase s hη hbound q]
   exact ((faceRegionProductHomeomorph s hη hbound).symm q).1.property
-
-
 
 theorem projectToFace_mem_stdSimplex (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) (q : faceRegion s η) :
@@ -93,8 +70,6 @@ theorem projectToFace_mem_stdSimplex (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
       exact hi (by simp only [projectToFace, if_neg his])
     rw [hsum]
     exact sum_projectToFace s η q.val (residualMass_pos_of_mem_faceRegion s hη hbound q).ne'
-
-
 
 theorem contDiffAt_projectToFace (s : Finset ι) (η : ℝ) (n : ℕ∞ω) (q : ι → ℝ)
     (hq : residualMass s η q ≠ 0) : ContDiffAt ℝ n (projectToFace s η) q := by

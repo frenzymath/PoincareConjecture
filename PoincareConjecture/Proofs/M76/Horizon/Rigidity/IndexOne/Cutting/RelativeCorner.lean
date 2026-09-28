@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCornerStraightening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_relative_phase_corner
     {X E ι : Type*} [TopologicalSpace X]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderSpatial
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +18,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {J : SpacetimeInterval} {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
 
-
-
-
 theorem rawCylinder_spatial_localDiffeomorph [Nonempty U] (s : J.domain) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (rawSpatialMap e s) := by
   apply isLocalDiffeomorph_of_contMDiff_mfderiv_bijective (rawSpatialMap_smooth e s)
@@ -46,8 +33,6 @@ theorem rawCylinder_spatial_localDiffeomorph [Nonempty U] (s : J.domain) :
         (rawSpatialMap_differential_injective e s x)
     exact L.bijective
 
-
-
 theorem rawCylinder_spatial_image_isOpen [Nonempty U] (s : J.domain) :
     IsOpen (e.forward s.val s.property '' U) := by
   have heq : range (rawSpatialMap e s) = e.forward s.val s.property '' U := by
@@ -59,9 +44,6 @@ theorem rawCylinder_spatial_image_isOpen [Nonempty U] (s : J.domain) :
       exact ⟨⟨x, hx⟩, rfl⟩
   rw [← heq]
   exact (rawCylinder_spatial_localDiffeomorph e s).isOpen_range
-
-
-
 
 theorem rawCylinder_inverse_contMDiffAt (s : J.domain) (x : U) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (e.inverse s.val s.property)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.MeasureTheory.Integral.DivergenceTheorem
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +12,6 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 theorem m64Polar_basis_expansion (i : Fin 2) (t : ℝ) :
     (angularPoint t) i • angularPoint t + (angularVector t) i • angularVector t =
       EuclideanSpace.single i 1 := by
@@ -32,15 +19,11 @@ theorem m64Polar_basis_expansion (i : Fin 2) (t : ℝ) :
   fin_cases i <;> fin_cases j <;> simp [angularPoint, angularVector] <;>
     nlinarith [Real.sin_sq_add_cos_sq t]
 
-
-
 theorem m64AngularVector_component_contDiff (i : Fin 2) :
     ContDiff ℝ 1 (fun t => angularVector t i) := by
   fin_cases i
   · simpa [angularVector] using Real.contDiff_sin.neg.of_le (by simp : (1 : WithTop ℕ∞) ≤ ∞)
   · simpa [angularVector] using Real.contDiff_cos.of_le (by simp : (1 : WithTop ℕ∞) ≤ ∞)
-
-
 
 theorem m64AngularVector_component_hasDerivAt (i : Fin 2) (t : ℝ) :
     HasDerivAt (fun s => angularVector s i) (-angularPoint t i) t := by
@@ -50,17 +33,11 @@ theorem m64AngularVector_component_hasDerivAt (i : Fin 2) (t : ℝ) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 def m64DiskRadialFlux (f : LoopPlane → E) (i : Fin 2) (p : ℝ × ℝ) : E :=
   (p.1 * angularPoint p.2 i) • f (p.1 • angularPoint p.2)
 
-
-
 def m64DiskAngularFlux (f : LoopPlane → E) (i : Fin 2) (p : ℝ × ℝ) : E :=
   angularVector p.2 i • f (p.1 • angularPoint p.2)
-
-
 
 theorem m64DiskFlux_contDiff {f : LoopPlane → E} (hf : ContDiff ℝ 1 f) (i : Fin 2) :
     ContDiff ℝ 1 (m64DiskRadialFlux f i) ∧ ContDiff ℝ 1 (m64DiskAngularFlux f i) := by
@@ -70,8 +47,6 @@ theorem m64DiskFlux_contDiff {f : LoopPlane → E} (hf : ContDiff ℝ 1 f) (i : 
     (EuclideanSpace.proj (𝕜 := ℝ) i).contDiff.comp (contDiff_angularPoint.of_le (by simp))
   exact ⟨(contDiff_fst.mul (hc.comp contDiff_snd)).smul (hf.comp hp),
     ((m64AngularVector_component_contDiff i).comp contDiff_snd).smul (hf.comp hp)⟩
-
-
 
 theorem m64DiskFlux_divergence {f : LoopPlane → E} (hf : ContDiff ℝ 1 f)
     (i : Fin 2) (p : ℝ × ℝ) :
@@ -100,8 +75,6 @@ theorem m64DiskFlux_divergence {f : LoopPlane → E} (hf : ContDiff ℝ 1 f)
         (-angularPoint p.2 i) • f (p.1 • angularPoint p.2) := ht1.unique ht0
   rw [hr, ht, map_smul, ← m64Polar_basis_expansion i p.2, map_add, map_smul, map_smul]
   module
-
-
 
 theorem m64DiskAngularFlux_endpoints (f : LoopPlane → E) (i : Fin 2) (r : ℝ) :
     m64DiskAngularFlux f i (r, Real.pi) = m64DiskAngularFlux f i (r, -Real.pi) := by

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianGradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped NNReal
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem periodicGaussianHeat_lipschitz_error_bound
     {L : ℝ} [Fact (0 < L)]

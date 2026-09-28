@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceMetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem normalized_source_metric_exp_upper
     (P : M44CapPersistencePredecessors.{u}) {F : SurgeryFlowData.{u}}
@@ -78,8 +69,6 @@ theorem normalized_source_metric_exp_upper
   have h := (mul_le_mul_iff_right₀ (inv_pos.mpr hQ)).mp hscaled
   simpa only [value, dif_pos hs, dif_pos (show (0 : ℝ) ∈ Icc a 0 from ⟨ha, le_rfl⟩)]
     using h
-
-
 
 theorem finite_source_metric_exp_upper
     (P : M44CapPersistencePredecessors.{u}) {F : SurgeryFlowData.{u}}

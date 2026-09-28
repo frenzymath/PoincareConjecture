@@ -1,10 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +17,6 @@ variable {g₀ : StandardInitialMetric}
     {S S' : GeneralizedSliceCarrier.{u}}
     {g : RiemannianMetric 3 S.carrier}
     {g' : RiemannianMetric 3 S'.carrier} {h : ℝ}
-
-
 
 noncomputable def transport
     (C : SurgeryCapChart g₀ S g h)
@@ -96,7 +90,6 @@ noncomputable def transport
       exact hd
   }
 
-
 @[simp] theorem transport_carrier
     (C : SurgeryCapChart g₀ S g h)
     (q : Diffeomorph (𝓡 3) (𝓡 3) S.carrier S'.carrier ∞)
@@ -104,7 +97,6 @@ noncomputable def transport
       (mfderiv (𝓡 3) (𝓡 3) q x v)
       (mfderiv (𝓡 3) (𝓡 3) q x w) = g.inner x v w) :
     (C.transport q hq).carrier = q '' C.carrier := rfl
-
 
 @[simp] theorem transport_map
     (C : SurgeryCapChart g₀ S g h)
@@ -114,7 +106,6 @@ noncomputable def transport
       (mfderiv (𝓡 3) (𝓡 3) q x w) = g.inner x v w)
     (x : StandardCapSpace) :
     (C.transport q hq).map x = q (C.map x) := rfl
-
 
 @[simp] theorem transport_tip
     (C : SurgeryCapChart g₀ S g h)

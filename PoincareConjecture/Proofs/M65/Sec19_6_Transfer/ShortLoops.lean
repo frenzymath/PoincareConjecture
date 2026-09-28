@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.SubarcEnergy
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.EvolvedSmallAnnulus
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ProjectedLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65ShortLoopTransfer (V : M64ThreeDimensionalFlowConclusion F)
     (C : M63FamilyConclusion V.flow.geometry Gamma zeta)

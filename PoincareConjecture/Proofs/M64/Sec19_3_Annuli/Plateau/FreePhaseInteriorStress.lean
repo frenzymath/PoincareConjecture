@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseHarmonicCharts
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceScaleStress
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem auxiliaryCircle_free_phase_stress_cauchyRiemann
     (P : M62.CircleProductData F circumference)

@@ -2,20 +2,12 @@ import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_eventually_lift_contact_norm_le
     {E X : Type*} [NormedAddCommGroup E] [TopologicalSpace X] [T2Space X]
@@ -47,10 +39,6 @@ theorem m64_eventually_lift_contact_norm_le
     have h : ‖F.symm (beta b)‖ < ‖v‖ := hbound ⟨hlb, hbs⟩
     rw [← heq, F.left_inv hws] at h
     exact h.le
-
-
-
-
 
 theorem m64_exists_radial_contact_neighborhood
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ShortSectorTemplates
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,36 +8,26 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def raisedReturnSign (i : Fin 2) : ℝ := ![1, -1] i
-
 
 noncomputable def raisedReturnOther (i : Fin 2) : Fin 2 := Equiv.swap (0 : Fin 2) 1 i
 
-
-
 noncomputable def raisedReturnQ (h t : ℝ) : ℝ :=
   Real.smoothTransition ((t - h) / (1 - 2 * h))
-
 
 noncomputable def raisedReturnR0 (h t : ℝ) : ℝ :=
   1 + h + (2 * h - t) * (1 - Real.smoothTransition ((t - h) / h)) +
     (2 * h - (1 - t)) * (1 - Real.smoothTransition ((1 - t - h) / h))
 
-
 noncomputable def raisedReturnBump (h t : ℝ) : ℝ :=
   Real.smoothTransition (8 * raisedReturnQ h t - 1) *
     Real.smoothTransition (7 - 8 * raisedReturnQ h t)
 
-
 noncomputable def raisedReturnRadius (h t : ℝ) : ℝ :=
   raisedReturnR0 h t + 9 * h * raisedReturnBump h t
 
-
 noncomputable def raisedReturnAngle (h t : ℝ) : ℝ :=
   3 * Real.pi / 4 + (3 * Real.pi / 2) * raisedReturnQ h t
-
 
 noncomputable def raisedReturnPlanarCurve (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
     (h : ℝ) (inner : Fin 2) (t : ℝ) : E2 :=
@@ -59,27 +37,21 @@ noncomputable def raisedReturnPlanarCurve (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
       raisedReturnSign (raisedReturnOther inner) * raisedReturnRadius h t *
         Real.sin (raisedReturnAngle h t))
 
-
-
 noncomputable def raisedReturnPhysicalCurve (kappa : OpenPartialHomeomorph E2 E2)
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (h : ℝ) (inner : Fin 2) (t : ℝ) : E2 :=
   kappa (raisedReturnPlanarCurve J2 h inner t)
 
-
 lemma raisedReturnSign_sq (i : Fin 2) : raisedReturnSign i ^ 2 = 1 := by
   fin_cases i <;> simp [raisedReturnSign]
-
 
 lemma raisedReturnOther_sign (i : Fin 2) :
     raisedReturnSign (raisedReturnOther i) = -raisedReturnSign i := by
   fin_cases i <;> simp [raisedReturnSign, raisedReturnOther]
 
-
 lemma raisedReturnQ_contDiff (h : ℝ) :
     ContDiff ℝ ∞ (raisedReturnQ h) := by
   unfold raisedReturnQ
   exact Real.smoothTransition.contDiff.comp (by fun_prop)
-
 
 lemma raisedReturnR0_contDiff (h : ℝ) :
     ContDiff ℝ ∞ (raisedReturnR0 h) := by
@@ -96,7 +68,6 @@ lemma raisedReturnR0_contDiff (h : ℝ) :
       (hcL.mul (contDiff_const.sub hsL))).add
     (hcR.mul (contDiff_const.sub hsR))
 
-
 lemma raisedReturnBump_contDiff (h : ℝ) :
     ContDiff ℝ ∞ (raisedReturnBump h) := by
   have hq := raisedReturnQ_contDiff h
@@ -111,20 +82,17 @@ lemma raisedReturnBump_contDiff (h : ℝ) :
   unfold raisedReturnBump
   exact hSL.mul hSR
 
-
 lemma raisedReturnRadius_contDiff (h : ℝ) :
     ContDiff ℝ ∞ (raisedReturnRadius h) := by
   unfold raisedReturnRadius
   simpa [smul_eq_mul] using
     (raisedReturnR0_contDiff h).add ((raisedReturnBump_contDiff h).const_smul (9 * h))
 
-
 lemma raisedReturnAngle_contDiff (h : ℝ) :
     ContDiff ℝ ∞ (raisedReturnAngle h) := by
   unfold raisedReturnAngle
   simpa [smul_eq_mul] using
     contDiff_const.add ((raisedReturnQ_contDiff h).const_smul (3 * Real.pi / 2))
-
 
 lemma raisedReturnPlanar_contDiff (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
     (h : ℝ) (inner : Fin 2) :
@@ -148,11 +116,9 @@ lemma raisedReturnPlanar_contDiff (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
   unfold raisedReturnPlanarCurve
   exact (J2.symm.contDiff.comp (hx.prodMk hy))
 
-
 lemma raisedReturnQ_bounds (h t : ℝ) :
     0 ≤ raisedReturnQ h t ∧ raisedReturnQ h t ≤ 1 := by
   exact ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩
-
 
 lemma raisedReturnLeft_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     0 ≤ (2 * h - t) *
@@ -166,7 +132,6 @@ lemma raisedReturnLeft_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     simp only [sub_self, mul_zero]
     exact le_rfl
 
-
 lemma raisedReturnRight_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     0 ≤ (2 * h - (1 - t)) *
       (1 - Real.smoothTransition ((1 - t - h) / h)) := by
@@ -178,8 +143,6 @@ lemma raisedReturnRight_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     rw [Real.smoothTransition.one_of_one_le ha]
     simp only [sub_self, mul_zero]
     exact le_rfl
-
-
 
 lemma raisedReturnLeft_le (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : t ∈ Ioo (-h / 8) (1 + h / 8)) :
@@ -201,8 +164,6 @@ lemma raisedReturnLeft_le (h : ℝ) (hh : 0 < h) (t : ℝ)
     simp only [sub_self, mul_zero]
     positivity
 
-
-
 lemma raisedReturnRight_le (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : t ∈ Ioo (-h / 8) (1 + h / 8)) :
     (2 * h - (1 - t)) *
@@ -222,8 +183,6 @@ lemma raisedReturnRight_le (h : ℝ) (hh : 0 < h) (t : ℝ)
       linarith)]
     simp only [sub_self, mul_zero]
     positivity
-
-
 
 lemma raisedReturnLeft_le_closed (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : t ∈ Icc (0 : ℝ) 1) :
@@ -245,8 +204,6 @@ lemma raisedReturnLeft_le_closed (h : ℝ) (hh : 0 < h) (t : ℝ)
     simp only [sub_self, mul_zero]
     positivity
 
-
-
 lemma raisedReturnRight_le_closed (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : t ∈ Icc (0 : ℝ) 1) :
     (2 * h - (1 - t)) *
@@ -267,7 +224,6 @@ lemma raisedReturnRight_le_closed (h : ℝ) (hh : 0 < h) (t : ℝ)
     simp only [sub_self, mul_zero]
     positivity
 
-
 lemma raisedReturnRadius_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     0 ≤ raisedReturnRadius h t := by
   unfold raisedReturnRadius raisedReturnR0 raisedReturnBump
@@ -284,7 +240,6 @@ lemma raisedReturnRadius_nonneg (h : ℝ) (hh : 0 < h) (t : ℝ) :
     positivity
   nlinarith
 
-
 lemma raisedReturnRadius_lower (h : ℝ) (hh : 0 < h) (t : ℝ) :
     1 + h ≤ raisedReturnRadius h t := by
   unfold raisedReturnRadius raisedReturnR0 raisedReturnBump
@@ -299,7 +254,6 @@ lemma raisedReturnRadius_lower (h : ℝ) (hh : 0 < h) (t : ℝ) :
         Real.smoothTransition (7 - 8 * raisedReturnQ h t)) := by
     positivity
   nlinarith
-
 
 lemma raisedReturnRadius_upper_open (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ)
@@ -324,8 +278,6 @@ lemma raisedReturnRadius_upper_open (h : ℝ) (hh : 0 < h)
       _ ≤ 1 := by simpa only [one_mul] using hb1'
   nlinarith
 
-
-
 lemma raisedReturnLeft_le_middle (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : h ≤ t) :
     (2 * h - t) *
@@ -344,8 +296,6 @@ lemma raisedReturnLeft_le_middle (h : ℝ) (hh : 0 < h) (t : ℝ)
     simp only [sub_self, mul_zero]
     exact hh.le
 
-
-
 lemma raisedReturnRight_le_middle (h : ℝ) (hh : 0 < h) (t : ℝ)
     (ht : t ≤ 1 - h) :
     (2 * h - (1 - t)) *
@@ -363,7 +313,6 @@ lemma raisedReturnRight_le_middle (h : ℝ) (hh : 0 < h) (t : ℝ)
       linarith)]
     simp only [sub_self, mul_zero]
     exact hh.le
-
 
 lemma raisedReturnRadius_upper_closed (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1) :
@@ -475,7 +424,6 @@ lemma raisedReturnRadius_upper_closed (h : ℝ) (hh : 0 < h)
           Real.smoothTransition (7 - 8 * raisedReturnQ h t) by rfl]
       nlinarith [hRm, hbterm]
 
-
 lemma raisedReturnPlanar_norm_eq_radius
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
     (hJ2 : ∀ x : E2, (J2 x).1 ^ 2 + (J2 x).2 ^ 2 = ‖x‖ ^ 2)
@@ -515,7 +463,6 @@ lemma raisedReturnPlanar_norm_eq_radius
             ring
   nlinarith [norm_nonneg (raisedReturnPlanarCurve J2 h inner t)]
 
-
 lemma raisedReturn_q_zero_left (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ) (ht : t ≤ h) :
     raisedReturnQ h t = 0 := by
@@ -525,7 +472,6 @@ lemma raisedReturn_q_zero_left (h : ℝ) (hh : 0 < h)
   apply div_nonpos_iff.mpr
   exact Or.inr ⟨by linarith, hd.le⟩
 
-
 lemma raisedReturn_q_one_right (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ) (ht : 1 - h ≤ t) :
     raisedReturnQ h t = 1 := by
@@ -534,7 +480,6 @@ lemma raisedReturn_q_one_right (h : ℝ) (hh : 0 < h)
   have hd : 0 < 1 - 2 * h := by linarith
   apply (le_div_iff₀ hd).2
   linarith
-
 
 lemma raisedReturn_left_formula (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ) (ht : t ≤ h) :
@@ -559,7 +504,6 @@ lemma raisedReturn_left_formula (h : ℝ) (hh : 0 < h)
   simp [raisedReturnRadius, raisedReturnR0, hsl, hsr, hb]
   ring
 
-
 lemma raisedReturn_right_formula (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (t : ℝ) (ht : 1 - h ≤ t) :
     raisedReturnRadius h t = 1 + 3 * h + t - 1 := by
@@ -583,8 +527,6 @@ lemma raisedReturn_right_formula (h : ℝ) (hh : 0 < h)
   simp [raisedReturnRadius, raisedReturnR0, hsl, hsr, hb]
   ring
 
-
-
 lemma raisedReturn_q_mid (h : ℝ) (hsmall : h < 1 / 1024) :
     raisedReturnQ h (1 / 2) = 1 / 2 := by
   have hhalf : Real.smoothTransition (1 / 2 : ℝ) = 1 / 2 := by
@@ -596,7 +538,6 @@ lemma raisedReturn_q_mid (h : ℝ) (hsmall : h < 1 / 1024) :
   unfold raisedReturnQ
   have hd : 1 - 2 * h ≠ 0 := by linarith
   rw [show ((1 / 2 : ℝ) - h) / (1 - 2 * h) = 1 / 2 by field_simp [hd], hhalf]
-
 
 lemma raisedReturn_mid_formula (h : ℝ) (hh : 0 < h)
     (hsmall : h < 1 / 1024) (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (inner : Fin 2) :
@@ -637,8 +578,6 @@ lemma raisedReturn_mid_formula (h : ℝ) (hh : 0 < h)
   simp only [mul_zero, mul_neg, mul_one]
   rw [raisedReturnOther_sign]
   ring
-
-
 
 lemma raisedReturn_opposite_sector_q
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))
@@ -717,7 +656,6 @@ lemma raisedReturn_opposite_sector_q
     linarith
   exact ⟨hq_low, hq_high⟩
 
-
 lemma raisedReturn_bump_eq_one_of_opposite_sector
     (h : ℝ) (t : ℝ)
     (hq : raisedReturnQ h t ∈ Icc (1 / 3 : ℝ) (2 / 3)) :
@@ -726,8 +664,6 @@ lemma raisedReturn_bump_eq_one_of_opposite_sector
   rw [Real.smoothTransition.one_of_one_le (by linarith [hq.1]),
     Real.smoothTransition.one_of_one_le (by linarith [hq.2])]
   norm_num
-
-
 
 lemma raisedReturn_radius_lower_of_opposite_sector
     (h : ℝ) (hh : 0 < h) (t : ℝ)
@@ -739,6 +675,5 @@ lemma raisedReturn_radius_lower_of_opposite_sector
   unfold raisedReturnRadius raisedReturnR0 at *
   rw [hb]
   nlinarith
-
 
 end PoincareConjecture.M25.Topology3D

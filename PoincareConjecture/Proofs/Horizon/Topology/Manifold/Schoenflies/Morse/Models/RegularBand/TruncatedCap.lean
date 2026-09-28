@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.TruncatedCap.Clock
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.TruncatedCap.HeightAction
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_ambient_truncated_cap_normalization
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

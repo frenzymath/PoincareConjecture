@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.Topology
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +15,6 @@ namespace StrongHorn
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
-
-
 
 theorem ball_subset_of_boundary_distance (horn : StrongHorn E epsilon)
     {x : (E.extended.slice T).carrier} (hx : x ∈ horn.carrier)
@@ -46,8 +37,6 @@ theorem ball_subset_of_boundary_distance (horn : StrongHorn E epsilon)
 end StrongHorn
 
 namespace DeepHorn
-
-
 
 theorem exists_terminal_horn_ball_radius {K B : ℝ} (hK : 0 < K) (hB : 0 < B) :
     ∃ d : ℝ, 0 < d ∧

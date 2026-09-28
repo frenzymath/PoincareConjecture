@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeActionLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,8 +11,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 structure GaugePrimitivePartition (gamma : ℝ → G.Point) (a b : ℝ) where
   count : ℕ
@@ -42,9 +31,6 @@ structure GaugePrimitivePartition (gamma : ℝ → G.Point) (a b : ℝ) where
   primitive : ∀ i s, s ∈ Icc (node i.castSucc) (node i.succ) →
     ((gauge i).lift (gamma s)).2.val = ((gauge i).lift (gamma (node i.castSucc))).2.val +
       ∫ r in node i.castSucc..s, velocity i r
-
-
-
 
 noncomputable def GaugePrimitivePartition.action {gamma : ℝ → G.Point} {a b : ℝ}
     (R : GaugePrimitivePartition gamma a b) : ℝ :=

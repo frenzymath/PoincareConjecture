@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Continuity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Comparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -43,8 +33,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem exists_right_time_upper_support_le_one (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :
     ∃ (b : ℝ → ℝ) (d : ℝ), b τ = K.spatialReducedLengthInfimum p τ ∧
@@ -58,8 +46,6 @@ theorem exists_right_time_upper_support_le_one (K : AncientKappaSolution 2 M)
   obtain ⟨b, hb, hd, hsupport⟩ :=
     K.right_time_upper_support_of_sqrtRegularPath p hτ q S hq0 haction
   exact ⟨b, _, hb, hd, hsupport, stationary_support_derivative_le hτ hcurvature⟩
-
-
 
 theorem spatialReducedLengthInfimum_le_one (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) : K.spatialReducedLengthInfimum p τ ≤ 1 := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem compact_component_neck_cap_models (x : M)
     (hx : IsCompact (connectedComponent x))
@@ -51,10 +39,6 @@ theorem compact_component_neck_cap_models (x : M)
     exact Or.inr ⟨Q, Set.Subset.antisymm
       (Q.connected.subset_connectedComponent (Q.contains_X mem_connectedComponent))
       Q.contains_X⟩
-
-
-
-
 
 theorem whole_canonical_component_models
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u}) (t : ℝ)

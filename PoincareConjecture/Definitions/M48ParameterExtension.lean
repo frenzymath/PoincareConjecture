@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.CanonicalInduction
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -57,8 +48,6 @@ variable {K : MetricSurgeryConstants}
 
 theorem nextPrefix_deltaNext_le_last : R.deltaNext ≤ p.Delta (Fin.last p.i) :=
   R.delta_le_cutoff.trans (Q.cutoff_bounds R.rNext R.r_pos R.r_le_last).2
-
-
 
 noncomputable def nextPrefix : SurgeryParameterPrefix K where
   setup := p.setup

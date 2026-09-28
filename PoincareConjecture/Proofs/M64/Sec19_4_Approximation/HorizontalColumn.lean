@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorVerticalC
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzDerivative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64_horizontal_column_of_metric_lipschitz
     (g : RiemannianMetric n M) {f : LoopPlane → M}
@@ -76,10 +60,6 @@ theorem m64_horizontal_column_of_metric_lipschitz
       (EuclideanSpace.basisFun (Fin 2) ℝ 0)‖ ≤ 2 * L
   exact hb
 
-
-
-
-
 theorem m64_horizontal_column_ae_of_metric_lipschitz
     (g : RiemannianMetric n M) {f : LoopPlane → M}
     {L : ℝ} (hL : 0 ≤ L)
@@ -94,11 +74,6 @@ theorem m64_horizontal_column_ae_of_metric_lipschitz
   filter_upwards [m64AnnulusDomain_ae_eq_interior] with z hz
   intro hzdom
   exact m64_horizontal_column_of_metric_lipschitz g hL hLip (hz.mp hzdom)
-
-
-
-
-
 
 theorem m64AnnulusIntegral_le_of_metric_lipschitz_and_ae_vertical
     (g : RiemannianMetric n M) {f : LoopPlane → M}

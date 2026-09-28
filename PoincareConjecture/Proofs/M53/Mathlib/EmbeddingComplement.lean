@@ -3,16 +3,6 @@ import Mathlib.Topology.Algebra.Module.PerfectSpace
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -29,9 +19,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M N : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [TopologicalSpace N] [ChartedSpace E' N]
   {n : ℕ∞ω} {f : M → N} {x : M}
-
-
-
 
 theorem IsImmersionAtOfComplement.not_mem_interior_range [Nontrivial F]
     (h : IsImmersionAtOfComplement F 𝓘(𝕜, E) 𝓘(𝕜, E') n f x)
@@ -56,9 +43,6 @@ theorem IsImmersionAtOfComplement.not_mem_interior_range [Nontrivial F]
   rw [hsingle] at hopen
   exact not_isOpen_singleton (0 : F) hopen
 
-
-
-
 theorem IsSmoothEmbedding.interior_range_eq_empty
     [FiniteDimensional 𝕜 E] [FiniteDimensional 𝕜 E']
     (hf : IsSmoothEmbedding 𝓘(𝕜, E) 𝓘(𝕜, E') n f)
@@ -80,8 +64,6 @@ theorem IsSmoothEmbedding.interior_range_eq_empty
   rw [Module.finrank_prod] at hsum
   have : Nontrivial F := (Module.finrank_pos_iff (R := 𝕜)).mp (by omega)
   exact h.not_mem_interior_range hf.isEmbedding hy
-
-
 
 theorem IsSmoothEmbedding.dense_compl_range
     [FiniteDimensional 𝕜 E] [FiniteDimensional 𝕜 E']

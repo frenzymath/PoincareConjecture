@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointFromCollar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +7,6 @@ open Set
 namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E V : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem joint_cylinder_whole_surface
     {B : Set V} {Q : Set E} {S : Set (E × ℝ)} {r tau epsilon : ℝ}

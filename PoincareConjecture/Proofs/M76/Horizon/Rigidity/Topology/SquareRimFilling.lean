@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.SquareRimCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 open scoped unitInterval
@@ -21,7 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
 
 theorem squareRimLoop_fibers (s t : unitInterval)
     (h : squareRimLoop s = squareRimLoop t) :
@@ -43,7 +31,6 @@ theorem squareRimLoop_fibers (s t : unitInterval)
         Subtype.ext (by change (t : ℝ) = 1; linarith)⟩)
     | exact Or.inr (Or.inr ⟨Subtype.ext (by change (s : ℝ) = 1; linarith),
         Subtype.ext (by change (t : ℝ) = 0; linarith)⟩)
-
 
 theorem surjective_squareRimLoop : Function.Surjective squareRimLoop := by
   intro x
@@ -114,13 +101,10 @@ theorem surjective_squareRimLoop : Function.Surjective squareRimLoop := by
       fin_cases i <;> simp [t, h]
       all_goals ring
 
-
 theorem isQuotientMap_squareRimLoop : Topology.IsQuotientMap squareRimLoop :=
   .of_surjective_continuous surjective_squareRimLoop squareRimLoop.continuous
 
 variable {Y : Type*} [TopologicalSpace Y]
-
-
 
 theorem exists_squareRimMap {y : Y} (p : Path y y) :
     ∃ gamma : C(Q, Y), ∀ t : unitInterval, gamma (squareRimLoop t) = p t := by
@@ -134,8 +118,6 @@ theorem exists_squareRimMap {y : Y} (p : Path y y) :
   intro t
   exact congrArg (fun f : C(unitInterval, Y) => f t)
     (isQuotientMap_squareRimLoop.lift_comp p.toContinuousMap hfactor)
-
-
 
 theorem nullhomotopic_of_squareRimLoop (gamma : C(Q, Y))
     (h : (squareRimLoop.map gamma.continuous).Homotopic
@@ -165,9 +147,6 @@ theorem nullhomotopic_of_squareRimLoop (gamma : C(Q, Y))
   · intro x
     obtain ⟨s, rfl⟩ := surjective_squareRimLoop x
     exact (hL s 1).trans (H.toHomotopy.apply_one s)
-
-
-
 
 theorem injective_or_exists_squareRim_filling
     {Z : Type*} [TopologicalSpace Z] (i : C(Y, Z)) (y : Y) :

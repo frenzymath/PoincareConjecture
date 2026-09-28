@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem CapCertificate.subset_core_of_avoids_boundary
     (C : CapCertificate g) {V : Set M}
@@ -59,8 +47,6 @@ theorem CapCertificate.subset_core_of_avoids_boundary
     have hclosure : closure V ⊆ C.coreᶜ := closure_minimal hcomp hopen.isClosed_compl
     obtain ⟨x, hxclosure, hxcore⟩ := hmeet
     exact (hclosure hxclosure hxcore).elim
-
-
 
 theorem CappedTubeCertificate.exists_boundary_point_of_core_contact
     (K : CappedTubeCertificate g) (C : CapCertificate g)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.StandardSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,7 +14,6 @@ namespace PoincareConjecture.M28
 open Proofs.M28.NeckLengthComparison
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem standardSphereMetric_tangentNorm_eq_norm (q : UnitTwoSphere)
     (v : EuclideanSpace ℝ (Fin 2)) :
@@ -41,7 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem coordinate_sphere_pathELength_le (N : EpsilonNeck g)
     {γ : ℝ → UnitTwoSphere} (hγ : ContMDiff 𝓘(ℝ, ℝ) (𝓡 2) 1 γ)
@@ -78,9 +66,6 @@ theorem coordinate_sphere_pathELength_le (N : EpsilonNeck g)
     (congrArg (fun r : ℝ => 4 * N.scale * r) hnorm.symm)
   exact (ENNReal.ofReal_le_ofReal hspeed').trans_eq
     (ENNReal.ofReal_mul (mul_nonneg (by norm_num) N.scale_pos.le))
-
-
-
 
 theorem exists_central_sphere_shortcut (N : EpsilonNeck g) {x y : M}
     (hx : x ∈ N.central_sphere) (hy : y ∈ N.central_sphere) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.Orientation.
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.MarkedRims
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.WholeCircleAdjustments
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
 
 noncomputable def annulusRimCylinder : C(I × Circle, Ann) where
   toFun z := ⟨annulusMap 8 (by norm_num) (z.2, 2 * (z.1 : ℝ) - 1),
@@ -44,7 +34,6 @@ noncomputable def annulusRimCylinder : C(I × Circle, Ann) where
     annulusMap 8 (by norm_num) (z, 1)
   norm_num
 
-
 noncomputable def annulus_radial_rim_homotopy
     {X : Type*} [TopologicalSpace X] (c : C(Ann, X)) (radial : C(X, Circle))
     (q : Bool → C(Circle, Circle))
@@ -54,7 +43,6 @@ noncomputable def annulus_radial_rim_homotopy
   continuous_toFun := radial.continuous.comp (c.continuous.comp annulusRimCylinder.continuous)
   map_zero_left z := by rw [annulusRimCylinder_zero, hrims]
   map_one_left z := by rw [annulusRimCylinder_one, hrims]
-
 
 noncomputable def inverse_rim_homotopy
     (q : Bool → Circle ≃ₜ Circle)
@@ -90,8 +78,6 @@ variable (L : Submodule ℤ V2) {α : Type*}
     TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe
       (chartShell L retained) (chartShell_nonempty L retained)) S f r C)
 
-
-
 noncomputable def stage_annulus_rim_reparametrization_homotopy
     (hS : S.space = source)
     (hvalues : ∀ x ∈ sphere (0 : V1) 1 ×ˢ Q2, (f x : V3) = h (coordinates x))
@@ -111,8 +97,6 @@ noncomputable def stage_annulus_rim_reparametrization_homotopy
   map_one_left u := by
     rw [cylinder_one, hrims true]
     exact stage_radial_rim L retained st hS hvalues true (q true u)
-
-
 
 noncomputable def stage_annulus_period_reparametrization_homotopy
     (hS : S.space = source)
@@ -140,8 +124,6 @@ noncomputable def stage_annulus_period_reparametrization_homotopy
 
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 
-
-
 noncomputable def stage_square_annulus_rim_homotopy
     (hS : S.space = source)
     (hvalues : ∀ x ∈ sphere (0 : V1) 1 ×ˢ Q2, (f x : V3) = h (coordinates x))
@@ -161,8 +143,6 @@ noncomputable def stage_square_annulus_rim_homotopy
     (c (annulusRimPoint b z)))) = q b z
   rw [hrims, stage_radial_rim L retained st hS hvalues]
   exact j.symm_apply_apply _
-
-
 
 noncomputable def stage_square_annulus_correction_homotopy
     (hS : S.space = source)

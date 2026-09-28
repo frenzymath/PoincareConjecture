@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,18 +12,12 @@ namespace Real
 
 variable {f : ℝ → ℝ} {L l m u U b : ℝ}
 
-
-
-
 theorem tendsto_positiveRadialPrimitive_anchor (hLl : L < l) (hmu : m < u)
     (huU : u < U) (hlb : l < b) (hf : ContDiffOn ℝ ∞ f (Ioo L U)) :
     Tendsto (positiveRadialPrimitive f l m u b) (𝓝[>] l) (𝓝 (f l)) := by
   have hc := ((contDiffOn_positiveRadialPrimitive hmu huU hf ⟨hLl, hlb⟩).contDiffAt
     (isOpen_Ioo.mem_nhds ⟨hLl, hlb⟩)).continuousAt
   simpa only [positiveRadialPrimitive_apply_anchor] using hc.tendsto.mono_left nhdsWithin_le_nhds
-
-
-
 
 theorem tendsto_positiveRadialPrimitive_atTop (hLl : L < l) (hlm : l < m)
     (hmu : m < u) (huU : u < U) (hub : u < b)
@@ -59,9 +42,6 @@ theorem tendsto_positiveRadialPrimitive_atTop (hLl : L < l) (hlm : l < m)
   rw [positiveRadialPrimitive_upper_formula hLl hlm hmu huU hub hf ⟨hus.le, hsb⟩]
   simp only [Pi.inv_apply]
   ring
-
-
-
 
 theorem image_positiveRadialPrimitive_Ioo (hLl : L < l) (hlm : l < m)
     (hmu : m < u) (huU : u < U) (hub : u < b)
@@ -92,11 +72,6 @@ theorem image_positiveRadialPrimitive_Ioo (hLl : L < l) (hlm : l < m)
       exact ⟨hy, hyv⟩
     obtain ⟨s, hs, hsy⟩ := intermediate_value_Ioo hlv.le hcont' hy'
     exact ⟨s, ⟨hs.1, hs.2.trans hvb⟩, hsy⟩
-
-
-
-
-
 
 theorem exists_positive_radial_extension (hLl : L < l) (hlm : l < m)
     (hmu : m < u) (huU : u < U) (hub : u < b)
@@ -152,9 +127,6 @@ namespace OpenPartialHomeomorph
 
 variable (rho : OpenPartialHomeomorph ℝ ℝ) {f : ℝ → ℝ} {l m b v : ℝ}
 
-
-
-
 theorem image_Ioo_and_symm_of_eqOn_Icc (hlm : l ≤ m)
     (hsub : Ioo l m ⊆ rho.source) (hcont : ContinuousOn rho (Icc l m))
     (hmono : StrictMonoOn rho (Icc l m)) (heq : EqOn (rho : ℝ → ℝ) f (Icc l m)) :
@@ -168,10 +140,6 @@ theorem image_Ioo_and_symm_of_eqOn_Icc (hlm : l ≤ m)
   have hi : rho.symm y = s := by rw [← hsy, rho.left_inv (hsub hs)]
   rw [hi]
   exact ⟨hs, (heq ⟨hs.1.le, hs.2.le⟩).symm.trans hsy⟩
-
-
-
-
 
 theorem exists_smooth_radial_restriction
     (hsource : rho.source = Ioo l b) (htarget : rho.target = Ioi (rho l))

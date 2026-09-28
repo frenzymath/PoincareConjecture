@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing.ExponentialChord
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.GeodesicGrowth
-
-
-
-
-
-
-

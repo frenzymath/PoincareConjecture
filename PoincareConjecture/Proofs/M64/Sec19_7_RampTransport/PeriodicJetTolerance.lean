@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -20,9 +8,6 @@ open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M64.RampTransport
-
-
-
 
 theorem exists_periodic_jet_scalar_tolerance
     {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W]

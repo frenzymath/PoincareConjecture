@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanGraphRellichNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric
@@ -19,10 +9,6 @@ open scoped Topology SchwartzMap LineDeriv InnerProductSpace
 namespace PoincareConjecture.EuclideanGraphRellichNative
 
 open EuclideanTranslationNative DeTurckDomainRegularityNative
-
-
-
-
 
 theorem weakPair_mem_closure_derivativeGraphSet {n : ℕ}
     (u : ScalarL2 n) (d : Fin n → ScalarL2 n)
@@ -47,10 +33,6 @@ theorem weakPair_mem_closure_derivativeGraphSet {n : ℕ}
   have hlim : Tendsto graph atTop (𝓝 (u, d)) :=
     hvalue.prodMk_nhds (tendsto_pi_nhds.mpr hderiv)
   exact mem_closure_of_tendsto hlim (Eventually.of_forall hmem)
-
-
-
-
 
 theorem totallyBounded_of_supported_weakDerivatives {n : ℕ}
     {K : Set (EuclideanSpace ℝ (Fin n))} (hK : IsCompact K)

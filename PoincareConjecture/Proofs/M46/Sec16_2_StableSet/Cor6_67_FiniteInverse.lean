@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SliceInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +7,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem finite_inverse_fiber_capture
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

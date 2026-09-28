@@ -1,20 +1,8 @@
 import PoincareConjecture.Proofs.M34.Mathlib.BoundaryEnergyDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem le_geometric_exp_of_bounded_boundary_energy
     {E : ℕ → ℝ → ℝ} {a b C M : ℝ} (hC : 0 ≤ C)

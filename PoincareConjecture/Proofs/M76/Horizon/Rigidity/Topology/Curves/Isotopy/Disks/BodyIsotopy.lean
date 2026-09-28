@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Disks.AlexanderTrack
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeAlexanderIsotopy
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

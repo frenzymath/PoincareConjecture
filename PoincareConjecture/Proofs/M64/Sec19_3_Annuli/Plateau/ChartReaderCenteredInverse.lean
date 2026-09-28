@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ChartReadable_centered_inverse {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

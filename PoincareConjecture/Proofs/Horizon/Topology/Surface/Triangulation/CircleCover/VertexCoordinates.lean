@@ -1,16 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.CrossingPatches
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -73,8 +61,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 theorem exists_chartCircle_vertex_coordinates [IsManifold (𝓡 2) ∞ M]
     (x : M) {r : ℝ} (hr : 0 < r)
     (hsub : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
@@ -130,8 +116,6 @@ theorem exists_chartCircle_vertex_coordinates [IsManifold (𝓡 2) ∞ M]
     rw [mem_chartCircle_iff_norm_sq x hr hsub (C.map_source hz).1]
     rw [← hcoords z hz, sub_eq_zero]
 
-
-
 structure ChartCircleVertexPatch (x : M) (r : ℝ) (p : M) where
   coordinates : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M
   width : ℝ
@@ -151,9 +135,7 @@ namespace ChartCircleVertexPatch
 
 variable {x p : M} {r : ℝ} (P : ChartCircleVertexPatch x r p)
 
-
 def openCarrier : Set M := P.coordinates '' crossingOpenRectangle 0 0 P.width
-
 
 def carrier : Set M := P.coordinates '' crossingClosedRectangle 0 0 P.width
 
@@ -194,8 +176,6 @@ theorem isCompact_closure_openCarrier : IsCompact (closure P.openCarrier) := by
   exact P.isCompact_carrier
 
 end ChartCircleVertexPatch
-
-
 
 theorem exists_chartCircle_vertex_patch [IsManifold (𝓡 2) ∞ M]
     (x : M) {r : ℝ} (hr : 0 < r)

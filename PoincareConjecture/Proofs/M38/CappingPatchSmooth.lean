@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem singletonPartialSubtype_smooth {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -59,8 +49,6 @@ variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
   [Nonempty (F.slice T).carrier] {i : Fin (F.event T hT).cap_count}
   (P : EventCapCoordinates F T hT i)
 
-
-
 theorem attachmentChart_symm_apply {y : eventDiscardedOpen F T hT}
     (hy : y ∈ P.attachmentChart.target) :
     (P.attachmentChart.symm y).val = capAttachVector (P.collarInverse y.val) := by
@@ -69,8 +57,6 @@ theorem attachmentChart_symm_apply {y : eventDiscardedOpen F T hT}
     OpenPartialHomeomorph.subtypeRestr_source, OpenPartialHomeomorph.symm_source,
     Set.mem_preimage] at hy
   exact P.annularChart.subtypeRestr_symm_apply capDoubleBall_nonempty hy
-
-
 
 theorem attachmentChart_smooth :
     letI : Nonempty capDoubleBall := capDoubleBall_nonempty

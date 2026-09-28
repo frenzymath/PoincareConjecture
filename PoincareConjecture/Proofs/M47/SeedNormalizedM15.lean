@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedNormalizedAccess
 import PoincareConjecture.Proofs.M47.SeedNormalizedFlow
 import PoincareConjecture.Proofs.M47.SeedM15Ordinary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seedM15_normalized_history_volume
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

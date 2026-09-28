@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyGrowthPower
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,8 +7,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
 
 theorem m64Morrey_power_of_scaled_initial_bound
     {E : ℝ → ℝ} {R q K beta : ℝ} (hR : 0 < R) (hq : 0 < q)

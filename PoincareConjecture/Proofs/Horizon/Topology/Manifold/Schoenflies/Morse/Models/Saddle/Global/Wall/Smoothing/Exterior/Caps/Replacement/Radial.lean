@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.RadialGraph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Body
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Smoothing.Exterior.Caps
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_radial_sphere_isotopy_with_annular_formula
     (a : S2 → Real) (ha : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ a) (δ : Real) :
@@ -107,8 +103,6 @@ theorem exists_radial_sphere_extension_with_annular_formula
   intro s hs p
   simpa only [one_mul, Real.exp_add, Real.exp_log (hpos p), smul_smul] using
     hmotion 1 (by simp) s hs p
-
-
 
 theorem exists_boundedCylinder_ambient_with_annular_formula (v : E3)
     {δ : Real} (hδ : 0 ≤ δ) :

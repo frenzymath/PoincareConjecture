@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.PathSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,51 +9,33 @@ namespace ContinuousMap
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
 def intervalSubpath (p : C(unitInterval, X)) (a b : unitInterval) : C(unitInterval, X) :=
   p.comp (Path.parameterSegment a b).toContinuousMap
 
-
-
 @[simp] theorem intervalSubpath_apply (p : C(unitInterval, X)) (a b t : unitInterval) :
     p.intervalSubpath a b t = p (Icc.convexComb a b t) := rfl
-
-
 
 @[simp] theorem intervalSubpath_zero_one (p : C(unitInterval, X)) :
     p.intervalSubpath 0 1 = p := by
   ext t
   simp
 
-
-
 @[simp] theorem intervalSubpath_self (p : C(unitInterval, X)) (a : unitInterval) :
     p.intervalSubpath a a = .const _ (p a) := by
   ext t
   simp
 
-
-
 def horizontalPath (H : C(unitInterval × unitInterval, X)) (t : unitInterval) :
     C(unitInterval, X) := H.comp ⟨fun s => (s, t), by fun_prop⟩
-
-
 
 def verticalPath (H : C(unitInterval × unitInterval, X)) (s : unitInterval) :
     C(unitInterval, X) := H.comp ⟨fun t => (s, t), by fun_prop⟩
 
-
-
 @[simp] theorem horizontalPath_apply (H : C(unitInterval × unitInterval, X))
     (s t : unitInterval) : H.horizontalPath t s = H (s, t) := rfl
 
-
-
 @[simp] theorem verticalPath_apply (H : C(unitInterval × unitInterval, X))
     (s t : unitInterval) : H.verticalPath s t = H (s, t) := rfl
-
-
 
 def rectangleRestrict (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) : C(unitInterval × unitInterval, X) :=
@@ -70,14 +43,10 @@ def rectangleRestrict (H : C(unitInterval × unitInterval, X))
     ((Icc.continuous_convexComb a b).comp continuous_fst).prodMk
       ((Icc.continuous_convexComb c d).comp continuous_snd)⟩
 
-
-
 @[simp] theorem rectangleRestrict_apply (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) (z : unitInterval × unitInterval) :
     H.rectangleRestrict a b c d z =
       H (Icc.convexComb a b z.1, Icc.convexComb c d z.2) := rfl
-
-
 
 @[simp] theorem rectangleRestrict_bottom (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) :
@@ -86,8 +55,6 @@ def rectangleRestrict (H : C(unitInterval × unitInterval, X))
   ext t
   simp
 
-
-
 @[simp] theorem rectangleRestrict_top (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) :
     (H.rectangleRestrict a b c d).horizontalPath 1 =
@@ -95,16 +62,12 @@ def rectangleRestrict (H : C(unitInterval × unitInterval, X))
   ext t
   simp
 
-
-
 @[simp] theorem rectangleRestrict_left (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) :
     (H.rectangleRestrict a b c d).verticalPath 0 =
       (H.verticalPath a).intervalSubpath c d := by
   ext t
   simp
-
-
 
 @[simp] theorem rectangleRestrict_right (H : C(unitInterval × unitInterval, X))
     (a b c d : unitInterval) :
@@ -115,18 +78,12 @@ def rectangleRestrict (H : C(unitInterval × unitInterval, X))
 
 end ContinuousMap
 
-
-
-
 structure LocalPathTransport {X ι : Type*} [TopologicalSpace X]
     (U : ι → Set X) (G : Type*) [Monoid G] where
 
-
   value : C(unitInterval, X) → G
 
-
   map_const : ∀ x, value (.const _ x) = 1
-
 
   square : ∀ (H : C(unitInterval × unitInterval, X)) (i : ι),
     (∀ z, H z ∈ U i) →
@@ -144,8 +101,6 @@ private theorem convexComb_mem {a b x y : unitInterval}
   · exact ⟨hx.1.trans (Icc.le_convexComb h t), (Icc.convexComb_le h t).trans hy.2⟩
   · rw [← Icc.convexComb_symm y x]
     exact ⟨hy.1.trans (Icc.le_convexComb h _), (Icc.convexComb_le h _).trans hx.2⟩
-
-
 
 theorem interval_mul (L : LocalPathTransport U G) (p : C(unitInterval, X))
     {a b c : unitInterval} (hab : a ≤ b) (hbc : b ≤ c) (i : ι)

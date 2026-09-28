@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.OriginalEdgeHomotopies
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.EdgeCarrierPasting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

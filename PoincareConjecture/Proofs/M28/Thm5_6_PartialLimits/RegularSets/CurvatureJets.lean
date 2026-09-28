@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NormalCove
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ universe u
 namespace PoincareConjecture.M28
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem eventually_regular_normalCover_jet_bound_of_curvature
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

@@ -6,24 +6,6 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Add
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +15,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem box_scalarLaplacian_pullback (F : GeneralizedRicciFlowData.{u})
     (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval)
@@ -48,9 +27,6 @@ theorem box_scalarLaplacian_pullback (F : GeneralizedRicciFlowData.{u})
     isOpen_univ ((F.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => by simpa only [one_mul] using ((F.box b).metric_pullback t ht y v w).symm)
     (mem_univ x)
-
-
-
 
 theorem box_scalarEvolution_pullback (F : GeneralizedRicciFlowData.{u})
     (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval)
@@ -66,9 +42,6 @@ theorem box_scalarEvolution_pullback (F : GeneralizedRicciFlowData.{u})
     (fun y _ v w => ((F.box b).metric_pullback t ht y v w).symm) (mem_univ x)
   rw [box_scalarLaplacian_pullback F b t ht x, hric]
 
-
-
-
 noncomputable def normalizedCylinderScalar
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
     {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
@@ -78,10 +51,6 @@ noncomputable def normalizedCylinderScalar
 
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
-
 
 theorem normalizedCylinderScalar_hasDerivWithinAt
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -120,9 +89,6 @@ theorem normalizedCylinderScalar_hasDerivWithinAt
   simp only [div_eq_mul_inv, one_mul]
   ring
 
-
-
-
 theorem normalizedCylinderScalar_derivative_ge_half_sq
     (hM04 : RicciFlowCurvatureTheory.{u})
     (e : GeneralizedFlowCylinder F C origin scale I U)
@@ -141,9 +107,6 @@ theorem normalizedCylinderScalar_derivative_ge_half_sq
   have hdiv := div_le_div_of_nonneg_right hsign (sq_nonneg scale)
   simpa only [normalizedCylinderScalar, dif_pos hs, GeneralizedRicciFlowData.scalar,
     GeneralizedFlowCylinder.pointMap, div_pow, div_right_comm] using hdiv
-
-
-
 
 theorem exists_strongNeck_normalizedCylinderScalar_derivative
     (hM04 : RicciFlowCurvatureTheory.{u}) :

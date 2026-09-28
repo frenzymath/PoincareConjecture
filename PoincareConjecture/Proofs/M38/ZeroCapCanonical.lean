@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RefinedZeroCapReconstruction
 import PoincareConjecture.Proofs.M38.UnattachedAssembly
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem canonical_zero_cap_reconstruction
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u})

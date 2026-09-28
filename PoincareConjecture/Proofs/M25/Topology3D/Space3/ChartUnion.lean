@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 variable (e f : OpenPartialHomeomorph X Y)
 variable (h : EqOn e f (e.source ∩ f.source))
 variable (hi : EqOn e.symm f.symm (e.target ∩ f.target))
-
-
 
 noncomputable def glueOpenCharts : OpenPartialHomeomorph X Y := by
   classical
@@ -80,20 +67,16 @@ noncomputable def glueOpenCharts : OpenPartialHomeomorph X Y := by
     continuousOn_invFun := (e.continuousOn_symm.congr hGe).union_of_isOpen
       (f.continuousOn_symm.congr hGf) e.open_target f.open_target }
 
-
 @[simp] theorem glueOpenCharts_source :
     (glueOpenCharts e f h hi).source = e.source ∪ f.source := rfl
 
-
 @[simp] theorem glueOpenCharts_target :
     (glueOpenCharts e f h hi).target = e.target ∪ f.target := rfl
-
 
 theorem glueOpenCharts_eqOn_left : EqOn (glueOpenCharts e f h hi) e e.source := by
   classical
   intro x hx
   exact piecewise_eq_of_mem e.source e f hx
-
 
 theorem glueOpenCharts_eqOn_right : EqOn (glueOpenCharts e f h hi) f f.source := by
   classical
@@ -104,13 +87,11 @@ theorem glueOpenCharts_eqOn_right : EqOn (glueOpenCharts e f h hi) f f.source :=
     exact h ⟨he, hx⟩
   · exact piecewise_eq_of_notMem e.source e f he
 
-
 theorem glueOpenCharts_symm_eqOn_left :
     EqOn (glueOpenCharts e f h hi).symm e.symm e.target := by
   classical
   intro y hy
   exact piecewise_eq_of_mem e.target e.symm f.symm hy
-
 
 theorem glueOpenCharts_symm_eqOn_right :
     EqOn (glueOpenCharts e f h hi).symm f.symm f.target := by
@@ -133,14 +114,11 @@ variable {n : WithTop ℕ∞} (e f : OpenPartialHomeomorph E F)
 variable (h : EqOn e f (e.source ∩ f.source))
 variable (hi : EqOn e.symm f.symm (e.target ∩ f.target))
 
-
-
 theorem glueOpenCharts_contDiffOn
     (he : ContDiffOn 𝕜 n e e.source) (hf : ContDiffOn 𝕜 n f f.source) :
     ContDiffOn 𝕜 n (glueOpenCharts e f h hi) (e.source ∪ f.source) :=
   (he.congr (glueOpenCharts_eqOn_left e f h hi)).union_of_isOpen
     (hf.congr (glueOpenCharts_eqOn_right e f h hi)) e.open_source f.open_source
-
 
 theorem glueOpenCharts_symm_contDiffOn
     (he : ContDiffOn 𝕜 n e.symm e.target) (hf : ContDiffOn 𝕜 n f.symm f.target) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Statements.M13BackwardEndpoints
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.PathLengthAnchors
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckRegion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_source_minimizer_anchors_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

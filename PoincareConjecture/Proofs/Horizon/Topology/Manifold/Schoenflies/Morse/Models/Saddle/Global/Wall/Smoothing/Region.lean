@@ -2,14 +2,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 
 variable (h : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Real ∞)
     (x : Real → Real)
-
 
 def cornerShear (hx : ContDiff Real ∞ x) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
@@ -68,7 +59,6 @@ theorem cornerShear_symm_apply (p : E3) :
   rw [cornerShear_apply]
   simp
 
-
 @[simp] theorem cornerShear_two (p : E3) : cornerShear h x hx p 2 = p 2 := by
   rw [cornerShear_apply]
   simp
@@ -88,9 +78,7 @@ theorem cornerShear_symm_apply (p : E3) :
   rw [cornerShear_symm_apply]
   simp
 
-
 def roundedRegion : Set E3 := {p | p 0 ≤ x (h.symm (p 2 - (p 1)^2))}
-
 
 def roundedGraph : Set E3 := {p | p 0 = x (h.symm (p 2 - (p 1)^2))}
 
@@ -115,7 +103,6 @@ theorem frontier_halfspace :
   change frontier (L ⁻¹' Iic 0) = L ⁻¹' {0}
   simpa only [frontier_Iic] using
     (hopen.preimage_frontier_eq_frontier_preimage L.continuous (Iic 0)).symm
-
 
 theorem frontier_roundedRegion (hx : ContDiff Real ∞ x) :
     frontier (roundedRegion h x) = roundedGraph h x := by

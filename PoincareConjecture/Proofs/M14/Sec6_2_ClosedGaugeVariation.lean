@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_ClosedGaugeFamily
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareVariationRestriction
 import PoincareConjecture.Proofs.M08.SquareVariationConstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (R : M14SquareRootPath G p) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
 
 theorem exists_supportedGauge_radius_closed {U : Set G.Point}
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -66,8 +55,6 @@ theorem exists_supportedGauge_radius_closed {U : Set G.Point}
   have hz : (s, v) ∈ Ω ∩ (K ×ˢ univ) := ⟨hKr ⟨hs, hv⟩, hs, mem_univ v⟩
   rw [← heq] at hz
   exact hz.1
-
-
 
 theorem exists_supportedGauge_variation_closed (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {U : Set G.Point} (hU : IsOpen U)

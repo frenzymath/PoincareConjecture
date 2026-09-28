@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +12,6 @@ variable {𝕜 P F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup P] [NormedSpace 𝕜 P]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   {S : Set 𝕜} {U : Set P} {q : 𝕜 × P → F} {m k : ℕ∞ω}
-
-
-
 
 theorem ContDiffOn.contDiffOn_derivWithin_fst_param (hq : ContDiffOn 𝕜 m q (S ×ˢ U))
     (hS : UniqueDiffOn 𝕜 S) (hU : UniqueDiffOn 𝕜 U) (hkm : k + 1 ≤ m) :
@@ -38,9 +26,6 @@ theorem ContDiffOn.contDiffOn_derivWithin_fst_param (hq : ContDiffOn 𝕜 m q (S
   funext z
   simp only [Function.comp_def, mfderivWithin_eq_fderivWithin, derivWithin]
   rfl
-
-
-
 
 theorem ContDiffOn.exists_uniform_derivWithin_bound_fst
     (hq : ContDiffOn 𝕜 ∞ q (S ×ˢ U)) (hS : UniqueDiffOn 𝕜 S)

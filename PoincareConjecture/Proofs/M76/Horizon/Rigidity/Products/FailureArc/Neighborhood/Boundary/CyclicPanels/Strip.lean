@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearChain
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeFlux
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,9 +13,6 @@ namespace PoincareConjecture.M64BoundaryCone
 open M65Interior
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
-
-
-
 
 theorem coneAngularFlux_AC [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
     {v d : ℝ → C} {v0 : C}
@@ -50,10 +34,6 @@ theorem coneAngularFlux_AC [CompleteSpace C] [ProperSpace C] {g : C → ℝ}
     contDiff_const.add ((Proofs.M58.contDiff_angularPoint.of_le (by simp)).const_smul s)
   exact (hτ.contDiffOn.absolutelyContinuousOnInterval.fun_mul hcone).fun_mul
     (ht.comp hp).contDiffOn.absolutelyContinuousOnInterval
-
-
-
-
 
 theorem coneRadialFlux_integral_deriv {g : C → ℝ}
     (v : ℝ → C) {v0 : C}

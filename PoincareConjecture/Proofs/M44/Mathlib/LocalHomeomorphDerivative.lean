@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare
-
-
-
 
 theorem isLocalHomeomorph_of_mfderiv_bijective
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

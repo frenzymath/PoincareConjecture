@@ -4,35 +4,12 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Order.Filter.AtTopBot.Archimedean
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace Poincare.AncientVolume
-
 
 theorem exists_curvature_controlled_point
     {X : Type*} [PseudoMetricSpace X]
@@ -88,9 +65,6 @@ theorem exists_curvature_controlled_point
     have hsq := mul_self_le_mul_self (Real.sqrt_nonneg (R y)) hfy
     dsimp [f] at hsq
     nlinarith [Real.sq_sqrt (hR y), Real.sq_sqrt (hR q)]
-
-
-
 
 theorem exists_escaping_curvature_controlled_sequence
     {X : Type*} [PseudoMetricSpace X]
@@ -203,8 +177,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [T3Space M] [PreconnectedSpace M]
 
-
-
 theorem exists_curvature_controlled_point
     (g : RiemannianMetric n M) (R : M → ℝ) (hR : ∀ y, 0 ≤ R y)
     (hbounded : BddAbove (range R)) (p x : M)
@@ -229,8 +201,6 @@ theorem exists_curvature_controlled_point
     exact edist_lt_ofReal.symm
   simpa only [hball, hdist] using
     Poincare.AncientVolume.exists_curvature_controlled_point R hR hbounded p x hd hx
-
-
 
 theorem exists_escaping_curvature_controlled_sequence
     (g : RiemannianMetric n M) (R : M → ℝ) (hR : ∀ y, 0 ≤ R y)

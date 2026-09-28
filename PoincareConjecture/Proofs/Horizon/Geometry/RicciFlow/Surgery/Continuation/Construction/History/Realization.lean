@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,7 +57,6 @@ theorem atlasBox_surgery_compatibility (i : BoxIndex W) (t : ℝ)
     rw [(eventWindow W e.down).identify_of_pre s hs hs'.2]
     simp only [EventIdentify.pre, forward, Diffeomorph.symm_apply_apply]
     exact ((eventWindow W e.down).forward_identify_event x).symm
-
 
 def realization : M33RegularHistoryRealization (generalized W L) F where
   time_subset := W.time_subset

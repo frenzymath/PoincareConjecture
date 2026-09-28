@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,11 +13,6 @@ namespace Geometry.SimplicialComplex
 variable {E G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
-
 
 theorem exists_marked_finitePL_approximation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

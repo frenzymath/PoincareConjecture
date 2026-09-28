@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,7 +42,6 @@ variable {n : ℕ} {N M : Type*} [TopologicalSpace N] [TopologicalSpace M]
         h.inner z.1 v.1 w.1 + v.2 * w.2)
 
 include hmetric
-
 
 theorem volumeMeasure_productIsometry_chart_rectangle
     (c : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) N)
@@ -107,8 +100,6 @@ theorem volumeMeasure_productIsometry_chart_rectangle
         ⟨hc.mdifferentiableOn (by simp), hci.mdifferentiableOn (by simp)⟩ (hac hy))).1.continuousAt.continuousWithinAt
   rw [lintegral_euclideanCons_image_tail hρ,
     ← h.volumeMeasure_image_eq_lintegral_pullbackVolumeDensity c hc hci ha hac, hca]
-
-
 
 theorem measurePreserving_productIsometry [SecondCountableTopology N] :
     MeasurePreserving e (h.volumeMeasure.prod volume) g.volumeMeasure := by

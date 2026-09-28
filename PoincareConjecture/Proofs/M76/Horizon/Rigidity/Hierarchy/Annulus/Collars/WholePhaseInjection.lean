@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarKernelInjectivity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Collars.SupportedRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

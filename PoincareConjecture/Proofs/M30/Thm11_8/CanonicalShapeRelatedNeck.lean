@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.CanonicalSliceShape
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ private theorem related_inverse_half_lt {r : ℝ} (hr : 4 < r) :
     _ < (4 : ℝ) ^ (-1 / 2 : ℝ) :=
       Real.rpow_lt_rpow_of_neg (by norm_num) hr (by norm_num)
     _ = _ := by norm_num [neg_div, Real.rpow_neg, ← Real.sqrt_eq_rpow]
-
-
 
 theorem related_neck_data_of_canonical_slice_shape
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]

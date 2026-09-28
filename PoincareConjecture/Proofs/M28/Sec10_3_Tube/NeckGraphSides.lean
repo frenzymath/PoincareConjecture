@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCrossings
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,12 +16,8 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 def neckGraphHeight (N : EpsilonNeck g) (f : UnitTwoSphere → ℝ) (x : M) : ℝ :=
   (N.coordinate_inverse x).2 - f (N.coordinate_inverse x).1
-
-
 
 theorem continuousOn_neckGraphHeight (N : EpsilonNeck g)
     {f : UnitTwoSphere → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f) :
@@ -40,16 +26,12 @@ theorem continuousOn_neckGraphHeight (N : EpsilonNeck g)
     (hf.continuous.comp_continuousOn
       (continuous_fst.comp_continuousOn N.coordinate_inverse_smooth.continuousOn))
 
-
-
 theorem neckGraphHeight_coordinate_map (N : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) (p : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     neckGraphHeight N f (N.coordinate_map (p, s)) = s - f p := by
   unfold neckGraphHeight
   rw [N.coordinate_inverse_coordinate_map ⟨mem_univ _, hs⟩]
-
-
 
 theorem neckGraphHeight_eq_zero_iff (N : EpsilonNeck g)
     {f : UnitTwoSphere → ℝ}
@@ -67,8 +49,6 @@ theorem neckGraphHeight_eq_zero_iff (N : EpsilonNeck g)
     exact N.coordinate_map_coordinate_inverse hx
   · rintro ⟨p, rfl⟩
     rw [neckGraphHeight_coordinate_map N f p (hdom p), sub_self]
-
-
 
 theorem neckGraphHeight_sides (N : EpsilonNeck g)
     {f : UnitTwoSphere → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
@@ -101,9 +81,6 @@ theorem neckGraphHeight_sides (N : EpsilonNeck g)
       rcases lt_or_gt_of_ne hne with hneg | hpos
       · exact Or.inl ⟨hx, hneg⟩
       · exact Or.inr ⟨hx, hpos⟩
-
-
-
 
 theorem exists_neckGraphHeight_negative_in_open (N : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) {T : Set M} (hT : IsOpen T)
@@ -138,8 +115,6 @@ theorem exists_neckGraphHeight_negative_in_open (N : EpsilonNeck g)
   rw [neckGraphHeight_coordinate_map N f p hstrip.2]
   dsimp only [z]
   rcases hkappa with rfl | rfl <;> nlinarith
-
-
 
 theorem exists_neck_graph_crossing (N : EpsilonNeck g)
     {f : UnitTwoSphere → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)

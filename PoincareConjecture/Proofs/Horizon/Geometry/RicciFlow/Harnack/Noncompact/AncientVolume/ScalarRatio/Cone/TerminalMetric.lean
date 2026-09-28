@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.AncientLimit
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +8,6 @@ open Set Filter Metric TopologicalSpace
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_terminal_metric_of_ancient_chart_limit
     {n : ℕ} {M : Type*} [TopologicalSpace M]

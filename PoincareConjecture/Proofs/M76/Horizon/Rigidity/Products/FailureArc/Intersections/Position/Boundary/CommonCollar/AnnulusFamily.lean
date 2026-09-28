@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.CommonCollar.CylinderFamily
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology Metric
 

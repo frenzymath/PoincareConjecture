@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaLocalComparis
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaWeakCompactness
 import Mathlib.MeasureTheory.Function.UniformIntegrable
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +16,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem suAlpha_minimizing_weighted_cauchy
     (g : RiemannianMetric n M) {alpha R a C : ℝ} (ha : 1 ≤ alpha) (ha0 : 0 < a)
@@ -147,9 +143,6 @@ theorem suAlpha_minimizing_weighted_cauchy
   exact (mul_le_mul_iff_right₀ hc0).mp (hi.trans hupper.le)
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem suAlpha_minimizing_local_cauchy [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha : ℝ} (ha : 1 ≤ alpha)
@@ -279,8 +272,6 @@ theorem suAlpha_minimizing_local_cauchy [CompactSpace M] [T2Space M]
   change (∫ z in Metric.ball (cs p) r, gap z) ≤ eps
   linarith
 
-
-
 theorem suAlpha_minimizing_strong_derivatives [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha C : ℝ} (ha : 1 ≤ alpha)
     (f : ℕ → UnitTwoSphere → M) (hf : ∀ j, ContMDiff (𝓡 2) (𝓡 n) ∞ (f j))
@@ -402,8 +393,6 @@ section NonlinearIntegral
 variable {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
   {mu : Measure X} {p : ℝ}
 
-
-
 theorem suAlpha_power_uniformIntegrable {f : ℕ → X → E} (hp : 0 < p)
     (hf : UnifIntegrable f (ENNReal.ofReal p) mu) :
     UnifIntegrable (fun j x => ‖f j x‖ ^ p) 1 mu := by
@@ -419,8 +408,6 @@ theorem suAlpha_power_uniformIntegrable {f : ℕ → X → E} (hp : 0 < p)
   rw [ENNReal.ofReal_rpow_of_pos (Real.rpow_pos_of_pos heps _),
     Real.rpow_inv_rpow heps.le hp.ne'] at hb
   exact hb
-
-
 
 theorem suAlpha_uniformIntegrable_dominated {f g : ℕ → X → ℝ}
     {C : ℝ} (hC : 0 < C) (hg : UnifIntegrable g 1 mu)
@@ -446,8 +433,6 @@ theorem suAlpha_uniformIntegrable_dominated {f g : ℕ → X → ℝ}
           gcongr
           exact hsmall j s hs hmu
     _ = ENNReal.ofReal eps := by rw [← ENNReal.ofReal_mul hC.le, mul_div_cancel₀ _ hC.ne']
-
-
 
 theorem suAlpha_nonlinear_integral_limit [IsFiniteMeasure mu]
     {f : ℕ → X → E} {f0 : X → E} (hp : 1 ≤ p)
@@ -517,8 +502,6 @@ theorem suAlpha_nonlinear_integral_limit [IsFiniteMeasure mu]
 
 end NonlinearIntegral
 
-
-
 theorem suAlpha_density_growth {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) {alpha c C L : ℝ} (ha : 0 ≤ alpha)
     (hc : c ∈ Icc 0 1) (hC : 0 ≤ C) (hn : ‖B‖ ≤ C)
@@ -558,8 +541,6 @@ theorem suAlpha_density_growth {E : Type*} [NormedAddCommGroup E] [NormedSpace �
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem suAlpha_chart_integral_limit
     (g : RiemannianMetric n M) {alpha R : ℝ} (ha : 1 ≤ alpha)

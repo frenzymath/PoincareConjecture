@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncolla
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.CompactImage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -30,20 +15,14 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem calibratedMetricVolume_eq_volumeMeasure (g : RiemannianMetric n M) :
     calibratedMetricVolume g = g.volumeMeasure :=
   calibratedMetricVolume_eq_euclideanHausdorff g
-
-
 
 theorem calibratedMetricVolume_lt_top_of_isCompact (g : RiemannianMetric n M)
     {s : Set M} (hs : IsCompact s) : calibratedMetricVolume g s < ⊤ := by
   rw [calibratedMetricVolume_eq_volumeMeasure]
   exact g.volumeMeasure_lt_top_of_isCompact hs
-
-
 
 theorem calibratedMetricVolume_ball_lt_top_of_precompact (g : RiemannianMetric n M)
     (x : M) (r : ℝ) (hcompact : IsCompact (closure (g.ball x r))) :
@@ -51,15 +30,10 @@ theorem calibratedMetricVolume_ball_lt_top_of_precompact (g : RiemannianMetric n
   (measure_mono subset_closure).trans_lt
     (calibratedMetricVolume_lt_top_of_isCompact g hcompact)
 
-
-
 theorem calibratedMetricVolume_ball_pos (g : RiemannianMetric n M)
     (x : M) {r : ℝ} (hr : 0 < r) : 0 < calibratedMetricVolume g (g.ball x r) := by
   rw [calibratedMetricVolume_eq_volumeMeasure]
   exact g.volumeMeasure_ball_pos x hr
-
-
-
 
 theorem calibratedMetricVolume_image_le_of_tangentNorm_le_on_compact
     {N : Type v} [TopologicalSpace N]

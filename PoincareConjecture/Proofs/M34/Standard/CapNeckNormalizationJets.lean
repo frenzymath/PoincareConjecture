@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizationModel
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderOrdinaryJets
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ open Poincare.Analysis.Calculus
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capNeckNormalization_exists_old_error_jet_bound (m : ℕ) :
     ∃ K : ℝ, 0 ≤ K ∧ ∀ (delta : ℝ), 0 < delta →
@@ -40,9 +29,6 @@ theorem capNeckNormalization_exists_old_error_jet_bound (m : ℕ) :
   have h := hbound delta B hB hm q s hs j hj a b
   rw [sphere_chart_center_zero, heq] at h
   exact h.trans_eq (by ring)
-
-
-
 
 theorem capNeckNormalization_error_jet_le
     (B : RoundCylinderTwoTensor) (q : UnitTwoSphere) (s c beta : ℝ)

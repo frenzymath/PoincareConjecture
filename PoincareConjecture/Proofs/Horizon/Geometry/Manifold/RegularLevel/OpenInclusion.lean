@@ -1,8 +1,5 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
 set_option backward.isDefEq.respectTransparency false
 
 open Set Function Manifold Metric TopologicalSpace
@@ -12,31 +9,17 @@ namespace Poincare.Geometry.Manifold.RegularLevel
 
 noncomputable section
 
-
-
 section General
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M]
 
-
-
-
-
-
-
-
-
 theorem writtenInExtChartAt_opens_subtypeVal (U : Opens M) (x : U) :
     writtenInExtChartAt I I x (fun y : U => (y : M))
       =ᶠ[𝓝[range I] (extChartAt I x x)] id := by
   filter_upwards [extChartAt_target_mem_nhdsWithin (I := I) x] with z hz
   exact (extChartAt I x).right_inv hz
-
-
-
-
 
 theorem hasMFDerivAt_opens_subtypeVal (U : Opens M) (x : U) :
     HasMFDerivAt I I (fun y : U => (y : M)) x (ContinuousLinearMap.id ℝ E) := by
@@ -45,18 +28,13 @@ theorem hasMFDerivAt_opens_subtypeVal (U : Opens M) (x : U) :
     (writtenInExtChartAt_opens_subtypeVal U x) ?_
   exact (extChartAt I x).right_inv (mem_extChartAt_target x)
 
-
 theorem mfderiv_opens_subtypeVal (U : Opens M) (x : U) :
     mfderiv I I (fun y : U => (y : M)) x = ContinuousLinearMap.id ℝ E :=
   (hasMFDerivAt_opens_subtypeVal U x).mfderiv
 
-
-
 @[simp] theorem mfderiv_opens_subtypeVal_apply (U : Opens M) (x : U) (v : TangentSpace I x) :
     (mfderiv I I (fun y : U => (y : M)) x) v = (show E from v) := by
   rw [mfderiv_opens_subtypeVal]; rfl
-
-
 
 theorem injective_mfderiv_opens_subtypeVal (U : Opens M) (x : U) :
     Function.Injective (mfderiv I I (fun y : U => (y : M)) x) := by
@@ -66,13 +44,6 @@ theorem injective_mfderiv_opens_subtypeVal (U : Opens M) (x : U) :
 variable {E' : Type*} [NormedAddCommGroup E'] [NormedSpace ℝ E']
   {H' : Type*} [TopologicalSpace H'] {I' : ModelWithCorners ℝ E' H'}
   {M' : Type*} [TopologicalSpace M'] [ChartedSpace H' M']
-
-
-
-
-
-
-
 
 theorem mfderiv_opens_restrict (U : Opens M) (F : M → M') {x : U}
     (hF : MDifferentiableAt I I' F ↑x) :

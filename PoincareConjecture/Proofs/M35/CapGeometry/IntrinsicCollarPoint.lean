@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialDistance
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
 
 include hrotation hcomplete
 
-
-
 theorem intrinsic_axis_segment_edist_le (a b : ℝ) :
     g.edist ((radialArclengthOrderIso g hrotation hcomplete).symm a • e2)
       ((radialArclengthOrderIso g hrotation hcomplete).symm b • e2) ≤
@@ -51,8 +40,6 @@ theorem intrinsic_axis_segment_edist_le (a b : ℝ) :
       @edist_comm StandardCapSpace g.toEMetricSpace.toPseudoEMetricSpace _ _
     rw [hc, abs_of_nonpos (sub_nonpos.mpr hba), neg_sub]
     exact h
-
-
 
 theorem exists_intrinsic_collar_point (P : M35StandardCapPredecessors)
     (x : StandardCapSpace) {s : ℝ} (hs : 0 < s) :

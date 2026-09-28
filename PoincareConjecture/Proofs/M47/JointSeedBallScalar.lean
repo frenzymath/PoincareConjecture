@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SpatialBall
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem jointSeed_reference_low_point_gap
     (P : M47ScalarPersistencePredecessors.{u}) [CompactSpace M]
@@ -49,8 +37,6 @@ theorem jointSeed_reference_low_point_gap
     _ ≤ L := hterminal
     _ ≤ _ := hhigh.le
 
-
-
 theorem jointSeed_physical_reference_low_point_gap
     (P : M47ScalarPersistencePredecessors.{u}) [CompactSpace M]
     {J : Set ℝ} (G : RicciFlow 3 M J)
@@ -70,8 +56,6 @@ theorem jointSeed_physical_reference_low_point_gap
     hst hJ hC hscalar hterminal hhigh
   refine ⟨phi p, himage p, ?_⟩
   simpa only [hread] using hp
-
-
 
 theorem jointSeed_scalar_le_on_closure_birth_ball
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -98,9 +82,6 @@ theorem jointSeed_scalar_le_on_closure_birth_ball
     exact h.trans_eq (by ring)
   exact closure_minimal hsubset
     (isClosed_le (M34.contMDiff_scalarCurvature D).continuous continuous_const)
-
-
-
 
 theorem jointSeed_early_ball_scalar_bound
     (P : M47ScalarPersistencePredecessors.{u})

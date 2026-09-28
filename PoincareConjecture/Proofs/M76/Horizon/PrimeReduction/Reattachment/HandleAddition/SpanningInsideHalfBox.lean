@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcSignedRegion
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -61,9 +59,6 @@ private theorem exists_second_coordinate_disk_rim_chart {z : V2} (hz : z ∈ Rim
   · intro y hy
     rw [hval]
     exact hrim y (hQs.subset hy)
-
-
-
 
 theorem OriginalDiskProduct.exists_inside_half_box_at_half_height_with_image
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,18 +1,8 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M38
-
-
 
 def CylinderDeckRelated (period : ℝ) (x y : RoundCylinderSpace) : Prop :=
   ∃ n : ℤ, (x.1 = y.1 ∧ x.2 = y.2 + (n : ℝ) * period) ∨
@@ -20,10 +10,8 @@ def CylinderDeckRelated (period : ℝ) (x y : RoundCylinderSpace) : Prop :=
 
 namespace CylinderDeckRelated
 
-
 theorem refl (period : ℝ) (x : RoundCylinderSpace) : CylinderDeckRelated period x x :=
   ⟨0, Or.inl ⟨rfl, by simp⟩⟩
-
 
 theorem symm {period : ℝ} {x y : RoundCylinderSpace}
     (h : CylinderDeckRelated period x y) : CylinderDeckRelated period y x := by
@@ -35,7 +23,6 @@ theorem symm {period : ℝ} {x y : RoundCylinderSpace}
     · rw [h.1, neg_neg]
     · rw [h.2]
       ring
-
 
 theorem trans {period : ℝ} {x y z : RoundCylinderSpace}
     (h : CylinderDeckRelated period x y) (k : CylinderDeckRelated period y z) :

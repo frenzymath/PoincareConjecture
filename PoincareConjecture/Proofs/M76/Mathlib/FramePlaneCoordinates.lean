@@ -1,19 +1,8 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BasisTransversePlanes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearMap
-
-
 
 abbrev FrameProjectionSpace {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] (J : F →L[ℝ] E) :=
@@ -22,9 +11,6 @@ abbrev FrameProjectionSpace {E F : Type*} [NormedAddCommGroup E] [NormedSpace �
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 noncomputable def frameRetractionHomeomorph (J : F →L[ℝ] E) (hJ : Function.Injective J) :
     J.FrameProjectionSpace ≃ₜ J.range.RetractionSpace := by
@@ -43,7 +29,6 @@ noncomputable def frameRetractionHomeomorph (J : F →L[ℝ] E) (hJ : Function.I
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem ker_frameRetractionHomeomorph (J : F →L[ℝ] E) (hJ : Function.Injective J)
     (Q : J.FrameProjectionSpace) :
     ((J.frameRetractionHomeomorph hJ) Q).val.ker = Q.val.ker := by
@@ -52,15 +37,10 @@ theorem ker_frameRetractionHomeomorph (J : F →L[ℝ] E) (hJ : Function.Injecti
   change e (Q.val x) = 0 ↔ Q.val x = 0
   exact e.map_eq_zero_iff
 
-
-
-
 noncomputable def frameComplementPlaneHomeomorph (J : F →L[ℝ] E)
     (hJ : Function.Injective J) :
     J.range.ComplementPlaneSpace ≃ₜ J.FrameProjectionSpace :=
   J.range.complementPlaneHomeomorph.trans (J.frameRetractionHomeomorph hJ).symm
-
-
 
 theorem ker_frameComplementPlaneHomeomorph (J : F →L[ℝ] E) (hJ : Function.Injective J)
     (K : J.range.ComplementPlaneSpace) :
@@ -79,9 +59,6 @@ namespace AbstractSimplicialComplex
 variable {ι E F : Type*} [Finite ι]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 noncomputable def frameBasisPlaneHomeomorph (A : AbstractSimplicialComplex ι)
     (b : Module.Basis ι ℝ E) (J : F →L[ℝ] E) (hJ : Function.Injective J) :

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 
-
 open Set
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff

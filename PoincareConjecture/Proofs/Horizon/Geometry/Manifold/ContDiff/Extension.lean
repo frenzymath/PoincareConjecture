@@ -1,16 +1,12 @@
 import Mathlib.Geometry.Manifold.BumpFunction
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold
-
-
 
 theorem exists_contMDiff_eq_near
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

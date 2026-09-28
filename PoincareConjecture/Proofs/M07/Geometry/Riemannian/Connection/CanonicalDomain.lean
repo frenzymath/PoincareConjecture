@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.OpenDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +7,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem canonicalDomain_chartedSpace_eq_opens
     {E : Type*} [TopologicalSpace E] (U : Set E) (hU : IsOpen U) [Nonempty U] :
@@ -30,8 +19,6 @@ theorem canonicalDomain_chartedSpace_eq_opens
   · funext x
     change e = e.trans (OpenPartialHomeomorph.refl E)
     exact e.trans_refl.symm
-
-
 
 noncomputable def RiemannianMetric.canonicalMetricLeviCivitaData
     {n : ℕ} (U : Set (EuclideanSpace ℝ (Fin n))) (hU : IsOpen U) [Nonempty U] :

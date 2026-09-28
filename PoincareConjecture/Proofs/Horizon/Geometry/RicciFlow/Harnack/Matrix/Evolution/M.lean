@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatLinearity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Evolution.CurvatureRicci
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -135,8 +128,6 @@ lemma tensorHeatOperator_hamiltonM_decomposition
     F.tensorHeatOperator_add hB hCs ((hD t).2.2.1 _ _ hB)
       ((hD t).2.2.1 _ _ hCs) x ![a, b] hdB hdC]
 
-
-
 lemma curvature_contraction_hamiltonM
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (τ : ℝ)
@@ -168,9 +159,6 @@ lemma curvature_contraction_hamiltonM
   apply Finset.sum_congr rfl
   intro i _
   exact Finset.sum_comm
-
-
-
 
 theorem tensorHeatOperator_hamiltonM
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

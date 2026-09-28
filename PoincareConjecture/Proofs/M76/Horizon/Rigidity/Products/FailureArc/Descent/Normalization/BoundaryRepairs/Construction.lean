@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Repairs.CoordinateSupport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMarkedChartMotion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 open PoincareConjecture.M76.Dehn
@@ -29,7 +20,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {f : U → M} {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
 
 set_option maxHeartbeats 800000 in
-
 
 theorem Step.nonempty_planar_annulus_boundary_motion
     (step : Step s t) {R Fmark : Set M} (he : PoincareConjecture.M76.PLDomain e R)

@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.FullForcingBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem radialGaugeForcing_weighted_value_bound
     {f f₀ velocity : ℝ → ℝ} {r c V C : ℝ}
@@ -44,8 +33,6 @@ theorem radialGaugeForcing_weighted_value_bound
       _ ≤ 2 * C / c ^ 2 := div_le_div_of_nonneg_left (by positivity)
         (sq_pos_of_pos hc) (pow_le_pow_left₀ hc.le hf 2)
   nlinarith only [hweighted, hcurrent, htarget]
-
-
 
 theorem radialGaugeForcing_weighted_derivative_inverse_radius
     {f f₀ velocity : ℝ → ℝ} (hfs : ContDiff ℝ ∞ f) (hf₀ : ContDiff ℝ ∞ f₀)

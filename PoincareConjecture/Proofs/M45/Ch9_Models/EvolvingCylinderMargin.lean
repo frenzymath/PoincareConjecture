@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderTimeJets
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderScalar
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,14 +38,9 @@ noncomputable local instance marginFourJetNormedGroup :
 noncomputable local instance marginFourJetNormedSpace :
     NormedSpace ℝ (ScalarMetricFourJet 3) := Prod.normedSpace
 
-
-
-
 def evolvingCylinderScalarRegion : Set (ScalarMetricFourJet 3) :=
   {J | J.1.1.IsInvertible ∧ (1 / 4 : ℝ) < jetScalarCurvature J.1 ∧
     |jetScalarLaplacian J| < (1 / 100 : ℝ)}
-
-
 
 theorem isOpen_evolvingCylinderScalarRegion : IsOpen evolvingCylinderScalarRegion := by
   rw [isOpen_iff_mem_nhds]
@@ -66,9 +52,6 @@ theorem isOpen_evolvingCylinderScalarRegion : IsOpen evolvingCylinderScalarRegio
     (gt_mem_nhds hJ.2.2)
   filter_upwards [hinv, hscalar, hlap] with J' hI hS hL
   exact ⟨hI, hS, hL⟩
-
-
-
 
 theorem model_evolvingCylinder_mem_scalarRegion {t : ℝ} (ht : t ∈ Icc (-1 : ℝ) 0) :
     scalarMetricFourJet (evolvingCylinderModelField t) 0 ∈ evolvingCylinderScalarRegion := by
@@ -82,9 +65,6 @@ theorem model_evolvingCylinder_mem_scalarRegion {t : ℝ} (ht : t ∈ Icc (-1 : 
     norm_num
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_uniform_evolvingCylinder_scalar_margin :
     ∃ delta : ℝ, 0 < delta ∧ ∀ t ∈ Icc (-1 : ℝ) 0, ∀ J : ScalarMetricFourJet 3,

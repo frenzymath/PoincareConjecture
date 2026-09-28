@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -64,8 +56,6 @@ theorem cornerMap_mem_frontier (c : Fin 3) (x : ℝ × ℝ) :
     have h := (cornerMap_image_frontier c).subset (mem_image_of_mem (cornerMap c) hx)
     rwa [cornerMap_involutive] at h
   · exact fun hx => (cornerMap_image_frontier c).subset (mem_image_of_mem (cornerMap c) hx)
-
-
 
 theorem corner_pair_unique {r : Set (ℝ × ℝ)} {c d : Fin 3} {a b u v : ℝ}
     (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)

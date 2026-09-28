@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   {U V : Set E} (hU : IsOpen U) (hV : IsOpen V) (hUV : U ⊆ V)
   [Nonempty U] [Nonempty V]
-
-
 
 theorem isLocalDiffeomorph_canonicalDomainInclusion :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -41,8 +30,6 @@ theorem isLocalDiffeomorph_canonicalDomainInclusion :
     hx.contMDiffAt.continuousAt] with y hy
   apply Subtype.ext
   exact hy.symm
-
-
 
 theorem mfderiv_canonicalDomainInclusion (x : U) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

@@ -1,14 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.LocalCalculus
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.Geometry.Manifold.VectorBundle.Tensoriality
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 noncomputable def covariantTensorDerivativeOnFields
     (D : LeviCivitaData g) {k : ℕ} (T : CovariantTensorEvaluation n M k)
     (X : (x : M) → TangentSpace (𝓡 n) x)
@@ -31,8 +22,6 @@ noncomputable def covariantTensorDerivativeOnFields
   mvfderiv (𝓡 n) (fun y => T y (fun i => Y i y)) x (X x) -
     ∑ i, T x (Function.update (fun j => Y j x) i
       (D.connection (Y i) x (X x)))
-
-
 
 lemma covariantTensorDerivative_two_on_fields
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M 2}
@@ -191,8 +180,6 @@ private lemma covariantTensorDerivativeOnFields_tensorial
     simp [MultilinearMap.map_update_add, Finset.sum_add_distrib]
     ring
 
-
-
 lemma covariantTensorDerivativeOnFields_congr
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T)
@@ -223,8 +210,6 @@ lemma covariantTensorDerivativeOnFields_congr
       simp only [Function.update_eq_self] at h
       exact h.trans ih
   simpa using (hs Finset.univ).symm
-
-
 
 lemma covariantTensorDerivative_on_fields
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}

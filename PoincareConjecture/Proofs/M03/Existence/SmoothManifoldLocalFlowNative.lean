@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.SmoothLocalFlowNative
 import Mathlib.Geometry.Manifold.VectorBundle.Basic
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Manifold

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +24,6 @@ private theorem full_neck_coordinates_norm_sq (v : E) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem full_neck_chart_speed_upper (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : E}
@@ -86,8 +74,6 @@ theorem full_neck_chart_speed_upper (N : EpsilonNeck g)
         (mul_nonneg (by norm_num) N.scale_pos.le)
     _ = (4 * N.scale) * ‖v‖ := by ring
 
-
-
 theorem full_neck_chart_density_upper (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : E}
     (hx : x ∈ cylinderNeckChartDomain N q s) :
@@ -98,8 +84,6 @@ theorem full_neck_chart_density_upper (N : EpsilonNeck g)
   calc
     _ ≤ (Nat.factorial 3 : ℝ) * (4 * N.scale) ^ 3 := h
     _ = 384 * N.scale ^ 3 := by norm_num [mul_pow]; ring
-
-
 
 theorem full_neck_chart_image_volume_upper
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

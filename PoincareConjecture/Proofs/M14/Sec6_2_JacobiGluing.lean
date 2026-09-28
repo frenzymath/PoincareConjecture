@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPair
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedFieldExtension
 import PoincareConjecture.Proofs.M14.Mathlib.DependentIntervalSolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontalField_paste_contMDiffOn (γ : ℝ → G.Point) {a l c r : ℝ}
     (hlc : l < c) (Y Z : ∀ s, G.Horizontal (γ s))
@@ -66,9 +55,6 @@ theorem horizontalField_paste_contMDiffOn (γ : ℝ → G.Point) {a l c r : ℝ}
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem horizontalJacobiPairOn_paste {a l c r : ℝ}
     (hal : a ≤ l) (hlc : l < c) (hcr : c < r)
@@ -141,8 +127,6 @@ theorem horizontalJacobiPairOn_paste {a l c r : ℝ}
         ⟨hlc.le.trans (le_of_not_ge hsc), hs.2⟩
   exact ⟨har, hqC, hqY, hqP, EY, EP,
     fun s hs => (hpoint s hs).1, fun s hs => (hpoint s hs).2⟩
-
-
 
 theorem horizontalJacobiPairOn_locality (R : M14SquareRootPath G p) :
     DependentIntervalSolutionLocality (IsHorizontalJacobiPairOn R) where

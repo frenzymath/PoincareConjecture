@@ -2,26 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conju
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.GeodesicLength
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +20,6 @@ namespace Poincare.VolumeComparison.Conjugate
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem sum_energy_ge_of_endpoint_distance_lower_bound
     (g : PoincareConjecture.RiemannianMetric n M) {N : ℕ} (τ : ℕ → ℝ)

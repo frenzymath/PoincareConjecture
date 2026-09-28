@@ -6,8 +6,6 @@ open scoped BigOperators
 
 namespace PoincareConjecture.Proofs.M03
 
-
-
 theorem exists_compact_finite_square_sum_bound
     {X I B : Type*} [TopologicalSpace X] [Fintype I] [Fintype B]
     {K : Set X} (hK : IsCompact K)

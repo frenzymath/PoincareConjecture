@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.SurfaceIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
 
 open Classical in
-
-
 
 theorem mem_boundary_vertex_base_endpoints_iff (p : (T.marked 2).vertices)
     (hpfront : (p : E) ∈ (T.marked 1).space)

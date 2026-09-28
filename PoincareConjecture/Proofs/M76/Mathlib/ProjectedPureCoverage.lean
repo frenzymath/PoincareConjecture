@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedLinearImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePureCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem mem_interior_linearImage_of_paired_facets_at (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (Q : E →L[ℝ] F) (hinj : InjOn Q K.space)

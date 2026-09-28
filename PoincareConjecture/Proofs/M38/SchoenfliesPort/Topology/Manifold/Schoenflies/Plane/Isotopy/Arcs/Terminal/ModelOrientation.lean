@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.NestedOrientation
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualOrientation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem exists_terminal_model_lower_slices_not_preconnected
     (d : TerminalSaddleGeometry M P p e)
@@ -54,9 +44,6 @@ theorem exists_terminal_model_lower_slices_not_preconnected
     refine ⟨ε, hε, ?_⟩
     intro s hs
     simpa only [sub_eq_add_neg] using h (-s) ⟨by linarith [hs.2], neg_lt_zero.mpr hs.1⟩
-
-
-
 
 theorem exists_unmatched_terminal_slice_of_connected_lower_levels
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
@@ -92,9 +79,6 @@ theorem exists_unmatched_terminal_slice_of_connected_lower_levels
     have hB := hA.image Q Q.continuous.continuousOn
     rw [hQ] at hB
     exact hmodel s ⟨hs, hsδ⟩ hB
-
-
-
 
 theorem exists_unmatched_terminal_slice_of_one_lower_end
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)

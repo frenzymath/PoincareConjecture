@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ProductRicciTraceBound
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64Curvature_pair_abs_le_of_unit_bound
     (D : LeviCivitaData g) (x : M) {K : ℝ}
@@ -50,10 +34,6 @@ theorem m64Curvature_pair_abs_le_of_unit_bound
   change |D.curvatureTensor x u v u v| ≤ _ at h
   rw [hprod, hnorm, hnorm] at h
   exact h.trans_eq (by ring)
-
-
-
-
 
 theorem m64Curvature_sectional_abs_le_of_unit_bound
     (D : LeviCivitaData g) (x : M) {K : ℝ} (hK : 0 ≤ K)
@@ -103,10 +83,6 @@ theorem m64Curvature_sectional_abs_le_of_unit_bound
   exact (div_le_iff₀ hpos).mpr hbound
 
 variable [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64CircleProduct_ricci_quadratic_abs_le_of_unit_bound
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ConnectionFrame
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.PairedSourceNeighborhoods
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.OrdinaryArcParameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -21,7 +13,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
 
-
 theorem OrdinaryDoubleCurveModel.injOn_piece_of_mate_ne
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) (hi : M.mate i ≠ i) :
     InjOn f (M.pieces i) := by
@@ -32,7 +23,6 @@ theorem OrdinaryDoubleCurveModel.injOn_piece_of_mate_ne
     (M.piece_subset_double i hy).1 hxy hne
   exact disjoint_left.mp (M.disjoint hi)
     (M.partner_component i ⟨x, hxG⟩ hx) (hpartner ▸ hy)
-
 
 theorem OrdinaryDoubleCurveModel.piece_image_preimage
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) (x : V2) (hx : x ∈ D2) :
@@ -50,7 +40,6 @@ theorem OrdinaryDoubleCurveModel.piece_image_preimage
       rw [M.mate_involutive i] at hz
       exact ⟨M.partner z, hz, M.partner_value z⟩
 
-
 theorem OrdinaryDoubleCurveModel.piece_image_mate
     (M : OrdinaryDoubleCurveModel e f R) (i : M.Index) :
     f '' M.pieces (M.mate i) = f '' M.pieces i := by
@@ -63,8 +52,6 @@ theorem OrdinaryDoubleCurveModel.piece_image_mate
     apply (M.piece_image_preimage (M.mate i) x (M.piece_subset_double i hx).1).mpr
     right
     simpa only [M.mate_involutive i] using hx
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_paired_component_neighborhoods
     [T2Space X] (M : OrdinaryDoubleCurveModel e f R)

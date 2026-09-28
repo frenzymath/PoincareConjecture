@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Polygons
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_finite_boundary_family {κ : Type*} [Finite κ]
     (n : κ → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -52,9 +41,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_finite_triangleSlice_polygon_family (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

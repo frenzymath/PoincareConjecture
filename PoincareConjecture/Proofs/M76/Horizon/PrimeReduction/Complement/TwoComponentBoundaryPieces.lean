@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem two_component_frontiers_of_boundary_pieces
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -83,8 +69,6 @@ theorem two_component_frontiers_of_boundary_pieces
       rw [hown, hother, union_empty]
     · change C true ∩ (k false ∪ cap false) = ∅ at hother
       rw [hown, hother, empty_union]
-
-
 
 theorem two_component_frontiers_of_marked_rims
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

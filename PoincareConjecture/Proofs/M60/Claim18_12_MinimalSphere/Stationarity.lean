@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.StationaryEnergyTests
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.WeakChartHarmonicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60EnergyStationary_chartHarmonic (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

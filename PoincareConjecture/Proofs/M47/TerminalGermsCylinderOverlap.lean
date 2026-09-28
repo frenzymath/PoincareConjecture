@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_cylinder_transition_coefficients
     {F : SurgeryFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}

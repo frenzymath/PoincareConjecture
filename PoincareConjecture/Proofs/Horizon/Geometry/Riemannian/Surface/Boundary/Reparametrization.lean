@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Locality
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +29,6 @@ theorem mfderiv_curve_reparam {γ : ℝ → S} {φ : ℝ → ℝ} {t c : ℝ}
   rw [← map_smul]
   simp
 
-
-
 theorem turningAlong_curve_reparam
     (D : LeviCivitaData g) (e₁ e₂ T : (x : S) → TangentSpace (𝓡 2) x)
     {γ : ℝ → S} {φ : ℝ → ℝ} {t c : ℝ}
@@ -57,8 +45,6 @@ theorem turningAlong_curve_reparam
   rw [mfderiv_curve_reparam hγ hφ]
   simp only [map_smul, smul_apply, smul_eq_mul]
 
-
-
 theorem continuousOn_surfaceTurningForm_comp_curve
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)
     {e₁ e₂ T V : (x : S) → TangentSpace (𝓡 2) x}
@@ -69,8 +55,6 @@ theorem continuousOn_surfaceTurningForm_comp_curve
     {γ : ℝ → S} {I : Set ℝ} (hγ : ContinuousOn γ I) (hγU : MapsTo γ I U) :
     ContinuousOn (fun t => D.surfaceTurningForm e₁ e₂ T V (γ t)) I :=
   (D.contMDiffOn_surfaceTurningForm hU he₁ he₂ hT hV).continuousOn.comp hγ hγU
-
-
 
 theorem integral_surfaceTurningForm_reparam
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)
@@ -102,8 +86,6 @@ theorem integral_surfaceTurningForm_reparam
       simp only [surfaceTurningForm, hvelocity _ ⟨t, ht, rfl⟩]
     _ = _ := intervalIntegral.integral_deriv_smul_comp' hφ hφ' hcont
 
-
-
 theorem surfaceTurningForm_eq_of_eventuallyEq_or_neg_along_curve
     (D : LeviCivitaData g) {γ : ℝ → S} {t : ℝ}
     (hγ : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 2) γ t)
@@ -124,14 +106,11 @@ theorem surfaceTurningForm_eq_of_eventuallyEq_or_neg_along_curve
           (mdifferentiableAt_neg_section hT) heq hV hV
       _ = _ := D.surfaceTurningForm_neg_field e₁ e₂ T V (γ t) hT
 
-
 theorem surfaceTurningForm_eq_mul_of_direction_eq_smul
     (D : LeviCivitaData g) (e₁ e₂ T V Z : (x : S) → TangentSpace (𝓡 2) x)
     (x : S) {c : ℝ} (hZ : Z x = c • V x) :
     D.surfaceTurningForm e₁ e₂ T Z x = c * D.surfaceTurningForm e₁ e₂ T V x := by
   simp only [surfaceTurningForm, hZ, map_smul, smul_apply, smul_eq_mul]
-
-
 
 theorem surfaceTurningForm_change_along_reparam
     (D : LeviCivitaData g) (e₁ e₂ f₁ f₂ : (x : S) → TangentSpace (𝓡 2) x)

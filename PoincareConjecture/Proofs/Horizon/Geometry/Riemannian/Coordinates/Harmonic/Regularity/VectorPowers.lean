@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.VectorNorm
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Powers
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem sum_inner_connection_smul_eq (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x} {φ : M → ℝ} {x : M}
@@ -51,8 +42,6 @@ theorem sum_inner_connection_smul_eq (D : LeviCivitaData g)
   simp_rw [hterm]
   rw [Finset.sum_add_distrib, ← Finset.mul_sum, ← Finset.mul_sum,
     D.sum_mvfderiv_mul_eq_inner_gradient]
-
-
 
 theorem sum_inner_connection_regularized_power_cross (D : LeviCivitaData g)
     (X : (x : M) → TangentSpace (𝓡 n) x)
@@ -117,8 +106,6 @@ theorem sum_inner_connection_regularized_power_cross (D : LeviCivitaData g)
     (D.connection (fun y => φ y • V y) x (g.orthonormalBasis x i))) = _
   simp_rw [hterm]
   simp only [Finset.sum_add_distrib, ← Finset.mul_sum, w]
-
-
 
 theorem sum_inner_connection_regularized_power (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.FinitePLEssentialCircle
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -68,10 +60,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
-
-
-
-
 
 theorem exists_originalPL_annulus_core_homotopy
     {X V ι : Type*} [TopologicalSpace X]

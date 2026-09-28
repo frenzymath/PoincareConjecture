@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SurvivalSlice
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
 
 theorem survival_compact_fiber_neighborhood
     (E : M14ExponentialFamily G T x) (htau : 0 ≤ tau)
@@ -56,9 +43,6 @@ theorem survival_compact_fiber_neighborhood
   · intro Z hZ hV
     by_contra hnot
     exact hV ⟨Z, ⟨hZ, hnot⟩, rfl⟩
-
-
-
 
 theorem stableInitialVector_of_compact_capture
     (E : M14ExponentialFamily G T x) (htau : 0 < tau)

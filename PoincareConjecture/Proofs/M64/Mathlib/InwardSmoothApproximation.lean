@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.SmoothClosedExtension
 import PoincareConjecture.Proofs.M64.Mathlib.TranslatedLpConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,10 +13,6 @@ namespace PoincareConjecture
 variable {d : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "X" => EuclideanSpace ℝ (Fin d)
-
-
-
-
 
 theorem m64_exists_contDiff_inward_approximation
     {O K : Set X} (hO : IsOpen O) (hK : IsClosed K)

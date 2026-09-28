@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.TwoBandSelection
 import Mathlib.Topology.Connected.Clopen
 
-
-
 set_option autoImplicit false
 open Set Relation
 
@@ -37,9 +35,6 @@ private theorem transGen_of_finite_closed_cover
   obtain ⟨k, hk⟩ := mem_iUnion.mp hxU
   obtain ⟨l, hl⟩ := mem_iUnion.mp hxV
   exact l.property (k.property.tail ⟨x, hk, hl⟩)
-
-
-
 
 theorem twoBandGraph_connected_of_closed_cover
     {X C : Type*} [TopologicalSpace X] [Finite C]
@@ -109,7 +104,6 @@ theorem twoBandGraph_connected_of_closed_cover
     | single h => exact hmeet _ _ h
     | tail _ h ih => exact ih.trans (hmeet _ _ h)
   exact H' _ _ H
-
 
 theorem twoBandGraph_components_hit {C : Type*} (r : Bool → Bool → C)
     (hconn : (twoBandGraph r).Connected) (c : C) : ∃ b s, r b s = c := by

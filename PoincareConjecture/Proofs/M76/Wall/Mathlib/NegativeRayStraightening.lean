@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TwoHalfspaceShear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace ContinuousLinearMap
-
-
-
-
 
 theorem exists_negative_ray_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

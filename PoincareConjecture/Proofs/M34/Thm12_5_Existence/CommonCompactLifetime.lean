@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.CompactCurvatureBound
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.FlowUnion
 import PoincareConjecture.Statements.Ch04.Continuation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M34
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
-
 
 theorem exists_compactFlow_past_small_time (P : RicciFlowLocalTheory n M)
     (g0 : RiemannianMetric n M) (D0 : LeviCivitaData g0)
@@ -74,8 +62,6 @@ theorem exists_compactFlow_past_small_time (P : RicciFlowLocalTheory n M)
   have hnew : T' ∈ S := ⟨hstarpos.trans hT', G',
     (hG' ⟨le_rfl, hstarpos⟩).symm.trans hGinit⟩
   exact (not_lt_of_ge (le_csSup hSbdd hnew)) hT'
-
-
 
 theorem exists_compactFlow_on_small_slab (P : RicciFlowLocalTheory n M)
     (g0 : RiemannianMetric n M) (D0 : LeviCivitaData g0)

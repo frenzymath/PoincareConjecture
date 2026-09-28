@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedBlockF
 import PoincareConjecture.Proofs.M76.Wall.OppositePLDomain
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ProtectedFrontier
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

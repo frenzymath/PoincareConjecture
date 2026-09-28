@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace Poincare.Analysis.Heat
 variable {E F A : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
   [MeasurableSpace A] {μ : Measure A} {U : Set E} {f : E → A → F}
-
-
 
 theorem contDiffOn_integral_of_locally_dominated_iteratedFDeriv
     (hU : IsOpen U)

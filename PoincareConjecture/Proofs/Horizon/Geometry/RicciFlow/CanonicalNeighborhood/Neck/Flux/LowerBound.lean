@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Profile
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.BusemannGradient
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,8 +17,6 @@ variable {M : Type*} [MetricSpace M] [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 omit [MetricSpace M] in
 theorem lintegral_flux_lower_of_pointwise
@@ -55,9 +43,6 @@ theorem lintegral_flux_lower_of_pointwise
     exact ENNReal.ofReal_le_ofReal hx
   exact hvolume.1.trans hmono
 
-
-
-
 theorem lintegral_busemann_axialCutoff_flux_lower
     (D : LeviCivitaData g) {ray : ℝ → M} {φ : ℝ → ℝ}
     (hφ : ContDiff ℝ ∞ φ) {κ : ℝ}
@@ -74,8 +59,6 @@ theorem lintegral_busemann_axialCutoff_flux_lower
           (D.gradient (N.axialCutoff φ) x)) ∂g.volumeMeasure := by
   apply N.lintegral_flux_lower_of_pointwise
     ((hφ.continuous_deriv (by simp)).measurable) hpoint
-
-
 
 theorem lintegral_busemann_axialTransitionProfile_flux_lower
     (D : LeviCivitaData g) {ray : ℝ → M} {κ : ℝ} (hκ : 0 ≤ κ)

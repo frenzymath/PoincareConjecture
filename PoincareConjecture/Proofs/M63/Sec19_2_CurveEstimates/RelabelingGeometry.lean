@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_PullbackAlgebra
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {a b : ℝ}
-
-
 
 theorem curveVelocity_comp {gamma : ℝ → M} {phi : ℝ → ℝ} {x v : ℝ}
     (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma (phi x))
@@ -44,8 +32,6 @@ theorem curveVelocity_comp {gamma : ℝ → M} {phi : ℝ → ℝ} {x v : ℝ}
 
 variable [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem curveSpeed_comp_abs (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {phi : ℝ → ℝ} {t x v : ℝ}
     (hd : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t) (phi x))
@@ -56,16 +42,12 @@ theorem curveSpeed_comp_abs (F : RicciFlow n M (Set.Icc a b))
   simp only [map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg v), Real.sqrt_sq_eq_abs]
 
-
-
 theorem curveSpeed_comp (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {phi : ℝ → ℝ} {t x v : ℝ}
     (hd : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t) (phi x))
     (hphi : HasDerivAt phi v x) (hv : 0 ≤ v) :
     curveSpeed F (fun y s => d (phi y) s) t x = v * curveSpeed F d t (phi x) := by
   rw [curveSpeed_comp_abs F d hd hphi, abs_of_nonneg hv]
-
-
 
 theorem spatialUnitTangent_comp (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {phi : ℝ → ℝ} {t x v : ℝ}
@@ -76,8 +58,6 @@ theorem spatialUnitTangent_comp (F : RicciFlow n M (Set.Icc a b))
   unfold spatialUnitTangent
   rw [curveSpeed_comp F d hd hphi hv.le, curveVelocity_comp hd hphi,
     mul_inv_rev, smul_smul, mul_assoc, inv_mul_cancel₀ hv.ne', mul_one]
-
-
 
 theorem pullback_comp {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {gamma : ℝ → M} {Y : (y : ℝ) → TangentSpace (𝓡 n) (gamma y)}
@@ -101,8 +81,6 @@ theorem pullback_comp {g : RiemannianMetric n M} (D : LeviCivitaData g)
   rw [(hf.hasDerivAt.scomp x hphi).deriv, curveVelocity_comp hY.1 hphi,
     map_smul, map_smul, smul_add]
 
-
-
 theorem spatialDerivative_comp (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {t : ℝ}
     {Y : (y : ℝ) → TangentSpace (𝓡 n) (d y t)} {phi : ℝ → ℝ} {x v : ℝ}
@@ -117,8 +95,6 @@ theorem spatialDerivative_comp (F : RicciFlow n M (Set.Icc a b))
   unfold m62SpatialDerivative
   rw [curveSpeed_comp F d hd hphi hv.le, pullback_comp (F.connection t) hY hphi,
     mul_inv_rev, smul_smul, mul_assoc, inv_mul_cancel₀ hv.ne', mul_one]
-
-
 
 theorem curvatureVector_comp (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {phi : ℝ → ℝ} {t x : ℝ}
@@ -136,9 +112,6 @@ theorem curvatureVector_comp (F : RicciFlow n M (Set.Icc a b))
   unfold m62CurvatureVector
   rw [hunit]
   exact spatialDerivative_comp F d hS (hphi x).hasDerivAt (hpos x)
-
-
-
 
 theorem curvatureJet_comp (F : RicciFlow n M (Set.Icc a b))
     (d : ℝ → ℝ → M) {phi : ℝ → ℝ} {t : ℝ}

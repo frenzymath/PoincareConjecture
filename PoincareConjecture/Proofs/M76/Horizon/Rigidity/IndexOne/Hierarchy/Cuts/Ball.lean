@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalInwardSphere
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingCore
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M76.OriginalDiskProduct
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem nonempty_cut_ball_of_marked_cylinder
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedCapContactDensity
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCutoff
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CapBirth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_past_cap_contact_density
     (S : RepairedControlledSchedulesData.{u})

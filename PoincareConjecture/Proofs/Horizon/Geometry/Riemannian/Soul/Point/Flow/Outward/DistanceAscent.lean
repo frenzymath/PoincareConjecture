@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Initial
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_distance_support_of_minimizing_direction
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -115,9 +103,6 @@ theorem exists_distance_support_of_minimizing_direction
       rw [hi]
       field_simp
     exact hcoef ▸ hd
-
-
-
 
 theorem edist_increment_ge_of_inward_pairing_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -145,10 +136,6 @@ private theorem closed_piece_homeomorph
     { toEquiv := E, continuous_toFun := hc, continuous_invFun := hi }
   exact ⟨H, fun x => congrArg Subtype.val (hFs x),
     fun x => congrArg Subtype.val (hFu x)⟩
-
-
-
-
 
 theorem exists_open_cap_chart_of_closed_halves
     (hsource : IsOpen (s ∪ u)) (htarget : IsOpen (t ∪ v))

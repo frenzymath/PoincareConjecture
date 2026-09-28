@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.ComparisonChart
 import PoincareConjecture.Proofs.M36.ComparisonSmoothJets
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

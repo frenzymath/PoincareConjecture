@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M09.TensorTrace
 import PoincareConjecture.Proofs.M14.Sec6_5_ScalarEvolutionTransportRicci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +25,6 @@ private theorem scalar_smooth {g : RiemannianMetric 3 M} (D : LeviCivitaData g) 
   Proofs.M09.tensorMetricTrace_smooth g D.ricciEvaluation
     D.normalization_curvatureTensorCalculus.2.1
 
-
-
 theorem intrinsicOpenMetric_scalarCurvatureSupOn (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (DV : LeviCivitaData (intrinsicOpenMetric g V))
     (D : LeviCivitaData g) {S : Set M} (hSV : S ⊆ (V : Set M)) :
@@ -52,8 +40,6 @@ theorem intrinsicOpenMetric_scalarCurvatureSupOn (g : RiemannianMetric 3 M)
   · rintro ⟨x, rfl⟩
     exact ⟨⟨⟨(x : M), hSV x.property⟩, x.property⟩,
       intrinsicOpenMetric_scalarCurvature g V DV D _⟩
-
-
 
 theorem intrinsicOpenMetric_scalarGradientNorm (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (DV : LeviCivitaData (intrinsicOpenMetric g V))
@@ -88,16 +74,12 @@ theorem intrinsicOpenMetric_scalarGradientNorm (g : RiemannianMetric 3 M)
       |mvfderiv (𝓡 3) D.scalarCurvature (x : M) v|
     rw [hchain, L.apply_symm_apply]
 
-
-
 theorem intrinsicOpenMetric_ricciNormSq (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (DV : LeviCivitaData (intrinsicOpenMetric g V))
     (D : LeviCivitaData g) (x : V) : DV.ricciNormSq x = D.ricciNormSq (x : M) := by
   exact M14.ricciNormSq_eq_of_local_isometry DV D isOpen_univ
     (contMDiff_subtype_val (I := 𝓡 3) (U := V)).contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
-
-
 
 theorem intrinsicOpenMetric_scalarLaplacian (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (DV : LeviCivitaData (intrinsicOpenMetric g V))

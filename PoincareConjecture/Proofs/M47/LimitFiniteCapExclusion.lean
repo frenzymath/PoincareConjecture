@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteBallEndpoint
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -83,7 +74,6 @@ variable
             (F (G.subsequence k)).parameters.C)
 
 include hbad capBudget in
-
 
 theorem limitFinite_eventually_preserved_ball_endpoint_without_cap
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -228,7 +218,6 @@ theorem limitFinite_eventually_preserved_ball_endpoint_without_cap
   exact hbad (G.subsequence k) hbadControl
 
 include hbad capBudget in
-
 
 theorem limitFinite_eventually_preserved_exhaustion_endpoint_without_cap
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

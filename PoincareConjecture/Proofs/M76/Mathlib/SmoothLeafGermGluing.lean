@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SmoothPlaneLeaves
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedGermNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ namespace Geometry.EuclideanSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_gluing {P Q : E → EuclideanSubspace E}
     {A B U V : Set E} (hP : IsSmoothLeafFieldOn P U) (hQ : IsSmoothLeafFieldOn Q V)

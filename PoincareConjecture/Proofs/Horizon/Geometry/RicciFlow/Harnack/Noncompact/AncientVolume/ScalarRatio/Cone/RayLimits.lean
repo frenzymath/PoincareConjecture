@@ -1,27 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.OppositeSegments
 import Mathlib.Topology.Order.MonotoneConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -75,9 +54,6 @@ private theorem comparison_cosine_mono {X : Type*} [MetricSpace X]
     s ⟨hs.le, hsa⟩ t ⟨ht.le, htb⟩
   rw [segmentComparisonCosine, div_le_iff₀ (by positivity : 0 < 2 * s * t)]
   nlinarith
-
-
-
 
 theorem exists_homogeneous_ray_distance_limit {X : Type*} [MetricSpace X]
     (minus plus : ℝ → X) (hzero : minus 0 = plus 0)

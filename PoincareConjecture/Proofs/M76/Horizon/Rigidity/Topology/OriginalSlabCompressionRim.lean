@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleSlab
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
 
 namespace PoincareConjecture.M76
-
-
 
 theorem isOpen_boundary_phase_of_frontier_eq
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T1Space Y]
@@ -61,11 +47,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
-
-
 
 theorem exists_hamiltonZero_slab_compression_rim_alternative {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

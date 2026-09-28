@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedRadialFieldBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness Poincare.Analysis.Calculus
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 noncomputable def selectedCoordinateRadialField
     (P : M35StandardCapPredecessors)
@@ -38,8 +28,6 @@ noncomputable def selectedCoordinateRadialField
   let f : V → StandardCapSpace := fun z => ((L.embedding k).forward 0
     ⟨neg_nonpos.mpr (L.exhaustion.time_pos k).le, le_rfl⟩ (coordinate z)).val
   pullback ℝ f (radialUnitField G)
-
-
 
 theorem blowupSequence_coordinate_radial_smooth_subsequence
     (P : M35StandardCapPredecessors)

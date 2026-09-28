@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.MetricConv
 import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
-
-
 
 theorem tendstoUniformlyOn_chart_coefficients
     (G : RegularPointedMetricConvergence g p) :
@@ -49,8 +38,6 @@ theorem tendstoUniformlyOn_chart_coefficients
     (0 : Fin 0 → EuclideanSpace ℝ (Fin n))).comp_tendstoUniformlyOn
       (G.metric_jets q 0 K hK htarget)
 
-
-
 theorem exists_eventual_chart_jet_bound
     (G : RegularPointedMetricConvergence g p) :
     letI := G.limitCarrier.topologicalSpace
@@ -70,9 +57,6 @@ theorem exists_eventual_chart_jet_bound
   exact ((G.limitMetric.contDiffOn_chartCoefficients q).contDiffAt
     ((isOpen_extChartAt_target (I := 𝓡 n) q).mem_nhds (htarget hx))).continuousAt_iteratedFDeriv
       (by exact_mod_cast le_top) |>.continuousWithinAt
-
-
-
 
 theorem exists_eventual_chart_ellipticity
     (G : RegularPointedMetricConvergence g p) :

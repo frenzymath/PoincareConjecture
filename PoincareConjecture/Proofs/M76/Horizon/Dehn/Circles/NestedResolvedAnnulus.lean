@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.IdentityAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusBoundaryParameters
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ClosedSeamLocalInjectivity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -27,9 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_nested_resolved_annulus_map
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

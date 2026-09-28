@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.ModelStretch
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.RetainedClearance
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 -> E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
-
-
 
 theorem exists_capPlus_transport_across {u : Real} (hu : 0 < u) (hus : u ≤ S.s) :
     ∃ J : Set E3, IsCompact J ∧

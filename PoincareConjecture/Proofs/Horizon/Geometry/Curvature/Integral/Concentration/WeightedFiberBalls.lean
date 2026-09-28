@@ -1,18 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedFiberScaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Volume
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology
-
 
 noncomputable def PoincareConjecture.RiemannianMetric.openFiberWeightedAmbientBallRatio
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -32,8 +25,6 @@ noncomputable def PoincareConjecture.RiemannianMetric.openFiberWeightedAmbientBa
   (∫ x in {x | openFiberIncl f U v x ∈ g.ball p r},
     max 0 (gFiber.leviCivitaData.scalarCurvature x) ∂gFiber.volumeMeasure) /
       (1 + ∫ x in {x | openFiberIncl f U v x ∈ g.ball p R}, K x ∂gFiber.volumeMeasure)
-
-
 
 theorem PoincareConjecture.RiemannianMetric.image_preimage_ball_rescaledMetric
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -137,8 +128,6 @@ theorem PoincareConjecture.RiemannianMetric.exists_scaled_openFiber_weighted_amb
   intro K hK p r R
   rw [← himage p r, ← himage p R]
   exact hratio K hK _ _
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_scaled_openFiber_ambientBall_divergence
     {m k : ℕ} {M : ℕ → Type*}

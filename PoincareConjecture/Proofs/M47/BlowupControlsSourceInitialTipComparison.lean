@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTipTolerance
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTipReadout
 import PoincareConjecture.Proofs.M47.BlowupControlsCapJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +25,6 @@ noncomputable local instance tipComparisonTwoJetNorm :
 
 noncomputable local instance tipComparisonTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
 
 theorem exists_source_cap_tip_ricci_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta : ℝ} (htheta : theta < 1) :

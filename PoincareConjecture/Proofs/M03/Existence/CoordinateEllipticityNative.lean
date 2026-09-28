@@ -3,15 +3,6 @@ import Mathlib.Analysis.Normed.Module.RCLike.Basic
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -64,7 +55,6 @@ theorem norm_quadratic_le (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ) 
     _ ≤ ∑ _i : Fin n, ∑ _j : Fin n, ‖G‖ * ‖xi‖ ^ 2 := by
       exact Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm i j
     _ = _ := by simp [pow_two, mul_assoc]
-
 
 theorem exists_uniform_quadratic_lower_bound {X : Type*} [TopologicalSpace X]
     (G : X → Matrix (Fin n) (Fin n) ℝ) {K : Set X} (hK : IsCompact K)
@@ -120,7 +110,6 @@ theorem exists_uniform_inverse_quadratic_lower_bound {X : Type*} [TopologicalSpa
       c * ‖xi‖ ^ 2 ≤ quadratic (G x)⁻¹ xi :=
   exists_uniform_quadratic_lower_bound (fun x => (G x)⁻¹) hK
     (continuousOn_inverse_posDef G hG hpos) (fun x hx => (hpos x hx).inv)
-
 
 theorem quadratic_lower_bound_of_close (G A : Matrix (Fin n) (Fin n) ℝ)
     {c : ℝ} (hc : 0 < c)

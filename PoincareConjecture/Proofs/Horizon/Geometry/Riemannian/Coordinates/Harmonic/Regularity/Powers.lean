@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Com
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,14 +25,12 @@ theorem contMDiff_rpow_of_pos {f : M → ℝ}
   intro x
   exact (Real.contDiffAt_rpow_const_of_ne (hpos x).ne').contMDiffAt.comp x (hf x)
 
-
 theorem gradient_rpow_of_pos (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x) (p : ℝ) (x : M) :
     D.gradient (fun y => f y ^ p) x = (p * f x ^ (p - 1)) • D.gradient f x := by
   simpa only [Real.deriv_rpow_const, Function.comp_def] using
     D.gradient_comp ((hf x).mdifferentiableAt (by simp))
       (Real.hasDerivAt_rpow_const (p := p) (Or.inl (hpos x).ne')).differentiableAt
-
 
 theorem hessian_rpow_of_pos (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x) (p : ℝ)
@@ -67,7 +58,6 @@ theorem hessian_rpow_of_pos (D : LeviCivitaData g) {f : M → ℝ}
     show p - 1 - 1 = p - 2 by ring]
   ring
 
-
 theorem laplacian_rpow_of_pos (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x) (p : ℝ) (x : M) :
     D.laplacian (fun y => f y ^ p) x =
@@ -78,8 +68,6 @@ theorem laplacian_rpow_of_pos (D : LeviCivitaData g) {f : M → ℝ}
   simp_rw [D.hessian_rpow_of_pos hf hpos p]
   simp only [Finset.sum_add_distrib, mul_assoc, ← Finset.mul_sum]
   rw [D.sum_mvfderiv_mul_eq_inner_gradient]
-
-
 
 theorem laplacian_rpow_lower (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hpos : ∀ x, 0 < f x)
@@ -108,8 +96,6 @@ end PoincareConjecture.LeviCivitaData
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem exists_uniform_subsolution_power_sobolev (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :

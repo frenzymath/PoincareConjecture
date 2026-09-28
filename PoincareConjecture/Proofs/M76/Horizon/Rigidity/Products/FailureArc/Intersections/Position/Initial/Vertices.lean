@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Initial.Point
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Homo
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
 
 open LinearTorus
-
-
 
 theorem exists_parametrized_torus_covering {S : Type*} [TopologicalSpace S]
     (p : ℝ) (hp : 0 < p) (h : (AddCircle p × AddCircle p) ≃ₜ S)

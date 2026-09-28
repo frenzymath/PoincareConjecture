@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -18,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem compact_initial_derivative_bound (P : RicciFlowCurvatureTheory.{u})
     (n k : ℕ) {K T : ℝ} (hK : 0 < K) (hT : 0 < T) :

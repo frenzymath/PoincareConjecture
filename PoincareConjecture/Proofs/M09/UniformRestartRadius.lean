@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.RegularizedIntervalSolution
 import PoincareConjecture.Proofs.M09.TangentChartPhase
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

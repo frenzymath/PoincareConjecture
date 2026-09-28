@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.OriginalPLPartition
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +13,6 @@ local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
-
-
 
 theorem standard_chartwisePLMap_identity
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}

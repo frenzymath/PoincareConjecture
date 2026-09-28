@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularBandTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem SurgeryCapTag.cap_seam_signed_height
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -74,8 +62,6 @@ theorem SurgeryCapTag.cap_seam_signed_height
   refine ⟨by rwa [hheight], hz, ?_⟩
   rw [← hz]
   exact lt_iff_le_and_ne.trans ⟨fun h => h.2, fun h => ⟨by rwa [hheight], h⟩⟩
-
-
 
 theorem exists_stackCircleFamily_of_connected_regular_band
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -210,8 +196,6 @@ theorem exists_stackCircleFamily_of_connected_regular_band
       dsimp [c]
       rw [hq, ← hPhiadd, show m - z + (z - m) = 0 by ring, hPhi0]
       exact congrArg Prod.fst ((heightPlaneCoordinates u).apply_symm_apply (x, z))
-
-
 
 theorem exists_stackCircleFamily_of_two_caps
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

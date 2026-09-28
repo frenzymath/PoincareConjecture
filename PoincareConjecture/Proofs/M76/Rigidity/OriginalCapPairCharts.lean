@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductSlices
 import PoincareConjecture.Proofs.M76.Rigidity.SourceDiskPairCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem OriginalDiskProduct.exists_slice_pair_chart (P : OriginalDiskProduct e R j)
     (he : PLDomain e R) {t : ℝ} (ht : t ∈ I) (z : D) :

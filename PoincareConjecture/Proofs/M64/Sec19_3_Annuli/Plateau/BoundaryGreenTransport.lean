@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusBoundaryHalfDisk
 import PoincareConjecture.Proofs.M64.Mathlib.LocalIntervalFlux
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem m64Annulus_boundary_green_transport {x r : ℝ}
     (hr0 : 0 ≤ r) (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1)

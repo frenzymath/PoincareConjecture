@@ -1,16 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Monodromy.PairedStrips
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.SourceAnnuli.IdentityCut
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip Dehn
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 structure ComponentIdentityAnnuliData
     {X ι : Type*} [TopologicalSpace X]
@@ -42,7 +38,6 @@ structure ComponentIdentityAnnuliData
       depth L p = 0
   middle_image : ∀ j, (fun p : squareAnnulus L d ↦ (chart j p : P2)) '' {p | depth L p = 0} =
     if label j = 0 then old.pieces i else old.pieces (old.mate i)
-
 
 theorem ComponentIdentityAnnuliData.source_double_trace
     {X ι : Type*} [TopologicalSpace X]
@@ -81,8 +76,6 @@ theorem ComponentIdentityAnnuliData.source_double_trace
     split_ifs at hx with hj
     · exact old.piece_subset_double i hx
     · exact old.piece_subset_double (old.mate i) hx
-
-
 
 theorem ComponentBranchModel.nonempty_identity_annuli_of_cyclic_map
     {X ι : Type*} [TopologicalSpace X]

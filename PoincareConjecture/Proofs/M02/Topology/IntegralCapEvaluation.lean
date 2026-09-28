@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCohomologyEvaluation
 import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyZero
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexConnecting
 
-
-
 set_option autoImplicit false
 
 noncomputable section

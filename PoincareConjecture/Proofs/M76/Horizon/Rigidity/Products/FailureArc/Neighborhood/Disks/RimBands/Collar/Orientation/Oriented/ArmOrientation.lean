@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Oriented.PlanarModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.SignedArmRescaling
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Poincare.Topology.Orientation.ProjectivePlane
 open Set Metric Geometry Topology

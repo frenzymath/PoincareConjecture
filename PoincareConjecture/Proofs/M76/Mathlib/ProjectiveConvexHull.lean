@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ProjectiveHalfspace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped BigOperators
 namespace LinearMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem fractionalRadial_denom_pos_convexHull (L : E →ₗ[ℝ] ℝ)
     {s : Set E} (hs : ∀ x ∈ s, 0 < 1 + L x) :
@@ -52,9 +41,6 @@ private theorem fractionalRadial_image_convexHull_subset (L : E →ₗ[ℝ] ℝ)
     rw [fractionalRadial, smul_smul, smul_smul]
     congr 1
     field_simp [(hs (z i) (hz i)).ne', hd.ne']
-
-
-
 
 theorem fractionalRadial_image_convexHull (L : E →ₗ[ℝ] ℝ)
     {s : Set E} (hs : ∀ x ∈ s, 0 < 1 + L x) :

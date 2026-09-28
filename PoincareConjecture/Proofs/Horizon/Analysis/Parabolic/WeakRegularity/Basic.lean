@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.InnerProductSpace.PiL2
 

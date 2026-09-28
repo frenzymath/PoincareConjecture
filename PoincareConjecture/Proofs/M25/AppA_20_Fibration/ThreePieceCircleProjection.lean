@@ -7,23 +7,12 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.SmoothPeriodCircleArcs
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.M25
 open Topology3D
-
-
-
 
 theorem exists_circle_projection_of_three_product_charts
     {M : Type u} [TopologicalSpace M]

@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.FirstFrontierCov
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.SelectedComponentBoundaries
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.OriginalBoundaryCandidates
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry Topology

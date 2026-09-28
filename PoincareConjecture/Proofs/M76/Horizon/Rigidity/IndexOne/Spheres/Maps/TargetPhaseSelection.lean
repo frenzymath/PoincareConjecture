@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ChartwiseRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Geometry
@@ -35,7 +24,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "torus" => hamiltonLowerLatticePiEquiv (Fin 2)
 
-
 noncomputable def targetPhaseRetraction (theta : ℝ) : C(X, X) where
   toFun x := (x.1, (torus).symm ![torus x.2 0, (theta : C)])
   continuous_toFun := by
@@ -47,7 +35,6 @@ noncomputable def targetPhaseRetraction (theta : ℝ) : C(X, X) where
     · change Continuous (fun x : X => torus x.2 0)
       exact (continuous_apply 0).comp ((torus).continuous.comp continuous_snd)
     · exact continuous_const
-
 
 noncomputable def handlePhaseRetraction (theta : ℝ) : C(H, H) where
   toFun x := (x.1, (torus).symm ![torus x.2 0, (theta : C)])
@@ -99,8 +86,6 @@ theorem handlePhaseRetraction_boundary_iff (theta : ℝ) (x : H) :
 
 theorem targetPhaseRetraction_domain_iff (theta : ℝ) (x : X) :
     targetPhaseRetraction theta x ∈ R ↔ x ∈ R := Iff.rfl
-
-
 
 theorem polyhedralPL_targetPhaseRetraction
     {E β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -233,8 +218,6 @@ private theorem selection_coordinates_of_missing_branch
     exact hz.2
   exact hWJ ⟨⟨z, hzN⟩, hzW, rfl⟩
 
-
-
 theorem polyhedralPL_targetPhaseSelection
     {E β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {d : β → OpenPartialHomeomorph X V3}
@@ -269,8 +252,6 @@ theorem polyhedralPL_targetPhaseSelection
           · exact Or.inr (Or.inl h)) x hx'
     · exact selection_coordinates_of_missing_branch hd K hK hY ha hb.continuousOn hg hselect x hx
 
-
-
 theorem chartwisePL_of_targetPhaseSelection
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
     {d : β → OpenPartialHomeomorph X V3}
@@ -302,8 +283,6 @@ theorem chartwisePL_of_targetPhaseSelection
         ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm y : X)) h))
     · exact Or.inr (Or.inr (congrArg (fun y : H =>
         ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm y : X)) h))
-
-
 
 theorem chartwisePL_handlePhaseRetraction_comp
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.ParallelFlowIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Completeness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Flow.BoundedSpeed
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_unitRicciKernel_isometric_globalFlow_of_local_parallel_sections
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

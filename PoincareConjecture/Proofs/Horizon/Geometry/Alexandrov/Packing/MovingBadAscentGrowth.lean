@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.BadAscentGr
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.LocalRank
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.MovingConfigurations
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open Set Filter Topology Poincare.GromovHausdorff
 universe u
 
 namespace Poincare.Alexandrov
-
-
 
 theorem hasSmallAngleConfiguration_of_moving_bad_ascent_blowup
     {X Z : ℕ → BasedMetricSpaceBundle.{u}}

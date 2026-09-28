@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_original_open_neighborhood_of_carrier_neighborhood
     {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

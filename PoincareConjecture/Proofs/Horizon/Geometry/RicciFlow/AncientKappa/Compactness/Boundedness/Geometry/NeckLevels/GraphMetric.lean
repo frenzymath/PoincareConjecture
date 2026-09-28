@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Projection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem levelGraph_inner_mfderiv_le
     (N : EpsilonNeck g) (D : LeviCivitaData g) {f : M → ℝ}
@@ -137,8 +126,6 @@ theorem levelGraph_inner_mfderiv_le
   change 2 * N.scale ^ 2 * (2 * V + K ^ 2 * V) ≤ (2 * N.scale * (1 + K)) ^ 2 * V
   have hnonneg := mul_nonneg hs (mul_nonneg hV (show 0 ≤ 8 * K + 2 * K ^ 2 by positivity))
   nlinarith only [hnonneg]
-
-
 
 theorem levelGraph_tangentNorm_mfderiv_le
     (N : EpsilonNeck g) (D : LeviCivitaData g) {f : M → ℝ}

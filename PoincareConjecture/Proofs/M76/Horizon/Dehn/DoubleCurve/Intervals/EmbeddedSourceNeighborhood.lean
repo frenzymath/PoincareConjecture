@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_injective_source_open
     {X ι : Type*} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
@@ -43,9 +32,6 @@ theorem OrdinaryDoubleCurveModel.exists_injective_source_open
   rcases C.labels with h | h
   · exact hbranch C.left C.left_open C.left_embedding h.1
   · exact hbranch C.right C.right_open C.right_embedding h.1
-
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_finite_embedded_source_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

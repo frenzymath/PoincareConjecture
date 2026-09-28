@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.OrdinaryRestart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g₀ : RiemannianMetric n M}
 
-
 theorem absolute_time_lt {a t : ℝ} (ha : 0 ≤ a) (ht : a ≤ t) :
     ENNReal.ofReal (t - a) < lifetime g₀ ↔
       ENNReal.ofReal t < ENNReal.ofReal a + lifetime g₀ := by
@@ -31,7 +22,6 @@ theorem absolute_time_lt {a t : ℝ} (ha : 0 ≤ a) (ht : a ≤ t) :
     congr 1
     ring
   rw [heq, ENNReal.add_lt_add_iff_left ENNReal.ofReal_ne_top]
-
 
 noncomputable def absoluteFlow (hunique : RicciFlowUniqueness n M)
     (A : Solution g₀) (a : ℝ) (ha : 0 ≤ a) :
@@ -57,7 +47,6 @@ noncomputable def absoluteFlow (hunique : RicciFlowUniqueness n M)
         exact solution_time_lt A (by linarith [A.time_pos])
       · linarith [A.time_pos])
 
-
 theorem absoluteFlow_initial (hunique : RicciFlowUniqueness n M)
     (A : Solution g₀) (a : ℝ) (ha : 0 ≤ a) :
     (absoluteFlow hunique A a ha).metric a = g₀ := by
@@ -65,13 +54,10 @@ theorem absoluteFlow_initial (hunique : RicciFlowUniqueness n M)
   rw [add_neg_cancel]
   exact maximalFlow_initial hunique A
 
-
 theorem absolute_lifetime_gt (A : Solution g₀) (a : ℝ) :
     ENNReal.ofReal a < ENNReal.ofReal a + lifetime g₀ := by
   simpa only [add_zero] using
     (ENNReal.add_lt_add_iff_left ENNReal.ofReal_ne_top).mpr (lifetime_pos A)
-
-
 
 theorem absolute_time_le_lifetime {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
     (F : RicciFlow n M (Ico a b)) (hinitial : F.metric a = g₀) :
@@ -95,7 +81,6 @@ theorem absolute_time_le_lifetime {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
   rw [heq]
   exact add_le_add le_rfl (time_le_lifetime B)
 
-
 theorem finite_absolute_domain (a : ℝ) (ha : 0 ≤ a)
     (hfinite : ENNReal.ofReal a + lifetime g₀ ≠ ⊤) :
     {t : ℝ | a ≤ t ∧ ENNReal.ofReal t < ENNReal.ofReal a + lifetime g₀} =
@@ -106,8 +91,6 @@ theorem finite_absolute_domain (a : ℝ) (ha : 0 ≤ a)
     exact ⟨ht, (ENNReal.ofReal_lt_iff_lt_toReal (ha.trans ht) hfinite).mp he⟩
   · rintro ⟨ht, he⟩
     exact ⟨ht, (ENNReal.ofReal_lt_iff_lt_toReal (ha.trans ht) hfinite).mpr he⟩
-
-
 
 noncomputable def finiteAbsoluteFlow (hunique : RicciFlowUniqueness n M)
     (A : Solution g₀) (a : ℝ) (ha : 0 ≤ a)
@@ -125,7 +108,6 @@ noncomputable def finiteAbsoluteFlow (hunique : RicciFlowUniqueness n M)
   equation := by
     rw [← finite_absolute_domain a ha hfinite]
     exact (absoluteFlow hunique A a ha).equation
-
 
 theorem absolute_curvature_unbounded_tail [CompactSpace M]
     (hlocal : RicciFlowLocalTheory n M) (A : Solution g₀) (a : ℝ) (ha : 0 ≤ a)

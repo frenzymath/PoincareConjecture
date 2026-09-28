@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalS
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalTetrahedronBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.FiniteDiskBallDecomposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry

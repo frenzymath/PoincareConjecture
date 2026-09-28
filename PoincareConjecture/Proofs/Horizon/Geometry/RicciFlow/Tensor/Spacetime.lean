@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricDualit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.DerivativeOnFields
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,7 +35,6 @@ private lemma eventually_exists_basis_extend {ι : Type} (x : M)
   rw [Bundle.Trivialization.symm_continuousLinearEquivAt_eq,
     Bundle.Trivialization.symmL_apply _ hy]
   rfl
-
 
 lemma contMDiffAt_tensor_update_connection_fields
     (F : RicciFlow n M J) {k : ℕ} {T : ℝ → CovariantTensorEvaluation n M k}
@@ -112,7 +104,6 @@ lemma contMDiffAt_tensor_update_connection_fields
   convert h using 1
   rfl
 
-
 lemma contMDiffAt_covariantTensorDerivative_fields
     (F : RicciFlow n M J) {k : ℕ} {T : ℝ → CovariantTensorEvaluation n M k}
     {t : ℝ} (ht : t ∈ interior J) {x : M}
@@ -146,9 +137,6 @@ lemma contMDiffAt_covariantTensorDerivative_fields
     funext i
     exact Fin.cases rfl (fun _ => rfl) i
   simpa only [heq, Pi.sub_apply] using hfield
-
-
-
 
 lemma contMDiffAt_tensorTrace_fields
     (F : RicciFlow n M J) {k : ℕ} {T : ℝ → CovariantTensorEvaluation n M (k + 2)}

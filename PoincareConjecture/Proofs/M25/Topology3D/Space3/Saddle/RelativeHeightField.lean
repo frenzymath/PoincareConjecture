@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularBandField
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
 
 theorem exists_relative_collar_height_field
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonEdgeIntersections
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,18 +10,12 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 theorem isClosed_edgeSet (P : Polygon E n) (i : Fin n) : IsClosed (P.edgeSet ℝ i) := by
   rw [P.edgeSet_eq_convexHull]
   exact (P.edgeVertices i).finite_toSet.isClosed_convexHull ℝ
 
-
-
 theorem isClosed_boundary (P : Polygon E n) : IsClosed (P.boundary ℝ) :=
   isClosed_iUnion_of_finite P.isClosed_edgeSet
-
-
 
 theorem eventually_boundary_iff_incident_edges (P : Polygon E n) (q : E) :
     ∀ᶠ x in 𝓝 q, x ∈ P.boundary ℝ ↔ ∃ i, q ∈ P.edgeSet ℝ i ∧ x ∈ P.edgeSet ℝ i := by
@@ -48,8 +32,6 @@ theorem eventually_boundary_iff_incident_edges (P : Polygon E n) (q : E) :
   · rintro ⟨i, _, hi⟩
     exact mem_iUnion.mpr ⟨i, hi⟩
 
-
-
 theorem vertex_mem_edgeSet_iff (P : Polygon E n) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (i j : Fin n) :
     P i ∈ P.edgeSet ℝ j ↔ i = j ∨ i = finRotate n j := by
@@ -59,9 +41,6 @@ theorem vertex_mem_edgeSet_iff (P : Polygon E n) (hP : P.HasSimplicialEdges)
   rw [P.edgeSet_eq_convexHull,
     (P.simplicialComplex hP).vertex_mem_convexHull_iff hv (P.edgeVertices_mem_faces hP j)]
   simp only [edgeVertices, Finset.mem_insert, Finset.mem_singleton, hinj.eq_iff]
-
-
-
 
 theorem eventually_boundary_iff_adjacent_edges (P : Polygon E n)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin n) :
@@ -81,9 +60,6 @@ theorem eventually_boundary_iff_adjacent_edges (P : Polygon E n)
       exact (P.vertex_mem_edgeSet_iff hP hinj i _).mpr
         (Or.inr (Equiv.apply_symm_apply _ _).symm)
     · exact ⟨i, (P.vertex_mem_edgeSet_iff hP hinj i i).mpr (Or.inl rfl), hn⟩
-
-
-
 
 theorem eventually_boundary_iff_single_edge (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) {q : E}

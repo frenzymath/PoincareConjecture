@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterfa
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,7 +35,6 @@ local instance : NormedSpace ℝ
     (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
 
 def suAlphaLocalDensity (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
     (z : LoopPlane) (w : EuclideanSpace ℝ (Fin n) ×
@@ -75,8 +72,6 @@ private theorem localDensity_eq (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
   rw [one_add_div hl.ne', Real.div_rpow (add_nonneg hl.le hq) hl.le,
     Real.rpow_sub hl, Real.rpow_one]
   ring
-
-
 
 theorem suAlphaLocalDensity_hasDerivAt (g : RiemannianMetric n M) (b : M)
     {alpha : ℝ} (ha : 1 ≤ alpha)
@@ -127,8 +122,6 @@ theorem suAlphaLocalDensity_hasDerivAt (g : RiemannianMetric n M) (b : M)
           (V 0 z + t • d 0) (V 1 z + t • d 1)
   · change alpha * (1 + Q s / suAlphaRoundFactor z) ^ (alpha - 1) * Q' = _
     field_simp
-
-
 
 theorem suAlphaChartVariation_bound (g : RiemannianMetric n M) (b : M)
     {alpha C P L : ℝ} (ha : 1 ≤ alpha) (hC : 0 ≤ C) (hP : 0 ≤ P) (hL : 0 ≤ L)
@@ -232,8 +225,6 @@ private theorem ae_clm_apply {X E F : Type*} [MeasurableSpace X]
   (continuous_fst.clm_apply continuous_snd).comp_aestronglyMeasurable (hA.prodMk hv)
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem suAlpha_integral_firstVariation (g : RiemannianMetric n M) (b : M)
     {alpha : ℝ} (ha : 1 ≤ alpha)

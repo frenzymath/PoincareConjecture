@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.NestedSourc
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OriginalRetention
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OrdinaryModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

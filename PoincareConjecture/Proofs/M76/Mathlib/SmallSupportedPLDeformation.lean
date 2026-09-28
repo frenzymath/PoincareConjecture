@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ZeroExtensionLipschitz
 import PoincareConjecture.Proofs.M76.Mathlib.SmallLipschitzHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +12,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_small_supported_deformation
     {f : E → E} {C : Set E} (hf : FinitePiecewiseAffineOn f C) (hcv : Convex ℝ C)

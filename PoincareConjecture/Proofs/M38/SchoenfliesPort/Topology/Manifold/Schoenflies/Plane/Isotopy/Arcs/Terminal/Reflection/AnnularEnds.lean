@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.CoreCaps
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -94,8 +86,6 @@ private theorem reflectedLowerToUpper_region {D : SphereSurgeryCoreCap v g B}
   simp only [neg_neg, LowerAnnularEnd.region]
 
 namespace AnnularEndFamily
-
-
 
 theorem exists_reflectedProtected (A : AnnularEndFamily v g B C) (hv : ‖v‖ = 1) :
     ∃ R : AnnularEndFamily v (heightReflection hv ∘ g) (Neg.neg '' B) C,

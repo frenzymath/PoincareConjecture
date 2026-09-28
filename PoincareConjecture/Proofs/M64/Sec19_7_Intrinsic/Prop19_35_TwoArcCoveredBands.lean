@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoCornerCaps
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBandOppositeNeighborhood
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +11,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_covered_bands
     {alpha beta : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha)

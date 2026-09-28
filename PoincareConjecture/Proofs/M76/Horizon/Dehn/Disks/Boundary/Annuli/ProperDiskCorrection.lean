@@ -13,9 +13,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "A2" => squareAnnulus 8 1
 local notation "I" => Icc (0 : ℝ) 1
 
-
-
-
 theorem exists_proper_disk_boundary_correction
     {R B S₀ S₁ Q A₀ A₁ : Set V3}
     (hR : IsCompact R)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Frame.Field
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureFrame
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +35,6 @@ private lemma exists_larger_interval {I : Set ℝ} {L : ℝ}
   by_cases hsL : L < s
   · exact hright ⟨hdb.1.trans hsL, by linarith [hs.2, hdb.2]⟩
   exact hsub ⟨le_of_not_gt hs0, le_of_not_gt hsL⟩
-
-
 
 theorem integral_ricci_le_of_constant_speed_weighted_upper
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -247,8 +234,6 @@ private lemma integral_ricci_le_of_constant_speed
   convert h using 1
   ring
 
-
-
 theorem integral_ricci_le_of_minimizing
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -269,8 +254,6 @@ theorem integral_ricci_le_of_minimizing
       2 * (n : ℝ) * scale + 4 * Λ / scale :=
   integral_ricci_le_of_constant_speed D hI hsub hgeo hL zero_lt_one hspeed
     (by simpa only [mul_one] using hmin) hΛ hscale hRic
-
-
 
 theorem integral_ricci_div_speed_le_of_minimizing
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

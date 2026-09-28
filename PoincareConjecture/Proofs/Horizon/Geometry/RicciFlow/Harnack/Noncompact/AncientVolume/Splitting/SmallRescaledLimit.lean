@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientRescaledLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.SmallLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_nonflat_small_ancient_rescaled_limit_of_unbounded_scalar_ratio
     {m : ℕ} (hm : 0 < m) {M : Type u}

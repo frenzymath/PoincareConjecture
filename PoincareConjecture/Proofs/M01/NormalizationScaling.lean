@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M01.NormalizationMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory

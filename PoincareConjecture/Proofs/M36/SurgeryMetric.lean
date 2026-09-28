@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.RetainedDifferential
 import PoincareConjecture.Proofs.M36.RadialWeights
 import PoincareConjecture.Proofs.M36.WeightedMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

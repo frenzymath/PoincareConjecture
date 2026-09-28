@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.PlanarSurfaceCarrierInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry Topology
 namespace PoincareConjecture.M76

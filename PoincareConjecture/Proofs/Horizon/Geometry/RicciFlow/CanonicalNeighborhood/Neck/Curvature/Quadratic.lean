@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open RicciFlow.Splitting Poincare.Geometry.Riemannian.SpaceForm
-
 
 theorem bilinear_abs_apply_self_le_nine_mul
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -57,7 +47,6 @@ theorem bilinear_abs_apply_self_le_nine_mul
         (hB i j) (abs_nonneg _) (mul_self_nonneg _)
     _ = 9 * α * ‖v‖ ^ 2 := by simp; ring
 
-
 theorem roundCylinderEuclideanMetric_norm_sq_le (v : EuclideanSpace ℝ (Fin 3)) :
     ‖v‖ ^ 2 ≤ roundCylinderEuclideanMetric.inner 0 v v := by
   change ‖v‖ ^ 2 ≤ roundCylinderModelCoefficients
@@ -83,8 +72,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem centered_ricci_quadratic_control (N : EpsilonNeck g) (D : LeviCivitaData g)
     (q : UnitTwoSphere) (s : ℝ) {α : ℝ} (hα : 0 ≤ α)
@@ -120,8 +107,6 @@ theorem centered_ricci_quadratic_control (N : EpsilonNeck g) (D : LeviCivitaData
   rw [ricciBilinear_apply, ricciBilinear_apply, roundCylinderEuclideanMetric_ricci_zero] at h
   exact h.trans (mul_le_mul_of_nonneg_left (roundCylinderEuclideanMetric_norm_sq_le v)
     (by positivity))
-
-
 
 theorem centeredEuclideanParametrization_mfderiv_zero (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -162,7 +147,6 @@ theorem centeredEuclideanParametrization_mfderiv_zero (N : EpsilonNeck g)
         ((RiemannianMetric.lineModelEquiv 2).symm v).2) at hh'
   erw [sphere_chart_symm_zero] at hh'
   exact hh'
-
 
 theorem ricci_product_quadratic_control (N : EpsilonNeck g) (D : LeviCivitaData g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -228,8 +212,6 @@ theorem ricci_product_quadratic_control (N : EpsilonNeck g) (D : LeviCivitaData 
   erw [hderiv, hV, hmetric] at h
   rw [centeredEuclideanParametrization_zero] at h
   simpa only [htransverse] using h
-
-
 
 theorem exists_ricci_quadratic_control :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

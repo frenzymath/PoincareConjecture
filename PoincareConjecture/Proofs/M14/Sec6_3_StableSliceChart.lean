@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_StableInjectivity
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
 
 theorem stable_slice_isLocalHomeomorphOn (H : M14StableSet G T τ x E) :
     IsLocalHomeomorphOn H.endpoint_slice_map H.carrier := by
@@ -44,8 +34,6 @@ theorem stable_slice_isLocalHomeomorphOn (H : M14StableSet G T τ x E) :
       open_target := hV }
   exact ⟨e, hZU, rfl⟩
 
-
-
 theorem stable_slice_isOpenMap (H : M14StableSet G T τ x E) :
     IsOpenMap (H.carrier.domRestrict H.endpoint_slice_map) := by
   apply IsOpenMap.of_nhds_le
@@ -58,35 +46,24 @@ theorem stable_slice_isOpenMap (H : M14StableSet G T τ x E) :
     exact (stable_slice_isLocalHomeomorphOn H).map_nhds_eq Z.property
   exact hmap.ge
 
-
-
 noncomputable def stableSliceChart (H : M14StableSet G T τ x E) :
     OpenPartialHomeomorph (G.Horizontal x) (G.slices (T - τ)).Point :=
   OpenPartialHomeomorph.ofContinuousOpenRestrict
     ((stable_slice_endpoint_injective H).toPartialEquiv H.endpoint_slice_map H.carrier)
     H.endpoint_slice_continuous (stable_slice_isOpenMap H) H.carrier_open
 
-
 theorem stableSliceChart_source (H : M14StableSet G T τ x E) :
     (stableSliceChart H).source = H.carrier := rfl
-
-
 
 theorem stableSliceChart_target (H : M14StableSet G T τ x E) :
     (stableSliceChart H).target = H.endpoint_slice_map '' H.carrier := rfl
 
-
-
 theorem stableSliceChart_apply (H : M14StableSet G T τ x E) (Z : G.Horizontal x) :
     stableSliceChart H Z = H.endpoint_slice_map Z := rfl
-
-
 
 theorem stableSliceChart_smooth (H : M14StableSet G T τ x E) :
     M14EndpointSliceSmooth G (stableSliceChart H) (stableSliceChart H).source :=
   H.endpoint_slice_smooth
-
-
 
 theorem stableSliceChart_symm_smooth (H : M14StableSet G T τ x E) :
     M14InverseSliceSmooth G (stableSliceChart H).symm (stableSliceChart H).target := by

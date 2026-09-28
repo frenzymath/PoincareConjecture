@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeIsometry
 import PoincareConjecture.Proofs.M34.Standard.CapIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (hregular : t ∉ F.surgery_times)
 
 include hregular
-
-
 
 theorem regular_history_cap_control {epsilon C : ℝ}
     (x : (H.generalized.slice t).carrier) (N : CapCertificate (F.metric t))

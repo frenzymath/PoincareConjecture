@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsPinching
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ variable (S : RepairedControlledSchedulesData.{u})
     F.parameters.delta u ≤ B.delta S.setup.standard_initial S.constants)
 
 include hInitial hConstants hC hBase hT hScale hLarge hThreshold hPinched hEarlier hOverlap
-
-
 
 theorem first_failure_search_scalar_bound
     (P : M44CapPersistencePredecessors.{u})
@@ -129,8 +118,6 @@ theorem first_failure_search_scalar_bound
   have hcancel : Q * (s / Q) = s := by field_simp
   rw [hread (s / Q) hs', hcancel, cylinderScalar_of_mem e x s hs, hrhoSq] at h
   simpa only [mul_assoc] using h
-
-
 
 theorem first_failure_search_curvature_bounds
     (P : M46Predecessors.{u})

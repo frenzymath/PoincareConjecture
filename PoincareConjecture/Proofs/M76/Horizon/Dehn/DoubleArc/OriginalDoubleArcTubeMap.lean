@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcJoi
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcAxisContacts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedPrismChainMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

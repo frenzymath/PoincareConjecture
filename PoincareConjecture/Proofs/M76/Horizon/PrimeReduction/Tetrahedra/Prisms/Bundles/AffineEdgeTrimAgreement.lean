@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.AffineEdgeFiberReflection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.SymmetricPrismTrim
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -61,4 +59,3 @@ theorem prismTrim_agrees_on_equal_affine_sides
     constructor <;> intro ht <;> constructor <;> linarith [ht.1,ht.2]
 
 end PoincareConjecture.M76.PrismBelt
-

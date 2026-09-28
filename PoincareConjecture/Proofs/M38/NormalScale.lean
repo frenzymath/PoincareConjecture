@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M38.LowerEndReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def normalScaleProfile (a t : ℝ) : ℝ :=
   a * t + (1 - a) * lowerEndCutoff t * t
@@ -79,7 +70,6 @@ theorem normalScaleProfile_surjective (a : ℝ) :
       exact ⟨hly, hyr⟩)
   exact ⟨t, ht⟩
 
-
 noncomputable def normalScaleOrderIso (a : ℝ) (ha : 0 < a) (ha1 : a < 1) : ℝ ≃o ℝ :=
   (normalScaleProfile_strictMono ha ha1).orderIsoOfSurjective _
     (normalScaleProfile_surjective a)
@@ -93,7 +83,6 @@ theorem normalScaleOrderIso_symm_smooth {a : ℝ} (ha : 0 < a) (ha1 : a < 1) :
     (fun t => (normalScaleProfile_deriv_pos ha ha1 t).ne')
     (fun t => ((normalScaleProfile_smooth a).differentiable (by simp) t).hasDerivAt)
     (normalScaleProfile_smooth a)
-
 
 theorem normalScaleOrderIso_symm_inner {a t : ℝ} (ha : 0 < a) (ha1 : a < 1)
     (ht : |t| ≤ a / 8) : (normalScaleOrderIso a ha ha1).symm t = t / a := by

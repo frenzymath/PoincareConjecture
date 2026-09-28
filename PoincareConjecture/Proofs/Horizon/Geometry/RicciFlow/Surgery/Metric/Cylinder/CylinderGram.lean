@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

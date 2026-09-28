@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.EmbeddedCircle
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.RadialExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -96,7 +94,6 @@ theorem upperSphereMap_image : upperSphereMap '' upperLevelSet = height ⁻¹' {
 theorem isConnected_upper_height_level : IsConnected (height ⁻¹' {(13 / 10 : Real)}) := by
   rw [← upperSphereMap_image]
   exact isConnected_upperLevelSet.image _ upperSphereMap_smooth.continuousOn
-
 
 theorem exists_smooth_circle_upper_height_level :
     ∃ γ : S1 → S2,

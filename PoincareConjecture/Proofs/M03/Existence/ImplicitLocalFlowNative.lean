@@ -3,13 +3,6 @@ import Mathlib.Analysis.Calculus.ImplicitContDiff
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Topology.ContinuousMap.Interval
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

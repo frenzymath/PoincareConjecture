@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageCommutation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suMollifier_translated_tsupport {r : ℝ} (hr : 0 < r) (x : Plane) :
     tsupport (fun y => mollifierEps hr (x - y)) = Metric.closedBall x r := by
   let T : Plane ≃ₜ Plane := (Homeomorph.neg Plane).trans (Homeomorph.addLeft x)
@@ -38,9 +26,6 @@ theorem suMollifier_translated_tsupport {r : ℝ} (hr : 0 < r) (x : Plane) :
   have hT : T y = x - y := by simp [T, sub_eq_add_neg]
   rw [hT, dist_eq_norm, norm_sub_rev]
 
-
-
-
 theorem suDisk_indicator_locallyIntegrable {E : Type*} [NormedAddCommGroup E]
     {u : Plane → E} {a : Plane} {r : ℝ}
     (hu : MemLp u 2 (volume.restrict (Metric.ball a r))) :
@@ -50,9 +35,6 @@ theorem suDisk_indicator_locallyIntegrable {E : Type*} [NormedAddCommGroup E]
       (measure_ball_lt_top : volume (Metric.ball a r) < ⊤)⟩
   exact ((integrable_indicator_iff Metric.isOpen_ball.measurableSet).mpr
     (hu.integrable (by norm_num))).locallyIntegrable
-
-
-
 
 theorem suMollifier_weak_gradient_bound {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

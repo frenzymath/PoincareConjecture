@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadiusSize
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_cap_curvature_ball_volume_lower (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

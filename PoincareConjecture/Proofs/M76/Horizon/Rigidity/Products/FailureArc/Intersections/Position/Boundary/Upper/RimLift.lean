@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimFinitePL
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Covering.AddCircle
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

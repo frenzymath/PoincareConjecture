@@ -2,21 +2,9 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Order.Interval.Set.UnorderedInterval
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem Real.abs_sub_le_mul_abs_sub_of_deriv_le_below
     {f : ℝ → ℝ} {a b c k : ℝ}

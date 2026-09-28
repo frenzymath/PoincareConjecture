@@ -1,21 +1,8 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeighborEnergySum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
-
 
 theorem sum_range_le_of_boundary_neighbor_bounds {a b : ℕ → ℝ} {C q r : ℝ}
     (hzero : b 0 ≤ C * (a 0 + r * a 1 + r ^ 2 * a 2))
@@ -47,8 +34,6 @@ theorem sum_range_le_of_boundary_neighbor_bounds {a b : ℕ → ℝ} {C q r : �
     · rfl
     · simp only [Nat.add_assoc, Nat.reduceAdd]
       ring
-
-
 
 theorem geometric_weighted_neighbor_sum_range_le {E R : ℕ → ℝ} {C : ℝ}
     (hn : ∀ i, 0 ≤ E i) (hC : 0 ≤ C)

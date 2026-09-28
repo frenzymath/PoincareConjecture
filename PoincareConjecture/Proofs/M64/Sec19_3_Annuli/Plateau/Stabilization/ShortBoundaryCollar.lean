@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeRectangle
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.SmoothAnnulusAdmission
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.AreaDensityProduct
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +12,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_short_boundary_collar
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M)) (S : ℝ) :

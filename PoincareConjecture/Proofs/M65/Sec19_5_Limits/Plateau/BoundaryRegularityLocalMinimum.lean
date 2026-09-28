@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityLocalMap
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerDiskLocal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,10 +29,6 @@ private theorem push_original_columns {M : Type*} {N : ℕ}
   exact boundaryPushField_pull hp z _ i
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem boundary_zero_green_energy_comparison_uniform
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -165,10 +151,6 @@ private theorem replacement_memLp {E : Type*} [NormedAddCommGroup E]
 
 set_option maxHeartbeats 1800000 in
 
-
-
-
-
 theorem boundary_localMap_minimizes_uniform
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
     [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -266,10 +248,6 @@ theorem boundary_localMap_minimizes_uniform
     simpa only [original, changed, hXvalue, hXfield] using hcomparison
   rw [hsplit] at hcomp
   linarith only [hcomp]
-
-
-
-
 
 theorem weakDisk_exists_boundary_localMinimum
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

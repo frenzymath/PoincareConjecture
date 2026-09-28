@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +18,6 @@ private theorem carrier_nonempty_for_scaling : N.carrier.Nonempty :=
   ⟨N.end_neck.center, N.end_neck_subset
     (N.end_neck.central_sphere_subset N.end_neck.center_on_central_sphere)⟩
 
-
-
 theorem scaleMetric_intrinsic_diameter_bound :
     intrinsicDiameter (M13.scaleSmoothMetric g Q hQ) N.carrier <
       ENNReal.ofReal (N.cap_constant * scalarCurvatureSupOn
@@ -44,8 +32,6 @@ theorem scaleMetric_intrinsic_diameter_bound :
   exact (ENNReal.mul_right_strictMono
     (ENNReal.ofReal_pos.mpr (Real.sqrt_pos.mpr hQ)).ne' ENNReal.ofReal_ne_top)
     N.intrinsic_diameter_bound
-
-
 
 theorem scaleMetric_volume_bound :
     calibratedMetricVolume (M13.scaleSmoothMetric g Q hQ) N.carrier <
@@ -62,8 +48,6 @@ theorem scaleMetric_volume_bound :
     (ENNReal.ofReal_pos.mpr (Real.rpow_pos_of_pos hQ _)).ne' ENNReal.ofReal_ne_top)
     N.volume_bound
 
-
-
 theorem scaleMetric_core_radius_eq {y : M} (hy : y ∈ N.core) :
     scalarCurvatureSupOn (M13.scaleSmoothMetric g Q hQ)
       (M13.scaleLeviCivitaData N.connection Q hQ)
@@ -76,7 +60,6 @@ theorem scaleMetric_core_radius_eq {y : M} (hy : y ∈ N.core) :
   simp only [mul_inv_rev, mul_pow, inv_pow, Real.sq_sqrt hQ.le, div_eq_mul_inv]
 
 omit [T2Space M] in
-
 
 theorem scaleMetric_core_ball_volume_lower :
     ∃ bound : ℝ, N.cap_constant⁻¹ < bound ∧ ∀ y ∈ N.core,
@@ -99,8 +82,6 @@ theorem scaleMetric_core_ball_volume_lower :
     mul_left_comm b, ENNReal.ofReal_mul (pow_nonneg (Real.sqrt_nonneg Q) 3)]
   exact mul_le_mul_right (hvolume y hy) _
 
-
-
 theorem scaleMetric_gradient_bound :
     ∃ bound : ℝ, bound < N.cap_constant ∧ ∀ x ∈ N.carrier,
       scalarGradientNorm (M13.scaleSmoothMetric g Q hQ)
@@ -116,8 +97,6 @@ theorem scaleMetric_gradient_bound :
     _ ≤ (b * N.connection.scalarCurvature x ^ (3 / 2 : ℝ)) / Q ^ (3 / 2 : ℝ) :=
       div_le_div_of_nonneg_right (hgradient x hx) (Real.rpow_pos_of_pos hQ _).le
     _ = _ := by ring
-
-
 
 theorem scaleMetric_laplacian_bound :
     ∃ bound : ℝ, bound < N.cap_constant ∧ ∀ x ∈ N.carrier,

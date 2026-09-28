@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Memb
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M76
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
-
-
 
 theorem ChartwisePLSphere.exists_circle_cut_witness_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -89,9 +77,6 @@ private theorem retained_disk_excludes_joint_witnesses
     (hkS.trans hwhole.symm.subset) ⟨p true,hpt,(hp true).1⟩
     ⟨p false,hpf,(hp false).1⟩
   exact Set.disjoint_left.mp hkr hxk (hinter.subset hxd)
-
-
-
 
 theorem circle_cut_witnesses_meet_retained_disks
     {X : Type*} (f : V3 → X)

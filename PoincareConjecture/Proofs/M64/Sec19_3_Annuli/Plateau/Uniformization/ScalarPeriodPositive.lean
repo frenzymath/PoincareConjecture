@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFluxApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +17,6 @@ local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 theorem scalarCoverJacobian_continuousOn {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hlap : ∀ x ∈ scalarAnnulus, D.laplacian H x = 0) :
@@ -44,12 +26,6 @@ theorem scalarCoverJacobian_continuousOn {H : Plane → ℝ}
   have hb := (scalarCoverForm_smooth_closed D hHs hlap).1.continuousOn
   exact ((hdu.clm_apply continuousOn_const).mul (hb.clm_apply continuousOn_const)).sub
     ((hdu.clm_apply continuousOn_const).mul (hb.clm_apply continuousOn_const))
-
-
-
-
-
-
 
 theorem exists_scalarCover_weighted_flux_strict (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -103,12 +79,6 @@ theorem exists_scalarCover_weighted_flux_strict (w : H1Zero D scalarAnnulus)
   rw [hgreen] at hbandpositive
   exact ⟨r, hr, s, hs, hrs, sub_pos.mp hbandpositive⟩
 
-
-
-
-
-
-
 theorem scalarPotential_fluxPeriod_pos (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -125,12 +95,6 @@ theorem scalarPotential_fluxPeriod_pos (w : H1Zero D scalarAnnulus)
   have hbupper := (scalarCover_weighted_flux_bounds D hHc hHs hlap hE hinner houter hb).2
   rw [scalarFluxPeriod_eq D hHs hlap hb hr] at hbupper
   exact (halower.trans_lt hstrict).trans_le hbupper
-
-
-
-
-
-
 
 theorem exists_positive_period_annular_cover_conjugate :
     ∃ (H : Plane → ℝ) (w : H1Zero D scalarAnnulus) (V : Cover → ℝ),

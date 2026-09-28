@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.Dual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture
 namespace LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 lemma laplacian_eq_sum_hessian_inverse (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
@@ -36,8 +27,6 @@ lemma laplacian_eq_sum_hessian_inverse (D : LeviCivitaData g)
   rw [(g.inner_isInvertible x).self_apply_inverse]
   rfl
 
-
-
 lemma laplacian_eq_sum_fderiv_sub_christoffel (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContDiffAt ℝ ∞ f x) :
@@ -50,7 +39,6 @@ lemma laplacian_eq_sum_fderiv_sub_christoffel (D : LeviCivitaData g)
   rw [D.laplacian_eq_sum_hessian_inverse hf]
   simp_rw [D.hessian_eq_fderiv_sub_christoffel hf]
   rw [Finset.sum_sub_distrib, map_sum]
-
 
 lemma sum_christoffel_inverse_eq_zero_of_harmonic (D : LeviCivitaData g)
     {x : EuclideanSpace ℝ (Fin n)}
@@ -68,8 +56,6 @@ lemma sum_christoffel_inverse_eq_zero_of_harmonic (D : LeviCivitaData g)
     funext fun _ ↦ ContinuousLinearMap.fderiv _
   rw [hd] at h
   simpa using h
-
-
 
 lemma laplacian_eq_sum_fderiv_of_harmonic (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}

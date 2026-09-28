@@ -1,19 +1,8 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.ClosedCover
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.ClosureCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Neighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Interior
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,9 +15,6 @@ universe u v w
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
-
 
 theorem exists_exactly_two_faces_of_coordinate_triangle_cover
     {F : Type v} {E : Type w} [Finite F] [Finite E]

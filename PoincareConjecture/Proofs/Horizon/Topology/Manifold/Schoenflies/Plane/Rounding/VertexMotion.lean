@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Isotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Reduction.PushIn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -38,8 +29,6 @@ theorem IsSimplePolygon.polygonPushVertex_one_midpoint {p : Polygon E n}
   simp only [polygonPushVertex, polygonReplaceVertex_apply_of_ne _ _ _ hprev,
     polygonReplaceVertex_apply_of_ne _ _ _ hnext]
 
-
-
 theorem exists_ambient_rounded_vertex_push
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))
     {p : Polygon E n} (hp : IsSimplePolygon p) (k : Fin n)
@@ -58,7 +47,6 @@ theorem exists_ambient_rounded_vertex_push
   refine ⟨δ, hδ, hδsmall, ρ, hρ, htail, hbound, hder, Phi 1,
     ⟨K, hK, hfix 1⟩, ?_⟩
   simpa only [polygonPushVertex_zero] using hPhi 1 (by simp)
-
 
 theorem exists_uniform_ambient_rounded_vertex_push
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))

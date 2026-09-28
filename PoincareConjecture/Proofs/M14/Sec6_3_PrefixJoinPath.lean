@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_PathTail
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeJoinBoundary
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
-
-
-
 
 noncomputable def prefixJoinPath (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T τ₁ τ₂ x y)
@@ -70,17 +58,12 @@ noncomputable def prefixJoinPath (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (fun t ht => oneSidedGaugeJoin_eq_right D.index D.lift p.curve q.curve hd hsmall hqRec
       (by linarith))
 
-
-
 theorem prefixJoinPath_curve (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T τ₁ τ₂ x y)
     (p : M14BackwardPath G T τ₁ c x (q.curve c)) (D : PrefixJoinGauge q p)
     (d : ℝ) (hd : 0 < d) (hsmall : 2 * d < D.radius) :
     (prefixJoinPath hM12 q p D d hd hsmall).curve =
       oneSidedGaugeJoin D.index D.lift p.curve q.curve c D.radius d := rfl
-
-
-
 
 theorem action_prefixJoinPath (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T τ₁ τ₂ x y)

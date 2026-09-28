@@ -2,10 +2,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,9 +25,6 @@ private theorem mapsTo_of_no_frontier
   intro t ht
   exact interior_subset (Poincare.Topology.preconnected_subset_interior_of_disjoint_frontier
     (hS.image f hc) hfront ⟨f a, ⟨a, ha, rfl⟩, hstart⟩ ⟨t, ht, rfl⟩)
-
-
-
 
 theorem m64_path_confined_or_first_last_frontier
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsClosed K)

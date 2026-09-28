@@ -1,22 +1,9 @@
 import Mathlib.Analysis.Normed.Module.Multilinear.Basic
 import Mathlib.Tactic.Abel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem connection_curvature_difference_algebra
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

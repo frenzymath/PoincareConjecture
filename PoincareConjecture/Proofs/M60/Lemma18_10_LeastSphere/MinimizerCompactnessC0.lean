@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +16,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem suNormalized_C0_subsequence [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))
@@ -93,8 +87,6 @@ theorem suNormalized_C0_subsequence [CompactSpace M] [T2Space M]
   · simpa only [ContinuousMap.coe_mk, hev, J, Function.comp_apply] using! ht
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem suC0_common_readable_chart
     {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d)) (hread : SUChartReadable (n := n) e)

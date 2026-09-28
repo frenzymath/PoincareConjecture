@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactWeakChain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suFinAddEquivProd_symm_left {n m : ℕ}
     (x : EuclideanSpace ℝ (Fin n)) (y : EuclideanSpace ℝ (Fin m)) (i : Fin n) :
     (EuclideanSpace.finAddEquivProd (𝕜 := ℝ)).symm (x, y) (Fin.castAdd m i) = x i := by
@@ -32,8 +22,6 @@ theorem suFinAddEquivProd_symm_left {n m : ℕ}
     WithLp.linearEquiv, finSumFinEquiv]
   rfl
 
-
-
 theorem suFinAddEquivProd_symm_right {n m : ℕ}
     (x : EuclideanSpace ℝ (Fin n)) (y : EuclideanSpace ℝ (Fin m)) (i : Fin m) :
     (EuclideanSpace.finAddEquivProd (𝕜 := ℝ)).symm (x, y) (Fin.natAdd n i) = y i := by
@@ -41,10 +29,6 @@ theorem suFinAddEquivProd_symm_right {n m : ℕ}
     PiLp.sumPiLpEquivProdLpPiLp, WithLp.prodContinuousLinearEquiv,
     WithLp.linearEquiv, finSumFinEquiv]
   rfl
-
-
-
-
 
 theorem suWeakPartial_source_comp_on_compact {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

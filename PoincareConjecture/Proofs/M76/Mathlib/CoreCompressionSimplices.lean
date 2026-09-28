@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoreRadialCompression
 import PoincareConjecture.Proofs.M76.Mathlib.ProjectiveConvexHull
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,16 +9,11 @@ namespace NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem coreCompression_eq_fractionalRadial (L : E →ₗ[ℝ] ℝ) {x : E}
     (hx : 1 ≤ L x) (he : ‖x‖ = L x) :
     coreCompression x = (2 : ℝ) • L.fractionalRadial x := by
   rw [coreCompression_of_one_le_norm (he ▸ hx), he,
     LinearMap.fractionalRadial, smul_smul, div_eq_mul_inv]
-
-
-
 
 theorem coreCompression_simplex (s : Finset E)
     (hind : AffineIndependent ℝ ((↑) : s → E))

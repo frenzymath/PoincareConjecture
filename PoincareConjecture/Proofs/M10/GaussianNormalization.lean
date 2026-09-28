@@ -1,18 +1,9 @@
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
-
 
 theorem sqrt_det_four_mul_identity (n : ℕ) {t : ℝ} (ht : 0 ≤ t) :
     Real.sqrt (((4 * t) • (1 : Matrix (Fin n) (Fin n) ℝ)).det) =
@@ -22,7 +13,6 @@ theorem sqrt_det_four_mul_identity (n : ℕ) {t : ℝ} (ht : 0 ≤ t) :
     nlinarith [Real.sq_sqrt ht]
   rw [hbase, ← pow_mul, Nat.mul_comm 2 n, pow_mul,
     Real.sqrt_sq (pow_nonneg (mul_nonneg (by norm_num) (Real.sqrt_nonneg t)) n)]
-
 
 theorem rpow_mul_gaussian_jacobian (n : ℕ) {t : ℝ} (ht : 0 < t) :
     Real.rpow t (-(n : ℝ) / 2) * (2 * Real.sqrt t) ^ n = (2 : ℝ) ^ n := by

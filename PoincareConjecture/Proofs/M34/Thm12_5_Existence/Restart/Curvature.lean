@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.JetConvergence
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Realization
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,8 +18,6 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)]
   {A : MetricFlowApproximation ginit Mfamily}
   (G : MetricInteriorCoefficientLimit A) (Dinit : LeviCivitaData ginit)
-
-
 
 theorem initialFlow_curvature_le (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :
@@ -62,8 +51,6 @@ theorem initialFlow_curvature_le (P : RicciFlowCurvatureTheory.{0})
   apply le_of_tendsto hnorm
   filter_upwards [hsource] with k hk
   exact (hdata k hk).2
-
-
 
 theorem initialFlow_abs_curvature_le (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :

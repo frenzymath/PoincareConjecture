@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseLocalVariat
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseCoordinateMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedCoordinateVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "E" => EuclideanSpace ℝ (Fin ((n + 1) + 1))
-
-
-
 
 theorem auxiliaryCircle_free_phase_local_equation
     (P : M62.CircleProductData F circumference)

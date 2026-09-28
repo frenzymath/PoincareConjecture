@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Frame.Field
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem jacobi_eq_zero_of_terminal
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}
@@ -98,8 +88,6 @@ theorem jacobi_eq_zero_of_terminal
   have hv := congrArg (fun z => P t z.2) hpair
   exact ⟨by simpa [y, (hi t (h01 ht)).self_apply_inverse] using hy,
     by simpa [v, (hi t (h01 ht)).self_apply_inverse] using hv⟩
-
-
 
 theorem jacobi_terminal_deriv_ne_zero
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}

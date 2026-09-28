@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderProjection
 import Mathlib.Topology.PartitionOfUnity
 
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64ChartReadable_tangent_projection
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

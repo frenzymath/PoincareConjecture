@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.PLDomainLocalPathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open scoped unitInterval
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_closed_cut_based_edge_paths
     {X V κ ι : Type*} [TopologicalSpace X]

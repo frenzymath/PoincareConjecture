@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnTests
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +15,6 @@ local notation "K" => m64AnnulusDomain
 local notation "S" => interior m64AnnulusDomain
 local notation "a" => curvePeriod / 2
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
-
-
-
 
 theorem m64HalfTurnBlend_integral_tendsto
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -47,9 +38,6 @@ theorem m64HalfTurnBlend_integral_tendsto
     apply tendsto_const_nhds.congr'
     filter_upwards [m64HalfTurnBlend_eventually hf hg hx 0] with j hj
     rw [hj.1]
-
-
-
 
 theorem m64HalfTurnBlend_derivative_integral_tendsto
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -79,9 +67,6 @@ theorem m64HalfTurnBlend_derivative_integral_tendsto
     filter_upwards [m64HalfTurnBlend_eventually hf hg hx i] with j hj
     rw [hj.2]
 
-
-
-
 theorem m64HalfTurn_rectangle_ae :
     (∀ᵐ p ∂volume.restrict S, p ∈ K) ∧
       ∀ᵐ p ∂volume.restrict S, p 0 ≠ a := by
@@ -90,9 +75,6 @@ theorem m64HalfTurn_rectangle_ae :
   · apply ae_restrict_of_ae
     apply ae_iff.mpr
     simpa only [not_not] using m64_cut_line_null a
-
-
-
 
 theorem m64HalfTurn_boundary_ae {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1) :
     (∀ᵐ x ∂volume.restrict (Icc (0 : ℝ) curvePeriod), annulusPoint x s ∈ K) ∧

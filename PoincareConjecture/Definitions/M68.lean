@@ -1,20 +1,5 @@
 import PoincareConjecture.Statements.M67
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,7 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure M68ProfileInput
     {g₀ : StandardInitialMetric}
@@ -84,7 +68,6 @@ def M68ProfileInput.time
     (I : M68ProfileInput X HX)
     (t : Set.Icc I.T₁ I.T₂) : Set.Icc (0 : ℝ) T :=
   ⟨t.1, I.ordered.1.trans t.2.1, t.2.2.trans I.ordered.2.2⟩
-
 
 noncomputable def m68Profile
     {g₀ : StandardInitialMetric}

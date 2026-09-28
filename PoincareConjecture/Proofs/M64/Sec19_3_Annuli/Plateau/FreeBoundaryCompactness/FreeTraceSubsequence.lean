@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LiftSelection
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.VaryingTraceCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +11,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture.M64
 
 open Poincare.Analysis.Sobolev.WeakCompactness
-
-
 
 theorem degreeOneLift_continuous (sigma : M64PeriodicDegreeOneLift) :
     Continuous sigma.map := by
@@ -43,9 +28,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "mu" => volume.restrict (interior m64AnnulusDomain)
-
-
-
 
 theorem observedWeakAnnulus_free_trace_subsequence
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) (hei : IsClosedEmbedding e)

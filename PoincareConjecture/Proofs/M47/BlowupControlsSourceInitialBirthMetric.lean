@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthBounds
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthError
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
   {atlas : StandardCylinderAtlas} {v gamma : ℝ} {z : StandardCapSpace}
   (N : StandardEvolvingNeck atlas G v gamma z
     (Icc (-v * (G.connection v).scalarCurvature z) 0))
-
-
 
 theorem standard_initial_neck_birth_close :
     RoundCylinderClose gamma (-v * (G.connection v).scalarCurvature z)
@@ -53,8 +42,6 @@ section CoordinateNorm
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem standard_initial_neck_birth_pullback_bounds
     (hsmall : gamma ≤ 1 / 1200)

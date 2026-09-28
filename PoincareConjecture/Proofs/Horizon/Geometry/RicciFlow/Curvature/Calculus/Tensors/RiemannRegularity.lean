@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.F
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Fields.CurvatureFieldsRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

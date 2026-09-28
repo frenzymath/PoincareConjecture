@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteChartBounds
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsSpatial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ private noncomputable local instance finiteChartJetsBilinAdd :
     NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance finiteChartJetsBilinSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_chart_spatial_jets (P : RicciFlowCurvatureTheory.{u})
     {τ R K ρ a0 b0 Z : ℝ} (hτ : 0 < τ) (hK : 0 < K)

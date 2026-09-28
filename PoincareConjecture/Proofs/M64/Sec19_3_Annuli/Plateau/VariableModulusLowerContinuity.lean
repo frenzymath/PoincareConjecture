@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMinimizerPowerGr
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalRepresentative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakRepresentative
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 local notation "S" => interior m64AnnulusDomain
 local notation "L" => m64AnnulusLowerStrip
-
-
 
 theorem weighted_lower_local_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -108,10 +94,6 @@ private theorem lower_edge_mem_closure {x : ℝ} (hx : x ∈ Ioo (0 : ℝ) curve
     change dist (annulusPoint x (-d)) (annulusPoint ((annulusPoint x (-d)) 0) 0) < epsilon
     rw [m64RadialAxis_dist]
     simpa only [show (annulusPoint x (-d)) 1 = -d from rfl, abs_neg, abs_of_pos hd] using hde
-
-
-
-
 
 theorem weighted_lower_continuous_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

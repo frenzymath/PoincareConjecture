@@ -1,27 +1,13 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TaperedTriangleDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TaperedStrip
 
-
-
-
 def residualDomain (β γ : ℝ) : Set (ℝ × ℝ) :=
   {p | p.1 ∈ Icc 0 1 ∧ p.2 ∈ Icc (β * p.1) β ∧ p.2 ≤ γ * p.1}
-
-
 
 theorem convex_residualDomain (β γ : ℝ) : Convex ℝ (residualDomain β γ) := by
   let X := LinearMap.fst ℝ ℝ ℝ
@@ -40,9 +26,6 @@ theorem convex_residualDomain (β γ : ℝ) : Convex ℝ (residualDomain β γ) 
   rw [hset]
   exact h
 
-
-
-
 theorem slab_eq_domain_union_residual {β γ : ℝ} (hβ : 0 ≤ β) (hβγ : β ≤ γ) :
     domain γ ∩ {p : ℝ × ℝ | p.2 ≤ β} = domain β ∪ residualDomain β γ := by
   ext p
@@ -57,9 +40,6 @@ theorem slab_eq_domain_union_residual {β γ : ℝ} (hβ : 0 ≤ β) (hβγ : β
       exact hp.2.2.trans (by simpa only [mul_one] using
         mul_le_mul_of_nonneg_left hp.1.2 hβ)
     · exact ⟨⟨hp.1, (mul_nonneg hβ hp.1.1).trans hp.2.1.1, hp.2.2⟩, hp.2.1.2⟩
-
-
-
 
 theorem domain_inter_residual {β γ : ℝ} (hβ : 0 ≤ β) (hβγ : β ≤ γ) :
     domain β ∩ residualDomain β γ = segment ℝ ((0, 0) : ℝ × ℝ) (1, β) := by
@@ -76,9 +56,6 @@ theorem domain_inter_residual {β γ : ℝ} (hβ : 0 ≤ β) (hβγ : β ≤ γ)
     refine ⟨⟨hs, mul_nonneg hβ hs.1, le_rfl⟩, hs, ⟨le_rfl, ?_⟩, ?_⟩
     · simpa only [mul_one] using mul_le_mul_of_nonneg_left hs.2 hβ
     · exact mul_le_mul_of_nonneg_right hβγ hs.1
-
-
-
 
 theorem residualDomain_eq_convexHull {β γ : ℝ} (hβ : 0 < β) (hβγ : β < γ) :
     residualDomain β γ =

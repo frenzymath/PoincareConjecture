@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionSides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem ball_collar_halves (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
     (B : BallNeighborhoodChart E3 E3)
@@ -106,8 +93,6 @@ theorem ball_collar_halves (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmb
   · exact Or.inr ⟨hNo, hPi⟩
   · exact (Set.disjoint_left.mp hIO hyi
       (hyihalf.elim (fun h => hNo h) (fun h => hPo h))).elim
-
-
 
 theorem exists_ball_collar_orientation (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (B : BallNeighborhoodChart E3 E3)

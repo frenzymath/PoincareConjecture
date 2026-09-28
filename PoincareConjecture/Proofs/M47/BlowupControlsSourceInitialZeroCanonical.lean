@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialOlderOrdinary
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalAssembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem source_initial_zero_age_canonical
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

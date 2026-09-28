@@ -2,18 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,13 +12,8 @@ namespace EuclideanSpace
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "S" => {x : V // x ∈ sphere (0 : V) 1}
 
-
-
 noncomputable def unitSphereBasisPoint (i : Fin 3) : S :=
   ⟨EuclideanSpace.single i 1, mem_sphere_zero_iff_norm.mpr (by simp)⟩
-
-
-
 
 theorem exists_linearIsometryEquiv_of_gram_close {η : ℝ} (hη : 0 < η) :
     ∃ δ : ℝ, 0 < δ ∧ δ ≤ 1 ∧ ∀ v : Fin 3 → S,
@@ -98,9 +81,6 @@ theorem exists_linearIsometryEquiv_of_gram_close {η : ℝ} (hη : 0 < η) :
   have hsmall : δ < c := (min_le_right _ _).trans_lt (by linarith)
   exact (not_lt_of_ge (hbound v hnot)) (hle.trans_lt hsmall)
 
-
-
-
 theorem sphere_norm_sub_le_of_frame
     (f : S → S) (A : V ≃ₗᵢ[ℝ] V) {ρ β : ℝ} (hρ : 0 ≤ ρ) (hβ : 0 ≤ β)
     (hpair : ∀ p q, |inner ℝ (f p).1 (f q).1 - inner ℝ p.1 q.1| ≤ ρ)
@@ -157,10 +137,6 @@ theorem sphere_norm_sub_le_of_frame
   have heq : A z = (f q).1 - A q.1 := by simp only [z, map_sub, A.apply_symm_apply]
   rw [← heq, A.norm_map]
   exact hz
-
-
-
-
 
 theorem exists_linearIsometryEquiv_of_sphere_inner_close {ζ : ℝ} (hζ : 0 < ζ) :
     ∃ δ : ℝ, 0 < δ ∧ δ ≤ 1 ∧ ∀ f : S → S,

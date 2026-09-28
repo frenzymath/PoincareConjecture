@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothGaugeIdentity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -31,8 +22,6 @@ theorem smoothGaugeForcing_eq_norm_radial {h f₀ xi : ℝ → ℝ}
   rw [heq]
   exact smoothGaugeForcing_eq_radial hh he hzero hf hfo hfzero hdfzero
     (norm_pos_iff.mpr hx) sigma
-
-
 
 theorem smoothGaugeForcing_eq_exterior_formula {h f₀ xi : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h) (he : Function.Even h) (hzero : h 0 = 0)

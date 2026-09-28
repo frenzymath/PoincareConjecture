@@ -2,24 +2,6 @@ import PoincareConjecture.Definitions.M28BoundedDistance
 import PoincareConjecture.Statements.M28BoundedDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.CanonicalNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter

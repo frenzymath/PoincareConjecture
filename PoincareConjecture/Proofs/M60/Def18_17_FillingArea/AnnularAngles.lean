@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M60.Mathlib.LocalAngle
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CircleLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m60PlaneAngle (z : LoopPlane) : ℝ :=
   Complex.arg (Complex.orthonormalBasisOneI.repr.symm z)
-
-
 
 theorem m60PlaneAngle_polar (z : LoopPlane) :
     ‖z‖ • Proofs.M58.angularPoint (m60PlaneAngle z) = z := by
@@ -30,8 +18,6 @@ theorem m60PlaneAngle_polar (z : LoopPlane) :
   rw [he, Circle.coe_exp]
   change (‖z‖ : ℂ) * Complex.exp ((e z).arg * Complex.I) = e z
   rw [← e.norm_map z, Complex.norm_mul_exp_arg_mul_I]
-
-
 
 theorem m60_exists_contDiffAt_planeAngle {z : LoopPlane} (hz : z ≠ 0) :
     ∃ theta : LoopPlane → ℝ, ContDiffAt ℝ 1 theta z ∧
@@ -49,9 +35,6 @@ theorem m60_exists_contDiffAt_planeAngle {z : LoopPlane} (hz : z ≠ 0) :
   change (‖w‖ : ℂ) * Complex.exp (theta (e w) * Complex.I) = e w
   rw [← e.norm_map w]
   exact hpolar (e w)
-
-
-
 
 theorem m60Periodic_eq_of_angularPoint_eq {E : Type*} {f : ℝ → E}
     (hf : Function.Periodic f rampPeriod) {s t : ℝ}

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.AtNeck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.Separation
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,7 +57,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} {U : Set M}
 
-
 theorem isSeparating_of_contained_in_proper_cylinder (N : EpsilonNeck g)
     (P : OpenCylinderModel U) (hU : IsOpen U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1)
@@ -91,8 +89,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_closed_cylinder_half_at_neck (e : TerminalEnd K)
     {X : Set (E.extended.slice T).carrier}

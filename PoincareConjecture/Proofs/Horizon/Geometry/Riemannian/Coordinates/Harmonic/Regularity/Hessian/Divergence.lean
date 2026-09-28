@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.ProductDeriv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricDuality
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def tensorDivergence (D : LeviCivitaData g) {k : ℕ}
     (T : CovariantTensorEvaluation n M (k + 1)) : CovariantTensorEvaluation n M k :=
   g.tensorTrace (D.covariantTensorDerivative T)
@@ -35,12 +26,10 @@ def tensorDivergence (D : LeviCivitaData g) {k : ℕ}
 private def swapFirstTwo : Equiv.Perm (Fin 3) :=
   Equiv.ofBijective ![1, 0, 2] (by decide)
 
-
 def twoTensorCodazziDefect (D : LeviCivitaData g)
     (T : CovariantTensorEvaluation n M 2) : CovariantTensorEvaluation n M 3 :=
   fun x v => D.covariantTensorDerivative T x v -
     D.covariantTensorDerivative T x (v ∘ swapFirstTwo)
-
 
 def twoTensorCurvatureTrace (D : LeviCivitaData g)
     (T : CovariantTensorEvaluation n M 2) : CovariantTensorEvaluation n M 2 :=
@@ -50,12 +39,10 @@ def twoTensorCurvatureTrace (D : LeviCivitaData g)
     T x ![g.orthonormalBasis x k,
       D.curvature x (g.orthonormalBasis x k) (v 0) (v 1)]))
 
-
 def twoTensorDivergenceFlux (D : LeviCivitaData g)
     (T : CovariantTensorEvaluation n M 2) : CovariantTensorEvaluation n M 3 :=
   fun x v => g.inner x (v 0) (v 1) * D.tensorDivergence T x ![v 2] +
     D.twoTensorCodazziDefect T x v
-
 
 def hessianCurvatureFlux (D : LeviCivitaData g) (f : M → ℝ) :
     CovariantTensorEvaluation n M 3 :=
@@ -83,8 +70,6 @@ private lemma covariantTensorDerivative_twoTensorCodazziDefect
   congr 2
   ext i
   fin_cases i <;> rfl
-
-
 
 theorem tensorLaplacian_eq_divergence_codazzi (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)
@@ -183,7 +168,6 @@ private lemma tensorDivergence_metric_oneTensor (D : LeviCivitaData g)
   simp only [hup] at hlin
   simpa only [g.symm x a] using hlin.symm
 
-
 theorem tensorLaplacian_eq_divergence_flux (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)
     (x : M) (a b : TangentSpace (𝓡 n) x) :
@@ -220,8 +204,6 @@ private lemma covariantTensorDerivative_eq_of_eventuallyEq
     h.mono fun y hy => hy _
   simp only [covariantTensorDerivative, Poincare.mvfderiv_eq_of_eventuallyEq he, hx]
 
-
-
 theorem twoTensorDivergenceFlux_hessian_eventuallyEq (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
     (x : M) (hharm : D.laplacian f =ᶠ[𝓝 x] fun _ => 0) :
@@ -252,8 +234,6 @@ theorem twoTensorDivergenceFlux_hessian_eventuallyEq (D : LeviCivitaData g)
     exact hc
   rw [hc']
   ring
-
-
 
 theorem tensorLaplacian_hessian_eq_divergence_curvature (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

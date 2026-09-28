@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseGrowth
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
 omit [T2Space M] in
-
-
 
 theorem m64ObservedMetric_coercivity_of_diagonal
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -55,9 +45,6 @@ theorem m64ObservedMetric_coercivity_of_diagonal
 namespace M64
 
 variable {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
-
 
 theorem auxiliaryCircle_free_phase_continuous_minimum
     (P : M62.CircleProductData F circumference)

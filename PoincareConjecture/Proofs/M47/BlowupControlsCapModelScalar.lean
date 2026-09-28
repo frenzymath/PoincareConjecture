@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNormal
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarFineBound
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarCoarseBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ private theorem two_le_accuracy_order {epsilon : ℝ} (hepsilon : 0 < epsilon)
   change (2 : ℝ) ≤ epsilon⁻¹
   rw [← one_div, le_div_iff₀ hepsilon]
   linarith only [hsmall]
-
-
 
 theorem cap_model_scalar_difference_fine
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 1200)
@@ -64,8 +53,6 @@ theorem cap_model_scalar_difference_fine
     ((hbound 0 (by omega)).trans hsmall) ((hbound 1 (by omega)).trans hsmall)
   simpa only [M35.cylinder_scalarCurvature_center u (by linarith) D0 q s] using h
 
-
-
 theorem cap_model_scalar_difference_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200)
     (hu : u ≤ 0) (B : RoundCylinderTwoTensor)
@@ -94,8 +81,6 @@ theorem cap_model_scalar_difference_le
   have htotal := henergy.trans ((hjet (q, s) hs).trans hbound.le)
   have hfinal := h.trans (cap_scalar_arithmetic_energy hepsilon.le htotal)
   simpa only [M35.cylinder_scalarCurvature_center u (by linarith) D0 q s] using hfinal
-
-
 
 theorem cap_model_scalar_gt_quarter
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200)

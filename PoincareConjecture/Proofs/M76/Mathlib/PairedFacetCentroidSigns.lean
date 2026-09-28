@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCentroidSign
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -66,10 +57,6 @@ private theorem paired_centroid_positive
   have hlt := interior_mono hsub hxint
   rw [A.interior_nonpos hA] at hlt
   exact (ne_of_lt hlt) hxzero
-
-
-
-
 
 theorem opposite_centroid_signs_of_paired_facet
     (K : SimplicialComplex ℝ E) {s t u : Finset E}

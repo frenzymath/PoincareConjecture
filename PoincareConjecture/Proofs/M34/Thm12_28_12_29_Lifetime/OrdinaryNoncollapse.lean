@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryChapter11_noncollapsed
     (R : OrdinaryProductRicciGeometry F.metric I)

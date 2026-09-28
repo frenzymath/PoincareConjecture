@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StripArea
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,22 +8,14 @@ open Set Filter MeasureTheory
 
 namespace PoincareConjecture
 
-
-
-
 def m64IntrinsicLongFiberLength (N : IntrinsicAnnulus) (S : Set ℝ)
     (height : ℝ → ℝ) (R : ℝ) : ℝ :=
   ∫ s in S ∩ {s | R ≤ height s}, intrinsicBoundarySpeed N.metric 1 s
-
-
 
 theorem m64IntrinsicLongFiberLength_nonneg
     (N : IntrinsicAnnulus) (S : Set ℝ) (height : ℝ → ℝ) (R : ℝ) :
     0 ≤ m64IntrinsicLongFiberLength N S height R :=
   integral_nonneg (fun _ => Real.sqrt_nonneg _)
-
-
-
 
 theorem m64Intrinsic_long_fiber_length_le
     (N : IntrinsicAnnulus) {S : Set ℝ} (hS : MeasurableSet S)
@@ -72,9 +52,6 @@ theorem m64Intrinsic_long_fiber_length_le
   apply (le_div_iff₀ (mul_pos (sq_pos_of_pos hc) hR)).mpr
   change (∫ s in A, speed s) * (c ^ 2 * R) ≤ intrinsicAnnulusArea N.metric
   nlinarith only [hreal]
-
-
-
 
 theorem m64Intrinsic_long_fiber_length_lt_tenth
     (N : IntrinsicAnnulus) {S : Set ℝ} (hS : MeasurableSet S)

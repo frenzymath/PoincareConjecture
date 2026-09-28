@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableFlowPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,8 +7,6 @@ open Set Filter
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalSourceCountable_composed_good_tail
     (j : ℕ) {Q : {a : ℕ // j ≤ a} → Prop}

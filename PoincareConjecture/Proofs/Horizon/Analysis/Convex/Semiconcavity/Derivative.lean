@@ -3,22 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set
 
 namespace Poincare.Analysis
-
-
 
 theorem quadratic_upper_bound_of_hasDerivAt2_le
     {f f' f'' : ℝ → ℝ} {T H : ℝ} (hT : 0 ≤ T)
@@ -56,8 +46,6 @@ theorem quadratic_upper_bound_of_hasDerivAt2_le
   have hbound := (div_le_iff₀ hT).mp hslope
   dsimp [F, F'] at hbound
   nlinarith
-
-
 
 theorem deriv_lower_bound_of_endpoint_approx
     {f f' f'' d : ℝ → ℝ} {T H ε E : ℝ} (hT : 0 < T)

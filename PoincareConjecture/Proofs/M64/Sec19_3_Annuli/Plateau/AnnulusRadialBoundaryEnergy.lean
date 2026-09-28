@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialAffineFilling
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ namespace PoincareConjecture
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => ball (0 : LoopPlane) 1
-
-
 
 theorem m64Periodic_contDiff_deriv_bound {c : ℝ → E}
     (hc : ContDiff ℝ 1 c) (hP : Function.Periodic c curvePeriod) :
@@ -50,8 +36,6 @@ theorem m64Periodic_contDiff_deriv_bound {c : ℝ → E}
   rw [← heq]
   exact (hD y hy).trans (le_max_left _ _)
 
-
-
 theorem m64RadialBoundaryPlane_column {c : ℝ → E} (hc : ContDiff ℝ 1 c)
     (a : LoopPlane) (r : ℝ) (z : LoopPlane) (i : Fin 2) :
     fderiv ℝ (fun y : LoopPlane => c ((a + r • y) 0)) z (EuclideanSpace.single i 1) =
@@ -67,8 +51,6 @@ theorem m64RadialBoundaryPlane_column {c : ℝ → E} (hc : ContDiff ℝ 1 c)
   have hrescale := congrArg (fun D => D (EuclideanSpace.single i 1))
     (M60.suRescale_fderiv (fun y : LoopPlane => c (y 0)) a r z)
   simpa only [smul_apply, hbase, smul_smul] using hrescale
-
-
 
 theorem m64RadialBoundaryPlane_energy_bound {c : ℝ → E}
     (hc : ContDiff ℝ 1 c) (hP : Function.Periodic c curvePeriod) :

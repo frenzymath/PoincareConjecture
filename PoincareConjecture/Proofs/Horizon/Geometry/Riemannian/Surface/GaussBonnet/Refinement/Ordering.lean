@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.TwoEdgeCut
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem exists_affineBasis_reindex_of_range_eq
     (b c : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -58,7 +49,6 @@ private theorem range_affineBasis_fin_three
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem sum_coordinateTriangleAngle_eq_of_range_eq (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b c : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -67,8 +57,6 @@ theorem sum_coordinateTriangleAngle_eq_of_range_eq (g : RiemannianMetric 2 S)
       ∑ k : Fin 3, coordinateTriangleAngle g F c k := by
   obtain ⟨e, rfl⟩ := exists_affineBasis_reindex_of_range_eq b c hrange
   exact (sum_coordinateTriangleAngle_reindex g F b e).symm
-
-
 
 theorem coordinateTriangle_vertex_contribution_eq_of_range_eq (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -79,7 +67,6 @@ theorem coordinateTriangle_vertex_contribution_eq_of_range_eq (g : RiemannianMet
   obtain ⟨e, rfl⟩ := exists_affineBasis_reindex_of_range_eq b c hrange
   exact (coordinateTriangle_vertex_contribution_reindex g F b e x).symm
 
-
 def coordinateLineCutTriangle (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -87,8 +74,6 @@ def coordinateLineCutTriangle (M : TriangleMesh)
     (i : Bool) : (M.edgeMeshFor f v hv h0 h1).Triangle :=
   ⟨{M.edgeVertices f v h0 h1 (if i then 1 else 0), M.edgeVertices f v h0 h1 2,
       M.edgeVertices f v h0 h1 3}, coordinateLineCutBasis_mem_edgeMeshFor M f v hv h0 h1 i⟩
-
-
 
 theorem range_meshTriangleBasis_coordinateLineCutTriangle (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -102,7 +87,6 @@ theorem range_meshTriangleBasis_coordinateLineCutTriangle (M : TriangleMesh)
     Set.image_insert_eq, Set.image_singleton, coordinateLineCutBasis_edgeVertices]
   rfl
 
-
 def coordinateTwoEdgeCutTriangle (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -113,8 +97,6 @@ def coordinateTwoEdgeCutTriangle (M : TriangleMesh)
       M.strictVertices f v h0 h1 h2 (coordinateTwoEdgeCutSlot i 1),
       M.strictVertices f v h0 h1 h2 (coordinateTwoEdgeCutSlot i 2)},
     coordinateTwoEdgeCutBasis_mem_strictMeshFor M f v hv h0 h1 h2 i⟩
-
-
 
 theorem range_meshTriangleBasis_coordinateTwoEdgeCutTriangle (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -128,7 +110,6 @@ theorem range_meshTriangleBasis_coordinateTwoEdgeCutTriangle (M : TriangleMesh)
   simp only [coordinateTwoEdgeCutTriangle, Finset.coe_insert, Finset.coe_singleton,
     Set.image_insert_eq, Set.image_singleton, coordinateTwoEdgeCutBasis_strictVertices]
   rfl
-
 
 theorem coordinateLineCutTriangle_bijective (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -153,7 +134,6 @@ theorem coordinateLineCutTriangle_bijective (M : TriangleMesh)
     · exact ⟨false, Subtype.ext ht.symm⟩
     · exact ⟨true, Subtype.ext ht.symm⟩
 
-
 def coordinateLineCutTriangleEquiv (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -161,7 +141,6 @@ def coordinateLineCutTriangleEquiv (M : TriangleMesh)
     Bool ≃ (M.edgeMeshFor f v hv h0 h1).Triangle :=
   Equiv.ofBijective (coordinateLineCutTriangle M f v hv h0 h1)
     (coordinateLineCutTriangle_bijective M f v hv h0 h1)
-
 
 theorem coordinateTwoEdgeCutTriangle_bijective (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
@@ -179,7 +158,6 @@ theorem coordinateTwoEdgeCutTriangle_bijective (M : TriangleMesh)
     obtain ⟨i, _, hi⟩ := Finset.mem_image.mp ht
     exact ⟨i, Subtype.ext hi⟩
 
-
 def coordinateTwoEdgeCutTriangleEquiv (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (v : Fin 3 → M.Vertex)
     (hv : AffineIndependent ℝ (M.position ∘ v))
@@ -188,8 +166,6 @@ def coordinateTwoEdgeCutTriangleEquiv (M : TriangleMesh)
     Fin 3 ≃ (M.strictMeshFor f v hv h0 h1 h2).Triangle :=
   Equiv.ofBijective (coordinateTwoEdgeCutTriangle M f v hv h0 h1 h2)
     (coordinateTwoEdgeCutTriangle_bijective M f v hv h0 h1 h2)
-
-
 
 theorem edgeMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -220,8 +196,6 @@ theorem edgeMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
       (range_meshTriangleBasis_coordinateLineCutTriangle M f v hv h0 h1 i) x
   simp_rw [h]
   exact coordinateLineCutBasis_vertex_contribution g F b f hF hFi hb h0 h1 x
-
-
 
 theorem strictMeshFor_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

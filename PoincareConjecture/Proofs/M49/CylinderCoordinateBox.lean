@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M49.NeckCoordinates
 import PoincareConjecture.Proofs.M49.Mathlib.EuclideanBox
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,14 +8,10 @@ open scoped ENNReal BigOperators
 
 namespace PoincareConjecture.M49
 
-
-
 def cylinderCoordinateBox (p : EuclideanSpace ℝ (Fin 2)) (r t : ℝ) :
     Set (EuclideanSpace ℝ (Fin 3)) :=
   {x | x 0 ∈ Ioo (p 0 - r / 2) (p 0 + r / 2) ∧
     x 1 ∈ Ioo (p 1 - r / 2) (p 1 + r / 2) ∧ x 2 ∈ Ioo 0 t}
-
-
 
 theorem isOpen_cylinderCoordinateBox (p : EuclideanSpace ℝ (Fin 2)) (r t : ℝ) :
     IsOpen (cylinderCoordinateBox p r t) := by
@@ -33,8 +21,6 @@ theorem isOpen_cylinderCoordinateBox (p : EuclideanSpace ℝ (Fin 2)) (r t : ℝ
         (fun x : EuclideanSpace ℝ (Fin 3) => x 1))).inter
           (isOpen_Ioo.preimage (by fun_prop : Continuous
             (fun x : EuclideanSpace ℝ (Fin 3) => x 2))))
-
-
 
 theorem volume_cylinderCoordinateBox (p : EuclideanSpace ℝ (Fin 2))
     {r : ℝ} (hr : 0 ≤ r) (t : ℝ) :
@@ -53,8 +39,6 @@ theorem volume_cylinderCoordinateBox (p : EuclideanSpace ℝ (Fin 2))
     ← ENNReal.ofReal_mul (mul_nonneg hr hr)]
   congr 1
   ring
-
-
 
 theorem cylinderCoordinateBox_subset (p : EuclideanSpace ℝ (Fin 2))
     {r : ℝ} (hr : 0 < r) (t : ℝ) :

@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusPLLift
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
 
 namespace PLAnnularStrip
-
-
 
 theorem range_annulusMap_open {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :
@@ -48,9 +36,6 @@ theorem range_annulusMap_open {L d : ℝ}
       exact hx
     exact ⟨(z, ⟨t, htopen⟩), he⟩
 
-
-
-
 theorem isOpenEmbedding_annulusMap_open {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :
     IsOpenEmbedding (fun p : AddCircle (4 * L) × Ioo (-d) d =>
@@ -62,9 +47,6 @@ theorem isOpenEmbedding_annulusMap_open {L d : ℝ}
     (IsEmbedding.id.prodMap (IsEmbedding.inclusion Ioo_subset_Icc_self)), ?_⟩
   rw [range_annulusMap_open hL hd hwidth]
   exact isOpen_Ioo.preimage (continuous_depth L)
-
-
-
 
 theorem exists_annulus_openPartialHomeomorph {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :
@@ -81,10 +63,6 @@ theorem exists_annulus_openPartialHomeomorph {L d : ℝ}
   exact ⟨OpenPartialHomeomorph.ofContinuousOpenRestrict hi.toPartialEquiv
     (continuousOn_iff_continuous_domRestrict.mpr he.continuous)
     he.isOpenMap (isOpen_univ.prod isOpen_Ioo), rfl, rfl⟩
-
-
-
-
 
 theorem exists_annulus_PL_openPartialHomeomorph {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :

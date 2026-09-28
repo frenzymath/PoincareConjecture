@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCrossTail
 import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ private theorem original_source_edist_comm
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : X → Type _) :=
     ⟨h.toRiemannianMetric⟩
   exact Manifold.riemannianEDist_comm
-
-
 
 theorem terminalCommonInterval_original_approximation
     {M : Type u} {N : Type v} {X : ℕ → Type w} {Z : Type z}

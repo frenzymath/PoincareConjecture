@@ -1,15 +1,6 @@
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -17,7 +8,6 @@ open Set Metric Topology
 namespace Geometry
 
 local notation "V3" => (Fin 3 → ℝ)
-
 
 theorem branch_disk_change_support
     {X ι : Type*} [TopologicalSpace X]
@@ -48,4 +38,3 @@ theorem branch_disk_change_support
   · exact hout u hxJ
 
 end Geometry
-

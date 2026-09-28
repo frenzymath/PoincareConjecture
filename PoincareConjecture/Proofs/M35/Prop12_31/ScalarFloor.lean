@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M06
 import PoincareConjecture.Proofs.M35.Prop12_31.InitialScalarFloor
 import PoincareConjecture.Proofs.M35.Prop12_31.CurvatureOperator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
-
 
 theorem time_mul_scalar_le
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -54,9 +42,6 @@ theorem time_mul_scalar_le
       intervalIntegral.integral_zero]
   change (F.connection s).scalarCurvature x * s ≤ (F.connection t).scalarCurvature x * t
   simpa only [henergy, zero_div, neg_zero, Real.exp_zero, mul_one, sub_zero] using h
-
-
-
 
 theorem exists_scalar_floor
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Theory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +13,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
-
 
 noncomputable def neckCapCoverOn (e : TerminalEnd K)
     (X : Set (E.extended.slice T).carrier) (hX : IsConnected X) (hXK : X ⊆ K.component)
@@ -60,7 +49,6 @@ noncomputable def neckCapCoverOn (e : TerminalEnd K)
   cap_epsilon := fun _ hN => hN.1
   cap_constant_bound := fun _ hN => hN.2.1
 
-
 noncomputable def neckCapCover (e : TerminalEnd K) (n : ℕ)
     {epsilon C epsilon₀ : ℝ} (hepsilon : 0 < epsilon) (hC : 0 < C)
     (hthreshold : 0 < epsilon₀) (hsmall : epsilon₀ ≤ 1 / 200)
@@ -71,8 +59,6 @@ noncomputable def neckCapCover (e : TerminalEnd K) (n : ℕ)
   e.neckCapCoverOn (Subtype.val '' e.tail n) (e.tail_image_connected n)
     (by rintro _ ⟨x, _, rfl⟩; exact x.property)
     hepsilon hC hthreshold hsmall hle hcanonical
-
-
 
 theorem exists_neckCapCover (e : TerminalEnd K)
     {epsilon C epsilon₀ B : ℝ} (hepsilon : 0 < epsilon) (hC : 0 < C)

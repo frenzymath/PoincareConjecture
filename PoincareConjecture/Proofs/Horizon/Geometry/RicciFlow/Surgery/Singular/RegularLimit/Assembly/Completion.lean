@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Assembly.SameCorePersistence
 import PoincareConjecture.Statements.M31SingularRegularLimit
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +20,6 @@ variable (P04 : RicciFlowCurvatureTheory.{u})
 include P04
 
 namespace SingularRegularLimit
-
 
 theorem exists_terminal_cap_of_frequently_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -63,7 +60,6 @@ theorem exists_terminal_cap_of_frequently_threshold :
     exact ⟨⟨y, hAreg hyA⟩, hyA, rfl⟩
   exact hproduce ht C hCε hCC hCD hCA hxC
 
-
 theorem exists_terminal_canonical_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -95,8 +91,6 @@ theorem exists_terminal_canonical_threshold :
   exact GeneralizedCanonicalControl.cap CT hCTε hCTC hCTD hxCT
 
 end SingularRegularLimit
-
-
 
 theorem horizon_m31SingularRegularLimit : RepairedSingularRegularLimitTheory.{u} := by
   obtain ⟨εL, hεL, _, hlimit⟩ :=

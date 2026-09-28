@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.FiniteAttachmentRim
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -31,8 +21,6 @@ theorem preimage_closedFaceComplement_space_eq_closure_compl
     exact ⟨⟨x, hxK⟩, hxN, rfl⟩
   · rintro ⟨y, hy, rfl⟩
     exact ⟨y.property, hy⟩
-
-
 
 theorem closedFaceComplement_closedFaceComplement_eq_of_relative_regular_closed
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)
@@ -103,8 +91,6 @@ namespace PoincareConjecture.M76
 
 open Metric
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem hamiltonAttachingBlock_relative_regular_closed
     (ι κ : Type*) [Fintype ι] [Fintype κ]

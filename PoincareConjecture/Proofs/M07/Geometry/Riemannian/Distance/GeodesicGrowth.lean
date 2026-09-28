@@ -5,17 +5,6 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ open scoped Topology ENNReal NNReal
 namespace PoincareConjecture
 
 variable {X : Type*} [EMetricSpace X]
-
-
 
 theorem edist_prefix_eq_of_remainder_eq
     {γ : ℝ → X} {p q : X} {D : ℝ} (hD : 0 ≤ D)
@@ -69,9 +56,6 @@ theorem edist_prefix_eq_of_remainder_eq
   · apply le_antisymm hright
     exact (ENNReal.add_le_add_iff_left ENNReal.ofReal_ne_top).mp
       (hsum.trans (add_le_add hleft le_rfl))
-
-
-
 
 theorem edist_segment_of_local_growth
     {γ : ℝ → X} {p q : X} {D : ℝ} (hD : 0 ≤ D)

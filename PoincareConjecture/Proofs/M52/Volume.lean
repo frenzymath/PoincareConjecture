@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M49VolumeLoss
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,8 +10,6 @@ universe u
 namespace PoincareConjecture
 
 variable {F : SurgeryFlowData.{u}} {C : RepairedVolumeLossControls F}
-
-
 
 theorem m52VolumeBoundOnCompacts (V : RepairedVolumeLossData F C)
     (Kset : Set ℝ) (hK : IsCompact Kset) :
@@ -35,9 +26,6 @@ theorem m52VolumeBoundOnCompacts (V : RepairedVolumeLossData F C)
   refine hgrowth.trans (mul_le_mul_left ?_ _)
   exact ENNReal.ofReal_le_ofReal (Real.exp_le_exp.mpr
     (mul_le_mul_of_nonneg_left (hH ht.2) (by norm_num)))
-
-
-
 
 theorem m52VolumeLossOnCompacts (V : RepairedVolumeLossData F C)
     (Kset : Set ℝ) (hK : IsCompact Kset) :
@@ -66,9 +54,6 @@ theorem m52VolumeLossOnCompacts (V : RepairedVolumeLossData F C)
       ⟨F.time_domain_nonnegative (F.surgery_times_subset hT),
         (hH hTK).trans (le_max_right _ _)⟩ hcap).1
 
-
-
-
 theorem m52ComponentEventCountOnCompacts (V : RepairedVolumeLossData F C)
     (Kset : Set ℝ) (hK : IsCompact Kset) :
     ∃ n : ℕ, ∀ S : Finset ℝ,
@@ -89,8 +74,6 @@ theorem m52ComponentEventCountOnCompacts (V : RepairedVolumeLossData F C)
   by_cases hN : Nonempty (F.slice T).carrier
   · exact Or.inr ⟨hN, hcap hevent hN⟩
   · exact Or.inl (not_nonempty_iff.mp hN)
-
-
 
 theorem m52VolumeGrowthOnCompacts (V : RepairedVolumeLossData F C)
     (Kset : Set ℝ) (_hK : IsCompact Kset) :

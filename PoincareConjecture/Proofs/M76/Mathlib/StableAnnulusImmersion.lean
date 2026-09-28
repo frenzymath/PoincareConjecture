@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StableAnnulusMap
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCrossingBandImmersion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableAnnulus
-
-
-
-
-
 
 theorem exists_stable_circle_PL_immersion :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

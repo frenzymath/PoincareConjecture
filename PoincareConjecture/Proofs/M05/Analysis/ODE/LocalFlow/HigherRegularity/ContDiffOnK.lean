@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.C1Regularity.ContDiffOnOne
-
 
 noncomputable section
 

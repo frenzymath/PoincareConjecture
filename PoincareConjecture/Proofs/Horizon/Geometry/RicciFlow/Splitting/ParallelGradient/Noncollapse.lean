@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.TerminalFactor
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open RiemannianMetric
-
-
 
 theorem parallelGradientFactor_parabolic_noncollapsed
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -88,8 +75,6 @@ theorem parallelGradientFactor_parabolic_noncollapsed
       simpa only [mem_preimage, e.apply_symm_apply] using hx)).1
   rw [← hdnorm x, hde]
   exact hcurv s hs (e.symm x).1 hproj
-
-
 
 theorem terminalParallelGradientFactor_parabolic_noncollapsed
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

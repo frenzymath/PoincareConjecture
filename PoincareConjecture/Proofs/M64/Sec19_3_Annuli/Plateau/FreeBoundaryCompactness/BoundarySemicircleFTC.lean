@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryPolarEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,15 +15,11 @@ open Proofs.M58
 local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 
-
-
 theorem boundaryPolarStrip_right_endpoint (x rho s : ℝ) :
     boundaryPolarStrip x rho (annulusPoint 0 s) =
       annulusPoint (x + rho * Real.exp (-s)) 0 := by
   ext i
   fin_cases i <;> simp [boundaryPolarStrip, annulusPoint, angularPoint]
-
-
 
 theorem boundaryPolarStrip_left_endpoint (x rho s : ℝ) :
     boundaryPolarStrip x rho (annulusPoint curvePeriod s) =
@@ -40,9 +27,6 @@ theorem boundaryPolarStrip_left_endpoint (x rho s : ℝ) :
   have hangle : curvePeriod / 2 = Real.pi := by unfold curvePeriod; ring
   ext i
   fin_cases i <;> simp [boundaryPolarStrip, annulusPoint, angularPoint, hangle, sub_eq_add_neg]
-
-
-
 
 theorem boundary_semicircle_oscillation
     (L : LoopPlane → ℝ) (hLc : Continuous L) (hL : ContDiffOn ℝ 1 L S)

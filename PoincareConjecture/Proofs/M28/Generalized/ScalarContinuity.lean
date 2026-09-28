@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M28Providers
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem GeneralizedRicciFlowData.scalar_box
     (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (t : ℝ) (ht : t ∈ (F.box b).interval) (x : (F.box b).carrier.carrier) :
@@ -32,8 +20,6 @@ theorem GeneralizedRicciFlowData.scalar_box
   exact ((F.box b).flow.connection t).scalarCurvature_eq_of_local_isometry
     (F.connection t) isOpen_univ ((F.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => ((F.box b).metric_pullback t ht y v w).symm) (mem_univ x)
-
-
 
 theorem RicciFlow.continuous_scalar_parameter
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -48,9 +34,6 @@ theorem RicciFlow.continuous_scalar_parameter
   exact hscalar.comp_continuous (f := fun z : J × M => (z.1.val, z.2)) hmap
     (fun z => ⟨z.1.property, mem_univ z.2⟩)
 
-
-
-
 theorem GeneralizedRicciFlowData.continuous_scalar_m28
     (F : GeneralizedRicciFlowData.{u}) (P : RicciFlowCurvatureTheory.{u}) :
     Continuous F.scalar := by
@@ -62,9 +45,6 @@ theorem GeneralizedRicciFlowData.continuous_scalar_m28
   have hR := (F.box b).flow.continuous_scalar_parameter P
   simpa only [Function.comp_def, F.scalar_box] using
     hR.continuousAt (x := (⟨t, ht⟩, y))
-
-
-
 
 theorem GeneralizedFlowCylinder.continuous_scalar
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

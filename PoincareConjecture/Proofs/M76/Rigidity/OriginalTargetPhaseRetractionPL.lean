@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetPhaseRetraction
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetTranslationPL
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ local notation "V0" => ((Fin 0 ⊕ Fin 3) → ℝ)
 local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "pi" => latticeCoordinateProjection (Fin 0) (Fin 3) L0
-
-
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroTargetPhaseRetraction
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

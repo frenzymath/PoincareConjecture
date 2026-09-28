@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EulerGaugeResidual
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerMomentum
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -54,9 +45,6 @@ private theorem gaugeCoordinate_mem_target (s : ℝ) :
 
 include hCoordinates hscalar hM04 hac hsub hβ hrec hclock heuler
 
-
-
-
 theorem squareRootEuler_gauge_momentum :
     let q := fun r => (β r).2.val
     let v := derivWithin q (Icc a c)
@@ -99,9 +87,6 @@ theorem squareRootEuler_gauge_momentum :
   change HasDerivWithinAt P F (Icc a c) s
   rw [← hforce]
   exact hPd
-
-
-
 
 theorem squareRootEuler_gauge_phase :
     let q := fun r => (β r).2.val

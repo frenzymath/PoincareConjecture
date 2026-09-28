@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 import Mathlib.Analysis.Calculus.FDeriv.Partial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,10 +8,8 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
 noncomputable def profileTimePartial (f : ℝ → ℝ → ℝ) (t r : ℝ) : ℝ :=
   fderiv ℝ (Function.uncurry f) (t, r) (1, 0)
-
 
 noncomputable def profileRadiusPartial (f : ℝ → ℝ → ℝ) (t r : ℝ) : ℝ :=
   fderiv ℝ (Function.uncurry f) (t, r) (0, 1)
@@ -66,8 +55,6 @@ theorem profileRadiusPartial_eq_deriv {f : ℝ → ℝ → ℝ} {J : Set ℝ}
     (hJ : IsOpen J) (hf : ContDiffOn ℝ ∞ (Function.uncurry f) (J ×ˢ univ))
     {t : ℝ} (ht : t ∈ J) : profileRadiusPartial f t = deriv (f t) :=
   funext (fun r => (profileFamily_hasDerivAt_radius hJ hf ht r).deriv.symm)
-
-
 
 theorem profileTimePartial_even {f : ℝ → ℝ → ℝ} {J : Set ℝ}
     (hJ : IsOpen J) (hf : ContDiffOn ℝ ∞ (Function.uncurry f) (J ×ˢ univ))

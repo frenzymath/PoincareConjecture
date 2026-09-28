@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedCom
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalExteriorNonspherical
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.InteriorChartBall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

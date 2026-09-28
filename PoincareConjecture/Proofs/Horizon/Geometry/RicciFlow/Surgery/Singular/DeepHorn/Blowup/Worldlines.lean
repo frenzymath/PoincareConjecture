@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import Mathlib.Order.Zorn
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,7 +55,6 @@ private theorem directed_intervals_local {α : Type*} (I : α → Set ℝ)
   rcases le_total y x with hyx | hxy
   · exact hiL (hL y hy hyx (by linarith [neg_le_abs (y - x)]))
   · exact hiR (hR y hy hxy (lt_of_le_of_lt (le_abs_self _) hδR'))
-
 
 private structure Worldline (F : GeneralizedRicciFlowData.{u}) (origin scale : ℝ) where
   domain : Set ℝ
@@ -402,8 +391,6 @@ private noncomputable def Worldline.shift {F : GeneralizedRicciFlowData.{u}}
     rfl
   exact hbox _ _ _ _ (hclock s'.1)
 
-
-
 theorem exists_rebased_singleton_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p p' : F.point} {r q a : ℝ} {I : Set ℝ}
     (e : GeneralizedFlowCylinder F (F.slice p'.1) p'.1 r I {p'.2})
@@ -416,8 +403,6 @@ theorem exists_rebased_singleton_cylinder
   refine ⟨e', ?_⟩
   intro t ht
   exact (castSlice_point _ _).trans (castSlice_point _ _)
-
-
 
 theorem exists_maximalBackwardFlowLine_of_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {scale duration : ℝ} {I : Set ℝ}
@@ -449,7 +434,6 @@ theorem exists_maximalBackwardFlowLine_of_cylinder
       exact Subset.antisymm (hw _ hext).1 hsub }
   exact ⟨L, hseed.1, hval⟩
 
-
 theorem maximalBackwardFlowLine_of_rescaled_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {r q duration : ℝ} {I : Set ℝ}
     (e : GeneralizedFlowCylinder F (F.slice p.1) p.1 r I {p.2})
@@ -467,9 +451,6 @@ theorem maximalBackwardFlowLine_of_rescaled_cylinder
     exact hpack.trans (by simpa only [zero_mul, zero_div] using hidentity)
   obtain ⟨L, _⟩ := exists_maximalBackwardFlowLine_of_cylinder e' w.connected hz hid hrequested
   exact ⟨L⟩
-
-
-
 
 theorem maximalBackwardFlowLine_contains_overlapping_cylinder
     {F : GeneralizedRicciFlowData.{u}} {p : F.point} {scale duration : ℝ}

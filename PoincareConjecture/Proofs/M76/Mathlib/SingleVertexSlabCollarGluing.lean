@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexSlabCommonEdge
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,12 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
-
 
 theorem exists_singleVertexSlab_collar_iUnion (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0) {β : ℝ} (hβ : 0 ≤ β)

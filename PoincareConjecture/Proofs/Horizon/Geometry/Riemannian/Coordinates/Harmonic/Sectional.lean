@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureSymmetry
 import Mathlib.Analysis.InnerProductSpace.Rayleigh
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma curvatureTensor_diagonal_eq_sectional_mul_gram (D : LeviCivitaData g)
     (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -46,8 +36,6 @@ lemma curvatureTensor_diagonal_eq_sectional_mul_gram (D : LeviCivitaData g)
       rw [D.curvatureTensor_smul_first, D.curvatureTensor_zero_first, mul_zero]
   · unfold sectionalCurvature
     exact (div_mul_cancel₀ _ hgram).symm
-
-
 
 lemma tangentNorm_radialCurvature_le_of_sectional
     (D : LeviCivitaData g) (x : M) {K : ℝ} (hK : 0 ≤ K)
@@ -93,8 +81,6 @@ lemma tangentNorm_radialCurvature_le_of_sectional
   simp only [hn]
   exact (A.le_opNorm u).trans (mul_le_mul_of_nonneg_right hnorm (norm_nonneg u))
 
-
-
 lemma three_curvatureTensor_eq_radial_polarization (D : LeviCivitaData g) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :
     3 * D.curvatureTensor x u v z w =
@@ -110,7 +96,6 @@ lemma three_curvatureTensor_eq_radial_polarization (D : LeviCivitaData g) (x : M
   simp only [D.curvatureTensor_add_second, D.curvatureTensor_add_last]
   rw [D.curvatureTensor_swap_first x v u z w]
   linarith
-
 
 lemma abs_curvatureTensor_le_four_mul_of_unit (D : LeviCivitaData g) (x : M)
     {K : ℝ} (hK : 0 ≤ K)
@@ -167,8 +152,6 @@ lemma abs_curvatureTensor_le_four_mul_of_unit (D : LeviCivitaData g) (x : M)
   have h1 := hsum u v w z hu' hv' hw' hz'
   have h2 := hsum v u w z hv' hu' hw' hz'
   linarith
-
-
 
 lemma curvatureTensorNorm_le_of_sectional (D : LeviCivitaData g) (x : M)
     {K : ℝ} (hK : 0 ≤ K)

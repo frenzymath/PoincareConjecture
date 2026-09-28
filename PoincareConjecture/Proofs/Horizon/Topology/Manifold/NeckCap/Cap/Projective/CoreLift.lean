@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.BoundaryLift
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,15 +16,11 @@ variable {M : Type u} [TopologicalSpace M]
   (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
 
-
-
 def projectiveClosedCoreLift : Set UnitThreeSphere :=
   {q | Quotient.mk' q ≠ C.puncture ∧ S.cover q ∈ C.closed_core}
 
 theorem isCompact_projectiveClosedCoreLift : IsCompact (C.projectiveClosedCoreLift S) :=
   S.isCompact_lift C.closed_core_compact C.closed_core_subset_carrier
-
-
 
 theorem interior_projectiveClosedCoreLift :
     interior (C.projectiveClosedCoreLift S) =
@@ -69,8 +54,6 @@ theorem interior_projectiveClosedCoreLift :
   · rintro ⟨hp, hq⟩
     exact (hiff q hp).mpr hq
 
-
-
 theorem frontier_projectiveClosedCoreLift :
     frontier (C.projectiveClosedCoreLift S) =
       {q : UnitThreeSphere |
@@ -82,8 +65,6 @@ theorem frontier_projectiveClosedCoreLift :
   simp only [projectiveClosedCoreLift, mem_sdiff, mem_ofPred_eq]
   tauto
 
-
-
 theorem exists_projectiveClosedCoreLift_frontier_spheres :
     ∃ F : UnitTwoSphere → UnitThreeSphere,
       Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ F ∧
@@ -94,8 +75,6 @@ theorem exists_projectiveClosedCoreLift_frontier_spheres :
       frontier (C.projectiveClosedCoreLift S) = range F ∪ range (fun q => -F q) := by
   rw [C.frontier_projectiveClosedCoreLift S]
   exact C.exists_boundary_sphere_lift S
-
-
 
 theorem exists_projective_core_lift (hkind : C.model_kind = .puncturedProjective) :
     ∃ S : StandardPuncturedProjectiveCover M C.puncture C.carrier,

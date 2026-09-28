@@ -2,14 +2,6 @@ import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTriangleEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -17,9 +7,6 @@ open PreAbstractSimplicialComplex.ModTwoCochains
 namespace AbstractSimplicialComplex
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι] (A : AbstractSimplicialComplex ι)
-
-
-
 
 theorem exists_primal_complementary_trees (hconn : A.edgeGraph.Connected)
     (hcofaces : ∀ e : Edge A.toPreAbstractSimplicialComplex,

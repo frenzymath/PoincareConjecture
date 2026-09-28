@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFaceProducts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 structure HamiltonProperDiskEdgeEndpoints
     (F : HamiltonProperDiskTriangleFibers C) (s : Finset E) where
@@ -68,9 +56,6 @@ private theorem edge_base_of_two_rim_marks
     · exact pair_comm _ _
     · exact False.elim (hxy rfl)
   exact ⟨he.symm ▸ hB, hQ.trans he.symm⟩
-
-
-
 
 theorem HamiltonProperDiskTriangleFibers.exists_edge_endpoints
     (F : HamiltonProperDiskTriangleFibers C) (h3 : Module.finrank ℝ E = 3)

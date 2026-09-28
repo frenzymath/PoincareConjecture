@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set.Finite
-
-
 
 theorem exists_finite_geometric_carrier
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,9 +25,6 @@ theorem exists_finite_geometric_carrier
 end Set.Finite
 
 namespace Geometry
-
-
-
 
 theorem polyhedralPLInCharts_of_finite
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

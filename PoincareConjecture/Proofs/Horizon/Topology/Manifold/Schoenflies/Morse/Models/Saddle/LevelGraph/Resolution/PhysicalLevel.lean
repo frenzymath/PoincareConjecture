@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Hyperbola
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,7 +11,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 variable {X : Type*} [TopologicalSpace X]
 
-
 theorem strip_slice_subset_source
     (F : OpenPartialHomeomorph (Real × Real) X) {a b w t : Real}
     (hFs : F.source = Ioo (a - w) (b + w) ×ˢ Ioo (-w) w)
@@ -24,7 +21,6 @@ theorem strip_slice_subset_source
   have hzt : z.2 = t := hz.2
   exact ⟨⟨by linarith [hz.1.1], by linarith [hz.1.2]⟩, hzt ▸ ht⟩
 
-
 theorem isCompact_strip_slice
     (F : OpenPartialHomeomorph (Real × Real) X) {a b w t : Real}
     (hFs : F.source = Ioo (a - w) (b + w) ×ˢ Ioo (-w) w)
@@ -33,7 +29,6 @@ theorem isCompact_strip_slice
   apply (isCompact_Icc.prod isCompact_singleton).image_of_continuousOn
   exact F.continuousOn.mono (strip_slice_subset_source F hFs hw ht)
 
-
 theorem isPreconnected_strip_slice
     (F : OpenPartialHomeomorph (Real × Real) X) {a b w t : Real}
     (hFs : F.source = Ioo (a - w) (b + w) ×ˢ Ioo (-w) w)
@@ -41,9 +36,6 @@ theorem isPreconnected_strip_slice
     IsPreconnected (F '' (Icc a b ×ˢ ({t} : Set Real))) := by
   apply (isPreconnected_Icc.prod isPreconnected_singleton).image
   exact F.continuousOn.mono (strip_slice_subset_source F hFs hw ht)
-
-
-
 
 theorem fiber_eq_square_slice_union_strip_slices
     {h : X → Real} {c : Real}

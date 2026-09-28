@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RadialFamilies
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NullLoopHomotopy
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.SphereDescent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59GenLoop_null (n : Nat) [Nonempty (Fin n)] (x : M)
     (g : GenLoop (Fin n) (C1FreeLoopSpace (M := M)) (constantC1Loop x))
@@ -40,8 +29,6 @@ theorem m59GenLoop_null (n : Nat) [Nonempty (Fin n)] (x : M)
   rw [g.property zero hzero]
   exact ⟨fun _ => x, continuous_const, fun _ => rfl⟩
 
-
-
 theorem m59SphereMap_null_of_pole (q : M59SphereQuotient) (x : M)
     (F : C(LoopTwoSphere, C1FreeLoopSpace (M := M)))
     (hbase : F q.pole = constantC1Loop x) : ∀ c, IsNullHomotopicLoop (F c) := by
@@ -50,9 +37,6 @@ theorem m59SphereMap_null_of_pole (q : M59SphereQuotient) (x : M)
   intro c
   obtain ⟨z, rfl⟩ := q.surjective c
   exact m59GenLoop_null 2 x g z
-
-
-
 
 theorem m59_regular_representatives (q : M59SphereQuotient) (x : M)
     (alpha : HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M)) (constantC1Loop x)) :

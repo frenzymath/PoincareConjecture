@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxAlgebra
 import PoincareConjecture.Proofs.M03.CurvatureRateAlgebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,12 +10,8 @@ open scoped BigOperators
 
 namespace PoincareConjecture.M34.DifferenceEnergy
 
-
-
 noncomputable def modelRicciTrace {n : ℕ} (T : FS n) (u v : V n) : ℝ :=
   ∑ k : Fin n, EuclideanSpace.proj k (T (EuclideanSpace.single k 1) u v)
-
-
 
 noncomputable def modelCurvatureReaction {n : ℕ} (I : Inverse n) (T : FS n)
     (u v w : V n) : V n :=
@@ -36,8 +23,6 @@ noncomputable def modelCurvatureReaction {n : ℕ} (I : Inverse n) (T : FS n)
       modelRicciTrace T v (e i) • T u (e j) w -
       modelRicciTrace T w (e i) • T u v (e j))
 
-
-
 noncomputable def modelCurvatureReactionDifference {n : ℕ}
     (G G' : FH n) (R R' : FS n) : Raw n := fun l j k m =>
   EuclideanSpace.proj l
@@ -45,8 +30,6 @@ noncomputable def modelCurvatureReactionDifference {n : ℕ}
       (EuclideanSpace.single k 1) (EuclideanSpace.single m 1) -
     modelCurvatureReaction G'.inverse R' (EuclideanSpace.single j 1)
       (EuclideanSpace.single k 1) (EuclideanSpace.single m 1))
-
-
 
 theorem exists_uniform_modelCurvatureReaction_energy_bound {n dH dS : ℕ}
     (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))

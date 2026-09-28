@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.CollarDifferential
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.CircleCollar
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem normal_derivative_pos_of_inward
     {k : E2 -> E2} (hk : ContDiff Real ∞ k)

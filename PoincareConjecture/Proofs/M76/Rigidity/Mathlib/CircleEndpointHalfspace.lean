@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_circle_endpoint_halfspace
     {M E ι : Type*} [TopologicalSpace M]

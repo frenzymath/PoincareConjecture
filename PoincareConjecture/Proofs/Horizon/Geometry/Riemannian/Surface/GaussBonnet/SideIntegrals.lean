@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.SideReversal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Boundary
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 noncomputable def coordinateTriangleTurningIntegral
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
@@ -57,7 +50,6 @@ theorem coordinateTriangleTurningIntegral_swap
       -coordinateTriangleTurningIntegral D F b Q i j :=
   integral_coordinateTriangle_side_swap D F b hF hFi hb Q.first Q.second hij
 
-
 theorem coordinateTriangleSideUnitField_first_eq
     {g : RiemannianMetric 2 S}
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -70,8 +62,6 @@ theorem coordinateTriangleSideUnitField_first_eq
     simp [standardTriangleVertex]
   simpa only [coordinateTriangleSideUnitField, coordinateTriangleSideField, hv] using
     (Q.aligned x hx').symm
-
-
 
 theorem coordinateTriangleTurningIntegral_first
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
@@ -118,8 +108,6 @@ theorem coordinateTriangleTurningIntegral_first
   exact h
 
 variable [MeasurableSpace S] [BorelSpace S] [T3Space S]
-
-
 
 theorem gaussBonnet_coordinateTriangle_side_integrals
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

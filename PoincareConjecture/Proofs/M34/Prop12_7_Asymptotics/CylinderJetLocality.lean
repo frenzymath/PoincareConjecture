@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderJetTranslation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderIteratedDerivative_congr_germ (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere E₂)
@@ -53,9 +42,6 @@ theorem roundCylinderIteratedDerivative_congr_germ (u : ℝ)
       congr 1
       convert! hvy i d
 
-
-
-
 theorem roundCylinderJetErrorSquared_congr_germ (u : ℝ)
     {B B' : RoundCylinderTwoTensor} (m : ℕ) (z : RoundCylinderSpace)
     (h : ∀ a b : Fin 3,
@@ -70,8 +56,6 @@ theorem roundCylinderJetErrorSquared_congr_germ (u : ℝ)
   funext a
   exact (roundCylinderIteratedDerivative_congr_germ u _ h k a).self_of_nhds
 
-
-
 theorem roundCylinderPullback_congr_of_eventuallyEq
     {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -84,9 +68,6 @@ theorem roundCylinderPullback_congr_of_eventuallyEq
   exact congrArg (fun p => g.inner p
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) f' z v)
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) f' z w)) h.self_of_nhds
-
-
-
 
 theorem roundCylinderPullback_comp_axialTranslation
     {M : Type*} [TopologicalSpace M]

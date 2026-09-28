@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceFiniteHessian
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceFiniteChristoffel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +8,6 @@ open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.CoordinateTransition
-
-
-
-
 
 theorem uniform_finite_derivative_bounds_of_local_isometries
     {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

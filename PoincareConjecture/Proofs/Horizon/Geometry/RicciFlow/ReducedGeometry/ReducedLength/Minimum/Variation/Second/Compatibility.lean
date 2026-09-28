@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.SquareTime
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +10,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Frame
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [CompleteSpace E]
-
 
 theorem chartConnection_symm
     (G : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ) (z : ℝ × E)
@@ -29,7 +22,6 @@ theorem chartConnection_symm
       fderiv_bilinear_symm G z hG hsym (0, u) v w]
     ring
   simp only [chartConnection, heq]
-
 
 theorem chartConnection_metric_compatibility
     (G : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ) (z : ℝ × E)

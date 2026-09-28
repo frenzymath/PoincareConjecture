@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.Covariant
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.Coordinates
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle BigOperators Topology
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
 
 open FiniteHessian
-
-
 
 theorem hasUniformJetBoundsAt_fderiv_of_roundCylinderTensorDerivative
     {ι : Type*} {n r : ℕ} (u : ι → ℝ) (hu : ∀ i, u i < 1)
@@ -77,9 +65,6 @@ theorem hasUniformJetBoundsAt_fderiv_of_roundCylinderTensorDerivative
     rw [hb]
     exact ((hcT i a).fderiv_right (m := ∞) (by simp)).clm_apply contDiffAt_const
 
-
-
-
 theorem hasUniformJetBoundsAt_of_roundCylinderJetError
     {ι : Type*} (m : ℕ) (epsilon : ι → ℝ)
     (q : ι → UnitTwoSphere) (s : ι → ℝ)
@@ -118,9 +103,6 @@ theorem hasUniformJetBoundsAt_of_roundCylinderJetError
         (fun i b => hc i k b) (fun i b => hc i (k + 1) b) a
       apply HasUniformJetBoundsAt.succ_of_fderiv _ hderiv
       simpa only [norm_iteratedFDeriv_zero] using hzero 0 (by omega)
-
-
-
 
 theorem hasUniformJetBoundsAt_cylinder_error_of_close
     {ι : Type*} {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1)

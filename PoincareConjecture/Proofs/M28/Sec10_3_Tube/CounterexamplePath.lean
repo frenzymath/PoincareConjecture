@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.ShortPaths
 import PoincareConjecture.Proofs.M28.Generalized.CanonicalAdapters
 import PoincareConjecture.Proofs.M28.Generalized.Rescaling
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -26,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M28
-
 
 structure CounterexamplePathSegment
     {epsilon C A D₀ D : ℝ}
@@ -49,9 +34,6 @@ structure CounterexamplePathSegment
   suffix_length :
     (E.flow.metric E.time).pathELength path level_parameter 1 <
       ENNReal.ofReal (A * E.flow.scalar ⟨E.time, E.basepoint⟩ ^ (-1 / 2 : ℝ))
-
-
-
 
 theorem exists_counterexample_path_segment
     (P : RicciFlowCurvatureTheory.{u})
@@ -94,18 +76,12 @@ theorem exists_counterexample_path_segment
     canonical_after := hcanonical
     suffix_length := by simpa [Q] using hsuffix }⟩
 
-
-
-
 theorem rescale_scalar_at_zero
     (F : GeneralizedRicciFlowData.{u}) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (z : (rescale F Q hQ a).slice 0 |>.carrier) :
     (rescale F Q hQ a).scalar ⟨0, z⟩ =
       F.scalar ⟨parabolicTimeInv Q a 0, z⟩ / Q := by
   exact rescale_scalar F Q hQ a 0 z
-
-
-
 
 theorem rescale_edist_at_zero
     (F : GeneralizedRicciFlowData.{u}) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)

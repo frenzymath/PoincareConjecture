@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.CommonExterior
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -31,8 +23,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_smaller_enlarged_marking_in_open
     {g : E2 → E3} (hg : Continuous g) {r : Real} (hr : 1 < r)
@@ -66,10 +56,6 @@ private theorem disjoint_boundary_of_nested_or_disjoint
     subst z
     exact (mem_ball_zero_iff.mp hx).ne (mem_sphere_zero_iff_norm.mp hz)
   · exact hd.mono_right (image_mono sphere_subset_closedBall)
-
-
-
-
 
 theorem exists_supported_moving_pair_replacement
     (B₀ B₁ L₀ L₁ F₀ F₁ : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

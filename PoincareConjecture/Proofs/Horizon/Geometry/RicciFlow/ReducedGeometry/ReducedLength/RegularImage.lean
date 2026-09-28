@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.PathCongruence
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sard.EqualDimension
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

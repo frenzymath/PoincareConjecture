@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.TimeCom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Cutoff
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.NoncompactEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set MeasureTheory Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace Poincare.Analysis.Heat
-
-
 
 theorem ae_eq_zero_of_cutoff_integral_tendsto_zero
     {α : Type*} [MeasurableSpace α] {μ : Measure α}
@@ -63,8 +52,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
   {g : RiemannianMetric n M}
 
-
-
 theorem weighted_cutoff_boundary_le (D : LeviCivitaData g)
     {u ξ : ℝ × M → ℝ} {a b B : ℝ} (hab : a ≤ b)
     (huc : ContinuousOn u (Icc a b ×ˢ univ))
@@ -100,8 +87,6 @@ theorem weighted_cutoff_boundary_le (D : LeviCivitaData g)
   · exact ht.const_mul B
   · filter_upwards [] with x
     exact (mul_le_mul_of_nonneg_left (hgrad x) (by positivity)).trans_eq (by ring)
-
-
 
 theorem weighted_subsolution_ae_eq_zero (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M)

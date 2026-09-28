@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conju
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.PieceDeriv
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.MinimalVariation
 
-
-
-
-
-
-
-
-
-
-
 open Set Filter MeasureTheory
 open scoped Topology ContDiff Manifold Bundle
 
@@ -58,10 +48,6 @@ private theorem MovingEndpointRealization.time_subset
     ht.2.trans (R.time_mem (i + 1) (by omega)).2⟩
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem MovingEndpointRealization.exists_energy_support [T2Space M]
     {g : RiemannianMetric n M} {γ β : ℝ → M}

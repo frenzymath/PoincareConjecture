@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Cyclic.CyclicDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,12 +8,10 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {n : ℕ}
 
-
 def polygonCut {E : Type*} (p : Polygon E n) (a b : Fin n) :
     Polygon E (cyclicDistance a b + 1) := polygonArc p a (cyclicDistance a b)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem polygonCut_boundary (p : Polygon E n) (a b : Fin n) :
     (polygonCut p a b).boundary ℝ =
@@ -45,7 +33,6 @@ theorem polygonCut_boundary (p : Polygon E n) (a b : Fin n) :
     obtain ⟨j, rfl⟩ :=
       (mem_range_cyclicArcEdgeIndex_iff a _ (cyclicDistance_lt a b) i).mpr hindex
     exact mem_iUnion.mpr ⟨j, hxedge⟩
-
 
 theorem polygonCut_boundary_union (p : Polygon E n) (a b : Fin n) (hab : b ≠ a) :
     (polygonCut p a b).boundary ℝ ∪ (polygonCut p b a).boundary ℝ =
@@ -75,7 +62,6 @@ theorem polygonCut_boundary_union (p : Polygon E n) (a b : Fin n) (hab : b ≠ a
       · exact Or.inl (Or.inl (mem_iUnion.mpr ⟨i, mem_iUnion.mpr ⟨hia, hi⟩⟩))
       · exact Or.inr (Or.inl (mem_iUnion.mpr ⟨i, mem_iUnion.mpr ⟨hib, hi⟩⟩))
     · exact Or.inl (Or.inr hx)
-
 
 theorem IsSimplePolygon.polygonCut_boundary_inter {p : Polygon E n}
     (hp : IsSimplePolygon p) (a b : Fin n) (hab : b ≠ a) :
@@ -122,8 +108,6 @@ theorem IsSimplePolygon.polygonCut_boundary_inter {p : Polygon E n}
     · exact ha
   · intro x hx
     exact ⟨Or.inr hx, Or.inr hx⟩
-
-
 
 theorem IsSimplePolygon.polygonCut_pair {p : Polygon E n} (hp : IsSimplePolygon p)
     (a b : Fin n) (hab : b ≠ a) (hs : b ≠ finRotate n a)

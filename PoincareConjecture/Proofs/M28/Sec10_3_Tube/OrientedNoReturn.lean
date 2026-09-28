@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckQuarterOverlap
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckNoReturn
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +12,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckSegment
 
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
-
-
-
-
 
 theorem exists_oriented_frontier_no_return_accuracy
     (S : CounterexampleNeckSegment E) :

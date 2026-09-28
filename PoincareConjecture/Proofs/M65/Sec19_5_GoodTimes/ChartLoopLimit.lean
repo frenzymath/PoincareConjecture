@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.TangentLimit
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.PeriodicLoop
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.ProjectedC0Limit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -22,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
 omit [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem m65ContinuousMap_joint_time {J : Set ℝ}
     (f : ℕ → C((J ×ˢ (univ : Set ℝ) : Set (ℝ × ℝ)), M))
@@ -57,10 +46,6 @@ private theorem slice_deriv_jet {V : Type*} [NormedAddCommGroup V] [NormedSpace 
     ((hasFDerivAt_const t x).prodMk (hasFDerivAt_id x))).hasDerivAt.deriv
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m65C1Loop_tendsto_of_local_chart_jets
     {J : Set ℝ} (hJ : IsOpen J) (c : ℕ → ℝ × ℝ → M) (c0 : ℝ × ℝ → M)

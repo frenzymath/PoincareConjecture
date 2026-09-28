@@ -1,7 +1,5 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
 set_option autoImplicit false
 open Set Metric Filter
 open scoped ContDiff Topology

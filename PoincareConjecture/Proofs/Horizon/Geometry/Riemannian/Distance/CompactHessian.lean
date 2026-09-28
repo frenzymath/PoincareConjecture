@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hes
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_metric_hessian_bound_on_compact (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -42,8 +33,6 @@ theorem exists_metric_hessian_bound_on_compact (D : LeviCivitaData g)
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
-
 
 theorem exists_metric_hessian_bound_of_hasCompactSupport (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

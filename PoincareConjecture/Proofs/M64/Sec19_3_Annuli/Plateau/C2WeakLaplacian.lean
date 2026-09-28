@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTransverseC1
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,9 +9,6 @@ open Set Filter MeasureTheory
 open scoped ContDiff SchwartzMap
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64C2_classical_laplacian_weak {N : ℕ} {U : Set LoopPlane}
     (hU : IsOpen U)

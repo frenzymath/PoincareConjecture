@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.BicollarBaseRestriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,9 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S C K R : Set X}
-
-
-
 
 theorem exists_bicollar_in_domain
     (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C) (hCR : C ⊆ R)

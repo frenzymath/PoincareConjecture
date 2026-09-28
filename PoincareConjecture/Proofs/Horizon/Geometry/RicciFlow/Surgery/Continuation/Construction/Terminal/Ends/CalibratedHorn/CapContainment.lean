@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Connected
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
-
-
 
 theorem cap_scalar_gt_of_linear_high_point (Q : SingularLimitConclusion H)
     (cap : CapCertificate (Q.extension.extended.metric T))
@@ -51,8 +42,6 @@ theorem cap_scalar_gt_of_linear_high_point (Q : SingularLimitConclusion H)
       (by positivity [H.constant_pos] : 0 ≤ 2 * H.constant))
   exact (not_lt_of_ge hxhigh) (hratio.trans_le hupper)
 
-
-
 theorem cap_subset_interior_of_frontier_scalar (Q : SingularLimitConclusion H)
     (cap : CapCertificate (Q.extension.extended.metric T))
     (X : Set (Q.extension.extended.slice T).carrier) (q : ℝ)
@@ -72,8 +61,6 @@ theorem cap_subset_interior_of_frontier_scalar (Q : SingularLimitConclusion H)
   apply disjoint_left.mp hdisjoint hx
   exact ⟨by rwa [hclosed.closure_eq], hxi⟩
 
-
-
 theorem cap_subset_interior_of_linear_high_point (Q : SingularLimitConclusion H)
     (cap : CapCertificate (Q.extension.extended.metric T))
     (X : Set (Q.extension.extended.slice T).carrier) (q : ℝ)
@@ -86,8 +73,6 @@ theorem cap_subset_interior_of_linear_high_point (Q : SingularLimitConclusion H)
   Q.cap_subset_interior_of_frontier_scalar cap X q hclosed hfront hmeet
     (Q.cap_scalar_gt_of_linear_high_point cap q hcap hhigh)
 
-
-
 theorem constant_gt_ninetyNine_of_terminal_cap (Q : SingularLimitConclusion H)
     (cap : CapCertificate (Q.extension.extended.metric T))
     (hcap : cap.cap_constant ≤ 2 * H.constant) : 99 < H.constant := by
@@ -99,8 +84,6 @@ theorem no_terminal_cap_of_constant_le_ninetyNine (Q : SingularLimitConclusion H
       cap.cap_constant ≤ 2 * H.constant := by
   rintro ⟨cap, hcap⟩
   exact (Q.constant_gt_ninetyNine_of_terminal_cap cap hcap).not_ge hconstant
-
-
 
 theorem neck_on_end_component_of_constant_le_ninetyNine
     (Q : SingularLimitConclusion H) (hconstant : H.constant ≤ 99)

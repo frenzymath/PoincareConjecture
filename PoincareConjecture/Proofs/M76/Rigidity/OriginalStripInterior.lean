@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProduct
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Filter
@@ -24,8 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem OriginalDiskProduct.strip_core_eq (P : OriginalDiskProduct e R j)
     {δ : ℝ} (hδ : δ ≤ 1) :
@@ -48,8 +38,6 @@ theorem OriginalDiskProduct.strip_core_eq (P : OriginalDiskProduct e R j)
     intro hq
     exact ((P.proper z ⟨hz.1, ht⟩).mpr hq).2 hy
 
-
-
 theorem OriginalDiskProduct.isOpen_strip_core (P : OriginalDiskProduct e R j)
     {δ : ℝ} (hδ : δ ≤ 1)
     (hopen : IsOpen ((Subtype.val : R → X) ⁻¹'
@@ -69,9 +57,6 @@ theorem OriginalDiskProduct.isOpen_strip_core (P : OriginalDiskProduct e R j)
   rw [P.strip_core_eq hδ, hstrip, inter_assoc,
     inter_eq_self_of_subset_right interior_subset]
   exact hO.inter isOpen_interior
-
-
-
 
 theorem OriginalDiskProduct.interior_closed_strip (P : OriginalDiskProduct e R j)
     {δ : ℝ} (hδ : δ < 1)

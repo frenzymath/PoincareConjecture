@@ -2,21 +2,12 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem homogeneous_ray_eq {f : ℝ → ℝ} {b C : ℝ} (hb : 0 < b)
     (hf : ∀ t ∈ Ioo 0 b, HasDerivAt f (f t / t) t)

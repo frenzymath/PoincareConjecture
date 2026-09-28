@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.PolygonalParameter
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PolygonalArc
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem polygonLinearParameter_natVertex {m : ℕ} [NeZero m]
     (p : Polygon E m) (i : Fin m) :
@@ -66,8 +54,6 @@ private theorem continuous_open_arc_parameter {n : ℕ} (p : Polygon E (n + 2)) 
   exact h.comp (show Continuous (fun t : ℝ => ((), t)) from
     continuous_const.prodMk continuous_id)
 
-
-
 theorem image_polygonLinearParameter_arc {n : ℕ} (p : Polygon E (n + 2)) :
     polygonLinearParameter p '' Icc (0 : ℝ) (n + 1 : ℕ) = polygonArcBoundary p := by
   apply subset_antisymm
@@ -87,8 +73,6 @@ theorem image_polygonLinearParameter_arc {n : ℕ} (p : Polygon E (n + 2)) :
     rw [open_arc_parameter_eq_edge p i (by constructor <;> linarith [hθ.1, hθ.2])]
     congr 1
     ring
-
-
 
 theorem IsSimplePolygonalArc.injOn_polygonLinearParameter {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) :
@@ -123,8 +107,6 @@ theorem IsSimplePolygonalArc.injOn_polygonLinearParameter {n : ℕ}
     have hab := hp.vertices_injective (ha.symm.trans hb)
     rw [hsa, htb, hab]
 
-
-
 noncomputable def IsSimplePolygonalArc.polygonArcHomeomorph {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p) :
     Icc (0 : ℝ) (n + 1 : ℕ) ≃ₜ polygonArcBoundary p := by
@@ -147,14 +129,10 @@ noncomputable def IsSimplePolygonalArc.polygonArcHomeomorph {n : ℕ}
     ((continuous_open_arc_parameter p).comp continuous_subtype_val).subtype_mk _
   exact he.homeoOfEquivCompactToT2
 
-
-
 theorem IsSimplePolygonalArc.polygonArcHomeomorph_apply {n : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)
     (t : Icc (0 : ℝ) (n + 1 : ℕ)) :
     (hp.polygonArcHomeomorph t : E) = polygonLinearParameter p t := rfl
-
-
 
 theorem polygon_arcBoundary_isPathConnected {n : ℕ} (p : Polygon E (n + 2)) :
     IsPathConnected (polygonArcBoundary p) := by

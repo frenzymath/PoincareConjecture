@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControl
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceAxialMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M34
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem roundCylinderMetric_axial_le (f : ℝ → ℝ) (z : RoundCylinderSpace)
     (hf : DifferentiableAt ℝ f z.2) (hbound : |deriv f z.2| ≤ 1)
@@ -61,8 +50,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem axialMap_tangentNorm_le_two {f : ℝ → ℝ} {c : ℝ}
     (hc : -N.epsilon⁻¹ < c) (hc' : c < N.epsilon⁻¹)

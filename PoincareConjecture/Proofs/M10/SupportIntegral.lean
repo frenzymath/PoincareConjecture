@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M10.BarrierLipschitz
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem image_le_of_upper_supports {f B B' : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b)) (hB : ContinuousOn B (Icc a b))
@@ -30,7 +21,6 @@ theorem image_le_of_upper_supports {f B B' : ℝ → ℝ} {a b : ℝ}
   intro x hx r hr
   obtain ⟨g, d, hd, heq, hdom, hbound⟩ := hsupport x hx
   exact frequently_slope_lt_of_upper_support hd heq hdom (hbound.trans_lt hr)
-
 
 theorem sub_le_integral_of_upper_supports {f h : ℝ → ℝ} {a b : ℝ}
     (hab : a ≤ b) (hf : ContinuousOn f (Icc a b)) (hh : Continuous h)

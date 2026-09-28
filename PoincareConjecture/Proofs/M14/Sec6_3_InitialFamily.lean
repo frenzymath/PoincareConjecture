@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_GaugeFamilyLift
 import PoincareConjecture.Proofs.M14.Sec6_3_RealizedInitialPhase
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalCoherence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -31,10 +21,6 @@ private theorem horizontal_t2Space {x : G.Point} : T2Space (G.Horizontal x) :=
 attribute [local instance] horizontal_t2Space
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem initialValueCurve_smooth_initial_tube_in_gauge
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Models
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -36,7 +29,6 @@ private theorem inverseNormalizedAxial_mem {t : ℝ}
   simp only [neg_mul, inv_mul_cancel₀ N.epsilon_pos.ne'] at hlo hhi
   constructor <;> linarith
 
-
 def unitIntervalHomeomorph : Ioo (0 : ℝ) 1 ≃ₜ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ where
   toFun t := ⟨(2 * t.1 - 1) * N.epsilon⁻¹, N.normalizedAxial_mem t.2⟩
   invFun t := ⟨(t.1 * N.epsilon + 1) / 2, N.inverseNormalizedAxial_mem t.2⟩
@@ -54,7 +46,6 @@ def unitIntervalHomeomorph : Ioo (0 : ℝ) 1 ≃ₜ Ioo (-N.epsilon⁻¹) N.epsi
     fun_prop
   continuous_invFun := by
     fun_prop
-
 
 def openCylinderModel : OpenCylinderModel N.carrier where
   homeomorph := ((Homeomorph.refl UnitTwoSphere).prodCongr N.unitIntervalHomeomorph).trans

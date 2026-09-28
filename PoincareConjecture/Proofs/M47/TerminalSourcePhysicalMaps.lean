@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceNormalAmbientCharts
 import PoincareConjecture.Proofs.M47.TerminalSourceComponentCharts
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace E M] [ChartedSpace E N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N] [T3Space M] [T3Space N]
-
-
 
 theorem terminalSource_exists_physical_stage_maps
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

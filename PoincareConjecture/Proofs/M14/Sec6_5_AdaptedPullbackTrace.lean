@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_HorizontalIndexTrace
 import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedFrame
 import PoincareConjecture.Proofs.M14.Sec6_4_AdaptedScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem adaptedPullbackIndex_trace (hM04 : RicciFlowCurvatureTheory.{u})
     (P : Fin n → ∀ s, G.Horizontal (R.curve s))

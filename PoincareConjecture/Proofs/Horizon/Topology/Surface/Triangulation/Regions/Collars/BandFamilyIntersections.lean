@@ -1,15 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CrossRegionBands
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -43,8 +32,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (K : ∀ p, (S p).CutChain (dLeft p) (dRight p)) {δ r : ℝ}
   (B : ∀ p i, ((S p).piece i).FixedStripBandFaces ((K p).graphCuts i) δ r r)
 
-
-
 private def bandFamilyRelation :
     (Σ a : D.IncidentGraphPieceIndex chart cut S,
       Fin (B a.1 a.2).faces.interface.count × Bool) →
@@ -56,9 +43,6 @@ private def bandFamilyRelation :
       ((B b.1 b.2).faces.faceCoordinates w)
       ((B a.1 a.2).faces.faceBasis v)
       ((B b.1 b.2).faces.faceBasis w)
-
-
-
 
 theorem band_family_faces_coordinate_intersection
     (hcut : ∀ e t, cut e t ∈ Ioo (0 : ℝ) (1 / 3))

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.ForwardEquation
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,7 +76,6 @@ private theorem sd_mul_second (hU : IsOpen U) {f g : Spacetime n → ℝ}
     sd_mul hU hf (sd_smooth hU hg j) hz]
   ring
 
-
 theorem forwardCoefficients_operator_eq_divergence (hU : IsOpen U)
     {a : Fin n → Fin n → Spacetime n → ℝ} {b : Fin n → Spacetime n → ℝ}
     (ha : ∀ i j, ContDiffOn ℝ ∞ (a i j) U)
@@ -111,8 +109,6 @@ theorem forwardCoefficients_operator_eq_divergence (hU : IsOpen U)
   simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_mul, sub_mul, add_mul]
   rw [hcross, hsecondw]
   ring
-
-
 
 theorem forwardCoefficients_operator_weighted (hU : IsOpen U)
     {a : Fin n → Fin n → Spacetime n → ℝ} {b : Fin n → Spacetime n → ℝ}

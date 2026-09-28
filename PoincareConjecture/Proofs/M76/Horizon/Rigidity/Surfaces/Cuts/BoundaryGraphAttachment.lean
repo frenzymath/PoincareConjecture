@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.BoundaryHeightExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.FiniteSeparatedAttachments
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -119,8 +111,6 @@ theorem graphAttachmentSheet_mem_rim_iff
   simpa only [graphAttachmentSheet, Function.comp_apply, graphAttachmentRim,
     heightGraph_mem_image,
     (heightGraph_injective (g i)).eq_iff] using hh
-
-
 
 theorem exists_boundary_graph_attachments
     {s b : Set (E × F)} {u r d : ι → Set E} {a z : ι → E}

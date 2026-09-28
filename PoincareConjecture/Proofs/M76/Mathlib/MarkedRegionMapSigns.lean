@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateFourRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateFourRegions
 
 namespace Homeomorph
-
-
-
-
 
 theorem mem_marked_subsets_of_extension
     {E F ι : Type*} [TopologicalSpace E] [TopologicalSpace F]
@@ -43,10 +29,6 @@ theorem mem_marked_subsets_of_extension
     have hxg := (hgraph x).mpr (hBh i hy)
     apply (hmem i ⟨x, hxg⟩).mpr
     rwa [← hval]
-
-
-
-
 
 theorem coordinate_signs_of_marked_regions
     {E : Type*} [TopologicalSpace E] {F P : Set E}

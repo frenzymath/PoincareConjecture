@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedCurvatureBoun
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedFlow
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedShiBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_strongNeck_buffered_source_bounds_accuracy
     (hShi : LocalCurvatureDerivativeEstimates.{u}) :

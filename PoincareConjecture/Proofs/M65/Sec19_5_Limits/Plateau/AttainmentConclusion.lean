@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTrace
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,10 +13,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65Plateau_attainment
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

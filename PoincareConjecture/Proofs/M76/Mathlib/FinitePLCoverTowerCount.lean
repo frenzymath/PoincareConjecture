@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoverStepCount
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w z v
@@ -19,11 +7,6 @@ universe w z v
 open Set Topology
 
 namespace Geometry
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_strict_two_sheet_neighborhood_count
     {U V : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
@@ -57,14 +40,6 @@ theorem FinitePiecewiseAffineOn.exists_strict_two_sheet_neighborhood_count
   have hstrict := hcount X q hq E p hp htwo f hqf (j.comp g) hpg r H hr
   rw [himage] at hstrict
   exact ⟨hlocal, hstrict⟩
-
-
-
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.not_infinite_two_sheet_tower
     {U V : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]

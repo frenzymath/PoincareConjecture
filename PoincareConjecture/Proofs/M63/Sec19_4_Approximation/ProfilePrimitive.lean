@@ -3,27 +3,17 @@ import PoincareConjecture.Proofs.M63.Mathlib.CircleHomeomorph
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 import Mathlib.Topology.Algebra.Module.Cardinality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff intervalIntegral
 
 namespace PoincareConjecture
 
-
 theorem m63Flattening_hasDerivAt (N : ℕ) (x : ℝ) :
     HasDerivAt (m63Flattening N) (m63Profile N x) x := by
   have hc := (m63Profile_smooth N).continuous
   exact intervalIntegral.integral_hasDerivAt_right (hc.intervalIntegrable 0 x)
     hc.stronglyMeasurable.stronglyMeasurableAtFilter hc.continuousAt
-
 
 theorem m63Flattening_smooth (N : ℕ) : ContDiff ℝ ∞ (m63Flattening N) := by
   apply contDiff_infty_iff_deriv.mpr
@@ -33,11 +23,8 @@ theorem m63Flattening_smooth (N : ℕ) : ContDiff ℝ ∞ (m63Flattening N) := b
   rw [hderiv]
   exact m63Profile_smooth N
 
-
 theorem m63Flattening_zero (N : ℕ) : m63Flattening N 0 = 0 := by
   simp only [m63Flattening, intervalIntegral.integral_same]
-
-
 
 theorem m63Profile_pos_of_not_vertex {N : ℕ} (hN : 0 < N) {x : ℝ}
     (hx : x ∉ Set.range (fun j : ℤ => (j : ℝ) * m63CellLength N)) :
@@ -55,8 +42,6 @@ theorem m63Profile_pos_of_not_vertex {N : ℕ} (hN : 0 < N) {x : ℝ}
   exact div_pos (mul_pos (m63CellLength_pos hN) (expNegInvGlue.pos_of_pos harg))
     (m63ProfileBase_integral_pos hN)
 
-
-
 theorem m63Flattening_strictMono {N : ℕ} (hN : 0 < N) :
     StrictMono (m63Flattening N) := by
   intro x y hxy
@@ -72,16 +57,12 @@ theorem m63Flattening_strictMono {N : ℕ} (hN : 0 < N) :
   change (∫ s in (0 : ℝ)..x, m63Profile N s) < ∫ s in (0 : ℝ)..y, m63Profile N s
   linarith
 
-
-
 theorem m63Flattening_cell_shift {N : ℕ} (hN : 0 < N) (x : ℝ) :
     m63Flattening N (x + m63CellLength N) = m63Flattening N x + m63CellLength N := by
   unfold m63Flattening
   rw [(m63Profile_periodic hN).intervalIntegral_add_eq_add 0 x
     (fun s t => (m63Profile_smooth N).continuous.intervalIntegrable s t)]
   rw [zero_add, m63Profile_cell_integral hN]
-
-
 
 theorem m63Flattening_period_shift {N : ℕ} (hN : 0 < N) (x : ℝ) :
     m63Flattening N (x + curvePeriod) = m63Flattening N x + curvePeriod := by
@@ -93,8 +74,6 @@ theorem m63Flattening_period_shift {N : ℕ} (hN : 0 < N) (x : ℝ) :
       rw [Nat.cast_succ, add_mul, one_mul, ← add_assoc, m63Flattening_cell_shift hN, ih]
       ring
   simpa only [m63_count_mul_cellLength hN, curvePeriod] using hiter N
-
-
 
 theorem m63Flattening_circle_homeomorph {N : ℕ} (hN : 0 < N) :
     ∃ e : AddCircle curvePeriod ≃ₜ AddCircle curvePeriod,

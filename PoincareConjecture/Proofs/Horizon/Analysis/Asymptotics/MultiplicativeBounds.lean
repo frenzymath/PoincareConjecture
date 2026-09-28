@@ -1,7 +1,5 @@
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set Filter

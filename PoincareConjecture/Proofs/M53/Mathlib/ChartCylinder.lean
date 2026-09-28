@@ -1,24 +1,12 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Topology
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_pos_cylinder_subset_target
     {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E]

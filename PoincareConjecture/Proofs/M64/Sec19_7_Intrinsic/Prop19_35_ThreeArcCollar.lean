@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcJoinedCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThirdArcChain
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M64IntrinsicThreeArcCollar
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
@@ -47,30 +39,17 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {C : M64IntrinsicThreeArcCaps gamma sigma T S U}
   (D : M64IntrinsicThreeArcCollar C b)
 
-
-
-
 abbrev carrier : Set AnnulusCoordinates :=
   ((C.carrier false ∪ C.carrier true) ∪
     m64IntrinsicJoinedBandUnion D.joined.chain D.joined.patch) ∪ ⋃ i, (D.third.band i).carrier
-
-
-
 
 theorem isClosed_carrier : IsClosed D.carrier :=
   (((C.compact false).isClosed.union (C.compact true).isClosed).union
     D.joined.bands_closed).union
       (isClosed_iUnion_of_finite fun i => (D.third.band i).isClosed_carrier)
 
-
-
-
 theorem occupied : D.carrier ⊆ closure U :=
   union_subset D.joined.occupied (iUnion_subset D.third.occupied)
-
-
-
-
 
 theorem boundary_covered
     (hfront : frontier U = gamma false '' Icc 0 (T false) ∪
@@ -89,10 +68,6 @@ theorem boundary_covered
       (subset_union_left.trans subset_union_left) subset_union_right)⟩
 
 end M64IntrinsicThreeArcCollar
-
-
-
-
 
 theorem m64Intrinsic_extend_joined_collar
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
@@ -169,10 +144,6 @@ theorem m64Intrinsic_extend_joined_collar
     separated := hsep
     cap_contact := hcontact
     third_covered := hcover }⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_collar
     (gamma : Bool → ℝ → AnnulusCoordinates) (sigma : ℝ → AnnulusCoordinates)

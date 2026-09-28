@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.TerminalAnnuli
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -19,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
-
-
 
 theorem exists_finitePL_annulus_inverse_coordinates
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -64,8 +53,6 @@ theorem exists_finitePL_annulus_inverse_coordinates
   exact hq.finitePiecewiseAffineOn_lift hcompat hqi K hK hlift hmap
     (hr.congr (fun x hx => (hcomp x hx).symm))
 
-
-
 theorem polyhedralPL_annulus_transition_on_parameter
     {E X Y ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] [TopologicalSpace Y]
@@ -88,8 +75,6 @@ theorem polyhedralPL_annulus_transition_on_parameter
   rw [hval ⟨x, hx⟩, hf ⟨x, hx⟩]
   exact (hA' (A.symm ⟨r x, hrP hx⟩)).symm
 
-
-
 theorem exists_polyhedralPL_annulus_precomposition
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {P : Set X}
@@ -111,8 +96,6 @@ theorem exists_polyhedralPL_annulus_precomposition
   intro z
   change (A (twist z) : X) = q (f z)
   rw [hA, ← hfval z]
-
-
 
 theorem annulus_transition_rim_eq
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

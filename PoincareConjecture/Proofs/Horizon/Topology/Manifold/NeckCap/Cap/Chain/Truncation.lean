@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.NoReturn.PositiveEnd
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -55,9 +45,6 @@ private theorem disjoint_closure_of_open {U V : Set M}
   intro x hx hxcl
   obtain ⟨y, hyU, hyV⟩ := mem_closure_iff.mp hxcl U hU hx
   exact disjoint_left.mp hUV hyU hyV
-
-
-
 
 theorem exists_finite_chain_truncation_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

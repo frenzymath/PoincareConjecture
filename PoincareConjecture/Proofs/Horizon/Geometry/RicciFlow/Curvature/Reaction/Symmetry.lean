@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

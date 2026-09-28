@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.Busemann.Rigidity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,7 +13,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [Nonempty M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [NoncompactSpace M]
-
 
 theorem exists_singleton_horoball_of_strictlyPositiveSectionalCurvature
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -52,12 +44,6 @@ theorem exists_singleton_horoball_of_strictlyPositiveSectionalCurvature
     (fun y hy => mem_singleton_iff.mpr (hsub hy hq)) (singleton_subset_iff.mpr hq)
   exact ⟨q, p, 1 - R, hshift.symm.trans hsingleton,
     by simpa only [TotallyConvexSet, ← hsingleton] using hSconvex⟩
-
-
-
-
-
-
 
 theorem exists_point_soul_of_strictlyPositiveSectionalCurvature
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

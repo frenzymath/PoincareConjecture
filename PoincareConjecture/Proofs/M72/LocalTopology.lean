@@ -1,22 +1,6 @@
 import PoincareConjecture.Definitions.M72FiniteReconstruction
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -208,9 +192,6 @@ private noncomputable def m72EventFromRaw
     by
       letI := not_nonempty_iff.mp hN
       exact m72VanishingEventFromRaw G L T hT
-
-
-
 
 noncomputable def m72LocalTopologyFromRaw
     (G : GlobalSurgeryFlowCertificate N)

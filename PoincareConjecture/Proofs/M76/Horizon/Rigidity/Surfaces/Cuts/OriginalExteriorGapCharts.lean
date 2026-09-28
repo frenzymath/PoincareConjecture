@@ -6,14 +6,6 @@ import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Set.Function
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

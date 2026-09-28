@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.CircleCapEulerCount
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -12,8 +10,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 local notation "V2" => (Fin 2 → ℝ)
-
-
 
 theorem circle_incidence (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (gamma : sphere (0 : V2) 1 ≃ₜ K.space) (hgamma : gamma.IsFinitePL) :

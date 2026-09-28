@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.LocalInteriorExtraction
 import PoincareConjecture.Proofs.M34.Mathlib.CompatibleSmoothLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 open SpacetimeBounds
-
-
 
 structure InteriorCoefficientLimit {g0 : StandardInitialMetric}
     (A : CompactCapApproximation g0) where
@@ -38,8 +27,6 @@ structure InteriorCoefficientLimit {g0 : StandardInitialMetric}
       (fun k => iteratedFDeriv ℝ m
         (fun p : ℝ × StandardCapSpace => A.coefficients (subsequence k) p.1 p.2))
       (iteratedFDeriv ℝ m coefficients) atTop K
-
-
 
 theorem interiorCoefficientLimit_exists {g0 : StandardInitialMetric}
     (A : CompactCapApproximation g0) (P : RicciFlowCurvatureTheory.{0}) :

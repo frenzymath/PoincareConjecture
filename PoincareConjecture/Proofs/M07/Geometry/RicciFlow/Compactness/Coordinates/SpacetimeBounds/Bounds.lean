@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -121,7 +114,6 @@ theorem eventually_normalChartCover_spacetime_jet_bound_of_local_derivative_esti
   dsimp only
   intro cover i t ht x hx
   exact hk ⟨k, cover, i⟩ rfl (t, x) ⟨ht, hx⟩
-
 
 theorem eventually_normalChartCover_spacetime_jet_bound
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

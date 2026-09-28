@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M13
 import PoincareConjecture.Proofs.M16
 import PoincareConjecture.Proofs.M18
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,7 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 theorem m20AsymptoticPredecessors
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -63,13 +50,11 @@ theorem m20AsymptoticPredecessors
     exact reducedVolumeMonotonicity_from_M08_M09 K.flow 0 R hzero hR
       (hwindow R) (hcurvature R)
 
-
 theorem m20AsymptoticSolitonProvider (n : ℕ) :
     AncientAsymptoticSolitonTheory.{u} n := by
   apply ancientAsymptoticSolitonTheory_from_predecessors n
   intro M _ _ _ _ _ _ _ _ _ K
   exact m20AsymptoticPredecessors K
-
 
 theorem m20TwoDimensionalPredecessors
     {N : Type u} [TopologicalSpace N]
@@ -82,7 +67,6 @@ theorem m20TwoDimensionalPredecessors
     exact pointedRicciFlowCompactness_from_M04 H
   · intro K S
     exact (m20AsymptoticSolitonProvider 2).limits N K S
-
 
 theorem m20ClassificationPredecessors :
     ThreeDimensionalClassificationPredecessors.{u} := by
@@ -99,7 +83,6 @@ theorem m20ClassificationPredecessors :
   · apply m20TwoDimensionalProvider_from_M19
     intro N _ _ _ _ _ _ _ _ _
     exact m20TwoDimensionalPredecessors (N := N)
-
 
 theorem m20ClassificationFromMilestones
     {M : Type u} [TopologicalSpace M]

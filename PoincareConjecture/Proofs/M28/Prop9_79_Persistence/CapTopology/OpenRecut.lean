@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.BoundaryCollar
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.PrecompactRecut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_boundary_collar_subset_recut (N : CapCertificate g) {q : ℝ}
     (hq : -N.epsilon⁻¹ < q) (hq' : q < N.epsilon⁻¹) :
@@ -82,8 +70,6 @@ theorem exists_boundary_collar_subset_recut (N : CapCertificate g) {q : ℝ}
         (N.end_neck.coordinate_inverse_mem x hxE).2.1,
       hlt x ⟨hxB, hxE⟩⟩
 
-
-
 theorem isOpen_recut (N : CapCertificate g) {q : ℝ}
     (hq : -N.epsilon⁻¹ < q) (hq' : q < N.epsilon⁻¹) :
       IsOpen (N.closed_core ∪ N.end_neck.region (-N.epsilon⁻¹) q) := by
@@ -108,9 +94,6 @@ theorem isOpen_recut (N : CapCertificate g) {q : ℝ}
         ((N.boundary_neck.region_open a b).mem_nhds hxB) hB
   · exact Filter.mem_of_superset
       ((N.end_neck.region_open (-N.epsilon⁻¹) q).mem_nhds hxE) subset_union_right
-
-
-
 
 theorem open_precompact_recut (N : CapCertificate g) {q : ℝ}
     (hq : -N.epsilon⁻¹ < q) (hq' : q < N.epsilon⁻¹) :

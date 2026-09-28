@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MixedCompatibleChartPatch
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeMarkedChartStars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +12,6 @@ variable {E V W X ι κ : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup W] [NormedSpace ℝ W] [FiniteDimensional ℝ W]
   [TopologicalSpace X] [Finite κ] {e : ι → OpenPartialHomeomorph X V}
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_full_marked_mixed_chart_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

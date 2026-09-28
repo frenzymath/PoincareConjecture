@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.AffineUnionCorner
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_original_union_corner_charts
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

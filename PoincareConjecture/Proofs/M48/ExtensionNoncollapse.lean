@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M48.ExtensionCanonical
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Vari
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +18,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem isProperMap_potential (S : GradientShrinkingSolitonData 3 M) :
     IsProperMap S.potential := by
   refine isProperMap_iff_isCompact_preimage.mpr ⟨S.potential_C2.continuous, ?_⟩
@@ -36,8 +25,6 @@ theorem isProperMap_potential (S : GradientShrinkingSolitonData 3 M) :
   obtain ⟨b, hb⟩ := hK.bddAbove
   exact (S.isCompact_potential_sublevel b).of_isClosed_subset
     (hK.isClosed.preimage S.potential_C2.continuous) (fun x hx => hb hx)
-
-
 
 theorem exists_first_variation_potential_level_area
     (S : GradientShrinkingSolitonData 3 M)
@@ -71,8 +58,6 @@ theorem exists_first_variation_potential_level_area
   change ((_ / Real.sqrt (S.connection.levelQ S.potential x)) /
     Real.sqrt (S.connection.levelQ S.potential x)) = _
   rw [div_div, ← sq, Real.sq_sqrt hQ.le]
-
-
 
 theorem exists_monotone_potential_level_area_of_scalar_le_one
     (S : GradientShrinkingSolitonData 3 M)

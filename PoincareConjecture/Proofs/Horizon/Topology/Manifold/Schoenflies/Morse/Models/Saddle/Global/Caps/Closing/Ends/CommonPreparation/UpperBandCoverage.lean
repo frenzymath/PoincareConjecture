@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.BandCoverage
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +23,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
 private theorem flatten_height (data : TerminalSaddleData M P p e) (y : E3) :
     data.toTerminalSaddleGeometry.flatten y 2 = inner Real (M.v : E3) y :=
   (data.frame_height (data.D y)).trans (data.D_height y)
-
-
 
 theorem terminal_model_upper_level_eq_rims
     (data : TerminalSaddleData M P p e)
@@ -100,8 +96,6 @@ theorem terminal_model_upper_level_eq_rims
     exact (terminal_labeled_model_upper_boundary data Φ χ H hH hχ hplanar hlabels
       (data.labels.symm (.inr j)) j (data.labels.apply_symm_apply _)).2 x hx
 
-
-
 theorem exists_terminal_upper_prepared_model_slice_coverage
     (data : TerminalSaddleData M P p e)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -169,8 +163,6 @@ theorem exists_terminal_upper_prepared_model_slice_coverage
   apply congrArg range
   funext q
   exact hcyl j q z ⟨by linarith [hz.1], by linarith [hz.2]⟩
-
-
 
 theorem exists_terminal_upper_prepared_modelBand_coverage
     (data : TerminalSaddleData M P p e)
@@ -246,7 +238,5 @@ theorem exists_terminal_upper_prepared_modelBand_coverage
     · change inner Real (-(M.v : E3)) (Q (data.toTerminalSaddleGeometry.filledModel q)) = _
       rw [hQneg]
       exact hq
-
-
 
 end Poincare.Manifold.Schoenflies.Saddle.Caps.Closing

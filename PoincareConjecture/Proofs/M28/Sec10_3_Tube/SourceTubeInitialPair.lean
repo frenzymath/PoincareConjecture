@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeScaleBudget
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace SourceTubeData
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
-
-
 
 theorem node_zero_readout (T : SourceTubeData S) :
     T.list.node 0 = T.list.nodes.head T.list.nonempty ∧
@@ -45,8 +33,6 @@ theorem node_zero_readout (T : SourceTubeData S) :
   refine ⟨hhead, htime, ?_⟩
   simpa only [htime] using (T.list.node_center hzero).symm
 
-
-
 theorem tube_chain_readout (T : SourceTubeData S) :
     T.tube.chain.shape = ChainShape.finite 0 (T.list.nodes.length - 1) ∧
       T.tube.chain.neck = fun i => (T.list.node i).2 := by
@@ -61,9 +47,6 @@ theorem tube_chain_readout (T : SourceTubeData S) :
   refine ⟨hshape.trans T.shape_eq, hneck.trans ?_⟩
   funext i
   rw [T.neck_eq, T.list.neckOfList_eq_node]
-
-
-
 
 theorem initial_pair (T : SourceTubeData S) (hlen : 2 ≤ T.list.nodes.length) :
     T.tube.chain.neck 0 = (T.list.node 0).2 ∧
@@ -112,8 +95,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 theorem tubeNodeScale_zero (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
     H.tubeNodeScale T k 0 = (4 * max C 2)⁻¹ :=
@@ -121,10 +102,6 @@ theorem tubeNodeScale_zero (H : CounterexampleNeckFamily E)
     (T k).node_zero_readout.2.2
 
 end CounterexampleNeckFamily
-
-
-
-
 
 theorem exists_source_tube_successor_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.CompactRadialTube
 import PoincareConjecture.Proofs.M64.Mathlib.LocalLiftNormControl
 import PoincareConjecture.Proofs.M64.Mathlib.RadialCornerGerms
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,11 +10,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64_exists_earlier_radial_digon_contact
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

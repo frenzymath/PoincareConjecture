@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceExhaustion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_curvature_derivatives_bounded_on_slab
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

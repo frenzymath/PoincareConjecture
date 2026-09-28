@@ -2,29 +2,11 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Euclidean
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -89,8 +71,6 @@ private theorem ambient_map_of_compact_collar_side
   refine ⟨F, fun q => ?_⟩
   rw [hF q (sphere_subset_closedBall q.property)]
   simpa using (hmatch (q, 0) (by simpa using hr)).2
-
-
 
 theorem exists_ambient_map_of_euclidean_sphere_collar
     (c : OpenPartialHomeomorph RoundCylinderSpace E3)

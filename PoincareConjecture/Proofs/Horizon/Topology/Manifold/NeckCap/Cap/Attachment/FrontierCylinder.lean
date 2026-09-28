@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Cylin
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_frontier_neck_capTubeAttachment_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -97,8 +84,6 @@ theorem exists_frontier_neck_capTubeAttachment_threshold :
     refine ⟨C.epsilon⁻¹ / 2, ⟨by linarith, by linarith⟩, ?_⟩
     change C.end_neck.region (C.epsilon⁻¹ / 2) C.epsilon⁻¹ ⊆ Q.carrier
     simpa only [C.end_neck_epsilon] using hpositive
-
-
 
 theorem exists_frontier_neck_cappedTube_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

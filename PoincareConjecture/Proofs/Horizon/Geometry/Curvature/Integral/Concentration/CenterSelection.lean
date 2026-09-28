@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RadiusSelection
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_near_min_badAscentRadius_centers_of_tendsto_zero
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
@@ -65,8 +55,6 @@ end PoincareConjecture.RiemannianMetric
 
 namespace Poincare.CurvatureIntegral
 
-
-
 theorem eventually_mem_closedBall_of_tendsto_dist_zero
     {X : ℕ → Type*} [∀ j, MetricSpace (X j)]
     (p q z : ∀ j, X j) {ρ : ℝ} (hρ : 0 < ρ)
@@ -78,8 +66,6 @@ theorem eventually_mem_closedBall_of_tendsto_dist_zero
   filter_upwards [hsum.eventually_lt_const hρ] with j hj
   rw [Metric.mem_closedBall, dist_comm]
   exact ((dist_triangle (p j) (q j) (z j)).trans_lt hj).le
-
-
 
 theorem exists_bad_points_of_near_min_badAscentRadius
     {X : ℕ → Type*} [∀ j, MetricSpace (X j)]

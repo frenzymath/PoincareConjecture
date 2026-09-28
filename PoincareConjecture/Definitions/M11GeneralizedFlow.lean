@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,25 +11,18 @@ universe u
 
 namespace PoincareConjecture
 
-
 noncomputable abbrev spacetimeModel (n : ℕ) := (𝓡∂ 1).prod (𝓡 n)
-
 
 abbrev SpacetimeModelVector (n : ℕ) :=
   EuclideanSpace ℝ (Fin 1) × EuclideanSpace ℝ (Fin n)
-
 
 noncomputable def spacetimeHorizontal {n : ℕ} {X : Type u} [TopologicalSpace X]
     [ChartedSpace (ModelProd (EuclideanHalfSpace 1) (EuclideanSpace ℝ (Fin n))) X]
     (time : X → ℝ) (p : X) : Submodule ℝ (TangentSpace (spacetimeModel n) p) :=
   (mfderiv (spacetimeModel n) 𝓘(ℝ) time p).toLinearMap.ker
 
-
 abbrev spacetimeSlice {X : Type u} (time : X → ℝ) (t : ℝ) :=
   {p : X // time p = t}
-
-
-
 
 structure GeneralizedFlowSpacetime (n : ℕ) (X : Type u) [TopologicalSpace X]
     (time : X → ℝ) (I : SpacetimeInterval) where
@@ -98,7 +82,6 @@ namespace GeneralizedFlowSpacetime
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
 abbrev Point (_F : GeneralizedFlowSpacetime n X time I) := X
 
 instance (F : GeneralizedFlowSpacetime n X time I) :
@@ -115,9 +98,7 @@ instance (F : GeneralizedFlowSpacetime n X time I) : T3Space F.Point := F.t3Spac
 instance (F : GeneralizedFlowSpacetime n X time I) :
     SecondCountableTopology F.Point := F.secondCountable
 
-
 def timeFunction (F : GeneralizedFlowSpacetime n X time I) : F.Point → ℝ := time
-
 
 noncomputable abbrev Horizontal (F : GeneralizedFlowSpacetime n X time I)
     (p : F.Point) : Type := spacetimeHorizontal (n := n) F.timeFunction p
@@ -135,11 +116,9 @@ instance (F : GeneralizedFlowSpacetime n X time I) :
     ContMDiffVectorBundle ∞ (EuclideanSpace ℝ (Fin n)) F.Horizontal (spacetimeModel n) :=
   F.horizontalSmoothBundle
 
-
 noncomputable abbrev horizontalMetric (F : GeneralizedFlowSpacetime n X time I) :
     Bundle.ContMDiffRiemannianMetric (B := F.Point) (spacetimeModel n) ∞
       (EuclideanSpace ℝ (Fin n)) F.Horizontal := F.metric
-
 
 abbrev Slice (F : GeneralizedFlowSpacetime n X time I) (t : ℝ) :=
   spacetimeSlice F.timeFunction t

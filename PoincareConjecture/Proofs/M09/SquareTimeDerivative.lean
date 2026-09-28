@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.SquareTimeFields
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

@@ -10,17 +10,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MinimalFaceRadialTransport
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFiniteAffineCover
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -30,8 +19,6 @@ namespace Geometry.SimplicialComplex
 section Parents
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem triangle_parent_unique
     (K L : SimplicialComplex ℝ E) (hbound : ∀ t ∈ K.faces, t.card ≤ 3)
@@ -51,8 +38,6 @@ theorem triangle_parent_unique
   have hti : t ∩ u = t := Finset.eq_of_subset_of_card_le Finset.inter_subset_left (by omega)
   have hui : t ∩ u = u := Finset.eq_of_subset_of_card_le Finset.inter_subset_right (by omega)
   exact hti.symm.trans hui
-
-
 
 theorem IsSubdivision.existsUnique_triangle_coface_parent
     {K L : SimplicialComplex ℝ E} (hLK : L.IsSubdivision K)
@@ -116,9 +101,6 @@ private theorem affine_image_intrinsic_interior
     (subset_affineSpan ℝ _ (intrinsicInterior_subset hx)) he
   rw [hyx, ← intrinsicClosure_sdiff_intrinsicInterior] at hy
   exact hy.2 hx
-
-
-
 
 theorem fine_triangle_pair_not_in_one_coarse_triangle
     (K L : SimplicialComplex ℝ E)
@@ -219,9 +201,6 @@ private theorem convex_subset_affine_of_local
   change y ∈ A
   simpa only [vadd_eq_add, sub_add_cancel] using A.vadd_mem_of_mem_direction hd' hxA
 
-
-
-
 theorem IsSubdivision.exists_triangle_coface_in_parent
     {K L : SimplicialComplex ℝ E} (hLK : L.IsSubdivision K) (hL : L.faces.Finite)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 3)
@@ -286,10 +265,6 @@ theorem IsSubdivision.exists_triangle_coface_in_parent
   have hedges : (edges i).card = 2 := by cases i <;> assumption
   omega
 
-
-
-
-
 theorem IsSubdivision.ncard_triangle_cofaces_eq_of_shared_edge_interior
     {K L : SimplicialComplex ℝ E} (hLK : L.IsSubdivision K) (hL : L.faces.Finite)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 3)
@@ -332,8 +307,6 @@ end Paired
 section Avoidance
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_edge_interior_point_avoiding_finite
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)
@@ -394,8 +367,6 @@ theorem exists_edge_interior_point_avoiding_finite
   refine ⟨raw r, hxS, hrbad, ?_⟩
   have hxK : raw r ∈ K.space := K.convexHull_subset_space hs (intrinsicInterior_subset hxS)
   exact hWU.subset (show (⟨raw r, hxK⟩ : K.space) ∈ Subtype.val ⁻¹' W from hrV.2)
-
-
 
 theorem exists_edge_interior_point_avoiding_vertices
     (K L : SimplicialComplex ℝ E) (hL : L.faces.Finite)

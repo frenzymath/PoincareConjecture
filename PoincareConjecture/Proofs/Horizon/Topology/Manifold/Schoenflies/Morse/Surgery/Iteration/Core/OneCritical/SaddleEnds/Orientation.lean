@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CapSide
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Boundary
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem scale_neg_of_lower_annulus
     (L : List (SphereSurgeryCoreCap v g B))
@@ -70,7 +66,6 @@ theorem scale_neg_of_lower_annulus
   obtain ⟨⟨z, t⟩, ⟨_, ht⟩, rfl⟩ := hcover hqC
   rw [hheight z t ⟨hla.trans_le ht.1, ht.2.trans_lt hc.2⟩] at hqheight
   exact (not_lt_of_ge ht.2) hqheight
-
 
 theorem scale_pos_of_upper_annulus
     (L : List (SphereSurgeryCoreCap v g B))

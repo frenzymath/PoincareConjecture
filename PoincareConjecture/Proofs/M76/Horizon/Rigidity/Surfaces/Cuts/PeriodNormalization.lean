@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusSqua
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -73,8 +66,6 @@ theorem normalizeSquareAffine_value (z : Square p) :
     normalizeSquareAffine p (z.1, z.2) =
       (((normalizeSquare p z).1 : ℝ), ((normalizeSquare p z).2 : ℝ)) := by
   simp [normalizeSquareAffine, normalizeSquare, normalizeInterval, div_eq_mul_inv, mul_comm]
-
-
 
 noncomputable def SourceSquareMap.withPeriod
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

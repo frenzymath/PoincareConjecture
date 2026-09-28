@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.AnnulusReparametrization
 import PoincareConjecture.Proofs.M38.ShortCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +26,6 @@ variable {A B C : GeneralizedSliceCarrier.{u}}
     c (z, s) = E₁.map (D₁.map ((1 + s) • (phi z).val)))
   (hcentral : Disjoint (c '' (Set.univ ×ˢ ({0} : Set ℝ))) (U ∪ V))
   (hcover : U ∪ V ∪ (c '' (Set.univ ×ˢ ({0} : Set ℝ))) = Set.univ)
-
-
 
 noncomputable def shortCollarConnectedSumData {a : ℝ}
     (ha : 0 < a) (ha1 : a < 1) (haε : a ≤ ε) : SmoothConnectedSumData A B C := by
@@ -95,7 +85,6 @@ noncomputable def shortCollarConnectedSumData {a : ℝ}
     nlinarith
 
 include hU hV E₀ E₁ hUV phi c hc hneg hpos hcentral hcover in
-
 
 theorem exists_connectedSumData_of_local_gluing (hε : 0 < ε) :
     Nonempty (SmoothConnectedSumData A B C) := by

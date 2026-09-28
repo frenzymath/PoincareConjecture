@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.M28.Generalized.CylinderComparisonCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem slice_pullback_eq_of_identity (F : GeneralizedRicciFlowData.{u})
     {t t' : ℝ} (ht : t' = t)
@@ -39,9 +28,6 @@ theorem slice_pullback_eq_of_identity (F : GeneralizedRicciFlowData.{u})
   change (F.metric t).inner (f x) v w = (F.metric t).inner x v w
   exact congrArg (fun y => (F.metric t).inner y v w) (hid hx)
 
-
-
-
 theorem strongNeck_top_tensor_eq {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹)
@@ -58,8 +44,6 @@ theorem strongNeck_top_tensor_eq {F : GeneralizedRicciFlowData.{u}} {t epsilon :
   exact slice_pullback_eq_of_identity F (by simp) N.carrier_open
     (N.time_cylinder.forward 0 hzero) (N.cylinder_identity hzero) hzN _ _
 
-
-
 theorem strongNeck_top_comparison {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) :
     NeckMetricJetComparison (F.metric t) epsilon N.scale N.coordinate_map := by
@@ -67,9 +51,6 @@ theorem strongNeck_top_comparison {F : GeneralizedRicciFlowData.{u}} {t epsilon 
   obtain ⟨hsmooth, bound, hbound, hjet⟩ := N.metric_comparison
   refine ⟨cylinderClose_of_eqOn_strip ⟨hsmooth 0 hzero, bound, hbound,
     hjet 0 hzero⟩ (strongNeck_top_tensor_eq N)⟩
-
-
-
 
 noncomputable def strongNeck_top {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) (hepsilon : epsilon < 1 / 2) :

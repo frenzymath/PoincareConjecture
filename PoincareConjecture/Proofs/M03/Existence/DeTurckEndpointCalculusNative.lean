@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.VolterraPicard
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Topology.ContinuousMap.Interval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -24,7 +16,6 @@ variable {P Z K : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P] [FiniteDimensional ℝ P]
   [NormedAddCommGroup Z] [NormedSpace ℝ Z]
   [TopologicalSpace K] [CompactSpace K]
-
 
 theorem hasFDerivWithinAt_path_eval
     (ev : ℝ → K) (hev : Continuous ev) (f : P → C(K, Z))
@@ -109,7 +100,6 @@ theorem integralPath_norm_le (hT : 0 ≤ T) (f : C(Icc (0 : ℝ) T, Z)) :
     _ = (t : ℝ) * ‖f‖ := by rw [sub_zero, abs_of_nonneg t.2.1, mul_comm]
     _ ≤ T * ‖f‖ := mul_le_mul_of_nonneg_right t.2.2 (norm_nonneg f)
 
-
 def integralOperator (hT : 0 ≤ T) :
     C(Icc (0 : ℝ) T, Z) →L[ℝ] C(Icc (0 : ℝ) T, Z) :=
   LinearMap.mkContinuous
@@ -157,8 +147,6 @@ def coordinateDifferential (V : Fin d → C(K, Z)) : (Fin d → ℝ) →L[ℝ] C
 theorem coordinateDifferential_apply (V : Fin d → C(K, Z)) (w : Fin d → ℝ) (x : K) :
     coordinateDifferential V w x = ∑ i, w i • V i x := by
   simp [coordinateDifferential]
-
-
 
 theorem contDiffOn_of_spatial_jet_system
     {Omega : Set (Fin d → ℝ)} (hOmega : IsOpen Omega)

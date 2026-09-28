@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleLifts
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +14,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
 
 theorem ChartwisePLMap.locallyPL_hamiltonZero_circle_coordinate {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

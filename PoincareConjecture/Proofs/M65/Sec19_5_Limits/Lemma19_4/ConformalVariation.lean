@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.AmbientDensityVariation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaDensity_eq_of_conformal (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) (c : ℝ)
@@ -41,9 +29,6 @@ theorem m65AreaDensity_eq_of_conformal (g : RiemannianMetric n M)
   simp only [m60AreaDensity, hdet, max_eq_right (sq_nonneg c), Real.sqrt_sq hc]
 
 variable {a b : ℝ} (F : RicciFlow n M (Icc a b))
-
-
-
 
 theorem m65PlaneMotionDensity_eq_sum_of_conformal
     (u : ℝ → LoopPlane → M) (t : ℝ) (z : LoopPlane) (c : ℝ)

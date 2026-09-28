@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Comp
 import Mathlib.Topology.LocalAtTarget
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,7 +55,6 @@ private theorem isProperMap_of_finite_covering
   let := hfinite x
   exact (Set.toFinite (f ⁻¹' {x})).isCompact
 
-
 theorem metricComplete_of_proper_metric_pullback
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -109,7 +98,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem unitRicciKernelT3Space [T2Space M] (D : LeviCivitaData g)
     (hc : IsCoveringMap (unitRicciKernelProjection D)) :
     T3Space (UnitRicciKernel D) := by
@@ -123,14 +111,11 @@ theorem unitRicciKernelT3Space [T2Space M] (D : LeviCivitaData g)
   exact { toRegularSpace :=
     RegularSpace.of_hasBasis isCompact_isClosed_basis_nhds (fun _ _ ⟨_, _, h⟩ => h) }
 
-
 theorem unitRicciKernelProjection_isProperMap (D : LeviCivitaData g)
     (hc : IsCoveringMap (unitRicciKernelProjection D))
     (hcard : ∀ x, Nat.card (unitRicciKernelProjection D ⁻¹' {x}) = 2) :
     IsProperMap (unitRicciKernelProjection D) :=
   isProperMap_of_finite_covering hc fun x => Nat.finite_of_card_ne_zero (by rw [hcard x]; decide)
-
-
 
 theorem unitRicciKernelMetric_complete [T3Space M] (D : LeviCivitaData g)
     (hc : IsCoveringMap (unitRicciKernelProjection D))

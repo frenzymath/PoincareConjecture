@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.BicollarHeightSign
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -17,9 +9,6 @@ open Set SignType
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S C : Set X}
-
-
-
 
 theorem exists_bicollar_side_sign [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]
     [ConnectedSpace S] (hS : IsClosed S) (hC : IsOpen C)
@@ -49,10 +38,6 @@ theorem exists_bicollar_side_sign [SimplyConnectedSpace X] [LocallyPathConnected
     have heq := hcompat z (ne_of_lt hz)
     rw [hconst z, sign_neg hz, neg_one_mul] at heq
     simpa only [neg_neg] using congrArg Neg.neg heq.symm
-
-
-
-
 
 theorem opposite_bicollar_points_separated [SimplyConnectedSpace X]
     [LocallyPathConnectedSpace X] [ConnectedSpace S]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.EssentialProtecte
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.ProtectedCutFilling
 import PoincareConjecture.Proofs.M76.Dehn.MarkedSquarePLApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem PLDomain.exists_protected_marked_cut_filling
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -89,9 +77,6 @@ theorem PLDomain.exists_protected_marked_cut_filling
   apply Subgroup.mem_bot.mpr
   exact ((H.evalAt Dehn.squareRimBase).whiskeredLoopClass_eq_one_iff
     (Dehn.squareRimLoop.map gamma.continuous)).mpr htrivial
-
-
-
 
 theorem PLDomain.exists_new_frontier_spheres_or_marked_cut_fillings
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

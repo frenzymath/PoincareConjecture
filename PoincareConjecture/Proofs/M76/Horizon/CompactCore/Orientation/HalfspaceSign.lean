@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocalPLAffineHalfspacePasting
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem plLocalSign_eq_one_of_halfspace_fixed
     (h : OpenPartialHomeomorph E E) (hh : h ∈ piecewiseAffineGroupoid E)

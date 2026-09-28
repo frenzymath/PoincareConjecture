@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DouglasMorreyInterface
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,11 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
-
-
-
 def M64AnnulusConformalGram (A : M64Annulus g c0 c1) : Prop :=
   ∀ p ∈ interior m64AnnulusDomain, ∃ scale : ℝ, 0 ≤ scale ∧
     ∀ v w : TangentSpace (𝓡 2) p,
@@ -41,10 +23,6 @@ def M64AnnulusConformalGram (A : M64Annulus g c0 c1) : Prop :=
           (mfderiv (𝓡 2) (𝓡 n) A.map p v)
           (mfderiv (𝓡 2) (𝓡 n) A.map p w) =
         scale * inner ℝ v w
-
-
-
-
 
 theorem m64Annulus_injective_off_branch_of_conformal
     (A : M64Annulus g c0 c1)
@@ -88,21 +66,12 @@ theorem m64Annulus_injective_off_branch_of_conformal
     simp
   exact (ne_of_gt (mul_pos hscale_pos hinner)) hprod_zero
 
-
-
-
-
-
 structure M64AnnulusConformalBranchAwareCertificate
     (A : M64Annulus g c0 c1) : Prop where
   regularity : M64AnnulusRegularityCertificate A
   area_stationary : M64AnnulusAreaStationary A
   finite_branch_set : (m64AnnulusBranchSet A).Finite
   conformal_gram : M64AnnulusConformalGram A
-
-
-
-
 
 theorem M64AnnulusConformalBranchAwareCertificate.toBranchAware
     {A : M64Annulus g c0 c1}

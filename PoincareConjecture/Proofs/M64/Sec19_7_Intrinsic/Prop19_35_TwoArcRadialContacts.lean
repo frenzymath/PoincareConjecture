@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerBandChords
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,10 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_near_arc_inter_trimmed_arc_subset_tip
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ} (hinj : InjOn gamma (Icc 0 T))
@@ -44,10 +33,6 @@ theorem m64Intrinsic_near_arc_inter_trimmed_arc_subset_tip
   · change T - s = T - r true
     change T - s = t at heq
     linarith [ht.2, hs.2]
-
-
-
-
 
 theorem m64Intrinsic_corner_axes_inter_trimmed_arc_subset_tips
     {alpha beta : ℝ → AnnulusCoordinates} {A B : ℝ}
@@ -83,10 +68,6 @@ theorem m64Intrinsic_corner_axes_inter_trimmed_arc_subset_tips
     have heq := mem_singleton_iff.mp
       (m64Intrinsic_near_arc_inter_trimmed_arc_subset_tip hai r hr hrA e ⟨hnear, hz⟩)
     exact Or.inl (heq.trans (haxis (r e)).symm)
-
-
-
-
 
 theorem m64Intrinsic_corner_axes_inter_other_trimmed_arc_subset_tips
     {alpha beta : ℝ → AnnulusCoordinates} {A B : ℝ}

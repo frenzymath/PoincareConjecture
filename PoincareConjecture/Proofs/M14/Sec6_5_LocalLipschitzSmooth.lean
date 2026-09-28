@@ -2,14 +2,6 @@ import PoincareConjecture.Statements.M14GeneralizedLGeometry
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_chartProductLipschitzOn_of_contMDiffAt {f : G.Point → ℝ}
     {q : G.Point} (hf : ContMDiffAt (spacetimeModel n) 𝓘(ℝ) 1 f q)

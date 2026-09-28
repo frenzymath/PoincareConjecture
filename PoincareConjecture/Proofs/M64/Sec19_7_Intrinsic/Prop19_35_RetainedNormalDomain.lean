@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_WeightedFocusingCover
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,10 +8,6 @@ open Set MeasureTheory
 open scoped Matrix
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_injective_retained_normal_domain
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -72,10 +52,6 @@ theorem m64Intrinsic_exists_injective_retained_normal_domain
   fin_cases i
   · exact heq
   · exact ht
-
-
-
-
 
 theorem m64Intrinsic_exists_retained_domain_with_focusing_loss
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PeriodicSquare
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusResidualSideOrder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology PreAbstractSimplicialComplex
@@ -23,7 +13,6 @@ variable (p : ℝ) [Fact (0 < p)]
 private def zeroPoint : Icc (0 : ℝ) p := ⟨0, le_rfl, le_of_lt (Fact.out : (0 : ℝ) < p)⟩
 
 private def periodPoint : Icc (0 : ℝ) p := ⟨p, le_of_lt (Fact.out : (0 : ℝ) < p), le_rfl⟩
-
 
 def sidePoint (i : Fin 2) (b : Bool) (t : Icc (0 : ℝ) p) : Square p :=
   if i = 0 then
@@ -49,7 +38,6 @@ theorem continuous_sidePoint (i : Fin 2) (b : Bool) :
       exact continuous_const.prodMk continuous_id
     · change Continuous (fun t : Icc (0 : ℝ) p => (periodPoint p, t))
       exact continuous_const.prodMk continuous_id
-
 
 def sideFlip (x : Fin 2 × Bool) : Fin 2 × Bool := (x.1, !x.2)
 

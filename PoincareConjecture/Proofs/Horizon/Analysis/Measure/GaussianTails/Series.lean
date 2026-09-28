@@ -1,8 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Topology.Algebra.InfiniteSum.ENNReal
 
-
-
 set_option autoImplicit false
 
 open Filter

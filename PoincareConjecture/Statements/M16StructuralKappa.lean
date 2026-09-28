@@ -3,16 +3,6 @@ import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Statements.Ch04.Harnack
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,10 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 structure AncientKappaStructuralTheory (n : ℕ) : Type (u + 2) where
   structural : ∀ (M : Type u) [TopologicalSpace M]

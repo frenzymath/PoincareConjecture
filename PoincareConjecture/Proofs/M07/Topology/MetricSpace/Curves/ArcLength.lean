@@ -2,17 +2,6 @@ import Mathlib.Analysis.ConstantSpeed
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.EMetricSpace.VariationOnFromTo
 
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ENNReal NNReal
 

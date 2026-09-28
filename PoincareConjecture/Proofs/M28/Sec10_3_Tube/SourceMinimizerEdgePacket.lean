@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizerSubsegments
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlapAssembly
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceBalancedChainAssembly
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +15,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
-
-
 
 theorem exists_source_minimizer_edge_packet_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

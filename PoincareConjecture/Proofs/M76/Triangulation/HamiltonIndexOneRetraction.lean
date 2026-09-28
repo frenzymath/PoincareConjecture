@@ -5,16 +5,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 variable {V2 : Type*} [NormedAddCommGroup V2] [NormedSpace ℝ V2]
 local notation "J" => Icc (-1 : ℝ) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem glue_closed_cover
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -117,11 +104,6 @@ private theorem marked_annulus_homotopy
           ring
         · rfl }
   exact ⟨H1.trans H2⟩
-
-
-
-
-
 
 theorem exists_marked_product_complement_retraction
     [FiniteDimensional ℝ V2]

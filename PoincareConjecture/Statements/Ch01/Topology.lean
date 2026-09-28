@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Topology
 import PoincareConjecture.Statement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology ContinuousMap
@@ -23,7 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
 
 structure ClosedSimplyConnectedThreeManifoldConclusion where
 

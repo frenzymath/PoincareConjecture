@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckJetCoordinatesNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSourceJetNative
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -26,7 +18,6 @@ universe u v w
 
 variable {iota : Type u} {n : ℕ}
 
-
 def constantPart (m : ℕ) (low : Atom iota n → ℝ) : Expr iota n → ℝ
   | .constant c => c
   | .atom a => if a.weight ≤ m then low a else 0
@@ -36,7 +27,6 @@ def constantPart (m : ℕ) (low : Atom iota n → ℝ) : Expr iota n → ℝ
 
 variable {E : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 def linearPart (m : ℕ) (low : Atom iota n → ℝ)
     (high : Atom iota n → E →L[ℝ] ℝ) : Expr iota n → E →L[ℝ] ℝ
   | .constant _ => 0
@@ -45,7 +35,6 @@ def linearPart (m : ℕ) (low : Atom iota n → ℝ)
   | .mul p q => constantPart m low p • linearPart m low high q +
       constantPart m low q • linearPart m low high p
   | .neg p => -linearPart m low high p
-
 
 theorem linearPart_eq_zero (m : ℕ) (low : Atom iota n → ℝ)
     (high : Atom iota n → E →L[ℝ] ℝ) (p : Expr iota n) :
@@ -70,7 +59,6 @@ theorem linearPart_eq_zero (m : ℕ) (low : Atom iota n → ℝ)
     intro h
     simp only [linearPart, hp h, neg_zero]
 
-
 theorem linearPart_mul_eq_zero (m : ℕ) (low : Atom iota n → ℝ)
     (high : Atom iota n → E →L[ℝ] ℝ) (p q : Expr iota n)
     (h : p.degree + q.degree ≤ 2 * m) (z : E) :
@@ -79,7 +67,6 @@ theorem linearPart_mul_eq_zero (m : ℕ) (low : Atom iota n → ℝ)
   · rw [linearPart_eq_zero m low high p hp, ContinuousLinearMap.zero_apply, zero_mul]
   · have hq : q.degree ≤ m := by omega
     rw [linearPart_eq_zero m low high q hq, ContinuousLinearMap.zero_apply, mul_zero]
-
 
 theorem eval_eq_constantPart_add_linearPart (m : ℕ) (low : Atom iota n → ℝ)
     (high : Atom iota n → E →L[ℝ] ℝ) (z : E) (p : Expr iota n) :
@@ -119,7 +106,6 @@ theorem eval_eq_constantPart_add_linearPart (m : ℕ) (low : Atom iota n → ℝ
     simp only [constantPart, linearPart, ContinuousLinearMap.neg_apply]
     ring
 
-
 theorem contDiff_constantPart {P : Type w} [NormedAddCommGroup P] [NormedSpace ℝ P]
     (m : ℕ) (low : Atom iota n → P → ℝ)
     (hlow : ∀ a, a.weight ≤ m → ContDiff ℝ ∞ (low a)) (p : Expr iota n) :
@@ -134,7 +120,6 @@ theorem contDiff_constantPart {P : Type w} [NormedAddCommGroup P] [NormedSpace �
   | add p q hp hq => exact hp.add hq
   | mul p q hp hq => exact hp.mul hq
   | neg p hp => exact hp.neg
-
 
 theorem contDiff_linearPart {P : Type w} [NormedAddCommGroup P] [NormedSpace ℝ P]
     (m : ℕ) (low : Atom iota n → P → ℝ)
@@ -155,7 +140,6 @@ theorem contDiff_linearPart {P : Type w} [NormedAddCommGroup P] [NormedSpace ℝ
       ((contDiff_constantPart m low hlow q).smul hp)
   | neg p hp => exact hp.neg
 
-
 theorem contDiff_affineEvaluation {P : Type w} [NormedAddCommGroup P]
     [NormedSpace ℝ P] (m : ℕ) (low : Atom iota n → P → ℝ)
     (hlow : ∀ a, a.weight ≤ m → ContDiff ℝ ∞ (low a))
@@ -164,7 +148,6 @@ theorem contDiff_affineEvaluation {P : Type w} [NormedAddCommGroup P]
       linearPart m (fun a => low a z.1) high p z.2) := by
   exact ((contDiff_constantPart m low hlow p).comp contDiff_fst).add
     (((contDiff_linearPart m low hlow high p).comp contDiff_fst).clm_apply contDiff_snd)
-
 
 theorem orderedDerivative_eval_eq_constantPart_add_linearPart
     (r : ℕ) (low : Atom iota n → ℝ) (high : Atom iota n → E →L[ℝ] ℝ)
@@ -178,14 +161,11 @@ theorem orderedDerivative_eval_eq_constantPart_add_linearPart
   have hdegree := p.degree_orderedDerivative_le word
   omega
 
-
 abbrev LowAtom (p : Expr iota n) (m : ℕ) :=
   {a : p.atoms // a.val.weight ≤ m}
 
-
 abbrev HighAtom (p : Expr iota n) (m : ℕ) :=
   {a : p.atoms // ¬a.val.weight ≤ m}
-
 
 def lowProjection (p : Expr iota n) (m : ℕ) (a : Atom iota n) :
     (LowAtom p m → ℝ) →L[ℝ] ℝ := by
@@ -194,14 +174,12 @@ def lowProjection (p : Expr iota n) (m : ℕ) (a : Atom iota n) :
     if hw : a.weight ≤ m then ContinuousLinearMap.proj ⟨⟨a, ha⟩, hw⟩ else 0
     else 0
 
-
 def highProjection (p : Expr iota n) (m : ℕ) (a : Atom iota n) :
     (HighAtom p m → ℝ) →L[ℝ] ℝ := by
   classical
   exact if ha : a ∈ p.atoms then
     if hw : a.weight ≤ m then 0 else ContinuousLinearMap.proj ⟨⟨a, ha⟩, hw⟩
     else 0
-
 
 theorem highAtom_is_metric (p : Expr iota n) (m : ℕ) (a : HighAtom p m) :
     ∃ (b : Bool) (word : List iota) (i j : Fin n),
@@ -218,10 +196,8 @@ theorem highAtom_is_metric (p : Expr iota n) (m : ℕ) (a : HighAtom p m) :
     have hh := a.property
     simp only [h, Atom.weight, Nat.zero_le, not_true_eq_false] at hh
 
-
 def finiteConstantPart (p : Expr iota n) (m : ℕ) (low : LowAtom p m → ℝ) : ℝ :=
   constantPart m (fun a => lowProjection p m a low) p
-
 
 def finiteLinearPart (p : Expr iota n) (m : ℕ) (low : LowAtom p m → ℝ) :
     (HighAtom p m → ℝ) →L[ℝ] ℝ :=
@@ -243,7 +219,6 @@ theorem contDiff_finiteAffineEvaluation (p : Expr iota n) (m : ℕ) :
   ((contDiff_finiteConstantPart p m).comp contDiff_fst).add
     (((contDiff_finiteLinearPart p m).comp contDiff_fst).clm_apply contDiff_snd)
 
-
 theorem eval_eq_finiteParts (p : Expr iota n) (m : ℕ) (hp : p.degree ≤ 2 * m)
     (values : Atom iota n → ℝ) :
     p.eval values = finiteConstantPart p m (fun a => values a.val.val) +
@@ -261,7 +236,6 @@ theorem eval_eq_finiteParts (p : Expr iota n) (m : ℕ) (hp : p.degree ≤ 2 * m
         simp [lowProjection, highProjection, ha, hw, low, high]
     _ = _ := eval_eq_constantPart_add_linearPart m
       (fun a => lowProjection p m a low) (highProjection p m) high p hp
-
 
 theorem orderedDerivative_eval_eq_finiteParts (r : ℕ) (p : Expr iota n)
     (hp : p.degree ≤ 2) (word : List iota) (hword : word.length ≤ 2 * r)
@@ -293,7 +267,6 @@ variable (F : iota → SmoothField (n := n) (M := M))
   (coefficient : jota → iota → M → ℝ)
   (hcoefficient : ∀ a i, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (coefficient a i))
 
-
 def weightedWordTerms (c : M → ℝ) (hc : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ c) :
     List jota → List (DirectionalTerm (n := n) (M := M) (iota := iota))
   | [] => [⟨c, hc, []⟩]
@@ -311,7 +284,6 @@ theorem weightedWordTerms_order (c : M → ℝ)
     subst t
     exact le_rfl
   | cons a word ih => exact expandedDerivative_order F coefficient hcoefficient a _ ih
-
 
 theorem weightedWordTerms_eq
     (V : jota → SmoothField (n := n) (M := M))
@@ -340,7 +312,6 @@ theorem probeDifference_contMDiff (g h : RiemannianMetric n M) (ab : iota × iot
   (contMDiff_pairing (metricTensor g) (F ab.1) (F ab.2)).sub
     (contMDiff_pairing (metricTensor h) (F ab.1) (F ab.2))
 
-
 def probeWordTerms (i j : Fin n) (ab : iota × iota) (word : List (Fin n ⊕ iota)) :
     List (DirectionalTerm (n := n) (M := M) (iota := iota)) :=
   weightedWordTerms F (combinedCoefficient F C g0) (combinedCoefficient_contMDiff F C g0)
@@ -366,7 +337,6 @@ theorem probeWordTerms_eq
     (combinedCoefficient_contMDiff F C g0) (combinedFields F C)
     (combinedFields_eq_sum F C g0 hF) (C.probeCoefficient g0 F i j ab.1 ab.2)
     (C.probeCoefficient_contMDiff g0 F i j ab.1 ab.2) word hf x
-
 
 theorem matrixDifferenceWord_eq_sum
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -395,7 +365,6 @@ theorem matrixDifferenceWord_eq_sum
 
 abbrev NativeProbeContinuous (k : ℕ) :=
   (iota × iota) → WordIndex iota k → C(M, ℝ)
-
 
 def matrixDifferenceWordContinuous {k : ℕ} (word : List (Fin n ⊕ iota))
     (hw : word.length ≤ k) (i j : Fin n) :
@@ -427,7 +396,6 @@ theorem matrixDifferenceWordContinuous_eq
   exact termsContinuous_eq F (probeWordTerms F C g0 i j ab word)
     (fun t ht => (probeWordTerms_order F C g0 i j ab word t ht).trans hw)
     (Q ab) (probeDifference F g h ab) (hQ ab) x
-
 
 def backgroundWordContinuous (word : List (Fin n ⊕ iota)) (i j : Fin n) : C(M, ℝ) :=
   ⟨directionalWord (combinedFields F C) word (fun y => C.matrix g0 y i j),
@@ -464,7 +432,6 @@ theorem matrixWordContinuous_eq
   ring
 
 variable {A : Type*} [Fintype A]
-
 
 def matrixTupleContinuous {k : ℕ} (label : A → Bool)
     (word : A → List (Fin n ⊕ iota)) (entry : A → Fin n × Fin n)
@@ -516,7 +483,6 @@ open scoped Matrix.Norms.Elementwise
 private def matrixUnflatten : ((Fin n × Fin n) → ℝ) →L[ℝ] Matrix (Fin n) (Fin n) ℝ :=
   ContinuousLinearMap.pi (fun i => ContinuousLinearMap.pi (fun j =>
     ContinuousLinearMap.proj (i, j)))
-
 
 def matrixDifferenceValueContinuous {k : ℕ} :
     NativeProbeContinuous (M := M) (iota := iota) k →L[ℝ]
@@ -597,7 +563,6 @@ theorem contDiff_inverseEntryContinuous
   ((matrixEntry i j).compLeftContinuous ℝ M).contDiff.comp
     (hInv.comp (contDiff_matrixValueContinuous F C g0))
 
-
 def lowAtomContinuous (p : Expr (Fin n ⊕ iota) n) (m : ℕ)
     (Inv : C(M, Matrix (Fin n) (Fin n) ℝ) → C(M, Matrix (Fin n) (Fin n) ℝ)) :
     LowAtom p m → NativeProbeContinuous (M := M) (iota := iota) m → C(M, ℝ)
@@ -666,7 +631,6 @@ variable [MeasurableSpace M] [BorelSpace M] (μ : Measure M) [IsFiniteMeasure μ
 
 abbrev NativeProbeL2 (k : ℕ) := (iota × iota) → WordIndex iota k → Lp ℝ 2 μ
 
-
 def matrixDifferenceWordL2 {k : ℕ} (word : List (Fin n ⊕ iota))
     (hw : word.length ≤ k) (i j : Fin n) :
     NativeProbeL2 (iota := iota) μ k →L[ℝ] Lp ℝ 2 μ :=
@@ -734,7 +698,6 @@ theorem matrixWordL2_ae_eq
       directionalWord (combinedFields F C) word (fun y => C.matrix g0 y i j) x) = _
   ring
 
-
 def matrixTupleL2 {k : ℕ} (label : A → Bool)
     (word : A → List (Fin n ⊕ iota)) (entry : A → Fin n × Fin n)
     (hword : ∀ a, label a = false → (word a).length ≤ k)
@@ -782,7 +745,6 @@ theorem matrixTupleL2_ae_eq
       (backgroundWordContinuous F C g0 (word a) (entry a).1 (entry a).2)
     exact ContinuousMap.coeFn_toLp (p := (2 : ENNReal)) (μ := μ) (𝕜 := ℝ)
       (backgroundWordContinuous F C g0 (word a) (entry a).1 (entry a).2)
-
 
 def highAtomL2 (p : Expr (Fin n ⊕ iota) n) (m k : ℕ)
     (hp : p.metricOrder false ≤ k) :

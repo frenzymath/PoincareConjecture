@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.CalibratedPositive
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,7 +14,6 @@ open M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem calibratedMetricVolume_open_pos (g : RiemannianMetric n M)
     {U : Set M} (hU : IsOpen U) (hne : U.Nonempty) :
@@ -61,7 +52,6 @@ theorem calibratedMetricVolume_open_pos (g : RiemannianMetric n M)
   exact hmass.trans_le (measure_mono (by
     rintro _ ⟨y, hy, rfl⟩
     exact hy.2))
-
 
 theorem calibratedMetricVolume_component_pos (g : RiemannianMetric n M) (x : M) :
     0 < calibratedMetricVolume g (connectedComponent x) := by

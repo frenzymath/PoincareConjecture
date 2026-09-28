@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderFiniteJets
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeInitialPair
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialNodeCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
-
 theorem normalizedSlice_initial_scale_sq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
     (E (k + H.shift)).flow.scalar
@@ -39,10 +27,6 @@ theorem normalizedSlice_initial_scale_sq (H : CounterexampleNeckFamily E)
         ((T k).list.node 0).2.scale ^ 2 = ((4 * max C 2)⁻¹) ^ 2 := by
   have hs := congrArg (fun r : ℝ => r ^ 2) (H.tubeNodeScale_zero T k)
   simpa only [tubeNodeScale, mul_pow, Real.sq_sqrt (H.base_scalar_pos k).le] using hs
-
-
-
-
 
 theorem normalizedSlice_initial_coefficients (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ)
@@ -55,9 +39,6 @@ theorem normalizedSlice_initial_coefficients (H : CounterexampleNeckFamily E)
   change RiemannianMetric.pullbackCoefficients (M13.scaleSmoothMetric _ _ _)
     (cylinderNeckChart ((T k).list.node 0).2 q s) x = _
   rw [scaleSmoothMetric_cylinderNeckCoefficients, H.normalizedSlice_initial_scale_sq]
-
-
-
 
 theorem normalizedSlice_initial_coefficient_lower (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ)
@@ -74,10 +55,6 @@ theorem normalizedSlice_initial_coefficient_lower (H : CounterexampleNeckFamily 
   rw [H.normalizedSlice_initial_coefficients]
   simpa only [smul_apply, smul_eq_mul, mul_assoc] using
     mul_le_mul_of_nonneg_left h (sq_nonneg ((4 * max C 2)⁻¹))
-
-
-
-
 
 theorem hasUniformJetBoundsAt_normalizedSlice_initial_coefficients
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))

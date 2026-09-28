@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverOpen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarNormalizedCover_surjective {H : Plane → ℝ} {V : Cover → ℝ}
     (hHc : Continuous H)
@@ -59,10 +43,6 @@ theorem scalarNormalizedCover_surjective {H : Plane → ℝ} {V : Cover → ℝ}
     rw [hempty] at hmem
     exact hmem
   exact range_eq_univ.mp hfull
-
-
-
-
 
 theorem exists_proper_open_surjective_annular_cover_conjugate :
     ∃ (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ),

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ProtectedSurf
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FaceAffineSignClosure
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.RelativeInteriorHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter Module
@@ -21,9 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_signed_regular_protected_face_graph_position
     (J P T : SimplicialComplex ℝ V3)
@@ -171,8 +158,6 @@ theorem exists_signed_regular_protected_face_graph_position
         a height hwa hwzero hne
       exact ⟨closure_mono (inter_subset_inter_left _ (A.convexHull_subset_space ha)) hsigns.1,
         closure_mono (inter_subset_inter_left _ (A.convexHull_subset_space ha)) hsigns.2⟩
-
-
 
 theorem exists_regular_protected_face_graph_position
     (J P T : SimplicialComplex ℝ V3)

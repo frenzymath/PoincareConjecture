@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.SliceIdentifications
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Maps
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -21,7 +15,6 @@ universe u v
 noncomputable section
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 def openRetraction {X : Type u} [TopologicalSpace X]
     (U : Opens X) (x₀ : U) (x : X) : U := by
@@ -214,7 +207,6 @@ theorem regularBox_relatively_open (H : SingularTimeAssumptions F T M)
     exact ⟨⟨(H.interval_nonnegative H.reference.tMinus_mem).trans ht.1.le, ht.2⟩, ht.1⟩
   · intro ht
     exact ⟨ht.2, ht.1.2⟩
-
 
 def regularBox (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (hΩ : H.reference.regularLimitSet.Nonempty) :

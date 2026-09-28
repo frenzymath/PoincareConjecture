@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Tensorial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {f : M → ℝ}
-
 
 theorem curvature_gradient_eq_zero_of_hasZeroHessian
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hz : HasZeroHessian D f)
@@ -90,7 +80,6 @@ theorem curvatureTensor_gradient_first_eq_zero
   have t₃ := D.curvatureTensor_swap_last x N v u w
   dsimp only [N] at s₁ s₂ s₃ t₁ t₂ t₃
   linarith
-
 
 theorem curvatureTensor_gradient_slots_eq_zero
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hz : HasZeroHessian D f)

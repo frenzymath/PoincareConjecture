@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Equation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Prolongation
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,8 +68,6 @@ theorem baseProjection_zero {E V : Type*} [NormedAddCommGroup E] [NormedSpace �
       change baseProjection n r (truncate (n + r) a) 0 = a 0
       rw [ih]
       rfl
-
-
 
 theorem exists_compact_elliptic_jet_box (n r : ℕ) {a : ℝ} (ha : 0 < a) (B : ℝ) :
     ∃ K : Set (Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + r)),

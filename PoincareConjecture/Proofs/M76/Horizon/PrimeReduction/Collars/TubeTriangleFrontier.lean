@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.Triangle
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.EndpointCappedTube
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
-
 
 theorem exists_open_returning_triangle_base_neighborhood
     (t a : Finset V3) (ht : AffineIndependent ℝ ((↑) : t → V3))
@@ -94,8 +81,6 @@ variable (t : Finset V3) (ht : AffineIndependent ℝ ((↑) : t → V3))
 
 include ht ht3 hE htriangle hVE hcover hfr hfront
 
-
-
 theorem tube_endface_triangle_mem_intrinsicFrontier
     (z : ↥(Dehn.signedTubeDiamond ×ˢ I))
     (hz : (z : P3).2 = 0 ∨ (z : P3).2 = 1)
@@ -108,8 +93,6 @@ theorem tube_endface_triangle_mem_intrinsicFrontier
       (htriangle i) (hVE i hi)).mpr
     exact ⟨((htriangle i _ (hVE i hi)).mp hzt).1, (hfr i _ hi).mp hzfr⟩
   · exact (disjoint_left.mp disjoint_interior_frontier hin hzfr).elim
-
-
 
 theorem tube_endface_triangle_planar_axis
     (a : Finset V3) {U : Set V3} (hTU : T ⊆ U)

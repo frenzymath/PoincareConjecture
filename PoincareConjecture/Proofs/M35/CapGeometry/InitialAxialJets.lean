@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialCylinderTensor
 import PoincareConjecture.Proofs.M35.CapGeometry.VanishingMetricErrorJets
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPullbackSmoothness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => RoundCylinderCoordinates
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem initial_axial_jetError_tendsto_zero
     (delta u v Q c s : ℕ → ℝ) (g : ℕ → RiemannianMetric 3 StandardCapSpace)

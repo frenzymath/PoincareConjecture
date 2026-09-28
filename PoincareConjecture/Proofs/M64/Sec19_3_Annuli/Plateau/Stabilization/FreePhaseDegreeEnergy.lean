@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
 theorem m64Annulus_integral_sq_le {f : LoopPlane → ℝ} (hf : MemLp f 2 mu) :
     (∫ p in S, f p) ^ 2 ≤ curvePeriod * ∫ p in S, f p ^ 2 := by
   have hc : MemLp (fun _ : LoopPlane => (1 : ℝ)) 2 mu :=
@@ -38,8 +28,6 @@ theorem m64Annulus_integral_sq_le {f : LoopPlane → ℝ} (hf : MemLp f 2 mu) :
     have hP : 0 ≤ curvePeriod := by unfold curvePeriod; positivity
     simp [hP]
   simpa only [one_mul, hvol] using M64Uniformization.scalar_integral_mul_sq_le hc hf
-
-
 
 theorem M64ObservedWeakAnnulus.column_norm_sq_le_column_energy
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -62,23 +50,17 @@ namespace M64FreeWeakPhaseAnnulus
 variable {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane}
   {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
 
-
-
 theorem phase_horizontal_integral
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) :
     (∫ p in S, A.phaseColumn 0 p) = D := by
   have hh := A.phase_seam (fun _ => 1) contDiff_const (fun _ _ => rfl)
   simpa using hh
 
-
-
 theorem phase_degree_energy
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) :
     D ^ 2 ≤ curvePeriod * ∫ p in S, (A.phaseColumn 0 p) ^ 2 := by
   simpa only [A.phase_horizontal_integral] using
     m64Annulus_integral_sq_le (Lp.memLp (A.phaseColumn 0))
-
-
 
 theorem weightedEnergy_ge_degree
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.CollaredWindows
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.Construction.OrientedTorusPair
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 open Poincare.Topology.Orientation.ProjectivePlane

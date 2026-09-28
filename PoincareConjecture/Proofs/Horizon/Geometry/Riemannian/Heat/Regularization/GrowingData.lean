@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem contDiffOn_integral_of_kernel_derivative_bounds
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)

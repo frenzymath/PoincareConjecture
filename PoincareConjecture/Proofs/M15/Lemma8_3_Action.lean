@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M15Noncollapsing
 import PoincareConjecture.Proofs.M15.Prop8_2_ImageRestriction
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 theorem actionValue_eq_of_minimizing {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T τ₁ τ₂ x y) (hp : M14IsMinimizing p) :
     M14ActionValue G T τ₁ τ₂ x y = M14BackwardLAction G p := by
@@ -32,9 +21,6 @@ theorem actionValue_eq_of_minimizing {T τ₁ τ₂ : ℝ} {x y : G.Point}
   refine ⟨⟨p, rfl⟩, ?_⟩
   rintro a ⟨q, rfl⟩
   exact hp q
-
-
-
 
 theorem minimizing_reducedLength_lower_bound {T τ K : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 τ x y) (hp : M14IsMinimizing p)
@@ -78,8 +64,6 @@ theorem minimizing_reducedLength_lower_bound {T τ K : ℝ} {x y : G.Point}
         -K * ((2 / 3 : ℝ) * τ * Real.sqrt τ) := by ring
     _ ≤ _ := haction
 
-
-
 theorem stable_reducedLength_lower_bound {T τ K : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} (H : M14StableSet G T τ x E)
     {Z : G.Horizontal x} (hZ : Z ∈ H.carrier)
@@ -91,9 +75,6 @@ theorem stable_reducedLength_lower_bound {T τ K : ℝ} {x : G.Point}
   intro s hs
   rw [htrace (Set.Ioo_subset_Icc_self hs)]
   exact hscalar s hs
-
-
-
 
 theorem density_le_of_trace_scalar_bound {T τ K : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} {H : M14StableSet G T τ x E}
@@ -109,9 +90,6 @@ theorem density_le_of_trace_scalar_bound {T τ K : ℝ} {x : G.Point}
   apply Real.exp_le_exp.mpr
   have h := stable_reducedLength_lower_bound H (hWH hZ) (hscalar Z hZ)
   linarith
-
-
-
 
 theorem reducedVolumeOn_le_image_volume {T τ K : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} {H : M14StableSet G T τ x E}

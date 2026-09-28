@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Index.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set
 open scoped NNReal
 
@@ -31,7 +18,6 @@ theorem mono {R : ℝ → F →L[ℝ] F} {a b a' b' : ℝ} {y v : ℝ → F}
         (hsol.hasDerivWithinAt_fst t (hsub ht)).mono hsub
       hasDerivWithinAt_snd := fun t ht =>
         (hsol.hasDerivWithinAt_snd t (hsub ht)).mono hsub }
-
 
 theorem eq_zero_of_interior
     {R : ℝ → F →L[ℝ] F} {a b c C : ℝ} {y v : ℝ → F}
@@ -61,7 +47,6 @@ theorem eq_zero_of_interior
         (hsol.mono hc.1.le le_rfl).isSolOn_pair (hzero c b)
         hinit ⟨hct, ht.2⟩
   exact ⟨congrArg Prod.fst hpair, congrArg Prod.snd hpair⟩
-
 
 theorem snd_ne_zero
     {R : ℝ → F →L[ℝ] F} {a b c : ℝ} {y v : ℝ → F}

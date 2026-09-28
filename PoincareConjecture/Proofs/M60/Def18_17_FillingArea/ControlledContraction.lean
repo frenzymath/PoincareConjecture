@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ContractionEndpoints
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60_exists_controlled_local_contraction
     {M : Type u} [TopologicalSpace M] [T2Space M]

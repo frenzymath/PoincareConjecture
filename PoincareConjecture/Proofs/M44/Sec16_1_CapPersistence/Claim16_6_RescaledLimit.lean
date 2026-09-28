@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Exhaustion
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -33,10 +18,6 @@ noncomputable local instance rescaledLimitCoefficientNorm : NormedAddCommGroup V
 
 noncomputable local instance rescaledLimitCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem exists_glued_coordinate_limit
     {U : ℕ → Set (ℝ × E)} (hmono : Monotone U)
@@ -74,10 +55,6 @@ theorem exists_glued_coordinate_limit
     exact ((eventuallyEq_of_mem ((hb i).isOpen.mem_nhds (hKi hp))
       (heq i)).iteratedFDeriv ℝ m).self_of_nhds.symm
 
-
-
-
-
 theorem exists_rescaled_coordinate_limit
     {U : ℕ → Set (ℝ × E)} (hU : ∀ i, IsOpen (U i)) (hmono : Monotone U)
     (f : ℕ → ℝ × E → V)
@@ -90,10 +67,6 @@ theorem exists_rescaled_coordinate_limit
   obtain ⟨sigma, hsigma, b, hb⟩ := exists_common_coordinate_limit hU f hsmooth hbound
   obtain ⟨B, _, hB⟩ := exists_glued_coordinate_limit hmono hb
   exact ⟨sigma, hsigma, B, hB⟩
-
-
-
-
 
 theorem standard_spacetime_buffers_exhaust
     (g0 : StandardInitialMetric) (J : Set ℝ) :
@@ -108,11 +81,6 @@ theorem standard_spacetime_buffers_exhaust
     obtain ⟨i, hi⟩ := exists_nat_gt R
     refine mem_iUnion.mpr ⟨i, hp.1, ?_⟩
     exact hx.trans_le (ENNReal.ofReal_le_ofReal (by linarith))
-
-
-
-
-
 
 theorem exists_rescaled_limit_on_standard_space
     (g0 : StandardInitialMetric) {J : Set ℝ} (hJ : IsOpen J)

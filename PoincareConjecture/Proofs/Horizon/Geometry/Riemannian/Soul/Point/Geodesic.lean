@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.Exponential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

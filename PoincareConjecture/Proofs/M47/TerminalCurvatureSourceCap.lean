@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCapCaptureAssembly
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourcePointScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_source_cap_readout
     {ι : Type*}

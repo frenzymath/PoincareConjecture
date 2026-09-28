@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.CarrierLift
 import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,7 +46,6 @@ theorem metricHomothety_ulift {J : Set ℝ} (F : RicciFlow 3 M J) (t : ℝ) :
     (mfderiv (𝓡 3) (𝓡 3) e x b) at hb
   rw [← ha, ← hb, e.symm_apply_apply, one_mul]
 
-
 noncomputable def capFromUlift {J : Set ℝ} (F : RicciFlow 3 M J) (t : ℝ)
     (A : CapCertificate ((F.ulift : RicciFlow 3 (ULift.{v} M) J).metric t)) :
     CapCertificate (F.metric t) :=
@@ -83,7 +71,6 @@ variable [T2Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
 variable (K : AncientKappaSolution 3 M)
 
-
 noncomputable def strongNeckFromUlift {t epsilon : ℝ}
     (N : StrongEvolvingNeck (K.ulift : AncientKappaSolution 3 (ULift.{v} M)) t epsilon) :
     StrongEvolvingNeck K t epsilon :=
@@ -93,7 +80,6 @@ noncomputable def strongNeckFromUlift {t epsilon : ℝ}
 @[simp] theorem strongNeckFromUlift_center {t epsilon : ℝ}
     (N : StrongEvolvingNeck (K.ulift : AncientKappaSolution 3 (ULift.{v} M)) t epsilon) :
     (K.strongNeckFromUlift N).center = N.center.down := rfl
-
 
 theorem noEmbeddedTrivialNormalProjectivePlane_ulift
     (hno : NoEmbeddedTrivialNormalProjectivePlane K) :

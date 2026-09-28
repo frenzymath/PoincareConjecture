@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularPotential
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.LocalDilation
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -226,13 +215,6 @@ private theorem local_variation_of_source_and_chart_limits
     Real.sq_sqrt (mul_nonneg zero_le_two (hfpos k).le)
   rw [hradSq 0, hradSq j.succ] at heq
   convert heq using 1; ring
-
-
-
-
-
-
-
 
 theorem exists_local_minimizing_identity_of_rescaled_normal_charts
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M)

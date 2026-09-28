@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedData
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +20,6 @@ noncomputable local instance cylinderFeedEstimateCoefficientNorm :
 noncomputable local instance cylinderFeedEstimateCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem exists_cylinder_feed_compact_radius (g0 : StandardInitialMetric)
     {C : Set E} (hC : IsCompact C) :
     ∃ R : ℝ, 0 < R ∧ C ⊆ g0.metric.ball 0 R := by
@@ -44,8 +31,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
 
-
-
 theorem eventually_cylinder_ball_subset_source
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
     (hR : Tendsto (fun k => (D k).radius) atTop atTop) (R : ℝ) :
@@ -54,8 +39,6 @@ theorem eventually_cylinder_ball_subset_source
   rw [(D k).source_eq]
   exact fun _ hx => hx.trans_le (ENNReal.ofReal_le_ofReal hk)
 
-
-
 theorem eventually_cylinder_compact_subset_source
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
     (hR : Tendsto (fun k => (D k).radius) atTop atTop)
@@ -63,9 +46,6 @@ theorem eventually_cylinder_compact_subset_source
     ∀ᶠ k in atTop, C ⊆ (D k).chart.source := by
   obtain ⟨R, _hR, hCR⟩ := exists_cylinder_feed_compact_radius g0 hC
   exact (eventually_cylinder_ball_subset_source D hR R).mono fun _ h => hCR.trans h
-
-
-
 
 theorem eventually_cylinder_coefficients_smooth
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
@@ -76,10 +56,6 @@ theorem eventually_cylinder_coefficients_smooth
   filter_upwards [hlife, eventually_cylinder_ball_subset_source D hR R] with k hk hsource
   exact (D k).coefficients_smooth.mono
     (prod_mono (fun _ ht => ⟨ht.1.le, ht.2.trans hk⟩) hsource)
-
-
-
-
 
 theorem eventually_cylinder_spatial_estimates
     (P : M44CapPersistencePredecessors.{u})
@@ -115,9 +91,6 @@ theorem eventually_cylinder_spatial_estimates
     (D k).cylinder (D k).chart_target_subset (D k).birth_identity
     (D k).ordinary (D k).target_point T hT hklife le_rfl hkcurv x hx'
 
-
-
-
 theorem tendstoUniformlyOn_cylinder_initial_spatial_jet
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
     (hR : Tendsto (fun k => (D k).radius) atTop atTop)
@@ -138,9 +111,6 @@ theorem tendstoUniformlyOn_cylinder_initial_spatial_jet
   dsimp only [CylinderCompactnessSample.fixedComparison]
   rw [normalizedCoefficients_cast_initial (D k).standard_initial_eq (D k).comparison]
   exact ((D k).initial_spatial_jet (hk hx) m).symm
-
-
-
 
 theorem eventually_cylinder_birth_jet_modulus
     (P : M44CapPersistencePredecessors.{u})

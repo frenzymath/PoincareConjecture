@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Normalization.RicciNorm
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Normalization.Scalar
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology 
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 omit [MeasurableSpace M] [BorelSpace M] in
-
 
 theorem ricciNormSq_eq_half_scalar_sq_of_line_at_each_time
     (hP : ThreeDimensionalClassificationPredecessors.{u})
@@ -50,8 +37,6 @@ theorem ricciNormSq_eq_half_scalar_sq_of_line_at_each_time
   obtain ⟨hf, hu, _, hz, _⟩ := (F.metric t).busemann_parallel_unit_gradient
     (F.connection t) (hcomplete t ht) hRic hγ
   exact (F.connection t).ricciNormSq_eq_half_scalar_sq_of_parallel_gradient hD hf hu hz x
-
-
 
 theorem scalarCurvature_eq_one_div_one_sub_of_line_at_each_time
     (hP : ThreeDimensionalClassificationPredecessors.{u})

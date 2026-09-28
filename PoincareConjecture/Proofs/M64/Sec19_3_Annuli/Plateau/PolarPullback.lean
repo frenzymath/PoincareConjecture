@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapt
 import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -47,8 +36,6 @@ private theorem polar_inj (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) :
   exact m64MorreyPolarStrip_injOn a hrho
     (show 0 < p 0 ∧ p 0 < curvePeriod from ⟨(box_mem hp).1, (box_mem hp).2.1⟩)
     (show 0 < q 0 ∧ q 0 < curvePeriod from ⟨(box_mem hq).1, (box_mem hq).2.1⟩) heq
-
-
 
 theorem m64MorreyPolarStrip_integrable
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -89,8 +76,6 @@ theorem m64MorreyPolarStrip_integrable
   change Integrable _ (volume.restrict Q) at hi
   rwa [box_restrict] at hi
 
-
-
 theorem m64MorreyPolarStrip_integral_le (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho)
     {F : LoopPlane → ℝ} (hF : IntegrableOn F (Metric.closedBall a rho) volume)
     (hpos : ∀ p, 0 ≤ F p) :
@@ -130,8 +115,6 @@ theorem m64MorreyPolarStrip_integral_le (a : LoopPlane) {rho : ℝ} (hrho : 0 < 
         (Filter.Eventually.of_forall hPQ)
   simpa only [div_eq_inv_mul] using (le_div_iff₀' hc).mpr hb
 
-
-
 theorem m64MorreyPolarStrip_memLp_two
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) {u : LoopPlane → E}
@@ -143,8 +126,6 @@ theorem m64MorreyPolarStrip_memLp_two
   apply (memLp_two_iff_integrable_sq_norm hi.aestronglyMeasurable).mpr
   exact m64MorreyPolarStrip_integrable a hrho
     ((memLp_two_iff_integrable_sq_norm hu.aestronglyMeasurable).mp hu)
-
-
 
 theorem m64MorreyPolarStrip_strong_square_limit
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -160,8 +141,6 @@ theorem m64MorreyPolarStrip_strong_square_limit
   apply squeeze_zero (fun j => integral_nonneg (fun p => sq_nonneg _))
     (fun j => m64MorreyPolarStrip_integral_le a hrho (hi j) (fun p => sq_nonneg _)) hupper
 
-
-
 theorem m64MorreyPolarStrip_weighted_integrable
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) {F : LoopPlane → ℝ}
     (hF : IntegrableOn F (Metric.closedBall a rho) volume) :
@@ -175,8 +154,6 @@ theorem m64MorreyPolarStrip_weighted_integrable
     (fun p _ => ((m64MorreyPolarStrip_contDiff a rho).differentiable (by simp) p)
       |>.hasFDerivAt.hasFDerivWithinAt) (polar_inj a hrho) F).mp (hF.mono_set hPQ)
   simpa only [m64MorreyPolarStrip_det, abs_sq, smul_eq_mul, IntegrableOn, box_restrict] using hw
-
-
 
 theorem m64MorreyPolarStrip_weighted_integral_le_annulus
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) {F : LoopPlane → ℝ}

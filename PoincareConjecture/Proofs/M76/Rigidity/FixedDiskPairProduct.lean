@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.SourceDiskPairCharts
 import PoincareConjecture.Proofs.M76.Rigidity.RelativePairProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "D" => closedBall (0 : V2) 1
-
-
-
 
 theorem exists_disk_parameter_product_of_pair_chart
     {X : Type*} [TopologicalSpace X] {R : Set X} {j : V2 → X}

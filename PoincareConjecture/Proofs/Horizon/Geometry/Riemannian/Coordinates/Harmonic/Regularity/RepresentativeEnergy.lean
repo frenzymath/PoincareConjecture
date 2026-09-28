@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.RepresentativeDerivative
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.HarmonicCoordinates
 
 open LeviCivitaData.Dirichlet
-
-
 
 theorem integral_fderiv_sq_le_of_smooth_representative
     {n : ℕ} {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
@@ -78,8 +68,6 @@ theorem integral_fderiv_sq_le_of_smooth_representative
     _ ≤ ∑ _i : Fin n, (b / Real.sqrt (a ^ n)) * ‖u‖ ^ 2 :=
       Finset.sum_le_sum fun i _ => hcoord i
     _ = _ := by simp [mul_assoc]
-
-
 
 theorem integral_fderiv_sq_le_of_smooth_linear_replacement
     {n : ℕ} {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)

@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.SpatialRegularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +21,6 @@ variable {a b : ℝ} {S : PointedFlowSequence 3 a b}
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_eventually_reference_spatial_jet_bound
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)
@@ -129,8 +113,6 @@ theorem exists_eventually_reference_spatial_jet_bound
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_eventually_reference_ellipticity
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialCoordinateEncoder
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianC2
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslationSmoothness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
 open scoped ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_smooth_realPeriodic_initialCoordinate_orbit {L : ℝ} [Fact (0 < L)]
     (f : C(AddCircle L, ℝ)) (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle L))) :

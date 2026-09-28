@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Flow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.SpacetimeJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
 open Filter Set
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_of_smooth_limit
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.TensorNullMinimum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -347,4 +340,3 @@ theorem tensorLaplacian_nonneg_at_sectional_null (D : LeviCivitaData g)
     local_null_fields_diffusion D hS hO hxO W hW hDW hkerW hmin
 
 end PoincareConjecture.M04
-

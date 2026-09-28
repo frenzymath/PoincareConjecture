@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.SpaceTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -94,8 +86,6 @@ theorem liYau_cutoff_bound (D : LeviCivitaData g)
     · dsimp [q, w]
       ring
     · exact (D.liYau_evolution_inequality hn hRic hu hpos hheat 2).2 t ht x
-
-
 
 theorem exists_liYau_bound_on_intrinsic_ball [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g) (hn : 0 < n) (hcomplete : MetricComplete g)

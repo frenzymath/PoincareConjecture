@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Ends
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 namespace NeckOnlyCover
-
-
 
 theorem exists_neck_center_mem_frontier (H : NeckOnlyCover g) {U : Set M}
     (hU : IsOpen U) (hmeet : (H.X ∩ U).Nonempty) (hmiss : ¬ H.X ⊆ U) :
@@ -50,9 +40,6 @@ theorem exists_neck_center_mem_frontier (H : NeckOnlyCover g) {U : Set M}
   obtain ⟨x, hx, hxf⟩ := hfrontier
   obtain ⟨N, hN, rfl⟩ := H.pointwise_center_cover x hx
   exact ⟨N, hN, hx, hxf⟩
-
-
-
 
 theorem exists_neck_at_chain_frontier (H : NeckOnlyCover g)
     (C : BalancedNeckChain g H.epsilon)
@@ -83,8 +70,6 @@ end NeckOnlyCover
 
 namespace BalancedNeckChain
 
-
-
 theorem exists_mem_frontier_of_finite {ε : ℝ} (C : BalancedNeckChain g ε)
     (hfinite : C.shape.active.Finite) {x : M}
     (hx : x ∈ frontier (⋃ i : {i // i ∈ C.shape.active}, (C.neck i.1).carrier)) :
@@ -106,8 +91,6 @@ end BalancedNeckChain
 namespace NeckOnlyCover
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
 
 theorem exists_neck_at_finite_chain_end (H : NeckOnlyCover g)
     (C : BalancedNeckChain g H.epsilon) (hfinite : C.shape.active.Finite)

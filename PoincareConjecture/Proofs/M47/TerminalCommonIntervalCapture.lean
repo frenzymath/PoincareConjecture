@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
 theorem terminalCommonInterval_closure_ball_subset
     (g : RiemannianMetric 3 M) (p : M) (R : ℝ) :
     closure (g.ball p R) ⊆ {z | g.edist p z ≤ ENNReal.ofReal R} := by
@@ -35,7 +26,6 @@ theorem terminalCommonInterval_closure_ball_subset
   intro z hz
   exact (show g.edist p z < ENNReal.ofReal R from hz).le
 
-
 theorem terminalCommonInterval_compact_ball_closure
     (g : RiemannianMetric 3 M) (hg : MetricComplete g) (p : M) (R : ℝ) :
     IsCompact (closure (g.ball p R)) :=
@@ -44,8 +34,6 @@ theorem terminalCommonInterval_compact_ball_closure
 
 variable {N : Type v} [TopologicalSpace N] [T2Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem terminalCommonInterval_capture_of_closed_buffer
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParamet
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +14,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_boundary_injOn_period {radius : ℝ} (hradius : radius ≠ 0) :
     InjOn (intrinsicAnnulusBoundary radius) (Ico (0 : ℝ) rampPeriod) := by
@@ -45,9 +29,6 @@ theorem m64Intrinsic_boundary_injOn_period {radius : ℝ} (hradius : radius ≠ 
     change radius * Real.sin x = radius * Real.sin y at h
     have hs := mul_left_cancel₀ hradius h
     simpa only [Circle.coe_exp, Complex.exp_ofReal_mul_I_im] using hs
-
-
-
 
 theorem m64Intrinsic_lifted_boundary_measure_le
     (N : IntrinsicAnnulus)
@@ -85,10 +66,6 @@ theorem m64Intrinsic_lifted_boundary_measure_le
     ring
   · filter_upwards [hJ.mem_nhds (hBJ hs)] with x hx
     exact hlift x hx
-
-
-
-
 
 theorem m64Intrinsic_lifted_endpoint_graph_measure_le
     (N : IntrinsicAnnulus)

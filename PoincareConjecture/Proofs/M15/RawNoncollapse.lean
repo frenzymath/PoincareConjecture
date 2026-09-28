@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M15.RawBallCylinder
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ variable {F : GeneralizedRicciFlowData.{u}} (G : M12.FlowBoxRicciGeometry F)
   (hM13 : GeneralizedParabolicRescalingTheory.{u} 3)
 
 include hM13
-
-
 
 theorem raw_closed_noncollapse {T r r0 kappa : ℝ} (x : (F.slice T).carrier)
     (hN : M15GeneralizedNoncollapseAt G.toLGeometry (⟨T, x⟩ : F.point) r0 kappa)
@@ -49,9 +39,6 @@ theorem raw_closed_noncollapse {T r r0 kappa : ℝ} (x : (F.slice T).carrier)
         ((G.sliceIdentification T).identification x) r) at h
   rw [← hball, hvol] at h
   exact h
-
-
-
 
 theorem raw_noncollapse {p : F.point} {r0 kappa : ℝ}
     (hN : M15GeneralizedNoncollapseAt G.toLGeometry p r0 kappa) :

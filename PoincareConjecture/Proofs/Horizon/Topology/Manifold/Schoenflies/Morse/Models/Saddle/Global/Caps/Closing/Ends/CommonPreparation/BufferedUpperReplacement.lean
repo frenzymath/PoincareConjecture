@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.LowerReplacement
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +25,6 @@ private def reverseTime : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Rea
   right_inv := neg_neg
   contMDiff_toFun := contMDiff_id.neg
   contMDiff_invFun := contMDiff_id.neg
-
-
 
 theorem exists_buffered_relative_upper_end_replacement_of_surface_germ
     {v : E3} {g f : S2 → E3} {Z : Set Real}

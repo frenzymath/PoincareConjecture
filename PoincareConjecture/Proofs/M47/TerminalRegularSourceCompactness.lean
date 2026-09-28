@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalTransfer
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalSource_regular_history_ball_buffer
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
@@ -88,9 +76,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (W : ∀ n, M33RegularHistoryWindow (
     ((H n).history.forward (t n) (ht n) (x n))) atTop atTop)
 
 local notation "V" => regularHistoryBlowupSequence F W H t ht x hPositive hDiverges
-
-
-
 
 theorem terminalSource_blowup_base_balls_compact
     (A tau : ℕ → ℝ) (htau : ∀ j, 0 < tau j)

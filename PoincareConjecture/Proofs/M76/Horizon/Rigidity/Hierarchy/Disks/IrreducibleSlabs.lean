@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.IrreducibleSlabs
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ThirdCoordinateSlab
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -91,4 +84,3 @@ theorem isPLIrreducible_hamiltonZero_complementary_third_slabs
   · exact hcomponents b (Or.inr rfl)
 
 end PoincareConjecture.M76
-

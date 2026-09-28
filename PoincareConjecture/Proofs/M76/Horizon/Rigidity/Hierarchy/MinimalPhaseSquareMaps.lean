@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.MinimalFiberwisePhaseProducts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Recognition.OriginalCollar
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry Topology

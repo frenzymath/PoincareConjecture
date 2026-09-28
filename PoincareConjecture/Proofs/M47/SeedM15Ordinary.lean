@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_ProductStable
 import PoincareConjecture.Proofs.M15.Thm8_10_ProductCylinder
 import PoincareConjecture.Proofs.M15.Thm8_10_StableSource
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M15
-
-
-
 
 theorem seedM15_ordinary_volume
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

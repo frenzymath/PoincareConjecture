@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SurfaceLine
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem small_surface_curvature_eq_zero_of_minimizing_line
     {M : Type} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -54,8 +43,6 @@ theorem small_surface_curvature_eq_zero_of_minimizing_line
     simpa only [H, F.ulift_scalarCurvature] using hflat.1 (ULift.up.{u} x)
   · intro x
     simpa only [H, F.ulift_curvatureTensorNorm] using hflat.2.2 (ULift.up.{u} x)
-
-
 
 theorem not_minimizing_line_of_nonflat_small_surface
     {M : Type} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

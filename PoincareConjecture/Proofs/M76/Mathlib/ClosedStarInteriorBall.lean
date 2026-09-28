@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,9 +14,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Nontrivial E] [DecidableEq E]
   {ι : Type*} [Finite ι] [Nonempty ι]
-
-
-
 
 theorem isFinitePLBallPair_closedStar_zero_of_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -48,9 +35,6 @@ theorem isFinitePLBallPair_closedStar_zero_of_interior
     ⟨⟨0, interior_subset hC0⟩, hC.ne_univ⟩
   have hne : (K.link 0).space.Nonempty := ⟨d.symm ⟨x, hx⟩, (d.symm ⟨x, hx⟩).property⟩
   exact hd.isFinitePLBallPair_closedStar K hK hz hne hC hcv hC0
-
-
-
 
 theorem isFinitePLBallPair_closedStar_of_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

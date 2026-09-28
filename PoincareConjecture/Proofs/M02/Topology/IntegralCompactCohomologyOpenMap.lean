@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralCohomologyExcision
 import PoincareConjecture.Proofs.M02.Topology.IntegralChartSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,23 +3,11 @@ import Mathlib.GroupTheory.SpecificGroups.Cyclic.Basic
 import Mathlib.Algebra.Field.ZMod
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
-
-
 
 theorem finrank_closed_le_finrank_coboundaries_add_one_of_isCyclic
     [PathConnectedSpace A.barycentricSpace] (hvertex : ∀ i : ι, {i} ∈ A.faces)

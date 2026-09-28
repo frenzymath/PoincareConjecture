@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedFirstFailureObservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_high_point_after_initial_epoch
     (S : RepairedControlledSchedulesData.{u}) (F : SurgeryFlowData.{u})
@@ -33,8 +22,6 @@ theorem seed_high_point_after_initial_epoch
   have hupper := (le_abs_self ((F.connection t).scalarCurvature x)).trans hscalar
   linarith
 
-
-
 theorem seed_high_point_after_first_prefix
     (S : RepairedControlledSchedulesData.{u}) (p : SurgeryParameterPrefix S.constants)
     (hi : p.i = 1) (F : SurgeryFlowData.{u}) {t rNext : ℝ}
@@ -47,8 +34,6 @@ theorem seed_high_point_after_first_prefix
   have h := seed_high_point_after_initial_epoch S F ht hr hsmall x hhigh
   simpa only [hi, surgeryEpochStart, pow_one, show (2 : ℝ) / 32 = 1 / 16 by norm_num]
     using h
-
-
 
 theorem seed_initial_epoch_volume
     (S : RepairedControlledSchedulesData.{u}) (p : SurgeryParameterPrefix S.constants)

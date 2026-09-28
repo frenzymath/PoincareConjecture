@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceCoordinates
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHarmonicPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +12,6 @@ open scoped Topology ContDiff BigOperators
 namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
-
-
-
-
 
 theorem exists_harmonic_boundary_halfDisk
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)

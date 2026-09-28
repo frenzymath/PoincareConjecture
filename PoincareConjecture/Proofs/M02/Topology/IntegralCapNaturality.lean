@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralRelativeCap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits

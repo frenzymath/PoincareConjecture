@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Convolution
 
 open Set MeasureTheory ContinuousLinearMap
@@ -13,8 +8,6 @@ noncomputable section
 namespace Poincare.Analysis.Convolution
 
 variable {E : Type*} [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem convolution_coefficient_commutator_eq
     (mu : Measure E) [mu.IsAddHaarMeasure]
@@ -34,8 +27,6 @@ theorem convolution_coefficient_commutator_eq
   apply integral_congr_ae
   filter_upwards [] with y
   ring
-
-
 
 theorem abs_convolution_coefficient_commutator_le
     (mu : Measure E) [mu.IsAddHaarMeasure]

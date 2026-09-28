@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopCornerChart
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CornerCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +12,6 @@ open Poincare.Topology.Plane.Triangles Poincare.Topology.Plane.Curves
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_fitted_corner_cap_coordinates
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -80,10 +64,6 @@ theorem m64Intrinsic_exists_fitted_corner_cap_coordinates
     exact h
   · intro z hz
     exact hcover ⟨hz.1, htarget ⟨hWt hz.1, hz.2⟩⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_fitted_corner_face
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
@@ -158,11 +138,6 @@ theorem m64Intrinsic_exists_fitted_corner_face
       (hsource ⟨le_rfl, hr.le, by simp⟩) (hfirst0.trans (heq.trans hsecond0.symm))
     exact hr.ne' (congrArg Prod.fst heq')
 
-
-
-
-
-
 theorem m64Intrinsic_exists_fitted_corner_cap_coordinates_le
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)
     (h0 : (0 : ℝ × ℝ) ∈ H.source)
@@ -217,10 +192,6 @@ theorem m64Intrinsic_exists_fitted_corner_cap_coordinates_le
     exact h
   · intro z hz
     exact hcover ⟨hz.1, htarget ⟨hWt hz.1, hz.2⟩⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_fitted_corner_face_le
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

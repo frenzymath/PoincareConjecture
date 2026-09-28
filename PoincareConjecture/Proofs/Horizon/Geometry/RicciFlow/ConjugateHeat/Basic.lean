@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -9,7 +8,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*}
-
 
 noncomputable def conjugateHeatDensity (n : ℕ) (f : M × ℝ → ℝ)
     (t : ℝ) (x : M) : ℝ :=

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,17 +21,11 @@ variable {M : Type u} [TopologicalSpace M]
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem cylinderScalarCoordinateEquiv_norm_sq (v : EuclideanSpace ℝ (Fin 3)) :
     ‖(cylinderScalarCoordinateEquiv v).1‖ ^ 2 +
         (cylinderScalarCoordinateEquiv v).2 ^ 2 = ‖v‖ ^ 2 := by
   simp [cylinderScalarCoordinateEquiv_apply, EuclideanSpace.real_norm_sq_eq,
     Fin.sum_univ_two, Fin.sum_univ_three]
-
-
-
 
 theorem cylinderNeckCoefficients_quadratic_bounds (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -85,9 +70,6 @@ theorem cylinderNeckCoefficients_quadratic_bounds (N : EpsilonNeck g)
         (mul_le_mul_of_nonneg_left (by nlinarith only [hnorm, hlast])
           (by linarith [N.epsilon_pos] : 0 ≤ 1 + N.epsilon))
       _ = _ := by ring
-
-
-
 
 theorem scaleSmoothMetric_cylinderNeckCoefficients (N : EpsilonNeck g)
     (Q : ℝ) (hQ : 0 < Q) (q : UnitTwoSphere) (s : ℝ)

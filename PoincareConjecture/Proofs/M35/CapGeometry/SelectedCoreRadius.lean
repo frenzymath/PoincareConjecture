@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.TransportedInnerBall
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapBall
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -59,9 +50,6 @@ private theorem closure_ball_subset_larger {M : Type*} [TopologicalSpace M]
   rw [← Proofs.M09.selectedMetricSpace_edist g, edist_dist, dist_comm]
   exact (ENNReal.ofReal_lt_ofReal_iff (hr.trans hrb)).mpr
     ((Metric.mem_closedBall.mp hz).trans_lt hrb)
-
-
-
 
 theorem blowupSequence_scalar_witness_curvature_balls (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -217,9 +205,6 @@ theorem blowupSequence_scalar_witness_curvature_balls (P : M35StandardCapPredece
       hcomplete hRcont (f y) hq hcrossTarget
   refine ⟨r, hrpos, hrexact, ?_, hrcompact⟩
   exact (closure_mono (fun w hw => hw.trans_le (ENNReal.ofReal_le_ofReal hrq))).trans hinside
-
-
-
 
 theorem blowupSequence_cap_core_curvature_ball_at (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

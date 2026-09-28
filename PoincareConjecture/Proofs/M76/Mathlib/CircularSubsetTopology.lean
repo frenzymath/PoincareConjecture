@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem isConnected_sdiff_singleton_of_homeomorph_circle {X : Type*}
     [TopologicalSpace X] (s : Set X) (e : s ≃ₜ Circle) (q : X) :

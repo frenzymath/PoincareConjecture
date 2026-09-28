@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,8 +19,6 @@ variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
   (S : StandardPuncturedProjectiveCover Q p U)
-
-
 
 private theorem isImmersion_sphere_lift
     {f : UnitTwoSphere → Q} (hf : Manifold.IsImmersion (𝓡 2) (𝓡 3) ∞ f)
@@ -86,8 +72,6 @@ private theorem isSmoothEmbedding_sphere_lift
   intro x y hxy
   exact hf.isEmbedding.injective
     ((hlift x).symm.trans ((congrArg S.cover hxy).trans (hlift y)))
-
-
 
 theorem exists_smooth_embedded_sphere_lift
     (f : UnitTwoSphere → Q) (hf : Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -148,8 +132,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} (C : CapCertificate g)
 
-
-
 theorem exists_boundary_sphere_lift
     (S : StandardPuncturedProjectiveCover M C.puncture C.carrier) :
     ∃ F : UnitTwoSphere → UnitThreeSphere,
@@ -168,8 +150,6 @@ theorem exists_boundary_sphere_lift
   simpa only [hrange] using S.exists_smooth_embedded_sphere_lift
     (fun q => C.boundary_neck.coordinate_map (q, 0))
     C.boundary_neck.centralSphere_isSmoothEmbedding hU
-
-
 
 theorem exists_projective_boundary_lift (hkind : C.model_kind = .puncturedProjective) :
     ∃ (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)

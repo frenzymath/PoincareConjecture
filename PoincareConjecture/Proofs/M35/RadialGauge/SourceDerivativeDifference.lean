@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M35.RadialGauge
@@ -17,8 +8,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 local notation "D" => V →L[ℝ] ℝ
-
-
 
 noncomputable def sourceDerivativeJet (b : V) (db : V →L[ℝ] V)
     (p : D) (H : V →L[ℝ] D) (gx : D) (gz : ℝ) : D :=
@@ -34,7 +23,6 @@ theorem graph_derivative_eq (q : (V × ℝ) →L[ℝ] ℝ) (p : D) :
   simp only [smul_eq_mul]
   ring
 
-
 theorem gaugeSource_fderiv_eq_jet
     {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ} {x : V}
     (hb : DifferentiableAt ℝ b x) (hu : DifferentiableAt ℝ u x)
@@ -47,7 +35,6 @@ theorem gaugeSource_fderiv_eq_jet
       (fderiv ℝ (fun p : V × ℝ => G p.1 p.2) (x, u x) (0, 1)) := by
   rw [gaugeSource_fderiv_eq hb hu hdu hG, graph_derivative_eq]
   simp only [sourceDerivativeJet, add_assoc]
-
 
 theorem sourceDerivativeJet_sub (b : V) (db : V →L[ℝ] V) (p q : D)
     (H K : V →L[ℝ] D) (gx hx : D) (gz hz : ℝ) :
@@ -65,8 +52,6 @@ theorem sourceDerivativeJet_sub (b : V) (db : V →L[ℝ] V) (p q : D)
     ContinuousLinearMap.sub_comp, ContinuousLinearMap.comp_sub]
   simp only [sub_eq_add_neg, add_smul, smul_add, smul_neg, neg_smul]
   abel
-
-
 
 theorem sourceDerivativeJet_norm_sub_le (b : V) (db : V →L[ℝ] V) (p q : D)
     (H K : V →L[ℝ] D) (gx hx : D) (gz hz : ℝ) :
@@ -89,8 +74,6 @@ theorem sourceDerivativeJet_norm_sub_le (b : V) (db : V →L[ℝ] V) (p q : D)
     (norm_add_le_of_le (norm_add_le_of_le (norm_add_le_of_le
       (norm_add_le_of_le h1 h2) h3) h4) (le_refl ‖gx - hx‖)) h5
   exact hsum.trans_eq (by ring)
-
-
 
 theorem sourceDerivativeJet_weighted_norm_sub_le
     (b : V) (db : V →L[ℝ] V) (p q : D) (H K : V →L[ℝ] D)
@@ -128,17 +111,12 @@ theorem sourceDerivativeJet_weighted_norm_sub_le
   have h3a := mul_le_mul_of_nonneg_left hqn (mul_nonneg hw0 (abs_nonneg (gz - hz)))
   nlinarith
 
-
 noncomputable def forcingSpaceDeriv (G : V → ℝ → ℝ) (x : V) (z : ℝ) : D :=
   (fderiv ℝ (fun p : V × ℝ => G p.1 p.2) (x, z)).comp
     (ContinuousLinearMap.inl ℝ V ℝ)
 
-
 noncomputable def forcingScalarDeriv (G : V → ℝ → ℝ) (x : V) (z : ℝ) : ℝ :=
   fderiv ℝ (fun p : V × ℝ => G p.1 p.2) (x, z) (0, 1)
-
-
-
 
 theorem gaugeSource_weighted_fderiv_sub_bound
     {b : V → V} {G : V → ℝ → ℝ} {u v : V → ℝ} {x : V}

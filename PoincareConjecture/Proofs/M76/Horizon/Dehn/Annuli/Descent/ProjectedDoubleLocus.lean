@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 import PoincareConjecture.Proofs.M76.Wall.CutDiskProjection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -30,8 +19,6 @@ variable {U E V M ι : Type*}
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
 
 theorem Step.projected_source_mate_unique (step : Step s t)
     {Z : Type*} {A : Set Z} {j : Z → t.Carrier} (hj : InjOn j A)
@@ -56,8 +43,6 @@ theorem Step.projected_source_mate_unique (step : Step s t)
   rcases mem_insert_iff.mp hzpair with hzx | hzy
   · exact False.elim (hxz (hj hx hz hzx.symm))
   · exact hj hy hz (mem_singleton_iff.mp hzy).symm
-
-
 
 theorem Step.exists_finite_source_double_locus (step : Step s t)
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

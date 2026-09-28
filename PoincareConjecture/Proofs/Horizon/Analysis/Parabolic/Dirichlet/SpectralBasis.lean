@@ -2,17 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.l2Space
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.InnerProductSpace.Spectrum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,14 +13,11 @@ open scoped InnerProductSpace
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
 
-
 def NonzeroEigenvalue (T : H →L[ℝ] H) :=
   { μ : ℝ // μ ≠ 0 ∧ HasEigenvalue T.toLinearMap μ }
 
-
 def BasisIndex (T : H →L[ℝ] H) :=
   Σ μ : NonzeroEigenvalue T, Fin (Module.finrank ℝ (eigenspace T.toLinearMap μ.1))
-
 
 def eigenspaceBasis (T : H →L[ℝ] H) (hT : IsCompactOperator T)
     (μ : NonzeroEigenvalue T) :
@@ -39,7 +25,6 @@ def eigenspaceBasis (T : H →L[ℝ] H) (hT : IsCompactOperator T)
       ℝ (eigenspace T.toLinearMap μ.1) := by
   letI := ContinuousLinearMap.finite_dimensional_eigenspace hT μ.1 μ.2.1
   exact stdOrthonormalBasis ℝ (eigenspace T.toLinearMap μ.1)
-
 
 def basisVector (T : H →L[ℝ] H) (hT : IsCompactOperator T) (i : BasisIndex T) : H :=
   eigenspaceBasis T hT i.1 i.2
@@ -101,7 +86,6 @@ theorem span_basisVector_orthogonal_eq_bot (T : H →L[ℝ] H) (hT : IsCompactOp
   rw [span_basisVector_eq_iSup, nonzero_eigenspaces_eq_iSup T hinj]
   exact ContinuousLinearMap.orthogonalComplement_iSup_eigenspaces_eq_bot hT
     ((ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric).mp hself)
-
 
 def hilbertBasis (T : H →L[ℝ] H) (hT : IsCompactOperator T)
     (hself : IsSelfAdjoint T) (hinj : Function.Injective T) :

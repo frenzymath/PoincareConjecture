@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CornerRigidity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRays
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.BrokenSegment
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -31,7 +20,6 @@ private theorem tangentNorm_smul_nonneg (g : RiemannianMetric n M)
     g.tangentNorm p (t • v) = t * g.tangentNorm p v := by
   simp only [tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg t), Real.sqrt_sq ht]
-
 
 theorem normalized_initial_eq_neg_of_minimizing_broken_geodesics_of_exponential
     (g : RiemannianMetric n M) (p : M)

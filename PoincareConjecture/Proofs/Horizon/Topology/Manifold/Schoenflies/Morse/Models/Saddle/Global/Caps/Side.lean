@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Marking
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Chart.CommonDisk
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,8 +51,6 @@ private theorem local_inclusion_of_shared_exterior
   intro y hy
   by_contra hyB
   exact houtside ⟨hy.2, hyB⟩ hy.1
-
-
 
 theorem exists_local_inclusion_of_shared_exterior
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

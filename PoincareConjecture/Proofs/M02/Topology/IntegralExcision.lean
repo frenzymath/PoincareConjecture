@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralChainSupport
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallRelativeChains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -71,8 +63,6 @@ private theorem integralCokernelMap_isIso
   exact HomologicalComplex.Hom.isIso_of_components _
 
 variable {X : Type u} [TopologicalSpace X]
-
-
 
 theorem integral_open_cover_excision
     (A B : Set X) (hA : IsOpen A) (hB : IsOpen B)

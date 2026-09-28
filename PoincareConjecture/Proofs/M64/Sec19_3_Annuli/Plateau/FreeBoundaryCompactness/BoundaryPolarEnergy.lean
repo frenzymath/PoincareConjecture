@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryPolarStrip
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarPullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +15,6 @@ open Proofs.M58
 local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem boundaryPolarStrip_weighted_integral
     (x : ℝ) {rho : ℝ} (hrho : 0 < rho) {F : LoopPlane → ℝ}
@@ -53,18 +42,12 @@ theorem boundaryPolarStrip_weighted_integral
             |>.hasFDerivAt.hasFDerivWithinAt) (boundaryPolarStrip_injOn x hrho) F).symm
     _ ≤ _ := setIntegral_mono_set hF (Eventually.of_forall hpos) (Eventually.of_forall hmap)
 
-
-
 def phaseGradientDensity (L : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   (fderiv ℝ L p e0) ^ 2 + (fderiv ℝ L p e1) ^ 2
-
-
 
 def boundaryAngularDerivative (L : LoopPlane → ℝ) (x rho : ℝ) (p : LoopPlane) : ℝ :=
   fderiv ℝ L (boundaryPolarStrip x rho p)
     ((rho * Real.exp (-p 1) / 2) • angularVector (p 0 / 2))
-
-
 
 theorem boundaryAngularDerivative_sq_le (L : LoopPlane → ℝ) (x rho : ℝ) (p : LoopPlane) :
     boundaryAngularDerivative L x rho p ^ 2 ≤
@@ -91,9 +74,6 @@ theorem boundaryAngularDerivative_sq_le (L : LoopPlane → ℝ) (x rho : ℝ) (p
   dsimp only [phaseGradientDensity]
   change _ ≤ (1 / 2 : ℝ) * ((rho * Real.exp (-p 1)) ^ 2 / 2 * (a ^ 2 + b ^ 2))
   nlinarith [h]
-
-
-
 
 theorem boundaryAngularDerivative_shell_energy
     (L : LoopPlane → ℝ) (hL : ContDiffOn ℝ 1 L S)

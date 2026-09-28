@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M45.Ch12_Standard.NeckReflectionGeometry
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M45
-
 
 def neckDomainReflection (epsilon : ℝ) : NeckDomain epsilon ≃ₜ NeckDomain epsilon where
   toFun z := (z.1, ⟨-z.2.1, by constructor <;> linarith [z.2.2.1, z.2.2.2]⟩)
@@ -33,8 +24,6 @@ def neckDomainReflection (epsilon : ℝ) : NeckDomain epsilon ≃ₜ NeckDomain 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 noncomputable def reverseNeck (N : EpsilonNeck g) : EpsilonNeck g where
   epsilon := N.epsilon
@@ -98,8 +87,6 @@ noncomputable def reverseNeck (N : EpsilonNeck g) : EpsilonNeck g where
   center_on_central_sphere := N.center_on_central_sphere
   central_sphere_subset := N.central_sphere_subset
   metric_comparison := neckMetricComparison_reflection g N.metric_comparison
-
-
 
 theorem reverseNeck_region (N : EpsilonNeck g) (a b : ℝ) :
     (reverseNeck N).region a b = N.region (-b) (-a) := by

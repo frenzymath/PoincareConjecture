@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +17,6 @@ variable {m : ℕ} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
   {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {R : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem potential_bound (S : SUQuadraticWeakSystem u V center R)
     {r delta : ℝ} (_hr : 0 < r) (hrR : r < R) (hdelta : 0 ≤ delta)
@@ -201,8 +190,6 @@ theorem potential_bound (S : SUQuadraticWeakSystem u V center R)
   rw [hHI, hWG] at he
   convert he using 1 <;> ring
 
-
-
 theorem small_potential (S : SUQuadraticWeakSystem u V center R)
     {kappa : ℝ} (hkappa : 0 < kappa) :
     ∃ r : ℝ, 0 < r ∧ r < R ∧ ∀ phi : LoopPlane → ℝ,
@@ -266,8 +253,6 @@ theorem small_potential (S : SUQuadraticWeakSystem u V center R)
   have he : (128 * S.constant ^ 2 * delta ^ 2 / S.nu) * G =
       4 * ((32 * S.constant ^ 2 * delta ^ 2 / S.nu) * G) := by ring
   nlinarith
-
-
 
 theorem difference_integrand (S : SUQuadraticWeakSystem u V center R)
     (k : Fin 2) {h : ℝ} (hh : h ≠ 0) (x : LoopPlane)
@@ -335,9 +320,6 @@ theorem difference_integrand (S : SUQuadraticWeakSystem u V center R)
   ring
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem uniform_difference_quotients (S : SUQuadraticWeakSystem u V center R) :
     ∃ r : ℝ, 0 < r ∧ r < R ∧
@@ -565,9 +547,6 @@ theorem uniform_difference_quotients (S : SUQuadraticWeakSystem u V center R) :
         Finset.sum_const_zero, add_zero, sub_zero, le_refl]
 
 end SUQuadraticWeakSystem
-
-
-
 
 theorem suQuadraticWeakSystem_initial_gain
     {m : ℕ} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}

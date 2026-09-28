@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCutSphere
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDiskProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneStandardCutAnnulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +12,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
 
 structure HamiltonMarkedCut {B : Set W}
     {e : frontier squareShell ≃ₜ frontier (complementaryRegion B)}
@@ -174,9 +162,6 @@ private theorem exists_endpoint_disks :
     rw [hqval]
     change P.map (c ((x : V2), beta)) = _
     rw [hhi]
-
-
-
 
 theorem exists_marked_cut_frontier (he : e.IsFinitePL)
     (hR : IsCompact (complementaryRegion B)) : Nonempty (HamiltonMarkedCut P) := by

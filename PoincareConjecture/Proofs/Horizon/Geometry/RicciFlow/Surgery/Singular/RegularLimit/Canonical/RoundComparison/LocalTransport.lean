@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,7 +19,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem tensorNorm_iteratedCovariantDerivative_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -55,8 +47,6 @@ theorem tensorNorm_iteratedCovariantDerivative_pullback
     simpa only [ContinuousLinearEquiv.coe_toLinearEquiv, heval] using
       D.iteratedCovariantTensorDerivative_eq_pullback D' hU hf hinv hmetric hS hT hST m hx v
 
-
-
 def scalarTolerance
     {g₀ : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D₀ : LeviCivitaData g₀) (p : EuclideanSpace ℝ (Fin n))
@@ -68,8 +58,6 @@ theorem scalarTolerance_pos
     (D₀ : LeviCivitaData g₀) (p : EuclideanSpace ℝ (Fin n))
     {α : ℝ} (hα : 0 < α) : 0 < scalarTolerance D₀ p hα :=
   (exists_scalar_control_of_covariant_metric_twoJet D₀ p hα).choose_spec.1
-
-
 
 theorem scalar_control_of_local_isometry
     {g₀ : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

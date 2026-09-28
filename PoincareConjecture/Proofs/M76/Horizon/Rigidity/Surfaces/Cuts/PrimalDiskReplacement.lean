@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -43,7 +34,6 @@ private theorem exists_disk_rim_circle_chart {d q : Set E}
   exact ⟨b, he.symm.restrictSubsets sphere_subset_closedBall hd.1 hmem
     (J.frontierSubcomplex C) (J.frontierSubcomplex_finite C hJ) hfront⟩
 
-
 theorem exists_disk_cap_homeomorph {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) :
     ∃ H : d ≃ₜ boundaryCircleCap true q, H.IsFinitePL ∧
@@ -72,7 +62,6 @@ theorem exists_disk_cap_homeomorph {d q : Set E}
   refine ⟨H, hH, ?_, hHmem⟩
   intro x
   exact (congrArg Subtype.val (hHb x)).trans (heval x)
-
 
 theorem exists_primal_disk_replacement {d q c : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (hinter : d ∩ c = q)

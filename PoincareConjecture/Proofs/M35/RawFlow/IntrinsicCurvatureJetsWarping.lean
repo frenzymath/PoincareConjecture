@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJets
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g) (D : LeviCivitaData g)
-
-
 
 theorem intrinsicCurvatureJet_zero_eq {s : ℝ} (hs : 0 < s) :
     intrinsicCurvatureJet g hrotation hcomplete D 0 s =
@@ -55,8 +44,6 @@ theorem intrinsicCurvatureJet_zero_eq {s : ℝ} (hs : 0 < s) :
     (intrinsicWarpingRadius_deriv_hasDerivAt g hrotation hcomplete hs).deriv]
   rfl
 
-
-
 theorem intrinsicWarpingRadius_second_eq_curvature {s : ℝ} (hs : 0 ≤ s) :
     deriv (deriv (intrinsicWarpingRadius g hrotation hcomplete)) s =
       -(intrinsicCurvatureJet g hrotation hcomplete D 0 s *
@@ -81,8 +68,6 @@ theorem intrinsicWarpingRadius_second_eq_curvature {s : ℝ} (hs : 0 ≤ s) :
         -(intrinsicCurvatureJet g hrotation hcomplete D 0 r *
           intrinsicWarpingRadius g hrotation hcomplete r)} := fun r hr => hpos r hr
   exact closure_minimal hsubset heq (by rwa [closure_Ioi])
-
-
 
 theorem intrinsicCurvatureJet_iteratedDeriv_bound (m : ℕ) {C : ℝ}
     (hC : ∀ x : StandardCapSpace, D.curvatureDerivativeNorm m x ≤ C)

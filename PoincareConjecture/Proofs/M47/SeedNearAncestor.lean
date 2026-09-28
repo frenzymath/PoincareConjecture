@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.NoncollapseHorizonTested
 import Mathlib.Analysis.Complex.ExponentialBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_volume_of_near_nonpositive_ancestor
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

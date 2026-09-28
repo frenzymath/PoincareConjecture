@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.ChangeCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Geodesic
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
-
-
-
-
-
-
-

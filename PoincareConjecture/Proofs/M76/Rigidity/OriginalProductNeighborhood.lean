@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProductConstruction
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,7 +17,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
 
 theorem exists_relative_neighborhood_in_dual_union :
     ∃ W : Set R, IsOpen W ∧
@@ -53,8 +44,6 @@ theorem exists_relative_neighborhood_in_dual_union :
     change (T.inverse (T.graph x) : X) = (x : X)
     rw [← T.model_eq ⟨x, hxC⟩, T.inverse_eq (T.model ⟨x, hxC⟩),
       T.model.symm_apply_apply]
-
-
 
 theorem exists_disk_product_with_neighborhood [T2Space X] :
     ∃ P : OriginalDiskProduct e R j, ∃ W : Set R, IsOpen W ∧

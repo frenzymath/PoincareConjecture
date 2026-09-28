@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +35,6 @@ private theorem contMDiff_lift_of_injective_localDiffeomorph
   filter_upwards [(hF x).continuousAt.tendsto.eventually hn] with y hy
   apply hGi
   exact (he y).trans hy.symm
-
-
 
 theorem exists_diffeomorph_of_injective_localDiffeomorph_same_range
     {n : ℕ} {N P L : Type*} [TopologicalSpace N] [TopologicalSpace P] [TopologicalSpace L]
@@ -99,8 +89,6 @@ end Poincare.Manifold
 
 namespace PoincareConjecture.RiemannianMetric
 
-
-
 theorem area_le_of_diffeomorph_expands_metric
     {N P : Type*} [TopologicalSpace N] [TopologicalSpace P] [T3Space N] [T3Space P]
     [MeasurableSpace N] [BorelSpace N] [MeasurableSpace P] [BorelSpace P]
@@ -139,7 +127,6 @@ variable {M N P : Type*} [TopologicalSpace M] [TopologicalSpace N] [TopologicalS
   {g : RiemannianMetric 3 M}
 
 omit [T3Space N] [T3Space P] in
-
 
 theorem exists_diffeomorph_between_transported_level_parametrizations
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -190,8 +177,6 @@ theorem exists_diffeomorph_between_transported_level_parametrizations
   obtain ⟨e, he⟩ := Poincare.Manifold.exists_diffeomorph_of_injective_localDiffeomorph_same_range
     hFt hGl (eL.injective.comp hFi) hGi hrange
   exact ⟨e, fun x => (congrArg (openLevelIncl f U d) (he x)).trans (heL (F x))⟩
-
-
 
 theorem exists_area_nondecreasing_diffeomorph_between_transported_levels
     [MeasurableSpace N] [BorelSpace N] [MeasurableSpace P] [BorelSpace P]

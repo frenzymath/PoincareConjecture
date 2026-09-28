@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedMinimum
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,11 +21,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
-
 
 theorem exists_lower_weighted_comparison_of_outer_agreement
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

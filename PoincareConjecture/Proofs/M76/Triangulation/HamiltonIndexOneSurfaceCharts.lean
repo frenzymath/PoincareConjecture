@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarPurity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,10 +15,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_surface_chart_of_local_ball_pairs {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

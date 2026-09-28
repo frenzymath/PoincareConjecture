@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
@@ -15,9 +7,6 @@ open AddCircle MeasureTheory
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem periodicH1Coordinates_product_bound (f f1 g g1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x)

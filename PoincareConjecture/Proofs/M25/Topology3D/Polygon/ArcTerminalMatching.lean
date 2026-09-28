@@ -6,15 +6,6 @@ import Mathlib.Logic.Equiv.Prod
 import Mathlib.Data.Fintype.Prod
 import Mathlib.Algebra.Group.Nat.Even
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -207,8 +198,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 open scoped Classical in
-
-
 
 theorem IsSimplePolygonalArc.exists_terminal_path_inside_matching {n k : ℕ}
     {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

@@ -3,19 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_deriv_eq_radial_of_eqOn_Icc
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -36,10 +29,6 @@ theorem m64_deriv_eq_radial_of_eqOn_Icc
     hderiv.hasDerivWithinAt.congr_of_mem hvalue hz
   exact (hg.derivWithin (uniqueDiffOn_Icc hT 0 hz)).symm.trans
     (hwithin.derivWithin (uniqueDiffOn_Icc hT 0 hz))
-
-
-
-
 
 theorem m64_radial_terminal_derivative_of_closed_reverse
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

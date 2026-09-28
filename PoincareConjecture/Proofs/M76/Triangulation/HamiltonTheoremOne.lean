@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexThreeRegionSupplier
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
-
-
 
 def HasHamiltonChartHandleStraightening (E : Type*)
     [NormedAddCommGroup E] [NormedSpace ℝ E] (J : Finset (Fin 3)) : Prop :=
@@ -35,11 +19,6 @@ def HasHamiltonChartHandleStraightening (E : Type*)
           (ContinuousMap.id (Fin 3 → ℝ)) ⟨A, A.continuous⟩
           (fun f => IsHomeomorph f ∧ (∀ x, 2 ≤ ‖x‖ → f x = x) ∧
             ∀ x ∈ (coordinateCylinder J)ᶜ ∪ frontier (coordinateCylinder J), f x = x))
-
-
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_of_zero_charge_and_lower_indices
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

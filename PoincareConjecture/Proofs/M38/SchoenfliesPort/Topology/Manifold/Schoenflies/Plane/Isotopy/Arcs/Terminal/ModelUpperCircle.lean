@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.NestedOrientation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.UpperCap
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -125,8 +117,6 @@ private theorem standard_upper_reference_level_connected :
   rw [← hcover]
   exact isConnected_range hγ
 
-
-
 theorem exists_standard_upper_source_circle
     {a : Real} (ha : -1 < a) (hau : a ≤ 1 / 2) :
     ∃ C : S1 → S2,
@@ -144,7 +134,6 @@ theorem exists_standard_upper_source_circle
     Saddle.height_contMDiff a (fun q hq => hregular q ⟨hq.ge, hq.trans_le hau⟩) q hq
   refine ⟨C, hC, hi, hd, ?_⟩
   rw [hrange, hconn.isPreconnected.connectedComponentIn hq]
-
 
 theorem exists_nested_upper_source_circle
     {p : S2} (hp : mfderiv (𝓡 2) 𝓘(Real, Real) Saddle.Nested.height p = 0)
@@ -176,8 +165,6 @@ theorem exists_nested_upper_source_circle
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem exists_model_upper_source_circles
     (d : TerminalSaddleGeometry M P p e)

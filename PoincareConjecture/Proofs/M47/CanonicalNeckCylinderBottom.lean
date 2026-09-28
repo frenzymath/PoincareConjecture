@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_BackwardOrdinaryCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_strictLeft_cylinder_closed
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

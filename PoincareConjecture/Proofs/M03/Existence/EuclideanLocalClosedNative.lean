@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter LineDeriv
@@ -21,7 +13,6 @@ namespace PoincareConjecture.EuclideanDerivativeNative
 variable {n : ℕ}
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 theorem ae_zero_of_compact_cutoffs {U : Set ModelE} (hU : IsOpen U) {w : ModelE → ℝ}
     (hzero : ∀ (η : 𝓢(ModelE, ℝ)), HasCompactSupport η → tsupport η ⊆ U →
@@ -86,7 +77,6 @@ theorem firstOrder_cutoff_toLp
     firstOrder_cutoffSchwartz a v η hη hU hηU f hf]
   ring
 
-
 theorem local_firstOrder_cutoff_limit_zero
     (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE) {U : Set ModelE}
     (hU : IsOpen U) (f : ℕ → ModelE → ℝ)
@@ -113,7 +103,6 @@ theorem local_firstOrder_cutoff_limit_zero
       (firstOrder_cutoff_toLp a v η hη hU hηU (f j) (hf j) (hfLp j) (hAfLp j)).symm))
     simpa only [add_zero] using hsum
   exact firstOrderSchwartz_limit_zero a v g _ hglim hderiv
-
 
 theorem local_firstOrder_limit_zero
     (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE) {U : Set ModelE}

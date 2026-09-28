@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SelectedHoleDiskPortSourceUnion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.CubicalThreeSphere
@@ -20,8 +12,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
 
 open PoincareConjecture.M76.HamiltonIndexTwoStandard
-
-
 
 theorem exists_physical_selected_hole_normalization
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

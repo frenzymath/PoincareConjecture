@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialSectionalDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,15 +23,12 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
 
-
 noncomputable def intrinsicAxisCurve (s : ℝ) : StandardCapSpace :=
   (radialArclengthOrderIso g hrotation hcomplete).symm s • e 2
-
 
 noncomputable def intrinsicAxisRadial (s : ℝ) : StandardCapSpace :=
   (Real.sqrt (axisRadialCoefficient g
     ((radialArclengthOrderIso g hrotation hcomplete).symm s)))⁻¹ • e 2
-
 
 noncomputable def intrinsicAxisAngular (s : ℝ) : StandardCapSpace :=
   (Real.sqrt (axisAngularCoefficient g
@@ -115,7 +103,6 @@ private theorem christoffel_eq_connection (x u v : StandardCapSpace) :
 
 include D
 
-
 theorem intrinsicAxisAngular_parallel {s : ℝ} (hs : 0 < s) :
     ConnectionVariation.manifoldCovDerivAlong g
       (intrinsicAxisCurve g hrotation hcomplete)
@@ -148,7 +135,6 @@ theorem intrinsicAxisAngular_parallel {s : ℝ} (hs : 0 < s) :
   convert! zero_smul ℝ (e 0) using 1
   congr 1
   ring
-
 
 theorem intrinsicAxisRadial_parallel {s : ℝ} (hs : 0 < s) :
     ConnectionVariation.manifoldCovDerivAlong g

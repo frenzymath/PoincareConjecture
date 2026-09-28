@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesRadiusInverse
 import PoincareConjecture.Proofs.M74.Mathlib.ReciprocalRadiusExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -23,9 +14,6 @@ open M74 M25.Topology3D
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
-
-
-
 
 theorem exists_schoenfliesCanonicalRadius
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4))

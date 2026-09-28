@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -48,8 +42,6 @@ private theorem exists_inclusion_charts
   dsimp only [Function.comp_apply] at hz
   rw [hi.domChart.extend_left_inv hy] at hz
   exact hz
-
-
 
 theorem image_interior_of_isSmoothEmbedding
     (h : _root_.Manifold.IsSmoothEmbedding (𝓡∂ (m + 1)) (𝓡 (m + 1)) ∞

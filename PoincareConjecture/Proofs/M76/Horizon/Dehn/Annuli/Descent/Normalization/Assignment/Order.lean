@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteMarkedFacePrefixes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_relative_face_order
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -50,8 +39,6 @@ theorem exists_relative_face_order
   · intro i j hji
     by_contra hn
     exact (not_lt_of_ge (hmono (le_of_not_gt hn))) (Finset.card_lt_card hji)
-
-
 
 theorem exists_relative_face_prefixes
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

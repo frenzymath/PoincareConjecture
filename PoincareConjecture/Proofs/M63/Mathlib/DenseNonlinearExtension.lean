@@ -2,24 +2,12 @@ import Mathlib.Analysis.Normed.Group.Continuity
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Topology.UniformSpace.CompleteSeparated
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_continuous_extension_of_bounded_lipschitz
     {E F : Type*} [NormedAddCommGroup E] [NormedAddCommGroup F] [CompleteSpace F]

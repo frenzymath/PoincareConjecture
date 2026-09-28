@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.NormalCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture
 
 namespace RicciFlow
-
-
 
 theorem pullbackCoefficients_exp_bounds_of_ricci_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -71,8 +57,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {p : M}
   {T' T U' U A R ρ a b K : ℝ} {N : ℕ}
-
-
 
 def extendTime (C : NormalChartCover F.metric p T' T A R ρ a b N)
     (hT : T' < 0 ∧ 0 < T) (hU : U' < 0 ∧ 0 < U) (hUJ : Ioo U' U ⊆ J)
@@ -144,8 +128,6 @@ def extendTime (C : NormalChartCover F.metric p T' T A R ρ a b N)
           K * (F.metric t).inner (C.chart i x) v v) :
     (C.extendTime hT hU hUJ ha hb hK hRic).centre = C.centre := rfl
 
-
-
 def extendTimeOfCurvatureBound [T2Space M]
     (C : NormalChartCover F.metric p T' T A R ρ a b N)
     (hT : T' < 0 ∧ 0 < T) (hU : U' < 0 ∧ 0 < U) (hUJ : Ioo U' U ⊆ J)
@@ -175,8 +157,6 @@ def extendTimeOfCurvatureBound [T2Space M]
     (hcurv : ∀ i, ∀ x ∈ Metric.closedBall 0 (2 * ρ), ∀ t ∈ Ioo U' U,
       (F.connection t).curvatureTensorNorm (C.chart i x) ≤ K) :
     (C.extendTimeOfCurvatureBound hT hU hUJ ha hb hK hcurv).chart = C.chart := rfl
-
-
 
 def extendTimeOfCurvatureBoundOnBall [T2Space M]
     (C : NormalChartCover F.metric p T' T A R ρ a b N)

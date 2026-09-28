@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedFullStandardNeck
 import PoincareConjecture.Proofs.M35.Thm12_28.LimitStrongNeckTransfer
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +18,6 @@ private theorem scalar_eq_of_equal_metrics
     D.scalarCurvature x = D'.scalarCurvature x := by
   subst h
   exact D.scalarCurvature_eq D' x
-
-
 
 theorem blowupSequence_limit_full_neck_canonical (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

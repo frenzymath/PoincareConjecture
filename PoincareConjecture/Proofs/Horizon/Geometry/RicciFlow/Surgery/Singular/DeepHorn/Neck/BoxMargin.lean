@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.ScalarMargin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.QuotientHomothety
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.DeepHorn
-
-
 
 theorem box_scalar_evolution_eq
     (hM04 : RicciFlowCurvatureTheory.{u}) (F : GeneralizedRicciFlowData.{u})
@@ -41,8 +32,6 @@ theorem box_scalar_evolution_eq
 end PoincareConjecture.DeepHorn
 
 namespace PoincareConjecture.GeneralizedStrongNeck
-
-
 
 theorem exists_box_scalar_time_derivative_margin
     (hM04 : RicciFlowCurvatureTheory.{u}) :

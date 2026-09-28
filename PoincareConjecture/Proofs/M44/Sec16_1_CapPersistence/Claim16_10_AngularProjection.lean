@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_CylinderP
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereTopology
 import PoincareConjecture.Proofs.M44.Mathlib.LocalHomeomorphDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 local notation "e" => EuclideanSpace.basisFun (Fin 3) ℝ
 
-
-
-
 theorem contMDiff_neck_sphere_coordinates
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
@@ -39,8 +26,6 @@ theorem contMDiff_neck_sphere_coordinates
     ContMDiff (𝓡 2) IC ∞ (N.coordinate_inverse ∘ f) :=
   fun z => (neck_inverse_contMDiffAt N (hmem z)).comp z (hf z)
 
-
-
 def neckSphereAngularMap
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
@@ -48,10 +33,6 @@ def neckSphereAngularMap
     (hmem : ∀ z, f z ∈ N.carrier) : C(UnitTwoSphere, UnitTwoSphere) :=
   ⟨fun z => (N.coordinate_inverse (f z)).1,
     (contMDiff_neck_sphere_coordinates N hf hmem).fst.continuous⟩
-
-
-
-
 
 theorem exists_neck_sphere_angular_cutoff {k : ℝ} (hk : 0 < k) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCircleArc
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -88,11 +77,6 @@ private theorem m65Arc_two_exterior_pins (p : Fin 3 → LoopCircle)
     · exact ⟨0, 2, by decide, h0, hex (by decide : (1 : Fin 3) ≠ 2) h1⟩
   · exact ⟨1, 2, by decide, hex (by decide : (0 : Fin 3) ≠ 1) h0,
       hex (by decide : (0 : Fin 3) ≠ 2) h0⟩
-
-
-
-
-
 
 theorem m65ThreePin_weak_arc_modulus (q : Fin 3 → LoopCircle)
     (hq : Function.Injective q) {η : ℝ} (hη : 0 < η) :

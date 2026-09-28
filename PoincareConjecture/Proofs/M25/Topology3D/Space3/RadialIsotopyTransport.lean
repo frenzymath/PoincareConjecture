@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem exists_radialStereo_transport_isotopy (v : E) (hv : ‖v‖ = 1)
     (Φ : ℝ → Diffeomorph 𝓘(ℝ, (ℝ ∙ v)ᗮ × ℝ) 𝓘(ℝ, (ℝ ∙ v)ᗮ × ℝ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.ReactionSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.TensorReaction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +13,6 @@ namespace PoincareConjecture.AncientKappaRoundness
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 def tensorPinchingCone (c : ℝ) : Set (TensorFiber E 2) :=
   operatorTensorEquiv.symm ⁻¹' pinchingCone c
@@ -66,7 +56,6 @@ theorem tensorPinchingCone_transport_image
     obtain ⟨S, rfl⟩ := (transport e 2).surjective T
     exact ⟨S, (tensorPinchingCone_transport_iff e c S).mp hT, rfl⟩
 
-
 theorem tensorReaction_support_nonpos (hn : Module.finrank ℝ E = 3)
     {c : ℝ} (hc : 1 ≤ c) {T : TensorFiber E 2} (hT : T ∈ tensorPinchingCone c)
     (l : TensorFiber E 2 →L[ℝ] ℝ)
@@ -83,7 +72,6 @@ theorem tensorReaction_support_nonpos (hn : Module.finrank ℝ E = 3)
     rw [map_sub]
     simpa only [A, ContinuousLinearEquiv.apply_symm_apply] using hsupport _ hmem
   exact reaction_support_nonpos hn hc hT l' hsupport'
-
 
 theorem tensorReaction_inner_nonpos (hn : Module.finrank ℝ E = 3)
     {c : ℝ} (hc : 1 ≤ c) {q : TensorFiber E 2 × TensorFiber E 2}

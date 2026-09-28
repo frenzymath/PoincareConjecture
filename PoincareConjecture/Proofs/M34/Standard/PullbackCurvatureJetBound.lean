@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CurvatureJetNorm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
-
 
 theorem curvatureDerivativeNorm_bound_of_pullback_jets
     (n m : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :

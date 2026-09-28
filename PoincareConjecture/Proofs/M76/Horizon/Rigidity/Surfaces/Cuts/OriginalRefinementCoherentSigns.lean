@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalRefinementOrientation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalRefinementPairInjectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical AbstractSimplicialComplex
@@ -18,9 +10,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem original_refined_sorted_cross_cancellation
     (K : SimplicialComplex ℝ E) (number : E → ℕ) (sourceSign : Finset E → ZMod 2)
@@ -105,8 +94,6 @@ theorem original_refined_sorted_cross_cancellation
   linear_combination (norm := ring_nf) hsign
   simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, neg_zero]
 
-
-
 structure OriginalRefinementCoherentSigns
     (K : SimplicialComplex ℝ E) (number : E → ℕ) (sourceSign : Finset E → ZMod 2)
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (refinedNumber : (ℝ × ℝ) → ℕ)
@@ -136,8 +123,6 @@ structure OriginalRefinementCoherentSigns
     s.card = 2 → s ⊆ t.val → s ⊆ u.val →
     (sign t + boundaryFaceParity refinedNumber t.val s) +
       (sign u + boundaryFaceParity refinedNumber u.val s) = 1
-
-
 
 theorem nonempty_originalRefinementCoherentSigns
     (K : SimplicialComplex ℝ E) (number : E → ℕ) (hnumber : InjOn number K.vertices)
@@ -198,7 +183,6 @@ theorem nonempty_originalRefinementCoherentSigns
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem OriginalRefinementCoherentSigns.signed_edge_cross_eq
     {K : SimplicialComplex ℝ E} {number : E → ℕ} {sourceSign : Finset E → ZMod 2}
     {L : SimplicialComplex ℝ (ℝ × ℝ)} {refinedNumber : (ℝ × ℝ) → ℕ}
@@ -224,7 +208,6 @@ theorem OriginalRefinementCoherentSigns.signed_edge_cross_eq
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem OriginalRefinementCoherentSigns.edge_cross_ne_zero
     {K : SimplicialComplex ℝ E} {number : E → ℕ} {sourceSign : Finset E → ZMod 2}
     {L : SimplicialComplex ℝ (ℝ × ℝ)} {refinedNumber : (ℝ × ℝ) → ℕ}
@@ -249,7 +232,6 @@ theorem OriginalRefinementCoherentSigns.edge_cross_ne_zero
   simpa [Function.comp_def, p, hia, hib, hix] using planar_triangle_cross_ne_zero _ hind
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem OriginalRefinementCoherentSigns.signed_edge_scalar_parity
     {K : SimplicialComplex ℝ E} {number : E → ℕ} {sourceSign : Finset E → ZMod 2}
@@ -306,9 +288,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
 
 include hbound
-
-
-
 
 theorem exists_marked_planar_original_refinement_with_orientation
     (hpure : ∀ t ∈ K.faces, ∃ u ∈ K.faces, t ⊆ u ∧ u.card = 3)

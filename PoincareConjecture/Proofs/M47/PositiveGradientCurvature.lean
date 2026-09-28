@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositivePinching
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem curvature_norm_le_scalar_of_sectional_nonneg (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
@@ -53,9 +40,6 @@ theorem curvature_norm_le_scalar_of_sectional_nonneg (D : LeviCivitaData g)
   apply (sq_le_sq₀ hN hR).mp
   rw [hnorm, hscalar]
   nlinarith only [mul_nonneg ha hb, mul_nonneg ha hc, mul_nonneg hb hc]
-
-
-
 
 theorem curvature_norm_le_scalar_on_positive_flow
     [T2Space M] [CompactSpace M] [SecondCountableTopology M]

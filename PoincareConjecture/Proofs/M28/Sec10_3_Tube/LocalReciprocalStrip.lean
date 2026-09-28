@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFrontierHeight
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Regions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -54,7 +43,6 @@ private theorem subset_region_of_avoids_boundary_slices (N : EpsilonNeck g)
     exact (hfaces z.1).2 (hzEq ▸ hxT))
   refine ⟨N.coordinate_map_mem hzdom, ?_⟩
   simpa only [N.coordinate_inverse_coordinate_map hzdom] using And.intro hza hzb
-
 
 theorem signed_strip_subset_of_frontier_height_bounds_m28 (N P : EpsilonNeck g)
     (heq : P.epsilon = N.epsilon) (hsmall : N.epsilon ≤ 1 / 10000)
@@ -137,8 +125,6 @@ theorem signed_strip_subset_of_frontier_height_bounds_m28 (N P : EpsilonNeck g)
       have hyhi := hy.2.2
       nlinarith [Real.pi_le_four]
 
-
-
 theorem exists_reciprocal_strip_of_positive_frontier_contact_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -164,8 +150,6 @@ theorem exists_reciprocal_strip_of_positive_frontier_contact_m28 :
     (hε.trans ((min_le_right _ _).trans (min_le_left _ _))) heq ⟨x, hx, hxP⟩
   exact ⟨σ, hσ, signed_strip_subset_of_frontier_height_bounds_m28 N P heq
     (hε.trans ((min_le_right _ _).trans (min_le_right _ _))) hquarter hσ hh⟩
-
-
 
 theorem exists_shifted_slice_subset_positive_end_of_frontier_contact_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

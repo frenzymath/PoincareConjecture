@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.MaximalBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -91,8 +79,6 @@ theorem asymptoticVolumeRatioBasepointIndependent_of_nonneg_ricci
   rw [asymptoticVolumeRatio_eq_ofReal g D hn hc hRic p,
     asymptoticVolumeRatio_eq_ofReal g D hn hc hRic q,
     g.asymptoticVolumeRatio_eq_of_preconnected D hn hc hRic p q]
-
-
 
 theorem horizon_asymptoticVolumeRatioBishopGromov (n : ℕ)
     (P : AsymptoticVolumeRatioPredecessors.{u} n) :

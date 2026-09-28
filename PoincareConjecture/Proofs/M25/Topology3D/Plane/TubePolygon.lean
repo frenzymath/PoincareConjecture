@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.InscribedPolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.MonotoneChords
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_strict_circle_mesh {ε : ℝ} (hε : 0 < ε) :
     ∃ n : ℕ, 3 ≤ n ∧ ∃ s : Fin (n + 1) → ℝ,
@@ -45,9 +34,6 @@ theorem exists_strict_circle_mesh {ε : ℝ} (hε : 0 < ε) :
     change ((i.val + 1 : ℕ) : ℝ) * v - (i.val : ℝ) * v < ε
     push_cast
     nlinarith
-
-
-
 
 theorem exists_uniform_inscribed_tube_polygons
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

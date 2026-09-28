@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.TimeBracket
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Choice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -124,8 +114,6 @@ private theorem horizontalLieBilinear_eq (p : F.Point) (v w : F.Horizontal p) :
     horizontalLieBilinear p v w = horizontalMetricLieDerivative F p v w :=
   TensorialAt.mkHom₂_apply_eq_extend _ _ v w
 
-
-
 theorem horizontalMetricLieDerivative_on_differentiable_fields
     {V W : HorizontalSection F} {p : F.Point}
     (hV : MDifferentiableAt (spacetimeModel n)
@@ -221,8 +209,6 @@ theorem horizontalMetricLieDerivativeOnFields_smooth
     rfl
   exact ((hderiv.sub (horizontalPair_smooth (horizontalTimeBracket_smooth hv) hw)).sub
     (horizontalPair_smooth hv (horizontalTimeBracket_smooth hw))).contMDiffWithinAt
-
-
 
 theorem horizontalMetricLieDerivative_tensor :
     IsSmoothHorizontalCovariantTensor F (k := 2)

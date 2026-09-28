@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleConvexExtension
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace ContinuousMap
 
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace Y] [ContractibleSpace Y]
-
-
-
-
 
 theorem exists_intrinsicFrontier_extension_of_contractible {s : Set E}
     (hs : IsCompact s) (hc : Convex ℝ s) (hne : s.Nonempty)

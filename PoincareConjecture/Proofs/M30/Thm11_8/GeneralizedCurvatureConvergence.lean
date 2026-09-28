@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -30,9 +20,6 @@ open SpacetimeBounds
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem eventually_generalized_chart_curvature_error
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -158,9 +145,6 @@ theorem eventually_generalized_chart_curvature_error
   have H := hk p hp
   rw [hsource, htarget] at H
   simpa only [Real.dist_eq, abs_sub_comm] using H
-
-
-
 
 theorem eventually_generalized_curvature_error
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.BallBoundaryChart
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BoundedSide
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Rounding.CommonDisk
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_boundary_patch
     (a : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -56,8 +44,6 @@ theorem exists_boundary_patch
   change a (f t) = z
   rw [hft, hyz]
 
-
-
 theorem exists_boundary_coincidence
     (a b : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (f g : E2 → S2) {x : E2} (hx : x ∈ ball 0 1)
@@ -86,8 +72,6 @@ theorem exists_boundary_coincidence
       exact mem_image_of_mem a (f y).property
   · rintro z ⟨hzW, hzA⟩
     exact hV ⟨hzW.1, hzA⟩
-
-
 
 theorem exists_filled_coincidence_of_subset
     (a b : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -157,8 +141,6 @@ theorem exists_filled_coincidence_of_subset
   · intro z hz
     exact ⟨hz.1, hsub hz.2⟩
 
-
-
 theorem exists_preconnected_exterior_neighborhood
     (a : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (v : S2) {W : Set E3} (hWo : IsOpen W) (hvW : a v ∈ W) :
@@ -210,8 +192,6 @@ theorem exists_preconnected_exterior_neighborhood
       (convex_Ioi (0 : Real)).linear_preimage (LinearMap.snd Real _ _)
     exact ((convex_ball (0 : Hemisphere.Plane (v : E3) × Real) r).inter hhalf).isPreconnected.image
       q hqc.continuousOn
-
-
 
 theorem exists_opposite_filled_sides
     (a b : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

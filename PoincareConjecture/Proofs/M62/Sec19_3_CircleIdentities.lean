@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.RiemannRegularity
 import PoincareConjecture.Proofs.M04.CurvatureAlgebra
 import PoincareConjecture.Statements.M62Geometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.M62
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem circle_identities {p : ℝ} (C : CircleGeometry p) : CircleIdentities C := by
   let : ChartedSpace (EuclideanSpace ℝ (Fin 1)) (AddCircle p) := C.chartedSpace

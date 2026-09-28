@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.OriginalExteriorSubcomplex
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -19,11 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
-
 
 theorem exists_original_arc_exterior_model
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

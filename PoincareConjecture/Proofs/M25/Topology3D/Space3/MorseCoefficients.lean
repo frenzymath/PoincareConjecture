@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.LinearAlgebra.QuadraticForm.Basic
 import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_binary_quadratic_coefficients
     (hdim : Module.finrank ℝ E = 2) (A : E → E →L[ℝ] E →L[ℝ] ℝ)
@@ -76,9 +62,6 @@ theorem exists_binary_quadratic_coefficients
     generalize A (L p) = C
     simp only [hL p, map_add, map_smul, add_apply, smul_apply, smul_eq_mul]
     ring
-
-
-
 
 theorem exists_morse_quadratic_coefficients
     (hdim : Module.finrank ℝ E = 2) (f : E → ℝ) (hf : ContDiff ℝ ∞ f)

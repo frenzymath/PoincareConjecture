@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderRicciReadout
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderModelRicci
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -112,9 +102,6 @@ private theorem cylinder_ricci_model_quadratic (z : RoundCylinderSpace) (v : CE)
       (cylinderScalarCoordinateEquiv v).2 ^ 2 - (cylinderScalarCoordinateEquiv v).2 ^ 2) =
     ‖(cylinderScalarCoordinateEquiv v).1‖ ^ 2
   ring
-
-
-
 
 theorem exists_neck_ricci_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.BaseCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBaseModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,8 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
 
 open Classical in
-
-
 
 theorem vertex_base_certificates (p : (T.marked 2).vertices) :
     IsFinitePLBallPair P2 (T.surfaceBase {(p : E)})
@@ -157,14 +146,12 @@ theorem vertex_base_certificates (p : (T.marked 2).vertices) :
 
 open Classical in
 
-
 theorem vertex_base_ballPair (p : (T.marked 2).vertices) :
     IsFinitePLBallPair P2 (T.surfaceBase {(p : E)})
       (T.dualRegionRim {(p : E)} ∩ (T.marked 2).space) :=
   (T.vertex_base_certificates p).1
 
 open Classical in
-
 
 theorem exists_boundary_vertex_base_intervals (p : (T.marked 2).vertices)
     (hpfront : (p : E) ∈ (T.marked 1).space) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerIncide
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedFiber
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskEdgeWitnesses
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -60,9 +51,6 @@ private theorem exists_fiber_of_paired_ends {N : Set E} {a z q : E}
 
 variable [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
-
-
-
 
 theorem HamiltonProperDiskCoherentSides.exists_triangle_fiber
     (C : HamiltonProperDiskCoherentSides T c) (h3 : Module.finrank ℝ E = 3)
@@ -144,9 +132,6 @@ theorem HamiltonProperDiskCoherentSides.exists_triangle_fiber
       ⟨fun h => ((C.negative_agreement hs p q hps hqs).symm.subset ⟨hx, h⟩).2,
         fun h => ((C.negative_agreement hs p q hps hqs).subset ⟨hx, h⟩).2⟩
     exact he.trans (hneg r hr)
-
-
-
 
 theorem HamiltonProperDiskCoherentSides.exists_boundary_edge_fiber
     (C : HamiltonProperDiskCoherentSides T c) (h3 : Module.finrank ℝ E = 3)

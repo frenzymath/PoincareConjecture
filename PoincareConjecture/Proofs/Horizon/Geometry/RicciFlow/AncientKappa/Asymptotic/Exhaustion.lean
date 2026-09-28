@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Basic
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +12,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
-
 
 theorem exists_exhaustion_superset (G : AncientCompactTimeConvergence S)
     {A : Set G.limit.carrier.carrier}

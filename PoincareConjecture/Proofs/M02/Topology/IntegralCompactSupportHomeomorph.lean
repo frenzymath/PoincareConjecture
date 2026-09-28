@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomologyOpenMap
 import PoincareConjecture.Proofs.M02.Topology.IntegralRelativeChains
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalEdgeCofaceCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Polygons.TriangleEdgeSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -32,8 +23,6 @@ private theorem exists_lineMap_pos_mem {y v : V3} {U : Set V3}
   refine ⟨t, ⟨ht, ht1⟩, hball ?_⟩
   rw [Metric.mem_ball, Real.dist_eq, sub_zero, abs_of_pos ht]
   exact (min_le_left _ _).trans_lt (half_lt_self hdelta)
-
-
 
 theorem edge_chart_height_nonzero
     (F : W3 ≃ᴬ[ℝ] V3) {p q y : V3} {V : Set V3}
@@ -71,8 +60,6 @@ theorem edge_chart_height_nonzero
       (hzy.trans (AffineMap.lineMap_apply_zero y v).symm)
     exact ht.1.ne' htzero
   exact ⟨each p (left_mem_segment ℝ p q) hyp, each q (right_mem_segment ℝ p q) hyq⟩
-
-
 
 theorem edge_chart_triangle_halfInterval
     (F : W3 ≃ᴬ[ℝ] V3) {p q w y : V3} {V : Set V3}

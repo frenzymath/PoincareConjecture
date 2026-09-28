@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_le_pos_mul
     {f g : E → ℝ} {S : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -66,10 +52,6 @@ theorem FinitePiecewiseAffineOn.exists_le_pos_mul
   change a x - (1 + M) * b x ≤ 0 at hxA
   rw [← ha hxs, ← hb hxs] at hxA
   exact sub_nonpos.mp hxA
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_small_mul_lt_of_pos
     {f g : E → ℝ} {S : Set E} (hf : FinitePiecewiseAffineOn f S)

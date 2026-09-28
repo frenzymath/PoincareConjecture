@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.React
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction.CurvatureThree
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction.TwoFive
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

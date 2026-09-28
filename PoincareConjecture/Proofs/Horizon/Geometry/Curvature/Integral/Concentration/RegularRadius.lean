@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.PuncturedAscent
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PuncturedCover
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set Poincare.Alexandrov
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_regular_radius_function
     {X : Type*} [MetricSpace X]
@@ -43,8 +31,6 @@ theorem exists_regular_radius_function
   · intro p y hpy hy
     apply hascent p y hpy
     linarith [min_le_left (r p) R]
-
-
 
 theorem exists_regular_radius_finite_punctured_cover
     {X : Type*} [MetricSpace X]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerAlphaOneTests
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 
 namespace PoincareConjecture.M65Euler
 
-
-
-
 theorem identity_chart_coefficients {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (a : EuclideanSpace ℝ (Fin N)) :
@@ -36,9 +23,6 @@ theorem identity_chart_coefficients {N : ℕ}
   ext v w
   simp [RiemannianMetric.pullbackCoefficients, RiemannianMetric.euclideanCoefficients]
   rfl
-
-
-
 
 theorem scalar_weak_pairings {N : ℕ} {U : Set LoopPlane}
     (X : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) U)
@@ -62,10 +46,6 @@ theorem scalar_weak_pairings {N : ℕ} {U : Set LoopPlane}
   · simpa only [mul_comm] using hD
   · simpa only [neg_neg, EuclideanSpace.basisFun_apply, mul_comm] using
       (congrArg Neg.neg hw).symm
-
-
-
-
 
 theorem variational_chart_smooth {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
@@ -100,11 +80,6 @@ theorem variational_chart_smooth {N : ℕ}
   · simp only [identity_chart_coefficients]
     intro φ hφ hc hs
     exact variational_vector_equation g x hR X a hε hXcap hcmp φ hφ hc hs
-
-
-
-
-
 
 theorem minimum_representative_smooth_of_alphaOne {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

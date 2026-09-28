@@ -1,17 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CornerCaps
 import Mathlib.Analysis.Calculus.TangentCone.Real
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -20,7 +8,6 @@ open scoped ContDiff Topology Matrix
 namespace Poincare.Topology.Plane.Triangles
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 noncomputable def capExcess (F : OpenPartialHomeomorph (ℝ × ℝ) E) (ε : ℝ) (z : E) : ℝ :=
   (F.symm z).1 + (F.symm z).2 - ε
@@ -61,8 +48,6 @@ theorem capExcess_nonpos_on_cap
   rw [capExcess, F.left_inv (hsource hq)]
   exact sub_nonpos.mpr hq.2.2
 
-
-
 theorem cap_chord_fderiv
     (F : OpenPartialHomeomorph (ℝ × ℝ) E) (hF : ContDiffOn ℝ ∞ F F.source)
     {ε : ℝ} (hε : 0 < ε)
@@ -87,10 +72,6 @@ theorem cap_chord_fderiv
   have hline' := hline.hasDerivWithinAt.congr_of_mem hchord ht
   exact (hd.hasDerivWithinAt.derivWithin (uniqueDiffOn_Icc_zero_one t ht)).symm.trans
     (hline'.derivWithin (uniqueDiffOn_Icc_zero_one t ht))
-
-
-
-
 
 theorem cap_endpoint_transversality
     (F : OpenPartialHomeomorph (ℝ × ℝ) E)
@@ -172,9 +153,6 @@ theorem cap_endpoint_transversality
     simp
   · rw [capExcess_fderiv_apply F hI ε hq₂, ← hchord₂, hleft₂]
     simp
-
-
-
 
 theorem cap_endpoint_transversality_of_axis_maps
     (F : OpenPartialHomeomorph (ℝ × ℝ) E)

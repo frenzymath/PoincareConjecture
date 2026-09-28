@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Model
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,10 +7,6 @@ open Set Filter MeasureTheory
 open scoped ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
-
 
 theorem lintegral_cross_le {F G : ℝ → ℝ≥0∞} (hF : Measurable F) (hG : Measurable G)
     {a b c : ℝ} (hcross : ∀ t ∈ Ioo a b, ∀ s ∈ Ioo b c,
@@ -43,11 +28,6 @@ theorem lintegral_cross_le {F G : ℝ → ℝ≥0∞} (hF : Measurable F) (hG : 
   refine setLIntegral_mono' measurableSet_Ioo fun s hs => ?_
   exact setLIntegral_mono' measurableSet_Ioo fun t ht => hcross t ht s hs
 
-
-
-
-
-
 theorem angular_lintegral_cross_le {Ω : Type*} [MeasurableSpace Ω]
     (μ : Measure Ω) {A B : Ω → ℝ≥0∞} {C D : ℝ≥0∞}
     (hA : Measurable A) (hB : Measurable B)
@@ -55,9 +35,6 @@ theorem angular_lintegral_cross_le {Ω : Type*} [MeasurableSpace Ω]
     (∫⁻ ω, B ω ∂μ) * C ≤ (∫⁻ ω, A ω ∂μ) * D := by
   rw [← lintegral_mul_const C hB, ← lintegral_mul_const D hA]
   exact lintegral_mono hcross
-
-
-
 
 theorem angular_cumulative_cross_le {Ω : Type*} [MeasurableSpace Ω]
     (μ : Measure Ω) {F : Ω → ℝ → ℝ≥0∞} {G : ℝ → ℝ≥0∞}
@@ -107,8 +84,6 @@ theorem angular_cumulative_cross_le {Ω : Type*} [MeasurableSpace Ω]
     _ ≤ A * C + A * D := by
       simpa [add_comm] using add_le_add_left hBC (A * C)
     _ = A * (C + D) := by rw [mul_add]
-
-
 
 theorem antitoneOn_angular_cumulative_ratio {Ω : Type*} [MeasurableSpace Ω]
     (μ : Measure Ω) {F : Ω → ℝ → ℝ≥0∞} {G : ℝ → ℝ≥0∞} {R : ℝ}

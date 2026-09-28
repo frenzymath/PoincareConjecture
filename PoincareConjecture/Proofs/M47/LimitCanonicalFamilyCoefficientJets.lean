@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundCoefficientJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +31,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_eventually_family_bilinear_jets
     (P : M47Predecessors.{u}) (q : G.limit.sliceCarrier.carrier) (m : ℕ)

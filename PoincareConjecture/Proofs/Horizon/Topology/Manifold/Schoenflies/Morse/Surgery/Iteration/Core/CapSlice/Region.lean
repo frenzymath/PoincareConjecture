@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCir
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.ParallelDisks.Charts
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
 
 theorem exists_disk_neighborhood_of_frontier_subset_circle
     {C : S1 → S2} (hC : ContMDiff (𝓡 1) (𝓡 2) ∞ C)

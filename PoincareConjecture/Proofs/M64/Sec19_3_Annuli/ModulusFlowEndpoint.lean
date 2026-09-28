@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusForwardEndpoint
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CurvatureSupremum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.LeastAreaContinuity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusFlow_forward_on_Ico_of_on_Ioo
     (hcompact : IsCompact (univ : Set M)) (hcirc : 0 < circumference)

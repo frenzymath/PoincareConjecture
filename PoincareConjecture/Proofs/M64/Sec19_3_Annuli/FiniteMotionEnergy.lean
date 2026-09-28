@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionTangent
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,19 +16,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin k)) N] [IsManifold (𝓡 k) ∞ N]
   {a b : ℝ}
 
-
-
-
-
 def m64AmbientMotionEnergy (F : RicciFlow k N (Icc a b))
     (time : ℝ) (Phi : ℝ × M → N) (w : ℝ × TangentBundle (𝓡 n) M) : ℝ :=
   (1 / 2 : ℝ) * (F.metric (time + w.1)).inner (Phi (w.1, w.2.proj))
     (m64AmbientMotionTangent (n := n) Phi w).snd
     (m64AmbientMotionTangent (n := n) Phi w).snd
-
-
-
-
 
 theorem m64AmbientMotionEnergy_contMDiffOn (F : RicciFlow k N (Icc a b))
     (time : ℝ) {T : Set ℝ} (hT : IsOpen T) {O : Set M} (hO : IsOpen O)
@@ -56,10 +44,6 @@ theorem m64AmbientMotionEnergy_contMDiffOn (F : RicciFlow k N (Icc a b))
   simp only [Bundle.Trivial.fiberBundle_trivializationAt',
     Bundle.Trivial.trivialization_apply] at hh
   exact (contMDiffAt_const.mul hh).contMDiffWithinAt
-
-
-
-
 
 theorem m64TangentScalar_timePartial_continuousOn {T : Set ℝ} (hT : IsOpen T)
     {V : Set (TangentBundle (𝓡 n) M)} (hV : IsOpen V)

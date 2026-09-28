@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateOperatorBounds
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceJetFluxParameters
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
 
 theorem norm_curvature_le_of_raw_bound {n : ℕ} (R : FS n) {C : ℝ}
     (hC : ∀ l j k m, |raw R l j k m| ≤ C) : ‖R‖ ≤ (n : ℝ) ^ 4 * C := by
@@ -44,8 +31,6 @@ theorem norm_curvature_le_of_raw_bound {n : ℕ} (R : FS n) {C : ℝ}
   convert h3 using 1
   ring
 
-
-
 theorem inverseMetricThreeJet_bound (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ J : Jet (V n) (MetricCoefficient n) 3,
       ‖J‖ ≤ H →
@@ -57,9 +42,6 @@ theorem inverseMetricThreeJet_bound (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
     ((contDiffOn_inverseMetricThreeJet n).continuousOn.mono hKU)
   exact ⟨max C 1, le_max_right _ _, fun J hJ hell =>
     (hC J (hbox J hJ hell)).trans (le_max_left _ _)⟩
-
-
-
 
 theorem canonicalDomain_background_operatorNorm_bound
     (n : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :

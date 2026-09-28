@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringLiftRelative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -21,11 +10,6 @@ variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
   {p : E → X} (hp : IsCoveringMap p)
 
 include hp
-
-
-
-
-
 
 theorem exists_relative_deformation_lift {A : Set X} {f : C(X, X)}
     (H : (ContinuousMap.id X).HomotopyRel f A) (hf : ∀ x, f x ∈ A) :
@@ -50,10 +34,6 @@ theorem exists_relative_deformation_lift {A : Set X} {f : C(X, X)}
     exact hf (p z)
   · intro he
     exact ⟨e, hp.identityHomotopyLift_fixed H.toHomotopy (fun s => H.eq_fst s he) 1⟩
-
-
-
-
 
 theorem isConnected_preimage_of_deformation [ConnectedSpace E]
     {A : Set X} {f : C(X, X)}

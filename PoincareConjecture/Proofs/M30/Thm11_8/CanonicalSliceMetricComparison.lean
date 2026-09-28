@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.RelativeBilinearComparison
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.RelativeMetricReadout
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u v w
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem eventually_inverse_tangent_bound_of_finite_chart_jets
     {M : Type v} [TopologicalSpace M]

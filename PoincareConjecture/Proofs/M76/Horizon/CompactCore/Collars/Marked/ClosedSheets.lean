@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +19,6 @@ private theorem mem_closed_iff_of_preconnected
       ⟨a, ha, haS⟩ ⟨b, hb, (hcover hb).resolve_left hbS⟩
     exact havoid z hzs ⟨hzS, hzT⟩
   exact ⟨transfer hx hy, transfer hy hx⟩
-
-
 
 theorem exists_closed_strip_preserving_closed_sheets
     {A X : Type*} [TopologicalSpace A] [CompactSpace A] [TopologicalSpace X]

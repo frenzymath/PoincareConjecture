@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedRetainedSearch
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_normalized_open_region_search
     (F : SurgeryFlowData.{u}) {origin Q a : ℝ} (hQ : 0 < Q) (ha : a ≤ 0)

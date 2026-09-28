@@ -6,17 +6,6 @@ import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -24,8 +13,6 @@ open Set Function
 namespace PoincareConjecture.M25.Topology3D
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem flow_orbit_surjective [PreconnectedSpace X] (φ : Flow ℝ X)
     (hopen : ∀ x, IsOpenMap (fun t : ℝ => φ t x)) (x : X) :
@@ -48,8 +35,6 @@ theorem flow_orbit_surjective [PreconnectedSpace X] (φ : Flow ℝ X)
     (range_nonempty (fun t : ℝ => φ t x))
   exact range_eq_univ.mp heq
 
-
-
 def flowReturnTimes (φ : Flow ℝ X) (x : X) : AddSubgroup ℝ where
   carrier := {t | φ t x = x}
   zero_mem' := φ.map_zero_apply x
@@ -64,8 +49,6 @@ def flowReturnTimes (φ : Flow ℝ X) (x : X) : AddSubgroup ℝ where
       φ (-t) x = φ (-t) (φ t x) := congrArg (φ (-t)) ht.symm
       _ = x := by rw [← φ.map_add]; simp
 
-
-
 theorem flow_eq_iff_sub_mem_returnTimes (φ : Flow ℝ X) (x : X) (s t : ℝ) :
     φ s x = φ t x ↔ s - t ∈ flowReturnTimes φ x := by
   change φ s x = φ t x ↔ φ (s - t) x = x
@@ -77,8 +60,6 @@ theorem flow_eq_iff_sub_mem_returnTimes (φ : Flow ℝ X) (x : X) (s t : ℝ) :
     calc
       φ s x = φ t (φ (s - t) x) := by rw [← φ.map_add]; congr 1; ring
       _ = φ t x := congrArg (φ t) h
-
-
 
 theorem exists_positive_flow_period [CompactSpace X] [PreconnectedSpace X]
     (φ : Flow ℝ X) (hopen : ∀ y, IsOpenMap (fun t : ℝ => φ t y)) (x : X)
@@ -113,8 +94,6 @@ theorem exists_positive_flow_period [CompactSpace X] [PreconnectedSpace X]
     change φ (t + T) x = φ t x
     rw [φ.map_add]
     exact congrArg (φ t) hT.1.1
-
-
 
 theorem exists_flow_circle_homeomorph [CompactSpace X] [PreconnectedSpace X] [T2Space X]
     (φ : Flow ℝ X) (hopen : ∀ y, IsOpenMap (fun t : ℝ => φ t y)) (x : X)

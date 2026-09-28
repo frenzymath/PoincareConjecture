@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanFields
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +15,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem covariantDerivativeOnFields_mpullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {x : M}
@@ -43,7 +32,6 @@ theorem covariantDerivativeOnFields_mpullback
     hf hinv hmetric hY]
   simp only [mpullback_apply, hinv.self_of_nhds.self_apply_inverse,
     covariantDerivativeOnFields]
-
 
 theorem curvatureOnFields_mpullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {x : M}
@@ -117,7 +105,6 @@ section EuclideanSource
 
 variable {gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 theorem curvature_eq_pullback_euclidean
     (D : LeviCivitaData gE) (D' : LeviCivitaData h)
     {f : EuclideanSpace ℝ (Fin n) → N} {x : EuclideanSpace ℝ (Fin n)}
@@ -145,8 +132,6 @@ theorem curvature_eq_pullback_euclidean
   simpa only [V, A, mpullback_apply, FiberBundle.extend_apply_self,
     hinv.self_of_nhds.inverse_apply_self, curvature] using ht
 
-
-
 theorem curvatureTensor_eq_pullback_euclidean
     (D : LeviCivitaData gE) (D' : LeviCivitaData h)
     {f : EuclideanSpace ℝ (Fin n) → N} {x : EuclideanSpace ℝ (Fin n)}
@@ -162,8 +147,6 @@ theorem curvatureTensor_eq_pullback_euclidean
   unfold curvatureTensor
   rw [D.curvature_eq_pullback_euclidean D' hf hinv hmetric,
     hmetric.self_of_nhds, hinv.self_of_nhds.self_apply_inverse]
-
-
 
 theorem curvatureTensorNorm_eq_pullback_euclidean
     (D : LeviCivitaData gE) (D' : LeviCivitaData h)

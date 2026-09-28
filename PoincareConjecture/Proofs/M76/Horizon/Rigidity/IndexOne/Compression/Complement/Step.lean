@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Front
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.Frontier
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.SlabMap
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

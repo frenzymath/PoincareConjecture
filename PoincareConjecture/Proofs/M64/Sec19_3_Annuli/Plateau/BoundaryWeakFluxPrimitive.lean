@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M08.WeakMomentum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSlice
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +10,6 @@ open Set Filter MeasureTheory Metric Topology
 open scoped Topology ContDiff intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64WeakGreen_zero_boundary_primitive
     {P Q : ℝ → ℝ} (hP : IntegrableOn P (Icc (0 : ℝ) 1) volume)

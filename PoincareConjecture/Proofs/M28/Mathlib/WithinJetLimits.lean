@@ -2,22 +2,10 @@ import PoincareConjecture.Proofs.M28.Mathlib.UniformLimitsWithin
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem exists_contDiffOn_of_locallyUniform_withinJet_limits
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

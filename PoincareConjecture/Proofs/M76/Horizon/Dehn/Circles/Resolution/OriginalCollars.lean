@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.PairedOrien
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.ComponentRetention
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.OriginalPairedSourceAnnuli
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -26,8 +18,6 @@ local notation "Q2" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
-
 
 structure PairedCircleCollars (D : OrdinaryIntervalMarkedModel old i) (L d : ℝ) where
   length_pos : 0 < L
@@ -54,8 +44,6 @@ structure PairedCircleCollars (D : OrdinaryIntervalMarkedModel old i) (L d : ℝ
     (u : Icc (-d) d) (p : squareAnnulus L d),
       (p : P2) = annulusMap L length_pos ((s : AddCircle (4 * L)), u) →
       f ((collar j).chart p) = tube (sourceTubeDiagonal j u, s)
-
-
 
 theorem OrdinaryIntervalMarkedModel.nonempty_paired_circle_collars
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R)

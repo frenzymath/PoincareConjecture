@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerNearLaplacianDecay
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +9,6 @@ open scoped Topology
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suDyadic_holder_limit {X E : Type*} [MetricSpace X]
     [NormedAddCommGroup E] [CompleteSpace E] {S : Set X}

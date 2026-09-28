@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.DoubleProductRicci
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +24,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem auxiliaryCircle_curvatureTensorNorm_eq
     (P : M62.CircleProductData F circumference) (time : ℝ) (q : P.charts.Point) :
@@ -105,16 +92,12 @@ theorem auxiliaryCircle_curvatureTensorNorm_eq
     Finset.sum_const_zero, add_zero]
   rfl
 
-
-
 theorem auxiliaryCircle_double_curvatureTensorNorm_eq
     (P : M62.CircleProductData F circumference)
     (Q : M62.CircleProductData P.flow auxiliary) (time : ℝ) (q : Q.charts.Point) :
     (Q.flow.connection time).curvatureTensorNorm q =
       (F.connection time).curvatureTensorNorm q.1.1 := by
   rw [auxiliaryCircle_curvatureTensorNorm_eq Q, auxiliaryCircle_curvatureTensorNorm_eq P]
-
-
 
 theorem auxiliaryCircle_sectional_abs_le
     (P : M62.CircleProductData F circumference)
@@ -124,8 +107,6 @@ theorem auxiliaryCircle_sectional_abs_le
       (F.connection time).curvatureTensorNorm q.1.1 := by
   rw [← auxiliaryCircle_double_curvatureTensorNorm_eq P Q time q]
   exact (Q.flow.connection time).abs_sectionalCurvature_le_curvatureTensorNorm q u v
-
-
 
 theorem auxiliaryCircle_curvatureSupremum_eq
     (P : M62.CircleProductData F circumference) (time : ℝ) :
@@ -139,15 +120,11 @@ theorem auxiliaryCircle_curvatureSupremum_eq
   · rintro ⟨q, rfl⟩
     exact ⟨(q, P.circle.quotient 0), auxiliaryCircle_curvatureTensorNorm_eq P time _⟩
 
-
-
 theorem auxiliaryCircle_double_curvatureSupremum_eq
     (P : M62.CircleProductData F circumference)
     (Q : M62.CircleProductData P.flow auxiliary) (time : ℝ) :
     m64CurvatureSupremum Q.flow time = m64CurvatureSupremum F time := by
   rw [auxiliaryCircle_curvatureSupremum_eq Q, auxiliaryCircle_curvatureSupremum_eq P]
-
-
 
 theorem auxiliaryCircle_sectional_abs_le_supremum
     (P : M62.CircleProductData F circumference)

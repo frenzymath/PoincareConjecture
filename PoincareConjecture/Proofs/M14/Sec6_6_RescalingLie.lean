@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingCurvature
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,21 +15,15 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {time : X → ℝ} {I : SpacetimeInterval}
   (S : GeneralizedFlowSpacetime n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 noncomputable def rescalingHorizontalSection (V : HorizontalSection S) :
     HorizontalSection (M13.parabolicSpacetime S Q hQ a) :=
   fun p => M13.parabolicSpacetimeHorizontal S Q hQ a p (V p)
-
-
 
 theorem rescalingHorizontalSection_smooth (V : HorizontalSection S) (U : Set S.Point)
     (hV : IsSmoothHorizontalSectionOn S V U) :
     IsSmoothHorizontalSectionOn (M13.parabolicSpacetime S Q hQ a)
       (rescalingHorizontalSection S Q hQ a V) U :=
   (M13.parabolicSpacetimeHorizontal_smooth S Q hQ a).comp_contMDiffOn hV
-
-
 
 theorem rescalingTimeBracket (V : HorizontalSection S) (p : S.Point) :
     horizontalTimeBracket (M13.parabolicSpacetime S Q hQ a)
@@ -71,8 +57,6 @@ private theorem metricPair_mdifferentiableAt
     · exact (hW.contMDiffAt (hU.mem_nhds hp)).mdifferentiableAt (by simp)
   simp only [mdifferentiableAt_totalSpace] at ht
   exact ht.2
-
-
 
 theorem rescalingLieOnFields (U : Set S.Point) (hU : IsOpen U)
     (V W : HorizontalSection S) (hV : IsSmoothHorizontalSectionOn S V U)
@@ -108,8 +92,6 @@ theorem rescalingLieOnFields (U : Set S.Point) (hU : IsOpen U)
   simp only [mvfderiv_const, smul_zero, add_zero, map_smul, smul_apply, smul_eq_mul,
     M13.parabolicSpacetime_metric]
   field_simp [hQ.ne']
-
-
 
 theorem rescalingHorizontalLie
     (D : ∀ t, SpacetimeSliceGeometry S t)

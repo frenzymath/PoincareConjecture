@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachmen
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Marking
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +23,6 @@ private theorem norm_height_plane_sq {v : E3} (hv : ‖v‖ = 1)
   rw [norm_add_sq_real]
   simp [norm_smul, Real.norm_eq_abs, hv, inner_smul_left,
     Submodule.mem_orthogonal_singleton_iff_inner_right.mp q.property]
-
-
 
 def extendPlaneIsometry {v w : E3} (hv : ‖v‖ = 1) (hw : ‖w‖ = 1)
     (J : Hemisphere.Plane v ≃ₗᵢ[Real] Hemisphere.Plane w) : E3 ≃ₗᵢ[Real] E3 := by
@@ -75,8 +71,6 @@ theorem extendPlaneIsometry_toSphere {v w : E3} (hv : ‖v‖ = 1) (hw : ‖w‖
     ‖(J q : E3) + w‖⁻¹ • ((J q : E3) + w)
   rw [map_smul, hsum, hnorm]
 
-
-
 theorem exists_marked_ball_equivalence
     (B₁ B₂ : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (m₁ m₂ : E2 → S2)
@@ -117,8 +111,6 @@ theorem exists_marked_ball_equivalence
       rw [extendPlaneIsometry_toSphere]
       simp only [LinearIsometryEquiv.trans_apply, J₁.symm_apply_apply]
     rw [hP, ← hm₂ x hx, H₂.symm_apply_apply]
-
-
 
 theorem exists_ball_equivalence_fixing_common_disk
     (B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

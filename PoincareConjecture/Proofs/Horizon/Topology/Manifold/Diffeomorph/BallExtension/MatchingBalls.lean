@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -32,8 +23,6 @@ private theorem radial_representation_above_one {x : E3} (hx : 1 < ‖x‖)
   refine ⟨p.1, p.2, ?_, Real.exp_lt_exp.mp (hnorm.symm ▸ hr), hp.symm⟩
   apply Real.exp_lt_exp.mp
   simpa only [Real.exp_zero, hnorm] using hx
-
-
 
 theorem eq_iff_radial_of_matching_balls
     {M : Type*} [TopologicalSpace M]
@@ -89,8 +78,6 @@ theorem eq_iff_radial_of_matching_balls
   · rintro ⟨q, t, ht, rfl, rfl⟩
     exact hmatch q t ht
 
-
-
 theorem mem_matching_ball_overlap_iff
     {M : Type*} [TopologicalSpace M]
     (b₀ b₁ : OpenPartialHomeomorph E3 M)
@@ -125,8 +112,6 @@ theorem mem_matching_ball_overlap_iff
         Real.exp_lt_exp.mpr (show -p.2 < r by linarith [(abs_lt.mp ht).1])
     · exact (hmatch p.1 p.2 ht).symm.trans (congrArg b₀ hp)
 
-
-
 theorem inverse_of_matching_balls
     {M : Type*} [TopologicalSpace M]
     (b₀ b₁ : OpenPartialHomeomorph E3 M)
@@ -158,8 +143,6 @@ theorem inverse_of_matching_balls
       rw [← hn, ← hp, smul_smul, Real.exp_neg]
       congr 1
       field_simp
-
-
 
 theorem matching_ball_transition_source
     {M : Type*} [TopologicalSpace M]

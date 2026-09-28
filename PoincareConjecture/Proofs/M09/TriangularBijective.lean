@@ -1,7 +1,5 @@
 import Mathlib.Analysis.Normed.Operator.Prod
 
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M09

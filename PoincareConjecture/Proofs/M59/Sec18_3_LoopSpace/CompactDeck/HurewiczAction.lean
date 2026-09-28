@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M59.Sec4_1_Whiskering.GenLoopWhisker
 import PoincareConjecture.Proofs.M02.HurewiczInjectivity
 import PoincareConjecture.Statements.M40ComparisonHomotopy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -27,8 +14,6 @@ namespace PoincareConjecture.Proofs.M59
 
 open M02
 
-
-
 theorem homotopyGroupSingularHomologyMap_transport
     {X : Type u} [TopologicalSpace X] {n : ℕ} {x y : X}
     (p : Path x y) (a : HomotopyGroup.Pi (n + 1) X x) :
@@ -39,8 +24,6 @@ theorem homotopyGroupSingularHomologyMap_transport
   refine Quotient.inductionOn a ?_
   intro a
   exact genLoopSingularHomologyClass_boundaryTransport _ (TopCat.of X) p a
-
-
 
 theorem piThreeMap_eq_transport_of_homologyMap_eq_id
     {X : Type u} [TopologicalSpace X] [SimplyConnectedSpace X]
@@ -71,8 +54,6 @@ theorem piThreeMap_eq_transport_of_homologyMap_eq_id
       homotopyGroupSingularHomologyMap R (TopCat.of X) 2 x a ≫
         SSet.homologyMap (TopCat.toSSet.map (TopCat.ofHom f)) R 3 at hnat
   simpa only [hH', Category.comp_id] using hnat
-
-
 
 theorem compactThree_piThreeMap_eq_transport_of_homologyMap_eq_id
     (P02 : RepairedClosedTopologyProvider.{u})

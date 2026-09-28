@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.OpenAmbientSmoothResponse
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientClassicalExistence
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientClosedSmoothness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_common_ambient_spectral_family (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

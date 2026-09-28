@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76
@@ -69,4 +67,3 @@ theorem exists_short_relative_inward_strip
   exact ⟨δ,hδ,hδsmall,hshort,heq ▸ ((hO.inter hV).preimage continuous_subtype_val)⟩
 
 end PoincareConjecture.M76
-

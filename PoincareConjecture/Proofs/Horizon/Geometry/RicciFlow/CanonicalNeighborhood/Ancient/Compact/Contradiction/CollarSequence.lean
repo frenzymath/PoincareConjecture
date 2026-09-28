@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Contradiction.Sequence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.StrongCenters
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -38,15 +27,11 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 def HasStrongCollarCap (K : AncientKappaSolution 3 M) (epsilon C : ℝ) (p : M) : Prop :=
   ∃ A : CapCertificate (K.flow.metric 0),
     A.epsilon = epsilon ∧ A.cap_constant ≤ C ∧ p ∈ A.core ∧
       ∀ x ∈ A.carrier, x ∉ A.core →
         ∃ N : StrongEvolvingNeck K 0 epsilon, N.center = x
-
-
 
 theorem hasStrongCollarCap_of_toSmallBased
     (K : AncientKappaSolution 3 M) (p : M) {kappa epsilon C : ℝ}
@@ -64,8 +49,6 @@ theorem hasStrongCollarCap_of_toSmallBased
   change (equivShrink M).symm N.center = x
   rw [hN, Equiv.symm_apply_apply]
 
-
-
 theorem hasStrongCollarCap_fromNormalization
     {K : AncientKappaSolution 3 M} {p q : M} {epsilon C : ℝ}
     (A : AncientKappaNormalization K p 0)
@@ -81,8 +64,6 @@ theorem hasStrongCollarCap_fromNormalization
 end CompactKappa
 
 open CompactKappa
-
-
 
 theorem exists_smallBased_without_neighborhoods_strong_collars
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -133,8 +114,6 @@ theorem exists_smallBased_without_neighborhoods_strong_collars
     intro x hx hxcore
     obtain ⟨Q, hQ⟩ := hcollar x hx hxcore
     exact ⟨{ Q with }, hQ⟩
-
-
 
 theorem exists_normalized_bad_neighborhood_sequence_strong_collars
     (P : M26CanonicalNeighborhoodPredecessors.{u})

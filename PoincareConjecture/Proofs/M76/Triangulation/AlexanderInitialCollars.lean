@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRecursiveInitial
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_small_generic_vertex_halfSlabs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

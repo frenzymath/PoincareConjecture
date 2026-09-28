@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Data
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.LinearCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.DisjointStrips
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 
 variable {ua wa ub wb : ℝ}
   (P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb)
-
 
 noncomputable def strip : OpenPartialHomeomorph (ℝ × ℝ) M :=
   (P.linearCoordinates G.frame.symm G.parameter.open_target G.lower_smooth).trans C
@@ -76,8 +65,6 @@ theorem strip_axis_image (hab : a < b) :
       rw [image_image]
       exact image_congr (fun t _ => G.strip_axis P t)
     _ = _ := by rw [hf, G.graph_image]
-
-
 
 theorem exists_strip_region_width (hab : a < b) :
     ∃ δ > 0, δ ≤ P.radius ∧ ∀ t ∈ Icc (0 : ℝ) 1,

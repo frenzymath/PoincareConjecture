@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,12 +13,9 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
-
-
 def quadraticMinimumCapPoint (v : E3) (c r : Real) (x : Hemisphere.Plane v) : E3 :=
   ((Real.sqrt (minimumCapDenominator (‖x‖ ^ 2 / r ^ 2)))⁻¹ • x : Hemisphere.Plane v) +
     (c + ‖x‖ ^ 2) • v
-
 
 def quadraticMinimumCap (v : E3) (c r : Real) : Set E3 :=
   quadraticMinimumCapPoint v c r '' closedBall 0 (7 * r / 8)
@@ -81,8 +76,6 @@ private theorem mem_quadraticMinimumCap_of_radius
     change ((Real.sqrt (minimumCapDenominator u))⁻¹ •
       (Real.sqrt (minimumCapDenominator u) • q) : Hemisphere.Plane v) = q
     rw [smul_smul, inv_mul_cancel₀ (Real.sqrt_pos.mpr (minimumCapDenominator_pos u)).ne', one_smul]
-
-
 
 theorem mem_quadraticMinimumCap_iff {v : E3} (hv : ‖v‖ = 1)
     (c : Real) {r : Real} (hr : 0 < r) (y : E3) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -16,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
 
 noncomputable def faceFacetEquiv {n : ℕ} (hn : 0 < n)
     (t : K.FaceOfCard (n + 1)) :
@@ -53,14 +43,12 @@ noncomputable def faceFacetEquiv {n : ℕ} (hn : 0 < n)
 
 omit [DecidableEq E] in
 
-
 theorem card_face_facets {n : ℕ} (hn : 0 < n) (t : K.FaceOfCard (n + 1)) :
     Nat.card {s : K.FaceOfCard n // s.val ⊆ t.val} = n + 1 := by
   classical
   rw [← Nat.card_congr (K.faceFacetEquiv hn t), Nat.card_eq_finsetCard, t.property.2]
 
 omit [DecidableEq E] in
-
 
 theorem card_face_cofaces {n m : ℕ} (s : K.FaceOfCard n) :
     Nat.card {t : K.FaceOfCard m // s.val ⊆ t.val} =
@@ -74,7 +62,6 @@ theorem card_face_cofaces {n m : ℕ} (s : K.FaceOfCard n) :
   exact Nat.card_congr e
 
 omit [DecidableEq E] in
-
 
 theorem sum_original_coface_counts (hK : K.faces.Finite)
     {n : ℕ} (hn : 0 < n) [Fintype (K.FaceOfCard n)] :
@@ -109,7 +96,6 @@ theorem sum_original_coface_counts (hK : K.faces.Finite)
 open Classical in
 omit [DecidableEq E] in
 
-
 theorem original_face_coface_count_of_one_two
     (A : SimplicialComplex ℝ E) (hAK : A ≤ K) (hK : K.faces.Finite)
     {n : ℕ} (hn : 0 < n)
@@ -128,7 +114,6 @@ theorem original_face_coface_count_of_one_two
     Fintype.sum_one_two_add_card_subtype (fun s : K.FaceOfCard n => s.val ∈ A.faces)
 
 omit [DecidableEq E] in
-
 
 theorem original_face_coface_count_of_two
     (hK : K.faces.Finite) {n : ℕ} (hn : 0 < n)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Model.Normalization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.AxisReversal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +22,6 @@ private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
-
 
 theorem exists_buffered_terminal_model_normalization_with_common_preparation
     (data : TerminalSaddleData M P p e) (i : Fin 3)
@@ -118,7 +113,6 @@ theorem exists_buffered_terminal_model_normalization_with_common_preparation
     change (N ∘ Q) '' (m '' _) = _
     rw [terminalCylinder_eq_height_product]
     simpa only [m', image_image, Function.comp_apply] using hNimage
-
 
 theorem exists_terminal_model_normalization_with_common_preparation
     (data : TerminalSaddleData M P p e) (i : Fin 3)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthSpeed
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +19,6 @@ variable {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
   (hshort : v * (G.connection v).scalarCurvature z < 1 + gamma)
 
 include hsmall hdisjoint hshort
-
-
 
 theorem standard_initial_neck_ball_subset_sharp
     {x : StandardCapSpace} (hx : x ∈ N.patch.carrier)
@@ -130,8 +118,6 @@ theorem standard_initial_neck_ball_subset_sharp
         ring
       _ ≤ _ := ENNReal.ofReal_le_ofReal hdisplacement
   exact not_lt_of_ge haxis hstrict
-
-
 
 theorem standard_initial_neck_tip_distance_sharp
     {x : StandardCapSpace} (hx : x ∈ N.patch.carrier)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarHalfspaceCuts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Nontrivial E] [DecidableEq E]
   {ι κ : Type*} [Finite ι] [Nonempty ι] [Finite κ]
-
-
-
 
 theorem exists_finitePL_closedStar_chart_preserving_cut_family
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

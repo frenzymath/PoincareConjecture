@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.Punctured
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedSphereFiniteCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveFiberRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

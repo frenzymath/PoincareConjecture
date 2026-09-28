@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -63,8 +55,6 @@ theorem metricKappaNoncollapsed_of_scalar_comparison
   have hconstant : κ * (r / 9) ^ 3 = (κ / 729) * r ^ 3 := by ring
   rw [hconstant] at hvol
   exact hvol.trans (MeasureTheory.measure_mono hsub)
-
-
 
 theorem metricKappaNoncollapsed_of_scalar_monotone
     {M : Type u} [TopologicalSpace M]

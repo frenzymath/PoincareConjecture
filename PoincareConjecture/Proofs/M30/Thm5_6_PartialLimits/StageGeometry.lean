@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm1_34.LocalVolume
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,9 +11,6 @@ universe u
 namespace PoincareConjecture.M30
 
 open RiemannianMetric
-
-
-
 
 theorem exists_buffered_local_geometry_parameters
     (n : ℕ) (A rho v K : ℝ) (hn : 1 ≤ n) (hA : 0 < A)

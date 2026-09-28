@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Loca
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteDoubleRelation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

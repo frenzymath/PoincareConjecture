@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Normalization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -74,8 +66,6 @@ theorem separator_closedBall_subset_outer_interior
   have hlo := norm_ge_of_mem_outerOval hboundary
   have hhi := mem_closedBall_zero_iff.mp hq
   linarith
-
-
 
 theorem exists_nested_filled_disks :
     ∃ A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞,

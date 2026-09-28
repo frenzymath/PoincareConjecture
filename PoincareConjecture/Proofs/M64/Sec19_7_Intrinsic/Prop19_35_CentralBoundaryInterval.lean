@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalNormalCalculus
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_central_boundary_interval
     (N : IntrinsicAnnulus) {a b q : ℝ} (hab : a < b) (hq : 0 < q)

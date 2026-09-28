@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Mathlib.LocalSpatialJets
 import PoincareConjecture.Proofs.M32.Claim11_34.CylinderCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +12,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem blowupPullbackCoefficient_spatial_jet
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}
@@ -51,7 +33,6 @@ theorem blowupPullbackCoefficient_spatial_jet
   exact WithTop.coe_le_coe.mpr le_top
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem blowup_uniform_spatial_metricJets
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

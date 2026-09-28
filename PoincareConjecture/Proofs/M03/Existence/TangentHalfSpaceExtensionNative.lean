@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.HalfSpaceExtensionNative
 import PoincareConjecture.Proofs.M03.Existence.SmoothManifoldLocalFlowNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

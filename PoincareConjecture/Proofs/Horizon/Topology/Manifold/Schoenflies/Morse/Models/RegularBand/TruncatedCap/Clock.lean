@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.HeightStretch
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,9 +7,6 @@ open Set Function
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies.TruncatedCap
-
-
-
 
 theorem exists_clock {a : Real} (ha : 0 < a) (ha1 : a < 1) :
     ∃ φ : Real ≃ₘ[Real] Real, StrictMono φ ∧

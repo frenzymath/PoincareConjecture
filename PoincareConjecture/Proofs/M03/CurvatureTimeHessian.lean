@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.CurvatureTimeVariation
 import PoincareConjecture.Proofs.M03.CurvatureRicciDerivative
 import PoincareConjecture.Proofs.M03.ConnectionRateRicciSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 
@@ -325,7 +317,6 @@ theorem ricciFlow_curvature_time_derivative_pairing
   rw [hd.deriv, map_sub, sub_apply,
     hHess X Y Z W hX hY hZ hW, hHess Y X Z W hY hX hZ hW]
   ring
-
 
 theorem ricciFlow_connection_variation_pairing_eq_curvature_derivative_trace
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

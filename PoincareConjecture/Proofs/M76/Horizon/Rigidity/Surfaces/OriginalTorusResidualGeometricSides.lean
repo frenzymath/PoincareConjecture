@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusResidualSideOrder
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricWalkPaths
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

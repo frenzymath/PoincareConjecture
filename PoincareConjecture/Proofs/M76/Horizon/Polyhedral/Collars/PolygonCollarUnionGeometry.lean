@@ -1,13 +1,6 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

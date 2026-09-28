@@ -2,23 +2,12 @@ import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold
 
 namespace PoincareConjecture.M60
-
-
 
 theorem mfderiv_comp_smul
     {E F H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

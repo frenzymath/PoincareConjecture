@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,8 +17,6 @@ variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem covDerivAlong_add (Γ : E → E →L[ℝ] E →L[ℝ] E) (u : P → E)
     {V W : P → E} {p : P} (hV : DifferentiableAt ℝ V p)
     (hW : DifferentiableAt ℝ W p) (d : P) :
@@ -35,9 +24,6 @@ theorem covDerivAlong_add (Γ : E → E →L[ℝ] E →L[ℝ] E) (u : P → E)
       covDerivAlong Γ u V d p + covDerivAlong Γ u W d p := by
   simp only [covDerivAlong, fderiv_fun_add hV hW, add_apply, map_add]
   abel
-
-
-
 
 theorem covDerivAlong_harmonic_trace
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : P → E} {p : P} (d e : P)

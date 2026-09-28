@@ -2,16 +2,6 @@ import Mathlib.Topology.Connected.PathConnected
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem isCompact_univ_of_separated_product_line
     {X : Type u} {M : Type v} [TopologicalSpace X] [TopologicalSpace M]

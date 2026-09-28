@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClopenDomainFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem protected_frontiers_of_relative_open
     {X : Type*} [TopologicalSpace X] {P L R S : Set X}

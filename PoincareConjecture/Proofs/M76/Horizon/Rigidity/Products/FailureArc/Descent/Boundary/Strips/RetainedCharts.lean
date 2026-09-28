@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Strips.RimIntervals
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.FourIntervalDiskChart
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

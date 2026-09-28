@@ -1,14 +1,6 @@
 import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {X Y ι : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_open_ambient_agreement [Finite ι]
     (S : Set X) (O U : ι → Set X) (g : ι → X → Y)
@@ -51,8 +40,6 @@ theorem exists_open_ambient_agreement [Finite ι]
     by_contra hne
     have hxb : x ∈ bad i j := ⟨⟨hx.1.2, hx.2⟩, hne⟩
     exact hx.1.1 (mem_iUnion.mpr ⟨i, mem_iUnion.mpr ⟨j, subset_closure hxb⟩⟩)
-
-
 
 theorem exists_finite_shrunken_cover [T1Space X] [NormalSpace X]
     {S : Set X} (hS : IsCompact S) (O : ι → Set X) (hO : ∀ i, IsOpen (O i))

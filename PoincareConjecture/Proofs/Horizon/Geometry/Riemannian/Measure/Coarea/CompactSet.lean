@@ -2,18 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Cont
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.CompactSupport
 import Mathlib.MeasureTheory.Measure.HasOuterApproxClosed
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter MeasureTheory TopologicalSpace
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
-
 
 private theorem tendsto_integral_outerApprox_mul
     {X Y : Type*} [MeasurableSpace X] [TopologicalSpace Y]
@@ -41,7 +34,6 @@ private theorem tendsto_integral_outerApprox_mul
       (tendsto_pi_nhds.mp (HasOuterApproxClosed.tendsto_apprSeq hs) (f x))
     have hm := ht.mul_const (H x)
     by_cases hx : f x ∈ s <;> simpa [hx] using hm
-
 
 theorem PoincareConjecture.RiemannianMetric.integral_coarea_isCompact
     {n : ℕ} {M : Type*} [TopologicalSpace M]

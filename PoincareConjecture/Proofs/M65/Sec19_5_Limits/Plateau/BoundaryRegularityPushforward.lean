@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityConformalGreen
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,12 +49,6 @@ private theorem memLp_continuousOn_mul {K : Set LoopPlane} (hK : IsCompact K)
   filter_upwards [ae_restrict_mem hK.measurableSet] with z hz
   simpa only [Pi.mul_apply, norm_mul] using
     mul_le_mul_of_nonneg_right (hC z hz) (norm_nonneg (f z))
-
-
-
-
-
-
 
 theorem exists_boundary_halfDisk_pushforward_uniform :
     ∃ R : ℝ, 0 < R ∧ ∀ {p : ℂ}, ‖p‖ = 1 → ∀ r : ℝ, 0 < r → r ≤ R →
@@ -211,8 +195,6 @@ theorem exists_boundary_halfDisk_pushforward_uniform :
     rw [hi]
     ring
   simpa only [P, e, EuclideanSpace.basisFun_apply] using hfinish
-
-
 
 theorem exists_boundary_halfDisk_pushforward {p : ℂ} (hp : ‖p‖ = 1) :
     ∃ R : ℝ, 0 < R ∧ ∀ r : ℝ, 0 < r → r ≤ R →

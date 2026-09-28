@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.Tra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.DistanceCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalSphere
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_radialHomeomorph_of_singleton_horoball_of_spherical_level
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -66,8 +57,6 @@ theorem exists_radialHomeomorph_of_singleton_horoball_of_spherical_level
     change (g.edist p (G (θ, Real.expOrderIso t)).val).toReal = s
     rw [hG, Real.expOrderIso.symm_apply_apply]
     exact ht
-
-
 
 theorem exists_radialHomeomorph_of_singleton_horoball
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

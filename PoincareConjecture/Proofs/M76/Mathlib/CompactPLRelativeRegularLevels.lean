@@ -4,29 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLRegularLevels
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLevelSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_compact_PL_relative_regular_level
     {M E ι : Type*} [TopologicalSpace M] [T2Space M]

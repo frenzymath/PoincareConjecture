@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Adapters
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.ProjectedAreaEstimate
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -27,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   {approximation : M63RawApproximation F Gamma zeta}
   (S : M63ProductSolutionFamily (G.product circumference h) approximation)
 
-
-
 theorem m65FamilyAnnulusFlow (evolution : M64AnnulusEvolution G)
     (z w : LoopTwoSphere)
     (A : M64Annulus ((G.product circumference h).flow.metric a)
@@ -45,8 +35,6 @@ theorem m65FamilyAnnulusFlow (evolution : M64AnnulusEvolution G)
     (m63C2_of_m62 (S.shrinking z)) (m63C2_of_m62 (S.shrinking w))
     (S.ramp z a ha) (S.ramp w a ha) (S.degree_one z a ha) (S.degree_one w a ha)
   simpa only [S.initial_eq] using A
-
-
 
 theorem m65ProjectedAreaDifference_le_infimum
     (projection : ∀ t ∈ Set.Icc a b,
@@ -67,8 +55,6 @@ theorem m65ProjectedAreaDifference_le_infimum
     obtain ⟨_, _, harea⟩ := m65ProjectedDiskComparison (projection t t.2)
       (disks t t.2 _ _ A _ _ (S.projected_eq t z) (S.projected_eq t w)) D
     exact harea
-
-
 
 theorem m65FamilyAnnulusArea_le_initial
     (z w : LoopTwoSphere)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M10.PullbackMetric
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

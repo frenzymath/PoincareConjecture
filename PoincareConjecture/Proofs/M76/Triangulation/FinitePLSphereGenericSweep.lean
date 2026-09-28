@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ZeroChargeHeightPerturbation
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSphereTopology
 import PoincareConjecture.Proofs.M76.Mathlib.SinglePolygonPresentation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,12 +12,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem exists_generic_single_polygon_height_of_zero_charge
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

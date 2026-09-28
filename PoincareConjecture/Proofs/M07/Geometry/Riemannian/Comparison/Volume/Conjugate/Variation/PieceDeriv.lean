@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Piece
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ContDiff
 
@@ -25,16 +12,6 @@ namespace PoincareConjecture.ConjugateVariation
 open PoincareConjecture.ConnectionVariation
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
-
-
-
-
-
 
 theorem hasDerivAt_deriv_intervalIntegral_of_contDiffOn_box
     {F : ℝ → ℝ → ℝ} {a b s₀ r : ℝ} (hab : a ≤ b) (hr : 0 < r)
@@ -65,22 +42,9 @@ theorem hasDerivAt_deriv_intervalIntegral_of_contDiffOn_box
     exact (hasDerivAt_intervalIntegral_of_contDiffOn_box hab hr hF1 hσ).deriv
   exact (hasDerivAt_intervalIntegral_of_contDiffOn_box hab hr hG1 hs₀).congr_of_eventuallyEq hEq
 
-
-
 section Piece
 
 variable {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : ℝ × ℝ → E}
-
-
-
-
-
-
-
-
-
-
-
 
 theorem hasDerivAt_pieceEnergy {τ₀ τ₁ r : ℝ} {U : Set E}
     (hτ : τ₀ ≤ τ₁) (hr : 0 < r)
@@ -101,21 +65,6 @@ theorem hasDerivAt_pieceEnergy {τ₀ τ₁ r : ℝ} {U : Set E}
   exact hasDerivAt_intervalIntegral_of_contDiffOn_box
     (F := fun σ t => energyDensity G u ((0 : ℝ), (1 : ℝ)) (σ, t)) hτ hr hf1 hs'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hasDerivAt_deriv_pieceEnergy_chartIndexIntegrand {τ₀ τ₁ r : ℝ} {U : Set E}
     (hτ : τ₀ ≤ τ₁) (hr : 0 < r) (hU : IsOpen U)
     (hGsymm : ∀ x X Y, G x X Y = G x Y X)
@@ -130,7 +79,6 @@ theorem hasDerivAt_deriv_pieceEnergy_chartIndexIntegrand {τ₀ τ₁ r : ℝ} {
     (hj₁ : covDerivAlong Γ u (fun q => fderiv ℝ u q (1, 0)) (1, 0) (0, τ₁) = 0) :
     HasDerivAt (deriv (fun s => ∫ t in τ₀..τ₁, energyDensity G u (0, 1) (s, t)))
       (∫ t in τ₀..τ₁, chartIndexIntegrand G Γ u t) 0 := by
-
 
   have hf2 : ContDiffOn ℝ 2 (energyDensity G u ((0 : ℝ), (1 : ℝ)))
       (Set.Ioo ((0 : ℝ) - r) ((0 : ℝ) + r) ×ˢ Set.Ioo (τ₀ - r) (τ₁ + r)) := by
@@ -149,32 +97,14 @@ theorem hasDerivAt_deriv_pieceEnergy_chartIndexIntegrand {τ₀ τ₁ r : ℝ} {
 
 end Piece
 
-
-
-
-
-
 section Sum
 
 variable {N : ℕ} {f f' : ℕ → ℝ → ℝ} {L : ℕ → ℝ} {ε : ℝ}
-
-
-
 
 private theorem funext_sum_range (g : ℕ → ℝ → ℝ) (n : ℕ) :
     (fun s : ℝ => ∑ i ∈ Finset.range n, g i s) = ∑ i ∈ Finset.range n, g i := by
   funext s
   simp
-
-
-
-
-
-
-
-
-
-
 
 theorem hasDerivAt_deriv_sum (hε : 0 < ε)
     (hd : ∀ i < N, ∀ s ∈ Set.Ioo (-ε) ε, HasDerivAt (f i) (f' i s) s)
@@ -193,17 +123,11 @@ theorem hasDerivAt_deriv_sum (hε : 0 < ε)
     exact HasDerivAt.sum (fun i hi => hd2 i (Finset.mem_range.mp hi))
   exact hsum2.congr_of_eventuallyEq hEq
 
-
-
 theorem deriv_deriv_sum_eq (hε : 0 < ε)
     (hd : ∀ i < N, ∀ s ∈ Set.Ioo (-ε) ε, HasDerivAt (f i) (f' i s) s)
     (hd2 : ∀ i < N, HasDerivAt (f' i) (L i) 0) :
     deriv (deriv (fun s => ∑ i ∈ Finset.range N, f i s)) 0 = ∑ i ∈ Finset.range N, L i :=
   (hasDerivAt_deriv_sum hε hd hd2).deriv
-
-
-
-
 
 theorem continuousAt_sum (hε : 0 < ε)
     (hd : ∀ i < N, ∀ s ∈ Set.Ioo (-ε) ε, HasDerivAt (f i) (f' i s) s) :
@@ -211,8 +135,6 @@ theorem continuousAt_sum (hε : 0 < ε)
   rw [funext_sum_range f N]
   exact (HasDerivAt.sum
     (fun i hi => hd i (Finset.mem_range.mp hi) 0 ⟨by linarith, hε⟩)).continuousAt
-
-
 
 theorem sum_nonneg_of_isLocalMin (hε : 0 < ε)
     (hd : ∀ i < N, ∀ s ∈ Set.Ioo (-ε) ε, HasDerivAt (f i) (f' i s) s)

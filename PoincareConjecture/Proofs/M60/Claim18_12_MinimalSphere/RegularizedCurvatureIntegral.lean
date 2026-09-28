@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundGreen
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +10,6 @@ open MeasureTheory Filter
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60RoundSphere_curvature_integral_of_differential_inequality
     (D : LeviCivitaData m60RoundSphereMetric) {q k : UnitTwoSphere → ℝ}

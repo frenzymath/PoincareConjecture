@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -20,8 +12,6 @@ open PoincareConjecture
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_ball_neighborhood_matching_boundary_collar
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M]

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalSegments
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.TwoSegmentGermDegree
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Filter
 
@@ -41,7 +32,6 @@ theorem face_card_le_two_of_polygon_carrier
     ((subset_convexHull ℝ _).trans hj)).trans
       ((Finset.card_insert_le _ _).trans (by simp))
 
-
 theorem polygon_carrier_two_neighbors
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     {n : ℕ} (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
@@ -53,8 +43,6 @@ theorem polygon_carrier_two_neighbors
   exact K.ncard_neighborSet_eq_two_of_local_segments hK
     (fun s hs ↦ K.face_card_le_two_of_polygon_carrier P hPK.symm.subset hs)
     v.property hu hw huw.subset (by simpa only [hPK] using hlocal)
-
-
 
 theorem exists_exact_cyclic_polygon_of_polygon_carrier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hconn : IsConnected K.space)
@@ -167,8 +155,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_exact_model_circle_order
     {X ι : Type*} [TopologicalSpace X]

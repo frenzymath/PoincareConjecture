@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCompleteFlow
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {M A : Type*} [TopologicalSpace M] [TopologicalSpace A]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) A]
-
-
 
 theorem terminalCurvature_flow_sphere_differential
     (V : (x : M) → TangentSpace (𝓡 3) x) (Phi : ℝ → M → M)
@@ -79,8 +69,6 @@ theorem terminalCurvature_flow_sphere_differential
       (s, (0 : EuclideanSpace ℝ (Fin 2))) + (0, a) := by simp
   change DQ (s, a) = _
   rw [hsplit, map_add, ht, hx]
-
-
 
 theorem terminalCurvature_flow_sphere_bijective
     (V : (x : M) → TangentSpace (𝓡 3) x) (Phi : ℝ → M → M)

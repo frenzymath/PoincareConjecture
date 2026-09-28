@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.PhaseInjection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.InwardMotion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -23,8 +15,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 
 private instance : Fact (0 < (4 * (128 : ℝ))) := ⟨by norm_num⟩
-
-
 
 theorem exists_sourcePhase_inward_motion
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3)

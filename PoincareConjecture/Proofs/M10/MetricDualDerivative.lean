@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,14 +10,12 @@ namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
 theorem metricDual_contDiffAt {B : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → ℝ} {y : E}
     (hB : ContDiffAt ℝ 1 B y) (hf : ContDiffAt ℝ 2 f y)
     (hi : (B y).IsInvertible) :
     ContDiffAt ℝ 1 (fun z ↦ (B z).inverse (fderiv ℝ f z)) y := by
   exact (hi.contDiffAt_map_inverse.comp y hB).clm_apply
     (hf.fderiv_right (by norm_num))
-
 
 theorem metricDual_fderiv_identity
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → ℝ} {y : E}

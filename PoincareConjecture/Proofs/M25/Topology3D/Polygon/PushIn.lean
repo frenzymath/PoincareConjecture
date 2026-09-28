@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CornerPush
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.VertexReplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,24 +12,17 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
 
-
-
 noncomputable def polygonPushVertex (p : Polygon E n) (k : Fin n) (t : ℝ) : Polygon E n :=
   polygonReplaceVertex p k (cornerPushPoint (p k) (p ((finRotate n).symm k))
     (p (finRotate n k)) t)
-
 
 theorem polygonPushVertex_zero (p : Polygon E n) (k : Fin n) :
     polygonPushVertex p k 0 = p := by
   rw [polygonPushVertex, cornerPushPoint_zero, polygonReplaceVertex_self]
 
-
-
 theorem polygonPushVertex_one_vertex (p : Polygon E n) (k : Fin n) :
     polygonPushVertex p k 1 k = midpoint ℝ (p ((finRotate n).symm k)) (p (finRotate n k)) := by
   rw [polygonPushVertex, polygonReplaceVertex_apply_same, cornerPushPoint_one]
-
-
 
 theorem polygonPushVertex_boundary_sdiff_triangle (p : Polygon E n) (k : Fin n)
     {t : ℝ} (ht : t ∈ Icc 0 1) :
@@ -103,8 +85,6 @@ theorem polygonPushVertex_boundary_sdiff_triangle (p : Polygon E n) (k : Fin n)
 
 end Module
 
-
-
 theorem IsSimplePolygon.isSimple_polygonPushVertex {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ} {p : Polygon E n}
     (hp : IsSimplePolygon p) (k : Fin n) (had : IsAdmissibleVertex p k)
@@ -134,8 +114,6 @@ theorem IsSimplePolygon.isSimple_polygonPushVertex {E : Type*}
   have hcorner := cornerPushPoint_simple_corner ha hb hinter ht
   exact hp.isSimple_polygonReplaceVertex_of_admissible k had _
     (cornerPushPoint_mem_triangle _ _ _ ht) hcorner.1 hcorner.2.1 hcorner.2.2
-
-
 
 theorem contDiff_polygonPushVertex_apply {W E : Type*}
     [NormedAddCommGroup W] [NormedSpace ℝ W]

@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.BoxWorldline
 import PoincareConjecture.Proofs.M11.IntervalNeighborhood
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,14 +1,6 @@
 import Mathlib.Topology.Maps.Basic
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Topology.IsEmbedding
 
 variable {P X S : Type*} [TopologicalSpace P] [TopologicalSpace X]
   [TopologicalSpace S] [DiscreteTopology S]
-
-
-
 
 theorem exists_open_constant_neighborhood {b : P → X} (hb : IsEmbedding b)
     {a : P → S} {B : Set P} (hB : IsOpen B) (ha : ContinuousOn a B)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.InteriorRepairs.BranchCharts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.ClippedParameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -26,8 +18,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C} {step : Step s t}
   {K : SimplicialComplex ℝ A} {j : A → t.Carrier} {R : Set M}
-
-
 
 theorem Step.exists_planar_surface_parameterized_branch_chart
     (step : Step s t) (hK : K.faces.Finite)
@@ -92,4 +82,3 @@ theorem Step.exists_planar_surface_parameterized_branch_chart
   exact ⟨P, g, v, hP, hPs, hg, hgK, hright, hleft, hv, hvi, hint⟩
 
 end Geometry.OriginalPLTower
-

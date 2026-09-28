@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OldResolutionEnd
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.MarkedIntervalHomotopy
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.SquareTwoIntervalNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
-
 
 theorem MarkedResolutionEndData.eq
     {X : Type*} [TopologicalSpace X] {Z : Set X} {τ : ((ℝ × ℝ) × ℝ) → X}
@@ -41,7 +31,6 @@ theorem MarkedResolutionEndData.eq
   subst ra' rc' rl' rr' U' L' R'
   rfl
 
-
 theorem MarkedResolutionOldEndData.eq
     {X : Type*} [TopologicalSpace X] {Z : Set X} {τ : ((ℝ × ℝ) × ℝ) → X}
     {b : ℝ} {t : unitInterval} {d : MarkedResolutionEndData Z τ b t}
@@ -56,8 +45,6 @@ theorem MarkedResolutionOldEndData.eq
 end PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem marked_interval_chart_paths_homotopic
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

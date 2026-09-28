@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
-
-
 theorem m64ModulusEnergyDensity_contDiffOn
     (r : ℝ) {f : LoopPlane → M} {O : Set LoopPlane} (hO : IsOpen O)
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) ∞ f O) :
@@ -39,19 +24,11 @@ theorem m64ModulusEnergyDensity_contDiffOn
   exact (((contDiffAt_const.mul (m64AreaGram_entry_contDiffAt hfp 0 0)).add
     (contDiffAt_const.mul (m64AreaGram_entry_contDiffAt hfp 1 1))).div_const 2).contDiffWithinAt
 
-
-
-
-
 theorem m64ModulusEnergyDensity_nonneg (r : ℝ) (hr : 0 ≤ r)
     (f : LoopPlane → M) (p : LoopPlane) : 0 ≤ m64ModulusEnergyDensity g r f p := by
   exact div_nonneg (add_nonneg
     (mul_nonneg hr (m60AreaGram_diagonal_nonneg g f p 0))
     (mul_nonneg (inv_nonneg.mpr hr) (m60AreaGram_diagonal_nonneg g f p 1))) (by norm_num)
-
-
-
-
 
 theorem m64Annulus_modulus_conformal_on_interior_of_ae
     (A : M64Annulus g c0 c1) (r : ℝ)
@@ -76,10 +53,6 @@ theorem m64Annulus_modulus_conformal_on_interior_of_ae
   have hcross := MeasureTheory.Measure.eqOn_of_ae_eq (hconformal.mono fun _ h => h.2)
     (hcont 0 1) continuousOn_const hclosure
   exact fun p hp => ⟨hdiag hp, hcross hp⟩
-
-
-
-
 
 theorem m64Annulus_modulus_conformal_on_domain_of_ae
     (A : M64Annulus g c0 c1) (r : ℝ) {O : Set LoopPlane}
@@ -111,10 +84,6 @@ theorem m64Annulus_modulus_conformal_on_domain_of_ae
   exact fun p hp => ⟨hdiag.of_subset_closure (continuousOn_const.mul (hcont 0 0))
     (continuousOn_const.mul (hcont 1 1)) hsub hclosure hp,
     hcross.of_subset_closure (hcont 0 1) continuousOn_const hsub hclosure hp⟩
-
-
-
-
 
 theorem m64Annulus_modulus_conformal_fderiv_on_domain_of_ae
     (A : M64Annulus g c0 c1) (r : ℝ) {O : Set LoopPlane}

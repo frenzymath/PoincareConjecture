@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularSurgeryData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTransport
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ open scoped InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D.SurgeryCapTag
 
 variable {psi psiNew : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
-
 
 theorem cap_abs_height_bounds (C : SurgeryCapTag psi u)
     (y : E3) (hy : y ∈ C.cap) :
@@ -52,8 +40,6 @@ theorem cap_abs_height_bounds (C : SurgeryCapTag psi u)
     |⟪(u : E3), C.tube p⟫_ℝ - C.cutHeight| ≤ C.removal
   rw [C.tube_height p hp, habs]
   exact hb
-
-
 
 theorem exists_unique_retained_disc_of_height_avoidance
     (C : SurgeryCapTag psi u) (t : ℝ)
@@ -146,8 +132,6 @@ theorem exists_unique_retained_disc_of_height_avoidance
     · obtain ⟨q, hq⟩ := C.sourceCap_isConnected.nonempty
       exact False.elim (disjoint_left.mp hdis (hi hq) (h1 hq))
     · rfl
-
-
 
 theorem cap_disjoint_of_height_avoidance
     (C : SurgeryCapTag psi u) (N : SurgeryCapTag psiNew u)

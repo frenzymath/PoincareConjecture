@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ThickTorusMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 
 namespace ThickTorus
-
-
 
 noncomputable def firstCoordinates : ((ℝ × Circle) × Circle) ≃ₜ ((Circle × ℝ) × Circle) where
   toFun z := ((z.1.2, z.1.1 / 64), z.2)
@@ -25,8 +14,6 @@ noncomputable def firstCoordinates : ((ℝ × Circle) × Circle) ≃ₜ ((Circle
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
 
-
-
 noncomputable def secondCoordinates : ((ℝ × ℝ) × Circle) ≃ₜ ((Circle × ℝ) × ℝ) where
   toFun z := ((z.2, z.1.2 / 64), z.1.1)
   invFun z := ((z.2, 64 * z.1.2), z.1.1)
@@ -35,8 +22,6 @@ noncomputable def secondCoordinates : ((ℝ × ℝ) × Circle) ≃ₜ ((Circle �
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
 
-
-
 noncomputable def finalCoordinates : ((ℝ × ℝ) × ℝ) ≃ₜ CubeShell.Ambient where
   toFun z := ((4096 * z.1.2, z.2), z.1.1)
   invFun z := ((z.2, z.1.1 / 4096), z.1.2)
@@ -44,11 +29,6 @@ noncomputable def finalCoordinates : ((ℝ × ℝ) × ℝ) ≃ₜ CubeShell.Ambi
   right_inv z := Prod.ext (Prod.ext (by dsimp; ring) rfl) rfl
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
-
-
-
-
-
 
 theorem exists_openPartialHomeomorph :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

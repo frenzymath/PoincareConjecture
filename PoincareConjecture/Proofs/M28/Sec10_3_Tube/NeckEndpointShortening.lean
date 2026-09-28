@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckShortening
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckExcursionSubarcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_endpoint_neck_shortening (N : EpsilonNeck g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)

@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -22,9 +13,6 @@ variable {E J F K : Type*}
   [NormedAddCommGroup J] [NormedSpace ℝ J]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup K] [NormedSpace ℝ K]
-
-
-
 
 theorem second_fderiv_comp_of_contDiffAt {f : E → J} {g : J → F} {x : E}
     (hf : ContDiffAt ℝ ∞ f x) (hg : ContDiffAt ℝ ∞ g (f x)) (u v : E) :
@@ -52,9 +40,6 @@ theorem second_fderiv_comp_of_contDiffAt {f : E → J} {g : J → F} {x : E}
     Function.comp_apply, add_apply, zero_apply, map_zero, zero_add, add_zero, add_comm]
     using h
 
-
-
-
 theorem contDiffAt_secondDerivative_readout {g : J → F} {a b c d : K → J} {x : K}
     (hg : ContDiffAt ℝ ∞ g (a x)) (ha : ContDiffAt ℝ ∞ a x)
     (hb : ContDiffAt ℝ ∞ b x) (hc : ContDiffAt ℝ ∞ c x) (hd : ContDiffAt ℝ ∞ d x) :
@@ -63,10 +48,6 @@ theorem contDiffAt_secondDerivative_readout {g : J → F} {a b c d : K → J} {x
   have hg' := hg.fderiv_right (m := ∞) (by simp)
   have hg'' := hg'.fderiv_right (m := ∞) (by simp)
   exact (((hg''.comp x ha).clm_apply hb).clm_apply hc).add ((hg'.comp x ha).clm_apply hd)
-
-
-
-
 
 theorem contDiffAt_secondDerivativeJet_contraction {ι : Type*} [Fintype ι]
     {g : J → ℝ} (e : ι → E) {v : ι → J → E} {c : J → E}
@@ -95,16 +76,11 @@ theorem contDiffAt_secondDerivativeJet_contraction {ι : Type*} [Fintype ι]
   · exact ((hg.fderiv_right (m := ∞) (by simp)).comp x contDiffAt_fst).clm_apply
       (hA.clm_apply (hc.comp x contDiffAt_fst))
 
-
-
-
 noncomputable def secondDerivativeContractionReadout {X ι : Type*} [Fintype ι]
     (g : J → ℝ) (e : ι → E) (a : X → J) (b : X → E →L[ℝ] J)
     (d : X → E →L[ℝ] E →L[ℝ] J) (v : ι → X → E) (c : X → E) (x : X) : ℝ :=
   (∑ i, (fderiv ℝ (fderiv ℝ g) (a x) (b x (e i)) (b x (v i x)) +
     fderiv ℝ g (a x) (d x (e i) (v i x)))) - fderiv ℝ g (a x) (b x (c x))
-
-
 
 theorem continuousAt_secondDerivativeContractionReadout {X ι : Type*}
     [TopologicalSpace X] [Fintype ι]
@@ -125,18 +101,12 @@ theorem continuousAt_secondDerivativeContractionReadout {X ι : Type*}
         (hfirst.clm_apply ((hd.clm_apply continuousAt_const).clm_apply (hv i)))
   · exact hfirst.clm_apply (hb.clm_apply hc)
 
-
-
-
 noncomputable def secondDerivativeJetContraction {ι : Type*} [Fintype ι]
     (g : J → ℝ) (e : ι → E) (v : ι → J → E) (c : J → E)
     (y : J × (E →L[ℝ] J) × (E →L[ℝ] E →L[ℝ] J)) : ℝ :=
   (∑ i, (fderiv ℝ (fderiv ℝ g) y.1 (y.2.1 (e i)) (y.2.1 (v i y.1)) +
     fderiv ℝ g y.1 (y.2.2 (e i) (v i y.1)))) -
     fderiv ℝ g y.1 (y.2.1 (c y.1))
-
-
-
 
 theorem continuousAt_secondDerivativeJet_contraction {ι : Type*} [Fintype ι]
     {g : J → ℝ} (e : ι → E) {v : ι → J → E} {c : J → E}
@@ -164,17 +134,11 @@ theorem continuousAt_secondDerivativeJet_contraction {ι : Type*} [Fintype ι]
         (hfirst.clm_apply ((hB.clm_apply continuousAt_const).clm_apply hV))
   · exact hfirst.clm_apply (hA.clm_apply (hc.comp continuousAt_fst))
 
-
-
-
 noncomputable def secondDerivativeArrayContraction {X ι : Type*} [Fintype ι]
     (g : J → ℝ) (a : X → J) (b : ι → X → J) (d : ι → ι → X → J)
     (v : ι → ι → X → ℝ) (c : ι → X → ℝ) (x : X) : ℝ :=
   (∑ i, ∑ j, v i j x * (fderiv ℝ (fderiv ℝ g) (a x) (b i x) (b j x) +
     fderiv ℝ g (a x) (d i j x))) - ∑ i, c i x * fderiv ℝ g (a x) (b i x)
-
-
-
 
 theorem continuousAt_secondDerivativeArrayContraction {X ι : Type*}
     [TopologicalSpace X] [Fintype ι]
@@ -198,9 +162,6 @@ theorem continuousAt_secondDerivativeArrayContraction {X ι : Type*}
   · apply tendsto_finsetSum
     intro i _
     exact (hc i).mul (hfirst.clm_apply (hb i))
-
-
-
 
 theorem norm_coordinateDerivativeArray_le {ι : Type*} [Fintype ι]
     (e : ι → E) (he : ∀ i, ‖e i‖ ≤ 1) (z : J)

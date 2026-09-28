@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerClassicalEquation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerHarmonic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ universe u
 namespace PoincareConjecture.M65Euler
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem weak_chart_classical_harmonic
     {gE : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))} (DE : LeviCivitaData gE)
@@ -90,10 +75,6 @@ theorem weak_chart_classical_harmonic
       apply integral_congr_ae
       filter_upwards [ae_all_iff.mpr hD] with z hz
       simp only [Q, hz]
-
-
-
-
 
 theorem minimum_representative_harmonic {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

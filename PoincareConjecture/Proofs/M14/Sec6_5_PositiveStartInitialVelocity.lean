@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -39,9 +30,6 @@ private theorem inner_heq {q r : G.Point} (h : q = r)
   cases h
   cases hv
   rfl
-
-
-
 
 theorem positiveStart_initial_velocity_heq (R : M14SquareRootPath G p)
     (hp : MDifferentiableWithinAt (𝓘(ℝ, ℝ)) (spacetimeModel n)
@@ -98,9 +86,6 @@ theorem positiveStart_initial_velocity_heq (R : M14SquareRootPath G p)
   have hproj := projection_heq (G := G) hpoint (heq_of_eq hd)
   simpa only [map_smul, map_add, map_neg, horizontalProjection_timeVector_eq_zero,
     neg_zero, zero_add, G.spacetime.horizontalProjection_identity] using hproj
-
-
-
 
 theorem positiveStart_initial_velocity_norm (R : M14SquareRootPath G p)
     (hp : MDifferentiableWithinAt (𝓘(ℝ, ℝ)) (spacetimeModel n)

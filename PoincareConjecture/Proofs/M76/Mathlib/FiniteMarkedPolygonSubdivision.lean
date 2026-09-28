@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedPolygonSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {N : ℕ}
-
-
-
-
 
 theorem exists_subdivision_at_finite_marks (P : Polygon E (N + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

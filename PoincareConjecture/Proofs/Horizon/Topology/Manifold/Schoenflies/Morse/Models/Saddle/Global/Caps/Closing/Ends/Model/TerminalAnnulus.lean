@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Model.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Model.Annulus
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +34,6 @@ private theorem model_closure_strict_component
         Poincare.Geometry.Manifold.hasConnectedLowerSide_of_regular hh isOpen_univ
           (mem_univ x) (hreg x hxb)))
   simpa only [univ_inter] using heq.symm
-
-
-
 
 theorem exists_terminal_model_oriented_morse_cap
     (data : TerminalSaddleData M P p e) (i : Fin 3) :
@@ -116,9 +111,6 @@ theorem exists_terminal_model_oriented_morse_cap
       rw [heq]
       ring
 
-
-
-
 theorem physical_annulus_terminal_slices
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     (d : OpenPartialHomeomorph E2 S2) (hds : closedBall 0 1 ⊆ d.source)
@@ -183,8 +175,6 @@ theorem physical_annulus_terminal_slices
     have hhx := hboundary x hxb
     rw [hxe, hheight z t ⟨by linarith [ht.1], by linarith [ht.2]⟩] at hhx
     exact ht.2.ne hhx
-
-
 
 theorem exists_terminal_model_physical_annulus
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

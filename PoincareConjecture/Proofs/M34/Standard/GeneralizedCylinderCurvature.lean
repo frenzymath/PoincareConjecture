@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderRealization
 import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,7 +14,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem curvatures_eq_of_coordinate_germ
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

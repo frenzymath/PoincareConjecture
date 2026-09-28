@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.PathClassMap
 import PoincareConjecture.Proofs.M59.Mathlib.SimplyConnectedCharts
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -26,8 +16,6 @@ variable {X : Type u} [TopologicalSpace X] {x y x₀ : X}
 private instance : ContractibleSpace I :=
   (convex_Icc (0 : ℝ) 1).contractibleSpace ⟨0, le_rfl, zero_le_one⟩
 
-
-
 @[ext] theorem ext {a b : PathClassCover x₀} (h : a.endpoint = b.endpoint)
     (hc : HEq a.pathClass b.pathClass) : a = b := by
   cases a
@@ -36,27 +24,19 @@ private instance : ContractibleSpace I :=
   cases eq_of_heq hc
   rfl
 
-
-
 def basepointCongr (h : x = y) : PathClassCover x ≃ₜ PathClassCover y := by
   subst y
   exact Homeomorph.refl _
-
-
 
 @[simp] theorem basepointCongr_endpoint (h : x = y) (a : PathClassCover x) :
     (basepointCongr h a).endpoint = a.endpoint := by
   subst y
   rfl
 
-
-
 @[simp] theorem basepointCongr_basepoint (h : x = y) :
     basepointCongr h (basepoint x) = basepoint y := by
   subst y
   rfl
-
-
 
 theorem basepointCongr_mk_path (h : x = y) {z : X} (p : Path x z) :
     basepointCongr h ⟨z, .mk p⟩ = ⟨z, .mk (p.cast h.symm rfl)⟩ := by
@@ -72,8 +52,6 @@ private theorem interval_one :
     (endpointHomeomorph (0 : I)).symm 1 = ⟨1, .mk Path.id⟩ := by
   apply (endpointHomeomorph (0 : I)).injective
   simp
-
-
 
 noncomputable def pathFromBase (p : Path x y) :
     Path (basepoint x) (⟨y, .mk p⟩ : PathClassCover x) where
@@ -91,8 +69,6 @@ noncomputable def pathFromBase (p : Path x y) :
     rw [basepointCongr_mk_path]
     exact ext p.target (Path.Homotopic.hpath_hext (fun _ => rfl))
 
-
-
 @[simp] theorem endpoint_pathFromBase (p : Path x y) (t : I) :
     (pathFromBase p t).endpoint = p t := by
   change (basepointCongr p.source
@@ -101,19 +77,13 @@ noncomputable def pathFromBase (p : Path x y) :
   change p ((endpointHomeomorph (0 : I)).symm t).endpoint = p t
   rw [← endpointHomeomorph_apply, Homeomorph.apply_symm_apply]
 
-
-
 noncomputable def append (a : PathClassCover x₀) (b : PathClassCover a.endpoint) :
     PathClassCover x₀ :=
   ⟨b.endpoint, a.pathClass.trans b.pathClass⟩
 
-
-
 @[simp] theorem append_basepoint (a : PathClassCover x₀) : append a (basepoint a.endpoint) = a := by
   cases a
   simp [append, basepoint]
-
-
 
 theorem append_mem_sheet (a : PathClassCover x₀) {U : Set X}
     {b c : PathClassCover a.endpoint} (hc : c ∈ sheet U b) :
@@ -122,8 +92,6 @@ theorem append_mem_sheet (a : PathClassCover x₀) {U : Set X}
   refine ⟨p, hp, ?_⟩
   change a.pathClass.trans c.pathClass = (a.pathClass.trans b.pathClass).trans (.mk p)
   simp [he]
-
-
 
 theorem continuous_append [LocallySimplyConnectedSpace X] (a : PathClassCover x₀) :
     Continuous (append a) := by
@@ -138,8 +106,6 @@ theorem continuous_append [LocallySimplyConnectedSpace X] (a : PathClassCover x�
   change append a d ∈ sheet U b
   rw [← sheet_eq_of_mem (show append a c ∈ sheet U b from hc)]
   exact append_mem_sheet a hd
-
-
 
 instance pathConnectedSpace (x₀ : X) : PathConnectedSpace (PathClassCover x₀) where
   nonempty := ⟨basepoint x₀⟩

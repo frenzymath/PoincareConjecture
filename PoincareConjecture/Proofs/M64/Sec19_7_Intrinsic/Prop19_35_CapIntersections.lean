@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RetainedLoopCaps
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,10 +26,6 @@ private theorem common_sector_mem_axes {i j : Bool × Bool} (hij : i ≠ j)
       at heq1 heq2 ⊢ <;> dsimp at heq1 heq2 ⊢
   all_goals first | exact (hij rfl).elim | (left; linarith [hp.1, hw.1]) |
     (right; linarith [hp.2, hw.2])
-
-
-
-
 
 theorem m64Intrinsic_cap_inter_eq_common_axes
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ}
@@ -99,10 +84,6 @@ private theorem signed_axes_inter_horizontal {r : ℝ} (hr : 0 ≤ r) (i : Bool)
     refine ⟨⟨p, Or.inl hp, rfl⟩, ⟨p, Or.inl hp, ?_⟩⟩
     have hp0 : p.2 = 0 := hp.2
     simp [sectorParameterEquiv_apply, hp0]
-
-
-
-
 
 theorem m64Intrinsic_neighbor_caps_inter_horizontal
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 ≤ r)
@@ -163,10 +144,6 @@ private theorem signed_axes_inter_vertical {r : ℝ} (hr : 0 ≤ r) (j : Bool) :
     have hp0 : p.1 = 0 := hp.1
     simp [sectorParameterEquiv_apply, hp0]
 
-
-
-
-
 theorem m64Intrinsic_neighbor_caps_inter_vertical
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 ≤ r)
     (C : Bool × Bool → Set AnnulusCoordinates)
@@ -208,9 +185,6 @@ private theorem common_opposite_sector_eq_zero {i : Bool × Bool} {q : ℝ × �
     simp only [sectorParameterEquiv_apply, Bool.not_false, Bool.not_true,
       Bool.false_eq_true, ↓reduceIte] at heq1 heq2 ⊢ <;> dsimp at heq1 heq2 ⊢ <;>
     linarith [hp.1, hp.2, hw.1, hw.2]
-
-
-
 
 theorem m64Intrinsic_opposite_caps_inter
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 ≤ r)

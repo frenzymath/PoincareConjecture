@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapNeckImageIdentities
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
 
 theorem partialIsometry_neck_comparison (N : EpsilonNeck g)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)
@@ -49,8 +39,6 @@ theorem partialIsometry_neck_comparison (N : EpsilonNeck g)
   congr 1
   simp only [roundCylinderPullback, hchain, ContinuousLinearMap.comp_apply, Function.comp_apply]
   exact hmetric _ hzsource _ _
-
-
 
 theorem exists_partialIsometry_neck_image (N : EpsilonNeck g)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)

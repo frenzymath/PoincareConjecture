@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetVelocity
 import PoincareConjecture.Proofs.M14.Sec6_2_CurveVelocity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (θ : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
   (u : ℝ → G.gaugeCover.spatial b)
-
-
-
 
 theorem gaugeCurve_projectedVelocity {s : ℝ}
     (hθ : MDifferentiableAt (𝓘(ℝ, ℝ)) (𝓡∂ 1) θ s)
@@ -60,9 +49,6 @@ theorem gaugeCurve_projectedVelocity {s : ℝ}
   unfold projectedCurveVelocity
   rw [hd, map_add, map_smul, hzero, smul_zero, zero_add,
     G.spacetime.horizontalProjection_identity]
-
-
-
 
 theorem gaugeCurve_rawLIntegrand {s : ℝ}
     (hθ : MDifferentiableAt (𝓘(ℝ, ℝ)) (𝓡∂ 1) θ s)

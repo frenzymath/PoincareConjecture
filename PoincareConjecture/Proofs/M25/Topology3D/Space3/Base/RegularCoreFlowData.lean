@@ -6,23 +6,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import Mathlib.Data.Finset.Max
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.exists_common_seam_height
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -125,7 +114,6 @@ theorem FamilyCutState.exists_common_seam_height
         linarith
     · exact ⟨0, fun a hai has => (hl ⟨h a, hlower a hai has⟩).elim,
         fun a hai has => (hu ⟨h a, hupper a hai has⟩).elim⟩
-
 
 theorem FamilyCutState.exists_seam_source_half_neighborhood
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -272,7 +260,6 @@ theorem FamilyCutState.exists_seam_source_half_neighborhood
           ⟨q, (S.cap b.1).sourceCapInterior_subset hb, rfl⟩
         exact hother b.1 hba (by simpa only [b.2] using hy)
   exact ⟨hp, hsmall, hquarter, hinv, hxis, heq, hheight, hcore, hseam, hother⟩
-
 
 theorem FamilyCutState.exists_regular_core_flow_data
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Energy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -29,17 +17,11 @@ namespace Poincare
 
 namespace RicciFlow.Harnack
 
-
 theorem integrated_of_finite_origins {t₁ t₂ A B E : ℝ}
     (hfinite : ∀ᶠ T : ℝ in atBot,
       A * (t₁ - T) * E ≤ B * (t₂ - T)) :
     A * E ≤ B := by
   exact Poincare.Asymptotics.ancient_limit_of_scaled_inequality hfinite
-
-
-
-
-
 
 theorem integrated_of_finite_start
     {t₁ t₂ A B E : ℝ}
@@ -47,10 +29,6 @@ theorem integrated_of_finite_start
       A * (t₁ - T) * E ≤ B * (t₂ - T)) :
     A * E ≤ B := by
   exact Poincare.Asymptotics.ancient_limit_of_scaled_inequality finite
-
-
-
-
 
 theorem integrated_at_terminal_of_finite_origins
     {f q : ℝ → ℝ} {a b : ℝ} (hab : a < b)
@@ -61,11 +39,6 @@ theorem integrated_at_terminal_of_finite_origins
         f t * (t - T)) :
     f a * Real.exp (-(∫ s in a..b, q s) / 2) ≤ f b := by
   exact Poincare.Asymptotics.le_at_right_endpoint_of_finite_origins hab hf hqInt finite
-
-
-
-
-
 
 theorem integrated_at_terminal_of_finite_origins_flow
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -92,12 +65,6 @@ theorem integrated_at_terminal_of_finite_origins_flow
       intro t ht
       simpa [f, hγa] using finite t ht)
   simpa [f, hγa, hγb] using h
-
-
-
-
-
-
 
 theorem integrated_at_terminal_of_finite_origins_flow_of_regular
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -131,16 +98,10 @@ theorem integrated_at_terminal_of_finite_origins_flow_of_regular
   · exact henergy.intervalIntegrable_of_Icc (le_of_lt hab)
   · exact finite
 
-
-
-
-
-
 theorem differential_of_finite_origins {Q R t : ℝ}
     (finite : ∀ᶠ T : ℝ in atBot, 0 ≤ Q + R / (t - T)) :
     0 ≤ Q := by
   exact Poincare.Asymptotics.nonneg_of_eventually_add_div_nonneg finite
-
 
 theorem differential_at_zero_of_finite_origins {q r : ℝ → ℝ}
     (continuous : ContinuousWithinAt q (Iic 0) 0)
@@ -148,7 +109,6 @@ theorem differential_at_zero_of_finite_origins {q r : ℝ → ℝ}
       0 ≤ q t + r t / (t - T)) :
     0 ≤ q 0 := by
   exact Poincare.Asymptotics.nonneg_at_zero_of_finite_origins continuous finite
-
 
 theorem terminal_nonneg_of_negative
     {f : ℝ → ℝ} (continuous : ContinuousWithinAt f (Iic 0) 0)
@@ -160,15 +120,9 @@ end RicciFlow.Harnack
 
 end Poincare
 
-
-
-
-
 namespace Poincare.Geometry.RicciFlow.Harnack
 
 open PoincareConjecture
-
-
 
 theorem ancient_differential_of_finite
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -247,8 +201,6 @@ theorem ancient_differential_of_finite
         ((ricci_continuousOn_ancient F x v v).const_mul 2)
     exact Poincare.Asymptotics.nonneg_at_zero_of_nonneg_neg (hq 0 self_mem_Iic) hnegative
 
-
-
 theorem ancient_integrated_of_finite_integrated
     (hM04 : RicciFlowCurvatureTheory.{u})
     (finite_integrated :
@@ -310,7 +262,6 @@ theorem ancient_integrated_of_finite_integrated
     (fun s hs ↦ hbound s hs.2.le) γ (hγ.mono hIcc') x₁ (γ t) hγ₁ rfl
   dsimp [G, restrictFlow] at hfin
   exact hfin
-
 
 theorem with_ancient_harnack (hM04 : RicciFlowCurvatureTheory.{u})
     (H : HarnackAncientTheory.{u}) :

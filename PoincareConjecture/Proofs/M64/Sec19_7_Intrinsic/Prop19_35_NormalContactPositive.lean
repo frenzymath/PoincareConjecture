@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PeriodicFirstContact
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +9,6 @@ open Set
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_inner_boundary_injOn_period :
     InjOn (intrinsicAnnulusBoundary 1) (Ico (0 : ℝ) rampPeriod) := by
@@ -38,9 +23,6 @@ theorem m64Intrinsic_inner_boundary_injOn_period :
     simp only [intrinsicAnnulusBoundary, one_mul, Matrix.cons_val_one,
       Matrix.cons_val_fin_one] at h
     simpa only [Circle.coe_exp, Complex.exp_ofReal_mul_I_im] using h
-
-
-
 
 theorem m64Intrinsic_normal_collision_heights_pos
     {u : ℝ × ℝ → AnnulusCoordinates} {T : ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.RefinedFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ private theorem face_hull_subset_rectangle (p : Fin B.interface.count × Bool) {
   cases s
   · exact Or.inl hw
   · exact Or.inr hw
-
-
 
 theorem face_preimage_lower_axis (p : Fin B.interface.count × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) {w : Plane}
@@ -89,8 +78,6 @@ private theorem cell_eq_of_open_interval {i j : Fin B.interface.count} {t : ℝ}
   · have hle : i.succ ≤ j.castSucc := hij
     exact False.elim (not_lt_of_ge ((B.cut_strictMono.monotone hle).trans hj.1) hi.2)
 
-
-
 theorem lower_axis_mem_face_carrier_iff (i : Fin B.interface.count) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1)
     (hi : t ∈ Ioo (B.cut i.castSucc) (B.cut i.succ))
@@ -120,8 +107,6 @@ theorem lower_axis_mem_face_carrier_iff (i : Fin B.interface.count) {t : ℝ}
     rw [B.face_carrier_eq_coordinates]
     exact ⟨collarParameterEquiv.symm (t, 0), B.lower_axis_mem_hull i ⟨hi.1.le, hi.2.le⟩,
       B.face_lower_axis_map i t⟩
-
-
 
 theorem lower_axis_mem_open_edge (i : Fin B.interface.count) {t : ℝ}
     (hi : t ∈ Ioo (B.cut i.castSucc) (B.cut i.succ)) :
@@ -156,9 +141,6 @@ private theorem refined_vertex_mem_face_hull (p : Fin B.interface.count × Bool)
     exact ⟨x, hx, rfl⟩
   have hs := meshTriangleBasis_subset_support M u (subset_convexHull ℝ _ hr)
   simpa only [M, TriangleMesh.refineByLines_support, TriangleMesh.single_support] using hs
-
-
-
 
 theorem lower_axis_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -227,8 +209,6 @@ theorem lower_axis_refined_vertex_fan (g : RiemannianMetric 2 S)
             ((B.lower_axis_mem_face_carrier_iff i ht hio p).not.mpr hp)
         · simp
       _ = Real.pi := hfan
-
-
 
 theorem lower_arc_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)

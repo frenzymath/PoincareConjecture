@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology Manifold

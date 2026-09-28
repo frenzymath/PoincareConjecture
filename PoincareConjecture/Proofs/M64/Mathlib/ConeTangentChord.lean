@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ClosedConeChord
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
-
 
 theorem m64ClosedCone_tangent_mem_and_neg_mem_of_chord_bounds
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [ProperSpace E]

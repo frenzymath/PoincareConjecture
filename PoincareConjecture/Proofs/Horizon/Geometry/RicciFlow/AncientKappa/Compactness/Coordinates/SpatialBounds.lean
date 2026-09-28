@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.SpacetimeBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.SpacetimeBounds
-
-
 
 theorem norm_le_exp_of_affine_deriv_bound_Icc_reference
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -69,9 +58,6 @@ theorem norm_le_exp_of_affine_deriv_bound_Icc_reference
   apply ContinuousWithinAt.closure_le htclosure
     ((hcont t ht).norm.mono Ioo_subset_Icc_self) (by fun_prop)
   exact fun s hs => hinterior hs
-
-
-
 
 theorem exists_ancient_chart_spatial_jet_bound_at_reference
     (n m : ℕ) (K Z : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Derivative
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators NNReal Topology
@@ -31,9 +21,6 @@ private theorem sum_geometric_encode_le_two {ι : Type*} [Encodable ι] (s : Fin
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_approx_of_partition {ι : Type*} [Countable ι]
     (g : RiemannianMetric n M) (r : M → ℝ)
@@ -94,8 +81,6 @@ theorem exists_approx_of_partition {ι : Type*} [Countable ι]
     have htotal := mul_le_mul_of_nonneg_right (div_le_div_of_nonneg_right hgeom (by norm_num : (0 : ℝ) ≤ 4)) hN
     nlinarith
 
-
-
 theorem exists_approx_of_local [T2Space M] [SigmaCompactSpace M]
     (g : RiemannianMetric n M) (r : M → ℝ)
     (hlocal : ∀ p : M, ∃ U : Set M, U ∈ 𝓝 p ∧ ∀ ε : ℝ, 0 < ε → ∃ f : M → ℝ,
@@ -122,9 +107,6 @@ theorem exists_approx_of_local [T2Space M] [SigmaCompactSpace M]
   have hs : tsupport (ρ i) ⊆ U (fs.c i) := hfs.toSmoothPartitionOfUnity i
   exact ⟨f, fun x hx ↦ hsm x (hs hx), fun x hx ↦ he x (hs hx),
     fun x hx ↦ hd x (hs hx)⟩
-
-
-
 
 theorem exists_smooth_distance_approx [T3Space M] [PreconnectedSpace M]
     (g : RiemannianMetric n M) (O : M) :

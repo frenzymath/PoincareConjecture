@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryAncestors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 theorem seed_search_nonpositive_of_endpoint
     (e : SurgeryFlowCylinder F C origin scale I U) {x : C.carrier} (hx : x ∈ U)
     {a b : ℝ} (ha : a ∈ I) (hb : b ∈ I) (hab : a ≤ b)
@@ -29,8 +18,6 @@ theorem seed_search_nonpositive_of_endpoint
     ¬ SurgeryPositiveComponentAt F (origin + a / scale) (e.forward a ha x) := by
   intro hpos
   exact hend (M46.positive_component_cylinder_line e hx ha hb hab hpos)
-
-
 
 theorem seed_search_nonpositive_of_cap_endpoint
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ}

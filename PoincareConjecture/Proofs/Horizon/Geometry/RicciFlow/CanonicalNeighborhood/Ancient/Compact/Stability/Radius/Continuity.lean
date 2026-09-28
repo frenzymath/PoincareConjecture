@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Radius.Existence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +10,6 @@ namespace PoincareConjecture
 namespace CompactKappaCoreRadius
 
 variable {X : Type*} [MetricSpace X] [ProperSpace X]
-
-
 
 theorem radius_le_max_distance_scale
     {f : X → ℝ} (hf : Continuous f) (hpos : ∀ x, 0 < f x)
@@ -40,7 +28,6 @@ theorem radius_le_max_distance_scale
     simpa only [inv_inv] using inv_anti₀ (Real.sqrt_pos.mpr (hpos x)) hsqrt
   exact hscale.trans (le_max_right _ _)
 
-
 theorem radius_le_center_scale
     {f : X → ℝ} (hf : Continuous f) (hpos : ∀ x, 0 < f x)
     (p : X) {r : ℝ} (hr : 0 < r)
@@ -48,8 +35,6 @@ theorem radius_le_center_scale
     r ≤ (Real.sqrt (f p))⁻¹ := by
   simpa only [dist_self, max_eq_right (inv_nonneg.mpr (Real.sqrt_nonneg _))] using
     radius_le_max_distance_scale hf hpos p hr heq p
-
-
 
 theorem lipschitzWith_radius
     (hclosure : ∀ p : X, ∀ r : ℝ, 0 < r → closure (ball p r) = closedBall p r)
@@ -77,7 +62,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [ConnectedSpace M]
 
-
 noncomputable def scalarCoreRadius (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
     (hscalar : ∀ x : M, 0 < D.scalarCurvature x) (p : M) : ℝ :=
@@ -90,8 +74,6 @@ theorem scalarCoreRadius_spec (g : RiemannianMetric 3 M)
       scalarCurvatureSupOn g D (g.ball p (scalarCoreRadius g D hcomplete hscalar p)) =
         (scalarCoreRadius g D hcomplete hscalar p)⁻¹ ^ 2 :=
   Classical.choose_spec (exists_unique_scalar_core_radius g D hcomplete hscalar p).exists
-
-
 
 theorem eq_scalarCoreRadius_of_spec (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
@@ -116,7 +98,6 @@ private theorem scalar_sup_eq_metric_image (g : RiemannianMetric 3 M)
   · rintro ⟨x, hx, rfl⟩
     exact ⟨⟨x, hx⟩, rfl⟩
 
-
 theorem scalarCoreRadius_le_center_scale (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
     (hscalar : ∀ x : M, 0 < D.scalarCurvature x) (p : M) :
@@ -126,7 +107,6 @@ theorem scalarCoreRadius_le_center_scale (g : RiemannianMetric 3 M)
   have hs := scalarCoreRadius_spec g D hcomplete hscalar p
   apply CompactKappaCoreRadius.radius_le_center_scale D.continuous_scalarCurvature hscalar p hs.1
   exact (scalar_sup_eq_metric_image g D p _).symm.trans hs.2
-
 
 theorem lipschitzWith_scalarCoreRadius (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
@@ -143,15 +123,12 @@ theorem lipschitzWith_scalarCoreRadius (g : RiemannianMetric 3 M)
   have hs := scalarCoreRadius_spec g D hcomplete hscalar p
   exact ⟨hs.1, (scalar_sup_eq_metric_image g D p _).symm.trans hs.2⟩
 
-
-
 theorem continuous_scalarCoreRadius (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
     (hscalar : ∀ x : M, 0 < D.scalarCurvature x) :
     Continuous (scalarCoreRadius g D hcomplete hscalar) := by
   let : MetricSpace M := g.toMetricSpace
   exact (lipschitzWith_scalarCoreRadius g D hcomplete hscalar).continuous
-
 
 theorem scalarCoreRadius_abs_sub_le (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)

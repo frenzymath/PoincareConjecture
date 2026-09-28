@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.SeedPreliminaryVolume
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRawBirthCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCanonicalCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem exists_seed_regular_counterexample_sequence_of_pointwise
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

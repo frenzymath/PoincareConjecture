@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalShiHomothetyCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [T2Space M]
   {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
   {Q a : ℝ} {hQ : 0 < Q}
-
-
 
 theorem ordinaryRescaling_curvatureDerivativeNorm
     (R : OrdinaryParabolicRescaling F Q hQ a) (s : ℝ) (m : ℕ) (x : M) :

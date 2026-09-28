@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FrontierReplacement
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentLocality
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,10 +9,6 @@ open Set Filter
 open scoped Topology ENNReal NNReal Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_metric_segment_of_frontier_connectors
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

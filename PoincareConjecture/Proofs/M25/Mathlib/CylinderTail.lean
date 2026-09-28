@@ -3,17 +3,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,30 +11,20 @@ namespace OpenPartialHomeomorph
 
 variable {K W : Type*} [TopologicalSpace K] [TopologicalSpace W]
 
-
-
 def cylinderTail (e : OpenPartialHomeomorph (K × ℝ) W) (b d : ℝ) : Set W :=
   e '' (univ ×ˢ Ioo d b)
 
-
-
 def cylinderSlice (e : OpenPartialHomeomorph (K × ℝ) W) (d : ℝ) : Set W :=
   e '' (univ ×ˢ {d})
-
-
 
 def cylinderSlab (e : OpenPartialHomeomorph (K × ℝ) W) (d u : ℝ) : Set W :=
   e '' (univ ×ˢ Icc d u)
 
 variable (e : OpenPartialHomeomorph (K × ℝ) W) {a b d u : ℝ}
 
-
-
 theorem cylinderTail_antitone (b : ℝ) : Antitone (e.cylinderTail b) := by
   intro d u hdu
   exact image_mono (prod_mono Subset.rfl (Ioo_subset_Ioo_left hdu))
-
-
 
 theorem cylinderTail_subset_slab_union_tail (b d u : ℝ) :
     e.cylinderTail b d ⊆ e.cylinderSlab d u ∪ e.cylinderTail b u := by
@@ -54,23 +33,17 @@ theorem cylinderTail_subset_slab_union_tail (b d u : ℝ) :
   · exact Or.inl ⟨z, ⟨hz.1, hz.2.1.le, hzu⟩, rfl⟩
   · exact Or.inr ⟨z, ⟨hz.1, lt_of_not_ge hzu, hz.2.2⟩, rfl⟩
 
-
-
 theorem cylinderTail_domain_subset
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) :
     univ ×ˢ Ioo d b ⊆ e.source := by
   rw [hsource]
   exact prod_mono Subset.rfl (Ioo_subset_Ioo_left ha.le)
 
-
-
 theorem cylinderTail_subset_target
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) :
     e.cylinderTail b d ⊆ e.target := by
   rintro x ⟨z, hz, rfl⟩
   exact e.map_source (e.cylinderTail_domain_subset hsource ha hz)
-
-
 
 theorem mem_cylinderTail_iff
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) (x : W) :
@@ -84,24 +57,17 @@ theorem mem_cylinderTail_iff
   · rintro ⟨hx, ht⟩
     exact ⟨e.symm x, ⟨mem_univ _, ht⟩, e.right_inv hx⟩
 
-
-
 theorem isOpen_cylinderTail
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) :
     IsOpen (e.cylinderTail b d) :=
   e.isOpen_image_of_subset_source (isOpen_univ.prod isOpen_Ioo)
     (e.cylinderTail_domain_subset hsource ha)
 
-
-
 theorem isConnected_cylinderTail [ConnectedSpace K]
     (hsource : e.source = univ ×ˢ Ioo a b) (hd : d ∈ Ioo a b) :
     IsConnected (e.cylinderTail b d) :=
   (isConnected_univ.prod (isConnected_Ioo hd.2)).image e
     (e.continuousOn.mono (e.cylinderTail_domain_subset hsource hd.1))
-
-
-
 
 theorem exists_cylinder_height_lt_after
     (hsource : e.source = univ ×ˢ Ioo a b) {Q : Set W}
@@ -119,9 +85,6 @@ theorem exists_cylinder_height_lt_after
     obtain ⟨u, hu, hub⟩ := exists_between (max_lt hd.2 hxb)
     exact ⟨u, ⟨(le_max_left _ _).trans_lt hu, hub⟩,
       fun y hy => (hmax hy).trans_lt ((le_max_right _ _).trans_lt hu)⟩
-
-
-
 
 theorem target_inter_frontier_cylinderTail
     (hsource : e.source = univ ×ˢ Ioo a b) (hd : d ∈ Ioo a b) :
@@ -146,8 +109,6 @@ theorem target_inter_frontier_cylinderTail
   rw [← himage.frontier.image_eq, hfrontier]
   rfl
 
-
-
 theorem cylinderSlab_subset_target
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) (hb : u < b) :
     e.cylinderSlab d u ⊆ e.target := by
@@ -155,9 +116,6 @@ theorem cylinderSlab_subset_target
   apply e.map_source
   rw [hsource]
   exact ⟨hz.1, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
-
-
-
 
 theorem isCompact_cylinderSlab [CompactSpace K]
     (hsource : e.source = univ ×ˢ Ioo a b) (ha : a < d) (hb : u < b) :

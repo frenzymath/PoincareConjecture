@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VerticalTriangleGerm
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex Topology
 open PoincareConjecture.M76.Dehn
@@ -244,4 +242,3 @@ theorem exists_boundary_carrier_affine_coordinates
   exact ⟨A, N₀, hN₀, hzN₀, fun _ hx => hVO hx.1, hAzero, hAheight, hAell, hlocal⟩
 
 end Geometry.SimplicialComplex
-

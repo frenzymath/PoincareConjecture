@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmallGermExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmallPerturbation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold Topology NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
 
 theorem exists_identity_germ_isotopy (f : E → E) {U : Set E}
     (hU : IsOpen U) (h0U : (0 : E) ∈ U) (hf : ContDiffOn ℝ ∞ f U)

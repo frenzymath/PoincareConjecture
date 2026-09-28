@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M82PrimeFactors
 import PoincareConjecture.Statements.M73SphereFactors
 import PoincareConjecture.Statements.M82PrimeFactors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,16 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
 
 theorem m82PrimeFactorLedger : M82PrimeFactorLedgerStatement.{u} := by
   intro M _ _ _ _ _ _ _ _ N I C F

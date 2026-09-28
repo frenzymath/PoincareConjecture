@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedScalar
 import PoincareConjecture.Proofs.M47.BlowupControlsCapStop
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_strongNeck_cap_time_margin (P : M47Predecessors.{u}) {c : ℝ}
     (hc : 0 < c) :

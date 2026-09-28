@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureTimeHessian
 import PoincareConjecture.Proofs.M03.CurvatureDiffusionContraction
 import PoincareConjecture.Proofs.M03.RicciHessianCommutator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 3600000
 
@@ -674,8 +666,6 @@ theorem hasDerivAt_ricciFlow_curvature_diffusion_reaction
   rw [hVector] at hActual
   exact hActual
 
-
-
 theorem curvature_reaction_eq_pure_inverse_frame_sum
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -804,7 +794,6 @@ theorem curvature_reaction_eq_pure_inverse_frame_sum
   dsimp only
   simpa only [hZ, Z0, hT, P, a, G, b, E, cb, e, V] using
     hreaction.trans hcontract
-
 
 theorem curvature_reaction_lowered_two_contractions
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 x : M)

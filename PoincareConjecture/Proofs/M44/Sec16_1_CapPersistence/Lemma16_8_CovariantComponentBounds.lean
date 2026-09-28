@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 import PoincareConjecture.Proofs.M36.ComparisonCoordinateJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "e" => EuclideanSpace.basisFun (Fin 3) ℝ
-
-
-
 
 theorem exists_uniform_covariant_component_bound (k d m : ℕ) {G : ℝ} (hG : 0 ≤ G) :
     ∃ C : ℝ, 0 < C ∧ ∀ (g : RiemannianMetric 3 E) (D : LeviCivitaData g)
@@ -111,9 +99,6 @@ theorem exists_uniform_covariant_component_bound (k d m : ℕ) {G : ℝ} (hG : 0
         (hds.of_le (by exact_mod_cast le_top)) (hss.of_le (by exact_mod_cast le_top))]
       exact (norm_sub_le _ _).trans ((add_le_add hderiv hsum).trans_eq (by dsimp [A]; ring))
 
-
-
-
 theorem tensorNorm_le_of_coordinate_components {k : ℕ}
     (g : RiemannianMetric 3 E) (T : CovariantTensorEvaluation 3 E k) (x : E)
     {a rho : ℝ} (ha : 0 < a) (hrho : 0 ≤ rho)
@@ -166,9 +151,6 @@ theorem tensorNorm_le_of_coordinate_components {k : ℕ}
   rw [Real.sqrt_mul (by positivity), Real.sqrt_sq (mul_nonneg hA0 hrho)]
   dsimp [A0, L]
   ring
-
-
-
 
 theorem exists_uniform_covariant_norm_bound (k m : ℕ) {a G : ℝ}
     (ha : 0 < a) (hG : 0 ≤ G) :

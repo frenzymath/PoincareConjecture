@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.JacobiCoefficientJets
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -63,8 +51,6 @@ def coframeOrderBound (n m : ℕ) (r : ℝ) (C : ℕ → ℝ) : ℝ :=
 
 theorem coframeOrderBound_nonneg (n m : ℕ) (r : ℝ) (C : ℕ → ℝ) :
     0 ≤ coframeOrderBound n m r C := by unfold coframeOrderBound; positivity
-
-
 
 theorem radialCoframeCoeff_jets_le
     (D : LeviCivitaData g)
@@ -141,8 +127,6 @@ theorem radialConnectionCoeff_jets_le
   exact Finset.single_le_sum
     (fun k _ => connectionComponentJetBound_nonneg n k r (fun _ => coframeOrderBound n m r C) C)
     (Finset.mem_range.mpr (Nat.lt_succ_of_le hq))
-
-
 
 theorem exists_uniform_radial_frame_jet_bounds
     (n : ℕ) (r : ℝ) (C : ℕ → ℝ) (hC : ∀ l, 0 ≤ C l) (m : ℕ) :

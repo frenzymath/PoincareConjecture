@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteSurfaceSectionMarks
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_triangle_containing_connected_height_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

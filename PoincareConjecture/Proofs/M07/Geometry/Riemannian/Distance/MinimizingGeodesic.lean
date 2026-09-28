@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Minimizing.Exp
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.GeodesicGrowth
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,8 +62,6 @@ private theorem geodesic_bounds {g : RiemannianMetric n M} {γ : ℝ → M}
   rw [hCv, ENNReal.ofReal_mul (abs_nonneg _), ENNReal.ofReal_coe_nnreal,
     mul_comm]
   simpa only [edist_dist, Real.dist_eq] using hh
-
-
 
 theorem exists_minimizing_geodesic_of_precompact_ball
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)

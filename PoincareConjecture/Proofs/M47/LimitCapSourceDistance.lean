@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitCapSourceMetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +29,6 @@ private theorem finite_source_tangent_bound
   rw [mul_pow, div_pow, Real.sq_sqrt hB, Real.sq_sqrt hQ.le, Real.sq_sqrt hg,
     div_mul_eq_mul_div]
   exact (le_div_iff₀ hQ).mpr (by nlinarith only [hbound])
-
-
 
 theorem finite_source_ball_bottom_distance
     (P : M44CapPersistencePredecessors.{u}) {F : SurgeryFlowData.{u}}

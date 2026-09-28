@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Ext
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open Matrix
 open scoped Topology
 
 namespace Poincare.RicciFlow.Harnack
-
-
-
 
 lemma hasDerivWithinAt_quadratic_at_null
     {I : Type*} [Fintype I]
@@ -67,9 +54,6 @@ lemma hasDerivWithinAt_quadratic_at_null
   apply hd.congr_deriv
   simp only [add_mul, Finset.sum_add_distrib, hcross₁, hcross₂, zero_add, add_zero]
   simp only [dotProduct, mulVec, Finset.mul_sum, mul_assoc]
-
-
-
 
 lemma quadratic_second_derivative_nonneg_at_null
     {I : Type*} [Fintype I]

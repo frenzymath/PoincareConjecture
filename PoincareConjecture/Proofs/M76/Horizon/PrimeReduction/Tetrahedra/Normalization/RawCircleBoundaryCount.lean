@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normalization.CappedBoundaryPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

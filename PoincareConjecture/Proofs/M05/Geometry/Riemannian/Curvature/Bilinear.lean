@@ -1,21 +1,9 @@
-
 import PoincareConjecture.Definitions.Ch01.Curvature
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.Regularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.LocalRegularity
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.Tactic.Module
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology
@@ -143,7 +131,6 @@ private noncomputable def curvatureLinearFirstOfRegular
       (extend_smul x c v) (hDX (c • v)) hsmul]
     exact curvatureOnFields_smul_left D _ _ _ x c
       ((hX v).mdifferentiableAt (by simp)) (hDX v)
-
 
 noncomputable def curvatureTensor_bilinear_first_third
     (D : LeviCivitaData g) (x : M) (y z : TangentSpace (𝓡 n) x) :

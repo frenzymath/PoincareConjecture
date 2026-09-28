@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.IntegralGaugeRecovery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,7 +14,6 @@ namespace PoincareConjecture.IntegralGaugeFTCNative
 section Calculus
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
 
 theorem integral_eq_sub_of_hasDerivWithinAt_Ico {F f : ℝ → E} {a b t : ℝ}
     (hf : ContinuousOn f (Ico a b))
@@ -45,7 +35,6 @@ theorem integral_eq_sub_of_hasDerivWithinAt_Ico {F f : ℝ → E} {a b t : ℝ}
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le ht.1 hcont hderiv
     ((hf.mono hsub).intervalIntegrable_of_Icc ht.1)
 
-
 theorem eq_add_integral_of_hasDerivWithinAt_Ico {F f : ℝ → E} {a b t : ℝ}
     (hf : ContinuousOn f (Ico a b))
     (hF : ∀ s ∈ Ico a b, HasDerivWithinAt F (f s) (Ico a b) s)
@@ -57,7 +46,6 @@ end Calculus
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem metric_inner_eq_add_integral_Ico {g₀ : RiemannianMetric n M}
     {metric : ℝ → RiemannianMetric n M} {T : ℝ}
@@ -84,7 +72,6 @@ namespace PoincareConjecture.GaugeRecovery.Certificate
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [SecondCountableTopology M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [CompactSpace M]
-
 
 def toIntegral {g₀ : RiemannianMetric n M} (C : GaugeRecovery.Certificate g₀)
     (hcont : ∀ (x : M) (u v : TangentSpace (𝓡 n) x),

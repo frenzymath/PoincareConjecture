@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.JointCoordinateGeodesicEndpoint
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +11,6 @@ open scoped ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_joint_coordinate_exponential_inverse
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

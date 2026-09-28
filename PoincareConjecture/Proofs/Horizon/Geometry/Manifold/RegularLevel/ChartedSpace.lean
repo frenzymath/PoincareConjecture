@@ -3,14 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
 open Set Function
 open scoped Manifold Topology ContDiff
 
@@ -27,10 +19,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   [I.Boundaryless]
 
-
-
-
-
 def levelDifferential (f : M → ℝ) (y : M) : E →L[ℝ] ℝ := mfderiv I 𝓘(ℝ, ℝ) f y
 
 @[simp] theorem levelDifferential_apply (f : M → ℝ) (y : M) (u : E) :
@@ -42,18 +30,12 @@ theorem levelDifferential_ne_zero {f : M → ℝ} {y : M}
   intro h0
   exact hdf (ContinuousLinearMap.ext fun u => DFunLike.congr_fun h0 u)
 
-
-
-
 def levelHyperplane (f : M → ℝ) (y : M) : Submodule ℝ E :=
   LinearMap.ker (levelDifferential (I := I) f y : E →ₗ[ℝ] ℝ)
 
 theorem mem_levelHyperplane_iff (f : M → ℝ) (y : M) (u : E) :
     u ∈ levelHyperplane (I := I) f y ↔ mfderivReal (I := I) f y u = 0 :=
   LinearMap.mem_ker
-
-
-
 
 def levelTransversal {f : M → ℝ} {y : M}
     (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) : E :=
@@ -71,9 +53,6 @@ def levelTransversal {f : M → ℝ} {y : M}
     push Not at h
     exact hdf (ContinuousLinearMap.ext fun v => by simpa using h v)
   rw [levelTransversal, map_smul, smul_eq_mul, inv_mul_cancel₀ h.choose_spec]
-
-
-
 
 def levelProj {f : M → ℝ} {y : M} (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     E →L[ℝ] levelHyperplane (I := I) f y :=
@@ -105,8 +84,6 @@ section Dimension
 
 variable (n : ℕ) [Fact (Module.finrank ℝ E = n + 1)]
 
-
-
 theorem finrank_levelHyperplane {f : M → ℝ} {y : M}
     (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     Module.finrank ℝ (levelHyperplane (I := I) f y) = n := by
@@ -117,29 +94,16 @@ theorem finrank_levelHyperplane {f : M → ℝ} {y : M}
     (LinearMap.ker (levelDifferential (I := I) f y : E →ₗ[ℝ] ℝ)) = n
   omega
 
-
-
-
-
-
-
-
-
-
 def levelHyperplaneEquiv {f : M → ℝ} {y : M}
     (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     levelHyperplane (I := I) f y ≃L[ℝ] EuclideanSpace ℝ (Fin n) :=
   ContinuousLinearEquiv.ofFinrankEq (by
     rw [finrank_levelHyperplane n hdf, finrank_euclideanSpace_fin])
 
-
-
 def sliceProj {f : M → ℝ} {y : M} (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     E →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   (levelHyperplaneEquiv (I := I) n hdf : levelHyperplane (I := I) f y →L[ℝ] _)
     ∘L levelProj (I := I) hdf
-
-
 
 def sliceEmb {f : M → ℝ} {y : M} (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] E :=
@@ -164,8 +128,6 @@ theorem sliceEmb_mem {f : M → ℝ} {y : M}
     hproj, ContinuousLinearEquiv.coe_coe,
     ContinuousLinearEquiv.apply_symm_apply]
 
-
-
 theorem sliceEmb_injective {f : M → ℝ} {y : M}
     (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) :
     Function.Injective ⇑(sliceEmb (I := I) n hdf) := by
@@ -186,15 +148,10 @@ theorem sliceEmb_sliceProj_of_mem {f : M → ℝ} {y : M}
 
 end Dimension
 
-
-
 section AdaptedChart
 
 variable {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (y : M)
   (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0)
-
-
-
 
 def adaptedStraightening : OpenPartialHomeomorph E E :=
   (exists_extChartAt_openPartialHomeomorph_comp_symm_eq_affine hf y hdf).choose
@@ -246,10 +203,6 @@ theorem comp_adaptedStraightening_symm_eq_affine :
   (exists_extChartAt_openPartialHomeomorph_comp_symm_eq_affine
     hf y hdf).choose_spec.2.2.2.2.2
 
-
-
-
-
 theorem fderiv_adaptedStraightening_comp_fderiv_symm :
     (fderiv ℝ (adaptedStraightening hf y hdf) (extChartAt I y y)) ∘L
       (fderiv ℝ (adaptedStraightening hf y hdf).symm (extChartAt I y y))
@@ -292,9 +245,6 @@ theorem fderiv_adaptedStraightening_symm_injective :
   rw [← hu, ← hv]
   exact h
 
-
-
-
 theorem adaptedStraightening_sub_mem_levelHyperplane {x : M} (hx : f x = f y)
     (hx1 : x ∈ (extChartAt I y).source)
     (hx2 : extChartAt I y x ∈ (adaptedStraightening hf y hdf).source) :
@@ -311,14 +261,10 @@ theorem adaptedStraightening_sub_mem_levelHyperplane {x : M} (hx : f x = f y)
 
 end AdaptedChart
 
-
-
 section SliceChart
 
 variable {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f) (y : M)
   (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0)
-
-
 
 def levelChartDomain : Set M :=
   (extChartAt I y).source
@@ -331,9 +277,6 @@ theorem mem_levelChartDomain_self : y ∈ levelChartDomain hf y hdf :=
   ⟨mem_extChartAt_source (I := I) y, mem_adaptedStraightening_source hf y hdf⟩
 
 variable (n : ℕ) [Fact (Module.finrank ℝ E = n + 1)]
-
-
-
 
 def levelSliceTarget : Set (EuclideanSpace ℝ (Fin n)) :=
   (fun z => extChartAt I y y + sliceEmb (I := I) n hdf z)
@@ -349,10 +292,6 @@ theorem mfderivReal_sliceEmb (z : EuclideanSpace ℝ (Fin n)) :
 
 variable (c : ℝ)
 
-
-
-
-
 theorem levelSliceInv_mem {z : EuclideanSpace ℝ (Fin n)}
     (hz : z ∈ levelSliceTarget hf y hdf n) (hy : f y = c) :
     (extChartAt I y).symm ((adaptedStraightening hf y hdf).symm
@@ -360,7 +299,6 @@ theorem levelSliceInv_mem {z : EuclideanSpace ℝ (Fin n)}
   have h := comp_adaptedStraightening_symm_eq_affine hf y hdf _ hz
   rw [mem_preimage, mem_singleton_iff, h, add_sub_cancel_left,
     mfderivReal_sliceEmb, add_zero, hy]
-
 
 theorem levelSliceInv_mem_domain {z : EuclideanSpace ℝ (Fin n)}
     (hz : z ∈ levelSliceTarget hf y hdf n) :
@@ -376,9 +314,6 @@ theorem levelSliceInv_mem_domain {z : EuclideanSpace ℝ (Fin n)}
   rw [mem_preimage, (extChartAt I y).right_inv h2]
   exact h1
 
-
-
-
 theorem levelSlice_emb_proj {x : M} (hxc : f x = f y)
     (hx : x ∈ levelChartDomain hf y hdf) :
     extChartAt I y y + sliceEmb (I := I) n hdf (sliceProj (I := I) n hdf
@@ -388,14 +323,9 @@ theorem levelSlice_emb_proj {x : M} (hxc : f x = f y)
     (adaptedStraightening_sub_mem_levelHyperplane hf y hdf hxc hx.1 hx.2)]
   abel
 
-
 theorem levelSet_prop (x : (f ⁻¹' {c} : Set M)) : f ↑x = c := x.2
 
 open scoped Classical in
-
-
-
-
 
 def levelSliceChart (hy : f y = c) :
     OpenPartialHomeomorph (f ⁻¹' {c} : Set M) (EuclideanSpace ℝ (Fin n)) where
@@ -513,16 +443,10 @@ theorem levelSliceChart_symm_apply (hy : f y = c)
 
 end SliceChart
 
-
-
 section ChartedSpaceLevelSet
 
 variable {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f)
   (n : ℕ) [Fact (Module.finrank ℝ E = n + 1)] (c : ℝ)
-
-
-
-
 
 @[reducible] def levelSetChartedSpace
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0) :
@@ -535,12 +459,6 @@ variable {f : M → ℝ} (hf : ContMDiff I 𝓘(ℝ, ℝ) ∞ f)
   mem_chart_source x :=
     mem_levelChartDomain_self hf ↑x (hreg ↑x (levelSet_prop c x))
   chart_mem_atlas x := mem_iUnion.2 ⟨x, rfl⟩
-
-
-
-
-
-
 
 theorem contDiffOn_levelSliceChart_trans (y y' : M)
     (hdf : mfderiv I 𝓘(ℝ, ℝ) f y ≠ 0) (hdf' : mfderiv I 𝓘(ℝ, ℝ) f y' ≠ 0)
@@ -636,12 +554,6 @@ theorem contDiffOn_levelSliceChart_trans (y y' : M)
       levelSliceChart_symm_apply hf y hdf n c hy hz1]
     rfl
 
-
-
-
-
-
-
 theorem isManifold_levelSet
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0) :
     letI := levelSetChartedSpace hf n c hreg
@@ -665,9 +577,6 @@ theorem levelSetChartedSpace_chartAt
       = levelSliceChart hf ↑x (hreg ↑x (levelSet_prop c x)) n c
           (levelSet_prop c x) := rfl
 
-
-
-
 theorem extChartAt_levelSet_center
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
     (x₀ : (f ⁻¹' {c} : Set M)) :
@@ -678,10 +587,6 @@ theorem extChartAt_levelSet_center
       (extChartAt I (↑x₀ : M) ↑x₀) - extChartAt I (↑x₀ : M) ↑x₀) = 0
   rw [adaptedStraightening_center hf ↑x₀ (hreg ↑x₀ (levelSet_prop c x₀)),
     sub_self, map_zero]
-
-
-
-
 
 theorem writtenInExtChartAt_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
@@ -717,10 +622,6 @@ theorem writtenInExtChartAt_levelSet_val
   rw [hval, (extChartAt I (↑x₀ : M)).right_inv hmem]
   rfl
 
-
-
-
-
 theorem contMDiff_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0) :
     letI := levelSetChartedSpace hf n c hreg
@@ -747,9 +648,6 @@ theorem contMDiff_levelSet_val
   have hcomp := hb.comp (extChartAt (𝓡 n) x₀ x₀) ha
   exact ((hcomp.congr_of_eventuallyEq
     (writtenInExtChartAt_levelSet_val hf n c hreg x₀)).contDiffWithinAt)
-
-
-
 
 theorem hasMFDerivAt_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
@@ -787,8 +685,6 @@ theorem hasMFDerivAt_levelSet_val
   have hcomp := hGs.comp (0 : EuclideanSpace ℝ (Fin n)) hι
   exact (hcomp.congr_of_eventuallyEq hev).hasFDerivWithinAt
 
-
-
 theorem mfderiv_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
     (x₀ : (f ⁻¹' {c} : Set M)) :
@@ -801,8 +697,6 @@ theorem mfderiv_levelSet_val
   letI := levelSetChartedSpace hf n c hreg
   exact (hasMFDerivAt_levelSet_val hf n c hreg x₀).mfderiv
 
-
-
 theorem mfderiv_levelSet_val_injective
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
     (x₀ : (f ⁻¹' {c} : Set M)) :
@@ -814,9 +708,6 @@ theorem mfderiv_levelSet_val_injective
   exact (fderiv_adaptedStraightening_symm_injective hf ↑x₀
     (hreg ↑x₀ (levelSet_prop c x₀))).comp
     (sliceEmb_injective n (hreg ↑x₀ (levelSet_prop c x₀)))
-
-
-
 
 theorem mfderivReal_mfderiv_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
@@ -836,25 +727,6 @@ theorem mfderivReal_mfderiv_levelSet_val
   have h := ContinuousLinearMap.ext_iff.1 hchain.symm v
   simp only [ContinuousLinearMap.coe_comp', Function.comp_apply] at h
   exact h
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem range_mfderiv_levelSet_val
     (hreg : ∀ x : M, f x = c → mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)

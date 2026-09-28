@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M48.ExtensionSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.SurgeryFlowExtension
 variable {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
   {T : ℝ} (hT : T ∈ F.surgery_times) (hT' : T ∈ E.extended.surgery_times)
   [Nonempty (F.slice T).carrier] [Nonempty (E.extended.slice T).carrier]
-
-
 
 noncomputable def eventPreEquivalence
     (t : Ico (F.event T hT).tMinus T) (ht : t.1 ∈ F.time_domain)

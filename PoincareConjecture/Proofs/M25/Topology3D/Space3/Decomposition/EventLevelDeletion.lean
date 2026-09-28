@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.RetainedCapPlacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.children_middle_band
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -90,7 +79,6 @@ theorem RegularSurgeryEvent.children_middle_band
     · exact hyK
     · exact False.elim (hyA (hrestrict y hyW hyOld))
 
-
 theorem RegularSurgeryEvent.children_middle_level
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (z : ℝ)
@@ -139,7 +127,6 @@ theorem RegularSurgeryEvent.children_middle_level
     have hy := (Set.ext_iff.mp hband y).mpr
       ⟨⟨hyP, fun hyA => hyAz ((hA y hyz).mp hyA)⟩, hW y hyz⟩
     exact ⟨hy.1, hyz⟩
-
 
 theorem RegularSurgeryEvent.children_outside_band
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

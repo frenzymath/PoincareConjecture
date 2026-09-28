@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped NNReal
-
-
-
 
 theorem LipschitzWith.exists_homeomorph_add {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -32,9 +20,6 @@ theorem LipschitzWith.exists_homeomorph_add {E : Type*}
     · exact Or.inl h
     · exact Or.inr (by simpa [e] using hL)
   exact ⟨ha.toHomeomorph (fun x => x + u x) hsmall, fun _ => rfl⟩
-
-
-
 
 theorem LipschitzWith.antilipschitzWith_id_add_smul {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

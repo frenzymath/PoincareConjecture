@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Derivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Commutation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureSymmetry
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem sum_covariantTensorDerivative_hessian_apply (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -57,8 +47,6 @@ theorem sum_covariantTensorDerivative_hessian_apply (D : LeviCivitaData g)
   simpa only [radialCurvature_apply, g.symm x z] using
     D.inner_radialCurvature_symm x (g.orthonormalBasis x i) z (D.gradient f x)
 
-
-
 theorem sum_inner_second_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
     (x : M) (z : TangentSpace (𝓡 n) x) :
@@ -72,8 +60,6 @@ theorem sum_inner_second_connection_gradient (D : LeviCivitaData g)
   rw [D.inner_gradient]
   simpa only [D.covariantTensorDerivative_hessian_eq hf] using
     D.sum_covariantTensorDerivative_hessian_apply hf x z
-
-
 
 theorem sum_inner_second_connection_harmonic_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem chartCoefficients_self (g : RiemannianMetric n M) (p : M)
     (v w : EuclideanSpace ℝ (Fin n)) :
     g.pullbackCoefficients (extChartAt (𝓡 n) p).symm (extChartAt (𝓡 n) p p) v w =
@@ -43,7 +32,6 @@ theorem chartCoefficients_self (g : RiemannianMetric n M) (p : M)
   rw [hvec v, hvec w]
   exact congrArg (fun y => g.inner y v w)
     ((extChartAt (𝓡 n) p).left_inv (mem_extChartAt_source p))
-
 
 theorem exists_tangentBall_subset_nhds (g : RiemannianMetric n M) (p : M)
     {V : Set (EuclideanSpace ℝ (Fin n))} (hV : V ∈ 𝓝 0) :
@@ -65,8 +53,6 @@ theorem exists_tangentBall_subset_nhds (g : RiemannianMetric n M) (p : M)
     simpa only [tangentNorm, Real.sqrt_mul hc.le, Real.sqrt_sq (norm_nonneg (v : E))] using! h
   have hsmall := lt_of_le_of_lt hlow hv
   exact (mul_lt_mul_iff_right₀ (Real.sqrt_pos.mpr hc)).mp hsmall
-
-
 
 theorem exists_exponential_chart_gauss (g : RiemannianMetric n M) (p : M) :
     let E := EuclideanSpace ℝ (Fin n)

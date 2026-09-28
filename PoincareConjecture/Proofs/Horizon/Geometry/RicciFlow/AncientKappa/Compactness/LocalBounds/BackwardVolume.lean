@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBound
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem m23_terminal_ball_volume_le_exp_mul_earlier_ball
     (F : RicciFlow 3 M (Iic 0)) (p : M) {δ B r : ℝ} (hδ : 0 ≤ δ)
@@ -93,9 +81,6 @@ local instance (C : FlowCarrier 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
-
-
-
 
 theorem eventually_earlier_ball_volume_lower_bound
     {B ν δ : ℝ} (hδ : 0 ≤ δ)

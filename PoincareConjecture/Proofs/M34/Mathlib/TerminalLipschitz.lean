@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M34.Mathlib.ClosedIntervalDerivativeBounds
 import Mathlib.Topology.UniformSpace.Cauchy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology NNReal
-
-
 
 theorem lipschitzOnWith_of_interior_deriv_bound_Ico
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -42,8 +30,6 @@ theorem lipschitzOnWith_of_interior_deriv_bound_Ico
       (fun v hv => hd v (hsub' hv)) (fun v hv => hb v (hsub' hv))
       ⟨ht.1, htu⟩ ⟨hs.1, hsu⟩
 
-
-
 theorem LipschitzOnWith.exists_terminal_limit
     {E : Type*} [NormedAddCommGroup E] [CompleteSpace E]
     {f : ℝ → E} {a b : ℝ} {C : ℝ≥0} (hab : a < b)
@@ -66,8 +52,6 @@ theorem LipschitzOnWith.exists_terminal_limit
     filter_upwards [Ico_mem_nhdsLT hab] with s hs
     simpa only [dist_eq_norm, Real.norm_eq_abs] using hf.dist_le_mul t ht s hs)
   simpa only [abs_of_neg (sub_neg.mpr ht.2), neg_sub] using h
-
-
 
 theorem tendstoUniformlyOn_of_terminal_norm_bound
     {X E : Type*} [NormedAddCommGroup E]

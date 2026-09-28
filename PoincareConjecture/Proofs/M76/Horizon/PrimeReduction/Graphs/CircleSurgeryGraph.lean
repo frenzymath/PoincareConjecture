@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ComponentDeletion
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
 
 def circleSurgeryFamily {X κ : Type*} (S : κ → Set X) (i : κ) (new : Bool → Set X) :
     ({j : κ // j ≠ i} ⊕ Bool) → Set X :=
@@ -102,8 +92,6 @@ theorem circleSurgeryFamily_disjoint_marked {X κ : Type*}
   | inl j => exact disjoint_left.mp hS (mem_iUnion.mpr ⟨j.val, hj⟩) hxZ
   | inr b => exact disjoint_left.mp (hnew b) hj hxZ
 
-
-
 theorem circleSurgeryFamily_sdiff {X κ : Type*}
     (S : κ → Set X) (i : κ) (new : Bool → Set X) {C : Set X}
     (hnew : (new true ∪ new false) \ C = S i \ C) :
@@ -120,7 +108,6 @@ theorem circleSurgeryFamily_sdiff {X κ : Type*}
     · exact Or.inr ⟨hji ▸ hj, hxC⟩
     · exact Or.inl ⟨mem_iUnion.mpr ⟨⟨j, hji⟩, hj⟩, hxC⟩
 
-
 theorem circleSurgeryFamily_inter_eq {X κ : Type*}
     (S : κ → Set X) (i : κ) (new : Bool → Set X) {t : Set X}
     (hnew : (new true ∪ new false) ∩ t = S i ∩ t) :
@@ -128,8 +115,6 @@ theorem circleSurgeryFamily_inter_eq {X κ : Type*}
   have hnew' : (new true ∪ new false) \ tᶜ = S i \ tᶜ := by
     simpa only [sdiff_compl] using hnew
   simpa only [sdiff_compl] using circleSurgeryFamily_sdiff S i new hnew'
-
-
 
 theorem circleSurgeryFamily_inter {X κ : Type*}
     (S : κ → Set X) (i : κ) (new : Bool → Set X) {t L O : Set X}
@@ -151,8 +136,6 @@ theorem circleSurgeryFamily_inter {X κ : Type*}
     · subst j
       exact ⟨Or.inr (hnew.symm.subset ⟨⟨hj, hxt⟩, hxL⟩).1, hxt⟩
     · exact ⟨Or.inl (mem_iUnion.mpr ⟨⟨j, hji⟩, hj⟩), hxt⟩
-
-
 
 theorem circleSurgeryFamily_graph
     {X κ : Type*} [TopologicalSpace X]

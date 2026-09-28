@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.ConstantLift
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,14 +15,9 @@ variable {N : ℕ} {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b circumference delta : ℝ} {J : Set ℝ}
   {F : RicciFlow 3 M (Icc a b)}
 
-
-
 def parameterAnnulusMap (Gamma : (Fin N → ℝ) → ℝ → C1FreeLoopSpace (M := M))
     (p : Fin N → ℝ) (q : ℝ) (z : LoopPlane) : M :=
   periodicFreeLoop (Gamma (Real.smoothTransition (z 1) • p) q) (z 0)
-
-
-
 
 theorem parameterAnnulusMap_contMDiff
     (Gamma : (Fin N → ℝ) → ℝ → C1FreeLoopSpace (M := M))
@@ -50,10 +35,6 @@ theorem parameterAnnulusMap_contMDiff
     exact mul_le_of_le_one_left (norm_nonneg _) (Real.smoothTransition.le_one _)
   simpa only [mem_ball, dist_zero_right] using
     hnorm.trans_lt (by simpa only [mem_ball, dist_zero_right] using hp)
-
-
-
-
 
 theorem parameter_filling (P : M62.CircleProductData F circumference)
     (q : ℝ) (disks : M64DiskAreaComparison P q)

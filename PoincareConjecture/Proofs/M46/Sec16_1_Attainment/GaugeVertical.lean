@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecovery
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCurve
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem gauge_lift_spatial_deriv_zero (e : AttainmentGauge G)
     {U : Set ℝ} (hU : IsOpen U) (beta : ℝ → G.Point)
@@ -56,9 +44,6 @@ theorem gauge_lift_spatial_deriv_zero (e : AttainmentGauge G)
   exact (G.gaugeCover.metric e.index).spatialTangentEquiv (lift s).1 (lift s).2 |>.injective
     (by simpa only [map_zero] using hvel)
 
-
-
-
 theorem gauge_lift_spatial_constant (e : AttainmentGauge G)
     {U : Set ℝ} (hU : IsOpen U) (hconn : IsPreconnected U) (beta : ℝ → G.Point)
     (hbeta : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel 3) 1 beta U)
@@ -76,9 +61,6 @@ theorem gauge_lift_spatial_constant (e : AttainmentGauge G)
   apply Subtype.ext
   exact hU.is_const_of_deriv_eq_zero hconn hdiff
     (fun r hr => gauge_lift_spatial_deriv_zero e hU beta hbeta hsrc hzero hr) hs hc
-
-
-
 
 theorem gauge_vertical_velocity_zero (j : G.gaugeCover.index)
     (theta : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point)

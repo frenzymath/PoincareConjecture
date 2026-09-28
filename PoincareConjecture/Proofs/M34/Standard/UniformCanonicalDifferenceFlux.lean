@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
 
 theorem exists_uniform_canonicalDomain_differenceFlux_bounds
     {n dH dA dS : ℕ}

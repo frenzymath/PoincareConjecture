@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Reparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem normalize_smul_pos (g : RiemannianMetric 2 S) (x : S)
     (v : TangentSpace (𝓡 2) x) {c : ℝ} (hc : 0 < c) :
     (Real.sqrt (g.inner x (c • v) (c • v)))⁻¹ • (c • v) =
@@ -29,7 +20,6 @@ theorem normalize_smul_pos (g : RiemannianMetric 2 S) (x : S)
     ring
   rw [hinner, Real.sqrt_mul (sq_nonneg c), Real.sqrt_sq hc.le]
   simp [smul_smul, mul_inv_rev, hc.ne']
-
 
 theorem normalize_smul_neg (g : RiemannianMetric 2 S) (x : S)
     (v : TangentSpace (𝓡 2) x) {c : ℝ} (hc : c < 0) :
@@ -45,9 +35,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
-
-
 
 theorem normalized_fields_eventuallyEq_or_neg_along_reparam
     {T W V Z : (x : S) → TangentSpace (𝓡 2) x}

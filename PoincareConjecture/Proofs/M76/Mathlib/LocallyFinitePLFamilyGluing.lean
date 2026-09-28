@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 import Mathlib.Data.Set.UnionLift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
-
 
 theorem exists_finitePL_family_extension {E F ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -43,9 +29,6 @@ theorem exists_finitePL_family_extension {E F ι : Type*}
   intro i
   obtain ⟨g, hg, hgval⟩ := he i
   exact hg.congr fun x hx => (hgval ⟨x, hx⟩).symm.trans (hfval i ⟨x, hx⟩).symm
-
-
-
 
 theorem locallyPiecewiseAffineOn_of_finite_union_neighborhoods {E F ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -71,8 +54,6 @@ end Geometry
 
 namespace Homeomorph
 
-
-
 theorem agree_symm_of_overlap {E F ι : Type*}
     [TopologicalSpace E] [TopologicalSpace F]
     (S : ι → Set E) (T : ι → Set F) (e : ∀ i, S i ≃ₜ T i)
@@ -89,11 +70,6 @@ theorem agree_symm_of_overlap {E F ι : Type*}
   have hinv := congrArg (e j).symm hEj
   rw [(e j).symm_apply_apply] at hinv
   exact congrArg Subtype.val hinv
-
-
-
-
-
 
 theorem exists_openPartialHomeomorph_of_finitePL_family {E F ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

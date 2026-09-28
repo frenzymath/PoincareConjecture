@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SaturatedHeight
 import Mathlib.Topology.Order.Compact
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem isSeparating_of_central_sphere_graph
     {M : Type u} [TopologicalSpace M]

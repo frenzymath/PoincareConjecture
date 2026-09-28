@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +19,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem metricKappaNoncollapsed_of_m23_predecessors
     (K : AncientKappaSolution 3 M) (P : M23NormalizedKappaCompactnessPredecessors)
@@ -70,8 +59,6 @@ local instance flowCarrierConnected (C : FlowCarrier 3) : ConnectedSpace C.carri
   connectedSpace_iff_univ.mpr C.connected
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
-
-
 
 theorem interiorLimit_metricKappaNoncollapsed
     (P : M23NormalizedKappaCompactnessPredecessors)

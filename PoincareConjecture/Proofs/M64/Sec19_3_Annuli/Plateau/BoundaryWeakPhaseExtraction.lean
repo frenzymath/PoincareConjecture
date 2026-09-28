@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.Strong
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -91,11 +80,6 @@ private theorem phase_norm_sq (f : LoopPlane → ℝ) (hf : MemLp f 2 mu) :
   apply integral_congr_ae
   filter_upwards [hf.coeFn_toLp] with p hp
   simp only [real_inner_self_eq_norm_sq, hp, Real.norm_eq_abs, sq_abs]
-
-
-
-
-
 
 theorem m64WeakPhase_weak_ae_subsequence
     (u : ℕ → LoopPlane → ℝ) (V : ℕ → Fin 2 → LoopPlane → ℝ)

@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionIntegrability
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64AnnulusDomain_boundary_null :
     volume (m64AnnulusDomain \ interior m64AnnulusDomain) = 0 := by

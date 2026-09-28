@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.StripAnchorCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.CorrectedStrip
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +19,6 @@ private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR" => 𝓘(Real, Real)
 local notation "IR2" => 𝓘(Real, Real × Real)
-
 
 def projectedPastedRoundedAnchor {v : E3} (g : S2 → E3)
     (e : OpenPartialHomeomorph E2 S2)
@@ -84,8 +75,6 @@ theorem projectedPastedRoundedAnchor_of_exterior
   · simp only [projectedPastedRoundedAnchor, pastedRoundedAnchor, if_pos hqU,
       hmatch q ⟨hqU, hq⟩, correctedStrip]
   · exact projectedPastedRoundedAnchor_of_not_mem g e F R t₀ α D J c H x θ hqU
-
-
 
 theorem injective_mfderiv_projectedPastedRoundedAnchor
     {v : E3} {g : S2 → E3}

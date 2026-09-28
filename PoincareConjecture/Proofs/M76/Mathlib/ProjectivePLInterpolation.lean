@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HullImageLocalFiniteness
 import PoincareConjecture.Proofs.M76.Mathlib.InfiniteSimplicialHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_piecewiseAffine_interpolant (K : SimplicialComplex ℝ E)
     (e : OpenPartialHomeomorph E F) (hsource : K.space = e.source)

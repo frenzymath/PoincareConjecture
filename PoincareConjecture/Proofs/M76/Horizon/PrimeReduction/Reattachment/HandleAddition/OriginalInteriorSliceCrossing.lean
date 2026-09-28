@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSpherePairCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.PairChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -161,4 +150,3 @@ theorem OriginalDiskProduct.exists_regular_interior_crossing_heights
     (fun htWi => htW (mem_iUnion₂.mpr ⟨i,hi,htWi⟩))
 
 end PoincareConjecture.M76
-

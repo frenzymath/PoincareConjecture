@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
 
 theorem backward_metric_contMDiffAt
     (hwindow : Icc (T - τmax) T ⊆ J)
@@ -42,7 +33,6 @@ theorem backward_metric_contMDiffAt
   have hmetric := F.smooth.contMDiffAt hnhds
   exact hmetric.comp z
     ((contMDiffAt_const.sub contMDiffAt_snd).prodMk contMDiffAt_fst)
-
 
 noncomputable def backwardMetricCoordinates (F : RicciFlow n M J) (T : ℝ) (q₀ : M)
     (w : M × ℝ) : EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -82,7 +72,6 @@ theorem backwardMetricCoordinates_apply (q₀ : M) (w : M × ℝ)
     Trivialization.symm_linearMapAt _ hw]
   change (Bundle.Trivial.trivialization M ℝ).linearMapAt ℝ w.1 _ = _
   simp only [Bundle.Trivial.linearMapAt_trivialization, LinearMap.id_apply]
-
 
 noncomputable def coordinateBackwardMetric (F : RicciFlow n M J) (T : ℝ) (q₀ : M)
     (z : EuclideanSpace ℝ (Fin n) × ℝ) :

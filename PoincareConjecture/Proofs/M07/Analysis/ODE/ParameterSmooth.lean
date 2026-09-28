@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterExistence
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterImplicit
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Function Metric

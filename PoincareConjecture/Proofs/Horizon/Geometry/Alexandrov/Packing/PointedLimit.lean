@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.FiniteApproximation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +8,6 @@ open Set Filter Topology
 open Poincare.GromovHausdorff
 
 namespace Poincare.Alexandrov
-
-
 
 theorem comparisonAnglePackingBound_of_pointedGHConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace} {Y : FiniteDiameterBasedMetricSpace}
@@ -43,8 +33,6 @@ theorem comparisonAnglePackingBound_of_pointedGHConverges
   obtain ⟨j, hj, hsep⟩ := ((Filter.eventually_all.mpr hnonzero).and
     (Filter.eventually_all.mpr fun i => Filter.eventually_all.mpr (hseparated i))).exists
   exact hX j k (f j p) (fun i => f j (q i)) hj hsep
-
-
 
 theorem comparisonAnglePackingBound_of_pointedGHConvergesUnbounded
     {X : ℕ → BasedMetricSpaceBundle} {Y : BasedMetricSpaceBundle}

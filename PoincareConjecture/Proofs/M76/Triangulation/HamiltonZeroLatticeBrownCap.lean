@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroLatticeWallCore
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardAtlasExistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,11 +11,6 @@ namespace PoincareConjecture.M76
 local notation "W" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 local notation "Y" => ((Set.singleton hamiltonZeroHandlePuncture)ᶜ : Set W)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_zero_lattice_marked_brown_cap
     (h : OpenPartialHomeomorph CubeShell.Ambient V3) (hsource : h.source = univ)

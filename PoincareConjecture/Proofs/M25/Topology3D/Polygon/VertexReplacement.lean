@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.AdmissibleVertex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,20 +10,16 @@ section Update
 
 variable {E : Type*} {n : ℕ}
 
-
 def polygonReplaceVertex (p : Polygon E n) (k : Fin n) (x : E) : Polygon E n :=
   ⟨Function.update p.vertices k x⟩
-
 
 theorem polygonReplaceVertex_apply_same (p : Polygon E n) (k : Fin n) (x : E) :
     polygonReplaceVertex p k x k = x := by
   simp [polygonReplaceVertex]
 
-
 theorem polygonReplaceVertex_apply_of_ne (p : Polygon E n) (k : Fin n) (x : E)
     {j : Fin n} (hj : j ≠ k) : polygonReplaceVertex p k x j = p j := by
   exact Function.update_of_ne hj _ _
-
 
 theorem polygonReplaceVertex_self (p : Polygon E n) (k : Fin n) :
     polygonReplaceVertex p k (p k) = p := by
@@ -44,8 +30,6 @@ end Update
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.vertex_mem_triangle_iff_of_admissible (hp : IsSimplePolygon p)
     (k : Fin n) (had : IsAdmissibleVertex p k) (j : Fin n) :
@@ -69,8 +53,6 @@ theorem IsSimplePolygon.vertex_mem_triangle_iff_of_admissible (hp : IsSimplePoly
   · intro hj
     apply subset_convexHull ℝ _
     rcases hj with rfl | rfl | rfl <;> simp
-
-
 
 theorem IsSimplePolygon.triangle_inter_edge_subset_of_admissible (hp : IsSimplePolygon p)
     (k : Fin n) (had : IsAdmissibleVertex p k) (i : Fin n)
@@ -99,8 +81,6 @@ theorem IsSimplePolygon.triangle_inter_edge_subset_of_admissible (hp : IsSimpleP
   · have hends := hp.edges_inter k i hik.symm
       ⟨(polygon_edgeSet_eq_segment p k).symm ▸ hC, hzi⟩
     exact ⟨Or.inr (hends.1.resolve_left hzk), hends.2⟩
-
-
 
 theorem IsSimplePolygon.isSimple_polygonReplaceVertex_of_admissible (hp : IsSimplePolygon p)
     (k : Fin n) (had : IsAdmissibleVertex p k) (x : E)

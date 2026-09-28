@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CutRectangleExtension
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CutRectangleQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

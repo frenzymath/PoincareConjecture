@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Topology.
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.TargetPhaseSelection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalBallPhaseHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -26,8 +16,6 @@ local notation "C" => AddCircle p
 local notation "Q" => hamiltonOneHierarchyCoordinates
 
 private instance period_positive : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_ball_phase_clamp {ι : Type*}
     {e : ι → OpenPartialHomeomorph X V3} {D S : Set X}

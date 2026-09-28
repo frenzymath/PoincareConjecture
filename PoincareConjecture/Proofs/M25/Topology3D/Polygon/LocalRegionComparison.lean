@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalRegionSides
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.LocalSides
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.RegionNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,8 +33,6 @@ private theorem local_sides_eq_inter_regions {X : Type*} {W C I O A B : Set X}
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n m : ℕ} {p : Polygon E n} {q : Polygon E m}
 
-
-
 theorem IsSimplePolygon.exists_local_two_sides_within (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (x : E) (hx : x ∈ p.boundary ℝ)
     (V : Set E) (hV : IsOpen V) (hxV : x ∈ V) :
@@ -64,8 +52,6 @@ theorem IsSimplePolygon.exists_local_two_sides_within (hp : IsSimplePolygon p)
     exists_local_two_sides_within_of_straightening e' (hU.inter hU')
       ⟨hxU, hxU'⟩ hx hstraight hV hxV
   exact ⟨W, A, B, hW, hxW, fun _ hz => (hWV hz).2, hA, hB, hlocal, hCA, hCB⟩
-
-
 
 theorem IsSimplePolygon.exists_local_region_sides_within (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (x : E) (hx : x ∈ p.boundary ℝ)
@@ -92,8 +78,6 @@ theorem IsSimplePolygon.exists_local_region_sides_within (hp : IsSimplePolygon p
   rcases hyAB with hyA | hyB
   · exact hfinish B A hB hA ((union_comm B A).trans hlocal) hyA
   · exact hfinish A B hA hB hlocal hyB
-
-
 
 theorem IsSimplePolygon.exists_local_regions_eq_of_boundary_agreement
     (hp : IsSimplePolygon p) (hq : IsSimplePolygon q) (hdim : Module.finrank ℝ E = 2)

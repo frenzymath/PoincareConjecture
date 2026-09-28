@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleMap
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -56,8 +47,6 @@ theorem hamiltonZeroAmbient_localOrientation :
   obtain ⟨P⟩ := hamiltonZeroAmbient_positiveThreeAtlas
   exact exists_localOrientation_of_positiveThreeAtlas P
 
-
-
 theorem exists_hamiltonZero_euclidean_atlas_labels
     {ι : Type*} (e : ι → OpenPartialHomeomorph X E3)
     (he : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E3) :
@@ -70,7 +59,6 @@ theorem exists_hamiltonZero_euclidean_atlas_labels
   let : LocallyCompactSpace X := h.isOpenEmbedding.locallyCompactSpace
   obtain ⟨O⟩ := hamiltonZeroAmbient_localOrientation
   exact exists_plAtlas_labels_of_localOrientation O euclideanLocalOrientation e he
-
 
 theorem exists_hamiltonZero_original_atlas_labels
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3)
@@ -90,8 +78,6 @@ theorem exists_hamiltonZero_original_atlas_labels
   exact h
 
 open PreAbstractSimplicialComplex.ModTwoCochains
-
-
 
 theorem exists_hamiltonZero_frontier_geometric_coface_signs
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -128,8 +114,6 @@ theorem exists_hamiltonZero_frontier_geometric_coface_signs
     exists_frontier_all_edge_signs_of_chart_labels e K A hAK hA g N hgi hfront hstars
       hq labels (fun H D z hH hD => hlabel H D (g z) hH hD)
   exact Dehn.exists_geometric_coface_signs A number sign hsign
-
-
 
 theorem exists_hamiltonZero_frontier_component_sphere_of_isCyclic
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -189,8 +173,6 @@ theorem exists_hamiltonZero_frontier_component_sphere_of_isCyclic
   change Nat.card J.vertices + Nat.card (Triangle J.vertexAbstractComplex.toPreAbstractSimplicialComplex) =
     Nat.card (Edge J.vertexAbstractComplex.toPreAbstractSimplicialComplex) + 2
   omega
-
-
 
 theorem exists_hamiltonZero_whole_frontier_component_sphere
     {ι : Type*} (e : ι → OpenPartialHomeomorph X V3) {N S : Set X}
@@ -262,6 +244,5 @@ theorem exists_hamiltonZero_whole_frontier_component_sphere
   change Nonempty (ChartwisePLSphere e (q '' J.space)) at hsphere
   rw [hqS] at hsphere
   exact hsphere
-
 
 end PoincareConjecture.M76

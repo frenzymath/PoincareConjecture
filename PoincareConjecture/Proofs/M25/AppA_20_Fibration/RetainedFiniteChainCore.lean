@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import Mathlib.Data.Int.Interval
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem BalancedNeckChain.exists_finite_retained_core_cover :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

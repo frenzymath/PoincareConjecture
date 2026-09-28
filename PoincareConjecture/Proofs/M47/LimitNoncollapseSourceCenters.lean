@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseMetric
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCapture
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_source_center_of_forward_bound
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -59,9 +48,6 @@ private local instance : TopologicalSpace C.limit.carrier.carrier :=
 private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carrier.carrier :=
   C.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
-
 
 theorem limitNoncollapse_eventually_source_center (p : C.limit.sliceCarrier.carrier) :
     ∃ A : ℝ, 0 < A ∧ ∀ᶠ k : ℕ in atTop,

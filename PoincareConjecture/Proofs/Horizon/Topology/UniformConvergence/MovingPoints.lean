@@ -1,23 +1,12 @@
 import Mathlib.Topology.MetricSpace.UniformConvergence
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare.Topology
-
-
 
 theorem tendstoUniformlyOn_prod_of_moving_points
     {ι X Y Z : Type*} [PseudoMetricSpace Z]
@@ -48,8 +37,6 @@ theorem tendstoUniformlyOn_prod_of_moving_points
   obtain ⟨z, hz, hfail⟩ := hbq
   exact hfail (hi z hz)
 
-
-
 theorem tendstoUniformlyOn_prod_of_isCompact_of_local
     {ι X Y Z : Type*} [TopologicalSpace X] [PseudoMetricSpace Z]
     {l : Filter ι} {K : Set X} {S : Set Y}
@@ -75,9 +62,6 @@ theorem tendstoUniformlyOn_prod_of_isCompact_of_local
   · intro p hp
     obtain ⟨U, hU, hpU, hconv⟩ := hlocal p hp
     exact ⟨K ∩ U, inter_mem_nhdsWithin K (hU.mem_nhds hpU), hconv⟩
-
-
-
 
 theorem tendstoUniformlyOn_prod_of_isCompact_of_locally_moving_points
     {ι X Y Z : Type*} [TopologicalSpace X] [PseudoMetricSpace Z]

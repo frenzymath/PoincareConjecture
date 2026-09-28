@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitConstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,9 +17,6 @@ noncomputable local instance rescaledLimitClosedJetsCoefficientNorm : NormedAddC
 
 noncomputable local instance rescaledLimitClosedJetsCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem tendstoUniformlyOn_spatialJet_of_compactSmooth
     {fseq : ℕ → ℝ × E → V} {b : ℝ × E → V} {U : Set (ℝ × E)}
@@ -54,12 +41,6 @@ theorem tendstoUniformlyOn_spatialJet_of_compactSmooth
       (h.smooth.contDiffAt (h.isOpen.mem_nhds (hKU hp))) m v).symm
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
-
 
 theorem tendstoUniformlyOn_rescaled_spatialJets_closed_birth
     {fseq : ℕ → ℝ × E → V} {b : ℝ × E → V} {T T0 : ℝ}
@@ -126,11 +107,6 @@ theorem tendstoUniformlyOn_rescaled_spatialJets_closed_birth
     change dist (B (t, x)) (A k (t, x)) < eta
     change dist (B (0, x)) (A k (0, x)) < eta / 3 at hbirth_bound
     linarith
-
-
-
-
-
 
 theorem tendstoUniformlyOn_rescaled_partial_flow_closed_jets
     {g0 : StandardInitialMetric} (S : PartialStandardCapFlow g0)

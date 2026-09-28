@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M10.RescaledMetric
 import PoincareConjecture.Proofs.M10.DiffeomorphMetric
 import PoincareConjecture.Proofs.M10.StaticEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

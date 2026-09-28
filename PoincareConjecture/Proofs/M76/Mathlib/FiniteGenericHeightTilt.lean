@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteGenericHeight
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
-
-
 
 theorem Set.Finite.exists_generic_affine_height_tilt
     {E : Type*} [AddCommGroup E] [Module ℝ E]

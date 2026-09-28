@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopBoundaryFan
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalInteriorFans
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundaryEuler
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +27,6 @@ private theorem coordinate_vertex_angle_nonneg
   · exact le_rfl
 
 open Classical in
-
-
 
 theorem m64Intrinsic_return_region_curvature_turning_lower_bound
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

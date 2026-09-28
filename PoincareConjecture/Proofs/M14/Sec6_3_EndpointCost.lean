@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_LineEndpointFamily
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareFamilyRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,22 +21,15 @@ namespace GaugeEndpointFamily
 
 variable (D : GaugeEndpointFamily f U T 0 b c 0 j lift)
 
-
 noncomputable def prefixAction (z : ℝ × EuclideanSpace ℝ (Fin n)) : ℝ :=
   squareFamilyAction G D.family (Icc 0 b) 0 c z
-
-
 
 noncomputable def tailAction (y : EuclideanSpace ℝ (Fin n)) : ℝ :=
   squareFamilyAction G D.family (Icc 0 b) c b (0, y)
 
-
-
 noncomputable def cost (z : ℝ × EuclideanSpace ℝ (Fin n)) : ℝ :=
   D.prefixAction (z.1, (lift (f (c, z.1))).2.val + z.2) +
     D.tailAction ((lift (f (c, z.1))).2.val + z.2)
-
-
 
 theorem prefixAction_contDiffAt (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hc : c ∈ Ioo 0 b) {z : ℝ × EuclideanSpace ℝ (Fin n)} (hz : z ∈ D.parameters) :
@@ -53,17 +37,12 @@ theorem prefixAction_contDiffAt (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   (squareFamilyAction_contDiffOn hM12 (hc.1.trans hc.2) D.parameters_open
     D.smooth (Ioo_subset_Icc_self hc) z hz).contDiffAt (D.parameters_open.mem_nhds hz)
 
-
-
 theorem tailAction_contDiffAt (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hc : c ∈ Ioo 0 b) {y : EuclideanSpace ℝ (Fin n)} (hy : (0, y) ∈ D.parameters) :
     ContDiffAt ℝ ∞ D.tailAction y :=
   ((squareFamilyAction_interval_contDiffOn hM12 (hc.1.trans hc.2) D.parameters_open
     D.smooth (Ioo_subset_Icc_self hc) ⟨(hc.1.trans hc.2).le, le_rfl⟩ (0, y) hy).contDiffAt
       (D.parameters_open.mem_nhds hy)).comp y (contDiffAt_const.prodMk contDiffAt_id)
-
-
-
 
 theorem cost_contDiffAt (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hc : c ∈ Ioo 0 b) :
     ContDiffAt ℝ ∞ D.cost (0, 0) := by

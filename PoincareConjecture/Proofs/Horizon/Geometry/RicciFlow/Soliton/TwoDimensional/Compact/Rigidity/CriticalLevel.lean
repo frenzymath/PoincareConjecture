@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 import Mathlib.Analysis.Calculus.LocalExtr.Rolle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 theorem eq_of_potential_eq_at_nondegenerate_critical_point (D : LeviCivitaData g)
     (hc : MetricComplete g) {f : M → ℝ} {lambda : ℝ}
@@ -71,8 +61,6 @@ theorem eq_of_potential_eq_at_nondegenerate_critical_point (D : LeviCivitaData g
   apply D.deriv_potential_ne_zero_inside_minimizing hf hsol hε hL hγ hspeed
     (by rw [hγ0, hγ1]; exact (ENNReal.ofReal_toReal (g.edist_ne_top p q)).symm)
     (by rw [hγ0]; exact hcrit) (by simpa only [hγ0] using hR) ht hturn
-
-
 
 theorem eq_of_potential_eq_at_critical_point_of_not_round (D : LeviCivitaData g)
     (hc : MetricComplete g) {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)

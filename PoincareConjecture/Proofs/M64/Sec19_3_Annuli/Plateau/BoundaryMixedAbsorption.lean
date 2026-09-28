@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMixedTests
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +11,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 namespace PoincareConjecture
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem m64NaturalGrowth_mixed_diffQuot_absorb
     {n : ℕ} (dirichlet : Fin n → Prop)

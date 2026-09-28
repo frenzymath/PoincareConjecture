@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.LpPowers
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.LpLimit
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +18,6 @@ private theorem le_root_mul_of_energy_rpow_le {u v F t : ℝ}
   rw [Real.mul_rpow (Real.rpow_nonneg hF _) hv, one_div,
     Real.rpow_inv_rpow hF ht.ne']
   exact h
-
-
 
 theorem exists_uniform_energy_mean_value {n : ℕ} (hn : 2 ≤ n)
     {a b P Λ : ℝ} (ha : 0 < a) (hb : 0 ≤ b) (hP : 0 ≤ P) (hΛ : 0 ≤ Λ) :

@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPairImage
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapIntersection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem surgery_parent_region_identities
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -160,7 +150,6 @@ theorem surgery_parent_region_identities
     subst q
     exact disjoint_left.mp hKdisjoint hp hq
 
-
 theorem surgery_cap_equator_image (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)
     (t sigma c l : ℝ) :
@@ -195,7 +184,6 @@ theorem surgery_cap_equator_image (P : SurgeryCapProfile)
     rw [hformula _ hzero, hcoords]
     change T ((circleDirection (theta : E2) : E2), t + sigma * c) = _
     rw [circleDirection_coe_unit]
-
 
 theorem surgery_retained_cap_intersection (P : SurgeryCapProfile)
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

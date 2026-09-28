@@ -43,8 +43,6 @@ theorem m67_alpha_transport_refl
     ⟨Path.refl (constantC1Loop x), fun _ _ => rfl⟩, ?_⟩
   exact ((B.transport 2).map_refl _).trans (m67_homotopy_map_id alpha)
 
-
-
 theorem m67_alpha_transport_trans
     (B : M59HigherBasepointTransportService.{u})
     {x : M} {y : N} {z : O} {f : C(M, N)} {g : C(N, O)}

@@ -2,13 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -17,7 +10,6 @@ open scoped Topology
 namespace Poincare.Manifold
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem fderiv_neg_of_eventually_even {f : E → E} {x : E}
     (hf : DifferentiableAt ℝ f (-x))
@@ -28,8 +20,6 @@ theorem fderiv_neg_of_eventually_even {f : E → E} {x : E}
   have heq : fderiv ℝ f x = -fderiv ℝ f (-x) := by
     simpa only [ContinuousLinearMap.comp_neg, ContinuousLinearMap.comp_id] using hd.fderiv
   simpa only [neg_neg] using congrArg Neg.neg heq.symm
-
-
 
 theorem exists_det_fderiv_eq_zero_of_locally_even [FiniteDimensional ℝ E]
     (hdim : Odd (Module.finrank ℝ E)) {s : Set E} (hs : IsConnected s)
@@ -58,8 +48,6 @@ theorem exists_det_fderiv_eq_zero_of_locally_even [FiniteDimensional ℝ E]
       (show 0 ∈ Icc (d (-x)) (d x) by rw [hodd x hx]; exact ⟨neg_nonpos.mpr h, h⟩)
     exact ⟨y, hy, hyzero⟩
 
-
-
 theorem not_forall_isInvertible_fderiv_of_locally_even [FiniteDimensional ℝ E]
     (hdim : Odd (Module.finrank ℝ E)) {s : Set E} (hs : IsConnected s)
     (hneg : ∀ x ∈ s, -x ∈ s) {f : E → E}
@@ -74,8 +62,6 @@ theorem not_forall_isInvertible_fderiv_of_locally_even [FiniteDimensional ℝ E]
   rw [← he] at hzero
   convert hzero using 1
   congr 1
-
-
 
 theorem not_forall_isInvertible_fderiv_of_even [FiniteDimensional ℝ E]
     (hdim : Odd (Module.finrank ℝ E)) {s : Set E} (hs : IsConnected s)

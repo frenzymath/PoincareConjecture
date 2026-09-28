@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapGraphCompactSide
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapLowerCutComponent
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedChainCuts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.closed_cores_disjoint_of_last_slice_outward_graph
     {M : Type u} [TopologicalSpace M]

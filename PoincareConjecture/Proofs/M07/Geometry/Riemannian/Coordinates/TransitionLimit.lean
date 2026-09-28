@@ -2,18 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,7 +13,6 @@ variable {E F G : Type*} [NormedAddCommGroup E]
   [NormedAddCommGroup F] [NormedAddCommGroup G]
 
 omit [NormedAddCommGroup E] in
-
 
 theorem comp_eq_of_tendsto
     {U : Set E} {V : Set F} (hV : IsOpen V)
@@ -45,8 +32,6 @@ theorem comp_eq_of_tendsto
   exact tendsto_nhds_unique hlimit
     ((hh x hx).congr' ((hcomp x hx).mono fun k hk => hk.symm))
 
-
-
 theorem leftInvOn_of_tendsto
     {U : Set E} {V : Set F} (hV : IsOpen V)
     {fseq : ℕ → E → F} {f : E → F}
@@ -60,8 +45,6 @@ theorem leftInvOn_of_tendsto
   exact comp_eq_of_tendsto (hseq := fun _ => id) (h := id) hV hg hgcont hfV hf
     (fun _ _ => tendsto_const_nhds) hinv hx
 
-
-
 theorem injOn_of_tendsto_inverse
     {U : Set E} {V : Set F} (hV : IsOpen V)
     {fseq : ℕ → E → F} {f : E → F}
@@ -74,8 +57,6 @@ theorem injOn_of_tendsto_inverse
   (leftInvOn_of_tendsto hV hg hgcont hfV hf hinv).injOn
 
 variable [NormedSpace ℝ E] [NormedSpace ℝ F]
-
-
 
 theorem pullback_eq_of_tendsto
     {U : Set E} {V : Set F} (hV : IsOpen V)
@@ -109,8 +90,6 @@ theorem pullback_eq_of_tendsto
   exact tendsto_nhds_unique hvalue
     ((hA x hx v w).congr' ((hmetric x hx).mono fun k hk => (hk v w).symm))
 
-
-
 theorem locallyUniformly_of_tendsto_zeroJet [LocallyCompactSpace E]
     {U : Set E} (hU : IsOpen U) {fseq : ℕ → E → F} {f : E → F}
     (hjet : ∀ K, IsCompact K → K ⊆ U →
@@ -122,8 +101,6 @@ theorem locallyUniformly_of_tendsto_zeroJet [LocallyCompactSpace E]
   simpa only [Function.comp_def, iteratedFDeriv_zero_apply] using
     (ContinuousMultilinearMap.uniformContinuous_eval_const (0 : Fin 0 → E)).comp_tendstoUniformlyOn
       (hjet K hK hKU)
-
-
 
 theorem exists_openPartialHomeomorph_of_tendsto_jets
     [LocallyCompactSpace E] [LocallyCompactSpace F]
@@ -160,9 +137,6 @@ theorem exists_openPartialHomeomorph_of_tendsto_jets
       open_source := hU
       open_target := hV }
   exact ⟨e, rfl, rfl, rfl, rfl, hf, hg⟩
-
-
-
 
 theorem pullback_eq_of_tendsto_jets [LocallyCompactSpace E] [LocallyCompactSpace F]
     {U : Set E} {V : Set F} (hU : IsOpen U) (hV : IsOpen V)

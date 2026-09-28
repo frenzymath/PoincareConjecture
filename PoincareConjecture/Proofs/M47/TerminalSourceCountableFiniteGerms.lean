@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableOperator
 import PoincareConjecture.Proofs.M47.TerminalGermsExhaustionOperator
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,8 +18,6 @@ open ChartDistance
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 def TerminalSourceCountableFiniteGermsResult
     {P : ℕ → Type*} {X : Type*} [∀ n, TopologicalSpace (P n)] [TopologicalSpace X]
@@ -130,7 +119,6 @@ variable
 
 include hsigma hD he hc hlower hopen hconn hsmooth htau hUR hGood hmetric hterminal in
 
-
 theorem terminalSourceCountable_actual_source_identity
     (i j : ℕ) {s : ℝ} (hsi : s ∈ Icc (-(tau i / 4)) 0)
     (hsj : s ∈ Icc (-(tau j / 4)) 0) :
@@ -207,7 +195,6 @@ local notation "O" => overlapSystem hD Lip (fun k => he (sigma k)) c hc
   (fun k => hlower (sigma k)) (fun k => hopen (sigma k)) (fun k => hconn (sigma k))
 
 include hsigma hD he hc hlower hopen hconn hsmooth htau hUR hGood hmetric hterminal in
-
 
 theorem terminalSourceCountable_actual_finite_germs
     (P : M46Predecessors.{u})

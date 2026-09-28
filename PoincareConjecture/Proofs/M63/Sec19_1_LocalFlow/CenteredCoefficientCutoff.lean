@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckTraceCutoffNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
@@ -16,9 +8,6 @@ open SpectralHeatNative QuasilinearDeTurckNative
 
 variable {iota E : Type*} [Countable iota]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem norm_centeredCoefficientCutoff_sub_le (lambda : iota → NNReal)
     {r : ℝ} (hr : 0 < r) (M : E →L[ℝ] State iota →L[ℝ] State iota)

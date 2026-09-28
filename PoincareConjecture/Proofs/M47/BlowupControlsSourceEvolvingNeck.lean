@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingCylinder
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem exists_actualCap_strong_neck_of_family
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

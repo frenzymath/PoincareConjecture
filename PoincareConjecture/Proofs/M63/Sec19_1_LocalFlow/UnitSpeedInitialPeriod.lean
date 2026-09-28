@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialArclengthGauge
 import Mathlib.Topology.Algebra.GroupWithZero
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem exists_c2_unit_speed_parameter (F : RicciFlow n M (Icc a b))
     (gamma : ℝ → M) (t : ℝ) (hperiod : Function.Periodic gamma curvePeriod)

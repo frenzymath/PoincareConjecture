@@ -3,19 +3,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Covering
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Filter
@@ -27,8 +14,6 @@ namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
-
 theorem simplyConnectedSpace_collarStrip {δ : ℝ} (hδ : 0 < δ) :
     SimplyConnectedSpace (UnitTwoSphere × Ioo (-δ) δ) := by
   let : SimplyConnectedSpace UnitTwoSphere := Poincare.Topology.standardSphereSimplyConnected 0
@@ -37,9 +22,6 @@ theorem simplyConnectedSpace_collarStrip {δ : ℝ} (hδ : 0 < δ) :
   exact ((ContinuousMap.HomotopyEquiv.refl UnitTwoSphere).prodCongr
     (ContractibleSpace.hequiv (Ioo (-δ) δ) Unit).some |>.trans
       (Homeomorph.prodUnique UnitTwoSphere Unit).toHomotopyEquiv).simplyConnectedSpace
-
-
-
 
 theorem continuous_collar_lift_smooth
     {A Q : GeneralizedSliceCarrier.{u}}
@@ -64,9 +46,6 @@ theorem continuous_collar_lift_smooth
   filter_upwards [hU.mem_nhds hp, hnear] with x hx htarget
   change L x = h.localInverse (c x)
   rw [← hlift x hx, h.localInverse_left_inv htarget]
-
-
-
 
 theorem exists_smooth_collar_lift
     {A Q : GeneralizedSliceCarrier.{u}}

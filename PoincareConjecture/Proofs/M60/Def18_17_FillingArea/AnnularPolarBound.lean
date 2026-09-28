@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m60AreaIntegral_annulus_le_polar
     {n : ℕ} {M : Type u} [TopologicalSpace M]

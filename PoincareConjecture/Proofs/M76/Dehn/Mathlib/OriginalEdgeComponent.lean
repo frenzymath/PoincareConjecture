@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,25 +11,17 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
 
-
-
 def edgeComponentComplex (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     SimplicialComplex ℝ E := K.vertexSubcomplex (Subtype.val '' C.supp)
 
-
-
 theorem edgeComponentComplex_le (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     K.edgeComponentComplex C ≤ K := K.vertexSubcomplex_le _
-
-
 
 theorem edgeComponentComplex_vertex_iff
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) (p : K.vertices) :
     p.val ∈ (K.edgeComponentComplex C).vertices ↔ p ∈ C.supp := by
   rw [edgeComponentComplex, K.vertexSubcomplex_vertices]
   simp only [mem_inter_iff, p.property, true_and, Subtype.val_injective.mem_set_image]
-
-
 
 theorem edge_component_face_vertex
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -54,9 +37,6 @@ theorem edge_component_face_vertex
       (Finset.insert_subset_iff.mpr ⟨hp, Finset.singleton_subset_iff.mpr hq⟩)
     exact Finset.insert_nonempty _ _
 
-
-
-
 theorem edgeComponentComplex_coface
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
     {s t : Finset E} (hs : s ∈ (K.edgeComponentComplex C).faces)
@@ -70,8 +50,6 @@ theorem edgeComponentComplex_coface
     (Finset.singleton_subset_iff.mpr hqt) (Finset.singleton_nonempty q)
   exact ⟨⟨q, hqK⟩, K.edge_component_face_vertex C ht hp0t hqt hpC, rfl⟩
 
-
-
 theorem edgeComponentComplex_cofaces
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
     {s : Finset E} (hs : s ∈ (K.edgeComponentComplex C).faces) (n : ℕ) :
@@ -84,8 +62,6 @@ theorem edgeComponentComplex_cofaces
   · intro ht
     exact ⟨K.edgeComponentComplex_coface C hs ht.1 ht.2.2, ht.2⟩
 
-
-
 theorem edgeComponentComplex_pure
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent) {n : ℕ}
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = n) :
@@ -94,8 +70,6 @@ theorem edgeComponentComplex_pure
   intro s hs
   obtain ⟨t, ht, hst, hcard⟩ := hpure s hs.1
   exact ⟨t, K.edgeComponentComplex_coface C hs ht hst, hst, hcard⟩
-
-
 
 theorem edgeComponentComplex_vertex_link
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)

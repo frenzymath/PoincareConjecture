@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.WeakEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
 
-
-
 theorem integral_mul_eq_of_ae_eq_on {U V ψ : M → ℝ}
     (hΩ : IsOpen Ω) (hUV : U =ᵐ[g.volumeMeasure.restrict Ω] V)
     (hψ : tsupport ψ ⊆ Ω) :
@@ -37,8 +29,6 @@ theorem integral_mul_eq_of_ae_eq_on {U V ψ : M → ℝ}
   · have hxψ : x ∉ tsupport ψ := fun h => hxΩ (hψ h)
     simp [image_eq_zero_of_notMem_tsupport hxψ]
 
-
-
 theorem weakEigen_integral_laplacian_representative
     (hΩ : IsOpen Ω) (u : H1Zero D Ω) (lambda : ℝ)
     (heigen : ∀ v : H1Zero D Ω,
@@ -51,8 +41,6 @@ theorem weakEigen_integral_laplacian_representative
     ((D.tsupport_laplacian_subset f).trans f.support_subset),
     integral_mul_eq_of_ae_eq_on hΩ hU f.support_subset]
   exact weakEigen_integral_laplacian_test u lambda heigen f
-
-
 
 theorem integral_mul_laplacian_comm_of_compact_tests {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -73,7 +61,6 @@ theorem integral_mul_laplacian_comm_of_compact_tests {f h : M → ℝ}
 
 omit [MeasurableSpace M] [BorelSpace M] in
 
-
 theorem exists_compact_smooth_germ (hΩ : IsOpen Ω) {U : M → ℝ}
     (hU : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ U Ω) {x : M} (hx : x ∈ Ω) :
     ∃ V : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ V ∧
@@ -88,7 +75,6 @@ theorem exists_compact_smooth_germ (hΩ : IsOpen Ω) {U : M → ℝ}
     exact b.contMDiffAt.mul (hU.contMDiffAt (hΩ.mem_nhds hyΩ))
   · filter_upwards [b.eventuallyEq_one] with y hy
     simp [hy]
-
 
 theorem volumeMeasure_isOpenPosMeasure : g.volumeMeasure.IsOpenPosMeasure := by
   constructor
@@ -120,8 +106,6 @@ theorem volumeMeasure_isOpenPosMeasure : g.volumeMeasure.IsOpenPosMeasure := by
     intro y hy hz
     exact (ENNReal.ofReal_pos.mpr (hd y hy).2).ne' (hz hy)
   exact hS.measure_ne_zero volume hSne hnull
-
-
 
 theorem laplacian_eq_of_smooth_representative
     (hΩ : IsOpen Ω) (u : H1Zero D Ω) (lambda : ℝ)

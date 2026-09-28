@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckExposedStandardCap
 import PoincareConjecture.Proofs.M47.CanonicalStandardTipLocus
 import PoincareConjecture.Proofs.M47.CanonicalCapCompactFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
-
 
 theorem exists_firstFailure_exposed_physical_cap_cutoff_of_standard_cover
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

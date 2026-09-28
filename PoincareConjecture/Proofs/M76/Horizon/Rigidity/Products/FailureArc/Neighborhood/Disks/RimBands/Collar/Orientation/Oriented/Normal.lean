@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.GlobalSurfaceLabels
 import PoincareConjecture.Proofs.M76.Brown.OrientedFlatteningCharts
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Topology.Orientation.ProjectivePlane
@@ -48,8 +42,6 @@ theorem exists_original_planar_surface_normal_units_of_localOrientation
   obtain ⟨a, ha, _, hcompat⟩ :=
     exists_normal_units_of_orientation_labels A hPL ambient tangent hamb htan
   exact ⟨a, ha, hcompat⟩
-
-
 
 theorem exists_original_planar_surface_cooriented_charts_of_localOrientation
     {X : Type} {ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]

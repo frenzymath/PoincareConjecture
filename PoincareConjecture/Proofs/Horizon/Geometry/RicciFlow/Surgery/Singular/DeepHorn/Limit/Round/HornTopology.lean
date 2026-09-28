@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orie
 import PoincareConjecture.Proofs.Horizon.Compat.M33OrientationExclusion
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +19,8 @@ namespace PoincareConjecture.StrongHorn
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
 def interiorOpens (horn : StrongHorn E epsilon) : Opens (E.extended.slice T).carrier :=
   ⟨horn.carrier \ horn.boundary_sphere, horn.isOpen_carrier_diff_boundary⟩
-
 
 theorem nonempty_interiorHomeomorph (horn : StrongHorn E epsilon) :
     Nonempty ((UnitTwoSphere × Ioo (0 : ℝ) 1) ≃ₜ horn.interiorOpens) := by
@@ -52,7 +41,6 @@ theorem nonempty_interiorHomeomorph (horn : StrongHorn E epsilon) :
       exact ⟨(q, ⟨t, ht⟩), horn.coordinate_eq _⟩
   exact ⟨hf.toHomeomorph.trans (Homeomorph.setCongr hrange)⟩
 
-
 theorem simplyConnectedSpace_interior (horn : StrongHorn E epsilon) :
     SimplyConnectedSpace horn.interiorOpens := by
   let : SimplyConnectedSpace UnitTwoSphere :=
@@ -63,8 +51,6 @@ theorem simplyConnectedSpace_interior (horn : StrongHorn E epsilon) :
     simplyConnectedSpace_prod_contractible _ _
   obtain ⟨e⟩ := horn.nonempty_interiorHomeomorph
   exact e.symm.toHomotopyEquiv.simplyConnectedSpace
-
-
 
 theorem noTrivialNormalProjectivePlane_interior (horn : StrongHorn E epsilon) :
     NoTrivialNormalProjectivePlane (M := horn.interiorOpens) := by

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CompactImageRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {N : Type*} [TopologicalSpace N] [T2Space N]
   [ChartedSpace E N] [IsManifold (𝓡 3) ∞ N]
-
-
-
 
 theorem mem_intrinsicImage_regularPoints_of_euclidean_buffer
     (h : RiemannianMetric 3 N) (e : PartialDiffeomorph (𝓡 3) (𝓡 3) E N ∞)

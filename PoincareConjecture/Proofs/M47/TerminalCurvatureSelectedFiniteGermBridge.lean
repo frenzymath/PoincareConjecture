@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierReadout
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCountableFiniteGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private noncomputable local instance selectedBridgeBilinearNormedAddCommGroup :
 private noncomputable local instance selectedBridgeBilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem terminalCurvature_bound_of_selected_source_finite_germs
     (sched : RepairedControlledSchedulesData.{u})

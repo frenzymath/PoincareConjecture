@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Patches
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_LocalScalarTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,7 +16,6 @@ variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem identify_mfderiv_invertible (x : I.recent_carrier.carrier)
     (hx : x ∈ I.recent_patch.carrier) :
     (mfderiv (𝓡 3) (𝓡 3) I.identify x).IsInvertible := by
@@ -34,8 +25,6 @@ theorem identify_mfderiv_invertible (x : I.recent_carrier.carrier)
     mfderiv (𝓡 3) (𝓡 3) I.identify x
   exact ⟨ContinuousLinearEquiv.ofBijective D (LinearMap.ker_eq_bot.mpr hb.1)
     (LinearMap.range_eq_top.mpr hb.2), rfl⟩
-
-
 
 theorem joining_scalar_eq :
     I.older_neck.neck.connection.scalarCurvature I.older_neck.neck.center =
@@ -47,9 +36,6 @@ theorem joining_scalar_eq :
     (fun x hx v w => (I.joining_metric x hx v w).symm) I.recent_patch.center_mem
   simpa only [I.identify_center, I.older_neck.connection_eq] using h.1
 
-
-
-
 theorem older_scale_sq :
     I.older_neck.neck.scale ^ 2 =
       ((I.recent_flow.connection (-I.recent_duration)).scalarCurvature I.center)⁻¹ := by
@@ -57,8 +43,6 @@ theorem older_scale_sq :
     ← Real.rpow_mul_natCast I.older_neck.neck.scalar_center_pos.le (-1 / 2) 2]
   norm_num only [show (-1 / 2 : ℝ) * (2 : ℕ) = -1 by norm_num, Real.rpow_neg_one]
   rw [I.joining_scalar_eq]
-
-
 
 theorem older_survival_of_joining_scalar
     (hscalar : (I.recent_flow.connection (-I.recent_duration)).scalarCurvature I.center ≤ 1) :

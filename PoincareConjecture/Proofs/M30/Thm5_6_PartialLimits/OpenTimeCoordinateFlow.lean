@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.LocalFlows
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_coordinate_flow_of_expanding_time_domains
     {ι : Type u} {n : ℕ}

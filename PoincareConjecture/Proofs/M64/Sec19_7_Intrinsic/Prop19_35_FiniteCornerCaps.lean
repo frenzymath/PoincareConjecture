@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcCornerCaps
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapUnionSeparators
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +10,6 @@ open scoped Topology ContDiff Matrix
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_disjoint_finite_corner_caps
     {J : Type*} [Finite J] (alpha beta : J → ℝ → AnnulusCoordinates)

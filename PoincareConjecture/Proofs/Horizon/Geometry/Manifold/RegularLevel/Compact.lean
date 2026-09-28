@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.ChartedSpace
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,7 +8,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace Poincare.Geometry.Manifold.RegularLevel
-
 
 theorem finite_connectedComponents_of_compact_regular_level
     {n : Nat} {M : Type*} [TopologicalSpace M]

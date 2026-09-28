@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem restrict_cap_family_comparison
     {F : SurgeryFlowData.{u}} {S : MaximalStandardCapFlow F.standard_initial}

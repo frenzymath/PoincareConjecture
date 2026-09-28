@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.ChartCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Family.Realization
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +16,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_radial_dense_ray_annular_overlaps_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -251,8 +238,6 @@ theorem exists_radial_dense_ray_annular_overlaps_of_zero_ratio
     simpa only [δ, hrepr x.val x.property, hrepr y.val y.property] using hecross i j x y
   · intro j
     simpa only [ancientRescaleAt_metric, zero_div, add_zero, Function.comp_def] using heradial j
-
-
 
 theorem exists_dense_ray_annular_overlaps_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

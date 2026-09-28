@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_GaugePhaseCoordi
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_UniformGaugeRestart
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem exists_actualPhase_uniform_restart
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

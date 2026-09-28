@@ -7,23 +7,11 @@ import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
 
 theorem exists_open_vertical_triangle_germ
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

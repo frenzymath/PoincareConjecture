@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.EventLevelDeletion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalTubeChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.family_horizontal_levels_delete
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

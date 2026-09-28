@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M08.IntegratedEnergy
 import PoincareConjecture.Proofs.M08.ChartPrimitive
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,7 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
 
 omit [CompleteSpace E] in
-
 
 theorem contDiffOn_deriv_memLp_Icc {a b : ℝ} {f : ℝ → E}
     (hab : a ≤ b) (hf : ContDiffOn ℝ 1 f (Icc a b)) :
@@ -35,9 +25,6 @@ theorem contDiffOn_deriv_memLp_Icc {a b : ℝ} {f : ℝ → E}
   rw [← restrict_Ioo_eq_restrict_Icc]
   filter_upwards [ae_restrict_mem measurableSet_Ioo] with s hs
   exact derivWithin_of_mem_nhds (Icc_mem_nhds hs.1 hs.2)
-
-
-
 
 theorem oneCorner_chartL2_primitive {a c b : ℝ} {f : ℝ → E}
     (hac : a ≤ c) (hcb : c ≤ b)
@@ -86,8 +73,6 @@ theorem oneCorner_chartL2_primitive {a c b : ℝ} {f : ℝ → E}
       abel
   rw [hFTC]
   abel
-
-
 
 theorem oneCorner_chartL2_primitive_on {a b c : ℝ} {f : ℝ → E}
     (hab : a ≤ b)

@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityWea
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusContinuousWeakMinimizer
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalSmooth
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,8 +19,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem M64ObservedWeakAnnulus.contMDiffOn_of_energy_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -78,8 +63,6 @@ theorem M64ObservedWeakAnnulus.contMDiffOn_of_energy_minimum
     filter_upwards [Metric.closedBall_mem_nhds a hR] with p hp
     exact (hmap hp).symm
   exact hlocal.contMDiffWithinAt
-
-
 
 theorem m64Annulus_exists_interior_smooth_weak_energy_minimizer
     [CompactSpace M] [T2Space M]

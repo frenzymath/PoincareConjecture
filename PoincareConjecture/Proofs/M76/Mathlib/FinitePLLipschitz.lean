@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteClosedCoverLipschitz
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem AffineOnFaces.exists_lipschitzOnWith {K : SimplicialComplex ℝ E} {f : E → F}
     (hf : K.AffineOnFaces f) (hK : K.faces.Finite) (hcv : Convex ℝ K.space) :
@@ -57,8 +45,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem FinitePiecewiseAffineOn.exists_lipschitzOnWith {f : E → F} {s : Set E}
     (hf : FinitePiecewiseAffineOn f s) (hcv : Convex ℝ s) :

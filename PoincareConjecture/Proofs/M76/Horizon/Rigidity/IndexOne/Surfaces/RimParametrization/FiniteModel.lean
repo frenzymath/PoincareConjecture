@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimParametrization.OriginalBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -18,8 +16,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "D" => closedBall (0 : V1) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_sourceRimCircle_finitePL_parametrization
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

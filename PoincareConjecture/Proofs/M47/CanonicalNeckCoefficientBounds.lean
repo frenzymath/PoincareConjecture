@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderOrdinaryJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem norm_iteratedFDeriv_weighted_sub_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -53,9 +41,6 @@ theorem norm_iteratedFDeriv_weighted_sub_le
   simpa only [hLn, hKn] using add_le_add
     (L.norm_iteratedFDeriv_comp_left (hf.sub hg) (by exact_mod_cast le_top : (j : ℕ∞ω) ≤ ∞))
     (K.norm_iteratedFDeriv_comp_left hg (by exact_mod_cast le_top : (j : ℕ∞ω) ≤ ∞))
-
-
-
 
 theorem exists_neck_metric_coefficient_jet_bound
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]

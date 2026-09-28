@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCut
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityPresentation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem capped_zero_section_eq_residual_of_disjoint {X : Type*}
     {s s' b d R Z : Set X} (hsection : (s ∪ s') ∩ Z = b ∪ R)
@@ -45,9 +31,6 @@ variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
 
 omit [Finite ι] in
-
-
-
 
 theorem exists_ordinary_zero_section_cut_partition
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -95,11 +78,6 @@ theorem exists_ordinary_zero_section_cut_partition
     rw [union_comm s₁ s₀]
     exact hsection'
   exact (capped_zero_section_eq_residual_of_disjoint hsection'' hbd hdR).trans h₁
-
-
-
-
-
 
 theorem exists_decreasing_ordinary_zero_presentations_with_residue_free_charges
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -153,11 +131,6 @@ theorem exists_decreasing_ordinary_zero_presentations_with_residue_free_charges
     intro x hx
     have hxd := h₁.symm.subset hx
     exact hxd.1.1.resolve_right hxd.2
-
-
-
-
-
 
 theorem exists_decreasing_ordinary_zero_presentations
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

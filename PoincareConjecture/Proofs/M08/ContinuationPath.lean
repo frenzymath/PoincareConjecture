@@ -112,5 +112,3 @@ theorem exists_extended_square_continuation {J : Set ℝ} {F : RicciFlow n M J}
   exact ⟨α, hαC, hαI, hαRc⟩
 
 end PoincareConjecture.M08
-
-

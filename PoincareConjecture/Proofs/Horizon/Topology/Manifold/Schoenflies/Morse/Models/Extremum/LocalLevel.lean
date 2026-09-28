@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Caps
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
 
 theorem minimum_circle_eq_level_component
     {M : Type*} [TopologicalSpace M] [T2Space M] {h : M -> Real}

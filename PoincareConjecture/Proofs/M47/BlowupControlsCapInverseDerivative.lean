@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +10,6 @@ section Operator
 
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem cap_inverse_fderiv_apply (A : V → E →L[ℝ] E) {x : V}
     (hA : DifferentiableAt ℝ A x) (hi : (A x).IsInvertible) (v : V) :
@@ -36,8 +26,6 @@ theorem cap_inverse_fderiv_apply (A : V → E →L[ℝ] E) {x : V}
   have hd := congrArg (fun L : V →L[ℝ] E →L[ℝ] E => L v) h.fderiv
   rw [ContinuousLinearMap.ringInverse_eq_inverse] at hd
   exact hd
-
-
 
 theorem cap_inverse_fderiv_norm_le (A : V → E →L[ℝ] E) {x : V}
     (hA : DifferentiableAt ℝ A x) (hi : (A x).IsInvertible)

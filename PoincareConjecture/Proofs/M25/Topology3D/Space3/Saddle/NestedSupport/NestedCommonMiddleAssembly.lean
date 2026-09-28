@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonMiddleIsotopy
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,52 +13,42 @@ noncomputable section
 local notation "D2" => Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
 
-
 def nestedCommonL (u : UnitTwoSphere) := heightPlaneCoordinates u
-
 
 def nestedCommonH (u : UnitTwoSphere) : E3 →L[ℝ] ℝ :=
   InnerProductSpace.toDual ℝ E3 (u : E3)
-
 
 def nestedCommonXi (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (rho : ℝ)
     (k : Fin 4) (t r : ℝ) : E2 :=
   J2.symm (![1, -1, -1, 1] k * Real.sqrt ((r ^ 2 + t / rho ^ 2) / 2),
     ![1, 1, -1, -1] k * Real.sqrt ((r ^ 2 - t / rho ^ 2) / 2))
 
-
 def nestedCommonXi3 (u : UnitTwoSphere) (c : ℝ) (gRef : D2)
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (rho : ℝ)
     (k : Fin 4) (t r : ℝ) : E3 :=
   (nestedCommonL u).symm (gRef (nestedCommonXi J2 rho k t r), c + t)
-
 
 def nestedCommonE (u : UnitTwoSphere) (c : ℝ) (gRef : D2)
     (S : Fin 2 → Set E3) (j : Fin 2) (t : ℝ) : Set E2 :=
   {x : E2 |
     (nestedCommonL u).symm (gRef x, c + t) ∈ S j ∧ 1 ≤ ‖x‖}
 
-
 def nestedCommonExt (u : UnitTwoSphere) (c : ℝ) (gRef : D2)
     (S : Fin 2 → Set E3) (j : Fin 2) (t : ℝ) : Set E3 :=
   (nestedCommonL u).symm ''
     ((gRef '' nestedCommonE u c gRef S j t) ×ˢ ({c + t} : Set ℝ))
 
-
 def nestedCommonMid (u : UnitTwoSphere) (c : ℝ)
     (S : Fin 2 → Set E3) (j : Fin 2) (t : ℝ) : Set E3 :=
   S j ∩ {y : E3 | nestedCommonH u y = c + t}
-
 
 def nestedCommonMidBand (u : UnitTwoSphere) (c : ℝ)
     (S : Fin 2 → Set E3) (j : Fin 2) (delta : ℝ) : Set E3 :=
   S j ∩ {y : E3 | |nestedCommonH u y - c| ≤ delta}
 
-
 def nestedCommonOpenMidBand (u : UnitTwoSphere) (c : ℝ)
     (S : Fin 2 → Set E3) (j : Fin 2) (delta : ℝ) : Set E3 :=
   S j ∩ {y : E3 | |nestedCommonH u y - c| < delta}
-
 
 theorem exists_saddle_nested_common_middle_assembly
     (u : UnitTwoSphere) (c rho delta : ℝ)

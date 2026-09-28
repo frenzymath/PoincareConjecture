@@ -2,20 +2,9 @@ import Mathlib.LinearAlgebra.Matrix.BilinearForm
 import Mathlib.LinearAlgebra.Determinant
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M14
-
-
 
 theorem sqrt_max_det_bilin_source_equiv
     {V : Type*} [AddCommGroup V] [Module ℝ V] {n : ℕ}

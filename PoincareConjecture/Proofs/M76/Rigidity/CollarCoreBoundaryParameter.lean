@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarLevelSphere
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +14,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {C : Set X}
-
-
-
 
 theorem ChartwisePLBall.exists_finitePL_collar_level_parameter
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid V3)

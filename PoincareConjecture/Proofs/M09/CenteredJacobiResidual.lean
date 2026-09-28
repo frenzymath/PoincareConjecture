@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SquareChartJacobiCoefficients
 import PoincareConjecture.Proofs.M09.CoordinateJacobiCommutation
 import PoincareConjecture.Proofs.M09.CoordinateEulerLinearization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

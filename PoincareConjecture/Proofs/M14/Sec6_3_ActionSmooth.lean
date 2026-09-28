@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialCoherence
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalSmooth
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareDensity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -40,9 +29,6 @@ private theorem inner_heq {x y : G.Point} (h : x = y)
   cases hv
   rfl
 
-
-
-
 theorem initialValueAction_eq_density_primitive
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {Z : G.Horizontal x} {S r : ℝ} (hS : 0 < S)
@@ -65,9 +51,6 @@ theorem initialValueAction_eq_density_primitive
   have hinner := inner_heq (heq htC) hv
   unfold squareRootLIntegrand squareCurveDensity
   rw [hinner, heq htC]
-
-
-
 
 theorem initialValueAction_smooth_prefix
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -103,9 +86,6 @@ theorem initialValueAction_smooth_prefix
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod]
   exact ha.contMDiffOn
 
-
-
-
 theorem initialValueAction_smooth
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hbase : G.spacetime.timeFunction x = T) :
@@ -122,9 +102,6 @@ theorem initialValueAction_smooth
   exact ((initialValueAction_smooth_prefix hM04 hM12 hU (hpos.trans_le hsS) htube hsm)
     (Z, s) ⟨hZU, hpos.le, hsS⟩).mono_of_mem_nhdsWithin
       (nhdsWithin_mono (Z, s) (fun _ hz => initialValueDomain_admissible hbase hz.1) hnear)
-
-
-
 
 theorem exponentialFamily_action_smooth
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

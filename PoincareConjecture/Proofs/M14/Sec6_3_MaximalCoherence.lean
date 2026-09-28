@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalDomain
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialValueUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,15 +16,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include hM04 hM12
 
-
-
 theorem initialValueCurve_eq_endpoint (hs : 0 < s)
     (P : M14SquareRootInitialValuePath G T (s ^ 2) x y Z) :
     initialValueCurve G T x Z s = y := by
   have hsurv : initialValueSurvives G T x Z s := ⟨hs, y, ⟨P⟩⟩
   exact initialValuePath_endpoint_eq hM04 hM12 (selectedInitialValuePath hsurv) P
-
-
 
 theorem initialValueCurve_eqOn_square (P : M14SquareRootInitialValuePath G T τ x y Z) :
     EqOn (initialValueCurve G T x Z) P.square_path.curve (M14SqrtParameterInterval 0 τ) := by
@@ -47,8 +34,6 @@ theorem initialValueCurve_eqOn_square (P : M14SquareRootInitialValuePath G T τ 
       simpa only [Real.sq_sqrt P.path.tau_lt.le] using hsq
     exact (initialValueCurve_eq_endpoint hM04 hM12 hr0
       (initialValuePathRestrict P (sq_pos_of_pos hr0) hrτ)).trans (P.square_path.agrees r hr).symm
-
-
 
 theorem initialValueCurve_eqOn_path (P : M14SquareRootInitialValuePath G T τ x y Z) :
     EqOn P.path.curve (fun t => initialValueCurve G T x Z (Real.sqrt t)) (Icc 0 τ) := by

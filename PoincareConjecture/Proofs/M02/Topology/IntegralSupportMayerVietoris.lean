@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietorisExcision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -197,8 +189,6 @@ theorem integralSupportUnionMap_homology_snd (K L : Set X) (n : Nat) :
       integralSupportHomologyRestriction (Set.subset_union_right : L ⊆ K ∪ L) n := by
   rw [← homologyMap_comp, integralSupportUnionMap, biprod.lift_snd]
   rfl
-
-
 
 theorem exists_integralSupportHomology_union
     (K L : Set X) (hK : IsClosed K) (hL : IsClosed L) (n : Nat)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,10 +12,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_supported_extension_of_eq_zero_off_with_vertices
     {f : E → F} {S T U : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -118,10 +105,6 @@ theorem FinitePiecewiseAffineOn.exists_supported_extension_of_eq_zero_off_with_v
   · intro x hx
     exact indicator_of_notMem hx g
 
-
-
-
-
 theorem FinitePiecewiseAffineOn.exists_supported_extension_of_eq_zero_off
     {f : E → F} {S T U : Set E} (hf : FinitePiecewiseAffineOn f S)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hSK : S ⊆ K.space)
@@ -132,10 +115,6 @@ theorem FinitePiecewiseAffineOn.exists_supported_extension_of_eq_zero_off
   obtain ⟨g, R, hR, hRK, hg, _, heq, hzeroU, hzeroK⟩ :=
     hf.exists_supported_extension_of_eq_zero_off_with_vertices K hK hSK hT hfzero hU hTU
   exact ⟨g, ⟨R, hR, hRK, hg⟩, heq, hzeroU, hzeroK⟩
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_supported_extension
     {f : E → F} {S U : Set E} (hf : FinitePiecewiseAffineOn f S)

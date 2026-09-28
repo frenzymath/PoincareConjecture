@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Curvature
 import PoincareConjecture.Proofs.M03.ConnectionRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,7 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem curvatureOnFields_eq (D D' : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)
@@ -53,7 +44,6 @@ theorem curvatureOnFields_eq (D D' : LeviCivitaData g)
   rw [hconn Y hY, hconn X hX, D.connection_eq_at D' Z
     ((hZ.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp))]
 
-
 theorem curvature_eq (D D' : LeviCivitaData g) (x : M)
     (u v w : TangentSpace (𝓡 n) x) :
     D.curvature x u v w = D'.curvature x u v w := by
@@ -70,30 +60,25 @@ theorem curvature_eq (D D' : LeviCivitaData g) (x : M)
     (hv.mono fun _ hy ↦ (hS hy).2.1)
     (hw.mono fun _ hy ↦ (hS hy).2.2) hx
 
-
 theorem curvatureTensor_eq (D D' : LeviCivitaData g) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :
     D.curvatureTensor x u v w z = D'.curvatureTensor x u v w z := by
   unfold curvatureTensor
   rw [D.curvature_eq D']
 
-
 theorem ricci_eq (D D' : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) :
     D.ricci x u v = D'.ricci x u v := by
   simp only [ricci, D.curvatureTensor_eq D']
 
-
 theorem scalarCurvature_eq (D D' : LeviCivitaData g) (x : M) :
     D.scalarCurvature x = D'.scalarCurvature x := by
   simp only [scalarCurvature, D.ricci_eq D']
-
 
 theorem sectionalCurvature_eq (D D' : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) :
     D.sectionalCurvature x u v = D'.sectionalCurvature x u v := by
   simp only [sectionalCurvature, D.curvatureTensor_eq D']
-
 
 theorem curvatureTensorNorm_eq (D D' : LeviCivitaData g) (x : M) :
     D.curvatureTensorNorm x = D'.curvatureTensorNorm x := by

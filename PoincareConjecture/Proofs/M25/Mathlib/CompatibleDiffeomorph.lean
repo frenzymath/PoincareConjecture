@@ -1,18 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +12,6 @@ namespace OpenPartialHomeomorph
 section TopologicalCompatibility
 
 variable {M N P : Type*} [TopologicalSpace M] [TopologicalSpace N] [TopologicalSpace P]
-
-
-
 
 theorem m25_eqOn_chart_comparison_of_transition
     (e₀ e₁ : OpenPartialHomeomorph M P) (c₀ c₁ : OpenPartialHomeomorph N P)
@@ -62,10 +47,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M N P : Type*} [TopologicalSpace M] [ChartedSpace H M]
   [TopologicalSpace N] [ChartedSpace H' N]
   [TopologicalSpace P] [ChartedSpace H'' P] {n : ℕ∞ω}
-
-
-
-
 
 theorem m25_exists_diffeomorph_of_compatible
     (e₀ e₁ : OpenPartialHomeomorph M N)
@@ -117,10 +98,6 @@ theorem m25_exists_diffeomorph_of_compatible
       contMDiff_invFun := contMDiff_of_contMDiffOn_union_of_isOpen
         (hi₀.congr hg₀) (hi₁.congr hg₁) htarget e₀.open_target e₁.open_target }
   exact ⟨d, hf₀, hf₁, hg₀, hg₁⟩
-
-
-
-
 
 theorem m25_exists_diffeomorph_of_chart_transition
     (e₀ e₁ : OpenPartialHomeomorph M P) (c₀ c₁ : OpenPartialHomeomorph N P)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.ClosedBallComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

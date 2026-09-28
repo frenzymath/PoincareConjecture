@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCardinalityPolygons
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,20 +8,12 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
 def HasAlexanderCurvePresentation (s : Set E) (a : ℕ) : Prop :=
   ∃ (m : ℕ) (n : Fin m → ℕ) (P : ∀ i, Polygon E (n i + 3)) (r : Set E),
     (∀ i, Function.Injective (P i) ∧ (P i).HasSimplicialEdges) ∧
     r.Subsingleton ∧ s = r ∪ ⋃ i, (P i).boundary ℝ ∧
     Pairwise (fun i j => (P i).boundary ℝ ∩ (P j).boundary ℝ ⊆ r) ∧
     alexanderCurveCount (fun i => (P i).boundary ℝ) = a
-
-
-
-
 
 theorem hasAlexanderCurvePresentation_of_family {ι : Type*} [Finite ι]
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

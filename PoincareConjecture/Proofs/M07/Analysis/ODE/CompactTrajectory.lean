@@ -5,24 +5,12 @@ import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Topology.UniformSpace.Cauchy
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.Smooth
 
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.ODE
 
 open Set Metric Filter
 open scoped Topology NNReal ContDiff
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_lipschitzOnWith_of_compact_trajectory
     {F : E → E} {S : Set E} (hS : IsCompact S) (hF : ContinuousOn F S)
@@ -36,8 +24,6 @@ theorem exists_lipschitzOnWith_of_compact_trajectory
     (fun t ht => (hγ t ht).hasDerivWithinAt) ?_⟩
   intro t ht
   exact_mod_cast hbound (F (γ t)) (mem_image_of_mem F (hmem t ht))
-
-
 
 theorem exists_endpoint_of_compact_trajectory
     {F : E → E} {S : Set E} (hS : IsCompact S) (hF : ContinuousOn F S)
@@ -53,9 +39,6 @@ theorem exists_endpoint_of_compact_trajectory
   apply hS.isComplete (map γ (𝓝[<] b)) (hc.map_of_le hK.uniformContinuousOn hinterval)
   rw [le_principal_iff, mem_map]
   exact mem_of_superset (le_principal_iff.mp hinterval) hmem
-
-
-
 
 theorem exists_continuation_of_compact_trajectory [FiniteDimensional ℝ E]
     {U S : Set E} (hU : IsOpen U) (hS : IsCompact S) (hSU : S ⊆ U)

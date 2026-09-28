@@ -1,19 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Balanced
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.DeepHorn
-
-
 
 theorem not_isCompact_of_frontier_eq_cylinder_slice
     {M : Type*} [TopologicalSpace M] [T2Space M] {U K : Set M}

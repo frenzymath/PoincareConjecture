@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawSpatialCoefficientJets
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.InteriorFiniteJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

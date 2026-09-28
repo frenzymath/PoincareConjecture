@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ModulusConfinementFromBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "S" => m64AnnulusDomain
-
-
-
 
 theorem m64WeightedModulusConfinement_interval_nonempty_of_approximation
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

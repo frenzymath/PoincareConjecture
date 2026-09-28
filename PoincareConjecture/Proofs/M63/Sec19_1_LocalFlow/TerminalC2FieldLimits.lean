@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import Mathlib.Topology.ExtendFrom
 import Mathlib.Topology.UniformSpace.Cauchy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +26,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem exists_terminal_c2_fields
     [T2Space M] (F : RicciFlow n M (Icc a b))

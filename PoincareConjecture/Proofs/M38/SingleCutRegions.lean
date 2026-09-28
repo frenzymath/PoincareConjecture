@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.SharedCutDiffeomorph
 import PoincareConjecture.Proofs.M38.UncutCollar
 import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
   (i : Fin (F.event T hT).cap_count)
-
 
 noncomputable def singleCutBall (positive : Bool) :
     SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)) :=
@@ -70,7 +61,6 @@ theorem singleCut_newSpheres :
   · intro q hq
     exact Set.mem_iUnion.mpr ⟨⟨i, Set.mem_insert i S, hi⟩, hq⟩
 
-
 theorem singleCut_newSphereImage :
     newCutSphereImage F T hT P S (insert i S) =
       uncutCollar F T hT P S i hi '' (Set.univ ×ˢ ({0} : Set ℝ)) := by
@@ -87,14 +77,12 @@ theorem singleCut_sharedOpen :
           (singleCutBall F T hT P S i true).closedBall)ᶜ := by
   rw [sharedCutOpen_eq_compl_newBalls, singleCut_newBalls F T hT P S i hi]
 
-
 theorem singleCut_targetOpen :
     (sharedCutTargetOpen F T hT P S (insert i S) (Set.subset_insert i S) :
       Set (partialCappedCarrier F T hT P S).carrier) =
         (uncutCollar F T hT P S i hi '' (Set.univ ×ˢ ({0} : Set ℝ)))ᶜ := by
   change (newCutSphereImage F T hT P S (insert i S))ᶜ = _
   rw [singleCut_newSphereImage F T hT P S i hi]
-
 
 noncomputable def singleCutSharedPoint :
     sharedCutOpen F T hT P S (insert i S) (Set.subset_insert i S) := by
@@ -105,7 +93,6 @@ noncomputable def singleCutSharedPoint :
   exact ⟨partialOldInclusion F T hT P (insert i S) y,
     partialOldInclusion_mem_shared F T hT P S (insert i S) (Set.subset_insert i S) y⟩
 
-
 noncomputable def singleCutRegionEquivalence :
     SurgeryRegionEquivalence (partialCappedCarrier F T hT P (insert i S))
       (partialCappedCarrier F T hT P S)
@@ -114,7 +101,6 @@ noncomputable def singleCutRegionEquivalence :
   openDiffeomorphRegions _ _
     (sharedCutDiffeomorph F T hT P S (insert i S) (Set.subset_insert i S))
     (singleCutSharedPoint F T hT P S i)
-
 
 theorem singleCutRegionEquivalence_annulus (positive : Bool) (x : capDoubleBall)
     (hx : 1 < ‖x.val‖) :

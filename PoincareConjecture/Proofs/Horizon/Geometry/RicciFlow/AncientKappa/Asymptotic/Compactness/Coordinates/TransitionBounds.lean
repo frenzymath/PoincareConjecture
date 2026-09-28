@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.JetBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Poincare.Analysis.Calculus

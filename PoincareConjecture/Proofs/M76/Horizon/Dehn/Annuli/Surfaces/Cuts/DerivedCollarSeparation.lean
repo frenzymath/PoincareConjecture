@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -16,8 +7,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K L₀ L₁ : SimplicialComplex ℝ E)
-
-
 
 theorem not_face_meets_both_of_full_union
     (hfull : ∀ s ∈ K.faces, (∀ v ∈ s, v ∈ L₀.vertices ∪ L₁.vertices) →
@@ -45,7 +34,6 @@ theorem not_face_meets_both_of_full_union
   · exact disjoint_left.mp hdis (L₀.subset_space hv₀ (Finset.mem_singleton_self v))
       (L₁.subset_space he₁ (show v ∈ ({v, w} : Finset E) by simp))
 
-
 theorem barycentricNeighborhood_disjoint_of_full_union [Fintype K.faces]
     (hfull : ∀ s ∈ K.faces, (∀ v ∈ s, v ∈ L₀.vertices ∪ L₁.vertices) →
       s ∈ L₀.faces ∨ s ∈ L₁.faces)
@@ -65,8 +53,6 @@ theorem barycentricNeighborhood_disjoint_of_full_union [Fintype K.faces]
       (⟨b, hb⟩ : K.faces).val.centroid ℝ id from haz.trans hbz.symm))
   exact K.not_face_meets_both_of_full_union L₀ L₁ hfull hdis ha
     ⟨hav, hab.symm ▸ hbv⟩
-
-
 
 theorem barycentricNeighborhood_union_faces [Fintype K.faces]
     (L : SimplicialComplex ℝ E) (hLv : L.vertices = L₀.vertices ∪ L₁.vertices)

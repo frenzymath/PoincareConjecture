@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.SimplexHornFilling
 import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 import Mathlib.AlgebraicTopology.SimplicialSet.KanComplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -18,7 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem stdSimplex_face_map_injective (n : Nat) (i : Fin (n + 2)) :
     Function.Injective (stdSimplex.map (S := Real) i.succAbove) := by
@@ -31,7 +22,6 @@ theorem stdSimplex_face_map_injective (n : Nat) (i : Fin (n + 2)) :
     _ = stdSimplex.map i.succAbove w (i.succAbove l) :=
       DFunLike.congr_fun h (i.succAbove l)
     _ = w l := stdSimplex_face_succAbove n i w l
-
 
 theorem stdSimplex_two_face_comp (n : Nat) (j k : Fin (n + 3)) (hjk : j < k)
     (t : stdSimplex Real (Fin (n + 1))) :
@@ -46,7 +36,6 @@ theorem stdSimplex_two_face_comp (n : Nat) (j k : Fin (n + 3)) (hjk : j < k)
     (k.pred (Fin.ne_zero_of_lt hjk)) l
   rw [Fin.succAbove_pred_of_lt j k hjk, Fin.predAbove_pred_of_lt k j hjk] at h
   exact h.symm
-
 
 theorem exists_stdSimplex_two_face_preimage (n : Nat) (j k : Fin (n + 3))
     (hjk : j < k) (z w : stdSimplex Real (Fin (n + 2)))
@@ -67,7 +56,6 @@ theorem exists_stdSimplex_two_face_preimage (n : Nat) (j k : Fin (n + 3))
   refine ⟨t, ht, stdSimplex_face_map_injective (n + 1) k ?_⟩
   rw [← stdSimplex_two_face_comp n j k hjk t, ht]
   exact hzw
-
 
 theorem singular_horn_faces_agree (X : TopCat.{u}) (n : Nat) (i : Fin (n + 2))
     (f : ∀ j : Fin (n + 2), j ≠ i → ((Δ[n] : SSet.{u}) ⟶ TopCat.toSSet.obj X))
@@ -107,7 +95,6 @@ theorem singular_horn_faces_agree (X : TopCat.{u}) (n : Nat) (i : Fin (n + 2))
       subst w
       rfl
     · exact (hlt k j hk hj hjk w z hzw.symm).symm
-
 
 theorem singular_kanComplex (X : TopCat.{u}) :
     SSet.KanComplex (TopCat.toSSet.obj X) := by

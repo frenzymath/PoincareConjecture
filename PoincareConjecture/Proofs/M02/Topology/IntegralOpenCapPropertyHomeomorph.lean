@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralEuclideanCompactCohomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientationCompatibility
 
-
-
 set_option autoImplicit false
 
 noncomputable section

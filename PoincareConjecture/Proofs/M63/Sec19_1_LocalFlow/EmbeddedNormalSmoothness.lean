@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientCompactJetBounds
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessEmbeddedCurve
 import PoincareConjecture.Proofs.M63.Mathlib.ParabolicSpatialJetSmoothness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem c2ShrinkingCurve_smooth_of_embedded_spatial_jets
     (F : RicciFlow n M (Icc a b)) {tau s : ℝ} (hts : tau < s)

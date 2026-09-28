@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexRimCover
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexFrontierContact
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,9 +17,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   {T : OriginalProperDiskTriangulation e R j}
-
-
-
 
 theorem OriginalLowerProducts.exists_vertex_band (P : OriginalLowerProducts T)
     (p : (T.marked 2).vertices) : Nonempty (OriginalVertexBand P p) := by

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.Exhaustion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem tendsto_initial_chart_derivative_of_exhaustion_integral
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalPeriodicInverse
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PeriodicCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.GraphTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_smooth_normal_graph_of_positive_tube_projection
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -140,9 +128,6 @@ theorem exists_smooth_normal_graph_of_positive_tube_projection
     have h := hformula (B (z, t))
     rw [(hGinv z hz t).2] at h
     exact h.symm
-
-
-
 
 theorem exists_positive_tube_curve_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

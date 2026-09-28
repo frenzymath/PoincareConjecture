@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.TubeSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
-
 
 def closedTail (Q : OpenCylinderModel U) (side : Bool) (a : ℝ) : Set M :=
   Q.coordinate '' (univ ×ˢ if side then Ico a 1 else Ioc 0 a)
@@ -71,7 +62,6 @@ theorem tail_subset_closedTail (Q : OpenCylinderModel U) (side : Bool)
   refine ⟨hxU, ?_⟩
   cases side <;> exact hx.le
 
-
 theorem isConnected_closedTail (Q : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) : IsConnected (Q.closedTail side a) := by
   let : ConnectedSpace UnitTwoSphere := by
@@ -85,8 +75,6 @@ theorem isConnected_closedTail (Q : OpenCylinderModel U) (side : Bool)
   · apply (isConnected_univ.prod (isConnected_Ico ha.2)).image
     apply Q.coordinate_smooth.continuousOn.mono
     exact fun _ hz => ⟨mem_univ _, ha.1.trans_le hz.2.1, hz.2.2⟩
-
-
 
 theorem isClosed_closedTail_of_tail_subset (Q : OpenCylinderModel U) (side : Bool)
     {Y : Set M} (hY : IsClosed Y) (hYU : Y ⊆ U)

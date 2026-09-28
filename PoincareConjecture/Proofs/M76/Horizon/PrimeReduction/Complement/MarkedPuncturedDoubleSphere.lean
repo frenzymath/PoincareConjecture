@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.MarkedDou
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.MarkedCapExtension
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.isOpen_nested_ball_rim_complement
     {d q a r : Set E} (hd : IsFinitePLBallPair V3 d q)
@@ -55,8 +40,6 @@ theorem IsFinitePLBallPair.isOpen_nested_ball_rim_complement
     exact and_congr (hm a had) (not_congr (hm r (ha.1.trans had)))
   rw [← heq]
   exact hopen.preimage (continuous_subtype_val.comp e.continuous)
-
-
 
 theorem IsFinitePLBallPair.isOpen_double_ball_hole
     {b d q a r : Set E} (hb : IsFinitePLBallPair V3 b q)
@@ -104,10 +87,6 @@ theorem IsFinitePLBallPair.isClosed_punctured_double
     _ hopen.isClosed_compl
 
 open Geometry.CubicalThreeSphere
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_marked_punctured_double_sphere
     {ι : Type*} [Finite ι] {b d q : Set E}

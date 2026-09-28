@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureNullPlane
 import PoincareConjecture.Proofs.M47.TerminalCurvatureRank
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.LocalParallel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem terminalCurvature_rank_one_of_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]
@@ -51,8 +39,6 @@ theorem terminalCurvature_rank_one_of_null_plane
     exact hscalar (abs_eq_zero.mp (le_antisymm hbound (abs_nonneg _)))
   exact terminalCurvature_ricci_nullity_eq_one hab F hoperator
     ⟨x, z, hz, hzr⟩ ⟨p, hnonflat⟩ hC
-
-
 
 theorem terminalCurvature_local_parallel_of_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]

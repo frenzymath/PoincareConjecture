@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.AncientExtraction
 import PoincareConjecture.Proofs.M32.Claim11_35.Transfer.HornNecks
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem exists_uniform_terminalHorn_pointwise_neck_height
     (P : RepairedHornSelectionPredecessors.{u}) :

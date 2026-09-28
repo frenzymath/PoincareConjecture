@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.ReverseBallLocalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem inverse_tangentNorm_le_of_forward_lower_bound
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -59,8 +47,6 @@ theorem inverse_tangentNorm_le_of_forward_lower_bound
     congrArg (fun z : N => h.tangentNorm z
       (show EuclideanSpace ℝ (Fin m) from v)) (e.right_inv hy)
   exact hb.trans_eq (congrArg (fun z => C * z) hn)
-
-
 
 theorem ball_subset_image_ball_of_forward_tangentNorm_le
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

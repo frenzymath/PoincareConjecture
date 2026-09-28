@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAnn
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Perfect
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry
 open scoped Topology
@@ -80,7 +72,6 @@ namespace Geometry.SimplicialComplex
 
 open Classical in
 
-
 theorem isConnected_link_of_homeomorph_product
     {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] [TopologicalSpace Y]
@@ -129,7 +120,6 @@ namespace PoincareConjecture.M76
 
 open Metric
 open Classical in
-
 
 theorem connected_links_of_marked_annulus_product
     {ι κ E : Type*} [Fintype ι] [Fintype κ] [Unique κ]
@@ -182,7 +172,6 @@ theorem exists_closed_ball_two_product_homeomorph
   exact ⟨(A.trans (B.subtype hB)).trans (Homeomorph.Set.prod _ _)⟩
 
 open Classical in
-
 
 theorem connected_links_of_closed_ball_two
     {κ E : Type*} [Fintype κ]

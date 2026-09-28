@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcProtection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_physical_returning_face_neighborhood
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.BallTransfer
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem zeroBall_subset_exhaustion_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -50,7 +36,6 @@ theorem zeroBall_subset_exhaustion_of_source_ball_coverage
     ⟨hT, G.exhaustion_monotone hkjx hxstage⟩ heq')
   simpa only [hyx] using hy
 
-
 theorem isCompact_closure_zeroBall_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
     (hcover : ∀ A : ℝ, 0 < A → ∃ j : ℕ, ∀ᶠ k in atTop,
@@ -65,7 +50,6 @@ theorem isCompact_closure_zeroBall_of_source_ball_coverage
     (closure_mono (G.zeroBall_subset_exhaustion_of_source_ball_coverage hT hj))
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem metricComplete_zero_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

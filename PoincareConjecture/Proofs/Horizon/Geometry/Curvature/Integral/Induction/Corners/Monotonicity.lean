@@ -1,17 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Normalized
 
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
-
 
 theorem PoincareConjecture.NormalizedCornerScalarBound.mono
     {n m k : ℕ} {hdim : n=m+k} {M : Type*}
@@ -65,8 +58,6 @@ theorem PoincareConjecture.NormalizedCornerScalarBound.mono
   exact ht.trans (mul_le_mul_of_nonneg_right hC (by
     change 0 ≤ 1+∫ x, K x ∂gL.volumeMeasure
     linarith))
-
-
 
 theorem PoincareConjecture.NormalizedCornerScalarBound.of_isEmpty
     (n m k : ℕ) (hdim : n=m+k) (M : Type*)

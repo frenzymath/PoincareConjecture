@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.RayEquality
 import PoincareConjecture.Proofs.M10.PositiveJacobianInverse
 import PoincareConjecture.Proofs.M10.OpenDenseInjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -89,7 +80,6 @@ theorem exponentialSliceChart_source_eq_univ
       exact ⟨β v, hv⟩
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem exponentialSliceChart_global_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

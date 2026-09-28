@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace CoordinateHalfBoxes
-
-
-
-
 
 noncomputable def longitudinalPrismCoordinates (r a b : ℝ) :
     ((ℝ × ℝ) × ℝ) →ᴬ[ℝ] ((ℝ × ℝ) × ℝ) :=
@@ -28,15 +14,9 @@ noncomputable def longitudinalPrismCoordinates (r a b : ℝ) :
       ContinuousAffineMap.const ℝ ℝ ((a + b) / 2))).prodMap
         (ContinuousAffineMap.id ℝ ℝ)
 
-
-
 theorem longitudinalPrismCoordinates_apply (r a b : ℝ) (x : (ℝ × ℝ) × ℝ) :
     longitudinalPrismCoordinates r a b x =
       ((x.1.1, (b - a) / (2 * r) * x.1.2 + (a + b) / 2), x.2) := rfl
-
-
-
-
 
 theorem longitudinalPrismCoordinates_properties {r a b : ℝ}
     (hr : 0 < r) (hab : a < b) :
@@ -101,10 +81,6 @@ theorem longitudinalPrismCoordinates_properties {r a b : ℝ}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem reparametrize_longitudinal_prism {r a b : ℝ}
     (hr : 0 < r) (hab : a < b) {g : ((ℝ × ℝ) × ℝ) → E}

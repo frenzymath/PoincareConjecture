@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockSmoothFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,7 +11,6 @@ open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
 
 theorem clockEvolution_image_Icc_of_zero_endpoints
     (omega : ℝ × ℝ → ℝ) {A B : ℝ≥0}
@@ -42,14 +31,12 @@ theorem clockEvolution_image_Icc_of_zero_endpoints
   change F '' Icc 0 d = Icc 0 d
   simpa only [hF0, hFd] using hcont.image_Icc_of_monotoneOn hd.le hmono.monotoneOn
 
-
 noncomputable def stackCapScaleCylinderField (C : SurgeryCapTag psi u)
     (lambda : ℝ) (rho : ℝ × E3 → ℝ) (theta : UnitCircle) (p : ℝ × ℝ) : ℝ :=
   rho (p.1, C.tube (theta.1,
     C.cutHeight + C.sign * C.removal + C.sign * p.2)) *
       (deriv (stackCapScale C.scale lambda) p.1 /
         stackCapScale C.scale lambda p.1) * p.2
-
 
 theorem stackCapScaleCylinderField_spec (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (hsmall : lambda < C.scale)
@@ -105,7 +92,6 @@ theorem stackCapScaleCylinderField_spec (C : SurgeryCapTag psi u)
   · intro t
     simp only [stackCapScaleCylinderField, hend t, zero_mul]
 
-
 theorem stackCapScaleCylinder_clock_tracks (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda)
     (rho : ℝ × E3 → ℝ) (theta : UnitCircle) :
@@ -156,7 +142,6 @@ theorem stackCapScaleCylinder_clock_tracks (C : SurgeryCapTag psi u)
     ⟨by linarith [min_le_right a b], by linarith [le_max_right a b]⟩
   have htrack := clockEvolution_tracks V hA hB gamma ha (fun t _ => hd t) hb
   simpa only [gamma, eta, clockEvolution_self] using htrack
-
 
 theorem stackCapScaleField_preserves_core (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (hsmall : lambda < C.scale)

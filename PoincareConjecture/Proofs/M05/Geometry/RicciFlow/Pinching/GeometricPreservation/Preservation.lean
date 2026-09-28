@@ -1,19 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.LocalContinuity
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.ScaledContact
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.LocalPreservation
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Persistence
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -40,8 +28,6 @@ private theorem finrank_tangent (x : M) :
     Module.finrank ℝ (TangentSpace (𝓡 3) x) = 3 := by
   change Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 3
   simp
-
-
 
 theorem scaled_transportedRicciComplementTensor_mem
     (ha : 0 ≤ a) (hab : a < b)
@@ -97,8 +83,6 @@ theorem scaled_transportedRicciComplementTensor_mem
   · intro y
     exact scaled_transportedRicciComplementTensor_initial_mem F hC ha hab y
       (finrank_tangent y) (htrace y) (hlog y)
-
-
 
 theorem hamiltonIvey_pinching_persists
     (ha : 0 ≤ a) (hab : a < b)

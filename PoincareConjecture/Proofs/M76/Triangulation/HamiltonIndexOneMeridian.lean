@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCrossingArc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneRetraction
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -74,11 +64,6 @@ private theorem edge_mem_square (vertical : Bool) {c : ℝ}
     rcases hc with rfl | rfl <;> simpa [edge] using h
   · have h := norm_le_pi_norm (edge true c (s : ℝ)) 0
     rcases hc with rfl | rfl <;> simpa [edge] using h
-
-
-
-
-
 
 theorem exists_marked_meridian
     (u0 : Q) (f : ℝ → V) (hf : FinitePiecewiseAffineOn f J) (hinj : InjOn f J)

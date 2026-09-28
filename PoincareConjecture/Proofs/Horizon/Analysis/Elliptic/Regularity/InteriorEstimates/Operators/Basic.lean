@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.DifferentiatedEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology
@@ -21,16 +14,13 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
-
 def secondOrderOperator (a : E → Matrix (Fin d) (Fin d) ℝ)
     (b : Fin d → E → ℝ) (u : E → ℝ) : E → ℝ := fun x =>
   (∑ i, ∑ j, a x i j * partialDeriv i (partialDeriv j u) x) +
     ∑ i, b i x * partialDeriv i u x
 
-
 def principalSource (a : E → Matrix (Fin d) (Fin d) ℝ) (u : E → ℝ) : E → ℝ :=
   fun x => -(∑ i, partialDeriv i (matrixFlux a (fun j => partialDeriv j u) i) x)
-
 
 theorem secondOrderOperator_eq_of_eventuallyEq
     (a : E → Matrix (Fin d) (Fin d) ℝ) (b : Fin d → E → ℝ)
@@ -99,8 +89,6 @@ theorem weakEquation_principalSource {V : Set E} (hV : IsOpen V)
   rw [integral_neg, integral_finsetSum _ (fun i _ => integrable_mul_test (hDi i) hφ hφc),
     ← Finset.sum_neg_distrib]
   exact Finset.sum_congr rfl (fun i _ => hi i)
-
-
 
 theorem principal_equation_of_smooth [NeZero d] {Ω V : Set E}
     (B : SmoothEllipticBilinearForm d Ω) (hV : IsOpen V)

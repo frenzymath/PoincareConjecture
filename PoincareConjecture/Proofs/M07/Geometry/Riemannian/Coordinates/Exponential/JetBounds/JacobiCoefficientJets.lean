@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ConnectionComponentJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.OperatorComponentJets
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 def radialJacobiCoefficientJetBound (n m : ℕ) (r : ℝ) (C : ℕ → ℝ) : ℝ :=
   n * n * (n * n * scalarJetProductBound m
     (fun j => scalarJetProductBound j C (fun _ => max 1 r)) (fun _ => max 1 r))
@@ -41,8 +29,6 @@ theorem radialJacobiCoefficientJetBound_nonneg (n m : ℕ) (r : ℝ) (C : ℕ �
   exact mul_nonneg (mul_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _))
     (mul_nonneg (mul_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _))
       (scalarJetProductBound_nonneg ..))
-
-
 
 theorem norm_iteratedFDeriv_radialJacobiCoefficient_le
     (D : LeviCivitaData g)

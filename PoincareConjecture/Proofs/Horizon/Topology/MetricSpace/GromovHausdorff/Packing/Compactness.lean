@@ -1,21 +1,6 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Packing.Bounds
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 import Mathlib.Topology.MetricSpace.GromovHausdorff
-
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 open scoped Topology
@@ -68,12 +53,6 @@ private theorem ghRep_cover_card_le
     (ghRepEquiv X).injective]
   exact_mod_cast hN
 
-
-
-
-
-
-
 theorem exists_subseq_tendsto_mapped_basepoints_of_compact_ambient
     (X : ℕ → PointedCompactMetricSpace)
     {Y : Type*} [MetricSpace Y] {K : Set Y} (hK : IsCompact K)
@@ -85,10 +64,6 @@ theorem exists_subseq_tendsto_mapped_basepoints_of_compact_ambient
   let b : ℕ → Y := fun n => f n (X n).base
   obtain ⟨y, hy, φ, hφ, hconv⟩ := hK.tendsto_subseq (fun n => hbase n)
   exact ⟨y, φ, hφ, by simpa [b, Function.comp_def] using hconv⟩
-
-
-
-
 
 theorem exists_subseq_tendsto_unpointedGHSpace_and_mapped_basepoints
     (X : ℕ → PointedCompactMetricSpace)
@@ -108,12 +83,6 @@ theorem exists_subseq_tendsto_unpointedGHSpace_and_mapped_basepoints
       X hK f hbase
   refine ⟨y, φ, hφ, hbaseconv, ?_⟩
   exact hconv.comp hφ.tendsto_atTop
-
-
-
-
-
-
 
 theorem isCompact_closure_range_toGHSpace_of_uniform_covers
     (X : ℕ → Type u) [∀ n, MetricSpace (X n)] [∀ n, CompactSpace (X n)]
@@ -147,11 +116,6 @@ theorem isCompact_closure_range_toGHSpace_of_uniform_covers
       · exact ghRep_cover_of_cover (X n) hs_cover
   exact ht.closure.isCompact_of_isClosed isClosed_closure
 
-
-
-
-
-
 theorem exists_subseq_tendsto_unpointedGHSpace_of_uniform_covers
     (X : ℕ → Type u) [∀ n, MetricSpace (X n)] [∀ n, CompactSpace (X n)]
     [∀ n, Nonempty (X n)]
@@ -172,10 +136,6 @@ theorem exists_subseq_tendsto_unpointedGHSpace_of_uniform_covers
       (x := fun n => _root_.GromovHausdorff.toGHSpace (X n))
       (fun n => subset_closure (Set.mem_range_self n))
   exact ⟨p, φ, hφ, by simpa [Function.comp_def] using hconv⟩
-
-
-
-
 
 theorem exists_subseq_unpointedGHConverges_of_uniform_covers
     (X : ℕ → PointedCompactMetricSpace)
@@ -201,10 +161,6 @@ theorem exists_subseq_unpointedGHConverges_of_uniform_covers
   simpa [PointedCompactMetricSpace.unpointedGH, _root_.GromovHausdorff.ghDist,
     Y, Function.comp_def, _root_.GromovHausdorff.GHSpace.toGHSpace_rep] using
     (tendsto_iff_dist_tendsto_zero.mp hconv)
-
-
-
-
 
 theorem exists_uniform_covers_of_uniform_basepoint_packing_bounds
     (X : ℕ → PointedCompactMetricSpace.{u})
@@ -245,10 +201,6 @@ theorem exists_uniform_covers_of_uniform_basepoint_packing_bounds
     obtain ⟨z, hz, hdist⟩ := hLcover y hyball
     exact Set.mem_iUnion₂.mpr ⟨z, hz, hdist⟩
 
-
-
-
-
 theorem exists_subseq_tendsto_unpointedGHSpace_of_uniform_basepoint_packing_bounds
     (X : ℕ → PointedCompactMetricSpace.{u})
     {C : ℝ} {v : ℕ → ℝ}
@@ -269,9 +221,6 @@ theorem exists_subseq_tendsto_unpointedGHSpace_of_uniform_basepoint_packing_boun
   intro n m
   exact hcover n m
 
-
-
-
 theorem exists_subseq_unpointedGHConverges_of_uniform_basepoint_packing_bounds
     (X : ℕ → PointedCompactMetricSpace.{u})
     {C : ℝ} {v : ℕ → ℝ}
@@ -289,11 +238,6 @@ theorem exists_subseq_unpointedGHConverges_of_uniform_basepoint_packing_bounds
   intro n m
   exact hcover n m
 
-
-
-
-
-
 noncomputable def packingBoundedClosedBall
     (X : BasedMetricSpaceBundle.{u}) [CompleteSpace X.carrier]
     (R : ℝ) (hR : 0 ≤ R)
@@ -309,8 +253,6 @@ noncomputable def packingBoundedClosedBall
       compact := isCompact_iff_compactSpace.mp hcompact
       nonempty := ⟨⟨X.base, Metric.mem_closedBall_self hR⟩⟩
       base := ⟨X.base, Metric.mem_closedBall_self hR⟩ }
-
-
 
 theorem packingBoundedClosedBall_diam_le
     (X : BasedMetricSpaceBundle.{u}) [CompleteSpace X.carrier]
@@ -335,8 +277,6 @@ theorem packingBoundedClosedBall_diam_le
       · simpa [dist_comm] using Metric.mem_closedBall.mp b.property
     _ = 2 * R := by ring
 
-
-
 theorem packingBound_at_of_uniform_packing_bounds
     (X : ℕ → BasedMetricSpaceBundle.{u})
     (hpack : ∀ δ S, 0 < δ → ∃ N : ℕ, ∀ k n,
@@ -348,8 +288,6 @@ theorem packingBound_at_of_uniform_packing_bounds
   obtain ⟨N, hN⟩ := hpack δ S hδ
   exact ⟨N, hN k⟩
 
-
-
 noncomputable def uniformPackingBoundedClosedBall
     (X : ℕ → BasedMetricSpaceBundle.{u})
     [∀ k, CompleteSpace (X k).carrier]
@@ -358,8 +296,6 @@ noncomputable def uniformPackingBoundedClosedBall
     (k i : ℕ) : PointedCompactMetricSpace :=
   packingBoundedClosedBall (X k) (i : ℝ) (Nat.cast_nonneg i)
     (packingBound_at_of_uniform_packing_bounds X hpack k)
-
-
 
 private theorem packing_bound_of_realization_and_target_cover
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -447,9 +383,6 @@ private theorem packing_bound_of_realization_and_target_cover
     exact Set.ncard_le_ncard hsub hLfin
   exact hcard.trans hLncard
 
-
-
-
 theorem exists_packing_bound_of_pointedGHRealization_compact_target
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     [CompactSpace Y.carrier]
@@ -472,16 +405,6 @@ theorem exists_packing_bound_of_pointedGHRealization_compact_target
   refine ⟨N, packing_bound_of_realization_and_target_cover
     R hδ hHaus L hLfin hLncard ?_⟩
   simpa [η] using hLcover
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_packing_bound_of_pointedGHRealization_source_packing_at
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
@@ -525,11 +448,6 @@ theorem exists_packing_bound_of_pointedGHRealization_source_packing_at
     R' hδ hHaus' L hLfin hLncard ?_⟩
   simpa [η] using hLcover
 
-
-
-
-
-
 theorem exists_packing_bound_of_pointedGHRealization_source_packing
     {X Y : FiniteDiameterBasedMetricSpace.{u}}
     (R : PointedGHRealization X Y)
@@ -541,11 +459,6 @@ theorem exists_packing_bound_of_pointedGHRealization_source_packing
   obtain ⟨N, hN⟩ := hpack (δ / 8) (R₀ + 2 + δ / 8) (by linarith)
   exact exists_packing_bound_of_pointedGHRealization_source_packing_at
     R hδ hR₀ ⟨N, hN⟩ hHaus
-
-
-
-
-
 
 theorem exists_packing_bound_of_pointedGHConverges_source_packing
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}
@@ -590,11 +503,6 @@ theorem exists_packing_bound_of_pointedGHConverges_source_packing
         (R₀ + 2 + δ / 8) → n ≤ N := hKpack k hKpack_le
   exact exists_packing_bound_of_pointedGHRealization_source_packing_at
     R hδ hR₀ ⟨N, hpack_k⟩ hHaus
-
-
-
-
-
 
 theorem eventually_uniform_packing_bound_of_pointedGHConverges_compact_target
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}
@@ -645,14 +553,6 @@ theorem eventually_uniform_packing_bound_of_pointedGHConverges_compact_target
   exact packing_bound_of_realization_and_target_cover
     R hδ hHaus L hLfin hLncard (by simpa [η] using hLcover)
 
-
-
-
-
-
-
-
-
 theorem exists_subseq_tendsto_countable_compact_family
     {X : Type u} [TopologicalSpace X] [FirstCountableTopology X]
     (f : ℕ → ℕ → X)
@@ -674,12 +574,6 @@ theorem exists_subseq_tendsto_countable_compact_family
     (continuous_apply i).tendsto a
   have hcoord := happly.comp hconv
   simpa [g, Function.comp_def] using hcoord
-
-
-
-
-
-
 
 theorem exists_subseq_tendsto_closedBallGHSpace_of_uniform_packing_bounds
     (X : ℕ → BasedMetricSpaceBundle.{u})
@@ -730,6 +624,5 @@ theorem exists_subseq_tendsto_closedBallGHSpace_of_uniform_packing_bounds
   exact exists_subseq_tendsto_countable_compact_family
     (fun n i => _root_.GromovHausdorff.toGHSpace
       (uniformPackingBoundedClosedBall X hpack n i).carrier) hcompact
-
 
 end Poincare.GromovHausdorff

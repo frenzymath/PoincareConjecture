@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M11.BoundarylessInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

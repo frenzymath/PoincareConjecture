@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleGreenIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,15 +8,11 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 theorem m64Annulus_restrict_closed_eq_interior :
     volume.restrict m64AnnulusDomain = volume.restrict (interior m64AnnulusDomain) := by
   apply Measure.restrict_congr_set
   apply ae_eq_set.mpr
   exact ⟨m64AnnulusDomain_boundary_null, by rw [sdiff_eq_empty.mpr interior_subset]; simp⟩
-
-
 
 theorem m64AnnulusPoint_measurePreserving :
     MeasurePreserving (fun q : ℝ × ℝ => annulusPoint q.1 q.2)
@@ -49,8 +35,6 @@ theorem m64AnnulusPoint_measurePreserving :
   rw [heq, Measure.prod_restrict]
   exact h
 
-
-
 theorem m64AnnulusInteriorIntegral_eq_iterated_integrable
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
     (f : LoopPlane → F) (hf : IntegrableOn f (interior m64AnnulusDomain) volume) :
@@ -70,8 +54,6 @@ theorem m64AnnulusInteriorIntegral_eq_iterated_integrable
           rw [heq]
           exact loopPlaneEquivProd.symm.measurableEmbedding) f).symm
     _ = _ := integral_prod _ hi
-
-
 
 theorem m64AnnulusInteriorIntegral_eq_iterated_swap_integrable
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]

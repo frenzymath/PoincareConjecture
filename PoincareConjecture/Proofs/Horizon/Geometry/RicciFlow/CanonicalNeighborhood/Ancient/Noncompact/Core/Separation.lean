@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Statement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Surrounding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

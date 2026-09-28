@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.RegularLimitDensity
 import PoincareConjecture.Proofs.M49.CalibratedLimitVolume
 import PoincareConjecture.Proofs.M49.SlabVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem event_regular_limit_volume_le_liminf
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
@@ -107,8 +96,6 @@ theorem event_regular_limit_volume_le_liminf
     (hp (s k)) hxchart hxU
   rw [hext] at hlim
   exact hlim
-
-
 
 theorem event_regular_limit_volume_le_left_limit
     (H : GeneralizedParabolicRescalingTheory.{u} 3)

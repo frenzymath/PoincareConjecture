@@ -5,14 +5,6 @@ import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.ContinuousMap.Bounded.Normed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Asymptotics Filter Set
@@ -22,8 +14,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {V F : Type*} [TopologicalSpace V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem hasDerivAt_bcf_of_bounded_second_derivative
     (u du : ℝ → BoundedContinuousFunction V F) (ddu : ℝ → V → F)
@@ -64,8 +54,6 @@ section CompactSupport
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def compactSlice (f : E × ℝ → F) (hf : Continuous f)
     (hc : HasCompactSupport f) (t : ℝ) : BoundedContinuousFunction E F :=
   BoundedContinuousFunction.ofNormedAddCommGroup (fun x => f (x, t))
@@ -78,7 +66,6 @@ omit [NormedSpace ℝ F] [NormedSpace ℝ E] in
 theorem compactSlice_apply (f : E × ℝ → F) (hf : Continuous f)
     (hc : HasCompactSupport f) (t : ℝ) (x : E) :
     compactSlice f hf hc t x = f (x, t) := rfl
-
 
 noncomputable def timeDerivative (f : E × ℝ → F) (p : E × ℝ) : F :=
   fderiv ℝ f p (0, 1)
@@ -96,9 +83,6 @@ theorem hasDerivAt_timeSlice {f : E × ℝ → F} (hf : Differentiable ℝ f)
     HasDerivAt (fun s => f (x, s)) (timeDerivative f (x, t)) t := by
   exact (hf (x, t)).hasFDerivAt.comp_hasDerivAt t
     ((hasDerivAt_const t x).prodMk (hasDerivAt_id t))
-
-
-
 
 theorem hasDerivAt_compactSlice {f : E × ℝ → F} (hf : ContDiff ℝ ∞ f)
     (hc : HasCompactSupport f) (t : ℝ) :
@@ -123,7 +107,6 @@ theorem hasDerivAt_compactSlice {f : E × ℝ → F} (hf : ContDiff ℝ ∞ f)
 theorem continuous_compactSlice {f : E × ℝ → F} (hf : ContDiff ℝ ∞ f)
     (hc : HasCompactSupport f) : Continuous (compactSlice f hf.continuous hc) :=
   continuous_iff_continuousAt.mpr fun t => (hasDerivAt_compactSlice hf hc t).continuousAt
-
 
 noncomputable def spatialDerivative (f : E × ℝ → F) (p : E × ℝ) : E →L[ℝ] F :=
   (fderiv ℝ f p).comp (ContinuousLinearMap.inl ℝ E ℝ)

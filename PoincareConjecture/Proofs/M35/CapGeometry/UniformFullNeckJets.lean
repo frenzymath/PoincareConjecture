@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.FullNeckTargetMetric
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedFullNeckJets
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem blowupSequence_full_neck_coefficient_jets_uniform
     (P : M35StandardCapPredecessors)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.BoundaryRela
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.InteriorProtectedRetainedCore
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.ProtectedAtlasConjugation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

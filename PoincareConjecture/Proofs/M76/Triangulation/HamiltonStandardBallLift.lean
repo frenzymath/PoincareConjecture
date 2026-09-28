@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAlexanderConsequences
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSphereTopology
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,11 +20,6 @@ local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ L
 local notation "pi" => (fun x : V =>
   (Prod.fst x, (QuotientAddGroup.mk (Prod.snd x) : (κ → ℝ) ⧸ L.toAddSubgroup)))
-
-
-
-
-
 
 theorem ChartwisePLSphere.exists_standard_lattice_ball_lift
     (s : ChartwisePLSphere d S) (hd : StandardLatticeHandleAtlas ι κ L d)

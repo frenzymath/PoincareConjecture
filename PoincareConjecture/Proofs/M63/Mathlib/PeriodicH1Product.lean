@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1ProductEnergy
 import PoincareConjecture.Proofs.M63.Mathlib.DenseBilinearExtension
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 3
@@ -21,9 +12,6 @@ open AddCircle Set
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem exists_periodicH1_core_product :
     ∃ B : periodicC1Core (L := L) →L[ℂ]
@@ -89,10 +77,6 @@ theorem exists_periodicH1_core_product :
   refine ⟨B₀.mkContinuous₂ (4 * d) hB, ?_, ?_⟩
   · exact hW
   · exact B₀.mkContinuous₂_norm_le (by positivity) hB
-
-
-
-
 
 theorem exists_periodicH1_product :
     ∃ B : lp (fun _ : ℤ => ℂ) 2 →L[ℂ]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 import Mathlib.Geometry.Polygon.Basic
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,21 +10,14 @@ namespace Polygon
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
 
-
-
 noncomputable def edgeVertices (P : Polygon E n) (i : Fin n) : Finset E := by
   classical
   exact {P i, P (finRotate n i)}
-
-
 
 theorem edgeSet_eq_convexHull (P : Polygon E n) (i : Fin n) :
     P.edgeSet ℝ i = convexHull ℝ (P.edgeVertices i : Set E) := by
   simp only [edgeSet, edgeVertices, Finset.coe_pair, convexHull_pair,
     affineSegment_eq_segment]
-
-
-
 
 def HasSimplicialEdges (P : Polygon E n) : Prop :=
   ∀ i j, P.edgeSet ℝ i ∩ P.edgeSet ℝ j ⊆
@@ -59,15 +43,11 @@ private theorem edge_generators_inter (P : Polygon E n) (hP : P.HasSimplicialEdg
   rintro _ ⟨i, rfl⟩ _ ⟨j, rfl⟩
   simpa only [← P.edgeSet_eq_convexHull] using hP i j
 
-
-
 noncomputable def simplicialComplex (P : Polygon E n) (hP : P.HasSimplicialEdges) :
     SimplicialComplex ℝ E :=
   SimplicialComplex.ofGenerators (range P.edgeVertices)
     (by rintro _ ⟨i, rfl⟩; exact independent_edgeVertices P i)
     (edge_generators_inter P hP)
-
-
 
 theorem mem_simplicialComplex_faces (P : Polygon E n) (hP : P.HasSimplicialEdges)
     (s : Finset E) :
@@ -79,30 +59,21 @@ theorem mem_simplicialComplex_faces (P : Polygon E n) (hP : P.HasSimplicialEdges
   · rintro ⟨hs, i, hsi⟩
     exact ⟨hs, _, mem_range_self i, hsi⟩
 
-
-
 theorem edgeVertices_mem_faces (P : Polygon E n) (hP : P.HasSimplicialEdges)
     (i : Fin n) : P.edgeVertices i ∈ (P.simplicialComplex hP).faces := by
   classical
   exact (P.mem_simplicialComplex_faces hP _).mpr
     ⟨Finset.insert_nonempty _ _, i, Finset.Subset.refl _⟩
 
-
-
 theorem finite_simplicialComplex_faces (P : Polygon E n) (hP : P.HasSimplicialEdges) :
     (P.simplicialComplex hP).faces.Finite :=
   SimplicialComplex.finite_ofGenerators_faces (finite_range _) _ _
-
-
 
 theorem simplicialComplex_space (P : Polygon E n) (hP : P.HasSimplicialEdges) :
     (P.simplicialComplex hP).space = P.boundary ℝ := by
   rw [simplicialComplex, SimplicialComplex.space_ofGenerators, Polygon.boundary]
   rw [Set.biUnion_range]
   simp only [← P.edgeSet_eq_convexHull]
-
-
-
 
 theorem simplicialComplex_vertices (P : Polygon E n) (hP : P.HasSimplicialEdges) :
     (P.simplicialComplex hP).vertices = range P := by

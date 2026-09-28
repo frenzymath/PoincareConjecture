@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.HigherRegularity.ContDiffOnTop
 
 noncomputable section
@@ -125,6 +116,5 @@ theorem exists_isLocalFlow_contDiffOn_top
   · change Tcap / 8 ≤ εN
     have : Tcap ≤ εN := min_le_left _ _
     linarith
-
 
 end Poincare.ODE.LocalFlow

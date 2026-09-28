@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoRayProductStraightening
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TransverseAffinePlaneCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace ContinuousLinearMap
 
 local notation "V2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
-
 
 theorem exists_standard_two_ray_crossing_coordinates
     {u v : V2} (hu : u ≠ 0) (hv : v ≠ 0)

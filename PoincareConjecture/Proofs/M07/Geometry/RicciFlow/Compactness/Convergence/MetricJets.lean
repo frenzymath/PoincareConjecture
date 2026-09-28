@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.BallTransfer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
 
 theorem tendsto_coordinate_metricJet (G : PointedGeometricConvergence S)
     (q : G.limitCarrier.carrier) (r : ℕ) (a b : Fin n)
@@ -46,7 +37,6 @@ theorem tendsto_coordinate_metricJet (G : PointedGeometricConvergence S)
   obtain ⟨N, _, hN⟩ := G.pullback_metric_CInfinity q j r {p} isCompact_singleton hdom ε hε
   refine ⟨N, fun k hk ↦ ?_⟩
   simpa only [dist_eq_norm, MetricJet] using hN k hk a b p (mem_singleton p)
-
 
 theorem tendsto_coordinate_metricJet_apply (G : PointedGeometricConvergence S)
     (q : G.limitCarrier.carrier) (r : ℕ) (a b : Fin n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleCoordinates.SquareCircle
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PeriodicSquarePL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -23,8 +15,6 @@ private theorem exists_finite_closed_interval {a b : ℝ} (hab : a < b) :
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ :=
     isFinitePLBallPair_Icc hab
   exact ⟨K, hK, hKs⟩
-
-
 
 theorem exists_square_rim_map_of_PL_period
     {X V ι : Type*} [TopologicalSpace X]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_StableSliceChart
 import PoincareConjecture.Proofs.M14.Sec6_7_EndpointDifferential
 import PoincareConjecture.Proofs.M14.Mathlib.BasisCoordinateVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -28,32 +19,22 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
 
 attribute [local instance] horizontal_t2Space
 
-
-
 noncomputable def stableCoordinateChart (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) :
     OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) (G.slices (T - τ)).Point :=
   b.euclideanCoordinates.toHomeomorph.transOpenPartialHomeomorph (stableSliceChart H)
 
-
-
 theorem stableCoordinateChart_source (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) :
     (stableCoordinateChart H b).source = b.euclideanCoordinates ⁻¹' H.carrier := rfl
-
-
 
 theorem stableCoordinateChart_target (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) :
     (stableCoordinateChart H b).target = H.endpoint_slice_map '' H.carrier := rfl
 
-
-
 theorem stableCoordinateChart_apply (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) (z : EuclideanSpace ℝ (Fin n)) :
     stableCoordinateChart H b z = H.endpoint_slice_map (b.euclideanCoordinates z) := rfl
-
-
 
 theorem stableCoordinateChart_smooth (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) :
@@ -65,8 +46,6 @@ theorem stableCoordinateChart_smooth (H : M14StableSet G T τ x E)
       H.endpoint_slice_map H.carrier := H.endpoint_slice_smooth
   exact hs.comp b.euclideanCoordinates.toContinuousLinearMap.contMDiff.contMDiffOn
     (fun _ hz => hz)
-
-
 
 theorem stableCoordinateChart_symm_smooth (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) :
@@ -80,8 +59,6 @@ theorem stableCoordinateChart_symm_smooth (H : M14StableSet G T τ x E)
   exact b.euclideanCoordinates.symm.toContinuousLinearMap.contMDiff.comp_contMDiffOn hs
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem stableCoordinateChart_differential (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))

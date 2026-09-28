@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -91,21 +82,13 @@ private theorem exists_squareCircle :
   rw [he]
   rfl
 
-
-
-
 noncomputable def squareCircle : C8 ≃ₜ Q :=
   Classical.choose exists_squareCircle
-
-
 
 theorem squareCircle_apply (z : C8) :
     (squareCircle z : V2) =
       squareCenter (PLAnnularStrip.annulusMap 2 (by norm_num) (z, 0)) :=
   Classical.choose_spec exists_squareCircle z
-
-
-
 
 theorem finitePiecewiseAffineOn_squareCircle_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

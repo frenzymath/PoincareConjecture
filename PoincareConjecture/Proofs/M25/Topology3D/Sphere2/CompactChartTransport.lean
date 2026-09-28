@@ -1,24 +1,12 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_compact_chart_diffeomorph_family
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

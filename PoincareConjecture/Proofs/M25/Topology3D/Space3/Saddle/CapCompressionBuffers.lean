@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_surgeryCap_compression_widths
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
@@ -106,9 +93,6 @@ theorem exists_surgeryCap_compression_widths
       _ = C.removal - C.scale + |C.beta| * |s| := by
         rw [abs_mul, C.sign_abs, one_mul, abs_of_nonneg hsub, abs_mul]
       _ ≤ R := by nlinarith [C.scale_pos]
-
-
-
 
 theorem exists_finite_surgeryCap_compression_buffers
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedRicci
 import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Proofs.M13.PinchingIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,20 +14,17 @@ namespace PoincareConjecture.Proofs.M13
 variable {F : GeneralizedRicciFlowData.{u}}
   (G : M12.FlowBoxRicciGeometry F)
 
-
 theorem originalSlice_point (t : ℝ) (x : (F.slice t).carrier) :
     (G.sliceIdentification t).identification x =
       spacetimeSlicePoint G.realization.slices (⟨t, x⟩ : F.point) := by
   apply Subtype.ext
   exact (G.sliceIdentification t).identification_eq x
 
-
 theorem originalSlice_homothety (t : ℝ) :
     MetricHomothety (F.metric t) (G.realization.slices t).metricOnPoints
       (G.sliceIdentification t).identification 1 := by
   intro x v w
   simpa only [M12.flowSliceLabel, one_mul] using (G.sliceIdentification t).metric_eq x v w
-
 
 theorem originalSlice_calculus (h : GeneralizedParabolicRescalingTheory.{u} 3) (t : ℝ) :
     MetricHomothetyCalculus (F.metric t) (G.realization.slices t).metricOnPoints

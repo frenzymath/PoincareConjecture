@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainComposition
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCompression
 import PoincareConjecture.Proofs.M76.Triangulation.BoundedHandleLift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -31,10 +21,6 @@ local notation "R" => latticeHandleDomain ι κ L
 local notation "V" => ((ι ⊕ κ) → ℝ)
 local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ)
 local notation "D" => coordinateCylinder J
-
-
-
-
 
 theorem exists_hamilton_protected_handle_comparison
     (e : α → OpenPartialHomeomorph X V3)

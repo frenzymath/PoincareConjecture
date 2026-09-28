@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityDiskGreen
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarACL
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,11 +35,6 @@ private theorem setIntegral_mul_tendsto {X : Type*} [MeasurableSpace X] {mu : Me
     rw [hz]
   simpa only [Function.comp_apply, heq] using
     integral_mul_tendsto ((A.continuous.tendsto u0).comp hu) (hv.restrict S)
-
-
-
-
-
 
 theorem weakPair_disk_green (u : Lp ℝ 2 (volume : Measure LoopPlane))
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane))

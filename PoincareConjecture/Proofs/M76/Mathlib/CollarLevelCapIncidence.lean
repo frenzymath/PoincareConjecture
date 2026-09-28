@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLevelChartTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem collar_level_mem_moved_cap_iff
     {B T d b : Set E} {upper g A : E → ℝ}

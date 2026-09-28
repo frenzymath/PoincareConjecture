@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.ChordConeDistanceScaling
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.ChordConeAnnulus
 import Mathlib.Order.Filter.Finite
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {X : Type u} [MetricSpace X]
   {E : UniformSpace.Completion X} {alpha : ℝ}
   [PseudoMetricSpace (MetricEndRay E alpha)]
 
-
-
 def metricEndRayAnnularPoint {a b : ℝ} (P : MetricEndRay E alpha)
     (s : Icc a b) :
     ChordConeAnnulus (UniformSpace.Completion (MetricEndRay E alpha)) a b :=
@@ -42,8 +31,6 @@ variable {a b : ℝ} (ha : 0 < a) (hab : a ≤ b)
       chordConeDistance r t (dist x z) ≤
         chordConeDistance r s (dist x y) + chordConeDistance s t (dist y z))
 
-
-
 theorem metricEndRayAnnularPoint_dist
     (P Q : MetricEndRay E alpha) (s t : Icc a b) :
     letI := chordConeAnnulusMetric ha hab htriangle
@@ -52,9 +39,6 @@ theorem metricEndRayAnnularPoint_dist
   let := chordConeAnnulusMetric ha hab htriangle
   rw [chordConeAnnulus_dist_eq ha hab htriangle]
   simp only [metricEndRayAnnularPoint, UniformSpace.Completion.dist_eq]
-
-
-
 
 theorem metricEndRay_annular_scaled_dist_le
     (hupper : ∀ P Q : MetricEndRay E alpha,
@@ -76,8 +60,6 @@ theorem metricEndRay_annular_scaled_dist_le
   rw [chordConeDistance_mul h hh.le] at hb
   rw [metricEndRayAnnularPoint_dist ha hab htriangle]
   exact (div_le_iff₀ hh).mpr (by simpa only [mul_comm] using hb)
-
-
 
 theorem exists_finite_metricEndRay_annular_net
     [CompactSpace (UniformSpace.Completion (MetricEndRay E alpha))]
@@ -108,9 +90,6 @@ theorem exists_finite_metricEndRay_annular_net
   refine ⟨F, fun z => ?_⟩
   obtain ⟨i, hi, hzi⟩ := mem_iUnion₂.mp (hF (mem_univ z))
   exact ⟨i, hi, hzi⟩
-
-
-
 
 theorem eventually_metricEndRay_annular_distortion
     [CompactSpace (UniformSpace.Completion (MetricEndRay E alpha))]

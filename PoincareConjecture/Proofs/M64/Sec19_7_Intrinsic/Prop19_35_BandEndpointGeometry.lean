@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutContacts
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +15,6 @@ section Band
 variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
-
 
 theorem m64Intrinsic_band_endpoint_zero_not_opposite (right : Bool) :
     (B.endpointEdge right).map 0 ∉ (if right then B.leftCut else B.rightCut) := by
@@ -53,10 +39,6 @@ theorem m64Intrinsic_band_endpoint_zero_not_opposite (right : Bool) :
   have h := congrArg (fun q => (collarParameterEquiv q).1) (B.coordinates.injOn hs' hs heq)
   simp only [collarParameterEquiv.apply_symm_apply] at h
   cases right <;> norm_num [e, e'] at h
-
-
-
-
 
 theorem m64Intrinsic_exists_band_endpoint_neighborhood (right : Bool) :
     ∃ N : Set AnnulusCoordinates, IsOpen N ∧ (B.endpointEdge right).map 0 ∈ N ∧
@@ -98,9 +80,6 @@ variable (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
     (collarParameterEquiv.trans L).toHomeomorph.toOpenPartialHomeomorph
     lo a b ua wa ub wb ra rb)
 
-
-
-
 theorem m64Intrinsic_band_left_endpoint_one :
     (B.endpointEdge false).map 1 = L (a, lo a) + ra • L (ua, wa) := by
   rw [B.endpointEdge_map]
@@ -108,19 +87,12 @@ theorem m64Intrinsic_band_left_endpoint_one :
   rw [one_mul, B.height_zero]
   exact m64Intrinsic_band_left_parameter L B B.interface.left_parameter_mem
 
-
-
-
 theorem m64Intrinsic_band_right_endpoint_one :
     (B.endpointEdge true).map 1 = L (b, lo b) + rb • L (ub, wb) := by
   rw [B.endpointEdge_map]
   change B.coordinates (collarParameterEquiv.symm (1, 1 * B.height 1)) = _
   rw [one_mul, B.height_one]
   exact m64Intrinsic_band_right_parameter L B B.interface.right_parameter_mem
-
-
-
-
 
 theorem m64Intrinsic_band_endpoint_image_eq_segment (right : Bool) :
     (B.endpointEdge right).map '' Icc (0 : ℝ) 1 =

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M03.ConnectionVariation
 import PoincareConjecture.Proofs.M03.ConnectionDifference
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CanonicalDomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
-
 
 theorem canonicalDomain_hasDerivAt_connection :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -98,9 +85,6 @@ theorem canonicalDomain_hasDerivAt_connection :
     exact hh.symm
   rw [hnative] at hmodel
   simpa only [canonicalDomain_connectionVelocity, ← hC] using hmodel
-
-
-
 
 theorem canonicalDomain_hasDerivAt_connection_difference :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

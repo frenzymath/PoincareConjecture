@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryDifferentialExtension
 import PoincareConjecture.Proofs.M64.Mathlib.TransverseProjection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -48,10 +35,6 @@ private theorem m64ClosedHalfDisk_uniqueDiff {r : ℝ} (hr : 0 < r) :
       simpa only [z, PiLp.smul_apply, PiLp.single_apply, ite_true, smul_eq_mul,
         mul_one] using half_pos hr
   exact ⟨z, mem_interior_iff_mem_nhds.mpr (mem_of_superset (hU.mem_nhds hz) hUK)⟩
-
-
-
-
 
 theorem m64Conformal_contDiffOn_of_transverse {N : ℕ} {R : ℝ} (hR : 0 < R)
     (u : LoopPlane → EuclideanSpace ℝ (Fin N))

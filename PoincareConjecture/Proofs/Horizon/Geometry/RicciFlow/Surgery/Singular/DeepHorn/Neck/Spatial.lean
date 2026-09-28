@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.CanonicalNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -123,7 +115,6 @@ theorem spatial_metric_comparison (N : GeneralizedStrongNeck F t epsilon) :
   have hzero : (0 : ℝ) ∈ Set.Ioc (-1 : ℝ) 0 := by constructor <;> norm_num
   obtain ⟨hsmooth, bound, hbound, hjet⟩ := N.metric_comparison
   exact ⟨hsmooth 0 hzero, bound, hbound, hjet 0 hzero⟩
-
 
 noncomputable def spatialNeck (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) : EpsilonNeck (F.metric t) where

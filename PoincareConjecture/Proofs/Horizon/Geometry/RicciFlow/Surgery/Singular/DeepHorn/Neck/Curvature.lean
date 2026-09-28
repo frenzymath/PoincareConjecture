@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ScaleComparison
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +28,6 @@ theorem isPreconnected_carrier {F : GeneralizedRicciFlowData.{u}} {t epsilon : �
       exact ⟨z, congrArg Subtype.val hz⟩
   rw [← heq]
   exact isPreconnected_range (continuous_subtype_val.comp N.coordinate.continuous)
-
 
 theorem exists_scalar_control :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

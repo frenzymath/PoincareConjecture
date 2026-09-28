@@ -1,15 +1,5 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,11 +8,6 @@ open scoped Topology
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
-
-
 
 theorem injOn_and_interior_image_of_carrier_neighborhood
     {s d a : Set X} {C : Set Y} (e : d ≃ₜ C) (f : X → Y)

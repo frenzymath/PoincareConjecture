@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VertexZeroChargeSignedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSignPerturbation
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteGenericHeightTilt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem preconnected_signed_vertex_link_graphs_of_zero_charge
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -84,11 +70,6 @@ theorem preconnected_signed_vertex_link_graphs_of_zero_charge
     change (0 < f (v : E) - f p) ↔ f p < f (v : E)
     exact sub_pos
   exact ⟨hnset ▸ hngraph, hpset ▸ hpgraph⟩
-
-
-
-
-
 
 theorem exists_generic_height_with_preconnected_signed_links
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

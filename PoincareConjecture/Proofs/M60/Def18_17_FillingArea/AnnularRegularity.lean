@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.RelativeSmoothing
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskLipschitz
 import Mathlib.Geometry.Manifold.Metrizable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,10 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m60_exists_annular_lipschitz_constant
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AttachingDiskTopology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

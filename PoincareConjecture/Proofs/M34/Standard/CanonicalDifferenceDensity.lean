@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ActualDifferenceDensity
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
   (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA))
   (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
 
-
-
-
 noncomputable def canonicalDifferenceDensity :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -38,8 +26,6 @@ noncomputable def canonicalDifferenceDensity :
   letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
   fun F F' p t x => actualDifferenceEnergyDensity qH qA qS
     (F.connection t) (F'.connection t) ((extChartAt (𝓡 n) p).symm x)
-
-
 
 theorem canonicalDifferenceDensity_coe :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -55,8 +41,6 @@ theorem canonicalDifferenceDensity_coe :
   rw [show (extChartAt (𝓡 n) p).symm (x : V n) = x from
     canonicalOpen_chart_symm_apply hU p x]
 
-
-
 theorem canonicalDifferenceDensity_nonneg :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -66,9 +50,6 @@ theorem canonicalDifferenceDensity_nonneg :
   let := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
   intro J J' F F' p t x
   exact actualDifferenceEnergyDensity_nonneg qH qA qS _ _ _
-
-
-
 
 theorem canonicalDifferenceDensity_continuousOn :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -94,8 +75,6 @@ theorem canonicalDifferenceDensity_continuousOn :
   intro z hz
   exact (((hsq _ hH.continuousOn) z hz).add ((hsq _ hA.continuousOn) z hz)).add
     ((hsq _ hS.continuousOn) z hz)
-
-
 
 theorem canonicalDifferenceDensity_continuousOn_slice :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

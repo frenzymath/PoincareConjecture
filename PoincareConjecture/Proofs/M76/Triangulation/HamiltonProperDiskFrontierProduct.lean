@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierZer
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskSignedProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBoundaryEdges
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +17,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 structure HamiltonProperDiskFrontierProduct
     (P : HamiltonProperDiskLowerProducts T C) (p : T.disk.vertices) where
@@ -57,10 +46,6 @@ structure HamiltonProperDiskFrontierProduct
   keep_edge : ∀ s ∈ T.disk.faces, s ∈ T.boundary.faces →
     (p : E) ∈ s → s.card = 2 → ∀ t ∈ I,
       map (s.centroid ℝ id, t) = P.map s (s.centroid ℝ id, t)
-
-
-
-
 
 theorem HamiltonProperDiskLowerProducts.exists_frontier_vertex_product
     (P : HamiltonProperDiskLowerProducts T C)

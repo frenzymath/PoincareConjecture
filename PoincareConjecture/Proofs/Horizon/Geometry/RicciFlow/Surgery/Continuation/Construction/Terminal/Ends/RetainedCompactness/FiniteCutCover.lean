@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.FiniteSubcover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.Cover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,8 +60,6 @@ theorem exists_finite_isCompact_core_diff_of_end_tail_cover {ι : Type v}
   · intro x hx
     exact (hsub hx.1).resolve_right hx.2
 
-
-
 theorem end_tail_cover_of_isCompact_cut_remainder {ι : Type v}
     (N : ι → EpsilonNeck (Q.extension.extended.metric T))
     (cuts : ∀ i, SurgeryEndCut (N i)) (s : Finset ι)
@@ -106,8 +96,6 @@ theorem end_tail_cover_of_isCompact_cut_remainder {ι : Type v}
   rw [(cuts i).frontier_eq]
   exact disjoint_left.mpr fun y hy hs => disjoint_left.mp havoid hy
     (Or.inr (mem_iUnion₂.mpr ⟨i, hi, hs⟩))
-
-
 
 theorem exists_finite_end_cut_cover {ι : Type v}
     (N : ι → EpsilonNeck (Q.extension.extended.metric T))

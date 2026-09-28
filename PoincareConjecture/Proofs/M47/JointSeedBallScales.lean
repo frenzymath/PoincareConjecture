@@ -1,19 +1,8 @@
 import PoincareConjecture.Proofs.M47.JointSeedScales
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_ball_scale_budget
     {A C c rho v : ℝ} (hA : 0 < A) (hC : 0 < C) (hrho : 0 < rho) (hv : 0 < v)
@@ -24,8 +13,6 @@ theorem jointSeed_ball_scale_budget
     (by positivity) hC hrho hv
     (by convert hc using 1; ring) (by convert hsmall using 1; ring)
   exact ⟨hpos, by nlinarith⟩
-
-
 
 theorem jointSeed_birth_radius_lt_gradient_radius
     {A B L a v : ℝ} (hA : 1 ≤ A) (hB : 1 ≤ B) (hL : 0 < L)

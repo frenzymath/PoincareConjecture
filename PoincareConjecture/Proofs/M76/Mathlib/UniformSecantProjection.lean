@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BasisSecantCones
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedConeProjectionBound
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ namespace Module.Basis
 variable {ι E F : Type*} [Finite ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_pos_secant_bound_of_injOn (b : Basis ι ℝ E)
     (faces : Set (Finset ι)) (Q : E →L[ℝ] F)
@@ -73,10 +60,6 @@ variable {ι E F : Type*} [Finite ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {A : AbstractSimplicialComplex ι} {b : Module.Basis ι ℝ E}
-
-
-
-
 
 theorem BasisRadialProjection.exists_pos_secant_bound (Q : A.BasisRadialProjection b F) :
     ∃ c : ℝ, 0 < c ∧ ∀ x ∈ (A.basisRadialEmbedding b).cone.space,

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SinglePeriodReflectionAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusShear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn.PolygonalCrossingResolution

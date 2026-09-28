@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarLiftRadiusDecrease
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,11 +8,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_compact_inverse_radius_decreases_left
     (N : IntrinsicAnnulus)

@@ -4,16 +4,6 @@ import Mathlib.MeasureTheory.Integral.Lebesgue.Markov
 import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Topology.Algebra.InfiniteSum.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,7 +14,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.SpectralHeatNative
 
 variable {iota : Type*}
-
 
 def squareSum (a : iota → ℝ) : ENNReal :=
   ∑' i, ENNReal.ofReal (a i ^ 2)
@@ -52,7 +41,6 @@ theorem squareSum_ne_top_iff {a : iota → ℝ} :
   change squareSum a = _ at h
   rw [h]
   exact ENNReal.ofReal_ne_top
-
 
 def stateOfCoeffs (a : iota → ℝ) : State iota := by
   classical
@@ -84,8 +72,6 @@ theorem ae_memℓp_of_lintegral_squareSum_lt_top [Countable iota]
   filter_upwards [ae_lt_top' (aemeasurable_squareSum ha) henergy.ne] with t ht
   exact memℓp_two_of_squareSum_ne_top ht.ne
 
-
-
 theorem aestronglyMeasurable_stateOfCoeffs [Countable iota]
     {a : α → iota → ℝ}
     (ha : ∀ i, AEStronglyMeasurable (fun t => a t i) μ)
@@ -114,7 +100,6 @@ theorem lintegral_sq_norm_stateOfCoeffs [Countable iota]
   apply lintegral_congr_ae
   filter_upwards [hmem] with t ht
   exact squareSum_stateOfCoeffs ht
-
 
 theorem memLp_stateOfCoeffs [Countable iota] {a : α → iota → ℝ}
     (ha : ∀ i, AEStronglyMeasurable (fun t => a t i) μ)
@@ -145,7 +130,6 @@ theorem integral_sq_norm_stateOfCoeffs [Countable iota]
     integral_nonneg (fun t => sq_nonneg _)
   simpa only [ENNReal.toReal_ofReal hn] using congrArg ENNReal.toReal he
 
-
 def finiteWeightedEnergy (lambda : iota → NNReal) (s : Finset iota)
     (k : ℕ) (u : iota → ℝ) : ℝ :=
   ∑ i ∈ s, (1 + (lambda i : ℝ)) ^ k * u i ^ 2
@@ -159,7 +143,6 @@ theorem finiteWeightedEnergy_continuousOn (lambda : iota → NNReal) (s : Finset
     (hu : ∀ i ∈ s, ContinuousOn (fun t => u t i) J) :
     ContinuousOn (fun t => finiteWeightedEnergy lambda s k (u t)) J := by
   exact continuousOn_finsetSum s (fun i hi => continuousOn_const.mul ((hu i hi).pow 2))
-
 
 theorem finiteWeightedEnergy_hasDerivWithinAt (lambda : iota → NNReal)
     (s : Finset iota) (k : ℕ) {u : ℝ → iota → ℝ} {F : iota → ℝ}
@@ -184,7 +167,6 @@ theorem finiteWeightedEnergy_hasDerivWithinAt (lambda : iota → NNReal)
   rw [pow_succ]
   ring
 
-
 theorem finiteWeightedPairing_cross_le (lambda : iota → NNReal)
     (s : Finset iota) (k : ℕ) (u v : iota → ℝ) :
     2 * ∑ i ∈ s, (1 + (lambda i : ℝ)) ^ (k + 1) * u i * v i ≤
@@ -206,7 +188,6 @@ theorem finiteWeightedPairing_same_le (lambda : iota → NNReal)
   intro i hi
   nlinarith only [mul_nonneg (show 0 ≤ (1 + (lambda i : ℝ)) ^ k by positivity)
     (sq_nonneg (u i - v i))]
-
 
 theorem finiteWeightedEnergy_rate_le (lambda : iota → NNReal)
     (s : Finset iota) (k : ℕ) (u F b : iota → ℝ) {theta A S : ℝ}
@@ -231,7 +212,6 @@ theorem finiteWeightedEnergy_rate_le (lambda : iota → NNReal)
   rw [hsplit]
   linarith
 
-
 theorem sq_tame_split {d C x y : ℝ} (hd : 0 ≤ d) (hd1 : d < 1) :
     (d * x + C * y) ^ 2 ≤
       ((1 + d ^ 2) / 2) * x ^ 2 +
@@ -246,8 +226,6 @@ theorem sq_tame_split {d C x y : ℝ} (hd : 0 ≤ d) (hd1 : d < 1) :
       rw [← mul_assoc, mul_div_cancel₀ _ he.ne']
     nlinarith only [hs, hi]
   nlinarith only [hy]
-
-
 
 theorem finiteWeightedEnergy_le_gronwall (lambda : iota → NNReal)
     (s : Finset iota) (k : ℕ) {T theta A S B : ℝ} (hT : 0 ≤ T)
@@ -287,8 +265,6 @@ theorem finiteWeightedEnergy_le_gronwall (lambda : iota → NNReal)
   exact (hg t ht).trans (gronwallBound_mono hB hS (by linarith)
     (by simpa only [sub_zero] using ht.2))
 
-
-
 theorem summable_weighted_sq_of_finite_limit (lambda : iota → NNReal) (k : ℕ)
     (s : ℕ → Finset iota) (hs : Tendsto s atTop atTop)
     (u : ℕ → iota → ℝ) (v : iota → ℝ)
@@ -308,8 +284,6 @@ theorem summable_weighted_sq_of_finite_limit (lambda : iota → NNReal) (k : ℕ
   have hnonneg : 0 ≤ (fun i => (1 + (lambda i : ℝ)) ^ k * v i ^ 2) :=
     fun i => mul_nonneg (by positivity) (sq_nonneg _)
   exact ⟨summable_of_sum_le hnonneg hpartial, Real.tsum_le_of_sum_le hnonneg hpartial⟩
-
-
 
 theorem weighted_sq_mass_le_of_galerkin (lambda : iota → NNReal)
     (s : ℕ → Finset iota) (hs : Tendsto s atTop atTop) (k : ℕ)

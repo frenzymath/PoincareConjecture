@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularEdgeCrossing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem StraddlesZero.ne_zero {A : E →ᵃ[ℝ] ℝ} {e : Finset E}
     (he : A.StraddlesZero e) {v : E} (hv : v ∈ e) : A v ≠ 0 := by
@@ -34,9 +21,6 @@ end AffineMap
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem eq_edge_of_straddling_zero_point (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {e f : Finset E}
@@ -63,9 +47,6 @@ theorem eq_edge_of_straddling_zero_point (K : SimplicialComplex ℝ E)
   rw [hv, Finset.coe_singleton, convexHull_singleton, mem_singleton_iff] at hx
   exact hAe.ne_zero hve (hx ▸ hAx)
 
-
-
-
 theorem straddlingPoint_injective_without_regularity (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) :
     Function.Injective (fun e : {e : Finset E | e ∈ K.faces ∧ A.StraddlesZero e} =>
@@ -77,9 +58,6 @@ theorem straddlingPoint_injective_without_regularity (K : SimplicialComplex ℝ 
   have hf := A.straddlingPoint_mem f.val f.property.2
   exact K.eq_edge_of_straddling_zero_point A e.property.1 f.property.1 e.property.2
     (AffineMap.StraddlesZero.card A f.property.2) he.1 (by rw [hef]; exact hf.1) he.2
-
-
-
 
 theorem straddlingPoint_ne_vertex (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     {e : Finset E} (he : e ∈ K.faces) (hAe : A.StraddlesZero e)

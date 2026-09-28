@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.NullPlane
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem curvatureEvolution_nonpos_on_finite_terminal_null_plane
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -48,9 +34,6 @@ theorem curvatureEvolution_nonpos_on_finite_terminal_null_plane
     (hC.curvature_evolution n M (Icc a b) F b hb x v w v w).hasFDerivWithinAt hcone
   change 0 ≤ (a - b) * (_ + _) at h
   nlinarith
-
-
-
 
 theorem curvatureReaction_nonpos_on_finite_terminal_null_plane
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

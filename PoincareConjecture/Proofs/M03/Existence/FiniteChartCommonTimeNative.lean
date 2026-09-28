@@ -1,15 +1,6 @@
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture

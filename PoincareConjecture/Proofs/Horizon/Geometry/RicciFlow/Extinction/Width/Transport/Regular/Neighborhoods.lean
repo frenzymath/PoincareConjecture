@@ -8,7 +8,6 @@ universe u
 
 namespace PoincareConjecture
 
-
 theorem m67_finite_event_gap (E : Finset ℝ) (s : ℝ) :
     ∃ delta : ℝ, 0 < delta ∧
       ∀ t ∈ E, t ≠ s → delta ≤ |t - s| := by
@@ -49,7 +48,6 @@ theorem m67_exists_right_regular_interval
   rw [abs_of_pos (sub_pos.mpr hinterval.1)] at h
   have ht' := hinterval.2.trans (min_le_right T (s.1 + delta / 2))
   linarith
-
 
 theorem m67_exists_regular_neighborhood
     {F : SurgeryFlowData.{u}} {T : ℝ}

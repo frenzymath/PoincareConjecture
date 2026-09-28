@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoord
 import PoincareConjecture.Proofs.M60.Mathlib.CompactSupportIntegralDerivative
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusIntegral_hasDerivAt_of_continuous_derivative
     {F F' : ℝ → LoopPlane → ℝ}
@@ -55,9 +38,6 @@ theorem m64AnnulusIntegral_hasDerivAt_of_continuous_derivative
   · filter_upwards [ae_restrict_mem m64AnnulusDomain_measurableSet] with p hp s hs
     exact (hC (s, p) ⟨⟨hs.1.le, hs.2.le⟩, hp⟩).trans (le_max_left C 0)
   · exact Eventually.of_forall fun p s _ => hdiff s p
-
-
-
 
 theorem m64AnnulusIntegral_hasDerivAt_of_local_continuous_derivative
     {F F' : ℝ → LoopPlane → ℝ} {epsilon : ℝ} (hepsilon : 0 < epsilon)
@@ -97,11 +77,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
-
 theorem m64AnnulusEnergy_hasDerivAt_of_smooth_variation
     (g : RiemannianMetric n M) (v : ℝ × LoopPlane → M)
     (hv : ContMDiff 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) ∞ v) (t : ℝ) :
@@ -123,10 +98,6 @@ theorem m64AnnulusEnergy_hasDerivAt_of_smooth_variation
   intro s p
   exact (hE.differentiable (by simp) (s, p)).hasFDerivAt.comp_hasDerivAt s
     ((hasDerivAt_id s).prodMk (hasDerivAt_const s p))
-
-
-
-
 
 theorem m64AnnulusEnergy_hasDerivAt_of_local_smooth_variation
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}
@@ -161,11 +132,6 @@ theorem m64AnnulusEnergy_hasDerivAt_of_local_smooth_variation
     exact ((hE.contDiffAt (hopen.mem_nhds ⟨hs, hdom hp⟩)).differentiableAt
       (by simp)).hasFDerivAt.comp_hasDerivAt (l := E) (f := fun s : ℝ => (s, p)) s
       ((hasDerivAt_id s).prodMk (hasDerivAt_const s p))
-
-
-
-
-
 
 theorem m64AnnulusArea_forward_majorant_of_conformal_smooth_variation
     (g : RiemannianMetric n M) (v : ℝ × LoopPlane → M)
@@ -211,10 +177,6 @@ theorem m64AnnulusArea_forward_majorant_of_conformal_smooth_variation
   have hdiff := (div_le_iff₀ hpos).mp hh.le
   rw [hcenter]
   exact (hupper h).trans (by linarith)
-
-
-
-
 
 theorem m64AnnulusArea_forward_majorant_of_conformal_local_variation
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}

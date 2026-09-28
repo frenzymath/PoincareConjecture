@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Semiconcavity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_local_distance_smoothing_with_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

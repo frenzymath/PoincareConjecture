@@ -8,9 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
-
 theorem exists_boundary_joint_map
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (J : Set E) (m : E) (a : Bool → E)

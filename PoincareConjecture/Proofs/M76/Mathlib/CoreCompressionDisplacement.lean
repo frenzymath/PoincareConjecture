@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoreRadialCompression
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem norm_coreCompression_sub_le (x y : E) :
     ‖coreCompression x - coreCompression y‖ ≤ 4 * ‖x - y‖ / (1 + max 1 ‖x‖) := by
@@ -61,9 +50,6 @@ theorem norm_coreCompression_sub_le (x y : E) :
       mul_le_mul_of_nonneg_left hbase (by norm_num)
     _ = 4 * ‖x - y‖ / (1 + max 1 ‖x‖) := by dsimp [a]; ring
 
-
-
-
 theorem two_div_coreCompression_denom_le_deficit (x : E) :
     2 / (1 + max 1 ‖x‖) ≤ 2 - ‖coreCompression x‖ := by
   by_cases hx : ‖x‖ ≤ 1
@@ -78,8 +64,6 @@ theorem two_div_coreCompression_denom_le_deficit (x : E) :
       field_simp
       ring
     rw [he]
-
-
 
 theorem norm_coreCompression_sub_le_deficit (x y : E) :
     ‖coreCompression x - coreCompression y‖ ≤

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactCoverage.Transport.Cap
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.CompactCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   BasedKappaSolution.connectedSpace
 
 namespace M23TerminalMetricConvergence
-
-
-
 
 theorem exists_cap_transport_with_strong_collar_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +15,6 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {V : Type v} [NormedAddCommGroup V] [NormedSpace ℝ V]
   {M : Type w} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold 𝓘(ℝ, E) ∞ M] {Z : Type z} [TopologicalSpace Z]
-
-
-
 
 theorem continuousOn_tangentSection_of_retraction_pushforward
     {e : M → V} (he : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, V) ∞ e)

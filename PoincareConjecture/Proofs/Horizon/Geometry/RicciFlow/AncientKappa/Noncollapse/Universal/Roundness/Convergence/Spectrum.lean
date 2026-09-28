@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ThreeDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.AncientKappaRoundness
-
 
 theorem tendsto_three_eigenvalues_of_round_contractions
     {α : Type*} {l : Filter α} {f g h : α → ℝ} {r : ℝ}
@@ -53,8 +42,6 @@ theorem tendsto_three_eigenvalues_of_round_contractions
     dsimp only [d]
     nlinarith [sq_nonneg (f i - r), sq_nonneg (g i - r)]
 
-
-
 theorem exists_round_pinching_spectrum
     {M : Type*} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -75,8 +62,6 @@ theorem exists_round_pinching_spectrum
   rw [D.ricciComplementTensor_eq_transport_operatorTensor hD x b,
     tensorPinchingCone_transport_iff, operatorTensor_mem_tensorPinchingCone]
   exact mem_pinchingCone_iff_diagonal hsym e heigen horder hc
-
-
 
 theorem eventually_ricciComplement_mem_of_round_contractions
     {α : Type*} {l : Filter α}

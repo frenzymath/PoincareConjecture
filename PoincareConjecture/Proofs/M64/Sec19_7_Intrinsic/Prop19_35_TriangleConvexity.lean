@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleAngleBo
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleTerminalCorner
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_small_triangle_terminal_convex_coordinates
     (N : IntrinsicAnnulus)

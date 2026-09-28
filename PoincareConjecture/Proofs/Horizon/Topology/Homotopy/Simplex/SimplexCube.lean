@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeSphere
 import Mathlib.Analysis.Convex.StdSimplex
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Metric Set Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
-
 
 theorem exists_simplex_closedBall_pair_homeomorph
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -102,7 +91,6 @@ theorem exists_simplex_closedBall_pair_homeomorph
   · rintro ⟨y, hy, heq⟩
     exact mem_sphere_zero_iff_norm.mp (hf.injective heq ▸ hy)
 
-
 theorem stdSimplex_face_convexHull (n : ℕ) (i : Fin (n + 1)) :
     convexHull ℝ (range (fun j : {j : Fin (n + 1) // j ≠ i} =>
       Pi.single (j : Fin (n + 1)) (1 : ℝ))) =
@@ -139,7 +127,6 @@ theorem stdSimplex_face_convexHull (n : ℕ) (i : Fin (n + 1)) :
       (show 0 < ∑ j ∈ J, z j by rw [hsum]; exact zero_lt_one)
       (fun j hj => ⟨⟨j, (Finset.mem_erase.mp hj).1⟩, rfl⟩)
     rwa [Finset.centerMass_eq_of_sum_1 _ _ hsum, hvector] at hmem
-
 
 theorem stdSimplex_intrinsicFrontier (n : ℕ) :
     intrinsicFrontier ℝ (stdSimplex ℝ (Fin (n + 1))) =
@@ -194,7 +181,6 @@ theorem stdSimplex_intrinsicFrontier (n : ℕ) :
     rw [herase, stdSimplex_face_convexHull]
     exact ⟨hhull ▸ hz, hzi⟩
 
-
 theorem exists_stdSimplex_closedBall_pair_homeomorph (n : ℕ) :
     ∃ e : stdSimplex ℝ (Fin (n + 1)) ≃ₜ closedBall (0 : Fin n → ℝ) 1,
       ∀ z : stdSimplex ℝ (Fin (n + 1)),
@@ -223,7 +209,6 @@ theorem exists_stdSimplex_closedBall_pair_homeomorph (n : ℕ) :
   have hz := he (e.symm z)
   rw [e.apply_symm_apply, stdSimplex_intrinsicFrontier] at hz
   exact ⟨fun ⟨i, hi⟩ => hz.mpr ⟨z.property, i, hi⟩, fun h => (hz.mp h).2⟩
-
 
 theorem exists_stdSimplex_cube_pair_homeomorph (n : ℕ) :
     ∃ e : stdSimplex ℝ (Fin (n + 1)) ≃ₜ (I^(Fin n)),

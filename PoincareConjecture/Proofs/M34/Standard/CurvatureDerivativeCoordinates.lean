@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ConnectionDifferenceAlgebra
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,15 +10,11 @@ open scoped BigOperators
 
 namespace PoincareConjecture.M34.DifferenceEnergy
 
-
-
 noncomputable def rawComponent {n : ℕ} (l j k m : Fin n) : FS n →L[ℝ] ℝ where
   toFun R := raw R l j k m
   map_add' R S := by simp only [raw, map_add, add_apply]
   map_smul' r R := by simp only [raw, map_smul, smul_apply, RingHom.id_apply]
   cont := by unfold raw; fun_prop
-
-
 
 theorem raw_eq_sum_coordinates {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) (S : FS n) (l j k m : Fin n) :
@@ -37,8 +23,6 @@ theorem raw_eq_sum_coordinates {n dS : ℕ}
   simpa only [rawComponent, ContinuousLinearMap.coe_mk', LinearMap.coe_mk,
     AddHom.coe_mk, smul_eq_mul, mul_comm] using
       (rawComponent l j k m).toLinearMap.apply_eq_sum_equiv_coordinates qS S
-
-
 
 theorem fderiv_raw_eq_sum_coordinates
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n dS : ℕ}
@@ -57,8 +41,6 @@ theorem fderiv_raw_eq_sum_coordinates
   rw [hleft]
   simp_rw [hright]
   exact raw_eq_sum_coordinates qS _ l j k m
-
-
 
 theorem sum_fderiv_raw_eq_ricciGradientCoordinates {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) {S : V n → FS n} {x : V n}

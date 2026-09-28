@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.TangentHalfSpaceExtensionNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteOrderConjugatingFlowNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold

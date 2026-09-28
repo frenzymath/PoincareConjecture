@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
-
-
-
-
-
-
-

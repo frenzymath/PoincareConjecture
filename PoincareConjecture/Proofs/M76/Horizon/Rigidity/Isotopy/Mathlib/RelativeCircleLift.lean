@@ -2,16 +2,6 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ namespace AddCircle
 
 variable {Y : Type*} [TopologicalSpace Y]
   [SimplyConnectedSpace Y] [LocallyPathConnectedSpace Y]
-
-
 
 theorem exists_lift_eq_on_connected_set (p : ℝ) [Fact (0 < p)]
     (f : C(Y, AddCircle p)) {A : Set Y} (hA : IsConnected A)
@@ -38,8 +26,6 @@ theorem exists_lift_eq_on_connected_set (p : ℝ) [Fact (0 < p)]
     (fun x hx z hz => (congrFun hl x).trans ((hf x hx).trans
       ((hf z hz).symm.trans (congrFun hl z).symm))) hy hy0
   exact hconst.trans hl0
-
-
 
 theorem exists_homotopyRel_const_of_connected_set (p : ℝ) [Fact (0 < p)]
     (f : C(Y, AddCircle p)) {A : Set Y} (hA : IsConnected A)

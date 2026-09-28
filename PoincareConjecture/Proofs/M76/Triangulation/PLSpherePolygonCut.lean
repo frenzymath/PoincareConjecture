@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexSpherePolygonCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem IsFinitePL.exists_polygon_cut {s : Set E} {C : Set F}
     {e : s ≃ₜ frontier C} (he : e.IsFinitePL)

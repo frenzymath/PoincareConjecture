@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
-
-
 
 theorem integral_scalarCurvature_posPart_ball_le_integral_add_model
     (D : LeviCivitaData g) (p : M) (hn : 1 ≤ n)
@@ -51,8 +41,6 @@ theorem integral_scalarCurvature_posPart_ball_le_integral_add_model
   have hv := g.volumeMeasure_real_ball_le_modelVolume_of_sectional_lower_bound
     p hn hcomplete D hsec hr
   nlinarith only [hb, mul_le_mul_of_nonneg_left hv (sq_nonneg (n : ℝ))]
-
-
 
 theorem exists_smallBall_scalar_integral_gt
     (D : LeviCivitaData g) (p : M) (hn : 1 ≤ n)

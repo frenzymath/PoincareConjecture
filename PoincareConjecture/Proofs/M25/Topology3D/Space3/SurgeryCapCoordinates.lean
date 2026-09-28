@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCapModel
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereCoordinates
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -31,19 +14,14 @@ variable (a : ℝ → ℝ) (b : E2 → ℝ)
 variable (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
 variable (ha0 : ∀ z, a z ≠ 0) (hb0 : ∀ x, b x ≠ 0)
 
-
-
 noncomputable def surgeryCapModel (q : UnitTwoSphere) : E2 × ℝ :=
   flatCapDiffeomorph a b ha hb ha0 hb0 (heightCoordinates (q : E3))
-
 
 theorem surgeryCapModel_contMDiff :
     ContMDiff (𝓡 2) 𝓘(ℝ, E2 × ℝ) ∞ (surgeryCapModel a b ha hb ha0 hb0) := by
   let : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp [E3]⟩
   exact (flatCapDiffeomorph a b ha hb ha0 hb0).contMDiff_toFun.comp
     (heightCoordinates.contDiff.contMDiff.comp contMDiff_coe_sphere)
-
-
 
 theorem surgeryCapModel_fst_norm_le
     (hapos : ∀ z, 0 < a z)
@@ -52,8 +30,6 @@ theorem surgeryCapModel_fst_norm_le
     ‖(surgeryCapModel a b ha hb ha0 hb0 q).1‖ ≤ 1 :=
   flatCapDiffeomorph_fst_norm_le a b ha hb ha0 hb0 hapos habound
     (heightCoordinates (q : E3)) (sphere_height_coordinates_sq q).le
-
-
 
 theorem surgeryCapModel_cylinder
     (hanear : ∀ z, |z| ≤ 1 / 4 → a z = (Real.sqrt (1 - z ^ 2))⁻¹)
@@ -75,8 +51,6 @@ theorem surgeryCapModel_cylinder
   rw [hx] at h
   exact h
 
-
-
 theorem surgeryCapModel_flat_south
     (hafar : ∀ z, 1 / 2 ≤ |z| → a z = 1)
     (hbnear : ∀ x, ‖x‖ ≤ 1 / 4 → b x = (Real.sqrt (1 - ‖x‖ ^ 2))⁻¹)
@@ -93,7 +67,6 @@ theorem surgeryCapModel_flat_south
     x hx (-1) (by norm_num)
   simpa only [neg_one_mul, hs, surgeryCapModel, x, z, Prod.eta] using h
 
-
 theorem surgeryCapModel_snd_nonpos_iff
     (hbpos : ∀ x, 0 < b x) (q : UnitTwoSphere) :
     (surgeryCapModel a b ha hb ha0 hb0 q).2 ≤ 0 ↔
@@ -104,7 +77,6 @@ theorem surgeryCapModel_snd_nonpos_iff
     (mul_le_mul_iff_right₀
       (hbpos (a (heightCoordinates (q : E3)).2 • (heightCoordinates (q : E3)).1))
       (b := (heightCoordinates (q : E3)).2) (c := 0))
-
 
 theorem surgeryCapModel_snd_neg_iff
     (hbpos : ∀ x, 0 < b x) (q : UnitTwoSphere) :
@@ -117,7 +89,6 @@ theorem surgeryCapModel_snd_neg_iff
       (hbpos (a (heightCoordinates (q : E3)).2 • (heightCoordinates (q : E3)).1))
       (b := (heightCoordinates (q : E3)).2) (c := 0))
 
-
 theorem surgeryCapModel_snd_pos_iff
     (hbpos : ∀ x, 0 < b x) (q : UnitTwoSphere) :
     0 < (surgeryCapModel a b ha hb ha0 hb0 q).2 ↔
@@ -125,8 +96,6 @@ theorem surgeryCapModel_snd_pos_iff
   change 0 < b (a (heightCoordinates (q : E3)).2 • (heightCoordinates (q : E3)).1) *
     (heightCoordinates (q : E3)).2 ↔ 0 < (heightCoordinates (q : E3)).2
   exact mul_pos_iff_of_pos_left (hbpos _)
-
-
 
 theorem surgeryCapModel_exists_height_bound :
     ∃ M : ℝ, 1 ≤ M ∧
@@ -142,12 +111,9 @@ theorem surgeryCapModel_exists_height_bound :
     simpa only [Real.norm_eq_abs] using hC q (mem_univ q)
   exact hq.trans (le_max_right _ _)
 
-
-
 noncomputable def surgeryCapCoordinates (m sigma c l : ℝ) (q : UnitTwoSphere) : E2 × ℝ :=
   let p := surgeryCapModel a b ha hb ha0 hb0 q
   (p.1, m + sigma * (c + l * p.2))
-
 
 theorem surgeryCapCoordinates_contMDiff (m sigma c l : ℝ) :
     ContMDiff (𝓡 2) 𝓘(ℝ, E2 × ℝ) ∞
@@ -157,15 +123,12 @@ theorem surgeryCapCoordinates_contMDiff (m sigma c l : ℝ) :
       (contDiff_const.mul (contDiff_const.add (contDiff_const.mul contDiff_snd))))
   exact h.contMDiff.comp (surgeryCapModel_contMDiff a b ha hb ha0 hb0)
 
-
 theorem surgeryCapCoordinates_fst_norm_le
     (hapos : ∀ z, 0 < a z)
     (habound : ∀ z, |z| < 1 → a z ≤ (Real.sqrt (1 - z ^ 2))⁻¹)
     (m sigma c l : ℝ) (q : UnitTwoSphere) :
     ‖(surgeryCapCoordinates a b ha hb ha0 hb0 m sigma c l q).1‖ ≤ 1 :=
   surgeryCapModel_fst_norm_le a b ha hb ha0 hb0 hapos habound q
-
-
 
 theorem surgeryCapCoordinates_cylinder
     (hanear : ∀ z, |z| ≤ 1 / 4 → a z = (Real.sqrt (1 - z ^ 2))⁻¹)
@@ -177,8 +140,6 @@ theorem surgeryCapCoordinates_cylinder
         m + sigma * (c + l * (heightCoordinates (q : E3)).2)) := by
   unfold surgeryCapCoordinates
   rw [surgeryCapModel_cylinder a b ha hb ha0 hb0 hanear hbfar q hq]
-
-
 
 theorem surgeryCapCoordinates_flat_south
     (hafar : ∀ z, 1 / 2 ≤ |z| → a z = 1)
@@ -192,8 +153,6 @@ theorem surgeryCapCoordinates_flat_south
   rw [surgeryCapModel_flat_south a b ha hb ha0 hb0 hafar hbnear q hx hz]
   simp only [mul_neg_one, sub_eq_add_neg]
 
-
-
 theorem surgeryCapCoordinates_signed_height
     (m sigma c l : ℝ) (hsigma : |sigma| = 1) (q : UnitTwoSphere) :
     sigma * ((surgeryCapCoordinates a b ha hb ha0 hb0 m sigma c l q).2 - m) =
@@ -205,8 +164,6 @@ theorem surgeryCapCoordinates_signed_height
       dsimp only [surgeryCapCoordinates]
       ring
     _ = c + l * (surgeryCapModel a b ha hb ha0 hb0 q).2 := by rw [hs, one_mul]
-
-
 
 theorem surgeryCapCoordinates_south_height_bounds
     (hbpos : ∀ x, 0 < b x)

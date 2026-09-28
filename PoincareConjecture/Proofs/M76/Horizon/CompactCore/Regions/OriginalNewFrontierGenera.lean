@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalNewFrontierModels
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.OriginalComponentGenus
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Loops.EssentialRimComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

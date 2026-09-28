@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalComponentResidualEdges
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Graphs.Mathlib.ResidualCycleEvaluation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_edgeComponent_detected_cycle
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

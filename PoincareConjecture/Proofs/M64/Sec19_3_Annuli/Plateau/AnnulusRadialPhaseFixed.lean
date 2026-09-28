@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialAffineFilling
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +10,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m64Periodic_lower_semicircle_shift
     {M : Type*} (gamma : ℝ → M) (b : LoopPlane → M)
@@ -63,8 +50,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 gamma : ℝ → M}
 
-
-
 theorem M64ObservedWeakAnnulus.lower_circle_fixed_shift
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (hei : IsClosedEmbedding e) (hc0 : Continuous c0) (hgamma : Continuous gamma)
@@ -76,8 +61,6 @@ theorem M64ObservedWeakAnnulus.lower_circle_fixed_shift
   m64Periodic_lower_semicircle_shift gamma (fun z => c0 ((a + r • z) 0)) hP
     (fun _ hx => A.lower_circle_fixed_trace hei hc0 hgamma ha hr htrace hx)
 
-
-
 theorem m64RadialBoundaryPlane_contMDiff
     {c : ℝ → M} (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 c) (a : LoopPlane) (r : ℝ) :
     ContMDiff (𝓡 2) (𝓡 n) 1 (fun z : LoopPlane => c ((a + r • z) 0)) := by
@@ -87,7 +70,6 @@ theorem m64RadialBoundaryPlane_contMDiff
   exact hc.comp hscalar.contMDiff
 
 omit [TopologicalSpace M] in
-
 
 theorem m64RadialBoundaryPlane_reflection (c : ℝ → M) (a : LoopPlane) (r : ℝ)
     (z : LoopPlane) : c ((a + r • m60PlaneReflection z) 0) = c ((a + r • z) 0) := by

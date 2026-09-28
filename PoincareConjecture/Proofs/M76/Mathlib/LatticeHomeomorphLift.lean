@@ -2,27 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoveringLiftRelative
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringProduct
 import PoincareConjecture.Proofs.M76.Mathlib.LatticeDisplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E A : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace A] [CompactSpace A] [T2Space A]
-
-
-
-
 
 theorem IsZLattice.exists_bounded_relative_homeomorph_lift
     (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L]

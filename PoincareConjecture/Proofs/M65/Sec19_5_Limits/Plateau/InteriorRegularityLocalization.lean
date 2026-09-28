@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityWe
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ private theorem test_mul_memLp (θ : 𝓢(LoopPlane, ℝ)) {f : LoopPlane → �
     change ‖θ z * f z‖ ≤ _
     rw [norm_mul]
     exact mul_le_mul_of_nonneg_right (θ.norm_le_seminorm ℝ z) (norm_nonneg _))
-
-
-
-
 
 theorem cutoff_global {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
     {U : Set LoopPlane} (F : M65LocalWeakMap e U) (j : Fin N)

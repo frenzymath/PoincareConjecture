@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicL2UniformLimit
 import Mathlib.MeasureTheory.Function.LpSeminorm.LpNorm
 import Mathlib.Analysis.Normed.Group.Quotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory AddCircle Filter Set
 open scoped NNReal ENNReal Topology intervalIntegral
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem cauchySeq_periodic_comp_of_cauchySeq_L2
     {L : ℝ} [Fact (0 < L)]

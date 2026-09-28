@@ -1,14 +1,4 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.HigherRegularity.VariationalLevelZeroWitness
-
 
 noncomputable section
 
@@ -122,7 +112,6 @@ theorem exists_isVariationalFlowProjection_of_C
       exact hY
 
 end ParameterizedCkWitness
-
 
 end Poincare.ODE.LocalFlow
 

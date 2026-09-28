@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InnerReturnRegion
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJordanRegions
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,11 +8,6 @@ open Set Function Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_embedded_inner_return_annular_region
     {gamma : ℝ → AnnulusCoordinates} {a b T : ℝ}

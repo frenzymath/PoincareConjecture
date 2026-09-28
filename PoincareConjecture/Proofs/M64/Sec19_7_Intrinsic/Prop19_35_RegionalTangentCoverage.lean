@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalTangent
 import Mathlib.Analysis.Calculus.FDeriv.Affine
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +11,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_inverse_coordinate_derivative_ne_zero
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -63,11 +46,6 @@ theorem m64Intrinsic_inverse_coordinate_derivative_ne_zero
   rw [hzero, zero_apply] at hval
   norm_num at hval
 
-
-
-
-
-
 theorem m64Intrinsic_inverse_coordinate_kernel_null
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
     (b : AffineBasis (Fin 3) ℝ AnnulusCoordinates)
@@ -86,12 +64,6 @@ theorem m64Intrinsic_inverse_coordinate_kernel_null
   have h := congrArg (fun A : AnnulusCoordinates →ₗ[ℝ] ℝ => A w) hzero
   change L.toLinearMap w = 0 at h
   exact h
-
-
-
-
-
-
 
 theorem m64Intrinsic_regional_tangent_partition_ae
     {I : Type*} [Finite I]
@@ -125,11 +97,6 @@ theorem m64Intrinsic_regional_tangent_partition_ae
     · exact Eventually.of_forall (fun _ h => (hqi h).elim)
   filter_upwards [ae_all_iff.mpr htransverse] with w hw
   exact m64Intrinsic_regional_tangent_sector_unique F b hFi hsource hfront hq hw
-
-
-
-
-
 
 theorem m64Intrinsic_regional_tangent_sector_volume_sum
     {I : Type*} [Fintype I]

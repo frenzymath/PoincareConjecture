@@ -2,16 +2,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_open_approximatesLinearOn {f : E → F} {S : Set E}
     (hSc : Convex ℝ S) (hS : UniqueDiffOn ℝ S) (hf : ContDiffOn ℝ 1 f S)

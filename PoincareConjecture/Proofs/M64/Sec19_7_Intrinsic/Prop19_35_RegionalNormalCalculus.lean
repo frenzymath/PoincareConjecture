@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 import Mathlib.Analysis.Calculus.FDeriv.WithLp
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_exists_boundary_prefix_length
     (N : IntrinsicAnnulus) {radius a b r : ℝ} (hradius : radius ≠ 0)
@@ -53,9 +41,6 @@ theorem m64Intrinsic_exists_boundary_prefix_length
     simpa only [hFa, hc] using hr
   · apply hFmono.lt_iff_lt.mp
     simpa only [hFb, hc] using hlength
-
-
-
 
 theorem m64Intrinsic_normal_map_injective_of_metric_lower
     (N : IntrinsicAnnulus)
@@ -90,9 +75,6 @@ theorem m64Intrinsic_normal_map_injective_of_metric_lower
   fin_cases i
   · exact hv0
   · exact hv1
-
-
-
 
 theorem m64Intrinsic_coordinate_normal_ray_deriv
     {e : AnnulusCoordinates → AnnulusCoordinates} {a t : ℝ}

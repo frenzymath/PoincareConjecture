@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M45InitialPrefix
 import PoincareConjecture.Proofs.M48.PrefixControls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -19,8 +11,6 @@ namespace M51Numerical
 variable (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S)
     (C : RepairedCanonicalInductionData S N)
-
-
 
 noncomputable def stages : ℕ → {p : SurgeryParameterPrefix S.constants // S.SeedCompatible p}
   | 0 => ⟨S.initialPrefix, S.initialPrefix_seedCompatible⟩

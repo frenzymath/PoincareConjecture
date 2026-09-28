@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveSlopeBend
 
-
-
-
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry

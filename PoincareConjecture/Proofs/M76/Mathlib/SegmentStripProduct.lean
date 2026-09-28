@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLStripEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
@@ -17,13 +8,9 @@ namespace PLStrip
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def segmentProductCoordinates (l r : E) (α β : ℝ) :
     (ℝ × ℝ) →ᴬ[ℝ] (E × ℝ) :=
   (ContinuousAffineMap.lineMap l r).prodMap (ContinuousAffineMap.lineMap α β)
-
-
 
 theorem segmentProductCoordinates_apply (l r : E) (α β : ℝ) (p : ℝ × ℝ) :
     segmentProductCoordinates l r α β p =
@@ -33,8 +20,6 @@ theorem segmentProductCoordinates_apply (l r : E) (α β : ℝ) (p : ℝ × ℝ)
   rw [lineMap_apply_ring']
   ring
 
-
-
 theorem segmentProductCoordinates_injective {l r : E} (hlr : l ≠ r)
     {α β : ℝ} (hαβ : α ≠ β) :
     Function.Injective (segmentProductCoordinates l r α β) := by
@@ -42,17 +27,12 @@ theorem segmentProductCoordinates_injective {l r : E} (hlr : l ≠ r)
   exact Prod.ext ((lineMap_injective ℝ hlr) (congrArg Prod.fst hpq))
     ((lineMap_injective ℝ hαβ) (congrArg Prod.snd hpq))
 
-
-
 theorem segmentProductCoordinates_image {l r : E} {α β : ℝ} (hαβ : α ≤ β) :
     segmentProductCoordinates l r α β '' square = segment ℝ l r ×ˢ Icc α β := by
   change Prod.map (lineMap l r) (lineMap α β) ''
     (Icc (0 : ℝ) 1 ×ˢ Icc (0 : ℝ) 1) = _
   rw [prodMap_image_prod, ← segment_eq_image_lineMap, ← segment_eq_image_lineMap,
     segment_eq_Icc hαβ]
-
-
-
 
 theorem exists_segmentProduct_homeomorph {l r : E} (hlr : l ≠ r)
     {α β : ℝ} (hαβ : α < β) :

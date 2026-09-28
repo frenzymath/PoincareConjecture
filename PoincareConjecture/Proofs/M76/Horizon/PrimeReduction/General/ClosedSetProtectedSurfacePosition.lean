@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.FiniteSurfaceEdgeContacts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ClosedSetProtectedPosition
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module unitInterval Topology
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_closed_set_protected_surface_edge_position_with_height
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -131,7 +121,6 @@ theorem exists_closed_set_protected_surface_edge_position_with_height
   apply (hS.biUnion (fun t ht => hfinite t ht.1 ht.2)).subset
   rintro x ⟨hx, t, ht, htc, hxt⟩
   exact mem_iUnion.mpr ⟨t, mem_iUnion.mpr ⟨⟨ht, htc⟩, ⟨hx, hxt⟩⟩⟩
-
 
 theorem exists_closed_set_protected_surface_edge_position
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

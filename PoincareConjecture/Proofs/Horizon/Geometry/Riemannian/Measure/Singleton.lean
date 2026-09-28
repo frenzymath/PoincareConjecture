@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem volumeMeasure_nullSingletonClass
     {n : ℕ} {M : Type*} [TopologicalSpace M]

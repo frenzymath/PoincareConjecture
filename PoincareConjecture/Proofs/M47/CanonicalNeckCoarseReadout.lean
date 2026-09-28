@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseScalar
 import PoincareConjecture.Proofs.M45.Ch9_Models.NeckBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,7 +18,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
-
 
 theorem scaled_neck_pullback_coefficients {g0 : RiemannianMetric 3 M}
     (N : EpsilonNeck g0) (g : RiemannianMetric 3 M) {Q : ℝ} (hQ : 0 < Q)
@@ -55,7 +45,6 @@ theorem scaled_neck_pullback_coefficients {g0 : RiemannianMetric 3 M}
     congrArg Prod.fst (cylinderEuclideanEquiv_basis k)
   simp only [roundCylinderTensorCoefficient, cylinderHeightCovector_basis, hP]
   rfl
-
 
 theorem exists_neck_pullback_scalar_bound :
     ∃ C : ℝ, 0 < C ∧

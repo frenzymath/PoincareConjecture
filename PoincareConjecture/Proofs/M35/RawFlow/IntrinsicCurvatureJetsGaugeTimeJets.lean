@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsGaugeExistenc
 import PoincareConjecture.Proofs.M35.RadialGauge.GaugeJointC1
 import PoincareConjecture.Proofs.M35.RadialGauge.GaugeJetJointC1
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M35.Uniqueness
 open RadialGauge
 
 local notation "V" => EuclideanSpace ℝ (Fin 5)
-
-
 
 theorem raw_intrinsic_gauge_spatial_time_jets
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

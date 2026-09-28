@@ -5,60 +5,11 @@ import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.PartialUniqueness
 import PoincareConjecture.Proofs.M35.CapGeometry.IndependentScalarRate
 import PoincareConjecture.Proofs.M35.CapGeometry.CanonicalAlternatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedStandardCapUniqueness (P : M35StandardCapPredecessors) :
     RepairedStandardCapUniquenessTheory := by

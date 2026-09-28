@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.Belt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +44,6 @@ theorem exists_capCollarClock_preimage {R t : Real} (hR : 1 ≤ R)
         change 2 * r ≠ 0
         nlinarith [hr.1])).continuousWithinAt
   exact intermediate_value_Icc' hR hc (by simpa using ht)
-
-
 
 theorem image_extended_cap_eq_truncated_model
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

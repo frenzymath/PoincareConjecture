@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.LocalControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Volume
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 noncomputable def bufferedCylinderSequence
     {n : ℕ} (C : ℕ → FlowCarrier.{0} n) (J : ℕ → Set ℝ)
@@ -83,8 +70,6 @@ private theorem hausdorff_volume_lower_bound
   simpa only [mul_comm] using hν
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_pointedCompactnessHypotheses_of_terminal_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)

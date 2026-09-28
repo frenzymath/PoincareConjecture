@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralChainCoordinates
 import Mathlib.AlgebraicTopology.SingularHomology.HomologyZero
 import Mathlib.LinearAlgebra.Finsupp.Pi
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -92,7 +85,6 @@ theorem integralHomologyZeroAugmentation_isIso (X : Type u) [TopologicalSpace X]
     [PathConnectedSpace X] : IsIso (integralHomologyZeroAugmentation X) := by
   change IsIso ((TopCat.of X).singularHomology₀ε integralCoefficient)
   infer_instance
-
 
 def integralHomologyZeroMapKernelIso (f : C(X, Y)) [PathConnectedSpace Y] :
     kernel (HomologicalComplex.homologyMap (integralChainsFunctor.map (TopCat.ofHom f)) 0) ≅

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullb
 import PoincareConjecture.Proofs.M34.Mathlib.LinearPrecomposeLocalJets
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ open M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem neck_metric_axial_jet_difference_bound
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
@@ -73,7 +63,6 @@ theorem neck_metric_axial_jet_difference_bound
     (show (0, z2) ∈ K from ⟨rfl, hz2⟩) (show (0, z1) ∈ K from ⟨rfl, hz1⟩)
   simpa [Prod.norm_def, Real.norm_eq_abs] using h
 
-
 theorem norm_neckAxialLinearMap_le_one {lambda : ℝ} (hlambda : lambda ∈ Icc 0 1) :
     ‖neckAxialLinearMap lambda‖ ≤ 1 := by
   apply ContinuousLinearMap.opNorm_le_bound _ zero_le_one
@@ -85,8 +74,6 @@ theorem norm_neckAxialLinearMap_le_one {lambda : ℝ} (hlambda : lambda ∈ Icc 
     _ = max ‖x.1‖ |lambda * x.2| := by simp [neckAxialLinearMap, Prod.norm_def, Real.norm_eq_abs]
     _ ≤ max ‖x.1‖ |x.2| := max_le_max le_rfl haxis
     _ = 1 * ‖x‖ := by simp [Prod.norm_def, Real.norm_eq_abs]
-
-
 
 theorem norm_iteratedFDeriv_neck_axial_difference_le
     (lambda c : ℝ) (f : V → ℝ) (x : V) (j : ℕ)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteCompactBounds
 import PoincareConjecture.Proofs.M47.LimitNoncollapseShiftedSearchExistence
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ private local instance endpointSearchCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance endpointSearchManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_eventually_endpoint_search
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

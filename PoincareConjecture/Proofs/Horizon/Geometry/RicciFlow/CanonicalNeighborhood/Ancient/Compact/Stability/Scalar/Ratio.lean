@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
 
-
 theorem scalar_uniform_lower_bound (A : CapCertificate g) :
     ∃ a : ℝ, 0 < a ∧ ∀ x ∈ A.carrier, a ≤ A.connection.scalarCurvature x := by
   obtain ⟨p, hp⟩ := A.core_nonempty
@@ -34,7 +23,6 @@ theorem scalar_uniform_lower_bound (A : CapCertificate g) :
     div_pos hpos A.cap_constant_pos, fun x hx => ?_⟩
   apply (div_le_iff₀ A.cap_constant_pos).mpr
   simpa only [mul_comm] using (A.scalar_lt_constant_mul hx hp').le
-
 
 theorem eventually_scalar_pos_and_ratio (A : CapCertificate g)
     {f : ℕ → M → ℝ}

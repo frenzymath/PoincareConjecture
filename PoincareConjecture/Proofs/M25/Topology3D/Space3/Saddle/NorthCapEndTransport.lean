@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallCommonC
 import Mathlib.Topology.NhdsSet
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_north_cap_end_transport
     (A N : BallNeighborhoodChart E3 E3) (o : ℝ)

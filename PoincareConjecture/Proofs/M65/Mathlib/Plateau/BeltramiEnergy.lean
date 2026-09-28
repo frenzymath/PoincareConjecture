@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiIsothermal
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Algebra.Order.Star.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,13 +10,8 @@ open scoped Matrix.Norms.Elementwise
 
 namespace Matrix
 
-
-
 def isothermalEnergyWeight (K H : Matrix (Fin 2) (Fin 2) ℝ) : ℝ :=
   (1 / 2 : ℝ) * (K⁻¹ * H).trace * Real.sqrt K.det
-
-
-
 
 theorem isothermal_energy_change
     (K B H : Matrix (Fin 2) (Fin 2) ℝ) (hK : K.PosDef) {c : ℝ} (hc : 0 < c)
@@ -67,16 +52,10 @@ theorem isothermal_energy_change
   rw [htrace, isothermalEnergyWeight, ← hJac]
   ring
 
-
-
-
 theorem positive_regularized_gram (H : Matrix (Fin 2) (Fin 2) ℝ)
     (hH : H.PosSemidef) {δ : ℝ} (hδ : 0 < δ) :
     (H + δ • (1 : Matrix (Fin 2) (Fin 2) ℝ)).PosDef :=
   Matrix.PosDef.posSemidef_add hH (Matrix.PosDef.one.smul hδ)
-
-
-
 
 theorem isothermalEnergyWeight_regularized_le
     (H : Matrix (Fin 2) (Fin 2) ℝ) (hH : H.PosSemidef) {δ : ℝ} (hδ : 0 < δ) :

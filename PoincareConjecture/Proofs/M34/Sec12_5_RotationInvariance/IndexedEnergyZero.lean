@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.EqualMetricDifferenceEnergy
 import PoincareConjecture.Proofs.M34.Standard.CanonicalEnergyMetricDetection
 import PoincareConjecture.Proofs.M34.Mathlib.RiemannianMetricExt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g
   (qS : FS 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
   {J J' : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
   (F' : RicciFlow 3 StandardCapSpace J') (p : endReferenceRegion e)
-
-
 
 theorem capDifferenceEnergy_eq_zero_of_metric_eq {t : ℝ} (h : F.metric t = F'.metric t)
     (i : ℕ) : capDifferenceEnergy e qH qA qS F F' p i t = 0 := by
@@ -53,9 +42,6 @@ theorem capDifferenceEnergy_eq_zero_of_metric_eq {t : ℝ} (h : F.metric t = F'.
     apply Bundle.ContMDiffRiemannianMetric.eq_of_inner_eq
     intro x
     rw [endPullbackFlow_inner, endPullbackFlow_inner, h]
-
-
-
 
 theorem metric_eq_of_capDifferenceEnergy_zero {t : ℝ} (ht : t ∈ J ∩ J')
     (hz : ∀ i, capDifferenceEnergy e qH qA qS F F' p i t = 0) :

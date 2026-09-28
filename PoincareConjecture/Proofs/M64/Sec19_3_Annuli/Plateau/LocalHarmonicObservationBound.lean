@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalHarmonicObservation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
 
 theorem m64LocalHarmonic_observation_vector_bound [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {k : ℕ}

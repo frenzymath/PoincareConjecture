@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M34.Mathlib.EvenMapDeterminant
 import PoincareConjecture.Proofs.M34.Mathlib.SmoothRadialCoordinates
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
-
-
 
 theorem not_even_sphere_strip_immersion
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

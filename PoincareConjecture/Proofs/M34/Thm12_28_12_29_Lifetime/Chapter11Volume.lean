@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CalibratedBishopGromov
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapChapter11Geometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +17,6 @@ local notation "G" => ordinaryChapter11Flow
 
 include P
 
-
-
 theorem partialFlow_chapter11_ball_volume (p : (G).point) (r : ℝ) :
     calibratedMetricVolume ((G).metric p.1) (((G).metric p.1).ball p.2 r) =
       calibratedMetricVolume (F.flow.metric p.1)
@@ -41,8 +30,6 @@ theorem partialFlow_chapter11_ball_volume (p : (G).point) (r : ℝ) :
         (R.product.sliceIdentification t p.2.val.2) r) = _ at h
   rw [ordinaryChapter11_identification_projection R t p.2] at h
   exact h
-
-
 
 theorem partialFlow_chapter11_bishopGromov (E0 : StandardCapEstimate g0) (p : (G).point) :
     AntitoneMetricBallVolumeRatio ((G).metric p.1) p.2 := by

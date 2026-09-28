@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexLabel
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBlocks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSignedDiskCut
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,16 +15,12 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
 
-
-
-
 structure HamiltonProperDiskNormalLabels
     (T : HamiltonProperDiskTriangulation R D b) (c : E ≃ᴬ[ℝ] V) where
 
   weight : T.disk.vertices → ℝ
 
   nonzero : ∀ p, weight p ≠ 0
-
 
   alignment : ∀ (p : T.disk.vertices) (s u : Finset E), s ∈ T.disk.faces →
     s.card = 3 → (p : E) ∈ s → u ∈ T.ambient.faces → u.card = 4 → s ⊆ u →
@@ -43,9 +29,6 @@ structure HamiltonProperDiskNormalLabels
       ∀ w ∈ convexHull ℝ (u : Set E), ((T.pairChart p).chart w).2 ≠ 0 →
         0 < affineDiskNormal (c.toAffineEquiv.toAffineMap.comp P.toAffineMap) (c w) *
           (weight p * ((T.pairChart p).chart w).2)
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_normal_labels
     [FiniteDimensional ℝ E] (T : HamiltonProperDiskTriangulation R D b)
@@ -57,13 +40,9 @@ theorem HamiltonProperDiskTriangulation.exists_normal_labels
 
 variable {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
 
-
-
 noncomputable def HamiltonProperDiskNormalLabels.height
     (O : HamiltonProperDiskNormalLabels T c) (p : T.disk.vertices) (x : E) : ℝ :=
   O.weight p * ((T.pairChart p).chart x).2
-
-
 
 theorem HamiltonProperDiskNormalLabels.height_eq_zero_iff
     (O : HamiltonProperDiskNormalLabels T c) (p : T.disk.vertices)
@@ -76,15 +55,10 @@ theorem HamiltonProperDiskNormalLabels.height_eq_zero_iff
     exact ⟨fun h => (hplane x hx).mpr ⟨hR, h⟩,
       fun h => ((hplane x hx).mp h).2⟩
 
-
-
 theorem HamiltonProperDiskNormalLabels.continuousOn_height
     (O : HamiltonProperDiskNormalLabels T c) (p : T.disk.vertices) :
     ContinuousOn (O.height p) (T.pairChart p).chart.source :=
   continuousOn_const.mul ((T.pairChart p).chart.continuousOn_toFun.snd)
-
-
-
 
 theorem HamiltonProperDiskNormalLabels.mul_pos_on_common_triangle
     [FiniteDimensional ℝ E] (O : HamiltonProperDiskNormalLabels T c)
@@ -108,11 +82,6 @@ theorem HamiltonProperDiskNormalLabels.mul_pos_on_common_triangle
     change 0 < (n * O.height p w) * (n * O.height q w) at h
     convert h using 1; ring
   exact (mul_pos_iff_of_pos_left (mul_self_pos.mpr hn)).mp hpos
-
-
-
-
-
 
 theorem HamiltonProperDiskNormalLabels.nonneg_on_half_of_incident_witness
     [FiniteDimensional ℝ E]
@@ -144,8 +113,6 @@ theorem HamiltonProperDiskNormalLabels.nonneg_on_half_of_incident_witness
   · intro x hx
     exact hBD ⟨hx.1, (O.height_eq_zero_iff q (hBS hx.1) (hBR hx.1)).mp hx.2⟩
   · exact ⟨w, hwB, hqpos⟩
-
-
 
 theorem HamiltonProperDiskNormalLabels.nonpos_on_half_of_incident_witness
     [FiniteDimensional ℝ E]
@@ -179,10 +146,6 @@ theorem HamiltonProperDiskNormalLabels.nonpos_on_half_of_incident_witness
   · intro x hx
     exact hBD ⟨hx.1, (O.height_eq_zero_iff q (hBS hx.1) (hBR hx.1)).mp hx.2⟩
   · exact ⟨w, hwB, hqneg⟩
-
-
-
-
 
 theorem HamiltonProperDiskNormalLabels.half_eq_of_whole_signs
     (O : HamiltonProperDiskNormalLabels T c) (p q : T.disk.vertices)

@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartImageIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_clipped_chart_inverse
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

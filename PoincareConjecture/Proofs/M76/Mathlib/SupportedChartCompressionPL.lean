@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartCompression
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_comp_supported_compression
     {D E F X : Type*}

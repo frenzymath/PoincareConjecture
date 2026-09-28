@@ -1,33 +1,17 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnularStripCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleParametricLift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
 
-
-
-
 noncomputable def wrappedStripMap (L : ℝ) (p : ℝ × ℝ) : ℝ × ℝ :=
   if p.1 ≤ L then (coordinate L p.1 p.2, p.2)
   else if p.1 ≤ 2 * L then (L - p.2, coordinate L (p.1 - L) p.2)
   else if p.1 ≤ 3 * L then (L - coordinate L (p.1 - 2 * L) p.2, L - p.2)
   else (p.2, L - coordinate L (p.1 - 3 * L) p.2)
-
-
-
 
 theorem continuous_wrappedStripMap {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < L) :
     Continuous (fun p : ℝ × Icc (-d) d => wrappedStripMap L (p.1, p.2)) := by
@@ -66,8 +50,6 @@ theorem continuous_wrappedStripMap {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < 
   simp only [f₀, f₁, hp, sub_self, (coordinate_endpoints (ht p)).1,
     (coordinate_endpoints (ht p)).2]
 
-
-
 theorem wrappedStripMap_endpoints {L t : ℝ} (ht : 4 * |t| < L) :
     wrappedStripMap L (0, t) = wrappedStripMap L (4 * L, t) := by
   have hL : 0 < L := by linarith [abs_nonneg t]
@@ -79,16 +61,10 @@ theorem wrappedStripMap_endpoints {L t : ℝ} (ht : 4 * |t| < L) :
   simp only [wrappedStripMap, h₀, h₁, h₂, h₃, if_true, if_false,
     hsub, (coordinate_endpoints ht).1, (coordinate_endpoints ht).2, sub_sub_cancel]
 
-
-
-
 noncomputable def annulusMap (L : ℝ) (hL : 0 < L)
     (p : AddCircle (4 * L) × ℝ) : ℝ × ℝ :=
   letI : Fact (0 < 4 * L) := ⟨by linarith⟩
   AddCircle.liftIco (4 * L) 0 (fun s => wrappedStripMap L (s, p.2)) p.1
-
-
-
 
 theorem annulusMap_coe {L t s : ℝ} (hL : 0 < L) (ht : 4 * |t| < L)
     (hs : s ∈ Icc 0 (4 * L)) :
@@ -96,9 +72,6 @@ theorem annulusMap_coe {L t s : ℝ} (hL : 0 < L) (ht : 4 * |t| < L)
   let : Fact (0 < 4 * L) := ⟨by linarith⟩
   exact AddCircle.liftIco_zero_coe_apply_Icc (f := fun u => wrappedStripMap L (u, t))
     (wrappedStripMap_endpoints ht) hs
-
-
-
 
 theorem continuous_annulusMap {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < L) :
     Continuous (fun p : AddCircle (4 * L) × Icc (-d) d =>
@@ -111,8 +84,6 @@ theorem continuous_annulusMap {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < L) :
   · intro t
     exact wrappedStripMap_endpoints
       (lt_of_le_of_lt (mul_le_mul_of_nonneg_left (abs_le.mpr t.property) (by norm_num)) hwidth)
-
-
 
 theorem annulusMap_middle {L s t : ℝ} (hL : 0 < L) (ht : 4 * |t| < L)
     (hleft : 2 * |t| ≤ s) (hright : 2 * |t| ≤ L - s) :

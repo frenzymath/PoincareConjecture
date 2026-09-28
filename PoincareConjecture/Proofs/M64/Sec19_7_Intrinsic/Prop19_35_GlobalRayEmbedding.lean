@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalRayEmbedd
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GlobalCollisionFocusing
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalCurvatureArc
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,11 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_good_normal_ray_injOn
     (N : IntrinsicAnnulus) {K delta r q mu alpha h : ℝ}

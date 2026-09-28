@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierConeBall
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLTriangleBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
 
 theorem isFinitePLBallPair_radial_cone (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

@@ -1,19 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.MarkedRealization
 import Mathlib.Topology.MetricSpace.GromovHausdorff
-
-
-
-
-
-
-
-
 
 open Set Filter Topology
 open scoped Topology NNReal ENNReal lp
@@ -193,10 +179,6 @@ private theorem exists_translated_realization_sequence
   refine ⟨S, ?_⟩
   exact S.hausdorff_tendsto_zero
 
-
-
-
-
 theorem exists_subseq_marked_fixed_radius_realization
     (A : ℕ → FiniteDiameterBasedMetricSpace.{0})
     [∀ n, CompactSpace (A n).carrier]
@@ -262,11 +244,6 @@ theorem exists_subseq_marked_fixed_radius_realization
   refine ⟨S, ?_, ?_⟩
   · simpa [Yfd] using hS
   · simpa [Yfd] using hpointed
-
-
-
-
-
 
 theorem exists_common_subseq_marked_realizations
     (A : ℕ → ℕ → FiniteDiameterBasedMetricSpace.{0})

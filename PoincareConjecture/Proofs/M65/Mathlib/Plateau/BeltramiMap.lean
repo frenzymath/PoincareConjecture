@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiPrimitive
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -61,11 +51,6 @@ private theorem symmetric_fderiv_beltramiOneForm {w b : ℂ → ℂ}
   simp only [map_add, map_smul, add_apply, smul_apply, h12]
   simp only [real_smul]
   ring
-
-
-
-
-
 
 theorem exists_smooth_nondegenerate_beltrami_map (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

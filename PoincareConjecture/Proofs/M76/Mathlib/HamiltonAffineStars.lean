@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLImage
 import Mathlib.Topology.Homeomorph.Lemmas
 import PoincareConjecture.Proofs.M76.Mathlib.AffineChartStarSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -23,11 +14,6 @@ variable {M E : Type*} [TopologicalSpace M] [T2Space M]
   [FiniteDimensional ℝ E] [ChartedSpace E M]
 
 open scoped Classical in
-
-
-
-
-
 
 theorem exists_finite_geometric_affine_star_triangulation
     (hlocal : OpenPartialHomeomorph.HasSupportedPLOverlapStraightening

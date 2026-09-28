@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCollarR
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetPotentialStokes
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryGlobal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,12 +51,6 @@ variable {M : Type*} [TopologicalSpace M]
   {gamma : C1FreeLoopSpace (M := M)}
 
 set_option maxHeartbeats 1400000 in
-
-
-
-
-
-
 
 theorem exists_curvature_radial_bound (S : M65MinimalDisk g connection gamma) :
     let e := orthonormalBasisOneI.repr.toContinuousLinearEquiv

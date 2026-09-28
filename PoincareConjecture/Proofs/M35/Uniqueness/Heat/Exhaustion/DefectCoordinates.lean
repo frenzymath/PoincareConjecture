@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectDivergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.Dual
 import Mathlib.LinearAlgebra.Multilinear.Curry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

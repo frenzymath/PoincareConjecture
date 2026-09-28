@@ -2,13 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter

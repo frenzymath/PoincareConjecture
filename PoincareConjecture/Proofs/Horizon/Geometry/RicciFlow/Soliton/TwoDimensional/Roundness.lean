@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compactness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.Roundness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -33,7 +26,6 @@ theorem LeviCivitaData.constantPositiveSectionalCurvature_of_surface_shrinker
     (fun x => D.scalar_nonnegative_of_nonnegative_curvatureOperator x (hoperator x))
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [SecondCountableTopology M]
-
 
 theorem GradientShrinkingSolitonData.round (S : GradientShrinkingSolitonData 2 M) :
     ConstantPositiveSectionalCurvature S.metric S.connection :=

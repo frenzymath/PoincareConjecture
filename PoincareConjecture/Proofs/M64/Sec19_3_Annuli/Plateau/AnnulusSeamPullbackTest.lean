@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamMatchingCircle
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ namespace PoincareConjecture
 
 local notation "v" => m64AnnulusSeamTranslation
 
-
-
 theorem m64Scalar_fderiv_translation {phi : LoopPlane → ℝ}
     (hp : ContDiff ℝ 1 phi) (a p w : LoopPlane) :
     fderiv ℝ (fun q => phi (a + q)) p w = fderiv ℝ phi (a + p) w := by
@@ -35,9 +21,6 @@ theorem m64Scalar_fderiv_translation {phi : LoopPlane → ℝ}
   have h := congrArg (fun L : LoopPlane →L[ℝ] ℝ => L w) hd
   simpa only [Function.comp_def, id_eq, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.id_apply] using h
-
-
-
 
 theorem m64_exists_compact_lipschitz_seam_test
     {K : Set LoopPlane} (hK : IsCompact K) (hKO : K ⊆ m64AnnulusSeamDomain)

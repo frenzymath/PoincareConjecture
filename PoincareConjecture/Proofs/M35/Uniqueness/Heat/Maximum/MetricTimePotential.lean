@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricPotential
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.IntegralEntropy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -77,8 +69,6 @@ theorem metricEntropy_test_pair (g : RiemannianMetric n V) (η : V → ℝ) (Q :
     g.symm x (EuclideanSpace.single j 1) z
   rw [hs]
   ring
-
-
 
 theorem metricEntropy_operator_cancellation {g : RiemannianMetric n V}
     (D : LeviCivitaData g) (η : V → ℝ) (Q : ℝ) (X : V → V) (x : V) :

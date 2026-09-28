@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Christoffel
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.PointwiseTransition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option maxHeartbeats 800000
@@ -25,9 +13,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem eventually_fderiv_fderiv_eq_of_metric_pullback
     {A B : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
@@ -55,9 +40,6 @@ theorem eventually_fderiv_fderiv_eq_of_metric_pullback
     (hAy.differentiableAt (by simp)) (hBy.differentiableAt (by simp))
     hAiy hBiy hsymm hfy
     (surjective_of_pullback_isInvertible hAiy hm.self_of_nhds) hm
-
-
-
 
 theorem exists_finite_metric_isometry_jet_bound_at
     {ι : Type*} {A B : ι → E → E →L[ℝ] E →L[ℝ] ℝ}

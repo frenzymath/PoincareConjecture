@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Pro
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

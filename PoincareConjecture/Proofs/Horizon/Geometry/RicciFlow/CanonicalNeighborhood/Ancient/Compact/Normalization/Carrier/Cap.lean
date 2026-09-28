@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.CapModelTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Assembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +19,6 @@ variable {M : Type u} {N : Type v}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
 
 private noncomputable def CapCertificate.pullbackSmallWithCalculus (K : CapCertificate h)
     (he : MetricHomothety g h e 1) (H : MetricHomothetyCalculus g h e 1)
@@ -151,9 +140,6 @@ private noncomputable def CapCertificate.pullbackSmallWithCalculus (K : CapCerti
     refine ⟨b, hb, fun x hx => ?_⟩
     rw [H.m48_scalarEvolution_eq he D K.connection, H.m48_scalar_eq D K.connection]
     exact hbound (e x) hx
-
-
-
 
 noncomputable def CapCertificate.pullbackSmall (K : CapCertificate h)
     (he : MetricHomothety g h e 1) (D : LeviCivitaData g) : CapCertificate g :=

@@ -3,18 +3,6 @@ import PoincareConjecture.Definitions.M27CanonicalGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.NullTime
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.NullModels
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,7 +38,6 @@ theorem AncientKappaClassificationServices.curvatureTrichotomy
   obtain ⟨y, a, b, ha, hb, hab, hzero⟩ :=
     K.exists_terminal_null_plane_of_null_plane P ht x v w hv hw hvw hnull
   exact K.models_of_terminal_null P y a b ha hb hab hzero
-
 
 theorem ancientKappaCurvatureTrichotomy
     (P : M26CanonicalNeighborhoodPredecessors.{u})

@@ -1,19 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Compatible
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.CompactDefiniteness
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -22,10 +8,6 @@ namespace Poincare.GromovHausdorff
 universe u
 
 namespace CompatiblePointedCompactSystem
-
-
-
-
 
 def ofCommonLimits
     (stage inner : ℕ → PointedCompactMetricSpace.{u})
@@ -80,15 +62,6 @@ def ofCommonLimits
         rw [he n]
         exact embed_base n }
 
-
-
-
-
-
-
-
-
-
 noncomputable def ofCommonLimits_of_compact_limits
     (stage inner : ℕ → PointedCompactMetricSpace.{u})
     (source : ℕ → ℕ → FiniteDiameterBasedMetricSpace.{u})
@@ -135,15 +108,11 @@ noncomputable def ofCommonLimits_of_compact_limits
         rw [he n]
         exact embed_base n }
 
-
-
-
 def transitionChain (S : CompatiblePointedCompactSystem.{u}) (n k : ℕ) :
     (S.stage n).carrier → (S.stage (n + k)).carrier :=
   match k with
   | 0 => id
   | k + 1 => S.transition (n + k) ∘ transitionChain S n k
-
 
 theorem transitionChain_isometry
     (S : CompatiblePointedCompactSystem.{u}) (n k : ℕ) :
@@ -152,8 +121,6 @@ theorem transitionChain_isometry
   | zero => exact isometry_id
   | succ k ih =>
       exact (S.transition_isometry (n + k)).comp ih
-
-
 
 theorem transitionChain_base
     (S : CompatiblePointedCompactSystem.{u}) (n k : ℕ) :
@@ -164,12 +131,6 @@ theorem transitionChain_base
       change S.transition (n + k) (S.transitionChain n k (S.stage n).base) =
         (S.stage (n + k + 1)).base
       rw [ih, S.transition_base]
-
-
-
-
-
-
 
 theorem stageMap_comp_transitionChain
     (S : CompatiblePointedCompactSystem.{u}) (n k : ℕ) :
@@ -184,8 +145,6 @@ theorem stageMap_comp_transitionChain
         S.stageMap n
       rw [← Function.comp_assoc, S.stageMap_succ_comp_transition, ih]
 
-
-
 theorem stageEmbedding_comp_transitionChain
     (S : CompatiblePointedCompactSystem.{u}) (n k : ℕ) :
     S.stageEmbedding (n + k) ∘ S.transitionChain n k =
@@ -198,8 +157,6 @@ theorem stageEmbedding_comp_transitionChain
           (S.transition (n + k) ∘ S.transitionChain n k) =
         S.stageEmbedding n
       rw [← Function.comp_assoc, S.stageEmbedding_succ_comp_transition, ih]
-
-
 
 theorem transitionChain_comp
     (S : CompatiblePointedCompactSystem.{u}) (n k l : ℕ) :
@@ -217,6 +174,5 @@ theorem transitionChain_comp
       rw [← Function.comp_assoc, stageEmbedding_comp_transitionChain]
 
 end CompatiblePointedCompactSystem
-
 
 end Poincare.GromovHausdorff

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitAncientDomain
 import PoincareConjecture.Proofs.M47.LimitAncientFlat
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitAncientFlow_nonflat
     (h04 : RicciFlowCurvatureTheory.{u})
@@ -49,8 +36,6 @@ theorem limitAncientFlow_nonflat
   rw [limitAncientFlow_scalar_normalized, hterminal, mul_zero] at hscalar
   norm_num at hscalar
 
-
-
 noncomputable def limitAncientSolution
     (h04 : RicciFlowCurvatureTheory.{u})
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval ⊤)) (κ : ℝ) (hκ : 0 < κ)
@@ -67,9 +52,6 @@ noncomputable def limitAncientSolution
       bounded_curvature := limitAncientFlow_bounded_curvature L
       nonflat := limitAncientFlow_nonflat h04 L
       noncollapsed := limitAncientFlow_noncollapsed L κ hnc }
-
-
-
 
 noncomputable def limitAncientIdentification
     (h04 : RicciFlowCurvatureTheory.{u})

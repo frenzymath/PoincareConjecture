@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalFamilyCoefficientJets
 import PoincareConjecture.Proofs.M47.LimitCanonicalNeckChartJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -74,8 +66,6 @@ private theorem family_coefficient_difference_fixed_chart
   simp only [ContinuousLinearMap.bilinearComp_apply, sub_apply] at hread ⊢
   simp only [generalizedCylinderPullback, dif_pos hs]
   exact (congrArg₂ (fun v w : ℝ => v - w) hsource hlimit).trans hread.symm
-
-
 
 theorem limitCanonical_eventually_chart_neck_family_jets
     (P : M47Predecessors.{u}) (N : EpsilonNeck (G.limit.flow.metric 0))

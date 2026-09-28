@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.RegularSlices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -84,8 +75,6 @@ theorem exists_regular_neighborhood {t : ℝ} (hT : t ∉ F.surgery_times) :
   intro s hs hJ
   exact hsub hJ.2 ⟨hs, hJ.1⟩
 
-
-
 theorem exists_regular_slab_window {t : ℝ} (ht : t ∈ W.interval)
     (hT : t ∉ F.surgery_times) :
     ∃ a b : ℝ, a < b ∧ Icc a b ⊆ W.interval ∧
@@ -115,7 +104,6 @@ theorem exists_regular_slab_window {t : ℝ} (ht : t ∈ W.interval)
           fun s hs => ⟨hat.trans (hleft s hs.1), hs.2.2.le⟩⟩
       · exact ⟨t - 1, t + 1, by linarith, by linarith,
           fun s hs => ⟨hat.trans (hleft s hs.1), (hright s hs.1).trans htb⟩⟩
-
 
 structure OrdinaryTimeWindow where
   lower : ℝ

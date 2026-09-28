@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Annul
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarSmoothDomain
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem scalarAnnulus_ae_eq_closed :
     scalarAnnulus =ᵐ[volume] {p : Plane | 0 ≤ scalarAnnulusDefining p} := by
@@ -44,10 +30,6 @@ theorem scalarAnnulus_ae_eq_closed :
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_exists_annular_area_lt
     (g : RiemannianMetric n M) (f : Plane → M)

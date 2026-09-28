@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderOrdinaryTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_cylinder_through_ordinary_endpoint
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

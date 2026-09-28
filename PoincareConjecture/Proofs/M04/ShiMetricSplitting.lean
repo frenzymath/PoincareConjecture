@@ -4,14 +4,6 @@ import Mathlib.Geometry.Manifold.Riemannian.PathELength
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

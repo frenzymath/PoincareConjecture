@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter TopologicalSpace
@@ -38,8 +26,6 @@ theorem isOpen_isLocalDiffeomorphAt {f : M -> N} :
   apply mem_of_superset (e.open_source.mem_nhds hx)
   intro y hy
   exact ⟨e, hy, heq⟩
-
-
 
 theorem exists_openPartialHomeomorph_of_injOn_compact
     {K : Set M} (hK : IsCompact K) {f : M -> N} (hinj : InjOn f K)

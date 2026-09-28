@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedSourceGeom
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedSourceChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedWallTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_middle_native
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,7 +43,6 @@ include hF
 
 omit [IsManifold (𝓡 n) ∞ N] in
 
-
 theorem level_height_abs_le
     {ε c : ℝ} (hε : 0 < ε) (hc : 0 < c)
     (hder : ∀ y : N, ∀ s ∈ Ioo (-ε) ε, c ≤ deriv (fun r ↦ F (r, y)) s)
@@ -93,7 +84,6 @@ theorem level_height_mvfderiv
 
 omit [IsManifold (𝓡 n) ∞ N] in
 
-
 theorem level_height_mvfderiv_abs_le
     {u : N → ℝ} (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
     (hzero : ∀ y, F (u y, y) = 0) {c B : ℝ} (hc : 0 < c)
@@ -105,9 +95,6 @@ theorem level_height_mvfderiv_abs_le
   rw [level_height_mvfderiv hF hu hzero y hp.ne' v, abs_div, abs_neg, abs_of_pos hp]
   exact (div_le_div_of_nonneg_left (abs_nonneg _) hc hvertical).trans
     (div_le_div_of_nonneg_right hhorizontal hc.le)
-
-
-
 
 theorem exists_level_height_with_C1_bounds
     {ε c δ η : ℝ} (hε : 0 < ε) (hc : 0 < c)

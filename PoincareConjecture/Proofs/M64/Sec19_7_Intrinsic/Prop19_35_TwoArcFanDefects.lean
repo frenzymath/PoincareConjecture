@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcInitialFa
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBoundaryFans
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionalInteriorFans
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +27,6 @@ private theorem vertex_angle_nonneg
   · exact le_rfl
 
 open Classical in
-
-
 
 theorem m64Intrinsic_two_arc_region_fan_defects_le
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

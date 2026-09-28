@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LocalSideUniqueness
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 import PoincareConjecture.Proofs.M58.Sec18_4_UniformRadius
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g}
 
-
-
-
-
 theorem m64MinimizingSide_normalized_geodesic {ell : ℝ} (hell : 0 < ell)
     {p q : M} (side : M63MinimizingGeodesicSide g D ell p q) :
     g.IsGeodesicOn (fun t => side.map (ell * t)) (Icc (0 : ℝ) 1) := by
@@ -38,10 +23,6 @@ theorem m64MinimizingSide_normalized_geodesic {ell : ℝ} (hell : 0 < ell)
   apply (m64MinimizingSide_isGeodesicOn side).comp_mul ell t
   change ell * t ∈ Icc (0 : ℝ) ell
   exact ⟨mul_nonneg hell.le ht.1, by nlinarith [ht.2]⟩
-
-
-
-
 
 theorem m64MinimizingSide_normalized_speed {ell : ℝ} (hell : 0 < ell)
     {p q : M} (side : M63MinimizingGeodesicSide g D ell p q) :
@@ -57,10 +38,6 @@ theorem m64MinimizingSide_normalized_speed {ell : ℝ} (hell : 0 < ell)
   rw [M63.curveVelocity_comp hd hparam, g.tangentNorm_smul, abs_of_pos hell,
     mul_zero, side.constant_speed 0 ⟨le_rfl, hell.le⟩, side.edist_eq_length hell.le,
     ENNReal.toReal_ofReal (mul_nonneg hell.le side.speed_nonnegative)]
-
-
-
-
 
 theorem m64_exists_uniform_minimizing_side_uniqueness
     [T2Space M]

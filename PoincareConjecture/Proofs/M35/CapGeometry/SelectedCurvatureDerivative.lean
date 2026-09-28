@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCurvatureDerivativeRealization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ attribute [local instance] selectedDerivativeCovectorNormedGroup
 @[instance_reducible] private noncomputable def selectedDerivativeBilinearNormedGroup :
     NormedAddCommGroup (V →L[ℝ] V →L[ℝ] ℝ) := inferInstance
 attribute [local instance] selectedDerivativeBilinearNormedGroup
-
-
 
 theorem blowupSequence_terminal_curvature_derivative_tendsto_chart
     (P : M35StandardCapPredecessors)

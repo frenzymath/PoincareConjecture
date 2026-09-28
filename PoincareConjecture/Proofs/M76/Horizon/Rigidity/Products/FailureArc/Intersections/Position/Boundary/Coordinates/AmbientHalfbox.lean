@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAffineHeightStep
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.CompatibleChartFormula
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteBaseIntervalProducts
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology Metric
 

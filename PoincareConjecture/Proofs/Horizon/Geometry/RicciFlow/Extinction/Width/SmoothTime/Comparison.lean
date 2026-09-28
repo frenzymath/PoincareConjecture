@@ -4,13 +4,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
 universe u
@@ -37,10 +30,6 @@ private theorem profile_mono {a b : ℝ} (F : RicciFlow 3 M (Set.Icc a b))
     areaComparisonProfile F w t ≤ areaComparisonProfile F v t := by
   unfold areaComparisonProfile
   exact mul_le_mul_of_nonneg_left (sub_le_sub_right h _) (Real.exp_pos _).le
-
-
-
-
 
 theorem m66_deformed_comparison
     (hM61 : M61RawWidthCore.{u})
@@ -122,8 +111,6 @@ theorem m66_deformed_comparison
   · obtain ⟨disk, hdisk⟩ := hsmall (D.family tb c) (hs.trans_le hzq)
     exact ((m60FillingArea_le_disk _ _ disk).trans hdisk.le).trans (le_max_left _ _)
   · exact (hl.trans (hpoint c)).trans (le_max_right _ _)
-
-
 
 theorem m66_endpoint_comparison
     (hM61 : M61RawWidthCore.{u})

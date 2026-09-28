@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.WitnessProtectedCocoreRegion
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PositionedPortFaceProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76
@@ -164,7 +156,6 @@ theorem ChartwisePLSphere.exists_cocore_positioned_product_of_disk_of_paired_cha
       exact ⟨⟨z,hz,rfl⟩,(hρlevel z ⟨sphere_subset_closedBall hz.1,
         ⟨by linarith [hz.2.1],by linarith [hz.2.2]⟩⟩).mpr hx⟩
     · exact fun hx => ⟨hx.1,hFF hx.2⟩
-
 
 theorem ChartwisePLSphere.exists_cocore_positioned_product_of_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

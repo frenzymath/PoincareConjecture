@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeCharts
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +17,6 @@ private abbrev E := EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_neck_height_lt_of_mem_ball (N : EpsilonNeck g)
     (hscale : N.scale = 1) (hcarrier : N.carrier = univ)
@@ -51,9 +38,6 @@ theorem normalized_neck_height_lt_of_mem_ball (N : EpsilonNeck g)
   have hreal : (1 / 2 : ℝ) * |(N.coordinate_inverse x).2| < S :=
     (ENNReal.ofReal_lt_ofReal_iff hS).mp (hbound.trans_lt hlength)
   linarith
-
-
-
 
 theorem normalized_neck_unit_ball_subset_domain (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ (1 / 200 : ℝ)) {S : ℝ}
@@ -85,8 +69,6 @@ theorem normalized_neck_unit_ball_subset_domain (N : EpsilonNeck g)
     linarith [(abs_le.mp hs).1, (abs_le.mp hlast).1]
   · change x (2 : Fin 3) + s < N.epsilon⁻¹
     linarith [(abs_le.mp hs).2, (abs_le.mp hlast).2]
-
-
 
 theorem normalized_neck_isCompact_center_ball [T2Space M]
     (N : EpsilonNeck g) (hscale : N.scale = 1) {S : ℝ}

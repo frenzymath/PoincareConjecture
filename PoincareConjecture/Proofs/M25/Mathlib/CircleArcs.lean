@@ -3,16 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open Set
 namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
-
-
-
 
 theorem compl_image_Ioo_eq_image_Icc (a b : ℝ) (hab : a < b) (hbp : b < a + p) :
     (((↑) : ℝ → AddCircle p) '' Ioo a b)ᶜ =
@@ -55,24 +42,16 @@ theorem compl_image_Ioo_eq_image_Icc (a b : ℝ) (hab : a < b) (hbp : b < a + p)
       have hyx : y = x := (coe_eq_coe_iff_of_mem_Ico hyI hxI).mp hxy
       exact (not_lt_of_ge hx.1) (hyx ▸ hy.2)
 
-
-
-
 theorem isConnected_compl_image_Ioo (a b : ℝ) (hab : a < b) (hbp : b < a + p) :
     IsConnected ((((↑) : ℝ → AddCircle p) '' Ioo a b)ᶜ) := by
   rw [compl_image_Ioo_eq_image_Icc p a b hab hbp]
   exact (isConnected_Icc hbp.le).image _ (AddCircle.continuous_mk' p).continuousOn
-
-
 
 theorem isOpen_image_Ioo (a b : ℝ) (hbp : b ≤ a + p) :
     IsOpen (((↑) : ℝ → AddCircle p) '' Ioo a b) := by
   apply (openPartialHomeomorphCoe p a).isOpen_image_of_subset_source isOpen_Ioo
   intro x hx
   exact ⟨hx.1, hx.2.trans_le hbp⟩
-
-
-
 
 theorem exists_openPartialHomeomorph_Ioo (a b : ℝ) (hbp : b ≤ a + p) :
     ∃ e : OpenPartialHomeomorph ℝ (AddCircle p),
@@ -92,9 +71,6 @@ end AddCircle
 
 namespace Circle
 
-
-
-
 noncomputable def euclideanHomeomorph :
     Circle ≃ₜ Metric.sphere (0 : EuclideanSpace ℝ (Fin 2)) 1 :=
   Complex.orthonormalBasisOneI.repr.toHomeomorph.subtype fun z => by
@@ -105,8 +81,6 @@ noncomputable def euclideanHomeomorph :
 end Circle
 
 namespace AddCircle
-
-
 
 noncomputable def euclideanCircleHomeomorph (p : ℝ) (hp : p ≠ 0) :
     AddCircle p ≃ₜ Metric.sphere (0 : EuclideanSpace ℝ (Fin 2)) 1 :=

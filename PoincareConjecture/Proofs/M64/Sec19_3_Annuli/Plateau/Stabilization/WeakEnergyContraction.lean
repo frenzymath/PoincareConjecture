@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.WeakProjection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +17,6 @@ variable {n m k : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "H" => EuclideanSpace ℝ (Fin k)
 local notation "mu" => volume.restrict (interior m64AnnulusDomain)
-
-
 
 theorem auxiliaryCircle_retained_observed_metric_le
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -52,8 +38,6 @@ theorem auxiliaryCircle_retained_observed_metric_le
     hB, hC, P.metric_eq]
   exact le_add_of_nonneg_right
     ((P.circle.metricOnPoints.toRiemannianMetric.toCore q.2).re_inner_nonneg _)
-
-
 
 theorem auxiliaryCircle_projected_weak_weightedEnergy
     (P : M62.CircleProductData F circumference) (time : ℝ)

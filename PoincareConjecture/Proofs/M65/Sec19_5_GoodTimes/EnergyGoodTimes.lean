@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.FamilyAdapters
 import PoincareConjecture.Proofs.M65.Mathlib.EnergyBadTimes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -25,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta : ℝ}
 
-
 noncomputable def m65FamilyEnergy (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (z : LoopTwoSphere) (t : ℝ) : ℝ :=
   ∫ x in (0 : ℝ)..curvePeriod,
@@ -33,8 +24,6 @@ noncomputable def m65FamilyEnergy (C : M63FamilyConclusion G Gamma zeta)
       ((C.solutions circumference h).curve z) t x *
       curveSpeed (G.product circumference h).flow
         ((C.solutions circumference h).curve z) t x
-
-
 
 theorem m65FamilyEnergy_nonneg (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (z : LoopTwoSphere) (t : ℝ) :
@@ -45,9 +34,6 @@ theorem m65FamilyEnergy_nonneg (C : M63FamilyConclusion G Gamma zeta)
   · exact (((G.product circumference h).flow.metric t).toRiemannianMetric.toCore
       ((C.solutions circumference h).curve z x t)).re_inner_nonneg _
   · exact Real.sqrt_nonneg _
-
-
-
 
 theorem m65FamilyEnergy_badTimes_measure_le
     (C : M63FamilyConclusion G Gamma zeta) (E : M64AppliedFamilyEstimates G C)

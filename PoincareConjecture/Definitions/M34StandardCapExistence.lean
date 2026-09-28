@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

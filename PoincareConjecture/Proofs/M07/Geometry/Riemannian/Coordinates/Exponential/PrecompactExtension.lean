@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.InitialData
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ private theorem geodesic_congr_nhds
   refine ⟨p, q, w, ?_⟩
   filter_upwards [h, heq] with u hu hueq
   exact ⟨hueq.trans hu.1, hu.2⟩
-
-
 
 theorem exists_geodesic_through_one_of_precompact_ball
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)

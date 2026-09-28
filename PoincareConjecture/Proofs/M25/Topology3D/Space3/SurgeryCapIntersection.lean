@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularSurgeryData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapEmbedding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryDiscIntersection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,9 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable (a : ℝ → ℝ) (b : E2 → ℝ)
 variable (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
 variable (ha0 : ∀ z, a z ≠ 0) (hb0 : ∀ x, b x ≠ 0)
-
-
-
 
 theorem surgeryCapMap_mem_retained_iff
     (hapos : ∀ z, 0 < a z)

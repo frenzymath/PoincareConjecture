@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem exists_continuous_graph_of_isLocalHomeomorph
     (f : UnitTwoSphere → M) (hf : Continuous f)
@@ -60,8 +46,6 @@ theorem exists_continuous_graph_of_isLocalHomeomorph
   · rintro ⟨q, rfl⟩
     exact ⟨e.symm q, (hgraph q).symm⟩
 
-
-
 theorem exists_continuous_centralSphere_graph_of_isLocalHomeomorph
     (N' : EpsilonNeck g) (hsubset : N'.central_sphere ⊆ N.carrier)
     (hp : IsLocalHomeomorph
@@ -73,8 +57,6 @@ theorem exists_continuous_centralSphere_graph_of_isLocalHomeomorph
     (fun q => N'.coordinate_map (q, 0)) N'.centralSphere_contMDiff.continuous
     (fun q => hsubset (N'.centralSphere_range ▸ mem_range_self q)) hp
   exact ⟨h, hh, hdom, N'.centralSphere_range.symm.trans hrange⟩
-
-
 
 theorem centralSphere_projection_isLocalHomeomorph_of_bijective_mfderiv
     (N' : EpsilonNeck g) (hsubset : N'.central_sphere ⊆ N.carrier)
@@ -96,8 +78,6 @@ theorem centralSphere_projection_isLocalHomeomorph_of_bijective_mfderiv
 
 variable [T2Space M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem isSeparating_iff_of_centralSphere_projection_isLocalHomeomorph
     (N' : EpsilonNeck g) (hsubset : N'.central_sphere ⊆ N.carrier)
     (hp : IsLocalHomeomorph
@@ -106,8 +86,6 @@ theorem isSeparating_iff_of_centralSphere_projection_isLocalHomeomorph
   obtain ⟨h, hh, hdom, hsphere⟩ :=
     N.exists_continuous_centralSphere_graph_of_isLocalHomeomorph N' hsubset hp
   exact N.isSeparating_iff_of_central_sphere_graph N' h hh hdom hsphere
-
-
 
 theorem isSeparating_iff_of_centralSphere_projection_bijective_mfderiv
     (N' : EpsilonNeck g) (hsubset : N'.central_sphere ⊆ N.carrier)

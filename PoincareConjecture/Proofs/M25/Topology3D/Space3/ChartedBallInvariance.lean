@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.TangentFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -25,8 +14,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem boundedFlow_mapsTo_charted_ball (B : BallNeighborhoodChart E F)
     (f : F → F) (hf : ContDiff ℝ ∞ f) (hfc : HasCompactSupport f)
@@ -62,8 +49,6 @@ theorem boundedFlow_mapsTo_charted_ball (B : BallNeighborhoodChart E F)
     (by simp only [boundedFlow_zero, B.chart.left_inv hxs])
   refine ⟨boundedFlow g hk hl x t, tangentFlow_mapsTo_closedBall g hk hl hgtan t hx, ?_⟩
   rw [← congrFun heq t, B.chart.right_inv (hmem t)]
-
-
 
 theorem boundedFlow_image_charted_ball (B : BallNeighborhoodChart E F)
     (f : F → F) (hf : ContDiff ℝ ∞ f) (hfc : HasCompactSupport f)

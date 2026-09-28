@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ProductRicciTraceBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
 
 theorem auxiliaryCircle_ricci_quadratic_abs_le
     (P : M62.CircleProductData F circumference)
@@ -50,8 +37,6 @@ theorem auxiliaryCircle_ricci_quadratic_abs_le
   rw [M62.circleProduct_ricci (P.flow.metric time) (P.flow.connection time)
     Q.circle Q.charts (Q.flow.metric time) (Q.flow.connection time) (Q.metric_eq time)]
   exact hbase.trans (mul_le_mul_of_nonneg_left hmetric hcoef)
-
-
 
 theorem auxiliaryCircle_annulus_ricciTraceDensity_abs_le
     (P : M62.CircleProductData F circumference)
@@ -97,8 +82,6 @@ theorem auxiliaryCircle_annulus_ricciTraceDensity_abs_le
   unfold m64AnnulusRicciTraceDensity
   rw [if_neg hdeg, abs_mul, abs_of_nonneg harea]
   exact (mul_le_mul_of_nonneg_right htrace harea).trans_eq (by ring)
-
-
 
 theorem auxiliaryCircle_annulus_ricciTraceIntegral_abs_le
     (P : M62.CircleProductData F circumference)

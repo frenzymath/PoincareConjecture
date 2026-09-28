@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Transport.Normalized
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +45,6 @@ theorem potential_boundedNormalizedGradient_deriv_bounds (t : ℝ) :
   exact ⟨div_nonneg hq hd.le,
     (div_le_one hd).mpr (normalizedGradientDenominator_ge q)⟩
 
-
-
 theorem potential_boundedNormalizedGradient_monotone :
     Monotone (f ∘ γ) ∧ Antitone (fun t => f (γ t) - t) := by
   have hd := D.hasDerivAt_potential_boundedNormalizedGradient hf hγ
@@ -60,8 +57,6 @@ theorem potential_boundedNormalizedGradient_monotone :
   have h := (D.potential_boundedNormalizedGradient_deriv_bounds hf hγ t).2
   rw [(hd t).deriv] at h
   linarith
-
-
 
 theorem potential_boundedNormalizedGradient_eq_add {a : ℝ}
     (ha : ∀ x, a < f x → 1 ≤ g.inner x (D.gradient f x) (D.gradient f x))

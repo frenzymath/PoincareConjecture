@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exterior_halfspace_and_frontier
     {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E]

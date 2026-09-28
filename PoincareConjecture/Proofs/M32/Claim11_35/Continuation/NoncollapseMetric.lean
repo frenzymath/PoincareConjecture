@@ -2,24 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.CovariantJets
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -140,10 +122,6 @@ private theorem backward_coordinate_mem
   let w : NeckDomain epsilon := (z.1, ⟨z.2, hz⟩)
   have h := (N.coordinate w).property
   simpa only [N.coordinate_map_eq w, w] using h
-
-
-
-
 
 theorem strongNeck_evolving_pullback_quadratic_error
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}

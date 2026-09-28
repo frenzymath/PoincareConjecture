@@ -3,10 +3,6 @@ import PoincareConjecture.Definitions.M11CompatibleEmbedding
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -6,23 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Deri
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -81,10 +64,6 @@ theorem exists_orthonormal_changeBasis
     field_simp
   · rw [hxe, hye, real_inner_smul_left, real_inner_smul_right, hxz]
     ring
-
-
-
-
 
 theorem curvatureTensor_diagonal_nonneg_of_orthonormal
     (D : LeviCivitaData g) (x : M)

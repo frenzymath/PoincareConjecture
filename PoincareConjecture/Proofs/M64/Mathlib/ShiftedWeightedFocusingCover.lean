@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_WeightedFocusin
 import Mathlib.MeasureTheory.Group.Measure
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,10 +9,6 @@ open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_shifted_weighted_focusing_cover
     {f g : ℝ → ℝ} (hf : Continuous f) (hfpos : ∀ x, 0 < f x)

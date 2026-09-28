@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckMapJets
 import PoincareConjecture.Proofs.M44.Mathlib.CompactTimeModulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem metric_jets_uniform_time_delta_on_compact
     {a b : ℝ} (hab : a < b) (F : RicciFlow n M (Icc a b))

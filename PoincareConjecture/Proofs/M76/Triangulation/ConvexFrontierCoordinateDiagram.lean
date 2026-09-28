@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierCoordinateQuadrants
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateFourRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateFourRegions
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem coordinate_frontier_marked_diagram
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.EndCorrespondence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.RicciComparison.SphereTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +42,6 @@ namespace PoincareConjecture.TerminalEnd
 variable {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension G T} {K : TerminalComponentPath E} (e : TerminalEnd K)
 
-
-
 theorem exists_tail_subset_cut_of_supported_sphere_transport
     {N P : EpsilonNeck (E.extended.metric T)}
     (C : SurgeryEndCut N) (D : SurgeryEndCut P)
@@ -73,8 +63,6 @@ theorem exists_tail_subset_cut_of_supported_sphere_transport
     disjoint_left.mp (hk _ (le_max_right _ _)) ⟨y, hy, rfl⟩
   rw [← heq]
   exact ⟨y.val, hxC, hfix y.val hxL⟩
-
-
 
 theorem exists_tail_subset_cut_of_center_mem
     {N P : EpsilonNeck (E.extended.metric T)}

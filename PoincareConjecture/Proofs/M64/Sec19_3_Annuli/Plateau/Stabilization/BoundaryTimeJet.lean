@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.UniformTimeJet
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.CompactRetractionMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem uniform_boundary_time_jet_bound
     (g : RiemannianMetric n M) {f beta : ℝ × ℝ → M}

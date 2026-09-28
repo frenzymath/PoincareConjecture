@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M08.ContinuationBackward
 import PoincareConjecture.Proofs.M09.SquareComparisonDensity
 import PoincareConjecture.Proofs.M47.JointSeedPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -27,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 private theorem square_density_eq_regularized (T : ℝ) (alpha : ℝ → M) :
     Proofs.M09.squareCurveActionDensity F T alpha = M08.regularizedLIntegrand F T alpha := rfl
 
-
-
 theorem jointSeed_square_density_integrable
     (hM04 : RicciFlowCurvatureTheory.{u}) (T d : ℝ) (hd : 0 < d)
     (hwindow : Icc (T - d) T ⊆ J) (alpha : ℝ → M) {U : Set ℝ}
@@ -43,8 +32,6 @@ theorem jointSeed_square_density_integrable
     simpa only [Real.sq_sqrt hd.le] using
       (sq_le_sq₀ hs.1 (Real.sqrt_nonneg d)).2 hs.2
   constructor <;> nlinarith [sq_nonneg s]
-
-
 
 theorem exists_jointSeed_closed_square_path
     (hM04 : RicciFlowCurvatureTheory.{u}) (T d : ℝ) (hd : 0 < d)
@@ -73,8 +60,6 @@ theorem exists_jointSeed_closed_square_path
   simpa only [M08.regularizedLAction, Real.sqrt_zero, square_density_eq_regularized] using
     M08.backwardPathOfSqrt_action F T 0 d le_rfl hd hT htime alpha hcont hreg hint
 
-
-
 def jointSeed_restrict_sqrt_path {T tau theta : ℝ}
     {path : BackwardTimePath F T 0 tau} (R : SqrtRegularPath path)
     (htheta : 0 < theta) (hle : theta ≤ tau) :
@@ -85,8 +70,6 @@ def jointSeed_restrict_sqrt_path {T tau theta : ℝ}
   interval_subset := (Icc_subset_Icc le_rfl (Real.sqrt_le_sqrt hle)).trans R.interval_subset
   smooth := R.smooth
   agrees := fun s hs => R.agrees s ⟨hs.1, hs.2.trans (Real.sqrt_le_sqrt hle)⟩
-
-
 
 theorem jointSeed_restricted_square_action {T tau theta : ℝ}
     {path : BackwardTimePath F T 0 tau} (R : SqrtRegularPath path)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.PairedCorrection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.SourceMeridian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -26,8 +18,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 structure PairedMeridianHierarchy {α β : Type*}
     (e : α → OpenPartialHomeomorph X V3)
@@ -85,8 +75,6 @@ structure PairedMeridianHierarchy {α β : Type*}
         FundamentalGroup.fromPath (Path.Homotopic.Quotient.mk
           ((Dehn.squareRimLoop.map rim.continuous).map
             (retract.comp ⟨E, E.continuous⟩).continuous)) ≠ 1
-
-
 
 theorem exists_original_paired_meridian_hierarchy
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

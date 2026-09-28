@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositionData
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ProjectedDiskCrossing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -37,8 +29,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
   {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
   {old : StageMarkedDisk t R Fmark base Jgroup}
-
-
 
 theorem OriginalGeneralPositionData.exists_old_projected_crossing
     (data : OriginalGeneralPositionData step old)

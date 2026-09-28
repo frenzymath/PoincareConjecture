@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuousFocus
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuousPolarLift
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_VaryingFocusingArc
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_continuous_focusing_arc_length_le_turning
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)
@@ -145,10 +130,6 @@ theorem m64Intrinsic_continuous_focusing_arc_length_le_turning
     exact hnorm
   · exact haorth
   · exact hborth
-
-
-
-
 
 theorem m64Intrinsic_exists_continuous_polar_focusing_map
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

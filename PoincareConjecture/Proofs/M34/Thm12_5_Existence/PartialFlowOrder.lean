@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,29 +8,21 @@ namespace PoincareConjecture.M34
 
 variable {g0 : StandardInitialMetric}
 
-
-
 def partialFlowData (F : PartialStandardCapFlow g0) (t : ℝ) :
     Σ g : RiemannianMetric 3 StandardCapSpace, LeviCivitaData g :=
   ⟨F.flow.metric t, F.flow.connection t⟩
-
-
 
 def partialFlowLE (F G : PartialStandardCapFlow g0) : Prop :=
   F.lifetime ≤ G.lifetime ∧ EqOn (partialFlowData F) (partialFlowData G)
     (Ico 0 F.lifetime)
 
-
 theorem partialFlowLE_refl (F : PartialStandardCapFlow g0) : partialFlowLE F F :=
   ⟨le_rfl, fun _ _ => rfl⟩
-
 
 theorem partialFlowLE_trans {F G H : PartialStandardCapFlow g0}
     (hFG : partialFlowLE F G) (hGH : partialFlowLE G H) : partialFlowLE F H :=
   ⟨hFG.1.trans hGH.1, fun _ ht =>
     (hFG.2 ht).trans (hGH.2 ⟨ht.1, ht.2.trans_le hFG.1⟩)⟩
-
-
 
 theorem partialFlowData_eq_of_chain {c : Set (PartialStandardCapFlow g0)}
     (hc : IsChain partialFlowLE c) {F G : PartialStandardCapFlow g0}
@@ -53,8 +35,6 @@ theorem partialFlowData_eq_of_chain {c : Set (PartialStandardCapFlow g0)}
   · exact h.2 htF
   · exact (h.2 htG).symm
 
-
-
 def partialFlowOfExtension {F : PartialStandardCapFlow g0} {T : ℝ}
     (E : PartialStandardCapFlowExtension F T) : PartialStandardCapFlow g0 where
   lifetime := T
@@ -63,8 +43,6 @@ def partialFlowOfExtension {F : PartialStandardCapFlow g0} {T : ℝ}
   initial_metric := E.initial_metric
   initial_connection := E.initial_connection
   curvature_locally_bounded := E.curvature_locally_bounded
-
-
 
 theorem partialFlowLE_extension {F : PartialStandardCapFlow g0} {T : ℝ}
     (E : PartialStandardCapFlowExtension F T) :

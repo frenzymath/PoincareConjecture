@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelHessianDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ noncomputable local instance m35DuhamelThirdJetsLocal1 :
   ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35DuhamelThirdJetsLocal2 :
     NormedSpace ℝ (V →L[ℝ] F) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem heatDuhamel_fderiv_eq_of_slab
     {f : ℝ → V → F} {t : ℝ} (ht : 0 ≤ t)

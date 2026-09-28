@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_DensityIntegrability
 import PoincareConjecture.Proofs.M14.Sec6_7_SubsetTransport
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingMeasureBasis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ σ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
 
-
-
 theorem prescribedBasis_sourceMeasure_eq (H : M14StableSet G T τ x E)
     (Hσ : M14StableSet G T σ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
@@ -32,9 +21,6 @@ theorem prescribedBasis_sourceMeasure_eq (H : M14StableSet G T τ x E)
       if i = j then 1 else 0) :
     (rescalingMeasureDataWithBasis H b hb).sourceMeasure =
       (rescalingMeasureDataWithBasis Hσ b hb).sourceMeasure := rfl
-
-
-
 
 theorem stableDensity_integral_mono
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

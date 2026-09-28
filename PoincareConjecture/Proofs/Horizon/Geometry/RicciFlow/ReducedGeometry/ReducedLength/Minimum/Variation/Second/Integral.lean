@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Identity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -122,6 +114,5 @@ theorem hasDerivAt_secondVariation {J : Set ℝ} {F : RicciFlow 2 M J}
   have h := hasDerivAt_deriv_variationSquareAction_integral hpotential V hzero
   change HasDerivAt (fun u ↦ deriv (variationSquareAction V) u) (∫ s in a..b, raw s) 0 at h
   rwa [hvalue] at h
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

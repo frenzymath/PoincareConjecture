@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -10,9 +8,6 @@ open Set Metric
 open scoped Topology
 
 namespace Poincare.Manifold.Schoenflies.SaddleLevel
-
-
-
 
 theorem strip_slice_exterior_iff {M : Type*} [TopologicalSpace M]
     {U : Set M} (hU : IsOpen U) {a A m B b : Real}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.CenteredNeckChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem centeredNeckInverse_mem (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ)
     {y : M} (hy : y ∈ N.carrier) :
     centeredNeckInverse N q s y ∈ centeredNeckDomain N s := by
@@ -35,8 +25,6 @@ theorem centeredNeckInverse_mem (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ
     ContinuousLinearEquiv.coe_coe, Function.comp_apply,
     ContinuousLinearEquiv.apply_symm_apply, ContinuousLinearMap.coe_snd',
     sub_add_cancel] using h
-
-
 
 theorem centeredNeckLift_inverse (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ)
     {y : M} (hy : y ∈ N.carrier)
@@ -49,9 +37,6 @@ theorem centeredNeckLift_inverse (N : EpsilonNeck g) (q : UnitTwoSphere) (s : �
     ContinuousLinearMap.coe_snd', sub_add_cancel]
   rw [(chartAt E2 q).left_inv hchart]
   exact neck_coordinate_inverse N hy
-
-
-
 
 theorem centeredNeckLift_inverse_eventuallyEq (N : EpsilonNeck g) {y : M}
     (hy : y ∈ N.carrier) :
@@ -66,17 +51,11 @@ theorem centeredNeckLift_inverse_eventuallyEq (N : EpsilonNeck g) {y : M}
   filter_upwards [N.carrier_open.mem_nhds hy, hc] with z hz hzc
   exact centeredNeckLift_inverse N _ _ hz hzc
 
-
-
-
 theorem centeredNeckLift_at_inverse_zero (N : EpsilonNeck g) {y : M}
     (hy : y ∈ N.carrier) :
     centeredNeckLift N (N.coordinate_inverse y).1 (N.coordinate_inverse y).2 0 = y := by
   rw [centeredNeckLift_zero]
   exact neck_coordinate_inverse N hy
-
-
-
 
 theorem centeredNeckInverse_at_center (N : EpsilonNeck g) {y : M}
     (hy : y ∈ N.carrier) :

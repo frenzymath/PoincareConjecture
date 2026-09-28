@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphere
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -50,8 +43,6 @@ variable {C : Type u} [TopologicalSpace C]
   {M : Type v} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def centeredScalarNormalizedCylinderDiffeomorph
     (a : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ C)
     (e : (C × ℝ) ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ M)
@@ -66,8 +57,6 @@ omit [IsManifold (𝓡 2) ∞ C] [IsManifold (𝓡 3) ∞ M] in
     (R : ℝ) (hR : 0 < R) (p : M) (z : RoundCylinderSpace) :
     centeredScalarNormalizedCylinderDiffeomorph a e R hR p z =
       e (a z.1, (e.symm p).2 + z.2 / Real.sqrt R) := rfl
-
-
 
 theorem exists_centered_scalarNormalized_roundCylinder
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 2 C)

@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.Implicit
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 open Set Function Filter
 open scoped Topology ContDiff
 
@@ -19,7 +8,6 @@ namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem exists_smooth_superlevel_chart {f : E → ℝ} {V : Set E} (hV : IsOpen V)
     (hf : ContDiffOn ℝ ∞ f V) {a : E} (ha : a ∈ V)
@@ -79,6 +67,5 @@ theorem exists_smooth_superlevel_chart {f : E → ℝ} {V : Set E} (hV : IsOpen 
       refine ⟨e.symm y, ⟨e.map_target hy, ?_⟩, e.right_inv hy⟩
       have heq : f (e.symm y) = y.1 := congrArg Prod.fst (e.right_inv hy)
       simpa [heq] using hcy
-
 
 end Poincare.Analysis

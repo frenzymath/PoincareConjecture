@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M08.ChartRecovery
 import PoincareConjecture.Proofs.M08.MinimizingCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

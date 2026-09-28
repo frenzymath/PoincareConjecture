@@ -3,21 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleRegion
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonReindex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem isFinitePLBallPair_convexHull_triangle (P : Polygon (ℝ × ℝ) 3)
     (hP : AffineIndependent ℝ P) :
@@ -37,16 +27,11 @@ theorem isFinitePLBallPair_convexHull_triangle (P : Polygon (ℝ × ℝ) 3)
     exact ⟨_, b.centroid_mem_interior_convexHull⟩
   simpa only [hV] using isFinitePLBallPair_convexHull_finset V hVi hne
 
-
-
-
 theorem isFinitePLBallPair_triangle (P : Polygon (ℝ × ℝ) 3)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
     IsFinitePLBallPair (ℝ × ℝ) (closure P.inside) (P.boundary ℝ) := by
   rw [← P.frontier_closure_inside hP hinj, P.closure_inside_triangle hP hinj]
   exact P.isFinitePLBallPair_convexHull_triangle (P.affineIndependent_triangle hP hinj)
-
-
 
 theorem isFinitePLBallPair_of_reindex {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {m n : ℕ} (P : Polygon E n) (e : Fin m ≃ Fin n)

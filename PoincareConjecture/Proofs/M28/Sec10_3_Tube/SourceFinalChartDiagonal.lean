@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.RelativeCo
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.UniformCompactScalar
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,11 +18,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
-
 
 theorem exists_source_final_chart_diagonal
     {epsilon C A : ℝ}

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointAngles
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedAttachmentFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem affine_functional_eq_coordinate_combination_of_zero
     (c : AffineBasis (Fin 3) ℝ Plane) (l : Plane →ᵃ[ℝ] ℝ) (hl : l (c 0) = 0) :
@@ -70,7 +61,6 @@ theorem coordinate_linear_ray (c : AffineBasis (Fin 3) ℝ Plane)
   have h := (c.coord i).linearMap_vsub (c j) (c 0)
   simpa only [vsub_eq_sub, AffineBasis.coord_apply] using h
 
-
 theorem coordinate_bend_normals_independent
     (c : AffineBasis (Fin 3) ℝ Plane) {α σ : ℝ} (hα : α ≠ 0) (hσ : σ ≠ 0) :
     LinearIndependent ℝ (![ (σ • c.coord 2).linear,
@@ -103,8 +93,6 @@ theorem coordinate_bend_normals_independent
     simp only [hr, h11, h21, mul_one, zero_add, one_mul, mul_zero] at he1
     exact hα ((mul_eq_zero.mp he1).resolve_left hσ)
 
-
-
 theorem exists_coordinate_bend_basis
     (c : AffineBasis (Fin 3) ℝ Plane) {α σ : ℝ} (hα : α ≠ 0) (hσ : σ ≠ 0) :
     ∃ d : AffineBasis (Fin 3) ℝ Plane, d 0 = c 0 ∧
@@ -127,8 +115,6 @@ variable {M : Type*} [TopologicalSpace M]
   {δ r : ℝ}
   (B : ∀ i : Fin S.count, (S.piece i).FixedStripBandFaces (K.graphCuts i) δ r r)
 
-
-
 theorem adjacent_top_normal_cut_pos
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :
     0 < ((B j).ambientEndpointTop false).linear (K.direction i.succ) := by
@@ -136,8 +122,6 @@ theorem adjacent_top_normal_cut_pos
   change 0 < ((B j).ambientTopFunctional (B j).faces.firstCell).linear (K.direction i.succ)
   rw [(B j).ambientTopFunctional_linear, hij]
   exact hp
-
-
 
 theorem exists_adjacent_top_coordinates
     (i j : Fin S.count) (hij : i.succ = j.castSucc) :
@@ -173,8 +157,6 @@ theorem exists_adjacent_top_coordinates
   field_simp
   ring
 
-
-
 theorem adjacent_top_carrier_coordinate_bend
     (i j : Fin S.count) (hij : i.succ = j.castSucc)
     (c : AffineBasis (Fin 3) ℝ Plane) (α β : ℝ) (hβ : 0 < β)
@@ -206,8 +188,6 @@ theorem adjacent_top_carrier_coordinate_bend
       exact mul_nonpos_of_nonneg_of_nonpos hβ.le h
   simp only [hm, neg_nonpos, neg_nonneg]
   exact coordinate_bend_sector_union c α z
-
-
 
 theorem adjacent_top_coordinate_ray_signs
     (i j : Fin S.count) (hij : i.succ = j.castSucc)

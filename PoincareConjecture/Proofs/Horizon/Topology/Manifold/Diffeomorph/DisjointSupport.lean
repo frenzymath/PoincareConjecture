@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Tactic.FinCases
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,15 +12,12 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M]
   {I : ModelWithCorners Real E H}
 
-
 theorem mapsTo_of_eqOn_compl (D : Diffeomorph I I M M ∞) {U : Set M}
     (hfix : ∀ x, x ∉ U → D x = x) : MapsTo D U U := by
   intro x hx
   by_contra hDx
   have heq : D x = x := D.injective (hfix (D x) hDx)
   exact hDx (heq.symm ▸ hx)
-
-
 
 theorem trans_eqOn_of_disjoint (D F : Diffeomorph I I M M ∞)
     {U V : Set M} (hUV : Disjoint U V)
@@ -37,14 +32,10 @@ theorem trans_eqOn_of_disjoint (D F : Diffeomorph I I M M ∞)
     change F (D x) = F x
     rw [hD x (fun hin => disjoint_left.mp hUV hin hx)]
 
-
 theorem trans_preserves {A : Type*} (D F : Diffeomorph I I M M ∞)
     (h : M → A) (hD : ∀ x, h (D x) = h x) (hF : ∀ x, h (F x) = h x)
     (x : M) : h ((D.trans F) x) = h x :=
   (hF (D x)).trans (hD x)
-
-
-
 
 theorem trans_compact_support_fin_two
     (D : Fin 2 → Diffeomorph I I M M ∞) (K U : Fin 2 → Set M)

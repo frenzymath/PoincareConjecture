@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalRimCompl
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalStripEndPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.TwoIntervalRimTraversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +12,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_original_rim_traversal_of_exterior_paths
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

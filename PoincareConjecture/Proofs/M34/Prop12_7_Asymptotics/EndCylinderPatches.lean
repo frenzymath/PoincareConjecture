@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndTranslation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,25 +10,17 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endCenteredCylinderMap (e : StandardCylindricalEnd g) (H : ℝ) :
     StandardCylinderSpace → StandardCapSpace := e.coordinate ∘ cylinderAxialTranslation H
 
-
-
 def endCenteredCylinderInverse (e : StandardCylindricalEnd g) (H : ℝ) :
     StandardCapSpace → StandardCylinderSpace := cylinderAxialTranslation (-H) ∘ e.inverse
-
-
 
 theorem endCenteredCylinderMap_contMDiffAt (e : StandardCylindricalEnd g) (H : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2 + H) :
     ContMDiffAt ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (endCenteredCylinderMap e H) z :=
   (end_coordinate_contMDiffAt e hz).comp z
     (cylinderAxialTranslation_contMDiff H).contMDiffAt
-
-
 
 def endCenteredCylinderPatch (e : StandardCylindricalEnd g)
     {L H : ℝ} (hL : 0 < L) (hH : L < H) (q : UnitTwoSphere) :

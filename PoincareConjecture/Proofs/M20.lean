@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03
 import PoincareConjecture.Proofs.M19
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Classification.Assembly
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m20CompactLocalFlowProvider_from_M03 :
     ∀ (n : ℕ) (N : Type u) [TopologicalSpace N] [T2Space N]
@@ -28,9 +19,6 @@ theorem m20CompactLocalFlowProvider_from_M03 :
       RicciFlowLocalTheory n N := by
   intro n N _ _ _ _ _ _
   exact ricciFlowLocalTheory (n := n) (M := N)
-
-
-
 
 theorem m20TwoDimensionalProvider_from_M19
     (hP : ∀ {N : Type u} [TopologicalSpace N]
@@ -51,75 +39,10 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem threeDimensionalAncientAndShrinkingSolitonClassification
     (P : ThreeDimensionalClassificationPredecessors.{u}) :
     ThreeDimensionalClassificationTheory (M := M) := by
   exact horizon_threeDimensionalAncientAndShrinkingSolitonClassification P
-
 
 theorem threeDimensionalClassificationTheory
     (P : ThreeDimensionalClassificationPredecessors.{u}) :

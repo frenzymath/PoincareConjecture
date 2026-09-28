@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,7 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
 
 abbrev PuncturedProjectiveSphere (p : RealProjectiveThree) :=
   {q : UnitThreeSphere // Quotient.mk' q ≠ p}
@@ -42,7 +29,6 @@ theorem isOpen_puncturedProjectiveSphere (p : RealProjectiveThree) :
   exact ((finite_singleton (-a)).insert a).isClosed.isOpen_compl
 
 namespace PuncturedProjectiveSphere
-
 
 def antipode {p : RealProjectiveThree} (q : PuncturedProjectiveSphere p) :
     PuncturedProjectiveSphere p :=
@@ -70,7 +56,6 @@ variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
   (S : StandardPuncturedProjectiveCover Q p U)
-
 
 def restrictedCover : PuncturedProjectiveSphere p → U :=
   fun q => ⟨S.cover q, S.image_eq.subset (mem_image_of_mem S.cover q.property)⟩
@@ -159,21 +144,16 @@ theorem restrictedCover_isClosedMap : IsClosedMap S.restrictedCover := by
   rw [he]
   exact hA.union (hA.preimage (PuncturedProjectiveSphere.continuous_antipode p))
 
-
 theorem restrictedCover_isCoveringMap : IsCoveringMap S.restrictedCover := by
   apply isCoveringMap_iff_isCoveringMapOn_univ.mpr
   exact S.restrictedCover_isClosedMap.isCoveringMapOn_of_isLocalHomeomorphOn
     (fun y _ => S.restrictedCover_finite_fiber y)
     S.restrictedCover_isLocalHomeomorph.isLocalHomeomorphOn
 
-
-
 theorem restrictedCover_isProperMap : IsProperMap S.restrictedCover :=
   isProperMap_iff_isClosedMap_and_compact_fibers.mpr
     ⟨S.restrictedCover_isLocalHomeomorph.continuous, S.restrictedCover_isClosedMap,
       fun y => (S.restrictedCover_finite_fiber y).isCompact⟩
-
-
 
 theorem isCompact_lift {K : Set Q} (hK : IsCompact K) (hKU : K ⊆ U) :
     IsCompact {q : UnitThreeSphere | Quotient.mk' q ≠ p ∧ S.cover q ∈ K} := by
@@ -196,8 +176,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem CapCertificate.exists_projective_covering (C : CapCertificate g)
     (hkind : C.model_kind = .puncturedProjective) :

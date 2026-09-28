@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,9 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {gamma : C1FreeLoopSpace (M := M)}
-
-
-
 
 def m64RawDiskOfC1 (D : LipschitzSpanningDisk g gamma) :
     M64RawSpanningDisk g (m64C1Boundary gamma) where
@@ -39,10 +25,6 @@ def m64RawDiskOfC1 (D : LipschitzSpanningDisk g gamma) :
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
-
-
 def m64C1DiskOfRaw (D : M64RawSpanningDisk g (m64C1Boundary gamma)) :
     LipschitzSpanningDisk g gamma where
   map := D.map
@@ -56,10 +38,6 @@ def m64C1DiskOfRaw (D : M64RawSpanningDisk g (m64C1Boundary gamma)) :
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
-
-
 def m64C1RawDiskEquiv :
     LipschitzSpanningDisk g gamma ≃ M64RawSpanningDisk g (m64C1Boundary gamma) where
   toFun := m64RawDiskOfC1
@@ -67,20 +45,11 @@ def m64C1RawDiskEquiv :
   left_inv := fun _ => rfl
   right_inv := fun _ => rfl
 
-
-
-
 theorem m64RawDiskOfC1_area (D : LipschitzSpanningDisk g gamma) :
     (m64RawDiskOfC1 D).area = D.area := rfl
 
-
-
-
 theorem m64C1DiskOfRaw_area (D : M64RawSpanningDisk g (m64C1Boundary gamma)) :
     (m64C1DiskOfRaw D).area = D.area := rfl
-
-
-
 
 theorem m64RawDiskAreaRange_c1 :
     m64RawDiskAreaRange g (m64C1Boundary gamma) =
@@ -91,10 +60,6 @@ theorem m64RawDiskAreaRange_c1 :
     exact ⟨m64C1DiskOfRaw D, hD⟩
   · rintro ⟨D, hD⟩
     exact ⟨m64RawDiskOfC1 D, hD⟩
-
-
-
-
 
 theorem m64RawFillingArea_c1 :
     m64RawFillingArea g (m64C1Boundary gamma) = fillingArea g gamma := by

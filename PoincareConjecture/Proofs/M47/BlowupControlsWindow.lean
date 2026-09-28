@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.FirstFailureWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem blowup_analytic_window_subset_overlap
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

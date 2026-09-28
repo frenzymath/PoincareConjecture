@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.Matching.Rescaling
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalMarkedProductConstruction
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.TurningFormNorm
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalFrame
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicTurning
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,10 +44,6 @@ private theorem connection_reparam_field
       CoordinateExponential.christoffelBilinear N.metric.euclideanCoefficients
         (gamma (phi t)) (deriv gamma (phi t)) (U (phi t))))
   simp only [map_smul, smul_apply, smul_add, smul_smul]
-
-
-
-
 
 theorem m64Intrinsic_normalized_boundary_reparam_connection
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)
@@ -138,9 +122,6 @@ theorem m64Intrinsic_normalized_boundary_reparam_connection
     change Real.sqrt (N.metric.euclideanCoefficients (eta t) _ _) =
       Real.sqrt (N.metric.euclideanCoefficients (intrinsicAnnulusBoundary radius (phi t)) _ _)
     rw [hp]
-
-
-
 
 theorem m64Intrinsic_normalized_boundary_turning_bound
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)

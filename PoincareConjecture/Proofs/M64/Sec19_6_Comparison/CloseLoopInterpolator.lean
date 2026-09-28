@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorHorizontalColumn
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformSampledPolygonCloseness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem m64_vertical_column_eq_slice {f : LoopPlane → M} {p : LoopPlane}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 3) f p) :
@@ -54,9 +42,6 @@ theorem m64_vertical_column_eq_slice {f : LoopPlane → M} {p : LoopPlane}
   rw [hd] at hc
   exact hc.symm
 
-
-
-
 theorem m64_pair_interpolator_contMDiffAt
     (gamma beta : C1FreeLoopSpace (M := M))
     {H : ℝ × (M × M) → M} {p : LoopPlane}
@@ -72,9 +57,6 @@ theorem m64_pair_interpolator_contMDiffAt
   exact hH.comp p (hp1.prodMk
     (((Proofs.M58.contMDiff_periodicFreeLoop gamma).contMDiffAt.comp p hp0).prodMk
       ((Proofs.M58.contMDiff_periodicFreeLoop beta).contMDiffAt.comp p hp0)))
-
-
-
 
 theorem m64_pair_interpolator_column_bounds
     (g : RiemannianMetric 3 M) (gamma beta : C1FreeLoopSpace (M := M))

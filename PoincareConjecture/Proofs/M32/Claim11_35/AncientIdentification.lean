@@ -1,18 +1,5 @@
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff ENNReal
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem m30AncientIdentification_scalarCurvature_eq
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval ⊤)) {κ : ℝ}
@@ -45,9 +29,6 @@ theorem m30AncientIdentification_scalarCurvature_eq
     (fun d : Σ g : RiemannianMetric 3 L.carrier.carrier, LeviCivitaData g =>
       d.2.scalarCurvature x) hdata
   exact hscalar
-
-
-
 
 theorem m30AncientIdentification_curvatureTensorNorm_eq
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval ⊤)) {κ : ℝ}

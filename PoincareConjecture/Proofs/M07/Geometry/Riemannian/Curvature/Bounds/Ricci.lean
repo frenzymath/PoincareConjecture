@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -53,8 +45,6 @@ private theorem curvatureTensor_eq_sectionalCurvature_mul_of_unit
     rw [he, mul_one]
     exact (div_mul_cancel₀ _ hzero).symm
 
-
-
 theorem abs_ricci_quadratic_le_of_abs_sectionalCurvature_le
     (D : LeviCivitaData g) (x : M) (K : ℝ)
     (hsec : ∀ u w : TangentSpace (𝓡 n) x, |D.sectionalCurvature x u w| ≤ K)
@@ -95,8 +85,6 @@ theorem abs_ricci_quadratic_le_of_abs_sectionalCurvature_le
         nsmul_eq_mul]
       ring
 
-
-
 theorem ricci_quadratic_lower_bound_of_abs_sectionalCurvature_le
     (D : LeviCivitaData g) (x : M) (K : ℝ)
     (hsec : ∀ u w : TangentSpace (𝓡 n) x, |D.sectionalCurvature x u w| ≤ K)
@@ -105,8 +93,6 @@ theorem ricci_quadratic_lower_bound_of_abs_sectionalCurvature_le
   have h := (abs_le.mp (D.abs_ricci_quadratic_le_of_abs_sectionalCurvature_le
     x K hsec v)).1
   linarith
-
-
 
 theorem ricci_quadratic_lower_bound_of_sectionalCurvature_lower_bound
     (D : LeviCivitaData g) (x : M) (K : ℝ)
@@ -145,7 +131,6 @@ theorem ricci_quadratic_lower_bound_of_sectionalCurvature_lower_bound
     _ ≤ ∑ i, D.curvatureTensor x v (b i) v (b i) :=
       Finset.sum_le_sum fun i _ => hterm i
     _ = D.ricci x v v := rfl
-
 
 theorem scalarCurvature_lower_bound_of_sectionalCurvature_lower_bound
     (D : LeviCivitaData g) (x : M) (K : ℝ)

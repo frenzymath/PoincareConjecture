@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M09.ScalarTimeDerivative
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_GuardedScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem ordinary_backward_scalar_le_four_inv_sq
     (hM04 : RicciFlowCurvatureTheory.{u})

@@ -11,14 +11,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hypersurface.Homoth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactImages
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactNeighborhood
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -87,9 +79,6 @@ private theorem terminal_distance_le_backward_of_nonnegative_operator
           simpa only [mfderiv_id, ContinuousLinearMap.id_apply, id_eq, one_pow, one_mul]
             using hinner z v) x y
   exact ENNReal.toReal_mono ((F.metric (-1)).edist_ne_top x y) hdist
-
-
-
 
 theorem exists_unitSlice_euclidean_umbilic_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

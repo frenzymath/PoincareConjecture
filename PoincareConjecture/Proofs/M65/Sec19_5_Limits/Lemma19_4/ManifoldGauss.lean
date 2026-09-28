@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ChartMetricRealization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +14,6 @@ variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
   {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
-
-
-
 
 theorem exists_chart_gauss_curvatureTensor
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

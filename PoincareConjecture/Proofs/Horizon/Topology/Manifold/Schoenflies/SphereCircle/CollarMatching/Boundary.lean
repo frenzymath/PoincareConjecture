@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.CollarMatching.Radial
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 private instance : Fact (Module.finrank Real Plane = 1 + 1) := ⟨by simp⟩
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 3)) = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_boundary_reparametrization
     (e : OpenPartialHomeomorph Plane S2)

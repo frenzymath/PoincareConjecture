@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FrameJetBounds
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +34,6 @@ theorem operator_eq_sum_rankOne {n : ℕ} (b : OrthonormalBasis (Fin n) ℝ E)
       congr 1
       ring
     _ = _ := by simp only [sum_apply, smul_apply]
-
 
 theorem norm_iteratedFDeriv_operator_le_of_components {n : ℕ}
     (b : OrthonormalBasis (Fin n) ℝ E) {F : P → E →L[ℝ] E}

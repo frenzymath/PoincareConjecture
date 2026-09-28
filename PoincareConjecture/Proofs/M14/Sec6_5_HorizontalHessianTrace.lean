@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.HessianTrace
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem sliceLaplacian_eq_horizontal_hessian_trace {T τ : ℝ}
     (q : (G.slices (T - τ)).Point) (f : G.Point → ℝ)
@@ -50,8 +40,6 @@ theorem sliceLaplacian_eq_horizontal_hessian_trace {T τ : ℝ}
     laplacian_eq_orthonormal_hessian_trace (G.leafwise.sliceConnection (T - τ))
       (fun r => f r.val) q hf (bs.toOrthonormalBasis hbs)
 
-
-
 theorem reducedLengthAt_slice_eq {T a τ : ℝ} (x : G.Point) :
     (fun q : (G.slices (T - τ)).Point => M14ReducedLengthAt G T a x q.val) =
       (fun q : (G.slices (T - τ)).Point => M14ReducedLengthValue G T a τ x q.val) := by
@@ -60,9 +48,6 @@ theorem reducedLengthAt_slice_eq {T a τ : ℝ} (x : G.Point) :
   rw [q.property]
   congr 1
   ring
-
-
-
 
 theorem reducedLengthLaplacian_eq_horizontal_hessian_trace {T a τ : ℝ}
     (x : G.Point) (q : (G.slices (T - τ)).Point)

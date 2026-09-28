@@ -1,19 +1,9 @@
-
-
-
 import Mathlib.Analysis.Calculus.DSlope
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Tactic.Module
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.ImplicitFunction.ParametricCoordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Local
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
@@ -25,7 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 noncomputable def capCorrection (f g : ℝ → E) (ε s : ℝ) : E :=
   dslope (dslope f 0) s ε + dslope (dslope g 0) (ε - s) ε
-
 
 noncomputable def curvedCapMap (f g : ℝ → E) (ε : ℝ) (q : ℝ × ℝ) : E :=
   f q.1 + g q.2 - f 0 + (q.1 * q.2) • capCorrection f g ε q.1
@@ -60,8 +49,6 @@ theorem curvedCapMap_hypotenuse (f g : ℝ → E) (hbase : g 0 = f 0) (ε s : �
   rw [hbase] at hg
   simp only [curvedCapMap, hK, smul_sub, hf, hg]
   abel
-
-
 
 theorem curvedCapMap_hypotenuse_affine (f g : ℝ → E) (hbase : g 0 = f 0)
     (ε t : ℝ) :
@@ -103,8 +90,6 @@ theorem contDiff_curvedCapMap {f g : ℝ → E}
   exact (((hf.comp hs).add (hg.comp ht)).sub contDiff_const).add
     ((hs.mul ht).smul ((contDiff_capCorrection hf hg).comp (contDiff_fst.prodMk hs)))
 
-
-
 theorem hasStrictFDerivAt_curvedCapMap_zero {f g : ℝ → E}
     (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
     (L : (ℝ × ℝ) ≃L[ℝ] E)
@@ -141,8 +126,6 @@ private theorem exists_two_vector_equiv
   change B.equivFun.symm ((ContinuousLinearEquiv.finTwoArrow ℝ ℝ).symm q) = _
   rw [Module.Basis.equivFun_symm_apply]
   simp [B, Fin.sum_univ_succ, coe_basisOfLinearIndependentOfCardEqFinrank]
-
-
 
 theorem exists_smooth_triangular_cap_coordinates
     {f g : ℝ → EuclideanSpace ℝ (Fin 2)}
@@ -198,8 +181,6 @@ theorem exists_smooth_triangular_cap_coordinates
     rw [hF]
     exact curvedCapMap_hypotenuse_affine f g hbase ε t
 
-
-
 theorem exists_smooth_triangular_caps
     {f g : ℝ → EuclideanSpace ℝ (Fin 2)}
     (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g) (hbase : g 0 = f 0)
@@ -218,8 +199,6 @@ theorem exists_smooth_triangular_caps
   obtain ⟨F, _, hF⟩ := hF ε hε hεδ
   exact ⟨F, hF⟩
 
-
-
 theorem exists_smooth_triangular_cap
     {f g : ℝ → EuclideanSpace ℝ (Fin 2)}
     (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g) (hbase : g 0 = f 0)
@@ -234,8 +213,6 @@ theorem exists_smooth_triangular_cap
       (∀ t : ℝ, F (t * ε, (1 - t) * ε) = (1 - t) • g ε + t • f ε) := by
   obtain ⟨δ, hδ, hc⟩ := exists_smooth_triangular_caps hf hg hbase hind hU hp
   exact ⟨δ / 2, by positivity, hc _ (by positivity) (by linarith)⟩
-
-
 
 theorem exists_smooth_triangular_caps_of_contDiffOn
     {f g : ℝ → EuclideanSpace ℝ (Fin 2)} {A B : Set ℝ}

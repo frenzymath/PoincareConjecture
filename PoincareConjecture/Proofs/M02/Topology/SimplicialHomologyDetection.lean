@@ -4,13 +4,6 @@ import Mathlib.Algebra.Category.ModuleCat.Colimits
 import Mathlib.Algebra.Module.ULift
 import Mathlib.LinearAlgebra.Span.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits Simplicial
@@ -18,7 +11,6 @@ open CategoryTheory Limits Simplicial
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem simplicial_values_eq_of_homology_eq
     (X : SSet.{u}) (n : Nat) (A : Type u) [AddCommGroup A]

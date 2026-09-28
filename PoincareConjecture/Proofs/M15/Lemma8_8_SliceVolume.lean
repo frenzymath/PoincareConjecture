@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Lemma8_8_SliceTransfer
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
-
-
 
 theorem actualBallCylinder_compact_slice_image_volume_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -57,8 +46,6 @@ theorem actualBallCylinder_compact_slice_image_volume_le
     (G.slices T).metricOnPoints (G.slices t.val).metricOnPoints hU
     (hV.image B.source_map_embedding.continuous) hsub (hf.of_le (by simp))
     (Real.exp_pos _) hbound
-
-
 
 theorem actualBallCylinder_compact_slice_buffer
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

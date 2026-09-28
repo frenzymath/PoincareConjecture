@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ConstantLift
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.BoundaryCurveLipschitz
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +15,8 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 def auxiliaryCircleFiber (P : M62.CircleProductData F circumference)
     (x : M) : ℝ → P.charts.Point := fun s => (x, P.circle.quotient s)
-
-
 
 theorem auxiliaryCircle_fiber_contMDiff
     (P : M62.CircleProductData F circumference) (x : M) :
@@ -40,8 +25,6 @@ theorem auxiliaryCircle_fiber_contMDiff
   let := P.circle.chartedSpace
   exact P.charts.from_product_smooth.comp
     (contMDiff_const.prodMk P.circle.quotient_smooth)
-
-
 
 theorem auxiliaryCircle_fiber_velocity_split
     (P : M62.CircleProductData F circumference) (x : M) (s : ℝ) :
@@ -66,8 +49,6 @@ theorem auxiliaryCircle_fiber_velocity_split
       ((contMDiff_snd.comp P.charts.to_product_smooth).mdifferentiableAt (by simp)) hF 1
     exact h.symm
 
-
-
 theorem auxiliaryCircle_fiber_speed
     (P : M62.CircleProductData F circumference) (time : ℝ) (x : M) (s : ℝ) :
     (P.flow.metric time).tangentNorm (auxiliaryCircleFiber P x s)
@@ -82,8 +63,6 @@ theorem auxiliaryCircle_fiber_speed
   rw [P.circle.metric_quotient]
   norm_num
 
-
-
 theorem auxiliaryCircle_fiber_edist_le
     (P : M62.CircleProductData F circumference) (time : ℝ) (x : M) (s t : ℝ) :
     (P.flow.metric time).edist (x, P.circle.quotient s) (x, P.circle.quotient t) ≤
@@ -92,8 +71,6 @@ theorem auxiliaryCircle_fiber_edist_le
     ((auxiliaryCircle_fiber_contMDiff P x).of_le (by simp)) (by norm_num : (0 : ℝ) ≤ 1)
     (fun r => (auxiliaryCircle_fiber_speed P time x r).le) s t
   simpa only [auxiliaryCircleFiber, ENNReal.ofReal_one, one_mul] using h
-
-
 
 theorem auxiliaryCircle_product_edist_le
     (P : M62.CircleProductData F circumference) (time : ℝ) (x y : M) (s t : ℝ) :

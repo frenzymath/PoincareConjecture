@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingAnnulusDivergen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusProductMovingEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusPeriodicVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64ModulusAnnulusEnergy_intrinsic_boundary_first_variation
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)
@@ -114,10 +99,6 @@ theorem m64ModulusAnnulusEnergy_intrinsic_boundary_first_variation
   have hhor := m64Annulus_integral_horizontal_derivative_of_contDiffOn hU hdom (hJ 0)
   have hver := m64Annulus_integral_vertical_derivative_of_contDiffOn hU hdom (hJ 1)
   simpa only [e, EuclideanSpace.basisFun_apply, hhor, hver] using hd
-
-
-
-
 
 theorem m64Annulus_periodic_first_variation_of_modulus_minimum
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

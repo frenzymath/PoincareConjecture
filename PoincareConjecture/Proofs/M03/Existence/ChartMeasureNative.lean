@@ -4,17 +4,6 @@ import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Measure.WithDensity
 import Mathlib.MeasureTheory.Integral.IntegrableOn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -30,11 +19,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelS
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
 
-
 def weightedSourceMeasure (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ)) :
     Measure ModelE :=
   (volume.restrict e.target).withDensity (fun y => ENNReal.ofReal (φ (e.symm y)))
-
 
 def weightedChartMeasure (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ)) : Measure M :=
   (weightedSourceMeasure e φ).map e.symm
@@ -84,7 +71,6 @@ theorem weightedChartMeasure_finite (e : OpenPartialHomeomorph M ModelE) (φ : C
   letI := weightedSourceMeasure_finite e φ hcompact hsupport hbound
   exact Measure.isFiniteMeasure_map _ _
 
-
 theorem weightedChartMeasure_open_ne_zero (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ))
     (hsupport : tsupport φ ⊆ e.source) {U : Set M} (hU : IsOpen U)
     {x : M} (hxU : x ∈ U) (hpos : 0 < φ x) : weightedChartMeasure e φ U ≠ 0 := by
@@ -113,7 +99,6 @@ theorem weightedChartMeasure_open_ne_zero (e : OpenPartialHomeomorph M ModelE) (
   exact hVopen.measure_ne_zero volume hVnonempty hVnull
 
 variable {iota : Type v} [Finite iota]
-
 
 theorem sumWeightedChartMeasure_finite
     (e : iota → OpenPartialHomeomorph M ModelE) (φ : iota → C(M, ℝ))

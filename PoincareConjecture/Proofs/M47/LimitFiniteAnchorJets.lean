@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteAnchorCoefficients
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCompactCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +32,6 @@ private local instance finiteAnchorJetsCharts : ChartedSpace E G.limit.carrier.c
   G.limit.carrier.chartedSpace
 private local instance finiteAnchorJetsManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_exists_original_anchor_bounds (P : M47Predecessors.{u})
     (c : ℝ) (hc : c ∈ J) (j : ℕ)

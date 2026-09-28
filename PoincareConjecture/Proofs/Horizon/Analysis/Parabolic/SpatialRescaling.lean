@@ -5,14 +5,6 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +14,6 @@ open scoped ContDiff
 namespace Poincare.Parabolic
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 lemma fderiv_fderiv_comp_smul (f : E → ℝ) (r : ℝ) (x : E) :
     fderiv ℝ (fderiv ℝ (fun y ↦ f (r • y))) x =
@@ -34,8 +25,6 @@ lemma fderiv_fderiv_comp_smul (f : E → ℝ) (r : ℝ) (x : E) :
   rw [h, fderiv_const_smul_field]
   simp only [Pi.smul_apply, fderiv_comp_smul, smul_smul, pow_two]
 
-
-
 lemma norm_fderiv_fderiv_le_of_rescaled (f : E → ℝ) {r B : ℝ} (hr : 0 < r)
     (hbound : ‖fderiv ℝ (fderiv ℝ (fun y ↦ f (r • y))) 0‖ ≤ B) :
     ‖fderiv ℝ (fderiv ℝ f) 0‖ ≤ B / r ^ 2 := by
@@ -44,14 +33,11 @@ lemma norm_fderiv_fderiv_le_of_rescaled (f : E → ℝ) {r B : ℝ} (hr : 0 < r)
   apply (le_div_iff₀ (sq_pos_of_pos hr)).mpr
   simpa only [mul_comm] using hbound
 
-
-
 lemma smul_mem_ball (x : E) {r R : ℝ} (hr : 0 < r) (hx : x ∈ Metric.ball 0 R) :
     r • x ∈ Metric.ball 0 (r * R) := by
   simp only [Metric.mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs,
     abs_of_pos hr] at hx ⊢
   exact mul_lt_mul_of_pos_left hx hr
-
 
 lemma contDiffOn_spatially_rescaled {f : E → ℝ → ℝ} {r R : ℝ} (hr : 0 < r)
     (hf : ContDiffOn ℝ ∞ (fun z : E × ℝ ↦ f z.1 z.2)
@@ -62,8 +48,6 @@ lemma contDiffOn_spatially_rescaled {f : E → ℝ → ℝ} {r R : ℝ} (hr : 0 
       (Metric.ball 0 R ×ˢ Set.Ioi 0) :=
     (contDiffOn_fst.const_smul r).prodMk contDiffOn_snd
   exact hf.comp hmap (fun z hz ↦ ⟨smul_mem_ball z.1 hr hz.1, hz.2⟩)
-
-
 
 lemma hasDerivAt_spatially_rescaled_heat {n : ℕ}
     (f : EuclideanSpace ℝ (Fin n) → ℝ → ℝ)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.WorldlineControl
 import PoincareConjecture.Proofs.M30.Generalized.Gluing
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem eventually_controlled_cylinders_of_scalar_worldlines
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}
@@ -123,9 +110,6 @@ theorem eventually_controlled_cylinders_of_scalar_worldlines
   intro h₀ x hx
   rw [hE, hzero', hp x (hbuffer (subset_closure hx))]
 
-
-
-
 theorem exists_radius_dependent_controlled_cylinders
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}
     {epsilon canonicalConstant kappa r₀ mu : ℝ}
@@ -140,8 +124,6 @@ theorem exists_radius_dependent_controlled_cylinders
     mul_nonneg (by norm_num) (zero_le_one.trans (le_max_right _ _)), ?_⟩
   exact eventually_controlled_cylinders_of_scalar_worldlines hC H A hA
     (by linarith) htau hworld
-
-
 
 theorem shortControlledBlowupHypotheses_of_terminal_scalar_bound
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_search_bottom_cap_capture_radius
     (g0 : StandardInitialMetric) {A K c : ℝ} (hA : 0 ≤ A) (hK : 0 < K) (hc : 0 < c) :

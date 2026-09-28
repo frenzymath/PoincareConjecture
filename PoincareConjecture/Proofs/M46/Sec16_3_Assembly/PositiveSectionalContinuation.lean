@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSectionalLowerBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
 set_option maxHeartbeats 1200000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_initial_sectional_lower [CompactSpace M]
     (F : RicciFlow 3 M J) {a : ℝ} (ha : a ∈ J)
@@ -67,8 +58,6 @@ theorem exists_initial_sectional_lower [CompactSpace M]
     intro z hz
     exact isEmptyElim (⟨z, hz⟩ : C)
 
-
-
 def zeroBasedOrdinaryRestriction (F : RicciFlow 3 M J)
     {a b : ℝ} (hab : a < b) (hI : Icc a b ⊆ J) : RicciFlow 3 M (Icc 0 (b - a)) where
   metric s := F.metric (a + s)
@@ -90,8 +79,6 @@ def zeroBasedOrdinaryRestriction (F : RicciFlow 3 M J)
       (fun t ht => hI ⟨by linarith [ht.1], by linarith [ht.2]⟩)
     convert! h using 1
     simp only [mul_one]
-
-
 
 theorem sectional_lower_on_closed_interval
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]
@@ -117,8 +104,6 @@ theorem sectional_lower_on_closed_interval
   change c * metricGram (F.metric (a + (t - a))) y u v ≤
     (F.connection (a + (t - a))).curvatureTensor y u v u v at h
   rwa [heq] at h
-
-
 
 theorem positive_sectional_uniform_on_component
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]

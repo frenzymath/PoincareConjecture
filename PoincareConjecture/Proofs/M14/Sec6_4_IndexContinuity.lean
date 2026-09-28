@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_IndexRegularity
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeResidual
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -25,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem gaugeHorizontalJacobiPairResidual_contDiffOn (b : G.gaugeCover.index)
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -90,9 +77,6 @@ theorem gaugeHorizontalJacobiPairResidual_contDiffOn (b : G.gaugeCover.index)
   intro s hs
   exact horizontalJacobiPairResidual_gauge R b hCoordinates hscalar W hM04 x₀ hac hsub
     hβ hrec hclock hs (f s) (g s) (d s) (w s) (hfY s hs) (hgP s hs) (hdDP s hs) (hwZ s hs)
-
-
-
 
 theorem horizontalJacobiPairResidual_contDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -18,13 +9,11 @@ namespace PoincareConjecture
 variable {n : Nat} {pieces : Fin n -> GeneralizedSliceCarrier.{u}}
   {A C : GeneralizedSliceCarrier.{u}}
 
-
 def SmoothDisjointUnionData.toAssembly (U : SmoothDisjointUnionData pieces C) :
     SmoothFiniteConnectedSumAssembly pieces C where
   initial := C
   disjoint_union := U
   operations := Relation.ReflTransGen.refl
-
 
 def SmoothFiniteConnectedSumAssembly.tail (S : SmoothFiniteConnectedSumAssembly pieces A)
     (h : SmoothConnectedSumStep A C) : SmoothFiniteConnectedSumAssembly pieces C where
@@ -32,14 +21,12 @@ def SmoothFiniteConnectedSumAssembly.tail (S : SmoothFiniteConnectedSumAssembly 
   disjoint_union := S.disjoint_union
   operations := Relation.ReflTransGen.tail S.operations h
 
-
 def SmoothFiniteConnectedSumAssembly.trans (S : SmoothFiniteConnectedSumAssembly pieces A)
     (h : Relation.ReflTransGen SmoothConnectedSumStep A C) :
     SmoothFiniteConnectedSumAssembly pieces C where
   initial := S.initial
   disjoint_union := S.disjoint_union
   operations := Relation.ReflTransGen.trans S.operations h
-
 
 def SmoothDisjointUnionData.reindexM38 {m : Nat}
     (U : SmoothDisjointUnionData pieces C) (e : Equiv (Fin m) (Fin n)) :
@@ -52,17 +39,12 @@ def SmoothDisjointUnionData.reindexM38 {m : Nat}
     (fun h => hij (e.injective h))
   cover := (e.surjective.iUnion_comp U.region).trans U.cover
 
-
 def SmoothFiniteConnectedSumAssembly.reindexM38 {m : Nat}
     (S : SmoothFiniteConnectedSumAssembly pieces C) (e : Equiv (Fin m) (Fin n)) :
     SmoothFiniteConnectedSumAssembly (fun i => pieces (e i)) C where
   initial := S.initial
   disjoint_union := S.disjoint_union.reindexM38 e
   operations := S.operations
-
-
-
-
 
 theorem smoothConnectedSumChain_of_finset_erase
     {iota : Type v} [DecidableEq iota]
@@ -83,7 +65,6 @@ theorem smoothConnectedSumChain_of_finset_erase
         (ih (t.erase i) (Finset.erase_ssubset hi) ((Finset.erase_subset i t).trans ht))
   exact aux cuts le_rfl
 
-
 def SmoothDisjointUnionData.assembleFinsetErasing
     {iota : Type v} [DecidableEq iota]
     (stage : Finset iota -> GeneralizedSliceCarrier.{u}) (cuts : Finset iota)
@@ -94,7 +75,6 @@ def SmoothDisjointUnionData.assembleFinsetErasing
     SmoothFiniteConnectedSumAssembly pieces (stage ∅) :=
   U.toAssembly.trans (smoothConnectedSumChain_of_finset_erase stage cuts next)
 
-
 def SmoothFiniteConnectedSumAssembly.transFinsetErasing
     {iota : Type v} [DecidableEq iota]
     (stage : Finset iota -> GeneralizedSliceCarrier.{u}) (cuts : Finset iota)
@@ -104,8 +84,6 @@ def SmoothFiniteConnectedSumAssembly.transFinsetErasing
         SmoothConnectedSumStep (stage s) (stage (s.erase i))) :
     SmoothFiniteConnectedSumAssembly pieces (stage ∅) :=
   S.trans (smoothConnectedSumChain_of_finset_erase stage cuts next)
-
-
 
 theorem smoothConnectedSumChain_of_finite_set
     {iota : Type v} (stage : Set iota -> GeneralizedSliceCarrier.{u})
@@ -123,7 +101,6 @@ theorem smoothConnectedSumChain_of_finite_set
       exact ⟨i, hi, by simpa only [Finset.coe_erase] using hstep⟩)
   simpa only [Set.Finite.coe_toFinset, Finset.coe_empty] using hchain
 
-
 def SmoothDisjointUnionData.assembleFiniteSet
     {iota : Type v} (stage : Set iota -> GeneralizedSliceCarrier.{u})
     (cuts : Set iota) (hfinite : cuts.Finite)
@@ -132,7 +109,6 @@ def SmoothDisjointUnionData.assembleFiniteSet
       ∃ i ∈ s, SmoothConnectedSumStep (stage s) (stage (s \ {i}))) :
     SmoothFiniteConnectedSumAssembly pieces (stage ∅) :=
   U.toAssembly.trans (smoothConnectedSumChain_of_finite_set stage cuts hfinite next)
-
 
 def SmoothFiniteConnectedSumAssembly.transFiniteSet
     {iota : Type v} (stage : Set iota -> GeneralizedSliceCarrier.{u})

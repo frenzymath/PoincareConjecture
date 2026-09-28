@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.RegularRadius
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_greatest_punctured_radius
     {X : Type*} [MetricSpace X] (p : X) (P : X → Prop)
@@ -49,8 +40,6 @@ theorem exists_greatest_punctured_radius
   · intro a ha haR hP
     exact le_csSup hbounded ⟨ha, haR, hP⟩
 
-
-
 theorem exists_maximal_regular_radius_function
     {X : Type*} [MetricSpace X]
     (hX : Poincare.Alexandrov.CurvatureGEnegOne X)
@@ -75,8 +64,6 @@ theorem exists_maximal_regular_radius_function
       hX hgeo hpacking hc0 hc1 p)
   choose b hb hcap hascent hmax using hp
   exact ⟨b, fun p => ⟨hb p, hcap p⟩, hascent, hmax⟩
-
-
 
 theorem exists_maximal_regular_radius_finite_punctured_cover
     {X : Type*} [MetricSpace X]

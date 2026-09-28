@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.SphereTwoBallCylinder
 import PoincareConjecture.Proofs.M38.UniformCylinderEnds
 import PoincareConjecture.Proofs.M38.CylinderReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,11 +12,9 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def sphereTwoBallEndCoefficient (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) (b r : ℝ) (w : UnitTwoSphere) : ℝ :=
   r * b * ‖L ((spherePoleDirection a L).symm w).val‖ / 4
-
 
 theorem sphereTwoBallEndCoefficient_pos (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) {b r : ℝ}
@@ -33,7 +23,6 @@ theorem sphereTwoBallEndCoefficient_pos (a : UnitThreeSphere)
   exact div_pos (mul_pos (mul_pos hr hb)
     (norm_pos_iff.mpr (linearSphereVector_ne_zero L ((spherePoleDirection a L).symm w))))
       (by norm_num)
-
 
 theorem sphereTwoBallEndCoefficient_smooth (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) (b r : ℝ) :
@@ -52,16 +41,12 @@ theorem sphereTwoBallEndCoefficient_smooth (a : UnitThreeSphere)
         w hL.contMDiffAt
   exact ((contDiff_const.mul contDiff_id).div_const 4).contMDiff.comp hnorm
 
-
 @[simp] theorem sphereTwoBallEndCoefficient_apply (a : UnitThreeSphere)
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) (b r : ℝ) (z : UnitTwoSphere) :
     sphereTwoBallEndCoefficient a L b r (spherePoleDirection a L z) =
       r * b * ‖L z.val‖ / 4 := by
   unfold sphereTwoBallEndCoefficient
   rw [Diffeomorph.symm_apply_apply]
-
-
-
 
 theorem exists_alignedSphereTwoBallCylinder
     (B₀ B₁ : SurgeryBallEmbedding sphereCarrier.{u})

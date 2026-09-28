@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTube
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex Topology
 
@@ -21,8 +13,6 @@ local notation "C3" => (P2 × ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
-
 
 theorem PairedCircleBlockData.exists_cyclic_map
     (D : OrdinaryIntervalMarkedModel old i) [Fintype D.complex.faces]
@@ -177,8 +167,6 @@ theorem PairedCircleBlockData.exists_cyclic_map
   · rw [htime.1, htime.2] at hfib
     exact hfib
 
-
-
 theorem OrdinaryIntervalMarkedModel.exists_signed_circle_tube
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R)
     {m : ℕ} (P : Polygon V2 (m + 3)) (hP : P.HasSimplicialEdges)
@@ -212,8 +200,6 @@ theorem OrdinaryIntervalMarkedModel.exists_signed_circle_tube
   have hN := himage.subset (mem_image_of_mem sigma hx)
   have hsub := space_subset_of_le (D.complex.barycentricNeighborhood_le (D.marks (.inr 2))) hN
   exact D.complex.barycentricSubdivision_isSubdivision.space_eq ▸ hsub
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_paired_circle_polygons
     (old : OrdinaryDoubleCurveModel e f R) {i : old.Index}
@@ -263,8 +249,6 @@ theorem OrdinaryDoubleCurveModel.exists_paired_circle_polygons
     fin_cases j
     · exact hPs
     · exact hQpiece
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_identity_circle_tube
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R)

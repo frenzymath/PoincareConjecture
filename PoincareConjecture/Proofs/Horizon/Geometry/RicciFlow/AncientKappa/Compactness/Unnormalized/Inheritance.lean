@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Preservation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Assembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +21,6 @@ variable (C : ℕ → FlowCarrier.{0} 3)
   (K : ∀ k, AncientKappaSolution 3 (C k).carrier) (p : ∀ k, (C k).carrier)
   (G : AncientPointedGeometricConvergence C (fun k t => (K k).flow.metric (t - 1)) p 1)
 
-
-
 theorem interiorLimit_nonnegativeCurvatureOperator :
     ∀ t : ℝ, t < 1 → ∀ x : G.limitCarrier.carrier,
       (G.limitFlow.connection t).NonnegativeCurvatureOperator x := by
@@ -47,8 +35,6 @@ theorem interiorLimit_nonnegativeCurvatureOperator :
     change t < 1 at ht
     exact Eventually.of_forall fun k x =>
       (K k).nonnegative_curvature_operator (t - 1) (by linarith) x
-
-
 
 theorem interiorLimit_complete
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -79,8 +65,6 @@ theorem interiorLimit_complete
   let W : PointedGeometricConvergence H.sequence :=
     G.window F (ha.trans hb) hb1.le 0 hsub
   exact W.complete_interior hcomplete t (htw (mem_singleton t))
-
-
 
 theorem exists_complete_nonnegative_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors)

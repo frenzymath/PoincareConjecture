@@ -1,14 +1,5 @@
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M60
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [MeasurableSpace E] [BorelSpace E] [FiniteDimensional ℝ E]
   (μ : Measure E) [Measure.IsAddHaarMeasure μ]
-
-
 
 theorem integrableOn_comp_smul_iff {F : Type*} [NormedAddCommGroup F]
     (f : E → F) (S : Set E) {c : ℝ} (hc : c ≠ 0) :
@@ -41,8 +30,6 @@ theorem integrableOn_comp_smul_iff {F : Type*} [NormedAddCommGroup F]
   simp only [IntegrableOn, Measure.restrict_smul,
     integrable_smul_measure hpos ENNReal.ofReal_ne_top] at hi
   exact hi.symm
-
-
 
 theorem ae_comp_smul {p : E → Prop} (hp : ∀ᵐ x ∂μ, p x) {c : ℝ} (hc : c ≠ 0) :
     ∀ᵐ x ∂μ, p (c • x) := by

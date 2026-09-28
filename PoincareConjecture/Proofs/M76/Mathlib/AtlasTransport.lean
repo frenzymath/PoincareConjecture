@@ -1,15 +1,5 @@
 import Mathlib.Geometry.Manifold.IsManifold.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,8 +8,6 @@ namespace Homeomorph
 
 variable {H M N : Type*} [TopologicalSpace H] [TopologicalSpace M]
   [TopologicalSpace N]
-
-
 
 theorem pullback_chart_transition (e : M ≃ₜ N) (c d : OpenPartialHomeomorph N H) :
     (e.transOpenPartialHomeomorph c).symm.trans (e.transOpenPartialHomeomorph d) =
@@ -38,16 +26,12 @@ theorem pullback_chart_transition (e : M ≃ₜ N) (c d : OpenPartialHomeomorph 
 
 variable [ChartedSpace H N]
 
-
-
 @[instance_reducible]
 def pullbackChartedSpace (e : M ≃ₜ N) : ChartedSpace H M where
   atlas := e.transOpenPartialHomeomorph '' atlas H N
   chartAt x := e.transOpenPartialHomeomorph (chartAt H (e x))
   mem_chart_source x := mem_chart_source H (e x)
   chart_mem_atlas x := ⟨chartAt H (e x), chart_mem_atlas H (e x), rfl⟩
-
-
 
 theorem hasGroupoid_pullbackChartedSpace (e : M ≃ₜ N) (G : StructureGroupoid H)
     [HasGroupoid N G] :
@@ -58,8 +42,6 @@ theorem hasGroupoid_pullbackChartedSpace (e : M ≃ₜ N) (G : StructureGroupoid
   rintro _ _ ⟨c, hc, rfl⟩ ⟨d, hd, rfl⟩
   rw [e.pullback_chart_transition]
   exact G.compatible hc hd
-
-
 
 theorem isManifold_pullbackChartedSpace
     {𝕜 E : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E]

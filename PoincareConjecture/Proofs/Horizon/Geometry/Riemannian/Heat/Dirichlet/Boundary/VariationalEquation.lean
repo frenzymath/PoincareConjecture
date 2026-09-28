@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.DivergenceEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -158,8 +152,6 @@ private theorem weakSolution_divergence_compact
   dsimp only
   rw [show h (e z) = φ z from EnergyTest.ofCoordinates_apply e hei φ hφ hc hs (hKs hz)]
   ring
-
-
 
 theorem weakSolution_divergence_local
     (e : OpenPartialHomeomorph E M)

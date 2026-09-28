@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierDecoder
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianFourier
 import PoincareConjecture.Proofs.M03.Existence.SpectralHeatNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory AddCircle Filter
@@ -50,9 +39,6 @@ private theorem periodicHeatWeight_bound {τ t : ℝ} (hτ : 0 < τ) (ht : τ �
   rw [mul_one_div, le_div_iff₀ hspos]
   simpa only [mul_comm] using hb
 
-
-
-
 theorem memℓp_periodicHeatWeight {t : ℝ} (ht : 0 < t) :
     Memℓp (fun n : ℤ =>
       (Real.exp (-(2 * Real.pi * (n : ℝ) / L) ^ 2 * t) : ℂ)) 2 := by
@@ -61,18 +47,12 @@ theorem memℓp_periodicHeatWeight {t : ℝ} (ht : 0 < t) :
   rw [Complex.norm_real, Real.norm_eq_abs, abs_of_pos (Real.exp_pos _)]
   exact periodicHeatWeight_bound ht le_rfl n
 
-
-
-
 noncomputable def periodicL2Heat (t : ℝ) (ht : 0 < t) :
     Lp ℂ 2 (haarAddCircle (T := L)) →L[ℂ] C(AddCircle L, ℂ) :=
   (weightedFourier ⟨fun n : ℤ =>
     (Real.exp (-(2 * Real.pi * (n : ℝ) / L) ^ 2 * t) : ℂ),
     memℓp_periodicHeatWeight ht⟩).comp
       fourierBasis.repr.toContinuousLinearEquiv.toContinuousLinearMap
-
-
-
 
 theorem periodicL2Heat_eq_gaussian (t : ℝ) (ht : 0 < t)
     (f : C(AddCircle L, ℂ)) :
@@ -119,9 +99,6 @@ theorem periodicL2Heat_eq_gaussian (t : ℝ) (ht : 0 < t)
     (by rintro g ⟨n, rfl⟩; exact hmode n)
   exact congrArg (fun B : C(AddCircle L, ℂ) →L[ℂ] C(AddCircle L, ℂ) => B f) hAG
 
-
-
-
 theorem periodicL2Heat_norm_le {τ t : ℝ} (hτ : 0 < τ) (ht : τ ≤ t)
     (u : Lp ℂ 2 (haarAddCircle (T := L))) :
     ‖periodicL2Heat t (lt_of_lt_of_le hτ ht) u‖ ≤
@@ -147,9 +124,6 @@ theorem periodicL2Heat_norm_le {τ t : ℝ} (hτ : 0 < τ) (ht : τ ≤ t)
   exact (norm_weightedFourier_le w (fourierBasis.repr u)).trans
     (by simpa only [LinearIsometryEquiv.norm_map] using
       mul_le_mul_of_nonneg_right hw (norm_nonneg (fourierBasis.repr u)))
-
-
-
 
 theorem tendsto_periodicGaussianHeat_of_tendsto_L2 {ι : Type*} {l : Filter ι}
     {times : ι → ℝ} {t : ℝ} (ht : 0 < t) (htimes : Tendsto times l (𝓝 t))

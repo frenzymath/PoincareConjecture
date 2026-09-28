@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCutoffJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M60
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 def suCutoffError {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
     (i j : Fin 2) (x : Plane) : E :=
@@ -29,8 +18,6 @@ def suCutoffError {E : Type*} [AddCommGroup E] [Module ℝ E]
     (fderiv ℝ χ x (EuclideanSpace.single i 1) • p j x +
       fderiv ℝ (fun y => fderiv ℝ χ y (EuclideanSpace.single i 1)) x
         (EuclideanSpace.single j 1) • u x)
-
-
 
 theorem suCutoffHessian_eq_smul_add_error {E : Type*} [AddCommGroup E] [Module ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
@@ -49,9 +36,6 @@ private theorem trace_sq {E : Type*} [NormedAddCommGroup E] (H : Fin 2 → Fin 2
   simp only [Fin.sum_univ_two]
   have h := norm_add_sq (H 0 0) (H 1 1)
   nlinarith [sq_nonneg ‖H 0 1‖, sq_nonneg ‖H 1 0‖]
-
-
-
 
 theorem suCutoffError_square_bound {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
@@ -91,8 +75,6 @@ theorem suCutoffError_square_bound {E : Type*} [NormedAddCommGroup E] [NormedSpa
       Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm i j
     _ = _ := by simp only [Fin.sum_univ_two]; ring
 
-
-
 theorem suCutoffColumn_square_bound {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (χ : Plane → ℝ) (u : Plane → E) (p : Fin 2 → Plane → E)
     {N : ℝ} (hN : 0 ≤ N) (x : Plane) (hχ : ‖χ x‖ ≤ 1)
@@ -111,9 +93,6 @@ theorem suCutoffColumn_square_bound {E : Type*} [NormedAddCommGroup E] [NormedSp
     exact h.trans (by nlinarith)
   have h := Finset.sum_le_sum (s := Finset.univ) fun i _ => ht i
   exact h.trans_eq (by simp only [Fin.sum_univ_two]; ring)
-
-
-
 
 theorem suCutoff_trace_residual_bound {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (H A R : Fin 2 → Fin 2 → E) (f : E) {c δ : ℝ}

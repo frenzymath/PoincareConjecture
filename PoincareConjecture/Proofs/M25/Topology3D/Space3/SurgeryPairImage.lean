@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryReplacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D.SurgeryCapProfile
-
 
 noncomputable def replacementMap (P : SurgeryCapProfile)
     (ψ : UnitTwoSphere × ℝ → E3)
@@ -28,8 +17,6 @@ noncomputable def replacementMap (P : SurgeryCapProfile)
   surgeryReplacementMap P.horizontal P.vertical P.horizontal_smooth P.vertical_smooth
     (fun z => (P.horizontal_pos z).ne') (fun x => (P.vertical_pos x).ne')
     ψ R e T t sigma r k l
-
-
 
 theorem replacementMap_range (P : SurgeryCapProfile)
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) (t : ℝ)
@@ -77,8 +64,6 @@ theorem replacementMap_range (P : SurgeryCapProfile)
     {q : UnitTwoSphere | 0 ≤ (heightCoordinates (q : E3)).2} = _
   rw [← image_image (fun p : UnitTwoSphere => ψ (p, 0)),
     surgeryNorthChart_image_hemisphere R e hRball]
-
-
 
 theorem capMap_old_surface_source (P : SurgeryCapProfile)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

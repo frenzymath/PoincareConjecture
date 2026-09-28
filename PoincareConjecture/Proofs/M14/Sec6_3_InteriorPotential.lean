@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InteriorConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,13 +13,8 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (x : M)
 
-
-
 noncomputable def chartActionScalar (z : ℝ × EuclideanSpace ℝ (Fin n)) : ℝ :=
   (F.connection (T - z.1 ^ 2)).scalarCurvature ((extChartAt (𝓡 n) x).symm z.2)
-
-
-
 
 theorem chartActionScalar_contDiffOn
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ}
@@ -46,9 +32,6 @@ theorem chartActionScalar_contDiffOn
   exact ((hM04.scalar_regular n M J F).comp (ht.prodMk hq)
     (fun z hz => ⟨htime z.1 hz.1, mem_univ _⟩)).contDiffOn
 
-
-
-
 theorem chartActionPotential_spatialWithin_eq
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ}
     (htime : ∀ r ∈ C, T - r ^ 2 ∈ J) {s : ℝ} (hs : s ∈ C) (hnear : C ∈ 𝓝 s)
@@ -65,9 +48,6 @@ theorem chartActionPotential_spatialWithin_eq
       ((2 * s ^ 2) • M08.spatialWithinFDeriv C (extChartAt (𝓡 n) x).target
         (chartActionScalar F T x) (s, q)) q := hR.const_smul (2 * s ^ 2)
   rw [hP.unique hscaled, M08.spatialWithinFDeriv_eq_spatialFDeriv hU _ hnear hq]
-
-
-
 
 theorem chartActionPotential_spatialWithin_twice_eq
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ} (hC : UniqueDiffOn ℝ C)
@@ -95,9 +75,6 @@ theorem chartActionPotential_spatialWithin_twice_eq
     exact chartActionPotential_spatialWithin_eq F T x hM04 htime hs hnear hy
   exact hP.unique (((hD.differentiableAt (by simp)).hasFDerivAt.const_smul
     (2 * s ^ 2)).congr_of_eventuallyEq heq)
-
-
-
 
 theorem closedChartJacobiPotential_eq_open
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ} (hC : UniqueDiffOn ℝ C)

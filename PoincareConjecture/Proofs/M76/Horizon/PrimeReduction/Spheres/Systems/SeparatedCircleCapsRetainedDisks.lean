@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellGeometry
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -78,9 +68,6 @@ private theorem square_shell_finite (a : ℝ) :
     refine ⟨by simpa using hx.2, ?_⟩
     change A i x ∈ Icc a 1
     rwa [hi]
-
-
-
 
 theorem exists_retained_disk_and_annulus
     {d r U : Set V3} (hd : IsFinitePLBallPair P2 d r)
@@ -197,11 +184,6 @@ theorem exists_retained_disk_and_annulus
   exact ⟨a, f, k, q, b, ha0, ha, hf, hfi, hfd, hfr, rfl, rfl, rfl,
     (square_ball_pair ha0).image_of_subset hf hasub hfi, hkb, hkbi, hkr, hrb, hbU,
     H, hH, hHeq⟩
-
-
-
-
-
 
 theorem ChartwisePLSphere.exists_separated_retained_circle_disks
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

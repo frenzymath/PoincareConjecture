@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.F
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Compact
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
 
 theorem exists_velocity_extension_of_compact_isotopy
     {a b : Real} {K : Set E} (hK : IsCompact K)
@@ -61,8 +51,6 @@ theorem exists_velocity_extension_of_compact_isotopy
     heq (hSH hp)]
   change V (e.symm (t, G (t, x))) = V (t, x)
   rw [← hagree t ht x hx, e.left_inv (he ⟨ht, hx⟩)]
-
-
 
 theorem exists_ambient_isotopy_of_compact_isotopy
     {a b : Real} {K : Set E} (hK : IsCompact K)

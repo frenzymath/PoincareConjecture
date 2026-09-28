@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Com
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ private lemma contMDiff_sqrt_of_pos {f : M → ℝ}
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => Real.sqrt (f x)) := by
   intro x
   exact (Real.contDiffAt_sqrt (hpos x).ne').contMDiffAt.comp x (hf x)
-
-
 
 theorem normalized_regularized_gradient_subsolution [T2Space M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ} {t k c : ℝ}
@@ -84,8 +73,6 @@ theorem normalized_regularized_gradient_subsolution [T2Space M]
 end PoincareConjecture.LeviCivitaData
 
 namespace Poincare.Analysis.Heat
-
-
 
 theorem regularized_norm_excess_sq_le {q θ c : ℝ} (hq : 0 ≤ q)
     (hθ1 : θ ≤ 1) (hc : 1 ≤ c) :

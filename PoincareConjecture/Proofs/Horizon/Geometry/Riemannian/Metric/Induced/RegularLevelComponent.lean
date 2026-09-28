@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Regu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphere
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +23,6 @@ variable {n : Nat} {M : Type*} [TopologicalSpace M]
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
-
 theorem compactSpace_openRegularLevel
     (hcompact : IsCompact ((U : Set M) ∩ f ⁻¹' {c})) :
     CompactSpace (openLevelSet f U c) := by
@@ -41,7 +30,6 @@ theorem compactSpace_openRegularLevel
   apply (isEmbedding_openLevelIncl f U c).isCompact_iff.mpr
   rw [image_univ, range_openLevelIncl]
   exact hcompact
-
 
 theorem compactSpace_regularLevelComponent
     (hcompact : IsCompact ((U : Set M) ∩ f ⁻¹' {c}))
@@ -51,8 +39,6 @@ theorem compactSpace_regularLevelComponent
   let := openLevelSetChartedSpace hf U hreg n c
   let : CompactSpace (openLevelSet f U c) := compactSpace_openRegularLevel U c hcompact
   exact isCompact_iff_compactSpace.mp isClosed_connectedComponent.isCompact
-
-
 
 theorem metricComplete_regularLevelComponentMetric [T3Space M]
     (g : RiemannianMetric (n + 1) M)
@@ -69,9 +55,6 @@ theorem metricComplete_regularLevelComponentMetric [T3Space M]
     infer_instance
   exact metricComplete_of_subtype_val isClosed_connectedComponent
     (regularLevelMetric hf U hreg c g) _ (fun _ _ _ => rfl) hcomplete
-
-
-
 
 theorem sphere_regularLevelComponent_geometry
     {h : Metric.sphere (0 : EuclideanSpace Real (Fin 3)) 1 -> Real}

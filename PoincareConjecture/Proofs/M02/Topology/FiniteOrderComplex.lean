@@ -4,11 +4,6 @@ import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.LinearAlgebra.StdBasis
 import Mathlib.Order.Interval.Finset.Nat
 
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

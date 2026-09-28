@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ParametricComparisonAction
 import PoincareConjecture.Proofs.M09.LocalParametricBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

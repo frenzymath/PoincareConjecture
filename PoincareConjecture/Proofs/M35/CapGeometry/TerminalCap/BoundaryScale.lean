@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.OriginalComparison
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCoreScalarWitness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +23,6 @@ theorem radialArclength_intrinsic_center (q : UnitTwoSphere) {a : ℝ}
   rw [intrinsicSpatialInverse_norm, norm_smul, Real.norm_eq_abs, abs_of_nonneg ha,
     norm_eq_of_mem_sphere, mul_one]
   exact (radialArclengthOrderIso g hrotation hcomplete).apply_symm_apply a
-
-
-
 
 theorem radial_boundary_scalar_gt_quarter (P : M35StandardCapPredecessors)
     (D : LeviCivitaData g) (hsec : D.NonnegativeSectionalCurvature)
@@ -69,8 +58,6 @@ theorem radial_boundary_scalar_gt_quarter (P : M35StandardCapPredecessors)
   have hscalar := mul_le_mul_of_nonneg_left hs hQ.le
   change Q < 4 * D.scalarCurvature y
   nlinarith only [hmul, hscalar]
-
-
 
 theorem scalar_length_lt_twice {Q Q' b b' : ℝ}
     (hQ' : 0 < Q') (hb : 0 < b) (hb' : 0 < b')

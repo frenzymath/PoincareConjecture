@@ -1,24 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Evolving.Model
 import PoincareConjecture.Proofs.M32.Claim11_35.NeckCovariantJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +12,6 @@ namespace PoincareConjecture.M32
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
-
 
 theorem evolving_covariant_component_center_le {epsilon tau : ℝ}
     (hepsilon : 0 < epsilon) (htau : tau ∈ Icc (-1) 0)
@@ -90,9 +69,6 @@ theorem evolving_covariant_component_center_le {epsilon tau : ℝ}
   rw [sq_abs, mul_pow]
   exact hsquared
 
-
-
-
 theorem evolving_covariant_contDiffAt {epsilon tau : ℝ} (htau : tau < 1)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose epsilon tau B)
     (q : UnitTwoSphere) {p : V} (hp : p.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹)
@@ -132,10 +108,6 @@ private theorem evolving_norm_iteratedFDeriv_succ_le_of_basis_bound
     rw [← heq]
     exact (ContinuousMultilinearMap.le_opNorm _ v).trans
       (mul_le_mul_of_nonneg_right (hb i) hp)
-
-
-
-
 
 theorem exists_evolving_covariant_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {epsilon tau : ℝ}, 0 < epsilon → epsilon ≤ 1 / 4 →

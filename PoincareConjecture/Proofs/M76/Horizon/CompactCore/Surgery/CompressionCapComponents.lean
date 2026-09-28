@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.SeparatingCapSphereExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDomination
 import PoincareConjecture.Proofs.M76.Mathlib.PointedRimWidthIntervals
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
-
 
 theorem rim_superlevel_truncated_sublevel_partition {X : Type*}
     {b : Set X} {r u : X → ℝ} {a c : ℝ}
@@ -54,11 +39,6 @@ theorem rim_superlevel_truncated_sublevel_partition {X : Type*}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_uniform_pointed_rim_cuts
     {d b : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d b)

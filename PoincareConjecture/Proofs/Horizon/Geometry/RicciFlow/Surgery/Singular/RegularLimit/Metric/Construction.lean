@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Compact
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ namespace PoincareConjecture.SingularRegularLimit
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def tangentBilinearChartCoefficients
     (B : ∀ x : M, TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ)
@@ -76,7 +67,6 @@ theorem tangentBilinear_inCoordinates
   simp [Trivialization.linearMapAt_def_of_mem]
   rfl
 
-
 theorem contMDiff_tangentBilinear_of_chartCoefficients
     (B : ∀ x : M, TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ)
     (hsmooth : ∀ q : M, ContDiffAt ℝ ∞ (tangentBilinearChartCoefficients B q)
@@ -96,7 +86,6 @@ theorem contMDiff_tangentBilinear_of_chartCoefficients
   filter_upwards [(isOpen_extChartAt_source (I := 𝓡 n) q).mem_nhds
     (mem_extChartAt_source q)] with y hy
   exact tangentBilinear_inCoordinates B q y hy
-
 
 def metricOfChartCoefficients
     (B : ∀ x : M, TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ)

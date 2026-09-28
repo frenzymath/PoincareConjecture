@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3NestedRelativeBoundary
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalRawSphereCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

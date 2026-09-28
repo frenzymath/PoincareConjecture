@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalCapNearbyPhysical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRestriction
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceIncluded
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_nearby_physical_cap_at_core_point
     {g0 : StandardInitialMetric}
@@ -74,9 +64,6 @@ theorem exists_nearby_physical_cap_at_core_point
     exact mem_image_of_mem q hz
   refine ⟨H, hHe, hHC, hHconnection, ?_⟩
   simpa only [q, actualCapSliceChart_apply] using hpoint
-
-
-
 
 theorem exists_search_enclosing_cap_comparison_cutoff
     (P : M44CapPersistencePredecessors.{u}) {g0 : StandardInitialMetric}

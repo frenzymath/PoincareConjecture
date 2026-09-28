@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ChainShapeInterval
 import Mathlib.Order.Monotone.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_coherent_finite_limit
     {M : Type u} [TopologicalSpace M]

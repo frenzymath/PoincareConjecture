@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.AffineEquivHessian
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ChartConnection
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,10 +17,6 @@ open CoordinateExponential ConnectionVariation M65Branch
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem modulus_harmonic_equation_comp_affine
     {g : RiemannianMetric n E} (D : LeviCivitaData g)

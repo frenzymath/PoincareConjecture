@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierPro
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexRimCover
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +18,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 theorem HamiltonProperDiskLowerProducts.exists_vertex_band
     (P : HamiltonProperDiskLowerProducts T C)

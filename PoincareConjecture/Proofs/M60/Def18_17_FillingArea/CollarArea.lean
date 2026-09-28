@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarDensity
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularPolarBound
 import PoincareConjecture.Proofs.M58.Cor18_28_AreaBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m60LoopCollar_area_le
     {M : Type u} [TopologicalSpace M]

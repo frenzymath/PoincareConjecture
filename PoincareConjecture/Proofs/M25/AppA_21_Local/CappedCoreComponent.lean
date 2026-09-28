@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCommonSphereProducer
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCommonSphereComponent
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem ConnectedNeckCapCover.exists_repairedData_or_compact_capped_core_component :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

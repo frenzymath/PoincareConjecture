@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbati
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -125,8 +117,6 @@ theorem LocallyEventuallyBoundedDerivatives.comp_fixed
   intro l hl hlm
   exact (hkB l hlm x hx).trans ((le_max_left _ _).trans
     (le_self_pow₀ (le_max_right B 1) (Nat.ne_of_gt hl)))
-
-
 
 theorem LocallyEventuallyBoundedDerivatives.comp_univ
     {f : ℕ → EuclideanSpace ℝ (Fin d) → F}

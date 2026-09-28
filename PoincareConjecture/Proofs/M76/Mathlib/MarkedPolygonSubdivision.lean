@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UniformPolygonSimplicity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {N : ℕ}
-
-
-
 
 theorem exists_halfOpen_edge_parameter (P : Polygon E (N + 3)) {x : E}
     (hx : x ∈ P.boundary ℝ) :
@@ -30,11 +18,6 @@ theorem exists_halfOpen_edge_parameter (P : Polygon E (N + 3)) {x : E}
     rw [AffineMap.lineMap_apply_zero]
     simpa only [ht1, AffineMap.lineMap_apply_one] using htx
   · exact ⟨i, t, ⟨ht.1, lt_of_le_of_ne ht.2 ht1⟩, htx⟩
-
-
-
-
-
 
 theorem exists_subdivision_at_marks (P : Polygon E (N + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

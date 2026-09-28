@@ -89,4 +89,3 @@ theorem supportedChartVariation_squareField (V W : LVariation F T τ₁ τ₂ p)
     _ = _ := by rw [variationChart_squareVariationField V hs hx]
 
 end PoincareConjecture.M08
-

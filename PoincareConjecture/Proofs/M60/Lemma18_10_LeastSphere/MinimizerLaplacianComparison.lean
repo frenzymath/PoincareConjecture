@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerHarmonicComparison
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerPoissonHessian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +16,9 @@ open Poincare.Analysis.Elliptic.Iteration
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 def suHessianEnergy {E : Type*} [NormedAddCommGroup E]
     (H : Fin 2 → Fin 2 → Plane → E) (S : Set Plane) : ℝ :=
   ∫ x in S, ∑ i : Fin 2, ∑ j : Fin 2, ‖H i j x‖ ^ 2
-
-
 
 theorem suHessianEnergy_mono {E : Type*} [NormedAddCommGroup E]
     {H : Fin 2 → Fin 2 → Plane → E} {S T : Set Plane} (hTS : T ⊆ S)
@@ -42,9 +29,6 @@ theorem suHessianEnergy_mono {E : Type*} [NormedAddCommGroup E]
       Finset.sum_nonneg fun j _ => sq_nonneg _
   · exact integrable_finsetSum _ (fun i _ =>
       integrable_finsetSum _ (fun j _ => (hH i j).norm.integrable_sq))
-
-
-
 
 theorem suHessianEnergy_add_le {E : Type*} [NormedAddCommGroup E]
     {H K : Fin 2 → Fin 2 → Plane → E} {S : Set Plane}
@@ -74,8 +58,6 @@ theorem suHessianEnergy_add_le {E : Type*} [NormedAddCommGroup E]
   simpa only [Pi.add_apply, suHessianEnergy, integral_add (hiH.const_mul 2) (hiK.const_mul 2),
     integral_const_mul] using hi
 
-
-
 theorem suHessianEnergy_sub_le {E : Type*} [NormedAddCommGroup E]
     {H K : Fin 2 → Fin 2 → Plane → E} {S : Set Plane}
     (hH : ∀ i j, MemLp (H i j) 2 (volume.restrict S))
@@ -103,9 +85,6 @@ private theorem weakPartial_sub {O : Set Plane} {v w p q : Plane → ℝ} (i : F
   simp only [Pi.mul_apply] at hsubv hsubp
   rw [hsubv, hsubp, hvp φ hφ hc hs, hwq φ hφ hc hs]
   ring
-
-
-
 
 theorem suWeakLaplacian_hessian_comparison :
     ∃ A B : ℝ, 0 < A ∧ 0 ≤ B ∧

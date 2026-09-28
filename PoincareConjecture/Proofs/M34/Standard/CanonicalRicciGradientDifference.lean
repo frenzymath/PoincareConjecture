@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CurvatureDerivativeCoordinates
 import PoincareConjecture.Proofs.M34.Standard.ConnectionDifferenceFactorization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem canonicalDomain_ricciGradient_difference
     {n dS : ℕ} (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))

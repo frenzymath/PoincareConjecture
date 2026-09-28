@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAverageDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem suWeakGradient_holder_representative {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.ZeroRank
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

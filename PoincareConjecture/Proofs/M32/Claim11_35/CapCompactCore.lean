@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M32.Mathlib.ProductCompactBoundary
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem cap_not_in_product_chart_with_fiber_boundary
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

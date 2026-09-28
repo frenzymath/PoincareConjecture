@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M02.HurewiczInjectivity
 import PoincareConjecture.Proofs.M02.HurewiczRepresentatives
 import PoincareConjecture.Proofs.M02.Topology.CubeHomotopyLifting
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,9 +14,6 @@ universe u v w
 namespace PoincareConjecture.Proofs.M40.Topology
 
 open M02 M02.Topology
-
-
-
 
 theorem homotopyGroupPostcomp_bijective_of_homologyMap_bijective
     (X Y : TopCat.{u}) [PathConnectedSpace X] [PathConnectedSpace Y]
@@ -63,9 +48,6 @@ theorem homotopyGroupPostcomp_bijective_of_homologyMap_bijective
     refine ⟨a, hHY ?_⟩
     change HY (homotopyGroupPostcomp (n + 1) f.hom x a) = HY b
     rw [← hnatural, ha, Category.assoc, IsIso.inv_hom_id, Category.comp_id]
-
-
-
 
 theorem homotopyRel_of_cube_quotient
     {S : Type u} [TopologicalSpace S]
@@ -107,10 +89,6 @@ theorem homotopyRel_of_cube_quotient
     have hs' : s = q (fun _ => 0) := hs
     rw [hs']
     exact (hG _ t).trans (H.eq_fst t ⟨0, Or.inl rfl⟩)
-
-
-
-
 
 theorem exists_homotopyEquiv_of_cube_quotients
     {X : Type u} [TopologicalSpace X] [T2Space X]
@@ -159,9 +137,6 @@ theorem exists_homotopyEquiv_of_cube_quotients
            left_inv := homotopic_of_cube_quotient_postcomp_injective
              n qX hqX hXfiber f hbij.1 (g.comp f) hgfbase L hLfixed
            right_inv := ⟨R.toHomotopy⟩ }, rfl⟩
-
-
-
 
 def homotopyEquivOfHomotopic
     {X : Type u} [TopologicalSpace X] {Y : Type v} [TopologicalSpace Y]

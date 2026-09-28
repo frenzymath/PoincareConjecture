@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
-
 
 theorem IsFinitePL.exists_convex_extension {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

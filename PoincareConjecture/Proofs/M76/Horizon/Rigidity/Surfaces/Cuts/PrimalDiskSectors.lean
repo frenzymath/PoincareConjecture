@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalDiskSpokes
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusMarkedRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,7 +11,6 @@ open PeriodicSquare
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 def CyclicFourArcPartition (q : Set E) (a b c d : E) : Prop :=
   ∃ A B C D : Set E,
@@ -100,8 +91,6 @@ private theorem split_three_boundary_arcs
     intro x hxV hxC
     have heq : x = a := hCA.subset ⟨hxC, hVA hxV⟩
     exact haV (heq ▸ hxV)
-
-
 
 theorem exists_four_prescribed_rim_arcs
     {d q : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

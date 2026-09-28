@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RoundCylinderPullbackReflection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def neckDomainAxialReflection (epsilon : ℝ) :
     Homeomorph (NeckDomain epsilon) (NeckDomain epsilon) where
@@ -33,8 +22,6 @@ noncomputable def neckDomainAxialReflection (epsilon : ℝ) :
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 noncomputable def EpsilonNeck.reverse
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) : EpsilonNeck g where
@@ -88,8 +75,6 @@ noncomputable def EpsilonNeck.reverse
   central_sphere_subset := N.central_sphere_subset
   metric_comparison := N.metric_comparison.axialReflection N.coordinate_map_smooth
 
-
-
 theorem EpsilonNeck.sameUpToReversal_reverse
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) :
     N.SameUpToReversal N.reverse := by
@@ -97,8 +82,6 @@ theorem EpsilonNeck.sameUpToReversal_reverse
   intro z _
   change N.coordinate_map z = N.coordinate_map (z.1, -(-1 * z.2))
   simp
-
-
 
 theorem EpsilonNeck.reverse_region
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) (a b : ℝ) :

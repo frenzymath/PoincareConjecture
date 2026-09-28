@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import Mathlib.Analysis.Convex.Join
 import Mathlib.LinearAlgebra.AffineSpace.Independent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem LinearIndependent.affineIndependent_insert_zero {s : Set E}
     (hs : LinearIndependent ℝ ((↑) : s → E)) :
@@ -34,9 +24,6 @@ theorem LinearIndependent.affineIndependent_insert_zero {s : Set E}
   exact h.comp_embedding ⟨f, fun x y hxy => Subtype.ext
     (congrArg (fun z : ↥({(0 : E)} ∪ (fun v : E => v +ᵥ (0 : E)) '' s) => (z : E)) hxy)⟩
 
-
-
-
 theorem exists_pos_smul_of_mem_convexHull_insert_zero {s : Set E} {x : E}
     (hx : x ∈ convexHull ℝ (insert (0 : E) s)) (hx0 : x ≠ 0) :
     ∃ y ∈ convexHull ℝ s, ∃ r ∈ Ioc (0 : ℝ) 1, x = r • y := by
@@ -53,8 +40,6 @@ theorem exists_pos_smul_of_mem_convexHull_insert_zero {s : Set E} {x : E}
     rw [h, zero_smul] at heq
     exact hx0 heq.symm
   exact ⟨y, hy, b, ⟨lt_of_le_of_ne hb hb0.symm, by linarith⟩, heq.symm⟩
-
-
 
 theorem smul_mem_convexHull_insert_zero {s : Set E} {x : E} (hx : x ∈ convexHull ℝ s)
     {r : ℝ} (hr : r ∈ Icc (0 : ℝ) 1) : r • x ∈ convexHull ℝ (insert (0 : E) s) :=

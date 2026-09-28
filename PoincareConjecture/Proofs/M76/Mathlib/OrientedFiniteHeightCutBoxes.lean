@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineCutOrientation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -18,13 +8,6 @@ open Set CoordinateHalfBoxes
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
-
-
-
 
 theorem exists_oriented_affine_height_cut_boxes
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

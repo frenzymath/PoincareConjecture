@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.ShortControlsAssembly
 import PoincareConjecture.Proofs.M30.Generalized.BlowupSubsequence
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 def M30ShortControlService : Prop :=
   ∃ epsilonShort : ℝ, 0 < epsilonShort ∧
@@ -35,9 +22,6 @@ def M30ShortControlService : Prop :=
       ∃ phi : ℕ → ℕ, ∃ hphi : StrictMono phi,
         Nonempty (ShortControlledBlowupHypotheses
           (reindexedBlowupSequence S phi hphi) kappa r₀)
-
-
-
 
 theorem exists_shortLimitStatement_of_controlService
     (P : M30ControlledBlowupPredecessors.{u})

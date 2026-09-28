@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProductGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,8 +12,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval} {g : ℝ → RiemannianMetric n M}
 
-
-
 theorem ordinaryProduct_inner_eq (R : OrdinaryProductSpacetimeConclusion g I)
     (t : (R.timeIntervals.interval I).Point) (x : M) (v w : TangentSpace (𝓡 n) x) :
     (g t.val).inner x v w = R.spacetime.horizontalMetric.inner
@@ -30,8 +20,6 @@ theorem ordinaryProduct_inner_eq (R : OrdinaryProductSpacetimeConclusion g I)
   have h := R.productMetric.metric_eq t x v w
   rw [R.productMetric_eq] at h
   exact h
-
-
 
 theorem ordinaryProduct_scalar_eq (R : OrdinaryProductRicciGeometry g I)
     (c : MetricLeviCivitaFamily g) (t : (R.product.timeIntervals.interval I).Point) (x : M) :
@@ -47,8 +35,6 @@ theorem ordinaryProduct_scalar_eq (R : OrdinaryProductRicciGeometry g I)
       R.product.productCylinder.toMovingSpacetimeGauge
       R.product.productMetric.toMovingSpacetimeGaugeGeometry c').scalar_eq t x
   exact h g c R.product.productMetric_eq
-
-
 
 theorem ordinaryProduct_ricci_eq (R : OrdinaryProductRicciGeometry g I)
     (c : MetricLeviCivitaFamily g) (t : (R.product.timeIntervals.interval I).Point) (x : M)
@@ -69,8 +55,6 @@ theorem ordinaryProduct_ricci_eq (R : OrdinaryProductRicciGeometry g I)
       R.product.productMetric.toMovingSpacetimeGaugeGeometry c').ricci_eq t x v w
   exact h g c R.product.productMetric_eq
 
-
-
 theorem ordinaryProduct_curvatureNorm_eq (R : OrdinaryProductRicciGeometry g I)
     (c : MetricLeviCivitaFamily g) (t : (R.product.timeIntervals.interval I).Point) (x : M) :
     (c t.val).curvatureTensorNorm x = horizontalCurvatureNorm R.leafwiseConnection
@@ -87,8 +71,6 @@ theorem ordinaryProduct_curvatureNorm_eq (R : OrdinaryProductRicciGeometry g I)
   exact h g c R.product.productMetric_eq
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinaryProductProjection_inner (R : OrdinaryProductSpacetimeConclusion g I)
     (z : R.spacetime.Point) (v w : R.spacetime.Horizontal z) :

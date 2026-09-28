@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoord
 import PoincareConjecture.Proofs.M60.Mathlib.CompactSupportIntegralDerivative
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereEnergyDensity_family_contDiffOn (g : RiemannianMetric n M)
     {v : ℝ × UnitTwoSphere → M} {ε : ℝ}
@@ -43,9 +32,6 @@ theorem m60SphereEnergyDensity_family_contDiffOn (g : RiemannianMetric n M)
       (q.1, m60SphereParameter q.2) := hv.contMDiffAt
     ((isOpen_Ioo.prod isOpen_univ).mem_nhds ⟨hq.1, mem_univ (m60SphereParameter q.2)⟩)
   exact (m60EnergyDensity_family_contDiffAt g (hvq.comp q (hparam q))).contDiffWithinAt
-
-
-
 
 theorem m60SphereEnergy_hasDerivAt_of_supported_variation (g : RiemannianMetric n M)
     {v : ℝ × UnitTwoSphere → M} {ε : ℝ} (hε : 0 < ε)

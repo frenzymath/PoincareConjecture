@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOverlapAssembly
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +11,6 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
-
-
 theorem locallyPiecewiseAffineOn_affine_conjugate
     (L : E ≃ᴬ[ℝ] F) {f : E → E} {U : Set E}
     (hf : LocallyPiecewiseAffineOn f U) :
@@ -30,9 +20,6 @@ theorem locallyPiecewiseAffineOn_affine_conjugate
   have h := ho.comp (hf.comp hi)
   simpa only [preimage_univ, inter_univ, univ_inter, Function.comp_def,
     ContinuousAffineEquiv.coe_toContinuousAffineMap] using h
-
-
-
 
 theorem exists_covered_straightening_affine_transport
     {X ι : Type*} [TopologicalSpace X]

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFinitePLBallImage
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace PoincareConjecture.M76
@@ -121,4 +111,3 @@ theorem IsPLIrreducible.exists_ball_of_sphere_subset
   exact (M.inverse z).property
 
 end PoincareConjecture.M76
-

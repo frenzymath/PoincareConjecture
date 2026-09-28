@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Slice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M N : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [TopologicalSpace N] [ChartedSpace G N] {n : ℕ∞ω}
   [IsManifold 𝓘(𝕜, E) n M] [IsManifold 𝓘(𝕜, G) n N]
-
-
 
 theorem isSmoothEmbedding_graph (e : OpenPartialHomeomorph (M × F) N)
     (he : ContMDiffOn (𝓘(𝕜, E).prod 𝓘(𝕜, F)) 𝓘(𝕜, G) n e e.source)

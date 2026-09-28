@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.TubeArmOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -18,7 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
 
-
 noncomputable def tubeTransverseContraction (ε : ℝ) : C3 →ᴬ[ℝ] C3 :=
   let xy := ContinuousLinearMap.fst ℝ P2 ℝ
   let t := ContinuousLinearMap.snd ℝ P2 ℝ
@@ -26,7 +16,6 @@ noncomputable def tubeTransverseContraction (ε : ℝ) : C3 →ᴬ[ℝ] C3 :=
 
 theorem tubeTransverseContraction_apply (ε : ℝ) (z : C3) :
     tubeTransverseContraction ε z = ((ε * z.1.1, ε * z.1.2), z.2) := rfl
-
 
 theorem tubeTransverseContraction_mapsTo {ε : ℝ} (hε : 0 ≤ ε) (hε1 : ε ≤ 1) :
     MapsTo (tubeTransverseContraction ε) tube tube := by
@@ -39,7 +28,6 @@ theorem tubeTransverseContraction_axis (ε t : ℝ) :
     tubeTransverseContraction ε ((0, 0), t) = ((0, 0), t) := by
   simp [tubeTransverseContraction_apply]
 
-
 theorem tubeTransverseContraction_injective {ε : ℝ} (hε : ε ≠ 0) :
     Function.Injective (tubeTransverseContraction ε) := by
   intro x y h
@@ -49,7 +37,6 @@ theorem tubeTransverseContraction_injective {ε : ℝ} (hε : ε ≠ 0) :
   apply Prod.ext
   · exact Prod.ext (mul_left_cancel₀ hε h1) (mul_left_cancel₀ hε h2)
   · exact ht
-
 
 theorem tubeTransverseContraction_diagonal_iff {ε : ℝ} (hε : ε ≠ 0)
     (j : Fin 2) (z : C3) :
@@ -61,7 +48,6 @@ theorem tubeTransverseContraction_diagonal_iff {ε : ℝ} (hε : ε ≠ 0)
   split_ifs <;> simp only [← mul_neg]
   all_goals exact ⟨mul_left_cancel₀ hε, fun h ↦ congrArg (fun x ↦ ε * x) h⟩
 
-
 theorem tubeTransverseContraction_finitePL (ε : ℝ) :
     FinitePiecewiseAffineOn (tubeTransverseContraction ε) tube := by
   have hbox := ((isFinitePLBallPair_Icc (show (-1 : ℝ) < 1 by norm_num)).prod
@@ -69,7 +55,6 @@ theorem tubeTransverseContraction_finitePL (ε : ℝ) :
     (isFinitePLBallPair_Icc (show (0 : ℝ) < 1 by norm_num))
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ := hbox
   exact ⟨K, hK, hKs, K.affineOnFaces_affine (tubeTransverseContraction ε)⟩
-
 
 theorem exists_tube_transverse_contraction_into_open
     {X : Type*} [TopologicalSpace X] {τ : C3 → X}
@@ -110,7 +95,6 @@ theorem exists_tube_transverse_contraction_into_open
   exact hprod (show (⟨ε, hε.le, hε1⟩, ⟨z, hz⟩) ∈ U ×ˢ V from
     ⟨hεU, hUV (mem_univ (⟨z, hz⟩ : tube))⟩)
 
-
 theorem contracted_tube_polyhedralPL
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
     [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X F} {τ : C3 → X}
@@ -123,15 +107,12 @@ theorem contracted_tube_polyhedralPL
     (fun z hz ↦ tubeTransverseContraction_mapsTo hε hε1 (hKs.subset hz))
   exact hKs ▸ h
 
-
 theorem contracted_tube_finitePL
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {sigma : C3 → E} (hσ : FinitePiecewiseAffineOn sigma tube)
     {ε : ℝ} (hε : 0 ≤ ε) (hε1 : ε ≤ 1) :
     FinitePiecewiseAffineOn (sigma ∘ tubeTransverseContraction ε) tube :=
   hσ.comp (tubeTransverseContraction_finitePL ε) (tubeTransverseContraction_mapsTo hε hε1)
-
-
 
 theorem exists_restricted_PL_tube
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

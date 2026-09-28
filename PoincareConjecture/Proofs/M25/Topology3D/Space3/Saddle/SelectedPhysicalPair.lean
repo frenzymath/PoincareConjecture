@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,9 +11,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 set_option linter.unusedVariables false in
-
-
-
 
 theorem exists_saddle_selected_physical_pair
     (hP : PlanarSchoenfliesService)

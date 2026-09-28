@@ -3,24 +3,10 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Topology
-
-
-
-
 
 theorem exists_common_locallyUniform_withinJet_limits
     {E F : ℕ → Type*}

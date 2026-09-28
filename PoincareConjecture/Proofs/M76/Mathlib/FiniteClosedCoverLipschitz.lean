@@ -1,22 +1,10 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Affine.AddTorsor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology NNReal
-
-
-
 
 theorem dist_endpoints_le_of_local_right_bound {F : Type*} [PseudoMetricSpace F]
     {f : ℝ → F} {a b C : ℝ} (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))
@@ -36,9 +24,6 @@ theorem dist_endpoints_le_of_local_right_bound {F : Type*} [PseudoMetricSpace F]
   apply lt_of_le_of_lt ((div_le_iff₀ hpos).mpr ?_) hr
   change dist (f y) (f a) - dist (f x) (f a) ≤ C * (y - x)
   linarith
-
-
-
 
 theorem Convex.lipschitzOnWith_of_local_bound {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [PseudoMetricSpace F]
@@ -67,10 +52,6 @@ theorem Convex.lipschitzOnWith_of_local_bound {E F : Type*}
   calc
     _ ≤ (K : ℝ) * dist (a z) (a t) := hz
     _ = _ := by rw [hd]; ring
-
-
-
-
 
 theorem Convex.lipschitzOnWith_of_finite_closed_cover {E F ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [PseudoMetricSpace F] [Finite ι]

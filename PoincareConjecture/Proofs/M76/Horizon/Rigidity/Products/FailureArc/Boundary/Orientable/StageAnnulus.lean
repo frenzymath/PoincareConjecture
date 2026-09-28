@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Bounda
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.SourceRims
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Collars.StageProperAnnulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn

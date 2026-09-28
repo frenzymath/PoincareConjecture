@@ -5,15 +5,6 @@ import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,9 +13,6 @@ open scoped Topology ContDiff
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_continuous_C2_arclength_family
     {Z : Type u} [TopologicalSpace Z] {L0 : ℝ} [Fact (0 < L0)]

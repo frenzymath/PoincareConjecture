@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_PointJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Asymptotics
@@ -21,12 +12,8 @@ variable {ι E F G H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
 
-
-
 def PointJetsVanish (f : ι → E → F) (x : ι → E) (l : Filter ι) : Prop :=
   ∀ m : ℕ, Tendsto (fun i => iteratedFDeriv ℝ m (f i) (x i)) l (𝓝 0)
-
-
 
 theorem zero_taylorComp (q : FormalMultilinearSeries ℝ E F) (m : ℕ) :
     (0 : FormalMultilinearSeries ℝ F G).taylorComp q m = 0 := by
@@ -40,9 +27,6 @@ theorem zero_taylorComp (q : FormalMultilinearSeries ℝ E F) (m : ℕ) :
 namespace PointJetsVanish
 
 variable {l : Filter ι} {x : ι → E}
-
-
-
 
 theorem comp {f : ι → E → F} {g : ι → F → G}
     (hg : PointJetsVanish g (fun i => f i (x i)) l)
@@ -70,9 +54,6 @@ theorem comp {f : ι → E → F} {g : ι → F → G}
 
 end PointJetsVanish
 
-
-
-
 theorem norm_iteratedFDeriv_bilinear_germ
     (B : F →L[ℝ] G →L[ℝ] H) {f : E → F} {g : E → G} {x : E}
     (hf : ContDiffAt ℝ ∞ f x) (hg : ContDiffAt ℝ ∞ g x) (m : ℕ) :
@@ -88,8 +69,6 @@ theorem norm_iteratedFDeriv_bilinear_germ
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
 
 namespace PointJetsVanish
-
-
 
 theorem bilinear {l : Filter ι} {x : ι → E} {f : ι → E → F} {g : ι → E → G}
     (hf : PointJetsVanish f x l) (hg : ∀ m, FinitePointJetBounded m g x l)

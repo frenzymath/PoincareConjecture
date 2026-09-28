@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.StereographicCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Definitions.Ch09.ShrinkingSoliton
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,13 +10,11 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M38
 
-
 theorem threeSphereStereoInverse_zero (a : UnitThreeSphere) :
     threeSphereStereoInverse a 0 = -a := by
   apply Subtype.ext
   rw [threeSphereStereoInverse_coe]
   simp [stereoInvFunAux_apply]
-
 
 theorem threeSphereStereo_invertible (a : UnitThreeSphere)
     (z : EuclideanSpace ℝ (Fin 3)) :
@@ -36,8 +26,6 @@ theorem threeSphereStereo_invertible (a : UnitThreeSphere)
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem curvatureTensor_of_stereoIsometry (a : UnitThreeSphere)
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin 3) → M}
@@ -56,8 +44,6 @@ theorem curvatureTensor_of_stereoIsometry (a : UnitThreeSphere)
     LeviCivitaData.curvatureTensor, threeSphereStereo_curvature_zero,
     threeSphereStereoMetric_inner]
   norm_num [inner_sub_left, real_inner_smul_left]
-
-
 
 theorem sectional_one_of_stereoIsometry (a : UnitThreeSphere)
     (D : LeviCivitaData g) {f : EuclideanSpace ℝ (Fin 3) → M}
@@ -89,8 +75,6 @@ theorem sectional_one_of_stereoIsometry (a : UnitThreeSphere)
     at hc
   rw [LeviCivitaData.sectionalCurvature, hc, hu, hv, huv]
   norm_num
-
-
 
 theorem threeSphere_constantPositiveSectionalCurvature
     (D : LeviCivitaData threeSphereMetric) :

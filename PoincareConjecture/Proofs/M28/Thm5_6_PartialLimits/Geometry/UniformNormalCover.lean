@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.LocalVolumeCo
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.LocalNormalCharts
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.NormalCoverAssembly
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open scoped Manifold ContDiff ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_uniform_normalCover_of_local_noncollapse
     (n : ℕ) {K δ v V : ℝ} (hn : 1 ≤ n) (hK : 0 ≤ K)

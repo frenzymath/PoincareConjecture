@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -66,10 +58,8 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
 
-
 noncomputable def intrinsicSpatialCoordinate (x : StandardCapSpace) : StandardCapSpace :=
   profileMap (radialArclength g) x
-
 
 noncomputable def intrinsicSpatialInverse (x : StandardCapSpace) : StandardCapSpace :=
   profileMap (radialArclengthOrderIso g hrotation hcomplete).symm x
@@ -113,7 +103,6 @@ theorem intrinsicSpatialCoordinate_inverse (x : StandardCapSpace) :
     (radialArclength_zero g)
   · exact fun _ hr => radialArclengthOrderIso_symm_pos g hrotation hcomplete hr
   · exact (radialArclengthOrderIso g hrotation hcomplete).apply_symm_apply
-
 
 noncomputable def intrinsicSpatialDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ where

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBoun
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalSecondBianchi
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -20,7 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 noncomputable def radialCurvature (D : LeviCivitaData g) (x : M)
     (v : TangentSpace (𝓡 n) x) :
@@ -43,7 +34,6 @@ noncomputable def radialCurvature (D : LeviCivitaData g) (x : M)
     (v u : TangentSpace (𝓡 n) x) :
     D.radialCurvature x v u = D.curvature x u v v := rfl
 
-
 @[simp] theorem radialCurvature_self (D : LeviCivitaData g) (x : M)
     (v : TangentSpace (𝓡 n) x) : D.radialCurvature x v v = 0 := by
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -52,7 +42,6 @@ noncomputable def radialCurvature (D : LeviCivitaData g) (x : M)
   intro w
   rw [inner_zero_left]
   exact D.curvatureTensor_zero_first x v w v
-
 
 theorem trace_radialCurvature (D : LeviCivitaData g) (x : M)
     (v : TangentSpace (𝓡 n) x) :

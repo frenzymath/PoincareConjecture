@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Graph.Estimates
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +12,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
   {F : ℝ × N → ℝ} {V : Set (ℝ × N)}
-
 
 theorem exists_unique_smooth_level_height_on
     (hF : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F V)
@@ -92,8 +84,6 @@ theorem level_height_mvfderiv_on
   rw [fderiv_eq_deriv_mul] at hv
   apply (eq_div_iff hne).mpr
   linarith
-
-
 
 theorem exists_level_height_with_C1_bounds_on
     (hV : IsOpen V)

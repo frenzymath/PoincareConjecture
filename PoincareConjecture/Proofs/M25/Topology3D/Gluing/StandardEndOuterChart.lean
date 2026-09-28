@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesRadialExtensio
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CollarAbsorption
 import PoincareConjecture.Proofs.M25.Mathlib.PositivePolar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ open scoped Manifold ContDiff Topology EuclideanSpace
 universe u
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
-
 
 theorem exists_compatible_buffered_end_charts
     {W : Type u} [TopologicalSpace W] [ChartedSpace E3 W]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteDistanceSlab
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Finset
@@ -124,7 +116,6 @@ private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
 private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
 
-
 theorem limitFinite_distance_budget (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) {Q : ℝ} (hQ : 0 < Q)
@@ -143,7 +134,6 @@ theorem limitFinite_distance_budget (h04 : RicciFlowCurvatureTheory.{u})
       (by rwa [limitFinite_domain_eq hfinite]) hab x y
   · intro a b scale ha hab hb hscale
     exact limitFinite_distance_slab h04 hH hfinite L hQ hQ0 ha hab hb hscale x y
-
 
 theorem limitFinite_additive_distance (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)

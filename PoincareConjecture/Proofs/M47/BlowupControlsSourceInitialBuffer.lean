@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSpeed
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckSlabs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M47
-
-
 
 theorem standard_initial_neck_ball_subset
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}

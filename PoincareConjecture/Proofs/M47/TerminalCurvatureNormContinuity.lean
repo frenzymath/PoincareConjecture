@@ -2,20 +2,11 @@ import PoincareConjecture.Proofs.M04.CurvatureEnergyBochner
 import PoincareConjecture.Proofs.M04.RiemannRegularity
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalCurvature_norm_continuous
     {n : ℕ} {M : Type*} [TopologicalSpace M]

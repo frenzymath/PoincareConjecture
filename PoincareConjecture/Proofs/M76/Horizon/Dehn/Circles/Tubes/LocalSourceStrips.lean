@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalBranchInverses
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -21,8 +13,6 @@ local notation "D2" => closedBall (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
-
-
 
 theorem signedSheetStripMap_surjective_on_sheet {a b : ℝ} (j : Fin 2)
     {z : P2 × ℝ} (hz : z ∈ signedTubeDiamond ×ˢ Icc a b)
@@ -39,8 +29,6 @@ theorem signedSheetStripMap_surjective_on_sheet {a b : ℝ} (j : Fin 2)
     refine ⟨(z.1.1, z.2), ⟨abs_le.mp ?_, hz.2⟩, ?_⟩
     · simpa [hzero] using hbound
     · exact Prod.ext (Prod.ext rfl hzero.symm) rfl
-
-
 
 theorem eqOn_transverse_interval_of_eq_ne_zero
     {Y : Type*} [TopologicalSpace Y] [T2Space Y] {r : ℝ} (hr : 0 < r)
@@ -61,8 +49,6 @@ theorem eqOn_transverse_interval_of_eq_ne_zero
     rw [closure_Ioo hr.ne]
     exact ⟨le_rfl, hr.le⟩
   · exact heq u hu h0
-
-
 
 theorem RawCrossingChart.eq_of_coordinate_ne
     {x y : V2} (C : RawCrossingChart e f R x y)
@@ -86,8 +72,6 @@ theorem RawCrossingChart.eq_of_coordinate_ne
   · have hAR : a ∉ C.right := fun h => hn ((C.right_image _ hpoint).mp ⟨a, h, rfl⟩).1
     have hBR : b ∉ C.right := fun h => hn ((C.right_image _ hpoint).mp ⟨b, h, hab.symm⟩).1
     exact hinjL (hA.resolve_right hAR) (hB.resolve_right hBR) hab
-
-
 
 theorem ComponentBranchModel.exists_local_source_strip
     {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}

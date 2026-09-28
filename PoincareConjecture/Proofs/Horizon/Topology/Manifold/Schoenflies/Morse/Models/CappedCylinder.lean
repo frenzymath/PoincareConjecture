@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.SetImage
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.UnequalHeight
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 open Poincare.Geometry.Euclidean
-
-
-
 
 theorem exists_ambient_capped_cylinder_of_scales
     {v : E3} (hv : ‖v‖ = 1) (a b : Real) (hab : a ≤ b)
@@ -138,7 +133,6 @@ theorem exists_ambient_capped_cylinder_of_scales
       (CappedCylinder.unequalHeight_of_ge a b u w),
     image_union, image_union, hlower, hupper, hnorth]
   rfl
-
 
 theorem exists_ambient_capped_cylinder
     {v : E3} (hv : ‖v‖ = 1) (a b : Real) (hab : a ≤ b)

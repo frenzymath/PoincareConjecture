@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerHandleCorrection
 import Mathlib.Topology.Algebra.Group.Quotient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -73,9 +62,6 @@ private theorem StandardLatticeHandleAtlas.exists_projection_affine_chart
     change d i (pi (b z)) = b.symm (b z)
     rw [hb z hz, (d i).right_inv hz, b.symm_apply_apply]
 
-
-
-
 theorem StandardLatticeHandleAtlas.polyhedralPL_projection
     {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W] [FiniteDimensional ℝ W]
     {d : β → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ)}
@@ -100,10 +86,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_projection
   · apply ((hv.restrict N hN hNK).postcomp a.toContinuousAffineMap).congr
     intro y hy
     exact (hcoords (hNU y hy)).symm
-
-
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_inverse_compression
     {d : β → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ)}

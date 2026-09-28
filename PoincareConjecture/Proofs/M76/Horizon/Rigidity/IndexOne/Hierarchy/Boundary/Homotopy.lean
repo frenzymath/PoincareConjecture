@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundar
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.ClosedPasting
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.SourceCorrection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -29,7 +20,6 @@ local notation "Q" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 
 private instance : T2Space X := ((Homeomorph.refl (Fin 1 → ℝ)).prodCongr
   (hamiltonLowerLatticePiEquiv (Fin 2))).isEmbedding.t2Space
-
 
 noncomputable def slabFrontierHandleInclusion (phi : C(H, H)) (a b : ℝ) :
     C(frontier (sourceSlab phi a b), H) where
@@ -54,8 +44,6 @@ private theorem inverse_annulus_mem_rims
   cases side
   · exact Or.inl ⟨scale.symm c, rfl⟩
   · exact Or.inr ⟨scale.symm c, rfl⟩
-
-
 
 theorem exists_original_to_standard_frontier_homotopy
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)

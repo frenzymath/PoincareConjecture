@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PolygonalArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem IsSimplePolygonalArc.isSimplePolygon_of_closing_disjoint {k : ℕ}
     {q : Polygon E (k + 2)} (hq : IsSimplePolygonalArc q)
